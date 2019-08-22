@@ -23,6 +23,8 @@ NLP
 - typora+坚果云(github) = 个人云笔记   
 - 坚果云(github) + hexo = GitHub 博客  
 - markor 安卓的markdownd 阅读器  
+- Jsho 自动分割日语句子查单词  
+- 日语动词词典 查动词的各种活用
 - Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机
 - virmach 便宜的vps  
 - Termux 安卓上的linux 环境，有git
