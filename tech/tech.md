@@ -31,7 +31,8 @@ NLP
 - linux deploy 安卓手机刷原生Linux  
 - AndroCat 安卓坚果云客户端  
 - Aurora Store 应用商店xda 出品  
-- Hacker's Keyboard 黑客键盘PC 全键位  
+- Hacker's Keyboard 黑客键盘PC 全键位 
+-  vol.moe 漫画   
 http://bbs.xiaomi.cn/t-12373985 小米手机刷linux  
 - 深度学习500问  
 https://github.com/scutan90/DeepLearning-500-questions  
