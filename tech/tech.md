@@ -35,6 +35,8 @@ NLP
 -  vol.moe 漫画   
 http://bbs.xiaomi.cn/t-12373985 小米手机刷linux  
 - 深度学习500问  
+
+https://music.ghpym.com 音乐、歌词下载  
 https://github.com/scutan90/DeepLearning-500-questions  
 
 
