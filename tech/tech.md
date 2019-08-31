@@ -13,6 +13,12 @@ Update
 git commit -m 'a'  
 git push origin master  
 
+useradd gg  
+visudo  
+**chmod -R 777  /home**  
+
+
+
 
 ## termux
 apt update && apt upgrade -y  
@@ -22,6 +28,9 @@ apt install texlive
 tlmgr search  
 tlmgr install  
 tlmgr update --self --all  更新整个 TeX Live 系统  
+
+pkg uninstall [package name]  卸载  
+
 
 使用lualatex  
 https://liam.page/2014/12/11/ptex-intro-and-tutorial-03/  
@@ -108,5 +117,46 @@ ainiyorin@gmail.com
 
 niconico
 
+fc-list :lang=zh  
+
+
+git clone https://aur.archlinux.org/aurutils.git   
+cd aurtuils  
+makepkg -si  
+
+aur sync texlive-core  
+
+texlive-langjapanese texlive-core texlive-localmanager-git
+
+
+
+aur search texlive-localmanager  
+pacman -Qmq  也可以这样搜  
+aursync -c google-chrome  同步aur  
+pacman -S google-chrome  可以用pacman 安装了       
+
+
+
+Server = file:///var/cache/pacman/customon my /etc/pacman.d/custom/pacman.conf
+
+% pkgfile pacconf community/pacutils
+
+
+
+/etc/pacman.conf  
+
+
+
+yay -Syu --devel --combinedupgrade --save  
+
+.config/yay/config.json  
+
+https://aur.tuna.tsinghua.edu.cn  
+
+https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/ 
+
+
+
+中科大源的archlinuxcn源 然后导入key 然后就可以直接装了 安装软件前要先sudo pacman -Syy
 
 

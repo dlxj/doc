@@ -185,8 +185,10 @@ systemctl start NetworkManager.service
 
 
 
+**pacman -Ss texlive** 搜索包  
 
 
+texlive-langjapanese texlive-core texlive-localmanager-git
 
 
 
