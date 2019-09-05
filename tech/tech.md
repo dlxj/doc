@@ -160,3 +160,4 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 中科大源的archlinuxcn源 然后导入key 然后就可以直接装了 安装软件前要先sudo pacman -Syy
 
 
+うなずうなず
