@@ -17,6 +17,7 @@ useradd gg
 visudo  
 **chmod -R 777  /home**  
 
+git clone https://github.com/dlxj/doc.git  
 
 
 
