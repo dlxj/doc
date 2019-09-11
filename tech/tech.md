@@ -115,9 +115,38 @@ https://github.com/scutan90/DeepLearning-500-questions
 
 ainiyorin@gmail.com  
 
+
+pacman -S texlive-core texlive-langjapanese  
+
+
+
+
+
+$ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra   
+
+vi /etc/locale.gen  
+locale-gen
+export LANG=ja_JP.UTF-8   
+luatex  
+
+
+
+
+localectl set-locale LANG=ja_JP.UTF-8    
+
+vi /etc/locale.conf  
+LANG=ja_JP.UTF-8   
+
+shutdown 0  
+
+
+  
+
+
 niconico
 
 fc-list :lang=zh  
+fc-cache -f  
 
 
 git clone https://aur.archlinux.org/aurutils.git   
