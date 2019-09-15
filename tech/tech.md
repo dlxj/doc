@@ -1,6 +1,13 @@
 
 Termux + Github
  
+git config --global user.name "dlxj"  
+git config --global user.email "123468935@qq.com"  
+
+ssh-keygen -t rsa -C "123468935@qq.com"  
+
+
+
 
 ssh 传的是私钥
 - ssh -i .ssh/id_rsa -T git@github.com
@@ -91,7 +98,11 @@ NLP
 - 坚果云 + hexo = GitHub 博客  
 - markor 安卓的markdownd 阅读器  
 - Jsho 自动分割日语句子查单词  
-- 日语动词词典 查动词的各种活用
+- 日语动词词典 查动词的各种活用  
+- nplayer 视频播放  あ! 今、この女暗いなぁとか思いましたね ! ?あ! 今、この女暗いなぁとか思いましたね ! ?
+- LongShot 长截图  
+- Pixlr 图片编辑  
+- Gallery 图片浏览  
 - Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机
 - virmach 便宜的vps  
 - Termux 安卓上的linux 环境，有git
