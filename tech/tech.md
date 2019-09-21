@@ -99,7 +99,8 @@ NLP
 - markor 安卓的markdownd 阅读器  
 - Jsho 自动分割日语句子查单词  
 - 日语动词词典 查动词的各种活用  
-- nplayer 视频播放  あ! 今、この女暗いなぁとか思いましたね ! ?あ! 今、この女暗いなぁとか思いましたね ! ?
+- nplayer 视频播放  
+- LRC Editor  
 - LongShot 长截图  
 - Pixlr 图片编辑  
 - Gallery 图片浏览  
