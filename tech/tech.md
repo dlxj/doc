@@ -101,6 +101,7 @@ NLP
 - 日语动词词典 查动词的各种活用  
 - nplayer 视频播放  
 - LRC Editor  
+- Ringtone maker 切割mp3  
 - LongShot 长截图  
 - Pixlr 图片编辑  
 - Gallery 图片浏览  
@@ -114,7 +115,9 @@ NLP
 -  vol.moe 漫画   
 - 深度学习500问  
 
-
+高垣彩陽 初恋 site:https://utaten.com  
+sobooks.cc kindle电子书  
+https://convertio.co/zh/azw3-mobi/  转mobi  
 https://utaten.com  日语歌词检索  
 http://www.hiragana.jp  网站日文假名标注  
 https://m.jcinfo.net  日文句子假名标注 
