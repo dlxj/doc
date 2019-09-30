@@ -121,7 +121,7 @@ https://convertio.co/zh/azw3-mobi/  转mobi
 https://utaten.com  日语歌词检索  
 http://www.hiragana.jp  网站日文假名标注  
 https://m.jcinfo.net  日文句子假名标注 
-
+https://freemdict.com/  字典  
 https://chaoli.club  超理论坛  
 https://www.codecogs.com  生线生成latex 公式    
 https://nyaa.si   
@@ -130,6 +130,9 @@ https://music.ghpym.com 音乐、歌词下载
 https://github.com/scutan90/DeepLearning-500-questions  
 
 ainiyorin@gmail.com  
+
+小七手游  15726712516  口袋进化  187服  
+光环助手  果盘  18277286430  
 
 
 pacman -S texlive-core texlive-langjapanese  
