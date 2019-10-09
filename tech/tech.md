@@ -1,4 +1,11 @@
 
+13.229.188.59  github.com  
+185.199.111.153  assets-cdn.github.com  
+31.13.82.23  github.global.ssl.fastly.net  
+>  ip138.com 查询    
+
+ 
+
 Termux + Github
  
 git config --global user.name "dlxj"  
@@ -130,6 +137,15 @@ https://music.ghpym.com 音乐、歌词下载
 https://github.com/scutan90/DeepLearning-500-questions  
 
 ainiyorin@gmail.com  
+
+https://my.yunxiazai.xyz/  坚果加速  
+> aiiniyo 
+
+http://ftw.jzfj.shop/user  facetheworld   
+> 123468935@qq.com  
+群：584237371  
+15726712516 15726712516电报群
+
 
 小七手游  15726712516  口袋进化  187服  
 光环助手  果盘  18277286430  
