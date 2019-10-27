@@ -122,6 +122,8 @@ NLP
 -  vol.moe 漫画   
 - 深度学习500问  
 
+
+https://ctext.org/zhs  中国哲学电子书计划  
 高垣彩陽 初恋 site:https://utaten.com  
 sobooks.cc kindle电子书  
 https://convertio.co/zh/azw3-mobi/  转mobi  
