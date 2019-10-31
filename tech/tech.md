@@ -108,6 +108,7 @@ NLP
 - 日语动词词典 查动词的各种活用  
 - nplayer 视频播放  
 - LRC Editor  
+- 乐秀视频编辑器 视频提取mp3  
 - Ringtone maker 切割mp3  
 - LongShot 长截图  
 - Pixlr 图片编辑  
