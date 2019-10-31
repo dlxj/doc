@@ -123,6 +123,16 @@ NLP
 -  vol.moe 漫画   
 - 深度学习500问  
 
+piano  
+- Sibelius7 打谱软件  
+- Overtrue 4.1.5  打谱软件
+- OvePlayer.dmg  
+- Hypersonic.2.iso 钢琴软件  
+- 施坦威II大钢琴音源素材  
+- Kongaudio中国民族乐器软音源十三种乐器  
+
+
+
 
 https://ctext.org/zhs  中国哲学电子书计划  
 高垣彩陽 初恋 site:https://utaten.com  
