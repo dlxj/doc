@@ -125,7 +125,7 @@ NLP
 
 piano  
 - Sibelius7 打谱软件  
-- Overtrue 4.1.5  打谱软件
+- Overtrue 4.1.5  打谱软件  
 - OvePlayer.dmg  
 - Hypersonic.2.iso 钢琴软件  
 - 施坦威II大钢琴音源素材  
@@ -135,8 +135,9 @@ piano
 
 
 https://ctext.org/zhs  中国哲学电子书计划  
-高垣彩陽 初恋 site:https://utaten.com  
+高垣彩陽 初恋 site:https://utaten.com  掌上书苑掌上书苑掌上书苑
 sobooks.cc kindle电子书  
+https://www.soepub.com  掌上书苑  
 https://convertio.co/zh/azw3-mobi/  转mobi  
 https://utaten.com  日语歌词检索  
 http://www.hiragana.jp  网站日文假名标注  
