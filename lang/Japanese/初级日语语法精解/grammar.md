@@ -1,5 +1,5 @@
 
-[romaji](../romaji.md)
+[romaji](romaji.md)
 
 词类(品詞)
 ===

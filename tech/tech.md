@@ -124,7 +124,7 @@ NLP
 - 深度学习500问  
 
 piano  
-- Sibelius7 打谱软件  
+- Sibelius 打谱软件  西贝柳斯  
 - Overtrue 4.1.5  打谱软件  
 - OvePlayer.dmg  
 - Hypersonic.2.iso 钢琴软件  
@@ -149,6 +149,7 @@ https://nyaa.si
 https://e-hentai.org 漫画  
 https://music.ghpym.com 音乐、歌词下载  
 https://github.com/scutan90/DeepLearning-500-questions  
+http://wpspro.support.wps.cn/gov/guangdong/zhaoqing/  政府版wps  
 
 ainiyorin@gmail.com  
 
