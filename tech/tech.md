@@ -109,10 +109,11 @@ NLP
 - nplayer 视频播放  
 - LRC Editor  
 - 乐秀视频编辑器 视频提取mp3  
-- Ringtone maker 切割mp3  
+- Super Sound 切割mp3  
 - LongShot 长截图  
 - Pixlr 图片编辑  
 - Gallery 图片浏览  
+- flud bt下载  
 - Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机
 - virmach 便宜的vps  
 - Termux 安卓上的linux 环境，有git
@@ -120,7 +121,6 @@ NLP
 - AndroCat 安卓坚果云客户端  
 - Aurora Store 应用商店xda 出品  
 - Hacker's Keyboard 黑客键盘PC 全键位 
--  vol.moe 漫画   
 - 深度学习500问  
 
 piano  
@@ -135,7 +135,8 @@ piano
 
 
 https://ctext.org/zhs  中国哲学电子书计划  
-高垣彩陽 初恋 site:https://utaten.com  掌上书苑掌上书苑掌上书苑
+高垣彩陽 初恋 site:https://utaten.com  
+掌上书苑  
 sobooks.cc kindle电子书  
 https://www.soepub.com  掌上书苑  
 https://convertio.co/zh/azw3-mobi/  转mobi  
@@ -146,6 +147,7 @@ https://freemdict.com/  字典
 https://chaoli.club  超理论坛  
 https://www.codecogs.com  生线生成latex 公式    
 https://nyaa.si   
+vol.moe 漫画   
 https://e-hentai.org 漫画  
 https://music.ghpym.com 音乐、歌词下载  
 https://github.com/scutan90/DeepLearning-500-questions  
