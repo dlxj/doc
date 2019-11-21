@@ -131,10 +131,13 @@ piano
 - 施坦威II大钢琴音源素材  
 - Kongaudio中国民族乐器软音源十三种乐器  
 
+https://ctext.org/pre-qin-and-han/zhs?searchu=晏如   
+http://cls.lib.ntu.edu.tw/tang/Database/index.html  
+https://books.google.co.jp/  靖静 大漢和辭典  
 
-
-
+**查汉字**  
 https://ctext.org/zhs  中国哲学电子书计划  
+http://cls.lib.ntu.edu.tw/tang/Database/index.html  全唐诗检索     
 高垣彩陽 初恋 site:https://utaten.com  
 掌上书苑  
 sobooks.cc kindle电子书  
