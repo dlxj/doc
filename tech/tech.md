@@ -100,19 +100,21 @@ $ sudo apt install texlive-lang-japanese
 NLP
 - Google Colab 在线python 编辑器，免费GPU  
 - notion 云笔记  
-- 纯纯写作 永不丢失的笔记
+- **纯纯写作** 永不丢失的笔记
 - typora+坚果云 = 个人云笔记   
 - 坚果云 + hexo = GitHub 博客  
 - markor 安卓的markdownd 阅读器  
 - Jsho 自动分割日语句子查单词  
 - 日语动词词典 查动词的各种活用  
-- nplayer 视频播放  
+- **nplayer** 视频播放  
 - LRC Editor  
-- 乐秀视频编辑器 视频提取mp3  
-- Super Sound 切割mp3  
+- **乐秀视频编辑器** 视频提取mp3  
+- **Super Sound 切割mp3**    
 - LongShot 长截图  
 - Pixlr 图片编辑  
 - Gallery 图片浏览  
+- **PDF切割器**  apk  
+- **Comic Screen** ・perfect viewer **看本地漫画**  
 - flud bt下载  
 - Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机
 - virmach 便宜的vps  
@@ -133,14 +135,18 @@ piano
 
 
 **查汉字**  
-https://ctext.org/pre-qin-and-han/zhs?searchu=晏如  中国哲学电子书计划  
-http://cls.lib.ntu.edu.tw/tang/Database/index.html  全唐诗检索     
-https://books.google.co.jp/  靖静 大漢和辭典    
+https://ctext.org/pre-qin-and-han/zhs?searchu=**晏如**  中国哲学电子书计划  
+http://cls.lib.ntu.edu.tw/tang/Database/index.html  **全唐诗检索**     
+https://books.google.co.jp  靖静 大漢和辭典    
+http://www.52shici.com  **格律在线检测**    
+http://www.duiduilian.com/pzcx/ **平仄查询**    
+app **诗词助手、押韵助手、诗云，韵典**    
 高垣彩陽 初恋 site:https://utaten.com  
 掌上书苑  
-http://www.ireadweek.com  周读 电子书  
+http://www.ireadweek.com  **周读 电子书**  
 sobooks.cc kindle电子书  
 https://5kindle.com  子午书简  
+http://libgen.lc  梁思成全集  
 https://www.soepub.com  掌上书苑  
 https://convertio.co/zh/azw3-mobi/  转mobi  
 https://utaten.com  日语歌词检索  
@@ -150,7 +156,7 @@ https://freemdict.com/  字典
 https://chaoli.club  超理论坛  
 https://www.codecogs.com  生线生成latex 公式    
 https://nyaa.si   
-vol.moe 漫画   
+vol.moe **漫画**   
 https://e-hentai.org 漫画  
 https://music.ghpym.com 音乐、歌词下载  
 https://github.com/scutan90/DeepLearning-500-questions  
