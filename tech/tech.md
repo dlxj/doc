@@ -114,6 +114,9 @@ NLP
 - Pixlr 图片编辑  
 - Gallery 图片浏览  
 - **PDF切割器**  apk  
+- 阅读  apk  
+- 全民追书  apk  
+- **异次元  在线漫画**    
 - **Comic Screen** ・perfect viewer **看本地漫画**  
 - flud bt下载  
 - Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机
@@ -158,6 +161,8 @@ https://www.codecogs.com  生线生成latex 公式
 https://nyaa.si   
 vol.moe **漫画**   
 https://e-hentai.org 漫画  
+https://www.weblio.jp 日语词典    
+https://ja.wikipedia.org    
 https://music.ghpym.com 音乐、歌词下载  
 https://github.com/scutan90/DeepLearning-500-questions  
 http://wpspro.support.wps.cn/gov/guangdong/zhaoqing/  政府版wps  
