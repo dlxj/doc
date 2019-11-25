@@ -116,6 +116,7 @@ NLP
 - **PDF切割器**  apk  
 - 阅读  apk  
 - 全民追书  apk  
+- **博看书苑 apk  机构号：szghdzsw 密码:83393023**   
 - **异次元  在线漫画**    
 - **Comic Screen** ・perfect viewer **看本地漫画**  
 - flud bt下载  
@@ -149,6 +150,7 @@ app **诗词助手、押韵助手、诗云，韵典**
 http://www.ireadweek.com  **周读 电子书**  
 sobooks.cc kindle电子书  
 https://5kindle.com  子午书简  
+https://yunpanzhushou.com  **云盘助手**  
 http://libgen.lc  梁思成全集  
 https://www.soepub.com  掌上书苑  
 https://convertio.co/zh/azw3-mobi/  转mobi  
