@@ -34,6 +34,27 @@ visudo
 git clone https://github.com/dlxj/doc.git  
 
 
+**gitee码云账号**    
+
+git config --list   查看当前账号  
+
+cegbdfa  
+123468935@qq.com   
+https://gitee.com/cegbdfa  
+
+
+git config --global user.name "cegbdfa"  
+git config --global user.email   "123468935@qq.com"  
+
+rsa公钥直接拿github的用，不生成了  
+免密码登录不配置  
+ 
+  
+
+
+
+
+
 
 ## termux
 apt update && apt upgrade -y  
@@ -147,6 +168,8 @@ http://www.duiduilian.com/pzcx/ **平仄查询**
 app **诗词助手、押韵助手、诗云，韵典**    
 高垣彩陽 初恋 site:https://utaten.com  
 掌上书苑  
+https://epubw.com  **书最全**  
+https://epubw.xyz   
 http://www.ireadweek.com  **周读 电子书**  
 sobooks.cc kindle电子书  
 https://5kindle.com  子午书简  

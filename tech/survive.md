@@ -17,6 +17,35 @@
 
 北航本科教材影印  
 
+乐谱  
+
+一、常见大陆乐谱网站：
+五线谱：tan8网(即弹琴吧)，虫虫钢琴网（虫虫吉他网)，the one钢琴网，最全钢琴谱，搜谱网等；
+钢琴简谱：everyonepiano(人人钢琴网)；
+
+二、常见港台及国外乐谱网站：
+1.http://www.tintinpiano.com（延延钢琴窝）
+这是台湾钢琴谱网，积分收费下载的。如果你找的歌手在台湾唱片公司发唱片，甚至是闽南语唱片的，请尽量去这个网站找。上面也有一部分日本动漫谱，乐谱质量：都是网友作品，质量参差不齐，和弦错误比较多，当然也不乏好作品。
+
+2.欧美正版乐谱：
+http://www.halleonard.com（俗称hl站）
+http://www.alfred-music.com（俗称al站）
+乐谱质量都比较高（有时甚至是原曲作者亲自编写乐谱)，演奏难度不大。国内已有不少乐谱app购买其乐谱授权。如果你买合辑那么一辑10来首价格就很划算。
+
+3.http://www.scoreexchange.com
+这个网站原来是sibelius的在线乐谱网，现在是pdf格式的了，上面的乐谱都是老曲子（说白了就是曲作者死了60年以上的因此曲子版权没有限制）上面的谱子质量还可以，但也有可能有错误。你可以找到一些器乐改编、爵士改编乐谱。
+
+4.imslp.org
+著名的IMSLP国际乐谱库计划。找原版古典乐谱请尽量来这里，乐谱PDF全都是扫描的，音频mp3全都是现场音乐会或唱片里的，乐谱和音频都有很多版本，很有参考价值，全都是免费下载（当然个别现代作品有版权所属的可能下载不到）
+
+＊(请养成一个好习惯，古典乐谱尽量看扫描pdf，因为出版社特别是专业音乐出版社出版的乐谱不管怎么说都比网上打谱员重新输入的乐谱错误少。当然国内也有不少出版社弄虚作假极度没有职业节操的。）
+
+5.http://www.print-gakufu.com/
+日本print-gakufu乐谱网。如果你想找日本流行歌手的钢琴谱或吉他谱或歌谱合唱谱等等，或著名动漫音乐家比如久石让的乐谱，都可以来这里。乐谱质量还可以，演奏难度都不大。价格也很便宜，每份乐谱人民币15元左右（可以买电子版还可以下载yamaha midi）  
+
+
+
+
 
 
 博看书苑  
@@ -56,87 +85,37 @@ cdzyytsg 大连教育学院图书馆账号:dljyxy 密码:dljyxy
 当然还有另外重要信息：
 这些机构号都是通用的，先登录机构号在注册一个自己的个人号，建议永久收藏，失效更换其他机构号； 
 
-账号为本人每个逐一亲测！全部高权限！可以正常下载期刊！比上次发的账号更多！权限更高！有时间会在评论区继续更新！
-博看期刊机构账号和密码明细表单： 安徽省图书馆账号:ahst 密码:ahst
-营口理工学院账号:yklgxy 密码yklgxy
-南华大学图书馆账号:usc 密码:usc 大连大学图书馆账号 ALIANDX 密码:100140
-兴义市图书馆账号xyslib 密码:xyslib
-对外经济贸易大学图书馆账号:uibelib 密码:uibelib 东北农业大学图书馆账号:dbnylib 密码:dbnylib
-成都中医院大学图书馆账号:cdzyytsg 密码:
-cdzyytsg 大连教育学院图书馆账号:dljyxy 密码:dljyxy
-广东省立中山图书馆账号:gdzslib 密码:gdzslib
-广西科技大学鹿山学院图书馆账号:lsxylib 密码:lsxylib 广西大学图书馆账号:gxulib 密码:gxulib
-河南建筑职业技术学院账号:hnjzzy 密码:hnjzzy
-云南师范大学图书馆账号:ynnulib 密码:ynnulib 广州图书馆账号:gzst 密码:gzst
-重庆人文科技学院图书馆账号:cqrwxy 密码:cqrwxy
-首都医科大学图书馆账号:cpums 密码:cpums 沈阳大学图书馆账号:sydxlib 密码:sydxlib
-湛江幼儿师范专科学校账号:zjyesf 密码:zjyesf
-独墅湖图书馆账号:sdll 密码:sdll 中交隧道工程局有限公司账号:66 密码:88
-江苏省委省级机关工作委员会账号:szghdzsw 密码:83393023
-中国石油大学（北京）图书馆账号:cups 密码: cups
+手绘  
 
-
-
-
-广州图书馆账号:gzst 密码:gzst
-
-重庆人文科技学院图书馆账号:cqrwxy 密码:cqrwxy
-首都医科大学图书馆账号:cpums 密码:cpums
-沈阳大学图书馆账号:sydxlib 密码:sydxlib
-
-湛江幼儿师范专科学校账号:zjyesf 密码:zjyesf
-独墅湖图书馆账号:sdll 密码:sall
-鹿山学院图书馆机构账号：lsxylib
-
-部分已经过期
-安微省图书馆账号:ahst 密码:ahst
-营口理工学院账号:yklgxy 密码yklgxy
-南华大学图书馆账号:usc 密码:usc 大连大学图书馆账号ALIANDX 密码:100140
-兴义市图书馆账号xyslib 密码:xyslib 对外经济贸易大学图书馆账号:uibelib 密码:uibelib
-东北农业大学图书馆账号:dbnylib 密码:dbnylib
-成都中医院大学图书馆账号:cdzyytsg 密码: cdzyytsg
-大连教育学院图书馆账号:dljyxy 密码:dljyxy 广东省立中山图书馆账号:gdzslib 密码:gdzslib
-广西科技大学鹿山学院图书馆账号:lsxylib 密码:lsxylib 广西大学图书馆账号:gxulib 密码:gxulib
-河南建筑职业技术学院账号:hnjzzy 密码:hnjzzy
-云南师范大学图书馆账号:ynnulib 密码:ynnulib 广州图书馆账号:gzst 密码:gzst
-重庆人文科技学院图书馆账号:cqrwxy 密码:cqrwxy
-首都医科大学图书馆账号:cpums 密码:cpums 沈阳大学图书馆账号:sydxlib 密码:sydxlib
-湛江幼儿师范专科学校账号:zjyesf 密码:zjyesf
-独墅湖图书馆账号:sdll 密码:sall:66 密码:88
-**江苏省委省级机关工作委员会账号**:szghdzsw 密码:83393023
-中国石油大学（北京）图书馆账号:cups 密码: cups
-
-
-
-
-广州图书馆账号:gzst 密码:gzst
-
-重庆人文科技学院图书馆账号:cqrwxy 密码:cqrwxy
-首都医科大学图书馆账号:cpums 密码:cpums
-沈阳大学图书馆账号:sydxlib 密码:sydxlib
-
-湛江幼儿师范专科学校账号:zjyesf 密码:zjyesf
-独墅湖图书馆账号:sdll 密码:sall
-鹿山学院图书馆机构账号：lsxylib
-
-部分已经过期
-安微省图书馆账号:ahst 密码:ahst
-营口理工学院账号:yklgxy 密码yklgxy
-南华大学图书馆账号:usc 密码:usc 大连大学图书馆账号ALIANDX 密码:100140
-兴义市图书馆账号xyslib 密码:xyslib 对外经济贸易大学图书馆账号:uibelib 密码:uibelib
-东北农业大学图书馆账号:dbnylib 密码:dbnylib
-成都中医院大学图书馆账号:cdzyytsg 密码: cdzyytsg
-大连教育学院图书馆账号:dljyxy 密码:dljyxy 广东省立中山图书馆账号:gdzslib 密码:gdzslib
-广西科技大学鹿山学院图书馆账号:lsxylib 密码:lsxylib 广西大学图书馆账号:gxulib 密码:gxulib
-河南建筑职业技术学院账号:hnjzzy 密码:hnjzzy
-云南师范大学图书馆账号:ynnulib 密码:ynnulib 广州图书馆账号:gzst 密码:gzst
-重庆人文科技学院图书馆账号:cqrwxy 密码:cqrwxy
-首都医科大学图书馆账号:cpums 密码:cpums 沈阳大学图书馆账号:sydxlib 密码:sydxlib
-湛江幼儿师范专科学校账号:zjyesf 密码:zjyesf
-独墅湖图书馆账号:sdll 密码:sall
-
-
-
+最受益匪浅的No.1 Marco Bucci
+[https://www.youtube.com/channel/UCsDxB-CSMQ0Vu_hTag7-2UQ]
+以下是我订阅的几个频道
+Love Life Drawing（里面的分析视频不错）
+[https://www.youtube.com/channel/UCA9o111IH1VD8Kxz0YLn8_A]
+ProkoTV
+[https://www.youtube.com/user/ProkoTV]
+Alphonso Dunn
+[https://www.youtube.com/channel/UCoBapgfK_m6G7airg1rdn8w]
+Pic Candle 可爱涂鸦，女生的最爱。
+[https://www.youtube.com/channel/UCaQWVXS0rc3EeMYmVfRXOog]
+Circle Line Art School
+[https://www.youtube.com/channel/UCVQxmyIOutGT4lmWlDN9pmA]
+Jim Lee(画超级英雄）
+[https://www.youtube.com/channel/UCMQxVUuQGFN3vpp39VMaUZg]
+ZHC（画超级英雄）
+[https://www.youtube.com/channel/UClQubH2NeMmGLTLgNdLBwXg]
+Art of Wei（喜欢看他画人像）
+[https://www.youtube.com/channel/UCKgkOEqGFUOiXrx1klhlmJQ]
+DoKiDoKi Drawing（日本漫画）
+[https://www.youtube.com/channel/UCY-tGAhulrOzRd6n1mLZwSg]
+Sycra（电脑作画）
+[https://www.youtube.com/channel/UC5dyu9y0EV0cSvGtbBtHw_w]
+New Masters Academy（学院派）
+[https://www.youtube.com/channel/UCliUF1c8m7MUspaCykJljSg]
+The Drawing Database: Marc Leone NKU（学院派）
+[https://www.youtube.com/channel/UCNPLX1hfy3Q8zr4eKvmhLGQ]
+Archipel（日本的创意介绍，有些漫画游戏设计师）
+[https://www.youtube.com/channel/UC3zoY9LapZERsN7caDKqz0w]
 
 
 
