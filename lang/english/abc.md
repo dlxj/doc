@@ -21,13 +21,13 @@ Pp pi
 
 Qq き又う
 Rr 啊(汉拼四)呃(汉拼三卷舌)
-Ss え(日拼四)死
+Ss え⁴死
 Tt ti
 
-Uu ゆ(日拼四)
+Uu ゆ⁴  
 Vv vi
-Ww double ゆ(日拼三)
-Xx え(日拼三)可死
+Ww double ゆ³  
+Xx え³可死
 
 Yy 外
 Zz 记  
