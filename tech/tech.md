@@ -165,7 +165,7 @@ http://cls.lib.ntu.edu.tw/tang/Database/index.html  **全唐诗检索**
 https://books.google.co.jp  靖静 大漢和辭典    
 http://www.52shici.com  **格律在线检测**    
 http://www.duiduilian.com/pzcx/ **平仄查询**    
-app **诗词助手、押韵助手、诗云，韵典**    
+app **fooview** **诗词助手、押韵助手、诗云，韵典**    
 **IPA Keyboard** **国际音标输入法**     
 **漢字古今中外讀音查詢**    
 高垣彩陽 初恋 site:https://utaten.com  
