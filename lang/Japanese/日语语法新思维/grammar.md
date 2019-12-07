@@ -1,7 +1,7 @@
 日语语法新思维初级 安宁
 ====
 
-[Markdown 入门参考](http://xianbai.me/learn-md/)
+[Markdown 入门参考](http://xianbai.me/learn-md/)元音](../img/IPA/IPAvowels.png)
 
 文档目录
 ----
