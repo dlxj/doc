@@ -49,10 +49,17 @@ git config --global user.email   "123468935@qq.com"
 rsa公钥直接拿github的用，不生成了  
 免密码登录不配置  
  
-  
 
+**回滚到上一次提交**    
+> git reflog    
+git reset --hard e3d37c5     
 
-
+列出所有最近两周内的提交   
+> $ git log --since=2.weeks   
+想找出添加或移除了某一个特定函数的引用的提交  
+>  $ git log -Sfunction_name   
+2018 年 4 月期间，Junio Hamano 提交的但未合并的测试文件  
+> $ git log --pretty="%h - %s" --author=gitster --since="2018-04-01" --before="2018-05-01" --no-merges -- t/  
 
 
 
