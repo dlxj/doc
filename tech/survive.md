@@ -41,12 +41,25 @@
 
 **北航本科教材影印**    
 
+html5 
+- 使用html5和svg制作巴赫音乐在线乐谱和演奏动画
+- https://wow.techbrood.com/fiddle/44577  
+- 黑客派  
+- https://hacpai.com/ 
+- Arya 在线 Markdown 编辑器  
+- 使用html5和svg制作巴赫音乐在线乐谱和演奏动画https://github.com/nicejade/markdown-online-editor/
+
 **动画**  
 - Animate.css 
 - remove.bg 抠图  
 - 52pojie  0daydown 资源下载  
 - Moho Pro 13 动画制作  
- 
+
+
+Mathematica
+- 啥是佩奇？我用 Mathematica 画给你看  
+- Mathematica模拟吉他弹奏南山南  
+
 煮饭烧肉  
 - 真空烤管无烟烧烤炉  
 - 太阳能烤炉    
@@ -70,6 +83,7 @@
 
 3D打印   
 - 建筑3D打印  
+- autocad 3d  
 
 温控羽绒服
 - 羽绒服智能温控鹅绒  
