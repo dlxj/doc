@@ -185,6 +185,7 @@ http://www.ireadweek.com  **周读 电子书**
 sobooks.cc kindle电子书  
 https://5kindle.com  子午书简  
 https://yunpanzhushou.com  **云盘助手**  
+https://www.jiumodiary.com  **PDF书多**  
 http://libgen.lc  梁思成全集  
 https://www.soepub.com  掌上书苑  
 https://convertio.co/zh/azw3-mobi/  转mobi  
