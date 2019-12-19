@@ -177,6 +177,7 @@ app **fooview** **诗词助手、押韵助手、诗云，韵典**  **ReadEra**  
 **漢字古今中外讀音查詢**      
 **IPA FOR PARISIAN FRENCH**  法语音标发音    
 **NotesDeMusique  读谱训练**      
+https://linguistlist.org/unicode/ipa.html  音标字符    https://westonruter.github.io/ipa-chart/keyboard/  
 高垣彩陽 初恋 site:https://utaten.com    
 掌上书苑  
 https://epubw.com  **书最全**  
