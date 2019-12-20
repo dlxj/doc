@@ -41,7 +41,7 @@ g  g'
 上行线 c e g b d f a   
 上行间 d f a c e g b   
 
-**上行线 c e g  下行间 f d b**     
+**上行线 c e g  下行线 f d b**     
 **上行间 d f a   下行间 g e c**     
 
 **全休止**符像一盏**吊灯**   
