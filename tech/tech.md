@@ -175,11 +175,15 @@ http://www.duiduilian.com/pzcx/ **平仄查询**
 app **fooview** **诗词助手、押韵助手、诗云，韵典**  **ReadEra**  djvu pdf 阅读器  
 **IPA Keyboard** **国际音标输入法**       
 **漢字古今中外讀音查詢**      
+**IPA Phonetics ios**  
+**AV Phonetics android**  **学国际音标**  
 **IPA FOR PARISIAN FRENCH**  法语音标发音    
 **NotesDeMusique  读谱训练**      
 https://linguistlist.org/unicode/ipa.html  音标字符    https://westonruter.github.io/ipa-chart/keyboard/  
 高垣彩陽 初恋 site:https://utaten.com    
 掌上书苑  
+**般若波罗蜜多心经  中華電子佛典協會**    
+http://cbetaonline.dila.edu.tw/zh/T0251_001  
 https://epubw.com  **书最全**  
 https://epubw.xyz   
 http://www.ireadweek.com  **周读 电子书**  
