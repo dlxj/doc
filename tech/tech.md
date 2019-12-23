@@ -180,13 +180,17 @@ app **fooview** **诗词助手、押韵助手、诗云，韵典**  **ReadEra**  
 **IPA FOR PARISIAN FRENCH**  法语音标发音    
 **NotesDeMusique  读谱训练**      
 https://linguistlist.org/unicode/ipa.html  音标字符    https://westonruter.github.io/ipa-chart/keyboard/  
+**香港语言学学会粤语拼音方案**  
+https://zh.m.wikipedia.org/zh-hans/%E9%A6%99%E6%B8%AF%E8%AA%9E%E8%A8%80%E5%AD%B8%E5%AD%B8%E6%9C%83%E7%B2%B5%E8%AA%9E%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88  
+**日语国际音标**    
+https://en.m.wikipedia.org/wiki/Hiragana#Table_of_hiragana
 高垣彩陽 初恋 site:https://utaten.com    
 掌上书苑  
 **般若波罗蜜多心经  中華電子佛典協會**    
 http://cbetaonline.dila.edu.tw/zh/T0251_001  
 https://dialogue.moe  **剧本对白全文检索**    
 https://github.com/windrises/dialogue.moe   
-https://bgm.tv/group/a  **技术宅真可怕**  
+https://bgm.tv/group/a  **技术宅真可怕**https://bgm.tv/group/a  
 https://epubw.com  **书最全**  
 https://epubw.xyz   
 http://www.ireadweek.com  **周读 电子书**  
