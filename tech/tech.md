@@ -184,6 +184,9 @@ https://linguistlist.org/unicode/ipa.html  音标字符    https://westonruter.g
 掌上书苑  
 **般若波罗蜜多心经  中華電子佛典協會**    
 http://cbetaonline.dila.edu.tw/zh/T0251_001  
+https://dialogue.moe  **剧本对白全文检索**    
+https://github.com/windrises/dialogue.moe   
+https://bgm.tv/group/a  **技术宅真可怕**  
 https://epubw.com  **书最全**  
 https://epubw.xyz   
 http://www.ireadweek.com  **周读 电子书**  
