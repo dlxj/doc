@@ -62,6 +62,10 @@ git reset --hard e3d37c5
 > $ git log --pretty="%h - %s" --author=gitster --since="2018-04-01" --before="2018-05-01" --no-merges -- t/  
 
 
+## overleaf  LaTex  
+
+使用自定义包  
+> 上传tipa.sty  
 
 ## termux
 apt update && apt upgrade -y  
@@ -131,7 +135,9 @@ NLP
 - **纯纯写作** 永不丢失的笔记
 - typora+坚果云 = 个人云笔记   
 - 坚果云 + hexo = GitHub 博客  
-- markor 安卓的markdownd 阅读器  
+- **markor** 安卓的**markdownd 编辑器**  
+- https://www.**overleaf**.com **LaTex qq email login** 
+- **Detexify 手写字符，生成LaTeX代码**  
 - Jsho 自动分割日语句子查单词  
 - 日语动词词典 查动词的各种活用  
 - **nplayer** 视频播放  
