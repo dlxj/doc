@@ -22,8 +22,15 @@
 - 真想谢我请吃饭啊  
 
 最多说两句，如果你不回复我最多说三句  
+人少偏僻的地方  
+
+
+**你还记不记得你从来不肯和我去河边**    
 
 **距离靠太近你会有压力对吧？**   
+**你觉得我是草食系所以很安全，很放心对吧？**    
+**为什么你很少和我分享你的生活，你的喜好，你身边发生的事？**     
+
 
 你对我很放心，  
 是因为觉得我是草食系，    
@@ -73,6 +80,24 @@
 **音乐**  
 > Cubase   
 FL Mobile  
+洞箫入门半个老师    
+Euterpea  haskell muz   
+【编曲/作曲】Nice Chord**好和弦**乐理教程  
+**music21**  mit miz lib     
+**Tidal haskell**  live coding music    
+当当云阅读  写歌秘籍：歌词写作基础教程  
+https://www.jita5.cn  吉他层很多书  
+https://masuit.com/ 懒得勤快互联网分享 多软件  
+https://yun.naodai.org/Software/  多软件  
+**bilibili** 15726712xxx  
+Mathematica 激活指南  
+vvw dlxj github cegbdfa gitee  
+音乐术语对照词典    
+外国音乐表演用语词典  
+【田馥甄】强势还原《小幸运》台式小清新治好了我上周的感冒 MIDI工程演示  
+
+**语言**    
+> **斯坦福Andy美语发音教材**    
 
 html5 
 - 使用html5和svg制作巴赫音乐在线乐谱和演奏动画
@@ -99,10 +124,9 @@ html5
 第一幕  马蹄声起    
 山贼说：“这个村子也抢吗？  
 **动物声起次接人声**      
-长讲**故事从中间讲起**而省略掉开头和结尾**给悬念**  
+讲**故事从中间讲起**而省略掉开头和结尾**给悬念**  
 **中间一笔带过给提示**     
 
-  
 
 **动画**  
 - Animate.css 
@@ -110,8 +134,9 @@ html5
 - 52pojie  0daydown 资源下载  
 - Moho Pro 13 动画制作  
 - 半次元  多绘画素材  
-
-
+- https://nyaa.si/ 动漫书  
+- https://pt.eastgame.org/  aiiniyo tlf电影  
+  
 
 
 Mathematica
@@ -257,3 +282,6 @@ https://gitee.com/cegbdfa
 https://ftw.b69o.top/  
 https://www.ftwssr.com/link/GepPNKAFVOYAcaqf  
 
+Mac  
+- proxifier 全局代理  
+- 如何优雅地一键实现 macOS 网络代理切换  

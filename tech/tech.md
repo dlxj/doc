@@ -129,10 +129,12 @@ $ sudo apt install texlive-lang-japanese
 
 
 
-NLP
+NLP  
+- **markor**  markdown编辑器   
 - Google Colab 在线python 编辑器，免费GPU  
 - notion 云笔记  
-- **纯纯写作** 永不丢失的笔记
+- **纯纯写作** 永不丢失的笔记  
+- **sublime text**  写代码    
 - typora+坚果云 = 个人云笔记   
 - 坚果云 + hexo = GitHub 博客  
 - **markor** 安卓的**markdownd 编辑器**  
@@ -154,7 +156,8 @@ NLP
 - **异次元  在线漫画**    
 - **Comic Screen** ・perfect viewer **看本地漫画**  
 - flud bt下载  
-- Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机
+- Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机  
+- yandex  **支持插件的浏览器**  
 - virmach 便宜的vps  
 - Termux 安卓上的linux 环境，有git
 - linux deploy 安卓手机刷原生Linux  
@@ -162,6 +165,13 @@ NLP
 - Aurora Store 应用商店xda 出品  
 - Hacker's Keyboard 黑客键盘PC 全键位 
 - 深度学习500问  
+
+**Mac**  
+- **proxifier 全局代理**  
+- izotope rx 7  **音频PS**   
+- riffstation **爬谱**   
+- 如何优雅地一键实现 macOS 网络代理切换  
+- sudo spctl --master-disable  允许从任何来源
 
 piano  
 - Sibelius 打谱软件  西贝柳斯  
@@ -221,6 +231,7 @@ https://ja.wikipedia.org
 https://music.ghpym.com 音乐、歌词下载  
 https://github.com/scutan90/DeepLearning-500-questions  
 http://wpspro.support.wps.cn/gov/guangdong/zhaoqing/  政府版wps  
+
 
 ainiyorin@gmail.com  
 
