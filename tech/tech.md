@@ -173,7 +173,21 @@ NLP
 - riffstation **爬谱**   
 - 如何优雅地一键实现 macOS 网络代理切换  
 - sudo spctl --master-disable  允许从任何来源  
-- **feem 离线热点文件传输** feem.io
+- **feem 离线热点文件传输** feem.io  
+
+**对付MacOS catalina 只读文件保护**  
+- **tidcal haskell 音乐编程**    
+- **安装ghc 8.65  cabal 2.4.1  tidcalcycles** 
+- csrutil status  
+- **sudo mount -uw /**  
+
+>重启按 cmd+R  
+**csrutil disable**  
+**vi ~/.bashrc**  
+**export PATH=/Users/vvw/.cabal/bin:$PATH**  
+**source ~/.bashrc**  
+
+
 
 piano  
 - Sibelius 打谱软件  西贝柳斯  

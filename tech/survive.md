@@ -92,7 +92,8 @@ https://www.jita5.cn  吉他层很多书
 https://masuit.com/ 懒得勤快互联网分享 多软件  
 https://yun.naodai.org/Software/  多软件  
 **bilibili** 15726712xxx  
-Mathematica 激活指南  
+**Mathematica** 激活指南  
+https://tiebamma.github.io/InstallTutorial/    
 **vvw dlxj github cegbdfa gitee**  
 **Telegram** 1572671xxxx  **facetheworld** 
 **https://ftw.jzfj.shop/**   
@@ -102,6 +103,34 @@ https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com
 **和弦进行秘笈・活用与演奏-浦田太宏**  
 **流行歌词写作教程**·尤静波著  
 【田馥甄】强势还原《**小幸运**》台式小清新治好了我上周的感冒 MIDI工程演示  **logic x 工程** 
+
+
+**对付MacOS catalina 只读文件保护**  
+- **tidcal haskell 音乐编程**    
+- **安装ghc 8.6.5  cabal 2.4.1  tidcalcycles** 
+- csrutil status  
+- **sudo mount -uw /**  
+
+>重启按 cmd+R  
+**csrutil disable**  
+**vi ~/.bashrc**  
+**export PATH=/Users/vvw/.cabal/bin:$PATH**  
+**source ~/.bashrc**   
+./configure --prefix=/usr  
+make install  
+link xxx /usr/bin  
+
+
+http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.html  
+
+**Tidal Tutorial site:http://ericfairbanks.org/**  
+
+
+**GFW**    
+- **Facetheworld** 
+- https://ftw.jzfj.shop/  123468935@qq.com    
+Telegram群  15726712516  
+- proxychains-ng  socks5 	127.0.0.1 1080  
 
 
 **语言**    
