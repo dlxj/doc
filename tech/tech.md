@@ -131,6 +131,7 @@ $ sudo apt install texlive-lang-japanese
 
 NLP  
 - **markor**  markdown编辑器   
+- **feem 离线热点文件传输** feem.io  
 - Google Colab 在线python 编辑器，免费GPU  
 - notion 云笔记  
 - **纯纯写作** 永不丢失的笔记  
@@ -168,10 +169,11 @@ NLP
 
 **Mac**  
 - **proxifier 全局代理**  
-- izotope rx 7  **音频PS**   
+- izotope rx 7  **音频P S**   
 - riffstation **爬谱**   
 - 如何优雅地一键实现 macOS 网络代理切换  
-- sudo spctl --master-disable  允许从任何来源
+- sudo spctl --master-disable  允许从任何来源  
+- **feem 离线热点文件传输** feem.io
 
 piano  
 - Sibelius 打谱软件  西贝柳斯  
@@ -181,6 +183,31 @@ piano
 - 施坦威II大钢琴音源素材  
 - Kongaudio中国民族乐器软音源十三种乐器  
 
+**音乐**  
+> **logic x pro**   
+Cubase   
+FL Mobile  
+**feem 离线热点文件传输** feem.io  
+洞箫入门半个老师    
+Euterpea  haskell muz   
+【编曲/作曲】Nice Chord**好和弦**乐理教程  
+**music21**  mit miz lib     
+**Tidal haskell**  live coding music    
+当当云阅读  写歌秘籍：歌词写作基础教程  
+https://www.jita5.cn  吉他层很多书  
+https://masuit.com/ 懒得勤快互联网分享 多软件  
+https://yun.naodai.org/Software/  多软件  
+**bilibili** 15726712xxx  
+Mathematica 激活指南  
+**vvw dlxj github cegbdfa gitee**  
+**Telegram** 1572671xxxx  **facetheworld** 
+**https://ftw.jzfj.shop/**   
+https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com  
+音乐术语对照词典    
+外国音乐表演用语词典  
+**和弦进行秘笈・活用与演奏-浦田太宏**  
+**流行歌词写作教程**·尤静波著  
+【田馥甄】强势还原《**小幸运**》台式小清新治好了我上周的感冒 MIDI工程演示  **logic x 工程**
 
 **查汉字**  
 https://ctext.org/pre-qin-and-han/zhs?searchu=**晏如**  中国哲学电子书计划  
