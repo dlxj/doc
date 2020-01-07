@@ -87,6 +87,12 @@ Euterpea  haskell muz
 【编曲/作曲】Nice Chord**好和弦**乐理教程  
 **music21**  mit miz lib     
 **Tidal haskell**  live coding music    
+**vst 免费音源插件** for  **SupperCollider**    
+https://git.iem.at/pd/vstplugin   
+《**the SupperCollider book**》   
+《**Computer Music using SuperCollider and Logic Pro**》  
+**SuperCollider**: 前戏  **中文笔记**  
+http://www.bruceboding.org/sandbox/supercollider-0  
 当当云阅读  写歌秘籍：歌词写作基础教程  
 https://www.jita5.cn  吉他层很多书  
 https://masuit.com/ 懒得勤快互联网分享 多软件  

@@ -177,7 +177,9 @@ NLP
 
 **对付MacOS catalina 只读文件保护**  
 - **tidcal haskell 音乐编程**    
-- **安装ghc 8.65  cabal 2.4.1  tidcalcycles** 
+- **安装ghc 8.65  cabal 2.4.1  tidcalcycles**   
+- **vst 免费音源插件** for  **SupperCollider**    
+- https://git.iem.at/pd/vstplugin  
 - csrutil status  
 - **sudo mount -uw /**  
 
