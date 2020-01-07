@@ -1,5 +1,4 @@
 
-
 Tidal is made for generating patterns, but doesn’t itself make any sound.  
 Tidal will by default send messages to SuperDirt in order to trigger sounds.  
 
