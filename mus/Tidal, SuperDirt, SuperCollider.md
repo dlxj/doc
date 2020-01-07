@@ -1,7 +1,5 @@
 
 
-
-
 Tidal is made for generating patterns, but doesn’t itself make any sound.  
 Tidal will by default send messages to SuperDirt in order to trigger sounds.  
 
@@ -79,4 +77,156 @@ https://www.youtube.com/watch?v=Ff7X5JFyxK4
 vst plugins in supercollider  
 found this accidentally https://git.iem.at/pd/vstplugin  
 
+Here’s the source: https://git.iem.at/pd/vstplugin/tree/develop 4
+Windows binaries (64 bit): https://drive.google.com/open?id=15rxPZLPLdIfQU6nokcQu2GrDBxW_ld9n 3
+macOS binaries: https://drive.google.com/open?id=1U7r5NmHu30sk-hnFYKTt23V1TeRqt_so 
+
+https://github.com/supercollider/sc3-plugins
+
+VstPluginController.schelp
+VstPlugin.scx
+VstPlugin.schelp
+VstPlugin.sc
+
+
+Here is an example with MDA ePiano VST on Mac OS X.
+
+VstPlugin.makeSynthDef.add;
+
+~vst = VstPlugin.new([\nin, 0, \nout, 2, \out, 0, \replace, 0], s, addAction: \addToHead);
+
+~vst.open("/Library/Audio/Plug-Ins/VST/mda ePiano.vst", info: true);
+
+
+
+(
+
+Event.addEventType(\vstPlugin, { |server|
+
+	var notes = [
+
+		~midinote.value,  // 0
+
+		~ctranspose.value,  // 1
+
+		~velocity.value, // 2
+
+		~sustain.value, // 3
+
+		~lag.value, // 4
+
+		~timingOffset.value, //5
+
+		~instrument, // 6
+
+		~midiChannel.value, // 7
+
+	].flop;
+
+	var timeNoteOn, timeNoteOff;
+
+
+
+	notes.do { |note|
+
+		// sustain and timingOffset are in beats, lag is in seconds
+
+		timeNoteOn = (thisThread.clock.tempo.reciprocal*note[5])+note[4]+server.latency;
+
+		timeNoteOff = (thisThread.clock.tempo.reciprocal*(note[3]+note[5]))+note[4]+server.latency;
+
+
+
+		SystemClock.sched(timeNoteOn, {
+
+			note[6].midiNoteOn(chan: note[7] ? 0, note: (note[0]+note[1]).asInteger, veloc: note[2].asInteger.clip(0,127));
+
+		});
+
+		SystemClock.sched(timeNoteOff, {
+
+			note[6].midiNoteOff(chan: note[7] ? 0, note: (note[0]+note[1]).asInteger, veloc: note[2].asInteger.clip(0,127));
+
+		});
+
+	}
+
+});
+
+)
+
+
+
+(
+
+Pbind(*[
+
+	type: \vstPlugin,
+
+	instrument: ~vst,
+
+	dur: 4,
+
+	degree: [0, 4],
+
+	velocity: 64
+
+]).play;
+
+)
+
+
+
+// straight timing
+
+(
+
+Pbind(*[
+
+	type: \vstPlugin,
+
+	instrument: ~vst,
+
+	legato: Pgauss(0.2,0.05,inf),
+
+	dur: 0.2,
+
+	degree: [2,5,12],
+
+	ctranspose: Pseq([0,0,0,0,4,4,4,4,5,5,5,5],inf),
+
+	velocity: Pgauss(64,10,inf),
+
+]).play;
+
+)
+
+
+
+// loose timing
+
+(
+
+Pbind(*[
+
+	type: \vstPlugin,
+
+	instrument: ~vst,
+
+	legato: 0.1,
+
+	dur: 0.2,
+
+	midinote: [66, 69, 74],
+
+	lag: Pwhite(-0.05!3, 0.05)
+
+]).play;
+
+)
+
+VstPluginController.schelp
+VstPlugin.scx
+VstPlugin.schelp
+VstPlugin.sc
 
