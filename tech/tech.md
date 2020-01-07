@@ -62,6 +62,15 @@ git reset --hard e3d37c5
 > $ git log --pretty="%h - %s" --author=gitster --since="2018-04-01" --before="2018-05-01" --no-merges -- t/  
 
 
+## vi 
+:$  or  G   跳到文件尾  
+:0  or  gg 跳到文件首  
+A  跳到行尾，并进入后插模式    
+I  跳到行首，并进入前插模式    
+u  撤销上次更改   
+dd 删除当前行  
+
+
 ## overleaf  LaTex  
 
 使用自定义包  
