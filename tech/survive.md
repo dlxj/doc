@@ -133,6 +133,13 @@ PATH="${HOME}/usr/bin:${PATH}"
 export PATH  
 **~/.bash_profile  每次开shell 都执行**  
 
+**Mac 内录**  
+> Soundflower：https://github.com/mattingalls/Soundflower/releases  
+https://www.jianshu.com/p/db035dad616a  
+
+
+
+
 
 http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.html  
 
