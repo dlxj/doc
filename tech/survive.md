@@ -127,6 +127,12 @@ https://www.**overleaf**.com **LaTex qq email login**
 make install  
 link xxx /usr/bin  
 
+**bashrc 下次就不生效了**  
+> vi ~/**.bash_profile**    
+PATH="${HOME}/usr/bin:${PATH}"  
+export PATH  
+**~/.bash_profile  每次开shell 都执行**  
+
 
 http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.html  
 
