@@ -52,7 +52,7 @@ rsa公钥直接拿github的用，不生成了
 
 **回滚到上一次提交**    
 > git reflog    
-git reset --hard e3d37c5     
+git reset --hard  96afd0f      
 
 列出所有最近两周内的提交   
 > $ git log --since=2.weeks   
