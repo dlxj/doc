@@ -75,9 +75,14 @@ pacman -S wpa_supplicant networkmanager git
 
 ## 安装Bootloader
 > pacman -S os-prober    
-pacman -S grub  
-grub-install --target=i386-pc /dev/sda  
-grub-mkconfig -o /boot/grub/grub.cfg
+> pacman -S grub efibootmgr  
+> grub-install --target=i386-pc /dev/sda    
+>
+> > ```
+> > # grub-install --target=x86_64-efi --efi-directory=xxx --bootloader-id=GRUB
+> > ```
+>
+> grub-mkconfig -o /boot/grub/grub.cfg
 
 - 如果出错：
 /etc/lvm/lvm.conf这个文件，找到use_lvmetad = 1将1修改为0，保存，重新配置grub
@@ -98,6 +103,20 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 > exit  
 reboot
+
+
+
+**不知道为什么进grub 了**
+
+ls
+
+linux /boot/vmlinuz-4.8.0-36-generic ro text root=/dev/sda2    
+
+initrd /boot/initrd.img-4.8.0-36-generic  
+
+boot  
+
+
 
 ## 修改控制台字体大小
 
