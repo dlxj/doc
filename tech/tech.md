@@ -186,9 +186,7 @@ NLP
 
 **对付MacOS catalina 只读文件保护**  
 - **tidcal haskell 音乐编程**    
-- **安装ghc 8.65  cabal 2.4.1  tidcalcycles**   
-- **vst 免费音源插件** for  **SupperCollider**    
-- https://git.iem.at/pd/vstplugin  
+- **安装ghc 8.6.5  cabal 2.4.1  tidcalcycles** 
 - csrutil status  
 - **sudo mount -uw /**  
 
@@ -196,7 +194,21 @@ NLP
 **csrutil disable**  
 **vi ~/.bashrc**  
 **export PATH=/Users/vvw/.cabal/bin:$PATH**  
-**source ~/.bashrc**  
+**source ~/.bashrc**   
+./configure --prefix=/usr  
+make install  
+link xxx /usr/bin  
+
+**bashrc 下次就不生效了**  
+> vi ~/**.bash_profile**    
+PATH="${HOME}/usr/bin:${PATH}"  
+export PATH  
+**~/.bash_profile  每次开shell 都执行**  
+
+**Mac 内录**  
+> ShowU Audio Capture   
+ Soundflower：https://github.com/mattingalls/Soundflower/releases  
+https://www.jianshu.com/p/db035dad616a  
 
 
 

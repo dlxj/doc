@@ -134,7 +134,8 @@ export PATH
 **~/.bash_profile  每次开shell 都执行**  
 
 **Mac 内录**  
-> Soundflower：https://github.com/mattingalls/Soundflower/releases  
+> ShowU Audio Capture   
+ Soundflower：https://github.com/mattingalls/Soundflower/releases  
 https://www.jianshu.com/p/db035dad616a  
 
 
