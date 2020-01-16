@@ -1,0 +1,110 @@
+﻿
+-- 一个表有__index 的意思是希望自已作为别人的元表，为他提供索引服务
+
+--[[
+-- 具有元索引的元表才能找到东西
+local meta = {doo = 'you'}
+meta.__index = {you = 'do'}
+print (meta.doo, meta.you)  -- meta 没有元表，只有元索引，所以找不到东西
+setmetatable(meta, meta)    -- meta 现在有了元表，这个元表又有元索引，能找到东西
+print (meta.doo, meta.you)
+--]]
+
+----[[
+-- lua 实现类继承的原理
+-- 元表是唯一的，可以用比较元表的方法作为识别表身份的依据
+local m = {you = 'do'}; 
+m.__index = function(_, key) -- t.you时： _ = t, key = you
+              print(('元表的值为%s 的表，以key 值为%s 进行了一次索引操作'):format(tostring(getmetatable(_)), key)); 
+              return m[key] 
+            end  
+local meta = {doo = 'you'}; meta.__index = meta; setmetatable(meta, m);
+local t = {}; setmetatable(t, meta);
+print(t.doo)
+print(t.you)
+print(meta)
+--]]
+
+-- self 是一个语法糖提供的隐含参数，self 代表参数列表中没有显示写出来的第一个参数
+-- 在调用的时侯xx:yy() self 等于 xx; xx.yy(v,w) self 等于 v
+function EventListener:handleEvent(event) -- 第一个参数是self，第二个参数是event
+相当于EventListener.handleEvent = function (self, event) .. end 
+-- 注意：EventListener:handleEvent(event) 这里的self 是EventListener
+-- EventListener 的一个子类xx::handleEvent(event) 这里的self 是xx 而不是EventListener
+
+
+-- 所有的类的基类都是EventListener，new 方法只有一个，就是EventListener:new
+-- 所有形如 xx = yy:new{} 这样new 出来的对象都有一个性制质： xx 就是传给new 的那个表，xx 的元表是yy，yy的元索引__index 是yy
+ReaderUI = InputContainer:new{  
+                  InputContainer = WidgetContainer:new{  -- ui/widget/container.lua
+                                          WidgetContainer = Widget:new()
+                                                  Widget = EventListener:new()  -- ui/widget/base.lua
+                                                                  EventListener = {}
+                                                                  function EventListener:new(o)
+                                                                      local o = o or {}
+                                                                      setmetatable(o, self)
+                                                                      self.__index = self
+                                                                      if o.init then o:init() end
+                                                                      return o
+                                                                  end
+                                                                  
+                                                                
+showReaderUI(file, pass)  
+        reader = ReaderUI:new{  -- koreader/reader.lua 
+          dialog = readerwindow,
+          dimen = Screen:getSize(),
+          document = document,
+          password = pass
+        }
+        
+dict = ReaderDictionary:new{  -- ui/readerui.lua
+		dialog = self.dialog,
+		view = self[1],
+		ui = self,
+		document = self.document,
+	}
+  
+ReaderHighlight:onHoldRelease(arg, ges)  -- ui/reader/readerhighlight.lua
+                ReaderHighlight:lookup(selected_word)
+                        self.ui:handleEvent(Event:new("LookupWord", selected_word.word))
+                                ReaderDictionary:onLookupWord(word)
+                                    local std_out = io.popen("./sdcv -nj "..("%q"):format(word), "r")
+                                    local results_str = std_out:read("*all")
+                                    local ok, results = pcall(JSON.decode, JSON, results_str)
+                                    ReaderDictionary:showDict(results)
+                                            		UIManager:show(DictQuickLookup:new{
+                                                    ui = self.ui,
+                                                    dialog = self.dialog,
+                                                    results = results,  -- {{definition = "\n['teib(ә)l]  \n n.桌子,餐桌,工作台,平地层,石板,表格 adj.桌子的,台子的 vt.搁置,嵌合,制表", dict = "牛津简明英汉袖珍辞典", word = "table"}}
+                                                    dictionary = self.default_dictionary,  -- nil
+                                                    width = Screen:getWidth() - scaleByDPI(120),
+                                                    height = Screen:getHeight()*0.43,
+                                                })  
+                                              
+ --点击显示菜单，在这里尝试点击显示字典   
+function FileManagerMenu:onTapShowMenu()                                              
+	--self:onShowMenu()
+  self.dict = ReaderDictionary:new{}
+  self.dict.ui = self
+  self.dict:stardictLookup("on")
+	return true
+end
+--Event 是在widgets 间传递的消息，每个消息都有唯一的名字
+-- 构造函数
+function Event:new(name, ...) -- 至少需要一个参数name
+
+-- Widget 容器主动给子widget 传播消息
+-- Widget 容器遍历装在内部的所有widget，以一个具体的消息event 为参数，调用它们的消息处理函数handleEvent
+-- 一旦某个消息处理函数返回了true，就停止遍历。意思是“消息我已处理，不要在继续传播了”
+function WidgetContainer:propagateEvent(event)
+
+-- Widget 容器处理从外部收到的消息
+-- 先给子widget 传播消息，如果没有子widget 发出中止传播的信号(在消息处理函数中返回true)，那么Widget 容器就自已处理该消息
+function WidgetContainer:handleEvent(event)
+	Widget.handleEvent(self, event) -- 调用父类Widget 的消息处理函数(WidgetContainer 的父类是Widget，Widget 的父类是EventListener)
+		EventListener:handleEvent(event)  -- Widget 的消息处理函数是从EventListener 继承来的
+
+
+
+
+

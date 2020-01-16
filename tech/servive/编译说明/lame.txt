@@ -1,0 +1,54 @@
+
+lame for ubuntu
+
+mkdir -p /opt/host/lame
+./configure --prefix=/opt/host/lame --build=i686-linux --host=i686-linux \
+	 CC=gcc --enable-mp3x
+make && make install
+echo "export PATH=$PATH:/opt/host/lame/bin" >> /etc/profile
+. /etc/profile
+lame
+
+
+
+lame for k3
+./configure  --prefix=/opt/host/lame --build=arm-linux --host=i686-linux \
+	CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++
+
+
+mp3x for ubuntu
+id3.c util.c:
+	extern int errno; ¸Ä³É£º#include <errno.h>
+mkdir -p /opt/host/mp3x
+./configure --prefix=/opt/host/mp3x --build=i686-linux --host=i686-linux \
+	 CC=gcc
+
+./mp3x -vv -i -n -t  cabin.mp3
+
+
+
+mpg123 for ubuntu
+mkdir -p /opt/host/mpg123
+./configure --prefix=/opt/host/mpg123 --build=i686-linux --host=i686-linux \
+	CC=gcc \
+	--with-default-audio=alsa  CFLAGS="-static-libgcc -static-libstdc++" 
+
+
+mpg123 for k3
+mkdir -p /opt/usr/mpg123
+./configure --prefix=/opt/usr/mpg123 --build=arm-linux --host=i686-linux \
+	CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ \
+	--with-default-audio=alsa  --with-cpu=generic_nofpu --enable-modules=no \
+	CFLAGS="-static-libgcc -static-libstdc++ -I/usr/include -I/usr/include/alsa -L/usr/lib"
+
+
+--enable-static --disable-shared
+echo "export PATH=$PATH:/opt/host/mpg123/bin" >> /etc/profile
+. /etc/profile
+
+
+
+-I/root/koreader/koreader-base/luajit-2.0/src/ \
+  -L/opt/host/usr/lib -lasound -lpthread -lm -lrt -ldl
+
+--enable-static --disable-shared

@@ -1,0 +1,39 @@
+
+±‡“Îª∑æ≥
+ubuntu-8.10-desktop-i386.iso
+arm-2007q3-51-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
+
+alsa-lib-1.0.13 for k3
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc CXX=arm-none-linux-gnueabi-g++ --disable-python
+make clean && make && make install
+
+mpg123 for k3
+./configure --prefix=/opt/usr/mpg123  --target=arm-linux --host=i686-linux \
+CC=arm-none-linux-gnueabi-gcc \
+--with-default-audio=alsa  --with-cpu=arm_nofpu --enable-modules=no --with-module-suffix=.so \
+CFLAGS="-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+alsa-lib-1.0.13 for ubuntu
+./configure --prefix=/opt/host/usr --target=i686-linux --host=i686-linux CC=gcc CXX=g++ --disable-python
+make clean && make && make install
+
+mpg123 for codeblocks
+./configure --prefix=/opt/host/usr/mpg123  --target=i686-linux --host=i686-linux \
+CC=gcc CXX=g++ \
+--with-default-audio=alsa \
+CFLAGS="-g -I/opt/host/usr/include -I/opt/host/usr/include/alsa -L/opt/host/usr/lib -lasound \
+-Wl,-rpath=../libmpg123/.libs -Wl,-rpath=."
+
+check "this is a custom Makefile"
+Execution directory:	/root/mpg123-1.16.0
+output filename: 	src/.libs/mpg123
+Execution working dir:	src/.libs
+chance target to "all": $make -f $makefile all
+add mpg123.c to project, set a breakpoint then press debug button.
+
+NOTE: you have to add "-g" to generate debug information
+      "-rpath" indicated where libs directory it is when app running
+
+export LD_LIBRARY_PATH=./
+
+-Wl,-rpath=.
