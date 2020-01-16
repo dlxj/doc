@@ -7,7 +7,13 @@ sda1 512M的引导分区 dos 类型，分配空间的结束扇区输入 +512M
 sda2 分全部可用空间
 
 >fsdisk -l  
-fsdisk /dev/sda
+>fsdisk /dev/sda  
+>
+>p、打印分区表  
+>n、新建一个新分区  
+>d、删除一个分区  
+>q、退出不保存  
+>w、把分区写进分区表，保存并退出  
 
 ## 格式化
 >mkfs.fat -F32 /dev/sda1  
