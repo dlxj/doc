@@ -138,8 +138,8 @@ export PATH
  Soundflower：https://github.com/mattingalls/Soundflower/releases  
 https://www.jianshu.com/p/db035dad616a  
 
-
-
+pdf重排  
+- ./k2pdfopt -n 叶嘉莹说陶渊明饮酒及拟古诗.pdf -dev dx -p 1-8 -wrap+ -c -ws -0.001 -hy -o 叶0.pdf  
 
 
 http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.html  
