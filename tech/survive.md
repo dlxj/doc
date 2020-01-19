@@ -87,6 +87,7 @@ Euterpea  haskell muz
 【编曲/作曲】Nice Chord**好和弦**乐理教程  
 **music21**  mit miz lib     
 **Tidal haskell**  live coding music    
+**VSCode + Latex Workshop + TeX Live + Git + Sumatra PDF**  
 **vst 免费音源插件** for  **SupperCollider**    
 https://git.iem.at/pd/vstplugin   
 《**the SupperCollider book**》   
@@ -140,6 +141,7 @@ https://www.jianshu.com/p/db035dad616a
 
 pdf重排  
 - ./k2pdfopt -n 叶嘉莹说陶渊明饮酒及拟古诗.pdf -dev dx -p 1-8 -wrap+ -c -ws -0.001 -hy -o 叶0.pdf  
+
 
 
 http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.html  

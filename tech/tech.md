@@ -143,6 +143,7 @@ NLP
 - **feem 离线热点文件传输** feem.io  
 - Google Colab 在线python 编辑器，免费GPU  
 - notion 云笔记  
+- VSCode + Latex Workshop + TeX Live + Git + Sumatra PDF  
 - **纯纯写作** 永不丢失的笔记  
 - **sublime text**  写代码    
 - typora+坚果云 = 个人云笔记   
