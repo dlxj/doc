@@ -90,6 +90,7 @@ Euterpea  haskell muz
 **VSCode + Latex Workshop + TeX Live + Git + Sumatra PDF**  
 **vst 免费音源插件** for  **SupperCollider**    
 https://git.iem.at/pd/vstplugin   
+https://midivst.com  音源下载  
 《**the SupperCollider book**》   
 《**Computer Music using SuperCollider and Logic Pro**》  
 **SuperCollider**: 前戏  **中文笔记**  
