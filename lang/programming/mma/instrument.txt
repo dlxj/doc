@@ -4,12 +4,43 @@ EntityValue["MusicalInstrument", "Entities"]
 (*
 Xiao 箫 
 Harmonica 口琴 
-Violin  小提琴  
+Violin  小提琴 
+Bass 大提琴 
 AudioPitchShift 变调  
 AudioTimeStretch 变速
 
+音符
+SoundNote 
+
 单音  
 Sound[SoundNote["G", 1, "Harmonica"]]
+
+第一个音符0秒开始0.3秒结束
+第二个音符0.3秒开始1秒结束
+Sound[{SoundNote["C", {0, 0.3}, "Piano"], SoundNote["G", {0.3, 1}, "Piano"]}] // EmitSound  (*开始时间，结束时间*)
+
+音量(强拍弱拍)  
+Sound[Table[SoundNote["C", .2, SoundVolume -> v], {v, 0, 1, 0.1}]]    
+四二拍：强、弱  
+四四拍：强、弱、次强、弱  
+四三拍：强、弱、弱  
+
+音符时值1拍和4拍  
+Sound[{SoundNote["G"], SoundNote["G"], SoundNote["G"], SoundNote["Eb", 4]}, 1.5]
+
+tempo 速度  
+“tempo”是意大利语的时间，源于拉丁语的“tempus”
+BPM 每分钟多少拍
+这表示一个指定的音符，例如四分音符在一分钟内出现的次数
+=56，这个记号告诉你，每一分钟唱56个4分音符，就是说明，以四分音符为一拍，每分钟唱56拍，再比如：
+音乐速度的表示有两种，一种是用文字来表示的，比如“快速”、“中速”、“慢速”、“稍快”等等，还有一种是用音乐术语来表示的，这些音乐术语都是意大利语，目前国际上多采用这种标记，比如：Andante（慢板）、Allegro（快板）、Presto（急板）、Pill mosso（稍快）等等。再准确的标志就是前面所说的，标明一分钟里唱多少个几分音符
+
+MIDI  
+sn=Import["ExampleData/scaleprogression.mid","SoundNotes"];
+Take[sn[[1]],10] (*查看第一小节的10个音符？*)
+
+替换音器  
+Sound[sn /. {"Harp" -> "Organ"}]
 
 导入 MIDI 文件，并查看前三个 SoundNote，最后以 120 s 的总时长演奏 MIDI 乐曲。
 sn = Import[Directory[] <> "\WolframAudio\wtk1-prelude1.mid"];
@@ -19,10 +50,6 @@ Sound[sn, 120]
 
 乐器的情报  
 Entity["MusicalInstrument", "Xiao"]["Dataset"]  （* Clef 谱号  treble 高音；三重的；三倍的 *) 
-
-  
-
-
 
 
 https://reference.wolfram.com/language/ref/entity/MusicalInstrument.html
@@ -243,5 +270,10 @@ https://zhuanlan.zhihu.com/p/33511796
 
 2016 年夏天， Wolfram 公司似乎意识到“玩家们”对音频信号处理方面的需求日益增长，在新推出的 11.0 版 Mathematica 中引入了 Audio 对象的概念，并加入了一系列以“Audio”为开头命名的音频处理函数。当时，我看到了 MMA 在音频方面有巨大的“可玩性”，于是开始研究如何利用这些功能制作电子音乐。一开始，我主要用表示 MIDI 音符的 SoundNote 函数结合变调函数 AudioPitchShift 和变速函数 AudioTimeStretch 做了一些类似鬼畜的东西。后来我觉得这些都没啥意思，要玩就玩个大的、有技术含量的（歌声合成引擎），在 2017 年 7月我写下了这篇回答：
 
-
+SoundNote[{"C","E", "G"}, 0.5, SoundVolume -> 0.1]//Sound  // EmitSound
+CMajor = Table[SoundNote[i], {i, 0, 11}]
+RandomChoice[CMajor, 20]// Sound
+pitch={"C3","D3","E3","F3","G3","A3","B3","C4"};
+tempo={.5,1,.5,1,.3,.2,.1,.1};
+Sound[SoundNote[#,#2,"Piano"]&@@@Transpose@{pitch,tempo}]
 
