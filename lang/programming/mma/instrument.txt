@@ -7,7 +7,13 @@ Harmonica 口琴
 Violin  小提琴 
 Bass 大提琴 
 AudioPitchShift 变调  
-AudioTimeStretch 变速
+AudioTimeStretch 变速  
+Best.service.Chris.Hein.Chromatic.Harmonica真不错  
+
+15 蓝调口琴 Bigga Giggas Harmonica Essentials
+Bigga Giggas Harmonica Essentials [GIGA ]
+GIGA Bigga Giggas Harmonica Essentials.zip (411.61 MB)
+ed2k://|file|GIGA Bigga Giggas Harmonica Essentials.zip|431604581|977DC7FAA6F5B4E9D00B4A071C2EFF4C|/  
 
 音符
 SoundNote 
@@ -35,6 +41,11 @@ BPM 每分钟多少拍
 =56，这个记号告诉你，每一分钟唱56个4分音符，就是说明，以四分音符为一拍，每分钟唱56拍，再比如：
 音乐速度的表示有两种，一种是用文字来表示的，比如“快速”、“中速”、“慢速”、“稍快”等等，还有一种是用音乐术语来表示的，这些音乐术语都是意大利语，目前国际上多采用这种标记，比如：Andante（慢板）、Allegro（快板）、Presto（急板）、Pill mosso（稍快）等等。再准确的标志就是前面所说的，标明一分钟里唱多少个几分音符
 
+
+设置目录读取文件并执行  
+SetDirectory@NotebookDirectory[];
+Get@FileNameJoin[{ParentDirectory[], "std.wl"}]；
+
 MIDI  
 sn=Import["ExampleData/scaleprogression.mid","SoundNotes"];
 Take[sn[[1]],10] (*查看第一小节的10个音符？*)
@@ -42,7 +53,7 @@ Take[sn[[1]],10] (*查看第一小节的10个音符？*)
 替换音器  
 Sound[sn /. {"Harp" -> "Organ"}]
 
-导入 MIDI 文件，并查看前三个 SoundNote，最后以 120 s 的总时长演奏 MIDI 乐曲。
+导入 MIDI 文件，并查看前三个 SoundNote，最后以 120 s 的总时长演奏 MIDI 乐曲
 sn = Import[Directory[] <> "\WolframAudio\wtk1-prelude1.mid"];
 sn[[1]][[1 ;; 3]]
 Sound[sn, 120]
@@ -53,6 +64,10 @@ Entity["MusicalInstrument", "Xiao"]["Dataset"]  （* Clef 谱号  treble 高音�
 
 
 https://reference.wolfram.com/language/ref/entity/MusicalInstrument.html
+
+
+在高音谱表（G谱表）中，下加一线永远对应（取决于调号）中央C#，C或Cb（也就是B）在低音谱表（F谱表）中，上加一线永远对应（取决于调号）中央C#，C或Cb（也就是B）在中音谱表（C谱表）中，第三线永远对应（取决于调号）中央C#，C或Cb（也就是B）
+有一些乐器是移调的（比如说单簧管，小号）对于这些约起来说，中央C其实是别的音。单簧管小号的中央C实际发音就是Bb。
 
 
 查找只有两种声音的乐器：
