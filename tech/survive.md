@@ -69,13 +69,14 @@
 > sibelius  
 > https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
 > Cubase   
-> **卡拉乐团**   **线上合奏**    
+> **卡拉乐团**   
 > http://www.karasolo.com  cegbafd  siluplsy@gmail.com   
->
 > qqemail  cegfdb  vw123
 > FL Mobile  
 > **feem 离线热点文件传输** feem.io  
-> **flud** **transmission**  bt下载  
+Deluge windows  
+**Transmission** linux osx  
+**flud**  ADM android  
 > 洞箫入门半个老师    
 > Euterpea  haskell muz   
 > 【编曲/作曲】Nice Chord**好和弦**乐理教程  
