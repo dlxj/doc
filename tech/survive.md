@@ -65,48 +65,50 @@
 
 **音乐**  
 > **logic x pro**   
-mathematica  
-sibelius  
-https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
-Cubase   
-**卡拉乐团**   **线上合奏**    
-http://www.karasolo.com  qqemail  cegfdb  vw123
-FL Mobile  
-**feem 离线热点文件传输** feem.io  
-**flud** **transmission**  bt下载  
-洞箫入门半个老师    
-Euterpea  haskell muz   
-【编曲/作曲】Nice Chord**好和弦**乐理教程  
-**吴奇音乐 Logic Pro X 全面出击**    
-**Quicksilver** osx  lauch  
-https://github.com/quicksilver/Quicksilver  
-**music21**  mit miz lib     
-**Tidal haskell**  live coding music    
-**VSCode + Latex Workshop + TeX Live + Git + Sumatra PDF**  
-**vst 免费音源插件** for  **SupperCollider**    
-https://git.iem.at/pd/vstplugin   
-https://midivst.com  音源下载  
-《**the SupperCollider book**》   
-《**Computer Music using SuperCollider and Logic Pro**》  
-**SuperCollider**: 前戏  **中文笔记**  
-http://www.bruceboding.org/sandbox/supercollider-0  
-当当云阅读  写歌秘籍：歌词写作基础教程  
-https://www.jita5.cn  吉他层很多书  
-https://masuit.com/ 懒得勤快互联网分享 多软件  
-https://yun.naodai.org/Software/  多软件  
-**bilibili** 15726712xxx  
-**Mathematica** 激活指南  
-https://tiebamma.github.io/InstallTutorial/    
-**vvw dlxj github cegbdfa gitee**  
-**Telegram** 1572671xxxx  **facetheworld** 
-**https://ftw.jzfj.shop/**   GFW  
-https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com  
-https://www.**overleaf**.com **LaTex qq email login** 
-音乐术语对照词典    
-外国音乐表演用语词典  
-**和弦进行秘笈・活用与演奏-浦田太宏**  
-**流行歌词写作教程**·尤静波著  
-【田馥甄】强势还原《**小幸运**》台式小清新治好了我上周的感冒 MIDI工程演示  **logic x 工程**   
+> mathematica  
+> sibelius  
+> https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
+> Cubase   
+> **卡拉乐团**   **线上合奏**    
+> http://www.karasolo.com  cegbafd  siluplsy@gmail.com   
+>
+> qqemail  cegfdb  vw123
+> FL Mobile  
+> **feem 离线热点文件传输** feem.io  
+> **flud** **transmission**  bt下载  
+> 洞箫入门半个老师    
+> Euterpea  haskell muz   
+> 【编曲/作曲】Nice Chord**好和弦**乐理教程  
+> **吴奇音乐 Logic Pro X 全面出击**    
+> **Quicksilver** osx  lauch  
+> https://github.com/quicksilver/Quicksilver  
+> **music21**  mit miz lib     
+> **Tidal haskell**  live coding music    
+> **VSCode + Latex Workshop + TeX Live + Git + Sumatra PDF**  
+> **vst 免费音源插件** for  **SupperCollider**    
+> https://git.iem.at/pd/vstplugin   
+> https://midivst.com  音源下载  
+> 《**the SupperCollider book**》   
+> 《**Computer Music using SuperCollider and Logic Pro**》  
+> **SuperCollider**: 前戏  **中文笔记**  
+> http://www.bruceboding.org/sandbox/supercollider-0  
+> 当当云阅读  写歌秘籍：歌词写作基础教程  
+> https://www.jita5.cn  吉他层很多书  
+> https://masuit.com/ 懒得勤快互联网分享 多软件  
+> https://yun.naodai.org/Software/  多软件  
+> **bilibili** 15726712xxx  
+> **Mathematica** 激活指南  
+> https://tiebamma.github.io/InstallTutorial/    
+> **vvw dlxj github cegbdfa gitee**  
+> **Telegram** 1572671xxxx  **facetheworld** 
+> **https://ftw.jzfj.shop/**   GFW  
+> https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com  
+> https://www.**overleaf**.com **LaTex qq email login** 
+> 音乐术语对照词典    
+> 外国音乐表演用语词典  
+> **和弦进行秘笈・活用与演奏-浦田太宏**  
+> **流行歌词写作教程**·尤静波著  
+> 【田馥甄】强势还原《**小幸运**》台式小清新治好了我上周的感冒 MIDI工程演示  **logic x 工程**   
 
 
 **对付MacOS catalina 只读文件保护**  
