@@ -62,6 +62,16 @@ git reset --hard  451880c
 > $ git log --pretty="%h - %s" --author=gitster --since="2018-04-01" --before="2018-05-01" --no-merges -- t/  
 
 
+**解决冲突**  
+> 冲突标记  
+<<<<<<<与=======之间是我的修改  
+=======与>>>>>>>之间是别人的修改    
+**强制提交**  
+git push origin master -f     
+**完全覆盖本地**    
+git checkout .  
+git pull  
+
 ## vi 
 :$  or  G   跳到文件尾  
 :0  or  gg 跳到文件首  
