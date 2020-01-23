@@ -166,7 +166,8 @@ NLP
 - **博看书苑 apk  机构号：szghdzsw 密码:83393023**   
 - **异次元  在线漫画**    
 - **Comic Screen** ・perfect viewer **看本地漫画**  
-- flud bt下载  
+- **flud** bt下载  
+- **transmission**  bt下载  
 - Bochs Limboemu APQ QEMU 安卓上安装Linux虚拟机  
 - yandex  **支持插件的浏览器**  
 - virmach 便宜的vps  

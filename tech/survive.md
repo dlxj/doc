@@ -21,20 +21,6 @@
 - 帮这么可爱的女孩子我也很赚的嘛  
 - 真想谢我请吃饭啊  
 
-最多说两句，如果你不回复我最多说三句  
-人少偏僻的地方  
-
-
-**你还记不记得你从来不肯和我去河边**    
-
-**距离靠太近你会有压力对吧？**   
-**你觉得我是草食系所以很安全，很放心对吧？**    
-**为什么你很少和我分享你的生活，你的喜好，你身边发生的事？**     
-
-
-你对我很放心，  
-是因为觉得我是草食系，    
-不会发起进攻？    
 
 第一次靠得那么近  
 除了看电影，有哪次你曾坐在我的旁边？  
@@ -79,9 +65,13 @@
 
 **音乐**  
 > **logic x pro**   
+mathematica  
+sibelius  
+https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
 Cubase   
 FL Mobile  
 **feem 离线热点文件传输** feem.io  
+**flud** **transmission**  bt下载  
 洞箫入门半个老师    
 Euterpea  haskell muz   
 【编曲/作曲】Nice Chord**好和弦**乐理教程  
@@ -104,7 +94,7 @@ https://yun.naodai.org/Software/  多软件
 https://tiebamma.github.io/InstallTutorial/    
 **vvw dlxj github cegbdfa gitee**  
 **Telegram** 1572671xxxx  **facetheworld** 
-**https://ftw.jzfj.shop/**   
+**https://ftw.jzfj.shop/**   GFW  
 https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com  
 https://www.**overleaf**.com **LaTex qq email login** 
 音乐术语对照词典    
