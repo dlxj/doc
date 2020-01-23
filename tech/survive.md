@@ -69,6 +69,8 @@ mathematica
 sibelius  
 https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
 Cubase   
+**卡拉乐团**   **线上合奏**    
+http://www.karasolo.com  qqemail  cegfdb  vw123
 FL Mobile  
 **feem 离线热点文件传输** feem.io  
 **flud** **transmission**  bt下载  
