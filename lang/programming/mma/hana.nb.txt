@@ -1,0 +1,17 @@
+SetDirectory@NotebookDirectory[];
+sn=Import["hana.mid","SoundNotes"];
+Take[sn[[1]]] (*查看第一小节的10个音符？*)
+
+sn
+sn=sn/.{"Piano"->"Harmonica"}
+Sound@sn(*//EmitSound*)
+(*
+Xiao 箫
+Harmonica 口琴
+Violin 小提琴
+Bass 大提琴
+AudioPitchShift 变调
+AudioTimeStretch 变速
+Sound[SoundNote["G",1,"Harmonica"]]//EmitSoun
+EntityValue["MusicalInstrument","Entities"]
+*)
