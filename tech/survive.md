@@ -69,13 +69,15 @@
 > sibelius  
 > https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
 > Cubase   
-> **卡拉乐团**   **线上合奏**    
+> **卡拉乐团**   
 > http://www.karasolo.com  cegbafd  siluplsy@gmail.com   
->
 > qqemail  cegfdb  vw123
 > FL Mobile  
 > **feem 离线热点文件传输** feem.io  
-> **flud** **transmission**  bt下载  
+https://pt.eastgame.org  TLF  aiiniyo  vN15    123468935@qq.com  
+Deluge windows  
+**Transmission** linux osx  
+**flud**  ADM android  
 > 洞箫入门半个老师    
 > Euterpea  haskell muz   
 > 【编曲/作曲】Nice Chord**好和弦**乐理教程  
@@ -102,7 +104,6 @@
 > **vvw dlxj github cegbdfa gitee**  
 > **Telegram** 1572671xxxx  **facetheworld** 
 > **https://ftw.jzfj.shop/**   GFW  
-> https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com  
 > https://www.**overleaf**.com **LaTex qq email login** 
 > 音乐术语对照词典    
 > 外国音乐表演用语词典  
