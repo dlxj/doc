@@ -292,3 +292,141 @@ pitch={"C3","D3","E3","F3","G3","A3","B3","C4"};
 tempo={.5,1,.5,1,.3,.2,.1,.1};
 Sound[SoundNote[#,#2,"Piano"]&@@@Transpose@{pitch,tempo}]
 
+
+
+In[12]:= <<GeneralUtilities`
+In[15]:= GeneralUtilities`PrintDefinitions[URLShorten]
+Out[15]= NotebookObject[System`URLShorten]
+
+优化  
+打开调试  
+在代码后面加上//RuntimeTools`Profile
+
+
+
+NetModel相关的配置文件是在metadata里的put.wl文件，
+
+SystemOpen[$LocalBase]
+
+names=NetModel[]; NetModel/@names[]; 一键下载所有的模型
+
+ResourceObject[names[[1]]]["Properties"] ==  NetModel[names[[1]], "Properties
+
+
+NetModel[names[[1]], "Properties"]
+
+ResourceRemove@ResourceObject[modelname] NetModel[modelName] 
+
+考虑到麦酱的计算力有限（相比于C语言来说），要做歌声合成的话，基于流的音频实时处理是一件几乎不可能完成的事情
+
+录音  
+AudioCapture 
+
+Needs["NETLink`"];
+LoadNETAssembly["System.Speech"];
+Options[VoiceData] = {"Rate" -> 0, "Volume" -> 100, 
+   "SampleRate" -> 44100, "SampleDepth" -> 16, "Channels" -> 1};
+VoiceData[string_, OptionsPattern[]] :=
+ Module[{synth, format, tmpfile, data},
+  synth = NETNew["System.Speech.Synthesis.SpeechSynthesizer"];
+  synth@Rate = OptionValue["Rate"];
+  synth@Volume = OptionValue["Volume"];
+  format = 
+   NETNew["System.Speech.AudioFormat.SpeechAudioFormatInfo", 
+    OptionValue["SampleRate"], OptionValue["SampleDepth"], 
+    OptionValue["Channels"]];
+  tmpfile = Close@OpenWrite[] <> ".wav";
+  synth@SetOutputToWaveFile[tmpfile, format];
+  synth@Speak[ToString[string]];
+  synth@Dispose[];
+  data = First@AudioData@AudioTrim[Import[tmpfile]];
+  DeleteFile[tmpfile];
+  SampledSoundList[data, OptionValue["SampleRate"]]
+  ]
+
+ssl = VoiceData["你好", "Rate" -> 0, "Volume" -> 100, 
+  "SampleRate" -> 44100]
+
+在 MMA 中，SampledSoundList 对象可以被 Sound 函数作用，生成音频播放界面：
+
+Sound[ssl]
+
+在物理中，音调对应的是频率，更准确的说，是基本频率，简称基频 (fundamental frequency)。在 Vocaloid 中，这便是 PIT 参数。
+
+
+Options[FBase] = {"Range" -> {0.4, 110, 440}, 
+   "Partition" -> {1024/44100, 512/44100, HannWindow}};
+FBase[ssl_, OptionsPattern[]] := 
+ AudioLocalMeasurements[ssl, 
+  Flatten[{"FundamentalFrequency", OptionValue["Range"]}], 
+  PartitionGranularity -> OptionValue["Partition"], 
+  MissingDataMethod -> {"Interpolation", InterpolationOrder -> 1}]
+
+
+其中 "Range" 选项的三个参数分别依次对应上述的 t , minfreq 和 maxfreq. "Partition" 参数表示对音频的划分和加窗
+
+fbase=FBase[ssl]
+运行后变量 fbase 被赋值一个 TimeSeries 对象：
+
+在 MMA 中，TimeSeries 对象可以被 ListPlot 或 ListLinePlot 等函数直接作用，直接生成图像，这便是基频 (Hz) - 时间 (s) 曲线（Vocaloid里的PIT曲线）
+
+ListLinePlot[fbase]
+
+
+从上图可以明显看出一个双“3声”结构，跟汉语拼音长得是一模一样。注意到“你”字“3声”开头的下降段非常短促乃至非常接近“2声”，这是汉语口语的连读习惯。
+
+
+这便是语音的正弦模型。给定 t 时刻，关于 f 的函数 G(t, f) 称为该时刻的共振曲线。
+
+
+在 MMA 中，并没有测量共振曲线相关的函数，我们只能自己构造了。
+
+WindowList[windowfunction_, n_] :=
+  WindowList[windowfunction, n] = 
+   Array[windowfunction, n, {-0.5, 0.5}];
+LSFKernel[scanf_, n_, samplerate_] :=
+  LSFKernel[scanf, n, samplerate] = 
+   LeastSquaresFilterKernel[{"Bandpass", (2 \[Pi] scanf)/samplerate}, 
+    n];
+Formant[ssl_, fbase_, nwidth_: 2049, nshift_: 512, 
+   windowfunction_: HannWindow, fwidth_: 220, fshift_: 20, 
+   flimit_: 8000] :=
+  Module[{datalist, wdatalist, amplist, tlist, LineFit, func},
+   LineFit = Interpolation[#, InterpolationOrder -> 1] &;
+   datalist = Partition[ssl[[1]], nwidth, nshift, {-nwidth, 1}, 0];
+   wdatalist = WindowList[windowfunction, nwidth]*# & /@ datalist;
+   amplist = 
+    MapThread[
+     Sqrt[2/nwidth*Total[#1^2]/Total[#2^2]] &, {datalist, wdatalist}];
+   tlist = (nshift (Range@Length[datalist] - 1) + nwidth/2)/ssl[[2]];
+   func = LineFit@MapThread[{#1, LineFit@
+         Table[{f, #2 Total[
+             ListConvolve[
+              LSFKernel[
+               If[f == 0, {0, fwidth/2}, 
+                fshift*Floor[(f - fwidth/2)/fshift + 1/2] + {0, 
+                  fwidth}], nwidth, ssl[[2]]], #3, 
+              Floor[(nwidth + 1)/2], 0]^2]^0.5}, {f, 0, flimit, 
+           Quiet@fbase[#1]}]} &, {tlist, amplist, wdatalist}];
+   Quiet[Expand[func[#1]][#2] /. (a_*func1_ + b_*func2_)[#2] :> 
+       a*func1[#2] + b*func2[#2]] &];
+
+
+比如我们将“你好”的 ssl 和 fbase 作为输入：
+
+G = Formant[ssl, fbase];
+
+
+然后我们可以创建个动态来观察共振曲线随时间的变化情况：
+
+Manipulate[
+ Plot[20 Log10@G[t, f], {f, 0, 8000}, 
+  PlotRange -> {{0, 8000}, {-100, 0}}], {t, 0, 0.57}]
+为了更好的观察，建议采用的分贝坐标来观察曲线的演化，即做一个 20*Log10 操作，这里就不上传 GIF 结果了，只给一个截图作为举例：
+
+上图取自“你好”音频的第 0.423 秒，此时 Cortana 正在发“ao”这个元音，可以看出有3个共振峰，分别在 1000 Hz, 4000 Hz 和 7000 Hz 左右。
+
+
+
+
+
