@@ -222,6 +222,10 @@ export PATH
  Soundflower：https://github.com/mattingalls/Soundflower/releases  
 https://www.jianshu.com/p/db035dad616a  
 
+**Mac 软件打不开**    
+sudo spctl --master-disable  
+sudo codesign --force --deep --sign - /Applications/CleanMyMac\ X.app  
+
 
 
 piano  
@@ -251,7 +255,10 @@ Mathematica 激活指南
 **vvw dlxj github cegbdfa gitee**  
 **Telegram** 1572671xxxx  **facetheworld** 
 **https://ftw.jzfj.shop/**   
-https://pt.eastgame.org/  **TLF电影** aiiniyo  123468935@qq.com  
+https://pt.eastgame.org/  **TLF电影** aiiniyo  siluplsy@gmail.com  vN5   
+**Deluge** windows  
+**Transmission** linux osx  
+**flud**  android  
 音乐术语对照词典    
 外国音乐表演用语词典  
 **和弦进行秘笈・活用与演奏-浦田太宏**  
