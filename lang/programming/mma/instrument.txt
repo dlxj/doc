@@ -430,6 +430,37 @@ Manipulate[
 深度学习  
 深度学习入门：基于Python的理论与实现
 
+https://github.com/leela-zero/leela-zero
+
+icu4c is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides libicucore.dylib (but nothing else).
+
+If you need to have icu4c first in your PATH run:
+  echo 'export PATH="/usr/local/opt/icu4c/bin:$PATH"' >> ~/.bash_profile
+  echo 'export PATH="/usr/local/opt/icu4c/sbin:$PATH"' >> ~/.bash_profile
+
+For compilers to find icu4c you may need to set:
+  export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+  export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+
+vvws-MacBook-Air:leela-zero vvw$ brew install boost cmake zlib  --force
+Warning: boost 1.72.0 is already installed and up-to-date
+To reinstall 1.72.0, run `brew reinstall boost`
+Warning: cmake 3.16.2 is already installed, it's just not linked
+You can use `brew link cmake` to link this version.
+Warning: zlib 1.2.11 is already installed, it's just not linked
+You can use `brew link zlib` to link this version.
+
+
+
+
+
+
+
+
+
+
+
 
 
 f = Module[{index = {1, 1 + First@#}}, 

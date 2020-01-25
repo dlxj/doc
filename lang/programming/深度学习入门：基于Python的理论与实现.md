@@ -1,0 +1,202 @@
+**神经网络的出现是为了自动从数据中学习出感知机 A(perceptron)  的合适权重参数**
+
+
+
+**激活函数(activation function)**  
+
+- **将输入信号的总和转换为输出信号**
+
+
+
+**激活函数是连接感知机和神经网络的桥梁**
+
+- 一般而言，“朴素感知机”是指单层网络，指的是激活函数使用了阶跃函数的模型。“多层感知机”是指神经网络，即使用 sigmoid  函数(后述)等平滑的激活函数的多层网络。
+- 实际上，**如果将激活函数从阶跃函数换成其他函数，就可以进入神经网络的世界了**
+
+> 阶跃函数是指一旦输入超过阈值，就切换输出的函数。
+
+
+
+**sigmoid 函数**
+
+![image-20200125201250200](/Users/vvw/Library/Application Support/typora-user-images/image-20200125201250200.png)
+
+
+
+阶跃函数的实现
+
+![image-20200125201637070](/Users/vvw/Library/Application Support/typora-user-images/image-20200125201637070.png)
+
+![image-20200125201652884](/Users/vvw/Library/Application Support/typora-user-images/image-20200125201652884.png)
+
+array([-1., 1., 2.])  -> array([False, True, True], dtype=bool)  ->  array([0, 1, 1])
+
+
+
+观察图 3-8，首先注意到的是“平滑性”的不同。sigmoid 函数是一条平滑的曲线，输出随着输入发生连续性的变化。而阶跃函数以 0 为界，输出发生急剧性的变化。**sigmoid 函数的平滑性对神经网络的学习具有重要意义**
+
+
+
+![image-20200125211018034](/Users/vvw/Library/Application Support/typora-user-images/image-20200125211018034.png)
+
+
+
+另一个不同点是，相对于阶跃函数只能返回 0 或 1，sigmoid 函数可以返 回 0.731 . . .、0.880 . . . 等实数(这一点和刚才的平滑性有关)。也就是说，**感知机中神经元之间流动的是 0 或 1 的二元信号，而神经网络中流动的是连续的实数值信号**
+
+
+
+**ReLU 函数**
+
+
+
+在神经网络发展的历史上，sigmoid 函数很早就开始被使用了，**而最近则主要使用ReLU(Rectified Linear Unit)函数**。
+
+
+
+![image-20200125211614068](/Users/vvw/Library/Application Support/typora-user-images/image-20200125211614068.png)
+
+def relu(x):
+
+​    return np.maximum(0, x)
+
+
+
+**行的加权和，行是输入信号，列是加权信号**  
+
+![image-20200125212206160](/Users/vvw/Library/Application Support/typora-user-images/image-20200125212206160.png)
+
+
+
+**第一个矩形贡献行数，第二个矩阵贡献列数**
+
+![image-20200125212816118](/Users/vvw/Library/Application Support/typora-user-images/image-20200125212816118.png)
+
+
+
+**两个输入信号，三组加权信号**
+
+![image-20200125213248020](/Users/vvw/Library/Application Support/typora-user-images/image-20200125213248020.png)
+
+
+
+**权重的符号表示**
+
+![image-20200125213552727](/Users/vvw/Library/Application Support/typora-user-images/image-20200125213552727.png)
+
+
+
+
+
+![image-20200125213919866](/Users/vvw/Library/Application Support/typora-user-images/image-20200125213919866.png)
+
+![image-20200125214001054](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214001054.png)
+
+
+
+图 3-17 中增加了表示偏置的神经元“1”。请注意，偏置的右下角的索引号只有一个。这是因为前一层的偏置神经元(神经元“1”)只有一个
+
+
+
+![image-20200125214323723](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214323723.png)
+
+
+
+![image-20200125214500966](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214500966.png)
+
+
+
+![image-20200125214647245](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214647245.png)
+
+
+
+另外，图 3-20 中，**输出层的激活函数用 σ() 表示**，不同于**隐藏层的激活函数 h()**(**σ 读作 sigma**)
+
+
+
+### 输出层所用的激活函数，要根据求解问题的性质决定
+
+- **回归问题**可以使用**恒等函数**
+- **二元分类问题**可以使用 **sigmoid 函数**
+- **多元分类问题**可以使用 **softmax 函数**
+
+
+
+init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们**保存在字典变量 network 中**。这个字典变 量 n e t w o r k 中**保存了每一层所需的参数 (权重和偏 置)**。 f o r w a r d ( ) 函 数 中 则 封 装了将输入信号转换为输出信号的处理过程
+
+
+
+### 求解机器学习问题的步骤可以分为“学习”  和“推理”两个阶段。首 先，在学习阶段进行模型的学习，然后，在推理阶段，用学到的模型对未知的数据进行推理(分类)。如前所述，推理阶段一般会省略输出层的 softmax 函数。在输出层使用 softmax 函数是因为它和神经网络的学习有关系
+
+
+
+![image-20200125220201860](/Users/vvw/Library/Application Support/typora-user-images/image-20200125220201860.png)
+
+
+
+### 假设学习已经全部结束，我们使用学习到的参数，先实现神经网络的“推理处理”。这个推理处理也称为神经网络的前向传播(forward propagation)
+
+
+
+将图像的各个像 素值除以 255，使得数据的值在 0.0~1.0 的范围内。像这样把数据限定到某 个范围内的处理称为**正规化(normalization)**。此外，对神经网络的输入数据 进行某种既定的转换称为**预处理(pre-processing)**。这里，作为对输入图像的 一种预处理，我们进行了正规化
+
+
+
+预处理在神经网络(深度学习)中非常实用，其有效性已在提高识别 性能和学习的效率等众多实验中得到证明。在刚才的例子中，作为 一种预处理，我们将各个像素值除以 255，进行了简单的正规化。 实际上，很多预处理都会考虑到数据的整体分布。比如，**利用数据整体的均值或标准差，移动数据，使数据整体以 0 为中心分布**，或者进行正规化，**把数据的延展控制在一定范围内**。除此之外，还有 将数据整体的分布形状均匀化的方法，即**数据白化(whitening)**等
+
+
+
+### 观察矩阵计算中维度的变化是否正确
+
+![image-20200125221026681](/Users/vvw/Library/Application Support/typora-user-images/image-20200125221026681.png)
+
+
+
+**输入数据的集合称为批(batch)**。通过以批为单位进行推理处理，能够实现高速的运算
+
+
+
+
+
+
+
+理论上可以说 2 层感知机就能构建计算机。这是因为，已有研究证明， 2层感知机(严格地说是激活函数使用了非线性的sigmoid函数的感知机，具 体请参照下一章)可以表示任意函数。但是，使用2层感知机的构造，通过设定合适的权重来构建计算机是一件非常累人的事情。  
+
+
+
+**坏消息是，设定权重的工作**，即确定合适的、能符合预期的输 入与输出的权重，**现在还是由人工进行的**。上一章中，我们结合与门、或门 的真值表人工决定了合适的权重。
+
+
+
+**神经网络的出现就是为了解决刚才的坏消息。具体地讲，神经网络的一 个重要性质是它可以自动地从数据中学习到合适的权重参数**
+
+
+
+- 感知机是具有输入和输出的算法。给定一个输入后，将输出一个既定的值。
+
+- 感知机将权重和偏置设定为参数。
+- 使用感知机可以表示与门和或门等逻辑电路。
+- 异或门无法通过单层感知机来表示。
+- 使用2层感知机可以表示异或门。
+- 单层感知机只能表示线性空间，而多层感知机可以表示非线性空间。
+- 多层感知机(在理论上)可以表示计算机。
+
+
+
+刚才登场的**h(x)函数**会将**输入信号的总和转换为输出信号**，这种函数 一般称为**激活函数(activation function)**。如“激活”一词所示，激活函数的 作用在于决定如何来激活输入信号的总和
+
+
+
+**a = b + w1x1 + w2x2**   (3.4)  
+
+**y = h(a)**   (3.5)
+
+首先，式(3.4)计算加权输入信号和偏置的总和，记为 a。然后，式(3.5) 用h()函数将a转换为输出y。
+
+
+
+![image-20200125200236576](/Users/vvw/Library/Application Support/typora-user-images/image-20200125200236576.png)
+
+
+
+![image-20200125200541080](/Users/vvw/Library/Application Support/typora-user-images/image-20200125200541080.png)
+
