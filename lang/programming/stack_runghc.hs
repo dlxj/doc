@@ -1,3 +1,3 @@
 import Numeric.LinearAlgebra as LA
 
-putStrLn "Targets"
+main = putStrLn "Hello, World!"
