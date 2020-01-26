@@ -23,6 +23,8 @@ export PATH
 PATH="${HOME}/.local/bin:${PATH}"
 export PATH
 
+PATH="${HOME}/.cabal/bin:${PATH}"
+export PATH
 
 IHaskell notebook 指定内核    
 ipython3 kernelspec list    
