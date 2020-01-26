@@ -10,3 +10,15 @@ nyy  复制多行
 
 :noh  取消高亮  
 
+~/.bash_profile 每次shell 启动都会执行的文件，在次设置环境变量  
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+PATH="${HOME}/usr/bin:${PATH}"
+export PATH
+
+PATH="${HOME}/.local/bin:${PATH}"
+export PATH
