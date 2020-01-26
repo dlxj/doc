@@ -67,7 +67,13 @@
 > **logic x pro**   
 > mathematica  
 > sibelius  
-> https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/  
+> https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/   
+https://github.com/ripperhe/Bob osx 划词翻译   
+chrom 划词翻译  
+https://github.com/Selection-Translator/crx-selection-translate    
+讲得很清楚的深度学习《深度学习入门：基于Python的理论与实现》  
+高质量的haskell 井字棋  
+https://crypto.stanford.edu/~blynn/play/tictactoe.html   
 > Cubase   
 > **卡拉乐团**   
 > http://www.karasolo.com  cegbafd  siluplsy@gmail.com   
