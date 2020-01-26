@@ -73,7 +73,10 @@ chrom 划词翻译
 https://github.com/Selection-Translator/crx-selection-translate    
 讲得很清楚的深度学习《深度学习入门：基于Python的理论与实现》  
 高质量的haskell 井字棋  
-https://crypto.stanford.edu/~blynn/play/tictactoe.html   
+https://crypto.stanford.edu/~blynn/play/tictactoe.html  
+**haskell notebook** A Haskell kernel for IPython.  
+https://github.com/gibiansky/IHaskell  
+https://nbviewer.jupyter.org/  
 > Cubase   
 > **卡拉乐团**   
 > http://www.karasolo.com  cegbafd  siluplsy@gmail.com   
