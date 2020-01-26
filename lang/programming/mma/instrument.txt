@@ -427,6 +427,8 @@ Manipulate[
 上图取自“你好”音频的第 0.423 秒，此时 Cortana 正在发“ao”这个元音，可以看出有3个共振峰，分别在 1000 Hz, 4000 Hz 和 7000 Hz 左右。
 
 
+深度学习  
+深度学习入门：基于Python的理论与实现
 
 https://github.com/leela-zero/leela-zero
 
@@ -460,4 +462,30 @@ You can use `brew link zlib` to link this version.
 
 
 
+
+f = Module[{index = {1, 1 + First@#}}, 
+    AdjacencyGraph@
+     SparseArray[
+      Band[# &[index, index += #]] -> ConstantArray[1, #] & /@ 
+       Partition[#, 2, 1], {1, 1} Total@#]] &;
+
+f[{1, 2, 3, 4, 5}]
+
+SetProperty[
+   f[#], {VertexLabels -> Placed["Name", Center], 
+    GraphLayout -> {"MultipartiteEmbedding", "VertexPartition" -> #}, 
+    VertexSize -> Large, VertexLabelStyle -> 14}] &@{5, 10, 10, 1}
+通过设置一些属性，我们就可以画出下面的图（代码中的{5,10,10,1}表示第一层有5个节点，第二层有10个节点，第三层有10个节点，第四层有1个节点）：
+
+
+用Mma给吉他调音  
+https://lixuan.xyz/blog/2014-10-19/1043.html
+GIF图像文件格式-用Mathematica实现编码过程
+GIF图像文件格式-用于展示围棋谱  
+
+
+let x = [1..]
+let y = [2,4 ..]
+head (tail tail( (zip x y)))
+复制代码可以看到，x 与 y 分别是 1,2,3,4,5,6... 与 2,4,6,8... 的无限数组，而 zip 函数将其整合为一个新数组 (1,2),(2,4),(3,6),(4,8)... 
 
