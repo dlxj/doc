@@ -77,6 +77,12 @@ https://crypto.stanford.edu/~blynn/play/tictactoe.html
 **haskell notebook** A Haskell kernel for IPython.  
 https://github.com/gibiansky/IHaskell  
 https://nbviewer.jupyter.org/  
+Haskell 101: Installation, Expressions and Types
+https://mmhaskell.com/liftoff/install  
+Shareable Haskell with Jupyter  
+https://mmhaskell.com/blog/2019/3/4/shareable-haskell-with-jupyter  
+Gradient Descent Typeclasses in Haskell  
+http://andrew.gibiansky.com/blog/machine-learning/gradient-descent  
 > Cubase   
 > **卡拉乐团**   
 > http://www.karasolo.com  cegbafd  siluplsy@gmail.com   

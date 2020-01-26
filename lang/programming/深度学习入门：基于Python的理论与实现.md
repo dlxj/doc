@@ -200,3 +200,10 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 ![image-20200125200541080](/Users/vvw/Library/Application Support/typora-user-images/image-20200125200541080.png)
 
+
+
+
+
+
+
+![image-20200126095400660](/Users/vvw/Library/Application Support/typora-user-images/image-20200126095400660.png)
