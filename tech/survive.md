@@ -67,6 +67,7 @@
 > **logic x pro**   
 > mathematica  
 > sibelius  
+Synthesizer V Editor 虚拟戨姬  
 > https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/   
 https://github.com/ripperhe/Bob osx 划词翻译   
 chrom 划词翻译  
