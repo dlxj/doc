@@ -22,3 +22,13 @@ export PATH
 
 PATH="${HOME}/.local/bin:${PATH}"
 export PATH
+
+
+IHaskell notebook 指定内核    
+ipython3 kernelspec list    
+
+进去选Haskell 内核  
+jupyter notebook  
+
+
+
