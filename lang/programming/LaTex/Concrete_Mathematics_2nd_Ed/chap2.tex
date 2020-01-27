@@ -1,0 +1,3048 @@
+%Chapter 2 of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\refin bib
+\refin chap5
+
+\pageno=21
+\beginchapter 2 Sums
+
+"SUMS" ARE EVERYWHERE in mathematics, so we need basic tools to handle them.
+This chapter develops
+the notation and general techniques
+that make summation user-friendly.
+
+\beginsection 2.1 Notation
+
+In Chapter 1 we encountered the sum
+of the first~$n$ integers, which we wrote out as
+$1+2+3+\cdots+(n-1)+n$.
+The `$\,\cdots\,$' in such formulas
+tells us to complete the pattern established
+by the surrounding terms.
+Of course we have to watch out for sums like $1 + 7 + \cdots + 41.7$,
+which are meaningless without a mitigating context.
+On the other hand, the inclusion of terms like $3$ and $(n-1)$ was a
+bit of overkill; the pattern would presumably have been clear if we
+had written simply $1+2+\cdots+n$. Sometimes we might even be so bold as to write
+just $1+\cdots+n$.
+
+We'll be working with sums of the general form
+\begindisplay
+a_1 + a_2 + \cdots + a_n \,,
+\eqno\eqref|3dots-sum|
+\enddisplay
+where each $a_k$ is a number
+that has been defined somehow.
+This notation has the advantage that we can ``see'' the whole sum,
+"!..." "!three dots (...)" "!ellipsis (...)"
+almost as if it were written out in full, if we have a good enough imagination.
+
+ Each element~$a_k$
+of a sum is called a {\it "term"}.
+\g A term is how long this course lasts.\g
+The terms are often specified implicitly as formulas
+that follow a readily perceived pattern, and in such cases we must sometimes
+write them in an expanded form
+so that the meaning is clear. For example, if
+\begindisplay
+1+2+\cdots+2^{n-1}
+\enddisplay
+is supposed to denote a sum of $n$ terms, not of $2^{n-1}$, we should
+write it more explicitly as
+\begindisplay
+2^0+2^1+\cdots+2^{n-1}.
+\enddisplay
+
+The three-dots notation
+\g \noindent\llap{``}Le signe $\sum_{i=1}^{i=\infty}$ indique que l'on~doit
+donner au nombre entier $i$ toutes ses valeurs $1$, $2$, $3$, \dots,
+et prendre la somme des termes.''\par
+\noindent\hfill\dash---J. "Fourier" [|fourier|]\g
+has many uses, but it can be ambiguous and a bit
+long-winded. Other alternatives are available, notably the delimited form
+\begindisplay
+\sum_{k=1}^n a_k\,,
+\eqno\eqref|delim-sum|
+\enddisplay
+\looseness=-1
+which is called "Sigma-notation"
+because it uses the Greek letter $\sum$ (uppercase sigma).
+This notation tells us to include in the sum precisely
+those terms~$a_k$ whose index~$k$ is an integer that lies
+between the lower and upper limits 1~and~$n$, inclusive.
+In words, we ``sum over $k$, from~$1$ to~$n$.''
+Joseph Fourier introduced this delim\-ited $\sum$-"notation" in 1820,
+and it soon took the mathematical world by storm.
+
+Incidentally,
+the quantity after $\sum$ (here~$a_k$) is called the {\it "summand"}.
+
+ The "index variable"~$k$
+is said to be {\it bound\/} to the $\sum$ sign in \thiseq, because the
+"!bound variables"
+$k$ in $a_k$ is unrelated to appearances of~$k$ outside the Sigma-notation.
+Any other letter
+\g Well, I wouldn't want to use $a$ or $n$ as the index variable instead of~$k$
+in \thiseq; those letters are ``"free variables"'' that do have meaning outside
+the $\sum$ here.\g
+could be substituted for~$k$ here without changing the
+meaning of \thiseq. The letter $i$ is often used (perhaps because it stands
+for ``index''), but we'll generally sum on $k$ since it's wise to keep
+$i$ for $\sqrt{-1}$.
+
+It turns out that a generalized Sigma-notation is even
+more useful than the delimited form: We simply write one or more
+conditions under the $\sum$, to specify the set of indices over which
+summation should take place. For example, the sums in \eq(|3dots-sum|) and
+\eq(|delim-sum|) can also be written as
+\begindisplay
+\sum_{1 \le k \le n} a_k \,.
+\eqno\eqref|gen-sum|
+\enddisplay
+In this particular example there isn't much difference between the
+new form and \eq(|delim-sum|), but the general form allows us to
+take sums over "index set"s that aren't restricted to consecutive integers.
+For example, we can express the sum of the squares of all odd positive
+integers below~100 as follows:
+\begindisplay
+ \sum\twoconditions{1 \le k < 100}{k \rm\ odd} k^2 \,\,.
+\enddisplay
+The delimited equivalent of this sum,
+\begindisplay
+ \sum_{k=0}^{49} (2k+1)^2 \,,
+\enddisplay
+is more cumbersome and less clear.
+Similarly, the sum of reciprocals of all prime numbers between $1$ and~$N$
+is
+\begindisplay
+\sum\twoconditions{p \leq N}{p \rm\ prime}{1\over p} \,;
+\enddisplay
+the delimited form would require us to write
+\begindisplay
+\sum_{k=1}^{\pi(N)}{1\over p_k}\,,
+\enddisplay
+where $p_k$ denotes the $k$th prime and $\pi(N)$ is the number of
+primes $\le N$.
+(Incidentally, this sum gives the approximate average
+number of distinct "prime factors" of a random integer near~$N$, since
+about $1/p$ of those integers are divisible by~$p$.
+Its value for large~$N$ is approximately $\ln\ln N+M$, where
+$M\approx0.2614972128476427837554268386086958590515666$ is "Mertens"'s
+constant~[|mertens-M|];
+$\ln x$ stands for the natural logarithm of~$x$, and $\ln\ln x$ stands
+for $\ln(\ln x)$.)
+
+The biggest advantage of general Sigma-notation is that
+we can manipulate it more easily than the delimited form.
+\g The summation symbol looks like a distorted pacman.\g
+For example, suppose we want to change the index variable~$k$ to~$k+1$.
+With the general form, we have
+\begindisplay
+ \sum_{1 \leq k \leq n} a_k
+	= \sum_{1 \leq k+1 \leq n} a_{k+1} \,;
+\enddisplay
+it's easy to see what's going on, and we can do the substitution almost
+without thinking. But with the delimited form, we have
+\begindisplay
+ \sum_{k=1}^n a_k
+	= \sum_{k=0}^{n-1} a_{k+1} \,;
+\enddisplay
+it's harder to see what's happened, and we're more likely to make a mistake.
+
+On the other hand, the delimited form isn't completely useless.
+It's nice and tidy, and we can write it quickly because \eq(|delim-sum|)
+\g A tidy sum.\g
+has seven symbols compared with \eq(|gen-sum|)'s eight.
+Therefore we'll often use $\sum$ with upper and lower delimiters
+when we state a problem or present a result, but we'll
+prefer to work with relations-under-$\sum$ when we're manipulating a sum
+whose index variables need to be transformed.
+
+The $\sum$ sign occurs more than 1000 times in this book,
+\g That's nothing. You should see how many times {\char6} appears
+in The~Iliad.\g
+ so we should be
+sure that we know exactly what it means. Formally, we write
+\begindisplay
+\sum_{P(k)}a_k\eqno
+\enddisplay
+as an abbreviation for the sum of all terms $a_k$ such that $k$ is an
+integer satisfying a given "property" $P(k)$. (A ``property $P(k)$'' is
+any statement about $k$ that can be either true or false.)
+ For the time being, we'll
+assume that only finitely many integers~$k$ satisfying~$P(k)$ have
+$a_k\ne0$; otherwise infinitely many nonzero numbers are being added
+together, and things can get a bit tricky. At the other extreme, if
+$P(k)$ is false for all integers~$k$, we have an ``empty'' sum;
+the value of an "empty sum" is defined to be zero.
+
+A slightly modified form
+of \thiseq\ is used when a sum appears within the text of a paragraph
+rather than in a displayed equation: We write `$\sum_{P(k)}a_k$', attaching
+property~$P(k)$ as a subscript of~$\sum$, so that the formula won't
+stick out too much. Similarly, `$\sum_{k=1}^na_k$' is a convenient
+alternative to \eq(|delim-sum|) when we want to confine the notation
+to a single line.
+
+People are often tempted to write
+\begindisplay\advance\abovedisplayskip-3pt\advance\belowdisplayskip-3pt
+\sum_{k=2}^{n-1}k(k-1)(n-k)\qquad\hbox{instead of}
+ \qquad\sum_{k=0}^{n}k(k-1)(n-k)
+\enddisplay
+because the terms for $k=0$, $1$, and $n$ in this sum are zero. Somehow it
+seems more efficient to add up $n-2$ terms instead of $n+1$ terms.
+But such temptations should be resisted; "efficiency" of computation is
+not the same as efficiency of understanding!  We will find it advantageous
+to keep upper and lower bounds
+on an index of summation as simple as possible, because
+sums can be manipulated much more easily when the bounds
+are simple. Indeed, the form $\sum_{k=2}^{n-1}$ can even be dangerously
+ambiguous, because its meaning is not at all clear when $n=0$ or $n=1$
+(see exercise~|backward-delim|). Zero-valued terms cause no harm, and they often
+"!0, not considered harmful"
+save a lot of trouble.
+
+So far the "notation"s we've been discussing are quite standard, but now we
+are about to make a radical departure from tradition. Kenneth~E. "Iverson"
+introduced a wonderful idea in his programming language APL
+[|APL|, page~11; see also |knuth-tnn|],
+and we'll see that it greatly simplifies many of the things we want to
+do in this book. The idea is simply to enclose a true-or-false statement
+in brackets, and to say that the result is $1$ if the statement is true,
+\tabref|nn:iverson|%
+\g Hey: The ``"Kronecker delta"'' that I've seen in other
+books (I~mean $\delta_{kn}$, which is
+$1\mskip-1mu$~if $@{k=n}$, \
+ $0$~otherwise) is just a special case of Iverson's
+convention: We can write $\[k=n]$ instead.\g
+$0$ if the statement is false. For example,
+\begindisplay
+\[p{\rm\ prime}] =\cases{1,&if $p$ is a prime number;\cr
+	0,&if $p$ is not a prime number.\cr}
+\enddisplay
+Iverson's convention allows us to express sums with no constraints whatever
+on the index of summation, because we can rewrite \thiseq\ in the form
+\begindisplay \advance\belowdisplayskip-3pt
+\sum_k a_k\bigi[P(k)\bigr]\,.
+\eqno
+\enddisplay
+If $P(k)$ is false, the term $a_k\bigi[P(k)\bigr]$ is zero, so we can
+safely include it among the terms being summed. This makes it easy to
+manipulate the index of summation, because we don't have to fuss
+with boundary conditions.
+\g\noindent\llap{``}I am often surprised by new, important applications
+ [of this notation].''\par\hskip0pt plus 1fill minus 3pt
+\dash---B.~de~"Finetti"~[|de-finetti|]\looseness=-1\g
+
+A slight technicality needs to be mentioned: Sometimes $a_k$ isn't defined
+for all integers~$k$. We get around this difficulty
+ by assuming that $\bigi[P(k)\bigr]$
+is ``very strongly zero'' when $P(k)$ is false; it's so much zero, it makes
+"!zero, strongly"
+$a_k\bigi[P(k)\bigr]$ equal to zero even when $a_k$ is undefined.
+For example, if
+we use Iverson's convention to write the sum of reciprocal primes $\le N$ as
+\begindisplay
+\sum_p\[p{\rm\ prime}]\[p\le N]/p\,,
+\enddisplay
+there's no problem of division by zero when $p=0$, because our convention
+tells us that $\[0{\rm\ prime}]\[0\le N]/0=0$.
+
+Let's sum up what we've discussed so far about sums. There are two
+good ways to express a sum of terms: One way uses `$\,\cdots\,$', the
+other uses `$\,\sum\,$'. The three-dots form often suggests useful
+manipulations, particularly the combination of adjacent terms, since we
+might be able to spot a simplifying pattern if we let the whole sum
+hang out before our eyes. But too much detail can also be overwhelming.
+Sigma-notation is compact, impressive to family and friends, and
+\g\dots\ and it's less likely to lose points on an exam for ``lack
+of rigor.\qback''\g
+often suggestive of manipulations that are not obvious in three-dots form.
+When we work with Sigma-notation, zero terms are not generally harmful;
+"!0, not considered harmful"
+in fact, zeros often make $\sum$-manipulation easier.
+
+\beginsection 2.2 Sums and Recurrences
+
+OK, we understand now how to express sums with fancy notation.
+But how does a person actually go about finding the value of a sum?
+One way is to observe that there's an intimate relation between
+sums and "recurrence"s. The sum
+\begindisplay
+S_n=\sum_{k=0}^n a_k
+\enddisplay
+is equivalent to the recurrence
+\g(Think of\/ $S_n$ as not just a single number, but as a
+sequence defined for all $n\ge0$.)\g
+\begindisplay
+\eqalign{S_0&=a_0\,;\cr
+   S_n	&= S_{n-1} + a_n\,, \qquad\hbox{for $n>0$.}\cr
+}\eqno\eqref|sum-rec|
+\enddisplay
+Therefore we can evaluate sums in closed form by using the methods
+we learned in Chapter~1 to solve recurrences in closed form.
+
+For example, if $a_n$ is equal to a constant plus a multiple of~$n$,
+the sum-recurrence \eq(|sum-rec|) takes the following general form:
+\begindisplay
+\eqalign{R_0&=\alpha\,;\cr
+   R_n	&= R_{n-1} + \beta + \gamma n\,, \qquad\hbox{for $n>0$.}\cr
+}\eqno\eqref|abc-rec|
+\enddisplay
+Proceeding as in Chapter 1, we find $R_1=\alpha+\beta+\gamma$,
+$R_2=\alpha+2\beta+3\gamma$, and so on; in general the solution can be
+written in the form
+\begindisplay
+R_n=A(n)@\alpha+B(n)@\beta+C(n)@\gamma\,,
+\eqno
+\enddisplay
+where $A(n)$, $B(n)$, and $C(n)$ are the coefficients of dependence on
+the general parameters $\alpha$, $\beta$, and $\gamma$.
+
+The "repertoire method" tells us to try plugging in simple functions of~$n$ for
+$R_n$, hoping to find constant parameters $\alpha$, $\beta$, and $\gamma$
+where the solution is especially simple.
+Setting $R_n=1$ implies $\alpha=1$, $\beta=0$, $\gamma=0$; hence
+\begindisplay
+A(n)=1\,.
+\enddisplay
+Setting $R_n=n$ implies $\alpha=0$, $\beta=1$, $\gamma=0$; hence
+\begindisplay
+B(n)=n\,.
+\enddisplay
+Setting $R_n=n^2$ implies $\alpha=0$, $\beta=-1$, $\gamma=2$; hence
+\begindisplay
+2C(n)-B(n)=n^2
+\enddisplay
+and we have $C(n)=(n^2+n)/2$. Easy as pie.
+\g Actually easier;~$\pi\,{=}\kern-4pt$\smallskip
+\hskip-\mathsurround$\sum_{n\ge0}\kern-1.8pt{8\over(4n+1)(4n+3)}$\kern-1pt
+.\kern-3.5pt\null\g
+
+Therefore if we wish to evaluate
+\begindisplay
+\sum_{k=0}^n(a+bk)\,,
+\enddisplay
+the sum-recurrence \eq(|sum-rec|) boils down to \eq(|abc-rec|) with
+"!arithmetic progression"
+$\alpha=\beta=a$, $\gamma=b$, and the answer is
+$aA(n)+aB(n)+bC(n)=a(n+1)+b(n+1)n/2$.
+
+Conversely, many recurrences can be reduced to sums; therefore the
+special methods for evaluating sums that we'll be learning later
+in this chapter will help us solve recurrences that might otherwise
+be difficult. The "Tower of Hanoi" recurrence is a case in point:
+\begindisplay
+T_0&=0\,;\cr
+T_n&=2T_{n-1}+1\,,\qquad\hbox{for $n>0$}.\cr
+\enddisplay
+It can be put into the special form \eq(|sum-rec|)
+if we divide both sides by $2^n$:
+\begindisplay
+T_0/2^0&=0;\cr
+T_n/2^n&=T_{n-1}/2^{n-1}+1/2^n\,,\qquad\hbox{for $n>0$}.\cr
+\enddisplay
+Now we can set $S_n=T_n/2^n$, and we have
+\begindisplay
+S_0&=0;\cr
+S_n&=S_{n-1}+2^{-n}\,,\qquad\hbox{for $n>0$}.\cr
+\enddisplay
+It follows that
+\begindisplay
+S_n=\sum_{k=1}^n 2^{-k}.
+\enddisplay
+(Notice that we've left the term for $k=0$ out of this sum.)
+The sum of the geometric series $2^{-1}+2^{-2}+\cdots+2^{-n}=
+(\half )^1+(\half )^2+\cdots+(\half )^n$ will be derived
+later in this chapter; it turns out to be $1-(\half )^n$.
+Hence $T_n=2^nS_n=2^n-1$.
+
+We have converted $T_n$ to $S_n$ in this derivation by noticing that
+the recurrence could be divided by $2^n$. This trick
+is a special case of a general technique
+that can reduce virtually any "recurrence" of the form
+\begindisplay
+a_nT_n=b_nT_{n-1}+c_n
+\eqno\eqref|sum-factor-rec|
+\enddisplay
+to a sum. The idea is to multiply both sides by a
+{\it"summation factor"},~$s_n$:
+\begindisplay
+s_na_nT_n=s_nb_nT_{n-1}+s_nc_n\,.
+\enddisplay
+This factor $s_n$ is cleverly chosen to make
+\begindisplay
+s_nb_n=s_{n-1}a_{n-1}\,.
+\enddisplay
+Then if we write $S_n=s_na_nT_n$ we have a sum-recurrence,
+\begindisplay
+S_n=S_{n-1}+s_nc_n\,.
+\enddisplay
+Hence
+\begindisplay
+S_n=s_0a_0T_0+\sum_{k=1}^n s_kc_k=s_1b_1T_0+\sum_{k=1}^n s_kc_k\,,
+\enddisplay
+and the solution to the original recurrence \thiseq\ is
+\begindisplay
+T_n={1\over s_na_n}\biggl(s_1b_1T_0+\sum_{k=1}^n s_kc_k\biggr)\,.
+\eqno\eqref|sum-factor-sol|
+\enddisplay
+\g(The value of $s_1$ cancels out, so it can be anything but~zero.)\g
+For example, when $n=1$ we get $T_1=(s_1b_1T_0+s_1c_1)/s_1a_1=(b_1T_0+c_1)/a_1$.
+
+But how can we be clever enough to find the right $s_n$? No problem:
+The relation $s_n=s_{n-1}a_{n-1}/b_n$ can be unfolded to
+tell us that the fraction
+\begindisplay
+s_n={a_{n-1}a_{n-2}\ldots a_1\over b_nb_{n-1}\ldots b_2}\,,
+\eqno\eqref|sum-factor|
+\enddisplay
+or any convenient constant
+ multiple of this value, will be a suitable summation factor.
+For example, the Tower of Hanoi recurrence has $a_n=1$ and $b_n=2$;
+the general method we've just derived says that $s_n=2^{-n}$ is a good
+thing to multiply by, if we want to reduce the recurrence to a sum.
+We don't need a brilliant flash of inspiration to discover this multiplier.
+
+We must be careful, as always, not to divide by zero. The summation-factor
+method works whenever all the $a$'s and all the $b$'s are nonzero.
+
+Let's apply these ideas to a recurrence that arises in the study of
+``"quicksort",\qback'' one of the most important methods for "sorting"
+\g(Quicksort was invented by "Hoare" in 1962~[|hoare|].)\g
+data inside a computer. The average number of comparison steps made by
+quicksort when it is applied to $n$ items in random order satisfies the
+recurrence
+\begindisplay
+\eqalign{C_0&=0\,;\cr
+   C_n	&= n+1+{2\over n}\sum_{k=0}^{n-1}C_k\,, \qquad\hbox{for $n>0$.}\cr
+}\eqno\eqref|quicksort-rec|
+\enddisplay
+Hmmm. This looks much scarier than the recurrences we've seen before;
+it includes a sum over all previous values, and a division by~$n$.
+Trying small cases gives us some data ($C_1=2$, $C_2=5$, $C_3={26\over3}$)
+but doesn't do anything to quell our fears.
+
+We can, however, reduce the complexity of \thiseq\
+systematically, by first getting rid of the division and then
+getting rid of the $\sum$ sign. The idea is to
+multiply both sides by~$n$, obtaining the relation
+\begindisplay
+nC_n=n^2+n+2\sum_{k=0}^{n-1}C_k\,,\qquad\hbox{for $n>0$};
+\enddisplay
+hence, if we replace $n$ by $n-1$,
+\begindisplay
+(n-1)C_{n-1}=(n-1)^2+(n-1)+2\sum_{k=0}^{n-2}C_k\,,\qquad\hbox{for $n-1>0$}.
+\enddisplay
+We can now subtract the second equation from the first, and the $\sum$ sign
+disappears:
+\begindisplay
+nC_n-(n-1)C_{n-1}=2n+2C_{n-1}\,,\qquad\hbox{for $n>1$}.
+\enddisplay
+It turns out that this relation also holds when $n=1$, because $C_1=2$.
+Therefore the original recurrence for $C_n$ reduces to a much simpler one:
+\begindisplay
+C_0&=0\,;\cr
+nC_n&=(n+1)C_{n-1}+2n\,,\qquad\hbox{for $n>0$}.
+\enddisplay
+Progress.
+We're now in a position to apply a summation factor, since this recurrence
+has the form of \eq(|sum-factor-rec|) with $a_n=n$, $b_n=n+1$, and $c_n=2n$.
+The general method described on the preceding page
+tells us to multiply the recurrence
+through by some multiple of
+\begindisplay
+s_n={a_{n-1}a_{n-2}\ldots a_1\over b_nb_{n-1}\ldots b_2}=
+{(n-1)\cdot(n-2)\cdot\ldots\cdot1\over(n+1)\cdot n\cdot\ldots\cdot3}=
+{2\over(n+1)n}\,.
+\enddisplay
+The solution, according to
+\g We started with a $\sum$ in the recurrence, and worked hard
+to get rid of it. But then after applying a summation factor,
+we came up with another $\sum$. Are sums good, or bad, or what?\g
+\eq(|sum-factor-sol|), is therefore
+\begindisplay
+C_n=2(n+1)\sum_{k=1}^n{1\over k+1}\,.
+\enddisplay
+
+The sum that remains is very similar to a quantity that arises frequently
+in applications. It arises so often, in fact, that we give it a special name
+and a special notation:
+\begindisplay
+H_n=1+\half +\cdots+{1\over n}=\sum_{k=1}^n {1\over k}\,.
+\eqno\eqref|h-def|
+\enddisplay
+\tabref|nn:hn|%
+The letter $H$ stands for ``harmonic''; $H_n$ is a {\it "harmonic number"},
+so called because the $k$th harmonic produced by a "violin" string
+is the fundamental tone produced by a string that is~$1/k$ times as long.
+
+We can complete our study of the quicksort recurrence \eq(|quicksort-rec|)
+by putting $C_n$ into closed form; this will be possible if we can
+express $C_n$ in terms of $H_n$. The sum in our formula for $C_n$ is
+\begindisplay
+\sum_{k=1}^n{1\over k+1}=\sum_{1\le k\le n}{1\over k+1}\,.
+\enddisplay
+We can relate this to $H_n$ without much difficulty
+ by changing $k$ to $k-1$ and revising the
+boundary conditions:
+\begindisplay \openup2pt
+\sum_{1\le k\le n}{1\over k+1}&=\sum_{1\le k-1\le n}{1\over k}\cr
+ &=\sum_{2\le k\le n+1}{1\over k}\cr
+ &=\biggl(\sum_{1\le k\le n}{1\over k}\biggr) -{1\over 1}+{1\over n+1}
+ = H_n-{n\over n+1}\,.\cr
+\enddisplay
+Alright! We have found the sum needed to complete the
+\g But your spelling is alwrong.\g
+ solution to \eq(|quicksort-rec|):
+The average number of comparisons made by quicksort when it is applied to
+$n$~randomly ordered items of data is
+\begindisplay
+C_n=2(n+1)H_n-2n\,.\eqno
+\enddisplay
+As usual, we check that small cases are correct: $C_0=0$, $C_1=2$, $C_2=5$.
+
+\beginsection 2.3 Manipulation of Sums
+
+The key to success with sums is an ability to change one $\sum$ into another
+\g\vskip-38pt Not to be confused with finance.\g
+that is simpler or closer to some goal. And it's easy to do this by learning
+a few basic rules of transformation and by practicing their use.
+
+Let $K$ be any finite set of integers. Sums over the elements of $K$ can be
+transformed by using three simple rules:
+\begindisplay
+\sum_{k\in K} ca_k&=c\sum_{k\in K}a_k\,;&\qquad\hbox{(distributive law)}
+ \eqno\eqref|dist-law|\cr
+\noalign{\smallskip}
+\sum_{k\in K}(a_k+b_k)&=\sum_{k\in K}a_k+\sum_{k\in K}b_k\,;
+ &\qquad\hbox{(associative law)}
+ \eqno\eqref|assoc-law|\cr
+\noalign{\smallskip}
+\sum_{k\in K}a_k&=\sum_{p(k)\in K}a_{p(k)}\,.
+ &\qquad\hbox{(commutative law)}
+ \eqno\eqref|comm-law|\cr
+\enddisplay
+The "distributive law" allows us to move constants in and out of a $\sum$.
+The "associative law" allows us to break a $\sum$ into two parts, or to
+combine two $\sum$'s into one. The "commutative law" says that we can
+reorder the terms in any way we please; here $p(k)$ is any permutation
+\g Why not call it permutative instead of commutative?\g
+of the set of all integers.
+For example, if $K=\{-1,0,+1\}$ and if $p(k)=-k$, these three laws
+tell us respectively that
+\begindisplay
+&ca_{-1}+ca_0+ca_1=c(a_{-1}+a_0+a_1)\,;&\qquad\hbox{(distributive law)}\cr
+\noalign{\vskip2pt}
+&(a_{-1}+b_{-1})+(a_0+b_0)+(a_1+b_1)\cr
+&\quad=(a_{-1}+a_0+a_1)+(b_{-1}+b_0+b_1)\,;
+ &\qquad\hbox{(associative law)}\cr
+\noalign{\vskip2pt}
+&a_{-1}+a_0+a_1=a_1+a_0+a_{-1}\,.&\qquad\hbox{(commutative law)}\cr
+\enddisplay
+
+"Gauss"'s trick in Chapter 1 can be viewed as an application of these three
+basic laws. Suppose we want to compute the general sum of an
+{\it"arithmetic progression"},
+\begindisplay
+S=\sum_{0\le k\le n}(a+bk)\,.
+\enddisplay
+By the commutative law we can replace $k$ by $n-k$,
+\g This is something like changing variables inside an integral, but easier.\g
+ obtaining
+\begindisplay
+S=\sum_{0\le n-k\le n}\bigl(a+b(n-k)\bigr)=
+\sum_{0\le k\le n}(a+bn-bk)\,.
+\enddisplay
+These two equations can be added by using the associative law:
+\begindisplay
+2S=\sum_{0\le k\le n}\bigl((a+bk)+(a+bn-bk)\bigr)
+  =\sum_{0\le k\le n}(2a+bn)\,.
+\enddisplay
+And we can now apply the distributive law and evaluate a trivial sum:
+\g ``What's one and one and one and one and one and one and one and one
+and one and~one?''\par
+``I don't know,'' said~"Alice".\par ``I lost count.''\par % from Chapter 9
+``She can't do Addition.''\par\hfill\kern-4pt\dash---Lewis "Carroll"~[|alice-looking|]\g %
+\begindisplay
+2S=(2a+bn)\sum_{0\le k\le n}1 = (2a+bn)(n+1)\,.
+\enddisplay
+Dividing by 2, we have proved that
+\begindisplay
+\sum_{k=0}^n(a+bk)=\textstyle(a+\half bn)(n+1)\,.\eqno\eqref|arith-sum|
+\enddisplay
+The right-hand side can be remembered as the average of the
+first and last terms,
+namely $\half \bigl(a+(a+bn)\bigr)$, times the number of terms,
+namely $(n+1)$.
+
+It's important to bear in mind that the function $p(k)$ in the general
+commutative law \eq(|comm-law|)
+is supposed to be a permutation of all the integers. In other words,
+for every integer~$n$ there should be exactly one integer~$k$ such that
+$p(k)=n$. Otherwise the commutative law might fail; exercise~|bad-perm|
+illustrates this with a vengeance. Transformations like $p(k)=k+c$
+or $p(k)=c-k$, where $c$~is an integer constant, are always
+permutations, so they always work.
+
+On the other hand, we can relax the permutation restriction a little
+"!commutative law, relaxed"
+bit: We need to require only that there be exactly one integer~$k$ with
+$p(k)=n$ when $n$ is an element of the index set~$K$. If $n\notin K$
+(that is, if $n$ is not in~$K$), it doesn't matter how often $p(k)=n$ occurs,
+because such $k$ don't take part in the sum.
+Thus, for example, we can argue that
+\begindisplay
+\sum\twoconditions{k\in K}{k{\rm\ even}}a_k=
+\sum\twoconditions{n\in K}{n{\rm\ even}}a_n=
+\sum\twoconditions{2k\in K}{2k{\rm\ even}}a_{2k}=
+\sum_{2k\in K}a_{2k}\,,
+\eqno\eqref|even-trick|
+\enddisplay
+since there's exactly one $k$ such that $2k=n$ when $n\in K$ and $n$ is even.
+
+"Iverson's convention", which allows us to obtain the values $0$ or~$1$
+from logical statements in the middle of a formula, can be used
+together with the distributive, associative, and commutative laws to deduce
+\g Additional, eh?\g
+additional properties of sums. For example, here is an important rule for
+combining different sets of indices:
+If $K$ and $K'$ are any sets of integers, then
+\begindisplay
+\sum_{k\in K}a_k\;+\;\sum_{k\in K'}a_k\;=\;\sum_{k\in K\cap K'}a_k\;+\;
+ \sum_{k\in K\cup K'}a_k\,.
+\eqno\eqref|set-sum|
+\enddisplay
+This follows from the general formulas
+\begindisplay
+\sum_{k\in K}a_k\;=\;\sum_k a_k\,\[k\in K]
+\eqno
+\enddisplay
+and
+\begindisplay
+\[k\in K]+\[k\in K']=\[k\in K\cap K']+\[k\in K\cup K']\,.
+\eqno
+\enddisplay
+Typically we use rule \eq(|set-sum|) either to combine two almost-disjoint
+index sets, as in
+\begindisplay
+\sum_{k=1}^m a_k\;+\;\sum_{k=m}^n a_k\;=\;a_m\;+\;\sum_{k=1}^n a_k\,,
+\qquad\hbox{for $1\le m\le n$};
+\enddisplay
+or to split off a single term from a sum, as in
+\g\vskip15pt(The two sides of \eq(|set-sum|) have been switched here.)\g
+\begindisplay
+\sum_{0\le k\le n}a_k\;=\;a_0\;+\;\sum_{1\le k\le n}a_k\,,
+\qquad\hbox{for $n\ge0$}.
+\eqno
+\enddisplay
+
+This operation of splitting off a term is the basis of a
+{\it"perturbation method"\/} that often allows us to evaluate a
+sum in closed form. The idea is to start with an unknown sum
+and call it $S_n$:
+\begindisplay
+S_n=\sum_{0\le k\le n}a_k\,.
+\enddisplay
+(Name and conquer.)
+Then we rewrite $S_{n+1}$ in two ways, by splitting off both its
+last term and its first term:
+\begindisplay \openup2pt
+S_n+a_{n+1}=\sum_{0\le k\le n+1}a_k&=a_0+\sum_{1\le k\le n+1}a_k\cr
+&=a_0+\sum_{1\le k+1\le n+1}a_{k+1}\cr
+&=a_0+\sum_{0\le k\le n}a_{k+1}\,.\eqno\eqref|perturb-setup|\cr
+\enddisplay
+Now we can work on this last sum and try to express it in terms of~$S_n$.
+If we succeed, we obtain an equation whose solution is the sum we seek.
+
+For example, let's use this approach to find the sum of a
+\g If it's geometric, there should be a geometric proof.\par
+\medskip
+\bigskip
+\noindent\qquad
+\unitlength=1pt
+\beginpicture(54,108)(0,-108)
+\put(0,0){\line(0,-1){108}}
+\put(36,0){\line(0,-1){108}}
+\put(48,0){\line(0,-1){36}}
+\put(54,-12){\line(0,-1){96}}
+\put(0,0){\line(1,0){48}}
+\put(48,0){\line(0,-1){36}}
+\put(0,-108){\line(1,0){54}}
+\put(36,-36){\line(1,0){18}}
+\put(48,-12){\line(1,0){6}}
+\put(0,-5){\line(3,1){15}}
+\put(0,-10){\line(3,1){30}}
+\multiput(0,-15)(0,-5){19}{\line(3,1){36}}
+\put(6,-108){\line(3,1){30}}
+\put(21,-108){\line(3,1){15}}
+\put(39.5,-108){\line(-1,3){3.5}}
+\put(44.5,-108){\line(-1,3){8.5}}
+\put(49.5,-108){\line(-1,3){13.5}}
+\put(54,-106.5){\line(-1,3){18}}
+\put(54,-91.5){\line(-1,3){18}}
+\put(54,-76.5){\line(-1,3){13.5}}
+\put(54,-61.5){\line(-1,3){8.5}}
+\put(54,-46.5){\line(-1,3){3.5}}
+\put(50,-36){\line(1,3){4}}
+\put(48,-24){\line(1,3){4}}
+\put(48,-33){\line(1,3){6}}
+\put(38,0){\line(3,-1){10}}
+\put(46,-36){\line(-3,1){10}}
+\multiput(36,-4.0952)(0,-4.7619){6}{\line(3,-1){12}}
+\endpicture\g
+general {\it"geometric progression"},
+\begindisplay
+S_n=\sum_{0\le k\le n}ax^k\,.
+\enddisplay
+The general perturbation scheme in \eq(|perturb-setup|) tells us that
+\begindisplay
+S_n+ax^{n+1}=ax^0+\sum_{0\le k\le n}ax^{k+1}\,,
+\enddisplay
+and the sum on the right is $x\sum_{0\le k\le n}ax^k=xS_n$ by the distributive
+law. Therefore $S_n+ax^{n+1}=a+xS_n$, and we can solve for $S_n$ to obtain
+\begindisplay
+\sum_{k=0}^n ax^k={a-ax^{n+1}\over 1-x},\qquad\hbox{for $x\ne1$}.
+\eqno\eqref|geom-sum|
+\enddisplay
+(When $x=1$, the sum is of course simply $(n+1)a$.) The right-hand side
+\g Ah yes, this formula was drilled into me in high school.\g
+can be remembered as the first term included in the sum minus the first
+term excluded (the term after the last), divided by $1$~minus
+the term ratio.
+
+That was almost too easy. Let's try the perturbation technique on a slightly
+more difficult sum,
+\begindisplay
+S_n=\sum_{0\le k\le n}k\,2^k\,.
+\enddisplay
+In this case we have $S_0=0$, $S_1=2$, $S_2=10$, $S_3=34$, $S_4=98$;
+what is the general formula? According to~\eq(|perturb-setup|) we have
+\begindisplay
+S_n+(n+1)2^{n+1}=\sum_{0\le k\le n}(k+1)2^{k+1}\,;
+\enddisplay
+so we want to express the right-hand sum in terms of $S_n$. Well, we
+can break it into two sums with the help of the associative law,
+\begindisplay
+\sum_{0\le k\le n}k\,2^{k+1}\;+\;\sum_{0\le k\le n}2^{k+1}\,,
+\enddisplay
+and the first of the remaining sums is $2S_n$. The other sum is a
+geometric progression, which equals $(2-2^{n+2})/(1-2)=2^{n+2}-2$
+by \eq(|geom-sum|). Therefore we have $S_n+(n+1)2^{n+1}=2S_n+2^{n+2}-2$,
+and algebra yields
+\begindisplay
+\sum_{0\le k\le n}k\,2^k=(n-1)2^{n+1}+2\,.
+\enddisplay
+Now we understand why $S_3=34$: It's $32+2$, not $2\cdt17$.
+
+A similar derivation with $x$ in place of~$2$
+would have given us the equation
+ $S_n+(n+1)x^{n+1}=xS_n+(x-x^{n+2})/(1-x)$; hence we can
+deduce that
+\begindisplay
+\sum_{k=0}^n kx^k={x-(n+1)x^{n+1}+nx^{n+2}\over(1-x)^2}\,,
+ \qquad\hbox{for $x\ne1$.}
+\eqno\eqref|k-x-to-the-k|
+\enddisplay
+
+It's interesting to note that we could have derived this closed form in a
+completely different way, by using elementary techniques of
+differential "calculus". If we start
+with the equation
+\begindisplay
+\sum_{k=0}^n x^k={1-x^{n+1}\over 1-x}
+\enddisplay
+and take the "derivative" of both sides with respect to~$x$, we get
+\begindisplay
+\sum_{k=0}^n kx^{k-1}={(1{-}x)\bigl(-(n{+}1)x^n\bigr)+1{-}x^{n+1}\over(1-x)^2}
+={1-(n{+}1)x^n+nx^{n+1}\over(1-x)^2}\,,
+\enddisplay
+because the derivative of a sum is the sum of the derivatives of its terms.
+We will see many more connections between calculus and discrete mathematics
+in later chapters.
+
+\beginsection 2.4 Multiple Sums
+
+The terms of a sum might be specified by two or more indices, not just by one.
+"!sums, multiple"
+For example, here's a "double sum" of nine terms, governed
+\g Oh no, a nine-term governor.\g
+ by two indices
+$j$ and~$k$:
+\g\vskip19pt Notice that this doesn't mean to sum over
+ all\/ ${j\ge1}$ and all\/ ${k\le3}$.\g
+\begindisplay
+\sum_{1\le j,k\le3}a_jb_k=\vtop{\halign{$#\hfil$\cr
+  a_1b_1+a_1b_2+a_1b_3\cr
+  \quad{}+a_2b_1+a_2b_2+a_2b_3\cr
+  \quad{}+a_3b_1+a_3b_2+a_3b_3\,.\cr}}
+\enddisplay
+We use the same notations and methods for such sums as we do for sums
+with a single index. Thus, if $P(j,k)$ is a "property" of $j$ and~$k$, the
+sum of all terms $a_{j,k}$ such that $P(j,k)$ is true can be written in two
+ways, one of which uses "Iverson's convention" and sums over {\it all\/} pairs
+of integers $j$ and~$k$:
+\begindisplay
+\sum_{P(j,k)}a_{j,k}=\sum_{j,k}a_{j,k}\,\bigi[P(j,k)\bigr]\,.
+\enddisplay
+Only one $\sum$ sign is needed, although there is more than one index of
+summation; $\sum$ denotes a sum over all combinations of indices that apply.
+
+We also have occasion to use two $\sum$'s, when we're talking about a
+sum of sums. For example,
+\begindisplay
+\sum_j\sum_k a_{j,k}\,\bigi[P(j,k)\bigr]
+\enddisplay
+is an abbreviation for
+\begindisplay
+\sum_j\biggl(\sum_k a_{j,k}\,\bigi[P(j,k)\bigr]\biggr)\,,
+\enddisplay
+which is the sum, over all integers $j$, of $\sum_k a_{j,k}\,\bigi[P(j,k)\bigr]$,
+\g Multiple\/ {\textsl\char6}'s are evaluated right to left (inside-out).\g
+the latter being the sum over all integers~$k$ of all terms $a_{j,k}$ for
+which $P(j,k)$ is true. In such cases we say that the
+double sum is ``summed first on~$k$.\qback''
+A sum that depends on more than one index can be summed first on any one
+of its indices.
+
+In this regard we have a basic law called {\it "interchanging the order of
+summation"}, which generalizes the associative law \eq(|assoc-law|) we
+saw earlier:
+\begindisplay
+\sum_j\sum_k a_{j,k}\bigi[P(j,k)\bigr]
+=\sum_{P(j,k)}a_{j,k}
+=\sum_k\sum_j a_{j,k}\bigi[P(j,k)\bigr]\,.
+\eqno\eqref|interch|
+\enddisplay
+The middle term of this law is a sum over two indices. On the left,
+$\sum_j\sum_k$ stands for summing first on~$k$, then on~$j$. On the right,
+$\sum_k\sum_j$ stands for summing first on~$j$, then on~$k$. In practice when
+we want to evaluate a double sum in closed form, it's usually easier to
+sum it first on one index rather than on the other; we get to choose whichever is
+more convenient.
+
+Sums of sums are no reason to panic,
+\g Who's panicking? I~think this rule is fairly obvious compared to
+some of the stuff in Chapter~1.\g
+but they can appear confusing to a beginner, so let's do some more examples.
+The nine-term sum we began with
+provides a good illustration of the manipulation of double sums,
+because that sum can actually be simplified, and the simplification
+process is typical of what we can do with $\sum\sum$'s:
+\begindisplay
+\sum_{1\le j,k\le3}a_jb_k&=\sum_{j,k}a_jb_k\[1\le j,k\le3]
+ =\sum_{j,k}a_jb_k\[1\le j\le3]\[1\le k\le3]\cr
+&=\sum_j\sum_k a_jb_k\[1\le j\le3]\[1\le k\le3]\cr
+&=\sum_j a_j\[1\le j\le3]\sum_k b_k\[1\le k\le3]\cr
+&=\sum_j a_j\[1\le j\le3]\biggl(\sum_k b_k\[1\le k\le3]\biggr)\cr
+&=\biggl(\sum_j a_j\[1\le j\le3]\biggr)\biggl(\sum_k b_k\[1\le k\le3]\biggr)\cr
+&=\biggl(\sum_{j=1}^3a_j\biggr)\biggl(\sum_{k=1}^3 b_k\biggr)\,.\cr
+\enddisplay
+The first line here denotes a sum of nine terms in no particular order.
+The second line groups them in threes,
+$(a_1b_1+a_1b_2+a_1b_3)+(a_2b_1+a_2b_2+a_2b_3)
+ +(a_3b_1+a_3b_2+a_3b_3)$.
+The third line uses the distributive law to factor out the $a$'s, since
+$a_j$ and $\[1\le j\le3]$ do not depend on~$k$; this gives
+$a_1(b_1+b_2+b_3)+a_2(b_1+b_2+b_3)+a_3(b_1+b_2+b_3)$.
+The fourth line is the same as the third, but with a redundant pair of
+parentheses thrown in so that the fifth line won't look so mysterious.
+The fifth line factors out the $(b_1+b_2+b_3)$ that occurs for each
+value of~$j$: $(a_1+a_2+a_3)(b_1+b_2+b_3)$. The last line is just another
+way to write the previous line. This method of derivation can be used
+to prove a {\it general "distributive law"},
+\begindisplay
+\sum\twoconditions{j\in J}{k\in K}a_jb_k=
+\biggl(\,\sum_{j\in J}a_j\biggr)\biggl(\,\sum_{k\in K}b_k\biggr)\,,
+\eqno\eqref|gen-dist-law|
+\enddisplay
+valid for all sets of indices $J$ and $K$.
+
+The basic law \eq(|interch|) for interchanging the order of summation
+has many variations, which arise when we want to restrict the ranges of the indices
+instead of summing over all integers $j$ and~$k$. These variations come
+in two flavors, "vanilla" and "rocky road". First, the vanilla version:
+\begindisplay
+\sum_{j\in J}\sum_{k\in K}a_{j,k}=
+\sum\twoconditions{j\in J}{k\in K}a_{j,k}=
+\sum_{k\in K}\sum_{j\in J}a_{j,k}\,.
+\eqno\eqref|vanilla|
+\enddisplay
+This is just another way to write \eq(|interch|), since the
+Iversonian $\[j\in J,k\in K]$
+factors into $\[j\in J]\[k\in K]$. The vanilla-flavored law applies
+whenever the ranges of $j$ and~$k$ are independent of each other.
+
+The rocky-road formula for interchange is a little trickier. It applies when the
+range of an inner sum depends on the index variable of the outer sum:
+\begindisplay
+\sum_{j\in J}\,\sum_{k\in K(j)}a_{j,k}=
+\sum_{k\in K'}\,\sum_{j\in J'(k)}a_{j,k}\,.
+\eqno
+\enddisplay
+Here the sets $J$, $K(j)$, $K'$, and $J'(k)$ must be related in such a way
+that
+\begindisplay
+\[j\in J]\bigi[k\in K(j)\bigr]=\[k\in K']\bigi[j\in J'(k)\bigr]\,.
+\enddisplay
+A factorization like this is always possible in principle, because we can let
+$J=K'$ be the set of all integers and $K(j)=J'(k)$ be the basic property
+$P(j,k)$ that governs a double sum. But there are important special cases
+where the sets $J$, $K(j)$, $K'$, and $J'(k)$ have a simple form.
+These arise frequently in applications. For example, here's a particularly
+useful factorization:
+\begindisplay
+\[1\le j\le n]\[j\le k\le n]=\[1\le j\le k\le n]=\[1\le k\le n]\[1\le j\le k]\,.
+\eqno
+\enddisplay
+This Iversonian equation allows us to write
+"!factorization of summation conditions"
+\begindisplay
+\sum_{j=1}^n\sum_{k=j}^n a_{j,k}=
+\sum_{1\le j\le k\le n} a_{j,k}=
+\sum_{k=1}^n\sum_{j=1}^k a_{j,k}\,.
+\eqno\eqref|rocky-road|
+\enddisplay
+One of these two
+\g(Now is a good time to do warmup exercises |triple| and |iverson-sum|.)
+"!food"
+\smallskip(Or to check out the Snickers bar languishing in the freezer.)\g
+sums of sums is usually easier to evaluate than the other; we can use
+\thiseq\ to switch from the hard one to the easy one.
+
+Let's apply these ideas to a useful example. Consider the array
+\begindisplay
+\left[\matrix{
+a_1 a_1 & a_1 a_2 & a_1 a_3 & \ldots & a_1 a_n \cr
+a_2 a_1 & a_2 a_2 & a_2 a_3 & \ldots & a_2 a_n \cr
+a_3 a_1 & a_3 a_2 & a_3 a_3 & \ldots & a_3 a_n \cr
+\vdots	& \vdots  & \vdots  & \ddots & \vdots  \cr
+a_n a_1 & a_n a_2 & a_n a_3 & \ldots & a_n a_n \cr}\right]
+\enddisplay
+of $n^2$ products $a_ja_k$. Our goal will be to find a simple formula for
+\def\uppertriangle{@
+   \vbox{\hrule\kern-.2pt\hbox{\smallln\char'100\kern-.2pt\vrule\kern-.2pt}}}
+\def\lowertriangle{@
+   \vbox{\hbox{\kern-.2pt\vrule\kern-.2pt\smallln\char'100}\kern-.2pt\hrule}}
+\begindisplay
+S_{\uppertriangle}=\sum_{1\le j\le k\le n}a_ja_k\,,
+\enddisplay
+the sum of all elements on or above the main diagonal of this array.
+"!triangular array"
+Because $a_ja_k=a_ka_j$, the array is symmetrical about its main diagonal;
+therefore $S_{\uppertriangle}$ will be approximately half the sum
+of {\it all\/} the elements (except for a fudge
+\g Does rocky road have fudge in it?\g
+factor that takes account of the main diagonal).
+
+Such considerations motivate the following manipulations. We have
+\begindisplay
+S_{\uppertriangle}=\sum_{1\le j\le k\le n}a_ja_k
+ =\sum_{1\le k\le j\le n}a_ka_j
+ =\sum_{1\le k\le j\le n}a_ja_k
+ =S_{\lowertriangle}\,,
+\enddisplay
+because we can rename $(j,k)$ as $(k,j)$. Furthermore, since
+\begindisplay
+\[1\le j\le k\le n]+\[1\le k\le j\le n]=
+\[1\le j,k\le n]+\[1\le j=k\le n]\,,
+\enddisplay
+we have
+\begindisplay
+2S_{\uppertriangle}=S_{\uppertriangle}+S_{\lowertriangle}
+ =\sum_{1\le j,k\le n}a_ja_k\;+\;\sum_{1\le j=k\le n}a_ja_k\,.
+\enddisplay
+The first sum is $\bigl(\sum_{j=1}^n a_j\bigr)
+\bigl(\sum_{k=1}^n a_k\bigr)=
+\bigl(\sum_{k=1}^n a_k\bigr)^2$, by the general distributive law
+\eq(|gen-dist-law|). The second sum is $\sum_{k=1}^n a_k^2$. Therefore
+we have
+\begindisplay
+S_{\uppertriangle}=\sum_{1\le j\le k\le n}a_ja_k
+ =\half \Biggl(\biggl(\sum_{k=1}^n a_k\biggr)^{\!2}
+ +\sum_{k=1}^n a_k^2\Biggr)\,,
+\eqno\eqref|upper-triangle|
+\enddisplay
+an expression for the upper triangular sum in terms of simpler single sums.
+
+Encouraged by such success, let's look at another double sum:
+\begindisplay
+S=\sum_{1\le j<k\le n}(a_k-a_j)(b_k-b_j)\,.
+\enddisplay
+Again we have symmetry when $j$ and $k$ are interchanged:
+\begindisplay
+S=\sum_{1\le k<j\le n}(a_j-a_k)(b_j-b_k)
+ =\sum_{1\le k<j\le n}(a_k-a_j)(b_k-b_j)\,.
+\enddisplay
+So we can add $S$ to itself, making use of the identity
+\begindisplay
+\[1\le j<k\le n]+\[1\le k<j\le n]=
+\[1\le j,k\le n]-\[1\le j=k\le n]
+\enddisplay
+to conclude that
+\begindisplay
+2S=\sum_{1\le j,k\le n}(a_j-a_k)(b_j-b_k)
+ \;-\sum_{1\le j=k\le n}\!(a_j-a_k)(b_j-b_k)\,.
+\enddisplay
+The second sum here is zero; what about the first? It expands into
+four separate sums, each of which is vanilla flavored:
+\begindisplay \openup4pt
+&\sum_{1\le j,k\le n}a_jb_j
+ \;-\;\sum_{1\le j,k\le n}a_jb_k
+ \;-\;\sum_{1\le j,k\le n}a_kb_j
+ \;+\;\sum_{1\le j,k\le n}a_kb_k\cr
+\noalign{\nobreak}
+&\quad=2\!\!\sum_{1\le j,k\le n}a_kb_k
+ \;-\;2\!\!\sum_{1\le j,k\le n}a_jb_k\cr
+&\quad=2n\!\sum_{1\le k\le n}a_kb_k
+ \;-\;2\biggl(\sum_{k=1}^n a_k\biggr)\biggl(\sum_{k=1}^n b_k\biggr)\,.
+\enddisplay
+In the last step both sums have been simplified according to the
+general distributive law \eq(|gen-dist-law|). If the manipulation of
+the first sum seems mysterious, here it is again in slow motion:
+\begindisplay \openup5pt
+2\!\!\sum_{1\le j,k\le n}a_kb_k
+ &=2\!\!\sum_{1\le k\le n}\,\sum_{1\le j\le n}a_kb_k\cr
+ &=2\!\!\sum_{1\le k\le n}a_kb_k\sum_{1\le j\le n}1\cr
+ &=2\!\!\sum_{1\le k\le n}a_kb_kn
+  =2n\!\sum_{1\le k\le n}a_kb_k\,.\cr
+\enddisplay
+An index variable that doesn't appear in the summand (here~$j$) can
+simply be eliminated if we multiply what's left by the size of that
+variable's index set (here~$n$).
+
+Returning to where we left off, we can now divide everything by~$2$ and
+rearrange things to obtain an interesting formula:
+\begindisplay
+\biggl(\sum_{k=1}^n a_k\mskip-2mu\biggr)
+ \biggl(\sum_{k=1}^n b_k\mskip-2mu\biggr) =
+ n\sum_{k=1}^n a_kb_k -\sum_{1\le j<k\le n}\!(a_k-a_j)(b_k-b_j)\,.
+\eqno
+\enddisplay
+This identity yields {\it "Chebyshev's monotonic
+inequalities"\/} as a special case:
+"!inequalities, Chebyshev"
+\g \vskip-10pt("Chebyshev"~[|chebyshev-mono|] actually~proved
+the analogous result for~integrals\newline instead of sums,\par
+{\smallskip
+$\bigl(\int_a^b f(x)\,dx\bigr)$\par
+\baselineskip=11.5pt
+\hfill${}\cdot\bigl(\int_a^b g(x)\,dx\bigr)$\par
+\ $\le{(b-a)}$\par\hfill${}\cdot\bigl(\int_a^b\!f(x)g(x)\,dx\bigr)$,
+\smallskip}
+if\/ $f(x)$ and $g(x)$ are monotone nondecreasing functions.)\g
+\begindisplay \openup4pt
+\biggl(\sum_{k=1}^n \!a_k\mskip-2mu\biggr)
+ \biggl(\sum_{k=1}^n\! b_k\mskip-2mu\biggr) \le
+ n\sum_{k=1}^n \!a_kb_k\,,
+\mskip-2mu \quad\hbox{if $a_1\le\cdots\le a_n$ and $b_1\le\cdots\le b_n$};\cr
+\biggl(\sum_{k=1}^n \!a_k\mskip-2mu\biggr)
+ \biggl(\sum_{k=1}^n\! b_k\mskip-2mu\biggr) \ge
+ n\sum_{k=1}^n \!a_kb_k\,,
+\mskip-2mu \quad\hbox{if $a_1\le\cdots\le a_n$ and $b_1\ge\cdots\ge b_n$}.\cr
+\enddisplay
+(In general, if $a_1\le\cdots\le a_n$ and if $p$ is a permutation of $\{1,\ldots,
+n\}$, it's not difficult to prove that
+the largest value of $\sum_{k=1}^n a_kb_{p(k)}$ occurs when
+$b_{p(1)}\le\cdots\le b_{p(n)}$, and the smallest value occurs when
+$b_{p(1)}\ge\cdots\ge b_{p(n)}$.)
+
+\goodbreak
+Multiple summation has an interesting connection with the general
+operation of "changing the index of summation" in {\it single\/} sums. We know
+by the commutative law that
+\begindisplay
+\sum_{k\in K}a_k=\sum_{p(k)\in K}a_{p(k)}\,,
+\enddisplay
+if $p(k)$ is any permutation of the integers. But what happens when we
+replace $k$ by $f(j)$, where $f$ is an arbitrary function
+\begindisplay
+f\!\!: J\rightarrow K
+\enddisplay
+that takes an integer $j\in J$ into an integer $f(j)\in K$? The
+general formula for index replacement is
+\begindisplay
+\sum_{j\in J}a_{f(j)} = \sum_{k\in K}a_k\,\#f^-(k)\,,
+\eqno\eqref|gen-repl|
+\enddisplay
+where $\#f^-(k)$ stands for the number of elements in the set
+\tabref|nn:card|%
+\begindisplay
+f^-(k)=\bigl\{\,j\,\big\vert\,f(j)=k\,\bigr\}\,,
+\enddisplay
+that is, the number of values of $j\in J$ such that $f(j)$ equals~$k$.
+
+It's easy to prove \eq(|gen-repl|) by interchanging the order
+of summation,
+\begindisplay
+\sum_{j\in J}a_{f(j)}
+ =\sum\twoconditions{j\in J}{k\in K}a_k\,\bigi[f(j)=k\bigr]
+ =\sum_{k\in K}a_k\sum_{j\in J}\bigi[f(j)=k\bigr]\,,
+\enddisplay
+since $\sum_{j\in J}\bigi[f(j)=k\bigr]=\#f^-(k)$.  In the special case that
+$f$ is a one-to-one correspondence
+\g My other math teacher calls this a ``"bijection"'';
+maybe I'll learn to love that word some day.\medskip
+And then again\thinspace\dots\g
+between $J$ and~$K$, we have $\#f^-(k)=1$ for all~$k$, and the
+general formula \eq(|gen-repl|) reduces to
+\begindisplay
+\sum_{j\in J}a_{f(j)}=\sum_{f(j)\in K}a_{f(j)}=\sum_{k\in K}a_k\,.
+\enddisplay
+This is the commutative law \eq(|comm-law|) we had before, slightly disguised.
+
+Our examples of multiple sums so far have all involved general terms
+like $a_k$ or~$b_k$. But this book is supposed to be concrete,
+so let's take a look at a multiple sum that involves actual numbers:
+\begindisplay
+S_n=\sum_{1\le j<k\le n}{1\over k-j}\,.
+\enddisplay
+\g \vskip-47pt Watch out---\par
+the authors\par seem to think that
+$j$, $k$, and $n$ are ``actual numbers.\qback''\g
+For example, $S_1=0$; $S_2=1$; $S_3={1\over2-1}+{1\over3-1}+{1\over3-2}={5\over2}$.
+
+The normal way to evaluate a double sum is to sum first on $j$ or first on~$k$,
+so let's explore both options.
+\begindisplay
+S_n&=\hbox to44mm{$\displaystyle
+  \sum_{1\le k\le n}\,\,\sum_{1\le j<k}{1\over k-j}$\hfil}%
+ &\xbox{summing first on $j$}\cr
+&=\sum_{1\le k\le n}\,\,\sum_{1\le k-j<k}{1\over j}
+ &\xbox{replacing $j$ by $k-j$}\cr
+&=\sum_{1\le k\le n}\,\,\sum_{0<j\le k-1}{1\over j}
+ &\xbox{simplifying the bounds on $j$}\cr
+&=\sum_{1\le k\le n}H_{k-1}&\xbox{by \eq(|h-def|), the definition of $H_{k-1}$}\cr
+&=\sum_{1\le k+1\le n}\!H_k&\xbox{replacing $k$ by $k+1$}\cr
+&=\sum_{0\le k< n}H_k\,.&\xbox{simplifying the bounds on $k$}\cr
+\enddisplay
+Alas! We don't know how to get a sum of harmonic numbers
+\g Get out the whip.\g
+into closed form.
+
+If we try summing first the other way, we get
+\begindisplay
+S_n&=\hbox to44mm{$\displaystyle
+  \sum_{1\le j\le n}\,\,\sum_{j<k\le n}{1\over k-j}$\hfil}%
+ &\xbox{summing first on $k$}\cr
+&=\sum_{1\le j\le n}\,\sum_{j<k+j\le n}{1\over k}
+ &\xbox{replacing $k$ by $k+j$}\cr
+&=\sum_{1\le j\le n}\,\sum_{0<k\le n-j}{1\over k}
+ &\xbox{simplifying the bounds on $k$}\cr
+&=\sum_{1\le j\le n}H_{n-j}&\xbox{by \eq(|h-def|), the definition of $H_{n-j}$}\cr
+&=\sum_{1\le n-j\le n}\!H_j\,&\xbox{replacing $j$ by $n-j$}\cr
+&=\sum_{0\le j< n}H_j\,.&\xbox{simplifying the bounds on $j$}\cr
+\enddisplay
+We're back at the same impasse.
+
+But there's {\it another\/} way to proceed, if we replace $k$ by $k+j$
+{\it before\/} deciding to reduce $S_n$ to a sum of sums:
+\begindisplay
+S_n&=\hbox to44mm{$\displaystyle\sum_{1\le j<k\le n}{1\over k-j}$\hfil}%
+ &\xbox{recopying the given sum}\cr
+&=\sum_{1\le j<k+j\le n}{1\over k}
+ &\xbox{replacing $k$ by $k+j$}\cr
+&=\sum_{1\le k\le n}\,\,\sum_{1\le j\le n-k}{1\over k}
+ &\xbox{summing first on $j$}\cr
+&=\sum_{1\le k\le n}{n-k\over k}&\xbox{the sum on $j$ is trivial}\cr
+&=\sum_{1\le k\le n}{n\over k}-\sum_{1\le k\le n}1&\xbox{by the associative law}\cr
+&=n\biggl(\sum_{1\le k\le n}{1\over k}\biggr)-n&\xbox{by gosh}\cr
+\noalign{\smallskip}
+&=nH_n-n\,.&\xbox{by \eq(|h-def|), the definition of $H_n$}\cr
+\enddisplay
+Aha!
+\g \vskip-2in It's smart
+ to say $k\le n$ instead of $k\le n-1$ here.
+Simple bounds save energy.\g
+We've found $S_n$. Combining this with the false starts we made gives
+"!harmonic numbers, sum of"
+us a further identity as a bonus:
+\begindisplay
+\sum_{0\le k<n}H_k=nH_n-n\,.
+\eqno\eqref|harm-sum|
+\enddisplay
+
+\looseness-1
+We can understand the trick that worked here in two ways, one algebraic and one
+geometric. (1)~Algebraically, if we have a double sum whose terms involve
+$k+f(j)$, where $f$ is an arbitrary function, this example indicates that it's
+a good idea to try replacing $k$ by $k-f(j)$ and summing on~$j$.
+(2)~Geometrically, we can look at this particular sum $S_n$
+as follows, in the case $n=4$:
+\begindisplay \openup1.5pt \def\preamble{&$\hfil##\hfil$}%
+\advance\abovedisplayskip-1.5pt \advance\belowdisplayskip-1.5pt
+&\quad&k=1&\phantom+&k=2&&k=3&&k=4\cr
+j=1&&&&{1\over1}&+&\half &+&{1\over3}\cr
+j=2&&&&&&{1\over1}&+&\half \cr
+j=3&&&&&&&&{1\over1}\cr
+j=4\cr
+\enddisplay
+Our first attempts, summing first on $j$ (by columns) or on $k$ (by rows), gave us
+$H_1+H_2+H_3=H_3+H_2+H_1$. The winning idea was essentially to sum by
+diagonals, getting ${3\over1}+{2\over2}+{1\over3}$.
+
+\beginsection 2.5 General Methods
+
+Now let's consolidate what we've learned, by looking at a single example
+from several different angles. On the next few pages we're going to
+try to find a closed form for the sum of the first $n$ squares, which
+"!sum of consecutive squares" "!squares, sum of consecutive"
+we'll call~$\Sq_n$:
+\begindisplay
+\Sq_n
+	= \sum_{0 \le k \le n} k^2 \,, \qquad\hbox{for $n \geq 0$.}
+\eqno
+\enddisplay
+We'll see that there are at least seven different ways to solve this problem,
+and in the process we'll learn useful strategies for attacking sums
+in general.
+
+\goodbreak
+First, as usual, we look at some small cases.
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4&5&6&7&8&9&10&11&12\cr
+\noalign{\hrule}
+n^2&&0&1&4&9&16&25&36&49&64&81&100&121&144\cr
+\noalign{\hrule}
+\Sq_n&&0&1&5&14&30&55&91&140&204&285&385&506&650\cr
+\enddisplay
+No closed form for~$\Sq_n$ is immediately evident; but
+when we do find one, we can use these values as a check.
+
+\subhead Method 0: You could look it up. "!Stengel, Charles Dillon (Casey)"
+
+A problem like the sum of the first $n$ squares has probably been solved
+before, so we can most likely find the solution in a handy "reference book".
+Sure enough,
+page~36 of the {\sl CRC Standard Mathematical Tables\/}~[|crc-tables|]
+has the answer:
+\begindisplay
+\Sq_n	= {n(n+1)(2n+1)\over6} \,, \qquad\hbox{for $n \geq 0$}.
+\eqno
+\enddisplay
+Just to make sure we haven't misread it,
+we check that this formula correctly
+gives $\Sq_5=5 \cdt 6 \cdt 11 / 6 = 55$.
+Incidentally, page 36 of the
+{\sl CRC Tables\/} has further information
+about the sums of cubes, \dots, tenth powers.
+
+The definitive reference for mathematical formulas is the
+{\sl Handbook of Mathematical Functions}, edited by "Abramowitz" and
+\g(Harder sums can be found in~"Hansen"'s\par comprehensive table~[|hansen|].)\g
+"Stegun"~[|abramowitz-stegun|]. Pages 813--814 of that book list the values
+of $\Sq_n$ for $n\le100$; and pages 804 and 809 exhibit formulas equivalent
+to \thiseq, together with the analogous formulas for sums of cubes, \dots,
+fifteenth powers, with or without alternating signs.
+
+But the best source for answers to
+ questions about sequences is an amazing little book
+called the {\sl Handbook of Integer Sequences}, by "Sloane"~[|sloane|],
+which lists thousands of sequences by their numerical values. If you
+come up with a "recurrence" that you suspect has already been studied, all
+you have to do is compute enough terms to distinguish your recurrence from
+other famous ones; then chances are you'll find a pointer to the relevant
+literature in Sloane's
+{\sl Handbook}. For example, %the sequence
+$1$, $5$, $14$, $30$, \dots\ turns out to be Sloane's sequence
+number~1574, and it's called the sequence of ``"square pyramidal
+numbers"'' (because there are $\Sq_n$ balls in a pyramid that
+has a square base of $n^2$ balls). Sloane gives three references, one of
+which is to the handbook of Abramowitz and Stegun that we've already mentioned.
+
+Still another way to probe the world's store of accumulated mathematical
+wisdom is to use a computer program (such as Axiom, MACSYMA, Maple, or
+Mathematica)
+that provides tools for symbolic manipulation. Such programs are
+indispensable, especially for people who need to deal with large formulas.
+
+It's good to be familiar with standard sources of information, because they can
+be extremely helpful. But Method~0 isn't really consistent with the spirit
+of this book, because we want to know how to figure out the
+answers by ourselves. The look-up method is limited to problems that other
+\g Or, at least to problems having the same \undertext{answers} as problems
+that other people have decided to consider.\g
+people have decided are worth considering; a new problem won't be there.
+
+\subhead Method 1: Guess the answer, prove it by "induction".
+
+Perhaps a little bird has told us the answer to a problem, or we have
+arrived at a closed form by some other less-than-rigorous means.
+Then we merely have to prove that it is correct.
+
+We might, for example, have noticed that the values of $\Sq_n$ have rather
+small prime factors, so we may have come up with formula \thiseq\ as
+something that works for all small values of~$n$. We might also
+have conjectured the equivalent formula
+\begindisplay
+\Sq_n={n(n+{1\over2\lower1pt\null})(n+1)\over3},\qquad\hbox{for $n\ge 0$},
+\eqno\eqref|pyramid|
+\enddisplay
+which is nicer because it's easier to remember.
+The preponderance of the evidence supports~\thiseq,
+but we must prove our conjectures beyond all reasonable doubt.
+"Mathematical induction" was invented for this purpose.
+
+``Well, Your Honor, we know that $\Sq_0 = 0 = 0(0+\half )(0 + 1)/3$,
+so the basis is easy.
+For the induction,
+suppose that $n>0$, and assume that \thiseq~holds when $n$ is replaced by~$n-1$.
+Since
+\begindisplay
+ \Sq_{n}
+	= \Sq_{n-1} + n^2,
+\enddisplay
+we have
+\begindisplay \openup2pt
+3\Sq_{n}&= \textstyle(n-1)(n-\half )(n)\;+\;3n^2\cr
+	&=\textstyle (n^3-{3\over2}n^2 + \half n)\;+\;3n^2\cr
+	&=\textstyle (n^3+{3\over2}n^2 + \half n)\cr
+	&=\textstyle n(n+\half )(n+1)\,.\cr
+\enddisplay
+Therefore \thiseq\ indeed holds,
+beyond a reasonable doubt, for all $n \geq 0$.''
+Judge Wapner, "!Wapner, Joseph A." in his infinite wisdom, agrees.
+
+Induction has its place, and it is
+somewhat more defensible than trying to look up the answer.
+But it's still not really what we're seeking.
+All of the other sums we have evaluated so far in this chapter have been
+conquered without induction; we should likewise
+be able to determine a sum like $\Sq_n$ from scratch.
+Flashes of inspiration should not be necessary. We should be able to
+do sums even on our less creative days.
+
+\subhead Method 2: Perturb the sum.
+
+So let's go back to the "perturbation method" that worked so well for
+the geometric progression~\eq(|geom-sum|).
+We extract the first and last terms of $\Sq_{n+1}$ in order to
+get an equation for $\Sq_n$:
+\begindisplay
+\Sq_n+(n+1)^2
+	 = \sum_{0 \leq k \leq n} (k+1)^2
+	&= \sum_{0 \leq k \leq n} (k^2+2k+1)\cr
+	&= \sum_{0 \leq k \leq n} k^2
+	+2\!\sum_{0\le k\le n}\!k+\sum_{0\le k\le n}1\cr
+	&= \,\Sq_n\;+\;2\!\sum_{0\le k\le n}\!k\;+\;(n+1)\,.\cr
+\enddisplay
+Oops\dash---the $\Sq_n$'s cancel each other.
+Occasionally, despite our best efforts,
+the perturbation method produces something like $\Sq_n = \Sq_n$, so we lose.
+\g Seems more like a draw.\g
+
+On the other hand, this derivation is not a total loss;
+it does reveal a way to sum the first $n$ integers in closed form,
+"!sum of consecutive integers"
+\begindisplay
+2\!\sum_{0 \leq k \leq n} k
+	= (n+1)^2-(n+1)\,,
+\enddisplay
+even though we'd hoped to discover the sum of first integers squared.
+Could it be that if we start with the sum of the integers cubed,
+\font\manfnt=manfnt
+\def\Cu{\mskip1.5mu\hbox{\manfnt\char28}\mskip1.5mu}%
+which we might call~$\Cu_n$,
+we will get an expression for the integers squared? Let's try it.
+\begindisplay
+\Cu_n+(n+1)^3
+	 = \sum_{0 \leq k \leq n} (k+1)^3
+	&= \sum_{0 \leq k \leq n} (k^3+3k^2+3k+1) \cr
+	&= \Cu_n+3\Sq_n+3{(n{+}1)n\over2}+(n{+}1)\,.\cr
+\enddisplay
+Sure enough, the~$\Cu_n$'s cancel, and we have enough information to
+\g $\hbox{Method 2\/}'\mskip-1mu$:\par Perturb your TA.\g
+determine $\Sq_n$ without relying on induction:
+\begindisplay
+3\Sq_n
+	&= (n+1)^3-3(n+1)n/2 -(n+1)\cr
+ &=\textstyle(n+1)(n^2+2n+1-{3\over2}n-1)=(n+1)(n+\half )n\,.\cr
+\enddisplay
+
+\subhead Method 3: Build a "repertoire".
+
+A slight generalization of the recurrence \eq(|abc-rec|) will also suffice
+for summands involving $n^2$. The solution to
+\begindisplay
+\eqalign{R_0&=\alpha\,;\cr
+   R_n	&= R_{n-1} + \beta + \gamma n+\delta n^2\,, \qquad\hbox{for $n>0$,}\cr
+}\eqno\eqref|new-rep|
+\enddisplay
+will be of the general form
+\begindisplay
+R_n=A(n)@\alpha+B(n)@\beta+C(n)@\gamma
+ +D(n)@\delta\,;
+\eqno
+\enddisplay
+and we have already determined $A(n)$, $B(n)$, and $C(n)$, because
+\eq(|new-rep|) is the same as \eq(|abc-rec|) when $\delta=0$. If we now plug in
+\begingroup\displaywidowpenalty=-50 % help the page break for what's coming up
+$R_n=n^3$, we find that $n^3$ is the solution when $\alpha=0$, $\beta=1$,
+$\gamma=-3$, $\delta=3$. Hence
+\begindisplay
+3D(n)-3C(n)+B(n)=n^3\,;
+\enddisplay
+this determines $D(n)$.\par\endgroup
+
+We're interested in the sum $\Sq_n$, which equals $\Sq_{n-1}+n^2$; thus we
+get $\Sq_n=R_n$ if we set $\alpha=\beta=\gamma=0$ and $\delta=1$ in
+\thiseq. Consequently $\Sq_n=D(n)$. We needn't do
+the algebra to compute $D(n)$ from $B(n)$ and $C(n)$,
+since we already know what the answer will be; but doubters
+among us should be reassured to find that
+\begindisplay
+3D(n)=n^3+3C(n)-B(n)=n^3+3{(n{+}1)n\over2}-n=\textstyle n(n{+}\half )(n{+}1)\,.
+\enddisplay
+
+\subhead Method 4: Replace sums by "integrals".
+
+People who have been raised on calculus instead of discrete mathematics
+tend to be more familiar with $\int$ than with $\sum$, so they find
+it natural to try changing $\sum$ to $\int$. One of our goals in this
+book is to become so comfortable with $\sum$ that we'll think $\int$
+is more difficult than $\sum$ (at least for exact results).
+ But still, it's a good
+idea to explore the relation between $\sum$ and $\int$, since summation
+and integration are based on very similar ideas.
+
+In calculus, an integral can be regarded as the area under a curve,
+and we can approximate this area
+"!approximation of sum by integral"
+by adding up the areas of long, skinny rectangles that touch the curve.
+We can also go the other way if a collection of long, skinny rectangles
+is given: Since $\Sq_n$ is the sum of the areas of rectangles whose sizes
+are $1\times1$, $1\times4$, \dots,~$1\times n^2$, 
+it is approximately equal to the area under the curve $f(x) = x^2$
+between 0~and~$n$.
+\g\vskip1in The horizontal scale here is ten times the vertical scale.\g
+\begindisplay
+\unitlength=1pt
+\beginpicture(200,170)(-20,-15)
+\put(0,0){\vector(0,1){150}}
+\put(0,0){\vector(1,0){180}}
+\put(-10,150){\makebox(0,0){$f(x)\;$}}
+\put(180,-10){\makebox(0,0){$x\mathstrut$}}
+\put(10,0){\line(0,1){4}}
+\put(20,0){\line(0,1){9}}
+\put(30,0){\line(0,1){16}}
+\put(40,0){\line(0,1){25}}
+\put(50,0){\line(0,1){36}}
+\put(60,0){\line(0,1){49}}
+\put(70,0){\line(0,1){64}}
+\put(80,0){\line(0,1){81}}
+\put(90,0){\line(0,1){100}}
+\put(100,0){\line(0,1){121}}
+\put(110,0){\line(0,1){144}}
+\put(120,0){\line(0,1){144}}
+\put(0,1.5){\line(1,0){10}} % 1.5 fakes it so as to be visible!
+\put(10,4){\line(1,0){10}}
+\put(20,9){\line(1,0){10}}
+\put(30,16){\line(1,0){10}}
+\put(40,25){\line(1,0){10}}
+\put(50,36){\line(1,0){10}}
+\put(60,49){\line(1,0){10}}
+\put(70,64){\line(1,0){10}}
+\put(80,81){\line(1,0){10}}
+\put(90,100){\line(1,0){10}}
+\put(100,121){\line(1,0){10}}
+\put(110,144){\line(1,0){10}}
+\put(10,-10){\makebox(0,0){$1\mathstrut$}}
+\put(20,-10){\makebox(0,0){$2\mathstrut$}}
+\put(30,-10){\makebox(0,0){$3\mathstrut$}}
+\put(75,-10){\makebox(0,0){$\ldots\mathstrut$}}
+\put(120,-10){\makebox(0,0){$n\mathstrut$}}
+\put(40,70){\makebox(0,0){$f(x)=x^2$}}
+\put(0,0){\squine(0,60,120,0,0,144)}
+\endpicture
+\enddisplay
+The area under this curve is $\int_0^n x^2\,dx=n^3\!/3$; therefore we know
+that $\Sq_n$ is approximately ${1\over3}n^3$.
+
+\eject
+One way to use this fact is to examine the error in the
+approximation, $E_n=\Sq_n-{1\over3}n^3$.
+Since $\Sq_n$ satisfies the recurrence $\Sq_n=\Sq_{n-1}+n^2$, we find that
+$E_n$ satisfies the simpler recurrence
+\begindisplay
+\textstyle E_n=\Sq_n-{1\over3}n^3=\Sq_{n-1}+n^2-{1\over3}n^3
+&\textstyle=E_{n-1} +{1\over3}(n{-}1)^3+n^2-{1\over3}n^3\cr
+&\textstyle=E_{n-1}+n-{1\over3}\,.
+\enddisplay
+Another way to pursue the integral approach is to find a formula for $E_n$
+by summing the areas of the wedge-shaped error terms. We have
+\g\vskip.4in This is for people addicted to calculus.\g
+\begindisplay
+\Sq_n-\int_0^nx^2\,dx&=\sum_{k=1}^n\bigg(k^2-\int_{k-1}^kx^2\,dx\biggr)\cr
+&=\sum_{k=1}^n\biggl(k^2-{k^3-(k-1)^3\over3}\biggr)=\sum_{k=1}^n\textstyle
+ \bigl(k-{1\over3}\bigr)\,.
+\enddisplay
+Either way, we could find $E_n$ and then $\Sq_n$.
+
+\subhead Method 5: Expand and contract.
+
+Yet another way to discover a closed form for $\Sq_n$ is to replace the original
+sum by a seemingly more complicated double sum that can actually be simplified
+if we massage it properly:
+\begindisplay
+\Sq_n&=\sum_{1\le k\le n}k^2=\sum_{1\le j\le k\le n}k\cr
+&=\sum_{1\le j\le n}\,\,\sum_{j\le k\le n}k\cr
+\noalign{\smallskip}
+&=\sum_{1\le j\le n}\left(j+n\over2\right)(n-j+1)\cr
+&={\textstyle\half }\!\sum_{1\le j\le n}\bigl(n(n+1)+j-j^2\bigr)\cr
+\noalign{\smallskip}
+&=\textstyle\half n^2(n+1)+{1\over4}n(n+1)-\half \Sq_n
+=\textstyle\half n(n+\half )(n+1)-\half \Sq_n\,.\cr
+\enddisplay
+\g\vskip-1in(The last step here is something
+ like the last step of the perturbation
+method, because we get an equation with the unknown quantity on both sides.)\g
+Going from a single sum to a double sum may appear at first to be a backward step,
+but it's actually progress, because it produces sums that are easier to
+work with. We can't expect to solve every problem by continually
+simplifying, simplifying, and simplifying: You can't scale
+"!philosophy"
+the highest mountain peaks by climbing only uphill.
+
+\subhead Method 6: Use finite calculus.
+
+\vskip-\medskipamount\nobreak
+\subhead Method 7: Use generating functions.
+
+Stay tuned for still more exciting calculations of $\Sq_n=\sum_{k=0}^nk^2$,
+as we learn further techniques in the next section and in later chapters.
+
+\beginsection 2.6 Finite and Infinite Calculus
+
+We've learned a variety of ways to deal with sums directly. Now it's
+time to acquire a broader perspective, by looking at the problem
+of summation from a higher level. Mathematicians have developed a
+``"finite calculus",'' analogous to the more traditional infinite "calculus",
+by which it's possible to approach summation in a nice, systematic fashion.
+
+Infinite "calculus" is based on the properties of the {\it "derivative"\/}
+operator~$D$, defined by
+\begindisplay
+ D f(x)
+	= \lim_{h \rightarrow 0} {f(x+h)-f(x)\over h} \,.
+\enddisplay
+Finite calculus is based on the properties of the {\it "difference"\/}
+operator~$\Delta$, defined by
+\begindisplay
+\Delta f(x)=f(x+1)-f(x)\,.
+\eqno\eqref|diff-def|
+\enddisplay
+This is the finite analog of the derivative in which we restrict ourselves
+to positive integer values of~$h$. Thus, $h=1$ is the closest we can get
+to the ``limit'' as $h\to0$, and $\Delta f(x)$ is the value of
+$\bigl(f(x+h)-f(x)\bigr)/h$ when $h=1$.
+
+The symbols $D$ and $\Delta$ are called {\it "operators"\/} because they
+operate on functions to give new
+functions; they are functions of functions that produce functions.
+If $f$ is a suitably smooth function of real numbers to real numbers,
+\g As opposed to a cassette function.\g
+then $Df$ is also a function from reals to reals. And if $f$ is {\it any\/}
+real-to-real function, so is $\Delta f$. The values of the functions
+$Df$ and~$\Delta f$ at a point~$x$ are given by the definitions above.
+
+Early on in calculus we learn how $D$~operates
+on the powers $f(x) = x^m$. In such cases $Df(x)=mx^{m-1}$.
+We can write this informally with $f$ omitted,
+\begindisplay
+D(x^m)=mx^{m-1}\,.
+\enddisplay
+It would be nice if the $\Delta$ operator would produce an equally
+elegant result; unfortunately it doesn't. We have, for example,
+\begindisplay
+\Delta(x^3)=(x+1)^3-x^3=3x^2+3x+1\,.
+\enddisplay
+
+But there is a type of ``$m$th power''
+\g Math power.\g
+ that does transform nicely under~$\Delta$,
+and this is what makes finite calculus interesting. Such newfangled
+$m$th powers are defined by the rule
+\begindisplay
+x\_m
+	= \overbrace{x(x-1) \ldots (x-m+1)}^{m\rm\ factors} \,,
+					\qquad\hbox{integer $m \geq 0$.}
+\eqno
+\enddisplay
+\tabref|nn:fall|%
+Notice the little straight
+line under the $m$; this implies that the $m$ factors are supposed
+to go down and down, stepwise. There's also a corresponding definition where the
+factors go up and up:
+\begindisplay
+x\_^m
+	= \overbrace{x(x+1) \ldots (x+m-1)}^{m\rm\ factors} \,,
+					\qquad\hbox{integer $m \geq 0$.}
+\eqno
+\enddisplay
+\tabref|nn:rise|%
+When $m=0$, we have $x\_0=x\_^0=1$, because a product of no factors is
+"!empty product" "!empty sum"
+conventionally taken to be~$1$ (just as a sum of no terms is conventionally~$0$).
+
+The quantity $x\_m$ is called ``$x$ to the $m$ falling,\qback'' if we have
+to read it\break aloud; similarly, $x\_^m$ is ``$x$~to the $m$ rising.\qback''
+These functions are also called {\it "falling factorial powers"\/} and
+{\it "rising factorial powers"}, since they are closely related to the
+"!factorial powers"
+factorial function $n!=n(n-1)\ldots(1)$. In fact, $n!=n\_n=1\_^n$.
+
+Several other notations for factorial powers appear in the
+mathematical literature, notably ``"Pochhammer"'s symbol'' $(x)_m$
+\g Mathematical terminology is sometimes crazy: Pochhammer~[|pochhammer|]
+actually used the notation\/~$(x)_m$ for the binomial coefficient $x\choose m$,
+not for factorial powers.\g
+for $x\_^m$ or~$x\_m@$; notations like $x^{(m)}$ or $x_{(m)}$ are
+also seen for $x\_m$.
+But the underline/overline convention is catching on, because it's
+easy to write, easy to remember, and free of redundant parentheses.
+
+Falling powers $x\_m$ are especially nice with
+respect to~$\Delta$. We have
+\begindisplay
+\Delta(x\_m)&=(x+1)\_m-x\_m\cr
+&=(x+1)x\ldots(x-m+2)\;-\;x\ldots(x-m+2)(x-m+1)\cr
+&=m\,x(x-1)\ldots(x-m+2)\,,
+\enddisplay
+hence the finite calculus has a handy law to match $D(x^m)=mx^{m-1}$:
+\begindisplay
+\Delta(x\_m)=mx\_{m-1}\,.
+\eqno\eqref|delta-falling|
+\enddisplay
+This is the basic factorial fact.
+"!falling powers, difference of"
+
+The operator $D$ of infinite calculus has an inverse,
+the anti-derivative (or integration) operator~$\int\!$.
+The "Fundamental Theorem of Calculus" relates $D$ to~$\int$:
+\begindisplay \advance\abovedisplayskip-3pt
+ g(x) = D f(x)
+	\qquad \hbox{if and only if}
+	\qquad \int g(x)\,dx = f(x) + C \,.
+\enddisplay
+Here $\int g(x)\,dx$, the indefinite integral of~$g(x)$,
+is the class of functions whose derivative is~$g(x)$.
+\g \vskip-19pt
+\noindent\llap{``}Quemadmodum ad differentiam denotandam usi sumus signo~$\Delta$,
+ita summam indicabimus signo~$\Sigma$. \dots\ ex quo {\ae}quatio
+$z=\Delta y$, si invertatur, dabit quoque $y=\Sigma z+C$.''\par
+\noindent\hfill\dash---L. "Euler" [|euler-diff-calc|]\g
+Analogously, $\Delta$~has as an inverse,
+the "anti-difference" (or summation) operator~$\sum$;
+and there's another Fundamental Theorem:
+\begindisplay
+ g(x) = \Delta f(x)
+	\qquad \hbox{if and only if}
+	\qquad \sum g(x)\,\delta x = f(x) + C \,.
+\eqno
+\enddisplay
+Here $\sum g(x)\,\delta x$, the {\it "indefinite sum"\/} of~$g(x)$,
+\tabref|nn:indef-sum|%
+is the class of functions whose {\it difference\/} is~$g(x)$.
+"!notation" "!sums, indefinite"
+(Notice that the lowercase $\delta$ relates to uppercase $\Delta$
+as $d$~relates to~$D$.) The ``$C$'' for indefinite integrals is
+an arbitrary constant; the ``$C$'' for indefinite sums is
+any function $p(x)$ such that $p(x+1)=p(x)$. For
+example, $C$ might be the periodic function $a+b\sin 2\pi x$; such
+functions get washed out when we take differences,
+just as constants get washed out when we take derivatives.
+At integer values of~$x$, the function~$C$ is constant.
+
+Now we're almost ready for the punch line. Infinite calculus also has
+{\it definite\/} integrals: If $g(x)=Df(x)$, then
+\begindisplay
+ \int_a^b g(x)\,dx
+	= f(x) \Big\vert_a^b
+	= f(b) - f(a) \,.
+\enddisplay
+Therefore finite calculus\dash---ever mimicking its more famous cousin\dash---%
+has definite {\it sums\/}: If $g(x)=\Delta f(x)$, then
+"!sums, definite"
+\begindisplay
+\sum\nolimits_a^b g(x)\,\delta x
+	= f(x) \Big\vert_a^b
+	= f(b) - f(a) \,.
+\eqno\eqref|definite-sum-def|
+\enddisplay
+This formula gives a meaning to the notation $\sum_a^bg(x)\,\delta x$, just
+as the previous formula defines $\int_a^bg(x)\,dx$.
+
+But what does $\sum_a^bg(x)\,\delta x$ really mean, intuitively?
+We've defined it by analogy, not by necessity. We want the analogy to hold,
+so that we can easily remember the rules of finite calculus; but the notation
+will be useless if we don't understand its significance. Let's try to
+deduce its meaning by looking first at some special cases, assuming that
+$g(x)=\Delta f(x)=f(x+1)-f(x)$. If $b=a$, we have
+\begindisplay
+ \sum\nolimits_a^a g(x)\,\delta x= f(a) - f(a)= 0 \,.
+\enddisplay
+Next, if $b=a+1$, the result is
+\begindisplay
+ \sum\nolimits_a^{a+1} g(x)\,\delta x= f(a+1) - f(a)= g(a) \,.
+\enddisplay
+More generally, if $b$ increases by~$1$, we have
+\begindisplay
+\sum\nolimits_a^{b+1} g(x)\,\delta x\;-\;
+\sum\nolimits_a^b g(x)\,\delta x
+	&= \bigl( f(b+1) - f(a) \bigr)- \bigl( f(b) - f(a) \bigr)\cr
+	&= f(b+1)-f(b) = g(b)\,.
+\enddisplay
+These observations, and mathematical induction, allow us to deduce exactly
+what $\sum_a^bg(x)\,\delta x$ means in general, when $a$ and~$b$ are
+integers with $b\ge a$:
+\begindisplay
+\sum\nolimits_a^b g(x)\,\delta x
+=\sum_{k=a}^{b-1}g(k)=\sum_{a\le k<b}g(k)\,,
+	\qquad\hbox{for integers $b \geq a$.}
+\eqno\eqref|definite-sum|
+\enddisplay
+\tabref|nn:def-sum|%
+\g You call this a punch line?\g
+In other words, the definite sum is the same as an ordinary sum with limits,
+but excluding the value at the upper limit.
+
+Let's try to recap this in a slightly different way. Suppose we've
+been given an unknown sum that's supposed to be evaluated in closed form,
+and suppose we can write it in the form $\sum_{a\le k<b}g(k)=
+\sum_a^bg(x)\,\delta x$. The theory of finite calculus tells us that we
+can express the answer as $f(b)-f(a)$, if we can only find an indefinite
+sum or anti-difference function~$f$ such that $g(x)=f(x+1)-f(x)$.
+One way to understand this principle is to write $\sum_{a\le k<b}g(k)$
+out in full, using the "three-dots notation":
+\begindisplay \openup-2pt
+\sum_{a\le k<b}\bigl(f(k+1)-f(k)\bigr)
+&=\bigl(f(a{+}1)-f(a)\bigr)
+ +\bigl(f(a{+}2)-f(a{+}1)\bigr)+\cdots\cr
+&\qquad{}+\bigl(f(b{-}1)-f(b{-}2)\bigr)
+ +\bigl(f(b)-f(b{-}1)\bigr)\,.\cr
+\enddisplay
+Everything on the right-hand side cancels, except $f(b)-f(a)$; so $f(b)-f(a)$
+is the value of the sum. (Sums of the form $\sum_{a\le k<b}\bigl(f(k+1)-
+f(k)\bigr)$ are often called {\it "telescoping"}, by analogy with
+a collapsed telescope, because the thickness of a collapsed telescope
+\g And all this time I thought it was telescoping because it collapsed
+from a very long expression to a very short one.\g
+is determined solely by the outer radius of the
+outermost tube and the inner radius of the innermost tube.)
+
+But rule \thiseq\ applies only when $b \geq a$;
+what happens if $b<a$?
+Well, \eq(|definite-sum-def|) says that we must have
+\begindisplay
+\sum\nolimits_a^b g(x)\,\delta x
+&= f(b) - f(a)\cr
+&= - \bigl( f(a) - f(b) \bigr)
+= - \sum\nolimits_b^a g(x)\,\delta x \,.
+\enddisplay
+This is analogous to the corresponding equation for definite integration.
+A similar argument proves
+$\sum_a^b + \sum_b^c = \sum_a^c$,
+the summation analog of the identity $\int_a^b + \int_b^c = \int_a^c$.
+In full garb,
+\begindisplay
+\sum\nolimits_a^b g(x)\,\delta x + \sum\nolimits_b^c g(x)\,\delta x
+	= \sum\nolimits_a^c g(x)\,\delta x \,,
+\eqno
+\enddisplay
+for all integers $a$,~$b$, and~$c$.
+
+At this point a few of us are probably starting to wonder
+what all these parallels and analogies buy us.
+\g Others have been wondering this for some time now.\g
+Well for one, definite summation gives us a simple way to compute
+sums of falling powers: The basic laws \eq(|delta-falling|),
+\eq(|definite-sum-def|), and \eq(|definite-sum|) imply the general law
+\begindisplay
+\sum_{0\le k<n}k\_m={k\_{m+1}\over m+1}\bigg\vert_0^n={n\_{m+1}\over m+1}\,,
+\qquad\hbox{for integers $m,n\ge0$.}
+\eqno\eqref|sigma-falling|
+\enddisplay
+This formula is easy to remember because it's so much like the familiar
+$\int_0^nx^m\,dx=n^{m+1}\!/(m+1)$.
+
+In particular, when $m=1$ we have $k\_1=k$, so the principles of finite
+calculus give us an easy way to remember the fact that
+\begindisplay
+\sum_{0\le k<n}k={n\_2\over2}=n(n-1)/2\,.
+\enddisplay
+The definite-sum method also gives us an inkling that sums over the range
+$0\le k<n$ often turn out to be simpler than sums over $1\le k\le n$;
+the former are just $f(n)-f(0)$, while the latter must be evaluated
+as $f(n+1)-f(1)$.
+
+Ordinary powers can also be summed in this new way, if we first express
+them in terms of falling powers. For example,
+\begindisplay
+k^2=k\_2+k\_1\,,
+\enddisplay
+hence
+\begindisplay
+\sum_{0\le k<n}k^2={n\_3\over3}+{n\_2\over2}=
+ \textstyle{1\over3}n(n-1)(n-2+{3\over2})={1\over3}n(n-\half )(n-1)\,.
+\enddisplay
+Replacing $n$ by $n+1$ gives us yet another way to compute the value
+of our old friend $\Sq_n=\sum_{0\le k\le n}k^2$ in closed form.
+\g With friends like this\thinspace\dots\g
+"!sum of consecutive squares"
+
+Gee, that was pretty easy. In fact, it was easier than any of the umpteen
+other ways that beat this formula to death in the previous section. So
+let's try to go up a notch, from squares to {\it cubes\/}: A simple
+"!sum of consecutive cubes"
+calculation shows that
+\begindisplay
+k^3=k\_3+3k\_2+k\_1\,.
+\enddisplay
+(It's always possible to convert between ordinary powers and factorial
+powers by using Stirling numbers, which we will study in Chapter~6.)
+Thus
+\begindisplay
+\sum_{a \leq k <b} k^3
+ ={k\_4\over4}+k\_3+{k\_2\over2}\,\,\bigg\vert_a^b\,.
+\enddisplay
+
+Falling powers are therefore very nice for sums. But do they have any other
+redeeming features? Must we convert our old friendly ordinary powers to
+falling powers before summing, but then convert back before we can do
+anything else? Well, no, it's often possible to work directly with
+factorial powers, because they have additional properties. For example,
+just as we have $(x+y)^2=x^2+2xy+y^2$, it turns out that $(x+y)\_2=x\_2+2x\_1y\_1+
+y\_2$, and the same analogy holds between $(x+y)^m$ and $(x+y)\_m$.
+(This ``factorial binomial theorem''
+is proved in exercise 5.|binomial-to-factorial|.)
+
+So far we've considered only falling powers that have nonnegative exponents.
+To extend the analogies with ordinary powers to negative exponents,
+we need an appropriate definition of~$x\_m$ for $m<0$.
+Looking at the sequence
+\begindisplay
+x\_3	&= x(x-1)(x-2) \,,\cr
+x\_2	&= x(x-1) \,, \cr
+x\_1	&= x \,, \cr
+x\_0	&= 1 \,,
+\enddisplay
+we notice that to get from $x\_3$ to $x\_2$ to $x\_1$ to $x\_0$
+we divide by~$x-2$, then by $x-1$, then by~$x$.
+It seems reasonable (if not imperative) that we should divide
+by~$x+1$ next,  to get from $x\_0$~to~$x\_{-1}$, thereby
+making $x\_{-1} = 1/(x+1)$.
+Continuing, the first few negative-exponent falling powers are
+\begindisplay
+x\_{-1} &= {1\over x+1} \,, \cr
+x\_{-2} &= {1\over(x+1)(x+2)} \,, \cr
+x\_{-3} &= {1\over(x+1)(x+2)(x+3)} \,,\cr
+\enddisplay
+and our general definition for negative falling powers is
+"!negative factorial powers" "!factorial powers, negative"
+\begindisplay
+x\_{-m}
+	= {1\over(x+1)(x+2) \ldots (x+m)} \,, \qquad\hbox{for $m > 0$.}
+\eqno
+\enddisplay
+(It's also possible to define falling powers for real or even complex~$m$,
+\g How can a complex number be even?\g
+but we will defer that until Chapter~5.)
+
+With this definition, falling powers have additional nice properties.
+Perhaps the most important is a general law of exponents,
+"!exponents, law of"
+analogous to the law
+\begindisplay
+ x^{m+n}
+	= x^m x^n
+\enddisplay
+for ordinary powers.
+The falling-power version is
+\begindisplay
+x\_{m+n}
+= x\_m \, (x-m)\_n \,,	\qquad\hbox{integers $m$ and $n$.}
+\eqno\eqref|falling-exp|
+\enddisplay
+For example, $x\_{2+3} = x\_2 \, (x-2)\_3$;
+and with a negative~$n$ we have
+\begindisplay
+x\_{2-3}
+	= x\_2 \, (x-2)\_{-3}
+	= x(x-1){1\over(x-1)x(x+1)}
+	= {1\over x+1}
+	= x\_{-1} \,.
+\enddisplay
+If we had chosen to define
+$x\_{-1}$ as $1/x$ instead of as $1/(x+1)$, the law of exponents \thiseq\
+would have failed in cases like $m=-1$ and $n=1$. In fact, we could have
+used \thiseq\ to tell us exactly how falling powers ought to be defined
+\g Laws have their exponents and their detractors.\g
+in the case of negative exponents, by setting $m=-n$. When an existing
+"!notation, extension of"
+notation is being extended to cover more cases, it's always best to
+formulate definitions in such a way that general laws continue to hold.
+
+Now let's make sure that the crucial difference property
+"!falling powers, difference of"
+holds for our newly defined falling powers.
+Does $\Delta x\_m = mx\_{m-1}$ when $m<0$?
+If $m = -2$, for example, the difference is
+\begindisplay
+\Delta x\_{-2}
+	&={1\over(x+2)(x+3)} - {1\over(x+1)(x+2)} \cr
+\noalign{\smallskip}
+	&={(x+1)-(x+3)\over(x+1)(x+2)(x+3)} \cr
+\noalign{\smallskip}
+	&= -2 x\_{-3} \,.
+\enddisplay
+Yes\dash---it works! A similar argument applies for all $m<0$.
+
+Therefore the summation property~\eq(|sigma-falling|)
+holds for negative falling powers as well as positive ones,
+"!factorial powers, negative"
+as long as no division by zero occurs:
+\begindisplay
+ \sum\nolimits_a^b x\_m\,\delta x
+	= {x\_{m+1}\over{m+1}}\bigg\vert_a^b \,,
+					\qquad\hbox{for $m \neq -1$.}
+\enddisplay
+
+But what about when $m = -1$?
+Recall that for integration we use
+\begindisplay
+ \int_a^b x^{-1}\,dx
+	= \ln x \,\Big\vert_a^b
+\enddisplay
+when $m=-1$. We'd like to have a finite analog of~$\ln x$; in other words,
+we seek a function $f(x)$ such that
+\begindisplay
+x\_{-1}={1\over x+1}
+	= \Delta f(x)
+	= f(x+1) - f(x) \,.
+\enddisplay
+It's not too hard to see that
+\begindisplay
+ f(x)
+	= {1\over1} + \half  + \cdots + {1\over x}
+\enddisplay
+is such a function, when $x$ is an integer, and this quantity is just the
+harmonic number~$H_x$ of~\eq(|h-def|). Thus $H_x$ is the discrete analog
+"!harmonic number, analogous to logarithm"
+of the continuous $\ln x$. (We will define $H_x$ for noninteger~$x$
+in Chapter~6, but integer values are good enough for present purposes.
+We'll also see in Chapter~9 that, for large~$x$,
+the value of $H_x-\ln x$ is approximately $0.577+1/(2x)$. Hence $H_x$
+\g $0.577$ exactly?\par Maybe they mean\smallskip $1/\mskip-2mu\sqrt3$.\smallskip
+Then again,\par maybe not.\g
+and $\ln x$ are not only analogous,
+their values usually differ by less than~$1$.)
+
+We can now give a complete description of the sums of falling powers:
+\begindisplay
+\sum\nolimits_a^b x\_m\,\delta x
+	= \cases{
+		\displaystyle{x\_{m+1}\over m+1}\bigg\vert_a^b\,,
+				&if $m\ne-1$;\cr
+\noalign{\smallskip}
+		\displaystyle H_x \Big\vert_a^b \,,
+				&if $m = -1$.}
+\eqno\eqref|gen-sigma-falling|
+\enddisplay
+This formula indicates why harmonic numbers tend to pop up in
+the solutions to discrete problems like the analysis of quicksort,
+just as so-called "natural logarithms" arise naturally in the solutions
+to continuous problems.
+
+Now that we've found an analog for $\ln x$, let's see if there's one
+for~$e^x$. What function $f(x)$ has the property that $\Delta f(x)=f(x)$,
+"!exponential function, discrete analog"
+corresponding to the identity $De^x=e^x$? Easy:
+\begindisplay
+f(x+1)-f(x)=f(x)\qquad\Longleftrightarrow\qquad f(x+1)=2f(x)\,;
+\enddisplay
+so we're dealing with
+a simple recurrence, and we can take $f(x)=2^x$ as the discrete
+exponential function.
+
+The difference of $c^x$ is also quite simple, for arbitrary~$c$, namely
+\begindisplay
+\Delta(c^x)=c^{x+1}-c^x=(c-1)c^x\,.
+\enddisplay
+Hence the anti-difference of $c^x$ is $c^x\!/(c-1)$, if $c\ne1$. This fact,
+together with the fundamental laws \eq(|definite-sum-def|)
+and \eq(|definite-sum|), gives us a tidy way to understand the
+general formula for the sum of
+a geometric progression:
+\begindisplay
+ \sum_{a \leq k < b} c^k
+	= \sum\nolimits_a^b c^x\,\delta x
+	= {c^x\over c-1}\, \bigg\vert_a^b
+	= {c^b-c^a\over c-1} \,,\qquad\hbox{for $c\ne1$.}
+\enddisplay
+
+Every time we encounter a function $f$ that might be useful as a closed form,
+we can compute its difference $\Delta f=g$; then we have a function~$g$
+whose indefinite sum $\sum g(x)\,\delta x$ is known. Table~|difference-table|
+\g `Table~|difference-table|' is on page~|difference-table|. Get it?\g
+is the beginning of a table of difference/"anti-difference" pairs useful for
+summation.
+
+Despite all the parallels between continuous and discrete math,
+some continuous notions have no discrete analog.
+For example, the chain rule of infinite calculus
+is a handy rule for the derivative of a function of a function;
+but there's no corresponding "chain rule" of finite calculus,
+because there's no nice form for $\Delta f \bigl( g(x) \bigr)$.
+Discrete change-of-variables is hard, except in certain cases like
+the replacement of $x$ by $c\pm x$.
+
+However, $\Delta \bigl(f(x)\,g(x)\bigr)$ {\it does\/} have a fairly
+nice form, and it provides us with a rule for {\it "summation by~parts"},
+the finite analog of what infinite calculus calls integration by~parts.
+Let's recall that the formula
+\begindisplay
+ D(uv)
+	= u\,Dv + v\,Du
+\enddisplay
+of infinite calculus leads to the rule for integration by parts,
+\begindisplay
+\int u\,Dv = uv - \int v\,Du\,,
+\enddisplay
+after integration and rearranging terms; we can do a similar thing in
+finite calculus.
+
+\topinsert
+\table What's the difference?\tabref|difference-table|
+\kern3pt
+\halign to\hsize{\strut$#\hfil$\qquad&$#\hfil$\tabskip=40pt plus 100pt
+ &\tabskip=0pt$#\hfil$\qquad&$#\hfil$\cr
+f=\Sigma g&\Delta f=g&f=\Sigma g&\Delta f=g\cr
+\noalign{\hrule width\hsize\kern2pt}
+x\_0=1&0&2^x&2^x\cr
+x\_1=x&1&c^x&(c-1)c^x\cr
+x\_2=x(x-1)&2x&c^x\!/(c-1)&c^x\cr
+x\_m&mx\_{m-1}&cf&c\Delta f\cr
+x\_{m+1}/(m+1)&x\_m&f+g&\Delta f+\Delta g\cr
+H_x&x\_{-1}=1/(x+1)&f\mskip2mu g&f\Delta g+Eg\Delta f\cr}
+\kern2pt
+\hrule width\hsize height.5pt
+\kern4pt
+\endinsert
+
+We start by applying the difference operator
+to the product of two functions $u(x)$ and~$v(x)$:
+\begindisplay
+\Delta \bigl(u(x)\,v(x)\bigr)
+	&= u(x{+}1)\,v(x{+}1)&-u(x)\,v(x)\cr
+	&= u(x{+}1)\,v(x{+}1)&-u(x)\,v(x{+}1)\cr
+	&		&+u(x)\,v(x{+}1)-u(x)\,v(x)\cr
+\noalign{\vskip1pt}
+	&= u(x)\,\Delta v(x) \,+\, v(x{+}1)\,\Delta u(x) \,.\hidewidth
+\eqno
+\enddisplay
+This formula can be put into a convenient form using the {\it "shift operator"\/}
+"!operator"
+$E$, defined by
+\begindisplay
+E f(x)	= f(x+1) \,.
+\enddisplay
+Substituting $Ev(x)$ for $v(x{+}1)$ yields a compact
+rule for the difference of a product:
+\begindisplay
+\Delta(uv)= u\,\Delta v \,+\, Ev\,\Delta u \,.
+\eqno
+\enddisplay
+(The $E$ is a bit of a nuisance, but it makes the equation correct.)
+\g Infinite calculus avoids $\,E$ here by letting $\,1\to0$.\g
+Taking the indefinite sum on both sides of this equation, and rearranging 
+its terms, yields the advertised rule for "summation by~parts":
+\begindisplay
+\sum u\,\Delta v
+	= uv - \sum Ev\,\Delta u\,.
+\eqno\eqref|sum-by-parts|
+\enddisplay
+As with infinite calculus, limits can be placed on all three terms,
+making the indefinite sums definite.
+
+This rule is useful when the sum on the left is harder to evaluate
+than the one on the right.
+Let's look at an example. The function $\int xe^x \,dx$ is typically
+\g\vskip-11pt I guess $e^x=2^x$, for small values of~$1$.\g
+integrated by parts; its discrete analog is $\sum x 2^x\,\delta x$,
+which we encountered earlier this chapter
+in the form $\sum_{k=0}^n k\,2^k$.
+To sum this by parts, we let $u(x)=x$ and $\Delta v(x)=2^x$;
+hence $\Delta u(x)=1$, $v(x)=2^x$, and $Ev(x)=2^{x+1}$.
+Plugging into \thiseq\ gives
+\begindisplay
+\sum x2^x\,\delta x&=x2^x\,-\,\sum2^{x+1}\,\delta x
+&=x2^x\,-\,2^{x+1}\,+\,C\,.
+\enddisplay
+And we can use this to evaluate the sum we did before, by attaching limits:
+\begindisplay
+\sum_{k=0}^n k2^k&=\sum\nolimits_0^{n+1}x2^x\,\delta x\cr
+\noalign{\vskip-3pt}
+&=x2^x-2^{x+1}\,\,\Big\vert_0^{n+1}\cr
+\noalign{\vskip+3pt}
+&=\bigl((n+1)2^{n+1}-2^{n+2@}\bigr)-(0\cdt2^0-2^1)=(n-1)2^{n+1}+2\,.\cr
+\enddisplay
+It's easier to find the sum this way than to use the perturbation
+"!thinking not at all"
+method, because we don't have to think.
+\g The ultimate goal of mathematics is to eliminate all need for intelligent
+thought.\g
+
+We stumbled across a formula for $\sum_{0\le k<n}H_k$ earlier in this
+chapter, and counted ourselves lucky.
+But we could have found our formula \eq(|harm-sum|)
+systematically, if we had known about summation by parts. Let's
+demonstrate this assertion by tackling a sum that looks even harder,
+$\sum_{0\le k<n}kH_k$. The solution is not difficult if we are
+guided by analogy with $\int x\ln x\,dx$: We take $u(x)=H_x$
+and $\Delta v(x)=x=x\_1$, hence $\Delta u(x)=x\_{-1}$, $v(x)=x\_2/2$,
+$Ev(x)=(x+1)\_2/2$, and we have
+\begindisplay \openup3pt
+\sum xH_x\,\delta x
+&={x\_2\over2}H_x\,-\,\sum{(x+1)\_2\over2}\,x\_{-1}\,\delta x\cr
+&={x\_2\over2}H_x\,-\,\half \sum x\_1\,\delta x\cr
+&={x\_2\over2}H_x\,-\,{x\_2\over4}\,+\,C\,.\cr
+\enddisplay
+(In going from the first line to the second, we've combined
+two falling powers~$(x+1)\_2\,x\_{-1}$
+by using the law of exponents~\eq(|falling-exp|)
+with $m=-1$ and~$n=2$.) Now we can attach limits and conclude that
+\begindisplay
+\sum_{0\le k<n}kH_k=\sum\nolimits_0^nxH_x\,\delta x
+ ={n\_2\over2}\Bigl(H_n-\textstyle\half \Bigr)\,.
+\eqno\eqref|harm-sum+|
+\enddisplay
+
+\beginsection 2.7 Infinite Sums
+
+When we defined $\sum$-notation at the beginning of this chapter, we finessed
+\g\undertext{This} is finesse?\g
+the question of "infinite sums" by saying, in essence,
+ ``Wait until later. For now, we can
+assume that all the sums we meet have only finitely many nonzero terms.''
+But the time of reckoning has finally arrived; we must face the fact that sums
+can be infinite. And the truth is that infinite sums are bearers of both
+good news and bad news.
+
+First, the bad news: It turns out that the methods we've used for manipulating
+$\sum$'s are {\it not\/} always valid when infinite sums are involved.
+But next, the good news: There is a large, easily understood class of
+infinite sums for which all the operations we've been performing are perfectly
+legitimate. The reasons underlying both these news items will be clear
+ after we have looked
+more closely at the underlying meaning of summation.
+
+Everybody knows what a finite sum is: We add up a bunch of terms,
+one by one, until they've all been added. But an infinite sum needs
+to be defined more carefully, lest we get into paradoxical situations.
+
+For example, it seems natural to define things so that the infinite sum
+\begindisplay
+S=\textstyle1+\half +{1\over4}+{1\over8}+{1\over16}+{1\over32}+\cdots
+\enddisplay
+is equal to~$2$, because if we double it we get
+\begindisplay
+2S=\textstyle2+1+\half +{1\over4}+{1\over8}+{1\over16}+\cdots=2+S\,.
+\enddisplay
+On the other hand, this same reasoning suggests that we ought to define
+"!paradoxical sums"
+\begindisplay
+T=1+2+4+8+16+32+\cdots
+\enddisplay
+to be $-1$, for if we double it we get
+\g Sure: $1+2+4+8+\cdots$ is the ``infinite precision'' representation
+of the number $-1$, in a binary computer with infinite word~size.\g
+\begindisplay
+2T=2+4+8+16+32+64+\cdots=T-1.
+\enddisplay
+Something funny is going on;
+how can we get a negative number by summing positive quantities?
+It seems better to leave $T$ undefined; or perhaps we should
+say that $T=\infty$,
+since the terms being added in $T$ become larger than any fixed, finite number.
+(Notice that $\infty$ is another ``solution'' to the equation $2T=T-1$; it also
+``solves'' the equation $2S=2+S$.)
+
+Let's try to formulate a good definition for the value of
+a general sum $\sum_{k\in K}a_k$, where $K$ might be infinite.
+For starters, let's assume that all the terms $a_k$ are {\it
+nonnegative}. Then a suitable definition is not hard to find:
+If there's a bounding constant~$A$ such that
+\begindisplay
+\sum_{k\in F}a_k\le A
+\enddisplay
+for all {\it finite\/} subsets $F\subset K$, then we define $\sum_{k\in K}a_k$
+to be the {\it least\/} such~$A$. (It follows from well-known properties
+of the real numbers that the set of all such~$A$ always contains a
+smallest element.) But if there's no bounding constant~$A$, we say that
+$\sum_{k\in K}a_k=\infty$; this means that if $A$ is any
+real number, there's a set of
+finitely many terms $a_k$ whose sum exceeds~$A$.
+
+The definition in the previous paragraph has been formulated carefully
+so that it doesn't depend on any order that might exist in the index set~$K$.
+Therefore the arguments we are about to make will apply to multiple sums
+with many indices $k_1$, $k_2$, \dots, not just to sums over the set
+of integers.
+\g The set $K$ might even be uncountable. But only a countable
+number of terms can be nonzero, if a bounding constant $A$ exists,
+because at most $nA$ terms are $\ge1/n$.\g
+
+In the special case that $K$ is the set of nonnegative integers,
+our definition for nonnegative terms $a_k$ implies that
+\begindisplay
+\sum_{k\ge0}a_k=\lim_{n\to\infty}\sum_{k=0}^na_k\,.
+\enddisplay
+Here's why: Any nondecreasing sequence
+of real numbers has a limit (possibly~$\infty$).
+If the limit is~$A$, and if $F$ is any finite
+set of nonnegative integers whose elements are all $\le n$, we have
+$\sum_{k\in F}a_k\le\sum_{k=0}^na_k\le A$; hence $A=\infty$ or $A$ is a
+bounding constant. And if $A'$ is any number less than the stated limit~$A$,
+then there's an $n$ such that $\sum_{k=0}^n a_k>A'$; hence the finite set
+$F=\{0,1,\ldots,n\}$ witnesses to the fact that $A'$ is not a bounding
+constant.
+
+We can now easily compute the value of
+certain infinite sums, according to the definition just given.
+For example, if $a_k=x^k$, we have
+\begindisplay
+\sum_{k\ge0}x^k=\lim_{n\to\infty}{1-x^{n+1}\over1-x}=
+ \cases{1/(1-x),&if $0\le x<1$;\cr \infty,&if $x\ge1$.\cr}
+\enddisplay
+In particular, the infinite sums $S$ and $T$ considered a minute ago
+have the re\-spective values $2$ and~$\infty$, just as we suspected.
+Another interesting example~is
+\begindisplay
+\sum_{k\ge0}{1\over(k+1)(k+2)}&=\sum_{k\ge0}k\_{-2}\cr
+&=\lim_{n\to\infty}\sum_{k=0}^nk\_{-2}=\lim_{n\to\infty}{k\_{-1}\over-1}
+ \bigg\vert_0^n=1\,.\cr
+\enddisplay
+
+Now let's consider the case that the sum might have negative terms as well
+as nonnegative ones.
+What, for example, should be the value of
+\begindisplay
+\sum_{k\ge0}(-1)^k=1-1+1-1+1-1+\cdots\,?
+\enddisplay
+\g\vskip-24pt
+\noindent\llap{``}Aggregatum quantitatum $a-a+a-a+a-a$ etc.\ nunc est $=a$, nunc $=0$,
+adeoque continuata in infinitum serie ponendus $=a/2$, fateor acumen
+et veritatem animadversionis tu\ae.''\par\hfill\dash---G. "Grandi" [|grandi|]\g
+If we group the terms in pairs, we get
+\begindisplay
+(1-1)+(1-1)+(1-1)+\cdots=0+0+0+\cdots\,,
+\enddisplay
+so the sum comes out zero; but if we start the pairing one step later, we get
+\begindisplay \postdisplaypenalty 10000
+1-(1-1)-(1-1)-(1-1)-\cdots=1-0-0-0-\cdots\,;
+\enddisplay
+the sum is~$1$.
+
+ We might also try setting $x=-1$ in the
+formula $\sum_{k\ge0}x^k=1/(1-x)$, 
+since we've proved that this formula holds
+when $0\le x<1$; but then we are forced to conclude that
+the infinite sum is $1\over2$, although it's a sum of integers!
+
+Another interesting example is the "doubly infinite" $\sum_ka_k$ where
+$a_k=1/(k+1)$ for $k\ge0$ and $a_k=1/(k-1)$ for $k<0$. We can write
+this as
+\begindisplay
+\textstyle\cdots+(-{1\over4})+(-{1\over3})+(-\half )+1+\half 
+ +{1\over3}+{1\over4}+\cdots\,.
+\eqno\eqref|double-harmonic|
+\enddisplay
+If we evaluate this sum by starting at the ``center'' element and working
+outward,
+\begindisplay
+\textstyle\cdots+\Bigl(-{1\over4}+\bigl(-{1\over3}+(-\half +(1)+\half )
+ +{1\over3}\bigr)+{1\over4}\Bigr)+\cdots\,,
+\enddisplay
+we get the value~$1$; and we obtain the same value~$1$ if we shift all
+the parentheses one step to the left,
+\begindisplay
+\textstyle\cdots+\Bigl(-{1\over5}+\bigl(-{1\over4}+(-{1\over3}+(-\half )
+ +1)+\half \bigr)+{1\over3}\Bigr)+\cdots\,,
+\enddisplay
+because the sum of all numbers inside the innermost $n$ parentheses is
+\begindisplay
+-{1\over n+1}-{1\over n}-\cdots-\half +1+\half +\cdots+{1\over n-1}
+=1-{1\over n}-{1\over n+1}\,.
+\enddisplay
+A similar argument shows that the value is~$1$ if these parentheses are
+shifted any fixed amount to the left or right; this encourages us to
+believe that the sum is indeed~$1$. On the other hand, if we group
+terms in the following way,
+\begindisplay
+\textstyle\cdots+\Bigl(-{1\over4}+\bigl(-{1\over3}+(-\half +1+\half )
+ +{1\over3}+{1\over4}\bigr)+{1\over5}+{1\over6}\Bigr)+\cdots\,,
+\enddisplay
+the $n$th pair of parentheses from inside out contains the numbers
+\begindisplay
+-{1\over n{+}1}-{1\over n}-\cdots-\half +1+\half +\cdots+{1\over 2n{-}1}
++{1\over2n}=1+H_{2n}-H_{n+1}\,.
+\enddisplay
+We'll prove in Chapter 9 that $\lim_{n\to\infty}(H_{2n}-H_{n+1})=\ln 2$;
+hence this grouping suggests that the doubly infinite sum should
+really be equal to $1+\ln 2$.
+
+There's something flaky about a sum that gives different values when its
+terms are added up in different ways. Advanced texts on analysis have a
+variety of definitions by which meaningful values can be assigned to
+such pathological sums; but if we adopt those definitions,
+we cannot operate with $\sum$-notation as
+freely as we have been doing. We don't need the delicate refinements
+of ``"conditional convergence"''
+for the purposes of this book; therefore we'll stick to a definition of
+\g Is this the first page with no graffiti?"!self-reference"\g
+infinite sums that preserves the validity of all the operations we've
+been doing in this chapter.
+
+In fact, our definition of infinite sums is quite simple. Let $K$ be any
+set, and let $a_k$ be a real-valued term defined for each $k\in K$. (Here `$k$'
+might actually stand for several indices $k_1$, $k_2$,~\dots, and $K$ might
+therefore be multidimensional.) Any real number $x$ can be written
+as the difference of its positive and negative parts,
+\begindisplay
+x=x^+-x^-,\qquad \hbox{where $x^+=x\cdt\[x>0]$ and $x^-=-x\cdt\[x<0]$}.
+\enddisplay
+(Either $x^+=0$ or $x^-=0$.)
+We've already explained how to define values for the infinite sums
+$\sum_{k\in K}a_k^+$ and $\sum_{k\in K}a_k^-$, because $a_k^+$ and
+$a_k^-$ are nonnegative. Therefore our general definition is
+\begindisplay
+\sum_{k\in K}a_k=\sum_{k\in K}a_k^+\;-\;\sum_{k\in K}a_k^-\,,
+\eqno\eqref|inf-sum|
+\enddisplay
+unless the right-hand sums are both equal to $\infty$. In the latter case,
+we leave $\sum_{k\in K}a_k$ undefined.
+
+Let $A^+=\sum_{k\in K}a_k^+$ and $A^-=\sum_{k\in K}a_k^-$. If $A^+$
+and~$A^-$ are both finite, the sum $\sum_{k\in K}a_k$ is said to
+\g In other words, "absolute convergence" means that the sum of
+absolute values converges.\g
+{\it "converge absolutely"\/} to the value $A=A^+-A^-$. If $A^+=\infty$
+but $A^-$ is finite, the sum $\sum_{k\in K}a_k$ is said to {\it "diverge"\/}
+to $+\infty$. Similarly, if $A^-=\infty$
+but $A^+$ is finite, $\sum_{k\in K}a_k$ is said to diverge to $-\infty$.
+If $A^+=A^-=\infty$, all bets are off.
+
+We started with a definition that worked for nonnegative terms, then we
+extended it to real-valued terms. If the terms $a_k$ are complex
+numbers, we can extend the definition once again, in the obvious way:
+The sum $\sum_{k\in K}a_k$ is defined to be
+$\sum_{k\in K}\Re a_k+i\sum_{k\in K}\Im a_k$, where $\Re a_k$ and
+$\Im a_k$ are the real and imaginary parts of $a_k$\dash---provided
+that both of those sums are defined. Otherwise $\sum_{k\in K}a_k$
+is undefined.
+(See exercise~|abs-convergence|.)
+
+The bad news, as stated earlier, is that some infinite sums must be
+left undefined, because the manipulations we've been doing can produce
+inconsistencies in all such cases. (See exercise~|infinite-trouble|.)
+The good news is that all of the manipulations of this chapter are
+perfectly valid whenever we're dealing with sums that converge absolutely,
+as just defined.
+
+We can verify the good news by showing that each of our transformation
+rules preserves the value of all absolutely convergent sums. This means,
+more explicitly, that we must prove the distributive, associative,
+and commutative laws, plus the rule for summing first on one index
+variable; everything else we've done has been derived from those four
+basic operations on sums.
+
+The "distributive law" \eq(|dist-law|) can be formulated more precisely as
+follows: If $\sum_{k\in K}a_k$ converges absolutely to~$A$ and if $c$ is
+any complex number, then $\sum_{k\in K}ca_k$ converges absolutely to~$cA$.
+We can prove this by breaking the sum into real and imaginary, positive
+and negative parts as above, and by proving the special case in which
+$c>0$ and each term $a_k$ is nonnegative. The proof in this special case
+works because $\sum_{k\in F}ca_k=c\sum_{k\in F}a_k$ for
+all finite sets~$F@$;
+the latter fact follows by induction on the size of~$F$.
+
+The "associative law" \eq(|assoc-law|) can be stated as follows: If
+$\sum_{k\in K}a_k$ and $\sum_{k\in K}b_k$ converge absolutely to
+$A$ and~$B$, respectively, then $\sum_{k\in K}(a_k+b_k)$ converges
+absolutely to $A+B$. This turns out to be a special case of a more
+general theorem that we will prove shortly.
+
+The "commutative law" \eq(|comm-law|) doesn't really need to be proved,
+because we have shown in the discussion following \eq(|gen-repl|)
+how to derive it as a special case of a general rule
+for interchanging the order of summation.
+
+The main result we need to prove is the fundamental principle of
+"multiple sums": {\sl "Absolutely convergent sums" over two or more indices can
+always be summed first with respect to any one of those indices.}
+Formally, we shall prove that if $J$ and the elements of $\{K_j\mid j\in J\}$ are
+\g Best to skim this page the first time you get here.\par
+\hfill\dash---Your friendly TA\g
+any sets of indices such that
+\begindisplay
+\sum\twoconditions{j\in J}{k\in K_j}a_{j,k}
+ \quad\hbox{converges absolutely to $A$}\,,
+\enddisplay
+then there exist complex numbers $A_j$ for each $j\in J$ such that
+\begindisplay
+&\sum_{k\in K_j}a_{j,k}
+ \quad\hbox{converges absolutely to $A_j$,\quad and}\cr
+&\sum_{j\in J}A_j
+ \quad\hbox{converges absolutely to $A$}\,.\cr
+\enddisplay
+It suffices to prove this assertion
+when all terms are nonnegative, because we can
+prove the general case by breaking everything into real and imaginary, positive
+and negative parts as before.
+Let's assume therefore that $a_{j,k}\ge0$ for all pairs $(j,k)\in M$, where
+$M$ is the master index set $\{(j,k)\mid j\in J, k\in K_j\}$.
+
+We are given that $\sum_{(j,k)\in M}a_{j,k}$ is finite, namely that
+\begindisplay
+\sum_{(j,k)\in F}a_{j,k}\le A
+\enddisplay
+for all finite subsets $F\subseteq M$, and that $A$ is the least such
+upper bound. If $j$ is any element of~$J$, each sum of the form
+$\sum_{k\in F_j}a_{j,k}$ where $F_j$ is a finite subset of~$K_j$ is
+bounded above by~$A$. Hence these finite sums have a least upper bound
+$A_j\ge0$, and $\sum_{k\in K_j}a_{j,k}=A_j$ by definition.
+
+We still need to prove that $A$ is the least upper bound of $\sum_{j\in G}A_j$,
+for all finite subsets $G\subseteq J$. Suppose that $G$ is a finite subset
+of~$J$ with $\sum_{j\in G}A_j=A'>A$. We can find finite subsets
+$F_j\subseteq K_j$ such that $\sum_{k\in F_j}a_{j,k}>(A/A')A_j$ for each
+$j\in G$ with $A_j>0$. There is at least one such~$j$. But then
+$\sum_{j\in G,k\in F_j}a_{j,k}>(A/A')\sum_{j\in G}A_j=A$, contradicting
+the fact that we have
+$\sum_{(j,k)\in F}a_{j,k}\le A$ for all finite subsets $F\subseteq M$.
+Hence $\sum_{j\in G}A_j\le A$, for all finite subsets $G\subseteq J$.
+
+Finally, let $A'$ be any real number less than $A$. Our proof will be
+complete if we can find a finite set $G\subseteq J$ such that
+$\sum_{j\in G}A_j>A'$. We know that there's a finite set $F\subseteq M$
+such that $\sum_{(j,k)\in F}a_{j,k}>A'$; let $G$ be the set of $j$'s in
+this~$F$, and let $F_j=\{k\mid(j,k)\in F\}$. Then $\sum_{j\in G}A_j
+\ge\sum_{j\in G}\sum_{k\in F_j}a_{j,k}=\sum_{(j,k)\in F}a_{j,k}>A'$;
+QED.
+
+OK, we're now legitimate! Everything we've been doing with infinite
+sums is justified, as long as there's a finite bound on
+all finite sums of the absolute values of the terms. Since the doubly
+infinite sum \eq(|double-harmonic|) gave us two different answers
+when we evaluated it in two different ways, its positive terms
+$1+\half +{1\over3}+\cdots$ must diverge to~$\infty$;
+\g \vskip-23pt
+So why have I been hearing a lot lately about ``harmonic convergence''?\g
+"!harmonic divergence"
+otherwise we would have gotten the same answer no matter how we
+grouped the terms.
+
+\beginexercises
+
+\subhead \kern-.05em Warmups
+
+\ex:\exref|backward-delim|%
+What does the notation
+\begindisplay
+\sum_{k=4}^0 q_k
+\enddisplay
+mean?
+\answer There's no agreement about this; three answers are defensible:
+(1)~We can say that $\sum_{k=m}^nq_k$ is always equivalent to $\sum_{m\le k
+\le n}q_k$; then the stated sum is zero. (2)~A person might say that the given
+sum is $q_4+q_3+q_2+q_1+q_0$, by summing over decreasing values of $k$. But
+this conflicts with the generally accepted convention that $\sum_{k=1}^nq_k=0$
+when $n=0$. (3)~We can say that $\sum_{k=m}^nq_k=\sum_{k\le n}q_k-\sum_{k<m}q_k$;
+then the stated sum is equal to
+$-q_1-q_2-q_3$. This convention may appear strange,
+but it obeys the useful law $\sum_{k=a}^b+\sum_{k=b+1}^c=\sum_{k=a}^c$ for
+all $a,b,c$.\par
+It's best to use the notation $\sum_{k=m}^n$ only when
+$n-m\ge-1$; then both conventions (1) and (3) agree.
+
+\ex:
+Simplify the expression $x\cdot\bigl(\[x>0]-\[x<0]\bigr)$.
+\answer This is $\vert x\vert$. Incidentally, the quantity
+$\bigl(\[x>0]-\[x<0]\bigr)$ is often called sign$(x)$ or "signum"$(x)$;
+it is $+1$ when $x>0$, \ $0$~when $x=0$, and $-1$ when $x<0$.
+\source{"Iverson" [|APL|, p.~11].}
+
+\ex:\exref|bad-perm|%
+Demonstrate your understanding of\/ $\sum$-notation by writing out the sums
+\begindisplay
+\sum_{0\le k\le5}a_k\qquad\hbox{and}\qquad\sum_{0\le k^2\le5}a_{k^2}
+\enddisplay
+in full. (Watch out\dash---the second sum is a bit tricky.)
+\answer The first sum is, of course, $a_0+a_1+a_2+a_3+a_4+a_5$; the second
+is $a_4+a_1+a_0+a_1+a_4$,
+because the sum is over the values $k\in\{-2,-1,0,+1,+2\}$.
+The commutative law doesn't hold here because the function $p(k)=k^2$
+is not a permutation. Some values of~$n$ (e.g., $n=3$) have no $k$ such
+that $p(k)=n$; others (e.g., $n=4$) have two such~$k$.
+\source{[|knuth1|, exercise 1.2.3--2].}
+
+\ex:\exref|triple|%
+Express the triple sum
+\begindisplay
+\sum_{1\le i<j<k\le 4}a_{ijk}
+\enddisplay
+as a three-fold summation (with three $\sum$'s),
+\itemitem{a}summing first on $k$, then $j$, then $i$;
+\itemitem{b}summing first on $i$, then $j$, then $k$.
+\par\hangindent=\parindent
+Also write your triple sums out in full without the $\sum$-notation,
+using parentheses to show what is being added together first.
+\answer (a)~\def\:{\hskip0pt plus4pt}$\sum_{i=1}^4\:\sum_{j=i+1}^4\:
+\sum_{k=j+1}^4\: a_{ijk}=
+\sum_{i=1}^2\:\sum_{j=i+1}^3\:\sum_{k=j+1}^4\:a_{ijk}=
+\bigl((a_{123}+a_{124})+a_{134}\bigr)+a_{234}$.\par
+(b)~$\sum_{k=1}^4\sum_{j=1}^{k-1}\sum_{i=1}^{j-1} a_{ijk}=
+\sum_{k=3}^4\sum_{j=2}^{k-1}\sum_{i=1}^{j-1} a_{ijk}=
+a_{123}+\bigl(a_{124}+(a_{134}+a_{234})\bigr)$.
+
+% NOTE IT'S SLIGHTLY BETTER TO HAVE THE NEXT EXERCISE BEFORE THE
+% PREVIOUS ONE, BUT THEN THE PAGE BREAK CAME OUT BAD (21 AUG 87)
+\ex:
+What's wrong with the following derivation?
+\begindisplay
+ \biggl( \sum_{j=1}^n a_j \biggr)
+		\biggl( \sum_{k=1}^n{1\over a_k} \biggr)
+	= \sum_{j=1}^n\sum_{k=1}^n{a_j\over a_k}
+	= \sum_{k=1}^n\sum_{k=1}^n{a_k\over a_k}
+	= \sum_{k=1}^n n
+	= n^2 \,.
+\enddisplay
+\answer The same index `$k$' is being used for two different index variables,
+although $k$ is bound in the inner sum. This is a famous mistake
+in mathematics (and computer programming). The result turns out to
+be correct if $a_j=a_k$ for all $j$ and $k$, \ $1\le j,k\le n$.
+\source{[|knuth1|, exercise 1.2.3--25].}
+
+\ex:\exref|iverson-sum|%
+What is the value of $\sum_k\[1\le j\le k\le n]$, as a function of $j$ and~$n$?
+\answer It's $\[1\le j\le n](n-j+1)$. The first factor is necessary here
+because we should get zero when $j<1$ or $j>n$.
+
+\ex:
+Let $\nabla f(x)=f(x)-f(x{-}1)$. What is $\nabla(x\_^m)$?
+\g Yield to the rising power.\g
+\answer $mx\_^{m-1}$. A version of finite calculus based on $\nabla$ instead
+of~$\Delta$ would therefore give special prominence to {\it rising\/}
+factorial powers.
+
+\ex: What is the value of $0\_m$, when $m$ is a given integer?
+\answer $0$, if $m\ge1$; $1/\vert m\vert!$, if $m\le0$.
+
+\ex:\exref|neg-rising|%
+What is the law of exponents for rising factorial powers, analogous
+"!negative factorial powers" "!factorial powers, negative"
+to \eq(|falling-exp|)? Use this to define $x\_^{-n}$.
+\answer $x\_^{m+n} = x\_^m \, (x+m)\_^n$, for integers $m$ and $n$.
+Setting $m=-n$ tells us that $x\_^{-n}=1/(x-n)\_^n=1/(x-1)\_n$.
+
+\ex:
+The text derives the following formula for the difference of a product:
+\begindisplay
+\Delta(uv)= u\,\Delta v \,+\, Ev\,\Delta u \,.
+\enddisplay
+How can this formula
+ be correct, when the left-hand side is symmetric with respect to
+$u$ and~$v$ but the right-hand side is not?
+\answer Another possible right-hand side is $Eu\,\Delta v \,+\,v\,\Delta u$.
+
+\subhead Basics
+
+\ex:
+The general rule \eq(|sum-by-parts|) for "summation by parts" is equivalent to
+\begindisplay
+\sum_{0\le k<n}(a_{k+1}-a_k)@b_k
+&=a_nb_n-a_0b_0\cr
+&\qquad{}-\sum_{0\le k<n}a_{k+1}(b_{k+1}-b_k),  \quad\hbox{for $n\ge0$}.
+\enddisplay
+Prove this formula directly
+ by using the distributive, associative, and commutative laws.
+\answer Break the left-hand side into two sums, and change $k$ to $k+1$
+in the second of these.
+
+\ex:
+Show that the function $p(k)=k+(-1)^kc$ is a permutation of the
+set of all integers, whenever $c$ is an integer.
+\answer If $p(k)=n$ then $n+c=k+\bigl((-1)^k+1\bigr)c$
+and $\bigl((-1)^k+1\bigr)$
+is even; hence $(-1)^{n+c}=(-1)^k$ and $k=n-(-1)^{n+c}c$.
+Conversely, this value of $k$ yields $p(k)=n$.
+
+\ex:
+Use the "repertoire method" to find a closed form for $\sum_{k=0}^n(-1)^kk^2$.
+\answer Let $R_0=\alpha$, and $R_n=R_{n-1}+(-1)^n(\beta+n\gamma+n^2\delta)$
+for $n>0$. Then $R(n)=A(n)\alpha+B(n)\beta+C(n)\gamma+D(n)\delta$.
+Setting $R_n=1$ yields $A(n)=1$.
+Setting $R_n=(-1)^n$ yields $A(n)+2B(n)=(-1)^n$.
+Setting $R_n=(-1)^nn$ yields $-B(n)+2C(n)=(-1)^nn$.
+Setting $R_n=(-1)^nn^2$ yields $B(n)-2C(n)+2D(n)=(-1)^nn^2$.
+Therefore $2D(n)=(-1)^n(n^2+n)$; the stated sum is~$D(n)$.
+
+\ex:
+Evaluate $\sum_{k=1}^nk2^k$ by rewriting it as the multiple sum
+$\sum_{1\le j\le k\le n}2^k$.
+\answer The suggested rewrite is legitimate since we have
+$k=\sum_{1\le j\le k}1$
+when $1\le k\le n$. Sum first on~$k$; the multiple sum reduces to
+\begindisplay
+\sum_{1\le j\le n}(2^{n+1}-2^j)=n2^{n+1}-(2^{n+1}-2)\,.
+\enddisplay
+
+\ex:
+Evaluate $\Cu_n=\sum_{k=1}^nk^3$ by the text's Method~5 as follows: First
+"!sum of consecutive cubes"
+write $\Cu_n+\Sq_n=2\sum_{1\le j\le k\le n}jk$; then apply \eq(|upper-triangle|).
+\answer The first step replaces $k(k+1)$ by $2\sum_{1\le j\le k}j$. The
+\font\manfnt=manfnt
+\def\Cu{\mskip1.5mu\hbox{\manfnt\char28}\mskip1.5mu}%
+second step gives $\Cu_n+\Sq_n=\bigl(\sum_{k=1}^nk\bigr)^2+\Sq_n$.
+
+\ex: Prove that $x\_m/(x-n)\_m=x\_n/(x-m)\_n$, unless one of the denominators
+is zero.
+\answer $x\_m(x-m)\_n=x\_{m+n}=x\_n(x-n)\_m$, by \equ(2.|falling-exp|).
+
+\ex:\exref|rising-and-falling|%
+Show that the following formulas can be used to convert between
+rising and falling "factorial powers", for all integers~$m$:
+\begindisplay
+x\_^m=(-1)^m(-x)\_m=(x+m-1)\_m=1/(x-1)\_{-m}\,;\cr
+x\_m=(-1)^m(-x)\_^m=(x-m+1)\_^m=1/(x+1)\_^{-m}\,.\cr
+\enddisplay
+(The answer to exercise |neg-rising| defines $x\_^{-m}$.)
+\answer Use induction for the first two $=$'s, and \equ(2.|falling-exp|) for
+the third. The second line follows from the first.
+
+\ex:\exref|abs-convergence|%
+Let $\Re z$ and $\Im z$ be the real and imaginary parts of the complex
+\tabref|nn:realpart|%
+number~$z$. The absolute value $\vert z\vert$ is $\sqrt{(\Re z)^2+(\Im z)^2}$.
+"!complex number" "!absolute value of complex number"
+A sum $\sum_{k\in K}a_k$ of complex terms $a_k$ is said to converge
+absolutely when the real-valued sums $\sum_{k\in K}\Re a_k$ and
+$\sum_{k\in K}\Im a_k$ both converge absolutely. Prove that $\sum_{k\in K}a_k$
+converges absolutely
+if and only if there is a bounding constant~$B$ such that
+$\sum_{k\in F}\vert a_k\vert\le B$ for all finite subsets $F\subseteq K$.
+\answer Use the facts that $(\Re z)^+\le\vert z\vert$,
+$(\Re z)^-\le\vert z\vert$,
+$(\Im z)^+\le\vert z\vert$,
+$(\Im z)^-\le\vert z\vert$, and
+$\vert z\vert\le(\Re z)^++(\Re z)^-+(\Im z)^++(\Im z)^-$.
+
+\subhead Homework exercises
+
+\ex: Use a "summation factor" to solve the recurrence
+\begindisplay
+T_0&=5\,;\cr
+2T_n&=nT_{n-1}+3\cdot n!\,,\qquad\hbox{for $n>0$}.
+\enddisplay
+\answer Multiply both sides by $2^{n-1}\!/n!$ and let $S_n=2^nT_n/n!$=
+$S_{n-1}+3\cdot2^{n-1}=3(2^n-1)+S_0$. The solution is $T_n=3\cdot n!
++n!/2^{n-1}$. (We'll see in Chapter~4 that $T_n$ is an integer only
+when $n$~is $0$ or a power of~$2$.)
+
+\ex: Try to evaluate $\sum_{k=0}^n kH_k$ by the "perturbation method",
+but deduce the value of $\sum_{k=0}^n H_k$ instead.
+\answer The perturbation method gives
+\g\noindent\llap{``}It is a profoundly erroneous truism, repeated by all copybooks and by eminent
+people when they are making speeches, that we should cultivate the habit
+of "thinking" of what we are doing. The precise opposite is the case.
+Civilization advances by extending the number of important operations
+which we can perform without thinking about them. Operations of thought
+are like cavalry charges in a battle\dash---they are strictly limited in
+number, they require fresh "horses", and must only be made at decisive
+moments.''\par"!philosophy"
+\hfill\dash---A.\thinspace N. "!Whitehead"White-\par
+\hfill head [|whitehead-intro|]\g
+\begindisplay
+S_n+(n+1)H_{n+1}=S_n+\biggl(\sum_{0\le k\le n}H_k\biggr)+n+1\,.
+\enddisplay
+
+\ex:
+Evaluate the sums $S_n=\sum_{k=0}^n(-1)^{n-k}$, \ $T_n=\sum_{k=0}^n
+(-1)^{n-k}@k$, and $U_n=\sum_{k=0}^n(-1)^{n-k}@k^2$ by the perturbation
+method, assuming that $n\ge0$.
+\answer Extracting the final term of $S_{n+1}$ gives $S_{n+1}=1-S_n$;
+extracting the first term gives
+\begindisplay
+S_{n+1}=(-1)^{n+1}+\sum_{1\le k\le n+1}\!(-1)^{n+1-k}
+&=(-1)^{n+1}+\sum_{0\le k\le n}\!(-1)^{n-k}\cr
+&=(-1)^{n+1}+S_n\,.\cr
+\enddisplay
+Hence $2S_n=1+(-1)^n$ and we have $S_n=\[\hbox{$n$ is even}]$.
+Similarly, we find
+\begindisplay
+T_{n+1}=n+1-T_n=\sum_{k=0}^n(-1)^{n-k}(k+1)=T_n+S_n\,,
+\enddisplay
+hence $2T_n=n+1-S_n$ and we have $T_n=\half\bigl(n+
+\[\hbox{$n$ is odd}]\bigr)$.
+%(Using the notation of the next chapter, we can also write $T_n=\lceil n/2\rceil$.)
+Finally, the same approach yields
+\begindisplay
+U_{n+1}=(n+1)^2-U_n&=U_n+2T_n+S_n\cr
+&=U_n+n+\[\hbox{$n$ is odd}]+\[\hbox{$n$ is even}]\cr
+&=U_n+n+1\,.\cr
+\enddisplay
+Hence $U_n$ is the triangular number $\half(n+1)n$.
+
+\ex:
+Prove {\it "Lagrange's identity"\/} (without using induction):
+\g It's hard to prove the identity of somebody who's been dead for 175 years.\g
+\begindisplay
+\sum_{1\le j<k\le n}(a_jb_k-a_kb_j)^2=
+\biggl(\sum_{k=1}^n a_k^2\biggr)\biggl(\sum_{k=1}^n b_k^2\biggr)
+-\biggl(\sum_{k=1}^na_kb_k\biggr)^2\,.
+\enddisplay
+Prove, in fact, an identity for the more general double sum
+\begindisplay
+\sum_{1\le j<k\le n}(a_jb_k-a_kb_j)(A_jB_k-A_kB_j)\,.
+\enddisplay
+\answer Twice the general sum gives a ``vanilla'' sum over $1\le j,k\le n$,
+which splits and yields twice
+$\bigl(\sum_ka_kA_k\bigr)\bigl(\sum_kb_kB_k\bigr)-
+ \bigl(\sum_ka_kB_k\bigr)\bigl(\sum_kb_kA_k\bigr)$.
+\source{"Binet" [|binet-det|, \S4].}
+
+\ex:
+Evaluate the sum $\sum_{k=1}^n (2k+1)/k(k+1)$
+in two ways:
+
+\nobreak\vskip2pt
+\itemitem{a}Replace
+$1/k(k+1)$ by the ``"partial fraction"s''
+$1/k-1/(k+1)$.
+\itemitem{b}Sum by parts.
+\answer (a) This approach gives four sums that evaluate to $2n+H_n-
+2n+(H_n+{1\over n+1}-1)$.
+(It would have been easier to replace the summand by $1/k+1/(k+1)$.)
+ (b)~Let $u(x)=2x+1$ and $\Delta v(x)=
+1/x(x+1)=(x-1)\_{-2}$; then
+$\Delta u(x)=2$ and $v(x)=-(x-1)\_{-1}=-1/x$. The answer is $2H_n-{n\over n+1}$.
+\source{1982 final.}
+
+\ex:
+What is $\sum_{0\le k<n}H_k/(k+1)(k+2)$?
+\Hint: Generalize the derivation of \eq(|harm-sum+|).
+\answer Summing by parts, $\sum x\_m H_x\,\delta x=x\_{m+1}H_x/(m+1)
+-x\_{m+1}/(m+1)^2+C$; hence $\sum_{0\le k<n}k\_mH_k=n\_{m+1}\bigl(H_n
+-1/(m+1)\bigr)/(m+1)+0\_{m+1}/(m+1)^2$. In our case $m=-2$, so the
+sum comes to $1-(H_n+1)/(n+1)$.
+
+\ex:\exref|prod-analogies|%
+The notation $\prod_{k\in K}a_k$ means the product of the numbers $a_k$
+\g This notation was introduced by "Jacobi" in 1829 [|jacobi|].\g
+"!product notation" "!$\prod$-notation"
+for all $k\in K$. Assume for simplicity that $a_k\ne1$ for only
+finitely many $k$; hence infinite products need not be defined.
+What laws does this $\prod$-notation satisfy, analogous to
+the "distributive", "associative", and "commutative" laws that hold for
+$\sum$?
+\answer Here are some of the basic analogies:
+\begindisplay \openup3pt%
+ \def\preamble{$\thickmuskip=\displaythick\displaystyle{##}$\hfil%
+  &\enspace$\longleftrightarrow$\enspace%
+  $\thickmuskip=\displaythick\displaystyle{##}$\hfil}
+\sum_{k\in K}ca_k=c\sum_{k\in K}a_k
+ &\prod_{k\in K}a_k^c=\biggl(\prod_{k\in K}a_k\biggr)^c\cr
+\sum_{k\in K}(a_k{+}b_k)=\sum_{k\in K}\!a_k+\sum_{k\in K}\!b_k
+ &\prod_{k\in K}a_kb_k
+ \!=\!\biggl(\prod_{k\in K}a_k\mskip-2mu\biggr)
+      \biggl(\prod_{k\in K}b_k\mskip-2mu\biggr)\cr
+\sum_{k\in K}a_k=\sum_{p(k)\in K}a_{p(k)}
+ &\prod_{k\in K}a_k=\prod_{p(k)\in K}a_{p(k)}\cr
+\sum\twoconditions{j\in J}{k\in K}a_{j,k}=\sum_{j\in J}\,\sum_{k\in K}a_{j,k}
+ &\prod\twoconditions{j\in J}{k\in K}a_{j,k}=\prod_{j\in J}\,\prod_{k\in K}a_{j,k}\cr
+\sum_{k\in K}a_k=\sum_ka_k\[k\in K]
+ &\prod_{k\in K}a_k=\prod_ka_k^{[k\in K]}\cr % \[ in exponent
+\sum_{k\in K}1=\#K
+ &\prod_{k\in K}c=c^{@\#K}\cr
+\enddisplay
+
+\ex:
+Express the double product
+$\prod_{1 \le j \le k\le n} a_j a_k$
+in terms of the single product $\prod_{k=1}^n a_k$
+by manipulating $\prod$-notation.
+$\bigl($This exercise gives us a product analog of the upper-triangle
+identity~\eq(|upper-triangle|).$\bigr)$
+\answer \def\\{\kern-.4pt}% need to squeeze the first line
+$P^2=\bigl(\prod_{1\le j,k\le n}\\a_ja_k\bigr)\bigl(\prod_{1\le j=k\le n}
+\\a_ja_k\bigr)$. The first factor is equal to
+$\bigl(\prod_{k=1}^n \\a_k^n\bigr){}^2$;
+the second factor is $\prod_{k=1}^n a_k^2$.
+Hence $P=\bigl(\prod_{k=1}^n a_k\bigr)^{n+1}$.
+\source{[|knuth1|, exercise 1.2.3--26].}
+
+\ex:
+Compute $\Delta(c\_x)$, and use it to deduce the value of
+$\sum_{k=1}^n(-2)\_k/k$.
+\answer $\Delta(c\_x)=c\_x(c-x-1)=c\_{x+2}/(c-x)$. Setting $c=-2$ and
+decreasing $x$ by~$2$ yields $\Delta(-(-2)\_{x-2})=(-2)\_x/x$, hence the
+stated sum is $(-2)\_{-1}-(-2)\_{n-1}=(-1)^nn!-1$.
+
+\ex:
+At what point does the following derivation go astray?
+\begindisplay
+1=\sum_{k\ge1}{1\over k(k+1)}
+ &=\sum_{k\ge1}\left({k\over k+1}-{k-1\over k}\right)\cr
+ &=\sum_{k\ge1}\sum_{j\ge1}\left({k\over j}\[j=k+1]
+ -{j\over k}\[j=k-1]\right)\cr
+ &=\sum_{j\ge1}\sum_{k\ge1}\left({k\over j}\[j=k+1]
+ -{j\over k}\[j=k-1]\right)\cr
+ &=\sum_{j\ge1}\sum_{k\ge1}\left({k\over j}\[k=j-1]
+ -{j\over k}\[k=j+1]\right)\cr
+ &=\sum_{j\ge1}\left({j-1\over j}-{j\over j+1}\right)
+ =\sum_{j\ge1}{-1\over j(j+1)}=-1\,.
+\enddisplay
+\answer The interchange of summation between the second and third lines
+is not justifiable; the terms of this sum do not converge
+absolutely. Everything else is perfectly correct,
+\g As opposed to imperfectly correct.\g
+except that the result of $\sum_{k\ge1}\[k=j-1]@k/j$ should perhaps
+have been written $\[j-1\ge1](j-1)/j$ and simplified explicitly.
+
+\subhead Exam problems
+
+\ex:
+Evaluate the sum $\sum_{k=1}^n (-1)^{k} k / (4k^2 - 1)$.
+\answer Use partial fractions to get
+\begindisplay
+{k\over4k^2-1}={1\over4}\left({1\over2k+1}+{1\over2k-1}\right)\,.
+\enddisplay
+The $(-1)^k$ factor now makes the two halves of each term cancel
+with their neighbors. Hence the answer is $-1/4+(-1)^n\!/(8n+4)$.
+\source{1979 midterm.}
+
+\ex:
+"Cribbage" players have long been aware that $15=7+8=4+5+6=1+2+3+4+5$.
+Find the number of ways to represent $1050$ as a sum of consecutive
+"!sum of consecutive integers"
+positive integers. (The trivial representation `$1050$' by itself counts
+as one way; thus there are four, not three, ways to represent $15$
+as a sum of consecutive positive integers. Incidentally, a knowledge of cribbage
+rules is of no use in this problem.)
+\answer $\sum_a^b x\,\delta x=\half(b\_2-a\_2)=\half(b-a)(b+a-1)$.
+So we have
+\begindisplay
+(b-a)(b+a-1)=2100=2^2\cdt3\cdt5^2\cdt7\,.
+\enddisplay
+There is one solution
+for each way to write $2100=x\cdt y$ where $x$~is even and $y$~is odd;
+we let $a=\half\left\vert x-y\right\vert+\half$ and $b=\half(x+y)+\half$.
+So the number of solutions is the number of divisors of $3\cdt5^2\cdt7$,
+namely~$12$. In general, there are $\prod_{p>2}(n_p+1)$ ways to represent
+$\prod_p p^{n_p}$, where the products range over primes.
+\source{1973 midterm.}
+
+\ex:\exref|zetaf|
+"Riemann"'s "zeta function"~$\zeta(k)$ is defined to be the infinite sum
+\begindisplay
+1 + {1\over2^k} + {1\over3^k} + \cdots \, = \sum_{j \geq 1} {1\over j^k}\,.
+\enddisplay
+Prove that $\sum_{k \geq 2} \bigl( \zeta(k) - 1 \bigr) = 1$.
+What is the value of $\sum_{k\ge1}\bigl(\zeta(2k)-1\bigr)$?
+\answer $\sum_{j,k\ge2}j^{-k}=\sum_{j\ge2}1/j^2(1-1/j)=
+\sum_{j\ge2}1/j(j-1)$. The second sum is, similarly, $3/4$.
+\source{"Stieltjes" [|stieltjes-table|].}
+
+\ex:\exref|dotminus-cancellation|%
+Let $a\dotminus b=\max(0,a-b)$. Prove that
+\begindisplay
+\sum_{k\ge0}\min(k,x\dotminus k)=\sum_{k\ge0}\bigl(x\dotminus(2k+1)\bigr)
+\enddisplay
+for all real $x\ge0$, and evaluate the sums in closed form.
+\answer If $2n\le x<2n+1$, the sums are $0+\cdots+n+(x{-}n{-}1)+\cdots
++(x{-}2n)=n(x{-}n)=(x{-}1)+(x{-}3)+\cdots+(x{-}2n{+}1)$. If $2n-1\le x<2n$
+they are, similarly, both equal to $n(x-n)$. (Looking ahead to
+Chapter~3, the formula $\bigl\lfloor\half(x+1)\bigr\rfloor
+\bigl(x-\bigl\lfloor\half(x+1)\bigr\rfloor\bigr)$ covers both cases.)
+
+\subhead Bonus problems
+
+\ex:
+Let $\bigwedge_{k\in K}a_k$ denote the "minimum" of the numbers
+$a_k$ (or their "greatest lower bound", if $K$ is infinite), assuming that
+"!$\bigwedge$-notation (alphabetize under L)"
+each $a_k$ is either real or $\pm\infty$.
+What laws are valid for $\bigwedge$-notation, analogous
+\g The laws of the jungle.\g
+to those that work for $\sum$ and $\prod$? (See exercise |prod-analogies|.)
+\answer If $K$ is empty, $\bigwedge_{k\in K}a_k=\infty$.
+The basic analogies are:
+\begindisplay \openup3pt%
+ \def\preamble{$\thickmuskip=\displaythick\displaystyle{##}$\hfil%
+  &\quad$\longleftrightarrow$\quad%
+  $\thickmuskip=\displaythick\displaystyle{##}$\hfil}
+\sum_{k\in K}ca_k=c\sum_{k\in K}a_k
+ &\bigwedge_{k\in K}(c+a_k)=c+\bigwedge_{k\in K}a_k\cr
+\sum_{k\in K}(a_k{+}b_k)=\sum_{k\in K}a_k+\sum_{k\in K}b_k
+ &\bigwedge_{k\in K}\min(a_k,b_k)\cr
+\noalign{\vskip-4pt}
+ &\omit\hskip5em$\thickmuskip=\displaythick\displaystyle
+   =\min\biggl(\bigwedge_{k\in K}a_k,\bigwedge_{k\in K}b_k\biggr)$\hfil\cr
+\sum_{k\in K}a_k=\sum_{p(k)\in K}a_{p(k)}
+ &\bigwedge_{k\in K}a_k=\bigwedge_{p(k)\in K}a_{p(k)}\cr
+\sum\twoconditions{j\in J}{k\in K}a_{j,k}=\sum_{j\in J}\sum_{k\in K}a_{j,k}
+ &\bigwedge\twoconditions{j\in J}{k\in K}a_{j,k}
+ =\bigwedge_{j\in J}\bigwedge_{k\in K}a_{j,k}\cr
+\sum_{k\in K}a_k=\sum_ka_k\[k\in K]
+ &\bigwedge_{k\in K}a_k=\bigwedge_ka_k\cdt\infty^{[k\notin K]}\cr
+\enddisplay
+
+\ex:\exref|infinite-trouble|%
+Prove that if the sum $\sum_{k\in K}a_k$ is undefined according
+to \eq(|inf-sum|), then it is extremely flaky in the following sense:
+If $A^-$ and $A^+$ are any given real numbers, it's possible to find
+a sequence of finite subsets $F_1\subset F_2\subset{F_3\subset\cdots}$
+of~$K$ such that
+\begindisplay
+\sum_{k\in F_n}a_k\le A^-,\ \hbox{when $n$ is odd};\quad
+\sum_{k\in F_n}a_k\ge A^+,\ \hbox{when $n$ is even}.
+\enddisplay
+\answer Let $K^+=\{k\mid a_k\ge0\}$ and $K^-=\{k\mid a_k<0\}$.
+\g A permutation that consumes terms of one sign faster than those of the other
+can steer the sum toward any value that it likes.\g
+Then if, for example, $n$ is odd, we choose $F_n$ to be $F_{n-1}\cup E_n$,
+where $E_n\subseteq K^-$ is sufficiently large that $\sum_{k\in(F_{n-1}\cap
+K^+)}a_k-\sum_{k\in E_n}(-a_k)<A^-$.
+\source{"Riemann" [|riemann-sums|, \S3].}
+
+\ex:
+Prove "Goldbach's theorem"
+\begindisplay
+1={1\over3}+{1\over7}+{1\over8}+{1\over15}+{1\over24}+{1\over26}
++{1\over31}+{1\over35}+\cdots=\sum_{k\in P}{1\over k-1}\,,
+\enddisplay
+where $P$ is the set of ``"perfect powers"'' defined recursively as
+\g Perfect power corrupts perfectly."!Dalberg" "!Acton, see Dalberg"\g
+follows:
+\begindisplay
+P=\{\,m^n\mid m\ge2,\,n\ge2,\,m\notin P\,\}\,.
+\enddisplay
+\answer Goldbach's sum can be shown to equal
+\begindisplay
+\sum_{m,n\ge2}m^{-n}
+=\sum_{m\ge2}{1\over m(m-1)}=1
+\enddisplay
+as follows: By unsumming a geometric series, it equals
+$\sum_{k\in P,\,l\ge1}k^{-l\,}$; therefore the proof will be complete
+if we can find a one-to-one correspondence between ordered pairs
+$(m,n)$ with $m,n\ge2$ and ordered pairs $(k,l)$ with $k\in P$ and $l\ge1$,
+where $m^n=k^l$ when the pairs correspond. If $m\notin P$ we let
+$(m,n)\longleftrightarrow(m^n,1)$; but if $m=a^b\in P$, we let
+$(m,n)\longleftrightarrow(a^n,b)$.
+\source{"Euler" [|euler-goof|] gave a fallacious ``proof'' using divergent
+series.}
+
+\ex:\exref|self-descr|%
+Solomon "Golomb"'s ``"self-describing sequence"''
+ $\<f(1),f(2),f(3),\ldots\,\>$
+is the only nondecreasing sequence of positive integers with the property that it
+contains exactly $f(k)$ occurrences of~$k$ for each~$k$. A few moments' thought
+reveals that the sequence must begin as follows:
+\begindisplay\let\preamble=\tablepreamble
+n&&1&2&3&4&5&6&7&8&9&10&11&12\cr
+\noalign{\hrule}
+f(n)&&1&2&2&3&3&4&4&4&5&5&5&6\cr
+\enddisplay
+Let $g(n)$ be the largest integer $m$ such that $f(m)=n$. Show that
+\itemitem{a}$g(n)=\sum_{k=1}^n f(k)$\bigstrut.
+\itemitem{b}$g\bigl(g(n)\bigr)=\sum_{k=1}^n kf(k)\vphantom{\half}$\bigstrut.
+\itemitem{c}$g\bigl(g(g(n))\bigr)=\half ng(n)\bigl(g(n)+1\bigr)-\half
+\sum_{k=1}^{n-1}g(k)\bigl(g(k)+1\bigr)$\bigstrut.
+\answer (a) By definition, $g(n)-g(n-1)=f(n)$.
+\g With this self-description, Golomb's sequence wouldn't do~too~well
+on the Dating~Game.\g
+ (b) By part~(a),
+$g\bigl(g(n)\bigr)-g\bigl(g(n-1)\bigr)=\sum_kf(k)\bigi[g(n-1)<k\le g(n)\bigr]
+=n\bigl(g(n)-g(n-1)\bigr)
+=nf(n)$. (c)~By part~(a) again, $g\bigl(g(g(n))\bigr)-g\bigl(g(g(n-1))\bigr)$ is
+\begindisplay
+&\sum_kf(k)\bigi[g(g(n-1))<k\le g(g(n))\bigr]\cr
+ &\qquad=\sum_{j,k}j\,\bigi[j=f(k)\bigr]\bigi[g(g(n-1))<k\le g(g(n))\bigr]\cr
+ &\qquad=\sum_{j,k}j\,\bigi[j=f(k)\bigr]\bigi[g(n-1)<j\le g(n)\bigr]\cr
+%&\qquad=\sum_{j,k}j\,\bigi[g(j-1)<k\le g(j)\bigr]\bigi[g(n-1)<j\le g(n)\bigr]\cr
+ &\qquad=\sum_{j}j\,\bigl(g(j)-g(j-1)\bigr)\bigi[g(n-1)<j\le g(n)\bigr]\cr
+ &\qquad=\sum_{j}jf(j)\,\bigi[g(n{-}1)<j\le g(n)\bigr]
+        =n\sum_j j\,\bigi[g(n{-}1)<j\le g(n)\bigr]\,.\cr
+\enddisplay
+Colin "Mallows" observes that the sequence can also be defined by the recurrence
+\begindisplay
+f(1)=1\,;\qquad f(n+1)=1+f\bigl(n+1-f(f(n))\bigr)\,,\quad\hbox{for $n\ge0$.}
+\enddisplay
+\source{"Golomb" [|golomb-self|]; "Vardi" [|vardi-self|].}
+
+\subhead Research problem
+
+\ex:
+Will all the $1/k$ by $1/(k+1)$ rectangles, for $k\ge1$, fit together
+inside a 1~by~1 square? (Recall that their areas sum to~$1$.)
+\begindisplay
+\unitlength=5pt
+\beginpicture(16,15)(-2,-3)
+\put(0,0){\line(0,1){12}}
+\put(6,0){\line(0,1){12}}
+\put(12,0){\line(0,1){12}}
+\put(9,4){\line(0,1)4}
+\put(0,0){\line(1,0){12}}
+\put(0,12){\line(1,0){12}}
+\put(6,4){\line(1,0)6}
+\put(9,8){\line(1,0)3}
+\put(6,6.4){\line(1,0)3}
+\put(-1.5,6){\makebox(0,0){$1\over1$}}
+\put(3,-2){\makebox(0,0){$1\over2$}}
+\put(9,-2){\makebox(0,0){$1\over2$}}
+\put(13.5,2){\makebox(0,0){$1\over3$}}
+\put(13.5,6){\makebox(0,0){$1\over3$}}
+\put(10.5,9.5){\makebox(0,0){$1\over4$}}
+\put(7.5,7.9){\makebox(0,0){$1\over4$}}
+\put(4.5,5.2){\makebox(0,0){$1\over5$}}
+\put(8,11){\makebox(0,0){\sevenrm etc.}}
+\put(0,11){\line(2,1)2}
+\put(0,10){\line(2,1)4}
+\put(0,9){\line(2,1)6}
+\put(0,8){\line(2,1)6}
+\put(0,7){\line(2,1)6}
+\put(0,6){\line(2,1)6}
+\put(0,5){\line(2,1)6}
+\put(0,4){\line(2,1)3}
+\put(0,3){\line(2,1)3}
+\put(0,2){\line(2,1){3.2}}
+\put(0,1){\line(2,1){5.2}}
+\put(0,0){\line(2,1)6}
+\put(2,0){\line(2,1)4}
+\put(4,0){\line(2,1)2}
+\put(7,0){\line(-1,2)1}
+\put(8,0){\line(-1,2)2}
+\put(9,0){\line(-1,2)2}
+\put(10,0){\line(-1,2)2}
+\put(11,0){\line(-1,2)2}
+\put(12,0){\line(-1,2)2}
+\put(12,2){\line(-1,2)1}
+\put(6.3,4){\line(1,6){.4}}
+\put(6.9667,4){\line(1,6){.4}}
+\put(7.6333,4){\line(1,6){.4}}
+\put(8.3,4){\line(1,6){.4}}
+\put(9,7.333){\line(3,1)2}
+\put(9,6.417){\line(3,1)3}
+\put(9,5.5){\line(3,1)3}
+\put(9,4.583){\line(3,1)3}
+\put(10,4){\line(3,1)2}
+\let\linefont=\smallln \put(5,6.5){\line(2,1)1} % optional, may look bad?
+\endpicture
+\enddisplay
+\answer (RLG thinks they probably won't fit; DEK thinks they probably will;
+"!Knuth, Don" "!Graham, Ron" "!Patashnik, Oren"
+OP is not committing himself.)
+\source{Leo "Moser".*}
+

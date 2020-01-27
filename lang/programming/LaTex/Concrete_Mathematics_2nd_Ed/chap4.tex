@@ -1,0 +1,3743 @@
+% Chapter 4 of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\refin bib
+\refin chap2
+\refin chap3
+
+\pageno=102
+\beginchapter 4 Number Theory
+
+INTEGERS ARE CENTRAL to the discrete mathematics we are emphasizing in
+this book. Therefore we want to explore the {\it"theory" of "numbers"},
+an important branch of mathematics concerned with the properties of
+integers.
+
+We tested the number theory waters in the previous chapter, by introducing
+\g In other words, be prepared to drown.\g
+binary operations called `mod' and `gcd'. Now let's plunge in and
+really immerse ourselves in the subject.
+
+\beginsection 4.1 Divisibility
+
+We say that $m$ divides $n$ (or $n$ is "divisible" by $m$) if $m>0$
+and the ratio $n/m$ is an integer. This property underlies all of
+number theory, so it's convenient to have a special "notation" for it.
+We therefore write
+\tabref|nn:div|%
+\begindisplay
+m\divides n\quad\iff\quad m>0\!\!\And\!\!\hbox{$n=mk$ for some integer $k$}\,.
+\eqno\eqref|div-def|
+\enddisplay
+(The notation `$m@\vert@n$' is actually much more common than `$m\divides n$'
+in current mathematics literature. But vertical lines are overused\dash---%
+for absolute values, set delimiters, conditional probabilities, etc.\dash---%
+and backward slashes are under\-used. Moreover, `$m\divides n$' gives an
+impression that $m$ is the denominator of an implied ratio. So we shall
+boldly let our divisibility symbol lean leftward.)
+
+If $m$ does not divide $n$ we write `$m\ndivides n$'.
+
+There's a similar relation, ``$n$ is a "multiple" of~$m$,\qback'' which
+means almost the same thing except that $m$~doesn't have to be positive.
+In this case we simply mean that $n=mk$ for some integer~$k$. Thus, for
+\g\noindent\llap{``}\dots\ no integer is divisible by~$-1$ (strictly speaking).''\par
+\hfill\dash---"Graham", "Knuth",\par\hfill and "Patashnik" [|conc-math|]\g
+example, there's only one multiple of~$0$ (namely~$0$), but nothing is
+divisible by~$0$.
+Every integer is a multiple of~$-1$, but no integer is divisible
+by~$-1$ (strictly speaking).
+ These definitions apply when $m$ and~$n$ are any real
+numbers; for example, $2\pi$ is divisible by~$\pi$.
+But we'll almost always be using them when $m$ and~$n$ are
+integers. After all, this is number theory.
+
+The {\it "greatest common divisor"\/} of two integers $m$ and~$n$ is the
+\g In Britain we call this `hcf' ("highest common factor").\g
+largest integer that divides them both:
+\begindisplay
+\gcd(m,n)=\max\,\{\,k\mid k\divides m\And k\divides n\,\}\,.
+\eqno\eqref|gcd-def|
+\enddisplay
+For example, $\gcd(12,18)=6$. This is a familiar notion, because it's the
+common factor that fourth graders learn to take out of a fraction
+"!gcd"
+$m/n$ when reducing it to lowest terms: $12/18=(12/6)\big/(18/6)=2/3$.
+Notice that if $n>0$ we have $\gcd(0,n)=n$, because any positive
+number divides~$0$, and because
+$n$~is the largest divisor of itself. The value of $\gcd(0,0)$ is
+undefined.
+
+Another familiar notion is the {\it "least common multiple"},
+\g Not to be confused with the greatest common multiple.\g
+"!lcm"
+\begindisplay
+\lcm(m,n)=\min\,\{\,k\mid\hbox{$k>0$},\quad
+ m\divides k\And n\divides k\,\}\,;
+\eqno\eqref|lcm-def|
+\enddisplay
+this is undefined if $m\le0$ or $n\le0$. Students of arithmetic recognize
+this as the least common denominator, which is used when adding fractions
+with denominators $m$ and~$n$. For example, $\lcm(12,18)=36$, and
+fourth graders know that
+${7\over12}+{1\over18}={21\over36}+{2\over36}={23\over36}$.
+The lcm is somewhat analogous to the gcd, but we don't give it equal time
+because the gcd has nicer properties.
+
+One of the nicest properties of the gcd is that it is easy to compute,
+using a 2300-year-old method called {\it "Euclid's algorithm"}.
+"!algorithm, Euclid's"
+To calculate $\gcd(m,n)$, for given values
+$0\le m<n$, Euclid's algorithm uses the recurrence
+\begindisplay
+\gcd(0,n)&=n\,;\cr
+\gcd(m,n)&=\gcd(n\bmod m,\,m)\,,\qquad\hbox{for $m>0$}.
+\eqno\eqref|euclid|
+\enddisplay
+Thus, for example, $\gcd(12,18)=\gcd(6,12)=\gcd(0,6)=6$. The stated recurrence
+is valid, because any common divisor of $m$ and~$n$ must also be a common
+divisor of both $m$ and the number $n\bmod m$,
+which is $n-\lfloor n/m\rfloor m$. There doesn't seem
+to be any recurrence for $\lcm(m,n)$ that's anywhere near as simple as
+this. (See exercise~|gcd-times-lcm|.)
+
+Euclid's algorithm also gives us more: We can extend it so that it will compute
+integers $m'$ and~$n'$ satisfying
+\begindisplay
+m'm+n'n=\gcd(m,n)\,.
+\eqno\eqref|''|
+\enddisplay
+\g(Remember that $m'$ or $n'$ can be negative.)\g
+Here's how. If $m=0$, we simply take $m'=0$ and $n'=1$. Otherwise we let
+$r=n\bmod m$ and apply the method recursively with $r$~and~$m$ in place
+of $m$~and~$n$, computing $\overline r$ and $\overline m$ such that
+\begindisplay
+\overline r\,r+\overline m\,m=\gcd(r,m)\,.
+\enddisplay
+Since $r=n-\lfloor n/m\rfloor m$ and $\gcd(r,m)=\gcd(m,n)$,
+this equation tells us that
+\begindisplay
+\overline r\,\bigl(n-\lfloor n/m\rfloor m\bigr)+\overline m\,m=\gcd(m,n)\,.
+\enddisplay
+The left side can be rewritten to show its dependency on $m$ and $n$:
+\begindisplay
+\bigl(\overline m-\lfloor n/m\rfloor@\overline r@\bigr)\,m+\overline r\, n
+=\gcd(m,n)\,;
+\enddisplay
+hence $m'=\overline m-\lfloor n/m\rfloor\overline r$ and
+ $n'=\overline r$ are the integers we need in \thiseq. For example, in our
+favorite case $m=12$, $n=18$, this method gives $6=0\cdt0+1\cdt6=1\cdt6+0\cdt12
+=(-1)\cdt12+1\cdt18$.
+
+But why is \thiseq\ such a neat result? The main reason is that there's a
+sense in which the numbers $m'$ and~$n'$
+actually {\it prove\/} that Euclid's algorithm has produced the correct
+answer in any particular case. Let's suppose that our computer
+has told us after a lengthy calculation that $\gcd(m,n)=d$ and that
+$m'm+n'n=d$; but we're skeptical and think that there's really a greater
+common divisor, which the machine has somehow overlooked. This cannot be,
+however,
+because any common divisor of $m$ and~$n$ has to divide $m'm+n'n$;
+so it has to divide~$d$; so it has to be $\le d$. Furthermore we can
+easily check that $d$ does divide both $m$ and $n$. (Algorithms that
+"!certificate of correctness"
+output their own proofs of correctness are called {\it "self-certifying"}.)
+
+We'll be using \thiseq\ a lot in the rest of this chapter. One of its
+important consequences is the following mini-theorem:
+\begindisplay
+k\divides m\And k\divides n\qquad\iff\qquad k\divides\gcd(m,n)\,.
+\eqno\eqref|div-gcd|
+\enddisplay
+(Proof: If $k$ divides both $m$ and~$n$, it divides $m'm+n'n$,
+so it divides $\gcd(m,n)$. Conversely, if $k$ divides $\gcd(m,n)$, it
+divides a divisor of~$m$ and a divisor of~$n$, so it divides both
+$m$ and~$n$.) We always knew that any common divisor of $m$ and~$n$ must be
+{\it less than or equal to\/} their gcd; that's the definition of greatest
+common divisor. But now we know that any common divisor is, in fact,
+{\it a divisor of\/} their gcd.
+
+Sometimes we need to do sums over all divisors of~$n$. In this case
+it's often useful to use the handy rule
+\begindisplay
+\sum_{m\divides n}a_m=\sum_{m\divides n}a_{n/m}\,,\qquad
+ \hbox{integer $n>0$,}
+\eqno\eqref|swap-div|
+\enddisplay
+which holds since $n/m$ runs through all divisors of~$n$ when $m$ does.
+For example, when $n=12$ this says that $a_1+a_2+a_3+a_4+a_6+a_{12}=
+a_{12}+a_6+a_4+a_3+a_2+a_1$.
+
+There's also a slightly more general identity,
+\begindisplay
+\sum_{m\divides n}a_m=\sum_k\sum_{m>0}a_m\[n=mk]\,,
+\eqno\eqref|sum-div|
+\enddisplay
+which is an immediate consequence of the definition \eq(|div-def|).
+If $n$ is positive, the right-hand side of~\thiseq\ is $\sum_{k\divides n}
+a_{n/k}$; hence \thiseq\ implies \eq(|swap-div|).
+And equation \thiseq\ works also when $n$ is negative. (In such cases,
+the nonzero terms on the right occur when $k$ is the negative of
+a divisor of~$n$.)
+
+Moreover, a "double sum" over divisors can be ``interchanged'' by the law
+\begindisplay
+\sum_{m\divides n}\,\sum_{k\divides m}a_{k,m}=
+\sum_{k\divides n}\,\sum_{l\divides(n/k)}a_{k,kl}\,.
+\eqno\eqref|interch-div|
+\enddisplay
+For example, this law takes the following form when $n=12$:
+\begindisplay \def\\#1#2{a_{#1,#2}} \def\@{{12}}
+&\\11\,+\,(\\12+\\22)\,+\,(\\13+\\33)\cr
+&\qquad\qquad+\,(\\14+\\24+\\44)\,+\,(\\16+\\26+\\36+\\66)\cr
+&\qquad\qquad+\,(\\1\@+\\2\@+\\3\@+\\4\@+\\6\@+\\\@\@)\cr
+\noalign{\vskip2pt}
+&\quad=(\\11+\\12+\\13+\\14+\\16+\\1\@)\cr
+&\qquad\qquad+\,(\\22+\\24+\\26+\\2\@)\,+\,(\\33+\\36+\\3\@)\cr
+&\qquad\qquad+\,(\\44+\\4\@)\,+\,(\\66+\\6\@)\,+\,\\\@\@\,.\cr
+\enddisplay
+
+We can prove \thiseq\ with Iversonian manipulation. The left-hand side is
+\begindisplay
+\sum_{j,l}\,\sum_{k,m>0}a_{k,m}\[n=jm]\[m=kl]=\sum_j\sum_{k,l>0}a_{k,kl}\[n=jkl]\,;
+\enddisplay
+the right-hand side is
+\begindisplay
+\sum_{j,m}\,\sum_{k,l>0}a_{k,kl}\[n=jk]\[n/k=ml]=
+\sum_m\sum_{k,l>0}a_{k,kl}\[n=mlk]\,,
+\enddisplay
+which is the same except for renaming the indices.
+This example indicates that the techniques we've learned in Chapter~2 will
+come in handy as we study number theory.
+
+\beginsection 4.2 Primes
+
+A positive integer~$p$ is called {\it "prime"\/} if it has just two
+divisors, namely
+$1$~and~$p$. {\sl Throughout the rest of this chapter, the letter~$p$
+will always stand for a prime number, even when we don't say so explicitly.}
+\g How about the p in `explicitly'?\g
+By convention, $1$~isn't prime, so the sequence of primes starts out like this:
+\begindisplay
+ 2,\,3,\,5,\,7,\,11,\,13,\,17,\,19,\,23,\,29,\,31,\,37,\,41,\, \ldots \,.
+\enddisplay
+"!Seaver, George Thomas"
+Some numbers look prime but aren't, like $91$ ($=7\cdt13$) and
+$161$ ($=7\cdt23$). These numbers and others that have three or more divisors
+are called {\it "composite"}. Every integer greater than~$1$ is either prime
+or composite, but not both.
+
+Primes are of great importance,
+ because they're the fundamental building blocks
+of all the positive integers. Any positive integer~$n$ can be written as a
+product of primes,
+\begindisplay\advance\abovedisplayskip-5pt \advance\belowdisplayskip-2pt
+n=p_1\ldots p_m=\prod_{k=1}^m p_k\,,\qquad p_1\le\cdots\le p_m\,.
+\eqno\eqref|prime-factors|
+\enddisplay
+ For example,
+$12=2\cdt2\cdt3$; $11011=7\cdt11\cdt11\cdt13$; $11111=41\cdt271$.
+"!Seaver, George Thomas"
+(Products denoted by $\prod$ are analogous to sums denoted by $\sum$, as
+"!product $\prod$"
+explained in exercise~2.|prod-analogies|.
+If $m=0$, we consider this to be an "empty product", whose value is~$1$
+by definition; that's the way $n=1$ gets represented by \thiseq.) Such
+a factorization is always possible because if $n>1$ is not prime it has
+a divisor $n_1$ such that $1<n_1<n$; thus we can write $n=n_1\cdt n_2$,
+and (by induction) we know that $n_1$ and $n_2$ can be written as
+products of primes.
+
+Moreover, the expansion in \thiseq\ is {\it unique\/}: There's only one
+"!unique factorization" "!factorization into primes"
+way to write $n$ as a product of primes in nondecreasing order. This
+statement is
+called the "Fundamental Theorem of Arithmetic", and it seems so obvious
+that we might wonder why it needs to be proved. How could there be two
+different sets of primes with the same product? Well, there can't, but
+the reason {\it isn't\/} simply ``by definition of prime numbers.\qback''
+For example, if we consider the set of all real numbers of the
+form $m+n\sqrt{10}$ when $m$ and $n$ are integers, the product of any
+two such numbers is again of the same form, and we can call such
+a number ``prime'' if it
+can't be factored in a nontrivial way. The number $6$ has two representations,
+$2\cdt3=(4+\sqrt{10}\,)(4-\sqrt{10}\,)$;
+yet exercise~|nonunique-factors| shows that
+$2$, $3$, $4+\sqrt{10}$, and $4-\sqrt{10}$ are all ``prime''
+in this system.
+
+Therefore we should prove rigorously that \thiseq\ is unique. There is certainly
+only one possibility when $n=1$, since the product must be empty in that case;
+so let's suppose that $n>1$ and that all smaller
+numbers factor uniquely. Suppose we have two factorizations
+\begindisplay
+n=p_1\ldots p_m=q_1\ldots q_k\,,\qquad p_1{\le}\cdots{\le} p_m\And
+q_1{\le}\cdots{\le} q_k\,,
+\enddisplay
+where the $p$'s and $q$'s are all prime.
+We will prove that $p_1=q_1$.
+If not, we can assume that $p_1<q_1$, making
+$p_1$ smaller than all the $q$'s. Since $p_1$ and $q_1$ are prime,
+their gcd must be~$1$; hence Euclid's self-certifying algorithm
+gives us integers $a$ and $b$ such that $ap_1+bq_1=1$. Therefore
+\begindisplay
+ap_1q_2\ldots q_k\,+\,bq_1q_2\ldots q_k=q_2\ldots q_k\,.
+\enddisplay
+Now $p_1$ divides both terms on the left, since $q_1q_2\ldots q_k=n$;
+hence $p_1$ divides the right-hand side, $q_2\ldots q_k$.
+Thus $q_2\ldots q_k/p_1$ is an integer, and $q_2\ldots q_k$ has a prime
+factorization in which $p_1$ appears. But $q_2\ldots q_k<n$, so it has a
+unique factorization (by induction).
+This contradiction shows that $p_1$ must be equal to~$q_1$ after all.
+Therefore we can divide both of $n$'s factorizations by $p_1$, obtaining
+$p_2\ldots p_m=q_2\ldots q_k<n$. The other factors must likewise be equal
+(by induction), so our proof of uniqueness is complete.
+
+Sometimes it's more useful to state the Fundamental Theorem in
+\g It's the factorization, not the theorem, that's unique.\g
+another way: {\sl Every positive integer can be written uniquely in the form}
+\begindisplay \advance\belowdisplayskip-3pt
+n\;=\;\prod_p p^{n_p}\,,\qquad\hbox{where each $n_p\ge0$}.
+\eqno\eqref|primepower-factors|
+\enddisplay
+The right-hand side is a product over
+infinitely many primes; but for any particular~$n$ all but a few
+exponents are zero, so the corresponding factors are~$1$. Therefore it's really
+a finite product, just as many ``infinite'' sums are really finite
+because their terms are mostly zero.
+
+Formula \thiseq\ represents $n$ uniquely, so we can think of
+the sequence $\langle n_2,n_3,n_5,\ldots\,\rangle$ as a {\it"number system"\/}
+for positive integers. For example, the "prime-exponent representation"
+of $12$ is $\langle 2,1,0,0,\ldots\,\rangle$ and the prime-exponent representation
+of $18$ is $\langle 1,2,0,0,\ldots\,\rangle$. To multiply
+two numbers, we simply add their representations. In other words,
+\setmathsize{k=\gcd(m,n)\kern-10pt}%
+\begindisplay
+\mathsize{k=mn}\qquad\iff\qquad k_p=m_p+n_p\quad\hbox{for all $p$}.
+\eqno\eqref|prod-exp|
+\enddisplay
+This implies that
+\begindisplay
+\mathsize{m\divides n}\qquad\iff\qquad m_p\le n_p\quad\hbox{for all $p$},
+\eqno\eqref|div-exp|
+\enddisplay
+and it follows immediately that
+\begindisplay
+\mathsize{k=\gcd(m,n)\kern-10pt}
+ \qquad\iff\qquad k_p=\min(m_p,n_p)\quad\hbox{for all $p$};
+\eqno\eqref|gcd-exp|\cr
+\mathsize{k=\lcm(m,n)\kern-10pt}
+ \qquad\iff\qquad k_p=\max(m_p,n_p)\quad\hbox{for all $p$}.
+\eqno\eqref|lcm-exp|
+\enddisplay
+For example, since $12=2^2\cdt3^1$ and $18=2^1\cdt3^2$, we can get their
+"!greatest common divisor" "!least common multiple"
+gcd and lcm by taking the min and max of common exponents:
+\begindisplay
+\gcd(12,18)&=2^{\min(2,1)}\cdot3^{\min(1,2)}=2^1\cdt3^1=6\,;\cr
+\noalign{\nobreak}
+\lcm(12,18)&=2^{\max(2,1)}\cdot3^{\max(1,2)}=2^2\cdt3^2=36\,.\cr
+\enddisplay
+
+If the prime $p$ divides a product $mn$ then it divides either
+$m$ or~$n$, perhaps both, because of the unique
+factorization theorem. But composite numbers do not have this property.
+For example, the nonprime~$4$ divides $60=6\cdt10$, but it divides neither
+$6$ nor~$10$. The reason is simple: In the factorization $60=6\cdt10=
+(2\cdt3)(2\cdt5)$, the two prime factors of $4=2\cdt2$ have been split
+into two parts, hence $4$ divides neither part. But a prime is
+unsplittable, so it must divide one of the original factors.
+
+\beginsection 4.3 Prime examples
+
+How many primes are there? A lot. In fact, infinitely many. "Euclid"
+proved this long ago in his Theorem 9\thinspace:\thinspace20, as
+follows. Suppose there were only finitely many primes, say $k$ of them\dash---%
+$2$,~$3$, $5$, \dots,~$P_k$. Then, said Euclid, we should consider the number
+\def\br#1#2{{\buildrel\hbox{\gmathtext#1}\over{\smash#2}}}%
+\g\mathsurround=0pt \textfont1=\gtfont \advance\baselineskip1pt
+\mathchardef\varsigma=294 % "0126
+\noindent\llap{``}$@O\br`\iota$ $\pi\rho\tilde\omega\tau o\iota$
+$\br'\alpha\rho\iota\theta\mu o\grave\iota$
+$\pi\lambda\epsilon\acute\iota o\upsilon\varsigma$
+$\epsilon\br'\iota\sigma\grave\iota$
+$\pi\alpha\nu\tau\grave o\varsigma$
+$\tau o\tilde\upsilon$
+$\pi\rho o\tau\epsilon\theta\acute\epsilon\nu\tau o\varsigma$
+$\pi\lambda\acute\eta\theta o\upsilon\varsigma$
+$\pi\rho\acute\omega\tau\omega\nu$
+$\br'\alpha\rho\iota\theta\mskip-1mu\mu\tilde\omega\nu$.''\par
+\hfill\dash---Euclid [|euclid-elts|]
+\smallskip \advance\baselineskip-1pt
+[Translation:\par
+\noindent\llap{``}There are more primes than in any given set of~primes.'']\g
+\begindisplay
+M=2\cdot3\cdot5\cdot\ldots\cdot P_k\;+\;1\,.
+\enddisplay
+None of the $k$ primes can divide $M$, because each divides $M-1$. Thus there
+must be some other prime that divides~$M$; perhaps $M$~itself is prime. This
+contradicts our assumption that $2$,~$3$, \dots,~$P_k$ are the only
+primes, so there must indeed be infinitely many.
+
+Euclid's proof suggests that we define {\it "Euclid numbers"\/} by the
+recurrence
+\begindisplay
+e_n&=e_1e_2\ldots e_{n-1}\,+\,1\,,\qquad\hbox{when $n\ge1$}.
+\eqno\eqref|euclid-rec|
+\enddisplay
+The sequence starts out
+\begindisplay
+e_1&=1+1=2\,;\cr
+e_2&=2+1=3\,;\cr
+e_3&=2\cdt3+1=7\,;\cr
+e_4&=2\cdt3\cdt7+1=43\,;\cr
+\enddisplay
+these are all prime. But the next case, $e_5$, is $1807=13\cdt139$.
+It turns out that $e_6=3263443$ is prime, while
+\begindisplay
+e_7&=547\cdt607\cdt1033\cdt31051\,;\cr
+e_8&=29881\cdt67003\cdt9119521\cdt6212157481\,.\cr
+\enddisplay
+It is known that $e_9$, \dots, $e_{17}$ are composite, and the remaining
+$e_n$ are probably composite as well. However, the Euclid numbers are
+all {\it "relatively prime"\/} to each other; that is,
+\begindisplay
+\gcd(e_m,e_n)=1\,,\qquad\hbox{when $m\ne n$.}
+\enddisplay
+Euclid's algorithm (what else?)\ tells us this in three short steps,
+because $e_n\bmod e_m=1$ when $n>m$:
+\begindisplay
+\gcd(e_m,e_n)=\gcd(1,e_m)=\gcd(0,1)=1\,.
+\enddisplay
+Therefore,
+if we let $q_j$ be the smallest factor of~$e_j$ for all $j\ge1$,
+the primes $q_1$, $q_2$, $q_3$, \dots\ are all different. This
+is a sequence of infinitely many primes.
+
+Let's pause to consider the Euclid numbers from the standpoint of
+Chapter~1. Can we express $e_n$ in "closed form"?
+Recurrence \thiseq\ can be simplified by removing the three dots:
+If $n>1$ we have
+\begindisplay
+e_n=e_1\ldots e_{n-2}e_{n-1}+1=(e_{n-1}-1)e_{n-1}+1=e_{n-1}^2-e_{n-1}+1\,.
+\enddisplay
+Thus $e_n$ has about twice as many decimal digits as $e_{n-1}$.
+Exercise~|euclid-sol-proof| proves that there's a constant
+$E\approx1.264$ such that
+\begindisplay
+\textstyle e_n=\bigl\lfloor E^{2^n}+\half\bigr\rfloor\,.
+\eqno\eqref|euclid-sol|
+\enddisplay
+And exercise |mills-proof| provides a similar formula that gives nothing but primes:
+\begindisplay
+p_n=\bigl\lfloor P^{3^n}\bigr\rfloor\,,
+\eqno\eqref|mills-primes|
+\enddisplay
+for some constant $P$. But equations like
+\eq(|euclid-sol|) and \thiseq\ cannot really be considered to be in
+closed form, because the constants $E$ and $P$ are computed
+from the numbers $e_n$ and~$p_n$ in a sort of sneaky way. No
+independent relation is known (or likely) that would connect them with
+other constants of mathematical interest.
+
+Indeed,
+nobody knows {\it any\/} useful formula that gives arbitrarily large
+primes but only primes. Computer scientists at Chevron
+Geosciences did, however,
+strike mathematical oil in 1984. Using a program developed
+by David "Slowinski", they discovered the
+"!prime, largest known"
+largest prime known at that time,
+\begindisplay
+2^{216091}-1\,,
+\enddisplay
+while testing a new "Cray X-MP" supercomputer. It's easy to compute
+this number in a few milliseconds on a "personal computer", because
+modern computers work in binary notation and this number is simply
+$(11\ldots1)_2$. All 216,091 of its bits are `$1$'. But it's much
+harder to prove that this number is prime. In fact, just about any
+computation with it takes a lot of time, because it's so large. For
+example, even a sophisticated algorithm requires several minutes
+just to convert $2^{216091}-1$ to
+radix~$10$ on a~PC. When printed out, its 65,050 decimal digits require
+\g Or probably more, by the time you read this.\g
+75~cents U.S. postage to mail first class.
+
+Incidentally, $2^{216091}-1$ is the number of moves necessary to solve
+the "Tower of Hanoi" problem when there are 216,091 disks.
+Numbers of the form
+\begindisplay
+2^p-1
+\enddisplay
+(where $p$ is prime, as always in this chapter) are called {\it
+"Mersenne numbers"}, after Father Marin "Mersenne" who investigated some of
+their properties in the seventeenth century~[|mersenne|].                . 
+%The second- and fourth-largest known primes, discovered by David
+%"Slowinski" using a Cray, are also Mersenne numbers, with $p=132049$
+%and $p=86243$.
+The Mersenne primes known to date occur for $p=2$, $3$, $5$, $7$, $13$,
+$17$, $19$, $31$, $61$, $89$, $107$, $127$, $521$, $607$, $1279$,
+$2203$, $2281$, $3217$, $4253$, $4423$, $9689$, $9941$, $11213$, $19937$,
+$21701$, $23209$, $44497$, $86243$, $110503$, $132049$, $216091$,
+and $756839$.
+
+The number $2^n-1$ can't possibly be prime if $n$ is composite,
+because $2^{km}-1$ has $2^m-1$ as a factor:
+\begindisplay
+2^{km}-1=(2^m-1)(2^{m(k-1)}+2^{m(k-2)}+\cdots+1)\,.
+\enddisplay
+But $2^p-1$ isn't always prime when $p$ is prime; $2^{11}-1=2047
+=23\cdt89$ is the smallest such nonprime. (Mersenne knew this.)
+
+"Factoring" and "primality testing" of large numbers are hot topics
+nowadays. A summary of what was known up to~1981 appears in
+Section 4.5.4 of [|knuth2|], and many new results continue
+to be discovered. Pages 391--394 of that book explain a
+special way to test Mersenne numbers for primality.
+
+ For most of
+the last two hundred years, the largest known prime has been a
+Mersenne prime, although only 31 Mersenne primes are known. Many people
+are trying to find larger ones, but it's getting tough. So those
+really interested in fame (if not fortune) and a spot in {\sl
+The Guinness Book of World Records\/} might instead try numbers
+of the form $2^nk+1$, for small values of~$k$ like $3$ or~$5$.
+These numbers can be tested for primality almost as quickly
+as Mersenne numbers can; exercise 4.5.4--27 of~[|knuth2|] gives the details.
+
+We haven't fully answered our original question about how many
+primes there are. There are infinitely many, but some infinite
+sets are ``denser'' than others. For instance,
+among the positive integers there are infinitely many
+even numbers and infinitely many perfect squares,
+yet in several important senses
+there are more even numbers than perfect squares.
+\g Weird. I thought there were the same number of even integers
+as perfect squares, since there's a one-to-one correspondence
+between them.\g
+One such sense looks at the size of the $n$th value.
+The $n$th even integer is $2n$ and
+the $n$th perfect square is $n^2$;
+since $2n$ is much less than $n^2$ for large~$n$,
+the $n$th even integer occurs much sooner than the $n$th perfect square,
+so we can say there are many more even integers than perfect squares.
+A similar sense looks at the number of values not exceeding~$x$.
+There are $\lfloor x/2 \rfloor$ such even integers and
+$\lfloor \sqrt{x} @\rfloor$ perfect squares;
+since $x/2$ is much larger than~$\sqrt{x}$ for large~$x$,
+again we can say there are many more even integers.
+
+What can we say about the primes in these two senses?
+It turns out that
+the $n$th prime, $P_n$, is about $n$ times the natural log of~$n$:
+\begindisplay
+P_n
+	\sim n \ln n\,.
+\enddisplay
+(The symbol `$\sim$' can be read ``is "asymptotic" to'';
+it means that the limit of the ratio $P_n/n \ln n$ is~$1$
+as $n$~goes to infinity.)
+Similarly, for the number of primes~$\pi(x)$ not exceeding~$x$
+we have what's known as the prime number theorem:
+\begindisplay
+\pi(x)
+	\sim {x\over \ln x} \,.
+\enddisplay
+Proving these two facts is beyond the scope of this book,
+although we can show easily that each of them implies the other.
+In Chapter~9 we will discuss the rates at which functions
+approach infinity, and we'll see that the function $n \ln n$,
+our approximation to~$P_n$, lies between $2n$ and $n^2$ asymptotically.
+Hence there are fewer primes than even integers,
+but there are more primes than perfect squares.
+
+These formulas, which hold only in the limit as $n$ or $x\to\infty$,
+can be replaced by more exact estimates. For example, "Rosser" and
+"Schoenfeld"~[|rosser-schoenfeld|] have established the handy bounds
+\begindisplay
+&\textstyle
+\ln x-{3\over2}<{x\over\pi(x)}<\ln x-{1\over2}\,,&\hbox{for $x\ge67$};
+\eqno\eqref|prime-theorem|\cr
+&\textstyle n\bigl(\ln n+\ln\ln n-{3\over2}\bigr)\!<\!P_n\!<\!
+ n\bigl(\ln n+\ln\ln n-\half\bigr), \ \ &\hbox{for $n\ge20$}.
+\eqno\eqref|dual-prime-theorem|\cr
+\enddisplay
+
+If we look at a ``random'' integer~$n$, the chances of its being prime
+are about one~in~$\ln n$. For example, if we look at numbers near~$10^{16}$,
+we'll have to examine about $16\ln 10\approx36.8$ of them before
+finding a prime. (It turns out that there are exactly 10~primes between
+$10^{16}-370$ and $10^{16}-1$.) Yet the distribution of primes has
+many irregularities. For example, all the numbers between
+$P_1P_2\ldots P_n+2$ and $P_1P_2\ldots P_n+P_{n+1}-1$ inclusive are composite.
+Many examples of ``twin primes'' $p$~and~$p+2$ are known
+($5$~and~$7$,
+$11$~and~$13$,
+$17$~and~$19$,
+$29$~and~$31$, \dots,
+$9999999999999641$ and $9999999999999643$, \dots\thinspace), yet nobody
+knows whether or not there are infinitely many pairs of twin primes.
+(See "Hardy" and "Wright"~[|hardy-wright|, \S1.4 and \S2.8].)
+
+One simple way to calculate all $\pi(x)$~primes $\le x$
+is to form the so-called "sieve" of "Eratosthenes":
+First write down all integers from $2$~through~$x$.
+Next circle~$2$, marking it prime, and cross out all other multiples of~$2$.
+Then repeatedly circle the smallest uncircled, uncrossed number and
+cross out its other multiples.
+When everything has been circled or crossed out,
+the circled numbers are the primes.
+For example when $x=10$ we write down $2$~through~$10$,
+circle~$2$, then cross out its multiples $4$,~$6$, $8$, and~$10$.
+Next $3$~is the smallest uncircled, uncrossed number,
+so we circle it and cross out $6$ and~$9$.
+Now $5$~is smallest, so we circle it and cross out~$10$.
+Finally we circle~$7$.
+The circled numbers are $2$,~$3$, $5$, and~$7$;
+so these are the $\pi(10) = 4$ primes not exceeding~$10$.
+
+\beginsection 4.4 Factorial Factors
+
+Now let's take a look at the "factorization" of some interesting highly
+\g\vskip-54pt
+ \noindent\llap{``}Je me sers de la notation tr\`es simple $n!$ pour d\'esigner
+le produit de nombres d\'ecroissans depuis $n$ jusqu'\`a l'unit\'e,
+savoir $n(n-1)\break(n-2)\mskip-1mu\ldots.\,\,3.\,2.\,1\mskip-2mu.$\break
+L'emploi continuel de l'analyse combinatoire que je fais dans la
+plupart de mes d\'emonstrations, a rendu cette "notation" indispensable.''
+\par\hfill\dash---Ch.~"Kramp" [|kramp|]\g
+composite numbers, the "factorial"s:
+\begindisplay
+n!
+	= 1 \cdt 2 \cdt \ldots \cdt n \,
+	= \prod_{k=1}^ n k \,,
+					\qquad\hbox{integer $n \geq 0$.}
+\eqno\eqref|n!|
+\enddisplay
+According to our convention for an empty product,
+this defines $0!$ to be~$1$.
+Thus $n! = (n-1)!\,n$ for every positive integer~$n$.
+This is the number of permutations of $n$~distinct objects.
+That is, it's the number of ways to arrange $n$~things in a row:
+There are $n$~choices for the first thing;
+for each choice of first thing, there are $n-1$~choices for the second;
+for each of these $n(n-1)$ choices, there are $n-2$ for the third;
+and so on,
+giving $n(n-1)(n-2) \ldots (1)$ arrangements in all.
+Here are the first few values of the "factorial" function.
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4&5&6&7&8&9&10\cr
+\noalign{\hrule}
+n!&& 1 & 1 & 2 & 6 & 24 & 120 & 720 & 5040 & 40320 & 362880 & 3628800\cr
+\enddisplay
+It's useful to know a few factorial facts, like
+the first six or so values, and
+the fact that $10!$ is about $3{1\over 2}$ million plus change;
+another interesting fact is
+that the number of digits in~$n!$ exceeds~$n$ when $n\ge25$.
+
+We can prove that $n!$ is plenty big by using something like "Gauss"'s trick
+of Chapter~1:
+\begindisplay
+n!^2=(1\cdot2\cdot\ldots\cdot n)(n\cdot\ldots\cdot2\cdot1)=\prod_{k=1}^n
+ k(n+1-k)\,.
+\enddisplay
+We have $n\le k(n+1-k)\le{1\over4}(n+1)^2$, since the quadratic polynomial
+$k(n+1-k)={1\over4}(n+1)^2-\bigl(k-\half(n+1)\bigr)^2$ has its smallest value
+at $k=1$ and its largest value at $k=\half(n+1)$. Therefore
+\begindisplay
+\prod_{k=1}^n n\le n!^2\le\prod_{k=1}^n{(n+1)^2\over4}\,;
+\enddisplay
+that is,
+\begindisplay
+n^{n/2}\le n!\le{(n+1)^n\over 2^n}\,.
+\eqno\eqref|crude-factorial-bound|
+\enddisplay
+This relation tells us that the factorial function grows exponentially!!
+
+To approximate~$n!$ more accurately for large~$n$
+we can use "Stirling's formula",
+which we will derive in Chapter~9:
+\begindisplay
+n!
+	\sim \sqrt{2 \pi n} \left( {n\over e} \right)^{\! n} \,.
+\eqno\eqref|stirling-approx|
+\enddisplay
+And a still more precise approximation tells us the asymptotic relative error:
+Stirling's formula undershoots $n!$ by a factor of about~$1/(12n)$.
+Even for fairly small~$n$ this more precise estimate is pretty good.
+For example, Stirling's approximation~\thiseq\ gives a value near $3598696$
+when $n=10$, and this is about $0.83\%\approx1/120$ too small.
+Good stuff, asymptotics.
+
+But let's get back to primes.
+We'd like to determine, for any given prime~$p$, the largest
+power of~$p$ that divides~$n!$;
+that is, we want the exponent of~$p$ in $n!$'s unique factorization.
+We denote this number by~$\epsilon_p(n!)$,
+and we start our investigations with
+the small case $p=2$ and $n=10$.
+Since $10!$ is the product of ten numbers,
+$\epsilon_2(10!)$ can be found by
+summing the powers-of-2 contributions of those ten numbers;
+this calculation corresponds to summing the columns of the following array:
+\begindisplay\def\preamble{\bigstrut\hfil$##$\ &\vrule##&%
+ \ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \hfil$##$\hfil&%
+ \ \vrule##&\ \hfil$##$\hfil}\offinterlineskip
+&& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 &&\hbox{powers of $2$} \cr
+\omit&height 2pt&&&&&&&&&&&&\cr
+\noalign{\hrule}
+\omit&height 2pt&&&&&&&&&&&&\cr
+\hbox{divisible by $2$}&&& \hbox{x} && \hbox{x} && \hbox{x} && \hbox{x}
+				&& \hbox{x} &&5 = \lfloor 10/2 \rfloor \cr
+\hbox{divisible by $4$}&&&&& \hbox{x} &&&& \hbox{x}
+					&&&&2 = \lfloor 10/4 \rfloor \cr
+\hbox{divisible by $8$}&&&&&&&&& \hbox{x} &&&&1 = \lfloor 10/8 \rfloor \cr
+\omit&height 2pt&&&&&&&&&&&&\cr
+\noalign{\hrule}
+\omit&height 2pt&&&&&&&&&&&&\cr
+\hbox{powers of $2$}&& 0 & 1 & 0 & 2 & 0 & 1 & 0 & 3 & 0 & 1 &&8\cr
+\enddisplay
+(The column sums form what's sometimes called the {\it "ruler function"\/}
+\g A powerful ruler.\g
+$\rho(k)$, because of their similarity to
+`\thinspace\vbox{\hrule \unitlength=.015625in
+ \def\\#1{\vrule depth#1\unitlength width.5\unitlength\kern1.5\unitlength}
+ \hbox{\\6\\1\\2\\1\\3\\1\\2\\1\\4\\1\\2\\1\\3\\1\\2\\1\\5%
+          \\1\\2\\1\\3\\1\\2\\1\\4\\1\\2\\1\\3\\1\\2\\1\\6\kern-1.5\unitlength}
+ \kern0pt}\thinspace', the lengths of lines
+marking fractions of an inch.)
+The sum of these ten~sums is~$8$;
+hence $2^8$ divides~$10!$ but $2^9$ doesn't.
+
+There's also another way:
+We can sum the contributions of the rows.
+The first row marks the numbers that contribute a power of~$2$
+(and thus are divisible by~$2$);
+there are $\lfloor 10/2 \rfloor = 5$ of them.
+The second row marks those that contribute an additional power of~$2$;
+there are $\lfloor 10/4 \rfloor = 2$ of them.
+And the third row marks those that contribute yet another;
+there are $\lfloor 10/8 \rfloor = 1$ of them.
+These account for all contributions,
+so we have $\epsilon_2(10!) = 5+2+1 = 8$.
+
+For general~$n$ this method gives
+\begindisplay
+ \epsilon_2(n!)
+	= \left\lfloor {n\over 2} \right\rfloor +
+		\left\lfloor {n\over 4} \right\rfloor +
+		\left\lfloor {n\over 8} \right\rfloor + \cdots
+	= \sum_{k \geq 1} \left\lfloor {n\over 2^k} \right\rfloor \,.
+\enddisplay
+This sum is actually finite, since the summand is zero when $2^k > n$.
+Therefore it has only $\lfloor \lg n \rfloor$ nonzero terms,
+and it's computationally quite easy.
+For instance, when $n=100$ we have
+\begindisplay
+ \epsilon_2(100!)
+	= 50 + 25 + 12 + 6 + 3 + 1
+	= 97 \,.
+\enddisplay
+\looseness=-1
+Each term is just the floor of half the previous term.
+This is true for all~$n$,
+because as a special case of~\equ(3.|rational-in/out|)
+we have $\lfloor n/2^{k+1} \rfloor
+		= \bigl\lfloor \lfloor n/2^k \rfloor /2 \bigr\rfloor$.
+It's especially easy to see what's going on here
+ when we write the numbers in binary:
+\begindisplay\def\preamble{\hfil$##$&${}=\hfil(##)_2$&${}=\hfil##$}%
+\postdisplaypenalty=10000
+100			& 1100100	& 100	\cr
+\lfloor 100/2 \rfloor	& 110010	& 50	\cr
+\lfloor 100/4 \rfloor	& 11001		& 25	\cr
+\lfloor 100/8 \rfloor	& 1100		& 12	\cr
+\lfloor 100/16 \rfloor	& 110		& 6	\cr
+\lfloor 100/32 \rfloor	& 11		& 3	\cr
+\lfloor 100/64 \rfloor	& 1		& 1	\cr
+\enddisplay
+We merely drop the least significant bit from one term to get the next.
+
+The binary representation also shows us how to derive another
+formula,
+\begindisplay
+\epsilon_2(n!)=n-\nu_2(n)\,,
+\eqno\eqref|2-factors|
+\enddisplay
+where $\nu_2(n)$ is the number of $1$'s in the binary representation of~$n$.
+"!sideways addition" "!nu function $\nu_d$"
+This simplification works
+because each $1$ that contributes $2^m$ to the value
+of~$n$ contributes $2^{m-1}+2^{m-2}+\cdots+2^0=2^m-1$
+ to the value of $\epsilon_2(n!)$.
+
+Generalizing our findings to an arbitrary prime~$p$, we have
+\begindisplay
+\epsilon_p(n!)
+	= \left\lfloor {n\over p} \right\rfloor
+		+ \left\lfloor {n\over p^2} \right\rfloor
+		+ \left\lfloor {n\over p^3} \right\rfloor + \cdots
+	= \sum_{k \geq 1} \left\lfloor {n\over p^k} \right\rfloor
+\eqno
+\enddisplay
+by the same reasoning as before.
+
+About how large is $\epsilon_p(n!)$?
+We get an easy (but good) upper bound by simply removing the floor
+from the summand and then summing an infinite geometric progression:
+\begindisplay \openup3pt
+\epsilon_p(n!)
+	&< {n\over p} + {n\over p^2} + {n\over p^3} + \cdots \cr
+	&= {n\over p}
+		\left( 1 + {1\over p} + {1\over p^2} + \cdots\, \right) \cr
+	&= {n\over p} \left( {p\over p-1} \right) \cr
+\noalign{\smallskip}
+	&= {n\over p-1} \,.
+\enddisplay
+For $p=2$ and $n=100$ this inequality says that $97 < 100$.
+Thus the upper bound~$100$ is not only correct,
+it's also close to the true value~$97$.
+In fact, the true value $n-\nu_2(n)$ is $\sim n$ in general, because
+$\nu_2(n)\le\lceil@\lg n\rceil$ is "asymptotic"ally
+much smaller than~$n$.
+
+When $p=2$ and~$3$ our formulas give
+$\epsilon_2(n!)\sim n$ and $\epsilon_3(n!)\sim n/2$,
+so it seems reasonable that every once in awhile
+$\epsilon_3(n!)$ should be exactly half as big as $\epsilon_2(n!)$.
+For example, this happens when $n=6$ and $n=7$, because
+$6!=2^4\cdt3^2\cdt5=7!/7$. But nobody has yet proved that
+such coincidences happen infinitely often.
+
+The bound on~$\epsilon_p(n!)$ in turn gives us
+a bound on~$p^{\epsilon_p(n!)}$, 
+which is $p$'s contribution to $n! \mskip2mu$:
+\begindisplay 
+p^{\epsilon_p(n!)}
+	< p^{n/(p-1)} \,.
+\enddisplay
+And we can simplify this formula (at the risk of greatly loosening
+the upper bound) by noting that $p\le2^{p-1}$; hence
+$p^{n/(p-1)}\le(2^{p-1})^{n/(p-1)}=2^n$.
+In other words,
+the contribution that any prime makes to~$n!$ is less than~$2^n$.
+
+We can use this observation
+ to get another proof that there are infinitely many primes.
+For if there were only the $k$~primes $2$,~$3$, \dots,~$P_k$, then
+we'd have $n! < (2^n)^k = 2^{nk}$ for all $n>1$, since each prime
+can contribute at most a factor of~$2^n-1$.
+But we can easily contradict the inequality $n!<2^{nk}$
+ by choosing $n$ large enough,
+say $n = 2^{2k}$. Then
+\begindisplay
+n!<2^{nk}=2^{2^{2k}k}=n^{n/2}\,,
+\enddisplay
+contradicting the inequality $n!\ge n^{n/2}$ that we derived
+in \eq(|crude-factorial-bound|).
+There are infinitely many primes, still.
+
+We can even beef up this argument to get a crude bound on $\pi(n)$,
+the number of primes not exceeding~$n$.
+Every such prime contributes a factor of less than~$2^n$ to $n!$; so,
+as before,
+\begindisplay
+ n!
+	< 2^{n\pi(n)} \,.
+\enddisplay
+If we replace $n!$ here by Stirling's approximation \eq(|stirling-approx|),
+which is a lower bound, and take logarithms, we get
+\begindisplay
+\textstyle n@\pi(n)>n\lg(n/e)+\half\lg(2\pi n)\,;
+\enddisplay
+hence
+\begindisplay
+\pi(n)>\lg(n/e)\,.
+\enddisplay
+This lower bound is quite weak, compared with the actual value $\pi(n)\sim
+n/\!@\ln n$, because $\log n$ is much smaller than $n/\!@\log n$ when
+$n$ is large. But we didn't have to work very hard to get it,
+and a bound is a bound.
+
+\beginsection 4.5 Relative Primality
+
+When $\gcd(m,n)=1$, the integers $m$ and $n$ have no prime factors
+in common and we say that they're {\it "relatively prime"}.
+
+This concept is so important in practice, we ought to have a special
+"notation" for it; but alas, number theorists haven't agreed on a very
+good one yet. Therefore we cry: {\sc Hear us, O Mathematicians of the World!
+Let us not wait any longer! We can make many
+formulas clearer by adopting a new notation now! Let us agree to
+\g Like perpendicular lines don't have a common direction,
+perpendicular numbers don't have common factors.\g
+write `$@m\rp n$', and to say ``$@m$~is "prime to"~$n$,\qback'' if
+\tabref|nn:rp|%
+$m$ and~$n$ are relatively prime}. In~other words,
+let us declare that
+\begindisplay
+m\rp n\quad\iff\quad\hbox{$m,n$ are integers and $\gcd(m,n)=1$}.
+\eqno\eqref|rp-def|
+\enddisplay
+
+A fraction $m/n$ is in lowest terms if and only if $m\rp n$. Since
+we reduce fractions to lowest terms by casting out the largest common
+factor of numerator and denominator, we suspect that, in general,
+\begindisplay
+m/\!\gcd(m,n)\;\rp\;n/\!\gcd(m,n)\,;
+\eqno\eqref|cast-out|
+\enddisplay
+and indeed this is true. It follows from a more general
+law, $\gcd(km,kn)=k\gcd(m,n)$, proved in exercise~|gcd-prod|.
+
+The $\rp$ relation has a simple formulation when we work with the
+"prime-exponent
+representation"s of numbers, because of the gcd rule \eq(|gcd-exp|):
+\begindisplay
+m\rp n\qquad\iff\qquad \min(m_p,n_p)=0\quad\hbox{for all $p$}.
+\eqno
+\enddisplay
+Furthermore, since $m_p$ and $n_p$ are nonnegative, we can rewrite this as
+\g The dot product is zero, like orthogonal vectors.\g
+\begindisplay
+m\rp n\qquad\iff\qquad m_p n_p=0\quad\hbox{for all $p$}.
+\eqno\eqref|rp-exp-zero|
+\enddisplay
+And now we can prove an important law by which we can
+split and combine two $\rp$ relations with the same left-hand side:
+\begindisplay
+k\rp m\And k\rp n\qquad\iff\qquad k\rp mn\,.
+\eqno\eqref|rp-split|
+\enddisplay
+In view of \eq(|rp-exp-zero|), this law is another way of saying
+that $k_pm_p=0$ and $k_pn_p=0$ if and only if $k_p(m_p+n_p)=0$,
+when $m_p$ and $n_p$ are nonnegative.
+
+\smallskip
+There's a beautiful way to construct the set of all nonnegative fractions
+$m/n$ with $m\rp n$, called the {\it "Stern--Brocot tree"\/} because it
+\g Interesting how mathematicians will say ``discovered'' when absolutely
+ anyone else would have said ``invented.\qback''\g
+was discovered independently by
+Moriz "Stern"~[|stern|], a German mathematician,
+and Achille "Brocot"~[|brocot|], a French clockmaker.
+The idea is to start with the two fractions $({0\over1},{1\over0})$
+and then to repeat the following operation as many times as desired:
+\begindisplay
+\hbox{Insert \ }{m+m'\over n+n'}\hbox{ \ between two adjacent fractions \ }
+{m\over n}\hbox{ and }{m'\over n'}\,.
+\enddisplay
+The new fraction $(m+m')/(n+n')$ is called the {\it"mediant"\/} of
+$m/n$ and $m'/n'$. For example, the first step gives us one new
+entry between $0\over1$ and $1\over0$,
+\begindisplay
+\textstyle {0\over1},\,{1\over1},\,{1\over0}\,;
+\enddisplay
+and the next gives two more:
+\begindisplay
+\textstyle {0\over1},\,{1\over2},\,{1\over1},\,{2\over1},\,{1\over0}\,.
+\enddisplay
+The next gives four more,
+\begindisplay
+\textstyle {0\over1},\,{1\over3},\,{1\over2},\,{2\over3},\,{1\over1},\,
+ {3\over2},\,{2\over1},\,{3\over1},\,{1\over0}\,;
+\enddisplay
+and then we'll get 8, 16, and so on. The entire array can be regarded as
+an infinite "binary tree" structure whose top levels look like this:
+"!tree"
+\g I guess $1/0$ is infinity, ``in lowest terms.\qback''\g
+\begindisplay
+\unitlength=0.65pt
+\def\\#1#2{\makebox(0,0){$#1\over#2$}}
+\beginpicture(330,200)(0,0)
+\put(5,190){\\01} \put(325,190){\\10}
+\multiput(13,189)(8,-1){18}{\disk{.5}}
+\multiput(317,189)(-8,-1){18}{\disk{.5}}
+\put(165,170){\\11}
+\put(93,134){\line(2,1){64}}
+\put(237,134){\line(-2,1){64}}
+\put(85,130){\\12} \put(245,130){\\21}
+\multiput(53,98)(160,0){2}{\line(1,1){24}}
+\multiput(277,98)(-160,0){2}{\line(-1,1){24}}
+\put(45,90){\\13} \put(125,90){\\23} \put(205,90){\\32} \put(285,90){\\31}
+\multiput(30,60)(80,0){4}{\line(1,2){9}}
+\multiput(300,60)(-80,0){4}{\line(-1,2){9}}
+\put(25,50){\\14} \put(65,50){\\25} \put(105,50){\\35} \put(145,50){\\34}
+ \put(185,50){\\43} \put(225,50){\\53} \put(265,50){\\52} \put(305,50){\\41}
+\multiput(18,20)(40,0){8}{\line(1,4){3.84615}}
+\multiput(312,20)(-40,0){8}{\line(-1,4){3.84615}}
+\put(15,9){\\15} \put(35,9){\\27} \put(55,9){\\38} \put(75,9){\\37}
+  \put(95,9){\\47} \put(115,9){\\58} \put(135,9){\\57} \put(155,9){\\45}
+ \put(175,9){\\54} \put(195,9){\\75} \put(215,9){\\85} \put(235,9){\\74}
+  \put(255,9){\\73} \put(275,9){\\83} \put(295,9){\\72} \put(315,9){\\51}
+\endpicture
+\enddisplay
+Each fraction is $m+m'\over n+n'$, where $m\over n$ is the nearest ancestor
+above and to the left, and $\smash{m'\over n'}$
+ is the nearest ancestor above and to
+the right. (An ``"ancestor"'' is a fraction that's
+ reachable by following the branches
+upward.) Many patterns can be observed in this tree.
+
+Why does this construction work? Why, for example, does each
+mediant fraction $(m+m')/(n+n')$
+turn out to be in lowest terms when it appears in this tree?
+(If $m$, $m'$, $n$, and $n'$ were all odd, we'd get even/even; somehow
+\g Conserve parody.\g
+the construction guarantees that fractions with odd numerators and
+denominators never appear next to each other.) And why do all possible
+fractions $m/n$ occur exactly once? Why can't a particular fraction occur
+twice, or not at all?
+
+All of these questions have amazingly simple answers, based on the
+following fundamental fact:
+{\sl If\/ $m/n$ and\/ $m'/n'$ are consecutive fractions at any stage of
+the construction, we have}
+\begindisplay
+m'n-mn'=1\,.
+\eqno\eqref|sp-inv|
+\enddisplay
+This relation is true initially ($1\cdt1-0\cdt0=1$);
+ and when we insert a new mediant
+$(m+m')/(n+n')$, the new cases that need to be checked are
+\begindisplay
+&(m+m')n-m(n+n')=1\,;\cr
+&m'(n+n')-(m+m')n'=1\,.\cr
+\enddisplay
+Both of these equations
+ are equivalent to the original condition \thiseq\ that they
+replace. Therefore \thiseq\ is "invariant" at all stages of the construction.
+
+Furthermore, if $m/n<m'/n'$ and if all values are nonnegative, it's easy to
+verify that
+\begindisplay
+m/n<(m+m')/(n+n')<m'/n'\,.
+\enddisplay
+A mediant fraction isn't halfway between its progenitors, but it does lie
+somewhere in between. Therefore the construction preserves order, and we
+couldn't possibly get the same fraction in two different places.
+\g True, but if you get a compound fracture you'd better go see a doctor.\g
+
+One question still remains. Can any positive fraction $a/b$ with
+$a\rp b$ possibly be omitted? The answer is no, because we can
+confine the construction to the immediate neighborhood of $a/b$, and in this
+region the behavior is easy to analyze: Initially we have
+\begindisplay
+\textstyle{m\over n}={0\over1}<\bigl({a\over b}\bigr)<{1\over 0}={m'\over n'}\,,
+\enddisplay
+where we put parentheses around $a\over b$ to indicate that it's not really
+present yet. Then if at some stage we have
+\begindisplay
+\textstyle{m\over n}<\bigl({a\over b}\bigr)<{m'\over n'}\,,
+\enddisplay
+the construction forms $(m+m')/(n+n')$ and there are three cases.
+Either $(m+m')/(n+n')=a/b$ and we win;
+or $(m+m')/(n+n')<a/b$ and we can set $m\gets m+m'$, $n\gets n+n'$;
+or $(m+m')/(n+n')>a/b$ and we can set $m'\gets m+m'$, $n'\gets n+n'$.
+This process cannot go on indefinitely, because the conditions
+\begindisplay
+\textstyle {a\over b}-{m\over n}>0\qquad{\rm and}\qquad {m'\over n'}-{a\over b}>0
+\enddisplay
+imply that
+\begindisplay
+an-bm\ge1\qquad{\rm and}\qquad bm'-an'\ge1\,;
+\enddisplay
+hence
+\begindisplay
+(m'+n')(an-bm)+(m+n)(bm'-an')&\ge m'+n'+m+n\,;
+\enddisplay
+and this is the same as $a+b\ge m'+n'+m+n$ by \eq(|sp-inv|).
+Either $m$ or $n$ or $m'$ or $n'$
+increases at each step, so we must win after at most $a+b$~steps.
+
+The {\it "Farey series"\/} of order $N$, denoted by $\Fscr_N$, is the set
+of all reduced fractions between $0$ and~$1$ whose denominators are
+$N$ or less, arranged in increasing order. For example, if $N=6$ we have
+\begindisplay
+\def\\#1#2{{#1\over#2}}
+\textstyle\Fscr_6=
+\\01,\\16,\\15,\\14,\\13,\\25,\\12,\\35,\\23,\\34,\\45,\\56,\\11\,.
+\enddisplay
+We can obtain $\Fscr_N$ in general by starting with $\Fscr_1={0\over1},{1\over1}$
+and then inserting mediants whenever it's possible to do so without getting a
+denominator that is too large. We don't miss any fractions in this way,
+because we know that the Stern--Brocot construction doesn't miss any, and
+because a mediant with denominator $\le N$ is never formed from a fraction
+whose denominator is $>N$. (In other words, $\Fscr_N$ defines a {\it subtree\/}
+of the Stern--Brocot tree, obtained by pruning off unwanted branches.)
+It follows that $m'n-mn'=1$ whenever $m/n$ and $m'/n'$ are consecutive
+elements of a Farey series.
+
+This method of construction reveals that $\Fscr_N$ can be obtained in
+a simple way from $\Fscr_{N-1}$: We simply insert the fraction $(m+m')/N$
+between consecutive fractions $m/n$, $m'/n'$ of $\Fscr_{N-1}$ whose
+denominators sum to~$N$. For example, it's easy to obtain $\Fscr_7$
+from the elements of $\Fscr_6$, by inserting
+$1\over7$, $2\over7$, \dots,~$6\over7$ according to the stated rule:
+\begindisplay
+\def\\#1#2{{#1\over#2}}
+\textstyle\Fscr_7=
+\\01,\\17,\\16,\\15,\\14,\\27,\\13,\\25,\\37,\\12,
+ \\47,\\35,\\23,\\57,\\34,\\45,\\56,\\67,\\11\,.
+\enddisplay
+When $N$ is prime, $N-1$ new fractions will appear; but otherwise we'll
+have fewer than $N-1$, because this process generates only numerators
+that are relatively prime to~$N$.
+
+Long ago in \eq(|''|) we proved\dash---in different words\dash---that
+whenever $m\rp n$ and $0<m\le n$ we can find integers $a$ and~$b$ such
+that
+\begindisplay
+ma-nb=1\,.
+\eqno\eqref|''1|
+\enddisplay
+(Actually we said $m'm+n'n=\gcd(m,n)$, but we can write $1$~for~$\gcd(m,n)$,
+$a$~for~$m'$, and $b$~for~$-n'$.) The Farey series gives us another proof of
+\thiseq, because we
+can let $b/a$ be the fraction that precedes $m/n$ in $\Fscr_n$.
+Thus \eq(|''|) is just \eq(|sp-inv|) again.
+For example, one solution to $3a-7b=1$ is $a=5$, $b=2$, since $2\over5$
+precedes $3\over7$ in $\Fscr_7$. This construction implies that
+we can always find a
+solution to \thiseq\ with $0\le b<a<n$, if $0<m\le n$. Similarly,
+if $0\le n<m$ and $m\rp n$, we can solve \thiseq\ with $0<a\le b\le m$
+by letting $a/b$ be the fraction that {\it follows\/} $n/m$ in $\Fscr_m$.
+
+Sequences of three consecutive terms in a Farey series have an amazing property
+that is proved in exercise~|farey3|. But we had better not discuss the
+Farey series any further,
+\g Farey 'nough.\g
+because the entire Stern--Brocot tree turns out to be even more interesting.
+
+We can, in fact, regard the Stern--Brocot tree as a {\it"number system"\/}
+for representing rational numbers, because each positive, reduced fraction
+occurs exactly once.
+Let's use the letters $L$ and $R$ to
+stand for going down to the left or right branch as we proceed from
+the root of the tree to a particular fraction; then a string of $L$'s and
+$R$'s uniquely identifies a place in the tree. For example, $LRRL$ means
+that we go left from $1\over1$ down to $1\over2$, then right to $2\over3$,
+then right to~$3\over4$, then left to~$5\over7$. We can consider $LRRL$
+to be a representation of~$5\over7$. Every positive fraction gets
+represented in this way as a unique string of $L$'s and $R$'s.
+
+Well, actually there's a slight problem: The fraction $1\over1$ corresponds
+to the {\it empty\/} string, and we need a notation for that. Let's agree
+to call it $I$, because that looks something like $1$ and it stands for
+``identity.\qback''
+
+This representation raises two natural questions: (1)~Given positive integers
+$m$ and~$n$ with $m\rp n$, what is the string of $L$'s and $R$'s that
+corresponds to~$m/n$? (2)~Given a string of $L$'s and $R$'s, what fraction
+corresponds to it? Question~2 seems easier, so let's work on it first.
+We define
+\begindisplay
+f(S)=\hbox{fraction corresponding to $S$}
+\enddisplay
+when $S$ is a string of $L$'s and $R$'s. For example, $f(LRRL)={5\over7}$.
+
+According to the construction, $f(S)=(m+m')/(n+n')$ if $m/n$ and $m'/n'$
+are the closest fractions preceding and following~$S$ in the upper levels
+of the tree. Initially $m/n=0/1$ and $m'/n'=1/0$; then we successively
+replace either $m/n$ or $m'/n'$ by the mediant $(m+m')/(n+n')$ as we move
+right or left in the tree, respectively.
+
+How can we capture this behavior in mathematical formulas that are easy to
+deal with? A bit of experimentation suggests that the best way is to
+maintain a $2\times2$ matrix
+\begindisplay
+M(S)=\pmatrix{n&n'\cr m&m'\cr}
+\enddisplay
+that holds the four quantities involved in the ancestral fractions $m/n$
+and $m'/n'$
+enclosing~$f(S)$. We could put the $m$'s on top and the $n$'s on the bottom,
+fractionwise; but this upside-down arrangement works out more nicely because
+we have
+$M(I)={1\,0\choose 0\,1}$
+when the process starts, and $1\,0\choose0\,1$ is traditionally called
+the identity matrix~$I$.
+
+A step to the left replaces $n'$ by $n+n'$ and $m'$ by $m+m'$; hence
+\begindisplay
+M(SL)=\pmatrix{n&n+n'\cr m&m+m'\cr}=
+\pmatrix{n&n'\cr m&m'\cr}\pmatrix{1&1\cr0&1\cr}=
+M(S)\pmatrix{1&1\cr0&1\cr}\,.
+\enddisplay
+(This is a special case of the general rule
+\begindisplay
+\pmatrix{a&b\cr c&d\cr}\pmatrix{w&x\cr y&z\cr}=
+ \pmatrix{aw+by&ax+bz\cr cw+dy& cx+dz\cr}
+\enddisplay
+for multiplying $2\times2$ matrices.)
+\g If you're clueless about matrices, don't panic; this book uses them
+only here.\g
+Similarly it turns out that
+\begindisplay
+M(SR)=\pmatrix{n+n'&n'\cr m+m'&m'\cr}=M(S)\pmatrix{1&0\cr1&1\cr}\,.
+\enddisplay
+Therefore if we define $L$ and $R$ as $2\times2$ matrices,
+\begindisplay
+L=\pmatrix{1&1\cr0&1\cr}\,,\qquad R=\pmatrix{1&0\cr1&1\cr}\,,
+\eqno\eqref|LR|
+\enddisplay
+we get the simple formula $M(S)=S$, by induction on the length of~$S$. Isn't that
+nice? (The letters $L$ and $R$ serve dual roles, as matrices and as
+letters in the string representation.) For example,
+\begindisplay
+\textstyle M(LRRL)=LRRL={1\,1\choose0\,1}
+{1\,0\choose1\,1}
+{1\,0\choose1\,1}
+{1\,1\choose0\,1}
+={2\,1\choose1\,1}
+{1\,1\choose1\,2}
+={3\,4\choose2\,3}\,;
+\enddisplay
+the ancestral fractions that enclose $LRRL={5\over7}$ are $2\over3$ and
+$3\over4$. And this construction gives us the answer to Question~2:
+\begindisplay
+f(S)=f\biggl(\pmatrix{n&n'\cr m&m'\cr}\biggr)={m+m'\over n+n'}\,.
+\eqno\eqref|f-of-S|
+\enddisplay
+
+How about Question~1? That's easy, now that we understand the
+fundamental connection between tree nodes and $2\times2$ matrices.
+Given a pair of positive integers $m$ and~$n$, with $m\rp n$, we can
+find the position of $m/n$ in the Stern--Brocot tree by ``"binary search"''
+as follows:
+\begindisplay \postdisplaypenalty=10000
+&S:=I\,;\cr
+&\hbox{{\bf while} \ $m/n\ne f(S)$ \ {\bf do}}\hidewidth\cr
+&\hbox{\qquad{\bf if} \ $m/n<f(S)$ \ }&
+ \hbox{\bf then} \ &\bigl(\hbox{output}(L); \ \ &S:=SL\bigr)\cr
+&&\hbox{\bf else} \ &\bigl(\hbox{output}(R); \ \ &S:=SR\bigr)\,.\cr
+\enddisplay
+This outputs the desired string of $L$'s and $R$'s.
+
+There's also another way to do the same job, by changing $m$ and~$n$ instead
+of maintaining the state~$S$. If $S$~is any $2\times2$ matrix, we have
+\begindisplay
+f(RS)=f(S)+1
+\enddisplay
+because $RS$ is like $S$ but with the top row added to the bottom row.
+(Let's look at it in slow motion:
+\begindisplay
+S=\pmatrix{n&n'\cr m&m'\cr}\,;\qquad RS=\pmatrix{n&n'\cr m+n&m'+n'\cr}\,;
+\enddisplay
+hence $f(S)=(m+m')/(n+n')$ and $f(RS)=\bigl((m+n)+(m'+n')\bigr)/(n+n')$.)
+If we carry out the binary search algorithm on a fraction $m/n$
+with $m>n$, the first output will be~$R$; hence the subsequent behavior
+of the algorithm will have $f(S)$ exactly $1$~greater than if we had
+begun with $(m-n)/n$ instead of $m/n$. A similar property holds for~$L$,
+and we have
+\begindisplay \openup6pt
+&{m\over n}=f(RS)&\qquad\iff\qquad{m-n\over n}=f(S)\,,&\qquad\hbox{when $m>n$};\cr
+&{m\over n}=f(LS)&\qquad\iff\qquad{m\over n-m}=f(S)\,,&\qquad\hbox{when $m<n$}.\cr
+\enddisplay
+This means that we can transform the binary search algorithm to the following
+matrix-free procedure:
+\begindisplay
+&\hbox{{\bf while} \ $m\ne n$ \ {\bf do}}\hidewidth\cr
+&\hbox{\qquad{\bf if} \ $m<n$ \ }&
+ \hbox{\bf then} \ &\bigl(\hbox{output}(L); \ \ &n:=n-m@\bigr)\cr
+&&\hbox{\bf else} \ &\bigl(\hbox{output}(R); \ \ &m:=m-n\bigr)\,.\cr
+\enddisplay
+For example, given $m/n=5/7$, we have successively
+\begindisplay\def\preamble{&\hfil$##$\hfil\ }
+m=&\ 5&&5&&3&&1&&1\cr
+n=&\ 7&&2&&2&&2&&1\cr
+\hbox to0pt{\hss output\hss}&&L&&R&&R&&L\cr
+\enddisplay
+in the simplified algorithm.
+
+"Irrational numbers" don't appear in the Stern--Brocot tree, but all the rational
+numbers that are ``close'' to them do. For example, if we try the binary
+search algorithm with the number $e=2.71828\ldots\,$, instead of with a fraction
+$m/n$, we'll get an infinite string of $L$'s and $R$'s that begins
+\begindisplay
+RRLRRLRLLLLRLRRRRRRLRLLLLLLLLRLR\,\ldots\,.
+\enddisplay
+We can consider this infinite string to be the representation of~$e$ in
+the "Stern--Brocot number system", just as we can represent $e$ as
+an infinite decimal $2.718281828459\!\ldots\,$ or as an infinite binary fraction
+$(10.101101111110\ldots\,)_2$. Incidentally, it turns out that
+$e$'s representation has a regular pattern in the Stern--Brocot system:
+\begindisplay
+e=RL^0RLR^2LRL^4RLR^6LRL^8RLR^{10}LRL^{12}RL\,\ldots\,;
+\enddisplay
+this is equivalent to a special case of something that "Euler"~[|euler-e-cf|]
+discovered when he was 24 years old.
+
+From this representation we can deduce that the fractions
+\begindisplay
+\unitlength=15pt
+\countdef\m=0 \countdef\mp=2 \countdef\n=4 \countdef\np=6
+\m=0 \mp=1 \n=1 \np=0
+\def\\#1{\if #1R\advance\m\mp \advance\n\np{\number\m\over\number\n}
+ \else\advance\mp\m \advance\np\n{\number\mp\over\number\np}\fi
+ ,\mskip-8mu\raise\unitlength\hbox{$\scriptstyle#1$}}
+\textstyle
+\\R\\R\\L\\R\\R\\L\\R\\L\\L\\L\\L\\R\\L\\R\\R\\R\\R
+\ldots
+\enddisplay
+are the simplest rational upper and lower approximations to $e$.
+For if $m/n$ does not appear in this list, then some fraction in this list
+whose numerator is $\le m$ and whose denominator is $\le n$ lies
+between $m/n$ and~$e$. For example, $27\over10$ is not as simple
+an approximation as ${19\over7}=2.714\ldots\,$, which appears in the
+list and is closer to~$e$. We can see this because the Stern--Brocot
+tree not only includes all rationals, it includes them in order, and
+because all fractions with small numerator and denominator appear
+above all less simple ones. Thus, ${27\over10}=RRLRRLL$ is less than
+${19\over7}=RRLRRL$, which is less than $e=RRLRRLR\ldots\,$.
+Excellent approximations can be found in this way. For example,
+${1264\over465}\approx2.718280$ agrees with $e$ to six decimal places;
+we obtained this fraction from the first 19 letters of $e$'s Stern--Brocot
+representation, and the accuracy is about what we would get with
+19~bits of $e$'s binary representation.
+
+We can find
+the infinite representation of an irrational number $\alpha$
+by a simple modification of the matrix-free binary search procedure:
+\begindisplay
+&\hbox{\bf if} \ \alpha<1 \ &\hbox{\bf then} \ &\bigl(\hbox{output}(L); \ \
+ &\alpha:=\alpha/(1-\alpha)\bigr)\cr
+&&\hbox{\bf else} \ &\bigl(\hbox{output}(R); \ \ &\alpha:=\alpha-1\bigr)\,.\cr
+\enddisplay
+(These steps are to be repeated infinitely many times, or until we get
+tired.) If $\alpha$ is rational, the infinite representation obtained
+in this way is the same as before but with $RL^\infty$ appended at the
+right of $\alpha$'s (finite) representation. For example, if $\alpha=1$,
+we get $RLLL\ldots\,$, corresponding to the infinite sequence of fractions
+${1\over1}$, $2\over1$, $3\over2$, $4\over3$, $5\over4$, \dots, which
+approach $1$ in the limit. This situation is exactly analogous to
+ordinary binary notation, if we think of $L$~as~$0$ and $R$~as~$1$:
+Just as every real number~$x$ in $[@0\dts1)$ has an infinite binary
+representation $(.b_1b_2b_3\ldots\,)_2$ not ending with all $1$'s,
+every real number $\alpha$ in $[@0\dts\infty)$ has an infinite Stern--Brocot
+representation $B_1B_2B_3\ldots$ not ending with all $R$'s. Thus we have
+a one-to-one order-preserving correspondence between $[@0\dts1)$ and
+$[@0\dts\infty)$ if we let $0\leftrightarrow L$ and $1\leftrightarrow R$.
+
+There's an intimate relationship between "Euclid's algorithm" and the
+Stern--Brocot representations of rationals. Given $\alpha=m/n$,
+we get $\lfloor m/n\rfloor$ $R$'s, then $\bigl\lfloor n/(m\bmod n)
+\bigr\rfloor$ $L$'s, then $\bigl\lfloor(m\bmod n)\big/\bigl(n\bmod
+(m\bmod n)\bigr)\bigr\rfloor$ $R$'s, and so on. These numbers
+$m\bmod n$, $n\bmod(m\bmod n)$, \dots~are just the values examined in
+Euclid's algorithm. (A little fudging is needed
+at the end to make sure that there aren't infinitely many
+$R$'s.) We will explore this relationship further in Chapter~6.
+
+\beginsection 4.6 `mod': The Congruence Relation
+
+"Modular arithmetic" is one of the main tools provided by number theory.
+"!mod, congruence relation"
+\g \noindent\llap{``}Numerorum congruentiam hoc signo, $\=$, in posterum
+denotabimus, modulum ubi opus erit in clausulis adiungentes,
+$-16\=9\break ({\rm mod.\,}5)$,
+$-7\=\break15\ ({\rm mod.\,}11)$.''\par
+\hfill\dash---C.\thinspace F. "Gauss" [|gauss-disq|]\g
+We got a glimpse of it in Chapter~3 when we used the binary
+operation `mod', usually as one operation amidst others in an expression.
+In this chapter we will use `mod' also with entire equations, for
+which a slightly different notation is more convenient:
+\begindisplay
+a\=b\pmod m\qquad\iff\qquad a\bmod m=b\bmod m\,.
+\eqno\eqref|pmod-def|
+\enddisplay
+For example, $9\=-16$ (mod~$5$), because $9\bmod5=4=(-16)\bmod5$.
+The formula `$a\=b$ \tmod m' can be read ``$a$~is congruent to~$b$
+modulo~$m$.\qback'' The definition makes sense when $a$, $b$, and~$m$
+are arbitrary real numbers, but we almost always use it with integers only.
+
+Since $x\bmod m$ differs from $x$ by a multiple of~$m$, we can
+understand "congruences" in another way:
+\begindisplay
+a\=b\pmod m\qquad\iff\qquad \hbox{$a-b$ is a multiple of $m@$}.
+\eqno\eqref|alt-pmod-def|
+\enddisplay
+For if $a\bmod m=b\bmod m$, then the definition of `mod' in
+\equ(3.|bmod-def|) tells us that $a-b=a\bmod m+km-(b\bmod m+lm)=(k-l)m$
+for some integers $k$ and~$l$. Conversely if $a-b=km$, then $a=b$ if
+$m=0$; otherwise
+\begindisplay
+a\bmod m=a-\lfloor a/m\rfloor m&=b+km-\bigl\lfloor(b+km)/m\bigr\rfloor m\cr
+&=b-\lfloor b/m\rfloor m=b\bmod m\,.
+\enddisplay
+The characterization of $\=$ in \thiseq\ is often easier to apply than
+\eq(|pmod-def|). For example,
+we have $8\=23$ \tmod5 because $8-23=-15$ is a multiple of~$5$; we don't
+have to compute both $8\bmod5$ and $23\bmod5$.
+
+The congruence sign `$\,\=\,$' looks conveniently like `$\,=\,$',
+\g\noindent\llap{``}I feel fine today modulo a slight headache.''\par
+\hfill\dash---The "Hacker"'s\par\hfill Dictionary [|hackers-dict|]\g
+because congruences are almost like equations. For example, congruence is an
+{\it"equivalence relation"\/}; that is, it satisfies the reflexive
+law `$a\=a$', the symmetric law `$a\=b\;\Rightarrow\;b\=a$', and the
+transitive law `$a\=b\=c\;\Rightarrow\;a\=c$'. All these properties are
+easy to prove, because any relation `$\=$'
+that satisfies `$a\=b\iff f(a)=f(b)$' for some function~$f$ is
+an equivalence relation. (In our case, $f(x)=x\bmod m$.) Moreover, we can
+add and subtract congruent elements without losing congruence:
+\begindisplay
+a\=b\And c\=d\qquad\implies\qquad a+c\=b+d\qquad\pmod m\,;\cr
+a\=b\And c\=d\qquad\implies\qquad a-c\=b-d\qquad\pmod m\,.\cr
+\enddisplay
+For if $a-b$ and $c-d$ are both multiples of $m$, so are
+$(a+c)-(b+d)=(a-b)+(c-d)$ and $(a-c)-(b-d)=(a-b)-(c-d)$.
+Incidentally, it isn't necessary to write `\tmod m' once for every
+appearance of `$\,\=\,$'; if the modulus is constant, we need to
+name it only once in order to establish the context. This is one of the
+great conveniences of congruence notation.
+
+Multiplication works too, provided that we are dealing with integers:
+\begindisplay
+a\=b\And c\=d\qquad\implies\qquad ac\=bd\qquad&\hbox{\tmod m}\,,\cr
+&\hbox{integers $b,c$}.
+\enddisplay
+Proof: $ac-bd=(a-b)c+b(c-d)$. Repeated application of this
+multiplication property now allows us to take powers:
+\begindisplay
+a\=b\qquad\implies\qquad a^n\=b^n\qquad\pmod m\,,
+ \qquad&\hbox{integers $a,b$;}\cr
+&\hbox{integer $n\ge0$}.
+\enddisplay
+For example, since $2\=-1$ \tmod3, we have $2^n\=(-1)^n$ \tmod3;
+this means that $2^n-1$ is a multiple of~$3$ if and only if $n$~is even.
+
+Thus, most of the algebraic operations that we customarily do with
+equations can also be done with congruences. Most, but not all.
+The operation of division is conspicuously absent. If $ad\=bd$
+\tmod m, we can't always conclude that $a\=b$. For example,
+$3\cdt2\=5\cdt2$ \tmod4, but $3\not\=5$.
+
+We can salvage the cancellation property for congruences, however, in the
+common case that $d$ and~$m$ are relatively prime:
+\begindisplay
+ad\=bd\;\iff\;a\=b\qquad&\hbox{\tmod m}\,,
+\eqno\eqref|cancel-mod|\cr
+&\hbox{integers $a,b,d,m$ and $d\rp m$}.
+\enddisplay
+For example, it's legit to conclude from $15\=35$ \tmod m that $3\=7$
+\tmod m, unless the modulus~$m$ is a multiple of~$5$.
+
+To prove this property, we use the extended gcd law \eq(|''|) again,
+finding $d'$ and~$m'$ such that $d'd+m'm=1$. Then if $ad\=bd$ we can
+"!congruences, division with" "!inverse modulo $m$"
+multiply both sides of the congruence by $d'$, obtaining $ad'd\=bd'd$.
+Since $d'd\=1$, we have $ad'd\=a$ and $bd'd\=b$; hence $a\=b$.
+This proof shows that the number $d'$ acts almost like $1/d$ when
+congruences are considered \tmod m; therefore we call it the
+``inverse of~$d$ modulo~$m$.\qback''
+
+Another way to apply division to congruences is to divide the modulus
+as well as the other numbers:
+\begindisplay
+ad\=bd\!\!\pmod{md}\iff a\=b\!\!\pmod m\,,\quad\hbox{for $d\ne0$}.
+\eqno\eqref|divide-mod|
+\enddisplay
+This law holds for all real $a$, $b$, $d$, and $m$, because it depends only
+on the distributive law $(a\bmod m)d=ad\bmod md$: We have
+$a\bmod m=b\bmod m\allowbreak
+ \iff(a\bmod m)d=(b\bmod m)d\iff ad\bmod md=bd\bmod md$.
+Thus, for example, from $3\cdt2\=5\cdt2$ \tmod4 we conclude that
+$3\=5$ \tmod2.
+
+We can combine \eq(|cancel-mod|) and \eq(|divide-mod|) to get a general
+law that changes the modulus as little as possible:
+\begindisplay
+&ad\=bd\pmod{m}\cr
+&\quad\iff a\=b\quad\Bigl({\rm mod}\,\,{m\over\gcd(d,m)}\Bigr)\,,
+	\quad\hbox{integers $a,b,d,m$}.
+\eqno\eqref|divide-gcd-mod|
+\enddisplay
+For we can multiply $ad\=bd$ by $d'$, where $d'd+m'm=\gcd(d,m)$; this
+gives the congruence $a\cdt\gcd(d,m)\=b\cdt\gcd(d,m)$ \tmod m, which can
+be divided by $\gcd(d,m)$.
+
+Let's look a bit further into this idea of changing the modulus. If we
+know that $a\=b$ \tmod{100}, then we also must have $a\=b$ \tmod{10},
+or modulo any divisor of~$100$. It's stronger to say that $a-b$ is a multiple
+of~$100$ than to say that it's a multiple of~$10$. In general,
+\begindisplay
+a\=b\pmod{md}\quad\implies\quad a\=b\pmod m\,,
+ \quad\hbox{integer $d$},
+\eqno
+\enddisplay
+because any multiple of $md$ is a multiple of $m$.
+
+Conversely, if we know that $a\=b$ with respect to two small moduli,
+\g Modulitos?\g
+can we conclude that $a\=b$ with respect to a larger one? Yes; the
+rule is
+\begindisplay
+&\hbox{$a\=b$ \tmod m}\And\hbox{$a\=b$ \tmod n}\cr
+&\qquad\iff\hbox{$a\=b$ $\bigl($mod $\lcm(m,n)\bigr)$}\,,
+	\qquad\hbox{integers $m,n>0$}.
+\eqno\eqref|two-moduli|
+\enddisplay
+For example, if we know that $a\=b$ modulo $12$ and $18$, we can
+safely conclude that $a\=b$ \tmod{36}. The reason is that if
+$a-b$ is a common multiple of~$m$ and~$n$, it is a multiple of
+$\lcm(m,n)$. This follows from the principle of unique factorization.
+
+The special case $m\rp n$ of this law is extremely important, because
+$\lcm(m,n)=mn$ when $m$ and~$n$ are relatively prime. Therefore we
+will state it explicitly:
+\begindisplay
+&\hbox{$a\=b$ \tmod{mn}}\cr
+&\iff\hbox{$a\=b$ \tmod m}\!\!\And\!\!\hbox{$a\=b$ \tmod n}\,,
+	\quad\hbox{if $m\rp n$}.
+\eqno\eqref|rp-moduli|
+\enddisplay
+For example, $a\=b$ \tmod{100} if and only if $a\=b$ \tmod{25} and
+$a\=b$ \tmod{4}. Saying this another way, if we know $x\bmod25$
+and $x\bmod4$, then we have enough facts to determine $x\bmod100$.
+This is a special case of the {\it"Chinese Remainder Theorem"\/}
+(see exercise~|chinese-remainders|), so called because it was
+discovered by "Sun Ts\u u" in China, about {\sc a.d.}\thinspace350.
+
+The moduli $m$ and $n$ in \thiseq\ can be further decomposed into
+relatively prime factors until every distinct prime has been
+isolated. Therefore
+\begindisplay
+\hbox{$a\=b$ \tmod m}\qquad\iff\qquad
+ \hbox{$a\=b$ \tmod{p^{m_p}} \ for all~$p$}\,,
+\enddisplay
+if the prime factorization \eq(|primepower-factors|) of $m$ is
+$\prod_p p^{m_p}$. Congruences modulo powers of primes are the building
+blocks for all congruences modulo integers.
+
+\beginsection 4.7 Independent Residues
+
+One of the important applications of congruences
+is a {\it "residue
+number system"}, in which an integer~$x$ is represented as a
+sequence of residues (or remainders) with respect to moduli that
+are prime to each other:
+\begindisplay
+\hbox{Res}(x)=(x\bmod m_1,\ldots,x\bmod m_r)\,,\ \quad\hbox{if $m_j\rp m_k$
+ for $1\le j<k\le r$}.
+\enddisplay
+Knowing $x\bmod m_1$, \dots,
+$x\bmod m_r$ doesn't tell us everything about~$x$. But it does allow us to
+determine $x\bmod m$, where $m$ is the product $m_1\ldots m_r$. In
+practical applications we'll often know that $x$~lies in a certain range;
+then we'll know everything about $x$ if we know $x\bmod m$ and if
+$m$ is large enough.
+
+For example, let's look at a small case of a residue number system
+that has only two moduli, $3$~and~$5$:
+\begindisplay\def\preamble{&\strut$\hfil##\hfil$&\ \vrule##\ }\offinterlineskip
+x\bmod15&&x\bmod3&&x\bmod5\cr
+\omit&height 2pt&\omit&\cr
+\noalign{\hrule}
+\omit&height 2pt&\omit&\cr
+0&&0&&0\cr
+1&&1&&1\cr
+2&&2&&2\cr
+3&&0&&3\cr
+4&&1&&4\cr
+5&&2&&0\cr
+6&&0&&1\cr
+7&&1&&2\cr
+8&&2&&3\cr
+9&&0&&4\cr
+10&&1&&0\cr
+11&&2&&1\cr
+12&&0&&2\cr
+13&&1&&3\cr
+14&&2&&4\cr
+\enddisplay
+Each ordered pair $(x\bmod3,x\bmod5)$ is different, because $x\bmod3=y\bmod3$
+and $x\bmod5=y\bmod5$ if and only if $x\bmod15=y\bmod15$.
+
+We can perform addition, subtraction, and multiplication on the two
+components {\it independently}, because of the rules of congruences.
+For example, if we want to multiply $7=(1,2)$ by $13=(1,3)$ modulo~$15$,
+we calculate $1\cdt1\bmod3=1$ and $2\cdt3\bmod5=1$. The answer is
+$(1,1)=1$; hence $7\cdt13\bmod15$ must equal~$1$. Sure enough, it does.
+
+This independence principle
+is useful in computer applications, because different components
+can be worked on separately (for example, by different computers). If each modulus
+$m_k$ is a distinct prime~$p_k$, chosen to be slightly less than $2^{31}$,
+\g For example, the "Mersenne prime"
+ \smallskip\quad$2^{31}-1$\vskip2pt works well.\g
+then a computer whose basic arithmetic operations handle integers in the
+range $[-2^{31}\dts2^{31})$ can easily compute sums, differences, and
+products modulo~$p_k$. A set of~$r$ such primes makes it possible to add,
+subtract, and multiply ``"multiple-precision numbers"'' of up to almost
+$31r$ bits, and the residue system makes it possible to do this faster
+than if such large numbers were added, subtracted, or multiplied
+in other ways.
+
+We can even do division, in appropriate circumstances. For example,
+suppose we want to compute the exact value of a large determinant of
+integers. The result will be an integer~$D$, and bounds on~$\vert D\vert$
+can be given based on the size of its entries. But the only fast ways
+known for calculating determinants require division, and this leads to
+fractions (and loss of accuracy, if we resort to binary approximations).
+The remedy is to evaluate $D\bmod p_k=D_k$, for various large primes~$p_k$.
+We can safely divide modulo~$p_k$ unless the divisor happens to be
+a multiple of~$p_k$. That's very unlikely, but if it does happen we can
+choose another prime. Finally, knowing $D_k$ for sufficiently many
+primes, we'll have enough information to determine~$D$.
+
+But we haven't explained how to get from a given sequence of residues
+$(x\bmod m_1,\ldots,x\bmod m_r)$ back to $x\bmod m$. We've shown that
+this conversion can be done in principle, but the calculations might be so
+formidable that they might rule out the idea in practice. Fortunately,
+there is a reasonably simple way to do the job, and we can illustrate
+it in the situation $(x\bmod3,x\bmod5)$ shown in our little table.
+The key idea is to solve the problem in the two cases $(1,0)$ and~$(0,1)$;
+for if $(1,0)=a$ and $(0,1)=b$, then $(x,y)=(ax+by)\bmod15$, since
+congruences can be multiplied and added.
+
+In our case $a=10$ and $b=6$, by inspection of the table; but how could
+we find $a$ and~$b$ when the moduli are huge? In other words,
+if $m\rp n$, what is a good way to find numbers $a$ and~$b$ such that
+the equations
+\begindisplay
+a\bmod m=1,\quad a\bmod n=0,\quad b\bmod m=0,\quad b\bmod n=1
+\enddisplay
+all hold? Once again, \eq(|''|) comes to the rescue: With Euclid's
+algorithm, we can find $m'$ and~$n'$ such that
+\begindisplay
+m'm+n'n=1\,.
+\enddisplay
+Therefore we can take $a=n'n$ and $b=m'm$, reducing them both mod~$mn$
+if desired.
+
+Further tricks are needed in order to minimize the calculations when the
+moduli are large; the details are beyond the scope of this book, but
+they can be found in [|knuth2|, page~274]. Conversion from residues to
+the corresponding original numbers is feasible, but it is sufficiently slow
+that we save total time only if a sequence of operations can all be
+done in the residue number system before converting back.
+
+Let's firm up these congruence ideas by trying to solve a little problem:
+How many solutions are there to the congruence
+\begindisplay
+x^2\=1\pmod m\,,
+\eqno
+\enddisplay
+if we consider two solutions $x$ and $x'$ to be the same when $x\=x'$?
+
+According to the general principles explained earlier, we should
+consider first the case that $m$ is a prime power, $p^k$, where
+$k>0$. Then the congruence $x^2\=1$ can be written
+\begindisplay
+(x-1)(x+1)\=0\pmod {p^k}\,,
+\enddisplay
+so $p$ must divide either $x-1$ or $x+1$, or both. But $p$ can't
+divide both $x-1$ and $x+1$ unless $p=2$; we'll leave that case for
+later. If $p>2$, then $p^k\divides(x-1)(x+1)\iff p^k\divides(x-1)$
+or $p^k\divides(x+1)$; so there are exactly two solutions,
+$x\=+1$ and $x\=-1$.
+
+The case $p=2$ is a little different. If $2^k\divides(x-1)(x+1)$
+then either $x-1$ or $x+1$ is divisible by~$2$ but not by~$4$, so the
+other one must be divisible by~$2^{k-1}$. This means that we have
+four solutions when $k\ge3$, namely $x\=\pm1$ and $x\=2^{k-1}\pm1$.
+(For example, when $p^k=8$ the four solutions are $x\=1$,~$3$,
+$5$,~$7$ \tmod8; it's often useful to know that {\sl the square of
+any odd integer has the form\/ $8n+1$.})
+
+Now $x^2\=1$ \tmod m if and only if $x^2\=1$ \tmod {p^{m_p}} for all
+primes~$p$ with $m_p>0$ in the complete factorization of~$m$.  Each prime
+is independent of the others, and there are exactly two possibilities for
+$x\bmod p^{m_p}$ except when $p=2$. Therefore if $m$ has exactly $r$
+\g All primes are odd except~$2$, which is the oddest of all.\g
+different prime divisors, the total number of solutions to $x^2\=1$
+is~$2^r$, except for a correction when $m$~is even. The exact number
+in general is
+\begindisplay
+2^{r+[@8\divides m@]+[@4\divides m@]-[@2\divides m@]}\,. % \[ in exponent
+\eqno
+\enddisplay
+For example, there are four ``square roots of unity modulo $12$,\qback''
+"!square root modulo $m$"
+namely $1$, $5$, $7$, and $11$. When $m=15$ the four are those whose
+residues mod~$3$ and mod~$5$ are~$\pm1$, namely $(1,1)$, $(1,4)$, $(2,1)$,
+and $(2,4)$ in the residue number system. These solutions
+are $1$, $4$, $11$, and $14$ in the ordinary (decimal) number system.
+
+\beginsection 4.8 Additional Applications
+
+There's some unfinished business left over from Chapter 3: We wish to
+prove that the $m$ numbers
+\begindisplay
+0\bmod m,\; n\bmod m,\; 2n\bmod m,\;\ldots,\;(m-1)n\bmod m
+\eqno
+\enddisplay
+consist of precisely $d$ copies of the $m/d$ numbers
+\begindisplay
+0,\;\;d,\;\;2d,\;\;\ldots,\;\; m-d
+\enddisplay
+in some order, where $d=\gcd(m,n)$.
+For example, when $m=12$ and $n=8$ we have $d=4$, and the numbers are
+$0$,~$8$,~$4$,
+$0$,~$8$,~$4$,
+$0$,~$8$,~$4$,
+$0$,~$8$,~$4$.
+
+The first part of the proof\dash---to show that we get $d$~copies of
+the first $m/d$ values\dash---is now trivial.
+\g Mathematicians love to say that things are trivial.\g
+We have
+\begindisplay \postdisplaypenalty=10000
+\hbox{$jn\=kn$ \tmod m}\qquad\iff\qquad
+\hbox{$j(n/d)\=k(n/d)$ \tmod{m/d}}
+\enddisplay
+by \eq(|divide-mod|); hence we get $d$ copies of the values that occur
+when $0\le k<m/d$.
+
+Now we must show that those $m/d$ numbers are $\{0,d,2d,\ldots,m-d\}$
+in some order.
+ Let's write $m=m'd$ and $n=n'd$. Then $kn\bmod m=
+d(kn'\bmod m')$, by the distributive law \equ(3.|mod-dist|); so
+ the values that occur when $0\le k<m'$ are $d$ times
+the numbers
+\begindisplay
+0\bmod m',\; n'\bmod m',\; 2n'\bmod m',\;\ldots,\;(m'-1)n'\bmod m'\,.
+\enddisplay
+But we know that $m'\rp n'$ by \eq(|cast-out|); we've divided out their gcd.
+Therefore we need only consider the case $d=1$, namely the
+case that $m$ and~$n$ are relatively
+prime.
+
+So let's assume that $m\rp n$.
+In this case it's easy to see that the numbers \thiseq\ are just
+$\{0$,~$1$,
+\dots,~$m-1\}$ in some order, by using the ``"pigeonhole principle".\qback''
+This principle states that if $m$~pigeons are put into $m$~pigeonholes, there
+is an empty hole if and only if there's a hole with more than one pigeon.
+("Dirichlet's box principle", proved in
+exercise 3.|box-principle|, is similar.) We know that the numbers \thiseq\ are
+distinct, because
+\begindisplay
+\hbox{$jn\=kn$ \tmod m}\qquad\iff\qquad
+\hbox{$j\=k$ \tmod m}
+\enddisplay
+when $m\rp n$; this is \eq(|cancel-mod|). Therefore the $m$ different
+numbers must fill all the pigeonholes $0$, $1$, \dots, $m-1$.
+Therefore the unfinished business of Chapter~3 is finished.
+
+The proof is complete, but we can prove even more if we use a direct
+method instead of
+relying on the indirect pigeonhole argument.
+If $m\rp n$ and if a value $j\in[@0\dts m)$ is given,
+ we can explicitly compute $k\in[@0\dts m)$
+such that $kn\bmod m=j$ by solving the congruence
+\begindisplay
+kn\=j\pmod m
+\enddisplay
+for $k$. We simply multiply both sides by $n'$, where $m'm+n'n=1$,
+to get
+\begindisplay
+k\=jn'\pmod m\,;
+\enddisplay
+hence $k=jn'\bmod m$.
+
+We can use the facts just proved to establish an important result
+discovered by Pierre de "Fermat" in 1640. Fermat was a great mathematician
+who contributed to the discovery of calculus and many other parts
+of mathematics. He left notebooks containing dozens of theorems stated
+without proof, and each of those theorems has subsequently been
+verified\dash---with the possible exception of % if verified, say: including
+one that became the most famous of all, because
+it baffled the world's best mathematicians for 350 years. The famous one,
+called ``"Fermat's Last Theorem",\qback'' states that
+\begindisplay
+a^n+b^n\ne c^n
+\eqno\eqref|fermat-last|
+\enddisplay
+for all positive integers $a$, $b$, $c$, and $n$, when $n>2$. (Of course
+there are lots of solutions to the equations $a+b=c$ and $a^2+b^2=c^2$.)
+\g\vbox{\hrule\hbox{\vrule height 10pt depth 3pt\kern3pt NEWS FLASH\/\kern3pt
+ \vrule}\hrule}\medskip
+"Euler" [|euler-conject|] con\-jectured that\smallskip$a^4+b^4+c^4\ne d^4$,
+\smallskip but Noam "Elkies" [|elkies|]
+found infinitely many solutions in August, 1987.
+\smallskip
+Now Roger "Frye" has done an exhaustive computer search, proving (after about
+110~hours on a "Connection Machine") that the only solution with $d<1000000$
+is:\smallskip
+$95800^4+217519^4$\smallskip
+$\quad{}+414560^4$\smallskip
+$\qquad=422481^4$.\g
+Andrew "Wiles" culminated many years of research by announcing a proof of
+\thiseq\ in 1993; his proof is currently being subjected to
+intense scrutiny.
+
+Fermat's theorem of 1640 is much easier to verify. It's now called
+"Fermat's Little Theorem" (or just Fermat's theorem, for short),
+and it states that
+\begindisplay
+n^{p-1}\=1\pmod p\,,\qquad\hbox{if $n\rp p$}.
+\eqno\eqref|fermat-theorem|
+\enddisplay
+Proof: As usual, we assume that $p$ denotes a prime. 
+We know that the $p-1$ numbers $n\bmod p$, $2n\bmod p$, \dots,~%
+$(p-1)n\bmod p$ are the numbers
+$1$,~$2$, \dots,~$p-1$ in some order. Therefore if we multiply them together
+we get
+\begindisplay
+&n\cdot(2n)\cdot\ldots\cdot\bigl((p-1)n\bigr)\cr
+&\qquad\=
+ (n\bmod p)\cdot(2n\bmod p)\cdot\ldots\cdot\bigl((p-1)n\bmod p\bigr)\cr
+&\qquad\=(p-1)!\,,
+\enddisplay
+where the congruence is modulo $p$. This means that
+\begindisplay
+(p-1)!\,n^{p-1}\=(p-1)!\pmod p\,, % changed Oct 88, not noted in errata
+\enddisplay
+and we can cancel the $(p-1)!$ since it's not divisible by $p$. QED.
+
+An alternative form of Fermat's theorem is sometimes more convenient:
+\begindisplay
+n^p\=n\pmod p\,,\qquad\hbox{integer $n$}.
+\eqno\eqref|alt-fermat-theorem|
+\enddisplay
+This congruence holds
+for all integers~$n$. The proof is easy: If $n\rp p$ we simply
+multiply \eq(|fermat-theorem|) by~$n$. If not, $p\divides n$, so
+$n^p\=0\=n$.
+
+In the same year that he discovered \eq(|fermat-theorem|), "Fermat"
+wrote a letter to "Mersenne", saying he suspected that the number
+\begindisplay
+f_n=2^{2^n}+1
+\enddisplay
+would turn out to be prime for all $n\ge0$.
+\g\noindent\llap{``}\dots laquelle proposition, si elle est vraie, est de tr\`es
+grand usage.''\par\hfill\hskip0pt minus4pt\dash---P. de Fermat
+ [|fermat|]\looseness-1\g
+"!Fermat numbers"
+He knew that the first five cases gave primes:
+\begindisplay
+2^1{+}1=3; \ 2^2{+}1=5; \ 2^4{+}1=17; \ 2^8{+}1=257; \ 2^{16}{+}1=65537;
+\enddisplay
+but he couldn't see how to prove that the next case, $2^{32}+1=
+4294967297$, would be prime.
+
+It's interesting to note that Fermat could have proved that $2^{32}+1$
+is {\it not\/} prime, using his own recently discovered theorem,
+if he had taken time to perform a few dozen multiplications:
+We can set $n=3$ in \eq(|fermat-theorem|), deducing that
+\begindisplay
+3^{2^{32}}\=1\pmod{2^{32}+1},\qquad\hbox{if $2^{32}+1$ is prime}.
+\enddisplay
+And it's possible to test this relation by hand, beginning with $3$ and
+squaring 32~times, keeping only the remainders mod $2^{32}+1$.
+\g If this is Fermat's Little Theorem,\par the other one was
+"last but not least".\g
+First we have $3^2=9$, then $3^{2^2}=81$, then $3^{2^3}=6561$, and so on until
+we reach
+\begindisplay
+3^{2^{32}}\=3029026160\quad\pmod{2^{32}+1}\,.
+\enddisplay
+The result isn't $1$, so $2^{32}+1$ isn't prime. This method of disproof
+gives us no clue
+about what the factors might be, but it does prove that factors exist.
+(They are $641$ and $6700417$, first found by "Euler" in 1732~[|euler-f5|].)
+
+If $3^{2^{32}}$ had turned out to be $1$, modulo $2^{32}+1$, the calculation
+wouldn't have proved that $2^{32}+1$ is prime; it just wouldn't have
+disproved it. But exercise~|fermat-converse| discusses
+ a converse to Fermat's theorem by which
+we {\it can\/} prove that large prime numbers are
+prime, without doing an enormous amount of laborious arithmetic.
+
+We proved Fermat's theorem by cancelling $(p-1)!$ from both sides of
+a congruence. It turns out that $(p-1)!$ is always congruent to
+$-1$, modulo~$p$; this is part of a classical result known as "Wilson's theorem":
+\begindisplay
+(n-1)!\=-1\pmod n\quad\iff\quad \hbox{$n$ is prime,\qquad if $n>1$.}
+\eqno\eqref|wilson-theorem|
+\enddisplay
+One half of this theorem is trivial: If $n>1$ is not prime, it has a
+prime divisor~$p$ that appears as a factor of $(n-1)!$, so $(n-1)!$ cannot
+be congruent to~$-1$. (If $(n-1)!$ were congruent to $-1$ modulo~$n$, it would
+also be congruent to $-1$ modulo~$p$, but it isn't.)
+
+The other half of Wilson's theorem states that $(p-1)!\=-1$ \tmod p.
+We can prove this half by pairing up numbers with their "inverses mod~$p$".
+If $n\rp p$, we know that there exists $n'$ such that
+\begindisplay
+n'@n\=1\quad\pmod p\,; % changed Oct 88 but not mentioned in errata!
+\enddisplay
+here $n'$ is the inverse of $n$, and $n$ is also the inverse of~$n'$. Any
+two inverses of~$n$ must be congruent to each other, since
+\g If\/ $p$ is prime, is $p'$ prime prime?\g
+$nn'\=nn''$ implies $n'\=n''$.
+
+Now suppose we pair up each number between $1$~and~$p-1$ with its inverse.
+Since the product of a number and its inverse is congruent to~$1$,
+the product of all the numbers in all pairs of inverses is also congruent to~$1$;
+so it seems that $(p-1)!$ is congruent to~$1$.
+Let's check, say for $p=5$.
+We get $4! = 24$; but this is congruent to~$4$, not~$1$, modulo~$5$.
+Oops\dash---what went wrong?
+Let's take a closer look at the inverses:
+\begindisplay
+ 1' = 1 \,,
+	\qquad 2' = 3 \,,
+	\qquad 3' = 2 \,,
+	\qquad 4' = 4 \,.
+\enddisplay
+Ah so;
+$2$~and~$3$ pair up but $1$~and~$4$ don't\dash---%
+they're their own inverses.
+
+To resurrect our analysis
+we must determine which numbers are their own inverses.
+If $x$~is its own inverse, then $x^2 \= 1$ \tmod p; and we have already proved
+that this congruence has exactly two roots when $p>2$. (If $p=2$ it's obvious
+that $(p-1)!\=-1$, so we needn't worry about that case.) The roots are
+$1$ and~$p-1$, and the other numbers (between $1$ and~$p-1$) pair up; hence
+\begindisplay
+(p-1)!\=1\cdot(p-1)\=-1\,,
+\enddisplay
+as desired.
+
+Unfortunately, we can't compute factorials efficiently, so Wilson's theorem
+is of no use as a practical test for primality. It's just a theorem.
+
+\beginsection 4.9 Phi and Mu
+
+How many of the integers $\{0,1,\ldots,m-1\}$ are relatively prime to~$m$?
+This is an important quantity called $\varphi(m)$, the ``"totient"''
+of~$m$ (so named by J.\thinspace J. "Sylvester"~[|sylvester-totient|],
+a British mathematician who liked to invent new words).
+We have $\varphi(1)=1$,
+"!phi function"
+$\varphi(p)=p-1$, and $\varphi(m)<m-1$ for all composite numbers~$m$.
+
+The $\varphi$ function is called {\it "Euler"'s "totient function"},
+ because Euler was the first person to study it. Euler discovered,
+for example, that Fermat's theorem \eq(|fermat-theorem|) can be generalized
+to nonprime moduli in the following way:
+\begindisplay
+n^{\varphi(m)}\=1\pmod m\,,\qquad\hbox{if $n\rp m$}.
+\eqno\eqref|euler-theorem|
+\enddisplay
+\g\vskip-50pt
+\noindent\llap{``}Si fuerit $N$ ad~$x$ numerus primus et $n$~numerus partium ad\/~$N$
+primarum, tum potestas $x^n$ unitate minuta semper per numerum~$N$
+erit divisibilis.''\par\hfill\dash---L. Euler [|euler-totient|]\g
+(Exercise |prove-euler-theorem| asks for a proof of "Euler's theorem".)
+
+If $m$ is a prime power $p^k$, it's easy to compute $\varphi(m)$, because
+$n\rp p^k\iff p\ndivides n$. The multiples of~$p$ in $\{0,1,\ldots,p^k-1\}$
+are $\{0,p,2p,\ldots,p^k-p\}$; hence there are $p^{k-1}$ of them,
+and $\varphi(p^k)$ counts what is left:
+\begindisplay
+\varphi(p^k)=p^k-p^{k-1}\,.
+\enddisplay
+Notice that this formula properly gives $\varphi(p)=p-1$ when $k=1$.
+
+If $m>1$ is not a prime power, we can write $m=m_1m_2$ where $m_1\rp m_2$.
+Then the numbers $0\le n<m$ can be represented in a residue number system
+as $(n\bmod m_1,n\bmod m_2)$. We have
+\begindisplay
+n\rp m\qquad\iff\qquad n\bmod m_1\rp m_1\And
+n\bmod m_2\rp m_2
+\enddisplay
+by \eq(|rp-split|) and \eq(|euclid|). Hence, $n\bmod m$ is ``good''
+if and only if $n\bmod m_1$ and $n\bmod m_2$ are both ``good,\qback'' if we
+consider relative primality to be a virtue. The total number of good
+values modulo~$m$ can now be computed, recursively: It
+is $\varphi(m_1)\varphi(m_2)$, because there are $\varphi(m_1)$
+good ways to choose the first component $n\bmod m_1$ and $\varphi(m_2)$
+good ways to choose the second component $n\bmod m_2$ in the
+residue representation.
+
+For example, $\varphi(12)=\varphi(4)\varphi(3)=2\cdt2=4$, because $n$ is prime to~$12$
+\g\noindent\llap{``}Si sint $A$ et~$B$ numeri inter se primi et numerus partium ad\/~$A$
+primarum sit ${=a}$, numerus vero partium ad\/~$B$ primarum sit ${=b}$,
+tum numerus partium ad productum $AB$ primarum erit ${=ab}$.''
+\par\hfill\dash---L. "Euler" [|euler-totient|]\g
+if and only if $n\bmod4=(1$ or~$3)$ and
+$n\bmod3=(1$ or~$2)$. The four values prime to~$12$ are $(1,1)$, $(1,2)$,
+$(3,1)$, $(3,2)$ in the residue number system; they are $1$, $5$, $7$, $11$
+in ordinary decimal notation.
+Euler's theorem states that $n^4\=1$ \tmod{12} whenever $n\rp12$.
+
+A function $f(m)$ of positive integers is called {\it"multiplicative"\/} if
+$f(1)=1$ and
+\begindisplay
+f(m_1m_2)=f(m_1)@f(m_2)\qquad\hbox{whenever $m_1\rp m_2$}.
+\eqno\eqref|mult-def|
+\enddisplay
+We have just proved that $\varphi(m)$ is multiplicative. We've also seen
+another instance of a multiplicative function earlier in this chapter:
+The number of incongruent solutions to $x^2\=1$ \tmod m is multiplicative.
+Still another example is $f(m)=m^\alpha$ for any power $\alpha$.
+
+A multiplicative function is defined completely by its values at prime
+powers, because we can decompose any positive integer~$m$ into its
+prime-power factors, which are relatively prime to each other.
+The general formula
+\begindisplay
+f(m)=\prod_p f(p^{m_p})\,,\qquad\hbox{if $m=\displaystyle\prod_p p^{m_p}$}
+\eqno\eqref|mult-gen|
+\enddisplay
+holds if and only if $f$ is multiplicative.
+
+In particular, this formula gives us the value of Euler's totient function
+for general~$m$:
+\begindisplay
+\varphi(m)=\prod_{p\divides m}(p^{m_p}-p^{m_p-1})
+=m\prod_{p\divides m}\Bigl(1-{1\over p}\Bigr)\,.
+\eqno\eqref|phi-gen|
+\enddisplay
+For example, $\varphi(12)=(4-2)(3-1)=12(1-\half)(1-{1\over3})$.
+
+\smallbreak
+Now let's look at an application of the $\varphi$ function to the
+study of rational numbers mod~$1$.
+ We say that the "fraction" $m/n$ is {\it"basic"\/}
+if $0\le m<n$. Therefore $\varphi(n)$ is the number of reduced basic fractions
+with denominator~$n$; and the "Farey series" $\Fscr_n$ contains all the
+reduced basic fractions with denominator $n$~or less, as well as the
+non-basic fraction $1\over1$.
+
+The set of {\it all\/} basic fractions with denominator~$12$, before reduction
+to lowest terms, is
+\begindisplay
+\textstyle
+{0\over12},\,
+{1\over12},\,
+{2\over12},\,
+{3\over12},\,
+{4\over12},\,
+{5\over12},\,
+{6\over12},\,
+{7\over12},\,
+{8\over12},\,
+{9\over12},\,
+{10\over12},\,
+{11\over12}\,.
+\enddisplay
+Reduction yields
+\begindisplay
+\textstyle
+{0\over1},\,\,
+{1\over12},\,\,
+{1\over6},\,\,
+{1\over4},\,\,
+{1\over3},\,\,
+{5\over12},\,\,
+{1\over2},\,\,
+{7\over12},\,\,
+{2\over3},\,\,
+{3\over4},\,\,
+{5\over6},\,\,
+{11\over12}\,,
+\enddisplay
+and we can group these fractions by their denominators:
+\begindisplay
+\textstyle
+{0\over1};\quad
+{1\over2};\quad
+{1\over3},\,
+{2\over3};\quad
+{1\over4},\,
+{3\over4};\quad
+{1\over6},\,
+{5\over6};\quad
+{1\over12},\,
+{5\over12},\,
+{7\over12},\,
+{11\over12}.
+\enddisplay
+What can we make of this? Well, every divisor $d$ of $12$ occurs as a
+denominator, together with all $\varphi(d)$ of its numerators. The only
+denominators that occur are divisors of~$12$. Thus
+\begindisplay
+\varphi(1)+\varphi(2)+\varphi(3)+\varphi(4)+\varphi(6)+\varphi(12)=12\,.
+\enddisplay
+A similar thing will obviously happen if we begin with the unreduced
+fractions $0\over m$, $1\over m$, \dots,~$m-1\over m$ for any~$m$, hence
+\begindisplay
+\sum_{d\divides m}\varphi(d)=m\,.
+\eqno\eqref|phi-sum|
+\enddisplay
+
+We said near the beginning of this chapter that problems in number theory
+often require sums over the divisors of a number. Well, \thiseq\ is
+one such sum, so our claim is vindicated. (We will see other examples.)
+
+Now here's a curious fact:
+If $f$ is any function such that the sum
+\begindisplay
+g(m)=\sum_{d\divides m}f(d)
+\enddisplay
+is multiplicative, then $f$ itself is multiplicative. (This result,
+together with \thiseq\ and the fact that $g(m)=m$ is obviously
+multiplicative, gives another reason why $\varphi(m)$ is multiplicative.)
+We can prove this curious fact by induction on~$m$: The basis is easy because
+$f(1)=g(1)=1$. Let $m>1$, and assume that $f(m_1m_2)=f(m_1)@f(m_2)$
+whenever $m_1\rp m_2$ and $m_1m_2<m$. If $m=m_1m_2$ and $m_1\rp m_2$,
+we have
+\begindisplay
+g(m_1m_2)=\sum_{d\divides m_1m_2}f(d)
+ =\sum_{d_1\divides m_1}\,\sum_{d_2\divides m_2}f(d_1d_2)\,,
+\enddisplay
+and $d_1\rp d_2$ since all divisors of $m_1$ are relatively prime
+to all divisors of $m_2$. By the induction hypothesis, $f(d_1d_2)=
+f(d_1)@f(d_2)$ except possibly when $d_1=m_1$ and $d_2=m_2$; hence we
+obtain
+\begindisplay \openup6pt
+&\biggl(\sum_{d_1\divides m_1}f(d_1)
+\sum_{d_2\divides m_2}f(d_2)\biggr) - f(m_1)@f(m_2) + f(m_1m_2)\cr
+&\qquad=g(m_1)@g(m_2)-f(m_1)@f(m_2)+f(m_1m_2)\,.
+\enddisplay
+But this equals $g(m_1m_2)=g(m_1)@g(m_2)$, so $f(m_1m_2)=f(m_1)@f(m_2)$.
+% Several @'s inserted here and below in October 88
+
+Conversely, if $f(m)$ is multiplicative, the corresponding
+sum-over-divisors function $g(m)=\sum_{d\divides m}f(d)$ is always
+multiplicative. In fact, exercise~|fg-multiplicative| shows that
+even more is true. Hence the curious fact and its converse are both facts.
+
+The {\it "M\"obius function"\/} $\mu(m)$, named after the nineteenth-%
+"!mu function"
+century mathematician August "M\"obius" who also had a famous band,
+can be defined for all integers $m\ge1$ by the equation
+\begindisplay
+\sum_{d\divides m}\mu(d)=\[m=1]\,.
+\eqno\eqref|mobius-def|
+\enddisplay
+This equation is actually a recurrence, since the left-hand side is a sum
+"!recurrence, implicit"
+consisting of $\mu(m)$ and
+certain values of $\mu(d)$ with $d<m$.
+For example, if we plug in $m=1$, $2$, \dots,~$12$ successively we can
+compute the first twelve values:
+\begindisplay \let\preamble=\tablepreamble
+m&&1&2&3&4&5&6&7&8&9&10&11&12\cr
+\noalign{\hrule}
+\mu(m)&& 1 & -1 & -1 & 0 & -1 & 1 & -1 & 0 & 0 & 1 & -1 & 0\cr
+\enddisplay
+
+Richard "Dedekind" [|dedekind|] and Joseph "Liouville" [|liouv|] noticed
+the following important ``"inversion" principle'' in 1857:
+\begindisplay
+g(m)=\sum_{d\divides m}f(d)\qquad\iff\qquad
+f(m)=\sum_{d\divides m}\mu(d)@g({m\over d})\,.
+\eqno\eqref|mobius-inversion|
+\enddisplay
+According to this principle,
+the $\mu$ function gives us a new way to understand any
+\g Now is a good time to try warmup exercise~|mobius-analogy|.\g
+function $f(m)$ for which we know $\sum_{d\divides m}f(d)$.
+
+The proof of \thiseq\ uses two tricks \eq(|swap-div|) and \eq(|interch-div|)
+that we described near the beginning of this chapter:
+If $g(m)=\sum_{d\divides m}f(d)$ then
+\begindisplay \openup3pt
+\sum_{d\divides m}\mu(d)@g({m\over d})&=\sum_{d\divides m}\mu({m\over d})@g(d)\cr
+&=\sum_{d\divides m}\mu({m\over d})\sum_{k\divides d}f(k)\cr
+&=\sum_{k\divides m}\,\sum_{d\divides(m/k)}\mu({m\over kd})@f(k)\cr
+&=\sum_{k\divides m}\,\sum_{d\divides(m/k)}\mu(d)@f(k)\cr
+&=\sum_{k\divides m}\[m/k=1]@f(k)=f(m)\,.\cr
+\enddisplay
+The other half of \thiseq\ is proved similarly (see exercise |mobius-inv-half|).
+
+Relation \thiseq\ gives us a useful property of the M\"obius function,
+and we have tabulated the first twelve values;
+but what is the value of $\mu(m)$ when $m$ is large?
+How can we solve the recurrence
+\eq(|mobius-def|)? Well, the function $g(m)=\[m=1]$ is obviously
+multiplicative\dash---after all, it's zero except when $m=1$. So
+the M\"obius function defined by \eq(|mobius-def|) must be multiplicative,
+by the curious fact we proved a minute or two ago.
+\g Depending on how fast you read.\g
+ Therefore we can figure out what
+$\mu(m)$ is if we compute $\mu(p^k)$.
+
+When $m=p^k$, \eq(|mobius-def|) says that
+\begindisplay
+\mu(1)+\mu(p)+\mu(p^2)+\cdots+\mu(p^k)=0
+\enddisplay
+for all $k\ge1$, since the divisors of $p^k$ are $1$, \dots, $p^k$. It
+follows that
+\begindisplay
+\mu(p)=-1\,;\qquad \mu(p^k)=0\quad\hbox{for $k>1$}.
+\enddisplay
+Therefore by \eq(|mult-gen|), we have the general formula
+\begindisplay \advance\belowdisplayskip-6pt \postdisplaypenalty=10000
+\mu(m)=\prod_{p\divides m}\mu(p^{m_p})=\cases{
+ (-1)^r,&if $m=p_1p_2\ldots p_r$;\cr
+\noalign{\smallskip}
+ 0,&if $m$ is divisible by some $p^2$.\cr}
+\eqno\eqref|mu-gen|
+\enddisplay
+That's $\mu$.
+
+If we regard \eq(|phi-sum|) as a recurrence for the function $\varphi(m)$,
+"!recurrence, implicit"
+we can solve that recurrence by applying the "Dedekind"-"Liouville" rule
+\eq(|mobius-inversion|). We get
+\begindisplay
+\varphi(m)=\sum_{d\divides m}\mu(d)\,{m\over d}\,.
+\eqno\eqref|phi-mu|
+\enddisplay
+For example,
+\begindisplay
+\varphi(12)&=\mu(1)\cdt12+\mu(2)\cdt6+\mu(3)\cdt4+
+ \mu(4)\cdt3+\mu(6)\cdt2+\mu(12)\cdt1\cr
+ &=12-6-4+0+2+0=4\,.\cr
+\enddisplay
+If $m$ is divisible by $r$ different primes, say $\{p_1,\ldots,p_r\}$,
+the sum \thiseq\ has only $2^r$
+nonzero terms, because the $\mu$ function is often zero. Thus we can see
+that \thiseq\
+ checks with formula \eq(|phi-gen|), which reads
+\begindisplay
+\varphi(m)=m\Bigl(1-{1\over p_1}\Bigr)
+\ldots\Bigl(1-{1\over p_r}\Bigr)\,;
+\enddisplay
+if we multiply out the $r$
+factors $(1-1/p_j)$, we get precisely the $2^r$ nonzero terms of \thiseq.
+The advantage of the M\"obius function is that it applies in many situations
+besides this one.
+
+For example, let's try to figure out how many fractions are in the
+"Farey series" $\Fscr_n$. This is the number of reduced fractions in
+$[@0\dts1]$ whose denominators do not exceed~$n$, so it is $1$~greater than
+$\Phi(n)$ where we define
+\begindisplay
+\Phi(x)=\sum_{1\le k\le x}\varphi(k)\,.
+\eqno\eqref|bigphi-def|
+\enddisplay
+(We must add~$1$ to $\Phi(n)$ because of the final fraction $1\over1$.)
+The sum in \thiseq\ looks difficult, but
+we can determine $\Phi(x)$ indirectly by observing that
+\begindisplay
+\eqno\eqref|bigphi-sum|
+\sum_{d\ge1}\Phi\Bigl({x\over d}\Bigr)=\half\lfloor x\rfloor\lfloor 1+x\rfloor
+\enddisplay
+for all real $x\ge0$. Why does this identity hold? Well, it's a~bit
+awesome yet not really beyond our ken. There are
+$\half\lfloor x\rfloor\lfloor 1+x\rfloor$ "basic fractions" $m/n$ with
+$0\le m<n\le x$, counting both reduced and unreduced fractions; that
+gives us the right-hand side.
+The number of such fractions with $\gcd(m,n)=d$
+is $\Phi(x/d)$, because such fractions are $m'/n'$ with $0\le m'<n'\le
+x/d$ after replacing $m$ by~$m'd$ and $n$~by~$n'd$. So the left-hand
+side counts the same fractions in a different way, and the identity must be true.
+
+Let's look more closely at the situation,
+ so that equations \eq(|bigphi-def|) and
+\eq(|bigphi-sum|) become clearer. The definition
+of $\Phi(x)$ implies that $\Phi(x)=\Phi\bigl(\lfloor x\rfloor\bigr)$;
+but it turns out to be convenient to define $\Phi(x)$ for arbitrary
+\g(This extension to real values is a useful trick for many
+recurrences that arise in the analysis of algorithms.)\g
+real values, not just for integers. At integer values
+we have the table
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4&5&6&7&8&9&10&11&12\cr
+\noalign{\hrule}
+\varphi(n)&&-&1&1&2&2&4&2&6&4&6&4&10&4\cr
+\noalign{\hrule}
+\Phi(n)&&0&1&2&4&6&10&12&18&22&28&32&42&46\cr
+\enddisplay
+and we can check \thiseq\ when $x=12$:
+\begindisplay \advance\belowdisplayskip-3pt \postdisplaypenalty=10000
+&\Phi(12)+\Phi(6)+\Phi(4)+\Phi(3)+\Phi(2)+\Phi(2)+6\cdt\Phi(1)\cr
+&\qquad=46+12+6+4+2+2+6=78=\textstyle\half\cdot12\cdot13\,.\cr
+\enddisplay
+Amazing.
+
+Identity \eq(|bigphi-sum|) can be regarded as an "implicit recurrence"
+"!recurrence, implicit" for $\Phi(x)$; for example, we've just seen that
+we could have used it to calculate $\Phi(12)$ from certain values of $\Phi(m)$
+with $m<12$. And we can solve such recurrences by
+using another beautiful property of the M\"obius function:
+\g In fact, M\"obius [|moeb|] invented his function because
+of~\eq(|mobius-real-inversion|), not~\eq(|mobius-inversion|).\g
+\begindisplay
+g(x)=\sum_{d\ge1}f(x/d)\qquad\iff\qquad
+f(x)=\sum_{d\ge1}\mu(d)@g(x/d)\,.
+\eqno\eqref|mobius-real-inversion|
+\enddisplay
+This "inversion law" holds for all functions $f$ such that
+ $\sum_{k,d\ge1}\bigl\vert f(x/kd)\bigr\vert
+<\infty$; we can prove it as follows. Suppose $g(x)=\sum_{d\ge1}f(x/d)$. Then
+\begindisplay
+\sum_{d\ge1}\mu(d)@g(x/d)
+ &=\sum_{d\ge1}\mu(d)\sum_{k\ge1}f(x/kd)\cr
+ &=\sum_{m\ge1}f(x/m)\sum_{d,k\ge1}\mu(d)\[m=kd]\cr
+ &=\sum_{m\ge1}f(x/m)\sum_{d\divides m}\!\mu(d)
+  =\sum_{m\ge1}\!f(x/m)\[m=1]=f(x)\,.\cr
+\enddisplay
+The proof in the other direction is essentially the same.
+
+So now we can solve the recurrence \eq(|bigphi-sum|) for $\Phi(x)$:
+\begindisplay
+\Phi(x)=\half\sum_{d\ge1}\mu(d)\lfloor x/d\rfloor\lfloor 1+x/d\rfloor\,.
+\eqno\eqref|bigphi-gen|
+\enddisplay
+This is always a finite sum. For example,
+\begindisplay
+\Phi(12)&=\textstyle\half(12\cdt13-6\cdt7-4\cdt5+0-2\cdt3+2\cdt3\cr
+&\hskip50pt{}-1\cdt2+0+0+1\cdt2-1\cdt2+0)\cr
+&=78-21-10-3+3-1+1-1=46\,.\cr
+\enddisplay
+In Chapter 9 we'll see how to use \eq(|bigphi-gen|) to get a good approximation
+to $\Phi(x)$; in fact, we'll prove a result due to "Mertens" in 1874
+[|mertens-phi|],
+\begindisplay
+\Phi(x)={3\over\pi^2}x^2+O(x\log x)\,.
+\enddisplay
+Therefore the function $\Phi(x)$ grows ``smoothly''; it
+averages out the erratic behavior of~$\varphi(k)$.
+
+\smallbreak
+In keeping with the tradition established last chapter, let's conclude this
+chapter with a problem that illustrates much of what we've just seen and that
+also points ahead to the next chapter. Suppose we have beads of $n$
+different colors; our goal is to "count" how many different ways there are
+to string them into circular "necklaces" of length~$m$. We can try to
+``"name and conquer"'' this problem by calling the number of
+"!cycles"
+possible necklaces $N(m,n)$.
+
+For example, with two colors of beads $R$ and $B$, we can make
+necklaces of length~$4$ in $N(4,2)=6$ different ways:
+\begindisplay
+\unitlength=1pt
+\def\necklace#1#2#3#4{\beginpicture(30,30)(-15,-15)%
+ \ovaltlfalse\ovaltrfalse\ovalblfalse\ovalbrfalse
+ {\ovaltrtrue\put(5,6){\oval(12,12)}}%
+ {\ovaltltrue\put(-5,6){\oval(12,12)}}%
+ {\ovalbltrue\put(-5,-6){\oval(12,12)}}%
+ {\ovalbrtrue\put(5,-6){\oval(12,12)}}%
+ \put(0,12){\makebox(0,0){$#1$}}%
+ \put(11,0){\makebox(0,0){$#2$}}%
+ \put(0,-12){\makebox(0,0){$#3$}}%
+ \put(-11,0){\makebox(0,0){$#4$}}%
+ \endpicture}
+\necklace RRRR\qquad
+\necklace RRBR\qquad
+\necklace RBBR\qquad
+\necklace RBRB\qquad
+\necklace RBBB\qquad
+\necklace BBBB
+\enddisplay
+All other ways are equivalent to one of these, because rotations of a
+necklace do not change it. However, reflections are considered to be
+different; in the case $m=6$, for example,
+\begindisplay
+\unitlength=1pt
+\def\necklace#1#2#3#4#5#6{\vcenter{\hbox{\beginpicture(30,48)(-15,-24)%
+ \ovaltlfalse\ovaltrfalse\ovalblfalse\ovalbrfalse
+ {\ovaltrtrue\put(5,15){\oval(12,12)}}%
+ {\ovaltltrue\put(-5,15){\oval(12,12)}}%
+ {\ovalbltrue\put(-5,-15){\oval(12,12)}}%
+ {\ovalbrtrue\put(5,-15){\oval(12,12)}}%
+ \put(0,21){\makebox(0,0){$#1$}}%
+ \put(11,9){\makebox(0,0){$#2$}}%
+ \put(11,-9){\makebox(0,0){$#3$}}%
+ \put(0,-21){\makebox(0,0){$#4$}}%
+ \put(-11,-9){\makebox(0,0){$#5$}}%
+ \put(-11,9){\makebox(0,0){$#6$}}%
+ \put(11.5,-3.5){\line(0,1)7}%
+ \put(-11.5,-3.5){\line(0,1)7}%
+ \endpicture}}}
+\necklace BRBBRR\qquad\hbox{is different from}\qquad
+\necklace BRRBBR\,.
+\enddisplay
+The problem of counting these configurations was first solved by
+P.\thinspace A. "MacMahon" in 1892~[|macmahon|].
+
+There's no obvious recurrence for $N(m,n)$, but we can count the necklaces
+by breaking them each into linear strings in $m$~ways and considering
+the resulting fragments. For example, when $m=4$ and $n=2$ we get
+\begindisplay \def\preamble{&$\hfil##\hfil$&%
+	$\hfil##\hfil$&%
+	$\hfil##\hfil$&%
+	$\hfil##\hfil$\qquad} \openup-2pt
+R&R&R&R&R&R&R&R&R&R&R&R&R&R&R&R\cr
+R&R&B&R&R&R&R&B&B&R&R&R&R&B&R&R\cr
+R&B&B&R&R&R&B&B&B&R&R&B&B&B&R&R\cr
+R&B&R&B&B&R&B&R&R&B&R&B&B&R&B&R\cr
+R&B&B&B&B&R&B&B&B&B&R&B&B&B&B&R\cr
+B&B&B&B&B&B&B&B&B&B&B&B&B&B&B&B\cr
+\enddisplay
+Each of the $n^m$ possible patterns appears at least once in this array
+of $mN(m,n)$ strings, and some patterns appear more than once. How many
+times does a pattern $a_0\ldots a_{m-1}$ appear? That's easy: It's the
+number of cyclic shifts $a_k\ldots a_{m-1}a_0\ldots a_{k-1}$ that produce
+the same pattern as the original $a_0\ldots a_{m-1}$. For example,
+$BRBR$ occurs twice, because the four ways to cut the necklace formed
+from $BRBR$ produce four cyclic shifts $(BRBR,\allowbreak
+RBRB,\allowbreak BRBR,\allowbreak RBRB)$; two of
+these coincide with $BRBR$ itself. This argument shows that
+\begindisplay
+mN(m,n)&=\mskip-15mu\sum_{a_0,\ldots,a_{m-1}\in S_ n}\,\,
+\sum_{0\le k<m}\!\!\bigi[a_0\ldots a_{m-1}=a_k\ldots a_{m-1}a_0
+ \ldots a_{k-1}\bigr]\cr
+&=\!\!\sum_{0\le k<m}\,\,\sum_{a_0,\ldots,a_{m-1}\in S_n}
+ \mskip-20mu
+ \bigi[a_0 \ldots a_{m-1} = a_k \ldots a_{m-1} a_0 \ldots a_{k-1}\bigr]\,.\cr
+\enddisplay
+Here $S_n$ is a set of $n$ different colors.
+
+\begingroup\thinmuskip=3mu minus 1mu
+Let's see how many patterns satisfy $a_0\ldots a_{m-1}=
+a_k\ldots a_{m-1}a_0\ldots a_{k-1}$, when $k$ is given.
+For example, if $m=12$ and $k=8$, we want to count the number of
+solutions to
+\begindisplay
+a_0a_1a_2a_3a_4a_5a_6a_7a_8a_9a_{10}a_{11} =
+a_8a_9a_{10}a_{11}a_0a_1a_2a_3a_4a_5a_6a_7\,.
+\enddisplay
+\endgroup
+This means $a_0=a_8=a_4$; $a_1=a_9=a_5$; $a_2=a_{10}=a_6$; and $a_3=a_{11}=
+a_7$. So the values of $a_0$, $a_1$, $a_2$, and $a_3$ can be chosen in
+$n^4$ ways, and the remaining $a$'s depend on them.
+Does this look familiar?
+In general, the solution to
+\begindisplay
+a_j=a_{(j+k)\,\bmod\,m}\,,\qquad\hbox{for $0\le j<m$}
+\enddisplay
+makes us equate $a_j$ with $a_{(j+kl)\,\bmod\,m}$ for $l=1$, $2$,~\dots; and
+we know that the multiples of~$k$ modulo~$m$ are $\{0,d,2d,\ldots,
+m-d\}$, where $d=\gcd(k,m)$. Therefore the general solution is to
+choose $a_0$, \dots,~$a_{d-1}$ independently and then to set $a_j=
+a_{j-d}$ for $d\le j<m$. There are $n^d$ solutions.
+
+We have just proved that
+\begindisplay
+mN(m,n)=\sum_{0\le k<m} n^{\gcd(k,m)}\,.
+\enddisplay
+This sum can be simplified, since it includes only terms $n^d$
+where $d\divides m$. Substituting $d=\gcd(k,m)$ yields
+\begindisplay \openup3pt
+N(m,n)
+ &={1\over m}\sum_{d\divides m}\,n^d\sum_{0\le k<m}\bigi[d=\gcd(k,m)\bigr]\cr
+ &={1\over m}\sum_{d\divides m}\,n^d\sum_{0\le k<m}\bigi[k/d\rp m/d\bigr]\cr
+ &={1\over m}\sum_{d\divides m}\,n^d\sum_{0\le k<m/d}\bigi[k\rp m/d\bigr]\,.\cr
+\enddisplay
+(We are allowed to replace $k/d$ by $k$ because $k$ must be a multiple of~$d$.)
+Finally, we have $\sum_{0\le k<m/d}\[k\rp m/d]=\varphi(m/d)$ by definition, so
+we obtain MacMahon's formula:
+\begindisplay
+N(m,n)={1\over m}\sum_{d\divides m}n^d\,\varphi\Bigl({m\over d}\Bigr)
+= {1\over m}\sum_{d\divides m}\varphi(d)\,n^{m/d}\,.
+\eqno\eqref|necklaces|
+\enddisplay
+When $m=4$ and $n=2$, for example, the number of necklaces is
+${1\over4}({1\cdt2^4}+{1\cdt2^2}+{2\cdt2^1})=6$, just as we suspected.
+
+It's not immediately obvious that the value $N(m,n)$ defined by MacMahon's
+sum is an integer! Let's try to prove directly that
+\begindisplay
+\sum_{d\divides m}\varphi(d)\,n^{m/d}\=0\quad\pmod m\,,
+\eqno\eqref|phi-cong|
+\enddisplay
+without using the clue that this is related to necklaces. In the special
+case that $m$ is prime, this congruence reduces to $n^p+(p-1)n\=0$
+\tmod p; that is, it reduces to $n^p\=n$.
+We've seen in \eq(|alt-fermat-theorem|) that this congruence is an alternative
+form of "Fermat's theorem". Therefore \thiseq\ holds when $m=p$;
+we can regard it as a
+generalization of Fermat's theorem to
+the case when the modulus is not prime.
+"!Euler's theorem"
+(Euler's generalization \eq(|euler-theorem|) is different.)
+
+We've proved \thiseq\ for all prime moduli, so
+let's look at the smallest case left, $m=4$.
+We must prove that
+\begindisplay
+ n^4 + n^2 + 2n\=0\quad\pmod 4\,.
+\enddisplay
+The proof is easy if we consider even and odd cases separately.
+If $n$~is even, all three terms on the left are congruent to~$0$ modulo~$4$,
+so their sum is too.
+If $n$~is odd, $n^4$~and~$n^2$ are each congruent to~$1$,
+and $2n$ is congruent to~$2$;
+hence the left side is congruent to $1+1+2$
+and thus to~$0$ modulo~$4$, and we're done.
+
+Next, let's be a bit daring and try $m=12$.
+This value of~$m$ ought to be interesting
+because it has lots of factors,
+including the square of a prime, yet it is fairly small.
+(Also there's a good chance we'll be able to generalize a proof for~$12$
+to a proof for general~$m$.)
+The congruence we must prove is
+\begindisplay
+ n^{12} + n^6 + 2n^4 + 2n^3 + 2n^2 + 4n\=0\quad\pmod{12}\,.
+\enddisplay
+Now what?
+By~\eq(|rp-moduli|) this congruence holds if and only if
+it also holds modulo~$3$ and modulo~$4$.
+So let's prove that it holds modulo~$3$.
+Our congruence~\eq(|phi-cong|) holds for primes,
+so we have $n^3 + 2n \=0$ \tmod 3.
+Careful scrutiny reveals that we can use this fact
+ to group terms of the larger sum:
+\begindisplay
+&n^{12} + n^6 + 2n^4 + 2n^3 + 2n^2 + 4n\cr
+&\qquad= (n^{12} + 2n^4) + (n^6 + 2n^2) + 2(n^3 + 2n) \cr
+&\qquad\= 0 + 0 + 2 \cdt 0 \= 0\quad\pmod 3\,.
+\enddisplay
+So it works modulo~$3$.
+
+We're half done.
+To prove congruence modulo~$4$ we use the same trick.
+We've proved that $n^4 + n^2 + 2n \= 0$ \tmod 4,
+so we use this pattern to group:
+\begindisplay
+&n^{12} + n^6 + 2n^4 + 2n^3 + 2n^2 + 4n\cr
+&\qquad= (n^{12} + n^6 + 2n^3) + 2(n^4 + n^2 + 2n) \cr
+&\qquad\= 0 + 2 \cdt 0 \= 0\quad\pmod 4\,.
+\enddisplay
+QED for the case $m=12$.
+\g QED: Quite Easily Done.\g
+
+So far we've proved our congruence for prime~$m$, for~$m=4$, and for~$m=12$.
+Now let's try to prove it for prime powers.
+For concreteness we may suppose that $m=p^3$ for some prime~$p$.
+Then the left side of~\eq(|phi-cong|) is
+\begindisplay
+&n^{p^3}+\varphi(p)n^{p^2}+\varphi(p^2)n^p+\varphi(p^3)n\cr
+&\qquad=n^{p^3}+(p-1)n^{p^2}+(p^2-p)n^p+(p^3-p^2)n\cr
+&\qquad=(n^{p^3}-n^{p^2})+p(n^{p^2}-n^p)+p^2(n^p-n)+p^3n\,.\cr
+\enddisplay
+We can show that this is congruent to~$0$ modulo~$p^3$
+if we can prove that $n^{p^3}\!-n^{p^2}$ is divisible by~$p^3 \bex$,
+that $n^{p^2}\!-n^p$ is divisible by~$p^2 \bex$,
+and that $n^p-n$ is divisible by~$p$,
+because the whole thing will then be divisible by~$p^3 \bex$.
+By the alternative form of Fermat's theorem we have
+$n^p \= n$ (mod~$p$),
+so $p$~divides $n^p-n$;
+hence there is an integer~$q$ such that
+\begindisplay
+ n^p	= n + pq \,.
+\enddisplay
+Now we raise both sides to the $p$th power, expand the
+right side according to the binomial theorem (which we'll meet in Chapter~5),
+and regroup, giving
+\begindisplay
+n^{p^2}
+	&= (n + pq)^p
+	= n^p \,+\, (pq)^1 n^{p-1} {p \choose 1}
+		\,+\, (pq)^2 n^{p-2} {p \choose 2} \,+\, \cdots\cr
+	&= n^p \;+\; p^2 Q
+\enddisplay
+for some other integer~$Q$.
+We're able to pull out a factor of~$p^2$ here because
+${p \choose 1} = p$ in the second term, and because
+a factor of $(pq)^2$ appears in all the terms that follow.
+So we find that $p^2$~divides $\smash{n^{p^2} \!- n^p}\bex$.
+
+Again we raise both sides to the $p$th power, expand, and regroup, to get
+\begindisplay
+n^{p^3}
+	&= (n^p + p^2Q)^p\cr
+	&= n^{p^2} \,+\, (p^2Q)^1 n^{p(p-1)} {p \choose 1}
+		\,+\, (p^2Q)^2 n^{p(p-2)} {p \choose 2} \,+\, \cdots\cr
+	&= n^{p^2} \,+\, p^3\hbox{\eulerbf Q}
+\enddisplay
+for yet another integer~{\eulerbf Q}.
+So $p^3$~divides $n^{p^3} \!- n^{p^2}$. This finishes the proof for
+$m=p^3$, because we've shown that $p^3$ divides the left-hand side of
+\eq(|phi-cong|).
+
+Moreover we can prove by induction that
+\begindisplay
+ n^{p^k}
+	= n^{p^{k-1}} +\, p^k {\fam9 Q}
+\enddisplay
+for some final integer $\fam9 Q$
+(final because we're running out of fonts);
+hence
+\begindisplay
+n^{p^k}\= n^{p^{k-1}}\quad\pmod{p^k},\qquad\hbox{for $k>0$.}
+\eqno\eqref|higher-fermat|
+\enddisplay
+Thus the left side of~\eq(|phi-cong|), which is
+\begindisplay\tightplus
+ (n^{p^k}\!-n^{p^{k-1}}) \;+\; p(n^{p^{k-1}}\!-n^{p^{k-2}}) \;+\; \cdots
+					\;+\; p^{k-1}(n^p-n) \;+\; p^k n \,,
+\enddisplay
+is divisible by~$p^k$ and so is congruent to~$0$ modulo~$p^k \bex$.
+
+We're almost there. Now that
+we've proved~\eq(|phi-cong|) for prime powers,
+all that remains is to prove it when $m=m_1m_2$, where $m_1\rp m_2$,
+assuming that the congruence is true for $m_1$ and $m_2$. Our examination
+of the case $m=12$, which factored into instances of $m=3$ and
+$m=4$, encourages us to think that this approach will work.
+
+We know that the $\varphi$ function is multiplicative, so we
+can write
+\begindisplay
+\sum_{d\divides m}\varphi(d)\,n^{m/d}
+&=\sum_{d_1\divides m_1,\,d_2\divides m_2}\!\varphi(d_1d_2)\,n^{m_1m_2/d_1d_2}\cr
+&=\sum_{d_1\divides m_1}\varphi(d_1)\biggl(\sum_{d_2\divides m_2}\varphi(d_2)
+ (n^{m_1/d_1})^{m_2/d_2}\biggr)\,.\cr
+\enddisplay
+But the inner sum is congruent to~$0$ modulo~$m_2$,
+because we've assumed that \eq(|phi-cong|) holds for~$m_2$;
+so the entire sum is congruent to~$0$ modulo~$m_2$.
+By a symmetric argument,
+we find that the entire sum is congruent to~$0$ modulo~$m_1$ as well.
+Thus by~\eq(|rp-moduli|) it's congruent to~$0$ modulo~$m$. QED.
+
+\beginexercises
+
+\subhead \kern-.05em Warmups
+
+\ex:
+What is the smallest positive integer that has exactly $k$ divisors,
+for $1\le k\le6$?
+\answer $1$, $2$, $4$, $6$, $16$, $12$.
+
+\ex:\exref|gcd-times-lcm|%
+Prove that $\gcd(m,n)\cdot\lcm(m,n)=m\cdt n$, and use this identity to
+express $\lcm(m,n)$ in terms of $\lcm(n\bmod m,m)$, when $n\bmod m\ne0$.
+\Hint: Use \eq(|prod-exp|), \eq(|gcd-exp|), and \eq(|lcm-exp|).
+\answer Note that $m_p+n_p=\min(m_p,n_p)+\max(m_p,n_p)$. The recurrence
+$\lcm(m,n)=\bigl(n/(n\bmod m)\bigr)\lcm(n\bmod m,m)$ is valid but not
+really advisable for computing lcm's; the best way known to compute
+$\lcm(m,n)$ is to compute $\gcd(m,n)$ first and then to divide $mn$
+by the gcd.
+
+\ex:
+Let $\pi(x)$ be the number of primes not exceeding~$x$. Prove or disprove:
+\begindisplay
+\pi(x)-\pi(x-1)=\[\hbox{$x$ is prime}]\,.
+\enddisplay
+\answer This holds if $x$ is an integer, but $\pi(x)$ is defined
+for all real~$x$. The correct formula,
+\begindisplay
+\pi(x)-\pi(x-1)=\bigi[\hbox{$\lfloor x\rfloor$ is prime}\bigr]\,,
+\enddisplay
+is easy to verify.
+
+\ex:
+What would happen if the Stern--Brocot construction started with the five
+fractions $\bigl({0\over1}, {1\over0},
+{0\over-1}, {-1\over0}, {0\over1}\bigr)$ instead of with
+$\bigl({0\over1}, {1\over0}\bigr)$?
+\answer Between $1\over0$ and $0\over-1$ we'd have a left-right reflected
+Stern--Brocot tree with all denominators negated, etc. So the result is
+{\it all\/} fractions $m/n$ with $m\rp n$. The condition $m'n-mn'=1$
+still holds throughout the construction. (This is called the
+"!wreath"
+{\it "Stern--Brocot wreath"}, because we can conveniently regard the final
+$0\over1$ as identical to the first~$0\over1$, thereby joining the
+trees in a cycle at the top. The Stern--Brocot wreath has interesting
+applications to computer graphics because it represents all rational
+directions in the plane.)
+\source{[|knuthd|, \S526].}
+
+\ex:
+Find simple formulas for $L^k$ and $R^k$, when $L$ and $R$ are the
+$2\times2$ matrices of~\eq(|LR|).
+\answer $L^k={1\,k\choose0\,1}$ and $R^k={1\,0\choose k\,1}$; this
+holds even when $k<0$. (We will find a general formula for any product
+of $L$'s and $R$'s in Chapter~6.)
+
+\ex:
+What does `$a\=b$ (mod $0$)' mean?
+\answer $a=b$. (Chapter 3 defined $x\bmod0=x$,
+"!mod~$0$"
+\g After all, `mod~y' sort~of means ``pretend y~is zero.\qback'' So if it
+already is, there's nothing to pretend.\g
+primarily so that this would be true.)
+
+\ex:
+Ten people numbered $1$ to $10$ are lined up in a circle as in the "Josephus
+problem", and every $m$th person is executed. (The value of~$m$ may be
+much larger than~$10$.) Prove that the first three people to go cannot
+be $10$, $k$, and $k+1$ (in this order), for any~$k$.
+\answer We need $m\bmod10=0$, $m\bmod9=k$, and $m\bmod8=1$. But $m$
+can't be both even and odd.
+
+\ex:
+The "residue number system" $(x\bmod3,x\bmod5)$ considered in the text has the
+curious property that $13$ corresponds to $(1,3)$, which looks almost
+the same. Explain how to find all instances of such a coincidence,
+without calculating all fifteen pairs of residues. In other
+words, find all solutions to the congruences
+\begindisplay
+10x+y\=x\pmod3\,,\qquad 10x+y\=y\pmod5\,.
+\enddisplay
+\Hint: Use the facts that $10u+6v\=u$ \tmod3 and $10u+6v\=v$ \tmod5.
+\answer We want $10x+6y\=10x+y$ \tmod{15}; hence $5y\=0$ \tmod{15};
+hence $y\=0$ \tmod3. We must have $y=0$ or $3$, and $x=0$ or $1$.
+
+\ex:
+Show that $(3^{77}-1)/2$ is odd and composite. \Hint: What is
+$3^{77}\bmod 4$?
+\answer $3^{2k+1}\bmod4=3$, so $(3^{2k+1}-1)/2$ is odd. The
+stated number is divisible by $(3^7-1)/2$ and $(3^{11}-1)/2$
+(and by other numbers).
+
+\ex:
+Compute $\varphi(999)$.
+\answer $999(1-{1\over3})(1-{1\over37})=648$.
+
+\ex:\exref|mobius-analogy|%
+Find a function $\sigma(n)$ with the property that
+\begindisplay
+g(n)=\sum_{0\le k\le n}f(k)\qquad\iff\qquad
+f(n)=\sum_{0\le k\le n}\sigma(k)\,g(n-k)\,.
+\enddisplay
+(This is analogous to the M\"obius function; see \eq(|mobius-inversion|).)
+\answer $\sigma(0)=1$; $\sigma(1)=-1$; $\sigma(n)=0$ for $n>1$.
+(Generalized "M\"obius functions" defined on arbitrary partially ordered
+structures have interesting and important properties, first explored by
+"Weisner"~[|weisner|] and developed by many other people, notably Gian-Carlo
+"Rota" [|rota-mobius|].)
+
+\ex:\exref|mobius-inv-half|%
+Simplify the formula $\sum_{d\divides m}\sum_{k\divides d}\mu(k)\,g(d/k)$.
+\answer $\sum_{d\divides m}\sum_{k\divides d}\mu(d/k)\,g(k)=
+\sum_{k\divides m}\sum_{d\divides(m/k)}\mu(d)\,g(k)=
+\sum_{k\divides m}g(k)\hskip0pt minus3pt\*\[m/k=1]=g(m)$,
+by \equ(4.|swap-div|) and \equ(4.|interch-div|).
+
+\ex:\exref|squarefree-def|%
+A positive integer $n$ is called {\it"squarefree"\/} if it is not divisible
+by $m^2$ for any $m>1$. Find a necessary and sufficient condition that $n$~is
+squarefree,
+\itemitem{a}in terms of the prime-exponent representation
+\eq(|primepower-factors|) of~$n$;
+\itemitem{b}in terms of $\mu(n)$.
+\answer (a) $n_p\le1$ for all $p$; (b) $\mu(n)\ne0$.
+
+\subhead Basics
+
+\ex:\exref|gcd-prod|%
+Prove or disprove:
+\itemitem{a} $\gcd(km,kn)=k\gcd(m,n)\,$;
+\itemitem{b} $\lcm(km,kn)=k\lcm(m,n)\,$.
+\answer True when $k>0$. Use \equ(4.|prod-exp|), \equ(4.|gcd-exp|),
+and \equ(4.|lcm-exp|).
+
+\ex:
+Does every prime occur as a factor of some "Euclid number" $e_n$?
+\answer No. For example, $e_n\bmod5=[2\,{\rm or}\,3]$;
+$e_n\bmod11=[2,3,7,{\rm or}\,10]$.
+
+\ex:\exref|recip-euclid|%
+What is the sum of the reciprocals of the first $n$ Euclid numbers?
+\answer $1/e_1+1/e_2+\cdots+1/e_n=1-1\big/\bigl(e_n(e_n-1)\bigr)
+=1-1/(e_{n+1}-1)$.
+\source{"Sylvester" [|sylvester|].}
+
+\ex:
+Let $f_n$ be the ``"Fermat number"'' $2^{2^n}+1$. Prove that $f_m\rp f_n$
+if $m<n$.
+\answer We have $f_n\bmod f_m=2$; hence $\gcd(f_n,f_m)=\gcd(2,f_m)=1$.
+(Incidentally, the relation
+$f_n=f_0f_1\ldots f_{n-1}+2$ is very similar to the recurrence that
+defines the Euclid numbers $e_n$.)
+
+\ex:
+Show that if $2^n+1$ is prime then $n$ is a power of $2$.
+\answer If $n=qm$ and $q$ is odd, $2^n+1=(2^m+1)(2^{n-m}-2^{n-2m}+\cdots
+-2^m+1)$.
+
+\ex: Prove the following identities when $n$ is a positive integer:
+\begindisplay \openup4pt
+\sum_{1\le k<n}\left\lfloor \varphi(k+1)\over k\right\rfloor
+&=\sum_{1<m\le n}\Biggl\lfloor\biggl(\sum_{1\le k<m}\bigl\lfloor(m/k)
+/\lceil m/k\rceil\bigr\rfloor\biggr)^{-1}\Biggr\rfloor\cr
+&=n-1-\sum_{k=1}^n\Biggl\lceil\biggl\{{(k-1)!+1\over k}\biggr\}\Biggr\rceil\,.
+\enddisplay
+\Hint: This is a trick question and the answer is pretty easy.
+\answer The first sum is $\pi(n)$, since the summand is $[k+1$ is prime$]$.
+The inner sum in the second is $\sum_{1\le k<m}\[k\divides m]$, so it is
+greater than~$1$ if and only if $m$ is composite; again we get $\pi(n)$.
+Finally $\bigl\lceil\{m/n\}\bigr\rceil=\[n\ndivides m]$,
+so the third sum is an application of "Wilson's theorem". To evaluate $\pi(n)$
+by any of these formulas is, of course, sheer lunacy.
+\source{[|texbook|, pp.~148--149].}
+
+\ex:
+For every positive integer $n$ there's a prime $p$ such that $n<p\le2n$.
+(This is essentially ``"Bertrand's postulate",\qback'' which Joseph
+"Bertrand" verified for $n<3000000$ in 1845 and "Chebyshev" proved
+for all~$n$ in 1850.) Use Bertrand's postulate to prove that there's a
+constant $b\approx1.25$ such that the numbers
+\begindisplay
+\lfloor2^b\rfloor,\;\lfloor2^{2^b}\rfloor,\;\lfloor2^{2^{2^b}}\rfloor,\;\ldots
+\enddisplay
+are all prime.
+\answer Let $p_1=2$ and let $p_n$ be the smallest prime greater than $2^{p_{n-1}}$.
+Then $2^{p_{n-1}}<p_n<2^{p_{n-1}+1}$, and it follows that we can take
+$b=\lim_{n\to\infty}\lg^{(n)}p_n$ where $\lg^{(n)}$ is the function $\lg$
+iterated $n$~times. The stated numerical value comes from $p_2=5$,
+$p_3=37$. It turns out that $p_4=2^{37}+9$, and this gives the more
+precise value
+\begindisplay
+b\approx1.2516475977905
+\enddisplay
+(but no clue about $p_5$).
+\source{"Bertrand" [|bertrand|, p.~129]; "Chebyshev" [|chebyshev|];
+"Wright" [|wright-primes|].}
+
+\ex:
+Let $P_n$ be the $n$th prime number. Find a constant $K$ such that
+\begindisplay
+\bigl\lfloor(10^{n^2}K)\bmod 10^n\bigr\rfloor=P_n\,.
+\enddisplay
+\answer By Bertrand's postulate, $P_n<10^n$. Let
+\begindisplay
+K=\sum_{k\ge1}10^{-k^2}P_k=.200300005\ldots\,\,.
+\enddisplay
+Then $10^{n^2}K\=P_n+{\rm fraction}$ \tmod{10^{2n-1}}.
+
+\ex:
+The number $1111111111111111111$ is prime.
+\g Is this a test for strabismus?\g
+ Prove that, in any radix~$b$,
+$(11\ldots1)_b$ can be prime only if the number of~$1$'s is prime.
+\answer $(b^{mn}-1)/(b-1)=\bigl((b^m-1)/(b-1)\bigr)(b^{mn-m}+\cdots+1)$.
+[The only prime numbers of the form $(10^p-1)/9$ for $p<20000$ occur when
+$p=2$, $19$, $23$, $317$, $1031$.] Numbers of this form are called
+``"repunits".\qback''
+\source{"Brillhart" [|brillhart|]; "Williams" and "Dubner"~[|williams-dubner|];
+ "Dubner"~[|dubner|].}
+
+\ex:
+State a recurrence for $\rho(k)$, the "ruler function" in the text's
+discussion of $\epsilon_2(n!)$. Show that there's a connection between
+$\rho(k)$ and the disk that's moved at step~$k$ when an $n$-disk "Tower
+of Hanoi" is being transferred in $2^n-1$ moves, for $1\le k\le2^n-1$.
+\answer $\rho(2k+1)=0$; $\rho(2k)=\rho(k)+1$, for $k\ge1$. By induction
+we can show that $\rho(n)=\rho(n-2^m)$, if $n>2^m$ and $m>\rho(n)$.
+The $k$th Hanoi move is disk $\rho(k)$, if we number the disks $0$,
+$1$, \dots,~$n-1$. This is clear if $k$ is a power of~$2$. And if
+$2^m<k<2^{m+1}$, we have $\rho(k)<m$; moves $k$ and $k-2^m$ correspond
+in the sequence that transfers $m+1$ disks in $T_m+1+T_m$ steps.
+\source{"Crowe" [|crowe|].}
+
+\ex:\exref|epsilon-nu|%
+Express $\smash{\epsilon_p(n!)}$ in terms of $\smash{\nu_p(n)}$,
+ the sum of the digits
+\g Look, ma,\par "sideways addition".\g
+in the "radix~$p$" representation of~$n$, thereby generalizing \eq(|2-factors|).
+\answer The digit that contributes $dp^m$ to $n$ contributes
+$dp^{m-1}+\cdots+d=d(p^m-1)/(p-1)$ to $\epsilon_p(n!)$, hence
+$\epsilon_p(n!)=\bigl(n-\nu_p(n)\bigr)/(p-1)$.
+\source{"Legendre" [|legendre-theorie|, second edition, introduction].}
+
+\ex:
+We say that $m$ {\it"exactly divides"\/} $n$, written $m\edivides n$,
+if $m\divides n$ and $m\rp n/m$. For example, in the text's discussion
+\tabref|nn:ediv|%
+of factorial factors, $p^{\epsilon_p(n!)}\edivides n!$.
+Prove or disprove the following:
+\itemitem{a}$k\edivides n$ and $m\edivides n$ $\iff$ $km\edivides n$,
+if $k\rp m$.
+\itemitem{b}For all $m,n>0$, either $\gcd(m,n)\edivides m$ or
+	$\gcd(m,n)\edivides n$.
+\answer $m\edivides n\iff m_p=0$ or $m_p=n_p$, for all $p$. It follows that
+(a)~is true. But (b) fails, in our favorite example $m=12$, $n=18$.
+(This is a common fallacy.)
+
+\ex:
+Consider the sequence ${\scr G}_N$ of all nonnegative reduced
+fractions $m/n$ such that $mn\le N$. For example,
+\begindisplay\advance\thinmuskip-1mu
+\def\\#1#2{{#1\over#2}}
+\textstyle{\scr G}_{10}=
+\\01,\\1{10},\\19,\\18,\\17,\\16,\\15,\\14,\\13,\\25,\\12,\\23,\\11,\\32,
+ \\21,\\52,\\31,\\41,\\51,\\61,\\71,\\81,\\91,\\{10}1.
+\enddisplay
+Is it true that $m'n-mn'=1$ whenever $m/n$ immediately precedes $m'/n'$
+in ${\scr G}_N$?
+\answer Yes, since ${\scr G}_N$ defines a subtree of the Stern--Brocot tree.
+\source{[|knuth2|, exercise 4.5.3--43].}
+
+\ex:
+Give a simple rule for comparing rational numbers based on their representations
+as $L$'s and $R$'s in the "Stern--Brocot number system".
+\answer Extend the shorter string with $M$'s (since $M$ lies
+alphabetically between $L$ and $R$) until both strings are
+the same length, then use dictionary order. For example, the topmost
+levels of the tree are $LL<LM<LR<MM<RL<RM<RR$.
+(Another solution is to append the infinite string $RL^\infty$ to both
+inputs, and to keep comparing until finding $L<R$.)
+
+\ex:
+The Stern--Brocot representation of $\pi$ is
+\begindisplay
+\pi=R^3L^7R^{15}LR^{292}LRLR^2LR^3LR^{14}L^2R\ldots\,;
+\enddisplay
+use it to find all the simplest rational approximations to~$\pi$
+whose denominators are less than~$50$. Is $22\over7$ one of them?
+\answer We need to use only the first part of the representation:
+\begindisplay
+\unitlength=15pt
+\countdef\m=0 \countdef\mp=2 \countdef\n=4 \countdef\np=6
+\m=0 \mp=1 \n=1 \np=0
+\def\\#1{\if #1R\advance\m\mp \advance\n\np{\number\m\over\number\n}
+ \else\advance\mp\m \advance\np\n{\number\mp\over\number\np}\fi
+ ,\mskip-8mu\raise\unitlength\hbox{$\scriptstyle#1$}}
+\textstyle
+\\R\\R\\R\\L\\L\\L\\L\\L\\L\\L\\R\\R\\R\\R\\R\\R
+\ldots\,.
+\enddisplay
+The fraction $4\over1$ appears because it's a better upper bound than $1\over0$,
+not because it's closer than $3\over1$. Similarly, $25\over8$ is a better
+lower bound than $3\over1$. The simplest upper bounds and the simplest
+lower bounds all appear,
+but the next really good approximation doesn't occur until just before the
+string of $R$'s switches back to $L$.
+
+\ex:
+The text describes a correspondence between binary real numbers
+$x=(.b_1b_2b_3\ldots\,)_2$ in $[@0\dts1)$ and Stern--Brocot
+real numbers $\alpha=B_1B_2B_3\ldots$ in~$[@0\dts\infty)$. If $x$ corresponds
+to $\alpha$ and $x\ne0$, what number corresponds to~$1-x$?
+\answer $1/\alpha$. To get $1-x$ from~$x$ in binary notation,
+ we interchange $0$ and~$1$;
+to get $1/\alpha$ from~$\alpha$ in Stern--Brocot notation,
+ we interchange $L$ and $R$. (The
+finite cases must also be considered, but they must work since the
+correspondence is order preserving.)
+
+\ex:\exref|chinese-remainders|%
+Prove the following statement (the "Chinese Remainder Theorem"):
+Let $m_1$, \dots,~$m_r$ be integers with $m_j\rp m_k$ for $1\le j<k\le r$;
+let $m=m_1\ldots m_r$; and let $a_1$, \dots,~$a_r$, $A$ be integers. Then
+there is exactly one integer~$a$ such that
+\begindisplay
+\hbox{$a\=a_k$ \tmod{m_k} for $1\le k\le r$\quad and\quad $A\le a<A+m$}\,.
+\enddisplay
+\answer The $m$ integers $x\in[A\dts A+m)$ are different mod~$m$; so their
+residues $(x\bmod m_1,\ldots,x\bmod m_r)$ run through all $m_1\ldots m_r=m$
+possible values, one of which must be equal to
+$(a_1\bmod m_1,\ldots,a_r\bmod m_r)$ by the pigeonhole principle.
+
+\ex:
+A number in decimal notation is divisible by~$3$ if and only if the sum
+of its digits is divisible by~$3$. Prove this well-known rule, and
+generalize it.
+\answer A number in radix~$b$ notation is divisible by~$d$ if and only
+if the sum of its digits is divisible by~$d$, whenever $b\=1$ \tmod d.
+This follows because $(a_m\ldots a_0)_b=a_mb^m+\cdots+a_0b^0\=a_m+\cdots+a_0$.
+\source{"Pascal" [|pascal-digits|].}
+
+\ex:\exref|prove-euler-theorem|%
+Prove "Euler's theorem" \eq(|euler-theorem|) by generalizing the proof
+\g Why is ``Euler'' pronounced ``Oiler'' when ``Euclid'' is ``Yooklid''?\g
+of \eq(|fermat-theorem|).
+\answer The $\varphi(m)$ numbers $\{\,kn\bmod m\mid {k\rp m}$ and
+ ${0\le k<m}\,\}$
+are the num\-bers $\{\,k\mid k\rp m$ and $0\le k<m\,\}$ in some order.
+Multiply them together and divide by $\prod_{0\le k<m,\,k\rp m}k$.
+
+\ex:\exref|fg-multiplicative|%
+Show that if $f(m)$ and $g(m)$ are multiplicative functions, then so
+is $h(m)=\sum_{d\divides m}f(d)\,g(m/d)$.
+\answer Obviously $h(1)=1$. If $m\rp n$ then $h(mn)=
+\sum_{d\divides mn}f(d)\,g(mn/d)=\sum_{c\divides m,d\divides n}f(cd)\,
+ g\bigl((m/c)(n/d)\bigr)=\sum_{c\divides m}\sum_{d\divides n}f(c)\,g(m/c)\,
+ f(d)\,g(n/d)$; this is $h(m)\,h(n)$, since $c\rp d$ for every term in the sum.
+
+\ex:
+Prove that \eq(|mobius-inversion|) is a special case of
+\eq(|mobius-real-inversion|).
+\answer $g(m)=\sum_{d\divides m}f(d)=\sum_{d\divides m}f(m/d)
+=\sum_{d\ge1}f(m/d)$ if $f(x)$ is zero when $x$ is not an integer.
+
+\subhead Homework exercises
+
+\ex:
+Let $I(m,n)$ be a function that satisfies the relation
+\begindisplay
+I(m,n)m+I(n,m)n=\gcd(m,n)\,,
+\enddisplay
+when $m$ and $n$ are nonnegative integers with $m\ne n$. Thus, $I(m,n)=m'$
+and $I(n,m)=n'$ in \eq(|''|); the value of $I(m,n)$ is an {\it"inverse"\/}
+of~$m$ with respect to~$n$.
+Find a recurrence that defines $I(m,n)$.
+\answer The base cases are
+\begindisplay
+I(0,n)=0\,;\qquad I(m,0)=1\,.
+\enddisplay
+When $m,n>0$, there are two rules, where the first is trivial if $m>n$
+and the second is trivial if $m<n$:
+\begindisplay
+I(m,n)&=I(m,n\bmod m)-\lfloor n/m\rfloor I(n\bmod m,m)\,;\cr
+I(m,n)&=I(m\bmod n, n)\,.
+\enddisplay
+
+\ex:\exref|nonunique-factors|%
+Consider the set $Z(\sqrt{10}\mskip2mu)=\{\,m+n\sqrt{10}\mid {\rm integer}\
+m,n\,\}$. The number $m+n\sqrt{10}$ is called a {\it"unit"\/} if $m^2-10n^2
+"!quadratic domain" "!algebraic integers"
+=\pm1$, since it has an inverse (that is,
+since $(m+n\sqrt{10}\,)\cdot\pm(m-n\sqrt{10}\,)=1$). For example,
+$3+\sqrt{10}$ is a unit, and so is $19-6\sqrt{10}$. Pairs of cancelling
+units can be inserted into any factorization, so we ignore them.
+Nonunit numbers of $Z(\sqrt{10}\mskip2mu)$ are called prime if they cannot be
+written as a product of two nonunits.
+ Show that $2$, $3$, and $4\pm\sqrt{10}$
+are primes of $Z(\sqrt{10}\mskip2mu)$. \Hint: If $2={(k+l\sqrt{10}\,)}\*
+{(m+n\sqrt{10}\,)}$ then $4=(k^2-10l^2)(m^2-10n^2)$. Furthermore,
+the square of any integer mod~$10$ is $0$,~$1$, $4$, $5$,~$6$,~or~$9$.
+\answer A factorization of any of the given quantities into nonunits
+must have $m^2-10n^2=\pm2$ or $\pm3$, but this is impossible mod~$10$.
+\source{"Hardy" and "Wright" [|hardy-wright|, \S14.5].}
+
+\ex:\exref|euclid-sol-proof|%
+Prove \eq(|euclid-sol|). \Hint: Show that $e_n-\half=(e_{n-1}-\half)^2+{1\over4}$,
+and consider $2^{-n}\log(e_n-\half)$.
+\answer Let $a_n=2^{-n}\ln(e_n-\half)$ and $b_n=2^{-n}\ln(e_n+\half)$.
+Then
+\begindisplay
+\textstyle e_n=\lfloor E^{2^n}+\half\rfloor\iff a_n\le\ln E<b_n\,.
+\enddisplay
+And $a_{n-1}<a_n<b_n<b_{n-1}$, so we can take $E=\lim_{n\to\infty}e^{a_n}$.
+In fact, it turns out that
+\begindisplay
+E^2={3\over2}\prod_{n\ge1}\left(1+{1\over(2e_n-1)^2}\right)^{\!1/2^n},
+\enddisplay
+a product that converges rapidly to $(1.26408473530530111\ldots\,)^2$.
+But these observations
+ don't tell us what $e_n$ is, unless we can find another expression
+for~$E$ that doesn't depend on Euclid numbers.
+\source{"Aho" and "Sloane" [|aho-sloane|].}
+
+\ex:
+Prove that if $a\rp b$ and $a>b$ then
+\begindisplay
+\gcd(a^m-b^m,\,a^n-b^n)=a^{\gcd(m,n)}-b^{\gcd(m,n)}\,,
+ \qquad\hbox{$0\le m<n$}.
+\enddisplay
+(All variables are integers.) \Hint: Use Euclid's algorithm.
+\answer Let $r=n\bmod m$. Then $a^n-b^n=(a^m-b^m)(a^{n-m}b^0+a^{n-2m}b^m+\cdots
+ +a^rb^{n-m-r})+b^{m\lfloor n/m\rfloor}(a^r-b^r)$.
+\source{"Lucas" [|lucas-gcd|].}
+
+\ex:
+Let $S(m)$ be the smallest positive integer $n$ for which there exists an
+increasing sequence of integers
+\begindisplay
+m=a_1<a_2<\cdots<a_t=n
+\enddisplay
+such that $a_1a_2\ldots a_t$ is a perfect square. (If $m$ is a perfect
+square, we can let $t=1$ and $n=m$.) For example, $S(2)=6$ because
+the best such sequence is $a_1=2$, $a_2=3$, $a_3=6$. We have
+\begindisplay\let\preamble=\tablepreamble%
+\advance\abovedisplayskip-2pt\advance\belowdisplayskip-2pt
+n&&1&2&3&4&5&6&7&8&9&10&11&12\cr
+\noalign{\hrule}
+S(n)&& 1 & 6 & 8 & 4 & 10 & 12 & 14 & 15 & 9 & 18 & 22 & 20\cr
+\enddisplay
+Prove that $S(m)\ne S(m')$ whenever $0<m<m'$.
+\answer If $a_1\ldots a_t$ and $b_1\ldots b_u$ are perfect squares,
+so is
+\begindisplay
+a_1\ldots a_tb_1\ldots b_u/c_1^2\ldots c_v^2\,,
+\enddisplay
+where $\{a_1,\ldots,a_t\}\cap\{b_1,\ldots,b_u\}=\{c_1,\ldots,c_v\}$.
+(It can be shown, in fact, that the sequence $\<S(1),S(2),S(3),\ldots,\,\>$
+contains every nonprime positive integer exactly once.)
+\source{[|graham-squareprod|].}
+
+\ex:\exref|factorial-residue|%
+If the "radix~$p$ representation" of $n$ is $(a_m\ldots a_1a_0)_p$, prove that
+\begindisplay
+n!/p^{\epsilon_p(n!)}\=(-1)^{\epsilon_p(n!)}a_m!\ldots a_1!\,a_0!\quad
+\pmod p\,.
+\enddisplay
+(The left side is simply $n!$ with all $p$ factors removed. When $n=p$ this
+reduces to "Wilson's theorem".)
+\g Wilson's theorem:\par \noindent\llap{``}Martha, that boy is a menace.''%
+ "!Ketcham""!Wilson, Martha"\g
+\answer Let $f(n)=\prod_{1\le k\le n,\,p\ndivides k}k=n!/p^{\lfloor n/p\rfloor}
+\lfloor n/p\rfloor!$ and $g(n)=n!/p^{\epsilon_p(n!)}$. Then
+\begindisplay
+g(n)=f(n)@f\bigl(\lfloor n/p\rfloor\bigr)@f\bigl(\lfloor n/p^2\rfloor\bigr)
+ \ldots\, =f(n)@g\bigl(\lfloor n/p\rfloor\bigr)\,.
+\enddisplay
+Also $f(n)\=a_0!(p-1)!^{\lfloor n/p\rfloor}\=a_0!(-1)^{\lfloor n/p\rfloor}$
+\tmod p, and $\epsilon_p(n!)=\lfloor n/p\rfloor +
+\epsilon_p\bigl(\lfloor n/p\rfloor!\bigr)$. These recurrences make it easy
+to prove the result by induction. (Several other solutions are possible.)
+\source{"Stickelberger" [|stickelberger|].}
+
+\ex:
+\exitem{a} Show that if $p\bmod4=3$, there is no integer $n$ such that
+$p$ divides $n^2+1$. \Hint: Use "Fermat's theorem".
+\itemitem{b} But show that if $p\bmod4=1$, there is such an integer.
+\Hint: Write $(p-1)!$ as $\bigl(\prod_{k=1}^{(p-1)/2}k(p-k)\bigr)$
+and think about Wilson's theorem.
+\answer (a)~If $n^2\=-1$ \tmod p then $(n^2)^{(p-1)/2}\=-1$; but
+Fermat says it's $+1$. (b)~Let $n=\bigl((p-1)/2\bigr)!$; we have
+$n\=(-1)^{(p-1)/2}\prod_{1\le k<p/2}(p-k)=(p-1)!/n$, hence $n^2\=(p-1)!$.
+\source{"Legendre" [|legendre-theorie|, \S135];
+"Hardy" and "Wright"~[|hardy-wright|, theorem 82].}
+
+\ex:
+Consider two fractions $m/n$ and $m'/n'$ in lowest terms. Prove that when
+the sum $m/n+m'/n'$ is reduced to lowest terms, the denominator will be $nn'$
+if and only if $n\rp n'$. (In other words, $(mn'+m'n)/nn'$ will already be in
+lowest terms if and only if $n$ and~$n'$ have no common factor.)
+\answer First we observe that $k\rp l\iff k\rp l+ak$ for any integer~$a$,
+since $\gcd(k,l)=\gcd(k,l+ak)$ by Euclid's algorithm. Now
+\begindisplay \thickmuskip=4mu
+m\rp n \And n'\rp n\quad&\iff\quad mn'\rp n\cr
+&\iff\quad mn'+nm'\rp n\,.
+\enddisplay
+Similarly
+\begindisplay \thickmuskip=4mu
+m'\rp n' \And  n\rp n'\quad\iff\quad mn'+nm'\rp n'\,.
+\enddisplay
+Hence
+\begindisplay \thickmuskip=4mu
+m\rp n\!\And\!m'\rp n'\!\And\!n\rp n'\iff mn'{+}nm'\rp nn'\,.
+\enddisplay
+\source{[|knuth2|, exercise 4.5.1--6].}
+
+\ex:
+There are $2^k$ nodes at level $k$ of the Stern--Brocot tree, corresponding
+to the matrices $L^k$, $L^{k-1}R$, \dots,~$R^k$. Show that this sequence
+can be obtained by starting with $L^k$ and then multiplying
+successively by
+\begindisplay
+\pmatrix{0&-1\cr 1&2\rho(n)+1\cr}
+\enddisplay
+for $1\le n<2^k$, where $\rho(n)$ is the ruler function.
+\answer We want to multiply by $L^{-1}R$, then by $R^{-1}L^{-1}RL$, then
+$L^{-1}R$, then $R^{-2}L^{-1}RL^2$, etc.; the $n$th multiplier is
+$R^{-\rho(n)}L^{-1}RL^{\rho(n)}$, since we must cancel $\rho(n)$ $R$'s.
+And $R^{-m}L^{-1}RL^m=\setmathsize{\scriptstyle 2m+1}
+{0\,\mathsize{\scriptstyle\hfil-1}\choose1\,2m+1}$.
+
+\ex:
+\g\vskip-.3in Radio announcer:"!baseball"\smallskip
+``\dots\ pitcher Mark "LeChiffre" hits a two-run single! Mark, who was batting
+.080, gets his second hit of the~year.''\smallskip
+Anything wrong?\g % That's Mark Well LeChiffre (note the digits carefully)
+Prove that a "baseball" player whose batting average is $.316$ must have
+batted at least 19~times. (If he has $m$ hits in $n$ times at bat,
+then $m/n\in[@0.3155\dts0.3165)$.)
+\answer We can find the simplest rational number that lies in
+\g\leftskip=0pt plus 1fil \rightskip=\leftskip
+\parfillskip=0pt
+\vskip20pt\noindent
+\vbox{\hrule\hbox{\vrule height 10pt depth 3pt\kern3pt John .316\/\kern3pt
+ \vrule}\hrule}\smallskip
+\rightskip=0pt
+\dash---banner displayed during the 1993 World Series,\par
+when John "Kruk" came to bat.\g
+\begindisplay
+\textstyle[@0.3155\dts0.3165)=\bigl[{631\over2000}\dts{633\over2000}\bigr)
+\enddisplay
+by looking at
+the "Stern--Brocot representation"s of $631\over2000$ and $633\over2000$
+and stopping just before the former has~$L$ where the latter has~$R$:
+\begindisplay
+&(m_1,n_1,m_2,n_2):=(631,2000,633,2000);\hidewidth\cr
+&\hbox{{\bf while} \ $m_1>n_1$ \ {\bf or} \ $m_2<n_2$ \ {\bf do}}\hidewidth\cr
+&\quad\hbox{\bf if} \ m_2<n_2 \ &\hbox{\bf then} \ &\bigl(\hbox{output}(L); \
+(n_1,n_2):=(n_1,n_2)-(m_1,m_2)\bigr)\cr
+&&\hbox{\bf else} \ &\bigl(\hbox{output}(R); \
+(m_1,m_2):=(m_1,m_2)-(n_1,n_2)\bigr)\,.\cr
+\enddisplay
+The output is $LLLRRRRR={6\over19}\approx.3158$. Incidentally, an
+average of $.334$ implies at least 287 at bats.
+\source{[|knuth2|, exercise 4.5.3--39].}
+
+\ex:
+The number $9376$ has the peculiar self-reproducing property that
+\begindisplay
+9376^2=87909376\,.
+\enddisplay
+How many $4$-digit numbers~$x$ satisfy the equation
+$x^2\bmod10000=x$? How many $n$-digit numbers~$x$ satisfy the equation
+$x^2\bmod10^n=x$?
+\answer $x^2\=x$ \tmod{10^n} $\iff$ $x(x-1)\=0$ \tmod{2^n} and
+$x(x-1)\=0$ \tmod{5^n} $\iff$ $x\bmod2^n=[@0\,{\rm or}\,1]$ and
+$x\bmod5^n=[@0\,{\rm or}\,1]$. (The last step is justified because
+$x(x-1)\bmod5=0$ implies that either $x$ or~$x-1$ is a multiple of~$5$,
+in which case the other factor is relatively prime to $5^n$ and can
+be divided from the congruence.)\par
+So there are at most four solutions, of which two ($x=0$ and $x=1$)
+don't qualify for the title ``$n$-digit number'' unless $n=1$.
+The other two solutions have the forms $x$ and $10^n+1-x$, and at
+least one of these numbers is $\ge10^{n-1}$.
+ When $n=4$ the other solution,
+ $10001-9376=625$, is not a four-digit number. We expect to get two
+$n$-digit solutions for about 90\% of all~$n$, but this conjecture
+has not been proved.
+\par (Such self-reproducing numbers "!automorphic numbers"
+have been called ``automorphic.'')
+\source{[|knuth2|, exercise 4.3.2--13].}
+
+\ex:\exref|order-mod-n|%
+\exitem{a}Prove that if $n^j\=1$ and $n^k\=1$ \tmod m, then $n^{\gcd(j,k)}\=1$.
+\itemitem{b}Show that $2^n\not\=1$ \tmod n, if $n>1$. \Hint: Consider the
+least prime factor of~$n$.
+\answer (a) If $j'j-k'k=\gcd(j,k)$, we have $n^{k'k}n^{\gcd(j,k)}=n^{j'j}\=1$
+and $n^{k'k}\=1$. (b)~Let $n=pq$, where $p$ is the smallest prime
+divisor of~$n$.
+If $2^n\=1$ \tmod n then $2^n\=1$ \tmod p. Also $2^{p-1}\=1$ \tmod p; hence
+$2^{\gcd(p-1,n)}\=1$ \tmod p. But $\gcd(p-1,n)=1$ by the definition of~$p$.
+
+\ex:\exref|fermat-converse|%
+Show that if $n^{m-1}\=1$ \tmod m and if $n^{(m-1)/p}\not\=1$
+\tmod m for all primes such that $p\divides(m-1)$, then $m$ is prime.
+"!Fermat theorem, converse"
+\Hint: Show that if this condition holds, the numbers $n^k\bmod m$
+are distinct, for $1\le k<m$.
+\answer If $n^{m-1}\=1$ \tmod m we must have $n\rp m$. If
+$n^k\=n^j$ for some $1\le j<k<m$, then $n^{k-j}\=1$ because we can
+divide by~$n^j$. Therefore if the numbers $n^1\bmod m$, \dots,
+$n^{m-1}\bmod m$ are not distinct, there is a $k<m-1$ with $n^k\=1$.
+The least such $k$ divides $m-1$, by exercise |order-mod-n|(a).
+But then $kq=(m-1)/p$ for some prime~$p$ and some positive integer~$q$;
+this is impossible, since $n^{kq}\not\=1$. Therefore the numbers
+$n^1\bmod m$, \dots, $n^{m-1}\bmod m$ are distinct and relatively prime to~$m$.
+Therefore the numbers $1$, \dots,~$m-1$ are relatively prime to~$m$,
+and $m$ must be prime.
+\source{"Lehmer" [|lehmer-primality|].}
+
+\ex:
+Generalize "Wilson's theorem" \eq(|wilson-theorem|) by ascertaining the value of
+the expression $\bigl(\prod_{1\le n<m,\,n\rp m}n\bigr)\bmod m$, when $m>1$.
+\answer By pairing numbers up with their inverses, we can reduce
+the product (mod~$m$) to
+$\prod_{1\le n<m,\,n^2\bmod m=1}n$. Now we can use our knowledge of the
+solutions to $n^2\bmod@ m=1$. By residue arithmetic we find that the
+result is $m-1$ if $m=4$, $p^k$, or $2p^k$ ($p>2$); otherwise it's~$+1$.
+\source{"Gauss" [|gauss-disq|, \S78]; "Crelle" [|crelle|].}
+
+\ex:
+Let $R(N)$ be the number of pairs of integers $(m,n)$ such that
+$0\le m<N$, $0\le n<N$, and $m\rp n$.
+\itemitem{a} Express $R(N)$ in terms of the $\Phi$ function.
+\itemitem{b} Prove that $R(N)=\sum_{d\ge 1}\lfloor N/d\rfloor^2\mu(d)$.
+\answer (a) Either $m<n$ ($\Phi(N-1)$ cases) or $m=n$ (one case) or
+$m>n$ ($\Phi(N-1)$ again). Hence $R(N)=2\Phi(N-1)+1$.
+(b)~From \equ(4.|bigphi-gen|) we get
+\begindisplay
+2\Phi(N-1)+1=1+\sum_{d\ge1}\mu(d)\lfloor N/d\rfloor\lfloor N/d-1\rfloor\,;
+\enddisplay
+hence the stated result holds if and only if
+\begindisplay
+\sum_{d\ge1}\mu(d)\lfloor N/d\rfloor=1\,,\qquad\hbox{for $N\ge1$}.
+\enddisplay
+And this is a special case of \equ(4.|mobius-real-inversion|) if we
+set $f(x)=\[x\ge1]$.
+
+\ex:\exref|cyclotomic|%
+Let $m$ be a positive integer and let
+\begindisplay
+\omega=e^{2\pi i/m}=
+\cos(2\pi/m)+i\sin(2\pi/m)\,.
+\enddisplay
+We say that $\omega$ is an $m$th {\it"root of unity"},
+\g What are the roots of disunity?\g
+since $\omega^m=e^{2\pi i}=1$. In fact, each of
+the $m$ complex numbers
+$\omega^0$, $\omega^1$, \dots,~$\omega^{m-1}$ is an $m$th root of
+unity, because $(\omega^k)^m=e^{2\pi ki}=1$; therefore $z-\omega^k$
+is a factor of the polynomial $z^m-1$, for $0\le k<m$. Since these
+factors are distinct, the complete factorization of $z^m-1$ over
+the complex numbers must be
+\begindisplay
+z^m-1=\prod_{0\le k<m}(z-\omega^k)\,.
+\enddisplay
+\itemitem{a} Let $\Psi_m(z)=\prod_{0\le k<m,\,k\rp m}(z-\omega^k)$.
+(This polynomial of degree $\varphi(m)$ is called the {\it"cyclotomic
+polynomial" of order\/~$m$}.) Prove that
+\begindisplay
+z^m-1=\prod_{d\divides m}\Psi_d(z)\,.
+\enddisplay
+\itemitem{b} Prove that $\Psi_m(z)=\prod_{d\divides m}(z^d-1)^{\mu(m/d)}$.
+\answer (a) If $f$ is any function,
+\begindisplay \openup3pt
+\sum_{0\le k<m}f(k)
+&=\sum_{d\divides m}\,\sum_{0\le k<m}f(k)\bigi[d=\gcd(k,m)\bigr]\cr
+&=\sum_{d\divides m}\,\sum_{0\le k<m}f(k)\bigi[k/d\rp m/d\bigr]\cr
+&=\sum_{d\divides m}\,\sum_{0\le k<m/d}f(kd)\bigi[k\rp m/d\bigr]\cr
+&=\sum_{d\divides m}\,\sum_{0\le k<d}f(km/d)\bigi[k\rp d\bigr]\,;\cr
+\enddisplay
+we saw a special
+case of this in the derivation of \equ(4.|necklaces|). An analogous derivation
+holds for $\prod$ instead of~$\sum$. Thus we have
+\begindisplay \advance\belowdisplayskip-4pt \postdisplaypenalty=10000
+z^m-1=\prod_{0\le k<m}(z-\omega^k)=\prod_{d\divides m}\,
+ \prod\twoconditions{0\le k<d}{k\rp d}(z-\omega^{km/d})
+ =\prod_{d\divides m}\Psi_d(z)
+\enddisplay
+because $\omega^{m/d}=e^{2\pi i/d}$.\par
+Part (b) follows from part (a) by the analog of \equ(4.|mobius-inversion|)
+for products instead of sums. Incidentally, this formula shows that
+$\Psi_m(z)$ has integer coefficients, since $\Psi_m(z)$ is obtained
+by multiplying and dividing polynomials whose leading coefficient is~$1$.
+
+\subhead Exam problems
+
+\ex: Prove "Fermat's theorem" \eq(|alt-fermat-theorem|) by
+expanding $(1+1+\cdots+1)^p$ via the multinomial theorem.
+\answer $(x_1+\cdots+x_n)^p=\sum_{k_1+\cdots+k_n=p}p!/(k_1!\ldots k_n!)
+x_1^{k_1}\ldots x_n^{k_n}$, and the coefficient is divisible by~$p$
+unless some $k_j=p$. Hence $(x_1+\cdots+x_n)^p\=x_1^p+\cdots+x_n^p$
+\tmod p. Now we can set all the $x$'s to $1$, obtaining $n^p\=n$.
+
+\ex:
+Let $n$ and $x$ be positive integers such that $x$ has no
+divisors $\le n$ (except~$1$), and let $p$~be a prime number.
+Prove that at least $\lfloor n/p\rfloor$ of the numbers
+$\{x-1,x^2-1,\ldots,x^{n-1}-1\}$ are multiples of~$p$.
+\answer If $p>n$ there is nothing to prove. Otherwise $x\rp p$,
+so $x^{k(p-1)}\=1$ \tmod p; this means that at least
+$\bigl\lfloor(n-1)/(p-1)\bigr\rfloor$ of the given numbers are
+multiples of~$p$. And $(n-1)/(p-1)\ge n/p$ since $n\ge p$.
+\source{1974 midterm.}
+
+\ex: Find all positive integers $n$ such that $n\bigm\backslash
+\bigl\lfloor(n-1)!/(n+1)\bigr\rfloor$.
+\answer\g\noindent\llap{``}Die ganzen Zahlen hat der liebe Gott gemacht,
+alles andere ist\par Menschenwerk.''\par\hfill\hskip0pt minus3pt
+\dash---L.\thinspace"Kronecker"~[|weber|]\looseness=-1\g
+ First show that if $m\ge6$ and $m$ is not prime then $(m-2)!
+\=0$ \tmod m. (If $m=p^2$, the product for $(m-2)!$ includes $p$ and $2p$;
+otherwise it includes $d$ and $m/d$ where $d<m/d$.) Next consider cases:
+\par Case 0, $n<5$. The condition holds for $n=1$ only.
+\par Case 1, $n\ge5$ and $n$ is prime. Then
+$(n-1)!/(n+1)$ is an integer and it can't be a multiple of~$n$.
+\par Case 2, $n\ge5$, $n$ is composite, and $n+1$ is composite. Then
+$n$ and $n+1$ divide $(n-1)!$, and $n\rp n+1$; hence $n(n+1)\divides
+(n-1)!$.
+\par Case 3, $n\ge5$, $n$ is composite, and $n+1$ is prime. Then $(n-1)!
+\=1$ \tmod{n+1} by Wilson's theorem, and
+\begindisplay
+\bigl\lfloor(n-1)!/(n+1)\bigr\rfloor=\bigl((n-1)!+n\bigr)/(n+1)\,;
+\enddisplay
+this is divisible by~$n$.
+\par Therefore the answer is: Either $n=1$ or $n\ne4$ is composite.
+\source{1973 midterm, inspired by "Rao" [|d-r-rao|].}
+
+\ex:
+Determine the value of $1000!\bmod10^{250}$ by hand calculation.
+\answer $\epsilon_2(1000!)>500$ and $\epsilon_5(1000!)=249$, hence
+$1000!=a\cdt10^{249}$ for some even integer~$a$.
+Since $1000=(1300)_5$, exercise |factorial-residue| tells us that
+$a\cdt2^{249}=1000!/5^{249}\=-1$ \tmod5.
+Also $2^{249}\=2$, hence $a\=2$, hence $a\bmod10=2$ or~$7$;
+hence the answer is $2\cdt10^{249}$.
+\source{1974 midterm.}
+
+\ex:\exref|superfactorial-factors|%
+Let $P_n$ be the product of the first $n$ factorials, $\prod_{k=1}^nk!$.
+Prove that $P_{2n}/P_n^4$ is an integer, for all positive integers~$n$.
+\answer One way is to prove by induction that $P_{2n}/P_n^4(n+1)$
+is an integer; this stronger result helps the induction go through.
+Another way is based on showing that each prime~$p$ divides the numerator
+at least as often as it divides the denominator. This reduces to
+proving the inequality
+\begindisplay
+\sum_{k=1}^{2n}\lfloor k/m\rfloor\ge4\sum_{k=1}^n\lfloor k/m\rfloor\,,
+\enddisplay
+which follows from
+\begindisplay
+\bigl\lfloor(2n-1)/m\bigr\rfloor+\bigl\lfloor 2n/m\bigr\rfloor
+ \ge\lfloor n/m\rfloor\,.
+\enddisplay
+The latter is true when $0\le n<m$, and both sides increase by~$4$ when
+$n$ is increased by~$m$.
+
+\ex:
+Show that
+\begindisplay
+\biggl(@\prod_{k=1}^{2n-1}k^{\min(k,\,2n-k)}\biggr)\bigg/
+ \biggl(\mskip2mu\prod_{k=1}^{n-1}(2k+1)^{2n-2k-1}\biggr)
+\enddisplay
+is a power of~$2$.
+\answer Let $f(m)=\sum_{k=1}^{2n-1}\min(k,2n{-}k)\[m\divides k]$, \
+$g(m)=\sum_{k=1}^{n-1}{(2n{-}2k{-}1)}\*\bigi[m\divides(2k+1)\bigr]$. The number
+of times $p$ divides the numerator of the stated product is $f(p)+f(p^2)+
+f(p^3)+\cdots\,$, and the number of times $p$ divides the denominator is
+$g(p)+g(p^2)+g(p^3)+\cdots\,$. But $f(m)=g(m)$ whenever $m$ is odd, by
+exercise 2.|dotminus-cancellation|. The stated product therefore
+reduces to $2^{n(n-1)}$, by exercise 3.|2-power-floors|.
+\source{"Logan" [|logan-orth|, eq.~(6.15)].}
+
+\ex: Let $S(m,n)$ be the set of all integers $k$ such that
+\begindisplay
+m\bmod k+n\bmod k\ge k\,.
+\enddisplay
+For example, $S(7,9)=\{2,4,5,8,10,11,12,13,14,15,16\}$.
+Prove that
+\begindisplay
+\sum_{k\in S(m,n)}\varphi(k)=mn\,.
+\enddisplay
+\Hint: Prove first that
+$\sum_{1\le m\le n}\sum_{d\divides m}\varphi(d)=\sum_{d\ge1}\varphi(d)\lfloor
+n/d\rfloor$. Then consider $\lfloor(m+n)/d\rfloor-\lfloor m/d\rfloor
+-\lfloor n/d\rfloor$.
+\answer The hint suggests a standard interchange of summation, since
+\begindisplay
+\sum_{1\le m\le n}\[d\divides m]=\sum_{0<k\le n/d}\[m=dk]=\lfloor n/d\rfloor\,.
+\enddisplay
+Calling the hinted sum $\Sigma(n)$, we have
+\begindisplay
+\Sigma(m+n)-\Sigma(m)-\Sigma(n)
+=\sum_{d\in S(m,n)}\varphi(d)\,.
+\enddisplay
+On the other hand, we know from \equ(4.|phi-sum|) that
+$\Sigma(n)=\half n(n+1)$. Hence $\Sigma(m+n)-\Sigma(m)-\Sigma(n)=mn$.
+\source{A special case appears in [|amm-phi-problem|].}
+
+\ex:
+Let $f(m)=\sum_{d\divides m}d$.
+Find a necessary and sufficient condition that $f(m)$ is a power of~$2$.
+\answer The function $f(m)$ is multiplicative, and when $m=p^k$
+it equals $1+p+\cdots+p^k$. This is a power of~$2$ if and only if
+$p$ is a "Mersenne prime" and $k=1$. For $k$ must be odd, and in that case
+the sum is
+\begindisplay
+(1+p)(1+p^2+p^4+\cdots+p^{k-1})
+\enddisplay
+and $(k-1)/2$ must be odd, etc.
+The necessary and sufficient condition is that $m$ be a product of
+distinct Mersenne primes.
+\source{"Sierpi\'nski" [|sierpinski-2|].}
+
+\subhead Bonus problems
+
+\ex:
+Prove that if $x_1$, \dots, $x_n$ are positive integers with
+$1/x_1+\cdots+1/x_n=1$, then $\max(x_1,\ldots,x_n)<e_n$.
+\Hint: Prove the following stronger result by induction: ``If $1/x_1+
+\cdots+1/x_n+1/\alpha=1$, where $x_1$, \dots,~$x_n$ are positive integers
+and $\alpha$ is a rational number $\ge\max(x_1,\ldots,x_n)$, then
+$\alpha+1\le e_{n+1}$ and $x_1\ldots x_n(\alpha+1)\le e_1\ldots e_ne_{n+1}$.''
+(The proof is nontrivial.)
+\answer Proof of the hint: If $n=1$ we have $x_1=\alpha=2$, so there's no problem.
+If $n>1$ we can assume that $x_1\le\cdots\le x_n$. Case~1: $x_1^{-1}+\cdots
++x_{n-1}^{-1}+(x_n-1)^{-1}\ge1$ and $x_n>x_{n-1}$. Then we can find $\beta
+\ge x_n-1\ge x_{n-1}$ such that $x_1^{-1}+\cdots+x_{n-1}^{-1}+\beta^{-1}=1$;
+hence $x_n\le\beta+1\le e_n$ and $x_1\ldots x_n\le x_1\ldots x_{n-1}(\beta+1)
+\le e_1\ldots e_n$, by induction. There is a positive integer~$m$ such that
+$\alpha=x_1\ldots x_n/m$; hence $\alpha\le e_1\ldots e_n=e_{n+1}-1$,
+and we have $x_1\ldots x_n(\alpha+1)\le e_1\ldots e_ne_{n+1}$. Case~2:
+$x_1^{-1}+\cdots+x_{n-1}^{-1}+(x_n-1)^{-1}\ge1$ and $x_n=x_{n-1}$.
+Let $a=x_n$ and $a^{-1}+(a-1)^{-1}=(a-2)^{-1}+\zeta^{-1}$. Then we can
+show that $a\ge4$ and $(a-2)(\zeta+1)\ge a^2$. So there's a $\beta\ge\zeta$
+such that $x_1^{-1}+\cdots+x_{n-2}^{-1}+(a-2)^{-1}+\beta^{-1}=1$; it
+follows by induction that $x_1\ldots x_n\le x_1\ldots x_{n-2}(a-2)(\zeta+1)
+\le x_1\ldots x_{n-2}(a-2)(\beta+1)\le e_1\ldots e_n$, and we can finish
+as before. Case~3: $x_1^{-1}+\cdots+x_{n-1}^{-1}+(x_n-1)^{-1}<1$.
+Let $a=x_n$, and let $a^{-1}+\alpha^{-1}=(a-1)^{-1}+\beta^{-1}$. It can
+be shown that $(a-1)(\beta+1)>a(\alpha+1)$, because this identity is
+equivalent to
+\begindisplay
+a\alpha^2-a^2\alpha+a\alpha-a^2+\alpha+a>0\,,
+\enddisplay
+which is a consequence of $a\alpha(\alpha-a)+(1+a)\alpha\ge(1+a)\alpha>a^2-a$.
+Hence we can replace $x_n$ and~$\alpha$ by $a-1$ and~$\beta$, repeating this
+transformation until cases 1 or~2 apply.\par
+Another consequence of the hint is that
+$1/x_1+\cdots+1/x_n<1$ implies
+$1/x_1+\cdots+1/x_n\le1/e_1+\cdots+1/e_n$; see exercise |recip-euclid|.
+\source{"Curtiss" [|curtiss|]; "Erd\H os" [|erdos-curtiss|].}
+
+\ex:\exref|mills-proof|%
+Prove that there's a constant $P$ such that \eq(|mills-primes|) gives only
+primes. You may use the following (highly nontrivial) fact: There is
+a prime between $p$ and $p+p^\theta$, for all sufficiently large~$p$,
+if $\theta>{6\over11}$.
+\answer The main point is that $\theta<{2\over3}$. Then we can take
+$p_1$ sufficiently large (to meet the conditions below) and $p_n$ to
+be the least prime greater than $p_{n-1}^3$. With this definition let
+$a_n=3^{-n}\ln p_n$ and $b_n=3^{-n}\ln(p_n+1)$. If we can show that
+$a_{n-1}\le a_n<b_n\le b_{n-1}$, we can take $P=\lim_{n\to\infty}e^{a_n}$
+as in exercise~|euclid-sol-proof|. But this hypothesis is equivalent to
+$p_{n-1}^3\le p_n<(p_{n-1}+1)^3$. If there's no prime $p_n$ in this
+\g\noindent\llap{``}Man made\par the integers:\par
+ All else is\par "Dieudonn\'e".''\par\hfill\dash---R.\thinspace K. "Guy"\g
+range, there must be a prime~$p<p_{n-1}^3$ such that $p+cp^\theta>
+(p_{n-1}+1)^3$. But this implies that $cp^\theta>3p^{2/3}$, which is
+impossible when $p$~is sufficiently large.\par
+We can almost certainly take $p_1=2$, since all available evidence
+indicates that the known bounds on gaps between primes are much
+weaker than the truth (see exercise |prime-gaps|). Then $p_2=11$,
+$p_3=1361$, $p_4=2521008887$, and $1.306377883863<P<1.306377883869$.
+\source{"Mills" [|mills|].}
+
+\ex:\exref|farey3|%
+Prove that if $m/n$, $m'/n'$, and $m''/n''$ are
+"!Farey series"
+consecutive elements of $\Fscr_N$, then
+\begindisplay \advance\abovedisplayskip-3pt
+m''&=\bigl\lfloor(n+N)/n'\bigr\rfloor m'-m\,,\cr
+n''&=\bigl\lfloor(n+N)/n'\bigr\rfloor n'-n\,.\cr
+\enddisplay
+(This recurrence allows us to compute the elements of
+$\Fscr_N$ in order, starting with ${0\over1}$ and ${1\over N}$.)
+\answer Let $\hat m$ and $\hat n$ be the right-hand sides; observe that
+$\hat mn'-m'\hat n=1$, hence $\hat m\rp\hat n$. Also $\hat m/\hat n>
+m'/n'$ and $N=\bigl((n+N)/n'\bigr)n'-n\ge\hat n>\bigl((n+N)/n'-1\bigr)n'-n
+=N-n'\ge0$.
+So we have $\hat m/\hat n\ge m''/n''$. If equality doesn't hold, we have
+$n''=(\hat mn'-m'\hat n)n''=n'(\hat mn''-m''\hat n)+\hat n(m''n'-m'n'')
+\ge n'+\hat n>N$, a contradiction.\par
+Incidentally, this exercise implies that $(m+m'')/(n+n'')=m'/n'$, although
+the former fraction is not always reduced.
+\source{[|knuth1|, exercise 1.3.2--19].}
+
+\ex:
+What binary number corresponds to~$e$, in the binary $\leftrightarrow$
+Stern--Brocot correspondence? (Express your answer as an infinite sum;
+you need not evaluate it in closed form.)
+\answer \def\\#1 {2^{-#1}}$\\1 +\\2 +\\3 -\\6 -\\7 +\\12 +\\13 -\\20
+-\\21 +\\30 +\\31 -\\42 -\\43 +\cdots\,$ can be written
+\begindisplay
+\half+3\sum_{k\ge0}\bigl(2^{-4k^2-6k-3}-2^{-4k^2-10k-7}\bigr)\,.
+\enddisplay
+This sum, incidentally, can be expressed in closed form using the ``"theta
+function"'' $\theta(z,\lambda)=\sum_ke^{-\pi\lambda k^2+2izk}$; we have
+\begindisplay
+\textstyle e\;\leftrightarrow\;\half+{3\over8}\theta({4\over\pi}\ln 2,\,
+3i\ln 2)-{3\over128}\theta({4\over\pi}\ln 2,\,5i\ln 2)\,.
+\enddisplay
+
+\ex:
+Using only the methods of this chapter,
+show that if "Fermat's Last Theorem" \eq(|fermat-last|) were false,
+the least $n$ for which it fails would have to be prime. (You may assume that
+\eq(|fermat-last|) holds when $n=4$.) Furthermore, if $a^p+b^p=c^p$
+is the smallest counterexample, show that
+\begindisplay \postdisplaypenalty=10000
+a+b=\cases{m^p,&if $p\ndivides c$,\cr
+\noalign{\smallskip}
+	p^{p-1}m^p,&if $p\divides c$,\cr}
+\enddisplay
+for some integer $m$.
+Thus $c\ge m^p\!/2$ must be really huge.
+\Hint: Let $x=a+b$, and note that
+$\gcd\bigl(x,(a^p+(x-a)^p)/x\bigr)=\gcd(x,pa^{p-1})$.
+\answer Any $n>2$ either has a prime divisor $d$ or is divisible
+by $d=4$. In either case, a solution with exponent~$n$ implies
+\g I have discovered a wonderful proof of Fermat's Last Theorem,
+but there's no room for it here.\g
+a solution $(a^{n/d})^d+(b^{n/d})^d=(c^{n/d})^d$
+with exponent~$d$. Since $d=4$ has no solutions, $d$~must be prime.
+\par The hint follows from the binomial theorem, since $(a^p+(x-a)^p)/x\=
+pa^{p-1}$ (mod~$x$) when $p$ is odd. The smallest counterexample,
+if \equ(4.|fermat-last|) fails, has $a\rp x$. If $x$ is not
+divisible by~$p$ then $x$ is relatively prime to $c^p\!/x$; this means that
+whenever $q$ is prime and $q^e\edivides x$ and $q^f\edivides c$, we have
+$e=fp$. Hence $x=m^p$ for some~$m$. On the other hand
+if $x$ is divisible by~$p$, then $c^p\!/x$ is divisible
+by $p$ but not by $p^2$, and $c^p$ has no other factors in common with~$x$.
+\source{"Barlow" [|barlow|]; "Abel" [|abel|].}
+
+\ex:
+The {\it "Peirce sequence"\/ $\Pscr_N$ of order\/ $N$} is an infinite
+string of fractions separated by `$<$' or `$=$' signs, containing all
+the nonnegative fractions $m/n$ with $m\ge0$ and $n\le N$ (including
+fractions that are not reduced). It is defined recursively by starting
+with
+\begindisplay \def\\#1{{#1\over1}{<}}
+\Pscr_1=\textstyle
+\\0\\1\\2\\3\\4\\5\\6\\7\\8\\9\\{10}\cdots\,.
+\enddisplay
+For $N\ge1$, we form $\Pscr_{N+1}$ by inserting two symbols just
+before the $kN$th symbol of $\Pscr_N$, for all $k>0$. The two inserted
+symbols are
+\begindisplay
+&{k-1\over N+1}\quad=\,\,,\qquad&\hbox{if $kN$ is odd};\cr
+&\Pscr_{N,kN}\quad{k-1\over N+1}\,,\qquad&\hbox{if $kN$ is even}.\cr
+\enddisplay
+Here $\Pscr_{N,j}$ denotes the $j$th symbol of $\Pscr_N$, which
+will be either `$<$' or `$=$' when $j$ is even; it will be a fraction
+when $j$ is odd. For example,
+\begindisplay \def\\#1#2#3{{#1\over#2}{#3}} \openup2pt
+&\textstyle\Pscr_2\!=\!
+\\02=\\01<\\12<\\22=\\11<\\32<\\42=\\21<\\52<\\62=\\31<\\72<\\82=\\41<\\92<
+ \\{10}2=\\51<\cdots\,;\cr
+&\textstyle\Pscr_3\!=\!
+\\02=\\03=\\01<\\13<\\12<\\23<\\22=\\33=\\11<\\43<\\32<\\53<\\42=\\63=\\21<
+ \\73<\\52<\cdots\,;\cr
+&\textstyle\Pscr_4\!=\!
+\\02=\\04=\\03=\\01<\\14<\\13<\\24=\\12<\\23<\\34<\\22=\\44=\\33=\\11<\\54<
+ \\43<\\64=\cdots\,;\cr
+&\textstyle\Pscr_5\!=\!
+\\02=\\04=\\05=\\03=\\01<\\15<\\14<\\13<\\25<\\24=\\12<\\25<\\23<\\34<\\45<
+ \\22=\\44=\cdots\,;\cr
+&\textstyle\Pscr_6\!=\!
+\\02=\\04=\\06=\\05=\\03=\\01<\\16<\\15<\\14<\\26=\\13<\\25<\\24=\\36=\\12<
+ \\35<\\46=\cdots\,.\cr
+\enddisplay
+(Equal elements occur in a slightly peculiar order.)  Prove that the `$<$'
+and `$=$' signs defined by the rules above correctly describe the
+relations between adjacent fractions in the Peirce sequence.
+\answer Equal fractions in $\Pscr_N$ appear in
+``"organ-pipe order"'':
+\begindisplay \def\\#1{{#1m\over#1n}}
+\\2,\,\\4,\,\ldots,\,\\r,\,\ldots,\,\\3,\,\\{}\,.
+\enddisplay
+Suppose that $\Pscr_N$ is correct; we want to prove that $\Pscr_{N+1}$ is
+correct. This means that if $kN$ is odd, we want to show that
+\begindisplay
+{k-1\over N+1}=\Pscr_{N,kN}\,;
+\enddisplay
+if $kN$ is even, we want to show that
+\begindisplay
+\Pscr_{N,kN-1}\;\Pscr_{N,kN}\;{k-1\over N+1}\;\Pscr_{N,kN}\;\Pscr_{N,kN+1}\,.
+\enddisplay
+In both cases it will be helpful to know the number of fractions that
+are strictly less than $(k-1)/(N+1)$
+in $\Pscr_N$; this is
+\begindisplay
+\sum_{n=1}^N\sum_m\Bigi[\displaystyle0\le{m\over n}<{k-1\over N+1}\Bigr]
+&=\sum_{n=1}^N\biggl\lceil{(k-1)n\over N+1}\biggr\rceil
+ =\sum_{n=0}^N\biggl\lfloor{(k-1)n+N\over N+1}\biggr\rfloor\cr
+&={(k-2)N\over2}+{d-1\over2}+d\left\lfloor N\over d\right\rfloor\cr
+\enddisplay
+by \equ(3.|f-progression|), where $d=\gcd(k-1,N+1)$. And this reduces
+to $\half(kN-d+1)$, since $N\bmod d=d-1$.\par
+Furthermore, the number of fractions equal to $(k-1)/(N+1)$ in
+$\Pscr_N$ that should precede it in $\Pscr_{N+1}$ is
+$\half\bigl(d-1-\[\hbox{$d$~even}]\bigr)$, by the nature of organ-pipe order.
+\par If $kN$ is odd, then $d$ is even and $(k-1)/(N+1)$ is preceded by
+$\half(kN-1)$ elements of $\Pscr_N$; this is just the correct
+number to make things
+work. If $kN$ is even, then $d$ is odd and $(k-1)/(N+1)$ is preceded by
+$\half(kN)$ elements of~$\Pscr_N$. If $d=1$, none of these equals $(k-1)/(N+1)$
+and $\Pscr_{N,kN}$ is `$<$'; otherwise $(k-1)/(N+1)$ falls between two
+equal elements and $\Pscr_{N,kN}$ is `$=$'.
+(C.\thinspace S. "Peirce" [|peirce-tree|] independently discovered
+the "Stern--Brocot tree" at about the same time as he discovered
+$\Pscr_N$.)
+\source{"Peirce" [|peirce-seq|].}
+
+\subhead Research problems
+
+\ex:
+Are the "Euclid numbers" $e_n$ all "squarefree"?
+\answer The analogous question for the (analogous) Fermat numbers $f_n$
+\g\noindent\llap{``}No square less than $25\times10^{14}$ divides a Euclid number.''\par
+\hfill\dash---Ilan "Vardi"\g
+is a famous unsolved problem. This one might be easier or harder.
+
+\ex:
+Are the "Mersenne numbers" $2^p-1$ all "squarefree"?
+\answer It is known that no square less than $36\times10^{18}$ divides
+a Mersenne number or Fermat number.
+But there has still been no proof of "Schinzel"'s
+conjecture that there exist infinitely many squarefree Mersenne numbers.
+It is not even known if there are infinitely many~$p$ such that
+$p\edivides(a\pm b)$, where all prime factors of $a$ and~$b$ are~$\le31$.
+\source{"Ribenboim" [|ribenboim|];
+ "Sierpi\'nski"~[|sierpinski-probs|, problem $\rm P_{10}^2$].}
+
+\ex:
+Prove or disprove that $\max_{1\le j<k\le n}a_k/\!\gcd(a_j,a_k)\ge n$,
+for all sequences of integers $0<a_1<\cdots<a_n$.
+\answer M. "Szegedy" has proved this conjecture for all large~$n$;
+see [|szegedy|], [|erdos-graham|, pp.~78--79], and~[|chaimovich-et-al|].
+\source{[|graham-amm|].}
+
+\ex:\exref|prime-gaps-weak|%
+Is there a constant $Q$ such that $\lfloor Q^{2^n}\rfloor$
+is prime for all $n\ge0$?
+\answer This is a much weaker conjecture than the result in the
+following exercise.
+
+\ex:\exref|prime-gaps|%
+Let $P_n$ denote the $n$th prime. Prove or disprove that $P_{n+1}-P_n=
+O(\log P_n)^2$.
+\answer "Cram\'er" [|cramer|] showed that this conjecture is plausible on
+probabilistic grounds, and computational experience bears this out:
+"Brent"~[|brent-gaps|] has shown that $P_{n+1}-P_n\le602$ for
+$P_{n+1}<2.686\times10^{12}$. But the much weaker bounds in
+exercise~|mills-proof| are the best that have been published
+so far~[|lou-yao|].
+Exercise~|prime-gaps-weak| has a ``yes'' answer if $P_{n+1}-P_n<2P_n^{1/2}$
+for all sufficiently large~$n$.
+According to Guy~ [|guy|, problem~A8], Paul "Erd\H os" offers \$10,000 for proof
+"!reward"
+that there are infinitely many $n$ such that
+\begindisplay
+P_{n+1}-P_n>{c\ln n\,\ln\ln n\,\ln\ln\ln\ln n\over
+ (\ln\ln\ln n)^2}
+\enddisplay
+for all $c>0$.
+\source{"Cram\'er" [|cramer|].}
+
+\ex:
+Does $\epsilon_3(n!)=\epsilon_2(n!)/2$ for infinitely many~$n$?
+\answer This holds if and only if $\nu_2(n)=\nu_3(n)$, according
+to exercise~|epsilon-nu|. The methods of [|ruzsa-et-al|] may
+help to crack this conjecture.
+\source{Paul "Erd\H os".*}
+
+\ex:
+Prove or disprove: If $k\ne1$ there exists $n>1$ such that
+$2^n\=k$ \tmod n. Are there infinitely many such $n$?
+\answer When $k=3$ the smallest solution is $n=4700063497=19\cdt47\cdt
+5263229$; no other solutions are known in this case.
+\source{[|erdos-graham|, p.~96].}
+
+\ex:
+Prove or disprove: For all integers~$a$, there exist infinitely
+many $n$ such that $\varphi(n)\divides(n+a)$.
+\answer This is known to be true for infinitely many values of~$a$,
+including $-1$ (of course) and~$0$ (not so obviously).
+ "Lehmer"~[|lehmer-conj|] has a
+famous conjecture that $\varphi(n)\divides(n-1)$ if and only if $n$~is prime.
+\source{[|erdos-graham|, p.~103].}
+
+\ex:
+If the $\Phi(n)+1$ terms of the "Farey series"
+\begindisplay
+\Fscr_n=\bigl\langle\Fscr_n(0),
+\Fscr_n(1),\ldots,\Fscr_n\bigl(\Phi(n)\bigr)\bigr\rangle
+\enddisplay
+were fairly evenly
+distributed, we would expect $\Fscr_n(k)\approx k/\Phi(n)$. Therefore
+the sum $D(n)=\sum_{k=0}^{\Phi(n)}\bigl\vert\Fscr_n(k)-k/\Phi(n)\bigr\vert$
+measures
+the ``deviation of\/~$\Fscr_n$ from "uniformity".\qback'' Is it true
+that $D(n)=O(n^{1/2+\epsilon})$ for all $\epsilon>0$?
+\answer This is known to be equivalent to the "Riemann hypothesis"
+(that the complex "zeta function" $\zeta(z)$ is nonzero when the real part
+of~$z$ is greater than~$1/2$).
+\source{"Landau" [|landau-vorlesungen|, volume 2, eq.~648].}
+
+\ex:
+Approximately how many distinct values are there in the set
+$\{{0!\bmod p},\allowbreak
+{1!\bmod p},\ldots,(p-1)!\bmod p\}$, as $p\to\infty$?
+\answer Experimental evidence suggests that there are about
+${p(1-1/e)}$ distinct values, just as if the factorials were randomly
+distributed modulo~$p$.
+

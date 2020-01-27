@@ -1,0 +1,14 @@
+% use this file to print the answers just written
+% for example, after "tex chap1" you can say "\input answers \bye"
+
+% that blank line will stop an unfinished \answer
+\def\source{\smallskip\noindent{\bf Source: }}
+\immediate\closeout\ans
+\vfill
+\mark{A (Draft Answers)}\eject
+\pageno=800
+\parindent=30pt
+\ifnum\excount>0 \beginsection A (Draft Answers)
+
+ \input \jobname.ans \fi
+\bye

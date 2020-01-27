@@ -1,0 +1,4135 @@
+% Chapter 8 of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\refin bib
+
+\refin chap2
+\refin chap5
+\refin chap6
+\refin chap7
+\refin chap9
+
+\pageno=381
+\beginchapter 8 Discrete Probability
+
+THE ELEMENT OF CHANCE enters into many of our attempts to understand the world
+we live in. A mathematical {\it"theory of probability"\/} allows us to
+"!probability, theory of"
+calculate the likelihood of complex events if we assume that the events
+are governed by appropriate axioms. This theory has significant applications
+in all branches of science, and it has strong connections with the
+techniques we have studied in previous chapters.
+
+Probabilities are called ``"discrete"'' if we can compute the probabilities
+of all events by summation instead of by integration. We are getting pretty good
+at sums, so it should come as no great surprise that we are ready to
+apply our knowledge to some interesting calculations of probabilities
+and averages.
+
+\def\dieone{\die{\diedot22}}
+\def\dietwo{\die{\diedot11\diedot33}}
+\def\diethree{\die{\diedot11\diedot22\diedot33}}
+\def\diefour{\die{\diedot11\diedot33\diedot13\diedot31}}
+\def\diefive{\die{\diedot11\diedot22\diedot33\diedot13\diedot31}}
+\def\diesix{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33}}
+\def\dieseven{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33\diedot22}}
+\def\dieeight{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33%
+ \diedot21\diedot23}}
+\def\die#1{{\unitlength=2.5pt\beginpicture(5,4)(-.5,1)
+ \put(0,0){\line(0,1)4}
+ \put(0,0){\line(1,0)4}
+ \put(0,4){\line(1,0)4}
+ \put(4,0){\line(0,1)4}#1\endpicture}}
+\def\diedot#1#2{\put(#1,#2){\disk1}}
+
+\vskip-1.1pt % have to make this page slightly tight! (DEK May 88)
+\beginsection 8.1 Definitions
+
+Probability theory starts with the idea of a {\it"probability space"},
+\g(Readers unfamiliar with probability theory will, with high
+probability, benefit from a perusal of "Feller"'s classic
+introduction to the subject [|feller|].)\g
+which is a set~$\Omega$ of all things that can happen in a given
+problem together with a rule that assigns a probability $\Pr(\omega)$
+to each elementary event $\omega\in\Omega$. The probability $\Pr(\omega)$
+must be a nonnegative real number, and the condition
+\begindisplay \advance\belowdisplayskip-1.2pt
+\sum_{\omega\in\Omega}\Pr(\omega)=1
+\eqno\eqref|all-probs|
+\enddisplay
+must hold in every discrete probability space. Thus, each value $\Pr(\omega)$
+must lie in the interval $[@0\dts1]$.
+We speak of Pr as a {\it"probability distribution"}, because it distributes
+a total probability of~$1$ among the events~$\omega$.
+
+Here's an example: If we're
+rolling a pair of "dice", the set~$\Omega$
+of elementary events is $D^2=\{\,\dieone\dieone,\,\dieone\dietwo,\,\ldots,\,
+\diesix\diesix\,\}$, where
+\begindisplay
+D=\{\,\dieone,\,\dietwo,\,\diethree,\,\diefour,\,\diefive,\,\diesix\,\}
+\enddisplay
+is the set of all six ways that a given die can land. Two rolls such as
+\g Never say die.\g
+\smash{\dieone\dietwo} and \smash{\dietwo\dieone}
+are considered to be distinct;
+hence this probability space has a total of $6^2=36$ elements.
+
+We usually assume that dice are ``fair''\dash---that each of the
+six possibilities for a particular die has probability~$1\over6$, and that
+"!fair dice" "!loaded dice"
+each of the 36 possible rolls in~$\Omega$ has probability~$1\over36$.
+\g Careful: They might go off.\g
+But we can also consider ``loaded'' dice in which there is a different
+distribution of probabilities. For example, let
+\begindisplay
+\Pr_1(\dieone)&=\Pr_1(\diesix)=\textstyle{1\over4}\,;\cr
+\Pr_1(\dietwo)&=\Pr_1(\diethree)=\Pr_1(\diefour)=\Pr_1(\diefive)=
+\textstyle{1\over8}\,.\cr
+\enddisplay
+Then $\sum_{d\in D}\Pr_1(d)=1$, so $\Pr_1$ is a probability distribution
+on the set~$D$,
+ and we can assign probabilities to the
+elements of $\Omega=D^2$ by the rule
+\begindisplay
+\Pr_{11}(d\,d')=\Pr_1(d)\,\Pr_1(d')\,.
+\eqno\eqref|pr1-def|
+\enddisplay
+For example, $\Pr_{11}(\diesix\diethree)={1\over4}\cdt{1\over8}={1\over32}$.
+This is a valid distribution because
+\begindisplay \openup3pt
+\sum_{\omega\in\Omega}\Pr_{11}(\omega)
+&=\sum_{dd'\in D^2}\Pr_{11}(d\,d')
+ =\sum_{d,d'\in D}\Pr_1(d)\,\Pr_1(d')\cr
+&=\sum_{d\in D}\Pr_1(d)\,\sum_{d'\in D}\Pr_1(d')=1\cdot1=1\,.\cr
+\enddisplay
+We can also consider the case of one fair die and one loaded die,
+\begindisplay
+\Pr_{01}(d\,d')=\Pr_0(d)\,\Pr_1(d')\,,\qquad\hbox{where $\Pr_0(d)={1\over6}$},
+\eqno\eqref|pr2-def|
+\enddisplay
+in which case $\Pr_{01}(\diesix\diethree)={1\over6}\cdt{1\over8}={1\over48}$.
+Dice in the ``real world'' can't really be expected to turn up equally often
+\g If all sides of a cube were identical, how could we tell which
+side is face up?\g
+on each side, because they aren't perfectly symmetrical; but $1\over6$ is
+usually pretty close to the truth.
+
+An {\it"event"\/} is a subset of $\Omega$. In dice games, for example,
+the set
+\begindisplay
+\{\,\dieone\dieone,\,\dietwo\dietwo,\,\diethree\diethree,\,
+\diefour\diefour,\,\diefive\diefive,\,\diesix\diesix\,\}
+\enddisplay
+is the event that ``doubles are thrown.\qback'' 
+ The individual elements~$\omega$ of~$\Omega$
+are called {\it"elementary events"\/} because they cannot be decomposed
+into smaller subsets; we can think of $\omega$ as a one-element
+event~$\{\omega\}$.
+
+The probability of an
+event~$A$ is defined by the formula
+\begindisplay
+\Pr\prp(\omega\in A)=\sum_{\omega\in A}\Pr(\omega)\,;
+\eqno\eqref|prob-def|
+\enddisplay
+and in general if $R(\omega)$ is any statement about $\omega$, we write
+`$\Pr\bigl(R(\omega)\bigr)$' for the sum of all $\Pr(\omega)$ such that
+$R(\omega)$ is true. Thus, for example, the
+probability of doubles with fair dice is ${1\over36}+{1\over36}+{1\over36}+
+{1\over36}+{1\over36}+{1\over36}={1\over6}$; but
+when both dice are loaded with probability distribution~$\Pr_1$
+it is ${1\over16}+{1\over64}+{1\over64}+
+{1\over64}+{1\over64}+{1\over16}={3\over16}>{1\over6}$. Loading the dice makes
+the event ``doubles are thrown'' more probable.
+
+(We have been using $\sum$-notation in a more general sense here than
+defined in Chapter~2: The sums in
+\eq(|all-probs|) and \eq(|prob-def|) occur over all elements~$\omega$ of an
+arbitrary set, not over integers only. However, this new development
+is not really alarming; we can agree to
+use special notation under a $\sum$
+whenever nonintegers are intended, so there will be no confusion with
+our ordinary conventions. The other definitions in Chapter~2 are still valid;
+in particular, the definition of infinite sums in that chapter
+gives the appropriate
+interpretation to our sums when
+the set~$\Omega$ is infinite. Each probability is nonnegative, and the
+sum of all probabilities is bounded, so the probability of event~$A$ in
+\eq(|prob-def|) is well defined for all subsets $A\subseteq\Omega$.)
+
+A {\it"random variable"\/} is a function defined on the elementary
+events~$\omega$ of a probability space. For example, if $\Omega=D^2$
+we can define  $S(\omega)$ to be the sum of the spots on the dice roll~$\omega$,
+so that $S(\diesix\diethree)=6+3=9$. The probability that the spots total seven
+is the probability of the event $S(\omega)=7$, namely
+\begindisplay \openup3pt
+&\Pr(\dieone\diesix)+\Pr(\dietwo\diefive)+\Pr(\diethree\diefour)\cr
+&\qquad+\Pr(\diefour\diethree)+\Pr(\diefive\dietwo)+\Pr(\diesix\dieone)\,.
+\enddisplay
+With fair dice ($\Pr=\Pr_{00}$), this happens with probability~$1\over6$;
+but with loaded dice ($\Pr=\Pr_{11}$), it happens with probability
+${1\over16}+{1\over64}+{1\over64}+
+{1\over64}+{1\over64}+{1\over16}={3\over16}$, the same as we observed
+for doubles.
+
+It's customary to drop the `$(\omega)$' when we talk about random variables,
+because there's usually only one probability space involved when we're
+working on any particular problem. Thus we say simply `$S=7$' for the
+event that a $7$ was rolled, and `$S=4$' for the event
+$\{\,\dieone\diethree,\,\dietwo\dietwo,\,\diethree\dieone\,\}$.
+
+A random variable can be characterized by the probability distribution of
+its values. Thus, for example, $S$~takes on eleven possible values
+$\{2,3,\ldots,12\}$, and we can tabulate the probability that $S=s$
+for each $s$ in this set:
+\begindisplay \let\preamble=\tablepreamble \offinterlineskip
+s&&2&3&4&5&6&7&8&9&10&11&12&\kern-1em\kern1pt\cr
+\noalign{\hrule}
+\omit&height 1pt\cr
+\Pr_{00}\prp(S=s)&&{1\over36}&{2\over36}&{3\over36}&{4\over36}&
+ {5\over36}&{6\over36}&{5\over36}&{4\over36}&
+ {3\over36}&{2\over36}&{1\over36}\cr
+\omit&height 2pt\cr
+\noalign{\hrule}
+\Pr_{11}\prp(S=s)&&{4\over64}&{4\over64}&{5\over64}&{6\over64}&
+ {7\over64}&{12\over64}&{7\over64}&{6\over64}&
+ {5\over64}&{4\over64}&{4\over64}\cr
+\enddisplay
+If we're working on a problem that involves only the random variable~$S$
+and no other properties of dice, we can compute the answer from these
+probabilities alone, without regard to the details of the set $\Omega=D^2$.
+In fact, we could define the probability space to be the smaller
+set $\Omega=\{2,3,\ldots,12\}$, with whatever probability distribution
+$\Pr(s)$ is desired. Then `$S=4$' would be an elementary event.
+Thus we can often ignore the underlying probability space~$\Omega$
+and work directly with random variables and their distributions.
+
+If two random variables $X$ and $Y$ are defined over the same probability
+space~$\Omega$, we can characterize their behavior without knowing
+everything about~$\Omega$ if we know the ``"joint distribution"''
+\g Just Say No.\g
+\begindisplay
+\Pr\prp(X=x\ {\rm and}\ Y=y)
+\enddisplay
+for each $x$ in the range of\/~$X$ and each $y$ in the range of\/~$Y$.
+"!independent random variables"
+We say that $X$ and $Y$ are {\it independent\/} random variables if
+\begindisplay
+\Pr\prp(X=x\ {\rm and}\ Y=y)=\Pr\prp(X=x)\cdot\Pr\prp(Y=y)
+\eqno\eqref|indep-def|
+\enddisplay
+for all $x$ and $y$.  Intuitively, this means that the value of\/~$X$
+has no effect on the value of\/~$Y$.
+
+For example, if $\Omega$ is the set of dice rolls $D^2$, we can let
+$S_1$ be the number of spots on the first die and $S_2$ the number
+of spots on the second. Then the random variables $S_1$ and~$S_2$
+are independent with respect to each of the probability distributions
+$\Pr_{00}$, $\Pr_{11}$, and $\Pr_{01}$ discussed earlier,
+ because we defined the dice probability for each elementary
+event~$dd'$ as a product of a probability for~$S_1=d$ multiplied by
+a probability for~$S_2=d'$. We could have defined probabilities differently
+so that, say,
+\g\vskip19pt A dicey inequality.\g
+\begindisplay
+\Pr(\dieone\diefive)\,\big/\,\Pr(\dieone\diesix) \ne
+\Pr(\dietwo\diefive)\,\big/\,\Pr(\dietwo\diesix)\,;
+\enddisplay
+but we didn't do that, because different dice aren't supposed to
+influence each other. With our definitions, both of these ratios are
+$\Pr\prp(S_2=5)/\Pr\prp(S_2=6)$.
+
+We have defined $S$ to be the sum of the two spot values, $S_1+S_2$.
+Let's consider another random variable $P$, the product $S_1S_2$.
+Are $S$ and~$P$ independent? Informally, no; if we are told that
+$S=2$, we know that $P$ must be~$1$. Formally, no again, because
+the independence condition \eq(|indep-def|) fails spectacularly (at least
+in the case of fair dice):
+For all legal values of $s$ and~$p$, we have $0<\Pr_{00}\prp(S=s)\cdt
+\Pr_{00}\prp(P=p)\le{1\over6}\cdt{1\over9}$; this can't equal
+$\Pr_{00}\prp(S=s\,{\rm and}\,P=p)$,
+which is a multiple of~$1\over36$.
+
+If we want to understand the typical behavior of a given random variable,
+we often ask about its ``average'' value. But the notion of ``average''
+is ambiguous; people generally speak about three different kinds of
+averages when a sequence of numbers is given:
+\smallskip
+\item{$\bullet$}the {\it"mean"\/} (which
+is the sum of all values, divided by the number of values); 
+\item{$\bullet$}the {\it"median"\/} (which
+is the middle value, numerically); 
+\item{$\bullet$}the {\it"mode"\/} (which
+is the value that occurs most often).
+\smallskip\noindent
+For example, the mean of $(3,1,4,1,5)$ is ${3+1+4+1+5\over5}=2.8$; the
+median is~$3$; the mode is~$1$.
+
+But probability theorists usually work with random variables instead of with
+sequences of numbers, so we want to define the notion of an ``average''
+for random variables too.
+Suppose we repeat an experiment over and over again, making independent
+trials in such a way that each value of\/~$X$ occurs with a frequency
+approximately proportional to its probability. (For example, we might
+roll a pair of dice many times, observing the values of $S$ and/or $P$.)
+We'd like to define the average value of a random variable so that such
+experiments will usually produce a sequence of numbers whose mean, median,
+or mode is approximately the same as the mean, median, or mode of\/~$X$,
+according to our definitions.
+
+ Here's how it can be done: The {\it"mean"\/}
+of a random real-valued variable\/~$X$ on a probability space~$\Omega$
+is defined to be
+\begindisplay
+\sum_{x\in X(\Omega)}x\cdt\Pr\prp(X=x)
+\eqno\eqref|mean1|
+\enddisplay
+if this potentially infinite sum exists.
+(Here $X(\Omega)$ stands for the set of all values that $X$ can assume.)
+The {\it"median"\/} of\/~$X$ is defined to be the set of all~$x$ such that
+\begindisplay
+\Pr\prp(X\le x)\ge\half\And\Pr\prp(X\ge x)\ge\half\,.
+\eqno\eqref|median1|
+\enddisplay
+And the {\it"mode"\/} of\/~$X$ is defined to be the set of all~$x$ such that
+\begindisplay
+\Pr\prp(X=x)\ge\Pr\prp(X=x')\qquad\hbox{for all $x'\in X(\Omega)$}.
+\eqno
+\enddisplay
+In our dice-throwing example, the mean of $S$ turns out to be
+$2\cdt{1\over36}+3\cdt{2\over36}+\cdots+12\cdt{1\over36}=7$ in distribution
+$\Pr_{00}$, and it also turns out to be~$7$ in distribution~$\Pr_{11}$.
+The median and mode both turn out to be $\{7\}$ as well, in both
+distributions. So $S$ has the same average under all three definitions.
+On the other hand the
+$P$ in distribution~$\Pr_{00}$ turns out to have a mean value
+ of ${49\over4}=12.25$; its median
+is~$\{10\}$, and its mode is $\{6,12\}$. The mean of\/~$P$ is unchanged if
+we load the dice with distribution $\Pr_{11}$, but the median drops to~$\{8\}$
+and the mode becomes $\{6\}$ alone.
+
+Probability theorists have a special name and notation for the mean
+of a random variable: They call it the {\it"expected value"}, and write
+\begindisplay
+EX=\sum_{\omega\in\Omega}X(\omega)\Pr(\omega)\,.
+\eqno\eqref|mean2|
+\enddisplay
+In our dice-throwing example, this sum has 36 terms (one for each element
+of~$\Omega$), while \eq(|mean1|) is a sum of only eleven terms. But
+both sums have the same value, because they're both equal to
+\begindisplay
+\sum\twoconditions{\omega\in\Omega}{x\in X(\Omega)}
+ x\Pr(\omega)\bigi[x=X(\omega)\bigr]\,.
+\enddisplay
+
+The mean of
+a random variable turns out to be
+\g I get it:\par On average, ``average'' means ``mean.\qback''\g
+more meaningful in applications than the other kinds of averages, so
+we shall largely forget about medians and modes from now on.
+We will use the terms ``expected value,\qback'' ``mean,\qback'' and ``average''
+almost interchangeably in the rest of this chapter.
+
+If $X$ and $Y$ are any two random variables defined on the same probability
+space, then $X+Y$ is also a random variable on that space. By formula
+\eq(|mean2|), the average of their sum is the sum of their averages:
+\begindisplay
+E(X+Y)=\sum_{\omega\in\Omega}\bigl(X(\omega)+Y(\omega)\bigr)\Pr(\omega)
+=EX+EY\,.
+\eqno
+\enddisplay
+Similarly, if $\alpha$ is any constant we have the simple rule
+\begindisplay
+E(\alpha X)=\alpha EX\,.
+\eqno
+\enddisplay
+But the corresponding rule for multiplication of random variables is more
+complicated in general; %this happens because
+the expected value is defined as a sum over elementary events,
+and sums of products don't often have a simple form.
+In spite of this difficulty, there is a very nice
+formula for the mean of a product in the special case that the
+random variables are independent:
+\begindisplay
+E(XY)=(EX)(EY),\qquad\hbox{if $X$ and $Y$ are independent}.
+\eqno
+\enddisplay
+We can prove this by the distributive law for products,
+\begindisplay \openup3pt
+E(XY)&=\sum_{\omega\in\Omega}X(\omega)Y(\omega)\cdt\Pr(\omega)\cr
+&=\sum\twoconditions{x\in X(\Omega)}{y\in Y(\Omega)}
+ xy\cdt\Pr\prp(X=x\ {\rm and}\ Y=y)\cr
+&=\sum\twoconditions{x\in X(\Omega)}{y\in Y(\Omega)}
+ xy\cdt\Pr\prp(X=x)\Pr\prp(Y=y)\cr
+&=\sum_{x\in X(\Omega)}x\Pr\prp(X=x)\;\cdot\!
+  \sum_{y\in Y(\Omega)}y\Pr\prp(Y=y)
+=(EX)(EY)\,.
+\enddisplay
+
+For example, we know that $S=S_1+S_2$ and $P=S_1S_2$, when $S_1$ and~$S_2$
+are the numbers of spots on the first and second of a pair of random dice.
+We have $ES_1=ES_2={7\over2}$, hence $ES=7$; furthermore $S_1$ and~$S_2$
+are independent, so $EP={7\over2}\cdt{7\over2}={49\over4}$, as claimed earlier.
+We also have $E(S+P)=ES+EP=7+{49\over4}$. But $S$ and~$P$ are not
+independent, so we cannot assert that $E(SP)=7\cdt{49\over4}={343\over4}$.
+In fact, the expected value of $SP$ turns out to equal $637\over6$
+in distribution $\Pr_{00}$, while
+it equals $112$ (exactly) in distribution $\Pr_{11}$.
+
+\beginsection 8.2 Mean and Variance
+
+The next most important property of a random variable, after we know
+its expected value, is its {\it"variance"}, defined as the mean
+square deviation from the mean:
+\begindisplay
+VX=E\bigl((X-EX)^2\bigr)\,.
+\eqno\eqref|var1|
+\enddisplay
+If we denote $EX$ by $\mu$, the variance $VX$ is the expected value of
+$(X-\mu)^2$. This measures the ``spread'' of $X$'s distribution.
+
+As a simple example of variance computation, let's suppose we have
+just been made an offer we can't refuse: Someone has given us
+"!greed"
+two gift certificates for a certain "lottery". The lottery organizers
+sell 100 tickets for each weekly drawing. One of these tickets is
+selected by a uniformly random process\dash---that is,
+each ticket is equally likely to be chosen\dash---and the lucky ticket holder
+wins a hundred million dollars. The other 99 ticket holders win nothing.
+
+We can use our gift in two ways: Either we buy two tickets in the
+\g(Slightly subtle point:\par There are two probability spaces,
+depending on what strategy we use; but\/ $EX_1$ and\/ $EX_2$
+are the same in both.)\g
+same lottery, or we buy one ticket in each of two lotteries.
+Which is a better strategy? Let's try to analyze this by letting
+$X_1$ and $X_2$ be random variables that represent the amount we
+win on our first and second ticket. The expected value of $X_1$,
+in millions, is
+\begindisplay
+EX_1=\textstyle{99\over100}\cdot0+{1\over100}\cdot100=1\,,
+\enddisplay
+and the same holds for $X_2$. Expected values are additive, so our
+average total winnings will be
+\begindisplay
+E(X_1+X_2)=EX_1+EX_2=2\hbox{ million dollars,}
+\enddisplay
+regardless of which strategy we adopt.
+
+Still, the two strategies seem different. Let's look beyond expected
+values and study the exact probability distribution of $X_1+X_2$:
+\begindisplay \def\preamble{\bigstrut\hfil##\quad&\vrule##&&\quad\hfil$##$\hfil}%
+ \offinterlineskip
+&&\multispan3\hfil\quad winnings (millions)\hfil\cr
+&&0&100&200\cr
+\noalign{\hrule}
+\omit&height 2pt\cr
+same drawing&&.9800&.0200\cr
+different drawings&&.9801&.0198&.0001\cr
+\enddisplay
+If we buy two tickets in the same lottery we have a 98\% chance of
+winning nothing and a 2\% chance of winning \$100 million.
+If we buy them in different lotteries we have a 98.01\% chance of
+winning nothing, so this is slightly more likely than before;
+and we have a 0.01\% chance of winning \$200 million, also slightly
+more likely than before; and our chances of winning \$100 million
+are now 1.98\%. So the distribution of $X_1+X_2$ in this second
+situation is slightly more spread out; the middle value, \$100 million,
+is slightly less likely, but the extreme values are slightly more likely.
+
+It's this notion of the spread of a random variable that the variance is
+intended to capture. We measure the spread in terms of the squared
+deviation of the random variable from its mean. In case~1, the variance
+is therefore \setmathsize{.98(0M-2M)^2\,+\,.02(100M-2M)^2}
+\begindisplay
+\mathsize{.98(0M-2M)^2\,+\,.02(100M-2M)^2}=196M^2\,;
+\enddisplay
+in case 2 it is
+\begindisplay
+&.9801(0M-2M)^2\,+\,.0198(100M-2M)^2+.0001(200M-2M)^2\cr
+&\mathsize{}=198M^2\,.
+\enddisplay
+As we expected, the latter variance is slightly larger, because the
+distribution of case~2 is slightly more spread out.
+
+When we work with variances, everything is squared, so the numbers
+can get pretty big. (The factor $M^2$ is one trillion,
+\g Interesting:
+The variance of a dollar amount is expressed in units of square dollars.\g
+which is somewhat imposing even for high-stakes gamblers.) To convert the
+numbers back to the more meaningful original scale, we often take the
+square root of the variance. The resulting number is called the
+{\it"standard deviation"}, and it is usually denoted by the Greek letter~"$\sigma$":
+\begindisplay
+\sigma=\sqrt{VX}\,.
+\eqno
+\enddisplay
+The standard deviations of the random variables $X_1+X_2$ in our two
+lottery strategies are $\sqrt{196M^{\mathstrut2}}=14.00M$ and 
+$\sqrt{198M^{\mathstrut2}}\approx14.071247M$. In some sense the second
+alternative is about \$71,247 riskier.
+
+How does the variance help us choose a strategy? It's not
+clear. The strategy with higher variance is a little riskier; but do we
+get the most for our money by taking more risks or by playing it safe?
+\g Another way to reduce risk might be to bribe the lottery officials.
+I~guess that's where probability becomes indiscreet.\bigskip
+(N.B.: Opinions expressed in these margins do not necessarily represent
+the opinions of the management.)\g
+Suppose we had the chance to buy 100 tickets instead of only~two. Then we
+could have a guaranteed victory in a single lottery (and the variance
+would be zero); or we could gamble on a hundred different lotteries,
+with a $.99^{100}\approx.366$ chance of winning nothing but also with
+a nonzero probability of winning up to \$10,000,000,000. To decide
+between these alternatives is beyond the scope of this book; all we can
+do here is explain how to do the calculations.
+
+In fact, there is a simpler way to calculate the variance, instead
+of using the definition \eq(|var1|). (We suspect that there must be
+something going on in the mathematics behind the scenes, because
+the variances in the lottery example magically came out to be
+integer multiples of\/~$M^2$.) We have
+\begindisplay
+E\bigl((X-EX)^2\bigr)&=E\bigl(X^2-2X(EX)+(EX)^2\bigr)\cr
+&=E(X^2)-2(EX)(EX)+(EX)^2\,,\cr
+\enddisplay
+since $(EX)$ is a constant; hence
+\begindisplay \postdisplaypenalty=10000
+VX=E(X^2)-(EX)^2\,.
+\eqno\eqref|var2|
+\enddisplay
+``The variance is the mean of the square minus the square of the mean.''
+
+For example, the mean of $(X_1+X_2)^2$ comes to $.98(0M)^2+.02(100M)^2=
+200M^2$ or to $.9801(0M)^2+.0198(100M)^2+.0001(200M)^2=202M^2$ in the
+lottery problem. Subtracting $4M^2$ (the square of the mean) gives the
+results we obtained the hard way.
+
+There's an even easier formula yet, if we want to calculate $V(X+Y)$
+when $X$ and~$Y$ are independent: We have
+\begindisplay \openup3pt
+E\bigl((X+Y)^2\bigr)&=E(X^2+2XY+Y^2)\cr
+&=E(X^2)+2(EX)(EY)+E(Y^2)\,,
+\enddisplay
+since we know that $E(XY)=(EX)(EY)$ in the independent case. Therefore
+\begindisplay \openup3pt
+V(X+Y)&=E\bigl((X+Y)^2\bigr)-(EX+EY)^2\cr
+&=E(X^2)+2(EX)(EY)+E(Y^2)\cr
+&\qquad-(EX)^2-2(EX)(EY)-(EY)^2\cr
+&=E(X^2)-(EX)^2+E(Y^2)-(EY)^2\cr
+&=VX+VY\,.
+\eqno
+\enddisplay
+``The variance of a sum of independent random variables is the sum of their
+variances.'' For example, the variance of the amount we can win with a
+single lottery ticket is
+\begindisplay
+E(X_1^2)-(EX_1)^2=.99(0M)^2+.01(100M)^2-(1M)^2=99M^2\,.
+\enddisplay
+Therefore the variance of the total winnings of two lottery tickets
+in two separate (independent) lotteries is $2\times99M^2=198M^2$.
+And the corresponding variance for $n$ independent lottery tickets
+is $n\times99M^2$.
+
+The variance of the dice-roll sum $S$ drops out of this same formula,
+since $S=S_1+S_2$ is the sum of two independent random variables.
+We have
+\begindisplay
+VS_1={1\over6}(1^2+2^2+3^2+4^2+5^2+6^2)-\left(7\over2\right)^{\!2}={35\over12}
+\enddisplay
+when the dice are fair;
+hence $VS={35\over12}+{35\over12}={35\over6}$. The loaded die has
+\begindisplay
+VS_1={1\over8}(2\cdt1^2+2^2+3^2+4^2+5^2+2\cdt6^2)-\left(7\over2\right)^{\!2}
+={45\over12}\,;
+\enddisplay
+hence $VS={45\over6}=7.5$ when both dice are loaded.
+ Notice that the loaded dice give
+$S$ a larger variance, although $S$ actually assumes its average value~$7$
+more often than it would with fair dice. If our goal is to shoot lots of
+lucky~$7$'s, the variance is not our best indicator of success.
+
+OK, we have learned how to compute variances. But we haven't really
+seen a good reason why the variance is a natural thing to compute.
+Everybody does it, but why? The main reason is
+\g If he proved it in 1867, it's a classic '67 Chebyshev.\g
+{\it "Chebyshev's inequality"\/} ([|bienayme|] and [|chebyshev-ineq|]),
+which states that the variance has a significant property:
+\begindisplay
+\Pr\pbigi((X-EX)^2\ge\alpha\bigr)\le VX/\alpha\,,\qquad
+\hbox{for all $\alpha>0$}.
+\eqno\eqref|cheb1|
+\enddisplay
+(This is different from the monotonic inequalities of "Chebyshev" that we
+encountered in Chapter~2.)
+Very roughly, \thiseq\ tells us that a random variable~$X$ will rarely
+be far from its mean~$EX$ if its variance~$VX$ is small.
+The proof is amazingly simple. We have
+\begindisplay \openup3pt
+VX&=\sum_{\omega\in\Omega}\bigl(X(\omega)-EX\bigr)^{\!2}\,\Pr(\omega)\cr
+&\ge\sum\twoconditions{\omega\in\Omega}{(X(\omega)-EX)^2\ge\alpha}
+ \!\!\!\bigl(X(\omega)-EX\bigr)^{\!2}\,\Pr(\omega)\cr
+&\ge\sum\twoconditions{\omega\in\Omega}{(X(\omega)-EX)^2\ge\alpha}
+ \!\!\!\alpha\Pr(\omega)
+\;=\;\alpha\cdt\Pr\pbigi((X-EX)^2\ge\alpha\bigr)\,;
+\enddisplay
+dividing by $\alpha$ finishes the proof.
+
+If we write $\mu$ for the mean and $\sigma$ for the standard deviation,
+and if we replace $\alpha$ by $c^2VX$ in \eq(|cheb1|), the condition
+$(X-EX)^2\ge c^2VX$ is the same as $(X-\mu)^2\ge(c\sigma)^2$; hence
+\eq(|cheb1|) says that
+\begindisplay
+\Pr\pbigi(\vert X-\mu\vert\ge c\sigma\bigr)\le 1/c^2\,.
+\eqno\eqref|cheb2|
+\enddisplay
+Thus, $X$ will lie within $c$ standard deviations of its mean value
+except with probability at most $1/c^2$. A random variable will lie
+within $2\sigma$ of~$\mu$ at least 75\% of the time; it will lie
+between $\mu-10\sigma$ and $\mu+10\sigma$ at least 99\% of the time.
+These are the cases $\alpha=4VX$ and $\alpha=100VX$ of Chebyshev's inequality.
+
+If we roll a pair of fair dice $n$ times, the total value of the $n$~rolls
+will almost always be near $7n$, for large~$n$.
+Here's why: The variance of $n$ independent
+rolls is ${35\over6}n$. A variance of ${35\over6}n$ means a standard
+deviation of only
+\begindisplay
+\textstyle\sqrt{{35\over6}n}\,.
+\enddisplay
+So Chebyshev's inequality
+tells us that the final sum will lie between
+\begindisplay \postdisplaypenalty=10000
+\textstyle 7n-10\sqrt{{35\over6}n}\And
+7n+10\sqrt{{35\over6}n}
+\enddisplay
+in at least 99\% of all experiments when $n$ fair dice are rolled.
+For example, the odds are better
+than 99 to~1 that the total value of a million rolls
+will be between 6.976~million and 7.024~million.
+
+In general, let $X$ be {\it any\/}
+ random variable over a probability space~$\Omega$,
+having finite mean~$\mu$ and finite standard deviation~$\sigma$.
+Then we can consider the probability space $\Omega^n$ whose elementary
+events are $n$-tuples $(\omega_1,\omega_2,\ldots,\omega_n)$ with
+each $\omega_k\in\Omega$, and whose probabilities are
+\begindisplay
+\Pr(\omega_1,\omega_2,\ldots,\omega_n)=\Pr(\omega_1)\Pr(\omega_2)\ldots
+\Pr(\omega_n)\,.
+\enddisplay
+If we now define random variables $X_k$ by the formula
+\begindisplay
+X_k(\omega_1,\omega_2,\ldots,\omega_n)=X(\omega_k)\,,
+\enddisplay
+the quantity
+\begindisplay
+X_1+X_2+\cdots+X_n
+\enddisplay
+is a sum of $n$ independent random variables, which corresponds to taking
+$n$ independent ``samples'' of\/~$X$ on $\Omega$ and adding them together.
+The mean of $X_1+X_2+\cdots+X_n$ is $n\mu$, and the standard deviation
+is $\sqrt n\,\sigma$; hence the average of the $n$ samples,
+\begindisplay
+{1\over n}(X_1+X_2+\cdots+X_n)\,,
+\enddisplay
+will lie between $\mu-10\sigma/\mskip-1mu\sqrt n$ and
+$\mu+10\sigma/\mskip-1mu\sqrt n$ at least 99\% of the time.
+\g(That is, the average will fall between the stated limits
+in at least 99\% of all cases when we look at a set of $n$ independent
+samples, for any fixed value of $n$. Don't misunderstand
+this as a statement about the
+averages of an infinite sequence $X_1$, $X_2$, $X_3$, \dots\ as~$n$ varies.)\g
+ In other words, if we
+choose a large enough value of~$n$, the average of $n$ independent samples
+will almost always be very near the expected value $EX$.
+(An even stronger theorem called the Strong
+"Law of Large Numbers" is proved in textbooks of probability theory;
+but the simple consequence of Chebyshev's inequality that we have
+just derived is enough for our purposes.)
+
+Sometimes we don't know the characteristics of a probability space, and
+we want to estimate the mean of a random variable~$X$ by sampling its
+value repeatedly. (For example, we might want
+to know the average temperature at noon on a January day in San Francisco;
+or we may wish to know the mean life expectancy of insurance agents.)
+If we have obtained independent empirical observations $X_1$, $X_2$,
+\dots,~$X_n$, we can guess that the true mean is approximately
+\begindisplay
+\widehat EX={X_1+X_2+\cdots+X_n\over n}\,.
+\eqno\eqref|hat-e|
+\enddisplay
+And we can also make an estimate of the variance, using the formula
+\begindisplay
+\widehat VX={X_1^2+X_2^2+\cdots+X_n^2\over n-1}
+ -{(X_1+X_2+\cdots+X_n)^2\over n(n-1)}\,.
+\eqno\eqref|hat-v|
+\enddisplay
+The $(n-1)$'s in this formula look like typographic errors; it seems
+they should be $n$'s, as in \eq(|hat-e|), because
+the true variance $VX$ is defined by expected values in \eq(|var2|).
+Yet we get a better estimate with $n-1$ instead of~$n$
+here, because definition \thiseq\ implies that
+\begindisplay
+E(\widehat VX)=VX\,.
+\eqno
+\enddisplay
+Here's why:
+\begindisplay \openup5pt
+E(\widehat VX)&={1\over n-1}E\Bigl(\,\sum_{k=1}^n X_k^2\,-\,{1\over n}
+ \sum_{j=1}^n\,\sum_{k=1}^n X_jX_k\Bigr)\cr
+&={1\over n-1}\Bigl(\,\sum_{k=1}^n E(X_k^2)\,-\,{1\over n}
+ \sum_{j=1}^n\,\sum_{k=1}^n E(X_jX_k)\Bigr)\cr
+&={1\over n-1}\Bigl(\,\sum_{k=1}^n E(X^2)\,-\,{1\over n}
+ \sum_{j=1}^n\,\sum_{k=1}^n \bigl(E(X)^2\[j\ne k]+E(X^2)\[j=k]\bigr)\Bigr)\cr
+&={1\over n-1}\Bigl(nE(X^2)-{1\over n}\bigl(nE(X^2)+n(n-1)E(X)^2\bigr)\Bigr)\cr
+&=E(X^2)-E(X)^2=VX\,.
+\enddisplay
+(This derivation uses the independence of the observations when it
+replaces $E(X_jX_k)$ by $(EX)^2\[j\ne k]+E(X^2)\[j=k]$.)
+
+In practice, experimental results about a random variable~$X$ are usually
+obtained by calculating a sample mean $\hat\mu=\widehat EX$ and a sample
+standard deviation $\hat\sigma=\sqrt{\widehat VX}$, and presenting the answer
+in the form `$\,\hat\mu\pm\hat\sigma/\mskip-1mu\sqrt n\,$'.
+ For example, here are ten
+rolls of two supposedly fair dice:
+\begindisplay \openup4pt \advance\abovedisplayskip-2pt
+\diefour\diethree\qquad	\diefive\diethree\qquad	\diethree\dieone\qquad
+	\diesix\diefour\qquad	\dietwo\diesix\cr
+\diefive\diesix\qquad	\diefour\dieone\qquad	\diefive\dieone\qquad
+	\dietwo\diesix\qquad	\diefour\diethree\cr
+\enddisplay
+The sample mean of the spot sum $S$ is
+\begindisplay
+\hat\mu=(7+11+8+5+4+6+10+8+8+7)/10=7.4\,;
+\enddisplay
+the sample variance is
+\begindisplay
+(7^2+11^2+8^2+5^2+4^2+6^2+10^2+8^2+8^2+7^2-10{\hat\mu}^2)/9\approx2.1^2\,.
+\enddisplay
+We estimate the average spot sum of these dice to be $7.4\pm2.1/\mskip-1mu
+\sqrt{10}=7.4\pm0.7$,
+on the basis of these experiments.
+
+\smallskip
+Let's work one more example of means and variances, in order to show how
+they can be calculated theoretically instead of empirically. One of the
+questions we considered in Chapter~5 was
+the ``"football victory problem",\qback'' where $n$~"hats" are thrown
+into the air and the result is a random permutation of hats. We showed
+in equation \equ(5.|subfactorial-sol|) that there's a probability
+of $n\?/n!\approx1/e$
+that nobody gets the right hat back. We also derived
+the formula
+\begindisplay
+P(n,k)={1\over n!}{n\choose k}(n-k)\?={1\over k!}{(n-k)\?\over(n-k)!}
+\eqno
+\enddisplay
+for the probability that exactly $k$ people end up with their own hats.
+
+Restating these results in the formalism just learned, we can consider
+the probability space $\Pi_n$ of all $n!$ permutations~$\pi$ of $\{1,2,\ldots
+,n\}$, where $\Pr(\pi)=1/n!$ for all $\pi\in\Pi_n$. The random variable
+\begindisplay
+F_n(\pi)=\hbox{number of ``"fixed points"'' of $\pi$}\,,\qquad
+\hbox{for $\pi\in\Pi_n$},
+\enddisplay
+\g\vskip-31pt Not to be confused with a Fibonacci number.\g
+measures the number of correct hat-falls in the football victory problem.
+Equation \thiseq\ gives $\Pr\prp(F_n=k)$, but let's pretend that we don't
+know any such formula; we merely want to study the average value of~$F_n$,
+and its standard deviation.
+
+The average value is, in fact, extremely easy to calculate, avoiding
+all the complexities of Chapter~5. We simply observe that
+\begindisplay
+F_n(\pi)&=F_{n,1}(\pi)+F_{n,2}(\pi)+\cdots+F_{n,n}(\pi)\,,\cr
+F_{n,k}(\pi)&=[@\hbox{position $k$ of $\pi$ is a fixed point}]\,,
+\qquad\hbox{for $\pi\in\Pi_n$}.
+\enddisplay
+Hence
+\begindisplay
+EF_n=EF_{n,1}+EF_{n,2}+\cdots+EF_{n,n}\,.
+\enddisplay
+And the expected value of $F_{n,k}$ is simply the probability that $F_{n,k}=1$,
+which is $1/n$ because exactly $(n-1)!$ of the $n!$ permutations
+$\pi=\pi_1\pi_2\ldots\pi_n\in\Pi_n$ have $\pi_k=k$. Therefore
+\begindisplay
+EF_n=n/n=1\,,\qquad\hbox{for $n>0$}.
+\eqno\eqref|e-fixedpts|
+\enddisplay
+On the average,
+\g One the average.\g
+ one hat will be in its correct place. ``A random permutation
+has one fixed point, on the average.''
+
+Now what's the standard deviation? This question is more difficult,
+because the $F_{n,k}$'s are not independent of each other. But we can
+calculate the variance by analyzing the mutual dependencies among them:
+\begindisplay \openup3pt
+E(F_n^2)&=E\biggl(\Bigl(\,\sum_{k=1}^nF_{n,k}\Bigr)^{\!2\,}\biggr)
+=E\Bigl(\,\sum_{j=1}^n\,\sum_{k=1}^nF_{n,j\,}F_{n,k}\Bigr)\cr
+&=\sum_{j=1}^n\sum_{k=1}^n E(F_{n,j\,}F_{n,k})
+=\sum_{1\le k\le n}E(F_{n,k}^2)\!+\!2\!\!
+ \sum_{1\le j<k\le n}E(F_{n,j\,}F_{n,k})\,.\cr
+\enddisplay
+(We used a similar trick when we derived \equ(2.|upper-triangle|)
+in Chapter~2.) Now $F_{n,k}^2=F_{n,k}$, since $F_{n,k}$ is either $0$ or~$1$;
+hence $E(F_{n,k}^2)=EF_{n,k}=1/n$ as before. And if $j<k$ we have
+$E(F_{n,j\,}F_{n,k})=\Pr(\pi$ has both $j$ and $k$ as fixed points$)=(n-2)!/n!
+=1/n(n-1)$. Therefore
+\begindisplay
+E(F_n^2)={n\over n}+{n\choose 2}{2\over n(n-1)}=2\,,
+\qquad\hbox{for $n\ge2$}.
+\eqno\eqref|mu2-fixedpts|
+\enddisplay
+(As a check when $n=3$, we have ${2\over6}0^2+{3\over6}1^2+{0\over6}2^2+
+{1\over6}3^2=2$.) The variance is $E(F_n^2)-(EF_n)^2=1$, so the standard
+deviation (like the mean) is~$1$. ``A random permutation of $n\ge2$ elements
+has $1\pm1$ fixed points.''
+
+\begingroup \advance\parindent-7.5pt % KLUDGE!
+\beginsection 8.3 Probability Generating Functions
+
+If $X$ is a random variable that takes only nonnegative integer values, we
+\endgroup % end kludge
+can capture its probability distribution nicely by using the techniques
+of Chapter~7. The {\it"probability generating function"\/} or "pgf" of\/~$X$ is
+\begindisplay
+G_X(z)=\sum_{k\ge0}\Pr\prp(X=k)\,z^k\,.
+\eqno
+\enddisplay
+This power series in $z$ contains all the information about the random
+variable~$X$. We can also express it in two other ways:
+\begindisplay
+G_X(z)=\sum_{\omega\in\Omega}\Pr(\omega)\,z^{X(\omega)}=E(z^X)\,.
+\eqno
+\enddisplay
+
+The coefficients of $G_X(z)$ are nonnegative, and they sum to~$1$; the
+latter condition can be written
+\begindisplay
+G_X(1)=1\,.
+\eqno\eqref|pgf0|
+\enddisplay
+Conversely, any power series $G(z)$ with nonnegative coefficients and
+with $G(1)=1$ is the pgf of some random variable.
+
+The nicest thing about pgf's is that they usually simplify the computation
+of means and variances. For example, the mean is easily expressed:
+\begindisplay
+EX&=\sum_{k\ge0}k\cdt\Pr\prp(X=k)\cr
+&=\sum_{k\ge0}\Pr\prp(X=k)\cdt kz^{k-1}\big\vert_{z=1}\cr
+&=G'_X(1)\,.
+\eqno\eqref|pgf1|
+\enddisplay
+We simply differentiate the pgf with respect to $z$ and set $z=1$.
+
+The variance is only slightly more complicated:
+\begindisplay
+E(X^2)&=\sum_{k\ge0}k^2\cdt\Pr\prp(X=k)\cr
+&=\sum_{k\ge0}\Pr\prp(X=k)\cdt\bigl( k(k-1)z^{k-2}+kz^{k-1}\bigr)\,\big\vert_{z=1}
+=G''_X(1)+G'_X(1)\,.
+\enddisplay
+Therefore
+\begindisplay
+VX=G''_X(1)+G'_X(1)-G'_X(1)^2\,.
+\eqno\eqref|pgf2|
+\enddisplay
+Equations \eq(|pgf1|) and \eq(|pgf2|) tell us that we can compute the
+mean and variance if we can compute the values of two derivatives,
+$G'_X(1)$ and $G''_X(1)$. We don't have to know a closed form for the
+probabilities; we don't even have to know a closed form for $G_X(z)$ itself.
+
+It is convenient to write
+\begindisplay
+\Mean(G)&=G'(1)\,,\eqno\eqref|pgf-mean|\cr
+\Var(G)&=G''(1)+G'(1)-G'(1)^2\,,\eqno\eqref|pgf-var|\cr
+\enddisplay
+when $G$ is any function, since we frequently want to compute these
+combinations of derivatives.
+
+The second-nicest thing about pgf's is that they are comparatively
+simple functions of~$z$, in many important cases. For example, let's
+look at the
+{\it"uniform distribution"\/} of order~$n$, in which the random variable
+takes on each of the values $\{0,1,\ldots,n-1\}$ with probability $1/n$.
+The pgf in this case is
+\begindisplay
+U_n(z)={1\over n}(1+z+\cdots+z^{n-1})={1\over n}{1-z^n\over 1-z}\,,
+\qquad\hbox{for $n\ge1$}.
+\eqno\eqref|u-pgf|
+\enddisplay
+We have a closed form for $U_n(z)$ because this is a geometric series.
+
+\looseness=-1
+But this closed form proves to be somewhat embarrassing: When
+we plug in $z=1$ (the value of~$z$ that's most critical for the pgf\/),
+we get the undefined ratio $0/0$, even though $U_n(z)$ is a polynomial
+that is perfectly well defined at any value of~$z$. The value
+$U_n(1)=1$ is obvious from the non-closed form $(1+z+\cdots+z^{n-1})/n$,
+yet it seems that we must resort to "L'Hospital's rule" to find
+$\lim_{z\to1}U_n(z)$ if we want to determine $U_n(1)$ from the closed form.
+The determination of $U'_n(1)$ by L'Hospital's rule will be even harder,
+because there will be a factor of $(z-1)^2$ in the denominator; $U_n''(1)$
+will be harder still.
+
+Luckily
+there's a nice way out of this dilemma. If $G(z)=\sum_{n\ge0}g_nz^n$
+is any power series that converges for at least one value of~$z$ with
+$\vert z\vert>1$, the power series $G'(z)=\sum_{n\ge0}ng_nz^{n-1}$
+will also have this property, and so will $G''(z)$, $G'''(z)$, etc.
+Therefore by "Taylor's theorem" we can write
+\begindisplay
+G(1+t)=G(1)+{G'(1)\over1!}t+{G''(1)\over2!}t^2+
+{G'''(1)\over3!}t^3+\cdots\,;
+\eqno\eqref|derivs-at-1|
+\enddisplay
+all derivatives of $G(z)$ at $z=1$ will appear as coefficients, when
+$G(1+t)$ is expanded in powers of~$t$.
+
+For example, the derivatives of the uniform pgf\/ $U_n(z)$ are easily
+found in this way:
+\begindisplay \openup3pt
+U_n(1+t)&={1\over n}{(1+t)^n-1\over t}\cr
+&={1\over n}{n\choose1}
+ +{1\over n}{n\choose2}t
+ +{1\over n}{n\choose3}t^2+\cdots
+ +{1\over n}{n\choose n}t^{n-1}\,.
+\enddisplay
+Comparing this to \eq(|derivs-at-1|) gives
+\begindisplay
+U_n(1)=1\,;\quad U_n'(1)={n-1\over2}\,;\quad
+U_n''(1)={(n-1)(n-2)\over3}\,;
+\eqno
+\enddisplay
+and in general $U_n^{(m)}(1)=(n-1)\_m/(m+1)$, although we need only the
+cases $m=1$ and $m=2$ to compute the mean and the variance. The
+mean of the uniform distribution is
+\begindisplay
+U_n'(1)={n-1\over2}\,,
+\eqno\eqref|unif-mean|
+\enddisplay
+and the variance is
+\begindisplay \openup3pt
+U_n''(1)+U_n'(1)-U_n'(1)^2
+&=4\,{(n-1)(n-2)\over12}+6\,{(n-1)\over12}-3\,{(n-1)^2\over12}\cr
+&={n^2-1\over12}\,.
+\eqno\eqref|unif-var|
+\enddisplay
+
+The third-nicest thing about pgf's is that the product of pgf's corresponds
+to the sum of independent random variables. We learned in Chapters
+5 and~7 that the product of generating functions corresponds to the
+convolution of sequences; but it's even more important in
+applications to know that the convolution of probabilities corresponds
+to the sum of independent random variables. Indeed, if $X$ and~$Y$
+are random variables that take on nothing but integer values, the
+probability that $X+Y=n$ is
+\begindisplay
+\Pr\prp(X+Y=n)=\sum_k\Pr\prp(X=k\ {\rm and}\ Y=n-k)\,.
+\enddisplay
+If $X$ and~$Y$ are independent, we now have
+\begindisplay
+\Pr\prp(X+Y=n)=\sum_k\Pr\prp(X=k)\,\Pr\prp(Y=n-k)\,,
+\enddisplay
+a convolution. Therefore\dash---and this is the punch line\dash---
+\begindisplay
+G_{X+Y}(z)=G_X(z)\,G_Y(z)\,,\qquad\hbox{if $X$ and $Y$ are independent}.
+\eqno
+\enddisplay
+Earlier this chapter we observed that $V(X+Y)=VX+VY$ when $X$ and~$Y$
+are independent. Let $F(z)$ and~$G(z)$ be the pgf's for $X$ and~$Y$,
+and let $H(z)$ be the pgf for $X+Y$. Then
+\begindisplay
+H(z)=F(z)@G(z)\,,
+\enddisplay
+and our formulas \eq(|pgf1|) through \eq(|pgf-var|) for mean and variance
+tell us that we must have
+\begindisplay
+\Mean(H)&=\Mean(F)+\Mean(G)\,;\eqno\eqref|ind-sum1|\cr
+\Var(H)&=\Var(F)+\Var(G)\,.\eqno\eqref|ind-sum2|\cr
+\enddisplay
+These formulas, which are properties of the derivatives
+$\Mean(H)=H'(1)$ and
+$\Var(H)=H''(1)+H'(1)-H'(1)^2$,
+aren't valid for arbitrary function products $H(z)=F(z)@G(z)$;
+we have
+\begindisplay
+H'(z)&=F'(z)@G(z)+F(z)@G'(z)\,,\cr
+H''(z)&=F''(z)@G(z)+2F'(z)@G'(z)+F(z)@G''(z)\,.
+\enddisplay
+But if we set $z=1$,
+we can see that \eq(|ind-sum1|) and \eq(|ind-sum2|)
+will be valid in general provided only that
+\begindisplay
+F(1)=G(1)=1
+\eqno
+\enddisplay
+and that the derivatives exist.
+The ``probabilities'' don't have to be in $[@0\dts1]$ for these formulas to hold.
+ We can normalize the functions $F(z)$
+and $G(z)$ by dividing through by $F(1)$ and $G(1)$ in order to make
+this condition valid, whenever $F(1)$
+and $G(1)$ are nonzero.
+
+Mean and variance aren't the whole story. They are merely two
+of an infinite series of so-called {\it"cumulant"\/} statistics introduced
+\g I'll graduate magna cum ulant.\g
+by the Danish astronomer Thorvald Nicolai "Thiele"~[|thiele|] in 1903.
+The first two cumulants $\kappa_1$ and $\kappa_2$ of a random variable
+are what we have called the mean and the variance; there also are
+higher-order cumulants that express more subtle properties of a distribution.
+The general formula
+\begindisplay
+\ln G(e^t)={\kappa_1\over1!}t+
+ {\kappa_2\over2!}t^2+
+ {\kappa_3\over3!}t^3+
+ {\kappa_4\over4!}t^4+\cdots
+\eqno\eqref|cum-def|
+\enddisplay
+defines the cumulants of all orders, when $G(z)$ is the pgf of a random variable.
+
+Let's look at cumulants more closely.
+If $G(z)$ is the pgf for $X$, we have
+\begindisplay\openup3pt
+G(e^t)&=\sum_{k\ge0}\Pr\prp(X=k)e^{kt}&=\sum_{k,m\ge0}\Pr\prp(X=k){k^mt^m\over m!}\cr
+&&=1+{\mu_1\over1!}t+{\mu_2\over2!}t^2+{\mu_3\over3!}t^3+\cdots\,,\eqno\cr
+\enddisplay
+where
+\begindisplay
+\mu_m&=\sum_{k\ge0}k^m\Pr\prp(X=k)=E(X^m)\,.}\hidewidth{\eqno\eqref|moment-def|\cr
+\enddisplay
+This quantity $\mu_m$ is called the ``$m$th "moment"'' of\/~$X$. We can take
+exponentials on both sides of \eq(|cum-def|), obtaining another formula
+for $G(e^t)$:
+\begindisplay \openup3pt
+G(e^t)&=1+{(\kappa_1t+\half\kappa_2t^2+\cdots\,)\over1!}+
+ {(\kappa_1t+\half\kappa_2t^2+\cdots\,)^2\over2!}+\cdots\cr
+&=1+\kappa_1t+\textstyle\half(\kappa_2+\kappa_1^2)t^2+\cdots\,.
+\enddisplay
+Equating coefficients of powers of $t$ leads to a series of formulas
+%\g You forgot the coefficients of~$t^0$.\g
+\begindisplay
+\kappa_1&=\mu_1\,,\eqno\cr
+\kappa_2&=\mu_2-\mu_1^2\,,\eqno\cr
+\kappa_3&=\mu_3-3\mu_1\mu_2+2\mu_1^3\,,\eqno\cr
+\kappa_4&=\mu_4-4\mu_1\mu_3+12\mu_1^2\mu_2-3\mu_2^2-6\mu_1^4\,,\eqno\cr
+\kappa_5&=\mu_5-5\mu_1\mu_4+20\mu_1^2\mu_3-10\mu_2\mu_3\cr
+&\hskip7em+30\mu_1\mu_2^2-60\mu_1^3\mu_2+24\mu_1^5\,,\eqno\cr
+\noalign{\vskip-3pt}
+&\quad\vdots
+\enddisplay
+defining the cumulants in terms of the moments. Notice that $\kappa_2$
+is indeed the variance, $E(X^2)-(EX)^2$, as claimed.
+
+Equation \eq(|cum-def|) makes it clear that the cumulants defined by
+\g \noindent\llap{``}For these higher half-invariants we shall propose no special names.''
+\par\hfill\kern-4pt\dash---T.\thinspace N.\thinspace"Thiele"\thinspace[|thiele|]\g
+the product $F(z)@G(z)$ of two pgf's will be the sums of the corresponding
+cumulants of $F(z)$ and $G(z)$, because logarithms of products are sums.
+ Therefore
+all cumulants of the sum of independent random variables are additive, just
+as the mean and variance are. This property makes cumulants more
+important than moments.
+
+If we take a slightly different tack, writing
+\begindisplay
+G(1+t)=1+{\alpha_1\over1!}t+{\alpha_2\over2!}t^2+{\alpha_3\over3!}t^3+\cdots\,,
+\enddisplay
+equation \eq(|derivs-at-1|) tells us that the $\alpha$'s are the ``factorial
+moments''
+\begindisplay \openup3pt
+\alpha_m&=G^{(m)}(1)\cr
+&=\sum_{k\ge0}\Pr\prp(X=k)k\_m\,z^{k-m}\,\big\vert_{z=1}\cr
+&=\sum_{k\ge0}k\_m\Pr\prp(X=k)\cr
+&=E(X\_m)\,.
+\eqno
+\enddisplay
+It follows that
+\begindisplay \openup3pt
+G(e^t)&=1+{\alpha_1\over1!}(e^t-1)+{\alpha_2\over2!}(e^t-1)^2+\cdots\cr
+&=1+{\alpha_1\over1!}(t+{\textstyle\half} t^2+\cdots\,)+
+   {\alpha_2\over2!}(t^2+t^3+\cdots\,)+\cdots\cr
+&=\textstyle1+\alpha_1t+\half(\alpha_2+\alpha_1)t^2+\cdots\,,
+\enddisplay
+and we can express the cumulants in terms of the derivatives $G^{(m)}(1)$:
+\begindisplay
+\kappa_1&=\alpha_1\,,\eqno\cr
+\kappa_2&=\alpha_2+\alpha_1-\alpha_1^2\,,\eqno\cr
+\kappa_3&=\alpha_3+3\alpha_2+\alpha_1-3\alpha_2\alpha_1-3\alpha_1^2+2\alpha_1^3\,,
+\eqno\cr
+&\quad\vdots
+\enddisplay
+This sequence of formulas yields ``additive'' identities that extend
+\eq(|ind-sum1|) and \eq(|ind-sum2|) to all the cumulants.
+
+Let's get back down to earth and apply these ideas to simple examples. The
+simplest case of a random variable is a ``random constant,\qback'' where
+$X$~has a certain fixed value~$x$ with probability~$1$. In this case
+$G_X(z)=z^x$, and $\ln G_X(e^t)=xt$; hence the mean is~$x$ and all other
+cumulants are zero. It follows that the operation of multiplying any pgf
+by $z^x$ increases the mean by~$x$ but leaves the variance and all other
+cumulants unchanged.
+
+How do probability generating functions apply to dice? The
+distribution of spots on one fair die has the pgf
+\begindisplay
+G(z)={z+z^2+z^3+z^4+z^5+z^6\over6}=zU_6(z)\,,
+\enddisplay
+where $U_6$ is the pgf for the uniform distribution of order~$6$. The
+factor~`$z$' adds $1$ to the mean, so the mean is $3.5$ instead of~${n-1\over2}
+=2.5$ as given in~\eq(|unif-mean|);
+but an extra `$z$'
+ does not affect the variance \eq(|unif-var|), which equals $35\over12$.
+
+The pgf for total spots on two independent dice is the square of the pgf for
+spots on one die,
+\begindisplay \advance\medmuskip-.6mu
+G_S(z)&={z^2+2z^3+3z^4+4z^5+5z^6+6z^7+5z^8+4z^9+3z^{10}+2z^{11}+z^{12}\over36}\cr
+&=z^2U_6(z)^2\,.
+\enddisplay
+If we roll a pair of fair dice $n$ times,
+ the probability that we get a total of $k$~spots
+overall is, similarly,
+\begindisplay \openup2pt
+[z^k]\,G_S(z)^n&=[z^k]\,z^{2n}U_6(z)^{2n}\cr
+&=[z^{k-2n}]\,U_6(z)^{2n}\,.
+\enddisplay
+
+In the hats-off-to-football-victory problem considered earlier,
+\g Hat distribution is a different kind of uniform distribution.\g
+otherwise known as the problem of
+enumerating the fixed points of a random permutation, we know from
+\equ(5.|subfactorial-rec|)
+that the pgf is
+\begindisplay
+F_n(z)=\sum_{0\le k\le n}{(n-k)\?\over(n-k)!}{z^k\over k!}\,,\qquad
+\hbox{for $n\ge0$}.
+\eqno\eqref|football-pgf|
+\enddisplay
+Therefore
+\begindisplay
+F_n'(z)&=\sum_{1\le k\le n}{(n-k)\?\over(n-k)!}{z^{k-1}\over(k-1)!}\cr
+&=\sum_{0\le k\le n-1}{(n-1-k)\?\over(n-1-k)!}{z^k\over k!}\cr
+\noalign{\smallskip}
+&=F_{n-1}(z)\,.\cr
+\enddisplay
+Without knowing the details of the coefficients, we can conclude from
+this recurrence $F'_n(z)=F_{n-1}(z)$ that $F_n^{(m)}(z)=F_{n-m}(z)$; hence
+\begindisplay
+F_n^{(m)}(1)=F_{n-m}(1)=\[n\ge m]\,.
+\eqno
+\enddisplay
+This formula makes it easy to calculate the mean and variance;
+we find as before (but more quickly) that they are both equal
+to~$1$ when $n\ge2$.
+
+In fact, we can now show that the $m$th cumulant $\kappa_m$ of this
+random variable is equal to~$1$ whenever $n\ge m$. For the $m$th
+cumulant depends only on $F'_n(1)$, $F''_n(1)$, \dots,~$F^{(m)}_n(1)$,
+and these are all equal to~$1$; hence we obtain the same answer for
+the $m$th cumulant as we do when we replace $F_n(z)$ by the limiting pgf
+\begindisplay
+F_\infty(z)=e^{z-1}\,,
+\eqno\eqref|football-infty|
+\enddisplay
+which has $F_\infty^{(m)}(1)=1$ for derivatives of all orders. The cumulants
+of $F_\infty$ are identically equal to~$1$, because
+\begindisplay
+\ln F_\infty(e^t)=\ln e^{e^t-1}=e^t-1
+={t\over1!}+{t^2\over2!}+{t^3\over3!}+\cdots\,.
+\enddisplay
+
+\beginsection 8.4 Flipping coins
+
+Now let's turn to processes that have just two outcomes.
+If we flip a coin, there's probability $p$ that it comes up
+\g Con artists know that\/ $p\approx0.1$ when you spin a
+newly minted U.S. penny on a~smooth table. "!cheating"
+(The weight distribution makes "Lincoln"'s head fall downward.)\g
+heads and probability $q$ that it comes up tails, where
+\begindisplay
+p+q=1\,.
+\enddisplay
+(We assume that the coin doesn't come to rest on its edge, or
+fall into a hole, etc.) Throughout this section, the numbers $p$
+and~$q$ will always sum to~$1$. If the coin is {\it fair},
+"!fair coin" "!biased coin"
+we have $p=q=\half$; otherwise the coin is said to be {\it biased}.
+
+The probability generating function for the number of heads after
+one toss of a coin is
+\begindisplay
+H(z)=q+pz\,.
+\eqno
+\enddisplay
+If we toss the coin $n$ times, always assuming that different coin
+tosses are independent, the number of heads
+is generated by
+\begindisplay
+H(z)^n=(q+pz)^n=\sum_{k\ge0}{n\choose k}p^kq^{n-k}z^k\,,
+\eqno\eqref|binom-pgf|
+\enddisplay
+according to
+the binomial theorem. Thus, the chance that we obtain exactly~$k$
+heads in $n$ tosses is ${n\choose k}p^kq^{n-k}$.
+This sequence of probabilities is
+called the {\it"binomial distribution"}.
+
+Suppose we toss a coin repeatedly until heads first turns up. What is
+the probability that exactly $k$~tosses will be required? We have $k=1$
+with probability~$p$ (since this is the probability of heads on
+the first flip); we have $k=2$ with probability $qp$ (since this
+is the probability of tails first, then heads); and for general~$k$
+the probability is $q^{k-1}p$. So the generating function is
+\begindisplay
+pz+qpz^2+q^2pz^3+\cdots\,={pz\over1-qz}\,.
+\eqno\eqref|geom-pgf|
+\enddisplay
+Repeating the process until $n$ heads are obtained gives the pgf
+"!Bernoulli trials, see coin flipping"
+\begindisplay
+\left( pz\over1-qz\right)^{\!n}&=p^nz^n\sum_k{n+k-1\choose k}(qz)^k\cr
+&=\sum_k{k-1\choose k-n}p^nq^{k-n}z^k\,.
+\eqno\eqref|bernoulli-trials|
+\enddisplay
+This, incidentally, is $z^n$ times
+\begindisplay
+\left(p\over1-qz\right)^{\!n}=\sum_k{n+k-1\choose k}p^nq^kz^k\,,
+\eqno\eqref|negbinom-pgf|
+\enddisplay
+the generating function for the {\it"negative binomial distribution"}.
+%(The special case $n=1$ of a negative binomial distribution is called
+%a {\it"geometric distribution"}, because the corresponding generating
+%function is a geometric series.)
+
+The probability space in example \eq(|bernoulli-trials|),
+where we flip a coin until $n$~heads have appeared,
+ is different from the
+probability spaces we've seen earlier in this chapter, because it
+contains infinitely many elements. Each element is a finite sequence
+of heads and/or tails, containing precisely $n$ heads in all, and
+\g Heads I win,\par tails you lose.\smallskip
+No? OK; tails you lose, heads I~win.\smallskip
+No? Well, then,\par heads you lose,\par tails I win.\g
+ending with heads; the probability of such a sequence is $p^nq^{k-n}$,
+where $k-n$ is the number of tails. Thus, for example, if $n=3$ and
+if we write $\tt H$ for heads and $\tt T$ for tails, the sequence
+$\tt THTTTHH$ is an element of the probability space, and its
+probability is $qpqqqpp=p^3q^4$.
+
+Let $X$ be a random variable with the binomial distribution \eq(|binom-pgf|),
+and let $Y$ be a random variable with the negative binomial
+distribution \eq(|negbinom-pgf|). These distributions depend on $n$ and~$p$.
+The mean of\/~$X$ is $nH'(1)=np$, since its pgf is $H(z)^n$; the variance is
+\begindisplay
+n\bigl(H''(1)+H'(1)-H'(1)^2\bigr)=n(0+p-p^2)=npq\,.
+\eqno\eqref|v-binom|
+\enddisplay
+Thus the standard deviation is $\sqrt{@npq\vphantom1}\,$: If we
+toss a coin $n$~times, we expect to get heads about
+$np\pm\sqrt{@npq\vphantom1}$ times.  The mean and variance of $Y$
+can be found in a similar way: If we let
+\begindisplay
+G(z)={p\over1-qz}\,,
+\enddisplay
+we have
+\begindisplay \openup3pt
+G'(z)&={pq\over(1-qz)^2}\,,\cr
+G''(z)&={2pq^2\over(1-qz)^3}\,;
+\enddisplay
+hence $G'(1)=pq/p^2=q/p$ and $G''(1)=2pq^2\!/p^3=2q^2\!/p^2$. It follows that
+the mean of\/~$Y$ is $nq/p$ and the variance is $nq/p^2$.
+
+A simpler way to derive the mean and variance of\/~$Y$ is to use the
+reciprocal generating function
+\begindisplay
+F(z)={1-qz\over p}={1\over p}-{q\over p}z\,,
+\eqno
+\enddisplay
+and to write
+\begindisplay
+G(z)^n=F(z)^{-n}\,.
+\eqno
+\enddisplay
+This polynomial $F(z)$ is not a probability generating function, because
+it has a negative coefficient. But it does satisfy the crucial condition
+$F(1)=1$.
+Thus $F(z)$ is formally a binomial that corresponds to a coin for which
+we get heads with ``probability'' equal to $-q/p$; and $G(z)$ is formally
+\g The probability is negative that I'm getting younger.
+\medskip Oh? Then it's ${>}\,1$ that you're getting older, or
+staying the~same.\g
+equivalent to flipping such a coin $-1$ times\kern1pt(!).
+The negative binomial distribution
+with parameters $(n,p)$ can therefore be regarded as the ordinary
+binomial distribution with parameters $(n',p')=(-n,-q/p)$. Proceeding
+formally, the mean must be $n'p'=(-n)(-q/p)=nq/p$, and the variance must
+be $n'p'q'=(-n)(-q/p)(1+q/p)=nq/p^2$. This formal derivation involving
+negative probabilities is valid, because our derivation for ordinary
+binomials was based on identities between formal power series in which
+the assumption $0\le p\le1$ was never used.
+
+\unitlength=3pt
+\def\domi{\beginpicture(0,2)(0,0) % identity
+	\put(0,0){\line(0,1){2}}
+	\endpicture}
+\def\domv{\beginpicture(1,2)(0,0) % vertical without left edge
+	\put(1,0){\line(0,1){2}}
+	\put(0,0){\line(1,0){1}}
+	\put(0,2){\line(1,0){1}}
+	\endpicture}
+\def\domhh{\beginpicture(2,2)(0,0) % two horizontals without left edge
+	\put(2,0){\line(0,1){2}}
+	\put(0,0){\line(1,0){2}}
+	\put(0,1){\line(1,0){2}}
+	\put(0,2){\line(1,0){2}}
+	\endpicture}
+
+\smallbreak
+Let's move on to another example: How many times do we have to flip
+a coin until we get heads twice in a row? The probability space now
+consists of all sequences of $\tt H$'s and $\tt T$'s that end
+with $\tt HH$ but have no consecutive $\tt H$'s until the final position:
+\begindisplay
+\Omega=\tt\{@ HH,THH,TTHH,HTHH,TTTHH,THTHH,HTTHH,\ldots\,\}\,.
+\enddisplay
+The probability of any given sequence is obtained by replacing $\tt H$
+by $p$ and $\tt T$ by~$q$; for example, the sequence $\tt THTHH$
+will occur with probability
+\begindisplay
+\Pr(@{\tt THTHH}@)=qpqpp=p^3q^2\,.
+\enddisplay
+
+We can now play with generating functions as we did at the beginning
+of Chapter~7, letting $S$ be the infinite sum
+\begindisplay
+S=\tt  HH+THH+TTHH+HTHH+TTTHH+THTHH+HTTHH+\cdots
+\enddisplay
+of all the elements of $\Omega$. If we replace each $\tt H$ by $pz$
+and each $\tt T$ by $qz$, we get the probability generating function
+for the number of flips needed until two consecutive heads turn up.
+
+There's a curious relation between $S$ and the sum of domino tilings
+\begindisplay \postdisplaypenalty=1000
+T	= \domi+
+ \domi\domv+\domi\domv\domv + \domi\domhh
+ + \domi\domv\domv\domv + \domi\domv\domhh + \domi\domhh\domv
+ + \cdots
+\enddisplay
+in equation \equ(7.|t-sum|). Indeed, we obtain $S$ from $T$ if we
+replace each $\domi\domv$ by $\tt T$ and each $\domi\domhh$ by $\tt HT$,
+then tack on an $\tt HH$ at the end. This correspondence is easy
+to prove because each element of~$\Omega$ has the form $({\tt T+HT})^n
+\tt HH$ for some $n\ge0$, and each term of~$T$ has the
+form $(@\domi\domv+\domi\domhh@)^n$.
+Therefore by \equ(7.|t-fraction|) we have
+\begindisplay
+S=(1-{\tt T-HT})^{-1}{\tt HH}\,,
+\enddisplay
+and the probability generating function for our problem is
+\begindisplay \openup6pt
+G(z)&=\bigl(1-qz-(pz)(qz)\bigr)^{\!-1}(pz)^2\cr
+&={p^2z^2\over1-qz-pqz^2}\,.
+\eqno
+\enddisplay
+
+Our experience with the negative binomial distribution gives us a clue
+that we can most easily calculate the mean and
+variance of \thiseq\ by writing
+\begindisplay
+G(z)={z^2\over F(z)}\,,
+\enddisplay
+where
+\begindisplay
+F(z)={1-qz-pqz^2\over p^2}\,,
+\enddisplay
+and by calculating the ``mean'' and ``variance'' of this pseudo-pgf\/ $F(z)$.
+(Once again we've introduced a function with $F(1)=1$.)
+We have
+\begindisplay
+F'(1)&=(-q-2pq)/p^2=2-p^{-1}-p^{-2}\,;\cr
+F''(1)&=-2pq/p^2=2-2p^{-1}\,.\cr
+\enddisplay
+Therefore, since $z^2=F(z)@G(z)$, \ $\Mean(z^2)=2$, and
+$\Var(z^2)=0$, the mean and variance of distribution $G(z)$ are
+\begindisplay
+\Mean(G)&=2-\Mean(F)&=p^{-2}+p^{-1}\,;\eqno\cr
+\Var(G)&=-\Var(F)&=p^{-4}+2p^{-3}-2p^{-2}-p^{-1}\,.\eqno\cr
+\enddisplay
+When $p=\half$ the mean and variance are $6$ and~$22$, respectively.
+(Exercise~|divide-gfs| discusses the calculation of means and variances
+by subtraction.)
+
+%\smallbreak
+\goodbreak
+Now let's try a more intricate experiment: We will flip coins until the
+pattern {\tt THTTH} is first obtained. The sum of winning positions
+is now
+\begindisplay
+S&=\tt THTTH+HTHTTH+TTHTTH\cr
+&\qquad\tt+HHTHTTH+HTTHTTH+THTHTTH+TTTHTTH+\cdots\,;
+\enddisplay
+this sum is more difficult to describe than the previous one. If we go
+back to the method by which we solved the domino problems in Chapter~7,
+we can obtain a formula for~$S$ by considering it as a ``"finite state
+language"'' defined by the following ``"automaton"'':
+\g\noindent\llap{``}\thinspace`You really are an automaton\dash---a calculating
+machine,' I cried. `There is something positively inhuman in you at
+times.'\thinspace''\par\hfill\dash---J.\thinspace H.
+ "Watson"~[|holmes-four|]\g % chap2
+\begindisplay
+\unitlength=4pt
+\beginpicture(60,10.5)(-8,-8.5)
+\multiput(0,0)(10,0)6{\circle4}
+\multiput(-8,0)(10,0)6{\vector(1,0)6}
+\put(0,.1){\makebox(0,0){$0$}}
+\put(10,.1){\makebox(0,0){$1$}}
+\put(20,.1){\makebox(0,0){$2$}}
+\put(30,.1){\makebox(0,0){$3$}}
+\put(40,.1){\makebox(0,0){$4$}}
+\put(50,.1){\makebox(0,0){$5$}}
+\put(3.25,1.75){\makebox(0,0){\tt T}}
+\put(13.25,1.75){\makebox(0,0){\tt H}}
+\put(23.25,1.75){\makebox(0,0){\tt T}}
+\put(33.25,1.75){\makebox(0,0){\tt T}}
+\put(43.25,1.75){\makebox(0,0){\tt H}}
+\put(1.5,-3.5){\makebox(0,0){\tt H}}
+\put(11.5,-3.5){\makebox(0,0){\tt T}}
+\put(21.5,-3.5){\makebox(0,0){\tt H}}
+\put(31.5,-3.5){\makebox(0,0){\tt H}}
+\put(41.5,-3.5){\makebox(0,0){\tt T}}
+\ovaltlfalse
+\ovaltrfalse
+\put(-2,-2){\oval(4,8)}
+\put(8,-2){\oval(4,8)}
+\put(7.5,-5){\oval(25,4)}
+\put(23,-3.5){\oval(14,4)}
+\put(22.5,-6.5){\oval(35,4)}
+\put(-5,-5){\vector(0,1)5}
+\put(-4,-2){\vector(0,1)2}
+\put(5,-6.5){\vector(0,1){6.5}}
+\put(6,-2){\vector(0,1)2}
+\put(16,-3.5){\vector(0,1){3.5}}
+\put(20,-5){\line(0,1)3}
+\put(30,-3.5){\line(0,1){1.5}}
+\put(40,-6.5){\line(0,1){4.5}}
+\endpicture
+\enddisplay
+The elementary events in the probability space are the sequences of
+$\tt H$'s and $\tt T$'s that lead from state~$0$ to state~$5$. Suppose,
+for example, that we have just seen {\tt THT}; then we are in state~$3$.
+Flipping tails now takes us to state~$4$; flipping heads in state~$3$
+would take us to
+state~$2$ (not all the way back to state~$0$, since the {\tt TH} we've
+just seen may be followed by {\tt TTH}).
+
+In this formulation, we can let $S_k$ be the sum of all sequences
+of {\tt H}'s and {\tt T}'s that lead to state~$k$; it follows that
+\begindisplay   \openup3pt
+S_0&=1+S_0\,{\tt H}+S_2\,{\tt H}\,,\cr
+S_1&=S_0\,{\tt T}+S_1\,{\tt T}+S_4\,{\tt T}\,,\cr
+S_2&=S_1\,{\tt H}+S_3\,{\tt H}\,,\cr
+S_3&=S_2\,{\tt T}\,,\cr
+S_4&=S_3\,{\tt T}\,,\cr
+S_5&=S_4\,{\tt H}\,.\cr
+\enddisplay
+Now the sum $S$ in our problem is $S_5$; we can obtain it by solving
+these six equations in the six unknowns $S_0$, $S_1$, \dots,~$S_5$.
+Replacing $\tt H$ by~$pz$ and $\tt T$ by~$qz$ gives generating
+functions where the coefficient of~$z^n$ in~$S_k$ is the probability
+that we are in state~$k$ after $n$ flips.
+
+In the same way, any diagram of transitions between states, where the
+transition from state~$j$ to state~$k$ occurs with given probability~$p_{j,k}$,
+leads to a set of simultaneous linear equations whose solutions are
+generating functions for the state probabilities after $n$~transitions
+have occurred. Systems of this kind are called {\it "Markov processes"},
+and the theory of their behavior is intimately related to the theory
+of linear equations.
+
+But the coin-flipping problem can be solved in a much simpler way,
+without the complexities of the general finite-state approach. Instead
+of six equations in six unknowns $S_0$, $S_1$, \dots,~$S_5$, we can
+characterize~$S$ with only two equations in two unknowns. The trick is
+to consider the auxiliary sum $N=S_0+S_1+S_2+S_3+S_4$ of all flip
+sequences that don't contain any occurrences of the given pattern
+{\tt THTTH}:
+\begindisplay
+N=1+\tt H+T+HH+\cdots+THTHT+THTTT+\cdots\,.
+\enddisplay
+We have
+\begindisplay
+1+N(@{\tt H+T}@)=N+S\,,
+\eqno\eqref|thtth-1|
+\enddisplay
+\looseness=-1
+because every term on the left either ends with $\tt THTTH$ (and
+belongs to~$S$) or doesn't (and belongs to~$N$); conversely, every
+term on the right is either empty or belongs to $N\,\tt H$
+or~$N\,\tt T$. And we also have the important additional equation
+\begindisplay
+N\,{\tt THTTH}=S+S\,{\tt TTH}\,,
+\eqno\eqref|thtth-2|
+\enddisplay
+because every term on the left completes a term of~$S$ after either
+the first~$\tt H$ or the second~$\tt H$, and because every 
+term on the right belongs to the left.
+
+The solution to these two simultaneous equations is easily obtained:
+We have $N=(1-S)(1-{\tt H}-{\tt T})^{-1}$ from~\eq(|thtth-1|), hence
+\begindisplay
+(1-S)(1-{\tt T}-{\tt H})^{-1}\,{\tt THTTH}=S(1+{\tt TTH})\,.
+\enddisplay
+As before, we get the probability generating function $G(z)$ for
+the number of flips if we replace $\tt H$ by~$pz$ and $\tt T$ by~$qz$.
+A bit of simplification occurs since $p+q=1$, and we find
+\begindisplay
+{\bigl(1-G(z)\bigr)\,p^2q^3z^5\over1-z}=G(z)(1+pq^2z^3)\,;
+\enddisplay
+hence the solution is
+\begindisplay
+G(z)={p^2q^3z^5\over p^2q^3z^5+(1+pq^2z^3)(1-z)}\,.
+\eqno
+\enddisplay
+Notice that $G(1)=1$, if $pq\ne0$; we do eventually encounter the
+pattern $\tt THTTH$, with probability~$1$, unless the coin is rigged
+so that it always comes up heads or always tails.
+
+To get the mean and variance of the distribution \thiseq, we invert
+$G(z)$ as we did in the previous problem, writing $G(z)=z^5\!/F(z)$
+where $F$~is a polynomial:
+\begindisplay
+F(z)={p^2q^3z^5+(1+pq^2z^3)(1-z)\over p^2q^3}\,.
+\eqno
+\enddisplay
+The relevant derivatives are
+\begindisplay
+F'(1)&=5-(1+pq^2)/p^2q^3\,,\cr
+F''(1)&=20-6pq^2\!/p^2q^3\,;
+\enddisplay
+and if $X$ is the number of flips we get
+\begindisplay
+EX&=\Mean(G)=5-\Mean(F)=p^{-2}q^{-3}+p^{-1}q^{-1}\,;}\hidewidth{
+ \eqno\eqref|thtth-e|\cr
+VX&=\Var(G)&=-\Var(F)\cr
+&&=-25+p^{-2}q^{-3}+7p^{-1}q^{-1}+\Mean(F)^2\cr
+&&=(EX)^2-9p^{-2}q^{-3}-3p^{-1}q^{-1}\,.\eqno\eqref|thtth-v|
+\enddisplay
+When $p=\half$, the mean and variance are $36$ and $996$.
+
+\smallbreak
+Let's get general: The problem we have just solved was ``random'' enough
+to show us how to analyze the case that we are waiting for the first
+appearance of an
+{\it arbitrary\/} pattern $A$ of heads and tails. Again we let $S$
+be the sum of all winning sequences of $\tt H$'s and $\tt T$'s, and
+we let~$N$ be the sum of all sequences that haven't encountered 
+the pattern $A$~yet.
+Equation \eq(|thtth-1|) will remain the same; equation \eq(|thtth-2|)
+will become
+\begindisplay \openup4pt
+NA&=S\bigl(1+A^{(1)}\,\[A^{(m-1)}=A_{(m-1)}]+
+A^{(2)}\,\[A^{(m-2)}=A_{(m-2)}]\cr
+&\hskip7em+\cdots+
+A^{(m-1)}\,\[A^{(1)}=A_{(1)}]\bigr)\,,
+\eqno\eqref|general-solitaire|
+\enddisplay
+where $m$ is the length of~$A$, and where $A^{(k)}$ and $A_{(k)}$ denote
+respectively
+the last~$k$ characters and the first~$k$ characters of~$A$.
+For example, if $A$ is the pattern $\tt THTTH$ we just studied, we have
+\begindisplay
+&A^{(1)}=\tt H\,,\quad&A^{(2)}=\tt TH\,,\quad&A^{(3)}=\tt TTH\,,\quad
+ &A^{(4)}=\tt HTTH\,;\cr
+&A_{(1)}=\tt T\,,\quad&A_{(2)}=\tt TH\,,\quad&A_{(3)}=\tt THT\,,\quad
+ &A_{(4)}=\tt THTT\,.\cr
+\enddisplay
+Since the only perfect match is $A^{(2)}=A_{(2)}$, equation \thiseq\
+reduces to~\eq(|thtth-2|).
+
+Let $\widetilde A$ be the result of substituting $p^{-1}$ for $\tt H$
+and $q^{-1}$ for~$\tt T$ in the pattern~$A$. Then it is not difficult to
+generalize our derivation of \eq(|thtth-e|) and \eq(|thtth-v|) to
+conclude (exercise~|prove-aflips|) that the general mean and variance are
+\begindisplay \openup3pt
+EX&=\sum_{k=1}^m{\widetilde A}_{(k)}\,\[A^{(k)}=A_{(k)}]\,;\eqno\eqref|aflip-e|\cr
+VX&=(EX)^2-\sum_{k=1}^m\,(2k-1){\widetilde A}_{(k)}\,\[A^{(k)}=A_{(k)}]\,.
+\eqno\eqref|aflip-v|\cr
+\enddisplay
+
+In the special case $p=\half$ we can interpret these formulas in a particularly
+simple way. Given a pattern~$A$ of $m$~heads and tails, let
+\begindisplay
+A{:}A=\sum_{k=1}^m2^{k-1}\,\[A^{(k)}=A_{(k)}]\,.
+\eqno\eqref|a:a|
+\enddisplay
+We can easily find the binary representation of this number by placing
+a `$1$' under each position such that the string matches itself perfectly
+when it is superimposed on a copy of itself that has been shifted to
+start in this position:
+\def\chek{\rlap{$\qquad\scriptstyle\sqrt{\vphantom2}$}}
+\begindisplay \def\preamble{\hfill$##$&${}##$\hfil&&\hfil\tt##\hfil}
+A&=&H&T&H&T&H&H&T&H&T&H\cr
+A{:}A&=(&$1$&$0$&$0$&$0$&$0$&$1$&$0$&$1$&$0$&$1$&\rlap{$)_2=512+16+4+1=533$}%
+\phantom{$0$}&
+\phantom{$0$}&
+\phantom{$0$}&
+\phantom{$0$}&
+\phantom{$0$}&
+\phantom{$0$}&
+\phantom{$0$}&
+\phantom{$0$}\cr
+&&H&T&H&T&H&H&T&H&T&H\chek\cr
+&&&H&T&H&T&H&H&T&H&T&H\cr
+&&&&H&T&H&T&H&H&T&H&T&H\cr
+&&&&&H&T&H&T&H&H&T&H&T&H\cr
+&&&&&&H&T&H&T&H&H&T&H&T&H\cr
+&&&&&&&H&T&H&T&H&H&T&H&T&H\chek\cr
+&&&&&&&&H&T&H&T&H&H&T&H&T&H\cr
+&&&&&&&&&H&T&H&T&H&H&T&H&T&H\chek\cr
+&&&&&&&&&&H&T&H&T&H&H&T&H&T&H\cr
+&&&&&&&&&&&H&T&H&T&H&H&T&H&T&H\chek\cr
+\enddisplay
+Equation \eq(|aflip-e|) now tells us that the expected number of flips
+until pattern~$A$ appears is exactly $2(A{:}A)$, if we use a fair coin,
+because ${\widetilde A}_{(k)}=2^k$ when $p=q=\half$. This result,
+\g``Chem bol'she periodov u nashego slova,
+tem pozzhe ono po\t\i avl\t\i aets\t\i a.''\hfill\dash---A.\thinspace D. Solov'ev\g
+first discovered by the Soviet mathematician A.\thinspace D. "Solov'ev" in 1966~[|soloviev|],
+seems paradoxical at first glance: Patterns with no self-overlaps
+occur sooner than overlapping patterns do! It takes almost twice as long
+to encounter $\tt HHHHH$ as it does to encounter $\tt HHHHT$ or $\tt THHHH$.
+
+\smallbreak
+Now let's consider an amusing game that was invented by (of all people)
+Walter "Penney"~[|penney|] in 1969. Alice and Bill flip a coin until
+either $\tt HHT$ or $\tt HTT$ occurs; Alice wins if the pattern
+$\tt HHT$ comes first, Bill wins if $\tt HTT$ comes first. 
+This game\dash---now called ``"Penney ante"''\dash---certainly seems to be
+fair, if played with a fair coin, because both patterns $\tt HHT$
+and $\tt HTT$ have the same characteristics if we look at them in isolation:
+The probability generating function for the waiting time until
+$\tt HHT$ first occurs is
+\begindisplay
+G(z)={z^3\over z^3-8(z-1)}\,,
+\enddisplay
+\g\vskip-15pt Of \undertext{course} not! Who could they have an advantage over?\g
+and the same is true for $\tt HTT$. Therefore neither Alice nor Bill
+has an advantage, if they play solitaire.
+
+But there's an interesting interplay between the patterns when both are
+considered simultaneously. Let $S_A$ be the sum of Alice's winning
+configurations, and let $S_B$ be the sum of Bill's:
+\begindisplay
+S_A&=\tt HHT+HHHT+THHT+HHHHT+HTHHT+THHHT+\cdots\,;\cr
+S_B&=\tt HTT+THTT+HTHTT+TTHTT+THTHTT+TTTHTT+\cdots\,.\cr
+\enddisplay
+Also\dash---taking our cue from the trick that worked when only one pattern was
+involved\dash---let us denote by~$N$ the sum of all sequences in which neither
+player has won so far:
+\begindisplay
+N=1+\tt H+T+HH+HT+TH+TT+HHH+HTH+THH+\cdots\,.
+\eqno\eqref|n-hht:htt|
+\enddisplay
+Then we can easily verify the following set of equations:
+\begindisplay
+1+N(@{\tt H+T}@)&=N+S_A+S_B\,;\cr
+N\,{\tt HHT}&=S_A\,;\eqno\eqref|hht:htt|\cr
+N\,{\tt HTT}&=S_A\,{\tt T}+S_B\,.
+\enddisplay
+If we now set ${\tt H}={\tt T}=\half$, the resulting value of $S_A$
+becomes the probability that Alice wins, and $S_B$ becomes the probability
+that Bill wins. The three equations reduce to
+\begindisplay
+\textstyle 1+N=N+S_A+S_B\,;\qquad {1\over8}N=S_A\,;\qquad
+{1\over8}N=\half S_A+S_B\,;
+\enddisplay
+and we find $S_A={2\over3}$, $S_B={1\over3}$. Alice will win about twice
+as often as Bill!
+
+In a generalization of this game, Alice and Bill choose patterns $A$ and~$B$ of
+heads and tails, and they flip coins until either $A$ or~$B$ appears.
+The two patterns need not have the same length, but we assume that
+$A$~doesn't occur within~$B$, nor does $B$ occur within~$A$. (Otherwise
+the game would be degenerate. For example, if $A=\tt HT$ and $B=\tt THTH$,
+poor Bill could never win; and if $A=\tt HTH$ and $B=\tt TH$, both players might
+claim victory simultaneously.) Then we can write three equations
+analogous to \eq(|general-solitaire|) and \eq(|hht:htt|):
+\begindisplay \openup5pt
+&1+N(@{\tt H+T}@)=N+S_A+S_B\,;}\hidewidth{\cr
+&NA&=S_A\sum_{k=1}^l A^{(l-k)}\,\[A^{(k)}=A_{(k)}]
+ \;+\;S_B\!\!\sum_{k=1}^{\min(l,m)} A^{(l-k)}\,\[B^{(k)}=A_{(k)}]\,;\cr
+&NB&=S_A\!\!\sum_{k=1}^{\min(l,m)}B^{(m-k)}\,\[A^{(k)}=B_{(k)}]
+ \;+\;S_B\sum_{k=1}^m B^{(m-k)}\,\[B^{(k)}=B_{(k)}]\,.\cr
+\eqno\eqref|general-duel|\cr
+\enddisplay
+Here $l$ is the length of~$A$ and $m$ is the length of~$B$. For example, if
+we have $A=\tt HTTHTHTH$ and $B=\tt THTHTTH$,
+ the two pattern-dependent equations are
+\begindisplay
+N\,{\tt HTTHTHTH}&=S_A\,{\tt TTHTHTH}+S_A+S_B\,{\tt TTHTHTH}+S_B\,{\tt THTH}\,;\cr
+N\,{\tt THTHTTH}&=S_A\,{\tt THTTH}+S_A\,{\tt TTH}+S_B\,{\tt THTTH}+S_B\,.\cr
+\enddisplay
+We obtain the victory probabilities by setting ${\tt H}={\tt T}=\half$, if
+we assume that a fair coin is being used; this reduces the two crucial equations
+to
+\begindisplay \openup2pt
+\eqalign{
+N&=S_A\sum_{k=1}^l 2^k\,\[A^{(k)}=A_{(k)}]
+ +S_B\sum_{k=1}^{\min(l,m)} 2^k\,\[B^{(k)}=A_{(k)}]\,;\cr
+N&=S_A\sum_{k=1}^{\min(l,m)} 2^k\,\[A^{(k)}=B_{(k)}]
+ +S_B\sum_{k=1}^m 2^k\,\[B^{(k)}=B_{(k)}]\,.\cr}
+\eqno\eqref|general-duel-half|
+\enddisplay
+We can see what's going on if we
+generalize the $A{:}A$ operation of \eq(|a:a|) to a function
+of two independent strings $A$ and~$B$:
+\begindisplay
+A{:}B=\sum_{k=1}^{\min(l,m)}2^{k-1}\,\[A^{(k)}=B_{(k)}]\,.
+\eqno\eqref|a:b|
+\enddisplay
+Equations \eq(|general-duel-half|) now become simply
+\begindisplay
+S_A(A{:}A)+S_B(B{:}A)=S_A(A{:}B)+S_B(B{:}B)\,;
+\enddisplay
+the "odds" in Alice's favor are
+\begindisplay
+{S_A\over S_B}={B{:}B-B{:}A\over A{:}A-A{:}B}\,.
+\eqno\eqref|alice-odds|
+\enddisplay
+(This beautiful formula was discovered by John Horton "Conway" [|gardner-coins|].)
+
+For example, if $A=\tt HTTHTHTH$ and $B=\tt THTHTTH$ as above, we have
+$A{:}A=(10000001)_2=129$, $A{:}B=(0001010)_2=10$, $B{:}A=(0001001)_2=9$,
+and $B{:}B=(1000010)_2=66$; so the ratio $S_A/S_B$ is $(66-9)/(129-10)=57/119$.
+Alice will win this one only $57$ times out of every $176$, on the average.
+
+Strange things can happen in Penney's game. For example,
+the pattern $\tt HHTH$ wins over the pattern $\tt HTHH$ with
+$3/2$~odds, and $\tt HTHH$ wins over $\tt THHH$ with $7/5$~odds. So
+$\tt HHTH$ ought to be much better than $\tt THHH$. Yet $\tt THHH$
+actually wins over $\tt HHTH$, with $7/5$~odds! The relation
+\g Odd, odd.\g
+"!nontransitive paradox" "!transitive law, failure of" "!paradox"
+between patterns is not transitive. In fact, 
+exercise~|second-player-win| proves that if Alice chooses any pattern
+$\tau_1\tau_2\ldots \tau_l$ of length $l\ge3$, Bill can always ensure
+better than even chances of winning if he chooses
+the pattern ${\overline\tau}_2\tau_1\tau_2\ldots
+\tau_{l-1}$, where ${\overline\tau}_2$ is the heads/tails opposite
+of~$\tau_2$.
+
+\beginsection 8.5 Hashing
+
+Let's conclude this chapter by applying probability theory to computer
+programming. Several important algorithms for storing and "retrieving
+information" inside a computer are based on a technique called "!searching a table"
+``"hashing".\qback'' The general problem is to maintain a set of
+\g \noindent\llap{``}Somehow the verb `to~hash' magically became standard terminology
+for key transformation during the mid-1960s, yet nobody was rash enough
+to use such an undignified word publicly until 1967.''\par
+\hfill\dash---D.\thinspace E. Knuth~[|knuth3|]\g
+records that each contain a ``key'' value, $K$, and some data $D(K)$
+about that key; we want to be able to find $D(K)$ quickly when $K$
+is given. For example, each key might be the name of a student,
+and the associated data might be that student's homework grades.
+
+In practice, computers don't have enough capacity to set aside
+one memory cell for every possible key; billions of keys are
+possible, but comparatively few keys
+are actually present in any
+one application. One solution to the problem is to maintain two
+tables \array KEY[j] and \array DATA[j] for $1\le j\le N$, where $N$~is
+the total number of records that can be accommodated; another variable~$n$
+tells how many records are actually present. Then we can search
+for a given key~$K$ by going through the table sequentially in
+an obvious way:
+
+\smallskip
+\item{S1} Set $j:=1$. (We've searched through all positions $<j$.)
+\item{S2} If $j>n$, stop. (The search was unsuccessful.)
+\item{S3} If $\array KEY[j]=K$, stop. (The search was successful.)
+\item{S4} Increase $j$ by~$1$ and return to step S2. (We'll try again.)
+
+\smallskip\noindent
+After a successful search, the desired data entry $D(K)$ appears in
+\array DATA[j]. After an unsuccessful search, we can insert $K$ and
+$D(K)$ into the table by setting
+\begindisplay
+n:=j,\;\;\array KEY[n]:=K,\;\;\array DATA[n]:=D(K),
+\enddisplay
+assuming that the table was not already filled to capacity.
+
+This method works, but it can be dreadfully slow; we need to repeat
+step~S2 a total of $n+1$ times whenever an unsuccessful search is made, and
+$n$~can be quite large.
+
+Hashing was invented to speed things up.
+The basic idea, in one of its popular forms,
+is to use $m$ separate lists instead of one giant list. A ``hash function''
+transforms every possible key~$K$ into a list number $h(K)$ between
+$1$ and~$m$. An auxiliary table \array FIRST[i] for $1\le i\le m$
+points to the first record in list~$i$; another auxiliary table
+\array NEXT[j] for $1\le j\le N$ points to the
+record following record~$j$ in its list. We assume that
+\begindisplay
+\array FIRST[i]&=-1\,,\qquad&\hbox{if list $i$ is empty};\cr
+\array NEXT[j]&=0\,,\qquad&\hbox{if record $j$ is the last in its list}.\cr
+\enddisplay
+As before, there's
+a variable~$n$ that tells how many records have been stored altogether.
+
+For example, suppose the keys are names, and suppose that there are
+$m=4$ lists based on the first letter of a name:
+\begindisplay
+h({\rm name})=\cases{1,&for A--F;\cr
+ 2,&for G--L;\cr
+ 3,&for M--R;\cr
+ 4,&for S--Z.\cr}
+\enddisplay
+We start with four empty lists and with $n=0$. If, say, the first
+record has Nora as its key, we have $h({\rm Nora})=3$, so Nora becomes
+the key of the first item in list~$3$. If the next two names are 
+Glenn and Jim, they both go into list~$2$. Now the tables
+in memory look like this:
+\begindisplay
+&\array FIRST[1]\!=\!-1,\quad
+ \array FIRST[2]\!=\!2,\quad
+ \array FIRST[3]\!=\!1,\quad
+ \array FIRST[4]\!=\!-1.}\hidewidth{\cr
+&\array KEY[1]=\rm Nora,\qquad&\array NEXT[1]=0\,;\cr
+&\array KEY[2]=\rm Glenn,\qquad&\array NEXT[2]=3\,;\cr
+&\array KEY[3]=\rm Jim,\qquad&\array NEXT[3]=0\,;\qquad n=3.\cr
+\enddisplay
+(The values of \array DATA[1], \array DATA[2], and \array DATA[3] are
+confidential and will not be shown.) After 18 records have been inserted,
+\g Let's hear it for the Concrete Math students who sat in the
+front rows and lent their names to this experiment.\g
+the lists might contain the names
+\begindisplay \def\preamble{&##\hfil\qquad} \openup-4pt
+list $1$&list $2$&list $3$&list $4$\cr
+\noalign{\kern7pt\hrule\kern7pt}
+Dianne&Glenn&Nora&Scott\cr
+Ari&Jim&Mike&Tina\cr
+Brian&Jennifer&Michael\cr
+Fran&Joan&Ray\cr
+Doug&Jerry&Paula\cr
+&Jean\cr
+\enddisplay
+and these names would appear intermixed in the {\tt KEY} array with
+{\tt NEXT} entries to keep the lists effectively separate.
+If we now want to search for John, we have to scan through the six
+names in list~$2$ (which happens to be
+the longest list); but that's not nearly
+as bad as looking at all 18 names.
+
+Here's a precise specification of the algorithm that searches for
+key~$K$ in accordance with this scheme:
+\smallskip
+\item{H1}Set $i:=h(K)$ and $j:=\array FIRST[i]$.
+\item{H2}If $j\le0$, stop. (The search was unsuccessful.)
+\item{H3}If $\array KEY[j]=K$, stop. (The search was successful.)
+\item{H4}Set $i:=j$, then set $j:=\array NEXT[i]$ and return to step H2.
+(We'll try again.)
+\smallskip\noindent
+For example, to search for Jennifer in the example given,
+step~H1 would set $i:=2$ and $j:=2$; step~H3 would find that $\rm Glenn
+\ne Jennifer$;
+\g I bet their parents are glad about that.\g
+ step~H4 would set $j:=3$; and step~H3
+would find $\rm Jim\ne Jennifer$. One more iteration of steps H4 and~H3
+would locate Jennifer in the table.
+
+After a successful search, the desired data $D(K)$ appears in \array DATA[j],
+as in the previous algorithm. After an unsuccessful search, we can
+enter $K$ and~$D(K)$ in the table by doing the following operations:
+\begindisplay
+&n:=n+1;\cr
+&\hbox{{\bf if\/} \ $j<0$ \ {\bf then} \ $\array FIRST[i]:=n$ \ {\bf else}
+ \ $\array NEXT[i]:=n$;}\cr
+&\array KEY[n]:=K;\;\;\array DATA[n]:=D(K);\;\;\array NEXT[n]:=0.
+\eqno\eqref|insert-into-hash|
+\enddisplay
+Now the table will once again be up to date.
+
+We hope to get lists of roughly equal length, because this will make
+the task of searching about $m$~times faster. The value of~$m$ is
+usually much greater than~$4$, so a factor of $1/m$
+will be a significant improvement.
+
+We don't know in advance what keys will be present, but it is
+generally possible to choose the hash function~$h$ so that we can
+consider $h(K)$ to be a random variable that is uniformly distributed
+between $1$ and~$m$, independent of the hash values of other
+keys that are present. In such cases computing the hash function
+is like rolling a die that has $m$~faces. There's a chance that
+all the records will fall into the same list, just as there's a chance
+that a die will always turn up \diesix\kern1pt; but probability theory
+tells us that the lists will {\it almost always\/} be pretty evenly balanced.
+
+\subhead Analysis of Hashing: Introduction.
+
+``"Algorithmic analysis"'' is a branch of computer science that derives
+"!analysis of algorithms"
+quantitative information about
+the efficiency of computer methods. ``"Probabilistic analysis of
+an algorithm"'' is the study of an algorithm's running time, considered
+as a random variable that depends on assumed characteristics of the input data.
+Hashing is an especially good candidate for probabilistic analysis,
+because it is an extremely efficient method on the average, even though
+its worst case is too horrible to contemplate. (The worst case occurs
+when all keys have the same hash value.) Indeed, a computer programmer
+who uses hashing had better be a believer in probability theory.
+
+Let $P$ be the number of times step H3 is performed when the algorithm
+above is used to carry out a search. (Each execution of~H3 is called
+a ``probe'' in the table.) If we know~$P$, we know how often each
+step is performed, depending on whether the search is successful
+or unsuccessful:
+\begindisplay \def\preamble{&\hfil##\hfil\qquad}
+Step&Unsuccessful search&Successful search\cr
+\noalign{\kern2pt}
+H1&$1$ \ time&$1$ \ time\cr
+H2&$P+1$ \ times&$P$ \ times\cr
+H3&$P$ \ times&$P$ \ times\cr
+H4&$P$ \ times&$P-1$ \ times\cr
+\enddisplay
+Thus the main quantity that governs the running time of the search procedure
+is the number of probes,~$P$.
+
+We can get a good mental picture of the algorithm by imagining that
+we are keeping an address book that is organized in a special way, with room for
+only one entry per page. On the cover of the book we note down the page
+number for the first entry in each of $m$ lists; each name~$K$ determines the
+list $h(K)$ that it belongs to. Every page inside the book
+refers to the successor page in its list. The number of probes needed
+to find an address in such a book is the number of pages we must consult.
+
+If $n$ items have been inserted, their positions in the table depend only
+on their respective hash values, $\<h_1,h_2,\ldots,h_n\>$. Each of
+the $m^n$ possible sequences $\<h_1,h_2,\ldots,h_n\>$ is considered
+to be equally likely, and $P$ is a random variable depending on
+such a sequence.
+
+\subhead Case 1: The key is not present.\g Check under the doormat.\g
+
+Let's consider first the behavior of\/~$P$ in an unsuccessful search,
+assuming that $n$~records have previously been inserted into the hash table.
+In this case the relevant probability space consists of $m^{n+1}$
+elementary events
+\begindisplay
+\omega=(h_1,h_2,\ldots,h_n,h_{n+1})
+\enddisplay
+where $h_j$ is the hash value of the $j$th key inserted, and where
+$h_{n+1}$ is the hash value of the key for which the search is
+unsuccessful. We assume that the hash function~$h$ has been chosen
+properly so that $\Pr(\omega)=1/m^{n+1}$ for every such~$\omega$.
+
+For example, if $m=n=2$, there are eight equally likely
+possibilities:
+\begindisplay \def\preamble{$\hfil##\hfil$\quad&$\hfil##\hfil$\quad&%
+ $\hfil##\hfil$:\quad&$\hfil##\hfil$} \openup-3.5pt
+h_1&h_2&h_3&P\cr
+\noalign{\kern5pt\hrule\kern5pt}
+1&1&1&2\cr
+1&1&2&0\cr
+1&2&1&1\cr
+1&2&2&1\cr
+2&1&1&1\cr
+2&1&2&1\cr
+2&2&1&0\cr
+2&2&2&2\cr
+\enddisplay
+If $h_1=h_2=h_3$ we make two unsuccessful probes before concluding that
+the new key $K$ is not present; if $h_1=h_2\ne h_3$ we make none; and so
+on. This list
+of all possibilities shows that $P$ has a probability
+distribution given by the pgf $({2\over8}+{4\over8}z+{2\over8}z^2)
+=(\half+\half z)^2$, when $m=n=2$.
+
+An unsuccessful search makes one probe for
+every item in list number $h_{n+1}$, so
+we have the general formula
+\begindisplay
+P=\[h_1=h_{n+1}]\,+\,
+  \[h_2=h_{n+1}]\,+\,\cdots\,+\,
+  \[h_n=h_{n+1}]\,.
+\eqno
+\enddisplay
+The probability that $h_j=h_{n+1}$ is $1/m$, for $1\le j\le n$; so it
+follows that
+\begindisplay
+EP=E\[h_1=h_{n+1}]+
+   E\[h_2=h_{n+1}]+\cdots+
+   E\[h_n=h_{n+1}]={n\over m}\,.
+\enddisplay
+Maybe we should do that more slowly: Let $X_j$ be the random variable
+\begindisplay
+X_j=X_j(\omega)=\[h_j=h_{n+1}]\,.
+\enddisplay
+Then $P=X_1+\cdots+X_n$, and $EX_j=1/m$ for all $j\le n$; hence
+\begindisplay
+EP=EX_1+\cdots+EX_n=n/m\,.
+\enddisplay
+Good: As we had hoped, the average number of probes is $1/m$~times what it was
+without hashing.
+Furthermore the random variables $X_j$ are independent, and they each
+have the same probability generating function
+\begindisplay
+X_j(z)={m-1+z\over m}\,;
+\enddisplay
+therefore the pgf for the total number of probes in an unsuccessful
+search is
+\begindisplay
+P(z)=X_1(z)\ldots X_n(z)=\Bigl({m-1+z\over m}\Bigr)^{\!n}\,.
+\eqno
+\enddisplay
+This is a binomial distribution, with $p=1/m$ and $q=(m-1)/m$;
+in other words, the number of probes in an unsuccessful search
+behaves just like the number of heads when we toss a biased
+coin whose probability of heads is $1/m$ on each toss.
+Equation \eq(|v-binom|) tells us that the variance of\/~$P$ is therefore
+\begindisplay
+npq={n(m-1)\over m^2}\,.
+\enddisplay
+When $m$ is large, the variance of $P$ is approximately $n/m$, so the
+standard deviation is approximately $\sqrt{n/m}$.
+
+\subhead Case 2: The key is present.
+
+Now let's look at successful searches. In this case the appropriate
+probability space is a bit more complicated, depending on our
+application: We will let $\Omega$ be the set of all elementary events
+\begindisplay
+\omega=(h_1,\ldots,h_n;k)\,,
+\eqno\eqref|succ-omega|
+\enddisplay
+where $h_j$ is the hash value for the $j$th key as before, and where
+$k$~is the index of the key being sought (the key whose hash value
+is $h_k$). Thus we have $1\le h_j\le m$ for $1\le j\le n$, and $1\le k\le n$;
+there are $m^n\cdt n$ elementary events~$\omega$ in all.
+
+Let $s_j$ be the probability that we are searching for the $j$th
+key that was inserted into the table. Then
+\begindisplay
+\Pr(\omega)=s_k/m^n
+\eqno
+\enddisplay
+if $\omega$ is the event \eq(|succ-omega|). (Some applications search
+most often for the items that were inserted first, or for the items
+that were inserted last, so we will not assume that each $s_j=1/n$.)
+Notice that $\sum_{\omega\in\Omega}\Pr(\omega)=\sum_{k=1}^n s_k=1$,
+hence \thiseq\ defines a legal probability distribution.
+
+The number of probes $P$ in a successful search is $p$ if key~$K$ was
+the $p$th key to be inserted into its list. Therefore
+\begindisplay
+P(h_1,\ldots,h_n;k)=\[h_1=h_k]\,+\,
+  \[h_2=h_k]\,+\,\cdots\,+\,
+  \[h_k=h_k]\,;
+\eqno\eqref|probe-function|
+\enddisplay
+or, if we let $X_j$ be the random variable $\[h_j=h_k]$, we have
+\begindisplay
+P=X_1+X_2+\cdots+X_k\,.
+\eqno\eqref|succ-p|
+\enddisplay
+Suppose, for example, that we have $m=10$ and $n=16$, and that the
+hash values have the following ``random'' pattern:
+\g Where have I seen that pattern before?\g
+\begindisplay \let\preamble=\tablepreamble \let\quad=\enspace
+&\omit&(h_1,\ldots,h_{16})&=&3&1&4&1&5&9&2&6&5&3&5&8&9&7&9&3&;\cr
+&\omit&(P_1,\ldots,P_{16})&=&1&1&1&2&1&1&1&1&2&2&3&1&2&1&3&3&.\cr
+\enddisplay
+The number of probes $P_j$ needed to find the $j$th key is shown below $h_j$.
+
+Equation \thiseq\ represents $P$ as a sum of random variables, but we
+can't simply calculate $EP$ as $EX_1+\cdots+EX_k$ because
+the quantity $k$ itself is a random variable. What is the
+probability generating function for~$P$? To answer this question
+we should digress a moment to talk about {\it"conditional probability"}.
+\g Equation \eq(|moment-def|) was also a momentary digression.\g
+
+If $A$ and $B$ are events in a probability space, we say that
+the conditional probability of~$A$, given~$B$, is
+\begindisplay
+\Pr\prp(\omega\in A\mid\omega\in B)
+ ={\Pr\prp(\omega\in A\cap B)\over\Pr\prp(\omega\in B)}\,.
+\eqno
+\enddisplay
+For example, if $X$ and $Y$ are random variables, the conditional
+probability of the event $X=x$, given that $Y=y$, is
+\begindisplay
+\Pr\prp(X=x\mid Y=y)={\Pr\prp(X=x\ {\rm and}\ Y=y)\over\Pr\prp(Y=y)}\,.
+\eqno\eqref|pr-x-given-y|
+\enddisplay
+For any fixed $y$ in the range of\/~$Y$, the sum of these conditional
+prob\-abil\-ities over all $x$ in the range of\/~$X$ is $\Pr\prp(Y=y)/{\Pr\prp(Y=y)}=1$;
+therefore \thiseq\ defines a probability distribution, and we can define
+a new random variable `$@ X\given y@$' such that
+$\Pr\pbigi((X\given y)=x\bigr)=\Pr\prp(X=x\mid Y=y)$.
+
+ If $X$ and~$Y$ are independent,
+the random variable $X\given y$ will be essentially the same as~$X$,
+regardless of the value of~$y$, because $\Pr\prp(X=x\mid Y=y)$ is equal to
+$\Pr\prp(X=x)$ by \eq(|indep-def|); that's what independence means.
+But if $X$ and~$Y$ are dependent, the random variables
+$X\given y$ and $X\given y'$ need not resemble each other in any way
+when $y\ne y'$.
+
+If $X$ takes only nonnegative integer values, we can decompose its pgf into
+a sum of conditional pgf's with respect to any other random variable~$Y$:
+\begindisplay
+G_X(z)=\sum_{y\in Y(\Omega)}\Pr\prp(Y=y)@G_{X\given y}(z)\,.
+\eqno
+\enddisplay
+This holds because the coefficient of $z^x$ on the left side is $\Pr\prp(X=x)$,
+for all $x\in X(\Omega)$, and on the right it is
+\begindisplay \openup5pt
+\sum_{y\in Y(\Omega)}\Pr\prp(Y=y)\Pr\prp(X=x\mid Y=y)
+&=\sum_{y\in Y(\Omega)}\Pr\prp(X=x\ {\rm and}\ Y=y)\cr
+&=\Pr\prp(X=x)\,.
+\enddisplay
+For example, if $X$ is the product of the spots on two fair dice and if
+$Y$ is the sum of the spots, the pgf for $X\given6$ is
+\begindisplay
+\textstyle G_{X\given6}(z)={2\over5}z^5+{2\over5}z^8+{1\over5}z^9
+\enddisplay
+because the conditional probabilities for $Y=6$ consist of five equally
+probable events $\{\,\dieone\diefive,$ $\dietwo\diefour,$
+$\diethree\diethree,$ $\diefour\dietwo,$ $\diefive\dieone\,\}$.
+Equation \thiseq\ in this case reduces to
+\begindisplay \openup6pt
+G_X(z)&=\textstyle{1\over36}G_{X\given2}(z)+{2\over36}G_{X\given3}(z)+
+ {3\over36}G_{X\given4}(z)+{4\over36}G_{X\given5}(z)\cr
+&\qquad\qquad\textstyle{5\over36}G_{X\given6}(z)+{6\over36}G_{X\given7}(z)+
+ {5\over36}G_{X\given8}(z)+{4\over36}G_{X\given9}(z)\cr
+&\qquad\qquad\textstyle{3\over36}G_{X\given10}(z)+{2\over36}G_{X\given11}(z)+
+ {1\over36}G_{X\given12}(z)\,,
+\enddisplay
+a formula that is obvious once you understand it. (End of digression.)
+\g Oh, now I understand what mathematicians mean when they say something
+is ``"obvious",\qback'' ``"clear",\qback'' or ``"trivial".\qback''\g
+
+In the case of hashing, \thiseq\ tells us how to write down the
+pgf for probes in a successful search, if we let $X=P$ and $Y=K$.
+For any fixed $k$ between $1$ and~$n$, the random variable $P\given k$
+is defined as a sum of independent random variables $X_1+\cdots+X_k$;
+this is \eq(|succ-p|). So it has the pgf
+\begindisplay \postdisplaypenalty=-500
+G_{P\given k}(z)=\Bigl({m-1+z\over m}\Bigr)^{\!k-1}z\,.
+\enddisplay
+Therefore the pgf for $P$ itself is clearly
+\g\noindent\llap{``}By clearly, I mean a good freshman should be able to do it, although
+it's not completely trivial.''\par
+\hfill\dash---Paul Erd\H os~[|erdos-scottish|].\g
+\begindisplay \openup6pt
+G_P(z)&=\sum_{k=1}^n s_kG_{P\given k}(z)\cr
+&=\sum_{k=1}^n s_k\Bigl({m-1+z\over m}\Bigr)^{\!k-1}z\cr
+&=z\,S\Bigl({m-1+z\over m}\Bigr)\,,
+\eqno\eqref|p:s-of-binomial|
+\enddisplay
+where
+\begindisplay
+S(z)=s_1+s_2z+s_3z^2+\cdots+s_nz^{n-1}
+\eqno
+\enddisplay
+is the pgf for the search probabilities $s_k$ (divided by~$z$ for convenience).
+
+Good. We have a probability generating function for~$P$; we can now
+find the mean and variance by differentiation. It's somewhat easier
+to remove the $z$~factor first, as we've done before, thus
+finding the mean and variance of $P-1$ instead:
+\begindisplay \openup5pt
+F(z)&=G_P(z)/z=S\Bigl({m-1+z\over m}\Bigr)\,;\cr
+F'(z)&={1\over m}S'\Bigl({m-1+z\over m}\Bigr)\,;\cr
+F''(z)&={1\over m^2}S''\Bigl({m-1+z\over m}\Bigr)\,.\cr
+\enddisplay
+Therefore
+\begindisplay \openup2pt
+EP&=1+\Mean(F)=1+F'(1)=1+m^{-1}\Mean(S)\,;}\hidewidth{\eqno\eqref|e-success|\cr
+\noalign{\smallskip}
+VP&=\Var(F)&=F''(1)+F'(1)-F'(1)^2\cr
+&&=m^{-2}S''(1)+m^{-1}S'(1)-m^{-2}S'(1)^2\cr
+&&=m^{-2}\Var(S)+(m^{-1}-m^{-2})\Mean(S)\,.\eqno\eqref|v-success|\cr
+\enddisplay
+These are general formulas expressing the mean and variance of the
+number of probes~$P$ in terms of the mean and variance of the
+assumed search distribution~$S$.
+
+For example, suppose we have $s_k=1/n$ for $1\le k\le n$. This means we
+are doing a purely ``random'' successful search, with all keys in the
+table equally likely. Then $S(z)$ is the uniform probability distribution
+$U_n(z)$ in \eq(|u-pgf|), and we have $\Mean(S)=(n-1)/2$, $\Var(S)=
+(n^2-1)/12$. Hence
+\begindisplay \openup3pt
+EP&={n-1\over2m}+1\,;\eqno\eqref|e-unif-success|\cr
+VP&={n^2-1\over12m^2}+{(m-1)(n-1)\over2m^2}={(n-1)(6m+n-5)\over12m^2}\,.
+\eqno\eqref|v-unit-success|
+\enddisplay
+Once again we have gained the desired speedup factor of $1/m$.
+If $m=n/\!@\ln n$ and $n\to\infty$, the average number of probes per
+successful search in this case is about $\half \ln n$, and the standard
+deviation is asymptotically $(\ln n)/\mskip-1mu\sqrt{12}$.
+
+On the other hand, we might suppose that $s_k=(kH_n)^{-1}$ for $1\le k\le n$;
+this distribution is called ``"Zipf's law".\qback'' Then $\Mean(G)=n/H_n$
+and $\Var(G)=\half n(n+1)/H_n-n^2\!/H_n^2$. The average number of probes
+for $m=n/\!@\ln n$ as $n\to\infty$ is approximately~$2$, with standard
+deviation asymptotic to $\sqrt{\mskip2mu\ln n}/\sqrt2$.
+
+In both cases the analysis allows the cautious souls among us, who fear
+the worst case, to rest easily: Chebyshev's inequality tells us
+that the lists will be nice and short, except in extremely rare cases.
+
+\subhead Case 2, continued: Variants of the variance.
+
+We have just computed the variance of the number of probes in a successful
+search, by considering $P$~to be a random variable over a probability space
+with $m^n\cdt n$ elements $(h_1,\ldots,h_n;k)$. But we could have
+adopted another point of view: Each pattern $(h_1,\ldots,h_n)$ of hash
+\g OK, gang, time to put on your skim~suits again.\par
+\hfill\dash---Friendly TA\g
+values defines a random variable $P\given(h_1,\ldots,h_n)$, representing
+the probes we make in a successful search of a particular hash table
+on $n$~given keys. The average value of $P\given(h_1,\ldots,h_n)$, %namely
+\begindisplay
+A(h_1,\ldots,h_n)=
+ \sum_{p=1}^n p\cdot\Pr\pbigi({\bigl(P\given(h_1,\ldots,h_n)\bigr)}=p\bigr)\,,
+\eqno
+\enddisplay
+can be said to represent the running time of a successful search. This
+quantity $A(h_1,\ldots,h_n)$ is a random variable that depends only
+on $(h_1,\ldots,h_n)$, not on the final component~$k$.
+We can write it in the form
+\begindisplay
+A(h_1,\ldots,h_n)=\sum_{k=1}^n s_k\,P(h_1,\ldots,h_n;k)\,,
+\enddisplay
+where $P(h_1,\ldots,h_n;k)$ is defined in \eq(|probe-function|),
+since $P\given(h_1,\ldots,h_n)=p$ with probability
+\begindisplay \openup5pt
+{\sum_{k=1\lower1pt\hbox{}}^n\Pr\pbigi(P(h_1,\ldots,h_n;k)=p\bigr)\over
+\sum_{k=1}^{n\raise1ex\hbox{}}\Pr(h_1,\ldots,h_n;k)}
+&={\sum_{k=1\lower1pt\hbox{}}^n m^{-n}s_k\bigi[P(h_1,\ldots,h_n;k)=p\bigr]\over
+\sum_{k=1}^{n\raise1ex\hbox{}} m^{-n}s_k}\cr
+&=\sum_{k=1}^n s_k\bigi[P(h_1,\ldots,h_n;k)=p\bigr]\,.
+\enddisplay
+
+The mean value of $A(h_1,\ldots,h_n)$, obtained by summing over all
+$m^n$ possibilities $(h_1,\ldots,h_n)$ and dividing by~$m^n$, will
+be the same as the mean value we obtained before in \eq(|e-success|).
+But the {\it "variance"\/} of $A(h_1,\ldots,h_n)$ is something different;
+this is a variance of $m^n$ averages, not a variance of ${m^n\cdt n}$
+probe counts. For example, if $m=1$ (so that there is only one list),
+the ``average'' value $A(h_1,\ldots,h_n)=A(1,\ldots,1)$ is actually
+constant, so its variance $VA$ is zero; but the number of probes
+in a successful search is not constant, so the variance $VP$ is nonzero.
+\g But the VP is nonzero only in an election year.\g
+
+We can illustrate this difference between variances by carrying out the
+calculations for general $m$ and~$n$ in the simplest case, when
+$s_k=1/n$ for $1\le k\le n$. In other words, we will assume temporarily
+that there is a uniform distribution of search keys. Any given
+sequence of hash values $(h_1,\ldots,h_n)$ defines $m$~lists that
+contain respectively $(n_1,n_2,\ldots,n_m)$ entries for some numbers~$n_j$,
+where
+\begindisplay
+n_1+n_2+\cdots+n_m=n\,.
+\enddisplay
+A successful search in which each of the $n$ keys in the table is equally
+likely will have an average running time of
+\begindisplay \openup4pt
+A(h_1,\ldots,h_n)&={(1{+}\cdots{+}n_1)+
+    (1{+}\cdots{+}n_2)+\cdots+
+    (1{+}\cdots{+}n_m)\over n}\cr
+&={n_1(n_1{+}1)+n_2(n_2{+}1)+\cdots+n_m(n_m{+}1)\over2n}\cr
+&={n_1^2+n_2^2+\cdots+n_m^2+n\over2n}
+\enddisplay
+probes. Our goal is to calculate the variance of this quantity $A(h_1,\ldots,
+h_n)$, over the probability space consisting of
+all $m^n$ sequences $(h_1,\ldots,h_n)$.
+
+The calculations will be simpler, it turns out, if we compute the
+variance of a slightly different quantity,
+\begindisplay
+B(h_1,\ldots,h_n)={n_1\choose2}+{n_2\choose2}+\cdots+{n_m\choose2}\,.
+\enddisplay
+We have
+\begindisplay
+A(h_1,\ldots,h_n)=1+B(h_1,\ldots,h_n)/n\,,
+\enddisplay
+hence the mean and variance of~$A$ satisfy
+\begindisplay
+EA=1+{EB\over n}\,;\qquad VA={VB\over n^2}\,.
+\eqno\eqref|a-reduced-to-b|
+\enddisplay
+The probability that the list sizes will be $n_1$, $n_2$, \dots, $n_m$
+is the multinomial coefficient
+\begindisplay
+{n\choose n_1,n_2,\ldots,n_m}={n!\over n_1!\,n_2!\,\ldots n_m!}
+\enddisplay
+divided by $m^n$; hence the pgf for $B(h_1,\ldots,h_n)$ is
+\begindisplay
+B_n(z)=\sum\twoconditions{n_1,n_2,\ldots,n_m\ge0}{n_1+n_2+\cdots+n_m=n}
+{n\choose n_1,n_2,\ldots,n_m}\,z^{{n_1\choose2}+{n_2\choose2}+\cdots+
+{n_m\choose 2}}\,m^{-n}\,.
+\enddisplay
+This sum looks a bit scary to inexperienced eyes,
+but our experiences in Chapter 7 have taught us to recognize it as
+an $m$-fold convolution. Indeed, if we consider the exponential
+super-generating function
+\begindisplay
+G(w,z)=\sum_{n\ge0}B_n(z) {m^n@w^n\over n!}\,,
+\enddisplay
+we can readily verify that $G(w,z)$ is simply an $m$th power:
+\begindisplay
+G(w,z)=\biggl(\sum_{k\ge0}z^{k\choose2}\,{w^k\over k!}\biggr)^{\!m}\,.
+\enddisplay
+As a check, we can try setting $z=1$; we get $G(w,1)=(e^w)^m$, so the
+coefficient of $m^n@w^n\!/n!$ is $B_n(1)=1$.
+
+If we knew the values of $B_n'(1)$ and $B_n''(1)$, we would be able to
+calculate $\Var(B_n)$. So we take partial derivatives of $G(w,z)$
+with respect to~$z$:
+\begindisplay \openup5pt
+{\partial\over\partial z}G(w,z)&=\sum_{n\ge0}B'_n(z){m^n@w^n\over n!}\cr
+&=m\biggl(\sum_{k\ge0}z^{k\choose2}\,{w^k\over k!}\biggr)^{\!m-1}
+ \sum_{k\ge0}{k\choose2}z^{{k\choose2}-1}\,{w^k\over k!}\,;\cr
+{\partial^2\over\partial z^2}G(w,z)&=\sum_{n\ge0}B''_n(z){m^n@w^n\over n!}\cr
+&=m(m{-}1)\biggl(\sum_{k\ge0}z^{k\choose2}\,{w^k\over k!}\biggr)^{\!m-2}
+\biggl( \sum_{k\ge0}{k\choose2}z^{{k\choose2}{-}1}\,{w^k\over k!}\biggr)^{\!2}\cr
+&\qquad+m\biggl(\sum_{k\ge0}z^{k\choose2}\,{w^k\over k!}\biggr)^{\!m-1}
+ \sum_{k\ge0}{k\choose2}\biggl({k\choose2}\mskip-2mu-\mskip-2mu1\biggr)
+ z^{{k\choose2}-2}\,{w^k\over k!}\,.
+\enddisplay
+Complicated, yes; but everything simplifies greatly when we set $z=1$.
+For example, we have
+\begindisplay \openup3pt
+&\sum_{n\ge0}B_n'(1){m^nw^n\over n!}=me^{(m-1)w}\sum_{k\ge2}{w^k\over2@(k-2)!}\cr
+&\qquad=me^{(m-1)w}\sum_{k\ge0}{w^{k+2}\over 2@k!}\cr
+&\qquad={mw^2e^{(m-1)w}\over2}e^w
+  =\sum_{n\ge0}{(mw)^{n+2}\over2m\,n!}
+  =\sum_{n\ge0}{n(n{-}1)m^n@w^n\over2m\,n!}\,,\cr
+\enddisplay
+and it follows that
+\begindisplay
+B'_n(1)={n\choose2}{1\over m}\,.
+\eqno
+\enddisplay
+The expression for $EA$ in \eq(|a-reduced-to-b|) now gives
+$EA=1+(n-1)/2m$, in agreement with \eq(|e-unif-success|).
+
+The formula for $B_n''(1)$ involves the similar sum
+\begindisplay
+&\sum_{k\ge0}{k\choose2}\biggl({k\choose2}{-}1\biggr) {w^k\over k!}
+={1\over4}\sum_{k\ge0}{(k+1)k(k-1)(k-2)w^k\over k!}\cr
+&\qquad={1\over4}\sum_{k\ge3}{(k+1)w^k\over (k-3)!}
+={1\over4}\sum_{k\ge0}{(k+4)w^{k+3}\over k!}
+ =\bigl(\textstyle{1\over4}w^4+w^3\bigr)e^w\,;
+\enddisplay
+hence we find that
+\begindisplay
+\sum_{n\ge0}B_n''(1){m^n@w^n\over n!}
+&=m(m{-}1)e^{w(m-2)}\bigl(\textstyle\half w^2e^w\bigr)^{\!2}
+ {+}me^{w(m-1)}\bigl(\textstyle{1\over4}w^4{+}w^3\bigr)e^w\cr
+&=me^{wm}\bigl(\textstyle{1\over4}mw^4+w^3\bigr)\,;\cr
+\noalign{\medskip}
+B_n''(1)&={n\choose2}\biggl({n\choose2} - 1\biggr) {1\over m^2}\,.
+\eqno
+\enddisplay
+Now we can put all the pieces together and evaluate the desired variance~$VA$.
+Massive cancellation occurs, and the result is surprisingly simple:
+\begindisplay \openup5pt
+VA={VB\over n^2}&={B_n''(1)+B_n'(1)-B'_n(1)^2\over n^2}\cr
+&={n(n-1)\over m^2n^2}\biggl({(n+1)(n-2)\over4}+{m\over2}-{n(n-1)\over4}\biggr)\cr
+&={(m-1)(n-1)\over2m^2n}\,.
+\eqno\eqref|unif-var-ave|
+\enddisplay
+
+When such ``coincidences'' occur, we suspect that there's a mathematical
+reason; there might be another way to attack the problem, explaining why the
+answer has such a simple form. And indeed, there is another approach
+(in exercise~|prove-gen-va|), which shows that the variance of the
+average successful search has the general form
+\begindisplay
+VA={m-1\over m^2}\sum_{k=1}^n s_k^2(k-1)
+\eqno\eqref|gen-va|
+\enddisplay
+when $s_k$ is the probability that the $k$th-inserted element is
+being sought. Equation \eq(|unif-var-ave|) is the special case
+$s_k=1/n$ for $1\le k\le n$.
+
+Besides the variance of the average, we might also consider the
+average of the variance. In other words, each sequence
+$(h_1,\ldots,h_n)$ that defines a hash table also defines a
+probability distribution for successful searching, and the variance
+of this probability distribution tells how spread out the number
+of probes will be in different successful searches. For example,
+let's go back to the case where we inserted $n=16$ things into
+$m=10$ lists:
+\g Where have I seen that pattern before?\medskip
+  Where have I seen that graffito before?\medskip
+ $I\eta\nu P_\pi$."!pizza"\g
+\begindisplay \let\preamble=\tablepreamble \let\quad=\enspace
+&\omit&(h_1,\ldots,h_{16})&=&3&1&4&1&5&9&2&6&5&3&5&8&9&7&9&3\cr
+&\omit&(P_1,\ldots,P_{16})&=&1&1&1&2&1&1&1&1&2&2&3&1&2&1&3&3\cr
+\enddisplay
+A successful search in the resulting hash table has the pgf
+\begindisplay
+G(3,1,4,1,\ldots,3)
+&=\sum_{k=1}^{16} s_kz^{P(3,1,4,1,\ldots,3;k)}\cr
+&=s_1z+s_2z+s_3z+s_4z^2+\cdots+s_{16}z^3\,.
+\enddisplay
+We have just considered the average number of probes in a successful
+search of this table, namely $A(3,1,4,1,\ldots,3)
+ =\Mean\bigl(G(3,1,4,1,\ldots,3)\bigr)$.
+We can also consider the variance,
+\begindisplay
+&s_1\cdt1^2+s_2\cdt1^2+s_3\cdt1^2+s_4\cdt2^2+\cdots+s_{16}\cdt3^2\cr
+&\qquad-(s_1\cdt1+s_2\cdt1+s_3\cdt1+s_4\cdt2+\cdots+s_{16}\cdt3)^2\,.
+\enddisplay
+This variance is a random variable, depending on $(h_1,\ldots,h_n)$,
+so it is natural to consider its average value.
+
+In other words, there are three natural kinds of variance that we may
+wish to know, in order to understand the behavior of a successful
+search: The {\it overall "variance"\/} of the number of probes, taken over
+all $(h_1,\ldots,h_n)$ and~$k$; the {\it variance of the average\/} number
+of probes, where the average is taken over all~$k$ and the variance is then
+taken over all~$(h_1,\ldots,h_n)$; and the {\it average of the variance\/}
+"!average variance"
+of the number of the probes, where the variance is taken over all~$k$
+and the average is then taken over all $(h_1,\ldots,h_n)$. In symbols,
+the overall variance is
+\begindisplay \openup4pt
+VP&=\sum_{1\le h_1,\ldots,h_n\le m}\,\sum_{k=1}^n{s_k\over m^n}P(h_1,\ldots,h_n;k)^2\cr
+&\qquad-\biggl(\sum_{1\le h_1,\ldots,h_n\le m}\,
+ \sum_{k=1}^n{s_k\over m^n}P(h_1,\ldots,h_n;k)\biggr)^{\!2}\,;
+\enddisplay
+the variance of the average is
+\begindisplay \openup4pt
+VA&=\sum_{1\le h_1,\ldots,h_n\le m}{1\over m^n}
+ \biggl(\sum_{k=1}^n s_k P(h_1,\ldots,h_n;k)\biggr)^{\!2}\cr
+&\qquad-\biggl(\sum_{1\le h_1,\ldots,h_n\le m}{1\over m^n}
+ \sum_{k=1}^n s_kP(h_1,\ldots,h_n;k)\biggr)^{\!2}\,;
+\enddisplay
+and the average of the variance is
+\begindisplay \openup4pt
+AV&=\sum_{1\le h_1,\ldots,h_n\le m}{1\over m^n}
+ \Biggl(\sum_{k=1}^n s_k P(h_1,\ldots,h_n;k)^2\cr
+&\hskip11em  -\biggl(\sum_{k=1}^n s_kP(h_1,\ldots,h_n;k)\biggr)^{\!2}\Biggr)\,.
+\enddisplay
+
+It turns out that these three quantities are interrelated in a simple way:
+\begindisplay
+VP=VA+AV\,.
+\eqno\eqref|vp:va+av|
+\enddisplay
+In fact, conditional probability distributions always satisfy the identity
+\begindisplay
+VX=V\bigl(E(X\given Y)\bigr)+E\bigl(V(X\given Y)\bigr)
+\eqno\eqref|v:ev+ve|
+\enddisplay
+if $X$ and $Y$ are random variables in any probability space and if $X$
+takes real values. (This identity is proved in exercise |prove-v:ev+ve|.)
+Equation \eq(|vp:va+av|) is the special case where
+$X$ is the number of probes in a successful search and $Y$ is
+the sequence of hash values $(h_1,\ldots,h_n)$.
+
+The general equation
+\eq(|v:ev+ve|) needs to be understood carefully, because the notation
+tends to conceal the different random variables and probability spaces
+in which expectations and variances are being calculated. For each $y$
+"!expectation, \string\see expected value"
+in the range of\/~$Y$, we have defined the random variable $X\given y$
+in \eq(|pr-x-given-y|), and this random variable has an expected value
+$E(X\given y)$ depending on~$y$. Now $E(X\given Y)$ denotes the random
+variable whose values are $E(X\given y)$ as $y$ ranges over all possible
+values of\/~$Y$, and $V\bigl(E(X\given Y)\bigr)$ is the variance of
+this random variable with respect to the probability distribution of\/~$Y$.
+\g(Now is a good time to do warmup exercise~|conditional-warmup|.)\g
+Similarly, $E\bigl(V(X\given Y)\bigr)$ is the average of the random
+variables $V(X\given y)$ as $y$~varies. On the left of \eq(|v:ev+ve|)
+is $VX$, the unconditional variance of\/~$X$. Since variances are
+nonnegative, we always have
+\begindisplay
+VX\ge V\bigl(E(X\given Y)\bigr)\And VX\ge E\bigl(V(X\given Y)\bigr)\,.
+\eqno
+\enddisplay
+
+\subhead Case 1, again: Unsuccessful search revisited.
+
+Let's bring our microscopic examination of hashing to a close by
+doing one more calculation typical of algorithmic analysis.
+This time we'll look more
+closely at the {\it total "running time"\/} associated with an unsuccessful search,
+assuming that the computer will insert the previously unknown key
+into its memory.
+
+The insertion process in \eq(|insert-into-hash|) has two cases, depending
+on whether $j$ is negative or zero. We have $j<0$ if and only if $P=0$,
+\g$P$ is still the number of probes.\g
+since a negative value comes from the {\tt FIRST} entry of an empty
+list. Thus, if the list was previously empty, we have $P=0$ and
+we must set $\array FIRST[h_{n+1}]:=n+1$. (The new record will be
+inserted into position $n+1$.) Otherwise we have
+$P>0$ and we must set a {\tt LINK} entry to $n+1$. These two cases
+may take different amounts of time; therefore the total running time
+for an unsuccessful search has the form
+\begindisplay
+T=\alpha+\beta P+\delta\[P=0]\,,
+\eqno
+\enddisplay
+where $\alpha$, $\beta$, and $\delta$ are constants that depend on the
+computer being used and on the way in which hashing is encoded in
+that machine's internal language. It would be nice to know the
+mean and variance of $T$, since such information is more relevant
+in practice than the mean and variance of~$P$.
+
+So far we have used probability generating functions only in connection
+with random variables that take nonnegative integer values. But it
+turns out that we can deal in essentially the same way with
+\begindisplay
+G_X(z)=\sum_{\omega\in\Omega}\Pr(\omega)z^{X(\omega)}
+\enddisplay
+when $X$ is any real-valued random variable, because the essential
+characteristics of $X$ depend only on the behavior of $G_X$ near
+$z=1$, where powers of~$z$ are well defined. For example, the
+running time \thiseq\ of an unsuccessful search is a random variable,
+defined on the probability space of equally likely hash values
+$(h_1,\ldots,h_n,h_{n+1})$ with $1\le h_j\le m$; we can consider the series
+\begindisplay
+G_T(z)={1\over m^{n+1}}\sum_{h_1=1}^m\!\!
+ \cdots\!\sum_{h_n=1}^m\sum_{h_{n+1}=1}^m\!\!z^{\alpha+\beta P(h_1,\ldots,
+ h_{n+1})+\delta[P(h_1,\ldots,h_{n+1})=0]}
+\enddisplay
+to be a pgf
+even when $\alpha$, $\beta$, and $\delta$ are not integers. (In fact,
+the parameters $\alpha$, $\beta$, $\delta$ are physical quantities
+that have dimensions of time; they aren't even pure numbers! Yet we
+can use them in the exponent of~$z$.) We can still calculate the
+mean and variance of\/~$T$, by evaluating $G_T'(1)$ and $G_T''(1)$
+and combining these values in the usual way.
+
+The generating function for $P$ instead of $T$ is
+\begindisplay
+P(z)=\Bigl({m-1+z\over m}\Bigr)^{\!n}=\sum_{p\ge0}\Pr\prp(P=p)z^p\,.
+\enddisplay
+Therefore we have
+\begindisplay \openup3pt
+G_T(z)&=\sum_{p\ge0}\Pr\prp(P=p)z^{\alpha+\beta p+\delta[p=0]}\cr
+&=z^\alpha\Bigl((z^\delta-1)\Pr\prp(P=0)+\sum_{p\ge0}\Pr\prp(P=p)z^{\beta p}\Bigr)\cr
+&=z^\alpha\biggl((z^\delta-1)\Bigl({m-1\over m}\Bigr)^{\!n}
+ +\Bigl({m-1+z^\beta\over m}\Bigr)^{\!n}\biggr)\,.\cr
+\enddisplay
+The determination of $\Mean(G_T)$ and $\Var(G_T)$ is now routine:
+\begindisplay \openup5pt
+\Mean(G_T)&=G_T'(1)=\alpha+\beta{n\over m}
+ +\delta\Bigl({m-1\over m}\Bigr)^{\!n}\,;\eqno\cr
+G_T''(1)&=\alpha(\alpha-1)+2\alpha\beta{n\over m}+\beta(\beta-1){n\over m}
+ +\beta^2{n(n-1)\over m^2}\cr
+&\hskip7em+2\alpha\delta\Bigl({m-1\over m}\Bigr)^{\!n}
+ +\delta(\delta-1)\Bigl({m-1\over m}\Bigr)^{\!n}\,;\cr
+\Var(G_T)&=G_T''(1)+G_T'(1)-G_T'(1)^2\cr
+&=\beta^2{n(m-1)\over m^2}
+ -2\beta\delta\Bigl({m-1\over m}\Bigr)^{\!n}{n\over m}\cr
+&\hskip7em+\delta^2\biggl( \Bigl({m-1\over m}\Bigr)^{\!n}
+ -\Bigl({m-1\over m}\Bigr)^{\!2n}\biggr)\,.\eqno
+\enddisplay
+
+In Chapter 9 we will learn how to estimate quantities like this
+when $m$ and~$n$ are large. If, for example, $m=n$ and $n\to\infty$,
+the techniques of Chapter~9 will show that the mean and variance
+of~$T$ are respectively $\alpha+\beta+\delta e^{-1}+O(n^{-1})$
+and $\beta^2-2\beta\delta e^{-1}+\delta^2(e^{-1}-e^{-2})+O(n^{-1})$.
+If $m=n/\!@\ln n$ and $n\to\infty$ the corresponding results are
+\begindisplay
+\Mean(G_T)&=\beta\ln n+\alpha+\delta/n+O\bigl((\log n)^2\!/n^2\bigr)\,;\cr
+\Var(G_T)&=\beta^2\ln n-\bigl((\beta\ln n)^2+2\beta\delta\ln n-\delta^2\bigr)/n
+ +O\bigl((\log n)^3\!/n^2\bigr)\,.
+\enddisplay
+
+\beginexercises
+
+\subhead \kern-.05em Warmups
+
+\ex:
+What's the probability of doubles in the probability distribution $\Pr_{01}$
+of~\eq(|pr2-def|), when one die is fair and the other is loaded?
+What's the probability that $S=7$ is rolled?
+\answer ${1\over24}+{1\over48}+{1\over48}+{1\over48}+{1\over48}+{1\over24}
+={1\over6}$. (In fact, we {\it always\/} get doubles with probability~$1\over6$
+when at least one of the dice is fair.)
+Any two faces whose sum is~$7$ have the same
+probability in distribution
+ $\Pr_1$, so $S=7$ has the same probability as doubles.\par
+\def\dieone{\die{\diedot22}}
+\def\dietwo{\die{\diedot11\diedot33}}
+\def\diethree{\die{\diedot11\diedot22\diedot33}}
+\def\diefour{\die{\diedot11\diedot33\diedot13\diedot31}}
+\def\diefive{\die{\diedot11\diedot22\diedot33\diedot13\diedot31}}
+\def\diesix{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33}}
+\def\dieseven{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33\diedot22}}
+\def\dieeight{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33%
+ \diedot21\diedot23}}
+\def\die#1{{\unitlength=2.5pt\beginpicture(5,4)(-.5,1)
+ \put(0,0){\line(0,1)4}
+ \put(0,0){\line(1,0)4}
+ \put(0,4){\line(1,0)4}
+ \put(4,0){\line(0,1)4}#1\endpicture}}
+\def\diedot#1#2{\put(#1,#2){\disk1}}
+
+\ex:
+What's the probability that the top and bottom cards of a randomly
+shuffled deck are both aces? (All $52!$ permutations have probability $1/52!$.)
+\answer There are $12$ ways to specify the top and bottom cards and
+$50!$ ways to arrange the others; so the probability is $12\cdt50!/52!=
+12/(51\cdt52)={1\over17\cdt13}={1\over221}$.
+
+\ex:
+"Stanford"'s Concrete Math students were asked in 1979 to flip coins
+until they got heads twice in succession, and to report the number
+\g Why only ten\par numbers?
+\medskip The other students either weren't empiricists
+or they were just too flipped out.\g
+of flips required. The answers were
+\begindisplay
+3,\,2,\,3,\,5,\,10,\,2,\,6,\,6,\,9,\,2\,.
+\enddisplay
+"Princeton"'s Concrete Math students were asked in 1987 to do a similar
+thing, with the following results:
+\begindisplay
+10,\,2,\,10,\,7,\,5,\,2,\,10,\,6,\,10,\,2\,.
+\enddisplay
+Estimate the mean and variance, based on
+(a) the Stanford sample; (b)~the Princeton sample.
+\answer ${1\over10}(3+2+\cdots+9+2)=4.8$;
+${1\over9}(3^2+2^2+\cdots+9^2+2^2-10(4.8)^2)={388\over45}$, which is
+approximately $8.6$.
+The true mean and variance with a fair coin are $6$ and~$22$, so Stanford
+had an unusually heads-up class.
+The corresponding Princeton figures are $6.4$ and ${562\over45}\approx 12.5$.
+(This distribution has $\kappa_4=2974$, which is rather large. Hence
+the standard deviation of this variance estimate when $n=10$ is also
+rather large,
+$\sqrt{\mathstrut2974/10+2(22)^{2\mathstrut}\!/9}\approx20.1$ according to
+exercise~|var-hatv|. One cannot complain that the students cheated.)
+
+\ex:\exref|divide-gfs|%
+Let $H(z)=F(z)/G(z)$, where $F(1)=G(1)=1$. Prove that
+\begindisplay
+\Mean(H)&=\Mean(F)-\Mean(G)\,,\cr
+\Var(H)&=\Var(F)-\Var(G)\,,\cr
+\enddisplay
+in analogy with \eq(|ind-sum1|) and \eq(|ind-sum2|), if the
+indicated derivatives exist at $z=1$.
+\answer This follows from \equ(8.|ind-sum1|) and \equ(8.|ind-sum2|), because
+$F(z)=G(z)H(z)$. (A similar formula holds for all the cumulants,
+even though $F(z)$ and $G(z)$ may have negative coefficients.)
+
+\ex:
+Suppose Alice and Bill play the game \eq(|hht:htt|) with a biased coin
+that comes up heads with probability~$p$. Is there a value of~$p$ for which
+the game becomes fair?
+\answer Replace $\tt H$ by $p$ and $\tt T$ by $q=1-p$. If $S_A=S_B=\half$
+we have $p^2qN=\half$ and $pq^2N=\half q+\half$; the solution is
+$p=1/\phi^2$, $q=1/\phi$.
+
+\ex:\exref|conditional-warmup|%
+What does the conditional variance law \eq(|v:ev+ve|) reduce to,
+when $X$ and $Y$ are independent random variables?
+\answer In this case $X\given y$ has the same distribution as $X$,
+for all~$y$, hence $E(X\given Y)=EX$ is constant and
+$V\bigl(E(X\given Y)\bigr)=0$. Also $V(X\given Y)$ is constant and
+equal to its expected value.
+
+\subhead Basics
+
+\ex:
+Show that if two "dice" are loaded with the same probability distribution,
+the probability of doubles is always at least $1\over6$.
+\answer We have $1=(p_1+p_2+\cdots+p_6)^2\le6(p_1^2+p_2^2+\cdots+p_6^2)$
+by Chebyshev's monotonic inequality of Chapter~2.
+
+\ex:
+Let $A$ and $B$ be events such that $A\cup B=\Omega$. Prove that
+\begindisplay
+\Pr\prp(\omega\in A\cap B)=
+ \Pr\prp(\omega\in A)\Pr\prp(\omega\in B)
+ -\Pr\prp(\omega\notin A)\Pr\prp(\omega\notin B)\,.
+\enddisplay
+\answer Let $p=\Pr\prp(\omega\in A\cap B)$,
+$q=\Pr\prp(\omega\notin A)$, and $r=\Pr\prp(\omega\notin B)$. Then $p+q+r=1$, and
+the identity to be proved is $p=(p+r)(p+q)-qr$.
+
+\ex:
+Prove or disprove: If $X$ and $Y$ are independent random variables,
+then so are $F(X)$ and~$G(Y)$, when $F$ and $G$ are any functions.
+\answer This is true (subject to the obvious proviso that $F$ and $G$
+are defined on the respective ranges of\/~$X$ and $Y$), because
+\begindisplay \openup6pt
+\Pr\pbigi(F(X)=f\ {\rm and}\ G(Y)=g\bigr)
+&=\sum\twoconditions{x\in F^{-1}(f)}{y\in G^{-1}(g)}\Pr\prp(X=x\ {\rm and}\ Y=y)\cr
+&=\sum\twoconditions{x\in F^{-1}(f)}{y\in G^{-1}(g)}\Pr\prp(X=x)\cdot\Pr\prp(Y=y)\cr
+&=\Pr\pbigi(F(X)=f\bigr)\cdot\Pr\pbigi(G(y)=g\bigr)\,.
+\enddisplay
+
+\ex:
+What's the maximum number of elements that can be medians of a random
+variable~$X$, according to definition \eq(|median1|)?
+\answer Two. Let $x_1<x_2$ be medians; then $1\le\Pr\prp(X\le x_1)+
+\Pr\prp(X\ge x_2)\le 1$, hence equality holds. (Some discrete distributions
+have no median elements. For example, let $\Omega$ be the set of all
+fractions of the form $\pm1/n$, with $\Pr(+1/n)=\Pr(-1/n)={\pi^2\over12}n^{-2}$.)
+
+\ex:
+Construct a random variable that has finite mean and infinite variance.
+\answer For example, let $K=k$ with probability $4/(k+1)(k+2)(k+3)$,
+for all integers $k\ge0$. Then $EK=1$, but $E(K^2)=\infty$.
+(Similarly we can construct random variables with finite cumulants
+through $\kappa_m$ but with $\kappa_{m+1}=\infty$.)
+
+\ex:\exref|tail-ineq|%
+\hangindent2\parindent \textindent{a}% \item combined with \itemitem
+If $P(z)$ is the pgf for the random variable $X$, prove that
+\begindisplay
+\Pr(\hbox{$X\le r$})&\le x^{-r}P(x)\qquad\hbox{for $0<x\le1$;}\cr
+\Pr(\hbox{$X\ge r$})&\le x^{-r}P(x)\qquad\hbox{for $x\ge1$.}\cr
+\enddisplay
+(These important relations are called the {\sl "tail inequalities".})
+\itemitem{b}In the special case $P(z)=(1+z)^n\!/2^n$, use the first tail
+inequality to prove that $\sum_{k\le\alpha n}{n\choose k}\le1/\alpha^{\alpha n}
+(1-\alpha)^{(1-\alpha)n}$ when $0<\alpha<\half$.
+\answer (a) Let $p_k=\Pr\prp(X=k)$. If $0<x\le1$, we have $\Pr\prp(X\le r)=
+\sum_{k\le r}p_k\le\sum_{k\le r}x^{k-r}p_k\le\sum_k x^{k-r}p_k=x^{-r}P(x)$.
+The other inequality has a similar proof. (b)~Let $x=\alpha/(1-\alpha)$ to
+minimize the right-hand side.
+(A more precise estimate for the given sum
+is obtained in exercise 9.|binomial-tail|.)
+
+\ex:
+If $X_1$, \dots, $X_{2n}$ are independent random variables with the same
+distribution, and if $\alpha$ is any real number whatsoever, prove that
+\begindisplay
+\Pr\biggl(\Bigl\vert{X_1+\cdots+X_{2n}\over2n}-\alpha\Bigr\vert\le
+ \Bigl\vert{X_1+\cdots+X_n\over n}-\alpha\Bigr\vert\biggr)\;\ge\;\half\,.
+\enddisplay
+\answer (Solution by Boris "Pittel".) Let us set $Y=(X_1+\cdots+X_n)/n$ and
+$Z=(X_{n+1}+\cdots+X_{2n})/n$. Then
+\begindisplay
+&\Pr\biggl(\Bigl\vert{Y+Z\over2}-\alpha\Bigr\vert\le\bigl\vert Y
+ -\alpha\bigr\vert\biggr)\cr
+&\qquad\ge\;\Pr\biggl(\Bigl\vert{Y-\alpha\over2}\Bigr\vert+
+ \Bigl\vert{Z-\alpha\over2}\Bigr\vert\le\bigl\vert Y-\alpha\bigr\vert\biggr)\cr
+&\qquad=\;\Pr\bigl(@\vert Z-\alpha\vert\le\vert Y-\alpha\vert@\bigr)\;\ge\;
+\textstyle\half\,.\cr
+\enddisplay
+The last inequality is, in fact, `$>$' in any discrete probability
+distribution, because $\Pr\prp(Y=Z)>0$.
+\source{Thomas M. "Cover".*}
+
+\ex:
+Let $F(z)$ and $G(z)$ be probability generating functions, and let
+\begindisplay
+H(z)=p\,F(z)+q\,G(z)
+\enddisplay
+where $p+q=1$. (This is called a {\it"mixture"\/} of\/ $F$ and~$G$;
+it corresponds to flipping a coin and choosing probability distribution
+$F$ or~$G$ depending on whether the coin comes up heads or tails.)
+Find the mean and variance of\/~$H$ in terms of $p$, $q$, and the mean and
+variance of $F$ and~$G$.
+\answer $\Mean(H)=p\Mean(F)+q\Mean(G)$;
+$\Var(H)=p\Var(F)+q\Var(G)+pq\bigl(\Mean(F)-\Mean(G)\bigr){}^2$.
+(A mixture is actually a special case of conditional probabilities:
+Let $Y$ be the coin, let $X\given@\tt H$ be generated by $F(z)$,
+and let $X\given@\tt T$ be generated by $G(z)$. Then
+$VX=EV(X\given Y)+VE(X\given Y)$, where $EV(X\given Y)=
+pV(X\given@{\tt H})+qV(X\given@{\tt T})$
+and $VE(X\given Y)$
+is the variance of $pz^{\Mean(F)}+qz^{\Mean(G)}$.)
+
+\ex:\exref|pgf-composition|%
+If $F(z)$ and $G(z)$ are probability generating functions, we can define
+another pgf\/~$H(z)$ by ``"composition"'':
+\begindisplay
+H(z)=F\bigl(G(z)\bigr)\,.
+\enddisplay
+Express $\Mean(H)$ and $\Var(H)$ in terms of $\Mean(F)$, $\Var(F)$,
+$\Mean(G)$, and $\Var(G)$. (Equation \eq(|p:s-of-binomial|) is a special case.)
+\answer By the chain rule, $H'(z)=G'(z)@F'\bigl(G(z)\bigr)$;
+$H''(z)=G''(z)@F'\bigl(G(z)\bigr)+G'(z)^2F''\bigl(G(z)\bigr)$. Hence
+\begindisplay
+\Mean(H)&=\Mean(F)\Mean(G)\,;\cr
+\Var(H)&=\Var(F)\Mean(G)^2+\Mean(F)\Var(G)\,.\cr
+\enddisplay
+(The random variable corresponding to probability distribution~$H$ can
+be understood as follows: Determine a nonnegative integer~$n$ by
+distribution~$F@$; then add the values of~$n$ independent random variables
+that have distribution~$G$. The identity for variance in this exercise
+is a special case of \equ(8.|v:ev+ve|), when $X$ has distribution~$H$
+and $Y$ has distribution~$F$.)
+\source{[|knuth1|, exercise 1.2.10--17].}
+
+\ex:
+Find a closed form for the super generating function
+$\sum_{n\ge0}F_n(z)@w^n$, when $F_n(z)$ is the football-fixation generating
+function defined in \eq(|football-pgf|).
+\answer $e^{w(z-1)}\!/(1-w)$.
+
+\ex:
+Let $X_{n,p}$ and $Y_{n,p}$ have the binomial and negative binomial
+distributions, respectively, with parameters $(n,p)$. (These distributions
+are defined in \eq(|binom-pgf|) and \eq(|negbinom-pgf|).) Prove that
+$\Pr\prp(Y_{n,p}\le m)=\Pr\prp(X_{m+n,p}\ge n)$. What identity in
+binomial coefficients does this imply?
+\answer $\Pr\prp(Y_{n,p}\le m)=\Pr\prp(Y_{n,p}+n\le m+n)={}$probability
+that we need $\le m+n$ tosses to obtain $n$~heads${}={}$probability
+that $m+n$ tosses yield $\ge n$ heads${}=\Pr\prp(X_{m+n,p}\ge n)$. Thus
+\begindisplay
+\sum_{k\le m}{n+k-1\choose k}p^nq^k
+&=\sum_{k\ge n}{m+n\choose k}p^kq^{m+n-k}\cr
+&=\sum_{k\le m}{m+n\choose k}p^{m+n-k}q^k\,;\cr
+\enddisplay
+and this is \equ(5.|partial-binomial|) with $n=r$, $x=q$, $y=p$.
+\source{"Patil" [|patil|].}
+
+\ex:
+A random variable $X$ is said
+\g The distribution of fish per unit volume of water.\g
+ to have the {\it "Poisson distribution"\/} with
+mean~$\mu$ if $\Pr\prp(X=k)=e^{-\mu}\mu^k\!/k!$ for all $k\ge0$.
+\itemitem{a}What is the pgf of such a random variable?
+\itemitem{b}What are its mean, variance, and other cumulants?
+\answer (a) $G_X(z)=e^{\mu(z-1)}$. (b) The $m$th cumulant is~$\mu$,
+ for all~$m\ge1$.
+(The case $\mu=1$ is called $F_\infty$ in \equ(8.|football-infty|).)
+
+\ex:
+Continuing the previous exercise, let $X_1$ be a random Poisson variable
+with mean $\mu_1$, and let $X_2$ be a random Poisson variable with
+mean $\mu_2$, independent of\/~$X_1$.
+\itemitem{a} What is the probability that $X_1+X_2=n$?
+\itemitem{b} What are the mean, variance, and other cumulants of $2X_1+3X_2$?
+\answer (a) $G_{X_1+X_2}(z)=G_{X_1}(z)@G_{X_2}(z)=e^{(\mu_1+\mu_2)(z-1)}$.
+Hence the probability is $e^{-\mu_1-\mu_2}(\mu_1+\mu_2)^n\!/n!$; the sum
+of independent Poisson variables is Poisson.
+(b)~In general, if $K_mX$ denotes the $m$th cumulant of a random variable~$X$,
+we have $K_m(aX_1+bX_2)=a^m(K_mX_1)+b^m(K_mX_2)$, when $a,b\ge0$.
+Hence the answer is $2^m\mu_1+3^m\mu_2$.
+
+\ex:\exref|prove-aflips|%
+Prove \eq(|aflip-e|) and \eq(|aflip-v|), the general formulas for
+mean and variance of the time needed to wait for a given pattern
+of heads and tails.
+\answer The general pgf will be $G(z)=z^m\!/F(z)$, where
+\begindisplay\openup4pt
+F(z)&=z^m+(1-z)\sum_{k=1}^m{\widetilde A}_{(k)}\[A^{(k)}=A_{(k)}]@z^{m-k}\,,\cr
+F'(1)&=m-\sum_{k=1}^m{\widetilde A}_{(k)}\[A^{(k)}=A_{(k)}]\,,\cr
+F''(1)&=m(m-1)-2\sum_{k=1}^m(m-k){\widetilde A}_{(k)}\[A^{(k)}=A_{(k)}]\,.\cr
+\enddisplay
+
+\ex:\exref|n-meaning|%
+What does the value of $N$ represent, if $\tt H$ and $\tt T$ are both set equal
+to~$\half$ in \eq(|n-hht:htt|)?
+\answer This is $\sum_{n\ge0}q_n$, where $q_n$ is the probability that the
+game between Alice and Bill is still incomplete after $n$~flips. Let
+$p_n$ be the probability that the game ends at the $n$th flip; then
+$p_n+q_n=q_{n-1}$. Hence the average time to play the game is
+$\sum_{n\ge1}np_n=(q_0-q_1)+2(q_1-q_2)+3(q_2-q_3)+\cdots=q_0+q_1+q_2+\cdots
+=N$, since $\lim_{n\to\infty}nq_n=0$.
+\par Another way to establish this answer is to replace $\tt H$ and
+$\tt T$ by $\half z$. Then the derivative of the first equation in
+\equ(8.|hht:htt|) tells us that $N(1)+N'(1)=N'(1)+S_A'(1)+S_B'(1)$.
+\par By the way, $N={16\over3}$.
+
+\ex:\exref|prove-v:ev+ve|%
+Prove \eq(|v:ev+ve|), the law of conditional expectations and variances.
+\answer By definition we have $V(X\given Y)=E(X^2\given Y)-\bigl(E(X\given Y)
+\bigr){}^2$ and
+$V\bigl(E(X\given Y)\bigr)=E\bigl((E(X\given Y))^2\bigr)
+ -\bigl(E\bigl(E(X\given Y)\bigr)\bigr){}^2$;
+hence $E\bigl(V(X\given Y)\bigr)+V\bigl(E(X\given Y)\bigr)=
+E\bigl(E(X^2\given Y)\bigr)
+ -\bigl(E\bigl(E(X\given Y)\bigr)\bigr){}^2$.
+But $E\bigl(E(X\given Y)\bigr)=\sum_y\Pr\prp(Y=y)E(x\given y)=
+\sum_{x,y}\Pr\prp(Y=y)\*\Pr\pbigi((X\given y)=x\bigr)=EX$ and
+$E\bigl(E(X^2\given Y)\bigr)=E(X^2)$, so the result is just $VX$.
+
+\subhead Homework exercises
+
+\ex:
+Let $\Pr_{00}$ be the probability distribution of two fair dice, and
+let $\Pr_{11}$ be the probability distribution of two loaded dice as
+given in~\eq(|pr1-def|). Find all events~$A$ such that $\Pr_{00}(A)=\Pr_{11}(A)$.
+Which of these events depend only on the random variable~$S$?
+(A probability space with $\Omega=D^2$ has $2^{36}$ events; only
+$2^{11}$ of those events depend on $S$ alone.)
+\answer Let $\Omega_0=\{\,\dieone,\,\diesix\,\}^2$ and
+$\Omega_1=\{\,\dietwo,\,\diethree,\,\diefour,\,\diefive\,\}^2$;
+and let $\Omega_2$ be the other 16 elements of~$\Omega$. Then
+$\Pr_{11}(\omega)-\Pr_{00}(\omega)={+20\over576}$, ${-7\over576}$, ${+2\over576}$
+according as $\omega\in\Omega_0$, $\Omega_1$, $\Omega_2$. The events~$A$
+must therefore be chosen with $k_j$ elements from $\Omega_j$, where
+$(k_0,k_1,k_2)$ is one of the following:
+$(0,0,0)$,
+$(0,2,7)$,
+$(0,4,14)$,
+$(1,4,4)$,
+$(1,6,11)$,
+$(2,6,1)$,
+$(2,8,8)$,
+$(2,10,15)$,
+$(3,10,5)$,
+$(3,12,12)$,
+$(4,12,2)$,
+$(4,14,9)$,
+$(4,16,16)$.
+For example, there are ${4\choose2}{16\choose6}{16\choose1}$ events of
+type~$(2,6,1)$. The total number of such events is
+$[z^0](1+z^{20})^4(1+z^{-7})^{16}(1+z^2)^{16}$, which turns out to be
+$1304872090$. If we restrict ourselves to events that depend on $S$ only,
+we get 40 solutions $S\in A$, where $A=\emptyset$,
+$\{{2\atop12},{4\atop10},{6\atop8}\}$,
+$\{{2\atop12},5,9\}$,
+$\{2,12,{4\atop10},{6\atop8},5,9\}$,
+$\{2,4,6,8,10,12\}$,
+$\{{3\atop11},7,{5\atop9},4,10\}$,
+and the complements of these sets.
+(Here the notation `$2\atop12$' means either $2$ or $12$ but not both.)
+
+\ex:
+Player $J$ rolls $2n+1$ fair dice and removes those that come up \diesix.
+Player $K$ then calls a number between $1$ and~$6$, rolls the remaining
+dice, and removes those that show the number called. This process is repeated
+until no dice remain. The player who has removed the most total dice ($n+1$
+or~more) is the winner.
+\itemitem{a}What are the mean and variance of the total number of dice
+that $J$~removes? \Hint: The dice are independent.
+\itemitem{b}What's the probability that $J$ wins, when $n=2$?
+\answer (a) Any one of the dice ends up in $J$'s possession with
+probability $p={1\over6}+\bigl({5\over6}\bigr){}^2p$; hence $p={6\over11}$.
+Let $q={5\over11}$. Then the pgf for $J$'s total holdings is $(q+pz)^{2n+1}$,
+with mean $(2n+1)p$ and variance $(2n+1)pq$, by \equ(8.|v-binom|).
+(b)~${5\choose3}p^3q^2+{5\choose4}p^4q+{5\choose5}p^5={94176\over161051}
+\approx .585$.
+\source{John Knuth (age 4) and DEK; 1975 final."!Knuth, John""!Knuth, Don"}
+
+\ex:
+Consider a gambling game in which you stake a given amount~$A$ and you
+roll a fair die. If $k$ spots turn up, you multiply your stake by
+$2(k-1)/5$. (In particular, you double the stake whenever you roll
+\diesix, but you lose everything if you roll \dieone.) You can stop
+at any time and reclaim the current stake. What are the mean and
+variance of your stake after $n$~rolls? (Ignore any effects of
+rounding to integer amounts of currency.)
+\answer The pgf for the current stake after $n$
+rolls is $G_n(z)$, where
+\begindisplay \openup3pt
+G_0(z)&=z^A\,;\cr
+G_n(z)&=\textstyle\sum_{k=1}^6G_{n-1}(z^{2(k-1)/5})/6\,,
+\qquad\hbox{for $n>0$}.
+\enddisplay
+(The noninteger exponents cause no trouble.) It follows that
+\g \vskip-20pt
+This problem can perhaps be solved more easily without generating
+functions than with them.\g
+$\Mean(G_n)=\Mean(G_{n-1})$, and $\Var(G_n)+\Mean(G_n)^2=
+{22\over15}(\Var(G_{n-1})+\Mean(G_{n-1})^2)$. So the mean is
+always~$A$, but the variance grows
+to $\bigl(\bigl({22\over15}\bigr){}^n-1\bigr)A^2$.
+
+\ex:
+Find the mean and variance of the number of $l$-cycles in a random
+permutation of $n$ elements. (The football victory problem discussed
+in \eq(|e-fixedpts|), \eq(|mu2-fixedpts|), and
+\eq(|football-pgf|) is the special case $l=1$.)
+\answer The pgf\/ $F_{l,n}(z)$ satisfies $F'_{l,n}(z)=F_{l,n-l}(z)/l$;
+hence $\Mean(F_{l,n})=F'_{l,n}(1)=\[n\ge l]/l$ and $F''_{l,n}(1)
+=\[n\ge2l]/l^2$; the variance is easily computed. (In fact, we have
+\begindisplay
+F_{l,n}(z)=\sum_{0\le k\le n/l}{1\over k!}\Bigl({z-1\over l}\Bigr)^{\!k}\,,
+\enddisplay
+which approaches a "Poisson distribution" with mean $1/l$ as $n\to\infty$.)
+\source{[|knuth1|, exercise 1.3.3--18].}
+
+\ex:\exref|estimate-kappa3|%
+Let $X_1$, $X_2$, \dots, $X_n$ be independent samples of the
+random variable~$X$. Equations \eq(|hat-e|) and \eq(|hat-v|) explain
+how to estimate the mean and variance of\/~$X$ on the basis of these
+observations; give an analogous formula for estimating the third
+"cumulant"~$\kappa_3$. (Your formula should be an ``unbiased'' estimate,
+"!unbiased estimate"
+in the sense that its expected value should be~$\kappa_3$.)
+\answer $(n^2\Sigma_3-3n\Sigma_2\Sigma_1
++2\Sigma_1^3)/n(n-1)(n-2)$ has the desired mean, where $\Sigma_k=
+X_1^k+\cdots+X_n^k$. This follows from the identities
+\begindisplay
+E\Sigma_3&=n\mu_3\,;\cr
+E(\Sigma_2\Sigma_1)&=n\mu_3+n(n-1)\mu_2\mu_1\,;\cr
+E(\Sigma_1^3)&=n\mu_3+3n(n-1)\mu_2\mu_1+n(n-1)(n-2)\mu_1^3\,.\cr
+\enddisplay
+Incidentally, the third cumulant is $\kappa_3=E\bigl((X-EX)^3\bigr)$,
+but the fourth cumulant does not have such a simple expression;
+we have $\kappa_4=E\bigl((X-EX)^4\bigr)-3(VX)^2$.
+\source{"Fisher" [|ra-fisher|].}
+
+\ex:
+What is the average length of the coin-flipping game \eq(|hht:htt|),
+\itemitem{a}given that Alice wins?
+\itemitem{b}given that Bill wins?
+\answer (The exercise implicitly calls for $p=q=\half$, but the general
+answer is given here for completeness.) Replace $\tt H$ by $pz$ and $\tt T$
+by $qz$, getting $S_A(z)=p^2qz^3\!/(1-pz)(1-qz)(1-pqz^2)$ and
+$S_B(z)=pq^2z^3\!/(1-qz)(1-pqz^2)$. The pgf for the conditional probability
+that Alice wins at the $n$th flip, given that she wins the game, is
+\begindisplay
+{S_A(z)\over S_A(1)}=z^3\cdot
+{q\over 1-pz}\cdot{p\over 1-qz}\cdot{1-pq\over 1-pqz^2}\,.
+\enddisplay
+This is a product of pseudo-pgf's, whose mean is $3+p/q+q/p+2pq/(1-pq)$.
+The formulas for Bill are the same but without the factor $q/(1-pz)$, so
+Bill's mean is $3+q/p+2pq/(1-pq)$. When $p=q=\half$, the answer in
+case~(a) is $17\over3$; in case~(b) it is $14\over3$. Bill wins only
+half as often, but when he does win he tends to win sooner. The overall
+average number of flips is ${2\over3}\cdt{17\over3}+{1\over3}\cdt{14\over3}
+={16\over3}$, agreeing with exercise~|n-meaning|. The solitaire game for
+each pattern has a waiting time of~$8$.
+
+\ex:
+Alice, Bill, and Computer flip a fair coin until one of the respective
+patterns $A=\tt HHTH$, $B=\tt HTHH$, or $C=\tt THHH$ appears for the
+first time. (If only two of these patterns were involved,
+we know from \eq(|alice-odds|) that
+$A$ would probably beat~$B$, that $B$ would probably beat~$C$,
+and that $C$ would probably beat~$A$; but all three patterns
+are simultaneously
+in the game.) What are each player's chances of winning?
+\answer Set ${\tt H}={\tt T}=\half$ in
+\begindisplay
+1+N(@{\tt H+T}@)&=N+S_A+S_B+S_C\cr
+N\,{\tt HHTH}&=S_A({\tt HTH}+1)+S_B({\tt HTH+TH})+S_C({\tt HTH+TH})\cr
+N\,{\tt HTHH}&=S_A({\tt THH+H})+S_B({\tt THH}+1)+S_C({\tt THH})\cr
+N\,{\tt THHH}&=S_A({\tt HH})+S_B({\tt H})+S_C\cr
+\enddisplay
+to get the winning probabilities. In general we will have
+$S_A+S_B+S_C=1$ and
+\begindisplay
+S_A(A{:}A)+S_B(B{:}A)+S_C(C{:}A)
+&=S_A(A{:}B)+S_B(B{:}B)+S_C(C{:}B)\cr
+&=S_A(A{:}B)+S_B(B{:}C)+S_C(C{:}C)\,.
+\enddisplay
+In particular, the equations $9S_A+3S_B+3S_C=5S_A+9S_B+S_C=2S_A+4S_B+8S_C$
+imply that $S_A={16\over52}$, $S_B={17\over52}$, $S_C={19\over52}$.
+\source{"Guibas" and "Odlyzko" [|guibas-odlyzko|].}
+
+\ex:\exref|more-variances|%
+The text considers three kinds of variances associated with successful search
+in a hash table. Actually there are two more: We can consider the average
+(over~$k$) of the variances (over $h_1$, \dots,~$h_n$) of $P(h_1,\ldots,h_n;k)$;
+and we can consider the variance (over~$k$) of the averages
+(over $h_1$, \dots,~$h_n$). Evaluate these quantities.
+\answer The variance of $P(h_1,\ldots,h_n;k)\given k$ is the variance of
+the shifted binomial distribution
+$\bigl((m-1+z)/m\bigr){}^{k-1}z$, which is $(k-1)({1\over m})(1-{1\over m})$
+by \equ(8.|v-binom|). Hence the average of the variance is $\Mean(S)(m-1)/m^2$.
+The variance of the average is the variance of $(k-1)/m$, namely
+$\Var(S)/m^2$. According to \equ(8.|v:ev+ve|), the sum of these two
+quantities should be $VP$, and it is. Indeed, we have just replayed
+the derivation of \equ(8.|v-success|) in slight disguise. (See exercise~%
+|pgf-composition|.)
+
+\ex:
+An apple is located at vertex $A$ of "pentagon" $ABCDE$, and a worm is located
+"!worm and apple"
+two vertices away, at~$C$. Every day the worm crawls with equal probability
+\g "Schr\"odinger"'s worm.\g
+to one of the two adjacent vertices. Thus after one day the worm is at
+vertex~$B$ or vertex~$D$, each with probability~$\half$.
+After two days, the worm might be back at~$C$ again, because it has no
+memory of previous positions. When it reaches vertex~$A$, it stops to dine.
+\itemitem{a}What are the mean and variance of the number of days until dinner?
+\itemitem{b}Let $p$ be the probability that the number of days is $100$ or more.
+What does "Chebyshev's inequality" say about $p$?
+\itemitem{c}What do the "tail inequalities" (exercise |tail-ineq|) tell us
+about $p$?
+\answer (a) A brute force solution would set up five equations in five unknowns:
+\begindisplay
+&\textstyle
+A=\half zB+\half zE\,;\quad B=\half zC\,;\quad C=1+\half zB+\half zD\,;\cr
+&\textstyle
+D=\half zC +\half zE\,;\quad E=\half zD\,.
+\enddisplay
+ But positions $C$ and~$D$ are equidistant from
+the goal, as are $B$ and~$E$, so we can lump them together. If $X=B+E$
+and $Y=C+D$, there are now three equations:
+\begindisplay
+\textstyle A=\half zX\,;\quad X=\half zY\,;\quad Y=1+\half zX+\half zY\,.
+\enddisplay
+Hence $A=z^2\!/(4-2z-z^2)$; we have $\Mean(A)=6$ and $\Var(A)=22$. (Rings
+a bell? In fact,
+this problem is equivalent to flipping a fair coin until getting heads
+twice in a row: Heads means ``advance toward the apple'' and tails
+means ``go back.'')
+(b)~Chebyshev's inequality says that $\Pr\prp(S\ge100)=
+\Pr\pbigi((S-6)^2\ge94^2\bigr)\le 22/94^2\approx.0025$.
+(c)~The second tail inequality says that $\Pr\prp(S\ge100)\le1/x^{98}(4-2x-x^2)$
+for all $x\ge1$, and we get the upper bound $0.00000005$ when $x=(\sqrt{49001}
+-99)/100$. (The actual probability is approximately
+$0.0000000009$, according to exercise |fib-heads|.)
+
+\ex:
+Alice and Bill are in the military, stationed in one of the five states
+Kansas, Nebraska, Missouri, Oklahoma, or Colorado. Initially Alice is
+in Nebraska and Bill is in Oklahoma. Every month each person is reassigned
+to an adjacent state, each adjacent state being equally likely. (Here's
+a diagram of the adjacencies:
+\begindisplay
+\unitlength=2pt
+\beginpicture(100,39)(-50,-20)
+	\put(0,0){\disk{1.5}}
+	\put(0,15){\disk{1.5}}
+	\put(25,0){\disk{1.5}}
+	\put(0,-15){\disk{1.5}}
+	\put(-25,0){\disk{1.5}}
+	\put(0,15){\circle{4.5}}
+	\put(0,-15){\circle{4.5}}
+	\put(0,0){\line(0,1){15}}
+	\put(0,0){\line(1,0){25}}
+	\put(0,0){\line(0,-1){15}}
+	\put(0,0){\line(-1,0){25}}
+	\put(0,15){\line(5,-3){25}}
+	\put(25,0){\line(-5,-3){25}}
+	\put(0,-15){\line(-5,3){25}}
+	\put(-25,0){\line(5,3){25}}
+	\put(9,3){\makebox(0,0){Kansas}}
+	\put(13,17){\makebox(0,0){Nebraska}}
+	\put(34,3){\makebox(0,0){Missouri}}
+	\put(14,-17){\makebox(0,0){Oklahoma}}
+	\put(-35,3){\makebox(0,0){Colorado}}
+\endpicture
+\enddisplay
+The initial states are circled.)
+\g Definitely a finite-state situation.\g
+For example, Alice is restationed after the first month to Colorado,
+Kansas, or Missouri, each with probability $1/3$. Find the mean and
+variance of the number of months it takes Alice and Bill to find
+each other. (You may wish to enlist a computer's help.)
+\answer By symmetry, we can reduce each month's situation to one
+of four possibilities:
+\g \noindent\llap{``}"Toto", I have a feeling we're not in Kansas anymore.''\par
+\hfill\dash---Dorothy"!Gale""!Baum"\g
+\begindisplay \openup-2pt
+&D,\ &\hbox{the states are diagonally opposite;}\cr
+&A,\ &\hbox{the states are adjacent and not Kansas;}\cr
+&K,\ &\hbox{the states are Kansas and one other;}\cr
+&S,\ &\hbox{the states are the same.}
+\enddisplay
+Considering the Markovian transitions, we get four equations
+\begindisplay \openup2pt
+D&=\textstyle 1+z({2\over9}D+{2\over12}K)\cr
+A&=\textstyle z({4\over9}A+{4\over12}K)\cr
+K&=\textstyle z({4\over9}D+{4\over9}A+{4\over12}K)\cr
+S&=\textstyle z({3\over9}D+{1\over9}A+{2\over12}K)\cr
+\enddisplay
+whose sum is $D+K+A+S=1+z(D+A+K)$. The solution is
+\begindisplay
+S={81z-45z^2-4z^3\over243-243z+24z^2+8z^3}\,,
+\enddisplay
+but the simplest way to find the mean and variance may be to
+write $z=1+w$ and expand in powers of $w$, ignoring multiples of~$w^2$:
+\begindisplay
+D&=\textstyle{27\over16}+{1593\over512}w+\cdots\,;\cr
+A&=\textstyle{9\over8}+{2115\over256}w+\cdots\,;\cr
+K&=\textstyle{15\over8}+{2661\over256}w+\cdots\,.\cr
+\enddisplay
+Now $S'(1)={27\over16}+{9\over8}+{15\over8}={75\over16}$, and
+$\half S''(1)={1593\over512}+{2115\over256}+{2661\over256}={11145\over512}$.
+The mean is $75^{\mathstrut}\over16$ and the variance is $105\over4$. (Is there
+a simpler way?)
+\source{1977 final exam.}
+
+\ex:
+Are the random variables $X_1$ and $X_2$ in \eq(|succ-p|) independent?
+\answer First answer: "Clearly" yes, because the hash values $h_1$, \dots,~%
+$h_n$ are independent. Second answer: Certainly no, even though the
+hash values $h_1$, \dots,~$h_n$ are independent. We have
+$\Pr\prp(X_j=0)=\sum_{k=1}^ns_k\bigl(\[j\ne k](m-1)/m\bigr)=(1-s_j)(m-1)/m$,
+but $\Pr\prp(X_1=X_2=0)=\sum_{k=1}^ns_k\[k>2](m-1)^2\!/m^2=(1-s_1-s_2)(m-1)^2\!/m^2
+\ne \Pr\prp(X_1=0)@\Pr\prp(X_2=0)$.
+
+\ex:
+Gina is a "golf"er who has probability $p=.05$ on each stroke of making
+a ``supershot'' that gains a stroke over par, probability~$q=.91$ of making
+an ordinary shot, and probability~$r=.04$ of making a ``subshot'' that costs
+her a stroke with respect to par.
+(Non-golfers: At
+each turn she advances $2$, $1$, or $0$ steps toward her goal,
+with probability $p$, $q$, or~$r$, respectively. 
+On a par-$m$ hole, her score is the minimum $n$ such that she has advanced
+$m$ or~more steps after taking $n$ turns. A low score is better than a high
+score.) \g(Use a calculator for the numerical work on this problem.)\g
+\itemitem{a} Show that Gina wins a par-$4$ hole more often than she loses,
+when she plays against a player who shoots par. (In other words, the
+probability that her score is less than~$4$ is greater than the probability
+ that her score is greater than~$4$.)
+\itemitem{b} Show that her average score on a par-$4$ hole is greater than~$4$.
+(Therefore she tends to lose against a ``steady'' player on total points,
+although she would tend to win in match play by holes.)
+\answer Let $[z^n]\,S_m(z)$ be the probability that Gina has advanced
+$<m$ steps after taking $n$~turns. Then $S_m(1)$ is her average score on
+a par-$m$ hole; $[z^m]\,S_m(z)$ is the probability that she loses such a hole
+against a steady player;
+and $1-[z^{m-1}]\,S_m(z)$ is the probability that she wins it.
+We have the recurrence
+\begindisplay
+S_0(z)&=0\,;\cr
+S_m(z)&=\bigl(1+pzS_{m-2}(z)+qzS_{m-1}(z)\bigr)/(1-rz)\,,\qquad\hbox{for $m>0$}.
+\enddisplay
+To solve part (a), it suffices to compute the coefficients for $m,n\le4$;
+it is convenient to replace $z$ by $100w$ so that the computations involve
+nothing but integers. We obtain the following tableau of coefficients:
+\begindisplay \def\preamble{&\hfill$##$\quad} \openup-1pt
+S_0&0&0&0&0&0\cr
+S_1&1&4&16&64&256\cr
+S_2&1&95&744&4432&23552\cr
+S_3&1&100&9065&104044&819808\cr
+S_4&1&100&9975&868535&12964304\cr
+\enddisplay
+Therefore Gina wins with probability $1-.868535=.131465$; she loses
+with probability $.12964304$. (b)~To find the mean number of strokes, we
+compute
+\begindisplay
+\textstyle S_1(1)={25\over24}\,;\enspace
+S_2(1)={4675\over2304}\,;\enspace
+S_3(1)={667825\over221184}\,;\enspace
+S_4(1)={85134475\over21233664}\,.
+\enddisplay
+(Incidentally, $S_5(1)\approx4.9995$; she wins with respect to both holes
+and strokes on a par-$5$ hole, but loses either way when par is~$3$.)
+\source{"Hardy" [|hardy-golf|] has an incorrect analysis leading to the opposite
+conclusion.}
+
+\subhead Exam problems
+
+\ex:
+A die has been loaded with the probability distribution
+\begindisplay \openup3pt
+\Pr(\dieone)=p_1\,;\qquad
+\Pr(\dietwo)=p_2\,;\qquad\ldots\,;\qquad
+\Pr(\diesix)=p_6\,.
+\enddisplay
+Let $S_n$ be the sum of the spots after this die has been rolled $n$~times.
+Find a necessary and sufficient
+condition on the ``loading distribution'' such that
+the two random variables $\,S_n\bmod2\,$ and $\,S_n\bmod3\,$ are independent
+of each other, for all~$n$.
+\answer The condition will be true for all $n$ if and only if it is
+true for~$n=1$, by the Chinese remainder theorem. One necessary and
+sufficient condition is the polynomial identity
+\begindisplay
+&\bigl(p_2{+}p_4{+}p_6+(p_1{+}p_3{+}p_5)w\bigr)
+\bigl(p_3{+}p_6+(p_1{+}p_4)z+(p_2{+}p_5)z^2\bigr)\cr
+&\qquad=(p_1wz+p_2z^2+p_3w+p_4z+p_5wz^2+p_6)\,,
+\enddisplay
+but that just more-or-less restates the problem. A simpler characterization is
+\begindisplay
+(p_2+p_4+p_6)(p_3+p_6)=p_6\,,\qquad
+(p_1+p_3+p_5)(p_2+p_5)=p_5\,,
+\enddisplay
+which checks only two of the coefficients in the former product. The general
+solution has three degrees of freedom: Let $a_0+a_1=b_0+b_1+b_2=1$, and
+put $p_1=a_1b_1$, \ $p_2=a_0b_2$, \ $p_3=a_1b_0$, \ $p_4=a_0b_1$, \ $p_5=a_1b_2$,
+\ $p_6=a_0b_0$.
+\source{1981 final exam.}
+
+\ex:
+The six faces of a certain die contain the spot patterns
+\begindisplay
+\dieone\qquad\diethree\qquad\diefour\qquad\diefive\qquad\diesix\qquad\dieeight
+\enddisplay
+instead of the usual \dieone\ through \diesix\thinspace.
+\par\nobreak\smallskip
+\itemitem{a}Show that there is a way to assign spots to the six faces of
+another die so that, when these two dice are thrown, the sum of spots
+has the same probability distribution as the sum of spots on two ordinary dice.
+(Assume that all 36 face pairs are equally likely.)
+\itemitem{b}Generalizing, find all ways to assign spots to the $6n$ faces of
+$n$~dice so that the distribution of spot sums will be the same as the
+distribution of spot sums on $n$~ordinary
+dice. (Each face should receive a positive integer number of spots.)
+\answer (a) \dieone\quad\dietwo\quad\dietwo\quad\diethree\quad\diethree\quad
+\diefour\thinspace. (b)~If the $k$th die has faces with $s_1$, \dots,~$s_6$
+spots, let $p_k(z)=z^{s_1}+\cdots+z^{s_6}$. We want to find such polynomials
+with $p_1(z)\ldots p_n(z)=(z+z^2+z^3+z^4+z^5+z^6)^n$. The irreducible
+factors of this polynomial with rational coefficients
+are $z^n{(z+1)^n}\*{(z^2+z+1)^n}{(z^2-z+1)^n}$; hence $p_k(z)$ must
+be of the form $z^{a_k}{(z+1)^{b_k}}\*{(z^2+z+1)^{c_k}}{(z^2-z+1)^{d_k}}$.
+We must have $a_k\ge1$, since $p_k(0)=0$; and in fact $a_k=1$, since
+$a_1+\cdots+a_n=n$. Furthermore the condition $p_k(1)=6$ implies that
+$b_k=c_k=1$. It is now easy to see that $0\le d_k\le2$, since $d_k>2$ gives
+negative coefficients. When $d=0$ and $d=2$,
+we get the two dice in part~(a); therefore the only solutions have $k$~pairs
+of dice as in~(a), plus $n-2k$~ordinary dice, for some $k\le\half n$.
+\source{"Gardner" [|gardner-dice|] credits George "Sicherman".}
+
+\ex:\exref|fib-heads|%
+Let $p_n$ be the probability that exactly $n$ tosses of a fair coin
+are needed before heads are seen twice in a row, and let $q_n=\sum_{k\ge n}p_k$.
+Find closed forms for both $p_n$ and $q_n$ in terms of Fibonacci numbers.
+\answer The number of coin-toss sequences of length~$n$ is $F_{n-1}$,
+for all $n>0$, because of the relation between domino tilings
+and coin flips. Therefore the probability that exactly $n$ tosses are needed
+is $F_{n-1}/2^n$, when the coin is fair. Also $q_n=F_{n+1}/2^{n-1}$,
+since $\sum_{k\ge n}F_kz^k=(F_nz^n+F_{n-1}z^{n+1})/(1-z-z^2)$.
+(A~systematic solution via generating functions is, of course, also possible.)
+
+\ex:
+What is the probability generating function for the number of times you need
+to roll a fair die until all six faces have turned up? Generalize to
+$m$-sided fair dice: Give closed forms for the mean and variance of the
+number of rolls needed to see $l$ of the $m$~faces. What is the probability
+that this number will be exactly $n$?
+\answer When $k$ faces have been seen, the task of rolling a new
+one is equivalent to flipping coins with success probability
+$p_k=(m-k)/m$. Hence the pgf is $\prod_{k=0}^{l-1}p_kz/(1-q_kz)=
+\prod_{k=0}^{l-1}(m-k)z/(m-kz)$.
+The mean is $\sum_{k=0}^{l-1}p_k^{-1}=
+m(H_m-H_{m-l})$; the variance is $m^2\bigl(H_m^{(2)}-H_{m-l}^{(2)}\bigr)
+-m(H_m-H_{m-l})$; and equation \equ(7.|stirl2-gf|) provides a closed form
+for the requested probability, namely $m^{-n}m!{n-1\brace l-1}
+/(m-l)!$. (The problem discussed in this exercise is
+traditionally called ``"coupon collecting".\qback'')
+\source{[|knuth2|, exercise 3.3.2--10].}
+
+\ex:
+A {\it "Dirichlet probability generating function"\/} has the form
+\begindisplay
+P(z)=\sum_{n\ge1}{p_n\over n^z}\,.
+\enddisplay
+Thus $P(0)=1$. If $X$ is a random variable with $\Pr\prp(X=n)=p_n$,
+express $E(X)$, $V(X)$, and $E(\ln X)$ in terms of
+$P(z)$ and its derivatives.
+\answer $E(X)=P(-1)$; \ $V(X)=P(-2)-P(-1)^2$; \ $E(\ln X)=-P'(0)$.
+\source{[|mariage-stables|, exercise 4.3(a)].}
+
+\ex:
+The $m$th cumulant $\kappa_m$ of the "binomial distribution" \eq(|binom-pgf|)
+has the form $nf_m(p)$, where $f_m$ is a polynomial of degree~$m$.
+(For example, $f_1(p)=p$ and $f_2(p)=p-p^2$, because the mean and
+variance are $np$ and $npq$.)
+\itemitem{a}Find a closed form for the coefficient of $p^k$ in $f_m(p)$.
+\itemitem{b}Prove that $f_m(\half)=(2^m-1)B_m/m+\[m=1]$, where $B_m$
+is the $m$th Bernoulli number.
+\answer (a) We have $\kappa_m=n\bigl(0!{m\brace1}p-1!{m\brace2}p^2+2!{m\brace3}p^3
+-\cdots\,\bigr)$, by \equ(7.|exp-power-gf|). Incidentally, the third cumulant is
+$npq(q-p)$ and the fourth is $npq(1-6pq)$. The identity
+$q+pe^t=(p+qe^{-t})e^t$ shows that $f_m(p)=(-1)^mf_m(q)+\[m=1]$;
+hence we can write $f_m(p)=g_m(pq)(q-p)^{[m\,\,\rm odd]}$, where $g_m$
+is a polynomial of degree $\lfloor m/2\rfloor$, whenever $m>1$.
+(b)~Let $p=\half$ and
+$F(t)=\ln(\half+\half e^t)$. Then $\sum_{m\ge1}\kappa_m t^{m-1}\!/(m-1)!
+=F'(t)=1-1/(e^t+1)$, and we can use exercise 6.|z/ez+1|.
+
+\ex:
+Let the random variable $X_n$ be the number of flips of a fair coin until
+heads have turned up a total of $n$~times.
+ Show that $E(X_{n+1}^{-1})=(-1)^n(\ln2
++H_{\lfloor n/2\rfloor}-H_n)$. Use the methods of Chapter~9 to
+"!average of a reciprocal"
+estimate this value with an absolute error of $O(n^{-3})$.
+\answer If $G(z)$ is the pgf for a random variable $X$ that assumes only
+positive integer values, then $\int_0^1 G(z)\,dz/z=\sum_{k\ge1}\Pr\prp(X=k)/k
+=E(X^{-1})$. If\/ $X$ is the distribution of the number of flips to obtain
+$n+1$ heads, we have $G(z)=\bigl(pz/(1-qz)\bigr)^{\!n+1}$ by
+\equ(8.|bernoulli-trials|), and the integral is
+\begindisplay
+\int_0^1\biggl({pz\over1-qz}\biggr)^{\!n+1}{dz\over z}=
+\int_0^1{w^n\,dw\over 1+(q/p)w}
+\enddisplay
+if we substitute $w=pz/(1-qz)$. When $p=q$ the integrand can be written
+$(-1)^n\bigl((1+w)^{-1}-1+w-w^2+\cdots+(-1)^n w^{n-1}\bigr)$, so the
+integral is $(-1)^n\bigl(\ln2-1+\half-{1\over3}+\cdots+(-1)^n\!/n\bigr)$.
+We have $H_{2n}-H_n=\ln2-{1\over4}n^{-1}+{1\over16}n^{-2}+O(n^{-4})$
+by \equ(9.|o-harmonic|), and it follows that $E(X_{n+1}^{-1})=
+\half n^{-1}-{1\over4}n^{-2}+O(n^{-4})$.
+\source{"Feller" [|feller|, exercise IX.33].}
+
+\ex:
+A certain man has a problem finding work. If he is unemployed on any given
+morning, there's constant probability $p_h$ (independent of past history)
+that he will be hired before that evening; but if he's got a job when
+\g Does \TeX\ choose optimal line breaks?\g
+the day begins, there's constant probability $p_f$ that he'll be laid
+off by nightfall. Find the average number of evenings on which he will have
+a job lined up, assuming that he is initially employed and that this
+process goes on for $n$~days. (For example, if $n=1$ the answer is $1-p_f$.)
+\answer Let $F_n(z)$ and $G_n(z)$ be pgf's for the number
+of employed evenings, if the man is initially unemployed or employed,
+respectively. Let $q_h=1-p_h$ and $q_f=1-p_f$. Then $F_0(z)=G_0(z)=1$, and
+\begindisplay
+F_n(z)&=p_hzG_{n-1}(z)+q_hF_{n-1}(z)\,;\cr
+G_n(z)&=p_f@F_{n-1}(z)+q_f@zG_{n-1}(z)\,.
+\enddisplay
+The solution is given by the super generating function
+\begindisplay
+G(w,z)=\sum_{n\ge0}
+G_n(z)@w^n=A(w)/\bigl(1-zB(w)\bigr)\,,
+\enddisplay
+where $B(w)=w\bigl(q_f-(q_f-p_h)w\bigr)/
+(1-q_hw)$ and $A(w)=\bigl(1-B(w)\bigr)/(1-w)$. Now
+$\sum_{n\ge0}G'_n(1)@w^n=\alpha w/(1-w)^2+\beta/(1-w)
+-\beta/\bigl(1-(q_f-p_h)w\bigr)$ where
+\begindisplay
+\alpha={p_h\over p_h+p_f}\,,\qquad
+\beta={p_f(q_f-p_h)\over(p_h+p_f)^2}\,;
+\enddisplay
+hence $G_n'(1)=\alpha n+\beta\bigl(1-(q_f-p_h)^n\bigr)$. (Similarly
+$G_n''(1)=\alpha^2 n^2+O(n)$, so the variance is $O(n)$.)
+
+\ex:
+Find a closed form for the pgf\/ $G_n(z)=\sum_{k\ge0}p_{k,n}z^k$, where
+$p_{k,n}$ is the probability that a random permutation of $n$ objects
+has exactly $k$~cycles. What are the mean and standard deviation
+of the number of cycles?
+\answer $G_n(z)=\sum_{k\ge0}{n\brack k}z^k\!/n!=z\_^n\!/n!$, by
+\equ(6.|expand-rising-to-ord|). This is a product of binomial pgf's,
+$\prod_{k=1}^n\bigl((k-1+z)/k\bigr)$, where the $k$th has mean $1/k$
+and variance $(k-1)/k^2$; hence $\Mean(G_n)=H_n$ and $\Var(G_n)=
+H_n-H_n^{(2)}$.
+\source{[|knuth1|, sections 1.2.10 and 1.3.3].}
+
+\ex:
+The athletic department runs an intramural ``"knockout tournament"'' for
+$2^n$ "tennis" players as follows. In the first round, the players are
+"!sports, \string\see tennis, golf, football, frisbee, dice, baseball"
+paired off randomly, with each pairing equally likely, and $2^{n-1}$
+matches are played. The winners advance to the second round, where
+the same process produces $2^{n-2}$ winners. And so on;
+the $k$th round has $2^{n-k}$ randomly chosen matches between the
+$2^{n-k+1}$ players who are still undefeated. The $n$th round
+produces the champion. Unbeknownst to the "tournament" organizers,
+there is actually an ordering among the players, so that $x_1$~is best,
+$x_2$ is second best, \dots,~$x_{2^n}$~is worst. When $x_j$ plays $x_k$
+and $j<k$, the winner is $x_j$ with probability~$p$ and $x_k$ with
+\g A peculiar set of tennis players.\g
+probability~$1-p$, independent of the other matches. We assume that
+the same probability~$p$ applies to all $j$ and~$k$.
+\itemitem{a}What's the probability that $x_1$ wins the tournament?
+\itemitem{b}What's the probability that the $n$th round (the final
+match) is between the top two players, $x_1$ and $x_2$?
+\itemitem{c}What's the probability that the best $2^k$ players are
+the competitors in the $k$th-to-last round? (The previous questions
+were the cases $k=0$ and $k=1$.)
+\itemitem{d}Let $N(n)$ be the number of essentially different
+tournament results; two tournaments are essentially the same if the
+matches take place between the same players and have the same winners.
+Prove that $N(n)=2^n!$.
+\itemitem{e}What's the probability that $x_2$ wins the tournament?
+\itemitem{f}Prove that if $\half<p<1$, the probability that $x_j$
+wins is strictly greater than the probability that $x_{j+1}$ wins,
+for $1\le j<2^n$.
+\answer (a) The champion must be undefeated in $n$ rounds, so the answer
+is~$p^n$. (b,c)~Players $x_1$, \dots,~$x_{2^k}$ must be ``seeded'' (by
+chance) in distinct subtournaments and they must win all $2^k(n-k)$
+of their matches. The $2^n$ leaves of the tournament tree can be
+filled in $2^n!$ ways; to seed it we have $2^k!(2^{n-k})^{2^k}$ ways
+to place the top $2^k$ players, and $(2^n-2^k)!$ ways to place the
+others. Hence the probability is $(2p)^{2^k(n-k)}\big/{2^n\choose2^k}$.
+When $k=1$ this simplifies to $(2p^2)^{n-1}\!/(2^n-1)$.
+(d)~Each tournament outcome corresponds to a permutation of the players:
+Let $y_1$ be the champ; let $y_2$ be the other finalist; let
+$y_3$ and $y_4$ be the players who lost to $y_1$ and $y_2$ in the
+semifinals; let $(y_5,\ldots,y_8)$ be those who lost respectively
+to $(y_1,\ldots,y_4)$ in the quarterfinals; etc. (Another proof shows
+that the first round has $2^n!/2^{n-1}!$ essentially different outcomes;
+the second round has $2^{n-1}!/2^{n-2}!$; and so on.) (e)~Let $S_k$
+be the set of $2^{k-1}$ potential opponents of $x_2$ in the $k$th round.
+The conditional probability that $x_2$ wins, given that $x_1$ belongs to~$S_k$, is
+\begindisplay
+\Pr(\hbox{$x_1$ plays $x_2$})\cdt p^{n-1}(1-p)\,&+\,
+\Pr(\hbox{$x_1$ doesn't play $x_2$})\cdt p^n\cr
+=p^{k-1}p^{n-1}(1-p)\,&+\,(1-p^{k-1})p^n\,.
+\enddisplay
+The chance that $x_1\in S_k$ is $2^{k-1}\!/(2^n-1)$; summing on $k$ gives
+the answer:
+\begindisplay\tightplus
+\sum_{k=1}^n{2^{k-1}\over2^n-1}\bigl(p^{k-1}p^{n-1}(1{-}p)+(1{-}p^{k-1})p^n\bigr)
+=p^n-{(2p)^n-1\over2^n-1}\,p^{n-1}\,.
+\enddisplay
+(f) Each of the $2^n!$ tournament outcomes has a certain probability of
+occurring, and the probability that $x_j$ wins is the sum of these probabilities
+over all ${(2^n-1)!}$ tournament outcomes in which $x_j$ is champion.
+Consider interchanging $x_j$ with $x_{j+1}$ in all those outcomes;
+this change doesn't affect the probability if $x_j$ and $x_{j+1}$ never meet,
+but it multiplies the probability by $(1-p)/p<1$ if they do meet.
+\source{1984 final exam.}
+
+\ex:
+True "sherry" is made in Spain according to a multistage system called
+``Solera.\qback'' For simplicity we'll assume that the winemaker
+has only three barrels, called $A$, $B$, and~$C$. Every year a third
+\g\noindent\llap{``}A fast arithmetic computation shows that the sherry is always at
+least three years old. Taking computation further gives the vertigo.''\par
+\hfill\dash---Revue du vin de\par\hfill France (Nov 1984)\g
+of the "wine" from barrel~$C$ is bottled and replaced by wine from~$B$;
+then $B$ is topped off with a third of the wine from~$A$; finally
+$A$~is topped off with new wine. Let $A(z)$, $B(z)$, $C(z)$ be
+probability generating functions, where the coefficient of~$z^n$ is
+the fraction of $n$-year-old wine in the corresponding barrel just after the
+transfers have been made.
+\itemitem{a}Assume that the operation has been going on since time
+immemorial, so that we have a steady state in which
+$A(z)$, $B(z)$, and $C(z)$ are the same at the beginning of each year.
+Find closed forms for these generating functions.
+\itemitem{b}Find the mean and standard deviation of the age of the wine in
+each barrel, under the same assumptions. What is the average age of
+the sherry when it is bottled? How much of it is exactly 25~years old?
+\itemitem{c}Now take the finiteness of time
+into account: Suppose that all three barrels contained new wine at the beginning
+of year~$0$. What is the average age of the sherry that is bottled
+at the beginning of year~$n$?
+\answer (a) $A(z)=1/(3-2z)$; $B(z)=zA(z)^2$; $C(z)=z^2A(z)^3$. The pgf
+for sherry when it's bottled is $z^3A(z)^3$, which is $z^3$ times
+a negative binomial distribution with parameters $n=3$, $p={1\over3}$.
+(b)~$\Mean(A)=2$, $\Var(A)=6$; $\Mean(B)=5$, $\Var(B)=2\Var(A)=12$;
+$\Mean(C)=8$, $\Var(C)=18$. The sherry is nine years old, on the average.
+The fraction that's 25~years old is ${-3\choose22}(-2)^{22}3^{-25}=
+{24\choose22}2^{22}3^{-25}=23\cdt({2\over3})^{24}\approx.00137$.
+(c)~Let the coefficient of $w^n$ be the pgf for the beginning of year~$n$.
+Then
+\begindisplay \openup3pt
+A&=\textstyle\bigl(1+{1\over3}w/(1-w)\bigr)/(1-{2\over3}zw)\,;\cr
+B&=\textstyle\bigl(1+{1\over3}zwA\bigr)/(1-{2\over3}zw)\,;\cr
+C&=\textstyle\bigl(1+{1\over3}zwB\bigr)/(1-{2\over3}zw)\,.\cr
+\enddisplay
+Differentiate with respect to~$z$ and set $z=1$; this makes
+\begindisplay
+C'={8\over1-w}-{1/2\over(1-{2\over3}w)^3}
+-{3/2\over(1-{2\over3}w)^2}
+-{6\over1-{2\over3}w}\,.
+\enddisplay
+The average age of bottled sherry $n$ years after the process started is
+$1$~greater than the coefficient of~$w^{n-1}$, namely
+$9-({2\over3})^n(3n^2+21n+72)/8$. (This already exceeds~$8$ when $n=11$.)
+
+\ex:
+Stefan "Banach"
+used to carry two boxes of matches, each containing $n$~matches
+initially. Whenever he needed a light he chose a box at random,
+each with probability~$\half$, independent of his previous choices.
+After taking out a match he'd put the box back in its pocket (even
+if the box became empty\dash---all famous mathematicians used to do this).
+When his chosen box was empty he'd throw it away and reach for the
+other box.
+\itemitem{a} Once he found that the other box was empty too. What's the
+probability that this occurs? (For $n=1$ it happens half the time
+and for $n=2$ it happens $3/8$ of the time.) To answer this part,
+find a closed form for the generating function $P(w,z)=\sum_{m,n}p_{m,n}
+w^mz^n$, where $p_{m,n}$ is the probability that, starting with $m$~matches
+in one box and $n$ in the other, both boxes are empty when an empty box
+is first chosen. Then find a closed form for~$p_{n,n}$.
+\itemitem{b} Generalizing your answer to part (a), find a closed form
+for the probability that exactly~$k$ matches are in the other box when
+an empty one is first thrown away.
+\itemitem{c} Find a closed form for the average number of matches
+\g And for the number in the empty box.\g
+in that other box.
+\answer (a) $P(w,z)=1+\half\bigl(wP(w,z)+zP(w,z)\bigr)=\bigl(1-\half(w+z)\bigr)
+{}^{-1}$, hence $p_{mn}=2^{-m-n}{m+n\choose n}$. (b)~$P_k(w,z)=
+\half(w^k+z^k)P(w,z)$; hence
+\begindisplay
+p_{k,m,n}=2^{k-1-m-n}\biggl({m+n-k\choose m}+
+{m+n-k\choose n}\biggr)\,.
+\enddisplay
+ (c)~$\sum_k kp_{k,n,n}=\sum_{k=0}^n
+k2^{k-2n}{2n-k\choose n}=\sum_{k=0}^n(n-k)2^{-n-k}{n+k\choose n}$;
+this can be summed using \equ(5.|half/2|):
+\begindisplay
+&\sum_{k=0}^n2^{-n-k}\biggl((2n+1){n+k\choose n}-(n+1){n+1+k\choose n+1}\biggr)\cr
+&\qquad=(2n+1)-(n+1)2^{-n}\biggl(2^{n+1}-2^{-n-1}{2n+2\choose n+1}\biggr)\cr
+&\qquad={2n+1\over 2^{2n}}{2n\choose n}-1\,.
+\enddisplay
+(The methods of Chapter 9 show that this is $2\sqrt{n/\pi}-1+O(n^{-1/2})$.)
+\source{"Feller" [|feller|] credits Hugo "Steinhaus".}
+
+\ex:\exref|phages|%
+Some physicians, collaborating with some physicists, recently discovered
+a pair of microbes that reproduce in a peculiar way. The male microbe,
+called a {\it"diphage"}, has two receptors on its surface; the female microbe,
+"!phages"
+called a {\it"triphage"}, has three:
+\begindisplay
+\unitlength=4pt
+\setbox0=\hbox{\beginpicture(0,0)(0,0) % receptor
+	\put(-.75,-.75){\line(1,0){1.5}}
+	\put(-.75,-.75){\line(0,1){1.5}}
+	\put(.75,.75){\line(-1,0){1.5}}
+	\put(.75,.75){\line(0,-1){1.5}}
+	\endpicture}
+\hbox{diphage: \ }
+\lower17pt\hbox{\beginpicture(12,12)(-3,-3)
+	\put(0,0){\circle{6}}
+	\put(7.121,7.121){\line(-1,-1){5}}
+	\put(7.121,7.121){\line(-1,0){4}}
+	\put(7.121,7.121){\line(0,-1){4}}
+	\put(2.371,7.121){\copy0}
+	\put(7.121,2.371){\copy0}
+	\endpicture}
+\qquad\hbox{triphage: \ }
+\lower18pt\hbox{\beginpicture(10,12)(-3,-9)
+	\put(0,0){\circle{6}}
+	\put(0,-7.5){\line(0,1){4.5}}
+	\put(-1.5,-5.25){\line(1,0){3}}
+	\put(0,-8.25){\copy0}
+	\put(-2.25,-5.25){\copy0}
+	\put(2.25,-5.25){\copy0}
+	\endpicture}
+\qquad\hbox{receptor: \ }
+\raise2pt\box0
+\enddisplay
+When a culture of diphages and triphages is irradiated with a psi-particle,
+exactly one of the receptors on one of the phages absorbs the particle;
+each receptor is equally likely. If it was a diphage receptor, that diphage
+changes to a triphage; if it was a triphage receptor, that triphage splits
+into two diphages. Thus if an experiment starts with one diphage, the
+first psi-particle changes it to a triphage, the second particle splits
+the triphage into two diphages, and the third particle changes one of the
+diphages to a triphage. The fourth particle hits either the diphage
+or the triphage; then there are either two triphages
+(probability $2\over5$)
+or three diphages (probability $3\over5$). Find a closed form for the
+average number of diphages present, if we begin with a single diphage
+and irradiate the culture $n$ times with single psi-particles.
+\answer After $n$ irradiations there are $n+2$ equally likely receptors.
+Let the random variable $X_n$ denote the number of diphages present;
+then $X_{n+1}=X_n+Y_n$, where $Y_n=-1$ if the $(n+1)$st particle hits
+a diphage receptor (conditional probability $2X_n/(n+2)$) and $Y_n=+2$ otherwise.
+Hence
+\begindisplay
+EX_{n+1}=EX_n+EY_n=EX_n-2EX_n/(n{+}2)+2\bigl(1-2EX_n/(n{+}2)\bigr)\,.
+\enddisplay
+The recurrence $(n+2)EX_{n+1}=(n-4)EX_n+2n+4$ can be solved if we multiply
+both sides by the summation factor $(n+1)\_5$; or we can guess the
+answer and prove it by induction: $EX_n=(2n+4)/7$ for all $n>4$.
+(Incidentally, there are always two diphages and one triphage after five
+steps, regardless of the configuration after four.)
+\source{1974 final, suggested by ``fringe analysis'' of 2-3 trees.}
+
+\ex:\exref|frisbees|%
+Five people stand at the vertices of a "pentagon", throwing "frisbees" to
+\g Or, "!war"
+ if this pentagon is in Arlington, throwing missiles at each other.\g
+each other.
+\begindisplay \advance\abovedisplayskip-8pt
+\unitlength=1.5pt
+\beginpicture(50,50)(-25,-30)
+	\put(0,20){\disk{2}}
+	\put(24,0){\disk{2}}
+	\put(12,-24){\disk{2}}
+	\put(-12,-24){\disk{2}}
+	\put(-24,0){\disk{2}}
+	\put(-12,-24){\circle{5}}
+	\put(12,-24){\circle{5}}
+	\put(0,20){\line(6,-5){24}}
+	\put(24,0){\line(-1,-2){12}}
+	\put(12,-24){\line(-1,0){24}}
+	\put(-12,-24){\line(-1,2){12}}
+	\put(-24,0){\line(6,5){24}}
+	\put(-17,-23){\vector(-1,2){4}}
+	\put(17,-23){\vector(1,2){4}}
+	\put(-10,-28){\vector(1,0){8}}
+	\put(10,-28){\vector(-1,0){8}}
+\endpicture
+\enddisplay
+They have two frisbees, initially at adjacent vertices as shown. In each
+time interval, each frisbee is thrown either to the left or to the right
+(along an edge of the pentagon) with equal probability. This process continues
+until one person is the target of two frisbees simultaneously; then the
+\g Frisbee is a trademark of Wham-O Manufacturing Company.\g
+game stops. (All throws are independent of past history.)
+\itemitem{a} Find the mean and variance of the number of pairs of throws.
+\itemitem{b} Find a closed form for the probability that the game
+lasts more than 100 steps, in terms of Fibonacci numbers.
+\answer (a) The distance between frisbees (measured so as to make it an
+even number) is either $0$, $2$, or~$4$ units, initially~$4$.
+The corresponding generating functions $A$, $B$, $C$ (where, say,
+$[z^n]\,C$ is the probability of distance~$4$ after $n$ throws)
+satisfy
+\begindisplay
+\textstyle A={1\over4}zB\,,\quad B=\half zB+{1\over4}zC\,,\quad
+C=1+{1\over4}zB+{3\over4}zC\,.
+\enddisplay
+It follows that $A=z^2\!/(16-20z+5z^2)=z^2\!/F(z)$, and we have $\Mean(A)=2-
+\Mean(F)=12$, $\Var(A)=-\Var(F)=100$. (A more difficult but more amusing
+solution factors $A$ as follows:
+\begindisplay
+A={p_1z\over 1-q_1z}\cdot{p_2z\over 1-q_2z}=
+{p_2\over p_2-p_1}{p_1z\over1-q_1z}\,+\,
+{p_1\over p_1-p_2}{p_2z\over1-q_2z}\,,
+\enddisplay
+where $p_1=\phi^2\!/4=(3+\sqrt5\,)/8$,
+$p_2=\phihat^2\!/4=(3-\sqrt5\,)/8$,
+and $p_1+q_1=p_2+q_2=1$. Thus, the game is equivalent to having two
+biased coins whose heads probabilities are $p_1$ and $p_2$; flip
+the coins one at a time until they have both come up heads, and the
+total number of flips will have the same distribution as the number of
+frisbee throws. The mean
+and variance of the waiting times for these two coins are
+respectively $6\mp2\sqrt5$ and $50\mp22\sqrt5$, hence the total
+mean and variance are $12$ and $100$ as before.)
+\par(b) Expanding the generating function in partial fractions
+makes it possible to sum the probabilities. (Note that $\sqrt 5/(4\phi)+
+\phi^2\!/4=1$, so the answer can be stated in terms of powers of $\phi$.)
+ The game will last more
+than $n$~steps with probability $5^{(n-1)/2}4^{-n}(\phi^{n+2}-\phi^{-n-2})$;
+when $n$ is even this is $5^{n/2}4^{-n}F_{n+2}$.
+So the answer is $5^{50}4^{-100}F_{102}\approx.00006$.
+\source{1979 final exam.}
+
+\ex:\exref|snowwalker|%
+Luke "Snowwalker" spends winter vacations at his mountain cabin. The front
+porch has $m$~pairs of boots and the back porch has $n$~pairs. Every
+time he goes for a walk he flips a (fair) coin to decide whether to
+leave from the front porch or the back, and he puts on a pair of boots
+at that porch and heads off. There's a 50/50 chance that he returns to
+each porch, independent of his starting point, and he leaves the boots
+at the porch he returns to. Thus after one walk there will be $m+
+[-1,0,{\rm@or\,}{+1}]$ pairs on the front porch and $n-
+[-1,0,{\rm@or\,}{+1}]$ pairs on the back porch. If all the boots pile up
+on one porch and if he decides to leave from the other, he goes
+without boots and gets frostbite, ending his vacation. Assuming
+that he continues his walks until the bitter end, let $P_N(m,n)$
+be the probability that he completes exactly $N$ nonfrostbitten
+trips, starting with $m$~pairs on the front porch and $n$~on the back.
+Thus, if both $m$ and~$n$ are positive,
+\begindisplay \openup5pt \let\displaystyle=\textstyle
+P_N(m,n)&={1\over4}P_{N-1}(m-1,n+1)
+ +\half P_{N-1}(m,n)\cr
+&\hskip11em +{1\over4}P_{N-1}(m+1,n-1)\,;\cr
+\enddisplay
+this follows because this first trip is either front/back, front/front,
+back/\allowbreak back, or back/front, each with probability $1\over4$, and $N-1$
+trips remain.
+\itemitem{a}Complete the recurrence for $P_N(m,n)$ by finding
+formulas that hold when $m=0$ or $n=0$. Use the recurrence to
+obtain equations that hold among the probability generating functions
+\begindisplay
+g_{m,n}(z)=\sum_{N\ge0}P_N(m,n)z^N\,.
+\enddisplay
+\itemitem{b}Differentiate your equations and set $z=1$, thereby obtaining
+relations among the quantities $g'_{m,n}(1)$. Solve these equations,
+thereby determining the mean number of trips before frostbite.
+\itemitem{c}Show that $g_{m,n}$ has a closed form if we substitute
+$z=1/{\cos^2\theta}$:
+\begindisplay
+g_{m,n}\Bigl({1\over\cos^2\theta}\Bigr)={\sin(2m+1)\theta
++\sin(2n+1)\theta\over\sin(2m+2n+2)\theta}\,\cos\theta\,.
+\enddisplay
+\answer (a) If $n>0$, $P_N(0,n)=\half\[N=0]+{1\over4}P_{N-1}(0,n)
++{1\over4}P_{N-1}(1,n{-}1)$; $P_N(m,0)$ is similar; $P_N(0,0)=\[N=0]$.
+Hence
+\begindisplay \openup2pt
+g_{m,n}&=\textstyle{1\over4}zg_{m-1,n+1}+\half zg_{m,n}+{1\over4}zg_{m+1,n-1}\,;\cr
+g_{0,n}&=\textstyle\half+{1\over4}zg_{0,n}+{1\over4}g_{1,n-1}\,;\quad\rm etc.\cr
+\enddisplay
+(b) $g'_{m,n}=1+{1\over4}g'_{m-1,n+1}+\half g'_{m,n}+{1\over4}g'_{m+1,n-1}$;
+$g'_{0,n}=\half+{1\over4}g'_{0,n}+{1\over4}g'_{1,n-1}$; etc. By induction
+on~$m$, we have $g'_{m,n}=(2m+1)g'_{0,m+n}-2m^2$ for all $m,n\ge0$. And
+since $g'_{m,0}=g'_{0,m}$, we must have $g'_{m,n}=m+n+2mn$. (c)~The recurrence
+is satisfied when $mn>0$, because
+\begindisplay \openup4pt
+\sin(2m+1)\theta&={1\over\cos^2\theta}\biggl({\sin(2m-1)\theta\over4}\cr
+&\hskip7em +{\sin(2m+1)\theta\over2}+{\sin(2m+3)\theta\over4}\biggr)\,;
+\enddisplay
+this is a consequence of the identity $\sin(x-y)+\sin(x+y)=2\sin x\cos y$.
+So all that remains is to check the boundary conditions.
+\source{"Blom" [|blom|]; 1984 final exam.}
+
+\ex:
+Consider the function
+\begindisplay
+H(z)=1+{1-z\over2z}\bigl(z-3+\sqrt{(1-z)(9-z)}\,\bigr)\,.
+\enddisplay
+The purpose of this problem is to prove that $H(z)=\sum_{k\ge0}h_kz^k$
+is a probability generating function, and to obtain some basic facts
+about it.
+\itemitem{a}Let $(1-z)^{3/2}(9-z)^{1/2}=\sum_{k\ge0}c_kz^k$. Prove that
+$c_0=3$, $c_1=-14/3$, $c_2=37/27$, and $c_{3+l}=3\sum_k{l\choose k}
+{1/2@\choose3+k}\bigl({8\over9}\bigr){}^{k+3}$ for all $l\ge0$.
+\Hint: Use the identity
+\begindisplay
+\textstyle(9-z)^{1/2}=3(1-z)^{1/2}\bigl(1+{8\over9}z/(1-z)\bigr){}^{1/2}
+\enddisplay
+and expand the last factor in powers of $z/(1-z)$.
+\itemitem{b}Use part (a) and exercise 5.|bc-inequality| to show that
+the coefficients of $H(z)$ are all positive.
+\itemitem{c}Prove the amazing identity
+\begindisplay
+\sqrt{9-H(z)\over1-H(z)}=\sqrt{\,{\mathstrut9-z\over\mathstrut1-z}}+2\,.
+\enddisplay
+\itemitem{d}What are the mean and variance of $H$?
+\answer (a) Using the hint, we get
+\begindisplay
+&3(1-z)^2\sum_k{1/2\choose k}\biggl({8\over9}z\biggr)^{\!k}(1-z)^{2-k}\cr
+&\qquad=3(1-z)^2\sum_k{1/2\choose k}\biggl({8\over9}\biggr)^{\!k}
+ \sum_j{k+j-3\choose j}z^{j+k}\,;
+\enddisplay
+now look at the coefficient of $z^{3+l}$.
+(b)~$H(z)={2\over3}+{5\over27}z+\half\sum_{l\ge0}c_{3+l}z^{2+l}$.
+(c)~Let $r=\sqrt{(1-z)(9-z)}$. One can show that $(z-3+r)(z-3-r)=4z$,
+and hence that $\bigl(r/(1-z)+2\bigr){}^2=(13-5z+4r)/(1-z)=
+\bigl(9-H(z)\bigr)/\bigl(1-H(z)\bigr)$. (d)~Evaluating the first
+derivative at $z=1$ shows that $\Mean(H)=1$. The second derivative
+diverges at $z=1$, so the variance is infinite.
+\source{1986 final exam.}
+
+\ex:
+The state "lottery" in El Dorado uses the payoff distribution $H$
+defined in the previous problem. Each lottery ticket costs $1$~doubloon,
+and the payoff is $k$~doubloons with probability~$h_k$. Your chance
+of winning with each ticket is completely independent of your chance with
+other tickets; in other words, winning or losing with one ticket does not
+affect your probability of winning with any other ticket you might
+have purchased in the same lottery.
+\itemitem{a}Suppose you start with one doubloon and play this game.
+If you win $k$~doubloons, you buy $k$ tickets in the second game;
+then you take the total winnings in the second game and apply all of
+them to the third; and so on. If none of your tickets is a winner, you're
+broke and you have to stop gambling. Prove that the pgf
+of your current holdings after $n$ rounds of such play is
+\begindisplay
+1-{4\over\raise2ex\hbox{}{\sqrt{(9-z)/(1-z)}+2n-1}}
+ +{4\over\raise2ex\hbox{}{\sqrt{(9-z)/(1-z)}+2n+1}}\,.
+\enddisplay
+\itemitem{b}Let $g_n$ be the probability that you lose all your money
+for the first time on the $n$th game, and let $G(z)=g_1z+g_2z^2+\cdots\,$.
+Prove that $G(1)=1$. (This means that you're bound to lose sooner or later,
+with probability~$1$, although you might have fun playing in the meantime.)
+What are the mean and the variance of~$G$?
+\itemitem{c}What is the average total number of tickets you buy, if
+you continue to play until going broke?
+\itemitem{d}What is the average number of games until you lose everything
+if you start with two doubloons instead of just one?
+\g A doubledoubloon.\g
+\answer (a) Let $H_n(z)$ be the pgf for your holdings after $n$ rounds of play,
+with $H_0(z)=z$. The distribution for $n$ rounds is
+\begindisplay
+H_{n+1}(z)=H_n\bigl(H(z)\bigr)\,,
+\enddisplay
+so the result is true by induction (using the amazing identity of
+the preceding problem). (b)~$g_n=H_n(0)-H_{n-1}(0)=4/n(n+1)(n+2)
+=4(n-1)\_{-3}$. The mean is $2$, and the variance is infinite.
+(c)~The expected number of tickets you buy on the $n$th round
+is $\Mean(H_n)=1$, by exercise |pgf-composition|. So the total expected
+number of tickets is infinite. (Thus, you almost surely
+lose eventually, and you expect to
+lose after the second game, yet you also expect to buy an infinite
+number of tickets.) (d)~Now the pgf after $n$ games is $H_n(z)^2$,
+and the method of part~(b) yields a mean of $16-{4\over3}\pi^2\approx 2.8$.
+(The sum $\sum_{k\ge1}1/k^2=\pi^2\!/6$ shows up here.)
+\source{1986 final exam.}
+
+\subhead Bonus problems
+
+\ex:
+Show that the text's definitions of "median" and "mode" for random variables
+correspond in some meaningful sense to the definitions of median and mode
+for sequences, when the probability space is finite.
+\answer If $\omega$ and $\omega'$ are events with
+$\Pr(\omega)>\Pr(\omega')$, then a sequence of $n$~independent experiments
+will encounter $\omega$ more often than $\omega'$, with high probability,
+because $\omega$ will occur very nearly $n\Pr(\omega)$ times. Consequently,
+as $n\to\infty$, the probability approaches~$1$ that the median or mode
+of the values of~$X$ in a sequence of independent trials
+ will be a median or mode of the random variable~$X$.
+
+\ex:
+Prove or disprove: If\/ $X$, $Y$, and $Z$ are random variables with
+the property that all three pairs $(X,Y)$, $(X,Z)$ and $(Y,Z)$ are
+independent, then $X+Y$ is independent of\/~$Z$.
+\answer We can disprove the statement, even in the special case that
+each variable is $0$ or~$1$.
+Let $p_0=\Pr\prp(X=Y=Z=0)$, $p_1=\Pr\prp(X=Y=\overline Z=0)$,
+\dots, $p_7=\Pr\prp(\overline X=\overline Y=\overline Z=0)$,
+where $\overline X=1-X$. Then $p_0+p_1+\cdots+p_7=1$, and
+the variables are independent in pairs if and only if we have
+\begindisplay
+(p_4+p_5+p_6+p_7)(p_2+p_3+p_6+p_7)=p_6+p_7\,,\cr
+(p_4+p_5+p_6+p_7)(p_1+p_3+p_5+p_7)=p_5+p_7\,,\cr
+(p_2+p_3+p_6+p_7)(p_1+p_3+p_5+p_7)=p_3+p_7\,.\cr
+\enddisplay
+But $\Pr\prp(X+Y=Z=0)\ne\Pr\prp(X+Y=0)\Pr\prp(Z=0)\iff
+p_0\ne(p_0+p_1)(p_0+p_2+p_4+p_6)$. One solution is
+\begindisplay
+p_0=p_3=p_5=p_6=1/4\,;\qquad p_1=p_2=p_4=p_7=0\,.
+\enddisplay
+This is equivalent to flipping two fair coins and letting
+$X=($the first coin is heads), $Y=($the second coin is heads),
+$Z=($the coins differ). Another example, with all probabilities nonzero, is
+\begindisplay
+&p_0=4/64\,,\quad p_1=p_2=p_4=5/64\,,\cr
+&p_3=p_5=p_6=10/64\,,\quad p_7=15/64\,.
+\enddisplay
+For this reason we say that $n$ variables $X_1$, \dots, $X_n$ are independent if
+\begindisplay
+\Pr\prp(X_1=x_1\ {\rm and\ \cdots\ and}\ X_n=x_n)=
+\Pr\prp(X_1=x_1)\ldots\Pr\prp(X_n=x_n)\,;
+\enddisplay
+pairwise independence isn't enough to guarantee this.
+\source{"Feller" [|feller|] credits S.\thinspace N. "Bernstein".}
+
+\ex:\exref|var-hatv|%
+Equation \eq(|hat-v|) proves that the average value of $\widehat VX$
+is $VX$. What is the {\it variance\/} of $\widehat VX$?
+\answer (See exercise |estimate-kappa3| for notation.) We have
+\begindisplay \openup3pt
+E(\Sigma_2^2)&=n\mu_4+n(n{-}1)\mu_2^2\,;\cr
+E(\Sigma_2\Sigma_1^2)
+ &=n\mu_4+2n(n{-}1)\mu_3\mu_1+n(n{-}1)\mu_2^2+n(n{-}1)(n{-}2)\mu_2\mu_1^2\,;\cr
+E(\Sigma_1^4)&=n\mu_4+4n(n{-}1)\mu_3\mu_1+3n(n{-}1)\mu_2^2\cr
+&\hskip5em+6n(n{-}1)(n{-}2)\mu_2\mu_1^2+n(n{-}1)(n{-}2)(n{-}3)\mu_1^4\,;\cr
+\enddisplay
+it follows that $V(\widehat VX)=\kappa_4/n+2\kappa_2^2/(n-1)$.
+
+\ex:
+A normal deck of playing cards contains 52 cards, four each with
+face values in the set $\tt\{A,2,3,4,5,6,7,8,9,10,J,Q,K\}$. Let $X$ and~$Y$
+denote the respective face values of the top and bottom cards, and consider
+the following algorithm for shuffling:
+\itemitem{S1}Permute the deck randomly so that each arrangement occurs with
+probability $1/52!$.
+\itemitem{S2}If $X\ne Y$, flip a biased coin that comes up heads with
+probability~$p$, and go back to step~S1 if heads turns up. Otherwise stop.
+\item{}Each coin flip and each permutation is assumed to be independent of
+all the other randomizations.
+What value of~$p$ will make $X$ and $Y$ independent random variables
+after this procedure stops?
+\answer There are $A={1\over17}\cdt52!$ permutations with $X=Y$, and
+$B={16\over17}\cdt52!$ permutations with $X\ne Y$. After the stated
+procedure, each permutation with $X=Y$ occurs with probability
+${1\over17}\big/\bigl((1-{16\over17}p)A\bigr)$, because we return
+to step~S1 with probability ${16\over17}p$. Similarly,
+each permutation with $X\ne Y$ occurs with probability
+${16\over17}(1-p)\big/\bigl((1-{16\over17}p)B\bigr)$. Choosing $p={1\over4}$
+makes $\Pr\prp(X=x\,{\rm and}\,Y=y)=
+{1\over169}$ for all $x$ and~$y$. (We could therefore make two flips of
+a fair coin and go back to~S1 if both come up heads.)
+
+\ex:
+Generalize the "frisbee" problem of exercise |frisbees| from a pentagon
+to an \hbox{$m$-gon}. What are the mean and variance of the number of
+collision-free throws in general, when the frisbees are initially
+at adjacent vertices? Show that, if $m$ is odd, the
+pgf for the number of throws can be written as a product of
+coin-flipping distributions:
+\begindisplay \openup3pt
+G_m(z)&=\prod_{k=1}^{(m-1)/2}{p_kz\over 1-q_kz}\,,\cr
+{\rm where\ \ }p_k&=\sin^2{(2k-1)\pi\over2m}\,,\quad
+ q_k=\cos^2{(2k-1)\pi\over2m}\,.
+\enddisplay
+\Hint: Try the substitution $z=1/{\cos^2\theta}$.
+\answer If $m$ is even, the frisbees always stay an odd distance apart
+and the game lasts forever. If $m=2l+1$, the relevant generating
+functions are
+\begindisplay \let\displaystyle=\textstyle
+G_m&={1\over4}z A_1\,;\cr
+A_1&=\half zA_1+{1\over4}zA_2\,,\cr
+A_k&={1\over4}zA_{k-1}+\half zA_k+{1\over4}zA_{k+1}\,,
+ \qquad\hbox{for $1<k<l$},\cr
+A_l&={1\over4}zA_{l-1}+{3\over4}zA_l+1\,.
+\enddisplay
+(The coefficient $[z^n]\,A_k$ is the probability that the distance between
+frisbees is $2k$ after $n$ throws.) Taking a clue from the similar
+equations in exercise~|snowwalker|, we set $z=1/{\cos^2\theta}$
+and $A_1=X\sin2\theta$, where $X$ is to be determined.
+It follows by induction (not using the equation for $A_l$)
+that $A_k=X\sin2k\theta$. Therefore we want to choose $X$ such that
+\begindisplay
+\Bigl(1-{3\over4\cos^2\theta}\Bigr)\,X\,\sin2l\theta=
+ 1+{1\over4\cos^2\theta}\,X\,\sin(2l-2)\theta\,.
+\enddisplay
+It turns out that $X=2\cos^2\theta/\sin\theta\cos(2l+1)\theta$,
+hence
+\begindisplay
+G_m={\cos\theta\over\cos m\theta}\,.
+\enddisplay
+The denominator vanishes when $\theta$ is an odd multiple of $\pi/(2m)$;
+thus $1-q_kz$ is a root of the denominator for $1\le k\le l$, and the
+stated product representation must hold. \g Trigonometry wins again.
+Is there a connection with pitching pennies along the angles
+of the $m$-gon?\g
+To find the mean and variance we can write
+\begindisplay \let\displaystyle=\textstyle \openup3pt
+G_m&=(1-\half\theta^2+{1\over24}\theta^4-\cdots\,)/
+  (1-\half m^2\theta^2+{1\over24}m^4\theta^4-\cdots\,)\cr
+&=1+\half(m^2-1)\theta^2+{1\over24}(5m^4-6m^2+1)\theta^4+\cdots\cr
+&=1+\half(m^2-1)(\tan\theta)^2+{1\over24}(5m^4-14m^2+9)(\tan\theta)^4+\cdots\cr
+&=1+G_m'(1)(\tan\theta)^2+\half G_m''(1)(\tan\theta)^4+\cdots\,,\cr
+\enddisplay
+because $\tan^2\theta=z-1$ and $\tan\theta=\theta+{1\over3}\theta^3+\cdots\,$.
+So we have $\Mean(G_m)=\half(m^2-1)$ and $\Var(G_m)={1\over6}m^2(m^2-1)$.
+(Note that this implies the identities
+\begindisplay\openup5pt
+{m^2-1\over2}&=\sum_{k=1}^{(m-1)/2}{1\over p_k}=\sum_{k=1}^{(m-1)/2}
+ \Bigl(1\Big/\sin{(2k-1)\pi\over2m}\Bigr)^{\!2}\,;\cr
+{m^2(m^2-1)\over6}%&=\sum_{k=1}^{(m-1)/2}{q_k\over p_k^2}\cr
+&=\sum_{k=1}^{(m-1)/2}
+ \Bigl(\cot{(2k-1)\pi\over2m}\Big/\sin{(2k-1)\pi\over2m}\Bigr)^{\!2}\,.\cr
+\enddisplay
+The third cumulant of this distribution is ${1\over30}m^2(m^2-1)(4m^2-1)$;
+but the pattern of nice cumulant factorizations stops there.
+There's a much simpler way to derive the mean: We have $G_m+A_1+\cdots+A_l
+=z(A_1+\cdots+A_l)+1$, hence when $z=1$ we have $G_m'=A_1+\cdots+A_l$.
+Since $G_m=1$ when $z=1$, an easy induction shows that $A_k=4k$.)
+
+\ex:\exref|second-player-win|%
+Prove that the "Penney-ante"
+pattern $\tau_1\tau_2\ldots \tau_{l-1}\tau_l$ is always inferior to
+the pattern ${\overline\tau}_2\tau_1\tau_2\ldots \tau_{l-1}$ when a fair coin is
+flipped, if $l\ge3$.
+\answer We have $A{:}A\ge2^{l-1}$ and $B{:}B<2^{l-1}+2^{l-3}$ and
+$B{:}A\ge2^{l-2}$, hence $B{:}B-B{:}A\ge A{:}A-A{:}B$ is possible only
+if $A{:}B>2^{l-3}$. This means that ${\overline\tau}_2=\tau_3$,
+$\tau_1=\tau_4$, $\tau_2=\tau_5$, \dots, $\tau_{l-3}=\tau_l$. But then
+$A{:}A\approx2^{l-1}+2^{l-4}+\cdots\,$,
+$A{:}B\approx2^{l-3}+2^{l-6}+\cdots\,$,
+$B{:}A\approx2^{l-2}+2^{l-5}+\cdots\,$, and
+$B{:}B\approx2^{l-1}+2^{l-4}+\cdots\,$;
+hence $B{:}B-B{:}A$ is less than $A{:}A-A{:}B$ after all. (Sharper
+results have been obtained by "Guibas" and "Odlyzko"~[|guibas-odlyzko|],
+who show that Bill's chances are always maximized with one of the
+two patterns ${\tt H}@ \tau_1\ldots \tau_{l-1}$ or
+${\tt T}@ \tau_1\ldots \tau_{l-1}$. Bill's winning strategy is,
+in fact, unique; see the following exercise.)
+\source{Lyle "Ramshaw".*}
+
+\ex:
+Is there any sequence $A=\tau_1\tau_2\ldots\tau_{l-1}\tau_l$
+of $l\ge3$ heads and tails such that the sequences
+${\tt H}@\tau_1\tau_2\ldots\tau_{l-1}$ and
+${\tt T}@\tau_1\tau_2\ldots\tau_{l-1}$ both perform equally well
+against~$A$ in the game of "Penney ante"?
+\answer (Solution by J. "Csirik".) If $A$ is ${\tt H}^l$ or ${\tt T}^l$,
+one of the two sequences matches~$A$ and cannot be used. Otherwise let
+$\hat A=\tau_1\ldots\tau_{l-1}$, $H={\tt H}\hat A$, and $T={\tt T}\hat A$.
+It is not difficult to verify that $H{:}A=T{:}A=\hat A{:}\hat A$, $H{:}H
++T{:}T=2^{l-1}+2(\hat A{:}\hat A)+1$, and $A{:}H+A{:}T=1+2(A{:}A)-2^l$.
+Therefore the equation
+\begindisplay
+{H{:}H-H{:}A\over A{:}A-A{:}H}=
+{T{:}T-T{:}A\over A{:}A-A{:}T}
+\enddisplay
+implies that both fractions equal
+\begindisplay
+{H{:}H-H{:}A+T{:}T-T{:}A\over A{:}A-A{:}H+A{:}A-A{:}T}
+={2^{l-1}+1\over 2^l-1}\,.
+\enddisplay
+Then we can rearrange the original fractions to show that
+\begindisplay
+{H{:}H-H{:}A\over T{:}T-T{:}A}={A{:}A-A{:}H\over A{:}A-A{:}T}={p\over q}\,,
+\enddisplay
+where $p\rp q$. And $(p+1)\divides\gcd(2^{l-1}+1,2^l-1)=\gcd(3,2^l-1)$; so we
+may assume that $l$ is even and that $p=1$, $q=2$. It follows that
+$A{:}A-A{:}H=({2^l-1})/3$ and $A{:}A-A{:}T=(2^{l+1}-2)/3$, hence
+$A{:}H-A{:}T=({2^l-1})/3\ge2^{l-2}$. We have $A{:}H\ge2^{l-2}$ if and only if
+$A=({\tt TH})^{l/2}$. But then $H{:}H-H{:}A=A{:}A-A{:}H$, so $2^{l-1}+1
+=2^l-1$ and $l=2$.\par
+(Csirik [|csirik|] goes on to show that, when $l\ge4$, Alice can do no
+better than to play ${\tt HT}^{l-3}{\tt H}^2$. But even with this strategy,
+Bill wins with probability nearly $2\over3$.)
+\source{"Guibas" and "Odlyzko" [|guibas-odlyzko|].}
+
+\ex:
+Are there patterns $A$ and $B$ of heads and tails such that
+$A$ is longer than~$B$, yet $A$ appears before~$B$ more than half the time
+when a fair coin is being flipped?
+\answer According to \equ(8.|alice-odds|), we want $B{:}B-B{:}A>A{:}A-A{:}B$.
+One solution is $A=\tt TTHH$, $B=\tt HHH$.
+
+\ex:
+Let $k$ and $n$ be fixed positive integers with $k<n$.
+\itemitem{a}Find a closed form for the probability generating function
+\begindisplay
+G(w,z)={1\over m^n}\sum_{h_1=1}^m\cdots\sum_{h_n=1}^m
+ w^{P(h_1,\ldots,h_n;k)} z^{P(h_1,\ldots,h_n;n)}
+\enddisplay
+for the joint distribution of the numbers of probes needed to find the
+$k$th and $n$th items that have been inserted into a hash table with
+$m$~lists.
+\itemitem{b}Although the random variables $P(h_1,\ldots,h_n;k)$ and
+$P(h_1,\ldots,h_n;n)$ are dependent, show that they are somewhat independent:
+\begindisplay
+&E\bigl(P(h_1,\ldots,h_n;k)P(h_1,\ldots,h_n;n)\bigr)\cr
+&\qquad=
+\bigl(EP(h_1,\ldots,h_n;k)\bigr)\bigl(EP(h_1,\ldots,h_n;n)\bigr)\,.
+\enddisplay
+\answer (a) Two cases arise depending on whether $h_k\ne h_n$ or $h_k=h_n$:
+\begindisplay \openup4pt
+G(w,z)&={m-1\over m}\Bigl({m-2+w+z\over m}\Bigr)^{\!k-1}w\,
+ \Bigl({m-1+z\over m}\Bigr)^{\!n-k-1}z\cr
+&\qquad+{1\over m}\Bigl({m-1+wz\over m}\Bigr)^{\!k-1}wz\,
+ \Bigl({m-1+z\over m}\Bigr)^{\!n-k-1}z\,.
+\enddisplay
+(b) We can either argue algebraically, taking partial derivatives of $G(w,z)$
+with respect to $w$ and~$z$ and setting $w=z=1$; or we can argue
+combinatorially: Whatever the values of $h_1$, \dots,~$h_{n-1}$, the
+expected value of $P(h_1,\ldots,h_{n-1},h_n;n)$ is the same (averaged
+over $h_n$), because the hash sequence $(h_1,\ldots,h_{n-1})$ determines
+a sequence of list sizes $(n_1,n_2,\ldots,n_m)$ such that the stated
+expected value is $\bigl((n_1{+}1)+(n_2{+}1)+\cdots+(n_m{+}1)\bigr)/m=
+(n-1+m)/m$. Therefore the random variable $EP(h_1,\ldots,h_n;n)$ is
+independent of $(h_1,\ldots,h_{n-1})$, hence independent of
+$P(h_1,\ldots,h_n;k)$.
+
+\ex:\exref|prove-gen-va|%
+Use the result of the previous exercise to prove \eq(|gen-va|).
+\answer If $1\le k<l\le n$, the previous exercise shows that the coefficient
+of $s_ks_l$ in the variance of the average is zero. Therefore we need
+only consider the coefficient of $s_k^2$, which is
+\begindisplay
+\sum_{1\le h_1,\ldots,h_n\le m}\hskip-.7em{P(h_1,\ldots,h_n;k)^2\over m^n}
+ \;-\;\biggl(@\sum_{1\le h_1,\ldots,h_n\le m}\hskip-.7em
+  {P(h_1,\ldots,h_n;k)\over m^n}\biggr)^{\!2}\,,
+\enddisplay
+the variance of $\bigl((m-1+z)/m\bigr){}^{k-1}z$; and this is $(k-1)(m-1)/m^2$
+as in exercise |more-variances|.
+
+\ex:
+Continuing exercise |phages|, find the {\it variance\/}
+of the number of "diphages" after $n$ irradiations.
+\answer The pgf\/ $D_n(z)$ satisfies the recurrence
+\begindisplay
+D_0(z)&=z\,;\cr
+D_n(z)&=z^2D_{n-1}(z)\,+\,2(1-z^3)D_{n-1}'(z)/(n+1)\,,\qquad\hbox{for $n>0$}.
+\enddisplay
+We can now derive the recurrence
+\begindisplay
+D''_n(1)=(n-11)D''_{n-1}(1)/(n+1)+(8n-2)/7\,,
+\enddisplay
+which has the solution ${2\over637}(n+2)(26n+15)$ for all
+$n\ge11$ (regardless of initial conditions). Hence the variance
+comes to ${108\over637}(n+2)$ for $n\ge11$.
+
+\subhead Research problem
+
+\ex:
+The {\it"normal distribution"\/} is a non-discrete probability
+distribution characterized by having all its cumulants zero
+except the mean and the variance. Is there an easy way to
+tell if a given sequence of cumulants
+$\<\kappa_1,\kappa_2,\kappa_3,\ldots\,\>$ comes from a
+{\it"discrete"\/} distribution? (All the probabilities must be ``atomic''
+in a discrete distribution.)
+\answer (Another question asks if a given sequence of purported
+cumulants comes from any
+distribution whatever; for example, $\kappa_2$ must be nonnegative,
+and $\kappa_4+3\kappa_2^2=E\bigl((X-\mu)^4\bigr)$ must be
+at least $\bigl(E\bigl((X-\mu)^2\bigr)\bigr){}^2=\kappa_2^2$, etc.
+A necessary and sufficient condition for this other problem was found by
+"Hamburger" [|akhiezer|],\thinspace[|hamburger|].)
+
+

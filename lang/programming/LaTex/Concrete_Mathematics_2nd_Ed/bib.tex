@@ -1,0 +1,2059 @@
+% Bibliography for Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\font\logos=logosl10
+\pageno=604
+
+\tolerance=1000
+
+\beginchapter B Bibliography
+
+HERE ARE THE WORKS cited in this book. Numbers in the margin specify the
+page numbers where citations occur.
+\g\noindent\llap{``}This paper fills a much-needed gap in~the literature.''\par
+\hfill\dash---Math.\thinspace Reviews\g
+
+References to published problems are generally made to the places where
+solutions can be found, instead of to the original problem statements.
+
+Wherever possible, names and titles are spelled here as they appeared in
+the original publication.
+
+\hyphenation{re-printed Leip-zig Mathe-matik}
+\advance\parindent2pt
+\newcount\hits \newcount\nextpage \newif\ifdiff
+\newread\bnxi
+\gdef\nextref{}
+\def\bib{\ex: \bibgrf\ref{\string\cite\number\excount.}}
+\def\newbib{\newex: \newbibgrf\ref{\string\newcite\number\excount.}}
+\def\newex:{\par{\advance\medskipamount-1pt\medbr}%
+  \item{\number\excount\kern-1pt$'$}}
+\openin\bnxi=bnx % bnx.tex should contain all the .bnx files
+% namely pref.bnx, chap*.nbx, ans.bnx, bib.bnx, cred.bnx
+% and it should be numerically sorted and followed by the line `[999] 0.'
+\def\primepump{\read\bnxi to\next \expandafter\ppp\next}
+\def\ppp[#1] #2. {\difffalse \gdef\testref{#1}%
+ \ifx\testref\nextref\else\difftrue\fi \ifnum#2=\nextpage\else\difftrue\fi
+ \ifdiff\global\let\nextref=\testref \global\nextpage=#2
+  \let\next\relax\else\let\next\primepump\fi \next}
+\primepump % if an error occurs, bnx.tex is bad!
+\def\bibgrf{\g\hits=0 \xdef\exid{\number\excount}%
+  \docites \ifnum\hits>0 .\fi\g}
+\def\newbibgrf{\g\hits=0 \xdef\exid{\number\excount'}%
+  \docites \ifnum\hits>0 .\fi\g}
+\def\docites{\ifx\nextref\exid\let\next\doonecite
+ \else\let\next\relax\fi \next}
+\def\doonecite{\ifnum\hits>0 , \fi \advance\hits 1
+  \ifnum\nextpage<0 \romannumeral-\nextpage \else\number\nextpage\fi
+  \primepump\docites}
+
+\def\=#1{{\accent22 #1}}
+\def\|{\kern.04em}
+\def\?{\hskip0pt minus1pt\relax}
+\let\,=\thinspace
+\catcode`\@=\active \def@#1{{\char#1}}
+\def\spacefix#1{\kern#1.5pt} \catcode`\#=\active \let #=\spacefix
+\frenchspacing
+
+\bib|abel|%
+N.\,H. "Abel", letter to B. "Holmboe" (1823), in his {\sl \OE uvres
+Com\-pl\`etes}, first edition, 1839, volume~2, 264--265.
+Reprinted in the second edition, 1881, volume~2, 254--255.
+
+\bib|abramowitz-stegun|%
+Milton "Abramowitz" and Irene A. "Stegun", editors, {\sl Handbook of
+Mathematical Functions}. \
+ United States Government Printing Office, 1964.
+ Reprinted by Dover, 1965.
+
+\bib|adams-davison|%
+William W. "Adams" and J.\,L. "Davison",
+ ``A remarkable class of continued fractions,''
+{\sl Proceedings of the American Mathematical Society\/ \bf65}
+(1977), 194--198.
+
+\bib|aho-sloane|%
+A.\,V. "Aho" and N.\,J.\,A. "Sloane",
+ ``Some doubly exponential sequences,''
+{\sl Fibonacci Quarterly\/ \bf11} (1973), 429--437.
+
+\bib|ahrens|%
+W. "Ahrens", {\sl Mathematische Unterhaltungen und Spiele}. \
+Teubner, Leipzig, 1901.
+Second edition, in two volumes, 1910 and 1918.
+
+\bib|akhiezer|%
+Naum Il'ich "Akhiezer", {\sl Klassicheska\t\i a Problema Momentov i Nekotorye
+Voprosy Analiza, Sv\t\i azannye s Ne\t\i u}. \ Moscow, 1961.
+English translation, {\sl The Classical Moment Problem and Some Related Questions
+in Analysis},
+Hafner, 1965.
+
+\bib|allardice|%
+R.\,E. "Allardice" and A.\,Y. "Fraser",
+ ``La Tour d'Hano\"\i,''
+{\sl Proceedings of the Edinburgh Mathematical Society\/ \bf2} (1884), 50--53.
+
+\bib|andre|%
+D\'esir\'e "Andr\'e", ``Sur les permutations altern\'ees,''
+{\sl Journal de Math\'ema\-tiques pures et appliqu\'ees}, series 3, {\bf7}
+(1881), 167--184.
+
+\bib|andrews-siam|%
+George E. "Andrews", ``Applications of basic hypergeometric functions,''
+{\sl SIAM Review\/ \bf16} (1974), 441--484.
+
+\bib|andrews-saalschutz|%
+George E. "Andrews", ``On sorting two ordered sets,''
+{\sl Discrete Mathematics\/ \bf11} (1975), 97--106.
+
+\bib|andrews-partitions|%
+George E. "Andrews", {\sl The Theory of Partitions}. \ Addison-Wesley, 1976.
+
+\bib|andrews-euler|%
+George E. "Andrews", ``Euler's `exemplum memorabile inductionis
+fallacis' and $q$-trinomial coefficients,'' {\sl Journal of the
+American Mathematical Society\/ \bf3} (1990), 653--669.
+
+\bib|andrews-uchimura|%
+George E. "Andrews" and K. "Uchimura", ``Identities in combinatorics IV:
+Differentiation and harmonic numbers,'' {\sl Utilitas Mathematica\/ \bf28}
+(1985), 265--269.
+
+\bib|apery|%
+Roger "Ap\'ery", ``Interpolation de fractions continues et irrationalit\'e
+de certaines constantes,'' in {\sl Math\'ematiques}, Minist\`ere
+des universit\'es (France), Comit\'e
+des travaux historiques et scientifiques, Section des sciences,
+{\sl Bulletin de la Section des Sciences\/ \bf3} (1981), 37--53.
+
+\bib|arnold|%
+V.\,I. "Arnold", ``Bernoulli-Euler updown numbers associated with function
+singularities, their combinatorics and arithmetics,'' {\sl Duke
+Mathematical Journal\/ \bf63} (1991), 537--555.
+
+\bib|atkinson|%
+M.\,D. "Atkinson", ``The cyclic towers of Hanoi,''
+{\sl Information Processing Letters\/ \bf13} (1981), 118--119.
+
+\bib|bachmann|%
+Paul "Bachmann", {\sl Die analytische Zahlentheorie}. \
+Teubner, Leipzig, 1894.
+
+\bib|bailey|%
+W.\,N. "Bailey", {\sl Generalized Hypergeometric Series.} \
+Cambridge University Press, 1935; second edition, 1964.
+
+\bib|bailey-jacobi|%
+W.\,N. "Bailey", ``The generating function for "Jacobi polynomials",''
+{\sl Journal of the London Mathematical Society\/ \bf13} (1938), 243--246.
+
+\bib|rouse-ball|%
+W.\,W. Rouse "Ball" and H.\,S.\,M. "Coxeter",
+{\sl Mathematical Recreations and Essays}, twelfth edition. \
+University of Toronto Press, 1974.
+\ (A revision of Ball's {\sl Mathematical Recreations and Problems},
+first published by Macmillan, 1892.)
+
+\bib|barlow|%
+P. "Barlow", ``Demonstration of a curious numerical proposition,''
+{\sl Journal of Natural Philosophy, Chemistry, and the Arts\/ \bf27}
+(1810), 193--205.
+
+\bib|beatty|%
+Samuel "Beatty", ``Problem 3177,'' {\sl American Mathematical Monthly\/
+\bf 34} (1927), 159--160.
+
+\bib|bell-gf|%
+E.\,T. "Bell", ``"Euler" algebra,''
+{\sl Transactions of the American Mathematical Society\/ \bf25} (1923),
+ 135--154.
+
+\bib|bell-numbers|%
+E.\,T. "Bell", ``Exponential numbers,''
+{\sl American Mathematical Monthly\/ \bf41} (1934), 411--419.
+
+\bib|bender|%
+Edward A. "Bender", ``Asymptotic methods in enumeration,''
+{\sl SIAM Review\/ \bf16} (1974), 485--515.
+
+\bib|bernoulli-ars|%
+Jacobi "Bernoulli", {\sl Ars Conjectandi}, opus posthumum.
+Basel, 1713. Reprinted in {\sl Die Werke von Jakob Bernoulli}, volume~3,
+107--286.
+
+\bib|bertrand|%
+J. "Bertrand", ``M\'emoire sur le nombre de valeurs que peut prendre une
+fonction quand on y permute les lettres qu'elle renferme,''
+{\sl Journal de l'\'Ecole Royale Polytechnique\/ \bf18}, cahier 30 (1845),
+123--140.
+
+\bib|crc-tables|%
+William H. "Beyer", editor, {\sl CRC Standard Mathematical Tables and
+Formulae}, 29th
+edition. \ CRC Press, Boca Raton, Florida, 1991.
+
+\bib|bienayme|%
+J. "Bienaym\'e", ``Consid\'erations \`a l'appui de la d\'ecouverte de "Laplace"
+sur la loi de probabilit\'e dans la m\'ethode des moindres carr\'es,''
+{\sl Comptes Rendus hebdomadaires des s\'eances de l'Acad\'emie des Sciences\/}
+(Paris) {\bf37} (1853), 309--324.
+
+\bib|binet-det|%
+J. "Binet", ``M\'emoire sur un syst\`eme de Formules analytiques, et leur
+application \`a des consid\'erations g\'eom\'etriques,''
+{\sl Journal de l'\'Ecole Polytechnique\/ \bf9}, cahier 16 (1812),
+280--354.
+
+\bib|binet|%
+J. "Binet", ``M\'emoire sur l'int\'egration des \'equations lin\'eaires
+aux diff\'e\-ren\-ces finies, d'un ordre quelconque, \`a coefficients
+variables,'' {\sl Comptes Rendus hebdomadaires des s\'eances
+ de l'Acad\'emie des  Sciences\/} (Paris) {\bf17} (1843), 559--567.
+
+\bib|blom|%
+Gunnar "Blom", ``Problem E\,3043: Random walk until no shoes,''
+{\sl American Mathematical Monthly\/ \bf94} (1987), 78--79.
+
+\bib|boas-wrench|%
+R. P. "Boas", Jr.\ and J. W. "Wrench", Jr., ``Partial sums of the harmonic
+series,'' {\sl American Mathematical Monthly\/ \bf78} (1971), 864--870.
+
+\bib|bohl|%
+P. "Bohl", ``\"Uber ein in der Theorie der s\"akularen St\"orungen vorkommendes
+Problem,'' {\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf135}
+(1909), 189--283.
+
+\bib|borel|%
+\'Emile "Borel", {\sl Le\c cons sur les s\'eries \`a termes positifs}. \
+Gauthier-Villars, 1902.
+
+\bib|borweins|%
+Jonathan M. "Borwein" and Peter B. "Borwein", {\sl Pi and the AGM}. \
+Wiley, 1987.
+
+\bib|brent-gaps|%
+Richard P. "Brent", ``The first occurrence of large gaps between
+successive primes,'' {\sl Mathematics of Computation\/ \bf27} (1973), 959--963.
+
+\bib|brent-gamma|%
+Richard P. "Brent", ``Computation of the regular continued fraction for
+Euler's constant,''
+{\sl Mathematics of Computation\/ \bf31} (1977), 771--777.
+
+\bib|brillhart|%
+John "Brillhart", ``Some miscellaneous factorizations,''
+{\sl Mathematics of Computation\/ \bf17} (1963), 447--450.
+
+\bib|brocot|%
+Achille "Brocot", ``Calcul des rouages par approximation, nouvelle m\'e\-thode,''
+{\sl Revue Chronom\'etrique\/ \bf6} (1860), 186--194.
+\ (He also published a 97-page monograph with the same title in 1862.)
+
+\bib|brooke|%
+Maxey "Brooke" and C.\,R. "Wall", ``Problem B-14: A little surprise,''
+{\sl Fibonacci Quarterly\/ \bf1},\,3 (1963), 80.
+
+\bib|bro-alfred|%
+Brother U. "Alfred" ["Brousseau"], ``A mathematician's progress,''
+{\sl Mathematics Teacher\/ \bf59} (1966), 722--727.
+
+\bib|mort-brown|%
+Morton "Brown", ``Problem 6439: A periodic sequence,''
+{\sl American Mathematical Monthly\/ \bf92} (1985), 218.
+
+\bib|not-cited-here|%
+T. "Brown", ``Infinite multi-variable subpolynormal Woffles which
+\g \vskip-6pt (Such papers aren't cited in this book.)\g
+do not satisfy the lower regular $Q$-property (Piffles),''
+in {\sl A Collection of 250 Papers on Woffle Theory Dedicated to
+R.\,S. "Green" on His 23rd Birthday}.
+Cited in A.\,K. "Austin", ``Modern research in mathematics,''
+{\sl The Mathematical Gazette\/ \bf51} (1967), 149--150.
+
+\bib|t-c-brown|%
+Thomas C. "Brown", ``Problem E\,2619: Squares in a recursive
+sequence,'' {\sl American Mathematical Monthly\/ \bf85} (1978), 52--53.
+
+\bib|catalan-history|%
+William G. "Brown", ``Historical note on a recurrent combinatorial problem,''
+{\sl American Mathematical Monthly\/ \bf72} (1965), 973--977.
+
+\bib|burr-fib|%
+S.\,A. "Burr", ``On moduli for which the Fibonacci sequence contains a complete
+system of residues,'' {\sl Fibonacci Quarterly\/ \bf9} (1971), 497--504.
+
+\bib|canfield|%
+E. Rodney "Canfield", ``On the location of the maximum Stirling number(s)
+of the second kind,'' {\sl Studies in Applied Mathematics\/ \bf59}
+(1978), 83--93.
+
+\bib|carlitz-max|%
+L. "Carlitz", ``The generating function for $\max(n_1,n_2,\cdots,n_k)$,
+{\sl Portugaliae Mathematica\/ \bf 21} (1962), 201--207.
+
+\bib|alice-looking|%
+Lewis "Carroll" [pseudonym of C.\,L. "Dodgson"],
+ {\sl Through the Looking Glass
+and What Alice Found There}. Macmillan, 1871.
+
+\bib|cassini|%
+Jean-Dominique "Cassini", ``Une nouvelle progression de nombres,''
+{\sl Histoire de l'Acad\'emie Royale des Sciences}, Paris, volume~1, 201.
+\ (Cassini's work is summarized here as one of the mathematical results
+presented to the academy in 1680. This volume was published in 1733.)
+
+\bib|catalan-paper|%
+E. "Catalan", ``Note sur une \'Equation aux diff\'erences finies,''
+{\sl Journal de Math\'ematiques pures et appliqu\'ees\/ \bf3}
+(1838), 508--516.
+
+\bib|cauchy-cours|%
+Augustin-Louis "Cauchy",
+{\sl Cours d'analyse de l'\'Ecole Royale Polytechnique}. \
+Imprimerie Royale, Paris, 1821.
+Reprinted in his {\sl \OE uvres Com\-pl\`etes}, series~2, volume~3.
+
+\bib|rhind|%
+Arnold Buffum "Chace", {\sl The Rhind Mathematical Papyrus}, volume~1. \
+Mathematical Association of America, 1927. \ (Includes an excellent bibliography
+of "Egyptian mathematics" by R.\,C. "Archibald".)
+
+\bib|chaimovich-et-al|%
+M. "Chaimovich", G. "Freiman", and J. "Sch\"onheim", ``On exceptions
+to "Szegedy"'s theorem,'' {\sl Acta Arithmetica\/ \bf49} (1987), 107--112.
+
+\bib|chebyshev|%
+P.\,L. Tchebichef ["Chebyshev"], ``M\'emoire sur les nombres premiers,''
+{\sl Journal de Math\'e\-ma\-tiques pures et appliqu\'ees\/ \bf17}
+(1852), 366--390. Reprinted in his {\sl \OE uvres}, volume~1, 51--70. \
+Russian translation, ``O prostykh chislakh,'' in his
+{\sl Polnoe Sobranie Sochineni\u\i}, volume~1, 191--207.
+
+\bib|chebyshev-ineq|%
+P.\,L. "Chebyshev", ``O srednikh velichinakh,''
+{\sl Matematicheski\u\i\ Sbornik'\/ \bf2} (1867), 1--9. Reprinted in his
+{\sl Polnoe Sobranie Sochineni\u\i}, volume~2, 431--437. \ French translation,
+``Des valeurs moyennes,'' {\sl Journal de Math\'e\-ma\-tiques
+pures et appliqu\'ees}, series 2, {\bf12} (1867), 177--184; reprinted
+in his {\sl \OE uvres}, volume~1, 685--694.
+
+\bib|chebyshev-mono|%
+P.\,L. "Chebyshev", ``O priblizhennykh vyrazheni\t{\i}akh odnikh integralov
+cherez drugie, vz\t{\i}atye v tex zhe predelakh,''
+{\sl Soobshchen\={\i}\t{\i}a i protokoly zas\t{\i}edan\={\i}\u{\i}
+matematicheskago obshchestva pri Imperatorskum\H{} Khar'kovskom\H{}
+Universitet\t{\i}e\/ \bf4},2 (1882), 93--98. Reprinted in his
+{\sl Polnoe Sobranie Sochineni\u\i}, volume~3, 128--131. \ French translation,
+``Sur les expressions approximatives des int\'egrales d\'efinies par les autres
+prises entre les m\^emes limites,'' 
+in his {\sl \OE uvres}, volume~2, 716--719.
+
+\bib|chung-graham|%
+Fan "Chung" and Ron "Graham", ``On digraph polynomials,''
+submitted for publication, 1993.
+
+\bib|clausen1|%
+Th.\ "Clausen", ``Ueber die F\"alle, wenn die Reihe von der Form
+\begindisplay \def\\{\mskip1mu.\mskip1mu}
+y=1+{\alpha\over1}\cdt{\beta\over\gamma}\,x+
+    {\alpha\\\alpha+1\over1\\2}\cdt{\beta\\\beta+1\over\gamma\\\gamma+1}\,x^2
+   +\vcenter{\hbox{$\scriptstyle\rm etc.$}}
+\enddisplay
+ein Quadrat von der Form
+\begindisplay \def\\{\mskip1mu.\mskip1mu}
+z=1+{\alpha'\over1}\cdt{\beta'\over\gamma'}\cdt{\delta'\over\epsilon'}\,x+
+    {\alpha'\!\\\alpha'{+}1\over1\\2}\cdt
+      {\beta'\!\\\beta'{+}1\over\gamma'\!\\\gamma'{+}1}
+    \cdt{\delta'\!\\\delta'{+}1\over\epsilon'\!\\\epsilon'{+}1}\,x^2
+   +\vcenter{\hbox{$\scriptstyle\rm etc.$}}\hbox{ \ hat,''}
+\enddisplay
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf3} (1828), 89--91.
+
+\bib|clausen2|%
+Th.\ "Clausen", ``Beitrag zur Theorie der Reihen,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf3} (1828), 92--95.
+
+\bib|clausen3|%
+Th.\ "Clausen", ``Theorem,'' {\sl Astronomische Nachrichten\/ \bf17}
+(1840), col\-umns 351--352.
+
+\bib|carroll-pictures|%
+Stuart Dodgson "Collingwood", {\sl The Lewis "Carroll" Picture Book}. \
+T. Fisher Unwin, 1899. Reprinted by Dover, 1961, with the new title
+{\sl Diversions and Digressions of Lewis Carroll.}
+
+\bib|comtet|%
+Louis "Comtet", {\sl Advanced Combinatorics}. \
+Dordrecht, Reidel, 1974.
+
+\bib|conway-graham|%
+J.\,H. "Conway" and R.\,L. "Graham", ``Problem E\,2567: A periodic
+recurrence,'' {\sl American Mathematical Monthly\/ \bf84} (1977), 570--571.
+
+\bib|cramer|%
+Harald "Cram\'er", ``On the order of magnitude of the difference
+between consecutive prime numbers,''
+{\sl Acta Arithmetica\/ \bf2} (1937), 23--46.
+
+\bib|crelle|%
+A.\,L. "Crelle", ``D\'emonstration \'el\'ementaire du th\'eor\`eme de
+"Wilson" g\'en\'e\-ralis\'e,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf20} (1840), 29--56.
+
+\bib|crowe|%
+D.\,W. "Crowe", ``The $n$-dimensional cube and the Tower of Hanoi,''
+{\sl American Mathematical Monthly\/ \bf63} (1956), 29--30.
+
+\bib|csirik|%
+J\'anos A. "Csirik", ``Optimal strategy for the first player in the Penney
+ante game,'' {\sl Combinatorics, Probability and Computing\/ \bf1} (1992),
+311--321.
+
+\bib|curtiss|%
+D.\,R. "Curtiss", ``On "Kellogg"'s Diophantine problem,''
+{\sl American Mathematical Monthly\/ \bf29} (1922), 380--387.
+
+\bib|david-barton|%
+F.\,N. "David" and D.\,E. "Barton", {\sl Combinatorial Chance}. \
+Hafner, 1962.
+
+\bib|davis|%
+Philip J. "Davis", ``Leonhard "Euler"'s integral: A historical profile
+of the "Gamma function",'' {\sl American Mathematical Monthly\/ \bf66}
+(1959), 849--869.
+
+\bib|davison|%
+J.\,L. "Davison", ``A series and its associated continued fraction,''
+{\sl Proceedings of the American Mathematical Society\/ \bf63}
+(1977), 29--32.
+
+\bib|de-bruijn|%
+N.\,G. "de Bruijn", {\sl Asymptotic Methods in Analysis}. \
+North-Holland, 1958; third edition, 1970. Reprinted by Dover, 1981.
+
+\bib|de-br-prob9|%
+N.\,G. "de Bruijn", ``Problem 9,'' {\sl Nieuw Archief voor Wiskunde},
+series 3, {\bf12} (1964), 68.
+
+\bib|de-moivre|%
+Abraham "de Moivre", {\sl Miscellanea analytica de seriebus et quadraturis}. \
+London, 1730.
+
+\bib|dedekind|%
+R. "Dedekind", ``Abri\ss\ einer Theorie der h\"oheren Congruenzen in
+Bezug auf einen reellen Primzahl-Modulus,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf54} (1857),
+1--26. Reprinted in his {\sl Gesammelte mathematische Werke}, volume~1, 40--67.
+
+\bib|dickson|%
+Leonard Eugene "Dickson", {\sl History of the Theory of Numbers}. \
+Carnegie Institution of Washington, volume~1, 1919; volume~2, 1920;
+volume~3, 1923. Reprinted by Stechert, 1934, and by Chelsea, 1952, 1971.
+
+\bib|dijkstra|%
+Edsger W. "Dijkstra", {\sl Selected Writings on Computing: A Personal
+Perspective}. \ Springer-Verlag, 1982.
+
+\bib|dirichlet-schubfach|%
+G. Lejeune "Dirichlet", ``Verallgemeinerung eines Satzes aus der Lehre
+von den Kettenbr\"uchen nebst einigen Anwendungen auf die Theorie der
+Zahlen,'' {\sl Bericht \"uber die Verhandlungen der K\"oniglich-Preu\ss ischen
+Akademie der Wissenschaften zu Berlin\/} (1842), 93--95. Reprinted in
+his {\sl Werke}, volume~1, 635--638.
+
+\bib|dixon|%
+A.\,C. "Dixon", ``On the sum of the cubes of the coefficients in a
+certain expansion by the binomial theorem,'' {\sl Messenger of
+Mathematics\/ \bf20} (1891), 79--80.
+
+\bib|dougall|%
+John "Dougall", ``On Vandermonde's theorem, and some more general expansions,''
+{\sl Proceedings of the Edinburgh Mathematical Society\/ \bf25} (1907),
+114--132.
+
+\bib|holmes-four|%
+A. Conan "Doyle", ``The sign of the four; or, The problem of the Sholtos,''
+{\sl Lippincott's Monthly Magazine\/} (Philadelphia) {\bf45} (1890),
+147--223.
+
+\bib|holmes-final|%
+A. Conan "Doyle", ``The adventure of the final problem,''
+{\sl The Strand Magazine\/ \bf6} (1893), 558--570.
+
+\bib|du-bois|%
+P. du "Bois-Reymond", ``Sur la grandeur relative des infinis des fonctions,''
+{\sl Annali di Matematica pura ed applicata}, series 2, {\bf4} (1871), 338--353.
+
+\bib|dubner|%
+Harvey "Dubner", ``Generalized repunit primes,''
+{\sl Mathematics of Computation\/ \bf61} (1993), 927--930.
+
+\bib|dudeney|%
+Henry Ernest "Dudeney", {\sl The Canterbury Puzzles and Other Curious Problems}. \
+E.\,P. Dutton, New~York, 1908; 4th edition, Dover, 1958.
+\ (Dudeney had first considered the generalized Tower of Hanoi in {\sl The
+Weekly Dispatch}, on 25 May 1902 and 15 March 1903.)
+
+\bib|gauss-bio|%
+G. Waldo "Dunnington", {\sl Carl Friedrich "Gauss": Titan of Science}. \
+ Exposition Press, New York, 1955.
+
+\bib|dyson|%
+F.\,J. "Dyson", ``Some guesses in the theory of partitions,'' {\sl Eureka\/
+\bf8} (1944), 10--15.
+
+\bib|edwards|%
+A.\,W.\,F. "Edwards", {\sl Pascal's Arithmetical Triangle}. \
+Oxford University Press, 1987.
+
+\bib|eisenstein-exp|%
+G. "Eisenstein", ``Entwicklung von $\smash{
+ \alpha^{\alpha^{\alpha^{^{.^{.^.}}}}}}\!$,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf28}
+(1844), 49--52. Reprinted in his {\sl Mathematische Werke\/ \bf1}, 122--125.
+
+\bib|elkies|%
+Noam D. "Elkies", ``On $A^4+B^4+C^4=D^4$,'' {\sl Mathematics of Computation\/
+\bf 51} (1988), 825--835.
+
+\bib|erdos-curtiss|%
+"Erd\H os" P\'al, ``Az $\displaystyle{1\over x_1}
++{1\over x_2}+\cdots+{1\over x_{n_{\mathstrut}}}={a\over b}$
+ egyenlet eg\'esz sz\'am\'u
+meg\-old\'asair\'ol,'' % that journal did hyphenate after the g!
+{\sl Matematikai Lapok\/ \bf1} (1950), 192--209. English abstract on page~210.
+
+\bib|erdos-scottish|%
+Paul "Erd\H os", ``My Scottish Book `problems','' in {\sl The Scottish Book:
+Mathematics from the Scottish Caf\'e\/},
+edited by R.~Daniel "Mauldin", 1981, \hbox{35--45}.
+
+\bib|erdos-graham|%
+P. "Erd\H os" and R.\,L. "Graham", {\sl Old and New Problems and Results in
+Combinatorial Number Theory}. \ Universit\'e de Gen\`eve, L'Enseignement
+Math\'ematique, 1980.
+
+\bib|ruzsa-et-al|%
+P. "Erd\H os", R.\,L. "Graham", I.\,Z. "Ruzsa", and E.\,G. "Straus", ``On the
+prime factors of $2n\choose n$,''
+{\sl Mathematics of Computation\/ \bf29} (1975), 83--92.
+
+\bib|esw-levine|%
+Arulappah "Eswarathasan" and Eugene "Levine", ``$p$-integral harmonic sums,''
+{\sl Discrete Mathematics\/ \bf91} (1991), 249--257.
+
+\bib|euclid-elts|% 0Gmm 1Dlt 2Tht 3Lmb 4Xi 5Pi 6Sgm 7Ups 8Phi 9Psi 10Omg
+"Euclid", {\sl @6TOI#+XEIA}.
+ \ Ancient manuscript first printed in Basel, 1533.
+Scholarly edition (Greek and Latin) by J.\,L. "Heiberg" in five volumes,
+Teubner, Leipzig, 1883--1888.
+
+\bib|euler-factorial|% E788 (Enestrom index no., JhrsbchtDMV 1910, Erg_band 4)
+Leonhard "Euler", letter to Christian "Goldbach" (13~October 1729), in
+{\sl Correspondance Math\'ematique et Physique de Quelques C\'el\`ebres
+G\'eom\`etres du XVIII\kern1pt\raise.2ex\hbox{\`eme} Si\`ecle},
+ edited by P.\,H. "Fuss", St.~Petersburg, 1843, volume~1, 3--7.
+% this letter is number 715 in the index volume for Euler's series 4
+
+\bib|euler-gamma|% E19
+L. "Euler"o, ``De progressionibus transcendentibus seu quarum termini
+generales algebraice dari nequeunt,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf5} (1730), 36--57.
+Re\-printed in his {\sl Opera Omnia}, series~1, volume~14, 1--24.
+
+\bib|euler-summation|% E25
+Leonh.~"Euler"o, ``Methodus generalis summandi progressiones,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf6} (1732), 68--97.
+Re\-printed in his {\sl Opera Omnia}, series~1, volume~14, 42--72.
+
+\bib|euler-f5|% E26
+Leonh.~"Euler"o, ``Observationes de theoremate quodam Fermatiano, aliisque
+ad numeros primos spectantibus,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf6} (1732), 103--107.
+Re\-printed in his {\sl Opera Omnia}, series~1, volume~2, 1--5.
+Reprinted in his {\sl Commentationes arithmetic{\ae} collect{\ae}},
+volume~1, 1--3.
+
+\bib|euler-harmonics|% E43
+Leonh.~"Euler"o, ``De progressionibus harmonicis observationes,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf7} (1734), 150--161.
+Re\-printed in his {\sl Opera Omnia}, series~1, volume~14, 87--100.
+
+\bib|euler-eulerian|% E55
+Leonh.~"Euler"o, ``Methodus universalis series summandi ulterius promota,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf8} (1736), 147--158.
+Re\-printed in his {\sl Opera Omnia}, series~1, volume~14, 124--137.
+
+\bib|euler-e-cf|% E71 (not Eulero this time)
+Leonh.~"Euler", ``De fractionibus continuis, Dissertatio,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf9} (1737), 98--137.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~14, 187--215.
+
+\bib|euler-goof|% E72
+Leonh.~"Euler", ``Vari{\ae} observationes circa series infinitas,''
+{\sl Commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf9} (1737), 160--188.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~14, 216--244.
+
+\bib|euler-fourier|% E788
+Leonhard "Euler", letter to Christian "Goldbach" (4~July 1744), in
+{\sl Correspondance Math\'ematique et Physique de Quelques C\'el\`ebres
+G\'eom\`etres du XVIII\kern1pt\raise.2ex\hbox{\`eme} Si\`ecle},
+ edited by P.\,H. "Fuss", St.~Petersburg, 1843, volume~1, 278--293.
+% this letter is number 794 in the index volume for Euler's series 4
+
+\bib|euler-intro-anal|% E101
+Leonhardo "Euler"o, {\sl Introductio in Analysin Infinitorum}. \
+Tomus primus, Lausanne, 1748.
+Reprinted in his {\sl Opera Omnia}, series~1, volume 8.
+Translated into French, 1786; German, 1788; Russian, 1936.
+
+\bib|euler-partitions|% E191
+L. "Euler"o, ``De partitione numerorum,''
+{\sl Novi commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf3} (1750), 125--169.
+Reprinted in his {\sl Commentationes arithmetic{\ae} collect{\ae}},
+volume~1, 73--101.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~2, 254--294.
+
+\bib|euler-diff-calc|% E212
+Leonhardo "Euler"o, {\sl Institutiones Calculi Differentialis cum eius usu
+in An\-al\-ysi Finitorum ac Doctrina Serierum}. \
+Berlin, Academi{\ae} Imperialis Scientiarum Petropolitan\ae, 1755.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~10.
+Translated into German, 1790.
+
+\bib|euler-totient|% E271
+L. "Euler"o, ``Theoremata arithmetica nova methodo demonstrata,''
+{\sl Novi commentarii academi{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf8} (1760), 74--104.
+(Also presented in 1758 to the Berlin Academy.)
+Reprinted in his {\sl Commentationes arithmetic{\ae} collect{\ae}},
+volume~1, 274--286.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~2, 531--555.
+
+\bib|euler-continuants|% E281
+L. "Euler"o, ``Specimen algorithmi singularis,''
+{\sl Novi commentarii academ\-i{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf9} (1762), 53--69.
+(Also presented in 1757 to the Berlin Academy.)
+Reprinted in his {\sl Opera Omnia}, series~1, volume~15, 31--49.
+
+\bib|euler-middle|% E326
+L. "Euler"o, ``Observationes analytic\ae,''
+{\sl Novi commentarii academi{\ae} scientiarum imperialis
+Petropolitan{\ae}
+\bf11} (1765), 124--143.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~15, 50--69.
+
+\bib|euler-algebra|% E387
+Leonhard "Euler", {\sl Vollst\"andige Anleitung zur Algebra.
+Erster Theil. Von den verschiedenen Rechnungs-Arten,
+Verh\"altnissen und Proportionen}. \
+St.~Petersburg, 1770.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~1.
+Translated into Russian, 1768;
+Dutch, 1773; French, 1774; Latin, 1790; English, 1797.
+
+\bib|euler-conject|% E428
+L. "Euler"o, ``Observationes circa bina biquadrata quorum summam in duo
+alia biquadrata resolvere liceat,''
+{\sl Novi commentarii academi{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf17} (1772), 64--69.
+Reprinted in his {\sl Commentationes arithmetic{\ae} collect{\ae}},
+volume~1, 473--476.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~3, 211--217.
+
+\bib|euler-josephus|% E476
+L. "Euler"o, ``Observationes circa novum et singulare progressionum
+genus,''
+{\sl Novi commentarii academi{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf20} (1775), 123--139.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~7, 246--261.
+
+\bib|euler-lambert|% E532
+L. "Euler"o, ``De serie "Lambert"ina, plurimisque eius insignibus
+proprietatibus,'' {\sl Acta academi{\ae} scientiarum imperialis
+Petropolitan{\ae}\/ \bf3},2 (1779), 29--51.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~6, 350--369.
+
+\bib|euler-hyp|% E710
+L. "Euler"o, ``Specimen transformationis singularis serierum,''
+{\sl Nova acta academi{\ae} scientiarum imperialis Petropolitan{\ae}
+\bf12} (1794), 58--70.
+Submitted for publication in 1778.
+Reprinted in his {\sl Opera Omnia}, series~1, volume~16(2), 41--55.
+
+\bib|faulhaber|%
+Johann "Faulhaber"n, {\sl Academia Algebr\ae}, Darinnen die miraculosische
+Inventiones zu den h\"ochsten Cossen weiters {\it continuirt\/} und
+{\it profitiert\/} werden, \dots~bi\ss\ auff die regulierte
+{\it Zensicubiccubic\/} Co\ss\ durch offnen Truck {\it publiciert\/} worden. \
+Augsburg, 1631.
+
+\bib|feller|%
+William "Feller", {\sl An Introduction to Probability Theory and
+Its Applications}, volume~1. \
+Wiley, 1950; second edition, 1957; third edition, 1968.
+
+\bib|fermat|%
+Pierre de "Fermat", letter to Marin "Mersenne" (25~December 1640), in
+{\sl \OE uvres de Fermat}, volume~2, 212--217.
+
+\bib|fibonacci|%
+Leonardo "Fibonacci" ["Pisano"], {\sl Liber Abaci}. \
+First edition, 1202 (now lost); second edition, 1228. Reprinted in
+{\sl Scritti di Leonardo Pisano}, edited by Baldassarre "Boncompagni",
+1857, volume~1.
+
+\bib|de-finetti|%
+Bruno de "Finetti", {\sl Teoria delle Probabilit\`a.} \ Turin, 1970.
+English translation, {\sl Theory of Probability}, Wiley, 1974--1975.
+
+\bib|fisher|%
+Michael E. "Fisher", ``Statistical mechanics of dimers on a plane
+lattice,'' {\sl Physical Review\/ \bf124} (1961), 1664--1672.
+
+\bib|ra-fisher|%
+R.\,A. "Fisher", ``Moments and product moments of sampling distributions,''
+{\sl Proceedings of the London Mathematical Society}, series 2,
+{\bf30} (1929), 199--238.
+
+\bib|forcadel|%
+Pierre "Forcadel", {\sl L'arithmeticque}. \ Paris, 1557.
+
+\bib|fourier|%
+J. "Fourier", ``Refroidissement s\'eculaire du globe terrestre,''
+{\sl Bulletin des Sciences par la Soci\'et\'e philomathique de Paris}, series 3,
+{\bf7} (1820), 58--70. Reprinted in {\sl \OE uvres de Fourier}, volume~2,
+271--288.
+
+\bib|fraenkel-cover|%
+Aviezri S. "Fraenkel", ``Complementing and exactly covering sequences,''
+{\sl Journal of Combinatorial Theory}, series~A, {\bf14} (1973), 8--20.
+
+\bib|fraenkel-wyt|%
+Aviezri S. "Fraenkel", ``How to beat your "Wythoff" games' opponent on three
+fronts,'' {\sl American Mathematical Monthly\/ \bf89} (1982), 353--361.
+
+\bib|amm-hanoi|%
+J.\,S. "Frame", B.\,M. "Stewart", and Otto "Dunkel",
+``Partial solution to problem 3918,''
+{\sl American Mathematical Monthly\/ \bf48} (1941), 216--219.
+
+\bib|pacioli|%
+Piero della "Francesca", {\sl Libellus de
+quinque corporibus regularibus.} \ Vatican Library, manuscript Urbinas~632.
+Translated into Italian by Luca "Pacioli", as part~3 of
+Pacioli's {\sl Diuine Proportione}, Venice, 1509.
+
+\bib|franel|%
+J. "Franel", Solutions to questions 42 and 170, in
+{\sl L'Interm\'ediare des Math\'ematiciens\/ \bf1} (1894),
+45--47; {\bf2} (1895), 33--35.
+
+\bib|samplesort|%
+W.\,D. "Frazer" and A.\,C. "McKellar", ``Samplesort: A sampling approach
+to minimal storage tree sorting,''
+{\sl Journal of the ACM\/ \bf27} (1970), 496--507.
+
+\bib|fredman-thesis|%
+Michael Lawrence "Fredman", {\sl Growth Properties of a Class of
+Recursively Defined Functions}. \
+Ph.D. thesis, Stanford University, Computer Science Department, 1972.
+
+\bib|fuss|%
+Nikolao "Fuss", ``Solutio qu\ae stionis, quot modis polygonum $n$
+laterum in polygona $m\mskip1mu$ laterum, per diagonales resolvi qu{\ae}at,''
+{\sl Nova acta academi{\ae} scientiarum imperialis Petropolitan{\ae}\/ \bf9}
+(1791), 243--251.
+
+\bib|gardner-phi|%
+Martin "Gardner", ``About phi, an irrational number that has some
+remarkable geometrical expressions,''
+{\sl Scientific American\/ \bf201},\,2 (August 1959), 128--134. Reprinted
+with additions
+in his book {\sl The 2nd Scientific American Book of Mathematical Puzzles
+\& Diversions}, 1961, 89--103.
+
+\bib|gardner-coins|%
+Martin "Gardner", ``On the paradoxical situations that arise from nontransitive
+relations,'' {\sl Scientific American\/ \bf231},\,4
+(October 1974), 120--124. Reprinted with additions
+in his book {\sl Time Travel
+and Other Mathematical Bewilderments}, 1988, 55--69.
+
+\bib|gardner-rope|%
+Martin "Gardner", ``From rubber ropes to rolling cubes, a miscellany of
+refreshing problems,'' {\sl Scientific American\/ \bf232},\,3
+(March 1975), 112--114; {\bf232},\,4 (April 1975), 130, 133.
+ Reprinted with additions in his book {\sl Time Travel
+and Other Mathematical Bewilderments}, 1988, 111--124.
+
+\bib|gardner-dice|%
+Martin "Gardner", ``On checker jumping, the amazon game, weird dice, card
+tricks and other playful pastimes,'' {\sl Scientific American\/ \bf238},\,2
+(February 1978), 19, 22, 24, 25, 30, 32.
+Reprinted with additions in his book {\sl Penrose Tiles to Trapdoor Ciphers},
+1989, 265--280.
+
+\bib|garfunkel|%
+J. "Garfunkel", ``Problem E\,1816: An inequality related to Stirling's
+formula,'' {\sl American Mathematical Monthly\/ \bf74} (1967), 202.
+
+\bib|gasper-rahman|%
+George "Gasper" and Mizan "Rahman", {\sl Basic Hypergeometric Series}. \
+Cambridge University Press, 1990.
+
+\bib|gauss-disq|%
+C.\,F. "Gauss", {\sl Disquisitiones Arithmetic\ae}. \
+Leipzig, 1801. Reprinted in his {\sl Werke}, volume~1.
+
+\bib|gauss-hyp|%
+Carolo Friderico "Gauss", ``Disquisitiones generales circa seriem
+infinitam
+\begindisplay \openup2pt
+&1+{\alpha\beta\over1\,.\,\gamma}\,x
+ +{\alpha(\alpha+1)\beta(\beta+1)\over1\ .\ 2\ .\ \gamma(\gamma+1)}\,xx\cr
+&\qquad +{\alpha(\alpha+1)(\alpha+2)\beta(\beta+1)(\beta+2)\over
+    1\ .\ 2\ .\ 3\ .\ \gamma(\gamma+1)(\gamma+2)}x^3+\rm etc.
+\enddisplay
+Pars prior,'' {\sl Commentationes societatis regi\ae\ scientiarum Gottingensis
+recentiores\/ \bf2} (1813). (Thesis delivered to the Royal Society in
+G\"ottingen, 20~January 1812.)
+ Reprinted in his {\sl Werke}, volume~3, 123--163,
+together with an unpublished sequel on pages 207--229.
+
+\bib|gauss-penta|%
+C.\,F. "Gauss", ``Pentagramma mirificum,'' written prior to 1836.
+Published posthumously in his {\sl Werke}, volume~3, 480--490.
+
+\bib|genocchi|%
+A. "Genocchi", ``Intorno all' expressioni generali di numeri Bernoulliani,''
+{\sl Annali di Scienze Matematiche e Fisiche\/ \bf3} (1852), 395--405.
+
+\bib|gessel-apery|%
+Ira "Gessel", ``Some congruences for Ap\'ery numbers,''
+{\sl Journal of Number Theory\/ \bf14} (1982), 362--368.
+
+\bib|gessel-stanley|%
+Ira "Gessel" and Richard P. "Stanley", ``Stirling polynomials,''
+{\sl Journal of Combinatorial Theory}, series~A, {\bf24} (1978), 24--33.
+
+\bib|ginsburg|%
+Jekuthiel "Ginsburg", ``Note on Stirling's numbers,''
+{\sl American Mathematical Monthly\/ \bf35} (1928), 77--80.
+
+\bib|glaisher|%
+J.\,W.\,L. "Glaisher", ``On the product
+$1^1.2^2.3^3\ldots n^n$, {\sl Messenger of Mathematics\/ \bf7} (1877),
+43--47.
+
+\bib|golomb-self|%
+Solomon W. "Golomb", ``Problem 5407: A nondecreasing indicator function,''
+{\sl American Mathematical Monthly\/ \bf74} (1967), 740--743.
+
+\bib|sales-tax|%
+Solomon W. "Golomb", ``The `Sales Tax' theorem,'' {\sl Mathematics
+Magazine\/ \bf49} (1976), 187--189.
+
+\bib|golomb-sum|%
+Solomon W. "Golomb", ``Problem E\,2529: An application of $\psi(x)$,''
+{\sl American Mathematical Monthly\/ \bf83} (1976), 487--488.
+
+\bib|good|%
+I.\,J. "Good", ``Short proof of a conjecture by "Dyson",'' {\sl Journal
+of Mathematical Physics\/ \bf11} (1970), 1884.
+
+\bib|gosper|%
+R. William "Gosper", Jr., ``Decision procedure for indefinite hypergeometric
+summation,'' {\sl Proceedings of the National Academy of Sciences of the
+United States of America\/
+\bf75} (1978), 40--42.
+
+\bib|young-ron|%
+R.\,L. "Graham", ``On a theorem of "Uspensky",''
+{\sl American Mathematical Monthly\/ \bf70} (1963), 407--409.
+
+\bib|graham-fib-composites|%
+R.\,L. "Graham", ``A Fibonacci-like sequence of composite numbers,''
+{\sl Mathematics Magazine\/ \bf37} (1964), 322--324.
+
+\bib|graham-amm|%
+R.\,L. "Graham", ``Problem 5749,''
+{\sl American Mathematical Monthly\/ \bf77} (1970), 775.
+
+\bib|graham-cover|%
+Ronald L. "Graham", ``Covering the positive integers by disjoint sets of the
+form $\{\,[n\alpha+\beta]:n=1,2,\ldots\,\,\}$,''
+{\sl Journal of Combinatorial Theory}, series A, {\bf15} (1973), 354--358.
+
+\bib|graham-squareprod|%
+R.\,L. "Graham", ``Problem 1242: Bijection between integers and composites,''
+{\sl Mathematics Magazine\/ \bf60} (1987), 180.
+
+\bib|graham-knuth|%
+R.\,L. "Graham" and D.\,E. "Knuth", ``Problem E\,2982: A double
+infinite sum for $\vert x\vert$,''
+{\sl American Mathematical Monthly\/ \bf96} (1989), 525--526.
+
+\bib|conc-math|%
+Ronald L. "Graham", Donald E. "Knuth", and Oren "Patashnik", {\sl Concrete
+Mathematics: A Foundation for Computer Science}. \
+"!self-referential"
+Addison-Wesley, 1989; second edition, 1994.
+
+\bib|graham-pollak|%
+R.\,L. "Graham" and H.\,O. "Pollak", ``Note on a nonlinear recurrence related
+to $\sqrt2$,'' {\sl Mathematics Magazine\/ \bf43} (1970), 143--145.
+
+\bib|grandi|%
+Guido "Grandi", letter to "Leibniz" (July 1713), in
+{\sl Leibnizens mathematische Schriften}, volume~4, 215--217.
+
+\bib|greene-knuth|%
+Daniel H. "Greene" and Donald E. "Knuth", {\sl Mathematics for the
+Analysis of Algorithms}. \
+Birkh\"auser, Boston, 1981; third edition, 1990.
+
+\bib|olympiads1|%
+Samuel L. "Greitzer", {\sl International Mathematical Olympiads, 1959--1977}. \
+Mathematical Association of America, 1978.
+
+\bib|gross|%
+Oliver A. "Gross", ``Preferential arrangements,''
+{\sl American Mathematical Monthly\/ \bf69} (1962), 4--8.
+
+\bib|gruenbaum|%
+Branko "Gr\"unbaum", ``Venn diagrams and independent families of sets,''
+{\sl Mathematics Magazine\/ \bf48} (1975), 12--23.
+
+\bib|guibas-odlyzko|%
+L.\,J. "Guibas" and A.\,M. "Odlyzko", ``String overlaps, pattern matching,
+and nontransitive games,'' {\sl Journal of Combinatorial Theory},
+series~A, {\bf30} (1981), 183--208.
+
+\bib|guy|%
+Richard K. "Guy", {\sl Unsolved Problems in Number Theory}. \
+Springer-Verlag, 1981.
+
+\bib|haaland-knuth|%
+Inger "H{\aa}land" and Donald E. "Knuth", ``Polynomials involving the
+floor function,'' submitted for publication, 1993.
+
+\bib|hall-groups|%
+Marshall "Hall", Jr., {\sl The Theory of Groups}. \
+Macmillan, 1959.
+
+\bib|halmos-write|%
+P.\,R. "Halmos", ``How to write mathematics,''
+{\sl L'Enseignement math\'e\-ma\-tique\/ \bf16} (1970), 123--152.
+Reprinted in {\sl How to Write Mathematics}, American Mathematical
+Society, 1973, 19--48.
+
+\bib|halmos-auto|%
+Paul R. "Halmos", {\sl I Want to Be a Mathematician: An Automathography}. \
+Springer-Verlag, 1985. Reprinted by Mathematical Association of America, 1988.
+
+\bib|halphen|%
+G.\,H. "Halphen", ``Sur des suites de fractions analogues \`a la suite
+ de "Farey",''
+{\sl Bulletin de la Soci\'et\'e math\'ematique de France\/ \bf5} (1876),
+170--175. Reprinted in his {\sl \OE uvres}, volume~2, 102--107.
+
+\bib|hamburger|%
+Hans "Hamburger", ``\"Uber eine Erweiterung des "Stieltjes"schen
+ Momentenproblems,''
+{\sl Mathematische Annalen\/ \bf81} (1920), 235--319; {\bf82} (1921),
+120--164, 168--187.
+
+\bib|hammersley|%
+J.\,M. "Hammersley", ``On the enfeeblement of mathematical skills
+by `Modern Mathematics'
+and by similar soft intellectual trash in schools and universities,''
+{\sl Bulletin of the Institute of Mathematics and its Applications\/
+\bf4},\,4 (October 1968), 66--85.
+
+\bib|hammersley-undergrad|%
+J.\,M. "Hammersley", ``An undergraduate exercise in manipulation,''
+{\sl The Mathematical Scientist\/ \bf14} (1989), 1--23.
+
+\bib|hansen|%
+Eldon R. "Hansen", {\sl A Table of Series and Products}. \
+Prentice-Hall, 1975.
+
+\bib|hardy-tract|%
+G.\,H. "Hardy", {\sl Orders of Infinity: The `Infinit\"arcalc\"ul' of
+Paul du "Bois-Reymond"}. Cambridge University Press, 1910;
+second edition, 1924.
+
+\bib|hardy-golf|%
+G.\,H. "Hardy", ``A mathematical theorem about golf,''
+{\sl The Mathematical Gazette\/ \bf29} (1944), 226--227. Reprinted
+in his {\sl Collected Papers}, volume~7, 488.
+
+\bib|hardy-wright|%
+G.\,H. "Hardy" and E.\,M. "Wright", {\sl An Introduction to the Theory of
+Numbers}. \ Clarendon Press, Oxford, 1938; fifth edition, 1979.
+
+\bib|henrici|%
+Peter "Henrici", {\sl Applied and Computational Complex Analysis}.
+Wiley, volume~1, 1974; volume~2, 1977; volume~3, 1986.
+
+\bib|henrici-bieberbach|%
+Peter "Henrici", ``"De Branges"' proof of the "Bieberbach" conjecture:
+A view from computational analysis,'' {\sl Sitzungsberichte der
+Berliner Mathematischen Gesellschaft\/} (1987), 105--121.
+
+\bib|hermite-staudt|%
+Charles "Hermite", letter to C.\,W. "Borchardt" (8 September 1875), in
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf81}
+ (1876), 93--95. Reprinted in his
+{\sl \OE uvres}, volume~3, 211--214.
+
+\bib|hermite-cours|%
+Charles "Hermite", {\sl Cours de M. Hermite}. \
+Facult\'e des Sciences de Paris, 1882. Third edition, 1887; fourth edition, 1891.
+% capital S is correct in spite of the library card
+
+\bib|hermite|%
+Charles "Hermite", letter to S. "Pincherle" (10~May 1900), in
+{\sl Annali di Matematica pura ed applicata}, series 3, {\bf5}
+(1901), 57--60. Reprinted in his
+{\sl \OE uvres}, volume~4, 529--531.
+
+\bib|herstein-kaplansky|%
+I.\,N. "Herstein" and I. "Kaplansky", {\sl Matters Mathematical}. \
+Harper \& Row, 1974.
+
+\bib|hillman-hoggatt|%
+A.\,P. "Hillman" and V.\,E. "Hoggatt", Jr., ``A proof of Gould's Pascal
+hexagon conjecture,'' {\sl Fibonacci Quarterly\/ \bf10} (1972), 565--568, 598.
+
+\bib|hoare|%
+C.\,A.\,R. "Hoare", ``Quicksort,''
+{\sl The Computer Journal\/ \bf5} (1962), 10--15.
+
+\bib|hsu-identity|%
+L.\,C. "Hsu", ``Note on a combinatorial algebraic identity and its application,''
+{\sl Fibonacci Quarterly\/ \bf11} (1973), 480--484.
+
+%\bib|inkeri|%
+%K. "Inkeri", ``Absch\"atzungen f\"ur eventuelle L\"osungen der Gleichung
+%im Fermatschen Problem,'' {\sl Annales Universitatis Turkuensis}, series A,
+%{\bf 16}, 1 (1953), 3--9.
+
+\bib|APL|%
+Kenneth E. "Iverson", {\sl A Programming Language}. \
+Wiley, 1962.
+
+\bib|jacobi|%
+C.\,G.\,J. "Jacobi", {\sl Fundamenta nova theori\ae\ functionum ellipticarum}. \
+K\"onigsberg, Borntr\"ager, 1829. Reprinted in his {\sl Gesammelte Werke},
+volume~1, 49--239.
+
+\bib|bgc|%
+Svante "Janson", Donald~E. "Knuth", Tomasz "{\L}uczak", and Boris "Pittel",
+``The birth of the giant component,'' {\sl Random Structures and
+Algorithms\/ \bf4} (1993), 233--358.
+
+\bib|jarden|%
+Dov "Jarden" and Theodor "Motzkin", ``The product of sequences with a common linear
+recursion formula of order~2,'' {\sl Riveon Lematematika\/ \bf3} (1949),
+25--27, 38 (Hebrew with English summary). English version reprinted in
+Dov Jarden, {\sl Recurring Sequences}, Jerusalem, 1958, 42--45; second edition,
+1966, 30--33.
+
+\bib|jonassen-knuth|%
+Arne "Jonassen" and Donald E. "Knuth", ``A trivial algorithm whose analysis
+isn't,'' {\sl Journal of Computer and System Sciences\/ \bf16} (1978),
+301--322.
+
+\bib|jones|%
+Bush "Jones", ``Note on internal merging,'' {\sl Software\dash---Practice
+and Experience\/ \bf2} (1972), 241--243.
+
+\bib|josephus-source|% 0Gmm 1Dlt 2Tht 3Lmb 4Xi 5Pi 6Sgm 7Ups 8Phi 9Psi 10Omg
+Flavius "Josephus", {\sl I@6TOPIA IO#-@7#-#-@1#-A\"IKO#-@7#-\ @5O@3EMO#-@7#-\
+ @5PO@6 P@{10}\-MAI#+O#-@7#-@6}. \
+English translation, {\sl History of the Jewish War against the Romans},
+by H.\,St.\,J. "Thackeray",
+ in the Loeb Classical Library edition of Josephus's
+works, volumes 2 and~3,
+Heinemann, London, 1927--1928. \ (The ``Josephus problem'' may be based
+on an early manuscript now preserved only in the Slavonic version; see volume~2,
+page~xi, and volume~3, page 654.)
+
+\bib|jungen|%
+R. "Jungen", ``Sur les s\'eries de Taylor n'ayant que des singularit\'es
+alg\'ebrico-logarithmiques sur leur cercle de convergence,''
+{\sl Commentarii Mathematici Helvetici\/ \bf3} (1931), 266--306.
+
+\bib|karamata|%
+J. "Karamata", ``Th\'eor\`emes sur la sommabilit\'e exponentielle et
+d'autres sommabilit\'es rattachant,'' {\sl Mathematica\/} (Cluj) {\bf9}
+(1935), 164--178.
+
+\bib|kaucky|%
+I. "Kauck\'y", ``Problem E\,2257: A harmonic identity,''
+{\sl American Mathematical Monthly\/ \bf78} (1971), 908.
+
+%\bib|kaucky-book|%
+%Josef "Kauck\'y", {\sl Kombinatorick\'e Identity.} \
+%Bratislava, 1975.
+
+\bib|keiper|%
+J.\,B. "Keiper", ``Power series expansions of Riemann's $\xi$ function,''
+{\sl Mathematics of Computation\/ \bf58} (1992), 765--773.
+
+\bib|olympiads2|%
+Murray S. "Klamkin", {\sl International Mathematical Olympiads, 1978--1985, and
+Forty Supplementary Problems}. \ Mathematical Association of America, 1986.
+
+\bib|knoebel|%
+R. Arthur "Knoebel", ``Exponentials reiterated,'' {\sl American
+Mathematical Monthly\/ \bf88} (1981), 235--252.
+
+\bib|knopp|%
+Konrad "Knopp", {\sl Theorie und Anwendung der unendlichen Reihen}. \
+Julius Springer, Berlin, 1922; second edition, 1924.
+Reprinted by Dover, 1945. Fourth edition, 1947; fifth edition, 1964. English
+translation, {\sl Theory and Application of Infinite Series},
+1928; second edition, 1951.
+
+\bib|knuth-gamma|%
+Donald E. "Knuth", ``Euler's constant to 1271 places,''
+{\sl Mathematics of Computation\/ \bf16} (1962), 275--281.
+
+\bib|knuth-trans|%
+Donald "Knuth", ``Transcendental numbers based on the Fibonacci
+sequence,'' {\sl Fibonacci Quarterly\/ \bf2} (1964), 43--44, 52.
+
+\bib|knuth1|%
+Donald E. "Knuth", {\sl The Art of Computer Programming},
+volume~1: {\sl Fundamental Algorithms}. \
+Addison-Wesley, 1968; second edition, 1973.
+
+\bib|knuth2|%
+Donald E. "Knuth", {\sl The Art of Computer Programming},
+volume~2: {\sl Semi\-numerical Algorithms}. \
+Addison-Wesley, 1969; second edition, 1981.
+
+\bib|knuth3|%
+Donald E. "Knuth", {\sl The Art of Computer Programming},
+volume~3: {\sl Sorting and Searching}. \
+Addison-Wesley, 1973; second printing, 1975.
+
+%\bib|knuth-fib|%
+%Donald E. "Knuth", ``Letter to the editor,'' {\sl Fibonacci Quarterly\/ \bf12}
+%(1974), 46, 79, 82.
+
+\bib|some-sum|%
+Donald E. "Knuth", ``Problem E\,2492: Some sum,''
+{\sl American Mathematical Monthly\/ \bf82} (1975), 855.
+
+\bib|mariage-stables|%
+Donald E. "Knuth", {\sl Mariages stables et leurs relations avec d'autres
+probl\`emes combinatoires}. \
+Les Presses de l'Universit\'e de Montr\'eal, 1976. Revised and corrected
+edition, 1980.
+
+\bib|texbook|%
+Donald E. "Knuth", {\sl The \TeX book}. \ Addison-Wesley, 1984.
+Reprinted as volume~A of {\sl Computers \& Typesetting}, 1986.
+
+\bib|knuth-caching|%
+Donald E. "Knuth", ``An analysis of optimum caching,''
+{\sl Journal of Algorithms\/ \bf6} (1985), 181--199.
+
+\bib|knuthd|%
+Donald E. "Knuth", {\sl Computers \& Typesetting}, volume~D:
+{\logos METAFONT\kern1pt\sl: The Program}. \
+Addison-Wesley, 1986.
+
+\bib|knuth-polya|%
+Donald E. "Knuth", ``Problem 1280: Floor function identity,''
+{\sl Mathematics Magazine\/ \bf61} (1988), 319--320.
+
+\bib|amm-phi-problem|%
+Donald E. "Knuth", ``Problem E\,3106:
+A new sum for $n^2$,''
+ {\sl American Mathematical Monthly\/ \bf94} (1987), 795--797.
+
+\bib|knuth-fib-mult|%
+Donald E. "Knuth", ``Fibonacci multiplication,''
+{\sl Applied Mathematics Letters\/ \bf1} (1988), 57--60.
+
+\bib|knuth-fib-composites|%
+Donald E. "Knuth", ``A Fibonacci-like sequence of composite numbers,''
+ {\sl Mathematics  Magazine\/ \bf63} (1990), 21--25.
+
+\bib|knuth-bci|%
+Donald E. "Knuth", ``Problem E\,3309: A binomial coefficient
+inequality,''
+{\sl American Mathematical Monthly\/ \bf97} (1990), 614.
+
+\bib|knuth-tnn|%
+Donald E. "Knuth", ``Two notes on notation,'' {\sl American
+Mathematical Monthly\/ \bf99} (1992), 403--422.
+
+\bib|knuth-cp|%
+Donald E. "Knuth", ``Convolution polynomials,'' {\sl The Mathematica
+Journal\/ \bf2},4 (Fall 1992), 67--78.
+
+\bib|knuth-faul|%
+Donald E. "Knuth", ``Johann "Faulhaber" and sums of powers,'' {\sl
+Mathematics of Computation\/ \bf 61} (1993), 277--294.
+
+\bib|knuth-bn|%
+Donald E. "Knuth", ``Bracket notation for the coefficient-of operator,''
+in {\sl A Classical Mind}, essays in honour of C.\,A.\,R.
+"Hoare", edited by A.\,W. "Roscoe", Prentice-Hall, 1994, 247--258.
+
+\bib|knuth-buckholtz|%
+Donald E. "Knuth" and Thomas J. "Buckholtz", ``Computation of Tangent,
+Euler, and Bernoulli numbers,'' "!Euler numbers"
+{\sl Mathematics of Computation\/ \bf21} (1967), 663--688.
+
+\bib|knuth-vardi|%
+Donald E. "Knuth" and Ilan "Vardi", ``Problem 6581: The asymptotic
+expansion of the middle binomial coefficient,'' {\sl American Mathematical
+Monthly\/ \bf97} (1990), 626--630.
+
+\bib|kw-carry|%
+Donald E. "Knuth" and Herbert S. "Wilf", ``The power of a prime that
+divides a generalized binomial coefficient,'' 
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf396} (1989),
+212--219.
+
+\bib|knuth-zapf|%
+Donald E. "Knuth" and Hermann "Zapf", ``AMS Euler\dash---A new typeface
+for mathematics,'' {\sl Scholarly Publishing\/ \bf20} (1989), 131--157.
+
+\bib|kramp|%
+C. "Kramp", {\sl \'El\'emens d'arithm\'etique universelle}. \
+Cologne, 1808.
+
+\bib|kummer|%
+E.\,E. "Kummer", ``Ueber die hypergeometrische Reihe
+\begindisplay \def\\{\,.\,} \openup2pt
+&1+{\alpha\beta\over1\\\gamma}\,x
+ +{\alpha(\alpha+1)\beta(\beta+1)\over1\\2\\\gamma(\gamma+1)}\,xx\cr
+&\qquad +{\alpha(\alpha+1)(\alpha+2)\beta(\beta+1)(\beta+2)\over
+    1\\2\\3\\\gamma(\gamma+1)(\gamma+2)}\,x^3+\ldots\,\hbox{,''}
+\enddisplay
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf15}
+ (1836), 39--83, 127--172. Reprinted in his {\sl Collected Papers},
+volume~2, 75--166.
+
+\bib|kummer-carry|%
+E.\,E. "Kummer", ``\"Uber die Erg\"anzungss\"atze zu den allgemeinen
+Reciprocit\"atsgesetzen,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf44}
+ (1852), 93--146. Reprinted in his {\sl Collected Papers},
+ volume~1, 485--538.
+
+\bib|kurshan|%
+R.\,P. "Kurshan" and B. "Gopinath", ``Recursively generated periodic sequences,''
+{\sl Canadian Journal of Mathematics\/ \bf26} (1974), 1356--1371.
+
+\bib|lagny|%
+Thomas Fantet de "Lagny", {\sl Analyse g\'en\'erale ou M\'ethodes nouvelles
+pour r\'esoudre les probl\`emes de tous les genres et de tous les
+degr\'es \`a l'infini}. \ Published as volume~11 of {\sl M\'emoires
+de l'Acad\'emie Royale des Sciences}, Paris, 1733.
+
+\bib|lagrange-wilson|%
+de la Grange ["Lagrange"],
+``D\'emonstration d'un th\'eor\`eme nouveau concernant
+les nombres premiers,''
+{\sl Nouveaux M\'emoires de l'Acad\'emie royale des Sciences et
+Belles-Lettres}, Berlin (1771), 125--137.
+Reprinted in his {\sl \OE uvres}, volume~3, 425--438.
+
+\bib|lagrange-euler|%
+de la Grange ["Lagrange"], ``Sur une nouvelle esp\`ece de calcul
+ r\'elatif % sic, in the original
+\`a la diff\'erentia\-tion \& \`a l'int\'egration des quantit\'es variables,''
+{\sl Nouveaux M\'emoires de l'Acad\'emie royale des Sciences et
+Belles-Lettres}, Berlin (1772), 185--221.
+Reprinted in his {\sl \OE uvres}, volume~3, 441--476.
+
+\bib|lah|%
+I. "Lah", ``Eine neue Art von Zahlen, ihre Eigenschaften und Anwendung
+in der mathematischen Statistik,'' {\sl Mitteilungsblatt f\"ur
+Mathematische Statistik\/ \bf7} (1955), 203--212.
+
+\bib|lamb1|%
+I.\,H. "Lambert", ``Observationes vari\ae\ in Mathesin puram,''
+{\sl Acta Helvetica\/ \bf3} (1758), 128--168. Reprinted in his
+{\sl Opera Mathematica}, volume~1, \hbox{16--51}.
+
+\bib|lamb2|%
+"Lambert", ``Observations analytiques,''
+{\sl Nouveaux M\'emoires de l'Acad\-\'emie royale des Sciences et
+Belles-Lettres}, Berlin (1770), 225--244. Reprinted in his
+{\sl Opera Mathematica}, volume~2, 270--290.
+
+\bib|landau-primes|%
+Edmund "Landau", {\sl Handbuch der Lehre von der Verteilung der Prim\-zahlen},
+two volumes. \
+Teubner, Leipzig, 1909.
+
+\bib|landau-vorlesungen|%
+Edmund "Landau", {\sl Vorlesungen \"uber Zahlentheorie}, three volumes. \
+\kern-.7pt Hirzel, Leipzig, 1927.
+
+\bib|laplace|%
+P.\,S. de la Place ["Laplace"], ``M\'emoire sur les approximations
+des Formules
+qui sont fonctions de tr\`es-grands nombres,'' {\sl M\'emoires de l'Academie
+royale des Sciences de Paris\/} (1782), 1--88. Reprinted in his
+{\sl \OE uvres Compl\`etes\/ \bf10}, 207--291.
+
+\bib|legendre-theorie|%
+Adrien-Marie "Legendre", {\sl Essai sur la Th\'eorie des Nombres}. \
+Paris, 1798; second edition, 1808. Third edition (retitled {\sl Th\'eorie
+des Nombres}, in two volumes), 1830; fourth edition, Blanchard, 1955.
+
+\bib|lehmer-primality|%
+D.\,H. "Lehmer", ``Tests for primality by the converse of Fermat's theorem,''
+{\sl Bulletin of the American Mathematical Society}, series~2,
+{\bf33} (1927), 327--340. Reprinted in his {\sl Selected Papers}, volume~1,
+69--82.
+
+\bib|lehmer-sp|%
+D.\,H. "Lehmer", ``On Stern's diatomic series,''
+{\sl American Mathematical Monthly\/ \bf36} (1929), 59--67.
+% not in his Selected Papers
+
+\bib|lehmer-conj|%
+D.\,H. "Lehmer", ``On Euler's totient function,''
+{\sl Bulletin of the American Mathematical Society}, series~2,
+{\bf38} (1932), 745--751. Reprinted in his {\sl Selected Papers}, volume~1,
+319--325.
+
+\bib|leibniz|%
+G.\,W. "Leibniz", letter to Johann "Bernoulli" (May 1695), in
+{\sl Leibnizens mathematische Schriften}, volume~3, 174--179.
+
+\bib|zeck1|%
+C.\,G. "Lekkerkerker", ``Voorstelling van natuurlijke getallen door een som
+van getallen van Fibonacci,'' {\sl Simon Stevin\/ \bf29} (1952), 190--195.
+
+\bib|world-series|%
+Tam\'as "Lengyel", ``A combinatorial identity and the world series,''
+"!baseball"
+{\sl SIAM Review\/ \bf35} (1993), 294--297.
+
+\bib|lengyel|%
+Tam\'as "Lengyel", ``On some properties of the series $\sum_{k=0}^\infty
+k^nx^k$ and the Stirling numbers of the second kind,''
+submitted for publication, 1993.
+
+\bib|li-shan-lan|%
+"Li" Shan-Lan, {\sl Du\`o J\=\i\ B\u{\i} L\`ei\/} [Sums of Piles Obtained
+Inductively]. \ In his {\sl Z\'eg\u{u}x\={\i} Zha\={\i} Su\`anxu\'e\/}
+[Classically inspired meditations on mathematics], Nanjing, 1867.
+
+\bib|lieb|%
+Elliott H. "Lieb", ``Residual entropy of square ice,''
+{\sl Physical Review\/ \bf162} (1967), 162--172.
+
+\bib|liouv|%
+J. "Liouville", ``Sur l'expression $\varphi(n)$, qui marque combien la suite
+$1$, $2$, $3$, \dots,~$n$ contient de nombres premiers \`a~$n$,''
+{\sl Journal de Math\'e\-ma\-tiques pures et appliqu\'ees}, series 2, {\bf2}
+(1857), 110--112.
+
+\bib|logan-orth|%
+B.\,F. "Logan", ``The recovery of orthogonal polynomials from a sum of squares,''
+{\sl SIAM Journal on Mathematical Analysis\/ \bf21} (1990), 1031--1050.
+
+\bib|logan-stirl|%
+B.\,F. "Logan", ``Polynomials related to the Stirling numbers,'' AT\&T Bell
+Laboratories internal technical memorandum, August 10, 1987.
+
+\bib|long-hoggatt|%
+Calvin T. "Long" and Verner E. "Hoggatt", Jr., ``Sets of binomial coefficients
+with equal products,'' {\sl Fibonacci Quarterly\/ \bf12} (1974), 71--79.
+
+\bib|lou-yao|%
+Shituo "Lou" and Qi "Yao", ``A Chebychev's % sic
+type of prime number theorem in a short interval-II,''
+{\sl Hardy-Ramanujan Journal\/ \bf15} (1992), 1--33.
+%``On upper bound of difference between
+%consecutive primes,'' {\sl Kexue Tongbao [=K'o Hs\"ueh T'ung Pao]\/ \bf30},8
+%(1985), Foreign language edition, 1127--1128.
+
+\bib|loyd-cyclopedia|%
+Sam "Loyd", {\sl Cyclopedia of Puzzles}. \
+% Green cloth cover says ``Sam Loyd's Cyclopedia of 5,000 Puzzles, Tricks,
+% and Conundrums, with Answers'', but the title page reads as cited.
+Franklin Bigelow Corporation, Morningside Press, New York, 1914.
+
+\bib|lucas-gcd|%
+E. "Lucas", ``Sur les rapports qui existent entre la th\'eorie des nombres
+et le Calcul int\'egral,''
+ {\sl Comptes Rendus hebdomadaires des s\'eances de l'Acad\'emie des
+ Sciences\/} (Paris) {\bf82} (1876), 1303--1305.
+
+\bib|lucas-bc-mod|%
+\'Edouard "Lucas", ``Sur les congruences des nombres eul\'eriens et des
+coefficients diff\'erentiels des fonctions trigonom\'etriques, suivant un
+module premier,''
+{\sl Bulletin de la Soci\'et\'e math\'ematique de
+France\/ \bf6} (1878), \hbox{49--54}.
+
+\bib|lucas-theorie|%
+Edouard "Lucas", {\sl Th\'eorie des Nombres}, volume~1. \ % sic, no accent
+Gauthier-Villars, Paris, 1891.
+
+\bib|lucas-recr|%
+\'Edouard "Lucas", {\sl R\'ecr\'eations math\'ematiques}, four volumes. \
+Gauthier-Villars, Paris, 1891--1894. Reprinted by Albert Blanchard, Paris, 1960.
+\ (The Tower of Hanoi is discussed in volume~3, pages 55--59.)
+
+%\bib|lyness1|%
+%R.\,C. "Lyness", ``Cycles,'' {\sl The Mathematical Gazette\/ \bf26} (1942),
+% 62.
+
+\bib|lyness2|%
+R.\,C. "Lyness", ``Cycles,'' {\sl The Mathematical Gazette\/ \bf29} (1945),
+231--233.
+
+\bib|lyness3|%
+R.\,C. "Lyness", ``Cycles,'' {\sl The Mathematical Gazette\/ \bf45} (1961),
+207--209.
+
+\bib|maclaurin|%
+Colin "Maclaurin", {\sl Collected Letters}, edited by Stella Mills. \
+Shiva Publishing, Nantwich, Cheshire, 1982.
+
+\bib|macmahon|%
+P.\,A. "MacMahon", ``Application of a theory of permutations in circular
+procession to the theory of numbers,''
+{\sl Proceedings of the London Mathematical Society\/ \bf23} (1892), 305--313.
+
+\bib|martzloff|%
+J.-C. "Martzloff", {\sl Histoire des Math\'ematiques Chinoises}. \
+Paris, 1988.
+
+\bib|mat-ich|%
+\t Iu.\,V. Mati{\t\i}asevich, "!Matijasevich"
+``Diofantovost' perechislimykh mnozhestv,''
+{\sl Doklady Akademii Nauk SSSR\/ \bf191} (1970), 279--282. English translation,
+with amendments by the author, ``Enumerable sets are diophantine,''
+{\sl Soviet Mathematics\/ \bf11} (1970), 354--357.
+
+\bib|melzak|%
+Z.\,A. "Melzak", {\sl Companion to Concrete Mathematics}. \
+Volume~1, {\sl Mathematical Techniques and Various Applications}, Wiley,
+1973; volume~2, {\sl Mathematical Ideas, Modeling \& Applications}, Wiley, 1976.
+
+\bib|mendelsohn|%
+N.\,S. "Mendelsohn", ``Problem E\,2227:
+Divisors of binomial coefficients,''
+{\sl American Mathematical Monthly\/ \bf78} (1971), 201.
+
+\bib|mersenne|%
+Marini "Mersenni", {\sl Cogitata Physico-Mathematica}. \ Paris, 1644.
+
+\bib|mertens-phi|%
+F. "Mertens", ``Ueber einige asymptotische Gesetze der Zahlentheorie,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf77} (1874),
+289--338.
+
+\bib|mertens-M|%
+"Mertens", ``Ein Beitrag zur analytischen Zahlentheorie,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf78} (1874),
+46--62.
+
+\bib|mills|%
+W.\,H. "Mills", ``A prime representing function,''
+{\sl Bulletin of the American Mathematical Society}, series~2,
+{\bf53} (1947), 604.
+
+\bib|moeb|%
+A.\,F. "M\"obius", ``\"Uber eine besondere Art von Umkehrung
+der Reihen,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf9} (1832),
+105--123. Reprinted in his {\sl Gesammelte Werke}, volume~4, 589--612.
+
+\bib|moessner|%
+A. "Moessner", ``Eine Bemerkung \"uber die Potenzen der nat\"urlichen Zahlen,''
+{\sl Sitzungsberichte der Mathematisch\hskip1ptplus1pt-\hskip1ptplus1pt
+Naturwissenschaftliche\break Klasse der
+Bayerischen Akademie der Wissenschaften}, 1951, Heft~3, 29.{\parfillskip=0pt\par}
+
+\bib|monty-phi|%
+Hugh L "Montgomery", ``Fluctuations in the mean of "Euler"'s phi function,''
+{\sl Proceedings of the Indian Academy of Sciences}, Mathematical Sciences,
+{\bf97} (1987), 239--245.
+
+\bib|montgomery|%
+Peter L. "Montgomery", ``Problem E\,2686:
+LCM of binomial coefficients,''
+{\sl American Mathematical Monthly\/ \bf86} (1979), 131.
+
+\bib|moser-reflections|%
+Leo "Moser", ``Problem B-6: Some reflections,''
+{\sl Fibonacci Quarterly\/ \bf1},\,4 (1963), 75--76.
+
+\bib|motzkin-straus|%
+T.\,S. "Motzkin" and E.\,G. "Straus", ``Some combinatorial extremum problems,''
+{\sl Proceedings of the American Mathematical Society\/ \bf7} (1956), 1014--1021.
+
+%\bib|mozzochi|%
+%C.\,J. "Mozzochi", ``On the difference between consecutive primes,''
+%{\sl Journal of Number Theory\/ \bf24} (1986), 181--187.
+
+\bib|myers|%
+B.\,R. "Myers", ``Problem 5795: The spanning trees of an $n$-wheel,''
+{\sl American Mathematical Monthly\/ \bf79} (1972), 914--915.
+
+\bib|newton-harm|%
+Isaac "Newton", letter to John "Collins" (18~February 1670),
+in {\sl The Correspondence of Isaac Newton},
+volume~1, 27. % edited by H.\,W. Turnbull Camb U press 1959
+Excerpted in {\sl The Mathematical Papers of Isaac Newton},
+volume~3, 563. %edited by D.\,T. Whiteside; Camb U press 1969
+
+\bib|niven|%
+Ivan "Niven", {\sl Diophantine Approximations}. \
+Interscience, 1963.
+
+\bib|niven-gf|%
+Ivan "Niven", ``Formal power series,''
+{\sl American Mathematical Monthly\/ \bf76} (1969), 871--889.
+
+\bib|odl-wilf|%
+Andrew M. "Odlyzko" and Herbert S. "Wilf", ``Functional iteration and the
+Josephus problem,'' {\sl Glasgow Mathematical Journal\/ \bf33} (1991),
+235--240.
+
+\bib|pascal-digits|%
+Blaise "Pascal", ``De numeris multiplicibus,'' presented to Acad\'emie
+ Pari\-si\-enne in 1654 and published with his {\sl Trait\'e du
+triangle arithm\'etique\/}~\kern-.2pt[|pascal-treatise|].
+ Reprinted in {\sl \OE uvres de Blaise Pascal}, volume~3, 314--339.
+%\expandafter\write\expandafter\bnx\expandafter{\expandafter[\number\excount]
+%\number\pageno.}%
+
+\bib|pascal-treatise|%
+Blaise "Pascal", ``Trait\'e du triangle arithmetique,'' in his
+{\sl Trait\'e du Triangle Arithmetique, avec quelques autres petits
+% sic --- accents are missing in original, including on contents page
+% where caps and lowercase are mixed; "trait\'e" has the only accent
+traitez sur la mesme matiere}, Paris, 1665. Reprinted
+in {\sl \OE uvres de Blaise Pascal\/} (Hachette, 1904--1914), volume~3,
+445--503; Latin editions from 1654 in volume~11, 366--390.
+
+\bib|patil|%
+G.\,P. "Patil", ``On the evaluation of the negative binomial distribution with
+examples,'' {\sl Technometrics\/ \bf2} (1960), 501--505.
+
+\bib|peirce-seq|%
+C.\,S. "Peirce", letter to E.\,S. "Holden" (January 1901).
+In {\sl The New Elements of Mathematics}, edited by Carolyn "Eisele",
+Mouton, The Hague, 1976, volume~1, 247--253. \ (See also page~211.)
+
+\bib|peirce-tree|%
+C.\,S. "Peirce", letter to Henry B. "Fine" (17~July 1903).
+In {\sl The New Elements of Mathematics}, edited by Carolyn "Eisele",
+Mouton, The Hague, 1976, volume~3, 781--784. \ (See also ``Ordinals,''
+an unpublished manuscript from circa 1905, in {\sl Collected Papers
+of Charles Sanders Peirce}, %edited by Charles "Hartshorne" and Paul "Weiss",
+volume~4, 268--280.)
+
+\bib|penney|%
+Walter "Penney", ``Problem 95: Penney-Ante,''
+{\sl Journal of Recreational Mathematics\/ \bf7} (1974), 321.
+
+\bib|percus|%
+J.\,K. "Percus", {\sl Combinatorial Methods}. \ Springer-Verlag, 1971.
+
+\bib|petk|%
+Marko "Petkov\v{s}ek", ``Hypergeometric solutions of linear recurrences
+with polynomial coefficients,'' {\sl Journal of Symbolic Computation\/ \bf14}
+(1992), 243--264.
+
+\bib|pfaff|%
+J.\,F. "Pfaff", ``Observationes analytic\ae\ ad {\it L. Euleri\/} institutiones
+calculi integralis, Vol.~IV, Supplem.~II \&~IV,''
+{\sl Nova acta academi{\ae} scientiarum imperialis Petropolitan{\ae}\/ \bf11},
+Histoire section, 37--57. \ (This volume, printed in 1798, contains
+mostly proceedings from 1793, although Pfaff's memoir was actually
+received in 1797.)
+
+\bib|pochhammer|%
+L. "Pochhammer", ``Ueber hypergeometrische Functionen $n^{\rm ter}$
+Ordnung,'' 
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf71} (1870),
+316--352.
+
+\bib|poincare|%
+H. "Poincar\'e", ``Sur les fonctions \`a espaces lacunaires,''
+{\sl American Journal of Mathematics\/ \bf14} (1892), 201--221.
+
+\bib|poisson|%
+S.\,D. "Poisson", ``M\'emoire sur le calcul num\'erique des int\'egrales
+d\'efinies,'' {\sl M\'emoires de l'Acad\'emie Royale des Sciences de
+l'Institut de France}, series~2, {\bf6} (1823), 571--602.
+
+\bib|polya-counting|%
+G. "P\'olya", \kern-2.51pt``Kombinatorische Anzahlbestimmungen f\"ur Gruppen,
+Graphen und chemische Verbindungen,'' {\sl Acta Mathematica\/ \bf68}
+(1937), 145--254. English translation, with commentary by Ronald~C. "Read",
+{\sl Combinatorial Enumeration of Groups, Graphs, and Chemical Compounds},
+Springer-Verlag, 1987.
+
+\bib|polya|%
+George "P\'olya", {\sl Induction and Analogy in Mathematics}. \
+Princeton University Press, 1954.
+
+\bib|polya-pictures|%
+G. "P\'olya", ``On picture-writing,''
+{\sl American Mathematical Monthly\/ \bf63} (1956), 689--697.
+
+\bib|polya-szego|%
+G. "P\'olya" and G. "Szeg\"o", % [sic] from original title page
+ {\sl Aufgaben und Lehrs\"atze
+aus der Analy\-sis}, two volumes. \ Julius Springer, Berlin, 1925;
+fourth edition, 1970 and 1971.
+English translation, {\sl Problems and Theorems in Analysis}, 1972 and~1976.
+
+%\bib|poonen|%
+%Bjorn "Poonen", ``Josephus sets.''
+%Unpublished manuscript, 1987.
+
+%\bib|qian|%
+%"Qi\'an" B\u{a}o-Zh\=ong, {\sl Zh\=ong-G\'uo Sh\`u X\'ue Sh\u{\i}\/} [Chinese
+%mathematics history]. \ Beijing, 1964. [Sometimes romanized as
+%"Ch'ien" Pao-Ts'ung, {\sl Chung-Kuo She Hs\"ueh Shih}.]
+
+\bib|rado|%
+R. "Rado", ``A note on the Bernoullian numbers,''
+{\sl Journal of the London Mathematical Society\/ \bf9} (1934), 88--90.
+
+\bib|rainville|%
+Earl D. "Rainville", ``The contiguous function relations for $_pF_q$ with
+applications to "Bateman"'s $J_n^{u,v}$ and "Rice"'s $H_n(\zeta,p,v)$,''
+{\sl Bulletin of the American Mathematical Society}, series~2,
+{\bf51} (1945), 714--723.
+
+\bib|raney|%
+George N. "Raney", ``Functional composition patterns and power series
+reversion,'' {\sl Transactions of the American Mathematical Society\/ \bf94}
+(1960), 441--451.
+
+\bib|d-r-rao|%
+D. Rameswar "Rao", ``Problem E\,2208: A divisibility problem,''
+{\sl American Mathematical Monthly\/ \bf78} (1971), 78--79.
+
+\bib|rayleigh|%
+John William "Strutt", Third Baron "Rayleigh", {\sl The Theory of Sound}. \
+First edition, 1877; second edition, 1894. \ (The cited material about
+irrational spectra is from section 92a of the second edition.)
+
+\bib|recorde-wit|%
+Robert "Recorde", {\sl The Whetstone of Witte}. \
+London, 1557.
+
+\bib|asymptotic-query|%
+Simeon "Reich", ``Problem 6056: Truncated exponential-type series,''
+{\sl American Mathematical Monthly\/ \bf84} (1977), 494--495.
+
+\bib|rham|%
+Georges de "Rham", ``Un peu de math\'ematiques \`a propos d'une courbe plane,''
+{\sl Elemente der Mathematik\/ \bf2} (1947), 73--76, 89--97.
+Reprinted in his {\sl \OE uvres Math\'ematiques}, 678--689.
+
+\bib|ribenboim|%
+Paolo "Ribenboim", {\sl 13 Lectures on Fermat's Last Theorem}. \
+Springer-Verlag, 1979.
+
+\bib|riemann-sums|%
+Bernhard "Riemann", ``Ueber die Darstellbarkeit einer Function durch eine
+trigonometrische Reihe,'' Habilitations\-schrift, G\"ottingen, 1854.
+Published in {\sl Abhandlungen der mathematischen Classe der
+K\"oniglichen Gesellschaft der Wissenschaften zu G\"ottingen\/ \bf13}
+(1868), 87--132. Reprinted in his {\sl Gesammelte Mathematische Werke},
+227--264.
+
+\bib|roberts|%
+Samuel "Roberts", ``On the figures formed by the intercepts of a system
+of straight lines in a plane, and on analogous relations in space of
+three dimensions,''
+{\sl Proceedings of the London Mathematical Society\/ \bf19} (1889), 405--422.
+
+\bib|roedseth|%
+\O ystein "R\o dseth", ``Problem E\,2273:
+Telescoping Vandermonde convolutions,''
+{\sl American Mathematical Monthly\/ \bf79} (1972), 88--89.
+
+\bib|rosser-schoenfeld|%
+J. Barkley "Rosser" and Lowell "Schoenfeld", ``Approximate formulas for
+some functions of prime numbers,'' {\sl Illinois Journal of Mathematics\/
+\bf 6} (1962), 64--94.
+
+\bib|rota-mobius|%
+Gian-Carlo "Rota", ``On the foundations of combinatorial theory.~I.~
+Theory of M\"obius functions,'' {\sl Zeitschrift f\"ur
+Wahrscheinlichkeitstheorie und verwandte Gebiete\/ \bf2} (1964), 340--368.
+
+\bib|roy|%
+Ranjan "Roy", ``Binomial identities and hypergeometric series,''
+{\sl American Mathematical Monthly\/ \bf94} (1987), 36--46.
+
+\bib|saalschutz|%
+Louis "Saalsch\"utz", ``Eine Summationsformel,''
+{\sl Zeitschrift f\"ur Mathematik und Physik\/ \bf35} (1890), 186--188.
+
+\bib|salty-phi|%
+A.\,I. "Saltykov", ``O funktsii \'E\u{\i}lera,''
+{\sl Vestnik Moskovskogo Universiteta}, series 1, Matematika, Mekhanika
+(1960), number~6, 34--50.
+
+\bib|sarkozy|%
+A. "S\'ark\"ozy", ``On divisors of binomial coefficients, I,''
+{\sl Journal of Number Theory\/ \bf20} (1985), 70--80.
+
+\bib|sawyer|%
+W.\,W. "Sawyer", {\sl Prelude to Mathematics}. \
+Baltimore, Penguin, 1955.
+
+\bib|schlomilch|%
+O. "Schl\"omilch", ``Ein geometrisches Paradoxon,''
+{\sl Zeitschrift f\"ur Mathematik und Physik\/ \bf13} (1868), 162.
+
+\bib|schroeder|%
+Ernst "Schr\"oder", ``Vier combinatorische Probleme,''
+{\sl Zeitschrift f\"ur Mathematik und Physik\/ \bf15} (1870), 361--376.
+
+\bib|schroeter|%
+Heinrich "Schr\"oter", ``Ableitung der Partialbruch- und Produkt-Entwicke\-lungen %sic
+f\"ur die trigonometrischen Funktionen,''
+{\sl Zeitschrift f\"ur Mathematik und Physik\/ \bf13} (1868), 254--259.
+
+\bib|scorer|%
+R.\,S. "Scorer," P.\,M. "Grundy", and C.\,A.\,B. "Smith", ``Some binary games,''
+{\sl The Mathematical Gazette\/ \bf28} (1944), 96--103.
+
+\bib|sedlacek|%
+J. "Sedl\'a\v cek", ``On the skeletons of a graph or digraph,''
+in {\sl Combinatorial Structures and their Applications}, Gordon and
+Breach, 1970, 387--391.
+\ (This volume contains
+proceedings of the Calgary International Conference of Combinatorial
+Structures and their Applications, 1969.)
+
+\bib|shallit-log|%
+J.\,O. "Shallit", ``Problem 6450: Two series,'' {\sl American
+Mathematical Monthly\/ \bf92} (1985), 513--514.
+
+\bib|sharp-stack|%
+R.\,T. "Sharp", ``Problem 52: Overhanging dominoes,''
+{\sl Pi Mu Epsilon Journal\/ \bf1},\,10 (1954), 411--412.
+
+\bib|sierpinski|%
+W. "Sierpi\'nski", ``Sur la valeur asymptotique d'une certaine somme,''
+{\sl Bulletin International Acad\'emie Polonaise des Sciences et des
+Lettres\/} (Cracovie), series A (1910), 9--11.
+
+\bib|sierpinski-2|%
+W. "Sierpi\'nski", ``Sur les nombres dont la somme de diviseurs est
+une puissance du nombre~2,'' {\sl Calcutta Mathematical Society
+Golden Jubilee Commemorative Volume\/} (1958--1959), part~1, 7--9.
+
+\bib|sierpinski-probs|%
+Wac\l aw "Sierpi\'nski", {\sl A Selection of Problems in the Theory
+of Numbers}. \ Macmillan, 1964.
+
+\bib|silverman-links|%
+David L. "Silverman", ``Problematical Recreations 447: Numerical links,''
+{\sl Aviation Week \& Space Technology\/ \bf89},\,10 (1~September 1968), 71.
+Reprinted as Problem~147 in {\sl Second Book of Mathematical
+Bafflers}, edited by Angela Fox "Dunn", Dover, 1983.
+
+%\bib|slater|%
+%Lucy Joan "Slater", {\sl Generalized Hypergeometric Series.} \
+%Cambridge University Press, 1966.
+
+\bib|sloane|%
+N.\,J.\,A. "Sloane", {\sl A Handbook of Integer Sequences}. \
+Academic Press, 1973. Sequel, {\sl The New Book of Integer Sequences},
+Springer, 1994.
+
+\bib|soloviev|%
+A.\,D. "Solov'ev", ``Odno kombinatornoe tozhdestvo i ego primenenie
+k zadache o pervom nastuplenii redkogo sobyti\t\i a,''
+{\sl Teori\t\i a vero\t\i atnoste\u\i\ i e\"e primeneni\t\i a\/ \bf11}
+(1966), 313--320. English translation, ``A combinatorial identity
+and its application to the problem concerning the first occurrence of
+a rare event,'' {\sl Theory of Probability and its Applications\/ \bf11}
+(1966), 276--282.
+
+\bib|spohn|%
+William G. "Spohn", Jr., ``Can mathematics be saved?''
+{\sl Notices of the American Mathematical Society\/ \bf16} (1969),
+890--894.
+
+\bib|stanley-d-finite|%
+Richard P. "Stanley", ``Differentiably finite power series,''
+{\sl European Journal of Combinatorics\/ \bf1} (1980), 175--188.
+
+\bib|stanley-dimers|%
+Richard P. "Stanley", ``On dimer coverings of rectangles of fixed width,''
+{\sl Discrete Applied Mathematics\/ \bf12} (1985), 81--87.
+
+\bib|stanley|%
+Richard P. "Stanley", {\sl Enumerative Combinatorics}, volume~1. \
+Wadsworth \& Brooks/Cole, 1986.
+
+\bib|staudt|%
+K.\,G.\,C. von "Staudt", ``Beweis eines Lehrsatzes, die
+B\|e\|r\|n\|o\|u\|l\|l\|i\|schen Zahlen betreffend,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf21}
+(1840), 372--374.
+
+\bib|hackers-dict|%
+Guy L. "Steele Jr.", Donald R. "Woods", Raphael~A. "Finkel",
+Mark~R. "Crispin", Richard~M. "Stallman", and Geoffrey~S. "Goodfellow",
+{\sl The Hacker's Dictionary: A Guide to the World of Computer
+Wizards}. \ Harper \& Row, 1983.
+
+\bib|steiner|%
+J. "Steiner", ``Einige Gesetze \"uber die Theilung der Ebene und des Raumes,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf1} (1826), 349--364.
+Reprinted in his {\sl Gesammelte Werke}, volume~1, 77--94.
+
+\bib|stern|%
+M.\,A. "Stern", ``Ueber eine zahlentheoretische Funktion,''
+{\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf55} (1858), 193--220.
+
+\bib|stickelberger|%
+L. "Stickelberger", ``Ueber eine Verallgemeinerung der Kreis\-theilung,''
+{\sl Mathematische Annalen\/ \bf37} (1890), 321--367.
+
+\bib|stieltjes|%
+T.\,J. "Stieltjes", letters to "Hermite" (June 1885), in
+{\sl Correspondance d'Her\-mite et de Stieltjes}, volume~1, 146--159.
+
+\bib|stieltjes-table|%
+T.\,J. "Stieltjes", ``Table des valeurs des sommes $S_k=
+\sum_1^\infty n^{-k}$,'' {\sl Acta Mathematica\/ \bf10} (1887), 299--302.
+Reprinted in his {\sl \OE uvres Compl\`etes}, volume~2, 100--103.
+
+\bib|stirling-method|%
+James "Stirling", {\sl Methodus Differentialis}. \ London, 1730. English
+translation, {\sl The Differential Method}, 1749.
+
+\bib|strehl|%
+Volker "Strehl", ``Binomial identities\dash---combinatorial and algorithmic
+aspects,'' {\sl Discrete Mathematics}, to appear in 1994.
+
+\bib|sweeney-gamma|%
+Dura W. "Sweeney", ``On the computation of Euler's constant,''
+{\sl Mathematics of Computation\/ \bf17} (1963), 170--178.
+
+\bib|sylvester|%
+J.\,J. "Sylvester", ``Problem 6919,''
+{\sl Mathematical Questions with their Solutions from the `Educational
+Times'\/ \bf37} (1882), 42--43, 80.
+
+\bib|sylvester-totient|%
+J.\,J. "Sylvester", ``On the number of fractions contained in any `Farey series'
+of which the limiting number is given,''
+{\sl The London, Edinburgh and Dublin Philosophical
+Magazine and Journal of Science}, series~5, {\bf15} (1883), 251--257.
+Reprinted in his {\sl Collected Mathematical Papers}, volume~4, 101--109.
+
+\bib|szegedy|%
+M. "Szegedy", ``The solution of "Graham"'s greatest common divisor
+problem,'' {\sl Combinatorica\/ \bf6} (1986), 67--71.
+
+%\bib|wagstaff|%
+%Jonathan W. "Tanner" and
+%%Samuel S. Wagstaff, Jr., ``The irregular primes to 125000,''
+%%{\sl Mathematics of Computation\/ \bf32} (1978), 583--591.
+%Samuel S. "Wagstaff", Jr., ``New congruences for the Bernoulli numbers,''
+%{\sl Mathematics of Computation\/ \bf48} (1987), 341--350.
+
+\bib|tanny|%
+S. "Tanny", ``A probabilistic interpretation of Eulerian numbers,''
+{\sl Duke Mathematical Journal\/ \bf40} (1973), 717--722.
+
+\bib|theisinger|%
+L. "Theisinger", ``Bemerkung \"uber die harmonische Reihe,''
+{\sl Monatshefte f\"ur Mathematik und Physik\/ \bf26} (1915), 132--134.
+
+\bib|thiele|%
+T.\,N. "Thiele", {\sl The Theory of Observations}. \
+Charles \& Edwin Layton, London, 1903. Reprinted in {\sl The
+Annals of Mathematical Statistics\/ \bf2} (1931), 165--308.
+
+\bib|zeta-function|%
+E.\,C. "Titchmarsh", {\sl The Theory of the Riemann Zeta-Function}. \
+Clarendon Press, Oxford, 1951; second edition, revised by D.\,R.
+"Heath-Brown", 1986.
+
+\bib|tricomi-erdelyi|%
+F.\,G. "Tricomi" and A. "Erd\'elyi", ``The asymptotic expansion of a ratio
+of gamma functions,'' {\sl Pacific Journal of Mathematics\/ \bf1} (1951),
+133--142.
+
+\bib|ungar|%
+Peter "Ungar", ``Problem E\,3052: A sum involving Stirling numbers,''
+{\sl American Mathematical Monthly\/ \bf94} (1987), 185--186.
+
+\bib|uspensky|%
+J.\,V. "Uspensky", ``On a problem arising out of the theory of a certain game,''
+{\sl American Mathematical Monthly\/ \bf34} (1927), 516--521.
+
+\bib|vdP|%
+Alfred "van der Poorten", ``A proof that "Euler" missed \dots\ "Ap\'ery"'s
+proof of the irrationality of $\zeta(3)$, an informal report,''
+{\sl The Mathematical Intelligencer\/ \bf1} (1979), 195--203.
+
+\bib|vandermonde|%
+A. "Vandermonde", ``M\'emoire sur des irrationnelles de diff\'erens ordres
+avec une application au cercle,''
+{\sl Histoire de l'Acad\'emie Royale des Sciences\/} (1772), part~1, 71--72;
+{\sl M\'emoires de Math\'ematique et de Physique, Tir\'es des
+Registres de l'Acad\'emie Royale des Sciences\/} (1772), 489--498.
+
+\bib|vardi-self|%
+Ilan "Vardi", ``The error term in "Golomb"'s sequence,'' {\sl Journal of
+Number Theory\/ \bf40} (1992), 1--11.
+
+\bib|venn|%
+J. "Venn", ``On the diagrammatic and mechanical representation of propositions
+and reasonings,'' {\sl The London, Edinburgh and Dublin Philosophical
+Magazine and Journal of Science}, series~5, {\bf9} (1880), 1--18.
+
+\bib|wallis-phi|%
+John "Wallis", {\sl A Treatise of Angular Sections}. \
+Oxford, 1684.
+
+\bib|waring|%
+Edward "Waring", {\sl Meditationes Algebra{\"\i}c\ae}.\
+Cambridge, 1770; third edition, 1782.
+
+\bib|waterhouse|%
+William C. "Waterhouse", ``Problem E\,3117: Even odder than we
+thought,'' {\sl American Mathematical Monthly\/ \bf94} (1987), 691--692.
+
+\bib|rt-3|%
+Frederick V. "Waugh" and Margaret W. "Maxfield", ``Side-and-diagonal numbers,''
+{\sl Mathematics Magazine\/ \bf40} (1967), 74--83.
+
+\bib|weaver|%
+Warren "Weaver", ``Lewis "Carroll" and a geometrical paradox,''
+{\sl American Mathematical Monthly\/ \bf45} (1938), 234--236.
+
+\bib|weber|%
+H. "Weber", ``Leopold Kronecker,'' {\sl Jahresbericht der Deutschen
+Mathe\-matiker-Vereinigung\/ \bf2} (1892), 5--31. Reprinted in
+{\sl Mathematische Annalen\/ \bf43} (1893), 1--25.
+
+\bib|weisner|%
+Louis "Weisner", ``Abstract theory of inversion of finite series,''
+{\sl Transactions of the American Mathematical Society\/ \bf38} (1935),
+474--484.
+
+\bib|wermuth|%
+Edgar M.\,E. "Wermuth", ``Die erste Fourierreihe,'' {\sl Mathematische
+Se\-mes\-ter\-berichte\/ \bf40} (1993), 133--145.
+
+\bib|weyl|%
+Hermann "Weyl", ``\"Uber die "Gibbs"'sche Erscheinung und
+verwandte Konvergenzph\"anomene,'' {\sl Rendiconti del Circolo Matematico di
+Palermo\/ \bf30} (1910), 377--407.
+
+\bib|whipple|%
+F.\,J.\,W. "Whipple", ``Some transformations of generalized hypergeometric
+series,'' {\sl Proceedings of the London Mathematical Society}, series 2,
+{\bf26} (1927), 257--272.
+
+\bib|whitehead-intro|%
+Alfred North "Whitehead", {\sl An Introduction to Mathematics.} \
+London and New York, 1911.
+
+\bib|whitehead-aims|%
+Alfred North "Whitehead", ``Technical education and its relation to
+science and literature,'' chapter~2 in {\sl The Organization of Thought,
+Educational and Scientific},
+London and New York, 1917. Reprinted as chapter~4 of % Williams and Norgate
+ {\sl The Aims of Education and Other Essays}, New York, 1929. % Macmillan
+
+\bib|whitehead-science|%
+Alfred North "Whitehead", {\sl Science and the Modern World.} \
+New York, 1925. Chapter~2 reprinted in {\sl The World of Mathematics},
+edited by James~R. "Newman", 1956, volume~1, 402--416.
+
+\bib|wilfology|%
+Herbert S. "Wilf", {\sl generatingfunctionology.} \ Academic Press, 1990.
+
+\bib|wilf-zeil|%
+Herbert S. "Wilf" and Doron "Zeilberger", ``An algorithmic proof theory for
+hypergeometric (ordinary and `$q$') multisum/integral identities,''
+{\sl Inventiones Mathematicae\/ \bf108} (1992), 575--633.
+
+\bib|williams-dubner|%
+H.\,C. "Williams" and Harvey "Dubner", ``The primality of R1031,''
+{\sl Mathematics of Computation\/ \bf47} (1986), 703--711.
+
+\bib|wolstenholme|%
+J. "Wolstenholme", ``On certain properties of prime numbers,''
+{\sl Quarterly Journal of Pure and Applied Mathematics\/ \bf5}
+(1862), 35--39.
+
+\bib|wood|%
+Derick "Wood", ``The Towers of Brahma and Hanoi revisited,''
+{\sl Journal of Recreational Mathematics \bf14} (1981), 17--24.
+
+\bib|worpitzky|%
+J. \?"Worpitzky", \?``Studien \?\"uber \?die \?\?{\it Bernoulli\/}schen \?und 
+\?\?{\it Euler\/}schen
+\?Zahlen,'' {\sl Journal f\"ur die reine und angewandte Mathematik\/ \bf94}
+(1883), 203--232.
+
+\bib|wright-primes|%
+E.\,M. "Wright", ``A prime-representing function,''
+{\sl American Mathematical Monthly\/ \bf58} (1951), 616--618;
+errata in {\bf59} (1952), 99.
+
+%\bib|zapf|%
+%Hermann "Zapf", collected works, entitled {\sl Hermann Zapf \& His Design
+%Philosophy}. \ Society of Typographic Arts, Chicago, 1987.
+%\ (The AMS~Euler typeface is mentioned on pages 97 and~136.)
+
+\bib|zave|%
+Derek A. "Zave", ``A series expansion involving the harmonic numbers,''
+{\sl Information Processing Letters\/ \bf5} (1976), 75--77.
+
+\bib|zeck2|%
+E. "Zeckendorf", ``Repr\'esentation des nombres naturels par une somme de
+nombres de Fibonacci ou de nombres de Lucas,''
+{\sl Bulletin de la Soci\'et\'e Royale des Sciences de Li\`ege\/ \bf41}
+(1972), 179--182.
+
+\bib|zeil-hol|%
+Doron "Zeilberger", ``A holonomic systems approach to special functions
+identities,'' {\sl Journal of Computational and Applied Mathematics\/ \bf32}
+(1990), 321--368.
+
+\bib|creat|%
+Doron "Zeilberger", ``The method of creative telescoping,''
+{\sl Journal of Symbolic Computation\/ \bf11} (1991), 195--204.
+
+
+\bye

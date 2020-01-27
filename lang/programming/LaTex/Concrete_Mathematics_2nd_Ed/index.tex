@@ -1,0 +1,1902 @@
+% Index for Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+
+\pageno=637
+
+\beginchapter {} Index
+
+WHEN AN INDEX ENTRY refers to a page containing a relevant exercise,
+the answer to that exercise (in Appendix~A) might divulge further
+\g (Graffiti have been indexed too.)\g
+information; an answer page is not indexed here unless it refers to a topic
+that isn't included in the statement of the relevant exercise.
+Some notations not indexed here (like $x\_n$, $\lfloor x\rfloor$,
+and $n\euler m$) are listed on pages x and~xi, just before
+the table of contents.\looseness=-1
+
+\newbox\partialpage
+\output={\global\setbox\partialpage=\vbox{\unvbox255\bigskip}}\eject
+\advance\vsize-\ht\partialpage
+
+ \textfont0=\gmathtext
+  \scriptfont0=\gmathsubtext
+  \scriptscriptfont0=\gmathsubsubtext
+ \textfont1=\gmathlet \let\tfont=\gtfont
+  \scriptfont1=\gmathsublet
+  \scriptscriptfont1=\gmathsubsublet
+ \textfont2=\gmathsym
+  \scriptfont2=\gmathsubsym
+  \scriptscriptfont2=\gmathsubsubsym
+ \textfont3=\gmathext
+  \scriptfont3=\gmathsubext
+  \scriptscriptfont3=\gmathsubsubext
+\textfont\scrfam=\gmathscr
+ \scriptfont\scrfam=\gmathsubscr
+ \scriptscriptfont\scrfam=\gmathsubsubscr
+\textfont\frfam=\gmathfr
+ \scriptfont\frfam=\gmathsubfr
+ \scriptscriptfont\frfam=\gmathsubsubfr
+\textfont\euexfam=\gmatheuex
+\scriptfont\euexfam=\gmathsubsym % OK since I don't use all chars in this size
+\textfont\eqfam=\nineeq
+ \def\rm{\fam0 \gmathtext}%
+ \let\oldsty=\goldstyle
+ \let\big=\ninebig
+ \setbox\strutbox=\hbox{\vrule height7.25pt depth2.75pt width0pt}%
+ \gmathtext % that's 9pt roman
+\rightskip0pt plus4em \spaceskip.3333em \xspaceskip.5em
+\baselineskip 12pt plus.2pt minus.2pt
+\parindent=0pt
+\everypar{\hangindent=20pt}
+\def\sub{{\penalty50\parskip=0pt\leavevmode}\kern10pt\hangindent=30pt}
+\hsize=2.75in
+\newif\ifright \newbox\leftcol
+\output{\ifright\twocolumnout\global\rightfalse
+  \else\leftcolumnsave\global\righttrue\fi}
+\def\leftcolumnsave{\global\setbox\leftcol=\box255}
+\def\twocolumnout{\shipout\vbox to\totheight{ % here we define 1 page of output
+    \offinterlineskip % butt the boxes together
+    \vbox to 2pc{ % this part goes on top of the regular pages
+      \ifodd\pageno \rightheadline\else\leftheadline\fi
+      \vfill} % this completes the \vbox to 2pc
+    \ifvoid\partialpage\else\global\advance\vsize\ht\partialpage
+      \ifodd\pageno\moveright7pc\fi \box\partialpage\fi
+    \hbox to35pc{\box\leftcol\hss\box255}
+    \vfill
+    \iftitle \global\titlefalse % reset the titlepage switch
+	\ifodd\pageno \hbox to35pc{\hfil\foliofont\folio}
+	\else\hbox{\foliofont\folio}\fi\fi
+    \ifpreprint\ifinxmode\makeinxfooter\fi\fi
+    }
+  \advancepageno}
+\exhyphenpenalty=10000
+\def\=#1{{\accent22 #1}}
+\def\see{{\ninesl\kern1pt see\/} }
+\def\also{{\ninesl\kern1pt see also\/} }
+\def\cpage{657} % colophon page
+\obeylines
+$0^0$, 162
+$\sqrt2$ ($\approx1.41421$), 100
+$\sqrt3$ ($\approx1.73205$), 378
+$\Im$: imaginary part, 64
+$\frak L$: logarithmico-exponential functions, 442--443
+$\Re$: real part, 64, 212, 451
+$\gamma$ ($\approx0.57722$), \see Euler's constant
+$\Gamma$, \see Gamma function
+$\delta$, 47--56
+$\Delta$: difference operator, 47--55, 241, 470--471
+$\epsilon_p(n)$: largest power of $p$ dividing~$n$, 112--114, 146
+$\zeta$, \see zeta function
+$\vartheta$, 219--221, 310, 347
+$\Theta$: Big Theta notation, 448
+$\kappa_m$, \see cumulants
+$\mu$, \see M\"obius function
+$\nu$, \see nu function
+$\pi$ ($\approx3.14159$), 26, 70, 146, 244, 485, 564, 596
+$\pi(x)$, \see pi function
+$\sigma$: standard deviation, 388; \also Stirling's constant
+$\sigma_n(x)$, \see Stirling polynomials
+$\phi$ ($\approx1.61803$): golden ratio, 70, 97, 299--301, 310, 553
+$\varphi$, \see phi function
+$\Phi$: sum of $\varphi$, 137--139, 462--463
+$\Omega$: Big Omega notation, 448
+$\sum$-notation, 22--25, 245
+$\prod$-notation, 64, 106
+$\bigwedge$-notation, 65
+$\Longleftrightarrow$: if and only if, 68
+$\Longrightarrow$: implies, 71
+$\divides$: divides, 102
+$\edivides$: exactly divides, 146
+$\rp$: is relatively prime to, 115
+$\prec$: grows slower than, 440--443
+$\succ$: grows faster than, 440--443
+$\asymp$: grows as fast as, 442--443
+$\sim$: is asymptotic to, 8, 428--429
+$\approx$: approximates, 23
+$\equiv$: is congruent to, 123--126
+$\#$: cardinality, 39
+$!$: factorial, 111--115
+$\?$: subfactorial, 194--200
+$\dts\,$: interval notation, 73--74
+$\ldots\,$: ellipsis, 21, 50, 108, \dots
+\medskip \advance\baselineskip-1pt
+Aaronson, Bette Jane, ix
+Abel, Niels Henrik, 604, 634
+Abramowitz, Milton, 42, 604
+absolute convergence, 60--62, 64
+absolute error, 452, 455
+absolute value of complex number, 64
+absorption identities, 157--158, 261
+Acton, John Emerich Edward Dalberg, Baron, 66
+Adams, William Wells, 604, 635
+Addison-Wesley, ix
+addition formula for ${n\choose k}_{\mathstrut}$, 158--159
+\sub analog for ${n\euler k}_{\mathstrut}$, 268
+\sub analogs for $n\brace k$ and $\,n\,\brack k$, 259, 261
+\sub dual, 530
+Aho, Alfred Vaino, 604, 633
+Ahrens, Wilhelm Ernst Martin Georg, 8, 604
+Akhiezer, Naum Il'ich, 604
+Alfred [Brousseau], Brother Ulbertus, 607, 633
+algebraic integers, 106, 147
+algorithms, analysis of, 138, 413--426
+\sub divide and conquer, 79
+\sub Euclid's, 103, 123, 303--304
+\sub Fibonacci's, 95, 101
+\sub Gosper's, 224--227
+\sub Gosper-Zeilberger, 229--241, 254--255
+\sub greedy, 101, 295
+\sub self-certifying, 104
+Alice, 31, 408--410, 430
+Allardice, Robert Edgar, 2, 604
+ambiguous notation, 245
+American Mathematical Society, viii
+AMS Euler, ix, \cpage
+analysis of algorithms, 138, 413--426
+analytic functions, 196
+ancestor, 117, 291
+Andr\'e, Antoine D\'esir\'e, 604, 635
+Andrews, George W. Eyre, 215, 330, 530, 575, 605, 634, 635
+answers, notes on, 497, 637, viii
+anti-derivative operator, 48, 470--471
+anti-difference operator, 48, 54, 470--471
+Ap\'ery, Roger, 238, 605, 629, 634
+\sub numbers, 238--239, 255
+approximation, \see asymptotics
+\sub of sums by integrals, 45, 276--277, 469--475
+Archibald, Raymond Clare, 608
+argument of hypergeometric, 205
+arithmetic progression, 30, 376
+\sub floored, 89--94
+\sub sum of, 6, 26, 30--31
+Armageddon, 85
+Armstrong, Daniel Louis (= Satchmo), 80
+Arnol'd, Vladimir Igorevich, 605, 635
+art and science, 234
+ascents, 267--268, 270
+Askey, Richard Allen, 634
+associative law, 30, 61, 64
+asymptotics, 439--496
+\sub from convergent series, 451
+\sub of Bernoulli numbers, 286, 452
+\sub of binomial coefficients, 248, 251, 495, 598
+\sub of discrepancies, 492, 495
+\sub of factorials, 112, 452, 481--482, 491
+\sub of harmonic numbers, 276--278, 452, 480--481, 491
+\sub of hashing, 426
+\sub of $n$th prime, 110--111, 456--457, 490
+\sub of Stirling numbers, 495, 602
+\sub of sums, using Euler's summation formula, 469--489
+\sub of sums, using tail-exchange, 466--469, 486--489
+\sub of sums of powers, 491
+\sub of wheel winners, 76, 453--454
+\sub table of expansions, 452
+\sub usefulness of, 76, 439
+Atkinson, Michael David, 605, 633
+Austin, Alan Keith, 607
+automaton, 405
+automorphic numbers, 520
+average, 384
+\sub of a reciprocal, 432
+\sub variance, 423--425
+\medskip
+$B_n$, \see Bernoulli numbers
+Bachmann, Paul Gustav Heinrich, 443, 462, 605
+Bailey, Wilfrid Norman, 223, 548, 605, 634
+Ball, Walter William Rouse, 605, 633
+Banach, Stefan, 433
+Barlow, Peter, 605, 634
+Barton, David Elliott, 602, 609
+base term, 240
+baseball, 73, 148, 195, 519, 648, 653
+BASIC, 173, 446
+basic fractions, 134, 138
+basis of induction, 3, 10--11, 320--321
+Bateman, Harry, 626
+Baum, Lyman Frank, 581
+Beatty, Samuel, 605, 633
+bee trees, 291
+Beeton, Barbara Ann Neuhaus Friend Smith, viii
+Bell, Eric Temple, 332, 605, 635
+\sub numbers, 373, 493, 603
+Bender, Edward Anton, 606, 636
+Bernoulli, Jakob (= Jacobi = Jacques = James), 283, 470, 606
+\sub numbers, \see Bernoulli numbers
+\sub polynomials, 367--368, 470--475
+\sub polynomials, graphs of, 473
+\sub trials, 402; \also coins, flipping
+Bernoulli, Johann (= Jean), 622
+Bernoulli numbers, 283--290
+\sub asymptotics of, 286, 452
+\sub calculation of, 288, 620
+\sub denominators of, 315
+\sub generalized, \see Stirling polynomials
+\sub generating function for, 285, 351, 365
+\sub relation to tangent numbers, 287
+\sub table of, 284, 620
+Bernshte{\u\i}n (= Bernstein), Serge{\u\i} Natanovich, 636
+Bertrand, Joseph Louis Fran\c{c}ois, 145, 606, 633
+\sub postulate, 145, 500, 550
+Bessel, Friedrich Wilhelm, functions, 206, 527
+Beyer, William Hyman, 606
+biased coin, 401
+bicycles, 260, 500
+Bieberbach, Ludwig, 617
+Bienaym\'e, Ir\'en\'ee Jules, 606
+Big Ell notation, 444
+Big Oh notation, 76, 443--449
+Big Omega notation, 448
+Big Theta notation, 448
+bijection, 39
+Bill, 408--410, 430
+binary logarithm, 70
+binary notation (radix~$2$), 11--13, 15--16, 70, 113--114
+binary partitions, 377
+binary search, 121, 183
+binary trees, 117
+Binet, Jacques Philippe Marie, 299, 303, 606,~633
+binomial coefficients, 153--242
+\sub addition formula, 158--159
+\sub asymptotics of, 248, 251, 495, 598
+\sub combinatorial interpretation, 153, 158, 160, 169--170
+\sub definition, 154, 211
+\sub dual, 530
+\sub generalized, 211, 318, 530
+\sub indices of, 154
+\sub middle, 187, 255--256, 495
+\sub reciprocal of, 188--189, 246, 254
+\sub top ten identities of, 174
+\sub wraparound, 250~(exercise~75), 315
+binomial convolution, 365, 367
+binomial distribution, 401--402, 415, 428, 432
+\sub negative, 402--403, 428
+binomial number system, 245
+binomial series, generalized, 200--204, 243, 252,~363
+binomial theorem, 162--163
+\sub as hypergeometric series, 206, 221
+\sub discovered mechanically, 230--233
+\sub for factorial powers, 245
+\sub special cases, 163, 199
+Blom, Gunnar, 606, 636
+bloopergeometric series, 243
+Boas, Ralph Philip, Jr., 600, 606, 636, viii
+Boggs, Wade Anthony, 195
+Bohl, Piers Paul Felix [= Bol', Pirs Georgievich], 87, 606
+Bois-Reymond, Paul David Gustav du, 440, 610, 617
+Boncompagni, Prince Baldassarre, 613
+bootstrapping, 463--466
+\sub to estimate $n$th prime, 456--457
+Borchardt, Carl Wilhelm, 617
+Borel, \'Emile F\'elix \'Edouard Justin, 606, 636
+Borwein, Jonathan Michael, 606, 635
+Borwein, Peter Benjamin, 606, 635
+bound variables, 22
+boundary conditions on sums,
+\sub can be difficult, 75, 86
+\sub made easier, 24--25, 159
+bowling, 6
+box principle, 95, 130, 512
+bracket notation,
+\sub for coefficients, 197, 331
+\sub for true/false values, 24--25
+Brahma, Tower of, 1, 4, 278
+Branges, Louis de, 617
+Brent, Richard Peirce, 306, 525, 564, 606
+bricks, 313, 374
+Brillhart, John David, 606, 633
+Brocot, Achille, 116, 607
+Broder, Andrei Zary, 632, ix
+Brooke, Maxey, 607, 635
+Brousseau, Brother Alfred, 607, 633
+Brown, Mark Robbin, 632
+Brown, Morton, 501, 607
+Brown, Roy Howard, ix
+Brown, Thomas Craig, 607, 633
+Brown, Trivial, 607
+Brown, William Gordon, 607
+Brown University, ix
+Browning, Elizabeth Barrett, 320
+Bruijn, Nicolaas Govert de, 444, 447, 500, 609, 635, 636
+\sub cycle, 500
+bubblesort, 448
+Buckholtz, Thomas Joel, 620
+Bulwer-Lytton, Edward George Earle Lytton, Baron, v
+Burma-Shave, 541
+Burr, Stefan Andrus, 607, 635
+\medskip
+calculators, 67, 77, 459
+\sub failure of, 344
+calculus, vi, 33
+\sub finite and infinite, 47--56
+candy, 36
+Canfield, Earl Rodney, 602, 607, 636
+cards,
+\sub shuffling, 437
+\sub stacking, 273--274, 280, 309
+Carlitz, Leonard, 607, 635
+Carroll, Lewis (= Dodgson, Rev.~Charles Lutwidge), 31, 293, 607, 608, 630
+carries,
+\sub across the decimal point, 70
+\sub in divisibility of $m+n\choose m$, 245, 536
+\sub in Fibonacci number system, 297, 561
+Cassini, Jean Dominique, 292, 607
+\sub identity, 292--293, 300
+\sub identity, converse, 314
+\sub identity, generalized, 303, 310
+Catalan, Eug\`ene Charles, 203, 361, 607
+Catalan numbers, 203
+\sub combinatorial interpretations, 358--360, 565,~568
+\sub generalized, 361
+\sub in sums, 181, 203, 317
+\sub table of, 203
+Cauchy, Augustin Louis, 607, 633
+\v{C}ech, Eduard, vi
+ceiling function, 67--69
+\sub converted to floor, 68, 96
+\sub graph of, 68
+center of gravity, 273--274, 309
+certificate of correctness, 104
+Chace, Arnold Buffum, 608, 633
+Chaimovich, Mark, 608
+chain rule, 54, 483
+change, 327--330, 374
+\sub large amounts of, 344--346, 492
+changing the index of summation, 30--31, 39
+changing the tails of a sum, 466--469
+cheating, viii, 195, 388, 401
+\sub not, 158, 323
+Chebyshev, Pafnuti{\u\i} L'vovich, 38, 145, 608, 633
+\sub inequality, 390--391, 428, 430
+\sub monotonic inequalities, 38, 576
+cheese slicing, 19
+Chen, Pang-Chieh, 632
+Chinese Remainder Theorem, 126, 146
+Chu Shih-Chieh [= Zh\=u Sh\`{\i}ji\'e], 169
+Chung, Fan-Rong King, ix, 608, 635
+Clausen, Thomas, 608, 634, 635
+\sub product identities, 253
+clearly, clarified, 417--418, 581
+clich\'es, 166, 324, 357
+closed form, 3, 7, 321
+\sub for generating functions, 317
+\sub not, 108, 573
+\sub pretty good, 346
+closed interval, 73--74
+Cobb, Tyrus Raymond, 195
+coefficient extraction, 197, 331
+Cohen, Henri Jos\'e, 238
+coins, 327--330
+\sub biased, 401
+\sub fair, 401, 430
+\sub flipping, 401--410, 430--432, 437--438
+\sub spinning, 401
+Collingwood, Stuart Dodgson, 608
+Collins, John, 624
+Colombo, Cristoforo (= Columbus, Christopher), 74
+coloring, 496
+Columbia University, ix
+combinations, 153
+common logarithm, 449
+commutative law, 30, 61, 64
+\sub failure of, 322, 502, 551
+\sub relaxed, 31
+complete graph, 368
+complex factorial powers, 211
+complex numbers, 64
+\sub roots of unity, 149, 204, 375, 553, 574, 598
+composite numbers, 105, 518
+composition of generating functions, 428
+computer algebra, 42, 268, 501, 539
+Comtet, Louis, 609, 636
+Concrete Math Club, 74
+concrete mathematics, defined, vi
+conditional convergence, 59
+conditional probability, 416--419, 424--425
+confluent hypergeometric series, 206, 245
+congruences, 123--126
+Connection Machine, 131
+contiguous hypergeometrics, 529
+continuants, 301--309, 501
+\sub and matrices, 318--319
+\sub Euler's identity for, 303, 312
+\sub zero parameters in, 314
+continued fractions, 301, 304--309, 319
+\sub large partial quotients of, 553, 563, 564, 602
+convergence,
+\sub absolute, 60--62, 64
+\sub conditional, 59
+\sub of power series, 206, 331, 451, 532
+convex regions, 5, 20, 497
+convolution, 197, 246, 333, 353--364
+\sub binomial, 365, 367
+\sub identities for, 202, 272, 373
+\sub polynomials, 373
+\sub Stirling, 272, 290
+\sub Vandermonde, \see Vandermonde convolution
+Conway, John Horton, 410, 609
+cotangent function, 286, 317
+counting,
+\sub combinations, 153
+\sub cycle arrangements, 259--262
+\sub derangements, 193--196, 199--200
+\sub integers in intervals, 73--74
+\sub necklaces, 139--141
+\sub parenthesized formulas, 357--359
+\sub permutations, 111
+\sub permutations by ascents, 267--268
+\sub permutations by cycles, 262
+\sub set partitions, 258--259
+\sub spanning trees, 348--350, 356, 368--369, 374
+\sub with generating functions, 320--330
+coupon collecting, 583
+Cover, Thomas Merrill, 636
+Coxeter, Harold Scott Macdonald, 605
+Cram\'er, Carl Harald, 525, 609, 634
+Cray X-MP, 109
+Crelle, August Leopold, 609, 633
+cribbage, 65
+Crispin, Mark Reed, 628
+Crowe, Donald Warren, 609, 633
+crudification, 447
+Csirik, J\'anos Andr\'as, 590, 609
+cubes, sum of consecutive, 51, 63, 283, 289, 367
+cumulants, 397--401
+\sub infinite, 576
+\sub of binomial distribution, 432
+\sub of discrete distribution, 438
+\sub of Poisson distribution, 428--429
+\sub third and fourth, 429, 579, 589
+CUNY (= City University of New York), ix
+Curtiss, David Raymond, 609, 634
+cycles,
+\sub de Bruijn, 500
+\sub of beads, 139--140
+\sub of permutations, 259--262
+cyclic shift, 12
+cyclotomic polynomials, 149
+\medskip
+$D$, \see derivative operator
+Dating Game, 506
+David, Florence Nightingale, 602, 609
+Davis, Philip Jacob, 609
+Davison, John Leslie, 307, 604, 609, 635
+de Branges, Louis, 617
+de Bruijn, Nicolaas Govert, 444, 447, 500, 609, 635, 636
+\sub cycle, 500
+de Finetti, Bruno, 24, 613
+de Lagny, Thomas Fantet, 304, 621
+de Moivre, Abraham, 297, 481, 609
+Dedekind, Julius Wilhelm Richard, 136--137, 609
+definite sums, analogous to definite integrals, 49--50
+deg, 226, 232
+degenerate hypergeometric series, 209--210, 216, 222, 247
+derangements, 194--196
+\sub generating function, 199--200
+derivative operator, 47--49
+\sub converting between $D$ and $\Delta$, 470--471
+\sub converting between $D$ and $\vartheta$, 310
+\sub with generating functions, 33, 333, 364--365
+\sub with hypergeometric series, 219--221
+descents, \see ascents
+dgf: Dirichlet generating function, 370
+dice, 381--384
+\sub fair, 382, 417, 429
+\sub loaded, 382, 429, 431
+\sub nonstandard, 431
+\sub pgf for, 399--400
+\sub probability of doubles, 427
+\sub supposedly fair, 392
+Dickson, Leonard Eugene, 510, 609
+Dieudonn\'e, Jean Alexandre, 523
+difference operator, 47--55, 241
+\sub converting between $D$ and $\Delta$, 470--471
+\sub $n$th difference, 187--192, 280--281
+\sub $n$th difference of product, 571
+differentiably finite power series, 374, 380
+differential operators, \see derivative operator, theta operator
+difficulty measure for summation, 181
+Dijkstra, Edsger Wybe, 173, 609, 635
+dimers and dimes, 320, \see dominoes and change
+diphages, 434, 438
+Dirichlet, Peter Gustav Lejeune, 370, 610, 633
+\sub box principle, 95, 130, 512
+\sub generating functions, 370--371, 373, 432, 451
+\sub probability generating functions, 432
+discrepancy, 88--89, 97
+\sub and continued fractions, 319, 492, 602
+\sub asymptotics of, 492, 495
+discrete probability, 381--438
+\sub defined, 381
+disease, 333
+distribution,
+\sub of fractional parts, 87
+\sub of primes, 111
+\sub of probabilities, \see probability distributions
+\sub of things into groups, 83--85
+distributive law, 30, 35, 60, 64
+\sub for gcd and lcm, 145
+\sub for mod, 83
+divergent sums, 57, 60
+\sub considered useful, 346--348, 451
+\sub illegitimate, 504, 532
+divide and conquer, 79
+divides exactly,  146
+\sub in binomial coefficients, 245
+\sub in factorials, 112--114, 146
+divisibility, 102--105
+\sub by~$3$, 147
+\sub of polynomials, 225
+Dixon, Alfred Cardew, 610, 634
+\sub formula, 214
+DNA, Martian, 377
+Dodgson, Charles Lutwidge, \see Carroll
+domino tilings, 320--327, 371, 379
+\sub ordered pairs of, 375
+Dorothy Gale, 581
+double generating functions, \see super generating functions
+double sums, 34--41, 246, 249
+\sub considered useful, 46, 183--185
+\sub faulty use of, 63, 65
+\sub infinite, 61
+\sub over divisors, 105
+\sub telescoping, 255
+doubloons, 436--437
+doubly exponential recurrences, 97, 100, 101,~109
+doubly infinite sums, 59, 98, 482--483
+Dougall, John, 171, 610
+downward generalization, 2, 95, 320--321
+Doyle, Sir Arthur Conan, 162, 228--229, 405, 610
+drones, 291
+Drysdale, Robert Lewis (Scot), III, 632
+du Bois-Reymond, Paul David Gustav, 440, 610, 617
+duality, 69
+\sub between $n\choose k$ and $1/n{n-1\choose k}$, 530
+\sub between factorial and Gamma functions, 211
+\sub between floors and ceilings, 68--69, 96
+\sub between gcd and lcm, 107
+\sub between rising and falling powers, 63
+\sub between Stirling numbers of different kinds, 267
+Dubner, Harvey, 610, 631, 633
+Dudeney, Henry Ernest, 610, 633
+Dunkel, Otto, 614, 633
+Dunn, Angela Fox, 627, 635
+Dunnington, Guy Waldo, 610
+duplication formulas, 186, 244
+Dupr\'e, Lyn Oppenheim, ix
+Durst, Lincoln Kearney, viii
+Dyson, Freeman John, 172, 239, 610, 615
+\medskip
+$e$ ($\approx2.71828$),
+\sub as canonical constant, 70, 596
+\sub representations of, 122, 150
+$e_n$, \see Euclid numbers
+$E$: expected value, 385--386
+$E$: shift operator, 55, 188, 191
+$E_n$, \see Euler numbers
+Edwards, Anthony William Fairbank, 610
+eeny-meeny-miny-mo, \see Josephus problem
+efficiency, different notions of, 24, 133
+egf: exponential generating function, 364
+eggs, 158
+Egyptian mathematics, 95, 150
+\sub bibliography of, 608
+Einstein, Albert, 72, 307
+Eisele, Carolyn, 624--625
+Eisenstein, Ferdinand Gotthold Max, 202, 610
+Ekhad, Shalosh B, 546
+elementary events, 381--382
+Elkies, Noam David, 131, 610
+ellipsis ($\cdots@$), 21
+\sub advantage of, 21, 25, 50
+\sub disadvantage of, 25
+\sub elimination of, 108
+empirical estimates, 391--393, 427
+empty case,
+\sub for spanning trees, 349, 565
+\sub for Stirling numbers, 258
+\sub for tilings, 320--321
+\sub for Tower of Hanoi, 2
+empty product, 48, 106, 111
+empty sum, 24, 48
+entier function, \see floor function
+equality, one-way, 446--447, 489--490
+equivalence relation, 124
+Eratosthenes, sieve of, 111
+Erd\'elyi, Arthur, 629, 636
+Erd\H os, P\'al (= Paul), 418, 525, 548, 575, 610--611, 634, 636
+error function, 166
+errors, absolute versus relative, 452, 455
+errors, locating our own, 183
+Eswarathasan, Arulappah, 611, 635
+Euclid (= {\textfont1=\teni \mathchardef\varsigma=294 $E%
+{\buildrel\,\smash{\hbox{\gmathtext,}}\over{\upsilon}}%
+  \kappa\lambda\epsilon\acute\iota\delta\eta\varsigma$}), 107--108, 147, 611
+\sub algorithm, 103--104, 123, 303--304
+\sub numbers, 108--109, 145, 147, 150, 151
+Euler, Leonhard, i, vii, ix, 6, 48, 122, 132--134, 202, 205, 207, 210, %
+  267, 277, 278, 286, 299, 301--303, 469, 471, 513, 529, 575, 603, %
+  605, 609, 611--613, 629, 633--636
+\sub constant ($\approx0.57722$), 278, 306--307, 319, 481,~596
+\sub disproved conjecture, 131
+\sub identity for continuants, 303, 312
+\sub identity for hypergeometrics, 244
+\sub numbers, 559, 570, 620; \also Eulerian numbers
+\sub polynomials, 574
+\sub pronunciation of name, 147
+\sub summation formula, 469--475
+\sub theorem, 133, 142, 147
+\sub totient function, \see phi function
+\sub triangle, 268, 316
+Eulerian numbers, 267--271, 310, 316, 378, 574
+\sub combinatorial interpretations, 267--268,~557
+\sub generalized, 313
+\sub generating function for, 351
+\sub second-order, 270--271
+\sub table of, 268
+event, 382
+eventually positive function, 442
+exact cover, 376
+exactly divides, 146
+\sub in binomial coefficients, 245
+\sub in factorials, 112--114, 146
+excedances, 316
+exercises, levels of, viii, 72--73, 95, 511
+exp: exponential function, 455
+expectation, \see expected value
+expected value, 385--387
+\sub using a pgf, 395
+exponential function, discrete analog of, 54
+exponential generating functions, 364--369, 421--422
+exponential series, generalized, 200--202, 242, 364, 369
+exponents, laws of, 52, 63
+\medskip
+$F$, \see hypergeometric functions
+$F_n$, \see Fibonacci numbers
+factorial expansion of binomial coefficients, 156, 211
+factorial function, 111--115, 346--348
+\sub approximation to, \see Stirling's approximation
+\sub duplication formula, 244
+\sub generalized to nonintegers, 192, 210--211, 213--214, 316
+factorial powers, \see falling factorial powers, rising factorial powers
+factorization into primes, 106--107, 110
+factorization of summation conditions, 36
+fair coins, 401, 430
+fair dice, 382, 417
+falling factorial powers, 47
+\sub binomial theorem for, 245
+\sub complex, 211
+\sub difference of, 48, 53, 188
+\sub negative, 52, 63, 188
+\sub related to ordinary powers, 51, 262--263, 598
+\sub related to rising powers, 63, 312
+\sub summation of, 50--53
+fans, ix, 193, 348
+Farey, John, series, 118--119, 617
+\sub consecutive elements of, 118--119, 150
+\sub distribution of, 152
+\sub enumeration of, 134, 137--139, 462--463
+Faulhaber, Johann, 288, 613, 620
+Feder, Tom\'as, 635
+Feigenbaum, Joan, 632
+Feller, William, 381, 613, 636
+Fermat, Pierre de, 130, 131, 613
+\sub numbers, 131--132, 145, 525
+Fermat's Last Theorem, 130--131, 150, 524, 555
+Fermat's theorem (= Fermat's Little Theorem), 131--133, 141--143, 149
+\sub converse of, 132, 148
+Fibonacci, Leonardo, 95, 292, 549, 613, 633, 634
+\sub addition, 296--297, 317
+\sub algorithm, 95, 101
+\sub factorial, 492
+\sub multiplication, 561
+\sub number system, 296--297, 301, 307, 310, 318
+\sub odd and even, 307--308
+Fibonacci numbers, 290--301, 575
+\sub and continuants, 302
+\sub and sunflowers, 291
+\sub closed forms for, 299--300, 331
+\sub combinatorial interpretations of, 291--292, 302, 321, 549
+\sub egf for, 570
+\sub ordinary generating functions for, 297--300, 337--340, 351
+\sub second-order, 375
+\sub table of, 290, 293
+Fibonomial coefficients, 318, 556
+Fine, Henry Burchard, 625
+Fine, Nathan Jacob, 603
+Finetti, Bruno de, 24, 613
+finite calculus, 47--56
+finite state language, 405
+Finkel, Raphael Ari, 628
+Fisher, Michael Ellis, 613, 636
+Fisher, Sir Ronald Aylmer, 613, 636
+fixed points, 12, 393--394
+\sub pgf for, 400--401, 428
+flipping coins, 401--410, 430--432, 437--438
+floor function, 67--69
+\sub converted to ceiling, 68, 96
+\sub graph of, 68
+Floyd, Robert W, 634, 635
+food, \see candy, cheese, eggs, pizza, sherry
+football, 182
+football victory problem, 193--196, 199--200, 428
+\sub generalized, 429
+\sub mean and variance, 393--394, 400--401
+Forcadel, Pierre, 613, 634
+formal power series, 206, 331, 348, 532
+FORTRAN, 446
+Fourier, Jean Baptiste Joseph, 22, 613
+\sub series, 495
+fractional parts, 70
+\sub in Euler's summation formula, 470
+\sub in polynomials, 100
+\sub related to mod, 83
+\sub uniformly distributed, 87
+fractions, 116--123
+\sub basic, 134, 138
+\sub continued, 301, 304--309, 319, 564
+\sub partial, \see partial fraction expansions
+\sub unit, 95, 150
+\sub unreduced, 134--135, 151
+Fraenkel, Aviezri S, 515, 563, 613--614, 633
+Frame, James Sutherland, 614, 633
+Francesca, Piero della, 614, 635
+Franel, J\'erome, 614
+\sub number, 549
+Fraser, Alexander Yule, 2, 604
+Frazer, William Donald, 614, 634
+Fredman, Michael Lawrence, 513, 614
+free variables, 22
+Fre{\u\i}man, Grigori{\u\i} Abelevich, 608
+friendly monster, 545
+frisbees, 434--435, 437
+Frye, Roger Edward, 131
+Fundamental Theorem of Algebra, 207
+Fundamental Theorem of Arithmetic, 106--107
+Fundamental Theorem of Calculus, 48
+Fuss, Nicola{\u\i} Ivanovich, 361, 614
+\sub Fuss--Catalan numbers, 361
+Fuss, Paul Heinrich von [= Fus, Pavel Nikolaeich], 611--612
+\medskip
+Gale, Dorothy, 581
+games, \see bowling, cards, cribbage, dice, Penny~ante, sports
+Gamma function, 210--214, 609
+\sub duplication formula for, 528
+\sub Stirling's approximation for, 482
+gaps between primes, 150--151, 525
+Gardner, Martin, 614, 634, 636
+Garfunkel, Jack, 614, 636
+Gasper, George, Jr., 223, 614
+Gau{\ss} (= Gauss), Karl (= Carl) Friedrich, vii, 6, 7, 123, 205, 207, 212, %
+ 501, 510, 529, 610, 615, 633, 634
+\sub hypergeometric series, 207
+\sub identity for hypergeometrics, 222, 247, 539
+\sub trick, 6, 30, 112, 313
+gcd, 103, \see greatest common divisor
+generalization, 11, 13, 16
+\sub downward, 2, 95, 320--321
+generalized binomial coefficients, 211, 318, 530
+generalized binomial series, 200--204, 243, 252,~363
+generalized exponential series, 200--202, 242, 364, 369
+generalized factorial function, 192, 210--211, 213--214, 316
+generalized harmonic numbers, 277, 283, 286,~370\kern-3pt
+generalized Stirling numbers, 271--272, 311, 316, 319, 598
+generating functions, 196--204, 297--300, 320--380
+\sub composition of, 428
+\sub Dirichlet, 370--371, 373, 432, 451
+\sub exponential, 364--369, 421--422
+\sub for Bernoulli numbers, 285, 351, 365
+\sub for convolutions, 197, 333--334, 353--364, 369,~421
+\sub for Eulerian numbers, 351, 353
+\sub for Fibonacci numbers, 297--300, 337--340, 351, 570
+\sub for harmonic numbers, 351--352
+\sub for minima, 377
+\sub for probabilities, 394--401
+\sub for simple sequences, 335
+\sub for special numbers, 351--353
+\sub for spectra, 307, 319
+\sub for Stirling numbers, 351--352, 559
+\sub Newtonian, 378
+\sub of generating functions, 351, 353, 421
+\sub super, 353, 421
+\sub table of manipulations, 334
+Genocchi, Angelo, 615
+\sub numbers, 551, 574
+geometric progression, 32
+\sub floored, 114
+\sub generalized, 205--206
+\sub sum of, 32--33, 54
+Gessel, Ira Martin, 270, 615, 634
+Gibbs, Josiah Willard, 630
+Gilbert, William Schwenck, 444
+Ginsburg, Jekuthiel, 615
+Glaisher, James Whitbread Lee, 615, 636
+\sub constant ($\approx1.28243$), 595
+God, 1, 307, 521
+Goldbach, Christian, 611--612
+\sub theorem, 66
+golden ratio, 299, \see phi
+golf, 431
+Golomb, Solomon Wolf, 460, 507, 615, 629, 633
+\sub digit-count sum, 460--462, 490~(exercise~22), 494
+\sub self-describing sequence, 66, 495
+Good, Irving John, 615, 634
+Goodfellow, Geoffrey Scott, 628
+Gopinath, Bhaskarpillai, 501, 621
+Gordon, Peter Stuart, ix
+Gosper, Ralph William, Jr., 224, 564, 615, 634
+\sub algorithm, 224--227
+\sub algorithm, examples, 227--229, 245, 247--248, 253--254, 534
+Gosper-Zeilberger algorithm, 229--241, 319
+\sub examples, 254--255, 547
+\sub summary, 233
+goto, considered harmful, 173
+Gottschalk, Walter Helbig, vii
+graffiti, vii, ix, 59, 637
+Graham, Cheryl, ix
+Graham, Ronald Lewis, iii, iv, vi, ix, %
+ 102, 506, 608--609, 611, 615--616, 629, 632, 633, 635
+Grandi, Luigi Guido, 58, 616
+Granville, Andrew James, 548
+graph theory, \see spanning trees
+graphs of functions,
+\sub $1/x$, 262--263
+\sub $e^{-x^2\!/10}$, 483
+\sub Bernoulli polynomials, 473
+\sub floor and ceiling, 68
+\sub hyperbola, 440
+\sub partial sums of a sequence, 345--346
+Graves, William Henson, 632
+gravity, center of, 273--274, 309
+Gray, Frank, code, 497
+greatest common divisor, 92, 103--104, 107, 145
+greatest integer function, \see floor function
+greatest lower bound, 65
+greed, 74, 387--388; \also rewards
+greedy algorithm, 101, 295
+Green, Research Sink, 607
+Greene, Daniel Hill, 616
+Greitzer, Samuel Louis, 616, 633
+Gross, Oliver Alfred, 616, 635
+Gr\"unbaum, Branko, 498, 616
+Grundy, Patrick Michael, 627, 633
+Guibas, Leonidas Ioannis (= Leo John), 590, 616, 632, 636
+Guy, Richard Kenneth, 523, 525, 616
+\medskip
+$H_n$, \see harmonic numbers
+Haar, Alfr\'ed, vii
+Hacker's Dictionary, 124, 628
+Haiman, Mark, 632
+H{\aa}land, Inger Johanne, 616, 633
+half-open interval, 73--74
+Hall, Marshall, Jr., 616
+Halmos, Paul Richard, v, vi, 616--617
+Halphen, Georges Henri, 305, 617
+halving, 79, 186--187
+Hamburger, Hans Ludwig, 591, 617
+Hammersley, John Michael, v, 617, 636
+Hanoi, Tower of, 1--4, 26--27, 109, 146
+\sub variations on, 17--20
+Hansen, Eldon Robert, 42, 617
+Hardy, Godfrey Harold, 111, 442--443, 617, 633,~636
+harmonic numbers, 29, 272--282
+\sub analogous to logarithms, 53
+\sub asymptotics of, 276--278, 452, 480--481, 491
+\sub complex, 311, 316
+\sub divisibility of, 311, 314, 319
+\sub generalized, 277, 283, 286, 370
+\sub generating function for, 351--352
+\sub second-order, 277, 280, 311, 550--552
+\sub sums of, 41, 313, 316, 354--355
+\sub sums using summation by parts, 56, 279--282, 312
+\sub table of, 273
+harmonic series, divergence of, 62, 275--276
+Harry, Matthew Arnold, double sum, 249
+hashing, 411--426, 430
+hats, \see football victory problem
+hcf, 103, \see greatest common divisor
+Heath-Brown, David Rodney, 629
+Heiberg, Johan Ludvig, 611
+Heisenberg, Werner Karl, 481
+Helmbold, David Paul, 632
+Henrici, Peter Karl Eugen, 332, 545, 602, 617, 634, 636
+Hermite, Charles, 538, 555, 617, 628, 634
+herring, red, 497
+Herstein, Israel Nathan, 8, 618
+hexagon property, 155--156, 242, 251
+highest common factor, \see greatest common divisor
+Hillman, Abraham P, 618, 634
+Hoare, Charles Antony Richard, 28, 73, 618, 620
+Hofstadter, Douglas Richard, 633
+Hoggatt, Verner Emil, Jr., 618, 622, 634
+Holden, Edward Singleton, 624
+Holmboe, Berndt Michael, 604
+Holmes, Thomas Sherlock Scott, 162, 228--229
+holomorphic functions, 196
+homogeneous linear equations, 239, 543
+horses, 17, 18, 468, 503
+Hsu, Lee-Tsch (= Lietz = Leetch) Ching-Siur, 618, 634
+Hurwitz, Adolf, 635
+hyperbola, 440
+hyperbolic functions, 285--286
+hyperfactorial, 243, 491
+hypergeometric series, 204--223
+\sub confluent, 206, 245
+\sub contiguous, 529
+\sub degenerate, 209--210, 216, 222, 247
+\sub differential equation for, 219--221
+\sub Gaussian, 207
+\sub partial sums of, 165--166, 223--230, 224, 245
+\sub transformations of, 216--223, 247, 253
+hypergeometric terms, 224, 243, 245, 527, 575
+\sub similar, 541
+\medskip
+$i$, 22
+implicit recurrences, 136--139, 193--195, 284
+indefinite summation, 48--49
+\sub by parts, 54--56
+\sub of binomial coefficients, 161, 223--224, 246, 248, 313
+\sub of hypergeometric terms, 224--229
+independent random variables, 384, 427
+\sub pairwise, 437
+\sub products of, 386
+\sub sums of, 386, 396--398
+index set, 22, 30, 61
+index variable, 22, 34, 60
+induction, 3, 7, 10--11, 43
+\sub backwards, 18
+\sub basis of, 3, 320--321
+\sub failure of, 17, 575
+\sub important lesson about, 508, 549
+inductive leap, 4, 43
+infinite sums, 56--62, 64
+\sub doubly, 59, 98, 482--483
+information retrieval, 411--413
+INT function, 67
+insurance agents, 391
+integer part, 70
+integration, 45--46, 48
+\sub by parts, 54, 472
+\sub of generating functions, 333, 365
+interchanging the order of summation, 34--41, 105, 136, 183, 185, 546
+interpolation, 191--192
+intervals, 73--74
+invariant relation, 117
+inverse modulo $m$, 125, 132, 147
+inversion formulas, 193
+\sub for binomial coefficients, 192--196
+\sub for Stirling numbers, 264, 310
+\sub for sums over divisors, 136--139
+irrational numbers, 238
+\sub continued fraction representations, 306
+\sub rational approximations to, 122--123
+\sub spectra of, 77, 96, 514
+\sub Stern--Brocot representations, 122--123
+Iverson, Kenneth Eugene, 24, 67, 618, 633
+\sub convention, 24--25, 31, 34, 68, 75
+\medskip
+Jacobi, Carl Gustav Jacob, 64, 618
+\sub polynomials, 543, 605
+Janson, Carl Svante, 618
+Jarden, Dov, 556, 618
+Jeopardy, 361
+joint distribution, 384
+Jonassen, Arne Tormod, 618
+Jones, Bush, 618
+Josephus, Flavius, 8, 12, 19--20, 618
+\sub numbers, 81, 97, 100
+\sub problem, 8--17, 79--81, 95, 100, 144
+\sub recurrence, generalized, 13--16, 79--81, 498
+\sub subset, 20
+Jouaillec, Louis Maurice, 632
+Jungen, Reinwald, 618, 635
+\medskip
+$K$, \see continuants
+Kafkaesque scenario, 274
+Kaplansky, Irving, 8, 618
+Karamata, Jovan, 257, 618
+Karlin, Anna Rochelle, 632
+Kauck\'y, Josef, 618, 635
+Keiper, Jerry Bruce, 619
+Kellogg, Oliver Dimon, 609
+Kent, Clark (= Kal-El), 372
+kernel functions, 370
+Ketcham, Henry King, 148
+kilometers, 301, 310, 550
+Kilroy, James Joseph, vii
+Kipling, Joseph Rudyard, 260
+Kissinger, Henry Alfred, 379
+Klamkin, Murray Seymour, 619, 633, 635
+Klarner, David Anthony, 632
+knockout tournament, 432--433
+Knoebel, Robert Arthur, 619
+Knopp, Konrad, 619, 636
+Knuth, Donald Ervin, iii--vi, viii, ix, 102, 267, 411, 506, 553, 616, %
+ 618--620, 632, 633, 636,~\cpage
+\sub numbers, 78, 97, 100
+Knuth, John Martin, 636
+Knuth, Nancy Jill Carter, ix
+Kramp, Christian, 111, 620
+Kronecker, Leopold, 521
+\sub delta notation, 24
+Kruk, John Martin, 519
+Kummer, Ernst Eduard, 206, 529, 620--621, 634
+\sub formula for hypergeometrics, 213, 217, 535
+Kurshan, Robert Paul, 501, 621
+\medskip
+$L_n$, \see Lucas numbers
+Lagny, Thomas Fantet de, 304, 621
+Lagrange (= de la Grange), Joseph Louis, comte, 470, 621, 635
+\sub identity, 64
+Lah, Ivo, 621, 634
+Lambert, Johann Heinrich, 201, 363, 613, 621
+Landau, Edmund Georg Hermann, 443, 448, 621, 634, 636
+Laplace, Pierre Simon, marquis de, 466, 606, 621
+last but not least, 132, 469
+Law of Large Numbers, 391
+lcm, 103, \see least common multiple
+leading coefficient, 235
+least common multiple, 103, 107, 145
+\sub of $\{1,\ldots,n\}$, 251, 319, 500
+least integer function, \see ceiling function
+least upper bound, 57, 61
+LeChiffre, Mark Well, 148
+left-to-right maxima, 316
+Legendre, Adrien Marie, 621, 633
+\sub polynomials, 543, 573, 575
+Lehmer, Derrick Henry, 526, 622, 633, 635
+Leibniz, Gottfried Wilhelm, Freiherr von, vii, 168, 616, 622
+Lekkerkerker, Cornelius Gerrit, 622
+Lengyel, Tam\'as L\'or\'ant, 622, 635
+levels of problems, viii, 72--73, 95, 511
+Levine, Eugene, 611, 635
+lexicographic order, 441
+lg: binary logarithm, 70
+L'Hospital, Guillaume Fran\c{c}ois Antoine de, marquis de Sainte Mesme, %
+  rule, 340, 396,~542
+L\u{\i} Sh\`anl\'an R\'ensh\=u [= Qi\=ur\`en], 269, 622
+Liang, Franklin Mark, 632
+Lieb, Elliott Hershel, 622, 636
+lies, and statistics, 195
+Lincoln, Abraham, 401
+linear difference operators, 240
+lines in the plane, 4--8, 17, 19
+Liouville, Joseph, 136--137, 622
+little oh notation, 448
+\sub considered harmful, 448--449
+Littlewood, John Edensor, 239
+ln: natural logarithm, 276
+\sub discrete analog of, 53--54
+\sub sum of, 481--482
+log: common logarithm, 449
+Logan, Benjamin Franklin (= Tex), Jr., 287, 622, 634--635
+logarithmico-exponential functions, 442--443
+logarithms, 449
+\sub binary, 70
+\sub discrete analog of, 53--54
+\sub in $O$-notation, 449
+\sub natural, 276
+Long, Calvin Thomas, 622, 634
+lottery, 387--388, 436--437
+Lo\'u Sh\`{\i}t\=uo, 622
+lower index of binomial coefficient, 154
+\sub complex valued, 211
+lower parameters of hypergeometric series, 205
+Loyd, Samuel, 560, 622
+Lucas, Fran\c cois \'Edouard Anatole, 1, 292, 622--623, 633--635
+\sub numbers, 312, 316, 556
+\L uczak, Tomasz Jan, 618
+Lyness, Robert Cranston, 501, 623
+\medskip
+Maclaurin, Colin, 469, 623
+MacMahon, Maj.~Percy Alexander, 140, 623
+magic tricks, 293
+Mallows, Colin Lingwood, 506
+Markov, Andre{\u\i} Andreevich (the elder), processes, 405
+Martian DNA, 377
+Martzloff, Jean-Claude, 623
+mathematical induction, 3, 7, 10--11, 43
+\sub backwards, 18
+\sub basis of, 3, 320--321
+\sub failure of, 17, 575
+\sub important lesson about, 508, 549
+Mathews, Edwin Lee (= 41), "!Baseball" 8, 21, 94, 105, 106,~343
+Mati{\t\i}asevich (= Matijasevich), \t{I}uri{\u\i} (= Yuri) Vladimirovich, %
+ 294, 623, 635
+Mauldin, Richard Daniel, 611
+Maxfield, Margaret Waugh, 630, 635
+Mayr, Ernst, ix, 632, 633
+McEliece, Robert James, 71
+McGrath, James Patrick, 632
+McKellar, Archie Charles, 614, 634
+mean (average) of a probability distribution, 384--399
+median, 384, 385, 437
+mediant, 116
+Melzak, Zdzislaw Alexander, vi, 623
+Mendelsohn, Nathan Saul, 623, 634
+Merchant, Arif Abdulhussein, 632
+merging, 79, 175
+Mersenne, Marin, 109--110, 131, 613, 623
+\sub numbers, 109--110, 151, 292
+\sub primes, 109--110, 127, 522--523
+Mertens, Franz Carl Joseph, 139, 623
+\sub constant, 23
+miles, 301, 310, 550
+Mills, Stella, 623
+Mills, William Harold, 623, 634
+minimum, 65, 249, 377
+Mirsky, Leon, 635
+mixture of probability distributions, 428
+mnemonics, 74, 164
+M\"obius, August Ferdinand, 136, 138, 623
+\sub function, 136--139, 145, 149, 370--371, 462--463
+mod: binary operation, 81--85
+mod: congruence relation, 123--126
+mod $0$, 82--83, 515
+mode, 384, 385, 437
+modular arithmetic, 123--129
+modulus, 82
+Moessner, Alfred, 624, 636
+Moivre, Abraham de, 297, 481, 609
+moments, 398--399
+Montgomery, Hugh Lowell, 463, 624
+Montgomery, Peter Lawrence, 624, 634
+Moriarty, James, 162
+Morse, Samuel Finley Breese, code, 302--303, 324,~551
+Moser, Leo, 624, 633
+Motzkin, Theodor Samuel, 556, 564, 618, 624
+mountain ranges, 359, 565
+mu function, \see M\"obius function
+multinomial coefficients, 168, 171--172, 569
+\sub recurrence for, 252
+multinomial theorem, 149, 168
+multiple of a number, 102
+multiple sums, 34--41, 61; \also double sums
+multiple-precision numbers, 127
+multiplicative functions, 134--136, 144, 371
+multisets, 77, 270
+mumble function, 83, 84, 88, 507, 513
+Murdock, Phoebe James, viii
+Murphy's Law, 74
+Myers, Basil Roland, 624, 635
+\medskip
+name and conquer, 2, 32, 88, 139
+National Science Foundation, ix
+natural logarithm, 53--54, 276, 481--482
+Naval Research, ix
+Navel research, 299
+nearest integer, 95
+\sub rounding to, 195, 300, 344, 491
+\sub unbiased, 507
+necessary and sufficient conditions, 72
+necklaces, 139--141, 259
+negating the upper index, 164--165
+negative binomial distribution, 402--403, 428
+negative factorial powers, 52, 63, 188
+Newman, James Roy, 630
+Newman, Morris, 635
+Newton, Sir Isaac, 189, 277, 624
+\sub series, 189--192
+Newtonian generating function, 378
+Niven, Ivan Morton, 332, 624, 633
+nonprime numbers, 105, 518
+nontransitive paradox, 410
+normal distribution, 438
+notation, x--xi, 2, 637
+\sub extension of, 49, 52, 154, 210--211, 266, 271, 311, 319
+\sub ghastly, 67, 175
+\sub need for new, 83, 115, 267
+nu function: sum of digits,
+\sub binary (radix $2$), 12, 114, 250, 525, 557
+\sub other radices, 146, 525, 552
+null case,
+\sub for spanning trees, 349, 565
+\sub for Stirling numbers, 258
+\sub for tilings, 320--321
+\sub for Tower of Hanoi, 2
+number system, 107, 119
+\sub binomial, 245
+\sub Fibonacci, 296--297, 301, 307, 310, 318
+\sub prime-exponent, 107, 116
+\sub radix, \see radix notation
+\sub residue, 126--129, 144
+\sub Stern--Brocot, \see Stern--Brocot number system
+number theory, 102--152
+\medskip
+$o$, considered harmful, 448--449
+$O$-notation, 76, 443--449
+\sub abuse of, 447--448, 489
+\sub one-way equalities with, 446--447, 489--490
+obvious, clarified, 417, 526
+odds, 410
+Odlyzko, Andrew Michael, 81, 564, 590, 616, 624, 636
+Office of Naval Research, ix
+one-way equalities, 446--447, 489--490
+open interval, 73--74, 96
+operators, 47
+\sub anti-derivative ($\int$), 48
+\sub anti-difference ($\sum$), 48
+\sub derivative ($D$), 47, 310
+\sub difference ($\Delta$), 47
+\sub equations of, 188, 191, 241, 310, 471
+\sub shift ($E$, $K$, $N$), 55, 240
+\sub theta ($\vartheta$), 219, 310
+optical illusions, 292, 293, 560
+organ-pipe order, 524
+Oz, Wizard of, 581
+\medskip
+Pacioli, Luca, 614
+Palais, Richard Sheldon, viii
+paradoxes,
+\sub chessboard, 293, 317
+\sub coin flipping, 408--410
+\sub pair of boxes, 531, 535, 539
+paradoxical sums, 57
+parallel summation, 159, 174, 208--210
+parentheses, 357--359
+parenthesis conventions, xi
+partial fraction expansions, 298--299, 338--341
+\sub for easy summation and differentiation, 64, 376, 476, 504, 586
+\sub not always easiest, 374
+\sub of $1/x{x+n\choose n}$, 189
+\sub of $1/(z^n-1)$, 558
+\sub powers of, 246, 376
+partial quotients, 306
+\sub and discrepancies, 319, 598--599, 602
+\sub large, 553, 563, 564, 602
+partial sums, \see indefinite summation
+\sub required to be positive, 359--362
+partition into nearly equal parts, 83--85
+partitions, of the integers, 77--78, 96, 99, 101
+\sub of a number, 330, 377
+\sub of a set, 258--259, 373
+Pascal, Blaise, 155, 156, 624, 633
+Pascal's triangle, 155
+\sub extended upward, 164
+\sub hexagon property, 155--156, 242, 251
+\sub row lcms, 251
+\sub row products, 243
+\sub row sums, 163, 165--166
+\sub variant of, 250
+Patashnik, Amy Markowitz, ix
+Patashnik, Oren, iii, iv, vi, ix, 102, 506, 616, 632
+Patil, Ganapati Parashuram, 624, 636
+Paule, Peter, 537, 546
+Peirce, Charles Santiago Sanders, 525, 624--625, 634
+\sub sequence, 151
+Penney, Walter Francis, 408, 625
+Penney ante, 408--410, 430, 437, 438
+pentagon, 314~(exercise~46), 430, 434
+pentagonal numbers, 380
+Percus, Jerome Kenneth, 625, 636
+perfect powers, 66
+periodic recurrences, 20, 179, 498
+permutations, 111--112
+\sub ascents in, 267--268, 270
+\sub cycles in, 259--262
+\sub excedances in, 314
+\sub fixed points in, 193--196, 393--394, 400--401, 418
+\sub left-to-right maxima in, 314
+\sub random, 393--394, 400--401, 428
+\sub up-down, 377
+\sub without fixed points, \see derangements
+personal computer, 109
+perspiration, 234--235
+perturbation method, 32--33, 43--44, 64, 179, 284--285
+Petkov\v{s}ek, Marko, 229, 575, 625, 634
+Pfaff, Johann Friedrich, 207, 214, 217, 529, 625, 634
+\sub reflection law, 217, 247, 539
+pgf: probability generating function, 394
+phages, 434, 438
+phi ($\approx1.61803$), 299--301
+\sub as canonical constant, 70
+\sub continued fraction for, 310
+\sub in fifth roots of unity, 553
+\sub in solutions to recurrences, 97, 99, 285--286
+\sub Stern--Brocot representation of, 550
+phi function, 133--135
+\sub dgf for, 371
+\sub divisibility by, 151
+Phi function: sum of $\phi$, 137--139, 462--463
+Phidias, 299
+philosophy, vii, 11, 16, 46, 71, 72, 75, 91, 170, 181, 194, 331, 467, 503, %
+ 508, 603
+phyllotaxis, 291
+pi ($\approx3.14159$, 26, 286
+\sub as canonical constant, 70, 416, 423
+\sub large partial quotients of, 564
+\sub Stern--Brocot representation of, 146
+pi function, 110--111, 452, 593
+\sub preposterous expressions for, 516
+Pig, Porky, 496
+pigeonhole principle, 130
+Pincherle, Salvatore, 617
+Pisano, Leonardo, 613, \see Fibonacci
+Pittel, Boris Gershon, 576, 618
+pizza, 4, 423
+planes, cutting, 19
+pneumathics, 164
+Pochhammer, Leo, 48, 625
+\sub symbol, 48
+pocket calculators, 67, 77, 459
+\sub failure of, 344
+Poincar\'e, Jules Henri, 625, 636
+Poisson, Sim\'eon Denis, 471, 625
+\sub distribution, 428--429, 579
+\sub summation formula, 602
+Pollak, Henry Otto, 616, 633
+P\'olya, George (= Gy\"orgy), vi, 16, 327, 508, 625, 633, 635, 636
+polygons,
+\sub dissection of, 379
+\sub triangulation of, 374
+\sub Venn diagrams with, 20
+polynomial argument, 158, 163
+\sub for rational functions, 527
+\sub opposite of, 210
+polynomially recursive sequence, 374
+polynomials, 189
+\sub Bernoulli, 367--368, 470--475
+\sub continuant, 301--309
+\sub convolution, 373
+\sub cyclotomic, 149
+\sub degree of, 158, 226
+\sub divisibility of, 225
+\sub Euler, 574
+\sub Jacobi, 543, 605
+\sub Legendre, 543, 573, 575
+\sub Newton series for, 189--191
+\sub reflected, 339
+\sub Stirling, 271--272, 290, 311, 317, 352
+Poonen, Bjorn, 501, 633
+Porter, Thomas K, 632
+Portland cement, \see concrete (in another book)
+power series, 196, \see generating functions
+\sub formal, 206, 331, 348, 532
+Pr, 381--382
+Pratt, Vaughan Ronald, 632
+preferential arrangements, 378~(exercise~44)
+primality testing, 110, 148
+\sub impractical method, 133
+prime algebraic integers, 106, 147
+prime numbers, 105--111
+\sub gaps between, 150--151, 525
+\sub largest known, 109--110
+\sub Mersenne, 109--110, 127, 522
+\sub size of $n$th, 110--111, 456--457
+\sub sum of reciprocals, 22--25
+prime to, 115
+prime-exponent representation, 107, 116
+Princeton University, ix, 427
+probabilistic analysis of an algorithm, 413--426
+probability, 195, 381--438
+\sub conditional, 416--419, 424--425
+\sub discrete, 381--438
+\sub generating functions, 394--401
+\sub spaces, 381
+probability distributions, 367
+\sub binomial, 401--402, 415, 428, 432
+\sub composition or mixture of, 428
+\sub joint, 384
+\sub negative binomial, 402--403, 428
+\sub normal, 438
+\sub Poisson, 428--429, 579
+\sub uniform, 395--396, 420--421
+problems, levels of, viii, 72--73, 95, 511
+product notation, 64, 106
+product of consecutive odd numbers, 186, 270
+progression, \see arithmetic progression, geometric progression
+proof, 4, 7
+proper terms, 239--241, 255--256
+properties, 23, 34, 72--73
+prove or disprove, 71--72
+psi function, 551
+pulling out the large part, 453, 458
+puns, ix, 220
+Pythagoras of Samos, theorem, 510
+\medskip
+quadratic domain, 147
+quicksort, 28--29, 54
+quotation marks, xi
+quotient, 81
+\medskip
+rabbits, 310
+radix notation, 11--13, 15--16, 109, 195, 526
+\sub length of, 70, 460
+\sub related to prime factors, 113--114, 146--148, 245
+Rado, Richard, 625, 635
+Rahman, Mizanur, 223, 614
+Rainville, Earl David, 529, 626
+R\=am\=anujan Aiya\.ng\=ar, Sr\=\i niv\=asa, 330
+Ramar\'e, Olivier, 548
+Ramshaw, Lyle Harold, 73, 632, 634, 636
+random constant, 399
+random variables, 383--386; \also independent random variables
+Raney, George Neal, 359, 362, 626, 635
+\sub lemma, 359--360
+\sub lemma, generalized, 362, 372
+\sub sequences, 360--361
+Rao, Dekkata Rameswar, 626, 633
+rational functions, 207--208, 224--226, 338, 527
+rational generating functions, 338--346
+\sub expansion theorems for, 340--341
+Rayleigh, John William Strutt, 3rd Baron, 77,~626
+Read, Ronald Cedric, 625
+real part, 64, 212, 451
+reciprocity law, 94
+Recorde, Robert, 446, 626
+recurrences, 1--20
+\sub and sums, 25--29
+\sub doubly exponential, 97, 100, 101, 109
+\sub floor/ceiling, 78--81
+\sub implicit, 136--138, 193--194, 284
+\sub periodic, 20, 179, 498
+\sub solving, 337--350
+\sub unfolding, 6, 100, 159--160, 312
+\sub unfolding asymptotically, 456
+referee, 175
+reference books, 42, 223, 616, 619
+reflected light rays, 291--292
+reflected polynomials, 339
+reflection law for hypergeometrics, 217, 247, 539
+regions, 4--8, 17, 19
+Reich, Simeon, 626, 636
+Reingold, Edward Martin, 70
+relative error, 452, 455
+relatively prime integers, 108, 115--123
+remainder after division, 81--82
+remainder in Euler's summation formula, 471, 474--475, 479--480
+Renz, Peter Lewis, viii
+repertoire method, 14--15, 19, 250
+\sub for Fibonacci-like recurrences, 312, 314, 372
+\sub for sums, 26, 44--45, 63
+replicative function, 100
+repunit primes, 516
+residue calculus, 495
+residue number system, 126--129, 144
+retrieving information, 411--413
+rewards, monetary, ix, 256, 497, 525, 575
+Rham, Georges de, 626, 635
+Ribenboim, Paolo, 555, 626, 634
+Rice, Stephan Oswald, 626
+Rice University, ix
+Riemann, Georg Friedrich Bernhard, 205, 626, 633
+\sub hypothesis, 526
+Riemann's zeta function, 65, 595
+\sub as generalized harmonic number, 277--278, 286
+\sub as infinite product, 371
+\sub as power series, 601
+\sub dgf's involving, 370--371, 373, 463, 566, 569
+\sub evaluated at integers, 238, 286, 571, 595, 597
+rising factorial powers, 48
+\sub binomial theorem for, 245
+\sub complex, 211
+\sub negative, 63
+\sub related to falling powers, 63, 312
+\sub related to ordinary powers, 263, 598
+Roberts, Samuel, 626, 633
+rocky road, 36, 37
+R{\o}dseth, {\O}ystein Johan, 626, 634
+Rolletschek, Heinrich Franz, 514
+roots of unity, 149, 204, 375, 574, 598
+\sub fifth, 553
+\sub modulo $m$, 128--129
+Roscoe, Andrew William, 620
+Rosser, John Barkley, 111, 626
+Rota, Gian-Carlo, 516, 626
+roulette wheel, 74--76, 453
+rounding to nearest integer, 95, 195, 300, 344,~491
+\sub unbiased, 507
+Roy, Ranjan, 626, 634
+rubber band, 274--275, 278, 312, 493
+ruler function, 113, 146, 148
+running time, 413, 425--426
+\sub $O$-notation for, abused, 447--448
+Ruzsa, Imre Zolt\'an, 611
+\medskip
+Saalsch\"utz, Louis, 214, 627, 634
+\sub identity, 214--215, 234--235, 529, 531
+Saltykov, Al'bert Ivanovich, 463, 627
+sample mean and variance, 391--393, 427
+sample third cumulant, 429
+samplesort, 354
+sandwiching, 157, 165
+S\'ark\"ozy, Andr\'as, 548, 627
+Sawyer, Walter Warwick, 207, 627
+Sch\"affer, Alejandro Alberto, 632
+Schinzel, Andrzej, 525
+Schl\"omilch, Oscar Xaver, 627
+Schmidt, Asmus Lorenzen, 634
+Schoenfeld, Lowell, 111, 626
+Sch\"onheim, Johanen, 608
+Schr\"oder, Ernst, 627, 635
+Schr\"odinger, Erwin, 430
+Schr\"oter, Heinrich Eduard, 627, 635
+Sch\"utzenberger, Marcel Paul, 636
+science and art, 234
+Scorer, Richard Segar, 627, 633
+searching a table, 411--413
+Seaver, George Thomas (= 41), "!Baseball" 8, 21, 94, 105, 106, 343
+secant numbers, 317, 559, 570, 620
+second-order Eulerian numbers, 270--271
+second-order Fibonacci numbers, 375
+second-order harmonic numbers, 277, 280, 311, 550--552
+Sedgewick, Robert, 632
+Sedl\'a\v cek, Ji\v r{\'\i}, 627, 635
+self-certifying algorithms, 104
+self-describing sequence, 66, 495
+"self reference", 59, 95, 531--540, 616, 653
+set inclusion in $O$-notation, 446--447, 490
+Shallit, Jeffrey Outlaw, 627, 635
+Sharkansky, Stefan Michael, 632
+Sharp, Robert Thomas, 273, 627
+sherry, 433
+shift operator, 55, 240
+\sub binomial theorems for, 188, 191
+Shiloach, Joseph (= Yossi), 632
+Shor, Peter Williston, 633
+Sicherman, George Leprechaun, 636
+sideways addition, 12, 114, 146, 250, 552
+Sierpi\'nski, Wac{\l}aw, 87, 627, 634
+sieve of Eratosthenes, 111
+Sigma-notation, 22--25
+\sub ambiguity of, 245
+signum function, 502
+Silverman, David L, 627, 635
+similar hypergeometric terms, 541
+skepticism, 71
+Skiena, Steven Sol, 548
+Sloane, Neil James Alexander, 42, 341, 464, 604, 628, 633
+Slowinski, David Allen, 109
+small cases, 2, 5, 9, 155, 320--321; \also empty~case
+Smith, Cedric Austen Bardell, 627, 633
+Snowwalker, Luke, 435
+Solov'ev, Aleksandr Danilovitch, 408, 628
+solution, 3, 337
+sorting,
+\sub asymptotic efficiency of, 447--449
+\sub bubblesort, 448
+\sub merge sort, 79, 175
+\sub possible outcomes, 378
+\sub quicksort, 28--29, 54
+\sub samplesort, 354
+spanning trees,
+\sub of complete graphs, 368--369
+\sub of fans, 348--350, 356
+\sub of wheels, 374
+Spec, \see spectra
+special numbers, 257--319
+spectra, 77--78, 96, 97, 99, 101
+\sub generating functions for, 307, 319
+spinning coins, 401
+spiral function, 99
+Spohn, William Gideon, Jr., 628
+Sports, \see baseball, football, frisbees, golf, tennis
+Sprugnoli, Renzo, 564
+square pyramidal numbers, 42
+square root,
+\sub of $1$ (mod $m$), 128--129
+\sub of $2$, 100
+\sub of $3$, 378
+\sub of $-1$, 22
+squarefree, 145, 151, 373, 525, 548
+squares, sum of consecutive, 41--46, 51, 180, 245, 269, 284, 288, 367, 444, 470
+stack size, 360--361
+stacking bricks, 313, 374
+stacking cards, 273--274, 278, 309
+Stallman, Richard Matthew, 628
+standard deviation, 388, 390--394
+Stanford University, v, vii, ix, 427, 458, 632, 634, \cpage
+Stanley, Richard Peter, 270, 534, 615, 628, 635,~636
+Staudt, Karl Georg Christian von, 628, 635
+Steele, Guy Lewis, Jr., 628
+Stegun, Irene Anne, 42, 604
+Stein, Sherman Kopald, 633
+Steiner, Jacob, 5, 628, 633
+Steinhaus, Hugo Dyonizy, 636
+Stengel, Charles Dillon (= Casey), "!Baseball" 42
+step functions, 87
+Stern, Moriz Abraham, 116, 628
+Stern--Brocot number system, 119--123
+\sub related to continued fractions, 306
+\sub representation of $\sqrt3$, 572
+\sub representation of $\gamma$, 306
+\sub representation of $\pi$, 146
+\sub representation of $\phi$, 550
+\sub representation of $e$, 122, 150
+\sub simplest rational approximations from, 122--123, 146, 519
+Stern--Brocot tree, 116--123, 148, 525
+\sub largest denominators in, 319
+\sub related to continued fractions, 305--306
+Stern--Brocot wreath, 515
+Stewart, Bonnie Madison, 614, 633
+Stickelberger, Ludwig, 628, 633
+Stieltjes, Thomas Jan, 617, 628, 633
+ \sub constants, 595, 601
+Stirling, James, 192, 195, 210, 257, 258, 297, 481, 628
+\sub approximation, 112, 452, 481--482, 491, 496
+\sub approximation, perturbed, 454--455
+\sub constant, 481, 485--489
+\sub polynomials, 271--272, 290, 311, 317, 352
+\sub triangles, 258, 259, 267
+Stirling numbers, 257--267
+\sub as sums of products, 570
+\sub asymptotics of, 495, 602
+\sub combinatorial interpretations, 258--262
+\sub convolution formulas, 272, 290
+\sub duality of, 267
+\sub generalized, 271--272, 311, 316, 319, 598
+\sub generating functions for, 351--352, 559
+\sub identities for, 264--265, 269, 272, 290, 311, 317, 378
+\sub inversion formulas for, 310
+\sub of the first kind, 259
+\sub of the second kind, 258
+\sub related to Bernoulli numbers, 289--290, 317~(exercise~76)
+\sub table of, 258, 259, 267
+Stone, Marshall Harvey, vi
+Straus, Ernst Gabor, 564, 611, 624
+Strehl, Karl Ernst Volker, 549, 629, 634
+subfactorial, 194--196, 250
+summand, 22
+summation, 21--66
+\sub asymptotic, 87--89, 466--496
+\sub by parts, 54--56, 63, 279
+\sub changing the index of, 30--31, 39
+\sub definite, 49--50, 229--241
+\sub difficulty measure for, 181
+\sub factors, 27--29, 64, 236, 248, 275, 543
+\sub in hypergeometric terms, 224--229
+\sub indefinite, \see indefinite summation
+\sub infinite, 56--62, 64
+\sub interchanging the order of, 34--41, 105, 136, 183, 185, 546
+\sub mechanical, 229--241
+\sub on the upper index, 160--161, 175--176
+\sub over divisors, 104--105, 135--137, 141, 370
+\sub over triangular arrays, 36--41
+\sub parallel, 159, 174, 208--210
+sums, 21--66; \also summation
+\sub absolutely convergent, 60--62, 64
+\sub and recurrences, 25--29
+\sub approximation of, by integrals, 45, 276--277, 469--475
+\sub divergent, \see divergent sums
+\sub double, \see double sums
+\sub doubly infinite, 59, 98, 482--483
+\sub empty, 24, 48
+\sub floor/ceiling, 86--94
+\sub formal, 321; \also formal power series
+\sub hypergeometric, \see hypergeometric series
+\sub infinite, 56--62, 64
+\sub multiple, 34--41, 61; \also double sums
+\sub notations for, 21--25
+\sub of consecutive cubes, 51, 63, 283, 289, 367
+\sub of consecutive integers, 6, 44, 65
+\sub of consecutive $m$th powers, 42, 283--285, 288--290, 366--368
+\sub of consecutive squares, 41--46, 51, 180, 245, 269, 284, 288, 367, 444, 470
+\sub of harmonic numbers, 41, 56, 279--282, 312--313, 316, 354--355
+\sub paradoxical, 57
+\sub tails of, 466--469, 488--489, 492
+Sun Ts\u u [= S\=unz\u{\i}, Master Sun], 126
+sunflower, 291
+super generating functions, 353, 421
+superfactorials, 149, 243
+Swanson, Ellen Esther, viii
+Sweeney, Dura Warren, 629
+Swinden, Benjamin Alfred, 633
+Sylvester, James Joseph, 133, 629, 633
+symmetry identities,
+\sub for binomial coefficients, 156--157, 183
+\sub for continuants, 303
+\sub for Eulerian numbers, 268
+Szegedy, M\'ari\'o, 525, 608, 629
+Szeg\H{o}, G\'abor, 625, 636
+\medskip
+$T_n$, \see tangent numbers
+tail exchange, 466--469, 486--489
+tail inequalities, 428, 430
+tail of a sum, 452--455
+tale of a sum, \see squares
+tangent function, 287, 317
+tangent numbers, 287, 312, 317, 620
+Tanny, Stephen Michael, 629, 635
+Tartaglia, Nicol\`o, triangle, 155
+Taylor, Brook, series, 163, 191, 287, 396, 470--471
+telescoping, 50, 232, 236, 255
+tennis, 432--433
+term, 21
+\sub hypergeometric, 224, 243, 245, 527, 575
+term ratio, 207--209, 211--212, 224--225
+\TeX, 219, 432, \cpage
+Thackeray, Henry St.~John, 618
+Theisinger, Ludwig, 629, 634
+theory of numbers, 102--152
+theory of probability, 381--438
+theta functions, 483, 524
+theta operator, 219--221, 347
+\sub converting between $D$ and $\vartheta$, 310
+Thiele, Thorvald Nicolai, 397, 398, 629
+thinking, 503
+\sub big, 2, 441, 458, 483, 486
+\sub not at all, 56, 230, 503
+\sub small, \see downward generalization, small cases
+three-dots ($\cdots@$) notation, 21
+\sub advantage of, 21, 25, 50
+\sub disadvantage of, 25
+\sub elimination of, 108
+tilings, \see domino tilings
+Titchmarsh, Edward Charles, 629, 636
+Todd, Horace, 501
+Toledo, Ohio, 73
+Tong, Christopher Hing, 632
+totient function, 133--135
+\sub dgf for, 371
+\sub divisibility by, 151
+\sub summation of, 137--144, 150, 462--463
+Toto, 581
+tournament, 432--433
+Tower of Brahma, 1, 4, 278
+Tower of Hanoi, 1--4, 26--27, 109, 146
+\sub variations on, 17--20
+Trabb Pardo, Luis Isidoro, 632
+transitive law, 124
+\sub failure of, 410
+traps, 154, 157, 183, 222, 542
+trees,
+\sub 2-3 trees, 636
+\sub binary, 117
+\sub of bees, 291
+\sub spanning, 348--350, 356, 368--369, 374
+\sub Stern--Brocot, \see Stern--Brocot tree
+triangular array, summation over, 36--41
+triangular numbers, 6, 155, 195--196, 260, 380
+triangulation, 374
+Tricomi, Francesco Giacomo Filippo, 629, 636
+tridiagonal matrix, 319
+trigonometric functions,
+\sub related to Bernoulli numbers, 286--287, 317
+\sub related to probabilities, 435, 437
+\sub related to tilings, 379
+trinomial coefficients, 168, 171, 255, 571
+\sub middle, 490
+trinomial theorem, 168
+triphages, 434
+trivial, clarified, 129, 417--418, 618
+Tur\'an, Paul, 636
+typefaces, viii--ix, \cpage
+\medskip
+Uchimura, Keisuke, 605, 635
+unbiased estimate, 392, 429
+unbiased rounding, 507
+uncertainty principle, 481
+undetermined coefficients, 529
+unexpected sum, 167, 215--216, 236, 247
+unfolding a recurrence, 6, 100, 159--160, 312
+\sub asymptotically, 456
+Ungar, Peter, 629
+uniform distribution, 395--396, 418--419
+uniformity, deviation from, 152; \also discrepancy
+unique factorization, 106--107, 147
+unit, 147
+unit fractions, 95, 101, 150
+unwinding a recurrence, \see unfolding a recurrence
+up-down permutations, 377
+upper index of binomial coefficient, 154
+upper negation, 164--165
+upper parameters of hypergeometric series, 205
+upper summation, 160--161, 176
+useless identity, 223, 254
+Uspensky, James Victor, 615, 629, 633
+\medskip
+$V$: variance, 387--398, 419--425
+van der Poorten, Alfred Jacobus, 629
+Vandermonde, Alexandre Th\'eophile, 169, 629,~634\kern-6pt
+Vandermonde's convolution, 169--170
+\sub as a hypergeometric series, 211--213
+\sub combinatorial interpretation, 169--170
+\sub derived mechanically, 234
+\sub derived from generating functions, 198
+\sub generalized, 201--202, 218--219, 248
+\sub with half-integers, 187
+vanilla, 36
+Vardi, Ilan, 525, 548, 603, 620, 629, 633, 636
+variance of a probability distribution, 387--398, 419--425
+\sub infinite, 428, 587
+Veech, William Austin, 514
+Venn, John, 498, 630, 633
+\sub diagram, 17, 20
+venture capitalists, 493--494
+violin string, 29
+vocabulary, 75
+Voltaire, de (= Arouet, Fran\c{c}ois Marie), 450
+von Staudt, Karl Georg Christian, 628, 635
+Vyssotsky, Victor Alexander, 548
+\medskip
+Wall, Charles Robert, 607, 635
+Wallis, John, 630, 635
+Wapner, Joseph Albert, 43
+war, 8, 16, 85, 434
+Waring, Edward, 630, 635
+Waterhouse, William Charles, 630, 635
+Watson, John Hamish, 229, 405
+Waugh, Frederick Vail, 630, 635
+Weaver, Warren, 630
+Weber, Heinrich, 630
+Weisner, Louis, 516, 630
+Wermuth, Edgar Martin Emil, 603, 630
+Weyl, Claus Hugo Hermann, 87, 630
+Wham-O, 435, 443
+wheel, 74, 374
+\sub big, 75
+\sub of Fortune, 453
+Whidden, Samuel Blackwell, viii
+Whipple, Francis John Welsh, 630, 634
+\sub identity, 253
+Whitehead, Alfred North, 91, 503, 603, 630
+Wiles, Andrew John, 131
+Wilf, Herbert Saul, 81, 240, 241, 514, 549, 575, 620, 624, 630--631, 634
+Williams, Hugh Cowie, 631, 633
+Wilquin, Denys, 634
+Wilson, Sir John, theorem, 132--133, 148, 516, 609
+Wilson, Martha, 148
+wine, 433
+Witty, Carl Roger, 509
+Wolstenholme, Joseph, 631, 635
+\sub theorem, 554
+Wood, Derick, 631, 633
+Woods, Donald Roy, 628
+Woolf, William Blauvelt, viii
+worm,
+\sub and apple, 430
+\sub on rubber band, 274--275, 278, 312, 493
+Worpitzky, Julius Daniel Theodor, 631
+\sub identity, 269
+wreath, 515
+Wrench, John William, Jr., 600, 606, 636
+Wright, Sir Edward Maitland, 111, 617, 631, 633
+Wythoff (= Wijthoff), Willem Abraham, 614
+\medskip
+Yao, Andrew Chi-Chih, ix, 632
+Yao, Foong Frances, ix, 632
+Ya\'o, Q\'{\i}, 622
+Youngman, Henry (= Henny), 175
+\medskip
+zag, \see zig
+Zagier, Don Bernard, 238
+Zapf, Hermann, viii, 620, \cpage
+Zave, Derek Alan, 631, 635
+Zeckendorf, Edouard, 631
+\sub theorem, 295--296, 563
+Zeilberger, Doron, ix, 229--231, 238, 240, 241, 631, 634
+zero, not considered harmful, 24--25, 159
+\sub strongly, 24--25
+zeta function, 65, 595
+\sub and the Riemann hypothesis, 526
+\sub as generalized harmonic number, 277--278, 286
+\sub as infinite product, 371
+\sub as power series, 601
+\sub dgf's involving, 370--371, 373, 463, 566, 569
+\sub evaluated at integers, 238, 286, 571, 595, 597
+Zhu Shijie, \see Chu Shih-Chieh
+zig, 7--8, 19
+zig-zag, 19
+Zipf, George Kingsley, law, 419
+\eject % omit this if last column doesn't nearly fill the page
+\bye

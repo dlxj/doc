@@ -1,0 +1,443 @@
+% Preface to Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\refin bib
+\refin chap1
+\refin chap2
+\refin chap3
+\refin chap4
+\refin chap5
+\refin chap6
+\refin chap7
+\refin chap8
+\refin chap9
+
+\pageno=-5
+
+\beginchapter {} Preface
+
+THIS BOOK IS BASED on a course of the same name
+\g\noindent\llap{``}Audience, level, and treatment\dash---a description of such matters
+is what prefaces are supposed to be about.''\par
+\hfill\kern-10pt\dash---P.\thinspace R.\thinspace "Halmos"
+ [|halmos-auto|]\g % p232
+that has been taught annually
+at "Stanford University" since 1970. About fifty students have taken it each
+year\dash---juniors and seniors, but mostly graduate students\dash---and
+alumni of these classes have begun to spawn similar courses elsewhere.
+Thus the time seems ripe to present the
+material to a wider audience (including sophomores).
+
+It was a dark and stormy decade when Concrete Mathematics was born.
+% Line breaks in the next paragraph are for Amy! -- OP
+% (here's what he started with and revised:)
+%People everywhere were questioning
+%everything about university education. John "Hammersley" wrote an influential
+%article ``On the enfeeblement of mathematical skills by `Modern Mathematics'
+%and by similar soft intellectual trash in schools and
+%universities''~[|hammersley|]; other mathematicians were asking
+%``Can mathematics be saved?''~[|spohn|]. One of the present authors (DEK)
+%had just published the first volume of a planned series of books on
+%{\sl The Art of Computer Programming\/}~[|knuth1|], and he had found
+%that the mathematics required for a comprehensive understanding of
+%computer programs was quite different from what he'd learned as a
+%mathematics major in college. Therefore he decided to introduce a new
+Long-held values were constantly being questioned during those turbulent
+years; college campuses were hotbeds of controversy. The college curriculum
+itself was challenged, and mathematics did not escape scrutiny. John Ham%
+mersley had just written a thought-provoking article ``On the enfeeblement of
+mathematical skills by `Modern Mathematics' and by similar soft intellectual
+trash in schools and universities''\thinspace[|hammersley|]; %
+other worried mathematicians [|spohn|]
+even asked, ``Can mathematics be saved?''
+\g\noindent\llap{``}People do acquire a little brief authority by equipping themselves with
+jargon: they can pontificate and air a superficial expertise. But what we should
+%ask of the educated mathematician is not what he can speechify about, nor
+%even what he knows about the existing corpus of mathematical knowledge,
+%but rather what can he now do with his learning and whether he can actually solve
+% [changes approved by Hammersley, May 88]
+ask of educated mathematicians is not what they can speechify about, nor
+even what they know about the existing corpus of mathematical knowledge,
+but rather what can they now do with their learning and whether
+they can actually solve
+mathematical problems arising in practice. In short, we look for deeds not words.''
+\par\hfill\kern-15pt\dash---J.\thinspace Hammersley~[|hammersley|]\g
+ One of the present authors had
+embarked on a series of books called {\sl The Art of Computer
+ \null Programming}, and
+in writing the first volume he (DEK) had found that there were
+ \null mathematical
+tools missing from his repertoire; the mathematics he needed for a thorough,
+well-grounded understanding of computer programs was quite different from
+what he'd learned as a mathematics major in college. So he introduced a new
+%"!Knuth, Don" "!philosophy"
+course, teaching what he wished somebody had taught him.
+
+\looseness=-1
+The course title ``Concrete Mathematics'' was originally intended
+as an antidote to ``Abstract Mathematics,\qback'' since concrete
+classical results were rap\-idly being swept out of the modern mathematical
+curriculum by a new wave of abstract ideas popularly called the
+``New Math.\qback'' Abstract mathematics is a wonderful subject, and
+there's nothing wrong with it: It's beautiful, general, and useful.
+But its adherents had become deluded that the rest of mathematics was
+inferior and no longer worthy of attention. The goal of generalization
+had become so fashionable that a generation of mathematicians had
+become unable to relish beauty in the particular, to enjoy the challenge
+of solving quantitative problems, or to appreciate the value of technique.
+Abstract mathematics was becoming inbred and losing touch with
+reality; mathematical education needed a concrete counterweight
+in order to restore a healthy balance.
+
+When DEK taught Concrete Mathematics at Stanford for the first time,
+he explained the somewhat strange title by saying that it was his attempt
+"!Knuth, Don"
+to teach a math course that was hard instead of soft. He announced that,
+contrary to the expectations of some of his colleagues, he was
+{\it not\/} going to teach the Theory of Aggregates, nor "Stone"'s "!Cech"
+Embedding Theorem, nor even the Stone--\v Cech compactification.
+\g\noindent\llap{``}The heart of mathematics consists of concrete examples and
+concrete problems.''\par\hfill\kern-10pt\dash---P.\thinspace R.\thinspace
+ "Halmos" [|halmos-write|]\g % p129
+"!Portland cement, \string\see Concrete (in another book)"
+(Several students from the civil engineering department got up
+and quietly left the room.)
+
+Although Concrete Mathematics began as a reaction against other trends,
+the main reasons for its existence were positive instead of negative.
+And as the course continued its popular place in the curriculum,
+its subject matter ``solidified'' and proved to be valuable in a variety
+of new applications. Meanwhile, independent confirmation for the
+appropriateness of the name came from another direction, when
+\g\noindent\llap{``}It is downright sinful to teach the abstract before the concrete.''\par
+\hfill\kern-10pt\dash---Z.\thinspace A.\thinspace Melzak [|melzak|]\g
+Z.\thinspace A. "Melzak" published two volumes entitled
+{\sl Companion to Concrete Mathematics\/}~[|melzak|].
+
+The material of concrete mathematics may seem at first to be a
+disparate bag of tricks, but practice makes it into a disciplined
+set of tools. Indeed, the techniques have an underlying unity
+and a strong appeal for many people. When another one of the authors
+(RLG) first taught the course in 1979, the students had such fun that
+"!Graham, Ron"
+they decided to hold a class reunion a year later.
+
+But what exactly is Concrete Mathematics? It is a blend
+"!Concrete math, defined"
+\g Concrete Mathematics is a bridge to~abstract mathematics.\g
+of {\sc con}tinuous and dis{\sc crete} mathematics. More
+concretely, it is the controlled manipulation of mathematical
+formulas, using a collection of techniques for solving problems.
+Once you, the reader, have learned the material in this book,
+all you will need is a cool head, a large sheet of paper, and
+fairly decent handwriting in order to evaluate horrendous-looking
+sums, to solve complex recurrence relations, and to discover
+subtle patterns in data. You will be so fluent in algebraic techniques
+that you will often find it easier to obtain exact results than to
+settle for approximate answers that are valid only in a limiting sense.
+
+The major topics treated in this book include
+\g\noindent\llap{``}The advanced reader who skips parts that appear too elementary
+may miss more than the less advanced reader who skips parts
+that appear too complex.''\par\hfill\dash---G. "P\'olya" [|polya|]\g
+ sums, recurrences,
+elementary number theory, binomial coefficients,
+generating functions, discrete probability, and asymptotic methods.
+The emphasis is on manipulative technique rather than on existence
+theorems or combinatorial reasoning;
+the goal is for each reader to become as familiar with discrete operations
+(like the greatest-integer function and finite summation) as a
+student of calculus is familiar with continuous operations
+(like the absolute-value function and infinite integration).
+
+Notice that this list of topics is quite different from what is
+usually taught nowadays in undergraduate courses entitled ``Discrete
+Mathematics.\qback'' Therefore the subject needs a distinctive name,
+and ``Concrete Mathematics'' has proved to be as suitable as any other.
+\g (We're not bold enough to try Distinuous Mathematics.)\g
+
+The original textbook for Stanford's course on concrete mathematics
+was the ``Mathematical Preliminaries'' section in {\sl
+The Art of Computer Programming\/}~[|knuth1|].
+But the presentation in those 110 pages is quite terse, so another
+author~(OP) was inspired to draft a lengthy set of supplementary
+"!Patashnik, Oren"
+notes. The present book is an outgrowth of those notes; it is
+an expansion of,
+and a more leisurely introduction to, the material of Mathematical
+Preliminaries. Some of the more advanced
+parts have been omitted; on the other hand, several
+topics not found there have been included here so that the story
+will be complete.
+
+The authors have enjoyed putting this book together because the subject
+began to jell and to take on a life of its own before our eyes; this
+\g\noindent\llap{``}\dots\ a concrete life~preserver thrown to students
+sinking in a sea of abstraction.''\par\hfill\dash---W. "Gottschalk"\g
+book almost seemed to write itself. Moreover, the somewhat unconventional
+approaches we have adopted in several places have seemed to fit together
+so well, after these years of experience,
+that we can't help feeling that this book is a kind of manifesto
+about our favorite way to do mathematics. "!philosophy"
+So we think the book has turned
+out to be a tale of mathematical beauty and surprise, and we hope that
+our readers will share at least $\epsilon$ of the pleasure we had
+while writing it.
+
+Since this book was born in a university setting, we have tried to
+capture the spirit of a contemporary classroom by
+adopting an informal style. Some people think that mathematics
+is a serious business that must always be cold and dry; but we think
+mathematics is fun, and we aren't ashamed to admit the fact.
+Why should a strict boundary line be drawn between work and play?
+Concrete mathematics is full of appealing patterns; the manipulations
+are not always easy, but the answers can be astonishingly
+attractive. The joys and sorrows of mathematical work are reflected
+explicitly in this book because they are part of our lives.
+
+Students always know better than their teachers, so we have asked
+the first students of this material to contribute their
+\g Math graffiti:\par\smallskip
+"Kilroy" wasn't "Haar".\par
+Free the group.\par
+Nuke the kernel.\par
+Power to the~$n$.\par
+$N{=}1\Rightarrow P{=}NP$.\g
+frank opinions, as ``graffiti'' in the margins. Some of these marginal
+markings are merely corny, some are profound; some of them warn
+about ambiguities or obscurities, others are typical comments made
+by wise guys in the back row; some are positive, some are negative,
+some are zero. But they all are real indications of feelings that
+should make the text material easier to assimilate. (The inspiration
+for such marginal notes comes from a student handbook entitled
+{\sl Approaching Stanford}, where the official university line is
+counterbalanced by the remarks of outgoing students. For example,
+\g I have only a marginal interest in this subject.\g
+"Stanford" says, ``There are a few things you cannot miss in this amorphous
+shape which is Stanford''; the margin says, ``Amorphous \dots\ what
+the h{\tt***} does that mean? Typical of the pseudo-intellectualism
+around here.'' \ Stanford: ``There is no end to the potential
+of a group of students living together.'' \ Graffito: ``Stanford dorms
+are like zoos without a keeper.'')
+
+The margins also include
+\g This was the most enjoyable course I've ever had. But it might be nice
+to summarize the material as you go~along.\g
+direct quotations from famous mathematicians of past generations,
+giving the actual words in which they announced some of their
+fundamental discoveries. Somehow it seems appropriate to
+mix the words of "Leibniz", "Euler", "Gauss", and others with those of
+the people who will be continuing the work. Mathematics is an
+ongoing endeavor for people everywhere; many strands are being woven
+into one rich fabric.
+
+This book contains more than 500 "exercises", divided into six
+\g I see:\par Concrete mathematics means drilling.\g
+"!exercises, levels of"
+categories:
+
+\def\\#1{\smallskip\item{$\bullet$}{\subsubtitle#1\enspace}\ignorespaces}
+\\{\kern-.05em Warmups} are exercises that {\sc every reader} should try to
+	do when first reading the material.
+\\{Basics} are exercises to develop facts that are best learned by trying
+\g The homework was tough but I learned a lot. It was worth every hour.\g
+	one's own derivation rather than by reading somebody else's.
+\\{Homework exercises} are problems intended to deepen an understanding
+	of material in the current chapter.
+\\{Exam problems} typically involve ideas from two or more chapters
+	simultaneously; they are generally intended for use in take-home
+\g Take-home exams are vital\dash---keep them.\g
+	exams (not for in-class exams under time pressure).
+\\{Bonus problems} go beyond what an average student of concrete
+	mathematics is expected to handle while taking a course based
+\g Exams were harder than the homework led me to expect.\g
+	on this book; they extend the text in interesting ways.
+\\{Research problems} may or may not be humanly solvable, but the ones
+	presented here seem to be worth a try (without time pressure).
+\smallskip\noindent
+"Answers" to all the exercises appear in Appendix A, often with
+additional information about related results. (Of course, the ``answers''
+to research problems are incomplete; but even in these cases,
+partial results or hints
+are given that might prove to be helpful.) Readers are encouraged to
+look at the answers, especially the answers to the warmup problems,
+but only {\sc after} making a serious attempt to solve the problem
+\g Cheaters may pass this course by just copying the answers, but they're
+only "cheating" themselves.\g
+without peeking.
+
+We have tried in Appendix C to give proper credit to the sources of
+each exercise, since a great deal of creativity and/or luck often goes into the
+design of an instructive problem. Mathematicians have unfortunately
+developed a tradition of borrowing exercises without any acknowledgment;
+we believe that the opposite tradition, practiced for example by books
+and magazines about chess (where names, dates, and locations of original chess
+problems are routinely specified) is far superior. However, we have not
+\g Difficult exams don't take into account students who have
+other classes to~prepare~for.\g
+been able to pin down the sources of many problems that have become
+part of the folklore. If any reader knows the origin of an exercise for
+which our citation is missing or inaccurate, we would be glad to learn
+the details so that we can correct the omission in subsequent
+editions of this book.
+
+The "typeface" used for mathematics throughout this book is a new
+design by Hermann "Zapf"~[|knuth-zapf|],
+commissioned by the "American Mathematical
+Society" and developed with the help of a committee that included
+B.~"Beeton", R.\thinspace P. "Boas", L.\thinspace K. "Durst",
+D.\thinspace E. "Knuth",
+P.~"Murdock", R.\thinspace S. "Palais", P.~"Renz",
+ E.~"Swanson", S.\thinspace B. "Whidden",
+and W.\thinspace B. "Woolf". The underlying philosophy of Zapf's design is
+to capture the flavor of mathematics as it might be written by a
+mathematician with excellent handwriting. A handwritten rather than
+mechanical style is appropriate because people generally create mathematics
+with pen, pencil, or chalk. (For example, one of the trademarks of
+the new design is the symbol for zero, `$0$', which is slightly pointed
+at the top because a handwritten zero rarely closes together smoothly
+\g I'm unaccustomed to this face.\g
+when the curve returns to its starting point.) The letters are upright,
+not italic, so that subscripts, superscripts, and accents are more easily
+fitted with ordinary symbols. This new type family has been named
+{\sl "AMS~Euler"}, after the great Swiss mathematician Leonhard "Euler"
+(1707--1783) who discovered so much of mathematics as we know it today.
+The alphabets include Euler Text ($Aa\,Bb\,Cc$ through $Xx\,Yy\,Zz$),
+Euler Fraktur ($\frak Aa\,Bb\,Cc$ through $\frak Xx\,Yy\,Zz$), and
+Euler Script Capitals ($\scr A\,B\,C$ through $\scr X\,Y\,Z$), as
+well as Euler Greek ($A\alpha\,B\beta\,\Gamma\gamma$ through
+$X\chi\,\Psi\psi\,\Omega\omega$) and special symbols such as
+$\wp$ and~$\aleph$. We are especially pleased to be able to inaugurate the
+Euler family of typefaces in this book, because Leonhard Euler's spirit
+truly lives on every page: Concrete mathematics is Eulerian mathematics.
+
+The authors are extremely grateful to
+\g Dear prof: Thanks for (1)~the "pun"s, (2)~the subject matter.\g
+Andrei "Broder", Ernst~"Mayr",
+Andrew "Yao", and Frances "Yao", who contributed
+greatly to this book during the years that they taught Concrete
+Mathematics at Stanford.
+ Furthermore we offer 1024 thanks to the
+teaching assistants who creatively transcribed what took place in class
+each year and who helped to design the examination questions; their
+names are listed in Appendix~C\null. This book, which is essentially a
+compendium of sixteen years' worth of lecture notes, would have
+been impossible without their first-rate work.
+
+\looseness=-1
+Many other people have helped to make this book a reality. For example,
+\g I don't see how what I've learned will ever help me.\g
+we wish to commend the students at "Brown", "Columbia", "CUNY",
+"Princeton", "Rice", and "Stanford"
+who contributed the choice graffiti and helped to debug our first drafts.
+Our contacts at "Addison-Wesley" were especially efficient and helpful;
+in particular, we wish to thank our publisher (Peter "Gordon"), production
+supervisor (Bette "Aaronson"), designer (Roy "Brown"), and copy editor
+(Lyn "Dupr\'e"). The "National Science Foundation" and the "Office of Naval
+Research" have given invaluable support.
+"Cheryl Graham" was tremendously helpful as we prepared the index.
+ And above all, we wish to thank our wives (Fan, Jill, and Amy)
+"!Knuth, Jill" "!Chung, Fan" "!Patashnik, Amy"
+\g I had a lot of trouble in this class, but I know it sharpened my
+math skills and my thinking skills.\g
+for their patience, support, encouragement, and ideas.
+
+This second edition features a new Section 5.8, which describes some
+important ideas that Doron "Zeilberger" discovered shortly after the first
+edition went to press. Additional improvements to the first printing can
+also be found on almost every page.
+
+We have tried to produce a perfect book, but we are imperfect authors.
+Therefore we solicit help in correcting any mistakes that we've made.
+A~"reward" of \$2.56 will gratefully be paid to the first finder of
+any error, whether it is mathematical, historical, or typographical.
+\g I would advise the casual student to stay away from this course.\g
+
+\smallskip
+{\advance\baselineskip-1pt
+\halign to\hsize{\sl#\hfil\tabskip=0pt plus 1fil&\hfil#\tabskip=0pt\cr
+Murray Hill, New Jersey&\dash---RLG\cr
+"!Knuth, Don" "!Graham, Ron" "!Patashnik, Oren"
+and Stanford, California&DEK\cr
+May 1988 and October 1993&OP\cr}
+}
+\vfill\eject
+\tracingpages=1
+\beginchapter {} A Note on Notation
+
+SOME OF THE SYMBOLISM in this book has not (yet?) become standard.
+Here is a list of "notation"s that might be unfamiliar to readers
+who have learned similar material from other books,
+together with the page numbers where these notations are explained.
+(See the general index, at the end of the book, for references to more
+standard notations.)
+
+\smallskip
+\begingroup \advance\baselineskip 7pt plus 1pt \advance\lineskip 7pt plus 1pt
+\advance\lineskiplimit7pt
+\halign to\hsize{\displaymath#$\hfill\tabskip10pt plus20pt&
+ #\hfil&\hfil#\tabskip0pt\cr
+\openup5pt
+\hbox{\sl Notation}&\sl Name&\sl Page\cr
+\noalign{\vskip1pt}
+\ln x&natural logarithm: $\log_e x$&|nn:ln|\cr
+\lg x&binary logarithm: $\log_2 x$&|nn:lg|\cr
+\log x&common logarithm: $\log_{10}x$&|nn:log|\cr
+\lfloor x\rfloor&floor: $\max@@
+ \{\,n\mid n\le x,\hbox{ integer $n\,\}$}$&|nn:floor|\cr
+\lceil x\rceil&ceiling: $\min@@
+ \{\,n\mid n\ge x,\hbox{ integer $n\,\}$}$&|nn:ceil|\cr
+x\bmod y&remainder: $x-y\lfloor x/y\rfloor$&|nn:mod|\cr
+\{x\}&fractional part: $x\bmod 1$&|nn:fracpt|\cr
+\noalign{\vskip2pt}
+\sum f(x)\,\delta x&indefinite summation&|nn:indef-sum|\cr
+\sum\nolimits_a^b f(x)\,\delta x&definite summation&|nn:def-sum|\cr
+\noalign{\vskip2pt}
+x\_n&falling factorial power: $x!/(x-n)!$&|nn:fall|,\thinspace|nn:gfall|\cr
+x\_^n&rising factorial power: $\Gamma(x+n)/\Gamma(x)$&|nn:rise|,\thinspace
+                                                      |nn:grise|\cr
+n\?&subfactorial: $n!/0!-n!/1!+\cdots+(-1)^nn!/n!$&|nn:subfact|\cr
+\Re z&real part: $x$, if $z=x+iy$&|nn:realpart|\cr
+\noalign{\g \vskip-15.5pt If you don't under\-stand what the x denotes at the
+ bottom of this page, try asking your Latin professor
+ instead of your math professor.\g}
+\Im z&imaginary part: $y$, if $z=x+iy$&|nn:realpart|\cr
+H_n&harmonic number: $1/1+\cdots+1/n$&|nn:hn|\cr
+H_n^{(x)}&generalized harmonic number: $1/1^x+\cdots+1/n^x$&|nn:hn-gen|\cr
+f^{(m)}(z)&$m$th derivative of $f$ at $z$&|nn:mth-deriv|\cr
+{n\brack@m@}&Stirling cycle number (the ``first kind'')&|nn:brack|\cr
+{n\brace m}&Stirling subset number (the ``second kind'')&|nn:brace|\cr
+{n\euler m}&Eulerian number&|nn:euler|\cr
+{\Euler nm}&Second-order Eulerian number&|nn:euler2|\cr
+\noalign{\g Prestressed \hbox{concrete} mathematics is
+concrete mathe\-matics that's preceded by
+ a bewildering list of~notations.\g\vskip6pt}
+(a_m\ldots a_0)_b&radix notation for $\sum_{k=0}^m a_kb^k$&|nn:radix|\cr
+K(a_1,\ldots,a_n)&continuant polynomial&|nn:continuant|\cr
+\hyp{a,b}cz&hypergeometric function&|nn:hyp|\cr
+\#A&cardinality: number of elements in the set $A$&|nn:card|\cr
+[z^n]\,f(z)&coefficient of $z^n$ in $f(z)$&|nn:coeff-brack|\cr
+[\alpha\dts\beta]&closed interval: the set
+ $\{x\mid \alpha\le x\le\beta\}$&|nn:interval|\cr
+\[m=n]&$1\,$ if $m=n$, otherwise $0\,$*&|nn:iverson|\cr
+\[m\divides n]&$1\,$ if $m$ divides $n$, otherwise $0\,$*&|nn:div|\cr
+\[m\edivides n]&$1\,$ if $m$ exactly divides $n$, otherwise $0\,$*&|nn:ediv|\cr
+\[m\rp n]&$1\,$ if $m$ is relatively prime to $n$, otherwise $0\,$*&|nn:rp|\cr}
+\endgroup\bigskip\noindent
+\llap{*}In general, if $S$ is any statement that can be true or false, the
+bracketed notation
+$\[S]$ stands for $1$~if $S$~is true, $0$ otherwise.
+
+Throughout this text, we use single-quote marks (`\dots') to delimit
+text as it is {\it written},
+double-quote marks (``\dots'')
+"!quotation marks"
+ for a phrase as it is {\it spoken}. Thus, the string of letters `string'
+\g Also `nonstring' is a~string.\g
+is sometimes called a ``string.\qback''
+
+An expression of the form `$a/bc$' means the same as `$a/(bc)$'. Moreover,
+"!parenthesis conventions"
+$\log x/\!@\log y=(\log x)/(\log y)$ and $2@n!=2(n!)$.
+
+\bye

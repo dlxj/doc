@@ -1,0 +1,31 @@
+%\read16 to\pagenumber
+\input gkpmac
+\pageno=800
+%\pageno=\pagenumber
+\def\chapno{X} \def\chaptitle{Experimental Pages for Concrete Math}
+\def\ansnoX{\ansno X}
+\mark{X\enspace Experimental Pages for Concrete Math}
+\refin bib
+\def\source{\smallskip\noindent{\bf Source: }}
+
+
+\noindent
+\g Western scholars have recently learned of a significant Chinese
+\looseness=-1
+book by "Li" Shan-Lan~[|li-shan-lan|; |martzloff|, pages\kern-.5em\null\par
+320--325],
+published in 1867, which contains
+the first known appearance of formula~\eq(|expand-ord-to-consec|).\g
+
+% now we print the answers, if any
+
+% that blank line will stop an unfinished \answer
+\immediate\closeout\ans
+\vfill
+\mark{A (Draft Answers)}\eject
+\parindent=30pt
+\ifnum\excount>0 \beginsection A (Draft Answers)
+
+\refin chap3
+ \input \jobname.ans \fi
+\bye

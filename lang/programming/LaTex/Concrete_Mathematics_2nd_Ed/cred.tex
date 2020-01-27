@@ -1,0 +1,79 @@
+% Credits for Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+
+\refin bib
+
+\pageno=632
+\parindent=30pt
+\hyphenation{Reich}
+
+\beginchapter C Credits for Exercises
+
+THE EXERCISES in this book have been drawn from many sources.
+The authors have tried to trace the origins of all the problems that have
+been published before,
+except in cases where the exercise is so elementary that its inventor
+would probably not think anything was being invented.
+
+Many of the exercises come from examinations in Stanford's Concrete
+Mathematics classes. The teaching assistants and instructors often
+\g \vskip.7in The TA sessions were invaluable, I~mean really great.\vskip.3in
+Keep the same instructor and the same TAs next year.\vskip.3in
+Class notes \undertext{very} good and useful.\vskip.3in
+I never ``got'' Stirling numbers.\g
+devised new problems for those exams, so it is appropriate to
+list their names here:
+\begindisplay \def\preamble{&##\hfil\qquad} \openup-2pt
+\sl\kern-.5pt Year&\sl\kern-.5pt Instructor&\sl\kern-.5pt Teaching Assistant(s)\cr
+\noalign{\vskip2pt}
+1970&Don "Knuth"&Vaughan "Pratt"\cr
+1971&Don Knuth&Leo Guibas\cr
+1973&Don Knuth&Henson "Graves", Louis "Jouaillec"\cr
+1974&Don Knuth&Scot "Drysdale", Tom "Porter"\cr
+1975&Don Knuth&Mark "Brown", Luis "Trabb Pardo"\cr
+1976&Andy Yao&Mark Brown, Lyle Ramshaw\cr
+1977&Andy Yao"!Yao, Andrew"&Yossi "Shiloach"\cr
+1978&Frances Yao"!Yao, Frances"&Yossi Shiloach\cr
+1979&Ron "Graham"&Frank "Liang", Chris "Tong", Mark "Haiman"\cr
+1980&Andy Yao&Andrei "Broder", Jim "McGrath"\cr
+1981&Ron Graham&Oren "Patashnik"\cr
+1982&Ernst Mayr&Joan "Feigenbaum", Dave "Helmbold"\cr
+1983&Ernst "Mayr"&Anna "Karlin"\cr
+1984&Don Knuth&Oren Patashnik, Alex "Sch\"affer"\cr
+1985&Andrei Broder&Pang "Chen", Stefan "Sharkansky"\cr
+1986&Don Knuth&Arif "Merchant", Stefan Sharkansky\cr
+\enddisplay
+In addition, David "Klarner" (1971), Bob "Sedgewick" (1974), Leo "Guibas" (1975),
+and Lyle "Ramshaw" (1979) each
+contributed to the class by giving six or more guest lectures. Detailed
+lecture notes
+taken each year by the teaching assistants and edited by the instructors
+have served as the basis of this book.
+
+\vfill\eject
+\advance\baselineskip-.35pt
+\def\source#1:{\par
+ \noindent\hangindent=\parindent\hbox to\parindent{\bf #1\hfil}\ignorespaces}
+
+\rightskip0pt plus4em \spaceskip.3333em \xspaceskip.5em
+\hsize=2.75in
+\newif\ifright \newbox\leftcol
+\output{\ifright\twocolumnout\global\rightfalse
+  \else\leftcolumnsave\global\righttrue\fi}
+\def\leftcolumnsave{\global\setbox\leftcol=\box255}
+\def\twocolumnout{\shipout\vbox to\totheight{ % here we define one page of output
+    \offinterlineskip % butt the boxes together
+    \vbox to 2pc{ % this part goes on top of the regular pages
+      \ifodd\pageno \rightheadline\else\leftheadline\fi
+      \vfill} % this completes the \vbox to 2pc
+    \hbox to35pc{\box\leftcol\hss\box255}
+    \vfill
+    \ifpreprint\ifinxmode\makeinxfooter\fi\fi
+    }
+  \advancepageno}
+\input sources
+\bigskip
+\noindent *\thinspace Unpublished personal communication.
+%\bye
+\eject\bye

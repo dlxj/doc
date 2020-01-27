@@ -1,0 +1,4691 @@
+% Chapter 7 of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\refin bib
+\pageno=321
+\refin chap2
+\refin chap4
+\refin chap5
+\refin chap6
+
+\beginchapter 7 Generating Functions
+\pageno=321
+
+THE MOST POWERFUL WAY to deal with sequences of numbers, as far as anybody
+knows, is to manipulate infinite series that ``generate'' those sequences.
+We've learned a lot of sequences and we've seen a few generating functions;
+now we're ready to explore generating functions in depth, and to see how
+remarkably useful they are.
+
+\beginsection 7.1 Domino Theory and Change
+
+"!Dimers and Dimes, \string\see Dominoes and Change"
+"!Dominoes"
+Generating functions are important enough, and for many of us new enough,
+to justify a relaxed approach as we begin to look at them more closely.
+So let's start this chapter with some fun and games as we try to develop our
+intuitions about generating functions. We will study two applications
+of the ideas, one involving dominoes and the other involving coins.
+
+\unitlength=3pt
+\def\domi{\beginpicture(0,2)(0,0) % identity
+	\put(0,0){\line(0,1){2}}
+	\endpicture}
+\def\domI{\beginpicture(0,2)(0,0) % identity when isolated
+	\put(0,-.1){\line(0,1){2.2}}
+	\endpicture}
+\def\domv{\beginpicture(1,2)(0,0) % vertical without left edge
+	\put(1,0){\line(0,1){2}}
+	\put(0,0){\line(1,0){1}}
+	\put(0,2){\line(1,0){1}}
+	\endpicture}
+\def\domhh{\beginpicture(2,2)(0,0) % two horizontals without left edge
+	\put(2,0){\line(0,1){2}}
+	\put(0,0){\line(1,0){2}}
+	\put(0,1){\line(1,0){2}}
+	\put(0,2){\line(1,0){2}}
+	\endpicture}
+\def\Domh{\beginpicture(3,1)(-.5,0) % horizontal, stand-alone
+	\put(2,0){\line(0,1){1}}
+	\put(0,0){\line(0,1){1}}
+	\put(0,0){\line(1,0){2}}
+	\put(0,1){\line(1,0){2}}
+	\endpicture}
+\def\Domv{\beginpicture(2,2)(-.5,0) % vertical, stand-alone
+	\put(0,0){\line(0,1){2}}
+	\put(1,0){\line(0,1){2}}
+	\put(0,0){\line(1,0){1}}
+	\put(0,2){\line(1,0){1}}
+	\endpicture}
+
+How many ways $T_n$ are there to completely cover a $2\times n$
+rectangle with $2\times1$ dominoes? We assume that the dominoes are
+identical (either because they're face down, or
+because someone has rendered them indistinguishable,
+say by painting them all red);
+thus only their orientations\dash---vertical or horizontal\dash---matter,
+and we can imagine that we're working with domino-shaped tiles.
+For example, there are three tilings of a $2 \times 3$ rectangle, namely
+\domi\domv\domv\domv\kern1pt, \domi\domv\domhh\kern1pt, and~\domi\domhh\domv
+\kern1pt; so $T_3 = 3$.
+
+To find a closed form for general~$T_n$
+\g\noindent\llap{``}Let me count the ways.''\par\hfill\dash---E.\thinspace B. "Browning"\g
+we do our usual first thing,
+look at small cases.
+When $n=1$ there's obviously just one tiling,~\domi\domv\kern1pt;
+and when $n=2$ there are two,
+\domi\domv\domv~and~\domi\domhh\kern1pt.
+
+How about when $n=0$;
+how many tilings of a $2 \times 0$ rectangle are there?
+It's not immediately clear what this question means, but we've seen
+similar situations before: There is one permutation of zero objects
+"!empty case" "!null case" "!basis of induction" "!thinking small" "!small cases"
+(namely the empty permutation), so $0!=1$. There is one way to choose
+zero things from $n$~things (namely to choose nothing), so ${n\choose0}
+=1$. There is one way to partition the empty set into zero nonempty subsets,
+but there are no such ways to partition a nonempty set; so ${n\brace0}=
+\[n=0]$. By such reasoning we can conclude that there's just one way
+to tile a $2\times0$ rectangle with dominoes, namely to use no dominoes;
+therefore $T_0=1$. (This spoils the simple pattern $T_n=n$ that holds
+when $n=1$, $2$, and~$3$; but that pattern was probably doomed anyway,
+since $T_0$ wants to be~$1$ according to the logic of the situation.)
+A proper understanding of the null case turns out to be useful whenever
+we want to solve an enumeration problem.
+
+Let's look at one more small case, $n=4$.
+There are two possibilities for tiling the left edge of the rectangle\dash---%
+we put either a vertical domino or two horizontal dominoes there.
+If we choose a vertical one, the partial solution is
+\domi\domv\beginpicture(3,2)(0,0)
+ \put(0,0){\line(1,0){3}}
+ \put(0,2){\line(1,0){3}}
+ \put(3,0){\line(0,1){2}}\endpicture\
+and the remaining $2\times3$ rectangle can be covered in $T_3$~ways.
+If we choose two horizontals, the partial solution
+\domi\domhh\beginpicture(2,2)(0,0)
+ \put(0,0){\line(1,0){2}}
+ \put(0,2){\line(1,0){2}}
+ \put(2,0){\line(0,1){2}}\endpicture\
+can be completed in $T_2$~ways.
+Thus $T_4=T_3+T_2=5$. (The five tilings are
+\domi\domv\domv\domv\domv\kern1pt,
+\domi\domv\domv\domhh\kern1pt,
+\domi\domv\domhh\domv\kern1pt,
+\domi\domhh\domv\domv\kern1pt, and~%
+\domi\domhh\domhh\kern1pt.)
+
+We now know the first five values of~$T_n$:
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4\cr
+\noalign{\hrule}
+T_n&&1&1&2&3&5\cr
+\enddisplay
+These look suspiciously like the "Fibonacci numbers",
+and it's not hard to see why:
+The reasoning we used to establish
+$T_4 = T_3 + T_2$ easily generalizes to
+$T_n = T_{n-1} + T_{n-2}$, for $n \geq 2$.
+Thus we have the same recurrence here
+as for the Fibonacci numbers,
+except that the initial values $T_0 = 1$ and $T_1 = 1$
+are a little different.
+But these initial values are the consecutive Fibonacci numbers $F_1$~and~$F_2$,
+so the $T$'s are just Fibonacci numbers
+shifted up one place:
+\begindisplay
+ T_n
+   = F_{n+1} \,, \qquad\hbox{for $n \geq 0$}.
+\enddisplay
+(We consider this to be a closed form for $T_n$,
+because the Fibonacci numbers are important
+enough to be considered ``known.\qback'' Also, $F_n$ itself has a
+closed form \equ(6.|fib-sol|) in terms of algebraic operations.)
+Notice that this equation confirms the wisdom of setting $T_0=1$.
+
+But what does all this have to do with generating functions? Well, we're about
+to get to that\dash---there's another way to figure out what $T_n$ is. This new
+way is based on a bold idea.
+\g To boldly go\par where no tiling has gone before.\g
+ Let's consider the ``sum'' of all possible
+$2\times n$ tilings, for all $n\ge0$, and call it~$T$:
+\begindisplay
+T	= \domI+
+ \domi\domv+\domi\domv\domv + \domi\domhh
+ + \domi\domv\domv\domv + \domi\domv\domhh + \domi\domhh\domv
+ + \cdots\,.
+\eqno\eqref|t-sum|
+\enddisplay
+(The first term `$\,\domI\,$' on the right
+stands for the null tiling of a $2\times0$ rectangle.)
+This sum~$T$ represents lots of information.
+It's useful because it lets us prove things about $T$ as a whole
+rather than forcing us to prove them (by induction)
+about its individual terms.
+
+The terms of this sum
+stand for tilings, which are combinatorial objects. We won't be fussy
+about what's considered legal when infinitely many tilings are added
+together; everything can be made rigorous, but our goal right now is to
+expand our consciousness beyond conventional algebraic formulas.
+
+We've added the patterns together, and we can also multiply them\dash---%
+by juxtaposition.
+For example, we can multiply the tilings
+\kern1pt\domi\domv\kern1pt\ and \kern1pt\domi\domhh\kern1pt\
+to get the new tiling~\domi\domv\domhh\kern1pt.
+But notice that multiplication is not "commutative";
+that is, the order of multiplication counts:
+\kern1pt\domi\domv\domhh\kern1pt\ is different from
+\kern1pt\domi\domhh\domv\kern1pt.
+
+Using this notion of multiplication
+it's not hard to see that
+the null tiling plays a special role\dash---%
+it is the multiplicative identity.
+For instance,
+$\domI\times\domi\domhh=\domi\domhh\times\domI=\domi\domhh$\kern1pt.
+
+Now we can use domino arithmetic to manipulate the infinite sum~$T$:
+\begindisplay
+T&=\domI+\domi\domv+\domi\domv\domv + \domi\domhh
+ + \domi\domv\domv\domv + \domi\domv\domhh + \domi\domhh\domv
+ + \cdots\cr
+&=\domI+
+ \domi\domv\,(\,\domI+\domi\domv+\domi\domv\domv + \domi\domhh+\cdots\,)+
+ \domi\domhh\,(\,\domI+\domi\domv+\domi\domv\domv + \domi\domhh+\cdots\,)\cr
+&=\domI+
+ \domi\domv\,T+ \domi\domhh\,T\,.\eqno\cr
+\enddisplay
+Every valid tiling occurs
+exactly once in each right side,
+so what we've done is reasonable
+even though we're ignoring the cautions in Chapter~2 about ``absolute
+convergence.\qback''
+\g I have a gut feeling that these sums
+must converge, as long as the dominoes are small~enough.\g
+The bottom line of this equation tells us that everything in~$T$
+is either the null tiling,
+or is a vertical tile followed by something else in~$T$,
+or is two horizontal tiles followed by something else in~$T$.
+
+So now let's try to solve the equation for $T$. Replacing the $T$ on the left
+by $\domI\,T$ and subtracting
+the last two terms on the right
+from both sides of the equation, we get
+\begindisplay
+ (\,\domI-\domi\domv-\domi\domhh\,)T=\domI\,\,.
+\eqno
+\enddisplay
+For a consistency check, here's an expanded version:
+\begindisplay\def\preamble{&\strut$\hfil\,{}##{}\,\hfil$&$\hfil##\hfil$}
+&\domI&+&\domi\domv&+&\domi\domv\domv&+&\domi\domhh&+&
+ \domi\domv\domv\domv&+&\domi\domv\domhh&+&\domi\domhh\domv&+&
+\cdots\cr
+-&\domi\domv&-&\domi\domv\domv&-&\domi\domv\domv\domv&-&\domi\domv\domhh&-&
+ \domi\domv\domv\domv\domv&-&\domi\domv\domv\domhh&-&\domi\domv\domhh\domv&-&
+ \cdots\cr
+-&\domi\domhh&-&\domi\domhh\domv&-&\domi\domhh\domv\domv&-&\domi\domhh\domhh&-&
+ \domi\domhh\domv\domv\domv&-&\domi\domhh\domv\domhh&-&\domi\domhh\domhh\domv&-&
+ \cdots\cr
+\noalign{\kern2pt\hrule\kern2pt}
+&\domI\cr
+\enddisplay
+Every term in the top row, except the first,
+is cancelled by a term in either the second or third row,
+so our equation is correct.
+
+So far it's been fairly easy to make combinatorial sense
+of the equations we've been working with.
+Now, however, to get a compact expression for~$T$
+we cross a combinatorial divide.
+With a leap of algebraic faith
+we divide both sides of equation \thiseq\ by
+$\,\domI-\domi\domv-\domi\domhh\,$
+to get
+\begindisplay
+ T
+	= {\hbox{\domI}\over\domI-\domi\domv-\domi\domhh}\,.
+\eqno\eqref|t-fraction|
+\enddisplay
+(Multiplication isn't commutative, so
+we're on the verge of "cheating",
+by not distinguishing between left and right division. In
+our application it doesn't matter, because $\,\domI\,$ commutes with
+everything. But let's not be picky, unless our wild ideas lead to
+paradoxes.)
+
+The next step is to expand this fraction as a power series,
+using the rule
+\begindisplay
+ {1\over 1-z}
+	= 1 + z + z^2 + z^3 + \cdots \,.
+\enddisplay
+The null tiling $\,\domI\,$,
+which is the multiplicative identity for our combinatorial arithmetic,
+plays the part of~$1$, the usual multiplicative identity;
+and $\domi\domv+\domi\domhh$ plays~$z$.
+So we get the expansion
+\begindisplay
+{\hbox{\domI}\over\domI-\domi\domv-\domi\domhh}
+&=\domI+(\,\domi\domv+\domi\domhh\,)+
+ (\,\domi\domv+\domi\domhh\,)^2+
+ (\,\domi\domv+\domi\domhh\,)^3+\cdots\cr
+&=\domI+(\,\domi\domv+\domi\domhh\,)+
+ (\,\domi\domv\domv+\domi\domv\domhh+\domi\domhh\domv+\domi\domhh\domhh\,)\cr
+&\qquad+(\,\domi\domv\domv\domv+\domi\domv\domv\domhh
+ +\domi\domv\domhh\domv+\domi\domv\domhh\domhh
+ +\domi\domhh\domv\domv+\domi\domhh\domv\domhh
+ +\domi\domhh\domhh\domv+\domi\domhh\domhh\domhh\,)+\cdots\,.\cr
+\enddisplay
+This is $T$, but the tilings are arranged in a different order than
+we had before. Every tiling appears exactly once in this sum;
+for example, $\domi\domv\domhh\domhh\domv\domv\domhh\domv$
+appears in the expansion of $(\,\domi\domv+\domi\domhh\,)^7$.
+
+We can get useful information from this infinite sum by compressing it
+down, ignoring details that are not of interest. For example, we
+can imagine that the patterns become unglued and that the individual dominoes
+commute with each other; then a term like
+$\domi\domv\domhh\domhh\domv\domv\domhh\domv$ becomes $\Domv^4\Domh^6$,
+because it contains four verticals and six horizontals. Collecting
+like terms gives us the series
+\begindisplay
+ T = \domI+\Domv+\Domv^2+\Domh^2+\Domv^3+2\Domv\Domh^2+\Domv^4+3\Domv^2\Domh^2
+ +\Domh^4+\cdots\,.
+\enddisplay
+The $2\Domv\Domh^2$ here represents
+the two terms of the old expansion,
+\domi\domv\domhh\ and~\domi\domhh\domv\kern1pt, that
+have one vertical and two horizontal dominoes;
+similarly $3\Domv^2\Domh^2$
+represents the three terms
+\domi\domv\domv\domhh\kern1pt, \domi\domv\domhh\domv\kern1pt, and 
+\domi\domhh\domv\domv\kern1pt.
+We're essentially treating \Domv\ and~\Domh\ as ordinary (commutative)
+variables.
+
+We can find a closed form for the coefficients in the commutative version
+of~$T$ by using the binomial theorem:
+\begindisplay
+{\hbox{\domI}\over\domI-(\Domv+\Domh^2)}
+&=\domI+(\Domv+\Domh^2) +(\Domv+\Domh^2)^2 +(\Domv+\Domh^2)^3+\cdots\cr
+&=\sum_{k\ge0}(\Domv+\Domh^2)^k\cr
+&=\sum_{j,k\ge0}{k\choose j}\Domv^j\Domh^{2k-2j}\cr
+&=\sum_{j,m\ge0}{j+m\choose j}\Domv^j\Domh^{2m}\,.\eqno\cr
+\enddisplay
+(The last step replaces $k-j$ by $m$; this is legal because we have
+\smash{\hbox{${k\choose j}=0$}}
+when $0\le k<j$.) We conclude that $j+m\choose j$ is the number of ways
+to tile a $2\times(j+2m)$ rectangle with $j$ vertical dominoes and $2m$
+horizontal dominoes. For example, we recently looked at the $2\times10$ tiling
+$\domi\domv\domhh\domhh\domv\domv\domhh\domv$\kern1pt,
+which involves
+four verticals and six horizontals; there are ${4+3\choose4}=35$ such
+tilings in all, so one of the terms in the commutative version of~$T$
+is $35@\Domv^4\Domh^6$.
+
+We can suppress even more detail by ignoring the orientation of the dominoes.
+Suppose we don't care about the horizontal/vertical breakdown; we only want
+to know about the total number of $2\times n$ tilings. (This, in fact,
+is the number~$T_n$ we started out trying to discover.)
+We can collect the necessary information by simply substituting a
+single quantity, $z$, for \Domv\ and~\Domh.
+\g Now I'm dis\-oriented.\g
+And we might as well also replace \kern1pt\domI\kern1pt\ by~$1$, getting
+\begindisplay
+T={1\over 1-z-z^2}\,.
+\eqno
+\enddisplay
+This is the generating function \equ(6.|fib-gf|) for Fibonacci numbers,
+except for a missing factor of~$z$ in the numerator; so we conclude
+that the coefficient of $z^n$ in~$T$ is $F_{n+1}$.
+
+The compact representations $\,\domI\,/(\,\domI-\domi\domv-\domi\domhh\,)$,
+$\,\domI\,/(\,\domI-\Domv-\Domh^2)$, and $1/(1-z-z^2)$ that we have deduced
+for~$T$ are called {\it"generating functions"}, because they generate
+the coefficients of interest.
+
+Incidentally, our derivation implies that the number of $2\times n$
+domino tilings with exactly $m$ pairs of horizontal dominoes is
+${n-m\choose m}$. (This follows because there are $j=n-2m$ vertical
+dominoes, hence there are
+\begindisplay 
+{j+m\choose j}={j+m\choose m}={n-m\choose m}
+\enddisplay % done for page break later
+ways to do the tiling according to our formula.) We observed in Chapter~6 that
+$n-m\choose m$ is the
+number of "Morse code" sequences of length~$n$ that contain $m$~dashes;
+in fact, it's easy to see that $2\times n$ domino tilings correspond
+directly to Morse code sequences. (The tiling
+$\,\domi\domv\domhh\domhh\domv\domv\domhh\domv\,$ corresponds to
+\def\mdot{\beginpicture(1.5,2)(-.75,-1)\put(0,0){\disk{.7}}\endpicture}%
+\def\mdash{\beginpicture(2.5,2)(-.5,-1)
+ \put(0,0){\thicklines\line(1,0){1.5}}\endpicture}%
+`$\mdot\mdash\mdash\mdot\mdot\mdash\mdot$'.)
+Thus domino tilings are closely related to the continuant polynomials
+we studied in Chapter~6. It's a small world. "!cliches"
+
+We have solved the $T_n$ problem in two ways. The first way, guessing the
+answer and proving it by induction, was easier; the second way, using
+infinite sums of domino patterns and distilling out the coefficients
+of interest, was fancier. But did we use the second method only because
+it was amusing to play with dominoes as if they were algebraic variables?
+No; the real reason for introducing the second way
+was that the infinite-sum approach is a lot more powerful.
+The second method applies to many more problems, because it doesn't require us
+to make magic guesses.
+
+\def\tomv#1#2#3{\beginpicture(0,2.7)(0,.5) % vertical segments (top-down)
+ \if1#1\put(0,2){\line(0,1){1}}\fi
+ \if0#2\else\put(0,1){\line(0,1){#2}}\fi
+ \if0#3\else\put(0,0){\line(0,1){#3}}\fi \endpicture}
+\def\tomh#1#2#3#4{\beginpicture(1,2)(0,.5) % horizontal segments (top-down)
+ \if0#1\else\put(0,3){\line(1,0){#1}}\fi
+ \if0#2\else\put(0,2){\line(1,0){#2}}\fi
+ \if0#3\else\put(0,1){\line(1,0){#3}}\fi
+ \if0#4\else\put(0,0){\line(1,0){#4}}\fi \endpicture}
+
+Let's generalize up a notch, to a problem where guesswork
+will be beyond us. How many ways $U_n$ are there to tile a
+$3\times n$ rectangle with dominoes?
+
+ The first few cases of this problem
+tell us a little: The null tiling gives $U_0=1$. There is no valid
+tiling when $n=1$, since a $2\times1$ domino doesn't fill a $3\times1$
+rectangle, and since there isn't room for two. The next case, $n=2$, can
+easily be done by hand; there are three tilings,
+\tomv003\tomh2022\tomv020\tomh0000\tomv003\kern1pt,
+\tomv003\tomh2202\tomv002\tomh0000\tomv003\kern1pt,
+and
+\tomv003\tomh2222\tomh0000\tomv003\kern1pt,
+so $U_2=3$.
+(Come to think of it we already knew this,
+because the previous problem told us that $T_3 = 3$;
+the number of ways to tile a $3 \times 2$ rectangle
+is the same as the number to tile a~$2 \times 3$.)
+When~$n=3$, as when~$n=1$, there are no tilings.
+We can convince ourselves of this either
+by making a quick exhaustive search or
+by looking at the problem from a higher level:
+The area of a $3 \times 3$ rectangle is odd,
+so we can't possibly tile it with dominoes whose area is even.
+(The same argument obviously applies to any odd~$n$.)
+Finally, when $n=4$ there seem to be about a dozen tilings;
+it's difficult to be sure about the exact number without spending a lot of time
+to guarantee that the list is complete.
+
+\begingroup \advance\medmuskip 3mu
+So let's try the infinite-sum approach that worked last time:
+\begindisplay
+U=\tomv003
++\tomv003\tomh2022\tomv020\tomh0000\tomv003
++\tomv003\tomh2202\tomv002\tomh0000\tomv003
++\tomv003\tomh2222\tomh0000\tomv003
++\tomv003\tomh2022\tomv020\tomh0000\tomv003\tomh2022\tomv020\tomh0000\tomv003
++\tomv003\tomh2022\tomv020\tomh0000\tomv003\tomh2202\tomv002\tomh0000\tomv003
++\tomv003\tomh2022\tomv020\tomh0000\tomv003\tomh2222\tomh0000\tomv003
++\tomv003\tomh4044\tomv020\tomh0200\tomv001\tomh0000\tomv020\tomh0000\tomv003
++\tomv003\tomh2202\tomv002\tomh0000\tomv003\tomh2022\tomv020\tomh0000\tomv003
++\cdots\,.
+\eqno
+\enddisplay
+Every non-null tiling begins with either
+\tomv003\tomh1022\tomv020\tomh0000\tomv001\
+or \tomv003\tomh2201\tomv002\tomh0000\tomv100
+or \tomv003\tomh2222\tomh0000\tomv003\kern1pt;
+but unfortunately the first two of these three possibilities don't
+simply factor out and leave us with $U$ again. The sum of all terms in~$U$ that
+begin with \tomv003\tomh1022\tomv020\tomh0000\tomv001\
+can, however, be written as $\tomv003\tomh1022\tomv020\tomh0000\tomv001\,V$, where
+\begindisplay
+V=\tomv020\tomh1010\tomv020
++\tomv020\tomh3030\tomv003\tomh0002\tomv020\tomh0000\tomv003
++\tomv020\tomh3010\tomv003\tomh0202\tomv002\tomh0000\tomv003
++\tomv020\tomh3030\tomv003\tomh0202\tomh0000\tomv003
++\tomv020\tomh3230\tomv001\tomh0002\tomv020\tomh0000\tomv003 +\cdots
+\enddisplay
+is the sum of all domino tilings of a mutilated $3\times n$ rectangle that
+has its lower left corner missing. Similarly, the terms of~$U$ that
+begin with \tomv003\tomh2201\tomv002\tomh0000\tomv100\ can be written
+$\tomv003\tomh2201\tomv002\tomh0000\tomv100\,\Lambda$, where
+\begindisplay
+\Lambda=\tomv002\tomh0101\tomv002
++\tomv002\tomh0303\tomv003\tomh2000\tomv002\tomh0000\tomv003
++\tomv002\tomh0103\tomv003\tomh2020\tomv020\tomh0000\tomv003
++\tomv002\tomh0303\tomv003\tomh2020\tomh0000\tomv003
++\tomv002\tomh0323\tomv100\tomh2000\tomv002\tomh0000\tomv003 +\cdots
+\enddisplay
+consists of all rectangular tilings lacking their upper left corner. The
+series $\Lambda$ is a mirror image of $V$. These factorizations allow us to write
+\begindisplay
+U=\tomv003\,
++\tomv003\tomh1022\tomv020\tomh0000\tomv001\,V
++\tomv003\tomh2201\tomv002\tomh0000\tomv100\,\Lambda
++\tomv003\tomh2222\tomh0000\tomv003\,U\,.
+\enddisplay
+And we can factor $V$ and $\Lambda$ as well, because such tilings
+can begin in only two ways:
+\begindisplay
+V&=\tomv020\tomh1010\tomv020\,U+
+ \tomv020\tomh2230\tomv001\tomh0002\tomv020\tomh0000\tomv001\,V\,,\cr
+\Lambda&=\tomv002\tomh0101\tomv002\,U+
+ \tomv002\tomh0322\tomv100\tomh2000\tomv002\tomh0000\tomv100\,\Lambda\,.\cr
+\enddisplay
+Now we have three equations in three unknowns ($U$, $V$, and $\Lambda$). We can
+solve them by first solving for $V$ and~$\Lambda$ in terms of~$U$, then
+plugging the results into the equation for $U$:
+\begindisplay \openup4pt
+V&=(\,\tomv003-
+ \tomv020\tomh2230\tomv001\tomh0002\tomv020\tomh0000\tomv001\,)^{-1}
+  \,\tomv020\tomh1010\tomv020\,U\,,\qquad
+\Lambda=(\,\tomv003-
+ \tomv002\tomh0322\tomv100\tomh2000\tomv002\tomh0000\tomv100\,)^{-1}
+  \,\tomv002\tomh0101\tomv002\,U\,;\cr
+U&=\tomv003\,+\,
+ \tomv003\tomh1022\tomv020\tomh0000\tomv001\,
+(\,\tomv003-
+ \tomv020\tomh2230\tomv001\tomh0002\tomv020\tomh0000\tomv001\,)^{-1}
+  \,\tomv020\tomh1010\tomv020\,U\,+\,
+ \tomv003\tomh2201\tomv002\tomh0000\tomv100\,
+(\,\tomv003-
+ \tomv002\tomh0322\tomv100\tomh2000\tomv002\tomh0000\tomv100\,)^{-1}
+  \,\tomv002\tomh0101\tomv002\,U\,+\,
+\tomv003\tomh2222\tomh0000\tomv003\,U\,.
+\enddisplay
+And the final equation can be solved for $U$, giving the compact formula
+\begindisplay
+U={\hbox{\tomv003}\over\, \tomv003
+\,-\,\tomv003\tomh1022\tomv020\tomh0000\tomv001\,
+(\,\tomv003-
+ \tomv020\tomh2230\tomv001\tomh0002\tomv020\tomh0000\tomv001\,)^{-1}
+  \,\tomv020\tomh1010\tomv020\,
+\,-\,\tomv003\tomh2201\tomv002\tomh0000\tomv100\,
+(\,\tomv003-
+ \tomv002\tomh0322\tomv100\tomh2000\tomv002\tomh0000\tomv100\,)^{-1}
+  \,\tomv002\tomh0101\tomv002
+\,-\,\tomv003\tomh2222\tomh0000\tomv003}\,.
+\eqno
+\enddisplay\endgroup % end of the special \medmuskip
+This expression defines the infinite sum $U$,
+\g I learned in another class about ``regular expressions.\qback'' If
+I'm not mistaken, we can write\smallskip
+\unitlength=2pt
+$U=(
+\tomv003\tomh1022\tomv020\tomh0000\tomv001\,\,
+ \tomv020\tomh2230\tomv001\tomh0002\tomv020\tomh0000\tomv001^{\ast}
+  \,\tomv020\tomh1010\tomv020$\par
+\hfill${}+\tomv003\tomh2201\tomv002\tomh0000\tomv100\,\,
+ \tomv002\tomh0322\tomv100\tomh2000\tomv002\tomh0000\tomv100\,^{\ast}
+  \,\tomv002\tomh0101\tomv002
++\tomv003\tomh2222\tomh0000\tomv003\,)^{\ast}$\par\smallskip
+in the language of regular expressions; so there must be some
+connection between regular expressions and generating functions.\g
+just as \eq(|t-fraction|) defines $T$.
+
+The next step is to go commutative. Everything simplifies beautifully
+when we detach all the dominoes and use only powers of $\Domv$ and~$\Domh$:
+\begindisplay \openup5pt
+U&={1\over
+1-\Domv^2\Domh(1-\Domh^3)^{-1}
+     -\Domv^2\Domh(1-\Domh^3)^{-1}-\Domh^3}\cr
+&={1-\Domh^3\over
+ (\,1-\Domh^3)^2-2\Domv^2\Domh}\cr
+&={(1-\Domh^3)^{-1}\over
+ 1-2\Domv^2\Domh(1-\Domh^3)^{-2}}\cr
+&={1\over1-\Domh^3}
+ +{2\Domv^2\Domh\over(1-\Domh^3)^3}
+ +{4\Domv^4\Domh^2\over(1-\Domh^3)^5}
+ +{8\Domv^6\Domh^3\over(1-\Domh^3)^7}+\cdots\cr
+&=\sum_{k\ge0}{2^k\Domv^{2k}\Domh^k\over(1-\Domh^3)^{2k+1}}\cr
+&=\sum_{k,m\ge0}{m+2k\choose m}2^k\Domv^{2k}\Domh^{k+3m}\,.\cr
+\enddisplay
+(This derivation deserves careful scrutiny.
+The last step uses the formula $(1-w)^{-2k-1}=\sum_m{m+2k\choose m}w^m$,
+identity \equ(5.|neg-binomial1|).)
+Let's take a good look at the bottom line to see what it tells us. First, it says
+that every $3\times n$ tiling uses an even number of vertical dominoes. Moreover,
+if there are $2k$ verticals, there must be at least $k$ horizontals, and the
+total number of horizontals must be $k+3m$ for some $m\ge0$. Finally, the
+number of possible tilings with $2k$ verticals and $k+3m$ horizontals is
+exactly ${m+2k\choose m}2^k$.
+
+We now are able to analyze the $3\times4$ tilings that left us doubtful
+when we began looking at the $3\times n$ problem. When $n=4$ the total
+area is~$12$, so we need six dominoes altogether. There are $2k$ verticals
+and $k+3m$ horizontals,
+ for some $k$ and~$m$; hence $2k+k+3m=6$. In other
+words, $k+m=2$. If we use no verticals, then $k=0$ and $m=2$;
+the number of possibilities is
+${2+0\choose2}2^0=1$. (This accounts for the tiling
+$\tomv003\tomh4444\tomh0000\tomv003\tomh0000\tomh0000\tomv003\,$.)
+If we use two verticals, then $k=1$ and $m=1$; there are
+${1+2@\choose1}2^1=6$ such tilings. And if we use four verticals, then
+$k=2$ and $m=0$; there are ${0+4\choose0}2^2=4$ such tilings, making a
+total of\/ $U_4=11$. In general if $n$ is even, this reasoning shows that
+$k+m=\half n$, hence
+${m+2k\choose m}={n/2+k\choose n/2-k}$ and the total
+ number of $3\times n$ tilings is
+\begindisplay
+U_n=\sum_k{n/2+k\choose n/2-k}2^k=\sum_m{n-m\choose m}2^{n/2-m}\,.
+\eqno\eqref|u-sum|
+\enddisplay
+
+As before, we can also substitute $z$ for both \Domv\ and~\Domh, getting
+a generating function that doesn't discriminate between dominoes of
+particular persuasions. The result is
+\begindisplay
+U={1\over 1-z^3(1-z^3)^{-1}-z^3(1-z^3)^{-1}-z^3}={1-z^3\over 1-4z^3+z^6}\,.
+\eqno\eqref|u-with-cubes|
+\enddisplay
+If we expand this quotient into a power series, we get
+\begindisplay
+U=1+U_2\,z^3+U_4\,z^6+U_6\,z^9+U_8\,z^{12}+\cdots\,,
+\enddisplay
+a generating function for the numbers $U_n$. (There's a curious mismatch
+between subscripts and exponents in this formula, but it is easily explained.
+The coefficient of~$z^9$, for example, is $U_6$, which counts the tilings
+of a $3\times6$ rectangle. This is what we want, because every
+such tiling contains nine~dominoes.)
+
+We could proceed to analyze \thiseq\ and get a closed form for the coefficients,
+but it's better to save that for later in the chapter after we've gotten
+more experience. So let's divest ourselves of dominoes for the moment
+%\g Nuns do it out of habit.\g % too risqu\'e
+and proceed to the next advertised problem, ``"change".\qback''
+
+\newdimen\coinmm \coinmm=.33333pt
+\unitlength=\coinmm
+\let\tiny=\mathsubsubtext % 5pt
+\newbox\bnullp \newbox\bnulln \newbox\bnulld \newbox\bnullq \newbox\bnullh
+\setbox\bnullp=\hbox{\kern1pt\beginpicture(14,18)(-7,0)
+	\put(0,9){\makebox(0,0){\lower.2ex\hbox{$\not\mskip4mu$}%
+		\tiny 1}}\endpicture\kern1pt}
+%\setbox\bnullt=\hbox{\kern1pt\beginpicture(14,18)(-7,0)
+%	\put(0,9){\makebox(0,0){\lower.2ex\hbox{$\not\mskip4mu$}%
+%		\tiny 2}}\endpicture\kern1pt}
+\setbox\bnulln=\hbox{\kern1pt\beginpicture(14,18)(-7,0)
+	\put(0,9){\makebox(0,0){\lower.2ex\hbox{$\not\mskip4mu$}%
+		\tiny 5}}\endpicture\kern1pt}
+\setbox\bnulld=\hbox{\kern1pt\beginpicture(16,18)(-8,0)
+	\put(0,9){\makebox(0,0){\lower.2ex\hbox{$\not\mskip1.5mu$}%
+		\tiny 1$\mskip-1mu$0}}\endpicture\kern1pt}
+\setbox\bnullq=\hbox{\kern1pt\beginpicture(16,18)(-8,0)
+	\put(0,9){\makebox(0,0){\lower.2ex\hbox{$\not\mskip1.5mu$}%
+		\tiny 2$\mskip-1mu$5}}\endpicture\kern1pt}
+\setbox\bnullh=\hbox{\kern1pt\beginpicture(16,18)(-8,0)
+	\put(0,9){\makebox(0,0){\lower.2ex\hbox{$\not\mskip1.5mu$}%
+		\tiny 5$\mskip-1mu$0}}\endpicture\kern1pt}
+% Note, I've added 3mm to all Oren's measurements, for more clearance
+\newbox\bpenny \newbox\bnickel \newbox\bdime \newbox\bquarter \newbox\bhalfdollar
+\setbox\bpenny=\hbox{\kern1pt\beginpicture(22,18)(-11,0)
+	\put(0,9){\circle{22}}
+	\put(0,9){\makebox(0,0){\kern.5pt\tiny 1}}
+	\endpicture\kern1pt}
+\setbox\bnickel=\hbox{\kern1pt\beginpicture(24.2,18)(-12.1,0)
+	\put(0,9){\circle{24.2}}
+	\put(0,9){\makebox(0,0){\tiny 5}}
+	\endpicture\kern1pt}
+\setbox\bdime=\hbox{\kern1pt\beginpicture(20.9,18)(-10.45,0)
+	\put(0,9){\circle{20.9}}
+	\put(0,9){\makebox(0,0){\tiny 1$\mskip-1.5mu$0}}
+	\endpicture\kern1pt}
+\setbox\bquarter=\hbox{\kern1pt\beginpicture(27.3,18)(-13.65,0)
+	\put(0,9){\circle{27.3}}
+	\put(0,9){\makebox(0,0){\tiny 2$\mskip-1mu$5}}
+	\endpicture\kern1pt}
+\setbox\bhalfdollar=\hbox{\kern1pt\beginpicture(33.6,18)(-16.8,0)
+	\put(0,9){\circle{33.6}}
+	\put(0,9){\makebox(0,0){\tiny 50}}
+	\endpicture\kern1pt}
+\def\nullp{\copy\bnullp}
+\def\nulln{\copy\bnulln}
+\def\nulld{\copy\bnulld}
+\def\nullq{\copy\bnullq}
+\def\nullh{\copy\bnullh}
+\def\penny{\copy\bpenny}
+\def\nickel{\copy\bnickel}
+\def\dime{\copy\bdime}
+\def\quarter{\copy\bquarter}
+\def\halfdollar{\copy\bhalfdollar}
+
+\smallskip
+How many ways are there to pay 50~cents?
+We assume that the payment must be made with
+pennies \penny, nickels \nickel, dimes \dime, quarters
+\quarter, and half-dollars \halfdollar.
+\g Ah yes, I remember when we had half-dollars.\g
+George "P\'olya" [|polya-pictures|] popularized this
+problem by showing that it can be solved with generating functions in
+an instructive way.
+
+Let's set up infinite sums that represent all possible ways to give change,
+just as we tackled the domino problems by working with infinite sums
+that represent all possible domino patterns. It's simplest to start
+by working with fewer varieties of coins, so let's suppose first that
+we have nothing but pennies. The sum of all ways to leave some number
+of pennies (but just pennies) in change can be written
+\begindisplay
+P&=\nullp+\penny+\penny\penny+\penny\penny\penny+\penny\penny\penny\penny
+   +\cdots\cr
+ &=\nullp+\penny+\penny^2+\penny^3+\penny^4+\cdots\,.\cr
+\enddisplay
+The first term stands for the way to leave no pennies,
+the second term stands for one penny,
+then two pennies, three pennies, and so on.
+Now if we're allowed to use both pennies and nickels, the sum of all possible
+ways is
+\begindisplay
+N&=P+\nickel\,P+\nickel\nickel\,P+\nickel\nickel\nickel\,P
+ +\nickel\nickel\nickel\nickel\,P+\cdots\cr
+ &=(\nulln+\nickel+\nickel^2+\nickel^3+\nickel^4+\cdots\,)\,P\,,\cr
+\enddisplay
+since each payment has a certain number of nickels chosen from the first
+factor and a certain number of pennies chosen from~$P$. (Notice that
+$N$ is {\it not\/} the sum $\nullp+\penny+\nickel+(\penny+\nickel)^2+
+(\penny+\nickel)^3+\cdots\,$, because such a sum includes many types of
+payment more than once. For example, the term $(\penny+\nickel)^2=
+\penny\penny+\penny\nickel+\nickel\penny+\nickel\nickel$ treats \penny\nickel\
+and \nickel\penny\ as if they were different, but we want to list each
+set of coins only once without respect to order.)
+
+Similarly, if dimes are permitted as well, we get the infinite sum
+\begindisplay
+D&=(\nulld+\dime+\dime^2+\dime^3+\dime^4+\cdots\,)\,N\,,\cr
+\enddisplay
+which includes terms like $\dime^3\nickel^3\penny^5=
+\dime\dime\dime\nickel\nickel\nickel\penny\penny\penny\penny\penny$
+when it is expanded in full. Each of these terms is a different way to make change.
+Adding quarters and then half-dollars to the realm of possibilities
+\g Coins of the realm.\g
+gives
+\begindisplay
+Q&=(\nullq+\quarter+\quarter^2+\quarter^3+\quarter^4+\cdots\,)\,D\,;\cr
+C&=(\nullh+\halfdollar+\halfdollar^2+\halfdollar^3+\halfdollar^4+\cdots\,)\,Q\,.
+\enddisplay
+Our problem is to find the number of
+terms in $C$ worth exactly 50\rlap/c.
+
+A simple trick solves this problem nicely: We can replace \penny\ by~$z$,
+\nickel\ by~$z^5$, \dime\ by~$z^{10}$, \quarter\ by~$z^{25}$, and
+\halfdollar\ by~$z^{50}$. Then each term is replaced by~$z^n$, where $n$~is
+the monetary value of the original term. For example, the term
+\halfdollar\dime\nickel\nickel\penny\ becomes $z^{50+10+5+5+1}=z^{71}$.
+The four ways of paying 13~cents, namely $\dime\penny^3$, $\nickel\penny^8$,
+$\nickel^2\penny^3$, and $\penny^{13}$, each reduce to~$z^{13}$; hence the
+coefficient of~$z^{13}$ will be~$4$ after the $z$-substitutions are made.
+
+Let $P_n$, $N_n$, $D_n$, $Q_n$, and $C_n$ be
+the numbers of ways to pay $n$ cents when we're allowed to use coins that
+are worth at most $1$, $5$, $10$, $25$, and~$50$ cents, respectively.
+Our analysis tells us that these
+are the coefficients of~$z^n$ in the respective power series
+\begindisplay
+P&=1+z+z^2+z^3+z^4+\cdots\,,\cr
+N&=(1+z^5+z^{10}+z^{15}+z^{20}+\cdots\,)@P\,,\cr
+D&=(1+z^{10}+z^{20}+z^{30}+z^{40}+\cdots\,)@N\,,\cr
+Q&=(1+z^{25}+z^{50}+z^{75}+z^{100}+\cdots\,)@D\,,\cr
+C&=(1+z^{50}+z^{100}+z^{150}+z^{200}+\cdots\,)@Q\,.\cr
+\enddisplay
+Obviously $P_n=1$ for all $n\ge0$.
+\g How many pennies are there, really?\par
+If\/ $n$ is greater than, say, $10^{10}$,
+I~bet that\/ $P_n=0$ in the ``real world.\qback''\g
+And a little thought proves that we have $N_n=\lfloor n/5\rfloor+1$:
+To make $n$~cents out of pennies and nickels, we must choose either
+$0$~or $1$ or \dots\ or~$\lfloor n/5\rfloor$ nickels, after which
+there's only one way to supply the requisite number of pennies.
+Thus $P_n$ and $N_n$ are simple; but the values of $D_n$, $Q_n$, and
+$C_n$ are increasingly more complicated.
+
+One way to deal with these formulas is to realize that
+$1+z^m+z^{2m}+\cdots$ is just $1/(1-z^m)$. Thus we can write
+\begindisplay
+P&=1/(1-z)\,,\cr
+N&=P/(1-z^5)\,,\cr
+D&=N/(1-z^{10})\,,\cr
+Q&=D/(1-z^{25})\,,\cr
+C&=Q/(1-z^{50})\,.\cr
+\enddisplay
+Multiplying by the denominators, we have
+\begindisplay
+(1-z)\,P&=1\,,\cr
+(1-z^5)\,N&=P\,,\cr
+(1-z^{10})\,D&=N\,,\cr
+(1-z^{25})\,Q&=D\,,\cr
+(1-z^{50})\,C&=Q\,.\cr
+\enddisplay
+Now we can equate coefficients of $z^n$ in these equations, getting
+recurrence relations from which the desired coefficients
+can quickly be computed:
+\begindisplay
+P_n&=P_{n-1}+\[n=0]\,,\cr
+N_n&=N_{n-5}+P_n\,,\cr
+D_n&=D_{n-10}+N_n\,,\cr
+Q_n&=Q_{n-25}+D_n\,,\cr
+C_n&=C_{n-50}+Q_n\,.\cr
+\enddisplay
+For example, the coefficient of $z^n$ in $D=(1-z^{25})Q$ is equal to
+$Q_n-Q_{n-25}$;
+so we must have $Q_n-Q_{n-25}=D_n$, as claimed.
+
+We could unfold these recurrences and find, for example, that
+$Q_n=D_n+D_{n-25}+D_{n-50}+D_{n-75}+\cdots\,$, stopping when the subscripts
+get negative. But the non-iterated form is convenient because each
+coefficient is computed with just one addition, as in Pascal's triangle.
+
+Let's use the recurrences to find $C_{50}$. First, $C_{50}=C_0+Q_{50}$;
+so we want to know $Q_{50}$. Then $Q_{50}=Q_{25}+D_{50}$, and
+$Q_{25}=Q_0+D_{25}$; so we also want to know $D_{50}$ and~$D_{25}$.
+These $D_n$ depend in turn on $D_{40}$, $D_{30}$, $D_{20}$, $D_{15}$,
+$D_{10}$,~$D_5$, and on $N_{50}$,~$N_{45}$, \dots,~$N_5$. A simple calculation
+therefore suffices to determine all the necessary coefficients:
+\begindisplay \let\preamble=\tablepreamble \offinterlineskip
+n&&0&5&10&15&20&25&30&35&40&45&50\cr
+\omit&height2pt\cr
+\noalign{\hrule}
+\omit&height2pt\cr
+P_n&&1&1&1&1&1&1&1&1&1&1&1\cr
+N_n&&1&2&3&4&5&6&7&8&9&10&11\cr
+D_n&&1&2&4&6&9&12&16&&25&&36\cr
+Q_n&&1&&&&&13&&&&&49\cr
+C_n&&1&&&&&&&&&&50\cr
+\enddisplay
+The final value in the table gives us our answer, $C_{50}$: There are
+exactly 50~ways to leave a 50-cent tip.
+\g(Not counting the option of charging the tip to a credit card.)\g
+
+How about a closed form for $C_n$? Multiplying the equations together
+gives us the compact expression
+\begindisplay
+C={1\over1-z}\,{1\over1-z^5}\,{1\over1-z^{10}}\,{1\over1-z^{25}}\,
+ {1\over1-z^{50}}\,,
+\eqno\eqref|change-gf|
+\enddisplay
+but it's not obvious how to get from here to the coefficient of $z^n$.
+Fortunately there is a way; we'll return to this problem later in the
+chapter.
+
+More elegant formulas arise if we consider the problem of giving change
+when we live in a land that mints
+ coins of every positive integer denomination
+(\penny,
+\kern1pt\beginpicture(25,18)(-12.5,0)
+	\put(0,9){\circle{25}}
+	\put(0,9){\makebox(0,0){\tiny 2}}
+	\endpicture\kern1pt,
+\kern1pt\beginpicture(28,18)(-14,0)
+	\put(0,9){\circle{28}}
+	\put(0,9){\makebox(0,0){\tiny 3}}
+	\endpicture\kern1pt, \dots~)
+instead of just the five we allowed before.
+The corresponding generating function is
+an infinite product of fractions,
+\begindisplay
+{1\over (1 - z) (1 - z^2) (1 - z^3) \ldots}\,,
+\enddisplay
+and the coefficient of $z^n$ when these factors are fully
+multiplied out is called $p(n)$, the number of {\it"partitions"\/} of~$n$.
+A partition of~$n$ is a representation of~$n$ as a sum of positive integers,
+disregarding order. For example, there are seven different partitions of~$5$,
+namely
+\begindisplay \tightplus \let\displaythick=\normalthick
+5=4+1=3+2=3+1+1=2+2+1=2+1+1+1=1+1+1+1+1\,;
+\enddisplay
+hence $p(5)=7$. (Also
+$p(2)=2$, $p(3)=3$, $p(4)=5$, and $p(6)=11$; it begins to look as if
+$p(n)$ is always a prime number. But $p(7)=15$, spoiling the pattern.)
+ There is no closed form
+for $p(n)$, but the theory of partitions is a fascinating branch of
+mathematics in which many remarkable discoveries have been made.
+For example, "Ramanujan" proved that $p(5n+4)\=0$ \tmod5,
+$p(7n+5)\=0$ \tmod7, and $p(11n+6)\=0$ \tmod{11},
+by making ingenious transformations of generating functions
+(see "Andrews"~[|andrews-partitions|, Chapter~10]).
+
+\beginsection 7.2 Basic Maneuvers
+
+Now let's look more closely
+at some of the techniques that make
+power series powerful.
+
+First a few words about terminology and notation.
+Our generic generating function has the form
+\begindisplay
+G(z)
+	= g_0 + g_1 z + g_2 z^2 + \cdots
+	= \sum_{n \geq 0} g_n z^n \,,
+\eqno\eqref|gf-ord|
+\enddisplay
+and we say that $G(z)$, or $G$ for short,
+is the generating function for the sequence
+$\<g_0,g_1,g_2,\ldots\,\>$,
+which we also call~$\<g_n\>$.
+The coefficient $g_n$ of $z^n$ in~$G(z)$ is often
+denoted $[z^n]\,G(z)$, as in Section~5.4.
+
+The sum in \thiseq\ runs over all $n\geq0$, but we often
+find it more convenient
+to extend the sum over all integers~$n$.
+We can do this by simply regarding
+$g_{-1} = g_{-2} = \cdots = 0$.
+In such cases we might still talk about
+the sequence $\<g_0,g_1,g_2,\ldots\,\>$,
+as if the $g_n$'s didn't exist for negative~$n$.
+
+Two kinds of ``"closed forms"'' come up when we work with generating functions.
+We might have a "closed form" for $G(z)$, expressed in terms of~$z$;
+or we might have a closed form for $g_n$, expressed in terms of~$n$.
+For example, the generating function for "Fibonacci numbers" has the
+closed form $z/(1-z-z^2)$; the Fibonacci numbers themselves have the
+closed form $(\phi^n-\phihat^n)/\!\sqrt5$. The context will explain what
+kind of closed form is meant.
+
+Now a few words about perspective.
+"!philosophy"
+The generating function~$G(z)$ appears to be two different entities,
+depending on how we view it.
+Sometimes it is a function of a complex variable~$z$,
+satisfying all the standard properties proved in calculus books.
+And sometimes it is simply a "formal power series",
+\g If physicists can get away with viewing light
+sometimes as a wave and sometimes as a particle,
+mathematicians should be able to view generating functions in
+two different ways.\g
+with $z$~acting as a placeholder. In the previous section, for example,
+we used the second interpretation;
+we saw several examples in which $z$ was substituted for some
+feature of a combinatorial object in a ``sum''
+of such objects. The coefficient of~$z^n$ was then the
+number of combinatorial objects having $n$ occurrences of that feature.
+
+When we view $G(z)$ as a function of a complex variable,
+its "convergence" becomes an issue.
+We said in Chapter~2 that the infinite series $\sum_{n\ge0}g_nz^n$
+converges (absolutely) if and only if there's a bounding constant $A$
+such that the finite sums $\sum_{0\le n\le N}\vert g_nz^n\vert$ never
+exceed~$A$, for any~$N$. Therefore it's easy to see that if $\sum_{n\ge0}
+g_nz^n$ converges for some value $z=z_0$, it also converges for all $z$
+with $\vert z\vert<\vert z_0\vert$. Furthermore, we must have
+$\lim_{n\to\infty}\vert g_nz_0^n\vert=0@$; hence, in the
+notation of Chapter~9, $g_n=O\bigl(\vert1/z_0\vert^n
+\bigr)$ if there is convergence at~$z_0$. And conversely if $g_n=O(M^n)$,
+the series $\sum_{n\ge0}g_nz^n$ converges for all $\vert z\vert<1/M$.
+These are the basic facts about convergence of power series.
+
+But for our purposes convergence is usually a red herring, unless we're
+trying to study the asymptotic behavior of the coefficients.
+Nearly every operation we perform on generating functions can be
+justified rigorously as an operation on formal power series, and such
+operations are legal even when the series don't converge.
+(The relevant theory can be found, for example, in "Bell"~[|bell-gf|],
+"Niven"~[|niven-gf|], and "Henrici"~[|henrici|, Chapter~1].)
+
+Furthermore, even if we throw all caution to the winds
+\g Even if we remove the tags from our mattresses.\g
+ and derive formulas
+without any rigorous justification, we generally can take the
+results of our derivation and prove them by induction. For example,
+the generating function for the Fibonacci numbers converges only when
+$\vert z\vert<1/\phi\approx0.618$, but we didn't need to know that
+when we proved the formula $F_n=(\phi^n-\phihat^n)/\!\sqrt5$. The latter
+formula, once discovered, can be verified directly, if we don't
+trust the theory of formal power series. Therefore we'll
+ignore questions of convergence in this chapter; it's more a hindrance than
+a help.
+
+So much for perspective.
+Next we look at our main tools
+for reshaping generating functions\dash---%
+adding, shifting, changing variables,
+differentiating, integrating, and multiplying.
+In what follows we assume that, unless stated otherwise,
+$F(z)$ and $G(z)$ are the generating functions for
+the sequences $\<f_n\>$ and $\<g_n\>$.
+We also assume that the $f_n$'s and $g_n$'s
+are zero for negative~$n$,
+since this saves us some bickering with the limits of summation.
+
+It's pretty obvious what happens when we add
+constant multiples of $F$~and~$G$ together:
+\begindisplay \advance\belowdisplayskip-3pt
+\alpha F(z) + \beta G(z)
+&= \alpha \sum_n f_n z^n \;+\; \beta \sum_n g_n z^n\cr
+&= \sum_n \,(\alpha f_n + \beta g_n)\, z^n \,.
+\eqno
+\enddisplay
+This gives us the generating function for the sequence
+$\<\alpha f_n + \beta g_n\>$.
+
+Shifting a generating function isn't much harder.
+To shift~$G(z)$ right by $m$~places, that is,
+to form the generating function for the sequence
+$\<0,\ldots, 0,\allowbreak g_0,g_1,\ldots\,\>=\<g_{n-m}\>$
+with $m$~leading $0$'s,
+we simply multiply by~$z^m$:
+\begindisplay \advance\belowdisplayskip-3pt
+z^m G(z)
+	= \sum_n g_n\, z^{n+m}
+	= \sum_n g_{n-m}\, z^n \,,
+\qquad\hbox{integer $m\ge0$}.
+\eqno\eqref|gf-shift-up|
+\enddisplay
+This is the operation we used (twice), along with addition,
+to deduce the equation $(1 - z - z^2) F(z) = z$
+on our way to finding a closed form for the Fibonacci numbers
+in Chapter~6.
+
+And to shift~$G(z)$ left $m$~places\dash---that is,
+to form the generating function for the sequence
+$\<g_m,g_{m+1},g_{m+2},\ldots\,\>=\<g_{n+m}\>$ with the first
+$m$ elements discarded\dash---
+we subtract off the first~$m$ terms
+and then divide by~$z^m$:
+\begindisplay \postdisplaypenalty=10000 \advance\belowdisplayskip-1pt
+{G(z){-}g_0{-}g_1 z{-}\cdots{-}g_{m-1} z^{m-1}\over z^m}
+	= \sum_{n \geq m} g_n z^{n-m}
+	= \sum_{n \geq 0} g_{n+m} z^n.
+\eqno
+\enddisplay
+(We can't extend this last sum over all~$n$ unless $g_0=\cdots=g_{m-1}=0$.)
+
+Replacing the $z$ by a constant multiple
+is another of our tricks:
+\begindisplay \advance\belowdisplayskip-3pt
+G(cz)
+	= \sum_n g_n (cz)^n
+	= \sum_n c^n g_n z^n \,;
+\eqno
+\enddisplay
+this yields the generating function for
+the sequence $\<c^n g_n\>$.
+The special case $c = -1$ is particularly useful.
+
+Often we want to bring down a factor of~$n$ into
+\g I fear $d$generating-function $dz$'s.\g "!disease"
+ the coefficient.
+Differentiation is what lets us do that:
+\begindisplay \advance\belowdisplayskip-3pt
+G'(z)
+	= g_1 + 2 g_2 z + 3 g_3 z^2 + \cdots
+	= \sum_n (n+1) g_{n+1}\,z^n \,.
+\eqno\eqref|gf-deriv|
+\enddisplay
+Shifting this right one place gives us a form
+that's sometimes more useful,
+\begindisplay \advance\belowdisplayskip-3pt
+z G'(z)
+	= \sum_n n g_n\,z^n \,.
+\eqno
+\enddisplay
+This is the generating function for
+the sequence $\<n g_n\>$. Repeated differentiation would allow us to multiply
+$g_n$ by any desired polynomial in~$n$.
+
+Integration, the inverse operation,
+lets us divide the terms by~$n$:
+\begindisplay
+\int_0^z \! G(t) \, dt
+	= g_0 z + {1\over 2} g_1 z^2 + {1\over 3} g_2 z^3 + \cdots
+	= \sum_{n \geq 1} {1\over n} g_{n-1}\, z^n\,.
+\eqno
+\enddisplay
+(Notice that the constant term is zero.) If we want the generating
+function for $\<g_n/n\>$ instead of $\<g_{n-1}/n\>$,
+we should first shift left one place, replacing $G(t)$ by $\bigl(G(t)-g_0\bigr)/t$
+in the integral.
+
+Finally, here's how we multiply generating functions together:
+\begindisplay
+F(z)@G(z)
+	&= (f_0 + f_1 z + f_2 z^2 + \cdots\,)
+			(g_0 + g_1 z + g_2 z^2 + \cdots\,) \cr
+\noalign{\smallskip}
+	&= (f_0 g_0) \,+\, (f_0 g_1 + f_1 g_0) z
+					\,+\, (f_0 g_2 + f_1 g_1 + f_2 g_0) z^2
+						\,+\, \cdots \cr
+\noalign{\smallskip}
+	&= \sum_n \Bigl( \sum_k f_k@g_{n-k} \Bigr) z^n \,.
+\eqno
+\enddisplay
+As we observed in Chapter~5,
+this gives the generating function for the sequence
+$\<h_n\>$, the {\it"convolution"\/} of $\<f_n\>$
+and~$\<g_n\>$. The sum
+$h_n=\sum_k f_k g_{n-k}$ can also be written $h_n=\sum_{k=0}^n f_k g_{n-k}$,
+because $f_k=0$ when $k<0$ and $g_{n-k}=0$ when $k>n$.
+Multiplication/convolution is a little more complicated than the other operations,
+but it's very useful\dash---%
+so useful that we will spend all of Section~7.5 below
+looking at examples of it.
+
+Multiplication has several special cases that are worth
+considering as operations in themselves.
+We've already seen one of these:
+When $F(z) = z^m$ we get
+the shifting operation~\eq(|gf-shift-up|).
+In that case the sum~$h_n$ becomes the single term~$g_{n-m}$,
+because all $f_k$'s are~$0$ except for $f_m = 1$.
+
+Another useful special case arises when $F(z)$ is the
+familiar function ${1/(1-z)} = 1 + z + z^2 + \cdots\,$; then
+all $f_k$'s (for $k \geq 0$) are~$1$
+and we have the important formula
+\begindisplay
+{1\over 1-z} G(z)
+	= \sum_n \biggl( \sum_{k\ge0} g_{n-k} \biggr) z^n 
+	= \sum_n \biggl( \sum_{k\le n} g_k \biggr) z^n \,.
+\eqno\eqref|gf-cum-sum|
+\enddisplay
+Multiplying a generating function by $1/(1-z)$
+gives us the generating function for the cumulative sums
+of the original sequence.
+
+\topinsert
+\table Generating function manipulations.\tabref|gf-manip|
+\begindisplay\abovedisplayskip=-2pt \belowdisplayskip=6pt \openup7pt%
+ \advance\displayindent-\parindent\advance\displaywidth\parindent
+\alpha F(z) + \beta G(z)
+ &= \sum_n (\alpha f_n + \beta g_n) z^n\cr
+z^m G(z)
+ &= \sum_n g_{n-m} \,z^n\,,\qquad\hbox{integer $m\ge0$}\cr
+{G(z) - g_0 - g_1 z - \cdots - g_{m-1} z^{m-1}\over z^m}
+ &= \sum_{n \geq 0} g_{n+m} \,z^n\,,\qquad\hbox{integer $m\ge0$}\cr
+G(cz)
+ &= \sum_n c^n g_n \,z^n \cr
+G'(z)
+ &= \sum_n (n+1) g_{n+1} \,z^n\cr
+z G'(z)
+ &= \sum_n n g_n \,z^n \cr
+\int_0^z G(t) \, dt
+ &= \sum_{n \geq 1} {1\over n} g_{n-1} \,z^n\cr
+F(z)@G(z)
+ &= \sum_n \biggl( \sum_k f_k g_{n-k} \biggr) z^n \cr
+{1\over 1-z} G(z)
+ &= \sum_n \biggl( \sum_{k\le n} g_k \biggr) z^n \cr
+\enddisplay
+\hrule width\hsize height.5pt
+\kern4pt
+\endinsert
+
+\topinsert
+\table Simple sequences and their generating functions.\tabref|gf-simp|
+\kern3pt\openup5pt
+\halign to\hsize{$\left\<#,\ldots\,\right\>\hfil$%
+ \tabskip=2em plus 100pt&
+ $\displaystyle\sum\nolimits_{n\ge0}#\,z^n\hfil$&
+ $\displaystyle#\hfil$\tabskip=0pt\cr
+\omit\strut sequence\hfil&\omit generating function\hfil&\omit closed form\hfil\cr
+\noalign{\hrule width\hsize\kern5pt}
+1,0,0,0,0,0&\[n=0]&1\cr
+0,\ldots,0,1,0,0&\[n=m]&z^m\cr
+1,1,1,1,1,1&&{1\over1-z}\cr
+1,-1,1,-1,1,-1&(-1)^n&{1\over1+z}\cr
+1,0,1,0,1,0&\[2\divides n]&{1\over 1-z^2}\cr
+1,0,\ldots,0,1,0,\ldots,0,1,0&\[m\divides n]&{1\over 1-z^m}\cr
+1,2,3,4,5,6&(n+1)&{1\over(1-z)^2}\cr
+1,2,4,8,16,32&2^n&{1\over1-2z}\cr
+1,4,6,4,1,0,0&{4\choose n}&(1+z)^4\cr
+1,c,{c\choose2},{c\choose3}&{c\choose n}&(1+z)^c\cr
+1,c,{c+1\choose2},{c+\2\choose 3}&{c{+}n{-}1\choose n}&{1\over(1-z)^c}\cr
+1,c,c^2,c^3&c^n&{1\over1-cz}\cr
+1,{m+1\choose m},{m+\2\choose m},{m+3\choose m}&{m{+}n\choose m}&{1\over(1-z)^{m+1}}\cr
+0,1,{1\over2},{1\over3},{1\over4}&
+ \omit$\displaystyle\sum\nolimits_{n\ge1}{1\over n}\,z^n\hfil$&
+ \ln{1\over1-z}\cr
+0,1,-{1\over2},{1\over3},-{1\over4}&
+ \omit$\displaystyle\sum\nolimits_{n\ge1}{(-1)^{n+1}\over n}\,z^n\hfil$&
+ \ln(1+z)\cr
+1,1,{1\over2},{1\over6},{1\over24},{1\over120}&{1\over n!}&e^z\cr}
+\kern6pt
+\hrule width\hsize height.5pt
+\kern1pt
+\endinsert
+
+Table |gf-manip| summarizes the operations we've discussed so far.
+To use all these manipulations effectively
+it helps to have a healthy repertoire
+of generating functions in stock.
+Table~|gf-simp| lists the simplest ones; we can use those to get started
+and to solve quite a few problems.
+
+Each of the generating functions in Table |gf-simp| is important enough
+to be memorized. Many of them are special cases of the others, and many
+of them can be derived quickly from the others by using the basic operations
+\g\vskip-27pt Hint: If the sequence consists of binomial coefficients,
+its generating function usually involves a binomial, $1\pm z$.\g
+of Table~|gf-manip|; therefore the memory work isn't very hard.
+
+For example, let's consider the sequence $\<1,2,3,4,\ldots\,\>$,
+whose generating function $1/(1-z)^2$ is often useful. This
+generating function
+appears near the middle of Table~|gf-simp|, and it's also the special
+case $m=1$ of $\<1,{m+1\choose m},\allowbreak{m+\2\choose m},\allowbreak
+{m+3\choose m},\ldots\,\>$, which appears further down;
+it's also the special case $c=2$ of the closely related
+sequence $\<1,c,{c+1\choose2},{c+\2\choose3},
+\ldots\,\>$. We can derive it from the generating function for
+$\<1,1,1,1,\ldots\,\>$ by taking cumulative sums
+as in \eq(|gf-cum-sum|); that is, by
+dividing $1/(1-z)$ by $(1-z)$. Or we can derive it from
+\g OK, OK, I'm convinced already.\g
+$\<1,1,1,1,\ldots\,\>$ by differentiation, using \eq(|gf-deriv|).
+
+The sequence $\<1,0,1,0,\ldots\,\>$ is another one whose generating
+function can be obtained in many ways. We can obviously derive the
+formula $\sum_nz^{2n}=1/(1-z^2)$ by substituting $z^2$ for $z$ in the
+identity $\sum_nz^n=1/(1-z)$; we can also apply cumulative summation
+to the sequence $\<1,-1,1,-1,\ldots\,\>$, whose generating function
+is $1/(1+z)$, getting $1/(1+z)(1-z)=1/(1-z^2)$. And there's also a third
+way, which is based on a general method for extracting the even-numbered
+terms $\<g_0,0,g_2,0,g_4,0,\ldots\,\>$ of {\it any\/} given sequence:
+If we add $G(-z)$ to $G(+z)$ we get
+\begindisplay
+G(z)+G(-z)=\sum_ng_n\bigl(1+(-1)^n\bigr)z^n=2\sum_n g_n\[\hbox{$n$ even}]z^n\,;
+\enddisplay
+therefore
+\begindisplay
+{G(z)+G(-z)\over2}=\sum_n g_{2n}\,z^{2n}\,.
+\eqno\eqref|gf-even|
+\enddisplay
+The odd-numbered terms can be extracted in a similar way,
+\begindisplay
+{G(z)-G(-z)\over2}=\sum_n g_{2n+1}\,z^{2n+1}\,.
+\eqno\eqref|gf-odd|
+\enddisplay
+In the special case where $g_n=1$ and $G(z)=1/(1-z)$, the generating function
+for $\<1,0,1,0,\ldots\,\>$ is $\half\bigl(G(z)+G(-z)\bigr)=
+\half\bigl({1\over1-z}+{1\over1+z}\bigr)={1\over1-z^{2\mathstrut}}$.
+
+Let's try this extraction trick on the generating function for Fibonacci
+numbers. We know that $\sum_nF_nz^n=z/(1-z-z^2)$; hence
+\begindisplay
+\sum_nF_{2n}z^{2n}&=\half\biggl({z\over1-z-z^2}+{-z\over1+z-z^2}\biggr)\cr
+&=\half\biggl({z+z^2-z^3-z+z^2+z^3\over(1-z^2)^2-z^2}\biggr)
+={z^2\over1-3z^2+z^4}\,.
+\enddisplay
+This generates the sequence $\<F_0,0,F_2,0,F_4,\ldots\,\>$; hence
+the sequence of alternate $F$'s, $\advance\thinmuskip0mu minus 1mu
+\<F_0,F_2,F_4,F_6,\ldots\,\>=\<0,1,3,8,\ldots\,\>$,
+has a simple generating function:
+\begindisplay
+\sum_n F_{2n}z^n={z\over1-3z+z^2}\,.
+\eqno\eqref|fib-gf-even|
+\enddisplay
+
+\beginsection 7.3 Solving Recurrences
+
+Now let's focus our attention on one of the most important uses of generating
+functions: the "solution" of "recurrence" relations.
+
+Given a sequence $\<g_n\>$ that satisfies a given recurrence,
+we seek a closed form for $g_n$ in terms of~$n$. A solution to this problem
+via generating functions proceeds in four steps that are almost mechanical
+enough to be programmed on a computer:
+
+\nobreak\smallskip
+\item{1} Write down a single equation that expresses $g_n$ in terms of
+other elements of the sequence. This equation should be valid for all
+integers~$n$, assuming that $g_{-1}=g_{-2}=\cdots=0$.
+
+\smallbreak
+\item{2} Multiply both sides of the equation by $z^n$ and sum over all~$n$.
+This gives, on the left, the sum $\sum_n g_nz^n$, which is the generating
+function~$G(z)$. The right-hand side should be manipulated so that it
+becomes some other expression involving~$G(z)$.
+
+\smallbreak
+\item{3} Solve the resulting equation, getting a closed form for~$G(z)$.
+
+\smallbreak
+\item{4} Expand $G(z)$ into a power series and read off the coefficient
+of~$z^n$; this is a closed form for~$g_n$.
+
+\nobreak\smallskip\noindent
+This method works because the single function $G(z)$ represents the entire
+sequence $\<g_n\>$ in such a way that many manipulations
+are possible.
+
+\subhead Example 1: Fibonacci numbers revisited.
+
+For example, let's rerun the derivation of Fibonacci numbers from Chapter~6.
+"!Fibonacci numbers, generating function"
+In that chapter we were feeling our way, learning a new method; now we
+can be more systematic. The given recurrence is
+\begindisplay
+g_0&=0\,;\qquad g_1=1\,;\cr
+g_n&=g_{n-1}+g_{n-2}\,,\qquad\hbox{for $n\ge2$}.
+\enddisplay
+We will find a closed form for $g_n$ by using the four steps above.
+
+Step 1 tells us to write the recurrence as a ``single equation'' for~$g_n$.
+We could say
+\begindisplay
+g_n=\cases{0,&if $n\le0@$;\cr 1,&if $n=1$;\cr
+ g_{n-1}+g_{n-2},&if $n>1$;\cr}
+\enddisplay
+but this is cheating. Step 1 really asks for a formula that doesn't
+involve a case-by-case construction. The single equation
+\begindisplay
+g_n=g_{n-1}+g_{n-2}
+\enddisplay
+works for $n\ge2$, and it also holds when $n\le0$ (because we have $g_0=0$
+and $g_{\rm negative}=0$). But when $n=1$ we get $1$~on the left
+and $0$~on the right. Fortunately the problem is easy to fix, since
+we can add $\[n=1]$ to the right; this adds~$1$ when $n=1$, and it makes
+no change when $n\ne1$. So, we have
+\begindisplay
+g_n=g_{n-1}+g_{n-2}+\[n=1]\,;
+\enddisplay
+this is the equation called for in Step 1.
+
+Step 2 now asks us to transform the equation for $\<g_n\>$
+into an equation for $G(z)=\sum_ng_nz^n$. The task is not difficult:
+\begindisplay \openup3pt
+G(z)=\sum_ng_nz^n
+&=\sum_ng_{n-1}\,z^n+\sum_ng_{n-2}\,z^n+\sum_n\[n=1]z^n\cr
+&=\sum_ng_n\,z^{n+1}+\sum_ng_n\,z^{n+2}\;+\;z\cr
+&=z@ G(z)+z^2G(z)+z\,.\cr
+\enddisplay
+Step 3 is also simple in this case; we have
+\begindisplay
+G(z)={z\over1-z-z^2}\,,
+\enddisplay
+which of course comes as no surprise.
+
+Step 4 is the clincher. We carried it out in Chapter~6 by having a
+sudden flash of inspiration; let's go more slowly now, so that we can
+get through Step~4 safely later, when we meet problems that are
+more difficult. What is
+\begindisplay
+[z^n]\,{z\over 1-z-z^2}\,,
+\enddisplay
+the coefficient of
+$z^n$ when $z/(1-z-z^2)$ is expanded in a power series? More generally,
+if we are given any "rational function"
+\begindisplay
+R(z)={P(z)\over Q(z)}\,,
+\enddisplay
+ where $P$ and~$Q$
+are polynomials, what is the coefficient $[z^n]\,R(z)$?
+
+There's one kind of rational function whose coefficients are particularly nice,
+namely
+\begindisplay
+{a\over(1-\rho z)^{m+1}}=\sum_{n\ge0}{m+n\choose m}a\rho^nz^n\,.
+\eqno
+\enddisplay
+(The case $\rho=1$ appears in Table~|gf-simp|, and we can get the general
+formula shown here by substituting $\rho z$ for~$z$.) A finite sum of functions
+like \thiseq,
+\begindisplay
+S(z)=
+{a_1\over(1-\rho_1z)^{m_1+1}}+
+{a_2\over(1-\rho_2z)^{m_2+1}}+\cdots+
+{a_l\over(1-\rho_lz)^{m_l+1}}\,,
+\eqno\eqref|s-parts|
+\enddisplay
+also has nice coefficients,
+\begindisplay
+[z^n]\,S(z)&=
+a_1{m_1+n\choose m_1}\rho_1^n+
+a_2{m_2+n\choose m_2}\rho_2^n\cr
+&\hskip12em+\cdots+
+a_l{m_l+n\choose m_l}\rho_l^n\,.
+\eqno
+\enddisplay
+We will show that every rational function $R(z)$ such that $R(0)\ne\infty$
+can be expressed in the form
+\begindisplay
+R(z)=S(z)+T(z)\,,
+\eqno\eqref|r-s-t|
+\enddisplay
+where $S(z)$ has the form \eq(|s-parts|) and $T(z)$ is a polynomial.
+Therefore there is a closed form for the coefficients $[z^n]\,R(z)$.
+Finding $S(z)$ and~$T(z)$ is equivalent to finding the
+``"partial fraction expansion"'' of~$R(z)$.
+
+Notice that $S(z)=\infty$ when $z$ has the values $1/\rho_1$,
+\dots,~$1/\rho_l$. Therefore the numbers $\rho_k$ that we need to find,
+if we're going to succeed in expressing $R(z)$ in the desired form
+$S(z)+T(z)$, must be the reciprocals of the numbers $\alpha_k$ where
+$Q(\alpha_k)=0$. (Recall that $R(z)=P(z)/Q(z)$, where $P$ and~$Q$ are
+polynomials; we have $R(z)=\infty$ only if $Q(z)=0$.)
+
+Suppose $Q(z)$ has the form
+\begindisplay
+Q(z)=q_0+q_1z+\cdots+q_mz^m\,,\qquad\hbox{where $q_0\ne0$ and $q_m\ne0$.}
+\enddisplay
+The ``reflected'' polynomial "!reflected polynomial"
+\begindisplay
+Q^{\rm R}(z)=q_0z^m+q_1z^{m-1}+\cdots+q_m
+\enddisplay
+has an important relation to $Q(z)$:
+\begindisplay
+&Q^{\rm R}(z)=q_0(z-\rho_1)\ldots(z-\rho_m)\cr
+&\qquad\iff
+ Q(z)=q_0(1-\rho_1z)\ldots(1-\rho_mz)\,.
+\enddisplay
+Thus, the roots of $Q^{\rm R}$ are the reciprocals of the roots of~$Q$,
+and vice versa. We can therefore
+find the numbers $\rho_k$ we seek by factoring
+the reflected polynomial $Q^{\rm R}(z)$.
+
+For example, in the Fibonacci case we have
+\begindisplay
+Q(z)=1-z-z^2\,;\qquad Q^{\rm R}(z)=z^2-z-1\,.
+\enddisplay
+The roots of $Q^{\rm R}$ can be found by setting $(a,b,c)=(1,-1,-1)$
+in the quad\-ratic formula $\bigl(-b\pm\mskip-1mu
+ \sqrt{\,b^{\mathstrut2}-4ac}\,\bigr)
+/2a$; we find that they are
+\begindisplay \postdisplaypenalty=10000
+\phi={1+\sqrt5\over2}\And \phihat={1-\sqrt5\over2}\,.
+\enddisplay
+Therefore $Q^{\rm R}(z)=(z-\phi)(z-\phihat)$ and $Q(z)=(1-\phi z)(1-\phihat z)$.
+
+Once we've found the $\rho$'s, we can proceed to find the partial fraction
+expansion. It's simplest if all the roots are distinct, so let's consider that
+special case first. We might as well state and prove the general result
+formally:
+
+\subhead Rational Expansion Theorem for Distinct Roots.
+
+{\sl If\/ $R(z)=P(z)/Q(z)$, where $Q(z)=q_0(1-\rho_1z)\ldots(1-\rho_l z)$
+and the numbers $(\rho_1,\ldots,\rho_l)$ are distinct, and if\/ $P(z)$
+is a polynomial of degree less than~$l$, then}
+\begindisplay
+[z^n]\,R(z)=a_1\rho_1^n+\cdots+a_l\rho_l^n\,,\qquad
+\hbox{where \ $a_k=\displaystyle{-\rho_k P(1/\rho_k)\over Q'(1/\rho_k)}$}.
+\eqno\eqref|rat-distinct|
+\enddisplay
+Proof: Let $a_1$, \dots, $a_l$ be the stated constants. Formula \thiseq\
+holds if $R(z)=P(z)/Q(z)$ is equal to
+\begindisplay
+S(z)={a_1\over1-\rho_1z}+\cdots+{a_l\over1-\rho_lz}\,.
+\enddisplay
+And we can prove that $R(z)=S(z)$ by showing that the function
+$T(z)=R(z)-S(z)$ is not
+\g Impress your parents by leaving the book open at this page.\g
+infinite as $z\to1/\rho_k$. For this will show that the rational function~$T(z)$
+is never infinite; hence $T(z)$ must be a polynomial. We also can show that
+$T(z)\to0$ as $z\to\infty$; hence $T(z)$~must
+be zero.
+
+Let $\alpha_k=1/\rho_k$. To prove that $\lim_{z\to\alpha_k}T(z)\ne\infty$,
+it suffices to show that $\lim_{z\to\alpha_k}\,(z-\alpha_k)T(z)=0$,
+because $T(z)$ is a rational function of $z$.
+Thus we want to show that
+\begindisplay
+\lim_{z\to\alpha_k}\,(z-\alpha_k)R(z)
+=\lim_{z\to\alpha_k}\,(z-\alpha_k)S(z)\,.
+\enddisplay
+The right-hand limit equals
+$\lim_{z\to\alpha_k}a_k(z-\alpha_k)/(1-\rho_kz)=-a_k/\rho_k$, because
+$(1-\rho_kz)=-\rho_k(z-\alpha_k)$ and $(z-\alpha_k)/(1-\rho_jz)\to0$
+for $j\ne k$. The left-hand limit is
+\begindisplay
+\lim_{z\to\alpha_k}\,(z-\alpha_k){P(z)\over Q(z)}=P(\alpha_k)\lim_{z\to\alpha_k}
+{z-\alpha_k\over Q(z)}={P(\alpha_k)\over Q'(\alpha_k)}\,,
+\enddisplay
+by L'Hospital's rule. Thus the theorem is proved.
+
+Returning to the Fibonacci example,
+we have $P(z)=z$ and $Q(z)=1-z-z^2=(1-\phi z)(1-\phihat z)$;
+hence $Q'(z)=-1-2z$, and
+\begindisplay
+{-\rho P(1/\rho)\over Q'(1/\rho)}={-1\over-1-2/\rho}={\rho\over\rho+2}\,.
+\enddisplay
+According to \eq(|rat-distinct|),
+the coefficient of $\phi^n$ in $[z^n]\,R(z)$ is therefore $\phi/(\phi+2)=
+1/\!\sqrt5@$; the coefficient of $\phihat^n$ is
+$\phihat/(\phihat+2)=-1/\!\sqrt5$. So the theorem
+tells us that $F_n=(\phi^n-\phihat^n)/\mskip-1mu
+\sqrt5$, as in \equ(6.|fib-sol|).
+
+When $Q(z)$ has repeated roots, the calculations become more difficult,
+but we can beef up the proof of the theorem and prove the following
+more general result:
+
+\subhead General Expansion Theorem for Rational Generating Functions.
+
+{\sl If\/ $R(z)=P(z)/Q(z)$, where\/ $Q(z)=q_0(1-\rho_1z)^{d_1}\ldots
+(1-\rho_lz)^{d_l}$ and the numbers\/ $(\rho_1,\ldots,\rho_l)$ are
+distinct, and if\/ $P(z)$ is a polynomial of degree less than\/
+$d_1+\cdots+d_l$, then
+\begindisplay
+[z^n]\,R(z)=f_1(n)\rho_1^n\,+\,\cdots\,+\,f_l(n)\rho_l^n
+\qquad\hbox{\rm for all $n\ge0$},
+\eqno\eqref|gen-exp-thm|
+\enddisplay
+where each\/ $f_k(n)$ is a polynomial of degree\/ $d_k-1$ with
+leading coefficient}
+\begindisplay \tightplus \openup3pt
+a_k&={(-\rho_k)^{d_k}P(1/\rho_k)d_k\over Q^{(d_k)}(1/\rho_k)}\cr
+&={P(1/\rho_k)\over (d_k-1)!\,q_0\prod_{j\ne k}(1-\rho_j/\rho_k)^{d_j}}\,.
+\eqno\eqref|gen-exp-a|
+\enddisplay
+This can be proved by induction on $\max(d_1,\ldots,d_l)$, using the fact that
+\begindisplay
+R(z)-{a_1(d_1-1)!\over(1-\rho_1z)^{d_1}}
+-\cdots-{a_l(d_l-1)!\over(1-\rho_lz)^{d_l}}
+\enddisplay
+is a rational function whose denominator polynomial
+is not divisible by\break ${(1-\rho_kz)^{d_k}}$ for any~$k$.
+
+\subhead Example 2: A more-or-less random recurrence.
+
+Now that we've seen some general methods, we're ready to tackle new problems.
+Let's try to find a closed form for the recurrence
+\begindisplay
+g_0&=g_1=1\,;\cr
+g_n&=g_{n-1}+2g_{n-2}+(-1)^n\,,\qquad\hbox{for $n\ge2$}.
+\eqno\eqref|more-less-random|
+\enddisplay
+It's always a good idea to make a table of small cases first, and the
+recurrence lets us do that easily:
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4&5&6&7\cr
+\noalign{\hrule}
+(-1)^n&&1&-1&1&-1&1&-1&1&-1\cr
+\noalign{\hrule}
+g_n&&1&1&4&5&14&23&52&97\cr
+\enddisplay
+No closed form is evident, and this sequence isn't even listed in
+"Sloane"'s {\sl Handbook\/}~[|sloane|];
+so we need to go through the four-step process if we want to discover the solution.
+
+Step 1 is easy, since we merely need to insert fudge factors to fix
+things when $n<2$: The equation
+\begindisplay
+g_n=g_{n-1}+2g_{n-2}+(-1)^n\[n\ge0]+\[n=1]
+\enddisplay
+holds for all integers $n$. Now we can carry out Step 2:
+\g\vskip30pt N.B.: The upper index on $\sum_{n=1}z^n$ is not missing!\g
+\begindisplay
+G(z)=\sum_ng_nz^n&=\!\sum_ng_{n-1}z^n+2\sum_ng_{n-2}z^n+\!\sum_{n\ge0}(-1)^nz^n
++\!\sum_{n=1}z^n\cr
+&=zG(z)+2z^2G(z)+{1\over1+z}+z\,.\cr
+\enddisplay
+(Incidentally, we could also have used $-1\choose n$ instead of $(-1)^n\[n\ge0]$,
+thereby getting $\sum_n{-1\choose n}z^n=(1+z)^{-1}$ by the binomial theorem.)
+Step~3 is elementary algebra, which yields
+\begindisplay
+G(z)={1+z(1+z)\over(1+z)(1-z-2z^2)}={1+z+z^2\over(1-2z)(1+z)^2}\,.
+\enddisplay
+And that leaves us with Step 4.
+
+The squared factor in the denominator is a bit troublesome,
+since we know that repeated roots are more complicated than distinct roots;
+but there it is.
+We have two roots, $\rho_1=2$ and $\rho_2=-1$; the general expansion theorem
+\eq(|gen-exp-thm|) tells us that
+\begindisplay
+g_n=a_12^n+(a_2n+c)(-1)^n
+\enddisplay
+for some constant~$c$, where
+\begindisplay
+a_1={1+1/2+1/4\over(1+1/2)^2}={7\over9}\,;\qquad
+a_2={1-1+1\over1-2/(-1)}={1\over3}\,.
+\enddisplay
+(The second formula for $a_k$ in \eq(|gen-exp-a|) is easier to use than the
+first one when the denominator has nice factors. We simply substitute
+$z=1/\rho_k$ everywhere in $R(z)$, except in the factor where this gives zero,
+and divide by $(d_k-1)!$; this gives the coefficient of $n^{d_k-1}\rho_k^n$.)
+Plugging in $n=0$ tells us that the value of the remaining constant~$c$ had better
+be $2\over9$; hence our answer is
+\begindisplay
+g_n=\textstyle{7\over9}2^n+\Bigl({1\over3}n+{2\over9}\Bigr)(-1)^n\,.
+\eqno
+\enddisplay
+It doesn't hurt to check the cases $n=1$ and $2$, just to be sure that we didn't
+foul up. Maybe we should even try $n=3$, since this formula looks weird.
+But it's correct, all right.
+
+Could we have discovered \thiseq\ by guesswork? Perhaps after tabulating a
+few more values we may have observed that $g_{n+1}\approx2g_n$ when $n$~is
+large. And with chutzpah and luck we might even have been able to smoke out
+the constant $7\over9$. But it sure is simpler and more reliable to have
+generating functions as a tool.
+
+\subhead Example 3: Mutually recursive sequences.
+
+Sometimes we have two or more recurrences that depend on each other.
+Then we can form generating functions for both of them, and solve both
+by a simple extension of our four-step method.
+
+For example, let's return to the problem of $3\times n$ domino tilings
+that we explored earlier this chapter. If we want to know only the total
+number of ways, $U_n$, to cover a $3\times n$ rectangle with dominoes,
+without breaking this number down into vertical dominoes versus
+horizontal dominoes, we needn't go into as much detail as we did before.
+We can merely set up the recurrences
+\begindisplay \def\preamble{&\hfill$##$&${}##$\hfill\qquad}
+U_0&=1\,,\qquad U_1=0\,;&V_0&=0\,,\qquad V_1=1\,;\cr
+U_n&=2V_{n-1}+U_{n-2}\,,&V_n&=U_{n-1}+V_{n-2}\,,
+\qquad\hbox{for $n\ge2$}.\cr
+\enddisplay
+Here $V_n$ is the number of ways to cover a $3\times n$ rectangle-minus-corner,
+using $(3n-1)/2$ dominoes. These recurrences are easy to discover, if we
+consider the possible domino configurations at the rectangle's
+left edge, as before. Here are
+the values of $U_n$ and $V_n$ for small~$n$:
+"!Seaver, George Thomas"
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4&5&6&7\cr
+\noalign{\hrule}
+U_n&&1&0&3&0&11&0&41&0\eqno\eqref|u-v-table|\cr
+\noalign{\hrule}
+V_n&&0&1&0&4&0&15&0&56\cr
+\enddisplay
+
+Let's find closed forms, in four steps.
+First (Step~1), we have
+\begindisplay
+U_n=2V_{n-1}+U_{n-2}+\[n=0]\,,\qquad
+V_n=U_{n-1}+V_{n-2}\,,
+\enddisplay
+for all $n$. Hence (Step~2),
+\begindisplay
+U(z)=2zV(z)+z^2U(z)+1\,,\,\qquad V(z)=zU(z)+z^2V(z)\,.
+\enddisplay
+Now (Step 3) we must solve two equations in two unknowns; but these are
+easy, since the second equation yields $V(z)=zU(z)/(1-z^2)$; we find
+\begindisplay
+U(z)={1-z^2\over1-4z^2+z^4}\,;\qquad V(z)={z\over1-4z^2+z^4}\,.
+\eqno
+\enddisplay
+\looseness=-1
+(We had this formula for $U(z)$ in \eq(|u-with-cubes|), but with $z^3$
+instead of~$z^2$. In that derivation, $n$~was the number of dominoes;~now
+it's the width of the rectangle.)
+
+The denominator $1-4z^2+z^4$ is a function of $z^2$; this is what
+makes $U_{2n+1}=0$ and $V_{2n}=0$, as they should be.
+We can take advantage of this nice property of~$z^2$ by retaining~$z^2$
+when we factor the denominator:
+We need not take $1-4z^2+z^4$ all the way to a product
+of four factors $(1-\rho_kz)$, since two factors of the form $(1-\rho_kz^2)$
+will be enough to tell us the coefficients. In other words if we consider
+the generating function
+\begindisplay
+W(z)={1\over1-4z+z^2}=W_0+W_1\,z+W_2\,z^2+\cdots\,,
+\eqno\eqref|1-4+1|
+\enddisplay
+we will have $V(z)=zW(z^2)$ and $U(z)=(1-z^2)W(z^2)$; hence
+$V_{2n+1}=W_n$ and $U_{2n}=W_n-W_{n-1}$. We save time and energy
+by working with the simpler function~$W(z)$.
+
+The factors of $1-4z+z^2$ are $(z-2-\sqrt3\,)$ and $(z-2+\sqrt3\,)$,
+and they can also be written $\bigl(1-(2{+}\sqrt3\,)z\bigr)$ and
+$\bigl(1-(2{-}\sqrt3\,)z\bigr)$ because this polynomial is its own reflection.
+Thus it turns out that we have
+\begindisplay \openup3pt
+&V_{2n+1}=W_n={3{+}2\sqrt3\over6}(2+\sqrt3\,)^n+
+ {3{-}2\sqrt3\over6}(2-\sqrt3\,)^n\,;\hidewidth\cr
+&U_{2n}=W_n-W_{n-1}&={3{+}\sqrt3\over6}(2+\sqrt3\,)^n+
+ {3{-}\sqrt3\over6}(2-\sqrt3\,)^n\cr
+&&= {(2+\sqrt3\,)^n\over3-\sqrt3}
+ +{(2-\sqrt3\,)^n\over3+\sqrt3}\,.
+\eqno
+\enddisplay
+This is the desired closed form for the number of $3\times n$ domino tilings.
+
+Incidentally, we can simplify the formula for $U_{2n}$ by realizing that
+the second term always lies between $0$ and~$1$. The number $U_{2n}$ is an
+integer, so we have
+\begindisplay
+U_{2n}=\biggl\lceil{(2+\sqrt3\,)^n\over3-\sqrt3}\biggr\rceil\,,
+\qquad\hbox{for $n\ge0$}.
+\eqno\eqref|u-closed|
+\enddisplay
+In fact, the other term $(2-\sqrt3\,)^n\!/(3+\sqrt3\,)$ is extremely small
+when $n$~is large, because $2-\sqrt3\approx0.268$. This needs to be
+taken into account if we try to use formula \thiseq\ in numerical
+calculations. For example, a fairly expensive name-brand hand "calculator"
+comes up with $413403.0005$ when asked to compute $(2+\sqrt3@)^{10}\!/
+(3-\sqrt3@)$. This is correct to nine significant figures; but the
+true value is slightly {\it less\/} than $413403$, not slightly greater.
+Therefore it would be a mistake to take the ceiling of $413403.0005$;
+the correct answer, $U_{20}=413403$, is obtained by {\it rounding\/} to
+the nearest integer. Ceilings
+\g I've known slippery floors too.\g
+can be hazardous.
+
+\subhead Example 4: A closed form for "change".
+
+When we left the problem of making change, we had just calculated
+the number of ways to pay 50\rlap/c. Let's try now to count the number
+of ways there are to change a dollar, or a million dollars\dash---%
+still using only pennies, nickels, dimes, quarters, and halves.
+
+\goodbreak
+The generating function derived earlier is
+\begindisplay
+C(z)={1\over1-z}\,{1\over1-z^5}\,{1\over1-z^{10}}\,{1\over1-z^{25}}\,
+{1\over1-z^{50}}\,;
+\enddisplay
+this is a rational function of $z$ with a denominator of degree~91.
+Therefore we can decompose the denominator into 91 factors and
+come up with a 91-term ``closed form'' for $C_n$, the number of
+ways to give $n$ cents in change. But that's too horrible to contemplate.
+Can't we do better than the general method suggests, in this particular case?
+
+One ray of hope suggests itself immediately, when we notice that
+the denominator is almost a function of $z^5$. The trick we just used
+to simplify the calculations by noting that $1-4z^2+z^4$ is a function
+of $z^2$ can be applied to $C(z)$, if we replace $1/(1-z)$ by
+$(1+z+z^2+z^3+z^4)/(1-z^5)$:
+\begindisplay \openup3pt
+C(z)&={1+z+z^2+z^3+z^4\over1-z^5}\,
+ {1\over1-z^5}\,{1\over1-z^{10}}\,{1\over1-z^{25}}\,
+ {1\over1-z^{50}}\cr
+ &= (1+z+z^2+z^3+z^4)\check C(z^5)\,,\cr
+\noalign{\vskip1pt}
+\check C(z)&={1\over1-z}\,
+ {1\over1-z}\,{1\over1-z^2}\,{1\over1-z^5}\,{1\over1-z^{10}}\,.
+\enddisplay
+The compressed function $\check C(z)$ has a denominator whose degree is only~19,
+so it's much more tractable than the original. This new expression for
+$C(z)$ shows us, incidentally, that
+$C_{5n}=C_{5n+1}=C_{5n+2}=C_{5n+3}=C_{5n+4}$; and indeed, this set of
+equations
+is obvious in retrospect: The number of ways to
+leave a 53\rlap/c tip is the same as the number of ways to leave a 50\rlap/c
+tip, because the number of pennies is predetermined modulo~$5$.
+
+ But $\check C(z)$ still doesn't have a
+\g Now we're also getting compressed reasoning.\g
+really simple closed form based on the roots of the denominator.
+The easiest way to compute the coefficients of $\check C(z)$ is probably to
+recognize that each of the denominator factors is a divisor of $1-z^{10}$.
+Hence we can write
+\begindisplay
+\check C(z)={A(z)\over(1-z^{10})^5}\,,\quad
+\hbox{where $A(z)=A_0+A_1z+\cdots+A_{31}z^{31}$}.
+\eqno\eqref|change-compressed|
+\enddisplay
+The actual value of $A(z)$, for the curious, is
+\begindisplay \openup2pt
+&(1+z+\cdots+z^9)^2(1+z^2+\cdots+z^8)(1+z^5)\cr
+&\quad=1+2z+4z^2+6z^3+9z^4+13z^5+18z^6+24z^7\cr
+&\quad\qquad+31z^8+39z^9+45z^{10}+52z^{11}+57z^{12}+63z^{13}+67z^{14}+69z^{15}\cr
+&\quad\qquad+69z^{16}+67z^{17}+63z^{18}+57z^{19}+52z^{20}
+ +45z^{21}+39z^{22}+31z^{23}\cr
+&\quad\qquad+24z^{24}+18z^{25}+13z^{26}+9z^{27}
+ +6z^{28}+4z^{29}+2z^{30}+z^{31}\,.
+\enddisplay
+Finally, since $1/(1-z^{10})^5=\sum_{k\ge0}{k+4\choose4}z^{10k}$, we can determine
+the coefficient ${\check C}_n=[z^n]\,\check C(z)$ as follows, when $n=10q+r$
+and $0\le r<10$:
+\begindisplay
+{\check C}_{10q+r}&=\sum_{j,k}\textstyle A_j{k+4\choose4}\[10q+r=10k+j]\cr
+&=\textstyle A_r{q+4\choose4}+A_{r+10}{q+3\choose4}
+ +A_{r+20}{q+\2\choose4}+A_{r+30}{q+1\choose4}\,.
+\eqno\eqref|change-closed|
+\enddisplay
+This gives ten cases, one for each value of $r$; but it's a pretty good closed
+form, compared with alternatives that involve powers of complex numbers.
+
+For example, we can use this expression to deduce the value of $C_{50q}=
+"!change, large amounts"
+{\check C}_{10q}$. Then $r=0$ and we have
+\begindisplay
+C_{50q}={q{+}4\choose4}+45{q{+}3\choose4}+52{q{+}2\choose4}+2{q{+}1\choose4}\,.
+\enddisplay
+The number of ways to change 50\rlap/c is ${5\choose4}+45{4\choose4}=50$;
+the number of ways to change \$1 is ${6\choose4}+45{5\choose4}+52{4\choose4}
+=292$; and the number of ways to change \$1,000,000 is
+\begindisplay
+&{2000004\choose 4}+45{2000003\choose4}+52{2000002\choose4}+2{2000001\choose4}\cr
+\noalign{\medskip}
+&\hskip12em=66666793333412666685000001\,.
+\enddisplay
+
+\subhead Example 5: A divergent series.
+
+Now let's try to get a closed form for the numbers $g_n$ defined by
+\begindisplay
+g_0&=1\,;\cr
+g_n&=ng_{n-1}\,,\qquad\hbox{for $n>0$}.
+\enddisplay
+After staring at this for a few nanoseconds we realize that $g_n$ is
+\g Nowadays people are talking \undertext{femto}seconds.\g
+just $n!$; in fact, the method of summation factors described in
+Chapter~2 suggests this answer immediately. But let's try to solve
+the recurrence with generating functions, just to see what happens.
+(A powerful technique should be able to handle easy recurrences like this,
+as well as others that have answers we can't guess so easily.)
+
+The equation
+\begindisplay
+g_n=ng_{n-1}+\[n=0]
+\enddisplay
+holds for all $n$, and it leads to
+\begindisplay
+G(z)=\sum_ng_nz^n=\sum_nng_{n-1}\,z^n+\sum_{n=0}z^n\,.
+\enddisplay
+{\displaywidowpenalty=-70 % force desirable page break (DEK, May 88)
+To complete Step 2, we want to express $\sum_nng_{n-1}\,z^n$ in terms of~$G(z)$,
+and the basic maneuvers in Table~|gf-manip| suggest that the derivative
+$G'(z)=\sum_nng_nz^{n-1}$ is somehow involved. So we steer toward that
+kind of sum:
+\begindisplay
+G(z)&=1+\sum_n(n+1)g_n\,z^{n+1}\cr
+&=1+\sum_nng_n\,z^{n+1}+\sum_ng_n\,z^{n+1}\cr
+&=1+z^2G'(z)+zG(z)\,.
+\enddisplay
+} % end displaywidowpenalty kludge
+
+Let's check this equation, using the values of $g_n$ for small~$n$. Since
+\begindisplay
+G&=1&+ z&+2z^2&+\phantom06z^3&+24z^4&+\cdots\,,\cr
+G'&=&\mathbin{\phantom+}1&+4z&+18z^2&+96z^3&+\cdots\,,\cr
+\enddisplay
+we have
+\begindisplay
+z^2G'&=&&\mathbin{\phantom+}z^2&+4z^3&+18z^4&+96z^5&+\cdots\,,\cr
+zG&=&z&+z^2&+2z^3&+\phantom06z^4&+24z^5&+\cdots\,,\cr
+1&=1\,.\cr
+\enddisplay
+These three lines add up to~$G$, so we're fine so far. Incidentally, we
+often find it convenient to write `$G$' instead of `$G(z)$'; the extra
+`$(z)$' just clutters up the formula when we aren't changing $z$.
+
+Step 3 is next, and it's different from what we've done before because we
+have a differential equation to solve. But this is a differential equation
+that we can handle with the hypergeometric series techniques of
+Section~5.6; those techniques aren't too bad. (Readers who are unfamiliar with
+hypergeometrics needn't worry\dash---this will be quick.)%
+\g\noindent
+\llap{``}This will be quick.'' That's what the doctor said just before he
+stuck me with that needle. Come to think of it, ``hypergeometric''
+sounds a lot like ``hypodermic.\qback''\g
+
+First we must get rid of the constant `$1$', so we take the derivative
+of both sides:
+\begindisplay
+G'=(z^2G'+zG+1)'&=(2zG'+z^2G'')+(G+zG')\cr
+&=z^2G''+3zG'+G\,.
+\enddisplay
+The theory in Chapter 5 tells us
+to rewrite this using the $\vartheta$ operator, and we know
+from exercise~6.|small-vartheta| that
+\begindisplay
+\vartheta G=zG'\,,\qquad \vartheta^2G=z^2G''+zG'\,.
+\enddisplay
+Therefore the desired form of the differential equation is
+\begindisplay
+\vartheta G=z\vartheta^2G+2z\vartheta G+zG=z(\vartheta+1)^2G\,.
+\enddisplay
+According to \equ(5.|hyp-alt-diff-eq|), the solution with $g_0=1$ is the
+hypergeometric series $F(1,1;;z)$.
+
+Step 3 was more than we bargained for; but now that we know what the
+function $G$~is,
+Step~4 is easy\dash---the hypergeometric definition \equ(5.|hyp-def|) gives us the
+power series expansion:
+\begindisplay
+G(z)=\hyp{1,1}{}z=\sum_{n\ge0}{1\_^n\,1\_^n\,z^n\over n!}=\sum_{n\ge0}n!\,z^n\,.
+\enddisplay
+We've confirmed the closed form we knew all along, $g_n=n!$.
+
+Notice that the technique gave the right answer even though $G(z)$ diverges
+for all nonzero~$z$. The sequence $n!$ grows so fast, the terms $\vert n!\,z^n
+\vert$ approach $\infty$ as $n\to\infty$, unless $z=0$. This shows
+that formal power series can be manipulated algebraically
+without worrying about convergence.
+
+\subhead Example 6: A recurrence that goes all the way back.
+
+Let's close this section by applying generating functions to a problem in graph
+theory. A {\it"fan"\/} of order~$n$ is a graph on the vertices
+$\{0,1,\ldots,n\}$ with $2n-1$ edges defined as follows: Vertex~$0$
+is connected by an edge to each of the other $n$ vertices,
+and vertex~$k$ is connected by an edge
+to vertex $k+1$, for $1 \leq k <n$.
+Here, for example, is the fan of order~4,
+which has five vertices and seven edges.
+\begindisplay
+\unitlength=13pt
+\beginpicture(3,3)(-.5,0)
+\put(0,0){\disk{.3}}
+\put(2,0){\disk{.3}}
+\put(2,1){\disk{.3}}
+\put(2,2){\disk{.3}}
+\put(2,3){\disk{.3}}
+\put(-.5,0){\makebox(0,0){$0$}}
+\put(2.5,0){\makebox(0,0){$1$}}
+\put(2.5,1){\makebox(0,0){$2$}}
+\put(2.5,2){\makebox(0,0){$3$}}
+\put(2.5,3){\makebox(0,0){$4$}}
+\thicklines
+\put(0,0){\line(1,0){2}}
+\put(0,0){\line(2,1){2}}
+\put(0,0){\line(1,1){2}}
+\put(0,0){\line(2,3){2}}
+\put(2,0){\line(0,1){3}}
+\endpicture
+\enddisplay
+The problem of interest:
+How many spanning "tree"s~$f_n$ are in such a graph?
+A~{\it"spanning tree"\/}
+is a subgraph containing
+all the vertices, and containing enough edges to make the
+subgraph connected yet not so many that it has a cycle.
+It turns out that every spanning tree
+of a "graph" on $n+1$ vertices has exactly $n$~edges.
+With fewer than $n$~edges the subgraph wouldn't be connected,
+and with more than~$n$ it would have a cycle;
+graph theory books prove this.
+
+There are $2n-1 \choose n$ ways to choose
+$n$ edges from among the $2n-1$ present in a fan of order~$n$,
+but these choices don't always yield a spanning tree.
+For instance the subgraph
+\begindisplay
+\unitlength=13pt
+\beginpicture(3,3)(-.5,0)
+\put(0,0){\disk{.3}}
+\put(2,0){\disk{.3}}
+\put(2,1){\disk{.3}}
+\put(2,2){\disk{.3}}
+\put(2,3){\disk{.3}}
+\put(-.5,0){\makebox(0,0){$0$}}
+\put(2.5,0){\makebox(0,0){$1$}}
+\put(2.5,1){\makebox(0,0){$2$}}
+\put(2.5,2){\makebox(0,0){$3$}}
+\put(2.5,3){\makebox(0,0){$4$}}
+\thicklines
+\put(0,0){\line(1,1){2}}
+\put(0,0){\line(2,3){2}}
+\put(2,0){\line(0,1){1}}
+\put(2,2){\line(0,1){1}}
+\endpicture
+\enddisplay
+has four edges but is not a spanning tree; it has a cycle
+from $0$ to~$4$ to $3$ to~$0$,
+and it has no connection between
+$\{1,2\}$ and the other vertices. We want to count
+how many of the $2n-1\choose n$ choices actually do yield spanning trees.
+
+Let's look at some small cases.
+It's pretty easy to enumerate
+the spanning trees for $n = 1$,~$2$, and~$3$:
+\begindisplay \openup6pt \advance\abovedisplayskip-13pt
+\unitlength=10pt
+\def\fan#1#2#3{\hbox{\beginpicture(2,#1)(0,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1){#1}{\disk{.3}}
+ \let\\=\diags #2 \let\\=\verts #3 \endpicture}}
+\def\diags#1{\put(0,0){\ifcase#1 \or\line(1,0)2\or\line(2,1)2\or\line(1,1)2\fi}}
+\def\verts#1{\put(2,#1){\line(0,-1)1}}
+\vbox{\halign{\hfil#\hfil\cr
+\fan1{\\1}{}\cr
+$f_1=1$\cr}}
+\hskip4em
+\vbox{\halign{\hfil#\hfil\cr
+\fan2{\\2\\1}{}\cr
+\fan2{\\2}{\\1}\qquad
+\fan2{\\1}{\\1}\cr
+$f_2=3$\cr}}
+\hskip4em
+\vbox{\halign{\hfil#\hfil\cr
+\fan3{\\3\\2\\1}{}\qquad
+\fan3{\\3\\2}{\\1}\qquad
+\fan3{\\3\\1}{\\1}\qquad
+\fan3{\\3\\1}{\\2}\cr
+\fan3{\\3}{\\1\\2}\qquad
+\fan3{\\2\\1}{\\2}\qquad
+\fan3{\\2}{\\1\\2}\qquad
+\fan3{\\1}{\\1\\2}\cr
+$f_3=8$\cr}}
+\enddisplay
+(We need not show the labels on the vertices, if we always draw
+vertex~$0$ at the left.)
+What about the case $n=0$? At first it seems reasonable to set $f_0 = 1$;
+but we'll take $f_0 = 0$,
+because the existence of a fan of order~$0$
+"!null case" "!empty case"
+(which should have $2n-1 = -1$ edges) is dubious.
+
+Our four-step procedure tells
+us to find a recurrence for~$f_n$ that holds for all~$n$.
+We can get a recurrence by observing how the topmost vertex
+(vertex~$n$)
+is connected to the rest of the spanning tree.
+If it's not connected to vertex~$0$, it must be
+connected to vertex~$n-1$,
+since it must be connected to the rest of the graph.
+In this case,
+any of the $f_{n-1}$ spanning trees for the remaining fan
+(on the vertices 0~through $n-1$) will complete a spanning tree
+for the whole graph.
+Otherwise vertex~$n$ {\it is\/} connected to~$0$,
+and there's some number~$k\le n$
+such that vertices $n$, $n-1$, \dots,~$k$ are connected directly
+but the edge between $k$ and~$k-1$ is not present. Then
+there can't be any edges between $0$ and $\{n-1,\ldots,k\}$, or there
+would be a cycle.
+If $k=1$, the spanning tree is therefore determined completely.
+And if $k>1$, any of the $f_{k-1}$ ways to produce
+a spanning tree on $\{0,1,\ldots,k-1\}$ will yield a spanning tree
+on the whole graph.
+For example, here's what this analysis produces when $n=4$:
+\begindisplay
+\unitlength=10pt
+\vcenter{\halign{\hfil#\hfil\cr
+\phantom{$k=4$}\cr
+\hbox{\beginpicture(4,4)(-1,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1)4{\disk{.3}}
+ \put(0,0){\line(2,3)2}
+ \put(0,0){\line(1,0)2}
+ \put(2,0){\line(0,1)3}
+ \multiput(.25,.15)(0,.28284)1{\disk{.1}}
+ \multiput(.65,.15)(0,.28284)3{\disk{.1}}
+ \multiput(1.05,.15)(0,.28284)5{\disk{.1}}
+ \multiput(1.45,.15)(0,.28284)7{\disk{.1}}
+ \multiput(1.85,.15)(0,.28284)9{\disk{.1}}
+ \multiput(.45,.29242)(0,.28284)1{\disk{.1}}
+ \multiput(.85,.29242)(0,.28284)3{\disk{.1}}
+ \multiput(1.25,.29242)(0,.28284)5{\disk{.1}}
+ \multiput(1.65,.29242)(0,.28284)8{\disk{.1}}
+ \endpicture}\cr
+\hbox{$f_4$}\cr}}
+=
+\vcenter{\halign{\hfil#\hfil\cr
+\phantom{$k=4$}\cr
+\hbox{\beginpicture(4,4)(-1,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1)4{\disk{.3}}
+ \put(0,0){\line(1,1)2}
+ \put(0,0){\line(1,0)2}
+ \put(2,0){\line(0,1)2}
+ \multiput(.25,.15)(0,.28284)1{\disk{.1}}
+ \multiput(.65,.15)(0,.28284)2{\disk{.1}}
+ \multiput(1.05,.15)(0,.28284)3{\disk{.1}}
+ \multiput(1.45,.15)(0,.28284)5{\disk{.1}}
+ \multiput(1.85,.15)(0,.28284)7{\disk{.1}}
+ \multiput(.45,.29242)(0,.28284)1{\disk{.1}}
+ \multiput(.85,.29242)(0,.28284)2{\disk{.1}}
+ \multiput(1.25,.29242)(0,.28284)4{\disk{.1}}
+ \multiput(1.65,.29242)(0,.28284)5{\disk{.1}}
+ \thicklines \put(2,2){\line(0,1)1}
+ \endpicture}\cr
+\hbox{$f_3$}\cr}}
++
+\vcenter{\halign{\hfil#\hfil\cr
+\hbox{$k=4$}\cr
+\hbox{\beginpicture(4,4)(-1,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1)4{\disk{.3}}
+ \put(0,0){\line(1,1)2}
+ \put(0,0){\line(1,0)2}
+ \put(2,0){\line(0,1)2}
+ \multiput(.25,.15)(0,.28284)1{\disk{.1}}
+ \multiput(.65,.15)(0,.28284)2{\disk{.1}}
+ \multiput(1.05,.15)(0,.28284)3{\disk{.1}}
+ \multiput(1.45,.15)(0,.28284)5{\disk{.1}}
+ \multiput(1.85,.15)(0,.28284)7{\disk{.1}}
+ \multiput(.45,.29242)(0,.28284)1{\disk{.1}}
+ \multiput(.85,.29242)(0,.28284)2{\disk{.1}}
+ \multiput(1.25,.29242)(0,.28284)4{\disk{.1}}
+ \multiput(1.65,.29242)(0,.28284)5{\disk{.1}}
+ \thicklines \put(0,0){\line(2,3)2}
+ \endpicture}\cr
+\hbox{$f_3$}\cr}}
++
+\vcenter{\halign{\hfil#\hfil\cr
+\hbox{$k=3$}\cr
+\hbox{\beginpicture(4,4)(-1,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1)4{\disk{.3}}
+ \put(0,0){\line(2,1)2}
+ \put(0,0){\line(1,0)2}
+ \put(2,0){\line(0,1)1}
+ \multiput(.6,.1)(0,.28284)1{\disk{.1}}
+ \multiput(1,.1)(0,.28284)2{\disk{.1}}
+ \multiput(1.4,.1)(0,.28284)3{\disk{.1}}
+ \multiput(1.8,.1)(0,.28284)4{\disk{.1}}
+ \multiput(.8,.24242)(0,.28284)1{\disk{.1}}
+ \multiput(1.2,.24242)(0,.28284)2{\disk{.1}}
+ \multiput(1.6,.24242)(0,.28284)2{\disk{.1}}
+ \thicklines \put(0,0){\line(2,3)2} \put(2,2){\line(0,1)1}
+ \endpicture}\cr
+\hbox{$f_2$}\cr}}
++
+\vcenter{\halign{\hfil#\hfil\cr
+\hbox{$k=2$}\cr
+\hbox{\beginpicture(4,4)(-1,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1)4{\disk{.3}}
+ \put(0,0){\line(1,0)2}
+ \thicklines \put(0,0){\line(2,3)2} \put(2,1){\line(0,1)2} \put(0,0){\line(1,0)2}
+ \endpicture}\cr
+\hbox{$f_1$}\cr}}
++
+\vcenter{\halign{\hfil#\hfil\cr
+\hbox{$k=1$}\cr
+\hbox{\beginpicture(4,4)(-1,0)
+ \put(0,0){\disk{.3}}
+ \multiput(2,0)(0,1)4{\disk{.3}}
+ \thicklines \put(0,0){\line(2,3)2} \put(2,0){\line(0,1)3}
+ \endpicture}\cr
+\hbox{$1$}\cr}}
+\enddisplay
+The general equation, valid for $n \geq 1$, is
+\begindisplay
+ f_n
+	= f_{n-1} + f_{n-1}+ f_{n-2} + f_{n-3} + \cdots + f_1 + 1\,.
+\enddisplay
+(It almost seems as though the `$1$' on the end is $f_0$
+and we should have chosen $f_0 = 1$;
+but we will doggedly stick with our choice.) A few changes suffice
+to make the equation valid for all integers~$n$:
+\begindisplay
+f_n=f_{n-1}\;+\;\sum_{k<n}f_k\;+\;\[n>0]\,.
+\eqno\eqref|fan-rec|
+\enddisplay
+This is a recurrence that ``goes all the way back'' from $f_{n-1}$ through
+all previous values, so it's different from the other recurrences
+we've seen so far in this chapter. We used a special method to get
+rid of a similar right-side sum in Chapter~2, when we solved the
+quicksort recurrence \equ(2.|quicksort-rec|);
+namely, we subtracted one instance of the recurrence from another
+($f_{n+1}-f_n$). This trick would get rid of the $\sum$ now, as it
+did then; but we'll see that
+generating functions allow us to work directly with such sums.
+(And it's a good thing that they do, because we will be seeing
+much more complicated recurrences before long.)
+
+Step 1 is finished; Step 2 is where we need to do a new thing:
+\begindisplay \openup3pt
+F(z)=\sum_n{f_nz^n}&=\sum_nf_{n-1}z^n+\sum_{k,n}f_kz^n\[k<n]+\sum_n\[n>0]z^n\cr
+&=zF(z)\;+\;\sum_kf_kz^k\sum_n\[n>k]z^{n-k}\;+\;{z\over1-z}\cr
+&=zF(z)\;+\;F(z)\sum_{m>0}z^m\;+\;{z\over1-z}\cr
+&=zF(z)\;+\;F(z)\,{z\over1-z}\;+\;{z\over1-z}\,.\cr
+\enddisplay
+The key trick here was to change $z^n$
+to $z^k\,z^{n-k}$; this made it possible to express the value of the double
+sum in terms of $F(z)$, as required in Step~2.
+
+Now Step~3 is simple algebra, and we find
+\begindisplay
+ F(z)
+	= {z\over 1 - 3z + z^2} \,.
+\enddisplay
+Those of us with a zest for memorization will
+recognize this as the generating function~\eq(|fib-gf-even|)
+for the even-numbered Fibonacci numbers. So, we needn't go through Step~4;
+we have found a somewhat surprising answer to the spans-of-fans problem:
+\begindisplay
+ f_n
+	= F_{2n} \,, \qquad\hbox{for $n \geq 0$.}
+\eqno
+\enddisplay
+
+\beginsection 7.4 Special Generating Functions
+
+Step 4 of the four-step procedure becomes much easier if we know the
+coefficients of lots of different power series. The expansions in
+Table~|gf-simp| are quite useful, as far as they go, but many
+other types of closed forms are possible. Therefore we ought to supplement
+that table with another one, which lists power series that correspond
+to the ``special numbers'' considered in Chapter~6.
+
+\pageinsert
+\table Generating functions for special numbers.\tabref|gf-special|
+"!Stirling numbers, generating functions for"
+"!Eulerian numbers, generating function for"
+\begindisplay\abovedisplayskip=-2pt \belowdisplayskip=6pt \openup5.6pt%
+ \advance\displayindent-\parindent\advance\displaywidth\parindent
+%{1\over(1-z)}\ln{1\over1-z}
+% &=\sum_{n\ge0} H_n\,z^n
+% \eqno\eqref|harmonic-gf|\cr
+{1\over(1-z)^{m+1}}\ln{1\over1-z}
+ &=\sum_{n\ge0}(H_{m+n}-H_m){m{+}n\choose n}z^n
+ \eqno\eqref|harmonic-general|\cr
+{z\over e^z-1}
+ &=\sum_{n\ge0} B_n{z^n\over n!}
+ \eqno\eqref|bernoulli-gf|\cr
+{F_mz\over1-(F_{m-1}{+}F_{m+1})z+(-1)^mz^2}
+ &=\sum_{n\ge0} F_{mn}\,z^n
+ \eqno\eqref|fib-general|\cr
+\sum_k{m\brace k}{k!\,z^k\over(1-z)^{k+1}}
+ &=\sum_{n\ge0} n^mz^n
+ \eqno\eqref|mth-power-gf|\cr
+\bigl(z^{-1}\bigr)\_^{-m}={z^m\over(1-z)(1-2z)\ldots(1-mz)}
+\hskip-3em&\hskip3em=\sum_{n\ge0}{n\brace m}z^n
+ \eqno\eqref|stirl2-gf|\cr
+z\_^m=z(z+1)\ldots(z+m-1)
+\hskip-3em&\hskip3em=\sum_{n\ge0}{m\brack n}z^n
+ \eqno\eqref|stirl1-gf|\cr
+\bigl(e^z-1\bigr)^m
+ &=m!\sum_{n\ge0}{n\brace m}{z^n\over n!}
+ \eqno\eqref|exp-power-gf|\cr
+\Bigl(\ln{1\over1-z}\Bigr)^{\!m}
+ &=m!\sum_{n\ge0}{n\brack m}{z^n\over n!}
+ \eqno\eqref|log-power-gf|\cr
+\biggl({z\over\ln(1+z)}\biggr)^{\!m}
+ &=\sum_{n\ge0}{z^n\over n!}{m\brace m{-}n}\bigg/{m{-}1\choose n}
+ \eqno\eqref|dual-log-power-gf|\cr
+\biggl({z\over1-e^{-z}}\biggr)^{\!m}
+ &=\sum_{n\ge0}{z^n\over n!}{m\brack m{-}n}\bigg/{m{-}1\choose n}
+ \eqno\eqref|dual-exp-power-gf|\cr
+\noalign{\smallskip}
+e^{z+wz}
+ &=\sum_{m,n\ge0}{n\choose m}w^m{z^n\over n!}
+ \eqno\eqref|bc-double-gf|\cr
+e^{w(e^z-1)}
+ &=\sum_{m,n\ge0}{n\brace m}w^m{z^n\over n!}
+ \eqno\eqref|stirl2-double-gf|\cr
+{1\over(1-z)^w}
+ &=\sum_{m,n\ge0}\,{n\brack m}\,w^m{z^n\over n!}
+ \eqno\eqref|stirl1-double-gf|\cr
+{1-w\over e^{(w-1)z}-w}
+ &=\sum_{m,n\ge0}{n\euler m}w^m{z^n\over n!}
+ \eqno\eqref|euler-double-gf|\cr
+\enddisplay
+\hrule width\hsize height.5pt
+\endinsert
+
+\begingroup % squeezing to preserve the old page layout!
+\advance\abovedisplayskip 0pt minus 3pt
+\advance\belowdisplayskip 0pt minus 3pt
+Table |gf-special| is the database we need. The identities in this
+table are not difficult to prove, so we needn't dwell on them; this table
+is primarily for reference when we meet a new problem. But there's a
+nice proof of the first formula, \eq(|harmonic-general|), that deserves
+mention: We start with the identity
+\begindisplay
+{1\over(1-z)^{x+1}}=\sum_n{x+n\choose n}z^n
+\enddisplay
+and differentiate it with respect to $x$. On the left, $(1-z)^{-x-1}$ is
+equal to $e^{(x+1)\ln(1/(1-z))}$, so $d/dx$ contributes a factor of
+$\ln\bigl(1/(1-z)\bigr)$. On the right, the numerator of $x+n\choose n$
+is $(x+n)\ldots(x+1)$, and $d/dx$ splits this into $n$ terms whose sum
+is equivalent to multiplying $x+n\choose n$ by
+\begindisplay
+{1\over x+n}+\cdots+{1\over x+1}=H_{x+n}-H_x\,.
+\enddisplay
+Replacing $x$ by $m$ gives \eq(|harmonic-general|).
+Notice that $H_{x+n}-H_x$ is meaningful even when $x$ is not an integer.
+
+By the way,
+this method of differentiating a complicated product\dash---%
+leaving it as a product\dash---%
+is usually better than expressing the derivative as a sum.
+For example the right side of
+\begindisplay\tightplus
+{d\over dx} \bigl( (x+n)^n \ldots (x+1)^1 \bigr)
+= (x+n)^n \ldots (x+1)^1
+			\left( {n\over x+n} + \cdots + {1\over x+1} \right)
+\enddisplay
+would be a lot messier written out as a sum.
+
+The general identities in Table |gf-special| include many important
+special cases. For example,
+\eq(|harmonic-general|) simplifies to
+the generating function for~$H_n$ when $m=0$:
+\begindisplay
+{1\over1-z}\ln{1\over1-z}=\sum_n H_n@z^n\,.
+\eqno\eqref|harmonic-gf|
+\enddisplay
+"!harmonic numbers, generating function"
+This equation can also be derived in other ways; for example, we can take the
+power series for $\ln\bigl(1/(1-z)\bigr)$ and divide it by~$1-z$
+to get cumulative sums.
+
+Identities \eq(|dual-log-power-gf|) and \eq(|dual-exp-power-gf|) involve
+the respective ratios ${m\brace m-n}\big/{m-1\choose n}$ and
+${m\brack m-n}\big/{m-1\choose n}$, which have the undefined form $0/0$
+when $n\ge m$. However, there is a way to give them a proper meaning
+using the "Stirling polynomials" of \equ(6.|stirl-poly-def|), because we have
+\begindisplay \openup3pt
+{m\brace m-n}\bigg/{m-1\choose n}&=(-1)^{n+1}n!\,m@\sigma_n(n-m)\,;\eqno\cr
+{m\brack m-n}\bigg/{m-1\choose n}&=n!\,m@\sigma_n(m)\,.\eqno\cr
+\enddisplay
+Thus, for example, the case $m=1$ of \eq(|dual-log-power-gf|) should not
+be regarded as the power series $\sum_{n\ge0}(z^n\!/n!){1\brace1-n}
+\big/{0\choose n}$, but rather as
+\begindisplay\postdisplaypenalty=-5000
+{z\over\ln(1+z)}=-\sum_{n\ge0}(-z)^n\sigma_n(n-1)
+=\textstyle 1+\half z-{1\over12}z^2+\cdots\,.
+\enddisplay
+\endgroup
+
+Identities \eq(|bc-double-gf|),
+\eq(|stirl1-double-gf|),
+\eq(|stirl2-double-gf|), and \eq(|euler-double-gf|) are ``double generating
+functions'' or ``"super generating functions"'' because they have the form
+"!generating functions of generating functions"
+$G(w,z)=\sum_{m,n}g_{m,n}w^mz^n$. The coefficient of $w^m$ is a generating
+function in the variable~$z$; the coefficient of $z^n$ is a generating
+function in the variable~$w$. Equation~\eq(|euler-double-gf|) can be
+put into the more symmetrical form
+\begindisplay
+{e^w-e^z\over we^z-ze^w}=\sum_{m,n}{m+n+1\euler m}{w^mz^n\over(m+n+1)!}\,.
+\eqno
+\enddisplay
+\vskip-10pt\null
+
+\beginsection 7.5 Convolutions
+
+The {\it"convolution"\/} of two given sequences
+\g I always thought convolution was what happens to my~brain when I
+try~to do a proof.\g
+$\<f_0,f_1,\ldots\,\>=\<f_n\>$ and\break
+$\<g_0,g_1,\ldots\,\>=\<g_n\>$ is the sequence
+$\<f_0g_0,\,{f_0g_1+f_1g_0},\,\ldots\,\>=\<\sum_kf_kg_{n-k}\>$.
+We have observed in Sections 5.4 and 7.2 that convolution of sequences
+corresponds to multiplication of their generating functions. This fact
+makes it easy to evaluate many sums that would otherwise be
+difficult to handle.
+
+\subhead Example 1: A Fibonacci convolution.
+
+For example, let's try to evaluate $\sum_{k=0}^nF_kF_{n-k}$ in closed form.
+This is the convolution of $\<F_n\>$ with itself, so the sum must
+be the coefficient of~$z^n$ in $F(z)^2$, where $F(z)$ is the
+generating function for $\<F_n\>$.
+All we have to do is figure out the value of this coefficient.
+
+The generating function $F(z)$ is $z/(1-z-z^2)$, a quotient of polynomials; so the
+general expansion theorem for rational functions tells us that the
+answer can be obtained from a partial fraction representation. We can
+use the general expansion theorem \eq(|gen-exp-thm|)
+and grind away; or we can use the fact that
+\begindisplay \openup5pt
+F(z)^2&=\biggl({1\over\sqrt5\strut}\biggl({1\over1-\phi z}-{1\over1-\phihat z}
+\biggr)\biggr)^{\!2}\cr
+&={1\over5}\biggl({1\over(1-\phi z)^2}-{2\over(1-\phi z)(1-\phihat z)}
+ +{1\over(1-\phihat z)^2}\biggr)\cr
+\noalign{\smallskip}
+&={1\over5}\sum_{n\ge0}(n+1)\phi^nz^n-{2\over5}\sum_{n\ge0}F_{n+1}z^n
+ +{1\over5}\sum_{n\ge0}(n+1)\phihat^nz^n\,.
+\enddisplay
+Instead of expressing the answer in terms of $\phi$ and $\phihat$, let's try
+for a closed form in terms of Fibonacci numbers.
+Recalling that $\phi+\phihat=1$, we have
+\begindisplay\openup 5pt
+\phi^n+\phihat^n
+&=[z^n]\,\biggl({1\over1-\phi z}+{1\over1-\phihat z}\biggr)\cr
+&=[z^n]\,{2-(\phi+\phihat)z\over(1-\phi z)(1-\phihat z)}
+ =[z^n]\,{2-z\over1-z-z^2}=2F_{n+1}-F_n\,.
+\enddisplay
+Hence
+\begindisplay
+F(z)^2={1\over5}\sum_{n\ge0}\,(n+1)(2F_{n+1}-F_n)z^n
+ -{2\over5}\sum_{n\ge0}F_{n+1}\,z^n\,,
+\enddisplay
+and we have the answer we seek:
+\begindisplay
+\sum_{k=0}^n F_k F_{n-k}
+={2nF_{n+1}-(n+1)F_n\over5}\,.
+\eqno\eqref|fib-conv|
+\enddisplay
+For example, when $n=3$ this formula
+gives $F_0F_3+F_1F_2+F_2F_1+F_3F_0=0+1+1+0=2$ on the left and
+$(6F_4-4F_3)/5=(18-8)/5=2$ on the right.
+
+\subhead Example 2: Harmonic convolutions.
+
+The efficiency of a certain
+computer method called ``"samplesort"'' depends on the value "!sorting"
+of the sum
+\begindisplay
+T_{m,n}=\sum_{0\le k<n}{k\choose m}{1\over n-k}\,,
+\qquad\hbox{integers $m,n\ge0$}.
+\enddisplay
+Exercise 5.|samplesort-recurrence| obtains the value of this sum by a
+somewhat intricate double induction, using summation factors. It's much
+easier to realize that $T_{m,n}$ is just the $n$th term in the
+convolution of $\<{0\choose m},{1\choose m},{\2\choose m},\ldots\,\>$
+with $\<0,{1\over1},\half,\ldots\,\>$. Both sequences
+have simple generating functions in Table~|gf-simp|:
+\begindisplay
+\sum_{n\ge0}{n\choose m}z^n={z^m\over(1-z)^{m+1}}\,;
+\qquad \sum_{n>0}{z^n\over n}=\ln{1\over1-z}\,.
+\enddisplay
+Therefore, by \eq(|harmonic-general|),
+\begindisplay\openup3pt
+T_{m,n}=[z^n]\,{z^m\over(1-z)^{m+1}}\ln{1\over1-z}
+&=[z^{n-m}]\,{1\over(1-z)^{m+1}}\ln{1\over1-z}\cr
+&=(H_n-H_m){n\choose n-m}\,.
+\enddisplay
+
+In fact, there are many more sums that boil down to
+this same sort of convolution, because we have
+\begindisplay
+{1\over(1-z)^{r+1}}\ln{1\over1-z}\,\cdot\,{1\over(1-z)^{s+1}}=
+{1\over(1-z)^{r+s+2}}\ln{1\over1-z}
+\enddisplay
+for all $r$ and $s$. Equating coefficients of $z^n$ % on the left and right
+gives the general identity
+\begindisplay \postdisplaypenalty=-100
+&\sum_k{r+k\choose k}{s+n-k\choose n-k}(H_{r+k}-H_r)\cr
+&\qquad\qquad={r+s+n+1\choose n}(H_{r+s+n+1}-H_{r+s+1})\,.
+\eqno\eqref|rshh-conv|
+\enddisplay
+This seems almost too good to be true.
+\g Because it's so harmonic.\g
+ But it checks, at least when $n=2$:
+\begindisplay \openup3pt
+&{r+1\choose1}{s+1\choose1}{1\over r+1}+
+{r+2\choose2}{s+0\choose0}\biggl({1\over r+2}+{1\over r+1}\biggr)\cr
+&\hskip9em={r+s+3\choose2}\biggl({1\over r+s+3}+{1\over r+s+2}\biggr)\,.
+\enddisplay
+Special cases like $s=0$ are as remarkable as the general case.
+
+And there's more.
+We can use the convolution identity
+\begindisplay
+\sum_k{r+k\choose k}{s+n-k\choose n-k}={r+s+n+1\choose n}
+\enddisplay
+to transpose $H_r$ to the other side, since
+ $H_r$ is independent of $k$:
+\begindisplay
+&\sum_k{r+k\choose k}{s+n-k\choose n-k}H_{r+k}\cr
+&\qquad\qquad={r+s+n+1\choose n}(H_{r+s+n+1}-H_{r+s+1}+H_r)\,.
+\eqno\eqref|rsh-conv|
+\enddisplay
+There's still more: If $r$ and $s$ are nonnegative integers $l$ and~$m$,
+we can replace $r+k\choose k$ by $l+k\choose l$ and $s+n-k\choose n-k$
+by $m+n-k\choose m$; then we can change $k$ to~$k-l$ and $n$~to $n-m-l$,
+getting
+\begindisplay
+\sum_{k=0}^n{k\choose l}{n-k\choose m}H_k&=
+{n+1\choose l+m+1}(H_{n+1}-H_{l+m+1}+H_l)\,,\cr
+&\hskip7em\hbox{integers $l,m,n\ge0$}.
+\eqno\eqref|lmnh-conv|\cr
+\enddisplay
+Even the special case $l=m=0$ of this identity was difficult for us to handle
+in Chapter~2! $\bigl($See \equ(2.|harm-sum|).$\bigr)$ We've
+come a long way.
+
+\subhead Example 3: Convolutions of convolutions.
+
+If we form the convolution of $\<f_n\>$ and $\<g_n\>$,
+then convolve this with a third sequence $\<h_n\>$, we get a
+sequence whose $n$th term is
+\begindisplay
+\sum_{j+k+l=n}f_j\,g_k\,h_l\,.
+\enddisplay
+The generating function of this three-fold convolution
+is, of course, the three-fold product $F(z)@G(z)@H(z)$. In a similar
+way, the $m$-fold
+convolution of a sequence $\<g_n\>$ with itself has $n$th term equal to
+\begindisplay \postdisplaypenalty=10000
+\sum_{k_1+k_2+\cdots+k_m=n}g_{k_1}\,g_{k_2}\,\ldots \,g_{k_m}
+\enddisplay
+and its generating function is $G(z)^m$.
+
+We can apply these observations to the spans-of-fans problem considered
+"!spanning trees"
+earlier (Example~6 in Section~7.3). It turns
+out that there's another way to compute $f_n$,
+the number of spanning trees of an $n$-fan, based on the configurations of
+tree edges between the vertices $\{1,2,\ldots,n\}$: The edge between vertex~$k$
+and vertex~$k+1$ may or may not be selected for the tree; and each of the
+ways to select these edges connects up certain blocks
+\g Concrete blocks.\g
+ of adjacent vertices.
+For example, when $n=10$ we might connect vertices $\{1,2\}$, $\{3\}$,
+$\{4,5,6,7\}$, and $\{8,9,10\}$:
+\begindisplay
+\unitlength=12pt
+\beginpicture(4,9)(-1,0)
+\put(0,0){\disk{.3}}
+\multiput(2,0)(0,1){10}{\disk{.3}}
+\put(2,0){\line(0,1)1}
+\put(2,3){\line(0,1)3}
+\put(2,7){\line(0,1)2}
+\put(-.5,0){\makebox(0,0){$0$}}
+\put(2.5,0){\makebox(0,0){$1$}}
+\put(2.5,1){\makebox(0,0){$2$}}
+\put(2.5,2){\makebox(0,0){$3$}}
+\put(2.5,3){\makebox(0,0){$4$}}
+\put(2.5,4){\makebox(0,0){$5$}}
+\put(2.5,5){\makebox(0,0){$6$}}
+\put(2.5,6){\makebox(0,0){$7$}}
+\put(2.5,7){\makebox(0,0){$8$}}
+\put(2.5,8){\makebox(0,0){$9$}}
+\put(2.6,9){\makebox(0,0){$10$}}
+\endpicture
+\enddisplay
+How many spanning trees can we make, by adding additional edges to vertex~$0$?
+We need to connect $0$ to each of the four blocks; and there are two
+ways to join $0$ with $\{1,2\}$, one way to join it with $\{3\}$, four
+ways with $\{4,5,6,7\}$, and three ways with $\{8,9,10\}$, or
+$2\cdt1\cdt4\cdt3=24$ ways altogether. Summing over all possible ways to
+make blocks gives us the following expression for the total number of
+spanning trees:
+\begindisplay
+f_n=\sum_{m>0}\sum\twoconditions{k_1+k_2+\cdots+k_m=n}{k_1,k_2,\ldots,k_m>0}
+ k_1k_2\ldots k_m\,.
+\eqno
+\enddisplay
+For example, $f_4=4+3\cdt1+2\cdt2+1\cdt3+2\cdt1\cdt1+1\cdt2\cdt1+1\cdt1\cdt2
++1\cdt1\cdt1\cdt1=21$.
+
+This is the sum of $m$-fold convolutions of the sequence $\<0,1,2,3,\ldots\,
+\>$, for $m=1$,~$2$, $3$,~\dots; hence the generating function for
+$\<f_n\>$ is
+\begindisplay
+F(z)=G(z)+G(z)^2+G(z)^3+\cdots\,={G(z)\over1-G(z)}
+\enddisplay
+where $G(z)$ is the generating function for $\<0,1,2,3,\ldots\,\>$,
+namely $z/(1-z)^2$. Consequently we have
+\begindisplay
+F(z)={z\over(1-z)^2-z}={z\over1-3z+z^2}\,,
+\enddisplay
+as before. This approach to $\<f_n\>$ is more symmetrical and
+appealing than the complicated recurrence we had earlier.
+
+\subhead Example 4: A convoluted recurrence.
+
+Our next example is especially important. In fact, it's the ``classic example''
+of why generating functions are useful in the solution of recurrences.
+
+Suppose we have $n+1$ variables $x_0$, $x_1$, \dots, $x_n$ whose product
+is to be computed by doing $n$~multiplications. How many ways $C_n$ are there
+to insert parentheses into the product $x_0\cdot x_1\cdot\ldots\cdot x_n$
+so that the order of multiplication is completely specified? For example,
+when $n=2$ there are two ways, $x_0\cdot(x_1\cdt x_2)$ and
+$(x_0\cdt x_1)\cdot x_2$. And when $n=3$ there are five ways,
+\begindisplay \openup6pt
+&x_0\cdt(x_1\cdt(x_2\cdt x_3))\,,\;
+x_0\cdt((x_1\cdt x_2)\cdt x_3)\,,\;
+(x_0\cdt x_1)\cdt(x_2\cdt x_3)\,,\cr
+&\hskip12em(x_0\cdt(x_1\cdt x_2))\cdt x_3\,,\;
+((x_0\cdt x_1)\cdt x_2)\cdt x_3\,.
+\enddisplay
+Thus $C_2=2$, $C_3=5$; we also have $C_1=1$ and $C_0=1$.
+
+Let's use the four-step procedure of Section 7.3. What is a recurrence for
+the $C$'s? The key observation is that there's exactly one `$\,\cdot\,$' operation
+outside all of the parentheses, when $n>0$; this is the final multiplication
+that ties everything together. If this `$\,\cdot\,$' occurs between $x_k$ and~$x_{k+1}$,
+there are $C_k$ ways to fully parenthesize $x_0\cdt\ldots\cdt x_k$, and there
+are $C_{n-k-1}$ ways to fully parenthesize $x_{k+1}\cdt\ldots\cdt x_n$; hence
+\begindisplay
+C_n=C_0C_{n-1}+C_1C_{n-2}+\cdots+C_{n-1}C_0\,,\qquad\hbox{if $n>0$}.
+\enddisplay
+By now we recognize this expression as a convolution, and we know how to patch the
+formula so that it holds for all integers $n$:
+\begindisplay
+C_n=\sum_k C_kC_{n-1-k}\,+\,\[n=0]\,.
+\eqno\eqref|cat-rec|
+\enddisplay
+Step 1 is now complete. Step 2 tells us to multiply by $z^n$ and sum:
+\begindisplay \openup4pt
+C(z)&=\sum_n C_nz^n\cr
+&=\sum_{k,n}C_kC_{n-1-k}z^n+\sum_{n=0}z^n\cr
+\noalign{\smallskip}
+&=\sum_k C_kz^k\sum_nC_{n-1-k}z^{n-k}\,+\,1\cr
+&=C(z)\cdot zC(z)+1\,.
+\enddisplay
+Lo and behold, the convolution has become a product, in the generating-function
+\g The authors jest.\g
+world. Life is full of surprises.
+
+Step 3 is also easy. We solve for $C(z)$ by the quadratic formula:
+\begindisplay
+C(z)={1\pm\sqrt{\,\mathstrut1-4z}\over2z}\,.
+\enddisplay
+But should we choose the $+$ sign or the $-$ sign? Both choices yield a
+function that satisfies $C(z)=zC(z)^2+1$, but only one of the choices is
+suitable for our problem. We might choose the $+$~sign on the grounds that
+positive thinking is best; but we soon discover that this
+choice gives $C(0)=\infty$,
+contrary to the facts. (The correct function $C(z)$ is supposed to
+have $C(0)=C_0=1$.)
+ Therefore we conclude that
+\begindisplay
+C(z)={1-\sqrt{\,\mathstrut1-4z}\over2z}\,.
+\enddisplay
+
+Finally, Step 4. What is $[z^n]\,C(z)$? The binomial theorem tells us that
+\begindisplay
+\sqrt{\,1-4z}=\sum_{k\ge0}{1/2\choose k}(-4z)^k
+=1+\sum_{k\ge1}{1\over2k}{-1/2\choose k-1}(-4z)^k\,;
+\enddisplay
+hence, using \equ(5.|minus-half-bc|),
+\begindisplay
+{1-\sqrt{\,\mathstrut1-4z}\over2z}
+&=\sum_{k\ge1}{1\over k}{-1/2\choose k-1}(-4z)^{k-1}\cr
+&=\sum_{n\ge0}{-1/2\choose n}{(-4z)^n\over n+1}
+ =\sum_{n\ge0}{2n\choose n}{z^n\over n+1}\,.
+\enddisplay
+The number of ways to parenthesize, $C_n$, is ${2n\choose n}{1\over n+1}$.
+
+We anticipated this result in Chapter 5, when we introduced the
+\g So the convoluted recurrence has led us to an oft-recurring convolution.\g
+sequence of {\it "Catalan numbers"\/} $\<1,1,2,5,14,\ldots\,\>=
+\<C_n\>$. This sequence arises in dozens of problems that
+seem at first to be unrelated to each other~[|catalan-history|], because
+many situations have a recursive structure that corresponds to the
+convolution recurrence~\eq(|cat-rec|).
+
+For example, let's consider the following problem: How many sequences
+$\<a_1,a_2\ldots,a_{2n}\>$ of $+1$'s and $-1$'s have the property that
+\begindisplay
+a_1+a_2+\cdots+a_{2n}=0
+\enddisplay
+and have all their partial sums
+\begindisplay
+a_1,\quad a_1+a_2,\quad \ldots,\quad a_1+a_2+\cdots+a_{2n}
+\enddisplay
+nonnegative? There must be $n$ occurrences of $+1$ and $n$ occurrences of~$-1$.
+We can represent this problem graphically by plotting the sequence of partial sums
+$s_n=\sum_{k=1}^na_k$ as a function of~$n$: The five solutions for $n=3$ are
+\countdef\m=4 \countdef\n=6
+\def\init{\thinlines\put(0,0){\line(1,0)6}
+ \thicklines \m=0 \n=0 \put(0,0){\disk{.2}}}
+\def\+{\put(\number\m,\number\n){\line(1,1)1}\advance\m1 \advance\n1
+ \put(\number\m,\number\n){\disk{.2}}}
+{\def\-{\put(\number\m,\number\n){\line(1,-1)1}\advance\m1 \advance\n-1
+ \put(\number\m,\number\n){\disk{.2}}}
+\begindisplay \unitlength=10pt
+&\beginpicture(6,3)(0,0)\init\+\+\+\-\-\-\endpicture\;,\quad
+\beginpicture(6,3)(0,0)\init\+\+\-\+\-\-\endpicture\;,\quad
+\beginpicture(6,3)(0,0)\init\+\-\+\+\-\-\endpicture\;,\cr
+&\hskip12em\beginpicture(6,3)(0,0)\init\+\+\-\-\+\-\endpicture\;,\quad
+\beginpicture(6,3)(0,0)\init\+\-\+\-\+\-\endpicture\;.\cr
+\enddisplay
+These are ``"mountain ranges"'' of width $2n$ that can be drawn with line segments
+of the forms
+\begingroup
+\unitlength=10pt
+\def\init{\thicklines \m=0 \n=0 \put(0,0){\disk{.2}}}%
+\beginpicture(1,1)(0,.2)\init\+\endpicture\ and
+\beginpicture(1,1)(0,-.8)\init\-\endpicture\thinspace.\endgroup}
+It turns out that there are exactly $C_n$ ways to do this, and the sequences
+can be related to the parenthesis problem in the following way: Put an
+extra pair of "parentheses" around the entire formula, so that there are
+$n$~pairs of parentheses corresponding to the $n$~multiplications. Now
+replace each~`$\,\cdot\,$'
+by~$+1$ and each `$@)@$' by~$-1$
+ and erase everything else. For example, the formula
+$x_0\cdt\bigl((x_1\cdt x_2)\cdt(x_3\cdt x_4)\bigr)$ corresponds to the
+sequence $\<+1,+1,-1,+1,+1,-1,-1,-1\>$ by this rule. The five ways to
+parenthesize $x_0\cdt x_1\cdt x_2\cdt x_3$ correspond to the five
+mountain ranges for $n=3$ shown above.
+
+Moreover, a slight reformulation of our sequence-counting
+problem leads to a
+surprisingly simple combinatorial solution that avoids the use of
+generating functions: How many sequences $\<a_0,a_1,a_2,\ldots,a_{2n}\>$ of
+$+1$'s and $-1$'s have the property that
+\begindisplay
+a_0+a_1+a_2+\cdots+a_{2n}=1\,,
+\enddisplay
+when all the partial sums
+\begindisplay
+a_0,\quad a_0+a_1,\quad a_0+a_1+a_2,\quad\ldots,\quad a_0+a_1+\cdots+a_{2n}
+\enddisplay
+are required to be {\it positive\/}? Clearly these are just the sequences of the
+previous problem, with the additional element $a_0=+1$ placed in front.
+But the sequences in the new problem can be enumerated by a simple
+counting argument, using a remarkable fact discovered by
+George "Raney"~[|raney|] in 1959:
+{\sl If $\<x_1,x_2,\ldots,x_m\>$ is any sequence of integers whose sum is $+1$,
+exactly one of the cyclic shifts
+\begindisplay
+\<x_1,x_2,\ldots,x_m\>,\;
+\<x_2,\ldots,x_m,x_1\>,\; \ldots,\;
+\<x_m,x_1,\ldots,x_{m-1}\>
+\enddisplay
+has all of its partial sums positive}. \ For example, consider the sequence
+$\<3,-5,2,-2,3,0\>$. Its cyclic shifts are
+\begindisplay \def\preamble{&$##$\hfill\qquad\qquad} \postdisplaypenalty=10000
+\<3,-5,2,-2,3,0\>&\<-2,3,0,3,-5,2\>\cr
+\<-5,2,-2,3,0,3\>&\<3,0,3,-5,2,-2\>\,\,{\scriptstyle\sqrt{\vphantom2}}\cr
+\<2,-2,3,0,3,-5\>&\<0,3,-5,2,-2,3\>\cr
+%&\<3,-5,2,-2,3,0\>\cr
+%&\<-5,2,-2,3,0,3\>\cr
+%&\<2,-2,3,0,3,-5\>\cr
+%&\<-2,3,0,3,-5,2\>\cr
+%&\<3,0,3,-5,2,-2\>\,\,{\scriptstyle\sqrt{\vphantom2}}\cr
+%&\<0,3,-5,2,-2,3\>\cr
+\enddisplay
+and only the one that's checked has entirely positive partial sums.
+
+Raney's lemma can be proved by a simple geometric argument. Let's
+extend the sequence periodically to get an infinite sequence
+\begindisplay
+\<x_1,x_2,\ldots,x_m,x_1,x_2,\ldots,x_m,x_1,x_2,\ldots\,\>\,;
+\enddisplay
+thus we let $x_{m+k}=x_k$ for all $k\ge0$.
+If we now plot the partial sums $s_n=x_1+\cdots+x_n$ as a function of~$n$,
+the graph of~$s_n$ has an ``average slope'' of $1/m$, because $s_{m+n}=
+s_n+1$. For example, the graph corresponding to our example sequence
+$\<3,-5,2,-2,3,0,3,-5,2,\ldots\,\>$ begins as follows:
+\begindisplay \advance\belowdisplayskip-13pt
+\unitlength=10pt
+\countdef\m=4 \countdef\n=6
+\def\init{\thicklines \m=0 \n=0 \put(0,0){\disk{.2}}}
+\def\+#1,{\put(\number\m,\number\n){\line(1,#1)1}\advance\m1 \advance\n#1
+ \put(\number\m,\number\n){\disk{.2}}}
+\beginpicture(20,12)(0,-4)
+\init\+3,\+-5,\+2,\+-2,\+3,\+0,
+\+3,\+-5,\+2,\+-2,\+3,\+0,
+\+3,\+-5,\+2,\+-2,\+3,\+0,
+\+3,\+-5,\+2,\+-2,\+3,\+0,
+\advance\m 2
+\setbox0=\hbox{$.\,$}%
+\put(\number\m,\number\n){\copy0\raise.16667\wd0\copy0\raise.33333\wd0\copy0}
+\thinlines
+\put(0,0){\line(1,0){30}}
+\put(4,-2){\line(6,1){26}}
+\put(4,-2){\line(-6,-1){4}}
+\put(1,3){\line(6,1){29}}
+\put(1,3){\line(-6,-1){1}}
+\endpicture
+\enddisplay
+\g Ah, if stock prices would only continue to rise like this.\g
+The entire graph can be contained between two lines of slope $1/m$, as shown;
+we have $m=6$ in the illustration.
+In general these bounding lines touch the graph just
+once in each cycle of $m$~points, since lines of
+slope~$1/m$ hit points with integer coordinates only once per $m$~units.
+The unique lower point of intersection is the only place in the cycle from
+which all partial sums will be positive, because every other point on the
+curve has an intersection point within $m$ units to its right.
+
+With Raney's lemma
+\g (Attention, computer scientists: The partial sums in this problem represent the
+"stack size" as a function of time, when a product of $n+1$ factors is
+evaluated, because each ``push'' operation changes the size by $+1$
+and each multiplication changes it by $-1$.)\g
+we can easily enumerate the sequences $\<a_0,\ldots,a_{2n}\>$
+of $+1$'s and $-1$'s whose partial sums are entirely positive and whose
+total sum is~$+1$. There are $2n+1\choose n$ sequences with $n$ occurrences
+of~$-1$ and $n+1$ occurrences of~$+1$, and Raney's lemma tells us that
+exactly $1/(2n+1)$ of these sequences have all partial sums positive.
+(List all $N={2n+1\choose n}$ of these sequences and all $2n+1$ of their
+cyclic shifts, in an $N\times(2n+1)$ array. Each row contains exactly one
+solution. Each solution appears exactly once in each column. So there are
+$N/(2n+1)$ distinct solutions in the array, each appearing $(2n+1)$ times.)
+The total number of sequences with positive partial sums is
+\begindisplay
+{2n+1\choose n}{1\over2n+1}={2n\choose n}{1\over n+1}=C_n\,.
+\enddisplay
+
+\subhead Example 5: A recurrence with m-fold convolution.
+
+We can generalize the problem just considered by looking at sequences
+$\<a_0,\ldots,a_{mn}\>$ of $+1$'s and $(1-m)$'s whose partial sums
+are all positive and whose total sum is~$+1$. Such sequences can be
+called {\it $m$-"Raney sequences"}.
+If there are $k$ occurrences of $(1-m)$ and $mn+1-k$ occurrences of~$+1$,
+we have
+\begindisplay
+k(1-m)+(mn+1-k)=1\,,
+\enddisplay
+\g (Attention, computer scientists:
+ The stack interpretation now applies with respect to
+an $m$-ary operation, instead of the binary multiplication considered earlier.)\g
+hence $k=n$. There are $mn+1\choose n$ sequences with $n$ occurrences of
+$(1-m)$ and $mn+1-n$ occurrences of~$+1$, and Raney's lemma tells us that
+the number of such sequences with all partial sums positive is exactly
+\begindisplay
+{mn+1\choose n}{1\over mn+1}={mn\choose n}{1\over(m-1)n+1}\,.
+\eqno
+\enddisplay
+So this is the number of $m$-Raney sequences. Let's call this a
+"Fuss-Catalan number" $C_n^{(m)}$, because the sequence $\<C_n^{(m)}\>$
+was first investigated
+by N.\thinspace I. "Fuss"~[|fuss|]
+in 1791 (many years before "Catalan" himself got into
+the act). The ordinary Catalan numbers are $C_n=C_n^{(2)}$.
+
+Now that we know the answer, \thiseq, let's play ``"Jeopardy"'' and figure
+out a question that leads to it. In the case $m=2$ the question was:
+``What numbers $C_n$ satisfy the recurrence $C_n=\sum_k C_kC_{n-1-k}+
+\[n=0]$?'' We will try to find a similar question (a similar recurrence) in the
+general case.
+
+The trivial sequence $\<+1\>$ of length~1 is clearly an $m$-Raney
+sequence. If we put the number $(1-m)$ at the right of any $m$ sequences
+that are $m$-Raney, we get an $m$-Raney sequence; the partial sums
+stay positive as they increase to $+2$, then $+3$, \dots,~$+m$, and~$+1$.
+Conversely, we can show that all $m$-Raney sequences $\<a_0,\ldots,a_{mn}\>$
+arise in this way, if $n>0$: The last term $a_{mn}$ must be $(1-m)$.
+The partial sums $s_j=a_0+\cdots+a_{j-1}$ are positive for $1\le j\le mn$, and
+$s_{mn}=m$ because $s_{mn}+a_{mn}=1$. Let $k_1$ be the largest index $\le mn$
+such that $s_{k_1}=1$; let $k_2$ be largest such that $s_{k_2}=2$; and so on.
+Thus $s_{k_j}=j$ and $s_k>j$, for $k_j<k\le mn$ and $1\le j\le m$. It follows
+that $k_m=mn$, and we can verify without difficulty that
+each of the subsequences $\<a_0,\ldots,a_{k_1-1}\>$, $\<a_{k_1},\ldots,
+a_{k_2-1}\>$, \dots, $\<a_{k_{m-1}},\ldots,a_{k_m-1}\>$ is an $m$-Raney
+sequence. We must have $k_1=mn_1+1$, \ $k_2-k_1=mn_2+1$, \ \dots, \
+$k_m-k_{m-1}= mn_m+1$, for some nonnegative integers $n_1$, $n_2$, \dots,~$n_m$.
+
+Therefore ${mn+1\choose n}{1\over mn+1}$ is the answer to the following
+two interesting questions: ``What are the numbers $C_n^{(m)}$ defined by
+the recurrence
+\begindisplay
+C_n^{(m)}=\Biggl(@\sum_{n_1+n_2+\cdots+n_m=n-1}\!\!
+ C_{n_1}^{(m)}C_{n_2}^{(m)}\ldots C_{n_m}^{(m)}\Biggr)\;+\;\[n=0]
+\eqno
+\enddisplay
+for all integers $n$?'' \ ``If $G(z)$ is a power series that satisfies
+\begindisplay
+G(z)=z\,G(z)^m\,+\,1\,,
+\eqno\eqref|m-conv-def|
+\enddisplay
+what is $[z^n]\,G(z)$?''
+
+Notice that these are not easy questions.
+In the ordinary Catalan case ($m=2$), we solved \thiseq\ for
+$G(z)$ and its coefficients by using the quadratic formula and the binomial
+theorem; but when $m=3$, none of the standard techniques gives any clue
+about how to solve the cubic equation $G=zG^3+1$. So it has turned out to
+be easier to answer this question before asking it.
+
+Now, however, we know enough to ask even harder questions and deduce their
+answers. How about this one: ``What is $[z^n]\,G(z)^l$, if $l$ is a
+positive integer and if $G(z)$ is the power series defined by~\thiseq?''
+The argument we just gave can be used to show that $[z^n]\,G(z)^l$
+ is the number of
+sequences of length~$mn+l$ with the following three properties:
+\smallskip
+\item{$\bullet$}Each element is either $+1$ or $(1-m)$.
+\smallskip
+\item{$\bullet$}The partial sums are all positive.
+\smallskip
+\item{$\bullet$}The total sum is $l@$.
+\smallskip
+\noindent For we get all such sequences in a unique way by putting together
+$l$~sequences that have the $m$-Raney property. The number of ways to
+do this is
+\begindisplay
+\sum_{n_1+n_2+\cdots+n_l=n}C_{n_1}^{(m)}C_{n_2}^{(m)}\ldots C_{n_l}^{(m)}
+=[z^n]\,G(z)^l\,.
+\enddisplay
+
+"Raney" proved a generalization of his lemma that tells us how to count such
+sequences: {\sl If\/ $\<x_1,x_2,\ldots,x_m\>$ is any sequence of integers
+with $x_j\le1$ for all\/~$j$, and with $x_1+x_2+\cdots+x_m=l>0$,
+then exactly $l$ of the cyclic shifts
+\begindisplay
+\<x_1,x_2,\ldots,x_m\>,\;
+\<x_2,\ldots,x_m,x_1\>,\; \ldots,\;
+\<x_m,x_1,\ldots,x_{m-1}\>
+\enddisplay
+have all positive partial sums}.
+
+ For example, we can
+check this statement on the sequence
+$\<-2,1,-1,\allowbreak
+0,\allowbreak1,\allowbreak1,-1,1,1,1\>$. The cyclic shifts are
+\begindisplay \def\preamble{&$##$\hfill\qquad\qquad}\openup2pt
+\<-2,1,-1,0,1,1,-1,1,1,1\>&\<1,-1,1,1,1,-2,1,-1,0,1\>\cr
+\<1,-1,0,1,1,-1,1,1,1,-2\>&\<-1,1,1,1,-2,1,-1,0,1,1\>\cr
+\<-1,0,1,1,-1,1,1,1,-2,1\>&\<1,1,1,-2,1,-1,0,1,1,-1\>\,\,{\scriptstyle\sqrt{\vphantom2}}\cr
+\<0,1,1,-1,1,1,1,-2,1,-1\>&\<1,1,-2,1,-1,0,1,1,-1,1\>\cr
+\<1,1,-1,1,1,1,-2,1,-1,0\>\,\,{\scriptstyle\sqrt{\vphantom2}}&\<1,-2,1,-1,0,1,1,-1,1,1\>\cr
+\enddisplay
+and only the two examples marked `${\scriptstyle\sqrt{\vphantom2}\,}$'
+ have all partial sums positive.
+This generalized lemma is proved in exercise~|prove-raney|.
+
+A sequence of $+1$'s and $(1-m)$'s that has length $mn+l$ and total
+sum~$l$ must have exactly $n$ occurrences of $(1-m)$. The generalized
+lemma tells us that $l/(mn+l)$ of these $mn+l\choose n$ sequences
+have all partial sums positive; hence our tough question has
+a surprisingly simple answer:
+\begindisplay
+[z^n]\,G(z)^l={mn+l\choose n}{l\over mn+l}\,,
+\eqno\eqref|m-cat-l|
+\enddisplay
+for all integers $l>0$.
+
+Readers who haven't forgotten Chapter~5 might well be experiencing
+{\it d\'ej\`a vu\/}: ``That formula looks familiar; haven't we
+seen it before?'' Yes, indeed; "Lambert"'s
+equation \equ(5.|t-series-power|) says that
+\begindisplay
+[z^n]\,\Bscr_t(z)^r={tn+r\choose n}{r\over tn+r}\,.
+\enddisplay
+Therefore the generating function $G(z)$ in \eq(|m-conv-def|) must
+actually be the generalized binomial series $\Bscr_m(z)$. Sure enough,
+equation \equ(5.|t-series-rec|) says
+\begindisplay
+\Bscr_m(z)^{1-m}-\Bscr_m(z)^{-m}=z\,,
+\enddisplay
+which is the same as
+\begindisplay
+\Bscr_m(z)-1=z\Bscr_m(z)^m\,.
+\enddisplay
+
+Let's switch to the notation of Chapter 5, now that we know we're
+dealing with generalized binomials. Chapter~5 stated a bunch of identities
+without proof. We have now closed part of
+the gap by proving that the power series
+$\Bscr_t(z)$ defined by
+\begindisplay
+\Bscr_t(z)=\sum_n{tn+1\choose n}{z^n\over tn+1}
+\enddisplay
+has the remarkable property that
+\begindisplay
+\Bscr_t(z)^r=\sum_n{tn+r\choose n}{r\,z^n\over tn+r}\,,
+\enddisplay
+whenever $t$ and $r$ are positive integers.
+
+Can we extend these results to {\it arbitrary\/} values of $t$ and~$r$?
+Yes; because the coefficients ${tn+r\choose n}{r\over tn+r}$ are polynomials
+in $t$ and~$r$. The general $r$th power defined by
+\begindisplay
+\Bscr_t(z)^r\!=\!e^{r\ln \Bscr_t(z)}\!=\!\!
+\sum_{n\ge0}\!{\bigl(r\ln\Bscr_t(z)\bigr)^{\!n}
+\over n!}\!=\!\!\sum_{n\ge0}{r^n\over n!}\biggl(-\!\sum_{m\ge1}
+\!{\bigl(1{-}\Bscr_t(z)\bigr)^{\!m}\over m}\biggr)^{\!n}
+\enddisplay
+has coefficients that are polynomials in $t$ and $r@$;
+and those polynomials
+are equal to ${tn+r\choose n}{r\over tn+r}$ for infinitely many values
+of $t$ and~$r$. So the two sequences of polynomials must be identically equal.
+
+Chapter 5 also mentions the generalized exponential series
+\begindisplay
+\Escr_t(z)=\sum_{n\ge0}{(tn+1)^{n-1}\over n!}z^n\,,
+\enddisplay
+which is said in \equ(5.|t-series-power|) to have an equally remarkable property:
+\begindisplay
+[z^n]\,\Escr_t(z)^r={r(tn+r)^{n-1}\over n!}\,.
+\eqno\eqref|escr-power|
+\enddisplay
+We can prove this as a limiting case of the formulas for $\Bscr_t(z)$,
+because it is not difficult to show that
+\begindisplay
+\Escr_t(z)^r=\lim_{x\to\infty}\Bscr_{xt}(z/x)^{xr}\,.
+\enddisplay
+
+\begingroup \def\uppercase#1{\kern-.05em EXPONENTIAL GF'S} % KLUDGE!
+\beginsection 7.6 Exponential Generating Functions
+
+\endgroup % END KLUDGE!
+Sometimes a sequence $\<g_n\>$ has a generating function whose properties
+are quite complicated, while the related sequence $\<g_n/n!@\>$ has
+a generating function that's quite simple. In such cases we naturally
+prefer to work with $\<g_n/n!@\>$ and then multiply by $n!$ at the end.
+This trick works sufficiently often that we have a special name for it:
+We call the power series
+\begindisplay
+\widehat G(z)=\sum_{n\ge0}g_n{z^n\over n!}
+\eqno\eqref|egf-def|
+\enddisplay
+the {\it"exponential generating function"\/} or ``"egf"'' of the
+sequence \kern-.26pt$\<g_0,g_1,g_2,\ldots\,\>$.
+This name arises because the exponential function~$e^z$ is
+the egf of $\<1,1,1,\ldots\,\>$.
+
+Many of the generating functions in Table~|gf-special|
+are actually egf's. For example, equation \eq(|log-power-gf|) says that
+$\bigl(\ln{1\over1-z}\bigr){}^m\!/m!$ is the egf for the sequence
+$\<{0\brack m},{1\brack m},{2\brack m},\ldots\,\>$. The ordinary
+generating function for this sequence is much more complicated
+(and also divergent).
+
+Exponential generating functions have their own basic maneuvers, analogous
+to the operations we learned in Section~7.2. For example, if we multiply
+the egf of~$\<g_n\>$ by~$z$, we get
+\begindisplay
+\sum_{n\ge0}g_n\,{z^{n+1}\over n!}=\sum_{n\ge1}g_{n-1}\,{z^n\over(n-1)!}
+=\sum_{n\ge0}ng_{n-1}\,{z^n\over n!}\,;
+\enddisplay
+this is the egf of $\<0,g_0,2g_1,\ldots\,\>=\<ng_{n-1}\>$.
+
+Differentiating
+the egf of $\<g_0,g_1,g_2,\ldots\,\>$ with respect to~$z$ gives
+\g Are we having fun~yet?\g
+\begindisplay
+\sum_{n\ge0}ng_n\,{z^{n-1}\over n!}=\sum_{n\ge1}g_n\,{z^{n-1}\over(n-1)!}
+=\sum_{n\ge0}g_{n+1}\,{z^n\over n!}\,;
+\eqno
+\enddisplay
+this is the egf of $\<g_1,g_2,\ldots\,\>$. Thus differentiation
+on egf's corresponds to the left-shift operation $\bigl(G(z)-g_0\bigr)/z$
+on ordinary gf's. (We used this left-shift property of egf's when
+we studied hypergeometric series, \equ(5.|hyp/dz|).) Integration of an egf
+gives
+\begindisplay
+\int_0^z@\sum_{n\ge0}g_n\,{t^n\over n!}\,dt=\sum_{n\ge0}g_n\,{z^{n+1}\over
+ (n+1)!}=\sum_{n\ge1}g_{n-1}\,{z^n\over n!}\,;
+\eqno
+\enddisplay
+this is a right shift, the egf of $\<0,g_0,g_1,\ldots\,\>$.
+
+The most interesting operation on egf's, as on ordinary gf's, is
+multiplication. If $\widehat F(z)$ and $\widehat G(z)$ are egf's for
+$\<f_n\>$ and $\<g_n\>$, then $\widehat F(z)@\widehat G(z)=\widehat H(z)$ is
+the egf for a sequence $\<h_n\>$ called the {\it"binomial
+convolution"\/} of $\<f_n\>$ and $\<g_n\>$:
+"!convolution, binomial"
+\begindisplay
+h_n=\sum_k{n\choose k}f_k\,g_{n-k}\,.
+\eqno
+\enddisplay
+Binomial coefficients appear here because
+${n\choose k}=n!/k!\,(n-k)!$, hence
+\begindisplay
+{h_n\over n!}=\sum_{k=0}^n {f_k\over k!}\,{g_{n-k}\over(n-k)!}\,;
+\enddisplay
+in other words, $\<h_n/n!@\>$ is the ordinary convolution of
+$\<f_n/n!@\>$ and $\<g_n/n!@\>$.
+
+Binomial convolutions occur frequently in applications. For example,
+we defined the Bernoulli numbers in \equ(6.|bern-def|) by the
+implicit recurrence
+\begindisplay
+\sum_{j=0}^m{m+1\choose j}B_j=\[m=0]\,,\qquad\hbox{for all $m\ge0$};
+\enddisplay
+this can be rewritten as a binomial convolution, if we substitute $n$ for
+$m+1$ and add the term $B_n$ to both sides:
+\begindisplay
+\sum_k{n\choose k}B_k=B_n+\[n=1]\,,\qquad\hbox{for all $n\ge0$}.
+\eqno\eqref|bern-def-new|
+\enddisplay
+We can now relate this recurrence to power series (as promised in Chapter~6) by
+introducing the egf for Bernoulli numbers,
+$\widehat B(z)=\sum_{n\ge0}B_nz^n\!/n!$. The left-hand side of \thiseq\
+is the binomial convolution of $\<B_n\>$ with the constant
+sequence $\<1,1,1,\ldots\,\>$; hence the egf of the left-hand side
+is $\widehat B(z)e^z$. The egf of the right-hand side is
+$\sum_{n\ge0}\bigl(B_n+\[n=1]\bigr)z^n\!/n!=\widehat B(z)+z$. Therefore
+we must have $\widehat B(z)=z/(e^z-1)$; we have proved equation
+\equ(6.|bern-gf|), which appears also in Table~|gf-special| as
+equation \eq(|bernoulli-gf|).
+
+\smallbreak
+Now let's look again at a sum that has been popping up
+frequently in this book,
+\begindisplay
+S_m(n)=0^m+1^m+2^m+\cdots+(n-1)^m=\sum_{0\le k<n} k^m\,.
+\enddisplay
+This time we will try to analyze the problem with generating functions,
+in hopes that it will suddenly become simpler.
+We will consider $n$ to be
+fixed and $m$~variable; thus our goal is to understand the
+coefficients of the power series
+\begindisplay
+S(z)=S_0(n)+S_1(n)\,z+S_2(n)\,z^2+\cdots=\sum_{m\ge0}S_m(n)\,z^m\,.
+\enddisplay
+We know that the generating function for $\<1,k,k^2,\ldots\,\>$ is
+\begindisplay
+{1\over1-kz}=\sum_{m\ge0}k^m\,z^m\,,
+\enddisplay
+hence
+\begindisplay
+S(z)=\sum_{m\ge0}\,\sum_{0\le k<n}k^m\,z^m=\sum_{0\le k<n}{1\over1-kz}
+\enddisplay
+by interchanging the order of summation. We can put this sum in
+closed form,
+\begindisplay \postdisplaypenalty=10000
+S(z)&={1\over z}\biggl({1\over z^{-1}-0}+{1\over z^{-1}-1}+\cdots+
+ {1\over z^{-1}-n+1}\biggr)\cr
+&={1\over z}\bigl(H_{z^{-1}}-H_{z^{-1}-n}\bigr)\,;
+\eqno
+\enddisplay
+but we know nothing about expanding such a closed form in powers of~$z$.
+
+Exponential generating functions come to the rescue. The egf of
+our sequence
+$\<S_0(n),S_1(n),S_2(n),\ldots\,\>$ is
+\begindisplay
+\widehat S(z,n)=S_0(n)+S_1(n)\,{z\over1!}+S_2(n)\,{z^2\over2!}+\cdots
+=\sum_{m\ge0}S_m(n)\,{z^m\over m!}\,.
+\enddisplay
+To get these coefficients $S_m(n)$
+we can use the egf for $\<1,k,k^2,\ldots\,\>$, namely
+\begindisplay
+e^{kz}=\sum_{m\ge0}k^m\,{z^m\over m!}\,,
+\enddisplay
+and we have
+\begindisplay
+\widehat S(z,n)=\sum_{m\ge0}\,\sum_{0\le k<n}k^m\,{z^m\over m!}=\sum_{0\le k<n}e^{kz}\,.
+\enddisplay
+And the latter sum is a geometric progression, so there's a closed form
+\begindisplay
+\widehat S(z,n)={e^{nz}-1\over e^z-1}\,.
+\eqno\eqref|szn-closed|
+\enddisplay
+Eureka!
+All we need to do is figure out the coefficients of this relatively simple
+function, and we'll know $S_m(n)$, because $S_m(n)=m!\,[z^m]\widehat S(z,n)$.
+
+Here's where "Bernoulli numbers" come into the picture. We observed a
+moment ago that the egf for Bernoulli numbers is
+\begindisplay
+\widehat B(z)=\sum_{k\ge0}B_k\,{z^k\over k!}={z\over e^z-1}\,;
+\enddisplay
+hence we can write
+\begindisplay
+\widehat S(z,n)&=\widehat B(z)\,{e^{nz}-1\over z}\cr
+&=\Bigl(B_0@{z^0\over0!}+B_1{z^1\over1!}+B_2{z^2\over2!}+\cdots\,\Bigr)
+ \Bigl(n@{z^0\over1!}+n^2{z^1\over2!}+n^3{z^2\over3!}+\cdots\,\Bigr)\,.
+\enddisplay
+The sum $S_m(n)$ is $m!$ times the coefficient of $z^m$ in this product.
+For example,
+\begindisplay\openup6pt
+S_0(n)&=0!\,\Bigl(B_0@{n\over1!\,0!}\Bigr)&=n\,;\cr
+S_1(n)&=1!\,\Bigl(B_0@{n^2\over2!\,0!}+B_1@{n\over1!\,1!}\Bigr)
+ &=\textstyle\half n^2-\half n\,;\cr
+S_2(n)&=2!\,\Bigl(B_0@{n^3\over3!\,0!}+B_1@{n^2\over2!\,1!}
+ +B_2@{n\over1!\,2!}\Bigr)
+ &=\textstyle{1\over3}n^3-\half n^2+{1\over6}n\,.\cr
+\enddisplay
+We have therefore derived the formula $\Sq_n=S_2(n)={1\over3}n(n-\half)(n-1)$
+"!sum of consecutive squares"
+"!sum of consecutive cubes"
+for the umpteenth time, and this was the simplest derivation of all:
+In a few lines we have found the general behavior of $S_m(n)$ for all~$m$.
+
+The general formula can be written
+\begindisplay
+S_{m-1}(n)={1\over m}\bigl(B_m(n)-B_m(0)\bigr)\,,
+\eqno\eqref|m-pwr-gen|
+\enddisplay
+where $B_m(x)$ is the {\it "Bernoulli polynomial"\/} defined by
+\begindisplay
+B_m(x)=\sum_k{m\choose k}B_k\,x^{m-k}\,.
+\eqno
+\enddisplay
+Here's why: The Bernoulli polynomial
+is the binomial convolution of the sequence $\<B_0,B_1,B_2,\ldots\,\>$
+with $\<1,x,x^2,\ldots\,\>$; hence the exponential generating function for
+$\<B_0(x),B_1(x),B_2(x),\ldots\,\>$ is the product of their egf's,
+\begindisplay
+\widehat B(z,x)=\sum_{m\ge0}B_m(x){z^m\over m!}
+={z\over e^z-1}\sum_{m\ge0}x^m{z^m\over m!}={ze^{xz}\over e^z-1}\,.
+\eqno\eqref|bern-poly-gf|
+\enddisplay
+Equation \eq(|m-pwr-gen|) follows because
+the egf for $\<0,S_0(n),2S_1(n),\ldots\,\>$ is, by \eq(|szn-closed|),
+\begindisplay
+z\,{e^{nz}-1\over e^z-1}=\widehat B(z,n)-\widehat B(z,0)\,.
+\enddisplay
+
+Let's turn now to another problem for which egf's are just
+the thing: How many "spanning trees" are possible in the {\it"complete graph"\/}
+on $n$ vertices $\{1,2,\ldots,n\}$? Let's call this number~$t_n$.
+The complete graph has $\half n(n-1)$
+edges, one edge joining each pair of distinct vertices; so we're
+essentially looking for the total number of ways to connect up $n$ given
+things by drawing $n-1$ lines between them.
+
+\def\ft#1#2#3#4#5#6{\beginpicture(1,1)(0,0)
+\put(0,0){\disk{.2}}\put(0,1){\disk{.2}}\put(1,0){\disk{.2}}\put(1,1){\disk{.2}}
+\if#1T\put(0,0){\line(0,1)1}\fi
+\if#2T\put(0,0){\line(1,1)1}\fi
+\if#3T\put(0,0){\line(1,0)1}\fi
+\if#4T\put(1,1){\line(0,-1)1}\fi
+\if#5T\put(1,0){\line(-1,1)1}\fi
+\if#6T\put(1,1){\line(-1,0)1}\fi \endpicture}
+
+We have $t_1=t_2=1$. Also $t_3=3$, because a complete graph on three vertices
+is a fan of order~$2$; we know that $f_2=3$. And there are sixteen spanning trees
+when $n=4$:
+\begindisplay \openup14pt \unitlength=15pt \advance\abovedisplayskip-8pt
+&\ft TFFFTT\quad
+\ft FTFFTT\quad
+\ft FFTFTT\quad\qquad
+\ft TFFTFT\quad
+\ft FTFTFT\quad
+\ft FFTTFT\quad\qquad
+\ft TFFTTF\quad
+\ft FTFTTF\quad
+\ft FFTTTF\cr
+&\ft TTFTFF\quad
+\ft TFTTFF\quad\qquad
+\ft TTFFTF\quad
+\ft FTTFTF\quad\qquad
+\ft TFTFFT\quad
+\ft FTTFFT\quad\qquad\qquad
+\ft TTTFFF
+\eqno
+\enddisplay
+Hence $t_4=16$.
+
+Our experience with the analogous problem for fans suggests that the
+best way to tackle this problem is to single out one vertex, and to look at
+the blocks or components that the spanning tree joins together when we
+ignore all edges that touch the special vertex. If the non-special vertices
+form $m$~components of sizes $k_1$, $k_2$, \dots,~$k_m$, then we can
+connect them to the special vertex in $k_1k_2\ldots k_m$ ways. For
+example, in the case $n=4$, we can consider the lower left vertex to
+be special. The top row of \thiseq\ shows $3t_3$ cases where the other
+three vertices are joined among themselves in $t_3$~ways and then connected
+to the lower left in $3$~ways. The bottom row shows $2\cdt1\times t_2t_1\times
+{3\choose2}$ solutions where the other three vertices are divided into
+components of sizes $2$ and~$1$ in $3\choose2$ ways; there's also the
+case $\,\vcenter{\hbox{\unitlength=10pt \ft TTTFFF}}\,$
+where the other three vertices are completely unconnected among themselves.
+
+This line of reasoning leads to the recurrence
+\begindisplay
+t_n=\!\!\sum_{m>0}{1\over m!}\sum_{k_1+\cdots+k_m=n-1}
+ {n-1\choose k_1,k_2,\ldots,k_m}\,
+ k_1k_2\ldots k_m \,t_{k_1}t_{k_2}\ldots t_{k_m}
+\enddisplay
+for all $n>1$. Here's why: There are $n-1\choose k_1,k_2,\ldots,k_m$
+ways to assign $n-1$ elements to a sequence of $m$ components of
+respective sizes $k_1$, $k_2$, \dots,~$k_m$; there are
+$t_{k_1}t_{k_2}\ldots t_{k_m}$ ways to connect up those individual components
+with spanning trees; there are $k_1k_2\ldots k_m$ ways to connect vertex~$n$
+to those components; and we divide by~$m!$ because we want to disregard the
+order of the components. For example, when $n=4$ the recurrence says that
+\begindisplay
+\textstyle t_4=3t_3+\half\bigl({3\choose1,2}2t_1t_2+{3\choose2,1}2t_2t_1\bigr)
++{1\over6}\bigl({3\choose1,1,1}t_1^3\bigr)=3t_3+6t_2t_1+t_1^3\,.
+\enddisplay
+
+The recurrence for $t_n$ looks formidable at first, possibly even frightening;
+but it really isn't bad, only convoluted. We can define
+\begindisplay
+u_n=n\,t_n
+\enddisplay
+and then everything simplifies considerably:
+\begindisplay
+{u_n\over n!}=\sum_{m>0}{1\over m!}\sum_{k_1+k_2+\cdots+k_m=n-1}
+{u_{k_1}\over k_1!}
+{u_{k_2}\over k_2!}\ldots
+{u_{k_m}\over k_m!}\,,\qquad\hbox{if $n>1$}.
+\eqno
+\enddisplay
+The inner sum is the coefficient of $z^{n-1}$ in the egf $\widehat U(z)$,
+raised to the $m$th power; and we obtain the correct formula also
+when $n=1$, if we add in the term $\widehat U(z)^0$ that corresponds
+to the case $m=0$. So
+\begindisplay
+{u_n\over n!}=[z^{n-1}]\,\sum_{m\ge0}{1\over m!}\,\widehat U(z)^m
+=[z^{n-1}]\,e^{\widehat U(z)}=[z^n]\,ze^{\widehat U(z)}
+\enddisplay
+for all $n>0$, and we have the equation
+\begindisplay
+\widehat U(z)=z\,e^{\widehat U(z)}\,.
+\eqno
+\enddisplay
+Progress! Equation \thiseq\ is almost like
+\begindisplay
+\Escr(z)=e^{z\,\Escr(z)}\,,
+\enddisplay
+which defines the generalized exponential series $\Escr(z)=\Escr_1(z)$
+in \equ(5.|t-series-rec|) and \eq(|escr-power|); indeed, we have
+\begindisplay
+\widehat U(z)=z\,\Escr(z)\,.
+\enddisplay
+So we can read off the answer to our problem:
+\begindisplay
+t_n={u_n\over n}={n!\over n}\,[z^n]\,\widehat U(z)=(n-1)!\,[z^{n-1}]\,\Escr(z)=n^{n-2}\,.
+\eqno
+\enddisplay
+The complete graph on $\{1,2,\ldots,n\}$ has exactly $n^{n-2}$ spanning
+trees, for all $n>0$.
+
+\beginsection 7.7 Dirichlet Generating Functions
+
+There are many other possible ways to generate a sequence from a series;
+any system of ``"kernel"'' functions $K_n(z)$ such that
+\begindisplay
+\sum_n g_n\,K_n(z)=0\;\implies\;\hbox{$g_n=0$ for all $n$}
+\enddisplay
+can be used, at least in principle. Ordinary generating functions use
+$K_n(z)=z^n$, and exponential generating functions use $K_n(z)=z^n\!/n!$;
+we could also try falling factorial powers $z\_n$, or
+binomial coefficients $z\_n/n!={z\choose n}$.
+
+The most important alternative to gf's and egf's uses the
+kernel functions $1/n^z$; it is intended for sequences $\<g_1,g_2,\ldots\,\>$
+that begin with $n=1$ instead of $n=0$:
+\begindisplay
+\widetilde G(z)=\sum_{n\ge1}{g_n\over n^z}\,.
+\eqno\eqref|dgf-def|
+\enddisplay
+This is called a {\it "Dirichlet generating function"\/} ("dgf"), because
+the German mathematician
+Gustav Lejeune "Dirichlet" (1805--1859) made much of it.
+
+For example, the dgf of the constant sequence $\<1,1,1,\ldots\,\>$ is
+\begindisplay
+\sum_{n\ge1}{1\over n^z}=\zeta(z)\,.
+\eqno\eqref|zeta-def|
+\enddisplay
+This is "Riemann"'s {\it "zeta function"}, which we have also called the
+"generalized harmonic number" $H_\infty^{(z)}$ when $z>1$.
+
+The product of Dirichlet generating functions corresponds to a
+special kind of convolution:
+\begindisplay
+\widetilde F(z)@\widetilde G(z)
+&=\sum_{l,m\ge1}{f_l\over l^z}\,{g_m\over m^z}
+ =\sum_{n\ge1}{1\over n^z}\sum_{l,m\ge1}f_l\,g_m\,\[l\cdt m=n]\,.
+\enddisplay
+Thus $\widetilde F(z)@\widetilde G(z)=\widetilde H(z)$ is the dgf
+of the sequence "!sums over divisors"
+\begindisplay
+h_n=\sum_{d\divides n}f_d\,g_{n/d}\,.
+\eqno\eqref|dirichlet-conv|
+\enddisplay
+
+For example, we know from \equ(4.|mobius-def|) that
+$\sum_{d\divides n}\mu(d)=\[n=1]$; this is the Dirichlet convolution
+of the M\"obius sequence $\<\mu(1),\mu(2),\mu(3),\ldots\,\>$ with
+$\<1,1,1,\ldots\,\>$, hence
+\begindisplay
+\widetilde M(z)@\zeta(z)=\sum_{n\ge1}{\[n=1]\over n^z}=1\,.
+\eqno\eqref|inverse-zeta|
+\enddisplay
+In other words, the dgf of
+$\<\mu(1),\mu(2),\mu(3),\ldots\,\>$ is $\zeta(z)^{-1}$.
+
+\displaywidowpenalty=1000
+Dirichlet generating functions are particularly valuable when the
+sequence $\<g_1,g_2,\ldots\,\>$ is a {\it"multiplicative function"},
+namely when
+\begindisplay
+g_{mn}=g_m\,g_n\qquad\hbox{for $m\rp n@$}.
+\enddisplay
+\looseness=-1
+In such cases the values of $g_n$ for all $n$ are determined by
+the values of $g_n$ when $n$ is a power of a prime, and we can
+factor the dgf into a product over primes:
+\begindisplay
+\widetilde G(z)=\prod_{p\ \rm prime}\biggl(1+
+{g_p\over p^z}+
+{g_{p^2}\over p^{2z}}+
+{g_{p^3}\over p^{3z}}+\cdots\,\biggr)\,.
+\eqno
+\enddisplay
+If, for instance, we set $g_n=1$ for all $n$, we obtain a product
+representation of Riemann's zeta function:
+\begindisplay
+\zeta(z)=\prod_{p\ \rm prime}\biggl({1\over 1-p^{-z}}\biggr)\,.
+\eqno\eqref|zeta-product|
+\enddisplay
+The "M\"obius function" has $\mu(p)=-1$ and $\mu(p^k)=0$ for $k>1$, hence
+its dgf is
+\begindisplay
+\widetilde M(z)=\prod_{p\ \rm prime}(1-p^{-z})\,;
+\eqno
+\enddisplay
+this agrees, of course,
+with \eq(|inverse-zeta|) and \eq(|zeta-product|).
+"!totient"
+Euler's $\varphi$ function has $\varphi(p^k)=p^k-p^{k-1}$, hence its dgf
+has the factored form
+\begindisplay
+\widetilde\Phi(z)=\prod_{p\ \rm prime}\biggl(1+{p-1\over p^z-p}\biggr)
+=\prod_{p\ \rm prime}{1-p^{-z}\over1-p^{1-z}}\,.
+\eqno
+\enddisplay
+We conclude that $\widetilde\Phi(z)=\zeta(z-1)/\zeta(z)$.
+
+\beginexercises
+
+\subhead \kern-.05em Warmups
+
+\ex:
+\unitlength=3pt
+An eccentric collector of $2\times n$ domino tilings pays \$4 for each vertical
+domino and \$1 for each horizontal domino. How many tilings are worth
+exactly \$$m$ by this criterion? For example, when $m=6$ there are
+three solutions: \domi\domv\domhh\kern1pt, \domi\domhh\domv\kern1pt,
+and \domi\domhh\domhh\domhh\kern1pt.
+\answer\unitlength=3pt
+\def\Domh{\beginpicture(3,1)(-.5,0) % horizontal, stand-alone
+\put(2,0){\line(0,1){1}}
+\put(0,0){\line(0,1){1}}
+\put(0,0){\line(1,0){2}}
+\put(0,1){\line(1,0){2}}
+\endpicture}%
+\def\Domv{\beginpicture(2,2)(-.5,0) % vertical, stand-alone
+\put(0,0){\line(0,1){2}}
+\put(1,0){\line(0,1){2}}
+\put(0,0){\line(1,0){1}}
+\put(0,2){\line(1,0){1}}
+\endpicture}%
+Substitute $z^4$ for \Domv\ and $z$ for \Domh\ in the generating
+function, getting $1/(1-z^4-z^2)$. This is like the generating function
+for~$T$, but with $z$ replaced by~$z^2$. Therefore the answer is
+zero if $m$ is odd, otherwise $F_{m/2+1}$.
+
+\ex:
+Give the generating function and the exponential generating function
+for the sequence $\<2,5,13,35,\ldots\,\>=\<2^n+3^n\>$ in closed form.
+\answer $G(z)=1/(1-2z)+1/(1-3z)$; \ $\widehat G(z)=e^{2z}+e^{3z}$.
+\source{[|knuth1|, exercise 1.2.9--1].}
+
+\ex:
+What is $\sum_{n\ge0}H_n/10^n$?
+\answer Set $z=1/10$ in the generating function, getting
+${10\over9}\ln{10\over9}$.
+
+\ex:
+The general expansion theorem for rational functions $P(z)/Q(z)$
+is not completely general, because it restricts the degree of~$P$ to be
+less than the degree of~$Q$. What happens if $P$ has a larger degree
+than this?
+\answer Divide $P(z)$ by $Q(z)$, getting a quotient $T(z)$ and a
+remainder $P_0(z)$ whose degree is less than the degree of~$Q$. The
+coefficients of $T(z)$ must be added to the coefficients $[z^n]\,P_0(z)/Q(z)$
+for small~$n$. (This is the polynomial $T(z)$ in \equ(7.|r-s-t|).)
+
+\ex:
+Find a generating function $S(z)$ such that
+\begindisplay
+[z^n]\,S(z)=\sum_k{r\choose k}{r\choose n-2k}\,.
+\enddisplay
+\answer This is the convolution of $(1+z^2)^r$ with $(1+z)^r$, so
+\begindisplay
+S(z)=(1+z+z^2+z^3)^r\,.
+\enddisplay
+Incidentally, no simple form is known
+for the coefficients of this generating function; hence the stated
+sum probably has no simple closed form. (We can use generating
+functions to obtain negative results as well as positive ones.)
+
+\subhead Basics
+
+\ex:
+Show that the recurrence \eq(|more-less-random|)
+can be solved by the "repertoire method", without using generating functions.
+\answer Let the solution to $g_0=\alpha$, $g_1=\beta$, $g_n=g_{n-1}+
+2g_{n-2}+(-1)^n\gamma$ be $g_n=A(n)\alpha+B(n)\beta+C(n)\gamma$.
+The function $2^n$ works when $\alpha=1$, $\beta=2$, $\gamma=0$;
+the function $(-1)^n$ works when $\alpha=1$, $\beta=-1$, $\gamma=0$;
+the function $(-1)^nn$ works when $\alpha=0$, $\beta=-1$, $\gamma=3$.
+Hence $A(n)+2B(n)=2^n$, $A(n)-B(n)=(-1)^n$, and $-B(n)+3C(n)=(-1)^nn$.
+
+\ex:
+Solve the recurrence
+\begindisplay
+g_0&=1\,;\cr
+g_n&=g_{n-1}+2g_{n-2}+\cdots+ng_0\,,\qquad\hbox{for $n>0$}.
+\enddisplay
+\answer $G(z)=\bigl(z/(1-z)^2\bigr)G(z)+1$, hence
+\begindisplay
+G(z)={1-2z+z^2\over1-3z+z^2}=1+{z\over1-3z+z^2}\,;
+\enddisplay
+we have $g_n=F_{2n}+\[n=0]$.
+\g\vskip-30pt I bet that the controversial ``fan of order zero''
+"!null case" "!empty case"
+does have one spanning tree.\g
+
+\ex:
+What is $[z^n]\,\bigl(\ln(1-z)\bigr)^2\!/(1-z)^{m+1}$?
+\answer Differentiate $(1-z)^{-x-1}$ twice with respect to~$x$, obtaining
+\begindisplay
+{x+n\choose n}\bigl((H_{x+n}-H_x)^2-(H_{x+n}^{(2)}-H_x^{(2)})\bigr)\,.
+\enddisplay
+Now set $x=m$.
+\source{"Zave" [|zave|].}
+
+\ex:
+Use the result of the previous exercise to evaluate $\sum_{k=0}^n
+H_kH_{n-k}$.
+\answer $(n+1)(H_n^2-H_n^{(2)})-2n(H_n-1)$.
+\source{[|knuth1|, exercise 1.2.7--22].}
+
+\ex:
+Set $r=s=-1/2$ in identity \eq(|rshh-conv|) and then remove all occurrences
+of $1/2$ by using tricks like \equ(5.|n-1/2-bc|). What amazing
+identity do you deduce?
+\g I deduce that Clark "Kent" is really Superman.\g
+\answer The identity $H_{k-1/2}-H_{-1/2}={2\over2k-1}+\cdots+{2\over1}=2H_{2k}-H_k$
+implies that $\sum_k{2k\choose k}{2n-2k\choose n-k}(2H_{2k}-H_k)=4^nH_n$.
+
+\ex:
+This problem, whose three parts are independent, gives practice in the
+manipulation of generating functions. We assume that $A(z)=\sum_n a_nz^n$,
+$B(z)=\sum_n b_nz^n$, $C(z)=\sum_n c_nz^n$, and that the coefficients
+are zero for negative~$n$.
+\vskip2pt
+\itemitem{a}If $c_n=\sum_{j+2k\le n}a_jb_k$, express $C$ in terms of $A$ and~$B$.
+\vskip2pt
+\itemitem{b}If $nb_n=\sum_{k=0}^n2^ka_k/(n-k)!$, express $A$ in terms of~$B$.
+\vskip2pt
+\itemitem{c}If $r$ is a real number and if $a_n=\sum_{k=0}^n{r+k\choose k}b_{n-k}$,
+express $A$ in terms of~$B$; then use your formula to find coefficients
+$f_k(r)$ such that $b_n=\sum_{k=0}^n f_k(r)@a_{n-k}$.
+\answer (a) $C(z)=A(z)B(z^2)/(1-z)$. (b) $zB'(z)=A(2z)e^z$, hence
+$A(z)={z\over2}e^{-z/2}B'({z\over2})$.
+(c)~$A(z)=B(z)/(1-z)^{r+1}$, hence $B(z)=(1-z)^{r+1}A(z)$ and we have
+$f_k(r)={r+1\choose k}(-1)^k$.
+\source{1971 final exam.}
+
+\ex:
+How many ways are there to put the numbers $\{1,2,\ldots,2n\}$ into a
+$2\times n$ array so that rows and columns are in increasing order
+from left to right and from top to bottom? For example, one solution when
+$n=5$ is
+\begindisplay
+\pmatrix{1&2&4&5&8\cr 3&6&7&9&10\cr}\,.
+\enddisplay
+\answer $C_n$. The numbers in the upper row correspond to the positions
+of $+1$'s in a sequence of $+1$'s and~$-1$'s that defines a
+``mountain range''; the numbers in the lower row correspond to the
+positions of $-1$'s. For example, the given array corresponds to
+\begindisplay
+\unitlength=10pt
+\countdef\m=4 \countdef\n=6
+\def\init{\thinlines\put(0,0){\line(1,0){10}}
+ \thicklines \m=0 \n=0 \put(0,0){\disk{.2}}}
+\def\+{\put(\number\m,\number\n){\line(1,1)1}\advance\m1 \advance\n1
+ \put(\number\m,\number\n){\disk{.2}}}
+\def\-{\put(\number\m,\number\n){\line(1,-1)1}\advance\m1 \advance\n-1
+ \put(\number\m,\number\n){\disk{.2}}}
+\beginpicture(10,3)(0,0)\init\+\+\-\+\+\-\-\+\-\-\endpicture\;.
+\enddisplay
+\source{[|knuth3|, pp.~63--64].}
+
+\ex:\exref|prove-raney|%
+Prove "Raney"'s generalized lemma, which is stated just before \eq(|m-cat-l|).
+\answer Extend the sequence periodically (let $x_{m+k}=x_k$) and define
+$s_n=x_1+\cdots+x_n$. We have $s_m=l$, $s_{2m}=2l$, etc. There must be
+a largest index $k_j$ such that $s_{k_j}=j$, $s_{k_j+m}=l+j$, etc.
+These indices $k_1$, \dots,~$k_l$ (modulo~$m$) specify the cyclic
+shifts in question.\par
+For example, in the sequence
+$\<-2,1,-1,0,1,1,-1,1,1,1\>$ with $m=10$ and $l=2$ we have $k_1=17$, $k_2=24$.
+\source{"Raney" [|raney|].}
+
+\ex:
+Solve the recurrence
+\begindisplay \openup3pt
+g_0&=0\,,\qquad g_1=1\,,\cr
+g_n&=-2ng_{n-1}+\sum_k{n\choose k}g_k g_{n-k}\,,\qquad\hbox{for $n>1$},
+\enddisplay
+by using an exponential generating function.
+\answer $\widehat G(z)=-2z\widehat G(z)+\widehat G(z)^2+z$ (be careful about the final
+term!) leads via the quadratic formula to
+\begindisplay
+\widehat G(z)={1+2z-\sqrt{1+4z^{2\mathstrut}}\over2}\,.
+\enddisplay
+Hence $g_{2n+1}=0$ and $g_{2n}=(-1)^n(2n)!\,C_{n-1}$, for all $n>0$.
+
+\ex:\exref|bell-number-gf|%
+The {\it "Bell number"\/} $\varpi_n$ is the number of ways to partition
+$n$~things
+into subsets. For example, $\varpi_3=5$ because we can partition $\{1,2,3\}$ in
+the following ways:
+\begindisplay
+\{1,2,3\}\,;\quad
+\{1,2\}\cup\{3\}\,;\quad
+\{1,3\}\cup\{2\}\,;\quad
+\{1\}\cup\{2,3\}\,;\quad
+\{1\}\cup\{2\}\cup\{3\}\,.
+\enddisplay
+Prove that $\varpi_{n+1}=\sum_k{n\choose k}\varpi_{n-k}$,
+ and use this recurrence to find
+a closed form for the exponential generating function
+ $P(z)=\sum_n\varpi_nz^n\!/n!$.
+\answer There are ${n\choose k}\varpi_{n-k}$ partitions with $k$ other objects
+in the subset containing~$n+1$. Hence $\widehat P'(z)=e^z\widehat P(z)$. The solution
+to this differential equation is $\widehat P(z)=e^{e^z+c}$, and $c=-1$ since
+$\widehat P(0)=1$. (We can also get this result by summing
+\equ(7.|exp-power-gf|) on~$m$, since $\varpi_n=\sum_m{n\brace m}$.)
+\source{"Bell" [|bell-numbers|].}
+
+\ex:
+Two sequences $\<a_n\>$ and $\<b_n\>$ are related by the
+convolution formula
+\begindisplay
+b_n=\!\sum_{k_1+2k_2+\cdots nk_n=n}{a_1{+}k_1{-}1\choose k_1}
+{a_2{+}k_2{-}1\choose k_2}\ldots{a_n{+}k_n{-}1\choose k_n}\,;
+\enddisplay
+also $a_0=0$ and $b_0=1$. Prove that the corresponding generating functions
+satisfy
+%\begindisplay
+$\ln B(z)=A(z)+\half A(z^2)+{1\over3}A(z^3)+\cdots\,$.
+%\enddisplay
+\answer One way is to take the logarithm of
+\begindisplay
+B(z)=1\big/\bigl((1-z)^{a_1}(1-z^2)^{a_2}(1-z^3)^{a_3}(1-z^4)^{a_4}\ldots\,\bigr),
+\enddisplay
+then use the formula for $\ln{1\over1-z}$ and interchange the order of
+summation.
+\source{"P\'olya" [|polya-counting|, p.~149]; [|knuth1|, exercise 2.3.4.4--1].}
+
+\ex:
+Show that the exponential generating function $\widehat G(z)$ of a sequence
+is related to the ordinary generating function $G(z)$ by the formula
+\begindisplay
+\int_0^\infty \widehat G(zt)e^{-t}\,dt=G(z)\,,
+\enddisplay
+if the integral exists.
+\answer This follows since $\int_0^\infty t^ne^{-t}\,dt=n!@$.
+There's also a formula that goes in the other direction:
+\begindisplay
+\widehat G(z)={1\over2\pi}\int_{-\pi}^{+\pi}G(ze^{-i\theta})\,e^{e^{i\theta}}
+d\theta\,.
+\enddisplay
+
+\ex:
+Find the "Dirichlet generating functions" for the sequences
+\par\nobreak\vskip2pt
+\itemitem{a}$g_n=\sqrt n\mkern1mu$;
+\itemitem{b}$g_n=\ln n@$;
+\itemitem{c}$g_n=\[\hbox{$n$ is squarefree}]$.
+\par\nobreak\vskip2pt\item{}%
+Express your answers in terms of the zeta function. (Squarefreeness
+is defined in exercise 4.|squarefree-def|.)
+\answer (a) $\zeta(z-\half)$; \ (b) $-\zeta'(z)$; \ (c) $\zeta(z)/\zeta(2z)$.
+Every positive integer is uniquely representable as $m^2q$, where $q$
+is squarefree.
+
+\ex:\exref|general-conv-principles|%
+Every power series $F(z)=\sum_{n\ge0}f_nz^n$ with $f_0=1$ defines a
+sequence of polynomials $f_n(x)$ by the rule
+\begindisplay
+F(z)^x=\sum_{n\ge0}f_n(x)@z^n\,,
+\enddisplay
+where $f_n(1)=f_n$ and $f_n(0)=\[n=0]$. In general, $f_n(x)$ has degree~$n$.
+\g What do you mean, ``in general''? If $f_1=f_2=\cdots=f_{m-1}=0$, the
+degree of $f_n(x)$ is at most $\lfloor n/m\rfloor$.\g
+Show that such polynomials always satisfy the convolution formulas
+\begindisplay\openup4pt
+\sum_{k=0}^n f_k(x)@f_{n-k}(y)&=f_n(x+y)\,;\cr
+(x+y)\sum_{k=0}^n kf_k(x)@f_{n-k}(y)&=xn@f_n(x+y)\,.\cr
+\enddisplay
+(The identities in Tables |conv-table| and |stirling-convolutions| are special
+cases of this trick.)
+\answer If $n>0$, the coefficient $[z^n]\,\exp\bigl(x\ln F(z)\bigr)$ is
+a polynomial of degree~$n$ in~$x$ that's a multiple of~$x$. The first
+convolution formula comes from equating coefficients of~$z^n$ in
+$F(z)^xF(z)^y=F(z)^{x+y}$. The second comes from equating coefficients of
+$z^{n-1}$ in $F'(z)@F(z)^{x-1}F(z)^y=F'(z)@F(z)^{x+y-1}$, because we have
+\begindisplay
+F'(z)@F(z)^{x-1}=x^{-1}{\partial\over\partial z}\bigl(F(z)^x\bigr)
+=x^{-1}\sum_{n\ge0}nf_n(x)z^{n-1}\,.
+\enddisplay
+(Further convolutions follow by taking $\partial/\partial x$, as
+in \equ(7.|harmonic-general|).)\par
+Still more is true, as shown in [|knuth-cp|]: We have
+\begindisplay
+\sum_{k=0}^n{x@f_k(x+tk)\over x+tk}{y@f_{n-k}(y+t(n-k))\over y+t(n-k)}=
+{(x+y)f_n(x+y+tn)\over x+y+tn}\,,
+\enddisplay
+for arbitrary $x$, $y$, and $t$. In fact, $x@f_n(x+tn)/(x+tn)$ is the
+sequence of polynomials for the coefficients of $\Fscr_t(z)^x$, where
+\begindisplay
+\Fscr_t(z)=F\bigl(z@\Fscr_t(z)^t\bigr)\,.
+\enddisplay
+(We saw special cases in \equ(5.|t-series-rec|) and \equ(6.|t-series-stirl|).)
+\source{[|knuth-cp|].}
+
+\ex:\exref|d-finite-defined|%
+A power series $G(z)$ is called {\it"differentiably finite"\/} if
+there exist finitely many polynomials $P_0(z)$, \dots, $P_m(z)$, not
+all zero, such that
+\begindisplay
+P_0(z)@G(z)+P_1(z)@G'(z)+\cdots+P_m(z)@G^{(m)}(z)=0\,.
+\enddisplay
+A sequence of numbers $\<g_0,g_1,g_2,\ldots\,\>$ is called {\it"polynomially
+recursive"\/} if there exist finitely many polynomials $p_0(z)$, \dots,
+$p_m(z)$, not all zero, such that
+\begindisplay
+p_0(n)@g_n+p_1(n)@g_{n+1}+\cdots+p_m(n)@g_{n+m}=0
+\enddisplay
+for all integers $n\ge0$. Prove that a generating function is differentiably
+finite if and only if its sequence of coefficients is polynomially
+recursive.
+\answer Let $G(z)=\sum_{n\ge0}g_nz^n$. Then
+\begindisplay
+z^lG^{(k)}(z)=\sum_{n\ge0}
+n\_kg_nz^{n-k+l}=\sum_{n\ge0}(n+k-l)\_kg_{n+k-l}z^n
+\enddisplay
+for all $k,l\ge0$,
+if we regard $g_n=0$ for $n<0$. Hence if $P_0(z)$, \dots,~$P_m(z)$
+are polynomials, not all zero, having maximum degree~$d$, then there are
+polynomials $p_0(n)$, \dots,~$p_{m+d}(n)$ such that
+\begindisplay
+P_0(z)@G(z)+\cdots+P_m(z)@G^{(m)}(z)=\sum_{n\ge0}\sum_{j=0}^{m+d}p_j(n)@g_{n+j-d}z^n\,.
+\enddisplay
+Therefore a differentiably finite $G(z)$ implies that
+\begindisplay
+\sum_{j=0}^{m+d}p_j(n+d)@g_{n+j}=0\,,\qquad\hbox{for all $n\ge0$}.
+\enddisplay
+The converse is similar.
+(One consequence is that $G(z)$ is differentiably finite if and only
+if the corresponding egf, $\widehat G(z)$, is differentiably finite.)
+\source{"Jungen" [|jungen|, p.~299] credits A. "Hurwitz".}
+
+\subhead Homework exercises
+
+\ex:
+A robber holds up a bank and demands \$500 in tens and twenties.
+He also demands to know the number of ways in which the cashier can
+give him the money. Find a generating function $G(z)$
+\g Will he settle for $2\times n$ domino tilings?\g
+ for which this number
+is $[z^{500}]\,G(z)$, and a more compact generating function $\check G(z)$ for
+which this number is $[z^{50}]\,\check G(z)$. Determine the required
+number of ways by (a)~using partial fractions; (b)~using a method
+like \eq(|change-compressed|).
+\answer This is the problem of giving change with denominations $10$
+and $20$, so $G(z)=1/(1-z^{10})(1-z^{20})=\check G(z^{10})$, where
+$\check G(z)=1/(1-z)(1-z^2)$. (a)~The partial fraction decomposition
+\g This slow method of finding the answer is just the cashier's way
+of stalling until the police come.\g
+of $\check G(z)$ is $\half(1-z)^{-2}+{1\over4}(1-z)^{-1}+{1\over4}(1+z)
+^{-1}$, so $[z^n]\,\check G(z)={1\over4}\bigl(2n+3+(-1)^n\bigr)$.
+Setting $n=50$ yields $26$ ways to make the payment.
+(b)~$\check G(z)=(1+z)/(1-z^2)^2=(1+z)(1+2z^2+3z^4+\cdots\,)$, so
+$[z^n]\,\check G(z)=\lfloor n/2\rfloor+1$. (Compare this with the
+value $N_n=\lfloor n/5\rfloor+1$ in the text's coin-changing problem.
+The bank robber's problem is equivalent to the problem of making change
+\g The USA has two\hbox{-}cent pieces,
+ but they haven't been minted since 1873.\g
+with pennies and tuppences.)
+
+\def\tri#1{\cpic(4,4)(0,0) \put(0,0){\line(1,0){4}}
+ \put(0,0){\line(1,2){2}} \put(4,0){\line(-1,2){2}}#1\endcpic}
+\def\sqr#1{\cpic(4.5,4.5)(0,0) \put(0,0){\line(0,1){4.5}}
+ \put(0,0){\line(1,0){4.5}} \put(0,4.5){\line(1,0){4.5}}\put(4.5,0){\line(0,1){4.5}}
+ #1\endcpic}
+\def\pnt#1{\cpic(6,5)(-1,0) \put(0,0){\line(1,0){4}}
+ \put(0,0){\line(-1,3){1}} \put(-1,3){\line(3,2){3}} \put(2,5){\line(3,-2){3}}
+ \put(4,0){\line(1,3){1}} #1\endcpic}
+\def\dgn{\cpic(3,2)(0,0)\put(0,0){\line(1,0){3}}\endcpic}
+
+\ex:\exref|triangulations|%
+Let $P$ be the sum of all ways to ``triangulate'' polygons:
+\begindisplay \unitlength=3.33333pt \openup3pt \advance\medmuskip5mu
+P=\dgn +\tri{}&+\sqr{\put(4.5,0){\line(-1,1){4.5}}}
+	+\sqr{\put(0,0){\line(1,1){4.5}}}\cr
+&+\pnt{\put(4,0){\line(-5,3){5}}\put(4,0){\line(-2,5){2}}}
+	+\pnt{\put(4,0){\line(-5,3){5}}\put(5,3){\line(-1,0){6}}}
+	+\pnt{\put(0,0){\line(2,5){2}}\put(4,0){\line(-2,5){2}}}
+	+\pnt{\put(0,0){\line(2,5){2}}\put(0,0){\line(5,3){5}}}
+	+\pnt{\put(-1,3){\line(1,0){6}}\put(0,0){\line(5,3){5}}}
+	+\cdots\,.
+\enddisplay
+(The first term represents a degenerate polygon with only two vertices;
+every other term shows a polygon that has been divided into triangles.
+For example, a pentagon can be triangulated in five ways.)
+Define a ``multiplication'' operation $A\triangle B$ on triangulated
+polygons $A$ and~$B$ so that the equation
+\begindisplay \unitlength=3.33333pt
+P=\,\,\dgn\;+\; P\triangle P
+\enddisplay
+is valid. Then replace each triangle by `$z$'; what does this tell you
+about the number of ways to decompose an $n$-gon into triangles?
+\answer Each polygon has a ``base'' (the line segment at the bottom).
+If $A$ and~$B$ are triangulated polygons, let $A\triangle B$ be the
+result of pasting the base of~$A$ to the upper left diagonal of $\triangle$,
+and pasting the base of~$B$ to the upper right diagonal. Thus, for
+example,
+\def\tri#1{\cpic(4,4)(0,0) \put(0,0){\line(1,0){4}}
+ \put(0,0){\line(1,2){2}} \put(4,0){\line(-1,2){2}}#1\endcpic}%
+\def\sqr#1{\cpic(3,3)(0,0) \put(0,0){\line(0,1){3}}
+ \put(0,0){\line(1,0){3}} \put(0,3){\line(1,0){3}}\put(3,0){\line(0,1){3}}
+ #1\endcpic}%
+\def\pnt#1{\cpic(6,5)(-1,0) \put(0,0){\line(1,0){4}}
+ \put(0,0){\line(-1,3){1}} \put(-1,3){\line(3,2){3}} \put(2,5){\line(3,-2){3}}
+ \put(4,0){\line(1,3){1}} #1\endcpic}%
+\def\dgn{\cpic(3,2)(0,0)\put(0,0){\line(1,0){3}}\endcpic}%
+\begindisplay
+\unitlength=3.33333pt
+\sqr{\put(0,0){\line(1,1){3}}}\;\triangle\;\dgn=
+\pnt{\put(0,0){\line(2,5){2}}\put(0,0){\line(5,3){5}}}\,\,.
+\enddisplay
+(The polygons might need to be warped a bit and/or banged into shape.)
+Every triangulation arises in this way, because the base line is part of
+a unique triangle and there are triangulated polygons $A$ and~$B$ at its
+left and right.\par
+ Replacing each triangle by~$z$ gives a power series in which
+the coefficient of~$z^n$ is the number of triangulations with $n$~triangles,
+namely the number of ways to decompose an $(n+2)$-gon into triangles.
+Since $P=1+zP^2$, this is the generating function for Catalan numbers
+$C_0+C_1z+C_2z^2+\cdots\,$; the number of ways to triangulate an $n$-gon
+is $C_{n-2}={2n-4\choose n-2}/(n-1)$.
+\source{"P\'olya" [|polya-pictures|].}
+
+\ex:
+In how many ways can a $2\times2\times n$ pillar be built out of
+\g At union rates, as many as you can afford, plus a few.\g
+$2\times1\times1$ bricks?
+\answer Let $a_n$ be the stated number, and $b_n$ the number of ways
+with a $2\times1\times1$ notch missing at the top. By considering
+the possible patterns visible on the top surface, we have
+\begindisplay
+a_n&=2a_{n-1}+4b_{n-1}+a_{n-2}+\[n=0]\,;\cr
+b_n&=a_{n-1}+b_{n-1}\,.
+\enddisplay
+Hence the generating functions satisfy $A=2zA+4zB+z^2A+1$,
+$B=zA+zB$, and we have
+\begindisplay
+A(z)={1-z\over(1+z)(1-4z+z^2)}\,.
+\enddisplay
+This formula relates to the problem of $3\times n$ domino tilings; we have
+$a_n={1\over3}\bigl(U_{2n}+V_{2n+1}+(-1)^n\bigr)=
+{1\over6}(2+\sqrt3\,)^{n+1}+{1\over6}(2-\sqrt3\,)^{n+1}+{1\over3}(-1)^n$,
+which is $(2+\sqrt3\,)^{n+1}\!/6$ rounded to the nearest integer.
+\source{1983 homework.}
+
+\ex:
+How many "spanning trees" are in an $n$-"wheel" (a "graph" with $n$ ``outer''
+vertices in a cycle, each connected to an $(n+1)$st ``hub'' vertex),
+when $n\ge3$?
+\answer $n\sum_{k_1+\cdots+k_m=n}k_1\cdot\ldots\cdot k_m/m=F_{2n+1}+
+F_{2n-1}-2$. (Consider the coefficient
+$[z^{n-1}]\,{d\over dz}\ln\bigl(1/(1-G(z))\bigr)$,
+where $G(z)=z/(1-z)^2$.)
+\source{"Myers" [|myers|]; "Sedl\'a\v cek" [|sedlacek|].}
+
+\ex:\exref|bmod-omega|%
+Let $m\ge2$ be an integer. What is a closed form for the generating
+function of the sequence $\<n\bmod m\>$, as a function of $z$ and~$m$?
+Use this generating function to express `$n\bmod m$' in terms of the
+complex number $\omega=e^{2\pi i/m}$. (For example, when $m=2$ we have
+$\omega=-1$ and $n\bmod2=\half-\half(-1)^n$.)
+\answer The generating function is $P(z)/(1-z^m)$, where
+$P(z)=z+2z^2+\cdots+(m-1)z^{m-1}=\bigl((m-1)z^{m+1}-mz^m+z)/(1-z)^2$.
+The denominator is $Q(z)=1-z^m=(1-\omega^0z)(1-\omega^1z)\ldots(1-\omega^{m-1}z)$.
+By the rational expansion theorem for distinct roots, we obtain
+\begindisplay
+n\bmod m={m-1\over2}+\sum_{k=1}^{m-1}{\omega^{-kn}\over\omega^k-1}\,.
+\enddisplay
+\source{[|knuth2|, "Carlitz"'s proof of lemma 3.3.3B].}
+
+\ex:
+\def\FF{{\frak F}}%
+The "second-order Fibonacci numbers" $\<\FF_n\>$ are defined by the recurrence
+"!Fibonacci numbers, second-order"
+\begindisplay
+\FF_0&=0\,;\qquad \FF_1=1\,;\cr
+\FF_n&=\FF_{n-1}+\FF_{n-2}+F_n\,,\qquad\hbox{for $n>1$}.
+\enddisplay
+Express $\FF_n$ in terms of the usual Fibonacci numbers $F_n$ and $F_{n+1}$.
+\answer $(1-z-z^2){\frak F}(z)=F(z)$ leads to ${\frak F}_n=\bigl(
+2(n+1)F_n+nF_{n+1}\bigr)/5$ as in equation~\equ(7.|fib-conv|).
+\source{[|knuth1|, exercise 1.2.8--12].}
+
+\ex:\exref|fib-squared|%
+A $2\times n$ domino tiling can also be regarded as a way to draw $n$
+disjoint lines in a $2\times n$ array of points:
+\begindisplay
+\unitlength=8pt
+\beginpicture(10,1)(0,0)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(0,0){\line(0,1)1}
+\put(5,0){\line(0,1)1}
+\put(8,0){\line(0,1)1}
+\put(9,0){\line(0,1)1}
+\put(1,0){\line(1,0)1}
+\put(1,1){\line(1,0)1}
+\put(3,0){\line(1,0)1}
+\put(3,1){\line(1,0)1}
+\put(6,0){\line(1,0)1}
+\put(6,1){\line(1,0)1}
+\endpicture
+\enddisplay
+If we superimpose two such patterns, we get a set of cycles, since
+every point is touched by two lines. For example, if the lines above
+are combined with the lines
+\begindisplay
+\unitlength=8pt
+\beginpicture(10,1)(0,0)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(0,0){\line(0,1)1}
+\put(1,0){\line(0,1)1}
+\put(2,0){\line(1,0)1}
+\put(2,1){\line(1,0)1}
+\put(4,0){\line(1,0)1}
+\put(4,1){\line(1,0)1}
+\put(6,0){\line(1,0)1}
+\put(6,1){\line(1,0)1}
+\put(8,0){\line(1,0)1}
+\put(8,1){\line(1,0)1}
+\endpicture\,,
+\enddisplay
+the result is
+\begindisplay
+\unitlength=8pt
+\beginpicture(10,1)(0,0)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(-.1,0){\line(0,1)1}
+\put(5,0){\line(0,1)1}
+\put(8,0){\line(0,1)1}
+\put(9,0){\line(0,1)1}
+\put(1,0){\line(1,0)1}
+\put(1,1){\line(1,0)1}
+\put(3,0){\line(1,0)1}
+\put(3,1){\line(1,0)1}
+\put(6,-.1){\line(1,0)1}
+\put(6,.9){\line(1,0)1}
+\put(.1,0){\line(0,1)1}
+\put(1,0){\line(0,1)1}
+\put(2,0){\line(1,0)1}
+\put(2,1){\line(1,0)1}
+\put(4,0){\line(1,0)1}
+\put(4,1){\line(1,0)1}
+\put(6,.1){\line(1,0)1}
+\put(6,1.1){\line(1,0)1}
+\put(8,0){\line(1,0)1}
+\put(8,1){\line(1,0)1}
+\endpicture\,.
+\enddisplay
+The same set of cycles is also obtained by combining
+\begindisplay
+\unitlength=8pt
+\beginpicture(10,1)(0,.1)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(0,0){\line(0,1)1}
+\put(1,0){\line(0,1)1}
+\put(2,0){\line(1,0)1}
+\put(2,1){\line(1,0)1}
+\put(4,0){\line(1,0)1}
+\put(4,1){\line(1,0)1}
+\put(8,0){\line(0,1)1}
+\put(9,0){\line(0,1)1}
+\put(6,0){\line(1,0)1}
+\put(6,1){\line(1,0)1}
+\endpicture
+\qquad\hbox{with}\qquad
+\beginpicture(10,1)(0,.1)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(0,0){\line(0,1)1}
+\put(1,0){\line(1,0)1}
+\put(1,1){\line(1,0)1}
+\put(3,0){\line(1,0)1}
+\put(3,1){\line(1,0)1}
+\put(5,0){\line(0,1)1}
+\put(6,0){\line(1,0)1}
+\put(6,1){\line(1,0)1}
+\put(8,0){\line(1,0)1}
+\put(8,1){\line(1,0)1}
+\endpicture
+\,.
+\enddisplay
+But we get a unique way to reconstruct the original patterns from the
+\def\\{{/\penalty0}}%
+superimposed ones if we assign orientations to the vertical lines by using
+arrows that go alternately up\\down\\up\\down\\$\cdots\,$\
+ in the first pattern and alternately down\\up\\down\\up\\$\cdots\,$\
+in the second. For example,
+\begindisplay \unitlength=8pt
+\beginpicture(9,1)(0,.1)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(0,0){\line(0,1)1} \put(0,0){\vector(0,1){1.0}}
+\put(5,0){\line(0,1)1} \put(5,1){\vector(0,-1){1.0}}
+\put(8,0){\line(0,1)1} \put(8,0){\vector(0,1){1.0}}
+\put(9,0){\line(0,1)1} \put(9,1){\vector(0,-1){1.0}}
+\put(1,0){\line(1,0)1}
+\put(1,1){\line(1,0)1}
+\put(3,0){\line(1,0)1}
+\put(3,1){\line(1,0)1}
+\put(6,0){\line(1,0)1}
+\put(6,1){\line(1,0)1}
+\endpicture
+\;\;+\;\;
+\beginpicture(9,1)(0,.1)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(0,0){\line(0,1)1} \put(0,1){\vector(0,-1){1.0}}
+\put(1,0){\line(0,1)1} \put(1,0){\vector(0,1){1.0}}
+\put(2,0){\line(1,0)1}
+\put(2,1){\line(1,0)1}
+\put(4,0){\line(1,0)1}
+\put(4,1){\line(1,0)1}
+\put(6,0){\line(1,0)1}
+\put(6,1){\line(1,0)1}
+\put(8,0){\line(1,0)1}
+\put(8,1){\line(1,0)1}
+\endpicture
+\;=\;
+\beginpicture(10,1)(0,.1)
+\multiput(0,0)(1,0){10}{\disk{.25}}
+\multiput(0,1)(1,0){10}{\disk{.25}}
+\put(-.1,0){\line(0,1)1} \put(-.1,0){\vector(0,1){1.0}}
+\put(5,0){\line(0,1)1} \put(5,1){\vector(0,-1){1.0}}
+\put(8,0){\line(0,1)1} \put(8,0){\vector(0,1){1.0}}
+\put(9,0){\line(0,1)1} \put(9,1){\vector(0,-1){1.0}}
+\put(1,0){\line(1,0)1}
+\put(1,1){\line(1,0)1}
+\put(3,0){\line(1,0)1}
+\put(3,1){\line(1,0)1}
+\put(6,-.1){\line(1,0)1}
+\put(6,.9){\line(1,0)1}
+\put(.1,0){\line(0,1)1} \put(.1,1){\vector(0,-1){1.0}}
+\put(1,0){\line(0,1)1} \put(1,0){\vector(0,1){1.0}}
+\put(2,0){\line(1,0)1}
+\put(2,1){\line(1,0)1}
+\put(4,0){\line(1,0)1}
+\put(4,1){\line(1,0)1}
+\put(6,.1){\line(1,0)1}
+\put(6,1.1){\line(1,0)1}
+\put(8,0){\line(1,0)1}
+\put(8,1){\line(1,0)1}
+\endpicture
+\,.
+\enddisplay
+The number of such oriented cycle patterns must therefore be $T_n^2=F_{n+1}^2$,
+and we should be able to prove this via algebra.
+Let $Q_n$ be the number of oriented $2\times n$ cycle patterns. Find a
+recurrence for $Q_n$, solve it with generating functions, and deduce algebraically
+that $Q_n=F_{n+1}^2$.
+\answer Each oriented cycle pattern begins with
+{\unitlength=8pt
+\beginpicture(.5,1)(-.25,.1)
+\multiput(0,0)(0,1){2}{\disk{.25}}
+\put(-.1,0){\line(0,1)1} \put(-.1,0){\vector(0,1){1.0}}
+\put(.1,0){\line(0,1)1} \put(.1,1){\vector(0,-1){1.0}}
+\endpicture}
+or
+{\unitlength=8pt
+\beginpicture(1.2,1)(-.1,.1)
+\multiput(0,0)(1,0){2}{\disk{.25}}
+\multiput(0,1)(1,0){2}{\disk{.25}}
+\put(0,-.1){\line(1,0)1}
+\put(0,.9){\line(1,0)1}
+\put(0,.1){\line(1,0)1}
+\put(0,1.1){\line(1,0)1}
+\endpicture}
+or a $2\times k$ cycle (for some $k\ge2$) oriented in one of two ways. Hence
+\begindisplay
+Q_n=Q_{n-1}+Q_{n-2}+2Q_{n-2}+2Q_{n-3}+\cdots+2Q_0
+\enddisplay
+for $n\ge2$; \ $Q_0=Q_1=1$. The generating function is therefore
+\begindisplay \openup3pt
+Q(z)&=zQ(z)+z^2Q(z)+2z^2Q(z)/(1-z)+1\cr
+&=1/\bigl(1-z-z^2-2z^2\!/(1-z)\bigr)\cr
+&={(1-z)\over(1-2z-2z^2+z^3)}\cr
+&={\phi^2\!/5\over 1-\phi^2z}+{\phi^{-2}\!/5\over1-\phi^{-2}z}+{2/5\over 1+z}\,,\cr
+\enddisplay
+and $Q_n=\bigl(\phi^{2n+2}+\phi^{-2n-2}+2(-1)^n\bigr)/5
+=\bigl((\phi^{n+1}-\hat\phi^{n+1})/\!\sqrt5\,\bigr)^2=F_{n+1}^2$.
+
+\ex:
+The coefficients of $A(z)$ in \eq(|change-compressed|) satisfy
+$A_r+A_{r+10}+A_{r+20}+A_{r+30}=100$ for $0\le r<10$. Find a ``simple''
+explanation for this.
+\answer In general if $A(z)=(1+z+\cdots+z^{m-1})B(z)$, we have
+$A_r+A_{r+m}+A_{r+2m}+\cdots=B(1)$ for $0\le r<m$. In this case $m=10$
+and $B(z)=(1+z+\cdots+z^9)(1+z^2+z^4+z^6+z^8)(1+z^5)$.
+
+\ex:
+What is the sum of Fibonacci products
+\begindisplay
+\sum_{m>0}\,\,\sum\twoconditions{k_1+k_2+\cdots+k_m=n}{k_1,k_2,\ldots,k_m>0}
+F_{k_1}F_{k_2}\ldots F_{k_m}\,?
+\enddisplay
+\answer $F(z)+F(z)^2+F(z)^3+\cdots=z/(1-z-z^2-z)=\bigl(1/(1-(1+\sqrt2\,)z)
+-(1/(1-(1-\sqrt2\,)z)\bigr)/\sqrt8$, so the answer is
+$\bigl((1+\sqrt2\,)^n-(1-\sqrt2\,)^n\bigr)/\sqrt8$.
+
+\ex:
+If the generating function $G(z)=1/(1-\alpha z)(1-\beta z)$ has
+the partial fraction decomposition $a/(1-\alpha z)+b/(1-\beta z)$, what
+is the partial fraction decomposition of $G(z)^n$?
+\answer $\sum_{k=1}^n{2n-1-k\choose n-1}\bigl(a^nb^{n-k}\!/(1-\alpha z)^k
++a^{n-k}b^n\!/(1-\beta z)^k\bigr)$, by exercise 5.|ax+by-expansion|.
+
+\ex: What function $g(n)$ of the positive integer~$n$ satisfies the recurrence
+\begindisplay
+\sum_{d\divides n}g(d)\,\varphi(n/d)=1\,,
+\enddisplay
+where $\varphi$ is Euler's totient function?
+\answer The dgf is $\zeta(z)^2\!/\zeta(z-1)$; hence we find $g(n)$ is
+the product of $(k+1-kp)$ over all prime powers $p^k$ that exactly
+divide~$n$.
+
+\ex:
+An {\it"arithmetic progression"\/} is an infinite set of integers
+\begindisplay
+\{an+b\}=\{b,a+b,2a+b,3a+b,\ldots\,\}\,.
+\enddisplay
+A set of arithmetic "progression"s $\{a_1n+b_1\}$, \dots,~%
+$\{a_mn+b_m\}$ is called an {\it"exact cover"\/} if every nonnegative
+integer occurs in one and only one of the progressions.
+For example, the three progressions $\{2n\}$, $\{4n+1\}$,
+$\{4n+3\}$ constitute an exact cover.
+Show that if $\{a_1n+b_1\}$, \dots,~%
+$\{a_mn+b_m\}$ is an exact cover such that $2\le a_1\le\cdots\le a_m$,
+then $a_{m-1}=a_m$. \Hint: Use generating functions.
+\answer We may assume that each $b_k\ge0$. A set of arithmetic progressions
+forms an exact cover if and only if
+\begindisplay
+{1 \over 1-z}={z^{b_1}\over 1-z^{a_1}}+\cdots+{z^{b_m}\over 1-z^{a_m}}\,.
+\enddisplay
+Subtract $z^{b_m}/(1-z^{a_m})$ from both sides and set $z=e^{2\pi i/a_m}$.
+The left side is infinite, and the right side will be finite unless
+$a_{m-1}=a_m$.
+\source{[|erdos-graham|, pp. 25--26] credits L. "Mirsky" and M. "Newman".}
+
+\subhead Exam problems
+
+\ex:
+What is $[w^mz^n]\,\bigl(\ln(1+z)\bigr)/(1-wz)$?
+\answer $(-1)^{n-m+1}\[n>m]/(n-m)$.
+\source{1971 final exam.}
+
+\ex:
+Find a closed form for the generating function $\sum_{n\ge0}G_n(z)w^n$,
+if
+\begindisplay
+G_n(z)=\sum_{k\le n/m}{n-mk\choose k}z^{mk}\,.
+\enddisplay
+(Here $m$ is a fixed positive integer.)
+\answer We can also write $G_n(z)=\sum_{k_1+(m+1)k_{m+1}=n}{k_1+k_{m+1}
+"!multinomial coefficient"
+\choose k_{m+1}}(z^m)^{k_{m+1}}$. In general, if
+\begindisplay
+G_n=\sum_{k_1+2k_2+\cdots+rk_r=n}{k_1+k_2+\cdots+k_r\choose k_1,k_2,
+\ldots,k_r}z_1^{k_1}z_2^{k_2}\ldots z_r^{k_r}\,,
+\enddisplay
+we have $G_n=z_1G_{n-1}+z_2G_{n-2}+\cdots+z_rG_{n-r}+\[n=0]$, and the
+generating function is $1/(1-z_1w-z_2w^2-\cdots-z_rw^r)$. In the stated
+special case
+the answer is $1/(1-w-z^mw^{m+1})$. (See \equ(5.|bc-gen-fib|) for
+the case $m=1$.)
+\source{Tom\'as "Feder".*}
+
+\ex:
+Evaluate the sum $\sum_{0<k<n}1/k(n-k)$ in two ways:
+\itemitem{a}Expand the summand in partial fractions.
+\itemitem{b}Treat the sum as a convolution and use generating functions.
+\answer (a) ${1\over n}\sum_{0<k<n}\bigl(1/k+1/(n-k)\bigr)={2\over n}H_{n-1}$.
+(b)~$[z^n]\,\bigl(\ln{1\over1-z}\bigr)^2={2!\over n!}{n\brack2}={2\over n}
+H_{n-1}$ by \equ(7.|log-power-gf|) and \equ(6.|stirl-harmonic|).
+Another way to do part~(b) is to use the rule $[z^n]\,F(z)={1\over n}[z^{n-1}]\,
+F'(z)$ with $F(z)=\bigl(\ln{1\over1-z}\bigr)^2$.
+
+\ex:
+Let $A(z)$ be the generating function for $\<a_0,a_1,a_2,a_3,\ldots\,\>$.
+Express $\sum_n a_{\lfloor n/m\rfloor}z^n$ in terms of $A$, $z$, and $m$.
+\answer ${1-z^m\over1-z}A(z^m)$.
+\source {1974 final exam.}
+
+\ex:
+Let $a_n$ be the number of ways to write the positive integer~$n$ as
+a sum of powers of~$2$, disregarding order. For example, "!binary partitions"
+$a_4=4$, since $4=2+2=2+1+1=1+1+1+1$. By convention we let $a_0=1$.
+Let $b_n=\sum_{k=0}^na_k$ be the cumulative sum of the first $a$'s.
+\itemitem{a}Make a table of the $a$'s and $b$'s up through $n=10$.
+What amazing relation do you observe in your table? (Don't prove it yet.)
+\itemitem{b}Express the generating function $A(z)$ as an infinite product.
+\itemitem{c}Use the expression from part (b) to prove the result of part (a).
+\answer (a) The amazing identity $a_{2n}=a_{2n+1}=b_n$ holds in the table
+\begindisplay \let\preamble=\tablepreamble
+n&&0&1&2&3&4&5&6&7&8&9&10\cr
+\noalign{\hrule}
+a_n&&1&1&2&2&4&4&6&6&10&10&14\cr
+\noalign{\hrule}
+b_n&&1&2&4&6&10&14&20&26&36&46&60\cr
+\enddisplay
+(b) $A(z)=1/\bigl((1-z)(1-z^2)(1-z^4)(1-z^8)\ldots\,\,\bigr)$.
+(c) $B(z)=A(z)/(1-z)$, and we want to show that $A(z)=(1+z)B(z^2)$.
+This follows from $A(z)=A(z^2)/(1-z)$.
+\source{"Euler" [|euler-partitions|, \S50]; 1971 final exam.}
+
+\ex:
+Find a closed form for the double generating function
+\begindisplay
+M(w,z)=\sum_{m,n\ge0}\min(m,n)\,w^mz^n\,.
+\enddisplay
+Generalize your answer to obtain, for fixed $m\ge2$, a closed form for
+\begindisplay
+M(z_1,\ldots,z_m)=\sum_{n_1,\ldots,n_m\ge0}\min(n_1,\ldots,n_m)\,z_1^{n_1}\!
+\ldots z_m^{n_m}\,.
+\enddisplay
+\answer $(1-wz)M(w,z)=\sum_{m,n\ge1}\bigl(\min(m,n)-\min(m{-}1,n{-}1)\bigr)
+w^mz^n=\sum_{m,n\ge1}w^mz^n=wz/(1-w)(1-z)$.
+In general,
+\begindisplay
+M(z_1,\ldots,z_m)={z_1\ldots z_m\over(1-z_1)\ldots(1-z_m)(1-z_1\ldots z_m)}\,.
+\enddisplay
+\source{"Carlitz" [|carlitz-max|].}
+
+\ex:
+Given positive integers $m$ and $n$, find closed forms for
+\begindisplay
+\sum_{1\le k_1<k_2<\cdots<k_m\le n}k_1k_2\ldots k_m \And
+\hskip-1em\sum_{1\le k_1\le k_2\le\cdots\le k_m\le n}k_1k_2\ldots k_m\,.
+\enddisplay
+(For example, when $m=2$ and $n=3$ the sums are $1\cdt2+1\cdt3+2\cdt3$ and
+$1\cdt1+1\cdt2+1\cdt3+2\cdt2+2\cdt3+3\cdt3$.) \Hint:
+What are the coefficients of $z^m$ in the generating functions
+$(1+a_1z)\ldots(1+a_nz)$ and
+$1/(1-a_1z)\ldots(1-a_nz)$?
+\answer The answers to the hint are
+"!Stirling numbers as sums of products"
+\begindisplay
+\sum_{1\le k_1<k_2<\cdots<k_m\le n}\hskip-1.5em
+ a_{k_1}a_{k_2}\ldots a_{k_m} \And\!\!\!
+\sum_{1\le k_1\le k_2\le\cdots\le k_m\le n}\hskip-1.5em
+a_{k_1}a_{k_2}\ldots a_{k_m}\,,
+\enddisplay
+respectively. Therefore: (a) We want the coefficient of $z^m$ in the product
+$(1+z)(1+2z)\ldots(1+nz)$. This is the reflection of $(z+1)\_^n$, so it is
+${n+1\brack n+1}+{n+1\brack n}z+\cdots+{n+1\brack 1}z^n$ and the answer is
+$n+1\brack n+1-m$.
+(b)~The coefficient of $z^m$ in $1/\bigl((1-z)(1-2z)\ldots(1-nz)\bigr)$ is
+$m+n\brace n$ by \equ(7.|stirl2-gf|).
+\source{[|knuth1|, exercise 1.2.9--18].}
+
+\ex:
+Express $\sum_k{n\choose k}(kF_{k-1}-F_k)(n-k)\?$ in closed form.
+\answer The egf for $\<nF_{n-1}-F_n\>$ is $(z-1)\widehat F(z)$ where $\widehat F(z)=
+\sum_{n\ge0}F_nz^n\!/n!=(e^{\phi z}-e^{\phihat z})/\mkern-1mu\sqrt5$. The
+egf for $\<n\?@\>$ is $e^{-z}\!/(1-z)$. The product is
+\begindisplay
+5^{-1/2}\bigl(e^{(\phihat-1)z}-e^{(\phi-1)z}\bigr)
+=5^{-1/2}(e^{-\phi z}-e^{-\phihat z})\,.
+\enddisplay
+We have $\widehat F(z)e^{-z}=-\widehat F(-z)$. So the answer is $(-1)^nF_n$.
+
+\ex:
+An {\it"up-down permutation"\/} of order $n$ is an arrangement
+$a_1a_2\ldots a_n$ of the integers $\{1,2,\ldots,n\}$ that
+goes alternately up and down:
+\begindisplay
+a_1<a_2>a_3<a_4>\cdots\,.
+\enddisplay
+For example, $35142$ is an up-down permutation of order~$5$. If $A_n$
+denotes the number of up-down permutations of order~$n$, show that
+the exponential generating function of $\<A_n\>$ is $(1+\sin z)/\!\cos z$.
+\answer The number of up-down permutations with the largest
+element~$n$ in position~$2k$ is
+${n-1\choose2k-1}A_{2k-1}A_{n-2k}$. Similarly, the number of up-down permutations
+with the smallest element~$1$ in position~$2k+1$ is $\smash{n-1\choose2k}A_{2k}
+A_{n-2k-1}$, because down-up permutations and up-down permutations are equally
+numerous. Summing over all possibilities gives
+\begindisplay
+2A_n=\sum_k{n-1\choose k}\,A_k\,A_{n-1-k}+2\[n=0]+\[n=1]\,.
+\enddisplay
+The egf $\widehat A$ therefore satisfies $2\widehat A'(z)=\widehat A(z)^2+1$ and
+ $\widehat A(0)=1$;
+the given function
+solves this differential equation.
+(Consequently $A_n=\vert E_n\vert+T_n$ is a "secant number" when $n$ is even,
+"!Euler number" a "tangent number" when $n$ is odd.)
+\source{"Andr\'e" [|andre|]; [|knuth3|, exercise 5.1.4--22].}
+
+\ex:
+A space probe has discovered that organic material on Mars
+has DNA composed of five symbols, denoted by $(a,b,c,d,e)$, instead of
+the four components in earthling DNA. The four pairs $cd$, $ce$, $ed$,
+and $ee$ never occur consecutively in a string of "Martian DNA", but
+"!DNA, Martian"
+any string without forbidden pairs is possible.
+(Thus $bbcda$ is forbidden but $bbdca$ is OK.) How many Martian DNA
+strings of length~$n$ are possible? (When $n=2$ the answer is $21$,
+because the left and right ends of a string are distinguishable.)
+\answer Let $a_n$ be the number of Martian DNA strings that don't end
+with $c$ or~$e$; let $b_n$ be the number that do. Then
+\begindisplay \openup3pt
+&a_n=3a_{n-1}+2b_{n-1}+\[n=0]\,,\qquad&b_n=2a_{n-1}+b_{n-1}\,;\cr
+&A(z)=3zA(z)+2zB(z)+1\,,\qquad&B(z)=2zA(z)+zB(z)\,;\cr
+&A(z)={1-z\over1-4z-z^2}\,,\qquad&B(z)={2z\over1-4z-z^2}\,;\cr
+\enddisplay
+and the total number is $[z^n](1+z)/(1-4z-z^2)=F_{3n+2}$.
+\source{1974 final exam.}
+
+\ex:
+The {\it"Newtonian generating function"} of a sequence $\<g_n\>$ is defined to be
+\begindisplay
+\dot G(z)=\sum_n g_n{z\choose n}\,.
+\enddisplay
+Find a convolution formula that defines the relation between
+sequences $\<f_n\>$, $\<g_n\>$, and $\<h_n\>$ whose Newtonian
+generating functions are related by the equation $\dot F(z)\dot G(z)=\dot H(z)$.
+Try to make your formula as simple and symmetric as possible.
+\answer By \equ(5.|newton-series|), $g_n=\Delta^n \dot G(0)$.
+The $n$th difference of a product can be written
+\begindisplay
+\Delta^n A(z)B(z)=\sum_k{n\choose k}\bigl(\Delta^k E^{n-k}A(z)\bigr)
+ \bigl(\Delta^{n-k}B(z)\bigr)\,,
+\enddisplay
+and $E^{n-k}=(1+\Delta)^{n-k}=\sum_j{n-k\choose j}\Delta^j$.
+Therefore we find
+\begindisplay
+h_n=\sum_{j,k}{n\choose k}{n-k\choose j}\,f_{j+k}\,g_{n-k}\,.
+\enddisplay
+This is a sum over all trinomial coefficients; it can be put into
+the more symmetric form "!trinomial"
+\begindisplay
+h_n=\sum_{j+k+l=n}{n\choose j,k,l}\,f_{j+k}\,g_{k+l}\,.
+\enddisplay
+
+\ex:
+Let $q_n$ be the number of possible outcomes when $n$ numbers
+$\{x_1,\ldots,x_n\}$ are compared with each other. For example,
+$q_3=13$ because the possibilities are "!sorting"
+\begindisplay \displaythick=\thinmuskip
+&x_1<x_2<x_3\,;\quad
+x_1<x_2=x_3\,;\quad
+x_1<x_3<x_2\,;\quad
+x_1=x_2<x_3\,;\cr
+&x_1=x_2=x_3\,;\quad
+x_1=x_3<x_2\,;\quad
+x_2<x_1<x_3\,;\cr
+&x_2<x_1=x_3\,;\quad
+x_2<x_3<x_1\,;\quad
+x_2=x_3<x_1\,;\cr
+&x_3<x_1<x_2\,;\quad
+x_3<x_1=x_2\,;\quad
+x_3<x_2<x_1\,.
+\enddisplay
+Find a closed form for the egf
+$\widehat Q(z)=\sum_n q_nz^n\!/n!$. Also find sequences $\<a_n\>$, $\<b_n\>$,
+$\<c_n\>$ such that
+\begindisplay
+q_n=\sum_{k\ge0}k^na_k=\sum_k{n\brace k}b_k=\sum_k{n\euler k}c_k\,,
+\quad\hbox{for all $n>0$}.
+\enddisplay
+\answer Each partition into $k$ nonempty subsets can be ordered
+\g The empty set\par is pointless.\g
+in $k!$ ways, so $b_k=k!$. Thus $\widehat Q(z)=\sum_{n,k\ge0}{n\brace k}k!\,z^n\!/n!
+=\sum_{k\ge0}(e^z-1)^k=1/(2-e^z)$. And this is the geometric
+series $\sum_{k\ge0}e^{kz}\!/2^{k+1}$,
+hence $a_k=1/2^{k+1}$. Finally, $c_k=2^k$; consider all permutations
+when the $x$'s are distinct, change each `$>$' between subscripts to `$<$'
+and allow each `$<$' between subscripts to become either `$<$' or `$=$'.
+(For example, the permutation $x_1x_3x_2$ produces $x_1<x_3<x_2$ and
+$x_1=x_3<x_2$, because $1<3>2$.)
+\source{"Gross" [|gross|]; [|knuth3|, exercise 5.3.1--3].}
+
+\ex:
+Evaluate $\sum_{m,n>0}\[m\rp n]/m^2n^2$.
+\answer This sum is $\sum_{n\ge1}r(n)/n^2$, where $r(n)$ is the number of
+ways to write $n$ as a product of two relatively prime factors. If $n$~is
+divisible by~$t$ distinct primes, $r(n)=2^t$. Hence $r(n)/n^2$ is
+multiplicative and the sum is
+\begindisplay
+\prod_p\biggl(1+{2\over p^2}+{2\over p^4}\cdots\,\biggr)
+&=\prod_p\biggl(1+{2\over p^2-1}\biggr)\cr
+&=\prod_p\biggl({p^2+1\over p^2-1}\biggr)=\zeta(2)^2\!/\zeta(4)={5\over2}\,.
+\enddisplay
+\source{"de Bruijn" [|de-br-prob9|].}
+
+\ex:
+Evaluate
+\begindisplay
+\sum_{0\le k\le n/2}{n-2k\choose k}\left(-4\over27\right)^{\!k}
+\enddisplay
+in closed form. \Hint: $z^3-z^2+{4\over27}=(z+{1\over3})(z-{2\over3})^2$.
+\answer Let $S_n=\sum_{0\le k\le n/2}{n-2k\choose k}\alpha^k$. Then
+$S_n=S_{n-1}+\alpha S_{n-3}+\[n=0]$, and the generating function is
+$1/(1-z-\alpha z^3)$. When $\alpha=-{4\over27}$, the hint tells us that
+this has a nice factorization $1/(1+{1\over3}z)(1-{2\over3}z)^2$.
+The general expansion theorem now tells us that
+$S_n=({2\over3}n+c)({2\over3})^n
++{1\over9}(-{1\over3})^n$, and the remaining constant~$c$
+turns out to be $8\over9$.
+
+\ex:
+Show that the numbers $U_n$ and $V_n$ of $3\times n$ domino
+tilings, as given in \eq(|u-v-table|),
+are closely related to the fractions
+"!square root of 3"
+in the "Stern--Brocot tree"
+ that converge to $\sqrt3$.
+\answer The Stern--Brocot representation of $\sqrt3$ is $R(LR^2)^\infty$,
+because
+\begindisplay
+\sqrt3+1=2+{1\over\displaystyle1+{\strut1\over\sqrt3+1}}\,.
+\enddisplay
+The fractions are $1\over1$, $2\over1$, $3\over2$, $5\over3$, $7\over4$,
+$12\over7$, $19\over11$, $26\over15$, \dots; they eventually
+have the cyclic pattern
+\begindisplay
+{V_{2n-1}{+}V_{2n+1}\over U_{2n}},\,
+{U_{2n}{+}V_{2n+1}\over V_{2n+1}},\,
+{U_{2n+2}{+}V_{2n-1}\over U_{2n}{+}V_{2n+1}},\,
+{V_{2n+1}{+}V_{2n+3}\over U_{2n+2}},\
+\ldots\,.
+\enddisplay
+\source{"Waugh" and "Maxfield" [|rt-3|].}
+
+\ex:
+A certain sequence $\<g_n\>$ satisfies the recurrence
+\begindisplay
+ag_n+bg_{n+1}+cg_{n+2}+d=0\,,\qquad \hbox{integer $n\ge0$},
+\enddisplay
+for some integers $(a,b,c,d)$ with $\gcd(a,b,c,d)=1$. It also has the
+closed form
+\begindisplay
+g_n=\bigl\lfloor\alpha(1+\sqrt2\,)^n\bigr\rfloor\,,
+\qquad \hbox{integer $n\ge0$},
+\enddisplay
+for some real number $\alpha$ between $0$ and $1$. Find $a$, $b$, $c$, $d$,
+and $\alpha$.
+\answer We have $g_0=0$, and if $g_1=m$ the generating function satisfies
+\begindisplay
+aG(z)+bz^{-1}G(z)+cz^{-2}\bigl(G(z)-mz\bigr)+{d\over1-z}=0\,.
+\enddisplay
+Hence $G(z)=P(z)/(az^2+bz+c)(1-z)$ for some polynomial $P(z)$. Let
+$\rho_1$ and $\rho_2$ be the roots of $cz^2+bz+a$, with $\vert\rho_1\vert
+\ge\vert\rho_2\vert$. If $b^2-4ac\le0$ then $\vert\rho_1\vert^2=
+\rho_1\rho_2=a/c$ is rational, contradicting the fact that $\root n\of{g_n}$
+approaches $1+\sqrt2$. Hence $\rho_1=(-b+\sqrt{\,b^{\mathstrut2}-4ca})/2c=
+1+\sqrt2@$; and this implies that $a=-c$, $b=-2c$, $\rho_2=1-\sqrt2$. The
+generating function now takes the form
+\begindisplay \openup3pt
+G(z)&={z\bigl(m-(r+m)z\bigr)\over(1-2z-z^2)(1-z)}\cr
+&={-r+(2m+r)z\over2(1-2z-z^2)}+{r\over2(1-z)}=mz+(2m-r)z^2+\cdots\,,
+\enddisplay
+where $r=d/c$. Since $g_2$ is an integer, $r$ is an integer. We also have
+\begindisplay
+g_n=\alpha(1+\sqrt2\,)^n+\hat\alpha(1-\sqrt2\,)^n+{\textstyle\half}r
+=\bigl\lfloor\alpha(1+\sqrt2\,)^n\bigr\rfloor\,,
+\enddisplay
+and this can hold only if $r=-1$, because $(1-\sqrt2\,)^n$ alternates in
+sign as it approaches zero.
+Hence $(a,b,c,d)=\pm(1,2,-1,1)$.
+Now we find $\alpha={1\over4}(1+\sqrt2\,m)$,
+which is between $0$ and~$1$ only if $0\le m\le 2$. Each of these
+values actually gives a solution; the sequences $\<g_n\>$ are
+$\<0,0,1,3,8,\ldots\,\>$,
+$\<0,1,3,8,20,\ldots\,\>$, and
+$\<0,2,5,13,32,\ldots\,\>$.
+\source{1984 final exam.}
+
+\ex:
+This is a problem about powers and parity.
+\g\vskip-5pt "Kissinger", take note.\g
+\itemitem{a}Consider the sequence $\<a_0,a_1,a_2,\ldots\,\>=
+\<2,2,6,\ldots\,\>$ defined by the formula
+\begindisplay
+a_n=(1+\sqrt2@)^n+
+(1-\sqrt2@)^n\,.
+\enddisplay
+Find a simple recurrence relation that is satisfied by this sequence.
+\itemitem{b} Prove that $\bigl\lceil(1+\sqrt2@)^n\bigr\rceil\=
+n$ \tmod2 for all integers $n>0$.
+\itemitem{c} Find a number $\alpha$ of the form $(p+\sqrt q@)/2$,
+where $p$ and~$q$ are positive integers, such that $\lfloor\alpha^n\rfloor
+\=n$ \tmod2 for all integers $n>0$.
+\answer (a) The denominator of $\bigl(1/\bigl(1-(1+\sqrt2@)z\bigr)
++1/\bigl(1-(1-\sqrt2@)z\bigr)\bigr)$ is $1-2z-z^2$; hence
+$a_n=2a_{n-1}+a_{n-2}$ for $n\ge2$. (b)~True because $a_n$ is even
+and $-1<1-\sqrt2<0$. (c)~Let
+\begindisplay
+b_n=\biggl({p+\sqrt q\over2}\biggr)^n+
+    \biggl({p-\sqrt q\over2}\biggr)^n\,.
+\enddisplay
+We would like $b_n$ to be odd for all $n>0$, and $-1<(p-\sqrt q@)/2<0$.
+Working as in part~(a), we find $b_0=2$, $b_1=p$, and
+$b_n=pb_{n-1}+{1\over4}(q-p^2)b_{n-2}$ for $n\ge2$.
+One satisfactory solution has $p=3$ and $q=17$.
+\source{"Waterhouse" [|waterhouse|].}
+
+\subhead Bonus problems
+
+\ex: Continuing exercise |triangulations|, consider the sum of all ways
+to decompose "polygons" into polygons:
+\begindisplay \unitlength=3.33333pt \openup7pt \advance\medmuskip1mu%
+ \advance\abovedisplayskip-7pt
+Q&=\dgn \,+\,\tri{}\,+\,\sqr{}\,+\,\sqr{\put(4.5,0){\line(-1,1){4.5}}}
+	\,+\,\sqr{\put(0,0){\line(1,1){4.5}}}\cr
+&\qquad	+\pnt{}+\pnt{\put(4,0){\line(-2,5){2}}}
+	+\pnt{\put(4,0){\line(-5,3){5}}}
+	+\pnt{\put(5,3){\line(-1,0){6}}}
+	+\pnt{\put(0,0){\line(2,5){2}}}
+	+\pnt{\put(0,0){\line(5,3){5}}}
+	+\pnt{\put(4,0){\line(-5,3){5}}\put(4,0){\line(-2,5){2}}}
+	+\cdots\,.
+\enddisplay
+Find a symbolic equation for $Q$ and use it to find a generating function
+for the number of ways to draw nonintersecting diagonals inside a
+convex $n$-gon.
+(Give a closed form for the generating function as a function of~$z$; you
+need not find a closed form for the coefficients.)
+\answer Extending the multiplication idea of exercise |triangulations|, we
+have
+\begindisplay \advance\abovedisplayskip10pt
+\unitlength=3.33333pt
+\def\\(#1,#2){\put(#1,#2){\makebox(0,0){$Q$}}}
+\def\sqr#1{\cpic(4,4)(0,0) \put(0,0){\line(0,1){4}}
+ \put(0,0){\line(1,0){4}} \put(0,4){\line(1,0){4}}\put(4,0){\line(0,1){4}}
+ #1\endcpic}%
+Q=\dgn +\quad\tri{\\(-1.1,3)\\(5,3)}\quad
++\;\quad\sqr{\\(-2,2)\\(2,6)\\(6,2)}\;\quad
++\,\quad\pnt{\\(-2.6,1)\\(-1.3,5.4)\\(4.9,5.2)\\(6.7,1)}\quad\,
++\cdots\,.
+\enddisplay
+Replace each $n$-gon by $z^{n-2}$.
+This substitution
+behaves properly under multiplication,
+because the pasting operation takes
+an $m$-gon and an $n$-gon into an $(m+n-2)$-gon.
+ Thus the generating function is
+\begindisplay
+Q=1+zQ^2+z^2Q^3+z^3Q^4+\cdots=1+{zQ^2\over1-zQ}
+\enddisplay
+and the quadratic formula gives $Q=\bigl(1+z-\sqrt{@1-6z+z^{\mathstrut2}}
+\,\bigr)/4z$.
+The coefficient of $z^{n-2}$ in this power series is the number of
+ways to put nonoverlapping diagonals into a convex $n$-gon. These
+coefficients apparently
+have no closed form in terms of other quantities that we have discussed in
+\g\vskip-22pt Give me "Legendre" polynomials and I'll~give you a "closed~form".\g
+this book,
+but their asymptotic behavior is known [|knuth1|, exercise
+2.2.1--12].\par
+Incidentally, if each $n$-gon in $Q$ is replaced by $wz^{n-2}$ we get
+\begindisplay
+Q={1+z-\sqrt{\,1-\smash{(4w+2)}z+z^{2\mathstrut}}\over 2(1+w)z}\,,
+\enddisplay
+a formula in which the coefficient of $w^mz^{n-2}$ is the number of
+ways to divide an $n$-gon into $m$ polygons by nonintersecting diagonals.
+\source{"Schr\"oder" [|schroeder|]; [|knuth1|, exercise 2.3.4.4--31].}
+
+\ex:
+Prove that the product
+\begindisplay
+2^{mn/2}\prod\twoconditions{1\le j\le m}{1\le k\le n}
+\biggl(\Bigl(\cos^2{j\pi\over m+1}\Bigr)\Domv^2
+   +\Bigl(\cos^2{k\pi\over n+1}\Bigr)\Domh^2\biggr)^{1/4}
+\enddisplay
+is the generating function for tilings of an $m\times n$ rectangle
+with dominoes. (There are $mn$ factors, which we can imagine are
+written in the $mn$ cells of the rectangle. If $mn$ is odd, the
+middle factor is zero. The coefficient of $\Domv^j\Domh^k$ is the
+number of ways to do the tiling with $j$ vertical and $k$ horizontal
+dominoes.) \Hint: This
+\g Is this a hint or a warning?\g
+ is a difficult problem, really beyond the
+scope of this book. You may wish to simply verify the formula
+in the case $m=3$, $n=4$.
+\answer The key first step is to observe that the square of the number
+of ways is the number of cycle patterns of a certain kind, generalizing
+exercise |fib-squared|. These can be enumerated by evaluating the
+determinant of a matrix whose eigenvalues are not difficult to determine.
+When $m=3$ and $n=4$, the fact that $\cos 36^\circ=\phi/2$ is helpful
+(exercise 6.|cos36|).
+\source{"Fisher" [|fisher|]; "Percus" [|percus|, pp.~89--123];
+ "Stanley"~[|stanley-dimers|].}
+
+\ex:
+Prove that the polynomials defined by the recurrence
+\def\\{\atopwithdelims\vert\vert}
+\begindisplay
+p_n(y)&=\Bigl(y-{1\over4}\Bigr)^{\!n}-\,\sum_{k=0}^{n-1}{2n\choose2k}\!
+ \left(-1\over4\right)^{\!n-k}\!p_k(y)\,,\quad\hbox{integer $n\ge0$},
+\enddisplay
+have the form $p_n(y)=\sum_{m=0}^n{n\\m}y^n$, where $n\\m$ is a positive integer
+for $1\le m\le n$. \Hint: This exercise is very instructive but not very easy.
+\answer The first few cases are $p_0(y)=1$, $p_1(y)=y$, $p_2(y)=y^2+y$,
+$p_3(y)=y^3+3y^2+3y$. Let $p_n(y)=q_{2n}(x)$ where $y=x(1-x)$; we seek
+a generating function that defines $q_{2n+1}(x)$ in a convenient way.
+One such function
+ is $\sum_n q_n(x)z^n\!/n!=2e^{ixz}\!/(e^{iz}+1)$, from which it follows
+that $q_n(x)=i^nE_n(x)$, where $E_n(x)$ is called an "Euler polynomial".
+We have $\sum(-1)^xx^n\,\delta x=\half(-1)^{x+1}E_n(x)$, so Euler polynomials
+are analogous to Bernoulli polynomials, and they have factors analogous to
+those in \equ(6.|bern-factors|). By exercise 6.|z/ez+1| we have $nE_{n-1}(x)
+=\sum_{k=0}^n{n\choose k}B_kx^{n-k}(2-2^{k+1})$; this polynomial
+has integer coefficients
+by exercise~6.|prove-staudt-clausen|. Hence $q_{2n}(x)$, whose coefficients
+have denominators that are powers of~$2$, must have integer coefficients.
+Hence $p_n(y)$ has integer coefficients. Finally, the relation
+$(4y-1)p_n''(y)+2p_n'(y)=2n(2n-1)p_{n-1}(y)$ shows that
+\def\\{\atopwithdelims\vert\vert}
+\begindisplay
+2m(2m-1){n\\m}=m(m+1){n\\m+1}+2n(2n-1){n-1\\m-1}\,,
+\enddisplay
+and it follows that the $n\\m$'s are positive. (A similar proof shows that
+the related quantity $(-1)^n(2n+2)
+E_{2n+1}(x)/(2x-1)$ has positive integer coefficients, when expressed as
+an $n$th degree polynomial in~$y$.) It can be shown that $n\\1$ is
+the "Genocchi number" $(-1)^{n-1}(2^{2n+1}-2)B_{2n}$
+(see exercise 6.|genocchi-answer|), and that
+${n\\n-1}={n\choose2}$, ${n\\n-2}=2{n+1\choose4}+3{n\choose4}$, etc.
+\source{"Hammersley" [|hammersley-undergrad|].}
+
+\ex: The sequence of {\it "pentagonal numbers"\/} $\<1,5,12,22,\ldots\,\>$
+generalizes the triangular and square numbers in an obvious way:
+\begindisplay
+\unitlength=3.33333pt
+\beginpicture(24,18)(-12,-18)
+\put(0,0){\line(4,-3){12}}
+\put(0,0){\line(-4,-3){12}}
+\put(4,-3){\line(-1,-3)1}
+\put(-4,-3){\line(1,-3)1}
+\put(8,-6){\line(-1,-3)2}
+\put(-8,-6){\line(1,-3)2}
+\put(12,-9){\line(-1,-3)3}
+\put(-12,-9){\line(1,-3)3}
+\put(-3,-6){\line(1,0)6}
+\put(-6,-12){\line(1,0){12}}
+\put(-9,-18){\line(1,0){18}}
+\multiput(0,0)(4,-3)3{\disk{1.3}}
+\multiput(12,-9)(-1,-3)3{\disk{1.3}}
+\multiput(9,-18)(-6,0)3{\disk{1.3}}
+\multiput(-9,-18)(-1,3)3{\disk{1.3}}
+\multiput(-12,-9)(4,3)3{\disk{1.3}}
+\multiput(-3,-6)(6,0)2{\disk{1.3}}
+\multiput(-6,-12)(6,0)3{\disk{1.3}}
+\multiput(-7,-9)(14,0)2{\disk{1.3}}
+\endpicture
+\enddisplay
+Let the $n$th triangular number be $T_n=n(n+1)/2$; let the $n$th pentagonal
+number be $P_n=n(3n-1)/2$; and let $U_n$ be the $3\times n$ domino-tiling
+number defined in \eq(|u-closed|). Prove that the triangular number
+$T_{(U_{4n+2}-1)/2}$ is also a pentagonal number.
+\Hint: $3U_{2n}^2=(V_{2n-1}+V_{2n+1})^2+2$.
+\answer It is $P_{(1+V_{4n+1}+V_{4n+3})/6}$.
+Thus, for example, $T_{20}=P_{12}=210$; $T_{285}=P_{165}=40755$.
+\source{"Euler" [|euler-algebra|, part 2, section 2, chapter 6, \S91].}
+
+\ex:
+Consider the following curious construction:
+\begindisplay \def\preamble{&\hfil$##$\hfil\enspace} \def\\{\phantom{00}}
+\\&\\&\\&\\&\\&\\&\\&\\\cr
+\noalign{\vskip-\baselineskip}
+1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&\ldots\cr
+1&2&3&4& &6&7&8&9&  &11&12&13&14&  &16&\ldots\cr
+1&3&6&10& &16&23&31&40&  &51&63&76&90&  &106&\ldots\cr
+1&3&6&  & &16&23&31&  &  &51&63&76&  &  &106&\ldots\cr
+1&4&10&  & &26&49&80&  &  &131&194&270&  &  &376&\ldots\cr
+1&4&  &  & &26&49&  &  &  &131&194&   &  &  &376&\ldots\cr
+1&5&  &  & &31&80&  &  &  &211&405&   &  &  &781&\ldots\cr
+1& &  &  & &31&  &  &  &  &211&   &   &  &  &781&\ldots\cr
+1& &  &  & &32&  &  &  &  &243&   &   &  &  &\kern-.5em1024&\ldots\cr
+\enddisplay
+(Start with a row containing all the positive integers. Then delete
+every $m$th column; here $m=5$. Then replace the remaining entries by
+partial sums. Then delete every $(m-1)$st column. Then replace with
+partial sums again, and so on.)
+Use generating
+functions to show that the final result is the
+sequence of $m$th powers. For example, when $m=5$ we get
+$\<1^5,2^5,3^5,4^5,\ldots\,\>$ as shown.
+\answer Let $E_k$ be the operation on power series that sets all coefficients
+to zero except those of $z^n$
+where $n\bmod m=k$. The stated
+construction is equivalent to the operation
+\begindisplay
+E_0\,S\,E_0\,S\,(E_0+E_1)\,S\,\ldots\,S\,(E_0+E_1+\cdots+E_{m-1})
+\enddisplay
+applied to $1/(1-z)$, where $S$ means ``multiply by $1/(1-z)$.''
+There are $m!$ terms
+\begindisplay
+E_0\,S\,E_{k_1}\,S\,E_{k_2}\,S\,\ldots\,S\,E_{k_m}
+\enddisplay
+where $0\le k_j<j$, and every such term evaluates to $z^{rm}\!/(1-z^m)^{m+1}$ if
+$r$ is the number of places where $k_j<k_{j+1}$. Exactly $m\euler r$ terms
+have a given value of~$r$, so the coefficient of $z^{mn}$ is
+$\sum_{r=0}^{m-1}{m\euler r}{n+m-r\choose m}=(n+1)^m$ "!Eulerian numbers"
+by \equ(6.|expand-ord-to-consec|).
+(The fact that operation $E_k$ can be expressed with complex roots
+of unity seems to be of no help in this problem.)
+\source{"Moessner" [|moessner|].}
+
+\ex:
+Prove that if the power series $F(z)$ and $G(z)$ are "differentiably
+finite" (as defined in exercise~|d-finite-defined|), then so are $F(z)+G(z)$
+and $F(z)@G(z)$.
+\answer Suppose that $P_0(z)@F(z)+\cdots+P_m(z)@F^{(m)}(z)=Q_0(z)@G(z)+\cdots+
+Q_n(z)@G^{(n)}(z)=0$, where $P_m(z)$ and $Q_n(z)$ are nonzero. (a)~Let
+$H(z)=F(z)+G(z)$. Then there are rational functions $R_{k,l}(z)$ for $0\le l<m+n$
+such that $H^{(k)}(z)=R_{k,0}(z)@F^{(0)}(z)+\cdots+R_{k,m-1}(z)@F^{(m-1)}(z)
++R_{k,m}(z)@G^{(0)}(z)+\cdots+R_{k,m+n-1}(z)@G^{(n-1)}(z)$. The $m+n+1$ vectors
+$\bigl(R_{k,0}(z),\ldots,R_{k,m+n-1}(z)\bigr)$ are linearly dependent in the
+$(m+n)$-dimensional vector space whose components are rational functions;
+hence there are rational functions $S_l(z)$, not all zero, such that
+$S_0(z)@H^{(0)}(z)+\cdots+S_{m+n}(z)@H^{(m+n)}(z)=0$. (b)~Similarly, let
+$H(z)=F(z)@G(z)$. There are rational $R_{k,l}(z)$ for $0\le l<mn$ with
+$H^{(k)}(z)=\sum_{i=0}^{m-1}\sum_{j=0}^{n-1}R_{k,ni+j}(z)@F^{(i)}(z)@G^{(j)}(z)$,
+hence $S_0(z)@H^{(0)}(z)+\cdots+S_{mn}(z)@H^{(mn)}(z)=0$ for some rational
+$S_l(z)$, not all zero. (A similar proof shows that if $\<f_n\>$ and $\<g_n\>$
+are polynomially recursive, so are $\<f_n+g_n\>$ and $\<f_ng_n\>$.
+Incidentally, there is no similar result for quotients; for example,
+$\cos z$ is differentiably finite, but $1/\!\cos z$ is not.)
+\source{"Stanley" [|stanley-d-finite|].}
+
+\subhead Research problems
+
+\ex:
+Prove that there is no ``simple "closed form"'' for the coefficient of $z^n$
+in $(1+z+z^2)^n$, as a function of~$n$, in some large class of
+``simple closed forms.\qback''
+\answer "Euler" [|euler-middle|] showed that this number is also
+$[z^n]\,1\mskip-1mu/\mskip-2mu\sqrt{1{-}2z{-}3z^{2\mathstrut}}$, and
+he gave the formula $t_n=\sum_{k\ge0}n\_{2k}/k!^2=\sum_k{n\choose k}{n-k
+\choose k}$. He also
+discovered a ``memorable failure of induction'' "!induction, failure"
+while examining these numbers: Although $3t_n-t_{n+1}$ is equal to
+$F_{n-1}(F_{n-1}+1)$ for $0\le n\le8$, this empirical law mysteriously
+breaks down when $n$ is $9$ or more! George "Andrews"~[|andrews-euler|]
+has explained the mystery by showing that the sum $\sum_k[z^{n+10k}]\,
+(1+z+z^2)^n$ can be expressed as a closed form in terms of "Fibonacci
+numbers".
+\par
+H.\thinspace S. "Wilf" observes that $[z^n]\,(a+bz+cz^2)^n$=
+$[z^n]\,1/f(z)$, where $f(z)=\sqrt{1-2bz+(b^{2\mathstrut}-4ac)z^2}$ (see
+[|wilfology|, page~159]), and it follows that the coefficients satisfy
+\begindisplay
+(n+1)A_{n+1}-(2n+1)b@A_n+n(b^2-4ac)A_{n-1}=0\,.
+\enddisplay
+The algorithm of "Petkov\v{s}ek" [|petk|] can be used to prove that this
+recurrence has a closed form solution as a finite sum of "hypergeometric
+terms" if and only if $abc(b^2-4ac)=0$. Therefore in particular, the middle
+trinomial coefficients have no such closed form.
+\g\vskip-22pt Give me "Legendre polynomials" and I'll~give you a closed~form.\g
+The next step is presumably to extend this result to a larger class of
+closed forms (including harmonic numbers and/or Stirling numbers, for example).
+\source{"Euler" [|euler-middle|].}
+
+\ex:
+Prove or disprove:
+If all the coefficients of $G(z)$ are either $0$ or $1$,
+and if all the coefficients of $G(z)^2$ are less than some constant~$M$, then
+infinitely many of the coefficients of $G(z)^2$ are zero.
+\answer (Paul "Erd\H os" "!reward"
+currently offers \$500 for a solution.)
+\source{[|erdos-graham|, p.~48] credits P. "Erd\H os" and P.~"Tur\'an".}
+

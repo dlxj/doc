@@ -1,0 +1,123 @@
+% Concrete Mathematics: Table of Contents
+\input gkpmac
+\pageno=-12
+\beginchapter {} Contents
+
+\def\\#1 {\quad\leaders\hbox to1em{\hss.\hss}\hfill\hbox to 3em{\hss#1}\par}
+\def\|#1 {\quad\hrulefill\hbox to 3em{\hss#1}\par}
+\parfillskip=0pt
+\hfill\hfill\par\vskip-\baselineskip
+
+\baselineskip=11pt plus .2pt minus .2pt
+\let\Item=\item \let\Itemitem=\itemitem % now we switch to designer's specs!
+\def\item#1#2\|#3
+ {\vskip3pt plus.2pt minus 1pt
+ \Item{#1}{\bf\ignorespaces#2}\|\bf#3 
+ \vskip2pt plus.2pt minus 1pt}
+\def\itemitem#1#2\\#3
+ {\Itemitem{#1}#2\qquad#3\hfill\ \par}
+
+\item1 Recurrent Problems\|1
+\itemitem{1.1}The Tower of Hanoi\\1
+\itemitem{1.2}Lines in the Plane\\4
+\itemitem{1.3}The Josephus Problem\\8
+\itemitem{}Exercises\\17
+\item2 Sums\|21
+\itemitem{2.1}Notation\\21
+\itemitem{2.2}Sums and Recurrences\\25
+\itemitem{2.3}Manipulation of Sums\\30
+\itemitem{2.4}Multiple Sums\\34
+\itemitem{2.5}General Methods\\41
+\itemitem{2.6}Finite and Infinite Calculus\\47
+\itemitem{2.7}Infinite Sums\\56
+\itemitem{}Exercises\\62
+\item3 Integer Functions\|67
+\itemitem{3.1}Floors and Ceilings\\67
+\itemitem{3.2}Floor/Ceiling Applications\\70
+\itemitem{3.3}Floor/Ceiling Recurrences\\78
+\itemitem{3.4}`mod': The Binary Operation\\81
+\itemitem{3.5}Floor/Ceiling Sums\\86
+\itemitem{}Exercises\\95
+\item4 Number Theory\|102
+\itemitem{4.1}Divisibility\\102
+\itemitem{4.2}Primes\\105
+\itemitem{4.3}Prime Examples\\107
+\itemitem{4.4}Factorial Factors\\111
+\itemitem{4.5}Relative Primality\\115
+\itemitem{4.6}`mod': The Congruence Relation\\123
+\itemitem{4.7}Independent Residues\\126
+\itemitem{4.8}Additional Applications\\129
+\itemitem{4.9}Phi and Mu\\133
+\itemitem{}Exercises\\144
+\item5 Binomial Coefficients\|153
+\itemitem{5.1}Basic Identities\\153
+\itemitem{5.2}Basic Practice\\172
+\itemitem{5.3}Tricks of the Trade\\186
+\eject
+\itemitem{5.4}Generating Functions\\196
+\itemitem{5.5}Hypergeometric Functions\\204
+\itemitem{5.6}Hypergeometric Transformations\\216
+\itemitem{5.7}Partial Hypergeometric Sums\\223
+\itemitem{5.8}Mechanical Summation\\229
+\itemitem{}Exercises\\242
+\item6 Special Numbers\|257
+\itemitem{6.1}Stirling Numbers\\257
+\itemitem{6.2}Eulerian Numbers\\267
+\itemitem{6.3}Harmonic Numbers\\272
+\itemitem{6.4}Harmonic Summation\\279
+\itemitem{6.5}Bernoulli Numbers\\283
+\itemitem{6.6}Fibonacci Numbers\\290
+\itemitem{6.7}Continuants\\301
+\itemitem{}Exercises\\309
+\item7 Generating Functions\|320
+\itemitem{7.1}Domino Theory and Change\\320
+\itemitem{7.2}Basic Maneuvers\\331
+\itemitem{7.3}Solving Recurrences\\337
+\itemitem{7.4}Special Generating Functions\\350
+\itemitem{7.5}Convolutions\\353
+\itemitem{7.6}Exponential Generating Functions\\364
+\itemitem{7.7}Dirichlet Generating Functions\\370
+\itemitem{}Exercises\\371
+\item8 Discrete Probability\|381
+\itemitem{8.1}Definitions\\381
+\itemitem{8.2}Mean and Variance\\387
+\itemitem{8.3}Probability Generating Functions\\394
+\itemitem{8.4}Flipping Coins\\401
+\itemitem{8.5}Hashing\\411
+\itemitem{}Exercises\\427
+\item9 Asymptotics\|439
+\itemitem{9.1}A Hierarchy\\440
+\itemitem{9.2}O Notation\\443
+\itemitem{9.3}O Manipulation\\450
+\itemitem{9.4}Two Asymptotic Tricks\\463
+\itemitem{9.5}Euler's Summation Formula\\469
+\itemitem{9.6}Final Summations\\476
+\itemitem{}Exercises\\489
+\vskip2pt
+\item A Answers to Exercises\|497
+\item B Bibliography\|604
+\item C Credits for Exercises\|632
+\item{} Index\|637
+\item{} List of Tables\|657
+\vskip-\lastskip
+\eject
+\bye
+LIST OF TABLES
+\table What's the difference?\tabref|difference-table|
+\table Pascal's triangle.\tabref|pascal-triangle|
+\table "Pascal's triangle", extended upward.\tabref|pascal-triangle-up|
+\table Sums of products of binomial coefficients.\tabref|bc-prod|
+\table The top ten binomial coefficient identities.\tabref|bc-tops|
+\table General convolution identities valid for integer $n\ge0$.\tabref|conv-table|
+\table Stirling's first triangle.\tabref|stirl1-triangle|
+\table Stirling's second triangle.\tabref|stirl2-triangle|
+\table Basic "Stirling number identities", for integer $n\ge0$.\tabref|stirling-id1|
+\table Additional Stirling number identities, for integers $l,m,n\ge0$.\tabref|stirling-id2|
+\table Stirling's triangles in tandem.\tabref|stirl-triangles|
+\table Euler's triangle.\tabref|euler-triangle|
+\table Second-order Eulerian triangle.\tabref|euler2-triangle|
+\table Stirling convolution formulas.\tabref|stirling-convolutions|
+\table Generating function manipulations.\tabref|gf-manip|
+\table Simple sequences and their generating functions.\tabref|gf-simp|
+\table Generating functions for special numbers.\tabref|gf-special|
+\table Asymptotic approximations, valid as $n\to\infty$ and $z\to0$.%

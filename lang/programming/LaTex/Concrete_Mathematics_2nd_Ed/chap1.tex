@@ -1,0 +1,1652 @@
+% Chapter 1 of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\refin bib
+
+\pageno=1
+\beginchapter 1 Recurrent Problems
+
+THIS CHAPTER EXPLORES three sample problems
+that give a feel for what's to come.
+They have two traits in common:
+They've all been investigated repeatedly by mathematicians;
+and their solutions all use the idea of {\it "recurrence"}, in which
+the solution to each problem depends on the solutions to smaller instances of
+the same problem.
+
+
+\beginsection 1.1 The Tower of Hanoi
+
+Let's look first at a neat little puzzle called the "Tower of Hanoi",
+"!Hanoi, Tower of"
+invented by the French mathematician Edouard "Lucas" in 1883.
+We are given a tower of eight disks,
+\g Raise your hand if~you've never seen~this.\par
+ OK, the rest of you can cut to equation~\equ(1.1).\g
+initially stacked in decreasing size on one of three pegs:
+\begindisplay
+\unitlength=1in
+\beginpicture(2.8,1.5)(0,0)
+\put(0,0){\line(0,1){1.5}}
+\put(0,0){\line(1,0){2.8}}
+\put(2.8,1.5){\line(0,-1){1.5}}
+\put(2.8,1.5){\line(-1,0){2.8}}
+%\put(2.6,0.2){\llap{(woodcut from 1883)}}
+\endpicture
+\enddisplay
+The objective is to transfer
+the entire tower to one of the other pegs,
+moving only one disk at a time
+and never moving a larger one onto a smaller.
+
+Lucas [|lucas-recr|]
+ furnished his toy with a romantic legend about a much larger
+"Tower of Brahma", which supposedly has 64~disks of pure gold
+\g Gold\dash---wow.\par Are our disks made of concrete?\g
+resting on three diamond needles. At the beginning of time, he said,
+"God" placed these golden disks on the first needle and ordained that a
+group of priests should transfer them to the third, according to the
+rules above. The priests reportedly work day and night at their task.
+When they finish, the Tower will crumble and the world will end.
+
+It's not immediately obvious that the puzzle has a solution,
+but a little thought (or having seen the problem before)
+convinces us that it does. Now the question arises:
+What's the best we can do?
+That is, how many moves are necessary and sufficient to perform the task?
+
+The best way to tackle a question like this is to generalize it a
+bit. The Tower of Brahma has 64 disks and the Tower of Hanoi has~8;
+let's consider what happens if there are $n$ disks.
+
+One advantage of this generalization is that we can scale the problem
+down even more. In fact, we'll see repeatedly in this book that
+it's advantageous to {\sc look at "small cases"} first. It's easy to
+"!thinking big"
+see how to transfer a tower that contains only one or two disks.
+And a small amount of experimentation shows how to transfer a tower of three.
+
+The next step in solving the problem is to introduce appropriate "notation":
+{\sc "name and conquer"}. Let's say that $T_n$ is the minimum number
+of moves that will transfer $n$ disks from one peg to another under
+Lucas's rules. Then $T_1$ is obviously~$1$, and $T_2=3$.
+
+We can also get another piece of data for free, by considering the
+smallest case of all: Clearly $T_0=0$, because no moves at all are needed to
+transfer a tower of $n=0$ disks! Smart mathematicians
+"!null case" "!empty case" "!generalize downwards"
+are not ashamed to think small, because general patterns are easier
+to perceive when the extreme cases are well understood (even when they are
+trivial).
+
+But now let's change our perspective and try to think big; how can we
+"!thinking big"
+transfer a large tower? Experiments with three disks show that the
+winning idea is to transfer the top two disks to the middle peg, then
+move the third, then bring the other two onto it. This gives us a
+clue for transferring $n$~disks in general: We
+first transfer the $n-1$ smallest to a different peg
+(requiring $T_{n-1}$ moves),
+then move the largest (requiring one move),
+and finally transfer the $n-1$ smallest back onto the largest
+(requiring another $T_{n-1}$ moves).
+Thus we can transfer $n$~disks (for $n>0$) in at most $2T_{n-1}+1$ moves:
+\begindisplay
+ T_n	\leq 2T_{n-1} + 1 \,, \qquad\hbox{for $n>0$.}
+\enddisplay
+This formula uses `$\,\leq\,$' instead of `$\,=\,$' because our construction
+proves only that $2T_{n-1}+1$ moves suffice; we haven't shown that $2T_{n-1}+1$
+moves are necessary. A clever person might be able to think of a shortcut.
+
+But is there a better way? Actually no.
+\g Most of the published ``solutions'' to Lucas's problem, like the
+early one of Allardice and Fraser~[|allardice|], fail to explain why
+$T_n$ must be $\ge 2T_{n-1}+1$.\g
+At some point we must move the largest disk.
+When we do, the $n-1$ smallest must be on a single peg,
+and it has taken at least $T_{n-1}$ moves to put them there.
+We might move the largest disk more than once, if we're not too alert.
+But after moving the largest disk
+for the last time,
+we must transfer the $n-1$ smallest disks (which must again be on a single peg)
+back onto the largest; this too requires $T_{n-1}$ moves.
+Hence
+\begindisplay
+ T_n	\geq 2T_{n-1} + 1 \,, \qquad\hbox{for $n>0$.}
+\enddisplay
+These two inequalities, together with the trivial solution for $n=0$, yield
+\begindisplay
+\eqalign{T_0&=0 \,;\cr
+   T_n	&= 2T_{n-1} + 1 \,, \qquad\hbox{for $n>0$.}\cr
+}\eqno\eqref|hanoi-rec|
+\enddisplay
+(Notice that these formulas are consistent with the known values $T_1=1$
+and $T_2=3$.  Our experience with small cases has not only helped us to
+discover a general formula, it has also provided a convenient way to check
+that we haven't made a foolish error. Such checks will be especially
+valuable when we get into more complicated maneuvers in later chapters.)
+
+A set of equalities like \thiseq\ is called a {\it "recurrence"\/}
+\g Yeah, yeah\thinspace\dots\ I~seen that word before.\g
+(a.k.a.~recurrence relation or "recursion" relation).
+It gives a boundary value
+and an equation for the general value
+in terms of earlier ones.
+Sometimes we refer to the general equation alone as a recurrence,
+although technically it needs a boundary value to be complete.
+
+The recurrence allows us to compute~$T_n$ for any~$n$ we like.
+But nobody really likes to compute from a recurrence, when $n$ is
+large; it takes too long. The recurrence only gives indirect,
+local information. A {\it "solution" to the recurrence\/} would
+make us much happier. That
+is, we'd like a nice, neat, ``"closed form"'' for~$T_n$
+that lets us compute it quickly, even for large~$n$.
+With a closed form, we can understand what $T_n$ really is.
+
+So how do we solve a recurrence? One way is to guess the correct solution,
+then to prove that our guess is correct.
+And our best hope for guessing the solution is to look (again)
+at small cases. So we compute, successively,
+$T_3=2\cdt3+1=7$;
+$T_4 = 2 \cdt 7 + 1 = 15$;
+$T_5 = 2 \cdt 15 + 1 = 31$;
+$T_6 = 2 \cdt 31 + 1 = 63$.
+Aha! It certainly looks as if
+\begindisplay
+T_n= 2^n-1 \,, \qquad\hbox{for $n \geq 0$.}\eqno\eqref|hanoi-sol|
+\enddisplay
+At least this works for $n\le6$.
+
+{\it Mathematical "induction"\/} is a general way to prove that some statement
+about the integer~$n$ is true for all $n\ge n_0$. First we prove the statement
+\g\vskip18pt "Mathematical induction" proves that
+ we can climb as high as we like on
+a ladder, by proving that we can climb onto the bottom rung (the basis)\newline
+and that from each rung we can climb up to the next one (the
+induction).\g
+when $n$ has its smallest value, $n_0$; this is called the {\it basis}.
+"!basis for induction"
+Then we prove the statement for $n>n_0$, assuming that it has already been proved
+for all values between $n_0$ and $n-1$, inclusive;
+this is called the {\it induction}.
+Such a proof gives infinitely many results with only a finite amount of work.
+
+Recurrences are ideally set up for mathematical induction. In our case,
+for example, \eq(|hanoi-sol|) follows easily from \eq(|hanoi-rec|):
+The basis is trivial, since $T_0=2^0-1=0$. And the induction follows for
+$n>0$ if we assume that \thiseq\ holds when $n$ is replaced by~$n-1$:
+\begindisplay
+T_n &=2T_{n-1} + 1 =2(2^{n-1}-1) + 1 =2^n - 1 \,.
+\enddisplay
+Hence~\thiseq~holds for~$n$ as well. Good! Our
+quest for~$T_n$ has ended successfully.
+
+Of course the priests' task hasn't ended;
+they're still dutifully moving disks, and will be for a while,
+because for $n=64$ there are $2^{64}-1$ moves (about 18~quintillion).
+Even at the impossible rate of one move per microsecond,
+they will need more than 5000 centuries to transfer the Tower of Brahma.
+Lucas's original puzzle is a bit more practical.
+It requires $2^8-1 = 255$ moves,
+which takes about four minutes for the quick of hand.
+
+The Tower of Hanoi recurrence is typical of many that arise in
+applications of all kinds.
+In finding a closed-form expression
+for some quantity of interest like~$T_n$
+we go through three stages:
+\smallskip
+\item 1
+Look at small cases.
+This gives us insight into the problem and helps us in stages 2~and~3.
+
+\item 2
+Find and prove
+\g What is a "proof"? ``One half of one percent pure alcohol.''\g
+a mathematical expression for the quantity of interest.
+For the Tower of Hanoi, this is the recurrence~\eq(|hanoi-rec|)
+that allows us, given the inclination, to compute~$T_n$ for any~$n$.
+
+\item 3
+Find and prove a closed form for our mathematical expression.
+For the Tower of Hanoi, this is the recurrence solution~\eq(|hanoi-sol|).
+
+\smallskip\noindent
+The third stage is the one we will concentrate on throughout this book.
+In fact, we'll frequently skip stages 1 and~2 entirely,
+because a mathematical expression will be given to us as a starting point.
+But even then, we'll be getting into subproblems whose solutions will
+take us through all three stages.
+
+Our analysis of the Tower of Hanoi led to the correct answer, but it required
+an ``"inductive leap"''; we relied on a lucky guess about the answer.
+One of the main objectives of this book is to explain how a person
+can solve recurrences {\it without\/} being clairvoyant. For example, we'll see
+that recurrence \eq(|hanoi-rec|) can be simplified by adding~$1$ to both
+sides of the equations:
+\begindisplay
+\eqalign{T_0+1&=1 \,;\cr
+   T_n+1&=2T_{n-1} + 2 \,, \qquad\hbox{for $n>0$.}\cr
+}
+\enddisplay
+Now if we let $U_n=T_n+1$, we have
+\g Interesting: We get rid of the $+1$ in \eq(|hanoi-rec|)
+by adding, not by~subtracting.\g
+\begindisplay
+\eqalign{U_0&=1 \,;\cr
+   U_n	&= 2U_{n-1}\,, \qquad\hbox{for $n>0$.}\cr
+}\eqno
+\enddisplay
+It doesn't take genius to discover that the solution to {\it this\/}
+recurrence is just $U_n=2^n$; hence $T_n=2^n-1$. Even a computer
+could discover this.
+%could discover this, for we will discuss a mechanical technique that
+%suggests dividing both sides of \thiseq\ by~$2^n$. Then we find
+%\begindisplay
+%\eqalign{U_0/2^0&=1 \,;\cr
+%   U_n/2^n&=U_{n-1}/2^{n-1}\,, \qquad\hbox{for $n>0$;}\cr
+%}
+%\enddisplay
+%so if $V_n=U_n/2^n$ we have
+%\begindisplay
+%\eqalign{V_0&=1 \,;\cr
+%   V_n	&= V_{n-1}\,, \qquad\hbox{for $n>0$.}\cr
+%}\eqno
+%\enddisplay
+%This is a recurrence that doesn't appear in many textbooks, but its
+%\g The author jests.\g
+%solution is well known.
+
+
+\beginsection 1.2 Lines in the Plane
+
+Our second sample problem has a more geometric flavor:
+How many slices of "pizza" can a person obtain by making $n$ straight cuts
+with a pizza knife? Or, more academically:
+What is the maximum number~$L_n$ of "regions" defined by $n$ "lines in
+the plane"? This problem was first solved in 1826, by the Swiss mathematician
+Jacob "Steiner"~[|steiner|].
+\g(A pizza with Swiss cheese?)\g
+
+Again we start by looking at "small cases", remembering to begin
+with the smallest of all.
+The plane with no lines has one region; with one line it has two regions;
+and with two lines it has four regions:
+\begindisplay
+\unitlength=2pt
+\beginpicture(150,36)(0,8)
+\put(0,0){\beginpicture(30,35)(-15,0)
+	\put(0,8){\makebox(0,0){$L_0=1$}}
+	\put(0,30){\makebox(0,0){1}}
+	\endpicture}
+\put(50,0){\beginpicture(30,35)(-15,0)
+	\put(0,8){\makebox(0,0){$L_1=2$}}
+	\put(-15,25){\line(3,1){30}}
+	\put(-5,36){\makebox(0,0){1}}
+	\put(5,24){\makebox(0,0){2}}
+	\endpicture}
+\put(100,0){\beginpicture(30,35)(-15,0)
+	\put(0,8){\makebox(0,0){$L_2=4$}}
+	\put(-5,15){\line(1,3){10}}
+	\put(-15,25){\line(3,1){30}}
+	\put(-6,35){\makebox(0,0){1}}
+	\put(11,40){\makebox(0,0){2}}
+	\put(6,23){\makebox(0,0){3}}
+	\put(-9,20){\makebox(0,0){4}}
+	\endpicture}
+\endpicture
+\enddisplay
+(Each line extends infinitely in both directions.)
+
+Sure, we think, $L_n = 2^n$; of course!
+Adding a new line simply doubles the number of regions.
+Unfortunately this is wrong.
+We could achieve the doubling if the $n$th line
+would split each old region in two;
+certainly it can split an old region in at most two pieces,
+since each old region is "convex".
+\g A region is convex if it includes all line segments between
+any two of its points. (That's not what my dictionary says, but it's
+what mathematicians believe.)\g
+(A straight line can split a convex region
+into at most two new regions, which will also be convex.)
+But when we add the third line\dash---the thick one in the diagram
+below\dash---we soon find that it can split at most three of the old regions,
+no matter how we've placed the first two lines:
+\begindisplay
+\unitlength=2pt
+\beginpicture(70,30)(-10,0)
+	\put(-8,3){\line(3,1){60}}
+	\put(27,0){\line(1,3){10}}
+\thicklines
+	\put(-10,13){\line(6,-1){70}}
+\put(42,26){\makebox(0,0){2}}
+\put(26.5,11){\makebox(0,0){4a}}
+\put(19,3.5){\makebox(0,0){4b}}
+\put(34,1){\makebox(0,0){3b}}
+\put(-8,8){\makebox(0,0){1b}}
+\put(3.67,14.89){\makebox(0,0){1a}}
+\put(36.79,9.37){\makebox(0,0){3a}}
+\endpicture
+\enddisplay
+Thus $L_3 = 4+3 = 7$ is the best we can do.
+
+And after some thought we realize the appropriate generalization.
+The $n$th~line (for $n > 0$) increases the number of regions by~$k$
+if and only if it splits $k$ of the old regions, and it splits
+$k$ old regions if and only if it hits the previous lines in $k-1$
+different places. Two lines can intersect in at most one point.
+Therefore the new line can intersect the $n-1$ old lines in at
+most $n-1$ different points, and we must have $k\le n$.
+We have established the upper bound
+\begindisplay
+ L_n	\leq L_{n-1} + n \,, \qquad\hbox{for $n >0$.}
+\enddisplay
+Furthermore it's easy to show by induction
+that we can achieve equality in this formula.
+We simply place the $n$th line in such a way that it's not parallel
+to any of the others (hence it intersects them all), and such that
+it doesn't go through any of the existing intersection points (hence
+it intersects them all in different places). The recurrence is therefore
+\begindisplay
+\eqalign{L_0	&=1 \,;\cr
+L_n	&=L_{n-1} + n \,, \qquad\hbox{for $n >0$.}}\eqno\eqref|lines-rec|
+\enddisplay
+The known values of $L_1$, $L_2$, and $L_3$ check perfectly here,
+so we'll buy this.
+
+Now we need a closed-form solution.
+We could play the guessing game again, but $1$,~$2$, $4$, $7$, $11$,~$16$,
+\dots\ doesn't look familiar; so let's try another tack.
+We can often understand a recurrence by
+``"unfolding"'' or ``"unwinding"'' it all the way to
+the end, as follows:
+\begindisplay
+L_n	&= L_{n-1} + n \cr
+	&= L_{n-2} + (n-1) + n \cr
+\noalign{\g Unfolding?\newline I'd call this\newline``plugging in.\qback''\g}
+	&= L_{n-3} + (n-2) + (n-1) + n \cr
+	&\qquad\qquad\vdots\cr
+	&= L_0 + 1 + 2 + \cdots + (n-2) + (n-1) + n \cr
+\noalign{\vskip2pt}
+	&= 1\;+\;S_n\,,\qquad\hbox{where $S_n=1+2+3+\cdots+(n-1)+n$.}
+\enddisplay
+In other words, $L_n$~is one more than the sum~$S_n$ of the first $n$~positive
+integers.
+
+The quantity~$S_n$ pops up now and again,
+so it's worth making a table of small values. Then
+we might recognize such numbers more easily when we see them the next time:
+\begindisplay 
+\vbox{\halign{\span\tablepreamble\cr
+n&&1&2&3&4&5&6&7&8&9&10&11&12&13&14\cr
+\noalign{\hrule}
+S_n&&1&3&6&10&15&21&28&36&45&55&66&78&91&105\cr}}
+\enddisplay
+These values are also called the {\it"triangular numbers"}, because
+$S_n$ is the number of "bowling pins" in
+an $n$-row triangular array.
+For example, the usual four-row array
+\unitlength=1.732pt
+\beginpicture(10,0)(-4.75,0)
+\put(0,-.732){\disk{1}}
+\put(-1.5,1.000){\disk{1}}
+\put(1.5,1.000){\disk{1}}
+\put(-3,2.732){\disk{1}}
+\put(0,2.732){\disk{1}}
+\put(3,2.732){\disk{1}}
+\put(-4.5,4.464){\disk{1}}
+\put(-1.5,4.464){\disk{1}}
+\put(1.5,4.464){\disk{1}}
+\put(4.5,4.464){\disk{1}}
+\endpicture
+\ has $S_4 = 10$ pins.
+
+To evaluate~$S_n$ we can use a trick that "Gauss" reportedly came up with
+"!sum of consecutive integers"
+in 1786, when he was nine years old~[|gauss-bio|]
+(see also "Euler" [|euler-algebra|, part~1, \S415]):%
+\g It seems a lot of stuff is attributed to~Gauss\dash---\newline
+either he was really smart or he had a great press agent.\par
+\vskip24pt\par
+Maybe he just had a magnetic personality.\g
+\begindisplay 
+\vbox{\offinterlineskip\halign{\bigstrut\hfill$#$\ &&\ \hfil$#$\hfil\cr
+S_n\;=&1&+&2&+&3&+&\cdots&+&(n-1)&+&n\cr
+{}+S_n\;=&n&+&(n-1)&+&(n-2)&+&\cdots&+&2&+&1\cr
+\noalign{\vskip1pt\hrule}
+2S_n\;=&(n+1)&+&(n+1)&+&(n+1)&+&\cdots&+&(n+1)&+&(n+1)\cr}}
+\enddisplay
+We merely add $S_n$ to its reversal, so that each of the $n$ columns on
+the right sums to $n+1$.
+Simplifying,
+\begindisplay
+S_n	= {n(n+1)\over2} \,, \qquad\hbox{for $n \geq 0$.}\eqno
+\enddisplay
+OK, we have our solution:
+\g Actually Gauss is often called the greatest mathematician of all time.
+So it's nice to be able to understand at least one of his discoveries.\g
+\begindisplay
+L_n= {n(n+1)\over2} + 1 \,, \qquad\hbox{for $n \geq 0$.}\eqno\eqref|lines-sol|
+\enddisplay
+
+As experts, we might be satisfied with this derivation and consider it a proof,
+even though we waved our hands a bit when doing the unfolding and reflecting.
+But students of mathematics should be able to meet stricter standards;
+so it's a good idea to construct a rigorous "proof" by "induction".
+The key induction step is
+\begindisplay
+\textstyle L_n = L_{n-1} + n = \bigl(\half(n-1)n + 1\bigr) + n
+ = \half n(n+1) + 1\,.
+\enddisplay
+Now there can be no doubt about the closed form \thiseq.
+
+Incidentally we've been talking about ``"closed form"s''
+\g When in doubt, look at the words. Why is it ``closed,\qback'' as opposed to
+``open''? What image does it bring to mind?\par Answer: The equation is
+``closed,\qback''
+not defined in terms of itself\dash---not leading to recurrence.
+The case is ``closed''\dash---it won't happen again. Metaphors are the key.\g
+without explicitly saying what we mean.
+Usually it's pretty clear.
+Recurrences like \eq(|hanoi-rec|) and~\eq(|lines-rec|)
+are not in closed form\dash---%
+they express a quantity in terms of itself;
+but solutions like \eq(|hanoi-sol|) and~\eq(|lines-sol|) are.
+Sums like $1 + 2 + \cdots + n$ are not in closed form\dash---%
+they cheat by using `$\,\cdots\,$';
+but expressions like $n(n+1)/2$ are.
+We could give a rough definition like this:
+An expression for a quantity~$f(n)$ is in closed form if we
+can compute it using at most a fixed number of ``well known''
+standard operations, independent of~$n$.
+For example, $2^n-1$ and $n(n+1)/2$ are closed forms
+because they involve only addition, subtraction, multiplication, division,
+and exponentiation, in explicit ways.
+
+The total number of simple closed forms is limited, and there are recurrences
+that don't have simple closed forms. When such recurrences turn out to be
+important, because they arise repeatedly, we add new operations to
+our repertoire; this can greatly extend the range of problems solvable in
+``simple'' closed form. For example, the product of the first $n$ integers, $n!$,
+has proved to be so important that we now consider it a basic operation.
+The formula `$n!$' is therefore in closed form, although its equivalent
+`$1\cdt2\cdt\ldots \cdt n$' is not.
+
+And now, briefly, a variation of the lines-in-the-plane problem:
+Suppose that instead of straight lines we use bent lines, each containing
+one ``"zig".\qback''
+\g Is ``zig'' a technical term?\g
+What is the maximum number $Z_n$ of regions
+determined by $n$~such bent lines in the plane?
+We might expect $Z_n$ to be about twice as big as $L_n$, or maybe
+three times as big. Let's see:
+\begindisplay
+\unitlength=2pt
+\beginpicture(120,40)(0,7)
+\put(0,0){\beginpicture(40,40)(-20,0)
+	\put(0,7){\makebox(0,0){$Z_1=2$}}
+	\put(-18,30){\line(3,1){36}}
+	\put(-18,30){\line(3,-1){36}}
+	\put(-9,18){\makebox(0,0){1}}
+	\put(10,30){\makebox(0,0){2}}
+	\endpicture}
+\put(80,0){\beginpicture(40,40)(-20,0)
+	\put(0,7){\makebox(0,0){$Z_2=7$}}
+	\put(0,12){\line(1,3){12}}
+	\put(0,12){\line(-1,3){12}}
+	\put(-18,30){\line(3,1){36}}
+	\put(-18,30){\line(3,-1){36}}
+	\put(-9,20){\makebox(0,0){1}}
+	\put(0,44){\makebox(0,0){2}}
+	\put(15,45){\makebox(0,0){3}}
+	\put(13,30){\makebox(0,0){4}}
+	\put(0,20){\makebox(0,0){5}}
+	\put(-9,30){\makebox(0,0){6}}
+	\put(0,30){\makebox(0,0){7}}
+	\endpicture}
+\endpicture
+\enddisplay
+
+From these small cases, and after a little thought,
+\g\dots\ and a little afterthought\dots\g
+we realize that a bent line is like two straight lines
+except that regions merge when the ``two'' lines
+don't extend past their intersection point.
+\begindisplay
+\unitlength=2pt
+\beginpicture(80,36)(-40,-18)
+\put(0,0){\line(3,1){30}}
+\put(0,0){\line(3,-1){30}}
+\multiput(-28.5,-9.5)(3,1){10}{\disk{.5}}
+\multiput(-28.5,9.5)(3,-1){10}{\disk{.5}}
+\put(25,0){\makebox(0,0){1}}
+\put(0,-11){\makebox(0,0){2}}
+\put(-25,0){\makebox(0,0){3}}
+\put(0,11){\makebox(0,0){4}}
+\endpicture
+\enddisplay
+Regions 2,~3, and~4, which would be distinct with two lines, become a single
+region when there's a bent line; we lose two regions.
+However, if we arrange things properly\dash---%
+the zig point must lie ``beyond''
+the intersections with the other lines\dash---%
+that's all we lose;
+that is, we lose only two regions per line.
+\g Exercise |zig| has the details.\g
+Thus
+\begindisplay
+Z_n= L_{2n} - 2n& =2n(2n+1)/2 + 1 - 2n\cr
+	&= 2n^2 - n + 1\,,\qquad\hbox{for $n \geq 0$.}\eqno\eqref|zn-def|
+\enddisplay
+Comparing the closed forms \eq(|lines-sol|) and~\thiseq,
+we find that for large~$n$,
+\begindisplay
+L_n&\sim\textstyle\half n^2 \,,\cr
+Z_n&\sim 2n^2 \,;
+\enddisplay
+so we get about four times as many regions with bent lines
+as with straight lines.
+(In later chapters we'll be discussing how to analyze the approximate behavior
+of integer functions when $n$ is large. The `$\sim$' symbol is defined
+in Section~9.1.)
+
+\beginsection 1.3 The Josephus Problem
+
+Our final introductory example is a variant
+\g("Ahrens"~[|ahrens|, vol.~2] and
+ "Herstein" and~"Kaplansky"~[|herstein-kaplansky|] discuss
+ the interesting history of this problem. Josephus himself
+ [|josephus-source|] is a bit vague.)\g
+ of an ancient problem named
+for Flavius "Josephus", a famous historian of the first century. Legend
+has it that Josephus
+wouldn't have lived to become famous
+without his mathematical talents.
+During the Jewish--Roman "war",
+he was among a band of 41 Jewish rebels trapped in a cave by the Romans.
+"!Seaver, George Thomas"
+"!Mathews, Edwin Lee: same as Seaver (all the 41s) (also page 41)"
+Preferring suicide to capture, the rebels decided to form a circle and,
+proceeding around it, to kill every third remaining person until no~one
+was left.
+But Josephus, along with an unindicted co-conspirator,
+wanted none of this suicide nonsense;
+so he quickly calculated where he and his friend should stand in
+\g\dots thereby saving his tale for us to hear.\g
+the vicious circle.
+
+\newdimen\digwd \newdimen\dight \setbox0=\hbox{$0$} \digwd=\wd0 \dight=\ht0
+\def\cnum#1{\hbox to0pt{\hss\lower.5\dight\hbox to\digwd{\hss$#1$}\hss}}
+In our variation, we start with $n$~people numbered 1~to~$n$ around a circle,
+and we eliminate every {\it second\/} remaining person until only one survives.
+For example, here's the starting configuration for $n=10$:
+\begindisplay
+\unitlength=2pt
+\beginpicture(40,32)(-20,-16)
+\put(0,0){\circle{20}}
+\put(0,0){\vector(0,1){9}}
+\put(0,14.5){\cnum1}
+\put(8.52,11.73){\cnum2}
+\put(13.79,4.48){\cnum3}
+\put(13.79,-4.48){\cnum4}
+\put(8.52,-11.73){\cnum5}
+\put(0,-14.5){\cnum6}
+\put(-8.52,-11.73){\cnum7}
+\put(-13.79,-4.48){\cnum8}
+\put(-13.79,4.48){\cnum9}
+\put(-8.52,11.73){\cnum{10}}
+\endpicture
+\enddisplay
+The elimination order is $2$,~$4$, $6$, $8$, $10$, $3$, $7$, $1$,~$9$,
+so $5$~survives. The problem:
+Determine the survivor's number,~$J(n)$.
+\g Here's a case where $n=0$ makes no sense.\g
+
+We just saw that $J(10)=5$.
+We might conjecture that $J(n)=n/2$ when $n$~is even;
+and the case $n=2$ supports the conjecture: $J(2) = 1$.
+But a few other small cases dissuade us\dash---%
+the conjecture fails for $n=4$ and~$n=6$.
+\begindisplay 
+\vbox{\halign{\span\tablepreamble\cr
+n&&1&2&3&4&5&6\cr
+\noalign{\hrule}
+J(n)&&1&1&3&1&3&5\cr}}
+\enddisplay
+It's back to the drawing board; let's try to make a better guess.
+\g Even so, a bad guess isn't a waste of time, because it gets us
+involved in the problem.\g
+Hmmm \dots\ $J(n)$ always seems to be odd.
+And in fact, there's a good reason for this:
+The first trip around the circle eliminates all the even numbers.
+Furthermore, if $n$ itself is an even number, we arrive at
+a situation similar to what we began with, except that there are
+only half as many people, and their numbers have changed.
+
+So let's suppose that we have $2n$~people originally.
+After the first go-round, we're left with
+\begindisplay
+\unitlength=2pt
+\beginpicture(48,31)(-28,-15)
+\put(0,0){\circle{20}}
+\put(0,0){\vector(0,1){9}}
+\put(0,14.5){\cnum1}
+\put(8.52,11.73){\cnum3}
+\put(13.79,4.48){\cnum5}
+\put(13.79,-4.48){\cnum7}
+\put(0,-14.5){\cnum{\ldots}}
+\put(-13.79,4.48){\cnum{2n-3}}
+\put(-8.52,11.73){\cnum{2n-1}}
+\endpicture
+\enddisplay
+and $3$~will be the next to go.
+This is just like starting out with $n$~people,
+except that each person's number has been doubled and decreased by~$1$.
+\g This is the tricky part: We have\smallskip
+$J(2n)=$\newline
+newnumber$(J(n))$,\kern-3.1pt\smallskip
+where\newline newnumber$(k)=$\newline$2k-1$.\g
+That is,
+\begindisplay
+ J(2n)	= 2\mkern1muJ(n) - 1 \,, \qquad\hbox{for $n \geq 1$.}
+\enddisplay
+We can now go quickly to large $n$.
+For example, we know that $J(10) = 5$, so
+\begindisplay
+ J(20)	= 2\mkern1mu J(10) - 1	= 2 \cdt 5 - 1	= 9 \,.
+\enddisplay
+Similarly $J(40)=17$, and we can deduce that $J(5\cdt 2^m)=2^{m+1}+1$.
+
+\looseness=-1
+But what about the odd case?
+\g Odd case? Hey, leave my brother out of it.\g
+With $2n+1$~people, it turns out that person number~$1$ is wiped out just after
+person number $2n$, and we're left with
+\begindisplay
+\unitlength=2pt
+\beginpicture(48,31)(-28,-15)
+\put(0,0){\circle{20}}
+\put(0,0){\vector(0,1){9}}
+\put(0,14.5){\cnum3}
+\put(8.52,11.73){\cnum5}
+\put(13.79,4.48){\cnum7}
+\put(13.79,-4.48){\cnum9}
+\put(0,-14.5){\cnum{\ldots}}
+\put(-13.79,4.48){\cnum{2n-1}}
+\put(-8.52,11.73){\cnum{2n+1}}
+\endpicture
+\enddisplay
+Again we almost have the original situation with $n$ people,
+but this time their numbers are
+doubled and {\it increased\/} by~$1$.
+Thus
+\begindisplay
+ J(2n+1)= 2\mkern1muJ(n) + 1 \,, \qquad\hbox{for $n \geq 1$.}
+\enddisplay
+Combining these equations with~$J(1)=1$ gives us a recurrence
+that defines $J$ in all cases:
+\begindisplay
+\eqalign{J(1)&=1 \,;\cr
+   J(2n)&= 2\mkern1muJ(n) - 1 \,, \qquad\hbox{for $n\ge1$;}\cr
+   J(2n+1)&= 2\mkern1muJ(n) + 1 \,, \qquad\hbox{for $n\ge1$.}\cr
+}\eqno\eqref|josephus-rec|
+\enddisplay
+Instead of getting $J(n)$ from $J(n-1)$, this recurrence is much more
+``efficient,\qback'' because it reduces $n$ by a factor of~$2$ or more each
+time it's applied. We could compute $J(1000000)$, say, with only 19~applications
+of \thiseq. But still, we seek a closed form, because that will be
+even quicker and more informative. After all, this is a matter of life
+or death.
+
+Our recurrence makes it possible to build a table of small values very
+quickly. Perhaps we'll be able to spot a pattern and guess the answer.
+\begindisplay \let\ =\enspace
+\vbox{\halign{\bigstrut\hfil$#$\hfil&
+ \ \vrule#&
+ \ \hfil$\hss#\hss$&
+ \ \vrule#&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \vrule#&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&&
+ \ \vrule#&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$&
+ \ \hfil$\hss#\hss$\cr
+n&&1&&2&3&&4&5&6&7&&8&9&10&11&12&13&14&15&&16\cr
+\noalign{\hrule}
+J(n)&&1&&1&3&&1&3&5&7&&1&3&5&7&9&11&13&15&&1\cr}}
+\enddisplay
+\kern-1pt{\it Voil\`a!\/} It seems we can group by powers of~$2$
+(marked by vertical lines in the table);
+$J(n)$~is always~$1$ at the beginning of a group
+and it increases by~$2$ within a group.
+So if we write~$n$ in the form $n = 2^m+l$, where
+$2^m$~is the largest power of~$2$ not exceeding~$n$
+and where $l$~is what's left,
+the solution to our recurrence seems to be
+\begindisplay
+J(2^m+l)= 2l+1 \,, \qquad\hbox{for $m \geq 0$ and $0\le l<2^m$.}
+\eqno\eqref|josephus-sol|
+\enddisplay
+(Notice that if $2^m\le n<2^{m+1}$, the remainder $l=n-2^m$
+satisfies $0\le l<2^{m+1}-2^m=2^m$.)
+
+We must now prove \thiseq.
+As in the past we use "induction",
+but this time the induction is on~$m$.
+When $m=0$ we must have $l=0$; thus the basis of \thiseq\ reduces to
+$J(1)=1$, which is true.
+\g But there's a simpler way! The key fact is that $J(2^m)=1$ for
+all~$m$, and this follows immediately from our first equation,
+\smallskip $J(2n)=2\mkern1muJ(n)-1.$\smallskip
+Hence we know that the first person will survive
+whenever $n$~is a power of~$2$.\par
+And in the general case, when $n=2^m+l$, the number of people
+is reduced to a power of~$2$ after there have been $l$~executions.
+The~first remaining person at this point, the survivor, is number~$2l+1$.\g
+The induction step has two parts, depending on whether $l$ is even or odd.
+If $m>0$ and $2^m+l=2n$, then $l$ is even and
+\begindisplay
+J(2^m+l)=2\mkern1muJ(2^{m-1}+l/2)-1= 2(2l/2+1)-1=2l+1\,,
+\enddisplay
+by \eq(|josephus-rec|) and the induction hypothesis;
+this is exactly what we want. A similar proof works in the odd case,
+ when $2^m+l=2n+1$.
+We might also note that \eq(|josephus-rec|) implies the relation
+\begindisplay
+J(2n+1)-J(2n)=2.
+\enddisplay
+Either way, the induction is complete and \eq(|josephus-sol|) is established.
+
+To illustrate solution~\eq(|josephus-sol|), let's compute $J(100)$.
+In this case we have $100 = 2^6 + 36$,
+so $J(100) = 2\cdt36+ 1 = 73$.
+
+Now that we've done the hard stuff (solved the problem)
+we seek the soft:
+"!philosophy"
+Every solution to a problem can be generalized so that it applies to
+a wider class of problems. Once we've learned a technique, it's instructive
+to look at it closely and see how far we can go with it.
+Hence, for the rest of this section,
+we will examine the solution~\eq(|josephus-sol|) and
+explore some "generalization"s of the recurrence~\eq(|josephus-rec|).
+These explorations will uncover the structure that underlies all
+such problems.
+
+Powers of~$2$ played an important role in our finding the solution,
+so it's natural to look at the "radix~$2$ representation"s of~$n$ and~$J(n)$.
+Suppose~$n$'s "binary expansion" is
+\tabref|nn:radix|%
+\begindisplay
+ n= (b_m\, b_{m-1} \ldots b_1\, b_0)_2\,;
+\enddisplay
+that is,
+\begindisplay
+ n = b_m 2^m \,+\, b_{m-1} 2^{m-1} \,+\, \cdots \,+\, b_1 2 \,+\, b_0 \,,
+\enddisplay
+where each $b_i$ is either $0$~or~$1$ and where the leading bit $b_m$ is~$1$.
+Recalling that $n = 2^m+l$, we have, successively,
+\begindisplay
+n	&= (1\,b_{m-1}\, b_{m-2} \ldots b_1\, b_0)_2 \,,\cr
+l	&= (0\,b_{m-1}\, b_{m-2} \ldots b_1\, b_0)_2 \,,\cr
+2l	&= (b_{m-1}\, b_{m-2} \ldots b_1\, b_0\, 0)_2 \,,\cr
+2l+1	&= (b_{m-1}\, b_{m-2} \ldots b_1\, b_0\, 1)_2 \,,\cr
+J(n)	&= (b_{m-1}\, b_{m-2} \ldots b_1\, b_0\, b_m)_2 \,.
+\enddisplay
+(The last step follows because $J(n) = 2l+1$ and because $b_m=1$.)
+We have proved that
+\begindisplay
+J\bigl((b_m\, b_{m-1} \ldots b_1\, b_0)_2\bigr)
+	= (b_{m-1} \ldots b_1\, b_0\, b_m)_2 \,;
+\eqno
+\enddisplay
+that is, in the lingo of computer programming,
+we get~$J(n)$ from~$n$ by doing a one-bit "cyclic shift" left!
+Magic.
+For example, if $n = 100 = (1100100)_2$ then
+$J(n) = J\bigl((1100100)_2\bigr) = (1001001)_2$, which is $64+8+1=73$.
+If we had been working all along in binary notation, we probably would
+have spotted this pattern immediately.
+
+If we start with~$n$
+and iterate the $J$ function $m+1$~times,
+\g (``Iteration'' here means applying a function to~itself.)\g
+we're doing $m+1$ one-bit cyclic shifts;
+so, since $n$~is an $(m{+}1)$-bit number,
+we might expect to end up with~$n$ again.
+But this doesn't quite work.
+For instance if $n=13$ we have $J\bigl((1101)_2\bigr) = (1011)_2$,
+but then $J\bigl((1011)_2\bigr) = (111)_2$ and the process breaks down;
+the $0$ disappears when it becomes the leading bit.
+In fact, $J(n)$ must always be $\le n$ by definition, since $J(n)$ is
+the survivor's number; hence if
+$J(n)<n$ we can never get back up to $n$ by continuing to iterate.
+
+Repeated application of $J$ produces a sequence of decreasing
+values that eventually reach a ``"fixed point",\qback''
+where $J(n)=n$. The cyclic shift property makes it easy
+to see what that fixed point
+will be: Iterating the function enough times
+will always produce a pattern of all $1$'s
+whose value is $2^{\nu(n)}-1$,
+where $\nu(n)$ is the number of $1$~bits
+"!sideways addition" "!nu function"
+in the binary representation of~$n$.
+Thus, since $\nu(13) = 3$, we have
+\begindisplay
+ \overbrace{J(J( \ldots J}^
+  {\hbox to0pt{\hss
+   \the\scriptfont0$\scriptstyle 2$ or more $\scriptstyle J$'s\hss}}
+ (13)\ldots\, )) \,=\, 2^3 - 1 \,=\, 7 \,;
+\enddisplay
+\g Curiously enough, if $M$ is a compact $C^\infty$ $n$-manifold
+($n>1$), there exists a differentiable immersion of $M$ into
+$\hbox{\runhead R}^{2n-\nu(n)}$ but not necessarily into
+ $\hbox{\bf\runhead R}^{2n-\nu(n)-1}$. I~wonder
+if Josephus was secretly a~topologist?\g
+similarly
+\begindisplay
+ \overbrace{J(J( \ldots J}^
+  {\hbox to0pt{\hss\the\scriptfont0$\hss\scriptstyle 8$ or more\hss}}
+ ((101101101101011)_2) \ldots\, )) = 2^{10} - 1 = 1023 \,.
+\enddisplay
+Curious, but true.
+
+Let's return briefly to our first guess,
+that $J(n)=n/2$ when $n$~is even.
+This is obviously not true in general, but
+we can now determine exactly when it {\it is\/} true:
+\begindisplay \openup3pt
+J(n)	&= n/2 \,, \cr
+2l+1	&= (2^m+l)/2 \,, \cr
+l	&= \textstyle{1\over3}(2^m-2) \,.
+\enddisplay
+If this number
+$l={1\over3}(2^m-2)$ is an integer, then
+$n=2^m+l$ will be a solution, because
+$l$ will be less than~$2^m$.
+It's not hard to verify that $2^m-2$ is a multiple of~$3$
+when $m$ is odd, but not when $m$ is even.
+(We will study such things in Chapter~4.) Therefore there are
+infinitely many solutions to the equation $J(n)=n/2$, beginning as follows:
+\begindisplay
+\vbox{\offinterlineskip\halign{\strut\ $\hfil#\hfil$&&\qquad$\hfil#\hfil$\cr
+m	& \;\,l	& n = 2^m + l	& J(n) = 2l+1 = n/2	&\hbox{$n$ (binary)} \cr
+\noalign{\kern2pt\hrule\kern4pt}
+1 &\nullnum 0	& \twonullnum 2	& \nullnum 1	& \phantom{000000}10 \cr
+3 &\nullnum 2	& \nullnum 10	& \nullnum 5	& \phantom{0000}1010 \cr
+5	& 10	& \nullnum 42	& 21		& \twonullnum 101010 \cr
+7	& 42	& 170		& 85		& 10101010\cr}}
+\enddisplay
+Notice the pattern in the rightmost column. These are the binary numbers
+for which cyclic-shifting one place left produces the same result
+as ordinary-shifting one place right (halving).
+
+OK, we understand the $J$ function pretty well; the next step is to
+"generalize" it. "!Josephus recurrence, generalized"
+What would have happened if our problem had produced a recurrence that
+was something like \eq(|josephus-rec|), but with different constants?
+Then we might not have been lucky enough to guess the solution, because
+the solution might have been really weird. Let's investigate this by
+introducing constants $\alpha$,~$\beta$,
+\g Looks like Greek to~me.\g
+ and~$\gamma$ and trying to
+find a closed form for the more general recurrence
+\begindisplay
+\eqalign{f(1)&=\alpha\,;\cr
+   f(2n)&= 2f(n) +\beta \,, \qquad\hbox{for $n\ge1$;}\cr
+   f(2n+1)&= 2f(n) + \gamma \,, \qquad\hbox{for $n\ge1$.}\cr
+}\eqno\eqref|gen-jos-rec|
+\enddisplay
+(Our original recurrence had $\alpha=1$, $\beta=-1$, and $\gamma=1$.)
+Starting with $f(1)=\alpha$ and working our way up,
+we can construct the following general table for small values of~$n$:
+\begindisplay
+\def\hline{\omit&height2pt\cr\noalign{\hrule}\omit&height2pt\cr}
+\vcenter{\offinterlineskip\halign{\strut\hfill$#$\ &\vrule#\ &&\ \hfil$#$\cr
+n	&&		&&\hidewidth f(n)\cr
+\hline
+1	&& \alpha\cr
+\hline
+2	&& 2\alpha	&+& \beta \cr
+3	&& 2\alpha	&&		&+& \gamma \cr
+\hline
+4	&& 4\alpha	&+& 3\beta \cr
+5	&& 4\alpha	&+& 2\beta	&+& \gamma \cr
+6	&& 4\alpha	&+& \beta	&+& 2\gamma \cr
+7	&& 4\alpha	&&		&+& 3\gamma \cr
+\hline
+8	&& 8\alpha	&+& 7\beta \cr
+9	&& 8\alpha	&+& 6\beta	&+& \gamma\cr}}
+\eqno\eqref|alpha-beta-gamma|
+\enddisplay
+It seems that $\alpha$'s coefficient is $n$'s~largest power of~$2$.
+Furthermore, between powers of~$2$,
+$\beta$'s coefficient decreases by~$1$ down to~$0$
+and $\gamma$'s increases by~$1$ up from~$0$.
+Therefore if we express $f(n)$ in the form
+\begindisplay
+f(n)	= A(n) \mskip2mu \alpha \,+\, B(n) \mskip2mu \beta
+					\,+\, C(n) \mskip2mu \gamma \,,
+\eqno\eqref|gen-jos-form|
+\enddisplay
+by separating out its dependence on
+$\alpha$,~$\beta$, and~$\gamma$, it seems that
+\begindisplay
+A(n)	&= 2^m \,; \cr
+B(n)	&= 2^m - 1 - l \,;\eqno\eqref|gen-jos-sol| \cr
+C(n)	&= l \,.
+\enddisplay
+Here, as usual, $n = 2^m+l$ and $0 \leq l < 2^m \bex$, for~$n \geq 1$.
+
+It's not terribly hard to prove \eq(|gen-jos-form|) and \eq(|gen-jos-sol|)
+\g Hold onto your hats, this next part is new stuff.\g
+by induction, but the calculations are messy and uninformative.
+Fortunately there's a better way to proceed, by choosing particular
+values and then combining them. Let's illustrate this by considering
+the special case $\alpha=1$, $\beta=\gamma=0$, when $f(n)$ is
+supposed to be equal to~$A(n)$: Recurrence \eq(|gen-jos-rec|) becomes
+\begindisplay
+A(1)&=1\,;\cr
+   A(2n)&= 2A(n)\,,&\qquad\hbox{for $n\ge1$;}\cr
+   A(2n+1)&= 2A(n)\,,&\qquad\hbox{for $n\ge1$.}\cr
+\enddisplay
+Sure enough, it's true (by induction on~$m$) that $A(2^m+l)=2^m$.
+
+Next, let's use recurrence \eq(|gen-jos-rec|) and solution
+\eq(|gen-jos-form|) {\it in reverse}, by
+starting with a simple function $f(n)$ and seeing if there are
+any constants $(\alpha,\beta,\gamma)$ that will define it.
+\g A neat idea!\g
+\kern-1ptPlugging the constant function $f(n)\kern-1pt=\kern-1pt1$ into
+\eq(|gen-jos-rec|) says~that
+\begindisplay
+1&=\alpha;\cr
+1&=2\cdt1+\beta;\cr
+1&=2\cdt1+\gamma;
+\enddisplay
+hence the values $(\alpha,\beta,\gamma)=(1,-1,-1)$ satisfying these
+equations will yield
+$A(n)-B(n)-C(n)=f(n)=1$. Similarly, we can plug in $f(n)=n$:
+\begindisplay
+1&=\alpha;\cr
+2n&=2\cdt n+\beta;\cr
+2n+1&=2\cdt n+\gamma;
+\enddisplay
+These equations hold for all $n$
+when $\alpha=1$, $\beta=0$, and $\gamma=1$, so
+we don't need to prove by induction that these parameters will yield
+$f(n)=n$. We already {\it know\/} that $f(n)=n$ will be the solution
+in such a case, because the recurrence \eq(|gen-jos-rec|)
+uniquely defines $f(n)$ for every value of~$n$.
+
+And now we're essentially done! We have shown that the functions $A(n)$,
+$B(n)$, and $C(n)$ of \eq(|gen-jos-form|), which solve \eq(|gen-jos-rec|)
+in general, satisfy the equations
+\begindisplay \postdisplaypenalty=-10
+A(n)&=2^m\,,\qquad\hbox{where $n=2^m+l$ and $0\le l<2^m$};\cr
+A(n)-B(n)-C(n)&=1\,;\cr
+A(n)+C(n)&=n\,.\cr
+\enddisplay
+Our conjectures in \eq(|gen-jos-sol|) follow immediately, since we can
+solve these equations to get
+$C(n)=n-A(n)=l$ and $B(n)=A(n)-1-C(n)=2^m-1-l$.
+
+This approach illustrates a surprisingly useful {\it "repertoire method"\/}
+\g Beware: The authors are expecting us to figure out the idea of the
+repertoire method from seat-of-the-pants examples, instead of giving us a
+top-down presentation. The
+method works best with recurrences that are ``linear,\qback''
+in the sense that the solutions can be expressed as a sum
+of arbitrary parameters multiplied by functions of\/~$n$, as in \eq(|gen-jos-form|).
+Equation \eq(|gen-jos-form|) is the key.\g
+for solving recurrences. First we find settings of general parameters
+for which we know the solution; this gives us a repertoire of special
+cases that we can solve. Then we obtain the general case by combining
+the special cases. We need as many independent special solutions
+as there are independent parameters (in this case three, for
+$\alpha$, $\beta$, and $\gamma$). Exercises 16 and~20 provide further
+examples of the repertoire approach.
+
+We know that the original $J$-recurrence has a magical solution,
+in binary:
+\begindisplay
+ J\bigl((b_m\, b_{m-1} \ldots b_1\, b_0)_2\bigr)
+	= (b_{m-1} \ldots b_1\, b_0\, b_m)_2 \,, \qquad\hbox{where $b_m=1$.}
+\enddisplay
+Does the generalized Josephus recurrence admit of such magic?
+
+Sure, why not?
+We can rewrite the generalized recurrence~\eq(|gen-jos-rec|) as
+\begindisplay
+\eqalign{f(1)	&= \alpha \,; \cr
+f(2n+j)	&= 2f(n) + \beta_j \,,
+			\qquad\hbox{for $j=0,1$\quad and \quad $n \geq 1$,}}
+\eqno\eqref|gen-jos-rec-mod|
+\enddisplay
+if we let $\beta_0=\beta$ and $\beta_1=\gamma$. And this recurrence
+unfolds, binary-wise:
+\begindisplay
+f\bigl((b_m\, b_{m-1} \ldots b_1\, b_0)_2\bigr)
+	&= 2f\bigl((b_m\, b_{m-1} \ldots b_1)_2\bigr) + \beta_{b_0} \cr
+	&= 4f\bigl((b_m\, b_{m-1} \ldots b_2)_2\bigr) + 2\beta_{b_1}
+							+ \beta_{b_0} \cr
+	&\qquad\qquad\vdots\cr
+	&= 2^m f\bigl((b_m)_2\bigr){+} 2^{m-1}\beta_{b_{m-1}} {+}\cdots
+				{+} 2\beta_{b_1} {+} \beta_{b_0} \cr
+	&= 2^m \alpha \,+\, 2^{m-1}\beta_{b_{m-1}} \,+\, \cdots
+				\,+\, 2\beta_{b_1} \,+\, \beta_{b_0} \,.
+\enddisplay
+Suppose we now relax the radix~$2$ notation to allow arbitrary digits
+\g(`relax' $=$ `destroy')\g
+instead of just $0$~and~$1$.
+The derivation above tells us that
+\begindisplay
+f\bigl((b_m\, b_{m-1} \ldots b_1\, b_0)_2\bigr)
+	= (\alpha\, \beta_{b_{m-1}}\, \beta_{b_{m-2}}
+				\ldots \beta_{b_1}\, \beta_{b_0})_2 \,.
+\eqno
+\enddisplay
+\g \vskip60ptI think I get it:\par
+The binary representations of $A(n)$, $B(n)$,
+and $C(n)$ have $1$'s in different positions.\g
+Nice. We would have seen this pattern
+ earlier if we had written \eq(|alpha-beta-gamma|)
+in another way:
+\begindisplay \advance\abovedisplayskip 2pt
+\def\hline{\omit&height2pt\cr\noalign{\hrule}\omit&height2pt\cr}
+\vbox{\offinterlineskip\halign{\strut\hfill$#$\ &\vrule#\ &&\ \hfil$#$\cr
+n	&&		&&\hidewidth f(n)\cr
+\hline
+1	&& 		&&		&&\alpha\cr
+\hline
+2	&&		&& 2\alpha	&+& \beta \cr
+3	&&		&& 2\alpha	&+& \gamma \cr
+\hline
+4	&& 4\alpha	&+& 2\beta	&+& \beta \cr
+5	&& 4\alpha	&+& 2\beta	&+& \gamma \cr
+6	&& 4\alpha	&+& 2\gamma	&+& \beta \cr
+7	&& 4\alpha	&+& 2\gamma	&+& \gamma \cr}}
+\enddisplay
+
+For example, when $n=100=(1100100)_2$, our original Josephus values
+$\alpha=1$, $\beta=-1$, and~$\gamma=1$ yield
+\begindisplay
+\vbox{\offinterlineskip\halign{\bigstrut\hfill$#=$&&\quad\hfil$#$\cr
+n	& (\; 1	& 1	& 0	& 0	& 1	& 0	& 0 \;)_2
+							&=& 100 \cr
+\noalign{\vskip2pt\hrule\vskip2pt}
+f(n)	& (\; 1	& 1	& -1	& -1	& 1	& -1	& -1 \;)_2\cr
+	& +64	& +32	& -16	& -8	& +4	& -2	& -1\phantom{\;)_2}
+							&=& 73\cr}}
+\enddisplay
+as before. The cyclic-shift property follows because each block of binary
+digits $(1\,0\,\ldots\,0\,0)_2$ in the representation of $n$ is
+transformed into
+\begindisplay
+(1\,{-1}\,\ldots\,{-1}\,{-1})_2=(0\,0\,\ldots\,0\,1)_2\,.
+\enddisplay
+
+So our change of notation has given us the compact solution~\thiseq\
+\g\noindent\llap{``}There are two kinds of "generalization"s.
+One is cheap and~the other
+"!philosophy"
+is valuable.\par It is easy to generalize by diluting a little idea
+with a big~terminology.\par It is much more difficult to prepare a
+refined and condensed extract from several good ingredients.''\par
+\noindent\hfill\dash---G. "P\'olya"~[|polya|]\g % p30
+to the general recurrence \eq(|gen-jos-rec-mod|).
+If we're really uninhibited we can now generalize even more.
+The recurrence
+\begindisplay
+\vcenter{\openup\jot
+ \halign{$\hfil#$&${}#\hfil$&\qquad#\hfil\cr
+ f(j)	&= \alpha_j \,,&for $1\le j<d$; \cr
+f(dn+j)	&= cf(n) + \beta_j \,,&for $0\le j<d$\quad and \quad $n \geq 1$,\cr}}
+\eqno
+\enddisplay
+is the same as the previous one
+except that we start with numbers in "radix~$d$" and produce
+values in radix~$c$.
+That is, it has the radix-changing solution
+\begindisplay
+f\bigl( (b_m\, b_{m-1} \ldots b_1\, b_0)_d \bigr)
+	= (\alpha_{b_m}\, \beta_{b_{m-1}}\, \beta_{b_{m-2}}
+		\ldots \beta_{b_1}\, \beta_{b_0})_c \,.
+\eqno\eqref|d-to-c|
+\enddisplay
+For example, suppose that by some stroke of luck we're given the recurrence
+\begindisplay
+f(1)	&= 34 \,, \cr
+f(2)	&= 5 \,, \cr
+f(3n)	&= 10f(n) + 76 \,, \qquad\hbox{for $n \geq 1$,} \cr
+f(3n+1)	&= 10f(n) - 2 \,, \qquad\nullnum\hbox{for $n \geq 1$,} \cr
+f(3n+2)	&= 10f(n) + 8 \,, \qquad\nullnum\hbox{for $n \geq 1$,}
+\enddisplay
+and suppose we want to compute~$f(19)$.
+\g Perhaps this was a stroke of \undertext{bad} luck.\g
+Here we have $d=3$ and~$c=10$.
+Now $19 = (201)_3$, and the radix-changing solution tells us
+to perform a digit-by-digit replacement from radix~$3$ to radix~$10$.
+So the leading~$2$ becomes a~$5$,
+and the $0$~and~$1$ become $76$~and~$-2$, giving
+\begindisplay
+f(19)=f\bigl((201)_3\bigr)=(5\,\,76\,\,{-2})_{10}=1258\,,
+\enddisplay
+which is our answer.
+
+Thus Josephus and the Jewish--Roman war
+\g\null\vskip-2\baselineskip But in general I'm against recurrences of war.\g
+have led us to some interesting general recurrences.
+
+\beginexercises
+
+\subhead \kern-.05em Warmups
+
+\ex:
+All "horses" are the same color; we can prove this by "induction"
+\g Please do all the warmups in all the chapters!\par
+\hfill\dash---The Mgm't\g
+on the number of horses in a given set. Here's how:
+``If there's just one horse then it's the same color as itself,
+so the basis is trivial.
+For the induction step,
+assume that there are $n$~horses numbered $1$~to~$n$.
+By the induc\-tion hypothesis, horses
+$1$~through $n-1$ are the same color,
+and similarly horses $2$~through $n$ are the same color.
+But the middle horses, $2$~through $n-1$, can't change color
+when they're in different groups;
+these are horses, not chameleons.
+So horses $1$~and~$n$ must be
+the same color as well, by transitivity.
+Thus all $n$ horses are the same color; QED.'' \
+What, if anything, is wrong with this reasoning?
+\answer The proof is fine except when $n=2$. If all sets of two horses
+have horses of the same color, the statement is true for any number of horses.
+\source{"P\'olya" [|polya|, p.~120].}
+
+\ex:
+Find the shortest sequence of moves that transfers a tower of $n$ disks
+"!tower of Hanoi, variations on"
+from the left peg~A to the right peg~B, if direct moves
+between A and~B are dis\-allowed. (Each
+move must be to or from the middle peg. As usual, a larger disk
+must never appear above a smaller one.)
+\answer If $X_n$ is the number of moves, we have $X_0=0$ and
+$X_n=X_{n-1}+1+X_{n-1}+1+X_{n-1}$ when $n>0$. It follows (for example
+by adding~$1$ to both sides) that $X_n=3^n-1$.
+\ (After $\half X_n$ moves, it turns out that the entire tower will
+be on the middle peg, halfway home!)
+\source{"Scorer", "Grundy", and "Smith" [|scorer|].}
+
+\ex: 
+Show that, in the process of transferring a tower under the restrictions
+of the preceding exercise, we will actually encounter
+every properly stacked arrangement of $n$ disks on three pegs.
+\answer There are $3^n$ possible arrangements, since each disk can be
+on any of the pegs. We must hit them all, since the shortest solution
+takes $3^n-1$ moves. \ (This construction is equivalent to a
+``ternary "Gray code",\qback'' which runs through all numbers
+from $(0\ldots0)_3$ to $(2\ldots2)_3$,
+changing only one digit at a time.)
+
+\ex:
+Are there any starting and ending configurations of $n$ disks on three
+pegs that are more than $2^n-1$ moves apart, under Lucas's original rules?
+\answer No. If the largest disk doesn't have to move, $2^{n-1}-1$ moves
+will suffice (by induction); otherwise $(2^{n-1}-1)+1+(2^{n-1}-1)$ will
+suffice (again by induction).
+
+\ex:
+A ``"Venn diagram"'' with three overlapping circles is often used to
+illustrate the eight possible subsets associated with three given sets:
+\begindisplay
+\unitlength=1pt
+\beginpicture(64,65)(-32,-20)
+	\put(-12,0){\circle{40}}
+	\put(+12,0){\circle{40}}
+	\put(0,20.8){\circle{40}}
+	\put(0,24.2){\hbox to0pt{\hss$A$\hss}}
+	\put(-13,-5.4){\vbox to0pt{\vss\llap{$B$}}}
+	\put(+13,-5.4){\vbox to0pt{\vss\rlap{$C$}}}
+\endpicture
+\enddisplay
+Can the sixteen possibilities that arise with four given sets be
+illustrated by four overlapping circles?
+\answer No; different circles can intersect in at most two points, so the
+\g The number of intersection points turns out to give the whole story;
+convexity was a red herring.\g%
+fourth circle can increase the number of regions to at most~14.
+However, it is possible to do the job with ovals:
+\begindisplay
+\unitlength=4pt
+\beginpicture(15,15)(0,0)
+\put(10,8.5){\oval(10,13)}
+\put(7,7.5){\oval(10,13)}
+\put(6.5,5){\oval(13,10)}
+\put(7.5,8){\oval(13,10)}
+\endpicture
+\enddisplay
+"Venn" [|venn|] claimed that there is no way to do the five-set case with
+ellipses, but a five-set construction with ellipses was found by
+"Gr\"unbaum" [|gruenbaum|].
+\source{"Venn" [|venn|].}
+
+\ex:
+Some of the "regions" defined by $n$ lines in the plane are infinite,
+while others are bounded. What's the maximum possible number of bounded
+regions?
+\answer If the $n$th line intersects the previous lines in $k>0$ distinct
+\g This answer assumes that $n>0$.\g
+points, we get $k-1$ new bounded regions (assuming that none of the previous
+lines were mutually parallel) and two new infinite regions. Hence
+the maximum number of bounded regions is
+$(n{-}2)+(n{-}3)+@\cdots=S_{n-2}=(n{-}1)(n{-}2)/2=L_n-2n$.
+\source{"Steiner" [|steiner|]; "Roberts"~[|roberts|].}
+
+\ex:
+Let $H(n)=J(n+1)-J(n)$. Equation \equ(1.|josephus-rec|) tells us that
+$H(2n)=2$, and $H(2n+1)=J(2n+2)-J(2n+1)
+ =\bigl(2\mkern1muJ(n+1)-1\bigr)-\bigl(2\mkern1muJ(n)+1\bigr)=2H(n)-2$, for all $n\ge1$.
+Therefore it seems possible to prove that $H(n)=2$
+for all~$n$, by induction on~$n$. What's wrong here?
+\answer The basis is unproved; and in fact, $H(1)\ne2$.
+
+\subhead Homework exercises
+
+\ex:\exref|lyness|%
+Solve the recurrence
+\begindisplay
+Q_0&=\alpha\,;\qquad Q_1=\beta\,;\cr
+Q_n&=(1+Q_{n-1})/Q_{n-2}\,, \qquad\hbox{for $n>1$.}\cr
+\enddisplay
+Assume that $Q_n\ne 0$ for all $n\ge0$. \Hint: $Q_4=(1+\alpha)/\beta$.
+\answer $Q_2=(1+\beta)/\alpha$; $Q_3=(1+\alpha+\beta)/\alpha\beta$;
+$Q_4=(1+\alpha)/\beta$; $Q_5=\alpha$; $Q_6=\beta$. So the sequence is
+periodic!
+\source{"Gauss" [|gauss-penta|].}
+
+\ex:
+Sometimes it's possible to use "induction" backwards,
+\g\dots\ now that's a horse of a different color.\g
+ proving things from
+$n$ to $n-1$ instead of vice versa! For example, consider the statement
+\begindisplay
+P(n):\quad x_1\ldots x_n \le \left(x_1+\cdots+x_n\over n\right)^n\,,\quad
+ \hbox{if $x_1,\ldots,x_n\ge 0$.}
+\enddisplay
+This is true when $n=2$, since $(x_1+x_2)^2-4x_1x_2=(x_1-x_2)^2\ge0$.
+\smallskip
+\itemitem a
+By setting $x_n=(x_1+\cdots+x_{n-1})/(n-1)$, prove that $P(n)$ implies~$P(n-1)$
+whenever $n>1$.
+\itemitem b
+Show that $P(n)$ and $P(2)$ imply $P(2n)$.
+\itemitem c
+Explain why this implies the truth of $P(n)$ for all $n$.
+\answer (a)~We get $P(n-1)$ from the inequality
+\begindisplay
+x_1\ldots x_{n-1}\left(x_1+\cdots+x_{n-1}\over n -1\right)\le
+ \left(x_1+\cdots+x_{n-1}\over n-1\right)^n\,.
+\enddisplay
+(b)~$x_1\ldots x_n x_{n+1}\ldots x_{2n}\le\bigl(((x_1+\cdots+x_n)/n)
+ ((x_{n+1}+\cdots+x_{2n})/n)\bigr)^n$ by $P(n)$; the product inside is
+ $\le\bigl((x_1+\cdots+x_{2n})/2n\bigr){}^2$ by $P(2)$.
+(c)~For example, $P(5)$ follows from $P(6)$ from $P(3)$ from $P(4)$ from $P(2)$.
+\source{"Cauchy" [|cauchy-cours|, note~2, theorem~17].}
+
+\ex:\exref|cyclic-hanoi|%
+Let $Q_n$ be the minimum number of moves needed to transfer a tower of $n$
+disks from A to~B if all moves must be {\it clockwise\/}\dash---that is,
+ from A to~B, or from B to the other peg,
+ or from the other peg to~A. Also let $R_n$ be the minimum
+number of moves needed to go from B back to~A under this restriction.
+Prove that
+\begindisplay
+Q_n\!\!=\!\!\cases{0,&if $n=0$;\cr
+ \noalign{\vskip1pt} 2R_{n-1}\bex+\bex1,&if $n>0$;\cr}\quad
+R_n\!\!=\!\!\cases{0,&if $n=0$;\cr
+ \noalign{\vskip1pt} Q_n\bex+\bex Q_{n-1}\bex+\bex1,&if $n>0$.\cr}
+\enddisplay
+(You need not solve these recurrences; we'll see how to do that in Chapter~7.)
+\answer First show that $R_n=R_{n-1}+1+Q_{n-1}+1+R_{n-1}$, when $n>0$.
+Incidentally, the methods of Chapter~7 will tell us that
+$Q_n=\bigl((1+\sqrt3\,)^{n+1}-(1-\sqrt3\,)^{n+1}\bigr)\big/\bigl(2\sqrt3@\bigr)-1$.
+\source{"Atkinson" [|atkinson|].}
+
+\ex:\exref|double-hanoi|%
+A Double Tower of Hanoi contains $2n$ disks of $n$ different sizes, two of
+each size. As usual, we're required to move only one disk at a time, without
+putting a larger one over a smaller one.
+\smallskip
+\itemitem a
+How many moves does it take to
+transfer a double tower from one peg to another, if disks of equal size
+are indistinguishable from each other?
+\itemitem b
+What if we are required to reproduce the original top-to-bottom order of
+all the equal-size disks in the final arrangement? [\Hint: This is
+difficult---it's really a ``bonus problem.'']
+\answer (a)~We cannot do better than to move a double $(n-1)$-tower,
+then move (and invert the order of) the two largest disks, then move the
+double $(n-1)$-tower again; hence $A_n=2A_{n-1}+2$ and $A_n=2T_n=2^{n+1}-2$.
+This solution interchanges the two largest disks but returns the other
+$2n-2$ to their original order.\par
+(b) Let $B_n$ be the minimum number of moves. Then $B_1=3$, and it can be
+shown that no strategy does better than $B_n=A_{n-1}+2+A_{n-1}+2+B_{n-1}$
+when $n>1$. Hence $B_n=2^{n+2}-5$, for all $n>0$.
+Curiously this is just~$2A_n-1$, and we also have
+$B_n=A_{n-1}+1+A_{n-1}+1+A_{n-1}+1+A_{n-1}$.
+\source{Inspired by "Wood" [|wood|].}
+
+\ex:
+Let's generalize exercise |double-hanoi|a even further,
+by assuming that there are $n$
+different sizes of disks and exactly $m_k$ disks of size~$k$.
+Determine $A(m_1,\ldots,m_n)$, the minimum number of moves needed to transfer
+a tower when equal-size disks are considered to be indistinguishable.
+\answer If all $m_k>0$, then $A(m_1,\ldots,m_n)=2A(m_1,\ldots,m_{n-1})+m_n$.
+This is an equation of the ``generalized Josephus'' type, with solution
+$(m_1\ldots m_n)_2=2^{n-1}m_1+\cdots+2m_{n-1}+m_n$.\par % to preserve paging
+Incidentally, the
+corresponding generalization of exercise |double-hanoi|b
+appears to satisfy the recurrence
+\begindisplay
+B(m_1,\ldots,m_n)=\cases{A(m_1,\ldots,m_n),&if $m_n=1$;\cr
+\noalign{\vskip2pt}
+  2m_n-1,&if $n=1$;\cr
+\noalign{\vskip2pt}
+  2A(m_1,\ldots,m_{n-1})+2m_n\hskip-1em\cr
+   \quad{}+B(m_1,\ldots,m_{n-1}),&if $n>1$ and $m_n>1$.\cr}
+\enddisplay
+
+\ex:
+What's the maximum number of regions definable by $n$ "zig-zag" lines,
+\begindisplay
+\unitlength=10pt
+\beginpicture(25,4)(-10,0)
+	\put(3,4){\line(-5,-1){13}}
+	\put(0,0){\line(3,4){3}}
+	\put(0,0){\line(5,1){14}}
+\thicklines
+	\put(5,0){\line(-4,1){15}}
+	\put(-1,4){\line(3,-2){6}}
+	\put(-1,4){\line(4,-1){15}}
+	\put(17,0){\makebox(0,0){$ZZ_2=12$}}
+\endpicture
+\enddisplay
+each of which consists of two parallel infinite half-lines joined
+by a straight segment?
+\answer Given $n$ straight lines that define
+$L_n$ regions, we can replace them by extremely narrow "zig-zag"s with
+segments sufficiently long that there are nine intersections
+between each pair of zig-zags.
+This shows that $ZZ_n=ZZ_{n-1}+9n-8$, for all $n>0$; consequently
+$ZZ_n=9S_n-8n+1={9\over2}n^2-{7\over2}n+1$.
+
+\ex:
+How many pieces of "cheese" can you obtain from a single thick piece
+by making five straight slices? (The cheese must stay
+"!planes, cutting"
+in its original position while you do all the cutting,
+\g Good luck keeping the cheese in position.\g
+and each slice must correspond to a plane in~3D.) Find a recurrence
+relation for $P_n$, the maximum number of three-dimensional regions that
+can be defined by $n$ different planes.
+\answer The number of new 3-dimensional
+regions defined by each new cut is the number of 2-dimensional regions
+defined in the new plane by its intersections with the previous planes.
+Hence $P_n=P_{n-1}+L_{n-1}$, and it turns out that $P_5=26$. (Six cuts
+in a cubical piece of cheese can make 27 cubelets, or up to $P_6=42$
+cuts of weirder shapes.)\par
+Incidentally, the solution to this recurrence fits into a nice pattern
+if we express it in terms of binomial coefficients (see Chapter~5):
+\begindisplay \openup 3pt
+X_n&={n\choose 0}+{n\choose 1}\,;\cr
+L_n&={n\choose 0}+{n\choose 1}+{n\choose 2}\,;\cr
+P_n&={n\choose 0}+{n\choose 1}+{n\choose 2}+{n\choose 3}\,.\cr
+\enddisplay
+Here $X_n$ is the
+maximum number of 1-dimensional regions definable
+by $n$ points on a line.
+\g\null\vskip-3\baselineskip I bet I know what happens in four dimensions!\g%
+\source{"Steiner" [|steiner|]; "P\'olya"~[|polya|, chapter~3];
+Brother "Alfred" "!Brousseau" [|bro-alfred|].}
+
+\ex:
+"Josephus" had a friend who was saved by getting into the next-to-last
+position. What is $I(n)$, the number of the penultimate survivor
+when every second person is executed?
+\answer The function $I$ satisfies the same recurrence as~$J$
+when $n>1$, but $I(1)$ is undefined.
+Since $I(2)=2$ and $I(3)=1$, there's no value of $I(1)=\alpha$
+that will allow us to use our general method; the ``end game'' of
+unfolding depends on
+the two leading bits in $n$'s binary representation.\par
+If $n=2^m+2^{m-1}+k$, where $0\le k<2^{m+1}+2^m-(2^m+2^{m-1})=2^m+2^{m-1}$,
+the solution is $I(n)=2k+1$ for all $n>2$. Another way to express this,
+in terms of the representation $n=2^m+l$, is to say that
+\begindisplay
+I(n)=\cases{J(n)+2^{m-1},&if $0\le l<2^{m-1}$;\cr
+\noalign{\vskip2pt}
+ J(n)-2^m,&if $2^{m-1}\le l<2^m$.\cr}
+\enddisplay
+%Thus the two survivors are separated in the original circle by a power of~$2$.
+
+\ex:\exref|rep1|%
+Use the "repertoire method" to solve the general four-parameter recurrence
+\begindisplay
+g(1)	&= \alpha \,; \cr
+g(2n+j)	&= 3g(n) + \gamma n + \beta_j\,,
+			\qquad\hbox{for $j=0,1$\quad and \quad $n \geq 1$.}
+\enddisplay
+\Hint: Try the function $g(n)=n$.
+\answer Let $g(n)=a(n)\alpha+b(n)\beta_0+c(n)\beta_1+d(n)\gamma$.
+We know from \equ(1.|d-to-c|) that $a(n)\alpha+b(n)\beta_0+c(n)\beta_1=
+  (\alpha\, \beta_{b_{m-1}}\, \beta_{b_{m-2}}
+\ldots \beta_{b_1}\, \beta_{b_0})_3$ when
+$n=(1\, b_{m-1} \ldots b_1\, b_0)_2$; this defines $a(n)$, $b(n)$, and~$c(n)$.
+Setting $g(n)=n$ in the recurrence implies that $a(n)+c(n)-d(n)=n$;
+hence we know everything.
+[Setting $g(n)=1$ gives the additional identity $a(n)-2b(n)-2c(n)=1$, which
+can be used to define $b(n)$ in terms of the simpler functions $a(n)$
+and $a(n)+c(n)$.]
+
+\subhead Exam problems
+
+\ex:\exref|hanoi-four|%
+If $W_n$ is the minimum number of moves needed to transfer a tower
+of $n$ disks from one peg to another when there are four pegs instead
+of three, show that
+\begindisplay
+W_{n(n+1)/2}\le 2W_{n(n-1)/2}+T_n\,,\qquad\hbox{for $n>0$.}
+\enddisplay
+(Here $T_n=2^n-1$ is the ordinary three-peg number.)
+Use this to find a closed form $f(n)$ such that $W_{n(n+1)/2}\le f(n)$
+for all $n\ge0$.
+\answer In general we have $W_m\le 2W_{m-k}+T_k$, for $0\le k\le m$. (This
+relation corresponds to transferring the top $m-k$, then using only
+three pegs to move the bottom~$k$, then finishing with the top $m-k$.)
+The stated relation turns out to be based on the unique value of~$k$ that
+minimizes the right-hand side of this general inequality, when $m=n(n+1)/2$.
+(However, we cannot conclude that equality holds; many other
+strategies for transferring the tower are conceivable.)
+If we set $Y_n=(W_{n(n+1)/2}-1)/2^n$, we find that $Y_n\le Y_{n-1}+1$;
+hence $W_{n(n+1)/2}\le2^n(n-1)+1$.
+\source{"Dudeney" [|dudeney|, puzzle 1].}
+
+\ex:\exref|zig|%
+Show that the following set of $n$ bent lines defines $Z_n$ regions,
+where $Z_n$ is defined in \equ(1.|zn-def|):
+The $j$th bent line, for $1\le j\le n$, has its zig at $(n^{2j},0)$
+and goes up through the points $(n^{2j}-n^j,1)$ and $(n^{2j}-n^j-n^{-n},1)$.
+\answer It suffices to show that both of the lines from $(n^{2j},0)$
+intersect both of the lines from $(n^{2k},0)$, and that all these intersection
+points are distinct.\par
+\def\OR{\mathbin{\rm or}}
+A line from $(x_j,0)$ through $(x_j-a_j,1)$ intersects a line
+from $(x_k,0)$ through $(x_k-a_k,1)$ at the point $(x_j-ta_j,t)$ where
+$t=(x_k-x_j)/(a_k-a_j)$. Let $x_j=n^{2j}$ and
+$a_j=n^j+(0\OR n^{-n})$. Then the ratio $t=(n^{2k}-n^{2j})/\allowbreak
+{\bigl(n^k-n^j+(-n^{-n}\OR 0\OR n^{-n})\bigr)}$ lies strictly between
+$n^j+n^k-1$ and $n^j+n^k+1$; hence the $y$~coordinate of the intersection
+point uniquely identifies $j$ and~$k$. Also the four intersections that
+have the same $j$ and~$k$ are distinct.
+
+\ex:
+Is it possible to obtain $Z_n$ regions with $n$ bent lines when the
+angle at each "zig" is $30^\circ$?
+\answer Not when $n>11$. A bent line whose half-lines run at angles
+$\theta$ and $\theta+30^\circ$ from its apex can intersect four times
+with another whose half-lines run at angles $\phi$ and $\phi+30^\circ$
+only if $\vert\theta-\phi\vert>30^\circ$. We can't choose more than~11
+angles this far apart from each other. (Is it possible to choose~11?)
+
+\ex:\exref|rep2|%
+Use the "repertoire method" to solve the
+\g Is this like a\par five-star general recurrence?\g
+ general five-parameter recurrence
+\begindisplay
+h(1)	&= \alpha \,; \cr
+h(2n+j)	&= 4h(n) + \gamma_jn + \beta_j\,,
+			\qquad\hbox{for $j=0,1$\quad and \quad $n \geq 1$.}
+\enddisplay
+\Hint: Try the functions $h(n)=n$ and $h(n)=n^2$.
+\answer Let $h(n)=a(n)\alpha+b(n)\beta_0+c(n)\beta_1+d(n)\gamma_0+e(n)\gamma_1$.
+We know from \equ(1.|d-to-c|) that $a(n)\alpha+b(n)\beta_0+c(n)\beta_1=
+  (\alpha\, \beta_{b_{m-1}}\, \beta_{b_{m-2}}
+\ldots \beta_{b_1}\, \beta_{b_0})_4$ when
+$n=(1\, b_{m-1} \ldots b_1\, b_0)_2$; this defines $a(n)$, $b(n)$, and~$c(n)$.
+Setting $h(n)=n$ in the recurrence implies that $a(n)+c(n)-2d(n)-2e(n)=n$;
+setting $h(n)=n^2$ implies that $a(n)+c(n)+4e(n)=n^2$. Hence
+$d(n)=\bigl(3a(n)+3c(n)-n^2-2n\bigr)/4$; $e(n)=\bigl(n^2-a(n)-c(n)\bigr)/4$.
+
+\ex:\exref|good-bad|%
+Suppose there are $2n$ people in a circle; the first $n$ are ``good guys''
+and the last~$n$ are ``bad guys.\qback'' Show that there is
+always an integer~$m$
+(depending on~$n$) such that, if we go around the circle executing every
+$m$th person, all the bad guys are first to go. (For example, when $n=3$
+we can take $m=5$; when $n=4$ we can take $m=30$.)
+\answer We can let $m$ be the least (or any) common multiple of
+$2n$, $2n-1$, \dots, $n+1$. [A non-rigorous argument suggests that
+a ``random'' value of $m$ will succeed with probability
+\begindisplay\advance\abovedisplayskip-.5\baselineskip%
+             \advance\belowdisplayskip-.5\baselineskip
+{n\over2n}{n-1\over2n-1}\ldots{1\over n+1}=1\bigg/{2n\choose n}
+\sim{\sqrt{\pi n}\over 4^n}\,,
+\enddisplay
+so we might expect to find such an $m$ less than $4^n$.]
+\source{"Ball" [|rouse-ball|] credits B.\thinspace A. "Swinden".}
+
+\subhead Bonus problems
+
+\ex:
+Show that it's possible to construct a "Venn diagram" for all $2^n$
+possible subsets of $n$ given sets, using $n$ convex polygons that
+are congruent to each other and rotated about a common center.
+\answer Take a regular polygon with $2^n$ sides and label the sides with
+\g I once rode a de~Bruijn cycle (when visiting at his home in
+Nuenen, The Netherlands).\g
+the elements of a ``"de Bruijn" "cycle"'' of length $2^n$. (This is a cyclic
+sequence of $0$'s and $1$'s in which all $n$-tuples of adjacent elements
+are different; see [|knuth1|, exercise 2.3.4.2--23] and [|knuth2|,
+exercise 3.2.2--17].) Attach a very thin convex extension to each side
+that's labeled~$1$. The $n$ sets are copies of the resulting polygon,
+rotated by the length of $k$ sides for $k=0$, $1$, \dots,~$n-1$.
+\source{Based on an idea of Peter "Shor".*}
+
+\ex:\exref|josephus-saves-himself|%
+Suppose that Josephus finds himself in a given position~$j$,
+but he has a chance to name the elimination parameter~$q$ such that every
+$q$th person is executed. Can he always save himself?
+\answer Yes. (We need principles of elementary number theory from
+Chapter~4.) Let $L(n)=\lcm(1,2,\ldots,n)$. We can assume that
+$n>2$; hence by "Bertrand's postulate" there is a prime $p$ between
+$n/2$ and $n$. We can also assume that $j>n/2$, since $q'=L(n)+1-q$
+leaves $j'=n+1-j$ if and only if $q$~leaves~$j$.
+Choose $q$ so that $q\=1$ \tmod{L(n)/p} and $q\=j+1-n$ \tmod p. The
+people are now removed in order $1$, $2$, \dots,~$n-p$, $j+1$, $j+2$,
+\dots,~$n$, $n-p+1$, \dots,~$j-1$.
+\source{Bjorn "Poonen".*}
+
+\subhead Research problems
+
+\ex: Find all "recurrence" relations of the form
+\begindisplay
+X_n={1+a_1X_{n-1}+\cdots+a_kX_{n-k}\over
+	b_1X_{n-1}+\cdots+b_kX_{n-k}}
+\enddisplay
+whose solution is "periodic".
+\answer The only known examples are:
+$X_n=1/X_{n-1}$, which has period~2; "Gauss"'s
+recurrence of period~5 in exercise~|lyness|;
+H.~"Todd"'s even more remarkable recurrence $X_n=(1+X_{n-1}+X_{n-2})/X_{n-3}$,
+which has period~8 (see~[|lyness2|]); and recurrences derived from these
+when we replace $X_n$ by a constant times $X_{mn}$.
+We can assume that the first nonzero coefficient in the denominator is unity,
+and that the first nonzero coefficient in the numerator (if any) has
+nonnegative real part. Computer algebra shows easily that there are
+no further solutions of period $\le5$ when $k=2$.
+% NB for period 5, it was much much faster to solve X[3]=X[-2] than X[5]=X[0]!
+ A partial theory
+has been developed by Lyness~[|lyness2|, |lyness3|] and by
+ "Kurshan" and "Gopinath"~[|kurshan|].\par
+An interesting
+example of another type, with period~9 when the starting values are
+real, is the recurrence $X_n=\vert X_{n-1}\vert-X_{n-2}$ discovered by
+Morton "Brown"~[|mort-brown|].
+Nonlinear recurrences having any desired period $\ge5$ can be
+based on continuants [|conway-graham|].
+
+\ex:
+Solve infinitely many cases of the four-peg Tower of Hanoi problem
+by proving that equality holds in the relation of exercise~|hanoi-four|.
+\answer If $T^{(k)}(n)$ denotes the minimum number of moves needed to transfer
+$n$ disks with $k$ auxiliary pegs (hence $T^{(1)}(n)=T_n$
+and $T^{(2)}(n)=W_n$), we have $T^{(k)}({n+1\choose k})\le
+2T^{(k)}({n\choose k})+T^{(k-1)}({n\choose k-1})$. No examples
+$(n,k)$ are known where this inequality fails to be an equality.
+When $k$ is small compared with $n$, the formula $2^{n+1-k}{n-1\choose k-1}$
+gives a convenient (but non-optimum) upper bound on $T^{(k)}({n\choose k})$.
+\source{"Frame", "Stewart", and "Dunkel"~[|amm-hanoi|].}
+
+\ex:
+Generalizing exercise |josephus-saves-himself|,
+let's say that a {\it "Josephus subset"\/} of $\{1,2,\ldots,n\}$
+is a set of $k$ numbers such that, for some~$q$, the people with the
+other $n-k$ numbers will be eliminated first. (These are the $k$~positions
+of the ``good guys'' Josephus wants to save.) It turns out that when
+$n=9$, three of the $2^9$ possible subsets are non-Josephus, namely
+$\{1,2,5,8,9\}$, $\{2,3,4,5,8\}$, and $\{2,5,6,7,8\}$. There are 13
+non-Josephus sets when $n=12$, none for any other values of $n\le12$.
+Are non-Josephus subsets rare for large~$n$?
+\g Yes, and well~done if you find them.\g
+\answer The execution-order permutation can be computed in $O(n\log n)$
+steps for all $m$ and~$n$ [|knuth3|, exercises 5.1.1--2 and 5.1.1--5].
+Bjorn "Poonen" has proved that non-Josephus sets with exactly four ``bad
+guys'' exist whenever $n\=0$ \tmod3 and $n\ge9$; in fact, the number
+of such sets is at least $\epsilon{n\choose4}$ for some $\epsilon>0$.
+He also found by extensive computations that the only other $n<24$ with
+non-Josephus sets is $n=20$, which has 236 such sets with $k=14$
+and two with $k=13$.
+(One of the latter is $\{1,2,3,4,5,6,7,8,11,14,15,16,17\}$;
+the other is its reflection with respect to $21$.) There is a unique
+non-Josephus set with $n=15$ and $k=9$, namely
+$\{3,4,5,6,8,10,11,12,13\}$.
+
+
+

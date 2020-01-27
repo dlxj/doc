@@ -1,0 +1,56 @@
+% Answers to exercises
+% (c) Addison-Wesley, all rights reserved.
+% (Text of the answers appears in the chapters
+% and is copied to files chap1.ans etc.; the chapters should be processed first.
+\input gkpmac
+\refin bib
+\refin chap1
+\refin chap2
+\refin chap3
+\refin chap4
+\refin chap5
+\refin chap6
+\refin chap7
+\refin chap8
+\refin chap9
+
+\font\logos=logosl10
+\pageno=497
+
+\parindent=30pt
+
+\beginchapter A Answers to Exercises
+
+EVERY EXERCISE is answered here (at least briefly), and some of these
+answers go beyond what was asked. Readers will learn best if they make
+a serious attempt to find their own answers {\sc before peeking} at this
+appendix.
+
+The authors will be interested to learn of any solutions (or partial
+solutions) to the
+\g(The first finder of every error in this book will receive a~"reward"
+of \$2.56.)\medskip Does that mean I~have to find every error?\medskip
+(We meant to say ``any error.\qback'')\medskip
+Does that mean only one person gets a reward?\medskip(Hmmm. Try it and see.)\g
+research problems, or of any simpler (or more correct)
+ways to solve the non-research ones.
+
+\newwrite\sources
+\immediate\openout\sources=sources
+\def\source#1{\ifvmode\checkthis\fi
+ \unskip\toks0=\expandafter{\thisansno:#1}%
+ \immediate\write\sources{\the\toks0}\ignorespaces}
+\let\EQ=\eq \def\eq{\error\EQ} % \equ should be used in every answer
+
+\input chap1.ans
+\input chap2.ans
+\input chap3.ans
+\input chap4.ans
+\input chap5.ans
+\input chap6.ans
+\input chap7.ans
+\input chap8.ans
+\input chap9.ans
+%\vfill
+\eject
+\end

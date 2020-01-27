@@ -1,0 +1,130 @@
+% The first four pages of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+\input gkpmac
+\font\secedfont=ccsl10 scaled\magstep3
+\def\onepageout#1{\escapechar=-1 % for writing \tabrefs
+    \shipout\vbox to\totheight{ % here we define one page of output
+    \offinterlineskip % butt the boxes together
+    \vbox to 2pc{ % this part goes on top of the regular pages
+      \vfill} % this completes the \vbox to 2pc
+    #1
+    \vfill
+    \iftitle \global\titlefalse % reset the titlepage switch
+	\ifodd\pageno \hbox to35pc{\hfil\foliofont\folio}
+	\else\hbox{\foliofont\folio}\fi\fi
+    }
+  \advancepageno}
+\parindent=0pt
+\pageno=-1
+
+% page i (halftitle)
+\font\bigtitlefont=ccr10 scaled 3600
+\newdimen\unit \unit=.0555em
+\def\|#1{\kern-#1\unit}
+\def\\{\hskip0pt plus 8pt}
+{\offinterlineskip
+\bigtitlefont
+\setbox0=\hbox to30pc{M\\\|5A\|7\\T\\H\\E\\M\\\|5A\|7\\T\\I\\C\\S}
+\setbox2=\hbox to22.6pc{C\\O\\\|1N\|1\\C\\R\|1\\E\\T\\E}
+\vbox to 10pc{\vfill\box2}
+\kern-\prevdepth
+\kern1pc
+\hrule width 30pc
+\kern1pc
+\box0
+{\vskip12pt\secedfont\noindent \kern.1em Second Edition\par}
+\vfill
+\font\dedfont=ccsl10 scaled\magstep2
+\dedfont Dedicated to Leonhard Euler (1707--1783)\par
+}\eject
+
+% page ii (subtitle)
+\font\subtitlefont=ccslc9 scaled 3600
+\vbox{
+\vbox to 10pc{\vfill
+ \hbox to443pt{\subtitlefont A Foundation for Com\|1puter Sc\|1ience\/}}
+\kern-\prevdepth\kern1pc\hrule}
+\vfill\eject
+
+% page iii (title)
+{\offinterlineskip
+\bigtitlefont
+\setbox0=\hbox to30pc{M\\\|5A\|7\\T\\H\\E\\M\\\|5A\|7\\T\\I\\C\\S}
+\setbox2=\hbox to22.6pc{C\\O\\\|1N\|1\\C\\R\|1\\E\\T\\E}
+\vbox to 10pc{\vfill\box2}
+\kern-\prevdepth
+\kern1pc
+\hrule width 30pc
+\kern1pc
+\box0
+{\vskip12pt\secedfont\noindent \kern.1em Second Edition\par}
+\vfill}
+\font\authfont=ccr10 scaled\magstep3
+\baselineskip=12pt
+{\authfont Ronald L. Graham\par\textsl AT\&T Bell Laboratories\par}
+\vskip24pt
+{\authfont Donald E. Knuth\par\textsl \hskip1ptStanford University\par}
+\vskip24pt
+{\authfont Oren Patashnik\par\textsl \hskip1ptCenter for Communications
+                                               Research\par}
+\vfill\vfill
+\font\manual=manfnt
+\setbox0=\hbox{\manual77}
+\setbox2=\hbox to\wd0{\hss\manual6\hss}
+\leavevmode\raise2.5mm\box2\kern-\wd0\box0
+
+\font\pubfont=ccr10 scaled\magstep1
+ADDISON-WESLEY PUBLISHING COMP\kern-.13emANY\par
+\baselineskip=11pt
+\vskip2pt
+\gmathtext % 9pt roman
+%\def\\{\qquad}
+%\def\\{\kern1.5em$\bullet$\kern1.5em} % no, that looks terrible!
+\def\\{\hskip2.35em}
+Reading, Massachusetts\\Menlo Park, California\\New York\par
+Don Mills, Ontario\\Wokingham, England\\Amsterdam\\%
+%Bonn\\Sydney\par
+ Bonn\par Sydney\\%
+Singapore\\Tokyo\\Madrid\\San Juan\\Milan\\Paris\par
+\eject
+
+% page iv (copyright)
+\baselineskip=11pt
+
+Library of Congress Cataloging-in-Publication Data
+\medskip
+\font\ninett=cmtt9
+{\ninett\baselineskip=9.5pt\obeylines
+Graham, Ronald Lewis, 1935-
+\ \ \ \ Concrete mathematics :\ a foundation for computer science / Ronald
+\ \ L. Graham, Donald E. Knuth, Oren Patashnik.\ {-}{-}\ 2nd ed.
+\ \ xiii,657\ p.  24 cm.
+\ \ Bibliography: p.\ 604
+\ \ Includes index.
+\ \ ISBN 0-201-55802-5
+\ \ 1.\ Mathematics.\ \ 2.\ Computer science--Mathematics.\ \ I.\ Knuth,
+Donald Ervin,\ 1938-\ \ \ \ .\ \ II.\ Patashnik, Oren, 1954-\ \ \ \ .\ \ %
+III.\ Title.
+QA39.2.G733 1994
+510--dc20\hskip27em 93-40325
+\hskip33em CIP
+}
+\vfill
+Reproduced by Addison-Wesley from camera-ready copy supplied by the authors.
+\bigskip
+
+%Eighth printing, with corrections, October 1992\par
+Copyright $\copyright$ 1994, 1989 by Addison-Wesley Publishing Company, Inc.
+\bigskip
+\raggedright
+All rights reserved. No part of this publication may be reproduced, stored
+in a retrieval system, or transmitted, in any form or by any means, electronic,
+mechanical, photocopying, recording, or otherwise, without the prior
+written permission of the publisher. Printed in the United States of America.
+%Published simultaneously in Canada.
+\bigskip
+%1 2 3 4 5 6 7 8 9 10--HA--9897969594
+1 2 3 4 5 6 7 8 9 10--MA--9897969594
+\eject
+\bye
+

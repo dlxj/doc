@@ -1,0 +1,4131 @@
+% Chapter 9 of Concrete Mathematics
+% (c) Addison-Wesley, all rights reserved.
+% This chapter must begin on right-hand page
+% because: (a) it looks good; (b) there's no running head till 3rd page of chapter!
+\input gkpmac
+\refin bib
+\pageno=439
+\refin chap2
+\refin chap3
+\refin chap4
+\refin chap5
+\refin chap6
+\refin chap7
+
+\beginchapter 9 Asymptotics
+
+EXACT ANSWERS are great when we can find them; there's something very
+satisfying about complete knowledge. But there's also a time when
+approximations are in order. If we run into a sum or a recurrence
+whose solution doesn't have a closed form (as far as we can tell), we still
+would like to know something about the answer; we don't have to insist
+on all or nothing. And even if we do have a closed form, our knowledge
+might be imperfect, since we might not know how to compare it with
+other closed forms.
+
+For example, there is (apparently) no closed form for the sum
+\begindisplay
+S_n=\sum_{k=0}^n{3n\choose k}\,.
+\enddisplay
+But it is nice to know that
+\begindisplay
+S_n\sim 2{3n\choose n}\,,\qquad\hbox{as $n\to\infty$};
+\enddisplay
+we say that the sum is ``"asymptotic" to'' $2{3n\choose n}$.
+\g Uh oh \dots\ here comes that A-word.\g
+It's even nicer to have more detailed information, like
+\begindisplay
+S_n={3n\choose n}\biggl(2-{4\over n}+O\Bigl({1\over n^2}\Bigr)\biggr)\,,
+\eqno\eqref|opening-sum|
+\enddisplay
+which gives us a ``relative error of order $1/n^2$.'' But even this isn't enough
+to tell us how big $S_n$ is, compared with other quantities. Which is larger,
+$S_n$ or the Fibonacci number~$F_{4n}$? Answer: We have $S_2=22>F_8=21$ when
+$n=2$; \looseness=-1
+but $F_{4n}$ is eventually larger, because
+$F_{4n}\sim \phi^{4n}\!/\sqrt5$ and $\phi^4\approx6.8541$, while
+\begindisplay
+S_n=\sqrt{3\over\pi n}(6.75)^n\biggl(1-{151\over72n}+O\Bigl({1\over n^2}\Bigr)
+\biggr)\,.
+\eqno\eqref|opening-asympt|
+\enddisplay
+Our goal in this chapter is to learn how to understand and to
+derive results like this without great pain.
+
+The word {\it"asymptotic"\/} stems from a Greek root meaning
+\g Other words like `symptom' and `ptomaine' also come from this root.\g
+``not falling together.\qback'' When ancient Greek mathematicians
+studied conic sections, they considered hyperbolas like the graph of
+$y=\sqrt{1+x^{\mathstrut2}}$,
+\begindisplay
+\unitlength=.2in
+\beginpicture(10,6)(-5,-1)
+\put(-1,-1){\line(1,1)6}
+\put(1,-1){\line(-1,1)6}
+\put(-5,0){\line(1,0){10}}
+\put(0,-1){\line(0,1)6}
+\put(0,0){\squine(0,0.41421355,1,1.0,1.0,1.41421357)}
+\put(0,0){\squine(1,1.38742588,2,1.41421357,1.68816501,2.23606798)}
+\put(0,0){\squine(2,2.4142136,3,2.23606798,2.60655183,3.16227767)}
+\put(0,0){\squine(3,3.43405694,4,3.16227767,3.57406026,4.12310565)}
+\put(0,0){\squine(4,4.4470902,5,4.12310565,4.55684686,5.0990195)}
+\put(0,0){\squine(-0,-0.41421355,-1,1.0,1.0,1.41421357)}
+\put(0,0){\squine(-1,-1.38742588,-2,1.41421357,1.68816501,2.23606798)}
+\put(0,0){\squine(-2,-2.4142136,-3,2.23606798,2.60655183,3.16227767)}
+\put(0,0){\squine(-3,-3.43405694,-4,3.16227767,3.57406026,4.12310565)}
+\put(0,0){\squine(-4,-4.4470902,-5,4.12310565,4.55684686,5.0990195)}
+\endpicture
+\enddisplay
+which has the lines $y=x$ and $y=-x$ as ``asymptotes.\qback'' The
+curve approaches but never quite touches these asymptotes, when
+$x\to\infty$. Nowadays we use ``asymptotic'' in a broader sense to
+mean any approximate value that gets closer and closer to the truth,
+when some parameter approaches a limiting value. For us, asymptotics
+means ``almost falling together.\qback''
+
+Some asymptotic formulas are very difficult to derive, well beyond
+the scope of this book. We will content ourselves with an introduction
+to the subject; we hope to acquire a suitable foundation on which
+further techniques can be built. We will be particularly interested
+in understanding the definitions of `$\sim$' and `$O$' and similar
+symbols, and we'll study basic ways to manipulate asymptotic quantities.
+
+\beginsection 9.1 A Hierarchy
+
+Functions of $n$ that occur in practice usually have different ``asymptotic
+growth ratios''; one of them will approach infinity faster than another.
+We formalize this by saying that
+\begindisplay
+f(n)\prec g(n)\quad\iff\quad\lim_{n\to\infty}{f(n)\over g(n)}\!=\!0\,.
+\eqno\eqref|prec-def|
+\enddisplay
+ This relation is
+transitive: If $f(n)\prec g(n)$ and
+$g(n)\prec h(n)$ then $f(n)\prec h(n)$.
+\g All functions great~and small.\g
+We also may write $g(n)\succ f(n)$ if $f(n)\prec g(n)$.
+This notation was introduced in 1871 by Paul "du Bois-Reymond"~[|du-bois|].
+
+For example, $n\prec n^2$; informally we say that $n$ grows
+more slowly than~$n^2$. In fact,
+\begindisplay
+n^\alpha\prec n^\beta\iff \alpha<\beta\,,
+\eqno\eqref|power-prec|
+\enddisplay
+when $\alpha$ and $\beta$ are arbitrary real numbers.
+
+There are, of course, many functions of $n$ besides powers of~$n$. We can
+use the $\prec$ relation to rank lots of functions into an asymptotic
+pecking order that includes entries like this:
+\begindisplay
+1\prec\log\log n\prec\log n\prec n^\epsilon\prec n^c\prec n^{\log n}
+\prec c^n\prec n^n\prec c^{@ c^n}\,.
+\enddisplay
+(Here $\epsilon$ and $c$ are arbitrary constants with $0<\epsilon<1<c$.)
+
+All functions listed here, except~$1$, go to infinity as $n$ goes
+to infinity. Thus when we try to place a new function in this hierarchy,
+we're not trying to determine {\it whether\/} it becomes infinite but
+rather {\it how fast}.
+
+It helps to cultivate an expansive attitude when we're doing asymptotic
+analysis: We should {\sc "think big"}, when imagining a variable that
+"!thinking big"
+approaches infinity. For example, the hierarchy says that
+$\log n\prec n^{0.0001}$; this might seem wrong if we limit our
+horizons to teeny-tiny numbers like one googol, $n=10^{100}$. For in
+that case, $\log n=100$, while $n^{0.0001}$ is only $10^{0.01}\approx
+1.0233$. But if we go up to a googolplex, $n=10^{10^{100}}$, then
+$\log n=10^{100}$ pales in comparison with
+$n^{0.0001}=10^{10^{96}}$.
+
+Even if $\epsilon$ is extremely small (smaller than, say, $1/10^{10^{100}}$),
+the value of~$\log n$ will be much smaller than the value of~$n^\epsilon$,
+if $n$~is large enough. For
+if we set $n=10^{10^{2k}}$, where $k$~is so large that
+$\epsilon\ge10^{-k}$, we have
+$\log n=10^{2k}$
+but $n^\epsilon\ge 10^{10^k}$. The ratio $(\log n)/n^\epsilon$ therefore
+approaches zero as $n\to\infty$.
+
+The hierarchy shown above deals with functions that go to infinity.
+Often, however, we're interested in functions that go to zero, so it's
+useful to have a similar hierarchy \g A loerarchy?\g
+for those functions. We get one by taking reciprocals, because
+when $f(n)$ and $g(n)$ are never zero we have
+\begindisplay
+f(n)\prec g(n)\iff {1\over g(n)}\prec{1\over f(n)}\,.
+\eqno
+\enddisplay
+Thus, for example, the following functions (except $1$) all go to zero:
+\begindisplay \nulldelimiterspace=0pt
+{1\over c^{@ c^n}}\prec
+{1\over n^n}\prec
+{1\over c^n}\prec
+{1\over n^{\log n}}\prec
+{1\over n^c}\prec
+{1\over n^\epsilon}\prec
+{1\over\log n}\prec
+{1\over\log\log n}\prec
+1\,.
+\enddisplay
+
+Let's look at a few other functions to see where they fit in.
+The number $\pi(n)$ of primes less than or equal to~$n$
+is known to be approximately $n/\!@\ln n$. Since $1/n^\epsilon\prec
+1/\!@\ln n\prec1$, multiplying by~$n$ tells us that
+\begindisplay
+n^{1-\epsilon}\prec\pi(n)\prec n\,.
+\enddisplay
+We can in fact generalize \eq(|power-prec|) by noticing, for example, that
+\begindisplay
+&n^{\alpha_1}(\log n)^{\alpha_2}(\log\log n)^{\alpha_3}\prec
+n^{\beta_1}(\log n)^{\beta_2}(\log\log n)^{\beta_3}\cr
+&\hskip7em\iff
+(\alpha_1,\alpha_2,\alpha_3)<
+(\beta_1,\beta_2,\beta_3)\,.
+\eqno
+\enddisplay
+Here `$(\alpha_1,\alpha_2,\alpha_3)<(\beta_1,\beta_2,\beta_3)$' means
+"lexicographic order" (dictionary order); in other words, either
+$\alpha_1<\beta_1$, or
+$\alpha_1=\beta_1$ and $\alpha_2<\beta_2$, or
+$\alpha_1=\beta_1$ and $\alpha_2=\beta_2$ and
+$\alpha_3<\beta_3$.
+
+How about the function $e^{\sqrt{\,\log n}}@$; where does it
+live in the hierarchy? We can answer questions like this by using the rule
+\begindisplay
+e^{f(n)}\prec e^{g(n)}\quad\iff\quad\lim_{n\to\infty}\bigl(f(n)-g(n)\bigr)=-\infty\,,
+\eqno
+\enddisplay
+which follows in two steps from definition \eq(|prec-def|) by
+taking logarithms. Consequently
+\begindisplay
+1\prec f(n)\prec g(n)\quad\implies\quad e^{\vert f(n)\vert}\prec
+ e^{\vert g(n)\vert}\,.
+\enddisplay
+And since $1\prec\log\log n\prec\sqrt{\mathstrut\log n}\prec\epsilon\log n$,
+we have $\log n\prec e^{\sqrt{\,\log n}}\prec n^\epsilon$.
+
+When two functions $f(n)$ and $g(n)$ have the
+{\it same\/} rate of growth, we write `$f(n)\asymp g(n)$'.
+ The official definition is:
+\begindisplay
+f(n)\asymp g(n)&\iff\bigl\vert f(n)\bigr\vert\le C\bigl\vert g(n)\bigr\vert\And
+	\bigl\vert g(n)\bigr\vert\le C\bigl\vert f(n)\bigr\vert\,,\cr
+&\hskip4em\hbox{for some $C$ and for all sufficiently large $n$}.
+\eqno\eqref|hardy-asymp-def|\cr
+\enddisplay
+This holds, for example, if $f(n)$ is constant and $g(n)=\cos n+\arctan n$.
+We will
+prove shortly that it holds whenever $f(n)$ and $g(n)$ are polynomials
+of the same degree. There's also a stronger relation, defined by the rule
+\begindisplay
+f(n)\sim g(n)\iff \lim_{n\to\infty}{f(n)\over g(n)}=1\,.
+\eqno\eqref|asymp-def|
+\enddisplay
+In this case we say that ``$f(n)$ is asymptotic to $g(n)$.\qback''
+"!$\asymp$, $\sim$, $\prec$, and $\succ$"
+
+\def\Lfr{{\frak L}}
+G.\thinspace H. "Hardy" [|hardy-tract|] introduced an
+ interesting and important concept called
+the class of {\it"logarithmico-exponential functions"}, defined recursively as
+the smallest family $\Lfr$ of functions satisfying the following properties:
+\smallskip
+\item{$\bullet$}
+The constant function $f(n)=\alpha$ is in $\Lfr$, for all real $\alpha$.\par
+\item{$\bullet$}
+The identity function $f(n)=n$ is in $\Lfr$.\par
+\item{$\bullet$}
+If $f(n)$ and $g(n)$ are in $\Lfr$, so is $f(n)-g(n)$.\par
+\item{$\bullet$}
+If $f(n)$ is in $\Lfr$, so is $e^{f(n)}$.\par
+\item{$\bullet$}
+If $f(n)$ is in $\Lfr$ and is ``eventually positive,\qback''
+then $\ln f(n)$ is in~$\Lfr$.
+\smallskip\noindent
+A function $f(n)$ is called ``"eventually positive"'' if there is an integer
+$n_0$ such that $f(n)>0$ whenever $n\ge n_0$.
+
+We can use these rules to show, for example, that $f(n)+g(n)$ is in $\Lfr$
+whenever $f(n)$ and $g(n)$ are, because $f(n)+g(n)=f(n)-\bigl(0-g(n)\bigr)$.
+If $f(n)$ and $g(n)$ are eventually positive members of~$\Lfr$, their product
+$f(n)@g(n)=e^{\,\ln f(n)+\ln g(n)}$ and quotient $f(n)/g(n)=
+e^{\,\ln f(n)-\ln g(n)}$ are in~$\Lfr$; so are functions like
+$\sqrt{f(n)}=e^{\half\ln f(n)}$,
+etc. Hardy proved that every logarithmico-exponential
+function is eventually positive, eventually
+negative, or identically zero. Therefore the product and quotient of
+any two $\Lfr$-functions is in~$\Lfr$, except that we cannot divide
+by a function that's identically zero.
+
+Hardy's main theorem about logarithmico-exponential functions is that they
+form an asymptotic hierarchy: {If\/ $f(n)$ and\/ $g(n)$ are any functions
+in\/~$\Lfr$, then either\/ $f(n)\prec g(n)$, or\/ $f(n)\succ g(n)$, or\/
+$f(n)\asymp g(n)$. In the last case there is, in fact, a constant\/~$\alpha$
+such that}
+\begindisplay
+f(n)\sim\alpha\,g(n)\,.
+\enddisplay
+The proof of Hardy's theorem is beyond the scope of this book; but it's
+nice to know that the theorem exists, because almost every function we
+ever need to deal with is in~$\Lfr$. In practice, we can generally fit
+a given function into a given hierarchy without great difficulty.
+
+\beginsection 9.2 O Notation
+
+A wonderful notational convention for asymptotic analysis was introduced
+by Paul "Bachmann" in 1894 and popularized in
+ subsequent years by Edmund "Landau" and others.
+\g\noindent\llap{``}\dots\ wir durch das Zeichen\/ $O(n)$ eine Gr\"o\ss e ausdr\"ucken,
+deren "O"rdnung in Bezug auf\/ $n$ die Ordnung von\/~$n$ nicht
+\"uberschreitet; ob sie wirklich Glieder von der Ordnung\/~$n$
+in sich enth\"alt, bleibt bei dem bisherigen Schlu\ss verfahren
+dahingestellt.''\par\hfill\kern-4pt\dash---P. Bachmann [|bachmann|]\g
+We have seen it in formulas like
+\begindisplay
+H_n=\ln n+\gamma+O(1/n)\,,
+\eqno
+\enddisplay
+which tells us that the $n$th harmonic number is equal to the natural
+logarithm of~$n$ plus Euler's constant, plus a quantity that is
+``"Big Oh" of\/ $1$\kern-1pt~over~$n$.\qback'' This last quantity isn't specified
+exactly; but whatever it is, the "notation" claims that its absolute
+value is no more than a constant times~$1/n$.
+
+The beauty of $O$-notation is that it suppresses unimportant detail
+and lets us concentrate on salient features: The quantity $O(1/n)$ is
+negligibly small, if constant multiples of~$1/n$ are unimportant.
+
+Furthermore we get to use $O$ right in the middle of a formula. If we
+want to express \thiseq\ in terms of the notations in Section~9.1,
+we must transpose `$\ln n+\gamma$' to the left side and specify a weaker
+result like
+\begindisplay
+H_n-\ln n-\gamma\prec{\log\log n\over n}
+\enddisplay
+or a stronger result like
+\begindisplay
+H_n-\ln n-\gamma\asymp{1\over n}\,.
+\enddisplay
+The Big Oh notation allows us to specify an appropriate amount of
+detail in~place, without transposition.
+
+The idea of imprecisely specified quantities can be made clearer if
+we consider some additional examples. We occasionally use the notation
+`$@\pm1@$'
+ to stand for something that is either $+1$ or $-1$; we don't
+know (or perhaps we don't care) which it is, yet we can manipulate it
+in formulas.
+
+N.\thinspace G. "de Bruijn"
+ begins his book \kern-1pt{\sl Asymptotic Methods in Analysis\/}~[|de-bruijn|]
+by considering a "Big~Ell" notation that helps us understand Big~Oh.
+If we write $L(5)$ for a number whose absolute value is less than~$5$
+(but we don't say what the number is), then we can perform certain
+calculations without knowing the full truth. For example, we can
+deduce formulas such as $1+L(5)=L(6)$; $L(2)+L(3)=L(5)$; $L(2)L(3)=L(6)$;
+$e^{L(5)}=L(e^5)$; and so on. But we cannot conclude that $L(5)-L(3)=L(2)$,
+since the left side might be $4-0$.
+In fact, the most we can say is $L(5)-L(3)=L(8)$.
+
+Bachmann's
+$O$-notation is similar to $L$-notation but it's even less precise:
+$O(\alpha)$ stands for a number whose absolute value is at most a constant
+times~$\vert \alpha\vert$. We don't say what the number is and we don't
+even say what the constant is. Of course the notion of a ``constant''
+is nonsense
+\g It's not nonsense, but it is pointless.\g
+if there is nothing variable in the picture, so we use $O$-notation only
+in contexts when there's at least one quantity (say~$n$) whose value is varying.
+The formula
+\begindisplay
+f(n)=O\bigl(g(n)\bigr)\qquad\hbox{for all $n$}
+\eqno\eqref|o-examp|
+\enddisplay
+means in this context that there is a constant $C$ such that
+\begindisplay
+\bigl\vert f(n)\bigr\vert\le C\bigl\vert g(n)\bigr\vert\qquad\hbox{for all $n$};
+\eqno\eqref|o-def|
+\enddisplay
+and when $O\bigl(g(n)\bigr)$ stands in the middle of a formula it
+represents a function $f(n)$ that satisfies~\thiseq. The values of~$f(n)$
+are unknown, but we do know that they aren't too large. Similarly,
+de~Bruijn's `$L(n)$' represents an unspecified function~$f(n)$ whose
+values satisfy $\bigl\vert f(n)\bigr\vert<\vert n@\vert$. The main difference between
+$L$ and~$O$ is that $O$-notation involves an unspecified constant~$C$;
+each appearance of~$O$ might involve a different~$C$, but each~$C$ is
+\g I've got a little list\dash---I've got a little list,\par
+Of annoying terms and details that might well be under ground,\par
+And that never would be missed\dash---that never would be missed.
+"!Gilbert"\g % Mikado
+independent of~$n$.
+
+For example, we know that the sum of the first $n$ squares is
+"!sum of consecutive squares"
+\begindisplay
+\Sq_n=\textstyle
+{1\over3}n(n+\half)(n+1)={1\over3}n^3+\half n^2+{1\over6}n\,.
+\enddisplay
+We can write
+\begindisplay
+\Sq_n=O(n^3)
+\enddisplay
+because
+$\vert{1\over3}n^3+\half n^2+{1\over6}n@\vert
+\le{1\over3}\vert n@\vert^3+\half\vert n@\vert^2+{1\over6}\vert n@\vert
+\le{1\over3}\vert n^3\vert+\half\vert n^3\vert+{1\over6}\vert n^3\vert
+=\vert n^3\vert$ for all integers~$n$.
+Similarly, we have the more specific formula
+\begindisplay
+\Sq_n=\textstyle{1\over3}n^3+O(n^2)\,;
+\enddisplay
+we can also be sloppy and throw away information, saying that
+\begindisplay
+\Sq_n=O(n^{10})\,.
+\enddisplay
+Nothing in the definition of $O$ requires us to give a best possible bound.
+
+But wait a minute. What if the variable $n$ isn't an integer? What if we
+have a formula like $S(x)=
+{1\over3}x^3+\half x^2+{1\over6}x$, where $x$~is a real number?
+Then we cannot say that $S(x)=O(x^3)$, because the ratio
+$S(x)/x^3={1\over3}+\half x^{-1}+{1\over6}x^{-2}$ becomes unbounded when
+$x\to0$. And we cannot say that $S(x)=O(x)$, because the ratio
+$S(x)/x={1\over3}x^2+\half x+{1\over6}$ becomes unbounded when $x\to\infty$.
+So we apparently can't use $O$-notation with~$S(x)$.
+
+The answer to this dilemma is that variables used with $O$ are generally
+subject to side conditions. For example, if we stipulate that $\vert x\vert
+\ge1$, or that $x\ge\epsilon$ where $\epsilon$ is any positive constant,
+or that $x$ is an integer,
+then we can write $S(x)=O(x^3)$. If we stipulate that $\vert x\vert\le1$,
+or that $\vert x\vert\le c$ where $c$ is any positive constant, then we
+can write $S(x)=O(x)$. The $O$-notation is governed by its environment,
+by constraints on the variables involved.
+
+These constraints are often specified by a limiting relation.
+For example, we might say that
+\begindisplay
+f(n)=O\bigl(g(n)\bigr)\qquad\hbox{as $n\to\infty$}.
+\eqno
+\enddisplay
+This means that the $O$-condition is supposed to hold when $n$ is ``near''~%
+$\infty$; we don't care what happens unless $n$ is quite large. Moreover,
+we don't even specify exactly what ``near'' means; in such cases each
+appearance of~$O$ implicitly asserts the existence of {\it two\/}
+constants $C$ and~$n_0$, such that
+\begindisplay
+\bigl\vert f(n)\bigr\vert\le C\bigl\vert g(n)\bigr\vert
+\qquad\hbox{whenever $n\ge n_0$}.
+\eqno\eqref|o-def-limit|
+\enddisplay
+The values of $C$ and $n_0$ might be different for each $O$, but they do
+not depend on~$n$. Similarly, the notation
+\g You are the fairest\par\quad of your sex,\par
+Let me be your\par\quad hero;\par
+I love you as\par
+\quad one over $x$,\par
+As $x$ approaches\par\quad zero.\par
+Positively.\g
+\begindisplay
+f(x)=O\bigl(g(x)\bigr)\qquad\hbox{as $x\to0$}
+\enddisplay
+means that there exist two constants $C$ and $\epsilon$ such that
+\begindisplay
+\bigl\vert f(x)\bigr\vert\le C\bigl\vert g(x)\bigr\vert
+ \qquad\hbox{whenever $\vert x\vert\le \epsilon$}.
+\eqno\eqref|o-def-limit0|
+\enddisplay
+The limiting value does not have to be $\infty$ or $0@$; we can write
+\begindisplay
+\ln z=z-1+O\bigl((z-1)^2\bigr)\qquad\hbox{as $z\to1$},
+\enddisplay
+because it can be proved that $\vert\ln z-z+1\vert\le\vert z-1\vert^2$
+when $\vert z-1\vert\le\half$.
+
+Our definition of $O$ has gradually developed, over a few pages,
+ from something that seemed
+pretty obvious to something that seems rather complex; we now have
+$O$ representing an undefined function and either one or two unspecified
+constants, depending on the environment. This may seem complicated enough
+for any reasonable notation, but it's still not the whole story! Another
+subtle consideration lurks in the background. Namely, we need to
+realize that it's fine to write
+\begindisplay
+\textstyle{1\over3}n^3+\half n^2+{1\over6}n=O(n^3)\,,
+\enddisplay
+but we should {\it never\/} write this equality with the sides reversed.
+Otherwise we could deduce ridiculous things like $n=n^2$ from the
+identities $n=O(n^2)$ and $n^2=O(n^2)$. When we work with $O$-notation
+and any other formulas that involve imprecisely specified quantities,
+\g\noindent\llap{``}And to auoide the tediouse repetition of these woordes: is equalle to:
+I~will sette as I doe often in woorke use, a paire of paralleles,
+or Gemowe lines of one lengthe, thus: $=\joinrel=\joinrel=\joinrel=\,$,
+bicause noe~.2.\ thynges, can be moare equalle.''\par
+\hfill\dash---R. "Recorde" [|recorde-wit|]\g
+we are dealing with {\it"one-way equalities"}. The right side of an
+"!equality, one-way"
+equation does not give more information than the left side, and it may
+give less; the right is a ``crudification'' of the left.
+
+From a strictly formal point of view, the notation
+$O\bigl(g(n)\bigr)$ does not stand for a single function~$f(n)$, but
+for the {\it set\/} of all functions~$f(n)$ such that
+$\bigl\vert f(n)\bigr\vert\le C\bigl\vert g(n)\bigr\vert$ for some constant~$C$.
+An ordinary formula~$g(n)$ that doesn't involve $O$-notation stands for the
+set containing a single function $f(n)=g(n)$. If $S$ and~$T$ are sets
+of functions of~$n$, the notation $S+T$ stands for the set of all
+functions of the form $f(n)+g(n)$, where $f(n)\in S$ and $g(n)\in T$;
+other notations like $S-T$, $ST$, $S/T$, $\sqrt S$, $e^S$, $\ln S$
+are defined similarly. Then an ``equation'' between such sets of functions
+is, strictly speaking, a {\it"set inclusion"\/}; the `$=$' sign really
+means `$\subseteq$'. These formal definitions put all of our
+$O$~manipulations on firm logical ground.
+
+For example, the ``equation''
+\begindisplay
+\textstyle {1\over3}n^3+O(n^2)=O(n^3)
+\enddisplay
+means that $S_1\subseteq S_2$, where $S_1$ is the set of all functions
+of the form ${1\over3}n^3+f_1(n)$ such that there exists a constant~$C_1$
+with $\bigl\vert f_1(n)\bigr\vert\le C_1\vert n^2\vert$, and where
+$S_2$ is the set of all functions
+$f_2(n)$ such that there exists a constant~$C_2$
+with $\bigl\vert f_2(n)\bigr\vert\le C_2\vert n^3\vert$.
+We can formally prove this ``equation'' by taking an arbitrary element of
+the left-hand side and showing that it belongs to the right-hand side:
+Given
+${1\over3}n^3+f_1(n)$ such that $\bigl\vert f_1(n)\bigr\vert\le C_1\vert n^2\vert$,
+we must prove that there's a
+constant~$C_2$
+such that $\vert{1\over3}n^3+ f_1(n)\vert\le C_2\vert n^3\vert$.
+The constant $C_2={1\over3}+C_1$ does the trick, since
+$n^2\le\vert n^3\vert$ for all integers~$n$.
+
+If `$=$' really means `$\subseteq$',
+why don't we use `$\subseteq$'
+instead of abusing the equals sign?
+"!notation"
+There are four reasons.
+
+First, tradition.
+Number theorists started using the equals~sign
+with $O$-notation and the practice stuck.
+It's sufficiently well established by now that
+we cannot hope to get the mathematical community to change.
+
+Second, tradition.
+Computer people are quite used to seeing equals~signs abused\dash---%
+for years "FORTRAN" and "BASIC" programmers have been writing
+assignment statements like `$N = N+1$'.
+One more abuse isn't much.
+
+Third, tradition.
+We often read `$=$' as the word `is'.
+For instance we verbalize the formula $H_n = O(\log n)$ by saying
+``$H$~sub~$n$ is Big~Oh of log~$n$.\qback''
+And in English, this~`is' is one-way.
+We say that a bird is an animal,
+but we don't say that an animal is a bird;
+``animal'' is a "crudification" of ``bird.\qback''
+
+Fourth, for our purposes it's natural.
+\g \noindent\llap{``}It is obvious that the sign\/~$=$ is really the wrong sign
+for such relations, because it suggests symmetry, and there is
+no such symmetry. \dots\ Once this warning has been given, there is,
+however, not much harm in using the sign\/~$=$, and we shall maintain~it,
+for no other reason than that it is customary.''\par
+\hfill\kern-4pt\dash---N.\thinspace G.\thinspace de\thinspace
+  Bruijn\thinspace [|de-bruijn|]"!de Bruijn"\g
+If we limited our use of $O$-notation to situations where
+it occupies the whole right side of a formula\dash---as in
+the harmonic number approximation $H_n = O(\log n)$,
+or as in the description of a sorting algorithm's
+running time $T(n) = O (n \log n)$\dash---%
+it wouldn't matter whether we used `$=$'
+or something else.
+But when we use $O$-notation in the middle of an expression,
+as we usually do in asymptotic calculations,
+our intuition is well satisfied if we think of
+the equals~sign as an equality, and if we
+think of something like $O(1/n)$ as a very small quantity.
+
+So we'll continue to use `$=$',
+and we'll continue to regard~$O\bigl(g(n)\bigr)$ as
+an incompletely specified function,
+knowing that we can always fall back on the
+set-theoretic definition if we must.
+
+But we ought to mention one more technicality while we're picking nits
+about definitions: If there are several variables in the environment,
+$O$-notation formally represents sets of functions of two or more
+variables, not just one. The domain of each function is every variable
+that is currently ``free'' to vary.
+
+ This concept can be a bit subtle,
+because a variable might be defined only in parts of an expression, when
+it's controlled by a $\sum$ or something similar. For example, let's
+look closely at the equation
+\begindisplay
+\sum_{k=0}^n\,\bigl(k^2+O(k)\bigr)={\textstyle{1\over3}}n^3+O(n^2)\,,
+\qquad\hbox{integer $n\ge0$}.
+\eqno
+\enddisplay
+The expression $k^2+O(k)$ on the left stands for the set of all two-variable
+functions of the form $k^2+f(k,n)$ such that there exists a constant~$C$
+with $\bigl\vert f(k,n)\bigr\vert\le Ck$ for $0\le k\le n$. The sum of
+this set of functions, for $0\le k\le n$, is the set of all functions~$g(n)$
+of the form
+\begindisplay
+\sum_{k=0}^n\bigl(k^2{+}f(k,n)\bigr)=\textstyle
+{1\over3}n^3+\half n^2+{1\over6}n+f(0,n)+f(1,n)+\cdots+f(n,n)\,,
+\enddisplay
+where $f@$ has the stated property. Since we have
+\begindisplay
+&\textstyle
+\bigl\vert\half n^2+{1\over6}n+f(0,n)+f(1,n)+\cdots+f(n,n)\bigr\vert\cr
+&\qquad\le\textstyle\half n^2+{1\over6}n^2+C\cdt0+C\cdt1+\cdots+C\cdt n\cr
+&\qquad<n^2+C(n^2+n)/2<(C+1)n^2\,,
+\enddisplay
+all such functions $g(n)$ belong to the right-hand side of~\thiseq;
+\g(Now is a good time to do warmup exercises
+|o-fallacy| and~|o-vanishing|.)\g
+therefore \thiseq\ is true.
+
+People sometimes abuse $O$-notation by assuming that it gives an exact
+order of growth; they use it as if it specifies a lower bound as well as
+an upper bound. For example, an algorithm to sort $n$~numbers might be
+called inefficient ``because its running time is~$O(n^2)$.\qback''
+But a running time of~$O(n^2)$ does not imply that the running time is
+not also~$O(n)$. There's another notation, "Big~Omega", for
+"!$\Omega$"
+lower bounds:
+\begindisplay
+f(n)=\Omega\bigl(g(n)\bigr)\iff
+\bigl\vert f(n)\bigr\vert\ge C\bigl\vert g(n)\bigr\vert
+\qquad\hbox{for some $C>0$.}
+\eqno
+\enddisplay
+We have $f(n)=\Omega\bigl(g(n)\bigr)$ if and only if
+$g(n)=O\bigl(f(n)\bigr)$. A sorting algorithm whose running time is
+$\Omega(n^2)$ is inefficient compared with one whose running time is
+$O(n\log n)$, if $n$ is large enough.
+
+Finally there's "Big Theta", which specifies an
+"!$\Theta$"
+\g Since\/ $\Omega$ and\/ $\Theta$ are uppercase Greek letters,
+the\/ $O$ in\/ $O$\kern-1pt-notation must be a capital Greek Omicron.\par
+After all, Greeks invented asymptotics.\g
+exact order of growth:
+\begindisplay
+f(n)=\Theta\bigl(g(n)\bigr)\iff
+\tworestrictions{\displaymath f(n)=O\bigl(g(n)\bigr)$}%
+ {and\quad\displaymath f(n)=\Omega\bigl(g(n)\bigr)\,.$}
+\eqno
+\enddisplay
+We have $f(n)=\Theta\bigl(g(n)\bigr)$ if and only if $f(n)\asymp g(n)$
+in the notation we saw previously, equation \eq(|hardy-asymp-def|).
+
+Edmund "Landau" [|landau-primes|] invented a ``"little oh"'' notation,
+\begindisplay \openup-3pt
+&f(n)=o\bigl(g(n)\bigr)\cr
+&\qquad\iff
+\bigl\vert f(n)\bigr\vert\le \epsilon\bigl\vert g(n)\bigr\vert
+\qquad\tworestrictions{for all $n\ge n_0(\epsilon)$ and}%
+ {for all constants $\epsilon>0$.}
+\eqno\eqref|little-o-def|
+\enddisplay
+This is essentially the relation $f(n)\prec g(n)$ of \eq(|prec-def|).
+We also have
+\begindisplay
+f(n)\sim g(n)\iff f(n)=g(n)+o\bigl(g(n)\bigr)\,.
+\eqno
+\enddisplay
+
+Many authors use `$o$' in asymptotic formulas, but a more explicit
+`$O$' expression is almost always
+preferable. For example,
+the average running time of a computer method called ``"bubblesort"''
+"!sorting" "!$o$, considered harmful"
+depends on the asymptotic value of the sum $P(n)=\sum_{k=0}^n k^{n-k\,}k!/n!$.
+Elementary asymptotic methods suffice to
+prove the formula $P(n)\sim\sqrt{\pi n/2}$, which means that the ratio
+$P(n)/\mskip-2mu\sqrt{\pi n/2}$ approaches~$1$ as $n\to\infty$. However, 
+the true behavior of $P(n)$ is best understood by considering
+the {\it difference}, $P(n)-\sqrt{\pi n/2}$, not the ratio:
+\begindisplay \def\preamble{\bigstrut$\hfil##$\enspace%
+ &&\vrule##&\enspace\hfil$##$\hfil\enspace}%
+	\offinterlineskip
+n\,&&P(n)/\mskip-2mu\sqrt{\pi n/2}&&P(n)-\sqrt{\pi n/2}\cr
+\omit&height2pt&&\cr
+\noalign{\hrule}
+\omit&height2pt&&\cr
+1&&0.798&&-0.253\cr
+%5&&0.853&&-0.411\cr
+10&&0.878&&-0.484\cr
+%15&&0.893&&-0.518\cr
+20&&0.904&&-0.538\cr
+30&&0.918&&-0.561\cr
+40&&0.927&&-0.575\cr
+50&&0.934&&-0.585\cr
+\enddisplay
+The numerical evidence in the middle column is not very compelling;
+it certainly is far from a dramatic proof that $P(n)/\mskip-2mu
+\sqrt{\pi n/2}$ approaches~$1$ rapidly, if at all. But the right-hand column
+shows that $P(n)$ is
+very close indeed to $\displaystyle\sqrt{\pi n/2}$.
+Thus we can characterize the behavior
+of~$P(n)$ much better if we can derive formulas of the form
+\begindisplay
+P(n)=\sqrt{\pi n/2}+O(1)\,,
+\enddisplay
+or even sharper estimates like
+\begindisplay
+P(n)=\sqrt{\pi n/2}-\textstyle{2\over3}+O(1/\sqrt n\,)\,.
+\enddisplay
+Stronger methods
+of asymptotic analysis are needed to prove $O$-results,
+but the additional effort required to learn these stronger methods
+is amply compensated by the improved understanding that comes with~$O$-bounds.
+
+Moreover, many sorting algorithms have running times of the form
+\begindisplay
+T(n)=A\,n\lg n\,+\,B\,n\, +\, O(\log n)
+\enddisplay
+for some constants $A$ and $B$. Analyses that stop at $T(n)\sim A\,n\lg n$
+don't tell the whole story, and it turns out to be a bad strategy to
+choose a sorting algorithm based just on its $A$ value. Algorithms with
+a good~`$A$' often achieve this at the expense of a bad~`$B$'. Since $n\lg n$
+grows only slightly faster than~$n$, the algorithm that's faster asymptotically
+(the one with a slightly smaller~$A$~value) might be faster only for
+values of~$n$ that never actually arise in practice. Thus, asymptotic
+methods that allow us to go past the first term and evaluate~$B$
+are necessary if we are to make the right choice of method.
+
+Before we go on to study $O$, let's talk about one more small aspect
+of mathematical style. Three different notations for
+logarithms have been used in this chapter: "lg", "ln", and~"log". We often
+\g Also lD, the Dura\-flame logarithm.\g
+use `lg' in connection with computer methods, because binary
+logarithms are often relevant in such cases; and we often use `ln'
+in purely mathematical calculations, since the formulas for natural
+logarithms are nice and simple. But what about `log'? Isn't this the ``common''
+base-10 logarithm that students learn in high school\dash---the ``common''
+"!common logarithm"
+\tabref|nn:log|logarithm that turns out
+to be very uncommon in mathematics and computer science? Yes; and many
+mathematicians confuse the issue by using `log'
+to stand for natural logarithms or binary logarithms.
+There is no universal agreement here.
+But we can usually breathe a sigh of relief when a logarithm appears inside
+$O$-notation, because $O$ ignores multiplicative constants. 
+There is no difference between $O(\lg n)$, $O(\ln n)$, and $O(\log n)$, as
+$n\to\infty$;
+similarly, there is no difference
+between $O(\lg\lg n)$, $O(\ln\ln n)$, and $O(\log\log n)$.
+\g Notice that\par$\log\log\log n$\par is undefined when\/ $n\le10$.\g
+We get to choose whichever we please; and the one with
+`log' seems friendlier because it is more pronounceable. 
+Therefore we generally use `log' in all contexts where it improves 
+readability without introducing ambiguity.
+
+\beginsection 9.3 O Manipulation
+
+Like any mathematical formalism, the $O$-notation has rules of manipulation
+that free us from the grungy details of its definition. Once
+we prove that the rules are correct, using the definition, we can henceforth
+work on a higher plane and forget about actually verifying that one
+set of functions is contained in another. We don't even need to calculate the
+\g The secret of being a bore is to tell everything.\par
+\hfill\dash---"Voltaire"\g
+constants $C$ that are implied by each~$O$, as long as we follow rules
+that guarantee the existence of such constants.
+
+For example, we can prove once and for all that
+\begindisplay \openup2pt
+&n^m=O(n^{m'}),\qquad\hbox{when $m\le m'$};\eqno\cr
+&O\bigl(f(n)\bigr)+O\bigl(g(n)\bigr)=
+ O\bigl(\vert f(n)\vert+\vert g(n)\vert\bigr)\,.
+\eqno\eqref|o-f+g|
+\enddisplay
+Then we can say immediately that ${1\over3}n^3+{1\over2}n^2+{1\over6}n
+=O(n^3)+O(n^3)+O(n^3)=O(n^3)$, without the laborious calculations
+in the previous section.
+
+Here are some more rules that follow easily from the definition:
+\begindisplay
+f(n)&=O\bigl(f(n)\bigr)\,;\eqno\eqref|o-identity|\cr
+c\cdot O\bigl(f(n)\bigr)&=O\bigl(f(n)\bigr)\,,
+ \qquad\hbox{if $c$ is constant};\eqno\cr
+O\bigl(O\bigl(f(n)\bigr)\bigr)&=O\bigl(f(n)\bigr)\,;\eqno\cr
+O\bigl(f(n)\bigr)@O\bigl(g(n)\bigr)&=O\bigl(f(n)@g(n)\bigr)\,;
+ \eqno\eqref|o-prod-in|\cr
+O\bigl(f(n)\,g(n)\bigr)&=f(n)@O\bigl(g(n)\bigr)\,.
+ \eqno\eqref|o-prod-out|\cr
+\enddisplay
+Exercise |prove-o-f+g| proves \eq(|o-f+g|), and the proofs of the
+others are similar. We can always replace something of the form on the
+left by what's on the right, regardless of the side conditions on the
+variable~$n$.
+
+Equations \eq(|o-prod-out|) and \eq(|o-identity|) allow us to derive
+\g\vskip-20pt
+(Note: The formula\/ $O(f(n))^2$ does not denote the set of all functions\/
+$g(n)^2$ where\/ $g(n)$ is in $O(f(n))$; such functions $g(n)^2$ cannot
+be negative, but the set\/ $O(f(n))^2$ includes negative functions. In general,
+when $S$~is a set, the notation\/ $S^2$ stands for the set of all products\/
+$s_1s_2$ with $s_1$~and\/~$s_2$ in~$S$, not for the set of all
+squares\/ $s^2$ with $s\in S$.)\g
+the identity $O\bigl(f(n)^2\bigr)=O\bigl(f(n)\bigr){}^2$. This sometimes
+helps avoid parentheses, since we can write
+\begindisplay
+O(\log n)^2\qquad\hbox{instead of}\qquad O\bigl((\log n)^2\bigr)\,.
+\enddisplay
+Both of these are preferable to `$O(\log^2 n)$', which is ambiguous
+because some authors use it to mean `$O(\log\log n)$'.
+
+Can we also write
+\begindisplay
+O(\log n)^{-1}\qquad\hbox{instead of}\qquad O\bigl((\log n)^{-1}\bigr)\,?
+\enddisplay
+No! This is an abuse of notation, since the set of functions $1/O(\log n)$
+is neither a subset nor a superset of $O(1/\!@\log n)$. We could legitimately
+substitute $\Omega(\log n)^{-1}$ for $O\bigl((\log n)^{-1}\bigr)$, but
+this would be awkward. So we'll restrict our use of ``exponents outside
+the~$O@$'' to constant, positive integer exponents.
+
+Power series give us some of the most useful operations of all. If the
+sum
+\begindisplay
+S(z)=\sum_{n\ge0}a_n\,z^n
+\enddisplay
+converges absolutely for some complex number $z=z_0$, then
+\begindisplay
+S(z)=O(1)\,,\qquad\hbox{for all $\vert z\vert\le\vert z_0\vert$}.
+\enddisplay
+This is obvious, because
+\begindisplay
+\vert S(z)\vert\le
+\sum_{n\ge0}\vert a_n@\vert\,\vert z\vert^n\le
+\sum_{n\ge0}\vert a_n@\vert\,\vert z_0\vert^n=C<\infty\,.
+\enddisplay
+In particular, $S(z)=O(1)$ as $z\to0$, and $S(1/n)=O(1)$ as $n\to\infty$,
+provided only that $S(z)$ converges for at least one nonzero value of~$z$.
+We can use this principle to truncate a power series at any convenient
+point and estimate the remainder with~$O$. For example, not only is
+$S(z)=O(1)$, but
+\begindisplay
+S(z)&=a_0+O(z)\,,\cr
+S(z)&=a_0+a_1z+O(z^2)\,,\cr
+%S(z)&=a_0+a_1z+a_2z^2+O(z^3)\,,\cr
+\enddisplay
+and so on, because
+\begindisplay
+%S(z)=a_0+a_1z+a_2z^2+z^3\sum_{n\ge3}a_{n-3}z^{n-3}
+S(z)=\sum_{0\le k<m}a_kz^k+z^m\sum_{n\ge m}a_nz^{n-m}
+\enddisplay
+and the latter sum, like $S(z)$ itself, converges absolutely for $z=z_0$
+and is $O(1)$.
+Table |o-special| lists some of the most useful asymptotic formulas,
+half of which are simply based on truncation of power series according
+to this rule.
+
+"Dirichlet series", which are sums of the
+form $\sum_{k\ge1} a_k/k^z$, can be truncated in a similar way: If a
+Dirichlet series converges absolutely when $z=z_0$, we can truncate
+it at any term and get the approximation
+\begindisplay
+\sum_{1\le k<m}a_k/k^z+O(m^{-z})\,,
+\enddisplay
+valid for $\Re z\ge\Re z_0$.
+\g Remember that\/ $\Re$ stands for ``real part.\qback''\g
+The asymptotic formula for Bernoulli numbers $B_n$ in Table~|o-special|
+illustrates this principle.
+
+On the other hand, the asymptotic formulas for $H_n$, $n!$, and $\pi(n)$
+in Table~|o-special| are not truncations of convergent series;
+if we extended them indefinitely they would diverge for all values of~$n$.
+This is particularly easy to see in the case of $\pi(n)$, since we have
+already observed in Section~7.3, Example~5, that the power series
+$\sum_{k\ge0}k!/(\ln n)^k$ is everywhere divergent. Yet these truncations
+of divergent series turn out to be useful approximations.
+%, even if we stop after the first or second term.
+
+\topinsert
+\table Asymptotic approximations, valid as $n\to\infty$ and $z\to0$.%
+\tabref|o-special|
+\begindisplay\abovedisplayskip=-2pt \belowdisplayskip=6pt \openup6.7pt%
+ \advance\displayindent-\parindent\advance\displaywidth\parindent
+H_n&=\ln n+\gamma
+ +{1\over2n}-{1\over12n^2}+{1\over120n^4}+O\Bigl({1\over n^6}\Bigr)\,.
+ \eqno\eqref|o-harmonic|\cr
+n!&=\sqrt{2\pi n}\,\Bigl({n\over e}\Bigr)^{\!n}\biggl(1+{1\over12n}
+ +{1\over288n^2}-{139\over51840n^3}+O\Bigl({1\over n^4}\Bigr)\biggr)\,.
+ \eqno\eqref|o-factorial|\cr
+B_n&=2\[n\ {\rm even}](-1)^{n/2-1}{n!\over(2\pi)^n}\bigl(1+2^{-n}
+ +3^{-n}+O(4^{-n})\bigr)\,.
+ \eqno\eqref|o-bernoulli|\cr
+\pi(n)&={n\over\ln n}+{n\over(\ln n)^2}+{2!\,n\over(\ln n)^3}
+ +{3!\,n\over(\ln n)^4}+O\Bigl({n\over(\log n)^5}\Bigr)\,.
+ \eqno\eqref|o-pi|\cr
+e^z&=1+z+{z^2\over2!}+{z^3\over3!}+{z^4\over4!}+O(z^5)\,.
+ \eqno\eqref|o-exp|\cr
+\ln(1+z)&=z-{z^2\over2}+{z^3\over3}-{z^4\over4}+O(z^5)\,.
+ \eqno\eqref|o-log|\cr
+{1\over1-z}&=1+z+z^2+z^3+z^4+O(z^5)\,.
+ \eqno\eqref|o-geom|\cr
+(1+z)^\alpha&=1+\alpha z+{\alpha\choose2}z^2+{\alpha\choose3}z^3
+ +{\alpha\choose4}z^4+O(z^5)\,.
+ \eqno\eqref|o-binomial|\cr
+\enddisplay
+\hrule width\hsize height.5pt
+\kern4pt
+\endinsert
+
+An asymptotic approximation is said to have {\it"absolute error"\/}
+"!error, absolute"
+$O\bigl(g(n)\bigr)$ if it~has the form $f(n)+O\bigl(g(n)\bigr)$ where
+$f(n)$ doesn't involve~$O$. The approximation has {\it"relative error"\/}
+"!error, relative"
+$O\bigl(g(n)\bigr)$ if it has the form $f(n)\bigl(1+O\bigl(g(n)\bigr)\bigr)$
+where $f(n)$ doesn't involve~$O$. For example, the approximation for~$H_n$
+in Table~|o-special| has absolute error~$O(n^{-6})$; the approximation
+for $n!$ has relative error~$O(n^{-4})$. (The right-hand side of
+\eq(|o-factorial|) doesn't actually have the required form
+$f(n)\*{\bigl(1+O(n^{-4})\bigr)}$, but we could rewrite it
+\begindisplay
+\sqrt{2\pi n}\,\Bigl({n\over e}\Bigr)^{\!n}\biggl(1+{1\over12n}
+ +{1\over288n^2}-{139\over51840n^3}\biggr)\bigl(1+O(n^{-4})\bigr)
+\enddisplay
+if we wanted to; a similar calculation is the subject of exercise |rel-error|.)
+\g(Relative error is nice for taking reciprocals, because
+$1/(1+O(\epsilon))=1+O(\epsilon)$.)\g
+The absolute error of this approximation is $O(n^{n-3.5}e^{-n})$.
+Absolute error is related to the number of correct decimal digits
+to the right of the decimal point
+if the $O$~term is ignored; relative error corresponds to the
+number of correct ``significant figures.\qback''
+
+We can use truncation of power series to prove the general laws
+\begindisplay
+\ln\bigl(1+O(f(n))\bigr)&=O\bigl(f(n)\bigr)\,,
+&\qquad\hbox{if\/ $f(n)\prec1$};\eqno\eqref|o-ln|\cr
+e^{O(f(n))}&=1+O\bigl(f(n)\bigr)\,,
+&\qquad\hbox{if\/ $f(n)=O(1)$}.\eqno\eqref|o-e|\cr
+\enddisplay
+(Here we assume that $n\to\infty$; similar formulas hold for
+ $\ln\bigl(1+O(f(x))\bigr)$
+and
+ $e^{O(f(x))}$
+ as $x\to0$.) For example, let $\ln\bigl(1+g(n)\bigr)$
+be any function belonging to the left side of \eq(|o-ln|). Then there are
+constants $C$, $n_0$, and~$c$ such that
+\begindisplay
+\bigl\vert g(n)\bigr\vert\le C\bigl\vert f(n)\bigr\vert\le c<1\,,
+\qquad\hbox{for all $n\ge n_0$}.
+\enddisplay
+It follows that the infinite sum
+\begindisplay
+\ln\bigl(1+g(n)\bigr)=g(n)\cdot\bigl(\textstyle1-\half g(n)+{1\over3}g(n)^2
+ -\cdots\,\bigr)
+\enddisplay
+converges for all $n\ge n_0$, and the parenthesized series is
+bounded by the constant $1+\half c+{1\over3}c^2+\cdots\,$. This proves
+\eq(|o-ln|), and the proof of \eq(|o-e|) is similar. Equations
+\eq(|o-ln|) and~\eq(|o-e|) combine to give the useful formula
+\begindisplay
+\bigl(1+O(f(n))\bigr){}^{O(g(n))}&=1+O\bigl(f(n)@g(n)\bigr)\,,
+\quad\tworestrictions{if $f(n)\prec1$ and}{$f(n)@g(n)=O(1)$.}\eqno\eqref|o-power|
+\enddisplay
+
+\subhead Problem 1: Return to the "Wheel of Fortune".
+
+Let's try our luck now at a few asymptotic problems. In Chapter~3 we
+derived equation \equ(3.|wheel-winners|) for the number of winning positions
+in a certain game:
+\begindisplay
+W=\lfloor N/K\rfloor+\textstyle\half K^2+{5\over2}K-3\,,
+\qquad\hbox{$K=\lfloor\root 3\of N\rfloor$}.
+\enddisplay
+And we promised that an asymptotic version of $W$ would be derived
+in Chapter~9. Well, here we are in Chapter~9; let's try to estimate~$W$,
+as $N\to\infty$.
+
+The main idea here is to remove the floor brackets, replacing $K$
+by $N^{1/3}+O(1)$. Then we can go further and write
+\begindisplay
+K=N^{1/3}\bigl(1+O(N^{-1/3})\bigr)\,;
+\enddisplay
+this is called ``"pulling out the large part".\qback'' (We will be using
+this trick a lot.) Now we have
+\begindisplay
+K^2&=N^{2/3}\bigl(1+O(N^{-1/3})\bigr){}^2\cr
+ &=N^{2/3}\bigl(1+O(N^{-1/3})\bigr)=N^{2/3}+O(N^{1/3})\cr
+\enddisplay
+by \eq(|o-power|) and \eq(|o-prod-in|). Similarly
+\begindisplay
+\lfloor N/K\rfloor&=N^{1-1/3}\bigl(1+O(N^{-1/3})\bigr){}^{-1}+O(1)\cr
+ &=N^{2/3}\bigl(1+O(N^{-1/3})\bigr)+O(1)
+  =N^{2/3}+O(N^{1/3})\,.
+\enddisplay
+It follows that the number of winning positions is
+\begindisplay
+W&=\textstyle N^{2/3}+O(N^{1/3})+\half\bigl(N^{2/3}+O(N^{1/3})\bigr)
+ +O(N^{1/3})+O(1)\cr
+&=\textstyle{3\over2}N^{2/3}+O(N^{1/3})\,.
+\eqno
+\enddisplay
+Notice how the $O$ terms absorb one another until only one remains;
+this is typical, and it illustrates why $O$-notation is useful
+in the middle of a formula.
+
+\subhead Problem 2: Perturbation of Stirling's formula.
+
+"Stirling's approximation" for $n!$ is undoubtedly the most famous
+asymptotic formula of all. We will prove it later in this chapter;
+for now, let's just try to get better acquainted with its properties. We can
+write one version of the approximation in the form
+\begindisplay
+n!&=\sqrt{2\pi n}\,\Bigl({n\over e}\Bigr)^{\!n}\biggl(1+{a\over n}
+ +{b\over n^2}+O(n^{-3})\biggr)\,,\qquad\hbox{as $n\to\infty$},
+ \eqno\eqref|o-factorial-mod|\cr
+\enddisplay
+for certain constants $a$ and $b$. Since this holds for all large~$n$,
+it must also be asymptotically true when $n$ is replaced by~$n-1$:
+\begindisplay \openup4pt
+(n-1)!&=\sqrt{2\pi(n-1)}\,\Bigl({n-1\over e}\Bigr)^{\!n-1}\cr
+&\qquad\times\biggl(1+{a\over n{-}1}
+ +{b\over(n{-}1)^2}+O\bigl((n{-}1)^{-3}\bigr)\biggr)\,.
+ \eqno\eqref|o-factorial-dim|\cr
+\enddisplay
+We know, of course, that $(n-1)!=n!/n$; hence the right-hand side of this
+formula must simplify to the right-hand side of \eq(|o-factorial-mod|),
+divided by~$n$.
+
+Let us therefore try to simplify \eq(|o-factorial-dim|). The first factor becomes
+tractable if we pull out the large part:
+\begindisplay \openup3pt
+\sqrt{2\pi(n-1)}&=\sqrt{2\pi n}\,(1-n^{-1})^{1/2}\cr
+&=\sqrt{2\pi n}\,\Bigl(1-{1\over2n}-{1\over8n^2}+O(n^{-3})\Bigr)\,.
+\enddisplay
+Equation \eq(|o-binomial|) has been used here.
+
+Similarly we have
+\begindisplay \openup6pt
+{a\over n-1}&={a\over n}(1-n^{-1})^{-1}={a\over n}+{a\over n^2}+O(n^{-3})\,;\cr
+{b\over(n-1)^2}&={b\over n^2}(1-n^{-1})^{-2}={b\over n^2}+O(n^{-3})\,;\cr
+O\bigl((n-1)^{-3}\bigr)&=O\bigl(n^{-3}(1-n^{-1})^{-3}\bigr)=O(n^{-3})\,.\cr
+\enddisplay
+The only thing in \eq(|o-factorial-dim|) that's slightly tricky to deal with
+is the factor ${(n-1)^{n-1}}$, which equals
+\begindisplay
+n^{n-1}(1-n^{-1})^{n-1}=n^{n-1}(1-n^{-1})^n\bigl(1+n^{-1}+n^{-2}+O(n^{-3})\bigr)\,.
+\enddisplay
+(We are expanding everything out until we get a relative error of~$O(n^{-3})$,
+because the relative error of a product is the sum of the relative errors
+of the individual factors. All of the $O(n^{-3})$ terms will coalesce.)
+
+In order to expand $(1-n^{-1})^n$, we first compute $\ln(1-n^{-1})$ and
+then form the exponential, $e^{n\ln(1-n^{-1})}$:
+\begindisplay \openup3pt
+(1-n^{-1})^n&=\exp\bigl(n\ln(1-n^{-1})\bigr)\cr
+&=\exp\bigl(n\bigl(\textstyle-n^{-1}-\half n^{-2}-{1\over3}n^{-3}
+ +O(n^{-4})\bigr)\bigr)\cr
+&=\exp\bigl(\textstyle-1-\half n^{-1}-{1\over3}n^{-2}+O(n^{-3})\bigr)\cr
+&=\textstyle\exp(-1)\cdot\exp(-\half n^{-1})\cdot\exp(-{1\over3}n^{-2})
+ \cdot\exp\bigl(O(n^{-3})\bigr)\cr
+&=\textstyle\exp(-1)\cdot\bigl(1-\half n^{-1}+{1\over8}n^{-2}+O(n^{-3})\bigr)\cr
+&\qquad\qquad\textstyle
+ \cdot\bigl(1-{1\over3}n^{-2}+O(n^{-4})\bigr)\cdot\bigl(1+O(n^{-3})\bigr)\cr
+&=e^{-1}\bigl(\textstyle1-\half n^{-1}-{5\over24}n^{-2}+O(n^{-3})\bigr)\,.
+\enddisplay
+Here we use the notation $\exp z$ instead of $e^z$, since it allows us to
+work with a complicated exponent on the main line of the formula instead
+of in the superscript position. We must expand $\ln(1-n^{-1})$
+with absolute error $O(n^{-4})$ in order to end with a relative error
+of $O(n^{-3})$, because the logarithm is being multiplied by~$n$.
+
+The right-hand side of \eq(|o-factorial-dim|) has now been reduced to
+$\sqrt{2\pi n}$ times $n^{n-1}\!/e^n$ times a product of several factors:
+\begindisplay
+&\textstyle\bigl(1-\half n^{-1}-{1\over8}n^{-2}+O(n^{-3})\bigr)\cr
+&\qquad\cdot\textstyle\bigl(1+ n^{-1}+n^{-2}+O(n^{-3})\bigr)\cr
+&\qquad\cdot\textstyle\bigl(1-\half n^{-1}-{5\over24}n^{-2}+O(n^{-3})\bigr)\cr
+&\qquad\cdot\textstyle\bigl(1+a n^{-1}+(a+b)n^{-2}+O(n^{-3})\bigr)\,.\cr
+\enddisplay
+Multiplying these out and absorbing all asymptotic terms into one $O(n^{-3})$
+yields
+\begindisplay
+\textstyle 1+an^{-1}+(a+b-{1\over12})n^{-2}+O(n^{-3})\,.
+\enddisplay
+Hmmm; we were hoping to get $1+an^{-1}+bn^{-2}+O(n^{-3})$, since that's what
+we need to match the right-hand side of \eq(|o-factorial-mod|). Has
+something gone awry? No, everything is fine, provided that
+$a+b-{1\over12}=b$.
+
+This perturbation argument doesn't prove the validity of Stirling's
+approximation, but it does prove something: It proves that formula
+\eq(|o-factorial-mod|) cannot be valid unless $a={1\over12}$. If we had
+replaced the $O(n^{-3})$ in \eq(|o-factorial-mod|) by $cn^{-3}+O(n^{-4})$
+and carried out our calculations to a relative error of~$O(n^{-4})$, we
+could have deduced that $b$ must be
+${1\over288}$, as claimed in Table~|o-special|.
+(This is not the easiest way to determine the values of $a$ and~$b$,
+but it works.)
+
+\subhead Problem 3: The nth prime number.
+
+Equation \eq(|o-pi|) is an asymptotic formula for $\pi(n)$, the number
+of primes that do not exceed~$n$. If we replace $n$ by $p=P_n$, the
+$n$th "prime" number, we have $\pi(p)=n$; hence
+\begindisplay
+n={p\over\ln p}+O\Bigl({p\over(\log p)^2}\Bigr)
+\eqno\eqref|o-pi-trunc1|
+\enddisplay
+as $n\to\infty$. Let us try to ``solve'' this equation for~$p$;
+then we will know the approximate size of the $n$th prime.
+
+The first step is to simplify the $O$ term. If we divide both sides
+by $p/\!@\ln p$, we find that $n\ln p/p\to1$; hence $p/\!@\ln p=O(n)$ and
+\begindisplay
+O\Bigl({p\over(\log p)^2}\Bigr)=
+O\Bigl({n\over\log p}\Bigr)=
+O\Bigl({n\over\log n}\Bigr)\,.
+\enddisplay
+(We have $(\log p)^{-1}\le(\log n)^{-1}$ because $p\ge n$.)
+
+The second step is to transpose the two sides of \eq(|o-pi-trunc1|),
+except for the $O$~term. This is legal because of the general rule
+\begindisplay
+a_n=b_n+O\bigl(f(n)\bigr)\iff
+b_n=a_n+O\bigl(f(n)\bigr)\,.
+\eqno\eqref|o-switch|
+\enddisplay
+(Each of these equations follows from the other if we multiply both sides
+by~$-1$ and then add $a_n+b_n$ to both sides.) Hence
+\begindisplay
+{p\over\ln p}
+=n+O\Bigl({n\over\log n}\Bigr)
+=n\bigl(1+O(1/\!@\log n)\bigr)\,,
+\enddisplay
+and we have
+\begindisplay
+p=n\ln p\bigl(1+O(1/\!@\log n)\bigr)\,.
+\eqno\eqref|pn-rec1|
+\enddisplay
+This is an ``approximate recurrence'' for $p=P_n$ in terms of itself.
+"!recurrence, approximate or asymptotic"
+Our goal is to change it into an ``approximate closed form,\qback'' and
+we can do this by "unfolding the recurrence asymptotically".
+So let's try to unfold \thiseq.
+
+By taking logarithms of both sides we deduce that
+\begindisplay
+\ln p=\ln n+\ln\ln p+O(1/\!@\log n)\,.
+\eqno\eqref|pn-rec1-ln|
+\enddisplay
+This value can be substituted for $\ln p$ in \eq(|pn-rec1|), but we
+would like to get rid of all $p$'s on the right before making the substitution.
+Somewhere along the line, that last~$p$ must disappear; we can't get rid of
+it in the normal way for recurrences, because \eq(|pn-rec1|) doesn't
+specify initial conditions for small~$p$.
+
+One way to do the job is to start by proving the weaker result $p=O(n^2)$.
+This follows if we square \eq(|pn-rec1|) and divide by $pn^2$,
+\begindisplay
+{p\over n^2}&={(\ln p)^2\over p}\bigl(1+O(1/\!@\log n)\bigr)\,,
+\enddisplay
+since the right side approaches zero as $n\to\infty$. OK, we know that
+$p=O(n^2)$; therefore $\log p=O(\log n)$ and $\log\log p=O(\log\log n)$.
+We can now conclude from \thiseq\ that
+\begindisplay
+\ln p=\ln n+O(\log\log n)\,;
+\enddisplay
+in fact, with this new estimate in hand we can conclude that
+$\ln\ln p=\ln\ln n+O(\log\log n/\!@\log n)$, and \thiseq\ now yields
+\begindisplay
+\ln p=\ln n+\ln\ln n+O(\log\log n/\!@\log n)\,.
+\enddisplay
+And we can plug this into the right-hand side of \eq(|pn-rec1|),
+obtaining
+\begindisplay
+p=n\ln n + n\ln\ln n+ O(n)\,.
+\enddisplay
+This is the approximate size of the $n$th prime.
+
+We can refine this estimate
+by using a better approximation of $\pi(n)$ in place of
+\eq(|o-pi-trunc1|). The next term of \eq(|o-pi|) tells us that
+\begindisplay
+n={p\over\ln p}+{p\over(\ln p)^2}+O\Bigl({p\over(\log p)^3}\Bigr)\,;
+\eqno\eqref|o-pi-trunc2|
+\enddisplay
+proceeding as before, we obtain the recurrence
+\g Get out the scratch paper again, gang.\bigskip Boo, Hiss.\g
+\begindisplay
+p=n\ln p\,\bigl(1+(\ln p)^{-1}\bigr)^{-1}\bigl(1+O(1/\!@\log n)^2\bigr)\,,
+\eqno\eqref|pn-rec2|
+\enddisplay
+which has a relative error of $O(1/\!@\log n)^2$ instead of $O(1/\!@\log n)$.
+Taking logarithms and retaining proper accuracy (but not too much) now yields
+\begindisplay \openup3pt
+\ln p&=\ln n+\ln\ln p+O(1/\!@\log n)\cr
+&=\ln n\Bigl(1+{\ln\ln p\over\ln n}+O(1/\!@\log n)^2\Bigr)\,;\cr
+\ln\ln p&=\ln\ln n+{\ln\ln n\over\ln n}+O\Bigl({\log\log n\over\log n}\Bigr)^2\,.
+\enddisplay
+Finally we substitute these results into \eq(|pn-rec2|) and our answer finds
+its way out:
+\begindisplay
+P_n=n@\ln n+n@\ln\ln n-n+n@
+{\ln\ln n\over\ln n}+O\Bigl({n\over\log n}\Bigr)\,.
+\eqno\eqref|pn-rel2|
+\enddisplay
+For example, when $n=10^6$ this estimate comes to $15631363.8+O(n/\!@\log n)$;
+the millionth prime is actually $15485863$. Exercise~|pn-rel3| shows that
+a still more accurate approximation to~$P_n$ results if we begin with a still more
+accurate approximation to~$\pi(n)$ in place of~\eq(|o-pi-trunc2|).
+
+\subhead Problem 4: A sum from an old final exam.
+
+When Concrete Mathematics was first taught at Stanford University
+during the 1970--1971 term, students were asked for the asymptotic value of
+the sum
+\begindisplay
+S_n={1\over n^2+1}+
+ {1\over n^2+2}+\cdots
+ +{1\over n^2+n}\,,
+\eqno
+\enddisplay
+with an absolute error of $O(n^{-7})$. Let's imagine that we've just been
+given this problem on a (take-home) final; what is our first instinctive
+reaction?
+
+No, we don't panic.
+ Our first reaction is to {\sc "think big"}. If we set $n=10^{100}$,
+"!thinking big"
+say, and look at the sum, we see that it consists of $n$~terms, each of
+which is slightly less than $1/n^2$; hence the sum is slightly less than~$1/n$.
+In general, we can usually get a decent start on an asymptotic problem
+by taking stock of the situation and getting a ballpark estimate of the answer.
+
+Let's try to improve the rough estimate by pulling out the largest part of
+each term. We have
+\begindisplay
+{1\over n^2+k}={1\over n^2(1+k/n^2)}
+ ={1\over n^2}\biggl(1-{k\over n^2}+{k^2\over n^4}-{k^3\over n^6}
+  +O\Bigl({k^4\over n^8}\Bigr)\biggr)\,,
+\enddisplay
+and so it's natural to try summing all these approximations:
+\begindisplay \openup4pt
+{1\over n^2+1}&={1\over n^2}&-{1\over n^4}&+{1^2\over n^6}&-{1^3\over n^8}
+ &+O\Bigl({1^4\over n^{10}}\Bigr)\cr
+{1\over n^2+2}&={1\over n^2}&-{2\over n^4}&+{2^2\over n^6}&-{2^3\over n^8}
+ &+O\Bigl({2^4\over n^{10}}\Bigr)\cr
+&\vdots\cr
+{1\over n^2+n}&={1\over n^2}&-{n\over n^4}&+{n^2\over n^6}&-{n^3\over n^8}
+ &+O\Bigl({n^4\over n^{10}}\Bigr)\cr
+\noalign{\kern8pt\hrule\kern7pt}
+S_n&={n\over n^2}-{n(n+1)\over2n^4}+\cdots\,.\hidewidth
+\enddisplay
+It looks as if we're getting $S_n=n^{-1}-{1\over2}n^{-2}+O(n^{-3})$,
+based on the sums of the first two columns; but the calculations are
+getting hairy.
+
+ If we persevere in this approach, we will ultimately
+reach the goal; but we won't bother to sum the other columns, for
+two reasons: First, the last column is going to give us terms that
+are $O(n^{-6})$, when $n/2\le k\le n$, so we will have an error
+of~$O(n^{-5})$; that's too big, and we will have to include yet another
+column in the expansion. Could the exam-giver have been so
+\g Do pajamas have buttons?\g
+ sadistic?
+We suspect that there must be a better way. Second, there is indeed a much
+better way, staring us right in the face.
+
+Namely, we know a closed form for $S_n$: It's just $H_{n^2+n}-H_{n^2}$.
+And we know a good approximation for harmonic numbers, so we just
+apply it twice:
+\begindisplay
+H_{n^2+n}&=\ln(n^2+n)+\gamma+{1\over2(n^2+n)}-{1\over12(n^2+n)^2}
+ +O\Bigl({1\over n^8}\Bigr)\,;\cr
+H_{n^2}&=\ln n^2+\gamma+{1\over2n^2}-{1\over12n^4}
+ +O\Bigl({1\over n^8}\Bigr)\,.\cr
+\enddisplay
+Now we can pull out large terms and simplify, as we did when looking at
+Stirling's approximation. We have
+\begindisplay \openup3pt
+\ln(n^2+n)&=\ln n^2+\ln\Bigl(1+{1\over n}\Bigr)=\ln n^2+{1\over n}
+ -{1\over2n^2}+{1\over3n^3}-\cdots\,;\cr
+{1\over n^2+n}&={1\over n^2}-{1\over n^3}+{1\over n^4}-\cdots\,;\cr
+{1\over(n^2+n)^2}&={1\over n^4}-{2\over n^5}+{3\over n^6}-\cdots\,.\cr
+\enddisplay
+So there's lots of helpful cancellation, and we find
+\begindisplay \let\displaystyle=\textstyle \openup3pt
+S_n&=n^{-1}&-\half n^{-2}&+{1\over3}n^{-3}&-{1\over4}n^{-4}&+{1\over5}n^{-5}
+ &-{1\over6}n^{-6}\cr
+&&&-\half n^{-3}&+\half n^{-4}&-\half n^{-5}&+\half n^{-6}\cr
+&&&&&+{1\over6}n^{-5}&-{1\over4} n^{-6}\cr
+\enddisplay
+plus terms that are $O(n^{-7})$. A bit of arithmetic and we're home free:
+\begindisplay \advance\medmuskip-.5mu
+\textstyle
+S_n=n^{-1}-{1\over2}n^{-2}-{1\over6}n^{-3}+{1\over4}n^{-4}-{2\over15}n^{-5}
+ +{1\over12}n^{-6}+O(n^{-7})\,.
+\eqno
+\enddisplay
+
+It would be nice if we could check this answer numerically, as we did when
+we derived exact results in earlier chapters. Asymptotic formulas are
+harder to verify; an arbitrarily large constant may be hiding in
+a $O$~term, so any numerical test is inconclusive. But in practice, we
+have no reason to believe that an adversary is trying to trap us, so
+we can assume that the unknown $O$-constants are reasonably small.
+With a pocket calculator we find that $S_4={1\over17}+{1\over18}+{1\over19}
++{1\over20}=0.2170107$; and our asymptotic estimate when $n=4$ comes to
+\begindisplay
+\textstyle
+\def\\{{1\over4}}\\\bigl(1+\\\bigl(-\half+\\(-{1\over6}+\\(\\+\\(-{2\over15}
++\\\cdt{1\over12})))\bigr)\bigr)=0.2170125\,.
+\enddisplay
+If we had made an error of,
+say, $1\over12$ in the term for $n^{-6}$, a difference of ${1\over12}{1\over4096}$
+would have shown up in the fifth decimal place; so our asymptotic answer is probably
+correct.
+
+\subhead Problem 5: An infinite sum.
+
+We turn now to an asymptotic question posed by Solomon "Golomb"~[|golomb-sum|]:
+What is the approximate value of
+\begindisplay
+S_n=\sum_{k\ge1}{1\over k N_n(k)^2}\,,
+\eqno
+\enddisplay
+where $N_n(k)$ is the number of digits required to write $k$ in
+"radix~$n$ notation"?
+
+First let's try again for a ballpark estimate. The number of digits, $N_n(k)$,
+is approximately $\log_n k=\log k/\!@\log n$; so the terms of this sum are roughly
+$(\log n)^2\!/k(\log k)^2$. Summing on~$k$ gives $\approx(\log n)^2\sum_{k\ge2}
+1/k(\log k)^2$, and this sum converges to a constant value because it can
+be compared to the integral
+\begindisplay
+\int_2^\infty{dx\over x(\ln x)^2}=-\thinspace{1\over\ln x}\bigg\vert_2^\infty
+={1\over\ln2}\,.
+\enddisplay
+Therefore we expect $S_n$ to be about $C(\log n)^2$, for some constant~$C$.
+
+Hand-wavy analyses like this are useful for orientation, but we need
+better estimates to solve the problem. One idea is to express $N_n(k)$
+exactly:
+\begindisplay
+N_n(k)=\lfloor\log_n k\rfloor+1\,.
+\eqno
+\enddisplay
+Thus, for example, $k$ has three radix~$n$ digits when $n^2\le k<n^3$, and
+this happens precisely when $\lfloor\log_n k\rfloor=2$. It follows that
+$N_n(k)>\log_n k$, hence $S_n=\sum_{k\ge1}1/kN_n(k)^2<1+(\log n)^2\sum_{k\ge2}
+1/k(\log k)^2$.
+
+Proceeding as in Problem 1, we can try to write $N_n(k)=\log_n k+O(1)$ and
+substitute this into the formula for~$S_n$. The term represented here
+by~$O(1)$
+is always between $0$ and~$1$, and it is about $\half$ on the average,
+so it seems rather well-behaved. But still, this isn't a good enough
+approximation to tell us about~$S_n$; it gives us zero significant figures
+(that is, high relative error)
+when $k$ is small, and these are the terms that contribute the most to
+the sum. We need a different idea.
+
+The key (as in Problem 4) is to use our manipulative skills to put the
+sum into a more tractable form, before we resort to asymptotic estimates.
+We can introduce a new variable of summation, $m=N_n(k)$:
+\begindisplay
+S_n&=\sum_{k,m\ge1}{\bigi[m=N_n(k)\bigr]\over km^2}\cr
+ &=\sum_{k,m\ge1}{\[n^{m-1}\le k<n^m]\over km^2}\cr
+ &=\sum_{m\ge1}{1\over m^2}\bigl(H_{n^m-1}-H_{n^{m-1}-1}\bigr)\,.
+\enddisplay
+This may look worse than the sum we began with, but it's actually a
+step forward, because we have very good approximations for the
+harmonic numbers.
+
+Still, we hold back and try to simplify some more.
+No need to rush into asymptotics. Summation by parts
+allows us to group the terms for each value of $H_{n^m-1}$ that we
+need to approximate:
+\begindisplay
+S_n=\sum_{k\ge1}H_{n^k-1}\Bigl({1\over k^2}-{1\over(k+1)^2}\Bigr)\,.
+\enddisplay
+For example, $H_{n^2-1}$ is multiplied by $1/2^2$ and then by $-1/3^2$.
+(We have used the fact that $H_{n^0-1}=H_0=0$.)
+
+Now we're ready to expand the harmonic numbers. Our experience with
+estimating $(n-1)!$ has taught us that it will be easier to estimate
+$H_{n^k}$ than $H_{n^k-1}$, since the $(n^k-1)$'s will be messy;
+therefore we write
+\begindisplay \openup3pt
+H_{n^k-1}=H_{n^k}-{1\over n^k}
+&=\ln n^k+\gamma+{1\over2n^k}+O\Bigl({1\over n^{2k}}\Bigr)-{1\over n^k}\cr
+\noalign{\vskip2pt}
+&=k\ln n+\gamma-{1\over2n^k}+O\Bigl({1\over n^{2k}}\Bigr)\,.\cr
+\enddisplay
+Our sum now reduces to
+\begindisplay \openup3pt
+S_n&=\sum_{k\ge1}\,\Bigl(k\ln n+\gamma-{1\over2n^k}
+ +O\Bigl({1\over n^{2k}}\Bigr)\Bigr)
+ \Bigl({1\over k^2}-{1\over(k+1)^2}\Bigr)\cr
+&=(\ln n)\Sigma_1+\gamma\Sigma_2-\textstyle\half\Sigma_3(n)+
+ O\bigl(\Sigma_3(n^2)\bigr)\,.\eqno\eqref|golomb-pieces|
+\enddisplay
+There are four easy pieces left: $\Sigma_1$, $\Sigma_2$, $\Sigma_3(n)$,
+and $\Sigma_3(n^2)$.
+
+Let's do the $\Sigma_3$'s first, since $\Sigma_3(n^2)$ is the $O$ term; then we'll
+see what sort of error we're getting. (There's no sense carrying out
+other calculations with perfect accuracy if they will be absorbed
+\g Into a Big Oh.\g
+into a $O$ anyway.) This sum is simply a power series,
+\begindisplay
+\Sigma_3(x)=\sum_{k\ge1}\,\Bigl({1\over k^2}-{1\over(k+1)^2}\Bigr)x^{-k}\,,
+\enddisplay
+and the series converges when $x\ge1$ so we can truncate it at any
+desired point. If we stop $\Sigma_3(n^2)$ at the term
+for $k=1$, we get $\Sigma_3(n^2)=O(n^{-2})$; hence \eq(|golomb-pieces|) has an
+absolute error of $O(n^{-2})$. (To decrease this absolute error,
+we could use a better approximation to $H_{n^k}$; but $O(n^{-2})$ is
+good enough for now.) If we truncate $\Sigma_3(n)$ at the term for $k=2$, we get
+\begindisplay
+\Sigma_3(n)=\textstyle{3\over4}n^{-1}+O(n^{-2})\,;
+\enddisplay
+this is all the accuracy we need.
+
+We might as well do $\Sigma_2$ now, since it is so easy:
+\begindisplay
+\Sigma_2=\sum_{k\ge1}\,\Bigl({1\over k^2}-{1\over(k+1)^2}\Bigr)\,.
+\enddisplay
+This is the telescoping series $(1-{1\over4})+({1\over4}-{1\over9})
++({1\over9}-{1\over16})+\cdots\,=1$.
+
+\vskip1pt
+Finally, $\Sigma_1$ gives us the leading term of $S_n$, the
+coefficient of $\ln n$ in \eq(|golomb-pieces|):
+\begindisplay
+\Sigma_1=\sum_{k\ge1}\,k\Bigl({1\over k^2}-{1\over(k+1)^2}\Bigr)\,.
+\enddisplay
+This is $(1-{1\over4})+({2\over4}-{2\over9})+({3\over9}-{3\over16})+\cdots\,
+={1\over1}+{1\over4}+{1\over9}+\cdots\,=H_\infty^{(2)}=\pi^2\!/6$.
+(If we hadn't applied summation by parts earlier, we would have seen
+directly that $S_n\sim \sum_{k\ge1}(\ln n)/k^2$, because
+$H_{n^k-1}-H_{n^{k-1}-1}\sim\ln n$; so summation by parts didn't
+help us to evaluate the leading term, although it did make some
+of our other work easier.)
+
+Now we have evaluated each of the $\Sigma$'s in \eq(|golomb-pieces|), so we can
+put everything together and get the answer to Golomb's problem:
+\begindisplay
+S_n={\pi^2\over6}\ln n+\gamma-{3\over8n}+O\Bigl({1\over n^2}\Bigr)\,.
+\eqno\eqref|golomb-ans|
+\enddisplay
+Notice that this grows more slowly than our original hand-wavy estimate of
+$C(\log n)^2$. Sometimes a discrete sum fails to obey a continuous intuition.
+
+\subhead Problem 6: Big Phi.
+
+Near the end of Chapter 4, we observed that the number of fractions in the
+"Farey series" $\Fscr_n$ is $1+\Phi(n)$, where
+\begindisplay
+\Phi(n)=\varphi(1)+\varphi(2)+\cdots+\varphi(n)\,;
+\enddisplay
+and we showed in \equ(4.|bigphi-gen|) that
+\begindisplay
+\Phi(n)={1\over2}\sum_{k\ge1}\mu(k)\lfloor n/k\rfloor\lfloor1+n/k\rfloor\,.
+\eqno\eqref|big-phi-repeat|
+\enddisplay
+Let us now try to estimate $\Phi(n)$ when $n$ is large. (It was sums like
+"!phi" "!mu" "!M\"obius function"
+this that led "Bachmann" to invent $O$-notation in the first place.)
+
+Thinking {\sc big} tells us that $\Phi(n)$ will probably be
+proportional to~$n^2$. For if the final factor were just $\lfloor n/k\rfloor$
+instead of $\lfloor1+n/k\rfloor$, we would have $\bigl\vert\Phi(n)\bigr\vert\le
+\half\sum_{k\ge1}\lfloor n/k\rfloor^2\le\half\sum_{k\ge1}(n/k)^2={\pi^2\over12}n^2$,
+because the "M\"obius function" $\mu(k)$ is either $-1$, $0$, or~$+1$. The
+additional `$1+{}$' in that final factor adds $\sum_{k\ge1}\mu(k)\lfloor n/k
+\rfloor$; but this is zero for $k>n$, so it cannot be more than $nH_n=
+O(n\log n)$ in absolute value.
+
+This preliminary analysis indicates that we'll find it advantageous to write
+\begindisplay \openup3pt
+\Phi(n)=\half\sum_{k=1}^n\mu(k)\biggl(\Bigl({n\over k}\Bigr)+O(1)\biggr)^{\!2}
+&=\half\sum_{k=1}^n\mu(k)\biggl(\Bigl({n\over k}\Bigr)^{\!2}+
+ O\Bigl({n\over k}\Bigr)\biggr)\cr
+&=\half\sum_{k=1}^n\mu(k)\Bigl({n\over k}\Bigr)^{\!2}
+  +\sum_{k=1}^n O\Bigl({n\over k}\Bigr)\cr
+&=\half\sum_{k=1}^n\mu(k)\Bigl({n\over k}\Bigr)^{\!2}\,+\,
+ O(n\log n)\,.\cr
+\enddisplay
+This removes the floors; the remaining problem is to evaluate the unfloored sum
+$\half\sum_{k=1}^n
+\mu(k)n^2\!/k^2$ with an accuracy of $O(n\log n)$; in other words, we want
+to evaluate $\sum_{k=1}^n \mu(k)1/k^2$ with an accuracy of $O(n^{-1}\log n)$.
+But that's easy; we can simply run the sum all the way up to $k=\infty$, because
+the newly added terms are
+\begindisplay
+\sum_{k>n}{\mu(k)\over k^2}=O\Bigl(\sum_{k>n}{1\over k^2}\Bigr)
+ &=O\Bigl(\sum_{k>n}{1\over k(k-1)}\Bigr)\cr
+ &=O\biggl(\sum_{k>n}\Bigl({1\over k-1}-{1\over k}\Bigr)\biggr)
+ =O\Bigl({1\over n}\Bigr)\,.
+\enddisplay
+We proved in \equ(7.|inverse-zeta|) that $\sum_{k\ge1}\mu(k)/k^z=
+1/\zeta(z)$. Hence $\sum_{k\ge1}\mu(k)/k^2=1\big/\bigl(\sum_{k\ge1}1/k^2\bigr)=
+6/\pi^2$, and we have our answer:
+\g\vskip20pt(The error term was shown to be at most
+$O(n(\log n)^{2/3}\*\null\quad(\log\log n)^{1+\epsilon})$ by "Saltykov" in
+1960~[|salty-phi|]. On the other hand, it is not as small as
+$o(n(\log\mskip-1mu\log\mskip-1mu n)^{1/2})$, according to
+ "Montgomery"~[|monty-phi|].)\g
+\begindisplay
+\Phi(n)={3\over \pi^2}n^2+O(n\log n)\,.
+\eqno\eqref|o-phi|
+\enddisplay
+
+\beginsection 9.4 Two Asymptotic Tricks
+
+Now that we have some facility with $O$ manipulations, let's look at what
+we've done from a slightly higher perspective. Then we'll have some
+important weapons in our asymptotic arsenal, when we need to do battle with
+tougher problems.
+
+\subhead Trick 1: Bootstrapping.
+
+When we estimated the $n$th prime $P_n$ in Problem~3 of Section~9.3,
+we solved an asymptotic recurrence of the form
+\begindisplay
+P_n=n\ln P_n\bigl(1+O(1/\!@\log n)\bigr)\,.
+\enddisplay
+We proved that $P_n=n\ln n+O(n)$ by first using the recurrence to show the
+weaker result $O(n^2)$. This is a special case of a general method called
+{\it"bootstrapping"}, in which we solve a recurrence asymptotically by
+starting with a rough estimate and plugging it into the recurrence; in this
+way we can often derive better and better estimates, ``pulling ourselves
+up by our bootstraps.''
+
+Here's another problem that illustrates bootstrapping nicely: What is
+the asymptotic value of the coefficient $g_n=[z^n]\,G(z)$ in the
+generating function
+\begindisplay
+G(z)=\exp\Bigl(@\sum_{k\ge1}{z^k\over k^2}\Bigr)\,,
+\eqno
+\enddisplay
+as $n\to\infty$? If we differentiate this equation with respect to~$z$, we find
+\begindisplay
+G'(z)=\sum_{n=0}^\infty ng_n@z^{n-1}=\Bigl(@
+ \sum_{k\ge1}{z^{k-1}\over k} \Bigr)\,G(z)\,;
+\enddisplay
+equating coefficients of $z^{n-1}$ on both sides gives the recurrence
+\begindisplay
+ng_n=\sum_{0\le k<n}{g_k\over n-k}\,.
+\eqno\eqref|boot-rec|
+\enddisplay
+Our problem is equivalent to finding an asymptotic
+formula for the solution to \thiseq, with the initial condition $g_0=1$.
+The first few values
+\begindisplay \let\preamble=\tablepreamble \let\strut=\bigstrut
+n&&0&1&2&3&4&5&6\cr
+\noalign{\hrule}
+g_n&&1&1&{3\over4}&{19\over36}&{107\over288}&{641\over2400}&{51103\over259200}\cr
+\enddisplay
+don't reveal much of a pattern, and the integer sequence
+$\<n!^{@2}g_n\>$ doesn't appear in Sloane's {\sl Handbook\/}~[|sloane|];
+therefore a closed form for $g_n$ seems out of the question, and asymptotic
+information is probably the best we can hope to derive.
+
+Our first handle on this problem is the observation that $0<g_n\le1$ for
+all $n\ge0$; this is easy to prove by induction. So we have a start:
+\begindisplay
+g_n=O(1)\,.
+\enddisplay
+This equation can, in fact, be used to ``prime the pump'' for a bootstrapping
+operation: Plugging it in on the right of \eq(|boot-rec|) yields
+\begindisplay
+ng_n=\sum_{0\le k<n}{O(1)\over n-k}=H_nO(1)=O(\log n)\,;
+\enddisplay
+hence we have
+\begindisplay
+g_n=O\Bigl({\log n\over n}\Bigr)\,,\qquad\hbox{for $n>1$}.
+\enddisplay
+And we can bootstrap yet again:
+\begindisplay
+ng_n&={1\over n}+\sum_{0<k<n}{O\bigl((1+\log k)/k\bigr)\over n-k}\cr
+&={1\over n}+\sum_{0<k<n}{O(\log n)\over k(n-k)}\cr
+&={1\over n}+\sum_{0<k<n}\Bigl({1\over k}+{1\over n-k}\Bigr){O(\log n)\over n}\cr
+\noalign{\vskip2pt}
+&={1\over n}+{2\over n}H_{n-1}O(\log n)={1\over n}O(\log n)^2\,,
+\enddisplay
+obtaining
+\begindisplay
+g_n=O\Bigl({\log n\over n}\Bigr)^{\!2}\,.
+\eqno\eqref|boot2|
+\enddisplay
+Will this go on forever? Perhaps we'll have $g_n=O(n^{-1}\log n)^m$ for all $m$.
+
+Actually no; we have just reached a point of diminishing returns. The next
+attempt at bootstrapping involves the sum
+\begindisplay \openup3pt
+\sum_{0<k<n}{1\over k^2(n-k)}&=
+\sum_{0<k<n}\Bigl({1\over nk^2}+{1\over n^2k}+{1\over n^2(n-k)}\Bigr)\cr
+&={1\over n}H_{n-1}^{(2)}+{2\over n^2}H_{n-1}\,,
+\enddisplay
+which is $\Omega(n^{-1})$; so we cannot get an estimate for $g_n$ that
+falls below $\Omega(n^{-2})$.
+
+In fact, we now know enough about $g_n$ to apply our old trick of pulling
+out the largest part:
+\begindisplay\openup4pt
+ng_n&=\sum_{0\le k<n}{g_k\over n}+\sum_{0\le k<n}g_k\Bigl({1\over n-k}
+ -{1\over n}\Bigr)\cr
+&={1\over n}\sum_{k\ge0}g_k-{1\over n}\sum_{k\ge n}g_k+
+ {1\over n}\sum_{0\le k<n}{kg_k\over n-k}\,.
+\eqno\eqref|boot2+|
+\enddisplay
+The first sum here is $G(1)=\exp({1\over1}+{1\over4}+{1\over9}+\cdots\,)
+=e^{\pi^2\!/6}$, because $G(z)$ converges for all $\vert z\vert\le 1$. The
+second sum is the tail of the first; we can get an upper bound by using
+\eq(|boot2|):
+\begindisplay
+\sum_{k\ge n}g_k=O\Bigl(\sum_{k\ge n}{(\log k)^2\over k^2}\Bigr)=
+O\Bigl({(\log n)^2\over n}\Bigr)\,.
+\enddisplay
+This last estimate follows because, for example,
+\begindisplay
+\sum_{k>n}{(\log k)^2\over k^2}<\sum_{m\ge1}\,\sum_{n^m<k\le n^{m+1}}
+\!\! {(\log n^{m+1})^2\over k(k-1)}<\sum_{m\ge1}{(m+1)^2(\log n)^2\over n^m}\,.
+\enddisplay
+(Exercise |tail-estimate| discusses a more general way to estimate such tails.)
+
+The third sum in~\thiseq~is
+\begindisplay
+O\biggl(\sum_{0\le k<n}{(\log n)^2\over k(n-k)}\biggr)
+=O\biggl({(\log n)^3\over n}\biggr)\,,
+\enddisplay
+by an argument that's already familiar. So \thiseq\ proves that
+\begindisplay
+g_n={e^{\pi^2\!/6}\over n^2}+O\bigl({\log n/n}\bigr)^{\!3}\,.
+\eqno\eqref|boot2++|
+\enddisplay
+Finally, we can feed this formula back into the recurrence, bootstrapping
+once more; the result is
+\begindisplay
+g_n={e^{\pi^2\!/6}\over n^2}+O({\log n/n^3})\,.
+\eqno\eqref|boot3|
+\enddisplay
+(Exercise |improve-boot3| peeks inside the remaining $O$ term.)
+
+\subhead Trick 2: Trading tails.
+
+We derived \thiseq\ in somewhat the same way we derived the
+asymptotic value \eq(|o-phi|) of $\Phi(n)$: In both cases we started
+with a finite sum but got an asymptotic value by considering an infinite
+sum. We couldn't simply get the infinite sum by introducing $O$ into
+the summand; we had to be careful to use one approach when $k$ was small
+and another when $k$ was large.
+
+Those derivations were special cases of an important
+\g\def@{\mskip-2mu}(This important method was
+ pioneered by "Laplace"~[|laplace|].)\g
+three-step "asymptotic summation method" we will now discuss in greater
+"!summation, asymptotic"
+generality. Whenever we want to estimate the value of $\sum_k a_k(n)$,
+we can try the following approach:
+
+\nobreak\smallskip
+\item{\bf1}First break the sum into two disjoint ranges, $D_n$ and $T_n$.
+The summation over $D_n$ should be the ``dominant'' part, in the
+sense that it includes enough terms to determine the significant digits of the
+sum, when $n$~is
+large. The summation over the other range
+$T_n$ should be just the ``tail'' end, which
+contributes little to the overall total.
+
+\smallskip
+\item{\bf2}Find an asymptotic estimate
+\begindisplay
+a_k(n)=b_k(n)+O\bigl(c_k(n)\bigr)
+\enddisplay
+that is valid when $k\in D_n$. The $O$ bound need not hold when $k\in T_n$.
+
+\smallskip
+\item{\bf3}Now prove that each of the following three sums is small:
+\begindisplay \openup-2pt
+&\Sigma_a(n)=\sum_{k\in T_n}a_k(n)\,;\qquad
+\Sigma_b(n)=\sum_{k\in T_n}b_k(n)\,;\cr
+&\hskip3em\Sigma_c(n)=\sum_{k\in D_n}\bigl\vert c_k(n)\bigr\vert\,.
+\eqno\eqref|3-sums|
+\enddisplay
+
+\noindent
+If all three steps can be completed successfully, we have a good estimate:
+\begindisplay
+\sum_{k\in D_n\cup T_n}\!a_k(n)=
+\sum_{k\in D_n\cup T_n}\!b_k(n)\,+\,O\bigl(\Sigma_a(n)\bigr)
+ +O\bigl(\Sigma_b(n)\bigr)
+ +O\bigl(\Sigma_c(n)\bigr)\,.
+\enddisplay
+Here's why. We can ``chop off'' the tail of the given sum, getting a good
+estimate in the range $D_n$ where a good estimate is necessary:
+\begindisplay
+\sum_{k\in D_n}a_k(n)=\sum_{k\in D_n}\bigl(b_k(n)+O(c_k(n))\bigr)
+=\sum_{k\in D_n}b_k(n)\,+\,O\bigl(\Sigma_c(n)\bigr)\,.
+\enddisplay
+And we can replace the tail with another one,
+even though the new tail might be a terrible approximation to the old,
+\g\vskip.5in
+ Asymptotics is the art of knowing where to be sloppy and "!philosophy"
+where to be precise.\g
+because the tails don't really matter:
+\begindisplay
+\sum_{k\in T_n}a_k(n)&=\sum_{k\in T_n}\bigl(b_k(n)-b_k(n)+a_k(n)\bigr)\cr
+&=\sum_{k\in T_n}b_k(n)\,+\,O\bigl(\Sigma_b(n)\bigr)
+ \,+\,O\bigl(\Sigma_a(n)\bigr)\,.
+\enddisplay
+
+When we evaluated the sum in \eq(|boot2+|), for example, we had
+\begindisplay
+a_k(n)&=\[0\le k<n]g_k/(n-k)\,,\cr
+b_k(n)&=g_k/n\,,\cr
+c_k(n)&=kg_k/n(n-k)\,;
+\enddisplay
+the ranges of summation were 
+\begindisplay
+D_n&=\{0,1,\ldots,n-1\}\,,\qquad
+T_n&=\{n,n+1,\ldots\,\}\,;\cr
+\enddisplay
+and we found that
+\begindisplay
+\Sigma_a(n)=0\,,\quad
+\Sigma_b(n)=O\bigl((\log n)^2\!/n^2\bigr)\,,\quad
+\Sigma_c(n)=O\bigl((\log n)^3\!/n^2\bigr)\,.
+\enddisplay
+This led to \eq(|boot2++|).
+
+\vskip1pt
+Similarly, when we estimated $\Phi(n)$ in \eq(|big-phi-repeat|) we had
+\begindisplay \postdisplaypenalty=10000
+&a_k(n)=\mu(k)\lfloor n/k\rfloor\lfloor1{+}n/k\rfloor\,,\quad
+b_k(n)=\mu(k)n^2\!/k^2\,,\quad
+c_k(n)=n/k\,;\cr
+\noalign{\nobreak}
+&D_n=\{1,2,\ldots,n\}\,,\qquad T_n=\{n+1,
+n+2,\ldots\,\}\,.
+\enddisplay
+ We derived \eq(|o-phi|) by observing that
+$\Sigma_a(n)=0$, $\Sigma_b(n)=O(n)$, and $\Sigma_c(n)=O(n\log n)$.
+
+Here's another example where tail switching is effective. (Unlike
+\g Also, "horses" switch their tails when feeding time approaches.\g
+our previous examples, this
+one illustrates the trick in its full generality, with $\Sigma_a(n)\ne0$.)
+We seek the asymptotic value of
+\begindisplay
+L_n=\sum_{k\ge0}{\ln(n+2^k)\over k!}\,.
+\enddisplay
+The big contributions to this sum occur when $k$ is small, because of the
+$k!$ in the denominator. In this range we have
+\begindisplay
+\ln(n+2^k)=\ln n+{2^k\over n}-{2^{2k}\over 2n^2}+O\Bigl({2^{3k}\over n^3}\Bigr)\,.
+\eqno\eqref|log-bound|
+\enddisplay
+We can prove that this estimate holds for $0\le k<\lfloor\lg n\rfloor$, since the
+original terms that have been truncated with~$O$ are
+bounded by the convergent series
+\begindisplay
+\sum_{m\ge3}{2^{km}\over mn^m}
+&\le{2^{3k}\over n^3}\sum_{m\ge3}{2^{k(m-3)}\over n^{m-3}}
+&\le{2^{3k}\over n^3}\Bigl(1+{1\over2}+{1\over4}+\cdots\,\Bigr)
+={2^{3k}\over n^3}\cdot2\,.
+\enddisplay
+(In this range, $2^k\!/n\le2^{\lfloor\lg n\rfloor-1}\!/n\le\half$.)
+
+Therefore we can apply the three-step method just described, with
+\begindisplay
+a_k(n)&=\ln(n+2^k)/k!\,,\cr
+b_k(n)&=(\ln n+2^k\!/n-4^k\!/2n^2)/k!\,,\cr
+c_k(n)&=8^k\!/n^3k!\,;\cr
+\noalign{\smallskip}
+D_n&=\{@0,1,\ldots,\lfloor\lg n\rfloor-1\}\,,\cr
+T_n&=\{@\lfloor\lg n\rfloor,\lfloor\lg n\rfloor+1,\ldots\,\}\,.\cr
+\enddisplay
+All we have to do is find good bounds on the three $\Sigma$'s in
+\eq(|3-sums|), and we'll
+know that $\sum_{k\ge0}a_k(n)\approx\sum_{k\ge0}b_k(n)$.
+
+\vskip1pt
+The error we have committed in the dominant part
+of the sum, $\Sigma_c(n)=\sum_{k\in D_n}8^k\!/n^3k!$, is
+obviously bounded by $\sum_{k\ge0}8^k\!/n^3k!=e^8\!/n^3$, so it can
+be replaced by $O(n^{-3})$.
+The new tail error is
+\begindisplay
+\bigl\vert\Sigma_b(n)\bigr\vert&=\biggl\vert\sum_{k\ge\lfloor\lg n\rfloor}b_k(n)\biggr\vert\cr
+&<\sum_{k\ge\lfloor\lg n\rfloor}{\ln n+2^k+4^k\over k!}\cr
+&<{\ln n+2^{\lfloor\lg n\rfloor}+4^{\lfloor\lg n\rfloor}\over
+\lfloor\lg n\rfloor@!}
+\sum_{k\ge0}{4^k\over k!}=O\Bigl({n^2\over\lfloor\lg n\rfloor@!}\Bigr)\,.
+\enddisplay
+\g\leavevmode\llap{``}We may not be big, but we're small.''\g
+Since $\lfloor\lg n\rfloor@!$ grows faster than any
+power of~$n$, this minuscule error is overwhelmed by $\Sigma_c(n)=O(n^{-3})$.
+The error that comes from the original tail,
+\begindisplay
+\Sigma_a(n)=\sum_{k\ge\lfloor\lg n\rfloor}a_k(n)
+<\sum_{k\ge\lfloor\lg n\rfloor}{k+\ln n\over k!}\,,
+\enddisplay
+is smaller yet.
+
+Finally, it's easy to sum $\sum_{k\ge0}b_k(n)$ in closed form, and we
+have obtained the desired asymptotic formula:
+\begindisplay
+\sum_{k\ge0}{\ln(n+2^k)\over k!}=e\ln n+{e^2\over n}-{e^4\over 2n^2}
++O\Bigl({1\over n^3}\Bigr)\,.
+\eqno
+\enddisplay
+The method we've used makes it clear that, in fact,
+\begindisplay
+\sum_{k\ge0}{\ln(n+2^k)\over k!}=e\ln n+\sum_{k=1}^{m-1}(-1)^{k+1}
+{e^{2^k}\over k@n^k}+O\Bigl({1\over n^m}\Bigr)\,,
+\eqno
+\enddisplay
+for any fixed $m>0$. (This is a truncation of a series that diverges
+for all fixed~$n$ if we let $m\to\infty$.)
+
+There's only one flaw in our solution: We were too cautious.
+We derived \eq(|log-bound|)
+on the assumption that $k<\lfloor\lg n\rfloor$, but exercise~|prove-log-bound|
+proves that the stated estimate is actually valid for all values of~$k$.
+If we had known the stronger general
+result, we wouldn't have
+had to use the two-tail trick; we could have gone directly to
+the final formula! But later we'll encounter problems where
+exchange of tails is the only decent approach available.
+
+\beginsection 9.5 Euler's Summation Formula
+
+And now for our next trick\dash---which is, in fact, the last important
+"!Euler's summation formula"
+technique that will be discussed in this book\dash---we turn to a
+general method of approximating sums that was first published by
+Leonhard "Euler"~[|euler-summation|] in 1732. (The idea is sometimes
+also associated with the name of Colin "Maclaurin", a professor of mathematics
+at Edinburgh
+who discovered it independently a short time later~[|maclaurin|, page~305].)
+
+Here's the formula:
+\begindisplay \openup4pt
+\sum_{a\le k<b}f(k)&=\int_a^bf(x)\,dx\;+\;
+ \sum_{k=1}^m{B_k\over k!}f^{(k-1)}(x)\bigg\vert_a^b\;+\;R_m\,,
+\eqno\eqref|euler-sf|\cr
+{\rm where}\enspace R_m&=(-1)^{m+1}
+ \int_a^b{B_m\bigl(\{x\}\bigr)\over m!}\,f^{(m)}(x)\,dx\,,\quad
+\tworestrictions{integers $a\le b@$;}{integer $m\ge1$.}
+\eqno\eqref|euler-sf-r|\cr
+\enddisplay
+On the left is a typical sum that we might want to evaluate. On the right
+is another expression for that sum, involving integrals and derivatives.
+If $f(x)$ is a sufficiently ``smooth'' function, it will have $m$~derivatives
+\tabref|nn:mth-deriv|%
+$f'(x)$, \dots, $f^{(m)}(x)$, and this formula turns out to be an identity.
+The right-hand side is often an excellent approximation to the sum on the
+left, in the sense that the remainder~$R_m$ is often small. For example,
+we'll see that Stirling's approximation for~$n!$ is a consequence of
+Euler's summation formula; so is our asymptotic approximation for
+the harmonic number~$H_n$.
+
+The numbers $B_k$ in \eq(|euler-sf|) are the "Bernoulli numbers" that we
+met in Chapter~6; the function $B_m\bigl(\{x\}\bigr)$ in \eq(|euler-sf-r|)
+is the "Bernoulli polynomial" that we met in Chapter~7. The notation~$\{x\}$
+stands for the fractional part $x-\lfloor x\rfloor$, as in Chapter~3.
+Euler's summation formula sort of brings everything together.
+
+Let's recall the values of small Bernoulli numbers, since it's always handy
+to have them listed near Euler's general formula:
+\begindisplay
+&\textstyle \thickmuskip=\normalthick
+ B_0=1\,,\;\;B_1=-\half\,,\;\;B_2={1\over6}\,,\;\;
+B_4=-{1\over30}\,,\;\;B_6={1\over42}\,,\;\;
+B_8=-{1\over30}\,;\cr
+&B_3=B_5=B_7=B_9=B_{11}=\cdots=0\,.
+\enddisplay
+Jakob "Bernoulli" discovered these numbers when studying the sums of
+powers of integers, and Euler's formula explains why: If we set $f(x)
+=x^{m-1}$, we have $f^{(m)}(x)=0$; hence $R_m=0$, and \eq(|euler-sf|)
+reduces to
+\begindisplay \openup6pt
+\sum_{a\le k<b}k^{m-1}&={x^m\over m}\bigg\vert_a^b\;+\;
+ \sum_{k=1}^m{B_k\over k!}\,(m-1)\_{k-1}\,x^{m-k}\,\bigg\vert_a^b\cr
+&={1\over m}\sum_{k=0}^m{m\choose k}B_k\cdot(b^{m-k}-a^{m-k})\,.
+\enddisplay
+For example, when $m=3$ we have our favorite example of summation:
+\begindisplay
+\sum_{0\le k<n}k^2&={1\over3}\Biggl({3\choose0}B_0n^3+{3\choose1}B_1n^2
+ +{3\choose2}B_2n\Biggr)
+ ={n^3\over3}-{n^2\over2}+{n\over 6}\,.
+\enddisplay
+(This is the last time
+"!sum of consecutive squares"
+\g All good things must come to an~end.\g
+we shall derive this famous formula in this book.)
+
+Before we prove Euler's formula, let's look at a high-level reason
+(due to "Lagrange"~[|lagrange-euler|]) why such a formula ought to exist.
+ Chapter~2 defines the "difference operator"~$\Delta$
+and explains that $\sum$ is the inverse of $\Delta$, just as $\smallint$
+is the inverse of the derivative operator~$D$.
+We can express $\Delta$ in
+terms of~$D$ using "Taylor's formula" as follows:
+\begindisplay
+f(x+\epsilon)=f(x)+{f'(x)\over1!}\epsilon+{f''(x)\over2!}\epsilon^2+\cdots\,.
+\enddisplay
+Setting $\epsilon=1$ tells us that
+\begindisplay \openup3pt
+\Delta f(x)&=f(x+1)-f(x)\cr
+&=f'(x)/1!+f''(x)/2!+f'''(x)/3!+\cdots\cr
+&=(D/1!+D^2\!/2!+D^3\!/3!+\cdots\,)\,f(x)=(e^D-1)\,f(x)\,.
+\eqno
+\enddisplay
+Here $e^D$ stands for the differential operation $1+D/1!+D^2\!/2!+D^3\!/3!+\cdots\,$.
+Since $\Delta=e^D-1$, the inverse operator $\Sigma=1/\Delta$ should be
+$1/(e^D-1)$; and we know from Table~|gf-special|
+ that $z/(e^z-1)=\sum_{k\ge0}B_kz^k\!/k!$ is a power
+series involving Bernoulli numbers. Thus
+\begindisplay \openup4pt
+{\textstyle\sum}&={B_0\over D}+{B_1\over1!}+{B_2\over2!}D+{B_3\over3!}D^2+\cdots\,
+&={\textstyle\int}+\sum_{k\ge1}{B_k\over k!}D^{k-1}\,.
+\eqno
+\enddisplay
+Applying this operator equation to $f(x)$ and attaching limits yields
+\begindisplay
+\sum\nolimits_a^b f(x)\,\delta x=\int_a^b f(x)\,dx+\sum_{k\ge1}{B_k\over k!}
+ f^{(k-1)}(x)\bigg\vert_a^b\,,
+\eqno
+\enddisplay
+which is exactly Euler's summation formula
+ \eq(|euler-sf|) without the remainder term.
+("Euler" did not, in fact, consider the remainder, nor did anybody else
+until S.\thinspace D. "Poisson"~[|poisson|] published an important memoir
+about approximate summation in 1823.
+The remainder term is important, because the infinite sum
+$\sum_{k\ge1}(B_k/k!)f^{(k-1)}(x)\between_a^b\kern-.4pt$ often diverges. Our
+derivation of \thiseq\ has been purely formal, without regard to convergence.)
+
+Now let's prove \eq(|euler-sf|), with the remainder included. It suffices
+to prove the case $a=0$ and $b=1$, namely
+\begindisplay
+f(0)=\int_0^1f(x)\,dx+\sum_{k=1}^m{B_k\over k!}\,f^{(k-1)}(x)\bigg\vert_0^1
+-(-1)^m\int_0^1{B_m(x)\over m!}f^{(m)}(x)\,dx\,,
+\enddisplay
+because we can then replace $f(x)$ by $f(x+l)$ for any integer~$l@$, getting
+\begindisplay\thinmuskip=2mu
+f(l)\!=\!\int_l^{l+\!1}\mskip-8muf(x)\,dx
+ +\!\sum_{k=1}^m{B_k\over k!}\,f^{(k-1)}(x)\bigg\vert_l^{l+\!1}
+\mskip-10mu-(-1)^m\int_l^{l+\!1}\!{B_m\bigl(\{x\}\bigr)\!\over m!}f^{(m)}(x)\,dx\,.
+\enddisplay
+The general formula \eq(|euler-sf|) is just the sum of this identity
+over the range $a\le l<b$, because intermediate terms telescope nicely.
+
+The proof when $a=0$ and $b=1$ is by induction on $m$, starting with $m=1$:
+\begindisplay
+f(0)=\int_0^1f(x)\,dx-\half\bigl(f(1)-f(0)\bigr)
+ +\int_0^1(x-\textstyle\half)f'(x)\,dx\,.
+\enddisplay
+(The "Bernoulli polynomial" $B_m(x)$ is defined by the equation
+\begindisplay
+B_m(x)={m\choose0}B_0x^m+{m\choose1}B_1x^{m-1}+\cdots+{m\choose m}B_mx^0
+\eqno\eqref|bern-poly-def|
+\enddisplay
+in general, hence $B_1(x)=x-\half$ in particular.) In other words,
+we want to prove that
+\begindisplay
+{f(0)+f(1)\over2}=
+\int_0^1f(x)\,dx +\int_0^1(x-\textstyle\half)f'(x)\,dx\,.
+\enddisplay
+But this is just a special case of the formula
+\begindisplay
+u(x)v(x)\big\vert_0^1=\int_0^1 u(x)\,dv(x)\;+\;\int_0^1 v(x)\,du(x)
+\eqno\eqref|int-by-parts|
+\enddisplay
+for "integration by parts", with $u(x)=f(x)$ and $v(x)=x-\half$.
+Hence the case $m=1$ is easy.
+
+To pass from $m-1$ to $m$ and complete the induction when $m>1$, we need
+to show that
+$R_{m-1}=(B_m/m!)f^{(m-1)}(x)\between_0^1+R_m$, namely that
+\begindisplay \openup3pt
+&(-1)^m \int_0^1{B_{m-1}(x)\over(m-1)!}\,f^{(m-1)}(x)\,dx\cr
+&\qquad={B_m\over m!}\,f^{(m-1)}(x)\bigg\vert_0^1-
+(-1)^m \int_0^1{B_m(x)\over m!}\,f^{(m)}(x)\,dx\,.
+\enddisplay
+This reduces to the equation
+\begindisplay
+(-1)^mB_m@f^{(m-1)}(x)\bigg\vert_0^1
+=m \int_0^1 \!B_{m-1}(x)@f^{(m-1)}(x)\,dx
++ \int_0^1 \!B_m(x)@f^{(m)}(x)\,dx\,.
+\enddisplay
+Once again \eq(|int-by-parts|) applies to these two integrals, with
+\g Will the authors never get serious?\g
+$u(x)=f^{(m-1)}(x)$ and $v(x)=B_m(x)$, because the derivative of
+the Bernoulli polynomial \eq(|bern-poly-def|) is
+\begindisplay
+{d\over dx}\mskip-1mu\sum_k\mskip-2mu{m\choose k}B_kx^{m-k}
+&=\sum_k{m\choose k}(m-k)B_kx^{m-k-1}\cr
+&=m\sum_k\mskip-2mu{m{-}1\choose k}B_kx^{m-1-k}=mB_{m-1}(x)\,.\eqno\cr
+\enddisplay % make that equation a line longer if there's room!
+(The absorption identity \equ(5.|bc-absorb-r-k|) was useful here.)
+Therefore the required formula will hold if and only if
+\begindisplay
+(-1)^mB_mf^{(m-1)}(x)\big\vert_0^1=B_m(x)@f^{(m-1)}(x)\big\vert_0^1\,.
+\enddisplay
+In other words, we need to have
+\begindisplay
+(-1)^mB_m=B_m(1)=B_m(0)\,,\qquad\hbox{for $m>1$}. \eqno
+\enddisplay
+This is a bit embarrassing, because $B_m(0)$ is obviously equal to $B_m$,
+not to~$(-1)^mB_m$. But there's no problem really, because $m>1$;
+we know that $B_m$ is zero when $m$~is odd. (Still,
+that was a close call.)
+
+To complete the proof of Euler's summation formula
+ we need to show that $B_m(1)=B_m(0)$, which is the
+same as saying that
+\begindisplay
+\sum_k{m\choose k}B_k=B_m\,,\qquad\hbox{for $m>1$}.
+\enddisplay
+But this is just the definition of Bernoulli numbers,
+\equ(6.|bern-def|), so we're done.
+
+The identity $B_m'(x)=mB_{m-1}(x)$ implies that
+\begindisplay
+\int_0^1B_m(x)\,dx={B_{m+1}(1)-B_{m+1}(0)\over m+1}\,,
+\enddisplay
+and we know now that this integral is zero when $m\ge1$. Hence the remainder
+term in Euler's formula,
+\begindisplay
+R_m={(-1)^{m+1}\over m!}\int_a^b B_m\bigl(\{x\}\bigr)@f^{(m)}(x)\,dx\,,
+\enddisplay
+multiplies $f^{(m)}(x)$ by a function $B_m\bigl(\{x\}\bigr)$ whose
+average value is zero. This means that $R_m$ has a reasonable
+chance of being small.
+
+Let's look more closely at $B_m(x)$ for $0\le x\le1$, since $B_m(x)$ governs
+the behavior of~$R_m$. Here are the graphs for $B_m(x)$
+for the first twelve values of~$m$:\looseness=-1
+\begindisplay \unitlength=50pt \advance\belowdisplayskip -\baselineskip
+&}\hfill m=1\hfill{\qquad&}\hfill m=2\hfill{\qquad
+&}\hfill m=3\hfill{\qquad&}\hfill m=4\hfill{\qquad\cr
+\raise.5\unitlength\hbox{$B_m(x)$}\quad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0,.5,1,-.5,0,.5)}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.125,0.25,0.166666666,0.041666666,-0.020833334 )}
+\put(0,0){\squine(0.25,0.375,0.5,-0.020833334,-0.083333334,-0.083333334 )}
+\put(0,0){\squine(0.5,0.625,0.75,-0.083333334,-0.083333334,-0.020833334 )}
+\put(0,0){\squine(0.75,0.875,1.0,-0.020833334,0.041666664,0.166666666 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.111111113,0.25,0.0,0.0555555564,0.046875 )}
+\put(0,0){\squine(0.25,0.33333334,0.5,0.046875,0.041666667,0.0 )}
+\put(0,0){\squine(0.5,0.66666666,0.75,0.0,-0.041666666,-0.046875 )}
+\put(0,0){\squine(0.75,0.88888889,1.0,-0.046875,-0.0555555564,0.0 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.0625,0.25,-0.033333333,-0.033333333,.00182291679 )}
+\put(0,0){\squine(0.25,0.395833332,0.5,.00182291679,0.0291666668,0.0291666668 )}
+\put(0,0){\squine(0.5,0.604166664,0.75,0.0291666668,0.0291666668,.00182291679 )}
+\put(0,0){\squine(0.75,0.9375,1.0,.00182291679,-0.033333333,-0.033333333 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\cr
+\noalign{\vskip-4pt}
+\raise.5\unitlength\hbox{$B_{4+m}(x)$}\quad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.151851851,0.25,0.0,-0.0253086418,-0.0244140623 )}
+\put(0,0){\squine(0.25,0.338095237,0.5,-0.0244140623,-0.0236111109,0)}
+\put(0,0){\squine(0.5,0.66190476,0.75,0,0.023611111,0.0244140625 )}
+\put(0,0){\squine(0.75,0.848148175,1.0,0.0244140625,0.0253086425,0 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.084999998,0.25,0.0238095238,0.0238095238,-.000360398087 )}
+\put(0,0){\squine(0.25,0.405000005,0.5,-.000360398087,-0.023065477,-0.0230654762 )}
+\put(0,0){\squine(0.5,0.595000006,0.75,-0.0230654762,-0.0230654757,-.000360398087 )}
+\put(0,0){\squine(0.75,0.914999984,1.0,-.000360398087,0.023809521,0.0238095238 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.157768156,0.25,0.0,0.026294693,0.0260620115 )}
+\put(0,0){\squine(0.25,0.33998976,0.5,0.0260620115,0.0258349872,0)}
+\put(0,0){\squine(0.5,0.66001026,0.75,0,-0.0258349907,-0.0260620154 )}
+\put(0,0){\squine(0.75,0.84223185,1.0,-0.0260620154,-0.0262946966,0)}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.089505268,0.25,-0.033333333,-0.033333333,.000129191205 )}
+\put(0,0){\squine(0.25,0.408006445,0.5,.000129191205,0.033072917,0.033072916 )}
+\put(0,0){\squine(0.5,0.59199359,0.75,0.033072916,0.0330729154,.000129191205 )}
+\put(0,0){\squine(0.75,0.910494655,1.0,.000129191205,-0.0333333216,-0.0333333258 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\cr
+\noalign{\vskip-4pt}
+\raise.5\unitlength\hbox{$B_{8+m}(x)$}\quad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.15885393,0.25,0.0,-0.047656179,-0.047550202 )}
+\put(0,0){\squine(0.25,0.340605214,0.5,-0.047550202,-0.047444853,0.0 )}
+\put(0,0){\squine(0.5,0.659394786,0.75,0.0,0.0474448525,0.0475502014 )}
+\put(0,0){\squine(0.75,0.841146074,1.0,0.0475502014,0.0476561785,0)}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.090523467,0.25,0.075757576,0.075757576,-.0000738371164 )}
+\put(0,0){\squine(0.25,0.408854794,0.5,-.0000738371164,-0.075609611,-0.075609611 )}
+\put(0,0){\squine(0.5,0.59114521,0.75,-0.075609611,-0.075609611,-.0000738371164 )}
+\put(0,0){\squine(0.75,0.90947651,1.0,-.0000738371164,0.075757567,0.075757576 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.159084527,0.25,0.0,0.13257044,0.132496597 )}
+\put(0,0){\squine(0.25,0.340781596,0.5,0.132496597,0.132422864,0.0 )}
+\put(0,0){\squine(0.5,0.65921841,0.75,0.0,-0.132422863,-0.132496595 )}
+\put(0,0){\squine(0.75,0.84091552,1.0,-0.132496595,-0.132570438,0)}
+\put(0,0){\line(1,0)1}
+\endpicture
+\qquad&
+\beginpicture(1,1)(0,-.5)
+\put(0,0){\squine(0.0,0.090766151,0.25,-0.253113553,-0.253113553,.000061765313 )}
+\put(0,0){\squine(0.25,0.409078423,0.5,.000061765313,0.252989963,0.252989963 )}
+\put(0,0){\squine(0.5,0.59092157,0.75,0.252989963,0.252989963,.000061765313 )}
+\put(0,0){\squine(0.75,0.90923382,1.0,.000061765313,-0.253113512,-0.253113553 )}
+\put(0,0){\line(1,0)1}
+\endpicture
+\enddisplay
+Although $B_3(x)$ through $B_9(x)$ are quite small, the Bernoulli polynomials
+and numbers ultimately get quite large. Fortunately $R_m$ has a compensating
+factor~$1/m!$, which helps to calm things down.
+
+The graph of $B_m(x)$ begins to look very much like a sine wave when
+%$m\ge3$; exercise~|bernoulli-sines-and-cosines| proves that $B_m(x)/m!$
+%is in fact very nearly equal to $-\bigl(2/(2\pi)^m\bigr)\cos(2\pi x-\half\pi m)$,
+$m\ge3$; exercise~|bernoulli-sines-and-cosines| proves that $B_m(x)$ can
+in fact be well approximated by a negative multiple of $\cos(2\pi x-\half\pi m)$,
+with relative error $1/2^m$.
+
+In general, $B_{4k+1}(x)$ is negative for $0<x<\half$ and positive
+for $\half<x<1$. Therefore its integral, $B_{4k+2}(x)/(4k+2)$, decreases for
+$0<x<\half$ and increases for $\half<x<1$. Moreover, we have
+\begindisplay
+B_{4k+1}(1-x)=-B_{4k+1}(x)\,,\qquad\hbox{for $0\le x\le 1$},
+\enddisplay
+and it follows that
+\begindisplay
+B_{4k+2}(1-x)=B_{4k+2}(x)\,,\qquad\hbox{for $0\le x\le 1$}.
+\enddisplay
+The constant term $B_{4k+2}$ causes the integral $\int_0^1B_{4k+2}(x)\,dx$ to
+be zero;
+hence $B_{4k+2}>0$. The integral of $B_{4k+2}(x)$ is
+$B_{4k+3}(x)/(4k+3)$, which must therefore be positive when $0<x<\half$ and
+negative when $\half<x<1$; furthermore $B_{4k+3}(1-x)=-B_{4k+3}(x)$,
+so $B_{4k+3}(x)$ has the properties stated for $B_{4k+1}(x)$, but negated.
+Therefore $B_{4k+4}(x)$ has the properties stated for $B_{4k+2}(x)$, but
+negated. Therefore $B_{4k+5}(x)$ has the properties stated for $B_{4k+1}(x)$;
+we have completed a cycle that establishes the stated properties inductively
+for all~$k$.
+
+According to this analysis, the maximum value of $B_{2m}(x)$ must
+occur either at $x=0$ or at $x=\half$. Exercise~|prove-bern-half| proves
+that
+\begindisplay
+B_{2m}({\textstyle\half})=(2^{1-2m}-1)B_{2m}\,;
+\eqno\eqref|bern-half|
+\enddisplay
+hence we have
+\begindisplay
+\bigl\vert B_{2m}\bigl(\{x\}\bigr)\bigr\vert\le\vert B_{2m}\vert\,.
+\eqno
+\enddisplay
+This can be used to establish a useful upper bound on the remainder
+in Euler's summation formula, because we know from \equ(6.|bern-zeta|)
+that
+\begindisplay
+{\vert B_{2m}\vert\over(2m)!}={2\over(2\pi)^{2m}}\sum_{k\ge1}{1\over k^{2m}}
+=O\bigl((2\pi)^{-2m}\bigr)\,,\qquad\hbox{when $m>0$.}
+\enddisplay
+Therefore we can rewrite Euler's formula \eq(|euler-sf|) as follows:
+\begindisplay \openup3pt
+\sum_{a\le k<b}f(k)&=\int_a^bf(x)\,dx-\half f(x)\big\vert_a^b
++\sum_{k=1}^m{B_{2k}\over(2k)!}f^{(2k-1)}(x)\big\vert_a^b\cr
+&\hskip5em
++O\bigl((2\pi)^{-2m}\bigr)\int_a^b\bigl\vert f^{(2m)}(x)\bigr\vert\,dx\,.
+\eqno\eqref|esf-rewritten|
+\enddisplay
+For example, if $f(x)=e^x$, all derivatives are the same and this formula
+tells us that $\sum_{a\le k<b}e^k=(e^b-e^a)\bigl(1-\half+B_2/2!+B_4/4!+\cdots
++B_{2m}/(2m)!\bigr)+O\bigl((2\pi)^{-2m}\bigr)$. Of course, we know that
+this sum is actually a geometric series,
+equal to $(e^b-e^a)/(e-1)=(e^b-e^a)\sum_{k\ge0}
+B_k/k!$.
+
+If $f^{(2m)}(x)\ge0$ for $a\le x\le b$, the integral $\int_a^b\vert f^{(2m)}(x)
+\vert\,dx$ is just $f^{(2m-1)}(x)\between_a^b$, so we have
+\begindisplay
+\vert R_{2m}\vert\le\bigg\vert\,{B_{2m}\over(2m)!}f^{(2m-1)}(x)\between_a^b
+\,\bigg\vert\,;
+\enddisplay
+in other words, the remainder is bounded by the magnitude of the {\it final
+term\/} (the term just before the remainder), in this case.
+We can give an even better estimate if we know that
+\begindisplay
+f^{(2m+2)}(x)\ge0\And
+f^{(2m+4)}(x)\ge0\,,\qquad\hbox{for $a\le x\le b$}.
+\eqno\eqref|remainder-hypothesis|
+\enddisplay
+For it turns out that this implies the relation
+\begindisplay
+R_{2m}=\theta_m\,{B_{2m+2}\over(2m+2)!}f^{(2m+1)}(x)\between_a^b\,,
+\qquad\hbox{for some $0<\theta_m<1$};
+\eqno\eqref|remainder-theta|
+\enddisplay
+in other words, the remainder will then lie between $0$ and the {\it first
+discarded term\/} in \eq(|esf-rewritten|)\dash---the term
+ that would follow the final term if we increased $m$.
+
+Here's the proof: Euler's summation formula is valid for all~$m$,
+and ${B_{2m+1}=0}$ when $m>0$;
+hence $R_{2m}=R_{2m+1}$, and the
+first discarded term must be
+\begindisplay
+R_{2m}-R_{2m+2}\,.
+\enddisplay
+We therefore want to show that $R_{2m}$ lies between $0$ and $R_{2m}-R_{2m+2}$;
+and this is true if and only if $R_{2m}$ and $R_{2m+2}$ have opposite signs.
+We claim that
+\begindisplay
+f^{(2m+2)}(x)\ge0\quad\hbox{for $a\le x\le b$\quad implies\quad}
+ (-1)^mR_{2m}\ge0\,.
+\eqno
+\enddisplay
+This, together with \eq(|remainder-hypothesis|), will prove that
+$R_{2m}$ and $R_{2m+2}$ have opposite signs, so the proof
+of \eq(|remainder-theta|) will be complete.
+
+It's not difficult to prove \thiseq\ if we recall the definition of
+$R_{2m+1}$ and the facts we proved about the graph of $B_{2m+1}(x)$.
+Namely, we have
+\begindisplay
+R_{2m}=R_{2m+1}=
+ \int_a^b{B_{2m+1}\bigl(\{x\}\bigr)\over(2m+1)!}\,f^{(2m+1)}(x)\,dx\,,
+\enddisplay
+and $f^{(2m+1)}(x)$ is increasing because its derivative $f^{(2m+2)}(x)$
+is positive.
+(More precisely, $f^{(2m+1)}(x)$ is nondecreasing because
+its derivative is nonnegative.)
+ The graph of $B_{2m+1}\bigl(\{x\}\bigr)$ looks like
+$(-1)^{m+1}$ times a sine wave, so it is geometrically
+obvious that
+the second half of each sine wave is more influential than the first
+half when it is multiplied by an increasing function.
+This makes $(-1)^mR_{2m+1}\ge0$, as desired.
+Exercise~|prove-remainder-thm| proves the result formally.
+
+\beginsection 9.6 Final Summations
+
+Now comes the summing up, as we prepare to conclude this book. We will
+apply Euler's summation formula to some interesting and important
+examples.
+
+\subhead Summation 1: This one is too easy.
+
+But first we will consider an interesting {\it unimportant\/} example,
+namely a sum that we already know how to do. Let's see what
+Euler's summation formula tells us if we apply it to the
+telescoping sum
+\begindisplay
+S_n=\sum_{1\le k<n}{1\over k(k+1)}=\sum_{1\le k<n}\biggl({1\over k}-
+{1\over k+1}\biggr)=1-{1\over n}\,.
+\enddisplay
+It can't hurt to embark on our first serious application of Euler's
+formula with the asymptotic equivalent of training wheels.
+
+We might as well start by writing the function $f(x)=1/x(x+1)$
+in partial fraction form,
+\begindisplay
+f(x)={1\over x}-{1\over x+1}\,,
+\enddisplay
+since this makes it easier to integrate and differentiate.
+Indeed, we have $f'(x)=-1/x^2+1/(x+1)^2$ and $f''(x)=2/x^3-2/(x+1)^3$;
+in general
+\begindisplay
+f^{(k)}(x)=(-1)^k k!\Bigl({1\over x^{k+1}}-{1\over(x+1)^{k+1}}\Bigr)\,,
+\qquad\hbox{for $k\ge0$}.
+\enddisplay
+Furthermore
+\begindisplay
+\int_1^n f(x)\,dx=\ln x-\ln(x+1)\,\big\vert_1^n=\ln{2n\over n+1}\,.
+\enddisplay
+Plugging this into the summation formula \eq(|euler-sf|) gives
+\begindisplay
+S_n&=\ln{2n\over n{+}1}
+-\sum_{k=1}^m(-1)^k{B_k\over k}\biggl({1\over n^k}-{1\over(n{+}1)^k}-1+{1\over2^k}
+\biggr)+R_m(n)\,,\cr
+\kern-\parindent{\rm where}\ R_m(n)
+ &=-\int_1^n B_m\bigl(\{x\}\bigr)\Bigl({1\over x^{m+1}}
+ -{1\over(x+1)^{m+1}}\Bigr)\,dx\,.
+\enddisplay
+For example, the right-hand side when $m=4$ is
+\begindisplay \openup3pt
+&\ln{2n\over n{+}1}-\half\Bigl({1\over n}-{1\over n+1}-\half\Bigr)
+-{1\over12}\Bigl({1\over n^2}-{1\over (n+1)^2}-{3\over4}\Bigr)\cr
+&\hskip12em
++{1\over120}\Bigl({1\over n^4}-{1\over(n+1)^4}-{15\over16}\Bigr)+R_4(n)\,.\cr
+\enddisplay
+This is kind of a mess; it certainly doesn't look like the real answer
+$1-n^{-1}$. But let's keep going anyway, to see what we've got. We know
+how to expand the right-hand terms in negative powers of $n$ up to,
+say, $O(n^{-5})$:
+\begindisplay \openup4pt
+\ln{n\over n+1}&=-n^{-1}&+\textstyle\half n^{-2}
+ &-{}}\hfill\textstyle{1\over3}{n^{-3}
+ &+{}}\hfill\textstyle{1\over4}{n^{-4}&+O(n^{-5})\,;\cr
+{1\over n+1}&=}\hfill{n^{-1}&-{}}\hfill{n^{-2}&+{}}\hfill{n^{-3}
+ &-{}}\hfill{n^{-4}&+O(n^{-5})\,;\cr
+{1\over(n+1)^2}&=&}\hfill{n^{-2}&-2n^{-3}&+3n^{-4}&+O(n^{-5})\,;\cr
+{1\over(n+1)^4}&=&&&}\hfill{n^{-4}&+O(n^{-5})\,.\cr
+\enddisplay
+Therefore the terms on the right of our approximation add up to
+\begindisplay \let\displaystyle=\textstyle \openup3pt
+&\ln 2+{1\over4}+{1\over16}-{1\over128}+\bigl(-1-\half+\half\bigr)n^{-1}
++\bigl(\half-\half-{1\over12}+{1\over12}\bigr)n^{-2}\cr
+&\hskip3.5em+\bigl(-{1\over3}+\half-{2\over12}\bigr)n^{-3}
++\bigl({1\over4}-\half+{3\over12}+{1\over120}-{1\over120}\bigr)n^{-4}+R_4(n)\cr
+&\qquad=\ln2+{39\over128}-n^{-1}+R_4(n)+O(n^{-5})\,.
+\enddisplay
+The coefficients of $n^{-2}$, $n^{-3}$, and $n^{-4}$ cancel nicely,
+as they should.
+
+If all were well with the world, we would be able to show that $R_4(n)$ is
+asymptotically small, maybe $O(n^{-5})$, and we would have an
+approximation to the sum. But we can't possibly show this, because we
+happen to know that the correct constant term is~$1$, not
+$\ln2+{39\over128}$ (which is approximately $0.9978$). So $R_4(n)$
+is actually equal to ${89\over128}-\ln2+O(n^{-4})$, but Euler's
+summation formula doesn't tell us this.
+
+In other words, we lose.
+
+One way to try fixing things is to notice that the constant terms in
+the approximation form a pattern, if we let $m$ get larger and
+larger:
+\begindisplay
+\textstyle \ln2-\half B_1+\half\cdt{3\over4}B_2-{1\over3}\cdt{7\over8}B_3
++{1\over4}\cdt{15\over16}B_4-{1\over5}\cdt{31\over32}B_5+\cdots\,.
+\enddisplay
+Perhaps we can show that this series approaches~$1$ as the number of
+terms becomes infinite? But no; the Bernoulli numbers get very large.
+For example, $B_{22}={854513\over138}>6192$; therefore $\bigl\vert R_{22}(n)
+\bigr\vert$ will be much larger than $\bigl\vert R_4(n)\bigr\vert$.
+We~lose~totally.
+
+There is a way out, however, and this escape route will turn out to be
+important in other applications of Euler's formula. The key is to
+notice that $R_4(n)$ approaches a definite limit as $n\to\infty$:
+\begindisplay
+\lim_{n\to\infty}R_4(n)=-\int_1^\infty B_4\bigl(\{x\}\bigr)\Bigl(
+ {1\over x^5}-{1\over(x+1)^5}\Bigr)\,dx=R_4(\infty)\,.
+\enddisplay
+The integral $\int_1^\infty B_m\bigl(\{x\}\bigr)@f^{(m)}(x)\,dx$ will
+exist whenever $f^{(m)}(x)=O(x^{-2})$ as $x\to\infty$, and in this
+case $f^{(4)}(x)$ surely qualifies. Moreover, we have
+\begindisplay
+R_4(n)&=R_4(\infty)+\int_n^\infty B_4\bigl(\{x\}\bigr)\Bigl(
+ {1\over x^5}-{1\over(x+1)^5}\Bigr)\,dx\cr
+&=R_4(\infty)+O\Bigl(\int_n^\infty x^{-6}\,dx\Bigr)=R_4(\infty)+O(n^{-5})\,.
+\enddisplay
+Thus we have used Euler's summation formula to prove that
+\begindisplay
+\sum_{1\le k<n}{1\over k(k+1)}&=\ln 2+\textstyle{39\over128}-n^{-1}
+ +R_4(\infty)+O(n^{-5})\cr
+&=C-n^{-1}+O(n^{-5})
+\enddisplay
+for some constant~$C$. We do not know what the constant is\dash---some
+other method must be used to establish it\dash---but Euler's summation
+formula is able to let us deduce that the constant exists.
+
+Suppose we had chosen a much larger value of $m$. Then the same
+reasoning would tell us that
+\begindisplay
+R_m(n)=R_m(\infty)+O(n^{-m-1})\,,
+\enddisplay
+and we would have the formula
+\begindisplay
+\sum_{1\le k<n}{1\over k(k{+}1)}\!=\!C-n^{-1}{+}c_2n^{-2}{+}c_3n^{-3}
+ +\cdots+c_mn^{-m}+O(n^{-m-1})
+\enddisplay
+for certain constants $c_2$, $c_3$, \dots\thinspace. We know that
+the $c$'s happen to be zero in this case; but let's prove it, just
+to restore some of our confidence (in Euler's formula if not in ourselves).
+The term $\ln{n\over n+1}$ contributes $(-1)^m\!/m$ to~$c_m$; the
+term $(-1)^{m+1}(B_m/m)n^{-m}$ contributes $(-1)^{m+1}B_m/m$;
+and the term $(-1)^k(B_k/k)(n+1)^{-k}$ contributes $(-1)^m{m-1\choose k-1}
+B_k/k$. Therefore
+\begindisplay
+(-1)^mc_m&={1\over m}-{B_m\over m}+\sum_{k=1}^m{m-1\choose k-1}{B_k\over k}\cr
+&={1\over m}-{B_m\over m}+{1\over m}\sum_{k=1}^m{m\choose k}B_k
+={1\over m}\bigl(1-B_m+B_m(1)-1\bigr)\,.
+\enddisplay
+Sure enough, it's zero, when $m>1$. We have proved that
+\begindisplay
+\sum_{1\le k<n}{1\over k(k+1)}=C-n^{-1}+O(n^{-m-1})\,,
+\qquad\hbox{for all $m\ge1$}.
+\eqno
+\enddisplay
+This is not enough to prove that the sum is exactly equal to $C-n^{-1}$;
+the actual value might be $C-n^{-1}+2^{-n}$ or something. But Euler's
+summation formula does give us the error bound
+$O(n^{-m-1})$ for arbitrarily large~$m$,
+even though we haven't evaluated any remainders explicitly.
+
+\subhead Summation 1, again: Recapitulation and generalization.
+
+Before we leave our training wheels, let's review what we
+just did from a somewhat higher perspective. We began with a sum
+\begindisplay
+S_n=\sum_{1\le k<n}f(k)
+\enddisplay
+and we used Euler's summation formula to write
+\begindisplay
+S_n=F(n)-F(1)+\sum_{k=1}^m\bigl(T_k(n)-T_k(1)\bigr)+R_m(n)\,,
+\eqno
+\enddisplay
+where $F(x)$ was $\int f(x)\,dx$ and where $T_k(x)$ was a certain term
+involving $B_k$ and $f^{(k-1)}(x)$. We also noticed that there was
+a constant $c$ such that
+\begindisplay
+f^{(m)}(x)=O(x^{c-m})\quad\hbox{as $x\to\infty$},
+\qquad\hbox{for all large $m$}.
+\enddisplay
+(Namely, $f(k)$ was $1/k(k+1)$; \ $F(x)$ was $\ln\bigl(x/(x+1)\bigr)$;
+\ $c$~was~$-2$; and
+$T_k(x)$ was $(-1)^{k+1}(B_k/k)\*\bigl(x^{-k}-(x+1)^{-k}\bigr)$.)
+For all large enough values of~$m$, this implied that the remainders had a
+small tail,
+\begindisplay
+R'_m(n)&=R_m(\infty)-R_m(n)\cr
+&=(-1)^{m+1}\int_n^\infty{B_m\bigl(\{x\}\bigr)\over
+ m!}f^{(m)}(x)\,dx=O(n^{c+1-m})\,.
+\eqno
+\enddisplay
+Therefore we were able to conclude that there exists a constant~$C$
+such that
+\begindisplay
+S_n=F(n)+C+\sum_{k=1}^m T_k(n)-R'_m(n)\,.
+\eqno\eqref|euler-sf+|
+\enddisplay
+(Notice that $C$ nicely absorbed the $T_k(1)$ terms, which were a nuisance.)
+
+We can save ourselves unnecessary work in future problems by simply
+asserting the existence of\/~$C$ whenever $R_m(\infty)$ exists.
+
+Now let's suppose that $f^{(2m+2)}(x)\ge0$ and $f^{(2m+4)}(x)\ge0$
+for $1\le x\le n$. We have proved that this implies a simple bound
+\eq(|remainder-theta|) on the remainder,
+\begindisplay
+R_{2m}(n)=\theta_{m,n}\bigl(T_{2m+2}(n)-T_{2m+2}(1)\bigr)\,,
+\enddisplay
+where $\theta_{m,n}$ lies somewhere between $0$ and $1$. But we don't
+really want bounds that involve $R_{2m}(n)$ and $T_{2m+2}(1)$; after all,
+we got rid of $T_k(1)$
+when we introduced the constant~$C$.
+What we really want is a bound like
+\begindisplay
+-R'_{2m}(n)=\phi_{m,n}T_{2m+2}(n)\,,
+\enddisplay
+where $0<\phi_{m,n}<1$;
+this will allow us to conclude from \eq(|euler-sf+|) that
+\begindisplay
+S_n=F(n)+C+T_1(n)+\sum_{k=1}^m T_{2k}(n)+\phi_{m,n}T_{2m+2}(n)\,,
+\eqno\eqref|euler-sf++|
+\enddisplay
+hence the remainder will truly be between zero and the first discarded term.
+
+A slight modification of our previous argument will patch things up
+perfectly. Let us assume that
+\begindisplay
+f^{(2m+2)}(x)\ge0\And f^{(2m+4)}(x)\ge0\,,\qquad\hbox{as $x\to\infty$}.
+\eqno
+\enddisplay
+The right-hand side of \eq(|euler-sf+|) is just like the negative of
+the right-hand side of Euler's summation formula \eq(|euler-sf|) with
+$a=n$ and $b=\infty$, as far as remainder terms are concerned, and successive
+remainders are generated by induction on~$m$. Therefore our previous argument
+can be applied.
+
+\subhead Summation 2: Harmonic numbers harmonized.
+
+Now that we've learned so much from a trivial (but safe) example, we can
+readily do a nontrivial one. Let us use Euler's summation formula to derive
+"!harmonic numbers"
+the approximation for~$H_n$ that we have been claiming for some time.
+
+In this case, $f(x)=1/x$. We already know about the integral and derivatives
+of~$f$, because of Summation~1; also $f^{(m)}(x)=O(x^{-m-1})$ as $x\to\infty$.
+Therefore we can immediately plug into formula \eq(|euler-sf+|):
+\begindisplay \advance\medmuskip 2mu
+\sum_{1\le k<n}{1\over k}
+=\ln n+C+B_1n^{-1}-\sum_{k=1}^m{B_{2k}\over2k n^{2k}}-R'_{2m}(n)\,,
+\enddisplay
+for some constant~$C$. The sum on the left is $H_{n-1}$, not $H_n$;
+but it's more convenient to work with $H_{n-1}$ and to add $1/n$ later,
+than to mess around with $(n+1)$'s on the right-hand side.
+The $B_1n^{-1}$ will then become $(B_1+1)n^{-1}=1/(2n)$.
+ Let us call the constant $\gamma$ instead of\/ $C$, since Euler's
+constant~$\gamma$ is, in fact, defined to be $\lim_{n\to\infty}(H_n-
+\ln n)$.
+
+The remainder term can be estimated nicely by the theory we developed
+a minute ago, because $f^{(2m)}(x)=(2m)!/x^{2m+1}\ge0$ for all $x>0$.
+Therefore \eq(|euler-sf++|) tells us that
+\begindisplay
+H_n=\ln n+\gamma+{1\over2n}-\sum_{k=1}^m{B_{2k}\over2k n^{2k}}
++\theta_{m,n}{B_{2m+2}\over(2m+2)n^{2m+2}}\,,
+\eqno
+\enddisplay
+\looseness=-1
+where $\theta_{m,n}$ is some fraction between $0$ and~$1$.
+This is the general formula whose first few terms
+are listed in Table~|o-special|. For example, when $m=2$ we get
+\begindisplay
+H_n=\ln n+\gamma+{1\over2n}-{1\over12n^2}+{1\over120n^4}
+ -{\theta_{2,n}\over252n^6}\,.
+\eqno\eqref|harmonic-theta|
+\enddisplay
+This equation, incidentally, gives us a good approximation to~$\gamma$
+even when $n=2$:
+\begindisplay
+\textstyle \gamma=H_2-\ln 2-{1\over4}+{1\over48}-{1\over1920}+\epsilon
+=0.577165\ldots+\epsilon\,,
+\enddisplay
+where $\epsilon$ is between zero and $1\over16128$. If we take
+$n=10^4$ and $m=250$, we get the value of~$\gamma$ correct to
+1271 decimal places, beginning thus~[|knuth-gamma|]:
+\begindisplay
+\gamma=0.57721\,56649\,01532\,86060\,65120\,90082\,40243\ldots\,.
+\eqno
+\enddisplay
+But Euler's constant appears also in other formulas that allow it to be
+"!Euler's constant, evaluation of"
+evaluated even more efficiently [|sweeney-gamma|].
+
+\subhead Summation 3: Stirling's approximation.
+
+If $f(x)=\ln x$, we have $f'(x)=1/x$, so we can evaluate the sum of
+logarithms using almost the same calculations
+as we did when summing reciprocals. 
+Euler's summation formula yields
+\begindisplay
+\sum_{1\le k<n}\ln k&=
+n\ln n-n+\sigma-{\ln n\over 2}\cr
+&\qquad+\sum_{k=1}^m{B_{2k}\over2k(2k{-}1)n^{2k-1}}
++\varphi_{m,n}{B_{2m+2}\over(2m{+}2)(2m{+}1)n^{2m+1}}
+\enddisplay
+where $\sigma$ is a certain constant, ``"Stirling's constant",\qback''
+and $0<\varphi_{m,n}<1$. (In this case $f^{(2m)}(x)$ is negative,
+not positive; but we can still say that the remainder is governed by
+the first discarded term, because we could have started with
+$f(x)=-\ln x$ instead of\/ $f(x)=\ln x$.) Adding $\ln n$ to both sides gives
+\begindisplay
+\ln n!=n\ln n-n+{\ln n\over2}+\sigma+{1\over12n}-{1\over360n^3}
++{\varphi_{2,n}\over1260n^5}
+\eqno\eqref|stirling-by-euler|
+\enddisplay
+when $m=2$. And we can get the approximation in Table~|o-special|
+by taking `exp' of both sides. (The value of $e^\sigma$ turns out to
+be~$\sqrt{2\pi}$, but we aren't quite ready to derive that formula. In fact,
+"Stirling" didn't discover the closed form for $\sigma$ until
+several years after "de Moivre"~[|de-moivre|] had proved that the
+constant exists.)
+
+If $m$ is fixed and $n\to\infty$, the general formula gives a better and
+better approximation to $\ln n!$ in the sense of absolute error,
+hence it gives a better and better approximation to $n!$ in the
+sense of relative error. But if $n$ is fixed and $m$~increases, the
+error bound $\vert B_{2m+2}\vert/(2m+2)(2m+1)n^{2m+1}$ decreases
+to a certain point and then begins to increase. Therefore the approximation
+reaches a point beyond which a sort of "uncertainty principle" limits
+\g "Heisenberg" may have been here.\g
+the amount by which $n!$ can be approximated.
+
+In Chapter 5, equation \equ(5.|f-def-lim|), we generalized factorials
+to arbitrary real~$\alpha$ by using a definition
+\begindisplay
+{1\over\alpha!}=\lim_{n\to\infty}{n+\alpha\choose n}n^{-\alpha}
+\enddisplay
+suggested by Euler. Suppose $\alpha$ is a large number; then
+\begindisplay
+\ln\alpha!=\lim_{n\to\infty}\Bigl(\alpha\ln n+\ln n!-\sum_{k=1}^n
+ \ln(\alpha+k)\Bigr)\,,
+\enddisplay
+and Euler's summation formula can be used with $f(x)=\ln(x+\alpha)$
+to estimate this sum:
+\begindisplay
+\sum_{k=1}^n\ln(k+\alpha)&=F_m(\alpha,n)-F_m(\alpha,0)+R_{2m}(\alpha,n)\,,\cr
+F_m(\alpha,x)&=(x+\alpha)\ln(x+\alpha)- x+{\ln(x+\alpha)\over2}\cr
+&\hskip9em +\sum_{k=1}^m{B_{2k}\over 2k(2k-1)(x+\alpha)^{2k-1}}\,,\cr
+\noalign{\vskip2pt}
+R_{2m}(\alpha,n)&=\int_0^n{B_{2m}\bigl(\{x\}\bigr)\over2m}
+ {dx\over(x+\alpha)^{2m}}\,.
+\enddisplay
+(Here we have used \eq(|euler-sf|) with $a=0$ and $b=n$, then
+added $\ln(n+\alpha)-\ln\alpha$ to both sides.)
+If we subtract this approximation for $\sum_{k=1}^n\ln(k+\alpha)$
+ from Stirling's approximation for $\ln n!$,
+then add $\alpha\ln n$ and take the limit as ${n\to\infty}$, we get
+\begindisplay \openup3pt
+\ln\alpha!&=\alpha\ln\alpha-\alpha+{\ln\alpha\over2}+\sigma\cr
+&\qquad +\sum_{k=1}^m{B_{2k}\over(2k)(2k-1)\alpha^{2k-1}}
+ -\int_0^\infty{B_{2m}\bigl(\{x\}\bigr)\over2m}{dx\over(x+\alpha)^{2m}}\,,
+\enddisplay
+because $\alpha\ln n+n\ln n-n+\half\ln n-(n+\alpha)\ln(n+\alpha)+n
+-\half\ln(n+\alpha)\to-\alpha$ and the other terms not shown here tend to~zero.
+Thus Stirling's approximation behaves for generalized factorials
+(and for the "Gamma function" ${\Gamma(\alpha+1)=\alpha!}$) exactly as for
+ordinary factorials.
+
+\subhead Summation 4: A bell-shaped summand.
+
+Let's turn now to a sum that has quite a different flavor:
+\begindisplay\tightplus
+\Theta_n&=\sum_k e^{-k^2\!/n}\eqno\cr
+\noalign{\nobreak}
+&=\cdots+e^{-9/n}+e^{-4/n}+e^{-1/n}+1+e^{-1/n}+
+ e^{-4/n}+e^{-9/n}+\cdots\,.
+\enddisplay
+This is a "doubly infinite sum", whose terms reach their maximum value
+$e^0=1$ when $k=0$. We call it $\Theta_n$ because it is a power series
+involving the quantity $e^{-1/n}$ raised to the $p(k)$th power,
+where $p(k)$ is a polynomial of degree~$2$; such power series are traditionally
+called ``"theta functions".\qback'' If $n=10^{100}$, we have
+\begindisplay
+e^{-k^2\!/n}=\cases{e^{-.01}\approx0.99005,&when $k=10^{49}$;\cr
+e^{-1\phantom{.0}}\approx0.36788,&when $k=10^{50}$;\cr
+e^{-100}<10^{-43},&when $k=10^{51}$.\cr}
+\enddisplay
+So the summand stays very near~$1$ until $k$ gets up to about~$\sqrt n$,
+when it drops off and stays very near zero. We can guess that $\Theta_n$ will be
+proportional to~$\sqrt n$. Here is a graph of $e^{-k^2\!/n}$ when $n=10$:
+\begindisplay
+\unitlength=.333333in
+\beginpicture(12.1,1)(-6,0)
+\put(0,0){\squine(-6,-5.7346586,-5.5,0.027323723,0.0360238603,0.0485578217)}
+\put(0,0){\squine(-5.5,-5.237881,-5.0,0.0485578217,0.06255854,0.082085)}
+\put(0,0){\squine(-5,-4.7415273,-4.5,0.082085,0.103301728,0.131993841)}
+\put(0,0){\squine(-4.5,-4.2458983,-4.0,0.131993841,0.162179735,0.201896518)}
+\put(0,0){\squine(-4,-3.751684,-3.5,0.201896518,0.242003806,0.293757703)}
+\put(0,0){\squine(-3.5,-3.26093453,-3.0,0.293757703,0.342916798,0.40656966)}
+\put(0,0){\squine(-3,-2.78371334,-2.5,0.40656966,0.459330913,0.53526142)}
+\put(0,0){\squine(-2.5,-2.25,-2.0,0.53526142,0.60,0.67032006)}
+\put(0,0){\squine(-2,-1.70536238,-1.5,0.67032006,0.74932051,0.798516214)}
+\put(0,0){\squine(-1.5,-1.229678,-1.0,0.798516214,0.86327312,0.904837415)}
+\put(0,0){\squine(-1,-0.73983816,-0.5,0.904837415,0.95191824,0.9753099)}
+\put(0,0){\squine(-0.5,-0.246848678,0.0,0.9753099,1.0,1.0)}
+\put(0,0){\squine(0,0.246848678,0.5,1,1.0,0.9753099)}
+\put(0,0){\squine(0.5,0.73983817,1.0,0.9753099,0.95191824,0.904837415)}
+\put(0,0){\squine(1,1.229678,1.5,0.904837415,0.86327312,0.798516214)}
+\put(0,0){\squine(1.5,1.70536238,2.0,0.798516214,0.74932051,0.67032006)}
+\put(0,0){\squine(2,2.25,2.5,0.67032006,0.60,0.53526142)}
+\put(0,0){\squine(2.5,2.78371334,3.0,0.53526142,0.459330913,0.40656966)}
+\put(0,0){\squine(3,3.26093432,3.5,0.40656966,0.342916798,0.293757703)}
+\put(0,0){\squine(3.5,3.75168383,4.0,0.293757703,0.242003806,0.201896518)}
+\put(0,0){\squine(4,4.2458982,4.5,0.201896518,0.162179735,0.131993841)}
+\put(0,0){\squine(4.5,4.7415273,5.0,0.131993841,0.103301728,0.082085)}
+\put(0,0){\squine(5,5.2378808,5.5,0.082085,0.06255854,0.0485578217)}
+\put(0,0){\squine(5.5,5.7346586,6.0,0.0485578217,0.0360238603,0.027323723)}
+\multiput(-6,-.1)(1,0)6{\line(0,1){.2}}
+\put(0,-.1){\line(0,1){1.2}}
+\multiput(1,-.1)(1,0)6{\line(0,1){.2}}
+\put(-6,0){\line(1,0){12}}
+\endpicture
+\enddisplay
+Larger values of $n$ just stretch the graph horizontally by a factor of $\sqrt n$.
+
+We can estimate $\Theta_n$ by letting $f(x)=e^{-x^2\!/n}$ and taking $a=-\infty$,
+$b=+\infty$ in Euler's summation formula. (If infinities seem too scary,
+let $a=-A$ and $b=+B$, then take limits as $A,B\to\infty$.) The integral
+of $f(x)$ is
+\begindisplay
+\int_{-\infty}^{+\infty}e^{-x^2\!/n}\,dx=\sqrt n\,
+\int_{-\infty}^{+\infty}e^{-u^2}\,du=\sqrt n\,C\,,
+\enddisplay
+if we replace $x$ by $u\sqrt n$. The value of $\int_{-\infty}^{+\infty}
+e^{-u^2}\,du$ is well known,
+but we'll call it~$C$ for now and come back to it after we have finished
+plugging into Euler's summation formula.
+
+The next thing we need to know is the sequence of derivatives
+$f'(x)$, $f''(x)$, \dots, and for this purpose it's convenient to set
+\begindisplay
+f(x)=g\bigl(x/\mskip-2mu\sqrt n\,\bigr)\,,\qquad g(x)=e^{-x^2}\,.
+\enddisplay
+Then the "chain rule" of calculus says that
+\begindisplay
+{df(x)\over dx}={dg(y)\over dy}{dy\over dx}\,,\qquad y={x\over\sqrt n}\,;
+\enddisplay
+and this is the same as saying that
+\begindisplay
+f'(x)={1\over\sqrt n}\,g'\bigl(x/\mskip-2mu\sqrt n\,\bigr)\,.
+\enddisplay
+By induction we have
+\begindisplay
+f^{(k)}(x)=n^{-k/2}g^{(k)}\bigl(x/\mskip-2mu\sqrt n\,\bigr)\,.
+\enddisplay
+For example, we have $g'(x)=-2xe^{-x^2}$ and $g''(x)=(4x^2-2)e^{-x^2}$; hence
+\begindisplay
+f'(x)={1\over\sqrt n}\biggl(-2{x\over\sqrt n}\biggr)e^{-x^2\!/n}\,,\qquad
+f''(x)={1\over n}\biggl(4\Bigl({x\over\sqrt n}\Bigr)^{\!2}-2\biggr)e^{-x^2\!/n}\,.
+\enddisplay
+It's easier to see what's going on if we work with the simpler function~$g(x)$.
+
+We don't have to evaluate the derivatives of $g(x)$ exactly, because we're
+only going to be concerned about the limiting values when $x=\pm\infty$.
+And for this purpose it suffices to notice that every derivative of~$g(x)$ is
+$e^{-x^2}$ times a polynomial in~$x$:
+\begindisplay
+g^{(k)}(x)=P_k(x)e^{-x^2}\,,\qquad\hbox{where
+   $P_k$ is a polynomial of degree $k$}.
+\enddisplay
+This follows by induction.
+
+The negative exponential $e^{-x^2}$ goes to zero much faster than $P_k(x)$
+goes to infinity, when $x\to\pm\infty$, so we have
+\begindisplay
+f^{(k)}(+\infty)=
+f^{(k)}(-\infty)=0
+\enddisplay
+for all $k\ge0$. Therefore all of the terms
+\begindisplay
+\sum_{k=1}^m {B_k\over k!}f^{(k-1)}(x)\big\vert_{-\infty}^{+\infty}
+\enddisplay
+vanish, and we are left with the term from $\int f(x)\,dx$ and the remainder:
+\begindisplay \openup5pt
+\Theta_n&=C\sqrt n+(-1)^{m+1}\int_{-\infty}^{+\infty}
+ {B_m\bigl(\{x\}\bigr)\over m!}f^{(m)}(x)\,dx\cr
+&=C\sqrt n+{(-1)^{m+1}\over n^{m/2}}\int_{-\infty}^{+\infty}
+ {B_m\bigl(\{x\}\bigr)\over m!}g^{(m)}\biggl({x\over\sqrt n}\biggr)\,dx\cr
+\noalign{\vskip-.5\baselineskip
+ \rightline{$(x=u\sqrt n\,)$\quad}\vskip-.5\baselineskip}
+&=C\sqrt n+{(-1)^{m+1}\over n^{(m-1)/2}}\int_{-\infty}^{+\infty}
+ {B_m\bigl(\{u\sqrt n\,\}\bigr)\over m!}P_m(u)e^{-u^2}\,du\cr
+&=C\sqrt n+O(n^{(1-m)/2})\,.
+\enddisplay
+The $O$ estimate here follows since $\bigl\vert B_m\bigl(\{u\sqrt n\,\}
+\bigr)\bigr\vert$ is bounded and the integral $\int_{-\infty}^{+\infty}
+\bigl\vert P(u)\bigr\vert e^{-u^2}\,du$ exists whenever $P$~is
+a polynomial. (The constant implied by this~$O$ depends on $m$.)
+
+We have proved that $\Theta_n=C\sqrt n+O(n^{-M})$, for arbitrarily
+large~$M$; the difference between $\Theta_n$ and $C\sqrt n$ is
+``exponentially small.\qback'' Let us therefore determine the
+constant~$C$ that plays such a big role in the value of~$\Theta_n$.
+
+One way to determine $C$ is to look the integral up in a table; but
+we prefer to know how the value can be derived, so that we can do integrals
+even when they haven't been tabulated. Elementary calculus suffices
+to evaluate~$C$ if we are clever enough to look at the double integral
+\begindisplay
+C^2=\int_{-\infty}^{+\infty}e^{-x^2}\,dx
+    \int_{-\infty}^{+\infty}e^{-y^2}\,dy
+=
+    \int_{-\infty}^{+\infty}\,\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}\,dx\,dy\,.
+\enddisplay
+Converting to polar coordinates gives
+\begindisplay \openup3pt
+C^2&=\int_0^{2\pi}\,\int_0^\infty e^{-r^2}r\,dr\,d\theta\cr
+\noalign{\vskip-.5\baselineskip
+ \rightline{$(u=r^2)$\qquad}\vskip-.5\baselineskip}
+&={1\over2}\int_0^{2\pi}d\theta\,\int_0^\infty e^{-u}\,du\cr
+&={1\over2}\int_0^{2\pi}d\theta = \pi\,.\cr
+\enddisplay
+So $C=\sqrt\pi$. The fact that $x^2+y^2=r^2$ is the equation of a circle
+whose circumference is $2\pi r$ somehow explains why $\pi$ gets
+into the act.
+
+Another way to evaluate $C$ is to replace $x$ by $\sqrt t$ and $dx$
+by $\half t^{-1/2}\,dt$:
+\begindisplay
+C=\int_{-\infty}^{+\infty}e^{-x^2}\,dx=2\int_0^\infty e^{-x^2}\,dx
+=\int_0^\infty t^{-1/2}e^{-t}\,dt\,.
+\enddisplay
+This integral equals $\Gamma\bigl(\half\bigr)$, since $\Gamma(\alpha)
+=\int_0^\infty t^{\alpha-1}e^{-t}\,dt$ according to \equ(5.|f-def-int|).
+Therefore we have demonstrated that $\Gamma\bigl(\half\bigr)=\sqrt\pi$.
+
+Our final formula, then, is
+\begindisplay
+\Theta_n=\sum_k e^{-k^2\!/n}=\sqrt{\pi n}+O(n^{-M})\,,
+\qquad\hbox{for all fixed $M$}.
+\eqno\eqref|theta-by-euler|
+\enddisplay
+The constant in the $O$ depends on $M$; that's why we say that
+$M$ is ``fixed.\qback''
+
+When $n=2$, for example, the infinite sum
+$\Theta_2$ is approximately equal to $2.506628288$; this is already
+very close to $\sqrt{2\pi}\approx2.506628275$, even though
+$n$ is quite small. The value of $\Theta_{100}$
+agrees with $10\sqrt\pi$ to 427 decimal places! Exercise~|prove-jacobi|
+uses advanced methods to derive a rapidly convergent series for~$\Theta_n$;
+it turns out that
+\begindisplay
+\Theta_n/\sqrt{\pi n}=1+2e^{-n\pi^2}+O(e^{-4n\pi^2})\,.
+\eqno
+\enddisplay
+
+\subhead Summation 5: The clincher.
+
+Now we will do one last sum, which will turn out to tell us the value
+of Stirling's constant~$\sigma$. This last sum also illustrates
+many of the other techniques of this last chapter (and of this whole
+book), so it will be a fitting way for us to conclude our explorations
+of Concrete Mathematics.
+
+The final task seems almost absurdly easy: We will try to find the
+asymptotic value of
+\begindisplay
+A_n=\sum_k{2n\choose k}
+\enddisplay
+by using Euler's summation formula.
+
+ This is another case where we
+already know the answer (right?); but it's always interesting to try
+new methods on old problems, so that we can compare facts and maybe
+discover something new.
+
+So we {\sc think big} and realize that the main contribution to $A_n$
+"!thinking big"
+comes from the middle terms, near $k=n$. It's almost always a
+good idea to choose notation so that the biggest contribution to a sum
+occurs near $k=0$, because we can then use the tail-exchange trick to
+get rid of terms that have large~$\vert k\vert$. Therefore we
+replace $k$ by $n+k$:
+\begindisplay
+A_n=\sum_k{2n\choose n+k}=\sum_k{(2n)!\over(n+k)!\,(n-k)!}\,.
+\enddisplay
+Things are looking reasonably good, since we know how to approximate
+${(n\pm k)}!$ when $n$ is large and $k$ is small.
+
+Now we want to carry out the three-step procedure associated with
+the tail-exchange trick. Namely, we want to write
+\begindisplay
+{(2n)!\over(n+k)!\,(n-k)!}=a_k(n)=b_k(n)+O\bigl(c_k(n)\bigr)\,,
+\qquad\hbox{for $k\in D_n$},
+\enddisplay
+so that we can obtain the estimate
+\begindisplay
+A_n=\sum_kb_k(n)
++O\Bigl(@\sum_{k\notin D_n}\!a_k(n)\Bigr)
++O\Bigl(@\sum_{k\notin D_n}\!b_k(n)\Bigr)
++\sum_{k\in D_n}\!\!O\bigl(c_k(n)\bigr)\,.
+\enddisplay
+
+Let us therefore try to estimate $2n\choose n+k$ in the region where
+$\vert k\vert $ is small. We could use Stirling's
+approximation as it appears in Table~|o-special|, but it's easier
+to work with the logarithmic equivalent in \eq(|stirling-by-euler|):
+\begindisplay \let\displaystyle=\textstyle
+\ln a_k(n)&=\ln(2n)!-\ln(n+k)!-\ln(n-k)!\cr
+&=2n\ln2n-2n+\half\ln2n +\sigma+O(n^{-1})\cr
+&\qquad-(n{+}k)\ln(n{+}k)+n+k-\half\ln(n{+}k)-\sigma+O\bigl((n{+}k)^{-1}\bigr)\cr
+&\qquad-(n{-}k)\ln(n{-}k)+n-k-\half\ln(n{-}k)-\sigma+O\bigl((n{-}k)^{-1}\bigr)\,.\cr
+\eqno\eqref|log-akn|
+\enddisplay
+We want to convert this to a nice, simple $O$ estimate.
+
+The tail-exchange method allows us to work with estimates that are valid
+only when $k$ is in the ``dominant'' set~$D_n$. But how should we
+define~$D_n$? We have to make $D_n$ small enough that we can make
+\g Actually I'm not into dominance.\g
+a good estimate; for example, we had better not let $k$ get near~$n$,
+or the term $O\bigl((n-k)^{-1}\bigr)$ in \thiseq\ will blow up.
+Yet $D_n$ must be large enough that the tail terms (the terms with
+$k\notin D_n$) are negligibly small compared with the overall sum.
+Trial and error is usually necessary to find an appropriate
+set~$D_n$; in this problem
+the calculations we are about to make will show that
+it's wise to define things as follows:
+\begindisplay
+k\in D_n\;\iff\;\vert k\vert\le n^{1/2+\epsilon}\,.
+\eqno
+\enddisplay
+Here $\epsilon$ is a small positive constant that we can choose later,
+after we get to know the territory. (Our $O$~estimates will depend
+on the value of~$\epsilon$.) Equation \eq(|log-akn|) now reduces to
+\begindisplay \let\displaystyle=\textstyle \openup3pt
+\ln a_k(n)&=(2n+\half)\ln2-\sigma-\half\ln n+O(n^{-1})\cr
+&\qquad-(n{+}k{+}\half)\ln(1{+}k/n)
+ -(n{-}k{+}\half)\ln(1{-}k/n)\,.
+\eqno
+\enddisplay
+(We have pulled out the large parts of the logarithms, writing
+\begindisplay
+\ln(n\pm k)=\ln n+\ln(1\pm k/n)\,,
+\enddisplay
+and this has made a lot of $\ln n$ terms cancel out.)
+
+Now we need to expand the terms $\ln(1\pm k/n)$ asymptotically,
+until we have an error term that approaches zero as $n\to\infty$.
+We are multiplying $\ln(1\pm k/n)$ by $(n\pm k+\half)$, so we should
+expand the logarithm until we reach $o(n^{-1})$, using the assumption
+that $\vert k\vert\le n^{1/2+\epsilon}$:
+\begindisplay
+\ln\Bigl(1\pm{k\over n}\Bigr)=\pm{k\over n}-{k^2\over2n^2}
+ +O(n^{-3/2+3\epsilon})\,.
+\enddisplay
+Multiplication by $n\pm k+\half$ yields
+\begindisplay
+\pm k-{k^2\over 2n}+{k^2\over n}+O(n^{-1/2+3\epsilon})\,,
+\enddisplay
+plus other terms that are absorbed in the $O(n^{-1/2+3\epsilon})$.
+So \thiseq\ becomes
+\begindisplay
+\ln a_k(n)&=(2n+\half)\ln2-\sigma-\half\ln n-k^2\!/n+O(n^{-1/2+3\epsilon})\,.
+\enddisplay
+Taking exponentials, we have
+\begindisplay
+a_k(n)={2^{2n+1/2}\over e^{\sigma}\sqrt n}
+ \,e^{-k^2\!/n}\bigl(1+O(n^{-1/2+3\epsilon})\bigr)\,.
+\eqno
+\enddisplay
+This is our approximation, with
+\begindisplay
+b_k(n)=
+{2^{2n+1/2}\over e^{\sigma}\sqrt n}
+ \,e^{-k^2\!/n}\,,\qquad
+c_k(n)=2^{2n}\,n^{-1+3\epsilon}\,e^{-k^2\!/n}\,.
+\enddisplay
+Notice that $k$ enters $b_k(n)$ and $c_k(n)$ in a very simple way. We're
+in luck, because we will be summing over~$k$.
+
+The tail-exchange trick tells us that $\sum_k a_k(n)$ will be approximately
+$\sum_k b_k(n)$ if we have done a good job of estimation. Let us therefore
+evaluate
+\begindisplay
+\sum_k b_k(n)&={2^{2n+1/2}\over e^\sigma\sqrt n}\sum_k e^{-k^2\!/n}\cr
+&={2^{2n+1/2}\over e^\sigma\sqrt n}\Theta_n
+={2^{2n}\sqrt{2\pi}\over e^\sigma}\bigl(1+O(n^{-M})\bigr)\,.
+\enddisplay
+(Another stroke of luck: We get to use the sum $\Theta_n$ from the
+\g What an amazing coincidence.\g
+previous example.) This is encouraging, because we know that the original
+sum is actually
+\begindisplay
+A_n=\sum_k{2n\choose k}=(1+1)^{2n}=2^{2n}\,.
+\enddisplay
+Therefore it looks as if we will have $e^\sigma=\sqrt{2\pi}$, as advertised.
+
+But there's a catch: We still need to prove that our estimates are
+\g I'm tired of getting to the end of long, hard books and not even getting
+a word of good wishes from the author. It would be nice to read a
+``thanks for reading this, hope it comes in handy,\qback'' instead of just
+running into a hard, cold, cardboard cover at the end of a long, dry proof.
+You know?\g
+good enough. So let's look first at the error contributed by~$c_k(n)$:
+\begindisplay
+\Sigma_c(n)=\hskip-12pt
+\sum_{\vert k\vert\le n^{1/2+\epsilon}}
+\hskip-10pt 2^{2n}n^{-1+3\epsilon}
+e^{-k^2\!/n}\le2^{2n}n^{-1+3\epsilon}\Theta_n=O(2^{2n}n^{-\half+3\epsilon})\,.
+\enddisplay
+Good; this is asymptotically smaller than the previous sum, if $3\epsilon<\half$.
+
+Next we must check the tails. We have
+\begindisplay
+\sum_{k>n^{1/2+\epsilon}}e^{-k^2\!/n}
+&<\exp\bigl(-\lfloor n^{1/2+\epsilon}\rfloor^2\!/n\bigr)
+ (1+e^{-1/n}+e^{-2/n}+\cdots\,)\cr
+&=O(e^{-n^{2\epsilon}})\cdot O(n)\,,
+\enddisplay
+which is $O(n^{-M})$ for all~$M$; so $\sum_{k\notin D_n}b_k(n)$ is
+asymptotically
+negligible. (We chose the cutoff at $n^{1/2+\epsilon}$ just so that
+$\smash{e^{-k^2\!/n}}$ would be exponentially small outside of~$D_n$. Other
+choices like $n^{1/2}\log n$ would have been good enough too, and the
+resulting estimates would have been slightly sharper, but the formulas would
+have come out more complicated. We need not make the strongest
+possible estimates, since our main goal is to establish the value
+of the constant~$\sigma$.) Similarly, the other tail
+\begindisplay
+\sum_{k>n^{1/2+\epsilon}}{2n\choose n+k}
+\enddisplay
+is bounded by $2n$ times its largest term, which occurs at the cutoff
+point $k\approx n^{1/2+\epsilon}$. This term is known to be approximately
+$b_k(n)$, which is exponentially small compared with~$A_n$; and an
+exponentially small multiplier wipes out the factor of~$2n$.
+
+Thus we have successfully applied the tail-exchange trick to prove
+the estimate
+\begindisplay
+2^{2n}=\sum_k{2n\choose k}={\sqrt{2\pi}\over e^\sigma}2^{2n}+
+ O(2^{2n}n^{-\half+3\epsilon})\,,\quad\hbox{if $0<\epsilon<{1\over6}$}.
+\eqno\eqref|final-summation|
+\enddisplay
+We may choose $\epsilon={1\over8}$ and conclude that
+\g Thanks for reading this, hope it comes in handy.\par
+\hfill\kern-4pt\dash---The authors\g
+\begindisplay
+\sigma=\textstyle\half\ln2\pi\,.
+\enddisplay
+QED.
+
+\beginexercises
+
+\subhead \kern-.05em Warmups
+
+\ex:
+Prove or disprove:
+If $f_1(n)\prec g_1(n)$ and $f_2(n)\prec g_2(n)$, then we have
+$f_1(n)+f_2(n)\prec g_1(n)+g_2(n)$.
+\answer True if the functions are all positive. But otherwise we might
+have, say, $f_1(n)=n^3+n^2$, $f_2(n)=-n^3$, $g_1(n)=n^4+n$, $g_2(n)=-n^4$.
+\source{"Hardy" [|hardy-tract|, 1.3(g)].}
+
+\ex:
+Which function grows faster:
+\smallskip
+\itemitem{a}$n^{(\ln n)}$ \ or \ $(\ln n)^n$?
+\itemitem{b}$n^{(\ln\ln\ln n)}$ \ or \ $(\ln n)!\mskip2mu$?
+\itemitem{c}$(n!)!$ \ or \ $\bigl((n-1)!\bigr)!\,(n-1)!^{n!}@$?
+\itemitem{d}$F^2_{\lceil H_n\rceil}$ \ or \ $H_{F_n}@$?
+\answer (a) We have $n^{\ln n}\prec c^n\prec(\ln n)^n$, since
+$(\ln n)^2\prec n\ln c\prec n\ln\ln n$. (b)~$n^{\ln\ln\ln n}\prec
+(\ln n)!\prec n^{\ln\ln n}$. (c)~Take logarithms to show that
+$(n!)!$ wins. (d)~$F^2_{\lceil H_n\rceil}\asymp \phi^{2\ln n}=n^{2\ln\phi}$;
+$H_{F_n}\sim n\ln\phi$ wins because $\phi^2=\phi+1<e$.
+\source{Part~(c) is from "Garfunkel" [|garfunkel|].}
+
+\ex:\exref|o-fallacy|%
+What's wrong with the following argument? ``Since $n=O(n)$ and $2n=O(n)$ and
+so on, we have $\sum_{k=1}^n kn=\sum_{k=1}^nO(n)=O(n^2)$.''
+\answer Replacing $kn$ by $O(n)$ requires a different $C$ for each $k$;
+but each $O$ stands for a single~$C$. In fact, the context of this
+$O$ requires it to stand for a set of functions of two variables $k$ and~$n$.
+It would be correct to write
+$\sum_{k=1}^n kn=\sum_{k=1}^nO(n^2)=O(n^3)$.
+\source{[|knuth1|, exercise 1.2.11.1--6].}
+
+\ex:\exref|o-vanishing|%
+Give an example of a valid equation that has $O$-notation on the left
+but not on the right. (Do not use the trick of multiplying by zero;
+that's too easy.) \Hint: Consider taking limits.
+\answer For example, $\lim_{n\to\infty}O(1/n)=0$. On the left,
+$O(1/n)$ is the set of all functions $f(n)$ such that there are
+constants $C$ and~$n_0$ with $\bigl\vert f(n)\bigr\vert\le C/n$
+for all $n\ge n_0$. The limit of all functions in that set is~$0$, so
+the left-hand side is the singleton set $\{0\}$. On the right, there are no
+variables; $0$~represents~$\{0\}$, the (singleton) set of all
+``functions of no variables, whose value is zero.\qback''
+(Can you see the inherent logic here? If not, come back to it next year;
+you probably can still manipulate $O$-notation even if you can't shape
+your intuitions into rigorous formalisms.)
+
+\ex:
+Prove or disprove: $O\bigl(f(n)+g(n)\bigr)=f(n)+O\bigl(g(n)\bigr)$,
+if $f(n)$ and $g(n)$ are positive for all~$n$. (Compare with \eq(|o-prod-out|).)
+\answer Let $f(n)=n^2$ and $g(n)=1$; then $n$ is in the left set
+but not in the right, so the statement is false.
+
+\ex:
+Multiply $\bigl(\ln n+\gamma+O(1/n)\bigr)$ by $\bigl(n+O(\sqrt n\,)\bigr)$,
+and express your answer in $O$-notation.
+\answer $n\ln n+\gamma n+O(\sqrt n\ln n)$.
+\source{[|knuth1|, exercise 1.2.11.1--3].}
+
+\ex:
+Estimate $\sum_{k\ge0}e^{-k/n}$ with absolute error $O(n^{-1})$.
+\answer $(1-e^{-1/n})^{-1}=nB_0-B_1+B_2n^{-1}\!/2!+\cdots
+=n+\half+O(n^{-1})$.
+
+\subhead Basics
+
+\ex:
+Give an example of functions $f(n)$ and $g(n)$ such that none of the
+three relations $f(n)\prec g(n)$, $f(n)\succ g(n)$, $f(n)\asymp g(n)$
+is valid, although $f(n)$ and~$g(n)$ both increase monotonically to~$\infty$.
+\answer For example, let $f(n)=\lfloor n/2\rfloor!^{@2}+n$,
+$g(n)=\bigl(\lceil n/2\rceil-1\bigr)!\,\lceil n/2\rceil!+n$. These
+functions, incidentally, satisfy $f(n)=O\bigl(ng(n)\bigr)$ and
+$g(n)=O\bigl(nf(n)\bigr)$; more extreme examples are clearly possible.
+\source{"Hardy" [|hardy-tract|, 1.2(iv)].}
+
+\ex:\exref|prove-o-f+g|%
+Prove \eq(|o-f+g|) rigorously by showing that the left side is a subset of the
+right side, according to the set-of-functions definition of~$O$.
+\answer (For completeness, we assume that there is a side condition
+$n\to\infty$, so that two constants are implied by each~$O$.)
+Every function on the left has the form $a(n)+b(n)$, where
+there exist constants $m_0$, $B$, $n_0$, $C$ such that
+$\bigl\vert a(n)\bigr\vert\le B\bigl\vert f(n)\bigr\vert$ for $n\ge m_0$ and
+$\bigl\vert b(n)\bigr\vert\le C\bigl\vert g(n)\bigr\vert$ for $n\ge n_0$.
+Therefore the left-hand function is
+at most $\max(B,C)\bigl(\bigl\vert f(n)\bigr\vert+
+\bigl\vert g(n)\bigr\vert\bigr)$, for $n\ge\max(m_0,n_0)$,
+so it is a member of the right side.
+\source{"Landau" [|landau-primes|, vol.~1, p.~60].}
+
+\ex:
+Prove or disprove: $\cos O(x)=
+1+O(x^2)$ for all real $x$.
+\answer If $g(x)$ belongs to the left, so that $g(x)=\cos y$ for some $y$,
+where $\vert y\vert\le C\vert x\vert$ for some $C$, then $0\le1-g(x)
+=2\sin^2(y/2)\le\half y^2\le\half C^2 x^2$;
+hence the set on the left is contained in the set
+on the right, and the formula is true.
+
+\ex: Prove or disprove: $O(x+y)^2=O(x^2)+O(y^2)$.
+\answer The proposition is true. For if, say, $\vert x\vert\le\vert y\vert$,
+we have $(x+y)^2\le4y^2$. Thus $(x+y)^2=O(x^2)+O(y^2)$. Thus
+$O(x+y)^2=O\bigl((x+y)^2\bigr)=
+O\bigl(O(x^2)+O(y^2)\bigr)=O\bigl(O(x^2)\bigr)+O\bigl(O(y^2)\bigr)
+=O(x^2)+O(y^2)$.
+
+\ex:\exref|rel-error|%
+Prove that
+\begindisplay
+1+{2\over n}+O(n^{-2})=\Bigl(1+{2\over n}\Bigr)\bigl(1+O(n^{-2})\bigr)\,,
+\enddisplay
+as $n\to\infty$.
+\answer $1+2/n+O(n^{-2})=(1+2/n)\bigl(1+O(n^{-2})/(1+2/n)\bigr)$
+by \equ(9.|o-prod-in|), and $1/(1+2/n)=O(1)$; now use \equ(9.|o-prod-in|).
+
+\ex:
+Evaluate $\bigl(n+2+O(n^{-1})\bigr)^n$ with relative error $O(n^{-1})$.
+\answer $n^n\bigl(1+2n^{-1}+O(n^{-2})\bigr)^n=
+n^n\exp\bigl(n\bigl(2n^{-1}+O(n^{-2})\bigr)\bigr)=e^2n^n+O(n^{n-1})$.
+
+\ex:
+Prove that $(n+\alpha)^{n+\beta}=n^{n+\beta}e^\alpha
+\bigl(1+\alpha(\beta-\half\alpha)
+n^{-1}+O(n^{-2})\bigr)$.
+\answer It is $n^{n+\beta}\exp\bigl((n+\beta)\bigl(\alpha/n-\half\alpha^2\!/n^2
++O(n^{-3})\bigr)\bigr)$.
+\source{[|knuth1|, exercise 1.2.11.3--6].}
+
+\ex:
+Give an asymptotic formula for the ``middle'' trinomial coefficient
+${3n\choose n,n,n}$, correct to relative error $O(n^{-3})$.
+\answer \g (It's interesting to compare this formula with the corresponding
+result for the middle \undertext{binomial} coefficient,
+exercise 9.60.)\g $\ln{3n\choose n,n,n}=3n\ln3-\ln n+\half\ln 3-\ln2\pi+
+\bigl({1\over36}-{1\over4}\bigr)n^{-1}+O(n^{-3})$, so the answer is
+\begindisplay
+{3^{3n+1/2}\over2\pi n}\bigl(\textstyle1-{2\over9}n^{-1}+{2\over81}n^{-2}
++O(n^{-3})\bigr)\,.
+\enddisplay
+
+\ex:\exref|prove-remainder-thm|%
+Show that if $B(1-x)=-B(x)\ge0$ for $0< x<\half$, we have
+\begindisplay
+\int_a^b B\bigl(\{x\}\bigr)@f(x)\,dx\ge0
+\enddisplay
+if we assume also that $f'(x)\ge0$ for $a\le x\le b$.
+\answer If\/ $l$ is any integer in the range $a\le l<b$ we have
+\begindisplay
+\int_0^1B(x)@f(l+x)\,dx&=
+\int_{1/2}^1B(x)@f(l+x)\,dx-
+\int_0^{1/2}B(1-x)@f(l+x)\,dx\cr
+&=\int_{1/2}^1B(x)\bigl(f(l+x)-f(l+1-x)\bigr)\,dx\,.
+\enddisplay
+Since $l+x\ge l+1-x$ when $x\ge\half$, this integral is positive
+when $f(x)$ is nondecreasing.
+\source{"Knopp" [|knopp|, edition $\ge2$, \S64C].}
+
+\ex:\exref|prove-bern-half|%
+Use generating functions to show that $B_m(\half)=(2^{1-m}-1)B_m$,
+for all $m\ge0$.
+\answer $\sum_{m\ge0}B_m(\half)z^m\!/m!=ze^{z/2}\!/(e^z-1)=z/(e^{z/2}-1)
+-z/(e^z-1)$.
+
+\ex:
+Find $\sum_k{2n\choose k}^\alpha$ with relative error $O(n^{-1/4})$,
+when $\alpha>0$.
+\answer The text's derivation for the case $\alpha=1$ generalizes to give
+\begindisplay
+b_k(n)={2^{(2n+1/2)\alpha}\over(2\pi n)^{\alpha/2}}e^{-k^2\mskip-1mu\alpha/n}\,,
+\ c_k(n)=2^{2n\alpha}\,n^{-(1+\alpha)/2+3\epsilon}
+ e^{-k^2\mskip-1mu\alpha/n}\,;\cr
+\enddisplay
+the answer is $2^{2n\alpha}(\pi n)^{(1-\alpha)/2}\alpha^{-1/2}\bigl(
+1+O(n^{-1/2+3\epsilon})\bigr)$.
+\source{"Bender" [|bender|, \S3.1].}
+
+\subhead Homework exercises
+
+\ex:
+Use a computer to compare the left and right sides of the approximations
+in Table~|o-special|, when $n=10$, $z=\alpha=0.1$, and $O\bigl(f(n)\bigr)=
+O\bigl(f(z)\bigr)=0$.
+\answer $H_{10}=2.928968254\approx2.928968256$; $10!=3628800\approx
+3628712.4$; $B_{10}=0.075757576\approx0.075757494$;
+$\pi(10)=4\approx10.0017845$;
+$e^{0.1}=1.10517092\approx1.10517083$;
+$\ln 1.1=0.0953102\approx0.0953083$;
+$1.1111111\approx1.1111000$;
+$1.1^{0.1}=1.00957658\approx1.00957643$.
+(The approximation to $\pi(n)$ gives more significant figures when $n$ is larger;
+for example, $\pi(10^9)=50847534\approx50840742$.)
+
+\ex:
+Prove or disprove the following estimates, as $n\to\infty$:
+\smallskip
+\itemitem{a}\displaymath O\Biggl(\biggl({n^2\over\log\log n}\biggr)^{\!1/2}\Biggr)
+=O\bigl(\lfloor\sqrt n\rfloor^2\bigr)\,$.
+\smallskip
+\itemitem{b}\displaymath e^{(1+O(1/n))^2}=e+O(1/n)\,$.
+\smallskip
+\itemitem{c}\displaymath n!=O\Bigl(\bigl((1-1/n)^nn\bigr)^n\Bigr)\,$.
+\answer (a) Yes; the left side is $o(n)$ while the right side is equivalent to
+$O(n)$. (b)~Yes; the left side is $e\cdot e^{O(1/n)}$.
+(c)~No; the left side is about $\sqrt n$ times the bound on the right.
+\source{1971 final exam.}
+
+\ex:\exref|pn-rel3|%
+Equation \eq(|pn-rel2|) gives the $n$th prime with relative error
+$O(\log n)^{-2}$. Improve the relative error to~$O(\log n)^{-3}$
+by starting with another term of \eq(|o-pi|) in \eq(|o-pi-trunc2|).
+\answer We have $P_n=m=n\bigl(\ln m-1-1/\!@\ln m+O(1/\!@\log n)^2\bigr)$, where
+\begindisplay \openup3pt
+\ln m&=\ln n+\ln\ln m-1/\!@\ln n+\ln\ln n/(\ln n)^2+O(1/\!@\log n)^2\,;\cr
+\ln\ln m&=\ln\ln n+{\ln\ln n\over\ln n}
+ -{(\ln\ln n)^2\over2(\ln n)^2}
+ +{\ln\ln n\over(\ln n)^2}+O(1/\!@\log n)^2\,.
+\enddisplay
+It follows that
+\begindisplay
+P_n&=n\biggl(\ln n+\ln\ln n-1\cr
+&\hskip5em+{\ln\ln n-2\over\ln n}
+ -{\half(\ln\ln n)^2-3\ln\ln n\over(\ln n)^2}+O(1/\!@\log n)^2\biggr)\,.
+\enddisplay
+(A slightly better approximation
+\g What does a drowning analytic number theorist say?\par
+\medskip log log log log \dots\g
+ replaces this $O(1/\!@\log n)^2$ by the quantity
+$-5/(\ln n)^2+O(\log\log n/\!@\log n)^3$; then we estimate
+$P_{1000000}\approx15483612.4$.)
+
+\ex:
+Improve \eq(|golomb-ans|) to $O(n^{-3})$.
+\answer Replace $O(n^{-2k})$ by $-{1\over12}n^{-2k}+O(n^{-4k})$ in the
+expansion of $H_{n^k}$; this replaces $O\bigl(\Sigma_3(n^2)\bigr)$
+by $-{1\over12}\Sigma_3(n^2)+O\bigl(\Sigma_3(n^4)\bigr)$ in
+\equ(9.|golomb-pieces|). We have
+\begindisplay
+\textstyle\Sigma_3(n)={3\over4}n^{-1}+
+{5\over36}n^{-2}+O(n^{-3})\,,
+\enddisplay
+hence the term $O(n^{-2})$ in \equ(9.|golomb-ans|)
+can be replaced by % 1/12*3/4 + 1/2*5/36 = 19/144
+$-{19\over144}n^{-2}+O(n^{-3})$.
+
+\ex:\exref|improve-boot3|%
+Push the approximation \eq(|boot3|) further, getting absolute error $O(n^{-3})$.
+\Hint: Let $g_n=c/(n+1)(n+2)+h_n$; what recurrence does $h_n$ satisfy?
+\answer $nh_n=\sum_{0\le k<n}h_k/(n-k)+2cH_n/(n+1)(n+2)$. Choose $c=e^{\pi^2\!/6}
+=\sum_{k\ge0}g_k$ so that $\sum_{k\ge0}h_k=0$ and $h_n=O(\log n)/n^3$.
+The expansion of $\sum_{0\le k<n}h_k/(n-k)$ as in \equ(9.|boot2+|) now yields
+$nh_n=2cH_n/(n+1)(n+2)+O(n^{-2})$, hence
+\begindisplay
+g_n=e^{\pi^2\!/6}\left({n+2\ln n+O(1)\over n^3}\right)\,.
+\enddisplay
+
+\ex:
+Suppose $a_n=O\bigl(f(n)\bigr)$ and
+$b_n=O\bigl(f(n)\bigr)$. Prove or disprove that the convolution
+$\sum_{k=0}^na_kb_{n-k}$ is also
+$O\bigl(f(n)\bigr)$, in the following cases:
+\smallskip
+\itemitem{\bf a}$f(n)=n^{-\alpha}$, \ $\alpha>1$.
+\itemitem{\bf b}$f(n)=\alpha^{-n}$, \ $\alpha>1$.
+\answer (a) If $\sum_{k\ge0}\bigl\vert f(k)\bigr\vert<\infty$
+and if $f(n-k)=O\bigl(f(n)\bigr)$ when $0\le k\le n/2$, we have
+\begindisplay
+\sum_{k=0}^n a_kb_{n-k}=\sum_{k=0}^{n/2}O\bigl(f(k)\bigr)@O\bigl(f(n)\bigr)
++\sum_{k=n/2}^{n}O\bigl(f(n)\bigr)@O\bigl(f(n-k)\bigr)\,,
+\enddisplay
+which is $2@@O\bigl(f(n)\sum_{k\ge0}\big\vert f(k)\big\vert\bigr)$,
+so this case is proved. (b) But in this case if $a_n=b_n=\alpha^{-n}$,
+the convolution $(n+1)\alpha^{-n}$ is not $O(\alpha^{-n})$.
+\source{[|greene-knuth|, \S4.1.6].}
+
+\ex:
+Prove \eq(|opening-sum|) and \eq(|opening-asympt|), with which we
+opened this chapter.
+\answer $S_n\big/{3n\choose n}=\sum_{k=0}^n n\_k/(2n+1)\_^k$.
+We may restrict the range of summation to $0\le k\le(\log n)^2$, say.
+In this range $n\_k=n^k\bigl(1-{k\choose2}/n+O(k^4\!/n^2)\bigr)$ and
+$(2n+1)\lower2pt\hbox{$\_^k$}=(2n)^k\bigl(1+{k+1\choose2}/2n+O(k^4\!/n^2)\bigr)$,
+so the summand is
+\begindisplay
+{1\over2^k}\biggl(1-{3k^2-k\over4n}+O\Bigl({k^4\over n^2}\Bigr)\biggr)\,.
+\enddisplay
+Hence the sum over $k$ is $2-4/n+O(1/n^2)$. Stirling's approximation
+can now be applied to ${3n\choose n}=(3n)!/(2n)!\,n!$,
+proving \equ(9.|opening-asympt|).
+
+\ex:
+Equation \eq(|stirling-by-euler|) shows how to evaluate $\ln 10!$ with
+an absolute error $<{1\over126000000}$. Therefore if we take exponentials, we
+get $10!$ with a relative error that is less than $e^{1/126000000}-1<10^{-8}$.
+(In fact, the approximation gives $3628799.9714$.) If we now round
+to the nearest integer, knowing that $10!$ is an integer, we get
+an exact result.
+\smallskip\item{} Is it always possible to calculate $n!$ in a similar way,
+if enough terms of "Stirling's approximation" are computed? Estimate the value
+of~$m$ that gives the best approximation to~$\ln n!$, when $n$ is a fixed (large)
+integer. Compare the absolute error in this approximation
+with $n!$ itself.
+\answer The minimum occurs at a term $B_{2m}/(2m)(2m-1)n^{2m-1}$
+where $2m\approx2\pi n+{3\over2}$, and this term is approximately equal to
+$1/(\pi e^{2\pi n}\sqrt n\,)$. The absolute error in $\ln n!$ is therefore
+too large to determine $n!$ exactly by rounding to an integer, when
+$n$ is greater than about $e^{2\pi+1}$.
+
+\ex:\exref|general-harmonic-estimate|%
+Use Euler's summation formula to find the asymptotic value of $H_n^{(-\alpha)}
+=\sum_{k=1}^n k^\alpha$, where $\alpha$ is any fixed real number.
+(Your answer may involve a constant that you do not know in closed form.)
+\answer We may assume that $\alpha\ne-1$. Let $f(x)=x^\alpha$; the
+answer is
+\begindisplay\tightplus
+\sum_{k=1}^n k^\alpha\!=\!C_\alpha+{n^{\alpha+1}\over\alpha+1}+{n^\alpha\over2}
++\!\sum_{k=1}^m{B_{2k}\over 2k}{\alpha\choose 2k-1}n^{\alpha-2k+1}
++O(n^{\alpha-2m-1})\,.
+\enddisplay
+(The constant $C_\alpha$ turns out to be $\zeta(-\alpha)$, which is in fact
+\g In particular, $\zeta(0)=-1/2$, and
+$\zeta(-n)=-B_{n+1}/(n{+}1)$\par for integer $n>0$.\g
+{\it defined\/} by this formula when $\alpha>-1$.)
+\source{"Titchmarsh" [|zeta-function|].}
+
+\ex:
+Exercise 5.|hyperfactorial-def| defines the "hyperfactorial"
+function $Q_n=1^12^2\ldots n^n$. Find the asymptotic value of $Q_n$
+with relative error~$O(n^{-1})$.
+(Your answer may involve a constant that you do not know in closed form.)
+\answer In general, suppose $f(x)=x^\alpha\ln x$ in Euler's summation formula,
+when $\alpha\ne-1$. Proceeding as in the previous exercise, we find
+\begindisplay\openup3pt
+\sum_{k=1}^n k^\alpha\ln k&=C'_\alpha+{n^{\alpha+1}\ln n\over\alpha+1}
+-{n^{\alpha+1}\over(\alpha+1)^2}+{n^\alpha\ln n\over2}\cr
+&\qquad{}+\sum_{k=1}^m{B_{2k}\over2k}{\alpha\choose2k-1}n^{\alpha-2k+1}
+(\ln n+H_\alpha-H_{\alpha-2k+1})\cr
+&\qquad{}+O(n^{\alpha-2m-1}\log n)\,;\cr
+\enddisplay
+the constant $C'_\alpha$ can be shown [|de-bruijn|, \S3.7] to be
+$-\zeta'(-\alpha)$. (The $\log n$ factor in the $O$~term can be removed when
+$\alpha$ is a positive integer $\le2m$; in that case we also replace the
+$k$th term of the right sum by $B_{2k}\alpha!\*\,({2k-2-\alpha})!\*(-1)^\alpha
+n^{\alpha-2k+1}/(2k)!$ when $\alpha<2k-1$.)
+To solve the stated problem, we let $\alpha=1$ and $m=1$,
+taking the exponential of both sides to get
+\begindisplay
+Q_n=A\cdot n^{n^2\!/2+n/2+1/12}e^{-n^2\!/4}\bigl(1+O(n^{-2})\bigr)\,,
+\enddisplay
+where $A=e^{1/12-\zeta'(-1)}\approx1.2824271291$
+is ``"Glaisher's constant".\qback''
+\source{"Glaisher" [|glaisher|].}
+
+\ex:
+Estimate the function $1^{1/1}2^{1/2}\ldots n^{1/n}$
+as in the previous exercise.
+\answer Let $f(x)=x^{-1}\ln x$. A slight modification of the calculation in
+the previous exercise gives
+\begindisplay
+\sum_{k=1}^n{\ln k\over k}&={(\ln n)^2\over2}+\gamma_1+{\ln n\over2n}\cr
+&\qquad{}
+-\sum_{k=1}^m{B_{2k}\over2k}n^{-2k}(\ln n-H_{2k-1})+O(n^{-2m-1}\log n)\,,\cr
+\enddisplay
+where $\gamma_1\approx-0.07281584548367672486$ is a ``"Stieltjes constant"''
+(see the answer to 9.|stieltjes-const|).
+Taking exponentials gives
+\begindisplay
+e^{\gamma_1}\sqrt{n^{\mathstrut\ln n}}\,\biggl(1+{\ln n\over2n}
++O\Bigl({\log n\over n}\Bigr)^2\biggr)\,.
+\enddisplay
+\source{"de Bruijn" [|de-bruijn|, \S3.7].} % probably not the best source
+
+\ex:\exref|theta-sums|%
+Find the asymptotic value of $\sum_{k\ge0}k^le^{-k^2\!/n}$ with
+absolute error $O(n^{-3})$, when $l$~is a fixed nonnegative integer.
+\answer Let $g(x)=x^le^{-x^2}$ and $f(x)=g(x/\sqrt n\,)$. Then
+$n^{-l/2}\sum_{k\ge0}k^le^{-k^2\!/n}$ is
+\begindisplay
+&\int_0^\infty f(x)\,dx
+-\sum_{k=1}^m{B_k\over k!}f^{(k-1)}(0)
+-(-1)^m\int_0^\infty{B_m\bigl(\{x\}\bigr)\over m!}f^{(m)}(x)\,dx\cr
+&\qquad=n^{1/2}\int_0^\infty g(x)\,dx
+-\sum_{k=1}^m{B_k\over k!}n^{(k-1)/2}g^{(k-1)}(0)+O(n^{-m/2})\,.
+\enddisplay
+Since $g(x)=x^l-x^{2+l}\!/1!+x^{4+l}\!/2!-x^{6+l}\!/3!+\cdots\,$, the derivatives
+$g^{(m)}(x)$ obey a simple pattern, and the answer is
+\begindisplay
+\half n^{(l+1)/2\,}\Gamma\Bigl({l+1\over2}\Bigr)-{B_{l+1}\over(l+1)!\,0!}
++{B_{l+3}n^{-1}\over(l+3)!\,1!}-{B_{l+5}n^{-2}\over(l+5)!\,2!}+O(n^{-3})\,.
+\enddisplay
+
+\ex:
+Evaluate $\sum_{k\ge0}1/(c^k+c^m)$ with absolute error $O(c^{-3m})$,
+when $c>1$ and $m$~is a positive integer.
+\answer The somewhat surprising identity $1/(c^{m-k}+c^m)+1/(c^{m+k}+c^m)=1/c^m$
+makes the terms for $0\le k\le2m$ sum to $(m+\half)/c^m$. The remaining
+terms are
+\begindisplay
+\sum_{k\ge1}{1\over c^{2m+k}+c^m}&=\sum_{k\ge1}\biggl({1\over c^{2m+k}}
+-{1\over c^{3m+2k}}
++{1\over c^{4m+3k}}-\cdots\,\biggr)\cr
+&={1\over c^{2m+1}-c^{2m}}
+-{1\over c^{3m+2}-c^{3m}}
++\cdots\,,
+\enddisplay
+and this series can be truncated at any desired point, with an error not
+exceeding the first omitted term.
+
+\subhead Exam problems
+
+\ex:
+Evaluate $e^{H_n+H_n^{(2)}}$ with absolute error $O(n^{-1})$.
+\answer $H_n^{(2)}=\pi^2\!/6-1/n+O(n^{-2})$ by Euler's summation
+formula, since we know the constant; and $H_n$ is given by \equ(9.|harmonic-theta|).
+\g The world's top three constants, $(e,\pi,\gamma)$, all appear
+in this answer.\g
+So the answer is
+\begindisplay
+ne^{\gamma+\pi^2\!/6}\bigl(1-{\textstyle\half}n^{-1}+O(n^{-2})\bigr)\,.
+\enddisplay
+\source{1976 final exam.}
+
+\ex:
+Evaluate $\sum_{k\ge0}{n\choose k}/n\_^k$ with absolute error $O(n^{-3})$.
+\answer We have $n\_k/n\_^k=1-k(k-1)n^{-1}+\half k^2(k-1)^2n^{-2}+O(k^6n^{-3})$;
+dividing by $k!$ and summing over~$k\ge0$ yields
+$e-en^{-1}+{7\over2}en^{-2}+O(n^{-3})$.
+
+\ex:
+Determine values $A$ through $F$ such that $(1+1/n)^{nH_n}$ is
+\begindisplay
+An+B(\ln n)^2+C\ln n+D+{E(\ln n)^2\over n}+{F\ln n\over n}+O(n^{-1})\,.
+\enddisplay
+\answer $A=e^\gamma$; $B=0$; $C=-\half e^\gamma$; $D=\half e^\gamma(1-\gamma)$;
+$E={1\over8}e^\gamma$; $F={1\over12}e^\gamma(3\gamma+1)$.
+\source{1973 final exam.}
+
+\ex:
+Evaluate $\sum_{k=1}^n1/kH_k$ with absolute error $O(1)$.
+\answer Since $1/k\bigl(\ln k+O(1)\bigr)
+=1/k\ln k+O\bigl(1/k(\log k)^2\bigr)$, the given sum is $\sum_{k=2}^n1/k\ln k
++O(1)$. The remaining sum is $\ln\ln n +O(1)$ by Euler's summation formula.
+\source{1975 final exam.}
+
+\ex:
+Evaluate $S_n=\sum_{k=1}^n{1/(n^2+k^2)}$ with absolute error $O(n^{-5})$.
+\answer This works out beautifully with Euler's summation formula:
+\begindisplay \openup5pt
+S_n&=\sum_{0\le k<n}{1\over n^2+k^2}+{1\over n^2+x^2}\bigg\vert_0^n\cr
+&=\int_0^n{dx\over n^2+x^2}
++{1\over2}{1\over n^2+x^2}\bigg\vert_0^n
++{B_2\over2!}{-2x\over(n^2+x^2)^2}\bigg\vert_0^n +O(n^{-5})\,.
+\enddisplay
+Hence $S_n={1\over4}\pi n^{-1}-{1\over4}n^{-2}-{1\over24}n^{-3}+O(n^{-5})$.
+\source{1980 class notes.}
+
+\ex:
+Evaluate $\sum_{k=1}^n(n\bmod k)$ with absolute error $O(n\log n)$.
+\answer This is
+\begindisplay
+&\sum_{k,q\ge1}(n-qk)\bigi[n/(q+1)<k\le n/q\bigr]\cr
+\noalign{\vskip-3pt}
+&\qquad=n^2-\sum_{q\ge1}q\biggl({\lfloor n/q\rfloor+1\choose 2}-
+{\lfloor n/(q+1)\rfloor+1\choose 2}\biggr)\cr
+&\qquad=n^2-\sum_{q\ge1}{\lfloor n/q\rfloor+1\choose 2}\,.
+\enddisplay
+The remaining sum is like \equ(9.|big-phi-repeat|) but without the factor
+$\mu(q)$. The same method works here as it did there,
+ but we get $\zeta(2)$ in place of
+$1/\zeta(2)$, so the answer comes to $\bigl(1-{\pi^2\over12}\bigr)n^2+O(n\log n)$.
+\source{[|knuth2|, eq.~4.5.3--21].}
+
+\ex:
+Evaluate $\sum_{k\ge0}k^k{n\choose k}$ with relative error $O(n^{-1})$.
+\answer Replace $k$ by $n-k$ and let $a_k(n)=(n-k)^{n-k}{n\choose k}$.
+Then $\ln a_k(n)=n\ln n-\ln k!-k+O(kn^{-1})$, and we can use tail-exchange with
+$b_k(n)=n^ne^{-k}\!/k!$, $c_k(n)=kb_k(n)/n$, $D_n=\{\,k\mid k\le\ln n\,\}$,
+to get $\sum_{k=0}^n a_k(n)=n^ne^{1/e}\bigl(1+O(n^{-1})\bigr)$.
+\source{1977 final exam.}
+
+\ex:
+Evaluate $\sum_{0\le k<n}\ln(n-k)(\ln n)^k\!/k!$ with absolute error $O(n^{-1})$.
+\Hint: Show that the terms for $k\ge10\ln n$ are negligible.
+\answer Tail-exchange with $b_k(n)=(\ln n-k/n-\half k^2\!/n^2)(\ln n)^k\!/k!$,
+\ $c_k(n)=n^{-3}(\ln n)^{k+3}\!/k!$, $D_n=\{\,k\mid 0\le k\le 10\ln n\,\}$.
+When $k\approx10\ln n$ we have $k!\asymp\sqrt k\,(10/e)^k(\ln n)^k$, so
+the $k$th term is $O(n^{-10\ln(10/e)}\log n)$. The answer is
+$n\ln n-\ln n-\half(\ln n)(1+\ln n)/n+O\bigl(n^{-2}(\log n)^3\bigr)$.
+\source{1975 final exam, inspired by "Reich"~[|asymptotic-query|].}
+
+\ex:
+Let $m$ be a (fixed) positive integer. Evaluate $\sum_{k=1}^n(-1)^kH_k^m$
+with absolute error $O(1)$.
+\answer Combining terms two by two, we find that $H_{2k}^m-(H_{2k}-{1\over2k})^m
+={m\over2k}H_{2k}^{m-1}$ plus terms whose sum over all~$k\ge1$ is $O(1)$.
+Suppose $n$~is even. Euler's summation formula implies that
+\begindisplay
+\sum_{k=1}^{n/2}{H_{2k}^{m-1}\over k}
+&=\!\sum_{k=1}^{n/2}{(\ln 2e^\gamma k)^{m-1}{+}O(1/k)\over k}+O(1)\cr
+&={(\ln e^\gamma n)^m\over m}+O(1)\,;\cr
+\enddisplay
+hence the sum is $\half H_n^m+O(1)$. In general the answer is
+$\half(-1)^nH_n^m+O(1)$.
+\source{1977 final exam.}
+
+\ex:
+Evaluate the ``"Fibonacci factorial"''
+ $\prod_{k=1}^nF_k$ with relative error $O(n^{-1})$ or better.
+Your answer may involve a constant whose value you do not know in closed form.
+\answer Let $\alpha=\phihat/\phi=-\phi^{-2}$. We have
+\begindisplay\tightplus
+\sum_{k=1}^n\ln F_k&=\sum_{k=1}^n\bigl(\ln\phi^k-\ln\sqrt5+\ln(1-\alpha^k)\bigr)\cr
+&={n(n+1)\over2}\ln\phi-{n\over2}\ln5+\sum_{k\ge1}\ln(1-\alpha^k)
+ -\sum_{k>n}\ln(1-\alpha^k)\,.
+\enddisplay
+The latter sum is $\sum_{k>n}O(\alpha^k)=O(\alpha^n)$. Hence the answer is
+\begindisplay
+\phi^{n(n+1)/2}5^{-n/2}C+O(\phi^{n(n-3)/2}5^{-n/2})\,,
+\enddisplay
+where $C=(1-\alpha)(1-\alpha^2)(1-\alpha^3)\ldots\,\approx1.226742$.
+\source{1980 final exam.}
+
+\ex:\exref|binomial-tail|%
+Let $\alpha$ be a constant in the range $0<\alpha<\half$. We've seen in
+previous chapters that there is no general closed form for the sum
+$\sum_{k\le\alpha n}{n\choose k}$. Show that there is, however, an
+asymptotic formula
+\begindisplay
+\sum_{k\le\alpha n}{n\choose k}=2^{nH(\alpha)-\half\lg n+O(1)}\,,
+\enddisplay
+where $H(\alpha)=\alpha\lg{1\over\alpha}+(1-\alpha)\lg({1\over1-\alpha})$.
+\Hint: Show that ${n\choose k-1}<{\alpha\over1-\alpha}{n\choose k}$
+for $0<k\le\alpha n$.
+\answer The hint follows since ${n\choose k-1}\big/{n\choose k}={k\over
+n-k+1}\le{\alpha n\over n-\alpha n+1}<{\alpha\over1-\alpha}$. Let
+$m=\lfloor\alpha n\rfloor=\alpha n-\epsilon$. Then
+\begindisplay\openup3pt
+{n\choose m}
+&<\sum_{k\le m}{n\choose k}\cr
+&<{n\choose m}\biggl(1+{\alpha\over1-\alpha}
++\Bigl({\alpha\over1-\alpha}\Bigr)^2+\cdots\,\biggr)
+={n\choose m}{1-\alpha\over1-2\alpha}\,.
+\enddisplay
+So $\sum_{k\le\alpha n}{n\choose k}={n\choose m}O(1)$, and it remains to
+estimate $n\choose m$. By Stirling's approximation we have
+$\ln{n\choose m}=-\half\ln n-(\alpha n-\epsilon)\ln(\alpha-\epsilon/n)
+-\bigl((1{-}\alpha)n{+}\epsilon\bigr)\*\ln(1-\alpha+\epsilon/n)+O(1)
+=-\half\ln n-\alpha n\ln\alpha
+-(1-\alpha)n\ln(1-\alpha)+O(1)$.
+\source{1979 final exam.}
+
+\ex:
+Show that $C_n$, the number of ways to change $n$ cents (as considered
+"!change, large amounts"
+in Chapter~7) is asymptotically $cn^4+O(n^3)$ for some constant~$c$.
+What is that constant?
+\answer The denominator has factors of the form $z-\omega$, where
+$\omega$ is a complex "root of unity". Only the factor $z-1$ occurs
+with multiplicity~$5$. Therefore by \equ(7.|gen-exp-a|), only one of
+the roots has a coefficient $\Omega(n^4)$, and the coefficient is
+$c=5/(5!\cdt1\cdt5\cdt10\cdt25\cdt50)=1/1500000$.
+
+\ex:\exref|factorial-power-asymp|%
+Prove that
+\begindisplay
+x\_{1/2}=x^{1/2}{1/2\brack1/2}-x^{-1/2}{1/2\brack-1/2}+x^{-3/2}{1/2\brack-3/2}
++O(x^{-5/2})
+\enddisplay
+as $x\to\infty$. (Recall the definition $x\_{1/2}=x!/(x-\half)!$ in
+\equ(5.|gen-falling-powers|), and the definition of generalized
+"Stirling numbers" in Table~|stirling-convolutions|.)
+\answer Stirling's approximation says that
+$\ln\bigl(x^{-\alpha}x!/(x-\alpha)!\bigr)$ has an asymptotic series
+\begindisplay \openup3pt
+&-\alpha-(x+{\textstyle\half}-\alpha)\ln(1-\alpha/x)
+-{B_2\over 2\cdot1}\bigl(x^{-1}-(x-\alpha)^{-1}\bigr)\cr
+&\hskip15em-{B_4\over 4\cdot3}\bigl(x^{-3}-(x-\alpha)^{-3}\bigr)-\cdots
+\enddisplay
+in which each coefficient of $x^{-k}$ is a
+polynomial in~$\alpha$. Hence $x^{-\alpha}x!/(x-\alpha)!=c_0(\alpha)+
+c_1(\alpha)x^{-1}+\cdots+c_n(\alpha)x^{-n}+O(x^{-n-1})$
+as $x\to\infty$, where $c_n(\alpha)$ is
+a polynomial in~$\alpha$. We know that $c_n(\alpha)={\alpha\brack\alpha-n}(-1)^n$
+whenever $\alpha$ is an integer, and $\alpha\brack\alpha-n$ is a polynomial
+in $\alpha$ of degree~$2n$; hence $c_n(\alpha)={\alpha\brack\alpha-n}(-1)^n$
+for all real~$\alpha$. In other words, the asymptotic formulas
+\g (See [|knuth-tnn|] for further discussion.)\g
+\begindisplay \openup3pt
+x\_\alpha&=\sum_{k=0}^n{\alpha\brack\alpha-k}(-1)^kx^{\alpha-k}+O(x^{\alpha-n-1})\,,\cr
+x\_^\alpha&=\sum_{k=0}^n{\alpha\brack\alpha-k}x^{\alpha-k}+O(x^{\alpha-n-1})\cr
+\enddisplay
+generalize equations \equ(6.|expand-falling-to-ord|)
+and \equ(6.|expand-rising-to-ord|), which hold in the all-integer case.
+\source{"Tricomi" and "Erd\'elyi"~[|tricomi-erdelyi|].}
+
+\ex:\exref|prove-discrep|%
+Let $\alpha$ be an irrational number between $0$ and $1$. Chapter~3
+discusses the quantity $D(\alpha,n)$, which measures the maximum
+"discrepancy" by which the fractional parts $\{k\alpha\}$ for $0\le k<n$
+deviate from a uniform distribution. The recurrence
+\begindisplay
+D(\alpha,n)\le D\bigl(\{\alpha^{-1}\},\lfloor \alpha n\rfloor\bigr)
+ +\alpha^{-1}+2
+\enddisplay
+was proved in \equ(3.|discrep-rec|); we also have the obvious bounds
+\begindisplay
+0\le D(\alpha,n)\le n\,.
+\enddisplay
+Prove that $\lim_{n\to\infty} D(\alpha,n)/n=0$. \Hint: Chapter~6
+discusses continued fractions.
+\answer Let the partial quotients of $\alpha$ be $\<a_1,a_2,\ldots\,\>$,
+and let $\alpha_m$ be the continued fraction
+$1/(a_m+\alpha_{m+1})$ for $m\ge1$. Then
+$D(\alpha,n)=D(\alpha_1,n)<D\bigl(\alpha_2,\lfloor\alpha_1 n\rfloor\bigr)+a_1+3
+<D\bigl(\alpha_3,\lfloor\alpha_2\lfloor\alpha_1 n\rfloor\rfloor\bigr)+
+a_1+a_2+6<\cdots<D\bigl(\alpha_{m+1},\allowbreak
+\lfloor\alpha_m\lfloor\ldots\lfloor\alpha_1
+n\rfloor\ldots\rfloor\rfloor\bigr)+a_1+\cdots+a_m+3m<\alpha_1\ldots\alpha_m\,n
++a_1+\cdots+a_m+3m$, for all~$m$. Divide by~$n$ and let $n\to\infty$; the
+limit is less than $\alpha_1\ldots\alpha_m$ for all~$m$. Finally we have
+\begindisplay
+\alpha_1\ldots\alpha_m={1\over K(a_1,\ldots,a_{m-1},a_m+\alpha_m)}<
+%{1\over K(a_1,\ldots,a_{m-1},a_m)}\le
+{1\over F_{m+1}}\,.
+\enddisplay
+
+\ex:
+Show that the "Bell number" $\varpi_n=e^{-1}\sum_{k\ge0}k^n\!/k!$ of
+exercise~7.|bell-number-gf| is asymp\-totically equal to
+\begindisplay
+m(n)^n e^{m(n)-n-1/2}/\mskip-1mu\sqrt{@\ln n}\,,
+\enddisplay
+ where $m(n)\ln m(n)=n-\half$,
+and estimate the relative error in this approximation.
+\answer For convenience we write just $m$ instead of $m(n)$.
+By Stirling's approximation, the maximum value of $k^n\!/k!$ occurs
+when $k\approx m\approx n/\!@\ln n$, so we replace $k$ by $m+k$ and find that
+\begindisplay \openup3pt
+\ln{(m+k)^n\over(m+k)!}&=n\ln m-m\ln m+m-{\ln2\pi m\over2}\cr
+&\hskip5em-{(m+n)k^2\over2m^2}
++O(k^3m^{-2}\log n)\,.
+\enddisplay
+Actually we want to replace $k$ by $\lfloor m\rfloor+k$; this adds
+a further $O(km^{-1}\log n)$. The tail-exchange method with
+$\vert k\vert\le m^{1/2+\epsilon}$ now allows us to sum on~$k$,
+\g A truly Bell-shaped summand.\g
+giving a fairly sharp asymptotic estimate in terms of the quantity $\Theta$ in
+\equ(9.|theta-by-euler|):
+\begindisplay\openup4pt
+\varpi_n&={e^{m-1}m^{n-m}\over\sqrt{2\pi m}^{\mathstrut}}\bigl(
+ \Theta_{2m^2\!/(m+n)}+O(1)\bigr)\cr
+&=e^{m-n-1/2}m^n\sqrt{m\over m+n}
+ \biggl(1+O\Bigl({\log n\over n^{1/2}}\Bigr)\biggr)\,.
+\enddisplay
+The requested formula follows, with relative error
+$O(\log\log n/\!@\log n)$.
+\source{"de Bruijn" [|de-bruijn|, \S6.3].}
+
+\ex:
+Let $m$ be an integer $\ge2$. Analyze the two sums
+\begindisplay
+\sum_{k=1}^n\lfloor\log_m k\rfloor\quad\And\quad
+\sum_{k=1}^n\lceil@\log_m k\rceil\,;
+\enddisplay
+which is asymptotically closer to $\log_m n!\,$?
+\answer Let $\log_m n=l+\theta$, where $0\le\theta<1$. The floor
+sum is $l(n+1)+1-(m^{l+1}-1)/(m-1)$; the ceiling sum is $(l+1)n
+-(m^{l+1}-1)/(m-1)$; the exact sum is $(l+\theta)n-n/\!@\ln m+O(\log n)$.
+Ignoring terms that are $o(n)$, the difference between ceiling and
+exact is $\bigl(1-f(\theta)\bigr)n$, and the difference between
+exact and floor is $f(\theta)n$, where
+\begindisplay
+f(\theta)={m^{1-\theta}\over m-1}+\theta-{1\over\ln m}\,.
+\enddisplay
+This function has maximum value $f(0)=f(1)=m/(m-1)-1/\!@\ln m$, and its
+minimum value is $\ln\ln m/\!@\ln m+1-\bigl(\ln(m-1)\bigr)/\!@\ln m$.
+The ceiling value is closer when $n$ is nearly a power of~$m$, but the
+floor value is closer when $\theta$ lies somewhere between $0$ and~$1$.
+\source{1980 homework; [|knuth3|, eq.~5.3.1--34].}
+
+\ex:
+\def\\{{\widehat H}}%
+Consider a table of the harmonic numbers $H_k$ for $1\le k\le n$ in
+decimal notation. The $k$th entry $\\_k$ has been correctly rounded to
+$d_k$ significant digits, where $d_k$ is just large enough to distinguish
+this value from the values of $H_{k-1}$ and $H_{k+1}$. For example,
+here is an extract from the table, showing five entries where $H_k$ passes~$10$:
+\begindisplay \def\preamble{&\strut\quad\hfil$##$\hfil\quad&\vrule##}%
+ \offinterlineskip
+k&& H_k&&\\_k&& d_k\cr
+\omit&height2pt&\omit&&\omit&\cr
+\noalign{\hrule}
+\omit&height2pt&\omit&&\omit&\cr
+12364&&\hfill9.99980041-&&9.9998&&5\cr
+12365&&\hfill9.99988128+&&9.9999&&5\cr
+12366&&\hfill9.99996215-&&\phantom09.99996&&6\cr
+12367&&10.00004301-&&10.0000\hfill&&6\cr
+12368&&10.00012386+&&10.0001\hfill&&6\cr
+\enddisplay
+Estimate the total number of digits in the table, $\sum_{k=1}^n d_k$,
+with an absolute error of $O(n)$.
+\answer Let $d_k=a_k+b_k$, where $a_k$ counts digits to the left of
+the decimal point. Then $a_k=1+\lfloor\log H_k\rfloor=\log\log k+O(1)$,
+where `log' denotes $\log_{10}$. To estimate $b_k$, let us look at the
+number of decimal places necessary to distinguish $y$ from nearby numbers
+$y-\epsilon$ and $y+\epsilon'$: Let $\delta=10^{-b}$ be the length of the
+interval of numbers that round to $\hat y$.
+We have $\vert y-\hat y\vert\le\half\delta$; also
+$y-\epsilon<\hat y-\half\delta$ and
+$y+\epsilon'>\hat y+\half\delta$.
+Therefore $\epsilon+\epsilon'>\delta$. And if $\delta<\min(\epsilon,\epsilon')$,
+the rounding does distinguish $\hat y$ from both $y-\epsilon$ and $y+\epsilon'$.
+Hence $10^{-b_k}<1/(k-1)+1/k$ and $10^{1-b_k}\ge1/k$; we have
+$b_k=\log k+O(1)$.
+Finally, therefore, $\sum_{k=1}^n d_k=\sum_{k=1}^n(\log k+\log\log k+O(1))$,
+which is $n\log n+n\log\log n+O(n)$ by Euler's summation formula.
+\source{1980 final exam.}
+
+\ex:\exref|worm-finale|%
+In Chapter 6 we considered the tale of a worm that reaches the end of
+"!worm on band"
+a stretching band after $n$ seconds, where $H_{n-1}<100\le H_n$.
+Prove that if $n$ is a positive integer such that $H_{n-1}\le\alpha\le H_n$,
+then
+\begindisplay
+\textstyle\lfloor e^{\alpha-\gamma}\rfloor\le n\le\lceil
+ e^{\alpha-\gamma}@\rceil\,.
+\enddisplay
+\answer We have $H_n>\ln n+\gamma+\half n^{-1}-{1\over12}n^{-2}=f(n)$,
+where $f(x)$ is increasing for all $x>0$; hence if $n\ge e^{\alpha-\gamma}$
+we have $H_n\ge f(e^{\alpha-\gamma})>\alpha$. Also $H_{n-1}<\ln n+\gamma
+-\half n^{-1}=g(n)$, where $g(x)$ is increasing for all $x>0$; hence if
+$n\le e^{\alpha-\gamma}$ we have $H_{n-1}\le g(e^{\alpha-\gamma})<\alpha$.
+Therefore $H_{n-1}\le\alpha\le H_n$ implies that $e^{\alpha-\gamma}+1>n
+>e^{\alpha+\gamma}-1$. (Sharper results have been obtained by
+"Boas" and "Wrench"~[|boas-wrench|].)
+\source{1974 final exam.}
+
+\ex:
+"Venture capitalists" in Silicon Valley are being offered a deal giving
+them a chance for an exponential payoff on their investments: For an
+$n$~million dollar investment, where $n\ge2$,
+the GKP consortium promises to pay up to
+$N$~million dollars after one year, where $N=10^n$. Of course there's
+some risk; the actual deal is that GKP pays $k$~million dollars with
+probability $1/(k^2H_N^{(2)})$, for each integer~$k$ in the range
+$1\le k\le N$. (All payments are in megabucks, that is, in exact
+multiples of \$1,000,000; the payoff is determined by a truly
+random process.) Notice that an investor
+always gets at least a million dollars back.
+\smallskip
+\itemitem{a}What is the asymptotic expected return after one year,
+if $n$~million dollars are invested?
+(In other words, what is the mean value of the payment?)
+\g I once earned\par $O(10^{-n})$ dollars.\g
+Your answer should be correct within an absolute error of
+$O(10^{-n})$ dollars.
+\itemitem{b}What is the asymptotic probability that you make a profit,
+if you invest $n$~million?
+(In other words, what is the chance that you get back more than you put~in?)
+Your answer here should be correct within an absolute error of
+$O(n^{-3})$.
+\answer (a) The expected return is $\sum_{1\le k\le N}k/(k^2H_N^{(2)})
+=H_N/H_N^{(2)}$, and we want the asymptotic value to $O(N^{-1})$:
+\begindisplay
+{\ln N+\gamma+O(N^{-1})\over\pi^2\!/6-N^{-1}+O(N^{-2})}
+={6\ln 10\over\pi^2}n+{6\gamma\over\pi^2}+{36\ln10\over\pi^4}{n\over10^n}
++O(10^{-n})\,.
+\enddisplay
+The coefficient $(6\ln 10)/\pi^2\approx1.3998$ says that we expect
+about 40\% profit.
+\par(b) The probability of profit is $\sum_{n<k\le N}1/(k^2H_N^{(2)})=
+1-H_n^{(2)}/H_N^{(2)}$, and since $H_n^{(2)}={\pi^2\over6}-n^{-1}
++\half n^{-2}+O(n^{-3})$ this is
+\begindisplay
+{n^{-1}-\half n^{-2}+O(n^{-3})\over\pi^2\!/6+O(N^{-1})}
+={6\over\pi^2}n^{-1}-{3\over\pi^2}n^{-2}+O(n^{-3})\,,
+\enddisplay
+actually {\it decreasing\/} with $n$. (The expected value in~$(a)$ is
+high because it includes payoffs so huge that the entire world's economy
+would be affected if they ever had to be made.)
+\source{1984 final exam.}
+
+\subhead Bonus problems
+
+\ex:
+Prove or disprove: $\int_n^\infty O(x^{-2})\,dx=O(n^{-1})$ as $n\to\infty$.
+\answer Strictly speaking, this is false, since the function represented
+by $O(x^{-2})$ might not be integrable. (It might be `$\[x\in S]/x^2$',
+where $S$ is not a measurable set.) But if we stipulate that $f(x)$
+is an integrable function
+\g(As opposed to an execrable function.)\g
+such that $f(x)=O(x^{-2})$ as $x\to\infty$, then $\bigl\vert\int_n^\infty
+f(x)\,dx\bigr\vert\le\int_n^\infty\bigl\vert f(x)\bigr\vert\,dx\le
+\int_n^\infty Cx^{-2}\,dx=Cn^{-1}$.
+\source{[|greene-knuth|, \S4.2.1].}
+
+\ex:
+Show that there exists a power series $A(z)=\sum_{k\ge0}a_nz^n$,
+convergent for all complex~$z$, such that
+\begindisplay
+A(n)\succ
+  n^{n^{n^{\cdot^{\cdot^{\cdot^n}}}}}
+    \vbox{\hbox{$\Big\}\scriptstyle n$}\kern0pt}\,.
+\enddisplay
+\answer In fact, the stack of $n$'s can be replaced by any function $f(n)$
+that approaches infinity, however fast. Define the sequence $\<m_0,m_1,
+m_2,\ldots\,\>$ by setting $m_0=0$ and letting $m_k$ be the least
+integer $>m_{k-1}$ such that
+\begindisplay
+\Bigl({k+1\over k}\Bigr)^{\!m_k}\ge f(k+1)^2\,.
+\enddisplay
+Now let $A(z)=\sum_{k\ge1}(z/k)^{m_k}$. This power series converges for all~$z$,
+because the terms for $k>\vert z\vert$ are bounded by a geometric series.
+Also $A(n+1)\ge{\bigl((n+1)/n\bigr){}^{m_n}}\ge f(n+1)^2$, hence
+$\lim_{n\to\infty}f(n)/A(n)=0$.
+\source{"Poincar\'e" [|poincare|]; "Borel" [|borel|, p.~27].}
+
+\ex:\exref|prove-log-bound|%
+Prove that if $f(x)$ is a function whose derivatives satisfy
+\begindisplay \displaythick=\normalthick
+f'(x)\le0\,,\ \ -f''(x)\le0\,,\ \ f'''(x)\le0\,,\ \ \dots,\ \
+ (-1)^mf^{(m+1)}(x)\le0
+\enddisplay
+for all $x\ge0$, then we have
+\begindisplay
+f(x)=f(0)+{f'(0)\over1!}x+\cdots+
+{f^{(m-1)}(0)\over(m-1)!}x^{m-1}+O(x^m)\,,\quad
+\hbox{for $x\ge0$}.
+\enddisplay
+In particular, the case $f(x)=-\ln(1+x)$ proves \eq(|log-bound|)
+for all $k,n>0$.
+\answer By induction, the $O$ term is $(m-1)!^{-1}\int_0^x t^{m-1}
+f^{(m)}(x-t)\,dt$. Since $f^{(m+1)}$ has the opposite sign to $f^{(m)}$,
+the absolute value of this integral is bounded by $\bigl\vert f^{(m)}(0)
+\bigr\vert \int_0^xt^{m-1}\,dt$; so the error is bounded by the
+absolute value of the first discarded term.
+\source{"P\'olya" and "Szeg\H o" [|polya-szego|, part 1, problem 140].}
+
+\ex:\exref|tail-estimate|%
+Let $f(x)$ be a positive, differentiable function such that
+$xf'(x)\prec f(x)$ as $x\to\infty$. Prove that
+\begindisplay
+\sum_{k\ge n}{f(k)\over k^{1+\alpha}}=O\biggl({f(n)\over n^{\alpha}}\biggr)\,,
+\qquad\hbox{if $\alpha>0$}.
+\enddisplay
+\Hint: Consider the quantity $f(k-\half)/(k-\half)^\alpha
+-f(k+\half)/(k+\half)^\alpha$.
+\answer Let $g(x)=f(x)/x^\alpha$. Then $g'(x)\sim-\alpha g(x)/x$ as $x\to
+\infty$. By the mean
+\g Sounds like a nasty theorem.\g
+ value theorem, $g(x-\half)-g(x+\half)=-g'(y)\sim
+\alpha g(y)/y$ for some $y$ between $x-\half$ and $x+\half$. Now $g(y)
+=g(x)\bigl(1+O(1/x)\bigr)$, so $g(x-\half)-g(x+\half)\sim\alpha g(x)/x
+=\alpha f(x)/x^{1+\alpha}$. Therefore
+\begindisplay
+\sum_{k\ge n}{f(k)\over k^{1+\alpha}}=
+O\Bigl(@\sum_{k\ge n}\textstyle\bigl(g(k-\half)-g(k+\half)\bigr)\Bigr)
+=O\bigl(g(n-\half)\bigr)\,.
+\enddisplay
+
+\ex:
+Improve \eq(|final-summation|) to relative error $O(n^{-3/2+5\epsilon})$.
+\answer The estimate of $
+(n+k+\half)\ln(1+k/n)+
+(n-k+\half)\ln(1-k/n)$ is extended to
+$k^2\!/n+k^4\!/6n^3+O(n^{-3/2+5\epsilon})$, so we apparently want to have
+an extra factor $e^{-k^4\!/6n^3}$ in $b_k(n)$, and $c_k(n)=
+2^{2n}n^{-2+5\epsilon}e^{-k^2\!/n}$. But it turns out to be better
+to leave $b_k(n)$ untouched and to let
+\begindisplay
+c_k(n)=2^{2n}n^{-2+5\epsilon}
+e^{-k^2\!/n}+2^{2n}@n^{-5+5\epsilon}k^4e^{-k^2\!/n}\,,
+\enddisplay
+thereby replacing $e^{-k^4\!/6n^3}$ \kern-1ptby $1+O(k^4\!/n^3)$. The sum
+$\sum_k\kern-1.5pt k^4e^{-k^2\!/n}$ is $O(n^{5/2})$, as shown in exercise~|theta-sums|.
+
+\ex:\exref|q-of-n|%
+The quantity $Q(n)=1+{n-1\over n}+{n-1\over n}{n-2\over n}+\cdots\,
+=\sum_{k\ge1}n\_k/n^k$ occurs in the analysis of many algorithms.
+Find its asymptotic value, with absolute error $o(1)$.
+\answer If $k\le n^{1/2+\epsilon}$ we have $\ln(n\_k/n^k)=
+-\half k^2\!/n+\half k/n-{1\over6}k^3\!/n^2+O(n^{-1+4\epsilon})$
+by Stirling's approximation, hence
+\begindisplay
+n\_k/n^k=e^{-k^2\!/2n}\bigl(1+k/2n
+ -{\textstyle{2\over3}}k^3\!/(2n)^2+O(n^{-1+4\epsilon})\bigr)\,.
+\enddisplay
+Summing with the identity in exercise |theta-sums|, and remembering to
+omit the term for $k=0$, gives
+$-1+\Theta_{2n}+\Theta_{2n}^{(1)}-{2\over3}\Theta_{2n}^{(3)}
++O(n^{-1/2+4\epsilon}) =\sqrt{\pi n/2}-{1\over3}+O(n^{-1/2+4\epsilon})$.
+
+\ex:\exref|stieltjes-const|%
+An asymptotic formula for "Golomb"'s sum $\sum_{k\ge1}1/k\lfloor1+\log_n k
+\rfloor^2$ is derived in \eq(|golomb-ans|). Find an asymptotic formula
+for the analogous sum without floor brackets,
+$\sum_{k\ge1}1/k(1+\log_n k)^2$.
+\Hint: Consider the integral $\int_0^\infty ue^{-u}k^{-tu}\,du=1/(1+t\ln k)^2$.
+\answer Using the hint, the given sum becomes $\int_0^\infty ue^{-u}\zeta
+(1+u/\!@\ln n)\,du$. The zeta function can be defined by the series
+\begindisplay
+\zeta(1+z)=z^{-1}+\sum_{m\ge0}(-1)^m\gamma_mz^m\!/m!\,,
+\enddisplay
+where $\gamma_0=\gamma$
+and $\gamma_m$ is the "Stieltjes constant" [|stieltjes|, |keiper|]
+\begindisplay
+\lim_{n\to\infty}\biggl(\sum_{k=1}^n
+{(\ln k)^m\over k}\;-\;{(\ln n)^{m+1}\over m+1}\biggr)\,.
+\enddisplay
+Hence the given sum is
+\begindisplay
+\ln n+\gamma-2\gamma_1(\ln n)^{-1}+3\gamma_2(\ln n)^{-2}-\cdots\,.
+\enddisplay
+\source{Andrew M. "Odlyzko".*}
+
+\ex:\exref|bernoulli-sines-and-cosines|%
+Prove that
+\begindisplay
+B_m\bigl(\{x\}\bigr)=-2{m!\over(2\pi)^m}
+ \sum_{k\ge1}{\cos(2\pi kx-\half\pi m)\over k^m}\,,\qquad\hbox{for $m\ge2$},
+\enddisplay
+by using residue calculus, integrating
+\begindisplay
+{1\over2\pi i}\oint\,\,{2\pi i\,e^{2\pi iz\theta}\over e^{2\pi iz}-1}{dz\over z^m}
+\enddisplay
+on the square contour $z=x+iy$, where
+ $\max\bigl(\vert x\vert,\vert y\vert@\bigr)
+=M+\half$, and letting the integer $M$ tend to $\infty$.
+\answer Let $0\le\theta\le1$ and $f(z)=e^{2\pi iz\theta}\!/(e^{2\pi iz}-1)$.
+We have
+\begindisplay \openup6pt
+\bigl\vert f(z)\bigr\vert&={e^{-2\pi y\theta}\over1+e^{-2\pi y}}\le 1\,,
+&\qquad\hbox{when $x\bmod1=\half$};\cr
+\bigl\vert f(z)\bigr\vert&\le{e^{-2\pi y\theta}\over\vert e^{-2\pi y}-1\vert}
+\le {1\over 1-e^{-2\pi\epsilon}}\,,
+&\qquad\hbox{when $\vert y\vert\ge\epsilon$}.
+\enddisplay
+Therefore $\bigl\vert f(z)\bigr\vert$ is bounded on the contour, and the integral
+is $O(M^{1-m})$. The residue of $2\pi if(z)/z^m$ at $z=k\ne0$ is $e^{2\pi ik\theta}
+/k^m$; the residue at $z=0$ is the coefficient of $z^{-1}$ in
+\begindisplay
+{e^{2\pi iz\theta}\over z^{m+1}}\Bigl(B_0+B_1{2\pi iz\over1!}+\cdots\,\Bigr)
+={1\over z^{m+1}}\Bigl(B_0(\theta)+B_1(\theta){2\pi iz\over1!}+\cdots\,\Bigr)\,,
+\enddisplay
+namely $(2\pi i)^mB_m(\theta)/m!$. Therefore the sum of residues inside the
+contour is
+\begindisplay
+{(2\pi i)^m\over m!}B_m(\theta)\;+\;2\sum_{k=1}^M e^{\pi i m/2}
+ {\cos(2\pi k\theta-\pi m/2)\over k^m}\,.
+\enddisplay
+This equals the contour integral $O(M^{1-m})$,
+so it approaches zero as $M\to\infty$.
+\source{"Henrici" [|henrici|, exercise 4.9.8].}
+
+\ex:\exref|prove-jacobi|%
+Let $\Theta_n(t)=\sum_k e^{-(k+t)^2\!/n}$, a periodic function of\/~$t$.
+Show that the expansion of $\Theta_n(t)$ as a "Fourier series" is
+\begindisplay
+\Theta_n(t)=\sqrt{\pi n}\bigl(1+2e^{-\pi^2n}(\cos2\pi t)
+&+2e^{-4\pi^2n}(\cos4\pi t)\cr
+&\quad +2e^{-9\pi^2n}(\cos6\pi t)+\cdots\,\bigr)\,.
+\enddisplay
+(This formula gives a rapidly convergent series for the sum
+$\Theta_n=\Theta_n(0)$ in equation \eq(|theta-by-euler|).)
+\answer If $F(x)$ is sufficiently
+well behaved, we have the general identity
+\begindisplay
+\sum_k F(k+t)=\sum_n G(2\pi n)e^{2\pi int}\,,
+\enddisplay
+where $G(y)=\int_{-\infty}^{+\infty}e^{-iyx}F(x)\,dx$.
+(This is ``"Poisson's summation formula",\qback'' which can be found in
+standard texts such as "Henrici"~[|henrici|, Theorem 10.6e].)
+
+\ex:
+Explain why the coefficients in the asymptotic expansion
+\begindisplay
+{2n\choose n}={4^n\over\sqrt{\pi n}}\biggl(1-{1\over8n}+
+{1\over128n^2}+{5\over1024n^3}-{21\over32768n^4}+O(n^{-5})\biggr)
+\enddisplay
+all have denominators that are powers of~$2$.
+\answer The stated formula is equivalent to
+\begindisplay
+n\_^{1/2}=n^{1/2}\biggl(1-{1\over8n}+
+{1\over128n^2}+{5\over1024n^3}-{21\over32768n^4}+O(n^{-5})\biggr)
+\enddisplay
+by exercise 5.|factorial-dup|. Hence the result
+follows from exercises 6.|half-stirling-upper| and 9.|factorial-power-asymp|.
+\source{[|knuth-vardi|].}
+
+\ex:
+Exercise |prove-discrep| proves that the "discrepancy" $D(\alpha,n)$ is
+$o(n)$ for all irrational numbers $\alpha$. Exhibit an irrational~$\alpha$
+such that $D(\alpha,n)$ is {\it not\/} $O(n^{1-\epsilon})$ for any
+$\epsilon>0$.
+\answer The idea is to make $\alpha$ ``almost'' rational. Let
+$a_k=2^{2^{2^k}}$ be the $k$th partial quotient of~$\alpha$, and let
+$n=\half a_{m+1}q_m$, where $q_m=K(a_1,\ldots,a_m)$ and $m$~is even.
+Then $0<\{q_m\alpha\}<1/K(a_1,\ldots,a_{m+1})<1/(2n)$, and if we take
+$v=a_{m+1}/(4n)$ we get a discrepancy $\ge{1\over4}a_{m+1}$. If this
+were less than $n^{1-\epsilon}$ we would have
+$a_{m+1}^\epsilon=O(q_m^{1-\epsilon})$;
+but in fact $a_{m+1}>q_m^{2^m}$.
+
+\ex:
+\def\\{\overline m(n)}%
+Given $n$, let ${n\brace m(n)}=\max_k{n\brace k}$ be the largest
+entry in row~$n$ of Stirling's subset triangle. Show that
+for all sufficiently large~$n$, we have $m(n)=\lfloor \\\rfloor$
+or $m(n)=\lceil \\\rceil$, where
+\begindisplay
+\\(\\+2)\ln(\\+2)=n(\\+1)\,.
+\enddisplay
+\Hint: This is difficult.
+\answer See "Canfield" [|canfield|];
+ see also "David" and "Barton"~[|david-barton|, Chapter~16] for asymptotics
+of "Stirling numbers" of both kinds.
+\source{"Canfield" [|canfield|].}
+
+\ex:
+Prove that S.\thinspace W. "Golomb"'s self-describing sequence of
+exercise 2.|self-descr| satisfies $f(n)=\phi^{2-\phi}n^{\phi-1}+
+O(n^{\phi-1}/\!@\log n)$.
+\answer Let $c=\phi^{2-\phi}$. \kern-1.7pt
+The estimate $cn^{\phi-1}+o(n^{\phi-1})$ was proved by "Fine"~[|golomb-self|].
+Ilan~"Vardi" observes that the sharper estimate stated can be deduced from the
+fact that the error term $e(n)=f(n)-cn^{\phi-1}$ satisfies the approximate
+recurrence $c^\phi n^{2-\phi}e(n)\approx-\sum_k e(k)\[1\le k<cn^{\phi-1}]$.
+The function
+\begindisplay
+{n^{\phi-1}u(\ln\ln n/\!@\ln\phi)\over\ln n}
+\enddisplay
+satisfies this
+recurrence asymptotically, if $u(x+1)=-u(x)$.
+(Vardi conjectures that
+\begindisplay
+f(n)=n^{\phi-1}\biggl(c+u\Bigl({\ln\ln n\over\ln\phi}\Bigr)(\ln n)^{-1}
+ +O\bigl((\log n)^{-2}\bigr)\biggr)
+\enddisplay
+for some such function $u$.) Calculations for small $n$ show that
+$f(n)$ equals the nearest integer to $cn^{\phi-1}$ for $1\le
+n\le400$ except in one case: $f(273)=39>c\cdot273^{\phi-1}\approx38.4997$. But the
+small errors are eventually magnified, because of results like those in
+exercise 2.|self-descr|. For example, $e(201636503)\approx35.73$;
+$e(919986484788)\approx-1959.07$.
+\source{"Vardi" [|vardi-self|].}
+
+\ex:
+Find a proof of the identity
+\begindisplay
+\sum_{n\ge1}{\cos 2n\pi x\over n^2}=\pi^2\bigl(x^2-x+\textstyle{1\over6}\bigr)\,
+\qquad\hbox{for $0\le x\le1$},
+\enddisplay
+that uses only ``Eulerian'' (eighteenth-century) mathematics.
+\answer (From this identity for $B_2(x)$ we can easily derive
+\g\noindent\llap{``}The paradox is now fully established that the utmost
+\hbox{abstractions} are
+the true~weapons with which to control our thought of concrete~fact.''
+\par"!philosophy"
+\hfill\dash---A.\thinspace N. "!Whitehead"White-\par
+\hfill head [|whitehead-science|]\g
+the identity of exercise~|bernoulli-sines-and-cosines| by
+induction on~$m$.) If $0<x<1$, the integral $\smash{\int_x^{1/2}}
+\sin N\pi t\,dt/
+\!\sin\pi t$ can be expressed as a sum of $N$ integrals that are each $O(N^{-2})$,
+so it is $O(N^{-1})$; the constant implied by this~$O$ may depend on~$x$.
+Integrating the identity $\sum_{n=1}^N\cos2n\pi t=
+\Re\bigl(e^{2\pi it}(e^{2N\pi it}-1)/(e^{2\pi it}-1)\bigr)
+=-\half+\half\sin(2N+1)\pi t
+/\!\sin\pi t$ and letting $N\to\infty$ now gives $\sum_{n\ge1}(\sin2n\pi x)/n
+={\pi\over2}-\pi x$, a relation that
+"Euler" knew ([|euler-fourier|] and [|euler-diff-calc|, part~2, \S92]).
+Integrating again yields the desired formula. (This solution
+was suggested by E.\thinspace M.\thinspace E. "Wermuth"~[|wermuth|];
+Euler's original derivation did not meet modern standards of rigor.)
+
+\ex:
+What are the coefficients of the asymptotic series
+\begindisplay\tightplus
+1+{1\over n-1}+{1\over(n-1)(n-2)}+\cdots+{1\over(n-1)!}\,=\,a_0+{a_1\over n}
+ +{a_2\over n^2}+\cdots\,\,\,?
+\enddisplay
+\answer Since $a_0+a_1n^{-1}+a_2n^{-2}+\cdots=1+(n-1)^{-1}(a_0+a_1(n-1)^{-1}
++a_2(n-1)^{-2}+\cdots\,)$, we obtain the recurrence $a_{m+1}=\sum_k
+{m\choose k}a_k$, which matches the recurrence
+ for the "Bell numbers". Hence $a_m=\varpi_m$.
+\par A slightly longer but more informative proof can be based on the fact that
+$1/(n-1)\ldots(n-m)=\sum_k{k\brace m}/n^k$, by \equ(7.|stirl2-gf|).
+\source{"Comtet" [|comtet|, chapter~5, exercise~24].} % not in the French ed
+
+\subhead Research problems
+
+\ex:
+Find a ``combinatorial'' proof of Stirling's approximation. (Note that
+$n^n$ is the number of mappings of $\{1,2,\ldots,n\}$ into itself,
+and $n!$ is the number of mappings of $\{1,2,\ldots,n\}$ onto itself.)
+\answer The expected number of distinct elements in the sequence $1$, $f(1)$,
+$f(f(1))$,~\dots, when $f$ is a random mapping of $\{1,2,\ldots,n\}$ into
+itself, is the function $Q(n)$ of exercise~|q-of-n|, whose value
+is $\half\sqrt{2\pi n}+O(1)$; this might account somehow for the
+factor $\sqrt{2\pi n}$.
+\source{M.\thinspace P. "Sch\"utzenberger".*}
+
+\ex:
+Consider an $n\times n$ array of dots, $n\ge3$, in which each dot
+has four neighbors. (At the edges we ``wrap around'' modulo~$n$.)
+Let $\chi_n$ be the number of ways to assign the "colors" red, white,
+and blue to these dots in such a way that no neighboring dots have the
+same color. (Thus $\chi_3=12$.) Prove that
+\begindisplay
+\chi_n\sim\bigl(@{\textstyle{4\over3}}@\bigr)
+ ^{\!3n^2\!/2}e^{-\pi/6}\,.
+\enddisplay
+\answer It is known that $\ln\chi_n\sim{3\over2}n^2\ln{4\over3}$;
+the constant $e^{-\pi/6}$ has been verified empirically to eight
+significant digits.
+\source{"Lieb" [|lieb|]; "Stanley" [|stanley|, exercise 4.37(c)].}
+
+\ex:
+Let $Q_n$ be the least integer~$m$ such that $H_m>n$. Find the smallest
+integer $n$ such that
+$Q_n\ne\lfloor e^{n-\gamma}+\half\rfloor$, or prove that no such $n$ exist.
+\g\vskip.5in Th-th-th-that's all, folks!\g
+\answer This would fail if, for example, $e^{n-\gamma}=m+\half+\epsilon/m$
+for some integer~$m$ and some $0<\epsilon<{1\over8}$;
+ but no counterexamples are known.
+\source{"Boas" and "Wrench" [|boas-wrench|].}
+
