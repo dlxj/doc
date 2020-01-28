@@ -1,4 +1,6 @@
-**神经网络的出现是为了自动从数据中学习出感知机 A(perceptron)  的合适权重参数**
+
+
+#### 神经网络的出现是为了自动从数据中学习出感知机 (perceptron)  的合适权重参数
 
 
 
@@ -207,3 +209,13 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 ![image-20200126095400660](/Users/vvw/Library/Application Support/typora-user-images/image-20200126095400660.png)
+
+
+
+
+
+**美丽之问：宇宙万物的大设计**
+
+
+
+![image-20200128094808323](/Users/vvw/Library/Application Support/typora-user-images/image-20200128094808323.png)
