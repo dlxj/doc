@@ -489,3 +489,27 @@ let y = [2,4 ..]
 head (tail tail( (zip x y)))
 复制代码可以看到，x 与 y 分别是 1,2,3,4,5,6... 与 2,4,6,8... 的无限数组，而 zip 函数将其整合为一个新数组 (1,2),(2,4),(3,6),(4,8)... 
 
+
+Mathematica 玩别踩白块，手速能有多快？
+https://zhuanlan.zhihu.com/p/33361062  
+麦酱玩游戏方式是通过逍遥安卓模拟器（并没有评测过哪个模拟器的性能最好，只是随便搜了一个用用）。麦酱的“眼睛”用的是 GUIKit 的 GUIScreenShot 函数（新版的 CurrentScreenImage 我也试过，似乎稍慢一些），控制鼠标点击是通过 JLink
+判断黑白块用的是 Total@PixelValue ，经测试阈值设为 2 是坠吼的。截图的宽度跨越了 4 个像素，以避免把黑色分隔线误判成黑块…
+
+
+AlphaGo Zero Explained In One Diagram
+https://medium.com/applied-data-science/alphago-zero-explained-in-one-diagram-365f5abf67e0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

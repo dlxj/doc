@@ -4,6 +4,9 @@
     在一个括号上连续点击三次，会选中括号内的所有内容
     然后再按一下右箭头就跳转到括号最后了
 
+显示读保护的代码
+Debug`$ExamineCode = True??BinLists
+
 (*get system clipboard's image*)
 cb = ToExpression@
    Cases[NotebookGet[ClipboardNotebook[]], BoxData[_], Infinity] //
@@ -71,6 +74,11 @@ $CharacterEncoding
 CP935
 $CharacterEncoding="utf-8"
 
+跟据上表，解读 UTF-8 编码非常简单。如果一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。
+
+下面，还是以汉字严为例，演示如何实现 UTF-8 编码。
+
+严的 Unicode 是4E25（100111000100101），根据上表，可以发现4E25处在第三行的范围内（0000 0800 - 0000 FFFF），因此严的 UTF-8 编码需要三个字节，即格式是1110xxxx 10xxxxxx 10xxxxxx。然后，从严的最后一个二进制位开始，依次从后向前填入格式中的x，多出的位补0。这样就得到了，严的 UTF-8 编码是11100100 10111000 10100101，转换成十六进制就是E4B8A5。
 
 
 [shredder12]$ ffmpeg -i inputfile.avi -r 1 -s 4cif -f image2 image-%3d.jpeg
