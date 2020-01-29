@@ -70,6 +70,13 @@ CJKRange = Range[19968, 40959];
  
 需要注意的是Mathematica的FromCharacterCode和ToCharacterCode用的码表在\SystemFiles\CharacterEncodings\下面，而不是直接调用的操作系统的codepage。
 
+矩阵中连续的两个或三个连续的全零行替换成全2行
+
+{{{0,0},{0,0}},{{1,1}},{{0,0}} } /. {{x:Repeated[{0..},{2,3}]}:>({x}/.{0->2}) }
+    {{{2,2},{2,2}},{{1,1}},{{0,0}}}
+    x匹配的是一个Sequence，所以外面用{}括起来
+    :> 这里用的是延迟规则(RuleDelayed)，不要立既计算。注意不要被delayed和非delayed 坑了 
+
 $CharacterEncoding
 CP935
 $CharacterEncoding="utf-8"
