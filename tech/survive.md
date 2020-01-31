@@ -75,6 +75,7 @@ doc/lang/programming
 **Category-theory-for-programmers.ipynb**   
 doc/lang/programming/mma   
 **instrument.txt**     
+[Object C Mac取词翻译](https://github.com/ripperhe/Bob)      
 [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
 [the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
 [Determining the type of an expression
