@@ -63,18 +63,18 @@
 
 **北航本科教材影印**    
 
-hinote  
+### hinote  
 > **编程中的数学-刘新宇**  
 https://github.com/liuxinyu95/unplugged    
 ABC记谱法    
 https://zh.wikipedia.org/wiki/ABC记谱法  
-**浏览器里的Markdown**     
+**浏览器里的Markdown**支持abc记谱法、latex       
 https://github.com/benweet/stackedit  
 doc/lang/programming   
 **深度学习入门：基于Python的理论与实现.ipynb**   
 **Category-theory-for-programmers.ipynb**   
 doc/lang/programming/mma   
-**instrument.txt**   
+**instrument.txt**     
 [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
 [the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
 [Determining the type of an expression
@@ -88,12 +88,12 @@ doc/lang/programming/mma
 [C++云计算](http://goo.gl/FvdOaS)  
 [调试](https://www.jianshu.com/p/57523e147480)   
 [awesome](https://github.com/sindresorhus/awesome)  
-[Markdown语法](Markdown https://github.com/younghz/Markdown)
+[Markdown语法](https://github.com/younghz/Markdown)  
 [](https://www.haskell.org/onlinereport)
 [](http://penkovsky.com/neural-networks/day1)
 [](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)
-[](https://crypto.stanford.edu/~blynn/play/tictactoe.html)
-[](https://castel.dev/post/lecture-notes-1)
+[Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html)  
+[vim写LaTex](https://castel.dev/post/lecture-notes-1)
 [](https://github.com/gibiansky/IHaskell)
 [](https://hoogle.haskell.org/)
 [](http://hackage.haskell.org/package/hmatrix)
