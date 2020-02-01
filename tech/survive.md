@@ -64,17 +64,33 @@
 **北航本科教材影印**    
 
 ### hinote  
-> **浏览器里的Markdown**支持abc记谱法、latex       
+>**查看MMA源码**    
+[Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)  
+[view the code built-in Mathematica function?](https://mathematica.stackexchange.com/questions/17206/how-can-i-view-the-code-implementing-a-built-in-mathematica-function)  
+[MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
+[**MMA Jupyter内核**](
+https://github.com/WolframResearch/WolframLanguageForJupyter)  
+[Haskell Jupyter内核](https://github.com/gibiansky/IHaskell)  
+WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形  
+**MMA截图**    
+GUIKit 的GUIScreenShot 函数（新版的 CurrentScreenImage)   
+**MMA鼠标控制**  
+JLink  
+[Mathematica 玩别踩白块](https://zhuanlan.zhihu.com/p/33361062)  
+**MMA画几何图形**  
+**《Exploring Analytic Geometry 
+ with Mathematica》**  
+**浏览器里的Markdown**支持abc记谱法、latex       
 https://github.com/benweet/stackedit  
-awesome看**svg**  部分  
-《音视频开发进阶指南基于Android与iOS平台》  
-https://github.com/sindresorhus/awesome   
-汉语大词典（TXT）.rar  
-学研国語大辞典  epwin 有单词活用表    
+[awesome 看SVG](https://github.com/sindresorhus/awesome)    
+**《音视频开发进阶指南基于Android与iOS平台》**      
+books/chinese/技术
+**汉语大词典（TXT）.7z**    
+**学研国語大辞典  epwin 有单词活用表**    
 doc/tech/data/collins.html.utf8.txt  英语单词变形  
-**编程中的数学-刘新宇**  
+**编程中的数学-刘新宇**  **五星数学书**  
 https://github.com/liuxinyu95/unplugged    
-ABC记谱法    
+ABC记谱法    五线谱的文本表示  
 https://zh.wikipedia.org/wiki/ABC记谱法  
 doc/lang/programming   
 **深度学习入门：基于Python的理论与实现.ipynb**   
@@ -94,7 +110,6 @@ doc/lang/programming/mma
 [kaggle云计算](https://www.kaggle.com/masterdezign/iris-with-onehotencoded-targets)  
 [C++云计算](http://goo.gl/FvdOaS)  
 [调试](https://www.jianshu.com/p/57523e147480)   
-[awesome](https://github.com/sindresorhus/awesome)  
 [Markdown语法](https://github.com/younghz/Markdown)  
 [](https://www.haskell.org/onlinereport)
 [](http://penkovsky.com/neural-networks/day1)

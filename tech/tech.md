@@ -1,4 +1,3 @@
-å
 13.229.188.59  github.com  
 185.199.111.153  assets-cdn.github.com  
 31.13.82.23  github.global.ssl.fastly.net  
@@ -407,7 +406,8 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 うなずうなず
 
 
-
+最大压缩  
+7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on xx.7z dir  
 
 https://github.com/dlxj/doc  
 https://github.com/vvw/  
