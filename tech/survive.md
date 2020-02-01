@@ -63,6 +63,57 @@
 
 **北航本科教材影印**    
 
+### hinote  
+> **编程中的数学-刘新宇**  
+https://github.com/liuxinyu95/unplugged    
+ABC记谱法    
+https://zh.wikipedia.org/wiki/ABC记谱法  
+**浏览器里的Markdown**支持abc记谱法、latex       
+https://github.com/benweet/stackedit  
+doc/lang/programming   
+**深度学习入门：基于Python的理论与实现.ipynb**   
+**Category-theory-for-programmers.ipynb**   
+doc/lang/programming/mma   
+**instrument.txt**     
+[Object C Mac取词翻译](https://github.com/ripperhe/Bob)      
+[haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
+[the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
+[Determining the type of an expression
+](https://wiki.haskell.org/Determining_the_type_of_an_expression)  
+[Existentially quantified types](https://en.wikibooks.org/wiki/Haskell/Existentially_quantified_types)  
+[Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)  
+[category-theory-for-programmers-print](file:///Users/vvw/Documents/GitHub/books/chinese/技术/category-theory-for-programmers-print.pdf)  
+[hmatrix文档](https://hackage.haskell.org/package/hmatrix-0.20.0.0/docs/doc-index.html)  
+[标准库文档](https://www.haskell.org/onlinereport/standard-prelude.html)  
+[kaggle云计算](https://www.kaggle.com/masterdezign/iris-with-onehotencoded-targets)  
+[C++云计算](http://goo.gl/FvdOaS)  
+[调试](https://www.jianshu.com/p/57523e147480)   
+[awesome](https://github.com/sindresorhus/awesome)  
+[Markdown语法](https://github.com/younghz/Markdown)  
+[](https://www.haskell.org/onlinereport)
+[](http://penkovsky.com/neural-networks/day1)
+[](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)
+[Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html)  
+[vim写LaTex](https://castel.dev/post/lecture-notes-1)
+[](https://github.com/gibiansky/IHaskell)
+[](https://hoogle.haskell.org/)
+[](http://hackage.haskell.org/package/hmatrix)
+[](http://dis.um.es/~alberto/material/hmatrix.pdf)
+[](https://blog.csdn.net/linxilinxilinxi/article/details/84026890)
+[](https://www.math.ubc.ca/~pwalls/math-python/jupyter/latex)
+[](https://castel.dev/post/lecture-notes-2/)
+[](https://bonxg.com/p/85.html)
+[](https://blog.csdn.net/qq_29695701/article/details/86304782)
+[](https://blog.csdn.net/wcs_152/article/details/81182669)
+[](https://www.jianshu.com/p/57523e147480)
+[](http://www.zvon.org/other/haskell/Outputprelude/recip_f.html)
+[](https://www.haskell.org/onlinereport/standard-prelude.html)
+
+
+
+
+
+
 **音乐**  
 > **logic x pro**   
 > mathematica  
@@ -212,7 +263,7 @@ www.hikindle.com  **收费杂志**
 - 半次元  多绘画素材  
 - https://nyaa.si/ 动漫书  
 - https://pt.eastgame.org/  aiiniyo tlf电影  
-  
+-  https://futaacg.com  扶她动漫   
 
 
 Mathematica
