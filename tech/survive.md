@@ -64,12 +64,18 @@
 **北航本科教材影印**    
 
 ### hinote  
-> **编程中的数学-刘新宇**  
+> **浏览器里的Markdown**支持abc记谱法、latex       
+https://github.com/benweet/stackedit  
+awesome看**svg**  部分  
+《音视频开发进阶指南基于Android与iOS平台》  
+https://github.com/sindresorhus/awesome   
+汉语大词典（TXT）.rar  
+学研国語大辞典  epwin 有单词活用表    
+doc/tech/data/collins.html.utf8.txt  英语单词变形  
+**编程中的数学-刘新宇**  
 https://github.com/liuxinyu95/unplugged    
 ABC记谱法    
 https://zh.wikipedia.org/wiki/ABC记谱法  
-**浏览器里的Markdown**支持abc记谱法、latex       
-https://github.com/benweet/stackedit  
 doc/lang/programming   
 **深度学习入门：基于Python的理论与实现.ipynb**   
 **Category-theory-for-programmers.ipynb**   
