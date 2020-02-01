@@ -70,13 +70,20 @@
 [MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
 [**MMA Jupyter内核**](
 https://github.com/WolframResearch/WolframLanguageForJupyter)  
-[Haskell Jupyter内核](https://github.com/gibiansky/IHaskell)  
-WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形  
+[Haskell Jupyter内核](https://github.com/gibiansky/IHaskell)   
+[Mathematica 与 py js 愉快的玩耍](https://zhuanlan.zhihu.com/p/33944440)  
+[Mathematica 编码配置](https://zhuanlan.zhihu.com/p/79739964)     
+[用 Mathematica 过滤字幕文件只留下生词](https://zhuanlan.zhihu.com/p/25854872)    
+[Anki影音插件：用Anki学英语影视例句](https://zhuanlan.zhihu.com/p/33792983)  
+[InftyReader：最强公式识别软件](https://zhuanlan.zhihu.com/p/33944440)  
+WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形   
 **MMA截图**    
 GUIKit 的GUIScreenShot 函数（新版的 CurrentScreenImage)   
 **MMA鼠标控制**  
 JLink  
 [Mathematica 玩别踩白块](https://zhuanlan.zhihu.com/p/33361062)  
+[Mathematica 歌姬计划](https://zhuanlan.zhihu.com/p/33511796)   
+[Mathematica分割音频辅助雅思听写](https://zhuanlan.zhihu.com/p/43165678)  
 **MMA画几何图形**  
 **《Exploring Analytic Geometry 
  with Mathematica》**  
@@ -440,4 +447,4 @@ magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
 拿走不谢
 
 
-
+[Mathematica 激活指南](https://tiebamma.github.io/InstallTutorial)  
