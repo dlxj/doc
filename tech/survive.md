@@ -64,12 +64,41 @@
 **北航本科教材影印**    
 
 ### hinote  
-> **编程中的数学-刘新宇**  
-https://github.com/liuxinyu95/unplugged    
-ABC记谱法    
-https://zh.wikipedia.org/wiki/ABC记谱法  
+>**查看MMA源码**    
+[Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)  
+[view the code built-in Mathematica function?](https://mathematica.stackexchange.com/questions/17206/how-can-i-view-the-code-implementing-a-built-in-mathematica-function)  
+[MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
+[**MMA Jupyter内核**](
+https://github.com/WolframResearch/WolframLanguageForJupyter)  
+[Haskell Jupyter内核](https://github.com/gibiansky/IHaskell)   
+[Mathematica 与 py js 愉快的玩耍](https://zhuanlan.zhihu.com/p/33944440)  
+[Mathematica 编码配置](https://zhuanlan.zhihu.com/p/79739964)     
+[用 Mathematica 过滤字幕文件只留下生词](https://zhuanlan.zhihu.com/p/25854872)    
+[Anki影音插件：用Anki学英语影视例句](https://zhuanlan.zhihu.com/p/33792983)  
+[InftyReader：最强公式识别软件](https://zhuanlan.zhihu.com/p/33944440)  
+WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形   
+**MMA截图**    
+GUIKit 的GUIScreenShot 函数（新版的 CurrentScreenImage)   
+**MMA鼠标控制**  
+JLink  
+[Mathematica 玩别踩白块](https://zhuanlan.zhihu.com/p/33361062)  
+[Mathematica 歌姬计划](https://zhuanlan.zhihu.com/p/33511796)   
+[Mathematica分割音频辅助雅思听写](https://zhuanlan.zhihu.com/p/43165678)  
+**MMA画几何图形**  
+**《Exploring Analytic Geometry 
+ with Mathematica》**  
 **浏览器里的Markdown**支持abc记谱法、latex       
 https://github.com/benweet/stackedit  
+[awesome 看SVG](https://github.com/sindresorhus/awesome)    
+**《音视频开发进阶指南基于Android与iOS平台》**      
+books/chinese/技术
+**汉语大词典（TXT）.7z**    
+**学研国語大辞典  epwin 有单词活用表**    
+doc/tech/data/collins.html.utf8.txt  英语单词变形  
+**编程中的数学-刘新宇**  **五星数学书**  
+https://github.com/liuxinyu95/unplugged    
+ABC记谱法    五线谱的文本表示  
+https://zh.wikipedia.org/wiki/ABC记谱法  
 doc/lang/programming   
 **深度学习入门：基于Python的理论与实现.ipynb**   
 **Category-theory-for-programmers.ipynb**   
@@ -88,7 +117,6 @@ doc/lang/programming/mma
 [kaggle云计算](https://www.kaggle.com/masterdezign/iris-with-onehotencoded-targets)  
 [C++云计算](http://goo.gl/FvdOaS)  
 [调试](https://www.jianshu.com/p/57523e147480)   
-[awesome](https://github.com/sindresorhus/awesome)  
 [Markdown语法](https://github.com/younghz/Markdown)  
 [](https://www.haskell.org/onlinereport)
 [](http://penkovsky.com/neural-networks/day1)
@@ -419,4 +447,4 @@ magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
 拿走不谢
 
 
-
+[Mathematica 激活指南](https://tiebamma.github.io/InstallTutorial)  
