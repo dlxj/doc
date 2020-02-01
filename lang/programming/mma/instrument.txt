@@ -1,4 +1,27 @@
 
+
+GeneralUtilities`PrintDefinitions[BinLists]
+Information[BinLists]
+??GeneralUtilities`*
+SetDirectory@NotebookDirectory[];
+Get@FileNameJoin[{(*ParentDirectory[]*)NotebookDirectory[],"std.wl"}];
+Names["Std`*"]
+(*Names["Std`Private`*"]*)
+(*??Std`bomFreeQ*)
+(*Mathematica 黑魔法：查看内部函数定义*)
+Map (*trigger auto-load*)
+Unprotect[Map];ClearAttributes[Map,ReadProtected];
+Begin["System`Map`"]
+Information[Map]
+<<Spelunking`
+Names["Spelunking`*"]
+Information[Spelunking`Spelunk]
+(*Spelunk["System`Map"]*)
+<<CodeFormatter`
+FullCodeFormat[Map]
+
+
+
 所有可用乐器  
 EntityValue["MusicalInstrument", "Entities"] 
 (*

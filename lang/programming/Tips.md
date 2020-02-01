@@ -1,4 +1,24 @@
 
+GeneralUtilities`PrintDefinitions[BinLists]
+Information[BinLists]
+??GeneralUtilities`*
+SetDirectory@NotebookDirectory[];
+Get@FileNameJoin[{(*ParentDirectory[]*)NotebookDirectory[],"std.wl"}];
+Names["Std`*"]
+(*Names["Std`Private`*"]*)
+(*??Std`bomFreeQ*)
+(*Mathematica 黑魔法：查看内部函数定义*)
+Map (*trigger auto-load*)
+Unprotect[Map];ClearAttributes[Map,ReadProtected];
+Begin["System`Map`"]
+Information[Map]
+<<Spelunking`
+Names["Spelunking`*"]
+Information[Spelunking`Spelunk]
+(*Spelunk["System`Map"]*)
+<<CodeFormatter`
+FullCodeFormat[Map]
+
 
 跳转括号的方法
     在一个括号上连续点击三次，会选中括号内的所有内容

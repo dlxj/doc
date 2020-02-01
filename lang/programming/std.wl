@@ -5,6 +5,27 @@ BeginPackage["Std`"];
  * using below command to import this package
 SetDirectory@NotebookDirectory[];
 Get@FileNameJoin[{ParentDirectory[],"std.wl"}];
+
+GeneralUtilities`PrintDefinitions[BinLists]
+Information[BinLists]
+??GeneralUtilities`*
+SetDirectory@NotebookDirectory[];
+Get@FileNameJoin[{(*ParentDirectory[]*)NotebookDirectory[],"std.wl"}];
+Names["Std`*"]
+(*Names["Std`Private`*"]*)
+(*??Std`bomFreeQ*)
+(*Mathematica 黑魔法：查看内部函数定义*)
+Map (*trigger auto-load*)
+Unprotect[Map];ClearAttributes[Map,ReadProtected];
+Begin["System`Map`"]
+Information[Map]
+<<Spelunking`
+Names["Spelunking`*"]
+Information[Spelunking`Spelunk]
+(*Spelunk["System`Map"]*)
+<<CodeFormatter`
+FullCodeFormat[Map]
+
  *)
 bomFreeQ::usage="bomFreeQ[s], utf8 detect only";
 unixStypeQ::usage="unixStypeQ[s],unix newline stype is \n and windows stype is \r\n";
