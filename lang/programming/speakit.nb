@@ -1,0 +1,136 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4743,        127]
+NotebookOptionsPosition[      4286,        106]
+NotebookOutlinePosition[      4628,        121]
+CellTagsIndexPosition[      4585,        118]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"URLBuild", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<http://api.ispeech.org/api/rest?apikey=\
+59e482ac28dd52db23a22aff4ac1d31e\>\"", ",", "\"\<input\>\""}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<i\>\"", "\[Rule]", "\"\<Doppler Shift 300Hz at 75 mph\>\""}],
+     "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6243255763118644`*^9, 3.624325577210916*^9}, 
+   3.6243256383434124`*^9, 3.6243257440134563`*^9}],
+
+Cell[BoxData["\<\"http://www.wolframalpha.com/input?i=Doppler+Shift+300Hz+at+\
+75+mph\"\>"], "Output",
+ CellChangeTimes->{3.624325639978506*^9}]
+}, Open  ]],
+
+Cell[BoxData["\"\<http://api.ispeech.org/api/rest?apikey=\
+59e482ac28dd52db23a22aff4ac1d31e\n\
+&action=convert&text=Figured+it+out&voice=usenglishfemale&format=mp3\n\
+&frequency=44100&bitrate=128&speed=1&startpadding=1&endpadding=1\n\
+&pitch=110&filename=myaudiofile\>\""], "Input",
+ CellChangeTimes->{{3.6243257019110484`*^9, 3.6243257138047285`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"URLBuild", "[", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"\"\<Scheme\>\"", "\[Rule]", "\"\<http\>\""}], ",", 
+    RowBox[{"\"\<Domain\>\"", "\[Rule]", "\"\<api.ispeech.org\>\""}], ",", 
+    RowBox[{"\"\<Path\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<api\>\"", ",", "\"\<rest\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Query\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+       "\"\<apikey\>\"", "\[Rule]", 
+        "\"\<59e482ac28dd52db23a22aff4ac1d31e\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<action\>\"", "\[Rule]", "\"\<convert\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<text\>\"", "\[Rule]", "\"\<Figured it out\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<voice\>\"", "\[Rule]", "\"\<usenglishfemale\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<format\>\"", "\[Rule]", "\"\<mp3\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<frequency\>\"", "\[Rule]", "\"\<44100\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<bitrate\>\"", "\[Rule]", "\"\<128\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<speed\>\"", "\[Rule]", "\"\<1\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<startpadding\>\"", "\[Rule]", "\"\<1\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<endpadding\>\"", "\[Rule]", "\"\<1\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<pitch\>\"", "\[Rule]", "\"\<110\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<filename\>\"", "\[Rule]", "\"\<audiofname\>\""}]}], 
+      "\[IndentingNewLine]", "}"}]}]}], "|>"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.624325908436861*^9, {3.6243259419307766`*^9, 3.624326009403636*^9}, {
+   3.6243260395333595`*^9, 3.6243263547653894`*^9}, 3.6243265118073716`*^9, {
+   3.624326561517215*^9, 3.62432656317631*^9}, {3.6243266113490653`*^9, 
+   3.624326613132167*^9}}],
+
+Cell[BoxData["\<\"http://api.ispeech.org/api/rest?apikey=\
+59e482ac28dd52db23a22aff4ac1d31e&action=convert&text=Figured+it+out&voice=\
+usenglishfemale&format=mp3&frequency=44100&bitrate=128&speed=1&startpadding=1&\
+endpadding=1&pitch=110&filename=audiofname\"\>"], "Output",
+ CellChangeTimes->{{3.6243258856385565`*^9, 3.62432590929491*^9}, {
+   3.624325943282854*^9, 3.624325952214365*^9}, {3.6243259879234076`*^9, 
+   3.6243260105297003`*^9}, {3.6243260418114896`*^9, 
+   3.6243260517040553`*^9}, {3.6243261133365803`*^9, 3.624326125617283*^9}, 
+   3.624326204052769*^9, 3.624326267720411*^9, 3.624326360101695*^9, 
+   3.624326512843431*^9, 3.624326564998414*^9, 3.6243266136731977`*^9}]
+}, Open  ]]
+},
+WindowSize->{1440, 818},
+WindowMargins->{{-4, Automatic}, {Automatic, -4}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 454, 11, 31, "Input"],
+Cell[1037, 35, 144, 2, 31, "Output"]
+}, Open  ]],
+Cell[1196, 40, 352, 5, 92, "Input"],
+Cell[CellGroupData[{
+Cell[1573, 49, 2005, 43, 292, "Input"],
+Cell[3581, 94, 689, 9, 52, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
