@@ -94,6 +94,7 @@ doc/lang/programming/mma
 [标准库文档](https://www.haskell.org/onlinereport/standard-prelude.html)  
 [kaggle云计算](https://www.kaggle.com/masterdezign/iris-with-onehotencoded-targets)  
 [C++云计算](http://goo.gl/FvdOaS)  
+[深度学习云计算](https://www.floydhub.com)    
 [调试](https://www.jianshu.com/p/57523e147480)   
 [Markdown语法](https://github.com/younghz/Markdown)  
 [](https://www.haskell.org/onlinereport)
