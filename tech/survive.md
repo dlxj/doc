@@ -93,6 +93,7 @@ https://github.com/benweet/stackedit
 **《音视频开发进阶指南基于Android与iOS平台》**      
 books/chinese/技术
 **汉语大词典（TXT）.7z**    
+[epwin导数据](https://github.com/FooSoft/zero-epwing)    
 **学研国語大辞典  epwin 有单词活用表**    
 doc/tech/data/collins.html.utf8.txt  英语单词变形  
 **编程中的数学-刘新宇**  **五星数学书**  
