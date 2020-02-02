@@ -21,39 +21,6 @@
 - 帮这么可爱的女孩子我也很赚的嘛  
 - 真想谢我请吃饭啊  
 
-
-第一次靠得那么近  
-除了看电影，有哪次你曾坐在我的旁边？  
-你一定要跑到对面，离我远远。  
-明明并排的两肩  
-你还记不记得有一次我挽了你的手  
-
-离开有多久，想你就有多久  
-时间光都有了满意的解答  
-但你对我的感觉还是一个迷  
-我惯于寻根究底  
-也曾怀疑你的心  
-两人相处之道在于不给压力  
-**和我在一起会不会感到很轻松？**  
-当我想问你对我到底是什么感觉  
-感情这场游戏就己输了一半  
-这是场感情的游戏还是友情的游戏  
-有没有我们可以一起做的事情  
-你对我很放心？  
-有时我会想，我们的故事应该怎么写  
-我们的故事全是买买的回忆   
-你是想牵手吗？你说  
-我忙否定  
-只要能维持友宜就可以  
-
-我想对你宣誓主权  
-我想做你不普通的朋友  
-
-可以证明很爱她  
-
-她是我想宣誓主权的人  
-如果你想打她主意的话一一请拿出绅士风度来和我公平竞争  
-
 苏州的老城区就是平江路那边～或者是古镇之类的。我单位在**金鸡湖边**，**苏州中心商场**这边
 
 中国点心  
@@ -65,7 +32,14 @@
 
 ### hinote  
 >**查看MMA源码**    
-[Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)  
+[Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
+V12 查看除原生C++外的其他原码    
+GeneralUtilities`PrintDefinitions[BinLists]  
+MMA 黑魔法的大本营  
+?GeneralUtilities`*    
+V12 以前    
+Debug`$ExamineCode = True    
+?? Map     
 [view the code built-in Mathematica function?](https://mathematica.stackexchange.com/questions/17206/how-can-i-view-the-code-implementing-a-built-in-mathematica-function)  
 [MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
 [**MMA Jupyter内核**](
@@ -75,6 +49,7 @@ https://github.com/WolframResearch/WolframLanguageForJupyter)
 [Mathematica 编码配置](https://zhuanlan.zhihu.com/p/79739964)     
 [用 Mathematica 过滤字幕文件只留下生词](https://zhuanlan.zhihu.com/p/25854872)    
 [Anki影音插件：用Anki学英语影视例句](https://zhuanlan.zhihu.com/p/33792983)  
+[**Mathpix 把图片转化为LaTeX**](https://zhuanlan.zhihu.com/p/51326450)  
 [InftyReader：最强公式识别软件](https://zhuanlan.zhihu.com/p/33944440)  
 WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形   
 **MMA截图**    
@@ -84,6 +59,8 @@ JLink
 [Mathematica 玩别踩白块](https://zhuanlan.zhihu.com/p/33361062)  
 [Mathematica 歌姬计划](https://zhuanlan.zhihu.com/p/33511796)   
 [Mathematica分割音频辅助雅思听写](https://zhuanlan.zhihu.com/p/43165678)  
+[打造你自己的数学函数](https://zhuanlan.zhihu.com/p/32553064)  
+[Wolfram Language Server登场](https://zhuanlan.zhihu.com/p/74921013)  
 **MMA画几何图形**  
 **《Exploring Analytic Geometry 
  with Mathematica》**  
