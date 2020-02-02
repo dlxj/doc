@@ -68,6 +68,8 @@ JLink
 https://github.com/benweet/stackedit  
 [awesome 看SVG](https://github.com/sindresorhus/awesome)    
 **《音视频开发进阶指南基于Android与iOS平台》**      
+[语音识别](http://www.speech.zone)    
+《**Speech and Language Processing-Daniel Jurafsky, James H. Martin**》  
 books/chinese/技术
 **汉语大词典（TXT）.7z**    
 [epwin导数据](https://github.com/FooSoft/zero-epwing)    
