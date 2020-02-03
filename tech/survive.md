@@ -150,6 +150,7 @@ http://andrew.gibiansky.com/blog/machine-learning/gradient-descent
 > qqemail  cegfdb  vw123
 > FL Mobile  
 > **feem 离线热点文件传输** feem.io  
+**Xodo 免费PDF阅读器**    
 https://pt.eastgame.org  TLF  aiiniyo  vN15    123468935@qq.com  
 Deluge windows  
 **Transmission** linux osx  

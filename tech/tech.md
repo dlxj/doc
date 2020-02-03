@@ -170,6 +170,7 @@ NLP
 - Pixlr 图片编辑  
 - Gallery 图片浏览  
 - **PDF切割器**  apk  
+- **Xodo 免费PDF阅读器**    
 - 阅读  apk  
 - 全民追书  apk  
 - **博看书苑 apk  机构号：szghdzsw 密码:83393023**   
