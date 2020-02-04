@@ -25,7 +25,9 @@ FullCodeFormat[Map]
     然后再按一下右箭头就跳转到括号最后了
 
 显示读保护的代码
-Debug`$ExamineCode = True??BinLists
+Debug`$ExamineCode = True  
+
+??BinLists
 
 (*get system clipboard's image*)
 cb = ToExpression@
@@ -74,20 +76,20 @@ mma IDE
 
 AuthorTools
     AuthorTools is an add-on package that simplifies the creation of documents in the Wolfram System and is particularly suited for book production tasks.
- 
+
 
 utf-8 乱码
 
 UnicodeLanguageFontMapping.tr文件里有“# Japanese”和“# ChineseSimplified”区块啊，你把在前者且同在后者的那些字符（这时他们的Unicode码是一样的），都挪到中文那个区块里去就行了。字符比较多，你可以编个程序筛选一下，用Complement之类的函数什么的……
- 
+
 CJK的范围看Unicode规范文档：
- 
+
 CJKSymbolsAndPunctuationRange = Range[12288, 12351];
 CJKExtARange = Range[13312, 19903];
 CJKRange = Range[19968, 40959];
- 
+
 这三个合在一起就差不多是常用汉字字符的Unicode码集了。用ToCharacterCode[字符, "CP936"]把他们对应的CP936码列出来，格式化一下加在“# ChineseSimplified”区块里。把“# Japanese”区块里那些在刚才列出的常用汉字集合里的删掉。
- 
+
 需要注意的是Mathematica的FromCharacterCode和ToCharacterCode用的码表在\SystemFiles\CharacterEncodings\下面，而不是直接调用的操作系统的codepage。
 
 矩阵中连续的两个或三个连续的全零行替换成全2行
