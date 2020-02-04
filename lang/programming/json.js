@@ -1,4 +1,5 @@
 /*
+* https://github.com/FooSoft/zero-epwing
 * 提取epwin 学研国语词典的活用表
 * '形式名 活用形 下接語例\n' 根据这个标记识别目标
 
