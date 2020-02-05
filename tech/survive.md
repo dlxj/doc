@@ -93,7 +93,11 @@
 > **instrument.txt**     
 > [Bob Mac取词翻译](https://github.com/ripperhe/Bob) 
 >
-> **Magnet分屏软件**     
+> **Magnet分屏软件**  
+>
+> [safari 内置浏览器调试](https://www.52pojie.cn/thread-1068599-1-1.html)  
+>
+> https://github.com/zwo/patch_webinspect     
 >
 > [Vue 路由模块化配置](https://ainyi.com/77)  
 >

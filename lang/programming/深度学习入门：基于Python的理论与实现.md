@@ -20,7 +20,7 @@ Mathematica 阶跃函数：UnitStep
 
 **sigmoid 函数**
 
-<center>$h(x)=\frac{1}{1+e^{-x}}$</center>
+​                                                                               $h(x)=\frac{1}{1+e^{-x}}$
 
 ![image-20200125201250200](./深度学习入门：基于Python的理论与实现.assets/image-20200125201250200.png)
 
@@ -228,4 +228,6 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 ![img](https://img-blog.csdn.net/2018041621294865?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1lFTl9DU0RO/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
 
