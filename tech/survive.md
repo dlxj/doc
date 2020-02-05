@@ -34,95 +34,103 @@
 
 ### hinote  
 > 内容为王  离散化碎片化随时入口进入    
-听力为主  词根、音素、国标音标、单词  
-短语搭配提示    
-入口类似fooview、GitHub的bob  
-**查看MMA源码**    
-[Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
-V12 查看除原生C++外的其他原码    
-GeneralUtilities`PrintDefinitions[BinLists]  
-MMA 黑魔法的大本营  
-?GeneralUtilities`*    
-V12 以前    
-Debug`$ExamineCode = True    
-?? Map     
-[view the code built-in Mathematica function?](https://mathematica.stackexchange.com/questions/17206/how-can-i-view-the-code-implementing-a-built-in-mathematica-function)  
-[MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
-[**MMA Jupyter内核**](
-https://github.com/WolframResearch/WolframLanguageForJupyter)  
-[Haskell Jupyter内核](https://github.com/gibiansky/IHaskell)   
-[Mathematica 与 py js 愉快的玩耍](https://zhuanlan.zhihu.com/p/33944440)  
-[Mathematica 编码配置](https://zhuanlan.zhihu.com/p/79739964)     
-[用 Mathematica 过滤字幕文件只留下生词](https://zhuanlan.zhihu.com/p/25854872)    
-[Anki影音插件：用Anki学英语影视例句](https://zhuanlan.zhihu.com/p/33792983)  
-[**Mathpix 把图片转化为LaTeX**](https://zhuanlan.zhihu.com/p/51326450)  
-[InftyReader：最强公式识别软件](https://zhuanlan.zhihu.com/p/33944440)  
-WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形   
-**MMA截图**    
-GUIKit 的GUIScreenShot 函数（新版的 CurrentScreenImage)   
-**MMA鼠标控制**  
-JLink  
-[Mathematica 玩别踩白块](https://zhuanlan.zhihu.com/p/33361062)  
-[Mathematica 歌姬计划](https://zhuanlan.zhihu.com/p/33511796)   
-[Mathematica分割音频辅助雅思听写](https://zhuanlan.zhihu.com/p/43165678)  
-[打造你自己的数学函数](https://zhuanlan.zhihu.com/p/32553064)  
-[Wolfram Language Server登场](https://zhuanlan.zhihu.com/p/74921013)  
-**MMA画几何图形**  
-**《Exploring Analytic Geometry 
- with Mathematica》**  
-**浏览器里的Markdown**支持abc记谱法、latex       
-https://github.com/benweet/stackedit  
-[awesome 看SVG](https://github.com/sindresorhus/awesome)    
-**《音视频开发进阶指南基于Android与iOS平台》**      
-[语音识别](http://www.speech.zone)    
-《**Speech and Language Processing-Daniel Jurafsky, James H. Martin**》  
-books/chinese/技术
-**汉语大词典（TXT）.7z**    
-[epwin导数据](https://github.com/FooSoft/zero-epwing)    
-**学研国語大辞典  epwin 有单词活用表**    
-doc/tech/data/collins.html.utf8.txt  英语单词变形  
-**编程中的数学-刘新宇**  **五星数学书**  
-https://github.com/liuxinyu95/unplugged    
-ABC记谱法    五线谱的文本表示  
-https://zh.wikipedia.org/wiki/ABC记谱法  
-doc/lang/programming   
-**深度学习入门：基于Python的理论与实现.ipynb**   
-**Category-theory-for-programmers.ipynb**   
-doc/lang/programming/mma   
-**instrument.txt**     
-[Object C Mac取词翻译](https://github.com/ripperhe/Bob)      
-[haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
-[the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
-[Determining the type of an expression
-](https://wiki.haskell.org/Determining_the_type_of_an_expression)  
-[Existentially quantified types](https://en.wikibooks.org/wiki/Haskell/Existentially_quantified_types)  
-[Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)  
-[category-theory-for-programmers-print](file:///Users/vvw/Documents/GitHub/books/chinese/技术/category-theory-for-programmers-print.pdf)  
-[hmatrix文档](https://hackage.haskell.org/package/hmatrix-0.20.0.0/docs/doc-index.html)  
-[标准库文档](https://www.haskell.org/onlinereport/standard-prelude.html)  
-[kaggle云计算](https://www.kaggle.com/masterdezign/iris-with-onehotencoded-targets)  
-[C++云计算](http://goo.gl/FvdOaS)  
-[深度学习云计算](https://www.floydhub.com)    
-[调试](https://www.jianshu.com/p/57523e147480)   
-[Markdown语法](https://github.com/younghz/Markdown)  
-[](https://www.haskell.org/onlinereport)
-[](http://penkovsky.com/neural-networks/day1)
-[](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)
-[Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html)  
-[vim写LaTex](https://castel.dev/post/lecture-notes-1)
-[](https://github.com/gibiansky/IHaskell)
-[](https://hoogle.haskell.org/)
-[](http://hackage.haskell.org/package/hmatrix)
-[](http://dis.um.es/~alberto/material/hmatrix.pdf)
-[](https://blog.csdn.net/linxilinxilinxi/article/details/84026890)
-[](https://www.math.ubc.ca/~pwalls/math-python/jupyter/latex)
-[](https://castel.dev/post/lecture-notes-2/)
-[](https://bonxg.com/p/85.html)
-[](https://blog.csdn.net/qq_29695701/article/details/86304782)
-[](https://blog.csdn.net/wcs_152/article/details/81182669)
-[](https://www.jianshu.com/p/57523e147480)
-[](http://www.zvon.org/other/haskell/Outputprelude/recip_f.html)
-[](https://www.haskell.org/onlinereport/standard-prelude.html)
+> 听力为主  词根、音素、国标音标、单词  
+> 短语搭配提示    
+> 入口类似fooview、GitHub的bob  
+> **查看MMA源码**    
+> [Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
+> V12 查看除原生C++外的其他原码    
+> GeneralUtilities`PrintDefinitions[BinLists]  
+> MMA 黑魔法的大本营  
+> ?GeneralUtilities`*    
+> V12 以前    
+> Debug`$ExamineCode = True    
+> ?? Map     
+> [view the code built-in Mathematica function?](https://mathematica.stackexchange.com/questions/17206/how-can-i-view-the-code-implementing-a-built-in-mathematica-function)  
+> [MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
+> [**MMA Jupyter内核**](
+> https://github.com/WolframResearch/WolframLanguageForJupyter)  
+> [Haskell Jupyter内核](https://github.com/gibiansky/IHaskell)   
+> [Mathematica 与 py js 愉快的玩耍](https://zhuanlan.zhihu.com/p/33944440)  
+> [Mathematica 编码配置](https://zhuanlan.zhihu.com/p/79739964)     
+> [用 Mathematica 过滤字幕文件只留下生词](https://zhuanlan.zhihu.com/p/25854872)    
+> [Anki影音插件：用Anki学英语影视例句](https://zhuanlan.zhihu.com/p/33792983)  
+> [**Mathpix 把图片转化为LaTeX**](https://zhuanlan.zhihu.com/p/51326450)  
+> [InftyReader：最强公式识别软件](https://zhuanlan.zhihu.com/p/33944440)  
+> WordData["rebell", "InfectedForms", "List"] 给出单词的所有变形   
+> **MMA截图**    
+> GUIKit 的GUIScreenShot 函数（新版的 CurrentScreenImage)   
+> **MMA鼠标控制**  
+> JLink  
+> [Mathematica 玩别踩白块](https://zhuanlan.zhihu.com/p/33361062)  
+> [Mathematica 歌姬计划](https://zhuanlan.zhihu.com/p/33511796)   
+> [Mathematica分割音频辅助雅思听写](https://zhuanlan.zhihu.com/p/43165678)  
+> [打造你自己的数学函数](https://zhuanlan.zhihu.com/p/32553064)  
+> [Wolfram Language Server登场](https://zhuanlan.zhihu.com/p/74921013)  
+> **MMA画几何图形**  
+> **《Exploring Analytic Geometry 
+> with Mathematica》**  
+> [stackedit  浏览器里的Markdown支持abc记谱法、latex](https://stackedit.io)         
+> [upmath.me markdonw+latex full+preview](https://github.com/parpalak/upmath.me)      
+>
+> [awesome 看SVG](https://github.com/sindresorhus/awesome)    
+> **《音视频开发进阶指南基于Android与iOS平台》**      
+> [语音识别](http://www.speech.zone)    
+> 《**Speech and Language Processing-Daniel Jurafsky, James H. Martin**》  
+> books/chinese/技术
+> **汉语大词典（TXT）.7z**    
+> [epwin导数据](https://github.com/FooSoft/zero-epwing)    
+> **学研国語大辞典  epwin 有单词活用表**    
+> doc/tech/data/collins.html.utf8.txt  英语单词变形  
+> **编程中的数学-刘新宇**  **五星数学书**  
+> https://github.com/liuxinyu95/unplugged    
+> ABC记谱法    五线谱的文本表示  
+> https://zh.wikipedia.org/wiki/ABC记谱法  
+> doc/lang/programming   
+> **深度学习入门：基于Python的理论与实现.ipynb**   
+> **Category-theory-for-programmers.ipynb**   
+> doc/lang/programming/mma   
+> **instrument.txt**     
+> [Bob Mac取词翻译](https://github.com/ripperhe/Bob) 
+>
+> **Magnet分屏软件**     
+>
+> [Vue 路由模块化配置](https://ainyi.com/77)  
+>
+> [swift 识别文字区域](http://code.cocoachina.com/view/138077)  
+>
+> [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
+> [the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
+> [Determining the type of an expression
+> ](https://wiki.haskell.org/Determining_the_type_of_an_expression)  
+> [Existentially quantified types](https://en.wikibooks.org/wiki/Haskell/Existentially_quantified_types)  
+> [Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)  
+> [category-theory-for-programmers-print](file:///Users/vvw/Documents/GitHub/books/chinese/技术/category-theory-for-programmers-print.pdf)  
+> [hmatrix文档](https://hackage.haskell.org/package/hmatrix-0.20.0.0/docs/doc-index.html)  
+> [标准库文档](https://www.haskell.org/onlinereport/standard-prelude.html)  
+> [kaggle云计算](https://www.kaggle.com/masterdezign/iris-with-onehotencoded-targets)  
+> [C++云计算](http://goo.gl/FvdOaS)  
+> [深度学习云计算](https://www.floydhub.com)    
+> [调试](https://www.jianshu.com/p/57523e147480)   
+> [Markdown语法](https://github.com/younghz/Markdown)  
+> [](https://www.haskell.org/onlinereport)
+> [](http://penkovsky.com/neural-networks/day1)
+> [](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)
+> [Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html)  
+> [vim写LaTex](https://castel.dev/post/lecture-notes-1)
+> [](https://github.com/gibiansky/IHaskell)
+> [](https://hoogle.haskell.org/)
+> [](http://hackage.haskell.org/package/hmatrix)
+> [](http://dis.um.es/~alberto/material/hmatrix.pdf)
+> [](https://blog.csdn.net/linxilinxilinxi/article/details/84026890)
+> [](https://www.math.ubc.ca/~pwalls/math-python/jupyter/latex)
+> [](https://castel.dev/post/lecture-notes-2/)
+> [](https://bonxg.com/p/85.html)
+> [](https://blog.csdn.net/qq_29695701/article/details/86304782)
+> [](https://blog.csdn.net/wcs_152/article/details/81182669)
+> [](https://www.jianshu.com/p/57523e147480)
+> [](http://www.zvon.org/other/haskell/Outputprelude/recip_f.html)
+> [](https://www.haskell.org/onlinereport/standard-prelude.html)
 
 
 
