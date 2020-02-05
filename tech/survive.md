@@ -236,6 +236,7 @@ http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.ht
 - https://ftw.jzfj.shop/  123468935@qq.com    
 Telegram群  15726712516  
 - proxychains-ng  socks5 	127.0.0.1 1080  
+- [订阅键接](https://www.ftwssr.com/link/GepPNKAFVOYAcaqf?sub=1&extend=1)  
 
 
 **语言**    
