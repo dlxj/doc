@@ -36,6 +36,7 @@
 > 内容为王  离散化碎片化随时入口进入    
 听力为主  词根、音素、国标音标、单词  
 短语搭配提示    
+入口类似fooview、GitHub的bob  
 **查看MMA源码**    
 [Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
 V12 查看除原生C++外的其他原码    
