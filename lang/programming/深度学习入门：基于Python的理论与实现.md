@@ -1,5 +1,3 @@
-
-
 #### 神经网络的出现是为了自动从数据中学习出感知机 (perceptron)  的合适权重参数
 
 
@@ -22,13 +20,13 @@ Mathematica 阶跃函数：UnitStep
 
 **sigmoid 函数**
 
-![image-20200125201250200](/Users/vvw/Library/Application Support/typora-user-images/image-20200125201250200.png)
+![image-20200125201250200](./深度学习入门：基于Python的理论与实现.assets/image-20200125201250200.png)
 
 
 
 阶跃函数的实现
 
-![image-20200125201637070](/Users/vvw/Library/Application Support/typora-user-images/image-20200125201637070.png)
+![image-20200125201637070](./深度学习入门：基于Python的理论与实现.assets/image-20200125201637070.png)
 
 ![image-20200125201652884](/Users/vvw/Library/Application Support/typora-user-images/image-20200125201652884.png)
 
@@ -40,7 +38,7 @@ array([-1., 1., 2.])  -> array([False, True, True], dtype=bool)  ->  array([0, 1
 
 
 
-![image-20200125211018034](/Users/vvw/Library/Application Support/typora-user-images/image-20200125211018034.png)
+![image-20200125211018034](./深度学习入门：基于Python的理论与实现.assets/image-20200125211018034.png)
 
 
 
@@ -56,7 +54,7 @@ array([-1., 1., 2.])  -> array([False, True, True], dtype=bool)  ->  array([0, 1
 
 
 
-![image-20200125211614068](/Users/vvw/Library/Application Support/typora-user-images/image-20200125211614068.png)
+![image-20200125211614068](./深度学习入门：基于Python的理论与实现.assets/image-20200125211614068.png)
 
 def relu(x):
 
@@ -66,33 +64,33 @@ def relu(x):
 
 **行的加权和，行是输入信号，列是加权信号**  
 
-![image-20200125212206160](/Users/vvw/Library/Application Support/typora-user-images/image-20200125212206160.png)
+![image-20200125212206160](./深度学习入门：基于Python的理论与实现.assets/image-20200125212206160.png)
 
 
 
 **第一个矩形贡献行数，第二个矩阵贡献列数**
 
-![image-20200125212816118](/Users/vvw/Library/Application Support/typora-user-images/image-20200125212816118.png)
+![image-20200125212816118](./深度学习入门：基于Python的理论与实现.assets/image-20200125212816118.png)
 
 
 
 **两个输入信号，三组加权信号**
 
-![image-20200125213248020](/Users/vvw/Library/Application Support/typora-user-images/image-20200125213248020.png)
+![image-20200125213248020](./深度学习入门：基于Python的理论与实现.assets/image-20200125213248020.png)
 
 
 
 **权重的符号表示**
 
-![image-20200125213552727](/Users/vvw/Library/Application Support/typora-user-images/image-20200125213552727.png)
+![image-20200125213552727](./深度学习入门：基于Python的理论与实现.assets/image-20200125213552727.png)
 
 
 
 
 
-![image-20200125213919866](/Users/vvw/Library/Application Support/typora-user-images/image-20200125213919866.png)
+![image-20200125213919866](./深度学习入门：基于Python的理论与实现.assets/image-20200125213919866.png)
 
-![image-20200125214001054](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214001054.png)
+![image-20200125214001054](./深度学习入门：基于Python的理论与实现.assets/image-20200125214001054.png)
 
 
 
@@ -100,15 +98,15 @@ def relu(x):
 
 
 
-![image-20200125214323723](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214323723.png)
+![image-20200125214323723](./深度学习入门：基于Python的理论与实现.assets/image-20200125214323723.png)
 
 
 
-![image-20200125214500966](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214500966.png)
+![image-20200125214500966](./深度学习入门：基于Python的理论与实现.assets/image-20200125214500966.png)
 
 
 
-![image-20200125214647245](/Users/vvw/Library/Application Support/typora-user-images/image-20200125214647245.png)
+![image-20200125214647245](./深度学习入门：基于Python的理论与实现.assets/image-20200125214647245.png)
 
 
 
@@ -132,7 +130,7 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 
-![image-20200125220201860](/Users/vvw/Library/Application Support/typora-user-images/image-20200125220201860.png)
+![image-20200125220201860](./深度学习入门：基于Python的理论与实现.assets/image-20200125220201860.png)
 
 
 
@@ -150,7 +148,7 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 ### 观察矩阵计算中维度的变化是否正确
 
-![image-20200125221026681](/Users/vvw/Library/Application Support/typora-user-images/image-20200125221026681.png)
+![image-20200125221026681](./深度学习入门：基于Python的理论与实现.assets/image-20200125221026681.png)
 
 
 
@@ -197,11 +195,11 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 
-![image-20200125200236576](/Users/vvw/Library/Application Support/typora-user-images/image-20200125200236576.png)
+![image-20200125200236576](./深度学习入门：基于Python的理论与实现.assets/image-20200125200236576.png)
 
 
 
-![image-20200125200541080](/Users/vvw/Library/Application Support/typora-user-images/image-20200125200541080.png)
+![image-20200125200541080](./深度学习入门：基于Python的理论与实现.assets/image-20200125200541080.png)
 
 
 
@@ -209,9 +207,9 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 
-![image-20200126095400660](/Users/vvw/Library/Application Support/typora-user-images/image-20200126095400660.png)
+![image-20200126095400660](./深度学习入门：基于Python的理论与实现.assets/image-20200126095400660.png)
 
-
+![image-20200205163145754](./深度学习入门：基于Python的理论与实现.assets/image-20200205163145754.png)
 
 
 
@@ -219,4 +217,4 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 
-![image-20200128094808323](/Users/vvw/Library/Application Support/typora-user-images/image-20200128094808323.png)
+![image-20200128094808323](./深度学习入门：基于Python的理论与实现.assets/image-20200128094808323.png)
