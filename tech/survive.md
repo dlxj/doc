@@ -30,13 +30,15 @@
 
 **北航本科教材影印**    
 
-
+**俄毛资源站**
+https://rutracker.org/forum/index.php  
 
 ### hinote  
 > 内容为王  离散化碎片化随时入口进入    
 > 听力为主  词根、音素、国标音标、单词  
 > 短语搭配提示    
 > 入口类似fooview、GitHub的bob  
+>
 > **查看MMA源码**    
 > [Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
 > V12 查看除原生C++外的其他原码    
@@ -98,6 +100,9 @@
 > [safari 内置浏览器调试](https://www.52pojie.cn/thread-1068599-1-1.html)  
 >
 > https://github.com/zwo/patch_webinspect     
+>
+> **俄毛资源站**
+> https://rutracker.org/forum/index.php  
 >
 > [Vue 路由模块化配置](https://ainyi.com/77)  
 >
