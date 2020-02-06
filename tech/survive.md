@@ -31,9 +31,9 @@
 **北航本科教材影印**    
 
 **俄毛资源站**
-https://rutracker.org/forum/index.php    
+https://rutracker.org/forum/index.php  [zh](https://www.zhihu.com/people/15257744406-13)    
 
-http://gen.lib.rus.ec/ http://libgen.is/ 
+[bk](http://gen.lib.rus.ec/)  [k](http://libgen.is/)   [ida](https://github.com/jas502n/IDA7.0-Pro/issues/1)    
 
 [动画字幕搜索引擎](https://github.com/windrises/dialogue.moe)
 
@@ -44,6 +44,20 @@ https://github.com/windrises/dialogue.moe
 https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571ff8d96a3fddca468a652aa0&dn=A%20KITE%EF%BC%88%E3%82%AB%E3%82%A4%E3%83%88%EF%BC%89%20%5BBD%201920x1080%20AVC%2010bit%20ENG%20JAP%20AC3%5D&tr=http%3A%2F%2Fsukebei.tracker.wf%3A8888%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce)  
 
 [重排PDF](https://blog.csdn.net/qiangpx/article/details/51213442)  
+
+[NAS视频搜索](https://dialogue.moe/search)
+
+- [歌词搜索](https://github.com/yangjianxin1/QQMusicSpider)  
+- [music下载](https://github.com/0xHJK/music-dl)  
+- [字幕工具](https://github.com/1c7/Subtitle-Translation-Software)  
+- [磁力搜索magnetX铷磁铁](https://mac.orsoon.com/Mac/168288.html)  
+- [磁力在线播放webtorrent]()  
+- [IINA for mac开源视频播放器]()    
+
+[手机图书馆](https://github.com/janeczku/calibre-web)  
+
+- feem wifi文件传输 
+- [app](https://github.com/yulinyige/Wifle) [wewechat](https://github.com/trazyn/weweChat)  
 
 ### hinote
 
