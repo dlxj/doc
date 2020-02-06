@@ -31,9 +31,20 @@
 **北航本科教材影印**    
 
 **俄毛资源站**
-https://rutracker.org/forum/index.php  
+https://rutracker.org/forum/index.php    
 
-### hinote  
+http://gen.lib.rus.ec/ http://libgen.is/ 
+
+[动画字幕搜索引擎](https://github.com/windrises/dialogue.moe)
+
+https://github.com/windrises/dialogue.moe  
+
+[步兵里番](https://windrises.net/bgmtools/multitag)  
+
+[重排PDF](https://blog.csdn.net/qiangpx/article/details/51213442)  
+
+### hinote
+
 > 内容为王  离散化碎片化随时入口进入    
 > 听力为主  词根、音素、国标音标、单词  
 > 短语搭配提示    
