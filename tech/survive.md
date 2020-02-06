@@ -70,6 +70,10 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > 短语搭配提示    
 > 入口类似fooview、GitHub的bob  
 >
+> [bob翻译](https://github.com/ripperhe/Bob)  
+>
+> [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
+>
 > **查看MMA源码**    
 > [Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
 > V12 查看除原生C++外的其他原码    
