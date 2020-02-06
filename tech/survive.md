@@ -32,6 +32,10 @@
 
 https://github.com/X140Yu/Developing_iOS_8_Apps_With_Swift/blob/master/subtitles/1. Logistics%2C iOS 8 Overview.srt
 
+[bob翻译](https://github.com/ripperhe/Bob)  
+
+[web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
+
 **俄毛资源站**
 https://rutracker.org/forum/index.php  [zh](https://www.zhihu.com/people/15257744406-13)    
 
