@@ -30,6 +30,8 @@
 
 **北航本科教材影印**    
 
+https://github.com/X140Yu/Developing_iOS_8_Apps_With_Swift/blob/master/subtitles/1. Logistics%2C iOS 8 Overview.srt
+
 **俄毛资源站**
 https://rutracker.org/forum/index.php  [zh](https://www.zhihu.com/people/15257744406-13)    
 
@@ -54,6 +56,7 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 - [磁力在线播放webtorrent](https://zhuanlan.zhihu.com/p/99693825)
 - https://magnet.nange.cn/  
 - [IINA for mac开源视频播放器]()    
+- [深入理解计算机系统视频及字幕](https://github.com/EugeneLiu/translationCSAPP)    
 
 [手机图书馆](https://github.com/janeczku/calibre-web)  
 
