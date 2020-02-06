@@ -148,9 +148,11 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > [swift 识别文字区域](http://code.cocoachina.com/view/138077)  
 >
 > [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
+>
+> [facebook Haxl](https://github.com/facebook/Haxl)  
+>
 > [the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
-> [Determining the type of an expression
-> ](https://wiki.haskell.org/Determining_the_type_of_an_expression)  
+> [Determining the type of an expression](https://wiki.haskell.org/Determining_the_type_of_an_expression)  
 > [Existentially quantified types](https://en.wikibooks.org/wiki/Haskell/Existentially_quantified_types)  
 > [Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)  
 > [category-theory-for-programmers-print](file:///Users/vvw/Documents/GitHub/books/chinese/技术/category-theory-for-programmers-print.pdf)  
