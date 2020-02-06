@@ -49,9 +49,10 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 
 - [歌词搜索](https://github.com/yangjianxin1/QQMusicSpider)  
 - [music下载](https://github.com/0xHJK/music-dl)  
-- [字幕工具](https://github.com/1c7/Subtitle-Translation-Software)  
-- [磁力搜索magnetX铷磁铁](https://mac.orsoon.com/Mac/168288.html)  
-- [磁力在线播放webtorrent]()  
+- [字幕工具](https://github.com/1c7/Subtitle-Translation-Software)  [字幕下载工具](https://github.com/gyh1621/GetSubtitles)  [2](https://github.com/ausaki/subfinder) [3](https://github.com/1c7/Youtube-Auto-Subtitle-Download)    
+- [磁力搜索magnetX铷磁铁](https://magnetw.app)  [2](https://mac.orsoon.com/Mac/168288.html)  
+- [磁力在线播放webtorrent](https://zhuanlan.zhihu.com/p/99693825)
+- https://magnet.nange.cn/  
 - [IINA for mac开源视频播放器]()    
 
 [手机图书馆](https://github.com/janeczku/calibre-web)  
