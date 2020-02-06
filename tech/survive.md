@@ -149,7 +149,9 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)  
 >
-> [facebook Haxl](https://github.com/facebook/Haxl)  
+> [facebook Haxl](https://github.com/facebook/Haxl)  [elm-lang](https://elm-lang.org/) 
+>
+> [fpj](https://blog.scottlogic.com/2016/04/04/a-functional-front-end-with-react.html)  [redux](https://github.com/reduxjs/redux)  [rxjs](https://github.com/Reactive-Extensions/RxJS)      
 >
 > [the Gentle Introduction To Haskell, version 98](https://www.haskell.org/tutorial/index.html)   
 > [Determining the type of an expression](https://wiki.haskell.org/Determining_the_type_of_an_expression)  
