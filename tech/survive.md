@@ -41,6 +41,8 @@ https://github.com/windrises/dialogue.moe
 
 [步兵里番](https://windrises.net/bgmtools/multitag)  
 
+https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571ff8d96a3fddca468a652aa0&dn=A%20KITE%EF%BC%88%E3%82%AB%E3%82%A4%E3%83%88%EF%BC%89%20%5BBD%201920x1080%20AVC%2010bit%20ENG%20JAP%20AC3%5D&tr=http%3A%2F%2Fsukebei.tracker.wf%3A8888%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce)  
+
 [重排PDF](https://blog.csdn.net/qiangpx/article/details/51213442)  
 
 ### hinote
