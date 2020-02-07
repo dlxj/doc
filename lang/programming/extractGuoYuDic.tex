@@ -1,0 +1,416 @@
+%% AMS-LaTeX Created with the Wolfram Language : www.wolfram.com
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+\begin{document}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{SetDirectory}[\text{NotebookDirectory}[]];}\\
+\pmb{j = \text{Import}[\text{FileNameJoin}[\{\text{$\$$HomeDirectory},\text{{``}/Documents/GitHub/ebmac/{''}},\text{{``}tiny.json{''}}\}],\text{{``}JSON{''}},
+\text{{``}Compact{''}}\to \text{False}]}\\
+\pmb{\text{debug}\text{:=}\text{GeneralUtilities$\grave{ }$PrintDefinitions}}\\
+\pmb{\text{(*}\text{{``}guoyu.json{''}}\text{*)}\text{(*}\text{{``}tinyGuoYuDic.json{''}}\text{*)}\text{(*}\text{{``}tiny.json{''}}\text{*)} }\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\text{charCode}\to \text{jisx0208},\text{discCode}\to \text{epwing},\text{subbooks}\to \{\{\text{title}\to \unicode{5b66}\unicode{7814}\unicode{56fd}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178},\text{copyright}\to
+\text{$\backslash $nSuper $\unicode{65e5}\unicode{672c}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178}\backslash $n$\unicode{5b66}\unicode{7814}\unicode{56fd}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178}\backslash
+$nVer.1.10$\backslash $nCopyright(C) 1998 Gakken.$\backslash $n},\text{entries}\to \{\{\text{heading}\to \text{$\unicode{305d}\unicode{3089}\unicode{3010}\unicode{7a7a}\unicode{3011}$
+$\unicode{5f62}\unicode{5bb9}\unicode{52d5}\unicode{8a5e}$},\text{text}\to \text{$\unicode{305d}\unicode{3089}\unicode{3010}\unicode{7a7a}\unicode{3011}$
+$\unicode{5f62}\unicode{5bb9}\unicode{52d5}\unicode{8a5e}\backslash $n$\unicode{5f62}\unicode{5f0f}\unicode{540d}$ $\unicode{6d3b}\unicode{7528}\unicode{5f62}$
+$\unicode{4e0b}\unicode{63a5}\unicode{8a9e}\unicode{4f8b}\backslash $n$\unicode{672a}\unicode{7136}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}\unicode{308d}$
+$\{\unicode{3046}\}\backslash $n$\unicode{9023}\unicode{7528}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}\unicode{3063}$
+$\{\unicode{305f}$/$\unicode{306a}\unicode{3044}\}\backslash $n$\unicode{3000}\unicode{3000}\unicode{3000}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306b}\backslash
+$n$\unicode{3000}\unicode{3000}\unicode{3000}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3067}\backslash $n$\unicode{7d42}\unicode{6b62}\unicode{5f62}$
+$\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}$ $\{\unicode{3002}\}\backslash $n$\unicode{9023}\unicode{4f53}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306a}$
+$\{\unicode{3068}\unicode{304d}\}\backslash $n$\unicode{4eee}\unicode{5b9a}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306a}\unicode{3089}$
+$\{\unicode{3070}\}\backslash $n$\unicode{547d}\unicode{4ee4}\unicode{5f62}$ $\unicode{2015}\backslash $n$\backslash $n$\unicode{30fb}\unicode{9023}\unicode{7528}\unicode{5f62}\unicode{306e}\unicode{6b04}\unicode{306f}\unicode{4e09}\unicode{3064}\unicode{306b}\unicode{5206}\unicode{3051}\unicode{305f}\unicode{3002}\unicode{305d}\unicode{306e}\unicode{305d}\unicode{308c}\unicode{305e}\unicode{308c}\unicode{306e}\unicode{7528}\unicode{6cd5}\unicode{306f}\unicode{6b21}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{3067}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{4e0a}\unicode{6bb5}\ldots \unicode{52a9}\unicode{52d5}\unicode{8a5e}\unicode{300c}\unicode{305f}\unicode{300d}\unicode{3001}\unicode{52a9}\unicode{8a5e}\unicode{300c}\unicode{305f}\unicode{308a}\unicode{300d}\unicode{306b}\unicode{7d9a}\unicode{304f}\unicode{3002}\backslash
+$n$\unicode{4e2d}\unicode{6bb5}\ldots \unicode{8a00}\unicode{3044}\unicode{3055}\unicode{3059}\unicode{3068}\unicode{304d}\unicode{306b}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{3002}\unicode{88dc}\unicode{52a9}\unicode{5f62}\unicode{5bb9}\unicode{8a5e}\unicode{300c}\unicode{306a}\unicode{3044}\unicode{300d}\unicode{3001}\unicode{88dc}\unicode{52a9}\unicode{52d5}\unicode{8a5e}\unicode{300c}\unicode{3042}\unicode{308b}\unicode{300d}\unicode{306b}\unicode{7d9a}\unicode{304f}\unicode{3002}\backslash
+$n$\unicode{4e0b}\unicode{6bb5}\ldots \unicode{9023}\unicode{7528}\unicode{4fee}\unicode{98fe}\unicode{8a9e}\unicode{3068}\unicode{3057}\unicode{3066}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}$-$\unicode{306f}\unicode{305d}\unicode{306e}\unicode{6d3b}\unicode{7528}\unicode{5f62}\unicode{304c}\unicode{306a}\unicode{3044}\unicode{3053}\unicode{3068}\unicode{3092}\unicode{793a}\unicode{3059}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{4e01}\unicode{5be7}\unicode{306a}\unicode{8a00}\unicode{3044}\unicode{65b9}\unicode{3092}\unicode{3059}\unicode{308b}\unicode{3068}\unicode{304d}\unicode{306f}\unicode{3001}\unicode{300c}\unicode{3067}\unicode{3057}\unicode{3087}\unicode{30fb}\unicode{3067}\unicode{3057}\unicode{30fb}\unicode{3067}\unicode{3059}\unicode{30fb}\unicode{3067}\unicode{3059}\unicode{30fb}$-$\unicode{30fb}$-$\unicode{300d}\unicode{3068}\unicode{306a}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{300c}\unicode{6709}\unicode{80fd}\unicode{3060}\unicode{300d}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{306b}\unicode{3001}\unicode{526f}\unicode{8a5e}\unicode{7684}\unicode{306a}\unicode{9023}\unicode{7528}\unicode{4fee}\unicode{98fe}\unicode{8a9e}\unicode{3068}\unicode{3057}\unicode{3066}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{300c}$-$\unicode{306b}\unicode{300d}\unicode{306e}\unicode{5f62}\unicode{306e}\unicode{306a}\unicode{3044}\unicode{3082}\unicode{306e}\unicode{304c}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{300c}\unicode{5927}\unicode{5e45}\unicode{3060}\unicode{300d}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{306b}\unicode{3001}\unicode{9023}\unicode{4f53}\unicode{5f62}\unicode{300c}$-$\unicode{306a}\unicode{300d}\unicode{306e}\unicode{307b}\unicode{304b}\unicode{306b}\unicode{300c}$-$\unicode{306e}\unicode{300d}\unicode{306e}\unicode{5f62}\unicode{3092}\unicode{3068}\unicode{308b}\unicode{3082}\unicode{306e}\unicode{304c}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\backslash $n}\}\}\}\}\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*Reap Show*)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*}}\\
+\pmb{\text{Rule}\text{  }\text{String} \to  \text{String},}\\
+\pmb{\text{Rule}\text{  }\text{String} \to  \text{List}[\text{Rule}],}\\
+\pmb{\text{Rule}\text{  }\text{String} \to  \text{List}[ \text{List}[ \text{Rule} ] ]}\\
+\pmb{\text{List}[\text{List}]}\\
+\pmb{\text{*)}}\\
+\pmb{f[\text{x$\_$String}\to \text{y$\_$String}]\text{:=} \text{Print}[x, \text{{``}---$>${''}}, y,\text{{``},{''}}]}\\
+\pmb{f[\text{x$\_$String}\to \text{y$\_$List}]\text{:=}(\text{Print}[x, \text{{``}-$>\{${''}}];\text{Scan}[f,y];\text{Print}[\text{{``}$\}${''}}])}\\
+\pmb{f[\text{x$\_$List}]\text{:=} (\text{Print}[\text{{``}$\{${''}}];\text{Scan}[f,x];\text{Print}[\text{{``}$\}${''}}])}\\
+\pmb{f[\_\_\_]\text{:=}\text{Print}[\text{{``}Ooops!errors{''}}]}\\
+\pmb{\text{(*}f[\text{x$\_$String}\to \text{y$\_$List}]\text{:=} \text{Print}[x, \text{{``}---$>${''}}, f[]]\text{*)}}\\
+\pmb{f[\text{a}\to \{\{\text{b}\to \text{c}\}\}]}\)
+\end{doublespace}
+
+\noindent\(\text{a}\text{-$>\{$}\)
+
+\noindent\(\{\)
+
+\noindent\(\text{b}\text{---$>$}\text{c},\)
+
+\noindent\(\}\)
+
+\noindent\(\}\)
+
+\begin{doublespace}
+\noindent\(\pmb{f[j]}\)
+\end{doublespace}
+
+\noindent\(\{\)
+
+\noindent\(\text{charCode}\text{---$>$}\text{jisx0208},\)
+
+\noindent\(\text{discCode}\text{---$>$}\text{epwing},\)
+
+\noindent\(\text{subbooks}\text{-$>\{$}\)
+
+\noindent\(\{\)
+
+\noindent\(\text{title}\text{---$>$}\unicode{5b66}\unicode{7814}\unicode{56fd}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178},\)
+
+\noindent\(\text{copyright}\text{---$>$}\text{$\backslash $nSuper $\unicode{65e5}\unicode{672c}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178}\backslash
+$n$\unicode{5b66}\unicode{7814}\unicode{56fd}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178}\backslash $nVer.1.10$\backslash $nCopyright(C)
+1998 Gakken.$\backslash $n},\)
+
+\noindent\(\text{entries}\text{-$>\{$}\)
+
+\noindent\(\{\)
+
+\noindent\(\text{heading}\text{---$>$}\text{$\unicode{305d}\unicode{3089}\unicode{3010}\unicode{7a7a}\unicode{3011}$ $\unicode{5f62}\unicode{5bb9}\unicode{52d5}\unicode{8a5e}$},\)
+
+\noindent\(\text{text}\text{---$>$}\text{$\unicode{305d}\unicode{3089}\unicode{3010}\unicode{7a7a}\unicode{3011}$ $\unicode{5f62}\unicode{5bb9}\unicode{52d5}\unicode{8a5e}\backslash
+$n$\unicode{5f62}\unicode{5f0f}\unicode{540d}$ $\unicode{6d3b}\unicode{7528}\unicode{5f62}$ $\unicode{4e0b}\unicode{63a5}\unicode{8a9e}\unicode{4f8b}\backslash
+$n$\unicode{672a}\unicode{7136}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}\unicode{308d}$ $\{\unicode{3046}\}\backslash
+$n$\unicode{9023}\unicode{7528}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}\unicode{3063}$ $\{\unicode{305f}$/$\unicode{306a}\unicode{3044}\}\backslash
+$n$\unicode{3000}\unicode{3000}\unicode{3000}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306b}\backslash $n$\unicode{3000}\unicode{3000}\unicode{3000}$
+$\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3067}\backslash $n$\unicode{7d42}\unicode{6b62}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}$
+$\{\unicode{3002}\}\backslash $n$\unicode{9023}\unicode{4f53}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306a}$ $\{\unicode{3068}\unicode{304d}\}\backslash
+$n$\unicode{4eee}\unicode{5b9a}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306a}\unicode{3089}$ $\{\unicode{3070}\}\backslash
+$n$\unicode{547d}\unicode{4ee4}\unicode{5f62}$ $\unicode{2015}\backslash $n$\backslash $n$\unicode{30fb}\unicode{9023}\unicode{7528}\unicode{5f62}\unicode{306e}\unicode{6b04}\unicode{306f}\unicode{4e09}\unicode{3064}\unicode{306b}\unicode{5206}\unicode{3051}\unicode{305f}\unicode{3002}\unicode{305d}\unicode{306e}\unicode{305d}\unicode{308c}\unicode{305e}\unicode{308c}\unicode{306e}\unicode{7528}\unicode{6cd5}\unicode{306f}\unicode{6b21}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{3067}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{4e0a}\unicode{6bb5}\ldots \unicode{52a9}\unicode{52d5}\unicode{8a5e}\unicode{300c}\unicode{305f}\unicode{300d}\unicode{3001}\unicode{52a9}\unicode{8a5e}\unicode{300c}\unicode{305f}\unicode{308a}\unicode{300d}\unicode{306b}\unicode{7d9a}\unicode{304f}\unicode{3002}\backslash
+$n$\unicode{4e2d}\unicode{6bb5}\ldots \unicode{8a00}\unicode{3044}\unicode{3055}\unicode{3059}\unicode{3068}\unicode{304d}\unicode{306b}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{3002}\unicode{88dc}\unicode{52a9}\unicode{5f62}\unicode{5bb9}\unicode{8a5e}\unicode{300c}\unicode{306a}\unicode{3044}\unicode{300d}\unicode{3001}\unicode{88dc}\unicode{52a9}\unicode{52d5}\unicode{8a5e}\unicode{300c}\unicode{3042}\unicode{308b}\unicode{300d}\unicode{306b}\unicode{7d9a}\unicode{304f}\unicode{3002}\backslash
+$n$\unicode{4e0b}\unicode{6bb5}\ldots \unicode{9023}\unicode{7528}\unicode{4fee}\unicode{98fe}\unicode{8a9e}\unicode{3068}\unicode{3057}\unicode{3066}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}$-$\unicode{306f}\unicode{305d}\unicode{306e}\unicode{6d3b}\unicode{7528}\unicode{5f62}\unicode{304c}\unicode{306a}\unicode{3044}\unicode{3053}\unicode{3068}\unicode{3092}\unicode{793a}\unicode{3059}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{4e01}\unicode{5be7}\unicode{306a}\unicode{8a00}\unicode{3044}\unicode{65b9}\unicode{3092}\unicode{3059}\unicode{308b}\unicode{3068}\unicode{304d}\unicode{306f}\unicode{3001}\unicode{300c}\unicode{3067}\unicode{3057}\unicode{3087}\unicode{30fb}\unicode{3067}\unicode{3057}\unicode{30fb}\unicode{3067}\unicode{3059}\unicode{30fb}\unicode{3067}\unicode{3059}\unicode{30fb}$-$\unicode{30fb}$-$\unicode{300d}\unicode{3068}\unicode{306a}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{300c}\unicode{6709}\unicode{80fd}\unicode{3060}\unicode{300d}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{306b}\unicode{3001}\unicode{526f}\unicode{8a5e}\unicode{7684}\unicode{306a}\unicode{9023}\unicode{7528}\unicode{4fee}\unicode{98fe}\unicode{8a9e}\unicode{3068}\unicode{3057}\unicode{3066}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{300c}$-$\unicode{306b}\unicode{300d}\unicode{306e}\unicode{5f62}\unicode{306e}\unicode{306a}\unicode{3044}\unicode{3082}\unicode{306e}\unicode{304c}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{300c}\unicode{5927}\unicode{5e45}\unicode{3060}\unicode{300d}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{306b}\unicode{3001}\unicode{9023}\unicode{4f53}\unicode{5f62}\unicode{300c}$-$\unicode{306a}\unicode{300d}\unicode{306e}\unicode{307b}\unicode{304b}\unicode{306b}\unicode{300c}$-$\unicode{306e}\unicode{300d}\unicode{306e}\unicode{5f62}\unicode{3092}\unicode{3068}\unicode{308b}\unicode{3082}\unicode{306e}\unicode{304c}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\backslash $n},\)
+
+\noindent\(\}\)
+
+\noindent\(\}\)
+
+\noindent\(\}\)
+
+\noindent\(\}\)
+
+\noindent\(\}\)
+
+\begin{doublespace}
+\noindent\(\pmb{\text{String} == \text{List}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{String}==\text{List}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\noindent\(\text{a}\text{---$>$}\text{b}\)
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Scan}[}\\
+\pmb{f}\\
+\pmb{}\\
+\pmb{,j]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Print}@\text{FileNameJoin}[\{\text{$\$$HomeDirectory},\text{{``}/Documents/GitHub/ebmac/tiny.json{''}}\}]}\)
+\end{doublespace}
+
+\noindent\(\text{/Users/vvw/Documents/GitHub/ebmac/tiny.json}\)
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*closure $\unicode{95ed}\unicode{5305}$*)}}\\
+\pmb{\text{add}=\text{Module}[\{y\},y=0;\text{Function}[x, y=y+x]];}\\
+\pmb{\text{add} \text{/@} \{1,2,3\}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{1,3,6\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*Keys@j*)}}\\
+\pmb{\text{(*Head /@ j*)}}\\
+\pmb{\text{print}[\text{r$\_$}]\text{:=}\text{Print}[\text{First}[r],\text{{``}---$>${''}},}\\
+\pmb{\text{If}[\text{  }}\\
+\pmb{\text{ListQ}@\text{Last}[r],}\\
+\pmb{\text{True},}\\
+\pmb{\text{Last}[r]]}\\
+\pmb{];}\\
+\pmb{\text{Scan}[}\\
+\pmb{\text{Print}[}\\
+\pmb{\text{First}[\#],\text{{``}---$>${''}},}\\
+\pmb{\text{If}[\text{  }\text{ListQ}[ \text{Last}[\#]],\text{Scan}[\text{$\#$0}, \text{Last}[\#] ],\text{Last}[\#]] }\\
+\pmb{]\&}\\
+\pmb{, }\\
+\pmb{j]}\)
+\end{doublespace}
+
+\noindent\(\text{charCode}\text{---$>$}\text{jisx0208}\)
+
+\noindent\(\text{discCode}\text{---$>$}\text{epwing}\)
+
+\noindent\(\text{title}\to \unicode{5b66}\unicode{7814}\unicode{56fd}\unicode{8a9e}\unicode{5927}\unicode{8f9e}\unicode{5178}\text{---$>$}\text{entries}\to
+\{\{\text{heading}\to \text{$\unicode{305d}\unicode{3089}\unicode{3010}\unicode{7a7a}\unicode{3011}$ $\unicode{5f62}\unicode{5bb9}\unicode{52d5}\unicode{8a5e}$},\text{text}\to
+\text{$\unicode{305d}\unicode{3089}\unicode{3010}\unicode{7a7a}\unicode{3011}$ $\unicode{5f62}\unicode{5bb9}\unicode{52d5}\unicode{8a5e}\backslash
+$n$\unicode{5f62}\unicode{5f0f}\unicode{540d}$ $\unicode{6d3b}\unicode{7528}\unicode{5f62}$ $\unicode{4e0b}\unicode{63a5}\unicode{8a9e}\unicode{4f8b}\backslash
+$n$\unicode{672a}\unicode{7136}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}\unicode{308d}$ $\{\unicode{3046}\}\backslash
+$n$\unicode{9023}\unicode{7528}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}\unicode{3063}$ $\{\unicode{305f}$/$\unicode{306a}\unicode{3044}\}\backslash
+$n$\unicode{3000}\unicode{3000}\unicode{3000}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306b}\backslash $n$\unicode{3000}\unicode{3000}\unicode{3000}$
+$\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3067}\backslash $n$\unicode{7d42}\unicode{6b62}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{3060}$
+$\{\unicode{3002}\}\backslash $n$\unicode{9023}\unicode{4f53}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306a}$ $\{\unicode{3068}\unicode{304d}\}\backslash
+$n$\unicode{4eee}\unicode{5b9a}\unicode{5f62}$ $\unicode{305d}\unicode{3089}\unicode{30fb}\unicode{306a}\unicode{3089}$ $\{\unicode{3070}\}\backslash
+$n$\unicode{547d}\unicode{4ee4}\unicode{5f62}$ $\unicode{2015}\backslash $n$\backslash $n$\unicode{30fb}\unicode{9023}\unicode{7528}\unicode{5f62}\unicode{306e}\unicode{6b04}\unicode{306f}\unicode{4e09}\unicode{3064}\unicode{306b}\unicode{5206}\unicode{3051}\unicode{305f}\unicode{3002}\unicode{305d}\unicode{306e}\unicode{305d}\unicode{308c}\unicode{305e}\unicode{308c}\unicode{306e}\unicode{7528}\unicode{6cd5}\unicode{306f}\unicode{6b21}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{3067}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{4e0a}\unicode{6bb5}\ldots \unicode{52a9}\unicode{52d5}\unicode{8a5e}\unicode{300c}\unicode{305f}\unicode{300d}\unicode{3001}\unicode{52a9}\unicode{8a5e}\unicode{300c}\unicode{305f}\unicode{308a}\unicode{300d}\unicode{306b}\unicode{7d9a}\unicode{304f}\unicode{3002}\backslash
+$n$\unicode{4e2d}\unicode{6bb5}\ldots \unicode{8a00}\unicode{3044}\unicode{3055}\unicode{3059}\unicode{3068}\unicode{304d}\unicode{306b}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{3002}\unicode{88dc}\unicode{52a9}\unicode{5f62}\unicode{5bb9}\unicode{8a5e}\unicode{300c}\unicode{306a}\unicode{3044}\unicode{300d}\unicode{3001}\unicode{88dc}\unicode{52a9}\unicode{52d5}\unicode{8a5e}\unicode{300c}\unicode{3042}\unicode{308b}\unicode{300d}\unicode{306b}\unicode{7d9a}\unicode{304f}\unicode{3002}\backslash
+$n$\unicode{4e0b}\unicode{6bb5}\ldots \unicode{9023}\unicode{7528}\unicode{4fee}\unicode{98fe}\unicode{8a9e}\unicode{3068}\unicode{3057}\unicode{3066}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}$-$\unicode{306f}\unicode{305d}\unicode{306e}\unicode{6d3b}\unicode{7528}\unicode{5f62}\unicode{304c}\unicode{306a}\unicode{3044}\unicode{3053}\unicode{3068}\unicode{3092}\unicode{793a}\unicode{3059}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{4e01}\unicode{5be7}\unicode{306a}\unicode{8a00}\unicode{3044}\unicode{65b9}\unicode{3092}\unicode{3059}\unicode{308b}\unicode{3068}\unicode{304d}\unicode{306f}\unicode{3001}\unicode{300c}\unicode{3067}\unicode{3057}\unicode{3087}\unicode{30fb}\unicode{3067}\unicode{3057}\unicode{30fb}\unicode{3067}\unicode{3059}\unicode{30fb}\unicode{3067}\unicode{3059}\unicode{30fb}$-$\unicode{30fb}$-$\unicode{300d}\unicode{3068}\unicode{306a}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{300c}\unicode{6709}\unicode{80fd}\unicode{3060}\unicode{300d}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{306b}\unicode{3001}\unicode{526f}\unicode{8a5e}\unicode{7684}\unicode{306a}\unicode{9023}\unicode{7528}\unicode{4fee}\unicode{98fe}\unicode{8a9e}\unicode{3068}\unicode{3057}\unicode{3066}\unicode{7528}\unicode{3044}\unicode{308b}\unicode{300c}$-$\unicode{306b}\unicode{300d}\unicode{306e}\unicode{5f62}\unicode{306e}\unicode{306a}\unicode{3044}\unicode{3082}\unicode{306e}\unicode{304c}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\unicode{30fb}\unicode{300c}\unicode{5927}\unicode{5e45}\unicode{3060}\unicode{300d}\unicode{306e}\unicode{3088}\unicode{3046}\unicode{306b}\unicode{3001}\unicode{9023}\unicode{4f53}\unicode{5f62}\unicode{300c}$-$\unicode{306a}\unicode{300d}\unicode{306e}\unicode{307b}\unicode{304b}\unicode{306b}\unicode{300c}$-$\unicode{306e}\unicode{300d}\unicode{306e}\unicode{5f62}\unicode{3092}\unicode{3068}\unicode{308b}\unicode{3082}\unicode{306e}\unicode{304c}\unicode{3042}\unicode{308b}\unicode{3002}\backslash
+$n$\backslash $n}\}\}\)
+
+\noindent\(\text{subbooks}\text{---$>$}\text{Null}\)
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Head} \text{/@}\{\text{{``}charCode{''}},\text{{``}discCode{''}},\text{{``}subbooks{''}}\}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\text{String},\text{String},\text{String}\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{( \# \text{/.} (\text{x$\_\_$}\to \text{y$\_\_$}):\to  (x\to (}\\
+\pmb{\text{If}[\text{ListQ}[y],y\text{//}\text{First}, y]}\\
+\pmb{)) )\& \text{/@} j}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Scan}[\text{Print}, \{1,2\}]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(2\)
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*$\unicode{5229}\unicode{7528}$Scan $\unicode{7684}\unicode{526f}\unicode{4f5c}\unicode{7528}\unicode{5b9e}\unicode{73b0}\unicode{8ba1}\unicode{7b97}$*)}}\\
+\pmb{\text{data} =\text{Table}[\text{Random}[],\{100\}];\text{  }\text{(*}\text{$\unicode{4e00}\unicode{767e}\unicode{4e2a}\unicode{5305}\unicode{542b}$0$\unicode{ff5e}$1$\unicode{4e4b}\unicode{95f4}\unicode{7684}\unicode{5b9e}\unicode{6570}$List}\text{*)}}\\
+\pmb{\text{hint} = \text{Table}[0,\{5\}]\text{  }\text{(*} \text{List}[0,0,0,0,0] \text{*)}}\\
+\pmb{\text{Scan}[ \text{hint}[[\text{Ceiling}[\# 5]]]\text{++}\&, \text{data} ]}\\
+\pmb{\text{(*}\text{Ceiling}[5 \#]\text{  }5 * 0\sim 1\unicode{4e4b}\unicode{95f4}\unicode{7684}\unicode{5b9e}\unicode{6570}\unicode{ff0c}\text{$\unicode{5f97}\unicode{5230}$0}\sim
+5 \unicode{4e4b}\unicode{95f4}\unicode{7684}\unicode{5b9e}\unicode{6570}\unicode{ff0c}\text{Ceiling} \unicode{4e0a}\unicode{53d6}\unicode{6574}\unicode{ff0c}\text{$\unicode{5f97}\unicode{5230}$0}
+\sim  5 \unicode{4e4b}\unicode{95f4}\unicode{7684}\unicode{6574}\unicode{6570}\text{*)}}\\
+\pmb{\text{(*} a\text{++} \text{$\unicode{5148}\unicode{8fd4}\unicode{56de}$a}, \text{$\unicode{7136}\unicode{540e}$a} = a + 1\text{*)}}\\
+\pmb{\text{hint}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0,0,0,0,0\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{24,18,19,21,18\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{myOddQ}[\text{x$\_$}] \text{:=} ( \text{Print}[\text{{``}debug:{''}}<>\text{TextString}@\{x, \text{OddQ}[x]\}]; \text{OddQ}[x]
+) \text{(*}\unicode{6253}\unicode{5370}\unicode{8c03}\unicode{8bd5}\unicode{4fe1}\unicode{606f}\unicode{7684}\unicode{5c0f}\unicode{6280}\unicode{5de7}\text{*)}}\\
+\pmb{\text{And}\text{@@}\text{myOddQ}\text{/@}\{1,2,3\}\text{  }\text{(*}\text{Apply} \text{$\unicode{66ff}\unicode{6362}$Head}, f\text{@@}\{1,2\}
+\text{List}[1,2] \text{$\unicode{4e2d}\unicode{7684}$List} \text{$\unicode{88ab}\unicode{66ff}\unicode{6362}\unicode{4e3a}$f}\text{*)}}\\
+\pmb{\text{Scan}[\text{If}[\text{myOddQ}[\#], \text{True}, \text{Return}[\text{False}] ]\&, \{1,3,5\}]==\text{Null} }\)
+\end{doublespace}
+
+\noindent\(\text{debug:$\{$1, True$\}$}\)
+
+\noindent\(\text{debug:$\{$2, False$\}$}\)
+
+\noindent\(\text{debug:$\{$3, True$\}$}\)
+
+\begin{doublespace}
+\noindent\(\text{False}\)
+\end{doublespace}
+
+\noindent\(\text{debug:$\{$1, True$\}$}\)
+
+\noindent\(\text{debug:$\{$3, True$\}$}\)
+
+\noindent\(\text{debug:$\{$5, True$\}$}\)
+
+\begin{doublespace}
+\noindent\(\text{True}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\{\{2,2\},\{2,2\}\}\text{/.}x:\{2\text{..}\}:\to (x\text{/.}\text{$\_$Integer}?(\#==2\&)\to 3)}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\{3,3\},\{3,3\}\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\noindent\(\text{$\{$1, True$\}$}\)
+
+\noindent\(\text{$\{$3, True$\}$}\)
+
+\noindent\(\text{$\{$5, True$\}$}\)
+
+\begin{doublespace}
+\noindent\(\text{True}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{(*}}\\
+\pmb{}\\
+\pmb{}\\
+\pmb{}\\
+\pmb{\text{Scan}}\\
+\pmb{\text{Scan$\unicode{4e0d}\unicode{662f}\unicode{4e00}\unicode{4e2a}$pure} \text{funtion}\unicode{ff0c}\text{$\unicode{548c}$Map} \unicode{5f88}\unicode{50cf}\unicode{ff0c}\text{$\unicode{4f46}\unicode{662f}\unicode{4e0d}\unicode{8fd4}\unicode{56de}$list$\unicode{7ed3}\unicode{679c}$}\unicode{3002}\text{Scan}
+\text{$\unicode{548c}$Return} \unicode{51fd}\unicode{6570}\unicode{914d}\unicode{5408}\unicode{4f7f}\unicode{7528}\unicode{66f4}\unicode{5177}\unicode{5a01}\unicode{529b}\unicode{ff0c}\text{$\unicode{4e00}\unicode{9047}\unicode{5230}$Return$\unicode{7684}\unicode{8fd4}\unicode{56de}\unicode{503c}$Scan}
+\unicode{5c31}\unicode{7ec8}\unicode{6b62}\unicode{5e76}\unicode{8fd4}\unicode{56de}\unicode{90a3}\unicode{4e2a}\unicode{503c}\unicode{3002}}\\
+\pmb{}\\
+\pmb{\text{Head}}\\
+\pmb{\unicode{7ed9}\unicode{51fa}\unicode{8868}\unicode{8fbe}\unicode{793a}\unicode{7684}\unicode{7c7b}\unicode{578b}}\\
+\pmb{\text{Map}[\text{Head},\{3,3/2,3+2I,\{3,2\},a\}]}\\
+\pmb{\{\text{Integer},\text{Rational},\text{Complex},\text{List},\text{Symbol}\}}\\
+\pmb{}\\
+\pmb{\text{Intersection}[\{2,-2,1,3,1\},\{2,1,-2,-1\},\text{SameTest}\text{-$>$}(\text{Abs}[\text{$\#$1}]\text{==}\text{Abs}[\text{$\#$2}]\&)]}\\
+\pmb{}\\
+\pmb{\{a,b,c\}\cap \{b,c,d\}}\\
+\pmb{}\\
+\pmb{\text{*)}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\{c,b,a\}\cap \{b,a,c\} }\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{a,b,c\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{sameQ} \text{:=}(\text{Length}[\text{$\#$1} \cap  \text{$\#$2}]\text{  }== \text{Length}[ \text{$\#$1}])\&}\\
+\pmb{\text{sameQ}[\{1,2,3\}, \{1,3,2\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{True}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{$\$$Version}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{12.0.0 for Mac OS X x86 (64-bit) (April 7, 2019)}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{TreeForm}@\{\text{{``}charCode{''}}\to \text{{``}jisx0208{''}},\text{{``}discCode{''}}\to \text{{``}epwing{''}},\text{{``}subbooks{''}}\to
+\{\text{a}\to \text{b}\}\}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{?\text{ExportString}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\fbox{$$}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{GeneralUtilities$\grave{ }$PrintDefinitions}[\text{ExportString}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{NotebookObject}\left[\right]\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{TextRecognize}[\#,\text{{``}Word{''}},\{\text{{``}Text{''}}, \text{{``}BoundingBox{''}}\}, \text{Language}\to \text{{``}Chinese{''}}
+]\& @ }\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\{\unicode{5206}\unicode{522b}\unicode{4efb}\unicode{4e2d}\unicode{5fc3}\unicode{7684}\unicode{4e3b}\unicode{4efb}\unicode{548c}\unicode{526f}\unicode{4e3b}\unicode{4efb}\unicode{3002},\text{Rectangle}[\{10,13\},\{384,41\}]\},\{\text{$\unicode{7ecf}\unicode{8fc7}\unicode{5341}\unicode{51e0}\unicode{5e74}$,$\unicode{5728}\unicode{6c6a}\unicode{5bb9}\unicode{548c}\unicode{4e2d}\unicode{5fc3}\unicode{5168}\unicode{4f53}\unicode{6210}\unicode{5458}$},\text{Rectangle}[\{405,13\},\{881,41\}]\}\}\)
+\end{doublespace}
+
+\includegraphics{extractGuoYuDic_gr1.eps}
+
+\includegraphics{extractGuoYuDic_gr2.eps}
+
+\begin{doublespace}
+\noindent\(\pmb{i = ;}\\
+\pmb{\text{res}=\text{TextRecognize}[i,\text{{``}Line{''}},\text{{``}BoundingBox{''}}]}\\
+\pmb{\text{HighlightImage}[i,\{\text{{``}Boundary{''}},\text{EdgeForm}[\{\text{Red},\text{Opacity}[.3]\}],\text{res}\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\text{Rectangle}[\{6,135\},\{346,149\}],\text{Rectangle}[\{5,80\},\{663,94\}],\text{Rectangle}[\{6,61\},\{94,75\}],\text{Rectangle}[\{6,27\},\{671,41\}],\text{Rectangle}[\{6,8\},\{408,22\}]\}\)
+\end{doublespace}
+
+\includegraphics{extractGuoYuDic_gr3.eps}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{debug}@\text{TextRecognize}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{NotebookObject}\left[\right]\)
+\end{doublespace}
+
+\end{document}
