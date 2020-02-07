@@ -165,11 +165,15 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > [深度学习云计算](https://www.floydhub.com)    
 > [调试](https://www.jianshu.com/p/57523e147480)   
 > [Markdown语法](https://github.com/younghz/Markdown)  
+>
 > [](https://www.haskell.org/onlinereport)
 > [](http://penkovsky.com/neural-networks/day1)
 > [](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)
 > [Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html)  
-> [vim写LaTex](https://castel.dev/post/lecture-notes-1)
+> [vim写LaTex](https://castel.dev/post/lecture-notes-1)  
+>
+> [vscode+latex](https://github.com/James-Yu/LaTeX-Workshop)  
+>
 > [](https://github.com/gibiansky/IHaskell)
 > [](https://hoogle.haskell.org/)
 > [](http://hackage.haskell.org/package/hmatrix)
