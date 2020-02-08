@@ -1,0 +1,17 @@
+
+apt-get update
+apt-get install cmake git subversion autoconf automake libtool gettext libsdl1.2-dev
+apt-get install debhelper cdbs libwxgtk2.8-dev wx-common libbz2-dev libgtk2.0-dev libgamin-dev libboost-dev  libhunspell-dev libfontconfig1-dev
+svn checkout svn://svn.code.sf.net/p/codeblocks/code/trunk 
+
+it's the best to just run dpkg-buildpackage in the sources root.
+This will tell you which packages are missing on your system and what's more, you get real deb-packages that can be installed easily.
+The make uninstall is not reliable (at least not if the sources have changed between make install and make uninstall).
+
+#apt-get remove --purge package
+#apt-get clean
+
+apt-get remove codeblocks
+
+可能是因为之前安装过的老版本的codeblocks没有删除干净。
+打开synaptic，查找codeblocks，将所有能删的的都删了就好了。

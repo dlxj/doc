@@ -1,0 +1,115 @@
+
+apt-get update
+apt-get install cmake lua5.2 git subversion autoconf automake libtool gettext libsdl1.2-dev
+
+git clone https://github.com/koreader/koreader.git
+cd koreader
+make fetchthirdparty
+
+真机启动
+cd koreader && make clean && make customupdate
+
+模拟器启动
+cd koreader
+make clean
+EMULATE_READER_W=800 EMULATE_READER_H=600 EMULATE_READER=1 make
+cd koreader-i686-linux-gnu/koreader
+./reader.lua -d /root/pdf/
+
+cd koreader && make clean && EMULATE_READER_W=800 EMULATE_READER_H=600 EMULATE_READER=1 make
+
+查字典
+
+export STARDICT_DATA_DIR="/root/koreader/koreader-i686-linux-gnu/koreader/data/dict"
+将文件xx.dict xx.idx xx.ifo copy to /root/koreader/koreader-i686-linux-gnu/koreader/data/dict
+cd koreader-i686-linux-gnu/koreader
+./reader.lua -d /root/pdf/
+
+cd /root/koreader/koreader-i686-linux-gnu/koreader && export STARDICT_DATA_DIR="/root/koreader/koreader-i686-linux-gnu/koreader/data/dict"  && ./reader.lua -d /root/pdf/
+
+单独开一个进程来执行字典的查询
+ui\reader\readerdictionary.lua
+local std_out = io.popen("./sdcv -nj "..("%q"):format(word), "r")
+local results_str = std_out:read("*all")
+尝试查字典
+cd /root/koreader/koreader-i686-linux-gnu/koreader
+export STARDICT_DATA_DIR="/root/koreader/koreader-i686-linux-gnu/koreader/data/dict" && ./sdcv -nj "yes"
+
+调试
+
+入口点的说明
+从shell 运行reader.lua，而reader.lua 开头的一句 #!./koreader-base 又指明了用koreader-base 来运行这个lua 文件，同理koreader-base 又指明了从luajit 运行koreader-base
+所以，命令./reader.lua -d /root/pdf/ 实际上是把这一串当做参数传给了koreader-base，等价于luajit koreader-base ./reader.lua -d /root/pdf/
+
+把修改版的koreader-base 复制进/root/koreader/koreader-i686-linux-gnu/koreader
+export STARDICT_DATA_DIR="/root/koreader/koreader-i686-linux-gnu/koreader/data/dict" && cd /root/koreader/koreader-i686-linux-gnu/koreader && ./luajit koreader-base
+
+在ZeroBrane Studio 调试
+修改/opt/zbstudio/cfg/user.lua 或Edit | Preferences | Settings: System
+path.lua = "/root/koreader/koreader-i686-linux-gnu/koreader/luajit" 
+debugger.runonstart = true
+
+
+为了在ZeroBrane Studio 调试运行，修改代码
+如何确定当前的路径？程序的启动路径就是当前路径，ZeroBrane Studio 运行时可以在Output 窗口看出来(就是project 所在的目录？)
+修改库的加载路径
+package.path = ";/root/koreader/koreader-i686-linux-gnu/koreader/?.lua;"
+package.cpath = ";/root/koreader/koreader-i686-linux-gnu/koreader/?.so;"
+修改font.lua
+self.fontdir = './koreader-i686-linux-gnu/koreader/fonts'
+修改toogleswitch.lua 在开头添加
+require 'ui/widget/text'
+修改ui\reader\readerdictionary.lua
+io.popen("./koreader-i686-linux-gnu/koreader/sdcv -nj "..("%q"):format(word), "r")
+修改koreader-base\sdcv-0.4.2\src\sdcv.cpp
+const gchar *stardict_data_dir=g_getenv("STARDICT_DATA_DIR");
+	data_dir = "./data/dict";
+重新编译sdcv
+
+
+
+
+	-- text highlight
+	local highlight = ReaderHighlight:new{
+		dialog = self.dialog,
+		view = self[1],
+		ui = self,
+		document = self.document,
+	}
+	table.insert(self, highlight)
+
+
+
+
+dictionary can not lookup word
+
+I try to put dictionary files (xx.dict xx.idx xx.ifo) in: ~/koreader/koreader-i686-linux-gnu/koreader/data/dict
+
+then open a pdf file, select a word, debug info says:
+
+in hold state...
+hold_release detected in slot 0
+lookup word: table
+stripped word: table
+
+but nothing happened?
+
+
+koreader\frontend\ui\reader\readerdictionary.lua 
+		DEBUG("stripped word:", word)
+		-- escape quotes and other funny characters in word
+
+koreader\koreader-base\sdcv-0.4.2\src\sdcv.cpp 
+const gchar *stardict_data_dir=g_getenv("STARDICT_DATA_DIR");
+	if (data_dir.empty()) {
+		if (stardict_data_dir)
+			data_dir=stardict_data_dir;
+		else
+			data_dir="/usr/share/stardict/dic";
+	}
+
+/frontend/JSON.lua
+grok_one = function(self, text, start, etc)
+self:onDecodeError("can't parse JSON
+
+lib.load(dicts_dir_list, empty_list, disable_list);

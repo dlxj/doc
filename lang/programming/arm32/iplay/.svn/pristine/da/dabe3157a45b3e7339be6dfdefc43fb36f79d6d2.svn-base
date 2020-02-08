@@ -1,0 +1,16 @@
+
+安装
+dpkg -i gcc41-compat-4.1.2.ubu1204_i386.deb
+dpkg -i g++41-compat-4.1.2_i386.deb
+gedit /etc/environment
+:/usr/gcc41/bin
+source /etc/environment
+使用
+export CC=gcc41 CXX=g++41 && ./configure xxx
+
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 46
+update-alternatives --install /usr/bin/gcc gcc /usr/gcc41/bin/gcc41 41
+update-alternatives --config gcc 
+
+
+
