@@ -501,3 +501,15 @@ magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
 
 
 [Mathematica 激活指南](https://tiebamma.github.io/InstallTutorial)  
+
+
+
+##  Chrome 长截图
+
+
+
+1. 打开 Chrome 浏览器，进入需要截图的网站页面
+2. 等待页面加载完毕后，通过下面方法打开开发者工具
+3. 在页面任何地方点击鼠标右键，在弹出菜单中选择“检查（Inspect）”选项，或者使用快捷键组合：`Alt` + `Command` + `I` (Mac) || `Ctrl` + `Shift` + `I` (Windows)
+4. 使用快捷键组合来打开命令行（command palette）：`Command` + `Shift` + `P` (Mac) | `Ctrl` + `Shift` + `P` (Windows)
+5. 在命令行中输入“Screen”，这时自动补齐功能会显示出一些包含 "Screen" 关键字的命令。移动方向键到“Capture full size screenshot”并回车（或直接用鼠标点击这个选项）
