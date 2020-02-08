@@ -80,6 +80,8 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [dictionary.com](https://www.dictionary.com/browse/vis-a-vis)  
 >
+> [离线维基百科](https://github.com/kiwix/apple)  
+>
 > [fariryDict](https://github.com/revir/FairyDict)  
 >
 > **查看MMA源码**    
