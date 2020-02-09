@@ -1,0 +1,8 @@
+
+
+function compare(a, b)
+    return a[0] - b[0] 
+end
+
+-- Explicitly convert to a callback via cast
+local callback = ffi.cast("int (*)(const char *, const char *)", compare)

@@ -1,0 +1,12 @@
+
+
+cd koreader && make clean && EMULATE_READER_W=800 EMULATE_READER_H=600 EMULATE_READER=1 make >log.make
+
+alsa-lib-1.0.13 for ubuntu
+mkdir -p /opt/host/usr
+./configure --prefix=/opt/host/usr --target=i686-linux --host=i686-linux CC=gcc GCC=g++ --disable-python
+make clean && make && make install
+
+alsa-lib-1.0.13 for k3
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ --disable-python
+make clean && make && make install

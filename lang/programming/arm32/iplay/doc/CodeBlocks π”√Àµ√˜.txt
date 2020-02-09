@@ -1,0 +1,4 @@
+
+添加命令行参数
+	打开 *.cbp 工程文件，在 <CodeBlocks_project_file> 标签下的 <Project> 标签下的 <Build> 标签下的 <Target title="Debug"> 标签下，
+	添加：<Option parameters="你要添写的命令行参数"/>

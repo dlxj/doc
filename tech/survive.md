@@ -78,6 +78,12 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
 >
+> [dictionary.com](https://www.dictionary.com/browse/vis-a-vis)  
+>
+> [离线维基百科](https://github.com/kiwix/apple)  
+>
+> [fariryDict](https://github.com/revir/FairyDict)  
+>
 > **查看MMA源码**    
 > [Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
 > V12 查看除原生C++外的其他原码    
@@ -513,3 +519,31 @@ magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
 3. 在页面任何地方点击鼠标右键，在弹出菜单中选择“检查（Inspect）”选项，或者使用快捷键组合：`Alt` + `Command` + `I` (Mac) || `Ctrl` + `Shift` + `I` (Windows)
 4. 使用快捷键组合来打开命令行（command palette）：`Command` + `Shift` + `P` (Mac) | `Ctrl` + `Shift` + `P` (Windows)
 5. 在命令行中输入“Screen”，这时自动补齐功能会显示出一些包含 "Screen" 关键字的命令。移动方向键到“Capture full size screenshot”并回车（或直接用鼠标点击这个选项）
+
+
+
+**Sci-Hub可用网址**
+
+https://sci-hub.tw/
+
+http://sci-hub.org.cn/（功能更加丰富便捷，含谷歌学术搜索、影响因子及全文下载链接等，强烈推荐）
+http://sci-hub.cc/（俄罗斯）
+http://sci-hub.bz/
+http://sci-hub.io/
+Sci-Hub最新可用替代网址请浏览此帖：https://discuss.sci-hub.org.cn/d/279
+
+**英文文献及电子书搜索引擎**
+http://gen.lib.rus.ec/
+http://libgen.io/
+http://booksc.org/
+[http://b-ok.org](http://b-ok.org/)
+
+**免费专利搜索下载网站**
+http://www.freepatentsonline.com/
+http://www.soopat.com/
+
+*以上内容感谢Sci-Hub官方QQ群成员大海之心、東★東以及A.K.Tan的分享*
+
+**如何通过文章标题查找其DOI号？**
+中文文章：ChinaDOI网站（[http://www.chinadoi.cn](http://www.chinadoi.cn/)）
+英文文章：CrossRef（[http://www.crossref.org](http://www.crossref.org/)

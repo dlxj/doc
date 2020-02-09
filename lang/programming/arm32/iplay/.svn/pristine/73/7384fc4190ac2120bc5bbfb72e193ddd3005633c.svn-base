@@ -1,0 +1,8 @@
+
+make PREFIX=/opt/host/luajit && make install PREFIX=/opt/host/luajit
+
+cp /etc/profile /etc/profile.backup
+
+echo "export PATH=$PATH:/opt/host/luajit/bin" >> /etc/profile
+
+. /etc/profile  -- а╒╪хиЗп╖

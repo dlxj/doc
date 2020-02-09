@@ -1,0 +1,253 @@
+
+工具链
+http://www.mentor.com/embedded-software/codesourcery
+http://www.mobileread.com/forums/showpost.php?p=2227307&postcount=658
+
+apt-get update
+apt-get install cmake lua5.2 git subversion autoconf automake libtool gettext libsdl1.2-dev
+
+##git clone https://github.com/hwhw/kindlepdfviewer.git
+git clone https://github.com/koreader/kindlepdfviewer.git
+
+cd kindlepdfviewer && make fetchthirdparty
+
+vi /etc/environment
+$ cd ~
+$ tar xvf arm-2012.03-57-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
+$ sudo mv arm-2012.03 /opt
+
+PATH="/opt/arm-2012.03/bin:$PATH"
+
+vi /etc/environment
+source /etc/environment
+chmod 777 * -R
+
+真机启动
+cd kindlepdfviewer && make clean && make customupdate
+安装方法
+copy kindlepdfviewer-v2013.1-10-g73c2d18.zip to /mnt/us/customupdates and install with shift+shift+I
+shift+P+K
+shift+P+D
+
+
+模拟器启动
+cd kindlepdfviewer && make clean && EMULATE_READER=1 make 
+cd kindlepdfviewer/kindlepdfviewer-i686-linux-gnu/kindlepdfviewer/ && ./reader.lua -d /root/pdf
+
+
+
+
+
+
+
+KeK == Kindle envronment Kit
+http://www.mobileread.com/forums/showthread.php?t=181068
+
+readelf -d /mnt/us/usr/bin/glib-compile-schemas 
+rpath /mnt/us/usr/bin/glib-compile-schemas /mnt/us/usr/lib
+	gcc在链接的时候有个rpath选项。它可以把动态库的路径直接写到elf文件中去。这样可以将rpath写成相对路径。方便部署。
+
+-march=armv4t
+
+
+sudo rm /usr/bin/gcc            (删除ＧＣＣ，它只是个到gcc-4.3.2的软连接文件)
+sudo ln -s /usr/bin/gcc-4.1 /usr/bin/gcc        (建立ＧＣＣ到gcc-4.1的软连接)
+
+ls -la /bin/sh 
+命令看到/bin/sh其实是一个指向dash的软链接，则请运行以下命令，将/bin/sh链接到bash。
+sudo mv /bin/sh /bin/sh.old
+sudo ln -sf bash /bin/sh
+
+vi ~/.bashrc
+
+export $PATH=~/x:$PATH
+
+设置include 目录
+vi ~/.bash_profile
+page down -> end ->o 
+
+复制 export C_INCLUDE_PATH=~/include/linux/include
+粘贴
+
+source .bash_profile
+
+
+
+
+启 动Vim后，vim在 Normal 模式下。
+让我们进入 Insert 模式，请按下键 i 。(陈皓注：你会看到vim左下角有一个–insert–字样，表示，你可以以插入的方式输入了）
+此时，你可以输入文本了，就像你用“记事本”一样。
+如果你想返回 Normal 模式，请按 ESC 键。
+
+i → Insert 模式，按 ESC 回到 Normal 模式.
+x → 删当前光标所在的一个字符。
+:wq → 存盘 + 退出 (:w 存盘, :q 退出)   （陈皓注：:w 后可以跟文件名）
+dd → 删除当前行，并把删除的行存到剪贴板里
+p → 粘贴剪贴板
+:q! 不保存退出vim。
+
+各种插入模式a → 在光标后插入
+o → 在当前行后插入一个新行
+O → 在当前行前插入一个新行
+cw → 替换光标所在位置的一个单词
+
+简单的移动光标0 → 数字零，到行头
+^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）
+$ → 到本行行尾
+g_ → 到本行最后一个不是blank字符的位置。
+/pattern → 搜索 pattern 的字符串（陈皓注：如果搜索出多个匹配，可按n键到下一个）
+拷贝/粘贴 （陈皓注：下面的P应该不分大小写）P → 粘贴
+yy → 拷贝当前行当行于 ddP
+Undo/Redou → undo
+<C-r> → redo
+
+
+E:\cygwin\home\Administrator\include\linux\include
+
+~/include/linux/include
+
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:~/include/linux/include
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/mysql  找动态连接库目录 
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/include/mysql  找头文件目录 
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/mysql 找.a文件目录 
+
+
+其中.bash_profile是最重要的一个配置文件，它在用户每次登录系统时被读取，里面的所有命令都会被bash执行。
+source .bash_profile 在修改好 .bash_profile 文件后，直接运行这个命令，就可以直接让环境变量的修改生效了。
+
+vi ~/.bash_profile 
+
+添加：
+
+LD_LIBRARY_PATH=/usr/local/lib
+
+export LD_LIBRARY_PATH
+
+运行
+$ source ~/.bash_profile 
+
+
+whereis gcc
+
+env查看所有环境变量
+env
+
+export查看所有环境变量
+	export
+
+cygwin 下查看所有环境变量(仅为bin 路径？)
+	echo $PATH
+
+
+Set LDFLAGS and CFLAGS when you run make:
+
+$ LDFLAGS="-L/home/me/local/lib" CFLAGS="-I/home/me/local/include" make
+
+If you don't want to do that a gazillion times, export these in your .bashrc (or your shell equivalent). Also set LD_LIBRARY_PATH to include /home/me/local/lib:
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/me/local/lib
+
+
+2、修改profile文件： 
+#vi /etc/profile 
+在里面加入:
+export PATH="$PATH:/opt/au1200_rm/build_tools/bin"
+
+3. 修改.bashrc文件：
+# vi /root/.bashrc
+在里面加入：
+export PATH="$PATH:/opt/au1200_rm/build_tools/bin"
+
+后两种方法一般需要重新注销系统才能生效，最后可以通过echo命令测试一下：
+# echo $PATH
+
+
+在交叉编译的时候我们需要用到其他的库，在config时候可以通过“-I”来指定头文件目录，但是每次都需要设置的话难免有些麻烦，找到一个简单的方法。看下文的红色部分。
+
+
+最近需要在没有root的机器上配一个自己的编译环境，于是需要改一些环境变量，比如
+
+CFLAGS="-I#/include"
+LDFLAGS="-L#/lib"
+PATH="#/bin"
+LD_LIBRARY_PATH="#/lib"
+LIBRARY_PATH="#/lib"
+MANPATH="#/man"
+C_INCLUDE_PATH="#/include"
+CPLUS_INCLUDE_PATH="#/include"
+PKG_CONFIG_PATH="#/lib/pkgconfig"
+
+如果就按这么写明显有问题，比如PATH原先可能不是空的，所以应该写成PATH="#/bin:$PATH"，其他变量也类似。但是这样会有个更严重的问题，困扰了我一天。
+
+问题出在C_INCLUDE_PATH,一般这个变量都是空的，所以按上面的方法添加自定义路径后变成了"#/include:"，而这个末尾的":"会被理解为末尾有个当前目录，即'.'，开头的':'以及中间的'::'会有同样情况。
+
+另一方面，在使用automake编译的程序中，经常会出现-I.的编译参数，而且通常出现在最开始以保证当前目录是第一个被搜寻的路径。但是如果'.'出现了C_INCLUDE_PATH中，gcc会认为它是系统标准路径，于是命令行中的-I.会被忽略掉。这样搜索路径的顺序就改变了，就会出问题。
+我是在编译binutils时发现的问题，很多目录里都有config.h，于是搜索路径的顺序很重要。
+
+解决方法当然也很简单，就是麻烦一些，即判断一下原来的路径是否为空，避免添加多余的分隔符':'。
+
+
+
+
+include 路径
+/usr/include
+set in
+.profile
+or
+.bashrc
+
+
+gcc默认的include路径和lib路径在哪里定义的？怎么修改？
+修改/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/中的spec
+
+那个specs文件我打开了，似乎没有那个地方指明include和lib的默认路径
+想修改的原因是有些常用的库不希望每次都使用-I,-L，例如openssl在/usr/local/ssl下，怎么才能把/usr/local/ssl下的include和lib加入到默认路径里面去呢？
+
+
+写makefile ,或者 ldconfig
+
+利用系统的环境变量。
+对于头文件的搜索路径:
+
+C_INCLUDE_PATH=<your include path>;
+export C_INCLUDE_PATH
+
+对于库文件的搜索路径:
+
+LIBRARY_PATH=<your lib path>;
+export LIBRARY_PATH
+
+对于链接程序ld使用的库文件搜索路径：
+
+LD_LIBRARY_PATH=<your ldlib path>;
+export LD_LIBRARY_PATH
+
+
+当然会覆盖GCC原有的search的路径，你如果还要保持原路径的话，为何还要修改默认路径，直接加gcc -I/path不就行了
+
+
+发现其实设置了C_INCLUDE_PATH=<your include path>并不会覆盖系统的原有路径，只是在其后添加了你自定义的路径而已。所以不必要担心会覆盖原来的。
+
+
+
+
+gcc -v test.c
+编译一个文件你就能看到她做的每一步了
+
+
+
+
+@echo off
+
+E:
+chdir E:\cygwin\bin
+rem set path=%Path%;E:\cygwin\home\Administrator\linux-2.6.26\include;E:\GNUARM\bin
+rem set C_INCLUDE_PATH=E:\cygwin\home\Administrator\linux-2.6.26\include
+set gcc=arm-elf-gcc-4.1.1
+set C_INCLUDE_PATH=E:\cygwin\home\Administrator\linux-2.6.26\include
+bash --login -i
+
+
+

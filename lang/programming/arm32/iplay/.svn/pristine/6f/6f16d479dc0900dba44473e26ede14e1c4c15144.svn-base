@@ -1,0 +1,18 @@
+
+源码版
+cd ~ && git clone https://github.com/pkulchenko/ZeroBraneStudio.git
+
+安装版
+http://studio.zerobrane.com/download.html?not-this-time
+apt-get install lua5.2
+chmod +x ZeroBraneStudioEduPack-0.38-linux.sh
+./ZeroBraneStudioEduPack-0.38-linux.sh
+zbstudio
+
+修改zb 的编码，换行，lua 解释器等
+edit ->preferences ->system
+加入：
+path.lua = "/root/koreader/koreader-i686-linux-gnu/koreader/luajit" 
+debugger.runonstart = true
+editor.defaulteol = wxstc.wxSTC_EOL_LF  -- wxstc.wxSTC_EOL_CRLF or wxstc.wxSTC_EOL_LF
+editor.CodePage = wxstc.wxSTC_CP_UTF8
