@@ -84,6 +84,8 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [fariryDict](https://github.com/revir/FairyDict)  
 >
+> [中古汉语教程](https://bkrs.info/taolun/attachment.php?aid=637)  
+>
 > **查看MMA源码**    
 > [Exploring Mathematica](https://wltools.github.io/LanguageSpec/Resources/Exploring-Mathematica)   
 > V12 查看除原生C++外的其他原码    
