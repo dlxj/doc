@@ -527,6 +527,8 @@ magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
 4. 使用快捷键组合来打开命令行（command palette）：`Command` + `Shift` + `P` (Mac) | `Ctrl` + `Shift` + `P` (Windows)
 5. 在命令行中输入“Screen”，这时自动补齐功能会显示出一些包含 "Screen" 关键字的命令。移动方向键到“Capture full size screenshot”并回车（或直接用鼠标点击这个选项）
 
+chrome 开发者工具 alt+ctrl+p 然后 capture node screenshot 看看正不正常
+
 
 
 **Sci-Hub可用网址**

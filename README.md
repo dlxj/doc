@@ -1,9 +1,8 @@
 
-README
 
-迅雷离线秒
-magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
-拿走不谢
-MOHO Pro 12 for OSX
+chrome 开发者工具 alt+ctrl+p 然后 capture node screenshot 看看正不正常
+
+
+
 
 
