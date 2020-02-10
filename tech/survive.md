@@ -556,3 +556,9 @@ http://www.soopat.com/
 **如何通过文章标题查找其DOI号？**
 中文文章：ChinaDOI网站（[http://www.chinadoi.cn](http://www.chinadoi.cn/)）
 英文文章：CrossRef（[http://www.crossref.org](http://www.crossref.org/)
+
+
+好像可以用ISBN 搜  
+https://libgen.is/search.php?&res=100&req=chinese&phrase=1&view=simple&column=language&sort=id&sortmode=DESC
+
+
