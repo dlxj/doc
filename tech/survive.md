@@ -94,9 +94,15 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > > [usage](https://www.wolframcloud.com/objects/b3m2a1.docs/BTools/ref/WebSiteBuild.html)  
 > >
+> > 生成网站：
+> >
+> > WebSiteBuild[
+> >  FileNameJoin[{$HomeDirectory, "Documents/GitHub", 
+> >    "tutorial"}], Automatic]
+> >
 > > ?BTools`Web`WebSiteBuild  
 > >
-> > - ~/Library/Mathematica/Paclets/Repository/BTools-2.1.52/\
+> > - ~/Library/Mathematica/Paclets/Repository/BTools-2.1.52/
 > >   Packages/Web/SiteBuilder.m
 >
 > V12 查看除原生C++外的其他原码    
