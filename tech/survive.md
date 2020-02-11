@@ -23,8 +23,7 @@
 
 苏州的老城区就是平江路那边～或者是古镇之类的。我单位在**金鸡湖边**，**苏州中心商场**这边
 
-中国点心  
-- 包、饺、糕、团、卷、饼、酥   
+ 
 
 **慕课mooc**    
 
@@ -92,6 +91,13 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > [mma经验总结](https://mresources.github.io/tutorial/) [code](https://github.com/mresources/tutorial)   
 >
 > [mma强大的工具包](https://github.com/b3m2a1/mathematica-BTools)  [建站](https://github.com/b3m2a1/mathematica-BTools/blob/master/Packages/Web/SiteBuilder.m)  [code](https://github.com/mresources/tutorial)    
+>
+> > [usage](https://www.wolframcloud.com/objects/b3m2a1.docs/BTools/ref/WebSiteBuild.html)  
+> >
+> > ?BTools`Web`WebSiteBuild  
+> >
+> > - ~/Library/Mathematica/Paclets/Repository/BTools-2.1.52/\
+> >   Packages/Web/SiteBuilder.m
 >
 > V12 查看除原生C++外的其他原码    
 > GeneralUtilities`PrintDefinitions[BinLists]  
