@@ -36,7 +36,7 @@ https://github.com/X140Yu/Developing_iOS_8_Apps_With_Swift/blob/master/subtitles
 
 [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
 
-**俄毛资源站**
+**俄毛资源站** [mac](xclient.info) [mac2](www.osxwin.com)     
 https://rutracker.org/forum/index.php  [zh](https://www.zhihu.com/people/15257744406-13)    
 
 [bk](http://gen.lib.rus.ec/)  [k](http://libgen.is/)   [ida](https://github.com/jas502n/IDA7.0-Pro/issues/1)    
