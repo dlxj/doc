@@ -6,13 +6,18 @@
  
 
 Termux + Github
- 
-git config --global user.name "dlxj"  
+
+git config --global user.name “dlxi"  
+
 git config --global user.email "123468935@qq.com"  
 
 ssh-keygen -t rsa -C "123468935@qq.com"  
 
 
+
+pbcopy < ~/.ssh/id_rsa.pub -- copy public SSH key to clipboard  
+
+github.com ->setting ->add SSH key ->paste
 
 
 ssh 传的是私钥
@@ -47,7 +52,7 @@ git config --global user.email   "123468935@qq.com"
 
 rsa公钥直接拿github的用，不生成了  
 免密码登录不配置  
- 
+
 
 **回滚到上一次提交**    
 > git reflog    
@@ -381,7 +386,7 @@ LANG=ja_JP.UTF-8
 shutdown 0  
 
 
-  
+
 
 
 niconico
