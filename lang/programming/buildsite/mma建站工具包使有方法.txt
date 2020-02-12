@@ -1,0 +1,21 @@
+mma经验总结
+ 	https://mresources.github.io/tutorial
+整站代码
+ 	https://github.com/mresources/tutorial
+mma建站工具包
+	https://github.com/b3m2a1/mathematica-BTools
+工具包使用方法
+	https://www.wolframcloud.com/objects/b3m2a1.docs/BTools/ref/WebSiteBuild.html
+建站代码在：
+	https://github.com/b3m2a1/mathematica-BTools/blob/master/Packages/Web/SiteBuilder.m  
+
+递归查找所有文件并替换字符串
+
+- grep -r mresources ./tutorial
+
+- grep -rl 参数l 只打印文件名
+
+- grep -rl mresources ./tutorial | xargs  sed -i "" 's/mresources/cegfdb/g'
+
+  > 全局替换 mresources替换为cegfdb
+

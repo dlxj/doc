@@ -1,15 +1,18 @@
 13.229.188.59  github.com  
 185.199.111.153  assets-cdn.github.com  
 31.13.82.23  github.global.ssl.fastly.net  
+
 >  ip138.com 查询    
 
  
 
 Termux + Github
 
-git config --global user.name “dlxi"  
+git config --global user.name “dlxi”    
 
-git config --global user.email "123468935@qq.com"  
+git config --global user.email  "123468935@qq.com"  
+
+git config --global push.default matching  
 
 ssh-keygen -t rsa -C "123468935@qq.com"  
 
@@ -447,3 +450,22 @@ https://gitee.com/cegbdfa
 
 
 
+chrome缓存路径
+
+> 地址栏打开：chrome://version
+>
+> | Profile Path | /Users/xxx/Library/Application Support/Google/Chrome/Default |
+> | ------------ | ------------------------------------------------------------ |
+> |              |                                                              |
+
+
+
+递归查找包含某串的所有文件
+
+- grep -r mresources ./tutorial
+
+- grep -rl 参数l 只打印文件名
+
+- grep -rl mresources ./tutorial | xargs  sed -i ""  's/mresources/cegfdb/g'
+
+  > 全局替换 mresources替换为cegfdb
