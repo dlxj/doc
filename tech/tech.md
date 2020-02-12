@@ -103,6 +103,18 @@ tlmgr update --self --all  更新整个 TeX Live 系统
 
 pkg uninstall [package name]  卸载  
 
+**tar 可以保留权限等属性**  
+> tar -cf lib.tar /lib  
+tar xvf  
+
+**7z 最大压缩**
+> 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on xx.7z dir
+7z x filename    
+7z 解压无顶层目录的文件  
+> 7z x pgf_3.0.0.tds.zip -o*  
+7z x *.7z -o*  
+apt-get install p7zip-full
+
 **Could not get lock**  
 > killall apt-get; \
 rm /data/data/com.termux/files/usr/var/cache/apt/archives/lock  
