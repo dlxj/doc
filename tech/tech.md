@@ -71,6 +71,13 @@ git push origin master -f
 git checkout .  
 git pull  
 
+p
+> git pull && \
+git add . && \                   
+git commit -m 'm' && \
+git push origin master && \         
+echo "push doc success!"
+
 ## vi 
 :$  or  G   跳到文件尾  
 :0  or  gg 跳到文件首  
@@ -95,6 +102,13 @@ tlmgr install
 tlmgr update --self --all  更新整个 TeX Live 系统  
 
 pkg uninstall [package name]  卸载  
+
+**Could not get lock**  
+> killall apt-get; \
+rm /data/data/com.termux/files/usr/var/cache/apt/archives/lock  
+**pkg install p7zip**  
+
+
 
 
 使用lualatex  
