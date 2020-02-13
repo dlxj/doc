@@ -29,6 +29,8 @@
 
 **北航本科教材影印**    
 
+[小不点搜索微盘搜索]https://www.xiaoso.net   
+
 https://github.com/X140Yu/Developing_iOS_8_Apps_With_Swift/blob/master/subtitles/1. Logistics%2C iOS 8 Overview.srt
 
 [bob翻译](https://github.com/ripperhe/Bob)  
@@ -542,6 +544,10 @@ magnet:?xt=urn:btih:192C49F3A1667A3056588 F064E08264F2ABCEC76
 chrome 开发者工具 alt+ctrl+p 然后 capture node screenshot 看看正不正常
 
 
+
+https://www.xiaoso.net/  小不点搜索 微盘搜索
+
+巴蜀旧影 : 百年前一个日本人眼中的巴蜀风情  山川早水  
 
 **Sci-Hub可用网址**
 
