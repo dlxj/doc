@@ -193,6 +193,8 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > [调试](https://www.jianshu.com/p/57523e147480)   
 > [Markdown语法](https://github.com/younghz/Markdown)  
 >
+> [表格生成](https://www.tablesgenerator.com/)  
+>
 > [](https://www.haskell.org/onlinereport)
 > [](http://penkovsky.com/neural-networks/day1)
 > [](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e)
