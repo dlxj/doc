@@ -77,7 +77,7 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > MMA独立界面**StandAloneInterfaces** [s](https://reference.wolfram.com/language/guide/StandAloneInterfaces.html)  
 >
-> [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  
+> [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
 >
 > [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
 >
