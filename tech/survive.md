@@ -75,6 +75,16 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > 短语搭配提示    
 > 入口类似fooview、GitHub的bob  
 >
+> 词典像书籍式的连续阅读功能
+>
+> 自定义导出阅读功能
+>
+> 碎片重组
+>
+> 数据是最细粒度的原子，要能重组成分子
+>
+> 再到单行，段落，章节，书本  
+>
 > MMA独立界面**StandAloneInterfaces** [s](https://reference.wolfram.com/language/guide/StandAloneInterfaces.html)  
 >
 > [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
@@ -605,3 +615,21 @@ sudo du -sh * | grep -E "\dG"
 | 当不用template:IPA时： | [ˈkæɹəktə(ɹ)z] |
 | ---------------------- | -------------- |
 | 当使用template:IPA时： | [ˈkæɹəktə(ɹ)z] |
+
+云词这个软件是不是彻底挂了？
+好像就是过年的时候吧发现登不上去了，因为手机上有离线的词库和做好的笔记本，所以也没有太在意，以为是过年啊，服务器没有人注意，想过完年就会好。今天发现好像他的PC端也打不开了。。。。。我觉得活要见人，死要见尸，人人影视、射手网挂地时候还发了声明呢，这样一个我爱的软件，难道就这样悄无声息（不负责任）地抛弃了我们，至少该让我们这些死忠粉知道该不该继续等下去吧？
+
+
+
+**MAC 软件下载**
+
+> [https://www.fxxkmakeding.xyz/]
+> [https://www.0daydown.com/]
+> [https://xclient.info/]
+> [https://www.waitsun.com/]
+> [https://www.macappdownload.com/]
+> [https://nmac.to/]
+> [https://insmac.org/]
+
+
+

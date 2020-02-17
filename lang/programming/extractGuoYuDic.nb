@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1742460,      29645]
-NotebookOptionsPosition[   1731458,      29464]
-NotebookOutlinePosition[   1731798,      29479]
-CellTagsIndexPosition[   1731755,      29476]
+NotebookDataLength[   1743435,      29673]
+NotebookOptionsPosition[   1732202,      29488]
+NotebookOutlinePosition[   1732542,      29503]
+CellTagsIndexPosition[   1732499,      29500]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29460,7 +29460,31 @@ Cell[BoxData[
   RowBox[{"SetOptions", "[", 
    RowBox[{"nb", ",", 
     RowBox[{"Visible", "\[Rule]", "True"}]}], "]"}]}]], "Input",
- CellLabel->"In[26]:=",ExpressionUUID->"f0cdfc18-ca3e-47bc-99b3-ad287d591fc2"]
+ CellLabel->"In[26]:=",ExpressionUUID->"f0cdfc18-ca3e-47bc-99b3-ad287d591fc2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"\:5f53\:6309\:4e0b\:8be5\:6309\:94ae\:65f6", "\:ff0c", 
+    RowBox[{"\:7c98\:8d34", " ", 
+     RowBox[{"expr", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"PasteButton", "[", 
+   RowBox[{"Defer", "[", 
+    RowBox[{"2", "+", "2"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.790909787323345*^9, 3.790909787329928*^9}, {
+  3.7909098643006067`*^9, 
+  3.790909882072543*^9}},ExpressionUUID->"26a60d90-cb5c-4a0e-bfa4-\
+02073608bd98"],
+
+Cell[BoxData[
+ ButtonBox[
+  RowBox[{"2", "+", "2"}],
+  BaseStyle->"Paste"]], "Output",
+ CellChangeTimes->{3.7909097900470047`*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"e5cdbc6e-03aa-49c0-9ab4-0a50ee754c7c"]
+}, Open  ]]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{Automatic, 112}, {Automatic, 21}},
@@ -29646,7 +29670,11 @@ Cell[CellGroupData[{
 Cell[1729623, 29414, 1334, 34, 136, "Input",ExpressionUUID->"1b608b2e-1700-40a8-8f0d-26d97e0ade4b"],
 Cell[1730960, 29450, 162, 2, 34, "Output",ExpressionUUID->"0248b7d4-aa76-4121-92e1-a2bce3577da4"]
 }, Open  ]],
-Cell[1731137, 29455, 317, 7, 52, "Input",ExpressionUUID->"f0cdfc18-ca3e-47bc-99b3-ad287d591fc2"]
+Cell[1731137, 29455, 317, 7, 52, "Input",ExpressionUUID->"f0cdfc18-ca3e-47bc-99b3-ad287d591fc2"],
+Cell[CellGroupData[{
+Cell[1731479, 29466, 495, 12, 52, "Input",ExpressionUUID->"26a60d90-cb5c-4a0e-bfa4-02073608bd98"],
+Cell[1731977, 29480, 209, 5, 42, "Output",ExpressionUUID->"e5cdbc6e-03aa-49c0-9ab4-0a50ee754c7c"]
+}, Open  ]]
 }
 ]
 *)
