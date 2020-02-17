@@ -582,3 +582,7 @@ http://www.soopat.com/
 https://libgen.is/search.php?&res=100&req=chinese&phrase=1&view=simple&column=language&sort=id&sortmode=DESC
 
 
+
+show biggest file or dirctory on mac 
+
+sudo du -sh * | grep -E "\dG"

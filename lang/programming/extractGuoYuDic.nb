@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1733925,      29429]
-NotebookOptionsPosition[   1723720,      29261]
-NotebookOutlinePosition[   1724060,      29276]
-CellTagsIndexPosition[   1724017,      29273]
+NotebookDataLength[   1739462,      29567]
+NotebookOptionsPosition[   1729021,      29395]
+NotebookOutlinePosition[   1729361,      29410]
+CellTagsIndexPosition[   1729318,      29407]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29257,7 +29257,141 @@ Cell[BoxData[
  CellChangeTimes->{{3.7905457809034986`*^9, 3.7905457809102907`*^9}, {
   3.7905458760580473`*^9, 
   3.790545935981485*^9}},ExpressionUUID->"5060eede-a335-4fb3-8f78-\
-c4756aaebf3f"]
+c4756aaebf3f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Module", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "labels", ",", "fields", ",", "cipherKey", ",", "textIn", ",", "codeOut", 
+     ",", "clear", ",", "clearFields", ",", "encrypt", ",", "encryptText"}], 
+    "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"clearFields", "[", "]"}], ":=", 
+     RowBox[{"(", 
+      RowBox[{"cipherKey", "=", 
+       RowBox[{"textIn", "=", 
+        RowBox[{"codeOut", "=", "\"\<\>\""}]}]}], ")"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"encryptText", "[", "]"}], ":=", 
+     RowBox[{"(", 
+      RowBox[{"codeOut", "=", "textIn"}], ")"}]}], ";", 
+    RowBox[{"(*", "placeholder", "*)"}], 
+    RowBox[{"labels", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<PASSWORD\>\"", ",", "\"\<PLAINTEXT\>\"", ",", 
+       "\"\<CIPHERTEXT\>\""}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"fields", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"InputField", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "@", "cipherKey"}], ",", "String"}], "]"}], ",", 
+       RowBox[{"InputField", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "@", "textIn"}], ",", "String"}], "]"}], ",", 
+       RowBox[{"InputField", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "@", "codeOut"}], ",", "String", ",", 
+         RowBox[{"Enabled", "\[Rule]", "False"}]}], "]"}]}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"clear", "=", 
+     RowBox[{"Button", "[", 
+      RowBox[{"\"\<Clear\>\"", ",", 
+       RowBox[{"clearFields", "[", "]"}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "All"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"encrypt", "=", 
+     RowBox[{"Button", "[", 
+      RowBox[{"\"\<Encrypt\>\"", ",", 
+       RowBox[{"encryptText", "[", "]"}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "All"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"clearFields", "[", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Panel", "[", 
+     RowBox[{
+      RowBox[{"TableForm", "[", 
+       RowBox[{
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"{", 
+            RowBox[{"labels", ",", "fields"}], "}"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"clear", ",", "encrypt"}], "}"}], "}"}]}], "]"}], ",", 
+        RowBox[{"TableAlignments", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"Right", ",", "Left"}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<Playfair Encrypter\>\"", ",", "12", ",", "Bold"}], 
+       "]"}]}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.790860154217143*^9, 3.7908601542287292`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"8ec275f5-52da-4562-82c0-068fc091a3af"],
+
+Cell[BoxData[
+ TemplateBox[{PanelBox[
+    TagBox[
+     GridBox[{{"\"PASSWORD\"", 
+        InputFieldBox[
+         Dynamic[$CellContext`cipherKey$8357], String]}, {"\"PLAINTEXT\"", 
+        InputFieldBox[
+         Dynamic[$CellContext`textIn$8357], String]}, {"\"CIPHERTEXT\"", 
+        InputFieldBox[
+         Dynamic[$CellContext`codeOut$8357], String, Enabled -> False]}, {
+        ButtonBox[
+        "\"Clear\"", Appearance -> Automatic, 
+         ButtonFunction :> $CellContext`clearFields$8357[], Evaluator -> 
+         Automatic, ImageSize -> All, Method -> "Preemptive"], 
+        ButtonBox[
+        "\"Encrypt\"", Appearance -> Automatic, 
+         ButtonFunction :> $CellContext`encryptText$8357[], Evaluator -> 
+         Automatic, ImageSize -> All, Method -> "Preemptive"]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Right}}, "Rows" -> {{Baseline}}}, 
+      GridBoxSpacings -> {"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}], 
+     Function[BoxForm`e$, 
+      TableForm[BoxForm`e$, TableAlignments -> {Right, Left}]]]],StyleBox[
+   "\"Playfair Encrypter\"", 12, Bold, StripOnInput -> False]},
+  "Labeled",
+  DisplayFunction->(GridBox[{{
+      ItemBox[#2, Alignment -> {Left, Inherited}, DefaultBaseStyle -> 
+       "PanelLabel"]}, {
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, 
+    GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+    BaselinePosition -> {2, 1}]& ),
+  InterpretationFunction->(RowBox[{"Labeled", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"{", #2, "}"}], ",", 
+       RowBox[{"{", 
+         RowBox[{"{", 
+           RowBox[{"Top", ",", "Left"}], "}"}], "}"}], ",", 
+       RowBox[{"DefaultLabelStyle", "\[Rule]", "\"PanelLabel\""}], ",", 
+       RowBox[{"LabelStyle", "\[Rule]", 
+         RowBox[{"{", "}"}]}], ",", 
+       RowBox[{"RotateLabel", "\[Rule]", "False"}], ",", 
+       RowBox[{"Spacings", "\[Rule]", "Automatic"}]}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.790860227218693*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"b4d039b5-4d5a-44eb-9154-8f5bcec8caff"]
+}, Open  ]]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{Automatic, 112}, {Automatic, 21}},
@@ -29291,8 +29425,8 @@ Cell[24999, 585, 24389, 473, 309, "Output",ExpressionUUID->"5244a3e7-25b3-4b5b-8
 Cell[49403, 1061, 1109, 23, 157, "Input",ExpressionUUID->"dcd6078c-966c-405a-bf09-0929c8a51fb4"],
 Cell[50515, 1086, 453, 11, 33, "Input",ExpressionUUID->"a66b1eac-15ff-4a59-ac27-4b8933584268"],
 Cell[CellGroupData[{
-Cell[50993, 1101, 1886, 42, 94, "Input",ExpressionUUID->"efff8344-ef11-461d-b61c-b6f08ee73f28"],
-Cell[52882, 1145, 1567, 25, 98, "Output",ExpressionUUID->"cfb49c85-ef95-4b46-90e9-12e0bf747861"],
+Cell[50993, 1101, 1886, 42, 73, "Input",ExpressionUUID->"efff8344-ef11-461d-b61c-b6f08ee73f28"],
+Cell[52882, 1145, 1567, 25, 77, "Output",ExpressionUUID->"cfb49c85-ef95-4b46-90e9-12e0bf747861"],
 Cell[54452, 1172, 278, 5, 34, "Output",ExpressionUUID->"b740ac5d-c964-42b3-9ef8-12a6e5831faa"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -29301,7 +29435,7 @@ Cell[59858, 1295, 513, 11, 34, "Output",ExpressionUUID->"abd61240-e813-4f2a-92ed
 }, Open  ]],
 Cell[60386, 1309, 308, 7, 52, "Input",ExpressionUUID->"4e5dfe3f-f341-4331-9c77-074c2c8a1f33"],
 Cell[CellGroupData[{
-Cell[60719, 1320, 5511, 118, 339, "Input",ExpressionUUID->"46116c7e-d063-40b7-9294-38423bc19cd8"],
+Cell[60719, 1320, 5511, 118, 318, "Input",ExpressionUUID->"46116c7e-d063-40b7-9294-38423bc19cd8"],
 Cell[66233, 1440, 17659, 356, 2683, "Output",ExpressionUUID->"4e184dd0-0179-4888-83a4-6034a0bb72b1"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -29388,7 +29522,7 @@ Cell[150019, 3242, 26833, 445, 62, "Input",ExpressionUUID->"a650d4ed-1b99-4857-8
 Cell[176855, 3689, 4576, 80, 57, "Input",ExpressionUUID->"032874e4-a462-4500-b116-7fb44ba0bc32"],
 Cell[CellGroupData[{
 Cell[181456, 3773, 26289, 441, 78, "Input",ExpressionUUID->"ee8a1cc2-da71-4800-9b29-dba3a9841577"],
-Cell[207748, 4216, 1232, 36, 56, "Output",ExpressionUUID->"26dfaba0-b8a5-46c7-a763-b4a7187319c9"],
+Cell[207748, 4216, 1232, 36, 34, "Output",ExpressionUUID->"26dfaba0-b8a5-46c7-a763-b4a7187319c9"],
 Cell[208983, 4254, 26433, 445, 171, "Output",ExpressionUUID->"e0158e6a-dfdb-4413-9267-5baf07760fee"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -29413,7 +29547,7 @@ Cell[1713194, 29003, 346, 8, 30, "Input",ExpressionUUID->"3536c3bc-77fc-4cea-b1b
 Cell[1713543, 29013, 154, 3, 30, "Input",ExpressionUUID->"d9d8cef9-b301-495f-a810-b4c7405ceb6c"],
 Cell[1713700, 29018, 198, 4, 52, "Input",ExpressionUUID->"6883267b-b459-49a1-bde3-b2e3d965eec6"],
 Cell[CellGroupData[{
-Cell[1713923, 29026, 897, 23, 94, "Input",ExpressionUUID->"863eefb0-13d5-4946-a201-f37df96d660b"],
+Cell[1713923, 29026, 897, 23, 52, "Input",ExpressionUUID->"863eefb0-13d5-4946-a201-f37df96d660b"],
 Cell[1714823, 29051, 356, 8, 34, "Output",ExpressionUUID->"6e248261-6484-451d-8e76-f0768dfd7fa6"],
 Cell[1715182, 29061, 308, 7, 34, "Output",ExpressionUUID->"c1510abf-0ffb-4597-a7cb-0985364c8b2d"]
 }, Open  ]],
@@ -29430,7 +29564,11 @@ Cell[CellGroupData[{
 Cell[1721045, 29189, 541, 11, 30, "Input",ExpressionUUID->"e86b1063-8271-4031-80a3-d447183016eb"],
 Cell[1721589, 29202, 213, 2, 34, "Output",ExpressionUUID->"597896c4-a74e-4abd-bfc7-bc52984d167d"]
 }, Open  ]],
-Cell[1721817, 29207, 1899, 52, 178, "Input",ExpressionUUID->"5060eede-a335-4fb3-8f78-c4756aaebf3f"]
+Cell[1721817, 29207, 1899, 52, 157, "Input",ExpressionUUID->"5060eede-a335-4fb3-8f78-c4756aaebf3f"],
+Cell[CellGroupData[{
+Cell[1723741, 29263, 2769, 72, 157, "Input",ExpressionUUID->"8ec275f5-52da-4562-82c0-068fc091a3af"],
+Cell[1726513, 29337, 2492, 55, 158, "Output",ExpressionUUID->"b4d039b5-4d5a-44eb-9154-8f5bcec8caff"]
+}, Open  ]]
 }
 ]
 *)
