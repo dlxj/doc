@@ -89,6 +89,8 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
 >
+> [sonnet18 十四行诗18th](https://archive.org/details/sonnet_18_1604.poem_librivox/sonnet18_shakespeare_alp_128kb.mp3)    
+>
 > [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
 >
 > [dictionary.com](https://www.dictionary.com/browse/vis-a-vis)  
