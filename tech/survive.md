@@ -115,7 +115,10 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > ?GeneralUtilities`*    
 > V12 以前    
 > Debug`$ExamineCode = True    
-> ?? Map     
+> ?? Map
+>
+> [MMA视频教程](https://www.wolfram.com/broadcast/channels.html)       
+>
 > [view the code built-in Mathematica function?](https://mathematica.stackexchange.com/questions/17206/how-can-i-view-the-code-implementing-a-built-in-mathematica-function)  
 > [MMA未文档化函数](https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions)  
 > [**MMA Jupyter内核**](
