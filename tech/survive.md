@@ -588,3 +588,17 @@ https://libgen.is/search.php?&res=100&req=chinese&phrase=1&view=simple&column=la
 show biggest file or dirctory on mac 
 
 sudo du -sh * | grep -E "\dG"
+
+
+
+示例（使用Template:IPA表示英文字“characters”的发音）：
+
+```
+{{IPA|[ˈkæɹəktə(ɹ)z]}}
+```
+
+您的浏览器实际显示：
+
+| 当不用template:IPA时： | [ˈkæɹəktə(ɹ)z] |
+| ---------------------- | -------------- |
+| 当使用template:IPA时： | [ˈkæɹəktə(ɹ)z] |
