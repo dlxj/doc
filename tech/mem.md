@@ -579,10 +579,9 @@ ____
 **庄和诚《英语词源趣谈(第2版)》【MDX**
 
 girl /g:l/ n.女孩;年轻女子;女朋友
-这是个再普通不过的词,今指"女孩"、"姑娘"、“年轻女子"或“女朋友"。但在中古英语中,从13世纪至15世纪girl拼作girle(gurle,是个不分性别的词,"既指“女孩或“年轻女子",也
-省"男孩或年轻男子",所以当时常用knave girle指“男孩".girl在英语中出现之前的历史和出处已无从查考,在其他任何语言中也找不到有亲缘关系的词,在英语词源学中可说是个不解之谜。
-例 When she was a little girl, she dreamed of becoming a ballerina.
+这是个再普通不过的词,今指"女孩"、"姑娘"、“年轻女子"或“女朋友"。但在中古英语中,从13世纪至15世纪girl拼作girle/gurle,是个不分性别的词,"既指“女孩或“年轻女子”,也指"男孩或年轻男子",所以当时常用knave girle指“男孩”。girl在英语中出现之前的历史和出处已无从查考,在其他任何语言中也找不到有亲缘关系的词,在英语词源学中可说是个不解之谜。例 When she was a little girl, she dreamed of becoming a ballerina.
 当她还是个小女孩的时候,她就梦想当一名芭蕾舞女演员。
 They've had a baby girl.他们已经生了个女婴。
-John took his girl out dancing every Friday. (NED)约翰每逢星
-期五就带女朋友出去跳舞。
+John took his girl out dancing every Friday. (NED)约翰每逢星期五就带女朋友出去跳舞。
+
+![image-20200217100525819](mem.assets/image-20200217100525819.png)
