@@ -87,6 +87,26 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > MMA独立界面**StandAloneInterfaces** [s](https://reference.wolfram.com/language/guide/StandAloneInterfaces.html)  
 >
+> .assets  .md  .db .html  /@东方语言学/网站/ 中古汉语  
+>
+> 通过标签过滤词条  .md .json .db用于渲染展示给用户的html 
+>
+> db 用于FTS, 存音频 json用于 
+>
+> .assets 文件夹装.db .html
+>
+> 可以给一切东西加标签（分类），下层文件夹自动继承上层文件夹的标签  
+>
+> 三种顶级标签：book, note, dic
+>
+> /book
+>
+> /line
+>
+> /end line
+>
+> /end book
+>
 > [东方语言学 中古音](http://www.eastling.org) [离线wiki](https://wiki.kiwix.org/wiki/Content_in_all_languages/zh-cn)    
 >
 > [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
@@ -97,7 +117,7 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [美国英语应用语音学 桂灿昆]() [A Course in Phonetics]() [An Introduction to Language-Victoria Fromkin]() [英語語音學 台大](http://ocw.aca.ntu.edu.tw/ntu-ocw/index.php/ocw/cou/101S102/1/V/1)  
 >
-> [日语语言学Japanese_phonology](https://riyu.io)  
+> [日语语言学Japanese_phonolog](https://riyu.io)  
 >
 > [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
 >
@@ -246,8 +266,8 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 
 
 
-
 **音乐**  
+
 > **logic x pro**   
 > mathematica  
 > sibelius  
