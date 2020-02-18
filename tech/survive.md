@@ -91,7 +91,7 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [sonnet18 十四行诗18th](https://archive.org/details/sonnet_18_1604.poem_librivox/sonnet18_shakespeare_alp_128kb.mp3)    
 >
-> [美国英语应用语音学 桂灿昆]()
+> [美国英语应用语音学 桂灿昆]() [A Course in Phonetics]()  [英語語音學 台大](http://ocw.aca.ntu.edu.tw/ntu-ocw/index.php/ocw/cou/101S102/1/V/1)  
 >
 > [日语语言学Japanese_phonology](https://riyu.io)  
 >
