@@ -107,7 +107,7 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > /end book
 >
-> [东方语言学中古音](http://www.eastling.org) [韵典广韵](http://ytenx.org/kyonh)   [离线wiki](https://wiki.kiwix.org/wiki/Content_in_all_languages/zh-cn)  [单词分音节、朗读](https://www.howmanysyllables.com/words/beautiful)  
+> [东方语言学中古音](http://www.eastling.org) [韵典广韵](http://ytenx.org/kyonh)   [离线wiki](https://wiki.kiwix.org/wiki/Content_in_all_languages/zh-cn)  [单词分音节、朗读](https://www.howmanysyllables.com/words/beautiful)  [漢字古今音資料庫](http://xiaoxue.iis.sinica.edu.tw/ccr)  
 >
 > [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
 >
