@@ -87,13 +87,15 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > MMA独立界面**StandAloneInterfaces** [s](https://reference.wolfram.com/language/guide/StandAloneInterfaces.html)  
 >
+> [东方语言学 中古音](http://www.eastling.org) [离线wiki](https://wiki.kiwix.org/wiki/Content_in_all_languages/zh-cn)    
+>
 > [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
 >
 > [sonnet18 十四行诗18th](https://archive.org/details/sonnet_18_1604.poem_librivox/sonnet18_shakespeare_alp_128kb.mp3)    
 >
 > [语言问题 赵元任]()  
 >
-> [美国英语应用语音学 桂灿昆]() [A Course in Phonetics]()  [英語語音學 台大](http://ocw.aca.ntu.edu.tw/ntu-ocw/index.php/ocw/cou/101S102/1/V/1)  
+> [美国英语应用语音学 桂灿昆]() [A Course in Phonetics]() [An Introduction to Language-Victoria Fromkin]() [英語語音學 台大](http://ocw.aca.ntu.edu.tw/ntu-ocw/index.php/ocw/cou/101S102/1/V/1)  
 >
 > [日语语言学Japanese_phonology](https://riyu.io)  
 >
