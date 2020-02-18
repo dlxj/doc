@@ -91,6 +91,10 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > [sonnet18 十四行诗18th](https://archive.org/details/sonnet_18_1604.poem_librivox/sonnet18_shakespeare_alp_128kb.mp3)    
 >
+> [美国英语应用语音学 桂灿昆]()
+>
+> [日语语言学Japanese_phonology](https://riyu.io)  
+>
 > [web剪贴版翻译](https://github.com/CopyTranslator/CopyTranslator)  
 >
 > [dictionary.com](https://www.dictionary.com/browse/vis-a-vis)  
