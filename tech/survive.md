@@ -663,3 +663,32 @@ sudo du -sh * | grep -E "\dG"
 
 
 
+http://taiwanebook.ncl.edu.tw/zh-tw
+台湾华文电子书库下载插件
+https://chrome.google.com/webstore/detail/taiwan-ebooks-downloader/njahmpkifjjkgelmjpeaflclneafiblp
+美国哈佛大学燕京图书馆中文善本特藏在线阅览
+https://guides.library.harvard.edu/chinese
+日本宫内厅书陵部藏汉籍在线阅览
+http://db.sido.keio.ac.jp/kanseki/T_bib_line_2.php
+七、地图类
+世界历史地图集
+http://www.worldhistorymaps.info/
+八、图像类
+月雅网中国书画在线高清图片
+http://www.yueyaa.com/museum/
+北京故宫藏品在线高清图片
+http://www.dpm.org.cn/explore/collections.html
+台北故宫藏品在线高清图片
+https://theme.npm.edu.tw/opendata/DigitImageSets.aspx
+美国大都会博物馆藏品在线高清图片
+https://www.metmuseum.org/art/collection
+数字敦煌
+https://www.e-dunhuang.com/index.htm
+九、导航类
+台湾蒋经国基金会在线资源目录
+http://www.cckf.org/zh/sino/search#c1=Sinology&amp;c4=07
+中国研究网络资源导航
+http://sinonavi.dahailaozhen.cn/main.asp
+十、其他
+PDF在线合并、拆分、转换
+https://www.ilovepdf.com/zh_cn
