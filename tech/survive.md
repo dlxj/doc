@@ -29,7 +29,9 @@
 
 **北航本科教材影印**    
 
-[小不点搜索微盘搜索]https://www.xiaoso.net   
+[小不点搜索微盘搜索] https://www.xiaoso.net   
+
+[买书] https://ebooksprite.com    
 
 https://github.com/X140Yu/Developing_iOS_8_Apps_With_Swift/blob/master/subtitles/1. Logistics%2C iOS 8 Overview.srt
 
@@ -692,3 +694,8 @@ http://sinonavi.dahailaozhen.cn/main.asp
 十、其他
 PDF在线合并、拆分、转换
 https://www.ilovepdf.com/zh_cn
+
+
+
+买书 https://ebooksprite.com  
+
