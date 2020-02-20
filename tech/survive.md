@@ -31,6 +31,8 @@
 
 [小不点搜索微盘搜索] https://www.xiaoso.net   
 
+[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) 
+
 [买书] https://ebooksprite.com    
 
 https://github.com/X140Yu/Developing_iOS_8_Apps_With_Swift/blob/master/subtitles/1. Logistics%2C iOS 8 Overview.srt
