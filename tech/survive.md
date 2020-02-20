@@ -29,9 +29,11 @@
 
 **北航本科教材影印**    
 
+[慧琳一切经音义 日本国立图书馆 狮谷白莲社藏本](https://www.digital.archives.go.jp/DAS/meta/MetSearch.cgi?DEF_XSL=default&IS_KIND=summary_normal&IS_SCH=META&IS_STYLE=default&IS_TYPE=meta&DB_ID=G9100001EXTERNAL&GRP_ID=G9100001&IS_SORT_FLD=&IS_SORT_KND=&IS_START=1&IS_TAG_S1=fpid&IS_CND_S1=ALL&IS_KEY_S1=F1000000000000103707&IS_NUMBER=100&ON_LYD=on&IS_EXTSCH=F9999999999999900000%2BF2009121017025600406%2BF2005031812174403109%2BF2008112110371121713%2BF1000000000000103707&IS_DATA_TYPE=&IS_LYD_DIV=&LIST_TYPE=default&IS_ORG_ID=F1000000000000103707&CAT_XML_FLG=on)
+
 [小不点搜索微盘搜索] https://www.xiaoso.net   
 
-[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  
+[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  [书阁](https://new.shuge.org) 
 
 [买书] https://ebooksprite.com    
 
@@ -111,7 +113,9 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 >
 > /end book
 >
-> [东方语言学中古音](http://www.eastling.org) [韵典广韵](http://ytenx.org/kyonh)   [离线wiki](https://wiki.kiwix.org/wiki/Content_in_all_languages/zh-cn)  [单词分音节、朗读](https://www.howmanysyllables.com/words/beautiful)  [漢字古今音資料庫](http://xiaoxue.iis.sinica.edu.tw/ccr)  
+> [东方语言学中古音](http://www.eastling.org) [韵典广韵](http://ytenx.org/kyonh)   [离线wiki](https://wiki.kiwix.org/wiki/Content_in_all_languages/zh-cn)  [单词分音节、朗读](https://www.howmanysyllables.com/words/beautiful)  [漢字古今音資料庫](http://xiaoxue.iis.sinica.edu.tw/ccr)  [中國哲學書電子化計劃](https://ctext.org/library.pl?if=gb&res=1495)  
+>
+> [方言发音](http://cn.voicedic.com) [吴语小词典](http://wu-chinese.com/minidict)  [粵語對照](http://apps.itsc.cuhk.edu.hk/hanyu/Page/Cover.aspx)  [慧琳一切经音义 日本国立图书馆 狮谷白莲社藏本](https://www.digital.archives.go.jp/DAS/meta/MetSearch.cgi?DEF_XSL=default&IS_KIND=summary_normal&IS_SCH=META&IS_STYLE=default&IS_TYPE=meta&DB_ID=G9100001EXTERNAL&GRP_ID=G9100001&IS_SORT_FLD=&IS_SORT_KND=&IS_START=1&IS_TAG_S1=fpid&IS_CND_S1=ALL&IS_KEY_S1=F1000000000000103707&IS_NUMBER=100&ON_LYD=on&IS_EXTSCH=F9999999999999900000%2BF2009121017025600406%2BF2005031812174403109%2BF2008112110371121713%2BF1000000000000103707&IS_DATA_TYPE=&IS_LYD_DIV=&LIST_TYPE=default&IS_ORG_ID=F1000000000000103707&CAT_XML_FLG=on) 
 >
 > [bob翻译](https://github.com/ripperhe/Bob)  [QingDic](https://github.com/yingDev/QingDict) [mdx解析](https://github.com/dictlab/mdict-cpp) [js解析mdx](https://github.com/terasum/js-mdict)  [mdx合成](https://www.pdawiki.com/forum/thread-36415-1-1.html)  
 >
