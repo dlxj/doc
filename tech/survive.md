@@ -33,7 +33,7 @@
 
 [小不点搜索微盘搜索] https://www.xiaoso.net   
 
-[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  [书阁](https://new.shuge.org) 
+[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  [书阁](https://new.shuge.org)  [外网中文书](https://b-ok.cc) 
 
 [买书] https://ebooksprite.com    
 

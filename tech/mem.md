@@ -48,10 +48,14 @@ Excerpt From: 唐 智廣撰. “T2132 悉曇字記.” Apple Books.
 
 查慧林音义 仁
 
-查慧林音义 仁
-
-find . -type f | xargs cat | grep "<p>.*仁.*<span class='note-inline'>("
+```find . -type f | xargs cat | grep "<p>.*仁.*<span class='note-inline'>("```
 仁者(而親反周禮云德一曰仁鄭玄曰愛人及物曰仁上下相親曰仁釋名仁者忍也好生惡煞善惡含忍也)。
+
+
+
+![image-20200221152548458](../lang/IPA/中古汉语国际音标.assets/image-20200221152548458.png)
+
+
 
 **u合，i细**
 
