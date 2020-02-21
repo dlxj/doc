@@ -42,9 +42,16 @@ Excerpt From: 唐 智廣撰. “T2132 悉曇字記.” Apple Books.
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 |      | 臻   | 平   | 真   | 日   | 開   | 三   | 次濁 | 如   | 鄰   |      |      |
 
-[漢字古今音資料庫](http://xiaoxue.iis.sinica.edu.tw/ccr)  
+漢字古今音資料庫](http://xiaoxue.iis.sinica.edu.tw/ccr)  
 
 仁者 = 仁 不等于尊者、贤者    
+
+查慧林音义 仁
+
+查慧林音义 仁
+
+find . -type f | xargs cat | grep "<p>.*仁.*<span class='note-inline'>("
+仁者(而親反周禮云德一曰仁鄭玄曰愛人及物曰仁上下相親曰仁釋名仁者忍也好生惡煞善惡含忍也)。
 
 **u合，i细**
 
