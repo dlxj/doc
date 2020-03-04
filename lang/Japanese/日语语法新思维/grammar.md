@@ -20,9 +20,11 @@
 どこへ行くにも一緒だったあの青い自転車に乗りながら
 
 
+うつすといけないし  而且可能会传染的  
+8th话  2季  吹响吧！上低音号  
 
-
-
+japanese Morphological  
+http://atilika.org/kuromoji  
 
 
 
