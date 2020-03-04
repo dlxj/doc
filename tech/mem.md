@@ -61,6 +61,10 @@ Excerpt From: 唐 智廣撰. “T2132 悉曇字記.” Apple Books.
 《常用音訓》  
 コウ  
 
+东方语言学(http://www.eastling.org)    
+
+![image-20200304134940137](mem.assets/image-20200304134940137.png)
+
 
 ![image-20200221152548458](../lang/IPA/中古汉语国际音标.assets/image-20200221152548458.png)
 
