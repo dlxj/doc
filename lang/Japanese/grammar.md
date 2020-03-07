@@ -4,6 +4,7 @@
 * [语法新思维](日语语法新思维/grammar.md)
 * [新编日语](新编日语/grammar.md) 
 * [初级日语语法精解](初级日语语法精解/grammar.md) 
+* [格](../格.md) 
 * [markdown](http://xianbai.me/learn-md/)  
 
 0 调是平调55  一声  
