@@ -4,7 +4,15 @@
 
 https://jisho.org/  日英词典，句子分析， Wolfram Alpha  
 
+https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter  日语国际音标  
 
+网易云音乐云盘  免费存mp3
+
+利用CloudFlare Worker 免费部署 JSProxy 服务
+
+https://chwl66.github.io/post/pLeXJDL_N/
+
+https://github.com/EtherDream/jsproxy-browser
 
 
 
