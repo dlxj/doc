@@ -1,3 +1,11 @@
+英語語音學 (含發音練習) 外文系  Karen Steffen Chung 史嘉琳 [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
+
+【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
+
+ (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
+
+
+
 最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。
 
 一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复
@@ -22,7 +30,7 @@ https://github.com/EtherDream/jsproxy-browser
 
 
 
-https://www.youtube.com/watch?v=LmA0z-IRkOs&list=PL73An2lLiUqPrjMhlfjknSKzCH1hU9QAT
+http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102
 
 
 
