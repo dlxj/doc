@@ -4,6 +4,8 @@
 
  (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
 
+praat 开源的语音分析软件 http://www.fon.hum.uva.nl/praat/
+
 
 
 最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。
