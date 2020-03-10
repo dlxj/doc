@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 首先，我找到了这里
 [IPA Unicode Keyboards](https://link.zhihu.com/?target=http%3A//scripts.sil.org/cms/scripts/page.php%3Fsite_id%3Dnrsi%26id%3Duniipakeyboard%2379dbd88a)，下载了SIL的IPA输入法，将安装包打开后，里面有一个IPA.keylayout文件，把它放到你 Mac 的 “电脑\资料库\Keyboard Layouts”文件夹，注销或重启一下，再按<command+空格>就能看到IPA输入法了。
 要想输入国际音标，要对照安装包里的说明文档，先输入deadkey（有<, >, | , @，#等等）再输入对应的字母（区分大小写）。
