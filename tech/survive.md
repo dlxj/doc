@@ -27,7 +27,7 @@
 >
 >   (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
 >
->  [(01)言語学入門　CH1　音声学と音韻論(1) .md]()  
+>  [(01)言語学入門　CH1　音声学と音韻論(1) .md](./doc/lang/Japanese/言語学入門)  
 >  [ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
 >  /Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
 >  [ipa在线输入](https://ipa.typeit.org/full/)  
