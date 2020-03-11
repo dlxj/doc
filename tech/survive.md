@@ -1,16 +1,6 @@
-http://www.gxlib.org.cn/  广西壮族自治区图书馆 免费看论文  
+# 免费论文
 
-英語語音學 (含發音練習) 外文系  Karen Steffen Chung 史嘉琳 [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
-
-【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
-
- (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
-
-praat 开源的语音分析软件 http://www.fon.hum.uva.nl/praat/
-
-> https://www.bilibili.com/video/av28287489/
-
-
+> [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
 
 最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。
 
@@ -20,63 +10,60 @@ https://jisho.org/  日英词典，句子分析， Wolfram Alpha
 
 https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter  日语国际音标  
 
-http://dabblet.com  https://codepen.io  web云开发
+# Web云开发
 
-https://noderun.com  nodejs云开发 
+> https://github.com/mdnice/markdown-nice 
+> http://dabblet.com  
+> https://noderun.com  
+> https://codepen.io 
+> 网易云音乐云盘  免费存mp3
+> 利用CloudFlare Worker 免费部署 JSProxy 服务
+> https://chwl66.github.io/post/pLeXJDL_N/
+> https://github.com/EtherDream/jsproxy-browser
 
-
-
-网易云音乐云盘  免费存mp3
-
-利用CloudFlare Worker 免费部署 JSProxy 服务
-
-https://chwl66.github.io/post/pLeXJDL_N/
-
-https://github.com/EtherDream/jsproxy-browser
-
-http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102
-
-xcode+swiftui+metal+sprite kit
+ http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102
+ xcode+swiftui+metal+sprite kit
 
 
-
-2020更新SwiftUI-iOS13+Swift5.1+Xcode11 跟Lebus学iOS开发-进阶版（永久更新
-
+# bilibili网课
+> 2020更新SwiftUI-iOS13+Swift5.1+Xcode11 跟Lebus学iOS开发-进阶版（永久更新
 https://www.bilibili.com/video/av56005269
 
 
 
-[(01)言語学入門　CH1　音声学と音韻論(1) .md]()  
+# 语言学习
 
-[ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
+>  **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
+>
+>  【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
+>
+>   (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
+>
+>  [(01)言語学入門　CH1　音声学と音韻論(1) .md]()  
+>  [ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
+>  /Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
+>  [ipa在线输入](https://ipa.typeit.org/full/)  
+>  [日语国际音标标注](https://easypronunciation.com/)  
+>  [汉语语法](《魏晋南北朝文与汉文佛典语言比较研究》陈秀兰)
+>  [微信知乎Markdonw排版工具  React Markdown编辑器](https://github.com/mdnice/markdown-nice)  
+>  [粤语发音词典](http://www.yueyv.com/)
+>  [粤语U学院]()   
+>  [粤日英法国际音标转换](https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter)  
+>  [日英词典](https://jisho.org/)
+>  [美国英语应用语音学.桂灿昆 第九章]()  
+>  [谢孟媛文法视频课程讲义]()  
+>  [English Grammar in Use]() 
+>  [Speech and Language Processing-Daniel Jurafsky, James H. Martin (2008)]()
 
-/Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
+# 字典制作
+> https://bitbucket.org/xwang/mdict-analysis/src/default/  MDict 文件格式分析
+https://github.com/finalion/WordQuery  AnkiWeb插件
 
-[ipa在线输入](https://ipa.typeit.org/full/)  
+# 语音分析
 
-[日语国际音标标注](https://easypronunciation.com/)  
-
-[汉语语法](《魏晋南北朝文与汉文佛典语言比较研究》陈秀兰)
-
-[微信知乎Markdonw排版工具  React Markdown编辑器](https://github.com/mdnice/markdown-nice)  
-
-[粤语发音词典](http://www.yueyv.com/)
-
-[粤语U学院]()   
-
-[粤日英法国际音标转换](https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter)  
-
-[日英词典](https://jisho.org/)
-
-[美国英语应用语音学.桂灿昆 第九章]()  
-
-[谢孟媛文法视频课程讲义]()  
-
-[English Grammar in Use]() 
-
-[Speech and Language Processing-Daniel Jurafsky, James H. Martin (2008)]()
-
-
+> [praat 开源的语音分析软件](http://www.fon.hum.uva.nl/praat/)  
+>
+> [Bilibili - Praat语音分析软件用法详解](https://www.bilibili.com/video/av28287489/)
 
 
 
