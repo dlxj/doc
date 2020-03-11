@@ -2,17 +2,15 @@
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
 
-最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。
+# 建站
 
-一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复
-
-https://jisho.org/  日英词典，句子分析， Wolfram Alpha  
-
-https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter  日语国际音标  
+> [Namesilo 域名注册](最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复)
+>
+> [hostwinds 主机](hostwinds.com)
 
 # Web云开发
 
-> https://github.com/mdnice/markdown-nice 
+> [微信知乎Markdonw排版工具  React Markdown编辑器](https://github.com/mdnice/markdown-nice) 
 > http://dabblet.com  
 > https://noderun.com  
 > https://codepen.io 
@@ -20,16 +18,6 @@ https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter  日语国�
 > 利用CloudFlare Worker 免费部署 JSProxy 服务
 > https://chwl66.github.io/post/pLeXJDL_N/
 > https://github.com/EtherDream/jsproxy-browser
-
- http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102
- xcode+swiftui+metal+sprite kit
-
-
-# bilibili网课
-> 2020更新SwiftUI-iOS13+Swift5.1+Xcode11 跟Lebus学iOS开发-进阶版（永久更新
-https://www.bilibili.com/video/av56005269
-
-
 
 # 语言学习
 
@@ -43,27 +31,38 @@ https://www.bilibili.com/video/av56005269
 >  [ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
 >  /Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
 >  [ipa在线输入](https://ipa.typeit.org/full/)  
->  [日语国际音标标注](https://easypronunciation.com/)  
->  [汉语语法](《魏晋南北朝文与汉文佛典语言比较研究》陈秀兰)
->  [微信知乎Markdonw排版工具  React Markdown编辑器](https://github.com/mdnice/markdown-nice)  
+>  [粤日英法国际音标转换](https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter)  
 >  [粤语发音词典](http://www.yueyv.com/)
 >  [粤语U学院]()   
->  [粤日英法国际音标转换](https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter)  
 >  [日英词典](https://jisho.org/)
+>  [汉语语法](《魏晋南北朝文与汉文佛典语言比较研究》陈秀兰) 
 >  [美国英语应用语音学.桂灿昆 第九章]()  
 >  [谢孟媛文法视频课程讲义]()  
 >  [English Grammar in Use]() 
 >  [Speech and Language Processing-Daniel Jurafsky, James H. Martin (2008)]()
 
 # 字典制作
-> https://bitbucket.org/xwang/mdict-analysis/src/default/  MDict 文件格式分析
-https://github.com/finalion/WordQuery  AnkiWeb插件
+> [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
+>
+> [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
+> [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
 
 # 语音分析
 
 > [praat 开源的语音分析软件](http://www.fon.hum.uva.nl/praat/)  
 >
 > [Bilibili - Praat语音分析软件用法详解](https://www.bilibili.com/video/av28287489/)
+
+# Bilibili网课
+
+> 2020更新**SwiftUI-iOS13+Swift5.1+Xcode11** 跟Lebus学iOS开发-进阶版（永久更新
+> https://www.bilibili.com/video/av56005269
+>
+> xcode+swiftui+metal+sprite kit
+
+# 文件同步
+
+>  Syncthing 开源P2P文件同步工具
 
 
 
@@ -100,7 +99,7 @@ https://github.com/finalion/WordQuery  AnkiWeb插件
 
 [慧琳一切经音义 日本国立图书馆 狮谷白莲社藏本](https://www.digital.archives.go.jp/DAS/meta/MetSearch.cgi?DEF_XSL=default&IS_KIND=summary_normal&IS_SCH=META&IS_STYLE=default&IS_TYPE=meta&DB_ID=G9100001EXTERNAL&GRP_ID=G9100001&IS_SORT_FLD=&IS_SORT_KND=&IS_START=1&IS_TAG_S1=fpid&IS_CND_S1=ALL&IS_KEY_S1=F1000000000000103707&IS_NUMBER=100&ON_LYD=on&IS_EXTSCH=F9999999999999900000%2BF2009121017025600406%2BF2005031812174403109%2BF2008112110371121713%2BF1000000000000103707&IS_DATA_TYPE=&IS_LYD_DIV=&LIST_TYPE=default&IS_ORG_ID=F1000000000000103707&CAT_XML_FLG=on)
 
-[小不点搜索微盘搜索] https://www.xiaoso.net   
+[互联网档案馆](https://www.archive.org/)  小不点搜索微盘搜索](https://www.xiaoso.net)     
 
 [如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  [书阁](https://new.shuge.org)  [外网中文书](https://b-ok.cc) 
 
