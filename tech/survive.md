@@ -53,10 +53,16 @@
 # 字典制作
 
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
->
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
 > [FairyDict](https://github.com/cegfdb/FairyDict)  
+
+# 深度学习
+
+> 深度学习入门：基于Python的理论与实现  Deep Learning book  introduction to hmatrix
+> category-theory-for-programmers
+> 编程中的数学-刘新宇
+> Elementary-Algorithms-and-Data structures-Larry LIU Xinyu
 
 # 语音分析
 
