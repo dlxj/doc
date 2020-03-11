@@ -1,3 +1,8 @@
+# 知乎大佬
+
+> 王赟 Maig [z](https://www.zhihu.com/people/maigo) 
+> 上野　玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
