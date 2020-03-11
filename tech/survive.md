@@ -1,7 +1,8 @@
 # 知乎大佬
 
 > 王赟 Maig [z](https://www.zhihu.com/people/maigo) 
-> 上野　玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
+> 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
+> UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
 
 # 免费论文
 
@@ -10,8 +11,10 @@
 # 建站
 
 > [Namesilo 域名注册](最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复)
->
 > [hostwinds 主机](hostwinds.com)
+> [Colab自动重连](https://zhuanlan.zhihu.com/p/100871755)
+> [MMA截图和控制鼠标](https://zhuanlan.zhihu.com/p/33361062)
+> [Blender Python2D动画](用Blender来学习Python创意编程，实现傅里叶级数可视化https://zhuanlan.zhihu.com/p/92267080)
 
 # Web云开发
 
@@ -27,6 +30,16 @@
 > https://github.com/EtherDream/jsproxy-browser
 >
 > Chrome 印象笔记·**剪藏插件**
+>
+> [HTTP 缓存](https://zhuanlan.zhihu.com/p/59150268)
+
+# APP开发
+
+> [Ass字幕上下标](ASS字幕（ae字幕-Aegisub）制作数学符号中的上下角标https://www.jianshu.com/p/b027c364def5)
+>
+> [VLC IOS开源播放器](https://github.com/videolan/vlc-ios)
+>
+> ffmpeg推流
 
 # 语言学习
 
@@ -34,12 +47,13 @@
 >
 >  【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
 >
->   (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
+>  (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
 >
 >  [(01)言語学入門　CH1　音声学と音韻論(1) .md](./doc/lang/Japanese/言語学入門)  
 >  [ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
 >  /Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
->  [ipa在线输入](https://ipa.typeit.org/full/)  
+>  [ipa在线输入](https://ipa.typeit.org/full/) 
+>  [汉语拼音与国际音标对照表](https://zhuanlan.zhihu.com/p/99512131) 
 >  [粤日英法国际音标转换](https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter)  
 >  [粤语发音词典](http://www.yueyv.com/)
 >  [粤语U学院]()   
