@@ -1,3 +1,5 @@
+http://www.gxlib.org.cn/  广西壮族自治区图书馆 免费看论文  
+
 英語語音學 (含發音練習) 外文系  Karen Steffen Chung 史嘉琳 [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
 
 【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
@@ -32,13 +34,49 @@ https://chwl66.github.io/post/pLeXJDL_N/
 
 https://github.com/EtherDream/jsproxy-browser
 
-
-
 http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102
 
-
-
 xcode+swiftui+metal+sprite kit
+
+
+
+2020更新SwiftUI-iOS13+Swift5.1+Xcode11 跟Lebus学iOS开发-进阶版（永久更新
+
+https://www.bilibili.com/video/av56005269
+
+
+
+[(01)言語学入門　CH1　音声学と音韻論(1) .md]()  
+
+[ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
+
+/Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
+
+[ipa在线输入](https://ipa.typeit.org/full/)  
+
+[日语国际音标标注](https://easypronunciation.com/)  
+
+[汉语语法](《魏晋南北朝文与汉文佛典语言比较研究》陈秀兰)
+
+[微信知乎Markdonw排版工具  React Markdown编辑器](https://github.com/mdnice/markdown-nice)  
+
+[粤语发音词典](http://www.yueyv.com/)
+
+[粤语U学院]()   
+
+[粤日英法国际音标转换](https://easypronunciation.com/zh/japanese-kanji-to-romaji-converter)  
+
+[日英词典](https://jisho.org/)
+
+[美国英语应用语音学.桂灿昆 第九章]()  
+
+[谢孟媛文法视频课程讲义]()  
+
+[English Grammar in Use]() 
+
+[Speech and Language Processing-Daniel Jurafsky, James H. Martin (2008)]()
+
+
 
 
 
