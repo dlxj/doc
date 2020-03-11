@@ -10,6 +10,8 @@
 
 # Web云开发
 
+> [tailwindcss](https://github.com/tailwindcss/tailwindcss) [styled-components](https://github.com/styled-components/styled-components)  FFmpeg+RTMP推流 [wasm+ffmpeg前端剪视频](https://zhuanlan.zhihu.com/p/40786748) [2](https://zhuanlan.zhihu.com/p/67759237) 
+>
 > [微信知乎Markdonw排版工具  React Markdown编辑器](https://github.com/mdnice/markdown-nice) 
 > http://dabblet.com  
 > https://noderun.com  
@@ -18,6 +20,8 @@
 > 利用CloudFlare Worker 免费部署 JSProxy 服务
 > https://chwl66.github.io/post/pLeXJDL_N/
 > https://github.com/EtherDream/jsproxy-browser
+>
+> Chrome 印象笔记·**剪藏插件**
 
 # 语言学习
 
@@ -42,10 +46,12 @@
 >  [Speech and Language Processing-Daniel Jurafsky, James H. Martin (2008)]()
 
 # 字典制作
+
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
 >
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
+> [FairyDict](https://github.com/cegfdb/FairyDict)  
 
 # 语音分析
 
