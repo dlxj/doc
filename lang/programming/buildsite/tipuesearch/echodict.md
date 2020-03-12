@@ -14,3 +14,14 @@ WebAssembly
 
 WASM 的框架 / 库的选择已经比较丰富了，如：C# + Blazor、Go + Vugu、Rust + Yew 等等。
 可能有人会问，为什么不能使用 TypeScript / JavaScript 来编译到 WASM，归根结底是因为 WASM 要求语言必须是静态强类型
+
+rust 可能要火，主要还是因为 WebAssembly。就前不久 W3C 宣布 WebAssembly 成为标准那段时间我发现我的 github 首页动态好多都是 star rust 项目的，以及 github trending 那段时间 rust 项目也经常上榜。
+
+
+
+unpkg cdn
+
+
+
+VSCode + Reason  + React Hooks
+
