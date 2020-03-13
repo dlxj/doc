@@ -14,6 +14,8 @@
 >
 > [服务器运维](https://github.com/chengziqaq/Ubuntu-xfce-VNC)  
 >
+> [[Fiddler抓包 网络crawler](https://www.52pojie.cn/thread-1124180-1-1.html)]
+>
 > [Namesilo 域名注册](最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复)
 > [hostwinds 主机](hostwinds.com)
 > [Colab自动重连](https://zhuanlan.zhihu.com/p/100871755)
@@ -103,15 +105,33 @@
 
 >  Syncthing 开源P2P文件同步工具
 
-# GFW 
+# GFW
 
-> **FaceTheWorld**
+## FaceTheWorld
+
+
+
 - 我们的主域名是（国内用户访问快，推荐使用该域名）：https://ftw.jzfj.shop/
+
 - 自动选优跳转页（国内访问较快）：https://ftw.b69o.top/
+
 - 我们的永久域名是（国内访问比较慢，建议使用代理）：https://www.ftwssr.com/
        主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
 节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力
-> [CloudFlare 免费部署 JSProxy](https://chwl66.github.io/post/pLeXJDL_N/)  
+   
+   
+## CloudFlare +  JSProxy
+
+   [CloudFlare 免费部署 JSProxy](https://chwl66.github.io/post/pLeXJDL_N/)
+
+## ShadowsocksX-NG
+
+ShadowsocksX-NG for MacOS
+
+## Shadowsocks-rust
+
+1. [shadowsocks-rust for linux windows](https://github.com/shadowsocks/shadowsocks-rust)
+
 
 
 
@@ -878,3 +898,38 @@ screencapture -h
 ## MaxOS
 
 1. ShadowsocksX-NG
+
+# 步骤1:安装xfce4 vnc4server
+
+apt-get -y update&&apt-get -y upgrade&&apt-get -y install xfce4&&apt-get -y install vnc4server&&vncserver :1&&vncserver -kill :1&&cd /root&&wget https://raw.githubusercontent.com/chengziqaq/Ubuntu-xfce-VNC/master/xstartup.txt&&mv xstartup.txt /root/.vnc/xstartup&&cd /root/.vnc/&&chmod 755 xstartup&&echo "安装firefox浏览器中"&&sudo apt-get install xfonts-wqy&&apt-get install -y firefox&&echo "重启中,开机后再执行步骤2的命令"&&reboot
+
+# 步骤2:服务器重启后,执行
+
+这两条分别复制执行
+sudo su root
+vncserver :1
+
+# 步骤3:电脑连接VNC
+
+VNC server地址填:
+ip:1
+然后输入你设置的密码
+就完成了
+
+# 其他:
+
+## VNC开启
+
+sudo -i
+vncserver :1
+
+## vnc关闭:
+
+sudo -i
+vncserver -kill :1
+
+## vnc重启
+
+sudo -i
+vncserver -kill :1
+vncserver :1
