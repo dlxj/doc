@@ -11,6 +11,9 @@
 # 建站
 
 > [腾讯云qq 1234](https://cloud.tencent.com/ qq 1234) 
+>
+> [服务器运维](https://github.com/chengziqaq/Ubuntu-xfce-VNC)  
+>
 > [Namesilo 域名注册](最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复)
 > [hostwinds 主机](hostwinds.com)
 > [Colab自动重连](https://zhuanlan.zhihu.com/p/100871755)
@@ -33,6 +36,8 @@
 > Chrome 印象笔记·**剪藏插件**
 >
 > [HTTP 缓存](https://zhuanlan.zhihu.com/p/59150268)
+>
+> **electron专家** https://newsn.net/category/electron/1/
 
 # APP开发
 
@@ -863,9 +868,13 @@ screencapture -h
 系统自带截屏的技巧都在这里了，转自我在 [http://Tip4Mac.com](https://720462c7d00e123fb12198e2c2d018af.cloudflareworkers.com/-----https://link.zhihu.com/?target=http%3A//Tip4Mac.com) 的一篇小贴士。也就是前面 
 任平生 回答里面的那个链接：[http://www.tip4mac.com/2011/01/screencapture-for-os-x/](https://720462c7d00e123fb12198e2c2d018af.cloudflareworkers.com/-----https://link.zhihu.com/?target=http%3A//www.tip4mac.com/2011/01/screencapture-for-os-x/) 
 
-GFW FaceTheWorld
+# GFW FaceTheWorld
 我们的主域名是（国内用户访问快，推荐使用该域名）：https://ftw.jzfj.shop/
  自动选优跳转页（国内访问较快）：https://ftw.b69o.top/
  我们的永久域名是（国内访问比较慢，建议使用代理）：https://www.ftwssr.com/
  主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
 节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力 
+
+## MaxOS
+
+1. ShadowsocksX-NG
