@@ -225,7 +225,7 @@ sslocal -c /path/to/shadowsocks.json
 
 [互联网档案馆](https://www.archive.org/)  小不点搜索微盘搜索](https://www.xiaoso.net)     
 
-[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  [书阁](https://new.shuge.org)  [外网中文书](https://b-ok.cc) 
+[如风搜](http://www.rufengso.net)  [鸠摩搜索](https://www.jiumodiary.com) [国学迷](http://www.guoxuemi.com) [最强搜书](https://m.egouz.com/zt/dianzishuku)  [书阁](https://new.shuge.org)  [外网中文书](https://b-ok.cc) [IPFS 黑科技](https://book.tstrs.me/)
 
 [买书] https://ebooksprite.com    
 
