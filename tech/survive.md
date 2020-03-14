@@ -120,6 +120,7 @@
 节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力
    
    
+
 ## CloudFlare +  JSProxy
 
    [CloudFlare 免费部署 JSProxy](https://chwl66.github.io/post/pLeXJDL_N/)
@@ -130,7 +131,61 @@ ShadowsocksX-NG for MacOS
 
 ## Shadowsocks-rust
 
-1. [shadowsocks-rust for linux windows](https://github.com/shadowsocks/shadowsocks-rust)
+[shadowsocks-rust for linux windows](https://github.com/shadowsocks/shadowsocks-rust)
+
+## 配置文件
+
+> ```
+>     {
+>       "server": "nathost3077.shhgw04.vds.pqs.pw",
+>       "local_address": "127.0.0.1",
+>       "local_port": 1080,
+>       "timeout": 300,
+>       "workers": 1,
+>       "server_port": 11024,
+>       "password": "das1d23",
+>       "method": "chacha20-ietf",
+>       "obfs": "tls1.2_ticket_auth",
+>       "obfs_param": "9971e1905.www.bing.com",
+>       "protocol": "auth_aes128_md5",
+>       "protocol_param": "1905:qGJ8yn"
+>     }
+> ```
+
+- password 需要登录**FaceTheWorld** ，点某个服务器的节点，选JSON 格式的配置
+
+## Socks5 Local client
+
+```
+# Read local client configuration from file
+sslocal -c /path/to/shadowsocks.json
+```
+
+
+
+## proxychains 命令行代理
+
+[proxychains](https://github.com/haad/proxychains)
+
+### 全局配置文件
+
+- /etc/proxychains.conf
+
+  > [ProxyList]
+  >
+  > socks5 127.0.0.1 1080
+
+- link  ~/usr/bin/proxychains4  ~/usr/bin/proxy
+
+  > proxy curl https://www.youtube.com
+  >
+  > 只要本地1080端口的 socks5 客户端代理连接远程SS 正常，
+  >
+  > 就能下载到youtube 的前端代码
+
+
+
+
 
 
 
@@ -211,7 +266,19 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 - feem wifi文件传输 
 - [app](https://github.com/yulinyige/Wifle) [wewechat](https://github.com/trazyn/weweChat)  
 
-### hinote
+
+
+# echodict
+
+1. 粤日英中互翻 
+2. 全部有真人发音
+3. 全部标注国际音标
+4. 释意源自忆术家、多邻国
+5. 存储用户发音
+
+
+
+# hinote
 
 > 内容为王  离散化碎片化随时入口进入    
 > 听力为主  词根、音素、国标音标、单词  
