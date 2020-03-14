@@ -7,6 +7,8 @@
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
+>
+> [小众软件 IPFS图书](https://meta.appinn.net/t/ipfs-i-book-in/14123)
 
 # 建站
 
@@ -104,8 +106,13 @@
 # 文件同步
 
 >  Syncthing 开源P2P文件同步工具
+>  smb文件共享  smb://10.168.1.1   
 
 # GFW
+
+# 黑科技
+
+[搭建备用梯子：V2Ray + WebSocket + TLS + CloudFlare](https://printempw.github.io/v2ray-ws-tls-cloudflare/)
 
 ## FaceTheWorld
 
