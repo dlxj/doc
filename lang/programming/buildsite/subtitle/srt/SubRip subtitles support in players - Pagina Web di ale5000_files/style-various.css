@@ -1,0 +1,120 @@
+.style-various
+{
+	background: lime;
+}
+
+/* Mobile Phones */    /* http://www.javascriptkit.com/dhtmltutors/cssmediaqueries.shtml */
+@media handheld, only screen and (max-device-width: 320px) and (orientation: portrait), only screen and (max-device-width: 480px) and (orientation: landscape)
+{
+	#small-screen-test
+	{
+		text-align: right !important;
+		text-align: right;
+	}
+
+	#mobile-text:before
+	{
+		content: "Versione mobile";
+	}
+
+	#mobile-text
+	{
+		display: block;
+	}
+
+	body
+	{
+		margin: 1px;
+	}
+
+	*
+	{
+		float: none;
+	}
+
+	h1, h2, h3, h4, h5, h6
+	{
+		font-weight: 600;
+	}
+
+	.content img
+	{
+		max-width: 250px;
+	}
+}
+
+/* Tablets */
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) and (orientation: portrait)
+{
+	.content img
+	{
+		max-width: 740px;
+	}
+}
+
+
+/* Aural */    /* http://www.w3.org/TR/CSS21/aural.html */
+@media aural
+{
+	#altervista-toolbar, #countdown-panel
+	{
+		display: none;
+	}
+}
+
+@media speech
+{
+	#altervista-toolbar, #countdown-panel
+	{
+		display: none;
+	}
+}
+
+
+/* Print */
+@media print
+{
+	body
+	{
+		background: white;
+		color: black;
+	}
+
+	frame[name="menu"]
+	{
+		display: none;
+	}
+
+	table, th, td
+	{
+		border-color: black;
+	}
+
+	a:after
+	{
+		content: " (" attr(href) ") ";
+	}
+
+	.link-style:after
+	{
+		content: " (" attr(title) ") ";
+	}
+
+	img
+	{
+		max-width: 500px;
+	}
+
+	.header, .footer, #altervista-toolbar, #countdown-panel
+	{
+		display: none;
+	}
+}
+
+/* Page => http://www.w3.org/TR/css3-page/#page-box-page-rule */
+@page
+{
+	margin: 0.3cm;
+	margin-top: 0.8cm;
+	margin-bottom: 2.2cm;
+}

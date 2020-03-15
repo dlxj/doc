@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0043)http://ale5000.altervista.org/subtitles.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>SubRip subtitles support in players - Pagina Web di ale5000</title>
+<!--<base href="http://ale5000.altervista.org/">--><base href=".">
+
+<link rel="shortcut icon" type="image/x-icon" href="http://ale5000.altervista.org/favicon.ico">
+<link rel="apple-touch-icon" type="image/png" href="http://ale5000.altervista.org/icons/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/style-base.css">
+<link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/style_3.css">
+<link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/style-various.css">
+<link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/style-print-landscape.css">
+<meta http-equiv="Page-Enter" content="revealTrans(Duration=1,Transition=12)">
+<meta http-equiv="Page-Exit" content="revealTrans(Duration=1,Transition=12)">
+
+<meta name="robots" content="all">
+<meta name="description" content="Tabella di comparazione del supporto ai sottotitoli SubRip (.SRT) nei vari player con spiegazioni, punteggi e suite di test. Subtitles.">
+<meta name="keywords" content="subtitles, sottotitoli, subrip, srt, comparison, player, vlc, font, tester">
+<meta name="author" content="ale5000">
+<meta name="generator" content="Notepad++">
+
+<link rel="canonical" href="http://ale5000.altervista.org/subtitles.htm">
+<link rel="sitemap" type="application/xml" href="http://ale5000.altervista.org/sitemap.xml">
+<link rel="home up" type="text/html" href="http://ale5000.altervista.org/" title="Home">
+<link rel="contents" type="text/html" href="http://ale5000.altervista.org/menu.htm" title="Menu">
+<link rel="help" type="text/html" href="http://ale5000.freeforumzone.leonardo.it/" title="Forum">
+
+<style type="text/css">
+<!--
+	body { background: white; color: black; }
+	a { text-decoration: underline; }
+
+	table {border-style: none;}
+	td, th {padding: 0px 2px 0px 2px;}
+	td, th, div.code {border: 1px solid black;}
+	div.code {background-color: lightyellow; width: 250pt; padding-left: 0.3em;}
+	th.column-label {color: blue; text-align: center;}
+	td.points-label {color: blue; font-weight: bold;}
+	td.line-label-other {color: steelblue; font-weight: bold;}
+	span.notes-label {color: palegreen; font-weight: bold;}
+	span.notes-label-comment {color: gray; font-size: 8pt;}
+	div.ref-text { font-weight: bold; }
+	a.ref, span.ref {color: orange; font-size: 7pt; font-weight: bold; text-decoration: none;}
+	.external {color: darkblue; font-size: 6pt; font-weight: bold; text-decoration: none;}
+	.external2 {color: darkblue; font-size: 8pt; font-weight: bold; text-decoration: none;}
+
+	a.color { color: inherit; }
+
+	td.yes, td.good { color: green; }
+	td.medium-high { color: lime; }
+	td.medium { color: yellow; }
+	td.medium-low { color: orange; }
+	td.noo, td.bad { color: red; }
+	td.na {}
+
+	td.yes:before{ content:"Yes"; }
+	td.noo:before{ content:"No"; }
+	td.na:before{ content:"N/A"; }
+
+	::-moz-selection { color: red; }
+	::-webkit-selection { color: red; }
+	::selection { color: red; }
+-->
+</style>
+
+<script src="./SubRip subtitles support in players - Pagina Web di ale5000_files/rules-p-NMemgGWHALGUT.js" async=""></script><script type="text/javascript" async="" src="./SubRip subtitles support in players - Pagina Web di ale5000_files/quant.js"></script><script type="text/javascript" src="./SubRip subtitles support in players - Pagina Web di ale5000_files/common-functions.js"></script>
+<script type="text/javascript" src="./SubRip subtitles support in players - Pagina Web di ale5000_files/common-functions(1).js"></script>
+<script type="text/javascript">
+<!--
+Initialize();  // No frame check in this page
+
+/************************************************************/
+// ToDO: Add rel="external" to elements with class "external"
+/************************************************************/
+
+if(!Array.indexOf)	// Internet Explorer, shame on you!!!
+{
+	Array.prototype.indexOf = function(obj, start)
+	{	// We should avoid "undefined" and negative values
+		for(var array_length = this.length, i = (start && start > 0 ? start : 0); i < array_length; i++)
+			if(this[i] == obj)
+				return i;
+		return -1;
+	}
+}
+
+var score_table_1 = [ 'yes', 'good', 'medium-high', 'medium', 'medium-low', 'noo', 'bad', 'na' ];
+var score_table_2 = [  1,     1,      0.9,           0.5,      0.2,          0,     0,     0   ];
+
+function getScoreFromElementClass(element)
+{	// Return the score on success and undefined on error
+	var index = -1;
+	return (index = score_table_1.indexOf(element.className)) != -1 ? score_table_2[index] : ( "" + void(alert(element.id + ", unknown value: " + element.className)) );
+}
+
+function getScoreFromId(ID)
+{
+	var title, element = document.getElementById(ID);
+
+	if( element )
+	{
+		title = element.title;
+		if( element.className == "" )	// Things not yet tested
+			return "empty";
+		else							// If the "title" isn't empty, convert to number and use as score otherwise put the score on "title" and return the score
+			return title != "" ? (+title) : (element.title = getScoreFromElementClass(element));
+	}
+	else								// Return null if the element not exist
+		return null;
+}
+
+function calculatePoints(ID)
+{
+	var score = 0, maximum_value = 0, debug = false;
+
+	for( var value, i = 0; i < 100; i++ )
+	{
+		value = getScoreFromId(ID + "-" + i);
+		if(value == null) break;		// End
+		if(value == "empty") continue;	// Things not yet tested, skip them
+
+		if(value == "undefined")
+		{
+			value = 0;	// Things not yet tested, skip them
+			document.write("Invalid value set to 0<br>")
+		}
+
+		// Values to sum
+		score += value;
+		maximum_value++;
+		if(debug) document.write("=> " + value + " - " + score + " / " + maximum_value + "<br>");
+	}
+	score = Math.round(score * 1000) / 1000;
+	return score + "/" + maximum_value;
+}
+
+function addStyle(id, style)
+{
+	var element = document.getElementById(id)
+	if(!element)
+	{
+		alert("Invalid id: " + id)
+		return false;
+	}
+	element.style.cssText += style
+}
+
+function addStyleToAll(ID, style)
+{
+	var element = document.getElementById(ID + "-label")
+	if(element) element.style.cssText += style
+
+	for( var value, i = 0; i < 100; i++ )
+	{
+		var element = document.getElementById(ID + "-" + i)
+		if(!element) break;
+		element.style.cssText += style
+	}
+	addStyle(ID + "-points", style)
+	addStyle(ID + "-bugs", style)
+	addStyle(ID + "-subs_opendml_avi", style)
+	addStyle(ID + "-subs_legacy_avi", style)
+	addStyle(ID + "-track_name_avi", style)
+	addStyle(ID + "-track_name_utf16_avi", style)
+	addStyle(ID + "-notes", style)
+}
+//-->
+</script>
+<link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/toolbar-font(1).css"><link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/toolbar-icons(1).css"><link rel="stylesheet" type="text/css" href="./SubRip subtitles support in players - Pagina Web di ale5000_files/site.css"><style type="text/css"></style></head>
+
+<body style="position: relative; margin-top: 47px;">
+
+<div class="header">
+	<script type="text/javascript">
+	<!--
+	LoadAltervistaToolbar();
+	//-->
+	</script><div id="altervista-toolbar" aria-hidden="true"><div id="av_toolbar_regdiv" style="top: -47px; right: -170px;"><div class="tb-site"><a style="display: none; color: rgb(255, 255, 255);" target="_blank" href="http://it.altervista.org/crea-sito-gratis.php" title="Siti, blog e web hosting gratis"><span class="circle"><span class="tb-icons tb-icon-pencil"></span></span>Crea sito</a></div></div><iframe id="av_toolbar_iframe" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" style="height: 40px; border: 0px; position: absolute; left: -7px; top: -47px; z-index: 10000; max-width: none; width: calc(100% + 177px);" src="./SubRip subtitles support in players - Pagina Web di ale5000_files/t2_ale5000.html"></iframe><script type="text/javascript" src="./SubRip subtitles support in players - Pagina Web di ale5000_files/script.js"></script></div>
+</div>
+
+<div class="content" role="main">
+	<br>
+	<h1 role="heading">SubRip (.SRT) subtitles support in players</h1>
+	<br>
+
+	<table style="border-collapse: collapse; font-size: 10pt; width: 1140pt;" summary="Tabella di comparazione del supporto ai sottotitoli SubRip nei vari player">
+		<tbody><tr>
+			<td class="text-center" width="278pt" style="color: lime;"><strong>Tested on Windows XP SP3 only</strong></td>
+			<!-- <th class="column-label" rowspan="39" width="1pt" style="background-color: black;"></th> -->
+			<th class="column-label" width="120pt"><a href="https://sourceforge.net/projects/guliverkli/files/Media%20Player%20Classic/">Media Player Classic</a><br>6.4.9.0<br>ANSI &amp; UNICODE</th>
+			<th class="column-label" width="120pt"><a href="https://sourceforge.net/projects/guliverkli2/files/Media%20Player%20Classic/">Media Player Classic</a><br>6.4.9.1 rev. 86<br>2008-11-15 UNICODE</th>
+			<th class="column-label" width="110pt"><a href="https://sourceforge.net/projects/mpc-hc/files/MPC%20HomeCinema%20-%20Win32/">MPC HomeCinema</a><br>1.3.1458.0<br>32 bit</th>
+			<th class="column-label" width="70pt"><a href="https://www.videolan.org/vlc/">VLC 0.8.6i</a></th>
+			<th class="column-label" width="75pt"><a href="https://www.videolan.org/vlc/">VLC 1.0.3</a></th>
+			<th class="column-label" width="75pt"><a href="https://nightlies.videolan.org/">VLC 1.0.5</a><br>2010-01-17<br>0202 <em>Nightly</em></th>
+			<th class="column-label" width="75pt"><a href="https://nightlies.videolan.org/">VLC 1.2.0</a><br>2011-06-26<br>1900 <em>Nightly</em></th>
+			<th class="column-label" width="90pt"><a href="http://anonymz.com/?http://forums.kmplayer.com/forums/showthread.php?t=7732" rel="external nofollow noreferrer">The KMPlayer</a><br>2.9.4.1435<br></th>
+			<th class="column-label" id="dummy1-label" width="1pt"></th>
+			<th class="column-label" width="80pt">BS.Player<br>2.30.970</th>
+			<th class="column-label" width="65pt">MPlayer<br>1.0rc2 GUI</th>
+
+			<th class="column-label" width="80pt"><a href="https://sourceforge.net/projects/guliverkli2/files/DirectShow%20Filters/">DirectVobSub</a><br>(aka VSFilter)<br>2.39.5.3 <a class="ref" href="http://ale5000.altervista.org/#a">[a]</a></th>
+			<th class="column-label" width="78pt"><a href="https://sourceforge.net/projects/ffdshow-tryout/">ffdshow</a> <a class="ref" href="http://ale5000.altervista.org/#a">[a]</a><br>rev. 2364</th>
+			<th class="column-label">Windows Media Player</th>
+		</tr>
+		<tr>
+			<th>Hide hidden data</th>
+			<td id="MPC-old-0" class="yes" title="1"></td>
+			<td id="MPC-0" class="yes" title="1"></td>
+			<td id="MPC-HC-0" class="yes" title="1"></td>
+			<td id="VLC-old-0" class="yes" title="1"></td>
+			<td id="VLC-stable-0" class="yes" title="1"></td>
+			<td id="VLC-branch-0" class="yes" title="1"></td>
+			<td id="VLC-trunk-0" class="yes" title="1"></td>
+			<td id="KMPlayer-0" class="noo" title="0"></td>
+			<td id="dummy1-0" class=""></td>
+			<td id="BS.Player-0" class=""></td>
+			<td id="MPlayer-0" class=""></td>
+
+			<td id="DirectVobSub-0" class="yes" title="1"></td>
+			<td id="ffdshow-0" class="yes" title="1"></td>
+			<td id="WMP-0" class="bad" style="text-align: center;" rowspan="32" title="-1">It doesn't support<br>SubRip subtitles</td>
+		</tr>
+		<tr>
+			<th>Font color</th>
+			<td id="MPC-old-1" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r5">[5]</a></td>
+			<td id="MPC-1" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r5">[5]</a></td>
+			<td id="MPC-HC-1" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r5">[5]</a></td>
+			<td id="VLC-old-1" class="noo" title="0"></td>
+			<td id="VLC-stable-1" class="yes" title="1"></td>
+			<td id="VLC-branch-1" class="yes" title="1"></td>
+			<td id="VLC-trunk-1" class="yes" title="1"></td>
+			<td id="KMPlayer-1" class="yes" title="1"></td>
+			<td id="dummy1-1" class=""></td>
+			<td id="BS.Player-1" class="noo" title="0"></td>
+			<td id="MPlayer-1" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-1" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r5">[5]</a></td>
+			<td id="ffdshow-1" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Font face</th>
+			<td id="MPC-old-2" class="yes" title="1"></td>
+			<td id="MPC-2" class="yes" title="1"></td>
+			<td id="MPC-HC-2" class="good" title="1">10/10</td>
+			<td id="VLC-old-2" class="noo" title="0"></td>
+			<td id="VLC-stable-2" class="noo" title="0"></td>
+			<td id="VLC-branch-2" class="noo" title="0"></td>
+			<td id="VLC-trunk-2" class="medium" title="0.5">6/11 <a class="external" href="https://trac.videolan.org/vlc/ticket/4949">[BUG]</a></td>
+			<td id="KMPlayer-2" class="medium-high" title="0.9">8/9 <a class="ref" href="http://ale5000.altervista.org/#r11">[11]</a></td>
+			<td id="dummy1-2" class=""></td>
+			<td id="BS.Player-2" class="noo" title="0"></td>
+			<td id="MPlayer-2" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-2" class="good" title="1">10/10</td>
+			<td id="ffdshow-2" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Font size</th>
+			<td id="MPC-old-3" class="yes" title="1"></td>
+			<td id="MPC-3" class="yes" title="1"></td>
+			<td id="MPC-HC-3" class="yes" title="1"></td>
+			<td id="VLC-old-3" class="noo" title="0"></td>
+			<td id="VLC-stable-3" class="yes" title="1"></td>
+			<td id="VLC-branch-3" class="yes" title="1"></td>
+			<td id="VLC-trunk-3" class="medium-high" title="0.9">99% Yes <a class="external" href="https://trac.videolan.org/vlc/ticket/4948">[BUG]</a></td>
+			<td id="KMPlayer-3" class="noo" title="0"></td>
+			<td id="dummy1-3" class=""></td>
+			<td id="BS.Player-3" class="noo" title="0"></td>
+			<td id="MPlayer-3" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-3" class="yes" title="1"></td>
+			<td id="ffdshow-3" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Unicode</th>
+			<td id="MPC-old-4" class="yes" title="1"></td>
+			<td id="MPC-4" class="yes" title="1"></td>
+			<td id="MPC-HC-4" class="yes" title="1"></td>
+			<td id="VLC-old-4" class="medium" title="0.5">Partial</td>
+			<td id="VLC-stable-4" class="medium" title="0.5">Partial <a class="external" href="https://trac.videolan.org/vlc/ticket/2336">[BUG]</a></td>
+			<td id="VLC-branch-4" class="medium" title="0.5">Partial <a class="external" href="https://trac.videolan.org/vlc/ticket/2336">[BUG]</a></td>
+			<td id="VLC-trunk-4" class="medium" title="0.5">Partial <a class="external" href="https://trac.videolan.org/vlc/ticket/2336">[BUG]</a></td>
+			<td id="KMPlayer-4" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r0">[0]</a></td>
+			<td id="dummy1-4" class=""></td>
+			<td id="BS.Player-4" class="yes" title="1"></td>
+			<td id="MPlayer-4" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-4" class="yes" title="1"></td>
+			<td id="ffdshow-4" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>A html tag inside another html tag</th>
+			<td id="MPC-old-5" class="yes" title="1"></td>
+			<td id="MPC-5" class="yes" title="1"></td>
+			<td id="MPC-HC-5" class="yes" title="1"></td>
+			<td id="VLC-old-5" class="na" title="0"></td>
+			<td id="VLC-stable-5" class="yes" title="1"></td>
+			<td id="VLC-branch-5" class="yes" title="1"></td>
+			<td id="VLC-trunk-5" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r12">[12]</a></td>
+			<td id="KMPlayer-5" class="yes" title="1"></td>
+			<td id="dummy1-5" class=""></td>
+			<td id="BS.Player-5" class="yes" title="1"></td>
+			<td id="MPlayer-5" class="na" title="0"></td>
+
+			<td id="DirectVobSub-5" class="yes" title="1"></td>
+			<td id="ffdshow-5" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Font tag with many parameters</th>
+			<td id="MPC-old-6" class="yes" title="1"></td>
+			<td id="MPC-6" class="yes" title="1"></td>
+			<td id="MPC-HC-6" class="yes" title="1"></td>
+			<td id="VLC-old-6" class="na" title="0"></td>
+			<td id="VLC-stable-6" class="yes" title="1"></td>
+			<td id="VLC-branch-6" class="yes" title="1"></td>
+			<td id="VLC-trunk-6" class="yes" title="1"></td>
+			<td id="KMPlayer-6" class="na" title="0"></td>
+			<td id="dummy1-6" class=""></td>
+			<td id="BS.Player-6" class="na" title="0"></td>
+			<td id="MPlayer-6" class="na" title="0"></td>
+
+			<td id="DirectVobSub-6" class="yes" title="1"></td>
+			<td id="ffdshow-6" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Parameters in a INCORRECT way <a class="ref" href="http://ale5000.altervista.org/#x">[*]</a></th>
+			<td id="MPC-old-7" class="yes" title="1"></td>
+			<td id="MPC-7" class="yes" title="1"></td>
+			<td id="MPC-HC-7" class="yes" title="1"></td>
+			<td id="VLC-old-7" class="na" title="0"></td>
+			<td id="VLC-stable-7" class="yes" title="1"></td>
+			<td id="VLC-branch-7" class="yes" title="1"></td>
+			<td id="VLC-trunk-7" class="yes" title="1"></td>
+			<td id="KMPlayer-7" class="yes" title="1"></td>
+			<td id="dummy1-7" class=""></td>
+			<td id="BS.Player-7" class="na" title="0"></td>
+			<td id="MPlayer-7" class="na" title="0"></td>
+
+			<td id="DirectVobSub-7" class="yes" title="1"></td>
+			<td id="ffdshow-7" class="medium" title="0.5">Partial</td>
+		</tr>
+		<tr>
+			<th>Bold</th>
+			<td id="MPC-old-8" class="yes" title="1"></td>
+			<td id="MPC-8" class="yes" title="1"></td>
+			<td id="MPC-HC-8" class="yes" title="1"></td>
+			<td id="VLC-old-8" class="noo" title="0"></td>
+			<td id="VLC-stable-8" class="noo" title="0"></td>
+			<td id="VLC-branch-8" class="noo" title="0"></td>
+			<td id="VLC-trunk-8" class="yes" title="1"></td>
+			<td id="KMPlayer-8" class="yes" title="1"></td>
+			<td id="dummy1-8" class=""></td>
+			<td id="BS.Player-8" class="yes" title="1"></td>
+			<td id="MPlayer-8" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-8" class="yes" title="1"></td>
+			<td id="ffdshow-8" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Italics</th>
+			<td id="MPC-old-9" class="yes" title="1"></td>
+			<td id="MPC-9" class="yes" title="1"></td>
+			<td id="MPC-HC-9" class="yes" title="1"></td>
+			<td id="VLC-old-9" class="noo" title="0"></td>
+			<td id="VLC-stable-9" class="noo" title="0"></td>
+			<td id="VLC-branch-9" class="noo" title="0"></td>
+			<td id="VLC-trunk-9" class="yes" title="1"></td>
+			<td id="KMPlayer-9" class="yes" title="1"></td>
+			<td id="dummy1-9" class=""></td>
+			<td id="BS.Player-9" class="yes" title="1"></td>
+			<td id="MPlayer-9" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-9" class="yes" title="1"></td>
+			<td id="ffdshow-9" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Underline</th>
+			<td id="MPC-old-10" class="yes" title="1"></td>
+			<td id="MPC-10" class="yes" title="1"></td>
+			<td id="MPC-HC-10" class="yes" title="1"></td>
+			<td id="VLC-old-10" class="noo" title="0"></td>
+			<td id="VLC-stable-10" class="yes" title="1"></td>
+			<td id="VLC-branch-10" class="yes" title="1"></td>
+			<td id="VLC-trunk-10" class="yes" title="1"></td>
+			<td id="KMPlayer-10" class="yes" title="1"></td>
+			<td id="dummy1-10" class=""></td>
+			<td id="BS.Player-10" class="yes" title="1"></td>
+			<td id="MPlayer-10" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-10" class="yes" title="1"></td>
+			<td id="ffdshow-10" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Strikethrough</th>
+			<td id="MPC-old-11" class=""></td>
+			<td id="MPC-11" class="yes" title="1"></td>
+			<td id="MPC-HC-11" class="yes" title="1"></td>
+			<td id="VLC-old-11" class=""></td>
+			<td id="VLC-stable-11" class="noo" title="0"></td>
+			<td id="VLC-branch-11" class="noo" title="0"></td>
+			<td id="VLC-trunk-11" class="yes" title="1"></td>
+			<td id="KMPlayer-11" class="noo" title="0"></td>
+			<td id="dummy1-11" class=""></td>
+			<td id="BS.Player-11" class=""></td>
+			<td id="MPlayer-11" class=""></td>
+
+			<td id="DirectVobSub-11" class="yes" title="1"></td>
+			<td id="ffdshow-11" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Html tags on more than one line</th>
+			<td id="MPC-old-12" class="yes" title="1"></td>
+			<td id="MPC-12" class="yes" title="1"></td>
+			<td id="MPC-HC-12" class="yes" title="1"></td>
+			<td id="VLC-old-12" class="na" title="0"></td>
+			<td id="VLC-stable-12" class="yes" title="1"></td>
+			<td id="VLC-branch-12" class="yes" title="1"></td>
+			<td id="VLC-trunk-12" class="yes" title="1"></td>
+			<td id="KMPlayer-12" class="yes" title="1"></td>
+			<td id="dummy1-12" class=""></td>
+			<td id="BS.Player-12" class="yes" title="1"></td>
+			<td id="MPlayer-12" class="na" title="0"></td>
+
+			<td id="DirectVobSub-12" class="yes" title="1"></td>
+			<td id="ffdshow-12" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Hide invalid closed html tags <a class="ref" href="http://ale5000.altervista.org/#f2">[F2]</a></th>
+			<td id="MPC-old-13" class="noo" title="0"></td>
+			<td id="MPC-13" class="noo" title="0"></td>
+			<td id="MPC-HC-13" class="noo" title="0"></td>
+			<td id="VLC-old-13" class="medium" title="0.5">Partial</td>
+			<td id="VLC-stable-13" class="yes" title="1"></td>
+			<td id="VLC-branch-13" class="yes" title="1"></td>
+			<td id="VLC-trunk-13" class="yes" title="1"></td>
+			<td id="KMPlayer-13" class="yes" title="1"></td>
+			<td id="dummy1-13" class=""></td>
+			<td id="BS.Player-13" class="noo" title="0"></td>
+			<td id="MPlayer-13" class="yes" title="1"></td>
+
+			<td id="DirectVobSub-13" class="noo" title="0"></td>
+			<td id="ffdshow-13" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Don't hide html tags NOT opened <a class="ref" href="http://ale5000.altervista.org/#f2">[F2]</a></th>
+			<td id="MPC-old-14" class=""></td>
+			<td id="MPC-14" class=""></td>
+			<td id="MPC-HC-14" class="medium" title="0.5">Partial</td>
+			<td id="VLC-old-14" class=""></td>
+			<td id="VLC-stable-14" class="noo" title="0"> <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="VLC-branch-14" class="noo" title="0"> <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="VLC-trunk-14" class="noo" title="0"> <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="KMPlayer-14" class="noo" title="0"></td>
+			<td id="dummy1-14" class=""></td>
+			<td id="BS.Player-14" class=""></td>
+			<td id="MPlayer-14" class=""></td>
+
+			<td id="DirectVobSub-14" class="medium" title="0.5">Partial</td>
+			<td id="ffdshow-14" class=""></td>
+		</tr>
+		<tr>
+			<th>Support valid html tags NOT closed <a class="ref" href="http://ale5000.altervista.org/#f2">[F2]</a></th>
+			<td id="MPC-old-15" class=""></td>
+			<td id="MPC-15" class=""></td>
+			<td id="MPC-HC-15" class="yes" title="1"></td>
+			<td id="VLC-old-15" class=""></td>
+			<td id="VLC-stable-15" class="medium" title="0.5">Broken <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="VLC-branch-15" class="medium" title="0.5">Broken <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="VLC-trunk-15" class="medium" title="0.5">Broken <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="KMPlayer-15" class="na" title="0"></td>
+			<td id="dummy1-15" class=""></td>
+			<td id="BS.Player-15" class=""></td>
+			<td id="MPlayer-15" class=""></td>
+
+			<td id="DirectVobSub-15" class="yes" title="1"></td>
+			<td id="ffdshow-15" class=""></td>
+		</tr>
+		<tr>
+			<th>Don't hide invalid html tags NOT closed <a class="ref" href="http://ale5000.altervista.org/#f2">[F2]</a></th>
+			<td id="MPC-old-16" class="yes" title="1"></td>
+			<td id="MPC-16" class="yes" title="1"></td>
+			<td id="MPC-HC-16" class="yes" title="1"></td>
+			<td id="VLC-old-16" class="noo" title="0"></td>
+			<td id="VLC-stable-16" class="medium" title="0.5">Broken <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="VLC-branch-16" class="medium" title="0.5">Broken <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="VLC-trunk-16" class="medium" title="0.5">Broken <a class="external" href="https://trac.videolan.org/vlc/ticket/3242">[BUG]</a></td>
+			<td id="KMPlayer-16" class="noo" title="0"></td>
+			<td id="dummy1-16" class=""></td>
+			<td id="BS.Player-16" class="yes" title="1"></td>
+			<td id="MPlayer-16" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-16" class="yes" title="1"></td>
+			<td id="ffdshow-16" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Display without problems these chars: &lt; &gt; <a class="ref" href="http://ale5000.altervista.org/#xx">[**]</a></th>
+			<td id="MPC-old-17" class="yes" title="1"></td>
+			<td id="MPC-17" class="yes" title="1"></td>
+			<td id="MPC-HC-17" class="yes" title="1"></td>
+			<td id="VLC-old-17" class="noo" title="0"></td>
+			<td id="VLC-stable-17" class="medium-high" title="0.9">99% Yes</td>
+			<td id="VLC-branch-17" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r8">[8]</a></td>
+			<td id="VLC-trunk-17" class="medium-high" title="0.9">99% Yes <a class="ref" href="http://ale5000.altervista.org/#r8">[8]</a></td>
+			<td id="KMPlayer-17" class="noo" title="0"></td>
+			<td id="dummy1-17" class=""></td>
+			<td id="BS.Player-17" class="yes" title="1"></td>
+			<td id="MPlayer-17" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-17" class="yes" title="1"></td>
+			<td id="ffdshow-17" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Support for "display coordinates" <a class="ref" href="http://ale5000.altervista.org/#f1">[F1]</a></th>
+			<td id="MPC-old-18" class="noo" title="0"></td>
+			<td id="MPC-18" class="noo" title="0"></td>
+			<td id="MPC-HC-18" class="noo" title="0"></td>
+			<td id="VLC-old-18" class="noo" title="0"></td>
+			<td id="VLC-stable-18" class="noo" title="0"></td>
+			<td id="VLC-branch-18" class="noo" title="0"></td>
+			<td id="VLC-trunk-18" class="noo" title="0"></td>
+			<td id="KMPlayer-18" class="noo" title="-1">, very bad <a class="ref" href="http://ale5000.altervista.org/#r1">[1]</a></td>
+			<td id="dummy1-18" class=""></td>
+			<td id="BS.Player-18" class="noo" title="0"></td>
+			<td id="MPlayer-18" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-18" class="noo" title="0"></td>
+			<td id="ffdshow-18" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Support for {\anX}</th>
+			<td id="MPC-old-19" class="yes" title="1"></td>
+			<td id="MPC-19" class="yes" title="1"></td>
+			<td id="MPC-HC-19" class="yes" title="1"></td>
+			<td id="VLC-old-19" class="noo" title="0"></td>
+			<td id="VLC-stable-19" class="yes" title="1"></td>
+			<td id="VLC-branch-19" class="yes" title="1"></td>
+			<td id="VLC-trunk-19" class="yes" title="1"></td>
+			<td id="KMPlayer-19" class="noo" title="0"></td>
+			<td id="dummy1-19" class=""></td>
+			<td id="BS.Player-19" class="noo" title="0"></td>
+			<td id="MPlayer-19" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-19" class="yes" title="1"></td>
+			<td id="ffdshow-19" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Display correctly this special case <a class="ref" href="http://ale5000.altervista.org/#xxx">[***]</a></th>
+			<td id="MPC-old-20" class="noo" title="0"></td>
+			<td id="MPC-20" class="noo" title="0"></td>
+			<td id="MPC-HC-20" class="noo" title="0"></td>
+			<td id="VLC-old-20" class="na" title="0"></td>
+			<td id="VLC-stable-20" class="yes" title="1"></td>
+			<td id="VLC-branch-20" class="yes" title="1"></td>
+			<td id="VLC-trunk-20" class="yes" title="1"></td>
+			<td id="KMPlayer-20" class="yes" title="1"></td>
+			<td id="dummy1-20" class=""></td>
+			<td id="BS.Player-20" class="na" title="0"></td>
+			<td id="MPlayer-20" class="na" title="0"></td>
+
+			<td id="DirectVobSub-20" class="noo" title="0"></td>
+			<td id="ffdshow-20" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th style="color: green;">Display correctly overlapped subtitles</th>
+			<td id="MPC-old-21" class="yes" title="1"></td>
+			<td id="MPC-21" class="yes" title="1"></td>
+			<td id="MPC-HC-21" class="yes" title="1"></td>
+			<td id="VLC-old-21" class="noo" title="0"></td>
+			<td id="VLC-stable-21" class="yes" title="1"></td>
+			<td id="VLC-branch-21" class="yes" title="1"></td>
+			<td id="VLC-trunk-21" class="yes" title="1"></td>
+			<td id="KMPlayer-21" class="bad" title="0">Bugged</td>
+			<td id="dummy1-21" class=""></td>
+			<td id="BS.Player-21" class="noo" title="0"></td>
+			<td id="MPlayer-21" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-21" class="medium-high" title="0.7">70% Yes <a class="ref" href="http://ale5000.altervista.org/#r2">[2]</a></td>
+			<td id="ffdshow-21" class="medium" title="0.75">Different<br>implement.</td>
+		</tr>
+		<tr>
+			<th>Hide these tags: <span style="font-size: 0.76em;">{\some_letters_or_numbers_or_chars}</span></th>
+			<td id="MPC-old-22" class="yes" title="1"></td>
+			<td id="MPC-22" class="yes" title="1"></td>
+			<td id="MPC-HC-22" class="yes" title="1"></td>
+			<td id="VLC-old-22" class="noo" title="0"></td>
+			<td id="VLC-stable-22" class="yes" title="1"></td>
+			<td id="VLC-branch-22" class="yes" title="1"></td>
+			<td id="VLC-trunk-22" class="yes" title="1"></td>
+			<td id="KMPlayer-22" class="yes" title="1"></td>
+			<td id="dummy1-22" class=""></td>
+			<td id="BS.Player-22" class="noo" title="0"></td>
+			<td id="MPlayer-22" class="noo" title="0"></td>
+
+			<td id="DirectVobSub-22" class="yes" title="1"></td>
+			<td id="ffdshow-22" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Hide these tags: <span style="font-size: 0.76em;">{Y:some_letters_or_numbers_or_chars}</span></th>
+			<td id="MPC-old-23" class=""></td>
+			<td id="MPC-23" class="yes" title="1"></td>
+			<td id="MPC-HC-23" class="yes" title="1"></td>
+			<td id="VLC-old-23" class=""></td>
+			<td id="VLC-stable-23" class="noo" title="0"></td>
+			<td id="VLC-branch-23" class="yes" title="1"></td>
+			<td id="VLC-trunk-23" class="yes" title="1"></td>
+			<td id="KMPlayer-23" class="yes" title="1"></td>
+			<td id="dummy1-23" class=""></td>
+			<td id="BS.Player-23" class=""></td>
+			<td id="MPlayer-23" class=""></td>
+
+			<td id="DirectVobSub-23" class="yes" title="1"></td>
+			<td id="ffdshow-23" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Show this: {normal text}</th>
+			<td id="MPC-old-24" class=""></td>
+			<td id="MPC-24" class="noo" title="0"></td>
+			<td id="MPC-HC-24" class="noo" title="0"></td>
+			<td id="VLC-old-24" class=""></td>
+			<td id="VLC-stable-24" class="yes" title="1"></td>
+			<td id="VLC-branch-24" class="yes" title="1"></td>
+			<td id="VLC-trunk-24" class="yes" title="1"></td>
+			<td id="KMPlayer-24" class="noo" title="0"></td>
+			<td id="dummy1-24" class=""></td>
+			<td id="BS.Player-24" class=""></td>
+			<td id="MPlayer-24" class=""></td>
+
+			<td id="DirectVobSub-24" class="noo" title="0"></td>
+			<td id="ffdshow-24" class="yes" title="1"></td>
+		</tr>
+		<tr>
+			<th>Show this: \text</th>
+			<td id="MPC-old-25" class=""></td>
+			<td id="MPC-25" class=""></td>
+			<td id="MPC-HC-25" class="yes" title="1"></td>
+			<td id="VLC-old-25" class=""></td>
+			<td id="VLC-stable-25" class="yes" title="1"></td>
+			<td id="VLC-branch-25" class="yes" title="1"></td>
+			<td id="VLC-trunk-25" class="yes" title="1"></td>
+			<td id="KMPlayer-25" class="yes" title="1"></td>
+			<td id="dummy1-25" class=""></td>
+			<td id="BS.Player-25" class=""></td>
+			<td id="MPlayer-25" class=""></td>
+
+			<td id="DirectVobSub-25" class="yes" title="1"></td>
+			<td id="ffdshow-25" class=""></td>
+		</tr>
+		<tr>
+			<th>Display correctly a large not-breakable line</th>
+			<td id="MPC-old-26" class=""></td>
+			<td id="MPC-26" class=""></td>
+			<td id="MPC-HC-26" class="yes" title="1"></td>
+			<td id="VLC-old-26" class=""></td>
+			<td id="VLC-stable-26" class="noo" title="0"> <a class="external" href="https://trac.videolan.org/vlc/ticket/3243">[BUG]</a></td>
+			<td id="VLC-branch-26" class="noo" title="0"> <a class="external" href="https://trac.videolan.org/vlc/ticket/3243">[BUG]</a></td>
+			<td id="VLC-trunk-26" class="medium" title="0.5">Partial <a class="external" href="https://trac.videolan.org/vlc/ticket/3243">[BUG]</a></td>
+			<td id="KMPlayer-26" class="medium" title="0.5">Partial <a class="ref" href="http://ale5000.altervista.org/#r10">[10]</a></td>
+			<td id="dummy1-26" class=""></td>
+			<td id="BS.Player-26" class=""></td>
+			<td id="MPlayer-26" class=""></td>
+
+			<td id="DirectVobSub-26" class="yes" title="1"></td>
+			<td id="ffdshow-26" class=""></td>
+		</tr>
+		<tr>
+			<th>Hard space: \h</th>
+			<td id="MPC-old-27" class=""></td>
+			<td id="MPC-27" class="yes" title="1"></td>
+			<td id="MPC-HC-27" class="yes" title="1"></td>
+			<td id="VLC-old-27" class=""></td>
+			<td id="VLC-stable-27" class="noo" title="0"></td>
+			<td id="VLC-branch-27" class="yes" title="1"></td>
+			<td id="VLC-trunk-27" class="yes" title="1"></td>
+			<td id="KMPlayer-27" class="noo" title="0"></td>
+			<td id="dummy1-27" class=""></td>
+			<td id="BS.Player-27" class=""></td>
+			<td id="MPlayer-27" class=""></td>
+
+			<td id="DirectVobSub-27" class="yes" title="1"></td>
+			<td id="ffdshow-27" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Forced line break: \N</th>
+			<td id="MPC-old-28" class=""></td>
+			<td id="MPC-28" class="yes" title="1"></td>
+			<td id="MPC-HC-28" class="yes" title="1"></td>
+			<td id="VLC-old-28" class=""></td>
+			<td id="VLC-stable-28" class="noo" title="0"></td>
+			<td id="VLC-branch-28" class="yes" title="1"></td>
+			<td id="VLC-trunk-28" class="medium" title="0.5">Broken</td>
+			<td id="KMPlayer-28" class="yes" title="1"></td>
+			<td id="dummy1-28" class=""></td>
+			<td id="BS.Player-28" class=""></td>
+			<td id="MPlayer-28" class=""></td>
+
+			<td id="DirectVobSub-28" class="yes" title="1"></td>
+			<td id="ffdshow-28" class="noo" title="0"></td>
+		</tr>
+		<tr>
+			<th>Trim spaces at the start and at the end of the line</th>
+			<td id="MPC-old-29" class=""></td>
+			<td id="MPC-29" class=""></td>
+			<td id="MPC-HC-29" class="yes" title="1"></td>
+			<td id="VLC-old-29" class=""></td>
+			<td id="VLC-stable-29" class="noo" title="0"></td>
+			<td id="VLC-branch-29" class="noo" title="0"></td>
+			<td id="VLC-trunk-29" class="noo" title="0"></td>
+			<td id="KMPlayer-29" class="noo" title="0"></td>
+			<td id="dummy1-29" class=""></td>
+			<td id="BS.Player-29" class=""></td>
+			<td id="MPlayer-29" class=""></td>
+
+			<td id="DirectVobSub-29" class="yes" title="1"></td>
+			<td id="ffdshow-29" class=""></td>
+		</tr>
+		<tr>
+			<th>Accept dots instead of commas in timestamps <a class="ref" href="http://ale5000.altervista.org/#f3">[F3]</a></th>
+			<td id="MPC-old-30" class=""></td>
+			<td id="MPC-30" class=""></td>
+			<td id="MPC-HC-30" class="yes" title="1"></td>
+			<td id="VLC-old-30" class=""></td>
+			<td id="VLC-stable-30" class="yes" title="1"></td>
+			<td id="VLC-branch-30" class="yes" title="1"></td>
+			<td id="VLC-trunk-30" class="yes" title="1"></td>
+			<td id="KMPlayer-30" class="yes" title="1"></td>
+			<td id="dummy1-30" class=""></td>
+			<td id="BS.Player-30" class=""></td>
+			<td id="MPlayer-30" class=""></td>
+
+			<td id="DirectVobSub-30" class="yes" title="1"></td>
+			<td id="ffdshow-30" class=""></td>
+		</tr>
+		<tr>
+			<th>Display a sub. line when seeking in the middle of it</th>
+			<td id="MPC-old-31" class=""></td>
+			<td id="MPC-31" class=""></td>
+			<td id="MPC-HC-31" class="yes" title="1"></td>
+			<td id="VLC-old-31" class=""></td>
+			<td id="VLC-stable-31" class=""></td>
+			<td id="VLC-branch-31" class=""></td>
+			<td id="VLC-trunk-31" class="noo" title="0"></td>
+			<td id="KMPlayer-31" class=""></td>
+			<td id="dummy1-31" class=""></td>
+			<td id="BS.Player-31" class=""></td>
+			<td id="MPlayer-31" class=""></td>
+
+			<td id="DirectVobSub-31" class=""></td>
+			<td id="ffdshow-31" class=""></td>
+		</tr>
+
+		<tr style="font-weight: bold;">
+			<td class="points-label">Points</td>
+			<td id="MPC-old-points" class="good"><script type="text/javascript">document.write(calculatePoints("MPC-old"));</script>16.9/20</td>
+			<td id="MPC-points" class="good"><script type="text/javascript">document.write(calculatePoints("MPC"));</script>20.9/25</td>
+			<td id="MPC-HC-points" class="good"><script type="text/javascript">document.write(calculatePoints("MPC-HC"));</script>27.4/32</td>
+			<td id="VLC-old-points" class="bad"><script type="text/javascript">document.write(calculatePoints("VLC-old"));</script>2/20</td>
+			<td id="VLC-stable-points" class="good"><script type="text/javascript">document.write(calculatePoints("VLC-stable"));</script>18.4/31</td>
+			<td id="VLC-branch-points" class="good"><script type="text/javascript">document.write(calculatePoints("VLC-branch"));</script>21.4/31</td>
+			<td id="VLC-trunk-points" class="good"><script type="text/javascript">document.write(calculatePoints("VLC-trunk"));</script>24.7/32</td>
+			<td id="KMPlayer-points" class="bad"><script type="text/javascript">document.write(calculatePoints("KMPlayer"));</script>15.3/31</td>
+			<td id="dummy1-points" class="bad"><script type="text/javascript">//document.write(calculatePoints("dummy1"));</script></td>
+			<td id="BS.Player-points" class="bad"><script type="text/javascript">document.write(calculatePoints("BS.Player"));</script>8/19</td>
+			<td id="MPlayer-points" class="bad"><script type="text/javascript">document.write(calculatePoints("MPlayer"));</script>1/19</td>
+
+			<td id="DirectVobSub-points" class="good"><script type="text/javascript">document.write(calculatePoints("DirectVobSub"));</script>26.1/31</td>
+			<td id="ffdshow-points" class="medium"><script type="text/javascript">document.write(calculatePoints("ffdshow"));</script>15.25/25</td>
+			<td id="WMP-points" class="bad"><script type="text/javascript">document.write(calculatePoints("WMP"));</script>-1/1</td>
+		</tr>
+		<tr style="font-weight: bold;">
+			<td class="line-label-other">Bugs detected by SubRip subtitles bug tester</td>
+			<td id="MPC-old-bugs" class="good">0/5</td>
+			<td id="MPC-bugs" class="good">0/5</td>
+			<td id="MPC-HC-bugs" class="good">0/5</td>
+			<td id="VLC-old-bugs" class="bad">2/5 <a class="ref" href="http://ale5000.altervista.org/#b1">[B1]</a></td>
+			<td id="VLC-stable-bugs" class="good">0/5</td>
+			<td id="VLC-branch-bugs" class="good">0/5</td>
+			<td id="VLC-trunk-bugs" class="good">0/5</td>
+			<td id="KMPlayer-bugs" class="medium-high">1/5 <a class="ref" href="http://ale5000.altervista.org/#b2">[B2]</a></td>
+			<td id="dummy1-bugs" class=""></td>
+			<td id="BS.Player-bugs" class=""></td>
+			<td id="MPlayer-bugs" class="good">0/5</td>
+
+			<td id="DirectVobSub-bugs" class="good">0/5</td>
+			<td id="ffdshow-bugs" class="good">0/5</td>
+			<td id="WMP-bugs" class="na"></td>
+			<!-- Test if the player don't work with: Unix line endings, Wrong index number, Subtitles starting at 00:00:00,000, Files without newlines at the end, Only one subtitle line -->
+		</tr>
+		<tr>
+			<td class="line-label-other">Read subs inside a OpenDML AVI (GAB2)</td>
+			<td class="yes"> <a class="ref" href="http://ale5000.altervista.org/#r4">[4]</a></td>
+			<td class="yes"><!-- <a class="ref" href="#r4">[4]</a>--></td>
+			<td class="yes"></td>
+			<td class="noo"></td>
+			<td class="noo"></td>
+			<td class="noo"></td>
+			<td class="yes"></td>
+			<td class="medium-low">Broken <a class="ref" href="http://ale5000.altervista.org/#r9">[9]</a> <a class="external" href="http://anonymz.com/?http://forums.kmplayer.com/forums/showthread.php?t=15885" rel="external nofollow noreferrer">[BUG]</a></td>
+			<td id="dummy1-subs_opendml_avi" class=""></td>
+			<td class="noo"></td>
+			<td class="noo"></td>
+
+			<td class="yes"> <a class="ref" href="http://ale5000.altervista.org/#r3">[3]</a></td>
+			<td class="yes"></td>
+			<td class="noo"></td>
+		</tr>
+		<tr>
+			<td class="line-label-other">Read subs inside an AVI 1.0 (GAB2)</td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class="yes"></td>
+			<td class=""></td>
+			<td id="dummy1-subs_legacy_avi" class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+
+			<td class="yes"> <a class="ref" href="http://ale5000.altervista.org/#r3">[3]</a></td>
+			<td class=""></td>
+			<td class="noo"></td>
+		</tr>
+		<tr>
+			<td class="line-label-other">Show the name of subtitle tracks in AVI</td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class="yes"></td>
+			<td class=""></td>
+			<td class="medium">Partial</td>
+			<td class="medium">Partial</td>
+			<td class="yes"></td>
+			<td class="noo"></td>
+			<td id="dummy1-track_name_avi" class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+
+			<td class="yes"></td>
+			<td class="yes"></td>
+			<td class="noo"></td>
+		</tr>
+		<tr>
+			<td class="line-label-other">Show the UTF-16LE name of sub. tracks in AVI</td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+			<td class="medium-high">99% Yes <a class="external" href="https://trac.videolan.org/vlc/ticket/3271">[BUG]</a></td>
+			<td class=""></td>
+			<td id="dummy1-track_name_utf16_avi" class=""></td>
+			<td class=""></td>
+			<td class=""></td>
+
+			<td class=""></td>
+			<td class=""></td>
+			<td class="noo"></td>
+		</tr>
+		<tr>
+			<td><span class="notes-label">Notes</span><br><span class="notes-label-comment">(The quality refers to the readability of the text)</span></td>
+			<td id="MPC-old-notes" class="good"><a class="color" href="http://ale5000.altervista.org/other/MPC_subtitles.png">Good quality</a></td>
+			<td id="MPC-notes" class="good"><a class="color" href="http://ale5000.altervista.org/other/MPC_subtitles.png">Good quality</a></td>
+			<td id="MPC-HC-notes" class="good">Good quality</td>
+			<td id="VLC-old-notes" class="bad">Bad quality</td>
+			<td id="VLC-stable-notes" class="bad"><a class="color" href="http://ale5000.altervista.org/other/VLC_subtitles.png">Bad quality</a></td>
+			<td id="VLC-branch-notes" class="bad">Bad quality</td>
+			<td id="VLC-trunk-notes" class="good">Good quality<br></td>
+			<td id="KMPlayer-notes" class="bad">New lines lost<br>sometimes <a class="external" href="http://anonymz.com/?http://forums.kmplayer.com/forums/showthread.php?t=15890" rel="external nofollow noreferrer">[BUG]</a></td>
+			<td id="dummy1-notes" class=""></td>
+			<td id="BS.Player-notes" class="bad"><strong>CUT SUBS</strong></td>
+			<td id="MPlayer-notes" class=""></td>
+
+			<td id="DirectVobSub-notes" class="medium-high"><a class="color" href="http://ale5000.altervista.org/other/DirectVobSub_subtitles.png">Almost<br>good quality</a></td>
+			<td id="ffdshow-notes" class="bad"><a class="color" href="http://ale5000.altervista.org/other/ffdshow_subtitles.png">Bad quality</a>,<br>default size<br>badly handled</td>
+			<td id="WMP-notes" style="text-align: center;">&lt;o_o&gt;</td>
+		</tr>
+	</tbody></table><br>
+
+	<script type="text/javascript">
+	<!--
+	//addStyleToAll("dummy1", "background-color: black;")
+	//-->
+	</script>
+
+	<div><a id="test" href="http://ale5000.altervista.org/other/SubRip_subtitles_capability_tester.zip">SubRip subtitles capability tester 1.3o by ale5000</a></div>
+	<div><a href="http://ale5000.altervista.org/other/Tester_for_overlapped_subtitles_in_SubRip_subtitles.zip">Tester for overlapped subtitles in SubRip subtitles 1.2 by ale5000</a></div>
+	<div><a href="http://ale5000.altervista.org/other/Tester_for_dots_instead_of_commas_in_timestamps.zip">Tester for dots instead of commas in timestamps 1.0 by ale5000</a></div>
+	<div><a href="http://ale5000.altervista.org/other/SubRip_subtitles_bug_tester.zip">SubRip subtitles bug tester by ale5000</a></div>
+	<div><a href="http://ale5000.altervista.org/other/SubRip_subtitles_bug_tester_ALTERNATIVE.zip">SubRip subtitles bug tester ALTERNATIVE 1.3b by ale5000</a></div>
+	<div><a href="http://ale5000.altervista.org/other/Font_face_capability_tester.zip">Font face capability tester 1.1e by ale5000</a></div>
+	<br>
+
+	<div class="ref-text"><span id="a" class="ref">[a]</span> It isn't a player but it allow to insert subtitles in the video track on the fly for players that don't support subtitles</div>
+	<div class="ref-text"><span id="x" class="ref">[*]</span> Example: <span style="color: blue;">&lt;font color=#ff0000&gt;&lt;/font&gt;</span> or <span style="color: blue;">&lt;font color="ff0000"&gt;&lt;/font&gt;</span> instead of <span style="color: blue;">&lt;font color="#ff0000"&gt;&lt;/font&gt;</span></div>
+	<div class="ref-text"><span id="xx" class="ref">[**]</span> If the parser find a &gt; without first encounter a &lt; (not already part of other &lt; &gt; couples) it is considered as text. If the parser find a &lt; and then another &lt; then re-consider the first as text</div>
+	<div class="ref-text"><span id="xxx" class="ref">[***]</span> This case: <span style="color: blue;">&lt;font color="#00FF00" size="6"&gt;This could be the &lt;font size="35"&gt;m&lt;font color="#000000"&gt;o&lt;/font&gt;st&lt;/font&gt; difficult thing to implement&lt;/font&gt;</span></div>
+	<br>
+
+	<div class="ref-text"><span id="r0" class="ref">[0]</span> It isn't supported when subtitles are inside a Multipart OpenDML AVI</div>
+	<div class="ref-text"><span id="r1" class="ref">[1]</span> <a class="external2" href="http://www.kmplayer.com/forums/showthread.php?t=15894" rel="external nofollow noreferrer">[BUG]</a> The presence of "display coordinates" cause the player to recognize timings as text</div>
+	<div class="ref-text"><span id="r2" class="ref">[2]</span> Fourth text has moved at 00:00:45 of "SubRip subtitles capability tester by ale5000", this also fail: "Tester for overlapped subtitles in SubRip subtitles by ale5000"</div>
+	<div class="ref-text"><span id="r3" class="ref">[3]</span> It doesn't work when it is set to "Load when needed"</div>
+	<div class="ref-text"><span id="r4" class="ref">[4]</span> It cause a runtime error in the ANSI build, it is OK in the UNICODE build</div>
+	<div class="ref-text"><span id="r5" class="ref">[5]</span> It is unable to display this color: #000000 (It should be black)</div>
+	<div class="ref-text"><span id="r8" class="ref">[8]</span> <a class="external2" href="https://trac.videolan.org/vlc/ticket/3229">[BUG #3229]</a> Look at 00:00:14 of "SubRip subtitles capability tester by ale5000", I have tried many times and the behaviour is random, sometime the text doesn't appear at all and sometimes it have a random character at the bottom</div>
+	<div class="ref-text"><span id="r9" class="ref">[9]</span> <a class="external2" href="http://www.kmplayer.com/forums/showthread.php?t=15885" rel="external nofollow noreferrer">[BUG]</a> Multiple subtitles tracks are mixed (when you move the video forward and backward it display a different subtitles track)</div>
+	<div class="ref-text"><span id="r10" class="ref">[10]</span> It breaks the line</div>
+	<div class="ref-text"><span id="r11" class="ref">[11]</span> If you change the default font of the player, it isn't used in the case a subtitle choose a font that doesn't exist on the system, example: &lt;font face="Non-existent font"&gt;Text&lt;/font&gt;</div>
+	<div class="ref-text"><span id="r12" class="ref">[12]</span> Underline and strikethrough cannot be combined</div>
+	<br>
+
+	<div class="ref-text"><span id="b1" class="ref">[B1]</span> Fail with: <span style="color: red;">Subtitles starting at 00:00:00,000</span>, <span style="color: red;">Files without newlines at the end</span></div>
+	<div class="ref-text"><span id="b2" class="ref">[B2]</span> Fail with: <span style="color: red;">Only one subtitle line</span></div>
+
+	<br><hr><br>
+
+	<div class="ref-text"><span id="f1" class="ref">[F1]</span> Display coordinates (subtitle box pixel coordinates):</div>
+		<div class="code" style="width: 420pt;">
+			Subtitle index number<br>
+			Start time --&gt; End time&nbsp;&nbsp;X1:Position left X2:Position right Y1:Position up Y2:Position down<br>
+			Text of subtitle (one or more lines)<br>
+			Blank line
+		</div>
+		&nbsp;<strong>Example:</strong><br>
+		<div class="code" style="width: 420pt;">
+			1<br>
+			00:00:02,001 --&gt; 00:00:16,001&nbsp;&nbsp;X1:000 X2:000 Y1:050 Y2:100<br>
+			Let us have some! Let us have some!<br><br>
+		</div>
+		<br>
+		<div style="font-weight: bold;">
+			Info:<br>
+			X1: Subtitle corner X coordinate in pixels (left)<br>
+			Y1: Subtitle corner Y coordinate in pixels (up)<br>
+			X2: Subtitle corner X coordinate in pixels (righ)<br>
+			Y2: Subtitle corner Y coordinate in pixels (down)
+		</div>
+		<br><br>
+
+	<div class="ref-text"><span id="f2" class="ref">[F2]</span> HTML tags:</div>
+		&nbsp;1) Closed tags are hidden (both supported and unsupported/invalid), <span style="color: green;">closed tags:</span> <span style="color: blue;">&lt;i&gt;&lt;/i&gt;</span> and <span style="color: blue;">&lt;gggg&gt;&lt;/gggg&gt;</span><br>
+		&nbsp;2) Tags NOT opened are showed as text and ignored (both supported and unsupported/invalid), <span style="color: green;">tags NOT opened:</span> <span style="color: blue;">&lt;/i&gt;</span> and <span style="color: blue;">&lt;/gggg&gt;</span><br>
+		&nbsp;3) Tags NOT closed (<span style="color: blue;">&lt;i&gt;</span> and <span style="color: blue;">&lt;gggg&gt;</span>):
+		<ul>
+		<li>Supported tags are hidden and they do what they should do (since some subtitles may incorrectly have html tags not closed), so this include only: &lt;b&gt; &lt;i&gt; &lt;u&gt; &lt;s&gt; &lt;font&gt;</li>
+		<li>Unsupported/invalid tags are showed as text (because they aren't closed)</li>
+		</ul>
+
+		&nbsp;<strong>This:</strong><br>
+		<div class="code">
+			1<br>
+			00:00:02,001 --&gt; 00:00:16,001<br>
+			&lt;s&gt;Both line should be strikethrough<br>
+			but the wrong closing tag should be showed&lt;/b&gt;
+		</div><br>
+
+		&nbsp;<strong>Should be displayed like this:</strong><br>
+		<div class="code" style="text-decoration: line-through;">
+			Both line should be strikethrough<br>
+			but the wrong closing tag should be showed&lt;/b&gt;
+		</div><br>
+		&nbsp;Look from 00:01:00 to 00:01:08 of "SubRip subtitles capability tester by ale5000"<br><br><br>
+
+	<div class="ref-text"><span id="f3" class="ref">[F3]</span> Accept dots instead of commas in timestamps, although the correct one is comma, some subtitles may incorrectly use dots.</div>
+		&nbsp;<strong>Example:</strong><br><div class="code">1<br>00:04:55.379 --&gt; 00:04:58.006<br>Text</div><br>
+</div>
+
+<div class="footer">
+	<div id="mobile-text"></div>
+</div>
+
+<div class="quantcast">
+	<script type="text/javascript">
+	<!--
+	SiteFunctions.Statistics.Quantcast();
+	//-->
+	</script>
+	<noscript><div class="hidden"><img width="1" height="1" src="//pixel.quantserve.com/pixel/p-NMemgGWHALGUT.gif" alt="Quantcast"></div></noscript>
+</div>
+
+
+
+</body></html>

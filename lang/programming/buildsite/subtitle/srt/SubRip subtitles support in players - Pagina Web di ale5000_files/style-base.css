@@ -1,0 +1,304 @@
+body
+{
+	margin: 0.46em;
+	padding: 0;
+	background: yellow;
+	color: red;
+}
+
+#small-screen-test
+{
+	text-align: left !important;
+	text-align: left;  /* Value will be 'left' on normal browsers, 'right' on mobile browsers */
+}
+
+table
+{
+	border-collapse: collapse;
+}
+
+table, th, td, img
+{
+	border: 1px none maroon;
+}
+
+/* Most browsers automatically define a TH tag as centered and bold by default but it isn't guaranteed */
+th
+{
+	text-align: left;
+	font-weight: bold;
+}
+
+th, td
+{
+	padding: 0 2px 0 2px;
+}
+
+address
+{
+	font-style: normal;
+}
+
+h1
+{
+	margin: 0;
+	font-size: 1.7em;
+	text-align: center;
+}
+
+h2, th.h2
+{
+	margin: 15px 0 15px 20px;
+	font-size: 1.2em;
+	color: green;
+}
+
+th.h2_a
+{
+	margin: 0 0 15px 20px;
+}
+
+th.h2, th.h2_a
+{
+	display: block;
+}
+
+/*
+http://javascript.info/tutorial/focus-blur
+http://meyerweb.com/eric/css/tests/css2/sec05-11-03.htm
+*/
+
+.link-style
+{
+	cursor: pointer;
+}
+
+a, .link-style
+{
+	outline-style: none;
+	text-decoration: none;
+}
+
+a, .link-style, .link-color
+{
+	color: blue;
+}
+
+/* If a selector isn't supported then the browser will drop the entire block so do NOT group selectors that aren't supported in old browsers. */
+a:focus, .link-style:focus
+{
+	color: green;
+}
+
+a:active, .link-style:active
+{
+	color: green;
+}
+
+a:hover, .link-style:hover
+{
+	text-decoration: underline;
+}
+
+/* No underline on images */
+a.no-undl-img:hover
+{
+	text-decoration: none;
+}
+
+a.no-undl-img span:hover
+{
+	text-decoration: underline;
+}
+
+a.grow:hover, a.menu-link:hover, a.menu-link-external:hover
+{
+	font-size: 1.05em;
+}
+
+
+a.small:hover
+{
+	font-size: 12px;
+}
+
+a.big:hover
+{
+	font-size: 17px;
+}
+
+a.big:hover
+{
+	font-size: 17px;
+}
+
+
+/***************************************************************************************************************************
+	Screen Readers and display none => http://juicystudio.com/article/screen-readers-display-none.php
+	1. Window-Eyes may ignore "display: none;" in some cases so also set "visibility: hidden;" to be sure.
+	2. JAWS may ignore "display: none;" if a span element is inside an anchor element, so don't insert span elements inside anchor elements.
+	Other links:
+		http://www.alistapart.com/articles/now-you-see-me/
+		http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+***************************************************************************************************************************/
+
+.hidden, #small-screen-test
+{
+	display: none;
+	visibility: hidden;
+	position: absolute;
+}
+
+.invisible, .dummy
+{
+	visibility: hidden;
+}
+
+/*
+.visually-hidden
+{
+	position: fixed;
+	left: -9999px;
+	top: auto;
+	margin: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+*/
+
+/*
+[dir="rtl"] .visually-hidden
+{
+	/ * Check IE 6 with dir=trl * /
+	position: absolute;
+	left: auto;
+	right: -9999px;
+}
+*/
+
+
+div.center, .google_ads, .altervista_ads
+{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.center
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-center
+{
+	text-align: center;
+}
+
+div.right
+{
+	text-align: right;
+}
+
+.vertical-center
+{
+	vertical-align: middle;
+}
+
+div.img-vertical-center img
+{
+	vertical-align: middle;
+}
+
+div.like-buttons, div.fb-like, div.stumbleupon-like, div.g-plusone, div.g-plusone-cont
+{
+	display: inline;
+}
+
+a.twitter-share-button
+{
+	display: none;
+	visibility: hidden;
+}
+
+table.border th, table.border td, span.border, div.border
+{
+	border-style: solid;
+}
+
+div.small, span.small, td.small
+{
+	font-size: 0.8em;
+}
+
+div.very-small, span.very-small, td.very-small
+{
+	font-size: 0.72em;
+}
+
+ul
+{
+	margin: 0;
+}
+
+/* IE compatiblity added inside style-ie.css */
+img.rounded-border
+{
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+/* IE compatiblity added inside style-ie.css */
+/*
+.inline-block
+{
+	display: -moz-inline-stack;
+	display: inline-block;
+}
+*/
+
+#mobile-text
+{
+	display: none;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+
+#footer-left
+{
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+}
+
+::-moz-selection
+{
+	background: blue;
+	color: yellow;
+}
+
+::-webkit-selection
+{
+	background: blue;
+	color: yellow;
+}
+
+::selection
+{
+	background: blue;
+	color: yellow;
+}
+
+/*
+http://caniuse.com/
+
+Colors:
+http://color-book.org/
+http://www.color-hex.com/
+http://palettebuilder.com/
+http://www.quackit.com/css/css_color_codes.cfm
+*/

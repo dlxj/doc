@@ -1,0 +1,91 @@
+/* 
+ * Altervista Toolbar
+ *
+ * Version: 1.0.0
+ */
+
+#av_toolbar_regdiv {
+	height: 40px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 100px;
+    z-index: 10001;
+}
+
+#av_toolbar_regdiv .tb-site {
+	position: relative !important;
+	line-height: 40px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: none !important;
+	text-transform: none !important;
+	}
+	
+#av_toolbar_regdiv .tb-site a,
+#av_toolbar_regdiv .tb-site a:hover,
+#av_toolbar_regdiv .tb-site a:focus,
+#av_toolbar_regdiv .tb-site a:active {   
+    display: inline-block !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 6px 0 4px !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+	/* reset */
+    background-color: transparent;
+	border: none !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-family: 'Lato-tb', sans-serif !important;
+	text-align: left !important;
+	letter-spacing: 0 !important;
+	text-decoration: none !important;
+	cursor: pointer !important;
+	text-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	text-transform: none !important;
+	outline: none !important;
+	font-smooth: auto !important;
+	-webkit-font-smoothing: auto !important;
+	-moz-osx-font-smoothing: auto !important;
+}
+
+#av_toolbar_regdiv .tb-site a:hover {
+	text-decoration: none !important;
+}
+
+#av_toolbar_regdiv .tb-site a:focus {
+	outline: none !important;
+}
+
+#av_toolbar_regdiv .tb-site a .circle {
+    display: block;
+    width: 22px;
+	height: 22px;
+	margin: 2px 5px 0 0;
+	padding: 0;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	line-height: 22px;
+	text-align: center;
+	-webkit-transition: background 0.2s ease-in-out 0s;
+	transition: background 0.2s ease-in-out 0s;
+}
+
+#av_toolbar_regdiv .tb-site a:hover .circle {
+	border-color: transparent !important;
+}
+
+#av_toolbar_regdiv .tb-site a .circle .tb-icons:before {
+	line-height: 22px;
+}

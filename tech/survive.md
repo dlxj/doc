@@ -15,6 +15,8 @@
 - **Mathematica**
 
   > [Computational Linguistics](https://community.wolfram.com/content?curTag=computational linguistics)
+  > 翻译多语字幕，标注单词音标语法、上传B 站
+
 
 ## pure function 移值
 
@@ -94,6 +96,20 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 # APP开发
 
+## 网课
+
+### Lebus
+
+- [技术主页](https://juejin.im/user/5cbd3f35e51d456e8240dcf1)
+- [cctalk 网课](https://m.cctalk.com/inst/s9vfhehl)  
+- 2020更新**SwiftUI-iOS13+Swift5.1+Xcode11** 跟Lebus学iOS开发-进阶版
+  - [试听](https://www.bilibili.com/video/av56005269)
+  - [get set](https://www.bilibili.com/video/av56005269?p=3) 函数
+    - remain2 // 回调get 函数，返回当前余额
+    - remain2 = 7000  // 回调set 函数，相要余额是7000 ，打印买不买得起iphone ，还是只能买小米
+      - 赋值是真赋值 内部的newVule 就是新值，但是get 又可以返回别的东西，不返回newVule 
+      - 所以set 的时侯就是一种希望，如果它是这个值会怎么样的逻辑，只是打印买得起或买不起
+
 > [Ass字幕上下标](ASS字幕（ae字幕-Aegisub）制作数学符号中的上下角标https://www.jianshu.com/p/b027c364def5)
 >
 > [VLC IOS开源播放器](https://github.com/videolan/vlc-ios)
@@ -145,12 +161,11 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 # Bilibili网课
 
-> 2020更新**SwiftUI-iOS13+Swift5.1+Xcode11** 跟Lebus学iOS开发-进阶版（永久更新
-> https://www.bilibili.com/video/av56005269
+> 
 > React Hooks 技术胖
 > https://www.bilibili.com/video/av63409044
->
-> xcode+swiftui+metal+sprite kit
+> 
+>xcode+swiftui+metal+sprite kit
 
 # 文件同步
 
