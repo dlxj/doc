@@ -6,3 +6,7 @@
 
 accents are not a problem if they are understandable
 
+
+
+I had to be in a root shell for it work!
+

@@ -10,6 +10,43 @@
 >
 > [小众软件 IPFS图书](https://meta.appinn.net/t/ipfs-i-book-in/14123)
 
+# 快速原型开发
+
+- **Mathematica**
+
+## pure function 移值
+
+- **Haskell**
+
+### 跨平台移值
+
+- **C++**
+
+# DATA
+
+## Mac
+
+### mac mount iPhone as drive
+
+- [How can I mount an iPhone as a drive on OS X](https://superuser.com/questions/465394/how-can-i-mount-an-iphone-as-a-drive-on-os-x)
+
+mac mount Android as drive
+
+- **Syncthing** 是一款开源的点对点文件同步工具，可以运行在 Linux、Windows、Mac、Android 和其他（抱歉，没有iOS）
+
+- SyncMate Expert
+
+- > **Create a FTP/SSH server on Android and mount the server on OS X**. See [Map FTP server as a (local) drive in Finder](http://superuser.com/q/149385), [mount_ftp -- mount a FTP filesystem](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/mount_ftp.8.html). In Linux, one can use `curlftpfs`, but it seems not to be available for OS X. But anyway, you got the idea.
+- >  **[USB Mass Storage Enabler](http://forum.xda-developers.com/android/apps-games/app-universal-mass-storage-enabler-beta-t3240097)** (This is an app that can mount the memory card in UMS mode, created by me)
+
+## Android
+
+> On Android 6, the following worked for me:
+Enable developer options (settings > about phone > keep tapping on 'build number')
+Settings > Developer options > Networking > Select USB Configuration > MTP (if it's already on MTP, switch to something else, then switch back to MTP).
+
+
+
 # 建站
 
 ## 腾讯云
@@ -187,7 +224,7 @@ sslocal -c /path/to/shadowsocks.json
 
 ## proxychains 命令行代理
 
-[proxychains](https://github.com/haad/proxychains)
+[proxychains-ng](https://github.com/rofl0r/proxychains-ng)
 
 ### 全局配置文件
 
@@ -204,10 +241,6 @@ sslocal -c /path/to/shadowsocks.json
   > 只要本地1080端口的 socks5 客户端代理连接远程SS 正常，
   >
   > 就能下载到youtube 的前端代码
-
-
-
-
 
 
 
