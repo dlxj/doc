@@ -14,6 +14,8 @@
 
 - **Mathematica**
 
+  > [Computational Linguistics](https://community.wolfram.com/content?curTag=computational linguistics)
+
 ## pure function 移值
 
 - **Haskell**
@@ -27,6 +29,8 @@
 ## Mac
 
 ### mac mount iPhone as drive
+
+- # iExplorer
 
 - [How can I mount an iPhone as a drive on OS X](https://superuser.com/questions/465394/how-can-i-mount-an-iphone-as-a-drive-on-os-x)
 
