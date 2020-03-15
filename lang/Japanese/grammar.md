@@ -7,6 +7,9 @@
 * [格](../格.md) 
 * [markdown](http://xianbai.me/learn-md/)  
 
+音节  拍(时值)  
+
+
 0 调是平调55  一声  
 2 调是降调51  四声  
 
