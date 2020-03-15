@@ -96,6 +96,14 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 # APP开发
 
+## 测试
+
+- **免费的的苹果开发者，必须提供爱思助手安装，无法扫码安**[装](2020最新苹果App真机调试测试详细教程)
+
+- 测试证书
+
+  > iOS证书申请这里用到一个工具Appuploader，可以在win系统中辅助快速申请iOS证书，不用Mac钥匙串助手，直接得到p12.mobileprovision ios证书文件，直接拿去打包IPA！很方便很快的创建iOS推送证书
+
 ## 网课
 
 ### Lebus
