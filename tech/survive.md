@@ -55,20 +55,39 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 # 建站
 
+- echodict.com
+
+  > Namesilo 域名注册
+  >
+  > cloudflare 域名解析
+  
+    - DNS、CDN 配置
+  
+  [全站HTTPS已启用](https://www.spiritdemon.com/tag/cloudflare/)
+  
+- voicetube.com
+
 ## 腾讯云
 
 [腾讯云qq 1234](https://cloud.tencent.com/ qq 1234) 
 
 ## Namesilo 域名注册
 
+### DNS 解析
+
+**方式一：A + A**
+
+- **第一条：**HOSTNAME：空，ADDRESS：主机 IP，TTL：3600
+- **第二条：**HOSTNAME：www，ADDRESS：主机 IP ，TTL：3600
+
 [Namesilo 域名注册](最便宜的国外域名注册商是Namesilo，主机不占优势，毕竟公司才成立不到10年，适合大量注册域名，可以省下不少资金。一站式国外域名注册商是Wealthyaffiliate，即富裕者联盟，或简称WA；成为它家会员可以享受一站式服务，你建立网站的各方面全都准备好了，只需要您花点时间学习下而已，当然前提是你英文要过关哟，因为WA平台上有全球各国的人士在上面，社区很热心，只要你有问题，留言一下，或者在线聊天，很快就有答复)
 
+> [在线ping 站长之家](http://ping.chinaz.com/)
 > [服务器运维](https://github.com/chengziqaq/Ubuntu-xfce-VNC)  
->
 > [[Fiddler抓包 网络crawler](https://www.52pojie.cn/thread-1124180-1-1.html)]
->[hostwinds 主机](hostwinds.com)
+> [hostwinds 主机](hostwinds.com)
 > [Colab自动重连](https://zhuanlan.zhihu.com/p/100871755)
->[MMA截图和控制鼠标](https://zhuanlan.zhihu.com/p/33361062)
+> [MMA截图和控制鼠标](https://zhuanlan.zhihu.com/p/33361062)
 > [Blender Python2D动画](用Blender来学习Python创意编程，实现傅里叶级数可视化https://zhuanlan.zhihu.com/p/92267080)
 
 ## 不备案域名
@@ -93,6 +112,8 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 > [HTTP 缓存](https://zhuanlan.zhihu.com/p/59150268)
 >
 > **electron专家** https://newsn.net/category/electron/1/
+>
+> [RNStudyNotes](https://github.com/crazycodeboy/RNStudyNotes)
 
 # APP开发
 
