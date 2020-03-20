@@ -34,7 +34,7 @@ Sequence
 
 
 
-## Thread
+## Thread 组合
 
 Thread
 
@@ -47,6 +47,34 @@ Thread
 MapIndexed
 
 > 带索引的Map，数据在列表中的位置信息以第二参给出
+
+
+
+## Lookup
+
+### Lookup 配合Association 使用
+
+```
+(* 取某列的所有数据 *)
+table = {
+   <|a -> 1, b -> 2|>,
+   <|a -> 3, b -> 1|>,
+   <|a -> 4, b -> 3|>
+   };
+Lookup[<|a -> 1, b -> 2|>, a]
+{1, 3, 4}
+```
+
+
+
+## 参数检查和错误处理
+```
+  rsqrt[x_] /; If[TrueQ[x >= 0], True, Message[rsqrt::nnarg, x]; False] := Sqrt[x]
+  rsqrt::nnarg = "The argument `1` is not greater than or equal to zero.";
+  (*占位符 `1`*)
+```
+>如果参数不符合条件Message 会打印一条红色的消息。/; 遇到False 模式配配失败后面的代码不会执行 
+  但是没有终止程序，除非用 Throw@ $Failed; Abort[]; 
 
 
 
@@ -244,15 +272,7 @@ Round
 
   给出最接近的整数(五舍，五点一入)
 
-参数检查和错误处理
 
-  rsqrt[x_] /; If[TrueQ[x >= 0], True, Message[rsqrt::nnarg, x]; False] := Sqrt[x]
-
-  rsqrt::nnarg = "The argument `1` is not greater than or equal to zero."; (*占位符 `1`*)
-
-  如果参数不符合条件Message 会打印一条红色的消息。/; 遇到False 模式配配失败后面的代码不会执行 
-
-  但是没有终止程序，除非用 Throw@ $Failed; Abort[]; 
 
 
 
