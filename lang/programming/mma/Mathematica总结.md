@@ -90,6 +90,14 @@ Block
 
 
 
+## 运行外部程序
+
+```
+RunProcess[{"ffmpeg"},ProcessEnvironment -> <|"PATH" ->"/usr/local/bin/"|>]
+```
+
+
+
 ## TTS 时高亮文本
 
 (*
