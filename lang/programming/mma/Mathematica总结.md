@@ -1,0 +1,549 @@
+[TOC]
+
+# Mathematica总结
+
+
+
+## Mathematica 黑魔法：查看内部函数定义
+
+GeneralUtilities`PrintDefinitions[BinLists]
+
+
+
+## Nothing Null None
+
+1. **Nothing** 
+
+    > 被替换成Nothing 的东西会被自动删除
+
+2. **Null** 
+
+    > 可以作为函数的返回值，然后调用者用来进行逻辑判断 
+
+3. **None** 
+   
+    > 是用在Option 里的东西，Option 可以理解成一组默认参数
+
+
+
+## Sequence
+
+Sequence
+
+> 表达式要返回多个值，又不想装在List 里面，可以用Sequence[x, y]
+
+
+
+## Thread
+
+Thread
+
+> 有将两样东西组合起来的能力
+
+
+
+## MapIndexed
+
+MapIndexed
+
+> 带索引的Map，数据在列表中的位置信息以第二参给出
+
+
+
+##  中缀表达式
+
+> list  ~ Take  ~ 5
+
+## 字符串格式化 StringTemplate
+
+> StringTemplate["first `a` then `b`"][<|"a" -> 1234, "b" -> 5678|>]
+
+
+
+## TrueQ MatchQ ContainsAny
+
+## HoldComplete Unevaluated
+
+
+
+## Block 
+
+Block
+
+> 里面可以临时修改系统变量的值，这之后函数的行为会受到影响
+
+
+
+## 文件和目录
+
+### DirectoryName
+
+完整路径的目录部分
+
+### FileBaseName
+
+文件名去掉扩展名的部分
+
+### FileExtension
+
+扩展名部分
+
+
+
+## TTS 时高亮文本
+
+(*
+
+Highlight and speak each substring
+
+TTS 时高亮文本
+
+*)
+
+lst = {"Ooops!", "there", "are", "errors"};
+
+Monitor[Do[Speak[lst[[i]]]; Pause[0.8], {i, Length[lst]}],
+
+ Row[MapAt[Style[#, CMYKColor[0, 0.4, 1, 0]] &, lst, 
+
+  If[IntegerQ[i], i, 1]], " "]]
+
+SpokenString
+
+## 数学公式的文字表达
+
+$Version
+
+  返回版本号
+
+$SystemID
+
+  返回OS 信息
+
+?Head 
+
+  返回帮助
+
+% 
+
+  上一个输出结果
+
+%% 
+
+  上上个输出结果
+
+Head
+
+  返回变量类型
+
+TextString
+
+   任意表达式转String 
+
+@
+
+  Prefix 前缀，优先级很高
+
+  会把后面所有的东西用括号括起来
+
+@@
+
+  Apply 是换头术, 把原来的Head 全部换成另一个Head
+
+  f@@{1,2} List[1,2] 中的List 被替换为f
+
+@@@
+
+  Level 1 处换头, {} 最外这一层是Level 0, 里面在加几个List, 这些List 就是Level 1
+
+\#
+
+   \#1 的别名，第一参 
+
+\#n
+
+  \#1, #2, #3 第一二三参
+
+\#0 
+
+  函数本身
+
+#name
+
+  命名参数是和“联合” (Association)结构一起用的，#name 是 #1[“name"] 的简写。
+
+  这会通过name 对Association 进行取值
+
+  #x &[<|"x" -> a, "y" -> b|>] 输出 a 
+
+\##
+
+  函数所有参数的序列(Sequence) 
+
+ \##n 
+
+  从第n 个起到最后一个，函数所有参数的序列(Sequence)   
+
+```
+1
+```
+
+  Massage函数的占位符，详见StringTemplate 
+
+Case
+
+  DLLTable = {"MacOSX-x86-64" -> {FileNameJoin[{$InstallationDirectory, 
+
+   "SystemFiles", "Links", "MP3Tools", "LibraryResources", 
+
+   "MacOSX-x86-64"}]}}
+
+  dlls = Cases[DLLTable, ($SystemID -> l_) :> l]
+
+  匹配Pattern，抽出成功匹配的各元素   
+
+Sow Reap
+
+  Reap[Sow[x]] (* {表达式返回值, {收集到的东西放这}} *)
+
+  播种，收割  
+
+First Rest
+
+GatherBy TakeWhile 
+
+Prepend Append AppendTo 
+
+Block Module With 
+
+Catch Throw  
+
+  TesseractToolsImpl.m 
+
+GatherBy
+
+  GatherBy[{1, 2, 3, 4, 5}, OddQ] （*奇数分一组，偶数分一组*）
+
+  GatherBy[{{a, 1}, {b, 1}, {a, 2}, {d, 1}, {b, 3}}, First] (*第一部分相等的分在同一组*)
+
+  按元素的属性分组，聚类。GatherBy 实际上就是用你给的一个函数Map 进去，比较输出值，相等的分在同一组。 
+
+Ceiling
+
+  上取整 
+
+Round
+
+  给出最接近的整数(五舍，五点一入)
+
+参数检查和错误处理
+
+  rsqrt[x_] /; If[TrueQ[x >= 0], True, Message[rsqrt::nnarg, x]; False] := Sqrt[x]
+
+  rsqrt::nnarg = "The argument `1` is not greater than or equal to zero."; (*占位符 `1`*)
+
+  如果参数不符合条件Message 会打印一条红色的消息。/; 遇到False 模式配配失败后面的代码不会执行 
+
+  但是没有终止程序，除非用 Throw@ $Failed; Abort[]; 
+
+
+
+Scan
+
+   p.112 Power Programming With Mathematica 
+
+  Scan[Print, {1, 2}] 函数本身没有返回值，函数有副作用。除这两点外和Map 一样 
+
+  (*利用Scan 的副作用实现计数*)
+
+  data =Table[Random[],{100}]; (*一百个包含0～1之间的实数List*)
+
+  hint = Table[0,{5}] (* List[0,0,0,0,0] *)
+
+  Scan[ hint[[Ceiling[# 5]]]++&, data ]
+
+  (*Ceiling[5 #] 5 * 0~1之间的实数，得到0~5 之间的实数，Ceiling 上取整，得到0 ~ 5 之间的整数*)
+
+  (* a++ 先返回a, 然后a = a + 1*)
+
+  hint  
+
+  
+
+  myOddQ[x_] := ( Print["debug:" <> TextString@{x, OddQ[x]}]; OddQ[x] ) (*打印调试信息的小技巧*)
+
+  And @@ myOddQ /@ {1, 2, 3} (*Apply 替换Head, f@@{1,2} List[1,2] 中的List 被替换为f*)
+
+  Scan[If[myOddQ[#], True, Return[False] ] &, {1, 3, 5}] == Null 
+
+  (*Scan 除非主动Return 否则返回值是Null 利用这点进行逻辑判断*)  
+
+Throw and Catch 
+
+   p.117 Power Programming With Mathematica 
+
+  从内层循环返回Throw 
+
+  Catch 捕获？  
+
+TakeWhile
+
+sameQ :=(Length[#1 [Intersection] #2] == Length[ #1])&
+
+sameQ[{1,2,3}, {1,3,2}]
+
+用交集来判断集合是否相等？
+
+GeneralUtilities`PrintDefinitions[BinLists]
+
+Information[BinLists]
+
+??GeneralUtilities`*
+
+SetDirectory@NotebookDirectory[];
+
+Get@FileNameJoin[{(*ParentDirectory[]*)NotebookDirectory[],"std.wl"}];
+
+Names["Std`*"]
+
+(*Names["Std`Private`*"]*)
+
+(*??Std`bomFreeQ*)
+
+ScientificForm
+
+xx?AtomQ 原子表达式(不能在拆分成子表达式了) 
+
+ {{x1,x2},{x3,x4}}/.{x_?AtomQ,y_}->f[x,y]
+
+   {f[x1,x2],f[x3,x4]}
+
+
+{{2,2},{2,2}}/.x:{2..}:>(x/._Integer?(#==2&)->3)
+
+Cases[{1,2,"ab","cd",x,y},_String]
+
+(*closure 闭包, 内部含有记数器的函数*)
+
+add = Module[{y}, y = 0; Function[x, y = y + x]];
+
+add /@ {1, 2, 3}
+
+特殊键盘字符的表示
+
+  tutorial/StructuralElementsAndKeyboardCharacters
+
+RGBColor[0.952941, 0.67451, 0.227451, 1]
+
+teal blue 蓝绿色 w3.css https://[www.w3schools.com/w3css/default.asp](http://www.w3schools.com/w3css/default.asp)
+
+Tooltip 指针提示
+
+Quiet 安静，不要输出任何打印
+
+\#
+
+ pure function 的第一参
+
+\#0
+
+   代表纯函数本身
+
+\#n
+
+ 第n 参
+
+\#1,#2,#3
+
+   传入的第一参，第二参， ...
+
+  sameQ :=(Length[#1 \[Intersection] #2] == Length[ #1])& (* 用交集来判断集合是否相等？ *)
+
+  sameQ[{1,2,3}, {1,3,2}]
+
+用交集来判断集合是否相等？
+
+\##
+
+  SlotSequence
+
+  所有传入参数
+
+  \##&[a,b,c]
+
+​    Sequence[a,b,c]
+
+​      Sequence 类似 ___ (*0或多Sequence*)
+
+\##2
+
+   所有传入参数，略过第2 个之前的参数
+
+&
+
+   前面是一个匿名函数
+
+   &  的优先级非常低  
+
+Function[body]
+
+   等价于 body &
+
+   body的计算结果就是返回值
+
+   Function[{a,b..}, body]
+
+​    多参函数
+
+[[]]
+
+   see ?Part
+
+/@
+
+   Map[f, expr]
+
+   
+
+@@
+
+   see ?Apply
+
+@@@
+
+   Apply at level 1
+
+​     f @@@ {{a, b, c}, {d, e}}
+
+​     {f[a, b, c], f[d, e]}
+
+$
+
+   系统定义符号以大写字母或$ 开头。
+
+` 
+
+   指定精度
+
+​     5.0`4 ^ 73
+
+​     Precision
+
+/.
+
+   ReplaceAll   expr/.rules
+
+   applies a rule or list of rules in an attempt to transform each subpart of an expression expr. 
+
+   1 + x^2 + x^4 /. x^p_ -> f[p]
+
+   1 + f[2] + f[4]
+
+   
+
+/;
+
+   Condition   patt /; test
+
+   is a pattern which matches only if the evaluation of test yields True. 
+
+   (*Replace all elements which satisfy the condition of being negative:*)
+
+   {6, -7, 3, 2, -1, -2} /. x_ /; x < 0 -> w 
+
+===, =!=
+
+   SameQ, UnsameQ
+
+:->(*仅表示形状*)
+
+  ref/character/RuleDelayed
+
+  RuleDelayed (:>, :>)
+
+  输入：Esc + :> + Esc
+
+..
+
+  Repeated
+
+  (*pattern*)
+
+  重复1 或多
+
+... 
+
+  (*pattern*)
+
+  重复0或多次
+
+_
+
+  Blank
+
+  表示任意的一个表达式
+
+  symble_Head
+
+​    前面给出名字，后面给出类型
+
+__
+
+  BlankSequence
+
+  一个或多个表达式
+
+___
+
+  BlankNullSequence
+
+  0 或多
+
+Longest[p]
+
+  is a pattern object that matches the longest sequence consistent with the pattern p.
+
+  贪心匹配
+
+Shortest[p]
+
+  Shortest[__ ~~ "\n\n"]
+
+  is a pattern object that matches the shortest sequence consistent with the pattern p. 
+
+Optional (:)
+
+  f[x_, y_: 0] := {x, y}
+
+​    y 有一个默认值
+
+OptionsPattern
+
+OptionValue
+
+  有点类似特定命名空间下的枚举值
+
+<|...|>
+
+  Association
+
+   Hash表
+
+  represents an association between keys and values.
+
+_&
+
+  Array[_&,3] 
+
+   {_,_,_}
+
+ **howto/MapAFunctionOverAList**
+
+前缀形式还好，若想带多个参数，可以用Apply：Apply[f, {x, y}] 等价于f@@{x, y}，即f[x, y]。
+
+![img](file:///private/var/folders/99/5vf0fnyd50g5z50clhprr8jh0000gn/T/WizNote/2ac7f658-8759-4427-bf82-ba082b6edcdf/index_files/image.png)
+
+Table[Plot[Sin[ n x], {x, 0, 2 Pi}, ImageSize -> {150, 150}], {n, 1, 6}]
+
+![img](file:///private/var/folders/99/5vf0fnyd50g5z50clhprr8jh0000gn/T/WizNote/2ac7f658-8759-4427-bf82-ba082b6edcdf/index_files/image(1).png)
+
