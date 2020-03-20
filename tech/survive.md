@@ -4,6 +4,11 @@
 > 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
 > UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
 
+# MMA大佬
+
+> [李宣](https://lixuan.xyz/blog) [GIF MMA编码](https://lixuan.xyz/blog/2019-10-29/2276.html)
+> [苹果](http://chenminqi.github.io/)
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
@@ -193,6 +198,11 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 > category-theory-for-programmers
 > 编程中的数学-刘新宇
 > Elementary-Algorithms-and-Data structures-Larry LIU Xinyu
+> [《动手学深度学习》](https://github.com/d2l-ai/d2l-zh)
+    - 可运行的**Jupyter note**
+> 
+
+
 
 # 语音分析
 
