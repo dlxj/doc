@@ -126,6 +126,15 @@ RunProcess[{"ffmpeg"},ProcessEnvironment -> <|"PATH" ->"/usr/local/bin/"|>]
 
 
 
+## DataSet
+
+### 指定行列取值
+```
+dataset[3, "a"]
+```
+
+
+
 ## TTS 时高亮文本
 
 (*
@@ -365,7 +374,7 @@ RGBColor[0.952941, 0.67451, 0.227451, 1]
 
 teal blue 蓝绿色 w3.css https://[www.w3schools.com/w3css/default.asp](http://www.w3schools.com/w3css/default.asp)
 
-Tooltip 指针提示
+## Tooltip 指针提示
 
 Quiet 安静，不要输出任何打印
 
@@ -569,9 +578,161 @@ _&
 
 前缀形式还好，若想带多个参数，可以用Apply：Apply[f, {x, y}] 等价于f@@{x, y}，即f[x, y]。
 
-![img](file:///private/var/folders/99/5vf0fnyd50g5z50clhprr8jh0000gn/T/WizNote/2ac7f658-8759-4427-bf82-ba082b6edcdf/index_files/image.png)
 
-Table[Plot[Sin[ n x], {x, 0, 2 Pi}, ImageSize -> {150, 150}], {n, 1, 6}]
 
-![img](file:///private/var/folders/99/5vf0fnyd50g5z50clhprr8jh0000gn/T/WizNote/2ac7f658-8759-4427-bf82-ba082b6edcdf/index_files/image(1).png)
+## Span (;;)
 
+### 连续或不连续索引用于取值 
+
+
+
+
+
+SetDirectory[NotebookDirectory[]];
+j = Import[FileNameJoin[{$HomeDirectory,"/Documents/GitHub/ebmac/","tiny.json"}],"JSON", "Compact"->False]
+jj = Import[FileNameJoin[{$HomeDirectory,"/Documents/GitHub/ebmac/","guoyu.json"}],"RawJSON"];
+ass=Import["[Kamigami] Shoujo Shuumatsu Ryokou - 01 [1080p x265 AAC].ass","Text",CharacterEncoding->"UTF8"];
+(*终末少女的旅行中日字幕，诸神字幕组*)
+lines=StringSplit[ass,RegularExpression["(?m)^"]];  (*(?m)^换行符*)
+jps=Reap[lines /. x_String?(StringMatchQ[#,"Dialogue"~~__~~",TEXT-JP"~~__]& ):>(Sow[x]);Nothing]//Flatten;
+chs=Reap[lines /. x_String?(StringMatchQ[#,"Dialogue"~~__~~",TEXT-CN"~~__]& ):>(Sow[x]);Nothing]//Flatten;
+(* MMA 速查文档 https://mresources.github.io/tutorial/ *)
+(* MMA 建站代码 https://github.com/mresources/tutorial *)
+(* MMA 建站文档 https://www.wolframcloud.com/objects/b3m2a1.docs/BTools/ref/WebSiteBuild.html *)
+(* MMA 帮助文档快速生成 https://zhuanlan.zhihu.com/p/113333655 *)
+(* ASS SRT 字幕，音视频开发  https://www.cnblogs.com/tocy/ *)
+ (*让语句返回值为Nothing，然后存在List 里面的Nothing 就自已消失了*)
+(* MapIndexed 带index 的map 第一参： #1 列表元素，第二参： #2 { index } *)
+(* RegularExpression 正则表达式 *)
+(* 字符串格式化 StringTemplate *)
+(* AppExecute["ListPackages","BTools"]~Take~5 https://github.com/b3m2a1/mathematica-BTools/wiki/BasicUsage *)
+debug:=GeneralUtilities`PrintDefinitions
+(*SystemOpen[DirectoryName[AbsoluteFileName["vis-à-vis-dictionary.com.png"]]]*)
+(*"guoyu.json"*)(*"tinyGuoYuDic.json"*)(*"tiny.json"*) 
+(*
+	Computational Linguistics 计算语言学用户组  Classifying Japanese characters from the Edo period  
+https://community.wolfram.com/groups/-/m/t/1221098
+	  https://github.com/FooSoft/zero-epwing
+提取epwin 学研国语词典的活用表
+	  '形式名 活用形 下接語例\n' 根据这个标记识别目标
+utf8编码查询
+	  http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=%E4%81%A0
+
+GeneralUtilities`PrintDefinitions[BinLists] (*Mathematica 黑魔法：查看内部函数定义*)
+
+Scan
+	p.112 Power Programming With Mathematica
+	Scan[Print,{1,2}] 函数本身没有返回值，函数有副作用。除这两点外和Map 一样
+	(*利用Scan 的副作用实现计数*)
+	data=Table[Random[],{100}];(*一百个包含0～1之间的实数List*)
+      hint=Table[0,{5}] (*List[0,0,0,0,0]*)
+	   Scan[hint[[Ceiling[# 5]]]++&,data]
+   (*Ceiling[5 #] 5*0~1之间的实数，得到0~5 之间的实数，Ceiling 上取整，得到0~5 之间的整数*)
+	   (*a++ 先返回a,然后a=a+1*)
+   hint
+
+myOddQ[x_]:=(Print["debug:"<>TextString@{x,OddQ[x]}];OddQ[x]) (*打印调试信息的小技巧*)
+	And@@myOddQ/@{1,2,3} (*Apply 替换Head,f@@{1,2} List[1,2] 中的List 被替换为f*)
+	Scan[If[myOddQ[#],True,Return[False]]&,{1,3,5}]\[Equal]Null
+(*Scan 除非主动Return 否则返回值是Null 利用这点进行逻辑判断*)
+
+Throw and Catch
+		p.117 Power Programming With Mathematica
+		从内层循环返回Throw
+		Catch 捕获？
+
+Input Stream
+输入流
+StringToStream
+
+
+文字识别
+ref/TextRecognize
+guide/LowLevelNotebookProgramming
+
+语音合成
+AudioPlay[SpeechSynthesize["this is some text"]];
+
+ 单词IPA发音
+https://mathematica.stackexchange.com/questions/34391/split-lingusticipa-at-words-unique-sounds
+https://mathematica.stackexchange.com/questions/32148/find-a-words-linguistic-pronunciation
+
+重载系统函数的黑科技
+https://mathematica.stackexchange.com/questions/18187/overloading-second-argument-of-countrydata
+[dictionary.com](https://www.dictionary.com/e/word-of-the-day/)
+
+未文档函数的黑科技
+https://mresources.github.io/tutorial/reference-guides/undocumented-contexts/system-%2A.html
+
+[dictionary.com](https://www.dictionary.com/e/word-of-the-day/)
+
+# happy 
+
+[ **hap**-ee] PHONETIC RESPELLING
+
+/ˈhæp i/IPA
+
+SendMail\[LongDash]发送电子邮件
+GoogleTranslate-谷歌翻译
+字幕
+[英日]https://horriblesubs.info
+[动画字幕搜索引擎-中日](https://github.com/windrises/dialogue.moe)
+[诸神字幕组][少女终末旅行 Shoujo Shuumatsu Ryokou][简繁外挂字幕][01-12][WEBrip][1080P]
+	  [深入理解计算机系统视频及字幕](https://github.com/EugeneLiu/translationCSAPP)
+		str 字幕
+
+
+弹系统对话框，选颜色、录音、保存文件什么的
+SystemDialogInput 
+文本按句分割
+TextSentences
+文本按词分割
+TextWords
+单词原型
+WordStem
+识别语言类型
+LanguageIdentify
+文本翻译
+WordTranslation
+自然语言理解
+Natural Language Understanding
+
+文本搜索，这就更有意思了
+TextSearch
+文件系统Map，这就有意思了
+FileSystemMap
+可以递归的获取所有文件名
+FileNames
+
+show biggest file or dirctory on mac
+sudo du-sh* |grep-E "\dG\[CloseCurlyDoubleQuote]
+
+查慧林音义 仁
+
+find . -type f | xargs cat | grep "<p>.*仁.*<span class='note-inline'>(\[CloseCurlyDoubleQuote]
+仁者(而親反周禮云德一曰仁鄭玄曰愛人及物曰仁上下相親曰仁釋名仁者忍也好生惡煞善惡含忍也)。
+
+content=Drop[Transpose[Import["~/Downloads/19162.csv"]],2];
+
+sorted=GatherBy[DeleteCases[DeleteCases[Flatten[content],""],"="],StringTake[#,StringPosition[#,"="][[1]][[1]]]&];
+
+tab=OutputForm[TableForm[sorted]];
+
+Export["~/Downloads/19162.txt",tab]
+
+SetDirectory@NotebookDirectory[];
+(*strm=OpenRead["学研国語大辞典ku00.txt",Method\[Rule]{"File",CharacterEncoding\[Rule]"ShiftJIS"}];*)
+shiftj=FromCharacterCode[BinaryReadList@"学研国語大辞典ku00.txt","ShiftJIS"];
+Characters@shiftj//Take[#,{8}]&
+file="学研国語大辞典ku00utf8.txt";
+stream=OpenWrite[file,CharacterEncoding\[Rule]"UTF-8"];
+WriteString[stream,shiftj];
+Close@stream;
+
+https://mathematica.stackexchange.com/questions/75797/how-to-export-speak-output/76841#76841
+URLExecute["http://tts-api.com/tts.mp3",{"q"\[Rule]gymString}]
+URLSave["http://tts-api.com/tts.mp3","gym.mp3","Parameters"\[Rule]{"q"\[Rule]gymString}]
+Run["say -v Zarvox "<>gymString]
+Run["say -o gym.mp4 -v Zarvox "<>gymString]
+
+*)
