@@ -46,7 +46,22 @@ Thread
 
 MapIndexed
 
-> 带索引的Map，数据在列表中的位置信息以第二参给出
+### 带索引的Map
+
+> 数据在列表中的位置信息以第二参给出
+
+
+
+## Fold 累积
+
+### Fold 具有累积效果的函数
+
+```
+Fold[f,x,{a,b,c,d}]
+f[f[f[f[x,a],b],c],d]
+```
+
+
 
 
 
@@ -64,6 +79,16 @@ table = {
 Lookup[<|a -> 1, b -> 2|>, a]
 {1, 3, 4}
 ```
+
+
+
+## KeyMap
+
+### KeyMap 配合Association 使用
+
+### Reverse 配合AssociationMap 使用
+
+> 让key value 反过来
 
 
 
@@ -129,9 +154,19 @@ RunProcess[{"ffmpeg"},ProcessEnvironment -> <|"PATH" ->"/usr/local/bin/"|>]
 ## DataSet
 
 ### 指定行列取值
+
 ```
 dataset[3, "a"]
 ```
+
+### 分页
+
+```
+jpsDataset[Select[ 10 <= #order <= 20 &]]
+(* order *) 是列名，序号。#order 是Associate 的取值简写
+```
+
+
 
 
 
@@ -507,6 +542,18 @@ $
   RuleDelayed (:>, :>)
 
   输入：Esc + :> + Esc
+
+
+
+## .
+
+### 一个任意字符，除换行外
+
+```
+RegularExpression["."]
+```
+
+
 
 ## ..
 
