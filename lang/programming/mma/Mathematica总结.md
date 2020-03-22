@@ -107,9 +107,27 @@ Lookup[<|a -> 1, b -> 2|>, a]
 
 > list  ~ Take  ~ 5
 
-## 字符串格式化 StringTemplate
+
+
+## 模板 
+
+
+
+### 字符串格式化 StringTemplate
 
 > StringTemplate["first `a` then `b`"][<|"a" -> 1234, "b" -> 5678|>]
+
+
+
+### TemplateSlot
+
+```
+In[1]:= t = Mean[{TemplateSlot["me"], 50, 30}];
+TemplateApply[t, <|"me" -> 100|>]
+Out[1]= 60
+```
+
+
 
 
 
@@ -166,7 +184,9 @@ jpsDataset[Select[ 10 <= #order <= 20 &]]
 (* order *) 是列名，序号。#order 是Associate 的取值简写
 ```
 
+### 变回Association
 
+#### Normal
 
 
 
