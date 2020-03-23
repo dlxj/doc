@@ -166,6 +166,10 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 >  **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
 >
+>  Peter Ladefoged 语音学教程
+>
+>  国际语音学会手册
+>
 >  【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
 >
 >  (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
@@ -311,6 +315,12 @@ sslocal -c /path/to/shadowsocks.json
   > 只要本地1080端口的 socks5 客户端代理连接远程SS 正常，
   >
   > 就能下载到youtube 的前端代码
+
+
+
+# Tools
+
+- [电子书、音视频图像等等在线转换](https://www.aconvert.com/cn/)
 
 
 
