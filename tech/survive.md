@@ -168,7 +168,10 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 >
 >  Peter Ladefoged 语音学教程
 >
->  国际语音学会手册
+>[国际语音学会手册](https://www.internationalphoneticassociation.org/content/handbook-ipa)
+>《Handbook of the International Phonetic Association : A Guide to the Use of the International Phonetic Alphabet》
+>
+>    
 >
 >  【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
 >

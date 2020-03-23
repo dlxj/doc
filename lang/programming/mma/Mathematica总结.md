@@ -63,6 +63,25 @@ f[f[f[f[x,a],b],c],d]
 
 
 
+##  DictionaryLookup
+
+### 所有字典可查询的语言
+
+```
+DictionaryLookup[All]
+(* MMA所有词典语言 *)
+Rasterize@ Style[#,Large]&@ Grid@ Partition[#,5,5,1,"\\"]&@LanguageData["Hebrew","Letters"]
+(* 希伯来语字母表 *)
+Rasterize@ Style[#,Large]&@ Grid@ Partition[#,5,5,1,"\\"]&@ LanguageData["Hindi","Letters"]
+(* 印地语字母表 *)
+DictionaryLookup[x__/;StringLength[x]>6]
+(* 长度大于6的单词 *)
+```
+
+
+
+## Rasterize 光栅化
+
 
 
 ## Lookup
@@ -187,6 +206,12 @@ jpsDataset[Select[ 10 <= #order <= 20 &]]
 ### 变回Association
 
 #### Normal
+
+
+
+### SQL运算符：内联接 & GroupBy 
+
+#### guide/DatabaseLikeOperationsOnDatasets
 
 
 
