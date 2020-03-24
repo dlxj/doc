@@ -164,16 +164,31 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 # 语言学习
 
+
+
+## IPA 国际音标
+
+1. [国际语音学会手册](https://www.internationalphoneticassociation.org/content/handbook-ipa)
+   《Handbook of the International Phonetic Association : A Guide to the Use of the International Phonetic Alphabet》
+   - 可以下载到多语种真人录音，包括粤语、英语、日语、法语、德语、俄语、印地语、希伯来语等等
+2. [東京外国語大学 国际音标教学](http://www.coelang.tufs.ac.jp/ipa/english/consonant_pulmonic.php)
+   - IPA真人发音，有英文解说
+   - 日语语法，有中文解说
+     - [日本語文法日本語文法](http://www.coelang.tufs.ac.jp/ja/zt/gmod/)
+3. **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
+
+
+
 ## 英日粤
 
 >  **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
 >
 >  Peter Ladefoged 语音学教程
 >
->[国际语音学会手册](https://www.internationalphoneticassociation.org/content/handbook-ipa)
->《Handbook of the International Phonetic Association : A Guide to the Use of the International Phonetic Alphabet》
+>  [国际语音学会手册](https://www.internationalphoneticassociation.org/content/handbook-ipa)
+>  《Handbook of the International Phonetic Association : A Guide to the Use of the International Phonetic Alphabet》
 >
->    【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
+>  【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
 >
 >  (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
 >
