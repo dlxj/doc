@@ -164,6 +164,8 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 # 语言学习
 
+## 英日粤
+
 >  **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
 >
 >  Peter Ladefoged 语音学教程
@@ -171,14 +173,12 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 >[国际语音学会手册](https://www.internationalphoneticassociation.org/content/handbook-ipa)
 >《Handbook of the International Phonetic Association : A Guide to the Use of the International Phonetic Alphabet》
 >
->    
->
->  【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
+>    【生肉】【N2】【日本文学史】0からまなぶ文学史 [bili](https://www.bilibili.com/video/av68712583?p=1) [yutu](https://www.youtube.com/watch?v=RARlZtbiIiQ)
 >
 >  (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
 >
 >  [(01)言語学入門　CH1　音声学と音韻論(1) .md](./doc/lang/Japanese/言語学入門)  
->  [ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
+>[ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
 >  /Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
 >  [ipa在线输入](https://ipa.typeit.org/full/) 
 >  [汉语拼音与国际音标对照表](https://zhuanlan.zhihu.com/p/99512131) 
@@ -191,6 +191,23 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 >  [谢孟媛文法视频课程讲义]()  
 >  [English Grammar in Use]() 
 >  [Speech and Language Processing-Daniel Jurafsky, James H. Martin (2008)]()
+
+### 日语
+
+- [jisho](https://jisho.org/)
+  
+  > 日语的WolframAlpha
+- [jlptsensei](https://jlptsensei.com/complete-jlpt-grammar-list/)
+  
+  > 完整的JLPT语法单词列表
+- [楽しい Japanese](https://www.tanoshiijapanese.com/)
+  
+  > 动漫日语视频解说
+
+- [jlptstudy](https://jlptstudy.net/)
+  
+  > 历年真题句子翻译
+
 
 # 字典制作
 
