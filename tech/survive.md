@@ -207,7 +207,9 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 - [jlptstudy](https://jlptstudy.net/)
   
   > 历年真题句子翻译
-
+- [東京外国語大学 日本語文法日本語文法](http://www.coelang.tufs.ac.jp/ja/zt/gmod/)
+  
+  > 竟然有中文翻译
 
 # 字典制作
 
