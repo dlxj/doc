@@ -358,6 +358,7 @@ sslocal -c /path/to/shadowsocks.json
 # Tools
 
 - [电子书、音视频图像等等在线转换](https://www.aconvert.com/cn/)
+- [JISHO API](https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api)
 
 
 

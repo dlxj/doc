@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2104298,      37045]
-NotebookOptionsPosition[   2089008,      36796]
-NotebookOutlinePosition[   2089552,      36815]
-CellTagsIndexPosition[   2089509,      36812]
+NotebookDataLength[   2150951,      38358]
+NotebookOptionsPosition[   2135446,      38107]
+NotebookOutlinePosition[   2135990,      38126]
+CellTagsIndexPosition[   2135947,      38123]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -858,6 +858,9 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[{
+ RowBox[{"LanguageIdentify", "[", 
+  "\"\<\:044f\:043f\:043e\:043d \:0445\:044d\:043b\>\"", 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"DictionaryLookup", "[", "All", "]"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -907,6 +910,13 @@ Cell[BoxData[{
   "\[IndentingNewLine]", 
   RowBox[{
   "(*", " ", "\:957f\:5ea6\:5927\:4e8e6\:7684\:5355\:8bcd", " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LanguageData", "[", 
+   RowBox[{"\"\<French\>\"", ",", "\"\<KeyboardImage\>\""}], "]"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+  "(*", " ", "\:6cd5\:8bed\:952e\:76d8", " ", 
    "*)"}]}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.793954752930976*^9, 3.7939547735093813`*^9}, 
    3.793954829026332*^9, {3.7939550122686357`*^9, 3.793955042746428*^9}, {
@@ -925,9 +935,32 @@ Cell[BoxData[{
    3.7939613907545547`*^9}, {3.793961442642735*^9, 3.793961478513052*^9}, {
    3.793961922332975*^9, 3.793961958369453*^9}, {3.7939620210105762`*^9, 
    3.7939620239482107`*^9}, {3.793962297989451*^9, 3.793962362931094*^9}, 
-   3.793962399562537*^9},
+   3.793962399562537*^9, {3.794087412923668*^9, 3.794087444610263*^9}, {
+   3.794113424501336*^9, 3.7941134423358593`*^9}},
  CellLabel->
-  "In[162]:=",ExpressionUUID->"44a17d97-db4d-42f7-b3cc-264c464c5f49"],
+  "In[171]:=",ExpressionUUID->"44a17d97-db4d-42f7-b3cc-264c464c5f49"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Mongolian\"",RowBox[{"Entity", "[", 
+     RowBox[{"\"Language\"", ",", "\"Mongolian\""}], "]"}],
+   "\"Entity[\\\"Language\\\", \\\"Mongolian\\\"]\"","\"language\""},
+  "Entity"]], "Output",
+ CellChangeTimes->{
+  3.7939550446732683`*^9, {3.793955275826766*^9, 3.793955316738173*^9}, 
+   3.7939556373920183`*^9, {3.793955913904935*^9, 3.79395594740275*^9}, 
+   3.793956144259392*^9, 3.793957576537837*^9, {3.793958960270108*^9, 
+   3.793958986291461*^9}, 3.7939591248951187`*^9, {3.7939598068528957`*^9, 
+   3.793959824419332*^9}, {3.793959868900846*^9, 3.793959885460894*^9}, {
+   3.793959929261114*^9, 3.7939599614831*^9}, 3.793960317312264*^9, {
+   3.7939603534386597`*^9, 3.793960392060038*^9}, {3.7939604599622173`*^9, 
+   3.793960471859748*^9}, {3.7939610359830427`*^9, 3.793961054297892*^9}, 
+   3.793961218572999*^9, {3.793961373779749*^9, 3.793961399859256*^9}, {
+   3.7939614450269012`*^9, 3.793961470498564*^9}, {3.793961927794167*^9, 
+   3.793961959499119*^9}, 3.7939620254125433`*^9, {3.7939623459456863`*^9, 
+   3.793962363855462*^9}, 3.79396240106488*^9, 3.794087482617551*^9, 
+   3.794113447486601*^9},
+ CellLabel->
+  "Out[171]=",ExpressionUUID->"10af206c-1f5b-4be4-a2cf-aac718e6d241"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -954,9 +987,10 @@ Cell[BoxData[
    3.793961218572999*^9, {3.793961373779749*^9, 3.793961399859256*^9}, {
    3.7939614450269012`*^9, 3.793961470498564*^9}, {3.793961927794167*^9, 
    3.793961959499119*^9}, 3.7939620254125433`*^9, {3.7939623459456863`*^9, 
-   3.793962363855462*^9}, 3.79396240106488*^9},
+   3.793962363855462*^9}, 3.79396240106488*^9, 3.794087482617551*^9, 
+   3.794113447512673*^9},
  CellLabel->
-  "Out[162]=",ExpressionUUID->"efbff3df-584f-4869-8cf3-05d826c7e489"],
+  "Out[172]=",ExpressionUUID->"7ad3dfd5-84ed-43ec-be8b-dcce3761fea4"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -1093,9 +1127,10 @@ Lc0W9GqHuUP+5QBNqMJgWpoz+ImD1t1cTaXCYFqaLbDZ4S/Ln1AVBtPSbLl9
    3.793961218572999*^9, {3.793961373779749*^9, 3.793961399859256*^9}, {
    3.7939614450269012`*^9, 3.793961470498564*^9}, {3.793961927794167*^9, 
    3.793961959499119*^9}, 3.7939620254125433`*^9, {3.7939623459456863`*^9, 
-   3.793962363855462*^9}, 3.793962401218891*^9},
+   3.793962363855462*^9}, 3.79396240106488*^9, 3.794087482617551*^9, 
+   3.794113447836186*^9},
  CellLabel->
-  "Out[163]=",ExpressionUUID->"dcbd3b68-4b4a-477d-8310-44fca9403a28"],
+  "Out[173]=",ExpressionUUID->"4793fd1a-1123-4c18-8ddb-3f5f23f75461"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -1362,9 +1397,10 @@ BEBaUQ==
    3.793961218572999*^9, {3.793961373779749*^9, 3.793961399859256*^9}, {
    3.7939614450269012`*^9, 3.793961470498564*^9}, {3.793961927794167*^9, 
    3.793961959499119*^9}, 3.7939620254125433`*^9, {3.7939623459456863`*^9, 
-   3.793962363855462*^9}, 3.793962401417391*^9},
+   3.793962363855462*^9}, 3.79396240106488*^9, 3.794087482617551*^9, 
+   3.794113448091144*^9},
  CellLabel->
-  "Out[164]=",ExpressionUUID->"c7b2a5f3-3ab3-42e7-9eb9-955dc5457b91"],
+  "Out[174]=",ExpressionUUID->"f87ab7d8-4be1-4a34-ab0a-5d75794deef1"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -1472,7 +1508,7 @@ Cell[BoxData[
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 165, 17289524040284066006, 5/2],
+            OutputSizeLimit`Defer, 175, 17289524040284066006, 5/2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -1509,7 +1545,7 @@ Cell[BoxData[
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 165, 17289524040284066006, 5 2],
+            OutputSizeLimit`Defer, 175, 17289524040284066006, 5 2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -1546,7 +1582,7 @@ Cell[BoxData[
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 165, 17289524040284066006, Infinity],
+            OutputSizeLimit`Defer, 175, 17289524040284066006, Infinity],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -1615,7 +1651,7 @@ Cell[BoxData[
    Deploy,
    DefaultBaseStyle->"Deploy"],
   If[17289524040284066006 === $SessionID, 
-   Out[165], Message[
+   Out[175], Message[
      MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
    Null]]], "Output",
  CellChangeTimes->{
@@ -1630,19 +1666,1294 @@ Cell[BoxData[
    3.793961218572999*^9, {3.793961373779749*^9, 3.793961399859256*^9}, {
    3.7939614450269012`*^9, 3.793961470498564*^9}, {3.793961927794167*^9, 
    3.793961959499119*^9}, 3.7939620254125433`*^9, {3.7939623459456863`*^9, 
-   3.793962363855462*^9}, 3.793962401823329*^9},
+   3.793962363855462*^9}, 3.79396240106488*^9, 3.794087482617551*^9, 
+   3.794113448552229*^9},
  CellLabel->
-  "Out[165]=",ExpressionUUID->"0c102a17-d60c-48d2-807b-77ce7df50c36"]
+  "Out[175]=",ExpressionUUID->"9557bbab-1f78-4c4c-8150-6b0c00cb8c51"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[
+     NCache[
+      Rational[50, 51], 0.9803921568627451], 
+     NCache[
+      Rational[50, 51], 0.9803921568627451], 
+     NCache[
+      Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+     NCache[
+      Rational[40, 51], 0.7843137254901961], 
+     NCache[
+      Rational[40, 51], 0.7843137254901961], 
+     NCache[
+      Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+    PolygonBox[{{-10, 90}, {1340, 90}, {1340, -370}, {-10, -370}}]}, 
+   {RGBColor[
+     NCache[
+      Rational[50, 51], 0.9803921568627451], 
+     NCache[
+      Rational[50, 51], 0.9803921568627451], 
+     NCache[
+      Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+     NCache[
+      Rational[40, 51], 0.7843137254901961], 
+     NCache[
+      Rational[40, 51], 0.7843137254901961], 
+     NCache[
+      Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+    PolygonBox[{{1210, -90}, {1210, -10}, {1330, -10}, {1330, -180}, {
+     1250, -180}, {1250, -90}}], 
+    {GrayLevel[0], InsetBox[
+      StyleBox["\<\"enter\"\>",
+       Selectable->True,
+       StripOnInput->False,
+       FontFamily->"Code2000",
+       FontSize->Scaled[
+         Rational[4, 245]],
+       FontColor->RGBColor[0.3, 0.3, 0.3]], {1270, -50}]}}, {
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{0, 0}, {0, 80}, {80, 80}, {80, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\.b2\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {40, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{90, 0}, {90, 80}, {170, 80}, {170, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"&\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {130, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{180, 0}, {180, 80}, {260, 80}, {260, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\[EAcute]\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {220, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{270, 0}, {270, 80}, {350, 80}, {350, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\\\"\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {310, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{360, 0}, {360, 80}, {440, 80}, {440, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"'\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {400, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{450, 0}, {450, 80}, {530, 80}, {530, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"(\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {490, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{540, 0}, {540, 80}, {620, 80}, {620, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"-\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {580, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{630, 0}, {630, 80}, {710, 80}, {710, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\[EGrave]\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {670, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{720, 0}, {720, 80}, {800, 80}, {800, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"_\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {760, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{810, 0}, {810, 80}, {890, 80}, {890, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\[CCedilla]\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {850, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{900, 0}, {900, 80}, {980, 80}, {980, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\[AGrave]\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {940, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{990, 0}, {990, 80}, {1070, 80}, {1070, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\")\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1030, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1080, 0}, {1080, 80}, {1160, 80}, {1160, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"=\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1120, 40}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1170, 0}, {1170, 80}, {1330, 80}, {1330, 0}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"delete\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1250, 40}]}}}, {
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{0, -90}, {0, -10}, {120, -10}, {120, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"tab\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {60, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{130, -90}, {130, -10}, {210, -10}, {210, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"a\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {170, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{220, -90}, {220, -10}, {300, -10}, {300, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"z\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {260, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{310, -90}, {310, -10}, {390, -10}, {390, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {350, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{400, -90}, {400, -10}, {480, -10}, {480, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"r\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {440, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{490, -90}, {490, -10}, {570, -10}, {570, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"t\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {530, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{580, -90}, {580, -10}, {660, -10}, {660, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"y\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {620, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{670, -90}, {670, -10}, {750, -10}, {750, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"u\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {710, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{760, -90}, {760, -10}, {840, -10}, {840, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"i\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {800, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{850, -90}, {850, -10}, {930, -10}, {930, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"o\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {890, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{940, -90}, {940, -10}, {1020, -10}, {1020, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"p\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {980, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1030, -90}, {1030, -10}, {1110, -10}, {1110, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"^\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1070, -50}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1120, -90}, {1120, -10}, {1200, -10}, {1200, -90}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"$\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1160, -50}]}}}, {
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{0, -180}, {0, -100}, {160, -100}, {160, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"caps\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {80, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{170, -180}, {170, -100}, {250, -100}, {250, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"q\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {210, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{260, -180}, {260, -100}, {340, -100}, {340, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"s\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {300, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{350, -180}, {350, -100}, {430, -100}, {430, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"d\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {390, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{440, -180}, {440, -100}, {520, -100}, {520, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"f\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {480, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{530, -180}, {530, -100}, {610, -100}, {610, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"g\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {570, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{620, -180}, {620, -100}, {700, -100}, {700, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"h\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {660, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{710, -180}, {710, -100}, {790, -100}, {790, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"j\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {750, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{800, -180}, {800, -100}, {880, -100}, {880, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"k\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {840, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{890, -180}, {890, -100}, {970, -100}, {970, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"l\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {930, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{980, -180}, {980, -100}, {1060, -100}, {1060, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"m\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1020, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1070, -180}, {1070, -100}, {1150, -100}, {1150, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"\[UGrave]\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1110, -140}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1160, -180}, {1160, -100}, {1240, -100}, {1240, -180}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"*\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1200, -140}]}}}, {
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{0, -270}, {0, -190}, {120, -190}, {120, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"shift\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {60, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{130, -270}, {130, -190}, {210, -190}, {210, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"<\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {170, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{220, -270}, {220, -190}, {300, -190}, {300, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"w\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {260, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{310, -270}, {310, -190}, {390, -190}, {390, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"x\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {350, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{400, -270}, {400, -190}, {480, -190}, {480, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"c\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {440, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{490, -270}, {490, -190}, {570, -190}, {570, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"v\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {530, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{580, -270}, {580, -190}, {660, -190}, {660, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"b\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {620, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{670, -270}, {670, -190}, {750, -190}, {750, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"n\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {710, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{760, -270}, {760, -190}, {840, -190}, {840, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\",\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {800, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{850, -270}, {850, -190}, {930, -190}, {930, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\";\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {890, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{940, -270}, {940, -190}, {1020, -190}, {1020, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\":\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {980, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1030, -270}, {1030, -190}, {1110, -190}, {1110, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"!\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1070, -230}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1120, -270}, {1120, -190}, {1330, -190}, {1330, -270}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"shift\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1225, -230}]}}}, {
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{0, -360}, {0, -280}, {120, -280}, {120, -360}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"control\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {60, -320}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{130, -360}, {130, -280}, {250, -280}, {250, -360}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"alt\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {190, -320}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{260, -360}, {260, -280}, {1070, -280}, {1070, -360}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\" \"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[3, 98]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {665, -320}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1080, -360}, {1080, -280}, {1200, -280}, {1200, -360}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"alt\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1140, -320}]}}, 
+    {RGBColor[
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451], 
+      NCache[
+       Rational[50, 51], 0.9803921568627451]], EdgeForm[{RGBColor[
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961], 
+      NCache[
+       Rational[40, 51], 0.7843137254901961]], Thickness[Medium]}], 
+     PolygonBox[{{1210, -360}, {1210, -280}, {1330, -280}, {1330, -360}}], 
+     {GrayLevel[0], InsetBox[
+       StyleBox["\<\"control\"\>",
+        StripOnInput->False,
+        FontFamily->"Code2000",
+        FontSize->Scaled[
+          Rational[4, 245]],
+        FontColor->RGBColor[0.3, 0.3, 0.3]], {1270, -320}]}}}},
+  ImageSize->490,
+  ImageSizeRaw->{152, 159}]], "Output",
+ CellChangeTimes->{
+  3.7939550446732683`*^9, {3.793955275826766*^9, 3.793955316738173*^9}, 
+   3.7939556373920183`*^9, {3.793955913904935*^9, 3.79395594740275*^9}, 
+   3.793956144259392*^9, 3.793957576537837*^9, {3.793958960270108*^9, 
+   3.793958986291461*^9}, 3.7939591248951187`*^9, {3.7939598068528957`*^9, 
+   3.793959824419332*^9}, {3.793959868900846*^9, 3.793959885460894*^9}, {
+   3.793959929261114*^9, 3.7939599614831*^9}, 3.793960317312264*^9, {
+   3.7939603534386597`*^9, 3.793960392060038*^9}, {3.7939604599622173`*^9, 
+   3.793960471859748*^9}, {3.7939610359830427`*^9, 3.793961054297892*^9}, 
+   3.793961218572999*^9, {3.793961373779749*^9, 3.793961399859256*^9}, {
+   3.7939614450269012`*^9, 3.793961470498564*^9}, {3.793961927794167*^9, 
+   3.793961959499119*^9}, 3.7939620254125433`*^9, {3.7939623459456863`*^9, 
+   3.793962363855462*^9}, 3.79396240106488*^9, 3.794087482617551*^9, 
+   3.794113448705935*^9},
+ CellLabel->
+  "Out[176]=",ExpressionUUID->"fdc48da1-0ede-4d29-8265-d53cfc160593"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"LanguageData", "[", 
-  RowBox[{"\"\<French\>\"", ",", "\"\<KeyboardImage\>\""}], "]"}]], "Input",
- CellChangeTimes->{{3.793955690105998*^9, 3.793955717015274*^9}},
- NumberMarks->False,
- CellLabel->"In[16]:=",ExpressionUUID->"416b4b76-1883-4841-84ae-1edcbcb39b84"],
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.793955690105998*^9, 3.793955717015274*^9}, 
+   3.794113403293981*^9},
+ NumberMarks->False,ExpressionUUID->"416b4b76-1883-4841-84ae-1edcbcb39b84"],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -36819,233 +38130,235 @@ Cell[580, 22, 33786, 775, 3510, "Input",ExpressionUUID->"680d0065-af1d-4fcb-8634
 Cell[34369, 799, 3182, 55, 566, "Output",ExpressionUUID->"72e8b2f5-1e77-4267-8da0-f84f0dd1c648"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37588, 859, 3068, 70, 199, "Input",ExpressionUUID->"44a17d97-db4d-42f7-b3cc-264c464c5f49"],
-Cell[40659, 931, 1729, 27, 56, "Output",ExpressionUUID->"efbff3df-584f-4869-8cf3-05d826c7e489"],
-Cell[42391, 960, 8149, 137, 367, "Output",ExpressionUUID->"dcbd3b68-4b4a-477d-8310-44fca9403a28"],
-Cell[50543, 1099, 16051, 267, 581, "Output",ExpressionUUID->"c7b2a5f3-3ab3-42e7-9eb9-955dc5457b91"],
-Cell[66597, 1368, 11151, 266, 163, "Output",ExpressionUUID->"0c102a17-d60c-48d2-807b-77ce7df50c36"]
+Cell[37588, 859, 3524, 81, 262, "Input",ExpressionUUID->"44a17d97-db4d-42f7-b3cc-264c464c5f49"],
+Cell[41115, 942, 1231, 20, 43, "Output",ExpressionUUID->"10af206c-1f5b-4be4-a2cf-aac718e6d241"],
+Cell[42349, 964, 1777, 28, 56, "Output",ExpressionUUID->"7ad3dfd5-84ed-43ec-be8b-dcce3761fea4"],
+Cell[44129, 994, 8196, 138, 367, "Output",ExpressionUUID->"4793fd1a-1123-4c18-8ddb-3f5f23f75461"],
+Cell[52328, 1134, 16098, 268, 581, "Output",ExpressionUUID->"f87ab7d8-4be1-4a34-ab0a-5d75794deef1"],
+Cell[68429, 1404, 11198, 267, 163, "Output",ExpressionUUID->"9557bbab-1f78-4c4c-8150-6b0c00cb8c51"],
+Cell[79630, 1673, 44649, 1274, 255, "Output",ExpressionUUID->"fdc48da1-0ede-4d29-8265-d53cfc160593"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77785, 1639, 287, 5, 30, "Input",ExpressionUUID->"416b4b76-1883-4841-84ae-1edcbcb39b84"],
-Cell[78075, 1646, 43756, 1259, 197, "Output",ExpressionUUID->"411654d2-bb44-4dd1-a244-c6314fedfed9"]
+Cell[124316, 2952, 194, 3, 30, "Input",ExpressionUUID->"416b4b76-1883-4841-84ae-1edcbcb39b84"],
+Cell[124513, 2957, 43756, 1259, 197, "Output",ExpressionUUID->"411654d2-bb44-4dd1-a244-c6314fedfed9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[121868, 2910, 382, 6, 98, "Title",ExpressionUUID->"96811469-f0cf-4a52-a537-174602b0fb2c"],
+Cell[168306, 4221, 382, 6, 98, "Title",ExpressionUUID->"96811469-f0cf-4a52-a537-174602b0fb2c"],
 Cell[CellGroupData[{
-Cell[122275, 2920, 499, 12, 30, "Input",ExpressionUUID->"ee49bcdb-06a2-4725-bda4-68c301ebbcc6"],
-Cell[122777, 2934, 524, 12, 34, "Output",ExpressionUUID->"454d7b05-a1f5-4869-b83a-f6c8f70cff8a"]
+Cell[168713, 4231, 499, 12, 30, "Input",ExpressionUUID->"ee49bcdb-06a2-4725-bda4-68c301ebbcc6"],
+Cell[169215, 4245, 524, 12, 34, "Output",ExpressionUUID->"454d7b05-a1f5-4869-b83a-f6c8f70cff8a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[123350, 2952, 321, 6, 98, "Title",ExpressionUUID->"2fbe256e-1d24-4ec6-9ed5-1d8f60f0bfb6"],
-Cell[123674, 2960, 191, 3, 53, "Subtitle",ExpressionUUID->"f4fdaef9-9620-46d1-9e0f-e379c41313f1"],
-Cell[123868, 2965, 1341, 32, 220, "Input",ExpressionUUID->"0d0f1483-7fb5-4b0c-9206-367a191b891f"],
+Cell[169788, 4263, 321, 6, 98, "Title",ExpressionUUID->"2fbe256e-1d24-4ec6-9ed5-1d8f60f0bfb6"],
+Cell[170112, 4271, 191, 3, 53, "Subtitle",ExpressionUUID->"f4fdaef9-9620-46d1-9e0f-e379c41313f1"],
+Cell[170306, 4276, 1341, 32, 220, "Input",ExpressionUUID->"0d0f1483-7fb5-4b0c-9206-367a191b891f"],
 Cell[CellGroupData[{
-Cell[125234, 3001, 4161, 88, 639, "Input",ExpressionUUID->"079e83d9-0bb9-432d-85e6-6e5efd7179c2"],
-Cell[129398, 3091, 2721, 40, 731, "Output",ExpressionUUID->"6b2c0a41-e23d-46b6-a852-efb2973288b7"]
+Cell[171672, 4312, 4161, 88, 639, "Input",ExpressionUUID->"079e83d9-0bb9-432d-85e6-6e5efd7179c2"],
+Cell[175836, 4402, 2721, 40, 731, "Output",ExpressionUUID->"6b2c0a41-e23d-46b6-a852-efb2973288b7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[132156, 3136, 306, 6, 30, "Input",ExpressionUUID->"c91977ef-7c42-46e5-8225-c8b58b0ebc5d"],
-Cell[132465, 3144, 342, 5, 34, "Output",ExpressionUUID->"eca364a8-d860-40af-b867-66cf444fc5f5"]
+Cell[178594, 4447, 306, 6, 30, "Input",ExpressionUUID->"c91977ef-7c42-46e5-8225-c8b58b0ebc5d"],
+Cell[178903, 4455, 342, 5, 34, "Output",ExpressionUUID->"eca364a8-d860-40af-b867-66cf444fc5f5"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[132844, 3154, 327, 7, 30, "Input",ExpressionUUID->"eb7efb8a-d7a7-454b-9b7e-6f24b0226c34"],
-Cell[133174, 3163, 181, 3, 34, "Output",ExpressionUUID->"ef4d581d-8749-42b5-bb33-6ee076a13077"]
+Cell[179282, 4465, 327, 7, 30, "Input",ExpressionUUID->"eb7efb8a-d7a7-454b-9b7e-6f24b0226c34"],
+Cell[179612, 4474, 181, 3, 34, "Output",ExpressionUUID->"ef4d581d-8749-42b5-bb33-6ee076a13077"]
 }, Open  ]],
-Cell[133370, 3169, 1538, 31, 220, "Input",ExpressionUUID->"c750093c-1e50-4b9b-a15d-aeb8aaa88034"],
+Cell[179808, 4480, 1538, 31, 220, "Input",ExpressionUUID->"c750093c-1e50-4b9b-a15d-aeb8aaa88034"],
 Cell[CellGroupData[{
-Cell[134933, 3204, 217, 6, 30, "Input",ExpressionUUID->"daa6e2fe-d212-4cb5-8663-c0f5ada64985"],
-Cell[135153, 3212, 248, 3, 56, "Output",ExpressionUUID->"a7098058-9eab-454a-a698-d832c7cef5fb"]
+Cell[181371, 4515, 217, 6, 30, "Input",ExpressionUUID->"daa6e2fe-d212-4cb5-8663-c0f5ada64985"],
+Cell[181591, 4523, 248, 3, 56, "Output",ExpressionUUID->"a7098058-9eab-454a-a698-d832c7cef5fb"]
 }, Open  ]],
-Cell[135416, 3218, 7506, 157, 955, "Input",ExpressionUUID->"a8c89777-584a-4729-9a4d-32362686d362"],
+Cell[181854, 4529, 7506, 157, 955, "Input",ExpressionUUID->"a8c89777-584a-4729-9a4d-32362686d362"],
 Cell[CellGroupData[{
-Cell[142947, 3379, 28831, 535, 2753, "Input",ExpressionUUID->"1fc8505d-f073-4cbf-bf70-0c573de38819"],
-Cell[171781, 3916, 148644, 2931, 1797, "Output",ExpressionUUID->"9dee1f54-c3f2-4d7f-9cd4-c74a3b5fcb07"]
+Cell[189385, 4690, 28831, 535, 2753, "Input",ExpressionUUID->"1fc8505d-f073-4cbf-bf70-0c573de38819"],
+Cell[218219, 5227, 148644, 2931, 1797, "Output",ExpressionUUID->"9dee1f54-c3f2-4d7f-9cd4-c74a3b5fcb07"]
 }, Open  ]],
-Cell[320440, 6850, 128, 3, 30, "Input",ExpressionUUID->"1ac0f8c7-6ebd-4d44-b088-d826aa8bfb13"],
+Cell[366878, 8161, 128, 3, 30, "Input",ExpressionUUID->"1ac0f8c7-6ebd-4d44-b088-d826aa8bfb13"],
 Cell[CellGroupData[{
-Cell[320593, 6857, 473, 7, 30, "Input",ExpressionUUID->"a0fde021-e980-426d-9524-7f9330d25c91"],
-Cell[321069, 6866, 455, 9, 43, "Output",ExpressionUUID->"2576772d-5809-4825-9bfc-cb968467e1bd"]
+Cell[367031, 8168, 473, 7, 30, "Input",ExpressionUUID->"a0fde021-e980-426d-9524-7f9330d25c91"],
+Cell[367507, 8177, 455, 9, 43, "Output",ExpressionUUID->"2576772d-5809-4825-9bfc-cb968467e1bd"]
 }, Open  ]],
-Cell[321539, 6878, 1663, 44, 157, "Input",ExpressionUUID->"d5601c54-b189-47e6-8caa-088239aafa81"],
+Cell[367977, 8189, 1663, 44, 157, "Input",ExpressionUUID->"d5601c54-b189-47e6-8caa-088239aafa81"],
 Cell[CellGroupData[{
-Cell[323227, 6926, 1570, 36, 220, "Input",ExpressionUUID->"a2e4c698-0638-4d5b-98d3-b93687a0dd2a"],
-Cell[324800, 6964, 24389, 473, 309, "Output",ExpressionUUID->"5244a3e7-25b3-4b5b-82cf-50065431b142"]
+Cell[369665, 8237, 1570, 36, 220, "Input",ExpressionUUID->"a2e4c698-0638-4d5b-98d3-b93687a0dd2a"],
+Cell[371238, 8275, 24389, 473, 309, "Output",ExpressionUUID->"5244a3e7-25b3-4b5b-82cf-50065431b142"]
 }, Open  ]],
-Cell[349204, 7440, 1109, 23, 157, "Input",ExpressionUUID->"dcd6078c-966c-405a-bf09-0929c8a51fb4"],
-Cell[350316, 7465, 453, 11, 33, "Input",ExpressionUUID->"a66b1eac-15ff-4a59-ac27-4b8933584268"],
+Cell[395642, 8751, 1109, 23, 157, "Input",ExpressionUUID->"dcd6078c-966c-405a-bf09-0929c8a51fb4"],
+Cell[396754, 8776, 453, 11, 33, "Input",ExpressionUUID->"a66b1eac-15ff-4a59-ac27-4b8933584268"],
 Cell[CellGroupData[{
-Cell[350794, 7480, 1886, 42, 73, "Input",ExpressionUUID->"efff8344-ef11-461d-b61c-b6f08ee73f28"],
-Cell[352683, 7524, 1567, 25, 77, "Output",ExpressionUUID->"cfb49c85-ef95-4b46-90e9-12e0bf747861"],
-Cell[354253, 7551, 278, 5, 34, "Output",ExpressionUUID->"b740ac5d-c964-42b3-9ef8-12a6e5831faa"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[354568, 7561, 5088, 111, 392, "Input",ExpressionUUID->"8e856ed3-e4f4-4caa-a38a-b84a02f89dc4"],
-Cell[359659, 7674, 513, 11, 34, "Output",ExpressionUUID->"abd61240-e813-4f2a-92ed-d734345548de"]
-}, Open  ]],
-Cell[360187, 7688, 308, 7, 52, "Input",ExpressionUUID->"4e5dfe3f-f341-4331-9c77-074c2c8a1f33"],
-Cell[CellGroupData[{
-Cell[360520, 7699, 5511, 118, 318, "Input",ExpressionUUID->"46116c7e-d063-40b7-9294-38423bc19cd8"],
-Cell[366034, 7819, 17659, 356, 2683, "Output",ExpressionUUID->"4e184dd0-0179-4888-83a4-6034a0bb72b1"]
+Cell[397232, 8791, 1886, 42, 73, "Input",ExpressionUUID->"efff8344-ef11-461d-b61c-b6f08ee73f28"],
+Cell[399121, 8835, 1567, 25, 77, "Output",ExpressionUUID->"cfb49c85-ef95-4b46-90e9-12e0bf747861"],
+Cell[400691, 8862, 278, 5, 34, "Output",ExpressionUUID->"b740ac5d-c964-42b3-9ef8-12a6e5831faa"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[383730, 8180, 508, 12, 30, "Input",ExpressionUUID->"d9af2554-f4aa-434b-9908-33b407c8e905"],
-Cell[384241, 8194, 210, 4, 34, "Output",ExpressionUUID->"d1ea9c69-6528-40d7-b587-0f11161c51c7"]
+Cell[401006, 8872, 5088, 111, 392, "Input",ExpressionUUID->"8e856ed3-e4f4-4caa-a38a-b84a02f89dc4"],
+Cell[406097, 8985, 513, 11, 34, "Output",ExpressionUUID->"abd61240-e813-4f2a-92ed-d734345548de"]
 }, Open  ]],
-Cell[384466, 8201, 203, 4, 30, "Input",ExpressionUUID->"5c7f3fea-58fb-48fc-a964-f847b8692679"],
-Cell[384672, 8207, 228, 4, 30, "Input",ExpressionUUID->"627c9984-bd96-4196-982c-1c2dd71edbbd"],
-Cell[384903, 8213, 863, 24, 94, "Input",ExpressionUUID->"7aa896b3-f9e1-4fd7-9748-5518a222364f"],
+Cell[406625, 8999, 308, 7, 52, "Input",ExpressionUUID->"4e5dfe3f-f341-4331-9c77-074c2c8a1f33"],
 Cell[CellGroupData[{
-Cell[385791, 8241, 313, 7, 30, "Input",ExpressionUUID->"5349fdee-af22-4651-b0bf-2106a50ea78b"],
-Cell[386107, 8250, 312, 5, 34, "Output",ExpressionUUID->"6db96977-ec53-439c-95a9-737eb453d591"]
+Cell[406958, 9010, 5511, 118, 318, "Input",ExpressionUUID->"46116c7e-d063-40b7-9294-38423bc19cd8"],
+Cell[412472, 9130, 17659, 356, 2683, "Output",ExpressionUUID->"4e184dd0-0179-4888-83a4-6034a0bb72b1"]
 }, Open  ]],
-Cell[386434, 8258, 960, 22, 73, "Input",ExpressionUUID->"fd69df60-02e1-44cb-a12b-da49594e9685"],
 Cell[CellGroupData[{
-Cell[387419, 8284, 573, 10, 30, "Input",ExpressionUUID->"07584e7d-df19-440b-8b3f-43334e7380e0"],
+Cell[430168, 9491, 508, 12, 30, "Input",ExpressionUUID->"d9af2554-f4aa-434b-9908-33b407c8e905"],
+Cell[430679, 9505, 210, 4, 34, "Output",ExpressionUUID->"d1ea9c69-6528-40d7-b587-0f11161c51c7"]
+}, Open  ]],
+Cell[430904, 9512, 203, 4, 30, "Input",ExpressionUUID->"5c7f3fea-58fb-48fc-a964-f847b8692679"],
+Cell[431110, 9518, 228, 4, 30, "Input",ExpressionUUID->"627c9984-bd96-4196-982c-1c2dd71edbbd"],
+Cell[431341, 9524, 863, 24, 94, "Input",ExpressionUUID->"7aa896b3-f9e1-4fd7-9748-5518a222364f"],
 Cell[CellGroupData[{
-Cell[388017, 8298, 176, 4, 24, "Print",ExpressionUUID->"e31ea58c-8698-4212-ad2b-c2540145d2ff"],
-Cell[388196, 8304, 176, 4, 24, "Print",ExpressionUUID->"f39ad24b-239b-4baf-b30f-481f61513d77"]
+Cell[432229, 9552, 313, 7, 30, "Input",ExpressionUUID->"5349fdee-af22-4651-b0bf-2106a50ea78b"],
+Cell[432545, 9561, 312, 5, 34, "Output",ExpressionUUID->"6db96977-ec53-439c-95a9-737eb453d591"]
+}, Open  ]],
+Cell[432872, 9569, 960, 22, 73, "Input",ExpressionUUID->"fd69df60-02e1-44cb-a12b-da49594e9685"],
+Cell[CellGroupData[{
+Cell[433857, 9595, 573, 10, 30, "Input",ExpressionUUID->"07584e7d-df19-440b-8b3f-43334e7380e0"],
+Cell[CellGroupData[{
+Cell[434455, 9609, 176, 4, 24, "Print",ExpressionUUID->"e31ea58c-8698-4212-ad2b-c2540145d2ff"],
+Cell[434634, 9615, 176, 4, 24, "Print",ExpressionUUID->"f39ad24b-239b-4baf-b30f-481f61513d77"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[388421, 8314, 2464, 61, 157, "Input",ExpressionUUID->"54069641-e157-4873-8ee7-38ab2b9fb70d"],
-Cell[390888, 8377, 276, 5, 34, "Output",ExpressionUUID->"9c141438-005a-4c85-b0e4-eaafb11420c6"],
-Cell[391167, 8384, 283, 6, 34, "Output",ExpressionUUID->"c2ab2a58-24ba-4348-94c1-0a7ca8dc9938"]
+Cell[434859, 9625, 2464, 61, 157, "Input",ExpressionUUID->"54069641-e157-4873-8ee7-38ab2b9fb70d"],
+Cell[437326, 9688, 276, 5, 34, "Output",ExpressionUUID->"9c141438-005a-4c85-b0e4-eaafb11420c6"],
+Cell[437605, 9695, 283, 6, 34, "Output",ExpressionUUID->"c2ab2a58-24ba-4348-94c1-0a7ca8dc9938"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[391487, 8395, 2375, 61, 94, "Input",ExpressionUUID->"d0b20844-65a6-4af8-8e67-42799cee4b3d"],
+Cell[437925, 9706, 2375, 61, 94, "Input",ExpressionUUID->"d0b20844-65a6-4af8-8e67-42799cee4b3d"],
 Cell[CellGroupData[{
-Cell[393887, 8460, 420, 7, 24, "Print",ExpressionUUID->"670a2f40-21d9-4bdd-b7dd-0f0e775ce7f9"],
-Cell[394310, 8469, 423, 7, 24, "Print",ExpressionUUID->"9600d6fd-daa8-490a-9694-251393871148"],
-Cell[394736, 8478, 420, 7, 24, "Print",ExpressionUUID->"b410738a-8d04-415b-85be-32abce9acc4c"]
+Cell[440325, 9771, 420, 7, 24, "Print",ExpressionUUID->"670a2f40-21d9-4bdd-b7dd-0f0e775ce7f9"],
+Cell[440748, 9780, 423, 7, 24, "Print",ExpressionUUID->"9600d6fd-daa8-490a-9694-251393871148"],
+Cell[441174, 9789, 420, 7, 24, "Print",ExpressionUUID->"b410738a-8d04-415b-85be-32abce9acc4c"]
 }, Open  ]],
-Cell[395171, 8488, 499, 8, 34, "Output",ExpressionUUID->"7ec1ffe3-7c5c-40f7-81ac-fde3e3974e05"],
+Cell[441609, 9799, 499, 8, 34, "Output",ExpressionUUID->"7ec1ffe3-7c5c-40f7-81ac-fde3e3974e05"],
 Cell[CellGroupData[{
-Cell[395695, 8500, 422, 7, 24, "Print",ExpressionUUID->"76c3a47f-6879-4d2d-a9ce-2f03e9089746"],
-Cell[396120, 8509, 420, 7, 24, "Print",ExpressionUUID->"93339df0-d7b7-404a-a310-ec8c16dbf5be"],
-Cell[396543, 8518, 420, 7, 24, "Print",ExpressionUUID->"f4a8ef9b-1320-4567-a3ec-e083c8a61b05"]
+Cell[442133, 9811, 422, 7, 24, "Print",ExpressionUUID->"76c3a47f-6879-4d2d-a9ce-2f03e9089746"],
+Cell[442558, 9820, 420, 7, 24, "Print",ExpressionUUID->"93339df0-d7b7-404a-a310-ec8c16dbf5be"],
+Cell[442981, 9829, 420, 7, 24, "Print",ExpressionUUID->"f4a8ef9b-1320-4567-a3ec-e083c8a61b05"]
 }, Open  ]],
-Cell[396978, 8528, 498, 8, 34, "Output",ExpressionUUID->"467b4f15-fa65-4c00-af3b-5c1892f6df4a"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[397513, 8541, 667, 22, 30, "Input",ExpressionUUID->"0b61ac0d-58f1-4331-9dd5-bfb058ffd57d"],
-Cell[398183, 8565, 296, 9, 34, "Output",ExpressionUUID->"d47c7a81-e719-4f87-b9cf-e8a3c3799580"]
+Cell[443416, 9839, 498, 8, 34, "Output",ExpressionUUID->"467b4f15-fa65-4c00-af3b-5c1892f6df4a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[398516, 8579, 395, 6, 30, "Input",ExpressionUUID->"8063c3d2-1caf-4f70-97f7-e3a12a8b303e"],
-Cell[CellGroupData[{
-Cell[398936, 8589, 191, 4, 24, "Print",ExpressionUUID->"c45d7151-ac29-4a9c-b814-43fdac9961be"],
-Cell[399130, 8595, 191, 4, 24, "Print",ExpressionUUID->"75726ef1-c1f3-4d8d-af81-605c83a77487"],
-Cell[399324, 8601, 191, 4, 24, "Print",ExpressionUUID->"6adb61ca-6ee1-483e-9290-f2f101722bfd"]
-}, Open  ]],
-Cell[399530, 8608, 230, 4, 34, "Output",ExpressionUUID->"59d75256-1732-4241-af8f-bf446bbfaf14"]
-}, Open  ]],
-Cell[399775, 8615, 274, 5, 30, "Input",ExpressionUUID->"c0edd6b7-32c9-4f89-95b6-898ed2b71fb5"],
-Cell[400052, 8622, 152, 3, 30, "Input",ExpressionUUID->"fc62c53e-4bc5-4d2e-ad89-d7895459a100"],
-Cell[400207, 8627, 2397, 58, 367, "Input",ExpressionUUID->"2d74aba2-9298-4c1b-af19-a32411a56bd9"],
-Cell[CellGroupData[{
-Cell[402629, 8689, 398, 8, 30, "Input",ExpressionUUID->"210d88ea-849d-4b83-b6db-7ed47deef2e3"],
-Cell[403030, 8699, 332, 6, 34, "Output",ExpressionUUID->"6ef4c5a6-d5fd-4448-9d83-d6b59d4bb746"]
+Cell[443951, 9852, 667, 22, 30, "Input",ExpressionUUID->"0b61ac0d-58f1-4331-9dd5-bfb058ffd57d"],
+Cell[444621, 9876, 296, 9, 34, "Output",ExpressionUUID->"d47c7a81-e719-4f87-b9cf-e8a3c3799580"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[403399, 8710, 738, 19, 52, "Input",ExpressionUUID->"e6bea128-7747-4396-a722-4310eb6f1245"],
-Cell[404140, 8731, 176, 2, 34, "Output",ExpressionUUID->"0040f615-cf99-4d7f-bd22-3b3e77305f74"]
+Cell[444954, 9890, 395, 6, 30, "Input",ExpressionUUID->"8063c3d2-1caf-4f70-97f7-e3a12a8b303e"],
+Cell[CellGroupData[{
+Cell[445374, 9900, 191, 4, 24, "Print",ExpressionUUID->"c45d7151-ac29-4a9c-b814-43fdac9961be"],
+Cell[445568, 9906, 191, 4, 24, "Print",ExpressionUUID->"75726ef1-c1f3-4d8d-af81-605c83a77487"],
+Cell[445762, 9912, 191, 4, 24, "Print",ExpressionUUID->"6adb61ca-6ee1-483e-9290-f2f101722bfd"]
+}, Open  ]],
+Cell[445968, 9919, 230, 4, 34, "Output",ExpressionUUID->"59d75256-1732-4241-af8f-bf446bbfaf14"]
+}, Open  ]],
+Cell[446213, 9926, 274, 5, 30, "Input",ExpressionUUID->"c0edd6b7-32c9-4f89-95b6-898ed2b71fb5"],
+Cell[446490, 9933, 152, 3, 30, "Input",ExpressionUUID->"fc62c53e-4bc5-4d2e-ad89-d7895459a100"],
+Cell[446645, 9938, 2397, 58, 367, "Input",ExpressionUUID->"2d74aba2-9298-4c1b-af19-a32411a56bd9"],
+Cell[CellGroupData[{
+Cell[449067, 10000, 398, 8, 30, "Input",ExpressionUUID->"210d88ea-849d-4b83-b6db-7ed47deef2e3"],
+Cell[449468, 10010, 332, 6, 34, "Output",ExpressionUUID->"6ef4c5a6-d5fd-4448-9d83-d6b59d4bb746"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[404353, 8738, 283, 4, 30, "Input",ExpressionUUID->"fb391573-7d42-4bcf-8788-7d27e0f84778"],
-Cell[404639, 8744, 255, 4, 34, "Output",ExpressionUUID->"e32099a5-3847-448f-a170-8fb69d5ff1b0"]
-}, Open  ]],
-Cell[404909, 8751, 551, 12, 30, "Input",ExpressionUUID->"a41b9f97-f130-4f5d-9deb-e47cb7302701"],
-Cell[CellGroupData[{
-Cell[405485, 8767, 176, 3, 30, "Input",ExpressionUUID->"5dc264a1-4502-4f93-aeb9-f7321fd82239"],
-Cell[405664, 8772, 14994, 336, 143, "Output",ExpressionUUID->"c0a2bb5e-2160-42ee-853f-92d048e1a794"]
+Cell[449837, 10021, 738, 19, 52, "Input",ExpressionUUID->"e6bea128-7747-4396-a722-4310eb6f1245"],
+Cell[450578, 10042, 176, 2, 34, "Output",ExpressionUUID->"0040f615-cf99-4d7f-bd22-3b3e77305f74"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[420695, 9113, 273, 5, 30, "Input",ExpressionUUID->"f3707669-6677-4a28-b6bf-48e0c5bc9597"],
-Cell[420971, 9120, 386, 8, 43, "Output",ExpressionUUID->"5fcb3e54-0539-4498-a10c-c562c1ebd12a"]
+Cell[450791, 10049, 283, 4, 30, "Input",ExpressionUUID->"fb391573-7d42-4bcf-8788-7d27e0f84778"],
+Cell[451077, 10055, 255, 4, 34, "Output",ExpressionUUID->"e32099a5-3847-448f-a170-8fb69d5ff1b0"]
+}, Open  ]],
+Cell[451347, 10062, 551, 12, 30, "Input",ExpressionUUID->"a41b9f97-f130-4f5d-9deb-e47cb7302701"],
+Cell[CellGroupData[{
+Cell[451923, 10078, 176, 3, 30, "Input",ExpressionUUID->"5dc264a1-4502-4f93-aeb9-f7321fd82239"],
+Cell[452102, 10083, 14994, 336, 143, "Output",ExpressionUUID->"c0a2bb5e-2160-42ee-853f-92d048e1a794"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[421394, 9133, 27438, 458, 30, "Input",ExpressionUUID->"6844fb2f-1d71-4b03-9ca0-bc5e0600c7b1"],
-Cell[448835, 9593, 970, 25, 37, "Output",ExpressionUUID->"653dee69-884f-464d-8c71-0d3978537472"]
-}, Open  ]],
-Cell[449820, 9621, 26833, 445, 62, "Input",ExpressionUUID->"a650d4ed-1b99-4857-815d-76c0b5e8e6af"],
-Cell[476656, 10068, 4576, 80, 57, "Input",ExpressionUUID->"032874e4-a462-4500-b116-7fb44ba0bc32"],
-Cell[CellGroupData[{
-Cell[481257, 10152, 26289, 441, 78, "Input",ExpressionUUID->"ee8a1cc2-da71-4800-9b29-dba3a9841577"],
-Cell[507549, 10595, 1232, 36, 34, "Output",ExpressionUUID->"26dfaba0-b8a5-46c7-a763-b4a7187319c9"],
-Cell[508784, 10633, 26433, 445, 171, "Output",ExpressionUUID->"e0158e6a-dfdb-4413-9267-5baf07760fee"]
+Cell[467133, 10424, 273, 5, 30, "Input",ExpressionUUID->"f3707669-6677-4a28-b6bf-48e0c5bc9597"],
+Cell[467409, 10431, 386, 8, 43, "Output",ExpressionUUID->"5fcb3e54-0539-4498-a10c-c562c1ebd12a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[535254, 11083, 212, 3, 30, "Input",ExpressionUUID->"92900af3-48ba-4c5e-8957-dca1282b4065"],
-Cell[535469, 11088, 335, 7, 43, "Output",ExpressionUUID->"be625052-75e6-48dd-ab7d-6bf4e2d79fc9"]
+Cell[467832, 10444, 27438, 458, 30, "Input",ExpressionUUID->"6844fb2f-1d71-4b03-9ca0-bc5e0600c7b1"],
+Cell[495273, 10904, 970, 25, 37, "Output",ExpressionUUID->"653dee69-884f-464d-8c71-0d3978537472"]
 }, Open  ]],
-Cell[535819, 11098, 2811, 71, 451, "Input",ExpressionUUID->"7e19e020-1806-476c-8c9e-cf6c061bfd8d"],
+Cell[496258, 10932, 26833, 445, 62, "Input",ExpressionUUID->"a650d4ed-1b99-4857-815d-76c0b5e8e6af"],
+Cell[523094, 11379, 4576, 80, 57, "Input",ExpressionUUID->"032874e4-a462-4500-b116-7fb44ba0bc32"],
 Cell[CellGroupData[{
-Cell[538655, 11173, 458, 11, 30, "Input",ExpressionUUID->"c4dd4610-4ec7-48d4-84ab-09fba4f5379f"],
-Cell[539116, 11186, 392, 10, 34, "Output",ExpressionUUID->"4524a7dd-9c6f-450d-98e6-6c77fc1c36fb"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[539545, 11201, 1471917, 24137, 209, "Input",ExpressionUUID->"f45c9525-45ff-4b14-a207-dd8082451fd9"],
-Cell[2011465, 35340, 226, 5, 34, "Output",ExpressionUUID->"0b6d21e0-e760-4f15-b5b0-f4d127b8f9ef"]
-}, Open  ]],
-Cell[2011706, 35348, 857, 19, 30, "Input",ExpressionUUID->"85adab53-0497-4f39-a8cc-472cc170bc21"],
-Cell[CellGroupData[{
-Cell[2012588, 35371, 193, 3, 30, "Input",ExpressionUUID->"13f5b6ff-86a9-401d-a63c-25975f753fcb"],
-Cell[2012784, 35376, 196, 3, 34, "Output",ExpressionUUID->"3dd127b0-c6cb-4cf7-8d24-fd350de33488"]
-}, Open  ]],
-Cell[2012995, 35382, 346, 8, 30, "Input",ExpressionUUID->"3536c3bc-77fc-4cea-b1bf-0fae43a6f613"],
-Cell[2013344, 35392, 154, 3, 30, "Input",ExpressionUUID->"d9d8cef9-b301-495f-a810-b4c7405ceb6c"],
-Cell[2013501, 35397, 198, 4, 52, "Input",ExpressionUUID->"6883267b-b459-49a1-bde3-b2e3d965eec6"],
-Cell[CellGroupData[{
-Cell[2013724, 35405, 897, 23, 52, "Input",ExpressionUUID->"863eefb0-13d5-4946-a201-f37df96d660b"],
-Cell[2014624, 35430, 356, 8, 34, "Output",ExpressionUUID->"6e248261-6484-451d-8e76-f0768dfd7fa6"],
-Cell[2014983, 35440, 308, 7, 34, "Output",ExpressionUUID->"c1510abf-0ffb-4597-a7cb-0985364c8b2d"]
-}, Open  ]],
-Cell[2015306, 35450, 255, 5, 73, "Input",ExpressionUUID->"40c46940-8e2c-4528-915d-8f6cb913f9a2"],
-Cell[CellGroupData[{
-Cell[2015586, 35459, 424, 10, 30, "Input",ExpressionUUID->"dde452a3-9217-4f0f-a43e-a31571a14dd1"],
-Cell[2016013, 35471, 4010, 73, 34, "Output",ExpressionUUID->"882ca0ac-7a2c-4c7b-b2d9-e6af7e16513a"]
+Cell[527695, 11463, 26289, 441, 78, "Input",ExpressionUUID->"ee8a1cc2-da71-4800-9b29-dba3a9841577"],
+Cell[553987, 11906, 1232, 36, 34, "Output",ExpressionUUID->"26dfaba0-b8a5-46c7-a763-b4a7187319c9"],
+Cell[555222, 11944, 26433, 445, 171, "Output",ExpressionUUID->"e0158e6a-dfdb-4413-9267-5baf07760fee"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2020060, 35549, 460, 8, 30, "Input",ExpressionUUID->"534a6825-e678-4f27-a9ca-7222416de19d"],
-Cell[2020523, 35559, 286, 4, 34, "Output",ExpressionUUID->"f07723b4-9946-4cbb-9c19-87f8253a4425"]
+Cell[581692, 12394, 212, 3, 30, "Input",ExpressionUUID->"92900af3-48ba-4c5e-8957-dca1282b4065"],
+Cell[581907, 12399, 335, 7, 43, "Output",ExpressionUUID->"be625052-75e6-48dd-ab7d-6bf4e2d79fc9"]
+}, Open  ]],
+Cell[582257, 12409, 2811, 71, 451, "Input",ExpressionUUID->"7e19e020-1806-476c-8c9e-cf6c061bfd8d"],
+Cell[CellGroupData[{
+Cell[585093, 12484, 458, 11, 30, "Input",ExpressionUUID->"c4dd4610-4ec7-48d4-84ab-09fba4f5379f"],
+Cell[585554, 12497, 392, 10, 34, "Output",ExpressionUUID->"4524a7dd-9c6f-450d-98e6-6c77fc1c36fb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2020846, 35568, 541, 11, 30, "Input",ExpressionUUID->"e86b1063-8271-4031-80a3-d447183016eb"],
-Cell[2021390, 35581, 213, 2, 34, "Output",ExpressionUUID->"597896c4-a74e-4abd-bfc7-bc52984d167d"]
+Cell[585983, 12512, 1471917, 24137, 209, "Input",ExpressionUUID->"f45c9525-45ff-4b14-a207-dd8082451fd9"],
+Cell[2057903, 36651, 226, 5, 34, "Output",ExpressionUUID->"0b6d21e0-e760-4f15-b5b0-f4d127b8f9ef"]
 }, Open  ]],
-Cell[2021618, 35586, 1899, 52, 157, "Input",ExpressionUUID->"5060eede-a335-4fb3-8f78-c4756aaebf3f"],
+Cell[2058144, 36659, 857, 19, 30, "Input",ExpressionUUID->"85adab53-0497-4f39-a8cc-472cc170bc21"],
 Cell[CellGroupData[{
-Cell[2023542, 35642, 2769, 72, 157, "Input",ExpressionUUID->"8ec275f5-52da-4562-82c0-068fc091a3af"],
-Cell[2026314, 35716, 2492, 55, 158, "Output",ExpressionUUID->"b4d039b5-4d5a-44eb-9154-8f5bcec8caff"]
+Cell[2059026, 36682, 193, 3, 30, "Input",ExpressionUUID->"13f5b6ff-86a9-401d-a63c-25975f753fcb"],
+Cell[2059222, 36687, 196, 3, 34, "Output",ExpressionUUID->"3dd127b0-c6cb-4cf7-8d24-fd350de33488"]
 }, Open  ]],
+Cell[2059433, 36693, 346, 8, 30, "Input",ExpressionUUID->"3536c3bc-77fc-4cea-b1bf-0fae43a6f613"],
+Cell[2059782, 36703, 154, 3, 30, "Input",ExpressionUUID->"d9d8cef9-b301-495f-a810-b4c7405ceb6c"],
+Cell[2059939, 36708, 198, 4, 52, "Input",ExpressionUUID->"6883267b-b459-49a1-bde3-b2e3d965eec6"],
 Cell[CellGroupData[{
-Cell[2028843, 35776, 275, 5, 30, "Input",ExpressionUUID->"d1575286-70ee-49a4-8443-39e90e4c2b63"],
-Cell[2029121, 35783, 266, 5, 34, "Output",ExpressionUUID->"994d7dde-0c22-47d1-818d-28fdddee8de6"]
+Cell[2060162, 36716, 897, 23, 52, "Input",ExpressionUUID->"863eefb0-13d5-4946-a201-f37df96d660b"],
+Cell[2061062, 36741, 356, 8, 34, "Output",ExpressionUUID->"6e248261-6484-451d-8e76-f0768dfd7fa6"],
+Cell[2061421, 36751, 308, 7, 34, "Output",ExpressionUUID->"c1510abf-0ffb-4597-a7cb-0985364c8b2d"]
 }, Open  ]],
+Cell[2061744, 36761, 255, 5, 73, "Input",ExpressionUUID->"40c46940-8e2c-4528-915d-8f6cb913f9a2"],
 Cell[CellGroupData[{
-Cell[2029424, 35793, 1334, 34, 136, "Input",ExpressionUUID->"1b608b2e-1700-40a8-8f0d-26d97e0ade4b"],
-Cell[2030761, 35829, 162, 2, 34, "Output",ExpressionUUID->"0248b7d4-aa76-4121-92e1-a2bce3577da4"]
-}, Open  ]],
-Cell[2030938, 35834, 317, 7, 52, "Input",ExpressionUUID->"f0cdfc18-ca3e-47bc-99b3-ad287d591fc2"],
-Cell[CellGroupData[{
-Cell[2031280, 35845, 495, 12, 52, "Input",ExpressionUUID->"26a60d90-cb5c-4a0e-bfa4-02073608bd98"],
-Cell[2031778, 35859, 209, 5, 42, "Output",ExpressionUUID->"e5cdbc6e-03aa-49c0-9ab4-0a50ee754c7c"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2032024, 35869, 542, 14, 30, "Input",ExpressionUUID->"755a0ffd-dfc8-416a-be1f-34ea693fe6dc"],
-Cell[2032569, 35885, 442, 11, 34, "Output",ExpressionUUID->"5d1074f0-e20f-48ce-960d-a59a08a64341"]
-}, Open  ]],
-Cell[2033026, 35899, 1315, 30, 178, "Input",ExpressionUUID->"6df79e0f-d50a-428f-9104-728f1a4a3f0a"],
-Cell[CellGroupData[{
-Cell[2034366, 35933, 278, 5, 30, "Input",ExpressionUUID->"4f45f2b4-2f4a-4187-b773-1ebd8e895603"],
-Cell[2034647, 35940, 27877, 422, 3819, "Output",ExpressionUUID->"a1080d63-6100-4bac-a850-a05c3d6997fd"]
+Cell[2062024, 36770, 424, 10, 30, "Input",ExpressionUUID->"dde452a3-9217-4f0f-a43e-a31571a14dd1"],
+Cell[2062451, 36782, 4010, 73, 34, "Output",ExpressionUUID->"882ca0ac-7a2c-4c7b-b2d9-e6af7e16513a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2062561, 36367, 175, 2, 30, "Input",ExpressionUUID->"49a19e64-c2fc-419b-bfb7-5c0f90033504"],
-Cell[2062739, 36371, 25299, 398, 3819, "Output",ExpressionUUID->"3eef4fee-5c65-4e03-800b-b7a7e2fe5789"]
+Cell[2066498, 36860, 460, 8, 30, "Input",ExpressionUUID->"534a6825-e678-4f27-a9ca-7222416de19d"],
+Cell[2066961, 36870, 286, 4, 34, "Output",ExpressionUUID->"f07723b4-9946-4cbb-9c19-87f8253a4425"]
 }, Open  ]],
-Cell[2088053, 36772, 939, 21, 157, "Input",ExpressionUUID->"904d97b6-e410-44db-a217-564285b71af5"]
+Cell[CellGroupData[{
+Cell[2067284, 36879, 541, 11, 30, "Input",ExpressionUUID->"e86b1063-8271-4031-80a3-d447183016eb"],
+Cell[2067828, 36892, 213, 2, 34, "Output",ExpressionUUID->"597896c4-a74e-4abd-bfc7-bc52984d167d"]
+}, Open  ]],
+Cell[2068056, 36897, 1899, 52, 157, "Input",ExpressionUUID->"5060eede-a335-4fb3-8f78-c4756aaebf3f"],
+Cell[CellGroupData[{
+Cell[2069980, 36953, 2769, 72, 157, "Input",ExpressionUUID->"8ec275f5-52da-4562-82c0-068fc091a3af"],
+Cell[2072752, 37027, 2492, 55, 158, "Output",ExpressionUUID->"b4d039b5-4d5a-44eb-9154-8f5bcec8caff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2075281, 37087, 275, 5, 30, "Input",ExpressionUUID->"d1575286-70ee-49a4-8443-39e90e4c2b63"],
+Cell[2075559, 37094, 266, 5, 34, "Output",ExpressionUUID->"994d7dde-0c22-47d1-818d-28fdddee8de6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2075862, 37104, 1334, 34, 136, "Input",ExpressionUUID->"1b608b2e-1700-40a8-8f0d-26d97e0ade4b"],
+Cell[2077199, 37140, 162, 2, 34, "Output",ExpressionUUID->"0248b7d4-aa76-4121-92e1-a2bce3577da4"]
+}, Open  ]],
+Cell[2077376, 37145, 317, 7, 52, "Input",ExpressionUUID->"f0cdfc18-ca3e-47bc-99b3-ad287d591fc2"],
+Cell[CellGroupData[{
+Cell[2077718, 37156, 495, 12, 52, "Input",ExpressionUUID->"26a60d90-cb5c-4a0e-bfa4-02073608bd98"],
+Cell[2078216, 37170, 209, 5, 42, "Output",ExpressionUUID->"e5cdbc6e-03aa-49c0-9ab4-0a50ee754c7c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2078462, 37180, 542, 14, 30, "Input",ExpressionUUID->"755a0ffd-dfc8-416a-be1f-34ea693fe6dc"],
+Cell[2079007, 37196, 442, 11, 34, "Output",ExpressionUUID->"5d1074f0-e20f-48ce-960d-a59a08a64341"]
+}, Open  ]],
+Cell[2079464, 37210, 1315, 30, 178, "Input",ExpressionUUID->"6df79e0f-d50a-428f-9104-728f1a4a3f0a"],
+Cell[CellGroupData[{
+Cell[2080804, 37244, 278, 5, 30, "Input",ExpressionUUID->"4f45f2b4-2f4a-4187-b773-1ebd8e895603"],
+Cell[2081085, 37251, 27877, 422, 3819, "Output",ExpressionUUID->"a1080d63-6100-4bac-a850-a05c3d6997fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2108999, 37678, 175, 2, 30, "Input",ExpressionUUID->"49a19e64-c2fc-419b-bfb7-5c0f90033504"],
+Cell[2109177, 37682, 25299, 398, 3819, "Output",ExpressionUUID->"3eef4fee-5c65-4e03-800b-b7a7e2fe5789"]
+}, Open  ]],
+Cell[2134491, 38083, 939, 21, 157, "Input",ExpressionUUID->"904d97b6-e410-44db-a217-564285b71af5"]
 }, Open  ]]
 }
 ]
