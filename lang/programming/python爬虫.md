@@ -1,201 +1,32 @@
+[TOC]
 
+# Python 爬虫
 
 
 
-![image-20200325204006058](/Users/vvw/Library/Application Support/typora-user-images/image-20200325204006058.png)
+## 安装chromedriver
 
+https://chromedriver.chromium.org/
 
 
 
 
-![image-20200326060519249](日本语-金田一春彦.assets/image-20200326060519249.png)
 
-![image-20200326060411162](日本语-金田一春彦.assets/image-20200326060411162.png)
 
-p.263
 
 
 
 
 
-![image-20200326061541310](日本语-金田一春彦.assets/image-20200326061541310.png)
 
-p.266
 
 
 
 
 
-![image-20200326082607586](日本语-金田一春彦.assets/image-20200326082607586.png)
 
-p.273
 
 
-
-
-
-![image-20200326083535324](日本语-金田一春彦.assets/image-20200326083535324.png)
-
-p.277
-
-
-
-
-
-## 过去的た、和完成的た
-
-
-
-![image-20200326084534568](日本语-金田一春彦.assets/image-20200326084534568.png)
-
-![image-20200326084703323](日本语-金田一春彦.assets/image-20200326084703323.png)
-
-p.278
-
-
-
-
-
-![image-20200326085337619](日本语-金田一春彦.assets/image-20200326085337619.png)
-
-![image-20200326085500938](日本语-金田一春彦.assets/image-20200326085500938.png)
-
-
-
-![image-20200326090133489](日本语-金田一春彦.assets/image-20200326090133489.png)
-
-
-
-未来形
-
-![image-20200326090306839](日本语-金田一春彦.assets/image-20200326090306839.png)
-
-
-
-![image-20200326090446199](日本语-金田一春彦.assets/image-20200326090446199.png)
-
-
-
-## “て”是表示以前的“た”的连用形
-
-
-
-![image-20200326090809477](日本语-金田一春彦.assets/image-20200326090809477.png)
-
-
-
-![image-20200326091001870](日本语-金田一春彦.assets/image-20200326091001870.png)
-
-
-
-
-
-
-
-![image-20200326091549981](日本语-金田一春彦.assets/image-20200326091549981.png)
-
-
-
-
-
-## だ 完成体
-
-
-
-状态转换
-
-- 陽が沈んだ。  **The sun has set.**  
-
-  
-
-
-
-## でいる 既然体
-
-
-
-阵述事实
-
-- 陽が沈んでいる。  **The sun is set.**
-
-  
-
-
-
-## でいる 进行体
-
-
-
-- 太郎は本を読んでいる。 **Taro is reading a book.**
-
-
-
-## でいる 整体表示某种状态
-
-
-
-## ず 否定体
-
-
-- 雨も降らず
-
-
-
-## じゃあ　ランタン点けていいですか
-
-[《少女的终末旅行》]()
-
-
-
-![image-20200326113311982](日本语-金田一春彦.assets/image-20200326113311982.png)
-
-
-
-### 点く intransitive 不及物
-
-Godan verb with ku ending, **intransitive** verb  不及物
-
-
-
-### 点ける Transitive 及物
-
-Ichidan verb, Transitive verb
-
-![image-20200326114740570](日本语-金田一春彦.assets/image-20200326114740570.png)
-
-
-
-##### 点灯，从及物不及物来判断应该是点ける 正确
-
-
-
-#### Te-form	点けて
-
-
-
-[jisho.org](https://jisho.org/)
-
-
-
-![image-20200326114634383](日本语-金田一春彦.assets/image-20200326114634383.png)
-
-[形態素解析ウェブアプリUniDic-MeCab](http://www4414uj.sakura.ne.jp/Yasanichi1/unicheck/)
-
-
-
-![image-20200326114527370](日本语-金田一春彦.assets/image-20200326114527370.png)
-
-[edrdg.org](http://www.edrdg.org/~jwb/mecabdemo.html)
-
-
-
-カーテンに火がついた　The curtain caught fire.
-
-電気がついている.　The electric light is on.
-
-ランプがついた.　The lamp lit up.
-
-[《研究社新和英第五版》]()  
 
 
 
@@ -324,3 +155,24 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 机械工业的，有人抓了电脑书的
 
 https://www.52pojie.cn/thread-1098838-1-1.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
