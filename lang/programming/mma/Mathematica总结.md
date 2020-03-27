@@ -379,7 +379,7 @@ Round
 
 
 
-Scan
+## Scan
 
    p.112 Power Programming With Mathematica 
 
@@ -405,7 +405,7 @@ Scan
 
   And @@ myOddQ /@ {1, 2, 3} (*Apply 替换Head, f@@{1,2} List[1,2] 中的List 被替换为f*)
 
-  Scan[If[myOddQ[#], True, Return[False] ] &, {1, 3, 5}] == Null 
+  Scan[If[myOddQ[#], True, Return[False] ] &, {1, 3, 5}] === Null 
 
   (*Scan 除非主动Return 否则返回值是Null 利用这点进行逻辑判断*)  
 
