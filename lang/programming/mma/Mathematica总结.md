@@ -217,7 +217,13 @@ jpsDataset[Select[ 10 <= #order <= 20 &]]
 
 ## RegularExpression 
 
-### 正则表达式
+正则表达式
+
+### Split 字符串在换行处
+
+```
+StringSplit["line1\nline2\nline3",RegularExpression["(?m)^"]]//InputForm
+```
 
 
 
