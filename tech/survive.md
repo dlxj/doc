@@ -229,6 +229,11 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 # 字典制作
 
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
+>
+> [Goldendict 支持epwing可导出词头]()
+>
+> ([bob Mac开源取词翻译](https://github.com/ripperhe/Bob)  )
+>
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
 > [FairyDict](https://github.com/cegfdb/FairyDict)  
