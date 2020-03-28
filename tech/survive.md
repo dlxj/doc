@@ -151,7 +151,7 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 - [Invention 13 by J. S. Bach  Synchronizing Scalable Vector Graphics (SVG) to Music](https://codepen.io/sgestrella/pen/OqONXW)
   - SVG 音画同步
 
-
+- [Making 'Super Nario Bros.' in Haskell](https://www.youtube.com/watch?v=gVLFGQGRsDw)
 
 ## .Net Web方案
 
@@ -166,7 +166,6 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 - ASP.NET CORE Client-Side 是WebAssembly技术
 
 - **Blazor**  .NET 类Electron跨平台框架(非微软官方)
-
 
 ## React 方案
 
