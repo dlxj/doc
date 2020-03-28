@@ -142,6 +142,10 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
   - 支持Mac、Windows、Linux
   - 可以申请测试证书、APP 上架
 
+- 爱思助手
+  - 用助手安装软件可以验机有无暗病
+  - 爱思开发者商店可以上架应用 
+
 ## 网课
 
 ### Lebus
@@ -251,7 +255,7 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 #### 解包工具
 
-[ebdump](http://ebstudio.info/home/EBDump.html)
+[ebdump](http://ebstudio.info/home/EBDump.html)  注册Key：Mt.Yari  度盘有exe
 
 
 
@@ -409,6 +413,25 @@ sslocal -c /path/to/shadowsocks.json
 - [电子书、音视频图像等等在线转换](https://www.aconvert.com/cn/)
 - [JISHO API](https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api)
 - Clearview mobi azw 阅读
+
+
+
+# 写作
+
+### 为什么我选择用 Github issues 来写博客
+
+- [juejin](https://juejin.im/post/5ce53de85188252d46797fee)
+
+- [github](https://github.com/hanxi/issues-blog)
+- [github issues](https://developer.github.com/v3/issues/#list-issues-for-a-repository)
+
+## 黑苹果
+
+- [jianshu](https://www.jianshu.com/p/c37bd0352cdd)
+
+- [黑小兵](https://blog.daliansky.net/Hackintosh-long-term-maintenance-model-checklist.html)
+
+- [52pojie](https://www.52pojie.cn/thread-1064220-1-1.html)
 
 
 
