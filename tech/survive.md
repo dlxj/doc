@@ -232,6 +232,7 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
 > [FairyDict](https://github.com/cegfdb/FairyDict)  
+> [pdawiki Python辅助MDX转MOBI](https://www.pdawiki.com/forum/thread-36130-1-1.html)
 
 # 深度学习
 
