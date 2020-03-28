@@ -107,6 +107,38 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 
 
+# NAS
+
+
+
+## 使用群晖Docker 安装Jellyfin 家庭影院
+
+- [smzdm](https://post.smzdm.com/p/a6lnxg3g/)
+
+
+
+## 黑群晖 FastConnect：自定义域名+内外网访问，比QC更顺滑
+
+- [蜗牛星际](https://zhuanlan.zhihu.com/p/73482384)
+
+- [frps服务器](https://zhuanlan.zhihu.com/p/73482384)
+
+- [有许多互联网分享精神的站长共享了自己搭建的 frp 服务器]()
+
+
+
+# PC 开发
+
+
+
+跨所有桌面平台
+
+- [Avalonia](https://github.com/AvaloniaUI/Avalonia)
+
+
+
+
+
 # Web云开发
 
 
