@@ -127,15 +127,18 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 
 
+## 树莓派NAS 个人网站
+
+
+
 # PC 开发
 
 
 
 跨所有桌面平台
 
-- [Avalonia](https://github.com/AvaloniaUI/Avalonia)
-
-
+- [Avalonia](https://github.com/AvaloniaUI/Avalonia)  [Avalonia studio]()
+- [WebWindow](https://github.com/SteveSandersonMS/WebWindow)
 
 
 
@@ -145,11 +148,18 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 ## .Net Web方案
 
+- [F#+Fable+Elmish](https://www.slaveoftime.fun/)  实现的动画控件不错
+
+  - ### React 的另类用法系列（俄罗斯方块）
+
+- [websharper](websharper.com)
+
+- **Bolero: F# in WebAssembly**
+
 - ASP.NET CORE Client-Side 是WebAssembly技术
 
 - **Blazor**  .NET 类Electron跨平台框架(非微软官方)
 
-- F#+Fable+Elmish
 
 ## React 方案
 
