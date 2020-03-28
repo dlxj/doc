@@ -131,6 +131,17 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 
 
+# 跨平台开发
+
+- Haskell + SDL 超级马里奥
+  
+  - [blogspot](http://mokehehe.blogspot.com/)  
+  - [YouTube - Making 'Super Nario Bros.' in Haskell](http://www.youtube.com/watch?v=gVLFGQGRsDw&fmt=18)
+  
+  - [source code](https://github.com/mokehehe/monao)
+
+
+
 # PC 开发
 
 
