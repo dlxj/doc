@@ -239,6 +239,49 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 > [FairyDict](https://github.com/cegfdb/FairyDict)  
 > [pdawiki Python辅助MDX转MOBI](https://www.pdawiki.com/forum/thread-36130-1-1.html)
 
+### epwing
+
+
+
+#### 制作工具
+
+ [EBStudio2](http://ebstudio.info/)
+
+
+
+#### 解包工具
+
+[ebdump](http://ebstudio.info/home/EBDump.html)
+
+
+
+##### 用ebdump提取epwing词典的文本
+
+1. 运行ebdump，如果不是日文的操作系统，可以用apploc的日文方式shift jis运行ebdump
+2. 点击第一个菜单，打开文件，选择需要转化的词典目录DATA\HONMON或HONMON.ebz
+3. 选〔00〕本文，右边会出现blks的数目，就是具有多少条目；
+4. 出力xxx 填入blks的数值；
+5. 选“记述子(1)”或“plain text(2)”
+6. 文字xxx 选shift jis
+7. 下面的其他选项都为空白，路径可以选一个
+8. 按右边的按钮xxx(T)就可以生成需要的文件了。
+9. 转出来的文件是全角full-width，可以转为half-width (emeditor)；
+编码是shift jis，可以转为unicode(utf-8) (editpad或emeditor)
+10. <A121>等是外字，可以参考ebdump的目录里面 的文件Gaiji.xml 和Gaijimap.xml来替换为unicode编码
+11. 如果选择记述子的话，会有一些控制符号类似<1Fxx>，可以帮助编辑为正确的html格式（如词头、解释、黑体等等)。详细的转化可以参考这里
+http://www31.ocn.ne.jp/~h_ishida/EBStudio/Tech.html
+下载ebdump
+http://www31.ocn.ne.jp/~h_ishida/
+
+
+
+#### 汉语大词典的外字还原
+
+1. mdx 文本制成ebwing 格式
+2. 利用新生成的外字信息对比ebwing汉大的外字
+
+
+
 # 深度学习
 
 > 深度学习入门：基于Python的理论与实现  Deep Learning book  introduction to hmatrix
