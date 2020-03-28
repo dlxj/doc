@@ -105,7 +105,24 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 不用 80 端口，不放违规内容，别被黑客利用放违规内容应该就没事
 
+
+
 # Web云开发
+
+
+
+## .Net Web方案
+
+- ASP.NET CORE Client-Side 是WebAssembly技术
+
+- **Blazor**  .NET 类Electron跨平台框架(非微软官方)
+
+- F#+Fable+Elmish
+
+## React 方案
+
+- **SSR**  服务器端渲染(Server Side Rendering)
+- 微前端
 
 > [tailwindcss](https://github.com/tailwindcss/tailwindcss) [styled-components](https://github.com/styled-components/styled-components)  FFmpeg+RTMP推流 [wasm+ffmpeg前端剪视频](https://zhuanlan.zhihu.com/p/40786748) [2](https://zhuanlan.zhihu.com/p/67759237) 
 >
@@ -423,7 +440,26 @@ sslocal -c /path/to/shadowsocks.json
 - [juejin](https://juejin.im/post/5ce53de85188252d46797fee)
 
 - [github](https://github.com/hanxi/issues-blog)
+
 - [github issues](https://developer.github.com/v3/issues/#list-issues-for-a-repository)
+
+### 拥抱 Gatsby，用 React 搭建完整博客系统
+
+- [pbeta.me](http://pbeta.me/gatsby-from-zero-1/)
+
+
+
+ASP.NET CORE Client-Side 是WebAssembly技术
+
+Blazor  .NET 类Electron跨平台框架(非微软官方)
+
+F#+Fable+Elmish
+
+
+
+
+
+
 
 ## 黑苹果
 
