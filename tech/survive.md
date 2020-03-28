@@ -146,6 +146,13 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 
 
+# SVG Animation
+
+- [Invention 13 by J. S. Bach  Synchronizing Scalable Vector Graphics (SVG) to Music](https://codepen.io/sgestrella/pen/OqONXW)
+  - SVG 音画同步
+
+
+
 ## .Net Web方案
 
 - [F#+Fable+Elmish](https://www.slaveoftime.fun/)  实现的动画控件不错
