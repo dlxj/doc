@@ -76,6 +76,10 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 [腾讯云qq 1234](https://cloud.tencent.com/ qq 1234) 
 
+# virmach.com
+
+[virmach](virmach.com) gmail silu
+
 ## Namesilo 域名注册
 
 ### DNS 解析
@@ -107,6 +111,69 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 
 
+## VPS
+
+- virmach.com
+  - 支付宝 25\$ per year  2.25\$per month
+- hostodo.com
+  - 支付宝 20\$ per year, 5\$ per month 
+- racknerd.com
+  - 支付宝 23\$ per year, 6\$ per month
+- budgetvm.com
+  -  支付宝 8\$ per month
+- hostwinds.com
+  - paypal only
+
+> **国外商推荐：**
+> **（声明一下除非特殊业目建议用国内商好，国外宽带线路优化没国内靠谱）**
+>
+> 1. [bandwagonhost](https://link.zhihu.com/?target=https%3A//bandwagonhost.com/aff.php%3Faff%3D032)  **，10Gbps带宽，CN2 GIA线路，超快直连国内**
+>    IT7旗下VPS品牌，VPS具有一键备份VPS、一键转移机房等自动化功能，目前有：香港、洛杉矶（CN2 GT,CN2 GIA），凤凰城，费利蒙，佛罗里达，荷兰，香港(三网直连，速度最好)，这6个可选机房。适合个人建站等），可以支付宝
+> 2. [vultr](https://link.zhihu.com/?target=https%3A//www.vultr.com/%3Fref%3D8397741-6G) **，按小时计费，多机房的云主机**
+>    choopa旗下VPS品牌，目前在全球有16个机房（包括日本、新加坡、美国等），基于KVM虚拟，1000M端口，纯SSD硬盘，免费50G备份，后台允许购买Windows系统的VPS，免费50G备份空间，支持Alipay（[支付宝](https://link.zhihu.com/?target=https%3A//www.zhujiceping.com/tag/%e6%94%af%e4%bb%98%e5%ae%9d/)等）、PayPal等。
+> 3. [racknerd](https://link.zhihu.com/?target=https%3A//my.racknerd.com/aff.php%3Faff%3D20)**，价格便宜、大流量**
+>    提供美国洛杉矶（layerhost和multacom）机房的VPS，提供大流量、大硬盘，支持PayPal、支付宝、微信等多种付款方式。其中multacom机房，电信走CN2 GT，联通直达机房（极佳），移动强制走联通链路，算是非CN2线路之外优化的相当不错的。
+> 4. [pacificrack](https://link.zhihu.com/?target=https%3A//pacificrack.com/portal/aff.php%3Faff%3D1)**，KVM系列VPS低至$7.25/年**
+>    美国quadranet机房旗下直属品牌，主打VPS业务，也有半虚拟服务器和独立服务器出租，服务器在自家洛杉矶机房，有得天独厚的资源优势，硬件资源绝对充足。pacificrack提供的便宜VPS几乎没有几个有竞争力的对手，可以试试。
+> 5. [hostwinds](https://link.zhihu.com/?target=https%3A//www.hostwinds.com/96.html)**，金牌管理及售后**
+>    成立于2010年的美国商家，以Unmanaged业务的价格给你提供FULLY MANAGED的产品服务，一家真正在做低价管理型服务器主机业务的公司，国外口碑好到爆炸！有达拉斯和西雅图两个机房可以选，产品包括：cpanel面板的虚拟主机（免费送域名、免费送独立IP）\ reseller \ VPS \ 独立服务器。支持paypal、支付宝等付款。
+> 6. [shockhosting](https://link.zhihu.com/?target=https%3A//shockhosting.net/portal/aff.php%3Faff%3D282)**，小型商家，品质可靠，高性能**
+>    美国VPS商家，AS号（AS395092）、洛杉矶数据中心为quadranet、新泽西数据中心为choopa；VPS采用的是solusvm面板、1Gbps端口、DDR 4 内存、SSD 硬raid10，硬件诚意满满。VPS性能有保障。
+> 7. [digital](https://link.zhihu.com/?target=https%3A//digital-vm.com/portal/aff.php%3Faff%3D4)**，美国、日本，10Gbps带宽，独此一家**
+>    基于KVM虚拟的VPS，有15个可选数据中心，提供1Gbps和10Gbps带宽，尤其是美国、日本、新加坡机房非常适合国内使用，速度快，非常适合用来跑流量；据站长测试美国洛杉矶机房的还支持观看奈非netflix视频，西班牙、丹麦、挪威等机房也是少见，总有一个适合你！ PayPal、支付宝等可以付款！
+> 8. [onevps](https://link.zhihu.com/?target=https%3A//www.onevps.com/portal/aff.php%3Faff%3D1)**，美国、日本，便宜、大流量**
+>    主要提供大流量VPS，每个vps每个月给10T流量，1Gbps带宽，基于KVM虚拟，有日本东京、新加坡（站长亲测可以看奈非netflix视频）、美国纽约、荷兰阿姆斯特丹、英国伦敦、瑞士苏黎世机房可以选择。支持PayPal、支付宝等付款。
+> 9. [raksmart](https://link.zhihu.com/?target=https%3A//billing.raksmart.com/whmcs/aff.php%3Faff%3D1296)**，20年老牌机房，中英语售后**
+>    美籍华人公司，支持中英双语，支持支付宝，售后客服态度相当友好；从2000年运作至今，主要运作主机业务，包括：VPS、独立服务器出租（高防、大流量、站群等）、硬件托管；数据中心有美国洛杉矶，中国香港；线路有BGP+CN2，国内访问速度非常快，支持支付宝付款，支持中英双语交流。
+> 10. [hostdare](https://link.zhihu.com/?target=https%3A//manage.hostdare.com/aff.php%3Faff%3D4)**，优势CN2 GIA，速度快**
+>     成立于2016年的国外商家，主要运作美国西海岸的主机业务，特别是亚洲优化线路，包括：虚拟主机、VPS、服务器等，支持“支付宝、PayPal、微信 等”付款，CN2 GIA高端网络，对国内效果友好！
+> 11. [friendhosting](https://link.zhihu.com/?target=https%3A//my.friendhosting.net/pl.php%3F15654)**，不限流量KVM系列VPS**
+>     每个VPS都是100Mbps带宽，不限流量，可选机房有：瑞士、捷克、保加利亚、立陶宛、波兰、乌克兰、美国，支持PayPal、支付宝、比特币等付款
+> 12. [hawkhost](https://link.zhihu.com/?target=https%3A//my.hawkhost.com/aff.php%3Faff%3D1528)**， 老牌虚拟主机品牌，也卖VPS**
+>     成立于2004年，提供虚拟主机、reseller、VPS、合租主机，机房有：香港、新加坡、洛杉矶、达拉斯、华盛顿、阿姆斯特丹，国内外口碑不错。VPS基于OpenVZ虚拟，适合建站，价格适中，支持支付宝。
+> 13. [sugarhosts](https://link.zhihu.com/?target=http%3A//www.sugarhosts.com/members/aff.php%3Faff%3D1120) **， 英国华人创办，中英双语，有VPS**
+>     英国知名主机商家，也提供VPS（机械盘和SSD，基于XEN，也有windows），洛杉矶、香港、台湾机房.网站支持中文，方便！
+> 14. [hosteons.](https://link.zhihu.com/?target=https%3A//my.hosteons.com/aff.php%3Faff%3D1)**，不限流量VPS，送DA等面板**
+>     注册在新加坡的主机商，运作美国洛杉矶的VPS，KVM虚拟，纯SSD硬盘，主打不限制流量，自带Windows系统；增加IP便宜，另外还有独立服务器业务；付款方式包括了PayPal、支付宝等，适合用来xxxx或者跑流量等业务！
+> 15. [virmach](https://link.zhihu.com/?target=https%3A//billing.virmach.com/aff.php%3Faff%3D203)**， 论VPS谁最低价，没有对手**
+>     美国VPS商家，超低价贱卖，主要业务有VPS和独立服务器，目前VPS分OpenVZ和KVM，1Gbps带宽，solusvm面板，有10个可选机房：水牛城、达拉斯、洛杉矶、芝加哥、凤凰城、西雅图、纽约市、圣何塞、亚特兰大、德国，支持支付宝、paypal等付款。
+> 16. [dedipath](https://link.zhihu.com/?target=https%3A//portal.dedipath.com/aff.php%3Faff%3D1)**，不限流量，VPS性价比尚可**
+>     主要运作美国洛杉矶数据中心的主机业务，包括：虚拟主机、VPS、独立服务器，尤其是VPS，配置高（大内存、大硬盘、大流量），价格低，还有Windows系统；支持支付宝、PayPal等付款。
+> 17. [bacloud](https://link.zhihu.com/?target=https%3A//www.bacloud.com/aff.php%3Faff%3D35)**，性能强悍，不限流量，适合跑任务**
+>     立陶宛商家，自己家的独立机房，主要业务是独立服务器和VPS，其中VPS有立陶宛和美国芝加哥机房，有Windows系统；如果你需要资源资源不超卖、性能强悍的高质量VPS，可以考虑bacloud。已经接入PayPal、支付宝、信用卡等付款！
+> 18. [buyvm](https://link.zhihu.com/?target=https%3A//my.frantech.ca/aff.php%3Faff%3D534)**，1Gbps带宽，不限流量，KVM虚拟**
+>     早在2010年的时候就已经名声在外，口碑和知名度很高；主要运作KVM虚拟的VPS，拉斯维加斯、纽约、卢森堡三个数据中心，1Gbps带宽，不限流量，免费DirectAdmin面板授权，免费Windows系统！官方严格关注用户的注册资料，乱写直接干掉！
+> 19. [budgetvm](https://link.zhihu.com/?target=https%3A//www.budgetvm.com/%3Faffid%3D18927)**，有自己的机房，性价比尚可**
+>     budgetvm为enzu旗下的品牌，自己在美国洛杉矶有独立机房，在达拉斯、芝加哥、迈阿密有数据中心 ；主打业务为独立服务器出租，也有VPS业务，有Windows系列，也有大号VPS，资源充足，洛杉矶有半程CN2（不能保证）！
+> 20. [gigsgigscloud](https://link.zhihu.com/?target=https%3A//clientarea.gigsgigscloud.com/%3Faffid%3D119)**，香港、马来西亚、新加坡  美国 VPS，中英双语售后**
+>     主要运作：香港（直连、大带宽、CN2）、马来西亚、美国洛杉矶（CN2 GIA、高防）等机房的独立服务器和VPS，支持中英双语，支持支付宝付款。
+> 21. [hostodo](https://link.zhihu.com/?target=https%3A//hostodo.com/portal/aff.php%3Faff%3D2) **, 价格低、稳定、售后慢，适合折腾能力强的人**
+>     成立于2014年，主要运作VPS，依托quadranet的洛杉矶、达拉斯、迈阿密机房，1Gbps端口，有KVM和OpenVZ两种虚拟的VPS，国内访问速度快，长期以来以价格便宜为特色，适合新手买来练手用。支持Alipay（支付宝）、paypal等多种付款方式。
+> 22. [gcorelabs](https://link.zhihu.com/?target=https%3A//gcorelabs.com/%3Ffrom%3D4955179)**，提供接近30个机房的VPS**
+>     这几年比较知名的主机商，业务包括独立服务器、CDN、VPS等；提供全球而是多个国家和地区的机器服务；波兰（华沙）、俄罗斯（伯力、莫斯科）、韩国（首尔）、卢森堡、荷兰（阿姆斯特丹）、美国（迈阿密、芝加哥、圣克拉拉）、巴西（圣保罗）、澳大利亚（悉尼）、日本（东京）的VPS可以随意选，不限制流量！ 支持支付宝、PayPal、信用卡等付款！
+
+
+
 # NAS
 
 
@@ -131,6 +198,18 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 
 
+# 数据 + 技术 + 速度
+
+- 数据
+  - epwing 日语、汉语大词典；mdx 英汉大词典
+  - 双语字幕
+
+- MMA 原型开发  + SwiftUI 展示 + SDL 全平台移值
+
+- 仿粤语U学院、忆术家、多邻国，做一个学习软件
+
+- [category-theory-for-programmers-print](file:///Users/vvw/Documents/GitHub/books/chinese/技术/category-theory-for-programmers-print.pdf) 
+
 # 跨平台开发
 
 - Haskell + SDL 超级马里奥
@@ -139,6 +218,23 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
   - [YouTube - Making 'Super Nario Bros.' in Haskell](http://www.youtube.com/watch?v=gVLFGQGRsDw&fmt=18)
   
   - [source code](https://github.com/mokehehe/monao)
+
+- SDL 支持所有桌面和移动平台
+  - SDL officially supports Windows, Mac OS X, Linux, iOS, and Android
+
+- 可以上架steam 商站
+
+- [Haskell to WebAssembly compiler](https://github.com/tweag/asterius)
+
+
+
+# Deep Leaning
+
+- **《深度学习入门：基于Python的理论与实现》**
+
+- [Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html) 
+
+- [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e) 
 
 
 
@@ -487,8 +583,17 @@ sslocal -c /path/to/shadowsocks.json
 # Tools
 
 - [电子书、音视频图像等等在线转换](https://www.aconvert.com/cn/)
+
 - [JISHO API](https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api)
+
 - Clearview mobi azw 阅读
+
+  
+## Docker
+
+- [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
+
+- [docker.calibre-web](https://hub.docker.com/r/technosoft2000/calibre-web/)
 
 
 
