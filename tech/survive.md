@@ -48,13 +48,14 @@ mac mount Android as drive
 - SyncMate Expert
 
 - > **Create a FTP/SSH server on Android and mount the server on OS X**. See [Map FTP server as a (local) drive in Finder](http://superuser.com/q/149385), [mount_ftp -- mount a FTP filesystem](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/mount_ftp.8.html). In Linux, one can use `curlftpfs`, but it seems not to be available for OS X. But anyway, you got the idea.
+
 - >  **[USB Mass Storage Enabler](http://forum.xda-developers.com/android/apps-games/app-universal-mass-storage-enabler-beta-t3240097)** (This is an app that can mount the memory card in UMS mode, created by me)
 
 ## Android
 
 > On Android 6, the following worked for me:
-Enable developer options (settings > about phone > keep tapping on 'build number')
-Settings > Developer options > Networking > Select USB Configuration > MTP (if it's already on MTP, switch to something else, then switch back to MTP).
+> Enable developer options (settings > about phone > keep tapping on 'build number')
+> Settings > Developer options > Networking > Select USB Configuration > MTP (if it's already on MTP, switch to something else, then switch back to MTP).
 
 
 
@@ -65,11 +66,11 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
   > Namesilo 域名注册
   >
   > cloudflare 域名解析
-  
+
     - DNS、CDN 配置
-  
+
   [全站HTTPS已启用](https://www.spiritdemon.com/tag/cloudflare/)
-  
+
 - voicetube.com
 
 ## 腾讯云
@@ -208,7 +209,7 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
   - epwing 日语、汉语大词典；mdx 英汉大词典
   - 双语字幕
 - [toml](https://github.com/toml-lang/toml) json markdown html 
-  
+
 - MMA 原型开发  + SwiftUI 展示 + SDL 全平台移值
 
 - 仿粤语U学院、忆术家、多邻国，做一个学习软件
@@ -218,10 +219,10 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 # 跨平台开发
 
 - Haskell + SDL 超级马里奥
-  
+
   - [blogspot](http://mokehehe.blogspot.com/)  
   - [YouTube - Making 'Super Nario Bros.' in Haskell](http://www.youtube.com/watch?v=gVLFGQGRsDw&fmt=18)
-  
+
   - [source code](https://github.com/mokehehe/monao)
 
 - SDL 支持所有桌面和移动平台
@@ -316,10 +317,12 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
   > iOS证书申请这里用到一个工具Appuploader，可以在mac win linux系统中辅助快速申请iOS证书，不用Mac钥匙串助手，直接得到p12.mobileprovision ios证书文件，直接拿去打包IPA！很方便很快的创建iOS推送证书
 
 - Appuploader [url](http://www.applicationloader.net/)
+
   - 支持Mac、Windows、Linux
   - 可以申请测试证书、APP 上架
 
 - 爱思助手
+
   - 用助手安装软件可以验机有无暗病
   - 爱思开发者商店可以上架应用 
 
@@ -374,7 +377,7 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 >  (02)言語学入門　CH1　音声学と音韻論(2)[汉](https://www.bilibili.com/video/av41733498/?spm_id_from=333.788.videocard.2)  
 >
 >  [(01)言語学入門　CH1　音声学と音韻論(1) .md](./doc/lang/Japanese/言語学入門)  
->[ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
+>  [ipa-chart-with-sounds-version-3 IPA图表带发音](https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds-version-3/)
 >  /Users/XXX/Library/Caches/Google/Chrome/Default/Cache  找到缓存的mp3文件
 >  [ipa在线输入](https://ipa.typeit.org/full/) 
 >  [汉语拼音与国际音标对照表](https://zhuanlan.zhihu.com/p/99512131) 
@@ -391,20 +394,23 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 ### 日语
 
 - [jisho](https://jisho.org/)
-  
+
   > 日语的WolframAlpha
+
 - [jlptsensei](https://jlptsensei.com/complete-jlpt-grammar-list/)
-  
+
   > 完整的JLPT语法单词列表
+
 - [楽しい Japanese](https://www.tanoshiijapanese.com/)
-  
+
   > 动漫日语视频解说
 
 - [jlptstudy](https://jlptstudy.net/)
-  
+
   > 历年真题句子翻译
+
 - [東京外国語大学 日本語文法日本語文法](http://www.coelang.tufs.ac.jp/ja/zt/gmod/)
-  
+
   > 竟然有中文翻译
 
 # 字典制作
@@ -447,12 +453,12 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 7. 下面的其他选项都为空白，路径可以选一个
 8. 按右边的按钮xxx(T)就可以生成需要的文件了。
 9. 转出来的文件是全角full-width，可以转为half-width (emeditor)；
-编码是shift jis，可以转为unicode(utf-8) (editpad或emeditor)
+   编码是shift jis，可以转为unicode(utf-8) (editpad或emeditor)
 10. <A121>等是外字，可以参考ebdump的目录里面 的文件Gaiji.xml 和Gaijimap.xml来替换为unicode编码
 11. 如果选择记述子的话，会有一些控制符号类似<1Fxx>，可以帮助编辑为正确的html格式（如词头、解释、黑体等等)。详细的转化可以参考这里
-http://www31.ocn.ne.jp/~h_ishida/EBStudio/Tech.html
-下载ebdump
-http://www31.ocn.ne.jp/~h_ishida/
+    http://www31.ocn.ne.jp/~h_ishida/EBStudio/Tech.html
+    下载ebdump
+    http://www31.ocn.ne.jp/~h_ishida/
 
 
 
@@ -470,8 +476,8 @@ http://www31.ocn.ne.jp/~h_ishida/
 > 编程中的数学-刘新宇
 > Elementary-Algorithms-and-Data structures-Larry LIU Xinyu
 > [《动手学深度学习》](https://github.com/d2l-ai/d2l-zh)
-    - 可运行的**Jupyter note**
-> 
+>
+>   - 可运行的**Jupyter note**
 
 
 
@@ -483,11 +489,10 @@ http://www31.ocn.ne.jp/~h_ishida/
 
 # Bilibili网课
 
-> 
 > React Hooks 技术胖
 > https://www.bilibili.com/video/av63409044
-> 
->xcode+swiftui+metal+sprite kit
+>
+> xcode+swiftui+metal+sprite kit
 
 # 文件同步
 
@@ -516,10 +521,10 @@ haproxy或nginx的stream{}完成TCP中转，不要令你的IDC发现你的主机
 - 自动选优跳转页（国内访问较快）：https://ftw.b69o.top/
 
 - 我们的永久域名是（国内访问比较慢，建议使用代理）：https://www.ftwssr.com/
-       主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
-节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力
-   
-   
+      主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
+  节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力
+
+  
 
 ## CloudFlare +  JSProxy
 
@@ -536,20 +541,20 @@ ShadowsocksX-NG for MacOS
 ## 配置文件
 
 > ```
->     {
->       "server": "nathost3077.shhgw04.vds.pqs.pw",
->       "local_address": "127.0.0.1",
->       "local_port": 1080,
->       "timeout": 300,
->       "workers": 1,
->       "server_port": 11024,
->       "password": "das1d23",
->       "method": "chacha20-ietf",
->       "obfs": "tls1.2_ticket_auth",
->       "obfs_param": "9971e1905.www.bing.com",
->       "protocol": "auth_aes128_md5",
->       "protocol_param": "1905:qGJ8yn"
->     }
+>  {
+>    "server": "nathost3077.shhgw04.vds.pqs.pw",
+>    "local_address": "127.0.0.1",
+>    "local_port": 1080,
+>    "timeout": 300,
+>    "workers": 1,
+>    "server_port": 11024,
+>    "password": "das1d23",
+>    "method": "chacha20-ietf",
+>    "obfs": "tls1.2_ticket_auth",
+>    "obfs_param": "9971e1905.www.bing.com",
+>    "protocol": "auth_aes128_md5",
+>    "protocol_param": "1905:qGJ8yn"
+>  }
 > ```
 
 - password 需要登录**FaceTheWorld** ，点某个服务器的节点，选JSON 格式的配置
@@ -608,8 +613,11 @@ sslocal -c /path/to/shadowsocks.json
 
 ## markdown-nice
 
-- [微信知乎Markdonw排版工具](https://github.com/mdnice/markdown-nice) 
-  - React Markdown 编辑器
+###  [微信知乎Markdonw排版工具](https://github.com/mdnice/markdown-nice)
+
+- React Markdown 编辑器
+
+## Gitbooks
 
 ## Gatsby
 
@@ -817,8 +825,8 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > > 生成网站：
 > >
 > > WebSiteBuild[
-> >  FileNameJoin[{$HomeDirectory, "Documents/GitHub", 
-> >    "tutorial"}], Automatic]
+> > FileNameJoin[{$HomeDirectory, "Documents/GitHub", 
+> > "tutorial"}], Automatic]
 > >
 > > ?BTools`Web`WebSiteBuild  
 > >
@@ -947,34 +955,34 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 > **logic x pro**   
 > mathematica  
 > sibelius  
-Synthesizer V Editor 虚拟戨姬  
+> Synthesizer V Editor 虚拟戨姬  
 > https://www.internationalphoneticalphabet.org/ipa-sounds/ipa-chart-with-sounds/   
-https://github.com/ripperhe/Bob osx 划词翻译   
-chrom 划词翻译  
-https://github.com/Selection-Translator/crx-selection-translate    
-讲得很清楚的深度学习《深度学习入门：基于Python的理论与实现》  
-高质量的haskell 井字棋  
-https://crypto.stanford.edu/~blynn/play/tictactoe.html  
-**haskell notebook** A Haskell kernel for IPython.  
-https://github.com/gibiansky/IHaskell  
-https://nbviewer.jupyter.org/  
-Haskell 101: Installation, Expressions and Types
-https://mmhaskell.com/liftoff/install  
-Shareable Haskell with Jupyter  
-https://mmhaskell.com/blog/2019/3/4/shareable-haskell-with-jupyter  
-Gradient Descent Typeclasses in Haskell  
-http://andrew.gibiansky.com/blog/machine-learning/gradient-descent  
+> https://github.com/ripperhe/Bob osx 划词翻译   
+> chrom 划词翻译  
+> https://github.com/Selection-Translator/crx-selection-translate    
+> 讲得很清楚的深度学习《深度学习入门：基于Python的理论与实现》  
+> 高质量的haskell 井字棋  
+> https://crypto.stanford.edu/~blynn/play/tictactoe.html  
+> **haskell notebook** A Haskell kernel for IPython.  
+> https://github.com/gibiansky/IHaskell  
+> https://nbviewer.jupyter.org/  
+> Haskell 101: Installation, Expressions and Types
+> https://mmhaskell.com/liftoff/install  
+> Shareable Haskell with Jupyter  
+> https://mmhaskell.com/blog/2019/3/4/shareable-haskell-with-jupyter  
+> Gradient Descent Typeclasses in Haskell  
+> http://andrew.gibiansky.com/blog/machine-learning/gradient-descent  
 > Cubase   
 > **卡拉乐团**   
 > http://www.karasolo.com  cegbafd  siluplsy@gmail.com   
 > qqemail  cegfdb  vw123
 > FL Mobile  
 > **feem 离线热点文件传输** feem.io  
-**Xodo 免费PDF阅读器**    
-https://pt.eastgame.org  TLF  aiiniyo  vN15    123468935@qq.com  
-Deluge windows  
-**Transmission** linux osx  
-**flud**  ADM android  
+> **Xodo 免费PDF阅读器**    
+> https://pt.eastgame.org  TLF  aiiniyo  vN15    123468935@qq.com  
+> Deluge windows  
+> **Transmission** linux osx  
+> **flud**  ADM android  
 > 洞箫入门半个老师    
 > Euterpea  haskell muz   
 > 【编曲/作曲】Nice Chord**好和弦**乐理教程  
@@ -1010,32 +1018,36 @@ Deluge windows
 
 
 **对付MacOS catalina 只读文件保护**  
+
 - **tidcal haskell 音乐编程**    
 - **安装ghc 8.6.5  cabal 2.4.1  tidcalcycles** 
 - csrutil status  
 - **sudo mount -uw /**  
 
 >重启按 cmd+R  
-**csrutil disable**  
-**vi ~/.bashrc**  
-**export PATH=/Users/vvw/.cabal/bin:$PATH**  
-**source ~/.bashrc**   
-./configure --prefix=/usr  
-make install  
-link xxx /usr/bin  
+>**csrutil disable**  
+>**vi ~/.bashrc**  
+>**export PATH=/Users/vvw/.cabal/bin:$PATH**  
+>**source ~/.bashrc**   
+>./configure --prefix=/usr  
+>make install  
+>link xxx /usr/bin  
 
 **bashrc 下次就不生效了**  
+
 > vi ~/**.bash_profile**    
-PATH="${HOME}/usr/bin:${PATH}"  
-export PATH  
-**~/.bash_profile  每次开shell 都执行**  
+> PATH="${HOME}/usr/bin:${PATH}"  
+> export PATH  
+> **~/.bash_profile  每次开shell 都执行**  
 
 **Mac 内录**  
+
 > ShowU Audio Capture   
- Soundflower：https://github.com/mattingalls/Soundflower/releases  
-https://www.jianshu.com/p/db035dad616a  
+>  Soundflower：https://github.com/mattingalls/Soundflower/releases  
+> https://www.jianshu.com/p/db035dad616a  
 
 pdf重排  
+
 - ./k2pdfopt -n 叶嘉莹说陶渊明饮酒及拟古诗.pdf -dev dx -p 1-8 -wrap+ -c -ws -0.001 -hy -o 叶0.pdf  
 
 
@@ -1046,17 +1058,20 @@ http://ericfairbanks.org/music/tidal/code/2017/05/31/an-introduction-to-tidal.ht
 
 
 **GFW**    
+
 - **Facetheworld** 
 - https://ftw.jzfj.shop/  123468935@qq.com    
-Telegram群  15726712516  
+  Telegram群  15726712516  
 - proxychains-ng  socks5 	127.0.0.1 1080  
 - [订阅键接](https://www.ftwssr.com/link/GepPNKAFVOYAcaqf?sub=1&extend=1)  
 
 
 **语言**    
+
 > **斯坦福Andy美语发音教材**    
 
 html5 
+
 - 使用html5和svg制作巴赫音乐在线乐谱和演奏动画
 - https://wow.techbrood.com/fiddle/44577  
 - 黑客派  
@@ -1065,28 +1080,31 @@ html5
 - https://github.com/nicejade/markdown-online-editor/
 
 **小说漫画**  
+
 > 丰子恺：写给大家的简明艺术启蒙  
-罗生门  
-老舍茶館  
-莫泊桑文集  
-金庸全集（精制插图版，连载初回本）  
-佛陀  漫画  
-五百盲贼得眼故事画  敦煌学大辞典-季羡林   
-我曾经是个骗子_李万铭  
-宝石之国  动画   
-七武士  
-www.hikindle.com  **收费杂志**  
+> 罗生门  
+> 老舍茶館  
+> 莫泊桑文集  
+> 金庸全集（精制插图版，连载初回本）  
+> 佛陀  漫画  
+> 五百盲贼得眼故事画  敦煌学大辞典-季羡林   
+> 我曾经是个骗子_李万铭  
+> 宝石之国  动画   
+> 七武士  
+> www.hikindle.com  **收费杂志**  
 
 **七武士**  
+
 > 我不喜欢第一幕太精致，第一幕让人印象深刻并不好，应该不留痕迹的把观众带入故事中  
-第一幕  马蹄声起    
-山贼说：“这个村子也抢吗？  
-**动物声起次接人声**      
-讲**故事从中间讲起**而省略掉开头和结尾**给悬念**  
-**中间一笔带过给提示**     
+> 第一幕  马蹄声起    
+> 山贼说：“这个村子也抢吗？  
+> **动物声起次接人声**      
+> 讲**故事从中间讲起**而省略掉开头和结尾**给悬念**  
+> **中间一笔带过给提示**     
 
 
 **动画**  
+
 - Animate.css 
 - remove.bg 抠图  
 - 52pojie  0daydown 资源下载  
@@ -1094,39 +1112,47 @@ www.hikindle.com  **收费杂志**
 - 半次元  多绘画素材  
 - https://nyaa.si/ 动漫书  
 - https://pt.eastgame.org/  aiiniyo tlf电影  
--  https://futaacg.com  扶她动漫   
+- https://futaacg.com  扶她动漫   
 
 
 Mathematica
+
 - 啥是佩奇？我用 Mathematica 画给你看  
 - Mathematica模拟吉他弹奏南山南  
 
 煮饭烧肉  
+
 - 真空烤管无烟烧烤炉  
 - 太阳能烤炉    
 
 烘焙
+
 - 中式点心 
 - 西式点心
 - mooc 烘焙食品加工技术
 
 种菜    
+
 - 蒜黄 
 - 智能叶菜种植机   
 - 室内蔬菜种植柜   
 - 水培阳台种菜  
 
 水源  
+
 - 快速喷雾蒸馏法  
 
 古典吉他  
+
 - 触弦 破蕊    
 
 3D打印   
+
 - 建筑3D打印  
 - autocad 3d  
 
 温控羽绒服
+
 - 羽绒服智能温控鹅绒  
 
 北航本科教材影印  
@@ -1241,6 +1267,7 @@ https://ftw.b69o.top/
 https://www.ftwssr.com/link/GepPNKAFVOYAcaqf  
 
 Mac  
+
 - proxifier 全局代理  
 - 如何优雅地一键实现 macOS 网络代理切换  
 
@@ -1420,6 +1447,7 @@ screencapture -h
 任平生 回答里面的那个链接：[http://www.tip4mac.com/2011/01/screencapture-for-os-x/](https://720462c7d00e123fb12198e2c2d018af.cloudflareworkers.com/-----https://link.zhihu.com/?target=http%3A//www.tip4mac.com/2011/01/screencapture-for-os-x/) 
 
 # GFW FaceTheWorld
+
 我们的主域名是（国内用户访问快，推荐使用该域名）：https://ftw.jzfj.shop/
  自动选优跳转页（国内访问较快）：https://ftw.b69o.top/
  我们的永久域名是（国内访问比较慢，建议使用代理）：https://www.ftwssr.com/
