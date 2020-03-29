@@ -76,9 +76,13 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 
 [腾讯云qq 1234](https://cloud.tencent.com/ qq 1234) 
 
-# virmach.com
+# virmach
 
-[virmach](virmach.com) gmail silu
+[virmach](virmach.com) gmail silu  2.25$ /month，做梯子测试
+
+[hostodo](hostodo.com) 20\$ / year 建站
+
+[buyvm](buyvm) 8\$ /month 贵，或许质量好？
 
 ## Namesilo 域名注册
 
