@@ -207,7 +207,8 @@ Settings > Developer options > Networking > Select USB Configuration > MTP (if i
 - 数据
   - epwing 日语、汉语大词典；mdx 英汉大词典
   - 双语字幕
-
+- [toml](https://github.com/toml-lang/toml) json markdown html 
+  
 - MMA 原型开发  + SwiftUI 展示 + SDL 全平台移值
 
 - 仿粤语U学院、忆术家、多邻国，做一个学习软件
@@ -592,7 +593,9 @@ sslocal -c /path/to/shadowsocks.json
 
 - Clearview mobi azw 阅读
 
-  
+
+
+
 ## Docker
 
 - [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
@@ -603,7 +606,20 @@ sslocal -c /path/to/shadowsocks.json
 
 # 写作
 
-### 为什么我选择用 Github issues 来写博客
+## markdown-nice
+
+- [微信知乎Markdonw排版工具](https://github.com/mdnice/markdown-nice) 
+  - React Markdown 编辑器
+
+## Gatsby
+
+- [gatsby 建立博客详细教程及避坑攻略](https://zhuanlan.zhihu.com/p/109689076)
+
+- [拥抱 Gatsby，用 React 搭建完整博客系统](http://pbeta.me/gatsby-from-zero-1/)
+
+## Github issues
+
+- 为什么我选择用 Github issues 来写博客
 
 - [juejin](https://juejin.im/post/5ce53de85188252d46797fee)
 
@@ -611,9 +627,7 @@ sslocal -c /path/to/shadowsocks.json
 
 - [github issues](https://developer.github.com/v3/issues/#list-issues-for-a-repository)
 
-### 拥抱 Gatsby，用 React 搭建完整博客系统
 
-- [pbeta.me](http://pbeta.me/gatsby-from-zero-1/)
 
 
 
