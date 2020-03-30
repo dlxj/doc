@@ -31,7 +31,27 @@ GIT_SSH_COMMAND='ssh -i private_key_file' git pull
 sshfs [user@]hostname:[directory] mountpoint
 ```
 
+```
+sftp root@xxx.xxx.xx.xx << EOF
+cd /root/environment/apache-tomcat/webapps/static/xxx
+put -r ./web-view
+put -r ./mp-images
+bye
+EOF
+```
 
+```
+echo 'EOF
+cd /root
+put /Users/vvw/gitee/GFW/keye
+bye
+EOF' | sftp -i ~/gitee/GFW/keyt root@111.229.53.195 && \
+echo 'upload gitee private key tasks done.'
+```
+
+
+
+xargs命令将多行输出内容转换成一行以空格分隔的输出内容，通过管道传递给awk命令，然后使用awk命令以空格为分隔符，获取第一个最高的版本号
 
 
 
@@ -73,8 +93,8 @@ git config --global user.email   "123468935@qq.com"
 rsa公钥直接拿github的用，不生成了  
 免密码登录不配置  
 
-
 **回滚到上一次提交**    
+
 > git reflog    
 git reset --hard  451880c        
 

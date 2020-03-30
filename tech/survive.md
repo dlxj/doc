@@ -519,12 +519,40 @@ ShadowsocksX-NG for MacOS
 
 [shadowsocks-rust for linux windows](https://github.com/shadowsocks/shadowsocks-rust)
 
+
+
+
+
 # Configure Gitee
 
+
+
+## 1.  Connect to the host
+
+
+
 ```
-chmod 400 key
-ssh -i key -p 22 root@111.229.53.195 -f ~/gitee/GFW/keyt
+chmod 400 ~/gitee/GFW/keyt
+ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
 ```
+
+```
+host=111.229.53.195;echo $host \
+ssh -i ~/gitee/GFW/keyt -p 22 -q root@$(host) exit; && \
+echo connect to the host $host success. || \
+echo connect to the host $host fail.
+```
+
+```
+ssh -i ~/gitee/GFW/keyt -p 22 -q root@111.229.53.195 exit; \
+echo $?
+```
+
+
+
+## 2. Generate gitee private key
+
+
 
 ```
 ssh-keygen -t rsa -C "123468935@qq.com" -f ~/gitee/GFW/keye
@@ -535,10 +563,95 @@ pbcopy <~/gitee/GFW/keye.pub
 ssh -i ~/gitee/GFW/keye -T git@gitee.com
 ```
 
+
+
+## 3. Upload the key to the host
+
+
+
 ```
-GIT_SSH_COMMAND='ssh -i ~/gitee/GFW/keye' git push origin master && \
-git clone https://gitee.com/cegbdfa/GFW.git
+echo 'EOF
+cd /root
+put /Users/vvw/gitee/GFW/keye
+bye
+EOF' | sftp -i ~/gitee/GFW/keyt root@111.229.53.195 && \
+echo 'upload gitee private key success.'
 ```
+
+
+
+
+
+## 4. Install or upgrate the git
+
+
+
+```
+cp /etc/apt/sources.list /etc/apt/sources.list_backup && \
+cat << EOF |
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+EOF
+cat > /etc/apt/sources.list
+```
+
+
+
+
+
+
+
+  Needs Git version 2.3 above
+
+```
+git --version
+git config --list
+apt-get --purge autoremove git
+```
+
+```
+apt-get update && \
+apt-get install git-lfs
+```
+
+
+
+xargs命令将多行输出内容转换成一行以空格分隔的输出内容，通过管道传递给awk命令，然后使用awk命令以空格为分隔符，获取第一个最高的版本号
+
+
+
+## 5.  Clone the GFW
+
+
+
+```
+ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195 && \
+apt update && apt-get install git && \
+GIT_SSH_COMMAND='ssh -i ~/keye' git clone https://gitee.com/cegbdfa/GFW.git && \
+cd GFW && tar xvf shadowsocks-rust-linux.xz && \
+nohup ./sslocal -c config.json >ss.log & \
+cat ss.log && kill -9 $(lsof -i:1080 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+```
+
+
+
+```
+ssh-agent bash -c 'ssh-add /root/keye; git clone https://gitee.com/cegbdfa/GFW.git'
+ssh-agent $(ssh-add /root/keye; git clone https://gitee.com/cegbdfa/GFW.git)
+
+```
+
+
+
+
 
 ## sshfs 远程挂载
 
