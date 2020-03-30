@@ -1,3 +1,5 @@
+pbcopy < ~/.ssh/id_rsa.pub -- copy public SSH key to clipboard
+
 cat myfile.txt | pbcopy
 
 

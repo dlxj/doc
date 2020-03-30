@@ -9,6 +9,12 @@
 > [李宣](https://lixuan.xyz/blog) [GIF MMA编码](https://lixuan.xyz/blog/2019-10-29/2276.html)
 > [苹果](http://chenminqi.github.io/)
 
+# Github大佬
+
+> [为什么我从vue转到了react?](https://github.com/coppyC/blog/issues/9)
+>
+> [markdown-nice](https://github.com/mdnice/markdown-nice)
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
@@ -474,6 +480,12 @@ mac mount Android as drive
 
 [搭建备用梯子：V2Ray + WebSocket + TLS + CloudFlare](https://printempw.github.io/v2ray-ws-tls-cloudflare/)
 
+[如何用一月6RMB购买一台外国服务器](https://zhuanlan.zhihu.com/p/73610444)
+
+[使用sftp自动上传文件到服务器](https://github.com/coppyC/blog/issues/3)
+
+
+
 haproxy或nginx的stream{}完成TCP中转，不要令你的IDC发现你的主机上运行v2ray。
 如采用建议2，则拓扑可表示为:
 
@@ -507,17 +519,44 @@ ShadowsocksX-NG for MacOS
 
 [shadowsocks-rust for linux windows](https://github.com/shadowsocks/shadowsocks-rust)
 
-
+# Configure Gitee
 
 ```
 chmod 400 key
-ssh -i key -p 22 root@111.229.53.195
+ssh -i key -p 22 root@111.229.53.195 -f ~/gitee/GFW/keyt
+```
+
+```
+ssh-keygen -t rsa -C "123468935@qq.com" -f ~/gitee/GFW/keye
+pbcopy <~/gitee/GFW/keye.pub
+```
+
+```
+ssh -i ~/gitee/GFW/keye -T git@gitee.com
+```
+
+```
+GIT_SSH_COMMAND='ssh -i ~/gitee/GFW/keye' git push origin master && \
+git clone https://gitee.com/cegbdfa/GFW.git
+```
+
+## sshfs 远程挂载
+
+```
+sshfs [user@]hostname:[directory] mountpoint
 ```
 
 
 
+# Configure Shadowsocks-rust
+
 ```
-apt update && apt-get install git && git clone https://gitee.com/cegbdfa/GFW.git
+apt update && apt-get install git && \
+GIT_SSH_COMMAND='ssh -i ~/gitee/GFW/keye' && \
+git clone https://gitee.com/cegbdfa/GFW.git && \
+cd GFW && tar xvf shadowsocks-rust-linux.xz && \
+nohup ./sslocal -c config.json >ss.log & \
+cat ss.log && kill -9 $(lsof -i:1080 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
 ```
 
 ```

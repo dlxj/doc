@@ -18,6 +18,23 @@ ssh-keygen -t rsa -C "123468935@qq.com"
 
 
 
+-f output_keyfile  
+
+# 黑科技
+
+```
+GIT_SSH_COMMAND='ssh -i private_key_file' git pull
+```
+
+```
+## 远程挂载
+sshfs [user@]hostname:[directory] mountpoint
+```
+
+
+
+
+
 pbcopy < ~/.ssh/id_rsa.pub -- copy public SSH key to clipboard  
 
 github.com ->setting ->add SSH key ->paste
