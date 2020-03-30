@@ -1,5 +1,17 @@
 
 
+# su -
+
+切换成root 登陆 
+
+
+
+## 允许root 登陆
+
+- sudo vi /etc/ssh/sshd_config
+  - 把 PermitRootLogin 修改为 yes
+
+
 
 groupdel ubt
 useradd ubt
