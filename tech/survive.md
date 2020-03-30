@@ -451,6 +451,10 @@ mac mount Android as drive
 > [praat 开源的语音分析软件](http://www.fon.hum.uva.nl/praat/)  
 >
 > [Bilibili - Praat语音分析软件用法详解](https://www.bilibili.com/video/av28287489/)
+>
+> [wav2letter 开源语音识别](https://github.com/facebookresearch/wav2letter)
+>
+> [praat speech synthesis]()
 
 # Bilibili网课
 
@@ -507,11 +511,8 @@ ShadowsocksX-NG for MacOS
 
 ```
 chmod 400 key
-ssh -i key -T root@111.229.53.195
-
+ssh -i key -p 22 root@111.229.53.195
 ```
-
-
 
 
 
