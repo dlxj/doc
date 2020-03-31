@@ -20,10 +20,17 @@ ssh-keygen -t rsa -C "123468935@qq.com"
 
 -f output_keyfile  
 
+
+
 # 黑科技
 
+
+
+## GIT_SSH_COMMAND
+
 ```
-GIT_SSH_COMMAND='ssh -i private_key_file' git pull
+GIT_SSH_COMMAND='ssh -i private_key_file' git pull  
+  # needs git 2.3.0 above. git source  
 ```
 
 ```
@@ -48,6 +55,10 @@ bye
 EOF' | sftp -i ~/gitee/GFW/keyt root@111.229.53.195 && \
 echo 'upload gitee private key tasks done.'
 ```
+
+
+
+## xargs 多行输出转一行输出
 
 
 

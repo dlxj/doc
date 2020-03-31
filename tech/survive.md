@@ -13,7 +13,7 @@
 
 # Github大佬
 
-> [为什么我从vue转到了react?](https://github.com/coppyC/blog/issues/9)
+> [为什么我从vue转到了react?](https://github.com/coppyC/blog/issues/9)  [git issue blog很nice]()
 >
 > [markdown-nice](https://github.com/mdnice/markdown-nice)
 
