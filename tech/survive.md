@@ -25,6 +25,12 @@
 
 
 
+# Geek大的佬
+
+> [How to use yes command ](https://www.howtogeek.com/415535/how-to-use-the-yes-command-on-linux/#comments)
+
+
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
@@ -114,7 +120,7 @@ mac mount Android as drive
 
 > [在线ping 站长之家](http://ping.chinaz.com/)
 > [服务器运维](https://github.com/chengziqaq/Ubuntu-xfce-VNC) 
-> [[Fiddler抓包 网络crawler](https://www.52pojie.cn/thread-1124180-1-1.html)]
+> [Fiddler抓包 网络crawler](https://www.52pojie.cn/thread-1124180-1-1.html)
 > [hostwinds 主机](hostwinds.com)
 > [Colab自动重连](https://zhuanlan.zhihu.com/p/100871755)
 > [MMA截图和控制鼠标](https://zhuanlan.zhihu.com/p/33361062)
@@ -596,6 +602,8 @@ echo 'upload gitee private key success.'
 
 
 
+### Change  Source and Update all package
+
 ```
 cp /etc/apt/sources.list /etc/apt/sources.list_backup && \
 cat << EOF |
@@ -610,7 +618,11 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted univers
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
 EOF
-cat > /etc/apt/sources.list
+cat > /etc/apt/sources.list && \
+apt-get update && \
+apt-get upgrade && \
+(sleep 3; echo "Y";) | apt-get install build-essential
+yes "Y" | apt-get install build-essential
 ```
 
 

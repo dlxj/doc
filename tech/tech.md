@@ -66,6 +66,21 @@ xargs命令将多行输出内容转换成一行以空格分隔的输出内容，
 
 
 
+## Automatically answer in Bash Script
+
+
+
+```
+(sleep 3; echo "Y";) | apt-get install build-essential
+yes "Y" | apt-get install build-essential
+```
+
+
+
+
+
+
+
 pbcopy < ~/.ssh/id_rsa.pub -- copy public SSH key to clipboard  
 
 github.com ->setting ->add SSH key ->paste
@@ -407,7 +422,6 @@ http://ftw.jzfj.shop/user  facetheworld
 > 123468935@qq.com  
 群：584237371  
 15726712516 15726712516电报群
-
 
 小七手游  15726712516  口袋进化  187服  
 光环助手  果盘  18277286430  
