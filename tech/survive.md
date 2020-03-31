@@ -3,6 +3,8 @@
 > 王赟 Maig [z](https://www.zhihu.com/people/maigo) 
 > 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
 > UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
+>
+> 移影残风 [Git源码编译](https://zhuanlan.zhihu.com/p/74953334)
 
 # MMA大佬
 
@@ -605,11 +607,11 @@ cat > /etc/apt/sources.list
 
 
 
+### Needs Git version 2.3.0 above
 
 
 
-
-  Needs Git version 2.3 above
+> From Git version 2.3.0, you can use the environment variable **GIT_SSH_COMMAND**
 
 ```
 git --version
