@@ -21,6 +21,8 @@
 
 # Pdawiki大佬 
 
+> [ying汉大词典（第2版 陆谷sun）](https://www.pdawiki.com/forum/thread-35800-1-1.html) [漢語ＢＩＧ ｃｉ典3.0](https://www.pdawiki.com/forum/thread-37586-1-1.html)
+>
 > [MDX词典打包工具](https://www.pdawiki.com/forum/thread-36415-1-1.html)
 
 
@@ -333,9 +335,19 @@ mac mount Android as drive
 >
 > ffmpeg推流
 
+
+
 # 语言学习
 
+## Dictionary
 
+[wordsense.eu](https://www.wordsense.eu/universal/)
+
+[dictionary.com](https://www.dictionary.com/browse/vis-a-vis)
+
+[jisho.org](https://jisho.org/)
+
+[merriam-webster.com](https://www.merriam-webster.com/dictionary/cacoethes?src=search-dict-hed)
 
 ## IPA 国际音标
 
@@ -602,27 +614,37 @@ echo 'upload gitee private key success.'
 
 
 
-### Change  Source and Update all package
+### Change  Source and Upgrade ubuntu 14.04 kernel
+
+#### and Install build-essential
 
 ```
 cp /etc/apt/sources.list /etc/apt/sources.list_backup && \
 cat << EOF |
-deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
 EOF
 cat > /etc/apt/sources.list && \
 apt-get update && \
-apt-get upgrade && \
+apt-get dist-upgrade && \
+killall apt-get; \
+echo "Y" | rm /var/lib/apt/lists/lock; \
+echo "Y" | rm /var/cache/apt/archives/lock; \
+echo "Y" | rm /var/lib/dpkg/lock; \
+yes "Y" | apt-get install build-essential && \
+echo "Y" | apt-get autoremove
+```
+
+```
 (sleep 3; echo "Y";) | apt-get install build-essential
-yes "Y" | apt-get install build-essential
 ```
 
 
