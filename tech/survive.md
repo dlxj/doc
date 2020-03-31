@@ -17,6 +17,14 @@
 >
 > [markdown-nice](https://github.com/mdnice/markdown-nice)
 
+
+
+# Pdawiki大佬 
+
+> [MDX词典打包工具](https://www.pdawiki.com/forum/thread-36415-1-1.html)
+
+
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
