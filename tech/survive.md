@@ -128,11 +128,31 @@ mac mount Android as drive
 > [MMA截图和控制鼠标](https://zhuanlan.zhihu.com/p/33361062)
 > [Blender Python2D动画](用Blender来学习Python创意编程，实现傅里叶级数可视化https://zhuanlan.zhihu.com/p/92267080)
 
+
+
 ## CloudFlare  CDN加速
 
 - 隐藏IP
 
 - 免费SSL证书
+
+
+
+#  Zeit integrate with Github Cloud Develop
+
+[zeit.co](https://zeit.co/)  
+
+
+
+## SWR
+
+[React Hooks for Remote Data Fetching](https://swr.now.sh/)
+
+[SWR：最具潜力的 React Hooks 数据请求库](https://zhuanlan.zhihu.com/p/89570321)
+
+[zeit now 反向代理](https://sunsea.im/add-free-cdn-from-zeit.html)
+
+
 
 ## 不备案域名
 
@@ -507,6 +527,8 @@ mac mount Android as drive
 # 黑科技
 
 [搭建备用梯子：V2Ray + WebSocket + TLS + CloudFlare](https://printempw.github.io/v2ray-ws-tls-cloudflare/)
+
+[新的扶墙加速姿势，完美替代CF](http://machbbs.com/hostloc/33418)
 
 [如何用一月6RMB购买一台外国服务器](https://zhuanlan.zhihu.com/p/73610444)
 
