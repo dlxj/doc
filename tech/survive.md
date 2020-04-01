@@ -150,7 +150,11 @@ mac mount Android as drive
 
 [SWR：最具潜力的 React Hooks 数据请求库](https://zhuanlan.zhihu.com/p/89570321)
 
+[swr 源码解析](https://github.com/wendellhu95/blog/issues/23)
+
 [zeit now 反向代理](https://sunsea.im/add-free-cdn-from-zeit.html)
+
+
 
 
 
@@ -250,6 +254,8 @@ mac mount Android as drive
 - [Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html) 
 
 - [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e) 
+
+- [10 Days Of Grad: Deep Learning From The First Principles](http://penkovsky.com/neural-networks/day1/) 10天学梯度：深度学习原理
 
 
 
@@ -587,16 +593,20 @@ ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
 ```
 
 ```
-host=111.229.53.195;echo $host \
-ssh -i ~/gitee/GFW/keyt -p 22 -q root@$(host) exit; && \
+host=111.229.53.195;echo $host; \
+ssh -i ~/gitee/GFW/keyt -p 22 -q root@$host exit; && \
 echo connect to the host $host success. || \
 echo connect to the host $host fail.
 ```
 
 ```
-ssh -i ~/gitee/GFW/keyt -p 22 -q root@111.229.53.195 exit; \
-echo $?
+host=111.229.53.195;echo $host; \
+ssh -i ~/gitee/GFW/keyt -p 22 -q root@$host exit; \
+[[ $? == 0 ]] && echo connect to the host $host success. || \
+echo connect to the host $host fail.
 ```
+
+
 
 
 
@@ -632,7 +642,7 @@ echo 'upload gitee private key success.'
 
 
 
-## 4. Install or upgrate the git
+## 4. Installing  Git from the Source
 
 
 
@@ -671,7 +681,55 @@ echo "Y" | apt-get autoremove
 
 
 
+These commands will install git 2.3.0
+
+```
+sudo add-apt-repository ppa:git-core/ppa  
+sudo apt update  
+sudo apt install git  
+```
+
+
+
+
+
+### Installing the dependence [z](https://zhuanlan.zhihu.com/p/74953334)
+
+
+
+```
+apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev lftp -y
+```
+
+
+
+### Get the last version
+
+```
+git_version=$(lftp https://mirrors.ustc.edu.cn/kernel.org/software/scm/git/ -e "cls;bye" | grep -e "git-[0-9].*.tar.gz" | sed -r 's/git-(.*).tar.gz/\1/g' | sort -rV | xargs | awk -F ' ' '{print $1}')
+```
+
+
+
+
+
+
+
+
+
 ### Needs Git version 2.3.0 above
+
+
+
+```
+GIT_SSH_COMMAND='ssh -o IdentitiesOnly=yes -i /Users/vvw/gitee/GFW/keye -F /dev/null' git clone https://gitee.com/cegbdfa/GFW.git
+```
+
+
+
+
+
+
 
 
 
