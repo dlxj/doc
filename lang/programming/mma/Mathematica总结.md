@@ -196,6 +196,16 @@ RunProcess[{"ffmpeg"},ProcessEnvironment -> <|"PATH" ->"/usr/local/bin/"|>]
 dataset[3, "a"]
 ```
 
+
+
+### Map
+
+```
+jpsDataset[All, {"beginTime"->AssTimeToSrtTime, "endTime"->AssTimeToSrtTime}]
+```
+
+
+
 ### 分页
 
 ```
