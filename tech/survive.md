@@ -27,7 +27,7 @@
 
 
 
-# Geek大的佬
+# Geek大佬
 
 > [How to use yes command ](https://www.howtogeek.com/415535/how-to-use-the-yes-command-on-linux/#comments)
 
@@ -587,9 +587,68 @@ ShadowsocksX-NG for MacOS
 
 
 
+### 1.1  Test login with the default  ubuntu account on 18.04
+
 ```
 chmod 400 ~/gitee/GFW/keyt
+ssh -i ~/gitee/GFW/keyt -p 22 ubuntu@111.229.53.195
+exit
+```
+
+
+
+### 1.2 Allow root key login on Ubuntu 18.04
+
+Copy ubuntu's Key for root
+
+
+
+```
+cd /home/ubuntu/.ssh/ && \
+sudo rm -rf /root/.ssh; sudo mkdir /root/.ssh && \
+sudo /bin/cp -rf authorized_keys /root/.ssh
+```
+
+```
+ssh-keygen -R 111.229.53.195;
 ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
+```
+
+```
+echo '
+host=111.229.53.195;echo $host; \
+ssh -i ~/gitee/GFW/keyt -p 22 -q root@$host exit; \
+[[ $? == 0 ]] && echo connect to the host $host success. || \
+echo connect to the host $host fail.
+' | bash
+```
+
+
+
+### 1.3 Allow root password login on Ubuntu 18.04
+
+```
+ssh -i ~/gitee/GFW/keyt -p 22 ubuntu@111.229.53.195
+cat /etc/ssh/sshd_config | grep '#PermitRootLogin prohibit-password'
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+cat /etc/ssh/sshd_config | grep 'PermitRootLogin'
+sudo service ssh restart
+systemctl restart sshd.service
+exit
+```
+
+
+
+```
+ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
+```
+
+
+
+```
+chmod 400 ~/gitee/GFW/keyt
+ssh-keygen -R 111.229.53.195 && \
+yes "yes" | ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
 ```
 
 ```
@@ -605,8 +664,6 @@ ssh -i ~/gitee/GFW/keyt -p 22 -q root@$host exit; \
 [[ $? == 0 ]] && echo connect to the host $host success. || \
 echo connect to the host $host fail.
 ```
-
-
 
 
 
@@ -640,37 +697,55 @@ echo 'upload gitee private key success.'
 
 
 
+3.1 configure the gitee ssh key
+
+```
+git config --global user.name “cegbdfa” && \
+git config --global user.email "123468935@qq.com" && \
+git config --global push.default matching && \
+cp /root/keye /root/.ssh/id_rsa
+```
+
+```
+git config --list   查看当前账号
+git config --global credential.helper store
+ssh -i .ssh/id_rsa -T git@gitee.com
+```
+
+
+
 
 
 ## 4. Installing  Git from the Source
 
 
 
-### Change  Source and Upgrade ubuntu 14.04 kernel
+### Change  Source and Upgrade ubuntu 18.04 kernel
 
 #### and Install build-essential
 
 ```
+ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
 cp /etc/apt/sources.list /etc/apt/sources.list_backup && \
 cat << EOF |
-deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ bionic-backports main restricted universe multiverse
 EOF
 cat > /etc/apt/sources.list && \
-apt-get update && \
-apt-get dist-upgrade && \
 killall apt-get; \
 echo "Y" | rm /var/lib/apt/lists/lock; \
 echo "Y" | rm /var/cache/apt/archives/lock; \
 echo "Y" | rm /var/lib/dpkg/lock; \
+apt-get update && \
+echo "Y" | apt-get dist-upgrade && \
 yes "Y" | apt-get install build-essential && \
 echo "Y" | apt-get autoremove
 ```
@@ -678,6 +753,8 @@ echo "Y" | apt-get autoremove
 ```
 (sleep 3; echo "Y";) | apt-get install build-essential
 ```
+
+
 
 
 
@@ -711,6 +788,30 @@ git_version=$(lftp https://mirrors.ustc.edu.cn/kernel.org/software/scm/git/ -e "
 
 
 
+### Git Source Build  All in one Command  [z](https://zhuanlan.zhihu.com/p/74953334)
+
+```
+apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev lftp -y && \
+git_version=$(lftp https://mirrors.ustc.edu.cn/kernel.org/software/scm/git/ -e "cls;bye" | grep -e "git-[0-9].*.tar.gz" | sed -r 's/git-(.*).tar.gz/\1/g' | sort -rV | xargs | awk -F ' ' '{print $1}') && \
+wget https://mirrors.ustc.edu.cn/kernel.org/software/scm/git/git-${git_version}.tar.gz && \
+tar -zxvf git-${git_version}.tar.gz && \
+cd git-${git_version} && \
+make prefix=/usr/local all && \
+make prefix=/usr/local install
+git --version
+```
+
+
+
+```
+git_version=2.9.5 && \
+wget https://mirrors.ustc.edu.cn/kernel.org/software/scm/git/git-${git_version}.tar.gz && \
+tar -zxvf git-${git_version}.tar.gz && \
+cd git-${git_version} && \
+make prefix=/usr/local all && \
+make prefix=/usr/local install
+```
+
 
 
 
@@ -724,10 +825,6 @@ git_version=$(lftp https://mirrors.ustc.edu.cn/kernel.org/software/scm/git/ -e "
 ```
 GIT_SSH_COMMAND='ssh -o IdentitiesOnly=yes -i /Users/vvw/gitee/GFW/keye -F /dev/null' git clone https://gitee.com/cegbdfa/GFW.git
 ```
-
-
-
-
 
 
 
@@ -752,13 +849,19 @@ xargs命令将多行输出内容转换成一行以空格分隔的输出内容，
 
 
 
-## 5.  Clone the GFW
+## 5.  Clone the GFW from Gitee
 
 
 
 ```
-ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195 && \
-apt update && apt-get install git && \
+GIT_SSH_COMMAND='ssh -o IdentitiesOnly=yes -i /root/keye -F /dev/null' git clone https://gitee.com/cegbdfa/GFW.git
+```
+
+
+
+
+
+```
 GIT_SSH_COMMAND='ssh -i ~/keye' git clone https://gitee.com/cegbdfa/GFW.git && \
 cd GFW && tar xvf shadowsocks-rust-linux.xz && \
 nohup ./sslocal -c config.json >ss.log & \
@@ -848,6 +951,15 @@ sslocal -c /path/to/shadowsocks.json
 ## proxychains 命令行代理
 
 [proxychains-ng](https://github.com/rofl0r/proxychains-ng)
+
+```
+./configure --prefix=/usr --sysconfdir=/etc
+make
+make install
+make install-config
+```
+
+
 
 ### 全局配置文件
 
