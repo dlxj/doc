@@ -45,6 +45,8 @@
 
   > [Computational Linguistics](https://community.wolfram.com/content?curTag=computational linguistics)
   > 翻译多语字幕，标注单词音标语法、上传B 站
+  >
+  > [ASS-字幕格式规范](https://github.com/weizhenye/ASS/wiki/ASS-字幕格式规范)
 
 
 ## pure function 移值
@@ -1946,4 +1948,26 @@ vncserver -kill :1
 sudo -i
 vncserver -kill :1
 vncserver :1
+
+
+
+# SRT 字幕
+
+- 顶部居中
+
+> {\a6}，将它添加到字幕文字的前面就会将字幕显示在视频顶部居中位置
+
+调整字幕显示位置使用{\aX}来实现，X代表如下数字：
+
+- 1、2、3分别代表显示在画面**底**部的左对齐、居中和右对齐；
+- 5、6、7分别代表显示在画面**顶**部的左对齐、居中和右对齐；
+- 9、10、11分别代表显示在画面**中**部的左对齐、居中和右对齐；
+
+其中，{\a2}是可以不写的，属于默认位置。
+
+[ASS-字幕格式规范](https://github.com/weizhenye/ASS/wiki/ASS-字幕格式规范)
+
+
+
+
 
