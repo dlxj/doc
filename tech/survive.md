@@ -456,6 +456,10 @@ mac mount Android as drive
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
 > [FairyDict](https://github.com/cegfdb/FairyDict)  
 > [pdawiki Python辅助MDX转MOBI](https://www.pdawiki.com/forum/thread-36130-1-1.html)
+>
+> [JMdict, KANJIDIC](https://github.com/ezhmd/cham-jp-deck)
+>
+> [字幕 吹响！悠风号/響け！](https://bbs.vcb-s.com/thread-997-1-1.html)
 
 ### epwing
 
