@@ -5,6 +5,10 @@
 > UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
 >
 > 移影残风 [Git源码编译](https://zhuanlan.zhihu.com/p/74953334)
+>
+> stevenliuyi [latex-alpha2 latex+mma](https://www.zhihu.com/question/23207757/answer/611107795)
+>
+> Hadesth [mma高数笔记](https://zhuanlan.zhihu.com/p/93558801)
 
 # MMA大佬
 
