@@ -51,6 +51,8 @@
   > 翻译多语字幕，标注单词音标语法、上传B 站
   >
   > [ASS-字幕格式规范](https://github.com/weizhenye/ASS/wiki/ASS-字幕格式规范)
+  >
+  > [FFMPEG流媒体](https://www.cnblogs.com/tocy/)
 
 
 ## pure function 移值
@@ -345,7 +347,12 @@ mac mount Android as drive
 - 爱思助手
 
   - 用助手安装软件可以验机有无暗病
+  
   - 爱思开发者商店可以上架应用 
+  
+  - 安装命令行工具代码：xcode-select --install
+  
+    自签命令代码：codesign -f -s - --deep /Applications/i4Tools.app
 
 ## 网课
 
@@ -460,6 +467,10 @@ mac mount Android as drive
 > [JMdict, KANJIDIC](https://github.com/ezhmd/cham-jp-deck)
 >
 > [字幕 吹响！悠风号/響け！](https://bbs.vcb-s.com/thread-997-1-1.html)
+>
+> [Extracting subtitles with FFmpeg](https://sinestesia.co/blog/tutorials/extracting-subtitles-with-ffmpeg/)
+>
+> [前端如何控制GIF的播放和暂停](https://www.jianshu.com/p/d5cc47f6a998)
 
 ### epwing
 
