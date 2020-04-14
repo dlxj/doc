@@ -68,6 +68,16 @@ def relu(x):
 
 ![image-20200125212206160](./深度学习入门：基于Python的理论与实现.assets/image-20200125212206160.png)
 
+![image-20200414140103023](C:\Users\echod\AppData\Roaming\Typora\typora-user-images\image-20200414140103023.png)
+
+
+
+Gilbert Strang-Linear Algebra and Its Applications (4ed)-Brooks Cole (2005)
+
+Win10截图：  Win + Shift + S  
+
+
+
 
 
 **第一个矩形贡献行数，第二个矩阵贡献列数**
