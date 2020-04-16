@@ -1,6 +1,9 @@
 # 知乎大佬
 
 > 王赟 Maig [z](https://www.zhihu.com/people/maigo) 
+>
+> 酱紫君 随机取牌算不出 24 点的概率是多少[z](https://www.zhihu.com/question/307729091/answer/1119004801)
+>
 > 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
 > UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
 >
@@ -53,7 +56,6 @@
   > [ASS-字幕格式规范](https://github.com/weizhenye/ASS/wiki/ASS-字幕格式规范)
   >
   > [FFMPEG流媒体](https://www.cnblogs.com/tocy/)
-
 
 ## pure function 移值
 
