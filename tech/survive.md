@@ -269,6 +269,17 @@ mac mount Android as drive
 
 
 
+## Python for windows
+> C:\Users\Administrator\AppData\Local\Programs\Python\Python38  默认安装位置
+>
+> D:\usr\Python38 自定义完装位置
+
+- ```
+  pip3 install jupyterlab
+  ```
+
+
+
 # PC 开发
 
 
@@ -526,6 +537,24 @@ mac mount Android as drive
 > [《动手学深度学习》](https://github.com/d2l-ai/d2l-zh)
 >
 >   - 可运行的**Jupyter note**
+
+## Python for Windows
+> C:\Users\Administrator\AppData\Local\Programs\Python\Python38
+> D:\usr\Python38
+>
+> pip3 install --upgrade pip
+>
+> - whoami
+>
+> - net user administrator
+> - where cmd
+>
+> ```
+> pip3 install jupyter
+> cd /d  E:\GitHub\doc\lang\programming
+> 
+> ```
+
 
 
 
