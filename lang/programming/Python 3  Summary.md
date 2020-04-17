@@ -14,6 +14,18 @@ def listToDict(lst):
 
 
 
+## String Template
+
+new in Python 3
+```
+print(f"{name} is {age} years old")
+```
+
+
+
+
+
+
 
 
 
