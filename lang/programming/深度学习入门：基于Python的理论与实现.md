@@ -1,3 +1,17 @@
+
+
+# What I cannot create, I do not understand
+
+本书最大的特点是“剖解”了深度学习的底层技术。正如美国物理学家 理查德·费曼（Richard Phillips Feynman）所说：“What I cannot create, I do not understand.”只有创造一个东西，才算真正弄懂了一个问题。本书就 是教你如何创建深度学习模型的一本书。
+
+
+
+[有哪些优秀的深度学习入门书籍](https://www.zhihu.com/question/36675272)
+
+[动手学深度学习](https://github.com/d2l-ai/d2l-zh)
+
+
+
 #### 神经网络的出现是为了自动从数据中学习出感知机 (perceptron)  的合适权重参数
 
 
