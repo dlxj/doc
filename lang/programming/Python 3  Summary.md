@@ -2,6 +2,8 @@
 
 [TOC]
 
+
+
 # Python 3  Summary
 
 ## range
@@ -34,6 +36,18 @@ print (item, end=" ")
         print ('testjson err: \n\n', dic["TestJson"])
 
 ```
+
+# Filter
+
+[filter](https://www.liaoxuefeng.com/wiki/1016959663602400/1017404530360000)
+
+```python
+list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+```
+
+- filter()`函数返回的是一个`Iterator`，也就是一个惰性序列，所以要强迫`filter()`完成计算结果，需要用`list()`函数获得所有结果并返回list
+
+
 
 ## JSON
 
