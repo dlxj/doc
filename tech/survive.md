@@ -1964,6 +1964,12 @@ screencapture -h
  主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
 节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力 
 
+目前iOS13.1.3版本下Shadowrocket可以正常使用，但是V2ray不支持KCP协议，v2ray最好用的协议就是kcp，不支持有点难受
+
+推荐Appstore-detour（低调。。）
+
+Kitsunebi是一个基于V2Ray核心的iOS应用，支持VMess
+
 ## MaxOS
 
 1. ShadowsocksX-NG

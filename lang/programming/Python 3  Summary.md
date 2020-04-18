@@ -219,3 +219,83 @@ print (dbc.connection)
 
 
 
+## UTF-8
+
+```python
+# encoding=utf-8
+# 使用 coding: utf-8 设置中文编码只在 Python 3 有效
+import sys
+reload(sys)
+sys.setdefaultencoding('UTF-8')
+
+import re
+import jieba
+import jieba.analyse
+import jieba.posseg as pseg
+
+def is_alpha(tok):
+    try:
+        return tok.encode('ascii').isalpha()
+    except UnicodeEncodeError:
+        return False
+
+
+text = u'影响酶促反应速度的因素1.酶浓度 <br>2.底物浓度 <br>3.温度<br>4.酸碱度 <br>5.激活剂<br>6.抑制剂'
+
+p2 = re.compile(ur'[^\u4e00-\u9fa5]') #中文的编码范围是：\u4e00到\u9fa5  
+zh = " ".join(p2.split(text)).strip()                    
+zh = "|".join(zh.split())  
+
+# print zh
+
+# text = [w for w in text if not is_alpha(w)]
+
+print zh
+
+'''
+
+seg_list = jieba.cut(text, cut_all=True)
+seg_list_tolist = list(seg_list)
+
+# for w in seg_list_tolist:
+    # print w
+
+
+seg_list = jieba.cut(text, cut_all=True)
+print("Full Mode: " + "|".join(seg_list))  # 全模式
+
+
+for x, w in jieba.analyse.extract_tags(text, withWeight=True):
+    print('%s %s %s' % (x, w, is_alpha(x)))
+
+'''
+
+
+
+#text = [w for w in text]
+
+
+'''
+if True:
+    text = [w for w in text if not is_alpha(w)]
+'''
+
+
+
+'''
+item = pseg.cut(text)
+for i in list(item):
+  print i.word
+
+
+open('stopword.txt').readlines()
+
+stop = [line.strip().decode('utf-8') for line in open('stopword.txt').readlines() ]
+'''
+
+# print list(stop)
+
+
+
+```
+
