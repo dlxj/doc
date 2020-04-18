@@ -31,6 +31,10 @@
 > [ying汉大词典（第2版 陆谷sun）](https://www.pdawiki.com/forum/thread-35800-1-1.html) [漢語ＢＩＧ ｃｉ典3.0](https://www.pdawiki.com/forum/thread-37586-1-1.html)
 >
 > [MDX词典打包工具](https://www.pdawiki.com/forum/thread-36415-1-1.html)
+>
+> [自购美亚New Partridge Dictionary 2nd Edition](https://www.pdawiki.com/forum/thread-36045-1-1.html)
+>
+> [Dorland’s Illustrated Medical Dictionary 道兰氏图解医学词典](https://www.dorlandsonline.com/dorland/home) [p](https://www.pdawiki.com/forum/thread-29190-1-1.html)
 
 
 
