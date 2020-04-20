@@ -31,6 +31,10 @@
 > [ying汉大词典（第2版 陆谷sun）](https://www.pdawiki.com/forum/thread-35800-1-1.html) [漢語ＢＩＧ ｃｉ典3.0](https://www.pdawiki.com/forum/thread-37586-1-1.html)
 >
 > [MDX词典打包工具](https://www.pdawiki.com/forum/thread-36415-1-1.html)
+>
+> [自购美亚New Partridge Dictionary 2nd Edition](https://www.pdawiki.com/forum/thread-36045-1-1.html)
+>
+> [Dorland’s Illustrated Medical Dictionary 道兰氏图解医学词典](https://www.dorlandsonline.com/dorland/home) [p](https://www.pdawiki.com/forum/thread-29190-1-1.html)
 
 
 
@@ -1959,6 +1963,12 @@ screencapture -h
  我们的永久域名是（国内访问比较慢，建议使用代理）：https://www.ftwssr.com/
  主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
 节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力 
+
+目前iOS13.1.3版本下Shadowrocket可以正常使用，但是V2ray不支持KCP协议，v2ray最好用的协议就是kcp，不支持有点难受
+
+推荐Appstore-detour（低调。。）
+
+Kitsunebi是一个基于V2Ray核心的iOS应用，支持VMess
 
 ## MaxOS
 
