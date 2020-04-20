@@ -264,12 +264,10 @@ mac mount Android as drive
 # Deep Leaning
 
 - **《深度学习入门：基于Python的理论与实现》**
-
 - [Haskell井字棋](https://crypto.stanford.edu/~blynn/play/tictactoe.html) 
-
 - [haskell神经网络实现](https://gist.github.com/masterdezign/34ab610715df7dbf504cbe7cacdba68e) 
-
 - [10 Days Of Grad: Deep Learning From The First Principles](http://penkovsky.com/neural-networks/day1/) 10天学梯度：深度学习原理
+- 美丽之问：宇宙万物的大设计
 
 
 
