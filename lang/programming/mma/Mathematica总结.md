@@ -128,13 +128,16 @@ Lookup[<|a -> 1, b -> 2|>, a]
 
 
 
-## 模板 
+## String
 
 
 
 ### 字符串格式化 StringTemplate
 
-> StringTemplate["first `a` then `b`"][<|"a" -> 1234, "b" -> 5678|>]
+```mathematica
+StringTemplate["first `a` then `b`"][<|"a" -> 1234, "b" -> 5678|>]
+StringTemplate["a is ``, b is ``"][5555, 6666]
+```
 
 
 
@@ -144,6 +147,24 @@ Lookup[<|a -> 1, b -> 2|>, a]
 In[1]:= t = Mean[{TemplateSlot["me"], 50, 30}];
 TemplateApply[t, <|"me" -> 100|>]
 Out[1]= 60
+```
+
+
+
+### ToCharacterCode
+
+```mathematica
+ToCharacterCode["abcABC\[Alpha]\[Beta]\[Gamma]","UTF8"]
+FromCharacterCode[%, "UTF8"]
+```
+
+
+
+### CharacterRange
+
+```
+CharacterRange["a", "z"]
+CharacterRange[1000, 1020] (* use char code *)
 ```
 
 
