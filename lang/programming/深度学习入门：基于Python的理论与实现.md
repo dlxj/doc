@@ -29,9 +29,9 @@ A.dtype # int64
 
 
 
+![image-20200420174902766](深度学习入门：基于Python的理论与实现.assets/image-20200420174902766.png)
 
-
-
+[吴恩达深度学习—深度神经网络的反向传播推导)](https://zhuanlan.zhihu.com/p/80376257) 
 
 
 
