@@ -6,6 +6,20 @@
 
 # Python 3  Summary
 
+
+
+## Dictionary
+
+
+
+### Check if a given key already exists in a dictionary
+
+```python
+'key1' in dict  # will return True or False
+```
+
+
+
 ## range
 
 
