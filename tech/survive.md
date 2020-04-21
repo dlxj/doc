@@ -485,7 +485,10 @@ mac mount Android as drive
 >
 > [Extracting subtitles with FFmpeg](https://sinestesia.co/blog/tutorials/extracting-subtitles-with-ffmpeg/)
 >
+> [《英汉医学大词典》](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=29020&page=1#pid779395)
+>
 > [前端如何控制GIF的播放和暂停](https://www.jianshu.com/p/d5cc47f6a998)
+> [《全医08总动员重新修訂版 》](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=2559&highlight=%E5%8C%BB%E5%AD%A6)
 
 ### epwing
 

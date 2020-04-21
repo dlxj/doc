@@ -8,6 +8,16 @@
 
 
 
+# Path
+
+```
+os.path.abspath(__file__)                   # current file
+os.path.dirname(os.path.abspath(__file__))  # current directory
+os.path.dirname(os.path.abspath(__name__))  # current directory
+```
+
+
+
 ## Dictionary
 
 
