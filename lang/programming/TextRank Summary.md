@@ -4,7 +4,9 @@
 
 # TextRank Summary
 
-[z](https://zhuanlan.zhihu.com/p/126733456) 
+[z](https://zhuanlan.zhihu.com/p/126733456) [g](https://ansvver.github.io/pagerank_and_textrank.html) [g](https://zouzhitao.github.io/posts/pagerank/) [j](https://www.jianshu.com/p/f6d66ab97332)
+
+[The Google Pagerank Algorithm and How It Works](https://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm)
 
 ## 有向图
 
