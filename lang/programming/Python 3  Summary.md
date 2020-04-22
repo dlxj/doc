@@ -2,21 +2,69 @@
 
 [TOC]
 
-
-
 # Python 3  Summary
 
 
 
-# Path
+## Path
 
-```
+```python
 os.path.abspath(__file__)                   # current file
-os.path.dirname(os.path.abspath(__file__))  # current directory
-os.path.dirname(os.path.abspath(__name__))  # current directory
+os.path.dirname(os.path.abspath(__file__))  # current file directory
+os.path.dirname(os.path.abspath(__name__))  # ?? directory
+```
+
+## package
+
+```python
+import graphics.primitive.line
+from graphics.primitive import line
+import graphics.formats.jpg as jpg
+python3 -m mypackage.A.spam # Relative imports work
+```
+### 绝大部分时候让__init__.py空着就好
+
+- 让每个目录都包含一个__init__.py，就可以import
+
+###  \_\_init\_\_.py 可以为下层目录代为import 一些东西
+
+> ```python
+> # graphics/formats/__init__.py
+> from . import jpg # 代替import graphics.formats.jpg
+> from . import png # 以及import graphics.formats.png
+> ```
+
+### 黑科技
+```python
+import os,sys
+sys.path.append("./")
+import demo2
+from demo2.test_case import test_baidu
 ```
 
 
+
+
+
+
+> 当一个文件夹下有   init   .py时，意为该文件夹是一个包（package），其下的多个模块（module）构成一个整体，而这些模块（module）都可通过同一个包（package）导入其他代码中。
+>
+> 其中   init   .py文件 用于组织包（package），方便管理各个模块之间的引用、控制着包的导入行为。
+> 该文件可以什么内容都不写，即为空文件（为空时，仅仅用import [该包]形式 是什么也做不了的），存在即可，相当于一个标记。
+> 但若想使用from pacakge_1 import *这种形式的写法，需在  init  .py中加上：   all    = [‘file_a’, ‘file_b’] #package_1下有file_a.py和file_b.py，在导入时   init   .py文件将被执行。
+> 但不建议在   init   .py中写模块，以保证该文件简单。不过可在   init   .py导入我们需要的模块，以便避免一个个导入、方便使用。
+>
+> 其中，   all   是一个重要的变量，用来指定此包（package）被import *时，哪些模块（module）会被import进【当前作用域中】。不在   all   列表中的模块不会被其他程序引用。可以重写  all  ，如   all    = [‘当前所属包模块1名字’, ‘模块1名字’]，如果写了这个，则会按列表中的模块名进行导入。
+>
+> 在模糊导入时，形如from package import *，*是由__all__定义的。
+>
+> 精确导入，形如 from package import *、import package.class。
+>
+>    path   也是一个常用变量，是个列表，默认情况下只有一个元素，即当前包（package）的路径。修改   path   可改变包（package）内的搜索路径。
+>
+> 当我们在导入一个包（package）时（会先加载   init   .py定义的引入模块，然后再运行其他代码），实际上是导入的它的   init   .py文件（导入时，该文件自动运行，助我们一下导入该包中的多个模块）。我们可以在   init   .py中再导入其他的包（package）或模块 或自定义类。
+> ————————————————
+> [c](https://blog.csdn.net/weixin_38256474/java/article/details/81228492)
 
 ## Dictionary
 
