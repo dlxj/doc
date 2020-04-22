@@ -74,6 +74,24 @@
 
 
 
+# The Google Pagerank Algorithm and How It Works
+
+[o](https://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm)
+
+
+
+## Definitions
+
+-  **PR = PageRank**
+
+
+
+## So what is PageRank?
+
+- In short **PageRank is a “vote”**
+
+
+
 
 
 
