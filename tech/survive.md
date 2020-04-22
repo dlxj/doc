@@ -1099,19 +1099,15 @@ make install-config
 > id calibre
 > ```
 >
-> 记下uid gid，真到下面：uid=1001(calibre) gid=1001
->
-> mkdir  /books
->
-> chmod -R a+rw /books  所有人可读写
+> 记下uid gid，填到下面：uid=1001(calibre) gid=1001
 >
 > useradd calibre  权限只开放/books文件夹读写
-> usermod -a -G docker calibre  加入用户组
->
-> ```bash
+>usermod -a -G docker calibre  加入用户组
+> 
+>```
 > sudo docker create --name=calibre-web --restart=always \
 > -v /books/calibre:/books \
-> -v /docker/apps/calibre-web/config:/calibre-web/config \
+>-v /docker/apps/calibre-web/config:/calibre-web/config \
 > -e USE_CONFIG_DIR=true \
 > -e SET_CONTAINER_TIMEZONE=true \
 > -e CONTAINER_TIMEZONE=Europe/Vienna \
@@ -1119,8 +1115,18 @@ make install-config
 > -p 8083:8083 \
 > technosoft2000/calibre-web
 > ```
->
 > 
+
+#### 启动
+
+```
+docker start calibre-web && \
+docker logs -f -t --tail 500 calibre-web
+```
+
+#### 测试
+
+浏览器房问 ip:8083  ，出现配置页面说明安装完毕
 
 
 
