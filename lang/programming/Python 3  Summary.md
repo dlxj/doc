@@ -54,8 +54,6 @@ from demo2.test_case import test_baidu
 
 
 
-
-
 > 当一个文件夹下有   init   .py时，意为该文件夹是一个包（package），其下的多个模块（module）构成一个整体，而这些模块（module）都可通过同一个包（package）导入其他代码中。
 >
 > 其中   init   .py文件 用于组织包（package），方便管理各个模块之间的引用、控制着包的导入行为。
@@ -74,6 +72,26 @@ from demo2.test_case import test_baidu
 > 当我们在导入一个包（package）时（会先加载   init   .py定义的引入模块，然后再运行其他代码），实际上是导入的它的   init   .py文件（导入时，该文件自动运行，助我们一下导入该包中的多个模块）。我们可以在   init   .py中再导入其他的包（package）或模块 或自定义类。
 > ————————————————
 > [c](https://blog.csdn.net/weixin_38256474/java/article/details/81228492)
+
+
+
+## Handle Error
+
+```python
+raise RuntimeError('some err')
+```
+
+
+## Exception
+
+```python
+    try:
+        json.loads( dic["TestJson"], strict=False )
+    except Exception as e:
+        print ( str(e) )
+        print ('testjson err: \n\n', dic["TestJson"])
+
+```
 
 ## Dictionary
 
@@ -107,16 +125,6 @@ print (item, end=" ")
 
 
 
-## Exception
-
-```python
-    try:
-        json.loads( dic["TestJson"], strict=False )
-    except Exception as e:
-        print ( str(e) )
-        print ('testjson err: \n\n', dic["TestJson"])
-
-```
 
 # Filter
 
@@ -295,8 +303,6 @@ print (dbc.connection)
 
 
 ```
-
-
 
 
 
