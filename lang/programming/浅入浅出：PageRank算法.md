@@ -218,30 +218,16 @@ Copy
 ### 相关资料
 
 - [PageRank 维基百科](http://zh.wikipedia.org/wiki/PageRank)
-
 - [深入探讨PageRank（一）：PageRank算法原理入门](http://blog.csdn.net/monkey_d_meng/article/details/6554518)
-
 - [深入探讨PageRank（二）：PageRank原理剖析](http://blog.csdn.net/monkey_d_meng/article/details/6556295)
-
 - [深入探讨PageRank（四）：PageRank的危机及搜索引擎的未来](http://blog.csdn.net/monkey_d_meng/article/details/6558100)
-
 - [The PageRank Citation Ranking: Bringing Order to the Web](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf)
-
 - [谷歌背后的数学](http://www.changhai.org/articles/technology/misc/google_math.php)
-
 - [PageRank算法](http://blog.csdn.net/hguisu/article/details/7996185)
-
 - [Google PageRank算法](http://www.charlesgao.com/?p=157)
-
 - [浅析PageRank算法](http://blog.codinglabs.org/articles/intro-to-pagerank.html)
-
-  
-
 - [随机矩阵的最大特征值](http://whzecomjm.wordpress.com/2013/04/13/随机矩阵的最大特征值/)
-
 - [How Google Finds Your Needle in the Web's Haystack](http://www.ams.org/samplings/feature-column/fcarc-pagerank)
-
 - [Lecture #3: PageRank Algorithm - The Mathematics of Google Search](http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture3/lecture3.html)
-
 - [Stochastic matrix](http://en.wikipedia.org/wiki/Stochastic_matrix)
 
