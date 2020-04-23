@@ -12,6 +12,10 @@
 
 
 
+**TFIDF 仅考虑了词频的统计信息，没有考虑词之间的关联信息**
+
+想要知道一个人怎么样，看他的朋友怎么样。箭头表示愿意和他“做朋友”
+
 
 
 ### PageRank的目的
@@ -69,6 +73,15 @@ PR(C) = 0.5 * PR(A) + 1 * PR(B) + 0 * PR(C)
 ![image-20200423092940660](TextRank Summary.assets/image-20200423092940660.png)
 
 - **A的重要性 = 0.15 + 0.85 * 其他所有人分给A的重要性之和**
+
+![image-20200423172723727](TextRank Summary.assets/image-20200423172723727.png)
+
+- 按第二个公式表达，图1 的i 的上界是3，有A、B、C 三个节点
+  - V1 = A, V2 = B, V3 = C
+- j 
+  - 
+- vj 是指向结点vi 的第j 个结点
+- |out(vj)| 是结点vj 指向其它结点的箭头总数
 
 
 
@@ -145,6 +158,180 @@ Nest[W.# 0.85 +c&,PR,3]//MatrixForm (* Applying Functions Repeatedly *)
 ### 状态转移矩阵
 
 也叫做**随机矩阵**（Stochastic matrix），所有元素不小于0，每一列的和为1，状态转移矩阵的最大特征值为1
+
+
+
+## 基于TextRank提取关键词、关键短语、摘要，文章排序
+
+![image-20200423172723727](TextRank Summary.assets/image-20200423172723727.png)
+
+
+
+[z](https://zhuanlan.zhihu.com/p/53962922)
+
+
+
+TextRank算法基于PageRank，用于为文本生成关键字和摘要。其论文是：
+
+> Mihalcea R, Tarau P. TextRank: Bringing order into texts[C]. Association for Computational Linguistics, 2004.
+
+
+
+如果把上面的有向边看作无向的（其实就是双向的），那么：
+
+```plain
+M = [0 1 1 
+    0.5 0 0
+    0.5 0 0];
+
+PR = [1; 1 ; 1];
+
+for iter = 1:100
+    PR = 0.15 + 0.85*M*PR;
+    disp(iter);
+    disp(PR);
+end
+```
+
+运行结果（省略部分）：
+
+```plain
+.....
+
+    98
+
+    1.4595
+    0.7703
+    0.7703
+
+    99
+
+    1.4595
+    0.7703
+    0.7703
+
+   100
+
+    1.4595
+    0.7703
+    0.7703
+```
+
+依然能判断出A、B、C的重要性。
+
+## 使用TextRank提取关键字
+
+将原文本拆分为句子，在每个句子中过滤掉停用词（可选），并只保留指定词性的单词（可选）。由此可以得到句子的集合和单词的集合。
+
+每个单词作为pagerank中的一个节点。设定窗口大小为k，假设一个句子依次由下面的单词组成：
+
+w1,w2,w3,w4,w5,...,wn
+
+[w1,w2,...,wk]、[w2,w3,...,wk+1]、[w3,w4,...,wk+2]等都是一个窗口。在一个窗口中的任两个单词对应的节点之间存在一个无向无权的边。
+
+基于上面构成图，可以计算出每个单词节点的重要性。最重要的若干单词可以作为关键词。
+
+## 使用TextRank提取关键短语
+
+参照“使用TextRank提取关键词”提取出若干关键词。若原文本中存在若干个关键词相邻的情况，那么这些关键词可以构成一个关键短语。
+
+例如，在一篇介绍“支持向量机”的文章中，可以找到三个关键词支持、向量、机，通过关键短语提取，可以得到支持向量机。 使用TextRank提取摘要
+
+将每个句子看成图中的一个节点，若两个句子之间有相似性，认为对应的两个节点之间有一个无向有权边，权值是相似度。
+
+通过pagerank算法计算得到的重要性最高的若干句子可以当作摘要。
+
+论文中使用下面的公式计算两个句子Si和Sj的相似度：
+
+![img](TextRank Summary.assets/textrank-01.png)
+
+分子是在两个句子中都出现的单词的数量。|Si|是句子i的单词数。
+
+由于是有权图，PageRank公式略做修改：
+
+![img](TextRank Summary.assets/textrank-02.png)
+
+## 实现TextRank
+
+因为要用测试多种情况，所以自己实现了一个基于Python 2.7的TextRank针对中文文本的库TextRank4ZH。位于：
+
+https://github.com/letiantian/TextRank4ZH
+
+下面是一个例子：
+
+```plain
+# -*- encoding:utf-8 -*-
+
+import codecs
+from textrank4zh import TextRank4Keyword, TextRank4Sentence
+
+text = codecs.open('./text/01.txt', 'r', 'utf-8').read()
+tr4w = TextRank4Keyword(stop_words_file='./stopword.data')  # 导入停止词
+
+# 使用词性过滤，文本小写，窗口为2
+tr4w.train(text=text, speech_tag_filter=True, lower=True, window=2)  
+
+print '关键词：'
+# 20个关键词且每个的长度最小为1
+print '/'.join(tr4w.get_keywords(20, word_min_len=1))  
+
+print '关键短语：'
+# 20个关键词去构造短语，短语在原文本中出现次数最少为2
+print '/'.join(tr4w.get_keyphrases(keywords_num=20, min_occur_num= 2))  
+
+tr4s = TextRank4Sentence(stop_words_file='./stopword.data')
+
+# 使用词性过滤，文本小写，使用words_all_filters生成句子之间的相似性
+tr4s.train(text=text, speech_tag_filter=True, lower=True, source = 'all_filters')
+
+print '摘要：'
+print '\n'.join(tr4s.get_key_sentences(num=3)) # 重要性最高的三个句子
+```
+
+Copy
+
+运行结果如下：
+
+```plain
+关键词：
+媒体/高圆圆/微/宾客/赵又廷/答谢/谢娜/现身/记者/新人/北京/博/展示/捧场/礼物/张杰/当晚/戴/酒店/外套
+关键短语：
+微博
+摘要：
+中新网北京12月1日电(记者 张曦) 30日晚，高圆圆和赵又廷在京举行答谢宴，诸多明星现身捧场，其中包括张杰(微博)、谢娜(微博)夫妇、何炅(微博)、蔡康永(微博)、徐克、张凯丽、黄轩(微博)等
+高圆圆身穿粉色外套，看到大批记者在场露出娇羞神色，赵又廷则戴着鸭舌帽，十分淡定，两人快步走进电梯，未接受媒体采访
+记者了解到，出席高圆圆、赵又廷答谢宴的宾客近百人，其中不少都是女方的高中同学
+```
+
+Copy
+
+另外， [jieba分词](https://github.com/fxsjy/jieba)提供的基于TextRank的关键词提取工具。 [snownlp](https://github.com/isnowfy/snownlp)也实现了关键词提取和摘要生成。
+
+**下载：**
+
+https://github.com/letiantian/TextRank4ZH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
