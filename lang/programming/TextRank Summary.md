@@ -93,6 +93,18 @@ PR(C) = 0.5 * PR(A) + 1 * PR(B) + 0 * PR(C)
 
 
 
+##### Mathematica 实现迭代100 次的结果：
+
+```
+Nest[ Transpose[{{0,1/2,1/2},{0,0,1},{1,0,0}}].# 0.85 +c&,PR,100]//MatrixForm
+```
+
+![image-20200423162313958](TextRank Summary.assets/image-20200423162313958.png)
+
+
+
+
+
 ##### 图2 的计算
 
 ```
@@ -110,13 +122,23 @@ PR(C) = 0.5 * PR(A) + 1 * PR(B) + 0 * PR(C)
 
 - C 什么也没有分到
 
-这种情况下无论计算迭代多少次，结果都是一样的。最终收敛值是：
+这种情况下第一轮计算就决定最终结果了。最终收敛值是：
 
 ```plain
 A = 0.4050
 B = 0.15
 C = 0.15
 ```
+
+Mathematica 实现迭代3 次的结果：
+```
+PR={{1},{1},{1}};
+W= {{0,0,0},{1,0,0},{1,0,0}}//Transpose;
+c = {{0.15},{0.15},{0.15}};
+Nest[W.# 0.85 +c&,PR,3]//MatrixForm (* Applying Functions Repeatedly *)
+```
+
+![image-20200423162518853](TextRank Summary.assets/image-20200423162518853.png)
 
 
 
