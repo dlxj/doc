@@ -784,7 +784,9 @@ ssh -i .ssh/id_rsa -T git@gitee.com
 #### and Install build-essential
 
 ```
+# rm -rf ~/.ssh/known_hosts; \
 ssh -i ~/gitee/GFW/keyt -p 22 root@111.229.53.195
+
 cp /etc/apt/sources.list /etc/apt/sources.list_backup && \
 cat << EOF |
 deb http://mirrors.163.com/ubuntu/ bionic main restricted universe multiverse
@@ -1086,7 +1088,7 @@ make install-config
 > sudo apt-get install docker-ce && \
 > curl -fsSL get.docker.com -o get-docker.sh && \
 > sudo sh get-docker.sh --mirror Aliyun && \
-> sudo docker pull technosoft2000/calibre-web
+> sudo docker pull ctiself/calibre-web
 > ```
 
 #### 配置
@@ -1102,20 +1104,24 @@ make install-config
 > 记下uid gid，填到下面：uid=1001(calibre) gid=1001
 >
 > useradd calibre  权限只开放/books文件夹读写
->usermod -a -G docker calibre  加入用户组
-> 
->```
+> usermod -a -G docker calibre  加入用户组
+>
+> ```
 > sudo docker create --name=calibre-web --restart=always \
 > -v /books/calibre:/books \
->-v /docker/apps/calibre-web/config:/calibre-web/config \
+> -v /docker/apps/calibre-web/config:/calibre-web/config \
 > -e USE_CONFIG_DIR=true \
 > -e SET_CONTAINER_TIMEZONE=true \
 > -e CONTAINER_TIMEZONE=Europe/Vienna \
 > -e PGID=1000 -e PUID=1000 \
 > -p 8083:8083 \
-> technosoft2000/calibre-web
+> ctiself/calibre-web
 > ```
-> 
+> ```
+> technosoft2000/calibre-web has error in git clone
+> ```
+
+
 
 #### 启动
 
@@ -1128,7 +1134,39 @@ docker logs -f -t --tail 500 calibre-web
 
 浏览器房问 ip:8083  ，出现配置页面说明安装完毕
 
+>Calibre 数据库位置
+> /books
+> 
+>日志级别
+> INFO
+> 日志文件位置
+> /config/calibre-web.log
+> 
+>端口设置为8083，如果想用https，将pem和key文件放入config文件夹内
+> 
+>转换工具路径
+> /usr/bin/ebook-convert
+> Unrar位置
+> 
+>/usr/local/bin/unrar
 
+
+calibre-web DB位置无效，请输入正确路径
+
+> 利用PC版的calibre 导入图书，生成metadata.db
+> 然后把"~/Calibre Library/metadata.db" 传到vps 的/books/calibre 文件夹下
+>
+> ```
+> echo 'EOF
+> cd /books/calibre
+> put /Users/vvw/gitee/GFW/metadata.db
+> Ying Yi Yi Xue Da Ci Dian - Chen Wei Yi  Li Ding Jun.azw3
+> bye
+> EOF' | sftp -i ~/gitee/GFW/keyt root@111.229.53.195 && \
+> echo 'upload success.'
+> ```
+
+提交设置后，就可以点登陆按钮，第一次的默认用户名和密码时admin,admin123
 
 
 
