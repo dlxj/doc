@@ -8,7 +8,7 @@
 
 [The Google Pagerank Algorithm and How It Works](https://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm)
 
-
+[浅入浅出：PageRank算法](https://www.letianbiji.com/machine-learning/page-rank.html)
 
 ### PageRank的目的
 
@@ -17,6 +17,9 @@
   > 在已知网页互相链接方式的情况下**判断网页的重要性**。如果A和B中含有相同的关键字，而A的重要性高于B，那么搜索这个关键字的结果中网页A应该放在网页B之前
 
 - 重要的网页，搜索结果排名靠前，优先展示
+
+1. 每个人的**重要性都是别人赏赐的**
+2. 每个人都有可能向其他人**均分自已的重要性**
 
 
 
