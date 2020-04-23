@@ -63,6 +63,19 @@ f[f[f[f[x,a],b],c],d]
 
 
 
+## Nest
+
+### Applying Functions Repeatedly
+
+```
+Nest[f,x,4]
+f[f[f[f[x]]]]
+```
+
+
+
+
+
 ##  DictionaryLookup
 
 ### 所有字典可查询的语言
