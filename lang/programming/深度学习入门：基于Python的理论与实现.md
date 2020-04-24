@@ -50,10 +50,32 @@ A.dtype # int64
 ## Xor 问题 
 
 - [DeepLearningBook]()
+- [梯度下降过程向量化](https://blog.csdn.net/lgb_love/article/details/81456955)
 
 ### 训练数据
 
-![image-20200420181909577](深度学习入门：基于Python的理论与实现.assets/image-20200420181909577.png)
+![image-20200423181557148](深度学习入门：基于Python的理论与实现.assets/image-20200423181557148.png)
+
+$$
+X=
+\begin{bmatrix}
+0 & 0  \\
+0 & 1  \\
+1 & 0  \\
+1 & 1  \\
+\end{bmatrix}
+$$
+
+
+$$
+Y=
+\begin{bmatrix}
+0 \\
+1  \\
+1 \\
+0 \\
+\end{bmatrix}
+$$
 
 4组行向量组成的矩阵，这是**训练数据**（行向量是同一维的两个坐标）
 

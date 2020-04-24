@@ -78,14 +78,18 @@ PR(C) = 0.5 * PR(A) + 1 * PR(B) + 0 * PR(C)
 
 - 按第二个公式表达，图1 的i 的上界是3，有A、B、C 三个节点
   - V1 = A, V2 = B, V3 = C
-- j 
-  - 
-- vj 是指向结点vi 的第j 个结点
-- |out(vj)| 是结点vj 指向其它结点的箭头总数
+- j 的取值是除i 以外的值
+  - In(Vi) 是**指向**Vi 的结点，Out(Vj) 是Vj **指向**的结点
+- vj 是指向vi 的结点, j != i ，**指向它既是给它贡献重要性**
+- |out(Vj)| 是结点vj **指向其他结点的箭头总数**
+
+- S(Vj)  是结点Vj 的**重要性**  S(Vj)=PR(Vj) = PageRank(Vj)
 
 
 
 #### 修正版的方程组
+
+![image-20200424085928854](TextRank Summary.assets/image-20200424085928854.png)
 
 ##### 图1 的计算
 
@@ -120,6 +124,8 @@ Nest[ Transpose[{{0,1/2,1/2},{0,0,1},{1,0,0}}].# 0.85 +c&,PR,100]//MatrixForm
 
 ##### 图2 的计算
 
+![image-20200424085905392](TextRank Summary.assets/image-20200424085905392.png)
+
 ```
 初始化：
 	PR(A) = PR(B) = PR(C) = 1
@@ -152,6 +158,25 @@ Nest[W.# 0.85 +c&,PR,3]//MatrixForm (* Applying Functions Repeatedly *)
 ```
 
 ![image-20200423162518853](TextRank Summary.assets/image-20200423162518853.png)
+
+###### 图2看作无向图（等价于双向图）
+
+![image-20200424085855685](TextRank Summary.assets/image-20200424085855685.png)
+
+```
+初始化：
+	PR(A) = PR(B) = PR(C) = 1
+
+第一轮计算：
+	PR(A) = 0.15 + 0.85 * (   0 * PR(A) + 1 * PR(B) + 1 * PR(C) )
+	PR(B) = 0.15 + 0.85 * ( 1/2 * PR(A) + 0 * PR(B) + 0 * PR(C) )
+	PR(C) = 0.15 + 0.85 * ( 1/2 * PR(A) + 0 * PR(B) + 0 * PR(C) )
+```
+
+- A分到了B 的百分百,  C 的百分百
+- B 分到了A 的1/2
+
+- C 分到了A 的1/2
 
 
 
