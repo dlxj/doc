@@ -730,6 +730,28 @@ _&
 
 
 
+## Graph
+
+
+
+### 近义词图
+
+```
+words=DictionaryLookup["wol*"];
+Flatten[Map[(Thread[#\[DirectedEdge]DeleteCases[Nearest[words,#,3],#]])&,words]];
+Graph[%,VertexLabels->"Name",ImageSize->450]
+```
+
+
+
+
+
+
+
+### CompleteGraph
+
+> 全结点全连接的图
+
 
 
 SetDirectory[NotebookDirectory[]];
