@@ -138,6 +138,16 @@ list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
 
 
 
+## Sort
+
+```python
+sorted(trank_res, key=lambda x: x['index'], reverse=False)
+```
+
+
+
+
+
 ## JSON
 
 ```python
