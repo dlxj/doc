@@ -173,76 +173,24 @@ Nest[W.# 0.85 +c&,PR,3]//MatrixForm (* Applying Functions Repeatedly *)
 	PR(C) = 0.15 + 0.85 * ( 1/2 * PR(A) + 0 * PR(B) + 0 * PR(C) )
 ```
 
-- A分到了B 的百分百,  C 的百分百
+- A 分到了B 的百分百,  C 的百分百
 - B 分到了A 的1/2
 
 - C 分到了A 的1/2
 
-
-
-### 状态转移矩阵
-
-也叫做**随机矩阵**（Stochastic matrix），所有元素不小于0，每一列的和为1，状态转移矩阵的最大特征值为1
+![image-20200424091656296](TextRank Summary.assets/image-20200424091656296.png)
 
 
 
-## 基于TextRank提取关键词、关键短语、摘要，文章排序
-
-![image-20200423172723727](TextRank Summary.assets/image-20200423172723727.png)
 
 
+#### W其实就是一个状态转移矩阵
 
-[z](https://zhuanlan.zhihu.com/p/53962922)
+也叫做**随机矩阵**（Stochastic matrix），**所有元素不小于0，每一列的和为1**，状态转移矩阵的最大特征值为1
 
 
 
-TextRank算法基于PageRank，用于为文本生成关键字和摘要。其论文是：
 
-> Mihalcea R, Tarau P. TextRank: Bringing order into texts[C]. Association for Computational Linguistics, 2004.
-
-
-
-如果把上面的有向边看作无向的（其实就是双向的），那么：
-
-```plain
-M = [0 1 1 
-    0.5 0 0
-    0.5 0 0];
-
-PR = [1; 1 ; 1];
-
-for iter = 1:100
-    PR = 0.15 + 0.85*M*PR;
-    disp(iter);
-    disp(PR);
-end
-```
-
-运行结果（省略部分）：
-
-```plain
-.....
-
-    98
-
-    1.4595
-    0.7703
-    0.7703
-
-    99
-
-    1.4595
-    0.7703
-    0.7703
-
-   100
-
-    1.4595
-    0.7703
-    0.7703
-```
-
-依然能判断出A、B、C的重要性。
 
 ## 使用TextRank提取关键字
 
@@ -454,6 +402,24 @@ https://github.com/letiantian/TextRank4ZH
 - 当加入了阻尼因子后，可以认为用户浏览到任何一个页面，都**有可能以一个极小的概率转移到另外一个页面**
 
 
+
+
+
+
+
+## 基于TextRank提取关键词、关键短语、摘要，文章排序
+
+![image-20200423172723727](TextRank Summary.assets/image-20200423172723727.png)
+
+
+
+[z](https://zhuanlan.zhihu.com/p/53962922)
+
+
+
+TextRank算法基于PageRank，用于为文本生成关键字和摘要。其论文是：
+
+> Mihalcea R, Tarau P. TextRank: Bringing order into texts[C]. Association for Computational Linguistics, 2004.
 
 
 
