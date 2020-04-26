@@ -34,6 +34,12 @@ Sequence
 
 
 
+## GUI
+
+help -> DirectedEdge
+
+
+
 ## Thread 组合
 
 Thread
