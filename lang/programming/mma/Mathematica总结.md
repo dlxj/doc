@@ -38,6 +38,12 @@ Sequence
 
 help -> DirectedEdge
 
+> Graph[{Labeled[1\[DirectedEdge]2,"Hello"],2\[DirectedEdge]3,3\[DirectedEdge]1}]
+>
+> Graph[{Button[Style[1\[DirectedEdge]2,Red],Speak["Hello"]],2\[DirectedEdge]3,3\[DirectedEdge]1}]
+>
+> Graph[Table[Property[v,{VertexSize->0.2+0.2Mod[v,5],VertexStyle->Hue[v/15,1,1]}],{v,0,14}],Table[v\[UndirectedEdge]Mod[v+1,15],{v,0,14}]]
+
 
 
 ## Thread 组合
