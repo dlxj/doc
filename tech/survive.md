@@ -261,7 +261,8 @@ mac mount Android as drive
 
 - [Haskell to WebAssembly compiler](https://github.com/tweag/asterius)
 
-
+- Armadillo
+  - C++ 矩阵运算库
 
 # Deep Leaning
 
