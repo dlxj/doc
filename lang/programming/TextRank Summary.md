@@ -192,7 +192,7 @@ $$
 
 ![image-20200427083605244](TextRank Summary.assets/image-20200427083605244.png)
 
-邻接矩阵
+带权邻接矩阵
 
 ![image-20200427083757518](TextRank Summary.assets/image-20200427083757518.png)
 
