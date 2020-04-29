@@ -78,15 +78,13 @@ python -m jupyter notebook --version
 
 
 
+python -m pip install -U matplotlib
+
 
 
 **Ctrl+Shift+P** -> **Python: Create New Blank Jupyter Notebook**
 
 > 注意大小写都要正确
-
-
-
-
 
 
 
@@ -102,7 +100,15 @@ python -m pip install -U matplotlib
 
 
 
-Path 需要手动加入
+# Python Interactive Network Visualization Using NetworkX, Plotly, and Dash
+
+https://towardsdatascience.com/python-interactive-network-visualization-using-networkx-plotly-and-dash-e44749161ed7
+
+
+
+
+
+需要手动加入
 
 C:\Users\echod\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\Scripts
 
