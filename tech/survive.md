@@ -1220,6 +1220,19 @@ calibre-web DB位置无效，请输入正确路径
 
 
 
+## 内网穿透
+
+
+
+- 当你在外面使用手机流量访问 *fcnas.cf*，域名会解析到frp服务器，通过内网穿透连接NAS。
+- 当你在家中使用手机WiFi访问 *fcnas.cf*，域名会被家中的路由器劫持DNS，绑定到NAS的本地IP，局域网直达NAS，避免frp中转绕远路。
+
+- [frps服务器](https://zhuanlan.zhihu.com/p/73482384)
+
+
+
+
+
 # 写作
 
 ## markdown-nice
