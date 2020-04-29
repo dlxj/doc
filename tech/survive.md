@@ -264,6 +264,15 @@ mac mount Android as drive
 - Armadillo
   - C++ 矩阵运算库
 
+## Cygwin
+
+- 装cmake, g++
+- mount 命令可以看到windows 磁盘目录被挂到哪里
+
+## Windows
+
+- sudo passwd will change the password of the WSL root user
+
 # Deep Leaning
 
 - **《深度学习入门：基于Python的理论与实现》**

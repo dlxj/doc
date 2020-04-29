@@ -126,7 +126,7 @@ print (item, end=" ")
 
 
 
-# Filter
+## Filter
 
 [filter](https://www.liaoxuefeng.com/wiki/1016959663602400/1017404530360000)
 
@@ -143,6 +143,30 @@ list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
 ```python
 sorted(trank_res, key=lambda x: x['index'], reverse=False)
 ```
+
+
+
+## Numpy
+
+
+
+### Initialize
+
+```python
+np.array([[2, 4, 6], [6, 8, 10]], np.int32)
+np.zeros((3, 3))
+np.ones((8, 1))
+```
+
+
+
+### Matrix Op
+
+```
+np.dot(W, TR) * 0.85 + C
+```
+
+
 
 
 
