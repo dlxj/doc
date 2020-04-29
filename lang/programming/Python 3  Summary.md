@@ -340,6 +340,8 @@ print (dbc.connection)
 
 
 
+
+
 ## UTF-8
 
 ```python
@@ -419,4 +421,89 @@ stop = [line.strip().decode('utf-8') for line in open('stopword.txt').readlines(
 
 
 ```
+
+
+
+
+
+# networkx plot graph
+
+
+
+## 看权重和结点的图形
+
+
+```python
+# encoding=utf-8
+# 使用 coding: utf-8 设置中文编码只在 Python 3 有效
+import networkx as nx
+import numpy as np
+import math
+import re
+import os
+import sys
+#sys.stdout.reconfigure(encoding='utf-8')
+print(sys.getdefaultencoding())  # python3的系统编码
+print(sys.stdout.encoding)       # 标准输出的编码
+
+
+"""
+此代码用于测试算法正确性
+"""
+
+adjacentMatrix = np.zeros((3, 3))
+"""
+	邻接矩阵 里面存的是相似度，相似度就是graph 中的边的权值
+"""
+
+adjMat = np.array([[0, 0.4, 0.2], [0.4, 0, 0.1], [0.2, 0.1, 0]], np.float)
+
+G = nx.from_numpy_matrix(adjMat)
+# pos=nx.get_node_attributes(G,'pos')
+pos = nx.spring_layout(G)
+nx.draw(G, with_labels = True)
+labels = nx.get_edge_attributes(G,'weight')
+nx.draw_networkx_edge_labels(G, pos, edge_labels = labels)
+
+scores = nx.pagerank(G, **{'alpha': 0.85, })
+
+print ( type(adjacentMatrix), type(adjMat) )
+print (adjacentMatrix)
+print (adjMat)
+print (nx_graph)
+print (scores)
+
+
+```
+
+
+
+## 看权重和结点的文本输出
+
+```python
+import networkx as nx
+import numpy as np
+
+adjMat = np.array([[0, 0.4, 0.2], [0.4, 0, 0.1], [0.2, 0.1, 0]], np.float)
+G = nx.from_numpy_matrix(adjMat)
+nx.draw_networkx_edge_labels(G, pos=nx.spring_layout(G))
+```
+
+> {(0, 1): Text(0.36720620499242296, -0.46714047438761563, 
+>
+> "{'weight': 0.4}"), (0, 2): Text(-0.4999999999999998, 0.1325001701718984,
+>
+> "{'weight': 0.2}"), (1, 2): Text(0.13279379500757726, 0.3346403042157172, "{'weight': 0.1}")}
+
+
+
+
+
+
+
+
+
+
+
+
 
