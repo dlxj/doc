@@ -556,6 +556,7 @@ mac mount Android as drive
 >   - 可运行的**Jupyter note**
 
 ## Python for Windows
+
 > C:\Users\Administrator\AppData\Local\Programs\Python\Python38
 > D:\usr\Python38
 >
@@ -571,6 +572,33 @@ mac mount Android as drive
 > cd /d  E:\GitHub\doc\lang\programming
 > 
 > ```
+
+## Python for Mac
+
+> which python3
+> which python3.8
+>
+> which pip3.8
+>
+> pip3.8 install jieba
+>
+> sublim text 配置
+>
+> {
+> 	"shell_cmd": "python3.8 ${file}"
+> }
+>
+> \# encoding=utf-8
+>
+> \# 使用 coding: utf-8 设置中文编码只在 Python 3 有效
+>
+> import sys
+> import codecs
+> sys.stdout.reconfigure(encoding='utf-8')
+> print(sys.getdefaultencoding())  # python3的系统编码
+> print(sys.stdout.encoding)          # 标准输出的编码
+
+
 
 
 
