@@ -275,3 +275,11 @@ nx.draw_networkx_edge_labels(G, pos=nx.spring_layout(G))
  [0.2 0.1 0. ]
 
 ]
+
+
+
+https://reference.wolfram.com/language/GraphUtilities/ref/PageRanks.html
+
+https://www.mathworks.com/help/textanalytics/ref/textrankscores.html
+
+https://github.com/YevaGabrielyan/tldl

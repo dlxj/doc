@@ -289,8 +289,20 @@ mac mount Android as drive
 > D:\usr\Python38 自定义完装位置
 
 - ```
-  pip3 install jupyterlab
+  pip3 install jupyter
   ```
+
+
+
+## 算法
+
+> https://reference.wolfram.com/language/GraphUtilities/ref/PageRanks.html
+>
+> https://www.mathworks.com/help/textanalytics/ref/textrankscores.html
+>
+> https://github.com/YevaGabrielyan/tldl
+
+
 
 
 
