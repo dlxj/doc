@@ -166,9 +166,9 @@ win+r键打开运行对话框，输入 netplwiz ，重设administrator密码
 > **注意**：以下步骤需要在执行 `VSCode` 自带卸载程序之后执行。
 
 - `win + r` 打开运行
-- `%appdata%` 回车
+- %appdata% 回车
 - 删除 `Code` 和 `Visual Studio Code` 文件夹
-- 地址栏输入 `%userprofile%` 回车
+- 地址栏输入 %userprofile% 回车
 - 删除 `.vscode` 文件夹
 
 
