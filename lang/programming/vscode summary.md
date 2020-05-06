@@ -1,5 +1,9 @@
 [TOC]
 
+# 
+
+
+
 
 
 # Python
@@ -283,3 +287,29 @@ https://reference.wolfram.com/language/GraphUtilities/ref/PageRanks.html
 https://www.mathworks.com/help/textanalytics/ref/textrankscores.html
 
 https://github.com/YevaGabrielyan/tldl
+
+
+
+# Windows
+
+
+
+## WSL
+
+```
+sudo apt install xfce4
+sudo apt install xrdp
+sudo echo xfce4-session >~/.xsession
+sudo service xrdp restart
+```
+
+```
+
+```
+
+
+
+
+
+
+

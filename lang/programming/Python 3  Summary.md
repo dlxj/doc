@@ -344,6 +344,32 @@ print (dbc.connection)
 
 ## UTF-8
 
+
+
+```python
+# encoding=utf-8
+# 使用 coding: utf-8 设置中文编码只在 Python 3 有效
+import networkx as nx
+import numpy as np
+import math
+import re
+import os
+import sys
+#sys.stdout.reconfigure(encoding='utf-8')
+print(sys.getdefaultencoding())  # python3的系统编码
+print(sys.stdout.encoding)       # 标准输出的编码
+
+
+adjMat = np.array([[0, 0.4, 0.2], [0.4, 0, 0.1], [0.2, 0.1, 0]], np.float)
+G = nx.from_numpy_matrix(adjMat)
+nx.draw(G, with_labels = True)
+nx.draw_networkx_edge_labels(G, pos=nx.spring_layout(G), edge_labels = nx.get_edge_attributes(G,'weight'))
+```
+
+
+
+
+
 ```python
 # encoding=utf-8
 # 使用 coding: utf-8 设置中文编码只在 Python 3 有效
