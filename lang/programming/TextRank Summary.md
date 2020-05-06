@@ -24,12 +24,19 @@
 
 - 公式细节多
 
+[手撕 TextRank]()
+
+[textrank c++](https://github.com/lostfish/textrank)
+
+[Haskell Tutorial and Cookbook Text Summarization](https://leanpub.com/haskell-cookbook/read#leanpub-auto-natural-language-processing-tools)
+
 [《TextRank: Bringing Order into Texts》](https://www.aclweb.org/anthology/W04-3252.pdf)
 
 - 原始论文
 
-
 [jieba分词过滤停顿词、标点符号及统计词频](https://zhuanlan.zhihu.com/p/39437488)
+
+
 
 
 
