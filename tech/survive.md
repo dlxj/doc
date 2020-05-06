@@ -2087,7 +2087,16 @@ Kitsunebi是一个基于V2Ray核心的iOS应用，支持VMess
 
 # 步骤1:安装xfce4 vnc4server
 
-apt-get -y update&&apt-get -y upgrade&&apt-get -y install xfce4&&apt-get -y install vnc4server&&vncserver :1&&vncserver -kill :1&&cd /root&&wget https://raw.githubusercontent.com/chengziqaq/Ubuntu-xfce-VNC/master/xstartup.txt&&mv xstartup.txt /root/.vnc/xstartup&&cd /root/.vnc/&&chmod 755 xstartup&&echo "安装firefox浏览器中"&&sudo apt-get install xfonts-wqy&&apt-get install -y firefox&&echo "重启中,开机后再执行步骤2的命令"&&reboot
+```bash
+apt-get -y update && apt-get -y upgrade && \
+apt-get -y install xfce4 && apt-get -y install vnc4server && \
+vncserver :1 && vncserver -kill :1 && \
+cd /root &&wget https://raw.githubusercontent.com/chengziqaq/Ubuntu-xfce-VNC/master/xstartup.txt&&mv xstartup.txt /root/.vnc/xstartup&&cd /root/.vnc/&&chmod 755 xstartup&&echo "安装firefox浏览器中"&&sudo apt-get install xfonts-wqy&&apt-get install -y firefox&&echo "重启中,开机后再执行步骤2的命令"&&reboot
+```
+
+
+
+
 
 # 步骤2:服务器重启后,执行
 
