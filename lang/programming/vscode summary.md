@@ -1,6 +1,6 @@
 [TOC]
 
-# 
+ 
 
 # CPP
 
@@ -29,6 +29,14 @@
 4. Install [MinGW-w64](http://mingw-w64.org/doku.php/download)
    - add path:  D:\usr\MingGW\mingw64\bin
    - gcc -v
+
+
+
+[VScode单步调试](https://blog.csdn.net/fb_941219/article/details/93511926)
+
+
+
+> 整体思路就是首先按照常规方法进行mkdir build && cd build && cmake.. && make （这一步可以在vscode的终端完成，也可以在系统终端完成，无所谓。但是为了少开点界面就在vscode里面完成比较好）生成可执行文件，然后使用vscode进行单步
 
 
 
