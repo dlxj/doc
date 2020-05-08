@@ -394,6 +394,53 @@ mac mount Android as drive
   
     自签命令代码：codesign -f -s - --deep /Applications/i4Tools.app
 
+# Win10 WSL | Ubuntu 18.04 with Xfce & Xrdp
+
+
+
+## MUST make sure that the XRDP doesn’t use port 3389 
+
+- which is used by Microsoft RDP (in case if your Windows 10 is already configured for RDP)
+
+
+
+```
+sudo apt install xfce4
+sudo apt install xrdp
+sudo echo xfce4-session >~/.xsession
+sudo service xrdp restart
+```
+
+
+
+### Change the port from 3389 to 3390
+
+
+
+```
+vi /etc/xrdp/xrdp.ini
+
+service xrdp restart
+```
+
+
+
+## Use Win10 remote destop to connect
+
+
+
+Press Win key -> 附件 -> 远程桌面
+
+> input: 
+>
+> localhost:3390
+
+
+
+
+
+
+
 ## 网课
 
 ### Lebus
