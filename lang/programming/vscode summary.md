@@ -2,6 +2,34 @@
 
 # 
 
+# CPP
+
+
+
+## Windows
+
+
+
+### Clang
+
+1. Install [LLVM 10.0 for win64](https://releases.llvm.org/download.html)
+
+2. clang  -v
+
+3. clang hello.cpp
+
+   ```cpp
+   #include <iostream>
+   using namespace std;
+   int main() {
+       cout << "hello world" << endl;
+   }
+   ```
+
+4. Install [MinGW-w64](http://mingw-w64.org/doku.php/download)
+   - add path:  D:\usr\MingGW\mingw64\bin
+   - gcc -v
+
 
 
 
