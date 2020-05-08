@@ -322,7 +322,15 @@ https://github.com/YevaGabrielyan/tldl
 
 
 
-## WSL
+# Win10 WSL | Ubuntu 18.04 with Xfce & Xrdp
+
+
+
+## MUST make sure that the XRDP doesn’t use port 3389 
+
+- which is used by Microsoft RDP (in case if your Windows 10 is already configured for RDP)
+
+
 
 ```
 sudo apt install xfce4
@@ -331,8 +339,58 @@ sudo echo xfce4-session >~/.xsession
 sudo service xrdp restart
 ```
 
+
+
+### Change the port from 3389 to 3390
+
+
+
+```
+vi /etc/xrdp/xrdp.ini
+
+service xrdp restart
 ```
 
+
+
+## Use Win10 remote destop to connect
+
+
+
+Press Win key -> 附件 -> 远程桌面
+
+> input: 
+>
+> localhost:3390
+
+
+
+
+
+
+
+
+```
+
+sudo apt-get install xfce4
+
+如果网速较慢，这会持续一段时间。
+
+然后安装xrdp组件和vnc服务器：
+
+sudo apt-get install xrdp vnc4server
+
+安装好后要自行新建配置文件，使得在远程登录时默认使用xfce作为界面登录，然后重启xrdp服务：
+
+echo "xfce4-session" >~/.xsession
+
+sudo service xrdp restart
+
+这个相当于在当前用户的home目录下新建一个名为.xsession的隐藏文件，并向文件中写入一行xfce4-session。也可以用touch新建文件，并用vi编辑：
+
+touch ~/.xsession
+
+vi ~/.xsession
 ```
 
 

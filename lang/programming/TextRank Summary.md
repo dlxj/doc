@@ -28,6 +28,14 @@
 
 [textrank c++](https://github.com/lostfish/textrank)
 
+```
+cmake ./
+make
+./textrank data/news.seg 1 2 data/news.sent
+```
+
+
+
 [Haskell Tutorial and Cookbook Text Summarization](https://leanpub.com/haskell-cookbook/read#leanpub-auto-natural-language-processing-tools)
 
 [《TextRank: Bringing Order into Texts》](https://www.aclweb.org/anthology/W04-3252.pdf)
