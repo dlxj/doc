@@ -437,6 +437,12 @@ Press Win key -> 附件 -> 远程桌面
 
 
 
+## Install chrome on Ubuntu18.04 
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
+
 
 
 
