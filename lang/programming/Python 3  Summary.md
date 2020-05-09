@@ -6,8 +6,6 @@
 
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
-
-
 1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
    - 普通文件夹不能 import, package 才可以
 
@@ -18,27 +16,31 @@
 
 4. from 模块名 import 变量名 
 
-5. python l默认在sys.path 这个list 里的众多目录下找需要import 的模块，找不到就报错
+5. import 包名.模块名
 
-6. \__file\__ 是模块自身的绝对路径
+6. python l默认在sys.path 这个list 里的众多目录下找需要import 的模块，找不到就报错
 
-7. 要得到上层目录名可以连用两次os.path.dirname  
+7. \__file\__ 是模块自身的绝对路径
+
+8. 要得到上层目录名可以连用两次os.path.dirname  
 
    - ```text
      os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
      ```
 
-8.   
+9.   from package import *
 
+   - \__init\__.py ： \__all\__ = [‘echo’, ‘effect’, ‘reverb’]
 
+   - would be equivalent to
 
-明确你想导入的是一个模块还是一个包？它在文件夹下还是在另一个包里？
+     ```
+     from package import echo
+     from package import effect
+     from package import reverb
+     ```
 
-层级目录关系是怎样的？它在同级，上级还是下级目录/包 下面？
-
-
-
-
+     
 
 ## Import
 
