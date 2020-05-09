@@ -4,6 +4,60 @@
 
 # Python 3  Summary
 
+[z](https://zhuanlan.zhihu.com/p/64893308)
+
+
+
+1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
+   - 普通文件夹不能 import, package 才可以
+
+
+
+
+
+## Import
+
+
+
+### 同级目录直接用文件名导入
+
+
+
+```
+from iJson import save_json
+currDir = os.path.dirname(os.path.abspath(__file__))
+fname_to_save = os.path.join(currDir, 'j.json')
+save_json(fname_to_save, { 0:'a', 1:'b' })
+```
+
+
+
+### 上级目录的子目录
+
+
+
+- 需要子目录里有空的 \__init\__.py
+
+     1.  将上级目录加到sys.path
+     2.  按照对下级目录模块的方式导入
+
+
+
+```
+#from __future__ import absolute_import
+import os, sys
+import sys
+sys.path.append("..")
+# import os, sys; sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+from std import iJson
+currDir = os.path.dirname(os.path.abspath(__file__))
+fname_to_save = os.path.join(currDir, 'j.json')
+iJson.save_json(fname_to_save, { 0:'a', 1:'b' })
+print("hi,,,")
+```
+
+
+
 
 
 ## Path
