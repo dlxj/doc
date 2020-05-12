@@ -226,6 +226,32 @@ Block
 
 
 
+```mathematica
+SetDirectory[NotebookDirectory[]];
+j = Import[FileNameJoin[{$HomeDirectory,"/Documents/GitHub/ebmac/","tiny.json"}],"JSON", "Compact"->False]
+jj = Import[FileNameJoin[{$HomeDirectory,"/Documents/GitHub/ebmac/","guoyu.json"}],"RawJSON"];
+ass=Import["[Kamigami] Shoujo Shuumatsu Ryokou - 01 [1080p x265 AAC].ass","Text",CharacterEncoding->"UTF8"];
+(*终末少女的旅行中日字幕，诸神字幕组*)
+lines=StringSplit[ass,RegularExpression["(?m)^"]];  (*(?m)^换行符*)
+jps=Reap[lines /. x_String?(StringMatchQ[#,"Dialogue"~~__~~",TEXT-JP"~~__]& ):>(Sow[x]);Nothing]//Flatten;
+chs=Reap[lines /. x_String?(StringMatchQ[#,"Dialogue"~~__~~",TEXT-CN"~~__]& ):>(Sow[x]);Nothing]//Flatten;
+(* MMA 速查文档 https://mresources.github.io/tutorial/ *)
+(* MMA 建站代码 https://github.com/mresources/tutorial *)
+(* MMA 建站文档 https://www.wolframcloud.com/objects/b3m2a1.docs/BTools/ref/WebSiteBuild.html *)
+(* MMA 帮助文档快速生成 https://zhuanlan.zhihu.com/p/113333655 *)
+(* ASS SRT 字幕，音视频开发  https://www.cnblogs.com/tocy/ *)
+ (*让语句返回值为Nothing，然后存在List 里面的Nothing 就自已消失了*)
+(* MapIndexed 带index 的map 第一参： #1 列表元素，第二参： #2 { index } *)
+(* RegularExpression 正则表达式 *)
+(* 字符串格式化 StringTemplate *)
+(* AppExecute["ListPackages","BTools"]~Take~5 https://github.com/b3m2a1/mathematica-BTools/wiki/BasicUsage *)
+debug:=GeneralUtilities`PrintDefinitions
+```
+
+
+
+
+
 ## 运行外部程序
 
 ```
@@ -235,6 +261,25 @@ RunProcess[{"ffmpeg"},ProcessEnvironment -> <|"PATH" ->"/usr/local/bin/"|>]
 
 
 ## DataSet
+
+
+
+### List to Dataset
+
+
+
+```
+ListsToAssociation:=Association[Thread[Rule[#colNames,#alist]]]&
+
+jpsDataset:=Dataset@Map[ListsToAssociation[<|"colNames"->{"order","beginTime","endTime","text"}, "alist"->#|>]&, AssDialogueFirstN[<|"assList"-> Map[ReplaceNewline,jps], "n"->All|>]],
+chsDataset:=Dataset@Map[ListsToAssociation[<|"colNames"->{"order","beginTime","endTime","text"}, "alist"->#|>]&, AssDialogueFirstN[<|"assList"->  Map[ReplaceNewline,chs], "n"->All|>]]
+(* Ass 中日字幕数据集 *)
+},
+```
+
+
+
+
 
 ### 指定行列取值
 
@@ -753,6 +798,19 @@ words=DictionaryLookup["wol*"];
 Flatten[Map[(Thread[#\[DirectedEdge]DeleteCases[Nearest[words,#,3],#]])&,words]];
 Graph[%,VertexLabels->"Name",ImageSize->450]
 ```
+
+
+
+## Sort
+
+Sort 的第二参是排序函数，Sort 会把List 里的元素一个个的传进去，**排序函数要做的是从元素里提取出可供排序的值**
+
+```mathematica
+ReverseSortBy[wordlist, Values[#][[1]] &];
+Sort
+```
+
+
 
 
 

@@ -342,8 +342,8 @@ https://github.com/YevaGabrielyan/tldl
 
 ```
 sudo apt install xfce4
-sudo apt install xrdp
-sudo echo xfce4-session >~/.xsession
+sudo apt install xrdp && \
+sudo echo xfce4-session >~/.xsession && \
 sudo service xrdp restart
 ```
 

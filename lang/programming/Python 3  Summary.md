@@ -219,6 +219,14 @@ list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
 
 
 
+## Regex
+
+
+
+bool(re.match(r'\s+', '  '))   # 是否含空白符
+
+
+
 ## Sort
 
 ```python
