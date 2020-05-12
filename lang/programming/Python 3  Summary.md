@@ -7,11 +7,13 @@
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
 1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
-   - 普通文件夹不能 import, package 才可以
-
+   
+- 普通文件夹不能 import, package 才可以
+   
 2.  .py 文件被认为是一个模块
-   - 单独一个py 文件就是一个module
-
+   
+- 单独一个py 文件就是一个module
+   
 3. import 后面必须是模块名
 
 4. from 模块名 import 变量名 
@@ -153,6 +155,20 @@ from demo2.test_case import test_baidu
 > 当我们在导入一个包（package）时（会先加载   init   .py定义的引入模块，然后再运行其他代码），实际上是导入的它的   init   .py文件（导入时，该文件自动运行，助我们一下导入该包中的多个模块）。我们可以在   init   .py中再导入其他的包（package）或模块 或自定义类。
 > ————————————————
 > [c](https://blog.csdn.net/weixin_38256474/java/article/details/81228492)
+
+
+
+## 静态函数 构造函数 析构函数
+
+```python
+ @staticmethod
+ def connect():
+ 
+ def __init__(self):
+ def __del__(self):
+```
+
+
 
 
 
