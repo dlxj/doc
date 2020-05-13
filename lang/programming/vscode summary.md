@@ -10,6 +10,14 @@
 
 
 
+## G++ debug args
+
+```bash
+-O0 -Wall -g2 -ggdb
+```
+
+
+
 ### Clang
 
 1. Install [LLVM 10.0 for win64](https://releases.llvm.org/download.html)
