@@ -9,11 +9,11 @@
 1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
    
 - 普通文件夹不能 import, package 才可以
-   
+  
 2.  .py 文件被认为是一个模块
-   
+
 - 单独一个py 文件就是一个module
-   
+  
 3. import 后面必须是模块名
 
 4. from 模块名 import 变量名 
@@ -226,6 +226,8 @@ print (item, end=" ")
 ## Filter
 
 [filter](https://www.liaoxuefeng.com/wiki/1016959663602400/1017404530360000)
+
+接受的函数是一参，函数返回True 就保留元素，否则丢弃
 
 ```python
 list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
