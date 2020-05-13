@@ -190,6 +190,23 @@ raise RuntimeError('some err')
 
 ```
 
+
+
+## List
+
+### delete_duplicates
+
+```python
+from collections import OrderedDict
+
+def delete_duplicates(lst):
+    return list(OrderedDict.fromkeys(lst))
+```
+
+
+
+
+
 ## Dictionary
 
 
