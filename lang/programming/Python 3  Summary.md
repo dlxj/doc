@@ -205,9 +205,24 @@ def delete_duplicates(lst):
 
 
 
+## Set
+
+```
+list(set(a).intersection(set(b)))  # 交集  Or t & s
+list(set(b).difference(set(a))) # 差集  Or t - s
+t.union(s) # 并集 Or t | s  Or t ^ s
+t.symmetric_difference(s) # 对称差集
+```
+
+
+
+
+
 
 
 ## Dictionary
+
+- map 一个字典会得到key
 
 
 
