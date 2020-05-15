@@ -205,6 +205,14 @@ def delete_duplicates(lst):
 
 
 
+```
+sum( list( map(lambda k: len( tests_segs[k] ), tests_segs) ) )
+```
+
+
+
+
+
 ## Set
 
 ```
