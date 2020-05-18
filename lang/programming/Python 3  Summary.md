@@ -926,9 +926,18 @@ https://github.com/YevaGabrielyan/tldl
 ## Flask
 
 ```python
-@app.route('/tk', methods=['post','get'])
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, flask!"
+
+# http://localhost:666/sim?p=1&type=1
+@app.route('/sim', methods=['post','get'])
 def tk():
-    p = request.args.get('p')
+    p = request.args.get('p') 
     type = request.args.get('type')
     print(p)
     print(type)
