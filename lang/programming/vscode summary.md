@@ -18,6 +18,39 @@
 
 
 
+launch.json
+
+```javascript
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/textrank",
+            "args": ["/home/ubuntu/workcode/cpp/textrank-master/data/news.seg", "1", "2", "./out.txt"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+
+
+
 ### Clang
 
 1. Install [LLVM 10.0 for win64](https://releases.llvm.org/download.html)

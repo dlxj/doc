@@ -211,6 +211,10 @@ sum( list( map(lambda k: len( tests_segs[k] ), tests_segs) ) )
 
 
 
+### Remove the value  first occur
+
+a.remove(1)
+
 
 
 ## Set
@@ -916,3 +920,21 @@ https://github.com/YevaGabrielyan/tldl
 > ​	"shell_cmd": "python3 -u ${file}"
 >
 > }
+
+
+
+## Flask
+
+```python
+@app.route('/tk', methods=['post','get'])
+def tk():
+    p = request.args.get('p')
+    type = request.args.get('type')
+    print(p)
+    print(type)
+    return jsonify({'t': [p, type]})
+https://blog.csdn.net/weixin_36380516/java/article/details/80008496
+```
+
+
+
