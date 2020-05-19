@@ -923,7 +923,7 @@ https://github.com/YevaGabrielyan/tldl
 
 
 
-## Flask
+# Flask
 
 ```python
 from flask import Flask, request, jsonify
@@ -944,6 +944,48 @@ def tk():
     return jsonify({'t': [p, type]})
 https://blog.csdn.net/weixin_36380516/java/article/details/80008496
 ```
+
+
+
+## Post 
+
+
+
+```python
+# -*- coding: utf-8 -*-
+from flask import request, jsonify, json, Module
+import logging
+from web.utils.consts import POST, GET
+from web.db.dbSession import DBManager
+from web.db.models import Class
+
+NAMESPACE = 'student'
+student = Module(__name__, NAMESPACE)
+
+
+@student.route('/add', methods=[POST])
+def student_add():
+    # request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据：对应图1
+    # json.loads(request.dada) 能够同时接受方法为POST、Body为 raw类型的 Text 
+    # 或者 application/json类型的值：对应图1、2
+    params = request.json if request.method == "POST" else request.args
+    try:
+        session = DBManager.get_session()
+        c = Class(name=params['name'])
+        session.add(c)
+        session.commit()
+        session.close()
+    except Exception, e:
+        logging.exception(e)
+    return jsonify(code=200, status=0, message='ok', data={})
+
+```
+
+
+
+
+
+
 
 
 
