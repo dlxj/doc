@@ -194,7 +194,11 @@ raise RuntimeError('some err')
 
 ## List
 
+
+
 ### delete_duplicates
+
+
 
 ```python
 from collections import OrderedDict
@@ -208,6 +212,18 @@ def delete_duplicates(lst):
 ```
 sum( list( map(lambda k: len( tests_segs[k] ), tests_segs) ) )
 ```
+
+
+
+### ordering
+
+
+
+```python
+sorted(results, key=lambda l: l[3], reverse=True) # 按相似度高到低排序
+```
+
+
 
 
 
@@ -230,8 +246,6 @@ t.symmetric_difference(s) # 对称差集
 
 
 
-
-
 ## Dictionary
 
 - map 一个字典会得到key
@@ -243,6 +257,16 @@ t.symmetric_difference(s) # 对称差集
 ```python
 'key1' in dict  # will return True or False
 ```
+
+
+
+### for k, v 
+
+```python
+for k, v in d.items():
+```
+
+
 
 
 
@@ -316,8 +340,6 @@ np.ones((8, 1))
 ```
 np.dot(W, TR) * 0.85 + C
 ```
-
-
 
 
 
