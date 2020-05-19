@@ -927,21 +927,19 @@ https://github.com/YevaGabrielyan/tldl
 
 ```python
 from flask import Flask, request, jsonify
+import os,sys
+sys.path.append(os.path.dirname( os.path.dirname(os.path.abspath(__file__))))  # std 包在此模块的上级目录
+import std.iJson as iJson
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "Hello, flask!"
-
-# http://localhost:666/sim?p=1&type=1
-@app.route('/sim', methods=['post','get'])
-def tk():
-    p = request.args.get('p') 
-    type = request.args.get('type')
-    print(p)
-    print(type)
-    return jsonify({'t': [p, type]})
+# http://localhost:666/frequencyStatistics
+# request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据
+# request.json 的类型直接就是dict
+@app.route('/frequencyStatistics', methods=['post'])
+def frequencyStatistics():
+    print(request.json, type(request.json))
+    return jsonify(iJson.parse("[1,2,3]"))
 https://blog.csdn.net/weixin_36380516/java/article/details/80008496
 ```
 
