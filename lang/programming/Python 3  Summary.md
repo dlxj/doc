@@ -268,6 +268,16 @@ for k, v in d.items():
 
 
 
+###  Get first value
+
+```python
+list(d.values())[0]
+```
+
+
+
+
+
 
 
 ## range
