@@ -228,11 +228,22 @@ sorted(results, key=lambda l: l[3], reverse=True) # 按相似度高到低排序
 
 
 
-
-
-### Remove the value  first occur
+### remove the value  first occur
 
 a.remove(1)
+
+
+
+### join as string
+
+
+
+```python
+l = ['1','2','3']
+print(",".join(l))
+```
+
+
 
 
 
