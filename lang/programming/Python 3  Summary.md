@@ -174,9 +174,12 @@ from demo2.test_case import test_baidu
 
 ## Handle Error
 
+
+
 ```python
 raise RuntimeError('some err')
 ```
+
 
 
 ## Exception
@@ -248,11 +251,15 @@ t.symmetric_difference(s) # 对称差集
 
 ## Dictionary
 
+
+
 - map 一个字典会得到key
 
 
 
 ### Check if a given key already exists in a dictionary
+
+
 
 ```python
 'key1' in dict  # will return True or False
@@ -262,6 +269,8 @@ t.symmetric_difference(s) # 对称差集
 
 ### for k, v 
 
+
+
 ```python
 for k, v in d.items():
 ```
@@ -269,6 +278,8 @@ for k, v in d.items():
 
 
 ###  Get first value
+
+
 
 ```python
 list(d.values())[0]
