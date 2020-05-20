@@ -272,6 +272,28 @@ for k, v in d.items():
 
 ```python
 list(d.values())[0]
+tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频高到低排序
+```
+
+
+
+### Order
+
+
+
+```python
+    # 通过构造有序字典，根据词频排序
+    for cptid in results:
+        d = results[cptid]
+        tmp = []
+        for k, v in d.items():
+            tmp.append({k:v})
+        tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频高到低排序
+        orderDic = collections.OrderedDict()
+        for dd in tmp:
+            for k, v in dd.items():
+                orderDic[k] = v
+        results[cptid] = dict( orderDic)
 ```
 
 
