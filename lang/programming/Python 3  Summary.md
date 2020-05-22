@@ -4,6 +4,46 @@
 
 # Python 3  Summary
 
+
+
+## Source install on CentOS
+
+[How to Install Python 3.8 on CentOS 8](https://linuxize.com/post/how-to-install-python-3-8-on-centos-8/)
+
+```
+yum update -y
+yum groupinstall -y 'Development Tools'
+yum install -y gcc openssl-devel bzip2-devel libffi-devel
+yum install bzip2-devel expat-devel gdbm-devel \
+    ncurses-devel openssl-devel readline-devel \
+    sqlite-devel tk-devel xz-devel zlib-devel wget
+```
+
+```
+VERSION=3.8.3
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
+tar -xf Python-${VERSION}.tgz
+cd Python-${VERSION}
+./configure --enable-optimizations
+make -j 4
+sudo make altinstall 
+# Please do not use the standard make install as it-
+# will overwrite the default system python binary.
+python3.8 --version
+```
+
+
+
+```
+# Creating a Virtual Environment
+# First, create the project directory and switch to it:
+mkdir ~/flask_server && cd ~/flask_server
+```
+
+
+
+
+
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
 1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
