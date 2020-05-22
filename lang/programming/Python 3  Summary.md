@@ -38,7 +38,11 @@ pip3.8 --version
 # Creating a Virtual Environment
 # First, create the project directory and switch to it:
 mkdir ~/flask_server && cd ~/flask_server
-python3.8 -m venv flask_server_venv
+python3.8 -m venv server_venv
+source server_venv/bin/activate  # 激活临时python 环境
+python --version
+pip --version
+deactivate # 关闭临时python 环境
 ```
 
 
