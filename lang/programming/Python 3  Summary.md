@@ -13,10 +13,9 @@
 ```
 yum update -y
 yum groupinstall -y 'Development Tools'
-yum install -y gcc openssl-devel bzip2-devel libffi-devel
-yum install bzip2-devel expat-devel gdbm-devel \
-    ncurses-devel openssl-devel readline-devel \
-    sqlite-devel tk-devel xz-devel zlib-devel wget
+yum install -y gcc libffi-devel bzip2-devel expat-devel gdbm-devel \
+ncurses-devel openssl-devel readline-devel \
+sqlite-devel tk-devel xz-devel zlib-devel wget
 ```
 
 ```
@@ -30,6 +29,7 @@ sudo make altinstall
 # Please do not use the standard make install as it-
 # will overwrite the default system python binary.
 python3.8 --version
+pip3.8 --version
 ```
 
 
@@ -38,6 +38,7 @@ python3.8 --version
 # Creating a Virtual Environment
 # First, create the project directory and switch to it:
 mkdir ~/flask_server && cd ~/flask_server
+python3.8 -m venv flask_server_venv
 ```
 
 
@@ -246,6 +247,19 @@ raise RuntimeError('some err')
 
 
 
+## Filter
+
+
+
+```python
+list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过滤非中文词
+{k: v for k, v in points.items() if v[0] < 5 and v[1] < 5}
+lambda 返回true 的保留
+```
+
+
+
 ## List
 
 
@@ -404,6 +418,8 @@ print (item, end=" ")
 
 ```python
 list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过滤非中文词
+{k: v for k, v in points.items() if v[0] < 5 and v[1] < 5}
 ```
 
 - filter()`函数返回的是一个`Iterator`，也就是一个惰性序列，所以要强迫`filter()`完成计算结果，需要用`list()`函数获得所有结果并返回list
