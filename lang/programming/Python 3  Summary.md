@@ -195,6 +195,17 @@ raise RuntimeError('some err')
 
 
 
+## For
+
+
+
+```python
+ [x for x in range(11) if x%2 == 0]
+ len([ k for k, _ in tasks.items()]) # 现有总任务数
+```
+
+
+
 ## List
 
 
