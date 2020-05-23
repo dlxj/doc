@@ -4,6 +4,24 @@
 
 
 
+文本搜索，这就更有意思了
+ TextSearch
+ 文件系统Map，这就有意思了
+ FileSystemMap
+ 可以递归的获取所有文件名
+ FileNames
+
+ show biggest file or dirctory on mac
+ sudo du - sh* | grep - E "\dG\[CloseCurlyDoubleQuote]
+      
+      查慧林音义 仁
+      
+      find . -type f | xargs cat | grep " < p > .*仁.* < 
+    span class = ' note - inline' > ("
+仁者 (而親反周禮云德一曰仁鄭玄曰愛人及物曰仁上下相親曰仁釋名仁者忍也好生惡煞善惡含忍也)。
+
+
+
 ## Mathematica 黑魔法：查看内部函数定义
 
 GeneralUtilities`PrintDefinitions[BinLists]
