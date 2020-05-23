@@ -972,3 +972,14 @@ Run["say -v Zarvox "<>gymString]
 Run["say -o gym.mp4 -v Zarvox "<>gymString]
 
 *)
+
+
+
+
+
+## Linear Math
+
+
+
+![image-20200523190009649](C:\Users\echod\AppData\Roaming\Typora\typora-user-images\image-20200523190009649.png)
+

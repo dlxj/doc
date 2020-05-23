@@ -1,0 +1,239 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7762,        230]
+NotebookOptionsPosition[      7326,        212]
+NotebookOutlinePosition[      7673,        227]
+CellTagsIndexPosition[      7630,        224]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"crop", "[", "i_", "]"}], ":=", 
+    RowBox[{"ImagePad", "[", 
+     RowBox[{"i", ",", 
+      RowBox[{
+       RowBox[{"-", "1"}], "*", 
+       RowBox[{"BorderDimensions", "[", "i", "]"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetDirectory", "@", 
+     RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"iorig", "=", 
+     RowBox[{"Import", "[", "\"\<IMG_20150529_114445.jpg\>\"", "]"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"w", ",", "h"}], "}"}], "=", 
+     RowBox[{"ImageDimensions", "@", "iorig"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"w", "/", "h"}], "//", "N"}], "\[IndentingNewLine]", "w", 
+   "\[IndentingNewLine]", "h"}]}]], "Input",
+ CellChangeTimes->{
+  3.6520512114603157`*^9, {3.652051336791539*^9, 3.6520513379343414`*^9}, {
+   3.6520514582781553`*^9, 3.652051459572958*^9}, {3.652069033944997*^9, 
+   3.6520690774174833`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ImageTake", "[", 
+   RowBox[{"iorig", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1872"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"580", ",", "2680"}], "}"}]}], " ", "]"}], "//", 
+  RowBox[{
+   RowBox[{"ImageResize", "[", 
+    RowBox[{"#", ",", "800"}], "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.652052397923276*^9, 3.652052576898795*^9}, {
+  3.6520526646789513`*^9, 3.6520526671593556`*^9}, {3.6520527824377604`*^9, 
+  3.652052841320665*^9}, {3.652052877022929*^9, 3.6520529026753745`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binarize", "@", "iorig"}], "//", "ImageCrop"}]], "Input",
+ CellChangeTimes->{{3.6520689334042463`*^9, 3.652068986116261*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"largestComponent", "[", "iBinColorNeg_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"components", "=", 
+      RowBox[{
+       RowBox[{"ComponentMeasurements", "[", 
+        RowBox[{"iBinColorNeg", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<ConvexArea\>\"", ",", "\"\<Mask\>\""}], "}"}]}], "]"}],
+        "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Image", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"SortBy", "[", 
+        RowBox[{"components", ",", "First"}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "2"}], "]"}], "]"}], ",", "\"\<Bit\>\""}], 
+     "]"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"imageTakeRectangle2", "[", "i_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"largestComponent", ",", "mask", ",", "dim", ",", "bdim"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"largestComponent", "[", "iBinColorNeg_", "]"}], ":=", 
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"components", "=", 
+          RowBox[{
+           RowBox[{"ComponentMeasurements", "[", 
+            RowBox[{"iBinColorNeg", ",", 
+             RowBox[{"{", 
+              RowBox[{"\"\<ConvexArea\>\"", ",", "\"\<Mask\>\""}], "}"}]}], 
+            "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"Image", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"SortBy", "[", 
+            RowBox[{"components", ",", "First"}], "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "2"}], "]"}], "]"}], ",", 
+          "\"\<Bit\>\""}], "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"mask", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"i", "//", "Binarize"}], "//", "ColorNegate"}], "//", 
+        "largestComponent"}], "//", "FillingTransform"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"dim", "=", 
+      RowBox[{"ImageDimensions", "[", "i", "]"}]}], ";", 
+     RowBox[{"(*", 
+      RowBox[{"{", 
+       RowBox[{"3307", ",", "1814"}], "}"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"bdim", "=", 
+      RowBox[{"BorderDimensions", "[", "mask", "]"}]}], ";", 
+     RowBox[{"(*", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"554", ",", "522"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"24", ",", "82"}], "}"}]}], "}"}], "*)"}], 
+     RowBox[{"(*", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"left", ",", "right"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"bottom", ",", "top"}], "}"}]}], "}"}], "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImageTake", "[", 
+      RowBox[{"i", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"bdim", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ",", "2"}], "]"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"dim", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", 
+          RowBox[{"bdim", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"bdim", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"dim", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{
+           RowBox[{"bdim", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}]}], "}"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"jpgs", "=", 
+   RowBox[{"Import", "[", "\"\<IMG_20150529_114445.jpg\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"adapt", "=", 
+   RowBox[{"Binarize", "@", "jpgs"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"imageTakeRectangle2", "[", "adapt", "]"}], "//", 
+  RowBox[{
+   RowBox[{"ImageResize", "[", 
+    RowBox[{"#", ",", "800"}], "]"}], 
+   "&"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{
+  3.652069614836618*^9, {3.65206996847164*^9, 3.652069969407642*^9}, {
+   3.6520700120493193`*^9, 3.6520700133277225`*^9}, {3.6520700453217826`*^9, 
+   3.652070065447219*^9}, {3.6520700990166807`*^9, 3.6520701883718443`*^9}, {
+   3.65207022948352*^9, 3.6520702833014183`*^9}, {3.6520703288495073`*^9, 
+   3.6520703606767654`*^9}}],
+
+Cell[BoxData["\n"], "Input",
+ CellChangeTimes->{{3.6520701396841545`*^9, 3.652070165588002*^9}}],
+
+Cell[BoxData[
+ RowBox[{"WriteString", "[", 
+  RowBox[{"$Output", ",", "\"\<Hello World!\\n\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6520708449567356`*^9, 3.652070848794342*^9}}]
+},
+WindowSize->{1440, 818},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1080, 30, 172, "Input"],
+Cell[1641, 52, 541, 13, 31, "Input"],
+Cell[2185, 67, 160, 3, 31, "Input"],
+Cell[2348, 72, 4689, 130, 332, "Input"],
+Cell[7040, 204, 96, 1, 52, "Input"],
+Cell[7139, 207, 183, 3, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
