@@ -322,9 +322,23 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 
+# Str
 
 
-## range
+
+```python
+class mydict(dict):
+      def __str__(self):  # how to convert to string
+          return json.dumps(self)
+```
+
+
+
+
+
+
+
+## Range
 
 
 
