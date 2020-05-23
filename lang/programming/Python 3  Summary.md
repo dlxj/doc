@@ -4,6 +4,60 @@
 
 # Python 3  Summary
 
+
+
+## Source install on CentOS
+
+[How to Install Python 3.8 on CentOS 8](https://linuxize.com/post/how-to-install-python-3-8-on-centos-8/)
+
+```
+yum update -y
+yum groupinstall -y 'Development Tools'
+yum install -y gcc libffi-devel bzip2-devel expat-devel gdbm-devel \
+ncurses-devel openssl-devel readline-devel \
+sqlite-devel tk-devel xz-devel zlib-devel wget
+```
+
+```
+VERSION=3.8.3
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
+tar -xf Python-${VERSION}.tgz
+cd Python-${VERSION}
+./configure --enable-optimizations
+make -j 4
+sudo make altinstall 
+# Please do not use the standard make install as it-
+# will overwrite the default system python binary.
+python3.8 --version
+pip3.8 --version
+```
+
+
+
+```
+# Creating a Virtual Environment
+# First, create the project directory and switch to it:
+mkdir ~/flask_server && cd ~/flask_server
+python3.8 -m venv server_venv
+source server_venv/bin/activate  # 激活临时python 环境
+python --version
+pip --version
+deactivate # 关闭临时python 环境
+```
+
+```
+python -m pip install --upgrade pip
+pip install wheel
+pip install jupyter
+- pip install --user jupyter  出错就用这个
+python -m jupyter notebook --version
+python -m pip install -U matplotlib
+```
+
+
+
+
+
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
 1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
@@ -195,6 +249,30 @@ raise RuntimeError('some err')
 
 
 
+## For
+
+
+
+```python
+ [x for x in range(11) if x%2 == 0]
+ len([ k for k, _ in tasks.items()]) # 现有总任务数
+```
+
+
+
+## Filter
+
+
+
+```python
+list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过滤非中文词
+{k: v for k, v in points.items() if v[0] < 5 and v[1] < 5}
+lambda 返回true 的保留
+```
+
+
+
 ## List
 
 
@@ -367,6 +445,8 @@ print (item, end=" ")
 
 ```python
 list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过滤非中文词
+{k: v for k, v in points.items() if v[0] < 5 and v[1] < 5}
 ```
 
 - filter()`函数返回的是一个`Iterator`，也就是一个惰性序列，所以要强迫`filter()`完成计算结果，需要用`list()`函数获得所有结果并返回list
