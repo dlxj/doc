@@ -28,9 +28,30 @@ VStack {
 
 
 
+
+
+## ZStack 垂直排 
+
+
+
+
+
 ## Text
 
+
+
 ### padding, background, foregroundColor
+
+
+
+### text binding
+
+```
+TextField 
+init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+```
+
+
 
 
 
@@ -39,6 +60,8 @@ VStack {
 ### cornerRadius, shadow
 
 ```swift
+        VStack {
+            Text("Hello, World!")
             Button(action:{
                 
             }){
@@ -49,7 +72,22 @@ VStack {
             }
             .cornerRadius(10) // 按钮加圆角效果
             .shadow(radius: 10) // 按钮加外围阴影
+        }
 ```
+
+
+
+### forbidden click
+
+```swift
+disabled(true)
+```
+
+
+
+
+
+
 
 
 
@@ -57,9 +95,29 @@ VStack {
 
 
 
-### Restore data from startup
+### restore data on startup
 
-- 继承 NSObject, NSCoding
+- 继承 NSObject, NSCoding, Identifiable
+
+
+
+```swift
+class Todo:NSObject, NSCoding, Identifiable
+```
+
+
+
+
+
+## System
+
+
+
+### hide keyboard
+
+```swift
+UIApplication.shared.keyWindow?.endEditing(true)
+```
 
 
 
