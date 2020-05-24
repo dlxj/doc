@@ -10,7 +10,12 @@
 >
 > > xx as? String ?? ” “  option强转String,  转不了就给个空串默认值
 >
-> 
+
+
+
+> $somevalue  传指针，期待被修改
+
+
 
 
 
