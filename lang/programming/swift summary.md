@@ -29,6 +29,61 @@ don’t need to import a separate library for functionality like input/output or
 
 
 
+```swift
+let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+let quotation = """
+I said "I have \(apples) apples."
+And then I said "I have \(apples + oranges) pieces of fruit."
+"""
+```
+
+
+
+## List and Dictionary
+
+
+
+```
+let emptyArray = [String]()
+let emptyDictionary = [String: Float]()
+shoppingList = []
+occupations = [:]
+```
+
+
+
+## Optional value
+
+
+
+? 表示值可以为nil，?? 为nil 时提供默认值
+
+```swift
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+}
+let informalGreeting = "Hi \(nickName ?? fullName)"
+```
+
+
+
+## Function
+
+
+
+### 参数由标签后接变量签名组成
+
+```swift
+func greet(_ person: String, on day: String) -> String {  // 
+    return "Hello \(person), today is \(day)."
+}
+greet("John", on: "Wednesday")
+```
+
+
+
+
+
 ## VStack 竖排
 
 
