@@ -11,7 +11,7 @@ import SwiftUI
 class Todo:NSObject, NSCoding, Identifiable {
     func encode(with coder: NSCoder) {
         UIApplication.shared.keyWindow?.endEditing(true)
-        TextField()
+        Spacer().frame(height:20)
     }
     
     required init?(coder: NSCoder) {

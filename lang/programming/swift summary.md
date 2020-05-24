@@ -14,12 +14,14 @@
 
 
 > $somevalue  传指针，期待被修改
+>
+> > DatePicker 的第二参日期变量
 
 
 
 
 
-
+  
 
 ## VStack 竖排
 
@@ -36,6 +38,18 @@ VStack {
 
 
 ## ZStack 垂直排 
+
+
+
+
+
+## Space
+
+
+
+```swift
+Spacer().frame(height:20)  // 加点小空档
+```
 
 
 
