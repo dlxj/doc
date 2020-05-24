@@ -19,9 +19,15 @@
 
 
 
+UInt64(0xffff_ffff_ffff_ffff) 
 
 
-  
+
+Code written at global scope is used as the entry point for the program, so you **don’t need a main() function**.
+
+don’t need to import a separate library for functionality like input/output or string handling
+
+
 
 ## VStack 竖排
 
