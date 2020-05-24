@@ -1,0 +1,94 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2643,         85]
+NotebookOptionsPosition[      2390,         71]
+NotebookOutlinePosition[      2745,         87]
+CellTagsIndexPosition[      2702,         84]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetDirectory", "@", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"strm", "=", 
+     RowBox[{"OpenRead", "[", 
+      RowBox[{
+      "\"\<\:5b66\:7814\:56fd\:8a9e\:5927\:8f9e\:5178ku00.txt\>\"", ",", 
+       RowBox[{"Method", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<File\>\"", ",", 
+          RowBox[{"CharacterEncoding", "\[Rule]", "\"\<ShiftJIS\>\""}]}], 
+         "}"}]}]}], "]"}]}], ";"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shiftj", "=", 
+   RowBox[{"FromCharacterCode", "[", 
+    RowBox[{
+     RowBox[{
+     "BinaryReadList", "@", 
+      "\"\<\:5b66\:7814\:56fd\:8a9e\:5927\:8f9e\:5178ku00.txt\>\""}], ",", 
+     "\"\<ShiftJIS\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Characters", "@", "shiftj"}], "//", 
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{"#", ",", 
+     RowBox[{"{", "8", "}"}]}], "]"}], "&"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+  "file", "=", 
+   "\"\<\:5b66\:7814\:56fd\:8a9e\:5927\:8f9e\:5178ku00utf8.txt\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stream", "=", 
+   RowBox[{"OpenWrite", "[", 
+    RowBox[{"file", ",", 
+     RowBox[{"CharacterEncoding", "\[Rule]", "\"\<UTF-8\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WriteString", "[", 
+   RowBox[{"stream", ",", "shiftj"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Close", "@", "stream"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6272906110545883`*^9, 3.6272906339638987`*^9}, 
+   3.6272907198948135`*^9, {3.6272943487873745`*^9, 3.6272944038565245`*^9}, {
+   3.627432062094219*^9, 3.627432120125526*^9}, {3.62743215062053*^9, 
+   3.6274322419468937`*^9}, {3.627432299155005*^9, 3.627432300102611*^9}}]
+},
+WindowSize->{1440, 818},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1828, 49, 157, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

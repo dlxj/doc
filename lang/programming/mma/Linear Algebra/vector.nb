@@ -1,0 +1,319 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9307,        310]
+NotebookOptionsPosition[      8170,        266]
+NotebookOutlinePosition[      8523,        282]
+CellTagsIndexPosition[      8480,        279]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"P", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "8"}], ",", "11"}], "}"}]}], ";", 
+  RowBox[{"Q", "=", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "4"}], "}"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"V", "=", 
+  RowBox[{"Q", "-", "P"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"15", ",", 
+   RowBox[{"-", "7"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.505474316203125*^9, 3.624414016359324*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ArrowPlots6", "=", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Arrowheads", "[", ".07", "]"}], ",", 
+      RowBox[{"Thickness", "[", ".010", "]"}], ",", "Black", ",", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "P"}], "}"}], "]"}], ",", 
+      "Black", ",", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "Q"}], "}"}], "]"}], ",", 
+      "Red", ",", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"{", 
+        RowBox[{"P", ",", "Q"}], "}"}], "]"}], ",", "Blue", ",", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "V"}], "}"}], "]"}]}], "}"}], 
+    "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TxtPlots6", "=", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", 
+     RowBox[{"Black", ",", 
+      RowBox[{"Text", "[", 
+       RowBox[{"\"\<P\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "]"}], ",", 
+      RowBox[{"Text", "[", 
+       RowBox[{"\"\<Q\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"4.5", ",", "1"}], "}"}]}], "]"}], ",", 
+      RowBox[{"Text", "[", 
+       RowBox[{"\"\<PQ\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "9"}], "}"}]}], "]"}], ",", 
+      RowBox[{"Text", "[", 
+       RowBox[{"\"\<V\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"10", ",", 
+          RowBox[{"-", "3"}]}], "}"}]}], "]"}]}], "}"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.505474327640625*^9, 3.50547434021875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"ArrowPlots6", ",", "TxtPlots6", ",", 
+   RowBox[{"PlotRange", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "10"}], ",", "17"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "9"}], ",", "13"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"Axes", "\[Rule]", " ", "True"}], ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "10"}], ",", 
+      RowBox[{"-", "9"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.505474346640625*^9, 3.505474356125*^9}, 
+   3.5074032681527815`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {GrayLevel[0], Thickness[0.01], Arrowheads[0.07], 
+    ArrowBox[{{0, 0}, {-8, 11}}], 
+    {GrayLevel[0], ArrowBox[{{0, 0}, {7, 4}}]}, 
+    {RGBColor[1, 0, 0], ArrowBox[{{-8, 11}, {7, 4}}]}, 
+    {RGBColor[0, 0, 1], ArrowBox[{{0, 0}, {15, -7}}]}}, 
+   {GrayLevel[0], InsetBox["\<\"P\"\>", {-5, 5}], 
+    InsetBox["\<\"Q\"\>", {4.5, 1}], InsetBox["\<\"PQ\"\>", {0, 9}], 
+    InsetBox["\<\"V\"\>", {10, -3}]}},
+  Axes->True,
+  AxesOrigin->{-10, -9},
+  PlotRange->{{-10, 17}, {-9, 13}}]], "Output",
+ CellChangeTimes->{3.6244140164071608`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"o", "=", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", "0"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.624420587297551*^9, 3.624420594892804*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.6244205965846243`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"-", "8"}], ",", "11"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.624414546115149*^9, 3.6244145475403843`*^9}, 
+   3.624419427904998*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "8"}], ",", "11"}], "}"}]], "Output",
+ CellChangeTimes->{3.6244194297285233`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"q", "=", 
+  RowBox[{"{", 
+   RowBox[{"7", ",", "4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.624420180663813*^9, 3.624420186016736*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", "4"}], "}"}]], "Output",
+ CellChangeTimes->{3.624420187863388*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vectorGraphics", "[", "p_", "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Arrowheads", "[", ".07", "]"}], ",", 
+     RowBox[{"Thickness", "[", ".01", "]"}], ",", "Black", ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], ",", "p"}], "}"}], "]"}]}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.624418384342475*^9, 3.624418384348117*^9}, 
+   3.624418666603551*^9, 3.624419096562175*^9, {3.624419127705749*^9, 
+   3.624419155862236*^9}, {3.62441950495084*^9, 3.624419512007744*^9}, {
+   3.624419694699856*^9, 3.624419698381693*^9}, 3.624419728493257*^9, {
+   3.624420732822843*^9, 3.624420763270712*^9}, {3.624420801454549*^9, 
+   3.624420840154172*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "=", 
+   RowBox[{"vectorGraphics", "@", "p"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.624418717079925*^9, 3.624418769875367*^9}, {
+   3.624418813157875*^9, 3.624418821284136*^9}, {3.624419199654901*^9, 
+   3.624419214864806*^9}, {3.6244192916130342`*^9, 3.624419302996181*^9}, 
+   3.624419671459854*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g2", "=", 
+   RowBox[{"vectorGraphics", "@", "q"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.624419220686617*^9, 3.6244193119851227`*^9}, {
+  3.624420214737*^9, 3.624420216234527*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"g", ",", "g2", ",", 
+   RowBox[{"PlotRange", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "15"}], ",", "15"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"Axes", "\[Rule]", " ", "True"}], ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.624418827958909*^9, 3.6244188754124107`*^9}, {
+  3.62441895313174*^9, 3.624418958704383*^9}, {3.62441931616498*^9, 
+  3.624419324514471*^9}, {3.6244195549188147`*^9, 3.6244196507339582`*^9}, {
+  3.624420081721977*^9, 3.6244200824043694`*^9}, {3.624420221032943*^9, 
+  3.624420222605208*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {GrayLevel[0], Thickness[0.01], Arrowheads[0.07], 
+    ArrowBox[{{0, 0}, {-8, 11}}]}, 
+   {GrayLevel[0], Thickness[0.01], Arrowheads[0.07], 
+    ArrowBox[{{0, 0}, {7, 4}}]}},
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{-15, 15}, {-15, 15}}]], "Output",
+ CellChangeTimes->{
+  3.6244188350917397`*^9, 3.6244188769817753`*^9, 3.6244189600000877`*^9, 
+   3.624419019307376*^9, {3.624419318863145*^9, 3.624419326409458*^9}, 
+   3.624419531295969*^9, {3.624419563563816*^9, 3.624419651846059*^9}, {
+   3.624419706977828*^9, 3.624419739598366*^9}, 3.6244200840452137`*^9, 
+   3.62442022391502*^9, {3.6244207416221333`*^9, 3.624420781092566*^9}, {
+   3.624420812293335*^9, 3.62442085121484*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.624420282320182*^9, 3.624420286701858*^9}}]
+},
+WindowSize->{1360, 697},
+WindowMargins->{{3, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 220, 8, 28, "Input"],
+Cell[CellGroupData[{
+Cell[803, 32, 72, 2, 28, "Input"],
+Cell[878, 36, 157, 4, 28, "Output"]
+}, Open  ]],
+Cell[1050, 43, 917, 28, 28, "Input"],
+Cell[1970, 73, 840, 25, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2835, 102, 655, 19, 28, "Input"],
+Cell[3493, 123, 570, 13, 312, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4100, 141, 162, 4, 28, "Input"],
+Cell[4265, 147, 117, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4419, 155, 211, 6, 28, "Input"],
+Cell[4633, 163, 137, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4807, 172, 162, 4, 28, "Input"],
+Cell[4972, 178, 115, 3, 28, "Output"]
+}, Open  ]],
+Cell[5102, 184, 817, 19, 28, "Input"],
+Cell[5922, 205, 344, 7, 28, "Input"],
+Cell[6269, 214, 219, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[6513, 223, 817, 20, 28, "Input"],
+Cell[7333, 245, 726, 15, 374, "Output"]
+}, Open  ]],
+Cell[8074, 263, 92, 1, 28, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
