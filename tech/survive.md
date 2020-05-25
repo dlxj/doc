@@ -744,7 +744,7 @@ ShadowsocksX-NG for MacOS
 
 # Configure Gitee
 
-
+sudo passwd root
 
 ## 1.  Connect to the host
 
@@ -791,6 +791,7 @@ echo connect to the host $host fail.
 ### 1.3 Allow root password login on Ubuntu 18.04
 
 ```
+sudo passwd root
 ssh -i ~/gitee/GFW/keyt -p 22 ubuntu@111.229.53.195
 cat /etc/ssh/sshd_config | grep '#PermitRootLogin prohibit-password'
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -1217,7 +1218,7 @@ make install-config
 > -e USE_CONFIG_DIR=true \
 > -e SET_CONTAINER_TIMEZONE=true \
 > -e CONTAINER_TIMEZONE=Europe/Vienna \
-> -e PGID=1000 -e PUID=1000 \
+> -e PGID=1001 -e PUID=1001 \
 > -p 8083:8083 \
 > ctiself/calibre-web
 > ```
