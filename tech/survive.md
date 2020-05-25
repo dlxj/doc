@@ -2196,3 +2196,23 @@ vncserver :1
 
 
 
+VMware Workstation 15 Pro
+
+
+官方下载链接：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.0-10134415.exe
+
+永久许可证：ZC10K-8EF57-084QZ-VXYXE-ZF2XF
+
+
+附：备用许可项
+
+   UF71K-2TW5J-M88QZ-8WMNT-WKUY4
+
+AZ7MK-44Y1J-H819Z-WMYNC-N7ATF
+
+CU702-DRD1M-H89GP-JFW5E-YL8X6
+
+YY5EA-00XDJ-480RP-35QQV-XY8F6
+
+VA510-23F57-M85PY-7FN7C-MCRG0
+
