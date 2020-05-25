@@ -12,7 +12,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Hello, World!")
-            Text("Hello, World!")
+            Button(action:{
+                
+            }){
+                Text("屠龙宝刀点击就送！")
+                .padding() // 文本外围胖一圈
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+            }
+            .cornerRadius(10) // 按钮加圆角效果
+            .shadow(radius: 10) // 按钮加外围阴影
         }
     }
 }
