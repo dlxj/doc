@@ -207,7 +207,7 @@ mac mount Android as drive
 
 - [蜗牛星际](https://zhuanlan.zhihu.com/p/73482384)
 
-- [frps服务器](https://zhuanlan.zhihu.com/p/73482384)
+- [frps服务器](https://zhuanlan.zhihu.com/p/73482384)  [ddnsto内网穿透]()
 
 - [有许多互联网分享精神的站长共享了自己搭建的 frp 服务器]()
 
@@ -744,7 +744,7 @@ ShadowsocksX-NG for MacOS
 
 # Configure Gitee
 
-
+sudo passwd root
 
 ## 1.  Connect to the host
 
@@ -791,6 +791,7 @@ echo connect to the host $host fail.
 ### 1.3 Allow root password login on Ubuntu 18.04
 
 ```
+sudo passwd root
 ssh -i ~/gitee/GFW/keyt -p 22 ubuntu@111.229.53.195
 cat /etc/ssh/sshd_config | grep '#PermitRootLogin prohibit-password'
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -1217,7 +1218,7 @@ make install-config
 > -e USE_CONFIG_DIR=true \
 > -e SET_CONTAINER_TIMEZONE=true \
 > -e CONTAINER_TIMEZONE=Europe/Vienna \
-> -e PGID=1000 -e PUID=1000 \
+> -e PGID=1001 -e PUID=1001 \
 > -p 8083:8083 \
 > ctiself/calibre-web
 > ```
@@ -2195,4 +2196,24 @@ vncserver :1
 
 
 
+
+VMware Workstation 15 Pro
+
+
+官方下载链接：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.0-10134415.exe
+
+永久许可证：ZC10K-8EF57-084QZ-VXYXE-ZF2XF
+
+
+附：备用许可项
+
+   UF71K-2TW5J-M88QZ-8WMNT-WKUY4
+
+AZ7MK-44Y1J-H819Z-WMYNC-N7ATF
+
+CU702-DRD1M-H89GP-JFW5E-YL8X6
+
+YY5EA-00XDJ-480RP-35QQV-XY8F6
+
+VA510-23F57-M85PY-7FN7C-MCRG0
 
