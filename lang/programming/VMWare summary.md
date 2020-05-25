@@ -6,6 +6,18 @@
 
 
 
+![image-20200525170251271](C:\Users\i\AppData\Roaming\Typora\typora-user-images\image-20200525170251271.png)
+
+
+
+mount /dev/cdrom /mnt
+
+cd /mnt
+
+
+
+
+
 ## Key
 
 
@@ -29,6 +41,20 @@ YY5EA-00XDJ-480RP-35QQV-XY8F6
 
 VA510-23F57-M85PY-7FN7C-MCRG0
 ```
+
+
+
+NAT 可以理解为虚拟机集群里的虚拟的局域网
+
+NAT模式，这种模式下，虚拟机与所在的物理机单独组成了一个新的局域网，他们共享接入物理机的IP段
+
+局域网内的其他计算机相对于虚拟机和物理机新组的局域网来说属于外网，这时候还需要在物理机中对其进行端口映射，这个与局域网中利用路由器对其中某个IP端口进行映射的原理是一样的，通过这种也可以实现局域网访问虚拟机内的服务
+
+
+
+感觉最简单的就是 代理软件端口改成 0.0.0.0:8080，虚拟机只要能 ping 通物理主机，虚拟机就用物理主机 ip:8080 进行代理
+
+
 
 
 
@@ -60,4 +86,10 @@ Network proxy 在右侧的Method选择Manual ，然后在下面的Proxy中全部
 
 
 ![image-20200525160259244](C:\Users\i\AppData\Roaming\Typora\typora-user-images\image-20200525160259244.png)
+
+
+
+
+
+
 
