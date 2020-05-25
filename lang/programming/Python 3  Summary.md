@@ -46,6 +46,13 @@ deactivate # 关闭临时python 环境
 ```
 
 ```
+pip list
+pip show jieba
+```
+
+
+
+```
 python -m pip install --upgrade pip
 pip install wheel
 pip install jupyter
