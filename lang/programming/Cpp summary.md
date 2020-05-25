@@ -38,7 +38,19 @@ sentence_token_map.begin()->first
 
 
 
+vector<string> char_vec;
 
+```cpp
+    map<string, vector<string> > senten_words;
+    senten_words.insert(std::pair<string, vector<string> >( "a b c",  vector<string>({"a", "b", "c"}) ) );
+    senten_words.insert(std::pair<string, vector<string> >( "a b c",  vector<string>({"a", "b", "c"}) ) );
+    senten_words.insert(std::pair<string, vector<string> >( "a b c",  vector<string>({"a", "b", "c"}) ) );
+    
+    vector<pair<string, double> > great_sents;
+    SentenceRank rank(3, 100, 0.85, 0.0001);
+    
+    rank.ExtractKeySentence(senten_words, great_sents, 2);
+```
 
 
 
