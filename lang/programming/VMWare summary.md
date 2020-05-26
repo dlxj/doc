@@ -190,3 +190,165 @@ Network proxy 在右侧的Method选择Manual ，然后在下面的Proxy中全部
 
 
 
+
+
+
+
+
+
+
+
+
+
+# [VMWare虚拟机15.X局域网网络配置(修改网卡)](https://www.cnblogs.com/lys_013/p/11412092.html)
+
+最近在搞几台虚拟机来学习分布式和大数据的相关技术，首先先要把虚拟机搞起来，搞起虚拟机第一步先安装系统，接着配置网络
+
+vmware为我们提供了三种网络工作模式，它们分别是：**Bridged（桥接模式）**、**NAT（网络地址转换模式）**、**Host-Only（仅主机模式）**。
+
+### 一、Bridged（桥接模式）
+
+桥接模式相当于虚拟机和主机在同一个真实网段，VMWare充当一个集线器功能（一根网线连到主机相连的路由器上），所以如果电脑换了内网，静态分配的ip要更改。图如下：
+
+![img](VMWare summary.assets/1208477-20180419143437270-462551669.png)
+
+### 二、**NAT（网络地址转换模式）**
+
+NAT模式和桥接模式一样可以上网，只不过，虚拟机会虚拟出一个内网，主机和虚拟机都在这个虚拟的局域网中。NAT中VMWare相当于交换机（产生一个局域网，在这个局域网中分别给主机和虚拟机分配ip地址）
+
+**![img](VMWare summary.assets/1208477-20180419143720854-1271541753.png)**
+
+步骤：
+
+1.设置VMVare的默认网关（相当于我们设置路由器）: 
+编辑->虚拟网络编辑器->更改设置->选中VM8>点击NAT设置，设置默认网关为192.168.182.2。
+
+![img](VMWare summary.assets/1208477-20180419145040228-1331049611.png)![img](VMWare summary.assets/1208477-20180419145433514-976861705.png)
+
+2.设置主机ip地址，点击VMnet8，设置ip地址为192.168.182.1，网关为上面设置的网关。
+
+![img](VMWare summary.assets/1208477-20180419150244761-104929934.png)
+
+![img](VMWare summary.assets/1208477-20180419145656726-751051047.png)
+
+3.设置linux虚拟机上的网络配置，界面化同上，并且换网卡，操作系统版本为CentOS7.5。
+
+[![复制代码](VMWare summary.assets/copycode.gif)](javascript:void(0);)
+
+![复制代码](VMWare summary.assets/copycode.gif)
+
+```
+cd  /etc/sysconfig/network-scripts/     //进入到网络适配器文件夹中
+mv /ifcfg-ens33 /ifcfg-eth0     //名字改为ifcfg-eth0
+vi  ifcfg-eth0    //编辑文件
+
+TYPE=Ethernet 
+DEFROUTE=yes 
+PEERDNS=yes 
+PEERROUTES=yes 
+IPV4_FAILURE_FATAL=no 
+IPV6INIT=yes 
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes 
+IPV6_PEERDNS=yes 
+IPV6_PEERROUTES=yes 
+IPV6_FAILURE_FATAL=no 
+NAME=eth0 
+UUID=ae0965e7-22b9-45aa-8ec9-3f0a20a85d11 
+
+ONBOOT=yes  #开启自动启用网络连接,这个一定要改
+IPADDR=192.168.182.3  #设置IP地址 
+NETMASK=255.255.225.0  #设置子网掩码 
+GATEWAY=192.168.182.2  #设置网关 
+DNS1=61.147.37.1  #设置主DNS 
+DNS2=8.8.8.8  #设置备DNS 
+BOOTPROTO=static  #启用静态IP地址 ,默认为dhcp
+
+:wq!  #保存退出 
+
+service network restart  #重启网络 
+ping www.baidu.com  #测试网络是否正常
+ip addr  #查看IP地址
+```
+
+![复制代码](VMWare summary.assets/copycode.gif)
+
+[![复制代码](VMWare summary.assets/copycode.gif)](javascript:void(0);)
+
+ 
+
+插入修改网卡ens33名称：
+
+```
+1）打开/etc/sysconfig/grub编辑配置文件，因为无法复制虚拟机里面的编辑文本，请看先后的变化 
+想想还是手写出来吧：net.ifnames=0 biosdevname=0 
+```
+
+![img](https://img2018.cnblogs.com/blog/155823/201908/155823-20190831111853183-1040140971.png)
+
+ 
+
+ ![img](https://img2018.cnblogs.com/blog/155823/201908/155823-20190831111900815-2057455453.png)
+
+ 
+
+ 保存退出 
+2）执行命令grub2-mkconfig -o /boot/grub2/grub.cfg 
+
+![img](https://img2018.cnblogs.com/blog/155823/201908/155823-20190831111922513-1214075035.png)
+
+ 
+
+3）重启虚拟机，然后重启之后在使用重启网卡的命令检测一下，reboot快点输入 
+
+![img](VMWare summary.assets/155823-20190831112047347-1544190409.png)
+
+ 
+
+ 
+
+最后ping www.baidu.com测试下OK
+
+![img](VMWare summary.assets/1208477-20180419153003040-1182862366.png)
+
+ping通网络之后可以下载ifconfig命令
+
+```
+yum provides ifconfig    #查看哪个包提供了ifconfig命令,显示net-tools
+yum -y install net-tools    #安装提供ifconfig的包
+```
+
+### 三、**Host-Only（仅主机模式）**
+
+主机模式和NAT模式很相似，只不过不能上网，相当于VMware虚拟一个局域网，但是这个局域网没有连互联网。
+
+![img](VMWare summary.assets/1208477-20180419144541754-1780033276.png)
+
+ 
+
+虚拟机安装好后用xshell直接拖拽传递文件的话要执行以下命令
+
+yum -y install lrzsz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
