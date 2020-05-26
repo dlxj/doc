@@ -63,7 +63,13 @@ python -m pip install -U matplotlib
 
 
 
+## 优化
 
+
+
+[Python编写循环的两个建议](https://zhuanlan.zhihu.com/p/68128557)
+
+- “pythonic way”的方式来搜“地道”的写法，貌似stackoverflow上面讨论的多一些
 
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
@@ -187,12 +193,23 @@ from . import util
 version = '0.2'
 ```
 
+
+
 ### 黑科技
+
+
+
+#### CPU执行时间
+
 ```python
-import os,sys
-sys.path.append("./")
-import demo2
-from demo2.test_case import test_baidu
+def run3():
+    start = time.clock()
+    for i in range(1000):
+        j = i * 2 
+        for k in range(j):
+            t = k
+    end = time.clock()
+    print('CPU执行时间: ',end - start)
 ```
 
 
@@ -227,6 +244,15 @@ from demo2.test_case import test_baidu
  
  def __init__(self):
  def __del__(self):
+```
+
+
+
+## 当前函数名
+
+```python
+ print(sys._getframe().f_code.co_name)
+ print(inspect.stack()[0][3])
 ```
 
 
@@ -281,6 +307,21 @@ lambda 返回true 的保留
 
 
 ## List
+
+
+
+###  iterate with index
+
+
+
+```python
+for i, name in enumerate(names):
+    print(i, name)
+```
+
+
+
+product 笛卡尔集
 
 
 
