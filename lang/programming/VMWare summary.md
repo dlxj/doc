@@ -58,6 +58,67 @@ NAT模式，这种模式下，虚拟机与所在的物理机单独组成了一�
 
 
 
+## Network configure
+
+
+
+### Win10 ipconfig
+
+
+
+```
+C:\Users\i>ipconfig
+
+Windows IP 配置
+
+以太网适配器 以太网:
+
+   连接特定的 DNS 后缀 . . . . . . . :
+   IPv4 地址 . . . . . . . . . . . . : 192.168.0.163
+   子网掩码  . . . . . . . . . . . . : 255.255.255.0
+   默认网关. . . . . . . . . . . . . : 192.168.0.1
+```
+
+
+
+### VMware ifconfig
+
+
+
+#### Initial config
+
+- 虚拟机的初始配置可以ping 通物理主机
+
+```
+$ ifconfig
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.162.128  netmask 255.255.255.0  broadcast 192.168.162.255
+```
+
+```
+$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         _gateway        0.0.0.0         UG    100    0        0 ens33
+link-local      0.0.0.0         255.255.0.0     U     1000   0        0 ens33
+172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+192.168.162.0   0.0.0.0         255.255.255.0   U     100    0        0 ens33
+```
+
+```
+$ ping 192.168.0.163
+PING 192.168.0.163 (192.168.0.163) 56(84) bytes of data.
+64 bytes from 192.168.0.163: icmp_seq=1 ttl=128 time=0.537 ms
+```
+
+
+
+
+
+
+
+
+
 ## Proxy Setting
 
 
