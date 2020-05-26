@@ -190,6 +190,13 @@ Network proxy 在右侧的Method选择Manual ，然后在下面的Proxy中全部
 
 
 
+## FRP Server
+
+ 
+
+[使用frp进行内网穿透](https://sspai.com/post/52523)
+
+[frp点对点udp方式内网穿透ssh，不走服务器流量](https://java-er.com/blog/frp-udp-ssh/)
 
 
 
@@ -200,7 +207,10 @@ Network proxy 在右侧的Method选择Manual ，然后在下面的Proxy中全部
 
 
 
-# [VMWare虚拟机15.X局域网网络配置(修改网卡)](https://www.cnblogs.com/lys_013/p/11412092.html)
+
+
+
+[VMWare虚拟机15.X局域网网络配置(修改网卡)](https://www.cnblogs.com/lys_013/p/11412092.html)
 
 最近在搞几台虚拟机来学习分布式和大数据的相关技术，首先先要把虚拟机搞起来，搞起虚拟机第一步先安装系统，接着配置网络
 
