@@ -32,7 +32,17 @@ sentence_token_map.begin()->first
 
 
 
-![image-20200520123051219](C:\Users\echod\AppData\Roaming\Typora\typora-user-images\image-20200520123051219.png)
+pair 是有first, second两个成员变量的结构体  
+
+
+
+std::pair<std::string, double>("This is a StringTest0.", 9.7);
+
+std::make_pair("This is a StringTest.", 9.9);  
+
+
+
+
 
 
 
