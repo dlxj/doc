@@ -1,5 +1,38 @@
 [TOC]
 
+vscode configure
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/textrank",
+            "args": ["/home/ubuntu/workcode/gitlab/cpp/textrank-master/data/abc.txt", "1", "2", "./out.txt"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+
+https://launchpad.net/~codeblocks-devs/
+
 
 
 ## Dictionary
@@ -36,9 +69,9 @@ sentence_token_map.begin()->first
 
 
 
+[textrank c++](https://github.com/lostfish/textrank)
 
 
-vector<string> char_vec;
 
 ```cpp
     map<string, vector<string> > senten_words;
