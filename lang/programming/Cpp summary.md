@@ -81,6 +81,32 @@ sudo apt remove --autoremove codeblocks codeblocks-contrib
 
 
 
+右值引用（&&），move语义（std::move）和完美转发（std::forward<T>(t)）啦
+
+nullptr
+
+lambda表达式（匿名函数对象）
+
+类的非静态成员在声明时赋值
+
+auto_ptr 被弃用，应使用 unique_ptr
+
+C 语言风格的类型转换被弃用，应该使用 static_cast、reinterpret_cast、const_cast 来进行类型转换
+
+快速组装一个函数对象的bind绑定器
+
+新增了一个容器——元组（tuple）
+
+线程库第一次被纳入到标准库中
+
+时间日期库——chrono
+
+模板的>>中间不需要加空格了
+
+
+
+![image-20200527163804499](Cpp summary.assets/image-20200527163804499.png)
+
 
 
 ## Dictionary
