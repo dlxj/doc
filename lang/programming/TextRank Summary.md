@@ -46,6 +46,109 @@ make
 
 
 
+## Matlab
+
+```matlab
+str = [
+    "a b c"
+    "a b c"
+    "a b c"
+];
+documents = tokenizedDocument(str)
+
+scores = textrankScores(documents);
+
+figure
+bar(scores)
+xlabel("Document")
+ylabel("Score")
+title("TextRank Scores")
+```
+
+输入词向量：
+
+["a b c", "a b c", "a h i"]
+
+输出分值：
+
+[0.333333333333333;0.333333333333333;0.333333333333333]
+
+
+
+["a b c", "a b f", "a b c"]
+
+[0.370135263877755;0.370135263877755;0.259729472244489]
+
+
+
+## Python
+
+
+
+```python
+import math
+import numpy as np
+import networkx as nx
+
+# 相似度计算公式参见原始论文：《TextRank: Bringing Order into Texts》by: Rada Mihalcea and Paul Tarau
+
+def similarOfSents(words1, words2):
+	"""
+	words1:句子1的词list
+	words2:句子2的词list
+	"""
+	intersects = [] # 两个词集合words1，words2 的交集
+	for w in words1:
+		if w in words2:
+			if w not in intersects:
+				intersects.append(w)
+	numerator = len(intersects)  # 分子是交集的元素个数
+	if numerator == 0:
+		return 0.0
+	denominator = math.log(len(words1)) + math.log(len(words2))  # 分母是句子对应的词集长度分别求对数，然后相加
+	if denominator < 1e-12:
+		return 0.0
+
+	return numerator / denominator
+
+words1 = ['a', 'b', 'c']
+words2 = ['a', 'b', 'f']
+words3 = ['a', 'h', 'i']
+
+"""
+自已算的textrank，相比原算法没有考虑孤立结点的贡献值(没有边的结点)，并且
+略去了相似度邻接矩阵如何转化为权值邻接矩阵的过程
+本例中所有结点都有边相连
+"""
+WS = [1/3, 1/3, 1/3]  # TextRank 初始值
+W = np.array([  [0, 0.6666666666666666, 0.3333333333333333],
+                [0.6666666666666666, 0, 0.3333333333333333],
+                [0.5, 0.5, 0]
+             ], np.float)
+# 权值邻接矩阵 
+
+N = len(WS)
+
+
+for _ in range(0, 1):
+    WS_last = WS # 上一次的分数
+    WS = [0, 0, 0]
+    for i in range(0, N):
+        for j in range(0, N):
+            if i != j:
+                WS[j] += 0.85 * WS_last[i] * W[i][j]
+                # print(i, j, ":", W[i][j])
+        WS[i] += 0.15 * 1 / N
+        print("WS[i]:", WS[i])
+
+print ("自已算的值：\n", WS, "\n", W)
+
+```
+
+
+
+
+
 
 
 
