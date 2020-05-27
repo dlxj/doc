@@ -321,6 +321,8 @@ for i, name in enumerate(names):
 
 
 
+product 笛卡尔集
+
 
 
 ### delete_duplicates

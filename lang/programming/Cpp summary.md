@@ -2,6 +2,54 @@
 
 
 
+[string](https://github.com/chenshuo/recipes/blob/master/string/StringTrivial.h)
+
+
+
+```python
+ // In C++11, this is unifying assignment operator
+  String& operator=(String rhs) // yes, pass-by-value
+  {
+    // http://en.wikibooks.org/wiki/More_C++_Idioms/Copy-and-swap
+    swap(rhs);
+    return *this;
+  }
+
+  // C++11 move-ctor
+  String(String&& rhs) noexcept
+    : data_(rhs.data_)
+  {
+    rhs.data_ = nullptr;
+  }
+
+  /* Not needed if we have pass-by-value operator=() above,
+   * and it conflits. http://stackoverflow.com/questions/17961719/
+  String& operator=(String&& rhs)
+  {
+    swap(rhs);
+    return *this;
+  }
+  */
+```
+
+
+
+sudo add-apt-repository ppa:codeblocks-devs/release
+
+sudo apt update
+
+sudo apt install codeblocks codeblocks-contrib
+
+
+
+sudo add-apt-repository --remove ppa:codeblocks-devs/release
+
+sudo apt remove --autoremove codeblocks codeblocks-contrib
+
+
+
+
+
 ## Dictionary
 
 
