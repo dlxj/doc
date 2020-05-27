@@ -67,7 +67,7 @@ title("TextRank Scores")
 
 输入词向量：
 
-["a b c", "a b c", "a h i"]
+["a b c", "a b c", "a b c"]
 
 输出分值：
 
@@ -75,7 +75,7 @@ title("TextRank Scores")
 
 
 
-["a b c", "a b f", "a b c"]
+["a b c", "a b f", "a h i"]
 
 [0.370135263877755;0.370135263877755;0.259729472244489]
 
