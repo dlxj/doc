@@ -16,6 +16,12 @@
 		63B9C81322EAC92A009B8399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B9C81222EAC92A009B8399 /* Assets.xcassets */; };
 		63B9C81622EAC92A009B8399 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B9C81522EAC92A009B8399 /* Preview Assets.xcassets */; };
 		63B9C81922EAC92A009B8399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B9C81722EAC92A009B8399 /* LaunchScreen.storyboard */; };
+		EFD3F5F5247EA62E004003B0 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD3F5EF247EA62D004003B0 /* Home.swift */; };
+		EFD3F5F6247EA62E004003B0 /* TodoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD3F5F0247EA62D004003B0 /* TodoDetails.swift */; };
+		EFD3F5F7247EA62E004003B0 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD3F5F1247EA62D004003B0 /* TodoItem.swift */; };
+		EFD3F5F8247EA62E004003B0 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD3F5F2247EA62E004003B0 /* TodoList.swift */; };
+		EFD3F5F9247EA62E004003B0 /* SATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD3F5F3247EA62E004003B0 /* SATextField.swift */; };
+		EFD3F5FA247EA62E004003B0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD3F5F4247EA62E004003B0 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		63B9C81522EAC92A009B8399 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63B9C81822EAC92A009B8399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63B9C81A22EAC92A009B8399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFD3F5EF247EA62D004003B0 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EFD3F5F0247EA62D004003B0 /* TodoDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetails.swift; sourceTree = "<group>"; };
+		EFD3F5F1247EA62D004003B0 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		EFD3F5F2247EA62E004003B0 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		EFD3F5F3247EA62E004003B0 /* SATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATextField.swift; sourceTree = "<group>"; };
+		EFD3F5F4247EA62E004003B0 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,12 @@
 		63B9C80B22EAC928009B8399 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				EFD3F5F4247EA62E004003B0 /* Date.swift */,
+				EFD3F5EF247EA62D004003B0 /* Home.swift */,
+				EFD3F5F3247EA62E004003B0 /* SATextField.swift */,
+				EFD3F5F0247EA62D004003B0 /* TodoDetails.swift */,
+				EFD3F5F1247EA62D004003B0 /* TodoItem.swift */,
+				EFD3F5F2247EA62E004003B0 /* TodoList.swift */,
 				63B9C80C22EAC928009B8399 /* AppDelegate.swift */,
 				63B9C80E22EAC928009B8399 /* SceneDelegate.swift */,
 				63B9C81222EAC92A009B8399 /* Assets.xcassets */,
@@ -163,12 +181,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD3F5F6247EA62E004003B0 /* TodoDetails.swift in Sources */,
+				EFD3F5F7247EA62E004003B0 /* TodoItem.swift in Sources */,
 				6376B10A22EFF85A00554F6A /* String+Timepiece.swift in Sources */,
 				63B9C80D22EAC928009B8399 /* AppDelegate.swift in Sources */,
 				63B9C80F22EAC928009B8399 /* SceneDelegate.swift in Sources */,
+				EFD3F5F8247EA62E004003B0 /* TodoList.swift in Sources */,
 				6376B10B22EFF85A00554F6A /* DateComponents+Timepiece.swift in Sources */,
+				EFD3F5FA247EA62E004003B0 /* Date.swift in Sources */,
+				EFD3F5F9247EA62E004003B0 /* SATextField.swift in Sources */,
 				6376B10822EFF85A00554F6A /* Date+Timepiece.swift in Sources */,
 				6376B10922EFF85A00554F6A /* Int+Timepiece.swift in Sources */,
+				EFD3F5F5247EA62E004003B0 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,14 +330,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Demo/Preview\\ Content";
-				DEVELOPMENT_TEAM = W7W7V5B7Q6;
+				DEVELOPMENT_TEAM = T4JB7Y657U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.cwsoft.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echodict.TodolistDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,14 +350,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Demo/Preview\\ Content";
-				DEVELOPMENT_TEAM = W7W7V5B7Q6;
+				DEVELOPMENT_TEAM = T4JB7Y657U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.cwsoft.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echodict.TodolistDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
