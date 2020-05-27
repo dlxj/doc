@@ -109,6 +109,16 @@ C 语言风格的类型转换被弃用，应该使用 static_cast、reinterpret_
 
 
 
+xcode + cpp11
+
+ Build Settings  -> C++ Language Dialect ->select c++11
+
+-std=c++11
+
+clang -std=c++98 -pedantic-errors
+
+
+
 ## Dictionary
 
 
