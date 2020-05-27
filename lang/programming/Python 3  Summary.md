@@ -69,7 +69,7 @@ python -m pip install -U matplotlib
 
 [Python编写循环的两个建议](https://zhuanlan.zhihu.com/p/68128557)
 
-
+- “pythonic way”的方式来搜“地道”的写法，貌似stackoverflow上面讨论的多一些
 
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
@@ -307,6 +307,19 @@ lambda 返回true 的保留
 
 
 ## List
+
+
+
+###  iterate with index
+
+
+
+```python
+for i, name in enumerate(names):
+    print(i, name)
+```
+
+
 
 
 
