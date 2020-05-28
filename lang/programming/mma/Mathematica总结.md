@@ -14,6 +14,7 @@
  show biggest file or dirctory on mac
  sudo du - sh* | grep - E "\dG\[CloseCurlyDoubleQuote]
       
+
       查慧林音义 仁
       
       find . -type f | xargs cat | grep " < p > .*仁.* < 
@@ -54,12 +55,29 @@ Get["~/test.m", CharacterEncoding -> "UTF-8"]
 # WalframScript
 
 ```
+wolframscript --version
+```
+
+```
+Print[InputString[]];
+echo "Hello" | mathematicaScript
+```
+
+```
 #!/Applications/Mathematica.11.3.0.app/Contents/MacOS/wolframscript
 (* ::Package:: *)
 
 argv = Rest @ $ScriptCommandLine;
 argc = Length @ argv;
 Do[Print[argv[[i]]], {i, argc}]
+```
+
+
+
+```
+currDir = If[$InputFileName=="", NotebookDirectory[], Directory[]]
+mfiles = FileNames["*.m", currDir,Infinity];
+Export[FileNameJoin[{currDir,"out.txt"}], mfiles];
 ```
 
 
