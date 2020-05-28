@@ -79,6 +79,51 @@ f[{"a"}]
 
 
 
+## UTF8
+
+
+
+Get["~/test.m", CharacterEncoding -> "UTF-8"]
+
+$CharacterEncoding
+
+
+
+Mathematica 保存文件会自动使用 ASCII 兼容转义
+
+这非常不利于 IDE 源码阅读和版本管理
+
+我们可以强制转换到 UTF8 编码:
+
+```mathematica
+$FixRule = {
+	char : RegularExpression["\\\\:.{4}"] :> ParseCharacter@char,
+	char : ("\\[" ~~ Shortest[c__] ~~ "]") :> ParseCharacter@char
+};
+ParseCharacter = With[{t = ToExpression[#, InputForm, Unevaluated]}, SymbolName@t]&;
+FixFile[file_String] := Export[file,
+	ToCharacterCode[StringReplace[Import[file, "Text"], $FixRule], "UTF-8"],
+	"Binary"
+];
+```
+
+注意有些字符还是会显示框框, 这是因为 Wolfram 使用了保留区的 Unicode 编码.
+
+实际是能正常运行的, 如果代码无法导入, 运行下列代码强制所有 IO 改为 UTF8.
+
+```mathematica
+If[$CharacterEncoding =!= "UTF-8",
+	$CharacterEncoding = "UTF-8";
+	Print[{
+		Style["$CharacterEncoding has changed to UTF-8 to avoid problems.", Red],
+		Style["Now all IO operation are using UTF-8 as default.", Red],
+	} // TableForm];
+	st = OpenAppend[FindFile["init.m"]];
+	WriteString[st, "$CharacterEncoding=\"UTF-8\";"];
+	Close[st];
+];
+```
+
 
 
 
