@@ -147,6 +147,44 @@ print ("自已算的值：\n", WS, "\n", W)
 
 
 
+## Mathematica
+
+
+
+```mathematica
+(* 
+	计算词向量的相似度
+      words1:句子1的词list
+	words2:句子2的词list
+相似度计算公式参见原始论文：《TextRank:Bringing Order into Texts》by:Rada Mihalcea and Paul Tarau 
+*)
+similarOfSents[
+	 words1:List[_String..], 
+	 words2:List[_String..]
+	(* words1:p 的完整形式是：Pattern[words1, List[_String..]] *)
+]:=Module[
+{
+numerator,
+denominator (* 分母是句子对应的词集长度分别求对数，然后相加 *)
+
+},
+numerator = Length[  Intersection[words1,words2] ]; (* 分子是交集的元素个数 *)
+denominator = Log[ Length[words1] ] + Log[ Length[words2] ];
+
+If[denominator < 0.000001, 
+Return[0]
+];
+
+numerator / denominator//N
+]
+
+words ={ {"a", "b", "c"}, {"a", "b", "c"}, {"a", "b", "c"} }; 
+similarOfSents[words[[1]], words[[2]]]
+=> 1.36536
+```
+
+
+
 
 
 

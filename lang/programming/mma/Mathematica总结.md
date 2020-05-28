@@ -28,6 +28,61 @@ GeneralUtilities`PrintDefinitions[BinLists]
 
 
 
+## Package
+
+
+
+### 全局符号列表 $ContextPath
+
+```mathematica
+$ContextPath  
+```
+
+
+
+### 符号在哪个包下面
+
+```mathematica
+Context[Integrate]
+```
+
+
+
+
+
+## 集合
+
+
+
+### 交集 Intersection 
+
+```
+Intersection
+```
+
+
+
+## 函数重载
+
+
+
+```
+ClearAll[f]
+f[x_ /; x > 0] := 999 
+f[x_ /; x <= 0] := -1 
+f[x_ /; StringQ[x] ] := -999 
+(*f[x_/; MatchQ[x, List[_String..]]]:= 10000*)
+f[x : List[_String ..]] := 10000
+f[{"a"}]
+=> 10000
+```
+
+
+
+
+
+
+
 ## Nothing Null None
 
 1. **Nothing** 
