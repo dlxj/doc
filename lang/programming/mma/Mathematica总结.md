@@ -28,6 +28,31 @@ GeneralUtilities`PrintDefinitions[BinLists]
 
 
 
+## 每次启动MMA自动把编码设成UTF8
+
+
+
+```
+If[$CharacterEncoding =!= "UTF-8",
+	$CharacterEncoding = "UTF-8";
+	Print[{
+		Style["$CharacterEncoding has changed to UTF-8 to avoid problems.", Red],
+		Style["Now all IO operation are using UTF-8 as default.", Red],
+	} // TableForm];
+	st = OpenAppend[FindFile["init.m"]];
+	WriteString[st, "$CharacterEncoding=\"UTF-8\";"];
+	Close[st];
+];
+```
+
+```
+Get["~/test.m", CharacterEncoding -> "UTF-8"]
+```
+
+
+
+
+
 ## Package
 
 
