@@ -152,8 +152,6 @@ print ("自已算的值：\n", WS, "\n", W)
 
 
 ```mathematica
-ClearAll[similarOfSents]
-
 (* 
 	计算词向量的相似度
       words1:句子1的词list
@@ -166,15 +164,23 @@ similarOfSents[
 	(* words1:p 的完整形式是：Pattern[words1, List[_String..]] *)
 ]:=Module[
 {
-numerator, (* 分子是交集的元素个数 *)
+numerator,
 denominator (* 分母是句子对应的词集长度分别求对数，然后相加 *)
 
 },
+numerator = Length[  Intersection[words1,words2] ]; (* 分子是交集的元素个数 *)
+denominator = Log[ Length[words1] ] + Log[ Length[words2] ];
 
-1
+If[denominator < 0.000001, 
+Return[0]
+];
+
+numerator / denominator//N
 ]
+
 words ={ {"a", "b", "c"}, {"a", "b", "c"}, {"a", "b", "c"} }; 
 similarOfSents[words[[1]], words[[2]]]
+=> 1.36536
 ```
 
 
