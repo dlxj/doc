@@ -51,6 +51,21 @@ Get["~/test.m", CharacterEncoding -> "UTF-8"]
 
 
 
+# WalframScript
+
+```
+#!/Applications/Mathematica.11.3.0.app/Contents/MacOS/wolframscript
+(* ::Package:: *)
+
+argv = Rest @ $ScriptCommandLine;
+argc = Length @ argv;
+Do[Print[argv[[i]]], {i, argc}]
+```
+
+
+
+
+
 
 
 ## Package
