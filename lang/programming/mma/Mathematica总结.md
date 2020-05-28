@@ -66,6 +66,16 @@ Do[Print[argv[[i]]], {i, argc}]
 
 
 
+# Stdin
+
+
+
+```
+Print[InputString[]];
+```
+
+
+
 
 
 ## Package
