@@ -194,6 +194,19 @@ If[$CharacterEncoding =!= "UTF-8",
 
 
 
+```mathematica
+SetDirectory@NotebookDirectory[];
+(*strm=OpenRead["学研国語大辞典ku00.txt",Method\[Rule]{"File",CharacterEncoding\[Rule]"ShiftJIS"}];*)
+shiftj=FromCharacterCode[BinaryReadList@"学研国語大辞典ku00.txt","ShiftJIS"];
+Characters@shiftj//Take[#,{8}]&
+file="学研国語大辞典ku00utf8.txt";
+stream=OpenWrite[file,CharacterEncoding->"UTF-8"];
+WriteString[stream,shiftj];
+Close@stream;
+```
+
+
+
 
 
 ## Nothing Null None
