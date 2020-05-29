@@ -86,9 +86,10 @@ title("TextRank Scores")
 
 
 ```python
+
 import math
 import numpy as np
-import networkx as nx
+#import networkx as nx
 
 # 相似度计算公式参见原始论文：《TextRank: Bringing Order into Texts》by: Rada Mihalcea and Paul Tarau
 
@@ -115,34 +116,80 @@ words1 = ['a', 'b', 'c']
 words2 = ['a', 'b', 'f']
 words3 = ['a', 'h', 'i']
 
-"""
-自已算的textrank，相比原算法没有考虑孤立结点的贡献值(没有边的结点)，并且
-略去了相似度邻接矩阵如何转化为权值邻接矩阵的过程
-本例中所有结点都有边相连
-"""
-WS = [1/3, 1/3, 1/3]  # TextRank 初始值
-W = np.array([  [0, 0.6666666666666666, 0.3333333333333333],
-                [0.6666666666666666, 0, 0.3333333333333333],
-                [0.5, 0.5, 0]
-             ], np.float)
-# 权值邻接矩阵 
+# 构造相似度邻接矩阵
+# wordsList: 句子词向量列表 example: [ ['a', 'b', 'c'], ['a', 'b', 'f'], ['a', 'h', 'i'] ]
+def similarMatrix(wordsList):
+	n = len(wordsList)
+	adjacentMatrix = np.zeros((n, n))
+	"""
+	邻接矩阵，里面存的是相似度，相似度可以用作graph 边的权值
+	"""
+	for i in range(0, n):
+		for j in range(i+1, n):
+			sim = similarOfSents(wordsList[i], wordsList[j])
+			adjacentMatrix[i, j] = sim
+			adjacentMatrix[j, i] = sim
+	return adjacentMatrix
 
-N = len(WS)
+
+# 构造权值邻接矩阵
+# simMatrix: 相似度邻接矩阵
+def weightMatrix(simMatrix):
+	"""
+	graph 是一个有向图，结点是句子， \
+		边的意义是两句子相似，箭头指向的意义是价值传递的方向，  \
+		权值的意义是你愿意把自已价值的百分之几传递给箭头指向的那个结点。 \
+		计算A -> B 的权值的方法是：  \
+			先算A 和所有结点相似度的总和，这是分母  \
+			再算A 和B 的相似度，这是分子  \
+			两者的比值既是A -> B的边的权值
+	"""
+	n = len(simMatrix)
+	weightMtrx = np.zeros((n, n))
+	
+	for i in range(0, n):
+		sumsim = sum( simMatrix[i] )  # 句子i 和其他所有结点相似度的总和
+		for j in range(0, n):
+			if i != j and simMatrix[i][j] > 0.001 and sumsim != 0:  # 相似度小于一定值，认为结点之间没有边
+				weightMtrx[i][j] = simMatrix[i][j] / sumsim
+	
+	return weightMtrx			
+
+# 计算句子textrank 值(价值，或者说“重要性”)
+# wordsList: 句子词向量列表 example: [ ['a', 'b', 'c'], ['a', 'b', 'f'], ['a', 'h', 'i'] ]
+def textrank(wordsList):
+	"""
+	相比原算法没有考虑孤立结点的贡献值(没有边的结点)
+	"""
+	N = len(wordsList)
+
+	simMatrix = similarMatrix(wordsList) # 相似度邻接矩阵
+	print("similary matrix:\n ", simMatrix, "\n\n")
+
+	W = weightMatrix(simMatrix)  # 权值邻接矩阵
+	print("weight matrix:\n ", W, "\n\n")
+
+	WS = [1/N, 1/N, 1/N]  # TextRank 初始值
+	#print(WS)
+	for _ in range(0, 100):
+		WS_last = WS
+		WS = [0, 0, 0]
+		for i in range(0, N):
+			for j in range(0, N):
+				if i != j and W[i][j] > 0:
+					WS[j] += 0.85 * WS_last[i] * W[i][j]  # 先算i 为别人做了多少贡献
+			WS[i] += 0.15 * 1 / N  # 再算别人为i 做了多少贡献
+	
+	print ("textrank值：\n", WS, "\n", sum(WS))
+	return WS
 
 
-for _ in range(0, 1):
-    WS_last = WS # 上一次的分数
-    WS = [0, 0, 0]
-    for i in range(0, N):
-        for j in range(0, N):
-            if i != j:
-                WS[j] += 0.85 * WS_last[i] * W[i][j]
-                # print(i, j, ":", W[i][j])
-        WS[i] += 0.15 * 1 / N
-        print("WS[i]:", WS[i])
-
-print ("自已算的值：\n", WS, "\n", W)
-
+if __name__ == "__main__":
+	textrank( [ ['a', 'b', 'c'],
+				['a', 'b', 'f'],
+				['a', 'h', 'i']
+		  	  ])
+ 
 ```
 
 
