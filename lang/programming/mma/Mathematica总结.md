@@ -156,7 +156,7 @@ Get["~/test.m", CharacterEncoding -> "UTF-8"]
 ```mathematica
 (* :fixfiles.m: *)
 (* convert all files encoding to utf-8, which ".m" file in the current and it's sub directory *)
-currDir = If[$InputFileName=="", NotebookDirectory[], Directory[]];
+currDir = If[$InputFileName=="", NotebookDirectory[], Directory[]]; 
 mfiles = FileNames["*.m", currDir, Infinity];
 $FixRule = {
 	char : RegularExpression["\\\\:.{4}"] :> ParseCharacter@char,
