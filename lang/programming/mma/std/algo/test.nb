@@ -1,0 +1,375 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14836,        367]
+NotebookOptionsPosition[     14223,        349]
+NotebookOutlinePosition[     14567,        364]
+CellTagsIndexPosition[     14524,        361]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Get", "[", " ", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Directory", "[", "]"}], ",", "\"\<iSim.m\>\""}], "}"}], "]"}],
+     ",", 
+    RowBox[{"CharacterEncoding", "\[Rule]", "\"\<UTF-8\>\""}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", "$ContextPath", "\[IndentingNewLine]", 
+ RowBox[{"Names", "[", "\"\<System`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"??", "std`iSim`similarOfSents"}]}], "Input",
+ CellChangeTimes->{{3.7996498747879367`*^9, 3.799649912374958*^9}, {
+  3.799700548706727*^9, 3.7997005652060447`*^9}, {3.7997026036717367`*^9, 
+  3.799702609431898*^9}, {3.799702680812219*^9, 3.799702681578018*^9}, {
+  3.7997027130104513`*^9, 3.7997027417543416`*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"1f152987-e67e-4d15-8a01-2558ecc36204"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"std`iSim`\"\>", ",", "\<\"DocumentationSearch`\"\>", 
+   ",", "\<\"ResourceLocator`\"\>", ",", "\<\"URLUtilities`\"\>", 
+   ",", "\<\"PacletManager`\"\>", ",", "\<\"System`\"\>", 
+   ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7997026569803333`*^9, 3.799702686632596*^9}, {
+  3.7997027434161596`*^9, 3.799702753623087*^9}},
+ CellLabel->"Out[39]=",ExpressionUUID->"3ddd5a5a-dd3f-4bfb-82a0-c43ccd861804"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.7997026569803333`*^9, 3.799702686632596*^9}, {
+  3.7997027434161596`*^9, 3.799702753626604*^9}},
+ CellLabel->"Out[40]=",ExpressionUUID->"5d5258bb-125c-4081-99de-ed82bfa21327"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"similarOfSents[{\\\"a\\\", \\\"b\\\", \\\"c\\\"}, {\
+\\\"a\\\", \\\"b\\\", \\\"c\\\"}], calculate similarity of two sentences\"\>",
+              "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False, False, False, False, 
+                False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Definitions\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Definitions", "Tooltip"]& ], GridBox[{
+                    {
+                    RowBox[{
+                    RowBox[{"similarOfSents", "[", 
+                    RowBox[{
+                    RowBox[{"std`iSim`Private`words1", ":", 
+                    RowBox[{"{", 
+                    RowBox[{"_String", ".."}], "}"}]}], ",", 
+                    RowBox[{"std`iSim`Private`words2", ":", 
+                    RowBox[{"{", 
+                    RowBox[{"_String", ".."}], "}"}]}]}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    "std`iSim`Private`numerator", ",", 
+                    "std`iSim`Private`denominator"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"std`iSim`Private`numerator", "=", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{
+                    "std`iSim`Private`words1", "\[Intersection]", 
+                    "std`iSim`Private`words2"}], "]"}]}], ";", 
+                    RowBox[{"std`iSim`Private`denominator", "=", 
+                    RowBox[{
+                    RowBox[{"Log", "[", 
+                    RowBox[{"Length", "[", "std`iSim`Private`words1", "]"}], 
+                    "]"}], "+", 
+                    RowBox[{"Log", "[", 
+                    RowBox[{"Length", "[", "std`iSim`Private`words2", "]"}], 
+                    "]"}]}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"std`iSim`Private`denominator", "<", "1.`*^-6"}], 
+                    ",", 
+                    RowBox[{"Return", "[", "0", "]"}]}], "]"}], ";", 
+                    RowBox[{"N", "[", 
+                    
+                    FractionBox["std`iSim`Private`numerator", 
+                    "std`iSim`Private`denominator"], "]"}]}]}], "]"}]}]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"std`iSim`similarOfSents\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->6], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"similarOfSents[{\\\"a\\\", \\\"b\\\", \\\"c\\\"}, {\
+\\\"a\\\", \\\"b\\\", \\\"c\\\"}], calculate similarity of two sentences\"\>",
+              "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[
+   Association[
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "similarOfSents[{\"a\", \"b\", \"c\"}, {\"a\", \"b\", \"c\"}], calculate \
+similarity of two sentences", "Documentation" -> None, "OwnValues" -> None, 
+    "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, std`iSim`similarOfSents, {std`iSim`similarOfSents[
+         Pattern[std`iSim`Private`words1, {
+           Repeated[
+            Blank[String]]}], 
+         Pattern[std`iSim`Private`words2, {
+           Repeated[
+            Blank[String]]}]] :> 
+       Module[{std`iSim`Private`numerator, std`iSim`Private`denominator}, 
+         std`iSim`Private`numerator = Length[
+            Intersection[std`iSim`Private`words1, std`iSim`Private`words2]]; 
+         std`iSim`Private`denominator = Log[
+             Length[std`iSim`Private`words1]] + Log[
+             Length[std`iSim`Private`words2]]; 
+         If[std`iSim`Private`denominator < 1.*^-6, 
+           Return[0]]; 
+         N[std`iSim`Private`numerator/std`iSim`Private`denominator]]}], 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "std`iSim`similarOfSents"], True]]], "Output",
+ CellChangeTimes->{{3.7997026569803333`*^9, 3.799702686632596*^9}, {
+  3.7997027434161596`*^9, 3.7997027537029843`*^9}},
+ CellLabel->"Out[41]=",ExpressionUUID->"bd3aee29-b4d0-453e-81d8-6fe18aca8de7"]
+}, Open  ]]
+},
+WindowSize->{1408, 997},
+WindowMargins->{{Automatic, 119}, {Automatic, 59}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 945, 20, 105, "Input",ExpressionUUID->"1f152987-e67e-4d15-8a01-2558ecc36204"],
+Cell[1528, 44, 468, 8, 32, "Output",ExpressionUUID->"3ddd5a5a-dd3f-4bfb-82a0-c43ccd861804"],
+Cell[1999, 54, 243, 4, 32, "Output",ExpressionUUID->"5d5258bb-125c-4081-99de-ed82bfa21327"],
+Cell[2245, 60, 11962, 286, 287, "Output",ExpressionUUID->"bd3aee29-b4d0-453e-81d8-6fe18aca8de7"]
+}, Open  ]]
+}
+]
+*)
+

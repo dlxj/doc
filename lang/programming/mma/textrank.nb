@@ -1,0 +1,270 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10164,        262]
+NotebookOptionsPosition[      9295,        238]
+NotebookOutlinePosition[      9638,        253]
+CellTagsIndexPosition[      9595,        250]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "similarOfSents", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{
+    "\:8ba1\:7b97\:8bcd\:5411\:91cf\:7684\:76f8\:4f3c\:5ea6", 
+     "\[IndentingNewLine]", "      ", 
+     RowBox[{"words1", ":", 
+      RowBox[{
+      "\:53e5\:5b501\:7684\:8bcdlist", "\[IndentingNewLine]", "\t", 
+       "words2"}], ":", 
+      RowBox[{
+      "\:53e5\:5b502\:7684\:8bcdlist", "\[IndentingNewLine]", 
+       "\:76f8\:4f3c\:5ea6\:8ba1\:7b97\:516c\:5f0f\:53c2\:89c1\:539f\:59cb\
+\:8bba\:6587"}]}]}], "\:ff1a", 
+    RowBox[{
+     RowBox[{"\:300a", 
+      RowBox[{"TextRank", ":", 
+       RowBox[{"Bringing", " ", "Order", " ", "into", " ", "Texts"}]}], 
+      "\:300b"}], 
+     RowBox[{"by", ":", 
+      RowBox[{
+      "Rada", " ", "Mihalcea", " ", "and", " ", "Paul", " ", "Tarau"}]}]}]}], 
+   " ", "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"similarOfSents", "[", "\[IndentingNewLine]", "\t ", 
+   RowBox[{
+    RowBox[{"words1", ":", 
+     RowBox[{"List", "[", 
+      RowBox[{"_String", ".."}], "]"}]}], ",", " ", "\[IndentingNewLine]", 
+    "\t ", 
+    RowBox[{"words2", ":", 
+     RowBox[{"List", "[", 
+      RowBox[{"_String", ".."}], "]"}]}]}], "\[IndentingNewLine]", "\t", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"words1", ":", 
+      RowBox[{"p", " ", "\:7684\:5b8c\:6574\:5f62\:5f0f\:662f"}]}], "\:ff1a", 
+     RowBox[{"Pattern", "[", 
+      RowBox[{"words1", ",", " ", 
+       RowBox[{"List", "[", 
+        RowBox[{"_String", ".."}], "]"}]}], "]"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"numerator", ",", "\[IndentingNewLine]", "denominator"}], " ", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "\:5206\:6bcd\:662f\:53e5\:5b50\:5bf9\:5e94\:7684\:8bcd\:96c6\:957f\
+\:5ea6\:5206\:522b\:6c42\:5bf9\:6570", "\:ff0c", "\:7136\:540e\:76f8\:52a0"}],
+       " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"numerator", " ", "=", " ", 
+      RowBox[{"Length", "[", "  ", 
+       RowBox[{"Intersection", "[", 
+        RowBox[{"words1", ",", "words2"}], "]"}], " ", "]"}]}], ";", " ", 
+     RowBox[{
+     "(*", " ", 
+      "\:5206\:5b50\:662f\:4ea4\:96c6\:7684\:5143\:7d20\:4e2a\:6570", " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"denominator", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"Log", "[", " ", 
+        RowBox[{"Length", "[", "words1", "]"}], " ", "]"}], " ", "+", " ", 
+       RowBox[{"Log", "[", " ", 
+        RowBox[{"Length", "[", "words2", "]"}], " ", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"denominator", " ", "<", " ", "0.000001"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "0", "]"}]}], "\[IndentingNewLine]", "]"}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"numerator", " ", "/", " ", "denominator"}], "//", "N"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"words", " ", "=", 
+    RowBox[{"{", " ", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<a\>\"", ",", " ", "\"\<b\>\"", ",", " ", "\"\<c\>\""}], 
+       "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<a\>\"", ",", " ", "\"\<b\>\"", ",", " ", "\"\<c\>\""}], 
+       "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<a\>\"", ",", " ", "\"\<b\>\"", ",", " ", "\"\<c\>\""}], 
+       "}"}]}], " ", "}"}]}], ";"}], " "}], "\[IndentingNewLine]", 
+ RowBox[{"similarOfSents", "[", 
+  RowBox[{
+   RowBox[{"words", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+   RowBox[{"words", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.799623881850234*^9, 3.799623900284766*^9}, {
+   3.799623956047367*^9, 3.799624101194707*^9}, {3.799624138603525*^9, 
+   3.7996242061605372`*^9}, {3.7996243404020777`*^9, 3.799624480460144*^9}, {
+   3.799624526587265*^9, 3.79962453820868*^9}, {3.799624617859104*^9, 
+   3.7996246242927833`*^9}, {3.799624666880082*^9, 3.799624714687043*^9}, {
+   3.79962474566842*^9, 3.799624948204881*^9}, {3.799625089890012*^9, 
+   3.7996251392540293`*^9}, {3.7996251738025675`*^9, 3.799625189226926*^9}, {
+   3.7996253966136026`*^9, 3.799625537583515*^9}, {3.7996258087202387`*^9, 
+   3.799625838805065*^9}, {3.799625943026177*^9, 3.79962597797783*^9}, {
+   3.7996260149807267`*^9, 3.799626019856074*^9}, {3.7996263114696407`*^9, 
+   3.7996264159085407`*^9}, {3.7996264657178774`*^9, 3.799626550024472*^9}, 
+   3.7996265933408747`*^9, 3.799626648317691*^9, {3.7996267018460846`*^9, 
+   3.7996267376136007`*^9}, {3.7996268675140843`*^9, 
+   3.7996269597973223`*^9}, {3.7996270593331633`*^9, 3.7996270969750743`*^9}},
+ CellLabel->
+  "In[716]:=",ExpressionUUID->"44442a1f-e1fa-4133-8df7-a2ce2934df86"],
+
+Cell[BoxData["1.365358839940256`"], "Output",
+ CellChangeTimes->{
+  3.799625140761998*^9, 3.79962555106446*^9, {3.799625584962929*^9, 
+   3.7996256107055254`*^9}, 3.799625844420166*^9, {3.7996259456102276`*^9, 
+   3.79962597898506*^9}, {3.7996264243768487`*^9, 3.7996264410537243`*^9}, {
+   3.7996264735017796`*^9, 3.7996265511214437`*^9}, {3.7996265979892473`*^9, 
+   3.7996266039174843`*^9}, {3.7996269357659664`*^9, 
+   3.7996269800404367`*^9}, {3.799627078488562*^9, 3.7996271179751873`*^9}, 
+   3.7996345168996906`*^9, {3.799637730623308*^9, 3.799637749042355*^9}},
+ CellLabel->
+  "Out[719]=",ExpressionUUID->"6c0c9634-68f6-4250-8089-0f9536119e84"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindFile", "[", "\"\<init.m\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7996408050618505`*^9, 3.7996408050633583`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"ed83b998-bfe0-48db-8197-7b927b0d5b00"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\i\\\\AppData\\\\Roaming\\\\Mathematica\\\\\
+Kernel\\\\init.m\"\>"], "Output",
+ CellChangeTimes->{3.7996408063725348`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"4dbaa701-3fb4-44ae-9d47-d950682a0841"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"$CharacterEncoding", "=!=", "\"\<UTF-8\>\""}], ",", 
+    RowBox[{
+     RowBox[{"$CharacterEncoding", "=", "\"\<UTF-8\>\""}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{
+          "\"\<$CharacterEncoding has changed to UTF-8 to avoid \
+problems.\>\"", ",", "Red"}], "]"}], ",", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+          "\"\<Now all IO operation are using UTF-8 as default.\>\"", ",", 
+           "Red"}], "]"}], ","}], "}"}], "//", "TableForm"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"st", "=", 
+      RowBox[{"OpenAppend", "[", 
+       RowBox[{"FindFile", "[", "\"\<init.m\>\"", "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"WriteString", "[", 
+      RowBox[{"st", ",", "\"\<$CharacterEncoding=\\\"UTF-8\\\";\>\""}], "]"}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"Close", "[", "st", "]"}], ";"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7996408722841578`*^9, 3.7996408722856665`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"b4164fb8-3774-4aae-993c-c8efe1ef19be"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      StyleBox["\<\"$CharacterEncoding has changed to UTF-8 to avoid \
+problems.\"\>",
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontColor->RGBColor[1, 0, 0]]},
+     {
+      StyleBox["\<\"Now all IO operation are using UTF-8 as default.\"\>",
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontColor->RGBColor[1, 0, 0]]},
+     {"Null"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{3.7996408754030933`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"3d722eab-bc4a-4963-8834-118cf42c7ec6"]
+}, Open  ]]
+},
+WindowSize->{985, 788},
+WindowMargins->{{Automatic, 186}, {24, Automatic}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5053, 115, 723, "Input",ExpressionUUID->"44442a1f-e1fa-4133-8df7-a2ce2934df86"],
+Cell[5636, 139, 653, 10, 32, "Output",ExpressionUUID->"6c0c9634-68f6-4250-8089-0f9536119e84"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6326, 154, 222, 3, 45, "Input",ExpressionUUID->"ed83b998-bfe0-48db-8197-7b927b0d5b00"],
+Cell[6551, 159, 232, 3, 32, "Output",ExpressionUUID->"4dbaa701-3fb4-44ae-9d47-d950682a0841"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6820, 167, 1231, 30, 230, "Input",ExpressionUUID->"b4164fb8-3774-4aae-993c-c8efe1ef19be"],
+Cell[8054, 199, 1225, 36, 52, "Print",ExpressionUUID->"3d722eab-bc4a-4963-8834-118cf42c7ec6"]
+}, Open  ]]
+}
+]
+*)
+
