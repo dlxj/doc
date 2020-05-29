@@ -98,6 +98,25 @@ Print[InputString[]];
 
 ## Package
 
+```mathematica
+?? std`iSim`*
+?? std`iSim`similarOfSents
+Names["std`*`*"]
+```
+
+
+
+```mathematica
+$ContextPath
+Names["Std`*"]
+Names["Std`Private`*"]
+??Std`bomFreeQ
+```
+
+
+
+
+
 
 
 ### 全局符号列表 $ContextPath
