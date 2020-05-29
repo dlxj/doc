@@ -553,6 +553,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 > ([bob Mac开源取词翻译](https://github.com/ripperhe/Bob)  )
 >
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
+> [MDX 解包打包工具](https://github.com/dlxj/mdict-utils)
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
 > [FairyDict](https://github.com/cegfdb/FairyDict)  
 > [pdawiki Python辅助MDX转MOBI](https://www.pdawiki.com/forum/thread-36130-1-1.html)
