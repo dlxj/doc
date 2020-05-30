@@ -39,6 +39,8 @@ And then I said "I have \(apples + oranges) pieces of fruit."
 """
 ```
 
+“let s = 1.description”
+
 
 
 ## 匿名函数
@@ -53,6 +55,17 @@ print(mappedNumbers)
 
 let sortedNumbers = numbers.sorted { $0 > $1 } // 第一参、第二参
 print(sortedNumbers)
+{1}()  // call and re 1
+```
+
+
+
+no return, three are legal
+
+```
+func say1(_ s:String) -> Void { print(s) }
+func say2(_ s:String) -> () { print(s) }
+func say3(_ s:String) { print(s) }
 ```
 
 
