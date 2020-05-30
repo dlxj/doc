@@ -41,6 +41,24 @@ And then I said "I have \(apples + oranges) pieces of fruit."
 
 
 
+## 匿名函数
+
+
+
+> 函数就是闭包
+
+```
+let mappedNumbers = numbers.map({ number in 3 * number })  // in 分隔了形参和函数体
+print(mappedNumbers)
+
+let sortedNumbers = numbers.sorted { $0 > $1 } // 第一参、第二参
+print(sortedNumbers)
+```
+
+
+
+
+
 ## List and Dictionary
 
 
