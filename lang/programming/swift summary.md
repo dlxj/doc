@@ -131,7 +131,7 @@ VStack {
 
 
 
-## ZStack 垂直排 
+## ZStack 垂直排
 
 
 
@@ -162,6 +162,30 @@ Spacer().frame(height:20)  // 加点小空档
 ```
 TextField 
 init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+```
+
+
+
+### 文本过长用省略号代替
+
+```text
+lineLimit(nil)
+```
+
+
+
+### 文本过长自动缩小并显示
+
+```text
+minimumScaleFactor(0.3)
+```
+
+
+
+### 多行文本对齐
+
+```text
+.multilineTextAlignment(.leading)
 ```
 
 
