@@ -132,6 +132,10 @@ class Foo : Entertainment  {
 
 
 
+继承只继承协议，传统继承的语义通过组合来实现。既**一个view 套在另一个view 里面**
+
+
+
 ## VStack 竖排
 
 
