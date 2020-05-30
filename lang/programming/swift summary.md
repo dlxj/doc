@@ -115,6 +115,21 @@ greet("John", on: "Wednesday")
 
 
 
+## Protocol
+
+
+
+### 继承协议确定类型
+
+```swift
+protocol Entertainment  {      
+  associatedtype MediaType  
+}
+class Foo : Entertainment  {
+  typealias MediaType = String //可以指定任意类型
+}
+```
+
 
 
 ## VStack 竖排
