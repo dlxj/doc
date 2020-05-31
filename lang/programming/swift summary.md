@@ -136,6 +136,39 @@ class Foo : Entertainment  {
 
 
 
+## String
+
+
+
+### multi-line strings
+
+```
+"""
+a
+b
+"""
+
+"""
+a \
+b \
+"""
+// 一个有换行，一个无换行
+```
+
+
+
+### interpolation
+
+```
+"a is \(v)"
+```
+
+
+
+
+
+
+
 ## VStack 竖排
 
 
@@ -174,7 +207,7 @@ Spacer().frame(height:20)  // 加点小空档
 
 ### padding, background, foregroundColor
 
-
+###  font(.title)
 
 ### text binding
 
@@ -182,6 +215,18 @@ Spacer().frame(height:20)  // 加点小空档
 TextField 
 init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
 ```
+
+
+
+
+
+## Enum
+
+
+
+![image-20200531164947473](swift summary.assets/image-20200531164947473.png)
+
+
 
 
 

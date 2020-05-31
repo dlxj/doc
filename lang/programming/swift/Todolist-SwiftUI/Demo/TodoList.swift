@@ -47,7 +47,7 @@ struct TodoList: View {
                     .frame(height: 150)
             }
             .edgesIgnoringSafeArea(.bottom)
-            .navigationBarTitle(Text("待办事项").foregroundColor(Color("theme")))
+            .navigationBarTitle(Text("待办事项x").font(.title).foregroundColor(Color("theme")))
             .onAppear {
                 if let data = UserDefaults.standard.object(forKey: "todos") as? Data {
                     let todolist = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Todo] ?? []
