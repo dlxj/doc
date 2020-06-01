@@ -10,6 +10,8 @@
 
 [How to Install Python 3.8 on CentOS 8](https://linuxize.com/post/how-to-install-python-3-8-on-centos-8/)
 
+
+
 ```
 yum update -y
 yum groupinstall -y 'Development Tools'
