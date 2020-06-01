@@ -6,11 +6,21 @@
 
 
 
+[神经网络中的偏置项b到底是什么？](https://www.jiqizhixin.com/articles/2018-07-05-18)
+
+- > **逻辑回归就是用直线|平面|超平面（二维空间是直线，三维是平面，多维是超平面）来分割空间（目地是把空间中的点分类）**
+
 [吴恩达《神经网络与深度学习》课程笔记（4）-- 浅层神经网络](https://redstonewill.github.io/2018/03/26/37/)
 
 [有哪些优秀的深度学习入门书籍](https://www.zhihu.com/question/36675272)
 
 [动手学深度学习](https://github.com/d2l-ai/d2l-zh)
+
+
+
+
+
+
 
 
 
