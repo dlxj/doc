@@ -2,6 +2,10 @@
 
  
 
+VSCode   Alt + <-     Alt +   ->   前跳  回跳
+
+
+
 # CPP
 
 

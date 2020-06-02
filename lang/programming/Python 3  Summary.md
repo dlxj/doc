@@ -6,6 +6,10 @@
 
 
 
+VSCode   Alt + <-     Alt +   ->   前跳  回跳
+
+
+
 ## Source install on CentOS
 
 [How to Install Python 3.8 on CentOS 8](https://linuxize.com/post/how-to-install-python-3-8-on-centos-8/)
@@ -370,6 +374,18 @@ a.remove(1)
 l = ['1','2','3']
 print(",".join(l))
 ```
+
+
+
+### convert list to dict
+
+```
+def listToDict(lst):
+    op = { i: lst[i] for i in range(0, len(lst), 1)}
+    return op
+```
+
+
 
 
 

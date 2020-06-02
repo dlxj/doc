@@ -188,7 +188,9 @@ $$
 
 ### ReLU 激活函数
 
-现代神经网络中，默认的推荐是使用由激活函数 **g(z) = max{0, z}** 定义的整流线 性单元 (rectified linear unit) 或者称为ReLU
+现代神经网络中，默认的推荐是使用由激活函数 **g(z) = max{0, z}** 定义的整流线性单元 (rectified linear unit) 或者称为ReLU
+
+**整流线性激活函数**（DeepLearningBook ）p.150
 
 
 
