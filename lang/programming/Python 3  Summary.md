@@ -387,7 +387,55 @@ def listToDict(lst):
 
 
 
+### subtract
 
+- list - list 是相同position 的值分别相减，构成一个新list
+
+	if sum( WS - last_WS ) < 1e-12:  # 提前结束计算，如果误差值小于一定值
+		print('break loop now. current iterate num: ', k+1, 'deviation sum is:', sum( WS - last_WS ))
+		break
+
+
+
+#### mean image
+
+```
+X -= np.mean(X, axis=0)  # 减去均值
+```
+
+
+
+
+
+## Tuples
+
+```
+a, b = b, a 等价于 (a, b) = (b, a), list 没有这模式匹配特性
+```
+
+
+
+### immutable
+
+tuple对象不可改变
+
+
+
+### hashable 
+
+tuple 是hashable 类型（取决于里面放什么），所以tuple可以做dict的key
+
+
+
+tuple还用来返回多值
+
+> x, y = getPoint()
+
+
+
+### tuple efficient than list
+
+tuple以放弃对元素的增删为代价换取了性能上比list 更高的优点
 
 
 
@@ -834,6 +882,31 @@ stop = [line.strip().decode('utf-8') for line in open('stopword.txt').readlines(
 
 
 ```
+
+
+
+```python
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+ 
+# Convert ShiftJIS to UTF-8
+# Usage: cat ShiftJIS.txt | ./convert.py > UTF8.txt
+# Alternative method: cat ShiftJIS.txt | iconv -f shift_jis -t utf8 > UTF8.txt
+ 
+import sys
+import codecs
+ 
+ustdout = codecs.getwriter('utf_8')(sys.stdout)
+jstdin = codecs.getreader('shift_jis')(sys.stdin)
+ 
+for line in jstdin.readlines():
+ustdout.write(line)
+
+
+cat 学研国語大辞典ku00.txt | iconv -f SHIFT_JIS-2004 -t utf-8 > 学研国語大辞典ku00-utf8.txt
+```
+
+
 
 
 
