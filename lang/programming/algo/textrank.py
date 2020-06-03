@@ -24,6 +24,7 @@ TextRank 从PageRank 发展而来，PageRank 是计算网站重要性的算法�
 """
 
 # 相似度计算公式参见原始论文：《TextRank: Bringing Order into Texts》by: Rada Mihalcea and Paul Tarau
+# https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf
 
 def similarOfSents(words1, words2):
 	"""
@@ -88,10 +89,10 @@ def weightMatrix(simMatrix):
 
 # 计算句子textrank 值(价值，或者说“重要性”)
 # wordsList: 句子词向量列表 example: [ ['a', 'b', 'c'], ['a', 'b', 'f'], ['a', 'h', 'i'] ]
-def textrank(wordsList):
+def textrank2(wordsList):
 	"""
 	这个版本的实现是networkx 库的实现，和Matlab 中内置的算法实现结果是一至的，  \
-		但是和论文公式的计算过程有差异，严格按照论文的实现在textrank2 函数
+		但是和论文公式的计算过程有差异，严格按照论文的实现在textSummarization 函数
 	"""
 	N = len(wordsList)
 
@@ -114,32 +115,39 @@ def textrank(wordsList):
 	print ("textrank值：\n", WS, "\n", sum(WS))
 	return WS
 
-
+"""
 # 严格按照论文公式计算
-def textrank2(wordsList):
+# 计算句子textrank 值(价值，或者说“重要性”)
+# wordsList: 句子词向量列表 example: [ ['a', 'b', 'c'], ['a', 'b', 'f'], ['a', 'h', 'i'] ]
+# MaxIter 最大迭代次数, 默认值100
+"""
+def textSummarization(wordsList, MaxIter = 200):
 
 	N = len(wordsList)
 
 	simMatrix = similarMatrix(wordsList) # 相似度邻接矩阵
-	print("similary matrix:\n ", simMatrix, "\n\n")
+	#print("similary matrix:\n ", simMatrix, "\n\n")
 
 	W = weightMatrix(simMatrix)  # 权值邻接矩阵
-	print("weight matrix:\n ", W, "\n\n")
+	#print("weight matrix:\n ", W, "\n\n")
 
 	WS = np.full(N, 0.15) # TextRank 初始值  list ，1*N 维，初值0.15
 	
-	for _ in range(100):
+	for k in range(MaxIter):
+		last_WS = WS.copy()
 		for i in range(0, N):
 			s = 0 # 其他结点给句子i 的贡献总和
 			for j in range(0, N):
 				if i != j and W[i][j] > 0:
 					s += W[j][i] * WS[j]  # 句子j 的价值是WS[j]，把自已的价值按百分比贡献给句子i，这个比值是边的权值 W[j][i] (j -> i)
 			WS[i] = 0.15 + 0.85 * s
-
-	print ( WS )
+		
+		if sum( WS - last_WS ) < 1e-12:  # 提前结束计算，如果误差值小于一定值（ 算法保证了新值一定不小于旧值，所以不需要求绝对值 ）
+			print('break loop now. current iterate num: ', k+1, 'deviation sum is:', sum( WS - last_WS ))
+			break
 
 	"""
-	评论：得到的结果和前一个实现有差异，Matlab 原生实现和前一个实现版本是一至的，  \
+	评论：得到的结果和networkx 库的实现实现有差异，Matlab 原生实现和前一个实现版本是一至的，  \
 		因为其他实现相当于对结果作了归一化，使得所有句子TextRank 值的总和为1，也就是百分百。  \
 		如果我们也对最后的结果WS 作一次归一化就会发现和它们的结果是一模一样的,  \
 			归一化的方法是：所有TextRank 值分别除以TextRank 总和
@@ -149,13 +157,15 @@ def textrank2(wordsList):
 
 
 if __name__ == "__main__":
-	textrank( [ ['a', 'b', 'c'],
-				 ['a', 'b', 'f'],
-				 ['a', 'h', 'i']
-		  	   ])
+	# textrank2( [ ['a', 'b', 'c'],
+	# 			 ['a', 'b', 'f'],
+	# 			 ['a', 'h', 'i']
+	# 	  	  ])
 
-	textrank2( [ ['a', 'b', 'c'],
-				 ['a', 'b', 'f'],
-				 ['a', 'h', 'i']
-		  	   ])
+	ts = textSummarization( [ 
+		                      ['a', 'b', 'c'],
+					          ['a', 'b', 'f'],
+				 	          ['a', 'h', 'i']
+		  	   		        ])
+	print ( ts )
 	print ( 1.11038961 / (1.11038961 + 1.11038961 + 0.77922078), 0.77922078 / (1.11038961 + 1.11038961 + 0.77922078) )  # 比较归一化后的结果
