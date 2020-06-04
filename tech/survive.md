@@ -284,6 +284,22 @@ mac mount Android as drive
 
 
 
+左乘是行变换，右乘是列变换
+
+列向量右乘一个矩阵，左边的矩阵行数没变列数被降维了（被降到和列向量对齐）
+
+> 一列向量作为系数右乘一个矩阵，矩阵降维到一列。降维的方法是矩阵所有的列加仅求和
+>
+> N列向量右乘一个矩阵，矩阵降维到N列
+
+*2 加倍 *1/2减倍
+
+
+
+
+
+
+
 ## Python for windows
 > C:\Users\Administrator\AppData\Local\Programs\Python\Python38  默认安装位置
 >
