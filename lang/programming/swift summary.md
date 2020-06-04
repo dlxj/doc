@@ -171,6 +171,22 @@ b \
 
 
 
+### minimal protocol
+
+```swift
+struct iHome: View {
+    var body: some View {
+        ZStack {
+            Spacer()
+        }
+    }
+}
+```
+
+
+
+
+
 ### 是看得见摸得着的对象（Touchable）
 
 A view may come from a nib, or you can create it in code. 
