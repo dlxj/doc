@@ -1,0 +1,54 @@
+
+http://coderheart.com/blog/2013/06/21/ubuntu-texlive-ctex-texmaker/
+
+http://latexlyx.blogspot.com/2013/09/lyx-xecjk.html
+
+http://linux-wiki.cn/wiki/zh-hans/LaTeX%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%EF%BC%88%E4%BD%BF%E7%94%A8XeTeX%EF%BC%89
+
+ Add /usr/local/texlive/2013/texmf-dist/doc/man to MANPATH, if not dynamically found.
+ Add /usr/local/texlive/2013/texmf-dist/doc/info to INFOPATH.
+
+ Most importantly, add /usr/local/texlive/2013/bin/i386-linux
+ to your PATH for current and future sessions.
+
+
+echo "export PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux:/usr/local/texlive/2013/texmf-dist/doc/man" >> /etc/profile
+. /etc/profile
+
+echo "export PATH=$PATH:/usr/local/texlive/2013/texmf-dist/doc/man" >> /etc/profile
+
+
+cd /usr/local/texlive/2013/texmf-dist/tex/latex/
+svn checkout --force http://ctex-kit.googlecode.com/svn/trunk/ctex
+
+
+mkdir -p /usr/share/fonts/fan
+copt fonts to that dir cwtex-q-fonts-v02.tar.xz
+chmod 755 /usr/share/fonts/fan
+fc-cache
+fc-cache -f -s -v
+查看可用中文字体
+fc-list -f "%{family}\n" :lang=zh
+
+texlive2013
+http://ftp.ctex.org/mirrors/CTAN/systems/texlive/Images/
+apt-get install perl-tk
+mount -o loop /root/texlive2013-20130530.iso /mnt
+cd /mnt && ./install-tl -gui
+echo "export PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux:/usr/local/texlive/2013/texmf-dist/doc/man:/usr/local/texlive/2013/texmf-dist/doc/info" >> /etc/profile
+. /etc/profile
+apt-get install subversion
+cd /usr/local/texlive/2013/texmf-dist/tex/latex/
+svn checkout --force http://ctex-kit.googlecode.com/svn/trunk/ctex
+cd ctex
+svn update
+texhash
+
+
+
+
+
+source compile
+apt-get install zlib1g-dev qt4-designer
+./configure && make
+

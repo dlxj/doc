@@ -1,0 +1,955 @@
+
+cd koreader && make clean && EMULATE_READER_W=800 EMULATE_READER_H=600 EMULATE_READER=1 make
+
+必改的地方：屏幕绘制和刷新
+UIManager:run()
+	--widget.widget:paintTo(Screen.bb, widget.x, widget.y)
+	widget.widget:paintTo(Screen.fb.bb, widget.x, widget.y)
+
+	if self.update_region_func then
+		local update_region = self.update_region_func()
+        	Screen.fb:refresh(0, 
+			update_region.x, update_region.y,
+			update_region.w, update_region.h)
+	else
+        	Screen.fb:refresh(0, 0, 0, 600, 800)
+	end
+
+Screen:refresh(refesh_type, waveform_mode, x, y, w, h)
+	self.fb:refresh(refesh_type, waveform_mode, x, y, w, h)  -- 在最后一行，可能改这里就可以局刷了。refesh_type, waveform_mode 这两个参数去掉其中一个，保留另一个试试看
+
+	Screen.fb:refresh(refresh_type, waveform_mode, 
+		update_region.x, update_region.y,
+		update_region.w, update_region.h)
+	Screen.fb:refresh(refresh_type, waveform_mode)
+
+先kinlde上删除
+	ssh root@192.168.2.2
+	mntroot rw && cd /mnt/us
+	rm -rf koreader
+再上传
+	cd /root/koreader/upload && scp -r ./koreader root@192.168.2.2:/mnt/us/
+	pscp.exe -r ./koreader root@192.168.2.2:/mnt/us/
+	pscp.exe -r ./audio root@192.168.2.2:/mnt/us/koreader/data
+	pscp.exe -r ./ko root@192.168.2.2:/mnt/us/
+	pscp.exe -r ./ko/main.lua root@192.168.2.2:/mnt/us/ko
+	pscp.exe mpg123 14.mp3 root@192.168.2.2:/mnt/us/
+	pscp.exe orig1.WAV root@192.168.2.2:/mnt/us/
+
+打包安装
+	pscp.exe ko.zip root@192.168.2.2:/mnt/us/customupdates
+	
+结束进程
+	ps aux | grep luajit
+	kill -9 pid
+
+
+转换kindle 固件
+./kindletool convert -k ./update_kindle_5.3.6.bin 
+
+挂载境像文件
+mount -o loop *.img /tmp/ 
+
+scp libstdc++.so.6.0.16 root@192.168.2.2:/usr/lib/
+
+
+更改屏保时间方法：
+修改，最后一行时间单位为秒：/etc/kdb.src/luigi/system/daemon/powerd/t1_timeout
+
+
+scp eink.so root@192.168.2.2:/mnt/us/
+
+ssh root@192.168.2.2
+mntroot rw && cd /mnt/us && ls && ./luajit
+
+
+[root@kindle us]# ./luajit
+> do
+>> require 'einkfb'
+>> fb = einkfb.open('/dev/fb0')
+>> w, h = fb:getSize()
+>> print(w,h)
+>> end
+600	800
+> print(_G['einkfb'])
+table: 0x401d5ae8
+
+拷贝整个文件夹
+scp -r ./ko root@192.168.2.2:/mnt/us/ko
+
+删除文件夹
+rm -rf 
+
+require "libs/libkoreader-einkfb"
+require "libs/libkoreader-blitbuffer"
+require "libs/libkoreader-lfs"
+fb = einkfb.open("/dev/fb0")
+width, height = fb:getSize()
+print(width, height)
+bb = Blitbuffer.new(width, height,width/2)
+attr = lfs.attributes('/mnt/us/documents', "mode")
+print (attr)
+
+[root@kindle ko]# ./luajit fb.lua
+600	800
+directory
+
+
+错误：
+./luajit: error loading module 'libs/libkoreader-pdf' from file './libs/libkoreader-pdf.so':
+	/usr/lib/libstdc++.so.6: version `GLIBCXX_3.4.9' not found (required by /mnt/us/ko/./libs/libtesseract.so.3)
+
+
+[root@kindle ko]# ls -l /usr/lib/libstdc++.so.6
+lrwxrwxrwx    1 root     root           18 Apr 17 11:18 /usr/lib/libstdc++.so.6 -> libstdc++.so.6.0.8
+-> libstdc++.so.6.0.8
+
+更新K3 的c++运行时库
+ls -l /usr/lib/libstdc++.so.6
+cp ./libstdc++.so.6.0.16 /usr/lib
+ls -l /usr/lib/libstdc++.so.6.0.16
+rm /usr/lib/libstdc++.so.6 -- 删除旧的软链接
+ln -s /usr/lib/libstdc++.so.6.0.16  /usr/lib/libstdc++.so.6 -- 建立新的软链接
+
+
+/opt/arm-2012.03/arm-none-linux-gnueabi/libc/usr/lib/libstdc++.so.6 -> libstdc++.so.6.0.16
+
+cp /opt/arm-2012.03/arm-none-linux-gnueabi/libc/usr/lib/libstdc++.so.6.0.16 /root
+
+
+运行测试lua
+ssh root@192.168.2.2
+mntroot rw && cd /mnt/us/ko && ls && ./luajit fb.lua
+
+koreader.sh /mnt/us/documents
+kpdf.sh /mnt/us/documents
+
+require "screen"
+require "device"
+
+print ("w, h:", Screen:getWidth(), Screen:getHeight())
+print ('DIP:', Screen:getDPI())
+
+Geom
+Screen:getSize()
+
+绘制过程 
+	画布就是Screen.bb，绘制函数统一叫做paintTo，可以画出来的只有三种对象：线，文字，图像。
+		分别在这三个文件里：line.lua, text.lua, image.lua
+			复杂界面只是这三种对象的组织和封装
+				widget.widget:paintTo(Screen.bb, widget.x, widget.y)
+				bb:paintRect(x, y, self.dimen.w, self.dimen.h, self.background)
+
+k3启动
+ssh root@192.168.2.2
+mntroot rw && cd /mnt/us/kindlepdfviewer && ./kpdf.sh /mnt/us/documents
+
+填全白色
+fb.bb:paintRect(0, 0, 600, 800, 0)
+画底部框
+blitbuffer.progressBar(fb.bb, 10, 780, 600-20, 15, 5, 4, 0.305, 8)
+画完要刷屏，才能显示出来
+fb:refresh(0, 0, 0, 600, 800) 
+for i=1, 1000000 do j = i; k = j + 1 end
+
+
+scp -r koreader root@192.168.2.2:/mnt/us/koreader
+
+修改完lua 文件要用luajit 重新编译？不然不生效？？？？？？？？？？？？？？？？？？？
+
+两种启动方法
+./koreader.sh /mnt/us/documents  -- 注意：koreader.sh 由kpdf.sh 修改而来，注意改路径，就只用改路径就好了。
+./kpdf.sh /mnt/us/documents 
+./luajit koreader-base reader.lua /mnt/us/documents
+
+删除文件夹
+ssh root@192.168.2.2
+mntroot rw && cd /mnt/us && rm -rf koreader
+
+拷贝整个文件夹
+cd koreader/upload && scp -r ./koreader root@192.168.2.2:/mnt/us/koreader
+
+查看文件内容
+cat reader.lua | less
+
+画菜单的代码
+local fb = Screen.fb
+fb.bb:paintRect(0, 0, 600, 800, 0)
+local main_menu = Menu:new{
+			title = _("File manager menu"),
+			item_table = {},
+			width = Screen:getWidth() - 100,
+		}
+main_menu:paintTo(fb.bb, 0, 0)
+fb:refresh(0, 0, 0, 600, 800) 
+for i=1, 7000 do print(i+7) end
+
+
+画文件管理器
+local fm = FileManager:new{
+		dimen = Screen:getSize(),
+		root_path = '/mnt/us/documents',
+	}
+Screen.fb.bb:paintRect(0, 0, 600, 800, 0)
+fm:paintTo(Screen.fb.bb, 0, 0)
+Screen.fb:refresh(0, 0, 0, 600, 800)
+for i=1, 7000 do print(i+7) end
+
+
+
+scp pdf.pdf root@192.168.2.2:/mnt/us/
+scp reader.lua root@192.168.2.2:/mnt/us/koreader
+
+摸拟器画白屏的方法
+Screen:init()
+Screen.bb:paintRect(0, 0, 600, 800, 0)  -- 方法1
+Screen:refresh(0, 0, 0, 0, 600, 800)
+for i=1, 77777 do print(i+7) end
+
+Screen:init()
+Screen.fb.bb:paintRect(0, 0, 600, 800, 0) -- 方法2
+Screen.fb:refresh(0, 0, 0, 0, 600, 800)
+for i=1, 77777 do print(i+7) end
+
+真机白屏的方法
+Screen:init()
+Screen.bb:paintRect(0, 0, 600, 800, 0)  --方法1
+Screen:refresh(0, 0, 0, 600, 800)  -- 注意了，必须少一个参数0，不解何意
+for i=1, 7000 do print(i+7) end
+
+Screen:init()
+Screen.fb.bb:paintRect(0, 0, 600, 800, 0) -- 方法2
+Screen.fb:refresh(0, 0, 0, 600, 800)      -- 方法2 真机模拟器通用！
+for i=1, 8000 do print(i+7) end
+
+上传文件
+cd /root/koreader/upload/koreader && scp reader.lua root@192.168.2.2:/mnt/us/koreader
+cd /root/koreader/upload/koreader/frontend/ui && scp uimanager.lua root@192.168.2.2:/mnt/us/koreader/frontend/ui
+
+ssh root@192.168.2.2
+mntroot rw && cd /mnt/us/koreader && ./kpdf.sh
+
+
+真机画reader
+
+local reader = ReaderUI:new{
+		dimen = Screen:getSize(),
+		document = DocumentRegistry:openDocument('/mnt/us/pdf.pdf'),
+}
+Screen.fb.bb:paintRect(0, 0, 600, 800, 0)
+reader:paintTo(Screen.fb.bb, 0, 0)
+Screen.fb:refresh(0, 0, 0, 600, 800)
+for i=1, 7000 do print(i+7) end
+
+模拟器画Reader
+local reader = ReaderUI:new{
+		dimen = Screen:getSize(),
+		document = DocumentRegistry:openDocument('/root/pdf.pdf'),
+}
+Screen.fb.bb:paintRect(0, 0, 600, 800, 0)
+reader:paintTo(Screen.fb.bb, 0, 0)
+Screen.fb:refresh(0, 0, 0, 0, 600, 800)
+for i=1, 500000 do print(i+7) end
+
+
+
+模拟器自动翻页
+
+function OpenPage(reader, no)
+    local readerView = reader[1]
+    readerView.state.page = no
+    reader:paintTo(Screen.fb.bb, 0, 0)
+    Screen.fb:refresh(0, 0, 0, 0, 600, 800)
+    for i=1, 200000 do print(i+7) end
+end
+
+local reader = ReaderUI:new{
+		dimen = Screen:getSize(),
+		document = DocumentRegistry:openDocument('/root/pdf.pdf'),
+}
+
+for i=1, 3 do OpenPage(reader, i) end
+
+
+真机自动翻页
+
+function OpenPage(reader, no)
+    local readerView = reader[1]
+    readerView.state.page = no
+    reader:paintTo(Screen.fb.bb, 0, 0)
+    Screen.fb:refresh(0, 0, 0, 600, 800)
+    for i=1, 5000 do print(i+7) end
+end
+
+local reader = ReaderUI:new{
+		dimen = Screen:getSize(),
+		document = DocumentRegistry:openDocument('/mnt/us/pdf.pdf'),
+}
+
+for i=1, 17 do OpenPage(reader, i) end
+
+
+点击事件
+UIManager:run()
+	Input:waitEvent()
+		Input:handleTouchEv(ev)
+			GestureDetector:feedEvent(tevs)
+				GestureDetector:initialState(tev)
+					return self:switchState("tapState", tev)
+						GestureDetector:switchState(state_new, tev, param)
+							GestureDetector:tapState(tev)
+								->in tap statexx...
+								return self:handleNonTap(tev)
+									->set up hold timer
+
+UIManager:sendEvent()
+	InputContainer:onGesture()
+		ReaderPaging:onTapForward()
+			ReaderPaging:onTapForward(1)
+
+onGesture
+
+reader.lua 传参
+package.path = ";/root/Documents/koreader/koreader-i686-linux-gnu/koreader/?.lua;"
+package.cpath = ";/root/Documents/koreader/koreader-i686-linux-gnu/koreader/?.so;"
+arg = {
+	'reader.lua',
+	'-d',
+	'/root/pdf/pdf.pdf'
+}
+
+
+翻页的两种方法
+
+local readerView = reader[1]
+local paging = reader[10]
+--readerView.state.page = no  -- 方法1 hack 方法 
+paging:onTapForward(1)  -- 方法2  正宗翻页方法
+
+
+结束进程
+	ps aux | grep luajit
+	kill -9 pid
+
+
+	if Device:hasKeyboard() then
+		self.key_events.Back = {
+			{ "Back" }, doc = _("close document"),
+			event = "Close" }
+	end
+
+
+给文件管理器加上按键Home 退出功能
+	InputContainer:onKeyPress(key)  -- 关键！每当有按键被触发都会调用此方法
+
+FileManager = InputContainer:extend{
+  key_events = {
+		Close = { { "Home" },
+			doc = _("close document"), event = "Close" },
+	},
+
+子Widget 截获了Close事件，父窗体就没机会处理了，这里要改
+WidgetContainer:propagateEvent(event)
+	if widget:handleEvent(event) and event.handler ~= 'onClose' then
+
+
+去掉菜单
+ReaderMenu:init()
+	if Device:hasKeyboard() then
+		self.key_events = {
+			ShowMenu = { { "Menu" }, doc = _("show menu") },
+
+查字典
+ReaderHighlight:onHoldRelease(arg, ges)
+	self:lookup(self.selected_word)
+		self.ui:handleEvent(Event:new("LookupWord", selected_word.word))
+
+ReaderUI:init()
+	local highlight = ReaderHighlight:new{
+			  	ui = self,
+
+WidgetContainer:handleEvent(event)
+	self:propagateEvent(event)
+		for _, widget in ipairs(self) do  -- 只遍历整数下标哦
+			if widget:handleEvent(event) and event.handler ~= 'onClose' then
+
+function ReaderUI:init()
+	local dict = ReaderDictionary:new{
+		dialog = self.dialog,
+		view = self[1],
+		ui = self,
+		document = self.document,
+	}
+	table.insert(self, dict)  -- 下标8
+
+
+DictQuickLookup:init()  -- 字典关闭的方法
+		self.ges_events = {
+			TapCloseDict = {
+				GestureRange:new{
+					ges = "tap",
+					range = Geom:new{  -- 范围是整个屏幕
+						x = 0, y = 0,
+						w = Screen:getWidth(),
+						h = Screen:getHeight(),
+					}
+				},
+			},
+DictQuickLookup:onTapCloseDict(arg, ges_ev)
+
+
+给字典加上按键关闭
+DictQuickLookup = InputContainer:new{
+  key_events = {
+		Close = { { "Back" },
+			doc = _("close document"), event = "Close" },
+	},
+
+function DictQuickLookup:onClose()
+  self:onAnyKeyPressed()
+end
+
+加入查字典功能
+ReaderUI = InputContainer:new{
+	key_events = {
+    		ShowDic = { { "Del" },
+			doc = _("ShowDic"), event = "ShowDic" },
+	},
+
+function ReaderUI:onShowDic()
+  DEBUG("onShowDic() ...")
+  self:Speak("on")
+  self:handleEvent(Event:new("LookupWord", "on"))
+end
+
+function ReaderUI:Speak(word)
+  os.execute('gst-launch filesrc location=/mnt/us/z-axis.wav ! wavparse ! alsasink')
+end
+
+DictQuickLookup = InputContainer:new{
+  key_events = {
+		Close = { { "Back" },
+			doc = _("close document"), event = "Close" },
+    Speak = { { "Del" },
+			doc = _("Speak a word"), event = "Speak" },
+	},
+function DictQuickLookup:onSpeak()
+  ReaderUI:Speak("on")
+end
+
+
+自已定义字典的查法
+
+function ReaderDictionary:stardictLookup(word)
+	DEBUG("lookup word:", word)
+  UIManager:show(DictQuickLookup:new{
+			ui = self.ui,
+			dialog = self.dialog,
+			results = {{definition = "\n['teib(?)l]  \n n.桌子,餐桌,工作台,平地层,石板,表格 adj.桌子的,台子的 vt.搁置,嵌合,制表", dict = "牛津简明英汉袖珍辞典", word = "table"}},
+			dictionary = self.default_dictionary,
+			width = Screen:getWidth() - scaleByDPI(120),
+			height = Screen:getHeight()*0.43,
+		})
+
+
+光标取词的实现
+ReaderHighlight:onHold(arg, ges)
+	self.page_boxes = self.ui.document:getTextBoxes(self.hold_pos.page)
+
+425 557
+
+
+链接错误
+	/usr/lib/libstdc++.so.6: version `GLIBCXX_3.4.9' not found
+	/lib/libc.so.6: version `GLIBC_2.7' not found (required by ./sdcv)
+
+ls -l /lib/libc.so.6
+	/lib/libc.so.6 -> libc-2.5.so
+scp /opt/arm-2012.03/arm-none-linux-gnueabi/libc/armv4t/lib/libc-2.15.so root@192.168.2.2:/lib
+
+rm /lib/libc.so.6 -- 删除旧的软链接
+ln -s /lib/libc-2.15.so  /lib/libc.so.6 -- 建立新的软链接
+ln -s /lib/libc-2.5.so  /lib/libc.so.6
+
+/opt/arm-2012.03/arm-none-linux-gnueabi/libc/armv4t/lib/libc.so.6
+
+/opt/arm-2012.03/arm-none-linux-gnueabi/libc/armv4t/lib/libc-2.15.so
+
+
+上传文件
+cd /root/koreader/upload/koreader && scp reader.lua root@192.168.2.2:/mnt/us/koreader
+cd /root/koreader/upload/koreader/frontend/apps/filemanager && scp fm.lua root@192.168.2.2:/mnt/us/koreader/frontend/apps/filemanager
+cd /root/koreader/upload/koreader/frontend/ui/widget/ && scp container.lua root@192.168.2.2:/mnt/us/koreader/frontend/ui/widget/
+cd /root/koreader/upload/koreader/frontend/ui && scp readerui.lua root@192.168.2.2:/mnt/us/koreader/frontend/ui
+
+scp /opt/arm-2012.03/arm-none-linux-gnueabi/libc/usr/lib/libstdc++.so.6.0.16 root@192.168.2.2:/usr/lib/
+
+scp sdcv root@192.168.2.2:/mnt/us/
+
+ssh root@192.168.2.2
+mntroot rw && cd /mnt/us/koreader
+
+frontend/ui/widget/container.lua
+
+
+in hold state
+
+holdState
+
+单词反色
+ReaderUI = InputContainer:new{
+key_events = {
+    Right = { { "D" },  -- press key 'right' 
+			doc = _("show hightlight"), event = "Right" },
+},
+
+UD = {
+  m=1, n=1,
+  lastbox = nil,
+  text = nil
+}
+
+function invertAndRefreshRect(rect)
+  local x, y, w, h = rect.x, rect.y, rect.w, rect.h
+  Screen.fb.bb:invertRect(x, y, w, h)
+  Screen.fb:refresh(0, x, y, w, h)
+end
+
+function ReaderUI:onRight()
+  local readerview = self[1]
+  local page = readerview.state.page
+  local text = self.document:getPageText(page)
+  if not text or #text == 0 then return end 
+  local page_boxes = self.document:getTextBoxes(page)
+  local t = page_boxes[UD.m][UD.n]
+  local m, n = #page_boxes, #page_boxes[UD.m] 
+  if UD.n < n then
+    UD.n =  UD.n + 1 
+  else
+    if UD.m < m then  
+      UD.m =  UD.m + 1
+      UD.n = 1
+    end
+  end
+  if not t then return end
+  local box = Geom:new{
+				x = t.x0, y = t.y0,
+        w = t.x1 - t.x0,  h = t.y1 - t.y0,
+       
+	}
+  if UD.lastbox ~= nil then
+    local rect = readerview:pageToScreenTransform(page, UD.lastbox)
+    invertAndRefreshRect(rect)
+  end
+  local rect = readerview:pageToScreenTransform(page, box)
+  invertAndRefreshRect(rect)
+  UD.lastbox = box
+end
+
+
+function ReaderView:drawTempHighlight(bb, x, y)
+  ---[[
+  local page = 3
+  local page_boxes = self.ui.document:getTextBoxes(page)
+  local t = page_boxes[2][2]
+  local box = Geom:new{
+				x = t.x0, y = t.y0,
+        w = t.x1 - t.x0,  h = t.y1 - t.y0,
+       
+			}
+  
+  local rect = self:pageToScreenTransform(page, box)
+  local x, y, w, h = rect.x, rect.y, rect.w, rect.h
+  bb:invertRect(x, y, w, h)
+
+
+		local box = {
+			word = "and",
+			box = Geom:new{
+				x = 270, y = 147, 
+				w = 39,  h = 38,
+			}
+		}
+
+ReaderHighlight:onHold(arg, ges)
+	self.page_boxes = self.ui.document:getTextBoxes(3)
+
+ReaderView:drawTempHighlight(bb, x, y)
+	ReaderView:drawHighlightRect(bb, x, y, rect, drawer)
+		bb:invertRect(x, y, w, h)
+
+
+Input:handleTouchEv(ev)
+	GestureDetector:feedEvent(tevs)
+		GestureDetector:initialState(tev)
+			GestureDetector:tapState(tev)
+				GestureDetector:handleNonTap(tev)
+					return self:switchState("holdState", tev, true)
+
+tev = {
+		x = tev.x,
+		y = tev.y,
+		id = tev.id,
+		slot = tev.slot,
+		timev = TimeVal:new{
+			sec = tev.timev.sec,
+			usec = tev.timev.usec,
+		}
+}
+
+光标取词发音
+
+    Right = { { "D" },
+			doc = _("show hightlight"), event = "Right" },
+    Left = { { "A" },
+			doc = _("show hightlight"), event = "Left" },
+    Down = { { "S" },
+      doc = _("show hightlight"), event = "Down" },
+    Up = { { "W" },
+      doc = _("show hightlight"), event = "Up" },
+
+function ReaderUI:Speak(word)
+  local a = (word:sub(1, 1)):lower()
+  local path = ('/mnt/us/koreader/data/audio/%s/%s.wav'):format(a, word)
+  if lfs.attributes(path, "mode") == "file" then
+    os.execute(('gst-launch filesrc location=%s ! wavparse ! alsasink'):format(path))
+  end
+end
+
+UD = {
+  m=0, n=0,
+  currbox = nil,
+  lastbox = nil,
+  page_boxes = nil,
+  readerview = nil,
+  page = nil,
+}
+
+function UD:isPageChange()
+  if not self.page and self.readerview then return true end
+  if self.page ~= self.readerview.state.page then return true end
+  return false
+end
+
+function UD:init(readerview)
+  self.readerview = readerview
+  if self:isPageChange() then
+    self.page = readerview.state.page
+    self.m = 0; self.n = 0
+    currbox = nil; self.lastbox = nil
+    local text = readerview.ui.document:getPageText(readerview.state.page)
+    if text and #text ~= 0 then
+      self.page_boxes = readerview.ui.document:getTextBoxes(readerview.state.page)
+    end
+  end
+end
+
+function UD:box(udbox) 
+  local box = Geom:new{
+				x = udbox.x0, y = udbox.y0,
+        w = udbox.x1 - udbox.x0,  h = udbox.y1 - udbox.y0,      
+	}
+  return box
+end
+
+function UD:invert(box)
+    local rect = self.readerview:pageToScreenTransform(self.readerview.state.page, self:box(box))
+    invertAndRefreshRect(rect)
+end
+
+function UD:invertbox()
+  if self.lastbox ~= nil then self:invert(self.lastbox); self.lastbox = nil end
+  if self.currbox ~= nil then self:invert(self.currbox); self.lastbox = self.currbox; self.currbox = nil end
+end
+
+function UD:right()
+  if self.m == 0 then
+    self.m = 1; self.n = 1
+    self.currbox = self.page_boxes[self.m][self.n]
+  elseif self.n < #self.page_boxes[self.m] then
+    self.n = self.n + 1
+    self.currbox = self.page_boxes[self.m][self.n]
+  elseif self.n == #self.page_boxes[self.m] then
+    if self.m < #self.page_boxes then
+      self.m = self.m + 1; self.n = 1
+      self.currbox = self.page_boxes[self.m][self.n]
+    elseif self.m == #self.page_boxes then
+      self.m = 0; self.n = 0
+      self.currbox = nil
+    end
+  end
+  if self.currbox then ReaderUI:Speak(self.currbox.word) end
+  self:invertbox()
+end
+
+function UD:left()
+  if self.m == 0 then 
+    self.m = #self.page_boxes; self.n = #self.page_boxes[#self.page_boxes]
+    self.currbox = self.page_boxes[self.m][self.n]
+  elseif self.n > 1 then
+    self.n = self.n - 1
+    self.currbox = self.page_boxes[self.m][self.n]
+  elseif self.n == 1 then
+    if self.m > 1 then
+      self.m = self.m - 1; self.n = #self.page_boxes[self.m]
+      self.currbox = self.page_boxes[self.m][self.n]
+    elseif self.m == 1 then
+      self.m = 0; self.n = 0
+      self.currbox = nil
+    end
+  end
+  if self.currbox then ReaderUI:Speak(self.currbox.word) end
+  self:invertbox()
+end
+
+function UD:down()
+   if self.m == 0 then 
+    self.m = 1; self.n = 1
+    self.currbox = self.page_boxes[self.m][self.n] 
+   elseif self.m < #self.page_boxes then
+     self.m = self.m + 1; if not self.page_boxes[self.m][self.n] then self.n = #self.page_boxes[self.m] end
+     self.currbox = self.page_boxes[self.m][self.n]
+   elseif self.m == #self.page_boxes then
+      self.m = 0; self.n = 0
+      self.currbox = nil
+   end
+   if self.currbox then ReaderUI:Speak(self.currbox.word) end
+   self:invertbox()
+end
+
+function UD:up()
+  if self.m == 0 then
+    self.m = #self.page_boxes; self.n = #self.page_boxes[#self.page_boxes]
+    self.currbox = self.page_boxes[self.m][self.n]
+  elseif self.m > 1 then
+    self.m = self.m - 1; if not self.page_boxes[self.m][self.n] then self.n = #self.page_boxes[self.m] end
+    self.currbox = self.page_boxes[self.m][self.n]
+  elseif self.m == 1 then
+    self.m = 0; self.n = 0
+    self.currbox = nil
+  end
+  if self.currbox then ReaderUI:Speak(self.currbox.word) end
+  self:invertbox()
+end
+
+function invertAndRefreshRect(rect)
+  local x, y, w, h = rect.x, rect.y, rect.w, rect.h
+  Screen.fb.bb:invertRect(x, y, w, h)
+  Screen.fb:refresh(0, x, y, w, h)
+end
+
+function ReaderUI:onRight()
+  UD:init(self[1])
+  UD:right()
+end
+
+function ReaderUI:onLeft()
+  UD:init(self[1])
+  UD:left()
+end
+
+function ReaderUI:onUp()
+  UD:init(self[1])
+  UD:up()
+end
+
+function ReaderUI:onDown()
+  UD:init(self[1])
+  UD:down()
+end
+
+
+k3 键盘事件
+
+fb = einkfb.open("/dev/fb0")  -- 注意：要接收键盘事件还必须打开屏幕！
+input.open("fake_events")
+input.open("/dev/input/event0")
+input.open("/dev/input/event1")
+input.open("/dev/input/event2")
+print(("Auto-detected Kindle 3"))
+local ok, ev = pcall(input.waitForEvent, nil) -- 无限等待
+if ok and ev then
+  print(Input.event_map[ev.code])
+  print('hi')
+end
+
+渲染pdf
+
+local mupdf_cache_size = 5 * 1024 * 1024
+local dc = DrawContext.new(); dc:setZoom(1.190476); dc:setRotate(0)
+local ok, _document, ev
+ok, _document = pcall(pdf.openDocument, '/mnt/us/pdf/pdf.pdf', mupdf_cache_size)
+local page = _document:openPage(11)
+page:draw(dc, fb.bb, 0, 0, 0)
+Screen:refresh()
+page:close()
+
+
+mpg123
+
+version `GLIBC_2.7' not found
+	/lib/libc.so.6 -> /lib/libc-2.5.so
+
+k3 声卡
+http://www.mobileread.com/forums/showthread.php?t=183528
+http://www.mobileread.mobi/forums/showthread.php?t=183528&page=14  -- 接近目标
+
+
+编译alsa
+
+mkdir -p /opt/arm-kindle
+bunzip2 alsa-lib-1.0.25.tar.bz2 ; tar -xvf alsa-lib-1.0.25.tar
+cd alsa-lib-1.0.25
+
+./configure --prefix=/opt/arm-kindle --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ --disable-python \
+--enable-static --disable-shared --without-libdl --without-versioned --disable-hwdep --disable-rawmidi
+
+make clean && make && make install
+
+####cp src/.libs/libasound.* /opt/alib  -- 就只是看看有什么，libasound.a
+
+cd test-alsa
+arm-none-linux-gnueabi-gcc --static -o tt main.c -I/opt/arm-kindle/include -I/opt/arm-kindle/include/alsa -L/opt/arm-kindle/lib -lasound -lpthread -lm -lrt
+
+解决错误：
+ALSA lib conf.c:3700:(snd_config_update_r) Cannot access file /opt/arm-kindle/share/alsa/alsa.conf
+k3 目录：/usr/share/alsa/alsa.conf
+
+mntroot rw
+pscp.exe -r ./arm-kindle root@192.168.2.2:/opt
+
+改良版
+
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ --disable-python \
+--enable-static --disable-shared --without-libdl --without-versioned --disable-hwdep --disable-rawmidi
+
+make clean && make && make install
+
+cd ~/test-alsa
+arm-none-linux-gnueabi-gcc --static -o tt main.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+ps
+kill -9 22163
+
+
+
+pscp.exe AD050851.pcm root@192.168.2.2:/mnt/us/
+
+aplay -D plughw:0,0 -t raw -c 2 -f S16_LE -r 44100 AD050851.pcm
+其中：-t raw pcm纯音频，-c 1 声道1 -f S16_LE 每个样本16位，-r 44100 一秒44100个样本
+
+aplay -D plughw:0,0 AD050851.wav
+
+
+arm-none-linux-gnueabi-gcc --static -o tt2 main2.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+./tt2 AD050851.wav
+
+
+
+
+ubuntu gcc 版alsa
+mkdir -p /opt/host/usr
+./configure --prefix=/opt/host/usr --target=i686-linux --host=i686-linux CC=gcc GCC=g++ --disable-python \
+--enable-static --disable-shared --without-libdl --without-versioned --disable-hwdep --disable-rawmidi
+make clean && make && make install
+
+gcc --static -o yy alsa2.c -I/opt/host/usr/include -I/opt/host/usr/include/alsa -L/opt/host/usr/lib -lasound -lpthread -lm -lrt
+
+
+
+pscp.exe kokia.wav root@192.168.2.2:/mnt/us/
+pscp.exe aberrance.wav root@192.168.2.2:/mnt/us/
+
+
+arm-none-linux-gnueabi-gcc --static -o tt3 main3.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+
+
+
+
+
+arm-none-linux-gnueabi-gcc --static -o aplay aplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+gcc --static -o aplay aplay.c -I/opt/host/usr/include -I/opt/host/usr/include/alsa -L/opt/host/usr/lib -lasound -lpthread -lm -lrt
+
+./tt3 kokia.pcm 16 2 44100
+./tt3 aberrance.wav.pcm 8 1 44100
+
+
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ --disable-python \
+--without-libdl --without-versioned --disable-hwdep --disable-rawmidi
+
+
+arm-none-linux-gnueabi-gcc -o aplay aplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+arm-none-linux-gnueabi-gcc -o tt3 main3.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+
+
+aplay k3版 alsa-lib-1.0.13
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ --disable-python
+make clean && make && make install
+arm-none-linux-gnueabi-gcc -o aplay aplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+
+ubuntu gcc 版
+mkdir -p /opt/host/usr
+./configure --prefix=/opt/host/usr --target=i686-linux --host=i686-linux CC=gcc GCC=g++ --disable-python
+make clean && make && make install
+gcc -o aplay aplay.c -I/opt/host/usr/include -I/opt/host/usr/include/alsa -L/opt/host/usr/lib -lasound -lpthread -lm -lrt -Wl,-rpath=/opt/host/usr/lib
+
+
+
+snd_pcm_open
+
+		init_raw_data();
+		pbrec_count = calc_count();
+		playback_go(fd, dta, pbrec_count, FORMAT_RAW, name);
+
+
+
+static void header(int rtype, char *name)
+{
+	if (!quiet_mode) {
+		if (! name)
+			name = (stream == SND_PCM_STREAM_PLAYBACK) ? "stdout" : "stdin";
+		fprintf(stderr, "%s %s '%s' : ",
+			(stream == SND_PCM_STREAM_PLAYBACK) ? _("Playing") : _("Recording"),
+			gettext(fmt_rec_table[rtype].what),
+			name);
+		fprintf(stderr, "%s, ", snd_pcm_format_description(hwparams.format));
+		fprintf(stderr, _("Rate %d Hz, "), hwparams.rate);
+		if (hwparams.channels == 1)
+			fprintf(stderr, _("Mono"));
+		else if (hwparams.channels == 2)
+			fprintf(stderr, _("Stereo"));
+		else
+			fprintf(stderr, _("Channels %i"), hwparams.channels);
+		fprintf(stderr, "\n");
+	}
+}
+
+
+
+arm-none-linux-gnueabi-gcc -o tt4 main3.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+
+arm-none-linux-gnueabi-gcc -o p lplay.c wav_parser.c sndwav_common.c  -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+
+arm-none-linux-gnueabi-gcc -o iplay iplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+pscp.exe iplay root@192.168.2.2:/mnt/us/
+
+ALSA编程细节分析
+http://blog.csdn.net/azloong/article/details/6277457
+
+
+codebloks 添加命令行参数
+	打开 *.cbp 工程文件，在 <CodeBlocks_project_file> 标签下的 <Project> 标签下的 <Build> 标签下的 <Target title="Debug"> 标签下，
+	添加：<Option parameters="你要添写的命令行参数"/>
+
+
+arm-none-linux-gnueabi-gcc -o iplay iplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt -ldl
+
+gcc -o iplay iplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt -ldl

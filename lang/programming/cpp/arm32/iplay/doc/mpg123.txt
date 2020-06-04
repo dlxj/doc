@@ -1,0 +1,148 @@
+
+alsa-lib-1.0.13 for k3
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc CXX=arm-none-linux-gnueabi-g++ --disable-python
+make clean && make && make install
+
+mpg123 for k3
+./configure --prefix=/opt/usr/mpg123  --target=arm-linux --host=i686-linux \
+CC=arm-none-linux-gnueabi-gcc \
+--with-default-audio=alsa  --with-cpu=arm_nofpu --enable-modules=no --with-module-suffix=.so \
+CFLAGS="-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+
+
+pscp.exe -r mmppgg root@192.168.2.2:/mnt/us/
+
+export LD_LIBRARY_PATH=./
+
+
+
+lplay for k3
+arm-none-linux-gnueabi-gcc -o p lplay.c wav_parser.c sndwav_common.c  \
+-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt
+
+mpg123 for k3
+./configure --prefix=/opt/usr/mpg123  --target=arm-linux --host=i686-linux \
+CC=arm-none-linux-gnueabi-gcc \
+--with-default-audio=alsa  --with-cpu=generic_nofpu --enable-modules=no \
+CFLAGS="-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+
+
+luajit for k3
+make PREFIX=/opt/usr/luajit \
+CC="gcc" HOST_CC="gcc -m32" \
+CFLAGS="-O2 -ffast-math -pipe -fomit-frame-pointer" HOST_CFLAGS="-march=native -O2 -ffast-math -pipe -fomit-frame-pointer" \
+TARGET_CFLAGS="-O2 -ffast-math -pipe -fomit-frame-pointer -march=armv6j -mtune=arm1136jf-s -mfpu=vfp -marm -mfloat-abi=softfp -fno-stack-protector -U_FORTIFY_SOURCE -D_GNU_SOURCE -fno-finite-math-only" \
+TARGET_FLAGS="-DLUAJIT_NO_LOG2 -DLUAJIT_NO_EXP2" \
+CROSS="arm-none-linux-gnueabi-"
+
+make install PREFIX=/opt/usr/luajit
+
+
+make PREFIX=/opt/usr/luajit \
+CC="gcc" HOST_CC="gcc -m32" \
+CFLAGS="-O2 -ffast-math -pipe -fomit-frame-pointer" HOST_CFLAGS="-march=native -O2 -ffast-math -pipe -fomit-frame-pointer" \
+TARGET_CFLAGS="-O2 -ffast-math -pipe -fomit-frame-pointer -march=armv6j -mtune=arm1136jf-s -mfpu=vfp -marm -mfloat-abi=softfp -fno-stack-protector -U_FORTIFY_SOURCE -D_GNU_SOURCE -fno-finite-math-only" \
+TARGET_FLAGS="-DLUAJIT_NO_LOG2 -DLUAJIT_NO_EXP2" \
+CROSS="arm-kindle-linux-gnueabi-"
+
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-kindle-linux-gnueabi-gcc GCC=arm-kindle-linux-gnueabi-g++ --disable-python
+
+arm-none-linux-gnueabi-gcc  -shared -static-libgcc -static-libstdc++ -o ./libs/libiplay.so \
+-O2 -ffast-math -pipe -fomit-frame-pointer -march=armv6j -mtune=arm1136jf-s -mfpu=vfp -marm \
+-mfloat-abi=softfp -fno-stack-protector -U_FORTIFY_SOURCE -D_GNU_SOURCE -fno-finite-math-only \
+-DLUAJIT_NO_LOG2 -DLUAJIT_NO_EXP2 \
+iplay.c -I/usr/include -I/usr/include/alsa -I/root/LuaJIT-2.0.2/src -L/usr/lib -lasound -lpthread -lm -lrt -ldl
+
+
+iplay for k3
+arm-none-linux-gnueabi-gcc -shared -static-libgcc -static-libstdc++ -o ./libs/libiplay.so \
+	iplay.c -I/usr/include -I/usr/include/alsa -I/root/LuaJIT-2.0.2/src \
+  -L/opt/host/usr/lib -lasound -lpthread -lm -lrt -ldl
+
+
+alsa-lib-1.0.13 for k3
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-kindle-linux-gnueabi-gcc GCC=arm-kindle-linux-gnueabi-g++ --disable-python
+make clean && make && make install
+
+mpg123 for k3
+./configure --prefix=/opt/usr/mpg123  --target=arm-linux --host=i686-linux \
+	CC=arm-kindle-linux-gnueabi-gcc GCC=arm-kindle-linux-gnueabi-g++ \
+	--with-default-audio=alsa  --with-cpu=generic_nofpu --enable-modules=no \
+	CFLAGS="-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+./configure --prefix=/opt/usr/mpg123  --build=arm-linux --host=i686-linux \
+	CC=arm-kindle-linux-gnueabi-gcc GCC=arm-kindle-linux-gnueabi-g++ \
+	--with-default-audio=alsa  --with-cpu=generic_nofpu --enable-modules=no \
+	CFLAGS="-fno-stack-protector -U_FORTIFY_SOURCE -D_GNU_SOURCE -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+
+
+mpg123 for ubuntu
+./configure --prefix=/opt/host/mpg123 --build=i686-linux --host=i686-linux \
+	CC=gcc GCC=g++ \
+	--with-default-audio=alsa
+
+./configure --prefix=/opt/host/mpg123 --build=i686-linux --host=i686-linux \
+	--with-default-audio=alsa --with-cpu=generic_nofpu --enable-modules=no \
+	CC=gcc GCC=g++ \
+	CFLAGS="-static -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+make clean && make && make install
+
+
+mpg123 for k3
+mkdir -p /opt/usr/mpg123
+
+
+./configure --prefix=/opt/usr/mpg123  --build=arm-linux --host=i686-linux \
+	CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ \
+	--with-default-audio=alsa  --with-cpu=generic_nofpu --enable-modules=no \
+	CFLAGS="-fno-stack-protector -U_FORTIFY_SOURCE -D_GNU_SOURCE -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound"
+
+gcc 版本错误
+version `GLIBC_2.7' not found
+use glibc 2.5 toolchain instead.
+Or, if the program you're trying to build doesn't really use newer glibc features, you can avoid pulling the whole set of GLIBC_2.7 symbols related to the fortify & stack smashing features of newer glibc/gcc couples by putting
+
+-fno-stack-protector -U_FORTIFY_SOURCE
+in your CFLAGS.
+
+-D_GNU_SOURCE
+
+-ansi 
+
+
+
+
+GLLIBS = -Wl,-Bstatic -lglut -Wl,-Bdynamic -lGL -lGLU -lm
+
+libc.so
+
+-Wl,-Bstatic -lc
+
+
+alsa-lib-1.0.13 for ubuntu
+./configure --prefix=/usr --enable-static --disable-shared --target=i686-linux --host=i686-linux CC=gcc GCC=g++ --disable-python
+./configure --prefix=/usr --enable-static --target=i686-linux --host=i686-linux CC=gcc GCC=g++ --disable-python
+make clean && make && make install
+
+gcc -o p lplay.c wav_parser.c sndwav_common.c  \
+-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -Wl,-Bstatic -lpthread -lm -lrt -ldl 
+
+gcc -o p lplay.c wav_parser.c sndwav_common.c  \
+-I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt -ldl 
+
+-Wl,-Bdynamic -lasound 
+
+
+alsa-lib-1.0.13 for k3
+./configure --prefix=/usr --target=arm-linux --host=i686-linux CC=arm-none-linux-gnueabi-gcc GCC=arm-none-linux-gnueabi-g++ --disable-python
+make clean && make && make install
+
+当前目录加载库
+export LD_LIBRARY_PATH=./
+
+pscp.exe -r ./123 root@192.168.2.2:/mnt/us/123
+
