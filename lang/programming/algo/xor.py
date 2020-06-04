@@ -13,8 +13,17 @@
     反向传播，可以计算各个节点的导数
     通过比较数值微分和误差反向传播法的结果，可以确认误差反向传播法的实现是否正确（梯度确认）
 
+有向无环图
+    有向无环图未必能转化成树，但任何有向树均为有向无环图
+
 
 《深度学习入门：基于Python的理论与实现》
+
+反向传播之我见
+https://zhuanlan.zhihu.com/p/28821475
+
+BP算法，用梯度下降法更新权值W与偏置项b
+https://blog.csdn.net/caomin1hao/article/details/102323942
 
 梯度下降过程向量化 - Logistic回归总结 洞庭之子
 https://www.cnblogs.com/earendil/p/8268757.html
@@ -32,6 +41,10 @@ https://www.jiqizhixin.com/articles/2018-12-24-19
 
 浅层神经网络
 https://redstonewill.github.io/2018/03/26/37/
+
+10天学梯度：深度学习原理
+[10 Days Of Grad: Deep Learning From The First Principles](http://penkovsky.com/neural-networks/day1/) 
+
 
 """
 
@@ -78,7 +91,7 @@ backpropagation
 """
 
 
-lr = 0.01
+lr = 0.01  # learning rate
 
 #Backpropagation
 error = expected_output - predicted_output
