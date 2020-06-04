@@ -413,6 +413,10 @@ X -= np.mean(X, axis=0)  # 减去均值
 a, b = b, a 等价于 (a, b) = (b, a), list 没有这模式匹配特性
 ```
 
+```
+return 1 if probably >= 0.5 else 0, probably
+```
+
 
 
 ### immutable
@@ -436,6 +440,8 @@ tuple还用来返回多值
 ### tuple efficient than list
 
 tuple以放弃对元素的增删为代价换取了性能上比list 更高的优点
+
+
 
 
 
@@ -526,6 +532,20 @@ class mydict(dict):
 
 
 
+```python
+要改变一个实例的字符串表示，可重新定义它的 __str__() 和 __repr__() 方法
+class Pair:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return 'Pair({0.x!r}, {0.y!r})'.format(self)
+
+    def __str__(self):
+        return '({0.x!s}, {0.y!s})'.format(self)
+```
+
 
 
 
@@ -597,11 +617,23 @@ np.ones((8, 1))
 
 
 
-### Matrix Op
+### reshape
+
+```
+a1 = x.reshape(x.shape[0], 1) # Getting the training example as a column vector.
+```
+
+
+
+
+
+### matrix op
 
 ```
 np.dot(W, TR) * 0.85 + C
 ```
+
+
 
 
 
@@ -615,6 +647,7 @@ np.dot(W, TR) * 0.85 + C
 
 ```
 sys.stdout.flush() # Updating the text.
+sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 ```
 
 
