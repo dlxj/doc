@@ -622,6 +622,7 @@ np.array([[2, 4, 6], [6, 8, 10]], np.int32)
 np.zeros((3, 3))
 np.ones((8, 1))
 np.full(shape, fill_value, dtype=None, order='C')
+np.random.uniform(size=(inputLayerNeurons,hiddenLayerNeurons))
 ```
 
 
