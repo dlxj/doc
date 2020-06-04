@@ -514,7 +514,7 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 
-# Str
+## Str
 
 
 
@@ -601,6 +601,20 @@ np.ones((8, 1))
 
 ```
 np.dot(W, TR) * 0.85 + C
+```
+
+
+
+
+
+## System
+
+
+
+### stdout
+
+```
+sys.stdout.flush() # Updating the text.
 ```
 
 
@@ -965,7 +979,7 @@ python -m pip install -U matplotlib
 
 
 
-# networkx plot graph
+## networkx plot graph
 
 
 
@@ -1040,7 +1054,7 @@ nx.draw_networkx_edge_labels(G, pos=nx.spring_layout(G))
 
 
 
-# Win10提升管理权限删除顽固文件
+## Win10提升管理权限删除顽固文件
 
 进入C:\Windows\System32文件夹下
 
@@ -1099,7 +1113,7 @@ Python 默认的语法提示工具是 PyLint，也可以选择其他的 linter �
 
 
 
-# networkx plot graph
+## networkx plot graph
 
 
 
@@ -1232,7 +1246,7 @@ https://github.com/YevaGabrielyan/tldl
 
 
 
-# Flask
+## Flask
 
 ```python
 from flask import Flask, request, jsonify
