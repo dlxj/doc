@@ -167,6 +167,28 @@ b \
 
 
 
+## View 
+
+
+
+### 是看得见摸得着的对象（Touchable）
+
+A view may come from a nib, or you can create it in code. 
+
+
+
+启动时窗口被创建并显示，否则就是黑屏一片。view 是windows 的下一级。
+
+Windows 组成了可视部分的整个背景，是所有view 的superview
+
+IOS 13 起，ipad 可以有多窗口，iphone 只能有一个窗口
+
+
+
+
+
+- view
+
 
 
 ## VStack 竖排
@@ -226,6 +248,16 @@ init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void
 
 ![image-20200531164947473](swift summary.assets/image-20200531164947473.png)
 
+```swift
+enum Planet: Int {
+    case mercury  // 默认从零开始，也可以显示给第一项赋值 xx = 1
+    case venus
+    case earth
+    case mars
+}
+let earth = Planet(rawValue: 2)
+```
+
 
 
 
@@ -251,6 +283,24 @@ minimumScaleFactor(0.3)
 ```text
 .multilineTextAlignment(.leading)
 ```
+
+
+
+
+
+## Navigation
+
+
+
+### Hide navigation
+
+```swift
+.navigationBarHidden(true)
+.navigationBarTitle(Text("Home"))
+.edgesIgnoringSafeArea([.top, .bottom])
+```
+
+
 
 
 
@@ -321,4 +371,6 @@ UIApplication.shared.keyWindow?.endEditing(true)
 ```
 
 
+
+nibs, outlets, and actions, and the mechanics of nib loading
 
