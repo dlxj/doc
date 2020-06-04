@@ -163,7 +163,31 @@ dd 删除当前行
 使用自定义包  
 > 上传tipa.sty  
 
-## termux
+
+
+## Termux
+
+
+
+### TF Card 256G
+
+```bash
+cd ~
+termux-setup-storage
+cd storage
+cd external-1
+# external-1 soft link to -> /storage/1CE4-09FD/Android/data/com.termux/files
+## this only directory has permission can read && write in TF Card 
+```
+
+
+
+
+
+
+
+
+
 apt update && apt upgrade -y  
 apt search texlive  
 apt install texlive  
