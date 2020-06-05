@@ -45,6 +45,9 @@ https://redstonewill.github.io/2018/03/26/37/
 10天学梯度：深度学习原理
 [10 Days Of Grad: Deep Learning From The First Principles](http://penkovsky.com/neural-networks/day1/) 
 
+Loss and Loss Functions for Training Deep Learning Neural Networks
+https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/
+
 
 """
 
