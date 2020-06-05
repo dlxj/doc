@@ -557,7 +557,11 @@ init_network() 函 数 会 进 行**权重和偏置的初始化**，并将它们
 
 
 
+点乘：a \cdot b
 
+叉乘：a \times b
+
+除以：a \div b
 
 
 
