@@ -32,7 +32,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         main.sort()
         
-        let homeView = Home(main: main)
+//        let homeView = Home(main: main)
+        let homeView = iHome()
+
         
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {

@@ -174,6 +174,8 @@ b \
 ### minimal protocol
 
 ```swift
+import SwiftUI
+
 struct iHome: View {
     var body: some View {
         ZStack {
@@ -181,7 +183,21 @@ struct iHome: View {
         }
     }
 }
+
+#if DEBUG
+struct iHome_Previews: PreviewProvider {
+    static var previews: some View {
+        iHome()
+    }
+}
+#endif
 ```
+
+
+
+### the *safe area*
+
+an area where they can’t be covered up by system UI or device rounded corners
 
 
 

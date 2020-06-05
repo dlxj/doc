@@ -2,8 +2,8 @@
 //  iHome.swift
 //  Demo
 //
-//  Created by vvw on 2020/6/4.
-//  Copyright © 2020 David Chen. All rights reserved.
+//  Adding a navigation bar
+//  https://www.hackingwithswift.com/books/ios-swiftui/adding-a-navigation-bar
 //
 
 import SwiftUI
@@ -11,8 +11,18 @@ import SwiftUI
 
 struct iHome: View {
     var body: some View {
-        ZStack {
-            Spacer()
+        Form {
+            Section {
+                Text("Hello World")
+            }
         }
     }
 }
+
+#if DEBUG
+struct iHome_Previews: PreviewProvider {
+    static var previews: some View {
+        iHome()
+    }
+}
+#endif
