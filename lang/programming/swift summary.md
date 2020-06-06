@@ -43,6 +43,39 @@ And then I said "I have \(apples + oranges) pieces of fruit."
 
 
 
+## @state
+
+
+
+对于 SwiftUI 视图来说，传统的**异步分发是不安全**的 —— 不要引火烧身
+
+
+
+State属于SwiftUI架构，ObservableObject属于Combine架构
+
+ObservableObject
+
+
+
+### views are functions of their state
+
+
+
+> 视图是state 的函数，也就是说视图是函数的结果，state 是函数的参数
+> 想要修改视图不是直接对结果动手，而是要修改参数，既修改state
+
+
+
+
+
+## $
+
+
+
+指针，披着传值外套的指针就是引用
+
+
+
 ## 匿名函数
 
 
@@ -233,7 +266,9 @@ VStack {
 }
 ```
 
+### Form
 
+Forms are regular containers just like VStack, so you can switch between the two freely depending on your purpose.
 
 
 

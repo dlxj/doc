@@ -11,7 +11,7 @@ import SwiftUI
 
 struct iHome: View {
     var body: some View {
-        Form {
+        VStack {
             Section {
                 Text("Hello World")
             }
