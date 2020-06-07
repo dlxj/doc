@@ -43,6 +43,18 @@ And then I said "I have \(apples + oranges) pieces of fruit."
 
 
 
+## struct
+
+
+
+struct 是值类型，**所有赋值都是值拷贝**
+
+
+
+结构体本身是不可变的，我们无法修改它的属性值 —— Swift 需要**销毁并重建整个结构体以完成属性的改动**。（**mutating** 相当于向编译器表态我就是要这个过程发生）
+
+
+
 ## @state
 
 
@@ -63,6 +75,43 @@ ObservableObject
 
 > 视图是state 的函数，也就是说视图是函数的结果，state 是函数的参数
 > 想要修改视图不是直接对结果动手，而是要修改参数，既修改state
+
+
+
+```swift
+struct ContentView: View {
+    @State private var score = 0
+}
+```
+
+
+
+state 是不共享的数据，state 值改变会触发**视图重绘** 
+
+
+
+## @ObservedObject
+
+
+
+1. 须实现ObservableObject 协议
+2. 类型是class 
+3. 值变化是否会触发视图重绘由你决定
+4. 使用@Published 通知视图重绘
+
+
+
+@ObservableObject 是**共享数据**
+
+
+
+
+
+## @EnvironmentObject
+
+
+
+相当于全局变量
 
 
 
