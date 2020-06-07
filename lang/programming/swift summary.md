@@ -97,11 +97,21 @@ state 是不共享的数据，state 值改变会触发**视图重绘**
 1. 须实现ObservableObject 协议
 2. 类型是class 
 3. 值变化是否会触发视图重绘由你决定
-4. 使用@Published 通知视图重绘
+   - 使用@Published 会触发重绘的变量
 
 
 
 @ObservableObject 是**共享数据**
+
+
+
+```swift
+class User : ObservableObject {
+    @Published var firstName = "Bilbo"
+    @Published var lastName = "Baggins"
+}
+@ObservedObject var user = User()
+```
 
 
 
@@ -317,7 +327,19 @@ VStack {
 }
 ```
 
+
+
+**默认居中**
+
+
+
 ### Form
+
+
+
+**默认置顶左对齐**
+
+
 
 Forms are regular containers just like VStack, so you can switch between the two freely depending on your purpose.
 
