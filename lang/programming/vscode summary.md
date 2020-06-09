@@ -4,6 +4,8 @@
 
 VSCode   Alt + <-     Alt +   ->   前跳  回跳
 
+F11 切换全屏
+
 
 
 # CPP

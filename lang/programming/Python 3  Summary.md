@@ -242,6 +242,22 @@ def run3():
 
 
 
+## OP
+
+
+
+### logic
+
+
+
+```python
+if x is not None
+```
+
+
+
+
+
 ## 静态函数 构造函数 析构函数
 
 ```python
@@ -401,6 +417,33 @@ def listToDict(lst):
 
 ```
 X -= np.mean(X, axis=0)  # 减去均值
+```
+
+
+
+### transpose
+
+```python
+np.transpose(arr)
+```
+
+
+
+### dot
+
+```python
+A = np.dot(X, W) + b
+```
+
+
+
+### flatten
+
+
+
+```python
+import itertools
+list(itertools.chain(*abs(E)))
 ```
 
 
