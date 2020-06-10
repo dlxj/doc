@@ -24,6 +24,8 @@ sigmoid 又名logistic
 
 
 
+[吴恩达老师的机器学习课程个人笔记](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
+
 [神经网络中的偏置项b到底是什么？](https://www.jiqizhixin.com/articles/2018-07-05-18)
 
 - > **逻辑回归就是用直线|平面|超平面（一维空间是点，二维空间是直线，三维是平面，多维是超平面）来分割空间（目地是把空间中的点分类）**
