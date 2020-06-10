@@ -24,6 +24,8 @@ sigmoid 又名logistic
 
 
 
+[感知器与梯度下降（一）](https://blog.csdn.net/liujing319/article/details/97261498)
+
 [吴恩达老师的机器学习课程个人笔记](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
 
 [李宏毅机器学习](https://speech.ee.ntu.edu.tw/~tlkagk/courses_ML19.html)
@@ -48,6 +50,8 @@ sigmoid 又名logistic
 [动手学深度学习](https://github.com/d2l-ai/d2l-zh)
 
 
+
+实现与或非门只需要输入层和输出层，不需要隐藏层，也就是说与或非问题是线性可分的。但是，异或/同或却是非线性可分的
 
 
 
