@@ -460,6 +460,23 @@ print( subLists(l, 0) )
 
 
 
+### parallel
+
+
+
+```python
+from joblib import Parallel, delayed
+def parallelCompare(func, l):
+    def f(l, i):
+        rs = []
+        for j in range(i+1, len(l)):
+            rs.append( (i, j) )
+        return rs
+    return Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(f)(l, i) for i in range(len(l)-1))
+```
+
+
+
 
 
 
