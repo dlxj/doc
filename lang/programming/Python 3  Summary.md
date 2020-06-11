@@ -606,6 +606,18 @@ list(str)
 
 
 
+### strip
+
+
+
+```python
+line.strip().split('\t')
+```
+
+
+
+
+
 ### remove whitespace
 
 ```python

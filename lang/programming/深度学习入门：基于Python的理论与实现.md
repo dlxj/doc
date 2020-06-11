@@ -24,7 +24,17 @@ sigmoid 又名logistic
 
 
 
-[感知器与梯度下降（一）](https://blog.csdn.net/liujing319/article/details/97261498)
+梯度是指损失函数关于权重参数的梯度
+
+- 将权重参数沿梯度方向进行微小更新
+
+- 梯度上升法用来求函数最大值，梯度下降法求最小值
+
+
+
+
+
+[深入浅出--梯度下降法及其实现](https://www.jianshu.com/p/c7e642877b0e)
 
 [吴恩达老师的机器学习课程个人笔记](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
 
