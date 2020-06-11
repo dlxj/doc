@@ -614,6 +614,13 @@ re.sub(r"\s+", "", astr, flags=re.UNICODE)
 
 
 
+### remove not chinese
+
+```python
+def unchinese_remove(s):
+    return re.sub(r"[^\u4e00-\u9fa5]", "", s, flags=re.UNICODE)
+```
+
 
 
 ```python
