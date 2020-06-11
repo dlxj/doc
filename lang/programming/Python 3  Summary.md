@@ -598,10 +598,18 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 
-### Split string into list of characters
+### split string into list of characters
 
 ```
 list(str)
+```
+
+
+
+### remove whitespace
+
+```python
+re.sub(r"\s+", "", astr, flags=re.UNICODE)
 ```
 
 
