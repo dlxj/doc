@@ -636,6 +636,16 @@ def unchinese_remove(s):
 
 
 ```python
+# 移除非中文、26个英文字母以外的字符
+def unAZchinese_remove(s):
+   return re.sub(r"[^\u4e00-\u9fa5^a-z^A-Z^0-9]", "", s, flags=re.UNICODE)
+```
+
+
+
+
+
+```python
 class mydict(dict):
       def __str__(self):  # how to convert to string
           return json.dumps(self)
