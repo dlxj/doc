@@ -58,6 +58,12 @@ sigmoid 又名logistic
 
 
 
+
+
+[Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
+
+[Partial derivative in gradient descent for two variables](https://math.stackexchange.com/questions/70728/partial-derivative-in-gradient-descent-for-two-variables)
+
 [深入浅出--梯度下降法及其实现](https://www.jianshu.com/p/c7e642877b0e)
 
 [吴恩达老师的机器学习课程个人笔记](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
