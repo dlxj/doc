@@ -20,11 +20,168 @@ $$
 Y=
 \begin{bmatrix}
 0 \\
-1  \\
+1 \\
 1 \\
 0 \\
 \end{bmatrix}
 $$
+
+
+
+
+
+## bigg Big Bigg parentheses 
+
+
+$$
+\frac{\partial}{\partial w_{j}} J(w_{0},w_{1},w_{2}) = 
+\frac{\partial}{\partial w_{j}} \bigg [ \frac{1}{2m} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2 \bigg ] \\
+= \frac{1}{2m} \frac{\partial}{\partial w_{j}} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2   \text (by linearity of the derivative)
+$$
+
+
+
+
+
+
+
+
+
+
+[Partial derivative in gradient descent for two variables](https://math.stackexchange.com/questions/70728/partial-derivative-in-gradient-descent-for-two-variables)
+
+[小时物理 - 复合函数的偏导 链式法则](http://wuli.wiki/online/PChain.html)
+
+[梯度下降法的推导（非常详细、易懂的推导）](https://blog.csdn.net/pengchengliu/article/details/80932232)
+
+
+
+求导方法：
+
+  1.
+$$
+f(x) = cx^{n} \\
+f(x)'= cn \ast x^{n -1}
+$$
+
+2. 常量的导数是0
+
+3. 求和符号不影响求导，原来在哪求导完还在哪
+
+4. 应用了链式法则
+
+   $g(f(x))$ 求$g'$ 把$f(x)$ 看成变量
+
+
+$$
+X =
+\begin{bmatrix}
+x^{(1)}  \\
+x^{(2)}  \\
+...  \\
+x^{(4)}  \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+x^{(1)}_{0} & x^{(1)}_{1} & x^{(1)}_{2}  \\
+x^{(2)}_{0} & x^{(2)}_{1} & x^{(2)}_{2} \\
+... & ... & ... & \\
+x^{(4)}_{0} & x^{(4)}_{1} & x^{(4)}_{2} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0  \\
+1 & 0 & 1  \\
+1 & 1 & 0 \\
+1 & 1 & 1  \\
+\end{bmatrix}
+$$
+
+
+$$
+h_{W}(X) =
+X \cdot W
+=
+\begin{bmatrix}
+x^{(1)}_{0} & x^{(1)}_{1} & x^{(1)}_{2}  \\
+x^{(2)}_{0} & x^{(2)}_{1} & x^{(2)}_{2} \\
+... & ... & ... & \\
+x^{(4)}_{0} & x^{(4)}_{1} & x^{(4)}_{2} \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+w_{0}  \\
+w_{1}  \\
+w_{2}  \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+w_{0} x^{(1)}_{0} + w_{1} x^{(1)}_{1} + w_{2} x^{(1)}_{2}  \\
+w_{0} x^{(2)}_{0} + w_{1} x^{(2)}_{1} + w_{2} x^{(2)}_{2}  \\
+...  \\
+w_{0} x^{(4)}_{0} + w_{1} x^{(4)}_{1} + w_{2} x^{(4)}_{2}  \\
+\end{bmatrix}  \\
+=
+\begin{bmatrix}
+h_{W}(x^{^{(1)}}) \\
+h_{W}(x^{^{(2)}})  \\
+...  \\
+h_{W}(x^{^{(4)}}) \\
+\end{bmatrix}
+$$
+
+
+We have
+$$
+h_{W}(x^{i}) = w_{0} x^{(i)}_{0} + w_{1} x^{(i)}_{1} + w_{2} x^{(i)}_{2}
+$$
+and
+$$
+J(w_{0},w_{1},w_{2}) = \frac{1}{2m} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2
+$$
+We first compute
+$$
+\frac{\partial}{\partial w_{0}} h_{W}(x^{i}) = \frac{\partial}{\partial w_{0}}(w_{0} x^{(i)}_{0} + w_{1} x^{(i)}_{1} + w_{2} x^{(i)}_{2}) \\
+= \frac{\partial}{\partial w_{0}} w_{0}x^{i}_{0} + 
+\frac{\partial}{\partial w_{0}} w_{1}x^{i}_{1} + 
+\frac{\partial}{\partial w_{0}} w_{2}x^{i}_{2} \\
+= x^{i}_{0} + 0 + 0 = x^{i}_{0}
+$$
+
+$$
+\frac{\partial}{\partial w_{1}} h_{W}(x^{i}) = \frac{\partial}{\partial w_{1}}(w_{0} x^{(i)}_{0} + w_{1} x^{(i)}_{1} + w_{2} x^{(i)}_{2}) \\
+= \frac{\partial}{\partial w_{1}} w_{0}x^{i}_{0} + 
+\frac{\partial}{\partial w_{1}} w_{1}x^{i}_{1} + 
+\frac{\partial}{\partial w_{1}} w_{2}x^{i}_{2} \\
+= 0 + x^{i}_{1} + 0 = x^{i}_{1}
+$$
+
+$$
+\frac{\partial}{\partial w_{2}} h_{W}(x^{i}) = \frac{\partial}{\partial w_{2}}(w_{0} x^{(i)}_{0} + w_{1} x^{(i)}_{1} + w_{2} x^{(i)}_{2}) \\
+= \frac{\partial}{\partial w_{2}} w_{0}x^{i}_{0} + 
+\frac{\partial}{\partial w_{2}} w_{1}x^{i}_{1} + 
+\frac{\partial}{\partial w_{2}} w_{2}x^{i}_{2} \\
+= 0 + 0 + x^{i}_{2} = x^{i}_{2}
+$$
+
+which we will use later. 
+
+
+
+for j=0, 1, 2 :
+$$
+\frac{\partial}{\partial w_{j}} J(w_{0},w_{1},w_{2}) = 
+\frac{\partial}{\partial w_{j}} \bigg [ \frac{1}{2m} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2 \bigg ] \\
+= \frac{1}{2m} \frac{\partial}{\partial w_{j}} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2   \text (by linearity of the derivative)
+$$
+
+
+
+
+
+
+
+
 
 
 
