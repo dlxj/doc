@@ -36,7 +36,7 @@ $$
 $$
 \frac{\partial}{\partial w_{j}} J(w_{0},w_{1},w_{2}) = 
 \frac{\partial}{\partial w_{j}} \bigg [ \frac{1}{2m} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2 \bigg ] \\
-= \frac{1}{2m} \frac{\partial}{\partial w_{j}} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2   \text (by linearity of the derivative)
+= \frac{1}{2m} \frac{\partial}{\partial w_{j}} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2   \text by linearity of the derivative
 $$
 
 
