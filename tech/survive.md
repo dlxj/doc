@@ -570,6 +570,19 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > ([bob Mac开源取词翻译](https://github.com/ripperhe/Bob)  )
 >
+> > ```shell
+> > sudo mount -uw /
+> > >重启按 cmd+R  
+> > >csrutil disable 
+> > sudo gem update --system
+> > 
+> > sudo gem install cocoapods
+> > pod setup
+> > 
+> > cd $project$
+> > pod install
+> > ```
+>
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
 > [MDX 解包打包工具](https://github.com/dlxj/mdict-utils)
 > [**AnkiWeb**插件](https://github.com/finalion/WordQuery)
