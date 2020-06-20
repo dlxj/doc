@@ -7,33 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6316525E22EC9BE100A15C34 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316525D22EC9BE100A15C34 /* Home.swift */; };
-		6322592522EC0C6500C64FD9 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322592422EC0C6500C64FD9 /* TodoList.swift */; };
-		63435CD622ED626E00E02B23 /* TodoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435CD522ED626E00E02B23 /* TodoDetails.swift */; };
-		6376B10222EFF72000554F6A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376B10122EFF72000554F6A /* Date.swift */; };
-		6376B10822EFF85A00554F6A /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376B10422EFF85A00554F6A /* Date+Timepiece.swift */; };
-		6376B10922EFF85A00554F6A /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376B10522EFF85A00554F6A /* Int+Timepiece.swift */; };
-		6376B10A22EFF85A00554F6A /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376B10622EFF85A00554F6A /* String+Timepiece.swift */; };
-		6376B10B22EFF85A00554F6A /* DateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376B10722EFF85A00554F6A /* DateComponents+Timepiece.swift */; };
-		63B39FCE22EBFFB5009AD4E6 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B39FCD22EBFFB5009AD4E6 /* TodoItem.swift */; };
 		63B9C80D22EAC928009B8399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9C80C22EAC928009B8399 /* AppDelegate.swift */; };
 		63B9C80F22EAC928009B8399 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9C80E22EAC928009B8399 /* SceneDelegate.swift */; };
 		63B9C81322EAC92A009B8399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B9C81222EAC92A009B8399 /* Assets.xcassets */; };
 		63B9C81622EAC92A009B8399 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B9C81522EAC92A009B8399 /* Preview Assets.xcassets */; };
 		63B9C81922EAC92A009B8399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B9C81722EAC92A009B8399 /* LaunchScreen.storyboard */; };
-		63F7A90A22ED82D200A490FF /* SATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F7A90922ED82D200A490FF /* SATextField.swift */; };
+		EFB195A7249D899E0039827C /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195A3249D899E0039827C /* Date+Timepiece.swift */; };
+		EFB195A8249D899E0039827C /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195A4249D899E0039827C /* Int+Timepiece.swift */; };
+		EFB195A9249D899E0039827C /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195A5249D899E0039827C /* String+Timepiece.swift */; };
+		EFB195AA249D899E0039827C /* DateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195A6249D899E0039827C /* DateComponents+Timepiece.swift */; };
+		EFB195AF249D89D90039827C /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195AB249D89D90039827C /* TodoItem.swift */; };
+		EFB195B0249D89D90039827C /* TodoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195AC249D89D90039827C /* TodoDetails.swift */; };
+		EFB195B1249D89D90039827C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195AD249D89D90039827C /* Home.swift */; };
+		EFB195B2249D89D90039827C /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195AE249D89D90039827C /* TodoList.swift */; };
+		EFB195B4249D89FF0039827C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195B3249D89FE0039827C /* Date.swift */; };
+		EFB195B6249D8B310039827C /* SATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB195B5249D8B310039827C /* SATextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6316525D22EC9BE100A15C34 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Home.swift; path = ../../../../../System/Volumes/Data/Users/david/Desktop/Demo/Demo/Home.swift; sourceTree = "<group>"; };
-		6322592422EC0C6500C64FD9 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoList.swift; path = ../../../../../System/Volumes/Data/Users/david/Desktop/Demo/Demo/TodoList.swift; sourceTree = "<group>"; };
-		63435CD522ED626E00E02B23 /* TodoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoDetails.swift; path = ../../../../../System/Volumes/Data/Users/david/Desktop/Demo/Demo/TodoDetails.swift; sourceTree = "<group>"; };
-		6376B10122EFF72000554F6A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Date.swift; path = ../../../../../System/Volumes/Data/Users/david/Desktop/Demo/Demo/Date.swift; sourceTree = "<group>"; };
-		6376B10422EFF85A00554F6A /* Date+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Timepiece.swift"; sourceTree = "<group>"; };
-		6376B10522EFF85A00554F6A /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
-		6376B10622EFF85A00554F6A /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
-		6376B10722EFF85A00554F6A /* DateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateComponents+Timepiece.swift"; sourceTree = "<group>"; };
-		63B39FCD22EBFFB5009AD4E6 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoItem.swift; path = ../../../../../System/Volumes/Data/Users/david/Desktop/Demo/Demo/TodoItem.swift; sourceTree = "<group>"; };
 		63B9C80922EAC928009B8399 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B9C80C22EAC928009B8399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B9C80E22EAC928009B8399 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +32,16 @@
 		63B9C81522EAC92A009B8399 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63B9C81822EAC92A009B8399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63B9C81A22EAC92A009B8399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63F7A90922ED82D200A490FF /* SATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SATextField.swift; path = ../../../../../System/Volumes/Data/Users/david/Desktop/Demo/Demo/SATextField.swift; sourceTree = "<group>"; };
+		EFB195A3249D899E0039827C /* Date+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Timepiece.swift"; sourceTree = "<group>"; };
+		EFB195A4249D899E0039827C /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		EFB195A5249D899E0039827C /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		EFB195A6249D899E0039827C /* DateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		EFB195AB249D89D90039827C /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		EFB195AC249D89D90039827C /* TodoDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetails.swift; sourceTree = "<group>"; };
+		EFB195AD249D89D90039827C /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EFB195AE249D89D90039827C /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		EFB195B3249D89FE0039827C /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		EFB195B5249D8B310039827C /* SATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6376B10322EFF85A00554F6A /* Timepiece */ = {
-			isa = PBXGroup;
-			children = (
-				6376B10422EFF85A00554F6A /* Date+Timepiece.swift */,
-				6376B10522EFF85A00554F6A /* Int+Timepiece.swift */,
-				6376B10622EFF85A00554F6A /* String+Timepiece.swift */,
-				6376B10722EFF85A00554F6A /* DateComponents+Timepiece.swift */,
-			);
-			path = Timepiece;
-			sourceTree = "<group>";
-		};
 		63B9C80022EAC928009B8399 = {
 			isa = PBXGroup;
 			children = (
@@ -86,17 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				63B9C80C22EAC928009B8399 /* AppDelegate.swift */,
+				EFB195AD249D89D90039827C /* Home.swift */,
+				EFB195AC249D89D90039827C /* TodoDetails.swift */,
+				EFB195AB249D89D90039827C /* TodoItem.swift */,
+				EFB195B3249D89FE0039827C /* Date.swift */,
+				EFB195B5249D8B310039827C /* SATextField.swift */,
+				EFB195AE249D89D90039827C /* TodoList.swift */,
 				63B9C80E22EAC928009B8399 /* SceneDelegate.swift */,
-				63B39FCD22EBFFB5009AD4E6 /* TodoItem.swift */,
-				6322592422EC0C6500C64FD9 /* TodoList.swift */,
-				63435CD522ED626E00E02B23 /* TodoDetails.swift */,
-				6316525D22EC9BE100A15C34 /* Home.swift */,
-				63F7A90922ED82D200A490FF /* SATextField.swift */,
+				EFB195A2249D899E0039827C /* Timepiece */,
 				63B9C81222EAC92A009B8399 /* Assets.xcassets */,
 				63B9C81722EAC92A009B8399 /* LaunchScreen.storyboard */,
 				63B9C81A22EAC92A009B8399 /* Info.plist */,
-				6376B10122EFF72000554F6A /* Date.swift */,
-				6376B10322EFF85A00554F6A /* Timepiece */,
 				63B9C81422EAC92A009B8399 /* Preview Content */,
 			);
 			path = Demo;
@@ -108,6 +97,17 @@
 				63B9C81522EAC92A009B8399 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFB195A2249D899E0039827C /* Timepiece */ = {
+			isa = PBXGroup;
+			children = (
+				EFB195A3249D899E0039827C /* Date+Timepiece.swift */,
+				EFB195A4249D899E0039827C /* Int+Timepiece.swift */,
+				EFB195A5249D899E0039827C /* String+Timepiece.swift */,
+				EFB195A6249D899E0039827C /* DateComponents+Timepiece.swift */,
+			);
+			path = Timepiece;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,18 +181,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6376B10A22EFF85A00554F6A /* String+Timepiece.swift in Sources */,
-				6322592522EC0C6500C64FD9 /* TodoList.swift in Sources */,
-				63F7A90A22ED82D200A490FF /* SATextField.swift in Sources */,
 				63B9C80D22EAC928009B8399 /* AppDelegate.swift in Sources */,
+				EFB195B2249D89D90039827C /* TodoList.swift in Sources */,
+				EFB195A8249D899E0039827C /* Int+Timepiece.swift in Sources */,
+				EFB195B1249D89D90039827C /* Home.swift in Sources */,
+				EFB195B0249D89D90039827C /* TodoDetails.swift in Sources */,
+				EFB195B6249D8B310039827C /* SATextField.swift in Sources */,
 				63B9C80F22EAC928009B8399 /* SceneDelegate.swift in Sources */,
-				6376B10B22EFF85A00554F6A /* DateComponents+Timepiece.swift in Sources */,
-				63B39FCE22EBFFB5009AD4E6 /* TodoItem.swift in Sources */,
-				6376B10822EFF85A00554F6A /* Date+Timepiece.swift in Sources */,
-				6316525E22EC9BE100A15C34 /* Home.swift in Sources */,
-				6376B10222EFF72000554F6A /* Date.swift in Sources */,
-				6376B10922EFF85A00554F6A /* Int+Timepiece.swift in Sources */,
-				63435CD622ED626E00E02B23 /* TodoDetails.swift in Sources */,
+				EFB195AA249D899E0039827C /* DateComponents+Timepiece.swift in Sources */,
+				EFB195B4249D89FF0039827C /* Date.swift in Sources */,
+				EFB195A9249D899E0039827C /* String+Timepiece.swift in Sources */,
+				EFB195AF249D89D90039827C /* TodoItem.swift in Sources */,
+				EFB195A7249D899E0039827C /* Date+Timepiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
