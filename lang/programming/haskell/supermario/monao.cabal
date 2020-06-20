@@ -1,0 +1,34 @@
+name:             monao
+version:          0.0.2
+
+license:          BSD3
+-- license-file:     LICENSE
+author:           mokehehe
+maintainer:       <ivan.perez@keera.co.uk>
+
+stability:        Stable
+category:         Game
+synopsis:         A 2-D clone of Super Nario bros.
+description:      A simple clone of Super Nario bros using hsSDL.
+                  .
+                  Git repo available at <http://github.com/keera-studios/monao>.
+homepage:         http://mokehehe.blogspot.com/
+
+build-depends:    base, SDL, SDL-mixer
+
+build-type:       Simple
+tested-with:      GHC==6.8.3
+
+data-files:       README.txt, README.ja.txt
+data-files:       data/stage0.map
+data-files:       data/img/*.bmp
+data-files:       data/snd/*.wav
+
+executable:       monao
+main-is:          Main.hs
+
+
+ghc-options:      -Wall -O
+ghc-prof-options: -prof -auto-all
+
+-- c-sources:        entry.c
