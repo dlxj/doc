@@ -16,6 +16,21 @@ $$
 
 
 
+## tag
+
+$$
+\begin{align}
+a &= b + c \tag{1} \\
+  &= d + e + f \tag{2}
+\end{align}
+$$
+
+
+
+
+
+
+
 $$
 X=
 \begin{bmatrix}

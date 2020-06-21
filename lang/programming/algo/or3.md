@@ -4,6 +4,12 @@
 
 [Partial derivative in gradient descent for two variables](https://math.stackexchange.com/questions/70728/partial-derivative-in-gradient-descent-for-two-variables)
 
+[How is the cost function from Logistic Regression derivated](https://stats.stackexchange.com/questions/278771/how-is-the-cost-function-from-logistic-regression-derivated)
+
+[Derivative of Cost Function for Logistic Regression](https://medium.com/analytics-vidhya/derivative-of-log-loss-function-for-logistic-regression-9b832f025c2d)
+
+[复合函数求导方法](https://www.jianshu.com/p/29a9c2c424e5)
+
 [小时物理 - 复合函数的偏导 链式法则](http://wuli.wiki/online/PChain.html)
 
 [梯度下降法的推导（非常详细、易懂的推导）](https://blog.csdn.net/pengchengliu/article/details/80932232)
@@ -380,6 +386,7 @@ $$
 
 
 ### Forward propagation
+
 
 
 $$
