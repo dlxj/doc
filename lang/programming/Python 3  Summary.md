@@ -711,9 +711,70 @@ list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过�
 
 ## Regex
 
-
+https://zhuanlan.zhihu.com/p/42944600
 
 bool(re.match(r'\s+', '  '))   # 是否含空白符
+
+
+
+### .匹配换行
+
+```
+re.DOTALL
+```
+
+
+
+
+
+### ? 最短匹配
+
+```
+ss =  re.findall(r'(@@第[一二三四五六七八九十]+章.+?)\n', strs, re.DOTALL)
+```
+
+
+
+### finditer 所有匹配的开始结束位置 
+
+```
+iters = re.finditer(r'[ab]', "abc", re.DOTALL)
+poss =  [ i.span() for i in iters ]
+```
+
+
+
+```
+ss =  re.findall(r'(@@第[一二三四五六七八九十]+章.+?)\n', strs, re.DOTALL)
+iters = re.finditer(r'(@@第[一二三四五六七八九十]+章.+?)\n', strs, re.DOTALL)
+poss =  [ i.span() for i in iters ]
+for pos in poss:
+    (start, end) = pos
+    print(start, end)
+    print (strs[start:end])
+```
+
+
+
+### subString
+
+```
+str = ’0123456789′
+print str[0:3] #截取第一位到第三位的字符
+print str[:] #截取字符串的全部字符
+print str[6:] #截取第七个字符到结尾
+print str[:-3] #截取从头开始到倒数第三个字符之前
+print str[2] #截取第三个字符
+print str[-1] #截取倒数第一个字符
+print str[::-1] #创造一个与原字符串顺序相反的字符串
+print str[-3:-1] #截取倒数第三位与倒数第一位之前的字符
+print str[-3:] #截取倒数第三位到结尾
+print str[:-5:-3] #逆序截取，具体啥意思没搞明白？
+```
+
+
+
+
 
 
 
