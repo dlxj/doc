@@ -4,6 +4,17 @@
 
 
 
+## align
+
+$$
+\begin{align}
+\frac{d \ e^x}{d x} &= \lim \limits_{\Delta x \rightarrow 0} \frac{e^x - e^{x - \Delta x}}{\Delta x} \\
+&= e^x \lim \limits_{\Delta x \rightarrow 0} \frac{1 - e^{- \Delta x}}{\Delta x} \\
+&= e^x
+\end{align}
+$$
+
+
 
 $$
 X=
