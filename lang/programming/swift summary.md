@@ -293,6 +293,8 @@ struct iHome_Previews: PreviewProvider {
 
 an area where they can’t be covered up by system UI or device rounded corners
 
+.edgesIgnoringSafeArea(.bottom)
+
 
 
 
@@ -345,6 +347,37 @@ Forms are regular containers just like VStack, so you can switch between the two
 
 
 
+```swift
+        NavigationView {
+            Form {
+                Section {
+                    Text("Hello World")
+                }
+            }.navigationBarTitle("", displayMode: .inline)
+        }
+```
+
+
+
+
+
+#### Section
+
+分组显示
+
+```swift
+List {
+    Section(header: Text("Section 1")) {
+        Text("Static row 1")
+        Text("Static row 2")
+    }
+}
+```
+
+
+
+
+
 ## ZStack 垂直排
 
 
@@ -377,6 +410,17 @@ Spacer().frame(height:20)  // 加点小空档
 TextField 
 init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
 ```
+
+
+
+灰色的字体
+
+```swift
+.font(.subheadline)
+			.foregroundColor(.secondary)
+```
+
+
 
 
 
