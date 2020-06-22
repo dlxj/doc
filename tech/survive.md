@@ -581,6 +581,23 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 > > 
 > > cd $project$
 > > pod install
+> > 
+> > rm -rf ~/.cocoapods
+> > pod setup
+> > 
+> > cd ~/.cocoapods/repos/master/Specs
+> > ls | grep PLMedia*，若为空，则需重新 update CocoaPods
+> > pod repo 命令看下你是否更换过源
+> > https://www.jianshu.com/p/cd057b2055c0
+> > 
+> > pod --version
+> > gem source -l
+> > gem sources --remove https://rubygems.org/
+> > gem sources -a https://gems.ruby-china.com/
+> > sudo gem install cocoapods
+> > pod --version
+> > 
+> > https://www.jianshu.com/p/cd057b2055c0
 > > ```
 >
 > [**MDict 文件格式分析**](https://bitbucket.org/xwang/mdict-analysis/src/default/)
