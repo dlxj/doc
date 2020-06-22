@@ -756,6 +756,31 @@ for pos in poss:
 
 
 
+```
+# 输入字符串，标题正则
+# 返回标题、标题位置(strat, end), 标题下的文本
+def extractPattern(strs, reg):
+    #ss =  re.findall(reg, strs, re.DOTALL)
+    iters = re.finditer(reg, strs, re.DOTALL)
+    poss =  [ i.span() for i in iters ] # 标题positions
+    rs = []
+    for i in range( len(poss) ):
+        (start, end) = poss[i]
+        title = strs[start:end]
+        contents = None
+        if i == ( len(poss) - 1 ):
+            contents = strs[ end : len(strs) ]
+        else:
+            contents = strs[ end : poss[i+1][0] ]
+        rs.append( [ start, end, title, contents ] )
+
+    return rs
+```
+
+
+
+
+
 ### subString
 
 ```
