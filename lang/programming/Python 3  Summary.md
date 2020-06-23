@@ -1581,7 +1581,18 @@ def student_add():
 
 
 
+## Mysql
 
+
+
+### Insert into
+
+
+
+```
+f"INSERT INTO trialexampointrelevanttest (examPointID, appID, testID, childTestID, isMachine, similarity ) VALUES ({examPointID}, {appID}, {testID}, {childTestID}, 1, {similarity} ) ON DUPLICATE KEY UPDATE similarity={similarity}, updateTime=now();"
+
+```
 
 
 
