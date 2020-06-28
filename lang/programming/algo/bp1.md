@@ -157,6 +157,82 @@ $$
 
 
 
+$$
+g(O) = g( g( H(X,W,C) ) \ \cdot \ V + B ) 
+= 
+\begin{bmatrix}
+g(O)^{1} \\
+g(O)^{2} \\
+\vdots \\
+g(O)^{m}
+\end{bmatrix}
+\\
+=
+\begin{bmatrix}
+g( ( v^{1} g( x^{(1)} \cdot w_{(1)} + c ) ) + ( v^{2} g( x^{(1)} \cdot w_{(2)} + c ) ) + \cdots + ( v^{n} g ( x^{(1)} \cdot w_{(n)} + c ) ) + b ) \\
+g( ( v^{1} g( x^{(2)} \cdot w_{(1)} + c ) ) + ( v^{2} g( x^{(2)} \cdot w_{(2)} + c ) ) + \cdots + ( v^{n} g( x^{(2)} \cdot w_{(n)} + c ) ) + b ) \\
+\vdots \\
+g( ( v^{1} g( x^{(m)} \cdot w_{(1)} + c ) ) + ( v^{2} g( x^{(m)} \cdot w_{(2)} + c ) ) + \cdots + ( v^{n} g( x^{(m)} \cdot w_{(n)} + c ) ) + b ) \\
+\end{bmatrix}
+$$
+
+
+## 均方误差代价函数
+
+$$
+J(W, C, V, B) = 
+ \frac{1}{2m} \sum^{m}_{i=1}(g(O)^{i} - y^{i})^2
+$$
+
+$$
+\frac{\partial}{\partial v^{j}} J(W, C, V, B) = 
+\frac{\partial}{\partial v_{j}} \bigg [ \frac{1}{2m} \sum^{m}_{i=1}(g(O)^i - y^{i})^2 \bigg ] \\
+
+= \frac{1}{2m} \sum^{m}_{i=1}\frac{\partial}{\partial v^{j}} (g(O)^i - y^{i})^2   \quad \text{(by linearity of the derivative)} \\
+
+= \frac{1}{2m} \sum^{m}_{i=1} 
+2 \cdot (g(O)^i - y^{i}) \frac{\partial}{\partial v^{j}} (g(O)^i - y^{i})   \quad \text{(by chain rule)} \\
+
+= \frac{1}{2m} \cdot 2 \sum^{m}_{i=1} 
+(g(O)^i - y^{i}) \bigg [ \frac{\partial}{\partial v^{j}} g(O)^i - \frac{\partial}{\partial v^{j}} y^{i} \bigg ]  \quad \text{(by linearity of the derivative)}  \\
+
+= \frac{1}{m} \sum^{m}_{i=1} 
+
+(g(O)^i - y^{i}) \bigg [ \frac{\partial}{\partial v^{j}} g(O)^i - 0 \bigg ]   \\
+
+= \frac{1}{m} \sum^{m}_{i=1} 
+
+(g(O)^i - y^{i}) \frac{\partial}{\partial v^{j}} g(O)^i     \\
+$$
+
+
+
+
+
+令：u = $( v^{1} g( x^{(i)} \cdot w_{(1)} + c ) ) + ( v^{2} g( x^{(i)} \cdot w_{(2)} + c ) ) + \cdots + ( v^{n} g ( x^{(i)} \cdot w_{(n)} + c ) ) + b$
+$$
+\frac{\partial}{\partial v^{1}} u = 
+$$
+
+
+
+$$
+\frac{\partial}{\partial v^{1}} g(O)^i = 
+\frac{\partial}{\partial v^{1}} 
+g( ( v^{1} g( x^{(i)} \cdot w_{(1)} + c ) ) + ( v^{2} g( x^{(i)} \cdot w_{(2)} + c ) ) + \cdots + ( v^{n} g ( x^{(i)} \cdot w_{(n)} + c ) ) + b ) \\
+
+= \frac{\partial}{\partial v^{1}} 
+g(u) \\
+= g(u) (1 - g(u)) \frac{\partial}{\partial v^{1}} u
+$$
+
+
+
+
+
+
+
+
 
 
 
