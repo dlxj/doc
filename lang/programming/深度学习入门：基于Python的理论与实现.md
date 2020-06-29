@@ -88,6 +88,10 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 [caffe详解之深入理解反向传播算法](https://xuke225.github.io/2018/02/04/DeepLearning/caffe/solver/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/)
 
+- 雅可比矩阵
+
+  ![image-20200629163207207](深度学习入门：基于Python的理论与实现.assets/image-20200629163207207.png)
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
