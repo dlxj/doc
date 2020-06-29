@@ -100,6 +100,8 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 
 
+[cs231-bp](https://luozm.github.io/cs231n-2)
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
