@@ -82,6 +82,8 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 
 
+[李宏毅机器学习」学习笔记-Backpropagation](https://blueschang.github.io/2018/11/08/%E3%80%8C%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%8D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Backpropagation/)
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
