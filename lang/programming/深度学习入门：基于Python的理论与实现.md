@@ -70,6 +70,12 @@ sigmoid 又名logistic
 
 [怎么通俗地理解张量？](https://www.zhihu.com/question/23720923)
 
+[直观理解反向传播（Backpropagation intuition）](https://blog.csdn.net/qq_35456045/article/details/105084670)
+
+https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-and-deep-learning/week-3/backpropagation-intuition
+
+
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
