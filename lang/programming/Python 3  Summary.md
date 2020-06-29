@@ -461,6 +461,18 @@ print( subLists(l, 0) )
 
 
 
+### shape
+
+
+
+```python
+m = X.shape[0] # 样本数
+```
+
+
+
+
+
 ### parallel
 
 
