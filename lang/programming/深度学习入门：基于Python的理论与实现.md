@@ -94,6 +94,14 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 
 
+[计算图反向传播的原理及实现](https://zhuanlan.zhihu.com/p/69175484)
+
+《深入理解神经网络：从逻辑回归到CNN》
+
+
+
+
+
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
 
 [Partial derivative in gradient descent for two variables](https://math.stackexchange.com/questions/70728/partial-derivative-in-gradient-descent-for-two-variables)
