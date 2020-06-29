@@ -89,6 +89,10 @@ sigmoid 又名logistic
 
 [动手学深度学习](https://github.com/d2l-ai/d2l-zh)
 
+[机器学习白板推导](https://zhuanlan.zhihu.com/p/54791721)
+
+
+
 
 
 实现与或非门只需要输入层和输出层，不需要隐藏层，也就是说与或非问题是线性可分的。但是，异或/同或却是非线性可分的
