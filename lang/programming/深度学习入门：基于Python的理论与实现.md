@@ -76,13 +76,17 @@ sigmoid 又名logistic
 
 [直观理解反向传播（Backpropagation intuition）](https://blog.csdn.net/qq_35456045/article/details/105084670)
 
-- 吴恩达老师认为反向传播的推导是机器学习领域最难的数学推导之一，矩阵的导数要用链式法则来求
+- 吴恩达老师认为**反向传播的推导是机器学习领域最难的数学推导之一**，矩阵的导数要用链式法则来求
 
 https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-and-deep-learning/week-3/backpropagation-intuition
 
 
 
 [李宏毅机器学习」学习笔记-Backpropagation](https://blueschang.github.io/2018/11/08/%E3%80%8C%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%8D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Backpropagation/)
+
+
+
+[caffe详解之深入理解反向传播算法](https://xuke225.github.io/2018/02/04/DeepLearning/caffe/solver/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/)
 
 
 
