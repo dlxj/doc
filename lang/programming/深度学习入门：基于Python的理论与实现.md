@@ -68,6 +68,8 @@ sigmoid 又名logistic
 
 [认识张量：有限维线性空间的一种相等关系](https://zhuanlan.zhihu.com/p/136943118)
 
+[怎么通俗地理解张量？](https://www.zhihu.com/question/23720923)
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
