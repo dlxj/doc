@@ -66,6 +66,8 @@ sigmoid 又名logistic
 
 [Eureka机器学习读书笔记 - 梯度下降法、牛顿法和拟牛顿法](https://zhuanlan.zhihu.com/p/37524275)
 
+[认识张量：有限维线性空间的一种相等关系](https://zhuanlan.zhihu.com/p/136943118)
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
