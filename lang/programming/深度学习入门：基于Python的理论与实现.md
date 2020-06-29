@@ -91,7 +91,7 @@ sigmoid 又名logistic
 
 [机器学习白板推导](https://zhuanlan.zhihu.com/p/54791721)
 
-
+[Eureka机器学习读书笔记 - 梯度下降法、牛顿法和拟牛顿法](https://zhuanlan.zhihu.com/p/37524275)
 
 
 
