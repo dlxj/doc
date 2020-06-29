@@ -24,6 +24,24 @@ ENGINE=InnoDB
 
 
 
+```
+create table bt_ask_to_cate_backup_temp select * from bt_ask_to_cate_backup;delete from bt_ask_to_cate_backup 
+where (ask_id, cate) 
+    in (SELECT ask_id, cate 
+        FROM bt_ask_to_cate_backup_temp 
+        group by ask_id,cate 
+        having count(*) > 1
+    ) 
+and id 
+    not in (SELECT min(id) 
+            FROM bt_ask_to_cate_backup_temp 
+            group by ask_id,cate 
+            having count(*) > 1
+        )
+```
+
+
+
 
 
 # Insert
@@ -41,6 +59,36 @@ INSERT INTO searchkeywods (AppEName, KeyWord, Count) VALUES ('a', 'b', 1) ON DUP
 
 
 
+```
+insert into discussion3
+
+select * from discussion2
+
+where DiscussionID not in
+
+(select dd.DiscussionID from discussion2 dd
+
+  inner join discussion d on d.AppID = dd.AppID and d.UserID = dd.UserID and d.AllTestID = dd.AllTestID and d.ChildTableID = dd.ChildTableID)
+
+
+/////////////////////////
+
+insert into discussion3(AppID, UserID,AllTestID,ChildTableID,Type, CreateTime, ReplyToID, CommendCount, Content, IsEnabled)
+
+select AppID, UserID,AllTestID,ChildTableID,Type, CreateTime, ReplyToID, CommendCount, Content, IsEnabled from discussion2
+
+where DiscussionID not in
+
+(select dd.DiscussionID from discussion2 dd
+
+  inner join discussion d on d.AppID = dd.AppID and d.UserID = dd.UserID and d.AllTestID = dd.AllTestID and d.ChildTableID = dd.ChildTableID)
+
+```
+
+
+
+
+
 ## Replace Into
 
 
@@ -49,6 +97,75 @@ INSERT INTO searchkeywods (AppEName, KeyWord, Count) VALUES ('a', 'b', 1) ON DUP
 REPLACE INTO users (id,name,age) VALUES(123, '赵本山', 50);
 REPLACE INTO users SET id = 123, name = '赵本山', age = 50;
 ```
+
+
+
+
+
+## Before insert
+
+
+
+```
+begin
+
+
+
+if new.NickName is null
+
+then
+
+set new.NickName=(
+
+select `name` from nickname_list as t1
+
+join (SELECT FLOOR( MAX(id) * RAND()) as id FROM `nickname_list` ) as t2
+
+where t1.id>t2.id limit 1
+
+);
+
+end if;
+
+end
+
+
+```
+
+
+
+# Update
+
+
+
+
+
+```
+
+update app set AppEndTime = '2017-04-30 23:59' where appid in (select appid from (select appid from app where appename like '%__YN' or appename like '%__NM') as a);
+
+```
+
+
+
+```
+update book set bookname=replace(bookname,'-','《') where bookid in(
+
+select bookid from(
+select book.bookid from bookandapp as bind
+left join 
+book
+on book.bookid =bind.bookid
+where bind.appid in(1332,1325,1326,1327)
+) as t
+)
+```
+
+
+
+
+
+
 
 
 
