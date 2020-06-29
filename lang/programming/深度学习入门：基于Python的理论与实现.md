@@ -93,6 +93,8 @@ sigmoid 又名logistic
 
 [Eureka机器学习读书笔记 - 梯度下降法、牛顿法和拟牛顿法](https://zhuanlan.zhihu.com/p/37524275)
 
+[AI算法工程师手册 - 反向传播算法](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
+
 
 
 实现与或非门只需要输入层和输出层，不需要隐藏层，也就是说与或非问题是线性可分的。但是，异或/同或却是非线性可分的
