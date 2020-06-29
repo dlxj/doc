@@ -98,6 +98,8 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 《深入理解神经网络：从逻辑回归到CNN》
 
+[神经网络可视化](https://github.com/zhangjuefei/mentat)
+
 
 
 [cs231-bp](https://luozm.github.io/cs231n-2)
