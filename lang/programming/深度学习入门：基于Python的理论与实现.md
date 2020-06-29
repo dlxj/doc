@@ -58,6 +58,14 @@ sigmoid 又名logistic
 
 
 
+[DeepLearningBook-chinese p.177 6.45](https://www.deeplearningbook.org/contents/mlp.html)
+
+[AI算法工程师手册 - 反向传播算法](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
+
+[机器学习白板推导](https://zhuanlan.zhihu.com/p/54791721)
+
+[Eureka机器学习读书笔记 - 梯度下降法、牛顿法和拟牛顿法](https://zhuanlan.zhihu.com/p/37524275)
+
 
 
 [Derivative of a cost function (Andrew NG machine learning course)](https://math.stackexchange.com/questions/3581373/derivative-of-a-cost-function-andrew-ng-machine-learning-course)
@@ -88,12 +96,6 @@ sigmoid 又名logistic
 [有哪些优秀的深度学习入门书籍](https://www.zhihu.com/question/36675272)
 
 [动手学深度学习](https://github.com/d2l-ai/d2l-zh)
-
-[机器学习白板推导](https://zhuanlan.zhihu.com/p/54791721)
-
-[Eureka机器学习读书笔记 - 梯度下降法、牛顿法和拟牛顿法](https://zhuanlan.zhihu.com/p/37524275)
-
-[AI算法工程师手册 - 反向传播算法](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
 
 
 
