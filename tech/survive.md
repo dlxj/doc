@@ -11,7 +11,7 @@
 >   - 试读1 https://www.ituring.com.cn/book/tupubarticle/27913
 >   - 试读2 https://juejin.im/post/5d78b8fb5188251ecc40d730
 >
-> - [神经网络可视化](https://github.com/zhangjuefei/mentat)
+> - [神经网络可视化 matplotlib](https://github.com/zhangjuefei/mentat)
 >
 > 
 >
