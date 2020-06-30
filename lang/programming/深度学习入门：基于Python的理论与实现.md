@@ -98,13 +98,22 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 《深入理解神经网络：从逻辑回归到CNN》
 
-- 试读 https://www.ituring.com.cn/book/tupubarticle/27913
+- 试读1 https://www.ituring.com.cn/book/tupubarticle/27913
+- 试读2 https://juejin.im/post/5d78b8fb5188251ecc40d730
 
 [神经网络可视化](https://github.com/zhangjuefei/mentat)
 
 
 
+时光荏苒 nlp dl【中文分词系列】 2. 基于切分的新词发现   [p](https://kexue.fm/archives/3913/comment-page-1) 
 
+- [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
+
+- [重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
+
+- [新词发现的信息熵方法与实现](https://kexue.fm/archives/3491)
+
+- [深度学习分词？只需一个词典](https://kexue.fm/archives/4245)
 
 [cs231-bp](https://luozm.github.io/cs231n-2)
 

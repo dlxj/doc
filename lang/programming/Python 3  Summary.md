@@ -210,14 +210,12 @@ version = '0.2'
 #### CPU执行时间
 
 ```python
-def run3():
-    start = time.clock()
-    for i in range(1000):
-        j = i * 2 
-        for k in range(j):
-            t = k
-    end = time.clock()
-    print('CPU执行时间: ',end - start)
+import time
+tis1 =time.perf_counter()
+print("等待5秒......")
+time.sleep(5)
+tis2=time.perf_counter()
+print(tis2-tis1)
 ```
 
 
@@ -729,6 +727,17 @@ bool(re.match(r'\s+', '  '))   # 是否含空白符
 
 
 
+### compile
+
+```python
+pattern = re.compile(r'\[.+?\.gif\]') # .+? 最短匹配
+print( pattern.findall('β[XB3.gif]肾上腺素受体激动剂\xa0') )
+```
+
+
+
+
+
 ### .匹配换行
 
 ```
@@ -744,6 +753,16 @@ re.DOTALL
 ```
 ss =  re.findall(r'(@@第[一二三四五六七八九十]+章.+?)\n', strs, re.DOTALL)
 ```
+
+
+
+### 捕获
+
+
+
+捕获和非捕获属性 https://blog.csdn.net/Leonard_wang/article/details/79813425
+
+
 
 
 
@@ -788,6 +807,41 @@ def extractPattern(strs, reg):
 
     return rs
 ```
+
+
+
+### replace
+
+```
+pattern = re.compile(r'\[.+?\.gif\]') # .+? 最短匹配
+print( pattern.findall('β[XB3.gif]肾上腺素受体激动剂\xa0') )
+print( pattern.sub('', 'β[XB3.gif]肾上腺素受体激动剂\xa0') )  #替换成空串
+```
+
+
+
+```
+ps= [
+        ( r'\[.+?\.gif\]', "" ),  # pattern 和需要替换成为的串
+    ]
+"""
+需要替换的pattern
+"""
+
+# 递归批量替换字符串
+def replaceall(strs, ps, idx):
+    if strs.strip() == "":
+        return ""
+    if (idx > len(ps) - 1):
+        return strs.strip()
+
+    (p, s) = ps[idx]
+    pattern = re.compile(p)
+    strs = pattern.sub(s, strs)
+    return replaceall(strs, ps, idx + 1)
+```
+
+
 
 
 
@@ -1605,6 +1659,22 @@ def student_add():
 f"INSERT INTO trialexampointrelevanttest (examPointID, appID, testID, childTestID, isMachine, similarity ) VALUES ({examPointID}, {appID}, {testID}, {childTestID}, 1, {similarity} ) ON DUPLICATE KEY UPDATE similarity={similarity}, updateTime=now();"
 
 ```
+
+
+
+
+
+## Excel
+
+
+
+```python
+import pandas as pd
+seg = pd.DataFrame(wordlist,columns=['word','length','fre','pmi','entropy'])
+seg.to_csv(fname_results, index=False ,encoding="utf-8")
+```
+
+
 
 
 

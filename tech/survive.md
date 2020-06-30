@@ -4,14 +4,39 @@
 >
 > 酱紫君 随机取牌算不出 24 点的概率是多少[z](https://www.zhihu.com/question/307729091/answer/1119004801)
 >
+> 张觉非 计算图反向传播的原理及实现 [z](https://zhuanlan.zhihu.com/p/69175484)
+>
+> - 《深入理解神经网络：从逻辑回归到CNN》
+>
+>   - 试读1 https://www.ituring.com.cn/book/tupubarticle/27913
+>   - 试读2 https://juejin.im/post/5d78b8fb5188251ecc40d730
+>
+> - [神经网络可视化 matplotlib](https://github.com/zhangjuefei/mentat)
+>
+> 
+>
+> 时光荏苒 nlp dl【中文分词系列】 2. 基于切分的新词发现   [p](https://kexue.fm/archives/3913/comment-page-1) 
+>
+> - [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
+> - [重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
+> - [新词发现的信息熵方法与实现](https://kexue.fm/archives/3491)
+> - [深度学习分词？只需一个词典](https://kexue.fm/archives/4245)
+> - [基于AC自动机的快速分词](https://kexue.fm/archives/3908)
+>
+> 
+>
+> 罗然 shell脚本制作《落网》音乐播放器 [z](https://zhuanlan.zhihu.com/p/25957130)
+
+
+
 > 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
-> UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
->
-> 移影残风 [Git源码编译](https://zhuanlan.zhihu.com/p/74953334)
->
-> stevenliuyi [latex-alpha2 latex+mma](https://www.zhihu.com/question/23207757/answer/611107795)
->
-> Hadesth [mma高数笔记](https://zhuanlan.zhihu.com/p/93558801)
+>UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
+> 
+>移影残风 [Git源码编译](https://zhuanlan.zhihu.com/p/74953334)
+> 
+>stevenliuyi [latex-alpha2 latex+mma](https://www.zhihu.com/question/23207757/answer/611107795)
+> 
+>Hadesth [mma高数笔记](https://zhuanlan.zhihu.com/p/93558801)
 
 # MMA大佬
 
@@ -562,6 +587,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
   > 竟然有中文翻译
 
+- 喵翻 VNR  的复刻 https://github.com/project-yuki/YUKI
+
 # 字典制作
 
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
@@ -616,6 +643,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [前端如何控制GIF的播放和暂停](https://www.jianshu.com/p/d5cc47f6a998)
 > [《全医08总动员重新修訂版 》](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=2559&highlight=%E5%8C%BB%E5%AD%A6)
+
+
 
 ### epwing
 
