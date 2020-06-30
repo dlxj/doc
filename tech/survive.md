@@ -7,6 +7,7 @@
 > 时光荏苒 nlp dl【中文分词系列】 2. 基于切分的新词发现   [p](https://kexue.fm/archives/3913/comment-page-1) 
 >
 > - [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
+> - [重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
 >
 > 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
 > UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
