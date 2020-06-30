@@ -18,22 +18,21 @@
 > 时光荏苒 nlp dl【中文分词系列】 2. 基于切分的新词发现   [p](https://kexue.fm/archives/3913/comment-page-1) 
 >
 > - [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
->
-> - [重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
->
+>- [重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
 > - [新词发现的信息熵方法与实现](https://kexue.fm/archives/3491)
-> - [深度学习分词？只需一个词典](https://kexue.fm/archives/4245)
->
+>- [深度学习分词？只需一个词典](https://kexue.fm/archives/4245)
+> - [基于AC自动机的快速分词](https://kexue.fm/archives/3908)
 > 
 >
-> 上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
+> 
+>上野  玄日语 史学 宗教学 音韵学 古希腊埃及语 和声学 语言学[z](https://www.zhihu.com/people/gao-peng-yu-77)
 > UntPhesoca  古典音乐/语言学/ACG/轨道交通 [z](https://www.zhihu.com/people/UntW)
->
-> 移影残风 [Git源码编译](https://zhuanlan.zhihu.com/p/74953334)
->
-> stevenliuyi [latex-alpha2 latex+mma](https://www.zhihu.com/question/23207757/answer/611107795)
->
-> Hadesth [mma高数笔记](https://zhuanlan.zhihu.com/p/93558801)
+> 
+>移影残风 [Git源码编译](https://zhuanlan.zhihu.com/p/74953334)
+> 
+>stevenliuyi [latex-alpha2 latex+mma](https://www.zhihu.com/question/23207757/answer/611107795)
+> 
+>Hadesth [mma高数笔记](https://zhuanlan.zhihu.com/p/93558801)
 
 # MMA大佬
 
