@@ -584,6 +584,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
   > 竟然有中文翻译
 
+- 喵翻 VNR  的复刻 https://github.com/project-yuki/YUKI
+
 # 字典制作
 
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
@@ -638,6 +640,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [前端如何控制GIF的播放和暂停](https://www.jianshu.com/p/d5cc47f6a998)
 > [《全医08总动员重新修訂版 》](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=2559&highlight=%E5%8C%BB%E5%AD%A6)
+
+
 
 ### epwing
 

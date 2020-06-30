@@ -113,7 +113,7 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 - [新词发现的信息熵方法与实现](https://kexue.fm/archives/3491)
 
-
+- [深度学习分词？只需一个词典](https://kexue.fm/archives/4245)
 
 [cs231-bp](https://luozm.github.io/cs231n-2)
 

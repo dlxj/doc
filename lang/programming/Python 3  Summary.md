@@ -1608,3 +1608,19 @@ f"INSERT INTO trialexampointrelevanttest (examPointID, appID, testID, childTestI
 
 
 
+## Excel
+
+
+
+```python
+import pandas as pd
+seg = pd.DataFrame(wordlist,columns=['word','length','fre','pmi','entropy'])
+seg.to_csv(fname_results, index=False ,encoding="utf-8")
+```
+
+
+
+
+
+
+
