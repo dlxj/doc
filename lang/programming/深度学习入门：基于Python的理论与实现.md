@@ -109,7 +109,9 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 - [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
 
-[【中文分词系列】 2. 基于切分的新词发现](https://kexue.fm/archives/3913/comment-page-1)
+- [重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
+
+- [新词发现的信息熵方法与实现](https://kexue.fm/archives/3491)
 
 
 
