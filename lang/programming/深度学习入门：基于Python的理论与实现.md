@@ -105,6 +105,10 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 
 
+时光荏苒 nlp dl【中文分词系列】 2. 基于切分的新词发现   [p](https://kexue.fm/archives/3913/comment-page-1) 
+
+- [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
+
 [【中文分词系列】 2. 基于切分的新词发现](https://kexue.fm/archives/3913/comment-page-1)
 
 
