@@ -105,6 +105,8 @@ https://baozoulin.gitbook.io/neural-networks-and-deep-learning/neural-networks-a
 
 
 
+[【中文分词系列】 2. 基于切分的新词发现](https://kexue.fm/archives/3913/comment-page-1)
+
 
 
 [cs231-bp](https://luozm.github.io/cs231n-2)
