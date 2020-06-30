@@ -4,6 +4,17 @@
 >
 > 酱紫君 随机取牌算不出 24 点的概率是多少[z](https://www.zhihu.com/question/307729091/answer/1119004801)
 >
+> 张觉非 计算图反向传播的原理及实现 [z](https://zhuanlan.zhihu.com/p/69175484)
+>
+> - 《深入理解神经网络：从逻辑回归到CNN》
+>
+>   - 试读1 https://www.ituring.com.cn/book/tupubarticle/27913
+>   - 试读2 https://juejin.im/post/5d78b8fb5188251ecc40d730
+>
+> - [神经网络可视化](https://github.com/zhangjuefei/mentat)
+>
+> 
+>
 > 时光荏苒 nlp dl【中文分词系列】 2. 基于切分的新词发现   [p](https://kexue.fm/archives/3913/comment-page-1) 
 >
 > - [积分梯度：一种新颖的神经网络可视化方法](https://kexue.fm/archives/7533)
