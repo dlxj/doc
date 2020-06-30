@@ -210,14 +210,12 @@ version = '0.2'
 #### CPU执行时间
 
 ```python
-def run3():
-    start = time.clock()
-    for i in range(1000):
-        j = i * 2 
-        for k in range(j):
-            t = k
-    end = time.clock()
-    print('CPU执行时间: ',end - start)
+import time
+tis1 =time.perf_counter()
+print("等待5秒......")
+time.sleep(5)
+tis2=time.perf_counter()
+print(tis2-tis1)
 ```
 
 

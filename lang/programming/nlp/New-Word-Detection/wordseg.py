@@ -6,6 +6,7 @@ Author: "Xylander"
 
 
 import os
+import sys
 import re
 import math
 import time
@@ -13,6 +14,7 @@ from entropy import compute_entropy
 from extract import extract_cadicateword,gen_bigram
 import pandas as pd
 import codecs
+sys.path.append( os.path.dirname(os.path.abspath(__file__) ) )
 
 
 class wordinfo(object):
@@ -97,8 +99,52 @@ class segdocument(object):
         return sorted(values,key = lambda v: len(v.text),reverse = False)
 
 
+
 if __name__ == '__main__':
-        starttime = time.clock()
+    
+    currDir = os.path.dirname(os.path.abspath(__file__))
+    fname_data = os.path.join(currDir, 'data.txt')
+    fname_results = os.path.join(currDir, 'results.csv')
+    dict_path = os.path.join(currDir, 'dict.txt')
+
+
+    wordlist = []
+    word_candidate = []
+    dict_bank = []
+
+    starttime = time.perf_counter()
+
+    doc = codecs.open(fname_data, "r", "utf-8").read()
+    #print(doc)
+
+    word = segdocument(doc,max_word_len=3,min_tf=(1e-08),min_entropy=1.0,min_pmi=3.0)
+    print('avg_frq:'+ str(word.avg_frq))
+    print('avg_pmi:' + str(word.avg_pmi))
+    print('avg_entropy:'+ str(word.avg_entropy))
+
+    # for i in codecs.open(dict_path, 'r', "utf-8"):
+    #     dict_bank.append(i.split(' ')[0])
+
+    print('result:')
+    for i in word.word_tf_pmi_ent:
+        if i[0] not in dict_bank:
+            word_candidate.append(i[0])
+            wordlist.append([i[0],i[1],i[2],i[3],i[4]])
+                
+    # ranking on entropy (primary key) and pmi (secondary key)
+    wordlist = sorted(wordlist, key=lambda word: word[3], reverse=True)
+    wordlist = sorted(wordlist, key=lambda word: word[4], reverse=True)
+        
+    seg = pd.DataFrame(wordlist,columns=['word','length','fre','pmi','entropy'])
+    seg.to_csv(fname_results, index=False ,encoding="utf-8")
+
+
+    endtime = time.perf_counter()
+    
+    print(endtime - starttime)
+
+def oldmain():
+        starttime = time.perf_counter()
         path = os.path.abspath('.')
         wordlist = []
         word_candidate = []
@@ -126,7 +172,7 @@ if __name__ == '__main__':
         wordlist = sorted(wordlist, key=lambda word: word[4], reverse=True)
         
         seg = pd.DataFrame(wordlist,columns=['word','length','fre','pmi','entropy'])
-        seg.to_csv(path+'/extractword.csv', index=False ,encoding="utf-8")
+        seg.to_csv(fname_results, index=False ,encoding="utf-8")
 
         # intersection = set(word_candidate) & set(dict_bank)
         # newwordset = set(word_candidate) - intersection
@@ -134,6 +180,6 @@ if __name__ == '__main__':
         # for i in wordlist:
         #     print(i[0],i[1],i[2],i[3],i[4])
 
-        endtime = time.clock()
+        endtime = time.perf_counter()
         print(endtime-starttime)
         
