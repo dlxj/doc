@@ -1,5 +1,33 @@
 
 
+
+
+*First*-order approximation
+
+在数学物理中，一级近似就是把函数值用自变量的某个临近点处的函数值及导函数的值近似表示。
+
+
+
+f(x+d) ~ f(x) + f'(x)    d 远小于x
+
+
+
+从微商的定义推导
+
+> $$
+> \Delta x \  是一个微小量 \quad \text{and} \quad \Delta x \rightarrow 0 \\
+> 
+> \nabla f(x) = \frac{f(x + \Delta x) - f(x)}{ \Delta x } \\
+> \Delta x \nabla f(x) = f(x + \Delta x) - f(x) \\
+> f(x + \Delta x) = f(x) + \Delta x \nabla f(x)
+> $$
+
+
+
+
+
+
+
 张量的概念早在19世纪末就被数学家提出了, 但这个概念真正发扬光大, 还是在相对论出现以后. 原因是, 在相对论中, 在不同的参考系下看同一个物理系统, 它"看起来"是不一样的: 比如**粒子的动量和能量在不同的参考系下根据 Lorentz 变换相联系**.
 
 
