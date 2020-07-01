@@ -609,6 +609,18 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 
+### raw string
+
+```\
+r''
+```
+
+
+
+
+
+
+
 ### split string into list of characters
 
 ```
@@ -811,6 +823,37 @@ def extractPattern(strs, reg):
 
 
 ### replace
+
+
+
+```
+echo 'the blue dog and blue cat wore blue hats' | sed 's/blue \(dog\|cat\)/gray \1/g'
+->the gray dog and gray cat wore blue hats
+```
+
+
+
+#### named groups
+
+
+
+```
+p = re.compile(r'blue (?P<animal>dog|cat)')
+p.sub(r'gray \g<animal>','the blue dog and blue cat wore blue hats')
+```
+
+
+
+
+
+```
+re.match(r"(?:aaa)(_bbb)", string1).group(1)
+result = re.sub(r"(\d.*?)\s(\d.*?)", r"\1 \2", string1)
+```
+
+
+
+
 
 ```
 pattern = re.compile(r'\[.+?\.gif\]') # .+? 最短匹配
