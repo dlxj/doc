@@ -1,0 +1,950 @@
+[Script Info]
+; // 此字幕由PopSub生成  2010-07-02 16:36:05
+; // 版本: 0.75
+; // popgo_fansub@yahoo.co.jp
+; // 欢迎访问漫游天下 http://bbs.popgo.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,5,134
+Style: top,楷体,16,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,-1,0,0,0,100,100,0,0.00,1,1,1,8,5,5,10,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.01,0:00:04.50,*Default,NTP,0000,0000,0000,,{\fe134}{\fad(500,500)}{\c&HFFFFFF&}{\pos(190,270)}{\fs16} {\fn方正准圆简体}{\bord0}本字幕由{\fs24}{\fn方正综艺简体}{\fe0}{\c&H26F4FF&}YYeTs{\fe134}{\fn方正宋黑简体}{\c&HFFAE1A&}人人影视{\fscy100}{\fe134}{\fn方正准圆简体}{\c&HFFFFFF&}{\fs16}翻译制作\N{\fn方正准圆简体}{\fs14}{\b0}{\bord0}{\shad0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}{\fsp0}{\fs16}{\c&HFFFFFF&}更多教程中文版 请登陆 {\c&H26F4FF&}{\fn方正综艺简体}{\fs24}www.YYeTs.net
+Dialogue: 0,0:00:04.00,0:00:10.00,top,NTP,0000,0000,0000,,{\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}翻译：{\fs18}{\c&HFFFFFF&}lwfreeman   也么哥  hillleigh  xixi8510   weiyintang001\N{\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}校对：{\fs18}{\c&HFFFFFF&}adamlilith  whujulius  {\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}校对监制：{\fs18}{\c&HFFFFFF&}whujulius  梁良
+Dialogue: 0,0:00:12.27,0:00:13.33,*Default,NTP,0000,0000,0000,,诚如你们所见\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is a course, a version of which 
+Dialogue: 0,0:00:13.33,0:00:15.70,*Default,NTP,0000,0000,0000,,在过去二十年中  \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I've taught almost every year 
+Dialogue: 0,0:00:15.70,0:00:18.86,*Default,NTP,0000,0000,0000,,几乎每年我都要讲授这门课\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for the last twenty years
+Dialogue: 0,0:00:18.86,0:00:21.28,*Default,NTP,0000,0000,0000,,这门课程每年都会与时俱进\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and it evolves a little bit every year.
+Dialogue: 0,0:00:21.51,0:00:22.98,*Default,NTP,0000,0000,0000,,我自己业已从中获益匪浅\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I think I get a little bit better at it,
+Dialogue: 0,0:00:23.09,0:00:24.03,*Default,NTP,0000,0000,0000,,也希望\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so hopefully
+Dialogue: 0,0:00:24.03,0:00:26.83,*Default,NTP,0000,0000,0000,,你们能够有颇多斩获\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you'll get some advantage from that experience.
+Dialogue: 0,0:00:27.02,0:00:29.41,*Default,NTP,0000,0000,0000,,这门课力图向你们展示\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But the idea is to try to present to you
+Dialogue: 0,0:00:29.41,0:00:31.64,*Default,NTP,0000,0000,0000,,生物医学工程那激动人心之处\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what's exciting about Biomedical Engineering,
+Dialogue: 0,0:00:31.84,0:00:35.67,*Default,NTP,0000,0000,0000,,它融合了自然科学和数学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the ways that one can take science and mathematics
+Dialogue: 0,0:00:35.67,0:00:38.60,*Default,NTP,0000,0000,0000,,并用其成果提高人类健康水平\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and apply that to improve human health.
+Dialogue: 0,0:00:38.76,0:00:40.92,*Default,NTP,0000,0000,0000,,我并不是一个人讲授这门课\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I'm not working alone here,
+Dialogue: 0,0:00:41.08,0:00:42.55,*Default,NTP,0000,0000,0000,,有三位助教\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but we have three teaching fellows 
+Dialogue: 0,0:00:42.55,0:00:44.32,*Default,NTP,0000,0000,0000,,与我并肩战斗\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}who are affiliated with the course,
+Dialogue: 0,0:00:44.45,0:00:46.15,*Default,NTP,0000,0000,0000,,今天有两位在这里\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}two of which are here today.
+Dialogue: 0,0:00:46.29,0:00:48.52,*Default,NTP,0000,0000,0000,,楚叶坐在后面\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Yen Cu is back there,
+Dialogue: 0,0:00:48.68,0:00:49.98,*Default,NTP,0000,0000,0000,,叶把你的手举高一点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Yen raise your hand higher
+Dialogue: 0,0:00:49.98,0:00:51.28,*Default,NTP,0000,0000,0000,,让所有的人都能看到你\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so everyone can see.
+Dialogue: 0,0:00:51.45,0:00:53.61,*Default,NTP,0000,0000,0000,,叶从去年开始就为这门课工作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Yen worked on the course last year
+Dialogue: 0,0:00:53.61,0:00:56.96,*Default,NTP,0000,0000,0000,,她是今年这门课程的助教中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and she's the senior of the teaching fellows 
+Dialogue: 0,0:00:56.96,0:00:58.91,*Default,NTP,0000,0000,0000,,较为资深的一名\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that are working on the course this year.
+Dialogue: 0,0:00:59.07,0:01:03.68,*Default,NTP,0000,0000,0000,,斯吉?科布沙坐在后面\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Serge Kobsa is in the back and
+Dialogue: 0,0:01:03.68,0:01:04.67,*Default,NTP,0000,0000,0000,,他将是第二位助教\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}he'll be the second teaching fellow.
+Dialogue: 0,0:01:04.84,0:01:06.42,*Default,NTP,0000,0000,0000,,我要说的是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I should mention that Yen
+Dialogue: 0,0:01:06.42,0:01:09.07,*Default,NTP,0000,0000,0000,,叶是生物医学工程的博士生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is a PhD student in Biomedical Engineering
+Dialogue: 0,0:01:09.07,0:01:11.21,*Default,NTP,0000,0000,0000,,斯吉是医学和生物医学工程的双学位博士\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and Serge is an M. D. /PhD student
+Dialogue: 0,0:01:11.21,0:01:14.15,*Default,NTP,0000,0000,0000,,他博士的研究方向是生物医学工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}who's getting his PhD in Biomedical Engineering.
+Dialogue: 0,0:01:14.31,0:01:17.25,*Default,NTP,0000,0000,0000,,第三位助教今天没有来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The third teaching fellow couldn't make it today,
+Dialogue: 0,0:01:17.39,0:01:19.07,*Default,NTP,0000,0000,0000,,他叫迈克?鲁克\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}his name is Michael Look
+Dialogue: 0,0:01:19.07,0:01:22.43,*Default,NTP,0000,0000,0000,,他来的时候我会将他介绍给大家\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I'll introduce him to you when he's available.
+Dialogue: 0,0:01:22.55,0:01:28.71,*Default,NTP,0000,0000,0000,,今天这门课的目的是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is the goal for my first lecture today,
+Dialogue: 0,0:01:28.82,0:01:30.81,*Default,NTP,0000,0000,0000,,探寻几个问题的答案\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to try to answer these questions.
+Dialogue: 0,0:01:30.95,0:01:33.97,*Default,NTP,0000,0000,0000,,你们可能已经注意到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You might have already noticed
+Dialogue: 0,0:01:33.97,0:01:36.68,*Default,NTP,0000,0000,0000,,我使用了班级服务器\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that I'm using the classes V2 server
+Dialogue: 0,0:01:36.68,0:01:39.99,*Default,NTP,0000,0000,0000,,所以课程大纲在这儿\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so the syllabus is there,
+Dialogue: 0,0:01:40.14,0:01:41.95,*Default,NTP,0000,0000,0000,,虽然我待会儿会把这页内容翻过去\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I'm going to go over the syllabus a little bit later,
+Dialogue: 0,0:01:42.03,0:01:43.63,*Default,NTP,0000,0000,0000,,不过课程大纲已经挂在网上了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but the syllabus is available online.
+Dialogue: 0,0:01:43.77,0:01:46.07,*Default,NTP,0000,0000,0000,,第一份阅读材料也已经在网上了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The first reading is available online
+Dialogue: 0,0:01:46.07,0:01:48.37,*Default,NTP,0000,0000,0000,,关于这个阅读材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I'll talk more about the readings
+Dialogue: 0,0:01:48.37,0:01:51.22,*Default,NTP,0000,0000,0000,,在这堂课的相关部分时我会再讲到它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}when I get to that portion of the lecture here.
+Dialogue: 0,0:01:51.38,0:01:54.18,*Default,NTP,0000,0000,0000,,我会把课程所有的幻灯片挂到网上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I'm going to post PowerPoints for all the lectures,
+Dialogue: 0,0:01:54.29,0:01:58.25,*Default,NTP,0000,0000,0000,,希望至少在上课的前一天完成这件事\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}hopefully at least the day before the lecture takes place,
+Dialogue: 0,0:01:58.40,0:01:59.82,*Default,NTP,0000,0000,0000,,因此我昨天晚上把今天的幻灯放上来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so I posted this last night.
+Dialogue: 0,0:01:59.95,0:02:01.25,*Default,NTP,0000,0000,0000,,有些学生认为\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Some students find that
+Dialogue: 0,0:02:01.25,0:02:03.84,*Default,NTP,0000,0000,0000,,把幻灯片打印出来很有好处\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they benefit from printing out the PowerPoints
+Dialogue: 0,0:02:03.84,0:02:05.28,*Default,NTP,0000,0000,0000,,这样他们在我讲课的时候\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and they can just take their notes
+Dialogue: 0,0:02:05.29,0:02:07.39,*Default,NTP,0000,0000,0000,,只要在讲义的空白处做笔记就可以了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}along with the slides as I go
+Dialogue: 0,0:02:07.39,0:02:08.92,*Default,NTP,0000,0000,0000,,这不失为一种方法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that's one way to do it,
+Dialogue: 0,0:02:09.31,0:02:13.67,*Default,NTP,0000,0000,0000,,不过随你们怎么做  只要觉得有用就行\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but feel free to do it whatever way works for you,
+Dialogue: 0,0:02:13.81,0:02:14.89,*Default,NTP,0000,0000,0000,,以上仅供参考罢了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but those should be available.
+Dialogue: 0,0:02:14.99,0:02:17.11,*Default,NTP,0000,0000,0000,,今天我意图探索的问题是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The questions I want to try to answer today are
+Dialogue: 0,0:02:17.11,0:02:18.48,*Default,NTP,0000,0000,0000,,什么是生物医学工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what is Biomedical Engineering?
+Dialogue: 0,0:02:18.55,0:02:20.87,*Default,NTP,0000,0000,0000,,是什么使你们有兴趣\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So why would you be interested in
+Dialogue: 0,0:02:20.87,0:02:24.15,*Default,NTP,0000,0000,0000,,花一学期的时间来学习这门课程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}spending a semester learning about this subject?
+Dialogue: 0,0:02:24.29,0:02:28.05,*Default,NTP,0000,0000,0000,,我会谈到何人将从中受益\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I'll talk about who will benefit from the course
+Dialogue: 0,0:02:28.05,0:02:32.15,*Default,NTP,0000,0000,0000,,以及本学期这门课程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and a little bit about sort of the detailed subject matter
+Dialogue: 0,0:02:32.15,0:02:36.25,*Default,NTP,0000,0000,0000,,涵盖的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that we'll cover in the course of this semester.
+Dialogue: 0,0:02:37.01,0:02:41.67,*Default,NTP,0000,0000,0000,,我在今天和周四课上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}To answer the question what is Biomedical Engineering,
+Dialogue: 0,0:02:41.83,0:02:42.97,*Default,NTP,0000,0000,0000,,来回答\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we're going to spend time on that today and
+Dialogue: 0,0:02:42.97,0:02:46.39,*Default,NTP,0000,0000,0000,,生物医学工程是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we'll spend time on Thursday,
+Dialogue: 0,0:02:46.54,0:02:49.30,*Default,NTP,0000,0000,0000,,我会从一系列不同的角度来带你们入门\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I want to approach it from a couple of different angles.
+Dialogue: 0,0:02:49.45,0:02:52.57,*Default,NTP,0000,0000,0000,,其中之一便是给你们看一些图片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}One is by just showing you a series of pictures
+Dialogue: 0,0:02:52.57,0:02:55.23,*Default,NTP,0000,0000,0000,,你们可能见过图里这些东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which you might recognize and talk about
+Dialogue: 0,0:02:55.23,0:02:58.41,*Default,NTP,0000,0000,0000,,谈谈它们与生物医学工程的关系\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}why this is an example of Biomedical Engineering.
+Dialogue: 0,0:02:58.57,0:02:59.84,*Default,NTP,0000,0000,0000,,这张图片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is one picture
+Dialogue: 0,0:02:59.84,0:03:03.29,*Default,NTP,0000,0000,0000,,一眼便知其中乾坤\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that probably you all know what it is when you see it,
+Dialogue: 0,0:03:03.39,0:03:05.99,*Default,NTP,0000,0000,0000,,太眼熟了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it's a familiar looking image.
+Dialogue: 0,0:03:06.12,0:03:07.37,*Default,NTP,0000,0000,0000,,也许我们\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's something that probably
+Dialogue: 0,0:03:07.37,0:03:10.09,*Default,NTP,0000,0000,0000,,都看过这类片子 对吧\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} we all have some personal experience with,  right?
+Dialogue: 0,0:03:10.19,0:03:11.46,*Default,NTP,0000,0000,0000,,这是一张胸部的X光片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is a chest x-ray
+Dialogue: 0,0:03:11.46,0:03:14.12,*Default,NTP,0000,0000,0000,,人们会在医生的办公室\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that would be taken in your doctor's office,
+Dialogue: 0,0:03:14.26,0:03:16.81,*Default,NTP,0000,0000,0000,,或放射科医生的办公室之类的地方见到它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for example, or a radiologist's office.
+Dialogue: 0,0:03:16.94,0:03:20.16,*Default,NTP,0000,0000,0000,,它是生物医学工程的绝佳的一个实例\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And it is a good example of Biomedical Engineering
+Dialogue: 0,0:03:20.16,0:03:22.34,*Default,NTP,0000,0000,0000,,它利用了关于X射线与\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that it takes a physical principle, that is how do x-rays
+Dialogue: 0,0:03:22.34,0:03:26.25,*Default,NTP,0000,0000,0000,,人体组织的相互作用的物理学原理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}interact with the tissues of your body,
+Dialogue: 0,0:03:26.36,0:03:27.23,*Default,NTP,0000,0000,0000,,以及\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and it uses that physics,
+Dialogue: 0,0:03:27.23,0:03:30.31,*Default,NTP,0000,0000,0000,,进行体内造影的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that physical principle to develop a picture of
+Dialogue: 0,0:03:30.31,0:03:32.95,*Default,NTP,0000,0000,0000,,物理学原理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what's inside your body,
+Dialogue: 0,0:03:33.08,0:03:35.13,*Default,NTP,0000,0000,0000,,这样我们就能借助这样的设备\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so to look inside and see things
+Dialogue: 0,0:03:35.13,0:03:37.74,*Default,NTP,0000,0000,0000,,看到人体内部的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you couldn't see without this device.
+Dialogue: 0,0:03:37.87,0:03:41.29,*Default,NTP,0000,0000,0000,,你们会认出图中的一些器官\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And you'll recognize some of the parts of the image,
+Dialogue: 0,0:03:41.41,0:03:43.10,*Default,NTP,0000,0000,0000,,胸腔在这儿  这是骨骼\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can see the ribcage here, the bones,
+Dialogue: 0,0:03:43.21,0:03:47.74,*Default,NTP,0000,0000,0000,,心脏是下面这个大而亮的物体\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can see the heart is this large bright object down here.
+Dialogue: 0,0:03:47.85,0:03:51.39,*Default,NTP,0000,0000,0000,,如果你的视力足够好的话\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}If your have good eyesight from the distance
+Dialogue: 0,0:03:51.39,0:03:53.24,*Default,NTP,0000,0000,0000,,你们能看到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you're at you can see
+Dialogue: 0,0:03:53.24,0:03:56.21,*Default,NTP,0000,0000,0000,,由心脏发出血管\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the vessels leading out of the heart
+Dialogue: 0,0:03:56.21,0:03:57.64,*Default,NTP,0000,0000,0000,,进入到肺部\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and into the lungs,
+Dialogue: 0,0:03:57.84,0:04:01.35,*Default,NTP,0000,0000,0000,,肺是胸腔里这片比较暗的部分\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the lungs are these darker spaces within the ribcage.
+Dialogue: 0,0:04:01.47,0:04:04.69,*Default,NTP,0000,0000,0000,,这些年来  使用这类设备的医生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Physicians over the years of having this instrument
+Dialogue: 0,0:04:04.69,0:04:05.93,*Default,NTP,0000,0000,0000,,已经熟练地掌握了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}have learned how to
+Dialogue: 0,0:04:05.93,0:04:09.27,*Default,NTP,0000,0000,0000,,通过看这些X光片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}be very sophisticated about looking at these pictures
+Dialogue: 0,0:04:09.27,0:04:10.60,*Default,NTP,0000,0000,0000,,来诊断\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and diagnosing 
+Dialogue: 0,0:04:10.61,0:04:13.71,*Default,NTP,0000,0000,0000,,胸部疾病的方法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}when something is wrong inside the chest, for example.
+Dialogue: 0,0:04:13.79,0:04:16.20,*Default,NTP,0000,0000,0000,,故而  这成为生物医学工程的一个实例\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So this is an example of Biomedical Engineering,
+Dialogue: 0,0:04:16.28,0:04:19.08,*Default,NTP,0000,0000,0000,,这类技术已经很好的融入了我们的社会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}one that is well integrated into our society
+Dialogue: 0,0:04:19.08,0:04:22.26,*Default,NTP,0000,0000,0000,,因为也许我们每个人都拍过\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to the point that we've probably all got a picture
+Dialogue: 0,0:04:22.27,0:04:24.26,*Default,NTP,0000,0000,0000,,这样的X光片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}like this somewhere in our past,
+Dialogue: 0,0:04:24.39,0:04:26.46,*Default,NTP,0000,0000,0000,,正是因为我们懂得了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and where we understand the
+Dialogue: 0,0:04:26.46,0:04:29.84,*Default,NTP,0000,0000,0000,,相应的物理学原理才能去运用这项技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}physical principles that allow us to use it.
+Dialogue: 0,0:04:29.98,0:04:34.45,*Default,NTP,0000,0000,0000,,特别是在近二十年当中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We've gotten, over the last two decades in particular,
+Dialogue: 0,0:04:34.57,0:04:38.31,*Default,NTP,0000,0000,0000,,我们对体内造影已经十分熟悉\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}very sophisticated about taking pictures inside the body
+Dialogue: 0,0:04:38.31,0:04:41.00,*Default,NTP,0000,0000,0000,,它使医生能够看到身体内部\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}allowing doctors to look inside the body
+Dialogue: 0,0:04:41.01,0:04:44.19,*Default,NTP,0000,0000,0000,,并预测我们体内的生理变化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and predict things about our internal physiology
+Dialogue: 0,0:04:44.19,0:04:45.95,*Default,NTP,0000,0000,0000,,而仅仅是通过\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they couldn't predict
+Dialogue: 0,0:04:45.95,0:04:49.35,*Default,NTP,0000,0000,0000,,视诊或者触诊是不能预测这些变化的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}just by looking at us or putting their hands on us.
+Dialogue: 0,0:04:49.46,0:04:51.00,*Default,NTP,0000,0000,0000,,顶上的这张图\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This image on the top here
+Dialogue: 0,0:04:51.00,0:04:53.54,*Default,NTP,0000,0000,0000,,是造影技术的另一个例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is another example of an imaging technique,
+Dialogue: 0,0:04:53.68,0:04:56.38,*Default,NTP,0000,0000,0000,,他叫正电子发射断层成像技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this is a Positron Emission Tomograph,
+Dialogue: 0,0:04:56.38,0:04:58.24,*Default,NTP,0000,0000,0000,,也叫PET造影\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or PET image,
+Dialogue: 0,0:04:58.34,0:04:59.40,*Default,NTP,0000,0000,0000,,这项技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and it's taken by using 
+Dialogue: 0,0:04:59.40,0:05:02.58,*Default,NTP,0000,0000,0000,,将放射性物质注射到人体内\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}radionuclides and injecting them into you,
+Dialogue: 0,0:05:02.66,0:05:04.42,*Default,NTP,0000,0000,0000,,这些放射性物质\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so radioactive chemicals 
+Dialogue: 0,0:05:04.42,0:05:06.17,*Default,NTP,0000,0000,0000,,能够与体内组织\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that interact with tissues in your body
+Dialogue: 0,0:05:06.18,0:05:07.55,*Default,NTP,0000,0000,0000,,发生特定的相互作用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in a specific way and you
+Dialogue: 0,0:05:07.55,0:05:09.80,*Default,NTP,0000,0000,0000,,这样人们就知道它的所到之处\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}can where those radioactive chemicals go.
+Dialogue: 0,0:05:09.96,0:05:12.52,*Default,NTP,0000,0000,0000,,这种方法不仅能够像X射线那样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It allows us to look not just at the anatomy of
+Dialogue: 0,0:05:12.52,0:05:15.39,*Default,NTP,0000,0000,0000,,使我们从解剖学的角度观察体内的情况\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what's going on inside your body like an x-ray does,
+Dialogue: 0,0:05:15.53,0:05:17.14,*Default,NTP,0000,0000,0000,,还能了解到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but to look at the chemistry, 
+Dialogue: 0,0:05:17.14,0:05:21.02,*Default,NTP,0000,0000,0000,,在体内特定的组织和器官中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the biochemistry of what's happening
+Dialogue: 0,0:05:21.02,0:05:24.36,*Default,NTP,0000,0000,0000,,发生的化学 确切说是生物化学过程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}inside a particular organ or tissue in your body.
+Dialogue: 0,0:05:24.48,0:05:28.39,*Default,NTP,0000,0000,0000,,这里是几张大脑的图片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In this case, these are pictures of the brain
+Dialogue: 0,0:05:28.39,0:05:31.87,*Default,NTP,0000,0000,0000,,这项技术一直以来非常重要\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and this has been an exceptionally important technique in
+Dialogue: 0,0:05:31.87,0:05:37.33,*Default,NTP,0000,0000,0000,,它能使我们了解神经递质这类小分子物质\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}understanding how molecules like neurotransmitters
+Dialogue: 0,0:05:37.33,0:05:38.71,*Default,NTP,0000,0000,0000,,是如何影响\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}affect disease 
+Dialogue: 0,0:05:38.71,0:05:42.04,*Default,NTP,0000,0000,0000,,人体内疾病的发生和发展的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how they change in certain disease states in people,
+Dialogue: 0,0:05:42.22,0:05:43.14,*Default,NTP,0000,0000,0000,,我们将其作为\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about this
+Dialogue: 0,0:05:43.14,0:05:44.79,*Default,NTP,0000,0000,0000,,生物医学工程的另一个例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}as another example of Biomedical Engineering,
+Dialogue: 0,0:05:44.92,0:05:47.37,*Default,NTP,0000,0000,0000,,这是一种很先进的体内造影技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this advanced method is for imaging inside the body.
+Dialogue: 0,0:05:47.51,0:05:48.52,*Default,NTP,0000,0000,0000,,好的  \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Well 
+Dialogue: 0,0:05:48.52,0:05:52.05,*Default,NTP,0000,0000,0000,,第三张图可能你们没见过了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this third picture you can't probably see too much about
+Dialogue: 0,0:05:52.05,0:05:55.62,*Default,NTP,0000,0000,0000,,但你们能认出这是什么  对吧\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but you probably recognize what it is, right?
+Dialogue: 0,0:05:55.72,0:05:56.90,*Default,NTP,0000,0000,0000,,这张照片是在哪照的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Where was this picture taken?
+Dialogue: 0,0:05:56.99,0:06:01.64,*Default,NTP,0000,0000,0000,,在什么样的地方照的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What kind of a space was it taken in?
+Dialogue: 0,0:06:02.10,0:06:07.05,*Default,NTP,0000,0000,0000,,有人说在手术室  对了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Somebody said OR or operating room and that's right,
+Dialogue: 0,0:06:07.18,0:06:09.26,*Default,NTP,0000,0000,0000,,这是在手术室照的照片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this is a picture in an operating room, and operating rooms,
+Dialogue: 0,0:06:09.37,0:06:12.85,*Default,NTP,0000,0000,0000,,如果你们进到国内任何一间手术室里\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you went into any operating room around the country
+Dialogue: 0,0:06:12.85,0:06:15.68,*Default,NTP,0000,0000,0000,,就会看到很多这样的设备\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you would see lots of examples of instruments
+Dialogue: 0,0:06:15.68,0:06:19.26,*Default,NTP,0000,0000,0000,,这些设备是用来辅助外科医生和麻醉师\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that are used to help surgeons, anesthesiologists
+Dialogue: 0,0:06:19.26,0:06:22.20,*Default,NTP,0000,0000,0000,,它们能够使病人在手术过程中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to keep the patient alive and healthy
+Dialogue: 0,0:06:22.20,0:06:24.73,*Default,NTP,0000,0000,0000,,维持生命和正常的身体机能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}during the course of a surgery.
+Dialogue: 0,0:06:24.87,0:06:26.83,*Default,NTP,0000,0000,0000,,下面这是一个特别的设备\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This particular one down here,
+Dialogue: 0,0:06:26.93,0:06:28.66,*Default,NTP,0000,0000,0000,,这一块是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this portion here is 
+Dialogue: 0,0:06:28.66,0:06:30.83,*Default,NTP,0000,0000,0000,,心肺机\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a heart/lung machine and this is a machine
+Dialogue: 0,0:06:30.83,0:06:32.39,*Default,NTP,0000,0000,0000,,这台机器能够\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that can take over the function of 
+Dialogue: 0,0:06:32.39,0:06:35.49,*Default,NTP,0000,0000,0000,,在病人接受心脏手术的时候\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a patient's heart and lungs
+Dialogue: 0,0:06:35.49,0:06:36.93,*Default,NTP,0000,0000,0000,,替代病人的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}during the period 
+Dialogue: 0,0:06:36.93,0:06:38.93,*Default,NTP,0000,0000,0000,,心脏和肺的功能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}when they're undergoing open heart surgery, for example.
+Dialogue: 0,0:06:39.08,0:06:41.63,*Default,NTP,0000,0000,0000,,病人在做冠状动脉搭桥手术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}If they're having a coronary artery bypass
+Dialogue: 0,0:06:41.63,0:06:43.82,*Default,NTP,0000,0000,0000,,或者心脏移植手术时\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or they're having a heart transplant,
+Dialogue: 0,0:06:43.94,0:06:47.62,*Default,NTP,0000,0000,0000,,病人自己的心脏\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}then there's some period at which their normal heart -
+Dialogue: 0,0:06:47.62,0:06:49.16,*Default,NTP,0000,0000,0000,,会停跳一段时间\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}their heart is stopped
+Dialogue: 0,0:06:49.16,0:06:52.77,*Default,NTP,0000,0000,0000,,而这台设备就能代替心脏工作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and this machine assumes the functions of their heart.
+Dialogue: 0,0:06:52.91,0:06:53.89,*Default,NTP,0000,0000,0000,,这种设备  以我之见\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And this is, I think,
+Dialogue: 0,0:06:53.89,0:06:56.18,*Default,NTP,0000,0000,0000,,便是生物医学工程的一个典型的例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}an obvious example of Biomedical Engineering,
+Dialogue: 0,0:06:56.30,0:06:58.83,*Default,NTP,0000,0000,0000,,即制造一台能代替人体器官功能的机器\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}building a machine that can replace the function of
+Dialogue: 0,0:06:58.83,0:07:00.59,*Default,NTP,0000,0000,0000,,哪怕仅仅只是暂时地代替\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}one of your organs even temporarily,
+Dialogue: 0,0:07:00.70,0:07:02.93,*Default,NTP,0000,0000,0000,,比如在手术中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for example, during an operation.
+Dialogue: 0,0:07:03.03,0:07:07.05,*Default,NTP,0000,0000,0000,,这是另一幅熟悉的图片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is another familiar picture,
+Dialogue: 0,0:07:07.17,0:07:07.90,*Default,NTP,0000,0000,0000,,我有意选择了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I purposely picked one
+Dialogue: 0,0:07:07.90,0:07:09.97,*Default,NTP,0000,0000,0000,,与你们通常在晚间新闻见到的那种相比\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that looked sort of old fashioned compared to
+Dialogue: 0,0:07:09.97,0:07:10.97,*Default,NTP,0000,0000,0000,,看上去\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the usual way you see this, 
+Dialogue: 0,0:07:10.97,0:07:13.29,*Default,NTP,0000,0000,0000,,比较老式的设备\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} which might be on the nightly news.
+Dialogue: 0,0:07:13.39,0:07:15.63,*Default,NTP,0000,0000,0000,,你们看到一个亮点在屏幕上来回跳动\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You see a bleep going across the screen to indicate
+Dialogue: 0,0:07:15.63,0:07:17.43,*Default,NTP,0000,0000,0000,,来显示病人脉搏的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they've got their finger on the pulse of
+Dialogue: 0,0:07:17.43,0:07:18.34,*Default,NTP,0000,0000,0000,,跳动情况\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} what's happening,
+Dialogue: 0,0:07:18.45,0:07:19.43,*Default,NTP,0000,0000,0000,,就像在急诊室的故事\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or you see it in TV shows
+Dialogue: 0,0:07:19.43,0:07:20.51,*Default,NTP,0000,0000,0000,,这类电视中看到的那样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} like ER.
+Dialogue: 0,0:07:20.64,0:07:23.92,*Default,NTP,0000,0000,0000,,你会一直在电脑屏幕上看到这样的图像\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You see these images on computer screens all the time;
+Dialogue: 0,0:07:24.08,0:07:28.50,*Default,NTP,0000,0000,0000,,这就是EKG或者ECG  即心电图\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it's an example of an EKG or ECG, an electrocardiograph.
+Dialogue: 0,0:07:28.62,0:07:31.80,*Default,NTP,0000,0000,0000,,通过这种设备也能了解人体\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's a machine that also looks inside your body,
+Dialogue: 0,0:07:31.90,0:07:33.83,*Default,NTP,0000,0000,0000,,但是以一种截然不同的方式\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but looks inside in a different kind of way.
+Dialogue: 0,0:07:33.94,0:07:37.07,*Default,NTP,0000,0000,0000,,它并不对人进行直接的造影\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Rather than by forming an image or a picture
+Dialogue: 0,0:07:37.07,0:07:41.60,*Default,NTP,0000,0000,0000,,而是将电极放到身体表面\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you put electrodes on the surface of the body
+Dialogue: 0,0:07:41.60,0:07:42.84,*Default,NTP,0000,0000,0000,,通过测量该位置电势能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and measure the electrical potential
+Dialogue: 0,0:07:42.84,0:07:45.48,*Default,NTP,0000,0000,0000,,表征该部位的生理状态\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}as a function of position on the body.
+Dialogue: 0,0:07:45.63,0:07:48.80,*Default,NTP,0000,0000,0000,,人们已经证明在体表测量得到的电势能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It turns out the electrical potential or electricity
+Dialogue: 0,0:07:48.80,0:07:50.93,*Default,NTP,0000,0000,0000,,或者电信号\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you can measure on the surface of the body 
+Dialogue: 0,0:07:50.93,0:07:52.63,*Default,NTP,0000,0000,0000,,能够表征\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}reflects things
+Dialogue: 0,0:07:52.63,0:07:54.11,*Default,NTP,0000,0000,0000,,像心跳这样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that are happening deeper inside 
+Dialogue: 0,0:07:54.11,0:07:56.46,*Default,NTP,0000,0000,0000,,身体较深处的变化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}like the beating of your heart.
+Dialogue: 0,0:07:56.57,0:07:59.41,*Default,NTP,0000,0000,0000,,如果将电极放置正确\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}If you put the electrodes in the right position
+Dialogue: 0,0:07:59.41,0:08:01.37,*Default,NTP,0000,0000,0000,,并采用正确的方式检测\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and you measure in the right way
+Dialogue: 0,0:08:01.37,0:08:04.45,*Default,NTP,0000,0000,0000,,就能检测到心脏的电活动\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can detect the electrical activity of the heart
+Dialogue: 0,0:08:04.45,0:08:07.94,*Default,NTP,0000,0000,0000,,并将它记录在像这样的长图记录仪上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and record it on a strip recorder like this one shown here,
+Dialogue: 0,0:08:08.04,0:08:09.24,*Default,NTP,0000,0000,0000,,或者显示在电脑上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or display it on a computer.
+Dialogue: 0,0:08:09.36,0:08:13.44,*Default,NTP,0000,0000,0000,,这是生物医学工程的另一个例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So this is another example of Biomedical Engineering
+Dialogue: 0,0:08:13.44,0:08:18.46,*Default,NTP,0000,0000,0000,,你能看到正常人的心脏是如何工作的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where you can look at the function of a heart in a living person
+Dialogue: 0,0:08:18.46,0:08:22.70,*Default,NTP,0000,0000,0000,,有了一个具备识读心电图经验的内科医生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and a physician who is experienced at looking at these,
+Dialogue: 0,0:08:22.93,0:08:24.30,*Default,NTP,0000,0000,0000,,和一台正常工作的心电图机\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and a machine that works well,
+Dialogue: 0,0:08:24.40,0:08:27.77,*Default,NTP,0000,0000,0000,,将这两者相结合就能诊断出\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}with those two things you can diagnose a lot of things
+Dialogue: 0,0:08:27.77,0:08:30.04,*Default,NTP,0000,0000,0000,,心脏内部的多种异常情况\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that are happening inside of a heart
+Dialogue: 0,0:08:30.04,0:08:32.02,*Default,NTP,0000,0000,0000,,我们将在这门课进行到一半时\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about 
+Dialogue: 0,0:08:32.02,0:08:33.67,*Default,NTP,0000,0000,0000,,讨论这方面内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that about halfway through the course.
+Dialogue: 0,0:08:33.80,0:08:36.97,*Default,NTP,0000,0000,0000,,这张图对你们来说可能不是很熟悉\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This picture might be less familiar to you
+Dialogue: 0,0:08:36.98,0:08:38.87,*Default,NTP,0000,0000,0000,,但你们可能都知道\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but you probably all know
+Dialogue: 0,0:08:38.87,0:08:40.96,*Default,NTP,0000,0000,0000,,在过去的一百年中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that we have developed over the last 100 years or so
+Dialogue: 0,0:08:40.96,0:08:45.91,*Default,NTP,0000,0000,0000,,我们已经能够从人和动物体内提取细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the ability to take cells out of a person, or cells out of an animal
+Dialogue: 0,0:08:47.41,0:08:50.48,*Default,NTP,0000,0000,0000,,并在培养基中培养\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and keep those isolated cells alive in culture
+Dialogue: 0,0:08:50.48,0:08:51.83,*Default,NTP,0000,0000,0000,,使它们存活一段时间\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for extended periods of time
+Dialogue: 0,0:08:51.83,0:08:54.69,*Default,NTP,0000,0000,0000,,这项技术叫做细胞培养技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this technology is called cell culture technology.
+Dialogue: 0,0:08:54.97,0:08:56.90,*Default,NTP,0000,0000,0000,,我们在这门课程进行到第三周时\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We're going to spend quite of bit of time
+Dialogue: 0,0:08:56.90,0:08:59.33,*Default,NTP,0000,0000,0000,,会花一定的时间来讨论它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}talking about it during the third week of the course.
+Dialogue: 0,0:08:59.46,0:09:04.02,*Default,NTP,0000,0000,0000,,举例来说  通过从人的皮肤\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}By taking cells from the skin, for example,
+Dialogue: 0,0:09:04.15,0:09:06.86,*Default,NTP,0000,0000,0000,,骨髓  或者血液中提取细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or cells from your blood or cells from the bone marrow
+Dialogue: 0,0:09:06.86,0:09:08.54,*Default,NTP,0000,0000,0000,,并在培养基中培养\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and keeping them alive in culture,
+Dialogue: 0,0:09:08.66,0:09:11.64,*Default,NTP,0000,0000,0000,,就能研究人类细胞是如何工作的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we've been able to study how human cells work
+Dialogue: 0,0:09:11.64,0:09:15.41,*Default,NTP,0000,0000,0000,,并在一定程度上了解人类机体的功能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and learn a lot about the functioning of human organism.
+Dialogue: 0,0:09:15.53,0:09:20.02,*Default,NTP,0000,0000,0000,,我们不仅已经知道如何使细胞存活\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We've also learned how to not only keep cells alive,
+Dialogue: 0,0:09:20.17,0:09:23.09,*Default,NTP,0000,0000,0000,,还能在某些情况下令它们进行体外复制\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but in certain cases make them replicate outside the body,
+Dialogue: 0,0:09:23.23,0:09:26.24,*Default,NTP,0000,0000,0000,,人们可以取一些皮肤细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so maybe you could take a few skin cells
+Dialogue: 0,0:09:26.24,0:09:28.53,*Default,NTP,0000,0000,0000,,以合适的方式培养它们 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and keep them in culture in the right way and 
+Dialogue: 0,0:09:28.53,0:09:29.58,*Default,NTP,0000,0000,0000,,让它们增殖\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}replicate them
+Dialogue: 0,0:09:29.58,0:09:32.53,*Default,NTP,0000,0000,0000,,就能在几周后得到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so that you get many millions of skin cells 
+Dialogue: 0,0:09:32.53,0:09:35.86,*Default,NTP,0000,0000,0000,,成千上万的皮肤细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}after several weeks or so.
+Dialogue: 0,0:09:36.16,0:09:41.53,*Default,NTP,0000,0000,0000,,现在  与此相关的新技术正在蓬勃发展\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Now one of the new technologies that's evolving,
+Dialogue: 0,0:09:41.65,0:09:45.32,*Default,NTP,0000,0000,0000,,我们将在这学期的后半部分讨论到它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that we're going to talk about in the last half of the course,
+Dialogue: 0,0:09:45.46,0:09:47.21,*Default,NTP,0000,0000,0000,,这项技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is taking cells 
+Dialogue: 0,0:09:47.21,0:09:50.72,*Default,NTP,0000,0000,0000,,让细胞在体外增殖\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that have been propagated in this way outside the body
+Dialogue: 0,0:09:50.72,0:09:53.76,*Default,NTP,0000,0000,0000,,并促使它们形成新的组织\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and encouraging them to form new tissues.
+Dialogue: 0,0:09:53.88,0:09:57.82,*Default,NTP,0000,0000,0000,,举例来说  这是一张真正的人造皮肤\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is one example of that: this is actually artificial skin.
+Dialogue: 0,0:09:57.97,0:09:59.96,*Default,NTP,0000,0000,0000,,在这个培养皿中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's in this Petri dish.
+Dialogue: 0,0:10:00.11,0:10:02.26,*Default,NTP,0000,0000,0000,,这是一张薄膜  它是一个聚合物支架\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Here is a thin membrane, it's a polymer scaffold,
+Dialogue: 0,0:10:02.38,0:10:04.10,*Default,NTP,0000,0000,0000,,在这个支架上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and on that polymer scaffold 
+Dialogue: 0,0:10:04.10,0:10:07.25,*Default,NTP,0000,0000,0000,,科学家放了一些皮肤细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}scientists have placed some skin cells
+Dialogue: 0,0:10:07.25,0:10:09.47,*Default,NTP,0000,0000,0000,,并让它们生长\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and they've allowed it to grow.
+Dialogue: 0,0:10:09.57,0:10:11.83,*Default,NTP,0000,0000,0000,,如果培养方法得当\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And if you maintained it in the right way,
+Dialogue: 0,0:10:11.92,0:10:14.29,*Default,NTP,0000,0000,0000,,这个聚合物支架与这些皮肤细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this polymer scaffold together with the skin cells
+Dialogue: 0,0:10:14.29,0:10:15.39,*Default,NTP,0000,0000,0000,,会融合形成皮肤\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}will grow into skin.
+Dialogue: 0,0:10:15.53,0:10:19.22,*Default,NTP,0000,0000,0000,,人们能够用这种组织工程学意义上的皮肤\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And you can use this tissue engineered skin
+Dialogue: 0,0:10:19.22,0:10:23.67,*Default,NTP,0000,0000,0000,,来治疗严重烧伤的病人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to treat a patient who's had severe burns, for example,
+Dialogue: 0,0:10:23.80,0:10:26.29,*Default,NTP,0000,0000,0000,,或那些溃疡久治不愈的糖尿病病人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or a diabetic who's developed ulcers that won't heal.
+Dialogue: 0,0:10:26.44,0:10:29.38,*Default,NTP,0000,0000,0000,,这个例子中提到的技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So this is an example of a technology 
+Dialogue: 0,0:10:29.38,0:10:30.55,*Default,NTP,0000,0000,0000,,才刚出现\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's just emerging now,
+Dialogue: 0,0:10:30.66,0:10:32.08,*Default,NTP,0000,0000,0000,,但在你的有生之年\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it's certainly going to impact you
+Dialogue: 0,0:10:32.08,0:10:34.39,*Default,NTP,0000,0000,0000,,它肯定会影响人们的生活\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in your lifetime
+Dialogue: 0,0:10:34.39,0:10:36.83,*Default,NTP,0000,0000,0000,,我们会讨论到这门技术的原理和\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about how it works
+Dialogue: 0,0:10:36.83,0:10:40.21,*Default,NTP,0000,0000,0000,,当前的技术水平\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and what the current state-of-the-art is there.
+Dialogue: 0,0:10:40.33,0:10:47.41,*Default,NTP,0000,0000,0000,,这个装置大部分是用塑料做的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This device held here is really made of mainly plastic
+Dialogue: 0,0:10:47.41,0:10:50.75,*Default,NTP,0000,0000,0000,,还有一点金属\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and a little bit of metal.
+Dialogue: 0,0:10:50.93,0:10:55.05,*Default,NTP,0000,0000,0000,,它是一个完全植入式人工心脏\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's a fully implantable artificial heart,
+Dialogue: 0,0:10:55.31,0:10:59.81,*Default,NTP,0000,0000,0000,,它是在七八年前发明\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and it was introduced about seven or eight years ago now.
+Dialogue: 0,0:10:59.89,0:11:02.12,*Default,NTP,0000,0000,0000,,第一个植入这个人工心脏病人是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It was implanted into the first patient,
+Dialogue: 0,0:11:02.12,0:11:03.87,*Default,NTP,0000,0000,0000,,住在肯塔基州的一位先生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a gentleman in Kentucky,
+Dialogue: 0,0:11:03.99,0:11:05.69,*Default,NTP,0000,0000,0000,,他在移植手术后\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and he stayed alive for a period of time 
+Dialogue: 0,0:11:05.69,0:11:07.39,*Default,NTP,0000,0000,0000,,存活了一段时间\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}with this device replacing his heart.
+Dialogue: 0,0:11:10.58,0:11:13.06,*Default,NTP,0000,0000,0000,,人造心脏技术的发展\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Development of an artificial heart,
+Dialogue: 0,0:11:13.16,0:11:15.95,*Default,NTP,0000,0000,0000,,是生物医学工程的另一个例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}again another example of Biomedical Engineering,
+Dialogue: 0,0:11:16.05,0:11:17.52,*Default,NTP,0000,0000,0000,,科学家们\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is something that people
+Dialogue: 0,0:11:17.52,0:11:20.39,*Default,NTP,0000,0000,0000,,试图在这二十年中去改进它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}have been trying to accomplish for decades now,
+Dialogue: 0,0:11:20.48,0:11:23.09,*Default,NTP,0000,0000,0000,,而这是最接近成功的一个实例\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and this is the closest that we've come
+Dialogue: 0,0:11:23.09,0:11:27.39,*Default,NTP,0000,0000,0000,,这枚人造心脏有很多优点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and there are many advantages of this particular artificial heart.
+Dialogue: 0,0:11:27.48,0:11:30.82,*Default,NTP,0000,0000,0000,,在很多方向上也做出了重要的创新\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And it's important innovation in several different ways
+Dialogue: 0,0:11:30.82,0:11:33.69,*Default,NTP,0000,0000,0000,,我们会讲到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we're going to talk about 
+Dialogue: 0,0:11:33.69,0:11:35.52,*Default,NTP,0000,0000,0000,,制造人造器官的技术原理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this whole science of building artificial organs,
+Dialogue: 0,0:11:35.65,0:11:39.56,*Default,NTP,0000,0000,0000,,这些装置完全用合成材料制成\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}devices that are made out of totally synthetic components
+Dialogue: 0,0:11:39.56,0:11:42.74,*Default,NTP,0000,0000,0000,,能够取代人体器官的功能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to replace the function of your natural organs,
+Dialogue: 0,0:11:42.82,0:11:46.07,*Default,NTP,0000,0000,0000,,人造心脏就是一个很好的范例\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the artificial heart is a good example of that.
+Dialogue: 0,0:11:46.17,0:11:49.62,*Default,NTP,0000,0000,0000,,最底下的这张图中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This picture on the bottom
+Dialogue: 0,0:11:49.62,0:11:55.58,*Default,NTP,0000,0000,0000,,只有一系列彩色的点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}here is really just a series of colored dots.
+Dialogue: 0,0:11:55.80,0:11:58.10,*Default,NTP,0000,0000,0000,,一些是黄色  一些是红色\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Some are yellow, some are red,
+Dialogue: 0,0:11:58.19,0:12:00.26,*Default,NTP,0000,0000,0000,,一些是绿色的  有人知道这是什么吗\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and some are green - does anybody know what this is?
+Dialogue: 0,0:12:00.74,0:12:01.94,*Default,NTP,0000,0000,0000,,你们曾经见过这样的图么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Have you seen pictures like this?
+Dialogue: 0,0:12:02.25,0:12:05.03,*Default,NTP,0000,0000,0000,,这是一种叫做\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's an example of a technology called 
+Dialogue: 0,0:12:05.03,0:12:08.27,*Default,NTP,0000,0000,0000,,基因芯片的技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a gene chip that allows you to,
+Dialogue: 0,0:12:08.41,0:12:12.00,*Default,NTP,0000,0000,0000,,其上每个点可能代表着一种DNA\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}on each one of these spots there is DNA for example,
+Dialogue: 0,0:12:12.13,0:12:18.61,*Default,NTP,0000,0000,0000,,它是你基因组中一个特定的基因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's specific for a particular gene in your genome,
+Dialogue: 0,0:12:18.70,0:12:20.37,*Default,NTP,0000,0000,0000,,亦或是人类基因组中的一个基因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in the human genome for example.
+Dialogue: 0,0:12:20.49,0:12:23.25,*Default,NTP,0000,0000,0000,,通过取病人的一点体液\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}By incubating a small sample of fluid
+Dialogue: 0,0:12:23.25,0:12:26.16,*Default,NTP,0000,0000,0000,,在芯片上进行孵育\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}from a patient on a gene chip like this,
+Dialogue: 0,0:12:26.30,0:12:29.73,*Default,NTP,0000,0000,0000,,正因为芯片上的每个点都代表不同的基因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where every one of these dots represents a different gene,
+Dialogue: 0,0:12:29.80,0:12:34.32,*Default,NTP,0000,0000,0000,,我们就可以通过看芯片上点的颜色\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can see by looking at the pattern of colors on this chip
+Dialogue: 0,0:12:34.32,0:12:38.59,*Default,NTP,0000,0000,0000,,判断在一个特定的个体中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which genes are being expressed
+Dialogue: 0,0:12:38.59,0:12:40.07,*Default,NTP,0000,0000,0000,,哪些基因表达了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and which genes are not being expressed
+Dialogue: 0,0:12:40.07,0:12:41.88,*Default,NTP,0000,0000,0000,,哪些基因没表达\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in that particular individual.
+Dialogue: 0,0:12:41.93,0:12:44.76,*Default,NTP,0000,0000,0000,,他不仅能让研究者了解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So it lets you do a profile of
+Dialogue: 0,0:12:44.77,0:12:46.75,*Default,NTP,0000,0000,0000,,人带有哪些基因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}not just the genes that you possess, for example,
+Dialogue: 0,0:12:46.85,0:12:48.15,*Default,NTP,0000,0000,0000,,还能知道 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but what genes are actually being 
+Dialogue: 0,0:12:48.15,0:12:51.52,*Default,NTP,0000,0000,0000,,在收集到的体液细胞的样本中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}used to make proteins in the cells
+Dialogue: 0,0:12:51.52,0:12:54.89,*Default,NTP,0000,0000,0000,,哪些基因是合成蛋白质的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that surround the fluid where this was collected.
+Dialogue: 0,0:12:55.00,0:12:58.27,*Default,NTP,0000,0000,0000,,这是一项具有里程碑意义的创新\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So this has been a remarkable innovation.
+Dialogue: 0,0:12:58.39,0:13:02.28,*Default,NTP,0000,0000,0000,,这不失为是生物医学工程的另一个例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's another example of Biomedical Engineering technology 
+Dialogue: 0,0:13:02.28,0:13:03.67,*Default,NTP,0000,0000,0000,,它让我们以一种全新的方式\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that allows us to look at 
+Dialogue: 0,0:13:03.67,0:13:05.33,*Default,NTP,0000,0000,0000,,得以了解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what's happening inside an individual, a patient,
+Dialogue: 0,0:13:05.34,0:13:08.52,*Default,NTP,0000,0000,0000,,病人身体内部发生了什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in a totally different way than we were before.
+Dialogue: 0,0:13:08.61,0:13:11.44,*Default,NTP,0000,0000,0000,,这样不仅能够知道自己带有什么基因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}By looking to see not just what genes you carry
+Dialogue: 0,0:13:11.44,0:13:13.11,*Default,NTP,0000,0000,0000,,还能知道哪些基因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but what genes are being used
+Dialogue: 0,0:13:13.11,0:13:15.16,*Default,NTP,0000,0000,0000,,在人生哪个时期发挥作用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}at particular times in your life.
+Dialogue: 0,0:13:15.24,0:13:19.80,*Default,NTP,0000,0000,0000,,这项技术现在还只是一种研究工具\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is mainly a research tool now,
+Dialogue: 0,0:13:19.94,0:13:22.25,*Default,NTP,0000,0000,0000,,但我们有理由相信\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but there's lots of reasons to believe
+Dialogue: 0,0:13:22.25,0:13:23.36,*Default,NTP,0000,0000,0000,,它将改变\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that this is going to change the way 
+Dialogue: 0,0:13:23.36,0:13:26.44,*Default,NTP,0000,0000,0000,,内科医生诊疗实践的方式\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that physicians practice medicine
+Dialogue: 0,0:13:26.44,0:13:28.15,*Default,NTP,0000,0000,0000,,因为它能让医生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}by allowing them to diagnose
+Dialogue: 0,0:13:28.15,0:13:31.05,*Default,NTP,0000,0000,0000,,诊断或预测出病人将要得的病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or predict what's going to happen to you in ways
+Dialogue: 0,0:13:31.05,0:13:32.58,*Default,NTP,0000,0000,0000,,这是他们现在做不到的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they can't currently.
+Dialogue: 0,0:13:32.73,0:13:34.75,*Default,NTP,0000,0000,0000,,我们将讨论这门技术会应用于哪些领域\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And so we'll talk about technologies like this,
+Dialogue: 0,0:13:34.87,0:13:38.49,*Default,NTP,0000,0000,0000,,它的科学原理是什么以及\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where they're at, what the scientific basis of it is,
+Dialogue: 0,0:13:38.59,0:13:40.49,*Default,NTP,0000,0000,0000,,如何使他们发挥作用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how they might be useful.
+Dialogue: 0,0:13:42.06,0:13:44.14,*Default,NTP,0000,0000,0000,,这是一架飞机\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is an airplane,
+Dialogue: 0,0:13:45.05,0:13:47.08,*Default,NTP,0000,0000,0000,,它和生物医学工程有什么关系呢\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what does that have to do with Biomedical Engineering?
+Dialogue: 0,0:13:47.21,0:13:49.70,*Default,NTP,0000,0000,0000,,你只能勉强地说\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Well you could stretch it and say
+Dialogue: 0,0:13:49.70,0:13:53.72,*Default,NTP,0000,0000,0000,,这个工程学成果能通过把人们从一个地方\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that an example of engineering to improve human health
+Dialogue: 0,0:13:53.72,0:13:56.80,*Default,NTP,0000,0000,0000,,带到另一个地方来提高人的健康水平\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is getting them from one place to another,
+Dialogue: 0,0:13:56.86,0:14:00.29,*Default,NTP,0000,0000,0000,,我只能联想到这个程度\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but that would be more of a stretch than I'm going to make.
+Dialogue: 0,0:14:00.39,0:14:03.76,*Default,NTP,0000,0000,0000,,但像飞机这样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But it turns out that technologies like airplanes,
+Dialogue: 0,0:14:03.88,0:14:06.11,*Default,NTP,0000,0000,0000,,在上世纪发展起来的技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which were developed in the last century,
+Dialogue: 0,0:14:06.23,0:14:07.95,*Default,NTP,0000,0000,0000,,确实已经成为医学不可分割的一部分\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}have become integral parts of medicine.
+Dialogue: 0,0:14:08.06,0:14:10.50,*Default,NTP,0000,0000,0000,,你们都知道\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}For example, you all know that
+Dialogue: 0,0:14:10.50,0:14:13.43,*Default,NTP,0000,0000,0000,,有些疾病只能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} the only treatment for some diseases is
+Dialogue: 0,0:14:13.43,0:14:16.61,*Default,NTP,0000,0000,0000,,通过器官移植来治疗  肾移植\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to get an organ transplant: a kidney transplant,
+Dialogue: 0,0:14:16.73,0:14:21.16,*Default,NTP,0000,0000,0000,,肝移植是在某些疾病的治疗中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or a liver transplant is the only life extending intervention
+Dialogue: 0,0:14:21.16,0:14:24.31,*Default,NTP,0000,0000,0000,,唯一能够延长生命的手段\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that can be done for some kinds of diseases.
+Dialogue: 0,0:14:24.43,0:14:28.87,*Default,NTP,0000,0000,0000,,移植手术需要供体器官\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Transplants require donors,
+Dialogue: 0,0:14:29.23,0:14:30.57,*Default,NTP,0000,0000,0000,,而供体和受体\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the donor organ is usually 
+Dialogue: 0,0:14:30.57,0:14:32.13,*Default,NTP,0000,0000,0000,,往往在不同地方\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}not at the same physical location that the recipient is
+Dialogue: 0,0:14:36.57,0:14:40.62,*Default,NTP,0000,0000,0000,,这就需要一架飞机\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so jets like this one have become very important
+Dialogue: 0,0:14:40.62,0:14:43.29,*Default,NTP,0000,0000,0000,,将器官由供体所在地送到受体所在地\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in connecting donors to recipients.
+Dialogue: 0,0:14:43.41,0:14:44.64,*Default,NTP,0000,0000,0000,,一组外科医生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}A team of surgeons is working to
+Dialogue: 0,0:14:44.64,0:14:46.89,*Default,NTP,0000,0000,0000,,将器官从供体取出的同时\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} harvest an organ at one site
+Dialogue: 0,0:14:46.89,0:14:49.24,*Default,NTP,0000,0000,0000,,另一组医生在另一个地方\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}while another team of surgeons is working
+Dialogue: 0,0:14:49.24,0:14:51.54,*Default,NTP,0000,0000,0000,,为移植手术做准备\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to prepare the recipient at another site,
+Dialogue: 0,0:14:51.71,0:14:53.88,*Default,NTP,0000,0000,0000,,等待器官空运过去\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the organ is flown there.
+Dialogue: 0,0:14:53.94,0:14:55.11,*Default,NTP,0000,0000,0000,,为什么要这么做呢\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Now why does that happen?
+Dialogue: 0,0:14:55.20,0:14:56.40,*Default,NTP,0000,0000,0000,,因为你必须以最快的速度\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Because you have to get the
+Dialogue: 0,0:14:56.40,0:14:58.35,*Default,NTP,0000,0000,0000,,将器官从一处送到另一处\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}organ from one place to another fast, right?
+Dialogue: 0,0:14:58.50,0:15:00.64,*Default,NTP,0000,0000,0000,,器官必须以最快的速度送到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The organ has to get from one place to another
+Dialogue: 0,0:15:00.64,0:15:02.92,*Default,NTP,0000,0000,0000,,用飞机送是最快的方法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}very rapidly and this is the fastest way to do it.
+Dialogue: 0,0:15:03.06,0:15:05.20,*Default,NTP,0000,0000,0000,,如果我们能够发展\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Well what if we could develop ways 
+Dialogue: 0,0:15:05.20,0:15:06.81,*Default,NTP,0000,0000,0000,,一种工程方法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}using engineering techniques
+Dialogue: 0,0:15:06.81,0:15:08.63,*Default,NTP,0000,0000,0000,,延长器官的保存时间\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to extend the life of an organ,
+Dialogue: 0,0:15:08.78,0:15:11.68,*Default,NTP,0000,0000,0000,,就没有必要赶得那么紧了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so it didn't have to get it where it went so quickly?
+Dialogue: 0,0:15:11.80,0:15:15.11,*Default,NTP,0000,0000,0000,,这项技术将给器官移植领域\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Then that would open up lots of more possibilities
+Dialogue: 0,0:15:15.11,0:15:18.04,*Default,NTP,0000,0000,0000,,带来更多的可能性\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for organ transplantation than are known now.
+Dialogue: 0,0:15:18.16,0:15:19.93,*Default,NTP,0000,0000,0000,,如果我们能发明一种方法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What if we could figure out ways
+Dialogue: 0,0:15:19.93,0:15:22.07,*Default,NTP,0000,0000,0000,,完全淘汰器官移植的话又会怎样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to avoid organ transplantation entirely?
+Dialogue: 0,0:15:22.20,0:15:23.18,*Default,NTP,0000,0000,0000,,如果我们只需\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What if we could just take a few cells 
+Dialogue: 0,0:15:23.18,0:15:24.98,*Default,NTP,0000,0000,0000,,从供体器官中取一些细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}from that donor organ,
+Dialogue: 0,0:15:25.21,0:15:26.38,*Default,NTP,0000,0000,0000,,把他们放到适当的位置培养出新的器官\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}ship them to the site,
+Dialogue: 0,0:15:26.52,0:15:29.22,*Default,NTP,0000,0000,0000,,就完成了移植过程  这又意味着什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}grow a new organ at the site and then implant it there?
+Dialogue: 0,0:15:29.34,0:15:30.50,*Default,NTP,0000,0000,0000,,这些将会是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}These are examples of 
+Dialogue: 0,0:15:30.50,0:15:33.05,*Default,NTP,0000,0000,0000,,生物工程领域未来的发展\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Biomedical Engineering of the future
+Dialogue: 0,0:15:33.05,0:15:35.38,*Default,NTP,0000,0000,0000,,它根植于现有技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that expand on what we currently use,
+Dialogue: 0,0:15:35.50,0:15:39.95,*Default,NTP,0000,0000,0000,,包括了很多像这样广泛使用的技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which involves to no small extent, technology like this.
+Dialogue: 0,0:15:40.09,0:15:45.35,*Default,NTP,0000,0000,0000,,我猜你们有百分之三十到百分之五十的人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I would guess that probably 30% to 50% of you
+Dialogue: 0,0:15:45.35,0:15:47.68,*Default,NTP,0000,0000,0000,,每天会做这样的事\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}do this everyday,
+Dialogue: 0,0:15:47.81,0:15:49.58,*Default,NTP,0000,0000,0000,,将一小片塑料 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you put a piece of plastic,
+Dialogue: 0,0:15:49.58,0:15:52.11,*Default,NTP,0000,0000,0000,,合成塑料放到眼睛里\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} a synthetic piece of plastic into your eye
+Dialogue: 0,0:15:52.11,0:15:54.25,*Default,NTP,0000,0000,0000,,来提高自己的视力\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to improve your vision.
+Dialogue: 0,0:15:54.39,0:15:55.61,*Default,NTP,0000,0000,0000,,从我出生\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Contact lens technology 
+Dialogue: 0,0:15:55.61,0:15:58.66,*Default,NTP,0000,0000,0000,,到你们出生的时间段里\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}has changed dramatically from the time
+Dialogue: 0,0:15:58.66,0:16:01.84,*Default,NTP,0000,0000,0000,,隐形眼镜技术发展的很快\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that I was born to the time that you were born,
+Dialogue: 0,0:16:01.98,0:16:03.15,*Default,NTP,0000,0000,0000,,你们现在使用的隐形眼镜\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the contact lenses you
+Dialogue: 0,0:16:03.15,0:16:05.05,*Default,NTP,0000,0000,0000,,与三十年前使用的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}use today are much different than the ones
+Dialogue: 0,0:16:05.05,0:16:06.75,*Default,NTP,0000,0000,0000,,已经有天壤之别\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that would have been used 30 years ago.
+Dialogue: 0,0:16:06.87,0:16:09.21,*Default,NTP,0000,0000,0000,,这也属于生物医学工程的范畴\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is Biomedical Engineering as well.
+Dialogue: 0,0:16:09.34,0:16:11.11,*Default,NTP,0000,0000,0000,,工程师们不断研制新的材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Engineers who are developing new materials,
+Dialogue: 0,0:16:11.25,0:16:14.59,*Default,NTP,0000,0000,0000,,这些材料应该是  想想吧\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}materials that can be, if you think about it,
+Dialogue: 0,0:16:14.73,0:16:15.28,*Default,NTP,0000,0000,0000,,能让你们敢于\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}there's not very many things that you would want to
+Dialogue: 0,0:16:15.28,0:16:15.91,*Default,NTP,0000,0000,0000,,放到眼睛里的 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}put in your eye and 
+Dialogue: 0,0:16:15.91,0:16:17.09,*Default,NTP,0000,0000,0000,,并令人感到舒适的材料并不多\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you'll feel comportable to put in your eye
+Dialogue: 0,0:16:19.19,0:16:21.53,*Default,NTP,0000,0000,0000,,这应该是一种非常安全非常稳定的材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so this is a very safe, a very inert material.
+Dialogue: 0,0:16:21.68,0:16:23.40,*Default,NTP,0000,0000,0000,,是什么赋予了材料这样的属性\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What gives it those properties?
+Dialogue: 0,0:16:23.50,0:16:25.72,*Default,NTP,0000,0000,0000,,是什么使得它足够安全\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What makes it so safe that it can be put in
+Dialogue: 0,0:16:25.72,0:16:28.04,*Default,NTP,0000,0000,0000,,以至于能放到眼睛\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}one of the most sensitive places in your body,
+Dialogue: 0,0:16:28.14,0:16:30.12,*Default,NTP,0000,0000,0000,,这个人体最敏感的器官之一上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in contact with your eye?
+Dialogue: 0,0:16:30.24,0:16:32.14,*Default,NTP,0000,0000,0000,,为什么你对它有信心\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Why do you have confidence putting it
+Dialogue: 0,0:16:32.14,0:16:33.10,*Default,NTP,0000,0000,0000,,让它接触\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in contact with 
+Dialogue: 0,0:16:33.10,0:16:35.24,*Default,NTP,0000,0000,0000,,你身上最重要的器官\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}one of the most important organs of your body?
+Dialogue: 0,0:16:35.39,0:16:38.26,*Default,NTP,0000,0000,0000,,因为你深信生物医学工程师们\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Because you trust biomedical engineers
+Dialogue: 0,0:16:38.26,0:16:40.29,*Default,NTP,0000,0000,0000,,在设计这些材料时\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to have done a good job in designing these things and
+Dialogue: 0,0:16:40.29,0:16:42.58,*Default,NTP,0000,0000,0000,,已经做了充分的工作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} we'll talk about
+Dialogue: 0,0:16:42.58,0:16:45.26,*Default,NTP,0000,0000,0000,,我们会讨论如何设计和测试这些生物材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how biomaterials are designed and tested,
+Dialogue: 0,0:16:45.35,0:16:47.99,*Default,NTP,0000,0000,0000,,什么材质具有\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and what makes a material,
+Dialogue: 0,0:16:48.11,0:16:48.78,*Default,NTP,0000,0000,0000,,能够用来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the properties of a material 
+Dialogue: 0,0:16:48.78,0:16:50.79,*Default,NTP,0000,0000,0000,,做成隐形眼镜的材料的属性\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you could use as a contact lens,
+Dialogue: 0,0:16:50.89,0:16:53.06,*Default,NTP,0000,0000,0000,,它们需要具备的特性究竟是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what are the properties that it needs to have.
+Dialogue: 0,0:17:02.84,0:17:05.95,*Default,NTP,0000,0000,0000,,人造髋关节也是一例\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is an example of an artificial hip.
+Dialogue: 0,0:17:05.97,0:17:09.41,*Default,NTP,0000,0000,0000,,在过去一百多年间  我们已经了解很多\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We've learned a lot about the mechanics of
+Dialogue: 0,0:17:09.41,0:17:11.29,*Default,NTP,0000,0000,0000,,人体作为一个\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how humans work as organisms 
+Dialogue: 0,0:17:11.30,0:17:14.12,*Default,NTP,0000,0000,0000,,有机组织的工作机理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}over the last 100 years or so,
+Dialogue: 0,0:17:14.27,0:17:15.97,*Default,NTP,0000,0000,0000,,以及人体作为一个物理实体\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how we work as sort of physical objects
+Dialogue: 0,0:17:15.97,0:17:18.45,*Default,NTP,0000,0000,0000,,遵循人所共知的那些物理定律的原理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that have to obey the laws of physics that you know about.
+Dialogue: 0,0:17:18.56,0:17:20.32,*Default,NTP,0000,0000,0000,,我们生活在一个重力场中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We live in a gravitational field
+Dialogue: 0,0:17:20.32,0:17:22.46,*Default,NTP,0000,0000,0000,,这个场影响着我们的日常生活\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that it affects our day to day life,
+Dialogue: 0,0:17:22.58,0:17:24.48,*Default,NTP,0000,0000,0000,,如果你的髋关节疼痛\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and if you have hip pain or
+Dialogue: 0,0:17:24.48,0:17:27.00,*Default,NTP,0000,0000,0000,,或者有其他髋关节疾病的话\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a hip that's diseased in some way,
+Dialogue: 0,0:17:27.13,0:17:29.12,*Default,NTP,0000,0000,0000,,就不能像平常一样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and you can't stand up 
+Dialogue: 0,0:17:29.12,0:17:31.36,*Default,NTP,0000,0000,0000,,站在这个重力场中了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}against that gravitational field in the same way,
+Dialogue: 0,0:17:31.47,0:17:34.97,*Default,NTP,0000,0000,0000,,这严重限制了人的活动能力\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that severely limits what you can do in the world.
+Dialogue: 0,0:17:35.12,0:17:38.48,*Default,NTP,0000,0000,0000,,因此  生物医学工程师花了很多年时间\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So biomedical engineers have been working for many years
+Dialogue: 0,0:17:38.48,0:17:42.01,*Default,NTP,0000,0000,0000,,致力于设计像髋关节这样的关节替代品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}on how to design replacement parts for joints like the hip:
+Dialogue: 0,0:17:42.01,0:17:45.24,*Default,NTP,0000,0000,0000,,尤以人工髋关节的研究最为成熟\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the artificial hip is the most well developed of those.
+Dialogue: 0,0:17:45.62,0:17:47.60,*Default,NTP,0000,0000,0000,,我们将会更加具体地讨论它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about this in some detail.
+Dialogue: 0,0:17:47.76,0:17:50.86,*Default,NTP,0000,0000,0000,,你可以想象  这种装置对技术要求极高\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You can imagine that there are many requirements
+Dialogue: 0,0:17:50.86,0:17:54.14,*Default,NTP,0000,0000,0000,,这样它才能成为\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that a device like this has to meet in order for it
+Dialogue: 0,0:17:54.14,0:17:55.91,*Default,NTP,0000,0000,0000,,一个好的人工髋关节\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to be a good artificial hip
+Dialogue: 0,0:17:55.91,0:17:57.61,*Default,NTP,0000,0000,0000,,我们会讲到这些\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about those
+Dialogue: 0,0:17:57.61,0:18:01.08,*Default,NTP,0000,0000,0000,,以及这些年来这项技术的设计有哪些改进\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how the design of these has changed over the years
+Dialogue: 0,0:18:01.09,0:18:03.42,*Default,NTP,0000,0000,0000,,在未来会有怎样的创新\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and what we can expect in the future.
+Dialogue: 0,0:18:03.55,0:18:05.11,*Default,NTP,0000,0000,0000,,最后  在上面这里\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Lastly, up here,
+Dialogue: 0,0:18:05.12,0:18:07.89,*Default,NTP,0000,0000,0000,,这张图片是一个相对较小的装置\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is a picture of a much smaller device,
+Dialogue: 0,0:18:08.01,0:18:11.03,*Default,NTP,0000,0000,0000,,这实际上是一个人工心脏瓣膜\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this is actually an artificial heart valve
+Dialogue: 0,0:18:11.03,0:18:13.43,*Default,NTP,0000,0000,0000,,由塑料和金属制成\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that is made of plastics and metal
+Dialogue: 0,0:18:13.44,0:18:16.75,*Default,NTP,0000,0000,0000,,可以取代人的心脏瓣膜\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and can replace the valve inside your heart.
+Dialogue: 0,0:18:16.86,0:18:21.42,*Default,NTP,0000,0000,0000,,心脏瓣膜疾病在世界上是一种常见的疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Valvular disease is not uncommon in the world;
+Dialogue: 0,0:18:21.61,0:18:24.00,*Default,NTP,0000,0000,0000,,我们会讲到一些相关的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we'll talk about that a little bit.
+Dialogue: 0,0:18:24.08,0:18:25.05,*Default,NTP,0000,0000,0000,,我们会讨论\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about 
+Dialogue: 0,0:18:25.05,0:18:27.57,*Default,NTP,0000,0000,0000,,正常的瓣膜在心脏中如何工作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how your normal valves function inside your heart
+Dialogue: 0,0:18:27.57,0:18:28.61,*Default,NTP,0000,0000,0000,,以及没有这个\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how your heart couldn't work
+Dialogue: 0,0:18:28.61,0:18:32.77,*Default,NTP,0000,0000,0000,,每天不停完成很多复杂任务的心脏瓣膜\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in the way that it did
+Dialogue: 0,0:18:32.77,0:18:33.81,*Default,NTP,0000,0000,0000,,心脏为什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if it didn't have valves that 
+Dialogue: 0,0:18:33.81,0:18:35.47,*Default,NTP,0000,0000,0000,,就不能正常工作了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}were doing a very complex operation many many times a day.
+Dialogue: 0,0:18:35.60,0:18:39.31,*Default,NTP,0000,0000,0000,,然后我们再讨论工程师们如何构建\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And then we'll talk about how you can build something
+Dialogue: 0,0:18:39.31,0:18:43.30,*Default,NTP,0000,0000,0000,,能够取代体内如此精细小巧器官的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to replace a complicated small part in the body like that.
+Dialogue: 0,0:18:43.38,0:18:47.09,*Default,NTP,0000,0000,0000,,好的  话说回来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Well let's take a step back for a minute;
+Dialogue: 0,0:18:47.22,0:18:49.85,*Default,NTP,0000,0000,0000,,了解生物医学工程的一种方法就是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's one way of looking at Biomedical Engineering,
+Dialogue: 0,0:18:49.85,0:18:52.31,*Default,NTP,0000,0000,0000,,通过看一些你们熟悉的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}by looking at sort of the things that you know about
+Dialogue: 0,0:18:52.31,0:18:53.48,*Default,NTP,0000,0000,0000,,它们同时也是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that have been 
+Dialogue: 0,0:18:53.48,0:18:55.64,*Default,NTP,0000,0000,0000,,生物医学工程的研究成果\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the result of the work of biomedical engineers
+Dialogue: 0,0:18:55.64,0:18:56.78,*Default,NTP,0000,0000,0000,,并对它们做一般意义上的讲解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and talk more generally.
+Dialogue: 0,0:18:56.90,0:18:59.38,*Default,NTP,0000,0000,0000,,但什么是工程  工程师能做什么 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But what is engineering? What do engineers do?
+Dialogue: 0,0:18:59.50,0:19:02.46,*Default,NTP,0000,0000,0000,,工程与其他领域的研究\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What makes engineering different 
+Dialogue: 0,0:19:02.46,0:19:03.94,*Default,NTP,0000,0000,0000,,有什么区别\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}than other fields of study?
+Dialogue: 0,0:19:03.98,0:19:06.30,*Default,NTP,0000,0000,0000,,是什么使得工程学如此独特\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What makes it unique so that
+Dialogue: 0,0:19:06.30,0:19:07.85,*Default,NTP,0000,0000,0000,,以至于耶鲁开设工程学院\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we have a school of engineering at Yale
+Dialogue: 0,0:19:07.85,0:19:10.54,*Default,NTP,0000,0000,0000,,并与与科学和人文学院相区别\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's separate from science and the humanities?
+Dialogue: 0,0:19:14.79,0:19:16.25,*Default,NTP,0000,0000,0000,,有想法么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Any thoughts?
+Dialogue: 0,0:19:19.41,0:19:20.70,*Default,NTP,0000,0000,0000,,它需要动手\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's more hands-on
+Dialogue: 0,0:19:21.23,0:19:22.41,*Default,NTP,0000,0000,0000,,工程更强调动手\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's much more hands-on.
+Dialogue: 0,0:19:22.60,0:19:26.85,*Default,NTP,0000,0000,0000,,你确实仔细听讲了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You're actually in there doing things.
+Dialogue: 0,0:19:26.97,0:19:29.26,*Default,NTP,0000,0000,0000,,我在这里给你们展示的很多的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Many of the things I showed
+Dialogue: 0,0:19:29.26,0:19:32.90,*Default,NTP,0000,0000,0000,,都是由零件组装而成的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you were things that were built from parts,
+Dialogue: 0,0:19:33.06,0:19:35.27,*Default,NTP,0000,0000,0000,,这是个很好的说法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's a good description.
+Dialogue: 0,0:19:35.38,0:19:37.92,*Default,NTP,0000,0000,0000,,工程和科学有什么不同\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What makes it different from science?
+Dialogue: 0,0:19:38.16,0:19:39.18,*Default,NTP,0000,0000,0000,,科学研究也是要动手的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Science can be hands-on,
+Dialogue: 0,0:19:39.29,0:19:41.19,*Default,NTP,0000,0000,0000,,你可能会到湖底\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you might be down at the lake
+Dialogue: 0,0:19:41.19,0:19:44.18,*Default,NTP,0000,0000,0000,,收集水藻并研究它们\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}picking up algae and studying them or something,
+Dialogue: 0,0:19:44.30,0:19:46.45,*Default,NTP,0000,0000,0000,,这就是动手操作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that would be hands-on.
+Dialogue: 0,0:19:46.59,0:19:47.61,*Default,NTP,0000,0000,0000,,但区别是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But what's different -
+Dialogue: 0,0:19:47.61,0:19:50.14,*Default,NTP,0000,0000,0000,,工程师应具有哪些独特的素质\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what would make you an engineer?
+Dialogue: 0,0:19:55.49,0:19:55.68,*Default,NTP,0000,0000,0000,,工程师要进行设计\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You design.
+Dialogue: 0,0:19:56.52,0:19:57.68,*Default,NTP,0000,0000,0000,,科学家们试着观察并描述事物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Scientists observe and
+Dialogue: 0,0:19:57.68,0:19:59.99,*Default,NTP,0000,0000,0000,,而工程师尝试着设计产品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}try to describe and engineers try to design.
+Dialogue: 0,0:20:00.12,0:20:01.22,*Default,NTP,0000,0000,0000,,他们利用已知的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}They take those descriptions and 
+Dialogue: 0,0:20:01.22,0:20:02.32,*Default,NTP,0000,0000,0000,,科学原理和描述\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the scientist that is known
+Dialogue: 0,0:20:02.32,0:20:03.26,*Default,NTP,0000,0000,0000,,来设计新东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and they try to design new things,
+Dialogue: 0,0:20:03.47,0:20:08.01,*Default,NTP,0000,0000,0000,,因此  如果你查字典时看到这样的词条\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so if you look at a dictionary it has words like this,
+Dialogue: 0,0:20:08.14,0:20:10.57,*Default,NTP,0000,0000,0000,,设计产品或者换句话说\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you're designing things or another way to say
+Dialogue: 0,0:20:10.57,0:20:12.67,*Default,NTP,0000,0000,0000,,试图应用科学原理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that is that you're trying to apply science,
+Dialogue: 0,0:20:12.82,0:20:14.08,*Default,NTP,0000,0000,0000,,那么你看的这个词就是应用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you're looking at applications.
+Dialogue: 0,0:20:14.20,0:20:19.06,*Default,NTP,0000,0000,0000,,工程师们利用科学知识制造新产品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We're trying to take scientific information and make something new.
+Dialogue: 0,0:20:19.19,0:20:20.52,*Default,NTP,0000,0000,0000,,另一个区别是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The other thing about it is
+Dialogue: 0,0:20:20.52,0:20:22.17,*Default,NTP,0000,0000,0000,,科学家会做很多很多新鲜玩意儿\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you could make lots of things
+Dialogue: 0,0:20:22.17,0:20:23.41,*Default,NTP,0000,0000,0000,,而一般来讲\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that are new but generally
+Dialogue: 0,0:20:23.42,0:20:25.85,*Default,NTP,0000,0000,0000,,工程师做的东西不只是新奇\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you think of engineers as making things that are not just new
+Dialogue: 0,0:20:25.85,0:20:27.27,*Default,NTP,0000,0000,0000,,它们还很有用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but they're useful,
+Dialogue: 0,0:20:27.39,0:20:29.15,*Default,NTP,0000,0000,0000,,他们做那些需要做的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they do something that needs to be done,
+Dialogue: 0,0:20:29.26,0:20:32.07,*Default,NTP,0000,0000,0000,,他们做的东西能够提高\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that they do something that
+Dialogue: 0,0:20:32.07,0:20:35.72,*Default,NTP,0000,0000,0000,,人类的生活水平和生活质量\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}improves life, the quality of life of people.
+Dialogue: 0,0:20:35.84,0:20:40.47,*Default,NTP,0000,0000,0000,,现在我对工程史做一个的简略\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So here is a brief
+Dialogue: 0,0:20:40.48,0:20:44.04,*Default,NTP,0000,0000,0000,,还有一点偏心的介绍\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and very biased history of engineering.
+Dialogue: 0,0:20:44.12,0:20:44.49,*Default,NTP,0000,0000,0000,,这个介绍很短\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's short.
+Dialogue: 0,0:20:44.74,0:20:51.19,*Default,NTP,0000,0000,0000,,工程学在19世纪中期成为一门学科\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Engineering became a discipline in about the middle of the 1800s.
+Dialogue: 0,0:20:51.31,0:20:53.49,*Default,NTP,0000,0000,0000,,许多大学  包括耶鲁  \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Lots of universities started teaching engineering
+Dialogue: 0,0:20:53.49,0:20:54.85,*Default,NTP,0000,0000,0000,,在这时开始讲授工程学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}as a discipline including Yale.
+Dialogue: 0,0:20:55.00,0:20:58.26,*Default,NTP,0000,0000,0000,,在一八五二年  那个时候\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In 1852, around that time,
+Dialogue: 0,0:20:58.38,0:21:00.66,*Default,NTP,0000,0000,0000,,这可能是最早开设的一门课程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}this might have been the first course
+Dialogue: 0,0:21:00.66,0:21:01.58,*Default,NTP,0000,0000,0000,,在国内的工程学方向\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that was offered in engineering in the country:
+Dialogue: 0,0:21:01.58,0:21:03.53,*Default,NTP,0000,0000,0000,,它就是一八五二年开始讲授的土木工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it was taught at Yale in civil engineering in 1852
+Dialogue: 0,0:21:06.72,0:21:08.97,*Default,NTP,0000,0000,0000,,甚至是耶鲁自己的学生都不知道这些\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}even Yale students don't know this;
+Dialogue: 0,0:21:09.12,0:21:11.32,*Default,NTP,0000,0000,0000,,他们所在的学院有着\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what a long, distinguished history of engineering
+Dialogue: 0,0:21:11.32,0:21:13.27,*Default,NTP,0000,0000,0000,,如此独特而悠久的历史\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that their own institution has.
+Dialogue: 0,0:21:13.39,0:21:15.81,*Default,NTP,0000,0000,0000,,事实上 工程学的第一个博士学位授予了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In fact, the first PhD degree in engineering was awarded to
+Dialogue: 0,0:21:15.81,0:21:19.11,*Default,NTP,0000,0000,0000,,一个名叫约西亚?威拉德?吉布斯的人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a fellow named J. Willard Gibbs
+Dialogue: 0,0:21:19.11,0:21:20.93,*Default,NTP,0000,0000,0000,,在一八六三年的耶鲁\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}at Yale in 1863 for a thesis
+Dialogue: 0,0:21:20.93,0:21:23.90,*Default,NTP,0000,0000,0000,,他的论文是关于传动装置是如何工作的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}he did on how gears work or something,
+Dialogue: 0,0:21:24.02,0:21:25.51,*Default,NTP,0000,0000,0000,,细节方面的东西我记不清了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I forget exactly what the details are,
+Dialogue: 0,0:21:25.59,0:21:28.59,*Default,NTP,0000,0000,0000,,你们听说过吉布斯这个人么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but have you heard of Gibbs?
+Dialogue: 0,0:21:28.69,0:21:29.85,*Default,NTP,0000,0000,0000,,这个名字是不是让你们想到点什么了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Is it a name that rings a bell?
+Dialogue: 0,0:21:29.91,0:21:31.71,*Default,NTP,0000,0000,0000,,你们是在哪听说这个名字的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Where did you hear about Gibbs from?
+Dialogue: 0,0:21:33.61,0:21:34.08,*Default,NTP,0000,0000,0000,,不好意思\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Sorry?
+Dialogue: 0,0:21:35.10,0:21:36.68,*Default,NTP,0000,0000,0000,,△G  吉布斯自由能\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}G, Gibbs free energy,
+Dialogue: 0,0:21:36.77,0:21:38.78,*Default,NTP,0000,0000,0000,,这是个令人头痛的概念\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that annoying concept that
+Dialogue: 0,0:21:38.78,0:21:41.91,*Default,NTP,0000,0000,0000,,你们必须要在化学课上努力去掌握它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you had to try to master in chemistry at some point,
+Dialogue: 0,0:21:42.01,0:21:47.71,*Default,NTP,0000,0000,0000,,吉布斯是现代物理化学之父\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but Gibbs is really the father of modern physical chemistry
+Dialogue: 0,0:21:47.72,0:21:54.18,*Default,NTP,0000,0000,0000,,是十九世纪最有名的科学家之一 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and was one of the most famous scientists of the nineteenth century
+Dialogue: 0,0:21:54.19,0:21:58.94,*Default,NTP,0000,0000,0000,,在耶鲁这里拿到了第一个工程学博士学位\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and got the first PhD in engineering here at Yale.
+Dialogue: 0,0:21:59.10,0:22:00.71,*Default,NTP,0000,0000,0000,,从此开始\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Then from these beginnings,
+Dialogue: 0,0:22:00.83,0:22:04.22,*Default,NTP,0000,0000,0000,,工程师们改变了二十世纪的生活\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}engineers transformed life in the twentieth century:
+Dialogue: 0,0:22:04.22,0:22:08.89,*Default,NTP,0000,0000,0000,,有很多东西在二十世纪发明并得到普及\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a lot of things started in the twentieth century and became common place.
+Dialogue: 0,0:22:09.02,0:22:09.92,*Default,NTP,0000,0000,0000,,比如电\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Things like electricity,
+Dialogue: 0,0:22:10.03,0:22:11.86,*Default,NTP,0000,0000,0000,,为了让电传输到千家万户\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}having electricity delivered to your home,
+Dialogue: 0,0:22:11.97,0:22:14.00,*Default,NTP,0000,0000,0000,,人们必须想办法发电\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so you had to have ways to generate electricity
+Dialogue: 0,0:22:14.00,0:22:15.84,*Default,NTP,0000,0000,0000,,并将电从一个地方输送到另一个地方\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and to carry it from point to point
+Dialogue: 0,0:22:15.84,0:22:16.99,*Default,NTP,0000,0000,0000,,是工程师做到了这些\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and it was engineers that did that.
+Dialogue: 0,0:22:17.10,0:22:20.31,*Default,NTP,0000,0000,0000,,桥梁和道路的修建以及汽车的出现\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Built bridges and roads and automobiles,
+Dialogue: 0,0:22:20.45,0:22:22.39,*Default,NTP,0000,0000,0000,,使我们能够快速地\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so we can get from one place to another
+Dialogue: 0,0:22:22.39,0:22:25.05,*Default,NTP,0000,0000,0000,,从一个地方到另一个地方\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}relatively quickly because of that.
+Dialogue: 0,0:22:25.15,0:22:26.62,*Default,NTP,0000,0000,0000,,飞机也是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Because there are airplanes
+Dialogue: 0,0:22:26.62,0:22:29.45,*Default,NTP,0000,0000,0000,,由工程师在这个世纪发明的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that were also developed by engineers in that century.
+Dialogue: 0,0:22:29.57,0:22:34.21,*Default,NTP,0000,0000,0000,,工程师们设计了多种材料来造出\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We designed a lot of new materials that could be used to
+Dialogue: 0,0:22:34.21,0:22:36.24,*Default,NTP,0000,0000,0000,,前所未有的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}build things that couldn't have been done otherwise.
+Dialogue: 0,0:22:36.42,0:22:40.03,*Default,NTP,0000,0000,0000,,包括钢铁  聚合物  塑料  陶瓷\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Things like steel and polymers, or plastics, and ceramics,
+Dialogue: 0,0:22:40.11,0:22:42.92,*Default,NTP,0000,0000,0000,,当然  计算机这个在你们的有生之年\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and of course computers 
+Dialogue: 0,0:22:42.92,0:22:45.40,*Default,NTP,0000,0000,0000,,已经取得令人瞩目的进展的发明\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which has progressed remarkably
+Dialogue: 0,0:22:45.41,0:22:47.23,*Default,NTP,0000,0000,0000,,也得归功于工程师的工作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}due to the work of engineers in your lifetime,
+Dialogue: 0,0:22:47.36,0:22:50.88,*Default,NTP,0000,0000,0000,,现在你们的手机能随身携带\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}until now you can carry around a cell phone,
+Dialogue: 0,0:22:50.97,0:22:55.03,*Default,NTP,0000,0000,0000,,而这在三十年前是不可想象的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which would have been unthinkable even 30 years ago.
+Dialogue: 0,0:22:55.16,0:22:59.35,*Default,NTP,0000,0000,0000,,二十世纪的工程师已经改变了我们的社会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Engineers in the twentieth century have transformed our society.
+Dialogue: 0,0:22:59.50,0:23:02.64,*Default,NTP,0000,0000,0000,,在二十世纪发生的另一大变化是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}One of the other things that happened during the twentieth century is
+Dialogue: 0,0:23:02.64,0:23:04.88,*Default,NTP,0000,0000,0000,,人类的寿命预期显著增长了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that human life expectancy increased dramatically,
+Dialogue: 0,0:23:05.01,0:23:06.88,*Default,NTP,0000,0000,0000,,人们活的更久了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}people started living a lot longer.
+Dialogue: 0,0:23:07.06,0:23:09.02,*Default,NTP,0000,0000,0000,,在这儿的这张图是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What I plot on this graph
+Dialogue: 0,0:23:09.02,0:23:12.23,*Default,NTP,0000,0000,0000,,一个关于时间  年  日期的函数\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}here is as a function time, years, dates,
+Dialogue: 0,0:23:12.95,0:23:15.06,*Default,NTP,0000,0000,0000,,将寿命长短作为时间的函数\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}life expectancy as a function of time.
+Dialogue: 0,0:23:15.30,0:23:19.80,*Default,NTP,0000,0000,0000,,你们在图中看到的是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What you'll see here is that about -
+Dialogue: 0,0:23:19.81,0:23:24.80,*Default,NTP,0000,0000,0000,,在一七零零年或者更早以前\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for the period before sort of 1700 or so,
+Dialogue: 0,0:23:25.07,0:23:28.23,*Default,NTP,0000,0000,0000,,人类的寿命一般不超过四十岁\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}human life expectancy was less than 40 years of age,
+Dialogue: 0,0:23:28.39,0:23:31.28,*Default,NTP,0000,0000,0000,,这意味生于那个年代的人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so that means a person that was born in that year
+Dialogue: 0,0:23:31.28,0:23:34.05,*Default,NTP,0000,0000,0000,,平均能活四十年\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}could expect to live on average about 40 years:
+Dialogue: 0,0:23:34.05,0:23:35.90,*Default,NTP,0000,0000,0000,,这就是预期寿命\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that was the expected life span.
+Dialogue: 0,0:23:36.07,0:23:39.12,*Default,NTP,0000,0000,0000,,从几百年前到现在\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The expected life spans increased dramatically
+Dialogue: 0,0:23:39.12,0:23:42.11,*Default,NTP,0000,0000,0000,,预期寿命显著增长了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in the last couple of hundred years until now,
+Dialogue: 0,0:23:42.24,0:23:45.20,*Default,NTP,0000,0000,0000,,你们同期出生的那批人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}for people that were born when you were born you
+Dialogue: 0,0:23:45.20,0:23:47.28,*Default,NTP,0000,0000,0000,,能够活到八十岁\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}can expect to live to be 80 years old,
+Dialogue: 0,0:23:47.44,0:23:50.62,*Default,NTP,0000,0000,0000,,预期寿命增长了一倍  令人印象深刻\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a doubling in life span, fairly dramatic.
+Dialogue: 0,0:23:50.77,0:23:52.85,*Default,NTP,0000,0000,0000,,是什么导致了这种情况\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So what's responsible for that?
+Dialogue: 0,0:23:52.94,0:23:54.44,*Default,NTP,0000,0000,0000,,为什么现在的人\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Why are people living longer
+Dialogue: 0,0:23:54.45,0:23:56.76,*Default,NTP,0000,0000,0000,,比仅仅是几百年前的人活得更久\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}than they did just a few hundred years ago?
+Dialogue: 0,0:23:56.89,0:23:59.96,*Default,NTP,0000,0000,0000,,幻灯片上有一条线索\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Well there's a clue here on the slide.
+Dialogue: 0,0:24:00.08,0:24:02.23,*Default,NTP,0000,0000,0000,,我在这里提示一些关键点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I indicated a couple of points here
+Dialogue: 0,0:24:02.23,0:24:05.06,*Default,NTP,0000,0000,0000,,如果我们观察一六六五年的伦敦\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where if we looked in the 1665 in London
+Dialogue: 0,0:24:05.06,0:24:08.41,*Default,NTP,0000,0000,0000,,从另一个角度来问\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you could ask the question another way to ask the question
+Dialogue: 0,0:24:08.41,0:24:11.46,*Default,NTP,0000,0000,0000,,人为什么能活的更久\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}why are people living so long is to ask the question,
+Dialogue: 0,0:24:11.62,0:24:12.63,*Default,NTP,0000,0000,0000,,就是问人为什么会死\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}why do people die?
+Dialogue: 0,0:24:13.58,0:24:15.79,*Default,NTP,0000,0000,0000,,在一六六五年死亡的总人数中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In 1665, 93% of the people that died in that year
+Dialogue: 0,0:24:15.79,0:24:18.18,*Default,NTP,0000,0000,0000,,百分之九十三都是死于感染性疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}died of infectious diseases.
+Dialogue: 0,0:24:20.30,0:24:22.73,*Default,NTP,0000,0000,0000,,相反  我们看美国的城市\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In contrast, if you look at a U.S.City,
+Dialogue: 0,0:24:22.85,0:24:26.13,*Default,NTP,0000,0000,0000,,例如在十年前  即一九九七年\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}ten years ago in 1997 for example,
+Dialogue: 0,0:24:26.29,0:24:27.83,*Default,NTP,0000,0000,0000,,人们还是会死亡\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}then people still died
+Dialogue: 0,0:24:27.83,0:24:31.78,*Default,NTP,0000,0000,0000,,但是最主要的死因不再是感染性疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but they didn't die predominantly from infectious diseases.
+Dialogue: 0,0:24:31.89,0:24:33.53,*Default,NTP,0000,0000,0000,,他们死于一些其他的原因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}They died from other things:
+Dialogue: 0,0:24:33.53,0:24:35.02,*Default,NTP,0000,0000,0000,,感染性疾病只占百分之四\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}only 4% died from infectious diseases.
+Dialogue: 0,0:24:35.15,0:24:38.62,*Default,NTP,0000,0000,0000,,寿命范围显著增长的一个原因是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So one of the reasons there is a huge increase in life span is
+Dialogue: 0,0:24:38.62,0:24:40.24,*Default,NTP,0000,0000,0000,,人们不再死于\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}because people aren't dying of things
+Dialogue: 0,0:24:40.24,0:24:43.21,*Default,NTP,0000,0000,0000,,以前那些致死的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they would have in prior years.
+Dialogue: 0,0:24:43.30,0:24:47.67,*Default,NTP,0000,0000,0000,,为什么感染性疾病致死率发生了变化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Why the change in infectious diseases?
+Dialogue: 0,0:24:47.74,0:24:49.40,*Default,NTP,0000,0000,0000,,为什么我强调这个问题呢\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Why did I focus on that one?
+Dialogue: 0,0:24:49.52,0:24:52.46,*Default,NTP,0000,0000,0000,,是什么让生活变得更好呢\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}What makes it so much better to be alive now
+Dialogue: 0,0:24:52.46,0:24:56.38,*Default,NTP,0000,0000,0000,,从传染病死亡率的角度来讲\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in terms of your likelihood to die of an infectious disease
+Dialogue: 0,0:24:56.38,0:24:58.33,*Default,NTP,0000,0000,0000,,与1665年的伦敦相比\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}than it did in London in 1665?
+Dialogue: 0,0:25:00.76,0:25:02.86,*Default,NTP,0000,0000,0000,,对  但有什么特别的么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Yes, but what specifically?
+Dialogue: 0,0:25:07.43,0:25:11.57,*Default,NTP,0000,0000,0000,,像抗生素  青霉素和红霉素这样的药物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Drugs like antibiotics, Penicillin, Erythromycin,
+Dialogue: 0,0:25:11.96,0:25:14.80,*Default,NTP,0000,0000,0000,,你们都用过这些药\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}again something else you probably all had experience with
+Dialogue: 0,0:25:14.80,0:25:17.39,*Default,NTP,0000,0000,0000,,你不认为这属于生物医学工程的研究范围\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and you think well that's not Biomedical Engineering
+Dialogue: 0,0:25:17.39,0:25:18.12,*Default,NTP,0000,0000,0000,,而认为是科学的产物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's science,
+Dialogue: 0,0:25:18.29,0:25:21.54,*Default,NTP,0000,0000,0000,,科学家发现这种分子能够杀灭微生物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's somebody discovering a molecule that kills microorganisms.
+Dialogue: 0,0:25:21.67,0:25:23.86,*Default,NTP,0000,0000,0000,,这属于科学的范畴  千真万确\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}That's true, it is science,
+Dialogue: 0,0:25:24.06,0:25:25.82,*Default,NTP,0000,0000,0000,,但为了能让药物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but in order for that to go from
+Dialogue: 0,0:25:25.82,0:25:27.83,*Default,NTP,0000,0000,0000,,走出实验室和医院\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}being a science that works in a laboratory or in one hospital
+Dialogue: 0,0:25:27.83,0:25:30.09,*Default,NTP,0000,0000,0000,,就像青霉素这样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to being Penicillin
+Dialogue: 0,0:25:30.09,0:25:33.11,*Default,NTP,0000,0000,0000,,让全世界的人都能使用它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which could be used all over the world,
+Dialogue: 0,0:25:33.20,0:25:35.76,*Default,NTP,0000,0000,0000,,就必须能大量的生产该药物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you've got to be able to make it in tremendously large quantities
+Dialogue: 0,0:25:35.76,0:25:37.47,*Default,NTP,0000,0000,0000,,这就是生物医学工程师研究的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that's the work of biomedical engineers,
+Dialogue: 0,0:25:37.58,0:25:39.86,*Default,NTP,0000,0000,0000,,大规模生产青霉素\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}making Penicillin in the kinds of quantities
+Dialogue: 0,0:25:39.86,0:25:44.68,*Default,NTP,0000,0000,0000,,才能让世界上所有患传染病的人用上它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you need so that a dose could be available for everyone in the world if they got infected,
+Dialogue: 0,0:25:44.83,0:25:46.98,*Default,NTP,0000,0000,0000,,我们不仅仅要大量的生产\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and to make it not just in abundance
+Dialogue: 0,0:25:46.98,0:25:50.29,*Default,NTP,0000,0000,0000,,还要使它们很便宜  所有人都能买得起\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but make it cheaply enough that everyone could afford it.
+Dialogue: 0,0:25:50.43,0:25:53.44,*Default,NTP,0000,0000,0000,,虽然你能制造一百吨药\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So if you can make 100 tons of the drug
+Dialogue: 0,0:25:53.44,0:25:56.42,*Default,NTP,0000,0000,0000,,但每克药得十万美元\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but it costs $100,000 a gram
+Dialogue: 0,0:25:56.42,0:25:59.10,*Default,NTP,0000,0000,0000,,这药就没什么用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that might not be a useful drug
+Dialogue: 0,0:25:59.10,0:26:01.33,*Default,NTP,0000,0000,0000,,因为没人能用得起它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}because nobody could afford to use it.
+Dialogue: 0,0:26:01.45,0:26:05.15,*Default,NTP,0000,0000,0000,,这就是生物医学工程师的工作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So it's the work of biomedical engineers, really,
+Dialogue: 0,0:26:05.15,0:26:09.98,*Default,NTP,0000,0000,0000,,将药物这样的科研成果转化为产品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to take these innovations make them
+Dialogue: 0,0:26:09.99,0:26:13.11,*Default,NTP,0000,0000,0000,,让所有人都能用得上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so that everybody can take advantage of it.
+Dialogue: 0,0:26:13.24,0:26:14.61,*Default,NTP,0000,0000,0000,,你们也提到了疫苗\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You also mentioned vaccines
+Dialogue: 0,0:26:14.61,0:26:17.71,*Default,NTP,0000,0000,0000,,我们会在这学期重点讲它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we're going to talk a lot in the middle part of the course
+Dialogue: 0,0:26:17.71,0:26:19.97,*Default,NTP,0000,0000,0000,,疫苗以及免疫工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}about vaccines and the engineering of immunity.
+Dialogue: 0,0:26:20.12,0:26:22.47,*Default,NTP,0000,0000,0000,,我们如何将免疫功能工程化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}How do you engineer what happens in our immune system
+Dialogue: 0,0:26:22.47,0:26:24.08,*Default,NTP,0000,0000,0000,,保护我们远离疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in order to protect us from diseases?
+Dialogue: 0,0:26:24.27,0:26:26.73,*Default,NTP,0000,0000,0000,,这是生物医学工程师\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}That's another example of an area
+Dialogue: 0,0:26:26.73,0:26:30.01,*Default,NTP,0000,0000,0000,,做出重大贡献的另一个领域\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where biomedical engineers have made tremendous contributions.
+Dialogue: 0,0:26:30.15,0:26:35.68,*Default,NTP,0000,0000,0000,,对这个问题我先粗浅地讲一些\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So just to go a little bit further with that point,
+Dialogue: 0,0:26:35.72,0:26:39.74,*Default,NTP,0000,0000,0000,,如果你看一六六五年伦敦人的死因表\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you looked at the causes of death in London in 1665 here's a list
+Dialogue: 0,0:26:39.74,0:26:43.53,*Default,NTP,0000,0000,0000,,这是当时的人记录下来的一份资料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that I got from a source that was written at that time,
+Dialogue: 0,0:26:43.67,0:26:47.92,*Default,NTP,0000,0000,0000,,我甚至不明白其中有些死因是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I don't even understand what some of these things are,
+Dialogue: 0,0:26:48.09,0:26:51.57,*Default,NTP,0000,0000,0000,,用绿颜色写下的死因是感染性疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but the ones in green are infectious diseases,
+Dialogue: 0,0:26:51.67,0:26:53.06,*Default,NTP,0000,0000,0000,,这些病症能够传染  并导致死亡\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they're infectious causes of disease.
+Dialogue: 0,0:26:53.23,0:26:55.84,*Default,NTP,0000,0000,0000,,拿紫色斑疹热作为例子\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Spotted fever in purples for example,
+Dialogue: 0,0:26:56.05,0:26:58.94,*Default,NTP,0000,0000,0000,,我们也把这种病称作麻疹\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which we call measles,
+Dialogue: 0,0:26:59.17,0:27:03.87,*Default,NTP,0000,0000,0000,,它是导致死亡的主要原因  就好像瘟疫\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}was a significant cause of death as was the plague,
+Dialogue: 0,0:27:04.62,0:27:08.04,*Default,NTP,0000,0000,0000,,而现在不会再这样了  感谢上帝\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which we don't have anymore, thank goodness.
+Dialogue: 0,0:27:08.24,0:27:12.06,*Default,NTP,0000,0000,0000,,那时的人要么死于传染病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But people died typically of either infectious diseases
+Dialogue: 0,0:27:12.06,0:27:14.17,*Default,NTP,0000,0000,0000,,要么在分娩的过程中死去\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or they died during childbirth,
+Dialogue: 0,0:27:14.31,0:27:15.87,*Default,NTP,0000,0000,0000,,或者在他们大约五十岁左右的时候\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or they might have died at old age
+Dialogue: 0,0:27:15.87,0:27:19.78,*Default,NTP,0000,0000,0000,,死于衰老\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which would have been 50 or so at that time.
+Dialogue: 0,0:27:20.61,0:27:22.08,*Default,NTP,0000,0000,0000,,相反  在现在\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In contrast today,
+Dialogue: 0,0:27:22.25,0:27:24.64,*Default,NTP,0000,0000,0000,,因为我们有了抗生素和疫苗\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}because we have antibiotics and we have vaccines,
+Dialogue: 0,0:27:24.79,0:27:27.57,*Default,NTP,0000,0000,0000,,死于感染性疾病的人就不像以前那么多\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}people don't die of infectious diseases as often.
+Dialogue: 0,0:27:27.70,0:27:29.53,*Default,NTP,0000,0000,0000,,人们活的更久了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}They live much longer lives
+Dialogue: 0,0:27:29.53,0:27:32.66,*Default,NTP,0000,0000,0000,,不过会死于另一些疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and they live to die of something else
+Dialogue: 0,0:27:32.66,0:27:35.48,*Default,NTP,0000,0000,0000,,如今导致死亡的主要原因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the leading causes of death currently
+Dialogue: 0,0:27:35.48,0:27:37.53,*Default,NTP,0000,0000,0000,,并没有太大的变化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}haven't changed very much
+Dialogue: 0,0:27:37.53,0:27:40.65,*Default,NTP,0000,0000,0000,,自一九九七年有相关数据公开开始\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}since 1997 when this data was published:
+Dialogue: 0,0:27:40.65,0:27:44.21,*Default,NTP,0000,0000,0000,,其显示人们主要死于心脏病和癌症\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they die of heart disease and cancer primarily.
+Dialogue: 0,0:27:44.34,0:27:45.96,*Default,NTP,0000,0000,0000,,它们在死因榜上分列第一第二位\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Those are the number one and two causes of death.
+Dialogue: 0,0:27:46.10,0:27:47.82,*Default,NTP,0000,0000,0000,,我们会讲到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We're going to talk a lot about
+Dialogue: 0,0:27:47.82,0:27:50.91,*Default,NTP,0000,0000,0000,,如何利用现有的技术\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how one can use the technology that we have now
+Dialogue: 0,0:27:50.91,0:27:56.42,*Default,NTP,0000,0000,0000,,来治疗像心脏病和癌症这样的疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to treat these kinds of diseases like cancer and heart disease.
+Dialogue: 0,0:27:56.51,0:28:00.85,*Default,NTP,0000,0000,0000,,你们认为这两种病为什么会名列前茅\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But why do you think these are the number one and two now?
+Dialogue: 0,0:28:00.97,0:28:03.25,*Default,NTP,0000,0000,0000,,在过去的几百年中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}How come these have risen above infectious diseases
+Dialogue: 0,0:28:03.25,0:28:08.11,*Default,NTP,0000,0000,0000,,它们的致死率是如何超过感染性疾病的的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}over the last several hundred years?
+Dialogue: 0,0:28:11.93,0:28:15.05,*Default,NTP,0000,0000,0000,,为什么癌症现在是美国人的头号杀手\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Why is cancer one of the leading killers in the U. S. now
+Dialogue: 0,0:28:15.06,0:28:18.97,*Default,NTP,0000,0000,0000,,却甚至没有在一六六五年的名单中出现\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but wasn't even on the charts in 1665?
+Dialogue: 0,0:28:26.20,0:28:29.58,*Default,NTP,0000,0000,0000,,可能真是这样的  你叫什么名字\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So it could be that - what's your name?
+Dialogue: 0,0:28:30.34,0:28:30.54,*Default,NTP,0000,0000,0000,,贾斯汀\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Justin
+Dialogue: 0,0:28:31.90,0:28:33.15,*Default,NTP,0000,0000,0000,,贾斯汀认为我们周围的环境\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So Justin said it could be
+Dialogue: 0,0:28:33.15,0:28:33.98,*Default,NTP,0000,0000,0000,,出现了很多新物质\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}new things that are around
+Dialogue: 0,0:28:33.98,0:28:35.64,*Default,NTP,0000,0000,0000,,并且人们暴露在前所未有的环境中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and you're exposed to stuff we weren't exposed to before
+Dialogue: 0,0:28:35.64,0:28:36.18,*Default,NTP,0000,0000,0000,,这是事实\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that's true.
+Dialogue: 0,0:28:36.33,0:28:37.96,*Default,NTP,0000,0000,0000,,我们生活的环境已经改变\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Our environment has changed,
+Dialogue: 0,0:28:37.96,0:28:39.28,*Default,NTP,0000,0000,0000,,全球普遍工业化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the world has become industrialized.
+Dialogue: 0,0:28:39.42,0:28:43.02,*Default,NTP,0000,0000,0000,,我们暴露于可能致癌的物质中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We're exposed to things that might cause cancer
+Dialogue: 0,0:28:43.02,0:28:44.85,*Default,NTP,0000,0000,0000,,这些物质在以前是没有的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where weren't exposed to
+Dialogue: 0,0:28:44.85,0:28:48.06,*Default,NTP,0000,0000,0000,,这可能就是原因之一\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}them before and so that might be a reason.
+Dialogue: 0,0:28:49.95,0:28:51.08,*Default,NTP,0000,0000,0000,,当时的人们可能不知道这种病是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they might not know what it was?
+Dialogue: 0,0:28:51.20,0:28:53.85,*Default,NTP,0000,0000,0000,,在一六六五年  人们还诊断不出癌症\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In 1665, they weren't diagnosing cancer.
+Dialogue: 0,0:28:54.01,0:28:55.80,*Default,NTP,0000,0000,0000,,如果有人患有感染性疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It was easy to tell
+Dialogue: 0,0:28:55.80,0:28:57.10,*Default,NTP,0000,0000,0000,,那很容易判断\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if somebody had an infectious disease
+Dialogue: 0,0:28:57.10,0:28:58.65,*Default,NTP,0000,0000,0000,,但在那个时候医生可能不知道\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but you might not have known
+Dialogue: 0,0:28:58.65,0:29:01.47,*Default,NTP,0000,0000,0000,,病人得的就是癌症  病人就这么死去了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they had cancer at that time and they just died.
+Dialogue: 0,0:29:01.55,0:29:04.19,*Default,NTP,0000,0000,0000,,那时医生的诊断手段远不及现在\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We didn't have the same methods of diagnosis that we do now,
+Dialogue: 0,0:29:04.32,0:29:07.18,*Default,NTP,0000,0000,0000,,因此  这些病可能只是诊断不出来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so maybe it was just not diagnosed then.
+Dialogue: 0,0:29:07.31,0:29:09.15,*Default,NTP,0000,0000,0000,,人们活的时间更长了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}People are living longer
+Dialogue: 0,0:29:09.16,0:29:13.00,*Default,NTP,0000,0000,0000,,因此得癌症的机会也就更多了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so now they have more opportunity to get cancer,
+Dialogue: 0,0:29:13.70,0:29:15.36,*Default,NTP,0000,0000,0000,,你活的越长\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The longer you live
+Dialogue: 0,0:29:15.36,0:29:20.84,*Default,NTP,0000,0000,0000,,越可能罹患诸如癌症这样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the more opportunity you have to acquire a disease like cancer,
+Dialogue: 0,0:29:20.84,0:29:24.82,*Default,NTP,0000,0000,0000,,因长期缺陷的累积\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which often is an accumulation of defects 
+Dialogue: 0,0:29:24.82,0:29:27.81,*Default,NTP,0000,0000,0000,,而导致的疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that occur over a long period of time.
+Dialogue: 0,0:29:27.97,0:29:30.20,*Default,NTP,0000,0000,0000,,我们会讲到癌症\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So we're going to talk about cancer.
+Dialogue: 0,0:29:30.34,0:29:33.10,*Default,NTP,0000,0000,0000,,例如癌症的诊断手段是如何进步的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}For example, how cancer diagnosis has improved,
+Dialogue: 0,0:29:33.20,0:29:36.15,*Default,NTP,0000,0000,0000,,我们周围环境中有哪些致癌因素\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what are some of the causes of cancer in the environment around us
+Dialogue: 0,0:29:36.15,0:29:37.95,*Default,NTP,0000,0000,0000,,以及我们如何保护自己免受其害\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how can we protect ourselves from it,
+Dialogue: 0,0:29:38.08,0:29:40.38,*Default,NTP,0000,0000,0000,,我们也会讨论到癌症的治疗手段\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about treatments for it as well.
+Dialogue: 0,0:29:40.52,0:29:41.61,*Default,NTP,0000,0000,0000,,心血管疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Cardiovascular disease,
+Dialogue: 0,0:29:41.61,0:29:44.88,*Default,NTP,0000,0000,0000,,为什么心血管疾病会排在榜首\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}why is cardiovascular disease on the top?
+Dialogue: 0,0:29:45.05,0:29:47.48,*Default,NTP,0000,0000,0000,,肥胖症  或者说\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Obesity or generally our
+Dialogue: 0,0:29:47.48,0:29:51.85,*Default,NTP,0000,0000,0000,,我们的饮食结构和一六六五年也有所不同\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}diets are different than they were in 1665.
+Dialogue: 0,0:29:52.04,0:29:55.80,*Default,NTP,0000,0000,0000,,许多人认为  我们吃许多不同的食物\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We eat different kinds of things and many people think
+Dialogue: 0,0:29:55.80,0:29:59.90,*Default,NTP,0000,0000,0000,,这是导致更多人患心脏病的原因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that that's what has contributed to much more heart disease.
+Dialogue: 0,0:30:00.04,0:30:01.17,*Default,NTP,0000,0000,0000,,这也同样有可能因为\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But it could also be that
+Dialogue: 0,0:30:01.17,0:30:03.06,*Default,NTP,0000,0000,0000,,在那个年代这种病不容易诊断出来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it wasn't as easily diagnosed then.
+Dialogue: 0,0:30:03.20,0:30:05.84,*Default,NTP,0000,0000,0000,,老死的人实际是死于心脏病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So people were dying of old age and that was really heart disease
+Dialogue: 0,0:30:05.84,0:30:07.61,*Default,NTP,0000,0000,0000,,只不过人们不知道这一点罢了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that was killing them they just didn't know,
+Dialogue: 0,0:30:07.75,0:30:10.23,*Default,NTP,0000,0000,0000,,这是个多因素的问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so it's multi-factorial
+Dialogue: 0,0:30:10.23,0:30:13.53,*Default,NTP,0000,0000,0000,,我们以后会进一步探讨\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about that.
+Dialogue: 0,0:30:13.69,0:30:16.30,*Default,NTP,0000,0000,0000,,我想让你们看的最后一张图\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I just wanted to show you this last graph,
+Dialogue: 0,0:30:16.42,0:30:18.26,*Default,NTP,0000,0000,0000,,或者说最后一组统计数据\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or this last set of statistics
+Dialogue: 0,0:30:18.26,0:30:20.64,*Default,NTP,0000,0000,0000,,不是关于美国人的死因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to go from causes of death in the U. S.
+Dialogue: 0,0:30:20.77,0:30:22.61,*Default,NTP,0000,0000,0000,,而是关于世界上所有人的死因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to causes of death in the world,
+Dialogue: 0,0:30:22.72,0:30:25.49,*Default,NTP,0000,0000,0000,,它说明同美国的情况相比\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to illustrate that what happens in the world around us
+Dialogue: 0,0:30:25.49,0:30:27.91,*Default,NTP,0000,0000,0000,,世界其他地区的情况\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in the U. S. isn't necessarily the same asin the U.S. isn't necessarily
+Dialogue: 0,0:30:27.91,0:30:28.99,*Default,NTP,0000,0000,0000,,有所不同\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the same as what happens in other places around the world.
+Dialogue: 0,0:30:30.99,0:30:32.29,*Default,NTP,0000,0000,0000,,在其他地区\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In other places,
+Dialogue: 0,0:30:32.38,0:30:33.25,*Default,NTP,0000,0000,0000,,感染性疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}infectious disease
+Dialogue: 0,0:30:33.25,0:30:35.85,*Default,NTP,0000,0000,0000,,对当地人们的生活构成了更大威胁\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is a much bigger part of their life
+Dialogue: 0,0:30:35.86,0:30:38.21,*Default,NTP,0000,0000,0000,,他们死于感染性疾病或者\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and a much greater risk of death from
+Dialogue: 0,0:30:38.21,0:30:40.78,*Default,NTP,0000,0000,0000,,寄生虫之类疾病风险更高\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}infectious diseases and parasitic diseases
+Dialogue: 0,0:30:40.78,0:30:41.95,*Default,NTP,0000,0000,0000,,如果你生活在\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you live in places other than
+Dialogue: 0,0:30:41.96,0:30:45.00,*Default,NTP,0000,0000,0000,,美国或欧洲之外的地方的话\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the U. S. or Western Europe, for example.
+Dialogue: 0,0:30:45.10,0:30:47.74,*Default,NTP,0000,0000,0000,,传染病预防和治疗的问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So the problem of infectious disease prevention and treatment
+Dialogue: 0,0:30:47.74,0:30:49.66,*Default,NTP,0000,0000,0000,,现在仍然没有解决\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}isn't solved yet,
+Dialogue: 0,0:30:49.84,0:30:52.68,*Default,NTP,0000,0000,0000,,你们应该了解  对吧\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you know this, right?
+Dialogue: 0,0:30:52.81,0:30:56.70,*Default,NTP,0000,0000,0000,,我们还有很长的路要走\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So there's plenty of room to still innovate in that way,
+Dialogue: 0,0:30:57.11,0:31:00.92,*Default,NTP,0000,0000,0000,,研究一些新方法以预防艾滋病这样的疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to develop new methods that could protect against diseases like AIDS
+Dialogue: 0,0:31:00.92,0:31:04.51,*Default,NTP,0000,0000,0000,,或者像疟疾这样尽管在我国没有威胁\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or diseases like malaria that we don't have problems with here
+Dialogue: 0,0:31:04.51,0:31:08.11,*Default,NTP,0000,0000,0000,,但在世界很多地方还很严重的疾病\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but they do in many parts of the world,
+Dialogue: 0,0:31:08.30,0:31:09.32,*Default,NTP,0000,0000,0000,,我们也会讲到这些\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so we'll talk about that.
+Dialogue: 0,0:31:09.45,0:31:14.53,*Default,NTP,0000,0000,0000,,我提到过这门课程用到的教材\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I mentioned the book for the course
+Dialogue: 0,0:31:14.53,0:31:17.26,*Default,NTP,0000,0000,0000,,这本书是我写的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the book is a book that I've written.
+Dialogue: 0,0:31:17.37,0:31:20.40,*Default,NTP,0000,0000,0000,,还没有出版  所以我会把\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's not published yet and so I'm going to
+Dialogue: 0,0:31:20.40,0:31:23.21,*Default,NTP,0000,0000,0000,,书里基本定稿的章节放在网上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}put chapters from the book that are in fairly final form,
+Dialogue: 0,0:31:23.30,0:31:25.31,*Default,NTP,0000,0000,0000,,我想你们会发现它很容易读懂\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I think you'll find them easy to read,
+Dialogue: 0,0:31:25.31,0:31:26.69,*Default,NTP,0000,0000,0000,,而你们也没有必要去买它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but you don't have to buy it.
+Dialogue: 0,0:31:26.82,0:31:29.13,*Default,NTP,0000,0000,0000,,这些章节会贴在网上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's going to be posted on the Internet
+Dialogue: 0,0:31:29.13,0:31:33.12,*Default,NTP,0000,0000,0000,,我还会发一些章节作为阅读任务\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I'll post chapters sort of in advance of the reading assignments.
+Dialogue: 0,0:31:33.31,0:31:35.42,*Default,NTP,0000,0000,0000,,如果你上过班级服务器就会看到第一章\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}If you looked on the classes server you saw Chapter 1,
+Dialogue: 0,0:31:35.54,0:31:38.71,*Default,NTP,0000,0000,0000,,第一章介绍了生物医学工程的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and Chapter 1 describes some of the sort or organization of
+Dialogue: 0,0:31:38.71,0:31:43.47,*Default,NTP,0000,0000,0000,,若干亚学科 像这里列出的这样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Biomedical Engineering into sub-disciplines, which I've listed here.
+Dialogue: 0,0:31:43.55,0:31:50.47,*Default,NTP,0000,0000,0000,,我们会讲到如何将身体看作系统进行研究\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So we're going to talk about thinking about the body as a system,
+Dialogue: 0,0:31:50.57,0:31:52.49,*Default,NTP,0000,0000,0000,,这个系统能够以研究\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}as a system that can be understood the same way
+Dialogue: 0,0:31:52.49,0:31:55.26,*Default,NTP,0000,0000,0000,,引擎或计算机的方法进行研究\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a motor could be understood or a computer that could be understood.
+Dialogue: 0,0:31:55.40,0:31:57.33,*Default,NTP,0000,0000,0000,,这项研究叫做系统生理学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}That study is Systems Physiology
+Dialogue: 0,0:31:57.33,0:32:00.96,*Default,NTP,0000,0000,0000,,它是生物医学工程的一个重要分支\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that's an important subdivision of Biomedical Engineering.
+Dialogue: 0,0:32:01.12,0:32:04.48,*Default,NTP,0000,0000,0000,,我会讲到本节课提到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about instrumentation a little bit and I've mentioned this,
+Dialogue: 0,0:32:04.62,0:32:13.86,*Default,NTP,0000,0000,0000,,像心电图仪或者心肺功能机这样的设备\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}things like the EKG machine and the heart/lung machine are instruments
+Dialogue: 0,0:32:13.86,0:32:20.11,*Default,NTP,0000,0000,0000,,用来维持病人生命\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that are designed to either keep patients alive
+Dialogue: 0,0:32:20.11,0:32:26.88,*Default,NTP,0000,0000,0000,,或者能全天候地监测生命体征\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or to allow you to monitor their function over time.
+Dialogue: 0,0:32:26.99,0:32:28.46,*Default,NTP,0000,0000,0000,,我们也会讨论到影像学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about imaging which I mentioned,
+Dialogue: 0,0:32:28.60,0:32:32.98,*Default,NTP,0000,0000,0000,,生物机械学  即将人体作为机械的研究\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}biomechanics or the study of humans as mechanical objects.
+Dialogue: 0,0:32:33.09,0:32:35.73,*Default,NTP,0000,0000,0000,,我们也会讲到现在正在发展的一个领域\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about a field which is growing now
+Dialogue: 0,0:32:35.73,0:32:37.13,*Default,NTP,0000,0000,0000,,叫做生物分子工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}called biomolecular engineering
+Dialogue: 0,0:32:37.13,0:32:40.02,*Default,NTP,0000,0000,0000,,该领域主要研究可植入人体的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that is the design of biomaterials or new materials
+Dialogue: 0,0:32:40.02,0:32:41.78,*Default,NTP,0000,0000,0000,,生物材料或新材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that can be implanted in the body,
+Dialogue: 0,0:32:42.25,0:32:45.10,*Default,NTP,0000,0000,0000,,它将是新的给药途径\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it's new ways of drug delivery.
+Dialogue: 0,0:32:45.68,0:32:46.95,*Default,NTP,0000,0000,0000,,这就是先前我提到过的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's this whole field of
+Dialogue: 0,0:32:46.96,0:32:49.29,*Default,NTP,0000,0000,0000,,组织工程的全部内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}tissue engineering that I mentioned earlier.
+Dialogue: 0,0:32:49.40,0:32:53.78,*Default,NTP,0000,0000,0000,,我们会讨论到人造器官和系统生物学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about artificial organs and we'll talk about systems biology
+Dialogue: 0,0:32:53.78,0:32:57.17,*Default,NTP,0000,0000,0000,,并探讨如何从基因芯片中得到信息\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or thinking about how to acquire information for things like gene chips
+Dialogue: 0,0:32:57.17,0:32:59.43,*Default,NTP,0000,0000,0000,,并利用这些信息了解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and use that information to understand
+Dialogue: 0,0:32:59.43,0:33:03.44,*Default,NTP,0000,0000,0000,,人体作为一种复杂有机体的内在变化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what's happening in a complex organism like you.
+Dialogue: 0,0:33:03.58,0:33:05.03,*Default,NTP,0000,0000,0000,,我把这三条用蓝色字强调出来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Now, I've highlighted three
+Dialogue: 0,0:33:05.04,0:33:07.39,*Default,NTP,0000,0000,0000,,影像学  生物机械学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}of these in blue here, imaging, mechanics,
+Dialogue: 0,0:33:07.39,0:33:09.22,*Default,NTP,0000,0000,0000,,和生物分子工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and biomolecular engineering because
+Dialogue: 0,0:33:09.22,0:33:12.49,*Default,NTP,0000,0000,0000,,如果你们继续在耶鲁学习生物医学工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you go on to study Biomedical Engineering here at Yale anyway,
+Dialogue: 0,0:33:12.62,0:33:17.25,*Default,NTP,0000,0000,0000,,这些内容是你们必须重点掌握的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}these are the things that you might pick to emphasize on.
+Dialogue: 0,0:33:17.35,0:33:19.75,*Default,NTP,0000,0000,0000,,这是我们做的最好的三个方向\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}These are the things that we do best and where
+Dialogue: 0,0:33:19.75,0:33:23.07,*Default,NTP,0000,0000,0000,,在这三个方向下我们开设有高阶的课程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we have advanced course work available in these three categories
+Dialogue: 0,0:33:23.07,0:33:25.26,*Default,NTP,0000,0000,0000,,因此我会重点讲这三个方向\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so I'm going to emphasize these three
+Dialogue: 0,0:33:25.26,0:33:26.72,*Default,NTP,0000,0000,0000,,但随着课程的进行\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but we'll talk about all of these subjects
+Dialogue: 0,0:33:26.72,0:33:28.91,*Default,NTP,0000,0000,0000,,所有的主题我们都会讲到\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}as we go through the course.
+Dialogue: 0,0:33:29.60,0:33:31.18,*Default,NTP,0000,0000,0000,,课程大纲已经贴在网上了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The syllabus is posted online.
+Dialogue: 0,0:33:31.28,0:33:34.18,*Default,NTP,0000,0000,0000,,我只是将它复制在这以便你们能够看到它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I've just copied it here so you could take a look at it.
+Dialogue: 0,0:33:34.29,0:33:37.38,*Default,NTP,0000,0000,0000,,第一周我们将探讨\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Week1 we're trying to talk about this question,
+Dialogue: 0,0:33:37.48,0:33:38.54,*Default,NTP,0000,0000,0000,,什么是生物医学工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what is Biomedical Engineering.
+Dialogue: 0,0:33:38.65,0:33:40.33,*Default,NTP,0000,0000,0000,,你们需要阅读\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}There are some chapters here for readings:
+Dialogue: 0,0:33:40.33,0:33:42.94,*Default,NTP,0000,0000,0000,,第一章  第二章和第四章\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Chapters 1, 2, and 4.
+Dialogue: 0,0:33:43.05,0:33:45.51,*Default,NTP,0000,0000,0000,,我只把第一章挂在网上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I've only posted Chapter 1,
+Dialogue: 0,0:33:45.65,0:33:47.85,*Default,NTP,0000,0000,0000,,它对我们今天讲到的东西做了基本的总结\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which basically reviews the things I've talked about today.
+Dialogue: 0,0:33:48.01,0:33:50.85,*Default,NTP,0000,0000,0000,,第二章和第四章是对\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Chapters 2 and 4 are really reviews of things
+Dialogue: 0,0:33:50.85,0:33:53.75,*Default,NTP,0000,0000,0000,,一些你可能已经知道的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you probably already know something about,
+Dialogue: 0,0:33:53.85,0:33:55.53,*Default,NTP,0000,0000,0000,,基础化学  蛋白质及生物化学知识的复习\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so they're reviews of basic chemistry.
+Dialogue: 0,0:33:55.64,0:33:59.66,*Default,NTP,0000,0000,0000,,随着课程的深入\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Some chemical concepts that are important for us
+Dialogue: 0,0:33:59.66,0:34:01.92,*Default,NTP,0000,0000,0000,,其中的一些概念\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to all understand as we move forward
+Dialogue: 0,0:34:01.92,0:34:07.70,*Default,NTP,0000,0000,0000,,对我们全面理解课程内容至关重要\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and review of proteins and biochemistry, basically.
+Dialogue: 0,0:34:07.79,0:34:09.73,*Default,NTP,0000,0000,0000,,我把这些都贴到了网上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So I'm going to post those online
+Dialogue: 0,0:34:09.74,0:34:13.39,*Default,NTP,0000,0000,0000,,但我不会在课程中直接地讲解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we're not going to talk about them directly in the lectures
+Dialogue: 0,0:34:13.39,0:34:15.22,*Default,NTP,0000,0000,0000,,你们可以把它作为参考文献\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but they're there as a resource,
+Dialogue: 0,0:34:15.28,0:34:16.82,*Default,NTP,0000,0000,0000,,因此  如果你们读到一些概念\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so if you read about something
+Dialogue: 0,0:34:16.82,0:34:18.87,*Default,NTP,0000,0000,0000,,像pH值  而你们忘了pH代表什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}like pH and you've forgotten what pH is,
+Dialogue: 0,0:34:19.02,0:34:21.23,*Default,NTP,0000,0000,0000,,你们可以回过头看第二章\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can go back to Chapter 2 which is posted
+Dialogue: 0,0:34:21.23,0:34:23.26,*Default,NTP,0000,0000,0000,,就会读到什么是pH值\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and you can read about pH 
+Dialogue: 0,0:34:23.26,0:34:25.69,*Default,NTP,0000,0000,0000,,以及为了了解接下来的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I try to take you through sort of what you need to know
+Dialogue: 0,0:34:25.69,0:34:28.13,*Default,NTP,0000,0000,0000,,我希望你们知道的相关知识\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in order to understand the rest of the course material.
+Dialogue: 0,0:34:28.28,0:34:29.40,*Default,NTP,0000,0000,0000,,如果你们忘记了蛋白质及结构的相关知识\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And if you've forgotten about proteins and what their structure is
+Dialogue: 0,0:34:31.13,0:34:32.36,*Default,NTP,0000,0000,0000,,就去读第四章\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can go to Chapter 4 and
+Dialogue: 0,0:34:32.36,0:34:35.82,*Default,NTP,0000,0000,0000,,关于蛋白质生物化学的简短综述\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}read sort of a brief review of protein biochemistry.
+Dialogue: 0,0:34:37.49,0:34:39.41,*Default,NTP,0000,0000,0000,,本周的小组讨论\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In the section this week,
+Dialogue: 0,0:34:39.55,0:34:41.35,*Default,NTP,0000,0000,0000,,我花一点时间说说关于小组讨论的事情\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I'll talk about the section meetings in just a moment,
+Dialogue: 0,0:34:41.45,0:34:44.60,*Default,NTP,0000,0000,0000,,本周没有要求的小组讨论\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but there's no required section meeting this week.
+Dialogue: 0,0:34:44.70,0:34:47.11,*Default,NTP,0000,0000,0000,,在小组讨论的时间里  你们可以来找我\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}During the section times I'll be available
+Dialogue: 0,0:34:47.11,0:34:49.97,*Default,NTP,0000,0000,0000,,如果你们学习完第二章和第四章之后\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you feel like you want to read Chapters 2 and 4
+Dialogue: 0,0:34:49.97,0:34:51.85,*Default,NTP,0000,0000,0000,,想问一些关于\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and then come and ask questions, 
+Dialogue: 0,0:34:51.85,0:34:54.98,*Default,NTP,0000,0000,0000,,化学和生化方面的问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}sort of a tutorial on these topics of chemistry and biochemistry,
+Dialogue: 0,0:34:55.17,0:34:56.01,*Default,NTP,0000,0000,0000,,可以来找我\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}then I'll be available
+Dialogue: 0,0:34:56.01,0:34:58.55,*Default,NTP,0000,0000,0000,,我会在那个时候给你们进行讲解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to talk about that  during that time.
+Dialogue: 0,0:34:58.65,0:35:01.68,*Default,NTP,0000,0000,0000,,从第二周开始我们会讲基因工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll start with Week 2 talking about Genetic Engineering;
+Dialogue: 0,0:35:01.79,0:35:04.11,*Default,NTP,0000,0000,0000,,什么是DNA  怎么样才能操控它们\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what's DNA, how can it be manipulated,
+Dialogue: 0,0:35:04.23,0:35:06.82,*Default,NTP,0000,0000,0000,,我们如何操作DNA\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how is our ability to manipulate DNA
+Dialogue: 0,0:35:06.82,0:35:10.56,*Default,NTP,0000,0000,0000,,并将它应用于人类的基因疗法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}led to things like gene therapy which can now be done in people.
+Dialogue: 0,0:35:10.67,0:35:14.02,*Default,NTP,0000,0000,0000,,我们会在学习第三章时做进一步介绍\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And we'll talk about that and that's what Chapter 3 is about.
+Dialogue: 0,0:35:14.15,0:35:17.31,*Default,NTP,0000,0000,0000,,第四周我们会探讨细胞培养工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We'll talk about cell culture engineering during Week 4,
+Dialogue: 0,0:35:17.41,0:35:18.73,*Default,NTP,0000,0000,0000,,人们如何在培养基中维持细胞的存活\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how do you maintain cells in culture,
+Dialogue: 0,0:35:18.73,0:35:19.73,*Default,NTP,0000,0000,0000,,这种方法的局限性是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what are the limits of this.
+Dialogue: 0,0:35:19.82,0:35:22.36,*Default,NTP,0000,0000,0000,,如何利用这些培养好的细胞\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}How can you use cultured cells to do things,
+Dialogue: 0,0:35:22.45,0:35:25.55,*Default,NTP,0000,0000,0000,,工程师们如何用培养的细胞制造新产品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how do engineers build new things out of cultured cells
+Dialogue: 0,0:35:25.55,0:35:28.75,*Default,NTP,0000,0000,0000,,这是我们接下来的课程要讨论的主题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is going to be a subject we talk about throughout the rest of
+Dialogue: 0,0:35:28.75,0:35:30.92,*Default,NTP,0000,0000,0000,,相关章节都列在这儿了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the course and the chapter is listed here.
+Dialogue: 0,0:35:31.24,0:35:33.31,*Default,NTP,0000,0000,0000,,我觉得说的差不多了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So I think that's enough,
+Dialogue: 0,0:35:33.40,0:35:35.20,*Default,NTP,0000,0000,0000,,你们可以根据课程大纲\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can follow along with the syllabus
+Dialogue: 0,0:35:35.21,0:35:37.01,*Default,NTP,0000,0000,0000,,来看每周会将什么内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and see sort of what the topics are each week,
+Dialogue: 0,0:35:37.07,0:35:39.60,*Default,NTP,0000,0000,0000,,在每次课之前看看阅读任务是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what the reading assignment is to do before the lecture
+Dialogue: 0,0:35:39.60,0:35:41.59,*Default,NTP,0000,0000,0000,,这样才能在课上有更多收获\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in order to get the most out of the lecture.
+Dialogue: 0,0:35:41.68,0:35:43.73,*Default,NTP,0000,0000,0000,,每周我们都会有小组讨论会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Now, each week we have a section meeting,
+Dialogue: 0,0:35:43.73,0:35:45.95,*Default,NTP,0000,0000,0000,,这个讨论会是必须要开的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}required section,
+Dialogue: 0,0:35:46.01,0:35:49.49,*Default,NTP,0000,0000,0000,,开会的时间都在周四下午\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they're all - all the sections meet on Thursday afternoon
+Dialogue: 0,0:35:49.49,0:35:51.46,*Default,NTP,0000,0000,0000,,开会旨在\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the idea of the section is
+Dialogue: 0,0:35:51.46,0:35:55.08,*Default,NTP,0000,0000,0000,,对本周讲过的内容进行一些引申和拓展\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to amplify on some subject we've talked about during the week.
+Dialogue: 0,0:35:55.19,0:35:56.19,*Default,NTP,0000,0000,0000,,开会的地点在\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We do this in
+Dialogue: 0,0:35:56.19,0:35:58.86,*Default,NTP,0000,0000,0000,,生物医学工程本科生实验室\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the undergraduate Biomedical Engineering laboratory
+Dialogue: 0,0:35:58.86,0:36:00.14,*Default,NTP,0000,0000,0000,,在马龙大楼\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in the Malone Building
+Dialogue: 0,0:36:00.14,0:36:03.55,*Default,NTP,0000,0000,0000,,这样我们就能通过做演示和实际操作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so that we can do demonstrations and sort of hands on projects
+Dialogue: 0,0:36:03.55,0:36:05.92,*Default,NTP,0000,0000,0000,,使大家较深刻地了解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to really get a little bit deeper into the subject
+Dialogue: 0,0:36:05.92,0:36:07.76,*Default,NTP,0000,0000,0000,,我们讲过的东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that we're considering.
+Dialogue: 0,0:36:07.92,0:36:11.14,*Default,NTP,0000,0000,0000,,第一周组会的主题是从草莓到基因疗法\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So in the first week we run a section called from strawberries
+Dialogue: 0,0:36:11.14,0:36:14.73,*Default,NTP,0000,0000,0000,,主要讨论DNA和DNA的提取\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to gene therapy where we talk about DNA, extract DNA,
+Dialogue: 0,0:36:14.85,0:36:17.49,*Default,NTP,0000,0000,0000,,使你们对有机组织的DNA有直观的认识\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can play with the DNA of an organism
+Dialogue: 0,0:36:17.49,0:36:21.15,*Default,NTP,0000,0000,0000,,并思考DNA的其它应用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we can think about how to use DNA for other purposes.
+Dialogue: 0,0:36:21.25,0:36:24.63,*Default,NTP,0000,0000,0000,,第三周你们会在实验室里做一些细胞培养\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In Week 3 you'll actually do some cell culture in the laboratory
+Dialogue: 0,0:36:24.64,0:36:27.50,*Default,NTP,0000,0000,0000,,看看培养基中的细胞都长什么样\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and look at cultured cells and learn how to manipulate,
+Dialogue: 0,0:36:27.97,0:36:29.77,*Default,NTP,0000,0000,0000,,了解细胞和培养基的有关操作\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}do some manipulations on cells and culture,
+Dialogue: 0,0:36:30.30,0:36:31.59,*Default,NTP,0000,0000,0000,,整个一周就做这些\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so on throughout the weeks.
+Dialogue: 0,0:36:31.70,0:36:33.43,*Default,NTP,0000,0000,0000,,有个维时一小时的环节\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We have a one hour section
+Dialogue: 0,0:36:33.43,0:36:37.17,*Default,NTP,0000,0000,0000,,用来给你们增加更详细的经验\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's designed to give you some more detailed experience,
+Dialogue: 0,0:36:37.29,0:36:38.38,*Default,NTP,0000,0000,0000,,一些实验操作方面的经验\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}some hands on experience
+Dialogue: 0,0:36:38.38,0:36:40.40,*Default,NTP,0000,0000,0000,,有关我们讲过的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}with some of the topics we're talking about.
+Dialogue: 0,0:36:41.42,0:36:43.57,*Default,NTP,0000,0000,0000,,对这些内容我们不要求实验报告\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}There are no lab reports that are due.
+Dialogue: 0,0:36:43.73,0:36:46.25,*Default,NTP,0000,0000,0000,,有时候我们会有家庭作业\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}There sometimes will be homework assignments
+Dialogue: 0,0:36:46.25,0:36:49.49,*Default,NTP,0000,0000,0000,,是关于这部分内容的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which sort of build on what we've done during the section
+Dialogue: 0,0:36:49.50,0:36:52.85,*Default,NTP,0000,0000,0000,,但这不是那种需要在实验室呆一整个下午\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but it's not a lab in that sense that it's a long experience
+Dialogue: 0,0:36:52.85,0:36:55.99,*Default,NTP,0000,0000,0000,,要提交细节翔实的报告的那种实验\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in the afternoon or that requires any detailed reports.
+Dialogue: 0,0:36:56.18,0:36:57.18,*Default,NTP,0000,0000,0000,,但这个作业是强制性的\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}But it is required and
+Dialogue: 0,0:36:57.19,0:36:59.20,*Default,NTP,0000,0000,0000,,我认为这是课程十分重要的一部分\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I think an important part of the course.
+Dialogue: 0,0:36:59.32,0:37:00.32,*Default,NTP,0000,0000,0000,,我们在学期中和学期末\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}There's a mid-term exam
+Dialogue: 0,0:37:00.32,0:37:02.22,*Default,NTP,0000,0000,0000,,分别会有期中考试和期末考试\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}halfway through and a final exam at the end,
+Dialogue: 0,0:37:02.36,0:37:06.20,*Default,NTP,0000,0000,0000,,在本学期快结束时要求写一篇学期论文\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and there's a term paper which is due near the end of the course.
+Dialogue: 0,0:37:09.12,0:37:12.06,*Default,NTP,0000,0000,0000,,这只是对组会做更多一些的介绍\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So this just - just saying a little bit more about the sections,
+Dialogue: 0,0:37:12.19,0:37:13.84,*Default,NTP,0000,0000,0000,,有三种组会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}there's three sections,
+Dialogue: 0,0:37:13.84,0:37:16.85,*Default,NTP,0000,0000,0000,,我们有在线讨论组会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we have online discussion section sign up,
+Dialogue: 0,0:37:16.95,0:37:18.03,*Default,NTP,0000,0000,0000,,有人曾经尝试过这个么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}has anybody tried to do that yet?
+Dialogue: 0,0:37:18.42,0:37:20.50,*Default,NTP,0000,0000,0000,,还是只听说过这个东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Just so they know that it's available?
+Dialogue: 0,0:37:20.61,0:37:22.81,*Default,NTP,0000,0000,0000,,这个在线讨论会在学期第一天就可以用了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So it was supposed to be available from day one,
+Dialogue: 0,0:37:22.90,0:37:24.09,*Default,NTP,0000,0000,0000,,你们可以报名加入\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can sign up for a section
+Dialogue: 0,0:37:24.09,0:37:26.59,*Default,NTP,0000,0000,0000,,与你们课程表相配合的组会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that fits your schedule and this is sort of the list of things
+Dialogue: 0,0:37:26.59,0:37:28.41,*Default,NTP,0000,0000,0000,,这张清单是我们在组会上要讨论的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that we'll go through in the section meetings.
+Dialogue: 0,0:37:28.46,0:37:29.53,*Default,NTP,0000,0000,0000,,关于分数\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Grading -
+Dialogue: 0,0:37:29.53,0:37:34.06,*Default,NTP,0000,0000,0000,,总分的百分之三十来自于期中考试\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}30% of the grade is for the mid-term,
+Dialogue: 0,0:37:34.19,0:37:35.53,*Default,NTP,0000,0000,0000,,百分之三十来自期末考试\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}30% for the final,
+Dialogue: 0,0:37:35.53,0:37:37.61,*Default,NTP,0000,0000,0000,,期末考试并不包括学期的全部内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and the final is not cumulative,
+Dialogue: 0,0:37:37.77,0:37:40.93,*Default,NTP,0000,0000,0000,,只涵盖后半学期的课程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}the final covers only things for the last half of the course,
+Dialogue: 0,0:37:41.06,0:37:44.24,*Default,NTP,0000,0000,0000,,这真的像中期考\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so it's really just like a - covers half the course
+Dialogue: 0,0:37:44.24,0:37:46.93,*Default,NTP,0000,0000,0000,,但在期末考试时间段里进行\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but it's given during the final exam period.
+Dialogue: 0,0:37:47.04,0:37:50.34,*Default,NTP,0000,0000,0000,,随着课程的进行我会在讲到学期论文\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}There's a term paper which i'll talk more about as the weeks go on
+Dialogue: 0,0:37:50.34,0:37:52.06,*Default,NTP,0000,0000,0000,,这也占成绩的百分之三十\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's also worth 30% of the grade.
+Dialogue: 0,0:37:52.19,0:37:56.18,*Default,NTP,0000,0000,0000,,你们有个周作业  大约是每周一次\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You'll have weekly - approximately weekly homework assignments
+Dialogue: 0,0:37:56.18,0:37:58.40,*Default,NTP,0000,0000,0000,,这个作业占总分的百分之十\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that account for 10% of your grade,
+Dialogue: 0,0:37:58.51,0:38:01.02,*Default,NTP,0000,0000,0000,,但这个作业对分数的影响大得多\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but they have an impact beyond the 10% because
+Dialogue: 0,0:38:01.02,0:38:04.19,*Default,NTP,0000,0000,0000,,因为你如果你做了并弄懂了家庭作业\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you can do the homework and you understand the homework,
+Dialogue: 0,0:38:04.29,0:38:05.85,*Default,NTP,0000,0000,0000,,考试就没问题了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you're going to have no problem with the exams.
+Dialogue: 0,0:38:05.94,0:38:07.78,*Default,NTP,0000,0000,0000,,我建议大家花费\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I encourage you to spend
+Dialogue: 0,0:38:07.78,0:38:11.07,*Default,NTP,0000,0000,0000,,比分数权重更多的时间完成作业\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}more time than the weighting would suggest.
+Dialogue: 0,0:38:11.15,0:38:14.93,*Default,NTP,0000,0000,0000,,你们如何在这门课程中得A呢\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So how do you get an "A" in the course?
+Dialogue: 0,0:38:15.07,0:38:15.97,*Default,NTP,0000,0000,0000,,很简单 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It's very simple.
+Dialogue: 0,0:38:16.06,0:38:18.83,*Default,NTP,0000,0000,0000,,在上课前预习\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You do the reading before class,
+Dialogue: 0,0:38:18.83,0:38:22.43,*Default,NTP,0000,0000,0000,,在上课时认真听讲  课后好好做作业\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you come to class, and you do the homework.
+Dialogue: 0,0:38:22.54,0:38:25.38,*Default,NTP,0000,0000,0000,,如果你们做到了这三点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And I guarantee you if you do those three things
+Dialogue: 0,0:38:25.38,0:38:28.63,*Default,NTP,0000,0000,0000,,我保证你们会在这门课中取得好成绩\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}throughout the course that you'll do well in the course
+Dialogue: 0,0:38:28.63,0:38:32.06,*Default,NTP,0000,0000,0000,,每次开课前我都会这么给学生说\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I've said this almost every time I've given the course
+Dialogue: 0,0:38:32.06,0:38:34.55,*Default,NTP,0000,0000,0000,,从来没有人告诉我这个说法有问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and nobody has ever told me that I'm wrong.
+Dialogue: 0,0:38:34.66,0:38:36.77,*Default,NTP,0000,0000,0000,,并且如果你做到了这三点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And so do these three things,
+Dialogue: 0,0:38:36.77,0:38:37.71,*Default,NTP,0000,0000,0000,,而没有得A的话\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you don't get an "A"
+Dialogue: 0,0:38:37.71,0:38:38.78,*Default,NTP,0000,0000,0000,,你可以在出成绩以后过来找我\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}then you can come back and talk to me about it later.
+Dialogue: 0,0:38:40.59,0:38:45.26,*Default,NTP,0000,0000,0000,,下次课的预习任务是做第一章课后习题二\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}The assignment for the next class is to do Problem 2 of Chapter 1,
+Dialogue: 0,0:38:45.48,0:38:46.74,*Default,NTP,0000,0000,0000,,我在这里重复一下\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which I've repeated right here,
+Dialogue: 0,0:38:46.86,0:38:49.21,*Default,NTP,0000,0000,0000,,除了我已经说过的东西之外\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and that's to think beyond what I've talked about
+Dialogue: 0,0:38:49.21,0:38:51.95,*Default,NTP,0000,0000,0000,,去想一下什么是生物医学工程\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in terms of what is Biomedical Engineering.
+Dialogue: 0,0:38:52.06,0:38:54.55,*Default,NTP,0000,0000,0000,,想一些生物医学工程产品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}To think a little bit more about Biomedical Engineering products
+Dialogue: 0,0:38:54.56,0:38:58.08,*Default,NTP,0000,0000,0000,,这些产品你们可能在生活中见过\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that you've encountered in your life,
+Dialogue: 0,0:38:58.08,0:38:59.09,*Default,NTP,0000,0000,0000,,或者使用过\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}or that you have some experience with,
+Dialogue: 0,0:38:59.17,0:39:01.77,*Default,NTP,0000,0000,0000,,结合在课本相关章节\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and then to think beyond what information
+Dialogue: 0,0:39:01.77,0:39:04.95,*Default,NTP,0000,0000,0000,,以及课堂上讲过的内容\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I've given you in the chapter or in this lecture
+Dialogue: 0,0:39:04.95,0:39:08.53,*Default,NTP,0000,0000,0000,,谈一谈在未来的50年中 你希望\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to say what products of biomedical engineering do you expect
+Dialogue: 0,0:39:08.53,0:39:12.82,*Default,NTP,0000,0000,0000,,哪一种生物医学工程的产品进入千家万户\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to become routine in the next 50 years.
+Dialogue: 0,0:39:12.98,0:39:16.77,*Default,NTP,0000,0000,0000,,花十到十五分钟考虑这个问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So spend 10 or 15 minutes thinking about this
+Dialogue: 0,0:39:16.78,0:39:18.82,*Default,NTP,0000,0000,0000,,并把答案写下来\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and write it down and bring
+Dialogue: 0,0:39:18.82,0:39:22.16,*Default,NTP,0000,0000,0000,,将你们的答案带到下次课堂上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}your responses to class in the next period
+Dialogue: 0,0:39:22.16,0:39:24.22,*Default,NTP,0000,0000,0000,,我们一起来讨论\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and we'll talk about that.
+Dialogue: 0,0:39:24.38,0:39:26.66,*Default,NTP,0000,0000,0000,,在第一堂课的最后\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So at the end of this first lecture
+Dialogue: 0,0:39:26.66,0:39:31.22,*Default,NTP,0000,0000,0000,,我已经从几个方面为你们描述了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where I've gone some way I am trying to tell you
+Dialogue: 0,0:39:31.22,0:39:33.79,*Default,NTP,0000,0000,0000,,生物医学工程是什么\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what Biomedical Engineering is about,
+Dialogue: 0,0:39:33.89,0:39:37.86,*Default,NTP,0000,0000,0000,,我想可以试试把它和其他学科联系起来 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I thought I would try to relate it in a different sort of way.
+Dialogue: 0,0:39:38.01,0:39:43.28,*Default,NTP,0000,0000,0000,,你们一定曾经听过伦敦桥要塌了这首民谣\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And you've heard this poem, London Bridge is Falling Down,
+Dialogue: 0,0:39:43.42,0:39:45.28,*Default,NTP,0000,0000,0000,,你们都听过它吧\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}everybody's heard this poem?
+Dialogue: 0,0:39:45.41,0:39:46.41,*Default,NTP,0000,0000,0000,,你们也玩过这个游戏吧\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}You played the game;
+Dialogue: 0,0:39:46.41,0:39:48.32,*Default,NTP,0000,0000,0000,,我不知道现在是不是有电子游戏了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&} I don't know if there's a videogame now,
+Dialogue: 0,0:39:48.42,0:39:51.78,*Default,NTP,0000,0000,0000,,如果有人玩过伦敦桥这个游戏\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if people play games like this where London Bridge is Falling Down.
+Dialogue: 0,0:39:51.87,0:39:54.03,*Default,NTP,0000,0000,0000,,这是伦敦桥的照片\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}This is a picture of London Bridge,
+Dialogue: 0,0:39:54.16,0:39:55.15,*Default,NTP,0000,0000,0000,,它是一座有趣的桥\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it's an interesting bridge
+Dialogue: 0,0:39:55.15,0:39:56.82,*Default,NTP,0000,0000,0000,,这座桥在伦敦历史上占有重要的地位\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}which is important in the history of London.
+Dialogue: 0,0:39:56.95,0:39:59.54,*Default,NTP,0000,0000,0000,,桥梁改变了我们这个社会\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Bridges have really changed our society
+Dialogue: 0,0:39:59.54,0:40:02.99,*Default,NTP,0000,0000,0000,,使我们能够以前所未有便捷方式\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and allowed us to get from one place to another in ways
+Dialogue: 0,0:40:02.99,0:40:06.17,*Default,NTP,0000,0000,0000,,从一个地方到达另一个地方\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that we couldn't have gotten to easily before.
+Dialogue: 0,0:40:06.36,0:40:08.30,*Default,NTP,0000,0000,0000,,一件关于伦敦桥的趣事是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}One of the interesting things about London Bridge is
+Dialogue: 0,0:40:08.30,0:40:09.55,*Default,NTP,0000,0000,0000,,伦敦桥现在已经不在伦敦了\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that it's now no longer in London,
+Dialogue: 0,0:40:09.64,0:40:10.56,*Default,NTP,0000,0000,0000,,它在亚利桑那州\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}it's in Arizona,
+Dialogue: 0,0:40:10.56,0:40:12.54,*Default,NTP,0000,0000,0000,,你们在这儿可以看见一棵棕榈树\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you can see a palm tree here.
+Dialogue: 0,0:40:12.78,0:40:14.47,*Default,NTP,0000,0000,0000,,当建设者们重建伦敦桥的时候\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}When they reconstructed London Bridge
+Dialogue: 0,0:40:14.47,0:40:16.43,*Default,NTP,0000,0000,0000,,将这座古老的桥搬到亚利桑那州\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they moved the old London Bridge to Arizona;
+Dialogue: 0,0:40:16.57,0:40:18.30,*Default,NTP,0000,0000,0000,,有人买下了它\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}some guy bought it.
+Dialogue: 0,0:40:18.45,0:40:23.82,*Default,NTP,0000,0000,0000,,这一定是个有趣的故事  我就这么一讲\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}That must be an interesting story, but I just have it here,
+Dialogue: 0,0:40:23.95,0:40:26.32,*Default,NTP,0000,0000,0000,,我想这首民谣告诉了我们\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and I think the poem tells you
+Dialogue: 0,0:40:26.32,0:40:28.26,*Default,NTP,0000,0000,0000,,关于工程的一些东西\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}something about engineering
+Dialogue: 0,0:40:28.26,0:40:32.28,*Default,NTP,0000,0000,0000,,如果做工程的话  关于工程的一些问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}if you go through it - and the problems of engineering.
+Dialogue: 0,0:40:32.43,0:40:35.38,*Default,NTP,0000,0000,0000,,在桥梁建设中我们十分清楚地了解\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}In bridge building we're well advanced in understanding
+Dialogue: 0,0:40:35.38,0:40:38.34,*Default,NTP,0000,0000,0000,,在造桥的过程中会遇到什么问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}what are the problems with building bridges
+Dialogue: 0,0:40:38.34,0:40:39.99,*Default,NTP,0000,0000,0000,,以及如何克服这些问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and how do we overcome them?
+Dialogue: 0,0:40:40.12,0:40:42.33,*Default,NTP,0000,0000,0000,,例如  其中的一个问题是\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}For example, one thing that could happen
+Dialogue: 0,0:40:42.33,0:40:44.17,*Default,NTP,0000,0000,0000,,选择了木头和粘土作为造桥的材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}is that you build it up with wood and clay,
+Dialogue: 0,0:40:44.27,0:40:46.43,*Default,NTP,0000,0000,0000,,你就选错了材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}you pick the wrong material for a bridge,
+Dialogue: 0,0:40:46.56,0:40:50.44,*Default,NTP,0000,0000,0000,,这座桥难以与自然力相抗衡\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and it will not stand up to the forces of nature.
+Dialogue: 0,0:40:50.57,0:40:51.91,*Default,NTP,0000,0000,0000,,它可能会被水冲走\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It will wash away
+Dialogue: 0,0:40:51.91,0:40:54.08,*Default,NTP,0000,0000,0000,,之后人们就会选择更好的材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and so you got to pick the right materials
+Dialogue: 0,0:40:54.08,0:40:55.68,*Default,NTP,0000,0000,0000,,以造出了更为坚固的桥\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}in order to build a bridge.
+Dialogue: 0,0:40:55.80,0:40:58.83,*Default,NTP,0000,0000,0000,,你选择了钢铁作为材料 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So you pick a better material like iron and steel,
+Dialogue: 0,0:40:58.90,0:41:01.04,*Default,NTP,0000,0000,0000,,来造了一座更好的桥 \N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that makes a better bridge,
+Dialogue: 0,0:41:01.15,0:41:01.72,*Default,NTP,0000,0000,0000,,我们现在能够明晰这一点\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we know that now 
+Dialogue: 0,0:41:01.72,0:41:02.84,*Default,NTP,0000,0000,0000,,是因为在造桥这件事上我们现在很有经验\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}because we have experience with bridges,
+Dialogue: 0,0:41:02.92,0:41:04.77,*Default,NTP,0000,0000,0000,,但即使是我们现在造的桥也仍然会倒塌\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but still your bridge might fail.
+Dialogue: 0,0:41:04.88,0:41:06.53,*Default,NTP,0000,0000,0000,,其中有很多原因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It might fail for a different reason.
+Dialogue: 0,0:41:06.66,0:41:08.38,*Default,NTP,0000,0000,0000,,这桥可能会折断\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}It might bend and bow,
+Dialogue: 0,0:41:08.50,0:41:12.04,*Default,NTP,0000,0000,0000,,不一定是洪水这样的自然灾害\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that is it's not the forces of nature like the movement of the river
+Dialogue: 0,0:41:12.04,0:41:14.21,*Default,NTP,0000,0000,0000,,导致了桥梁的坍塌\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that's knocking the bridge down,
+Dialogue: 0,0:41:14.32,0:41:16.60,*Default,NTP,0000,0000,0000,,可能只是因为建桥的材料老化\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}but it's just the failure of these materials over time,
+Dialogue: 0,0:41:16.72,0:41:19.75,*Default,NTP,0000,0000,0000,,这种材料没有那么持久耐用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that they don't last as long as they might.
+Dialogue: 0,0:41:19.90,0:41:23.86,*Default,NTP,0000,0000,0000,,但如果你用金或银这样的材料\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So you build it with a material like silver and gold,
+Dialogue: 0,0:41:23.98,0:41:26.73,*Default,NTP,0000,0000,0000,,你又会面对新的问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and then you encounter the problems of society
+Dialogue: 0,0:41:26.73,0:41:30.11,*Default,NTP,0000,0000,0000,,你的桥会被偷走\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that your bridge might get stolen because somebody thinks
+Dialogue: 0,0:41:30.11,0:41:33.62,*Default,NTP,0000,0000,0000,,因为有人认为金和银有比造桥更好的用途\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}they have a better use for silver and gold than your bridge.
+Dialogue: 0,0:41:33.75,0:41:36.26,*Default,NTP,0000,0000,0000,,我要说的是  生物医学工程很大程度上\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}I would say that in Biomedical Engineering, largely,
+Dialogue: 0,0:41:36.39,0:41:39.71,*Default,NTP,0000,0000,0000,,仍旧停留在试图探索产品的工作原理\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}we're still at the stage where we're trying to understand
+Dialogue: 0,0:41:39.71,0:41:41.66,*Default,NTP,0000,0000,0000,,以及寻找产品存在缺陷的原因\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how things work and how they fail,
+Dialogue: 0,0:41:41.78,0:41:43.22,*Default,NTP,0000,0000,0000,,和选择正确材料的阶段\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and what materials are the right ones.
+Dialogue: 0,0:41:43.33,0:41:45.61,*Default,NTP,0000,0000,0000,,这个水平可能与土木工程和桥梁学\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}We're maybe where civil engineering
+Dialogue: 0,0:41:45.61,0:41:48.03,*Default,NTP,0000,0000,0000,,一百年前的研究水平相同\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and bridge building was 100 years ago.
+Dialogue: 0,0:41:48.14,0:41:49.10,*Default,NTP,0000,0000,0000,,对于我而言\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}And that makes it for me
+Dialogue: 0,0:41:49.10,0:41:51.95,*Default,NTP,0000,0000,0000,,这是一个非常激动人心的时代\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}a very exciting time to study this
+Dialogue: 0,0:41:51.95,0:41:56.22,*Default,NTP,0000,0000,0000,,因为一百年前桥梁建设中难以解决的问题\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}because the problems aren't solved in the way
+Dialogue: 0,0:41:56.22,0:41:58.24,*Default,NTP,0000,0000,0000,,在今天都得到了解决\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}that bridge building is largely a solved problem now.
+Dialogue: 0,0:41:58.40,0:42:01.65,*Default,NTP,0000,0000,0000,,人工心脏技术中存在的问题还没有解决\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}Problems like the artificial heart are still unsolved,
+Dialogue: 0,0:42:01.80,0:42:03.10,*Default,NTP,0000,0000,0000,,还有创新发展的空间\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}there's still room for innovation,
+Dialogue: 0,0:42:03.21,0:42:05.90,*Default,NTP,0000,0000,0000,,仍有从未涉足的领域来研究\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}still room to learn from what hasn't worked before,
+Dialogue: 0,0:42:06.02,0:42:07.46,*Default,NTP,0000,0000,0000,,通过对科学原理的学以致用\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}to learn from science,
+Dialogue: 0,0:42:07.46,0:42:08.90,*Default,NTP,0000,0000,0000,,去设计出更好的产品\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}and to design something better.
+Dialogue: 0,0:42:08.99,0:42:12.33,*Default,NTP,0000,0000,0000,,我这门课的目的之一就在于\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}So one of my purposes of this course is to get you,
+Dialogue: 0,0:42:12.45,0:42:15.30,*Default,NTP,0000,0000,0000,,无论你们继续学习生物医学工程与否\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}whether you study Biomedical Engineering after this or not,
+Dialogue: 0,0:42:15.40,0:42:19.58,*Default,NTP,0000,0000,0000,,我想激发你们对这门课的兴趣\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}excited about the subject so that you start thinking about
+Dialogue: 0,0:42:19.59,0:42:22.14,*Default,NTP,0000,0000,0000,,思考在这个仍旧存在诸多问题的领域中\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}how you could innovate in this area
+Dialogue: 0,0:42:22.14,0:42:25.47,*Default,NTP,0000,0000,0000,,你们能做出什么样的创新\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}where lots of problems are still left to solve,
+Dialogue: 0,0:42:25.57,0:42:27.80,*Default,NTP,0000,0000,0000,,希望在周四的课程中再见\N{\fn微软雅黑}{\fs14}{\b0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}so I'll see you on Thursday hopefully.
+Dialogue: 1,0:42:25.57,0:45:02.50,*Default,NTP,0000,0000,0000,,{\fe134}{\fad(500,500)}{\c&HFFFFFF&}{\pos(190,270)}{\fs16} {\fn方正准圆简体}{\bord0}本字幕由{\fs24}{\fn方正综艺简体}{\fe0}{\c&H26F4FF&}YYeTs{\fe134}{\fn方正宋黑简体}{\c&HFFAE1A&}人人影视{\fscy100}{\fe134}{\fn方正准圆简体}{\c&HFFFFFF&}{\fs16}翻译制作\N{\fn方正准圆简体}{\fs14}{\b0}{\bord0}{\shad0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}{\fsp0}{\fs16}{\c&HFFFFFF&}更多教程中文版 请登陆 {\c&H26F4FF&}{\fn方正综艺简体}{\fs24}www.YYeTs.net

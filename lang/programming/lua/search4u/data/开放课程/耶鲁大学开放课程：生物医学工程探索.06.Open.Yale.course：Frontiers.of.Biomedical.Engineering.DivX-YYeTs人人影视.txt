@@ -1,0 +1,926 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:12.35,0:00:16.79,*Default,NTP,0000,0000,0000,,今天我们继续讨论细胞学原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ok, today we're going to continue our discussion of cellular principles
+Dialogue: 0,0:00:16.89,0:00:20.03,*Default,NTP,0000,0000,0000,,之后再引申到细胞培养技术\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and lead into cell culture technology 
+Dialogue: 0,0:00:20.11,0:00:23.42,*Default,NTP,0000,0000,0000,,这也是我们今天下午分组讨论会的主题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which will be the subject of the section meeting this afternoon,
+Dialogue: 0,0:00:23.51,0:00:26.49,*Default,NTP,0000,0000,0000,,顺便提醒一句  下午有组会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so just to remind you about the sections.
+Dialogue: 0,0:00:26.62,0:00:29.47,*Default,NTP,0000,0000,0000,,我们讲到了第五章\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've been reading Chapter 5.
+Dialogue: 0,0:00:29.82,0:00:33.76,*Default,NTP,0000,0000,0000,,上次我们说到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked last time 
+Dialogue: 0,0:00:34.47,0:00:38.71,*Default,NTP,0000,0000,0000,,细胞的一些基本性质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about some of the basic properties of cells,
+Dialogue: 0,0:00:38.80,0:00:42.43,*Default,NTP,0000,0000,0000,,它们的基本结构及共同点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}their basic architecture and what ways cells are the same,
+Dialogue: 0,0:00:42.56,0:00:44.37,*Default,NTP,0000,0000,0000,,动物细胞  包括人类细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in what ways cells from animals,
+Dialogue: 0,0:00:44.46,0:00:51.42,*Default,NTP,0000,0000,0000,,是如何与细菌这样的简单微生物区分开的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}including humans differ from simple microorganisms like bacteria.
+Dialogue: 0,0:00:52.15,0:00:57.77,*Default,NTP,0000,0000,0000,,之后我们也谈了一点有关于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then we talked a little bit about the sort of physics of
+Dialogue: 0,0:00:57.86,0:01:02.98,*Default,NTP,0000,0000,0000,,使细胞聚集形成组织\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what holds cells together to form a collection of cells,
+Dialogue: 0,0:01:03.07,0:01:07.73,*Default,NTP,0000,0000,0000,,进而成为身体架构的物理原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a tissue and to make up the structure of our body.
+Dialogue: 0,0:01:08.12,0:01:11.80,*Default,NTP,0000,0000,0000,,今天  我们来更仔细地讨论一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Today we want to talk in more detail about 
+Dialogue: 0,0:01:11.91,0:01:15.22,*Default,NTP,0000,0000,0000,,同种细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the question of how can cells-
+Dialogue: 0,0:01:15.35,0:01:18.79,*Default,NTP,0000,0000,0000,,它们拥有相同的结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if they're the same and they have the same kind of construction,
+Dialogue: 0,0:01:18.89,0:01:22.17,*Default,NTP,0000,0000,0000,,也包含相同的遗传物质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they all contain the same genetic material
+Dialogue: 0,0:01:22.55,0:01:27.36,*Default,NTP,0000,0000,0000,,它们如何分化形成复杂的器官\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how can they develop into a multi cellular organism 
+Dialogue: 0,0:01:27.48,0:01:31.18,*Default,NTP,0000,0000,0000,,组成器官的各类细胞功能可是迥然不同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that has cells that differ so greatly in function
+Dialogue: 0,0:01:32.25,0:01:34.89,*Default,NTP,0000,0000,0000,,就像我们的脑细胞和皮肤细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that differ as much as the cells in our brain 
+Dialogue: 0,0:01:35.18,0:01:39.10,*Default,NTP,0000,0000,0000,,或者肝细胞和血细胞是完全不同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}differ from the cells of our skin or our liver, or our blood.
+Dialogue: 0,0:01:39.34,0:01:42.29,*Default,NTP,0000,0000,0000,,是怎样的基本原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are the sort of basic principles 
+Dialogue: 0,0:01:42.42,0:01:44.89,*Default,NTP,0000,0000,0000,,导致了细胞间的差异呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that lead to these differences between cells?
+Dialogue: 0,0:01:45.45,0:01:48.16,*Default,NTP,0000,0000,0000,,作为这节课的开始  我先稍微回顾一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To start out I'm going to go back 
+Dialogue: 0,0:01:48.27,0:01:51.74,*Default,NTP,0000,0000,0000,,一些关于发育过程的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the thinking about development a little bit,
+Dialogue: 0,0:01:51.85,0:01:55.58,*Default,NTP,0000,0000,0000,,先说胚胎发育  这里有张图 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}embryonic development, and show you a picture here.
+Dialogue: 0,0:01:55.79,0:02:00.02,*Default,NTP,0000,0000,0000,,这是一张女性生殖系统的图片\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a picture of the female reproductive tract.
+Dialogue: 0,0:02:00.39,0:02:02.63,*Default,NTP,0000,0000,0000,,这里是子宫\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the uterus down here,
+Dialogue: 0,0:02:02.78,0:02:05.37,*Default,NTP,0000,0000,0000,,基本上半个子宫  包括子宫壁都在这里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of half of it is shown with the uterine wall,
+Dialogue: 0,0:02:05.69,0:02:08.52,*Default,NTP,0000,0000,0000,,这是输卵管  这是卵巢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the fallopian tubes, and the ovaries.
+Dialogue: 0,0:02:09.26,0:02:13.48,*Default,NTP,0000,0000,0000,,你们知道  卵巢产生卵子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know that the ovary produces an egg.
+Dialogue: 0,0:02:14.99,0:02:20.44,*Default,NTP,0000,0000,0000,,而卵子是一种生殖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An egg is an example of a germ cell.
+Dialogue: 0,0:02:20.75,0:02:24.40,*Default,NTP,0000,0000,0000,,卵子中只含有我们机体一半的染色体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Has only half of the diploid 
+Dialogue: 0,0:02:24.65,0:02:27.43,*Default,NTP,0000,0000,0000,,二倍体基因组中一半的染色体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}chromosomal content that most of the cells,
+Dialogue: 0,0:02:27.53,0:02:31.00,*Default,NTP,0000,0000,0000,,这些二倍体细胞称为体细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are called somatic cells in our body have.
+Dialogue: 0,0:02:31.16,0:02:33.73,*Default,NTP,0000,0000,0000,,生殖细胞  包括精子和卵子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Germ line cells sperm and egg 
+Dialogue: 0,0:02:34.27,0:02:37.40,*Default,NTP,0000,0000,0000,,都经由减数分裂形成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are produced by the process of myosis,
+Dialogue: 0,0:02:37.51,0:02:39.80,*Default,NTP,0000,0000,0000,,这点书里有提及\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's reviewed in the book,
+Dialogue: 0,0:02:40.00,0:02:43.51,*Default,NTP,0000,0000,0000,,这是一种特殊的细胞分裂形式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it's a special kind of cell division 
+Dialogue: 0,0:02:43.63,0:02:46.74,*Default,NTP,0000,0000,0000,,结果是使得原本\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that results in the reduction of chromosome number
+Dialogue: 0,0:02:46.89,0:02:50.14,*Default,NTP,0000,0000,0000,,有两条染色体的一对同源染色体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from two copies of each chromosome 
+Dialogue: 0,0:02:50.25,0:02:52.45,*Default,NTP,0000,0000,0000,,减为一条染色体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}down to one copy of each chromosome.
+Dialogue: 0,0:02:52.98,0:02:56.43,*Default,NTP,0000,0000,0000,,另一种生殖细胞是精子细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other germ line cell is the sperm cell.
+Dialogue: 0,0:02:58.20,0:03:00.29,*Default,NTP,0000,0000,0000,,受精的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fertilization of these two 
+Dialogue: 0,0:03:00.62,0:03:03.29,*Default,NTP,0000,0000,0000,,就是这两种细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where these two cells join 
+Dialogue: 0,0:03:03.44,0:03:06.54,*Default,NTP,0000,0000,0000,,在输卵管壶腹部相互结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}occurs in the distal part of the fallopian tube.
+Dialogue: 0,0:03:07.00,0:03:08.74,*Default,NTP,0000,0000,0000,,受精就是产生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The result of fertilization now 
+Dialogue: 0,0:03:08.87,0:03:13.16,*Default,NTP,0000,0000,0000,,一个精卵结合的新细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a new cell that is the union of the sperm and the egg,
+Dialogue: 0,0:03:13.32,0:03:15.01,*Default,NTP,0000,0000,0000,,称为受精卵\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's called the zygote 
+Dialogue: 0,0:03:15.27,0:03:19.85,*Default,NTP,0000,0000,0000,,它含有二倍体的染色体基因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it contains the diploid number of chromosomes, genes.
+Dialogue: 0,0:03:19.95,0:03:22.87,*Default,NTP,0000,0000,0000,,其中一条染色体来自卵子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One copy of the chromosome comes from the egg 
+Dialogue: 0,0:03:23.00,0:03:26.17,*Default,NTP,0000,0000,0000,,另一条来自精子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and one copy of each chromosome comes from the sperm,
+Dialogue: 0,0:03:26.28,0:03:28.02,*Default,NTP,0000,0000,0000,,这些你们都知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so this you know about.
+Dialogue: 0,0:03:28.34,0:03:30.02,*Default,NTP,0000,0000,0000,,这个受精卵\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This one cell,
+Dialogue: 0,0:03:30.11,0:03:32.24,*Default,NTP,0000,0000,0000,,是独一无二的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this one fertilized cell which is unique
+Dialogue: 0,0:03:32.37,0:03:35.25,*Default,NTP,0000,0000,0000,,因为它的染色体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's the - its chromosome 
+Dialogue: 0,0:03:35.35,0:03:38.65,*Default,NTP,0000,0000,0000,,包含了精子和卵子的组合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}contains the combination of the sperm and the egg,
+Dialogue: 0,0:03:39.37,0:03:41.68,*Default,NTP,0000,0000,0000,,并由此发育成为一个胚胎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}develops into an embryo 
+Dialogue: 0,0:03:41.85,0:03:45.01,*Default,NTP,0000,0000,0000,,之后形成一个人类个体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then on birth develops into a human.
+Dialogue: 0,0:03:47.33,0:03:52.07,*Default,NTP,0000,0000,0000,,我们每个人都由约100万亿个细胞构成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Each of us has something like 10^14 cells.
+Dialogue: 0,0:03:52.27,0:03:54.01,*Default,NTP,0000,0000,0000,,我们上节课说过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about last time 
+Dialogue: 0,0:03:54.12,0:03:57.36,*Default,NTP,0000,0000,0000,,从一个单细胞分裂形成大量细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that part of the process of going from this single cell 
+Dialogue: 0,0:03:57.79,0:04:01.87,*Default,NTP,0000,0000,0000,,构成的器官的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to multi cellular many celled organisms 
+Dialogue: 0,0:04:02.02,0:04:04.34,*Default,NTP,0000,0000,0000,,叫做细胞分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like we are is cell division.
+Dialogue: 0,0:04:04.62,0:04:07.04,*Default,NTP,0000,0000,0000,,细胞不断分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cell divides, and divides, 
+Dialogue: 0,0:04:07.15,0:04:09.43,*Default,NTP,0000,0000,0000,,持续进行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and divides many, many times
+Dialogue: 0,0:04:09.57,0:04:11.34,*Default,NTP,0000,0000,0000,,那是胚胎发育中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's one of the signature events 
+Dialogue: 0,0:04:11.51,0:04:15.30,*Default,NTP,0000,0000,0000,,一个标志性的过程  在那之后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of embryogenesis until we have many,
+Dialogue: 0,0:04:15.42,0:04:18.05,*Default,NTP,0000,0000,0000,,我们就有了许许多多构成我们身体的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many cells that make up our bodies.
+Dialogue: 0,0:04:18.24,0:04:19.47,*Default,NTP,0000,0000,0000,,这个过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In that process,
+Dialogue: 0,0:04:19.59,0:04:23.98,*Default,NTP,0000,0000,0000,,细胞通过某种高度有序的方式进行分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cells become different in ways that appear to be highly organized.
+Dialogue: 0,0:04:24.14,0:04:27.15,*Default,NTP,0000,0000,0000,,像我们的脑组织\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have tissues like the brain 
+Dialogue: 0,0:04:27.57,0:04:30.33,*Default,NTP,0000,0000,0000,,它们的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are assembled to do functions 
+Dialogue: 0,0:04:30.67,0:04:34.43,*Default,NTP,0000,0000,0000,,就截然不同于身体其他部分的细胞功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are different from any other groups of cells in the body.
+Dialogue: 0,0:04:35.05,0:04:38.31,*Default,NTP,0000,0000,0000,,它们协同工作  形态相似\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They work in concert and they all have similarities,
+Dialogue: 0,0:04:39.21,0:04:40.72,*Default,NTP,0000,0000,0000,,我们身体的其他器官也莫不如此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the same with all of our other organs.
+Dialogue: 0,0:04:40.81,0:04:42.64,*Default,NTP,0000,0000,0000,,那么这一切是如何发生的呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So how does that happen?
+Dialogue: 0,0:04:43.18,0:04:46.60,*Default,NTP,0000,0000,0000,,这一过程不仅贯穿整个发育阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it really happens throughout development
+Dialogue: 0,0:04:46.73,0:04:48.50,*Default,NTP,0000,0000,0000,,并且于胚胎发育伊始就存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it happens from the first stages.
+Dialogue: 0,0:04:48.71,0:04:51.57,*Default,NTP,0000,0000,0000,,事实上  受精卵在进行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, there are differences that can be detected
+Dialogue: 0,0:04:51.71,0:04:53.52,*Default,NTP,0000,0000,0000,,第一次有丝分裂时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}upon the first cell division
+Dialogue: 0,0:04:53.64,0:04:57.16,*Default,NTP,0000,0000,0000,,就会产生差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where this zygote divides through the process of mitosis.
+Dialogue: 0,0:04:57.40,0:04:59.28,*Default,NTP,0000,0000,0000,,我们上节课说到过有丝分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about mitosis last time;
+Dialogue: 0,0:04:59.40,0:05:01.53,*Default,NTP,0000,0000,0000,,在那一章里更详细的阐释了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's described more completely in the chapter,
+Dialogue: 0,0:05:01.76,0:05:03.90,*Default,NTP,0000,0000,0000,,细胞是怎么由一生二的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where two cells are formed from one.
+Dialogue: 0,0:05:04.66,0:05:06.95,*Default,NTP,0000,0000,0000,,现在  这些细胞之间已经有一些差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, these cells have some differences.
+Dialogue: 0,0:05:07.05,0:05:08.66,*Default,NTP,0000,0000,0000,,如果观察这些细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you could look at these cells 
+Dialogue: 0,0:05:08.79,0:05:10.52,*Default,NTP,0000,0000,0000,,你就能发现这些差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could find differences between them,
+Dialogue: 0,0:05:10.64,0:05:11.99,*Default,NTP,0000,0000,0000,,每个细胞内容物的化学成分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are chemical differences 
+Dialogue: 0,0:05:12.18,0:05:15.14,*Default,NTP,0000,0000,0000,,都会有一些不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the content of each of these cells.
+Dialogue: 0,0:05:17.14,0:05:20.74,*Default,NTP,0000,0000,0000,,如果有丝分裂的过程按部就班地进行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If mitosis occurs the way that it's supposed to,
+Dialogue: 0,0:05:21.16,0:05:24.16,*Default,NTP,0000,0000,0000,,那所有细胞的DNA都是相同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the DNA that's in each of these cells is the same.
+Dialogue: 0,0:05:24.39,0:05:27.45,*Default,NTP,0000,0000,0000,,有丝分裂的一个特征\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's one of the properties of mitosis,
+Dialogue: 0,0:05:27.57,0:05:32.69,*Default,NTP,0000,0000,0000,,就是DNA在S期内完全复制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the DNA gets completely duplicated during the S phase,
+Dialogue: 0,0:05:32.85,0:05:34.91,*Default,NTP,0000,0000,0000,,S期就是DNA合成期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during DNA synthesis phase.
+Dialogue: 0,0:05:35.43,0:05:37.73,*Default,NTP,0000,0000,0000,,如果这些细胞都含有相同的DNA的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could these cells be different then,
+Dialogue: 0,0:05:37.83,0:05:39.59,*Default,NTP,0000,0000,0000,,它们之间的差异又是从何而来的呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if they contain the same DNA?
+Dialogue: 0,0:05:39.95,0:05:42.62,*Default,NTP,0000,0000,0000,,什么样的生理机制导致细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's a physical mechanism that could lead to differences 
+Dialogue: 0,0:05:42.72,0:05:47.07,*Default,NTP,0000,0000,0000,,在发育伊始就产生这些差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between these two cells at this very early stage of development?
+Dialogue: 0,0:05:47.45,0:05:48.50,*Default,NTP,0000,0000,0000,,大家知道吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Any ideas?
+Dialogue: 0,0:05:51.41,0:05:56.58,*Default,NTP,0000,0000,0000,,如果DNA的合成精确无误\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the DNA is synthesized exactly correctly,
+Dialogue: 0,0:05:56.81,0:06:00.61,*Default,NTP,0000,0000,0000,,每个子细胞都有一套相同的DNA\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so each one gets the right copies of DNA,
+Dialogue: 0,0:06:00.76,0:06:02.26,*Default,NTP,0000,0000,0000,,那会有什么其他的不同点呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what other differences could there be?
+Dialogue: 0,0:06:04.28,0:06:06.11,*Default,NTP,0000,0000,0000,,细胞大小可能会不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The size of the cells could be different;
+Dialogue: 0,0:06:06.23,0:06:08.63,*Default,NTP,0000,0000,0000,,也许有丝分裂的过程是不对称的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe mitosis is asymmetrical in some way 
+Dialogue: 0,0:06:08.78,0:06:11.58,*Default,NTP,0000,0000,0000,,致使子细胞一个大一个小\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that one of the cells ends up being bigger than the other.
+Dialogue: 0,0:06:11.74,0:06:16.74,*Default,NTP,0000,0000,0000,,那大小怎么会影响细胞功能的呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could size affect the life of the cell?
+Dialogue: 0,0:06:22.60,0:06:24.37,*Default,NTP,0000,0000,0000,,大小不同  代谢活动的总量就会不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Different amount of metabolic activity 
+Dialogue: 0,0:06:24.48,0:06:27.56,*Default,NTP,0000,0000,0000,,可能因为一个细胞的胞质比另一个体积大\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because one has a greater volume of cytoplasm than the other,
+Dialogue: 0,0:06:27.68,0:06:31.09,*Default,NTP,0000,0000,0000,,以上这些观点都是非常正确的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, so these are exactly the right kinds of ideas.
+Dialogue: 0,0:06:31.24,0:06:36.51,*Default,NTP,0000,0000,0000,,细胞分裂的过程中的确可能会产生差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There could be differences in the physics of cell division,
+Dialogue: 0,0:06:36.68,0:06:39.43,*Default,NTP,0000,0000,0000,,在分裂为两个细胞的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this process of separating into two cells 
+Dialogue: 0,0:06:39.64,0:06:43.73,*Default,NTP,0000,0000,0000,,尽管两个子细胞含有相同的染色体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such that even though they both have the same chromosomes,
+Dialogue: 0,0:06:43.87,0:06:45.64,*Default,NTP,0000,0000,0000,,含有相同的DNA组成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they both have the same DNA content,
+Dialogue: 0,0:06:45.87,0:06:47.89,*Default,NTP,0000,0000,0000,,但也许其中一个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe one of the cells entraps
+Dialogue: 0,0:06:48.03,0:06:50.26,*Default,NTP,0000,0000,0000,,截留了和其他细胞不同的物质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something that's different than the other cells.
+Dialogue: 0,0:06:51.06,0:06:53.53,*Default,NTP,0000,0000,0000,,这样的差异可能就发生在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That difference could have been generated 
+Dialogue: 0,0:06:53.67,0:06:55.63,*Default,NTP,0000,0000,0000,,受精的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during the process of fertilization.
+Dialogue: 0,0:06:55.85,0:06:59.75,*Default,NTP,0000,0000,0000,,假设某个精子细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The sperm - say this is the one sperm cell 
+Dialogue: 0,0:06:59.88,0:07:03.58,*Default,NTP,0000,0000,0000,,成功向卵子注入了自己的DNA\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's able to inject its DNA into the egg,
+Dialogue: 0,0:07:03.92,0:07:05.97,*Default,NTP,0000,0000,0000,,那这个细胞就有了极性\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well then this cell has a polarity.
+Dialogue: 0,0:07:06.12,0:07:08.00,*Default,NTP,0000,0000,0000,,现在  细胞上半部分和下半部分不同了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the top is different from the bottom 
+Dialogue: 0,0:07:08.47,0:07:11.24,*Default,NTP,0000,0000,0000,,因为精子如果从一边进入卵子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the sperm came in this side physically 
+Dialogue: 0,0:07:11.45,0:07:12.43,*Default,NTP,0000,0000,0000,,就不会再从另一边进入了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not the other side.
+Dialogue: 0,0:07:12.55,0:07:14.74,*Default,NTP,0000,0000,0000,,要知道这些细胞相对细菌而言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember that these cells are relatively large 
+Dialogue: 0,0:07:14.88,0:07:16.11,*Default,NTP,0000,0000,0000,,还是比较大的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}compared to bacteria 
+Dialogue: 0,0:07:16.26,0:07:18.98,*Default,NTP,0000,0000,0000,,扩散作用在这种尺度上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so diffusion doesn't occur very quickly 
+Dialogue: 0,0:07:19.10,0:07:20.66,*Default,NTP,0000,0000,0000,,发生得不是那么快\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over this length scale.
+Dialogue: 0,0:07:21.01,0:07:25.08,*Default,NTP,0000,0000,0000,,当一个细胞分裂发生期间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the time it takes for one cell division to occur,
+Dialogue: 0,0:07:26.26,0:07:29.88,*Default,NTP,0000,0000,0000,,很可能这个细胞截留了一种不同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it could be that this cell entraps a different 
+Dialogue: 0,0:07:30.03,0:07:33.29,*Default,NTP,0000,0000,0000,,细胞质化学组分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}chemical composition of the cytoplasm then this entraps,
+Dialogue: 0,0:07:33.40,0:07:35.63,*Default,NTP,0000,0000,0000,,这种非对称分裂是一个广为人知的概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's a well known concept.
+Dialogue: 0,0:07:35.74,0:07:38.43,*Default,NTP,0000,0000,0000,,唯一需要引起重视的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The only important thing to realize about 
+Dialogue: 0,0:07:38.55,0:07:40.30,*Default,NTP,0000,0000,0000,,这些差异发生在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is that these differences 
+Dialogue: 0,0:07:40.40,0:07:43.81,*Default,NTP,0000,0000,0000,,发育阶段的早期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}start to occur very early in development.
+Dialogue: 0,0:07:44.89,0:07:46.93,*Default,NTP,0000,0000,0000,,一旦产生差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Once you have a difference that occurs,
+Dialogue: 0,0:07:47.06,0:07:48.29,*Default,NTP,0000,0000,0000,,产生两个不同的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two cells are difference,
+Dialogue: 0,0:07:48.44,0:07:50.17,*Default,NTP,0000,0000,0000,,这些差异会伴随着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those differences can propagate
+Dialogue: 0,0:07:50.31,0:07:52.24,*Default,NTP,0000,0000,0000,,细胞分裂过程代代相传\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the cells continue to divide.
+Dialogue: 0,0:07:52.68,0:07:55.77,*Default,NTP,0000,0000,0000,,这张图上显示的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's shown in this diagram 
+Dialogue: 0,0:07:56.00,0:07:59.28,*Default,NTP,0000,0000,0000,,就是胚胎发育的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the progress of the developing embryo 
+Dialogue: 0,0:07:59.52,0:08:04.17,*Default,NTP,0000,0000,0000,,是按照它在输卵管中移动的时间排序的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as it travels in time, down the fallopian tube.
+Dialogue: 0,0:08:04.36,0:08:05.63,*Default,NTP,0000,0000,0000,,这是第一次分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's one division,
+Dialogue: 0,0:08:05.81,0:08:09.29,*Default,NTP,0000,0000,0000,,这里显示的是十六细胞期  然后在这里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}here it shows it at the 16 cell stage and then here,
+Dialogue: 0,0:08:09.43,0:08:11.13,*Default,NTP,0000,0000,0000,,在这里胚胎进一步的产生了变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this transformation as it goes 
+Dialogue: 0,0:08:11.26,0:08:14.96,*Default,NTP,0000,0000,0000,,由十六个细胞分裂为约六十四个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from 16 cells to more like 64 cells.
+Dialogue: 0,0:08:15.59,0:08:17.71,*Default,NTP,0000,0000,0000,,与此同时  胚胎的外形\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a change in sort of the 
+Dialogue: 0,0:08:17.82,0:08:20.64,*Default,NTP,0000,0000,0000,,也有一定程度的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}shape of the overall embryo as well.
+Dialogue: 0,0:08:21.45,0:08:26.30,*Default,NTP,0000,0000,0000,,不再只是一个球状的细胞团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's no longer just a round spherical mass of cells,
+Dialogue: 0,0:08:26.45,0:08:27.91,*Default,NTP,0000,0000,0000,,它有了一定的结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it has some structure.
+Dialogue: 0,0:08:28.10,0:08:29.90,*Default,NTP,0000,0000,0000,,有一簇细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a cluster of cells here,
+Dialogue: 0,0:08:30.04,0:08:34.12,*Default,NTP,0000,0000,0000,,一层细胞构成了外形轮廓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a sheet of cells that forms an outer lining,
+Dialogue: 0,0:08:34.39,0:08:37.38,*Default,NTP,0000,0000,0000,,最明显的结构就是这个空腔\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what is most noticeable is this cavity,
+Dialogue: 0,0:08:37.47,0:08:40.16,*Default,NTP,0000,0000,0000,,这一充满液体的空腔开始发育形成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this fluid filled cavity which begins to develop.
+Dialogue: 0,0:08:41.19,0:08:45.95,*Default,NTP,0000,0000,0000,,我们称此发育阶段为囊胚期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, this stage of development is called the blastocyst 
+Dialogue: 0,0:08:47.44,0:08:51.70,*Default,NTP,0000,0000,0000,,这是在囊胚期的终末阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's at this stage late in this blastocyst stage 
+Dialogue: 0,0:08:51.79,0:08:55.51,*Default,NTP,0000,0000,0000,,发育中的胚胎在子宫壁上着床\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the developing embryo implants in the uterine wall,
+Dialogue: 0,0:08:56.27,0:09:00.81,*Default,NTP,0000,0000,0000,,并开始形成与母体的接触面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there begins to form an interface with the mother 
+Dialogue: 0,0:09:01.73,0:09:04.92,*Default,NTP,0000,0000,0000,,从而汲取营养以供进一步发育\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that it can be nourished during further development.
+Dialogue: 0,0:09:05.53,0:09:08.02,*Default,NTP,0000,0000,0000,,环抱在周围的这一层细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cells of this surrounding sheet 
+Dialogue: 0,0:09:10.15,0:09:11.78,*Default,NTP,0000,0000,0000,,已经开始逐渐分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have become different in some way 
+Dialogue: 0,0:09:12.10,0:09:14.98,*Default,NTP,0000,0000,0000,,最终成为胎盘\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they develop into the placenta 
+Dialogue: 0,0:09:15.19,0:09:17.47,*Default,NTP,0000,0000,0000,,及额外的胚胎组织\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the extra embryonic tissues.
+Dialogue: 0,0:09:18.58,0:09:21.09,*Default,NTP,0000,0000,0000,,而这簇细胞的内侧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cells of this cluster inside 
+Dialogue: 0,0:09:21.22,0:09:23.41,*Default,NTP,0000,0000,0000,,毗邻于充满液体的空腔的一侧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}next to the fluid filled cavity 
+Dialogue: 0,0:09:23.70,0:09:26.97,*Default,NTP,0000,0000,0000,,这些细胞在囊胚中称为内群细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a region of the blastocyst called the inner cell mass.
+Dialogue: 0,0:09:27.36,0:09:29.60,*Default,NTP,0000,0000,0000,,这一组细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's this group of cells,
+Dialogue: 0,0:09:29.71,0:09:32.71,*Default,NTP,0000,0000,0000,,这组发育胚胎中的细胞亚群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this subset of cells from the developing embryo 
+Dialogue: 0,0:09:32.88,0:09:35.56,*Default,NTP,0000,0000,0000,,发育成胚胎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that become the embryo,
+Dialogue: 0,0:09:35.69,0:09:39.95,*Default,NTP,0000,0000,0000,,发育组织  直至发育成整个人体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that become the organism, become the human.
+Dialogue: 0,0:09:41.65,0:09:43.67,*Default,NTP,0000,0000,0000,,在以后的课程中我们会学到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk as we go through 
+Dialogue: 0,0:09:43.79,0:09:46.58,*Default,NTP,0000,0000,0000,,干细胞的概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the concept of stem cells 
+Dialogue: 0,0:09:46.71,0:09:48.93,*Default,NTP,0000,0000,0000,,干细胞和发育的关系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how stem cells are related to development 
+Dialogue: 0,0:09:49.02,0:09:51.11,*Default,NTP,0000,0000,0000,,以及干细胞的特殊之处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what's so special about stem cells.
+Dialogue: 0,0:09:51.50,0:09:54.27,*Default,NTP,0000,0000,0000,,我们会提到不同种类的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about different kinds of stem cells.
+Dialogue: 0,0:09:54.64,0:09:58.84,*Default,NTP,0000,0000,0000,,干细胞之间的一个区别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the differences in stem cell populations 
+Dialogue: 0,0:09:58.93,0:10:01.42,*Default,NTP,0000,0000,0000,,你可能听说过的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you will hear about 
+Dialogue: 0,0:10:02.42,0:10:04.92,*Default,NTP,0000,0000,0000,,那就是既有胚胎干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is you hear about embryonic stem cells 
+Dialogue: 0,0:10:05.04,0:10:06.64,*Default,NTP,0000,0000,0000,,也有成人干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you hear about adult stem cells.
+Dialogue: 0,0:10:06.91,0:10:09.45,*Default,NTP,0000,0000,0000,,这些名称就明确揭示了它们之间的区别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are obvious what the differences are,
+Dialogue: 0,0:10:09.55,0:10:11.72,*Default,NTP,0000,0000,0000,,胚胎干细胞是源自于胚胎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}embryonic stem cells are derived from embryos .
+Dialogue: 0,0:10:12.00,0:10:15.06,*Default,NTP,0000,0000,0000,,就是这个  在这片区域的胚胎细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's this - its cells in this region here,
+Dialogue: 0,0:10:15.18,0:10:16.68,*Default,NTP,0000,0000,0000,,即内细胞群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this inner cell mass 
+Dialogue: 0,0:10:17.82,0:10:20.63,*Default,NTP,0000,0000,0000,,而胚胎干细胞的来源所在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that that's the source of embryonic stem cells,
+Dialogue: 0,0:10:21.75,0:10:23.31,*Default,NTP,0000,0000,0000,,就是源自这里的内细胞群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cells from inner cell mass here.
+Dialogue: 0,0:10:23.41,0:10:26.11,*Default,NTP,0000,0000,0000,,成人干细胞是用某些方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Adult stem cells are acquired in some fashion 
+Dialogue: 0,0:10:26.22,0:10:28.23,*Default,NTP,0000,0000,0000,,从成人体内提取的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from an adult organism.
+Dialogue: 0,0:10:29.25,0:10:33.07,*Default,NTP,0000,0000,0000,,现在囊胚已经到了发育过程中的着床阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}During development now this blastocyst has become implanted.
+Dialogue: 0,0:10:33.22,0:10:36.50,*Default,NTP,0000,0000,0000,,外层的细胞形成接触面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These cells around the outside form the interface, 
+Dialogue: 0,0:10:36.63,0:10:40.38,*Default,NTP,0000,0000,0000,,即胎盘  是母血与胎血\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the placenta, where the maternal blood circulation
+Dialogue: 0,0:10:40.48,0:10:43.39,*Default,NTP,0000,0000,0000,,进行血液交换\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}meets the embryonic circulation 
+Dialogue: 0,0:10:43.49,0:10:45.71,*Default,NTP,0000,0000,0000,,及营养物质交换的场所\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and nutrients are passed back and forth that way
+Dialogue: 0,0:10:45.82,0:10:48.71,*Default,NTP,0000,0000,0000,,整个过程高度有序并且非常重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in a very highly regulated and important way.
+Dialogue: 0,0:10:48.83,0:10:52.25,*Default,NTP,0000,0000,0000,,内细胞群发育成为胎儿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This inner cell mass develops into the embryo,
+Dialogue: 0,0:10:52.35,0:10:54.59,*Default,NTP,0000,0000,0000,,这张图这是一个相对晚期的阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which this here shown at a later stage 
+Dialogue: 0,0:10:54.70,0:10:56.92,*Default,NTP,0000,0000,0000,,能越来越清晰地观察到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is beginning to be clear 
+Dialogue: 0,0:10:57.02,0:11:00.38,*Default,NTP,0000,0000,0000,,这团东西开始有个人形了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it's becoming an organism that looks like us.
+Dialogue: 0,0:11:00.53,0:11:02.91,*Default,NTP,0000,0000,0000,,有一个区域看起来像头\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a region that looks the head,
+Dialogue: 0,0:11:03.21,0:11:05.15,*Default,NTP,0000,0000,0000,,另一个区域看起来像尾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a region that looks more like the tail.
+Dialogue: 0,0:11:05.35,0:11:07.23,*Default,NTP,0000,0000,0000,,你能看到这个区域\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can see this region here 
+Dialogue: 0,0:11:07.37,0:11:10.46,*Default,NTP,0000,0000,0000,,将会发育成为上肢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is going to develop into one of the upper limbs,
+Dialogue: 0,0:11:10.55,0:11:14.71,*Default,NTP,0000,0000,0000,,这里是手臂  而且身体前后也有不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the arms here and the back is different from the front,
+Dialogue: 0,0:11:15.43,0:11:18.80,*Default,NTP,0000,0000,0000,,脊椎正在后背发育  另外\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the spinal cord is developing in the back, whereas,
+Dialogue: 0,0:11:18.93,0:11:21.16,*Default,NTP,0000,0000,0000,,会成为我们肠管的结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the structures that become our intestinal tract 
+Dialogue: 0,0:11:21.31,0:11:23.63,*Default,NTP,0000,0000,0000,,也在另一个表面发育着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is developing on the other surface.
+Dialogue: 0,0:11:25.53,0:11:28.63,*Default,NTP,0000,0000,0000,,不同的极性开始形成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Different kinds of polarity form,
+Dialogue: 0,0:11:28.85,0:11:31.26,*Default,NTP,0000,0000,0000,,有头端  也有尾端\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a head, and there's a tail,
+Dialogue: 0,0:11:31.54,0:11:33.29,*Default,NTP,0000,0000,0000,,有后面  也有前面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a back, there's a front,
+Dialogue: 0,0:11:33.41,0:11:35.43,*Default,NTP,0000,0000,0000,,有左侧  也有右侧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a left side and there's a right side.
+Dialogue: 0,0:11:35.75,0:11:38.87,*Default,NTP,0000,0000,0000,,这是发育过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one of the kinds of differences that develop 
+Dialogue: 0,0:11:38.99,0:11:40.90,*Default,NTP,0000,0000,0000,,发生的一种变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that happens during development 
+Dialogue: 0,0:11:41.00,0:11:43.33,*Default,NTP,0000,0000,0000,,而且细胞似乎知道它们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and cells somehow know where they are 
+Dialogue: 0,0:11:43.63,0:11:49.36,*Default,NTP,0000,0000,0000,,在这个非对称发育生物体中的位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}within this developing asymmetrical organism.
+Dialogue: 0,0:11:53.66,0:11:55.19,*Default,NTP,0000,0000,0000,,怎么会这样的呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does that happen?
+Dialogue: 0,0:11:55.33,0:12:01.69,*Default,NTP,0000,0000,0000,,这是通过一种严格协调调控的过程完成的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It happens through a very regulated,
+Dialogue: 0,0:12:02.51,0:12:08.69,*Default,NTP,0000,0000,0000,,这个过程我们称为细胞分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}coordinated slow process of what is called differentiation.
+Dialogue: 0,0:12:09.64,0:12:15.86,*Default,NTP,0000,0000,0000,,细胞从一个有限的分化状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cells move from a state of limited differentiation 
+Dialogue: 0,0:12:16.47,0:12:19.01,*Default,NTP,0000,0000,0000,,进入一个更深层次的分化状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to a state of more differentiation.
+Dialogue: 0,0:12:19.36,0:12:23.23,*Default,NTP,0000,0000,0000,,受精卵  或者说已受精的卵子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The zygote or this fertilized egg 
+Dialogue: 0,0:12:23.57,0:12:26.76,*Default,NTP,0000,0000,0000,,是一个完全未分化的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a completely undifferentiated cell.
+Dialogue: 0,0:12:27.97,0:12:30.33,*Default,NTP,0000,0000,0000,,我们之后还会再提到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about another word for this later,
+Dialogue: 0,0:12:30.44,0:12:32.27,*Default,NTP,0000,0000,0000,,而这个细胞将孕育出\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a cell that's going to give rise 
+Dialogue: 0,0:12:32.38,0:12:33.90,*Default,NTP,0000,0000,0000,,我们身体全部的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to all the cells of our body.
+Dialogue: 0,0:12:36.21,0:12:37.57,*Default,NTP,0000,0000,0000,,分裂过程不断发生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As division happens 
+Dialogue: 0,0:12:37.70,0:12:41.91,*Default,NTP,0000,0000,0000,,以及发育中的有机体对更多细胞的需求\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the developing organism acquires more and more cells,
+Dialogue: 0,0:12:42.36,0:12:45.49,*Default,NTP,0000,0000,0000,,细胞个体便逐渐分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}individual cells become differentiated,
+Dialogue: 0,0:12:45.82,0:12:50.89,*Default,NTP,0000,0000,0000,,它们越来越接近成熟细胞的样子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they become more and more like their final mature form.
+Dialogue: 0,0:12:51.61,0:12:55.44,*Default,NTP,0000,0000,0000,,位于神经发育区中的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cells that are within the region that becomes the nervous system 
+Dialogue: 0,0:12:56.10,0:13:02.76,*Default,NTP,0000,0000,0000,,变得越来越不像受精卵  而像脑细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}become less like the zygote and more like the cells of our brain,
+Dialogue: 0,0:13:02.92,0:13:04.08,*Default,NTP,0000,0000,0000,,神经细胞或神经胶质细胞等等\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}neurons and glia,
+Dialogue: 0,0:13:04.21,0:13:05.85,*Default,NTP,0000,0000,0000,,这些成熟的脑组织中细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and cells of the mature brain.
+Dialogue: 0,0:13:06.25,0:13:08.25,*Default,NTP,0000,0000,0000,,同样的  形成上肢的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same way cells that form the limb 
+Dialogue: 0,0:13:08.38,0:13:11.23,*Default,NTP,0000,0000,0000,,变得越来越像肌肉或皮肤细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}become more like muscle cells or skin cells,
+Dialogue: 0,0:13:12.21,0:13:14.36,*Default,NTP,0000,0000,0000,,或者上肢的其他结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the structures that become the limb.
+Dialogue: 0,0:13:16.24,0:13:20.86,*Default,NTP,0000,0000,0000,,这个过程的发生包含一系列步骤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that process occurs in a series of steps 
+Dialogue: 0,0:13:21.98,0:13:24.95,*Default,NTP,0000,0000,0000,,而这些步骤中的一个步骤即如图所示\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and one of those kinds of steps is shown here.
+Dialogue: 0,0:13:25.19,0:13:29.04,*Default,NTP,0000,0000,0000,,这张图示内容我就简单地标注为干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this diagram shows what I simply labeled as a stem cell,
+Dialogue: 0,0:13:29.17,0:13:31.95,*Default,NTP,0000,0000,0000,,现在我提到的干细胞不是特指哪种干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I'm not referring to any particular kind of stem cell now,
+Dialogue: 0,0:13:32.09,0:13:35.59,*Default,NTP,0000,0000,0000,,而是指拥有干细胞特征的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but just a cell that has the stem cell character.
+Dialogue: 0,0:13:36.44,0:13:38.82,*Default,NTP,0000,0000,0000,,拥有干细胞特征的细胞是什么意思\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does that mean to have the stem cell character?
+Dialogue: 0,0:13:38.99,0:13:41.11,*Default,NTP,0000,0000,0000,,意思就是如果我取这些细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It means that if I took this cell 
+Dialogue: 0,0:13:41.22,0:13:42.60,*Default,NTP,0000,0000,0000,,分离并观察\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and isolated and watched it,
+Dialogue: 0,0:13:42.71,0:13:45.46,*Default,NTP,0000,0000,0000,,我会发现它有几个特征\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd notice that it had a couple of characteristics.
+Dialogue: 0,0:13:45.78,0:13:50.06,*Default,NTP,0000,0000,0000,,一个就是它会有不对称分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is that it's capable of something called asymmetrical division.
+Dialogue: 0,0:13:51.30,0:13:53.35,*Default,NTP,0000,0000,0000,,我们上节课说过了细胞分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about division last time.
+Dialogue: 0,0:13:53.48,0:13:57.22,*Default,NTP,0000,0000,0000,,我们说到母细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about the parent cell 
+Dialogue: 0,0:13:57.34,0:13:59.57,*Default,NTP,0000,0000,0000,,分裂成为两个一模一样的子细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}forming two identical daughter cells.
+Dialogue: 0,0:14:00.19,0:14:03.08,*Default,NTP,0000,0000,0000,,而不对称分裂就不是这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An asymmetrical division is not like that,
+Dialogue: 0,0:14:03.98,0:14:06.83,*Default,NTP,0000,0000,0000,,当母细胞分裂为两个子细胞时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's when a parent cell forms two cells 
+Dialogue: 0,0:14:06.92,0:14:08.86,*Default,NTP,0000,0000,0000,,会有一些不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are different in some way.
+Dialogue: 0,0:14:09.68,0:14:12.27,*Default,NTP,0000,0000,0000,,而这些差异会导致子细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That difference has functional consequences 
+Dialogue: 0,0:14:12.39,0:14:13.89,*Default,NTP,0000,0000,0000,,产生一些功能上的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the daughter cells
+Dialogue: 0,0:14:14.38,0:14:16.92,*Default,NTP,0000,0000,0000,,其中一个子细胞会成为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that one of the daughter cells becomes 
+Dialogue: 0,0:14:17.06,0:14:20.78,*Default,NTP,0000,0000,0000,,所谓的定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's called here a committed progenitor cell.
+Dialogue: 0,0:14:21.01,0:14:24.40,*Default,NTP,0000,0000,0000,,它不再是干细胞而是祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's no longer a stem cell but it's a progenitor cell.
+Dialogue: 0,0:14:24.77,0:14:26.85,*Default,NTP,0000,0000,0000,,祖细胞的定义就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A progenitor cell, the definition,
+Dialogue: 0,0:14:26.97,0:14:30.41,*Default,NTP,0000,0000,0000,,它能产生那个器官或者组织内的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it just means it can generate the cells 
+Dialogue: 0,0:14:30.54,0:14:34.87,*Default,NTP,0000,0000,0000,,所有的典型细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are typical of that tissue or that organ,
+Dialogue: 0,0:14:35.93,0:14:41.54,*Default,NTP,0000,0000,0000,,所以它可以成为那一类的成熟细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it's capable of becoming these mature classes of cells.
+Dialogue: 0,0:14:42.10,0:14:44.61,*Default,NTP,0000,0000,0000,,我们会在大脑这章再说更多的细节\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk more about this in the context of the brain,
+Dialogue: 0,0:14:44.87,0:14:47.01,*Default,NTP,0000,0000,0000,,但如果我们真讲脑中的干细胞的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but if we were talking about a stem cell in the brain,
+Dialogue: 0,0:14:47.12,0:14:49.30,*Default,NTP,0000,0000,0000,,那这种不对称分裂的结果\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the result of this asymmetrical division 
+Dialogue: 0,0:14:49.41,0:14:51.59,*Default,NTP,0000,0000,0000,,就是形成这样的定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would be a committed progenitor cell 
+Dialogue: 0,0:14:51.69,0:14:54.15,*Default,NTP,0000,0000,0000,,它能够分化为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's capable of forming cells 
+Dialogue: 0,0:14:55.26,0:14:57.16,*Default,NTP,0000,0000,0000,,那些能够在脑组织中找到的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are the cell types found in the brain
+Dialogue: 0,0:14:58.56,0:15:01.62,*Default,NTP,0000,0000,0000,,而不是形成肝脏细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not cells that are the cell types found in the liver,
+Dialogue: 0,0:15:02.12,0:15:05.17,*Default,NTP,0000,0000,0000,,也非肾脏  或者脾脏  或者肌肉细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the kidney, or the spleen, or muscle.
+Dialogue: 0,0:15:07.49,0:15:09.46,*Default,NTP,0000,0000,0000,,这种不对称分裂的一个结果\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One result of this asymmetrical division 
+Dialogue: 0,0:15:09.57,0:15:11.04,*Default,NTP,0000,0000,0000,,是产生定向的祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a committed progenitor cell.
+Dialogue: 0,0:15:11.33,0:15:13.80,*Default,NTP,0000,0000,0000,,另一个结果就是产生一个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The result is a cell that's very similar 
+Dialogue: 0,0:15:14.19,0:15:17.99,*Default,NTP,0000,0000,0000,,很像祖细胞的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it is - very similar to the progenitor cell 
+Dialogue: 0,0:15:18.13,0:15:20.32,*Default,NTP,0000,0000,0000,,但却是如假包换的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's exactly the stem cell.
+Dialogue: 0,0:15:22.47,0:15:26.18,*Default,NTP,0000,0000,0000,,这种细胞分化不仅产生一个定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this stem cell division leads to another stem cell
+Dialogue: 0,0:15:26.59,0:15:28.71,*Default,NTP,0000,0000,0000,,还会产生另一个干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as well as a committed progenitor cell.
+Dialogue: 0,0:15:29.97,0:15:31.80,*Default,NTP,0000,0000,0000,,干细胞与祖细胞化学成分的区别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the differences here may be subtle 
+Dialogue: 0,0:15:31.90,0:15:33.40,*Default,NTP,0000,0000,0000,,还非常微小\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of chemical composition 
+Dialogue: 0,0:15:33.50,0:15:36.28,*Default,NTP,0000,0000,0000,,除非你把细胞放在显微镜下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or if you put these cells under a microscope 
+Dialogue: 0,0:15:36.39,0:15:37.96,*Default,NTP,0000,0000,0000,,或者看细胞分析报告\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and looked at their analysis.
+Dialogue: 0,0:15:38.05,0:15:40.04,*Default,NTP,0000,0000,0000,,但就功能而言这些干细胞则至关重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In terms of function they're very important
+Dialogue: 0,0:15:40.19,0:15:43.70,*Default,NTP,0000,0000,0000,,因为这类分裂产生的子细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this stem cell which is produced 
+Dialogue: 0,0:15:43.89,0:15:46.59,*Default,NTP,0000,0000,0000,,依然是干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}goes back into the population of stem cells 
+Dialogue: 0,0:15:46.69,0:15:49.72,*Default,NTP,0000,0000,0000,,可以再次重复上述步骤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and is able to repeat this process 
+Dialogue: 0,0:15:50.73,0:15:53.30,*Default,NTP,0000,0000,0000,,生成新的定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to form new committed progenitor cells
+Dialogue: 0,0:15:53.42,0:15:54.81,*Default,NTP,0000,0000,0000,,和新的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to form new stem cells.
+Dialogue: 0,0:15:55.17,0:15:56.32,*Default,NTP,0000,0000,0000,,这非常重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's important 
+Dialogue: 0,0:15:56.49,0:15:59.46,*Default,NTP,0000,0000,0000,,因为干细胞的性质之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because one of the attributes of stem cells is 
+Dialogue: 0,0:15:59.54,0:16:03.15,*Default,NTP,0000,0000,0000,,就是它们能维持自身的状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they remain at their site 
+Dialogue: 0,0:16:04.45,0:16:07.39,*Default,NTP,0000,0000,0000,,并能进行再分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and capable of reproducing themselves.
+Dialogue: 0,0:16:08.00,0:16:10.54,*Default,NTP,0000,0000,0000,,这种过程称为自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This process is called self-renewal,
+Dialogue: 0,0:16:10.80,0:16:13.76,*Default,NTP,0000,0000,0000,,所以这是干细胞的一个重要性质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's one important process of property stem cells,
+Dialogue: 0,0:16:13.91,0:16:15.69,*Default,NTP,0000,0000,0000,,它们能够自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they're capable of self-renewal.
+Dialogue: 0,0:16:17.18,0:16:19.70,*Default,NTP,0000,0000,0000,,而另一个子细胞就通过某种变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other one is a committed progenitor cell 
+Dialogue: 0,0:16:19.80,0:16:22.34,*Default,NTP,0000,0000,0000,,成了定向的祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that now somehow has been changed in such a way 
+Dialogue: 0,0:16:22.50,0:16:28.48,*Default,NTP,0000,0000,0000,,并将成熟和发育为非干细胞的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it's going to mature and develop into non-stem cells 
+Dialogue: 0,0:16:28.60,0:16:31.63,*Default,NTP,0000,0000,0000,,就是构成我们身体的细胞  体细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the cells that make up our bodies, somatic cells.
+Dialogue: 0,0:16:32.03,0:16:33.86,*Default,NTP,0000,0000,0000,,那么  这个变化是如何产生的呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, what could these differences be?
+Dialogue: 0,0:16:34.02,0:16:36.70,*Default,NTP,0000,0000,0000,,它们的染色体没有任何变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not chromosomal differences 
+Dialogue: 0,0:16:36.79,0:16:39.27,*Default,NTP,0000,0000,0000,,因为这是正常的有丝分裂过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this is the ordinary process of mitosis.
+Dialogue: 0,0:16:39.36,0:16:40.69,*Default,NTP,0000,0000,0000,,按照预计\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So presumably,
+Dialogue: 0,0:16:40.79,0:16:43.70,*Default,NTP,0000,0000,0000,,这两个子细胞应该有完全相同的DNA\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these two cells have exactly the same DNA content,
+Dialogue: 0,0:16:44.10,0:16:46.87,*Default,NTP,0000,0000,0000,,但某种成分传给了一个细胞而不是另一个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but something's been passed onto this one that wasn't there.
+Dialogue: 0,0:16:47.52,0:16:51.63,*Default,NTP,0000,0000,0000,,这是一个干细胞生物学领域的重要课题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one of the very important areas 
+Dialogue: 0,0:16:51.75,0:16:54.92,*Default,NTP,0000,0000,0000,,至今仍未完全明确\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that still is not completely understood in stem cell biology.
+Dialogue: 0,0:16:55.03,0:16:56.88,*Default,NTP,0000,0000,0000,,不对称分裂的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is the difference that's generated 
+Dialogue: 0,0:16:56.99,0:16:58.90,*Default,NTP,0000,0000,0000,,到底产生了怎么样的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during an asymmetric cell division?
+Dialogue: 0,0:16:59.97,0:17:02.12,*Default,NTP,0000,0000,0000,,有些种类的变化已为人所知\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are types of changes that are known.
+Dialogue: 0,0:17:02.45,0:17:06.83,*Default,NTP,0000,0000,0000,,某些改变不是发生在DNA序列上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of them are changes in the - not the sequence of DNA,
+Dialogue: 0,0:17:06.97,0:17:09.50,*Default,NTP,0000,0000,0000,,不是在DNA的核苷酸序列上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not the sequence of nucleotides in the DNA
+Dialogue: 0,0:17:09.79,0:17:13.82,*Default,NTP,0000,0000,0000,,而是发生在DNA包装进细胞核的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the chemistry of DNA around that 
+Dialogue: 0,0:17:14.28,0:17:16.32,*Default,NTP,0000,0000,0000,,一系列化学变化中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the way that it's packed into a nucleus.
+Dialogue: 0,0:17:16.45,0:17:19.75,*Default,NTP,0000,0000,0000,,因此细胞变化的途径应该是对某些基因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the access that a cell has to certain kinds of genes,
+Dialogue: 0,0:17:20.10,0:17:22.85,*Default,NTP,0000,0000,0000,,或者DNA进行化学修饰\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or chemical modifications of DNA,
+Dialogue: 0,0:17:23.02,0:17:26.68,*Default,NTP,0000,0000,0000,,不是更改碱基对\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not chemical modifications that change the base pairs,
+Dialogue: 0,0:17:27.01,0:17:28.45,*Default,NTP,0000,0000,0000,,更改碱基对就是突变了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would be a mutation.
+Dialogue: 0,0:17:29.47,0:17:31.54,*Default,NTP,0000,0000,0000,,这可能发生的  但属于非正常的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That can happen but that's abnormal,
+Dialogue: 0,0:17:32.36,0:17:36.05,*Default,NTP,0000,0000,0000,,而是改变诸如维持核苷酸序列的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but changes in maybe the chemistry of the backbone 
+Dialogue: 0,0:17:36.14,0:17:38.27,*Default,NTP,0000,0000,0000,,[DNA]主链的化学结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that holds the nucleotides together.
+Dialogue: 0,0:17:39.40,0:17:42.14,*Default,NTP,0000,0000,0000,,一些情况下  [DNA]主链会甲基化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In some cases that backbone gets methylated 
+Dialogue: 0,0:17:42.77,0:17:44.81,*Default,NTP,0000,0000,0000,,该甲基化区域的DNA\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those regions of the DNA 
+Dialogue: 0,0:17:44.93,0:17:46.85,*Default,NTP,0000,0000,0000,,和未甲基化区域的DNA\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are methylated get treated differently 
+Dialogue: 0,0:17:46.96,0:17:49.07,*Default,NTP,0000,0000,0000,,会被细胞区别对待\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the cell than unmethylated regions.
+Dialogue: 0,0:17:49.80,0:17:51.08,*Default,NTP,0000,0000,0000,,如果你继续学习\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You go on and you study 
+Dialogue: 0,0:17:51.25,0:17:53.82,*Default,NTP,0000,0000,0000,,发育生物学或者分子生物学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}developmental biology or molecular biology,
+Dialogue: 0,0:17:53.95,0:17:55.84,*Default,NTP,0000,0000,0000,,你就会了解更多这方面的知识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll learn more about these things.
+Dialogue: 0,0:17:56.04,0:17:57.29,*Default,NTP,0000,0000,0000,,我们的目的仅仅是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For our purpose just 
+Dialogue: 0,0:17:58.00,0:18:00.10,*Default,NTP,0000,0000,0000,,知道会产生一些变化就可以了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these are the kinds of changes that can happen.
+Dialogue: 0,0:18:00.27,0:18:02.50,*Default,NTP,0000,0000,0000,,可能是我们之前说过的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or it can the kind of change we talked about before,
+Dialogue: 0,0:18:02.60,0:18:05.09,*Default,NTP,0000,0000,0000,,在分裂过程中可能发生的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where during division there are some chemicals 
+Dialogue: 0,0:18:05.16,0:18:07.76,*Default,NTP,0000,0000,0000,,不对称分裂的现象\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are trapped in one cell and not in the other,
+Dialogue: 0,0:18:09.44,0:18:12.16,*Default,NTP,0000,0000,0000,,并导致我们已经讲过的某些不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that could lead to a difference we already talked about.
+Dialogue: 0,0:18:12.49,0:18:15.90,*Default,NTP,0000,0000,0000,,这种不同也可能和细胞本身无关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or it could be not having to do with the cells themselves
+Dialogue: 0,0:18:16.01,0:18:19.09,*Default,NTP,0000,0000,0000,,而和细胞所处的环境的变化有关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but maybe the environment that the cell finds itself in.
+Dialogue: 0,0:18:19.48,0:18:22.11,*Default,NTP,0000,0000,0000,,我们上次谈到过的细胞外基质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked last time about extracellular matrix
+Dialogue: 0,0:18:22.23,0:18:27.64,*Default,NTP,0000,0000,0000,,是一种蛋白和碳水化合物的复合物胶冻\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this complex protein-carbohydrate gel 
+Dialogue: 0,0:18:27.80,0:18:29.18,*Default,NTP,0000,0000,0000,,它环绕在细胞周围\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that surrounds all cells.
+Dialogue: 0,0:18:29.44,0:18:33.62,*Default,NTP,0000,0000,0000,,细胞分化发生在有机体中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cell division takes place within an organism.
+Dialogue: 0,0:18:34.76,0:18:36.77,*Default,NTP,0000,0000,0000,,我们一会儿要说到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk in a minute about stem cells 
+Dialogue: 0,0:18:36.86,0:18:40.52,*Default,NTP,0000,0000,0000,,和血细胞再生有关的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are involved in generation of blood 
+Dialogue: 0,0:18:41.82,0:18:44.88,*Default,NTP,0000,0000,0000,,它们发育并储存在骨髓中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they develop and they live in the bone marrow.
+Dialogue: 0,0:18:45.99,0:18:49.15,*Default,NTP,0000,0000,0000,,那如果在细胞分裂的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, what if this division takes place in an environment 
+Dialogue: 0,0:18:49.23,0:18:51.75,*Default,NTP,0000,0000,0000,,两个子细胞的细胞外基质不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there's one kind of extra cellular matrix here 
+Dialogue: 0,0:18:51.86,0:18:54.34,*Default,NTP,0000,0000,0000,,会对它们产生什么影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and another kind of extracellular matrix here?
+Dialogue: 0,0:18:55.40,0:18:56.58,*Default,NTP,0000,0000,0000,,这个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then this cell is going to 
+Dialogue: 0,0:18:56.65,0:18:58.72,*Default,NTP,0000,0000,0000,,和另外一个细胞经历的环境不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}experience something different from this cell.
+Dialogue: 0,0:18:59.68,0:19:00.88,*Default,NTP,0000,0000,0000,,有可能就是由于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It could be those differences 
+Dialogue: 0,0:19:00.99,0:19:03.41,*Default,NTP,0000,0000,0000,,这种细胞外环境的不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they experience in their extracellular environment 
+Dialogue: 0,0:19:03.49,0:19:07.63,*Default,NTP,0000,0000,0000,,最终导致它们自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that lead to their choice to either self-renew 
+Dialogue: 0,0:19:07.75,0:19:09.17,*Default,NTP,0000,0000,0000,,或者成为定向的祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or to become committed.
+Dialogue: 0,0:19:13.19,0:19:15.04,*Default,NTP,0000,0000,0000,,以上说的就是不对称分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's asymmetrical division 
+Dialogue: 0,0:19:15.17,0:19:16.77,*Default,NTP,0000,0000,0000,,是干细胞的性质之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's a property of stem cells.
+Dialogue: 0,0:19:17.13,0:19:20.09,*Default,NTP,0000,0000,0000,,另一个的性质就是成为定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other property is that these committed progenitor cells 
+Dialogue: 0,0:19:20.21,0:19:24.29,*Default,NTP,0000,0000,0000,,进而形成某种特定细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are formed can turn into something,
+Dialogue: 0,0:19:24.58,0:19:26.75,*Default,NTP,0000,0000,0000,,成为更成熟的细胞形式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can turn into more mature cell types.
+Dialogue: 0,0:19:26.99,0:19:30.93,*Default,NTP,0000,0000,0000,,这种细胞成熟的过程称为分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That process of maturation is called differentiation.
+Dialogue: 0,0:19:34.53,0:19:35.19,*Default,NTP,0000,0000,0000,,我们会详细说这点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk more about that 
+Dialogue: 0,0:19:35.25,0:19:37.34,*Default,NTP,0000,0000,0000,,之前已经说过一些了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I've already said something about that.
+Dialogue: 0,0:19:40.72,0:19:43.97,*Default,NTP,0000,0000,0000,,能够完成不对称分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A capability for asymmetric division 
+Dialogue: 0,0:19:44.49,0:19:46.02,*Default,NTP,0000,0000,0000,,以及产生细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the production of cells
+Dialogue: 0,0:19:46.14,0:19:48.15,*Default,NTP,0000,0000,0000,,并分化成为一些更成熟的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that become differentiating more mature cells,
+Dialogue: 0,0:19:48.26,0:19:50.17,*Default,NTP,0000,0000,0000,,这些是干细胞的性质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those are properties of stem cells.
+Dialogue: 0,0:19:51.52,0:19:53.32,*Default,NTP,0000,0000,0000,,另一个需要重点考虑的概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another concept that's important in thinking 
+Dialogue: 0,0:19:53.43,0:19:55.50,*Default,NTP,0000,0000,0000,,就是干细胞的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about stem cells is potential.
+Dialogue: 0,0:19:57.57,0:20:00.94,*Default,NTP,0000,0000,0000,,这个"潜能"和字面意思相同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Potential refers to what it sounds like,
+Dialogue: 0,0:20:01.23,0:20:04.52,*Default,NTP,0000,0000,0000,,定向祖细胞的潜能是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'what potential does this committed progenitor cell have?' 
+Dialogue: 0,0:20:04.85,0:20:07.18,*Default,NTP,0000,0000,0000,,干细胞的潜能又是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'What potential does this stem cell have?' 
+Dialogue: 0,0:20:07.86,0:20:11.04,*Default,NTP,0000,0000,0000,,一种看法就是在第一次分化时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, one way to think about is that upon this first division,
+Dialogue: 0,0:20:11.80,0:20:13.33,*Default,NTP,0000,0000,0000,,即不对称分裂时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this asymmetric division,
+Dialogue: 0,0:20:13.68,0:20:17.32,*Default,NTP,0000,0000,0000,,定向祖细胞失去了一些潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this committed progenitor cell has lost some potential.
+Dialogue: 0,0:20:19.00,0:20:21.26,*Default,NTP,0000,0000,0000,,不再能自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's no longer capable of self-renewal 
+Dialogue: 0,0:20:21.37,0:20:22.74,*Default,NTP,0000,0000,0000,,从而生成另一个干细胞了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to form another stem cell.
+Dialogue: 0,0:20:23.05,0:20:25.46,*Default,NTP,0000,0000,0000,,它在分化成熟的道路上越走越远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's gone down a path towards maturation 
+Dialogue: 0,0:20:25.56,0:20:27.76,*Default,NTP,0000,0000,0000,,覆水难收了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's very difficult to go back up.
+Dialogue: 0,0:20:28.39,0:20:32.45,*Default,NTP,0000,0000,0000,,因此  在分化中祖细胞损失了些潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there's a loss of potential in this division.
+Dialogue: 0,0:20:33.28,0:20:36.15,*Default,NTP,0000,0000,0000,,新生成的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This stem cell which is reproduced
+Dialogue: 0,0:20:36.63,0:20:40.67,*Default,NTP,0000,0000,0000,,仍然有潜能进行不对称分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}still has the potential to undergo asymmetric division 
+Dialogue: 0,0:20:41.44,0:20:42.80,*Default,NTP,0000,0000,0000,,但定向祖细胞就不行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this one does not.
+Dialogue: 0,0:20:43.52,0:20:46.71,*Default,NTP,0000,0000,0000,,有一种观点  虽然有些通俗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One sort of, might be kind of simple minded,
+Dialogue: 0,0:20:46.81,0:20:48.74,*Default,NTP,0000,0000,0000,,但不失为一种理解潜能的方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but one way to think about potential 
+Dialogue: 0,0:20:48.87,0:20:54.83,*Default,NTP,0000,0000,0000,,是说和我们从新生儿长大到成人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is with the kind of potential that we all experience
+Dialogue: 0,0:20:54.89,0:20:59.73,*Default,NTP,0000,0000,0000,,所具有的潜能类似\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as we develop from newborns to adults,
+Dialogue: 0,0:21:00.24,0:21:04.39,*Default,NTP,0000,0000,0000,,新生儿有很多潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a newborn child has lots of different potential.
+Dialogue: 0,0:21:05.76,0:21:07.31,*Default,NTP,0000,0000,0000,,但不是全部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't have every potential,
+Dialogue: 0,0:21:07.51,0:21:10.87,*Default,NTP,0000,0000,0000,,比如性别已有定论  无法改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a boy or a girl, it's not going to go back,
+Dialogue: 0,0:21:11.91,0:21:14.38,*Default,NTP,0000,0000,0000,,但还是有很多潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it has lots of potential in that eventually 
+Dialogue: 0,0:21:14.49,0:21:17.08,*Default,NTP,0000,0000,0000,,当孩子长大  他可以成为大提琴家  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it becomes an adult it could become a cellist,
+Dialogue: 0,0:21:17.17,0:21:21.87,*Default,NTP,0000,0000,0000,,生物学家  机械师或者生物医学工程师\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a biologist, or an auto mechanic, or a biomedical engineer,
+Dialogue: 0,0:21:22.16,0:21:24.26,*Default,NTP,0000,0000,0000,,他仍有所有的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all those potentials are still there.
+Dialogue: 0,0:21:24.91,0:21:28.56,*Default,NTP,0000,0000,0000,,随着你的成长  随着你受的教育的增加\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As you develop, as you're educated,
+Dialogue: 0,0:21:29.82,0:21:34.04,*Default,NTP,0000,0000,0000,,你某种程度上一直保留着所有这些潜能 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you retain all those potentials for a certain point 
+Dialogue: 0,0:21:34.13,0:21:35.75,*Default,NTP,0000,0000,0000,,然后你作出选择\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you make choices 
+Dialogue: 0,0:21:36.27,0:21:39.02,*Default,NTP,0000,0000,0000,,并且失去一些潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you lose some of those potentials.
+Dialogue: 0,0:21:39.13,0:21:43.47,*Default,NTP,0000,0000,0000,,现在我已经不大可能成为一个大提琴家了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm unlikely to become a concert cellist at this point.
+Dialogue: 0,0:21:43.67,0:21:46.66,*Default,NTP,0000,0000,0000,,不是完全不可能  只是可能性很低\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not impossible but it's pretty unlikely.
+Dialogue: 0,0:21:46.77,0:21:48.52,*Default,NTP,0000,0000,0000,,我可能已经失去了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've probably lost my potential
+Dialogue: 0,0:21:48.52,0:21:52.03,*Default,NTP,0000,0000,0000,,成为一名出色的大提琴家的那种潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be an outstanding cellist.
+Dialogue: 0,0:21:52.99,0:21:55.36,*Default,NTP,0000,0000,0000,,如果你想的话也许还可以\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You all could still do that if you decide too,
+Dialogue: 0,0:21:56.01,0:21:58.47,*Default,NTP,0000,0000,0000,,但会比起你从十岁开始努力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's going to be harder for you 
+Dialogue: 0,0:21:58.56,0:22:00.44,*Default,NTP,0000,0000,0000,,会更困难一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than if you would have started when you were ten,
+Dialogue: 0,0:22:01.56,0:22:04.91,*Default,NTP,0000,0000,0000,,因此你们在成长的路上失去了一些潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you're losing some potential around - along the way.
+Dialogue: 0,0:22:06.29,0:22:08.17,*Default,NTP,0000,0000,0000,,你正在成熟的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're in the process of becoming more mature,
+Dialogue: 0,0:22:08.26,0:22:09.41,*Default,NTP,0000,0000,0000,,分化得更加彻底\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more differentiated 
+Dialogue: 0,0:22:10.43,0:22:13.06,*Default,NTP,0000,0000,0000,,同时也失去了一些潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're losing potential at the same time.
+Dialogue: 0,0:22:13.38,0:22:15.11,*Default,NTP,0000,0000,0000,,细胞也是这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same thing with these cells here,
+Dialogue: 0,0:22:15.37,0:22:18.16,*Default,NTP,0000,0000,0000,,在连续分裂的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as these cells undergo continual divisions,
+Dialogue: 0,0:22:18.26,0:22:20.68,*Default,NTP,0000,0000,0000,,它们愈发成熟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're changing in ways that make them mature,
+Dialogue: 0,0:22:20.86,0:22:23.57,*Default,NTP,0000,0000,0000,,比如说  变得越来越像\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that make them more like the mature cells 
+Dialogue: 0,0:22:23.67,0:22:25.78,*Default,NTP,0000,0000,0000,,神经系统细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the nervous system, for example,
+Dialogue: 0,0:22:25.88,0:22:27.76,*Default,NTP,0000,0000,0000,,如果它们最终将构成神经系统的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if that's where they end up being 
+Dialogue: 0,0:22:28.00,0:22:29.27,*Default,NTP,0000,0000,0000,,那它们在分化的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're losing potential 
+Dialogue: 0,0:22:29.38,0:22:31.96,*Default,NTP,0000,0000,0000,,就失去了许多潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as they go through that differentiation process.
+Dialogue: 0,0:22:33.17,0:22:34.69,*Default,NTP,0000,0000,0000,,如今  现代生物学的一个最大希望\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, one of the great hopes 
+Dialogue: 0,0:22:34.98,0:22:38.19,*Default,NTP,0000,0000,0000,,就是希望能够\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of modern biology is that we can figure out 
+Dialogue: 0,0:22:38.28,0:22:40.57,*Default,NTP,0000,0000,0000,,发现逆转分化过程的方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to reverse that process in cells.
+Dialogue: 0,0:22:41.05,0:22:45.99,*Default,NTP,0000,0000,0000,,我们如何把一些已经分化到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How we could take cells that are differentiated to some extent 
+Dialogue: 0,0:22:46.88,0:22:49.24,*Default,NTP,0000,0000,0000,,一定程度的细胞去分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and make them de-differentiate,
+Dialogue: 0,0:22:49.47,0:22:53.40,*Default,NTP,0000,0000,0000,,使其回到分化之前\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to go back in the process of differentiation 
+Dialogue: 0,0:22:53.46,0:22:55.37,*Default,NTP,0000,0000,0000,,重新获得更多的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that they gain more potential.
+Dialogue: 0,0:22:55.63,0:22:57.12,*Default,NTP,0000,0000,0000,,为什么这种方法会那么有用呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why would that be useful?
+Dialogue: 0,0:22:57.39,0:22:58.03,*Default,NTP,0000,0000,0000,,这是因为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it would be useful
+Dialogue: 0,0:22:58.14,0:23:00.27,*Default,NTP,0000,0000,0000,,如果我能取一些皮肤细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because if I could take cells from the skin,
+Dialogue: 0,0:23:02.29,0:23:03.96,*Default,NTP,0000,0000,0000,,找一些皮肤干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}find stem cells in the skin
+Dialogue: 0,0:23:04.06,0:23:05.90,*Default,NTP,0000,0000,0000,,并将它们去分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then de-differentiate them 
+Dialogue: 0,0:23:06.01,0:23:09.09,*Default,NTP,0000,0000,0000,,那它们就能分化成肝脏\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that they were now capable of becoming liver,
+Dialogue: 0,0:23:09.54,0:23:11.30,*Default,NTP,0000,0000,0000,,大脑或其他一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or brain, or things that they're not going to 
+Dialogue: 0,0:23:11.37,0:23:13.15,*Default,NTP,0000,0000,0000,,它们原本分化不出来的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}become in their normal site,
+Dialogue: 0,0:23:13.32,0:23:15.97,*Default,NTP,0000,0000,0000,,这可以成为一个医学利器\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then that could be a very powerful tool for medicine.
+Dialogue: 0,0:23:17.66,0:23:20.49,*Default,NTP,0000,0000,0000,,迄今为止  我们令细胞去分化的能力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So far our ability to de-differentiate cells 
+Dialogue: 0,0:23:20.58,0:23:23.01,*Default,NTP,0000,0000,0000,,和技术方法还相当有限\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or find out how to do that is limited.
+Dialogue: 0,0:23:24.31,0:23:25.24,*Default,NTP,0000,0000,0000,,听得懂吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does this make sense?
+Dialogue: 0,0:23:26.64,0:23:28.71,*Default,NTP,0000,0000,0000,,分化的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is actually changing 
+Dialogue: 0,0:23:28.80,0:23:30.70,*Default,NTP,0000,0000,0000,,实际发生了哪些变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during this process of differentiation?
+Dialogue: 0,0:23:30.84,0:23:32.53,*Default,NTP,0000,0000,0000,,我所称的定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's the difference between this cell 
+Dialogue: 0,0:23:32.66,0:23:36.52,*Default,NTP,0000,0000,0000,,和它的子细胞之间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I call a committed progenitor cell and its offspring,
+Dialogue: 0,0:23:36.65,0:23:38.77,*Default,NTP,0000,0000,0000,,还有它子细胞的子细胞之间有什么区别呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the offspring of that offspring.
+Dialogue: 0,0:23:38.91,0:23:42.47,*Default,NTP,0000,0000,0000,,它经历了一系列扩增性的分裂过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It goes - going through this process of amplifying divisions,
+Dialogue: 0,0:23:42.56,0:23:47.36,*Default,NTP,0000,0000,0000,,每次分化  细胞数目都翻一番\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}every division increasing the number of cells by a factor of two
+Dialogue: 0,0:23:47.77,0:23:50.81,*Default,NTP,0000,0000,0000,,而在此过程中细胞分化得更成熟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these cells becoming more differentiated around the way.
+Dialogue: 0,0:23:50.96,0:23:53.38,*Default,NTP,0000,0000,0000,,我展示了一些细胞形态上的差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've shown the differences here in terms of shape,
+Dialogue: 0,0:23:53.46,0:23:54.97,*Default,NTP,0000,0000,0000,,这些细胞是八角形的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these are shaped liked octagons 
+Dialogue: 0,0:23:55.08,0:23:56.54,*Default,NTP,0000,0000,0000,,这些是方形的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these are shaped like squares,
+Dialogue: 0,0:23:56.69,0:23:57.97,*Default,NTP,0000,0000,0000,,但如果仔细观察这些细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but if I looked at these cells,
+Dialogue: 0,0:23:58.06,0:24:00.59,*Default,NTP,0000,0000,0000,,我能找到一些本质上的差异吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what would I find that's really different about them?
+Dialogue: 0,0:24:01.95,0:24:05.44,*Default,NTP,0000,0000,0000,,不成熟细胞和成熟细胞间的差异是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's different from an immature cell and a mature cell?
+Dialogue: 0,0:24:05.50,0:24:09.80,*Default,NTP,0000,0000,0000,,不是DNA  它们的DNA都相同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it's not the DNA; they all have the same DNA.
+Dialogue: 0,0:24:10.41,0:24:11.31,*Default,NTP,0000,0000,0000,,可能存在的差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There might be these,
+Dialogue: 0,0:24:11.37,0:24:13.22,*Default,NTP,0000,0000,0000,,叫做表观遗传差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what are called epigenetic differences 
+Dialogue: 0,0:24:13.31,0:24:16.57,*Default,NTP,0000,0000,0000,,我之前说过的DNA结构上的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I mentioned changes in the structure around DNA,
+Dialogue: 0,0:24:16.82,0:24:19.45,*Default,NTP,0000,0000,0000,,而这些变化导致\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those changes lead to differences in
+Dialogue: 0,0:24:19.59,0:24:23.23,*Default,NTP,0000,0000,0000,,在特定细胞中  染色体组的全部基因中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which fraction of the total genes in the chromosomes 
+Dialogue: 0,0:24:23.31,0:24:26.24,*Default,NTP,0000,0000,0000,,只有一部分表达出来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are being expressed by a particular cell.
+Dialogue: 0,0:24:26.79,0:24:28.66,*Default,NTP,0000,0000,0000,,这就是细胞产生差异的原因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is what makes cells different,
+Dialogue: 0,0:24:30.64,0:24:35.34,*Default,NTP,0000,0000,0000,,即表达的基因在数量和质量上的差异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the number and quantity of the genes that they express.
+Dialogue: 0,0:24:35.88,0:24:38.80,*Default,NTP,0000,0000,0000,,人类基因组全部基因中的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Out of all the genes that are on the human genome
+Dialogue: 0,0:24:38.98,0:24:42.07,*Default,NTP,0000,0000,0000,,特定细胞所表达的基因片段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which fraction is this particular cell using,
+Dialogue: 0,0:24:42.51,0:24:44.51,*Default,NTP,0000,0000,0000,,细胞表达的是哪段基因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which fraction is it expressing 
+Dialogue: 0,0:24:44.71,0:24:47.27,*Default,NTP,0000,0000,0000,,决定了细胞中存在什么样的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}determines what proteins are present in the cell,
+Dialogue: 0,0:24:48.09,0:24:50.03,*Default,NTP,0000,0000,0000,,决定了细胞会有什么样的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}determines what work 
+Dialogue: 0,0:24:50.33,0:24:52.51,*Default,NTP,0000,0000,0000,,或者参与何种生命活动\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or what activities the cell can engage in.
+Dialogue: 0,0:24:53.53,0:24:56.04,*Default,NTP,0000,0000,0000,,因此这里改变的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's changing along here is the 
+Dialogue: 0,0:24:56.32,0:24:58.09,*Default,NTP,0000,0000,0000,,在这条途径上改变的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's changing along this pathway 
+Dialogue: 0,0:24:58.22,0:25:03.53,*Default,NTP,0000,0000,0000,,基因表达的模式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the expression pattern of genes in cells.
+Dialogue: 0,0:25:06.41,0:25:09.19,*Default,NTP,0000,0000,0000,,我们来说一下造血的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me make this a little bit more explicit
+Dialogue: 0,0:25:09.26,0:25:12.27,*Default,NTP,0000,0000,0000,,来把表达差异解释得更清楚一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by talking about the process of hematopoiesis.
+Dialogue: 0,0:25:12.85,0:25:17.83,*Default,NTP,0000,0000,0000,,造血作用就是生成新的血细胞的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hematopoiesis is the process of generating new blood cells.
+Dialogue: 0,0:25:18.31,0:25:20.94,*Default,NTP,0000,0000,0000,,Hemato这个前缀意思就是血\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hemato means blood 
+Dialogue: 0,0:25:20.95,0:25:24.11,*Default,NTP,0000,0000,0000,,poiesis意思就是生成或者形成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and poiesis means generation or formation.
+Dialogue: 0,0:25:25.64,0:25:29.26,*Default,NTP,0000,0000,0000,,你也许知道的  在你的骨髓里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know probably that within your bone marrows
+Dialogue: 0,0:25:29.34,0:25:31.40,*Default,NTP,0000,0000,0000,,有许多种细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's populations of cells,
+Dialogue: 0,0:25:31.51,0:25:34.07,*Default,NTP,0000,0000,0000,,骨髓中有不同种类的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are different kinds of cells within the bone marrow.
+Dialogue: 0,0:25:34.36,0:25:38.79,*Default,NTP,0000,0000,0000,,一些能够成为红细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of them have the capability of becoming red blood cells 
+Dialogue: 0,0:25:38.92,0:25:40.63,*Default,NTP,0000,0000,0000,,红细胞是血中携氧的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which carry oxygen in the blood.
+Dialogue: 0,0:25:40.77,0:25:43.59,*Default,NTP,0000,0000,0000,,一些能够成为白细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of them have the capability of becoming white blood cells,
+Dialogue: 0,0:25:44.08,0:25:45.55,*Default,NTP,0000,0000,0000,,或称白血球\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or leukocytes,
+Dialogue: 0,0:25:45.81,0:25:48.38,*Default,NTP,0000,0000,0000,,白细胞又分很多的亚类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of which there are many different subsets.
+Dialogue: 0,0:25:48.60,0:25:50.05,*Default,NTP,0000,0000,0000,,有些称为嗜中性粒细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some are called neutrophils 
+Dialogue: 0,0:25:50.17,0:25:54.85,*Default,NTP,0000,0000,0000,,有抗感染的作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those are responsible for fighting infection.
+Dialogue: 0,0:25:55.37,0:25:57.65,*Default,NTP,0000,0000,0000,,有些称为淋巴细胞  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some are called lymphocytes, 
+Dialogue: 0,0:25:57.65,0:25:59.25,*Default,NTP,0000,0000,0000,,B淋巴细胞和T淋巴细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}B-lymphocytes, T-lymphocytes.
+Dialogue: 0,0:25:59.55,0:26:01.09,*Default,NTP,0000,0000,0000,,在后几周的有关免疫的课程上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about those in more detail
+Dialogue: 0,0:26:01.23,0:26:04.08,*Default,NTP,0000,0000,0000,,我们会详细说明的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in a couple of weeks when we talk about the immune system 
+Dialogue: 0,0:26:04.24,0:26:05.24,*Default,NTP,0000,0000,0000,,因为我们免疫系统的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because these are the cells 
+Dialogue: 0,0:26:05.36,0:26:08.88,*Default,NTP,0000,0000,0000,,要依靠这些细胞去完成和调节\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that perform and regulate the functions of our immune system
+Dialogue: 0,0:26:09.00,0:26:10.92,*Default,NTP,0000,0000,0000,,它们使我们免受疾病侵害\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that protect us from disease.
+Dialogue: 0,0:26:12.34,0:26:17.06,*Default,NTP,0000,0000,0000,,还有一些类型的细胞称为巨核细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some form what are called megakaryocytes which become platelets,
+Dialogue: 0,0:26:17.34,0:26:22.51,*Default,NTP,0000,0000,0000,,生成有凝血作用的血小板\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are responsible for clotting, for forming a barrier
+Dialogue: 0,0:26:22.65,0:26:27.09,*Default,NTP,0000,0000,0000,,在你的循环系统受损时形成止血屏障\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if your circulatory system gets injured so you don't bleed.
+Dialogue: 0,0:26:28.54,0:26:30.63,*Default,NTP,0000,0000,0000,,所有这些细胞都来自骨髓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All these cells come from the bone marrow 
+Dialogue: 0,0:26:31.12,0:26:34.88,*Default,NTP,0000,0000,0000,,而生物学家已经很详细地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and biologists have traced the formation
+Dialogue: 0,0:26:34.98,0:26:36.56,*Default,NTP,0000,0000,0000,,研究了这些细胞的形成过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of these cells in great detail.
+Dialogue: 0,0:26:36.65,0:26:41.14,*Default,NTP,0000,0000,0000,,事实上  我们体内已知的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, of all the systems of cellular differentiation 
+Dialogue: 0,0:26:41.26,0:26:42.70,*Default,NTP,0000,0000,0000,,所有由细胞分化成的系统中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are known in our bodies,
+Dialogue: 0,0:26:42.85,0:26:45.15,*Default,NTP,0000,0000,0000,,造血系统也许是最为人所熟知的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}probably hematopoiesis is the best known.
+Dialogue: 0,0:26:45.32,0:26:50.04,*Default,NTP,0000,0000,0000,,这是干细胞概念的发祥地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was the first place where the concept of stem cells was developed,
+Dialogue: 0,0:26:50.57,0:26:52.95,*Default,NTP,0000,0000,0000,,如果仔细观察造血系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that if one looks carefully 
+Dialogue: 0,0:26:53.13,0:26:56.14,*Default,NTP,0000,0000,0000,,就能找到骨髓中的未成熟细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one can find immature cells in the bone marrow.
+Dialogue: 0,0:26:56.73,0:26:59.45,*Default,NTP,0000,0000,0000,,如果分离这些未成熟细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you isolate those immature cells,
+Dialogue: 0,0:26:59.61,0:27:03.38,*Default,NTP,0000,0000,0000,,会发现有一些细胞成熟程度更低\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of them are less mature than others,
+Dialogue: 0,0:27:03.68,0:27:06.06,*Default,NTP,0000,0000,0000,,它们比其他细胞更具潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of them have more potential than others.
+Dialogue: 0,0:27:06.29,0:27:10.38,*Default,NTP,0000,0000,0000,,比如  如果我分离出一个髓系细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, if I isolated this one called the myeloid cell,
+Dialogue: 0,0:27:10.52,0:27:12.55,*Default,NTP,0000,0000,0000,,它就能生成红细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's capable of forming red blood cells,
+Dialogue: 0,0:27:12.83,0:27:15.97,*Default,NTP,0000,0000,0000,,巨核细胞和嗜中性粒细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}megakaryocytes and neutrophils.
+Dialogue: 0,0:27:16.25,0:27:18.72,*Default,NTP,0000,0000,0000,,它能生成以上所有不同的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's capable of forming all these different cells 
+Dialogue: 0,0:27:18.97,0:27:21.28,*Default,NTP,0000,0000,0000,,但不能生成淋巴细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's not capable of forming lymphocytes.
+Dialogue: 0,0:27:22.05,0:27:25.10,*Default,NTP,0000,0000,0000,,另一种干细胞称为淋巴干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another stem cell called the lymphoid stem cell 
+Dialogue: 0,0:27:25.31,0:27:28.91,*Default,NTP,0000,0000,0000,,能够生成B细胞或者T细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is capable of forming the B and T lymphocytes.
+Dialogue: 0,0:27:29.98,0:27:32.62,*Default,NTP,0000,0000,0000,,经过数十年的研究\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Through many decades of study,
+Dialogue: 0,0:27:32.74,0:27:37.05,*Default,NTP,0000,0000,0000,,生物学家们在骨髓中发现了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}biologists have teased out certain populations of cells 
+Dialogue: 0,0:27:37.17,0:27:38.18,*Default,NTP,0000,0000,0000,,一些细胞群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}within the bone marrow 
+Dialogue: 0,0:27:38.46,0:27:43.47,*Default,NTP,0000,0000,0000,,它们能够生成细胞亚群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are capable of reproducing subsets of cells.
+Dialogue: 0,0:27:49.47,0:27:52.65,*Default,NTP,0000,0000,0000,,如今在这种研究进行的过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, in the process of doing that 
+Dialogue: 0,0:27:52.77,0:27:55.32,*Default,NTP,0000,0000,0000,,他们发现了一些非常稀少的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they found some very rare stem cells
+Dialogue: 0,0:27:55.62,0:27:57.59,*Default,NTP,0000,0000,0000,,称为多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are called pluripotent,
+Dialogue: 0,0:27:57.88,0:27:59.82,*Default,NTP,0000,0000,0000,,pluri这个前缀就是指很多能力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pluri just means many potencies.
+Dialogue: 0,0:28:00.25,0:28:01.38,*Default,NTP,0000,0000,0000,,多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pluripotent stem cells 
+Dialogue: 0,0:28:01.50,0:28:04.66,*Default,NTP,0000,0000,0000,,是能够通过自我更新进行自我生成的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are capable of self-renewal to generate themselves 
+Dialogue: 0,0:28:05.13,0:28:07.67,*Default,NTP,0000,0000,0000,,也能分化成髓系祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and are capable of dividing into both bioloid 
+Dialogue: 0,0:28:07.77,0:28:09.77,*Default,NTP,0000,0000,0000,,或者淋巴祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and lymphoid progenitor cells.
+Dialogue: 0,0:28:11.26,0:28:14.25,*Default,NTP,0000,0000,0000,,这就是一个典型不对称分裂的例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an example of that asymmetric division.
+Dialogue: 0,0:28:14.48,0:28:18.88,*Default,NTP,0000,0000,0000,,这种多能干细胞能自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This pluripotent stem cell is able to self-renew 
+Dialogue: 0,0:28:19.01,0:28:24.22,*Default,NTP,0000,0000,0000,,也可以生成定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's able - generating committed progenitors 
+Dialogue: 0,0:28:24.34,0:28:27.28,*Default,NTP,0000,0000,0000,,可以是髓系祖细胞或者淋巴祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of either the myeloid or the lymphoid lineage.
+Dialogue: 0,0:28:28.10,0:28:30.59,*Default,NTP,0000,0000,0000,,因此这些细胞它们会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if I got these two cells they would be less 
+Dialogue: 0,0:28:30.68,0:28:32.82,*Default,NTP,0000,0000,0000,,它们拥有的潜能就会比较少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they would have less potential than these.
+Dialogue: 0,0:28:33.99,0:28:36.02,*Default,NTP,0000,0000,0000,,为什么寻找干细胞要如此大费周章呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is it so hard to find stem cells?
+Dialogue: 0,0:28:36.10,0:28:38.66,*Default,NTP,0000,0000,0000,,我提到这个研究过程耗时数十年\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mentioned that this process has taken many decades
+Dialogue: 0,0:28:38.76,0:28:40.26,*Default,NTP,0000,0000,0000,,投入无数人力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and lots of people studying.
+Dialogue: 0,0:28:40.41,0:28:41.60,*Default,NTP,0000,0000,0000,,为什么会那么难呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why has it been so hard 
+Dialogue: 0,0:28:41.72,0:28:44.49,*Default,NTP,0000,0000,0000,,为什么在组织中识别多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and why does it continue to be difficult to identify
+Dialogue: 0,0:28:44.61,0:28:50.29,*Default,NTP,0000,0000,0000,,始终困难重重呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these pluripotent cells within tissues?
+Dialogue: 0,0:28:51.29,0:28:55.27,*Default,NTP,0000,0000,0000,,一个原因就是它们的数量非常稀少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One reason is that they're present in very small numbers.
+Dialogue: 0,0:28:56.84,0:28:59.88,*Default,NTP,0000,0000,0000,,一百万个骨髓细胞中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of a million cells in the bone marrow 
+Dialogue: 0,0:29:00.03,0:29:02.23,*Default,NTP,0000,0000,0000,,也许只有一个多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there might only be one of these.
+Dialogue: 0,0:29:03.58,0:29:07.24,*Default,NTP,0000,0000,0000,,是大约是一比一千亿那么少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This might be 1 in 100, 000, 000, 000 or something like that;
+Dialogue: 0,0:29:07.35,0:29:08.39,*Default,NTP,0000,0000,0000,,不用记这个数字\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't write down the numbers 
+Dialogue: 0,0:29:08.48,0:29:11.85,*Default,NTP,0000,0000,0000,,我只是打个比方而已\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm just using that for illustration.
+Dialogue: 0,0:29:12.55,0:29:16.13,*Default,NTP,0000,0000,0000,,这些细胞太少了  所以很难找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These cells are rare and so it's been hard to identify them,
+Dialogue: 0,0:29:16.41,0:29:17.36,*Default,NTP,0000,0000,0000,,这是原因之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's part of it.
+Dialogue: 0,0:29:17.76,0:29:20.40,*Default,NTP,0000,0000,0000,,另一个原因就是识别困难\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other part of it is how do you identify them?
+Dialogue: 0,0:29:20.87,0:29:23.57,*Default,NTP,0000,0000,0000,,我怎么知道我找到的是什么细胞呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do I know when I've got this one or this one?
+Dialogue: 0,0:29:23.81,0:29:25.07,*Default,NTP,0000,0000,0000,,在我给你们看的这张图表中很简单\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In this diagram I'm showing you 
+Dialogue: 0,0:29:25.18,0:29:26.85,*Default,NTP,0000,0000,0000,,因为其中一些细胞是黄色的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's easy to tell because some are yellow,
+Dialogue: 0,0:29:26.96,0:29:28.55,*Default,NTP,0000,0000,0000,,有些是粉红的  有些是蓝的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some are pink, and some are blue
+Dialogue: 0,0:29:28.81,0:29:30.83,*Default,NTP,0000,0000,0000,,但它们在骨髓里没有这些颜色\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's not the way they come out of the bone marrow.
+Dialogue: 0,0:29:31.20,0:29:34.56,*Default,NTP,0000,0000,0000,,它们没有彩色标记  你怎么找到它们呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not color-coded, so how you do you find them?
+Dialogue: 0,0:29:35.05,0:29:35.73,*Default,NTP,0000,0000,0000,,你是怎么想的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do you think?
+Dialogue: 0,0:29:35.79,0:29:38.95,*Default,NTP,0000,0000,0000,,如果你要在骨髓中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you were searching for 
+Dialogue: 0,0:29:39.05,0:29:42.71,*Default,NTP,0000,0000,0000,,找一组特定的细胞群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}unique populations of cells within the bone marrow 
+Dialogue: 0,0:29:43.12,0:29:45.26,*Default,NTP,0000,0000,0000,,你用什么工具来找呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what tools would you use to look for them?
+Dialogue: 0,0:29:46.88,0:29:48.86,*Default,NTP,0000,0000,0000,,你又怎么找呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How would you search for these cells?
+Dialogue: 0,0:29:48.93,0:29:51.28,*Default,NTP,0000,0000,0000,,一个方法就是分离单独的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, one way would be to isolate individual cells 
+Dialogue: 0,0:29:51.50,0:29:55.14,*Default,NTP,0000,0000,0000,,然后进行体外培养看看结果\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and culture them outside the body and see what they become.
+Dialogue: 0,0:29:56.29,0:29:59.09,*Default,NTP,0000,0000,0000,,这是一种非常直截了当的有效方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That would be a very straightforward functional way to do it,
+Dialogue: 0,0:29:59.19,0:30:02.22,*Default,NTP,0000,0000,0000,,但你能想象这得耗费海量的人力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you could imagine that that's very labor intensive 
+Dialogue: 0,0:30:02.42,0:30:04.66,*Default,NTP,0000,0000,0000,,因为你得分离每一个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you've got to separate each individual cell,
+Dialogue: 0,0:30:04.83,0:30:06.59,*Default,NTP,0000,0000,0000,,并进行培养\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you've got to nurture it 
+Dialogue: 0,0:30:06.74,0:30:09.77,*Default,NTP,0000,0000,0000,,然后还得追踪和研究它们的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then keep track and study what it becomes.
+Dialogue: 0,0:30:10.98,0:30:13.99,*Default,NTP,0000,0000,0000,,而这是一种非常重要的研究方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That turns out to be one really important way that they do it.
+Dialogue: 0,0:30:14.86,0:30:17.16,*Default,NTP,0000,0000,0000,,而另外一种能让研究人员定位\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other way that they define - 
+Dialogue: 0,0:30:17.30,0:30:21.45,*Default,NTP,0000,0000,0000,,或者找到干细胞的方法就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or find stem cells is that over the years of studying them 
+Dialogue: 0,0:30:21.80,0:30:25.34,*Default,NTP,0000,0000,0000,,多年研究后  我们开始能识别一些蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've begun to recognize some of the proteins,
+Dialogue: 0,0:30:26.75,0:30:29.35,*Default,NTP,0000,0000,0000,,这些特定的蛋白是由\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the specific proteins that are produced
+Dialogue: 0,0:30:29.48,0:30:31.41,*Default,NTP,0000,0000,0000,,这种特殊的细胞生成的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by these characteristic cells.
+Dialogue: 0,0:30:32.18,0:30:34.81,*Default,NTP,0000,0000,0000,,这种细胞  图上标识成绿色的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This cell here, which is indicated green,
+Dialogue: 0,0:30:35.59,0:30:39.36,*Default,NTP,0000,0000,0000,,和标识成红色的细胞不一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is different than this cell that's colored red.
+Dialogue: 0,0:30:40.79,0:30:43.47,*Default,NTP,0000,0000,0000,,真正的不同之处是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The difference the real difference is
+Dialogue: 0,0:30:43.48,0:30:45.15,*Default,NTP,0000,0000,0000,,在这些细胞中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in what genes its expressing
+Dialogue: 0,0:30:45.89,0:30:48.84,*Default,NTP,0000,0000,0000,,表达的是人类全部基因中的不同基因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the total number of genes in the human genome 
+Dialogue: 0,0:30:49.22,0:30:52.42,*Default,NTP,0000,0000,0000,,因此如果细胞表达的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and therefore if it's expressing these unique 
+Dialogue: 0,0:30:52.80,0:30:54.39,*Default,NTP,0000,0000,0000,,这组独特的基因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this unique set of genes.
+Dialogue: 0,0:30:54.57,0:30:56.63,*Default,NTP,0000,0000,0000,,而我又能找到和这些基因对应的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I could find the unique set of proteins 
+Dialogue: 0,0:30:56.74,0:30:58.29,*Default,NTP,0000,0000,0000,,这种独特的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that correspond to those genes 
+Dialogue: 0,0:30:58.38,0:31:01.57,*Default,NTP,0000,0000,0000,,我就能通过化学手段确认这是哪种细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I could define chemically what the cell is.
+Dialogue: 0,0:31:02.49,0:31:05.06,*Default,NTP,0000,0000,0000,,而事实证明\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out that one of the places 
+Dialogue: 0,0:31:05.16,0:31:08.89,*Default,NTP,0000,0000,0000,,寻找能鉴别细胞种类的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's been very fruitful to look for proteins 
+Dialogue: 0,0:31:09.03,0:31:10.94,*Default,NTP,0000,0000,0000,,特定蛋白的最佳位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that differ between cell populations 
+Dialogue: 0,0:31:11.07,0:31:12.76,*Default,NTP,0000,0000,0000,,是在富含蛋白的细胞膜上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is on the surface of the cell.
+Dialogue: 0,0:31:13.43,0:31:15.15,*Default,NTP,0000,0000,0000,,我们讲过细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about the cell membrane,
+Dialogue: 0,0:31:15.28,0:31:17.93,*Default,NTP,0000,0000,0000,,这种质膜将细胞内外区分开\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the plasma membrane separating the inside form the outside.
+Dialogue: 0,0:31:18.04,0:31:19.21,*Default,NTP,0000,0000,0000,,我之前说过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mentioned a little bit 
+Dialogue: 0,0:31:19.31,0:31:22.18,*Default,NTP,0000,0000,0000,,这层膜不仅仅是一层脂质双分子层\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that this membrane is not just lipid bilayer
+Dialogue: 0,0:31:22.35,0:31:24.95,*Default,NTP,0000,0000,0000,,而是有很多蛋白质嵌插在膜上的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's also proteins that are inserted into the membrane.
+Dialogue: 0,0:31:25.07,0:31:26.15,*Default,NTP,0000,0000,0000,,这些蛋白所起的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These proteins have functions 
+Dialogue: 0,0:31:26.27,0:31:29.03,*Default,NTP,0000,0000,0000,,对于细胞生存至关重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are essential for life of the cell,
+Dialogue: 0,0:31:29.16,0:31:32.97,*Default,NTP,0000,0000,0000,,它们负责转运分子通过细胞膜进出细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they transport molecules back and forth across the membrane.
+Dialogue: 0,0:31:33.11,0:31:36.15,*Default,NTP,0000,0000,0000,,它们同时也使得\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They also allow their populations of proteins 
+Dialogue: 0,0:31:36.33,0:31:37.94,*Default,NTP,0000,0000,0000,,这些细胞表面的蛋白质群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the surface of each cell 
+Dialogue: 0,0:31:38.09,0:31:40.06,*Default,NTP,0000,0000,0000,,使得细胞能够和周围环境进行互动\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that allow it to interact with its environment,
+Dialogue: 0,0:31:40.99,0:31:44.62,*Default,NTP,0000,0000,0000,,它们是受体和细胞粘附受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're receptors and cell adhesion receptors
+Dialogue: 0,0:31:44.77,0:31:46.19,*Default,NTP,0000,0000,0000,,我上次也说过的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like I talked about last time.
+Dialogue: 0,0:31:46.34,0:31:48.63,*Default,NTP,0000,0000,0000,,这些蛋白位于细胞表面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The kinds of proteins that sit on a cell surface 
+Dialogue: 0,0:31:48.78,0:31:51.83,*Default,NTP,0000,0000,0000,,和相邻的细胞建立粘附链接\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and form adhesion junctions with neighboring cells,
+Dialogue: 0,0:31:52.10,0:31:54.15,*Default,NTP,0000,0000,0000,,这是细胞的一个种类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's one class of cells on the surface.
+Dialogue: 0,0:31:54.49,0:31:58.54,*Default,NTP,0000,0000,0000,,对不起  这是细胞膜蛋白的一个种类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are - that's one class of proteins on the surface I'm sorry.
+Dialogue: 0,0:31:58.69,0:32:03.16,*Default,NTP,0000,0000,0000,,还有一些蛋白是负责接收信号的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are proteins that are responsible for receiving signals,
+Dialogue: 0,0:32:03.46,0:32:04.65,*Default,NTP,0000,0000,0000,,化学信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}chemical signals.
+Dialogue: 0,0:32:04.82,0:32:06.29,*Default,NTP,0000,0000,0000,,比如说蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are proteins, for example,
+Dialogue: 0,0:32:06.50,0:32:08.03,*Default,NTP,0000,0000,0000,,有些细胞表面上的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the surface of some cells 
+Dialogue: 0,0:32:08.14,0:32:12.83,*Default,NTP,0000,0000,0000,,捕获胰岛素并且对胰岛素进行应答\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that bind insulin and respond to the presence of insulin.
+Dialogue: 0,0:32:12.99,0:32:14.13,*Default,NTP,0000,0000,0000,,我们下一周\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk more about 
+Dialogue: 0,0:32:14.26,0:32:18.07,*Default,NTP,0000,0000,0000,,会再讨论这些表面分子的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these kinds of molecules on the surface next week.
+Dialogue: 0,0:32:18.35,0:32:20.83,*Default,NTP,0000,0000,0000,,现在  你们只要知道有不同的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For now, just know that different kinds of cells,
+Dialogue: 0,0:32:21.01,0:32:22.25,*Default,NTP,0000,0000,0000,,它们之间的一种区别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the ways they're different is 
+Dialogue: 0,0:32:22.39,0:32:24.51,*Default,NTP,0000,0000,0000,,就是它们表达不同的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they express different proteins 
+Dialogue: 0,0:32:24.68,0:32:25.89,*Default,NTP,0000,0000,0000,,而不同细胞表面的蛋白种类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the population of proteins 
+Dialogue: 0,0:32:26.04,0:32:28.15,*Default,NTP,0000,0000,0000,,也是不同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the surface of different cells is different.
+Dialogue: 0,0:32:28.34,0:32:35.05,*Default,NTP,0000,0000,0000,,我们学会了如何按照表面的蛋白成分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've learned how to identify and catalog cells 
+Dialogue: 0,0:32:35.18,0:32:37.68,*Default,NTP,0000,0000,0000,,来识别并分类细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}according to the composition of proteins on the surface 
+Dialogue: 0,0:32:37.84,0:32:41.28,*Default,NTP,0000,0000,0000,,而这些用来区别细胞的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those proteins that distinguish a cell 
+Dialogue: 0,0:32:41.49,0:32:43.38,*Default,NTP,0000,0000,0000,,通常称为标记蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are often called marker proteins.
+Dialogue: 0,0:32:44.74,0:32:46.90,*Default,NTP,0000,0000,0000,,给它们取上名字\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're given names,
+Dialogue: 0,0:32:47.27,0:32:51.73,*Default,NTP,0000,0000,0000,,通常这些名字都生涩难懂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're able to - often the names are confusing,
+Dialogue: 0,0:32:51.88,0:32:53.80,*Default,NTP,0000,0000,0000,,如果你看看书\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you look in the literature 
+Dialogue: 0,0:32:53.96,0:32:59.70,*Default,NTP,0000,0000,0000,,你会发现有称作CD44或CD3的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll find proteins that are called CD44, CD3,
+Dialogue: 0,0:32:59.99,0:33:01.53,*Default,NTP,0000,0000,0000,,这些是分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these are differentiation 
+Dialogue: 0,0:33:01.79,0:33:05.32,*Default,NTP,0000,0000,0000,,CD表示分化抗原簇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cluster differentiation antigens is what CD stands for 
+Dialogue: 0,0:33:05.49,0:33:07.30,*Default,NTP,0000,0000,0000,,但这实际上是表示一种特定蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it really means a particular protein 
+Dialogue: 0,0:33:07.44,0:33:10.32,*Default,NTP,0000,0000,0000,,在一种细胞上表达而不在另一种上表达\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is present on this cell but not on that cell.
+Dialogue: 0,0:33:10.46,0:33:12.81,*Default,NTP,0000,0000,0000,,因此我可以利用这些蛋白的存在与否\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I can use the presence of those 
+Dialogue: 0,0:33:13.74,0:33:17.14,*Default,NTP,0000,0000,0000,,来识别细胞群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to identify cell populations.
+Dialogue: 0,0:33:19.16,0:33:21.48,*Default,NTP,0000,0000,0000,,干细胞难以识别的原因之一是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One reason it's been harder to identify stem cells 
+Dialogue: 0,0:33:21.66,0:33:22.66,*Default,NTP,0000,0000,0000,,这些细胞很少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that they're so rare;
+Dialogue: 0,0:33:23.01,0:33:25.15,*Default,NTP,0000,0000,0000,,另一个原因就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the other reason is that 
+Dialogue: 0,0:33:25.31,0:33:28.32,*Default,NTP,0000,0000,0000,,干细胞的特征性蛋白难以识别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's hard to identify the characteristics of them
+Dialogue: 0,0:33:28.46,0:33:30.44,*Default,NTP,0000,0000,0000,,我们花了好多年去解决这个问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's taken many years to work this out.
+Dialogue: 0,0:33:30.59,0:33:37.98,*Default,NTP,0000,0000,0000,,在造血系统中这种困难尤为出名\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the matopoetic system it's the most well known.
+Dialogue: 0,0:33:38.49,0:33:42.62,*Default,NTP,0000,0000,0000,,事实上  正是在这种困难的鞭策下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact it's so well known now that we've identified proteins
+Dialogue: 0,0:33:42.76,0:33:47.12,*Default,NTP,0000,0000,0000,,我们得以发现某些刺激细胞发育的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that stimulate the development of cells along certain pathways
+Dialogue: 0,0:33:47.26,0:33:49.08,*Default,NTP,0000,0000,0000,,我们几周前说到过其中的一个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I talked about one of them a couple of weeks ago, 
+Dialogue: 0,0:33:49.24,0:33:54.11,*Default,NTP,0000,0000,0000,,EPO蛋白  即促红细胞生成素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the protein epo, erythropoietin called epo
+Dialogue: 0,0:33:54.22,0:33:57.88,*Default,NTP,0000,0000,0000,,这种自然生成的蛋白在骨髓中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a naturally occurring protein that is in the bone marrow 
+Dialogue: 0,0:33:58.02,0:34:02.71,*Default,NTP,0000,0000,0000,,刺激红细胞的发育\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it stimulates the development of red blood cells.
+Dialogue: 0,0:34:02.98,0:34:05.68,*Default,NTP,0000,0000,0000,,它就是在髓细胞的发育过程中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it stimulates these myeloid cells
+Dialogue: 0,0:34:05.81,0:34:07.61,*Default,NTP,0000,0000,0000,,发挥刺激生成作用的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to develop along this pathway.
+Dialogue: 0,0:34:09.12,0:34:12.44,*Default,NTP,0000,0000,0000,,这种蛋白由体内的另一种细胞生成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a protein that's produced by other cells in the body
+Dialogue: 0,0:34:12.57,0:34:14.34,*Default,NTP,0000,0000,0000,,而当其在某处富集时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and when it's enriched in a certain area 
+Dialogue: 0,0:34:14.49,0:34:20.09,*Default,NTP,0000,0000,0000,,就会刺激红细胞生成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it stimulates more production of red blood cells.
+Dialogue: 0,0:34:20.25,0:34:23.04,*Default,NTP,0000,0000,0000,,由于我们已经知道了这种生物学机制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because we've learned about that biology
+Dialogue: 0,0:34:23.21,0:34:26.45,*Default,NTP,0000,0000,0000,,因此我们能体外制造促红细胞生成素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've been able to make erythropoietin outside the body 
+Dialogue: 0,0:34:26.59,0:34:27.86,*Default,NTP,0000,0000,0000,,并作为药品应用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and use it as a drug.
+Dialogue: 0,0:34:28.24,0:34:31.80,*Default,NTP,0000,0000,0000,,它能够用于那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can be used given to people to
+Dialogue: 0,0:34:31.92,0:34:33.78,*Default,NTP,0000,0000,0000,,罹患某种贫血的人群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who have certain kinds of anemia 
+Dialogue: 0,0:34:33.94,0:34:37.56,*Default,NTP,0000,0000,0000,,来以特定的方式刺激红细胞生成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to stimulate blood cell production in a specific kind of way.
+Dialogue: 0,0:34:38.03,0:34:41.78,*Default,NTP,0000,0000,0000,,现在有很多这样的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's lots of these so called signaling proteins
+Dialogue: 0,0:34:41.94,0:34:43.46,*Default,NTP,0000,0000,0000,,所谓信号蛋白被发现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have been identified now.
+Dialogue: 0,0:34:43.62,0:34:47.70,*Default,NTP,0000,0000,0000,,这些信号蛋白在决定特定分化路径上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These signaling proteins play important roles in determining
+Dialogue: 0,0:34:48.55,0:34:53.65,*Default,NTP,0000,0000,0000,,有多少细胞在分化时起着重要作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how many cells differentiate down particular pathways 
+Dialogue: 0,0:34:53.80,0:34:56.63,*Default,NTP,0000,0000,0000,,且在治疗疾病方面也很有用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they turn out also to be very useful 
+Dialogue: 0,0:34:56.82,0:34:59.80,*Default,NTP,0000,0000,0000,,同样也是利用这些机制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for treating diseases of those pathways.
+Dialogue: 0,0:35:06.65,0:35:12.11,*Default,NTP,0000,0000,0000,,这种骨髓中的多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This pluripotent stem cell from bone marrow
+Dialogue: 0,0:35:12.27,0:35:14.72,*Default,NTP,0000,0000,0000,,是干细胞的一个代表\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an example of a stem cell,
+Dialogue: 0,0:35:14.84,0:35:16.03,*Default,NTP,0000,0000,0000,,一个成人的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an adult stem cell,
+Dialogue: 0,0:35:16.14,0:35:18.49,*Default,NTP,0000,0000,0000,,可以在血液中检测到的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a stem cell that could be identified from the blood.
+Dialogue: 0,0:35:19.99,0:35:22.95,*Default,NTP,0000,0000,0000,,和我们之前谈到的胚胎干细胞有所不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Different than the embryonic stem cell we talked about before,
+Dialogue: 0,0:35:23.33,0:35:25.69,*Default,NTP,0000,0000,0000,,因此这是个成人干细胞的例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it's an example of an adult stem cell.
+Dialogue: 0,0:35:26.30,0:35:30.09,*Default,NTP,0000,0000,0000,,这同时也是一个组织特异性干细胞的例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's also an example of a tissue specific stem cell.
+Dialogue: 0,0:35:30.81,0:35:33.32,*Default,NTP,0000,0000,0000,,这些血液中的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those stem cells from the blood
+Dialogue: 0,0:35:33.47,0:35:37.24,*Default,NTP,0000,0000,0000,,能够成为任何血细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are capable of becoming all those cells in the blood.
+Dialogue: 0,0:35:37.51,0:35:41.53,*Default,NTP,0000,0000,0000,,它们通常不能变成其他种类的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not capable of becoming other kinds of cells in general.
+Dialogue: 0,0:35:42.26,0:35:45.16,*Default,NTP,0000,0000,0000,,如今  你通过听文献讲座\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you'll hear reports in the literature,
+Dialogue: 0,0:35:45.28,0:35:46.16,*Default,NTP,0000,0000,0000,,看报纸\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll look in the newspaper,
+Dialogue: 0,0:35:46.31,0:35:50.44,*Default,NTP,0000,0000,0000,,会听说科学家们已经发现了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll hear about scientists that have found ways
+Dialogue: 0,0:35:50.58,0:35:53.33,*Default,NTP,0000,0000,0000,,转分化细胞的方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to trans-differentiate cells,
+Dialogue: 0,0:35:53.48,0:35:56.05,*Default,NTP,0000,0000,0000,,即把这些细胞从一种分化途径转到另一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is move them from one pathway to the other.
+Dialogue: 0,0:35:56.49,0:35:57.59,*Default,NTP,0000,0000,0000,,去找那些能够\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To find stem cells 
+Dialogue: 0,0:35:57.70,0:36:00.44,*Default,NTP,0000,0000,0000,,从一种分化途径转到另一种的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they can move from one kind of pathway to another.
+Dialogue: 0,0:36:00.68,0:36:02.67,*Default,NTP,0000,0000,0000,,在血液干细胞的研究中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's been looking at 
+Dialogue: 0,0:36:02.77,0:36:05.70,*Default,NTP,0000,0000,0000,,看起来是个有前途的路子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}blood stem cells has been a very fruitful way to look for that.
+Dialogue: 0,0:36:06.10,0:36:10.17,*Default,NTP,0000,0000,0000,,你可以把这些正常情况下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are some ways that you can take stem cells 
+Dialogue: 0,0:36:10.40,0:36:12.72,*Default,NTP,0000,0000,0000,,只能生成血细胞的干细胞提取出来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that normally would only produce blood cells 
+Dialogue: 0,0:36:12.95,0:36:14.46,*Default,NTP,0000,0000,0000,,在培养基中培养\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maintain them in culture,
+Dialogue: 0,0:36:14.58,0:36:17.07,*Default,NTP,0000,0000,0000,,将其暴露于某种化学物质中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}expose them to certain regimens of chemicals,
+Dialogue: 0,0:36:17.23,0:36:19.19,*Default,NTP,0000,0000,0000,,再进行一些人为的操控\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do certain manipulations on these cells 
+Dialogue: 0,0:36:19.28,0:36:22.18,*Default,NTP,0000,0000,0000,,这些细胞就能够生成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they become capable of producing liver,
+Dialogue: 0,0:36:22.35,0:36:26.16,*Default,NTP,0000,0000,0000,,比如肝脏  或者脑  肌肉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, or brain, or muscle.
+Dialogue: 0,0:36:26.70,0:36:29.09,*Default,NTP,0000,0000,0000,,现在你可以找到很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a lot of the literature of stem cells 
+Dialogue: 0,0:36:29.18,0:36:29.95,*Default,NTP,0000,0000,0000,,有关干细胞的文献中讲到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you'll read about,
+Dialogue: 0,0:36:30.05,0:36:32.51,*Default,NTP,0000,0000,0000,,提取一种特定来源的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}taking a particular source of stem cell 
+Dialogue: 0,0:36:32.72,0:36:36.80,*Default,NTP,0000,0000,0000,,通过特定的培养方法之后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and nurturing it in such a way that it gains potentials 
+Dialogue: 0,0:36:37.56,0:36:40.47,*Default,NTP,0000,0000,0000,,它们会获得在体内不能获得的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it didn't have necessarily when it was in the body,
+Dialogue: 0,0:36:41.45,0:36:45.48,*Default,NTP,0000,0000,0000,,或者开拓一些在体内不能得到表达的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or exploiting those potentials that it wouldn't necessarily express.
+Dialogue: 0,0:36:47.69,0:36:52.61,*Default,NTP,0000,0000,0000,,干细胞生物学的著作有很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a lot of what stem cell biology is like - is about.
+Dialogue: 0,0:36:53.62,0:36:59.63,*Default,NTP,0000,0000,0000,,这张图让我能跟你们一起\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This diagram here sort of allows me to walk you through 
+Dialogue: 0,0:36:59.76,0:37:03.23,*Default,NTP,0000,0000,0000,,走马观花地看看干细胞发展中的术语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the terminology of this stem cell development
+Dialogue: 0,0:37:03.33,0:37:05.75,*Default,NTP,0000,0000,0000,,探讨一下这些概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and talk about these concepts.
+Dialogue: 0,0:37:05.91,0:37:08.82,*Default,NTP,0000,0000,0000,,当然又是放在某种组织当中来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, in the context of a specific tissue site,
+Dialogue: 0,0:37:08.93,0:37:10.70,*Default,NTP,0000,0000,0000,,这次是在神经系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this case it's the nervous system.
+Dialogue: 0,0:37:11.70,0:37:13.67,*Default,NTP,0000,0000,0000,,我们是从\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We started the discussion talking about 
+Dialogue: 0,0:37:13.80,0:37:15.92,*Default,NTP,0000,0000,0000,,受精卵或者受精卵子说起的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the zygote or the fertilized egg.
+Dialogue: 0,0:37:16.37,0:37:18.34,*Default,NTP,0000,0000,0000,,它的来源只有一个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's only one source for that,
+Dialogue: 0,0:37:19.67,0:37:22.41,*Default,NTP,0000,0000,0000,,受精卵的来源是唯一的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's only one source of that fertilized egg.
+Dialogue: 0,0:37:22.61,0:37:25.34,*Default,NTP,0000,0000,0000,,它是不会自我更新的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not self-renewing,
+Dialogue: 0,0:37:25.65,0:37:30.32,*Default,NTP,0000,0000,0000,,受精卵分裂后成了两个子细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that division of the zygote results in two daughter cells 
+Dialogue: 0,0:37:30.44,0:37:33.67,*Default,NTP,0000,0000,0000,,而这两个子细胞就不再是受精卵了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are no longer the zygote anymore,
+Dialogue: 0,0:37:33.79,0:37:35.24,*Default,NTP,0000,0000,0000,,它们沿着某种路径进行了分化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're down some pathway.
+Dialogue: 0,0:37:38.02,0:37:40.91,*Default,NTP,0000,0000,0000,,干细胞的一个特点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One way of referring to this cell 
+Dialogue: 0,0:37:41.10,0:37:45.03,*Default,NTP,0000,0000,0000,,就是它有分化潜能  而受精卵\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is in terms of its potential and the zygote obviously 
+Dialogue: 0,0:37:45.12,0:37:47.42,*Default,NTP,0000,0000,0000,,显然有变成我们体内任何细胞的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has the potential of becoming all of the cells of our body.
+Dialogue: 0,0:37:47.48,0:37:50.30,*Default,NTP,0000,0000,0000,,这是干细胞的来源  都来源于受精卵\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's where they all come from, they all come from the zygote
+Dialogue: 0,0:37:50.44,0:37:53.27,*Default,NTP,0000,0000,0000,,这种细胞称为全能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The word for that is totipotent,
+Dialogue: 0,0:37:53.27,0:37:55.32,*Default,NTP,0000,0000,0000,,具备全部潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}totally potent.
+Dialogue: 0,0:37:55.52,0:37:58.90,*Default,NTP,0000,0000,0000,,它能成为身体内任何种类的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has the capability of becoming any kind of cell within the body,
+Dialogue: 0,0:37:58.97,0:38:00.43,*Default,NTP,0000,0000,0000,,事实上  这也就是它的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in fact, that's what it does.
+Dialogue: 0,0:38:01.23,0:38:03.35,*Default,NTP,0000,0000,0000,,沿着这条线看  举个例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Further down the line, for example,
+Dialogue: 0,0:38:03.44,0:38:06.58,*Default,NTP,0000,0000,0000,,就是我之前提到过的囊胚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the blastocyst I talked about before,
+Dialogue: 0,0:38:06.71,0:38:10.14,*Default,NTP,0000,0000,0000,,我们可以取一些内细胞群的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we could obtain cells from this inner cell mass 
+Dialogue: 0,0:38:10.26,0:38:13.16,*Default,NTP,0000,0000,0000,,这种能成为胚胎的细胞群\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or this cluster of cells that becomes the embryo.
+Dialogue: 0,0:38:13.36,0:38:15.47,*Default,NTP,0000,0000,0000,,这些称为胚胎干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are called embryonic stem cells,
+Dialogue: 0,0:38:16.00,0:38:19.68,*Default,NTP,0000,0000,0000,,它们可以自我更新  且是多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they are self-renewing, and they are pluripotent,
+Dialogue: 0,0:38:19.89,0:38:21.89,*Default,NTP,0000,0000,0000,,即它们有多种潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}meaning they have many potencies.
+Dialogue: 0,0:38:22.04,0:38:25.81,*Default,NTP,0000,0000,0000,,这就是为什么胚胎干细胞如此让人激动\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why people are so excited about embryonic stem cells 
+Dialogue: 0,0:38:26.33,0:38:32.70,*Default,NTP,0000,0000,0000,,因为它的天然功能就是变成所有身体细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because in nature they become all the cells of the body.
+Dialogue: 0,0:38:32.97,0:38:34.82,*Default,NTP,0000,0000,0000,,如果我们能研究得足够透彻\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we understood them well enough
+Dialogue: 0,0:38:34.97,0:38:37.74,*Default,NTP,0000,0000,0000,,我们就有可能利用这些多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we could potentially make any particular kind of cell
+Dialogue: 0,0:38:38.70,0:38:42.22,*Default,NTP,0000,0000,0000,,制造我们体内任何特定的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the body from those pluripotent cells.
+Dialogue: 0,0:38:44.46,0:38:46.75,*Default,NTP,0000,0000,0000,,这些研究极富争议  我想原因很明显\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're controversial, I think for obvious reasons,
+Dialogue: 0,0:38:46.83,0:38:51.75,*Default,NTP,0000,0000,0000,,因为你必须牺牲一个胚胎来取得干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you have to sacrifice an embryo in order to get them.
+Dialogue: 0,0:38:54.67,0:38:59.71,*Default,NTP,0000,0000,0000,,沿着这条线再往后一些就是胚胎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Further down this line here are embryonic 
+Dialogue: 0,0:38:59.83,0:39:02.82,*Default,NTP,0000,0000,0000,,或者就说是成人脑中的干细胞吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or let's say adult brain stem cells.
+Dialogue: 0,0:39:02.89,0:39:04.37,*Default,NTP,0000,0000,0000,,这些细胞是我从\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are cells that I
+Dialogue: 0,0:39:04.55,0:39:09.49,*Default,NTP,0000,0000,0000,,发育的更成熟的一些胚胎中提取的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were obtained either from a more developed embryo,
+Dialogue: 0,0:39:09.59,0:39:11.27,*Default,NTP,0000,0000,0000,,这些胚胎已经过了囊胚期了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}past the blastocyst stage.
+Dialogue: 0,0:39:11.40,0:39:14.21,*Default,NTP,0000,0000,0000,,比如我在第一张幻灯片里展示的那种胚胎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, that embryo that I showed on one of the first slides
+Dialogue: 0,0:39:14.35,0:39:17.19,*Default,NTP,0000,0000,0000,,已经有了明显的头部和尾部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there's clearly a head region and a tail region.
+Dialogue: 0,0:39:17.37,0:39:19.76,*Default,NTP,0000,0000,0000,,现在我可以从胚胎的头部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now I isolated these cells 
+Dialogue: 0,0:39:19.90,0:39:22.31,*Default,NTP,0000,0000,0000,,分离这些细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe from the head region of the embryo,
+Dialogue: 0,0:39:22.47,0:39:24.87,*Default,NTP,0000,0000,0000,,从就要发育成为大脑的这些部位\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the region that's going to develop into the brain,
+Dialogue: 0,0:39:25.30,0:39:26.77,*Default,NTP,0000,0000,0000,,这是取得你需要的细胞的绝佳位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that would be a good place to look 
+Dialogue: 0,0:39:26.89,0:39:29.97,*Default,NTP,0000,0000,0000,,如果你想要发育成大脑的细胞的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you wanted cells that were going to develop into the brain.
+Dialogue: 0,0:39:30.13,0:39:32.22,*Default,NTP,0000,0000,0000,,它们可以自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're capable of self-renewal.
+Dialogue: 0,0:39:32.39,0:39:35.61,*Default,NTP,0000,0000,0000,,它们不如早些的细胞有那样多的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not quite as potent as the cells from earlier 
+Dialogue: 0,0:39:35.77,0:39:38.35,*Default,NTP,0000,0000,0000,,因为它们已经分化到一定程度了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they've now differentiated somewhat.
+Dialogue: 0,0:39:39.31,0:39:40.72,*Default,NTP,0000,0000,0000,,它们也许可以生成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They might be capable of forming 
+Dialogue: 0,0:39:40.88,0:39:42.59,*Default,NTP,0000,0000,0000,,所有神经系统的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all of the cells of the nervous system;
+Dialogue: 0,0:39:42.73,0:39:45.80,*Default,NTP,0000,0000,0000,,也许还有一些生成和神经系统类似的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they might still have some potency to form other things 
+Dialogue: 0,0:39:45.91,0:39:47.86,*Default,NTP,0000,0000,0000,,其他东西的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are similar to the nervous system.
+Dialogue: 0,0:39:47.99,0:39:49.44,*Default,NTP,0000,0000,0000,,也许它们能生成皮肤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe they could make skin,
+Dialogue: 0,0:39:50.13,0:39:53.57,*Default,NTP,0000,0000,0000,,或者其他种类的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe they could make other kinds of cells 
+Dialogue: 0,0:39:53.73,0:39:55.25,*Default,NTP,0000,0000,0000,,只要你的操作恰当\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you treated them the right way.
+Dialogue: 0,0:39:55.82,0:39:59.54,*Default,NTP,0000,0000,0000,,它们失去了一些潜能  但不是很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So they've lost some capabilities but not many,
+Dialogue: 0,0:39:59.66,0:40:02.74,*Default,NTP,0000,0000,0000,,所以这些还是称为多能干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these are called multipotent stem cells.
+Dialogue: 0,0:40:03.04,0:40:04.84,*Default,NTP,0000,0000,0000,,它们还有广泛的潜能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They still have broad potential 
+Dialogue: 0,0:40:04.91,0:40:05.90,*Default,NTP,0000,0000,0000,,同时也能自我更新\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they're self-renewing 
+Dialogue: 0,0:40:05.96,0:40:07.51,*Default,NTP,0000,0000,0000,,因此还是很有有趣的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so there's much interest in those.
+Dialogue: 0,0:40:07.62,0:40:09.18,*Default,NTP,0000,0000,0000,,它们在胚胎中最容易被找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Easiest to find them in embryos 
+Dialogue: 0,0:40:09.28,0:40:12.25,*Default,NTP,0000,0000,0000,,但有时在成人的机体中也能找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but sometimes they can be found in adult organisms as well.
+Dialogue: 0,0:40:12.87,0:40:15.29,*Default,NTP,0000,0000,0000,,如果你在一个成人大脑的正确区域找\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you go to the right region of an adult brain 
+Dialogue: 0,0:40:15.42,0:40:17.92,*Default,NTP,0000,0000,0000,,你也许能找到这样的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might be able to find cells like this 
+Dialogue: 0,0:40:18.72,0:40:20.63,*Default,NTP,0000,0000,0000,,但会更困难一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's more difficult.
+Dialogue: 0,0:40:20.95,0:40:24.35,*Default,NTP,0000,0000,0000,,因为我们在成人机体中找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As we've found cells from adult organisms 
+Dialogue: 0,0:40:24.46,0:40:27.90,*Default,NTP,0000,0000,0000,,这些看上去是多能干细胞的细胞后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that seem to be multipotential and studied them more carefully,
+Dialogue: 0,0:40:28.10,0:40:30.82,*Default,NTP,0000,0000,0000,,仔细研究后发现它们的一些潜能已经丢失\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of their potentials turn out to be lost,
+Dialogue: 0,0:40:30.96,0:40:32.32,*Default,NTP,0000,0000,0000,,和胚胎中的那些并不一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not exactly the same.
+Dialogue: 0,0:40:34.99,0:40:36.49,*Default,NTP,0000,0000,0000,,沿着这条线再往后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Further down the line here,
+Dialogue: 0,0:40:36.62,0:40:37.75,*Default,NTP,0000,0000,0000,,如果我们看看成人的大脑\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we looked in the adult brain 
+Dialogue: 0,0:40:37.87,0:40:39.53,*Default,NTP,0000,0000,0000,,或者脊髓或者其他部位\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or spinal cord and other regions
+Dialogue: 0,0:40:39.63,0:40:41.76,*Default,NTP,0000,0000,0000,,我们就能找到定向祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'd find committed progenitor cells.
+Dialogue: 0,0:40:42.28,0:40:48.58,*Default,NTP,0000,0000,0000,,这些细胞都已经定向  将成为神经组织\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are cells that are committed to become nervous tissue.
+Dialogue: 0,0:40:49.49,0:40:51.60,*Default,NTP,0000,0000,0000,,它们也许能自我更新  也许不能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They might self-renew they might not,
+Dialogue: 0,0:40:52.45,0:40:54.97,*Default,NTP,0000,0000,0000,,它们比之前的干细胞潜能更少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they have much more limited potential than before.
+Dialogue: 0,0:40:55.94,0:40:57.66,*Default,NTP,0000,0000,0000,,随着离胚胎的距离越来越远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're starting to see the pattern 
+Dialogue: 0,0:40:57.78,0:41:00.56,*Default,NTP,0000,0000,0000,,你可以发现细胞从低分化向高分化转变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I move further and further away from the embryo 
+Dialogue: 0,0:41:00.70,0:41:03.39,*Default,NTP,0000,0000,0000,,出现了一些新的细胞的模式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from less differentiated to more differentiated,
+Dialogue: 0,0:41:03.50,0:41:07.90,*Default,NTP,0000,0000,0000,,从非特异性的区域变为特异性的区域\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from non-specific regions to more specific regions,
+Dialogue: 0,0:41:08.03,0:41:11.29,*Default,NTP,0000,0000,0000,,从成人体内取得细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm getting cells that are easier to obtain
+Dialogue: 0,0:41:11.42,0:41:14.13,*Default,NTP,0000,0000,0000,,相对容易\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you can obtain them from adult sources 
+Dialogue: 0,0:41:14.88,0:41:18.25,*Default,NTP,0000,0000,0000,,但它们作为干细胞的潜能是很有限的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but their potential as stem cells is more limited.
+Dialogue: 0,0:41:20.11,0:41:23.56,*Default,NTP,0000,0000,0000,,有一些组织现在受到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are a couple of tissues that are of particular interest 
+Dialogue: 0,0:41:23.70,0:41:26.57,*Default,NTP,0000,0000,0000,,科学家和临床工作者的关注\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to scientists and clinicians now
+Dialogue: 0,0:41:26.73,0:41:29.35,*Default,NTP,0000,0000,0000,,骨髓就是其中之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and bone marrow is one of those.
+Dialogue: 0,0:41:29.47,0:41:31.01,*Default,NTP,0000,0000,0000,,人们对骨髓以及从骨髓中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a lot of interest in bone marrow
+Dialogue: 0,0:41:31.13,0:41:32.74,*Default,NTP,0000,0000,0000,,提取的干细胞有着浓厚的兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the stem cells that come from bone marrow 
+Dialogue: 0,0:41:32.85,0:41:34.11,*Default,NTP,0000,0000,0000,,这其中有多种原因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's a couple of reasons for this.
+Dialogue: 0,0:41:34.22,0:41:37.55,*Default,NTP,0000,0000,0000,,一个原因就是我们对骨髓系统的认识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is because we understand the bone marrow system so much
+Dialogue: 0,0:41:37.66,0:41:40.27,*Default,NTP,0000,0000,0000,,远高于其他干细胞系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}better than we understand all the other stem cell systems.
+Dialogue: 0,0:41:40.37,0:41:43.56,*Default,NTP,0000,0000,0000,,另外一个原因就是从病人的骨髓中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other is that it's possible to get stem cells 
+Dialogue: 0,0:41:43.64,0:41:45.50,*Default,NTP,0000,0000,0000,,取得干细胞是可行的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from patients, from bone marrow.
+Dialogue: 0,0:41:45.74,0:41:47.20,*Default,NTP,0000,0000,0000,,你可以收集骨髓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can collect bone marrow,
+Dialogue: 0,0:41:47.32,0:41:49.43,*Default,NTP,0000,0000,0000,,不过这个过程你应该不想经历\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not a procedure that you would want to do.
+Dialogue: 0,0:41:49.67,0:41:51.84,*Default,NTP,0000,0000,0000,,先要用针头\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It involves putting a needle,
+Dialogue: 0,0:41:51.96,0:41:55.68,*Default,NTP,0000,0000,0000,,相当大的针头刺进你的盆骨\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a fairly large needle into usually one of the pelvic bones 
+Dialogue: 0,0:41:55.86,0:41:57.17,*Default,NTP,0000,0000,0000,,然后进行收集\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and collecting marrow from 
+Dialogue: 0,0:41:57.27,0:42:00.26,*Default,NTP,0000,0000,0000,,这些在骨头深处的骨髓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is tissue that's deep inside those bones.
+Dialogue: 0,0:42:00.39,0:42:02.98,*Default,NTP,0000,0000,0000,,这可不像抽个血那么简单\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as easy as getting your blood drawn 
+Dialogue: 0,0:42:03.09,0:42:05.96,*Default,NTP,0000,0000,0000,,不像你向红十字会献血那样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you give blood to the Red Cross, for example,
+Dialogue: 0,0:42:06.08,0:42:09.53,*Default,NTP,0000,0000,0000,,不过骨髓收集十分安全\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it can be done very safely  and wouldn't it be great
+Dialogue: 0,0:42:09.60,0:42:13.86,*Default,NTP,0000,0000,0000,,而且如果我们可以从骨髓中找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we could identify stem cells that were multipotent from 
+Dialogue: 0,0:42:13.95,0:42:19.05,*Default,NTP,0000,0000,0000,,多能干细胞着实是件好事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that bone marrow because you could find them potentially for
+Dialogue: 0,0:42:19.21,0:42:23.09,*Default,NTP,0000,0000,0000,,因为如果我需要治疗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I needed a treatment that could 
+Dialogue: 0,0:42:23.17,0:42:26.02,*Default,NTP,0000,0000,0000,,如果我的疾病可以用干细胞来治疗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I had some ailment that could be treated with stem cells 
+Dialogue: 0,0:42:26.13,0:42:26.97,*Default,NTP,0000,0000,0000,,那你可以提取我自己的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you could get my own 
+Dialogue: 0,0:42:27.08,0:42:29.30,*Default,NTP,0000,0000,0000,,我可以提取我自己的干细胞并加以利用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I could get my own stem cells and use them.
+Dialogue: 0,0:42:29.40,0:42:32.43,*Default,NTP,0000,0000,0000,,或者我可以捐献骨髓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or maybe I could donate bone marrow 
+Dialogue: 0,0:42:32.55,0:42:34.09,*Default,NTP,0000,0000,0000,,而那些干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those stem cells could be given 
+Dialogue: 0,0:42:34.19,0:42:36.36,*Default,NTP,0000,0000,0000,,可以使用和输血同样的方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to other people in the same way
+Dialogue: 0,0:42:36.47,0:42:38.86,*Default,NTP,0000,0000,0000,,通过配型来确认我的免疫细胞和你的匹配\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that blood can be given to other people by matching 
+Dialogue: 0,0:42:39.26,0:42:42.74,*Default,NTP,0000,0000,0000,,从而把我的干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and making sure that immunologically my cells
+Dialogue: 0,0:42:42.87,0:42:46.83,*Default,NTP,0000,0000,0000,,输入给你\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were compatible with you;
+Dialogue: 0,0:42:47.19,0:42:48.46,*Default,NTP,0000,0000,0000,,这里面有很多有趣的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a lot of interest in that.
+Dialogue: 0,0:42:48.58,0:42:51.09,*Default,NTP,0000,0000,0000,,从出生时的脐带血中取得一些干细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a lot of interest in obtaining stem cells 
+Dialogue: 0,0:42:51.20,0:42:54.43,*Default,NTP,0000,0000,0000,,也很有趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from the blood of the umbilical cord on birth.
+Dialogue: 0,0:42:55.08,0:42:57.17,*Default,NTP,0000,0000,0000,,研究发现脐带血中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out that blood within the umbilical cord 
+Dialogue: 0,0:42:57.31,0:42:59.74,*Default,NTP,0000,0000,0000,,也有丰富的干细胞资源\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is also a rich source of stem cells 
+Dialogue: 0,0:43:00.45,0:43:04.61,*Default,NTP,0000,0000,0000,,并且对一些特殊的病人有特别的意义\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and again specific to a particular patient.
+Dialogue: 0,0:43:04.68,0:43:06.02,*Default,NTP,0000,0000,0000,,现在已经有提供这样的服务了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are services now,
+Dialogue: 0,0:43:06.15,0:43:08.22,*Default,NTP,0000,0000,0000,,我们现在还不知道如何从脐带血中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't know yet how to get those stem cells 
+Dialogue: 0,0:43:08.31,0:43:11.32,*Default,NTP,0000,0000,0000,,提取这些干细胞并用于治疗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}out of cord blood and how to use them for therapies,
+Dialogue: 0,0:43:11.42,0:43:13.50,*Default,NTP,0000,0000,0000,,但有理由相信\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's reasonable to think that 
+Dialogue: 0,0:43:13.60,0:43:15.54,*Default,NTP,0000,0000,0000,,在未来的30年内我们会知道的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we might know about this in 30 years.
+Dialogue: 0,0:43:15.68,0:43:19.74,*Default,NTP,0000,0000,0000,,一些父母现在选择保存脐带血\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So some parents now are choosing to save the cord blood,
+Dialogue: 0,0:43:20.19,0:43:21.37,*Default,NTP,0000,0000,0000,,冷冻储存起来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have it frozen,
+Dialogue: 0,0:43:22.12,0:43:24.84,*Default,NTP,0000,0000,0000,,保存在某个地方以防万一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}locked away somewhere just in case
+Dialogue: 0,0:43:24.98,0:43:27.65,*Default,NTP,0000,0000,0000,,也许孩子将来用得着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}its useful to their child later in life.
+Dialogue: 0,0:43:27.80,0:43:29.61,*Default,NTP,0000,0000,0000,,我并不认可这件事情\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not endorsing that I'm just saying that
+Dialogue: 0,0:43:29.70,0:43:31.96,*Default,NTP,0000,0000,0000,,我只是说现在能做这样的事了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's something that can be done now.
+Dialogue: 0,0:43:33.43,0:43:36.22,*Default,NTP,0000,0000,0000,,我不太认同这张图表\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I digressed a little from this diagram 
+Dialogue: 0,0:43:36.33,0:43:37.83,*Default,NTP,0000,0000,0000,,不过我认为随着我说到成人机体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I think you've gotten the picture 
+Dialogue: 0,0:43:38.06,0:43:41.04,*Default,NTP,0000,0000,0000,,你们已经在脑海中有这样的概念了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that as I move to more adult organisms,
+Dialogue: 0,0:43:41.18,0:43:44.94,*Default,NTP,0000,0000,0000,,我在更特异性的区域  比如大脑中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I move to more specific regions of the brain, for example,
+Dialogue: 0,0:43:45.06,0:43:49.49,*Default,NTP,0000,0000,0000,,仍能找到有一定潜能的祖细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can still find progenitor cells that have some potential.
+Dialogue: 0,0:43:49.72,0:43:52.31,*Default,NTP,0000,0000,0000,,不过找起来更困难\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's harder to find, 
+Dialogue: 0,0:43:52.55,0:43:55.16,*Default,NTP,0000,0000,0000,,因为它们数量稀少而且通常很难定位\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're more limited numbers, and in general,
+Dialogue: 0,0:43:55.28,0:43:59.28,*Default,NTP,0000,0000,0000,,在分化的终末阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more difficult until eventually down this pathway 
+Dialogue: 0,0:43:59.40,0:44:01.34,*Default,NTP,0000,0000,0000,,你可以看到完全分化的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have fully differentiated cells,
+Dialogue: 0,0:44:01.46,0:44:03.37,*Default,NTP,0000,0000,0000,,这些细胞完全成熟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cells that are fully mature 
+Dialogue: 0,0:44:03.56,0:44:06.40,*Default,NTP,0000,0000,0000,,在成熟的器官中发挥功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and performing the function of the mature organ.
+Dialogue: 0,0:44:06.53,0:44:10.53,*Default,NTP,0000,0000,0000,,在脑中的两大细胞分别是神经细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The two largest populations of cells within the brain are neurons,
+Dialogue: 0,0:44:10.67,0:44:13.80,*Default,NTP,0000,0000,0000,,就是当我们想到大脑时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the ones that actually transmit electrical activity 
+Dialogue: 0,0:44:13.94,0:44:17.23,*Default,NTP,0000,0000,0000,,我们认为传递电信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and responsible for the main functions 
+Dialogue: 0,0:44:17.32,0:44:18.91,*Default,NTP,0000,0000,0000,,并负责主要功能的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we think of when we think of the brain,
+Dialogue: 0,0:44:19.08,0:44:21.08,*Default,NTP,0000,0000,0000,,以及称为神经胶质细胞的支持细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and supporting cells called glia,
+Dialogue: 0,0:44:21.28,0:44:23.21,*Default,NTP,0000,0000,0000,,这些细胞负责创造\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are responsible for sort of creating 
+Dialogue: 0,0:44:23.33,0:44:27.33,*Default,NTP,0000,0000,0000,,适合神经细胞发挥功能的环境\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the right sort of environment for neurons to function.
+Dialogue: 0,0:44:30.56,0:44:32.85,*Default,NTP,0000,0000,0000,,我想说的最后一个概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wanted to talk about one last concept
+Dialogue: 0,0:44:32.96,0:44:35.19,*Default,NTP,0000,0000,0000,,就是第五章里的一节\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is one the boxes from Chapter 5 
+Dialogue: 0,0:44:35.33,0:44:39.46,*Default,NTP,0000,0000,0000,,你可能已经在作业里用到了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you've already been using this in your homework.
+Dialogue: 0,0:44:39.65,0:44:43.00,*Default,NTP,0000,0000,0000,,我想说的最后一个概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just wanted to talk about one last concept 
+Dialogue: 0,0:44:43.13,0:44:45.63,*Default,NTP,0000,0000,0000,,就是细胞增殖\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that has to do with cell proliferation.
+Dialogue: 0,0:44:45.81,0:44:49.20,*Default,NTP,0000,0000,0000,,我们说到了一个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've been talking about single cell 
+Dialogue: 0,0:44:49.30,0:44:53.66,*Default,NTP,0000,0000,0000,,或者一组细胞进行繁殖以后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or some subset of cells and propagating them 
+Dialogue: 0,0:44:53.74,0:44:56.02,*Default,NTP,0000,0000,0000,,你就能得到数目可观的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you get a larger population of cells.
+Dialogue: 0,0:44:56.17,0:44:58.12,*Default,NTP,0000,0000,0000,,当然在身体中这个繁殖的过程从未间断过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course this happens all the time in the body.
+Dialogue: 0,0:44:58.21,0:44:59.28,*Default,NTP,0000,0000,0000,,你体内的一些细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are cells within your body 
+Dialogue: 0,0:44:59.40,0:45:01.33,*Default,NTP,0000,0000,0000,,始终在不断分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are always in the process of division 
+Dialogue: 0,0:45:01.45,0:45:02.66,*Default,NTP,0000,0000,0000,,并生成新的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and forming new cells,
+Dialogue: 0,0:45:02.88,0:45:05.86,*Default,NTP,0000,0000,0000,,很多时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sometimes this is for a tissue 
+Dialogue: 0,0:45:06.07,0:45:08.76,*Default,NTP,0000,0000,0000,,是在一些细胞寿命有限的组织中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where cells only have a finite lifetime.
+Dialogue: 0,0:45:08.88,0:45:10.78,*Default,NTP,0000,0000,0000,,携带氧的红细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The red blood cells that carry oxygen
+Dialogue: 0,0:45:10.98,0:45:14.31,*Default,NTP,0000,0000,0000,,在你的循环系统中的寿命只有一个月\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only live within your circulation for about a month 
+Dialogue: 0,0:45:14.48,0:45:16.65,*Default,NTP,0000,0000,0000,,因此你必须持续不断地更新衰老的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you have to continually be replacing cells 
+Dialogue: 0,0:45:16.76,0:45:19.09,*Default,NTP,0000,0000,0000,,所以就有在增殖的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are dying and so there are cells that are proliferating.
+Dialogue: 0,0:45:20.18,0:45:22.85,*Default,NTP,0000,0000,0000,,细胞增殖是细胞培养中的重大课题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cell proliferation is a huge issue in cell culture.
+Dialogue: 0,0:45:22.98,0:45:27.28,*Default,NTP,0000,0000,0000,,我们培养细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the main things that we use cell culture 
+Dialogue: 0,0:45:27.38,0:45:31.92,*Default,NTP,0000,0000,0000,,或者体外维持细胞的重要步骤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or maintenance of cells outside the body for
+Dialogue: 0,0:45:32.05,0:45:34.59,*Default,NTP,0000,0000,0000,,就是复制更多的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to make more copies of cells.
+Dialogue: 0,0:45:36.46,0:45:38.85,*Default,NTP,0000,0000,0000,,细胞培养的一个目的就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the purposes of cell culture is to make many,
+Dialogue: 0,0:45:38.97,0:45:40.98,*Default,NTP,0000,0000,0000,,在可控的环境下生成许许多多的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many more cells under controlled conditions
+Dialogue: 0,0:45:41.05,0:45:43.19,*Default,NTP,0000,0000,0000,,从而让我能够研究这些细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where I can understand what those cells are.
+Dialogue: 0,0:45:43.66,0:45:44.59,*Default,NTP,0000,0000,0000,,因此  大致而言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, in general,
+Dialogue: 0,0:45:44.70,0:45:46.03,*Default,NTP,0000,0000,0000,,当细胞增殖时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when cells are proliferating
+Dialogue: 0,0:45:46.35,0:45:50.23,*Default,NTP,0000,0000,0000,,它们是在分裂  并以受调控的频率分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're dividing and they're dividing at a regular rate.
+Dialogue: 0,0:45:50.55,0:45:53.11,*Default,NTP,0000,0000,0000,,用数学方式对此的表达\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What that means is that one way to describe 
+Dialogue: 0,0:45:53.22,0:45:55.20,*Default,NTP,0000,0000,0000,,显示如下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that mathematically is shown here.
+Dialogue: 0,0:45:55.30,0:45:57.14,*Default,NTP,0000,0000,0000,,如果X是细胞数目\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If X is the number of cells,
+Dialogue: 0,0:45:57.28,0:46:00.92,*Default,NTP,0000,0000,0000,,那么X的改变率就是dX/dt\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the rate of change of X, dX/dt,
+Dialogue: 0,0:46:01.64,0:46:04.29,*Default,NTP,0000,0000,0000,,就是细胞数目的改变率\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate of change of the cell population,
+Dialogue: 0,0:46:04.50,0:46:06.37,*Default,NTP,0000,0000,0000,,分裂的速度有多快\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how fast division is taking
+Dialogue: 0,0:46:06.58,0:46:09.12,*Default,NTP,0000,0000,0000,,和细胞数量呈比例关系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is proportional to the number of cells I have.
+Dialogue: 0,0:46:09.73,0:46:10.99,*Default,NTP,0000,0000,0000,,这个说的通\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This makes sense;
+Dialogue: 0,0:46:11.29,0:46:15.68,*Default,NTP,0000,0000,0000,,细胞数目的增长速度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate at which the cell population is growing,
+Dialogue: 0,0:46:16.08,0:46:17.72,*Default,NTP,0000,0000,0000,,就是导数dX/dt\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the derivative dX/dt,
+Dialogue: 0,0:46:17.90,0:46:20.12,*Default,NTP,0000,0000,0000,,和细胞数目呈比例关系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is proportional to the number of cells I have.
+Dialogue: 0,0:46:20.33,0:46:22.59,*Default,NTP,0000,0000,0000,,细胞数目越多增长就越快\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The more cells I have the faster they can grow,
+Dialogue: 0,0:46:23.74,0:46:25.92,*Default,NTP,0000,0000,0000,,细胞数目越少增长就越慢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fewer cells grows more slowly.
+Dialogue: 0,0:46:26.12,0:46:29.90,*Default,NTP,0000,0000,0000,,这是一个指数增长的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an example of an exponential growth process 
+Dialogue: 0,0:46:31.25,0:46:34.22,*Default,NTP,0000,0000,0000,,你们应该都很熟悉的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're familiar with processes like these.
+Dialogue: 0,0:46:34.38,0:46:36.43,*Default,NTP,0000,0000,0000,,如果你解这个微分方程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you solve this differential equation,
+Dialogue: 0,0:46:36.51,0:46:38.00,*Default,NTP,0000,0000,0000,,当然本课程不要求你解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which you don't need to do for the course,
+Dialogue: 0,0:46:38.10,0:46:40.13,*Default,NTP,0000,0000,0000,,不过我把结果写在这里了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I show it here;
+Dialogue: 0,0:46:40.25,0:46:41.49,*Default,NTP,0000,0000,0000,,你们肯定有会解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of you will understand immediately
+Dialogue: 0,0:46:41.57,0:46:42.72,*Default,NTP,0000,0000,0000,,立即看出是如何解的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where this comes from,
+Dialogue: 0,0:46:42.86,0:46:45.74,*Default,NTP,0000,0000,0000,,这就表示我任意一个时间点的细胞数量\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that means that the number of cells I have 
+Dialogue: 0,0:46:45.87,0:46:49.76,*Default,NTP,0000,0000,0000,,等于我一开始\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at any particular time is equal to the number of cells 
+Dialogue: 0,0:46:49.86,0:46:51.74,*Default,NTP,0000,0000,0000,,所拥有的细胞数量\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I have at some starting time,
+Dialogue: 0,0:46:52.23,0:46:57.76,*Default,NTP,0000,0000,0000,,乘以e的μ次方\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}times e to the power, μ here,
+Dialogue: 0,0:46:57.91,0:47:01.40,*Default,NTP,0000,0000,0000,,这里应该是μt次方\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where - and it should be μ 
+Dialogue: 0,0:47:01.56,0:47:03.74,*Default,NTP,0000,0000,0000,,看来书里有个印刷错误\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}t--looks like there's a typo in the book,
+Dialogue: 0,0:47:05.65,0:47:07.03,*Default,NTP,0000,0000,0000,,你看不到那个字\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can't see it here,
+Dialogue: 0,0:47:07.21,0:47:12.33,*Default,NTP,0000,0000,0000,,应该是e的μt次方  是常数乘以时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe, so e^(μt) or this constant times time.
+Dialogue: 0,0:47:12.47,0:47:15.52,*Default,NTP,0000,0000,0000,,这个常数μ就是细胞数目和\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This constant μ which is the proportionality constant 
+Dialogue: 0,0:47:15.64,0:47:16.38,*Default,NTP,0000,0000,0000,,增长速度之间的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the number of cells 
+Dialogue: 0,0:47:16.48,0:47:18.42,*Default,NTP,0000,0000,0000,,一个常数\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the rate of growth is a constant
+Dialogue: 0,0:47:18.58,0:47:21.88,*Default,NTP,0000,0000,0000,,代表细胞增长的速度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that characterizes how fast a cell population is growing.
+Dialogue: 0,0:47:22.04,0:47:23.91,*Default,NTP,0000,0000,0000,,有些会生长得更快些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some will be growing very rapidly,
+Dialogue: 0,0:47:24.48,0:47:26.18,*Default,NTP,0000,0000,0000,,有的慢一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some will be growing less rapidly,
+Dialogue: 0,0:47:26.41,0:47:29.02,*Default,NTP,0000,0000,0000,,而这个方程告诉你\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what this equation shows you here 
+Dialogue: 0,0:47:29.15,0:47:32.63,*Default,NTP,0000,0000,0000,,如何将生长常数μ\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is how to relate that growth constant μ 
+Dialogue: 0,0:47:32.72,0:47:36.10,*Default,NTP,0000,0000,0000,,即生长的速率和细胞倍增的时间联系起来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or that rate of growth the to the doubling time of cells.
+Dialogue: 0,0:47:36.21,0:47:39.06,*Default,NTP,0000,0000,0000,,一组细胞的倍增时间是多久呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How long does it take for the population of cells to double?
+Dialogue: 0,0:47:39.39,0:47:42.58,*Default,NTP,0000,0000,0000,,细胞有一个有趣的性质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the interesting properties of cells 
+Dialogue: 0,0:47:42.74,0:47:44.41,*Default,NTP,0000,0000,0000,,那就是在指数增长阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are in exponential growth is 
+Dialogue: 0,0:47:44.54,0:47:47.70,*Default,NTP,0000,0000,0000,,细胞增长的速度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the time to increase the cell number
+Dialogue: 0,0:47:47.78,0:47:50.41,*Default,NTP,0000,0000,0000,,永远是以二为底数来增长的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by a factor of 2 is always the same.
+Dialogue: 0,0:47:51.08,0:47:52.67,*Default,NTP,0000,0000,0000,,如果你和细胞增殖的过程联系起来的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That makes sense if you think about 
+Dialogue: 0,0:47:52.78,0:47:55.34,*Default,NTP,0000,0000,0000,,这个是说的通的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this process of cell multiplication,
+Dialogue: 0,0:47:55.48,0:47:58.62,*Default,NTP,0000,0000,0000,,我有一个细胞在一分钟里变成了两个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I have one cell it becomes 2 cells in a minute,
+Dialogue: 0,0:47:58.96,0:48:01.47,*Default,NTP,0000,0000,0000,,那就可以再花一分钟变成四个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it could become 4 cells in another minute,
+Dialogue: 0,0:48:01.61,0:48:03.71,*Default,NTP,0000,0000,0000,,再花一分钟就变成八个细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it could become 8 cells in another minute 
+Dialogue: 0,0:48:04.56,0:48:10.73,*Default,NTP,0000,0000,0000,,这就是这个方程所代表的意义\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's all that this set of equations is representing.
+Dialogue: 0,0:48:12.31,0:48:13.46,*Default,NTP,0000,0000,0000,,有问题吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Questions about that?
+Dialogue: 0,0:48:16.75,0:48:18.79,*Default,NTP,0000,0000,0000,,好的  那下午的讨论会上见\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Good, I'll see you in section this afternoon.

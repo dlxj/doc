@@ -1,0 +1,899 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:13.48,0:00:16.25,*Default,NTP,0000,0000,0000,,本周我们要讲心血管生理学和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This week we're going to talk about cardiovascular physiology and
+Dialogue: 0,0:00:18.11,0:00:20.13,*Default,NTP,0000,0000,0000,,心血管系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the cardiovascular system,
+Dialogue: 0,0:00:20.92,0:00:25.52,*Default,NTP,0000,0000,0000,,包括血液  血管和心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which includes the blood, the blood vessels, and the heart.
+Dialogue: 0,0:00:28.54,0:00:30.55,*Default,NTP,0000,0000,0000,,我们要关注这个系统的一些特征\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to focus on several features.
+Dialogue: 0,0:00:31.12,0:00:32.75,*Default,NTP,0000,0000,0000,,显然  这是个大课题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is obviously a big topic,
+Dialogue: 0,0:00:33.36,0:00:34.64,*Default,NTP,0000,0000,0000,,我们不仅要了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only understanding
+Dialogue: 0,0:00:34.64,0:00:37.01,*Default,NTP,0000,0000,0000,,心血管系统的基本生理学知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the basic physiology of the cardiovascular system,
+Dialogue: 0,0:00:37.40,0:00:40.76,*Default,NTP,0000,0000,0000,,还要知道会导致心血管系统衰竭的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but what can fail in the cardiovascular system in disease.
+Dialogue: 0,0:00:41.29,0:00:42.73,*Default,NTP,0000,0000,0000,,当然  心血管疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, cardiovascular disease
+Dialogue: 0,0:00:43.35,0:00:47.82,*Default,NTP,0000,0000,0000,,是西方世界数一数二的死因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the number one or two cause of deaths in Western world.
+Dialogue: 0,0:00:48.15,0:00:51.48,*Default,NTP,0000,0000,0000,,因此  它是医学上一个严肃而重要的课题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it's serious and important topic for medicine.
+Dialogue: 0,0:00:52.15,0:00:56.07,*Default,NTP,0000,0000,0000,,我认为你们应该都已经对心血管疾病有所了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's also something that I realize you probably all know something about.
+Dialogue: 0,0:00:56.79,0:01:00.27,*Default,NTP,0000,0000,0000,,我们将从一种略微不同的视角来进行研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to try to look at things in a slightly different way,
+Dialogue: 0,0:01:00.81,0:01:02.95,*Default,NTP,0000,0000,0000,,从一名工程师的角度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}look at them the way that an engineer,
+Dialogue: 0,0:01:03.26,0:01:06.05,*Default,NTP,0000,0000,0000,,作为生物医学工程师来审视心血管系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a biomedical engineer might look at the cardiovascular system,
+Dialogue: 0,0:01:06.43,0:01:09.59,*Default,NTP,0000,0000,0000,,以了解系统内部器官之间的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to try to understand the relationship.
+Dialogue: 0,0:01:10.68,0:01:14.77,*Default,NTP,0000,0000,0000,,特别是  压力  血压\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In particular, between pressure, blood pressure,
+Dialogue: 0,0:01:14.77,0:01:16.87,*Default,NTP,0000,0000,0000,,即让血液流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is the force that moves blood around
+Dialogue: 0,0:01:16.87,0:01:20.36,*Default,NTP,0000,0000,0000,,经由循环系统而流遍全身的动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through the circulatory system and flow;
+Dialogue: 0,0:01:20.71,0:01:21.87,*Default,NTP,0000,0000,0000,,血液的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the actual movement of blood,
+Dialogue: 0,0:01:22.46,0:01:24.12,*Default,NTP,0000,0000,0000,,对于氧气  营养物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is what's essential for 
+Dialogue: 0,0:01:24.76,0:01:27.03,*Default,NTP,0000,0000,0000,,以及在循环系统中循环的所有其它物质来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}distributing oxygen and nutrients and everything else
+Dialogue: 0,0:01:27.35,0:01:30.61,*Default,NTP,0000,0000,0000,,都是十分重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we move around in our circulatory system.
+Dialogue: 0,0:01:31.51,0:01:34.94,*Default,NTP,0000,0000,0000,,我会简单讲讲循环系统中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to talk briefly about the anatomy of the heart
+Dialogue: 0,0:01:35.25,0:01:35.85,*Default,NTP,0000,0000,0000,,有关心脏的解剖学知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the circulatory system.
+Dialogue: 0,0:01:36.38,0:01:38.32,*Default,NTP,0000,0000,0000,,我们先从整体水平来思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll start by thinking about the whole level.
+Dialogue: 0,0:01:38.92,0:01:45.56,*Default,NTP,0000,0000,0000,,我会精讲有关压差产生流动的原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to talk in some detail about how pressure differences generate flow,
+Dialogue: 0,0:01:46.32,0:01:49.51,*Default,NTP,0000,0000,0000,,从一个非常简单的模型开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}starting with a very simple example 
+Dialogue: 0,0:01:50.42,0:01:52.09,*Default,NTP,0000,0000,0000,,直至建立一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and building up to some of the complexity
+Dialogue: 0,0:01:52.47,0:01:54.85,*Default,NTP,0000,0000,0000,,像我们体内心血管系统一样复杂的模型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we have within our cardiovascular systems.
+Dialogue: 0,0:01:55.21,0:01:58.15,*Default,NTP,0000,0000,0000,,心血管系统令人吃惊之处在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the most amazing things about the cardiovascular system is
+Dialogue: 0,0:01:58.59,0:02:02.47,*Default,NTP,0000,0000,0000,,它能够改变血液流动的模式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}its ability to change the pattern of blood's flow 
+Dialogue: 0,0:02:04.02,0:02:08.00,*Default,NTP,0000,0000,0000,,将更多的血液送到亟需血供的器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such that organs that need more blood can get more blood.
+Dialogue: 0,0:02:09.59,0:02:11.63,*Default,NTP,0000,0000,0000,,它不只是一个静态系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not just that there's a static system 
+Dialogue: 0,0:02:11.98,0:02:13.51,*Default,NTP,0000,0000,0000,,并非仅仅只是让血液流过全身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where blood is flowing throughout the body
+Dialogue: 0,0:02:14.10,0:02:16.01,*Default,NTP,0000,0000,0000,,并且时时处处都以相同的速度流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it flows at the same rate everywhere all the time.
+Dialogue: 0,0:02:16.68,0:02:18.03,*Default,NTP,0000,0000,0000,,血液流速在某一区域会增加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It increases in one region 
+Dialogue: 0,0:02:18.03,0:02:19.16,*Default,NTP,0000,0000,0000,,在另一区域会减少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and decreases in another
+Dialogue: 0,0:02:19.73,0:02:21.53,*Default,NTP,0000,0000,0000,,以应对身体的生理需要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in response to physiological need.
+Dialogue: 0,0:02:22.14,0:02:24.89,*Default,NTP,0000,0000,0000,,我们会讲到心血管系统调节流速的过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about the sort of engineering principle 
+Dialogue: 0,0:02:25.64,0:02:28.81,*Default,NTP,0000,0000,0000,,所遵循的一些工程学原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the cardiovascular system uses to accomplish that.
+Dialogue: 0,0:02:30.01,0:02:31.83,*Default,NTP,0000,0000,0000,,下周会讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then next week we'll talk about--
+Dialogue: 0,0:02:32.57,0:02:36.19,*Default,NTP,0000,0000,0000,,本周四我们会精讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk in some detail this Thursday about 
+Dialogue: 0,0:02:36.80,0:02:40.63,*Default,NTP,0000,0000,0000,,心脏是如何产生血液运动所需压力的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how the heart generates the pressure that's needed to move the blood 
+Dialogue: 0,0:02:40.87,0:02:41.99,*Default,NTP,0000,0000,0000,,还有就是一个相对简单但却经久耐用的器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how you can create this flow 
+Dialogue: 0,0:02:42.68,0:02:46.65,*Default,NTP,0000,0000,0000,,即心脏  是如何让血液流动起来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a relatively simple but durable machine, the heart.
+Dialogue: 0,0:02:47.19,0:02:53.84,*Default,NTP,0000,0000,0000,,周四我们会讲心脏传导的电生理学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Next Tuesday we'll talk about cardiac conduction electrophysiology,
+Dialogue: 0,0:02:54.93,0:02:58.29,*Default,NTP,0000,0000,0000,,心脏如何调节自身跳动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how the heart regulates it's beating 
+Dialogue: 0,0:02:59.02,0:03:02.91,*Default,NTP,0000,0000,0000,,从而产生有序的节律来生成血压\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to generate orderly pattern of pressure generation.
+Dialogue: 0,0:03:07.68,0:03:11.20,*Default,NTP,0000,0000,0000,,这是一幅关于心血管系统的画片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a cartoon of the cardiovascular system,
+Dialogue: 0,0:03:11.93,0:03:14.64,*Default,NTP,0000,0000,0000,,它并没有画出血液  只是用不同颜色来指代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not showing the blood except by the colors here,
+Dialogue: 0,0:03:14.97,0:03:15.94,*Default,NTP,0000,0000,0000,,但画出了心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but showing the heart.
+Dialogue: 0,0:03:16.34,0:03:19.00,*Default,NTP,0000,0000,0000,,这幅图的中间就是心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the center of this diagram is the heart
+Dialogue: 0,0:03:19.79,0:03:23.75,*Default,NTP,0000,0000,0000,,环绕于此的是一个示意图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and surrounding it is sort of a schematic diagram
+Dialogue: 0,0:03:23.99,0:03:26.71,*Default,NTP,0000,0000,0000,,就好像房屋的铅垂线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like you might see for plumbing in a house
+Dialogue: 0,0:03:27.32,0:03:29.21,*Default,NTP,0000,0000,0000,,当然在实际解剖位置上并不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but certainly not in anatomical detail;
+Dialogue: 0,0:03:29.87,0:03:33.89,*Default,NTP,0000,0000,0000,,这张图并没有给出血液从心脏流出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this drawing isn't of how blood flows from the heart to 
+Dialogue: 0,0:03:34.76,0:03:36.24,*Default,NTP,0000,0000,0000,,到流至体内其它各部位的全过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the other regions of the body.
+Dialogue: 0,0:03:36.92,0:03:41.21,*Default,NTP,0000,0000,0000,,我们只是  我知道你们看过类似的图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's just--now I know that you've seen diagrams like this before,
+Dialogue: 0,0:03:41.48,0:03:44.22,*Default,NTP,0000,0000,0000,,懂得存在于其中的基本联系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you understand the basic connections between things,
+Dialogue: 0,0:03:44.57,0:03:46.90,*Default,NTP,0000,0000,0000,,但我还是想简要地讲讲 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let's just go through them briefly.
+Dialogue: 0,0:03:47.42,0:03:50.46,*Default,NTP,0000,0000,0000,,必须有个起点  因为这是一个循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have to start somewhere because this is a cyclic--
+Dialogue: 0,0:03:51.19,0:03:52.23,*Default,NTP,0000,0000,0000,,是一个封闭的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a closed system.
+Dialogue: 0,0:03:53.00,0:03:54.85,*Default,NTP,0000,0000,0000,,从一点开始  走过整个过程之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You start at one point and you go around
+Dialogue: 0,0:03:54.85,0:03:56.08,*Default,NTP,0000,0000,0000,,你又会回到原点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you come back to the beginning again.
+Dialogue: 0,0:03:57.13,0:04:02.83,*Default,NTP,0000,0000,0000,,如果我们从  从心脏的这边开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we start in the--in this side of the heart,
+Dialogue: 0,0:04:03.49,0:04:05.10,*Default,NTP,0000,0000,0000,,这是心脏的左半部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the left side of the heart 
+Dialogue: 0,0:04:06.55,0:04:08.80,*Default,NTP,0000,0000,0000,,心脏的左半部分有两个腔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there are two chambers in the left side of the heart: 
+Dialogue: 0,0:04:09.30,0:04:11.40,*Default,NTP,0000,0000,0000,,即心房和心室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the atrium and the ventricle.
+Dialogue: 0,0:04:11.90,0:04:13.92,*Default,NTP,0000,0000,0000,,可以看到血液流入心脏左边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You see that blood blows into the left side of the heart 
+Dialogue: 0,0:04:14.59,0:04:15.27,*Default,NTP,0000,0000,0000,,它是从肺流出的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's come from the lungs.
+Dialogue: 0,0:04:15.87,0:04:16.75,*Default,NTP,0000,0000,0000,,血液由肺流出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The blood has come from the lungs 
+Dialogue: 0,0:04:17.19,0:04:20.54,*Default,NTP,0000,0000,0000,,充满了氧气  在这幅图中用红色表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so it's full of oxygen and in this diagram it's indicated as red.
+Dialogue: 0,0:04:21.59,0:04:24.12,*Default,NTP,0000,0000,0000,,跟着这个箭头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you follow the arrows here,
+Dialogue: 0,0:04:24.61,0:04:26.86,*Default,NTP,0000,0000,0000,,血液由肺部流出  流入左心房\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the blood flows from the lungs into the left atrium,
+Dialogue: 0,0:04:27.64,0:04:28.66,*Default,NTP,0000,0000,0000,,进入左心室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into the left ventricle,
+Dialogue: 0,0:04:29.07,0:04:32.16,*Default,NTP,0000,0000,0000,,由这个叫做主动脉的大血管流出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and out through a large vessel called the aorta.
+Dialogue: 0,0:04:33.22,0:04:35.11,*Default,NTP,0000,0000,0000,,这很简单 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fairly simple;
+Dialogue: 0,0:04:36.14,0:04:37.69,*Default,NTP,0000,0000,0000,,目前只讲到了心脏中的两个腔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so far two chambers in the heart,
+Dialogue: 0,0:04:38.45,0:04:40.17,*Default,NTP,0000,0000,0000,,血液流经这两个腔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}blood flows through these two chambers,
+Dialogue: 0,0:04:41.35,0:04:42.78,*Default,NTP,0000,0000,0000,,先心房后心室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}atrium first then ventricle,
+Dialogue: 0,0:04:43.23,0:04:45.45,*Default,NTP,0000,0000,0000,,然后从主动脉流出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and out through the aorta.
+Dialogue: 0,0:04:45.96,0:04:51.28,*Default,NTP,0000,0000,0000,,如果我能在主动脉的这里测量流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I was able to measure flow at this point here in the aorta,
+Dialogue: 0,0:04:51.63,0:04:56.69,*Default,NTP,0000,0000,0000,,我就能测出血液流出心脏的总流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would measure the total rate of flow of blood out of the heart.
+Dialogue: 0,0:04:57.35,0:04:59.95,*Default,NTP,0000,0000,0000,,你可以测量出血液每分钟流出的体积\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You measure that in volume per minute,
+Dialogue: 0,0:05:01.43,0:05:03.15,*Default,NTP,0000,0000,0000,,单位就说是升每分钟吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in liters per minutes let's say.
+Dialogue: 0,0:05:04.18,0:05:07.30,*Default,NTP,0000,0000,0000,,所有的血液都要流经这个血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All of the blood flow is coming through this one vessel.
+Dialogue: 0,0:05:07.75,0:05:09.28,*Default,NTP,0000,0000,0000,,如果能够测量出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I could measure
+Dialogue: 0,0:05:09.28,0:05:12.59,*Default,NTP,0000,0000,0000,,一段时间内流经大动脉的血量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the flow is through the aorta over a period of time,
+Dialogue: 0,0:05:13.12,0:05:15.04,*Default,NTP,0000,0000,0000,,就可以测量出所谓的心输出量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would measure what's called the 'cardiac output' 
+Dialogue: 0,0:05:16.25,0:05:22.89,*Default,NTP,0000,0000,0000,,或者说是心脏产生的功能性血液流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the rate of flow that the heart is producing in its function.
+Dialogue: 0,0:05:23.55,0:05:25.42,*Default,NTP,0000,0000,0000,,由于这是个封闭的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, because it's a closed system
+Dialogue: 0,0:05:27.68,0:05:30.49,*Default,NTP,0000,0000,0000,,液体在这个回路中各处的流速相等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate of flow has to be the same anywhere in the cycle.
+Dialogue: 0,0:05:31.07,0:05:36.22,*Default,NTP,0000,0000,0000,,想象一个自连接的小管子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you imagined a simple tube that connects back to the--to itself.
+Dialogue: 0,0:05:37.19,0:05:40.16,*Default,NTP,0000,0000,0000,,如果在这里给一个五升每分钟的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I'm generating five liters per minute of flow here 
+Dialogue: 0,0:05:40.78,0:05:44.23,*Default,NTP,0000,0000,0000,,那么回路中各处的流速都是五升每分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have to have five liters per minute everywhere in the cycle.
+Dialogue: 0,0:05:44.85,0:05:46.17,*Default,NTP,0000,0000,0000,,否则会发生什么情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Otherwise what would happen?
+Dialogue: 0,0:05:48.29,0:05:52.17,*Default,NTP,0000,0000,0000,,否则的话  在流速发生改变之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, otherwise the volume of the vessels would have to be expanding
+Dialogue: 0,0:05:52.18,0:05:55.54,*Default,NTP,0000,0000,0000,,血管就会膨胀或者收缩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or contracting at some point if the flow rate is different there.
+Dialogue: 0,0:05:56.26,0:05:57.51,*Default,NTP,0000,0000,0000,,如果流速发生变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It would have to be changing with time 
+Dialogue: 0,0:05:58.31,0:05:59.46,*Default,NTP,0000,0000,0000,,血管形状也就必须随时间改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the flow rates different 
+Dialogue: 0,0:05:59.46,0:06:00.51,*Default,NTP,0000,0000,0000,,而事实上并非如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it doesn't do that.
+Dialogue: 0,0:06:01.22,0:06:03.18,*Default,NTP,0000,0000,0000,,这是一个稳定的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a steady state system
+Dialogue: 0,0:06:04.08,0:06:06.67,*Default,NTP,0000,0000,0000,,在整个回路中液体稳定流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there's a constant flow all throughout the cycle.
+Dialogue: 0,0:06:07.29,0:06:08.10,*Default,NTP,0000,0000,0000,,我们还会讲到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to come back to this point
+Dialogue: 0,0:06:08.10,0:06:09.19,*Default,NTP,0000,0000,0000,,但这很重要  你们得记住\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's important to remember.
+Dialogue: 0,0:06:10.61,0:06:14.28,*Default,NTP,0000,0000,0000,,在血液由主动脉流出的那一刻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, immediately after the blood comes out in the aorta
+Dialogue: 0,0:06:14.72,0:06:16.61,*Default,NTP,0000,0000,0000,,它还有一个机会能去到另一个去处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's an opportunity for it to go somewhere else.
+Dialogue: 0,0:06:16.96,0:06:18.36,*Default,NTP,0000,0000,0000,,这里是一个分支点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a branch point 
+Dialogue: 0,0:06:18.75,0:06:21.18,*Default,NTP,0000,0000,0000,,这第一分支点是由主动脉到这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that first branch point is from the aorta into this,
+Dialogue: 0,0:06:21.55,0:06:23.61,*Default,NTP,0000,0000,0000,,它看上去似乎是一条相当大的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's shown as a fairly large vessel,
+Dialogue: 0,0:06:23.90,0:06:25.85,*Default,NTP,0000,0000,0000,,实际上却很小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're pretty small vessels actually.
+Dialogue: 0,0:06:26.12,0:06:27.35,*Default,NTP,0000,0000,0000,,这里是冠状动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are the coronary arteries,
+Dialogue: 0,0:06:27.70,0:06:32.12,*Default,NTP,0000,0000,0000,,这个动脉将血液送至心脏表面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the arteries that actually bring blood to the surface of the heart 
+Dialogue: 0,0:06:33.02,0:06:33.57,*Default,NTP,0000,0000,0000,,为心脏提供营养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to nourish it.
+Dialogue: 0,0:06:35.14,0:06:39.67,*Default,NTP,0000,0000,0000,,可以想象  心脏会用到许多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can imagine that the heart is using a lot of--
+Dialogue: 0,0:06:40.18,0:06:41.38,*Default,NTP,0000,0000,0000,,需要消耗许多能量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's using a lot of energy.
+Dialogue: 0,0:06:41.86,0:06:42.78,*Default,NTP,0000,0000,0000,,心脏要做功\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's generating work,
+Dialogue: 0,0:06:43.20,0:06:46.29,*Default,NTP,0000,0000,0000,,它所做的功转化为压力以驱使血液流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that work is being transmitted into pressure and flow of the blood.
+Dialogue: 0,0:06:46.67,0:06:50.51,*Default,NTP,0000,0000,0000,,心脏使用的能量来自于营养物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gets the energy to do that from nutrients,
+Dialogue: 0,0:06:50.51,0:06:52.97,*Default,NTP,0000,0000,0000,,氧气还有葡萄糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}oxygen, glucose,
+Dialogue: 0,0:06:53.29,0:06:54.73,*Default,NTP,0000,0000,0000,,因此需要大量的血液来给它提供养分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so it needs a lot of blood flow.
+Dialogue: 0,0:06:55.24,0:06:58.85,*Default,NTP,0000,0000,0000,,它所在的地方是获得血液的最佳位置\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in the best possible position to get good blood flow
+Dialogue: 0,0:06:59.11,0:07:02.31,*Default,NTP,0000,0000,0000,,在这里它得到的是刚从动脉出来的血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's getting it's blood right off of the aorta 
+Dialogue: 0,0:07:02.60,0:07:03.44,*Default,NTP,0000,0000,0000,,流速是最大的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where flow is a maximum.
+Dialogue: 0,0:07:04.84,0:07:07.85,*Default,NTP,0000,0000,0000,,我们上周讲过血管支架\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about stents last week 
+Dialogue: 0,0:07:08.10,0:07:10.74,*Default,NTP,0000,0000,0000,,它就是用于治疗这些血管中的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are used to treat disease in these blood vessels 
+Dialogue: 0,0:07:11.05,0:07:15.86,*Default,NTP,0000,0000,0000,,在接下来几周  我会说到更多相关内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk more of that as we go through the next couple of weeks.
+Dialogue: 0,0:07:16.68,0:07:17.74,*Default,NTP,0000,0000,0000,,现在  我要你们注意的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I want you to focus on now
+Dialogue: 0,0:07:18.11,0:07:20.92,*Default,NTP,0000,0000,0000,,血液在流经这个分支时发生的现象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just this phenomenon that the flow branches here.
+Dialogue: 0,0:07:23.05,0:07:25.42,*Default,NTP,0000,0000,0000,,一部分血液沿着大动脉流走了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of the blood goes further down the aorta 
+Dialogue: 0,0:07:25.71,0:07:27.78,*Default,NTP,0000,0000,0000,,另一部分则流经冠状动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some of it goes through the coronary arteries.
+Dialogue: 0,0:07:29.58,0:07:31.65,*Default,NTP,0000,0000,0000,,那么各个支路上到底有多少血液流过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, how much blood goes in which direction
+Dialogue: 0,0:07:31.91,0:07:33.54,*Default,NTP,0000,0000,0000,,是这节课接下来的时间里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is going to be one of the main things we talk about
+Dialogue: 0,0:07:34.32,0:07:35.54,*Default,NTP,0000,0000,0000,,我要讲的主要内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the rest of the lecture today,
+Dialogue: 0,0:07:36.26,0:07:38.03,*Default,NTP,0000,0000,0000,,但首先  让我们继续追踪血液的旅程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but first let's just continue in our journey around.
+Dialogue: 0,0:07:38.54,0:07:40.57,*Default,NTP,0000,0000,0000,,注意  在每一个分支点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'll notice that this pattern repeats
+Dialogue: 0,0:07:41.00,0:07:43.20,*Default,NTP,0000,0000,0000,,这个过程都被重复着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there are points where the flow branches.
+Dialogue: 0,0:07:44.81,0:07:46.11,*Default,NTP,0000,0000,0000,,例如  血液由主动脉流出后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, after the aorta,
+Dialogue: 0,0:07:48.64,0:07:51.07,*Default,NTP,0000,0000,0000,,一部分沿着上行的动脉流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the flow goes up in ascending arteries.
+Dialogue: 0,0:07:51.81,0:07:54.58,*Default,NTP,0000,0000,0000,,流入心脏上方像头部这样的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This goes up above the heart into the head, for example,
+Dialogue: 0,0:07:55.19,0:07:58.49,*Default,NTP,0000,0000,0000,,血液沿着颈动脉流入大脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the carotid arteries which carry blood flow up to your brain 
+Dialogue: 0,0:07:58.91,0:08:01.43,*Default,NTP,0000,0000,0000,,颈动脉是由这个分支产生的一条支路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are descendants of this branch here.
+Dialogue: 0,0:08:02.25,0:08:05.42,*Default,NTP,0000,0000,0000,,这些血管很重要  因为脑部供血事关生死\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are important; blood to the brain is pretty important.
+Dialogue: 0,0:08:06.29,0:08:09.46,*Default,NTP,0000,0000,0000,,同样的  还有的血液沿着腹主动脉下行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Also, blood goes down through the abdominal aorta,
+Dialogue: 0,0:08:09.83,0:08:13.34,*Default,NTP,0000,0000,0000,,在腹主动脉下方  又分成两个方向\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it splits in two directions down the abdominal aorta,
+Dialogue: 0,0:08:14.07,0:08:15.50,*Default,NTP,0000,0000,0000,,这些血液流入腿部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That blood goes to your legs 
+Dialogue: 0,0:08:15.97,0:08:18.63,*Default,NTP,0000,0000,0000,,以及心脏下方所有内脏当中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and all of your visceral organs that are below the heart.
+Dialogue: 0,0:08:19.92,0:08:21.69,*Default,NTP,0000,0000,0000,,血流按照如此模式循环往复\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This pattern repeats itself.
+Dialogue: 0,0:08:22.15,0:08:26.67,*Default,NTP,0000,0000,0000,,即通过不断产生分支  分支  更小的分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A pattern of flow, branch, branch, branch to ever smaller branches
+Dialogue: 0,0:08:27.16,0:08:31.54,*Default,NTP,0000,0000,0000,,来使血液能进入到组织中较小的部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you can serve ever smaller regions of tissue.
+Dialogue: 0,0:08:32.41,0:08:37.27,*Default,NTP,0000,0000,0000,,携氧血液流过的血管称为动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, these vessels that carry oxygenated blood are called arteries
+Dialogue: 0,0:08:37.92,0:08:41.54,*Default,NTP,0000,0000,0000,,动脉血管的管壁很厚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they have thick muscular walls.
+Dialogue: 0,0:08:41.88,0:08:44.89,*Default,NTP,0000,0000,0000,,直径也通常较大  有一厘米左右\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're generally large diameter, a centimeter or so,
+Dialogue: 0,0:08:45.36,0:08:46.71,*Default,NTP,0000,0000,0000,,课本上有一个表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a table in your book 
+Dialogue: 0,0:08:47.27,0:08:49.12,*Default,NTP,0000,0000,0000,,给出了各种血管的直径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that gives you the diameters of different kinds of vessels.
+Dialogue: 0,0:08:49.63,0:08:54.14,*Default,NTP,0000,0000,0000,,它们不与外界环境进行物质交换\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They don't exchange materials with their outside environment.
+Dialogue: 0,0:08:54.93,0:08:58.09,*Default,NTP,0000,0000,0000,,这些动脉可以想象为一些水管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can think of these as conduits whose function 
+Dialogue: 0,0:08:58.44,0:09:00.89,*Default,NTP,0000,0000,0000,,其作用就是把血液由心脏送往特定器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to carry blood from the heart to a particular organ,
+Dialogue: 0,0:09:01.68,0:09:05.19,*Default,NTP,0000,0000,0000,,但不进行营养和氧气交换\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but not to exchange nutrients, not to exchange oxygen,
+Dialogue: 0,0:09:05.53,0:09:06.39,*Default,NTP,0000,0000,0000,,它们只是运输血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're just carrying the blood.
+Dialogue: 0,0:09:07.39,0:09:09.36,*Default,NTP,0000,0000,0000,,让我们看一个例子  最终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Eventually, if we looked for example,
+Dialogue: 0,0:09:09.76,0:09:13.30,*Default,NTP,0000,0000,0000,,在这个动脉分支处  血液流入消化道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the branch of this artery that goes to the digestive tract,
+Dialogue: 0,0:09:13.65,0:09:20.95,*Default,NTP,0000,0000,0000,,就说是流进肠子这个消化场所吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, to the organs of the gut where digestion takes place,
+Dialogue: 0,0:09:21.52,0:09:24.27,*Default,NTP,0000,0000,0000,,这些动脉不断地分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have continual branching of these arteries 
+Dialogue: 0,0:09:24.70,0:09:25.42,*Default,NTP,0000,0000,0000,,直到变得十分细小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until they become very fine.
+Dialogue: 0,0:09:27.26,0:09:33.97,*Default,NTP,0000,0000,0000,,最小的通路叫做细动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those smallest conducting pathways are called arterioles,
+Dialogue: 0,0:09:36.16,0:09:37.29,*Default,NTP,0000,0000,0000,,小动脉或者细动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}small arteries or arterioles.
+Dialogue: 0,0:09:37.70,0:09:40.01,*Default,NTP,0000,0000,0000,,它们与动脉有相同的解剖学结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now they have the same basic anatomy as an artery.
+Dialogue: 0,0:09:40.49,0:09:41.65,*Default,NTP,0000,0000,0000,,它们都有肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have a muscular wall
+Dialogue: 0,0:09:41.65,0:09:43.98,*Default,NTP,0000,0000,0000,,待会我会讲为什么这很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about why that's important in a minute
+Dialogue: 0,0:09:44.40,0:09:49.86,*Default,NTP,0000,0000,0000,,任何养分都不会经动脉血管表面传递\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they don't conduct any nutrients across their surface,
+Dialogue: 0,0:09:50.15,0:09:50.82,*Default,NTP,0000,0000,0000,,细动脉只是相对较小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're just smaller.
+Dialogue: 0,0:09:51.85,0:09:56.30,*Default,NTP,0000,0000,0000,,这些细动脉最终会分成极小的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Eventually those arterioles branch into very fine vessels 
+Dialogue: 0,0:09:57.63,0:09:58.33,*Default,NTP,0000,0000,0000,,叫做毛细血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called capillaries.
+Dialogue: 0,0:09:59.38,0:10:01.85,*Default,NTP,0000,0000,0000,,它们在毛细血管床上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in these capillary beds,
+Dialogue: 0,0:10:02.42,0:10:04.60,*Default,NTP,0000,0000,0000,,在图上用这些小孔表示出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are illustrated here by these little meshes,
+Dialogue: 0,0:10:05.64,0:10:07.29,*Default,NTP,0000,0000,0000,,这些血管的直径最小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you have the smallest diameter vessels.
+Dialogue: 0,0:10:09.05,0:10:11.87,*Default,NTP,0000,0000,0000,,它们滋养着组织中特定的部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're feeding very particular regions of tissue,
+Dialogue: 0,0:10:12.43,0:10:13.57,*Default,NTP,0000,0000,0000,,不是你的整个肠道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not your whole intestine
+Dialogue: 0,0:10:13.57,0:10:16.23,*Default,NTP,0000,0000,0000,,而只是肠道中一片很小的区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but only a very small region of the intestine.
+Dialogue: 0,0:10:17.48,0:10:21.08,*Default,NTP,0000,0000,0000,,毛细血管壁很薄  不含肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have thin walls that lack muscle;
+Dialogue: 0,0:10:22.02,0:10:23.06,*Default,NTP,0000,0000,0000,,它们没有肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not muscular walls.
+Dialogue: 0,0:10:23.57,0:10:27.45,*Default,NTP,0000,0000,0000,,养料在这些毛细血管床上进行交换\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in these capillary beds that exchange of nutrients takes place.
+Dialogue: 0,0:10:28.97,0:10:30.49,*Default,NTP,0000,0000,0000,,在这些毛细血管床上交换的东西有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in these capillary beds that exchange of
+Dialogue: 0,0:10:30.79,0:10:34.97,*Default,NTP,0000,0000,0000,,氧气  二氧化碳  糖  氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}oxygen, carbon dioxide, sugar, amino acids--
+Dialogue: 0,0:10:36.43,0:10:37.75,*Default,NTP,0000,0000,0000,,养分交换在毛细血管中发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that takes place in capillaries.
+Dialogue: 0,0:10:38.18,0:10:39.49,*Default,NTP,0000,0000,0000,,毛细血管并非肌性血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Capillaries are not muscular 
+Dialogue: 0,0:10:40.20,0:10:45.11,*Default,NTP,0000,0000,0000,,但它也能运输养料和分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're able to transport nutrients and molecules.
+Dialogue: 0,0:10:47.83,0:10:51.13,*Default,NTP,0000,0000,0000,,在血液由主动脉这根单独的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's happened as we've gone from the aorta, a single vessel,
+Dialogue: 0,0:10:51.58,0:10:53.88,*Default,NTP,0000,0000,0000,,流入广布于体内的动脉血管床的过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}down to a capillary bed and there are 
+Dialogue: 0,0:10:54.14,0:10:55.77,*Default,NTP,0000,0000,0000,,到底发生了什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many, many capillary beds in your body.
+Dialogue: 0,0:10:56.98,0:11:00.67,*Default,NTP,0000,0000,0000,,如果取任意一个位置的横截面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, if I could take a cross-section at any point--
+Dialogue: 0,0:11:00.67,0:11:03.04,*Default,NTP,0000,0000,0000,,这个位置的横截面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a cross-section of this--
+Dialogue: 0,0:11:03.51,0:11:05.93,*Default,NTP,0000,0000,0000,,那么进入到毛细血管中的总流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the total flow rate into all the capillaries,
+Dialogue: 0,0:11:07.01,0:11:10.52,*Default,NTP,0000,0000,0000,,流经所有毛细血管的总流速就等于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the total flow rate through all the capillaries has to be the same 
+Dialogue: 0,0:11:10.80,0:11:12.33,*Default,NTP,0000,0000,0000,,流经主动脉的血液流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the flow rate through the aorta.
+Dialogue: 0,0:11:13.49,0:11:14.85,*Default,NTP,0000,0000,0000,,在血液分流的过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By this process of branching 
+Dialogue: 0,0:11:15.48,0:11:18.38,*Default,NTP,0000,0000,0000,,五升每分钟的流速不停地被分流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where this total flow of 5L/min gets divided,
+Dialogue: 0,0:11:19.07,0:11:20.60,*Default,NTP,0000,0000,0000,,分流再分流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and divided, and divided.
+Dialogue: 0,0:11:21.20,0:11:22.50,*Default,NTP,0000,0000,0000,,在到达毛细血管时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By the time it gets to a capillary 
+Dialogue: 0,0:11:22.91,0:11:26.22,*Default,NTP,0000,0000,0000,,每个小血管中血液的流速就很低了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a very small vessel carrying a very low flow rate,
+Dialogue: 0,0:11:26.74,0:11:28.81,*Default,NTP,0000,0000,0000,,只是五升每分钟的流速中非常小的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a very small fraction of this 5L/min,
+Dialogue: 0,0:11:29.26,0:11:32.93,*Default,NTP,0000,0000,0000,,但在全身有上百万这样的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's now millions of these of vessels all over your body.
+Dialogue: 0,0:11:33.59,0:11:37.41,*Default,NTP,0000,0000,0000,,血液在大血管中的流速并不快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The blood is not flowing at a large flow rate through a big vessel,
+Dialogue: 0,0:11:37.71,0:11:40.81,*Default,NTP,0000,0000,0000,,在很多血管中它的流速更慢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's flowing at a much smaller flow rate through many,
+Dialogue: 0,0:11:41.25,0:11:45.76,*Default,NTP,0000,0000,0000,,但所有的流量的总和  与入量相一致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many vessels but the total has to add up to the total that goes in.
+Dialogue: 0,0:11:46.81,0:11:47.79,*Default,NTP,0000,0000,0000,,好的  接下来的事情你们都请楚了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, you know the rest of the story;
+Dialogue: 0,0:11:48.27,0:11:51.92,*Default,NTP,0000,0000,0000,,离开组织的毛细血管会融合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the capillaries merge after they leave the tissue area.
+Dialogue: 0,0:11:52.31,0:11:53.41,*Default,NTP,0000,0000,0000,,它们融合成小静脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They merge into small veins;
+Dialogue: 0,0:11:54.83,0:12:00.20,*Default,NTP,0000,0000,0000,,静脉收集血氧含量较低的静脉血\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}veins are collecting tubules for de-oxygenated blood.
+Dialogue: 0,0:12:00.49,0:12:03.35,*Default,NTP,0000,0000,0000,,这些血液中所有的养分都传输到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, this is blood that has transported all of its nutrients
+Dialogue: 0,0:12:03.62,0:12:04.78,*Default,NTP,0000,0000,0000,,它服务的组织中去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into the tissue that it serves
+Dialogue: 0,0:12:05.88,0:12:07.84,*Default,NTP,0000,0000,0000,,静脉血中不再含有丰富的氧气\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it doesn't have a lot of oxygen anymore.
+Dialogue: 0,0:12:08.24,0:12:09.77,*Default,NTP,0000,0000,0000,,而是带有较多的废物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot of waste products now,
+Dialogue: 0,0:12:10.59,0:12:13.94,*Default,NTP,0000,0000,0000,,这些代谢废物来自于组织的新陈代谢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the waste products that are generated by these tissues during metabolism.
+Dialogue: 0,0:12:14.42,0:12:16.20,*Default,NTP,0000,0000,0000,,静脉血中含有较多二氧化碳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot of carbon dioxide 
+Dialogue: 0,0:12:16.54,0:12:19.58,*Default,NTP,0000,0000,0000,,这是糖代谢的末端产物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is the end product of glucose metabolism,
+Dialogue: 0,0:12:21.38,0:12:25.49,*Default,NTP,0000,0000,0000,,还有代谢过程产生的酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has acids that are generated from metabolism,
+Dialogue: 0,0:12:25.82,0:12:27.43,*Default,NTP,0000,0000,0000,,也包括氮代谢的末端产物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has the end products of nitrogen metabolism,
+Dialogue: 0,0:12:27.80,0:12:30.15,*Default,NTP,0000,0000,0000,,主要是尿素和氨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is chiefly urea and ammonia,
+Dialogue: 0,0:12:30.95,0:12:33.80,*Default,NTP,0000,0000,0000,,静脉血在这里用蓝线表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that blood is indicated here as a blue line.
+Dialogue: 0,0:12:35.90,0:12:38.29,*Default,NTP,0000,0000,0000,,我们通常用蓝色表示静脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, we usually show these blue colored vessels,
+Dialogue: 0,0:12:38.58,0:12:39.68,*Default,NTP,0000,0000,0000,,通常分别用红色和蓝色表示血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}usually show them as red and blue,
+Dialogue: 0,0:12:40.30,0:12:42.19,*Default,NTP,0000,0000,0000,,红色代表血液富含氧气\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indicating lots of oxygen red,
+Dialogue: 0,0:12:42.65,0:12:44.11,*Default,NTP,0000,0000,0000,,蓝色则代表氧气量不足\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not very much oxygen blue.
+Dialogue: 0,0:12:44.49,0:12:45.97,*Default,NTP,0000,0000,0000,,但并不只是氧气量发生改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not just oxygen that's changed.
+Dialogue: 0,0:12:47.15,0:12:49.12,*Default,NTP,0000,0000,0000,,血液中化学成分也发生了极大改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The chemical composition has changed dramatically,
+Dialogue: 0,0:12:49.65,0:12:50.78,*Default,NTP,0000,0000,0000,,静脉血中有更多的二氧化碳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a lot more carbon dioxide,
+Dialogue: 0,0:12:51.37,0:12:52.65,*Default,NTP,0000,0000,0000,,更多尿素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a lot more urea,
+Dialogue: 0,0:12:53.84,0:12:57.80,*Default,NTP,0000,0000,0000,,还有更多其它的一些东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a lot more of other things coming out of the--through the veins.
+Dialogue: 0,0:12:58.42,0:13:00.44,*Default,NTP,0000,0000,0000,,这些小静脉叫做小静脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These small veins called venules
+Dialogue: 0,0:13:00.44,0:13:02.46,*Default,NTP,0000,0000,0000,,融合形成较大的静脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}merge to form larger veins,
+Dialogue: 0,0:13:02.82,0:13:05.20,*Default,NTP,0000,0000,0000,,最终形成像腔静脉这样较大的静脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}eventually very large veins like the vena cava,
+Dialogue: 0,0:13:05.85,0:13:08.56,*Default,NTP,0000,0000,0000,,回到心脏的右半边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which come back to the right side of the heart.
+Dialogue: 0,0:13:11.36,0:13:14.15,*Default,NTP,0000,0000,0000,,心脏的右半边和左半边解剖结构很相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The right side of the heart is anatomically very similar to the left side.
+Dialogue: 0,0:13:14.60,0:13:16.25,*Default,NTP,0000,0000,0000,,有心房  也有心室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's an atrium, there's a ventricle,
+Dialogue: 0,0:13:18.72,0:13:24.10,*Default,NTP,0000,0000,0000,,右心室流出的血液经由肺动脉进入肺部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and blood flows out of the ventricle through the pulmonary artery to the lungs.
+Dialogue: 0,0:13:25.75,0:13:27.44,*Default,NTP,0000,0000,0000,,注意  这里有些不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, notice that there's something different here;
+Dialogue: 0,0:13:27.91,0:13:31.02,*Default,NTP,0000,0000,0000,,在循环系统的这半边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that on this side of the circulatory system the part
+Dialogue: 0,0:13:31.37,0:13:33.90,*Default,NTP,0000,0000,0000,,即血液由心脏流至身体其它部位时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the blood is going out to the rest of your body,
+Dialogue: 0,0:13:34.32,0:13:36.47,*Default,NTP,0000,0000,0000,,动脉血中富含氧气\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the artery contains oxygenated blood.
+Dialogue: 0,0:13:39.19,0:13:39.86,*Default,NTP,0000,0000,0000,,在这一侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On this side,
+Dialogue: 0,0:13:42.70,0:13:45.36,*Default,NTP,0000,0000,0000,,肺动脉是动脉血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pulmonary artery is an artery--
+Dialogue: 0,0:13:46.21,0:13:49.95,*Default,NTP,0000,0000,0000,,它拥有和主动脉这样的体动脉相同特征\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has the same features as a systemic artery like the aorta.
+Dialogue: 0,0:13:50.47,0:13:52.14,*Default,NTP,0000,0000,0000,,例如  它有肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a muscular wall, for example,
+Dialogue: 0,0:13:52.29,0:13:53.29,*Default,NTP,0000,0000,0000,,不能进行养料交换\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and doesn't transport nutrients,
+Dialogue: 0,0:13:53.77,0:13:55.06,*Default,NTP,0000,0000,0000,,它看上去就是条大动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it looks an artery
+Dialogue: 0,0:13:55.06,0:13:56.93,*Default,NTP,0000,0000,0000,,但携带氧含量较低的血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it carries de-oxygenated blood.
+Dialogue: 0,0:13:58.86,0:14:01.61,*Default,NTP,0000,0000,0000,,这些血液只运输到一个地方  就是肺部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's carrying it only one place, back to the lungs.
+Dialogue: 0,0:14:03.81,0:14:04.40,*Default,NTP,0000,0000,0000,,这些血液聚集在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's collected in the--
+Dialogue: 0,0:14:05.04,0:14:07.56,*Default,NTP,0000,0000,0000,,聚集在肺另一侧  现在又包含氧气了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}collected on the other side of the lungs now with oxygen
+Dialogue: 0,0:14:07.95,0:14:09.57,*Default,NTP,0000,0000,0000,,然后回到我开始讲的那一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and returns to the point where we started.
+Dialogue: 0,0:14:11.52,0:14:16.13,*Default,NTP,0000,0000,0000,,这是两个封闭的系统  而不是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not just a closed system, it's 2 closed systems.
+Dialogue: 0,0:14:20.18,0:14:21.67,*Default,NTP,0000,0000,0000,,一个封闭系统是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One that we're going to call the system 
+Dialogue: 0,0:14:22.42,0:14:24.24,*Default,NTP,0000,0000,0000,,由心脏左半边出发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's fed by the left side of the heart
+Dialogue: 0,0:14:25.23,0:14:28.43,*Default,NTP,0000,0000,0000,,将富含氧气的血液运送到身体各处之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where oxygenated blood goes out to the whole periphery of your body 
+Dialogue: 0,0:14:29.66,0:14:33.28,*Default,NTP,0000,0000,0000,,汇集并返回心脏右侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and is collected back by the right side of your heart,
+Dialogue: 0,0:14:33.87,0:14:34.69,*Default,NTP,0000,0000,0000,,这是一个封闭的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's one closed system.
+Dialogue: 0,0:14:35.26,0:14:41.95,*Default,NTP,0000,0000,0000,,第二个是肺循环系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The second is the pulmonary vascular system which is--
+Dialogue: 0,0:14:42.31,0:14:49.25,*Default,NTP,0000,0000,0000,,心脏右侧产生驱动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the force is generated by the right side of the heart,
+Dialogue: 0,0:14:50.18,0:14:52.33,*Default,NTP,0000,0000,0000,,是心脏的右侧产生血流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the flow is generated by the right side of the heart,
+Dialogue: 0,0:14:52.96,0:14:53.86,*Default,NTP,0000,0000,0000,,流过血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}flows only to the blood--
+Dialogue: 0,0:14:56.14,0:14:57.42,*Default,NTP,0000,0000,0000,,流过肺部后  富含氧气的血液回到心脏左侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the lungs and oxygenated blood comes back to the left side,
+Dialogue: 0,0:14:57.66,0:14:58.42,*Default,NTP,0000,0000,0000,,这就像图八表示的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it's sort of like a figure 8;
+Dialogue: 0,0:14:59.87,0:15:01.36,*Default,NTP,0000,0000,0000,,第一个循环  第二个循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one loop, a second loop.
+Dialogue: 0,0:15:03.86,0:15:09.29,*Default,NTP,0000,0000,0000,,如果主动脉中血液流速为五升每分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's the--if the rate of flow is 5L/min through the aorta,
+Dialogue: 0,0:15:10.16,0:15:11.95,*Default,NTP,0000,0000,0000,,肺动脉中血液的流速是多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's the flow rate in the pulmonary artery?
+Dialogue: 0,0:15:13.21,0:15:16.23,*Default,NTP,0000,0000,0000,,它们是两个独立的系统  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're two independent systems, is that right?
+Dialogue: 0,0:15:17.28,0:15:20.64,*Default,NTP,0000,0000,0000,,在肺动脉中血液的流速是多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's the rate of flow in the pulmonary artery?
+Dialogue: 0,0:15:22.85,0:15:26.12,*Default,NTP,0000,0000,0000,,流速必定为五升每分钟  因为这二者并不独立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has to be 5L/min because they're not independent.
+Dialogue: 0,0:15:26.54,0:15:29.68,*Default,NTP,0000,0000,0000,,它们实际   我把二者描述为封闭系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're really--I described them as two closed systems,
+Dialogue: 0,0:15:30.19,0:15:32.07,*Default,NTP,0000,0000,0000,,但它们实际是一个封闭系统  一个循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}really one closed system with a loop,
+Dialogue: 0,0:15:34.50,0:15:36.81,*Default,NTP,0000,0000,0000,,那么流速就应该是处处相等的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so the flow has to be the same everywhere.
+Dialogue: 0,0:15:43.18,0:15:46.77,*Default,NTP,0000,0000,0000,,再来讲一讲血管中血液是如何流动的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's talk about blood flow in these vessels for a moment.
+Dialogue: 0,0:15:47.10,0:15:52.20,*Default,NTP,0000,0000,0000,,现在你们有了循环系统组成的大致概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now you have this picture of the overall composition of the circulatory system,
+Dialogue: 0,0:15:52.87,0:15:57.72,*Default,NTP,0000,0000,0000,,让我们思考一个非常简单的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's think about a very simple problem
+Dialogue: 0,0:15:58.40,0:16:01.15,*Default,NTP,0000,0000,0000,,这个问题工程师们已经想了几百年了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that engineers have thought about for hundreds of years now.
+Dialogue: 0,0:16:01.52,0:16:04.31,*Default,NTP,0000,0000,0000,,事实证明  它和心血管系统运作息息相关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Turns out to have a lot of relevance in the cardiovascular system,
+Dialogue: 0,0:16:04.93,0:16:07.14,*Default,NTP,0000,0000,0000,,但也能适用于其他地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but has relevance everywhere.
+Dialogue: 0,0:16:07.43,0:16:13.33,*Default,NTP,0000,0000,0000,,甚至和给这栋楼里的每个水龙头供水也沾边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has relevance in terms of getting water to all the faucets in this building.
+Dialogue: 0,0:16:14.24,0:16:15.66,*Default,NTP,0000,0000,0000,,这些所需要解决的问题是相同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have to solve the same problem,
+Dialogue: 0,0:16:17.06,0:16:18.40,*Default,NTP,0000,0000,0000,,就是产生足够的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that is generating enough pressure 
+Dialogue: 0,0:16:19.41,0:16:23.31,*Default,NTP,0000,0000,0000,,使液体能够流过全部管道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to allow fluid to move through a length of tubing.
+Dialogue: 0,0:16:25.92,0:16:27.67,*Default,NTP,0000,0000,0000,,我们想像一根典型长度的管路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll think about a typical length of tubing 
+Dialogue: 0,0:16:28.11,0:16:29.32,*Default,NTP,0000,0000,0000,,同时把问题尽可能地简化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll make it as simple as possible.
+Dialogue: 0,0:16:29.75,0:16:32.98,*Default,NTP,0000,0000,0000,,对这段血管  其直径或者半径恒定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a vessel that has a constant diameter or radius
+Dialogue: 0,0:16:32.98,0:16:34.19,*Default,NTP,0000,0000,0000,,长度已知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a known length.
+Dialogue: 0,0:16:35.68,0:16:38.67,*Default,NTP,0000,0000,0000,,液体将从血管的一端流入\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fluid is going to flow in one end of this vessel
+Dialogue: 0,0:16:39.05,0:16:40.55,*Default,NTP,0000,0000,0000,,从另一端流出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's going to flow out the other,
+Dialogue: 0,0:16:41.14,0:16:43.36,*Default,NTP,0000,0000,0000,,这种情况叫做管内流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is called internal flow through a tube.
+Dialogue: 0,0:16:44.95,0:16:47.18,*Default,NTP,0000,0000,0000,,关于它的研究现在已经十分成熟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Turns out to be one of the most well studied problems 
+Dialogue: 0,0:16:47.56,0:16:48.51,*Default,NTP,0000,0000,0000,,在所有工程领域都是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in all of engineering;
+Dialogue: 0,0:16:49.03,0:16:51.30,*Default,NTP,0000,0000,0000,,我只给你们讲一方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm just going to tell you one aspect of this.
+Dialogue: 0,0:16:52.08,0:16:53.81,*Default,NTP,0000,0000,0000,,对于某种流体的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Over a certain range of flow rates--
+Dialogue: 0,0:16:56.74,0:16:58.23,*Default,NTP,0000,0000,0000,,这并不总是成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so this isn't true all the time 
+Dialogue: 0,0:16:58.53,0:17:00.09,*Default,NTP,0000,0000,0000,,但在我们的循环系统中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's going to be true most of the time
+Dialogue: 0,0:17:00.09,0:17:01.95,*Default,NTP,0000,0000,0000,,在大多数情况下它都成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in our circulatory system.
+Dialogue: 0,0:17:02.77,0:17:05.87,*Default,NTP,0000,0000,0000,,如果我在这个管路中产生流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I try to generate a flow through this tube,
+Dialogue: 0,0:17:07.46,0:17:10.35,*Default,NTP,0000,0000,0000,,该流动也能用像体积每分钟这样的单位来表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the flow again is going to be measured in something like volume per minute,
+Dialogue: 0,0:17:10.68,0:17:11.58,*Default,NTP,0000,0000,0000,,就说是一升每分钟吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so let's say 1L/min,
+Dialogue: 0,0:17:12.39,0:17:16.72,*Default,NTP,0000,0000,0000,,然后  我需要制造一定的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the pressure that I need to produce the pressure drop, meaning,
+Dialogue: 0,0:17:17.07,0:17:20.63,*Default,NTP,0000,0000,0000,,压差就是管路两侧压力的差值\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'What's the pressure difference from one side of the tube to the other? '
+Dialogue: 0,0:17:22.82,0:17:24.59,*Default,NTP,0000,0000,0000,,我并不需要知道绝对压力的大小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't care about absolute pressure
+Dialogue: 0,0:17:24.59,0:17:25.98,*Default,NTP,0000,0000,0000,,只要知道管路两侧的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I only care about a difference
+Dialogue: 0,0:17:26.36,0:17:28.52,*Default,NTP,0000,0000,0000,,压差就可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in pressure between one side and the other.
+Dialogue: 0,0:17:29.70,0:17:33.69,*Default,NTP,0000,0000,0000,,压差与液体的流速成正比例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That difference in pressure is proportional to the rate of flow 
+Dialogue: 0,0:17:34.67,0:17:35.84,*Default,NTP,0000,0000,0000,,这就是这个公式的含义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's what this equation says here.
+Dialogue: 0,0:17:36.56,0:17:42.15,*Default,NTP,0000,0000,0000,,如果已知液体的压力差与流体流速成比例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I knew what the pressure drop was the flow is proportional to that 
+Dialogue: 0,0:17:42.74,0:17:44.83,*Default,NTP,0000,0000,0000,,比例常数用符号R来表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the constant of proportionality is this symbol R,
+Dialogue: 0,0:17:47.26,0:17:48.49,*Default,NTP,0000,0000,0000,,R代表对流动的阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the resistance to flow.
+Dialogue: 0,0:17:49.92,0:17:51.78,*Default,NTP,0000,0000,0000,,我们认为  ΔP\NWe say that ΔP,
+Dialogue: 0,0:17:52.62,0:17:56.95,*Default,NTP,0000,0000,0000,,管路的压力差等于R与流速的乘积\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the drop in pressure over the tubing is equal to R x flow rate,
+Dialogue: 0,0:17:58.08,0:18:00.23,*Default,NTP,0000,0000,0000,,ΔP = R x Q\NΔP = R x Q.
+Dialogue: 0,0:18:02.56,0:18:04.06,*Default,NTP,0000,0000,0000,,ΔP是驱动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ΔP is a driving force,
+Dialogue: 0,0:18:06.86,0:18:08.87,*Default,NTP,0000,0000,0000,,压差是驱动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pressure difference is a driving force,
+Dialogue: 0,0:18:09.47,0:18:10.55,*Default,NTP,0000,0000,0000,,压差使液体流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's what causes the flow.
+Dialogue: 0,0:18:12.08,0:18:13.98,*Default,NTP,0000,0000,0000,,液体流动是压差产生的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The flow is what results from that,
+Dialogue: 0,0:18:15.39,0:18:17.60,*Default,NTP,0000,0000,0000,,所以 ΔP = RQ\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so ΔP = RQ.
+Dialogue: 0,0:18:17.98,0:18:20.78,*Default,NTP,0000,0000,0000,,有人觉得这个公式看上去很眼熟么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that kind of equation look familiar to anybody 
+Dialogue: 0,0:18:21.96,0:18:23.85,*Default,NTP,0000,0000,0000,,是不是在高中物理课上见过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from their high school physics?
+Dialogue: 0,0:18:24.99,0:18:27.02,*Default,NTP,0000,0000,0000,,你们曾经见过像这样的公式么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Have you ever seen an equation like that?
+Dialogue: 0,0:18:31.82,0:18:41.76,*Default,NTP,0000,0000,0000,,ΔP = RQ--驱动力是流速的常数倍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ΔP = RQ--driving force is equal to some constant times a flow.
+Dialogue: 0,0:18:48.19,0:18:51.96,*Default,NTP,0000,0000,0000,,见过ΔV = RI这个式子没\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ever seen ΔV = RI?
+Dialogue: 0,0:18:55.59,0:18:56.96,*Default,NTP,0000,0000,0000,,有人知道这个式子是怎么来的么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anybody know where that equation comes from?
+Dialogue: 0,0:19:02.56,0:19:05.61,*Default,NTP,0000,0000,0000,,流动  源自于电路中的电流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Circuits--it's the flow through an electrical circuit.
+Dialogue: 0,0:19:06.35,0:19:08.88,*Default,NTP,0000,0000,0000,,电路中电流的属性是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's the potential for flow through an electrical circuit?
+Dialogue: 0,0:19:09.39,0:19:11.38,*Default,NTP,0000,0000,0000,,电压是电流的驱动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a driving force, it's a voltage driving force,
+Dialogue: 0,0:19:12.49,0:19:16.71,*Default,NTP,0000,0000,0000,,例如  用一根导线连通电池\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you hook up a battery to a length of wire, for example.
+Dialogue: 0,0:19:17.43,0:19:19.93,*Default,NTP,0000,0000,0000,,电子就开始流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What flows is electrons current,
+Dialogue: 0,0:19:21.12,0:19:24.33,*Default,NTP,0000,0000,0000,,有多少电子流过导线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how much flows through wire--
+Dialogue: 0,0:19:24.33,0:19:27.48,*Default,NTP,0000,0000,0000,,作为对电压变化的反馈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how much flows through a circuit
+Dialogue: 0,0:19:27.48,0:19:30.64,*Default,NTP,0000,0000,0000,,有多少电子流过导线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in response to a voltage change
+Dialogue: 0,0:19:31.06,0:19:34.08,*Default,NTP,0000,0000,0000,,取决于导线的属性  阻挡电流的能力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depends on a property of the wire, its resistance.
+Dialogue: 0,0:19:35.77,0:19:40.06,*Default,NTP,0000,0000,0000,,越粗  截面积越大的导线阻力越小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Thicker wires, more cross-section has less resistance,
+Dialogue: 0,0:19:41.20,0:19:42.46,*Default,NTP,0000,0000,0000,,允许更多的电子通过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can flow more current through it,
+Dialogue: 0,0:19:43.24,0:19:43.79,*Default,NTP,0000,0000,0000,,而较细的导线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thinner wires less.
+Dialogue: 0,0:19:47.58,0:19:51.00,*Default,NTP,0000,0000,0000,,就需要更多...对于相同的驱动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It takes more--for a given driving force,
+Dialogue: 0,0:19:51.32,0:19:53.04,*Default,NTP,0000,0000,0000,,在相同的电压下  流过的电流就较小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a given voltage less current flows.
+Dialogue: 0,0:19:54.14,0:19:56.28,*Default,NTP,0000,0000,0000,,如果你以前不知道这个  也不用太担心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you haven't seen that before don't worry about it.
+Dialogue: 0,0:19:56.54,0:19:57.44,*Default,NTP,0000,0000,0000,,如果你已有所了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you have seen it 
+Dialogue: 0,0:19:57.70,0:19:59.06,*Default,NTP,0000,0000,0000,,那么希望有助于你们学习本课内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then hopefully this will be useful in thinking about this.
+Dialogue: 0,0:20:00.72,0:20:01.85,*Default,NTP,0000,0000,0000,,这两者的相同之处在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Which is the same thing,
+Dialogue: 0,0:20:03.12,0:20:06.10,*Default,NTP,0000,0000,0000,,都是由压差产生的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the pressure drop produces as flow 
+Dialogue: 0,0:20:07.38,0:20:09.80,*Default,NTP,0000,0000,0000,,给定压差下能产生多大的流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how much you produce for a given pressure drop
+Dialogue: 0,0:20:10.06,0:20:11.77,*Default,NTP,0000,0000,0000,,取决于叫做阻力的属性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depends on a property called the resistance.
+Dialogue: 0,0:20:12.95,0:20:15.58,*Default,NTP,0000,0000,0000,,阻力取决于血管的几何属性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now the resistance is a property of the geometry of the vessel.
+Dialogue: 0,0:20:17.64,0:20:20.37,*Default,NTP,0000,0000,0000,,如果血管的直径较大的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have a very-- a vessel with a very large diameter
+Dialogue: 0,0:20:20.37,0:20:23.15,*Default,NTP,0000,0000,0000,,对于给定压差  流速会较大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a given pressure drop I can create a large flow.
+Dialogue: 0,0:20:24.56,0:20:26.17,*Default,NTP,0000,0000,0000,,而对于直径较小的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For a vessel with a small diameter,
+Dialogue: 0,0:20:27.01,0:20:29.77,*Default,NTP,0000,0000,0000,,同样的压力下流速会变小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for that same pressure drop I get less flow.
+Dialogue: 0,0:20:30.80,0:20:35.02,*Default,NTP,0000,0000,0000,,想象一下你...无论你喜欢哪种饮料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagine your--whatever your favorite beverage is,
+Dialogue: 0,0:20:35.56,0:20:36.53,*Default,NTP,0000,0000,0000,,就想想奶昔吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think about a milkshake
+Dialogue: 0,0:20:36.53,0:20:38.64,*Default,NTP,0000,0000,0000,,因为用吸管吸奶昔是很困难的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because those are difficult to draw through straws.
+Dialogue: 0,0:20:39.32,0:20:41.68,*Default,NTP,0000,0000,0000,,如果你正在喝自己喜欢口味的奶昔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you're going to drink a milkshake in your favorite flavor,
+Dialogue: 0,0:20:42.60,0:20:46.19,*Default,NTP,0000,0000,0000,,你希望用一根细吸管还是又大又粗的吸管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do you hope you get a narrow straw or a big, thick straw?
+Dialogue: 0,0:20:48.00,0:20:50.09,*Default,NTP,0000,0000,0000,,如果你真的喜欢奶昔的话你会用细吸管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You would not pick the narrow straw if you really like the milkshake
+Dialogue: 0,0:20:50.75,0:20:53.70,*Default,NTP,0000,0000,0000,,因为用嘴吸产生压差是一定的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you can only generate a certain pressure drop with your mouth.
+Dialogue: 0,0:20:55.49,0:20:56.58,*Default,NTP,0000,0000,0000,,在用嘴去吸饮料时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you generate that pressure drop 
+Dialogue: 0,0:20:56.98,0:20:58.08,*Default,NTP,0000,0000,0000,,你并不想一口喝进太多饮料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're not going to get much milkshake,
+Dialogue: 0,0:20:58.43,0:20:59.17,*Default,NTP,0000,0000,0000,,不想产生太大的流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're not going to get much flow.
+Dialogue: 0,0:20:59.70,0:21:00.47,*Default,NTP,0000,0000,0000,,如果用一支大吸管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have a bigger tube,
+Dialogue: 0,0:21:00.99,0:21:02.53,*Default,NTP,0000,0000,0000,,相同压差会产生较大流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}same pressure drop,
+Dialogue: 0,0:21:02.53,0:21:04.07,*Default,NTP,0000,0000,0000,,就会吸入更多的奶昔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bigger flow, more milkshake.
+Dialogue: 0,0:21:05.15,0:21:08.61,*Default,NTP,0000,0000,0000,,这里的阻力  已经证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here the resistance, it turns out,
+Dialogue: 0,0:21:09.81,0:21:12.19,*Default,NTP,0000,0000,0000,,我们可以用像这样简单的血管来做例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can for very simple vessels like this,
+Dialogue: 0,0:21:13.37,0:21:17.23,*Default,NTP,0000,0000,0000,,阻力与血管的几何形状有关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the resistance can be related to the geometry of the vessel.
+Dialogue: 0,0:21:18.26,0:21:21.16,*Default,NTP,0000,0000,0000,,这就是说  如果我告诉你血管的形状\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is, if I told you what shape this vessel was how--
+Dialogue: 0,0:21:22.44,0:21:24.71,*Default,NTP,0000,0000,0000,,它的直径是多少  血管有多长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what it's diameter was and how long it is
+Dialogue: 0,0:21:25.18,0:21:28.03,*Default,NTP,0000,0000,0000,,就能通过这个公式计算出阻力的大小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can calculate what the resistance is from this formula here,
+Dialogue: 0,0:21:28.76,0:21:32.91,*Default,NTP,0000,0000,0000,,R = 8µL/πr4\NR = 8µL/πr4.
+Dialogue: 0,0:21:33.66,0:21:34.89,*Default,NTP,0000,0000,0000,,这个公式中所有项已知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now you know what all these things are,
+Dialogue: 0,0:21:35.29,0:21:38.17,*Default,NTP,0000,0000,0000,,π等于3.14  大家都很熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know what π is, that's 3.14--π is familiar;
+Dialogue: 0,0:21:38.17,0:21:42.53,*Default,NTP,0000,0000,0000,,r是半径  L是长度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}r is the radius; L is the length.
+Dialogue: 0,0:21:43.13,0:21:43.66,*Default,NTP,0000,0000,0000,,µ是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's µ?
+Dialogue: 0,0:21:44.28,0:21:47.33,*Default,NTP,0000,0000,0000,,µ是液体的属性  叫做粘度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}µ is a property of the fluid and it's the viscosity.
+Dialogue: 0,0:21:50.20,0:21:54.90,*Default,NTP,0000,0000,0000,,奶昔的粘度高  水的粘度低\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Milkshakes have high viscosity, water has a low viscosity.
+Dialogue: 0,0:21:56.35,0:21:57.81,*Default,NTP,0000,0000,0000,,因此  如果喝水的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, if you're going to drink water
+Dialogue: 0,0:21:58.52,0:22:01.97,*Default,NTP,0000,0000,0000,,就不用操心使用多大的吸管了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're not so worried about how big your straw is.
+Dialogue: 0,0:22:02.51,0:22:04.48,*Default,NTP,0000,0000,0000,,你们更喜欢用细吸管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You would accept a small straw not just because
+Dialogue: 0,0:22:04.74,0:22:05.99,*Default,NTP,0000,0000,0000,,不只是因为这能让奶昔变得更好喝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}milkshakes are more delicious,
+Dialogue: 0,0:22:06.79,0:22:07.96,*Default,NTP,0000,0000,0000,,而是因为你不必\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but because you don't need to generate as much of a pressure drop
+Dialogue: 0,0:22:07.96,0:22:11.29,*Default,NTP,0000,0000,0000,,用像吸奶昔那么大的力来喝水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to move water as you do to move a milkshake,
+Dialogue: 0,0:22:12.49,0:22:13.27,*Default,NTP,0000,0000,0000,,因为奶昔的粘度很大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because milkshakes have a higher viscosity.
+Dialogue: 0,0:22:14.86,0:22:17.03,*Default,NTP,0000,0000,0000,,一般来说  血液的粘度是恒定的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The viscosity of the blood is in general a constant,
+Dialogue: 0,0:22:17.66,0:22:20.93,*Default,NTP,0000,0000,0000,,大约是三厘泊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a constant that is about 3 centipoise.
+Dialogue: 0,0:22:22.08,0:22:23.53,*Default,NTP,0000,0000,0000,,你们可以看书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can read in the book about
+Dialogue: 0,0:22:23.53,0:22:26.42,*Default,NTP,0000,0000,0000,,上面讲了粘度单位及其定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}units of viscosity and how they're defined.
+Dialogue: 0,0:22:26.86,0:22:29.76,*Default,NTP,0000,0000,0000,,这样我们就知道为了使液体流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It tells you something about the force that you need 
+Dialogue: 0,0:22:30.07,0:22:31.48,*Default,NTP,0000,0000,0000,,需要产生多大压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to cause the fluid to flow.
+Dialogue: 0,0:22:34.63,0:22:37.22,*Default,NTP,0000,0000,0000,,在这里  我们认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to be dealing with fluids in here 
+Dialogue: 0,0:22:37.47,0:22:38.92,*Default,NTP,0000,0000,0000,,液体的粘度基本保持恒定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are basically constant in their viscosity.
+Dialogue: 0,0:22:39.46,0:22:42.72,*Default,NTP,0000,0000,0000,,血液的粘度是水的三倍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Blood is about three times as viscous as water.
+Dialogue: 0,0:22:43.36,0:22:44.99,*Default,NTP,0000,0000,0000,,为什么血液的粘度比水大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is blood more viscous than water,
+Dialogue: 0,0:22:44.99,0:22:46.61,*Default,NTP,0000,0000,0000,,为什么血液较难流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why is it harder to flow?
+Dialogue: 0,0:22:50.09,0:22:51.26,*Default,NTP,0000,0000,0000,,血液中有大量水  基本都是水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's largely water, it's mostly water,
+Dialogue: 0,0:22:51.26,0:22:53.10,*Default,NTP,0000,0000,0000,,水是血液的主要组分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the major component,
+Dialogue: 0,0:22:53.85,0:22:57.01,*Default,NTP,0000,0000,0000,,那么为什么血液的粘度与水不同呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why isn't the viscosity of blood the same as the viscosity of water?
+Dialogue: 0,0:23:01.12,0:23:06.23,*Default,NTP,0000,0000,0000,,这种不同源于血液中存在的一些分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has molecules in it and so that makes a difference.
+Dialogue: 0,0:23:06.50,0:23:07.21,*Default,NTP,0000,0000,0000,,血液中还含有其它东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It also has something else,
+Dialogue: 0,0:23:09.42,0:23:11.15,*Default,NTP,0000,0000,0000,,血液总体积的百分之五十都是细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}50% of the volume of blood is cells.
+Dialogue: 0,0:23:15.25,0:23:16.61,*Default,NTP,0000,0000,0000,,血液可看做各种细胞的浓溶液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A concentrated solution of cells,
+Dialogue: 0,0:23:17.07,0:23:18.10,*Default,NTP,0000,0000,0000,,比如红细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like red blood cells,
+Dialogue: 0,0:23:18.28,0:23:21.16,*Default,NTP,0000,0000,0000,,因此血液不像水那样易于流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not as easy to flow as water is,
+Dialogue: 0,0:23:21.37,0:23:23.23,*Default,NTP,0000,0000,0000,,这就是为什么血液粘度更大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's why water is more viscous.
+Dialogue: 0,0:23:23.85,0:23:27.36,*Default,NTP,0000,0000,0000,,你们想一下流经这条血管的流速是多大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you wanted to then think about how much flow there is through this vessel,
+Dialogue: 0,0:23:27.88,0:23:29.60,*Default,NTP,0000,0000,0000,,我告诉你们血管的尺寸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I told you what the dimensions were,
+Dialogue: 0,0:23:30.22,0:23:31.94,*Default,NTP,0000,0000,0000,,而且已知血液是流动的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I told you that blood was flowing,
+Dialogue: 0,0:23:32.43,0:23:34.59,*Default,NTP,0000,0000,0000,,你就可以计算R\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could calculate R
+Dialogue: 0,0:23:34.77,0:23:36.81,*Default,NTP,0000,0000,0000,,然后就可以求出血管里的流体的所有数据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you would know everything about flow through this vessel.
+Dialogue: 0,0:23:39.37,0:23:42.64,*Default,NTP,0000,0000,0000,,如果在如此多的单元两侧制造压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You would know if I have a pressure drop of so many units,
+Dialogue: 0,0:23:43.32,0:23:44.75,*Default,NTP,0000,0000,0000,,这就是可能产生的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the flow that would result.
+Dialogue: 0,0:23:46.31,0:23:52.40,*Default,NTP,0000,0000,0000,,贾斯汀  管壁内侧会对流动产生影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Justin? The interior surface of the tube could make a difference.
+Dialogue: 0,0:23:52.86,0:23:57.03,*Default,NTP,0000,0000,0000,,令人惊讶的是  现在已经证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now it turns out for low flows, surprisingly,
+Dialogue: 0,0:23:57.87,0:23:59.73,*Default,NTP,0000,0000,0000,,管壁内侧不会影响低速流体的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the surface of the tube doesn't make a difference 
+Dialogue: 0,0:24:00.20,0:24:01.99,*Default,NTP,0000,0000,0000,,如果流速低于某个水平的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the flow rate is a below a certain level.
+Dialogue: 0,0:24:02.51,0:24:03.59,*Default,NTP,0000,0000,0000,,你们想想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're thinking about,
+Dialogue: 0,0:24:03.88,0:24:05.41,*Default,NTP,0000,0000,0000,,如果管壁很粗糙的话会发生什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'What if the surface of the tube is rough? ' 
+Dialogue: 0,0:24:06.36,0:24:08.94,*Default,NTP,0000,0000,0000,,那么  流过粗糙管壁的流体较之于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then, fluid that's flowing past that surface is going to experience
+Dialogue: 0,0:24:09.29,0:24:12.55,*Default,NTP,0000,0000,0000,,流过光滑表面的流体会受到更大的摩擦力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more friction than if it was flowing past a very smooth surface.
+Dialogue: 0,0:24:14.06,0:24:16.89,*Default,NTP,0000,0000,0000,,对于低流速的流体  流经固体表面时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At low flow rates the friction that occurs
+Dialogue: 0,0:24:17.61,0:24:21.06,*Default,NTP,0000,0000,0000,,所遇到的摩擦十分大  以至于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when a liquid meets a solid is so high
+Dialogue: 0,0:24:21.94,0:24:23.84,*Default,NTP,0000,0000,0000,,与表面直接接触的液体其实并不流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that fluid at the surface doesn't really move at all.
+Dialogue: 0,0:24:25.52,0:24:28.91,*Default,NTP,0000,0000,0000,,对低速流体  表面流层实际上并不移动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For low rates, fluid that's right at the surface doesn't move at all,
+Dialogue: 0,0:24:29.41,0:24:32.15,*Default,NTP,0000,0000,0000,,因此管壁本身的粗糙度不会产生影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so roughness doesn't matter when you have no flow there.
+Dialogue: 0,0:24:32.46,0:24:34.86,*Default,NTP,0000,0000,0000,,随着流速增加  粗糙度才变得重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As the flow rate increases then roughness becomes more important.
+Dialogue: 0,0:24:36.66,0:24:38.82,*Default,NTP,0000,0000,0000,,我们的血管系统有两个特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two things about it in our vascular systems,
+Dialogue: 0,0:24:39.43,0:24:40.89,*Default,NTP,0000,0000,0000,,一来血液流速通常较低\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the flow rates are generally low enough 
+Dialogue: 0,0:24:40.89,0:24:42.71,*Default,NTP,0000,0000,0000,,这一点你无须担心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you don't have worry about that.
+Dialogue: 0,0:24:42.99,0:24:47.15,*Default,NTP,0000,0000,0000,,还有就是从微观几何学的角度而言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our vessels are all really very similar
+Dialogue: 0,0:24:47.15,0:24:52.44,*Default,NTP,0000,0000,0000,,人类所有的血管都十分相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of their microscopic geometry,
+Dialogue: 0,0:24:53.20,0:24:55.91,*Default,NTP,0000,0000,0000,,所有血管表面都覆盖着一层单层细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that all of the blood vessels are covered 
+Dialogue: 0,0:24:56.82,0:24:59.11,*Default,NTP,0000,0000,0000,,称为上皮细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a monolayer of cells called endothelial cells
+Dialogue: 0,0:25:00.44,0:25:02.26,*Default,NTP,0000,0000,0000,,它们就好像一张毛毯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that basically form a blanket 
+Dialogue: 0,0:25:03.09,0:25:06.40,*Default,NTP,0000,0000,0000,,包覆住循环系统整个内表面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over the entire surface of the inside of the circulatory system.
+Dialogue: 0,0:25:06.96,0:25:09.28,*Default,NTP,0000,0000,0000,,它对流体的摩擦阻力十分小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's very little frictional resistance to flow.
+Dialogue: 0,0:25:09.99,0:25:11.45,*Default,NTP,0000,0000,0000,,这个问题非常好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a really good point.
+Dialogue: 0,0:25:13.85,0:25:15.27,*Default,NTP,0000,0000,0000,,还有其他问题么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Other questions?
+Dialogue: 0,0:25:18.31,0:25:20.65,*Default,NTP,0000,0000,0000,,好的  你们明白这个等式了  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, so this equation sort of makes sense, right?
+Dialogue: 0,0:25:20.98,0:25:24.08,*Default,NTP,0000,0000,0000,,如果继续学习生物医学工程的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you go on to study Biomedical Engineering 
+Dialogue: 0,0:25:24.66,0:25:26.05,*Default,NTP,0000,0000,0000,,就会确知这个等式是如何得到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll learn exactly where this equation comes from
+Dialogue: 0,0:25:26.53,0:25:28.85,*Default,NTP,0000,0000,0000,,你们得能自己推导出这个公式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd be able to derive it yourself.
+Dialogue: 0,0:25:29.51,0:25:31.97,*Default,NTP,0000,0000,0000,,但就目前而言  只要记住它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For now, just accept it
+Dialogue: 0,0:25:31.97,0:25:35.85,*Default,NTP,0000,0000,0000,,并且知道在所有人体生理环境下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it is true for almost all the vessels in our body,
+Dialogue: 0,0:25:36.29,0:25:39.67,*Default,NTP,0000,0000,0000,,对体内大部分血管这个等式都成立就行了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}under all the circumstances of human physiology.
+Dialogue: 0,0:25:40.23,0:25:42.69,*Default,NTP,0000,0000,0000,,这个等式告诉  我们影响阻力的因素有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It tells us that resistance varies with 
+Dialogue: 0,0:25:42.92,0:25:44.99,*Default,NTP,0000,0000,0000,,粘度  管长还有半径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}viscosity, length, and radius
+Dialogue: 0,0:25:45.66,0:25:49.48,*Default,NTP,0000,0000,0000,,你可以通过公式推知其变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it varies in kind of the way that you would expect.
+Dialogue: 0,0:25:50.20,0:25:51.87,*Default,NTP,0000,0000,0000,,随着流体粘度的增加  阻力变大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As viscosity of the fluid goes up resistance goes up,
+Dialogue: 0,0:25:52.92,0:25:54.88,*Default,NTP,0000,0000,0000,,随着管长的加长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the length of the tube goes up,
+Dialogue: 0,0:25:55.50,0:25:56.10,*Default,NTP,0000,0000,0000,,阻力变大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}resistance goes up;
+Dialogue: 0,0:25:56.94,0:25:59.65,*Default,NTP,0000,0000,0000,,在长细管里流动要比在短粗管里流动更难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harder to pull through a long straw than through a short straw.
+Dialogue: 0,0:26:00.65,0:26:04.04,*Default,NTP,0000,0000,0000,,半径增加  阻力减小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As the radius goes up resistance goes down,
+Dialogue: 0,0:26:06.08,0:26:09.52,*Default,NTP,0000,0000,0000,,因为半径在分母上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the radius is in the denominator here,
+Dialogue: 0,0:26:10.17,0:26:12.23,*Default,NTP,0000,0000,0000,,因此随着半径增加阻力减小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so as radius goes up the resistance goes down.
+Dialogue: 0,0:26:12.92,0:26:17.64,*Default,NTP,0000,0000,0000,,显然  阻力的变化是半径变化的四次方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remarkably, the resistance goes with the fourth power of the radius.
+Dialogue: 0,0:26:20.47,0:26:20.99,*Default,NTP,0000,0000,0000,,这是什么意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does that mean?
+Dialogue: 0,0:26:21.95,0:26:30.39,*Default,NTP,0000,0000,0000,,它的意思是半径如果增加两倍的话 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That means a 2-fold increase in radius leads to
+Dialogue: 0,0:26:30.39,0:26:35.14,*Default,NTP,0000,0000,0000,,阻力就会减小十六倍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a 16-fold reduction. A 16-fold reduction in resistance;
+Dialogue: 0,0:26:36.49,0:26:38.72,*Default,NTP,0000,0000,0000,,因此  在所有的参数中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so resistance is, of all the parameters,
+Dialogue: 0,0:26:39.30,0:26:41.08,*Default,NTP,0000,0000,0000,,阻力对半径是最为敏感的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}resistance is most sensitive to radius.
+Dialogue: 0,0:26:45.61,0:26:46.14,*Default,NTP,0000,0000,0000,,凯特林  你有问题么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Caitlin, did you have a question?
+Dialogue: 0,0:26:48.08,0:26:50.37,*Default,NTP,0000,0000,0000,,好的  那么这里的单位是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah. So what's the unit here?
+Dialogue: 0,0:26:50.77,0:26:52.07,*Default,NTP,0000,0000,0000,,让我们想一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well let's think of it.
+Dialogue: 0,0:26:52.52,0:26:54.84,*Default,NTP,0000,0000,0000,,我们用什么单位来表示压强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What unit would you measure pressure in?
+Dialogue: 0,0:26:56.49,0:26:57.32,*Default,NTP,0000,0000,0000,,压强的单位是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's a unit of pressure?
+Dialogue: 0,0:27:00.24,0:27:00.84,*Default,NTP,0000,0000,0000,,帕斯卡是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pascals (Pa) is one;
+Dialogue: 0,0:27:07.53,0:27:08.40,*Default,NTP,0000,0000,0000,,它代表牛顿每平方米\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Newtons per millimeters squared (N/m2),
+Dialogue: 0,0:27:08.72,0:27:11.15,*Default,NTP,0000,0000,0000,,压强就等于力除以面积\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so its force per area is pressure.
+Dialogue: 0,0:27:14.63,0:27:20.35,*Default,NTP,0000,0000,0000,,更常用的单位是什么  这些都有点大  什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's a more commonly--those are great units--sorry?
+Dialogue: 0,0:27:22.53,0:27:25.32,*Default,NTP,0000,0000,0000,,磅每平方英寸是另一个单位  PSI\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pounds per square inch is another unit, PSI.
+Dialogue: 0,0:27:26.72,0:27:27.87,*Default,NTP,0000,0000,0000,,教室里的压力是多大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's the pressure in the room here?
+Dialogue: 0,0:27:29.44,0:27:30.16,*Default,NTP,0000,0000,0000,,一个大气压\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}1 Atmosphere (atm);
+Dialogue: 0,0:27:30.65,0:27:32.13,*Default,NTP,0000,0000,0000,,大气压是另一类压强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}atmosphere is another pressure,
+Dialogue: 0,0:27:32.64,0:27:39.24,*Default,NTP,0000,0000,0000,,有人知道与大气压强相关的单位么  其他单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so relative to atmospheric pressure and if you have a--any others?
+Dialogue: 0,0:27:41.09,0:27:42.75,*Default,NTP,0000,0000,0000,,毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Millimeters of mercury (mmHg);
+Dialogue: 0,0:27:43.36,0:27:48.19,*Default,NTP,0000,0000,0000,,这些单位都能用来表示压强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it turns out that all of those are proper units for pressure
+Dialogue: 0,0:27:48.78,0:27:50.22,*Default,NTP,0000,0000,0000,,如果知道这些单位之间的转换因数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you could convert between one or the other 
+Dialogue: 0,0:27:50.61,0:27:52.61,*Default,NTP,0000,0000,0000,,就可以在这些单位之间进行转换\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as long as you knew what the conversion factor was between the--
+Dialogue: 0,0:27:53.46,0:27:57.35,*Default,NTP,0000,0000,0000,,我们通常用大气压这个单位描述大气压强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we usually atmospheres to describe Atmospheric Pressure.
+Dialogue: 0,0:27:57.87,0:28:00.12,*Default,NTP,0000,0000,0000,,生理学家通常使用毫米汞柱这个单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Physiologists usually use millimeters of mercury 
+Dialogue: 0,0:28:00.69,0:28:03.52,*Default,NTP,0000,0000,0000,,来描述循环系统的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to describe pressure in the circulatory system.
+Dialogue: 0,0:28:03.95,0:28:08.16,*Default,NTP,0000,0000,0000,,一个大气压等于七百六十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, 1 atm is 760 mmHg.
+Dialogue: 0,0:28:09.42,0:28:12.23,*Default,NTP,0000,0000,0000,,循环系统血压是多大才是合适的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are the blood pressures that are relevant in your circulatory system?
+Dialogue: 0,0:28:14.60,0:28:16.47,*Default,NTP,0000,0000,0000,,你们认为应该是多少毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many millimeters of mercury do you think?
+Dialogue: 0,0:28:19.26,0:28:20.22,*Default,NTP,0000,0000,0000,,有人知道人的血压是多少么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anybody know what their blood pressure is?
+Dialogue: 0,0:28:25.92,0:28:27.68,*Default,NTP,0000,0000,0000,,120/80  单位是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}120/80 what?
+Dialogue: 0,0:28:29.41,0:28:30.31,*Default,NTP,0000,0000,0000,,他们没告诉你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They don't tell you that--
+Dialogue: 0,0:28:30.31,0:28:33.00,*Default,NTP,0000,0000,0000,,是一百二十毫米汞柱对八十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}120 mmHg over 80 mmHg.
+Dialogue: 0,0:28:34.00,0:28:35.49,*Default,NTP,0000,0000,0000,,我们待会儿会讲解这些数字...\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about where those numbers--
+Dialogue: 0,0:28:35.92,0:28:39.01,*Default,NTP,0000,0000,0000,,这些压强存在于何处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where those pressures actually exist in a few minutes 
+Dialogue: 0,0:28:39.35,0:28:43.74,*Default,NTP,0000,0000,0000,,循环系统中血压的范围大概就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's the range of pressures in your circulatory system 
+Dialogue: 0,0:28:44.41,0:28:47.50,*Default,NTP,0000,0000,0000,,从零毫米汞柱到一百二十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from 0 mmHg up to 120 mmHg; roughly
+Dialogue: 0,0:28:50.71,0:28:52.43,*Default,NTP,0000,0000,0000,,有时会超过这个范围\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll see you go outside that range sometimes.
+Dialogue: 0,0:28:52.99,0:28:54.28,*Default,NTP,0000,0000,0000,,这就是循环系统内部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now these are pressures 
+Dialogue: 0,0:28:54.51,0:28:56.80,*Default,NTP,0000,0000,0000,,压强的大小  这个压强必须\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are inside our circulatory system so they must be--
+Dialogue: 0,0:28:57.50,0:28:59.68,*Default,NTP,0000,0000,0000,,这不到一大气压  怎么会这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're only a fraction of 1 atm, how can that be?
+Dialogue: 0,0:29:01.66,0:29:03.66,*Default,NTP,0000,0000,0000,,一个大气压是七百六十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An atm is 760 mmHg,
+Dialogue: 0,0:29:03.66,0:29:05.24,*Default,NTP,0000,0000,0000,,屋里的压力就这么大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the pressure in this room.
+Dialogue: 0,0:29:05.90,0:29:10.52,*Default,NTP,0000,0000,0000,,如果你的血压是120/80的话会怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If your blood pressure is 120/80 what does that mean?
+Dialogue: 0,0:29:12.41,0:29:15.87,*Default,NTP,0000,0000,0000,,压强是  我们只关注压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, pressure is--we only care about differences in pressure.
+Dialogue: 0,0:29:17.69,0:29:20.09,*Default,NTP,0000,0000,0000,,相对压力更有意义  而不是绝对压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's relative pressure that matters not the absolute pressure.
+Dialogue: 0,0:29:21.23,0:29:25.12,*Default,NTP,0000,0000,0000,,说血压为 120/80 的意思是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you say your blood pressure is 120/80 that means
+Dialogue: 0,0:29:25.37,0:29:28.82,*Default,NTP,0000,0000,0000,,比大气压高一百二十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}120 mmHg above Atmospheric;
+Dialogue: 0,0:29:28.82,0:29:32.26,*Default,NTP,0000,0000,0000,,比大气压高八十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}80 mmHg above Atmospheric.
+Dialogue: 0,0:29:33.49,0:29:35.37,*Default,NTP,0000,0000,0000,,否则我们的血管会塌陷的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Otherwise our blood vessels would collapse
+Dialogue: 0,0:29:37.20,0:29:40.31,*Default,NTP,0000,0000,0000,,因为周围的空气压力是七百六十毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because we're surrounded by air that's 760 mmHg,
+Dialogue: 0,0:29:41.59,0:29:45.06,*Default,NTP,0000,0000,0000,,为了使血管膨胀  内压应高于大气压\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that to inflate those vessels you have to be at pressures above that.
+Dialogue: 0,0:29:47.05,0:29:48.94,*Default,NTP,0000,0000,0000,,既然我们要重点关注压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Since all we care about are pressure differences 
+Dialogue: 0,0:29:49.84,0:29:50.95,*Default,NTP,0000,0000,0000,,我们就要测量压强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the pressure that you measure
+Dialogue: 0,0:29:51.52,0:29:53.63,*Default,NTP,0000,0000,0000,,测量血压就是测量它比大气压高多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you measure blood pressure is pressure above Atmospheric.
+Dialogue: 0,0:29:54.44,0:29:56.77,*Default,NTP,0000,0000,0000,,听懂了没\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that make sense?
+Dialogue: 0,0:29:58.47,0:30:01.13,*Default,NTP,0000,0000,0000,,ΔP的单位是毫米汞柱\NΔP is in mmHg,
+Dialogue: 0,0:30:01.13,0:30:04.06,*Default,NTP,0000,0000,0000,,Q的单位是升每分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Q is in L/min,
+Dialogue: 0,0:30:05.01,0:30:10.30,*Default,NTP,0000,0000,0000,,那么R的单位就是毫米汞柱比升每分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so R is in units of mmHg/(L/min).
+Dialogue: 0,0:30:17.58,0:30:25.15,*Default,NTP,0000,0000,0000,,这个单位是  如果只写mmHg= R\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in units of--if we just write this out mmHg= R,
+Dialogue: 0,0:30:25.69,0:30:27.09,*Default,NTP,0000,0000,0000,,这是 L/min的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is L/min,
+Dialogue: 0,0:30:29.48,0:30:36.60,*Default,NTP,0000,0000,0000,,R的单位必然就是毫米汞柱比升每分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then R must be in units of mmHg/(L/min).
+Dialogue: 0,0:30:48.51,0:30:53.28,*Default,NTP,0000,0000,0000,,这个阻力会改变  随着几何形状而改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This resistance changes, it changes with geometry,
+Dialogue: 0,0:30:53.64,0:30:56.07,*Default,NTP,0000,0000,0000,,它对于半径的变化最为敏感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the most sensitive thing that changes is the radius.
+Dialogue: 0,0:30:56.55,0:31:00.65,*Default,NTP,0000,0000,0000,,想象一下血管如果能改变自己的半径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagine if you had a vessel that could change its radius,
+Dialogue: 0,0:31:02.31,0:31:05.10,*Default,NTP,0000,0000,0000,,能变得更细或者更粗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that could become smaller or could become larger.
+Dialogue: 0,0:31:06.92,0:31:10.21,*Default,NTP,0000,0000,0000,,那么这条血管就能调节自身阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then, that would be a vessel that could regulate its resistance.
+Dialogue: 0,0:31:13.46,0:31:15.71,*Default,NTP,0000,0000,0000,,当血管面对某个大小的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If that vessel was faced with a pressure drop,
+Dialogue: 0,0:31:17.26,0:31:20.70,*Default,NTP,0000,0000,0000,,就说从血管的一侧到另一侧的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say a pressure drop of 10 mmHg
+Dialogue: 0,0:31:21.69,0:31:23.18,*Default,NTP,0000,0000,0000,,是十毫米汞柱吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from beginning to end of this vessel here,
+Dialogue: 0,0:31:23.95,0:31:26.85,*Default,NTP,0000,0000,0000,,而血管能够改变自己的半径的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it could change its radius 
+Dialogue: 0,0:31:27.83,0:31:31.41,*Default,NTP,0000,0000,0000,,那它就能改变通过其中血液流量的大小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then it could change the amount of blood flow through it.
+Dialogue: 0,0:31:31.73,0:31:32.61,*Default,NTP,0000,0000,0000,,如果减小半径的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If it decreased its radius,
+Dialogue: 0,0:31:33.17,0:31:34.39,*Default,NTP,0000,0000,0000,,血流的速度就会降低\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate of blood flow would go down 
+Dialogue: 0,0:31:35.56,0:31:37.31,*Default,NTP,0000,0000,0000,,即使压差保持不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though the pressure drop stays the same.
+Dialogue: 0,0:31:38.95,0:31:41.46,*Default,NTP,0000,0000,0000,,如果血管的半径扩大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If it expanded its radius,
+Dialogue: 0,0:31:41.69,0:31:45.47,*Default,NTP,0000,0000,0000,,在压差保持不变时  流速就会增加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate of low would go up even though the pressure drop remains the same.
+Dialogue: 0,0:31:47.68,0:31:48.05,*Default,NTP,0000,0000,0000,,听明白了么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that make sense?
+Dialogue: 0,0:31:49.14,0:31:52.24,*Default,NTP,0000,0000,0000,,我之前讲过像动脉  细动脉  小动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mentioned before that arteries, arterioles, small arteries,
+Dialogue: 0,0:31:53.93,0:31:55.46,*Default,NTP,0000,0000,0000,,所有的动脉都有肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all arteries have muscular walls.
+Dialogue: 0,0:31:56.86,0:31:59.03,*Default,NTP,0000,0000,0000,,这种特殊的肌肉叫做平滑肌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have a special kind of muscle called smooth muscle 
+Dialogue: 0,0:31:59.67,0:32:01.30,*Default,NTP,0000,0000,0000,,沿着圆周方向\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is arranged circumferentially,
+Dialogue: 0,0:32:01.72,0:32:03.46,*Default,NTP,0000,0000,0000,,包裹在血管外侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of wrapped around the vessel,
+Dialogue: 0,0:32:03.72,0:32:07.89,*Default,NTP,0000,0000,0000,,这些肌肉收缩  就能压缩血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that muscle can contract to constrict the vessel 
+Dialogue: 0,0:32:08.17,0:32:09.85,*Default,NTP,0000,0000,0000,,放松的话  血管就扩张\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or relax to dilate the vessel.
+Dialogue: 0,0:32:12.04,0:32:17.69,*Default,NTP,0000,0000,0000,,在生理学上  动脉的一个特征十分重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One feature of arteries that makes them important in physiology 
+Dialogue: 0,0:32:18.31,0:32:19.92,*Default,NTP,0000,0000,0000,,就是它能改变自身的直径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that they can change their diameter.
+Dialogue: 0,0:32:21.01,0:32:23.77,*Default,NTP,0000,0000,0000,,动脉直径改变时  阻力也改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When they change their diameter they change their resistance,
+Dialogue: 0,0:32:24.04,0:32:25.60,*Default,NTP,0000,0000,0000,,在固定的压差下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they change the flow that goes through them
+Dialogue: 0,0:32:25.60,0:32:28.49,*Default,NTP,0000,0000,0000,,动脉能够改变血液的流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at a fixed pressure drop.
+Dialogue: 0,0:32:29.05,0:32:30.39,*Default,NTP,0000,0000,0000,,这为什么很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is that important?
+Dialogue: 0,0:32:32.40,0:32:35.60,*Default,NTP,0000,0000,0000,,当你站起来并开始跑步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, let's say you get up and you start running;
+Dialogue: 0,0:32:37.59,0:32:40.19,*Default,NTP,0000,0000,0000,,课上完了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lecture's over,
+Dialogue: 0,0:32:40.66,0:32:42.10,*Default,NTP,0000,0000,0000,,你很激动地要跟朋友说说学到的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're excited to tell your friends about it,
+Dialogue: 0,0:32:42.76,0:32:44.17,*Default,NTP,0000,0000,0000,,于是你站起来跑出教室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you get up and you run out of class,
+Dialogue: 0,0:32:44.51,0:32:46.62,*Default,NTP,0000,0000,0000,,你的状态从静坐转为跑步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you went from resting to running.
+Dialogue: 0,0:32:47.11,0:32:49.62,*Default,NTP,0000,0000,0000,,现在  你的肌肉突然需要更多血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, all of a sudden your muscles need more blood
+Dialogue: 0,0:32:51.12,0:32:53.75,*Default,NTP,0000,0000,0000,,因为它们要开始做功了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they're going to start generating work.
+Dialogue: 0,0:32:54.72,0:33:00.82,*Default,NTP,0000,0000,0000,,滋养你的肌肉的动脉此时开始收缩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The blood--the arteries that feed your muscles are going to contract--
+Dialogue: 0,0:33:00.82,0:33:01.21,*Default,NTP,0000,0000,0000,,是开始放松\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are going to relax.
+Dialogue: 0,0:33:02.40,0:33:02.95,*Default,NTP,0000,0000,0000,,血管直径变大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The diameter will get bigger,
+Dialogue: 0,0:33:04.16,0:33:05.31,*Default,NTP,0000,0000,0000,,压力保持不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pressure available is the same,
+Dialogue: 0,0:33:05.73,0:33:06.39,*Default,NTP,0000,0000,0000,,肌肉就得到了更多血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they'll get more flow.
+Dialogue: 0,0:33:06.96,0:33:08.19,*Default,NTP,0000,0000,0000,,这些血来自于其它地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That flow has to come from somewhere 
+Dialogue: 0,0:33:08.39,0:33:11.15,*Default,NTP,0000,0000,0000,,而与此同时  其它血管收缩了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so simultaneously other vessels are constricting.
+Dialogue: 0,0:33:12.92,0:33:13.56,*Default,NTP,0000,0000,0000,,那么那些收缩的血管会怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What would those vessels be?
+Dialogue: 0,0:33:14.08,0:33:17.02,*Default,NTP,0000,0000,0000,,可能那些血管行使的功能并不重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, probably the vessels that go to non-essential functions
+Dialogue: 0,0:33:17.24,0:33:18.00,*Default,NTP,0000,0000,0000,,当你开始跑步的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you're starting to run.
+Dialogue: 0,0:33:18.56,0:33:19.28,*Default,NTP,0000,0000,0000,,脑部血流不会减少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not your brain,
+Dialogue: 0,0:33:19.76,0:33:21.14,*Default,NTP,0000,0000,0000,,脑部的血液流量保持不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you want to keep blood flow to your brain 
+Dialogue: 0,0:33:21.37,0:33:22.09,*Default,NTP,0000,0000,0000,,这样你才不会撞墙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you don't run into the wall,
+Dialogue: 0,0:33:22.91,0:33:27.88,*Default,NTP,0000,0000,0000,,但可能流到你消化器官的血流量减少了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you might have less flow going to your digestive organs.
+Dialogue: 0,0:33:28.09,0:33:30.86,*Default,NTP,0000,0000,0000,,此时  消化停止或者减缓了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd stop digestion for some period or slow it down;
+Dialogue: 0,0:33:31.61,0:33:33.60,*Default,NTP,0000,0000,0000,,因为用于此的血量减少了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}provide less blood flow for that purpose.
+Dialogue: 0,0:33:36.71,0:33:37.18,*Default,NTP,0000,0000,0000,,听懂了么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that make sense?
+Dialogue: 0,0:33:37.74,0:33:42.65,*Default,NTP,0000,0000,0000,,如果观察循环系统中压力的变化方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well if we look at how pressure varies through the circulatory system,
+Dialogue: 0,0:33:43.59,0:33:45.66,*Default,NTP,0000,0000,0000,,血压是由心脏产生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your blood pressure is generated by the heart.
+Dialogue: 0,0:33:47.25,0:33:48.95,*Default,NTP,0000,0000,0000,,血压的范围是 120/80 毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Blood pressure ranges between 120/80 mmHg.
+Dialogue: 0,0:33:51.18,0:33:53.38,*Default,NTP,0000,0000,0000,,马上我们就能看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to see this in a few minutes 
+Dialogue: 0,0:33:53.58,0:33:55.66,*Default,NTP,0000,0000,0000,,这个数字代表了心脏跳动产生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but those numbers represent the maximum pressure 
+Dialogue: 0,0:33:56.01,0:33:57.58,*Default,NTP,0000,0000,0000,,最大压力和最小压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the minimum pressure during a heartbeat.
+Dialogue: 0,0:33:59.07,0:33:59.88,*Default,NTP,0000,0000,0000,,当心脏有活性地收缩或跳动时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The maximum pressure occurs 
+Dialogue: 0,0:34:00.25,0:34:02.38,*Default,NTP,0000,0000,0000,,血压达到最大值\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when the heart is actively contracting or beating.
+Dialogue: 0,0:34:02.85,0:34:05.14,*Default,NTP,0000,0000,0000,,待会我们会再讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about that more in a few minutes
+Dialogue: 0,0:34:05.53,0:34:07.91,*Default,NTP,0000,0000,0000,,下周四我们会详细讨论这个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about that in great detail on Thursday.
+Dialogue: 0,0:34:09.37,0:34:11.11,*Default,NTP,0000,0000,0000,,心脏舒张时血压降低\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then it drops when the heart is relaxing.
+Dialogue: 0,0:34:11.84,0:34:14.63,*Default,NTP,0000,0000,0000,,血压的产生是循环式的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Blood pressure is generated in a cyclic fashion
+Dialogue: 0,0:34:15.25,0:34:16.54,*Default,NTP,0000,0000,0000,,因为心脏的跳动是在不断重复\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of beating of the heart,
+Dialogue: 0,0:34:16.96,0:34:18.30,*Default,NTP,0000,0000,0000,,收缩  舒张  收缩  舒张\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}contract, relax, contract, relax,
+Dialogue: 0,0:34:18.78,0:34:19.63,*Default,NTP,0000,0000,0000,,一百二十  八十\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}120, 80, 
+Dialogue: 0,0:34:19.63,0:34:20.58,*Default,NTP,0000,0000,0000,,一百二十  八十\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}120, 80, 
+Dialogue: 0,0:34:20.58,0:34:21.77,*Default,NTP,0000,0000,0000,,一百二十  八十\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}120, 80.
+Dialogue: 0,0:34:22.16,0:34:25.13,*Default,NTP,0000,0000,0000,,120/80  这个压力传至主动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That pressure of 120/80 gets transmitted to the aorta.
+Dialogue: 0,0:34:25.89,0:34:31.27,*Default,NTP,0000,0000,0000,,主动脉处的血压和心脏内部血压基本相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The pressure in the aorta is roughly the same as it is in the heart.
+Dialogue: 0,0:34:33.09,0:34:33.98,*Default,NTP,0000,0000,0000,,为什么是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now why is that?
+Dialogue: 0,0:34:34.26,0:34:35.86,*Default,NTP,0000,0000,0000,,为什么主动脉两侧没有压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why isn't there a pressure drop through the aorta?
+Dialogue: 0,0:34:36.30,0:34:38.29,*Default,NTP,0000,0000,0000,,其实  这里存在压差  但是极小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well there is a pressure drop through the aorta but it's very small.
+Dialogue: 0,0:34:39.50,0:34:42.10,*Default,NTP,0000,0000,0000,,因为主动脉比较粗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The reason it's small is that the aorta is big;
+Dialogue: 0,0:34:43.01,0:34:45.78,*Default,NTP,0000,0000,0000,,半径较大  所以阻力较小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has a large diameter and so it's resistance is low.
+Dialogue: 0,0:34:48.96,0:34:53.38,*Default,NTP,0000,0000,0000,,产生五升每分钟的流速无需太大压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In order to generate 5L/min of flow you don't need much pressure.
+Dialogue: 0,0:34:55.46,0:34:58.42,*Default,NTP,0000,0000,0000,,即使是一股洪流通过主动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In order to--even this whopping flow that goes through the aorta,
+Dialogue: 0,0:34:58.91,0:35:01.05,*Default,NTP,0000,0000,0000,,由于主动脉的尺寸较大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of the large size of the aorta,
+Dialogue: 0,0:35:01.47,0:35:03.81,*Default,NTP,0000,0000,0000,,形成流动的话就无需太大的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't need much pressure drop to generate that flow.
+Dialogue: 0,0:35:04.27,0:35:06.11,*Default,NTP,0000,0000,0000,,如果测量主动脉两侧的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I measured pressure drop over the aorta,
+Dialogue: 0,0:35:06.58,0:35:08.94,*Default,NTP,0000,0000,0000,,从主动脉起始部至终末部之间的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from the beginning to the end of the aorta,
+Dialogue: 0,0:35:09.36,0:35:12.43,*Default,NTP,0000,0000,0000,,就会发现两端压强没多大变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd find that pressure doesn't really change very much 
+Dialogue: 0,0:35:12.68,0:35:13.67,*Default,NTP,0000,0000,0000,,这就是这张图想说明的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's what's shown in this diagram here.
+Dialogue: 0,0:35:14.81,0:35:17.03,*Default,NTP,0000,0000,0000,,主动脉的起始部和终末部之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As I move from the beginning of the aorta to the end
+Dialogue: 0,0:35:17.58,0:35:19.21,*Default,NTP,0000,0000,0000,,必然存在着一定的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there must be some drop in pressure.
+Dialogue: 0,0:35:20.63,0:35:23.17,*Default,NTP,0000,0000,0000,,否则血液就不能流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Has to be, otherwise blood wouldn't flow at all
+Dialogue: 0,0:35:23.79,0:35:25.87,*Default,NTP,0000,0000,0000,,但这个压差并不大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's not very much of a drop.
+Dialogue: 0,0:35:27.45,0:35:30.47,*Default,NTP,0000,0000,0000,,与此相似  主要的大动脉血管直径较大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Similarly, the large arteries would still have large diameters,
+Dialogue: 0,0:35:31.78,0:35:32.97,*Default,NTP,0000,0000,0000,,内部阻力较小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have low resistances.
+Dialogue: 0,0:35:33.34,0:35:36.24,*Default,NTP,0000,0000,0000,,在这些大动脉中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Doesn't take much pressure to move a flow rate 
+Dialogue: 0,0:35:36.50,0:35:37.34,*Default,NTP,0000,0000,0000,,无需太大压力就能产生流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through those large arteries,
+Dialogue: 0,0:35:37.69,0:35:39.71,*Default,NTP,0000,0000,0000,,所以在大动脉中也不存在太大压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so over the large arteries there's not much pressure drop either.
+Dialogue: 0,0:35:40.19,0:35:40.74,*Default,NTP,0000,0000,0000,,这些是分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This would be the branches,
+Dialogue: 0,0:35:41.61,0:35:43.13,*Default,NTP,0000,0000,0000,,像这个导向手臂的主要分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the main branch that goes to your arm,
+Dialogue: 0,0:35:43.53,0:35:45.53,*Default,NTP,0000,0000,0000,,还有血液流向脑部要经过的颈动脉分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the branch that goes to the carotids that goes up to your brain,
+Dialogue: 0,0:35:46.68,0:35:48.12,*Default,NTP,0000,0000,0000,,流至腿部的分支叫做股动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the branch that goes down to your leg called the femoral artery.
+Dialogue: 0,0:35:48.95,0:35:50.36,*Default,NTP,0000,0000,0000,,这些都是大动脉  直径比较大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still large arteries, large diameter,
+Dialogue: 0,0:35:51.17,0:35:54.20,*Default,NTP,0000,0000,0000,,血液在其中流动并不需要太大的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not much pressure drop needed to generate a large flow.
+Dialogue: 0,0:35:56.08,0:35:59.02,*Default,NTP,0000,0000,0000,,血液流过越来越多分支  血管越来越细\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As we move to more branches, smaller and smaller vessels,
+Dialogue: 0,0:35:59.96,0:36:01.14,*Default,NTP,0000,0000,0000,,在某一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it turns out at some point,
+Dialogue: 0,0:36:01.68,0:36:03.93,*Default,NTP,0000,0000,0000,,在细动脉上的某一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the point at which this occurs is the arterioles,
+Dialogue: 0,0:36:06.11,0:36:07.49,*Default,NTP,0000,0000,0000,,血管的直径会足够小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the diameter has gotten small enough 
+Dialogue: 0,0:36:08.06,0:36:11.48,*Default,NTP,0000,0000,0000,,以至于这个流速下血管的阻力变得显著\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the resistance becomes significant compared to the flow rate.
+Dialogue: 0,0:36:16.28,0:36:17.60,*Default,NTP,0000,0000,0000,,在血液到达该点之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, there's so many branches
+Dialogue: 0,0:36:18.08,0:36:19.10,*Default,NTP,0000,0000,0000,,已经流过很多分支了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that occurred before this
+Dialogue: 0,0:36:22.10,0:36:24.42,*Default,NTP,0000,0000,0000,,因此在这个血管中流速不再是五升每分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that these individual vessels aren't getting 5L/min,
+Dialogue: 0,0:36:24.84,0:36:26.53,*Default,NTP,0000,0000,0000,,而只是其中很小的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're only getting some small fraction of that.
+Dialogue: 0,0:36:27.51,0:36:29.42,*Default,NTP,0000,0000,0000,,我们假设  这些细动脉可能有一千个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There might be 1, 000 of these arterioles,
+Dialogue: 0,0:36:29.84,0:36:33.00,*Default,NTP,0000,0000,0000,,那么其中的血流量就是最大流量的千分之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say, and so they're all getting 1/1, 000th of the maximum flow.
+Dialogue: 0,0:36:33.49,0:36:35.78,*Default,NTP,0000,0000,0000,,压差是如何变大的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could that pressure drop be more?
+Dialogue: 0,0:36:36.56,0:36:39.55,*Default,NTP,0000,0000,0000,,为什么需要较大的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How come they need a big pressure drop,
+Dialogue: 0,0:36:40.29,0:36:41.58,*Default,NTP,0000,0000,0000,,这里都表述清楚了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is what's illustrated here.
+Dialogue: 0,0:36:42.30,0:36:43.74,*Default,NTP,0000,0000,0000,,为了让低速流体通过较细的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It takes a substantial drop in pressure
+Dialogue: 0,0:36:44.76,0:36:48.87,*Default,NTP,0000,0000,0000,,确实需要一定的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to move this lower flow rate through these smaller vessels.
+Dialogue: 0,0:36:49.43,0:36:50.70,*Default,NTP,0000,0000,0000,,这个压力是多大呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could that be?
+Dialogue: 0,0:36:51.42,0:36:55.37,*Default,NTP,0000,0000,0000,,还记得阻力是随着半径的四次方变化吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well remember that the resistance changed with r4.
+Dialogue: 0,0:36:57.79,0:36:59.04,*Default,NTP,0000,0000,0000,,这就是说  随着半径减小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That means that as the radius goes down
+Dialogue: 0,0:37:00.91,0:37:04.29,*Default,NTP,0000,0000,0000,,阻力增加和半径减小之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not a linear relationship between the radius going down 
+Dialogue: 0,0:37:05.50,0:37:07.14,*Default,NTP,0000,0000,0000,,并非是线性关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the resistance going up,
+Dialogue: 0,0:37:08.07,0:37:09.37,*Default,NTP,0000,0000,0000,,而是四次方的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a 4th-power relationship.
+Dialogue: 0,0:37:10.05,0:37:14.38,*Default,NTP,0000,0000,0000,,阻力快速地由小变大  变得非常大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As it gets small resistance starts to become very, very high.
+Dialogue: 0,0:37:16.52,0:37:20.83,*Default,NTP,0000,0000,0000,,血液被分流至不同血管的过程是线性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you divide a flow between vessels that's kind of a linear process,
+Dialogue: 0,0:37:21.32,0:37:26.72,*Default,NTP,0000,0000,0000,,被分成两股  四股 八股\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it goes two ways, it goes four ways, it goes eight--
+Dialogue: 0,0:37:26.72,0:37:30.77,*Default,NTP,0000,0000,0000,,但随着半径的减小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this r4 starts to dominate
+Dialogue: 0,0:37:31.44,0:37:33.60,*Default,NTP,0000,0000,0000,,四次方的作用开始体现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you get down to a certain radius.
+Dialogue: 0,0:37:33.86,0:37:35.73,*Default,NTP,0000,0000,0000,,这个过程发生在细动脉水平上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out that that's at the level of the arterioles.
+Dialogue: 0,0:37:36.41,0:37:39.72,*Default,NTP,0000,0000,0000,,在你身体内侧产生的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most of the pressure drop on this side of your--
+Dialogue: 0,0:37:40.37,0:37:42.12,*Default,NTP,0000,0000,0000,,在循环系统的左半侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on this left side of the cardiovascular system,
+Dialogue: 0,0:37:42.62,0:37:44.90,*Default,NTP,0000,0000,0000,,压差大多都与半径的四次方相关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}most of the pressure drop occurs at the level of the r4.
+Dialogue: 0,0:37:45.99,0:37:48.18,*Default,NTP,0000,0000,0000,,动脉中存在明显的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a significant pressure drop through the arteries 
+Dialogue: 0,0:37:48.51,0:37:50.48,*Default,NTP,0000,0000,0000,,而在静脉中则没有太大的压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then not much pressure drop at all through the veins.
+Dialogue: 0,0:37:52.98,0:37:57.07,*Default,NTP,0000,0000,0000,,静脉是低压血管  通常半径较大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The veins are low pressure vessels, generally large in diameter,
+Dialogue: 0,0:37:57.65,0:37:59.24,*Default,NTP,0000,0000,0000,,对流体的阻力较小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not much resistance to flow.
+Dialogue: 0,0:37:59.90,0:38:04.14,*Default,NTP,0000,0000,0000,,如果你现在要设计一个像这样的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now why--if you were going to design a system like this, is there any
+Dialogue: 0,0:38:04.15,0:38:09.38,*Default,NTP,0000,0000,0000,,那么动脉两侧产生的最大压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}advantage to having the largest pressure drop occur over the arterioles,
+Dialogue: 0,0:38:10.32,0:38:13.32,*Default,NTP,0000,0000,0000,,和动脉产生的最大阻力是否可为你所用呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the largest relative resistance occurring over the arterioles?
+Dialogue: 0,0:38:13.79,0:38:17.88,*Default,NTP,0000,0000,0000,,非常有用  因为在有压差的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a huge advantage because wherever the pressure drop occurs,
+Dialogue: 0,0:38:18.91,0:38:21.70,*Default,NTP,0000,0000,0000,,就能够有机会调节流体的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the place where you have the best opportunity to adjust the flow 
+Dialogue: 0,0:38:27.76,0:38:31.97,*Default,NTP,0000,0000,0000,,因为半径的小小改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because small changes in radius are going to lead to large changes 
+Dialogue: 0,0:38:32.30,0:38:33.39,*Default,NTP,0000,0000,0000,,会对相对阻力产生明显的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in relative resistance.
+Dialogue: 0,0:38:37.76,0:38:39.77,*Default,NTP,0000,0000,0000,,在主动脉中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's at the arterioles,
+Dialogue: 0,0:38:40.56,0:38:44.76,*Default,NTP,0000,0000,0000,,或者为身体组织供血的最小的小动脉中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the very smallest arteries that are supplying blood to our tissues,
+Dialogue: 0,0:38:45.62,0:38:47.69,*Default,NTP,0000,0000,0000,,最需要控制血液的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where we have the most control over flow rate.
+Dialogue: 0,0:38:50.67,0:38:51.06,*Default,NTP,0000,0000,0000,,这不难理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That makes sense
+Dialogue: 0,0:38:51.83,0:38:54.47,*Default,NTP,0000,0000,0000,,因为有时无需血液剧烈地流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because sometimes you're not making big movements in blood flow,
+Dialogue: 0,0:38:54.99,0:38:58.59,*Default,NTP,0000,0000,0000,,就好比  我想让流入肠道的血少一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like saying, 'I want very little blood flow to my gut
+Dialogue: 0,0:38:59.79,0:39:01.07,*Default,NTP,0000,0000,0000,,更多的血都流到肌肉里去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a lot of blood flow to my muscle'--
+Dialogue: 0,0:39:01.53,0:39:02.95,*Default,NTP,0000,0000,0000,,这是个大变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a big change.'
+Dialogue: 0,0:39:03.66,0:39:06.33,*Default,NTP,0000,0000,0000,,在组织内部的变化可能小点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're making smaller changes within a tissue; like,
+Dialogue: 0,0:39:06.56,0:39:07.52,*Default,NTP,0000,0000,0000,,我想让流入大脑中掌管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'I want more blood to
+Dialogue: 0,0:39:07.87,0:39:09.61,*Default,NTP,0000,0000,0000,,谈话这个区域的血液多一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}go to the region of my brain that's involved in talking
+Dialogue: 0,0:39:10.56,0:39:13.63,*Default,NTP,0000,0000,0000,,流入掌管阅读这个区域的血液少一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and less to the region in my brain that's involved in reading. '
+Dialogue: 0,0:39:18.15,0:39:20.33,*Default,NTP,0000,0000,0000,,这种调节发生在交谈时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you're talking versus reading you want to regulate
+Dialogue: 0,0:39:20.87,0:39:23.88,*Default,NTP,0000,0000,0000,,这时对血流量的调节就相对较小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the blood flows on a more smaller scale,
+Dialogue: 0,0:39:24.64,0:39:25.40,*Default,NTP,0000,0000,0000,,仅在组织内部的调节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the scale of a tissue,
+Dialogue: 0,0:39:26.07,0:39:28.93,*Default,NTP,0000,0000,0000,,在组织内部分支的动脉血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and its arterioles which are branching within tissues 
+Dialogue: 0,0:39:29.15,0:39:30.09,*Default,NTP,0000,0000,0000,,有能力做到这一切\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have the capacity to do that.
+Dialogue: 0,0:39:32.22,0:39:33.80,*Default,NTP,0000,0000,0000,,你可能会做这样的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could do something like this,
+Dialogue: 0,0:39:34.28,0:39:36.24,*Default,NTP,0000,0000,0000,,假设在理想条件下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say this is a very imaginary situation,
+Dialogue: 0,0:39:36.80,0:39:38.84,*Default,NTP,0000,0000,0000,,我画这个只是为了说明问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I drew it just for illustrative purposes.
+Dialogue: 0,0:39:39.29,0:39:45.23,*Default,NTP,0000,0000,0000,,这里有一条动脉在滋养某个组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's say that this was an artery that was feeding some tissue 
+Dialogue: 0,0:39:46.06,0:39:47.79,*Default,NTP,0000,0000,0000,,有血液流到这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so there was a blood flow that's coming in here
+Dialogue: 0,0:39:48.21,0:39:49.18,*Default,NTP,0000,0000,0000,,分成五条不同的支流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it splits five different ways.
+Dialogue: 0,0:39:49.97,0:39:52.54,*Default,NTP,0000,0000,0000,,这里是这个组织的五个不同区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, here are five different regions of the tissue
+Dialogue: 0,0:39:53.35,0:39:55.23,*Default,NTP,0000,0000,0000,,这五条支流分别为其服务\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are served by these arterioles.
+Dialogue: 0,0:39:56.49,0:39:57.14,*Default,NTP,0000,0000,0000,,现在  我可以画出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I could draw this--
+Dialogue: 0,0:39:57.50,0:39:58.60,*Default,NTP,0000,0000,0000,,其中一种情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the nice things 
+Dialogue: 0,0:39:58.96,0:40:02.26,*Default,NTP,0000,0000,0000,,如果你懂得这两个等式的相似之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you do know this analogy between this equation 
+Dialogue: 0,0:40:02.61,0:40:04.64,*Default,NTP,0000,0000,0000,,即压差与流体流动关系的等式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}describing pressure drop flow relationships
+Dialogue: 0,0:40:05.03,0:40:07.88,*Default,NTP,0000,0000,0000,,和电压与电子流动关系的等式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this equation describing voltage current relationships,
+Dialogue: 0,0:40:08.42,0:40:13.72,*Default,NTP,0000,0000,0000,,你就能画出压力与流动的关系图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that you could draw a diagram for pressure flow relationships.
+Dialogue: 0,0:40:14.12,0:40:17.73,*Default,NTP,0000,0000,0000,,它看上去像一个电路图  因为等式相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It looks just like a circuit diagram because the equations are the same.
+Dialogue: 0,0:40:19.44,0:40:26.38,*Default,NTP,0000,0000,0000,,我在这里做的是将这幅卡通解剖图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what I've done here is taken this anatomical picture, cartoon,
+Dialogue: 0,0:40:26.91,0:40:29.87,*Default,NTP,0000,0000,0000,,转化为一个等价回路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and converted it into an equivalent circuit
+Dialogue: 0,0:40:31.21,0:40:37.53,*Default,NTP,0000,0000,0000,,只不过这里我考虑的不是电子流动与否\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where I'm not thinking about flow of electrons now or current,
+Dialogue: 0,0:40:37.92,0:40:38.81,*Default,NTP,0000,0000,0000,,我要考虑的是流体流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm thinking about flow of fluid.
+Dialogue: 0,0:40:39.22,0:40:41.25,*Default,NTP,0000,0000,0000,,我这里画的并不是电阻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm drawing a resistance not as an electrical resistance
+Dialogue: 0,0:40:41.88,0:40:44.44,*Default,NTP,0000,0000,0000,,而是流体阻力  是这样一种阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but as a flow resistance; as this kind of a resistance.
+Dialogue: 0,0:40:46.65,0:40:49.23,*Default,NTP,0000,0000,0000,,假设血流速度为一百毫米每分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's say that the blood is flowing in at a rate of 100 mm/min
+Dialogue: 0,0:40:49.66,0:40:51.94,*Default,NTP,0000,0000,0000,,阻力是一个单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that the resistance here is one unit,
+Dialogue: 0,0:40:53.22,0:40:57.50,*Default,NTP,0000,0000,0000,,每一小段的阻力都会更小  或者更大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the resistance here on each of these smaller segments is smaller-- or higher.
+Dialogue: 0,0:40:58.24,0:40:59.20,*Default,NTP,0000,0000,0000,,血管变细时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are smaller--
+Dialogue: 0,0:40:59.65,0:41:01.89,*Default,NTP,0000,0000,0000,,当血液流入较细的血管时  阻力增大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it branches into smaller vessels so they have a higher resistance,
+Dialogue: 0,0:41:02.53,0:41:04.87,*Default,NTP,0000,0000,0000,,这里是五个单位  这里是一个单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's five units here and one unit here
+Dialogue: 0,0:41:04.87,0:41:06.04,*Default,NTP,0000,0000,0000,,单位就是这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the units are these.
+Dialogue: 0,0:41:07.90,0:41:09.92,*Default,NTP,0000,0000,0000,,如果阻力保持不变的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, if all the resistances are the same then the--
+Dialogue: 0,0:41:11.85,0:41:13.66,*Default,NTP,0000,0000,0000,,血液流动到这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the blood that flows in here 
+Dialogue: 0,0:41:14.13,0:41:17.13,*Default,NTP,0000,0000,0000,,在流经每条通路时  流体的流动相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's going to flow equally through each one of these tubes,
+Dialogue: 0,0:41:19.11,0:41:24.22,*Default,NTP,0000,0000,0000,,那么一百毫米每分的流体被分为五部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so basically this 100 mm/min of flow gets split five ways.
+Dialogue: 0,0:41:31.08,0:41:32.47,*Default,NTP,0000,0000,0000,,这很简单  你们可以自己算\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could do this calculation yourself;
+Dialogue: 0,0:41:32.92,0:41:35.84,*Default,NTP,0000,0000,0000,,这里的压差只有1毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pressure drop here is just 1 mmHg 
+Dialogue: 0,0:41:36.28,0:41:37.97,*Default,NTP,0000,0000,0000,,如果你计算了的话  应该知道这个值没错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if you did this calculation it should work out okay,
+Dialogue: 0,0:41:38.47,0:41:41.08,*Default,NTP,0000,0000,0000,,在一毫米汞柱的压差下  回路对流体的总阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the total resistance of this circuit with 1 mmHg
+Dialogue: 0,0:41:41.96,0:41:43.06,*Default,NTP,0000,0000,0000,,能产生一百毫米每分的流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gives you 100 mm/min of flow.
+Dialogue: 0,0:41:46.14,0:41:48.48,*Default,NTP,0000,0000,0000,,那么如果其中一条血管的直径改变了呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What if one of these vessels changes its diameter?
+Dialogue: 0,0:41:52.58,0:41:53.34,*Default,NTP,0000,0000,0000,,就说是这条吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's say it's this one 
+Dialogue: 0,0:41:53.92,0:41:56.98,*Default,NTP,0000,0000,0000,,这条血管收缩了  所以阻力增加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and let's say that it shrinks its diameter so this resistance goes up.
+Dialogue: 0,0:41:58.44,0:42:00.92,*Default,NTP,0000,0000,0000,,从五个单位变为一百个单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Goes up here from 5 units to 100 units,
+Dialogue: 0,0:42:01.44,0:42:02.64,*Default,NTP,0000,0000,0000,,这个改变很大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I made a big change in that,
+Dialogue: 0,0:42:03.90,0:42:08.90,*Default,NTP,0000,0000,0000,,增大了二十倍  可能半径改变了两倍多一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}goes up by a factor of 20 so that would be about a factor of two difference in radius,
+Dialogue: 0,0:42:10.17,0:42:11.63,*Default,NTP,0000,0000,0000,,因为要根据四次方效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of the 4th-power.
+Dialogue: 0,0:42:13.17,0:42:15.00,*Default,NTP,0000,0000,0000,,如果阻力增大到一百\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If this one goes up to 100 now 
+Dialogue: 0,0:42:15.32,0:42:17.30,*Default,NTP,0000,0000,0000,,这条血管的阻力变大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's more resistance through this particular vessel here
+Dialogue: 0,0:42:18.16,0:42:19.87,*Default,NTP,0000,0000,0000,,而这三条血管中的阻力不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the same resistance through these three,
+Dialogue: 0,0:42:20.53,0:42:21.21,*Default,NTP,0000,0000,0000,,接下来会发生什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so what happens?
+Dialogue: 0,0:42:21.69,0:42:22.91,*Default,NTP,0000,0000,0000,,流过这条血管的血液会变少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Less flow goes through this vessel 
+Dialogue: 0,0:42:25.70,0:42:27.21,*Default,NTP,0000,0000,0000,,流过其他血管的血液则保持不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the same flow goes through the others,
+Dialogue: 0,0:42:30.06,0:42:32.78,*Default,NTP,0000,0000,0000,,现在的总流速就是89毫米每分了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that the total flow now is 89 mm/min.
+Dialogue: 0,0:42:35.76,0:42:36.52,*Default,NTP,0000,0000,0000,,为什么总流量减少了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now why did the total--
+Dialogue: 0,0:42:37.14,0:42:38.67,*Default,NTP,0000,0000,0000,,你们肯定多少能明白点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could understand sort of
+Dialogue: 0,0:42:39.10,0:42:40.56,*Default,NTP,0000,0000,0000,,因为原因实在是太明显了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because that's pretty obvious right why,
+Dialogue: 0,0:42:40.99,0:42:44.55,*Default,NTP,0000,0000,0000,,半径减小时血管的阻力增加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I decreased the radius and increased the resistance of this vessel,
+Dialogue: 0,0:42:45.29,0:42:47.37,*Default,NTP,0000,0000,0000,,这就解释了为什么流过这条血管的血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why less flow went through it than through its partners,
+Dialogue: 0,0:42:47.78,0:42:48.63,*Default,NTP,0000,0000,0000,,比流过其它血管的都要少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that kind of makes sense.
+Dialogue: 0,0:42:49.61,0:42:50.42,*Default,NTP,0000,0000,0000,,一条血管变细了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got a smaller vessel
+Dialogue: 0,0:42:50.77,0:42:53.80,*Default,NTP,0000,0000,0000,,现在我有四条较粗的和一条较细的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so now I've got four large vessels and one smaller one,
+Dialogue: 0,0:42:54.20,0:42:55.48,*Default,NTP,0000,0000,0000,,如果在它们两侧施加相同压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if I feed them with the same pressure drop 
+Dialogue: 0,0:42:56.89,0:42:58.77,*Default,NTP,0000,0000,0000,,从这些较粗的血管中会通过更多血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more of the flow is going to go through the big vessels
+Dialogue: 0,0:42:59.11,0:43:00.52,*Default,NTP,0000,0000,0000,,因为这里的阻力最小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because there's least resistance there.
+Dialogue: 0,0:43:01.99,0:43:03.71,*Default,NTP,0000,0000,0000,,流体会从阻力最小的地方通过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fluid takes the path of least resistance,
+Dialogue: 0,0:43:04.05,0:43:06.67,*Default,NTP,0000,0000,0000,,有一些也通过这里但不多  就是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some goes through but not as much, that makes sense.
+Dialogue: 0,0:43:07.03,0:43:09.82,*Default,NTP,0000,0000,0000,,为什么回路中总流量也改变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why does the overall flow through the whole circuit change?
+Dialogue: 0,0:43:10.51,0:43:12.61,*Default,NTP,0000,0000,0000,,为什么回路中总流量也改变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why does the overall flow through this whole thing change?
+Dialogue: 0,0:43:15.38,0:43:18.23,*Default,NTP,0000,0000,0000,,因为如果这里任一条血管的阻力增加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, because if any one of the vessels in here increases its resistance
+Dialogue: 0,0:43:18.89,0:43:21.88,*Default,NTP,0000,0000,0000,,这一束血管的总阻力也就增加了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it increases the overall resistance of the aggregate of vessels.
+Dialogue: 0,0:43:24.27,0:43:27.54,*Default,NTP,0000,0000,0000,,如果给定的压力保持恒定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the pressure that I have available is constant, and it is,
+Dialogue: 0,0:43:28.81,0:43:30.50,*Default,NTP,0000,0000,0000,,在这个例子中给定的压力是一定的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pressure I have available is constant in this example,
+Dialogue: 0,0:43:30.50,0:43:31.41,*Default,NTP,0000,0000,0000,,是一毫米汞柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's 1 mmHg,
+Dialogue: 0,0:43:32.66,0:43:35.96,*Default,NTP,0000,0000,0000,,那么阻力增加就意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then when the whole thing increases its resistance 
+Dialogue: 0,0:43:36.30,0:43:38.44,*Default,NTP,0000,0000,0000,,回路中的总流量就会减小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that means the flow rate through the whole circuit has to go down as well.
+Dialogue: 0,0:43:41.58,0:43:43.27,*Default,NTP,0000,0000,0000,,这是在这里真正要说明的两个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's two things that are really illustrated here.
+Dialogue: 0,0:43:44.07,0:43:48.96,*Default,NTP,0000,0000,0000,,一个是  相互竞争的不同支路中的血液流量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is that you could regulate in pathways 
+Dialogue: 0,0:43:49.55,0:43:51.05,*Default,NTP,0000,0000,0000,,是可以调节的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are competing with each other for flow 
+Dialogue: 0,0:43:52.22,0:43:55.65,*Default,NTP,0000,0000,0000,,而之后支路之间的相对阻力就决定了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the relative resistance between equal members determines 
+Dialogue: 0,0:43:55.88,0:43:57.25,*Default,NTP,0000,0000,0000,,血管内部的流量是多大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how much flow goes to each vessel;
+Dialogue: 0,0:43:58.76,0:44:01.18,*Default,NTP,0000,0000,0000,,这是要说明的第一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's one thing that's illustrated.
+Dialogue: 0,0:44:01.48,0:44:03.54,*Default,NTP,0000,0000,0000,,另一个要说明的问题就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other is that the whole--
+Dialogue: 0,0:44:03.82,0:44:06.64,*Default,NTP,0000,0000,0000,,流经循环系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the flow through this whole piece of the circulatory system,
+Dialogue: 0,0:44:07.12,0:44:08.85,*Default,NTP,0000,0000,0000,,整个网络的血液总流量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this whole part of the network,
+Dialogue: 0,0:44:09.75,0:44:12.22,*Default,NTP,0000,0000,0000,,取决于每条血管各自的阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depends on the resistance of every single vessel within it.
+Dialogue: 0,0:44:14.10,0:44:17.00,*Default,NTP,0000,0000,0000,,一条血管的阻力改变  总阻力也改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One vessel changing its resistance changes the whole thing.
+Dialogue: 0,0:44:18.16,0:44:21.11,*Default,NTP,0000,0000,0000,,这是人体循环系统的一个特征\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a feature of our circulatory system.
+Dialogue: 0,0:44:21.74,0:44:23.49,*Default,NTP,0000,0000,0000,,如果想要更多的血液流向脑部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I want more blood to go to the brain 
+Dialogue: 0,0:44:23.81,0:44:25.44,*Default,NTP,0000,0000,0000,,有两种方法能做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's two ways to get more blood to the brain.
+Dialogue: 0,0:44:26.88,0:44:28.59,*Default,NTP,0000,0000,0000,,嗯  其实方法不止两种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, there's more than two ways,
+Dialogue: 0,0:44:29.10,0:44:31.90,*Default,NTP,0000,0000,0000,,但在血压保持不变的条件下  只有两种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but two ways as long as the pressure--blood pressure stays the same.
+Dialogue: 0,0:44:32.40,0:44:34.84,*Default,NTP,0000,0000,0000,,一种方法是扩张脑部血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One way is to dilate the vessels of the brain to 
+Dialogue: 0,0:44:36.18,0:44:37.73,*Default,NTP,0000,0000,0000,,降低它们的阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}create less resistance there.
+Dialogue: 0,0:44:38.76,0:44:41.32,*Default,NTP,0000,0000,0000,,另一种方法是收缩其它部位的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other way is to constrict the vessels somewhere else
+Dialogue: 0,0:44:41.65,0:44:42.93,*Default,NTP,0000,0000,0000,,以产生更大的阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to create more resistance there.
+Dialogue: 0,0:44:43.78,0:44:46.21,*Default,NTP,0000,0000,0000,,这两种方法都可以使脑部血流量增大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Either one of those is going to get me more flow to the brain.
+Dialogue: 0,0:44:48.21,0:44:50.56,*Default,NTP,0000,0000,0000,,因为循环系统是封闭的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because it's a closed system,
+Dialogue: 0,0:44:51.42,0:44:53.30,*Default,NTP,0000,0000,0000,,所有部分都有内在联系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}everything is interconnected 
+Dialogue: 0,0:44:54.38,0:44:56.91,*Default,NTP,0000,0000,0000,,某一处的血流发生改变会影响到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a change in flow in one place can influence flows 
+Dialogue: 0,0:44:57.27,0:44:58.58,*Default,NTP,0000,0000,0000,,整个系统的血流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}throughout the whole system.
+Dialogue: 0,0:45:00.05,0:45:00.64,*Default,NTP,0000,0000,0000,,你们听懂了么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does this make sense?
+Dialogue: 0,0:45:04.07,0:45:05.85,*Default,NTP,0000,0000,0000,,我现在想讲回这幅图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to go back to this picture, now,
+Dialogue: 0,0:45:06.52,0:45:10.56,*Default,NTP,0000,0000,0000,,从流体流动的角度讲讲我们学到什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and talk about what we've learned in terms of flows.
+Dialogue: 0,0:45:11.02,0:45:13.26,*Default,NTP,0000,0000,0000,,你可以以另一种方式来想想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now you can think about this in a little bit different way,
+Dialogue: 0,0:45:14.12,0:45:16.34,*Default,NTP,0000,0000,0000,,血液流到了这里和这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that if there's flows going through here and here,
+Dialogue: 0,0:45:16.67,0:45:18.09,*Default,NTP,0000,0000,0000,,每个方向上流量的多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how much goes each direction,
+Dialogue: 0,0:45:18.88,0:45:23.12,*Default,NTP,0000,0000,0000,,取决于血管和血管之间的相对阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depends on the relative resistance between this vessel and this vessel.
+Dialogue: 0,0:45:23.41,0:45:28.81,*Default,NTP,0000,0000,0000,,实际是取决于血管与血管之间的相对大小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It does depend on the relative size between this vessel and this vessel,
+Dialogue: 0,0:45:29.46,0:45:30.12,*Default,NTP,0000,0000,0000,,也取决于血流下游\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it depends on 
+Dialogue: 0,0:45:30.36,0:45:33.05,*Default,NTP,0000,0000,0000,,整个网络的相对阻力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the relative resistance of the whole network after it as well.
+Dialogue: 0,0:45:35.23,0:45:38.41,*Default,NTP,0000,0000,0000,,它取决于总阻力  即使这里有一条粗管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It depends on the whole resistance--even if you have a big tube here,
+Dialogue: 0,0:45:38.90,0:45:41.38,*Default,NTP,0000,0000,0000,,如果要下游有很多较细的管道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it's feeding lots of very constricted tubes down here,
+Dialogue: 0,0:45:42.09,0:45:45.61,*Default,NTP,0000,0000,0000,,那在这个方向上的分支点处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the overall resistance that the fluid experiences at this branch point
+Dialogue: 0,0:45:46.23,0:45:47.89,*Default,NTP,0000,0000,0000,,流体遇到的总阻力就会很高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is going to be high in this direction.
+Dialogue: 0,0:45:52.10,0:45:54.12,*Default,NTP,0000,0000,0000,,整个回路中的阻力起决定作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The whole--the resistance of the whole circuit matters.
+Dialogue: 0,0:45:56.39,0:45:58.72,*Default,NTP,0000,0000,0000,,仔细想一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think about that.
+Dialogue: 0,0:45:59.70,0:46:05.00,*Default,NTP,0000,0000,0000,,现在想想是什么驱动了流体流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's now think about what's driving this flow.
+Dialogue: 0,0:46:06.93,0:46:08.69,*Default,NTP,0000,0000,0000,,是什么产生了压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is, what's generating the pressure
+Dialogue: 0,0:46:09.57,0:46:11.48,*Default,NTP,0000,0000,0000,,你们都知道  是心脏产生了压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you know that what's generating the pressure is the heart.
+Dialogue: 0,0:46:12.07,0:46:15.44,*Default,NTP,0000,0000,0000,,它是在这个封闭系统中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the only place where pressure gets generated 
+Dialogue: 0,0:46:15.75,0:46:17.01,*Default,NTP,0000,0000,0000,,唯一能产生压力的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}within this closed system.
+Dialogue: 0,0:46:17.32,0:46:19.02,*Default,NTP,0000,0000,0000,,由心脏产生的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The pressure that's generated by the heart,
+Dialogue: 0,0:46:19.51,0:46:21.40,*Default,NTP,0000,0000,0000,,在经过主动脉之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is experienced by the aorta,
+Dialogue: 0,0:46:21.75,0:46:24.43,*Default,NTP,0000,0000,0000,,又流经所有这些血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is what drives flow throughout all of these vessels.
+Dialogue: 0,0:46:26.63,0:46:29.35,*Default,NTP,0000,0000,0000,,每条血管唯一能调节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The only opportunity that individual vessels out here
+Dialogue: 0,0:46:30.03,0:46:32.51,*Default,NTP,0000,0000,0000,,血流量的方式就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have to adjust how much flow goes to them is
+Dialogue: 0,0:46:33.30,0:46:34.42,*Default,NTP,0000,0000,0000,,改变自己的直径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by changing their diameters,
+Dialogue: 0,0:46:35.60,0:46:36.44,*Default,NTP,0000,0000,0000,,它们确实是这么做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which they do.
+Dialogue: 0,0:46:38.14,0:46:40.20,*Default,NTP,0000,0000,0000,,唯一能改变总流速的方法就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The only way to change the overall rate of flow 
+Dialogue: 0,0:46:40.76,0:46:42.81,*Default,NTP,0000,0000,0000,,改变总压差\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to change the overall pressure drop
+Dialogue: 0,0:46:43.08,0:46:44.15,*Default,NTP,0000,0000,0000,,而只有心脏能做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which can only be done by the heart.
+Dialogue: 0,0:46:46.87,0:46:47.52,*Default,NTP,0000,0000,0000,,心脏是如何工作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does the heart work?
+Dialogue: 0,0:46:48.39,0:46:50.70,*Default,NTP,0000,0000,0000,,这节课我们就开个头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well let me just start this 
+Dialogue: 0,0:46:50.94,0:46:53.81,*Default,NTP,0000,0000,0000,,下节课我会讲更多细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then we'll talk about this in much more detail next time.
+Dialogue: 0,0:46:54.49,0:46:56.11,*Default,NTP,0000,0000,0000,,这张图是心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a picture of the heart.
+Dialogue: 0,0:46:57.58,0:46:59.78,*Default,NTP,0000,0000,0000,,它与你的拳头差不多大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It sits--about the size of your fist,
+Dialogue: 0,0:47:01.29,0:47:02.82,*Default,NTP,0000,0000,0000,,大致位于胸部中央\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}basically in the center of your chest,
+Dialogue: 0,0:47:03.20,0:47:05.46,*Default,NTP,0000,0000,0000,,会偏左手边一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but shifted a little bit to the left hand side.
+Dialogue: 0,0:47:05.83,0:47:08.24,*Default,NTP,0000,0000,0000,,只要把手指放在这儿  感受到心跳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can find out where yours are by just putting a finger there 
+Dialogue: 0,0:47:08.61,0:47:10.42,*Default,NTP,0000,0000,0000,,就能找到心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and feeling where you can feel the heartbeat,
+Dialogue: 0,0:47:10.81,0:47:12.04,*Default,NTP,0000,0000,0000,,确定位置很简单\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's fairly easy to define.
+Dialogue: 0,0:47:12.44,0:47:13.72,*Default,NTP,0000,0000,0000,,心脏的顶部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The apex of the heart,
+Dialogue: 0,0:47:14.32,0:47:16.92,*Default,NTP,0000,0000,0000,,心脏的尖端在下方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the tip of it sits downward like that
+Dialogue: 0,0:47:16.92,0:47:20.51,*Default,NTP,0000,0000,0000,,主要血管位于心脏中心线附近\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the major vessels  are near the center line;
+Dialogue: 0,0:47:20.87,0:47:21.67,*Default,NTP,0000,0000,0000,,因此尖端在下方这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so the tip is down here,
+Dialogue: 0,0:47:21.96,0:47:23.83,*Default,NTP,0000,0000,0000,,主要的血管位于心脏中心线附近\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the major vessels are near the center line.
+Dialogue: 0,0:47:25.36,0:47:27.30,*Default,NTP,0000,0000,0000,,心脏有肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The heart has muscular walls.
+Dialogue: 0,0:47:27.89,0:47:33.37,*Default,NTP,0000,0000,0000,,心脏的肌肉壁叫做心肌  心脏肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The walls of the heart are called the myocardium, muscle heart.
+Dialogue: 0,0:47:34.13,0:47:36.11,*Default,NTP,0000,0000,0000,,Myo 的意思是肌肉  cardium 意思是心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'Myo' is muscle, 'cardium' is heart
+Dialogue: 0,0:47:36.72,0:47:41.69,*Default,NTP,0000,0000,0000,,这是肌肉壁  基本上就是一块很大的肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's muscular walls so it's a big muscle basically.
+Dialogue: 0,0:47:42.18,0:47:44.04,*Default,NTP,0000,0000,0000,,在心脏表面有很多血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are blood vessels on the surface 
+Dialogue: 0,0:47:44.33,0:47:46.45,*Default,NTP,0000,0000,0000,,主动脉由这里发出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so this is the aorta coming up here.
+Dialogue: 0,0:47:46.79,0:47:48.42,*Default,NTP,0000,0000,0000,,这个箭头所指即为主动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Where this arrow is here is the aorta,
+Dialogue: 0,0:47:48.87,0:47:50.74,*Default,NTP,0000,0000,0000,,这是主动脉弓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the aortic arch,
+Dialogue: 0,0:47:51.04,0:47:53.57,*Default,NTP,0000,0000,0000,,从这里向下去到腹部  向上去到脑部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then goes down to the abdomen and up to the brain.
+Dialogue: 0,0:47:54.66,0:47:57.11,*Default,NTP,0000,0000,0000,,这些是冠状动脉  我之前提到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are those coronary vessels that I mentioned earlier.
+Dialogue: 0,0:47:57.49,0:48:01.28,*Default,NTP,0000,0000,0000,,由主动脉出来的第一个分支就到冠状动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The first branches off of the aorta are to these coronary arteries 
+Dialogue: 0,0:48:02.04,0:48:04.08,*Default,NTP,0000,0000,0000,,这个分支位于心脏表面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which branch over the surface of the heart,
+Dialogue: 0,0:48:04.38,0:48:06.76,*Default,NTP,0000,0000,0000,,现在能更清楚地看到这个分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so now you can see this branching pattern more clearly 
+Dialogue: 0,0:48:07.06,0:48:08.74,*Default,NTP,0000,0000,0000,,在某个特定组织中的样子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in one particular tissue.
+Dialogue: 0,0:48:08.89,0:48:10.97,*Default,NTP,0000,0000,0000,,这里是有血液流过的冠状动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's a coronary artery the blood flows through,
+Dialogue: 0,0:48:11.35,0:48:12.45,*Default,NTP,0000,0000,0000,,这里有一个分叉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}here's a branch,
+Dialogue: 0,0:48:12.87,0:48:13.98,*Default,NTP,0000,0000,0000,,一支更偏向左侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one goes more to the left,
+Dialogue: 0,0:48:14.19,0:48:15.76,*Default,NTP,0000,0000,0000,,一支更偏向中心线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one goes more down the center line,
+Dialogue: 0,0:48:16.02,0:48:17.67,*Default,NTP,0000,0000,0000,,然后再分叉  再分叉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}branches again, branches again,
+Dialogue: 0,0:48:18.30,0:48:22.64,*Default,NTP,0000,0000,0000,,通过不断的分叉  可以确定出细动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and by continuously branching you define smaller arteries 
+Dialogue: 0,0:48:23.22,0:48:25.80,*Default,NTP,0000,0000,0000,,服务于组织中某一片区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which serve smaller regions of tissue.
+Dialogue: 0,0:48:27.48,0:48:30.64,*Default,NTP,0000,0000,0000,,这些血管为心脏中的肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These blood vessels provide nutrients to the muscle 
+Dialogue: 0,0:48:31.72,0:48:33.69,*Default,NTP,0000,0000,0000,,提供养料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the muscular walls of the heart.
+Dialogue: 0,0:48:34.21,0:48:35.68,*Default,NTP,0000,0000,0000,,既有流入也有流出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are inflows and outflows,
+Dialogue: 0,0:48:36.27,0:48:38.18,*Default,NTP,0000,0000,0000,,在这上面的是主动脉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know this is the aorta up here;
+Dialogue: 0,0:48:38.49,0:48:42.23,*Default,NTP,0000,0000,0000,,这是腔静脉  将血液带回到这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the vena cava which is bringing blood back down here.
+Dialogue: 0,0:48:42.87,0:48:44.51,*Default,NTP,0000,0000,0000,,心脏分为右侧和左侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The heart has a right side and a left side.
+Dialogue: 0,0:48:45.46,0:48:48.02,*Default,NTP,0000,0000,0000,,如果将心脏划分为右侧和左侧的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I divided it into the right side and the left side 
+Dialogue: 0,0:48:48.35,0:48:49.38,*Default,NTP,0000,0000,0000,,就可以在这里画出一条虚线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I could put a dotted line here,
+Dialogue: 0,0:48:49.76,0:48:53.07,*Default,NTP,0000,0000,0000,,左心室和左心房在线的这一侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the left ventricle and left atrium are on this side of the line
+Dialogue: 0,0:48:54.15,0:48:56.64,*Default,NTP,0000,0000,0000,,右心室和右心房在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the right ventricle and the right atrium are 
+Dialogue: 0,0:48:57.04,0:48:58.13,*Default,NTP,0000,0000,0000,,线的另一侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the other side of the line.
+Dialogue: 0,0:48:58.52,0:49:01.31,*Default,NTP,0000,0000,0000,,下节课我们会更详细地讲这些内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we'll see when we talk about this more next time,
+Dialogue: 0,0:49:01.56,0:49:04.84,*Default,NTP,0000,0000,0000,,心脏左侧的肌肉更丰富\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that the left side of the heart is more muscular 
+Dialogue: 0,0:49:05.26,0:49:07.44,*Default,NTP,0000,0000,0000,,并且比右侧略大一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and slightly larger than the right side of the heart,
+Dialogue: 0,0:49:07.96,0:49:09.45,*Default,NTP,0000,0000,0000,,尽管心脏两侧产生血流量相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though they're generating the same flow rate.
+Dialogue: 0,0:49:10.14,0:49:13.94,*Default,NTP,0000,0000,0000,,心脏左侧要略大一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The left side of the heart is larger.
+Dialogue: 0,0:49:17.45,0:49:19.66,*Default,NTP,0000,0000,0000,,如果我们把这幅图表述的更为简单\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we reduce this down to a simpler picture,
+Dialogue: 0,0:49:20.08,0:49:21.65,*Default,NTP,0000,0000,0000,,我们下次课就从这幅图开始讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is where I'm going to start next time
+Dialogue: 0,0:49:22.30,0:49:26.77,*Default,NTP,0000,0000,0000,,不用这张解剖图  而用这幅卡通图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and take out the anatomy and replace it with this cartoon,
+Dialogue: 0,0:49:27.68,0:49:29.57,*Default,NTP,0000,0000,0000,,你们就可以看到肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can see that there's a difference between 
+Dialogue: 0,0:49:30.00,0:49:31.35,*Default,NTP,0000,0000,0000,,在厚度上的差别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the thickness of the muscular walls.
+Dialogue: 0,0:49:31.87,0:49:35.12,*Default,NTP,0000,0000,0000,,心脏左侧的肌肉壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The muscular walls on the left side of the heart are slightly thicker
+Dialogue: 0,0:49:35.64,0:49:38.13,*Default,NTP,0000,0000,0000,,比心脏右侧的肌肉壁要略厚一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than the muscular walls on the right side of the heart.
+Dialogue: 0,0:49:38.39,0:49:39.25,*Default,NTP,0000,0000,0000,,在这张图上看不出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't see them in this diagram,
+Dialogue: 0,0:49:39.75,0:49:41.77,*Default,NTP,0000,0000,0000,,但如果看真正的心脏  就能看出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but if you looked at a real heart you would see that that's true.
+Dialogue: 0,0:49:42.54,0:49:44.61,*Default,NTP,0000,0000,0000,,心脏的左侧和右侧分别被分成两个区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The right and left side of the heart are divided into two chambers,
+Dialogue: 0,0:49:45.09,0:49:47.45,*Default,NTP,0000,0000,0000,,心房  心室  心房  心室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}atrium, ventricle, atrium, ventricle:
+Dialogue: 0,0:49:49.73,0:49:52.25,*Default,NTP,0000,0000,0000,,左心室  右心室  右心房  左心房\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}left ventricle, right ventricle, right atrium, left atrium.
+Dialogue: 0,0:49:53.26,0:49:56.18,*Default,NTP,0000,0000,0000,,血液的流入和流出由瓣膜控制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The inflows and the outflows are guarded by valves 
+Dialogue: 0,0:49:57.39,0:49:59.14,*Default,NTP,0000,0000,0000,,这里有四个重要的瓣膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there are four valves that are important here.
+Dialogue: 0,0:49:59.34,0:50:02.85,*Default,NTP,0000,0000,0000,,这个瓣膜就是图中这个软软的结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a valve which is shown by this sort of floppy structure here 
+Dialogue: 0,0:50:03.55,0:50:04.85,*Default,NTP,0000,0000,0000,,它位于左心房与左心室之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the left atrium and the left ventricle.
+Dialogue: 0,0:50:05.25,0:50:08.53,*Default,NTP,0000,0000,0000,,另一个瓣膜在左心室和主动脉之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's another valve between the left ventricle and the aorta.
+Dialogue: 0,0:50:10.15,0:50:10.90,*Default,NTP,0000,0000,0000,,另一侧也是一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Same thing on the other side,
+Dialogue: 0,0:50:11.22,0:50:14.33,*Default,NTP,0000,0000,0000,,右心房和右心室之间有一个瓣膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a valve between the right atrium and the right ventricle,
+Dialogue: 0,0:50:14.53,0:50:16.45,*Default,NTP,0000,0000,0000,,右心室和肺动脉之间也有一个瓣膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and between the right ventricle and the pulmonary artery.
+Dialogue: 0,0:50:17.33,0:50:18.63,*Default,NTP,0000,0000,0000,,下节课我们会讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we're going to talk about next time 
+Dialogue: 0,0:50:19.08,0:50:20.92,*Default,NTP,0000,0000,0000,,这些瓣膜的工作原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is how these valves function
+Dialogue: 0,0:50:21.45,0:50:24.61,*Default,NTP,0000,0000,0000,,如何将心脏做的功\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to convert the work that's done by the heart
+Dialogue: 0,0:50:25.98,0:50:29.22,*Default,NTP,0000,0000,0000,,转化为压力  驱动血液定向地流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in generating pressure into a directional flow.
+Dialogue: 0,0:50:30.31,0:50:31.91,*Default,NTP,0000,0000,0000,,这是我们下节课要讲的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what we'll start with next time.

@@ -1,0 +1,915 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.02,0:00:04.29,*Default,NTP,0000,0000,0000,,我们谈论了各种形式的政策制定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about different political outcomes.
+Dialogue: 0,0:00:04.30,0:00:10.06,*Default,NTP,0000,0000,0000,,长久以来  英国保持着君主立宪制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Over the long run, Great Britain remains a constitutional monarchy 
+Dialogue: 0,0:00:10.06,0:00:15.09,*Default,NTP,0000,0000,0000,,即使到了十九世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even in the nineteenth century,
+Dialogue: 0,0:00:15.09,0:00:18.82,*Default,NTP,0000,0000,0000,,当维多利亚女王获得无上荣耀的时候 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when Victoria had great prestige, 
+Dialogue: 0,0:00:18.82,0:00:21.61,*Default,NTP,0000,0000,0000,,她并没有获得太多权利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}she did not have great power.
+Dialogue: 0,0:00:21.65,0:00:26.44,*Default,NTP,0000,0000,0000,,荷兰抵制绝对统治的政体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Netherlands also resisted absolutism, 
+Dialogue: 0,0:00:26.44,0:00:28.94,*Default,NTP,0000,0000,0000,,保留了共合制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Dutch Republic remained the Dutch Republic;
+Dialogue: 0,0:00:28.94,0:00:30.83,*Default,NTP,0000,0000,0000,,然而  后面我们将说到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although, for reasons that we'll see later,
+Dialogue: 0,0:00:30.83,0:00:37.38,*Default,NTP,0000,0000,0000,,荷兰共和国在十八世纪没落了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Dutch Republic ceases to be a great power in the 18th century.
+Dialogue: 0,0:00:37.38,0:00:41.64,*Default,NTP,0000,0000,0000,,在选择政体时  当普鲁士  奥地利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Given the very different route that Prussia, Austria, 
+Dialogue: 0,0:00:41.64,0:00:43.96,*Default,NTP,0000,0000,0000,,俄国  瑞典  法国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Russia, Sweden and France 
+Dialogue: 0,0:00:43.96,0:00:49.18,*Default,NTP,0000,0000,0000,,都伴随着中央集权走上绝对主义国家的道路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}went with a centralization of absolute rule,
+Dialogue: 0,0:00:49.18,0:00:57.16,*Default,NTP,0000,0000,0000,,为什么英国和荷兰会如此与众不同呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why did it work out so differently for England/Britain and the Netherlands?
+Dialogue: 0,0:00:57.16,0:00:59.54,*Default,NTP,0000,0000,0000,,这是第二次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, this is the second and last 
+Dialogue: 0,0:00:59.54,0:01:01.48,*Default,NTP,0000,0000,0000,,也是最后一次以这样的形式讲课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and last of these sort of holding pattern lectures.
+Dialogue: 0,0:01:01.48,0:01:04.27,*Default,NTP,0000,0000,0000,,即课堂内容和阅读材料的内容完全一致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This parallels exactly what you are reading.
+Dialogue: 0,0:01:04.42,0:01:08.11,*Default,NTP,0000,0000,0000,,等我们都准备好之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, until we get our class set and all that,
+Dialogue: 0,0:01:08.11,0:01:15.55,*Default,NTP,0000,0000,0000,,下周一我们会开始一种新的上课形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then there will be a very different kind of lecture starting next Monday.
+Dialogue: 0,0:01:15.55,0:01:19.08,*Default,NTP,0000,0000,0000,,我们先来想想这些国家都有什么共同点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But let's just think out loud about what these places had in common,
+Dialogue: 0,0:01:19.08,0:01:22.94,*Default,NTP,0000,0000,0000,,我们又能从中发现这些对于早期欧洲的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what this tells you about social structure 
+Dialogue: 0,0:01:22.95,0:01:25.65,*Default,NTP,0000,0000,0000,,社会结构和政治成效又有着怎样的解读\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and political outcomes in early modern Europe.
+Dialogue: 0,0:01:25.65,0:01:30.35,*Default,NTP,0000,0000,0000,,当然  其他形式的政策也是汗牛充栋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, the consequences are enormous for other kinds of outcomes.
+Dialogue: 0,0:01:30.35,0:01:31.87,*Default,NTP,0000,0000,0000,,我举一个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me give you an example.
+Dialogue: 0,0:01:31.87,0:01:35.85,*Default,NTP,0000,0000,0000,,德国直到一八七一年才统一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Germany is not unified until 1871.
+Dialogue: 0,0:01:35.85,0:01:38.37,*Default,NTP,0000,0000,0000,,讽刺的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ironically,
+Dialogue: 0,0:01:38.38,0:01:42.16,*Default,NTP,0000,0000,0000,,宣布统一的地点选在了凡尔赛宫镜厅\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}unification proclaimed in the Hall of Mirrors at the Chateau of Versailles, 
+Dialogue: 0,0:01:42.17,0:01:45.03,*Default,NTP,0000,0000,0000,,这个地方马上我们会看到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we'll visit for a few seconds later on.
+Dialogue: 0,0:01:45.03,0:01:48.75,*Default,NTP,0000,0000,0000,,事实上德国的统一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The fact that German unification 
+Dialogue: 0,0:01:48.75,0:01:50.60,*Default,NTP,0000,0000,0000,,是普鲁士实现的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was achieved by Prussia and that Prussia 
+Dialogue: 0,0:01:50.60,0:01:52.40,*Default,NTP,0000,0000,0000,,而普鲁士由贵族所统治\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that Prussia was dominated by nobles,
+Dialogue: 0,0:01:52.40,0:01:55.40,*Default,NTP,0000,0000,0000,,即所谓的容克贵族  后面你会了解到  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who were called Junkers, you'll come to them later,
+Dialogue: 0,0:01:52.89,0:01:54.89,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[容克:德语意为地主之子  普鲁士贵族地主]
+Dialogue: 0,0:01:55.38,0:01:57.59,*Default,NTP,0000,0000,0000,,而他们的军队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and by an army which--
+Dialogue: 0,0:01:57.59,0:02:01.33,*Default,NTP,0000,0000,0000,,这个国家基本上就是依附于军队的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the state basically was an appendage of the army--
+Dialogue: 0,0:02:01.33,0:02:07.12,*Default,NTP,0000,0000,0000,,在十九世纪末  普鲁士的统一对欧洲有着广泛的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had rather enormous consequences for Europe in the late nineteenth 
+Dialogue: 0,0:02:07.12,0:02:09.96,*Default,NTP,0000,0000,0000,,在二十世纪  这种影响更加深远\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and above all in the twentieth century.
+Dialogue: 0,0:02:09.96,0:02:13.78,*Default,NTP,0000,0000,0000,,一九六零至一九七零年间人们非常关注 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the 1960s and 1970s people paid a lot more attention 
+Dialogue: 0,0:02:13.78,0:02:18.71,*Default,NTP,0000,0000,0000,,社会结构和阶级分析\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to social structure and class analysis.
+Dialogue: 0,0:02:18.71,0:02:23.53,*Default,NTP,0000,0000,0000,,但当你反观英国和荷兰共和国历史时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But when you look at the experience of Britain and the Dutch Republic,
+Dialogue: 0,0:02:23.53,0:02:25.64,*Default,NTP,0000,0000,0000,,会发现他们都有一些共同点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they do share things that,
+Dialogue: 0,0:02:25.64,0:02:29.56,*Default,NTP,0000,0000,0000,,在某种程度上  这些特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in a way, determine the kind of 
+Dialogue: 0,0:02:29.56,0:02:32.70,*Default,NTP,0000,0000,0000,,决定了他们所具有的政治经济的类型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}political economy that they would have.
+Dialogue: 0,0:02:32.71,0:02:34.38,*Default,NTP,0000,0000,0000,,这些特点是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are some of these things?
+Dialogue: 0,0:02:34.38,0:02:36.41,*Default,NTP,0000,0000,0000,,我已经在黑板上写出来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've written them on the board.
+Dialogue: 0,0:02:36.41,0:02:44.32,*Default,NTP,0000,0000,0000,,我们就按着这个顺序来讲并且发散我们的思维\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's just start in that order and think aloud.
+Dialogue: 0,0:02:44.32,0:02:47.06,*Default,NTP,0000,0000,0000,,接下来在这节课最后的二十到二十五分钟内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then what I'm going to do for the last twenty or twenty-five minutes 
+Dialogue: 0,0:02:47.06,0:02:48.67,*Default,NTP,0000,0000,0000,,我会讲些关于荷兰共和国的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is talk about the Dutch Republic.
+Dialogue: 0,0:02:48.68,0:02:50.68,*Default,NTP,0000,0000,0000,,你可以跳过这部分的阅读材料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can skip that part in the reading,
+Dialogue: 0,0:02:50.68,0:02:54.05,*Default,NTP,0000,0000,0000,,不是很长  并且还使用了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which isn't very long, and illustrate 
+Dialogue: 0,0:02:54.05,0:02:56.07,*Default,NTP,0000,0000,0000,,一些画作作为例证  你们不用太重视\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with some paintings, for which you are not responsible,
+Dialogue: 0,0:02:56.07,0:02:57.27,*Default,NTP,0000,0000,0000,,我只是想指出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but just to make the points 
+Dialogue: 0,0:02:57.28,0:03:01.05,*Default,NTP,0000,0000,0000,,一些荷兰共和国的特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to make about the nature of the Dutch Republic,
+Dialogue: 0,0:03:01.05,0:03:05.32,*Default,NTP,0000,0000,0000,,你会从中发现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in which you'll see ways in which it was very similar to
+Dialogue: 0,0:03:05.32,0:03:12.60,*Default,NTP,0000,0000,0000,,哪些与英国相似  哪些又与法国不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}England/Great Britain and very different in terms of France.
+Dialogue: 0,0:03:12.60,0:03:16.40,*Default,NTP,0000,0000,0000,,英国和荷兰共和国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First of all, it's not a coincidence 
+Dialogue: 0,0:03:16.40,0:03:19.84,*Default,NTP,0000,0000,0000,,以及北意大利的城邦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in both England and in the Dutch Republic you had,
+Dialogue: 0,0:03:19.84,0:03:23.69,*Default,NTP,0000,0000,0000,,拥有全欧洲比例最大的中产阶级人群  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}along with the city-states of Northern Italy,
+Dialogue: 0,0:03:23.70,0:03:29.46,*Default,NTP,0000,0000,0000,,这是有它的必然性的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you had the largest percentage of middle-class population that you could find in Europe.
+Dialogue: 0,0:03:29.46,0:03:33.28,*Default,NTP,0000,0000,0000,,而俄国的中产阶级  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The middle class in Russia, 
+Dialogue: 0,0:03:33.28,0:03:36.54,*Default,NTP,0000,0000,0000,,我会在下周一讲到  其所占比例微乎其微\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I'll talk about on Monday, was just absolutely miniscule.
+Dialogue: 0,0:03:36.74,0:03:41.03,*Default,NTP,0000,0000,0000,,在普鲁士  中产阶级也是小众群体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The middle class was extremely small in Prussia.
+Dialogue: 0,0:03:41.09,0:03:44.96,*Default,NTP,0000,0000,0000,,这里所说的普鲁士不包括汉萨同盟的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Prussia did not include the Hanseatic League cities,
+Dialogue: 0,0:03:44.96,0:03:49.19,*Default,NTP,0000,0000,0000,,如不来梅港市  汉堡等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as Bremen and Hamburg and the others.
+Dialogue: 0,0:03:49.19,0:03:58.37,*Default,NTP,0000,0000,0000,,荷兰和英国有数量惊人的中产阶级\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have in the Netherlands and in England an astonishingly large middle class.
+Dialogue: 0,0:03:58.63,0:04:02.90,*Default,NTP,0000,0000,0000,,不仅如此  在英国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Moreover, in the case of England,
+Dialogue: 0,0:04:02.90,0:04:07.52,*Default,NTP,0000,0000,0000,,精英阶层之间的流动非常频繁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was tremendous fluidity between elites.
+Dialogue: 0,0:04:07.69,0:04:10.84,*Default,NTP,0000,0000,0000,,在人群中贵族\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The percentage of the population who was noble,
+Dialogue: 0,0:04:11.01,0:04:14.76,*Default,NTP,0000,0000,0000,,或者有贵族头衔的人  其所占份额非常小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who had noble titles, was extremely small.
+Dialogue: 0,0:04:15.04,0:04:23.41,*Default,NTP,0000,0000,0000,,他们的特权来自于财富  而财富源于他们的领地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Privilege came from wealth and wealth stemmed from the land.
+Dialogue: 0,0:04:23.41,0:04:27.92,*Default,NTP,0000,0000,0000,,但是  随着英国在全球经济中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yet, because of the rapid and dramatic expansion 
+Dialogue: 0,0:04:27.92,0:04:30.99,*Default,NTP,0000,0000,0000,,所扮演的角色地位急剧提高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the English role in the global economy,
+Dialogue: 0,0:04:30.99,0:04:35.91,*Default,NTP,0000,0000,0000,,你会发现有很多英国富绅\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you had lots of very wealthy landlords,
+Dialogue: 0,0:04:35.95,0:04:39.26,*Default,NTP,0000,0000,0000,,地产业主去进行商业投资\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}property owners investing in commerce,
+Dialogue: 0,0:04:39.26,0:04:45.81,*Default,NTP,0000,0000,0000,,然而在西班牙  法国  尤其是普鲁士\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whereas in Spain and in France, and Prussia in particular,
+Dialogue: 0,0:04:45.81,0:04:53.01,*Default,NTP,0000,0000,0000,,贵族进行从商会被看作是变相的堕落\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was seen to be sort of slumming for nobles to participate in commerce.
+Dialogue: 0,0:04:53.01,0:04:58.96,*Default,NTP,0000,0000,0000,,马克思主义分析家给出这样的刻板形象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Marxist analysis has given us this all too rigid picture 
+Dialogue: 0,0:04:58.96,0:05:01.71,*Default,NTP,0000,0000,0000,,贵族整日游荡  无所事事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the nobility sort of letting their nails grow long,
+Dialogue: 0,0:05:01.71,0:05:04.48,*Default,NTP,0000,0000,0000,,"他们是贵族所以他们什么都不做"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"They are nobles because they do nothing."
+Dialogue: 0,0:05:04.48,0:05:05.38,*Default,NTP,0000,0000,0000,,这是部分原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was part of it.
+Dialogue: 0,0:05:05.38,0:05:10.74,*Default,NTP,0000,0000,0000,,当然也有法国贵族在波尔多经营葡萄园\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Certainly there were nobles in France who bought up vineyards around Bordeaux.
+Dialogue: 0,0:05:10.74,0:05:16.96,*Default,NTP,0000,0000,0000,,在图卢兹投资商业化农业\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are nobles around Toulouse who have invested in commercial agriculture.
+Dialogue: 0,0:05:16.96,0:05:22.71,*Default,NTP,0000,0000,0000,,但是只有英国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But yet the fact remains that it's really in England 
+Dialogue: 0,0:05:22.71,0:05:26.91,*Default,NTP,0000,0000,0000,,存在这种精英人群之间的流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you have this tremendous fluidity within the elite,
+Dialogue: 0,0:05:27.18,0:05:32.68,*Default,NTP,0000,0000,0000,,并且商业资金和财产资金\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that basically commercial money talks 
+Dialogue: 0,0:05:32.68,0:05:37.01,*Default,NTP,0000,0000,0000,,是没有贵贱之分的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as much as propertied money talks.
+Dialogue: 0,0:05:37.01,0:05:41.08,*Default,NTP,0000,0000,0000,,伦敦  早在十六世纪后期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}London, already by the late sixteenth century,
+Dialogue: 0,0:05:41.08,0:05:42.07,*Default,NTP,0000,0000,0000,,六分之一的人口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one-sixth of all the people, 
+Dialogue: 0,0:05:42.07,0:05:45.19,*Default,NTP,0000,0000,0000,,我想是E.A莱格力很久以前给出的这个数据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think this is E.A. Wrigley
+Dialogue: 0,0:05:45.19,0:05:48.63,*Default,NTP,0000,0000,0000,,他指出  当时有六分之一的英国人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who pointed this out a long time ago--one-sixth of all the people in England 
+Dialogue: 0,0:05:48.63,0:05:50.36,*Default,NTP,0000,0000,0000,,会经常去伦敦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}went to London frequently,
+Dialogue: 0,0:05:52.29,0:05:57.00,*Default,NTP,0000,0000,0000,,因为伦敦当时是个巨型城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because London was absolutely gigantic as a city.
+Dialogue: 0,0:05:57.00,0:05:58.67,*Default,NTP,0000,0000,0000,,欧洲唯一可以与之匹敌的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The only cities in Europe that were comparable--
+Dialogue: 0,0:05:58.67,0:06:00.65,*Default,NTP,0000,0000,0000,,就是稍小的那不勒斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they were smaller--were Naples,
+Dialogue: 0,0:06:00.65,0:06:02.61,*Default,NTP,0000,0000,0000,,那是个非常穷的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an extraordinarily poor city,
+Dialogue: 0,0:06:02.61,0:06:05.72,*Default,NTP,0000,0000,0000,,另外还有君士坦丁堡即伊斯坦布尔  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Constantinople, Istanbul, 
+Dialogue: 0,0:06:05.72,0:06:07.53,*Default,NTP,0000,0000,0000,,当然还有日本的江户\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and, of course, in Japan, Edo, 
+Dialogue: 0,0:06:08.22,0:06:11.92,*Default,NTP,0000,0000,0000,,即之后的东京\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which would become known as Tokyo.
+Dialogue: 0,0:06:11.92,0:06:14.57,*Default,NTP,0000,0000,0000,,在英国人中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The percentage of the English population 
+Dialogue: 0,0:06:14.58,0:06:18.49,*Default,NTP,0000,0000,0000,,自认为是中产阶级的人群占了很大比例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would have considered themselves to be middle class is extraordinarily large.
+Dialogue: 0,0:06:18.56,0:06:22.38,*Default,NTP,0000,0000,0000,,在荷兰更是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same is even more true in the Netherlands.
+Dialogue: 0,0:06:22.38,0:06:25.49,*Default,NTP,0000,0000,0000,,荷兰的贵族\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were, to be sure, nobles in the Netherlands.
+Dialogue: 0,0:06:25.50,0:06:31.46,*Default,NTP,0000,0000,0000,,倾向于居住在荷兰东部乡村和南部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They tended to live in the eastern part in rural netherlands and in the south.
+Dialogue: 0,0:06:31.46,0:06:35.33,*Default,NTP,0000,0000,0000,,但是他们的生活方式和利益\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But their lives and interests were far, far away 
+Dialogue: 0,0:06:35.33,0:06:38.83,*Default,NTP,0000,0000,0000,,与机器大生产的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from that economic large machine, 
+Dialogue: 0,0:06:38.83,0:06:41.98,*Default,NTP,0000,0000,0000,,阿姆斯特丹相去甚远\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was Amsterdam.
+Dialogue: 0,0:06:41.98,0:06:45.41,*Default,NTP,0000,0000,0000,,阿姆斯特丹充斥着中产阶级\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Amsterdam is dominated by the middle classes.
+Dialogue: 0,0:06:45.41,0:06:48.06,*Default,NTP,0000,0000,0000,,当时中产阶级想获得政治权利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the middle class want political rights.
+Dialogue: 0,0:06:48.06,0:06:49.14,*Default,NTP,0000,0000,0000,,他们想要特权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They want prerogatives.
+Dialogue: 0,0:06:49.14,0:06:51.22,*Default,NTP,0000,0000,0000,,属于他们自己的特权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They want their privileges for themselves.
+Dialogue: 0,0:06:52.83,0:06:58.58,*Default,NTP,0000,0000,0000,,而另一方面  英国的无头衔人群\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It is fair to argue that non-titled people in England 
+Dialogue: 0,0:06:58.68,0:07:00.95,*Default,NTP,0000,0000,0000,,在议会的内战中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were at the forefront 
+Dialogue: 0,0:07:00.95,0:07:07.96,*Default,NTP,0000,0000,0000,,站在了胜利的一方也无可厚非\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the victorious role in the civil war that parliament played.
+Dialogue: 0,0:07:07.96,0:07:11.22,*Default,NTP,0000,0000,0000,,在威尼斯城邦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the city-states of Venice,
+Dialogue: 0,0:07:11.22,0:07:15.56,*Default,NTP,0000,0000,0000,,这个曾以贸易为主的城市已经走向衰落 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was a major trading city already on the decline,
+Dialogue: 0,0:07:15.56,0:07:17.79,*Default,NTP,0000,0000,0000,,而佛罗伦萨  米兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in Florence, and in Milan,
+Dialogue: 0,0:07:17.79,0:07:21.93,*Default,NTP,0000,0000,0000,,都灵  类似的这些城市情况都是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in Turin, and in places like that you find something very comparable, 
+Dialogue: 0,0:07:21.94,0:07:25.54,*Default,NTP,0000,0000,0000,,除了十九世纪六十年代才统一的意大利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but Italy is not united until the 1860s.
+Dialogue: 0,0:07:26.01,0:07:31.50,*Default,NTP,0000,0000,0000,,意大利北部有很大比例的中产阶级\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Northern Italy has a large percentage of the population who are middle class.
+Dialogue: 0,0:07:31.50,0:07:34.76,*Default,NTP,0000,0000,0000,,所以说当谈到各地区的政策制定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But in talking about the political outcomes of states,
+Dialogue: 0,0:07:34.76,0:07:38.72,*Default,NTP,0000,0000,0000,,我们现在所说的并不适合评价它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that doesn't really fit into our analysis here.
+Dialogue: 0,0:07:38.73,0:07:43.79,*Default,NTP,0000,0000,0000,,部分原因是因为和意大利北部一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Part of that is that along with Northern Italy,
+Dialogue: 0,0:07:43.80,0:07:49.50,*Default,NTP,0000,0000,0000,,荷兰和英国拥有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Netherlands and England/Great Britain have,
+Dialogue: 0,0:07:49.50,0:07:55.63,*Default,NTP,0000,0000,0000,,欧洲到目前为止最城市化的人群\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by far, the most urbanized population in Europe.
+Dialogue: 0,0:07:55.64,0:07:57.56,*Default,NTP,0000,0000,0000,,如果你到了现在的塞尔维亚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you go into what now is Serbia, 
+Dialogue: 0,0:07:57.56,0:07:59.72,*Default,NTP,0000,0000,0000,,那里基本上就是以前的贝尔格莱德  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there basically was Belgrade, 
+Dialogue: 0,0:07:59.72,0:08:01.41,*Default,NTP,0000,0000,0000,,这是一个很小的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was a small place.
+Dialogue: 0,0:08:01.41,0:08:05.00,*Default,NTP,0000,0000,0000,,波兰也有生机勃勃的重要城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Poland had very lively, important cities,
+Dialogue: 0,0:08:05.60,0:08:11.66,*Default,NTP,0000,0000,0000,,包括华沙  克拉科夫以及格但斯克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Warsaw and Krakow, and Gdańsk as well.
+Dialogue: 0,0:08:11.67,0:08:15.64,*Default,NTP,0000,0000,0000,,你不能说  "欧洲东部没有城市 "\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't just say, "In Eastern Europe there weren't cities," 
+Dialogue: 0,0:08:15.64,0:08:18.64,*Default,NTP,0000,0000,0000,,但是包括法国在内  没有任何地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there isn't any place,including France,
+Dialogue: 0,0:08:18.93,0:08:23.02,*Default,NTP,0000,0000,0000,,拥有像英国与荷兰那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that had a remotely as high a percentage of the population living in cities 
+Dialogue: 0,0:08:23.02,0:08:27.75,*Default,NTP,0000,0000,0000,,庞大的城市人口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as England and the Netherlands.
+Dialogue: 0,0:08:27.75,0:08:30.79,*Default,NTP,0000,0000,0000,,英国历史进程的重大转折之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the great shifts in English/British history 
+Dialogue: 0,0:08:30.80,0:08:36.44,*Default,NTP,0000,0000,0000,,就是在英国南北部之间的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you will become aware of is the shift of economic dynamism 
+Dialogue: 0,0:08:36.44,0:08:40.20,*Default,NTP,0000,0000,0000,,经济活力的改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in England away from the south to the north.
+Dialogue: 0,0:08:40.20,0:08:43.22,*Default,NTP,0000,0000,0000,,我们这节课的起始年代  即十七世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the time we're starting this course in the seventeenth century, 
+Dialogue: 0,0:08:43.22,0:08:45.91,*Default,NTP,0000,0000,0000,,除了伦敦这个巨型的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}besides London, which is this gigantic place,
+Dialogue: 0,0:08:45.91,0:08:49.34,*Default,NTP,0000,0000,0000,,英国最大的城市是诺里奇和埃克塞特\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the biggest cities in England were Norwich and Exeter,
+Dialogue: 0,0:08:49.34,0:08:51.47,*Default,NTP,0000,0000,0000,,以及北部的约克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and York in the north.
+Dialogue: 0,0:08:51.47,0:08:54.36,*Default,NTP,0000,0000,0000,,当然  随着大规模的工业化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, with large-scale industrialization,
+Dialogue: 0,0:08:54.36,0:08:57.83,*Default,NTP,0000,0000,0000,,在十八世纪中期的兴起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which begins in the middle of the eighteenth century,
+Dialogue: 0,0:08:57.83,0:09:00.49,*Default,NTP,0000,0000,0000,,你会发现北方的戏剧性转变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll see this dramatic shift up to the north.
+Dialogue: 0,0:09:00.49,0:09:04.68,*Default,NTP,0000,0000,0000,,曼彻斯特从一个小镇变成了庞大的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Manchester, which was a small town, becomes this enormous city, 
+Dialogue: 0,0:09:04.69,0:09:06.88,*Default,NTP,0000,0000,0000,,而利物浦更成为了一方重镇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Liverpool becomes ever more important.
+Dialogue: 0,0:09:06.89,0:09:09.97,*Default,NTP,0000,0000,0000,,城市变成了中产阶级生活的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cities are where the middle class lives.
+Dialogue: 0,0:09:09.97,0:09:13.84,*Default,NTP,0000,0000,0000,,中产阶级和市民  正如我上次所讲的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bourgeois and burghers, as I said last time,
+Dialogue: 0,0:09:13.84,0:09:18.11,*Default,NTP,0000,0000,0000,,这些城市居民是那些在欧洲大陆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are urban residents who are losing their privileges 
+Dialogue: 0,0:09:18.11,0:09:20.64,*Default,NTP,0000,0000,0000,,被绝对主义国家剥夺权利的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the continent to big-time absolute states.
+Dialogue: 0,0:09:22.04,0:09:24.51,*Default,NTP,0000,0000,0000,,他们奔走呼号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They will defend, quite vociferously,
+Dialogue: 0,0:09:24.51,0:09:29.75,*Default,NTP,0000,0000,0000,,捍卫自己的权利  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}their privileges as townspeople against 
+Dialogue: 0,0:09:29.75,0:09:34.31,*Default,NTP,0000,0000,0000,,以城里人身份去反对贵族的专制野心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}absolutist pretensions of nobles,
+Dialogue: 0,0:09:34.31,0:09:36.65,*Default,NTP,0000,0000,0000,,而在荷兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the case of the Netherlands and also,
+Dialogue: 0,0:09:36.65,0:09:39.18,*Default,NTP,0000,0000,0000,,某种程度上  同英国是一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to an extent, in England as well.
+Dialogue: 0,0:09:39.18,0:09:41.98,*Default,NTP,0000,0000,0000,,这是他们两国的共同点  但也不是说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They share those things in common, which is not to say that
+Dialogue: 0,0:09:41.98,0:09:44.54,*Default,NTP,0000,0000,0000,,像法国这样的国家没有城市化  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a country like France wasn't urbanized. 
+Dialogue: 0,0:09:44.54,0:09:47.21,*Default,NTP,0000,0000,0000,,巴黎已经很庞大了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Paris is already enormous.
+Dialogue: 0,0:09:47.22,0:09:50.98,*Default,NTP,0000,0000,0000,,法国革命时期大约有五十万人居住在那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are about 500,000 people at the time of the French revolution.
+Dialogue: 0,0:09:50.98,0:09:53.63,*Default,NTP,0000,0000,0000,,同时还有很多无从考证的贫困人口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are so many people you can't count, because they own nothing.
+Dialogue: 0,0:09:53.63,0:09:55.92,*Default,NTP,0000,0000,0000,,况且  直到十九世纪我们才有了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Also, we don't have accurate censuses 
+Dialogue: 0,0:09:55.92,0:09:58.01,*Default,NTP,0000,0000,0000,,精确的人口普查\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until the 19th century.
+Dialogue: 0,0:09:58.01,0:09:59.60,*Default,NTP,0000,0000,0000,,我认为  第一次精确的人口普查  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The first accurate census, I think, 
+Dialogue: 0,0:09:59.60,0:10:04.05,*Default,NTP,0000,0000,0000,,是在十八世纪末的哥本哈根\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is in Copenhagen at the end of the eighteenth century.
+Dialogue: 0,0:10:04.05,0:10:06.34,*Default,NTP,0000,0000,0000,,顺便提一下  大多数人口普查\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most censuses were taken, by the way, 
+Dialogue: 0,0:10:06.34,0:10:08.17,*Default,NTP,0000,0000,0000,,都采用数人头的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a way of counting heads,
+Dialogue: 0,0:10:08.17,0:10:11.17,*Default,NTP,0000,0000,0000,,即在围城期间统计需要给养多少人口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the number of people who had to be fed at the time of a siege.
+Dialogue: 0,0:10:11.37,0:10:13.54,*Default,NTP,0000,0000,0000,,而我们对于这样得到的人口数据的准确性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're kind of guessing on these 
+Dialogue: 0,0:10:13.54,0:10:14.72,*Default,NTP,0000,0000,0000,,仍表示怀疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}population figures.
+Dialogue: 0,0:10:16.67,0:10:22.77,*Default,NTP,0000,0000,0000,,荷兰和英国在城市化程度方面很相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The fact remains that the Netherlands and England/Britain share this.
+Dialogue: 0,0:10:22.77,0:10:26.65,*Default,NTP,0000,0000,0000,,这对于政策制定非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is important in terms of political outcomes,
+Dialogue: 0,0:10:26.65,0:10:29.58,*Default,NTP,0000,0000,0000,,它的重要性还体现在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and also important in the case of England/Britain 
+Dialogue: 0,0:10:29.58,0:10:34.17,*Default,NTP,0000,0000,0000,,我们所说的在英国发生的工业革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in what we've come to call the Industrial Revolution,
+Dialogue: 0,0:10:34.17,0:10:37.42,*Default,NTP,0000,0000,0000,,我们以后会继续讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I will talk about at another time.
+Dialogue: 0,0:10:37.66,0:10:40.55,*Default,NTP,0000,0000,0000,,其次  正如我曾讲过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Secondly, as I tried to suggest the other day,
+Dialogue: 0,0:10:40.57,0:10:46.12,*Default,NTP,0000,0000,0000,,这些地方反对绝对主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these places resist absolutism.
+Dialogue: 0,0:10:46.15,0:10:49.59,*Default,NTP,0000,0000,0000,,英国内战是这种普遍进程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The English Civil War, it's kind of a generalization
+Dialogue: 0,0:10:49.59,0:10:53.36,*Default,NTP,0000,0000,0000,,得到深化的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to underline that too much, but nonetheless
+Dialogue: 0,0:10:53.73,0:10:58.06,*Default,NTP,0000,0000,0000,,尽管如此  在一六四零年前后  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but nonetheless,people living in England in the 1640s 
+Dialogue: 0,0:10:58.06,0:11:00.21,*Default,NTP,0000,0000,0000,,英国人还是认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}saw that there was a real threat 
+Dialogue: 0,0:11:00.21,0:11:04.56,*Default,NTP,0000,0000,0000,,对"生而自由"的理念真正产生威胁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the idea of the freeborn Englishman that was
+Dialogue: 0,0:11:04.56,0:11:10.61,*Default,NTP,0000,0000,0000,,是对于他们长期拥有的权利的践踏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}coming from the trampling of long-assumed rights,
+Dialogue: 0,0:11:10.61,0:11:12.33,*Default,NTP,0000,0000,0000,,这至少从十三世纪就开始了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}since at least the thirteenth century,
+Dialogue: 0,0:11:12.33,0:11:19.71,*Default,NTP,0000,0000,0000,,在人们想象中  国王想要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in the imagination of people by kings 
+Dialogue: 0,0:11:19.72,0:11:24.17,*Default,NTP,0000,0000,0000,,国王想要免除议会拥有的权利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who wanted to dispense with the rights of parliament 
+Dialogue: 0,0:11:25.20,0:11:27.11,*Default,NTP,0000,0000,0000,,好扫清统治的障碍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and run things as they wanted to.
+Dialogue: 0,0:11:27.11,0:11:31.07,*Default,NTP,0000,0000,0000,,在荷兰  也是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of the Netherlands, it's the same thing.
+Dialogue: 0,0:11:31.75,0:11:34.67,*Default,NTP,0000,0000,0000,,虽然荷兰没有英国内战一般充满戏剧性的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There isn't anything as dramatic as the English Civil War, 
+Dialogue: 0,0:11:34.67,0:11:36.59,*Default,NTP,0000,0000,0000,,但是这严重的现状  ［指统治者尝试废除议会］\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the important outcome is that 
+Dialogue: 0,0:11:36.59,0:11:41.14,*Default,NTP,0000,0000,0000,,最终导致一个联邦分权制结构的形成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the end this decentralized federalist structure, 
+Dialogue: 0,0:11:41.14,0:11:42.66,*Default,NTP,0000,0000,0000,,我在书中提到了这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I describe in the book
+Dialogue: 0,0:11:42.66,0:11:44.22,*Default,NTP,0000,0000,0000,,一会儿我们也将谈到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk a little bit about in a while,
+Dialogue: 0,0:11:44.22,0:11:47.87,*Default,NTP,0000,0000,0000,,那个有专制野心的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is victorious over the pretensions of a potential
+Dialogue: 0,0:11:47.87,0:11:51.77,*Default,NTP,0000,0000,0000,,荷兰橙色王室  最终被战胜而垮台\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}dynastic ruling house, that is the Orange House,
+Dialogue: 0,0:11:47.87,0:11:51.77,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[橙色王室:荷兰王室以橙色为标志]
+Dialogue: 0,0:11:52.02,0:11:57.34,*Default,NTP,0000,0000,0000,,荷兰王室想要把\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the House of Orange, who wanted to make the chief Dutch official, 
+Dialogue: 0,0:11:57.34,0:11:58.92,*Default,NTP,0000,0000,0000,,被称为执政的荷兰官方领导...\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who was called the Stadtholder-- 
+Dialogue: 0,0:11:58.92,0:12:04.16,*Default,NTP,0000,0000,0000,,你们会在书中读到--想要把他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can read that in the book--and wanted to turn that person 
+Dialogue: 0,0:12:04.16,0:12:06.56,*Default,NTP,0000,0000,0000,,变为让人耳目一新的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into kind of a thundering,
+Dialogue: 0,0:12:06.56,0:12:08.93,*Default,NTP,0000,0000,0000,,半绝对统治的君主\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}semi-absolutist monarch.
+Dialogue: 0,0:12:08.93,0:12:10.99,*Default,NTP,0000,0000,0000,,然而也没有成功\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That doesn't work as well.
+Dialogue: 0,0:12:10.99,0:12:14.25,*Default,NTP,0000,0000,0000,,荷兰的起源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you think of the origins of the Netherlands,
+Dialogue: 0,0:12:14.25,0:12:20.74,*Default,NTP,0000,0000,0000,,来自于内战  或者说是一场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it comes from a civil war, or a war of independence
+Dialogue: 0,0:12:20.74,0:12:23.61,*Default,NTP,0000,0000,0000,,对于西班牙这个绝对统治国家的独立战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}against the Spanish absolutist state,
+Dialogue: 0,0:12:23.61,0:12:26.56,*Default,NTP,0000,0000,0000,,独立战争从一五七二年开始  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that begins in 1572 and goes on 
+Dialogue: 0,0:12:26.56,0:12:30.95,*Default,NTP,0000,0000,0000,,断断续续直到荷兰独立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and off all the time  until Dutch independence is recognized--
+Dialogue: 0,0:12:30.95,0:12:32.63,*Default,NTP,0000,0000,0000,,荷兰的独立成为既定事实的很长一段时间之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was a fait accompli for a long time, 
+Dialogue: 0,0:12:32.63,0:12:35.16,*Default,NTP,0000,0000,0000,,直到一六四八年《威斯特伐利亚条约》签订时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but until the Dutch independence was recognized 
+Dialogue: 0,0:12:35.19,0:12:39.50,*Default,NTP,0000,0000,0000,,荷兰才正式被承认独立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in 1648 at the Treaty of Westphalia.
+Dialogue: 0,0:12:39.68,0:12:43.60,*Default,NTP,0000,0000,0000,,对于荷兰人而言  当他们联想到恐怖的情景时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For the Dutch when they imagine scary things,
+Dialogue: 0,0:12:43.60,0:12:50.70,*Default,NTP,0000,0000,0000,,这其中之一就是西班牙国王的军队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a scary thing is an army sent by the king of Spain 
+Dialogue: 0,0:12:50.70,0:12:55.62,*Default,NTP,0000,0000,0000,,对这个西班牙曾经最富有的行省横征暴敛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to extract by the king of Spain to extract more taxes from the wealthiest 
+Dialogue: 0,0:12:55.62,0:13:00.02,*Default,NTP,0000,0000,0000,,荷兰能如此富有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of all the Spanish provinces--that is, the Netherlands--
+Dialogue: 0,0:13:00.02,0:13:02.10,*Default,NTP,0000,0000,0000,,除了因为商业  还有就是  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}rich because of commerce and, 
+Dialogue: 0,0:13:02.10,0:13:03.21,*Default,NTP,0000,0000,0000,,我们一会儿会说到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as we'll see in a minute,
+Dialogue: 0,0:13:03.21,0:13:07.63,*Default,NTP,0000,0000,0000,,强迫保持下来的基督徒信仰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to try to force people to remain Catholics at a time 
+Dialogue: 0,0:13:07.63,0:13:09.98,*Default,NTP,0000,0000,0000,,当时  大多数荷兰人口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when the vast majority of the Dutch population 
+Dialogue: 0,0:13:09.98,0:13:13.24,*Default,NTP,0000,0000,0000,,都开始转为加尔文主义者  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had converted to Calvinism.
+Dialogue: 0,0:13:15.16,0:13:17.35,*Default,NTP,0000,0000,0000,,那些支持荷兰共和国的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those people who believed in the Dutch Republic,
+Dialogue: 0,0:13:17.35,0:13:19.54,*Default,NTP,0000,0000,0000,,占了大多数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was the vast majority of the people,
+Dialogue: 0,0:13:20.01,0:13:23.27,*Default,NTP,0000,0000,0000,,这些人和大多数力主议会权力的英国人一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}just as the majority of the population of England 
+Dialogue: 0,0:13:23.27,0:13:25.39,*Default,NTP,0000,0000,0000,,总是恐惧地假定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}held to of England held to the rights of parliament 
+Dialogue: 0,0:13:25.40,0:13:30.87,*Default,NTP,0000,0000,0000,,他们的权利正受到侵害和践踏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they have this scary scenario of their rights being violated, trampled upon,
+Dialogue: 0,0:13:30.87,0:13:36.08,*Default,NTP,0000,0000,0000,,会被精通权术的专制统治者完全剥夺\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}destroyed, eliminated, eradicated by big-time absolute rulers.
+Dialogue: 0,0:13:36.08,0:13:38.71,*Default,NTP,0000,0000,0000,,另一个令荷兰人害怕的情形就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other scary thing for the Dutch is, of course,
+Dialogue: 0,0:13:38.79,0:13:41.37,*Default,NTP,0000,0000,0000,,南部势力的狼子野心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the big guy down south.
+Dialogue: 0,0:13:43.20,0:13:47.65,*Default,NTP,0000,0000,0000,,路易十四很想要占领整个荷兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Louis XIV would love to control all of the Netherlands.
+Dialogue: 0,0:13:47.65,0:13:50.99,*Default,NTP,0000,0000,0000,,他的入侵曾一度被击退  因为荷兰人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His invasions at one time are turned back when they literally
+Dialogue: 0,0:13:50.99,0:13:54.27,*Default,NTP,0000,0000,0000,,真的"开闸泄洪"  大水把法军淹得够呛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}open the dykes and flood the French armies back.
+Dialogue: 0,0:13:56.03,0:14:00.40,*Default,NTP,0000,0000,0000,,在心理层面上  荷兰人和英国人 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the mental construction of the Dutch and the English 
+Dialogue: 0,0:14:00.41,0:14:02.27,*Default,NTP,0000,0000,0000,,都不希望这件事的发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}both involves one thing they don't want to be.
+Dialogue: 0,0:14:02.27,0:14:04.23,*Default,NTP,0000,0000,0000,,那就是失去他们的特权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is to lose their prerogatives,
+Dialogue: 0,0:14:04.23,0:14:06.53,*Default,NTP,0000,0000,0000,,在一个绝对统治里所拥有的权力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}their rights to an absolute state.
+Dialogue: 0,0:14:06.53,0:14:08.23,*Default,NTP,0000,0000,0000,,在这两个国家中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In both cases, 
+Dialogue: 0,0:14:08.23,0:14:11.63,*Default,NTP,0000,0000,0000,,这点是他们身份认同感中很重要的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this becomes part of their self-identity. That's an essential part 
+Dialogue: 0,0:14:11.63,0:14:14.02,*Default,NTP,0000,0000,0000,,如同我的好朋友  琳达·科里  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as my good friend, Linda Colley, 
+Dialogue: 0,0:14:14.02,0:14:16.87,*Default,NTP,0000,0000,0000,,她以前是这里的老师  很遗憾现在不在耶鲁了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who used to teach here and sadly is not here anymore.
+Dialogue: 0,0:14:16.87,0:14:18.13,*Default,NTP,0000,0000,0000,,她目前在普林斯顿大学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}She's at Princeton.
+Dialogue: 0,0:14:18.13,0:14:23.09,*Default,NTP,0000,0000,0000,,她曾写过一本很成功的著作叫作《大不列颠人》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}She made an argument in her very successful book called Britons,
+Dialogue: 0,0:14:23.09,0:14:26.89,*Default,NTP,0000,0000,0000,,在其中她探讨了英国人民族认同感的形成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the construction of British identity.
+Dialogue: 0,0:14:26.89,0:14:29.55,*Default,NTP,0000,0000,0000,,我在一会儿的课程中会说到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I will argue later in the course,
+Dialogue: 0,0:14:29.55,0:14:30.39,*Default,NTP,0000,0000,0000,,在一八四八年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in 1848 
+Dialogue: 0,0:14:30.39,0:14:35.30,*Default,NTP,0000,0000,0000,,英国人不得不再设置另一个假想敌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has to get reinvented again by imagining an other,
+Dialogue: 0,0:14:35.48,0:14:38.22,*Default,NTP,0000,0000,0000,,这个假想敌诡诈又危险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who is perceived as sneaky and dangerous,
+Dialogue: 0,0:14:38.22,0:14:40.09,*Default,NTP,0000,0000,0000,,很自然地法国就扮演了这个角色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and of course in that case it's the French,
+Dialogue: 0,0:14:40.09,0:14:42.29,*Default,NTP,0000,0000,0000,,但是在英国人看来  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but also the point of view of the British 
+Dialogue: 0,0:14:42.29,0:14:46.62,*Default,NTP,0000,0000,0000,,爱尔兰人是另一个能作为假想敌的对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Irish, who are conceived of as being capable 
+Dialogue: 0,0:14:46.67,0:14:48.35,*Default,NTP,0000,0000,0000,,因为他们曾表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of their quest 
+Dialogue: 0,0:14:48.51,0:14:51.08,*Default,NTP,0000,0000,0000,,"我不想成为英国人的蹂躏对象  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I don't want to be trampled by the English, 
+Dialogue: 0,0:14:51.30,0:14:53.19,*Default,NTP,0000,0000,0000,,尤其是英国的新教徒"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}especially by English Protestants"-- 
+Dialogue: 0,0:14:53.42,0:14:56.79,*Default,NTP,0000,0000,0000,,这就表明他们极有可能跟法国人勾结\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of hooking up with France,
+Dialogue: 0,0:14:56.79,0:15:00.84,*Default,NTP,0000,0000,0000,,在一七八九年他们也真的这样尝试了  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which they tried to do in 1798, 
+Dialogue: 0,0:15:00.84,0:15:03.26,*Default,NTP,0000,0000,0000,,而在一战时还跟德国勾结\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or in World War I with Germany,
+Dialogue: 0,0:15:03.38,0:15:05.85,*Default,NTP,0000,0000,0000,,因为有部分德国人试图促进\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because there were some attempts by the Germans 
+Dialogue: 0,0:15:05.85,0:15:07.97,*Default,NTP,0000,0000,0000,,爱尔兰的独立进程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to stoke up Irish independence movements.
+Dialogue: 0,0:15:07.97,0:15:09.00,*Default,NTP,0000,0000,0000,,回到主题上来  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, 
+Dialogue: 0,0:15:09.00,0:15:09.56,*Default,NTP,0000,0000,0000,,现在唯一的关键点就在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the only point here is that 
+Dialogue: 0,0:15:09.56,0:15:12.31,*Default,NTP,0000,0000,0000,,英国人把自己当做反绝对主义份子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they see themselves as anti-absolutists.
+Dialogue: 0,0:15:12.31,0:15:14.96,*Default,NTP,0000,0000,0000,,而这帮助他们建立了民族认同感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This helps them create this sense of identity,
+Dialogue: 0,0:15:14.96,0:15:19.17,*Default,NTP,0000,0000,0000,,同时也决定了他们的政治性质的起源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which helps determine their political origins.
+Dialogue: 0,0:15:19.18,0:15:21.84,*Default,NTP,0000,0000,0000,,而你在俄国却找不到类似的方式 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'll find nothing comparable in Russia, 
+Dialogue: 0,0:15:21.84,0:15:23.18,*Default,NTP,0000,0000,0000,,很显然我在讲到普鲁士或法国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}obviously which I'll come back and talk about, 
+Dialogue: 0,0:15:23.18,0:15:25.06,*Default,NTP,0000,0000,0000,,那章时也将回顾并谈到这一问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or in Prussia, or in France.
+Dialogue: 0,0:15:25.06,0:15:27.48,*Default,NTP,0000,0000,0000,,你也可以畅谈在十八世纪中叶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can talk about the origins of French nationalism
+Dialogue: 0,0:15:27.48,0:15:29.47,*Default,NTP,0000,0000,0000,,法国民族主义的起源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the middle of the eighteenth century,
+Dialogue: 0,0:15:29.47,0:15:33.05,*Default,NTP,0000,0000,0000,,但是它和法国王朝制联系很紧密\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's very closely tied to this dynasty,
+Dialogue: 0,0:15:33.05,0:15:34.18,*Default,NTP,0000,0000,0000,,至少直到一七九三年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least until 
+Dialogue: 0,0:15:34.19,0:15:37.41,*Default,NTP,0000,0000,0000,,那个家伙[译注:指路易十六]被砍头前都如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they lop off the guy's head in 1793.
+Dialogue: 0,0:15:37.41,0:15:40.56,*Default,NTP,0000,0000,0000,,所以  这是关键\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, that's that point.
+Dialogue: 0,0:15:41.68,0:15:46.53,*Default,NTP,0000,0000,0000,,第三点是分权制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Third is decentralization.
+Dialogue: 0,0:15:47.18,0:15:51.21,*Default,NTP,0000,0000,0000,,两个国家都是分权制政体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Both of these states are decentralized states.
+Dialogue: 0,0:15:51.22,0:15:56.29,*Default,NTP,0000,0000,0000,,英国在一八二七年才有警力武装\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The British don't have a police force until 1827 or 1829,
+Dialogue: 0,0:15:56.29,0:15:57.40,*Default,NTP,0000,0000,0000,,或者是一八二九年  记不清是哪个了  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't remember which, 
+Dialogue: 0,0:15:57.40,0:15:59.52,*Default,NTP,0000,0000,0000,,罗伯特·皮尔创建了第一个伦敦警局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when Robert Peale creates a London police force 
+Dialogue: 0,0:15:59.52,0:16:00.92,*Default,NTP,0000,0000,0000,,叫做博比斯警署\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which they call the Bobbies,
+Dialogue: 0,0:16:00.92,0:16:03.06,*Default,NTP,0000,0000,0000,,后来  罗伯特·皮尔  博比斯发现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after, like, Robert, Bob, bobbies.
+Dialogue: 0,0:16:03.06,0:16:04.62,*Default,NTP,0000,0000,0000,,人们都不想要武装\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}People didn't want that.
+Dialogue: 0,0:16:04.62,0:16:06.41,*Default,NTP,0000,0000,0000,,他们不想要这样大型的常备军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They didn't want a large standing army.
+Dialogue: 0,0:16:06.41,0:16:08.77,*Default,NTP,0000,0000,0000,,人们把庞大的常备军和什么联系在一起呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What have they identified large standing armies with?
+Dialogue: 0,0:16:08.77,0:16:11.63,*Default,NTP,0000,0000,0000,,他们有充足的理由组建庞大的常备海军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They always had to have a large standing navy for obvious reasons.
+Dialogue: 0,0:16:11.63,0:16:16.15,*Default,NTP,0000,0000,0000,,然而他们往往把拥有大量陆军武装\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they identified large standing armies with France 
+Dialogue: 0,0:16:16.15,0:16:17.40,*Default,NTP,0000,0000,0000,,与法国或者菲利普二世的西班牙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with France or with the Spain of Phillip II 
+Dialogue: 0,0:16:16.31,0:16:22.11,*Default,NTP,0000,0000,0000,,[陆军的强大是专制王朝的象征]
+Dialogue: 0,0:16:17.40,0:16:22.11,*Default,NTP,0000,0000,0000,,或者普鲁士  俄国等国家相联系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or with Prussia or with Russia.
+Dialogue: 0,0:16:23.67,0:16:27.77,*Default,NTP,0000,0000,0000,,这并不意味着英国征税不力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it didn't mean that the English state wasn't efficient in collecting taxes,
+Dialogue: 0,0:16:27.77,0:16:31.00,*Default,NTP,0000,0000,0000,,因为他们的征税模式实际上比法国更有效率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they were more efficient than the French were in collecting taxes.
+Dialogue: 0,0:16:31.00,0:16:34.16,*Default,NTP,0000,0000,0000,,但是这就意味着地方分权 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it does mean that this decentralization
+Dialogue: 0,0:16:34.17,0:16:37.80,*Default,NTP,0000,0000,0000,,是他们自我认知的基本组成部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an essential part of who they thought they were.
+Dialogue: 0,0:16:38.39,0:16:41.28,*Default,NTP,0000,0000,0000,,当有麻烦的时候  当地警官会召集人员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The local sheriff will call out the guys 
+Dialogue: 0,0:16:41.28,0:16:44.26,*Default,NTP,0000,0000,0000,,重整并恢复秩序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and restore order when there's trouble.
+Dialogue: 0,0:16:44.26,0:16:50.08,*Default,NTP,0000,0000,0000,,他们所真正担心的是大量常备军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There is this real fear that large standing armies 
+Dialogue: 0,0:16:50.53,0:16:54.89,*Default,NTP,0000,0000,0000,,可能最终会危及到"生而自由"的英国人的权利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could ultimately compromise the rights of freeborn Englishmen.
+Dialogue: 0,0:16:54.89,0:16:57.92,*Default,NTP,0000,0000,0000,,这是他们的一种思维方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's in a way that they would have put it.
+Dialogue: 0,0:16:57.92,0:17:01.10,*Default,NTP,0000,0000,0000,,至于荷兰方面  等会我将提到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of the Netherlands, which I'll come back to in a while,
+Dialogue: 0,0:17:01.10,0:17:03.05,*Default,NTP,0000,0000,0000,,像一些行省  比如...\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have these provinces that--
+Dialogue: 0,0:17:03.05,0:17:07.18,*Default,NTP,0000,0000,0000,,虽说霍兰只是阿姆斯特丹的一个行省\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although Holland, which is the province of Amsterdam, 
+Dialogue: 0,0:17:07.18,0:17:09.24,*Default,NTP,0000,0000,0000,,却是当时荷兰众多行省中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is by far the most important 
+Dialogue: 0,0:17:09.24,0:17:14.01,*Default,NTP,0000,0000,0000,,最重要最富饶的一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and most prosperous of the Dutch provinces,
+Dialogue: 0,0:17:14.01,0:17:17.26,*Default,NTP,0000,0000,0000,,这就是为什么我们经常把荷兰误称作霍兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as that we often miscall the Netherlands Holland,
+Dialogue: 0,0:17:17.26,0:17:20.42,*Default,NTP,0000,0000,0000,,而事实上霍兰只是一个行省\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in fact Holland is just one of the provinces,
+Dialogue: 0,0:17:20.42,0:17:23.49,*Default,NTP,0000,0000,0000,,就像你把美国叫做纽约或加利福尼亚一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as if you called the United States New York or California,
+Dialogue: 0,0:17:23.49,0:17:28.66,*Default,NTP,0000,0000,0000,,因为这两个州是美国最有势力的联邦州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because those are the two most powerful states in the United states.
+Dialogue: 0,0:17:28.66,0:17:32.95,*Default,NTP,0000,0000,0000,,这种联邦制分权的政治架构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But this decentralized federalist structure is part of
+Dialogue: 0,0:17:32.95,0:17:36.95,*Default,NTP,0000,0000,0000,,是他们对自己现在及将来身份的认知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who they thought they were and who they continue to think they are.
+Dialogue: 0,0:17:37.51,0:17:40.45,*Default,NTP,0000,0000,0000,,这就跟专制君王截然不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is very different than 
+Dialogue: 0,0:17:41.81,0:17:46.00,*Default,NTP,0000,0000,0000,,这些统治者可以肆意调动军队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these absolute kings who can send out their armies,
+Dialogue: 0,0:17:46.00,0:17:49.91,*Default,NTP,0000,0000,0000,,驱使麾下的兵卒像踩扁葡萄一样消灭敌人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can run by their minions to squish whomever they want like grapes
+Dialogue: 0,0:17:49.91,0:17:51.08,*Default,NTP,0000,0000,0000,,哪里有骚乱  哪里就会有他们的身影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whenever there's trouble.
+Dialogue: 0,0:17:51.08,0:17:54.44,*Default,NTP,0000,0000,0000,,彼得大帝在自己幅员辽阔的帝国享有至高权力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can exaggerate the power of  Peter the Great 
+Dialogue: 0,0:17:54.44,0:17:56.18,*Default,NTP,0000,0000,0000,,这是怎么夸张都不过分的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this vast empire
+Dialogue: 0,0:17:56.18,0:17:57.41,*Default,NTP,0000,0000,0000,,他不断地向南边扩张\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's expanding south 
+Dialogue: 0,0:17:57.41,0:17:58.77,*Default,NTP,0000,0000,0000,,版图甚至已经触及到了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and already expanding toward
+Dialogue: 0,0:17:58.77,0:18:00.70,*Default,NTP,0000,0000,0000,,西伯利亚这样的边远地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Siberia and such distant places.
+Dialogue: 0,0:18:00.71,0:18:03.30,*Default,NTP,0000,0000,0000,,他们花了很长时间打到那\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It took a long time to get the guys there.
+Dialogue: 0,0:18:03.30,0:18:05.73,*Default,NTP,0000,0000,0000,,然而但凡兵锋所指之处皆是一片生灵涂炭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But when they got there, there was hell to pay.
+Dialogue: 0,0:18:05.83,0:18:12.95,*Default,NTP,0000,0000,0000,,这就跟两个联邦制分权结构完全不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Very, very different than this federalist decentralized structure of both of these countries.
+Dialogue: 0,0:18:12.96,0:18:14.68,*Default,NTP,0000,0000,0000,,因此所制定的政策也大相径庭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The political outcome is different.
+Dialogue: 0,0:18:14.69,0:18:15.69,*Default,NTP,0000,0000,0000,,你们也可以课外去辩论一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can also make that argument,
+Dialogue: 0,0:18:15.69,0:18:17.25,*Default,NTP,0000,0000,0000,,虽然不是我们这堂课要讨论的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this isn't the course to do that,
+Dialogue: 0,0:18:17.25,0:18:18.79,*Default,NTP,0000,0000,0000,,但是你们可以辩论一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you can make that argument
+Dialogue: 0,0:18:18.79,0:18:22.58,*Default,NTP,0000,0000,0000,,关于美国以及美国政体的发展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the United States and the evolution of the United States,
+Dialogue: 0,0:18:23.47,0:18:29.00,*Default,NTP,0000,0000,0000,,由于当地领导的威信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of the prestige of local leaders 
+Dialogue: 0,0:18:29.00,0:18:31.47,*Default,NTP,0000,0000,0000,,以及殖民者们融入血液的分权制思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the decentralized nature of the colonies already 
+Dialogue: 0,0:18:31.47,0:18:33.56,*Default,NTP,0000,0000,0000,,这些在独立战争时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the time of the War of Independence--
+Dialogue: 0,0:18:33.56,0:18:38.49,*Default,NTP,0000,0000,0000,,就开始在政策制定中发挥着重大的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is going to have a strong role in the political outcome,
+Dialogue: 0,0:18:38.49,0:18:39.65,*Default,NTP,0000,0000,0000,,可能有好也有坏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for better or for worse--
+Dialogue: 0,0:18:39.65,0:18:41.52,*Default,NTP,0000,0000,0000,,在这个国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this country 
+Dialogue: 0,0:18:41.52,0:18:44.64,*Default,NTP,0000,0000,0000,,尽管政治系统有些古怪  但它们依然存在  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you have this sort of wacko political system that still exists 
+Dialogue: 0,0:18:44.64,0:18:46.71,*Default,NTP,0000,0000,0000,,就是因为人们始终呼吁"州县自治的权利"之类的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of people screaming, "State's rights," and all that.
+Dialogue: 0,0:18:46.71,0:18:49.50,*Default,NTP,0000,0000,0000,,这就是第三个原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that's another subject.
+Dialogue: 0,0:18:50.44,0:18:55.59,*Default,NTP,0000,0000,0000,,第四原因   这两个国家都反对天主教\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fourth, anti-Catholicism in both cases.
+Dialogue: 0,0:18:55.59,0:18:56.78,*Default,NTP,0000,0000,0000,,这是为什么?\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why?
+Dialogue: 0,0:18:56.78,0:19:01.51,*Default,NTP,0000,0000,0000,,因为两者都是走宗教改革路线的主要国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because these are major countries in the Reformation.
+Dialogue: 0,0:19:01.78,0:19:06.55,*Default,NTP,0000,0000,0000,,英国的宗教改革  自亨利八世开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The English Reformation, which begins with Henry VIII
+Dialogue: 0,0:19:06.55,0:19:11.85,*Default,NTP,0000,0000,0000,,就是那个总爱离婚  且一辈子患有杀妻癖的君王\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wanting to divorce and kill his various wives along the way,
+Dialogue: 0,0:19:11.86,0:19:15.45,*Default,NTP,0000,0000,0000,,他仍然还要面对强大的罗马教廷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}still had an awful lot to do with the resistance to the power of Rome 
+Dialogue: 0,0:19:15.45,0:19:20.56,*Default,NTP,0000,0000,0000,,以及天主教会的反对与干涉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the power of the Catholic Church as an institution.
+Dialogue: 0,0:19:20.56,0:19:25.33,*Default,NTP,0000,0000,0000,,而在荷兰  反天主教主义盛极一时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of the Netherlands, anti-Catholicism is endemic.
+Dialogue: 0,0:19:25.33,0:19:25.92,*Default,NTP,0000,0000,0000,,为什么  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why? 
+Dialogue: 0,0:19:25.92,0:19:28.49,*Default,NTP,0000,0000,0000,,因为天主教是与西班牙帝国联系在一起的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because it's identified with the Spanish empire,
+Dialogue: 0,0:19:28.49,0:19:31.43,*Default,NTP,0000,0000,0000,,西班牙不仅从这个最富有的省份\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with Spain, which not only wanted to extract taxes 
+Dialogue: 0,0:19:31.44,0:19:34.58,*Default,NTP,0000,0000,0000,,榨取税收和其他收入\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to extract taxes and other revenue from its most prosperous province, 
+Dialogue: 0,0:19:34.58,0:19:37.75,*Default,NTP,0000,0000,0000,,还想强迫人民保持天主教信仰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but wanted to force people to remain Catholic.
+Dialogue: 0,0:19:37.75,0:19:42.53,*Default,NTP,0000,0000,0000,,当时西班牙派遣阿尔瓦公爵到荷兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When they send this guy called the Duke of Alba up to the Netherlands, 
+Dialogue: 0,0:19:42.53,0:19:45.61,*Default,NTP,0000,0000,0000,,他实行暴政  把人用火刑处死\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he burns people to the stake and all this kind of stuff.
+Dialogue: 0,0:19:47.01,0:19:51.16,*Default,NTP,0000,0000,0000,,作为这两个敌国的国教\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The association of Catholicism as the dominant religion 
+Dialogue: 0,0:19:51.16,0:19:57.91,*Default,NTP,0000,0000,0000,,天主教会和法国及西班牙的联系举足轻重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in both of the enemy countries, France and Spain, is extremely important.
+Dialogue: 0,0:19:57.91,0:20:01.34,*Default,NTP,0000,0000,0000,,这并不是说荷兰人不与英国人为敌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is not to say that the Dutch don't fight the English, too, 
+Dialogue: 0,0:20:01.35,0:20:02.13,*Default,NTP,0000,0000,0000,,因为他们确实开战过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they do.
+Dialogue: 0,0:20:02.13,0:20:05.33,*Default,NTP,0000,0000,0000,,英荷曾爆发过几次争夺海上霸权的战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are various wars over control of the seas.
+Dialogue: 0,0:20:05.33,0:20:08.68,*Default,NTP,0000,0000,0000,,然而  在精神层面上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But nonetheless, in the imagination,
+Dialogue: 0,0:20:10.94,0:20:13.73,*Default,NTP,0000,0000,0000,,在精神体系的创立上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the imaginaire, in the mental construction 
+Dialogue: 0,0:20:13.73,0:20:17.70,*Default,NTP,0000,0000,0000,,这两个国家的身份认同感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of these two countries, what we are not,
+Dialogue: 0,0:20:17.70,0:20:22.14,*Default,NTP,0000,0000,0000,,受到他们所否定的观念  即非天主教观念的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is Catholic, helps define their identity.
+Dialogue: 0,0:20:22.14,0:20:24.30,*Default,NTP,0000,0000,0000,,特别是爱尔兰的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, the particular problem of Ireland,
+Dialogue: 0,0:20:24.30,0:20:26.62,*Default,NTP,0000,0000,0000,,我之前提到的  来自爱尔兰的挑战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the challenge of Ireland as I suggested earlier,
+Dialogue: 0,0:20:26.63,0:20:27.97,*Default,NTP,0000,0000,0000,,也与之也有很大关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has an awful lot to do with that.
+Dialogue: 0,0:20:27.97,0:20:30.57,*Default,NTP,0000,0000,0000,,十九世纪英国民认同感的重建 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the reinvention in the nineteenth century of British identity 
+Dialogue: 0,0:20:30.57,0:20:33.00,*Default,NTP,0000,0000,0000,,和对爱尔兰的惧怕也有很大关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will also have a lot to do with fear of the Irish,
+Dialogue: 0,0:20:33.00,0:20:35.00,*Default,NTP,0000,0000,0000,,"家贼难防"  他们是这样看待爱尔兰的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"The enemy within," As they were perceived.
+Dialogue: 0,0:20:35.00,0:20:37.81,*Default,NTP,0000,0000,0000,,但更多的  我会经常提到  并解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But more about that. I'll talk about that a lot and try to explain 
+Dialogue: 0,0:20:37.81,0:20:42.52,*Default,NTP,0000,0000,0000,,为什么英国在一八四八年没有发生革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and try to explain there was no revolution in England in 1848.
+Dialogue: 0,0:20:42.52,0:20:47.30,*Default,NTP,0000,0000,0000,,从英国的发展历程来看  这一点更加清晰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the course of Britain, it's even clearer.
+Dialogue: 0,0:20:47.30,0:20:51.41,*Default,NTP,0000,0000,0000,,法国人是所谓  "偷偷摸摸的法国佬"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The French are "The sneaky French."
+Dialogue: 0,0:20:51.74,0:20:56.38,*Default,NTP,0000,0000,0000,,法国人则认为他们是背信弃义的英国佬\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}From the French point of view, it's the perfidious Albion already there.
+Dialogue: 0,0:20:56.39,0:21:01.67,*Default,NTP,0000,0000,0000,,这可以追溯到一战的起源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can go all the way up to the origins of World War I to see.
+Dialogue: 0,0:21:01.67,0:21:04.31,*Default,NTP,0000,0000,0000,,英国人参战的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When the British get into World War I,
+Dialogue: 0,0:21:04.31,0:21:07.88,*Default,NTP,0000,0000,0000,,是因为德国破坏了比利时的中立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's because of the violation of Belgian neutrality 
+Dialogue: 0,0:21:07.89,0:21:10.35,*Default,NTP,0000,0000,0000,,使得英国又多一个敌人\Nby the Germans, because the idea of having another enemy…
+Dialogue: 0,0:21:10.35,0:21:11.97,*Default,NTP,0000,0000,0000,,英国已经有海峡对岸的法国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've already got the French across the channel 
+Dialogue: 0,0:21:11.97,0:21:13.51,*Default,NTP,0000,0000,0000,,而且这条海峡可不是很宽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's not that big a channel.
+Dialogue: 0,0:21:13.51,0:21:14.99,*Default,NTP,0000,0000,0000,,你甚至可以游过去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can swim across it.
+Dialogue: 0,0:21:15.11,0:21:17.65,*Default,NTP,0000,0000,0000,,你我是都不行  但曾经很多人做到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I couldn't and you couldn't either but lots of people have.
+Dialogue: 0,0:21:17.65,0:21:18.76,*Default,NTP,0000,0000,0000,,经常有人游过海峡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They do it all the time.
+Dialogue: 0,0:21:18.77,0:21:21.87,*Default,NTP,0000,0000,0000,,但如果德国人在奥斯坦德吃着淡菜炸薯条\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if you've got the Germans in Ostende eating moules frites, 
+Dialogue: 0,0:21:18.87,0:21:21.87,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[奥斯坦德:比利时城市]
+Dialogue: 0,0:21:22.56,0:21:24.98,*Default,NTP,0000,0000,0000,,也就是薯条配淡菜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}eating mussels with French fries,
+Dialogue: 0,0:21:24.98,0:21:27.62,*Default,NTP,0000,0000,0000,,和法国人一同窥伺英伦  这是难以想象的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you've already got the french there, this is unthinkable.
+Dialogue: 0,0:21:27.62,0:21:29.93,*Default,NTP,0000,0000,0000,,于是  英国参战了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, they go to war.
+Dialogue: 0,0:21:31.40,0:21:32.65,*Default,NTP,0000,0000,0000,,我不想过多地夸张  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't want to exaggerate this too much
+Dialogue: 0,0:21:32.66,0:21:37.63,*Default,NTP,0000,0000,0000,,但十八世纪英国最大的暴乱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the largest riots in Britain in the eighteenth century 
+Dialogue: 0,0:21:37.63,0:21:41.30,*Default,NTP,0000,0000,0000,,完全不是关于政治改革\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are not the riots for political reform at all.
+Dialogue: 0,0:21:41.30,0:21:43.81,*Default,NTP,0000,0000,0000,,而是反天主教暴乱  称作戈登暴动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are the anti-Catholic riots called the Gordon Riots,
+Dialogue: 0,0:21:43.81,0:21:46.01,*Default,NTP,0000,0000,0000,,地点发生在伦敦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which take place in London.
+Dialogue: 0,0:21:46.01,0:21:51.43,*Default,NTP,0000,0000,0000,,所以  反天主教的思想是根深蒂固的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anti-Catholicism is very much strongly entrenched 
+Dialogue: 0,0:21:51.98,0:21:58.55,*Default,NTP,0000,0000,0000,,广泛存在于英国的身份认同感里面的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the British sense of who they were.
+Dialogue: 0,0:21:59.25,0:22:01.69,*Default,NTP,0000,0000,0000,,反法思想  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anti-French--there we go.
+Dialogue: 0,0:22:01.69,0:22:05.82,*Default,NTP,0000,0000,0000,,跟反天主教和反绝对主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those two are already linked, along with anti-absolutism 
+Dialogue: 0,0:22:05.82,0:22:09.45,*Default,NTP,0000,0000,0000,,紧密联系在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and anti-Catholicism.
+Dialogue: 0,0:22:09.45,0:22:13.59,*Default,NTP,0000,0000,0000,,最后  所有的这些思想是有关联的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Last, and all these things are linked.
+Dialogue: 0,0:22:13.59,0:22:15.13,*Default,NTP,0000,0000,0000,,你可以把这些画成图示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could do one of these little boxes 
+Dialogue: 0,0:22:15.13,0:22:16.93,*Default,NTP,0000,0000,0000,,像在社会学和政治学课上那样  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they do in sociology or political science, 
+Dialogue: 0,0:22:16.93,0:22:18.98,*Default,NTP,0000,0000,0000,,把箭头画得到处都是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and have these arrows running all over the place.
+Dialogue: 0,0:22:18.98,0:22:21.96,*Default,NTP,0000,0000,0000,,这白板上你就可以这么画\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could make it there.
+Dialogue: 0,0:22:21.96,0:22:28.81,*Default,NTP,0000,0000,0000,,但谁是欧洲最大的贸易实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who are the biggest trading powers in Europe?
+Dialogue: 0,0:22:28.96,0:22:33.84,*Default,NTP,0000,0000,0000,,我们先不考虑亚洲大量的贸易活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We forget about the enormous trading vitality of Asia,
+Dialogue: 0,0:22:33.84,0:22:38.07,*Default,NTP,0000,0000,0000,,包括同时的陆上和海上贸易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even sea vitality and land vitality at the same time,
+Dialogue: 0,0:22:38.07,0:22:40.08,*Default,NTP,0000,0000,0000,,在十七世纪之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they are without any question by this point--
+Dialogue: 0,0:22:40.08,0:22:42.20,*Default,NTP,0000,0000,0000,,随着西班牙帝国的衰退\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the decline of the Spanish empire, 
+Dialogue: 0,0:22:42.20,0:22:44.16,*Default,NTP,0000,0000,0000,,欧洲最大的贸易实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which begins before this course--
+Dialogue: 0,0:22:44.27,0:22:47.48,*Default,NTP,0000,0000,0000,,毫无疑问是荷兰和英国  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Dutch and the English.
+Dialogue: 0,0:22:47.48,0:22:50.31,*Default,NTP,0000,0000,0000,,这点就增强了中产阶级\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What this does is it increases 
+Dialogue: 0,0:22:50.31,0:22:53.78,*Default,NTP,0000,0000,0000,,在商业中发挥的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the role  of this commercial middle class.
+Dialogue: 0,0:22:53.78,0:22:56.88,*Default,NTP,0000,0000,0000,,同时也增强了城市的作用  特别是海港城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It increases the role of cities, particularly port cities, 
+Dialogue: 0,0:22:56.88,0:22:58.73,*Default,NTP,0000,0000,0000,,例如阿姆斯特丹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which Amsterdam is.
+Dialogue: 0,0:22:59.59,0:23:04.40,*Default,NTP,0000,0000,0000,,这在提高了经济精英的地位的同时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it increases the role of these economic elites 
+Dialogue: 0,0:23:04.40,0:23:06.89,*Default,NTP,0000,0000,0000,,也使他们更担心如何保持他们的特权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or their concern with maintaining their privileges 
+Dialogue: 0,0:23:06.89,0:23:11.25,*Default,NTP,0000,0000,0000,,以及如何对抗对他们特权和繁荣的威胁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}against threats to their privileges and to their prosperity 
+Dialogue: 0,0:23:11.25,0:23:14.47,*Default,NTP,0000,0000,0000,,无论威胁来自何方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no matter where they come from.
+Dialogue: 0,0:23:16.35,0:23:17.93,*Default,NTP,0000,0000,0000,,我们可以做件有趣的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just to amuse yourself, 
+Dialogue: 0,0:23:17.93,0:23:21.15,*Default,NTP,0000,0000,0000,,纯粹为了娱乐  不是为了考试练习\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not for any kind of punitive think-about-the-exam exercise, 
+Dialogue: 0,0:23:21.15,0:23:24.94,*Default,NTP,0000,0000,0000,,即用同样的方法分析其他国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it would be fun to take these categories and think about these other countries,
+Dialogue: 0,0:23:25.04,0:23:26.65,*Default,NTP,0000,0000,0000,,特别是那些绝对主义国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly those who were absolute states,
+Dialogue: 0,0:23:26.65,0:23:30.42,*Default,NTP,0000,0000,0000,,以及其他重要的欧洲大国  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}other large important states in Europe and see to what extent
+Dialogue: 0,0:23:30.42,0:23:34.33,*Default,NTP,0000,0000,0000,,看看这些因素对政治结局的影响程度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have these factors there.
+Dialogue: 0,0:23:34.62,0:23:38.29,*Default,NTP,0000,0000,0000,,我已经提过  普鲁士有许多大贵族\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Prussia, I already said, you've got your big nobles.
+Dialogue: 0,0:23:38.29,0:23:40.67,*Default,NTP,0000,0000,0000,,这些人骨子里的传统贵族观念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got all these guys with dueling scars,
+Dialogue: 0,0:23:40.67,0:23:45.64,*Default,NTP,0000,0000,0000,,使得他们认为从商是粗俗的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for them to be indulging in commerce is just crass,
+Dialogue: 0,0:23:45.65,0:23:48.53,*Default,NTP,0000,0000,0000,,一点没有男子气概的  以及这种不屑的看法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not terribly manly, and all this business.
+Dialogue: 0,0:23:48.53,0:23:52.48,*Default,NTP,0000,0000,0000,,普鲁士的腓特烈大帝热爱音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got your flute-playing king, Frederick the Great,
+Dialogue: 0,0:23:52.48,0:23:54.56,*Default,NTP,0000,0000,0000,,他很糟糕  花钱大手大脚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who could be awful. He could lash out.
+Dialogue: 0,0:23:54.56,0:23:57.33,*Default,NTP,0000,0000,0000,,伏尔泰曾经与腓特烈大帝来往\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Voltaire went and hung out with Frederick the Great,
+Dialogue: 0,0:23:57.33,0:23:59.63,*Default,NTP,0000,0000,0000,,过了不久他便说  "我要离开"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and after a while he said, "Let me out of here."
+Dialogue: 0,0:24:00.52,0:24:02.89,*Default,NTP,0000,0000,0000,,柏林曾经是个重要的小镇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you've got Berlin, which was a very important town, 
+Dialogue: 0,0:24:02.89,0:24:05.26,*Default,NTP,0000,0000,0000,,后来成了很重要的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a very important city
+Dialogue: 0,0:24:05.26,0:24:08.22,*Default,NTP,0000,0000,0000,,因为它有庞大的卫戍部队和工厂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's got this huge garrison and it's got factories
+Dialogue: 0,0:24:08.23,0:24:09.97,*Default,NTP,0000,0000,0000,,这些部门专门生产军装\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}turning out military uniforms.
+Dialogue: 0,0:24:10.56,0:24:14.14,*Default,NTP,0000,0000,0000,,有许多诸如波茨坦宫殿这样的宫廷建筑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's got Potsdam Palace and all of this.
+Dialogue: 0,0:24:14.74,0:24:17.33,*Default,NTP,0000,0000,0000,,这与阿姆斯特丹很不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not at all the same thing as Amsterdam,
+Dialogue: 0,0:24:17.33,0:24:22.23,*Default,NTP,0000,0000,0000,,或者说跟伦敦  以及跟任何贸易城市都不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or London, or any of the other trading cities around.
+Dialogue: 0,0:24:23.54,0:24:26.35,*Default,NTP,0000,0000,0000,,俄罗斯的情况更容易理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of Russia, it's even easier.
+Dialogue: 0,0:24:26.36,0:24:28.83,*Default,NTP,0000,0000,0000,,在俄罗斯中产阶级基本不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got a practically nonexistent middle class.
+Dialogue: 0,0:24:28.83,0:24:30.38,*Default,NTP,0000,0000,0000,,俄罗斯有各种贵族\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got all sorts of nobles.
+Dialogue: 0,0:24:30.56,0:24:33.83,*Default,NTP,0000,0000,0000,,他们有的从事商业\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are involved in commerce, some of them,
+Dialogue: 0,0:24:33.84,0:24:36.10,*Default,NTP,0000,0000,0000,,但他们是大多是为国家效力的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but mostly what they do is they serve the state.
+Dialogue: 0,0:24:36.10,0:24:38.26,*Default,NTP,0000,0000,0000,,被称为为国家服务的贵族阶层\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're called service nobility.
+Dialogue: 0,0:24:38.26,0:24:39.86,*Default,NTP,0000,0000,0000,,他们不是为城市服务的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not serving the cities.
+Dialogue: 0,0:24:39.86,0:24:41.60,*Default,NTP,0000,0000,0000,,他们不是为商业服务的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not serving commerce.
+Dialogue: 0,0:24:41.60,0:24:43.41,*Default,NTP,0000,0000,0000,,他们就是为国家服务的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What they're doing is they're doing is they're serving the state.
+Dialogue: 0,0:24:43.41,0:24:49.18,*Default,NTP,0000,0000,0000,,他们是在服务那个又大  又蠢  又奇怪的彼得大帝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're serving this huge, lumbering, strange guy, Peter the Great.
+Dialogue: 0,0:24:49.18,0:24:50.15,*Default,NTP,0000,0000,0000,,你可以再看看其他地方  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you could take other places, 
+Dialogue: 0,0:24:50.16,0:24:53.58,*Default,NTP,0000,0000,0000,,像意大利或者其他小点的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like Italy and smaller cities.
+Dialogue: 0,0:24:53.58,0:24:56.15,*Default,NTP,0000,0000,0000,,但你还没有见过这样的大国家结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you don't yet have these big state structures.
+Dialogue: 0,0:24:56.15,0:24:57.38,*Default,NTP,0000,0000,0000,,所以  当你回顾历史  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, if you're looking back, say, 
+Dialogue: 0,0:24:57.38,0:24:58.91,*Default,NTP,0000,0000,0000,,从十九世纪的末尾开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from the end of the nineteenth century,
+Dialogue: 0,0:24:58.92,0:25:00.89,*Default,NTP,0000,0000,0000,,虽然不太容易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not easy to see,
+Dialogue: 0,0:25:00.89,0:25:02.18,*Default,NTP,0000,0000,0000,,但还是可以看出...\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you can see these--
+Dialogue: 0,0:25:03.18,0:25:05.74,*Default,NTP,0000,0000,0000,,别以为历史是在固定轨道上行进的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't ever think that history runs on railroad tracks, 
+Dialogue: 0,0:25:05.74,0:25:07.19,*Default,NTP,0000,0000,0000,,别以为你只用拿时刻表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and all you need is the timetable
+Dialogue: 0,0:25:07.20,0:25:09.35,*Default,NTP,0000,0000,0000,,就知道新时代什么时候来临\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to show when modernization shows up.
+Dialogue: 0,0:25:09.35,0:25:12.29,*Default,NTP,0000,0000,0000,,在当代社会学领域或者正统马克思主义里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a most ludicrous word, really,
+Dialogue: 0,0:25:12.29,0:25:17.07,*Default,NTP,0000,0000,0000,,这是一个非常愚蠢的做法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in contemporary social science or orthodox Marxist,
+Dialogue: 0,0:25:17.08,0:25:18.14,*Default,NTP,0000,0000,0000,,就好像你只用说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you just had to say, 
+Dialogue: 0,0:25:18.14,0:25:19.72,*Default,NTP,0000,0000,0000,,"最终无产阶级会起义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, eventually the proletariat will rise up,
+Dialogue: 0,0:25:19.72,0:25:21.91,*Default,NTP,0000,0000,0000,,是因为以前资产阶级就这么干过"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the bourgeoisie did this before."
+Dialogue: 0,0:25:21.91,0:25:24.08,*Default,NTP,0000,0000,0000,,不过当你从十九世纪开始回顾历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But yet when you look back from the nineteenth century,
+Dialogue: 0,0:25:24.08,0:25:27.01,*Default,NTP,0000,0000,0000,,这些因素的确能解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these factors do count in explaining how countries 
+Dialogue: 0,0:25:27.36,0:25:29.50,*Default,NTP,0000,0000,0000,,国家是如何转变成现在这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}turn out to be the way they are.
+Dialogue: 0,0:25:29.50,0:25:31.35,*Default,NTP,0000,0000,0000,,当你尝试去看看一战的起因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you try and look at the origins of World War I,
+Dialogue: 0,0:25:31.36,0:25:36.52,*Default,NTP,0000,0000,0000,,德国那些轻率的傻瓜统治者是战争的罪魁祸首\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it mattered that Germany is run by this kind of madcap duffers,
+Dialogue: 0,0:25:37.53,0:25:40.09,*Default,NTP,0000,0000,0000,,比如威廉二世  不学无术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Wilhelm II, who was intellectually lazy 
+Dialogue: 0,0:25:40.09,0:25:45.02,*Default,NTP,0000,0000,0000,,只喜欢在又亮又闪的战船上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and liked to break bottles of Riesling over bright,
+Dialogue: 0,0:25:45.02,0:25:48.30,*Default,NTP,0000,0000,0000,,摔雷司令瓶子  做事也没有耐性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}shiny battleships and didn't concentrate on things very long,
+Dialogue: 0,0:25:45.30,0:25:48.30,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[雷司令:一种干白葡萄酒]
+Dialogue: 0,0:25:48.42,0:25:52.62,*Default,NTP,0000,0000,0000,,到处发表煽动性言论把人们弄的神经兮兮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sends off provocative telegrams here and there to make everybody mad
+Dialogue: 0,0:25:52.62,0:25:54.88,*Default,NTP,0000,0000,0000,,这样一来  长此以往的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That has a long-run outcome, 
+Dialogue: 0,0:25:54.88,0:25:57.46,*Default,NTP,0000,0000,0000,,就是使得数百万人失去了生命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which cost the lives of millions of people.
+Dialogue: 0,0:25:57.83,0:25:58.81,*Default,NTP,0000,0000,0000,,言归正传\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, here we go.
+Dialogue: 0,0:25:58.81,0:26:00.46,*Default,NTP,0000,0000,0000,,想想那些只是为了有趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's just kind of fun to think about that, 
+Dialogue: 0,0:26:00.47,0:26:01.73,*Default,NTP,0000,0000,0000,,我们所要做的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's what we are doing.
+Dialogue: 0,0:26:01.73,0:26:03.07,*Default,NTP,0000,0000,0000,,只是想想而已\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're thinking about that.
+Dialogue: 0,0:26:03.07,0:26:06.32,*Default,NTP,0000,0000,0000,,现在让我们调暗灯光\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, let's dim the lights.
+Dialogue: 0,0:26:06.44,0:26:08.05,*Default,NTP,0000,0000,0000,,好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here we go.
+Dialogue: 0,0:26:09.74,0:26:11.29,*Default,NTP,0000,0000,0000,,我们怎么调暗灯光呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do we dim the lights?
+Dialogue: 0,0:26:11.64,0:26:13.83,*Default,NTP,0000,0000,0000,,我忘了 是这样吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't remember. That's what to do?
+Dialogue: 0,0:26:19.38,0:26:22.11,*Default,NTP,0000,0000,0000,,我们必须得暗一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've got to get further down than that.
+Dialogue: 0,0:26:25.09,0:26:28.51,*Default,NTP,0000,0000,0000,,课堂内容的内容是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the lecture… 
+Dialogue: 0,0:26:33.16,0:26:36.64,*Default,NTP,0000,0000,0000,,很好  结合你们的阅读资料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, now let's paralleling what you've been reading 
+Dialogue: 0,0:26:36.64,0:26:45.40,*Default,NTP,0000,0000,0000,,让我们看一下荷兰共和国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's look a little bit at the Dutch Republic
+Dialogue: 0,0:26:45.40,0:26:47.57,*Default,NTP,0000,0000,0000,,在荷兰共和国 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the Dutch Republic
+Dialogue: 0,0:26:47.57,0:26:48.99,*Default,NTP,0000,0000,0000,,因为人们老是在讨论英格兰和大不列颠\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}England and Britain all the time, because people talk about
+Dialogue: 0,0:26:48.99,0:26:52.44,*Default,NTP,0000,0000,0000,,那么  就让我来谈谈荷兰共和国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so let me talk about the Dutch Republic.
+Dialogue: 0,0:26:52.44,0:26:54.99,*Default,NTP,0000,0000,0000,,这样可以让这些因素结合起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This will kind of bring some of these factors together,
+Dialogue: 0,0:26:54.99,0:27:00.45,*Default,NTP,0000,0000,0000,,并沿着自我认知的思路讲下去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}along with the idea of what people thought they were.
+Dialogue: 0,0:27:00.45,0:27:02.00,*Default,NTP,0000,0000,0000,,他们的自我认同的身份是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is their identity?
+Dialogue: 0,0:27:02.00,0:27:03.88,*Default,NTP,0000,0000,0000,,在这里  我们会看一些画作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here again, we'll look at some paintings.
+Dialogue: 0,0:27:03.88,0:27:05.88,*Default,NTP,0000,0000,0000,,你不必深究这些画作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're not responsible for these paintings,
+Dialogue: 0,0:27:05.89,0:27:09.60,*Default,NTP,0000,0000,0000,,不过我们将从荷兰的民主制度  社会结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we'll illustrate ways in which the Dutch Republic,
+Dialogue: 0,0:27:09.60,0:27:11.95,*Default,NTP,0000,0000,0000,,和他们自己所强调的特征上解释这些画的含义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and their social structure, and what they emphasized,
+Dialogue: 0,0:27:11.95,0:27:15.20,*Default,NTP,0000,0000,0000,,他们认为自己和其他人很不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and who they thought they were was very different than,
+Dialogue: 0,0:27:15.20,0:27:18.15,*Default,NTP,0000,0000,0000,,例如  和美丽的法国之间的不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, la belle France.
+Dialogue: 0,0:27:19.08,0:27:22.06,*Default,NTP,0000,0000,0000,,好的  就以阿姆斯特丹为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, here we have Amsterdam.
+Dialogue: 0,0:27:22.73,0:27:29.12,*Default,NTP,0000,0000,0000,,它在十七世纪显著的成长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It grows dramatically because of this global trade 
+Dialogue: 0,0:27:29.12,0:27:33.28,*Default,NTP,0000,0000,0000,,得益于全球贸易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the seventeenth century.
+Dialogue: 0,0:27:36.03,0:27:37.03,*Default,NTP,0000,0000,0000,,这是我做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I made this.
+Dialogue: 0,0:27:37.03,0:27:38.02,*Default,NTP,0000,0000,0000,,画的一团糟啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's all a bunch of jumble.
+Dialogue: 0,0:27:38.02,0:27:44.04,*Default,NTP,0000,0000,0000,,不过这是一六四零年  或者那个时间附近吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But this is 1640, or something like that- -later.
+Dialogue: 0,0:27:44.53,0:27:46.15,*Default,NTP,0000,0000,0000,,当时他们开凿了这些运河\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what you have are these canals.
+Dialogue: 0,0:27:46.15,0:27:48.00,*Default,NTP,0000,0000,0000,,你们中许多人  或一部分人有幸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of you, or some of you have had the good fortune
+Dialogue: 0,0:27:48.01,0:27:50.32,*Default,NTP,0000,0000,0000,,去过这个欧洲最美妙的城市之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to go to one of Europe's most wonderful cities.
+Dialogue: 0,0:27:50.32,0:27:54.52,*Default,NTP,0000,0000,0000,,这些运河被用来运送货物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The canals were used to transport goods.
+Dialogue: 0,0:27:54.61,0:27:58.48,*Default,NTP,0000,0000,0000,,因此城市按照这个特点形成了自身的布局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Thus, the city structure itself, the way the city was built
+Dialogue: 0,0:27:58.48,0:27:59.86,*Default,NTP,0000,0000,0000,,沿着水道而修筑房屋的建筑特色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with houses along the canals
+Dialogue: 0,0:27:59.86,0:28:03.68,*Default,NTP,0000,0000,0000,,这也印证了其全球贸易中心的地位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reflects the economic primacy of global trade.
+Dialogue: 0,0:28:03.68,0:28:05.79,*Default,NTP,0000,0000,0000,,于此同时  荷兰人也还运输鲱鱼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At this time the Dutch are sending herrings,
+Dialogue: 0,0:28:05.79,0:28:08.29,*Default,NTP,0000,0000,0000,,这些运送鲱鱼的长板船 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these long flat boats, herring ships
+Dialogue: 0,0:28:08.30,0:28:11.92,*Default,NTP,0000,0000,0000,,在十七世纪一路开往纽芬兰和冰岛等地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are going all the way to Newfoundland in the seventeenth century,and Iceland,
+Dialogue: 0,0:28:11.92,0:28:14.46,*Default,NTP,0000,0000,0000,,并不停穿梭于被冰壳覆盖的海岸线上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}freezing off the coast of Iceland.
+Dialogue: 0,0:28:14.46,0:28:17.38,*Default,NTP,0000,0000,0000,,他们几乎控制和掌握了整个波罗的海贸易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They control and dominate the Baltic trade,
+Dialogue: 0,0:28:17.38,0:28:18.80,*Default,NTP,0000,0000,0000,,而鲱鱼则是其中的重要组成部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and herring is an important part of that,
+Dialogue: 0,0:28:18.80,0:28:22.12,*Default,NTP,0000,0000,0000,,因为鲱鱼一旦用盐浸泡过就可长期保存\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because herring will keep once it's salted and all that.
+Dialogue: 0,0:28:22.12,0:28:25.36,*Default,NTP,0000,0000,0000,,阿姆斯特丹的成长不仅仅是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The city of Amsterdam grows up not only
+Dialogue: 0,0:28:25.36,0:28:31.89,*Default,NTP,0000,0000,0000,,反抗西班牙军队胜利的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as part of this victorious struggle against the Spanish armies.
+Dialogue: 0,0:28:31.89,0:28:36.43,*Default,NTP,0000,0000,0000,,我之前的同事 杰弗里·帕克 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a wonderful book by my former colleague,
+Dialogue: 0,0:28:36.43,0:28:38.61,*Default,NTP,0000,0000,0000,,写了一本非常好的书  叫做《西班牙之路》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Geoffrey Parker, called The Spanish Road,
+Dialogue: 0,0:28:38.61,0:28:41.34,*Default,NTP,0000,0000,0000,,讲述了西班牙是怎么样艰苦地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which talked about how difficult it was for the Spanish
+Dialogue: 0,0:28:41.34,0:28:45.08,*Default,NTP,0000,0000,0000,,将军队派遣到荷兰去的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to get troops all the way to the Netherlands.
+Dialogue: 0,0:28:45.08,0:28:46.06,*Default,NTP,0000,0000,0000,,他们不得不穿过意大利  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They had to go from Italy,
+Dialogue: 0,0:28:46.06,0:28:47.35,*Default,NTP,0000,0000,0000,,因为当时许多意大利地区正由西班牙控制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because much of Italy was controlled by Spain,
+Dialogue: 0,0:28:47.35,0:28:50.15,*Default,NTP,0000,0000,0000,,他们从阿尔卑斯山一路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through the Alps all the way up
+Dialogue: 0,0:28:50.15,0:28:55.04,*Default,NTP,0000,0000,0000,,沿着莱茵河  最终深入荷兰共和国腹地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}along the Rhine and finally get into the Dutch Republic.
+Dialogue: 0,0:28:55.04,0:28:57.00,*Default,NTP,0000,0000,0000,,这已注定是一场败仗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was a losing battle.
+Dialogue: 0,0:28:57.00,0:29:00.20,*Default,NTP,0000,0000,0000,,但是当时的阿姆斯特丹反应了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Amsterdam reflects this kind of primacy
+Dialogue: 0,0:29:00.20,0:29:03.19,*Default,NTP,0000,0000,0000,,一种全球化经济的趋势  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the global economy,
+Dialogue: 0,0:29:03.19,0:29:05.79,*Default,NTP,0000,0000,0000,,因为它是非常重要的一股贸易势力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's such an important trading power,
+Dialogue: 0,0:29:05.79,0:29:08.51,*Default,NTP,0000,0000,0000,,而联邦分权制的政体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but also this federalist decentralized aspect
+Dialogue: 0,0:29:08.51,0:29:12.65,*Default,NTP,0000,0000,0000,,正如我刚才说的  也是同等重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I've tried to describe.
+Dialogue: 0,0:29:12.65,0:29:15.57,*Default,NTP,0000,0000,0000,,在我之后的这个图是个船坞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the shipyard behind.
+Dialogue: 0,0:29:15.57,0:29:17.69,*Default,NTP,0000,0000,0000,,事实上  这个建筑现在依然在那\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, this building behind is still there.
+Dialogue: 0,0:29:17.69,0:29:20.19,*Default,NTP,0000,0000,0000,,我去过阿姆斯特丹  虽然并不常去  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I go to Amsterdam--not frequently,
+Dialogue: 0,0:29:20.19,0:29:21.94,*Default,NTP,0000,0000,0000,,但也去过大概十次或者十二次  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I've been there ten or twelve times, or something.
+Dialogue: 0,0:29:21.94,0:29:23.09,*Default,NTP,0000,0000,0000,,也参加过由耶鲁组织去那儿的旅游\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I did a Yale trip there.
+Dialogue: 0,0:29:23.09,0:29:24.77,*Default,NTP,0000,0000,0000,,我记得当时我们让所有校友\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I remember we took all these alumni around
+Dialogue: 0,0:29:24.77,0:29:26.73,*Default,NTP,0000,0000,0000,,都围在那看这东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to look at all this stuff.
+Dialogue: 0,0:29:26.90,0:29:28.41,*Default,NTP,0000,0000,0000,,还算挺有意思的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was mildly fun.
+Dialogue: 0,0:29:28.93,0:29:33.18,*Default,NTP,0000,0000,0000,,那些荷兰人...荷兰是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the Dutch did--the Netherlands
+Dialogue: 0,0:29:33.18,0:29:36.13,*Default,NTP,0000,0000,0000,,非常非常小的国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an extraordinarily small country,
+Dialogue: 0,0:29:36.79,0:29:40.01,*Default,NTP,0000,0000,0000,,也是当时欧洲人口密度最高的国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's the most populated country in Europe, then,
+Dialogue: 0,0:29:40.01,0:29:44.01,*Default,NTP,0000,0000,0000,,如果以每平方公里人口计算  现在也是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}per square kilometre, and is now--once.
+Dialogue: 0,0:29:44.01,0:29:49.68,*Default,NTP,0000,0000,0000,,要怎么做才能养活这么多的人呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What they have to do in order to feed the population,
+Dialogue: 0,0:29:49.96,0:29:51.70,*Default,NTP,0000,0000,0000,,你得有更多的土地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to have more land.
+Dialogue: 0,0:29:51.70,0:29:53.65,*Default,NTP,0000,0000,0000,,怎么样才能得到更多的土地呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How are you going to get more land?
+Dialogue: 0,0:29:53.65,0:29:54.79,*Default,NTP,0000,0000,0000,,你在那里开车的话会看到一个神奇的场景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the incredible things if you're driving,
+Dialogue: 0,0:29:54.79,0:29:55.90,*Default,NTP,0000,0000,0000,,比方说从格罗宁根\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}say, from Groningen,
+Dialogue: 0,0:29:55.90,0:29:57.85,*Default,NTP,0000,0000,0000,,一路开车到阿姆斯特丹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're going to go all the way down to Amsterdam,
+Dialogue: 0,0:29:57.85,0:29:59.19,*Default,NTP,0000,0000,0000,,当你驾车在海边行驶时  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you drive along the coast,
+Dialogue: 0,0:29:59.19,0:30:03.25,*Default,NTP,0000,0000,0000,,你会一直在这种环海的公路上开车\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're driving along this sort of road that's out in the sea.
+Dialogue: 0,0:30:03.25,0:30:07.72,*Default,NTP,0000,0000,0000,,天水之间广袤的大地在你左边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All the land between the water on the left side
+Dialogue: 0,0:30:07.72,0:30:11.12,*Default,NTP,0000,0000,0000,,公路在填海而形成的土地上无限延伸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a long, long way has been reclaimed from the sea.
+Dialogue: 0,0:30:11.12,0:30:12.88,*Default,NTP,0000,0000,0000,,这是十七世纪的景象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the seventeenth century.
+Dialogue: 0,0:30:12.88,0:30:16.38,*Default,NTP,0000,0000,0000,,不是现在大堡礁海岸边的潜水运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This isn't scuba diving now off the Great Barrier Reef,
+Dialogue: 0,0:30:16.38,0:30:17.35,*Default,NTP,0000,0000,0000,,或者其他类似的活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or something like that.
+Dialogue: 0,0:30:17.35,0:30:21.18,*Default,NTP,0000,0000,0000,,他们所做的是围海造地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What they're doing is they're reclaiming the land from the sea.
+Dialogue: 0,0:30:21.18,0:30:24.07,*Default,NTP,0000,0000,0000,,这与世界贸易之间的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What this has to do with global economy
+Dialogue: 0,0:30:24.07,0:30:26.10,*Default,NTP,0000,0000,0000,,就在于你必须先让民众衣食无忧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that you have to be able to feed the population.
+Dialogue: 0,0:30:26.10,0:30:28.10,*Default,NTP,0000,0000,0000,,他们的做法和英格兰的一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have, along with the English--
+Dialogue: 0,0:30:28.10,0:30:30.27,*Default,NTP,0000,0000,0000,,这两件事是有关联的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these two facts are elated--
+Dialogue: 0,0:30:30.27,0:30:32.10,*Default,NTP,0000,0000,0000,,爆发了农业革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ran agricultural revolution.
+Dialogue: 0,0:30:32.40,0:30:34.27,*Default,NTP,0000,0000,0000,,英国也进行了农业革命  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have an agricultural revolution,
+Dialogue: 0,0:30:34.27,0:30:37.96,*Default,NTP,0000,0000,0000,,他们还对商品化的农作物进行投资  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}investment in commercialized agriculture,
+Dialogue: 0,0:30:37.96,0:30:41.51,*Default,NTP,0000,0000,0000,,使得乡村地区的产量有了很大的提高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and increase in the production in rural areas.
+Dialogue: 0,0:30:41.51,0:30:44.60,*Default,NTP,0000,0000,0000,,而在荷兰  则是因为这个原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of the Netherlands, it's because of this.
+Dialogue: 0,0:30:44.60,0:30:47.26,*Default,NTP,0000,0000,0000,,我下一次会谈为何农业革命会发生在英国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk about why it happened in Britain another time.
+Dialogue: 0,0:30:47.26,0:30:48.74,*Default,NTP,0000,0000,0000,,因为他们围海造地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's because they reclaimed land.
+Dialogue: 0,0:30:48.74,0:30:50.84,*Default,NTP,0000,0000,0000,,他们通过围海造地扩大了多少面积呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How much land do they reclaim from the sea?
+Dialogue: 0,0:30:50.84,0:30:53.06,*Default,NTP,0000,0000,0000,,仅1590至1615年间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, 36,000 acres
+Dialogue: 0,0:30:53.06,0:30:57.03,*Default,NTP,0000,0000,0000,,就有足足三万六千英亩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}just between 1590 and 1615.
+Dialogue: 0,0:30:57.03,0:30:58.27,*Default,NTP,0000,0000,0000,,这是一个相当惊人的数字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a phenomenal amount,
+Dialogue: 0,0:30:58.28,0:31:00.88,*Default,NTP,0000,0000,0000,,并且它还在不断增加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} and they keep going over and over again.
+Dialogue: 0,0:31:00.88,0:31:03.48,*Default,NTP,0000,0000,0000,,荷兰共和国的人口也在1550零年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The population of the Dutch Republic increases
+Dialogue: 0,0:31:03.48,0:31:07.90,*Default,NTP,0000,0000,0000,,到1660年之间增长到了两百万人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between 1550 and 1650 to almost two million people.
+Dialogue: 0,0:31:07.91,0:31:09.38,*Default,NTP,0000,0000,0000,,这是仍然是一个相当小的数字  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is in a pretty small
+Dialogue: 0,0:31:09.38,0:31:10.17,*Default,NTP,0000,0000,0000,,只比比利时稍大一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}-it's bigger than Belgium,
+Dialogue: 0,0:31:10.17,0:31:13.86,*Default,NTP,0000,0000,0000,,不过比利时的领土也是很小的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this is a pretty small territory.
+Dialogue: 0,0:31:13.94,0:31:16.41,*Default,NTP,0000,0000,0000,,阿姆斯特丹  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Amsterdam,
+Dialogue: 0,0:31:17.01,0:31:20.70,*Default,NTP,0000,0000,0000,,到十七世纪中叶 也就是1650年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by mid-seventeenth century, by 1650,
+Dialogue: 0,0:31:20.72,0:31:25.59,*Default,NTP,0000,0000,0000,,人口增长至十五万\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}increases to 150,000 people.
+Dialogue: 0,0:31:25.59,0:31:28.21,*Default,NTP,0000,0000,0000,,他们凿建了三条巨大的运河  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They build these three large canals
+Dialogue: 0,0:31:28.21,0:31:33.66,*Default,NTP,0000,0000,0000,,使得城市面积扩大了四倍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this expands the area of the city by four times.
+Dialogue: 0,0:31:33.67,0:31:37.20,*Default,NTP,0000,0000,0000,,这一变化的意义就在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What this means is that 
+Dialogue: 0,0:31:37.20,0:31:43.40,*Default,NTP,0000,0000,0000,,船舶能直接停泊在巨大的货仓外卸货了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}boats can dock outside these kind of big warehouses and can unload or,
+Dialogue: 0,0:31:43.40,0:31:46.91,*Default,NTP,0000,0000,0000,,当然  也同样能装载货物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depending on the case, load goods.
+Dialogue: 0,0:31:46.91,0:31:54.92,*Default,NTP,0000,0000,0000,,仅在十七世纪中叶  这里就开凿了 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have 500 miles of canals dug just in the middle decades
+Dialogue: 0,0:31:54.92,0:31:56.99,*Default,NTP,0000,0000,0000,,五百英里的人工运河 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the seventeenth century.
+Dialogue: 0,0:31:56.99,0:32:00.32,*Default,NTP,0000,0000,0000,,由于运河的开凿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It becomes this economic dynamo because of that,
+Dialogue: 0,0:32:00.32,0:32:01.63,*Default,NTP,0000,0000,0000,,使得这里成为欧洲经济的发动机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and thus traders
+Dialogue: 0,0:32:01.64,0:32:03.65,*Default,NTP,0000,0000,0000,,各国的商贩在这随处可见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are to be found everywhere.
+Dialogue: 0,0:32:03.65,0:32:08.40,*Default,NTP,0000,0000,0000,,1630年  这里大概有两千五百艘商船\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the 1630s there are 2,500 trading ships.
+Dialogue: 0,0:32:09.38,0:32:14.09,*Default,NTP,0000,0000,0000,,他们成为欧洲谷类和鱼产的主要供货商\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They become the principal supplier of grain and fish in Europe.
+Dialogue: 0,0:32:14.09,0:32:19.09,*Default,NTP,0000,0000,0000,,荷兰人控制了波罗的海的贸易往来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Dutch dominate the Baltic trade.
+Dialogue: 0,0:32:19.09,0:32:20.42,*Default,NTP,0000,0000,0000,,像格达斯克这样的城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cities like Gdansk,
+Dialogue: 0,0:32:20.42,0:32:22.84,*Default,NTP,0000,0000,0000,,也就渐渐淡出了人们的视野\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we tend to forget about,
+Dialogue: 0,0:32:22.84,0:32:25.58,*Default,NTP,0000,0000,0000,,而其实  它在当时和现在都仍是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}unfortunately, which is a very important port
+Dialogue: 0,0:32:25.58,0:32:27.27,*Default,NTP,0000,0000,0000,,非常重要的港口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then and still now.
+Dialogue: 0,0:32:27.27,0:32:31.70,*Default,NTP,0000,0000,0000,,那里也是1980年团结工会的创始地
+Dialogue: 0,0:32:31.70,0:32:36.65,*Default,NTP,0000,0000,0000,,一个非常重要的港口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an important port in all of this.
+Dialogue: 0,0:32:36.65,0:32:41.67,*Default,NTP,0000,0000,0000,,他们于十七世纪二三十年代至东印度地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They reach the East Indies in the 1620s and the 1630s.
+Dialogue: 0,0:32:41.67,0:32:48.24,*Default,NTP,0000,0000,0000,,带回了肉桂 豆蔻 以及各种奇珍异宝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They bring back cinnamon, nutmeg, and all sorts of valuables.
+Dialogue: 0,0:32:48.24,0:32:49.80,*Default,NTP,0000,0000,0000,,这些所带来的财富\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's this kind of wealth
+Dialogue: 0,0:32:49.80,0:32:52.50,*Default,NTP,0000,0000,0000,,就成了他们为之奋斗的原动力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that allow them to fight this long, hard war
+Dialogue: 0,0:32:52.50,0:32:56.77,*Default,NTP,0000,0000,0000,,使得他们在艰苦的独立战争中获得胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of independence, which they finally win.
+Dialogue: 0,0:32:56.77,0:32:58.41,*Default,NTP,0000,0000,0000,,现在  这张图为何会出现在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, why is this in here?
+Dialogue: 0,0:32:58.41,0:33:00.16,*Default,NTP,0000,0000,0000,,这是伦勃朗画的  你们大部分人知道的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is Rembrandt, as most of you know.
+Dialogue: 0,0:32:58.46,0:33:00.16,*Default,NTP,0000,0000,0000,,[伦勃朗 1609-1669, 荷兰画家]
+Dialogue: 0,0:33:00.49,0:33:03.56,*Default,NTP,0000,0000,0000,,这幅画叫做《夜巡》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is called The Night Watch.
+Dialogue: 0,0:33:03.88,0:33:07.58,*Default,NTP,0000,0000,0000,,这幅画作的重点在于谁被画了进来 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The importance of this painting is who is being painted
+Dialogue: 0,0:33:07.58,0:33:12.08,*Default,NTP,0000,0000,0000,,更重要的是  是谁让伦勃朗画这幅画的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and, more than that, who is getting Rembrandt to paint this.
+Dialogue: 0,0:33:12.83,0:33:17.17,*Default,NTP,0000,0000,0000,,如果你到了法国  "美丽"的法兰西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you go down into France, if you go to la belle France,
+Dialogue: 0,0:33:17.17,0:33:20.63,*Default,NTP,0000,0000,0000,,这些画作被\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the painting is dominated by nobles
+Dialogue: 0,0:33:20.64,0:33:22.44,*Default,NTP,0000,0000,0000,,那些想为自己留像的士绅们所拥有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who want pictures of themselves,
+Dialogue: 0,0:33:22.70,0:33:25.94,*Default,NTP,0000,0000,0000,,或者被令人讨厌的"太阳王"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the tiresome Sun King
+Dialogue: 0,0:33:25.95,0:33:29.97,*Default,NTP,0000,0000,0000,,以及他可悲的走狗们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and all his sort of miserable and all his sort of miserablehangers-on,
+Dialogue: 0,0:33:29.97,0:33:31.72,*Default,NTP,0000,0000,0000,,富有但却可悲的走狗们所拥有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very rich, miserable hangers-on.
+Dialogue: 0,0:33:31.72,0:33:37.06,*Default,NTP,0000,0000,0000,,如同意大利的作品反映出文艺复兴的精髓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the Dutch painters painted reflects in the same way
+Dialogue: 0,0:33:37.06,0:33:40.37,*Default,NTP,0000,0000,0000,,荷兰画家的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Renaissance art reflected 
+Dialogue: 0,0:33:40.37,0:33:42.35,*Default,NTP,0000,0000,0000,,同样映射出当时的社会文化特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what was important to Renaissance Italy.
+Dialogue: 0,0:33:42.36,0:33:45.02,*Default,NTP,0000,0000,0000,,谁来画这些委托画作呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who did the commissioning of painting?
+Dialogue: 0,0:33:45.03,0:33:46.41,*Default,NTP,0000,0000,0000,,我关心这些是因为我母亲也是一名画家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I care because my mother was a painter,
+Dialogue: 0,0:33:46.41,0:33:47.89,*Default,NTP,0000,0000,0000,,她是一名肖像画家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}she was a portrait painter.
+Dialogue: 0,0:33:48.02,0:33:51.57,*Default,NTP,0000,0000,0000,,我们在俄勒冈州的波特兰时  就以此为生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's how we survived in Portland, Oregon.
+Dialogue: 0,0:33:51.79,0:33:55.34,*Default,NTP,0000,0000,0000,,那些人下订单并且告诉你所要画的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who commissioned these paintings and what they painted
+Dialogue: 0,0:33:55.34,0:33:57.04,*Default,NTP,0000,0000,0000,,而从这些信息能猜出他们是怎么想自己的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}tell you who these people thought they were.
+Dialogue: 0,0:33:57.04,0:33:58.09,*Default,NTP,0000,0000,0000,,这非常有趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's pretty interesting.
+Dialogue: 0,0:33:58.09,0:33:59.10,*Default,NTP,0000,0000,0000,,这些委托人又是谁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who are these?
+Dialogue: 0,0:33:59.10,0:33:59.99,*Default,NTP,0000,0000,0000,,这幅画是《夜巡》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is The Night Watch.
+Dialogue: 0,0:33:59.99,0:34:02.87,*Default,NTP,0000,0000,0000,,这些人是阿姆斯特丹的权贵们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are the guys who run Amsterdam.
+Dialogue: 0,0:34:02.87,0:34:08.60,*Default,NTP,0000,0000,0000,,这就是阿姆斯特丹的市议会大楼的全貌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is essentially the town hall of Amsterdam.
+Dialogue: 0,0:34:08.95,0:34:11.73,*Default,NTP,0000,0000,0000,,事实上 这个建筑  抱歉我没有幻灯片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, that building itself, of which I don't have a slide,
+Dialogue: 0,0:34:11.73,0:34:13.35,*Default,NTP,0000,0000,0000,,在当时是很简陋的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is extremely modest.
+Dialogue: 0,0:34:13.35,0:34:18.08,*Default,NTP,0000,0000,0000,,它不能与马德里的西班牙宫殿相比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It looks so terribly different than anything like the Spanish
+Dialogue: 0,0:34:18.08,0:34:21.49,*Default,NTP,0000,0000,0000,,而和普鲁士国王的风格\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}palace outside of Madrid or anything that ever had anything to do with
+Dialogue: 0,0:34:21.49,0:34:25.97,*Default,NTP,0000,0000,0000,,也是天壤之别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Prussian kings and all that.
+Dialogue: 0,0:34:25.97,0:34:27.56,*Default,NTP,0000,0000,0000,,这点非常明显\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that's pretty obvious.
+Dialogue: 0,0:34:27.64,0:34:29.73,*Default,NTP,0000,0000,0000,,这是一个过磅处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the weighing house.
+Dialogue: 0,0:34:27.73,0:34:29.73,*Default,NTP,0000,0000,0000,,[过磅处:海关称重货物的地方]
+Dialogue: 0,0:34:30.37,0:34:31.58,*Default,NTP,0000,0000,0000,,这里  这是一个非常经典的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here, this is very classic.
+Dialogue: 0,0:34:31.58,0:34:32.79,*Default,NTP,0000,0000,0000,,我虽然并不是个建筑学教授\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not a professor of architecture,
+Dialogue: 0,0:34:32.79,0:34:35.36,*Default,NTP,0000,0000,0000,,但这很明显是典型的北欧建筑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's obvious this is northern European architecture
+Dialogue: 0,0:34:35.36,0:34:37.31,*Default,NTP,0000,0000,0000,,你能在法国北部看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you can see in northern France,
+Dialogue: 0,0:34:37.31,0:34:38.84,*Default,NTP,0000,0000,0000,,像阿拉斯之类的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cities like Arras and other places,
+Dialogue: 0,0:34:38.84,0:34:41.08,*Default,NTP,0000,0000,0000,,或是阿登省的沙勒维尔-梅济耶尔也可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or Charleville-Mezieres in the Ardennes.
+Dialogue: 0,0:34:41.08,0:34:43.06,*Default,NTP,0000,0000,0000,,它是最梦幻的广场之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's one of the most fabulous plazas anywhere.
+Dialogue: 0,0:34:43.06,0:34:44.74,*Default,NTP,0000,0000,0000,,或者是孚日广场  它是目前为止\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or in the Place des Vosges, which is by far
+Dialogue: 0,0:34:44.74,0:34:46.89,*Default,NTP,0000,0000,0000,,巴黎最漂亮的广场 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the most beautiful plaza in Paris,
+Dialogue: 0,0:34:47.08,0:34:48.43,*Default,NTP,0000,0000,0000,,在那里你能看到类似的建筑物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have this kind of architecture.
+Dialogue: 0,0:34:48.43,0:34:50.91,*Default,NTP,0000,0000,0000,,那个就是过磅处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But this is the weighing house there.
+Dialogue: 0,0:34:50.92,0:34:53.84,*Default,NTP,0000,0000,0000,,这是另外一个过磅处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's another one.
+Dialogue: 0,0:34:55.04,0:34:56.65,*Default,NTP,0000,0000,0000,,这些建筑物是最重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The buildings are the most important.
+Dialogue: 0,0:34:56.65,0:35:00.27,*Default,NTP,0000,0000,0000,,城里的建筑并不是庞大的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Buildings in the cities are not huge, 
+Dialogue: 0,0:35:00.27,0:35:01.68,*Default,NTP,0000,0000,0000,,高耸入云的巴洛克教堂式风格  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over-the-top Baroque churches,
+Dialogue: 0,0:35:01.68,0:35:04.06,*Default,NTP,0000,0000,0000,,例如位于罗马城的耶稣大教堂那样的样式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as the Gesu in Rome, for example.
+Dialogue: 0,0:35:04.07,0:35:05.43,*Default,NTP,0000,0000,0000,,它们都像是过磅处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are weighing houses.
+Dialogue: 0,0:35:05.43,0:35:09.14,*Default,NTP,0000,0000,0000,,与之相比  市政厅的布局则非常简陋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The town hall was in very modest proportions
+Dialogue: 0,0:35:09.15,0:35:10.60,*Default,NTP,0000,0000,0000,,因为这属于加尔文主义教派\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's Calvinist.
+Dialogue: 0,0:35:10.60,0:35:13.36,*Default,NTP,0000,0000,0000,,加尔文教徒并不完全是法语中的 "rigolo"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Calvinists weren't exactly what the French call rigolo,
+Dialogue: 0,0:35:13.36,0:35:15.80,*Default,NTP,0000,0000,0000,,他们并不是那么奔放  有趣的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}weren't exactly wild, fun-loving types.
+Dialogue: 0,0:35:17.24,0:35:19.32,*Default,NTP,0000,0000,0000,,甚至教堂也完全褪去了巴洛克风格的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even the churches are completely denuded
+Dialogue: 0,0:35:19.32,0:35:24.29,*Default,NTP,0000,0000,0000,,没有迷人的小天使  没有杂乱的装饰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the kinds of Baroque, swooning cherubs and clutter
+Dialogue: 0,0:35:24.29,0:35:25.53,*Default,NTP,0000,0000,0000,,在这里这些都没有... 但很漂亮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you found in--;beautiful,
+Dialogue: 0,0:35:25.53,0:35:26.90,*Default,NTP,0000,0000,0000,,我并不是在数落巴洛克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not knocking the Baroque--
+Dialogue: 0,0:35:26.90,0:35:28.69,*Default,NTP,0000,0000,0000,,不过  这个教堂真的很漂亮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but beautiful churches--;or,
+Dialogue: 0,0:35:28.69,0:35:31.32,*Default,NTP,0000,0000,0000,,在维也纳的建筑也是绝佳的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Vienna it's a good example of that,
+Dialogue: 0,0:35:31.32,0:35:33.03,*Default,NTP,0000,0000,0000,,或者在任何地方都有很好的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or anywhere is a good example of that.
+Dialogue: 0,0:35:33.82,0:35:35.72,*Default,NTP,0000,0000,0000,,这是另一个过磅处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's another weighing house.
+Dialogue: 0,0:35:35.73,0:35:37.66,*Default,NTP,0000,0000,0000,,它在豪达  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is in Gouda, as in the cheese,
+Dialogue: 0,0:35:35.76,0:35:37.66,*Default,NTP,0000,0000,0000,,[豪达盛产奶酪]
+Dialogue: 0,0:35:37.94,0:35:39.18,*Default,NTP,0000,0000,0000,,没错  就是那个盛产奶酪的豪达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the town of Gouda.
+Dialogue: 0,0:35:39.18,0:35:40.59,*Default,NTP,0000,0000,0000,,这并不是只有阿姆斯特丹有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Amsterdam wasn't alone.
+Dialogue: 0,0:35:40.59,0:35:43.66,*Default,NTP,0000,0000,0000,,再看这个  这个是造在运河旁的住宅楼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, here, these are houses that are built along the canals.
+Dialogue: 0,0:35:43.66,0:35:45.75,*Default,NTP,0000,0000,0000,,你已经见过了这些运河旁的仓库了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got these warehouses along the canals and here's
+Dialogue: 0,0:35:45.75,0:35:48.22,*Default,NTP,0000,0000,0000,,这些银行家们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the bankers--
+Dialogue: 0,0:35:48.22,0:35:49.48,*Default,NTP,0000,0000,0000,,大部分来自于荷兰  同时也来自英国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Dutch had the most, along with the English,
+Dialogue: 0,0:35:49.48,0:35:53.21,*Default,NTP,0000,0000,0000,,他们拥有世界上最复杂的的银行系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had sophisticated banking system  in the world.
+Dialogue: 0,0:35:53.91,0:35:57.10,*Default,NTP,0000,0000,0000,,伦敦的劳埃德市场  现在做一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lloyds of London, which now does things like
+Dialogue: 0,0:35:54.10,0:35:57.10,*Default,NTP,0000,0000,0000,,[劳埃德市场:著名保险市场]
+Dialogue: 0,0:35:57.29,0:36:00.85,*Default,NTP,0000,0000,0000,,为四分卫的膝盖保险之类的事 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ensure quarterbacks' knees and things\N \N685\N00:36:00,852 --> 00:36:02,973\N不过他们早在在十八世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it begins in the eighteenth century
+Dialogue: 0,0:36:02.97,0:36:05.86,*Default,NTP,0000,0000,0000,,航运业刚兴起时就开始做保险了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when people go into the docks.
+Dialogue: 0,0:36:07.42,0:36:10.93,*Default,NTP,0000,0000,0000,,因为有很多船只在回程的时候会损坏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because a lot of these ships go blub on the way back,
+Dialogue: 0,0:36:10.96,0:36:13.03,*Default,NTP,0000,0000,0000,,或是被海盗之类的匪徒抢劫\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or are taken by pirates and stuff like that,
+Dialogue: 0,0:36:13.03,0:36:14.79,*Default,NTP,0000,0000,0000,,他们说  "我们想为这船提供保险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they say, "We want to insure this ship.
+Dialogue: 0,0:36:14.79,0:36:17.82,*Default,NTP,0000,0000,0000,,你愿意付10%的钱作为保险金吗"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Will you sign up for ten percent of the value of this insurance?"
+Dialogue: 0,0:36:17.83,0:36:19.47,*Default,NTP,0000,0000,0000,,这就是伦敦劳埃德市场的开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's how Lloyds of London starts.
+Dialogue: 0,0:36:19.47,0:36:23.05,*Default,NTP,0000,0000,0000,,不过在阿姆斯特丹也一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you had the equivalent in Amsterdam as well.
+Dialogue: 0,0:36:23.05,0:36:25.88,*Default,NTP,0000,0000,0000,,你能通过这些家伙进行融资\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have access to capital by those guys,
+Dialogue: 0,0:36:25.88,0:36:27.31,*Default,NTP,0000,0000,0000,,这些家伙已经不在了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these guys who are no longer there.
+Dialogue: 0,0:36:27.31,0:36:30.14,*Default,NTP,0000,0000,0000,,那些幕后的中产阶级们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The middle class guys behind the screen
+Dialogue: 0,0:36:30.36,0:36:33.54,*Default,NTP,0000,0000,0000,,他们打算对这些长途贸易投资\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who are going to invest in these long treks.
+Dialogue: 0,0:36:33.54,0:36:35.73,*Default,NTP,0000,0000,0000,,开始派舰船去纽芬兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You send off a ship to Newfoundland,
+Dialogue: 0,0:36:35.73,0:36:38.55,*Default,NTP,0000,0000,0000,,或是冰岛  甚至是地中海\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or to Iceland, or even to the Mediterranean.
+Dialogue: 0,0:36:38.55,0:36:39.58,*Default,NTP,0000,0000,0000,,他们开始进入了地中海地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They start getting into the Mediterranean
+Dialogue: 0,0:36:39.58,0:36:43.37,*Default,NTP,0000,0000,0000,,而这一举动把他们的竞争对手也吓得够呛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that scares the hell out of their commercial rivals.
+Dialogue: 0,0:36:43.37,0:36:46.35,*Default,NTP,0000,0000,0000,,当然  房子造起来就是给人住的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you also build these houses for people to live in.
+Dialogue: 0,0:36:46.35,0:36:48.30,*Default,NTP,0000,0000,0000,,由于运河之间的陆地空间狭小\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because there's not a lot of room between the canals,
+Dialogue: 0,0:36:48.30,0:36:50.79,*Default,NTP,0000,0000,0000,,这就解释了为何你上楼时会觉得很陡峭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's why they're so steep when you walk up these things.
+Dialogue: 0,0:36:50.79,0:36:52.23,*Default,NTP,0000,0000,0000,,差不多就是像这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's almost like that.
+Dialogue: 0,0:36:52.23,0:36:53.82,*Default,NTP,0000,0000,0000,,就像是一个斜坡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an incline.
+Dialogue: 0,0:36:53.82,0:36:56.59,*Default,NTP,0000,0000,0000,,而且这些建筑看上去都高耸入云\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They seem to be reaching toward the sky there,
+Dialogue: 0,0:36:56.59,0:37:01.93,*Default,NTP,0000,0000,0000,,不过不像巴洛克式教堂高耸的塔楼那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but not reaching toward the sky as in the cupola of a Baroque church
+Dialogue: 0,0:37:01.93,0:37:04.18,*Default,NTP,0000,0000,0000,,往顶上看时  你应该会看到雕刻着的上帝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you're supposed to see God at the top.
+Dialogue: 0,0:37:04.18,0:37:06.87,*Default,NTP,0000,0000,0000,,在这儿  他们往头上看的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here, they look up and
+Dialogue: 0,0:37:06.87,0:37:07.82,*Default,NTP,0000,0000,0000,,大概能看到钞票吧  或者其他东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they see money at the top, or whatever.
+Dialogue: 0,0:37:07.82,0:37:09.96,*Default,NTP,0000,0000,0000,,那也是种信仰嘛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were religious as well,
+Dialogue: 0,0:37:09.96,0:37:12.18,*Default,NTP,0000,0000,0000,,只不过是种不太一样的信仰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it was a different kind of religion.
+Dialogue: 0,0:37:12.18,0:37:15.39,*Default,NTP,0000,0000,0000,,看这个  这个例子就更现代一些了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here, this is a more modern example
+Dialogue: 0,0:37:15.39,0:37:18.58,*Default,NTP,0000,0000,0000,,旁边还有些小咖啡馆杂然而列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a little hash cafe next to it or something.
+Dialogue: 0,0:37:18.58,0:37:20.38,*Default,NTP,0000,0000,0000,,这个是伦勃朗的旧居\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is Rembrandt's house.
+Dialogue: 0,0:37:22.02,0:37:23.64,*Default,NTP,0000,0000,0000,,他总得有地方住吧  他就住在这样的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had to live somewhere, and that's where he lived
+Dialogue: 0,0:37:23.64,0:37:25.09,*Default,NTP,0000,0000,0000,,因为他画这里的住户\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he paints these people.
+Dialogue: 0,0:37:25.09,0:37:27.12,*Default,NTP,0000,0000,0000,,伦勃朗也曾画一些天主教题材的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Rembrandt did have one time where he started painting 
+Dialogue: 0,0:37:27.12,0:37:31.11,*Default,NTP,0000,0000,0000,,但基本上他和当时的其他画家一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}kind of Catholic themes, but basically he's like these other guys.
+Dialogue: 0,0:37:31.17,0:37:33.89,*Default,NTP,0000,0000,0000,,他们画...我很快会告诉你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're painting--I'll tell you in a minute.
+Dialogue: 0,0:37:33.89,0:37:38.12,*Default,NTP,0000,0000,0000,,他们的画作描绘了荷兰中产阶级的生活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they're painting middle-class life in the Netherlands.
+Dialogue: 0,0:37:38.50,0:37:40.34,*Default,NTP,0000,0000,0000,,他们不描绘宏伟的战争场面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They don't do big battle scenes.
+Dialogue: 0,0:37:40.34,0:37:42.00,*Default,NTP,0000,0000,0000,,描绘战争场面的画作  只能在荷兰南部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have to go to the southern Netherlands
+Dialogue: 0,0:37:42.00,0:37:44.65,*Default,NTP,0000,0000,0000,,或者比利时  甚至法国境内才能得见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or Belgium for that, or into France.
+Dialogue: 0,0:37:45.05,0:37:49.66,*Default,NTP,0000,0000,0000,,他们画的就是这些的  他们的房子是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what they do and that's what they look like.
+Dialogue: 0,0:37:49.66,0:37:50.93,*Default,NTP,0000,0000,0000,,这一特征很明显\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's pretty obvious.
+Dialogue: 0,0:37:51.13,0:37:53.67,*Default,NTP,0000,0000,0000,,这是个孤儿院\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an orphanage.
+Dialogue: 0,0:37:53.67,0:37:55.57,*Default,NTP,0000,0000,0000,,毫无疑问  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They had, without question,
+Dialogue: 0,0:37:55.57,0:37:59.01,*Default,NTP,0000,0000,0000,,他们拥有最为复杂的慈善机构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the most sophisticated charitable institutions anywhere.
+Dialogue: 0,0:37:59.01,0:38:00.83,*Default,NTP,0000,0000,0000,,事实上  我们知道他们吃什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, we know what they ate.
+Dialogue: 0,0:38:00.83,0:38:04.68,*Default,NTP,0000,0000,0000,,对普通人而言  这是个最为富庶的国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was the most prosperous country for ordinary people anywhere.
+Dialogue: 0,0:38:04.68,0:38:07.64,*Default,NTP,0000,0000,0000,,这里的饮食...我们知道他们每餐都吃什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The diet here, we know what they ate in their meals.
+Dialogue: 0,0:38:07.88,0:38:13.08,*Default,NTP,0000,0000,0000,,他们的吃得比别的地方的穷人好得多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They ate much better than poor people did almost anywhere else.
+Dialogue: 0,0:38:13.08,0:38:16.97,*Default,NTP,0000,0000,0000,,事实上  这里的一些普通工人都能买得起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indeed, some ordinary workers bought paintings
+Dialogue: 0,0:38:17.41,0:38:23.17,*Default,NTP,0000,0000,0000,,像斯汀或者一些其他画家的绘画作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by Steen and all sorts of these other people.
+Dialogue: 0,0:38:23.33,0:38:25.50,*Default,NTP,0000,0000,0000,,这是个工场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here is a workhouse.
+Dialogue: 0,0:38:25.50,0:38:27.86,*Default,NTP,0000,0000,0000,,可以说基本上就是个监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a prison, basically.
+Dialogue: 0,0:38:28.20,0:38:29.84,*Default,NTP,0000,0000,0000,,管理模式也像监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were organized for that, too.
+Dialogue: 0,0:38:29.85,0:38:33.82,*Default,NTP,0000,0000,0000,,这是个需要超强忍耐力的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was the place of toleration.
+Dialogue: 0,0:38:33.82,0:38:35.00,*Default,NTP,0000,0000,0000,,这点毫无疑问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no doubt about that.
+Dialogue: 0,0:38:35.00,0:38:39.11,*Default,NTP,0000,0000,0000,,启蒙运动时期  思想家们的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}During the Enlightenment, the works of the philosophers
+Dialogue: 0,0:38:39.11,0:38:40.73,*Default,NTP,0000,0000,0000,,即使不能在法国出版\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that could not be published in France
+Dialogue: 0,0:38:40.73,0:38:43.32,*Default,NTP,0000,0000,0000,,但也都在瑞士出版了  之后不久\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}werepublished in Switzerland, more about that another time,
+Dialogue: 0,0:38:43.32,0:38:44.59,*Default,NTP,0000,0000,0000,,又在荷兰相继问世\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in the Netherlands.
+Dialogue: 0,0:38:44.59,0:38:46.00,*Default,NTP,0000,0000,0000,,人们可以开始四处针砭时弊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they could lash out.
+Dialogue: 0,0:38:46.01,0:38:47.74,*Default,NTP,0000,0000,0000,,他们时而甚至会痛骂同性恋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They lashed out at gays sometimes.
+Dialogue: 0,0:38:47.74,0:38:49.97,*Default,NTP,0000,0000,0000,,时而又抨击天主教\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They lashed out at Catholics sometimes.
+Dialogue: 0,0:38:50.25,0:38:53.15,*Default,NTP,0000,0000,0000,,但他们总能把握好分寸  好像在担心什么东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was an edge to them, as if the whole thing
+Dialogue: 0,0:38:53.15,0:38:54.69,*Default,NTP,0000,0000,0000,,垮下来的话会压死他们似的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could collapse on their heads.
+Dialogue: 0,0:38:54.69,0:38:57.68,*Default,NTP,0000,0000,0000,,并不只有西蒙·森马一人指出过这点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Simon Schama is not the only person who made that point.
+Dialogue: 0,0:38:57.68,0:38:58.96,*Default,NTP,0000,0000,0000,,许多人也都同样指出过  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Others have as well,
+Dialogue: 0,0:38:58.96,0:39:01.65,*Default,NTP,0000,0000,0000,,也许是因为他们担心会有洪水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perhaps because of the big floods.
+Dialogue: 0,0:39:01.65,0:39:05.32,*Default,NTP,0000,0000,0000,,如果堤坝垮了  这张图片就是一个男孩指着堤坝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the dyke goes--here's the image of the Dutch boy with his finger in the dyke.
+Dialogue: 0,0:39:05.32,0:39:08.15,*Default,NTP,0000,0000,0000,,如果堤坝决堤  所有人都会被淹死\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the dyke goes, you are drowned.
+Dialogue: 0,0:39:08.36,0:39:11.16,*Default,NTP,0000,0000,0000,,从这个场景中可以看出堤坝相当不稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's this whole sense that the thing is precarious
+Dialogue: 0,0:39:11.16,0:39:13.82,*Default,NTP,0000,0000,0000,,你最好想想干过什么缺德事儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd better kind of mind your Ps and Qs,
+Dialogue: 0,0:39:13.82,0:39:19.06,*Default,NTP,0000,0000,0000,,或者捅过什么篓子之类的  总之得做个好人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or whatever the expression is, and be a good person
+Dialogue: 0,0:39:19.06,0:39:22.37,*Default,NTP,0000,0000,0000,,否则  这整个城市就可能真会被大水冲走\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or this whole thing could kind of be literally flooded away.
+Dialogue: 0,0:39:22.61,0:39:23.76,*Default,NTP,0000,0000,0000,,刚才的工厂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How different that is
+Dialogue: 0,0:39:23.76,0:39:26.53,*Default,NTP,0000,0000,0000,,和这个朴素的凡尔赛建筑相比实在是天差地别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than this modest estate of Versailles.
+Dialogue: 0,0:39:26.53,0:39:29.92,*Default,NTP,0000,0000,0000,,我在凡尔赛档案馆的一间破旧小屋里工作过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I worked in the archives in Versailles in the small stables.
+Dialogue: 0,0:39:29.92,0:39:32.81,*Default,NTP,0000,0000,0000,,这是我最不喜欢的宫殿之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one of my least favorite palaces.
+Dialogue: 0,0:39:32.82,0:39:35.78,*Default,NTP,0000,0000,0000,,荷兰贵族看待自己的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The way the Dutch thought about themselves is a little different
+Dialogue: 0,0:39:35.78,0:39:38.77,*Default,NTP,0000,0000,0000,,与法国还有西班牙的贵族相比  有点不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than the way the French nobility or the Spanish nobles,
+Dialogue: 0,0:39:38.77,0:39:40.11,*Default,NTP,0000,0000,0000,,至少高级贵族\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least at the higher ranks,
+Dialogue: 0,0:39:40.11,0:39:41.41,*Default,NTP,0000,0000,0000,,对自己是这么看待的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thought about themselves as well.
+Dialogue: 0,0:39:41.42,0:39:42.73,*Default,NTP,0000,0000,0000,,我给你们看这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I show these.
+Dialogue: 0,0:39:42.73,0:39:44.71,*Default,NTP,0000,0000,0000,,这些挺明显的  但是好让你们能和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are obvious, but just to put them in comparison
+Dialogue: 0,0:39:44.71,0:39:46.02,*Default,NTP,0000,0000,0000,,之后看到的一些图片做个比较\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with what you'll see in the middle.
+Dialogue: 0,0:39:46.02,0:39:49.17,*Default,NTP,0000,0000,0000,,这是凡尔赛宫里一个稍简朴的卧房\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A little modest bedroom there in Versailles.
+Dialogue: 0,0:39:50.57,0:39:52.92,*Default,NTP,0000,0000,0000,,这个是作战室  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the war room,
+Dialogue: 0,0:39:52.92,0:39:55.45,*Default,NTP,0000,0000,0000,,在法语里读作"salon de guerre"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's called,"salon de guerre"
+Dialogue: 0,0:39:56.09,0:39:57.71,*Default,NTP,0000,0000,0000,,我不喜欢凡尔赛宫 什么玩意儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't like Versailles. What the hell.
+Dialogue: 0,0:39:57.71,0:39:59.60,*Default,NTP,0000,0000,0000,,这个是沃克斯子爵的  看上去更有趣一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is Vaux-le-Vicomte, which is much more interesting.
+Dialogue: 0,0:39:59.60,0:40:01.05,*Default,NTP,0000,0000,0000,,我把这个放上来  因为我很喜欢这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just put this in because I like it.
+Dialogue: 0,0:40:01.06,0:40:05.05,*Default,NTP,0000,0000,0000,,这张图片告诉你荷兰也有城堡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It shows you there were chateaus in the Netherlands,
+Dialogue: 0,0:40:05.05,0:40:06.53,*Default,NTP,0000,0000,0000,,不过大多分布都在东部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they were mostly in the east.
+Dialogue: 0,0:40:06.53,0:40:08.47,*Default,NTP,0000,0000,0000,,他们群是拥有城堡的贵族  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were nobles that had the chateaux,;
+Dialogue: 0,0:40:08.47,0:40:11.33,*Default,NTP,0000,0000,0000,,但他们不专制  不独裁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they didn't dominate; they didn't rule.
+Dialogue: 0,0:40:12.29,0:40:14.24,*Default,NTP,0000,0000,0000,,沃克斯子爵堡十分宏伟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Vaux le Vicomte was fabulous.
+Dialogue: 0,0:40:14.24,0:40:18.04,*Default,NTP,0000,0000,0000,,有一次路易十四受他的财务大臣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Louis XIV was invited by his treasurer
+Dialogue: 0,0:40:18.04,0:40:20.32,*Default,NTP,0000,0000,0000,,福凯特的邀请去他的城堡赴宴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a man called Fouquet, to go and eat there.
+Dialogue: 0,0:40:20.32,0:40:22.07,*Default,NTP,0000,0000,0000,,他疯狂地嫉妒子爵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was insanely jealous.
+Dialogue: 0,0:40:22.16,0:40:27.43,*Default,NTP,0000,0000,0000,,因为子爵用金盘子及金银器皿来款待他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They served him on gold plates with gold silverware,
+Dialogue: 0,0:40:27.43,0:40:29.13,*Default,NTP,0000,0000,0000,,在他的城堡外面有一个巨大的池塘  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he had huge ponds stocked
+Dialogue: 0,0:40:29.13,0:40:30.74,*Default,NTP,0000,0000,0000,,里面除了河鱼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with not only freshwater fish
+Dialogue: 0,0:40:30.74,0:40:32.37,*Default,NTP,0000,0000,0000,,甚至还有海鱼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but saltwater fish.
+Dialogue: 0,0:40:32.55,0:40:35.85,*Default,NTP,0000,0000,0000,,路易十四非常嫉妒  就把他投入了监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was so jealous that he threw him in the slammer,
+Dialogue: 0,0:40:35.85,0:40:38.10,*Default,NTP,0000,0000,0000,,把他关进牢房  还把他的城堡没收了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}threw him in jail and confiscated it.
+Dialogue: 0,0:40:38.10,0:40:41.20,*Default,NTP,0000,0000,0000,,但从图片上可以看到  这座城堡与众不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the image is just that this is very different.
+Dialogue: 0,0:40:41.20,0:40:43.09,*Default,NTP,0000,0000,0000,,而且你会发觉那里的画作也很不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The paintings you found were very different.
+Dialogue: 0,0:40:43.09,0:40:45.05,*Default,NTP,0000,0000,0000,,这是伦勃朗的自画像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's Rembrandt himself.
+Dialogue: 0,0:41:01.80,0:41:03.62,*Default,NTP,0000,0000,0000,,这就是伦勃朗  我们进度很快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was Rembrandt. That was quick.
+Dialogue: 0,0:41:06.80,0:41:11.04,*Default,NTP,0000,0000,0000,,他画了大概七十幅自画像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he did something like seventy self-portraits.
+Dialogue: 0,0:41:11.04,0:41:13.53,*Default,NTP,0000,0000,0000,,他本人是他最喜欢的模特\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was his own favourite subject.
+Dialogue: 0,0:41:13.53,0:41:16.37,*Default,NTP,0000,0000,0000,,我母亲也试过给我画肖像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, my mother tried to paint me,
+Dialogue: 0,0:41:16.37,0:41:17.97,*Default,NTP,0000,0000,0000,,可我总是坐不住\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'd never hold still long enough.
+Dialogue: 0,0:41:17.97,0:41:21.31,*Default,NTP,0000,0000,0000,,所以我的肖像画都只有一些半成品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's only sort of two half-finished portraits of me.
+Dialogue: 0,0:41:21.31,0:41:22.92,*Default,NTP,0000,0000,0000,,言归正传  画家们都画什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, what did people paint?
+Dialogue: 0,0:41:22.92,0:41:24.39,*Default,NTP,0000,0000,0000,,罗伊斯达尔  不用写\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ruysdael, don't write this down.
+Dialogue: 0,0:41:24.39,0:41:25.49,*Default,NTP,0000,0000,0000,,好吧  你想写也可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, you can if you want.
+Dialogue: 0,0:41:25.49,0:41:27.35,*Default,NTP,0000,0000,0000,,你们如果能去阿姆斯特丹  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Go to the great museum in Amsterdam
+Dialogue: 0,0:41:27.35,0:41:28.90,*Default,NTP,0000,0000,0000,,一定要去伟大的国家博物馆看看这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and see it at the Rijksmuseum.
+Dialogue: 0,0:41:28.90,0:41:36.00,*Default,NTP,0000,0000,0000,,罗伊斯达尔画的是普通人生活  劳作的场景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ruysdael painted ordinary people living and at work.
+Dialogue: 0,0:41:37.26,0:41:41.03,*Default,NTP,0000,0000,0000,,很显然  这些是风车\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are windmills, obviously.
+Dialogue: 0,0:41:41.51,0:41:43.92,*Default,NTP,0000,0000,0000,,这些是风车和人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here are windmills with people.
+Dialogue: 0,0:41:44.25,0:41:46.22,*Default,NTP,0000,0000,0000,,这有些与众不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is different.
+Dialogue: 0,0:41:46.22,0:41:51.21,*Default,NTP,0000,0000,0000,,一般来说  你在别的地方很难看到这样的画作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Generally, you wouldn't find these kinds of paintings in other places.
+Dialogue: 0,0:41:51.22,0:41:54.48,*Default,NTP,0000,0000,0000,,这是画家法兰斯·霍斯的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a painter called Frans Hals, H-A-L-S.
+Dialogue: 0,0:41:54.65,0:41:55.71,*Default,NTP,0000,0000,0000,,画的是一幕家庭场景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a family scene.
+Dialogue: 0,0:41:55.71,0:42:01.30,*Default,NTP,0000,0000,0000,,这些是中产阶级委托画家为自己画的肖像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are middle-class people commissioning paintings of themselves.
+Dialogue: 0,0:42:01.30,0:42:03.56,*Default,NTP,0000,0000,0000,,这和佛罗伦萨那些自负的贵族们要求\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the equivalent of fancy patricians
+Dialogue: 0,0:42:03.56,0:42:06.15,*Default,NTP,0000,0000,0000,,给自己画像如出一辙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Florence having paintings of themselves.
+Dialogue: 0,0:42:06.15,0:42:08.07,*Default,NTP,0000,0000,0000,,但他们的出身相比威尼斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they're from a very different social class,
+Dialogue: 0,0:42:08.07,0:42:11.50,*Default,NTP,0000,0000,0000,,或者佛罗伦萨的贵族们而言不可同日而语\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the patricians of Florence or Venice.
+Dialogue: 0,0:42:12.06,0:42:14.48,*Default,NTP,0000,0000,0000,,这是我们接下来的主题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is to set the theme.
+Dialogue: 0,0:42:14.48,0:42:15.64,*Default,NTP,0000,0000,0000,,我喜欢静物画\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I love still life,
+Dialogue: 0,0:42:15.64,0:42:17.35,*Default,NTP,0000,0000,0000,,特别是有食物和酒的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}especially if they have food and wine.
+Dialogue: 0,0:42:17.36,0:42:19.18,*Default,NTP,0000,0000,0000,,这里有一些酒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's some wine up there.
+Dialogue: 0,0:42:19.18,0:42:23.11,*Default,NTP,0000,0000,0000,,这是彼得·格莱兹的作品  C-L-A-E-S-Z\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is Pieter Claesz, C-L-A-E-S-Z,
+Dialogue: 0,0:42:23.11,0:42:25.42,*Default,NTP,0000,0000,0000,,我可能发音不准确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}probably mispronounced.
+Dialogue: 0,0:42:25.55,0:42:26.44,*Default,NTP,0000,0000,0000,,这也是静物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is still life.
+Dialogue: 0,0:42:26.44,0:42:27.39,*Default,NTP,0000,0000,0000,,他们画过食物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They paint food.
+Dialogue: 0,0:42:27.39,0:42:29.32,*Default,NTP,0000,0000,0000,,画人们吃东西的场面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They paint food, and people eating,
+Dialogue: 0,0:42:29.33,0:42:32.37,*Default,NTP,0000,0000,0000,,画人们娱乐的场面  而不画战争场面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and people having fun, not people at war,
+Dialogue: 0,0:42:32.65,0:42:37.01,*Default,NTP,0000,0000,0000,,不像十八世纪时期作品的一贯主题那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not the eighteenth-century inevitable paintings
+Dialogue: 0,0:42:37.01,0:42:43.37,*Default,NTP,0000,0000,0000,,这些英伦或者欧陆的贵族们俯瞰着自己打下的村庄\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the British nobles or land big gentry looking over all of the villages
+Dialogue: 0,0:42:43.37,0:42:47.64,*Default,NTP,0000,0000,0000,,盘算着如何扩大自己的狩猎场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they've had knocked down so they could expand their hunting terrain,
+Dialogue: 0,0:42:47.64,0:42:50.77,*Default,NTP,0000,0000,0000,,或者爱抚着他们的猎犬的鼻子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or fondling the nose of their killer hunting dogs,
+Dialogue: 0,0:42:50.77,0:42:51.67,*Default,NTP,0000,0000,0000,,还有诸如此类的场景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or something like that.
+Dialogue: 0,0:42:51.67,0:42:54.30,*Default,NTP,0000,0000,0000,,这是一种对画中人的不同隐射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's just a very different way of imagining oneself.
+Dialogue: 0,0:42:54.30,0:42:55.36,*Default,NTP,0000,0000,0000,,这很有吸引力啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's very attractive.
+Dialogue: 0,0:42:55.37,0:42:57.12,*Default,NTP,0000,0000,0000,,我必须承认这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I must admit it's very attractive.
+Dialogue: 0,0:42:57.12,0:42:58.49,*Default,NTP,0000,0000,0000,,这是一所乡村学校\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the village school.
+Dialogue: 0,0:42:58.49,0:43:01.24,*Default,NTP,0000,0000,0000,,荷兰拥有在当时那个时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They had the highest literacy rate in the world,
+Dialogue: 0,0:43:01.29,0:43:04.02,*Default,NTP,0000,0000,0000,,最高的识字率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}point, period, the Dutch did.
+Dialogue: 0,0:43:04.02,0:43:05.68,*Default,NTP,0000,0000,0000,,他们都是些非常  非常普通的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were very, very ordinary people.
+Dialogue: 0,0:43:05.68,0:43:07.52,*Default,NTP,0000,0000,0000,,荷兰也有穷人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were poor people in the Netherlands.
+Dialogue: 0,0:43:07.53,0:43:09.29,*Default,NTP,0000,0000,0000,,虽然如此  他们都是非常普通的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nonetheless, they were very ordinary
+Dialogue: 0,0:43:09.29,0:43:11.08,*Default,NTP,0000,0000,0000,,但有文化的穷人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}literate poor people.
+Dialogue: 0,0:43:11.08,0:43:12.96,*Default,NTP,0000,0000,0000,,这一点我们得强调\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's something to be said for that.
+Dialogue: 0,0:43:12.96,0:43:14.14,*Default,NTP,0000,0000,0000,,我很喜欢猫\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I like cats a lot.
+Dialogue: 0,0:43:14.14,0:43:15.04,*Default,NTP,0000,0000,0000,,但我讨厌狗  不多闲扯了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hate dogs, but anyway,
+Dialogue: 0,0:43:15.04,0:43:18.11,*Default,NTP,0000,0000,0000,,这是个顽童戏猫的场景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is children playing with a cat.
+Dialogue: 0,0:43:18.22,0:43:24.25,*Default,NTP,0000,0000,0000,,我家"小猫"昨晚把我耶鲁账号的密码给改了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My cat yesterday actually undid my Yale password last night.
+Dialogue: 0,0:43:24.25,0:43:25.81,*Default,NTP,0000,0000,0000,,我看到屏幕上写着请输入"密码"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I saw the thing that said password.
+Dialogue: 0,0:43:25.81,0:43:28.90,*Default,NTP,0000,0000,0000,,然后她就真的帮我输入了"密码"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The next I knew, she had literally typed my password.
+Dialogue: 0,0:43:28.90,0:43:29.41,*Default,NTP,0000,0000,0000,,弄得我不得不再换个新的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I had to put a new one.
+Dialogue: 0,0:43:29.41,0:43:30.39,*Default,NTP,0000,0000,0000,,这和其他人一点关系也没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This has nothing to do with anyone,
+Dialogue: 0,0:43:30.39,0:43:31.32,*Default,NTP,0000,0000,0000,,所以你们随便听听就算了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you should take this out.
+Dialogue: 0,0:43:31.32,0:43:33.66,*Default,NTP,0000,0000,0000,,管他呢  这只是一只"猫"罢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, cats.
+Dialogue: 0,0:43:33.74,0:43:34.83,*Default,NTP,0000,0000,0000,,我们继续  掷球\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There we go--boules.
+Dialogue: 0,0:43:34.83,0:43:36.43,*Default,NTP,0000,0000,0000,,我们在法国南部玩掷球游戏的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is what we do in the South of France
+Dialogue: 0,0:43:36.43,0:43:38.16,*Default,NTP,0000,0000,0000,,手边都会放一杯夏敦埃酒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a little chardonnay on the side.
+Dialogue: 0,0:43:38.16,0:43:39.11,*Default,NTP,0000,0000,0000,,我们爱玩掷球\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We play boules.
+Dialogue: 0,0:43:39.11,0:43:40.98,*Default,NTP,0000,0000,0000,,和这里玩的不太一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not quite the same thing.
+Dialogue: 0,0:43:40.98,0:43:43.20,*Default,NTP,0000,0000,0000,,有点像室外地滚球 用这样的金属球\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's like bocce. We have this sort of metal ball.
+Dialogue: 0,0:43:43.20,0:43:45.24,*Default,NTP,0000,0000,0000,,不过这是另一堂课要上的内容了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's for another lecture
+Dialogue: 0,0:43:48.02,0:43:50.32,*Default,NTP,0000,0000,0000,,这些是普通人\Nvoir avec… These are ordinary people
+Dialogue: 0,0:43:50.91,0:43:52.06,*Default,NTP,0000,0000,0000,,注意看这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here they are.
+Dialogue: 0,0:43:53.82,0:43:55.43,*Default,NTP,0000,0000,0000,,他们在娱乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here they're having fun.
+Dialogue: 0,0:43:56.07,0:43:58.40,*Default,NTP,0000,0000,0000,,不过他们太过沉溺于娱乐了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they're having too much fun.
+Dialogue: 0,0:43:58.42,0:43:59.94,*Default,NTP,0000,0000,0000,,这是一部分画作想要表现的意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is part of the point.
+Dialogue: 0,0:43:59.94,0:44:02.38,*Default,NTP,0000,0000,0000,,即根深蒂固的加尔文主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Part of this sort of this inveterate Calvinism,
+Dialogue: 0,0:44:02.44,0:44:04.41,*Default,NTP,0000,0000,0000,,还有一些事实\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and part of the fact that,
+Dialogue: 0,0:44:04.41,0:44:06.64,*Default,NTP,0000,0000,0000,,诸如  "万一溃堤了怎么办"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What if the dams burst?"
+Dialogue: 0,0:44:06.87,0:44:12.36,*Default,NTP,0000,0000,0000,,或者  "万一英国在贸易上压倒我们了怎么办"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or what if the British begin to outdo us in the world trade department?
+Dialogue: 0,0:44:12.40,0:44:14.39,*Default,NTP,0000,0000,0000,,又或者  万一法国人打过来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or what if the French come
+Dialogue: 0,0:44:14.39,0:44:18.16,*Default,NTP,0000,0000,0000,,把我们像葡萄一样压碎了又怎么办\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and squish us like grapes?
+Dialogue: 0,0:44:18.21,0:44:20.47,*Default,NTP,0000,0000,0000,,总有这样或那样的危机场面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's always this sense of vulnerability.
+Dialogue: 0,0:44:20.50,0:44:23.56,*Default,NTP,0000,0000,0000,,潜藏在画作中胡吃海喝的人们的背后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Behind the paintings of people eating,
+Dialogue: 0,0:44:23.56,0:44:27.21,*Default,NTP,0000,0000,0000,,人们吃喝或饭前祷告的主题中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the theme of people eating or praying prayers at mealtime,
+Dialogue: 0,0:44:27.22,0:44:31.24,*Default,NTP,0000,0000,0000,,或者诸如此类玩掷球的游戏中 \Nand this sort of thing, or playing boules, pétanque, bocce,
+Dialogue: 0,0:44:31.24,0:44:34.20,*Default,NTP,0000,0000,0000,,总有这样"肮脏的家庭"的场景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there is always this sense of the ribald family.
+Dialogue: 0,0:44:34.20,0:44:37.27,*Default,NTP,0000,0000,0000,,简·施特恩就是这么说的 简S-T-E-E-N\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what this is called by Jan Steen, S-T-E-E-N.
+Dialogue: 0,0:44:38.05,0:44:41.57,*Default,NTP,0000,0000,0000,,如果你过于沉溺于娱乐  最终你会失去一切\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you have too much fun, things will get away from you.
+Dialogue: 0,0:44:41.57,0:44:43.82,*Default,NTP,0000,0000,0000,,当这些人觥筹交错的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These people are all drinking
+Dialogue: 0,0:44:43.82,0:44:46.58,*Default,NTP,0000,0000,0000,,他们就把这些可怜的孩子们丢在了一边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and leaving these poor little children to their own devices.
+Dialogue: 0,0:44:46.59,0:44:49.22,*Default,NTP,0000,0000,0000,,他们中的一两个可能会相互打闹或者摔伤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They may be knocking down one or two themselves there,
+Dialogue: 0,0:44:49.22,0:44:51.11,*Default,NTP,0000,0000,0000,,因为没人照看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because nobody's paying any attention.
+Dialogue: 0,0:44:51.11,0:44:56.55,*Default,NTP,0000,0000,0000,,如果你太过沉迷其中  你的下场就是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could go too far and then you end up like this.
+Dialogue: 0,0:44:57.15,0:44:59.60,*Default,NTP,0000,0000,0000,,那从长远来看  这样的荷兰将来会是怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does it all end up in the long run?
+Dialogue: 0,0:45:00.00,0:45:02.14,*Default,NTP,0000,0000,0000,,荷兰长远之后的下场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How it ends up in the long run for the Dutch
+Dialogue: 0,0:45:02.14,0:45:04.70,*Default,NTP,0000,0000,0000,,便是荷兰国力日衰  风光不再\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that the Dutch cease to be a great power.
+Dialogue: 0,0:45:04.70,0:45:06.33,*Default,NTP,0000,0000,0000,,但那样也没什么啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there's nothing wrong with that.
+Dialogue: 0,0:45:06.47,0:45:11.46,*Default,NTP,0000,0000,0000,,人们还是能有花天酒地的生活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have gone on to live highly prosperous lives.
+Dialogue: 0,0:45:11.59,0:45:14.16,*Default,NTP,0000,0000,0000,,最后  荷兰沦为君主专制国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They eventually end up with a monarchy.
+Dialogue: 0,0:45:14.30,0:45:17.58,*Default,NTP,0000,0000,0000,,并在一八三一年最终失去比利时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They eventually lose Belgium in 1831.
+Dialogue: 0,0:45:17.85,0:45:20.01,*Default,NTP,0000,0000,0000,,而荷兰人基本都无动于衷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They basically didn't care.
+Dialogue: 0,0:45:20.03,0:45:25.78,*Default,NTP,0000,0000,0000,,而荷兰经济的崩溃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Dutch economy, the equivalent would be the decline of the Venetian
+Dialogue: 0,0:45:26.25,0:45:28.57,*Default,NTP,0000,0000,0000,,有点类似于地中海威尼斯的经济下降\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}economic power in the Mediterranean--
+Dialogue: 0,0:45:28.63,0:45:33.98,*Default,NTP,0000,0000,0000,,他们和东方的贸易往来也锐减\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and trade with the East diminishes.
+Dialogue: 0,0:45:36.22,0:45:40.16,*Default,NTP,0000,0000,0000,,随着荷兰的衰落  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Netherlands ceases to be a great power,
+Dialogue: 0,0:45:40.16,0:45:47.79,*Default,NTP,0000,0000,0000,,一七零七年  英国成为了世界的霸主\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whereas Britain in 1707 becomes the biggest of the world powers.
+Dialogue: 0,0:45:47.79,0:45:50.70,*Default,NTP,0000,0000,0000,,但我们要记得之前提到的六条  还是七条\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But let us still remember these six or seven factors,
+Dialogue: 0,0:45:50.70,0:45:52.01,*Default,NTP,0000,0000,0000,,还是别的什么影响因素  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or whatever I had up there,
+Dialogue: 0,0:45:52.01,0:45:54.38,*Default,NTP,0000,0000,0000,,我忘记了  记得这相同的两点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and remember what these two places had in common.
+Dialogue: 0,0:45:54.38,0:45:56.10,*Default,NTP,0000,0000,0000,,这与国际贸易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot to do with the global trade.
+Dialogue: 0,0:45:56.10,0:45:57.41,*Default,NTP,0000,0000,0000,,以及社会结构有很大关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot to do with social structure.
+Dialogue: 0,0:45:57.41,0:46:02.25,*Default,NTP,0000,0000,0000,,也与他们如何认识自己紧密相连\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot to do with who they thought they were,
+Dialogue: 0,0:46:02.27,0:46:05.01,*Default,NTP,0000,0000,0000,,他们买什么样的画 他们委托画什么样的画\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the paintings they bought, the paintings they commissioned,
+Dialogue: 0,0:46:05.01,0:46:07.02,*Default,NTP,0000,0000,0000,,他们对自己的看法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the way they viewed themselves.
+Dialogue: 0,0:46:07.26,0:46:11.72,*Default,NTP,0000,0000,0000,,对国家认同感的重建\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Part of this reconstructing of national identity
+Dialogue: 0,0:46:11.85,0:46:16.13,*Default,NTP,0000,0000,0000,,一定程度上基于你不是什么  即不是独裁者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often has as much to do with who you're not, not absolute,
+Dialogue: 0,0:46:16.14,0:46:19.16,*Default,NTP,0000,0000,0000,,不是天主教  不是法国人  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not Catholic, not French
+Dialogue: 0,0:46:19.16,0:46:24.47,*Default,NTP,0000,0000,0000,,这点和自身定位同样至关重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as it does with you who imagine yourself to be.
+Dialogue: 0,0:46:24.47,0:46:26.70,*Default,NTP,0000,0000,0000,,在国家意识的觉醒过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the growth of national awareness,
+Dialogue: 0,0:46:26.70,0:46:29.20,*Default,NTP,0000,0000,0000,,这永远是一个主旋律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that itself is an important theme.
+Dialogue: 0,0:46:29.20,0:46:30.44,*Default,NTP,0000,0000,0000,,祝大家周末愉快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Have a great weekend.
+Dialogue: 0,0:46:30.44,0:46:31.77,*Default,NTP,0000,0000,0000,,下周一见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}See you on Monday.

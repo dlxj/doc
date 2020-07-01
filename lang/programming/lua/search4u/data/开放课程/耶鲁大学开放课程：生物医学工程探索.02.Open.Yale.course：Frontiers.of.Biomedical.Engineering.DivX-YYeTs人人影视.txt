@@ -1,0 +1,835 @@
+[Script Info]
+; // 此字幕由PopSub生成  2010-07-15 10:51:41
+; // 版本: 0.75
+; // popgo_fansub@yahoo.co.jp
+; // 欢迎访问漫游天下 http://bbs.popgo.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,5,134
+Style: top,楷体,16,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,-1,0,0,0,100,100,0,0.00,1,1,1,8,5,5,10,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.01,0:00:04.50,*Default,NTP,0000,0000,0000,,{\fe134}{\fad(500,500)}{\c&HFFFFFF&}{\pos(190,270)}{\fs16} {\fn方正准圆简体}{\bord0}本字幕由{\fs24}{\fn方正综艺简体}{\fe0}{\c&H26F4FF&}YYeTs{\fe134}{\fn方正宋黑简体}{\c&HFFAE1A&}人人影视{\fscy100}{\fe134}{\fn方正准圆简体}{\c&HFFFFFF&}{\fs16}翻译制作\N{\fn方正准圆简体}{\fs14}{\b0}{\bord0}{\shad0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}{\fsp0}{\fs16}{\c&HFFFFFF&}更多教程中文版 请登陆 {\c&H26F4FF&}{\fn方正综艺简体}{\fs24}www.YYeTs.net
+Dialogue: 0,0:00:04.00,0:00:10.00,top,NTP,0000,0000,0000,,{\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}翻译：{\fs18}{\c&HFFFFFF&}lwfreeman   saiwoo  449004728  xixi8510   weiyintang001\N{\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}校对：{\fs18}{\c&HFFFFFF&}adamlilith  whujulius  {\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}校对监制：{\fs18}{\c&HFFFFFF&}whujulius  梁良
+Dialogue: 0,0:00:12.71,0:00:14.94,*Default,NTP,0000,0000,0000,,今天我们要继续讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I'm going to talk about today is to
+Dialogue: 0,0:00:14.95,0:00:18.30,*Default,NTP,0000,0000,0000,,有关生物医学工程的话题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}continue our discussion about what is Biomedical Engineering
+Dialogue: 0,0:00:18.38,0:00:19.78,*Default,NTP,0000,0000,0000,,并且更深入些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and go a little bit further
+Dialogue: 0,0:00:19.78,0:00:22.28,*Default,NTP,0000,0000,0000,,这需要花上大约半节课时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll spend about half the class doing that,
+Dialogue: 0,0:00:22.64,0:00:24.86,*Default,NTP,0000,0000,0000,,后半节课会讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then I want to spend the last half of the class talking about
+Dialogue: 0,0:00:24.86,0:00:27.77,*Default,NTP,0000,0000,0000,,一些非常重要的生物构造\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some biological structures that are very important
+Dialogue: 0,0:00:27.77,0:00:30.95,*Default,NTP,0000,0000,0000,,有些你们可能不是太熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that you might not be familiar with.
+Dialogue: 0,0:00:31.40,0:00:33.31,*Default,NTP,0000,0000,0000,,我会讲到生物膜和脂质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk about biological membranes and lipids
+Dialogue: 0,0:00:33.31,0:00:35.87,*Default,NTP,0000,0000,0000,,及它们是如何组装成质膜的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how they're assembled.
+Dialogue: 0,0:00:36.00,0:00:38.30,*Default,NTP,0000,0000,0000,,首先  让我们看看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But first, I want to start with
+Dialogue: 0,0:00:38.30,0:00:40.32,*Default,NTP,0000,0000,0000,,上节课留的作业\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the assignment I gave you last time,
+Dialogue: 0,0:00:40.50,0:00:42.06,*Default,NTP,0000,0000,0000,,我要求你们都思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I asked you all to think about
+Dialogue: 0,0:00:42.07,0:00:44.23,*Default,NTP,0000,0000,0000,,下面这两个问题并写下感想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these two questions and write some things down.
+Dialogue: 0,0:00:44.60,0:00:48.51,*Default,NTP,0000,0000,0000,,让我们首先从第一个问题开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's start with the first, with A on this list here.
+Dialogue: 0,0:00:49.00,0:00:52.79,*Default,NTP,0000,0000,0000,,你们接触过哪些生物医学工程的产品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What products of Biomedical Engineering have you encountered?
+Dialogue: 0,0:00:53.04,0:00:55.17,*Default,NTP,0000,0000,0000,,我们之前谈到过一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about a few of these last time
+Dialogue: 0,0:00:55.17,0:00:57.06,*Default,NTP,0000,0000,0000,,我想一定还有别的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm sure there's others,
+Dialogue: 0,0:00:57.32,0:01:01.74,*Default,NTP,0000,0000,0000,,你们想到什么没有  谁来说说看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so what things did you come up with as you were thinking, anybody?
+Dialogue: 0,0:01:08.50,0:01:16.51,*Default,NTP,0000,0000,0000,,现有的技术包括\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, so in the category of already available:
+Dialogue: 0,0:01:16.51,0:01:22.52,*Default,NTP,0000,0000,0000,,贴膜给药技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}drug delivery patches.
+Dialogue: 0,0:01:25.33,0:01:28.95,*Default,NTP,0000,0000,0000,,现在很多药物都采用这种给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are now available for a variety of drugs,
+Dialogue: 0,0:01:29.05,0:01:31.08,*Default,NTP,0000,0000,0000,,如使用东莨菪碱治疗晕动症\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Scopolamine for motion sickness
+Dialogue: 0,0:01:31.08,0:01:33.45,*Default,NTP,0000,0000,0000,,它是这项技术最初的一项应用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was one of the first that was available and
+Dialogue: 0,0:01:33.45,0:01:36.94,*Default,NTP,0000,0000,0000,,以及使用硝酸甘油治疗心脏病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nitroglycerin for treating heart disease is already available 
+Dialogue: 0,0:01:36.95,0:01:39.14,*Default,NTP,0000,0000,0000,,这种贴膜很像创可贴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these are really like band-aids
+Dialogue: 0,0:01:39.64,0:01:43.62,*Default,NTP,0000,0000,0000,,不过是加入了药物的创可贴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're band-aids that are loaded with drugs and they're
+Dialogue: 0,0:01:43.62,0:01:45.39,*Default,NTP,0000,0000,0000,,通过这样的设计\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}designed in such a way that 
+Dialogue: 0,0:01:45.39,0:01:49.05,*Default,NTP,0000,0000,0000,,当其贴附于皮肤表面时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you apply this band-aid with adhesive to your skin,
+Dialogue: 0,0:01:49.11,0:01:51.42,*Default,NTP,0000,0000,0000,,药物就可以通过皮肤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}drug will enter your bloodstream
+Dialogue: 0,0:01:51.43,0:01:53.08,*Default,NTP,0000,0000,0000,,进入血液循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from the band-aid through the skin,
+Dialogue: 0,0:01:53.30,0:01:56.90,*Default,NTP,0000,0000,0000,,这是个不错的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's been, I think, a good example.
+Dialogue: 0,0:01:56.99,0:01:57.39,*Default,NTP,0000,0000,0000,,还有别的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Others?
+Dialogue: 0,0:02:01.20,0:02:05.82,*Default,NTP,0000,0000,0000,,可吸收缝合线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Dissolvable stitches or sutures,
+Dialogue: 0,0:02:05.82,0:02:11.74,*Default,NTP,0000,0000,0000,,在设计缝合线时需要注意什么问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now what needs to be engineered in those?
+Dialogue: 0,0:02:15.73,0:02:17.34,*Default,NTP,0000,0000,0000,,缝合线必须是惰性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So they have to be engineered to be inert
+Dialogue: 0,0:02:17.34,0:02:20.56,*Default,NTP,0000,0000,0000,,以便确保植入人体后的安全性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that they can be safely inside a system
+Dialogue: 0,0:02:20.56,0:02:22.88,*Default,NTP,0000,0000,0000,,不是随便哪个材料都能做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's not every material you could pick would have that property.
+Dialogue: 0,0:02:23.00,0:02:24.30,*Default,NTP,0000,0000,0000,,能够拉紧切口的缝合线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's - a suture or a stitch has to hold the wound closed
+Dialogue: 0,0:02:24.31,0:02:26.92,*Default,NTP,0000,0000,0000,,就必须具有一定的机械张力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it has to have certain mechanical strength
+Dialogue: 0,0:02:26.92,0:02:30.10,*Default,NTP,0000,0000,0000,,大家想像一下制造这种缝合线的难度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and imagine the problem of making something
+Dialogue: 0,0:02:30.11,0:02:32.93,*Default,NTP,0000,0000,0000,,身体组织不仅要能吸收这种缝合线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's dissolvable so it disappears but also
+Dialogue: 0,0:02:33.00,0:02:34.89,*Default,NTP,0000,0000,0000,,而且这种线必须有足够的张力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is strong enough to hold a wound closed reliably
+Dialogue: 0,0:02:34.89,0:02:37.73,*Default,NTP,0000,0000,0000,,一定时间内能够拉紧切口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a length of time.
+Dialogue: 0,0:02:38.06,0:02:39.33,*Default,NTP,0000,0000,0000,,还有吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Others?
+Dialogue: 0,0:02:42.50,0:02:47.03,*Default,NTP,0000,0000,0000,,关节镜手术  你是怎么想的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Arthroscopic surgery - what are you thinking about there?
+Dialogue: 0,0:02:53.60,0:02:54.76,*Default,NTP,0000,0000,0000,,对  你是指\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah, so you're thinking about
+Dialogue: 0,0:02:54.76,0:02:57.10,*Default,NTP,0000,0000,0000,,关节镜手术中的使用的设备\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the instruments that they use in arthroscopic surgery,
+Dialogue: 0,0:02:57.25,0:02:58.46,*Default,NTP,0000,0000,0000,,arthro意思是关节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}arthro means 'joint',
+Dialogue: 0,0:02:58.46,0:02:59.78,*Default,NTP,0000,0000,0000,,scopic意思是看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}scopic means 'looking',
+Dialogue: 0,0:03:00.00,0:03:03.19,*Default,NTP,0000,0000,0000,,顾名思义就是通过关节镜来探查关节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it's looking into a joint and these are
+Dialogue: 0,0:03:03.19,0:03:07.68,*Default,NTP,0000,0000,0000,,关节镜的末端是非常精细的针状手术器械\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}instruments that have very fine sort of needles on the end,
+Dialogue: 0,0:03:07.90,0:03:08.84,*Default,NTP,0000,0000,0000,,其中包含摄像头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but also cameras in them,
+Dialogue: 0,0:03:08.84,0:03:10.74,*Default,NTP,0000,0000,0000,,你可以把它置入关节内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can put them inside a joint
+Dialogue: 0,0:03:10.74,0:03:13.62,*Default,NTP,0000,0000,0000,,以探查关节内情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then look around and see what's happening inside.
+Dialogue: 0,0:03:14.00,0:03:15.13,*Default,NTP,0000,0000,0000,,除了摄像头外\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And not just a camera
+Dialogue: 0,0:03:15.13,0:03:19.07,*Default,NTP,0000,0000,0000,,在关节镜的末端还有其他的器械\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there are also tools on the end of these things
+Dialogue: 0,0:03:19.07,0:03:23.75,*Default,NTP,0000,0000,0000,,你可以体外操纵这些器械进行切割等操作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you can cut and you can do manipulations through this instrument.
+Dialogue: 0,0:03:24.00,0:03:25.31,*Default,NTP,0000,0000,0000,,这个例子很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's a great example also.
+Dialogue: 0,0:03:26.05,0:03:27.40,*Default,NTP,0000,0000,0000,,嗯  助听器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah? Hearing aids
+Dialogue: 0,0:03:27.60,0:03:34.10,*Default,NTP,0000,0000,0000,,助听器  很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hearing aids - that's a good one,
+Dialogue: 0,0:03:34.25,0:03:35.20,*Default,NTP,0000,0000,0000,,还有别的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}others?
+Dialogue: 0,0:03:39.00,0:03:40.37,*Default,NTP,0000,0000,0000,,人工耳蜗移植术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cochlear implants,
+Dialogue: 0,0:03:40.47,0:03:47.05,*Default,NTP,0000,0000,0000,,人工耳蜗与助听器同作用相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's the same kind of function as a hearing aid,
+Dialogue: 0,0:03:47.15,0:03:48.38,*Default,NTP,0000,0000,0000,,都可以改善听力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to improve hearing,
+Dialogue: 0,0:03:48.38,0:03:50.50,*Default,NTP,0000,0000,0000,,只是两者原理不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but using a different mechanism.
+Dialogue: 0,0:03:50.92,0:03:52.31,*Default,NTP,0000,0000,0000,,人工耳蜗不是一个简单的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not just an amplification system
+Dialogue: 0,0:03:52.31,0:03:53.45,*Default,NTP,0000,0000,0000,,植入耳朵的扩音系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you put in your ear,
+Dialogue: 0,0:03:54.59,0:03:56.52,*Default,NTP,0000,0000,0000,,而是一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but actually an implant that
+Dialogue: 0,0:03:56.52,0:03:59.97,*Default,NTP,0000,0000,0000,,能替代听力器官功能的移植物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}replaces the function of an organ inside your ear.
+Dialogue: 0,0:04:00.44,0:04:02.29,*Default,NTP,0000,0000,0000,,很好的例子  还有吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a good example, others?
+Dialogue: 0,0:04:10.29,0:04:16.12,*Default,NTP,0000,0000,0000,,应该还有别的  对  隐形眼镜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Must be a couple of others - yeah-- contact lenses.
+Dialogue: 0,0:04:17.66,0:04:19.44,*Default,NTP,0000,0000,0000,,激光辅助屈光角膜层状重塑手术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lasik surgery
+Dialogue: 0,0:04:27.18,0:04:33.28,*Default,NTP,0000,0000,0000,,为什么是激光辅助屈光角膜层状重塑手术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lasik surgery - now why that one,
+Dialogue: 0,0:04:33.73,0:04:35.32,*Default,NTP,0000,0000,0000,,你为什么觉得它属于生物医学工程范畴呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what makes you think of that as an example?
+Dialogue: 0,0:04:40.50,0:04:41.50,*Default,NTP,0000,0000,0000,,是因为手术运用到的器械\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Instruments,
+Dialogue: 0,0:04:41.60,0:04:46.65,*Default,NTP,0000,0000,0000,,手术运用了激光并且需要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it involves lasers and learning
+Dialogue: 0,0:04:46.66,0:04:50.55,*Default,NTP,0000,0000,0000,,恰到好处的切割角膜组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to make lasers that can do the right amount of damage to tissue,
+Dialogue: 0,0:04:50.92,0:04:51.19,*Default,NTP,0000,0000,0000,,对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right?
+Dialogue: 0,0:04:51.20,0:04:52.74,*Default,NTP,0000,0000,0000,,激光在手术中的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because that's what the laser is doing in the surgery
+Dialogue: 0,0:04:52.74,0:04:54.45,*Default,NTP,0000,0000,0000,,与手术刀相同  都能切割组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is cutting like a knife would do,
+Dialogue: 0,0:04:55.04,0:04:57.39,*Default,NTP,0000,0000,0000,,但比手术刀更精确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but doing the right amount of damage
+Dialogue: 0,0:04:57.39,0:05:00.65,*Default,NTP,0000,0000,0000,,能够控制激光就是工程技术的一大进步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and controlling it with light is an advance there.
+Dialogue: 0,0:05:01.32,0:05:08.65,*Default,NTP,0000,0000,0000,,还有别的吗  组织培养技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Others? Tissue culturing - now
+Dialogue: 0,0:05:08.65,0:05:14.25,*Default,NTP,0000,0000,0000,,组织培养是如何应用生物医学工程学的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what has to be engineered in tissue culturing?
+Dialogue: 0,0:05:19.25,0:05:20.04,*Default,NTP,0000,0000,0000,,能重复一下吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I beg your pardon?
+Dialogue: 0,0:05:25.54,0:05:28.94,*Default,NTP,0000,0000,0000,,组织培养都用到哪些工程技术呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what kinds of engineering do you think goes on behind that?
+Dialogue: 0,0:05:34.31,0:05:35.61,*Default,NTP,0000,0000,0000,,这个过程需要使用的技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The technology that they use
+Dialogue: 0,0:05:35.61,0:05:36.44,*Default,NTP,0000,0000,0000,,确实非常多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and really there's quite a lot of technology here
+Dialogue: 0,0:05:36.44,0:05:37.96,*Default,NTP,0000,0000,0000,,从设计培养细胞用的培养皿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}starting from the plates that you grow them in
+Dialogue: 0,0:05:37.96,0:05:42.08,*Default,NTP,0000,0000,0000,,到工程化培养出有合适属性的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}turn out to be engineered so they have the right properties.
+Dialogue: 0,0:05:42.69,0:05:44.20,*Default,NTP,0000,0000,0000,,当我们晚一点讲细胞培养的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we're going to talk about
+Dialogue: 0,0:05:44.20,0:05:46.80,*Default,NTP,0000,0000,0000,,会具体讲这些内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this more when we talk about cell culturing later,
+Dialogue: 0,0:05:47.23,0:05:48.77,*Default,NTP,0000,0000,0000,,我们也会讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about lots
+Dialogue: 0,0:05:48.78,0:05:51.37,*Default,NTP,0000,0000,0000,,细胞培养技术的一些潜在应用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of potential applications of that as well.
+Dialogue: 0,0:05:53.01,0:05:57.78,*Default,NTP,0000,0000,0000,,透析技术  这种技术用来替代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Dialysis - and this is a method to replace
+Dialogue: 0,0:05:57.78,0:06:02.12,*Default,NTP,0000,0000,0000,,或者增强肾脏功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or augment the function of your kidneys,
+Dialogue: 0,0:06:02.77,0:06:06.21,*Default,NTP,0000,0000,0000,,以去除血液中的各种废物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to remove waste products really from the blood,
+Dialogue: 0,0:06:06.59,0:06:08.47,*Default,NTP,0000,0000,0000,,就像肾脏持续进行的那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is something the kidney does continuously.
+Dialogue: 0,0:06:15.68,0:06:21.80,*Default,NTP,0000,0000,0000,,整容手术  你告诉我们两个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cosmetic surgery - you gave two examples,
+Dialogue: 0,0:06:22.06,0:06:28.12,*Default,NTP,0000,0000,0000,,一个是肉毒杆菌素  另一个是抽脂手术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one was Botox and the other was liposuction.
+Dialogue: 0,0:06:32.57,0:06:34.91,*Default,NTP,0000,0000,0000,,这是两种不同的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So two different kinds of strategies,
+Dialogue: 0,0:06:34.91,0:06:37.68,*Default,NTP,0000,0000,0000,,其中之一是通过手术  切除组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one is a surgical strategy, actually removing tissue
+Dialogue: 0,0:06:37.68,0:06:41.31,*Default,NTP,0000,0000,0000,,之前我们讲过的手术器械工程学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we talked a little bit about the engineering of surgical instruments
+Dialogue: 0,0:06:41.31,0:06:44.93,*Default,NTP,0000,0000,0000,,这涉及到许多生物医学工程学原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and things like - so there's a lot of Biomedical Engineering
+Dialogue: 0,0:06:44.93,0:06:47.10,*Default,NTP,0000,0000,0000,,它已经渗透到手术室内的方方面面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that goes into everything that happens in the operating room.
+Dialogue: 0,0:06:47.56,0:06:51.17,*Default,NTP,0000,0000,0000,,肉毒杆菌素是一种注射用分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Botox is an injection of a molecule,
+Dialogue: 0,0:06:51.17,0:06:52.53,*Default,NTP,0000,0000,0000,,或者说是一种复杂的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a complex molecule
+Dialogue: 0,0:06:52.53,0:06:54.87,*Default,NTP,0000,0000,0000,,但它只是一种分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a molecule,
+Dialogue: 0,0:06:55.64,0:06:58.32,*Default,NTP,0000,0000,0000,,它与生物医学工程有怎样的联系呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so in what ways would that be Biomedical Engineering?
+Dialogue: 0,0:07:19.86,0:07:21.18,*Default,NTP,0000,0000,0000,,我觉得都不错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right and I think all of those are good,
+Dialogue: 0,0:07:21.18,0:07:22.31,*Default,NTP,0000,0000,0000,,很多方面都会用到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so there's lots of different ways.
+Dialogue: 0,0:07:22.69,0:07:24.76,*Default,NTP,0000,0000,0000,,其一是如何精确输送这种分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is in terms of how you deliver the molecule so
+Dialogue: 0,0:07:24.76,0:07:27.62,*Default,NTP,0000,0000,0000,,到你想要的部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it goes where you want it to go and not where else you want it to go.
+Dialogue: 0,0:07:27.71,0:07:28.76,*Default,NTP,0000,0000,0000,,这的确是一个工程学问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's an engineering problem
+Dialogue: 0,0:07:28.76,0:07:30.66,*Default,NTP,0000,0000,0000,,我们马上就来讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're going to talk a lot about,
+Dialogue: 0,0:07:31.00,0:07:34.06,*Default,NTP,0000,0000,0000,,如何把药物注射到你想要它起作用的部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to deliver drugs so that you get the action that you want,
+Dialogue: 0,0:07:34.06,0:07:36.37,*Default,NTP,0000,0000,0000,,而不产生毒性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the site that you want and not the toxicity.
+Dialogue: 0,0:07:36.87,0:07:38.40,*Default,NTP,0000,0000,0000,,如果你把肉毒杆菌素注射到全身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you delivered Botox all over your body
+Dialogue: 0,0:07:38.41,0:07:39.43,*Default,NTP,0000,0000,0000,,这可不是个好事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that wouldn't be a good thing,
+Dialogue: 0,0:07:40.52,0:07:41.31,*Default,NTP,0000,0000,0000,,即使仅注射到身体的某一部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it might not even be a good
+Dialogue: 0,0:07:41.31,0:07:42.74,*Default,NTP,0000,0000,0000,,也不见得有多好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thing if you delivered it one place in your body,
+Dialogue: 0,0:07:42.74,0:07:44.62,*Default,NTP,0000,0000,0000,,不过全身注射会更糟糕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's definitely not good if you deliver it everywhere.
+Dialogue: 0,0:07:45.08,0:07:46.71,*Default,NTP,0000,0000,0000,,控制药物剂量非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So controlling the dose is really important
+Dialogue: 0,0:07:46.71,0:07:48.60,*Default,NTP,0000,0000,0000,,特别是在癌症的治疗当中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's going to turn out to be very important
+Dialogue: 0,0:07:48.60,0:07:50.14,*Default,NTP,0000,0000,0000,,这一点尤为重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in cancer therapy
+Dialogue: 0,0:07:51.09,0:07:52.74,*Default,NTP,0000,0000,0000,,因为这些药物效力强大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because these are very potent drugs
+Dialogue: 0,0:07:52.74,0:07:55.05,*Default,NTP,0000,0000,0000,,会对其他部位产生不良影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that will have bad effects in other sites
+Dialogue: 0,0:07:55.05,0:07:57.36,*Default,NTP,0000,0000,0000,,你不能使药物扩散到别的组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you want to localize them where they want,
+Dialogue: 0,0:07:57.41,0:07:58.96,*Default,NTP,0000,0000,0000,,这就是我们要讲的问题了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we're going to talk about that.
+Dialogue: 0,0:07:59.25,0:08:01.95,*Default,NTP,0000,0000,0000,,我想上面这些都是很好的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think this is as good list
+Dialogue: 0,0:08:01.95,0:08:04.65,*Default,NTP,0000,0000,0000,,接下来我们思考一些更有挑战的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so let's go and think about what might be a little bit more challenging.
+Dialogue: 0,0:08:05.75,0:08:09.44,*Default,NTP,0000,0000,0000,,你认为将来会有哪些产品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So in the future what things do you think
+Dialogue: 0,0:08:09.44,0:08:14.57,*Default,NTP,0000,0000,0000,,因生物医学工程而生呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Biomedical Engineering is going to produce in the future?
+Dialogue: 0,0:08:17.24,0:08:30.54,*Default,NTP,0000,0000,0000,,艾滋病疫苗  机器人辅助手术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An AIDS vaccine  robotic surgery
+Dialogue: 0,0:08:42.23,0:08:46.23,*Default,NTP,0000,0000,0000,,长期可用的人造心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}artificial hearts that can be used long term
+Dialogue: 0,0:08:46.23,0:08:51.12,*Default,NTP,0000,0000,0000,,这项技术中有一些问题亟待解决\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that is a - there's probably several elements to that.
+Dialogue: 0,0:08:51.49,0:08:53.19,*Default,NTP,0000,0000,0000,,一个是如何能做到长期使用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is long term,
+Dialogue: 0,0:08:53.86,0:08:55.96,*Default,NTP,0000,0000,0000,,人工心脏要与身体相匹配\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}making them compatible with the body
+Dialogue: 0,0:08:55.96,0:08:57.87,*Default,NTP,0000,0000,0000,,身体才能长期耐受\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you could tolerate it for long term.
+Dialogue: 0,0:08:58.29,0:09:00.66,*Default,NTP,0000,0000,0000,,另一个问题是如果它要长期工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the other thing means if it's going to be long term,
+Dialogue: 0,0:09:00.96,0:09:03.76,*Default,NTP,0000,0000,0000,,就需要植入体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then probably it has to be implantable
+Dialogue: 0,0:09:03.76,0:09:07.75,*Default,NTP,0000,0000,0000,,就是说人工心脏所有部件都是可植入的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that means all of the heart has to be implantable.
+Dialogue: 0,0:09:08.42,0:09:10.30,*Default,NTP,0000,0000,0000,,这两个方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is where we don't have something
+Dialogue: 0,0:09:10.30,0:09:12.83,*Default,NTP,0000,0000,0000,,我们目前都做的不是很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that satisfies both of those categories right now.
+Dialogue: 0,0:09:13.70,0:09:16.03,*Default,NTP,0000,0000,0000,,驱动人工心脏所需要的能量是难以想像的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagine how much power it takes to drive an artificial heart,
+Dialogue: 0,0:09:17.13,0:09:20.72,*Default,NTP,0000,0000,0000,,所以需要电池或者是某种持续发电装置\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you've got to have a battery or some way of generating power
+Dialogue: 0,0:09:20.72,0:09:22.30,*Default,NTP,0000,0000,0000,,来给人工心脏提供能量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}continuously to operate that 
+Dialogue: 0,0:09:22.30,0:09:25.46,*Default,NTP,0000,0000,0000,,这就增加了人工心脏的植入难度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that makes it difficult to think about implantable
+Dialogue: 0,0:09:25.80,0:09:28.30,*Default,NTP,0000,0000,0000,,这是很好的生物医学工程的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so that's a really good example of Biomedical Engineering.
+Dialogue: 0,0:09:34.27,0:09:38.08,*Default,NTP,0000,0000,0000,,食品供应  来自克隆动物的食物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Food supplies - food from cloned animals.
+Dialogue: 0,0:09:44.39,0:09:47.12,*Default,NTP,0000,0000,0000,,下星期我们讨论克隆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about cloning next week,
+Dialogue: 0,0:09:47.61,0:09:51.88,*Default,NTP,0000,0000,0000,,为什么克隆技术在食品工业中具有优越性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but why would cloning be an advantage in producing food?
+Dialogue: 0,0:09:54.42,0:09:57.38,*Default,NTP,0000,0000,0000,,克隆动物食品的品质具有可控性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Controlling quality because cloned animals
+Dialogue: 0,0:09:57.38,0:09:59.49,*Default,NTP,0000,0000,0000,,是因为它们有相同的基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are all genetically identical
+Dialogue: 0,0:09:59.49,0:10:02.65,*Default,NTP,0000,0000,0000,,所以动物个体的品质没有差异\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you wouldn't have variability that way,
+Dialogue: 0,0:10:03.68,0:10:07.59,*Default,NTP,0000,0000,0000,,所以假设你能够挑选出一个这样的个体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so potentially you could have - pick an individual
+Dialogue: 0,0:10:07.59,0:10:09.64,*Default,NTP,0000,0000,0000,,它的肉质非常好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that has a really good quality meat
+Dialogue: 0,0:10:09.64,0:10:11.42,*Default,NTP,0000,0000,0000,,就能利用该技术反复制造\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and always reproduce
+Dialogue: 0,0:10:11.42,0:10:12.87,*Default,NTP,0000,0000,0000,,完全相同的肉类产品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that same thing.
+Dialogue: 0,0:10:23.63,0:10:29.31,*Default,NTP,0000,0000,0000,,基因扫描技术可用于预测疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Genetic scans for disease predictions,
+Dialogue: 0,0:10:32.47,0:10:35.00,*Default,NTP,0000,0000,0000,,我们讨论的基因芯片技术是其中的一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we talked about one way you might do that using gene chips.
+Dialogue: 0,0:10:35.00,0:10:36.61,*Default,NTP,0000,0000,0000,,上节课我们谈过一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Last time we talked very little about that
+Dialogue: 0,0:10:36.61,0:10:39.29,*Default,NTP,0000,0000,0000,,下星期会进一步探讨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so we'll talk more about that next week,
+Dialogue: 0,0:10:39.82,0:10:41.94,*Default,NTP,0000,0000,0000,,当然这种技术的实现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but certainly technology is going to be available,
+Dialogue: 0,0:10:42.25,0:10:46.04,*Default,NTP,0000,0000,0000,,是建立在各种相关技术的基础之上的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's going to need to be ways developed to put this technology together.
+Dialogue: 0,0:10:46.71,0:10:48.54,*Default,NTP,0000,0000,0000,,如果我们检查人体中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we looked at all 30000,
+Dialogue: 0,0:10:49.58,0:10:51.67,*Default,NTP,0000,0000,0000,,所有三万个至关重要的基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}genes that were important in each individual
+Dialogue: 0,0:10:51.67,0:10:52.68,*Default,NTP,0000,0000,0000,,要怎样从中找出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do you pick out
+Dialogue: 0,0:10:52.69,0:10:54.72,*Default,NTP,0000,0000,0000,,导致某种疾病的特定基因呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which ones are important for a particular disease?
+Dialogue: 0,0:10:55.29,0:10:56.75,*Default,NTP,0000,0000,0000,,有时候甚至都不仅仅是一个基因的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or what - and often it's not going to be just one gene,
+Dialogue: 0,0:10:57.08,0:10:58.26,*Default,NTP,0000,0000,0000,,引发疾病的是一些不同基因的组合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's going to be combinations of genes,
+Dialogue: 0,0:10:58.62,0:10:59.78,*Default,NTP,0000,0000,0000,,并且怎样基于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how do you predict the fate of the individual
+Dialogue: 0,0:10:59.78,0:11:02.29,*Default,NTP,0000,0000,0000,,导致某种特定疾病的所有基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on all of the genes
+Dialogue: 0,0:11:02.29,0:11:06.22,*Default,NTP,0000,0000,0000,,来预测一个人未来是否会患这种疾病呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you know to be involved in progression of a certain disease.
+Dialogue: 0,0:11:06.55,0:11:08.35,*Default,NTP,0000,0000,0000,,所以我们不仅仅是要了解那些基因能致病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's not just knowing what genes
+Dialogue: 0,0:11:08.35,0:11:10.82,*Default,NTP,0000,0000,0000,,也不仅是要弄明白基因的表达方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or figuring out ways to look at gene expression,
+Dialogue: 0,0:11:11.33,0:11:14.13,*Default,NTP,0000,0000,0000,,更要搞清楚这种关键基因的表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's figuring out how this expression
+Dialogue: 0,0:11:14.13,0:11:17.76,*Default,NTP,0000,0000,0000,,如何影响个人命运\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of key genes affects the fate of the individual.
+Dialogue: 0,0:11:18.19,0:11:21.63,*Default,NTP,0000,0000,0000,,这真是复杂的系统性问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's really a complex systems problem,
+Dialogue: 0,0:11:22.13,0:11:23.61,*Default,NTP,0000,0000,0000,,解决这类问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the kind of problems that
+Dialogue: 0,0:11:23.61,0:11:25.99,*Default,NTP,0000,0000,0000,,恰恰是生物医学工程的拿手好戏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}engineers are very good at dealing with.
+Dialogue: 0,0:11:27.66,0:11:28.84,*Default,NTP,0000,0000,0000,,还有别的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Others?
+Dialogue: 0,0:11:34.49,0:11:36.40,*Default,NTP,0000,0000,0000,,我要谈谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm going to call that chips
+Dialogue: 0,0:11:36.40,0:11:39.24,*Default,NTP,0000,0000,0000,,能控制假肢的植入性脑芯片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}implanted in the brain to control prosthetics,
+Dialogue: 0,0:11:39.60,0:11:41.15,*Default,NTP,0000,0000,0000,,我会简要的谈到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm going to make it a little bit more general
+Dialogue: 0,0:11:41.15,0:11:43.58,*Default,NTP,0000,0000,0000,,我们把它称为脑机接口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and call a brain-machine interface.
+Dialogue: 0,0:11:44.87,0:11:47.25,*Default,NTP,0000,0000,0000,,它是一种将大脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's some way of interfacing
+Dialogue: 0,0:11:47.26,0:11:50.79,*Default,NTP,0000,0000,0000,,和外部世界连接起来的办法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}activity in your brain with the outside world,
+Dialogue: 0,0:11:51.33,0:11:54.06,*Default,NTP,0000,0000,0000,,当我们遇到这个问题的时候再细讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about this as we go along,
+Dialogue: 0,0:11:54.33,0:11:55.98,*Default,NTP,0000,0000,0000,,但我们非常有理由相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's lots of reasons to think
+Dialogue: 0,0:11:55.99,0:11:58.75,*Default,NTP,0000,0000,0000,,不远的将来我们就能应用这些技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're going to have this in the not too distant future.
+Dialogue: 0,0:12:04.06,0:12:12.26,*Default,NTP,0000,0000,0000,,脊髓再生  很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Spinal cord regeneration - that's a good one.
+Dialogue: 0,0:12:13.18,0:12:20.72,*Default,NTP,0000,0000,0000,,器官培植\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Organs that can be cultivated…
+Dialogue: 0,0:12:21.15,0:12:28.01,*Default,NTP,0000,0000,0000,,就是将单个细胞培育成为器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Organs grown from single cells.
+Dialogue: 0,0:12:39.43,0:12:40.67,*Default,NTP,0000,0000,0000,,我没听清楚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I didn't hear the last part
+Dialogue: 0,0:12:47.05,0:12:53.29,*Default,NTP,0000,0000,0000,,对人体运动部位造影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imaging of moving parts like the -
+Dialogue: 0,0:12:53.29,0:12:57.61,*Default,NTP,0000,0000,0000,,如关节或者其他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like a joint or another moving part
+Dialogue: 0,0:12:57.61,0:13:02.88,*Default,NTP,0000,0000,0000,,这项技术用来观察心脏跳动也十分有趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that might be interesting to look at in motion is the heart.
+Dialogue: 0,0:13:03.25,0:13:07.02,*Default,NTP,0000,0000,0000,,如果你对心脏进行动态造影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you could image how the heart is moving,
+Dialogue: 0,0:13:10.12,0:13:11.25,*Default,NTP,0000,0000,0000,,你就会了解它的很多功能了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you would know a lot about its function.
+Dialogue: 0,0:13:11.50,0:13:13.42,*Default,NTP,0000,0000,0000,,你会有可能通过观察心脏的跳动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could potentially learn a lot about its function
+Dialogue: 0,0:13:13.42,0:13:14.38,*Default,NTP,0000,0000,0000,,而不仅仅是通过静态的造影图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by looking at how it moves,
+Dialogue: 0,0:13:14.66,0:13:15.86,*Default,NTP,0000,0000,0000,,来了解它的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not just a static picture of it.
+Dialogue: 0,0:13:17.95,0:13:19.99,*Default,NTP,0000,0000,0000,,我们身体很多的部分都在运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's lots of parts of our bodies that move,
+Dialogue: 0,0:13:20.75,0:13:24.75,*Default,NTP,0000,0000,0000,,比如肺  这个不错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the lungs for example, and so yeah that's a good one.
+Dialogue: 0,0:13:30.37,0:13:38.88,*Default,NTP,0000,0000,0000,,再来两个  人造胰腺\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two more--yeah-- artificial pancreas -
+Dialogue: 0,0:13:38.88,0:13:45.84,*Default,NTP,0000,0000,0000,,你认为它是如何工作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now how are you thinking that might work?
+Dialogue: 0,0:14:00.66,0:14:04.00,*Default,NTP,0000,0000,0000,,胰腺有很多的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe - and here thinking about the pancreas has
+Dialogue: 0,0:14:04.00,0:14:06.77,*Default,NTP,0000,0000,0000,,其中最重要的功能之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many functions but one of its important functions is
+Dialogue: 0,0:14:06.77,0:14:08.71,*Default,NTP,0000,0000,0000,,就是分泌胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to secrete insulin.
+Dialogue: 0,0:14:09.24,0:14:13.15,*Default,NTP,0000,0000,0000,,糖尿病患者的胰腺丧失了正常的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So diabetics have lost that normal function.
+Dialogue: 0,0:14:13.71,0:14:16.87,*Default,NTP,0000,0000,0000,,如果我们安装一个泵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What if you could take just a pump
+Dialogue: 0,0:14:16.87,0:14:22.14,*Default,NTP,0000,0000,0000,,能够持续的动态控制胰岛素输出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's capable of continuously administering insulin at various rates
+Dialogue: 0,0:14:22.46,0:14:24.89,*Default,NTP,0000,0000,0000,,并把这个泵连接到一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and connect it to a sensor that's able
+Dialogue: 0,0:14:24.89,0:14:28.35,*Default,NTP,0000,0000,0000,,持续监测体内血糖水平的变化的传感器上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to continuously measure the sugar level in your blood?
+Dialogue: 0,0:14:29.20,0:14:30.81,*Default,NTP,0000,0000,0000,,胰岛素的重要之处在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Insulin is important for
+Dialogue: 0,0:14:30.82,0:14:32.43,*Default,NTP,0000,0000,0000,,它能够维持身体内血糖水平\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}regulating levels of sugar in your blood.
+Dialogue: 0,0:14:32.93,0:14:36.57,*Default,NTP,0000,0000,0000,,如果能持续监测并且补充\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well if you can continuously measure and then give the amount of insulin
+Dialogue: 0,0:14:36.57,0:14:39.55,*Default,NTP,0000,0000,0000,,血液中不足的胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you need to compensate for that amount of blood,
+Dialogue: 0,0:14:40.29,0:14:42.63,*Default,NTP,0000,0000,0000,,能同时具有以上功能的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those things could work together
+Dialogue: 0,0:14:42.63,0:14:44.77,*Default,NTP,0000,0000,0000,,才可以称之为人工胰腺\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be a totally artificial pancreas,
+Dialogue: 0,0:14:45.11,0:14:46.73,*Default,NTP,0000,0000,0000,,它不同于将部件简单的进行组合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}make it totally out of synthetic parts.
+Dialogue: 0,0:14:48.02,0:14:50.64,*Default,NTP,0000,0000,0000,,现在还有一种方法就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now another approach would be
+Dialogue: 0,0:14:50.64,0:14:53.26,*Default,NTP,0000,0000,0000,,取一部分健康人的胰脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to take pieces of the pancreas
+Dialogue: 0,0:14:53.26,0:14:55.88,*Default,NTP,0000,0000,0000,,移植到糖尿病患者体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that already have all that capability within them.
+Dialogue: 0,0:14:56.70,0:14:59.91,*Default,NTP,0000,0000,0000,,每一个健康胰腺细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Individual cells of the pancreas are capable of - of a
+Dialogue: 0,0:14:59.91,0:15:02.96,*Default,NTP,0000,0000,0000,,都可以感知血液中葡萄糖浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}healthy pancreas are capable of both sensing glucose
+Dialogue: 0,0:15:02.96,0:15:04.37,*Default,NTP,0000,0000,0000,,并分泌胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and secreting insulin.
+Dialogue: 0,0:15:05.05,0:15:08.26,*Default,NTP,0000,0000,0000,,所以如果我们可以从健康个体中提取细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what if you could take cells from a healthy individual
+Dialogue: 0,0:15:08.26,0:15:09.86,*Default,NTP,0000,0000,0000,,植入糖尿病患者体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and put them into a diabetic individual?
+Dialogue: 0,0:15:10.46,0:15:13.86,*Default,NTP,0000,0000,0000,,那些新植入的细胞可能会起到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then maybe those new cells you put in
+Dialogue: 0,0:15:13.86,0:15:19.01,*Default,NTP,0000,0000,0000,,与健康个体的胰腺细胞相同的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would function as a totally natural artificial pancreas.
+Dialogue: 0,0:15:19.62,0:15:21.51,*Default,NTP,0000,0000,0000,,但是  为什么至今此假设还没有实现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now why isn't that done?
+Dialogue: 0,0:15:23.08,0:15:26.98,*Default,NTP,0000,0000,0000,,你们认为是什么原因导致这个无法实现呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why doesn't that already work, do you think?
+Dialogue: 0,0:15:27.98,0:15:29.31,*Default,NTP,0000,0000,0000,,要想实现这项技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are the engineering
+Dialogue: 0,0:15:29.31,0:15:31.58,*Default,NTP,0000,0000,0000,,我们要先攻克什么工程难题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}problems to overcome to get that to work?
+Dialogue: 0,0:15:38.35,0:15:42.45,*Default,NTP,0000,0000,0000,,和器官移植中的问题一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same problem is with organ transplantation is that
+Dialogue: 0,0:15:42.45,0:15:45.07,*Default,NTP,0000,0000,0000,,受体需要与供体匹配\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the recipient has to be matched to the donor
+Dialogue: 0,0:15:45.07,0:15:47.68,*Default,NTP,0000,0000,0000,,这就是问题所在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so that's a problem.
+Dialogue: 0,0:15:49.62,0:15:50.70,*Default,NTP,0000,0000,0000,,并且至关重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a big problem
+Dialogue: 0,0:15:50.70,0:15:53.88,*Default,NTP,0000,0000,0000,,那么你们想办法保护这些植入受体的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so can you protect these cells that you give to the recipient
+Dialogue: 0,0:15:53.89,0:15:57.79,*Default,NTP,0000,0000,0000,,使它们免受免疫系统的排异反应么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from attack by the recipient's immune system?
+Dialogue: 0,0:15:58.79,0:16:01.18,*Default,NTP,0000,0000,0000,,该问题一直很具挑战性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's one challenge
+Dialogue: 0,0:16:01.18,0:16:03.32,*Default,NTP,0000,0000,0000,,我们会讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about ways
+Dialogue: 0,0:16:03.33,0:16:06.19,*Default,NTP,0000,0000,0000,,如何用生物医学工程的方法来解决它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to think about engineering approaches to solve that problem.
+Dialogue: 0,0:16:07.48,0:16:07.93,*Default,NTP,0000,0000,0000,,再来一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One more--
+Dialogue: 0,0:16:11.83,0:16:14.84,*Default,NTP,0000,0000,0000,,控制血管再生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}control of angiogenesis within…
+Dialogue: 0,0:16:16.13,0:16:18.25,*Default,NTP,0000,0000,0000,,控制血管再生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}control of angiogenesis,
+Dialogue: 0,0:16:18.67,0:16:22.04,*Default,NTP,0000,0000,0000,,angiogenesis的构词法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and angiogenesis - 
+Dialogue: 0,0:16:22.04,0:16:23.99,*Default,NTP,0000,0000,0000,,angio是血液的意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}angio means 'blood'
+Dialogue: 0,0:16:23.99,0:16:26.47,*Default,NTP,0000,0000,0000,,genesis是新的意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and genesis means 'new'
+Dialogue: 0,0:16:26.47,0:16:28.95,*Default,NTP,0000,0000,0000,,所以这个词就指新血管的生成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so angiogenesis is a development of new blood vessels.
+Dialogue: 0,0:16:29.49,0:16:31.47,*Default,NTP,0000,0000,0000,,许多人认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many people believe 
+Dialogue: 0,0:16:31.48,0:16:37.04,*Default,NTP,0000,0000,0000,,大部分肿瘤需要血管输送血液才能生长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that tumors, most tumors require blood vessels in order to grow.
+Dialogue: 0,0:16:37.85,0:16:39.76,*Default,NTP,0000,0000,0000,,如果肿瘤生长时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If a tumor starts to grow and
+Dialogue: 0,0:16:39.76,0:16:41.68,*Default,NTP,0000,0000,0000,,没有形成新的血管以维持供血\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it doesn't develop a vascular supply
+Dialogue: 0,0:16:41.68,0:16:43.59,*Default,NTP,0000,0000,0000,,肿瘤内部也没有血管的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it doesn't develop blood vessels in it,
+Dialogue: 0,0:16:43.97,0:16:45.98,*Default,NTP,0000,0000,0000,,它的大小将非常有限\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then it can't get bigger than a certain size and
+Dialogue: 0,0:16:45.98,0:16:48.86,*Default,NTP,0000,0000,0000,,这一结论已有许多科学成果可以证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's lots of evidence from many cancers showing that this is true.
+Dialogue: 0,0:16:49.78,0:16:52.47,*Default,NTP,0000,0000,0000,,所以  如果我们能通过阻止血管的生成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you could stop a tumor
+Dialogue: 0,0:16:52.47,0:16:53.66,*Default,NTP,0000,0000,0000,,来阻止肿瘤的发展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from being able to develop blood vessels
+Dialogue: 0,0:16:53.66,0:16:56.62,*Default,NTP,0000,0000,0000,,就可以在肿瘤还处于良性阶段时扼制它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might be able to stop its growth at a stage where it's not harmful.
+Dialogue: 0,0:16:57.46,0:16:59.33,*Default,NTP,0000,0000,0000,,实际上  我不清楚这个新闻中提到的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, I don't know if in the news
+Dialogue: 0,0:16:59.33,0:17:01.75,*Default,NTP,0000,0000,0000,,是不是犹太?福克曼  这个领域的先驱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pioneer in this is a man named Judah Folkman,
+Dialogue: 0,0:17:02.08,0:17:03.47,*Default,NTP,0000,0000,0000,,他是个外科医生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who is a surgeon
+Dialogue: 0,0:17:03.47,0:17:06.24,*Default,NTP,0000,0000,0000,,最先提出了这个重要的理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who first speculated that this was important,
+Dialogue: 0,0:17:06.70,0:17:09.25,*Default,NTP,0000,0000,0000,,不过不幸的是他在本周一去世了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sadly he died on Monday,
+Dialogue: 0,0:17:09.88,0:17:12.59,*Default,NTP,0000,0000,0000,,他让我们对癌症有了新认识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but had a dramatic impact on our understanding of
+Dialogue: 0,0:17:12.59,0:17:15.52,*Default,NTP,0000,0000,0000,,带给我们治疗癌症的新思路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how cancers develop in people and new approaches.
+Dialogue: 0,0:17:15.88,0:17:19.04,*Default,NTP,0000,0000,0000,,现在我们已经有相关的治疗方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there already are some approaches like this that are working,
+Dialogue: 0,0:17:19.67,0:17:21.41,*Default,NTP,0000,0000,0000,,但还有很多地方需要改进\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's more that needs to be done.
+Dialogue: 0,0:17:22.04,0:17:22.83,*Default,NTP,0000,0000,0000,,以上说过的这些东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So of these things that are up here,
+Dialogue: 0,0:17:22.83,0:17:26.38,*Default,NTP,0000,0000,0000,,你们觉得哪个是有争议的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are any that seem controversial to you
+Dialogue: 0,0:17:26.38,0:17:28.77,*Default,NTP,0000,0000,0000,,或者你们觉得有些东西属于生物医学工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or that you would have said
+Dialogue: 0,0:17:28.77,0:17:29.96,*Default,NTP,0000,0000,0000,,但我没有列出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wasn't on my list
+Dialogue: 0,0:17:29.96,0:17:31.04,*Default,NTP,0000,0000,0000,,亦或是你们觉得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I wouldn't say that
+Dialogue: 0,0:17:31.04,0:17:33.34,*Default,NTP,0000,0000,0000,,以上哪些不属于生物医学工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's Biomedical Engineering?
+Dialogue: 0,0:17:37.51,0:17:39.01,*Default,NTP,0000,0000,0000,,怎么个有争议法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Controversial in what sense?
+Dialogue: 0,0:17:54.49,0:17:58.83,*Default,NTP,0000,0000,0000,,它的争议性在于这可能并不是一件好事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Controversial in the sense that maybe it's not a good thing to do,
+Dialogue: 0,0:17:58.83,0:18:01.69,*Default,NTP,0000,0000,0000,,在我们想往人脑中植入机械时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or there might be some limits on what we want to do there
+Dialogue: 0,0:18:01.69,0:18:03.67,*Default,NTP,0000,0000,0000,,会不会受到某种限制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of integrating machines with people's brains.
+Dialogue: 0,0:18:04.82,0:18:07.76,*Default,NTP,0000,0000,0000,,我觉得你想法不错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think that's probably right,
+Dialogue: 0,0:18:08.13,0:18:13.96,*Default,NTP,0000,0000,0000,,这里有些东西确实会引起一定的关注\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there might be some others here where there might be some concerns,
+Dialogue: 0,0:18:14.89,0:18:17.04,*Default,NTP,0000,0000,0000,,或者已经引起关注了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or others that have kind of concerns like that.
+Dialogue: 0,0:18:30.44,0:18:31.76,*Default,NTP,0000,0000,0000,,在这些技术的实际应用中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there's some issues about
+Dialogue: 0,0:18:31.76,0:18:33.56,*Default,NTP,0000,0000,0000,,确实存在着一些问题  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how these technologies might be applied, right?
+Dialogue: 0,0:18:33.67,0:18:34.80,*Default,NTP,0000,0000,0000,,如果我们有基因扫描技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you had genetic scans
+Dialogue: 0,0:18:34.80,0:18:36.83,*Default,NTP,0000,0000,0000,,可以预测疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were available for disease prediction,
+Dialogue: 0,0:18:37.71,0:18:39.17,*Default,NTP,0000,0000,0000,,你是否愿意知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do you want to know everything that's
+Dialogue: 0,0:18:39.17,0:18:41.57,*Default,NTP,0000,0000,0000,,你都可能会得什么病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}going to happen to you in terms of susceptibility to disease?
+Dialogue: 0,0:18:42.21,0:18:44.07,*Default,NTP,0000,0000,0000,,可能你只希望知道其中一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, probably you want to know some of
+Dialogue: 0,0:18:44.07,0:18:45.90,*Default,NTP,0000,0000,0000,,而不想全部都知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it but you might not want to know all of it right?
+Dialogue: 0,0:18:45.99,0:18:47.94,*Default,NTP,0000,0000,0000,,你不想什么都知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You might not want to know all of it
+Dialogue: 0,0:18:47.94,0:18:50.08,*Default,NTP,0000,0000,0000,,这是个十分复杂的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's a really complicated question
+Dialogue: 0,0:18:50.08,0:18:51.73,*Default,NTP,0000,0000,0000,,无论是对个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for an individual to figure out
+Dialogue: 0,0:18:51.73,0:18:54.54,*Default,NTP,0000,0000,0000,,还是对社会都是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a complicated question for society to figure out,
+Dialogue: 0,0:18:54.96,0:18:57.80,*Default,NTP,0000,0000,0000,,我们应该怎样控制它的使用范围\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what you want to make of available in the regard.
+Dialogue: 0,0:19:07.21,0:19:09.20,*Default,NTP,0000,0000,0000,,如果你能够预测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you can start to predict you're going to have heart disease
+Dialogue: 0,0:19:09.21,0:19:12.70,*Default,NTP,0000,0000,0000,,自己会在四十五岁时得心脏病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that starts to develop when you're 45
+Dialogue: 0,0:19:12.70,0:19:15.62,*Default,NTP,0000,0000,0000,,那么你在三十岁的时候去买保险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're looking to buy insurance when you're 30,
+Dialogue: 0,0:19:15.95,0:19:18.24,*Default,NTP,0000,0000,0000,,或者在三十岁的时候去找工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or you're looking for a job when you're 30 and
+Dialogue: 0,0:19:18.24,0:19:20.25,*Default,NTP,0000,0000,0000,,这个信息  你的保险公司\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that information is available to your insurance company
+Dialogue: 0,0:19:20.25,0:19:21.42,*Default,NTP,0000,0000,0000,,和雇主都能得到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or your employer,
+Dialogue: 0,0:19:21.93,0:19:30.14,*Default,NTP,0000,0000,0000,,这将极大地影响你的选择\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that could have dramatic effects on the choices that you get to make.
+Dialogue: 0,0:19:30.68,0:19:32.46,*Default,NTP,0000,0000,0000,,所以这些问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's really -
+Dialogue: 0,0:19:32.46,0:19:34.84,*Default,NTP,0000,0000,0000,,这些问题都是极难处理的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these are really difficult questions to answer.
+Dialogue: 0,0:19:35.53,0:19:36.23,*Default,NTP,0000,0000,0000,,我们会讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about -
+Dialogue: 0,0:19:36.23,0:19:38.86,*Default,NTP,0000,0000,0000,,我们讲课时遇到这些问题出现的时候再说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll raise these issues as they come up.
+Dialogue: 0,0:19:39.35,0:19:41.07,*Default,NTP,0000,0000,0000,,我们会将其与有关技术共同提出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll try to raise them with all the technologies,
+Dialogue: 0,0:19:41.72,0:19:42.80,*Default,NTP,0000,0000,0000,,但是这里我不会给出解决方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we won't try to answer them,
+Dialogue: 0,0:19:43.23,0:19:44.53,*Default,NTP,0000,0000,0000,,或许在耶鲁大学有其他专家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are probably better people
+Dialogue: 0,0:19:44.53,0:19:46.68,*Default,NTP,0000,0000,0000,,更擅长这些问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at Yale to answer those kinds of questions than I am.
+Dialogue: 0,0:19:46.97,0:19:49.77,*Default,NTP,0000,0000,0000,,我们要讲的是技术和技术带来的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about the technology and the questions that it brings up,
+Dialogue: 0,0:19:50.12,0:19:51.67,*Default,NTP,0000,0000,0000,,希望你们对此有兴趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I hope some of you get interested
+Dialogue: 0,0:19:51.67,0:19:54.47,*Default,NTP,0000,0000,0000,,这些也是非常好的学期论文的主题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these will be good topics to think about for term papers as well
+Dialogue: 0,0:19:54.47,0:19:56.58,*Default,NTP,0000,0000,0000,,尤其对于那些抱有这种倾向的同学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for those you that have that kind of inclination.
+Dialogue: 0,0:19:58.08,0:20:01.74,*Default,NTP,0000,0000,0000,,对上面提到的这些还有争议么  比如\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But any that seem like controversial or like,
+Dialogue: 0,0:20:02.35,0:20:03.85,*Default,NTP,0000,0000,0000,,我认为这不是生物医学工程的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'I don't think that's Biomedical Engineering'
+Dialogue: 0,0:20:03.85,0:20:05.78,*Default,NTP,0000,0000,0000,,或者  这不是我想学的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or 'that's not what I want to learn about in this course'.
+Dialogue: 0,0:20:06.28,0:20:07.44,*Default,NTP,0000,0000,0000,,换句话说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me put it that way;
+Dialogue: 0,0:20:07.47,0:20:09.77,*Default,NTP,0000,0000,0000,,我可不想花费一周课来讨论这种问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hope we don't spend a week talking about that one
+Dialogue: 0,0:20:09.77,0:20:12.95,*Default,NTP,0000,0000,0000,,因为我觉得那不属于生物医学工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because that's not what I thought Biomedical Engineering was.
+Dialogue: 0,0:20:22.13,0:20:23.76,*Default,NTP,0000,0000,0000,,还有什么是你们觉得不对劲的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Any of these or do they all seem on the mark?
+Dialogue: 0,0:20:26.50,0:20:28.96,*Default,NTP,0000,0000,0000,,嗯  来自克隆动物的食品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah? Food from cloned animals
+Dialogue: 0,0:20:29.03,0:20:30.50,*Default,NTP,0000,0000,0000,,来自克隆动物的食品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Food from cloned animals - 
+Dialogue: 0,0:20:30.50,0:20:32.86,*Default,NTP,0000,0000,0000,,你觉得这不是生物医学工程范畴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you didn't expect that to be Biomedical Engineering?
+Dialogue: 0,0:20:36.50,0:20:38.05,*Default,NTP,0000,0000,0000,,为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So why?
+Dialogue: 0,0:20:53.84,0:20:56.78,*Default,NTP,0000,0000,0000,,我明白你们为什么疑惑了  明白为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think - I see where you wouldn't see - I see where you would
+Dialogue: 0,0:20:56.79,0:20:58.34,*Default,NTP,0000,0000,0000,,先前那位同学觉得它属于生物医学工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}put it in that category
+Dialogue: 0,0:20:58.34,0:21:00.68,*Default,NTP,0000,0000,0000,,而刚才这位同学却对此感到惊讶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how you would be surprised to put it in that category
+Dialogue: 0,0:21:01.69,0:21:03.22,*Default,NTP,0000,0000,0000,,它之所以属于这个领域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It should be in the category
+Dialogue: 0,0:21:03.22,0:21:06.18,*Default,NTP,0000,0000,0000,,是因为它是靠工程技术实现的  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's engineering to be able to do this, right?
+Dialogue: 0,0:21:06.43,0:21:07.86,*Default,NTP,0000,0000,0000,,所谓生物系统的工程化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a biological system that you've engineered
+Dialogue: 0,0:21:07.86,0:21:10.58,*Default,NTP,0000,0000,0000,,就是从一种生物体内中取出细胞并克隆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from taking cells from one organism and cloning them
+Dialogue: 0,0:21:10.58,0:21:12.78,*Default,NTP,0000,0000,0000,,将它们培养成为另一个有机整体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and developing a whole other organism.
+Dialogue: 0,0:21:12.99,0:21:17.27,*Default,NTP,0000,0000,0000,,这些工程技术对人类自身也有益  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it's also engineering that helps humans, right?
+Dialogue: 0,0:21:17.27,0:21:19.16,*Default,NTP,0000,0000,0000,,因为营养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because nutrition is going to
+Dialogue: 0,0:21:19.16,0:21:22.17,*Default,NTP,0000,0000,0000,,对你们这一代人是个大问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}be one of the big problems of your generation;
+Dialogue: 0,0:21:22.55,0:21:24.51,*Default,NTP,0000,0000,0000,,怎样才能确保食物的质和量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to have enough nutritious food
+Dialogue: 0,0:21:24.51,0:21:26.47,*Default,NTP,0000,0000,0000,,能够满足日益增长人口的需求\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the population as it grows.
+Dialogue: 0,0:21:28.13,0:21:29.94,*Default,NTP,0000,0000,0000,,即使明白了人们应该吃什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even to understand what individuals should eat,
+Dialogue: 0,0:21:29.94,0:21:31.29,*Default,NTP,0000,0000,0000,,吃什么才更健康\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what should I be eating?
+Dialogue: 0,0:21:31.55,0:21:33.07,*Default,NTP,0000,0000,0000,,这也依然是一个复杂的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a really complicated question
+Dialogue: 0,0:21:33.07,0:21:34.59,*Default,NTP,0000,0000,0000,,人们现在对此十分困惑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we have gotten very confused about.
+Dialogue: 0,0:21:36.77,0:21:37.46,*Default,NTP,0000,0000,0000,,虽说很大程度上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In large part
+Dialogue: 0,0:21:37.46,0:21:38.85,*Default,NTP,0000,0000,0000,,是政府把这个问题变得复杂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because our government has confused us about it,
+Dialogue: 0,0:21:39.23,0:21:41.63,*Default,NTP,0000,0000,0000,,但这个问题本身确实值得商榷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a confusing question to know.
+Dialogue: 0,0:21:43.68,0:21:44.54,*Default,NTP,0000,0000,0000,,我认为工程师们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think engineers
+Dialogue: 0,0:21:44.54,0:21:46.25,*Default,NTP,0000,0000,0000,,在其中扮演了重要角色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have a role to play in that,
+Dialogue: 0,0:21:47.64,0:21:50.05,*Default,NTP,0000,0000,0000,,但它又不像传统生物医学工程那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's not sort of classical Biomedical Engineering
+Dialogue: 0,0:21:50.05,0:21:51.45,*Default,NTP,0000,0000,0000,,去研究人造心脏之类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the way that developing an artificial heart
+Dialogue: 0,0:21:51.45,0:21:53.37,*Default,NTP,0000,0000,0000,,实实在在的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is where you can see that.
+Dialogue: 0,0:21:54.38,0:21:56.54,*Default,NTP,0000,0000,0000,,不过我认为这是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I think it's a good example of a place
+Dialogue: 0,0:21:56.55,0:21:59.90,*Default,NTP,0000,0000,0000,,未来生物医学工程师努力的方向之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where biomedical engineers of the future are going to contribute.
+Dialogue: 0,0:22:01.86,0:22:05.59,*Default,NTP,0000,0000,0000,,我把我对生物医学工程的理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I want to try to put this together into a form that
+Dialogue: 0,0:22:05.59,0:22:10.91,*Default,NTP,0000,0000,0000,,都列入这个表  就是现在你们看到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've come to understand what Biomedical Engineering is and present it to you.
+Dialogue: 0,0:22:11.35,0:22:13.38,*Default,NTP,0000,0000,0000,,我不仅不大擅长伦理学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not only am I not an ethicist
+Dialogue: 0,0:22:13.38,0:22:16.45,*Default,NTP,0000,0000,0000,,不大擅长回答这样的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'm not good at those kinds of problems,
+Dialogue: 0,0:22:16.50,0:22:17.73,*Default,NTP,0000,0000,0000,,更不擅长艺术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not much of an artist either.
+Dialogue: 0,0:22:18.45,0:22:19.59,*Default,NTP,0000,0000,0000,,所以这是个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this is a person -
+Dialogue: 0,0:22:19.59,0:22:22.83,*Default,NTP,0000,0000,0000,,你们差不多看的出这个图上是个人吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can recognize it as a person,
+Dialogue: 0,0:22:23.54,0:22:24.89,*Default,NTP,0000,0000,0000,,不过他是远古时代的人了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let's say it was a person a long,long time ago
+Dialogue: 0,0:22:25.20,0:22:32.26,*Default,NTP,0000,0000,0000,,曾几何时  远古时代的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there was a point when one person decided to take instruments
+Dialogue: 0,0:22:32.26,0:22:38.49,*Default,NTP,0000,0000,0000,,决定使用手边的东西来改善生活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were around them and use them to improve their life.
+Dialogue: 0,0:22:38.95,0:22:41.32,*Default,NTP,0000,0000,0000,,有些人想到使用轮子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Somebody thought about a wheel,
+Dialogue: 0,0:22:41.68,0:22:43.32,*Default,NTP,0000,0000,0000,,另一些人发现轮子的使用方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or some group of people discovered how to use a wheel,
+Dialogue: 0,0:22:43.89,0:22:44.47,*Default,NTP,0000,0000,0000,,有些人想到使用刀具\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some a knife,
+Dialogue: 0,0:22:45.56,0:22:46.82,*Default,NTP,0000,0000,0000,,有的想到杠杆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some levers
+Dialogue: 0,0:22:46.82,0:22:49.75,*Default,NTP,0000,0000,0000,,这些有用的东西改善了他们的生活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these were very useful things in improving the quality of their life
+Dialogue: 0,0:22:49.75,0:22:52.69,*Default,NTP,0000,0000,0000,,然后就出现了第一个工程师\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that was - that's who you would call the first engineer
+Dialogue: 0,0:22:54.56,0:22:55.92,*Default,NTP,0000,0000,0000,,接着出现了更多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then some -
+Dialogue: 0,0:22:55.92,0:22:59.03,*Default,NTP,0000,0000,0000,,这些工具投入使用之后不久\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it couldn't have been too long after those instruments became available,
+Dialogue: 0,0:22:59.20,0:22:59.61,*Default,NTP,0000,0000,0000,,就有一些人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but somebody,
+Dialogue: 0,0:22:59.61,0:23:02.11,*Default,NTP,0000,0000,0000,,让我们称他们为第一批生物医学工程师\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's call them the first biomedical engineer,
+Dialogue: 0,0:23:02.32,0:23:04.27,*Default,NTP,0000,0000,0000,,决定运用这些工具\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}decided to use those instruments
+Dialogue: 0,0:23:04.27,0:23:05.71,*Default,NTP,0000,0000,0000,,更深入的研究自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to look at either themselves or
+Dialogue: 0,0:23:05.71,0:23:08.41,*Default,NTP,0000,0000,0000,,也许他们更愿意去研究邻居们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}probably more likely, their neighbor.
+Dialogue: 0,0:23:09.11,0:23:11.85,*Default,NTP,0000,0000,0000,,用刀子切开皮肤  看看体内有什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Take a knife and open up the skin and let's see what's inside.
+Dialogue: 0,0:23:12.09,0:23:14.74,*Default,NTP,0000,0000,0000,,这个精妙的身体是怎么运作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do these fascinating things around me work?
+Dialogue: 0,0:23:15.90,0:23:18.81,*Default,NTP,0000,0000,0000,,人们开始利用自己发明的器械研究人体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So people started turning these machines they developed on themselves
+Dialogue: 0,0:23:18.81,0:23:22.45,*Default,NTP,0000,0000,0000,,试图了解其运作方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to try to understand how they worked.
+Dialogue: 0,0:23:23.73,0:23:26.04,*Default,NTP,0000,0000,0000,,这是生物医学工程研究的一个方向\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one aspect of Biomedical Engineering,
+Dialogue: 0,0:23:26.21,0:23:29.39,*Default,NTP,0000,0000,0000,,即设计那些能够让人们了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}developing tools that allow you to understand
+Dialogue: 0,0:23:29.39,0:23:32.92,*Default,NTP,0000,0000,0000,,人体的运转方式的工具\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how human's function
+Dialogue: 0,0:23:32.92,0:23:34.09,*Default,NTP,0000,0000,0000,,以及能够诊断疾病的工具\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what's wrong when they have disease
+Dialogue: 0,0:23:34.09,0:23:36.43,*Default,NTP,0000,0000,0000,,我们刚才讲过的一些东西就属于这类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so some of the things we've talked about have that category.
+Dialogue: 0,0:23:38.59,0:23:42.68,*Default,NTP,0000,0000,0000,,关节镜手术就是一个极佳的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Arthroscopic surgery in one sense is a fancy example of that,
+Dialogue: 0,0:23:43.19,0:23:46.33,*Default,NTP,0000,0000,0000,,使用该技术我们可以一窥关节内部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a way of looking inside a joint to see what's happening inside
+Dialogue: 0,0:23:46.33,0:23:50.30,*Default,NTP,0000,0000,0000,,而不影响病人的生命  也不会过分痛苦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}while the person is alive and without hurting them.
+Dialogue: 0,0:23:53.22,0:23:55.23,*Default,NTP,0000,0000,0000,,对运动部位的成像技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imaging of moving parts
+Dialogue: 0,0:23:55.23,0:23:57.45,*Default,NTP,0000,0000,0000,,可以看成是关节镜技术的进步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that same way is sort of advance in that.
+Dialogue: 0,0:24:01.78,0:24:04.84,*Default,NTP,0000,0000,0000,,当这些工具应用的越来越广泛时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As these tools became applied more and more widely,
+Dialogue: 0,0:24:05.25,0:24:07.57,*Default,NTP,0000,0000,0000,,我们对人类生理运作的了解也逐渐加深\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we learned more about how human physiology worked.
+Dialogue: 0,0:24:08.62,0:24:11.80,*Default,NTP,0000,0000,0000,,当我们了解了机体如何运作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As we learned about how humans operate
+Dialogue: 0,0:24:11.80,0:24:14.07,*Default,NTP,0000,0000,0000,,就可以设计出器械\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we could start to design machines
+Dialogue: 0,0:24:14.07,0:24:16.05,*Default,NTP,0000,0000,0000,,在人体某些部位功能失常时提供帮助\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would help humans when they weren't functioning properly.
+Dialogue: 0,0:24:16.69,0:24:20.15,*Default,NTP,0000,0000,0000,,最简单的例子就是  当人们知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the simplest example was that once we learned that
+Dialogue: 0,0:24:20.15,0:24:23.08,*Default,NTP,0000,0000,0000,,腿部有骨骼等坚硬的组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there were bones or hard elements inside the leg,
+Dialogue: 0,0:24:23.08,0:24:25.72,*Default,NTP,0000,0000,0000,,人类的腿可以伸直  就依赖于这些骨骼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that those bones were important in keeping the leg straight
+Dialogue: 0,0:24:25.72,0:24:27.94,*Default,NTP,0000,0000,0000,,这样才能够站立这类知识以后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you could stand up,
+Dialogue: 0,0:24:28.65,0:24:31.66,*Default,NTP,0000,0000,0000,,就可以设计出人造骨骼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then somebody could invent an artificial bone,
+Dialogue: 0,0:24:32.26,0:24:33.58,*Default,NTP,0000,0000,0000,,在腿外围固定夹板\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a splint that would be wrapped around - that would be secured
+Dialogue: 0,0:24:33.58,0:24:36.06,*Default,NTP,0000,0000,0000,,这样在你的腿外围给予机械支持\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the outside of the leg to give you mechanical support
+Dialogue: 0,0:24:36.06,0:24:38.93,*Default,NTP,0000,0000,0000,,这样即使你从树上摔下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even after you fell out of a tree
+Dialogue: 0,0:24:38.93,0:24:41.54,*Default,NTP,0000,0000,0000,,跌断了腿  也能走路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you broke you leg.
+Dialogue: 0,0:24:42.84,0:24:44.74,*Default,NTP,0000,0000,0000,,这便是另一种工程技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this is another kind of engineering,
+Dialogue: 0,0:24:45.13,0:24:47.86,*Default,NTP,0000,0000,0000,,它并不研究人体运作原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an engineering not to look more closely at how humans work
+Dialogue: 0,0:24:47.87,0:24:50.30,*Default,NTP,0000,0000,0000,,而是强化某部位的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but an engineering to improve their function
+Dialogue: 0,0:24:50.30,0:24:52.29,*Default,NTP,0000,0000,0000,,如果这个部位失效了的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's failing.
+Dialogue: 0,0:24:54.80,0:24:58.78,*Default,NTP,0000,0000,0000,,如今  我们已经有功能更加复杂的设备\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As time goes on, we've developed ever more complex machines
+Dialogue: 0,0:24:58.78,0:24:59.88,*Default,NTP,0000,0000,0000,,来研究人类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to study people
+Dialogue: 0,0:24:59.88,0:25:02.52,*Default,NTP,0000,0000,0000,,比如之前说到的心电图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we've talked about some of these already: EKG machines,
+Dialogue: 0,0:25:02.90,0:25:05.72,*Default,NTP,0000,0000,0000,,我们使用电子装置\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so an example of an electrical device that can
+Dialogue: 0,0:25:05.72,0:25:09.84,*Default,NTP,0000,0000,0000,,对身体内部机能进行精确地监控\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}be used to monitor a very elaborate function deep inside your body,
+Dialogue: 0,0:25:10.16,0:25:11.17,*Default,NTP,0000,0000,0000,,具体到心电图就是心跳和心率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the beating of your heart and the rhythm of your heart.
+Dialogue: 0,0:25:11.44,0:25:13.92,*Default,NTP,0000,0000,0000,,我们还说到现代影像技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about modern imaging methods
+Dialogue: 0,0:25:13.92,0:25:17.40,*Default,NTP,0000,0000,0000,,这里是一幅脑部功能性磁共振成像图像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is an example of an fMRI,
+Dialogue: 0,0:25:17.80,0:25:19.09,*Default,NTP,0000,0000,0000,,一种功能性的磁共振\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a functional MRI;
+Dialogue: 0,0:25:19.75,0:25:22.77,*Default,NTP,0000,0000,0000,,图中不仅可以看到脑部解剖学图像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a map of the brain that not only shows you the anatomy of the brain
+Dialogue: 0,0:25:22.77,0:25:26.52,*Default,NTP,0000,0000,0000,,也可以看到一些脑内的生化过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but shows you something about the chemistry of what's going on inside.
+Dialogue: 0,0:25:27.19,0:25:30.50,*Default,NTP,0000,0000,0000,,现在如果有人躺在核磁共振仪中进行阅读\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can put somebody in an MRI machine now and have them read a book
+Dialogue: 0,0:25:30.50,0:25:34.91,*Default,NTP,0000,0000,0000,,我们就可以看到  在阅读时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and look at what parts of their brain become activated
+Dialogue: 0,0:25:34.95,0:25:37.06,*Default,NTP,0000,0000,0000,,大脑哪些部位变得活跃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they're reading and
+Dialogue: 0,0:25:37.06,0:25:40.35,*Default,NTP,0000,0000,0000,,停止阅读时哪些部位停止活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what parts stop activating when they stop reading,
+Dialogue: 0,0:25:40.47,0:25:41.96,*Default,NTP,0000,0000,0000,,这样我们就知道了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you can learn
+Dialogue: 0,0:25:41.96,0:25:44.56,*Default,NTP,0000,0000,0000,,大脑中什么部位是和阅读相关的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where in their brain is reading done.
+Dialogue: 0,0:25:45.05,0:25:48.44,*Default,NTP,0000,0000,0000,,如果让他看法语和西班牙语\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can ask them to read French and to read Spanish and you can find
+Dialogue: 0,0:25:48.44,0:25:51.54,*Default,NTP,0000,0000,0000,,我们就能看到不同的大脑区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}different locations in the brain that are involved in processing 
+Dialogue: 0,0:25:51.55,0:25:53.12,*Default,NTP,0000,0000,0000,,对应不同的语言系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of those different languages.
+Dialogue: 0,0:25:53.75,0:25:56.27,*Default,NTP,0000,0000,0000,,这些不可思议的仪器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are really incredible tools for
+Dialogue: 0,0:25:56.27,0:25:59.80,*Default,NTP,0000,0000,0000,,对研究机体内部的活动至关重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}understanding deep inside the body what's happening.
+Dialogue: 0,0:26:00.46,0:26:01.58,*Default,NTP,0000,0000,0000,,如今我们已经能从\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can even understand it
+Dialogue: 0,0:26:01.58,0:26:03.53,*Default,NTP,0000,0000,0000,,分子和细胞水平对机体进行研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on a molecular or cellular level now.
+Dialogue: 0,0:26:03.96,0:26:05.22,*Default,NTP,0000,0000,0000,,这是膜片钳的图片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a picture of patch clamp,
+Dialogue: 0,0:26:05.65,0:26:09.63,*Default,NTP,0000,0000,0000,,工程师使用该装置固定单个细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a device that engineers built to fasten onto individual cells 
+Dialogue: 0,0:26:09.63,0:26:11.04,*Default,NTP,0000,0000,0000,,由此观察\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to look at
+Dialogue: 0,0:26:11.04,0:26:14.93,*Default,NTP,0000,0000,0000,,细胞膜中的分子怎样活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how molecules in the membrane of the cell are working,
+Dialogue: 0,0:26:15.38,0:26:18.16,*Default,NTP,0000,0000,0000,,在以后的课中我还会谈到这方面内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'll talk a little bit about that as we go along.
+Dialogue: 0,0:26:18.16,0:26:19.16,*Default,NTP,0000,0000,0000,,现在我们能在非常微观的水平上进行研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we can understand down to a very fine level now
+Dialogue: 0,0:26:21.08,0:26:24.97,*Default,NTP,0000,0000,0000,,这得益于我们设计出的种种机械\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of machines that we've built.
+Dialogue: 0,0:26:25.56,0:26:28.24,*Default,NTP,0000,0000,0000,,随着我们的认识不断加深\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As our understanding is improved
+Dialogue: 0,0:26:28.24,0:26:30.77,*Default,NTP,0000,0000,0000,,越来越多复杂精妙的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we've been able to build more complicated approaches
+Dialogue: 0,0:26:30.77,0:26:33.87,*Default,NTP,0000,0000,0000,,身体机能替代物随之产生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to replacing function.
+Dialogue: 0,0:26:34.39,0:26:36.71,*Default,NTP,0000,0000,0000,,我们之前说到的人造髋关节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about the artificial hip 
+Dialogue: 0,0:26:36.71,0:26:40.07,*Default,NTP,0000,0000,0000,,就是由固定腿部的夹板衍生而来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is a modern precursor of the splint I talked about before.
+Dialogue: 0,0:26:40.52,0:26:43.20,*Default,NTP,0000,0000,0000,,无论是在所需材料方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Much more sophisticated in terms of the materials that are required 
+Dialogue: 0,0:26:43.20,0:26:46.60,*Default,NTP,0000,0000,0000,,还是设计思路上都更具智慧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the design thinking that goes behind it.
+Dialogue: 0,0:26:47.03,0:26:51.07,*Default,NTP,0000,0000,0000,,所以现在患者可以使用人造髋关节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So now somebody can get an artificial hip 
+Dialogue: 0,0:26:51.07,0:26:53.68,*Default,NTP,0000,0000,0000,,再活上几十年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they can live for many decades with it
+Dialogue: 0,0:26:53.68,0:26:56.01,*Default,NTP,0000,0000,0000,,而且几乎和正常人没一点差别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and have almost full function of that hip over that period of time.
+Dialogue: 0,0:26:57.40,0:27:02.53,*Default,NTP,0000,0000,0000,,这是一个脑机接口界面的示范\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an example of a rudimentary brain machine interface.
+Dialogue: 0,0:27:03.05,0:27:06.60,*Default,NTP,0000,0000,0000,,这个装置叫做深部脑刺激器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a device called a deep brain stimulator,
+Dialogue: 0,0:27:07.14,0:27:08.75,*Default,NTP,0000,0000,0000,,由美敦力公司研发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}developed by a company called Medtronic,
+Dialogue: 0,0:27:09.24,0:27:12.65,*Default,NTP,0000,0000,0000,,看上去像一个植入体内的起搏器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it looks like a pacemaker that's implanted inside your body.
+Dialogue: 0,0:27:12.93,0:27:17.61,*Default,NTP,0000,0000,0000,,它和心脏起搏器发挥的作用相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here is as pacemaker and this pacemaker does the same thing 
+Dialogue: 0,0:27:17.97,0:27:20.14,*Default,NTP,0000,0000,0000,,发出周期性的电信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a heart pacemaker does, it generates periodic electrical signals.
+Dialogue: 0,0:27:21.06,0:27:24.56,*Default,NTP,0000,0000,0000,,但这些电信号针对的不是心脏而是大脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But instead of those signals going to your heart they go into the brain.
+Dialogue: 0,0:27:24.99,0:27:26.47,*Default,NTP,0000,0000,0000,,电信号通过这些线路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They go through these wires and
+Dialogue: 0,0:27:26.47,0:27:28.87,*Default,NTP,0000,0000,0000,,传递至植入于大脑的电极中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into these electrodes that are deep in your brain,
+Dialogue: 0,0:27:29.39,0:27:31.63,*Default,NTP,0000,0000,0000,,由此刺激大脑中的组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they stimulate tissue inside the brain.
+Dialogue: 0,0:27:32.93,0:27:34.91,*Default,NTP,0000,0000,0000,,我们已经发现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've found that stimulation,
+Dialogue: 0,0:27:35.53,0:27:38.47,*Default,NTP,0000,0000,0000,,这种脑部深层的电刺激\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}electrical stimulation deep in the brain can help
+Dialogue: 0,0:27:38.47,0:27:42.37,*Default,NTP,0000,0000,0000,,可以缓解帕金森氏症患者的症状\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}patients that have Parkinson's Disease and can reduce
+Dialogue: 0,0:27:42.40,0:27:43.91,*Default,NTP,0000,0000,0000,,如震颤和肌肉丧失控制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the tremors and loss of muscle control
+Dialogue: 0,0:27:43.91,0:27:46.70,*Default,NTP,0000,0000,0000,,许多帕金森氏症患者都使用这种疗法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that many patients with Parkinson's Disease use.
+Dialogue: 0,0:27:47.60,0:27:50.18,*Default,NTP,0000,0000,0000,,现阶段这些电极只能发出信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now these are electrodes that are only sending out signals.
+Dialogue: 0,0:27:50.61,0:27:52.73,*Default,NTP,0000,0000,0000,,它们只能向大脑发出信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're producing electrical signals in the brain
+Dialogue: 0,0:27:52.73,0:27:55.74,*Default,NTP,0000,0000,0000,,而不能记录反馈大脑的信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not recording from the brain,
+Dialogue: 0,0:27:56.22,0:27:57.91,*Default,NTP,0000,0000,0000,,但是这两者技术要求差别不大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's not that big of a difference.
+Dialogue: 0,0:27:59.82,0:28:03.73,*Default,NTP,0000,0000,0000,,相信不久以后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It won't be long before we're using these same kind of devices
+Dialogue: 0,0:28:03.73,0:28:06.19,*Default,NTP,0000,0000,0000,,这个装置就可以同时记录和反馈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to both record--to test what's going on--
+Dialogue: 0,0:28:06.19,0:28:08.90,*Default,NTP,0000,0000,0000,,大脑的信号  并做出相应的回应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to act in the right way and response.
+Dialogue: 0,0:28:09.34,0:28:13.53,*Default,NTP,0000,0000,0000,,这开启了真正的人机交互之门\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a beginning of real interface between machines and brains.
+Dialogue: 0,0:28:14.91,0:28:19.26,*Default,NTP,0000,0000,0000,,透析技术  这里是一个膜透析的装置\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Dialysis, this is an example of a membrane dialysis unit.
+Dialogue: 0,0:28:19.65,0:28:20.93,*Default,NTP,0000,0000,0000,,在美国乃至全世界  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Dialysis is done millions of times per day
+Dialogue: 0,0:28:20.93,0:28:24.37,*Default,NTP,0000,0000,0000,,每天进行着上百万次的透析\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this country and around the world,
+Dialogue: 0,0:28:24.74,0:28:27.53,*Default,NTP,0000,0000,0000,,肾脏丧失功能的病人靠透析得以存活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and keeps people alive when their kidneys have failed
+Dialogue: 0,0:28:27.53,0:28:31.53,*Default,NTP,0000,0000,0000,,如果没有透析他们活不过一个星期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they wouldn't survive for even a week without dialysis.
+Dialogue: 0,0:28:31.71,0:28:34.15,*Default,NTP,0000,0000,0000,,通过周期性的透析除去血液中的代谢废物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can keep people alive for many decades
+Dialogue: 0,0:28:34.15,0:28:37.82,*Default,NTP,0000,0000,0000,,可以使病人寿命延长几十年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with periodic dialysis to remove waste products from the blood.
+Dialogue: 0,0:28:38.16,0:28:41.88,*Default,NTP,0000,0000,0000,,我们之后会讨论这些例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about these examples.
+Dialogue: 0,0:28:42.10,0:28:47.55,*Default,NTP,0000,0000,0000,,我想给你们看我画的这张图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I want to leave you with is my picture,
+Dialogue: 0,0:28:48.95,0:28:51.21,*Default,NTP,0000,0000,0000,,图虽然画得不太好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not a very elaborate picture,
+Dialogue: 0,0:28:51.65,0:28:54.25,*Default,NTP,0000,0000,0000,,但包含了我对生物医学工程的理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of what Biomedical Engineering is to me,
+Dialogue: 0,0:28:54.25,0:28:55.30,*Default,NTP,0000,0000,0000,,有两部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and two parts of it.
+Dialogue: 0,0:28:55.66,0:28:59.88,*Default,NTP,0000,0000,0000,,一  开发新方法更好的了解身体的运作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, developing ways to understand how humans work better,
+Dialogue: 0,0:29:00.35,0:29:02.66,*Default,NTP,0000,0000,0000,,以及生理过程是怎样发生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how human physiology operates,
+Dialogue: 0,0:29:02.98,0:29:04.83,*Default,NTP,0000,0000,0000,,二  当人机体发生病变时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and second, developing new approaches for
+Dialogue: 0,0:29:04.83,0:29:07.84,*Default,NTP,0000,0000,0000,,找到方法替代病变器官的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}replacing function in people when they're sick.
+Dialogue: 0,0:29:10.99,0:29:14.00,*Default,NTP,0000,0000,0000,,接下来我想说一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to talk about - move on and talk a little bit
+Dialogue: 0,0:29:14.00,0:29:17.99,*Default,NTP,0000,0000,0000,,生理学上非常重要的基础性的概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about some general concepts from physiology that are really important
+Dialogue: 0,0:29:18.52,0:29:20.25,*Default,NTP,0000,0000,0000,,这里有一个表格\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and here is a table that
+Dialogue: 0,0:29:20.25,0:29:23.35,*Default,NTP,0000,0000,0000,,给出了一个普通人的特征参数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gives characteristics of an average person.
+Dialogue: 0,0:29:23.52,0:29:25.96,*Default,NTP,0000,0000,0000,,包括普通成年男性 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This would be an average adult male,
+Dialogue: 0,0:29:26.90,0:29:30.04,*Default,NTP,0000,0000,0000,,三十岁  平均身高和体重  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}30 years old, the average height and weight,
+Dialogue: 0,0:29:30.68,0:29:33.05,*Default,NTP,0000,0000,0000,,平均表面积和体温\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and surface area and temperature,
+Dialogue: 0,0:29:33.72,0:29:37.84,*Default,NTP,0000,0000,0000,,还有许多其他数据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and lots of characteristics of an average person.
+Dialogue: 0,0:29:38.37,0:29:40.77,*Default,NTP,0000,0000,0000,,我们来想一下这些数据吧  比如体重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's think about some of these like weight.
+Dialogue: 0,0:29:43.57,0:29:46.05,*Default,NTP,0000,0000,0000,,我们身在一个特别关注体重的国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We think a lot about weight in this country,
+Dialogue: 0,0:29:47.18,0:29:49.33,*Default,NTP,0000,0000,0000,,然而体重是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but weight is a
+Dialogue: 0,0:29:49.33,0:29:53.31,*Default,NTP,0000,0000,0000,,需要小心地控制地人体指标\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}remarkably carefully controlled parameter of a person,
+Dialogue: 0,0:29:53.66,0:29:54.59,*Default,NTP,0000,0000,0000,,这就是说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is,
+Dialogue: 0,0:29:54.59,0:29:56.46,*Default,NTP,0000,0000,0000,,你必须付出相当多的努力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to work pretty hard
+Dialogue: 0,0:29:56.46,0:29:58.50,*Default,NTP,0000,0000,0000,,才能增加或减少体重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to gain weight or to lose weight.
+Dialogue: 0,0:29:59.68,0:30:01.12,*Default,NTP,0000,0000,0000,,日复一日年复一年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We take in a lot of food and water
+Dialogue: 0,0:30:01.13,0:30:03.47,*Default,NTP,0000,0000,0000,,我们都摄入大量的食物和水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}everyday, every year,
+Dialogue: 0,0:30:04.26,0:30:06.51,*Default,NTP,0000,0000,0000,,但我们绝大部分人的体重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and yet most of us our weight stays remarkably stable
+Dialogue: 0,0:30:06.51,0:30:10.20,*Default,NTP,0000,0000,0000,,在成年期都保持得很稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over that period of time for adults
+Dialogue: 0,0:30:10.20,0:30:13.24,*Default,NTP,0000,0000,0000,,不管我们怎样大吃大喝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}despite how much we eat and how much we drink.
+Dialogue: 0,0:30:13.56,0:30:15.28,*Default,NTP,0000,0000,0000,,身体都能把体重控制的相当好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your body is able to regulate your weight fairly well
+Dialogue: 0,0:30:15.28,0:30:17.87,*Default,NTP,0000,0000,0000,,即使你从没想过体重的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without you really thinking about it.
+Dialogue: 0,0:30:18.13,0:30:21.98,*Default,NTP,0000,0000,0000,,同学们  你们都还年轻不需要努力减肥\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anybody - you're all too young to have tried to lose weight yet,
+Dialogue: 0,0:30:22.27,0:30:23.79,*Default,NTP,0000,0000,0000,,但当你们年纪更大一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but when you get to be older 
+Dialogue: 0,0:30:23.79,0:30:24.28,*Default,NTP,0000,0000,0000,,就会想减肥了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you start to think about
+Dialogue: 0,0:30:24.28,0:30:25.91,*Default,NTP,0000,0000,0000,,因为你们身体新陈代谢的水平发生了变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as your metabolism changes,
+Dialogue: 0,0:30:26.33,0:30:27.49,*Default,NTP,0000,0000,0000,,到时候你们就知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}trying to control your weight,
+Dialogue: 0,0:30:27.49,0:30:29.37,*Default,NTP,0000,0000,0000,,控制体重是多么困难的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you realize how hard it is to do,
+Dialogue: 0,0:30:30.53,0:30:31.30,*Default,NTP,0000,0000,0000,,你知道的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you know this
+Dialogue: 0,0:30:31.30,0:30:33.58,*Default,NTP,0000,0000,0000,,这是因为人们只是想想而不付诸行动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because people spend a lot of energy thinking about it.
+Dialogue: 0,0:30:34.08,0:30:36.67,*Default,NTP,0000,0000,0000,,只要你让身体忙起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Weight is remarkably well controlled
+Dialogue: 0,0:30:36.67,0:30:39.84,*Default,NTP,0000,0000,0000,,体重就能得到显著控制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you let your body do its business.
+Dialogue: 0,0:30:41.65,0:30:43.50,*Default,NTP,0000,0000,0000,,同样的  体温\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Also, temperature,
+Dialogue: 0,0:30:44.10,0:30:45.52,*Default,NTP,0000,0000,0000,,你可以测量一下体温\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could measure your temperature
+Dialogue: 0,0:30:45.52,0:30:46.40,*Default,NTP,0000,0000,0000,,你会发现在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd find variations 
+Dialogue: 0,0:30:46.40,0:30:48.69,*Default,NTP,0000,0000,0000,,一天中或者一年中体温会变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}throughout the day or maybe some throughout the year,
+Dialogue: 0,0:30:49.18,0:30:53.29,*Default,NTP,0000,0000,0000,,但你的体温会控制在一个狭小的范围内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but within a remarkably narrow range your temperature is controlled.
+Dialogue: 0,0:30:53.87,0:30:55.78,*Default,NTP,0000,0000,0000,,当你从这里走出去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you go from here to going outside,
+Dialogue: 0,0:30:56.39,0:30:57.76,*Default,NTP,0000,0000,0000,,去一个更热的房间的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to going to a much hotter room,
+Dialogue: 0,0:30:57.96,0:30:59.45,*Default,NTP,0000,0000,0000,,你的体温不会变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your temperature stays the same 
+Dialogue: 0,0:30:59.46,0:31:01.51,*Default,NTP,0000,0000,0000,,你的身体能自行控制体温\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your body is able to control this on your own,
+Dialogue: 0,0:31:01.51,0:31:02.60,*Default,NTP,0000,0000,0000,,你无需要刻意想它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't have to think about it.
+Dialogue: 0,0:31:03.15,0:31:03.80,*Default,NTP,0000,0000,0000,,事实上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact,
+Dialogue: 0,0:31:03.80,0:31:07.48,*Default,NTP,0000,0000,0000,,体温被控制得如此精细\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}temperature is such a carefully controlled parameter 
+Dialogue: 0,0:31:07.49,0:31:10.50,*Default,NTP,0000,0000,0000,,哪怕只改变几度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that when it changes just a little bit by a couple of degrees,
+Dialogue: 0,0:31:11.01,0:31:12.33,*Default,NTP,0000,0000,0000,,我们就能感觉出来不对劲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we know that something's wrong.
+Dialogue: 0,0:31:12.94,0:31:14.75,*Default,NTP,0000,0000,0000,,你测出体温偏高是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You measure your temperature is a little up,
+Dialogue: 0,0:31:14.75,0:31:16.89,*Default,NTP,0000,0000,0000,,你就发烧了  身体哪里出问题了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've got a fever, something's wrong,
+Dialogue: 0,0:31:17.34,0:31:18.84,*Default,NTP,0000,0000,0000,,我最好把问题找出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I better find out what 
+Dialogue: 0,0:31:18.84,0:31:22.21,*Default,NTP,0000,0000,0000,,因为体温是一个严格控制的身体指标\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is' because temperature is a very highly controlled variable.
+Dialogue: 0,0:31:22.57,0:31:24.56,*Default,NTP,0000,0000,0000,,通过看许多这样的指标\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could go through a lot of these parameters
+Dialogue: 0,0:31:24.56,0:31:26.91,*Default,NTP,0000,0000,0000,,即这些身体指标确实都以相同的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and think about it in the same way 
+Dialogue: 0,0:31:26.91,0:31:29.44,*Default,NTP,0000,0000,0000,,被严格控制着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that these things are really very highly controlled.
+Dialogue: 0,0:31:30.17,0:31:33.02,*Default,NTP,0000,0000,0000,,这个控制过程维持着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well that process of control to maintain
+Dialogue: 0,0:31:33.02,0:31:37.30,*Default,NTP,0000,0000,0000,,体内环境的恒定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a constant environment inside our body,
+Dialogue: 0,0:31:37.96,0:31:40.64,*Default,NTP,0000,0000,0000,,不论是内环境中物质的量的稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether it's an environment of constant mass
+Dialogue: 0,0:31:40.64,0:31:41.98,*Default,NTP,0000,0000,0000,,或者成分的稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or constant composition,
+Dialogue: 0,0:31:42.18,0:31:44.75,*Default,NTP,0000,0000,0000,,或温度的稳定  这种状态叫做内稳态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or constant temperature, is called homeostasis.
+Dialogue: 0,0:31:45.74,0:31:48.62,*Default,NTP,0000,0000,0000,,你的身体有许多精妙的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your body has elaborate mechanisms 
+Dialogue: 0,0:31:48.62,0:31:50.06,*Default,NTP,0000,0000,0000,,来维持内稳态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for maintaining this state of homeostasis,
+Dialogue: 0,0:31:50.53,0:31:52.63,*Default,NTP,0000,0000,0000,,也就是说体内物质不改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is, things staying the same;
+Dialogue: 0,0:31:52.63,0:31:55.86,*Default,NTP,0000,0000,0000,,身体状态不改变  这就是内稳态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the body stays the same, homeostasis.
+Dialogue: 0,0:31:56.76,0:31:56.93,*Default,NTP,0000,0000,0000,,这\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This,
+Dialogue: 0,0:31:57.34,0:32:00.40,*Default,NTP,0000,0000,0000,,尽管事实是我们从不同途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in spite of the fact that we take a variety of chemicals into our bodies
+Dialogue: 0,0:32:00.40,0:32:04.99,*Default,NTP,0000,0000,0000,,摄入各种化学物质以维持生存\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in different ways and we have to do that to stay alive,
+Dialogue: 0,0:32:05.26,0:32:10.13,*Default,NTP,0000,0000,0000,,但我们能够很好地控制它们在体内的总量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we have mechanisms to control this very well.
+Dialogue: 0,0:32:10.92,0:32:15.62,*Default,NTP,0000,0000,0000,,通过一些或复杂或简单的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So homeostasis is enabled by sometimes complex,
+Dialogue: 0,0:32:15.85,0:32:18.84,*Default,NTP,0000,0000,0000,,使内稳态得以实现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sometimes very simple control mechanisms.
+Dialogue: 0,0:32:19.29,0:32:20.84,*Default,NTP,0000,0000,0000,,这些过程说起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are mechanisms that can be described
+Dialogue: 0,0:32:20.84,0:32:24.61,*Default,NTP,0000,0000,0000,,与你们熟悉的环境稳定机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not too differently from mechanisms 
+Dialogue: 0,0:32:24.61,0:32:26.39,*Default,NTP,0000,0000,0000,,并无太大不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you're familiar with for maintaining homeostasis.
+Dialogue: 0,0:32:26.61,0:32:29.75,*Default,NTP,0000,0000,0000,,比如  你卧室里的恒温器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, the thermostat in your dorm room.
+Dialogue: 0,0:32:30.77,0:32:32.93,*Default,NTP,0000,0000,0000,,可能你根本就不理卧室里的恒温器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe you don't control thermostats in your dorm room,
+Dialogue: 0,0:32:33.07,0:32:34.63,*Default,NTP,0000,0000,0000,,有些人去调它  有些人就置之不理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of you do and some of you don't probably,
+Dialogue: 0,0:32:34.86,0:32:36.17,*Default,NTP,0000,0000,0000,,可能它压根就是坏的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maybe it doesn't work very well
+Dialogue: 0,0:32:36.17,0:32:37.93,*Default,NTP,0000,0000,0000,,所以这个例子也许并不恰当\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it might not be a good example,
+Dialogue: 0,0:32:38.07,0:32:41.02,*Default,NTP,0000,0000,0000,,但你还是想象一个完美运行的恒温器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but imagine a perfect thermostat that you set for a temperature
+Dialogue: 0,0:32:41.02,0:32:45.45,*Default,NTP,0000,0000,0000,,你设定温度后房间里的温度就保持不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then the temperature stays the same inside the room
+Dialogue: 0,0:32:45.45,0:32:47.48,*Default,NTP,0000,0000,0000,,不管外面温度是多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no matter what the temperature is outside.
+Dialogue: 0,0:32:47.63,0:32:48.94,*Default,NTP,0000,0000,0000,,那么它是如何工作的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well how does that work?
+Dialogue: 0,0:32:49.24,0:32:51.99,*Default,NTP,0000,0000,0000,,是通过一种叫做负反馈的控制机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It works by a control mechanism called negative feedback,
+Dialogue: 0,0:32:53.25,0:32:56.40,*Default,NTP,0000,0000,0000,,探测器测量温度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the thermostat is measuring the temperature 
+Dialogue: 0,0:32:56.40,0:33:01.11,*Default,NTP,0000,0000,0000,,再把信号传给加热器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then sending a signal to a heater somewhere.
+Dialogue: 0,0:33:01.90,0:33:03.89,*Default,NTP,0000,0000,0000,,如果温度降到一定程度以下时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the temperature drops below a certain level
+Dialogue: 0,0:33:03.90,0:33:07.39,*Default,NTP,0000,0000,0000,,探测器会发送一个信号  打开加热器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it sends a signal, 'turn on the heat',
+Dialogue: 0,0:33:08.46,0:33:11.45,*Default,NTP,0000,0000,0000,,直到加热器再收到关闭的信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that signal stays on
+Dialogue: 0,0:33:11.45,0:33:13.29,*Default,NTP,0000,0000,0000,,它就会一直开着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until it gets a negative signal to turn off.
+Dialogue: 0,0:33:13.65,0:33:15.44,*Default,NTP,0000,0000,0000,,什么时候会产生关闭信号呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When does that negative signal happen?
+Dialogue: 0,0:33:15.86,0:33:18.40,*Default,NTP,0000,0000,0000,,就在当温度超过你想要的温度时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When the temperature gets above the level you want it to be.
+Dialogue: 0,0:33:19.74,0:33:22.18,*Default,NTP,0000,0000,0000,,这就是负反馈控制系统得名的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's a negative feedback control system.
+Dialogue: 0,0:33:22.68,0:33:23.39,*Default,NTP,0000,0000,0000,,加热器会开着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The heater is on,
+Dialogue: 0,0:33:23.83,0:33:27.25,*Default,NTP,0000,0000,0000,,一直产生热量直到它得到一个关闭的信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's producing heat until a negative signal is registered,
+Dialogue: 0,0:33:27.55,0:33:29.88,*Default,NTP,0000,0000,0000,,噢我们弄得太热了  然后就关闭了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'oh we've gone too high', and then it turns off.
+Dialogue: 0,0:33:30.99,0:33:33.61,*Default,NTP,0000,0000,0000,,我们的身体有着与之类似的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our bodies have mechanisms like that,
+Dialogue: 0,0:33:34.42,0:33:37.03,*Default,NTP,0000,0000,0000,,主要依靠负反馈原理来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that mainly use the principle of negative feedback
+Dialogue: 0,0:33:37.03,0:33:42.26,*Default,NTP,0000,0000,0000,,将与生命息息相关的指标控制在一定范围\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to control the parameters that are important for life within a certain range.
+Dialogue: 0,0:33:42.84,0:33:46.29,*Default,NTP,0000,0000,0000,,那为什么体温是如此重要的调控指标呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So why is temperature, for example, such an important thing to control?
+Dialogue: 0,0:33:47.23,0:33:48.18,*Default,NTP,0000,0000,0000,,为什么这间教室里所有的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why are all of us in this room 
+Dialogue: 0,0:33:48.18,0:33:50.56,*Default,NTP,0000,0000,0000,,体温都在三十七摄氏度左右\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}within plus or minus a few tenths of a degrees at 37° Centigrade,
+Dialogue: 0,0:33:50.83,0:33:52.13,*Default,NTP,0000,0000,0000,,或华氏九十八点六度上下呢 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or 98. 6° Fahrenheit, 
+Dialogue: 0,0:33:52.13,0:33:59.93,*Default,NTP,0000,0000,0000,,为什么维持体温如此重要呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why is that such an important thing?
+Dialogue: 0,0:34:07.12,0:34:09.03,*Default,NTP,0000,0000,0000,,因为在正常体温下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because that's the temperature at which 
+Dialogue: 0,0:34:09.04,0:34:12.59,*Default,NTP,0000,0000,0000,,体内许多分子活性最高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many of the molecules in our bodies operate at their most efficient,
+Dialogue: 0,0:34:12.82,0:34:14.73,*Default,NTP,0000,0000,0000,,酶就是其中最好的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and enzymes is the best example of that.
+Dialogue: 0,0:34:15.04,0:34:16.71,*Default,NTP,0000,0000,0000,,举酶这个例子再好不过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Enzymes work best,
+Dialogue: 0,0:34:16.97,0:34:19.69,*Default,NTP,0000,0000,0000,,酶是一种具有催化作用的蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}enzymes are proteins that catalyze chemical reactions 
+Dialogue: 0,0:34:19.69,0:34:24.93,*Default,NTP,0000,0000,0000,,人体依靠精密复杂的化学反应网络来运转\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and our bodies operate by elaborate networks of chemical reactions,
+Dialogue: 0,0:34:25.51,0:34:28.09,*Default,NTP,0000,0000,0000,,而酶的最适工作温度是三十七度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and our enzymes are optimized to work at 37°.
+Dialogue: 0,0:34:28.61,0:34:30.29,*Default,NTP,0000,0000,0000,,如果我们体温与之相差较大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When we're off from that temperature
+Dialogue: 0,0:34:30.29,0:34:31.96,*Default,NTP,0000,0000,0000,,这些酶就不能正常工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then they don't work properly.
+Dialogue: 0,0:34:32.89,0:34:34.76,*Default,NTP,0000,0000,0000,,同样也有一些其他的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And there are other examples as well,
+Dialogue: 0,0:34:34.91,0:34:36.89,*Default,NTP,0000,0000,0000,,但这就很能说明问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's why it's important.
+Dialogue: 0,0:34:41.88,0:34:43.59,*Default,NTP,0000,0000,0000,,所以我们讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we're going to think about -
+Dialogue: 0,0:34:43.59,0:34:46.03,*Default,NTP,0000,0000,0000,,在接下来的几周里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the next few weeks
+Dialogue: 0,0:34:46.03,0:34:48.26,*Default,NTP,0000,0000,0000,,我们将在不同的水平下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're going to think about the human organism
+Dialogue: 0,0:34:48.26,0:34:49.93,*Default,NTP,0000,0000,0000,,研究人类机体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at different levels of magnification
+Dialogue: 0,0:34:49.93,0:34:53.10,*Default,NTP,0000,0000,0000,,我已经讲过这些水平了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I've shown those levels here.
+Dialogue: 0,0:34:53.89,0:34:56.69,*Default,NTP,0000,0000,0000,,完整的人类肌体由许多的器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The whole human organism is made up of a collection of organs,
+Dialogue: 0,0:34:56.96,0:34:59.01,*Default,NTP,0000,0000,0000,,许多的系统构成  你懂的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and organ systems, you know this.
+Dialogue: 0,0:34:59.31,0:35:00.57,*Default,NTP,0000,0000,0000,,心血管系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cardiovascular system,
+Dialogue: 0,0:35:00.96,0:35:02.44,*Default,NTP,0000,0000,0000,,包括心脏和血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is the heart and the blood vessels
+Dialogue: 0,0:35:02.44,0:35:04.56,*Default,NTP,0000,0000,0000,,主要负责输送血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are responsible for and the blood
+Dialogue: 0,0:35:04.56,0:35:08.16,*Default,NTP,0000,0000,0000,,即心血管系统负责将血液送至全身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so this is responsible for moving blood around the body
+Dialogue: 0,0:35:08.64,0:35:10.30,*Default,NTP,0000,0000,0000,,血液会带着氧气和营养物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the blood brings oxygen and nutrients
+Dialogue: 0,0:35:10.31,0:35:11.56,*Default,NTP,0000,0000,0000,,到身体的每一个部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to every part of the body,
+Dialogue: 0,0:35:11.86,0:35:12.29,*Default,NTP,0000,0000,0000,,你懂的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know that.
+Dialogue: 0,0:35:13.66,0:35:14.42,*Default,NTP,0000,0000,0000,,器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Organs,
+Dialogue: 0,0:35:14.90,0:35:16.85,*Default,NTP,0000,0000,0000,,器官系统如心血管系统等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}organ systems like the cardiovascular system
+Dialogue: 0,0:35:16.85,0:35:18.10,*Default,NTP,0000,0000,0000,,由组织构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are made up of tissues.
+Dialogue: 0,0:35:18.10,0:35:19.34,*Default,NTP,0000,0000,0000,,组织则是一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and tissues are collections of cells
+Dialogue: 0,0:35:19.34,0:35:22.24,*Default,NTP,0000,0000,0000,,同步完成相同功能的细胞的集合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are working in synchrony for some function.
+Dialogue: 0,0:35:22.68,0:35:25.17,*Default,NTP,0000,0000,0000,,比如心脏包含肌肉组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The heart, for example, has a muscular tissue.
+Dialogue: 0,0:35:25.84,0:35:28.47,*Default,NTP,0000,0000,0000,,该肌肉组织非常发达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a very well-developed muscular tissue
+Dialogue: 0,0:35:28.47,0:35:30.88,*Default,NTP,0000,0000,0000,,用来使心脏收缩  放松\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and its function is to contract and relax,
+Dialogue: 0,0:35:31.22,0:35:32.12,*Default,NTP,0000,0000,0000,,收缩  放松\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}contract and relax.
+Dialogue: 0,0:35:32.78,0:35:35.70,*Default,NTP,0000,0000,0000,,这使心脏的体积发生变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As it does that it changes the volume of the heart 
+Dialogue: 0,0:35:35.70,0:35:40.20,*Default,NTP,0000,0000,0000,,产生了足以使血液流遍全身的压力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and gives the - creates the pressure that moves blood around your body,
+Dialogue: 0,0:35:41.22,0:35:43.58,*Default,NTP,0000,0000,0000,,这就是心脏中有肌肉系统的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it has that muscular system.
+Dialogue: 0,0:35:43.92,0:35:45.67,*Default,NTP,0000,0000,0000,,心脏里面同样也有有血管系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It also has a blood vessel system in it.
+Dialogue: 0,0:35:45.92,0:35:48.69,*Default,NTP,0000,0000,0000,,心肌自身也需要血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The muscles of the heart have to give blood themselves
+Dialogue: 0,0:35:48.69,0:35:51.89,*Default,NTP,0000,0000,0000,,所以在这些肌肉内部也有血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so they have blood vessels inside.
+Dialogue: 0,0:35:52.36,0:35:54.47,*Default,NTP,0000,0000,0000,,你的胃是一个非常复杂的器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your stomach is a very complex organ
+Dialogue: 0,0:35:54.47,0:35:56.10,*Default,NTP,0000,0000,0000,,它拥有一个肌肉层\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that has a muscle layer,
+Dialogue: 0,0:35:56.30,0:35:59.22,*Default,NTP,0000,0000,0000,,有一个与摄入的食物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has an epithelial layer 
+Dialogue: 0,0:35:59.22,0:36:01.17,*Default,NTP,0000,0000,0000,,相接触的表皮层\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is the interface with food that comes in,
+Dialogue: 0,0:36:01.79,0:36:03.76,*Default,NTP,0000,0000,0000,,也有一套神经系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it also has a nervous system,
+Dialogue: 0,0:36:04.80,0:36:05.90,*Default,NTP,0000,0000,0000,,心脏也有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so does the heart.
+Dialogue: 0,0:36:06.34,0:36:09.74,*Default,NTP,0000,0000,0000,,所以器官是由各种组织组合而成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So organs are made up of combinations of tissues
+Dialogue: 0,0:36:09.75,0:36:11.42,*Default,NTP,0000,0000,0000,,所有的组织都是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where all the tissues are collections of
+Dialogue: 0,0:36:11.42,0:36:14.28,*Default,NTP,0000,0000,0000,,具有某些功能的细胞集合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cells that are doing some function,
+Dialogue: 0,0:36:14.71,0:36:18.35,*Default,NTP,0000,0000,0000,,神经组织  肌肉组织  上皮组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nervous tissue, muscular tissue, epithelial tissue,
+Dialogue: 0,0:36:19.11,0:36:24.62,*Default,NTP,0000,0000,0000,,这些都是由组织构成器官的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those are examples of tissues that form organs.
+Dialogue: 0,0:36:24.97,0:36:26.55,*Default,NTP,0000,0000,0000,,这里我就给你们展示一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here I just show tissues 
+Dialogue: 0,0:36:26.55,0:36:28.71,*Default,NTP,0000,0000,0000,,从两个不同水平看到的组织 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at two levels of magnification 
+Dialogue: 0,0:36:28.71,0:36:30.15,*Default,NTP,0000,0000,0000,,当我们研究这些组织时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and when we think about tissues 
+Dialogue: 0,0:36:30.16,0:36:33.04,*Default,NTP,0000,0000,0000,,我们将会对它一大堆不同的特点产生兴趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're going to be interested in a couple of different characteristics.
+Dialogue: 0,0:36:33.36,0:36:34.85,*Default,NTP,0000,0000,0000,,其一  在第一个层次上 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, at the first level,
+Dialogue: 0,0:36:34.85,0:36:36.60,*Default,NTP,0000,0000,0000,,构成那个组织的是哪些细胞呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what are the cells that make up that tissue?
+Dialogue: 0,0:36:37.10,0:36:41.49,*Default,NTP,0000,0000,0000,,因为细胞是我们身体的基本构成单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because the cells are the fundamental component of our bodies;
+Dialogue: 0,0:36:43.45,0:36:44.44,*Default,NTP,0000,0000,0000,,这非常有意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very interesting
+Dialogue: 0,0:36:44.44,0:36:46.46,*Default,NTP,0000,0000,0000,,因为我们身体里所有细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because all of our cells in our body
+Dialogue: 0,0:36:46.46,0:36:47.92,*Default,NTP,0000,0000,0000,,有许多共同的特征\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}share many characteristics
+Dialogue: 0,0:36:47.92,0:36:50.91,*Default,NTP,0000,0000,0000,,而其中的一些特征展示在了这幅图中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some of those characteristics are shown on this picture.
+Dialogue: 0,0:36:51.43,0:36:53.73,*Default,NTP,0000,0000,0000,,它们都有细胞核  细胞膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have a nucleus, they have a cell membrane,
+Dialogue: 0,0:36:54.12,0:36:57.64,*Default,NTP,0000,0000,0000,,细胞器遍布其中  它们有相同的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they have organelles throughout them, they have the same DNA.
+Dialogue: 0,0:36:58.33,0:37:00.13,*Default,NTP,0000,0000,0000,,你所有的细胞都有相同的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All of your cells have the same DNA,
+Dialogue: 0,0:37:00.29,0:37:01.69,*Default,NTP,0000,0000,0000,,带有相同的遗传信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so the same genetic information,
+Dialogue: 0,0:37:01.91,0:37:04.85,*Default,NTP,0000,0000,0000,,尽管你大脑里的细胞  心脏上的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and yet cells in your brain, and cells in your heart,
+Dialogue: 0,0:37:05.14,0:37:08.31,*Default,NTP,0000,0000,0000,,肾里的细胞发挥着不同的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and cells in your kidney do very different things.
+Dialogue: 0,0:37:09.24,0:37:13.07,*Default,NTP,0000,0000,0000,,那么为什么这些有同种DNA信息的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So how can cells, which have the same sort of master information DNA,
+Dialogue: 0,0:37:13.77,0:37:15.81,*Default,NTP,0000,0000,0000,,在你的大脑里  你的心脏里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in your brain, and your heart,
+Dialogue: 0,0:37:15.81,0:37:18.01,*Default,NTP,0000,0000,0000,,在你的肾里  表现的如此不同呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your kidney be so different?
+Dialogue: 0,0:37:19.01,0:37:22.70,*Default,NTP,0000,0000,0000,,这个问题我们在未来几周要讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a question and it's one that we'll talk about in weeks to come.
+Dialogue: 0,0:37:22.96,0:37:24.25,*Default,NTP,0000,0000,0000,,这些差异化的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do those differences between cells 
+Dialogue: 0,0:37:24.25,0:37:26.50,*Default,NTP,0000,0000,0000,,是如何构成具有不同属性的组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}contribute to the properties of the tissues,
+Dialogue: 0,0:37:27.09,0:37:28.71,*Default,NTP,0000,0000,0000,,这些组织又构成具有不同属性的器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which contribute to the properties of the organs,
+Dialogue: 0,0:37:28.95,0:37:31.71,*Default,NTP,0000,0000,0000,,器官又构成了不同的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which contribute to the properties of a person
+Dialogue: 0,0:37:31.71,0:37:35.01,*Default,NTP,0000,0000,0000,,它们是如何维护内稳态呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this maintenance of homeostasis?
+Dialogue: 0,0:37:35.40,0:37:38.60,*Default,NTP,0000,0000,0000,,你所有细胞  所有的组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The main function of all your cells, and all your tissues,
+Dialogue: 0,0:37:38.75,0:37:40.74,*Default,NTP,0000,0000,0000,,所有的器官最主要的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and all your organs is
+Dialogue: 0,0:37:40.74,0:37:42.36,*Default,NTP,0000,0000,0000,,就是维护这个内稳态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to maintain this homeostasis,
+Dialogue: 0,0:37:42.63,0:37:45.48,*Default,NTP,0000,0000,0000,,使你能够以不变应万变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which allows you to live in a changing environment.
+Dialogue: 0,0:37:46.69,0:37:49.77,*Default,NTP,0000,0000,0000,,我们将用最初几个星期的课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to spend the first few weeks of the course
+Dialogue: 0,0:37:49.77,0:37:52.62,*Default,NTP,0000,0000,0000,,首先谈论DNA和基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talking about first DNA and genes.
+Dialogue: 0,0:37:53.33,0:37:54.69,*Default,NTP,0000,0000,0000,,我们将讨论它们如何工作 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about how they work 
+Dialogue: 0,0:37:54.69,0:37:55.71,*Default,NTP,0000,0000,0000,,我们讲的时侯会一带而过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll go over that quickly 
+Dialogue: 0,0:37:55.71,0:37:57.06,*Default,NTP,0000,0000,0000,,因为我知道你们大多数人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I know most of you
+Dialogue: 0,0:37:57.07,0:37:58.31,*Default,NTP,0000,0000,0000,,知道一些关于DNA的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}know something about how DNA
+Dialogue: 0,0:37:58.31,0:38:00.01,*Default,NTP,0000,0000,0000,,DNA是什么  它是如何工作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what DNA is and how it works.
+Dialogue: 0,0:38:00.39,0:38:02.77,*Default,NTP,0000,0000,0000,,然后我们会谈论DNA工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then we'll talk about engineering of DNA and
+Dialogue: 0,0:38:02.77,0:38:04.31,*Default,NTP,0000,0000,0000,,以及为何它不仅\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why this has been such -
+Dialogue: 0,0:38:04.31,0:38:06.95,*Default,NTP,0000,0000,0000,,是一个向前飞速发展的领域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only a rapidly growing and advancing area
+Dialogue: 0,0:38:06.95,0:38:10.13,*Default,NTP,0000,0000,0000,,而且对生物医学工程十分的重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but one that's so important for Biomedical Engineering.
+Dialogue: 0,0:38:10.59,0:38:12.80,*Default,NTP,0000,0000,0000,,我们将会谈论细胞  它们如何工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about cells and how they work,
+Dialogue: 0,0:38:14.11,0:38:15.52,*Default,NTP,0000,0000,0000,,身体不同的部位细胞有怎样的不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how cells in different parts of the body are different,
+Dialogue: 0,0:38:15.52,0:38:16.27,*Default,NTP,0000,0000,0000,,为什么它们有所不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why,
+Dialogue: 0,0:38:16.49,0:38:17.66,*Default,NTP,0000,0000,0000,,以及这些细胞如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how they contribute to tissues
+Dialogue: 0,0:38:17.66,0:38:19.42,*Default,NTP,0000,0000,0000,,以十分简单的方式形成组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at a very sort of simple level
+Dialogue: 0,0:38:19.42,0:38:22.01,*Default,NTP,0000,0000,0000,,这样当我们开始考虑用细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you can understand this as we start thinking about
+Dialogue: 0,0:38:22.01,0:38:25.48,*Default,NTP,0000,0000,0000,,来满足工程目的时  你会更容易理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}using cells for engineering purposes.
+Dialogue: 0,0:38:27.08,0:38:29.27,*Default,NTP,0000,0000,0000,,我想强调第二章的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to just highlight what's in Chapter 2,
+Dialogue: 0,0:38:29.51,0:38:30.86,*Default,NTP,0000,0000,0000,,因为我告诉过你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I told you
+Dialogue: 0,0:38:30.86,0:38:32.89,*Default,NTP,0000,0000,0000,,课堂上不会细讲第二章\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're not going to cover the details in Chapter 2 in the course,
+Dialogue: 0,0:38:33.41,0:38:36.38,*Default,NTP,0000,0000,0000,,但我会把它作为阅读材料给你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I give it to you as a resource so that you 
+Dialogue: 0,0:38:36.38,0:38:38.26,*Default,NTP,0000,0000,0000,,你们可能已经有讲述相关内容的书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might have other books which describe this
+Dialogue: 0,0:38:38.26,0:38:41.63,*Default,NTP,0000,0000,0000,,这些书你们喜欢看  并且已经看过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which you like, and you've read already and so
+Dialogue: 0,0:38:41.63,0:38:42.83,*Default,NTP,0000,0000,0000,,我就当你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm going to assume 
+Dialogue: 0,0:38:42.83,0:38:45.96,*Default,NTP,0000,0000,0000,,在一定程度上理解了这些知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you understand this information to some extent.
+Dialogue: 0,0:38:46.30,0:38:47.50,*Default,NTP,0000,0000,0000,,如果你还不大懂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And again if you don't,
+Dialogue: 0,0:38:47.72,0:38:49.57,*Default,NTP,0000,0000,0000,,觉得你想要这方面的综述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you feel like you'd like a review session on this
+Dialogue: 0,0:38:49.57,0:38:50.50,*Default,NTP,0000,0000,0000,,请电邮我  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}please send me an email 
+Dialogue: 0,0:38:50.50,0:38:52.01,*Default,NTP,0000,0000,0000,,我会在下周给出一篇综述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'll set one up next week.
+Dialogue: 0,0:38:52.72,0:38:55.43,*Default,NTP,0000,0000,0000,,我的确想要讨论一个重要的主题 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I do want to talk about one important subject 
+Dialogue: 0,0:38:55.43,0:38:58.32,*Default,NTP,0000,0000,0000,,这个主题也许你们都没有深入思考过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which you might not have thought too much about
+Dialogue: 0,0:38:58.32,0:38:59.41,*Default,NTP,0000,0000,0000,,那就是关于脂类的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's lipids,
+Dialogue: 0,0:38:59.75,0:39:02.52,*Default,NTP,0000,0000,0000,,脂类对身体结构形成十分重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because lipids are so important to the structure of the body
+Dialogue: 0,0:39:02.52,0:39:05.55,*Default,NTP,0000,0000,0000,,它是组成细胞膜的基本单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they make up the membranes that form the cells
+Dialogue: 0,0:39:05.55,0:39:07.07,*Default,NTP,0000,0000,0000,,而细胞膜能够维持细胞形态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are the fundamental units.
+Dialogue: 0,0:39:07.50,0:39:11.53,*Default,NTP,0000,0000,0000,,脂类本身是非常复杂的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lipids are really complex molecules on their own right,
+Dialogue: 0,0:39:11.74,0:39:13.75,*Default,NTP,0000,0000,0000,,但正是它们独特的复杂性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but because of their particular kind of complexity 
+Dialogue: 0,0:39:13.76,0:39:16.50,*Default,NTP,0000,0000,0000,,使它们能够形成某些生物结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they allow certain biological structures to form.
+Dialogue: 0,0:39:17.41,0:39:18.87,*Default,NTP,0000,0000,0000,,大部分脂类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So most of the lipids,
+Dialogue: 0,0:39:19.02,0:39:21.28,*Default,NTP,0000,0000,0000,,那些在你体内构成细胞膜的脂类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which make up cell membranes in your body 
+Dialogue: 0,0:39:21.28,0:39:22.57,*Default,NTP,0000,0000,0000,,都属于磷脂类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are of this category of phospholipids.
+Dialogue: 0,0:39:23.31,0:39:27.00,*Default,NTP,0000,0000,0000,,它们来源于一种叫三酰甘油的前体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're derived from a precursor called triacylglyceride,
+Dialogue: 0,0:39:27.28,0:39:29.76,*Default,NTP,0000,0000,0000,,由甘油分子上连接了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is as glycerol molecule with
+Dialogue: 0,0:39:29.76,0:39:31.97,*Default,NTP,0000,0000,0000,,三个脂肪酸链构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}three fatty acid chains dangling off of it.
+Dialogue: 0,0:39:32.88,0:39:34.55,*Default,NTP,0000,0000,0000,,脂肪酸链就是脂肪分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fatty acid chains are fat molecules,
+Dialogue: 0,0:39:34.55,0:39:36.05,*Default,NTP,0000,0000,0000,,它们看上去好像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they behave,
+Dialogue: 0,0:39:36.21,0:39:37.91,*Default,NTP,0000,0000,0000,,如果你见过富含脂类的溶液  比如油\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you have a lot of them in solution like oil.
+Dialogue: 0,0:39:38.27,0:39:41.28,*Default,NTP,0000,0000,0000,,甘油三酯看起来就是那样  就像油\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what triglycerides are like, they're just like oil.
+Dialogue: 0,0:39:41.86,0:39:44.80,*Default,NTP,0000,0000,0000,,所以如果你有一满瓶甘油三酯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you had a jar full of triglycerides
+Dialogue: 0,0:39:44.81,0:39:47.07,*Default,NTP,0000,0000,0000,,它看上去就好像油一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would behave like an oil,
+Dialogue: 0,0:39:47.07,0:39:49.77,*Default,NTP,0000,0000,0000,,它们在室温下都是液体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many would be liquid at room temperature.
+Dialogue: 0,0:39:51.01,0:39:52.38,*Default,NTP,0000,0000,0000,,把它们加到水里会发生什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What happens if you add them to water?
+Dialogue: 0,0:39:53.44,0:39:55.04,*Default,NTP,0000,0000,0000,,你就得到了沙拉调味料  开个玩笑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You get salad dressing, right?
+Dialogue: 0,0:39:55.22,0:39:56.08,*Default,NTP,0000,0000,0000,,你得到了一团东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You get glob
+Dialogue: 0,0:39:56.08,0:39:58.81,*Default,NTP,0000,0000,0000,,如果你把它们混合就会得到一堆小油脂团\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you mix it you get globlets of oil,
+Dialogue: 0,0:39:59.09,0:40:00.62,*Default,NTP,0000,0000,0000,,或者说一堆甘油三酯团\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or globlets of triglycerides,
+Dialogue: 0,0:40:00.94,0:40:03.36,*Default,NTP,0000,0000,0000,,如果你搅动它的话  油脂会浮在水上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're floating around in the fluid if you mix it.
+Dialogue: 0,0:40:03.65,0:40:06.25,*Default,NTP,0000,0000,0000,,如果静置不动它们会再次分成两部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you let it sit they settle out into two phases again,
+Dialogue: 0,0:40:06.93,0:40:09.13,*Default,NTP,0000,0000,0000,,这就是甘油三酯的性状\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's how triglycerides behave.
+Dialogue: 0,0:40:09.42,0:40:12.22,*Default,NTP,0000,0000,0000,,现在如果你去看医生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now if you've gone to the doctor,
+Dialogue: 0,0:40:12.63,0:40:15.32,*Default,NTP,0000,0000,0000,,他们通常会测你的甘油三酯水平\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often they'll measure your triaglyceride level
+Dialogue: 0,0:40:15.32,0:40:18.59,*Default,NTP,0000,0000,0000,,以此作为你的肝健康和饮食健康的指标\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a measure of how healthy your liver is and how healthy your diet is.
+Dialogue: 0,0:40:18.99,0:40:22.74,*Default,NTP,0000,0000,0000,,你的血液里若有太多甘油三酯或其他脂肪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Having too much triaglyceride or fat in your blood,
+Dialogue: 0,0:40:23.02,0:40:25.54,*Default,NTP,0000,0000,0000,,尤其是不良的脂肪  并不是一件好事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the wrong kind of fat in particular, is not considered a good thing.
+Dialogue: 0,0:40:26.31,0:40:27.76,*Default,NTP,0000,0000,0000,,但你也需要一些甘油三酯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You need some of it 
+Dialogue: 0,0:40:27.76,0:40:30.66,*Default,NTP,0000,0000,0000,,因为它们可以转化成磷脂分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because some of it gets converted into molecules called phospholipids,
+Dialogue: 0,0:40:30.95,0:40:32.40,*Default,NTP,0000,0000,0000,,而磷脂又各不相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and phospholipids are different.
+Dialogue: 0,0:40:32.68,0:40:34.36,*Default,NTP,0000,0000,0000,,它们含有两条脂肪酸链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have two fatty acid chains 
+Dialogue: 0,0:40:34.36,0:40:37.05,*Default,NTP,0000,0000,0000,,这是部分分子具有油脂的属性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so these are the oily like parts of the molecule,
+Dialogue: 0,0:40:37.23,0:40:38.38,*Default,NTP,0000,0000,0000,,使磷脂分子具有油脂的属性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the molecules that behave like oil.
+Dialogue: 0,0:40:38.80,0:40:41.91,*Default,NTP,0000,0000,0000,,但连到甘油上的第三个基团不是脂肪酸链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then linked to the glycerol instead of a third fatty acid chain
+Dialogue: 0,0:40:41.91,0:40:44.04,*Default,NTP,0000,0000,0000,,而是一种水溶性的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a water soluble molecule,
+Dialogue: 0,0:40:44.41,0:40:45.08,*Default,NTP,0000,0000,0000,,像盐一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like a salt.
+Dialogue: 0,0:40:46.87,0:40:49.96,*Default,NTP,0000,0000,0000,,它通常是一种叫磷酸胆碱的盐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often it's a salt called phosphocholine and
+Dialogue: 0,0:40:49.96,0:40:52.13,*Default,NTP,0000,0000,0000,,这样你就得到了一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you get a phospholipid
+Dialogue: 0,0:40:52.13,0:40:55.49,*Default,NTP,0000,0000,0000,,由胆碱和两条脂肪链构成的磷脂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's made of choline and two lipid chains.
+Dialogue: 0,0:40:55.97,0:40:58.17,*Default,NTP,0000,0000,0000,,它们在水中表现出十分不同性质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now this behaves very differently in water
+Dialogue: 0,0:40:58.17,0:41:00.38,*Default,NTP,0000,0000,0000,,因为一部分是水溶性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because part of it is water soluble,
+Dialogue: 0,0:41:01.15,0:41:01.79,*Default,NTP,0000,0000,0000,,这一部分是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this part is,
+Dialogue: 0,0:41:01.97,0:41:03.82,*Default,NTP,0000,0000,0000,,是一种可以溶于水的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a molecule that would like to dissolve in water
+Dialogue: 0,0:41:03.82,0:41:05.33,*Default,NTP,0000,0000,0000,,而另一部分就像油\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and part of it is like oil,
+Dialogue: 0,0:41:05.49,0:41:07.04,*Default,NTP,0000,0000,0000,,不会溶于水中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it doesn't want to dissolve in water.
+Dialogue: 0,0:41:07.26,0:41:09.40,*Default,NTP,0000,0000,0000,,那么你把它们放入水中时会发生什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what happens when you put these molecules in water?
+Dialogue: 0,0:41:09.89,0:41:12.09,*Default,NTP,0000,0000,0000,,它们不是像脂肪一样形成液滴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well instead of forming droplets like fat 
+Dialogue: 0,0:41:12.09,0:41:15.16,*Default,NTP,0000,0000,0000,,而会细致地排列起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they arrange in a very particular way,
+Dialogue: 0,0:41:15.49,0:41:17.36,*Default,NTP,0000,0000,0000,,它们形成的结构名为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they form these structures that are called
+Dialogue: 0,0:41:17.36,0:41:19.23,*Default,NTP,0000,0000,0000,,自组装结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}self-assembled structures
+Dialogue: 0,0:41:19.24,0:41:21.91,*Default,NTP,0000,0000,0000,,因为它们能够自然生成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they occur naturally,
+Dialogue: 0,0:41:22.22,0:41:24.31,*Default,NTP,0000,0000,0000,,这归功于这种脂质的特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of properties of the lipids.
+Dialogue: 0,0:41:24.61,0:41:27.45,*Default,NTP,0000,0000,0000,,脂质会形成双层膜 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The lipids will form a bi-layer 
+Dialogue: 0,0:41:27.45,0:41:30.91,*Default,NTP,0000,0000,0000,,水溶性部分朝向膜层外 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the water soluble part of the lipid points out of this layer 
+Dialogue: 0,0:41:30.91,0:41:35.32,*Default,NTP,0000,0000,0000,,而脂溶性的部分朝向双层膜内部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the oily part points in.
+Dialogue: 0,0:41:36.20,0:41:39.36,*Default,NTP,0000,0000,0000,,这层膜的迷人之处在于  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The fascinating part about this layer is that 
+Dialogue: 0,0:41:39.36,0:41:40.93,*Default,NTP,0000,0000,0000,,它解决了磷脂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it solves the problem for phospholipids about 
+Dialogue: 0,0:41:40.93,0:41:44.61,*Default,NTP,0000,0000,0000,,如何存在于水中和油脂中的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to exist in water when half of you wants to be in oil,
+Dialogue: 0,0:41:45.45,0:41:48.88,*Default,NTP,0000,0000,0000,,水溶性的顶端部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that the water soluble part of the top leaflet here,
+Dialogue: 0,0:41:49.45,0:41:51.93,*Default,NTP,0000,0000,0000,,向上插入水中 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the top points up into the water, 
+Dialogue: 0,0:41:51.93,0:41:54.75,*Default,NTP,0000,0000,0000,,而脂肪链则指向下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the fatty acid chains point down.
+Dialogue: 0,0:41:55.88,0:41:57.54,*Default,NTP,0000,0000,0000,,相反的部位则有不同的情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The opposite leaflet does the other thing,
+Dialogue: 0,0:41:57.88,0:42:00.83,*Default,NTP,0000,0000,0000,,水溶性部分向下  而脂肪向上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the water soluble part points down and the fat points up,
+Dialogue: 0,0:42:01.15,0:42:03.27,*Default,NTP,0000,0000,0000,,所以现在就得到了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so now you have thin region of fat 
+Dialogue: 0,0:42:03.27,0:42:08.04,*Default,NTP,0000,0000,0000,,两侧均被水包围的薄层脂肪区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is surrounded on both sides by water.
+Dialogue: 0,0:42:09.86,0:42:12.12,*Default,NTP,0000,0000,0000,,这真的是一个有意思的系统  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a really interesting system 
+Dialogue: 0,0:42:12.12,0:42:14.70,*Default,NTP,0000,0000,0000,,因为它也解决了细胞面对的难题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it also solves a problem for the cell.
+Dialogue: 0,0:42:15.47,0:42:17.44,*Default,NTP,0000,0000,0000,,它为细胞解决的问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The problem it solves for the cell is 
+Dialogue: 0,0:42:17.44,0:42:20.67,*Default,NTP,0000,0000,0000,,当我体外和体内大部分都是水情况下  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to do I make a barrier around myself to 
+Dialogue: 0,0:42:20.67,0:42:23.54,*Default,NTP,0000,0000,0000,,我怎样在自己周围设置一个界线  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}define what's in me and what's outside of me 
+Dialogue: 0,0:42:23.54,0:42:26.41,*Default,NTP,0000,0000,0000,,来区分什么是体内的  什么是体外的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when most of what's around me and what's in me is water.
+Dialogue: 0,0:42:27.12,0:42:28.60,*Default,NTP,0000,0000,0000,,那么细胞内大多是水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So inside the cell mostly water,
+Dialogue: 0,0:42:28.60,0:42:30.25,*Default,NTP,0000,0000,0000,,细胞外大多也是水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}outside the cell mostly water,
+Dialogue: 0,0:42:30.57,0:42:33.68,*Default,NTP,0000,0000,0000,,但我需要将体内的和体外的水隔离开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I need to separate my water from the water outside.
+Dialogue: 0,0:42:35.21,0:42:37.81,*Default,NTP,0000,0000,0000,,我们马上会讲到为什么要把它们隔离开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll see why they have to separate that in a minute,
+Dialogue: 0,0:42:38.13,0:42:43.40,*Default,NTP,0000,0000,0000,,脂质双层膜解决了这个问题   \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they do that these lipid bi-layers solve that problem for them 
+Dialogue: 0,0:42:43.40,0:42:45.69,*Default,NTP,0000,0000,0000,,而这些自主装结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they're self-assembled structures from
+Dialogue: 0,0:42:45.69,0:42:47.97,*Default,NTP,0000,0000,0000,,就是由磷脂分子组成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these molecules called phospholipids.
+Dialogue: 0,0:42:48.30,0:42:50.50,*Default,NTP,0000,0000,0000,,但细胞膜并不只由磷脂构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now that's not the only thing in cell membranes,
+Dialogue: 0,0:42:50.86,0:42:52.88,*Default,NTP,0000,0000,0000,,细胞膜里还有蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are also proteins in cell membranes,
+Dialogue: 0,0:42:53.06,0:42:55.43,*Default,NTP,0000,0000,0000,,而且这些蛋白质是一些  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these proteins are special proteins 
+Dialogue: 0,0:42:55.43,0:42:58.60,*Default,NTP,0000,0000,0000,,可以在细胞膜中存在的特殊的蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can exist within membranes like this,
+Dialogue: 0,0:42:59.27,0:43:01.48,*Default,NTP,0000,0000,0000,,而这些蛋白质存在于细胞膜中  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they exist 
+Dialogue: 0,0:43:01.48,0:43:03.84,*Default,NTP,0000,0000,0000,,源于它们也有溶解性不同的片段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because these proteins also have different segments with different properties.
+Dialogue: 0,0:43:04.27,0:43:05.79,*Default,NTP,0000,0000,0000,,有些片段可以溶于水中 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of the segments dissolve in water, 
+Dialogue: 0,0:43:05.79,0:43:06.89,*Default,NTP,0000,0000,0000,,像这里的灰色片段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the gray segments here,
+Dialogue: 0,0:43:07.23,0:43:09.50,*Default,NTP,0000,0000,0000,,而浅色的片段不溶于水 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the lightly colored segments 
+Dialogue: 0,0:43:09.50,0:43:10.64,*Default,NTP,0000,0000,0000,,它们溶于脂肪中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't dissolve in water, they dissolve in fat.
+Dialogue: 0,0:43:11.07,0:43:14.17,*Default,NTP,0000,0000,0000,,所以它们在膜里稳定存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So they like to be in the membrane 
+Dialogue: 0,0:43:14.17,0:43:17.05,*Default,NTP,0000,0000,0000,,而且也不会脱离膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they're stable there and they won't come out 
+Dialogue: 0,0:43:17.05,0:43:19.17,*Default,NTP,0000,0000,0000,,因为这些蛋白质的结构使其能存在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because their structure allows them to exist
+Dialogue: 0,0:43:19.17,0:43:21.03,*Default,NTP,0000,0000,0000,,磷脂双分子层这个独特的环境中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in these unique spaces.
+Dialogue: 0,0:43:21.42,0:43:26.52,*Default,NTP,0000,0000,0000,,今天就到这里  我们会继续这个话题的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to stop there and we'll pick up on this topic,
+Dialogue: 0,0:43:26.76,0:43:27.59,*Default,NTP,0000,0000,0000,,不是下周  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not next week, 
+Dialogue: 0,0:43:27.59,0:43:28.51,*Default,NTP,0000,0000,0000,,而是在我们开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the week after when we start
+Dialogue: 0,0:43:28.51,0:43:30.21,*Default,NTP,0000,0000,0000,,讨论细胞结构之后的那个星期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talking about cell structure.
+Dialogue: 0,0:43:30.46,0:43:32.97,*Default,NTP,0000,0000,0000,,我想给你们介绍一下细胞膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wanted to introduce it to you 
+Dialogue: 0,0:43:32.97,0:43:34.47,*Default,NTP,0000,0000,0000,,所以如果你没有  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that if you don't 
+Dialogue: 0,0:43:34.47,0:43:36.48,*Default,NTP,0000,0000,0000,,以前没听说过这个的话  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}haven't heard about this before 
+Dialogue: 0,0:43:36.48,0:43:38.31,*Default,NTP,0000,0000,0000,,也许你在学到第五章之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might want to read a little bit about this 
+Dialogue: 0,0:43:38.31,0:43:40.15,*Default,NTP,0000,0000,0000,,要读一点关于这些的文献\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before we get to Chapter 5.
+Dialogue: 0,0:43:40.76,0:43:43.73,*Default,NTP,0000,0000,0000,,下周我们会讨论基因和基因工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Next week we're going to talk about genes and genetic engineering,
+Dialogue: 0,0:43:44.02,0:43:44.33,*Default,NTP,0000,0000,0000,,就是第三课的内容了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's Chapter 3.
+
+

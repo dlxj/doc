@@ -1,0 +1,862 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:12.83,0:00:13.72,*Default,NTP,0000,0000,0000,,早上好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Good morning.
+Dialogue: 0,0:00:14.10,0:00:16.84,*Default,NTP,0000,0000,0000,,本周将算是一个过渡期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, this is kind of a transition week.
+Dialogue: 0,0:00:17.07,0:00:22.02,*Default,NTP,0000,0000,0000,,我们已经讲了一些较为基础的生物学主题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've been talking about more basic, more biological subjects.
+Dialogue: 0,0:00:22.22,0:00:23.40,*Default,NTP,0000,0000,0000,,从本周开始我们会把\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Starting this week we're going to
+Dialogue: 0,0:00:23.54,0:00:27.69,*Default,NTP,0000,0000,0000,,生理学和生物医学工程的内容融合起来讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of mix physiology and Biomedical Engineering,
+Dialogue: 0,0:00:28.19,0:00:32.35,*Default,NTP,0000,0000,0000,,话题自本周始 到下周止\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's going to start sort of this week and next.
+Dialogue: 0,0:00:32.35,0:00:38.57,*Default,NTP,0000,0000,0000,,本周的主题是细胞通讯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The topic for this week is cell communication: 
+Dialogue: 0,0:00:38.78,0:00:40.99,*Default,NTP,0000,0000,0000,,即在一个复杂机体中的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how mechanisms that cells within a complex organism use 
+Dialogue: 0,0:00:40.99,0:00:43.02,*Default,NTP,0000,0000,0000,,采用何种交流机制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to communicate with each other
+Dialogue: 0,0:00:43.02,0:00:45.25,*Default,NTP,0000,0000,0000,,在或长或短的距离中相互联系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at short distances or long distances.
+Dialogue: 0,0:00:45.33,0:00:49.16,*Default,NTP,0000,0000,0000,,然后我将简要地讲到两个生理系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then we're going to talk about two physiological systems just briefly,
+Dialogue: 0,0:00:49.69,0:00:55.28,*Default,NTP,0000,0000,0000,,主要是讲细胞通讯控制器官活动的方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where cell communication sort of dominates the behavior of the organ.
+Dialogue: 0,0:00:56.64,0:00:59.65,*Default,NTP,0000,0000,0000,,这两个系统就是免疫系统和神经系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's in the immune system and in the nervous system.
+Dialogue: 0,0:01:00.90,0:01:04.16,*Default,NTP,0000,0000,0000,,我们会借此展开对\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This will lead us into a discussion
+Dialogue: 0,0:01:04.58,0:01:08.56,*Default,NTP,0000,0000,0000,,免疫系统的生物医学工程化的讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of sort of bioengineering of the immune system, in particular,
+Dialogue: 0,0:01:08.81,0:01:12.53,*Default,NTP,0000,0000,0000,,下周我们将讲到疫苗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to talk next week about vaccines.
+Dialogue: 0,0:01:14.95,0:01:18.64,*Default,NTP,0000,0000,0000,,届时我们将第一次真正地把\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This will be the first real example where we've talked about
+Dialogue: 0,0:01:18.81,0:01:20.89,*Default,NTP,0000,0000,0000,,器官系统生理学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the physiology of an organ system 
+Dialogue: 0,0:01:20.89,0:01:25.30,*Default,NTP,0000,0000,0000,,与调节器官功能的工程学方法结合起来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}together with engineering approaches to modulate that organ,
+Dialogue: 0,0:01:25.56,0:01:28.25,*Default,NTP,0000,0000,0000,,这方面内容将贯串我们整个学期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that will continue throughout the semester.
+Dialogue: 0,0:01:29.28,0:01:31.22,*Default,NTP,0000,0000,0000,,你们会注意到这些章节\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'll notice that the chapters 
+Dialogue: 0,0:01:31.22,0:01:33.56,*Default,NTP,0000,0000,0000,,因为它们并未按顺序来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of this go out of sequence,
+Dialogue: 0,0:01:33.91,0:01:37.02,*Default,NTP,0000,0000,0000,,本周我们将阅读第六章  而下周\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we're reading Chapter 6 this week and next week
+Dialogue: 0,0:01:37.02,0:01:38.94,*Default,NTP,0000,0000,0000,,我们将阅读第十四章和十五章的部分内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll read parts of Chapters 14 and 15,
+Dialogue: 0,0:01:40.01,0:01:42.61,*Default,NTP,0000,0000,0000,,因为教材有自己的组织方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's because the book has a different kind of organization.
+Dialogue: 0,0:01:42.88,0:01:43.94,*Default,NTP,0000,0000,0000,,教材先讲基础知识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It talks about the basics,
+Dialogue: 0,0:01:44.75,0:01:47.51,*Default,NTP,0000,0000,0000,,第二部分讲生理学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then it talks about physiology in the second part,
+Dialogue: 0,0:01:47.98,0:01:50.49,*Default,NTP,0000,0000,0000,,然后再单独讲生物医学工程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then it talks about Biomedical Engineering separately.
+Dialogue: 0,0:01:50.58,0:01:52.43,*Default,NTP,0000,0000,0000,,但我们在课堂上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we're going to in class treat
+Dialogue: 0,0:01:52.57,0:01:54.58,*Default,NTP,0000,0000,0000,,将生理学和生物医学工程学一并讲解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the physiology and the Biomedical Engineering together.
+Dialogue: 0,0:01:56.58,0:01:59.69,*Default,NTP,0000,0000,0000,,有问题么  懂了没有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Any questions about that, or that makes some sense?
+Dialogue: 0,0:02:02.43,0:02:04.06,*Default,NTP,0000,0000,0000,,细胞通讯和免疫学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cell communication and immunology
+Dialogue: 0,0:02:04.36,0:02:06.95,*Default,NTP,0000,0000,0000,,是我们本周要讲的主题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is what we're going to - is the topic for this week.
+Dialogue: 0,0:02:07.39,0:02:09.93,*Default,NTP,0000,0000,0000,,我可能无需讲太多关于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't need to say too much probably about
+Dialogue: 0,0:02:09.93,0:02:13.61,*Default,NTP,0000,0000,0000,,细胞之间需要通讯的原因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why cells need to communicate with each other
+Dialogue: 0,0:02:13.61,0:02:16.15,*Default,NTP,0000,0000,0000,,这是一张示意图\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this is a schematic version.
+Dialogue: 0,0:02:16.39,0:02:19.19,*Default,NTP,0000,0000,0000,,用这种图示的方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One way to draw sort of a schematic diagram 
+Dialogue: 0,0:02:19.19,0:02:22.38,*Default,NTP,0000,0000,0000,,示意人类身体的运作方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the operation of the human body
+Dialogue: 0,0:02:23.79,0:02:26.29,*Default,NTP,0000,0000,0000,,图中单独表示出器官系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it shows separated organ systems
+Dialogue: 0,0:02:26.29,0:02:29.01,*Default,NTP,0000,0000,0000,,并试图展示它们之间的联系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and tries to show them in context.
+Dialogue: 0,0:02:29.19,0:02:31.03,*Default,NTP,0000,0000,0000,,例如  呼吸系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The respiratory system, for example,
+Dialogue: 0,0:02:31.03,0:02:33.55,*Default,NTP,0000,0000,0000,,泌尿系统  消化系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the renal system, the digestive system,
+Dialogue: 0,0:02:34.25,0:02:37.10,*Default,NTP,0000,0000,0000,,这些系统  这三个系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these are examples - three examples of organ systems
+Dialogue: 0,0:02:37.10,0:02:41.66,*Default,NTP,0000,0000,0000,,与外环境相联系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that contact the external environment.
+Dialogue: 0,0:02:43.12,0:02:45.76,*Default,NTP,0000,0000,0000,,我们会讲到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've talked about the interesting way
+Dialogue: 0,0:02:45.91,0:02:48.74,*Default,NTP,0000,0000,0000,,消化系统与外环境之间十分有趣的联系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the digestive system contacts the external environment.
+Dialogue: 0,0:02:49.05,0:02:52.66,*Default,NTP,0000,0000,0000,,基于你们所谓的外环境和内环境\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Depending on what you call external and internal environment,
+Dialogue: 0,0:02:53.26,0:02:57.77,*Default,NTP,0000,0000,0000,,我在这里我所指的消化系统内部通路\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this path that I'm tracing here, deep within your digestive system,
+Dialogue: 0,0:02:58.03,0:03:03.98,*Default,NTP,0000,0000,0000,,它的两端确实与外界环境直接相通\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is really directly connected to the outside world through both ends.
+Dialogue: 0,0:03:06.01,0:03:08.70,*Default,NTP,0000,0000,0000,,当然  分子在被肠道吸收后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course when molecules get absorbed through the intestinal tract
+Dialogue: 0,0:03:08.71,0:03:11.40,*Default,NTP,0000,0000,0000,,就成为身体内环境的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they become part of your internal environment.
+Dialogue: 0,0:03:12.35,0:03:18.38,*Default,NTP,0000,0000,0000,,我们讲到了生理学的主要概念  内稳态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've talked about one the main concepts in physiology being homeostasis,
+Dialogue: 0,0:03:18.98,0:03:22.07,*Default,NTP,0000,0000,0000,,即如何维持内环境的稳定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is 'how do you maintain a constant internal environment?
+Dialogue: 0,0:03:22.37,0:03:27.17,*Default,NTP,0000,0000,0000,,我们需要体内的环境参数保持相对稳定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We need to have conditions internally that are relatively constant
+Dialogue: 0,0:03:27.17,0:03:31.22,*Default,NTP,0000,0000,0000,,这些环境参数包括  温度  pH值\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of temperature, and pH,
+Dialogue: 0,0:03:31.22,0:03:32.74,*Default,NTP,0000,0000,0000,,以及化学组成  这样人才能茁壮成长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and chemical composition in order for us to thrive.
+Dialogue: 0,0:03:33.01,0:03:35.91,*Default,NTP,0000,0000,0000,,为了维持生命\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In order for life to proceed,
+Dialogue: 0,0:03:36.18,0:03:39.22,*Default,NTP,0000,0000,0000,,人体的内环境需要保持稳定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you need to maintain a constant internal environment.
+Dialogue: 0,0:03:39.97,0:03:41.86,*Default,NTP,0000,0000,0000,,这通过  事实上这是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's achieved - in fact that's
+Dialogue: 0,0:03:41.99,0:03:44.58,*Default,NTP,0000,0000,0000,,很多器官和系统存在的主要目的  对吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the main goal of many of these organ systems, right?
+Dialogue: 0,0:03:44.74,0:03:46.52,*Default,NTP,0000,0000,0000,,呼吸系统的主要功能是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The main goal of the respiratory system
+Dialogue: 0,0:03:46.78,0:03:48.52,*Default,NTP,0000,0000,0000,,吸入新鲜空气\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to bring fresh in
+Dialogue: 0,0:03:48.52,0:03:51.23,*Default,NTP,0000,0000,0000,,以便获得空气中的氧气\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you can extract oxygen from it,
+Dialogue: 0,0:03:51.55,0:03:55.96,*Default,NTP,0000,0000,0000,,呼出废气  以便排出二氧化碳\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and blow used air out so that you can rid of carbon dioxide
+Dialogue: 0,0:03:56.27,0:03:59.99,*Default,NTP,0000,0000,0000,,二氧化碳是人体内碳代谢的终产物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is the end product of carbon metabolism inside our bodies.
+Dialogue: 0,0:04:01.89,0:04:04.88,*Default,NTP,0000,0000,0000,,呼吸系统的重要性在于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The respiratory system plays an important role
+Dialogue: 0,0:04:05.05,0:04:10.74,*Default,NTP,0000,0000,0000,,通过向体内输入适量的氧气\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in maintaining our internal environment at the proper level of oxygen,
+Dialogue: 0,0:04:10.98,0:04:12.37,*Default,NTP,0000,0000,0000,,维持人体内环境中的氧平衡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by bringing the right amount in.
+Dialogue: 0,0:04:12.70,0:04:18.17,*Default,NTP,0000,0000,0000,,人们调节呼吸的频率来获得足量的氧气\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You regulate your breathing rate in order to accomplish that
+Dialogue: 0,0:04:18.17,0:04:19.13,*Default,NTP,0000,0000,0000,,我们过几周会讲到这方面内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about this in a couple of weeks.
+Dialogue: 0,0:04:19.92,0:04:25.44,*Default,NTP,0000,0000,0000,,泌尿系统也同样十分重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The renal system has an equally important function in that way,
+Dialogue: 0,0:04:26.03,0:04:29.79,*Default,NTP,0000,0000,0000,,它能够维持体内的水平衡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in maintaining your water balance.
+Dialogue: 0,0:04:29.99,0:04:33.55,*Default,NTP,0000,0000,0000,,为了保持体内物质的理想浓度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The amount of water
+Dialogue: 0,0:04:33.55,0:04:34.91,*Default,NTP,0000,0000,0000,,所需的水量\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you need to have the optimal sort of concentrations of things
+Dialogue: 0,0:04:34.91,0:04:38.19,*Default,NTP,0000,0000,0000,,取决于肾脏每天产生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is determined by how much urine your kidneys produce
+Dialogue: 0,0:04:38.19,0:04:41.47,*Default,NTP,0000,0000,0000,,以及排出体外的尿量\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how much they excrete each day.
+Dialogue: 0,0:04:41.82,0:04:44.37,*Default,NTP,0000,0000,0000,,此外肾脏还能控制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In addition, the kidney controls
+Dialogue: 0,0:04:44.37,0:04:47.87,*Default,NTP,0000,0000,0000,,体内很多重要离子的浓度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the composition of your body of many important ions,
+Dialogue: 0,0:04:48.35,0:04:49.55,*Default,NTP,0000,0000,0000,,例如碳酸氢钠\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sodium bicarbonate
+Dialogue: 0,0:04:49.55,0:04:53.36,*Default,NTP,0000,0000,0000,,它对于酸碱平衡十分重要  还有钾离子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is important in pH balance, potassium.
+Dialogue: 0,0:04:53.69,0:04:58.10,*Default,NTP,0000,0000,0000,,通过控制体内这些分子的水平\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By determining how many of those molecules to hold onto,
+Dialogue: 0,0:04:58.25,0:05:01.10,*Default,NTP,0000,0000,0000,,即体内保有多少  又排出多少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how many to keep in the body, how many to release
+Dialogue: 0,0:05:01.10,0:05:06.20,*Default,NTP,0000,0000,0000,,就能够保证内环境中离子组成的稳定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}determines the internal composition with regard to that ion.
+Dialogue: 0,0:05:07.16,0:05:08.80,*Default,NTP,0000,0000,0000,,当然  还有消化系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The digestive system, of course,
+Dialogue: 0,0:05:08.94,0:05:12.29,*Default,NTP,0000,0000,0000,,它主要负责将各种新鲜营养物摄入体内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is responsible for bringing in sort of fresh nutrients,
+Dialogue: 0,0:05:12.50,0:05:14.37,*Default,NTP,0000,0000,0000,,为细胞代谢提供新的底物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fresh substrates for cellular metabolism,
+Dialogue: 0,0:05:14.72,0:05:17.63,*Default,NTP,0000,0000,0000,,如一批新的氨基酸  核苷酸\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fresh quantities of amino acids, and nucleotides, 
+Dialogue: 0,0:05:17.84,0:05:20.86,*Default,NTP,0000,0000,0000,,以及那些人体无法自行合成的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the things that we can't generate internally.
+Dialogue: 0,0:05:21.12,0:05:27.41,*Default,NTP,0000,0000,0000,,这个过程关乎人体维持内稳态的能力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, these are all involved with our ability to maintain homeostasis 
+Dialogue: 0,0:05:28.17,0:05:31.50,*Default,NTP,0000,0000,0000,,内稳态通过与外环境进行物质交换来实现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by exchanging materials with the external environment.
+Dialogue: 0,0:05:32.87,0:05:35.82,*Default,NTP,0000,0000,0000,,有一些系统完全位于身体内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are some organ systems that are totally internal.
+Dialogue: 0,0:05:36.08,0:05:39.96,*Default,NTP,0000,0000,0000,,例如过几周我们要讲的循环系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The circulatory system which we'll talk about in a couple of weeks,
+Dialogue: 0,0:05:40.10,0:05:41.70,*Default,NTP,0000,0000,0000,,心脏  血管\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the heart, the blood vessels,
+Dialogue: 0,0:05:41.85,0:05:43.41,*Default,NTP,0000,0000,0000,,血液  三者协同工作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the blood work together 
+Dialogue: 0,0:05:43.41,0:05:47.06,*Default,NTP,0000,0000,0000,,形成一个完全在体内发挥作用的体系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to form a totally internal function.
+Dialogue: 0,0:05:47.46,0:05:50.58,*Default,NTP,0000,0000,0000,,循环系统绝不会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no point where the circulatory system
+Dialogue: 0,0:05:50.80,0:05:54.68,*Default,NTP,0000,0000,0000,,跨越人体的内外界限\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}crosses the boundary between being inside you and outside of you,
+Dialogue: 0,0:05:55.65,0:05:56.71,*Default,NTP,0000,0000,0000,,它完全位于体内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's totally internal.
+Dialogue: 0,0:05:57.76,0:06:00.93,*Default,NTP,0000,0000,0000,,它能将分子输送到身体各处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Its role is to move molecules around in the body
+Dialogue: 0,0:06:00.93,0:06:04.10,*Default,NTP,0000,0000,0000,,供体内所有的细胞使用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that they're available to cells everywhere within your body
+Dialogue: 0,0:06:04.10,0:06:07.81,*Default,NTP,0000,0000,0000,,而无论那些细胞多么靠近体表\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}regardless of how close they are to your skin,
+Dialogue: 0,0:06:07.96,0:06:11.85,*Default,NTP,0000,0000,0000,,我们会讲到这些的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about that.
+Dialogue: 0,0:06:11.85,0:06:12.51,*Default,NTP,0000,0000,0000,,还有神经系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The nervous system, the endocrine system
+Dialogue: 0,0:06:12.51,0:06:13.31,*Default,NTP,0000,0000,0000,,和我们今天将要提到的内分泌系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we'll start talking about a little bit today
+Dialogue: 0,0:06:13.51,0:06:17.07,*Default,NTP,0000,0000,0000,,内分泌系统主要负责\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the system that's responsible for
+Dialogue: 0,0:06:17.07,0:06:21.81,*Default,NTP,0000,0000,0000,,在体内各组织之间传递信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sending signals back and forth between tissues of your body.
+Dialogue: 0,0:06:22.84,0:06:26.03,*Default,NTP,0000,0000,0000,,神经系统也传递信号  但原理有所不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The nervous system does the same thing in a different way.
+Dialogue: 0,0:06:26.64,0:06:36.25,*Default,NTP,0000,0000,0000,,在这张图的中心画的就是这两个系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These two systems which are shown in the core of this diagram really
+Dialogue: 0,0:06:36.58,0:06:42.58,*Default,NTP,0000,0000,0000,,它们的功能是调节其他系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are responsible for regulating and
+Dialogue: 0,0:06:42.58,0:06:45.81,*Default,NTP,0000,0000,0000,,并与之交换信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}exchanging information between the other organ systems.
+Dialogue: 0,0:06:46.80,0:06:49.61,*Default,NTP,0000,0000,0000,,你的肺与心脏如何协同工作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do your lungs know what your heart is doing?
+Dialogue: 0,0:06:49.96,0:06:54.22,*Default,NTP,0000,0000,0000,,肾脏何以得知血液组分的状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do your kidneys know what the status is of inside your blood,
+Dialogue: 0,0:06:55.30,0:06:56.62,*Default,NTP,0000,0000,0000,,它们能够知道这些是因为它们接收到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They know that because they receive
+Dialogue: 0,0:06:56.62,0:07:00.26,*Default,NTP,0000,0000,0000,,来自内分泌系统和神经系统的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}signals from the endocrine system and the nervous system.
+Dialogue: 0,0:07:00.30,0:07:02.94,*Default,NTP,0000,0000,0000,,正是这些基本的通讯系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are primarily communication systems
+Dialogue: 0,0:07:03.10,0:07:07.44,*Default,NTP,0000,0000,0000,,保证了体内各系统的协调工作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which act to allow your other organ systems to work in concert.
+Dialogue: 0,0:07:07.75,0:07:11.75,*Default,NTP,0000,0000,0000,,我们也会讲到这类协同工作的机理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about the mechanisms by which these work as well.
+Dialogue: 0,0:07:12.10,0:07:14.65,*Default,NTP,0000,0000,0000,,这张图上有些东西是不对的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now there's something very wrong about this diagram,
+Dialogue: 0,0:07:15.57,0:07:19.67,*Default,NTP,0000,0000,0000,,图上显示这些功能都围绕着一个核心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that it's showing these functions as sort of centralized in the core,
+Dialogue: 0,0:07:20.00,0:07:22.17,*Default,NTP,0000,0000,0000,,当然  这绝不是人体的组织形式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and of course that's not how your body is organized.
+Dialogue: 0,0:07:22.49,0:07:25.39,*Default,NTP,0000,0000,0000,,不是所有功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not that all these layers are
+Dialogue: 0,0:07:25.54,0:07:27.90,*Default,NTP,0000,0000,0000,,都围绕着神经系统和内分泌系统展开的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wrapped around the nervous system and the endocrine system.
+Dialogue: 0,0:07:28.21,0:07:29.27,*Default,NTP,0000,0000,0000,,这些系统分布于人体各处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These systems are dispersed
+Dialogue: 0,0:07:29.66,0:07:33.27,*Default,NTP,0000,0000,0000,,而这种分散性很重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}throughout your body and their dispersal is important,
+Dialogue: 0,0:07:33.84,0:07:35.98,*Default,NTP,0000,0000,0000,,我们也会讲到这一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so we'll talk about that as well.
+Dialogue: 0,0:07:43.11,0:07:45.09,*Default,NTP,0000,0000,0000,,现在让我们回过头来思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Take a step way back and think about
+Dialogue: 0,0:07:45.26,0:07:48.70,*Default,NTP,0000,0000,0000,,细胞接收信号的基本原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's the basic mechanism by which cells receive signals.
+Dialogue: 0,0:07:49.05,0:07:51.58,*Default,NTP,0000,0000,0000,,研究证明  细胞内有很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out that cells receive signals or
+Dialogue: 0,0:07:52.52,0:07:55.71,*Default,NTP,0000,0000,0000,,接收体内其他部位信号或者信息的方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}information from the rest of the body in a variety of ways,
+Dialogue: 0,0:07:56.08,0:08:01.75,*Default,NTP,0000,0000,0000,,但有一种特定的方法十分有用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's one way in particular that's a very useful way
+Dialogue: 0,0:08:01.75,0:08:02.88,*Default,NTP,0000,0000,0000,,这种方法使细胞能最大程度地接受信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for thinking about how cells receive most information.
+Dialogue: 0,0:08:03.19,0:08:05.77,*Default,NTP,0000,0000,0000,,这里的这张图大致展示了这种方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's shown schematically on this diagram here.
+Dialogue: 0,0:08:06.44,0:08:09.62,*Default,NTP,0000,0000,0000,,这边这个表示细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On the side over here shows a cell membrane
+Dialogue: 0,0:08:09.63,0:08:12.81,*Default,NTP,0000,0000,0000,,它的上面代表细胞外部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so this is outside the cell above it,
+Dialogue: 0,0:08:13.04,0:08:15.98,*Default,NTP,0000,0000,0000,,下面代表细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is inside the cell below,
+Dialogue: 0,0:08:16.75,0:08:20.12,*Default,NTP,0000,0000,0000,,这个是脂质双分子层\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is the lipid bilayer that
+Dialogue: 0,0:08:20.31,0:08:22.80,*Default,NTP,0000,0000,0000,,将细胞内外分开\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}separates the outside of the cell from the inside of the cell.
+Dialogue: 0,0:08:23.13,0:08:26.36,*Default,NTP,0000,0000,0000,,我已经讲过很多遍这个脂质双分子层了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've already mentioned many times that the lipid bilayer,
+Dialogue: 0,0:08:26.65,0:08:29.13,*Default,NTP,0000,0000,0000,,细胞膜它不只是一个脂质双分子层\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the cell membrane, isn't just a lipid bilayer.
+Dialogue: 0,0:08:29.52,0:08:33.94,*Default,NTP,0000,0000,0000,,还有一些其它分子在这个脂质双分子层上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That there are other molecules in the lipid bilayer and
+Dialogue: 0,0:08:33.94,0:08:37.13,*Default,NTP,0000,0000,0000,,它们对于细胞接收信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're important for cells getting information
+Dialogue: 0,0:08:37.13,0:08:39.33,*Default,NTP,0000,0000,0000,,和接受外来分子十分重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or getting molecules from outside.
+Dialogue: 0,0:08:40.70,0:08:42.86,*Default,NTP,0000,0000,0000,,我们已经讲过一类这样的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've talked about one class of molecules,
+Dialogue: 0,0:08:43.04,0:08:46.91,*Default,NTP,0000,0000,0000,,它们是能够将分子从胞内运至胞外的载体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're transporters that move molecules from inside to outside,
+Dialogue: 0,0:08:46.99,0:08:47.99,*Default,NTP,0000,0000,0000,,或者从胞外运至胞内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or outside to in,
+Dialogue: 0,0:08:48.36,0:08:51.24,*Default,NTP,0000,0000,0000,,这个过程不是简单地穿过细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that wouldn't ordinarily be transported through a cell membrane.
+Dialogue: 0,0:08:52.01,0:08:54.17,*Default,NTP,0000,0000,0000,,葡萄糖就是一个很好的例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Glucose is a great example of that
+Dialogue: 0,0:08:54.18,0:08:57.78,*Default,NTP,0000,0000,0000,,我们会在稍后讲解这个内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to come back to that a little bit later in the lecture.
+Dialogue: 0,0:08:58.18,0:09:02.65,*Default,NTP,0000,0000,0000,,如果细胞膜只是一个脂质双分子层的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If a cell membrane was indeed just a lipid bilayer,
+Dialogue: 0,0:09:02.93,0:09:05.36,*Default,NTP,0000,0000,0000,,葡萄糖就不可能进入细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then glucose could never enter the cell
+Dialogue: 0,0:09:05.36,0:09:08.07,*Default,NTP,0000,0000,0000,,因为它不能渗透过细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it can't permeate through cell membranes.
+Dialogue: 0,0:09:09.68,0:09:11.09,*Default,NTP,0000,0000,0000,,但葡萄糖又必须进入细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Glucose has to get into cells,
+Dialogue: 0,0:09:11.28,0:09:15.68,*Default,NTP,0000,0000,0000,,因为它是细胞能量的主要来源\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the main source of energy source that cells use,
+Dialogue: 0,0:09:15.86,0:09:17.21,*Default,NTP,0000,0000,0000,,即通过葡萄糖代谢产生能量\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}metabolism of glucose.
+Dialogue: 0,0:09:17.83,0:09:20.40,*Default,NTP,0000,0000,0000,,而这个过程的完成依赖于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It does so because there are some molecules in
+Dialogue: 0,0:09:20.58,0:09:21.76,*Default,NTP,0000,0000,0000,,膜表面存在的一些分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the surface of the membrane 
+Dialogue: 0,0:09:21.77,0:09:23.89,*Default,NTP,0000,0000,0000,,这些分子能够将葡萄糖运进或者运出细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that allow glucose to move in and out.
+Dialogue: 0,0:09:25.17,0:09:26.88,*Default,NTP,0000,0000,0000,,这些分子叫做葡萄糖转运载体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are called glucose transporters.
+Dialogue: 0,0:09:27.75,0:09:31.54,*Default,NTP,0000,0000,0000,,在细胞膜上还存在着另一类分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's another whole family of molecules that sit in the surface.
+Dialogue: 0,0:09:31.83,0:09:36.33,*Default,NTP,0000,0000,0000,,它们不负责将分子运进运出\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not responsible necessarily for moving molecules inside and out,
+Dialogue: 0,0:09:36.65,0:09:40.59,*Default,NTP,0000,0000,0000,,而是冲着细胞外面坐等信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they sit at the outside of the cell and they wait for signals.
+Dialogue: 0,0:09:41.47,0:09:42.54,*Default,NTP,0000,0000,0000,,当它们接收到信号之后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When they receive the signal they make -
+Dialogue: 0,0:09:42.54,0:09:46.18,*Default,NTP,0000,0000,0000,,就会发生十分特殊的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they change in a very specific way
+Dialogue: 0,0:09:46.84,0:09:51.17,*Default,NTP,0000,0000,0000,,细胞能够识别自身表面发生的这种变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the cell can recognize this change that's occurred at the cell surface.
+Dialogue: 0,0:09:51.67,0:09:54.50,*Default,NTP,0000,0000,0000,,这一类分子叫做受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That general class of molecules is called receptors
+Dialogue: 0,0:09:55.65,0:09:58.09,*Default,NTP,0000,0000,0000,,在这里看起来就像是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and its shown here just as 
+Dialogue: 0,0:09:58.09,0:10:00.79,*Default,NTP,0000,0000,0000,,生活在细胞膜内的物质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a block of material living in the cell membrane.
+Dialogue: 0,0:10:02.42,0:10:05.48,*Default,NTP,0000,0000,0000,,马上我们就会讲到不同种类的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about different classes of receptors in just a minute.
+Dialogue: 0,0:10:05.48,0:10:10.82,*Default,NTP,0000,0000,0000,,现在  我只把这种分子图示出来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For now, just picture it in this simple way as a molecule,
+Dialogue: 0,0:10:10.97,0:10:12.56,*Default,NTP,0000,0000,0000,,受体通常是一种蛋白质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}usually a protein,
+Dialogue: 0,0:10:12.56,0:10:14.32,*Default,NTP,0000,0000,0000,,它们镶嵌在细胞膜上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's embedded in the cell membrane
+Dialogue: 0,0:10:14.64,0:10:20.71,*Default,NTP,0000,0000,0000,,很多受体还有部分结构露在细胞外\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and many receptors have a part of them that is extracellular.
+Dialogue: 0,0:10:22.11,0:10:24.34,*Default,NTP,0000,0000,0000,,它们跨越式的存在于细胞膜上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They go across the membrane -
+Dialogue: 0,0:10:24.34,0:10:26.39,*Default,NTP,0000,0000,0000,,这就是受体的跨膜部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the trans-membrane part of the receptor
+Dialogue: 0,0:10:26.39,0:10:28.23,*Default,NTP,0000,0000,0000,,它跨越了细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's going across the membrane.
+Dialogue: 0,0:10:28.55,0:10:30.43,*Default,NTP,0000,0000,0000,,然后还有部分穿过质膜  进入细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then there's a part that's inside the cell
+Dialogue: 0,0:10:32.15,0:10:34.49,*Default,NTP,0000,0000,0000,,与细胞质相接触\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sticking down into the cell cytoplasm.
+Dialogue: 0,0:10:34.85,0:10:38.14,*Default,NTP,0000,0000,0000,,因此  这部分叫做胞外区\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, this is called the extracellular region or domain,
+Dialogue: 0,0:10:38.48,0:10:40.85,*Default,NTP,0000,0000,0000,,中间这部分叫做跨膜区\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the trans-membrane region or domain,
+Dialogue: 0,0:10:41.23,0:10:44.40,*Default,NTP,0000,0000,0000,,内部这一段叫做胞质区\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is the cytoplasmic region or domain.
+Dialogue: 0,0:10:45.65,0:10:49.37,*Default,NTP,0000,0000,0000,,因为这些分子能穿过细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because these molecules can span across the membrane
+Dialogue: 0,0:10:49.37,0:10:50.74,*Default,NTP,0000,0000,0000,,连通细胞内外\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from outside to inside,
+Dialogue: 0,0:10:50.95,0:10:53.37,*Default,NTP,0000,0000,0000,,它们所在的位置非常适于接受信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're in just the right position to take messages
+Dialogue: 0,0:10:53.56,0:10:56.08,*Default,NTP,0000,0000,0000,,它们能将外界获得的信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they receive from outside the cell and
+Dialogue: 0,0:10:56.30,0:11:00.53,*Default,NTP,0000,0000,0000,,通过细胞膜传递给细胞器\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}transmit them through the membrane into the cells internal apparatus,
+Dialogue: 0,0:11:00.73,0:11:01.62,*Default,NTP,0000,0000,0000,,这正是它们的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's what they do.
+Dialogue: 0,0:11:02.17,0:11:05.54,*Default,NTP,0000,0000,0000,,信号通常以分子的形式来传递\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The signal comes in the form of molecules
+Dialogue: 0,0:11:06.16,0:11:09.79,*Default,NTP,0000,0000,0000,,在这门课里我们把这种分子叫做配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we're going to call throughout the lecture here 'ligands'.
+Dialogue: 0,0:11:11.44,0:11:15.47,*Default,NTP,0000,0000,0000,,你们可能听过配体和受体这两个术语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This terminology 'ligand' and 'receptor' you've probably heard before.
+Dialogue: 0,0:11:16.25,0:11:20.08,*Default,NTP,0000,0000,0000,,受体这个词通常代表了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It refers to usually 'receptors' 
+Dialogue: 0,0:11:20.08,0:11:23.91,*Default,NTP,0000,0000,0000,,固定于细胞表面的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are fixed in a cell, on a cell membrane,
+Dialogue: 0,0:11:23.91,0:11:26.06,*Default,NTP,0000,0000,0000,,而配体分散于体内各处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and 'ligands' which are dispersed throughout the body
+Dialogue: 0,0:11:26.06,0:11:27.35,*Default,NTP,0000,0000,0000,,能够自由扩散\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and free to diffuse around,
+Dialogue: 0,0:11:27.35,0:11:29.71,*Default,NTP,0000,0000,0000,,它们偶尔会与细胞邂逅\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and occasionally will find the cell.
+Dialogue: 0,0:11:30.46,0:11:32.70,*Default,NTP,0000,0000,0000,,但当它们遇到细胞时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When they do find the cell
+Dialogue: 0,0:11:32.71,0:11:35.45,*Default,NTP,0000,0000,0000,,就能够与受体相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're capable of interacting with the receptor
+Dialogue: 0,0:11:35.45,0:11:38.94,*Default,NTP,0000,0000,0000,,与受体发生化学反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}forming some kind of chemical interaction with the receptor.
+Dialogue: 0,0:11:39.17,0:11:42.20,*Default,NTP,0000,0000,0000,,这通常是一种非共价化合反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, usually this is a non-covalent interaction.
+Dialogue: 0,0:11:42.49,0:11:46.21,*Default,NTP,0000,0000,0000,,所以配体和受体之间不生成共价键\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's not actually chemical covalent bonds that are formed
+Dialogue: 0,0:11:46.52,0:11:48.11,*Default,NTP,0000,0000,0000,,这是一种非共价化合反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a non-covalent interaction,
+Dialogue: 0,0:11:48.29,0:11:50.21,*Default,NTP,0000,0000,0000,,它们通常以氢键相联\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}usually dominated by hydrogen bonding.
+Dialogue: 0,0:11:50.72,0:11:53.42,*Default,NTP,0000,0000,0000,,当我们讲到免疫系统的时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about this kind of non-covalent interaction more
+Dialogue: 0,0:11:53.43,0:11:57.38,*Default,NTP,0000,0000,0000,,会更详细地谈到这种非共价化合反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we talk about the immune system,
+Dialogue: 0,0:11:57.59,0:11:59.13,*Default,NTP,0000,0000,0000,,因为在免疫系统中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because one example of ligand and receptors
+Dialogue: 0,0:11:59.13,0:12:01.62,*Default,NTP,0000,0000,0000,,一个重要的配体受体结合反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's important in the immune system
+Dialogue: 0,0:12:01.62,0:12:04.31,*Default,NTP,0000,0000,0000,,就是抗原  即外源分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are antigens - foreign molecules,
+Dialogue: 0,0:12:04.31,0:12:07.19,*Default,NTP,0000,0000,0000,,与抗体  这个人体自身产生的分子结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and antibodies - molecules that we produce.
+Dialogue: 0,0:12:08.73,0:12:12.28,*Default,NTP,0000,0000,0000,,今天我们讲讲普遍意义上的配体和受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Today let's think about it more generally as ligands and receptors.
+Dialogue: 0,0:12:12.88,0:12:14.47,*Default,NTP,0000,0000,0000,,配体带有一些信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The ligands are bringing some message,
+Dialogue: 0,0:12:15.77,0:12:19.94,*Default,NTP,0000,0000,0000,,它们通过与受体结合来传递这些信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they transmit the message by binding to the receptor.
+Dialogue: 0,0:12:21.53,0:12:25.37,*Default,NTP,0000,0000,0000,,当它们结合后  会使受体分子发生改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When they bind, they produce some change in the receptor molecule
+Dialogue: 0,0:12:25.64,0:12:27.73,*Default,NTP,0000,0000,0000,,这个过程发生在细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is experienced inside the cell.
+Dialogue: 0,0:12:28.57,0:12:30.44,*Default,NTP,0000,0000,0000,,细胞发生某种生物化学变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The way that the cell experience it is through 
+Dialogue: 0,0:12:30.65,0:12:33.83,*Default,NTP,0000,0000,0000,,以完成这个过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some sort of biochemical changes.
+Dialogue: 0,0:12:34.20,0:12:36.55,*Default,NTP,0000,0000,0000,,这些变化通常需要酶的参与\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those changes usually involve enzymes.
+Dialogue: 0,0:12:37.61,0:12:41.63,*Default,NTP,0000,0000,0000,,过程中通常会生成一种叫做\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They often involve the generation of what are called
+Dialogue: 0,0:12:41.79,0:12:43.22,*Default,NTP,0000,0000,0000,,第二信使的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'second messenger' molecules
+Dialogue: 0,0:12:43.22,0:12:46.27,*Default,NTP,0000,0000,0000,,将信号更深入地传递至细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} which carry the signal further into the cell.
+Dialogue: 0,0:12:46.68,0:12:50.02,*Default,NTP,0000,0000,0000,,这些反应通常包括一个反应网络\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They often involve networks of reactions,
+Dialogue: 0,0:12:50.17,0:12:51.52,*Default,NTP,0000,0000,0000,,不只是一种酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not just one enzyme
+Dialogue: 0,0:12:51.52,0:12:55.35,*Default,NTP,0000,0000,0000,,而是一系列的酶来进行级联放大\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a series of enzymes that serve to amplify each other.
+Dialogue: 0,0:12:56.69,0:13:02.09,*Default,NTP,0000,0000,0000,,一种酶催化生成的产物会活化另一种酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A reaction performed by one enzyme creates a product
+Dialogue: 0,0:13:02.46,0:13:05.42,*Default,NTP,0000,0000,0000,,而它催化的产物又能激活其他酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that stimulates another enzyme that creates a product,
+Dialogue: 0,0:13:05.62,0:13:06.90,*Default,NTP,0000,0000,0000,,催化反应生成另一种产物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and stimulates another enzyme,
+Dialogue: 0,0:13:07.19,0:13:09.20,*Default,NTP,0000,0000,0000,,通过这层层反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and through this cascade of reactions
+Dialogue: 0,0:13:09.51,0:13:12.65,*Default,NTP,0000,0000,0000,,信号被放大  并不断向前传递\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you amplify and carry the signal forward.
+Dialogue: 0,0:13:14.64,0:13:17.09,*Default,NTP,0000,0000,0000,,这里显示的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what's illustrated here
+Dialogue: 0,0:13:17.34,0:13:19.54,*Default,NTP,0000,0000,0000,,在信号放大传递后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the end result being that
+Dialogue: 0,0:13:19.54,0:13:21.75,*Default,NTP,0000,0000,0000,,细胞内发生的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's some change in the life of the cell.
+Dialogue: 0,0:13:24.50,0:13:25.63,*Default,NTP,0000,0000,0000,,这些变化是什么呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What would that change be?
+Dialogue: 0,0:13:26.23,0:13:30.36,*Default,NTP,0000,0000,0000,,这可能是那些让细胞开始分裂的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it might be that this signal is a signal to divide.
+Dialogue: 0,0:13:31.57,0:13:33.27,*Default,NTP,0000,0000,0000,,"该是复制的时候了"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'It's time for you to reproduce',
+Dialogue: 0,0:13:33.53,0:13:36.06,*Default,NTP,0000,0000,0000,,细胞就开始进行有丝分裂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the cellular response would be mitosis.
+Dialogue: 0,0:13:37.86,0:13:42.50,*Default,NTP,0000,0000,0000,,这信号还可能是  "需要更多葡萄糖"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It could be that that signal is 'you need more glucose',
+Dialogue: 0,0:13:44.05,0:13:46.01,*Default,NTP,0000,0000,0000,,细胞的反馈就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the cellular response is
+Dialogue: 0,0:13:46.43,0:13:48.18,*Default,NTP,0000,0000,0000,,产生更多的葡萄糖载体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to create more glucose transporters
+Dialogue: 0,0:13:48.18,0:13:50.29,*Default,NTP,0000,0000,0000,,将更多的糖分子输送进细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to bring more glucose into the cell.
+Dialogue: 0,0:13:51.44,0:13:52.81,*Default,NTP,0000,0000,0000,,这个信号还有可能是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It could be the response is
+Dialogue: 0,0:13:52.95,0:13:56.11,*Default,NTP,0000,0000,0000,,"外面很危险  我们得赶紧跑"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'there's something dangerous in the environment, we got to move away',
+Dialogue: 0,0:13:57.43,0:14:01.19,*Default,NTP,0000,0000,0000,,于是细胞就向相反方向游走了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the response is for the cell to crawl in the opposite direction.
+Dialogue: 0,0:14:01.77,0:14:05.79,*Default,NTP,0000,0000,0000,,细胞对外界信号可能会发生不同的反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a diverse range of responses that might occur,
+Dialogue: 0,0:14:06.37,0:14:11.06,*Default,NTP,0000,0000,0000,,但这些反应都源自\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that response is initiated by this
+Dialogue: 0,0:14:11.43,0:14:15.25,*Default,NTP,0000,0000,0000,,配体和受体结合这个简单的化学过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}simple chemical process of a ligand binding to a receptor.
+Dialogue: 0,0:14:16.04,0:14:17.93,*Default,NTP,0000,0000,0000,,我们要记住的另一点是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the other thing to keep in mind is that
+Dialogue: 0,0:14:18.11,0:14:21.20,*Default,NTP,0000,0000,0000,,在细胞表面  不仅仅只有一个受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for any cell there's not just one receptor on the cell,
+Dialogue: 0,0:14:25.28,0:14:29.82,*Default,NTP,0000,0000,0000,,而是有成千上万甚至更多的受体分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are thousands, or hundreds of thousands of receptors.
+Dialogue: 0,0:14:30.82,0:14:32.19,*Default,NTP,0000,0000,0000,,它们全都能接收\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All of them could potentially be receiving signals
+Dialogue: 0,0:14:32.19,0:14:35.14,*Default,NTP,0000,0000,0000,,由配体或某种化学物质传递的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from a ligand or a chemical.
+Dialogue: 0,0:14:36.00,0:14:39.12,*Default,NTP,0000,0000,0000,,因此  任一时刻细胞内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, this pathway might not be the only one
+Dialogue: 0,0:14:39.23,0:14:42.61,*Default,NTP,0000,0000,0000,,激活的信号通路不只是一条\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's being activated inside the cell at any given time.
+Dialogue: 0,0:14:43.11,0:14:46.14,*Default,NTP,0000,0000,0000,,细胞可能同时从这个受体  这个受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It might be getting a signal from this receptor and a signal from this receptor,
+Dialogue: 0,0:14:46.45,0:14:47.47,*Default,NTP,0000,0000,0000,,以及这个受体接收信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a signal from this receptor.
+Dialogue: 0,0:14:48.12,0:14:49.82,*Default,NTP,0000,0000,0000,,细胞要做的事就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the cell needs to be able to do is
+Dialogue: 0,0:14:50.00,0:14:53.59,*Default,NTP,0000,0000,0000,,整合这些信息并作出反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to integrate that information into a response.
+Dialogue: 0,0:14:56.13,0:14:58.70,*Default,NTP,0000,0000,0000,,体内的细胞要整合信息并作出反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You need to be able to integrate that information into a response,
+Dialogue: 0,0:14:58.88,0:15:03.46,*Default,NTP,0000,0000,0000,,这个过程就通过这些生化反应来完成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that happens through these biochemical reactions.
+Dialogue: 0,0:15:05.45,0:15:07.99,*Default,NTP,0000,0000,0000,,我希望将这些作为背景\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hope that makes sense as background,
+Dialogue: 0,0:15:08.21,0:15:10.40,*Default,NTP,0000,0000,0000,,在这堂课接下来的时间里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'm just going to basically illustrate that basic concept
+Dialogue: 0,0:15:10.40,0:15:13.97,*Default,NTP,0000,0000,0000,,我会用一些例子来说明这些基本的概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a few examples throughout the rest of the lecture.
+Dialogue: 0,0:15:15.17,0:15:16.93,*Default,NTP,0000,0000,0000,,这张幻灯片上的其它东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other thing that's on this slide here
+Dialogue: 0,0:15:17.15,0:15:19.89,*Default,NTP,0000,0000,0000,,是一个简单的类比\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is sort of a simple analogy
+Dialogue: 0,0:15:19.89,0:15:21.36,*Default,NTP,0000,0000,0000,,我已经讲过了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I've already described.
+Dialogue: 0,0:15:21.53,0:15:23.86,*Default,NTP,0000,0000,0000,,如果将受体-配体系统看作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you think about receptor ligand system
+Dialogue: 0,0:15:23.86,0:15:26.19,*Default,NTP,0000,0000,0000,,细胞的一种输入机制的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as an input into the cell.
+Dialogue: 0,0:15:26.34,0:15:28.10,*Default,NTP,0000,0000,0000,,如果将配体看作是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If it was sound that was being received 
+Dialogue: 0,0:15:28.10,0:15:31.16,*Default,NTP,0000,0000,0000,,有待接受的敲鼓声\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that might be beating of a drum,
+Dialogue: 0,0:15:31.28,0:15:35.18,*Default,NTP,0000,0000,0000,,声音信号得到了转换\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, that sound gets transduced.
+Dialogue: 0,0:15:35.88,0:15:38.72,*Default,NTP,0000,0000,0000,,我们想想声音信号的转换过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're used to thinking about sound being tranduced;
+Dialogue: 0,0:15:38.92,0:15:43.48,*Default,NTP,0000,0000,0000,,声音由声波转化为电子信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being converted by acoustic waves into electrical signals
+Dialogue: 0,0:15:43.48,0:15:49.20,*Default,NTP,0000,0000,0000,,你的iPod能够识别这种信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can be recognized by your iPods.
+Dialogue: 0,0:15:51.10,0:15:52.82,*Default,NTP,0000,0000,0000,,这两种过程是相同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This same thing happens here,
+Dialogue: 0,0:15:52.82,0:15:54.93,*Default,NTP,0000,0000,0000,,都是一个信号转换的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a transduction,
+Dialogue: 0,0:15:55.19,0:15:58.78,*Default,NTP,0000,0000,0000,,一种信号转化为另一种信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one kind of a signal gets converted to another kind of a signal.
+Dialogue: 0,0:15:59.45,0:16:01.30,*Default,NTP,0000,0000,0000,,在配体-受体系统中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of a ligand-receptor,
+Dialogue: 0,0:16:01.35,0:16:05.20,*Default,NTP,0000,0000,0000,,配体浓度这种化学信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a chemical signal in the form of a concentration of ligand
+Dialogue: 0,0:16:05.53,0:16:08.70,*Default,NTP,0000,0000,0000,,转化为生化信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets converted into a biochemical signal.
+Dialogue: 0,0:16:10.61,0:16:12.56,*Default,NTP,0000,0000,0000,,这里这个信号由\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That signal is carried here, for example,
+Dialogue: 0,0:16:12.66,0:16:14.01,*Default,NTP,0000,0000,0000,,第二信使的浓度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the concentration of second messengers -
+Dialogue: 0,0:16:14.01,0:16:16.72,*Default,NTP,0000,0000,0000,,即另一种物质的浓度来传递\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the concentration of something else.
+Dialogue: 0,0:16:18.60,0:16:21.33,*Default,NTP,0000,0000,0000,,通常这些信号要放大后才会产生作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often that signal gets amplified so it can be used,
+Dialogue: 0,0:16:21.64,0:16:23.71,*Default,NTP,0000,0000,0000,,诱发细胞内发生一些变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}same thing happens inside cells and
+Dialogue: 0,0:16:23.71,0:16:25.59,*Default,NTP,0000,0000,0000,,并产生某种输出信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's some output that's generated.
+Dialogue: 0,0:16:28.72,0:16:33.08,*Default,NTP,0000,0000,0000,,受体-配体相互作用理论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are -  this understanding of receptor-ligand interactions
+Dialogue: 0,0:16:33.08,0:16:36.78,*Default,NTP,0000,0000,0000,,现在已经成为很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has been really the biological basis of
+Dialogue: 0,0:16:36.78,0:16:41.41,*Default,NTP,0000,0000,0000,,制药工业的生物学基础\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}much of the pharmaceutical industry.
+Dialogue: 0,0:16:42.26,0:16:48.21,*Default,NTP,0000,0000,0000,,很多制药公司新药筛选工作的主要内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Much of the work that pharmaceutical companies do
+Dialogue: 0,0:16:48.22,0:16:51.37,*Default,NTP,0000,0000,0000,,就是寻找能够激活受体的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of searching for drugs is searching for new ligands
+Dialogue: 0,0:16:51.37,0:16:53.82,*Default,NTP,0000,0000,0000,,新型配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that activate receptors
+Dialogue: 0,0:16:53.82,0:17:00.12,*Default,NTP,0000,0000,0000,,并在细胞内部产生某种生物学效应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and create biological responses inside cells.
+Dialogue: 0,0:17:00.47,0:17:01.48,*Default,NTP,0000,0000,0000,,这样的配体药物有两类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are two classes,
+Dialogue: 0,0:17:01.76,0:17:06.37,*Default,NTP,0000,0000,0000,,目前已经明确的配体药物大体上分为两种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two broad classes of drug sort of type ligands that are defined,
+Dialogue: 0,0:17:07.34,0:17:09.30,*Default,NTP,0000,0000,0000,,分别是激动剂和拮抗剂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}agonists and antagonists.
+Dialogue: 0,0:17:09.83,0:17:15.34,*Default,NTP,0000,0000,0000,,激动剂是能够模拟天然配体分子的物质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An agonist is a substance that mimics the action of a natural ligand,
+Dialogue: 0,0:17:16.97,0:17:19.42,*Default,NTP,0000,0000,0000,,在这里我给出了一些激动剂作为例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I show you a couple of examples of agonists here.
+Dialogue: 0,0:17:19.55,0:17:22.55,*Default,NTP,0000,0000,0000,,有时激动剂药物就是天然配体分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, sometimes the agonist is the natural ligand itself
+Dialogue: 0,0:17:23.29,0:17:27.04,*Default,NTP,0000,0000,0000,,例如将胰岛素作为药物使用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's - an example of that is when you use insulin as a drug.
+Dialogue: 0,0:17:28.15,0:17:30.25,*Default,NTP,0000,0000,0000,,胰岛素是人体自身产生的一种激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Insulin is a naturally occurring hormone,
+Dialogue: 0,0:17:30.99,0:17:33.14,*Default,NTP,0000,0000,0000,,它是一种蛋白质激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a protein hormone
+Dialogue: 0,0:17:33.14,0:17:34.47,*Default,NTP,0000,0000,0000,,遍布全身\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that circulates in all of our bodies
+Dialogue: 0,0:17:34.47,0:17:36.47,*Default,NTP,0000,0000,0000,,并调节糖代谢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and regulates glucose metabolism.
+Dialogue: 0,0:17:37.67,0:17:39.83,*Default,NTP,0000,0000,0000,,如果你的体内不能产生足够的胰岛素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you don't produce enough insulin yourself,
+Dialogue: 0,0:17:40.73,0:17:42.01,*Default,NTP,0000,0000,0000,,例如糖尿病人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as diabetics do not,
+Dialogue: 0,0:17:42.37,0:17:44.28,*Default,NTP,0000,0000,0000,,你就可以将胰岛素作为药物使用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you can use insulin as a drug.
+Dialogue: 0,0:17:44.47,0:17:47.44,*Default,NTP,0000,0000,0000,,胰岛素在体内的功能就是作为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What insulin is doing inside your body is acting
+Dialogue: 0,0:17:47.44,0:17:50.49,*Default,NTP,0000,0000,0000,,胰岛素受体的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a ligand for insulin receptors
+Dialogue: 0,0:17:50.49,0:17:54.69,*Default,NTP,0000,0000,0000,,刺激产生某种细胞效应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which stimulate certain kinds of cellular responses.
+Dialogue: 0,0:17:54.83,0:17:56.53,*Default,NTP,0000,0000,0000,,待会我会更详细地讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk about that more in a minute.
+Dialogue: 0,0:17:56.71,0:17:59.54,*Default,NTP,0000,0000,0000,,另一个例子有关神经系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another example is in the nervous system,
+Dialogue: 0,0:17:59.82,0:18:01.32,*Default,NTP,0000,0000,0000,,帕金森氏病的患者\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}patients that have Parkinson's disease
+Dialogue: 0,0:18:01.40,0:18:06.09,*Default,NTP,0000,0000,0000,,缺乏一种叫做多巴胺的天然的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have too little of a natural ligand called dopamine.
+Dialogue: 0,0:18:07.63,0:18:09.87,*Default,NTP,0000,0000,0000,,这种物质能够由一种拮抗剂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That can be supplied by an antagonist
+Dialogue: 0,0:18:10.54,0:18:12.05,*Default,NTP,0000,0000,0000,,叫做阿多巴转化而来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called Aldopa -
+Dialogue: 0,0:18:12.05,0:18:14.92,*Default,NTP,0000,0000,0000,,但它与多巴胺的结构并不完全相同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is not exactly the same as dopamine,
+Dialogue: 0,0:18:14.99,0:18:16.20,*Default,NTP,0000,0000,0000,,有一点差别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's slightly different.
+Dialogue: 0,0:18:16.33,0:18:18.72,*Default,NTP,0000,0000,0000,,已经证明如果向人体中引入阿多巴\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out when you give Aldopa to people,
+Dialogue: 0,0:18:18.85,0:18:24.31,*Default,NTP,0000,0000,0000,,它就能通过生化过程转化为多巴胺\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it gets converted biochemically into natural dopamine
+Dialogue: 0,0:18:24.31,0:18:27.22,*Default,NTP,0000,0000,0000,,发挥激动剂作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which then serves as its own agonist.
+Dialogue: 0,0:18:28.47,0:18:33.17,*Default,NTP,0000,0000,0000,,有时你能设计具有天然配体功能的药物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes you can design drugs that act like a natural ligand
+Dialogue: 0,0:18:33.17,0:18:36.48,*Default,NTP,0000,0000,0000,,但它不一定和天然配体相同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without being the natural ligand.
+Dialogue: 0,0:18:36.91,0:18:38.55,*Default,NTP,0000,0000,0000,,我们已经设计了很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've identified many drugs
+Dialogue: 0,0:18:38.55,0:18:40.74,*Default,NTP,0000,0000,0000,,能够激活胰岛素受体的药物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that stimulate insulin receptors,
+Dialogue: 0,0:18:41.06,0:18:43.01,*Default,NTP,0000,0000,0000,,但它们都不是和胰岛素分毫不差的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, but they're not exactly insulin,
+Dialogue: 0,0:18:43.87,0:18:46.70,*Default,NTP,0000,0000,0000,,但都可以用作激动剂类药物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those can potentially be used as agonist type drugs.
+Dialogue: 0,0:18:47.90,0:18:50.14,*Default,NTP,0000,0000,0000,,另一种思路是设计拮抗剂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An alternate is to design an antagonist.
+Dialogue: 0,0:18:50.73,0:18:55.43,*Default,NTP,0000,0000,0000,,这类物质能够以多种方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This would an example of a substance that inhibits the action
+Dialogue: 0,0:18:55.58,0:18:59.08,*Default,NTP,0000,0000,0000,,抑制天然配体的作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a natural ligand and they can inhibit in a variety of ways.
+Dialogue: 0,0:18:59.26,0:19:02.00,*Default,NTP,0000,0000,0000,,有时它们只是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes they inhibit by just
+Dialogue: 0,0:19:02.99,0:19:07.30,*Default,NTP,0000,0000,0000,,干扰配体和受体的相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}preventing the ligand from interacting with its receptor.
+Dialogue: 0,0:19:07.91,0:19:10.67,*Default,NTP,0000,0000,0000,,它们能够阻止配体与受体的结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They prevent the ligand from reaching its natural receptor,
+Dialogue: 0,0:19:10.75,0:19:15.56,*Default,NTP,0000,0000,0000,,这样就拮抗或者说是抑制了配体的功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so that antagonizes or inhibits the function of the natural ligand.
+Dialogue: 0,0:19:16.14,0:19:19.02,*Default,NTP,0000,0000,0000,,有时拮抗剂与受体相结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes they act by actually binding to the receptor.
+Dialogue: 0,0:19:20.53,0:19:23.33,*Default,NTP,0000,0000,0000,,结合的比天然配体和受体的的结合更紧密\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They bind sometimes better than the natural ligand does,
+Dialogue: 0,0:19:23.61,0:19:26.81,*Default,NTP,0000,0000,0000,,但不能产生相同的生物效应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they don't create the right biological reaction.
+Dialogue: 0,0:19:26.96,0:19:28.83,*Default,NTP,0000,0000,0000,,因此  它们与受体结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, they bind to the receptor -
+Dialogue: 0,0:19:28.83,0:19:30.82,*Default,NTP,0000,0000,0000,,它们占据了受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they occupy the receptor
+Dialogue: 0,0:19:30.82,0:19:33.05,*Default,NTP,0000,0000,0000,,这样配体就进不来了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so now the natural ligand can't enter it 
+Dialogue: 0,0:19:33.05,0:19:35.39,*Default,NTP,0000,0000,0000,,但这种结合无法诱发\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they don't create 
+Dialogue: 0,0:19:35.39,0:19:38.26,*Default,NTP,0000,0000,0000,,真正的配体所能诱发的生化反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the same sequence of biochemical events.
+Dialogue: 0,0:19:38.59,0:19:42.60,*Default,NTP,0000,0000,0000,,这种药物的一个例子就是他莫昔芬\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An example of a drug that works like that is
+Dialogue: 0,0:19:42.60,0:19:45.01,*Default,NTP,0000,0000,0000,,这是一种抗癌药\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the anti-cancer drug Tamoxifen
+Dialogue: 0,0:19:46.02,0:19:48.44,*Default,NTP,0000,0000,0000,,能够与雌激素受体结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which binds to estrogen receptors
+Dialogue: 0,0:19:48.44,0:19:50.61,*Default,NTP,0000,0000,0000,,阻断雌激素信号通路\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and blocks estrogen signaling.
+Dialogue: 0,0:19:50.92,0:19:53.69,*Default,NTP,0000,0000,0000,,许多种癌症  尤其是乳腺癌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many types of cancers, particularly breast cancers,
+Dialogue: 0,0:19:53.96,0:19:55.92,*Default,NTP,0000,0000,0000,,很多乳腺癌  但不是所有的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many breast cancers but not all,
+Dialogue: 0,0:19:56.20,0:19:57.59,*Default,NTP,0000,0000,0000,,对雌激素十分敏感\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are sensitive to estrogen.
+Dialogue: 0,0:19:57.81,0:20:00.60,*Default,NTP,0000,0000,0000,,雌激素是一类细胞生长信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Estrogen is a natural signal for cells to grow.
+Dialogue: 0,0:20:01.67,0:20:03.39,*Default,NTP,0000,0000,0000,,它能够促进细胞生长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a natural signal for cells to grow.
+Dialogue: 0,0:20:03.71,0:20:06.13,*Default,NTP,0000,0000,0000,,如果能够设计一种药物阻断雌激素的作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if you design a drug that blocks estrogen interaction
+Dialogue: 0,0:20:06.13,0:20:07.47,*Default,NTP,0000,0000,0000,,就能阻止细胞生长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you stop growth.
+Dialogue: 0,0:20:08.28,0:20:11.57,*Default,NTP,0000,0000,0000,,阻断肿瘤的生长是一件十分有益的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Stopping growth in tumors can be a very beneficial thing.
+Dialogue: 0,0:20:13.37,0:20:16.35,*Default,NTP,0000,0000,0000,,现有一大类的拮抗剂类药物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a whole class of antagonistic drugs
+Dialogue: 0,0:20:17.09,0:20:20.62,*Default,NTP,0000,0000,0000,,全部是设计作用于心血管系统的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have been designed to influence your cardiovascular system.
+Dialogue: 0,0:20:20.89,0:20:23.33,*Default,NTP,0000,0000,0000,,一类药物是β阻断剂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One class of them is beta-blockers,
+Dialogue: 0,0:20:23.68,0:20:30.84,*Default,NTP,0000,0000,0000,,它们与β肾上腺素受体结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they bind to beta-adrenergic receptors,
+Dialogue: 0,0:20:30.84,0:20:33.35,*Default,NTP,0000,0000,0000,,这种受体能够在神经系统和\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are receptors that exchange information between your nervous system
+Dialogue: 0,0:20:33.35,0:20:38.68,*Default,NTP,0000,0000,0000,,控制心跳的心肌收缩系统之间传递信息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the contractile system that beats your heart
+Dialogue: 0,0:20:38.68,0:20:40.86,*Default,NTP,0000,0000,0000,,从而产生心跳\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that causes the heartbeat.
+Dialogue: 0,0:20:41.24,0:20:43.32,*Default,NTP,0000,0000,0000,,β受体阻断剂能够阻断这类作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They can antagonize that reaction,
+Dialogue: 0,0:20:43.53,0:20:46.26,*Default,NTP,0000,0000,0000,,进而影响血液流速\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a result they affect blood rate.
+Dialogue: 0,0:20:46.76,0:20:50.15,*Default,NTP,0000,0000,0000,,尤为重要的是  这也会影响血压\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More importantly, they can affect blood pressure as well,
+Dialogue: 0,0:20:50.89,0:20:51.94,*Default,NTP,0000,0000,0000,,心跳的强度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the strength of your heartbeat
+Dialogue: 0,0:20:51.94,0:20:54.03,*Default,NTP,0000,0000,0000,,和心脏能够输出的压力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the pressure that your heart generates.
+Dialogue: 0,0:20:54.72,0:20:56.19,*Default,NTP,0000,0000,0000,,这只是其中一些例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are just some examples.
+Dialogue: 0,0:20:58.57,0:20:59.60,*Default,NTP,0000,0000,0000,,我之前讲过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mentioned earlier,
+Dialogue: 0,0:20:59.91,0:21:01.24,*Default,NTP,0000,0000,0000,,我们把受体看做一类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we thought about receptors as being
+Dialogue: 0,0:21:01.24,0:21:02.71,*Default,NTP,0000,0000,0000,,固定在细胞膜上的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these blocks and membranes
+Dialogue: 0,0:21:02.88,0:21:05.20,*Default,NTP,0000,0000,0000,,但受体有许多不同家族\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there are different families of receptors.
+Dialogue: 0,0:21:05.48,0:21:10.56,*Default,NTP,0000,0000,0000,,我们将受体进行分类的一个依据\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One useful thing about separating receptors into types or families
+Dialogue: 0,0:21:10.86,0:21:12.47,*Default,NTP,0000,0000,0000,,就是我们发现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that we found that 
+Dialogue: 0,0:21:12.47,0:21:15.70,*Default,NTP,0000,0000,0000,,很多受体有相同的作用机制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many different receptors work by the same basic underlying mechanism.
+Dialogue: 0,0:21:15.75,0:21:18.37,*Default,NTP,0000,0000,0000,,尽管激活它们的配体有所不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They might have different ligands which stimulate them,
+Dialogue: 0,0:21:18.59,0:21:19.67,*Default,NTP,0000,0000,0000,,但一旦被激活的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but once they're stimulated
+Dialogue: 0,0:21:19.67,0:21:21.29,*Default,NTP,0000,0000,0000,,接下来的机制就一样了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they work the same way.
+Dialogue: 0,0:21:21.64,0:21:28.66,*Default,NTP,0000,0000,0000,,这些知识推动了生物学的发展\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Understanding this has really led to lots of advances in biology.
+Dialogue: 0,0:21:29.86,0:21:31.71,*Default,NTP,0000,0000,0000,,等课进行到那里的时候我们再讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about that as we come to it.
+Dialogue: 0,0:21:31.90,0:21:35.09,*Default,NTP,0000,0000,0000,,我在这里想向你们介绍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I want to do in here is just introduce
+Dialogue: 0,0:21:35.09,0:21:37.32,*Default,NTP,0000,0000,0000,,几类基本的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the basic kinds of receptors.
+Dialogue: 0,0:21:37.65,0:21:40.68,*Default,NTP,0000,0000,0000,,最上面的这个叫作配体门控离子通道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The one that's on the top here is called ligand-gated ion channel
+Dialogue: 0,0:21:41.10,0:21:45.82,*Default,NTP,0000,0000,0000,,离子通道是一类位于细胞表面的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and an ion channel is a protein that sits in the surface of a cell.
+Dialogue: 0,0:21:46.44,0:21:47.98,*Default,NTP,0000,0000,0000,,它们能够存在于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can exist in -
+Dialogue: 0,0:21:47.98,0:21:51.50,*Default,NTP,0000,0000,0000,,门控离子通道有一种或者两种状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a gated ion channel - can exist in one or two states.
+Dialogue: 0,0:21:51.84,0:21:52.97,*Default,NTP,0000,0000,0000,,一种是闭合状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A state where it's closed,
+Dialogue: 0,0:21:53.24,0:21:55.83,*Default,NTP,0000,0000,0000,,想想一个有盖子的通道吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so imagine a channel with a lid on top of it;
+Dialogue: 0,0:21:56.58,0:21:59.03,*Default,NTP,0000,0000,0000,,当盖子合上的时候任何东西都不能通过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's closed nothing can go through the channel,
+Dialogue: 0,0:21:59.26,0:22:01.23,*Default,NTP,0000,0000,0000,,而打开时就畅通无阻\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's open then things can go through.
+Dialogue: 0,0:22:01.54,0:22:02.76,*Default,NTP,0000,0000,0000,,这种特殊的通道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, these are special channels
+Dialogue: 0,0:22:02.99,0:22:05.88,*Default,NTP,0000,0000,0000,,只能允许特定的分子通过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that they only allow certain molecules to pass through.
+Dialogue: 0,0:22:06.16,0:22:09.34,*Default,NTP,0000,0000,0000,,在生理学上这种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The ones that are most important in physiology
+Dialogue: 0,0:22:09.53,0:22:11.91,*Default,NTP,0000,0000,0000,,只能允许某种离子通过的通道十分重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are ones that only allow ions to go through:
+Dialogue: 0,0:22:11.92,0:22:14.02,*Default,NTP,0000,0000,0000,,这些离子包括钠离子  钾离子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sodium, potassium,
+Dialogue: 0,0:22:14.02,0:22:16.12,*Default,NTP,0000,0000,0000,,氯离子  钙离子和碳酸氢根离子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}chloride, calcium, bicarbonate.
+Dialogue: 0,0:22:17.53,0:22:19.32,*Default,NTP,0000,0000,0000,,在这门课里面我们只是粗浅地讲讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll see just briefly in this course
+Dialogue: 0,0:22:19.47,0:22:21.08,*Default,NTP,0000,0000,0000,,如果你们继续学习生理学的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you go onto study physiology
+Dialogue: 0,0:22:21.08,0:22:22.07,*Default,NTP,0000,0000,0000,,就会学到更多知识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you learn much more,
+Dialogue: 0,0:22:22.36,0:22:28.11,*Default,NTP,0000,0000,0000,,关于这些通道如何改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about how these channels cause changes
+Dialogue: 0,0:22:28.11,0:22:30.98,*Default,NTP,0000,0000,0000,,细胞的电势能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the electrical potential of cells
+Dialogue: 0,0:22:31.23,0:22:34.57,*Default,NTP,0000,0000,0000,,进而产生神经传导\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which lead to events like conduction of a nerve,
+Dialogue: 0,0:22:34.85,0:22:38.61,*Default,NTP,0000,0000,0000,,肌肉收缩  心脏跳动这样的效应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or contraction of a muscle, or beating of the heart.
+Dialogue: 0,0:22:38.92,0:22:40.45,*Default,NTP,0000,0000,0000,,我们会简单讲讲  但不深入\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk a little bit about that but not much.
+Dialogue: 0,0:22:40.69,0:22:43.67,*Default,NTP,0000,0000,0000,,基于此目的  我们来讲离子通道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For these purposes think about a channel,
+Dialogue: 0,0:22:43.94,0:22:46.23,*Default,NTP,0000,0000,0000,,拿仅允许钠离子通过的通道作为例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it only allows sodium to go through for example.
+Dialogue: 0,0:22:46.47,0:22:48.95,*Default,NTP,0000,0000,0000,,在这个通道上有个门\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a gate on it 
+Dialogue: 0,0:22:48.95,0:22:51.99,*Default,NTP,0000,0000,0000,,这个门是打开还是关闭\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that gate is in open or close state depending on
+Dialogue: 0,0:22:51.99,0:22:53.53,*Default,NTP,0000,0000,0000,,取决于配体到来与否\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether a ligand is present or not.
+Dialogue: 0,0:22:54.69,0:22:56.52,*Default,NTP,0000,0000,0000,,如果配体与受体相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If a ligand comes and interacts with a receptor,
+Dialogue: 0,0:22:56.60,0:22:58.78,*Default,NTP,0000,0000,0000,,在配体存在的情况下通道打开\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it opens up; In the presence of this ligand,
+Dialogue: 0,0:22:58.78,0:23:00.38,*Default,NTP,0000,0000,0000,,如果配体脱离  通道就关闭\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the ligand goes away, it closes.
+Dialogue: 0,0:23:00.96,0:23:04.62,*Default,NTP,0000,0000,0000,,配体存在的情况下通道才打开\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the presence of this ligand, this molecule, it's open,
+Dialogue: 0,0:23:04.88,0:23:06.95,*Default,NTP,0000,0000,0000,,允许这些离子穿过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it allows transport of this ion,
+Dialogue: 0,0:23:07.14,0:23:09.27,*Default,NTP,0000,0000,0000,,配体离开后  这些离子就不能通过了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when the ligand is gone it doesn't.
+Dialogue: 0,0:23:10.49,0:23:12.47,*Default,NTP,0000,0000,0000,,有些事例就可以说明细胞发生的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That changes a cell and here's some examples of it.
+Dialogue: 0,0:23:12.89,0:23:14.96,*Default,NTP,0000,0000,0000,,在脑部神经元细胞中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many neurotransmitters that
+Dialogue: 0,0:23:15.17,0:23:17.42,*Default,NTP,0000,0000,0000,,传递信号的神经递质分子的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}carry signals between neurons in your brain
+Dialogue: 0,0:23:17.42,0:23:18.92,*Default,NTP,0000,0000,0000,,作用原理就是如此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}work this way.
+Dialogue: 0,0:23:20.49,0:23:22.86,*Default,NTP,0000,0000,0000,,依靠相同的工作原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cells that take an electrical signal,
+Dialogue: 0,0:23:22.99,0:23:24.95,*Default,NTP,0000,0000,0000,,细胞将来自于神经的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is coming down your nerve
+Dialogue: 0,0:23:25.40,0:23:30.03,*Default,NTP,0000,0000,0000,,电信号传递到细胞收缩肌中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and convert it into a muscle contraction work this way,
+Dialogue: 0,0:23:31.94,0:23:35.37,*Default,NTP,0000,0000,0000,,所以神经和肌肉关节运动\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so 'neuro' nerve, muscle junctions act 
+Dialogue: 0,0:23:35.37,0:23:38.79,*Default,NTP,0000,0000,0000,,都基于配体门控离子通道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on ligand-gated ion channels.
+Dialogue: 0,0:23:40.03,0:23:43.33,*Default,NTP,0000,0000,0000,,另一类家族叫做G蛋白偶联受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another family is called the G-protein coupled receptor.
+Dialogue: 0,0:23:43.72,0:23:46.70,*Default,NTP,0000,0000,0000,,之所以叫这个名字是因为这种受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's called the G-protein coupled receptor because it's a receptor,
+Dialogue: 0,0:23:47.00,0:23:48.22,*Default,NTP,0000,0000,0000,,就像这里展示的一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the one shown here,
+Dialogue: 0,0:23:48.65,0:23:51.32,*Default,NTP,0000,0000,0000,,是与一种叫做G蛋白的特殊分子偶联的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's coupled to a special molecule called a G-protein.
+Dialogue: 0,0:23:51.75,0:23:54.83,*Default,NTP,0000,0000,0000,,当配体存在并与细胞表面的受体结合时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When the ligand is present it binds to the receptor outside the cell
+Dialogue: 0,0:23:55.10,0:23:57.16,*Default,NTP,0000,0000,0000,,就会激活G蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it activates this G-protein.
+Dialogue: 0,0:23:57.36,0:23:59.50,*Default,NTP,0000,0000,0000,,然后G蛋白在细胞内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The G-protein then goes on
+Dialogue: 0,0:23:59.97,0:24:03.03,*Default,NTP,0000,0000,0000,,诱发其它的一些生化反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to create some other biochemical changes inside the cell.
+Dialogue: 0,0:24:03.53,0:24:05.73,*Default,NTP,0000,0000,0000,,我们不会讲细节方面的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're not going to talk about this in any detail,
+Dialogue: 0,0:24:05.89,0:24:07.85,*Default,NTP,0000,0000,0000,,在你们的课本上会有更详细的讲解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a little bit more detail described in your book.
+Dialogue: 0,0:24:07.90,0:24:11.30,*Default,NTP,0000,0000,0000,,这类奇妙的分子是普遍存在的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are fascinating molecules that turn out to be ubiquitous.
+Dialogue: 0,0:24:11.30,0:24:16.55,*Default,NTP,0000,0000,0000,,它们在身体各处的细胞中都有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're everywhere in cells throughout your body and they are
+Dialogue: 0,0:24:16.87,0:24:19.97,*Default,NTP,0000,0000,0000,,并负责很多细胞间的相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}responsible for lots of the biochemistry of
+Dialogue: 0,0:24:19.97,0:24:22.36,*Default,NTP,0000,0000,0000,,及信号转导的生化过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cell/cell interaction and signaling.
+Dialogue: 0,0:24:23.13,0:24:25.88,*Default,NTP,0000,0000,0000,,另一类是酪氨酸激酶受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another family is receptor tyrosine kinases,
+Dialogue: 0,0:24:26.22,0:24:28.19,*Default,NTP,0000,0000,0000,,马上我给你们看另一张图\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll show another picture in a moment
+Dialogue: 0,0:24:28.20,0:24:31.25,*Default,NTP,0000,0000,0000,,这张图会更详细地告诉你们激酶是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that tells you more about what a kinase is,
+Dialogue: 0,0:24:31.36,0:24:33.69,*Default,NTP,0000,0000,0000,,激酶是一种能够\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a kinase is basically an enzyme that
+Dialogue: 0,0:24:33.69,0:24:37.68,*Default,NTP,0000,0000,0000,,向其他分子上添加磷酸基团的酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can add a phosphorous to another molecule.
+Dialogue: 0,0:24:38.23,0:24:39.49,*Default,NTP,0000,0000,0000,,它能够磷酸化蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can 'phosphorylate'
+Dialogue: 0,0:24:39.49,0:24:42.15,*Default,NTP,0000,0000,0000,,也就是给其他蛋白分子上添加磷酸基团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or add a phosphorous to another protein.
+Dialogue: 0,0:24:42.57,0:24:43.62,*Default,NTP,0000,0000,0000,,这是一种信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a signal -
+Dialogue: 0,0:24:43.62,0:24:46.25,*Default,NTP,0000,0000,0000,,一种通过磷酸来传递的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this passing of phosphorous -
+Dialogue: 0,0:24:46.98,0:24:52.27,*Default,NTP,0000,0000,0000,,这种信号在细胞内通讯时经常被用到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a signal that's used very frequently in intracellular communication.
+Dialogue: 0,0:24:52.46,0:24:54.23,*Default,NTP,0000,0000,0000,,待会我会详细讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk a little bit more about that in a minute.
+Dialogue: 0,0:24:54.40,0:24:55.32,*Default,NTP,0000,0000,0000,,在这个例子中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In this case,
+Dialogue: 0,0:24:55.50,0:24:59.30,*Default,NTP,0000,0000,0000,,酪氨酸激酶受体可以\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a receptor tyrosine kinase is a receptor molecule
+Dialogue: 0,0:24:59.30,0:25:03.56,*Default,NTP,0000,0000,0000,,在细胞表面区域与配体结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that binds a ligand at its surface outside the cell 
+Dialogue: 0,0:25:03.56,0:25:05.80,*Default,NTP,0000,0000,0000,,从而激发出\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and initiates this enzyme activity -
+Dialogue: 0,0:25:05.99,0:25:07.47,*Default,NTP,0000,0000,0000,,激酶的活性\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this kinase activity -
+Dialogue: 0,0:25:07.47,0:25:10.01,*Default,NTP,0000,0000,0000,,使其能够磷酸化另一类分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and causes phosphorylation of another molecule.
+Dialogue: 0,0:25:13.18,0:25:15.32,*Default,NTP,0000,0000,0000,,除了激酶以外  还有很多其他的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is - there are also other receptors
+Dialogue: 0,0:25:15.50,0:25:18.14,*Default,NTP,0000,0000,0000,,与酶相偶联\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are linked to other enzymes besides kinases.
+Dialogue: 0,0:25:18.39,0:25:20.63,*Default,NTP,0000,0000,0000,,我在这里将它们概括为一类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've included that as a general family here.
+Dialogue: 0,0:25:20.77,0:25:22.87,*Default,NTP,0000,0000,0000,,例如  这里是受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, these are receptors, for example, 
+Dialogue: 0,0:25:22.87,0:25:25.89,*Default,NTP,0000,0000,0000,,与配体相结合  激活一种酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that bind the ligand and then liberate an enzyme
+Dialogue: 0,0:25:26.17,0:25:30.68,*Default,NTP,0000,0000,0000,,这种酶能够催化细胞内的某些反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which promotes some sort of reaction inside the cell,
+Dialogue: 0,0:25:30.95,0:25:33.55,*Default,NTP,0000,0000,0000,,这些酶通常都是激酶  但不全是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often it's kinases but doesn't have to be.
+Dialogue: 0,0:25:36.49,0:25:40.16,*Default,NTP,0000,0000,0000,,在经常被激活的酶中有一种酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the enzymes that often gets activated
+Dialogue: 0,0:25:40.16,0:25:43.62,*Default,NTP,0000,0000,0000,,其功能是转化ATP  ATP是一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an enzyme which converts ATP, a small molecule
+Dialogue: 0,0:25:43.62,0:25:46.65,*Default,NTP,0000,0000,0000,,存在于所有细胞中的小分子物质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is inside all of our cells.
+Dialogue: 0,0:25:46.85,0:25:52.27,*Default,NTP,0000,0000,0000,,ATP分子的有名之处在于它能够储能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ATP is famous for its ability to store energy
+Dialogue: 0,0:25:52.27,0:25:56.10,*Default,NTP,0000,0000,0000,,但它也是一类信使分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's also a messenger molecule.
+Dialogue: 0,0:25:56.46,0:26:00.04,*Default,NTP,0000,0000,0000,,细胞内的某种酶被激活后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When a certain enzyme is activated inside cells,
+Dialogue: 0,0:26:00.27,0:26:03.50,*Default,NTP,0000,0000,0000,,ATP就能转化为一种叫cAMP的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ATP gets converted into a molecule called cyclic AMP, and 
+Dialogue: 0,0:26:04.14,0:26:10.00,*Default,NTP,0000,0000,0000,,cAMP是一种第二信使分子的范例\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cyclic AMP is an example of one of these molecules called second messengers.
+Dialogue: 0,0:26:10.95,0:26:14.07,*Default,NTP,0000,0000,0000,,这类分子的产生是对信号做出的一种反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gets produced in response to a signal
+Dialogue: 0,0:26:14.62,0:26:17.82,*Default,NTP,0000,0000,0000,,当配体和受体结合时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so there's a binding of a ligand to a receptor,
+Dialogue: 0,0:26:18.14,0:26:21.35,*Default,NTP,0000,0000,0000,,催化这种转化过程的酶被激活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the enzyme that does this conversion
+Dialogue: 0,0:26:21.61,0:26:25.93,*Default,NTP,0000,0000,0000,,更多的cAMP释放出来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is activated and more cycle AMP is released.
+Dialogue: 0,0:26:26.14,0:26:28.94,*Default,NTP,0000,0000,0000,,细胞内cAMP水平升高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As cyclic AMP levels rise inside the cell,
+Dialogue: 0,0:26:29.84,0:26:31.89,*Default,NTP,0000,0000,0000,,细胞行为就会发生一些改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something about cell behavior changes.
+Dialogue: 0,0:26:33.05,0:26:35.89,*Default,NTP,0000,0000,0000,,使用第二信使分子的好处在于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, one of the advantages of having second messengers is
+Dialogue: 0,0:26:35.89,0:26:37.20,*Default,NTP,0000,0000,0000,,它能够将\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is one way that
+Dialogue: 0,0:26:37.20,0:26:39.38,*Default,NTP,0000,0000,0000,,作用于细胞内部不同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can integrate between different receptor systems
+Dialogue: 0,0:26:39.38,0:26:41.13,*Default,NTP,0000,0000,0000,,受体系统结合起来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are acting inside a cell.
+Dialogue: 0,0:26:41.77,0:26:43.60,*Default,NTP,0000,0000,0000,,如果有两种不同的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you have two different ligands
+Dialogue: 0,0:26:43.76,0:26:45.57,*Default,NTP,0000,0000,0000,,刺激不同的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}stimulating two different receptors,
+Dialogue: 0,0:26:46.28,0:26:52.60,*Default,NTP,0000,0000,0000,,一种能够活化酶  并促进生成cAMP\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and one causes activation of this enzyme and generation of cyclic AMP,
+Dialogue: 0,0:26:53.76,0:26:55.58,*Default,NTP,0000,0000,0000,,cAMP的水平就会升高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cyclic AMP levels will start to rise.
+Dialogue: 0,0:26:55.98,0:26:59.52,*Default,NTP,0000,0000,0000,,如果受另一种配体激活的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If another receptor operating from 
+Dialogue: 0,0:26:59.53,0:27:01.98,*Default,NTP,0000,0000,0000,,能够完成相同的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a different ligand does the same thing,
+Dialogue: 0,0:27:02.24,0:27:06.62,*Default,NTP,0000,0000,0000,,即激活一种能够促进cAMP生成的酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}generates an enzyme which causes cyclic AMP to increase,
+Dialogue: 0,0:27:06.84,0:27:10.52,*Default,NTP,0000,0000,0000,,cAMP的生成速率会比\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate of cyclic AMP increase is going to go up
+Dialogue: 0,0:27:11.60,0:27:14.93,*Default,NTP,0000,0000,0000,,只有其中之一被激活时更加快\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}faster than if only one of these was activated.
+Dialogue: 0,0:27:16.79,0:27:18.91,*Default,NTP,0000,0000,0000,,细胞内部将经历不同的生理过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cell is going to experience something different inside
+Dialogue: 0,0:27:19.08,0:27:22.53,*Default,NTP,0000,0000,0000,,因为是两种受体被激活而不是一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because both receptors were activated instead of just one.
+Dialogue: 0,0:27:23.85,0:27:26.82,*Default,NTP,0000,0000,0000,,第二信使分子能够收集\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes second messengers collect signals
+Dialogue: 0,0:27:26.99,0:27:30.50,*Default,NTP,0000,0000,0000,,来自不同受体系统的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from a variety of different receptor systems,
+Dialogue: 0,0:27:30.82,0:27:33.56,*Default,NTP,0000,0000,0000,,将它们转化为同一种细胞内在的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}translate them into one kind of internal change,
+Dialogue: 0,0:27:34.06,0:27:38.23,*Default,NTP,0000,0000,0000,,这样细胞就只需对一种变化作出反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the cell then just has to know about that one thing changing.
+Dialogue: 0,0:27:39.18,0:27:40.66,*Default,NTP,0000,0000,0000,,你们明白了么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that make sense?
+Dialogue: 0,0:27:42.61,0:27:45.08,*Default,NTP,0000,0000,0000,,这是另一个第二信使的例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is another example of a second messenger,
+Dialogue: 0,0:27:45.34,0:27:46.86,*Default,NTP,0000,0000,0000,,磷酸肌醇信号通路\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the inositol lipid pathway.
+Dialogue: 0,0:27:47.12,0:27:49.44,*Default,NTP,0000,0000,0000,,这些分子存在于细胞膜表面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are molecules that exist naturally in cell membranes
+Dialogue: 0,0:27:49.74,0:27:54.80,*Default,NTP,0000,0000,0000,,能被受体激活的某种酶或激酶所活化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and are activated by certain enzymes and kinases generated by receptors.
+Dialogue: 0,0:27:54.87,0:27:56.15,*Default,NTP,0000,0000,0000,,在书上讲了很多这方面的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More is said about this in the book
+Dialogue: 0,0:27:56.15,0:27:58.02,*Default,NTP,0000,0000,0000,,在这里我只是将其作为例子概括性地讲讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just include it here as an example,
+Dialogue: 0,0:27:58.20,0:28:01.75,*Default,NTP,0000,0000,0000,,但这已经超出我今天想讲的范围了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's sort of beyond the scope of what I wanted to talk about today.
+Dialogue: 0,0:28:02.86,0:28:05.06,*Default,NTP,0000,0000,0000,,关于激酶我想再多讲一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I did want to say a little bit more about kinases because
+Dialogue: 0,0:28:05.37,0:28:08.64,*Default,NTP,0000,0000,0000,,因为它们对细胞内通讯十分重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're so important in intracellular communication
+Dialogue: 0,0:28:09.34,0:28:11.72,*Default,NTP,0000,0000,0000,,因为激酶的优越之处在于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and kinases take advantage of the fact
+Dialogue: 0,0:28:11.72,0:28:14.74,*Default,NTP,0000,0000,0000,,这种蛋白通常不只有一种状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that proteins can often exist in more than one state,
+Dialogue: 0,0:28:15.78,0:28:18.80,*Default,NTP,0000,0000,0000,,这也令它们在细胞中的用处极大\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's what makes them useful molecules inside cells.
+Dialogue: 0,0:28:19.08,0:28:22.45,*Default,NTP,0000,0000,0000,,它们能够传导信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what makes proteins useful in transmitting
+Dialogue: 0,0:28:22.45,0:28:24.97,*Default,NTP,0000,0000,0000,,或者反馈信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or responding to signals.
+Dialogue: 0,0:28:26.05,0:28:28.96,*Default,NTP,0000,0000,0000,,蛋白的状态通常取决于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often the state of a protein depends on
+Dialogue: 0,0:28:28.96,0:28:31.29,*Default,NTP,0000,0000,0000,,它们是否被磷酸化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether it's phosphorylated or not.
+Dialogue: 0,0:28:31.76,0:28:33.34,*Default,NTP,0000,0000,0000,,磷酸化的意思是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, being phosphorylated means that
+Dialogue: 0,0:28:33.34,0:28:36.51,*Default,NTP,0000,0000,0000,,蛋白上连接了一个磷酸基团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a phosphate group has been added to the protein,
+Dialogue: 0,0:28:37.41,0:28:39.29,*Default,NTP,0000,0000,0000,,这个磷酸基团只能连在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and phosphate groups can only be added to
+Dialogue: 0,0:28:39.29,0:28:41.54,*Default,NTP,0000,0000,0000,,蛋白中某些特定的氨基酸上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}certain amino acids along a protein.
+Dialogue: 0,0:28:42.89,0:28:46.37,*Default,NTP,0000,0000,0000,,只有含这些氨基酸的蛋白质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Proteins are only susceptible to phosphorylation
+Dialogue: 0,0:28:46.51,0:28:49.59,*Default,NTP,0000,0000,0000,,才能够被磷酸化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if they have certain kinds of amino acid sequences.
+Dialogue: 0,0:28:50.65,0:28:54.21,*Default,NTP,0000,0000,0000,,例如  一种能够被磷酸化的氨基酸\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the amino acids that can be phosphorylated
+Dialogue: 0,0:28:54.21,0:28:55.32,*Default,NTP,0000,0000,0000,,叫做酪氨酸\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is tyrosine, for example.
+Dialogue: 0,0:28:56.45,0:28:59.56,*Default,NTP,0000,0000,0000,,所以  一种蛋白质中含有酪氨酸\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, a protein that has tyrosine
+Dialogue: 0,0:28:59.56,0:29:01.21,*Default,NTP,0000,0000,0000,,并且该酪氨酸位于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it has tyrosine in a position
+Dialogue: 0,0:29:01.21,0:29:02.66,*Default,NTP,0000,0000,0000,,像蛋白质的外侧这样的位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such that it's on the outside of the protein
+Dialogue: 0,0:29:02.66,0:29:08.05,*Default,NTP,0000,0000,0000,,这样才能够发生磷酸化反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and accessible to chemical reaction  can be phosphorylated.
+Dialogue: 0,0:29:08.65,0:29:13.17,*Default,NTP,0000,0000,0000,,激酶能够识别这类蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What a kinase enzyme does is that it recognizes this protein,
+Dialogue: 0,0:29:13.52,0:29:16.14,*Default,NTP,0000,0000,0000,,例如  包含酪氨酸的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for example, the tyrosine that's on the protein.
+Dialogue: 0,0:29:16.59,0:29:20.22,*Default,NTP,0000,0000,0000,,它能够催化蛋白参与如下反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It performs a chemical reaction on the protein,
+Dialogue: 0,0:29:20.39,0:29:23.93,*Default,NTP,0000,0000,0000,,即将ATP上的一个磷酸基团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}taking a phosphorous from ATP
+Dialogue: 0,0:29:23.93,0:29:25.84,*Default,NTP,0000,0000,0000,,转移到蛋白质上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and moving that phosphorous onto the protein.
+Dialogue: 0,0:29:27.40,0:29:28.98,*Default,NTP,0000,0000,0000,,现在你们已经知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you know already,
+Dialogue: 0,0:29:29.15,0:29:34.23,*Default,NTP,0000,0000,0000,,或者读我给你们看的第四章\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or you could review in Chapter 4 that I provided to you,
+Dialogue: 0,0:29:34.42,0:29:36.17,*Default,NTP,0000,0000,0000,,就能了解蛋白质的工作原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something about how proteins work.
+Dialogue: 0,0:29:36.64,0:29:41.26,*Default,NTP,0000,0000,0000,,蛋白质的功能与结构密切相关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know that the function of a protein is intimately related to its structure.
+Dialogue: 0,0:29:41.89,0:29:44.01,*Default,NTP,0000,0000,0000,,在溶液中  蛋白质以三维结构存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Proteins have three dimensional structures
+Dialogue: 0,0:29:44.31,0:29:48.26,*Default,NTP,0000,0000,0000,,它的结构决定功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in solution and their structure determines what they do.
+Dialogue: 0,0:29:48.81,0:29:52.04,*Default,NTP,0000,0000,0000,,有时蛋白质结构上一些很小的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes subtle changes in the structure of a protein
+Dialogue: 0,0:29:52.19,0:29:55.79,*Default,NTP,0000,0000,0000,,就能将其由激活态转变为非激活态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can convert it from an active state into an inactive state.
+Dialogue: 0,0:29:58.30,0:29:59.86,*Default,NTP,0000,0000,0000,,蛋白质作为一种生物活性分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's one of the beauties of proteins
+Dialogue: 0,0:29:59.86,0:30:00.58,*Default,NTP,0000,0000,0000,,其优势之一是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as working molecules
+Dialogue: 0,0:30:00.94,0:30:04.89,*Default,NTP,0000,0000,0000,,能够通过精细的方法改变其结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that their structure can be changed by subtle means.
+Dialogue: 0,0:30:05.07,0:30:07.33,*Default,NTP,0000,0000,0000,,有时候  蛋白质在结构上的小小改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes that subtle change can
+Dialogue: 0,0:30:07.47,0:30:10.91,*Default,NTP,0000,0000,0000,,会导致其功能发生巨大变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lead to a big change in the function of the protein.
+Dialogue: 0,0:30:11.73,0:30:17.22,*Default,NTP,0000,0000,0000,,那么  想象一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, imagine if that change in structure
+Dialogue: 0,0:30:17.85,0:30:20.03,*Default,NTP,0000,0000,0000,,只需引入磷酸基团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could be switched on and off
+Dialogue: 0,0:30:20.04,0:30:22.44,*Default,NTP,0000,0000,0000,,就能导致蛋白质的结构发生变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by addition of a phosphorous;
+Dialogue: 0,0:30:23.71,0:30:25.71,*Default,NTP,0000,0000,0000,,事实上很多蛋白质就是如此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in fact it can in many proteins.
+Dialogue: 0,0:30:25.98,0:30:28.69,*Default,NTP,0000,0000,0000,,一些蛋白质可以从关闭状态的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some proteins can be switched from an 'off' position 
+Dialogue: 0,0:30:28.69,0:30:30.19,*Default,NTP,0000,0000,0000,,无所作为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where they don't do anything
+Dialogue: 0,0:30:30.45,0:30:37.26,*Default,NTP,0000,0000,0000,,到成为开启状态后  执行某种功能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to an 'on' position where they now do something
+Dialogue: 0,0:30:37.27,0:30:38.20,*Default,NTP,0000,0000,0000,,中间只发生了一个引入磷酸基的化学反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by only a chemical reaction like this where a phosphorous is added.
+Dialogue: 0,0:30:38.53,0:30:40.94,*Default,NTP,0000,0000,0000,,激酶能够  在很多情况下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Kinases can, in many cases,
+Dialogue: 0,0:30:41.09,0:30:46.29,*Default,NTP,0000,0000,0000,,能够激活一种蛋白或者关闭一种蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}serve as a mechanism for switching a protein on or switching a protein off.
+Dialogue: 0,0:30:47.38,0:30:50.06,*Default,NTP,0000,0000,0000,,如果这种蛋白是一种酶的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If that protein is an enzyme then you've
+Dialogue: 0,0:30:50.31,0:30:52.89,*Default,NTP,0000,0000,0000,,你就能够将酶从无催化作用的静息态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you've switched it from an 'off' position
+Dialogue: 0,0:30:53.12,0:30:56.87,*Default,NTP,0000,0000,0000,,激活至能催化反应的激活态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it's not catalyzing a reaction to an 'on' position where it is,
+Dialogue: 0,0:30:57.13,0:31:00.57,*Default,NTP,0000,0000,0000,,你改变了细胞的生化状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've changed the biochemical state of the cell,
+Dialogue: 0,0:31:00.90,0:31:04.75,*Default,NTP,0000,0000,0000,,也改变了细胞内发生的化学反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've changed the chemical reactions that can occur within the cell,
+Dialogue: 0,0:31:04.96,0:31:06.31,*Default,NTP,0000,0000,0000,,改变了细胞的行为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you've changed its behavior.
+Dialogue: 0,0:31:07.21,0:31:13.21,*Default,NTP,0000,0000,0000,,这就是激酶为什么如此重要的原因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a very simplified version of why kinases are important.
+Dialogue: 0,0:31:13.89,0:31:17.23,*Default,NTP,0000,0000,0000,,那么在激酶激活蛋白质后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, if this kinase happens to turn this protein on
+Dialogue: 0,0:31:17.68,0:31:20.85,*Default,NTP,0000,0000,0000,,你会希望有一种方法能够使它失活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you would like to have a mechanism to turn it off as well.
+Dialogue: 0,0:31:21.24,0:31:24.56,*Default,NTP,0000,0000,0000,,蛋白质的另一个美妙之处就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other beauty about - beautiful thing about proteins
+Dialogue: 0,0:31:24.72,0:31:27.92,*Default,NTP,0000,0000,0000,,如果蛋白质发生一些小的构像改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that if you make subtle conformational changes,
+Dialogue: 0,0:31:28.22,0:31:29.94,*Default,NTP,0000,0000,0000,,这些改变通常是可逆的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often those changes are reversible.
+Dialogue: 0,0:31:33.01,0:31:36.35,*Default,NTP,0000,0000,0000,,现在你们都懂蛋白能够发生不可逆的改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you all know that we can make irreversible changes in proteins,
+Dialogue: 0,0:31:36.50,0:31:37.88,*Default,NTP,0000,0000,0000,,能够完全变性\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can denature them completely,
+Dialogue: 0,0:31:38.63,0:31:41.50,*Default,NTP,0000,0000,0000,,比如在你煮鸡蛋的时候就是这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's what happens when you cook an egg for example.
+Dialogue: 0,0:31:43.43,0:31:48.80,*Default,NTP,0000,0000,0000,,对蛋清部分所有的蛋白质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've taken all the proteins inside the white of the egg,
+Dialogue: 0,0:31:48.94,0:31:50.57,*Default,NTP,0000,0000,0000,,比如说进行加热\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, you raise the temperature.
+Dialogue: 0,0:31:50.95,0:31:52.81,*Default,NTP,0000,0000,0000,,它们的化学性质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You make not small changes in their chemistry 
+Dialogue: 0,0:31:52.81,0:31:55.20,*Default,NTP,0000,0000,0000,,就会发生巨大的改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but big changes in their chemistry.
+Dialogue: 0,0:31:55.65,0:31:58.39,*Default,NTP,0000,0000,0000,,它们变性了  这种变性是可以观察到的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You denature them, you can watch them denature because the
+Dialogue: 0,0:31:58.44,0:32:03.02,*Default,NTP,0000,0000,0000,,蛋清由透明变为白色  再也变不回去\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}egg white turns from clear to white and it doesn't go back.
+Dialogue: 0,0:32:03.64,0:32:06.52,*Default,NTP,0000,0000,0000,,蛋白质的结构发生不可逆的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've irreversibly changed that substance
+Dialogue: 0,0:32:06.68,0:32:11.69,*Default,NTP,0000,0000,0000,,因为蛋白质内部的全部结构都改变了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you've changed the structure of all the proteins inside.
+Dialogue: 0,0:32:13.39,0:32:16.37,*Default,NTP,0000,0000,0000,,这种不可逆的改变时时刻刻都在发生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That - irreversible changes happen all the time too
+Dialogue: 0,0:32:16.37,0:32:18.42,*Default,NTP,0000,0000,0000,,但我在这里想讲的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but here I'm talking about very subtle
+Dialogue: 0,0:32:18.65,0:32:21.84,*Default,NTP,0000,0000,0000,,对蛋白质结构进行微小的改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}small changes where you're changing the structure of the protein
+Dialogue: 0,0:32:21.84,0:32:24.29,*Default,NTP,0000,0000,0000,,小到这种改变是可逆的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but only a little bit such that it can go back.
+Dialogue: 0,0:32:24.64,0:32:26.79,*Default,NTP,0000,0000,0000,,一种方法是通过去除磷酸基团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One way that you could switch this on
+Dialogue: 0,0:32:26.98,0:32:29.94,*Default,NTP,0000,0000,0000,,来改变细胞内蛋白的状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and off inside the cell is by taking off this phosphorous,
+Dialogue: 0,0:32:30.86,0:32:34.28,*Default,NTP,0000,0000,0000,,催化添加磷酸基团  此逆反应的蛋白酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}proteins enzymes that do this opposite reaction,
+Dialogue: 0,0:32:34.41,0:32:36.77,*Default,NTP,0000,0000,0000,,能够催化逆反应的激酶叫做磷酸激酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the opposite to kinases are called phosphokinases.
+Dialogue: 0,0:32:38.81,0:32:40.42,*Default,NTP,0000,0000,0000,,想像一下  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could imagine a protein 
+Dialogue: 0,0:32:40.42,0:32:44.17,*Default,NTP,0000,0000,0000,,在细胞中有一种大量存在的蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's existing inside a cell at some level of abundance.
+Dialogue: 0,0:32:44.33,0:32:45.68,*Default,NTP,0000,0000,0000,,有一百个这样的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are 100 of these molecules,
+Dialogue: 0,0:32:46.26,0:32:50.08,*Default,NTP,0000,0000,0000,,当受体被激活  激酶被激活后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when a receptor gets activated a kinase activity gets activated,
+Dialogue: 0,0:32:50.36,0:32:54.50,*Default,NTP,0000,0000,0000,,激酶作用于蛋白  使蛋白活化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the kinase acts on the protein, the protein gets switched on,
+Dialogue: 0,0:32:54.95,0:32:56.97,*Default,NTP,0000,0000,0000,,细胞中就会发生一些新变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something new starts to happen inside the cell.
+Dialogue: 0,0:32:57.85,0:33:02.47,*Default,NTP,0000,0000,0000,,另一部分受体激活了磷酸酶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another receptor eventually activates a phosphatase,
+Dialogue: 0,0:33:02.79,0:33:05.88,*Default,NTP,0000,0000,0000,,磷酸酶使这些蛋白失活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that phosphatase now turns the protein off.
+Dialogue: 0,0:33:06.52,0:33:10.65,*Default,NTP,0000,0000,0000,,这种来自外源的变化能够改变细胞的状态\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a switch that from outside can be used to change the life of a cell.
+Dialogue: 0,0:33:14.03,0:33:17.17,*Default,NTP,0000,0000,0000,,这些并不复杂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was some, not too complicated,
+Dialogue: 0,0:33:18.02,0:33:21.10,*Default,NTP,0000,0000,0000,,却有希望描述清楚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but hopefully understandable description
+Dialogue: 0,0:33:21.14,0:33:29.09,*Default,NTP,0000,0000,0000,,生物学领域一大类现象  称为信号转导\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a whole area of biology called signal transduction.
+Dialogue: 0,0:33:30.03,0:33:32.15,*Default,NTP,0000,0000,0000,,如果你在生物学领域听到信号转导这个词\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you hear about signal transduction in biology,
+Dialogue: 0,0:33:32.46,0:33:33.93,*Default,NTP,0000,0000,0000,,那么研究信号转导的人就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}people that study signal transduction
+Dialogue: 0,0:33:34.06,0:33:35.82,*Default,NTP,0000,0000,0000,,在研究我刚才讲过的那些东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are studying just these things we talked about,
+Dialogue: 0,0:33:35.94,0:33:43.98,*Default,NTP,0000,0000,0000,,生化信息如何传入细胞并传递至细胞各处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how biochemical messages get transferred into cells and through cells.
+Dialogue: 0,0:33:44.70,0:33:47.81,*Default,NTP,0000,0000,0000,,我现在想讲一些较高水平的放大机制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to look at a slightly higher level of magnification now
+Dialogue: 0,0:33:47.82,0:33:50.92,*Default,NTP,0000,0000,0000,,并思考不同种类的细胞通讯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and think about different kinds of cellular communication.
+Dialogue: 0,0:33:52.61,0:33:54.18,*Default,NTP,0000,0000,0000,,细胞通讯中的一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One kind of cellular communication
+Dialogue: 0,0:33:54.31,0:33:57.98,*Default,NTP,0000,0000,0000,,与我刚才讲过的信号转导的机制相似\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}occurs by similar mechanisms to what we were talking about.
+Dialogue: 0,0:33:58.27,0:34:01.40,*Default,NTP,0000,0000,0000,,这个细胞上有许多受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here, there are receptors on one cell and
+Dialogue: 0,0:34:01.54,0:34:04.88,*Default,NTP,0000,0000,0000,,与之结合的配体并非是可溶性分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the ligand that they experience is not a dissolved molecule,
+Dialogue: 0,0:34:05.90,0:34:09.36,*Default,NTP,0000,0000,0000,,而是一个附着在其他细胞上的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but actually a molecule that's attached to another cell.
+Dialogue: 0,0:34:10.44,0:34:15.46,*Default,NTP,0000,0000,0000,,有时细胞与细胞靠互相接触进行信号传递\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes signals are transmitted between cells by cell/cell contact.
+Dialogue: 0,0:34:15.97,0:34:17.47,*Default,NTP,0000,0000,0000,,通过细胞之间的接触\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By cell/cell contact,
+Dialogue: 0,0:34:17.61,0:34:21.33,*Default,NTP,0000,0000,0000,,我的意思是在一种细胞上的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mean that there's a receptor in one cell that makes
+Dialogue: 0,0:34:21.60,0:34:25.60,*Default,NTP,0000,0000,0000,,能与另一细胞上的受体发生某种化学反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some kind of a chemical interaction with a receptor in another cell.
+Dialogue: 0,0:34:27.80,0:34:29.03,*Default,NTP,0000,0000,0000,,这取决于你将哪种细胞上的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Depending on which cell you are you
+Dialogue: 0,0:34:29.03,0:34:31.55,*Default,NTP,0000,0000,0000,,称为受体  哪种称为配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would call one the 'receptor' and the other the 'ligand'.
+Dialogue: 0,0:34:32.73,0:34:34.84,*Default,NTP,0000,0000,0000,,这种通讯方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a mode of communication that's
+Dialogue: 0,0:34:35.12,0:34:39.93,*Default,NTP,0000,0000,0000,,在免疫系统中广泛使用  我们下面会讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}used very frequently in the immune system as we'll see later.
+Dialogue: 0,0:34:40.08,0:34:41.45,*Default,NTP,0000,0000,0000,,通过这种方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the way, for example,
+Dialogue: 0,0:34:41.62,0:34:44.33,*Default,NTP,0000,0000,0000,,外源分子  或者说抗原\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that foreign molecules or antigens
+Dialogue: 0,0:34:44.33,0:34:47.54,*Default,NTP,0000,0000,0000,,进入到免疫系统的细胞中后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}get presented to cells of your immune system
+Dialogue: 0,0:34:47.54,0:34:50.50,*Default,NTP,0000,0000,0000,,就会开启免疫反应过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to start the process of making an immune response,
+Dialogue: 0,0:34:52.46,0:34:54.59,*Default,NTP,0000,0000,0000,,有时候就是细胞之间的相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so sometimes a cell/cell interaction.
+Dialogue: 0,0:34:54.92,0:34:57.80,*Default,NTP,0000,0000,0000,,我接下来要讲的有关受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The rest of these examples refer to receptors as I've been
+Dialogue: 0,0:34:57.85,0:35:00.77,*Default,NTP,0000,0000,0000,,以及能游走于体内各处可溶性的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}describing them and ligands that are soluble and can move around the body.
+Dialogue: 0,0:35:01.30,0:35:04.69,*Default,NTP,0000,0000,0000,,将这些信号分为三大类会比较容易理解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's useful to separate these kinds of signals into three categories.
+Dialogue: 0,0:35:05.16,0:35:07.87,*Default,NTP,0000,0000,0000,,一种在最上面  称为自分泌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is shown at the top here, its call autocrine.
+Dialogue: 0,0:35:08.54,0:35:10.59,*Default,NTP,0000,0000,0000,,它可能是最奇特的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is, maybe, the strangest
+Dialogue: 0,0:35:10.59,0:35:14.06,*Default,NTP,0000,0000,0000,,因为激活受体的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the ligand that stimulates the receptor
+Dialogue: 0,0:35:14.07,0:35:15.50,*Default,NTP,0000,0000,0000,,是由细胞自身产生的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is produced by the cell itself;
+Dialogue: 0,0:35:16.39,0:35:20.74,*Default,NTP,0000,0000,0000,,有时细胞产生让自己接受的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so sometimes cells make signals that they receive.
+Dialogue: 0,0:35:21.40,0:35:24.59,*Default,NTP,0000,0000,0000,,免疫系统也常使用这种方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is commonly used in the immune system as well,
+Dialogue: 0,0:35:24.74,0:35:26.34,*Default,NTP,0000,0000,0000,,但这主要是一种放大信号的方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a way of amplifying a signal.
+Dialogue: 0,0:35:27.15,0:35:29.26,*Default,NTP,0000,0000,0000,,如果促使细胞产生这种特定的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, what if I activated this cell
+Dialogue: 0,0:35:30.10,0:35:33.87,*Default,NTP,0000,0000,0000,,以此来激活细胞 会出现什么结果\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by encouraging it to produce this particular ligand?
+Dialogue: 0,0:35:35.10,0:35:39.44,*Default,NTP,0000,0000,0000,,对于带有对应受体的细胞来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That ligand was one for which the cell had a receptor
+Dialogue: 0,0:35:39.98,0:35:43.42,*Default,NTP,0000,0000,0000,,这种配体能够刺激细胞产生更多的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that further encouraged it to produce more of the ligand.
+Dialogue: 0,0:35:44.99,0:35:47.43,*Default,NTP,0000,0000,0000,,那么  你就能画出一个循环图\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, then you could imagine a cycle here
+Dialogue: 0,0:35:47.79,0:35:49.65,*Default,NTP,0000,0000,0000,,激活受体能导致\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where activation of the receptor is leading to
+Dialogue: 0,0:35:49.65,0:35:51.51,*Default,NTP,0000,0000,0000,,更多配体的生成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}production of more ligand,
+Dialogue: 0,0:35:51.52,0:35:54.59,*Default,NTP,0000,0000,0000,,这些配体又会刺激受体生成更多配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is leading to activation of the receptor and production of a ligand.
+Dialogue: 0,0:35:55.10,0:35:58.56,*Default,NTP,0000,0000,0000,,这个过程叫做正反馈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's an example of a process called positive feedback.
+Dialogue: 0,0:35:59.92,0:36:01.88,*Default,NTP,0000,0000,0000,,受体被激活的程度越高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The more the receptor gets activated
+Dialogue: 0,0:36:01.89,0:36:04.24,*Default,NTP,0000,0000,0000,,产生的反馈效应就越强\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the more feedback it gets to activate.
+Dialogue: 0,0:36:05.09,0:36:09.78,*Default,NTP,0000,0000,0000,,这可能会产生非常强的放大效应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That can be a very strong amplifying response,
+Dialogue: 0,0:36:11.75,0:36:14.52,*Default,NTP,0000,0000,0000,,这种效应在免疫系统中很常见\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that happens in the immune system in many cases.
+Dialogue: 0,0:36:14.83,0:36:18.63,*Default,NTP,0000,0000,0000,,T细胞能分泌这类叫做细胞因子的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An example is production of certain molecules called cytokines by T-cells
+Dialogue: 0,0:36:18.63,0:36:20.20,*Default,NTP,0000,0000,0000,,实现自激活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that activate themselves.
+Dialogue: 0,0:36:22.28,0:36:24.14,*Default,NTP,0000,0000,0000,,另一类叫做旁分泌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another example is called paracrine.
+Dialogue: 0,0:36:24.40,0:36:27.93,*Default,NTP,0000,0000,0000,,自分泌和旁分泌的区别在于  旁分泌中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here, what's different between autocrine and paracrine is that
+Dialogue: 0,0:36:28.05,0:36:29.86,*Default,NTP,0000,0000,0000,,产生信号的细胞和接收信号的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's some distance between the cell
+Dialogue: 0,0:36:29.98,0:36:32.84,*Default,NTP,0000,0000,0000,,之间存在着一定的距离\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that produces the signal and the cell that receives the signal,
+Dialogue: 0,0:36:33.41,0:36:34.94,*Default,NTP,0000,0000,0000,,但这个距离并不远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's not too great a distance
+Dialogue: 0,0:36:35.43,0:36:37.86,*Default,NTP,0000,0000,0000,,因为血液系统并不参与\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the blood system doesn't have to be involved.
+Dialogue: 0,0:36:38.46,0:36:41.84,*Default,NTP,0000,0000,0000,,这里产生的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Molecules are produced here and they flow directly over,
+Dialogue: 0,0:36:42.20,0:36:43.44,*Default,NTP,0000,0000,0000,,通常是以扩散的方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}usually by diffusion,
+Dialogue: 0,0:36:43.94,0:36:45.32,*Default,NTP,0000,0000,0000,,直接到达临近的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the neighboring molecule.
+Dialogue: 0,0:36:45.96,0:36:47.16,*Default,NTP,0000,0000,0000,,Para的意思是接近\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'Para' means near,
+Dialogue: 0,0:36:47.17,0:36:49.93,*Default,NTP,0000,0000,0000,,paracrine意思是来自附近的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'paracrine' means 'a signal from nearby'.
+Dialogue: 0,0:36:51.29,0:36:56.27,*Default,NTP,0000,0000,0000,,内分泌系统的信号通过血液来传递\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Endocrine are signals that get carried through the blood system.
+Dialogue: 0,0:36:56.58,0:36:59.71,*Default,NTP,0000,0000,0000,,发出信号的细胞产生信号分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The cell that's producing the signal produces
+Dialogue: 0,0:36:59.86,0:37:02.40,*Default,NTP,0000,0000,0000,,数量十分充足 能够进入到血液中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}enough of the molecule so that it enters the bloodstream,
+Dialogue: 0,0:37:02.62,0:37:04.10,*Default,NTP,0000,0000,0000,,信号随着血液流遍全身\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it circulates throughout your body,
+Dialogue: 0,0:37:04.25,0:37:06.43,*Default,NTP,0000,0000,0000,,最终到达较远处的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}eventually it reaches a cell at a great distance,
+Dialogue: 0,0:37:06.80,0:37:09.11,*Default,NTP,0000,0000,0000,,在这些细胞上有与配体配对的受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which has a receptor for that ligand
+Dialogue: 0,0:37:09.11,0:37:10.50,*Default,NTP,0000,0000,0000,,信号被细胞接收\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the signal gets received.
+Dialogue: 0,0:37:11.13,0:37:13.15,*Default,NTP,0000,0000,0000,,这种信号传递的例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An example of that is, of course,
+Dialogue: 0,0:37:13.29,0:37:15.50,*Default,NTP,0000,0000,0000,,就是胰脏细胞产生的胰岛素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}insulin which is produced by cells of the pancreas
+Dialogue: 0,0:37:15.51,0:37:17.72,*Default,NTP,0000,0000,0000,,作用于全身各处的细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and acts on cells all over the body.
+Dialogue: 0,0:37:18.45,0:37:20.35,*Default,NTP,0000,0000,0000,,肾上腺素是另一个例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Adrenaline is another one,
+Dialogue: 0,0:37:21.03,0:37:22.96,*Default,NTP,0000,0000,0000,,肾上腺素由肾上腺细胞分泌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}produced by cells in your adrenal gland
+Dialogue: 0,0:37:22.96,0:37:25.38,*Default,NTP,0000,0000,0000,,但全身各处的细胞都能利用它\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but used by cells all over your body.
+Dialogue: 0,0:37:30.13,0:37:31.97,*Default,NTP,0000,0000,0000,,内分泌系统是一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the endocrine system is a body organ system
+Dialogue: 0,0:37:31.97,0:37:34.50,*Default,NTP,0000,0000,0000,,作用于周身各器官的系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is specialized
+Dialogue: 0,0:37:34.50,0:37:38.30,*Default,NTP,0000,0000,0000,,它专门产生这些有用的信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in producing these kinds of signals that are used -
+Dialogue: 0,0:37:38.30,0:37:39.91,*Default,NTP,0000,0000,0000,,这些信号在血液中聚集\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that accumulate in the blood
+Dialogue: 0,0:37:39.92,0:37:42.02,*Default,NTP,0000,0000,0000,,全身各处的细胞都可利用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and are used by cells all over the body.
+Dialogue: 0,0:37:42.71,0:37:47.39,*Default,NTP,0000,0000,0000,,内分泌系统产生的分子通常有两类\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are two general classes of molecules that are produced by the endocrine system.
+Dialogue: 0,0:37:48.29,0:37:51.13,*Default,NTP,0000,0000,0000,,这些分子都叫做激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All of the molecules are called hormones,
+Dialogue: 0,0:37:52.11,0:37:53.67,*Default,NTP,0000,0000,0000,,那么激素就是在内分泌系统中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so a hormone is another name for
+Dialogue: 0,0:37:53.81,0:37:56.95,*Default,NTP,0000,0000,0000,,起作用的配体的另一种叫法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a ligand that operates in this endocrine fashion.
+Dialogue: 0,0:37:58.46,0:37:59.54,*Default,NTP,0000,0000,0000,,激素只是一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A hormone is just a ligand
+Dialogue: 0,0:37:59.54,0:38:01.87,*Default,NTP,0000,0000,0000,,在内分泌系统中起作用的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that operates in this endocrine fashion.
+Dialogue: 0,0:38:04.03,0:38:05.48,*Default,NTP,0000,0000,0000,,激素可以是蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hormones can be proteins,
+Dialogue: 0,0:38:05.48,0:38:07.95,*Default,NTP,0000,0000,0000,,内分泌激素可以是蛋白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}endocrine hormones can be proteins,
+Dialogue: 0,0:38:09.34,0:38:11.07,*Default,NTP,0000,0000,0000,,这意味着激素是大分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}meaning they're large molecules
+Dialogue: 0,0:38:11.07,0:38:12.98,*Default,NTP,0000,0000,0000,,并且通常是水溶性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are usually fairly water soluble,
+Dialogue: 0,0:38:13.56,0:38:14.69,*Default,NTP,0000,0000,0000,,激素也可以是类固醇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or they can be steroids.
+Dialogue: 0,0:38:15.72,0:38:19.23,*Default,NTP,0000,0000,0000,,类固醇是小分子物质  比蛋白质小得多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Steroids are small molecules - much smaller than proteins -
+Dialogue: 0,0:38:19.71,0:38:21.71,*Default,NTP,0000,0000,0000,,这类小分子是非水溶性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}smaller molecules that tend to be hydrophobic
+Dialogue: 0,0:38:21.71,0:38:23.72,*Default,NTP,0000,0000,0000,,或者说是脂溶性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or lipid soluble.
+Dialogue: 0,0:38:24.16,0:38:26.48,*Default,NTP,0000,0000,0000,,例如  我们以前讲过的胰岛素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Example, protein hormones are insulin
+Dialogue: 0,0:38:26.48,0:38:28.81,*Default,NTP,0000,0000,0000,,还有胰高血糖素都是蛋白质激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we've talked about before and glucagon,
+Dialogue: 0,0:38:29.09,0:38:31.28,*Default,NTP,0000,0000,0000,,生长激素也是  尽管我们还没有讲过它\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and growth hormone which we haven't talked about
+Dialogue: 0,0:38:31.57,0:38:34.23,*Default,NTP,0000,0000,0000,,但它在人的青春期阶段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's very important
+Dialogue: 0,0:38:34.23,0:38:36.23,*Default,NTP,0000,0000,0000,,起着非常重要的作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during periods of life like adolescence,
+Dialogue: 0,0:38:36.40,0:38:37.82,*Default,NTP,0000,0000,0000,,例如\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example,
+Dialogue: 0,0:38:37.82,0:38:39.13,*Default,NTP,0000,0000,0000,,骨骼在此时期快速生长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when rapid growth of your bones is occurring.
+Dialogue: 0,0:38:41.79,0:38:43.21,*Default,NTP,0000,0000,0000,,胰岛素是一种蛋白质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, insulin is a protein,
+Dialogue: 0,0:38:43.87,0:38:45.69,*Default,NTP,0000,0000,0000,,由胰腺细胞分泌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's produced by cells in the pancreas,
+Dialogue: 0,0:38:45.86,0:38:47.08,*Default,NTP,0000,0000,0000,,随着血液不断在体内循环\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it circulates in your blood.
+Dialogue: 0,0:38:47.81,0:38:51.33,*Default,NTP,0000,0000,0000,,它的分子太大了所以无法进入细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can't enter cells because it's too big and
+Dialogue: 0,0:38:51.47,0:38:52.65,*Default,NTP,0000,0000,0000,,而且还是水溶性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's too water soluble
+Dialogue: 0,0:38:52.65,0:38:53.96,*Default,NTP,0000,0000,0000,,所以它也无法穿过细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it can't go through cell membranes.
+Dialogue: 0,0:38:54.21,0:38:57.07,*Default,NTP,0000,0000,0000,,它与细胞表面胰岛素受体相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it interacts with receptors called insulin receptors
+Dialogue: 0,0:38:57.95,0:39:00.23,*Default,NTP,0000,0000,0000,,这些细胞对胰岛素很敏感\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are on cells that are sensitive to insulin.
+Dialogue: 0,0:39:01.82,0:39:03.67,*Default,NTP,0000,0000,0000,,另一方面  类固醇类激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Steroid hormones, on the other hand,
+Dialogue: 0,0:39:03.83,0:39:04.60,*Default,NTP,0000,0000,0000,,像睾丸激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}molecules like testosterone
+Dialogue: 0,0:39:04.60,0:39:06.91,*Default,NTP,0000,0000,0000,,雌激素  黄体酮这样的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and estrogen, progesterone,
+Dialogue: 0,0:39:07.08,0:39:10.34,*Default,NTP,0000,0000,0000,,性激素决定了性征\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sex steroids that determine sexual characteristics
+Dialogue: 0,0:39:10.34,0:39:15.24,*Default,NTP,0000,0000,0000,,它对生殖功能十分重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and are important for reproductive function
+Dialogue: 0,0:39:15.24,0:39:20.55,*Default,NTP,0000,0000,0000,,这类分子有着相似的来源\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are molecules that are all derived from a similar source.
+Dialogue: 0,0:39:20.70,0:39:23.38,*Default,NTP,0000,0000,0000,,多数分子都来自于胆固醇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of them are derived from cholesterol
+Dialogue: 0,0:39:23.38,0:39:25.81,*Default,NTP,0000,0000,0000,,它们是疏水性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they're hydrophobic,
+Dialogue: 0,0:39:26.19,0:39:29.12,*Default,NTP,0000,0000,0000,,这意味着它们能够穿过细胞膜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which means they can penetrate through cell membranes.
+Dialogue: 0,0:39:30.98,0:39:34.22,*Default,NTP,0000,0000,0000,,所以无需与细胞表面受体相结合来起效\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it doesn't need to bind to a receptor on the surface of the cell
+Dialogue: 0,0:39:34.37,0:39:37.98,*Default,NTP,0000,0000,0000,,因为这些分子能直接进入细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to work because the molecule can actually enter the cell directly.
+Dialogue: 0,0:39:39.02,0:39:41.18,*Default,NTP,0000,0000,0000,,许多类固醇激素能够起效是因为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many steroid hormones act because they bind
+Dialogue: 0,0:39:41.32,0:39:44.82,*Default,NTP,0000,0000,0000,,其与存在于细胞内部的受体相结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to cellulars - to receptors that are deep within the cell,
+Dialogue: 0,0:39:46.23,0:39:47.74,*Default,NTP,0000,0000,0000,,这类受体通常在细胞核内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often inside the nucleus.
+Dialogue: 0,0:39:48.56,0:39:50.70,*Default,NTP,0000,0000,0000,,我马上就给你们讲这个过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll show how that works in just a moment,
+Dialogue: 0,0:39:50.96,0:39:53.13,*Default,NTP,0000,0000,0000,,举这类分子中的一种  雌激素作为例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but estrogen for example, is one of those.
+Dialogue: 0,0:39:53.35,0:39:56.43,*Default,NTP,0000,0000,0000,,雌激素能够进入到邻近的细胞中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When estrogen is present it can enter cells in the vicinity
+Dialogue: 0,0:39:56.66,0:39:59.91,*Default,NTP,0000,0000,0000,,并能够与细胞内部的受体相结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it can bind to receptors that are deep inside cells.
+Dialogue: 0,0:40:00.23,0:40:01.56,*Default,NTP,0000,0000,0000,,这是一个新概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a new concept,
+Dialogue: 0,0:40:01.70,0:40:04.65,*Default,NTP,0000,0000,0000,,受体分子不一定只存在于细胞表面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}receptors don't have to be these molecules on cell surface,
+Dialogue: 0,0:40:04.98,0:40:09.52,*Default,NTP,0000,0000,0000,,它们也可以存在于细胞内其它地方\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there can be receptors that exist in other places within the cell.
+Dialogue: 0,0:40:13.33,0:40:15.61,*Default,NTP,0000,0000,0000,,我要说的东西离这个例子有点远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Go a little bit further with this schematic
+Dialogue: 0,0:40:15.61,0:40:16.91,*Default,NTP,0000,0000,0000,,来讲讲胰岛素作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and talking about what insulin does.
+Dialogue: 0,0:40:18.77,0:40:19.80,*Default,NTP,0000,0000,0000,,你们学过胰岛素了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know about this
+Dialogue: 0,0:40:19.80,0:40:22.39,*Default,NTP,0000,0000,0000,,但可能没有在我讲的层面上想过这个问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but maybe you haven't thought about it at this level of detail,
+Dialogue: 0,0:40:22.57,0:40:24.69,*Default,NTP,0000,0000,0000,,但你知道的  吃饭以后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you know that when you - after you eat,
+Dialogue: 0,0:40:24.84,0:40:26.04,*Default,NTP,0000,0000,0000,,比如说你们吃午饭\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you eat lunch for example.
+Dialogue: 0,0:40:26.48,0:40:27.81,*Default,NTP,0000,0000,0000,,下课以后你们会去吃午饭\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After class you're going to go to lunch,
+Dialogue: 0,0:40:28.07,0:40:30.69,*Default,NTP,0000,0000,0000,,无论你们吃的是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're going to eat whatever you eat.
+Dialogue: 0,0:40:30.93,0:40:32.39,*Default,NTP,0000,0000,0000,,但愿不是士力架\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hopefully it's not a Snicker's bar
+Dialogue: 0,0:40:32.39,0:40:34.88,*Default,NTP,0000,0000,0000,,但假设你们吃了士力架\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let's assume it is a Snicker's bar
+Dialogue: 0,0:40:35.36,0:40:36.80,*Default,NTP,0000,0000,0000,,你们的血糖水平会升高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your blood glucose is going to rise
+Dialogue: 0,0:40:36.80,0:40:38.67,*Default,NTP,0000,0000,0000,,因为你们摄入了许多糖分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you're taking a lot of sugar in.
+Dialogue: 0,0:40:39.33,0:40:42.82,*Default,NTP,0000,0000,0000,,这时你的胰腺会收到信号\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When it does your pancreas receives a signal
+Dialogue: 0,0:40:43.15,0:40:46.05,*Default,NTP,0000,0000,0000,,你的血糖水平开始升高了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that your blood glucose has started to go up,
+Dialogue: 0,0:40:46.74,0:40:48.19,*Default,NTP,0000,0000,0000,,它就会分泌胰岛素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it will secrete insulin.
+Dialogue: 0,0:40:48.51,0:40:50.37,*Default,NTP,0000,0000,0000,,你的胰腺细胞能够\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, there are cells in your pancreas which
+Dialogue: 0,0:40:50.63,0:40:55.90,*Default,NTP,0000,0000,0000,,识别血糖水平  并分泌胰岛素作为反馈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}recognize glucose levels and they secrete insulin in response.
+Dialogue: 0,0:40:57.45,0:40:58.45,*Default,NTP,0000,0000,0000,,当胰岛素开始分泌后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When they do that,
+Dialogue: 0,0:40:58.63,0:41:01.10,*Default,NTP,0000,0000,0000,,胰岛素就开始通过血液来循环\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this insulin then starts to circulate throughout the blood.
+Dialogue: 0,0:41:01.25,0:41:02.42,*Default,NTP,0000,0000,0000,,如果这时候检测\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you measured,
+Dialogue: 0,0:41:02.58,0:41:05.49,*Default,NTP,0000,0000,0000,,如果有人测量午饭后十分钟  三十分钟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if somebody measured levels of insulin in your blood after lunch,
+Dialogue: 0,0:41:05.72,0:41:08.86,*Default,NTP,0000,0000,0000,,及一个小时血液中的胰岛素水平\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if they took it 10 minutes, 30 minutes, an hour,
+Dialogue: 0,0:41:09.12,0:41:11.13,*Default,NTP,0000,0000,0000,,就会发现它在缓慢地升高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you would see that it's going slowly up.
+Dialogue: 0,0:41:12.08,0:41:13.73,*Default,NTP,0000,0000,0000,,伴随着胰岛素水平的升高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As it's going up,
+Dialogue: 0,0:41:13.73,0:41:15.24,*Default,NTP,0000,0000,0000,,它开始在体内循环\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's circulating around your body.
+Dialogue: 0,0:41:15.56,0:41:18.52,*Default,NTP,0000,0000,0000,,体内大多数细胞中都有胰岛素受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most cells in your body have insulin receptors
+Dialogue: 0,0:41:19.52,0:41:23.37,*Default,NTP,0000,0000,0000,,胰岛素就开始与细胞上的胰岛素受体结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so insulin is starting to bind to insulin receptors on those cells.
+Dialogue: 0,0:41:23.74,0:41:27.08,*Default,NTP,0000,0000,0000,,这导致细胞内部发生生物化学变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When it does it makes biochemical changes inside the cells and
+Dialogue: 0,0:41:27.26,0:41:29.23,*Default,NTP,0000,0000,0000,,其中的一个变化是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the things it does is
+Dialogue: 0,0:41:29.23,0:41:32.91,*Default,NTP,0000,0000,0000,,某些细胞开始增加对糖分的摄取\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}increase glucose uptake into certain kinds of cells,
+Dialogue: 0,0:41:33.06,0:41:35.10,*Default,NTP,0000,0000,0000,,尤其是脂肪细胞和肌细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly fat cells and muscle cells.
+Dialogue: 0,0:41:36.16,0:41:40.12,*Default,NTP,0000,0000,0000,,那么  肌细胞为什么要增加糖的摄取\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, why does it increase uptake of glucose into muscle cells?
+Dialogue: 0,0:41:41.01,0:41:43.56,*Default,NTP,0000,0000,0000,,因为肌肉细胞可以利用糖分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because muscle can use and
+Dialogue: 0,0:41:43.78,0:41:46.46,*Default,NTP,0000,0000,0000,,通常将糖作为能量来源\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}frequently is using glucose as a source of energy.
+Dialogue: 0,0:41:47.26,0:41:48.95,*Default,NTP,0000,0000,0000,,当有额外的糖分存在时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, when there is extra glucose you
+Dialogue: 0,0:41:48.95,0:41:51.45,*Default,NTP,0000,0000,0000,,能迅速利用糖分的细胞就开始摄取糖分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}want to put it into the cells that can use it immediately.
+Dialogue: 0,0:41:53.00,0:41:54.45,*Default,NTP,0000,0000,0000,,为什么脂肪细胞要摄取糖呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why does it go into fat cells?
+Dialogue: 0,0:41:54.45,0:41:58.09,*Default,NTP,0000,0000,0000,,因为你摄入的糖可能比你需要的糖更多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because maybe you ate more glucose than you needed immediately
+Dialogue: 0,0:41:58.32,0:42:01.56,*Default,NTP,0000,0000,0000,,因此它们就进入那些有储糖能力的细胞中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so it goes into cells that can store glucose.
+Dialogue: 0,0:42:02.60,0:42:04.48,*Default,NTP,0000,0000,0000,,这也就是脂肪细胞的工作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what fat cells do,
+Dialogue: 0,0:42:04.73,0:42:06.69,*Default,NTP,0000,0000,0000,,它们将糖转化为另一种形式储存起来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they convert glucose into a form for storage.
+Dialogue: 0,0:42:06.87,0:42:11.12,*Default,NTP,0000,0000,0000,,那么这些细胞是如何增强血糖摄取能力的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, how does glucose uptake get enhanced in those cells?
+Dialogue: 0,0:42:11.36,0:42:12.37,*Default,NTP,0000,0000,0000,,这种增强效应来自于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gets enhanced because
+Dialogue: 0,0:42:12.49,0:42:14.59,*Default,NTP,0000,0000,0000,,胰岛素与胰岛素受体结合后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when insulin binds to the insulin receptor,
+Dialogue: 0,0:42:15.65,0:42:17.14,*Default,NTP,0000,0000,0000,,就激活了该受体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it activates the receptor.
+Dialogue: 0,0:42:17.58,0:42:18.47,*Default,NTP,0000,0000,0000,,这种受体是如何被激活的呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does it activate it?
+Dialogue: 0,0:42:18.61,0:42:21.10,*Default,NTP,0000,0000,0000,,它产生了一种激酶活性\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It generates a kinase activity
+Dialogue: 0,0:42:21.33,0:42:23.74,*Default,NTP,0000,0000,0000,,导致了受体蛋白的磷酸化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which leads to phosphorylation of the protein.
+Dialogue: 0,0:42:24.73,0:42:28.21,*Default,NTP,0000,0000,0000,,胰岛素与受体结合导致磷酸化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Insulin binding leads to phosphorylation,
+Dialogue: 0,0:42:28.38,0:42:30.82,*Default,NTP,0000,0000,0000,,进而产生其它生物化学变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}leads to other biochemical changes.
+Dialogue: 0,0:42:31.39,0:42:35.42,*Default,NTP,0000,0000,0000,,最终的结果是那些已经表达\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Eventually what happens is that glucose transport molecules
+Dialogue: 0,0:42:35.57,0:42:39.58,*Default,NTP,0000,0000,0000,,并储存于细胞中的能够运输糖的载体分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are expressed and stored inside the cell
+Dialogue: 0,0:42:39.58,0:42:41.59,*Default,NTP,0000,0000,0000,,穿梭到细胞表面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}get shuttled up to the surface,
+Dialogue: 0,0:42:42.95,0:42:44.66,*Default,NTP,0000,0000,0000,,这样细胞对糖的透过性提高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so the cells permeability to glucose goes up
+Dialogue: 0,0:42:44.66,0:42:47.22,*Default,NTP,0000,0000,0000,,更多糖分子进入到细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and more glucose can come in.
+Dialogue: 0,0:42:48.88,0:42:50.98,*Default,NTP,0000,0000,0000,,以上是对整个过程的高度概括\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a highly simplified version,
+Dialogue: 0,0:42:51.15,0:42:54.15,*Default,NTP,0000,0000,0000,,但它涵盖了我们讲过的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but sort of closes the loop on what we've been talking about.
+Dialogue: 0,0:42:54.38,0:42:56.56,*Default,NTP,0000,0000,0000,,胰岛素  一种能够与受体结合的配体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Insulin, the ligand binds to its receptor,
+Dialogue: 0,0:42:56.97,0:43:00.72,*Default,NTP,0000,0000,0000,,通过其暴露出的激酶活性引起的变化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}creates a change through a kinase activity that's exposed,
+Dialogue: 0,0:43:01.29,0:43:03.41,*Default,NTP,0000,0000,0000,,导致了其它后续生化变化的发生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which leads to other biochemical changes,
+Dialogue: 0,0:43:03.71,0:43:05.50,*Default,NTP,0000,0000,0000,,进而使细胞行为发生改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which leads to a change in cell behavior -
+Dialogue: 0,0:43:05.50,0:43:07.77,*Default,NTP,0000,0000,0000,,这个例子中的细胞行为就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this case the cell behavior is
+Dialogue: 0,0:43:07.91,0:43:11.18,*Default,NTP,0000,0000,0000,,更多的糖载体被带到细胞膜表面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that more glucose transporters are brought to the membrane
+Dialogue: 0,0:43:11.43,0:43:13.42,*Default,NTP,0000,0000,0000,,这样更多的糖分子进入到细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and more glucose can enter the cell.
+Dialogue: 0,0:43:15.81,0:43:17.44,*Default,NTP,0000,0000,0000,,你们听明白了吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does this make sense?
+Dialogue: 0,0:43:18.27,0:43:19.91,*Default,NTP,0000,0000,0000,,有时候你们吃完饭以后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometime after you've eaten,
+Dialogue: 0,0:43:20.10,0:43:21.86,*Default,NTP,0000,0000,0000,,午饭的时候你吃了士力架\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}say you had this Snickers bar at lunchtime and
+Dialogue: 0,0:43:21.98,0:43:24.76,*Default,NTP,0000,0000,0000,,在这一天当中你又没时间吃别的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't have time to get anything else to eat during the day,
+Dialogue: 0,0:43:25.07,0:43:27.06,*Default,NTP,0000,0000,0000,,你的血糖水平就会下降\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your blood glucose level will go down.
+Dialogue: 0,0:43:27.57,0:43:28.71,*Default,NTP,0000,0000,0000,,为什么会下降呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why does it go down?
+Dialogue: 0,0:43:29.00,0:43:31.57,*Default,NTP,0000,0000,0000,,一个是因为你没有再摄入更多的糖分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, one because you're not taking anymore glucose in,
+Dialogue: 0,0:43:31.65,0:43:34.00,*Default,NTP,0000,0000,0000,,另一个原因就是  当你摄入糖时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the other because when you did eat glucose
+Dialogue: 0,0:43:34.00,0:43:35.42,*Default,NTP,0000,0000,0000,,胰岛素分泌增加\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you got more insulin
+Dialogue: 0,0:43:35.57,0:43:37.58,*Default,NTP,0000,0000,0000,,糖被转运到细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the glucose got shuttled into cells
+Dialogue: 0,0:43:37.58,0:43:39.81,*Default,NTP,0000,0000,0000,,要么被用掉要么被储存\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it's either used or stored.
+Dialogue: 0,0:43:40.01,0:43:42.59,*Default,NTP,0000,0000,0000,,这就导致了血糖水平的降低\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, that brings your glucose level down.
+Dialogue: 0,0:43:43.11,0:43:46.49,*Default,NTP,0000,0000,0000,,胰腺产生另外一类激素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another hormone gets produced by the pancreas
+Dialogue: 0,0:43:46.49,0:43:51.23,*Default,NTP,0000,0000,0000,,来应对血糖水平降低的情况\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in response to low glucose levels,
+Dialogue: 0,0:43:51.24,0:43:52.34,*Default,NTP,0000,0000,0000,,它叫做胰高血糖素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's called glucagon.
+Dialogue: 0,0:43:52.49,0:43:57.40,*Default,NTP,0000,0000,0000,,它产生的很多效应都与胰岛素相反\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has many of the opposite effects that insulin has,
+Dialogue: 0,0:43:57.86,0:43:59.66,*Default,NTP,0000,0000,0000,,所以不仅是胰岛素的减少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so not only does insulin go down
+Dialogue: 0,0:43:59.66,0:44:01.30,*Default,NTP,0000,0000,0000,,导致血糖水平停止下降\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and stop these behaviors
+Dialogue: 0,0:44:01.48,0:44:04.99,*Default,NTP,0000,0000,0000,,胰高血糖素这种新激素的产生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a new hormone called glucagon gets produced
+Dialogue: 0,0:44:04.99,0:44:06.87,*Default,NTP,0000,0000,0000,,也会强化该效应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which reinforces that change.
+Dialogue: 0,0:44:08.62,0:44:12.38,*Default,NTP,0000,0000,0000,,一天当中这两种状态交替出现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These - you're going between these states throughout the day.
+Dialogue: 0,0:44:14.23,0:44:17.90,*Default,NTP,0000,0000,0000,,细胞所经历的这些状态改变是受\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Where your cells experience those states is
+Dialogue: 0,0:44:18.09,0:44:22.80,*Default,NTP,0000,0000,0000,,胰岛素和胰高血糖素这些外源配体影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through these extra cellular ligands called insulin and glucagon.
+Dialogue: 0,0:44:25.74,0:44:27.51,*Default,NTP,0000,0000,0000,,类固醇类激素的作用原理有所不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Steroid hormones can operate in a different way
+Dialogue: 0,0:44:27.51,0:44:29.75,*Default,NTP,0000,0000,0000,,这主要是因为它们的结构与蛋白质不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of their structure.
+Dialogue: 0,0:44:29.86,0:44:32.21,*Default,NTP,0000,0000,0000,,它们是小分子  并且是脂溶性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're small molecules, they're lipid soluble,
+Dialogue: 0,0:44:32.43,0:44:35.71,*Default,NTP,0000,0000,0000,,它们能从胞外进入胞内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they can go from extracellular to intracellular.
+Dialogue: 0,0:44:36.41,0:44:40.09,*Default,NTP,0000,0000,0000,,我把雌激素作为例子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's take an example of estrogen, for example.
+Dialogue: 0,0:44:40.34,0:44:44.96,*Default,NTP,0000,0000,0000,,雌激素是由身体某部分细胞分泌的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A small molecule gets produced by cells in one part of the body,
+Dialogue: 0,0:44:45.03,0:44:47.84,*Default,NTP,0000,0000,0000,,随着血液循环进入细胞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}circulates in the blood, estrogen enters cells,
+Dialogue: 0,0:44:48.33,0:44:52.42,*Default,NTP,0000,0000,0000,,有时雌激素能够进入到细胞内部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sometimes that estrogen is able to penetrate deep within the cell,
+Dialogue: 0,0:44:52.56,0:44:53.85,*Default,NTP,0000,0000,0000,,甚至进入到细胞核内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even into the nucleus.
+Dialogue: 0,0:44:54.89,0:44:59.68,*Default,NTP,0000,0000,0000,,雌激素受体是一类特殊的分子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The receptor for estrogen is a special molecule
+Dialogue: 0,0:44:59.68,0:45:03.00,*Default,NTP,0000,0000,0000,,叫做DNA结合因子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called a DNA binding factor.
+Dialogue: 0,0:45:04.06,0:45:06.62,*Default,NTP,0000,0000,0000,,雌激素能够与受体相结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Estrogen can combine with this receptor
+Dialogue: 0,0:45:07.23,0:45:13.00,*Default,NTP,0000,0000,0000,,形成一个新结构单位与DNA相互作用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to form a new sort of unit which interacts with DNA.
+Dialogue: 0,0:45:15.17,0:45:20.56,*Default,NTP,0000,0000,0000,,该受体与DNA结合后能够\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When this bound receptor interacts with DNA it could,
+Dialogue: 0,0:45:20.65,0:45:23.95,*Default,NTP,0000,0000,0000,,启动目标基因的表达\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, turn on expression of a target gene.
+Dialogue: 0,0:45:24.95,0:45:26.13,*Default,NTP,0000,0000,0000,,雌激素的功能是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the things that estrogen does
+Dialogue: 0,0:45:26.13,0:45:28.67,*Default,NTP,0000,0000,0000,,当细胞所处环境中有雌激素时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when cells are exposed to estrogen
+Dialogue: 0,0:45:28.82,0:45:32.69,*Default,NTP,0000,0000,0000,,一些在雌激素不存在的条件下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that certain genes get turned on
+Dialogue: 0,0:45:32.69,0:45:36.26,*Default,NTP,0000,0000,0000,,无法表达基因就能够表达\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that weren't turned on in the estrogen-free state.
+Dialogue: 0,0:45:36.88,0:45:41.22,*Default,NTP,0000,0000,0000,,这导致新基因表达  新蛋白合成\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It leads to expression of new genes, production of new proteins,
+Dialogue: 0,0:45:41.35,0:45:43.08,*Default,NTP,0000,0000,0000,,细胞行为发生改变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a change in a behavior of the cell.
+Dialogue: 0,0:45:44.05,0:45:47.63,*Default,NTP,0000,0000,0000,,有时受体与配体结合后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes receptors, when they interact with ligands,
+Dialogue: 0,0:45:48.29,0:45:50.32,*Default,NTP,0000,0000,0000,,带来的变化实际是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}create changes in what
+Dialogue: 0,0:45:50.52,0:45:53.90,*Default,NTP,0000,0000,0000,,决定细胞开始合成何种蛋白质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}proteins are actually being produced by the cell.
+Dialogue: 0,0:45:54.03,0:45:56.51,*Default,NTP,0000,0000,0000,,这是一种非常直接的途径\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one very direct way for that to happen.
+Dialogue: 0,0:45:58.33,0:46:02.30,*Default,NTP,0000,0000,0000,,这种分子能够激活基因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These kinds of molecules which activate genes,
+Dialogue: 0,0:46:02.86,0:46:05.08,*Default,NTP,0000,0000,0000,,激活了转录过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're activating the process of transcription.
+Dialogue: 0,0:46:05.72,0:46:08.17,*Default,NTP,0000,0000,0000,,它们被称为转录因子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're sometimes called transcription factors
+Dialogue: 0,0:46:08.17,0:46:11.72,*Default,NTP,0000,0000,0000,,转录因子的一个例子就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is an example of a transcription factor that is
+Dialogue: 0,0:46:12.46,0:46:16.64,*Default,NTP,0000,0000,0000,,能够自激活或被激素激活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}itself activated or turned on by the presence of a steroid.
+Dialogue: 0,0:46:21.73,0:46:24.74,*Default,NTP,0000,0000,0000,,今天我最后想说的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the end of what I wanted to say today.
+Dialogue: 0,0:46:24.95,0:46:26.17,*Default,NTP,0000,0000,0000,,我们下次课要讲的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we're going to talk about next time,
+Dialogue: 0,0:46:26.32,0:46:27.38,*Default,NTP,0000,0000,0000,,我鼓励你们去预习\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I encourage to read ahead
+Dialogue: 0,0:46:27.38,0:46:29.88,*Default,NTP,0000,0000,0000,,因为在书上第六章你们会读到一些细节\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you'll see that there's a lot more detail in Chapter 6
+Dialogue: 0,0:46:29.88,0:46:31.72,*Default,NTP,0000,0000,0000,,比我们课上讲的要详细得多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than what we're talking about here,
+Dialogue: 0,0:46:32.03,0:46:33.40,*Default,NTP,0000,0000,0000,,重点我已经强调过了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've emphasized the main points,
+Dialogue: 0,0:46:33.52,0:46:34.89,*Default,NTP,0000,0000,0000,,我认为它们很重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the ones that I think are important,
+Dialogue: 0,0:46:35.17,0:46:37.22,*Default,NTP,0000,0000,0000,,显然  这对你们理解知识很重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are clearly important for your understanding.
+Dialogue: 0,0:46:37.32,0:46:40.12,*Default,NTP,0000,0000,0000,,在下节课我会讲这些内容以及\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to take these general topics and talk about
+Dialogue: 0,0:46:40.24,0:46:42.31,*Default,NTP,0000,0000,0000,,配体-受体系统在神经系统和\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how they work in the nervous system
+Dialogue: 0,0:46:42.31,0:46:43.91,*Default,NTP,0000,0000,0000,,免疫系统中的作用原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the immune system next time.

@@ -1,0 +1,967 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,21,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:13.45,0:00:16.00,*Default,NTP,0000,0000,0000,,这堂课我们要讲的是药物输送\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, this week we're going to talk about drug delivery, 
+Dialogue: 0,0:00:16.66,0:00:17.87,*Default,NTP,0000,0000,0000,,就是第十四章\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is Chapter 14.
+Dialogue: 0,0:00:18.55,0:00:20.05,*Default,NTP,0000,0000,0000,,这个课题是我在教材中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an example of 
+Dialogue: 0,0:00:20.40,0:00:23.04,*Default,NTP,0000,0000,0000,,提到的分子生物工程的一个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I call in the textbook Biomolecular Engineering.
+Dialogue: 0,0:00:25.93,0:00:28.37,*Default,NTP,0000,0000,0000,,这是这门课程中我最喜欢的部分之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one of my favorite weeks of the course 
+Dialogue: 0,0:00:28.72,0:00:31.99,*Default,NTP,0000,0000,0000,,因为我研究的方向就是药物输送\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this is my research specialty, is drug delivery.
+Dialogue: 0,0:00:32.94,0:00:36.74,*Default,NTP,0000,0000,0000,,这是今天  还有星期四的分组讨论中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I want to do today, Thursday, and then
+Dialogue: 0,0:00:37.22,0:00:39.33,*Default,NTP,0000,0000,0000,,我们要讲解的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll continue in section is 
+Dialogue: 0,0:00:39.77,0:00:43.02,*Default,NTP,0000,0000,0000,,今天  我会列举出一系列问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}today I'm going to sort of set up the problem,
+Dialogue: 0,0:00:43.42,0:00:44.80,*Default,NTP,0000,0000,0000,,讨论一些需要思考的定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talk about some definitions to think about,
+Dialogue: 0,0:00:45.29,0:00:46.65,*Default,NTP,0000,0000,0000,,如果有人要建立药物输送系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if one is building drug delivery systems, 
+Dialogue: 0,0:00:47.65,0:00:49.73,*Default,NTP,0000,0000,0000,,那么需要考虑一些药物输送的基本概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think about some basic concepts in drug delivery.
+Dialogue: 0,0:00:50.25,0:00:52.65,*Default,NTP,0000,0000,0000,,今天  我们要做的就是思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to do that by thinking about 
+Dialogue: 0,0:00:52.65,0:00:55.41,*Default,NTP,0000,0000,0000,,药物摄入的一些基本方式以及\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of common modes of drug administration and
+Dialogue: 0,0:00:56.31,0:00:58.86,*Default,NTP,0000,0000,0000,,为什么有的摄入方式对一些药物行得通\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why some of them work with some drugs 
+Dialogue: 0,0:00:58.86,0:01:00.96,*Default,NTP,0000,0000,0000,,而对其他药物就行不通   \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not with others, 
+Dialogue: 0,0:01:00.96,0:01:02.54,*Default,NTP,0000,0000,0000,,今天就是奠定基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of lay the foundations today.
+Dialogue: 0,0:01:03.57,0:01:04.98,*Default,NTP,0000,0000,0000,,然后星期四  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then, on Thursday 
+Dialogue: 0,0:01:04.98,0:01:07.79,*Default,NTP,0000,0000,0000,,我们会讨论药物输送中的新进展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about what's new in drug delivery and
+Dialogue: 0,0:01:08.25,0:01:10.37,*Default,NTP,0000,0000,0000,,这一领域中现在已经开始研究的方向上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what things you can expect in the future,
+Dialogue: 0,0:01:10.92,0:01:12.00,*Default,NTP,0000,0000,0000,,在未来会出现哪些创新\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}things that are still being built 
+Dialogue: 0,0:01:13.64,0:01:15.42,*Default,NTP,0000,0000,0000,,同时周四下午  你们也会在分组讨论中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you'll get to make some drug delivery systems 
+Dialogue: 0,0:01:16.07,0:01:17.95,*Default,NTP,0000,0000,0000,,学习建立药物输送系统的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in section on Thursday afternoon.
+Dialogue: 0,0:01:21.47,0:01:24.31,*Default,NTP,0000,0000,0000,,这是我们上周讨论的话题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is really a logical extension of 
+Dialogue: 0,0:01:24.72,0:01:25.91,*Default,NTP,0000,0000,0000,,在逻辑上的一个延伸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what we started talking about last week
+Dialogue: 0,0:01:26.69,0:01:30.31,*Default,NTP,0000,0000,0000,,当我们结束关于免疫系统以及\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we moved from talking about the immune system and how it operates to
+Dialogue: 0,0:01:32.25,0:01:37.05,*Default,NTP,0000,0000,0000,,在服用疫苗之后产生被动免疫反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}administration intentionally of vaccines to alter the immune system or 
+Dialogue: 0,0:01:37.37,0:01:38.94,*Default,NTP,0000,0000,0000,,或者使机体的应答发生了变化的讨论之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to change your body's response.
+Dialogue: 0,0:01:40.17,0:01:41.16,*Default,NTP,0000,0000,0000,,某种程度上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In some senses, 
+Dialogue: 0,0:01:41.50,0:01:42.91,*Default,NTP,0000,0000,0000,,你们可以考虑一下疫苗的输送\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could think about delivery of a vaccine 
+Dialogue: 0,0:01:43.57,0:01:44.81,*Default,NTP,0000,0000,0000,,就像输送药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like delivery of a drug or
+Dialogue: 0,0:01:45.31,0:01:48.00,*Default,NTP,0000,0000,0000,,或者输送一些并非机体自身产生的物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}introducing something not naturally in the body--
+Dialogue: 0,0:01:48.66,0:01:52.23,*Default,NTP,0000,0000,0000,,从而产生一系列生物效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into the body in order to have some kind of biological effect.
+Dialogue: 0,0:01:52.92,0:01:55.35,*Default,NTP,0000,0000,0000,,它基本上和药物的输送是一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the same thing as delivery of a drug.
+Dialogue: 0,0:01:55.91,0:01:58.60,*Default,NTP,0000,0000,0000,,我们还讲了疫苗输送的各种方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we also thought about delivery in a variety of ways:
+Dialogue: 0,0:01:59.74,0:02:04.35,*Default,NTP,0000,0000,0000,,我们讲了注射方式  例如天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we thought about injection of vaccines like the smallpox vaccine,
+Dialogue: 0,0:02:06.11,0:02:09.38,*Default,NTP,0000,0000,0000,,我们还讲了口服疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we thought about oral administration of vaccine,
+Dialogue: 0,0:02:09.71,0:02:13.95,*Default,NTP,0000,0000,0000,,例如脊髓灰质炎疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the case of the oral polio vaccine.
+Dialogue: 0,0:02:15.32,0:02:19.29,*Default,NTP,0000,0000,0000,,所以现在这么说  是想要告诉大家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, I just wanted to show you this picture to remind you
+Dialogue: 0,0:02:19.68,0:02:21.74,*Default,NTP,0000,0000,0000,,我们之前已经学到了一些药物输送的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you already know something about drug delivery.
+Dialogue: 0,0:02:22.11,0:02:22.98,*Default,NTP,0000,0000,0000,,而我们接下来要讨论的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we're going to talk about
+Dialogue: 0,0:02:23.19,0:02:25.69,*Default,NTP,0000,0000,0000,,是我们上周讨论内容的一个延伸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an extension of what we started talking about last week.
+Dialogue: 0,0:02:26.29,0:02:28.89,*Default,NTP,0000,0000,0000,,在疫苗的介绍中  你们应该记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, in the case of a vaccine, you'll remember,
+Dialogue: 0,0:02:29.10,0:02:34.00,*Default,NTP,0000,0000,0000,,摄入球蛋白或者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the intent was to administer either proteins, 
+Dialogue: 0,0:02:34.40,0:02:37.94,*Default,NTP,0000,0000,0000,,完整的病毒蛋白的目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}usually proteins or whole viruses,
+Dialogue: 0,0:02:38.80,0:02:41.38,*Default,NTP,0000,0000,0000,,上周四课程的结尾我们讨论了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or we talked at the end of the class on Thursday 
+Dialogue: 0,0:02:41.38,0:02:43.64,*Default,NTP,0000,0000,0000,,有目的地摄入DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about administering DNA with the intention
+Dialogue: 0,0:02:43.97,0:02:47.11,*Default,NTP,0000,0000,0000,,就是将一些新分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you're going to bring some new molecules 
+Dialogue: 0,0:02:47.11,0:02:49.15,*Default,NTP,0000,0000,0000,,导入一类特殊的细胞中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into a special class of cells
+Dialogue: 0,0:02:49.48,0:02:50.64,*Default,NTP,0000,0000,0000,,该细胞称为抗原呈递细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called antigen presenting cells.
+Dialogue: 0,0:02:51.76,0:02:54.42,*Default,NTP,0000,0000,0000,,这些抗原呈递细胞会受到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That those antigen presenting cells are going to be changed 
+Dialogue: 0,0:02:54.90,0:02:56.78,*Default,NTP,0000,0000,0000,,这些疫苗的作用而发生改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a result of their experience with this vaccine
+Dialogue: 0,0:02:58.70,0:03:01.28,*Default,NTP,0000,0000,0000,,在它们表面会呈递出新的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such that they present new molecules on their surface, 
+Dialogue: 0,0:03:02.25,0:03:03.58,*Default,NTP,0000,0000,0000,,而这就是改变的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the change that comes about.
+Dialogue: 0,0:03:04.54,0:03:06.25,*Default,NTP,0000,0000,0000,,然后  这个细胞的改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then, that change in this cell 
+Dialogue: 0,0:03:06.25,0:03:08.75,*Default,NTP,0000,0000,0000,,会激发其他细胞的的变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is going to stimulate changes in other cells.
+Dialogue: 0,0:03:09.65,0:03:11.45,*Default,NTP,0000,0000,0000,,如果体液免疫系统或者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If humoral immune response or 
+Dialogue: 0,0:03:11.45,0:03:14.33,*Default,NTP,0000,0000,0000,,抗体介导的免疫系统产生响应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}antibody mediated immune response is generated,
+Dialogue: 0,0:03:14.93,0:03:17.22,*Default,NTP,0000,0000,0000,,那么抗原呈递细胞细胞的改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the change in antigen presenting cells is going to 
+Dialogue: 0,0:03:17.57,0:03:20.07,*Default,NTP,0000,0000,0000,,就会导致B细胞的分化和增殖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}influence B-cells to differentiate and proliferate, etc.
+Dialogue: 0,0:03:22.18,0:03:25.39,*Default,NTP,0000,0000,0000,,这是在你摄入药物的时候发生的一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an example of a very particular example of what happens 
+Dialogue: 0,0:03:25.39,0:03:27.15,*Default,NTP,0000,0000,0000,,非常特殊的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you administer a drug as well.
+Dialogue: 0,0:03:28.14,0:03:29.31,*Default,NTP,0000,0000,0000,,在体内摄入化学物质的目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Chemicals are introduced into the body, 
+Dialogue: 0,0:03:30.17,0:03:34.33,*Default,NTP,0000,0000,0000,,是为了引起你身体内的细胞产生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the intent is usually to make some kind of a biochemical change in cells 
+Dialogue: 0,0:03:34.91,0:03:37.81,*Default,NTP,0000,0000,0000,,某些生物化学变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or maybe many cells in your body such that
+Dialogue: 0,0:03:38.55,0:03:40.04,*Default,NTP,0000,0000,0000,,进而改变它们自身的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're function is altered in some way 
+Dialogue: 0,0:03:40.04,0:03:41.54,*Default,NTP,0000,0000,0000,,产生对身体有利的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's helpful to you.
+Dialogue: 0,0:03:43.94,0:03:45.42,*Default,NTP,0000,0000,0000,,上周我们并没有像这样讲解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We didn't really talk about it last week,
+Dialogue: 0,0:03:45.88,0:03:49.03,*Default,NTP,0000,0000,0000,,但有些情况下  免疫真的很像药物输送\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but in some cases immunization really is like drug delivery.
+Dialogue: 0,0:03:49.78,0:03:52.07,*Default,NTP,0000,0000,0000,,在被动免疫中尤其像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Particularly, in the case of what's called passive immunization, 
+Dialogue: 0,0:03:53.10,0:03:55.66,*Default,NTP,0000,0000,0000,,被动免疫中  人体不需要接触到病原体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where instead of introducing a pathogen 
+Dialogue: 0,0:03:56.10,0:03:58.27,*Default,NTP,0000,0000,0000,,或部分病原体而产生抗体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a piece of a pathogen to an individual
+Dialogue: 0,0:03:59.02,0:04:01.65,*Default,NTP,0000,0000,0000,,实际上你可以在体外制造抗体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you actually make antibodies outside of the individual.
+Dialogue: 0,0:04:02.47,0:04:03.79,*Default,NTP,0000,0000,0000,,用某种方式制造抗体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, manufacture them in some ways, 
+Dialogue: 0,0:04:04.53,0:04:07.16,*Default,NTP,0000,0000,0000,,我们上周讨论了制造抗体的几种方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we talked about ways of manufacturing antibodies a few weeks ago.
+Dialogue: 0,0:04:08.02,0:04:11.62,*Default,NTP,0000,0000,0000,,然后将那些抗体导入人体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then introduce those antibodies themselves into the person 
+Dialogue: 0,0:04:12.94,0:04:14.47,*Default,NTP,0000,0000,0000,,它们就会能够保护人体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to provide protection against 
+Dialogue: 0,0:04:14.47,0:04:17.33,*Default,NTP,0000,0000,0000,,阻挡与抗体直接对应的病原体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever pathogen those antibodies are directed against.
+Dialogue: 0,0:04:18.01,0:04:22.09,*Default,NTP,0000,0000,0000,,如果你们中有人曾经去过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If any of you have traveled to areas of the world 
+Dialogue: 0,0:04:22.09,0:04:24.45,*Default,NTP,0000,0000,0000,,甲肝流行的地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where Hepatitis A is common,
+Dialogue: 0,0:04:24.98,0:04:26.66,*Default,NTP,0000,0000,0000,,例如亚洲的某些地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in parts of Asia for example, 
+Dialogue: 0,0:04:27.26,0:04:29.58,*Default,NTP,0000,0000,0000,,就会要求你们注射丙种球蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might have gotten a shot of gamma globulin
+Dialogue: 0,0:04:31.37,0:04:33.89,*Default,NTP,0000,0000,0000,,这是为了增加抗击甲肝病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is really just antibodies that are enriched 
+Dialogue: 0,0:04:34.65,0:04:36.47,*Default,NTP,0000,0000,0000,,发作的抗体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for anti-Hepatitis A activity.
+Dialogue: 0,0:04:37.01,0:04:39.43,*Default,NTP,0000,0000,0000,,而它和疫苗的区别就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the difference between that and a vaccine is that 
+Dialogue: 0,0:04:39.83,0:04:43.67,*Default,NTP,0000,0000,0000,,该剂量的丙种球蛋白作用时间有限\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that dose of antibodies only lasts for a certain length of time,
+Dialogue: 0,0:04:44.35,0:04:45.16,*Default,NTP,0000,0000,0000,,大概是三十至六十天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about 30 to 60 days.
+Dialogue: 0,0:04:46.10,0:04:48.16,*Default,NTP,0000,0000,0000,,所以你必须在在抵达甲肝高危地区之前的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you have to get the shot 30 to 60 days 
+Dialogue: 0,0:04:48.79,0:04:50.57,*Default,NTP,0000,0000,0000,,三十至六十天内注射丙种球蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before you're going to be in the area where you're exposed.
+Dialogue: 0,0:04:52.11,0:04:55.11,*Default,NTP,0000,0000,0000,,我们用同样的方式考虑药物的时效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same way we're going to think a lot about the timing of drugs, 
+Dialogue: 0,0:04:55.58,0:04:56.65,*Default,NTP,0000,0000,0000,,就是药物作用的时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how long do their effects last, 
+Dialogue: 0,0:04:57.26,0:04:59.09,*Default,NTP,0000,0000,0000,,是什么决定了药物作用时间的长短\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what determines how long they last,
+Dialogue: 0,0:04:59.54,0:05:00.67,*Default,NTP,0000,0000,0000,,当失去药效的时候  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what does it mean 
+Dialogue: 0,0:05:00.67,0:05:02.59,*Default,NTP,0000,0000,0000,,如果你还需要服药  这意味着什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you still need the drug when its effect is gone,
+Dialogue: 0,0:05:03.29,0:05:05.60,*Default,NTP,0000,0000,0000,,如果持续服用大量药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how does taking subsequent quantities of the drug 
+Dialogue: 0,0:05:05.60,0:05:07.96,*Default,NTP,0000,0000,0000,,导致药物在体内聚积时会如何呢  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}effect its concentration in your body, for example.
+Dialogue: 0,0:05:10.57,0:05:12.90,*Default,NTP,0000,0000,0000,,我会从一些定义开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to start with some definitions 
+Dialogue: 0,0:05:12.91,0:05:15.69,*Default,NTP,0000,0000,0000,,我觉得你们可以自己阅读这些定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I realize that you can read this on your own.
+Dialogue: 0,0:05:16.36,0:05:18.29,*Default,NTP,0000,0000,0000,,希望你们已经看过本章要介绍的一些定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hopefully you already have read some of this in the chapter, 
+Dialogue: 0,0:05:19.98,0:05:22.71,*Default,NTP,0000,0000,0000,,这只是为了确保我们用词正确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but just to make sure that we have the vocabulary right, 
+Dialogue: 0,0:05:23.04,0:05:25.04,*Default,NTP,0000,0000,0000,,有一些词你们很熟悉  例如药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some of these are words that you're familiar with like drug.
+Dialogue: 0,0:05:25.88,0:05:29.01,*Default,NTP,0000,0000,0000,,药物是指能够进入身体的任何分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A drug is any molecule which can be introduced into the body, 
+Dialogue: 0,0:05:29.38,0:05:31.94,*Default,NTP,0000,0000,0000,,它能在分子水平上改变身体的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which alters body function on a molecular level.
+Dialogue: 0,0:05:33.66,0:05:34.98,*Default,NTP,0000,0000,0000,,一提到的药物  你们就会习惯性地想到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're used to thinking about drugs
+Dialogue: 0,0:05:35.32,0:05:38.22,*Default,NTP,0000,0000,0000,,头疼时吃的阿司匹林或布洛芬\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might take for a headache like aspirin or Ibuprofen.
+Dialogue: 0,0:05:38.59,0:05:42.29,*Default,NTP,0000,0000,0000,,如果你有哮喘病  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or if you asthma, for example, 
+Dialogue: 0,0:05:42.93,0:05:47.80,*Default,NTP,0000,0000,0000,,你或许需要服用能够扩张\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might take drugs that affect your bronchioles or the pathways--
+Dialogue: 0,0:05:49.84,0:05:51.70,*Default,NTP,0000,0000,0000,,肺部细支气管或气道的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the airways in your lung by dilating them
+Dialogue: 0,0:05:51.70,0:05:53.43,*Default,NTP,0000,0000,0000,,从而使呼吸顺畅\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it's easier to get air in and out.
+Dialogue: 0,0:05:54.91,0:05:57.13,*Default,NTP,0000,0000,0000,,这些进入体内的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are molecules which are introduced into the body;
+Dialogue: 0,0:05:58.18,0:06:01.83,*Default,NTP,0000,0000,0000,,会在分子层面上引起体内发生一些变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they make some kind of change in the body on a molecular level.
+Dialogue: 0,0:06:02.97,0:06:05.14,*Default,NTP,0000,0000,0000,,药理学就是研究药物分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pharmacology is the science of dealing with
+Dialogue: 0,0:06:05.24,0:06:07.94,*Default,NTP,0000,0000,0000,,在引入人体后发生的相互作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these interactions of molecules that are introduced into the body.
+Dialogue: 0,0:06:08.87,0:06:13.41,*Default,NTP,0000,0000,0000,,这些分子通常来自于体外\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're usually molecules that are generated from outside the body, 
+Dialogue: 0,0:06:13.71,0:06:14.91,*Default,NTP,0000,0000,0000,,是以某些形式合成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe synthesized in some way.
+Dialogue: 0,0:06:15.67,0:06:18.09,*Default,NTP,0000,0000,0000,,我们通常不能直接在体内找到这些分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They might be molecules that are not ordinarily found in our bodies, 
+Dialogue: 0,0:06:20.48,0:06:21.70,*Default,NTP,0000,0000,0000,,但是它们会对人体产生一些作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but are known to have some effects.
+Dialogue: 0,0:06:22.29,0:06:23.99,*Default,NTP,0000,0000,0000,,它们可能是某些分子的衍生物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They might be derivatives of molecules 
+Dialogue: 0,0:06:23.99,0:06:25.70,*Default,NTP,0000,0000,0000,,我们体内含有这些分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are naturally found in our bodies.
+Dialogue: 0,0:06:26.42,0:06:28.86,*Default,NTP,0000,0000,0000,,例如  帕金森氏症的治疗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example,  Parkinson's disease is treated by
+Dialogue: 0,0:06:28.86,0:06:31.20,*Default,NTP,0000,0000,0000,,就采用多巴胺衍生物  它是神经递质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a derivative of the neurotransmitter Dopamine.
+Dialogue: 0,0:06:32.28,0:06:35.07,*Default,NTP,0000,0000,0000,,你会摄入一些看上去很像天然分子的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're introducing something that looks very much like a natural molecule 
+Dialogue: 0,0:06:35.99,0:06:37.43,*Default,NTP,0000,0000,0000,,令它们在体内发挥作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}back into the body to have an effect.
+Dialogue: 0,0:06:39.01,0:06:41.48,*Default,NTP,0000,0000,0000,,毒理学是药理学的一个分支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Toxicology is that branch of pharmacology 
+Dialogue: 0,0:06:41.48,0:06:44.77,*Default,NTP,0000,0000,0000,,它只专注于药物的毒副作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that thinks exclusively about toxic effects of the drug.
+Dialogue: 0,0:06:45.65,0:06:49.07,*Default,NTP,0000,0000,0000,,药物和药物输送系统的研发中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the main challenges with developing drugs
+Dialogue: 0,0:06:49.18,0:06:52.07,*Default,NTP,0000,0000,0000,,存在一个重要挑战就是药物的非预期作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and drug delivery systems is that drugs have unwanted effects.
+Dialogue: 0,0:06:53.20,0:06:55.66,*Default,NTP,0000,0000,0000,,药物会在组织中或细胞内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have the effect that you desire
+Dialogue: 0,0:06:55.66,0:07:00.17,*Default,NTP,0000,0000,0000,,依照需要  发挥其应有的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the tissue or within the cells that they were designed to affect,
+Dialogue: 0,0:07:00.44,0:07:03.35,*Default,NTP,0000,0000,0000,,但是它们也会影响身体的其它部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they can also effects in other parts of the body 
+Dialogue: 0,0:07:03.35,0:07:05.26,*Default,NTP,0000,0000,0000,,这些影响我们称为副作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those effects are side-effects.
+Dialogue: 0,0:07:05.91,0:07:09.30,*Default,NTP,0000,0000,0000,,药物的副作用会使得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those effects are toxicities or unwanted changes
+Dialogue: 0,0:07:09.30,0:07:11.79,*Default,NTP,0000,0000,0000,,机体中毒或者发生非预期变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the body as a result of the drug.
+Dialogue: 0,0:07:13.22,0:07:16.96,*Default,NTP,0000,0000,0000,,我们接下来会讨论两个很重要并且不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about two important different 
+Dialogue: 0,0:07:16.96,0:07:18.76,*Default,NTP,0000,0000,0000,,但是相关的概念  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but related concepts 
+Dialogue: 0,0:07:18.93,0:07:21.96,*Default,NTP,0000,0000,0000,,药物效应动力学和药物代谢动力学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called pharmacodynamics and pharmacokinetics.
+Dialogue: 0,0:07:22.57,0:07:24.76,*Default,NTP,0000,0000,0000,,药物效应动力学指药物在机体中发挥效用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pharmacodynamics is the effect of a drug on a body
+Dialogue: 0,0:07:25.82,0:07:28.32,*Default,NTP,0000,0000,0000,,研究通常在生物或者生物体的细胞上进行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's usually on the body or on cells from the body.
+Dialogue: 0,0:07:28.99,0:07:31.03,*Default,NTP,0000,0000,0000,,通常用剂量效应曲线表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's usually defined by a dose-response curve.
+Dialogue: 0,0:07:31.75,0:07:34.05,*Default,NTP,0000,0000,0000,,剂量效应是指给予一定剂量的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Dose response means I give a certain amount of the drug 
+Dialogue: 0,0:07:34.05,0:07:35.24,*Default,NTP,0000,0000,0000,,然后观察它的作用效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I see what effect it has.
+Dialogue: 0,0:07:35.94,0:07:37.37,*Default,NTP,0000,0000,0000,,增加剂量  然后观察其作用效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I give more, I see what effect that has, 
+Dialogue: 0,0:07:38.04,0:07:39.68,*Default,NTP,0000,0000,0000,,增加剂量后会产生什么影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I give more I see what effect that has.
+Dialogue: 0,0:07:40.15,0:07:42.84,*Default,NTP,0000,0000,0000,,你们应该知道药物定量的重要性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can imagine that's a very important thing to define for any drug 
+Dialogue: 0,0:07:43.68,0:07:46.07,*Default,NTP,0000,0000,0000,,因为大家都想服用达到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you want to deliver the minimum dose
+Dialogue: 0,0:07:46.07,0:07:48.41,*Default,NTP,0000,0000,0000,,预期疗效的最小剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's needed to produce the desired effect.
+Dialogue: 0,0:07:49.47,0:07:51.25,*Default,NTP,0000,0000,0000,,没有人愿意无缘无故的多吃药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't want to introduce any more than necessary.
+Dialogue: 0,0:07:51.88,0:07:53.32,*Default,NTP,0000,0000,0000,,所以搞清楚摄入剂量和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, understanding the relationship 
+Dialogue: 0,0:07:53.90,0:07:58.46,*Default,NTP,0000,0000,0000,,生物学效应之间的关系非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between dose delivered and biological response is very important.
+Dialogue: 0,0:07:59.68,0:08:03.68,*Default,NTP,0000,0000,0000,,通常研究者会先做细胞培养实验  例如\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often that's done first on cells in culture, for example.
+Dialogue: 0,0:08:04.37,0:08:07.40,*Default,NTP,0000,0000,0000,,如果你想要研究一个化疗药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You want to understand how a chemotherapy agent,
+Dialogue: 0,0:08:07.40,0:08:09.85,*Default,NTP,0000,0000,0000,,一个潜在的治疗肿瘤的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a potential agent for treating tumors
+Dialogue: 0,0:08:10.45,0:08:11.91,*Default,NTP,0000,0000,0000,,对于人身体的肿瘤的治疗作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will affect tumors in a person.
+Dialogue: 0,0:08:12.78,0:08:15.78,*Default,NTP,0000,0000,0000,,你首先要做的是培养肿瘤细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The first thing you do is you might have cultured tumor cells 
+Dialogue: 0,0:08:16.31,0:08:19.28,*Default,NTP,0000,0000,0000,,然后将这些细胞暴露在不同浓度的药物中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you expose those cells to different concentrations of the drug 
+Dialogue: 0,0:08:20.23,0:08:23.26,*Default,NTP,0000,0000,0000,,你会发现导致细胞开始凋亡和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you see at what dose do I begin to see
+Dialogue: 0,0:08:23.62,0:08:25.93,*Default,NTP,0000,0000,0000,,消灭肿瘤细胞所需的药物剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cell death or killing of the tumor cells.
+Dialogue: 0,0:08:27.22,0:08:29.10,*Default,NTP,0000,0000,0000,,这就是一种剂量效应关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's one kind of dose response relationship.
+Dialogue: 0,0:08:29.99,0:08:31.75,*Default,NTP,0000,0000,0000,,你们可能能够理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you could understand, probably, 
+Dialogue: 0,0:08:32.33,0:08:34.12,*Default,NTP,0000,0000,0000,,如果人体服用了相同的剂量的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that that might be very different 
+Dialogue: 0,0:08:34.12,0:08:36.60,*Default,NTP,0000,0000,0000,,其结果可能与细胞实验差别很大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you administer that same dose into a person.
+Dialogue: 0,0:08:37.62,0:08:38.36,*Default,NTP,0000,0000,0000,,我们之后将会探讨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about 
+Dialogue: 0,0:08:38.77,0:08:41.28,*Default,NTP,0000,0000,0000,,为什么细胞或其他人造环境中的剂量效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why dose responses in people are different 
+Dialogue: 0,0:08:41.29,0:08:43.45,*Default,NTP,0000,0000,0000,,和人体中的剂量效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than dose responses in cell cultures,
+Dialogue: 0,0:08:44.11,0:08:45.48,*Default,NTP,0000,0000,0000,,是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or in more artificial systems.
+Dialogue: 0,0:08:47.42,0:08:49.32,*Default,NTP,0000,0000,0000,,研究一个药物的效应动力学效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The pharmacodynamic effect of a drug, 
+Dialogue: 0,0:08:50.01,0:08:51.45,*Default,NTP,0000,0000,0000,,或者关于药物效应动力学的研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the study of pharmacodynamics, 
+Dialogue: 0,0:08:51.46,0:08:53.25,*Default,NTP,0000,0000,0000,,其实就是研究药物对机体的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is 'what does the drug do to the body?'
+Dialogue: 0,0:08:54.46,0:08:58.33,*Default,NTP,0000,0000,0000,,研究的结果通常是一个特殊剂量及其疗效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Usually that's defined at specific doses, what does it do.
+Dialogue: 0,0:09:02.33,0:09:03.00,*Default,NTP,0000,0000,0000,,药物代谢动力学研究人体如何代谢药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pharmacokinetics has to do with how your body handles the drug.
+Dialogue: 0,0:09:04.76,0:09:08.72,*Default,NTP,0000,0000,0000,,身体有精密的机制来代谢清除分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The body has exquisite mechanisms for getting rid of molecules.
+Dialogue: 0,0:09:09.76,0:09:12.61,*Default,NTP,0000,0000,0000,,分子只在一段特定的时期内  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Molecules that are produced naturally in your body 
+Dialogue: 0,0:09:12.61,0:09:14.28,*Default,NTP,0000,0000,0000,,在人体中发挥其天然效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only have a certain lifetime.
+Dialogue: 0,0:09:15.76,0:09:17.49,*Default,NTP,0000,0000,0000,,同样的  对于抗体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Likewise, antibodies that we--
+Dialogue: 0,0:09:18.06,0:09:22.13,*Default,NTP,0000,0000,0000,,或体外摄入的分子而言  它们都有寿命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}molecules that we introduced from outside the body also have a lifetime, 
+Dialogue: 0,0:09:22.75,0:09:24.70,*Default,NTP,0000,0000,0000,,寿命的长短取决于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that depends on the mechanism 
+Dialogue: 0,0:09:24.70,0:09:27.40,*Default,NTP,0000,0000,0000,,身体进行代谢以清除这些化合物的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that your body uses to get rid of the compound.
+Dialogue: 0,0:09:28.83,0:09:32.21,*Default,NTP,0000,0000,0000,,机体处理药物的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that manner in which the body handles a drug, 
+Dialogue: 0,0:09:33.54,0:09:35.61,*Default,NTP,0000,0000,0000,,以及机体如何改变药物结构如何清除药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how the body changes the drug, 
+Dialogue: 0,0:09:36.31,0:09:39.81,*Default,NTP,0000,0000,0000,,上述内容称为药物代谢动力学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how it excretes the drug is called pharmacokinetics 
+Dialogue: 0,0:09:40.59,0:09:42.78,*Default,NTP,0000,0000,0000,,它主要研究机体如何处置药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that has to do with what the body does to the drug,
+Dialogue: 0,0:09:43.42,0:09:44.63,*Default,NTP,0000,0000,0000,,而非药物对于机体产生何种影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not what the drug does to the body.
+Dialogue: 0,0:09:45.50,0:09:47.27,*Default,NTP,0000,0000,0000,,这是最简单的表述了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the easiest way to think about it.
+Dialogue: 0,0:09:48.73,0:09:52.06,*Default,NTP,0000,0000,0000,,有一个药物代谢动力学的概念很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One pharmacokinetic concept that's very important is
+Dialogue: 0,0:09:52.06,0:09:54.12,*Default,NTP,0000,0000,0000,,就是生物利用度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the concept of bioavailability.
+Dialogue: 0,0:09:55.50,0:09:56.98,*Default,NTP,0000,0000,0000,,如果我有一些药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have a dose of the drug, 
+Dialogue: 0,0:09:57.40,0:09:58.74,*Default,NTP,0000,0000,0000,,一百毫克的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say 100 milligrams of a drug,
+Dialogue: 0,0:09:59.54,0:10:01.22,*Default,NTP,0000,0000,0000,,我给某个人服用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I administer it to an individual, 
+Dialogue: 0,0:10:03.12,0:10:05.56,*Default,NTP,0000,0000,0000,,那么会有多少药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then how much of that drug 
+Dialogue: 0,0:10:05.56,0:10:08.00,*Default,NTP,0000,0000,0000,,达到其作用部位呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}actually gets into the body where it can be useful?
+Dialogue: 0,0:10:10.77,0:10:13.89,*Default,NTP,0000,0000,0000,,生物利用度取决于给药的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bioavailability is going to depend on how we administer the drug.
+Dialogue: 0,0:10:15.50,0:10:20.14,*Default,NTP,0000,0000,0000,,如果我们比较口服和静脉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we administer it orally versus inject it intravenously, 
+Dialogue: 0,0:10:20.72,0:10:22.72,*Default,NTP,0000,0000,0000,,或者我们稍后讨论的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}versus some of the other routes of administration 
+Dialogue: 0,0:10:22.72,0:10:24.08,*Default,NTP,0000,0000,0000,,其他的给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about in a few minutes.
+Dialogue: 0,0:10:24.66,0:10:28.93,*Default,NTP,0000,0000,0000,,改变给药方式的主要影响就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The main effect of changing the route of administration 
+Dialogue: 0,0:10:29.43,0:10:31.36,*Default,NTP,0000,0000,0000,,改变药物的生物利用度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to change the bioavailability 
+Dialogue: 0,0:10:31.82,0:10:34.75,*Default,NTP,0000,0000,0000,,即能够达到作用位点的药物剂量发生改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or how much of the drug actually reaches the active sites.
+Dialogue: 0,0:10:37.44,0:10:40.01,*Default,NTP,0000,0000,0000,,还有一个相关概念是生物转化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A related concept is biotransformation.
+Dialogue: 0,0:10:42.04,0:10:47.04,*Default,NTP,0000,0000,0000,,生物转化的意思是身体将某种药物转化为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Biotransformation refers to all the mechanisms that your body could use 
+Dialogue: 0,0:10:47.78,0:10:49.52,*Default,NTP,0000,0000,0000,,其他物质的相关机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to convert a drug into something else.
+Dialogue: 0,0:10:50.60,0:10:53.80,*Default,NTP,0000,0000,0000,,通常  将药物被转化成其他物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often, that conversion of a drug into something else
+Dialogue: 0,0:10:54.20,0:10:57.29,*Default,NTP,0000,0000,0000,,是身体代谢药物的关键环节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an important part of how your body gets rid of a drug.
+Dialogue: 0,0:10:59.49,0:11:02.76,*Default,NTP,0000,0000,0000,,许多的生物转化反应是在肝脏内进行的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many biotransformation reactions happen in the liver.
+Dialogue: 0,0:11:03.39,0:11:07.83,*Default,NTP,0000,0000,0000,,肝脏中进行着活跃的新陈代谢和化学反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The liver is a very active site of metabolism and chemical reaction.
+Dialogue: 0,0:11:08.61,0:11:13.61,*Default,NTP,0000,0000,0000,,肝脏细胞能将我们服用的很多药物  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many drugs that we take are converted into other compounds in the liver,
+Dialogue: 0,0:11:15.71,0:11:16.62,*Default,NTP,0000,0000,0000,,在肝脏中转变成其它化合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by cells in the liver.
+Dialogue: 0,0:11:17.25,0:11:19.65,*Default,NTP,0000,0000,0000,,通常  这个转变过程 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often, this conversion into another compound 
+Dialogue: 0,0:11:20.58,0:11:22.55,*Default,NTP,0000,0000,0000,,也是身体清除该药物的第一步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the first step in your body getting rid of it;
+Dialogue: 0,0:11:23.65,0:11:24.58,*Default,NTP,0000,0000,0000,,有时候也是唯一的一步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sometimes it's the only step.
+Dialogue: 0,0:11:25.49,0:11:28.38,*Default,NTP,0000,0000,0000,,你的肝脏可以把某种分子转化成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes your liver is able to convert a molecule into 
+Dialogue: 0,0:11:28.85,0:11:30.36,*Default,NTP,0000,0000,0000,,一种完全无活性的物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something that's completely inactive.
+Dialogue: 0,0:11:32.90,0:11:35.82,*Default,NTP,0000,0000,0000,,例如  我们将乙醇作为药物摄入后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, if you take alcohol, which is a drug,
+Dialogue: 0,0:11:37.18,0:11:39.98,*Default,NTP,0000,0000,0000,,它就在肝脏中被转化成其他分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's converted in the liver into other molecules 
+Dialogue: 0,0:11:40.56,0:11:42.50,*Default,NTP,0000,0000,0000,,该分子不能产生乙醇的生物效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which don't have the biological effect of alcohol.
+Dialogue: 0,0:11:43.83,0:11:46.30,*Default,NTP,0000,0000,0000,,这一过程由肝脏中的酶完成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's done by enzymes in liver cells, 
+Dialogue: 0,0:11:47.05,0:11:48.48,*Default,NTP,0000,0000,0000,,这些酶包括乙醇脱氢酶等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}including the enzyme alcohol dehydrogenase.
+Dialogue: 0,0:11:50.71,0:11:53.48,*Default,NTP,0000,0000,0000,,关于这点我们不会讲太多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes--we won't talk so much about this 
+Dialogue: 0,0:11:53.48,0:11:55.87,*Default,NTP,0000,0000,0000,,但是我希望你们至少明白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I want you to at least realize it,
+Dialogue: 0,0:11:56.34,0:11:59.50,*Default,NTP,0000,0000,0000,,有时我们会向体内输送一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that sometimes we deliver molecules 
+Dialogue: 0,0:11:59.50,0:12:03.23,*Default,NTP,0000,0000,0000,,没有活性也不会引发效应的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are inactive but don't have any response.
+Dialogue: 0,0:12:04.39,0:12:05.48,*Default,NTP,0000,0000,0000,,你的身体也不会对它们产生任何应答\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your body doesn't have any response to them,
+Dialogue: 0,0:12:06.32,0:12:07.66,*Default,NTP,0000,0000,0000,,但是这些分子输入体内后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we deliver them knowing that 
+Dialogue: 0,0:12:07.66,0:12:10.02,*Default,NTP,0000,0000,0000,,肝脏把它们转化成有活性的物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your liver is going to convert them into something active,
+Dialogue: 0,0:12:10.91,0:12:12.96,*Default,NTP,0000,0000,0000,,通过进行一些化学反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they're going to be biotransformed
+Dialogue: 0,0:12:12.96,0:12:15.63,*Default,NTP,0000,0000,0000,,进行生物转化  将其转化为活性物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by some chemical reaction into an active compound.
+Dialogue: 0,0:12:17.51,0:12:20.04,*Default,NTP,0000,0000,0000,,这是生物转化的另一种途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it's another aspect of biotransformation.
+Dialogue: 0,0:12:23.18,0:12:26.42,*Default,NTP,0000,0000,0000,,接下来的十五到二十分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to spend the next 15 or 20 minutes or so 
+Dialogue: 0,0:12:26.42,0:12:29.18,*Default,NTP,0000,0000,0000,,我们会讲解药物的给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talking about how drugs are administered.
+Dialogue: 0,0:12:29.75,0:12:30.59,*Default,NTP,0000,0000,0000,,尤其是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In particular, 
+Dialogue: 0,0:12:32.16,0:12:35.53,*Default,NTP,0000,0000,0000,,为什么要采用不同方式向体内给药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that question should be why are they administered in different ways?
+Dialogue: 0,0:12:37.00,0:12:40.70,*Default,NTP,0000,0000,0000,,例如为什么布洛芬是口服的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is Ibuprofen taken orally, for example,
+Dialogue: 0,0:12:41.67,0:12:44.37,*Default,NTP,0000,0000,0000,,而一些抗体或化疗药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but some antibiotics or chemotherapy drugs 
+Dialogue: 0,0:12:44.37,0:12:47.37,*Default,NTP,0000,0000,0000,,必须直接注射进血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have to be injected directly into the bloodstream.
+Dialogue: 0,0:12:48.60,0:12:49.73,*Default,NTP,0000,0000,0000,,你们想想为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is that do you think?
+Dialogue: 0,0:12:50.18,0:12:52.82,*Default,NTP,0000,0000,0000,,为什么药物有不同的给药方式呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why are some drugs administered in different ways?
+Dialogue: 0,0:12:58.12,0:12:59.83,*Default,NTP,0000,0000,0000,,可能由于你治疗的目标在身体的不同部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It could be that you're targeting different parts of the body 
+Dialogue: 0,0:13:00.16,0:13:01.74,*Default,NTP,0000,0000,0000,,所以你要将药物传输至作用部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you want to deliver them at their site of action, 
+Dialogue: 0,0:13:02.36,0:13:04.80,*Default,NTP,0000,0000,0000,,这可能是原因之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that might be one reason to do it.
+Dialogue: 0,0:13:05.37,0:13:07.16,*Default,NTP,0000,0000,0000,,可能是为了改变了什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There what are you changing?
+Dialogue: 0,0:13:07.59,0:13:11.27,*Default,NTP,0000,0000,0000,,你可能削弱了药物潜在的副作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're changing the potential for side-effects really,
+Dialogue: 0,0:13:11.75,0:13:13.50,*Default,NTP,0000,0000,0000,,或者潜在的毒性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the potential for toxicity of the drug.
+Dialogue: 0,0:13:13.96,0:13:15.77,*Default,NTP,0000,0000,0000,,如果你将药物更多地输送到目标部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you can deliver more at the site of action 
+Dialogue: 0,0:13:17.42,0:13:21.49,*Default,NTP,0000,0000,0000,,那么就只有少量药物会到达身体其它部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then less of it goes to the rest of the body 
+Dialogue: 0,0:13:22.14,0:13:23.92,*Default,NTP,0000,0000,0000,,就不会导致药物产生预计外的效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it might cause unwanted effects,
+Dialogue: 0,0:13:24.75,0:13:26.99,*Default,NTP,0000,0000,0000,,这为药物靶向提供了很好的动因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's a very good reason to target it.
+Dialogue: 0,0:13:34.64,0:13:38.09,*Default,NTP,0000,0000,0000,,有时候药物进入人体不同部位时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes there are biological barriers to drugs 
+Dialogue: 0,0:13:38.09,0:13:40.69,*Default,NTP,0000,0000,0000,,会遇到生物屏障\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}entering different parts of the body.
+Dialogue: 0,0:13:41.83,0:13:45.08,*Default,NTP,0000,0000,0000,,我们将讨论一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to start by talking about the body 
+Dialogue: 0,0:13:45.08,0:13:47.85,*Default,NTP,0000,0000,0000,,身体作为一个独立的单元\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as sort of a single unit or compartment.
+Dialogue: 0,0:13:48.50,0:13:50.15,*Default,NTP,0000,0000,0000,,当药物引入体内后 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I introduce drugs into them, 
+Dialogue: 0,0:13:50.15,0:13:52.28,*Default,NTP,0000,0000,0000,,就可以到达体内各处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those drugs are available everywhere,
+Dialogue: 0,0:13:53.06,0:13:54.00,*Default,NTP,0000,0000,0000,,但实际并非如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's not true.
+Dialogue: 0,0:13:54.23,0:13:59.11,*Default,NTP,0000,0000,0000,,身体有些部位受到保护使药物不能进入\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are some parts of the body that are protected from entry of drugs,
+Dialogue: 0,0:13:59.79,0:14:02.85,*Default,NTP,0000,0000,0000,,在这些受到保护的部位中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the brain is the most famous of those parts 
+Dialogue: 0,0:14:02.85,0:14:04.82,*Default,NTP,0000,0000,0000,,大脑是声名在外的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the body that are protected.
+Dialogue: 0,0:14:05.71,0:14:08.98,*Default,NTP,0000,0000,0000,,保护大脑十分有意义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It makes sense that the brain is protected, 
+Dialogue: 0,0:14:09.40,0:14:12.94,*Default,NTP,0000,0000,0000,,那是因为大脑的功能取决于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the function of the brain depends on 
+Dialogue: 0,0:14:12.95,0:14:16.81,*Default,NTP,0000,0000,0000,,其中化学物质浓度的平衡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the balance of chemical concentrations within it,
+Dialogue: 0,0:14:17.82,0:14:20.28,*Default,NTP,0000,0000,0000,,包括离子浓度及神经递质的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the concentrations of ions and neurotransmitters, 
+Dialogue: 0,0:14:20.90,0:14:23.33,*Default,NTP,0000,0000,0000,,以及潜在的  任何可能与离子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and any molecules that could potentially
+Dialogue: 0,0:14:23.33,0:14:25.87,*Default,NTP,0000,0000,0000,,或者神经递质相互作用的分子的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}interfere with ions or neurotransmitters.
+Dialogue: 0,0:14:26.51,0:14:30.49,*Default,NTP,0000,0000,0000,,我们必须被严格控制大脑内的化学物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our brain chemistry has to be very tightly regulated in order for us to
+Dialogue: 0,0:14:31.43,0:14:35.25,*Default,NTP,0000,0000,0000,,这样才能保持清醒  集中注意力工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}stay awake and pay attention and do the things that we normally do.
+Dialogue: 0,0:14:36.10,0:14:40.43,*Default,NTP,0000,0000,0000,,相反  我们血液中的化学物质整天在变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In contrast, the chemistry in our blood is changing throughout the day.
+Dialogue: 0,0:14:41.02,0:14:43.93,*Default,NTP,0000,0000,0000,,吃饭以后  血液中的化学物质就会变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After you eat chemistry changes 
+Dialogue: 0,0:14:43.93,0:14:48.56,*Default,NTP,0000,0000,0000,,因为肠道吸收了食物分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because molecules are absorbed from the intestine,
+Dialogue: 0,0:14:49.46,0:14:51.20,*Default,NTP,0000,0000,0000,,而在食物分子浓缩进入血液的过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as those molecules get processed 
+Dialogue: 0,0:14:51.20,0:14:53.42,*Default,NTP,0000,0000,0000,,这些分子也进行了修饰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the body concentration in the blood changes.
+Dialogue: 0,0:14:53.92,0:14:56.44,*Default,NTP,0000,0000,0000,,假如你大脑的化学物质也这么变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If your brain chemistry was changing in that same way, 
+Dialogue: 0,0:14:57.29,0:15:00.53,*Default,NTP,0000,0000,0000,,那么你的意识将在清明与模糊之间徘徊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you'd be slipping in and out of consciousness 
+Dialogue: 0,0:15:01.06,0:15:04.29,*Default,NTP,0000,0000,0000,,你会注意到  午餐后你会有这种感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you notice that you do a little bit right after lunch.
+Dialogue: 0,0:15:04.52,0:15:07.56,*Default,NTP,0000,0000,0000,,午餐后想要集中注意力的话会比较难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a little bit harder to pay attention than before lunch 
+Dialogue: 0,0:15:07.86,0:15:08.51,*Default,NTP,0000,0000,0000,,因为体内的化学物质发生变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the chemistry is changing,
+Dialogue: 0,0:15:08.99,0:15:12.97,*Default,NTP,0000,0000,0000,,但血脑屏障对这些化学变化进行缓冲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that change in chemistry is muted by the blood brain barrier 
+Dialogue: 0,0:15:13.66,0:15:17.34,*Default,NTP,0000,0000,0000,,事实上这些分子不太容易进入大脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the fact that molecules can't get very easily into the brain.
+Dialogue: 0,0:15:22.04,0:15:25.29,*Default,NTP,0000,0000,0000,,还有什么其他原因导致给药方式的不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why else might drugs be administered in different ways?
+Dialogue: 0,0:15:27.21,0:15:30.85,*Default,NTP,0000,0000,0000,,想想胰岛素  你们对它有什么认识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think about insulin, what do you know about insulin
+Dialogue: 0,0:15:30.85,0:15:32.21,*Default,NTP,0000,0000,0000,,作为药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a drug?
+Dialogue: 0,0:15:45.64,0:15:47.53,*Default,NTP,0000,0000,0000,,起效速度是重要的一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Speed of action is an important thing 
+Dialogue: 0,0:15:47.87,0:15:49.51,*Default,NTP,0000,0000,0000,,我们将花几分钟讨论的一些药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to talk in a few minutes about some drugs 
+Dialogue: 0,0:15:49.89,0:15:52.06,*Default,NTP,0000,0000,0000,,对与它们来说  起效速度非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where onset of action is very important.
+Dialogue: 0,0:15:52.75,0:15:56.53,*Default,NTP,0000,0000,0000,,它起效要很快  并且给药的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It needs to act very quickly and the way that you administer it 
+Dialogue: 0,0:15:56.53,0:16:00.37,*Default,NTP,0000,0000,0000,,会极大影响体内药物浓度的快速上升\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has as big effect on how rapidly concentrations in the body rise.
+Dialogue: 0,0:16:00.94,0:16:04.20,*Default,NTP,0000,0000,0000,,有些药物需要快速起效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, some things you need to act very rapidly, 
+Dialogue: 0,0:16:04.20,0:16:07.74,*Default,NTP,0000,0000,0000,,你可以选择适当的给药方式达到目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll pick the mode of administration to do that.
+Dialogue: 0,0:16:11.27,0:16:14.40,*Default,NTP,0000,0000,0000,,胰岛素有其他的给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's another issue with insulin 
+Dialogue: 0,0:16:14.40,0:16:18.33,*Default,NTP,0000,0000,0000,,这个我们也会介绍到  记住这个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we'll come too, keep that one in mind.
+Dialogue: 0,0:16:20.38,0:16:22.52,*Default,NTP,0000,0000,0000,,这是一张书中有的表格\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a table that's in the book 
+Dialogue: 0,0:16:22.52,0:16:25.40,*Default,NTP,0000,0000,0000,,我将相对快速的过一遍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I want to go through it relatively quickly
+Dialogue: 0,0:16:25.40,0:16:27.36,*Default,NTP,0000,0000,0000,,因为我想你们能够读懂它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I think you can read it 
+Dialogue: 0,0:16:27.36,0:16:29.93,*Default,NTP,0000,0000,0000,,它本身相当的易于理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's pretty understandable on its own.
+Dialogue: 0,0:16:31.03,0:16:35.03,*Default,NTP,0000,0000,0000,,我将利用这些采用了不同给药途径的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to use these specific examples of different routes of administration
+Dialogue: 0,0:16:36.81,0:16:39.33,*Default,NTP,0000,0000,0000,,来探讨一下这个问题的答案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to think about the answer to this question,
+Dialogue: 0,0:16:39.97,0:16:41.25,*Default,NTP,0000,0000,0000,,即  为什么药物有不同的给药途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'why are drugs administered in different ways?'
+Dialogue: 0,0:16:41.96,0:16:46.18,*Default,NTP,0000,0000,0000,,更重要的是  思考一下在体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More importantly, to think about the biology or the physiology
+Dialogue: 0,0:16:46.24,0:16:49.36,*Default,NTP,0000,0000,0000,,可选的给药途径的生理学及生物学基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of your body that leads to these alternate forms of administration.
+Dialogue: 0,0:16:51.53,0:16:55.10,*Default,NTP,0000,0000,0000,,我们将要讨论的一种方式是静脉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One mode is intravenous injection and we're going to talk --
+Dialogue: 0,0:16:55.69,0:16:56.66,*Default,NTP,0000,0000,0000,,注射方式有很多种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are different kinds of injection.
+Dialogue: 0,0:16:57.22,0:16:59.84,*Default,NTP,0000,0000,0000,,你可以将针刺入身体的不同部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can put a needle into different parts of the body.
+Dialogue: 0,0:17:00.75,0:17:01.98,*Default,NTP,0000,0000,0000,,可以刺进你的肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can put it into a muscle, 
+Dialogue: 0,0:17:02.70,0:17:03.33,*Default,NTP,0000,0000,0000,,可以刺进你的皮肤下面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can put it under the skin, 
+Dialogue: 0,0:17:04.06,0:17:09.06,*Default,NTP,0000,0000,0000,,可以直接刺入包围着脊髓的脊髓液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can put it actually into the spinal fluid that surrounds your spinal cord.
+Dialogue: 0,0:17:10.54,0:17:13.52,*Default,NTP,0000,0000,0000,,静脉注射是特指将针\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Intravenous injection refers specifically to a needle 
+Dialogue: 0,0:17:13.53,0:17:16.46,*Default,NTP,0000,0000,0000,,刺入血管  置于血液中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's placed within the bloodstream--within a vein,
+Dialogue: 0,0:17:17.66,0:17:20.25,*Default,NTP,0000,0000,0000,,这样药物就能直接进入血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so drugs are introduced directly into the bloodstream.
+Dialogue: 0,0:17:21.51,0:17:24.58,*Default,NTP,0000,0000,0000,,这种方法的优势很明显\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The advantages of that should be obvious.
+Dialogue: 0,0:17:24.93,0:17:27.08,*Default,NTP,0000,0000,0000,,它与凯特琳的研究成果有关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what was related to Caitlin's comment, 
+Dialogue: 0,0:17:28.22,0:17:31.58,*Default,NTP,0000,0000,0000,,即药物进入血液之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that drug is immediately introduced into the blood, 
+Dialogue: 0,0:17:32.55,0:17:35.15,*Default,NTP,0000,0000,0000,,能够快速的分散至全身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so it's immediately distributed throughout your body 
+Dialogue: 0,0:17:35.46,0:17:37.53,*Default,NTP,0000,0000,0000,,并在需要给药的部位发生作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and available for action wherever it's needed.
+Dialogue: 0,0:17:38.70,0:17:40.52,*Default,NTP,0000,0000,0000,,这种方式起效相当快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, onset of action is very rapid.
+Dialogue: 0,0:17:41.63,0:17:45.66,*Default,NTP,0000,0000,0000,,另外 其生物利用度为百分之百\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In addition, its bioavailability is 100%.
+Dialogue: 0,0:17:46.27,0:17:49.51,*Default,NTP,0000,0000,0000,,我们已经将药物直接引入了血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've introduced the drug into the blood directly, 
+Dialogue: 0,0:17:50.31,0:17:51.49,*Default,NTP,0000,0000,0000,,并且进入了全身的循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into your circulatory flow, 
+Dialogue: 0,0:17:53.31,0:17:55.69,*Default,NTP,0000,0000,0000,,所有给患者使用的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so all of the molecules that 
+Dialogue: 0,0:17:55.69,0:18:00.36,*Default,NTP,0000,0000,0000,,都将发挥药效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are administered to the patient are available for action.
+Dialogue: 0,0:18:00.72,0:18:04.01,*Default,NTP,0000,0000,0000,,现在  通常我们将生物利用度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, usually we think about bioavailability 
+Dialogue: 0,0:18:04.01,0:18:08.11,*Default,NTP,0000,0000,0000,,视为药物完全吸收至血液的部分 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the fraction of the drug that ends up in the blood 
+Dialogue: 0,0:18:09.82,0:18:11.59,*Default,NTP,0000,0000,0000,,也许你会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you might say,
+Dialogue: 0,0:18:12.70,0:18:15.72,*Default,NTP,0000,0000,0000,,药物可能作用于大脑  或者作用于肾脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The drug might act in the brain or it might act in the kidney, 
+Dialogue: 0,0:18:16.35,0:18:17.94,*Default,NTP,0000,0000,0000,,或者作用于肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or it might act in your muscles 
+Dialogue: 0,0:18:18.72,0:18:22.18,*Default,NTP,0000,0000,0000,,在血液中的药物浓度和在组织中并不相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and being in the blood is not the same as being in those tissues, 
+Dialogue: 0,0:18:22.76,0:18:23.31,*Default,NTP,0000,0000,0000,,那你是正确的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're right.
+Dialogue: 0,0:18:26.42,0:18:29.85,*Default,NTP,0000,0000,0000,,测定特定的组织中的药物含量比较困难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's hard to measure those concentrations in individual tissues 
+Dialogue: 0,0:18:30.14,0:18:33.28,*Default,NTP,0000,0000,0000,,因此我们用进入血液的药物剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so we define bioavailability as the fraction of a drug dose 
+Dialogue: 0,0:18:33.29,0:18:34.52,*Default,NTP,0000,0000,0000,,来定义生物利用度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that gets into the blood.
+Dialogue: 0,0:18:35.85,0:18:38.89,*Default,NTP,0000,0000,0000,,为什么不将静脉给药作为万能的给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, why wouldn't we do intravenous administration for everything?
+Dialogue: 0,0:18:39.93,0:18:44.86,*Default,NTP,0000,0000,0000,,因为它作用快  而通常你又不想等待\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because if it is fast, usually you don't want to wait for--
+Dialogue: 0,0:18:46.40,0:18:48.11,*Default,NTP,0000,0000,0000,,你想要药物尽可能快地起效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you want the drug to act as rapidly as possible 
+Dialogue: 0,0:18:49.31,0:18:53.90,*Default,NTP,0000,0000,0000,,你想要利用所有的药物分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd like all the drug molecules to be bioavailable,
+Dialogue: 0,0:18:54.38,0:18:55.67,*Default,NTP,0000,0000,0000,,你要它们都发挥作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you would like all of them to be useful.
+Dialogue: 0,0:18:56.05,0:18:58.07,*Default,NTP,0000,0000,0000,,那么我们为什么不总采用静脉给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, why don't we use intravenous administration all the time?
+Dialogue: 0,0:18:59.97,0:19:07.28,*Default,NTP,0000,0000,0000,,很明显  静脉注射不是那么容易做到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it probably is obvious that not--that it's not so easy to do.
+Dialogue: 0,0:19:07.47,0:19:10.07,*Default,NTP,0000,0000,0000,,通常  安全的静脉给药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That in general, safe intravenous administration 
+Dialogue: 0,0:19:10.07,0:19:12.03,*Default,NTP,0000,0000,0000,,需要训练有素的医疗人员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}requires trained medical personnel.
+Dialogue: 0,0:19:12.58,0:19:13.91,*Default,NTP,0000,0000,0000,,所以  通常你得在医生办公室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, usually you're in a doctor's office
+Dialogue: 0,0:19:13.91,0:19:14.67,*Default,NTP,0000,0000,0000,,或者医院接受注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a hospital,
+Dialogue: 0,0:19:15.22,0:19:17.35,*Default,NTP,0000,0000,0000,,你不能在家自助完成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't do it yourself at home.
+Dialogue: 0,0:19:19.74,0:19:20.44,*Default,NTP,0000,0000,0000,,否则会有风险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There is a risk 
+Dialogue: 0,0:19:20.99,0:19:23.53,*Default,NTP,0000,0000,0000,,因为你将高浓度的药物引入血液中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you're introducing drugs at high concentration into the blood.
+Dialogue: 0,0:19:24.32,0:19:28.02,*Default,NTP,0000,0000,0000,,服药过量及药物中毒的风险比较高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's much more risk of overdose or toxicity 
+Dialogue: 0,0:19:29.53,0:19:31.55,*Default,NTP,0000,0000,0000,,因为药物浓度变化的非常快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the concentration's going to change very rapidly.
+Dialogue: 0,0:19:34.10,0:19:39.10,*Default,NTP,0000,0000,0000,,即使你知道药物产生效应的平均时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even though you might know what the average response to a drug is,
+Dialogue: 0,0:19:41.36,0:19:43.72,*Default,NTP,0000,0000,0000,,它是一个人群内的平均时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}average among a population of people, 
+Dialogue: 0,0:19:44.91,0:19:49.91,*Default,NTP,0000,0000,0000,,而药物在每个人身上的作用方式都不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're all different in ways that are important to how drugs act.
+Dialogue: 0,0:19:51.86,0:19:54.52,*Default,NTP,0000,0000,0000,,你知道  如果你服用布洛芬\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know this, if you take Ibuprofen,
+Dialogue: 0,0:19:54.83,0:19:56.36,*Default,NTP,0000,0000,0000,,阅读标签上的使用剂量说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you read the dosage on the label,
+Dialogue: 0,0:19:56.94,0:19:58.20,*Default,NTP,0000,0000,0000,,它会这么说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it will say something like 
+Dialogue: 0,0:19:58.78,0:20:02.07,*Default,NTP,0000,0000,0000,,如果大于十二周岁则服用某个剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'if you're over 12 years old you take one dose
+Dialogue: 0,0:20:02.55,0:20:04.32,*Default,NTP,0000,0000,0000,,如果不满十二周岁服用另一个剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if you're under 12 you take another dose.'
+Dialogue: 0,0:20:05.05,0:20:07.90,*Default,NTP,0000,0000,0000,,所以  人的体型或者年龄\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, size of the person or age of the person 
+Dialogue: 0,0:20:08.32,0:20:10.65,*Default,NTP,0000,0000,0000,,是决定服用剂量的重要因素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an important determinant of how much dose you take.
+Dialogue: 0,0:20:11.31,0:20:13.20,*Default,NTP,0000,0000,0000,,性别通常也是一个重要的决定因素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gender is often an important determinant, 
+Dialogue: 0,0:20:14.39,0:20:17.33,*Default,NTP,0000,0000,0000,,你总体的健康状况也是一个重要决定因素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your overall state of health is an important determinant,
+Dialogue: 0,0:20:17.94,0:20:20.37,*Default,NTP,0000,0000,0000,,而且你不可能知道每个人的信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can't know those things for everybody.
+Dialogue: 0,0:20:21.56,0:20:23.52,*Default,NTP,0000,0000,0000,,你可以将这个列表继续列下去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could go on and on in this list and so you--
+Dialogue: 0,0:20:24.02,0:20:26.63,*Default,NTP,0000,0000,0000,,某个体可能对药物剂量更敏感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one individual might be more sensitive to doses of the drug than another.
+Dialogue: 0,0:20:27.95,0:20:31.11,*Default,NTP,0000,0000,0000,,如果你通过静脉一次注入所有药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you're introducing all the drug at one time intravenously 
+Dialogue: 0,0:20:31.60,0:20:34.54,*Default,NTP,0000,0000,0000,,可能会增加潜在的不良反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the potential for an unwanted response is higher.
+Dialogue: 0,0:20:35.91,0:20:36.68,*Default,NTP,0000,0000,0000,,注射是要冒风险的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a risk of infection
+Dialogue: 0,0:20:37.18,0:20:39.89,*Default,NTP,0000,0000,0000,,因为你正将药物直接注入血液中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you're introducing something directly into the bloodstream
+Dialogue: 0,0:20:40.56,0:20:41.49,*Default,NTP,0000,0000,0000,,如果操作不得当\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it's not done properly,
+Dialogue: 0,0:20:42.49,0:20:43.80,*Default,NTP,0000,0000,0000,,是不会舒服的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's not comfortable.
+Dialogue: 0,0:20:44.46,0:20:47.81,*Default,NTP,0000,0000,0000,,大多数人不想做静脉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most people don't want to have an intravenous injection.
+Dialogue: 0,0:20:48.91,0:20:53.29,*Default,NTP,0000,0000,0000,,即使你因此受益  也不想这么做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you might not do it in cases where even if it would benefit you,
+Dialogue: 0,0:20:53.94,0:20:56.78,*Default,NTP,0000,0000,0000,,对于有危险的注射则更甚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so those are disadvantages.
+Dialogue: 0,0:20:58.88,0:21:03.78,*Default,NTP,0000,0000,0000,,对于某些药物来说  静脉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a very safe and effective, and useful mode 
+Dialogue: 0,0:21:05.13,0:21:06.38,*Default,NTP,0000,0000,0000,,是非常安全有效以及实用的给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of administration for some kinds of compounds.
+Dialogue: 0,0:21:07.05,0:21:08.19,*Default,NTP,0000,0000,0000,,例如  抗生素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, for antibiotics,
+Dialogue: 0,0:21:09.13,0:21:11.46,*Default,NTP,0000,0000,0000,,假如你患了一种叫做败血症的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you happen to have what's called sepsis 
+Dialogue: 0,0:21:11.46,0:21:14.28,*Default,NTP,0000,0000,0000,,即已经扩散到血液中的一种感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or an infection that's spread into your bloodstream,
+Dialogue: 0,0:21:15.72,0:21:18.43,*Default,NTP,0000,0000,0000,,有效对抗感染的仅有办法之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the only ways to combat those infections effectively is to
+Dialogue: 0,0:21:18.82,0:21:20.79,*Default,NTP,0000,0000,0000,,就是直接在血液中注射抗生素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}introduce antibiotics directly into the bloodstream.
+Dialogue: 0,0:21:22.74,0:21:24.86,*Default,NTP,0000,0000,0000,,静脉滴注是一个相似的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Intravenous infusion is a similar mode, 
+Dialogue: 0,0:21:27.87,0:21:30.40,*Default,NTP,0000,0000,0000,,但不像一次性注射那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but now instead of a onetime injection,
+Dialogue: 0,0:21:30.72,0:21:33.17,*Default,NTP,0000,0000,0000,,用一个装满药物的注射器以及一根针\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with an intravenous injection you have a syringe full of drug, 
+Dialogue: 0,0:21:33.69,0:21:36.74,*Default,NTP,0000,0000,0000,,将所有药物一次性地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a needle in the circulatory system,
+Dialogue: 0,0:21:37.26,0:21:38.28,*Default,NTP,0000,0000,0000,,注射到血液循环系统中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you introduce the drug all at once, 
+Dialogue: 0,0:21:38.98,0:21:41.21,*Default,NTP,0000,0000,0000,,而是通过滴注缓慢地将药物注入人体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in infusion you slowly pump the drug in
+Dialogue: 0,0:21:42.58,0:21:45.26,*Default,NTP,0000,0000,0000,,药物滴注过程可能会持续相当长一段时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you might be pumping it in continuously over a long period time, 
+Dialogue: 0,0:21:46.08,0:21:48.41,*Default,NTP,0000,0000,0000,,也许超过几小时或者几天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe over hours or over days.
+Dialogue: 0,0:21:49.63,0:21:50.96,*Default,NTP,0000,0000,0000,,有时是这样使用的  在电视上你见过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes this is done--you've seen on TV shows 
+Dialogue: 0,0:21:52.99,0:21:57.62,*Default,NTP,0000,0000,0000,,满是溶液的袋子挂在支架上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a bag of a solution hanging up on a pole 
+Dialogue: 0,0:21:58.63,0:22:02.50,*Default,NTP,0000,0000,0000,,一根管子伸到病人的手臂里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a tube going into a patient's arm.
+Dialogue: 0,0:22:02.97,0:22:07.90,*Default,NTP,0000,0000,0000,,这种注入方式是由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, this is an infusion where the infusion is driven 
+Dialogue: 0,0:22:07.90,0:22:10.60,*Default,NTP,0000,0000,0000,,液体的重力所驱动的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the gravity flow of fluid
+Dialogue: 0,0:22:10.97,0:22:15.47,*Default,NTP,0000,0000,0000,,药液通过输液管进入病人的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through the tube into the patient's blood vessel,
+Dialogue: 0,0:22:16.92,0:22:18.09,*Default,NTP,0000,0000,0000,,这是注射的一个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's one example of an infusion.
+Dialogue: 0,0:22:19.31,0:22:23.70,*Default,NTP,0000,0000,0000,,其他时候可能还需要泵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Other examples are there might be pump involved at some point.
+Dialogue: 0,0:22:25.07,0:22:28.90,*Default,NTP,0000,0000,0000,,在药液袋和刺入手臂的针之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have a pump in between the bag of fluid 
+Dialogue: 0,0:22:28.90,0:22:30.07,*Default,NTP,0000,0000,0000,,有一个泵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the needle that goes into the arm.
+Dialogue: 0,0:22:30.98,0:22:35.18,*Default,NTP,0000,0000,0000,,这样你能更精细的控制流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In this way, you can control the flow much more carefully.
+Dialogue: 0,0:22:40.02,0:22:44.11,*Default,NTP,0000,0000,0000,,其中一个已经应用于医院的例子是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One example of where that's done in the hospital is the molecule Heparin,
+Dialogue: 0,0:22:45.06,0:22:46.09,*Default,NTP,0000,0000,0000,,用作抗凝剂的分子肝素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is an anticoagulant.
+Dialogue: 0,0:22:46.76,0:22:49.70,*Default,NTP,0000,0000,0000,,对于某些病人  它是必不可少的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's needed for certain patients 
+Dialogue: 0,0:22:49.70,0:22:54.25,*Default,NTP,0000,0000,0000,,例如  有患血栓的病人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who are at risk of having blood clots, for example.
+Dialogue: 0,0:22:55.25,0:22:58.11,*Default,NTP,0000,0000,0000,,他们患有血栓的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This might be--they might be at risk for blood clots 
+Dialogue: 0,0:22:58.11,0:23:00.25,*Default,NTP,0000,0000,0000,,是多种多样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a variety of reasons,
+Dialogue: 0,0:23:01.76,0:23:04.01,*Default,NTP,0000,0000,0000,,但是注入分子肝素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you introduce the molecule Heparin 
+Dialogue: 0,0:23:04.01,0:23:06.94,*Default,NTP,0000,0000,0000,,就能够降低血栓形成的可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which reduces the likelihood that clots will form,
+Dialogue: 0,0:23:07.48,0:23:09.52,*Default,NTP,0000,0000,0000,,但是在体内需保持肝素的水平不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only you need to have a continuous level of Heparin.
+Dialogue: 0,0:23:10.32,0:23:14.81,*Default,NTP,0000,0000,0000,,肝素的浓度需要维持在某一水平\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You need to have that Heparin concentration continuously at some level,
+Dialogue: 0,0:23:15.14,0:23:22.14,*Default,NTP,0000,0000,0000,,因此就要将肝素直接滴注至循环系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you continuously infuse it directly into the circulatory system.
+Dialogue: 0,0:23:23.90,0:23:28.90,*Default,NTP,0000,0000,0000,,这是一种非常有效的给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, this is a very effective method for administering drugs 
+Dialogue: 0,0:23:29.91,0:23:34.66,*Default,NTP,0000,0000,0000,,因为药物在缓慢滴加  而通过观察\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you're slowly adding the drug and you're watching to see 
+Dialogue: 0,0:23:34.66,0:23:38.09,*Default,NTP,0000,0000,0000,,就能了解到人体内药物的浓度是多大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what concentration is maintained in the person,
+Dialogue: 0,0:23:38.40,0:23:41.76,*Default,NTP,0000,0000,0000,,还可以通过调节泵来调节药物的流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're adjusting the rate by tuning the pump 
+Dialogue: 0,0:23:41.76,0:23:45.47,*Default,NTP,0000,0000,0000,,直至精确达到你所需要的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until you get exactly the concentration that you want.
+Dialogue: 0,0:23:49.00,0:23:53.49,*Default,NTP,0000,0000,0000,,只要病情稳定  你就不需要再管了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can leave it there and as long as the patient stays roughly the same, 
+Dialogue: 0,0:23:53.49,0:23:56.77,*Default,NTP,0000,0000,0000,,那药物的浓度就能保持不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then their concentration will remain roughly the same.
+Dialogue: 0,0:23:57.24,0:24:00.99,*Default,NTP,0000,0000,0000,,因此你可以让病人长时间摄入药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you can expose them to a drug over a long period of time 
+Dialogue: 0,0:24:00.99,0:24:05.42,*Default,NTP,0000,0000,0000,,这样药物就能产生长期平稳的生物学效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and have a biological effect that's constant over a long period of time.
+Dialogue: 0,0:24:05.91,0:24:10.36,*Default,NTP,0000,0000,0000,,就像我提到的 在特殊情况下非常有用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's very useful in certain situations like this one I've mentioned.
+Dialogue: 0,0:24:11.35,0:24:12.85,*Default,NTP,0000,0000,0000,,再次说明  其生物利用率是百分之百\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, it's 100% bioavailable 
+Dialogue: 0,0:24:12.85,0:24:15.41,*Default,NTP,0000,0000,0000,,你能在血浆水平上进行连续的控制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you have continuous control over plasma levels.
+Dialogue: 0,0:24:16.40,0:24:19.42,*Default,NTP,0000,0000,0000,,假如你知道病人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, what if you knew that the patient was 
+Dialogue: 0,0:24:19.42,0:24:22.27,*Default,NTP,0000,0000,0000,,在夜间血栓的发生几率较高又会怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more at risk of developing blood clots at night?
+Dialogue: 0,0:24:22.89,0:24:25.39,*Default,NTP,0000,0000,0000,,那么你可以放置一个可编程的泵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, then you'd put a programmable pump on it,
+Dialogue: 0,0:24:26.32,0:24:28.42,*Default,NTP,0000,0000,0000,,并对其编程以便\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd program the pump so that 
+Dialogue: 0,0:24:28.42,0:24:31.30,*Default,NTP,0000,0000,0000,,在夜间增加药物流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate of infusion increased during the night
+Dialogue: 0,0:24:31.80,0:24:33.04,*Default,NTP,0000,0000,0000,,并在早晨降低药物流速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then went down again in the morning.
+Dialogue: 0,0:24:34.19,0:24:36.87,*Default,NTP,0000,0000,0000,,这样你就能够在夜间增加血药浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In that way you could increase the concentration of drug at night 
+Dialogue: 0,0:24:38.18,0:24:39.81,*Default,NTP,0000,0000,0000,,并在白天降低血药浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then decrease it during the day.
+Dialogue: 0,0:24:40.78,0:24:42.69,*Default,NTP,0000,0000,0000,,因此你只使用能够产生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you'd only be using the amount of drug 
+Dialogue: 0,0:24:42.69,0:24:44.47,*Default,NTP,0000,0000,0000,,一定生物效应所需的药量即可\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that was needed for a biological effect
+Dialogue: 0,0:24:45.09,0:24:47.48,*Default,NTP,0000,0000,0000,,你还能根据病人所需的生物学效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd be adjusting that biological effect 
+Dialogue: 0,0:24:47.48,0:24:50.74,*Default,NTP,0000,0000,0000,,采用一种交互式的给药方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the needs of the patient in a very sort of interactive way.
+Dialogue: 0,0:24:51.05,0:24:54.92,*Default,NTP,0000,0000,0000,,你可以对这个简单的装置进行扩展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can imagine, now, extending that very simple approach
+Dialogue: 0,0:24:55.04,0:24:58.34,*Default,NTP,0000,0000,0000,,如直接在血液中放置这样的针和泵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a needle in the bloodstream and a pump, 
+Dialogue: 0,0:24:59.03,0:25:03.07,*Default,NTP,0000,0000,0000,,及装有药液的容器来输送任意形式的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a reservoir of fluid to deliver any pattern of drug 
+Dialogue: 0,0:25:03.07,0:25:05.67,*Default,NTP,0000,0000,0000,,这对个体来说是很有用的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that was needed for that individual.
+Dialogue: 0,0:25:06.51,0:25:09.58,*Default,NTP,0000,0000,0000,,为什么不总用它呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why isn't that done all the time?
+Dialogue: 0,0:25:10.20,0:25:12.56,*Default,NTP,0000,0000,0000,,缘于和静脉注射相同的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, for the same reasons the intravenous infusion 
+Dialogue: 0,0:25:12.56,0:25:14.24,*Default,NTP,0000,0000,0000,,静脉滴注不是万能的  而且原因还更多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}aren't done all the time, plus some,
+Dialogue: 0,0:25:14.58,0:25:17.00,*Default,NTP,0000,0000,0000,,因为它更为复杂  对吧?\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this is even more complex, right
+Dialogue: 0,0:25:17.75,0:25:19.40,*Default,NTP,0000,0000,0000,,它需要连续的监控\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it requires continuous monitoring
+Dialogue: 0,0:25:20.13,0:25:21.45,*Default,NTP,0000,0000,0000,,且需要有人照看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so there have to be people there
+Dialogue: 0,0:25:21.76,0:25:24.77,*Default,NTP,0000,0000,0000,,这样在有不良事件发生时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in case there is some unexpected event in order to
+Dialogue: 0,0:25:25.23,0:25:28.13,*Default,NTP,0000,0000,0000,,能够有人将泵关闭或调节流量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}turn off the pump or to adjust the flow.
+Dialogue: 0,0:25:28.53,0:25:31.41,*Default,NTP,0000,0000,0000,,因此它大多数情况下确实需要住院治疗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, that really requires hospitalization in most cases.
+Dialogue: 0,0:25:31.76,0:25:32.85,*Default,NTP,0000,0000,0000,,我们将在下次介绍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, we're going to get to the point next time 
+Dialogue: 0,0:25:33.33,0:25:37.16,*Default,NTP,0000,0000,0000,,在我们讨论一些在注射中使用泵的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where we talk about some examples of infusion using pumps 
+Dialogue: 0,0:25:37.61,0:25:40.44,*Default,NTP,0000,0000,0000,,这些泵能够放置在病人身上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can be worn by individuals 
+Dialogue: 0,0:25:40.79,0:25:42.58,*Default,NTP,0000,0000,0000,,这样病人就能够带着泵离开医院\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can leave the hospital with these pumps
+Dialogue: 0,0:25:43.02,0:25:47.00,*Default,NTP,0000,0000,0000,,比如将泵植入或者捆绑在腰带上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}either implanted within them or strapped to their belt, for example.
+Dialogue: 0,0:25:49.49,0:25:53.21,*Default,NTP,0000,0000,0000,,一般而言  只在特殊情况下才使用泵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In general, that's done only in unusual situations.
+Dialogue: 0,0:25:55.44,0:25:57.34,*Default,NTP,0000,0000,0000,,皮下注射和肌肉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Subcutaneous injection and intramuscular injection 
+Dialogue: 0,0:25:57.34,0:25:59.02,*Default,NTP,0000,0000,0000,,和静脉注射相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are similar to intravenous injection in that 
+Dialogue: 0,0:25:59.02,0:26:00.21,*Default,NTP,0000,0000,0000,,都利用针进行注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's an injection from a needle.
+Dialogue: 0,0:26:00.64,0:26:02.87,*Default,NTP,0000,0000,0000,,都是一次性注入所有药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a onetime introduce the drug all at once,
+Dialogue: 0,0:26:05.07,0:26:06.81,*Default,NTP,0000,0000,0000,,只不过针刺入的部位不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you're putting the needle in a different place.
+Dialogue: 0,0:26:07.73,0:26:10.32,*Default,NTP,0000,0000,0000,,不是将针刺入血管里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Instead of intentionally putting the needle into a vein 
+Dialogue: 0,0:26:11.10,0:26:12.61,*Default,NTP,0000,0000,0000,,向血液中注入药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you introduce drug into the blood,
+Dialogue: 0,0:26:13.23,0:26:14.78,*Default,NTP,0000,0000,0000,,而是将针刺入于肌肉中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you put it either in a muscle, 
+Dialogue: 0,0:26:15.77,0:26:18.36,*Default,NTP,0000,0000,0000,,如手臂上的肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like a muscle mass of your arm,
+Dialogue: 0,0:26:19.67,0:26:21.71,*Default,NTP,0000,0000,0000,,或是臀部的肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or your back side.
+Dialogue: 0,0:26:22.77,0:26:24.25,*Default,NTP,0000,0000,0000,,你们在那个部位注射过吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Have you ever had an injection there?
+Dialogue: 0,0:26:24.55,0:26:26.19,*Default,NTP,0000,0000,0000,,医生不经常这样做  不知道为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They don't do this so commonly anymore, I'm not sure why.
+Dialogue: 0,0:26:26.87,0:26:28.53,*Default,NTP,0000,0000,0000,,我能猜到为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can imagine why but--
+Dialogue: 0,0:26:29.25,0:26:32.93,*Default,NTP,0000,0000,0000,,注射到肌肉组织里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into a muscle mass
+Dialogue: 0,0:26:33.27,0:26:35.09,*Default,NTP,0000,0000,0000,,然后药物分子被吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then the molecules are absorbed
+Dialogue: 0,0:26:35.09,0:26:37.67,*Default,NTP,0000,0000,0000,,通过那块肌肉进入血液或者皮下地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from that muscle into the blood or subcutaneously--
+Dialogue: 0,0:26:38.21,0:26:38.72,*Default,NTP,0000,0000,0000,,subcutaneous的意思是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is subcutaneous,
+Dialogue: 0,0:26:38.72,0:26:40.53,*Default,NTP,0000,0000,0000,,cutaneous代表皮肤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cutaneous is skin,
+Dialogue: 0,0:26:40.53,0:26:41.49,*Default,NTP,0000,0000,0000,,sub表示下面的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sub is under,
+Dialogue: 0,0:26:41.50,0:26:43.86,*Default,NTP,0000,0000,0000,,这是一种向皮肤下侧注射的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is an injection under the skin.
+Dialogue: 0,0:26:44.73,0:26:47.29,*Default,NTP,0000,0000,0000,,所以说  你可以揪起一小块皮肤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you could pull up on your skin a little flap, 
+Dialogue: 0,0:26:47.62,0:26:48.87,*Default,NTP,0000,0000,0000,,将其在一定程度上扯离肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can sort of pull it away from the muscle 
+Dialogue: 0,0:26:49.30,0:26:51.04,*Default,NTP,0000,0000,0000,,然后将针刺入该处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd insert the needle under there 
+Dialogue: 0,0:26:51.37,0:26:55.08,*Default,NTP,0000,0000,0000,,并且向皮下注入少量的药物溶液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and introduce a little reservoir of drug solution underneath the skin.
+Dialogue: 0,0:26:57.60,0:27:00.72,*Default,NTP,0000,0000,0000,,如今  糖尿病人通常用这种方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, this is how diabetics
+Dialogue: 0,0:27:00.73,0:27:02.60,*Default,NTP,0000,0000,0000,,来给自己注射胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}administer insulin to themselves, usually.
+Dialogue: 0,0:27:03.98,0:27:05.33,*Default,NTP,0000,0000,0000,,他们给肌肉扎一针\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They put a needle into the muscle 
+Dialogue: 0,0:27:07.04,0:27:09.86,*Default,NTP,0000,0000,0000,,并且将一定剂量胰岛素的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they inject a volume of
+Dialogue: 0,0:27:09.87,0:27:12.04,*Default,NTP,0000,0000,0000,,药物溶液注入肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an insulin-containing solution into the muscle space.
+Dialogue: 0,0:27:16.22,0:27:17.65,*Default,NTP,0000,0000,0000,,我讲过  在这张图表上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I say on this sheet here that 
+Dialogue: 0,0:27:17.65,0:27:19.85,*Default,NTP,0000,0000,0000,,在那种情况下的生物利用率通常很高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bioavailability in that case is usually high,
+Dialogue: 0,0:27:20.31,0:27:23.74,*Default,NTP,0000,0000,0000,,为什么会这样  你们是如何看待\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why is it--who do you think bioavailability 
+Dialogue: 0,0:27:23.74,0:27:26.47,*Default,NTP,0000,0000,0000,,这些特殊注射方式下的高生物利用率的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is high for these particular modes?
+Dialogue: 0,0:27:31.23,0:27:33.75,*Default,NTP,0000,0000,0000,,为什么肌内注射的生物利用率是如此之高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is it high for intramuscular injection?
+Dialogue: 0,0:27:34.75,0:27:37.23,*Default,NTP,0000,0000,0000,,它可能是百分之八十或百分之九十\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It might be 80% or 90%,
+Dialogue: 0,0:27:37.23,0:27:39.14,*Default,NTP,0000,0000,0000,,虽不是百分之百但也相当高了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it's not 100% but it's pretty high,
+Dialogue: 0,0:27:40.95,0:27:41.50,*Default,NTP,0000,0000,0000,,为什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why is that?
+Dialogue: 0,0:27:46.91,0:27:48.89,*Default,NTP,0000,0000,0000,,如果我将药物注射进肌肉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does the drug get into the blood from there 
+Dialogue: 0,0:27:48.89,0:27:51.01,*Default,NTP,0000,0000,0000,,它是怎样进入血液的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I inject it into muscle?
+Dialogue: 0,0:28:01.58,0:28:03.33,*Default,NTP,0000,0000,0000,,贾斯汀  没错 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Justin? Yeah,
+Dialogue: 0,0:28:03.33,0:28:06.43,*Default,NTP,0000,0000,0000,,肌肉每时每刻都在受血液的滋养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so your muscle is being perfused by blood all the time.
+Dialogue: 0,0:28:07.18,0:28:08.26,*Default,NTP,0000,0000,0000,,血液在肌肉内流动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gets blood flow,
+Dialogue: 0,0:28:08.26,0:28:10.57,*Default,NTP,0000,0000,0000,,由动脉流入  经毛细血管网\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's arteries going in, capillary networks,
+Dialogue: 0,0:28:11.15,0:28:12.59,*Default,NTP,0000,0000,0000,,静脉收集流出的血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and veins that are collecting blood 
+Dialogue: 0,0:28:12.59,0:28:14.43,*Default,NTP,0000,0000,0000,,所以说肌肉有着十分充足的血液供应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so there's a very rich blood supply in muscle.
+Dialogue: 0,0:28:16.23,0:28:18.81,*Default,NTP,0000,0000,0000,,那么  你将药物注射到肌肉组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you inject it into the muscle tissue 
+Dialogue: 0,0:28:18.81,0:28:22.09,*Default,NTP,0000,0000,0000,,药物仅仅通过某种渗透或扩散的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the drug just sort of percolates in or diffuses 
+Dialogue: 0,0:28:22.09,0:28:24.99,*Default,NTP,0000,0000,0000,,就能进入肌肉内的血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into the blood vessels that are already there.
+Dialogue: 0,0:28:25.70,0:28:28.91,*Default,NTP,0000,0000,0000,,如今  比起静脉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the effects tend to
+Dialogue: 0,0:28:28.91,0:28:29.86,*Default,NTP,0000,0000,0000,,肌肉注射的药效要更加持久\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}last longer than an intravenous administration
+Dialogue: 0,0:28:30.24,0:28:32.28,*Default,NTP,0000,0000,0000,,因为药物需要一些时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it takes some time for the drugs
+Dialogue: 0,0:28:32.28,0:28:34.11,*Default,NTP,0000,0000,0000,,从贮处转移\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to move from this reservoir
+Dialogue: 0,0:28:34.53,0:28:35.44,*Default,NTP,0000,0000,0000,,这一贮处是你注入它的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you've injected them,
+Dialogue: 0,0:28:35.44,0:28:36.80,*Default,NTP,0000,0000,0000,,类似于肌肉中的小仓库\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this little depot in the muscle,
+Dialogue: 0,0:28:37.52,0:28:40.11,*Default,NTP,0000,0000,0000,,药物需要一些时间才能进入血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it takes some time for the drugs to move into your bloodstream.
+Dialogue: 0,0:28:42.60,0:28:45.14,*Default,NTP,0000,0000,0000,,由于上述特性  药效会更持久\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you get a prolonged effect because of that;
+Dialogue: 0,0:28:46.30,0:28:47.57,*Default,NTP,0000,0000,0000,,并不是所有药物都会立刻起效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not all the drug is available at once.
+Dialogue: 0,0:28:48.79,0:28:50.25,*Default,NTP,0000,0000,0000,,同样的不是所有药物都可以进入血液循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You also don't get all the drug in 
+Dialogue: 0,0:28:50.66,0:28:53.16,*Default,NTP,0000,0000,0000,,因为一部分在肌肉中便发生代谢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because some of it is metabolized locally
+Dialogue: 0,0:28:53.51,0:28:55.64,*Default,NTP,0000,0000,0000,,或者根本不会进入血管\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or it doesn't go into the blood vessels at all
+Dialogue: 0,0:28:56.67,0:28:57.87,*Default,NTP,0000,0000,0000,,所以药物不会被分配到全身各处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so it doesn't get distributed.
+Dialogue: 0,0:28:58.12,0:29:00.29,*Default,NTP,0000,0000,0000,,总而言之  生物利用率虽不是百分之百\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, bioavailabilities not 100%
+Dialogue: 0,0:29:00.29,0:29:01.13,*Default,NTP,0000,0000,0000,,但通常相当的高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's often pretty high.
+Dialogue: 0,0:29:03.07,0:29:04.57,*Default,NTP,0000,0000,0000,,这种注射方式并不危险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as hazardous 
+Dialogue: 0,0:29:04.58,0:29:08.76,*Default,NTP,0000,0000,0000,,因为实际上你不需要向静脉扎针\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you're not actually introducing a needle into a vein.
+Dialogue: 0,0:29:09.87,0:29:13.28,*Default,NTP,0000,0000,0000,,个人在家中便可独立完成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can be done by individuals at home 
+Dialogue: 0,0:29:13.28,0:29:15.88,*Default,NTP,0000,0000,0000,,所以糖尿病人也可以做到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so diabetics can do this;
+Dialogue: 0,0:29:16.36,0:29:17.57,*Default,NTP,0000,0000,0000,,而且一天内可以注射多次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they can do it several times a day.
+Dialogue: 0,0:29:22.72,0:29:23.38,*Default,NTP,0000,0000,0000,,但它还是会引起不适\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's still uncomfortable, 
+Dialogue: 0,0:29:23.84,0:29:25.06,*Default,NTP,0000,0000,0000,,如果有其它的选择的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}most people don't want to do it 
+Dialogue: 0,0:29:25.06,0:29:27.02,*Default,NTP,0000,0000,0000,,大多数人一定不想选用这种方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you wouldn't do it if there was an alternative.
+Dialogue: 0,0:29:29.11,0:29:31.07,*Default,NTP,0000,0000,0000,,但为什么胰岛素疗法没有其它的方式呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is there no alternative for insulin?
+Dialogue: 0,0:29:32.63,0:29:33.98,*Default,NTP,0000,0000,0000,,为什么糖尿病人不得不用这种方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do diabetics do it this way?
+Dialogue: 0,0:29:36.74,0:29:37.94,*Default,NTP,0000,0000,0000,,为什么他们只用这种方式注射胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do they inject insulin in this way?
+Dialogue: 0,0:29:38.60,0:29:41.42,*Default,NTP,0000,0000,0000,,我想大部分人能够理解病人们的苦衷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think most of you can understand that they would prefer not to,
+Dialogue: 0,0:29:42.88,0:29:43.93,*Default,NTP,0000,0000,0000,,他们宁愿用哪种方式呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what would they prefer to do?
+Dialogue: 0,0:29:45.71,0:29:48.19,*Default,NTP,0000,0000,0000,,如果你是糖尿病人并且需要胰岛素治疗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you were a diabetic patient and you needed insulin
+Dialogue: 0,0:29:48.19,0:29:49.55,*Default,NTP,0000,0000,0000,,你想用哪种方式呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what would you prefer to do?
+Dialogue: 0,0:29:50.05,0:29:51.01,*Default,NTP,0000,0000,0000,,凯特\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}-Kate?
+Dialogue: 0,0:29:51.70,0:29:53.35,*Default,NTP,0000,0000,0000,,你更喜欢吃药  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd prefer to take a pill, right?
+Dialogue: 0,0:29:53.61,0:29:55.58,*Default,NTP,0000,0000,0000,,你更倾向于口服用药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You prefer to take a pill 
+Dialogue: 0,0:29:55.58,0:29:58.07,*Default,NTP,0000,0000,0000,,这也是我下面要讲的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's the next one on the list,
+Dialogue: 0,0:29:58.07,0:30:00.11,*Default,NTP,0000,0000,0000,,也就是口服给药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is oral administration.
+Dialogue: 0,0:30:00.43,0:30:01.12,*Default,NTP,0000,0000,0000,,虽然你喜欢口服用药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You prefer to take a pill
+Dialogue: 0,0:30:01.12,0:30:02.29,*Default,NTP,0000,0000,0000,,但你不能吃含胰岛素的药片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you can't with insulin
+Dialogue: 0,0:30:02.29,0:30:04.00,*Default,NTP,0000,0000,0000,,因为胰岛素是一种蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because insulin is a protein.
+Dialogue: 0,0:30:05.61,0:30:10.32,*Default,NTP,0000,0000,0000,,胰岛素是一种在肠道中就被消化的蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Insulin is a protein that is digested in the intestinal tract.
+Dialogue: 0,0:30:12.72,0:30:14.82,*Default,NTP,0000,0000,0000,,消化蛋白质也是肠道的一项功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's one of the functions of our gut,
+Dialogue: 0,0:30:15.78,0:30:18.61,*Default,NTP,0000,0000,0000,,消化掉我们吃进去的食物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to digest foods that we eat,
+Dialogue: 0,0:30:18.61,0:30:20.78,*Default,NTP,0000,0000,0000,,例如含有蛋白质的食物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}foods that contain proteins for example.
+Dialogue: 0,0:30:21.58,0:30:25.02,*Default,NTP,0000,0000,0000,,所以说  你的肠系统能够高效率地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, your intestinal system is very efficient 
+Dialogue: 0,0:30:25.02,0:30:29.75,*Default,NTP,0000,0000,0000,,将蛋白质分解为它们的组分氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at breaking down proteins into their constituent amino acids,
+Dialogue: 0,0:30:30.20,0:30:31.36,*Default,NTP,0000,0000,0000,,那样做是为了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it does that so that 
+Dialogue: 0,0:30:31.36,0:30:34.53,*Default,NTP,0000,0000,0000,,你能够从食物中提取氨基酸并留作他用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can extract amino acids from food and use them for other things.
+Dialogue: 0,0:30:35.90,0:30:37.50,*Default,NTP,0000,0000,0000,,如果某种蛋白质是一种药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If a protein is a drug,
+Dialogue: 0,0:30:37.50,0:30:41.94,*Default,NTP,0000,0000,0000,,你需要它进入血流但不能分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you need it to enter the bloodstream without being broken down.
+Dialogue: 0,0:30:43.96,0:30:46.37,*Default,NTP,0000,0000,0000,,当它分解后也就失去药效了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When it's broken down it doesn't have the effect any longer.
+Dialogue: 0,0:30:47.12,0:30:49.81,*Default,NTP,0000,0000,0000,,所以说  胰岛素不能口服\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, insulin can't be delivered orally, 
+Dialogue: 0,0:30:50.39,0:30:54.00,*Default,NTP,0000,0000,0000,,主要是因为它在被吸收之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}primarily because it's digested within the stomach 
+Dialogue: 0,0:30:54.00,0:30:56.91,*Default,NTP,0000,0000,0000,,会被胃和小肠消化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and small intestine before it's absorbed.
+Dialogue: 0,0:30:58.76,0:31:03.01,*Default,NTP,0000,0000,0000,,在开发药片或口服形式的胰岛素中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another problem with developing a pill or oral forms of insulin 
+Dialogue: 0,0:31:05.01,0:31:08.63,*Default,NTP,0000,0000,0000,,遇到的另一问题是像胰岛素这样的大分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that large molecules like insulin,
+Dialogue: 0,0:31:09.11,0:31:11.74,*Default,NTP,0000,0000,0000,,作为一种蛋白质  分子量超过五千\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is a protein, has a molecule weight of about 5,000 
+Dialogue: 0,0:31:12.14,0:31:16.57,*Default,NTP,0000,0000,0000,,不太容易被肠壁吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are not absorbed very easily through the intestinal wall.
+Dialogue: 0,0:31:18.07,0:31:19.66,*Default,NTP,0000,0000,0000,,我们几周前讨论过这个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about this several weeks ago, 
+Dialogue: 0,0:31:19.96,0:31:23.81,*Default,NTP,0000,0000,0000,,肠壁是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your intestinal wall is a--it's a tube 
+Dialogue: 0,0:31:23.92,0:31:24.63,*Default,NTP,0000,0000,0000,,一个表面由连续的薄壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the surface of the tube is made up of a continuous sheet or
+Dialogue: 0,0:31:24.64,0:31:27.36,*Default,NTP,0000,0000,0000,,或者说单层细胞构成的管道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}monolayer of cells
+Dialogue: 0,0:31:28.44,0:31:31.54,*Default,NTP,0000,0000,0000,,并且这些细胞被紧密连接所结合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these cells are connected by tight junctions.
+Dialogue: 0,0:31:31.85,0:31:33.32,*Default,NTP,0000,0000,0000,,还记得我几周前展示给你们的图片吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember that picture I showed you several weeks ago?
+Dialogue: 0,0:31:34.27,0:31:36.87,*Default,NTP,0000,0000,0000,,那种特点使得想要进入血液的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because of that for a molecule to enter
+Dialogue: 0,0:31:36.87,0:31:38.96,*Default,NTP,0000,0000,0000,,不得不具备能穿过那一单层细胞的能力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has to be able to go through that monolayer of cells.
+Dialogue: 0,0:31:40.54,0:31:44.56,*Default,NTP,0000,0000,0000,,如果胰岛素没有分解为其组分分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if insulin wasn't broken down to its constituent molecules
+Dialogue: 0,0:31:44.56,0:31:48.83,*Default,NTP,0000,0000,0000,,就不能被轻易吸收的  因为它是大分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it couldn't be absorbed very easily because it's a large molecule.
+Dialogue: 0,0:31:49.43,0:31:53.64,*Default,NTP,0000,0000,0000,,只有脂溶性的小分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Only molecules that are small and relatively lipid soluble
+Dialogue: 0,0:31:53.64,0:31:58.64,*Default,NTP,0000,0000,0000,,才能穿过像肠上皮这样的单层细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can go through monolayers of cells like the epithelium of the intestine.
+Dialogue: 0,0:31:59.52,0:32:04.33,*Default,NTP,0000,0000,0000,,口服胰岛素的生物利用率不高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's two reasons why insulin is not very bioavailable 
+Dialogue: 0,0:32:04.33,0:32:06.27,*Default,NTP,0000,0000,0000,,是有两个原因的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's given orally.
+Dialogue: 0,0:32:08.94,0:32:12.45,*Default,NTP,0000,0000,0000,,也就是说胰岛素最终没有进入血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's one way of saying insulin doesn't end up in the blood, 
+Dialogue: 0,0:32:12.45,0:32:15.28,*Default,NTP,0000,0000,0000,,导致了口服胰岛素的低生物利用率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}insulin is not bioavailable when delivered orally.
+Dialogue: 0,0:32:16.03,0:32:19.79,*Default,NTP,0000,0000,0000,,像阿司匹林  醋氨酚  布洛芬等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some drugs are aspirin, acetaminophen, Ibuprofen, 
+Dialogue: 0,0:32:19.79,0:32:22.57,*Default,NTP,0000,0000,0000,,你们日常用来治疗肌肉酸痛和头痛的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}things that you might take routinely 
+Dialogue: 0,0:32:22.57,0:32:26.40,*Default,NTP,0000,0000,0000,,是可以口服的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for muscle aches or headaches are available orally.
+Dialogue: 0,0:32:26.92,0:32:27.50,*Default,NTP,0000,0000,0000,,因为它们是小分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're small molecules, 
+Dialogue: 0,0:32:27.75,0:32:32.45,*Default,NTP,0000,0000,0000,,它们完全不会被消化或只被消化一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they aren't digested appreciably or only a fraction of them are digested 
+Dialogue: 0,0:32:36.00,0:32:38.47,*Default,NTP,0000,0000,0000,,也就是说如果你服用十毫克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that if you take ten milligrams,
+Dialogue: 0,0:32:38.47,0:32:40.33,*Default,NTP,0000,0000,0000,,或许能有五毫克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe five milligrams of them
+Dialogue: 0,0:32:40.94,0:32:43.39,*Default,NTP,0000,0000,0000,,没有在肠道分解并且被吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are not broken down in the gut and can be absorbed.
+Dialogue: 0,0:32:46.56,0:32:49.42,*Default,NTP,0000,0000,0000,,口服用药中遇到的一个问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the problems with oral administration is that 
+Dialogue: 0,0:32:49.67,0:32:51.68,*Default,NTP,0000,0000,0000,,药物在被人体吸收前分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}drugs are degraded before they're absorbed into the body.
+Dialogue: 0,0:32:53.00,0:32:54.60,*Default,NTP,0000,0000,0000,,既然我们能容许阿司匹林的部分分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, we could tolerate that with aspirin,
+Dialogue: 0,0:32:55.36,0:32:58.41,*Default,NTP,0000,0000,0000,,那么你们为什么会接受\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and why do you think that's acceptable with aspirin
+Dialogue: 0,0:32:58.41,0:33:01.52,*Default,NTP,0000,0000,0000,,它的一部分在被吸收前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to have some fraction of it broken down in the body--
+Dialogue: 0,0:33:02.44,0:33:03.87,*Default,NTP,0000,0000,0000,,在肠道内分解呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}broken down in the gut before it's absorbed?
+Dialogue: 0,0:33:04.77,0:33:05.38,*Default,NTP,0000,0000,0000,,为什么这是可接受的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is that acceptable?
+Dialogue: 0,0:33:12.72,0:33:13.73,*Default,NTP,0000,0000,0000,,阿司匹林的价钱是多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How much does aspirin cost?
+Dialogue: 0,0:33:16.60,0:33:18.78,*Default,NTP,0000,0000,0000,,不是很贵  当你去买几片阿司匹林时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not very much, you don't think about it
+Dialogue: 0,0:33:18.78,0:33:21.51,*Default,NTP,0000,0000,0000,,你不会去考虑它的价钱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you go buy a couple of tablets of aspirin,
+Dialogue: 0,0:33:21.86,0:33:24.21,*Default,NTP,0000,0000,0000,,你会去买一整瓶阿司匹林或布洛芬\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you go buy a bottle of aspirin or Ibuprofen 
+Dialogue: 0,0:33:24.21,0:33:27.15,*Default,NTP,0000,0000,0000,,是因为它实惠而且不贵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it costs something but it doesn't cost so much.
+Dialogue: 0,0:33:27.74,0:33:30.15,*Default,NTP,0000,0000,0000,,那么  即使你需要付两倍的价钱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, if you had to pay two times as much 
+Dialogue: 0,0:33:30.15,0:33:31.89,*Default,NTP,0000,0000,0000,,就算它在被吸收前分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you lost half of it, 
+Dialogue: 0,0:33:31.89,0:33:35.93,*Default,NTP,0000,0000,0000,,而损失掉了一半的量  也是无妨的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it was degraded before it got absorbed, that might be okay.
+Dialogue: 0,0:33:37.04,0:33:38.51,*Default,NTP,0000,0000,0000,,你还是会用它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're more likely to use it 
+Dialogue: 0,0:33:38.51,0:33:40.59,*Default,NTP,0000,0000,0000,,因为它是药片而不是针剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's a pill and not an injection 
+Dialogue: 0,0:33:40.59,0:33:43.23,*Default,NTP,0000,0000,0000,,你还是愿意花更多的钱图个方便\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're willing to pay more for that convenience.
+Dialogue: 0,0:33:46.02,0:33:48.93,*Default,NTP,0000,0000,0000,,通常  口服药物的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Often, drugs that are orally administered, 
+Dialogue: 0,0:33:49.47,0:33:50.47,*Default,NTP,0000,0000,0000,,生物利用率不是百分之百\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not 100% bioavailable,
+Dialogue: 0,0:33:51.55,0:33:53.01,*Default,NTP,0000,0000,0000,,只有一小部分进入血液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only a fraction of it gets into your blood, 
+Dialogue: 0,0:33:53.54,0:33:57.07,*Default,NTP,0000,0000,0000,,但是它们的生产成本足够低\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're molecules that can be produced cheaply enough 
+Dialogue: 0,0:33:57.07,0:34:01.39,*Default,NTP,0000,0000,0000,,你仍然可以摄入远远超过你所需的剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you can still take a dose that's larger than what you would need,
+Dialogue: 0,0:34:01.82,0:34:03.69,*Default,NTP,0000,0000,0000,,即使在其有一半不会进入人体的情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}knowing that half of it is not going to enter your body.
+Dialogue: 0,0:34:05.26,0:34:06.23,*Default,NTP,0000,0000,0000,,听明白了吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that make sense?
+Dialogue: 0,0:34:08.00,0:34:11.92,*Default,NTP,0000,0000,0000,,关于阿司匹林的另一点是它不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other thing about aspirin is that it's not--
+Dialogue: 0,0:34:14.92,0:34:15.87,*Default,NTP,0000,0000,0000,,我以阿司匹林为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll use aspirin as an example,
+Dialogue: 0,0:34:16.76,0:34:19.82,*Default,NTP,0000,0000,0000,,虽然没有人再会用阿司匹林来治疗头痛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}realizing that nobody uses aspirin for headaches anymore,
+Dialogue: 0,0:34:20.59,0:34:22.83,*Default,NTP,0000,0000,0000,,但它是个很好的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a good example
+Dialogue: 0,0:34:22.83,0:34:25.56,*Default,NTP,0000,0000,0000,,因为它是没有损害的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's a molecule that's very safe.
+Dialogue: 0,0:34:26.65,0:34:29.13,*Default,NTP,0000,0000,0000,,安全的药物的特点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A safe drug is one in
+Dialogue: 0,0:34:29.57,0:34:31.69,*Default,NTP,0000,0000,0000,,其引起中毒反应时的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which the concentration at which 
+Dialogue: 0,0:34:31.69,0:34:34.14,*Default,NTP,0000,0000,0000,,远远高于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it causes toxic effects is much higher
+Dialogue: 0,0:34:34.14,0:34:37.74,*Default,NTP,0000,0000,0000,,发挥良性作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than the concentration at which it causes good effects,
+Dialogue: 0,0:34:38.59,0:34:39.41,*Default,NTP,0000,0000,0000,,或你想得到的效应时的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the effect that you want.
+Dialogue: 0,0:34:41.99,0:34:43.40,*Default,NTP,0000,0000,0000,,我们知道对于阿司匹林\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We know in aspirin that
+Dialogue: 0,0:34:43.40,0:34:45.38,*Default,NTP,0000,0000,0000,,如果你摄入的剂量高于一定水平\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you get your concentration up to a certain level
+Dialogue: 0,0:34:45.38,0:34:46.65,*Default,NTP,0000,0000,0000,,你的头痛症状会消失\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your headache will go away.
+Dialogue: 0,0:34:48.06,0:34:48.67,*Default,NTP,0000,0000,0000,,你最好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd have to
+Dialogue: 0,0:34:48.67,0:34:50.74,*Default,NTP,0000,0000,0000,,在药物起副作用或产生想不到的效应之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}get a much higher level in your blood
+Dialogue: 0,0:34:50.75,0:34:53.68,*Default,NTP,0000,0000,0000,,使其在血液中达到较高水平\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before you began to see side effects or unwanted effects.
+Dialogue: 0,0:34:54.39,0:34:57.47,*Default,NTP,0000,0000,0000,,阿司匹林的副作用是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In aspirin those side effects are that 
+Dialogue: 0,0:34:57.47,0:34:59.36,*Default,NTP,0000,0000,0000,,使你开始产生耳鸣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your ears start to ring 
+Dialogue: 0,0:34:59.37,0:35:04.18,*Default,NTP,0000,0000,0000,,因为它开始影响你的听觉机能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it starts to effect the--your mechanisms of hearing,
+Dialogue: 0,0:35:05.58,0:35:08.04,*Default,NTP,0000,0000,0000,,耳蜗内的细胞因为某浓度水平的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the cells within your cochlear start to be affected 
+Dialogue: 0,0:35:08.04,0:35:10.36,*Default,NTP,0000,0000,0000,,而开始受到影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by concentrations of the drug at a certain level.
+Dialogue: 0,0:35:11.01,0:35:13.64,*Default,NTP,0000,0000,0000,,你不得不花费很多时间来休养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have to take a lot in order to get up there.
+Dialogue: 0,0:35:14.54,0:35:18.81,*Default,NTP,0000,0000,0000,,起效剂量和中毒剂量的差别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This difference between an effective dose 
+Dialogue: 0,0:35:18.81,0:35:23.38,*Default,NTP,0000,0000,0000,,对于药物来讲是非常重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a toxic dose is very important for drugs.
+Dialogue: 0,0:35:24.20,0:35:25.84,*Default,NTP,0000,0000,0000,,那些安全剂量和起效剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Drugs that have a big difference
+Dialogue: 0,0:35:25.84,0:35:28.20,*Default,NTP,0000,0000,0000,,之间差别很大的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the safe dose and the effective dose
+Dialogue: 0,0:35:28.71,0:35:31.12,*Default,NTP,0000,0000,0000,,是你能开给病人的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are ones that you can give to patients
+Dialogue: 0,0:35:32.07,0:35:33.43,*Default,NTP,0000,0000,0000,,并且可以相信它们能安全服用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and trust them to take safely.
+Dialogue: 0,0:35:34.30,0:35:35.41,*Default,NTP,0000,0000,0000,,你可以想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could imagine
+Dialogue: 0,0:35:35.81,0:35:38.59,*Default,NTP,0000,0000,0000,,如果中毒剂量非常接近起效剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the toxic dose was very close to the effective dose 
+Dialogue: 0,0:35:39.11,0:35:40.71,*Default,NTP,0000,0000,0000,,那么它可能不会作为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that might not be a drug 
+Dialogue: 0,0:35:41.35,0:35:43.71,*Default,NTP,0000,0000,0000,,能够让病人自我用药的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you would want to have patients administering themselves
+Dialogue: 0,0:35:44.62,0:35:47.33,*Default,NTP,0000,0000,0000,,因为如果病人不小心一次吃下过多药片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because what if they accidentally take one too many pills,
+Dialogue: 0,0:35:48.66,0:35:50.02,*Default,NTP,0000,0000,0000,,或服药的间隔时间过短\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or they take them too close together,
+Dialogue: 0,0:35:50.94,0:35:53.31,*Default,NTP,0000,0000,0000,,那将有可能产生有毒副作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they could produce toxic side effects.
+Dialogue: 0,0:35:54.20,0:35:55.74,*Default,NTP,0000,0000,0000,,阿司匹林就是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Aspirin is an example
+Dialogue: 0,0:35:55.74,0:35:59.01,*Default,NTP,0000,0000,0000,,起效剂量和中毒剂量有很大差别的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you have a big window between effective and toxic.
+Dialogue: 0,0:36:00.23,0:36:02.91,*Default,NTP,0000,0000,0000,,化疗药物是起效剂量和中毒剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Chemotherapy drugs are drugs where 
+Dialogue: 0,0:36:02.91,0:36:07.26,*Default,NTP,0000,0000,0000,,只有微小差别的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a very narrow window between effective and toxic and 
+Dialogue: 0,0:36:07.26,0:36:12.26,*Default,NTP,0000,0000,0000,,它们通常在医生的帮助和指导下开具\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so those are usually given with the help and guidance of a physician.
+Dialogue: 0,0:36:16.17,0:36:21.17,*Default,NTP,0000,0000,0000,,有一种类似的给药方式叫做舌下给药\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a similar mode of administration called sublingual or buckle.
+Dialogue: 0,0:36:23.24,0:36:25.92,*Default,NTP,0000,0000,0000,,这里  药物没有被吞服\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here, the drug is not swallowed, 
+Dialogue: 0,0:36:25.93,0:36:28.69,*Default,NTP,0000,0000,0000,,而是将药片或胶囊放进嘴里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's taken in the mouth but it's--
+Dialogue: 0,0:36:28.69,0:36:33.58,*Default,NTP,0000,0000,0000,,含在舌头的下面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you hold the pill or the capsule underneath your tongue 
+Dialogue: 0,0:36:33.58,0:36:36.42,*Default,NTP,0000,0000,0000,,使药物在那里溶解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you allow it to dissolve there.
+Dialogue: 0,0:36:36.80,0:36:38.61,*Default,NTP,0000,0000,0000,,那么  药物便能穿过口腔黏膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the drug enters your body 
+Dialogue: 0,0:36:38.61,0:36:42.16,*Default,NTP,0000,0000,0000,,吸收进入体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's absorbed through the membranes in your mouth, 
+Dialogue: 0,0:36:42.17,0:36:44.88,*Default,NTP,0000,0000,0000,,尤其是舌头下侧的粘膜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly the membranes under your tongue.
+Dialogue: 0,0:36:46.06,0:36:48.61,*Default,NTP,0000,0000,0000,,这是在服用硝化甘油时一种常见给药方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a common mode of administration for nitroglycerin.
+Dialogue: 0,0:36:49.59,0:36:51.82,*Default,NTP,0000,0000,0000,,如果你有年长的而且患有某种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you have grandparents or friends 
+Dialogue: 0,0:36:51.82,0:36:55.17,*Default,NTP,0000,0000,0000,,能引起胸部疼痛的心脏疾病的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who are older that have certain kind of heart disease
+Dialogue: 0,0:36:55.17,0:36:56.85,*Default,NTP,0000,0000,0000,,祖父母或朋友\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where they get chest pain,
+Dialogue: 0,0:36:56.85,0:37:00.07,*Default,NTP,0000,0000,0000,,他们也许会随身携带几片硝化甘油\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they might carry with them tablets of nitroglycerin.
+Dialogue: 0,0:37:01.81,0:37:03.36,*Default,NTP,0000,0000,0000,,如果开始感到疼痛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If they begin to experience pain 
+Dialogue: 0,0:37:03.37,0:37:06.06,*Default,NTP,0000,0000,0000,,就会拿出一片含在舌头下面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they'll put one of these tablets underneath their tongue 
+Dialogue: 0,0:37:06.06,0:37:07.38,*Default,NTP,0000,0000,0000,,使药物溶解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they'll let it dissolve.
+Dialogue: 0,0:37:09.17,0:37:11.47,*Default,NTP,0000,0000,0000,,这样做的原因有很多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a number of reasons for doing this.
+Dialogue: 0,0:37:12.35,0:37:16.96,*Default,NTP,0000,0000,0000,,最重要的一点是当你口服用药时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The most important one is that when you're taking a drug orally,
+Dialogue: 0,0:37:18.28,0:37:20.83,*Default,NTP,0000,0000,0000,,你是在利用你身体摄取\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're taking advantage of the mechanisms 
+Dialogue: 0,0:37:20.83,0:37:23.93,*Default,NTP,0000,0000,0000,,食物和营养的机能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that your body has for getting food and nutrients, 
+Dialogue: 0,0:37:23.93,0:37:26.84,*Default,NTP,0000,0000,0000,,并将其应用在服药上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're using those mechanisms to get a drug.
+Dialogue: 0,0:37:30.98,0:37:34.43,*Default,NTP,0000,0000,0000,,当药物分子通过小肠被吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When molecules are absorbed through your intestine, 
+Dialogue: 0,0:37:34.43,0:37:36.89,*Default,NTP,0000,0000,0000,,它们穿过肠壁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they go through the intestinal wall, 
+Dialogue: 0,0:37:36.89,0:37:40.60,*Default,NTP,0000,0000,0000,,进入在小肠周围的血流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they enter the bloodstream that surrounds the intestine.
+Dialogue: 0,0:37:41.03,0:37:44.19,*Default,NTP,0000,0000,0000,,然后  人体解剖的精妙设计使得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then, the way that your anatomy is set up 
+Dialogue: 0,0:37:44.19,0:37:49.19,*Default,NTP,0000,0000,0000,,从小肠流出的血液直接进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all of the blood flow from your intestine goes directly to your liver 
+Dialogue: 0,0:37:49.47,0:37:54.05,*Default,NTP,0000,0000,0000,,然后从肝脏回流至腔静脉再到心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and from your liver it goes back into the vena cava and then to the heart.
+Dialogue: 0,0:37:55.57,0:37:58.39,*Default,NTP,0000,0000,0000,,那么  为什么不能人工设计一个系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, why would you design a system like that, 
+Dialogue: 0,0:37:58.40,0:38:03.01,*Default,NTP,0000,0000,0000,,使得所有从小肠流出的血液直接进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where all the blood from your intestine goes right to your liver first?
+Dialogue: 0,0:38:04.29,0:38:05.36,*Default,NTP,0000,0000,0000,,贾斯汀  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Justin? 
+Dialogue: 0,0:38:05.49,0:38:09.53,*Default,NTP,0000,0000,0000,,净化和处理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Purifying and processing of the stuff
+Dialogue: 0,0:38:09.64,0:38:12.11,*Default,NTP,0000,0000,0000,,来自小肠的东西  像食物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that comes from the intestine, stuff like food, 
+Dialogue: 0,0:38:12.11,0:38:14.10,*Default,NTP,0000,0000,0000,,从食物中提取的营养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nutrients that are extracted from food,
+Dialogue: 0,0:38:14.10,0:38:16.08,*Default,NTP,0000,0000,0000,,例如糖类  脂肪  蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sugars, fats, proteins
+Dialogue: 0,0:38:16.09,0:38:19.31,*Default,NTP,0000,0000,0000,,从食物中提取出来并进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are extracted from food that go to your liver.
+Dialogue: 0,0:38:19.73,0:38:21.10,*Default,NTP,0000,0000,0000,,为什么它们会进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do they go to your liver?
+Dialogue: 0,0:38:21.72,0:38:24.95,*Default,NTP,0000,0000,0000,,因为肝脏是十分重要的代谢器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because your liver is a very important metabolic organ 
+Dialogue: 0,0:38:24.95,0:38:27.99,*Default,NTP,0000,0000,0000,,其重要性在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it is important for
+Dialogue: 0,0:38:28.00,0:38:28.76,*Default,NTP,0000,0000,0000,,它能够处理蛋白质  脂肪和糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}processing proteins and fats, and sugars.
+Dialogue: 0,0:38:29.49,0:38:30.97,*Default,NTP,0000,0000,0000,,所以说  将被小肠吸收的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, by sending all those molecules 
+Dialogue: 0,0:38:30.97,0:38:33.34,*Default,NTP,0000,0000,0000,,直接送到肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are absorbed from the intestine to the liver first,
+Dialogue: 0,0:38:34.55,0:38:38.40,*Default,NTP,0000,0000,0000,,对于将这些分子处理成生命所需的底物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you get a jump start on processing of these molecules
+Dialogue: 0,0:38:38.40,0:38:41.60,*Default,NTP,0000,0000,0000,,有着质的飞跃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into the substrates that you need for life.
+Dialogue: 0,0:38:43.49,0:38:45.67,*Default,NTP,0000,0000,0000,,这是一个相当好的制备营养物质方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a really good set up for nutrition,
+Dialogue: 0,0:38:46.43,0:38:48.72,*Default,NTP,0000,0000,0000,,但我也曾经提到过  还记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I also mentioned, remember that
+Dialogue: 0,0:38:48.73,0:38:53.12,*Default,NTP,0000,0000,0000,,生物转化或药物分解经常在肝脏内发生吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}biotransformation or breakdown of drugs often occurs in the liver.
+Dialogue: 0,0:38:53.71,0:38:55.70,*Default,NTP,0000,0000,0000,,所以说  如果药物被同种方式吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, if drugs are absorbed the same way
+Dialogue: 0,0:38:55.70,0:38:57.78,*Default,NTP,0000,0000,0000,,像食物一样直接进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that food is they go right to the liver,
+Dialogue: 0,0:38:59.05,0:39:01.06,*Default,NTP,0000,0000,0000,,我用手指这里是因为我的肝脏在此处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and--I'm pointing here because that's where my liver is, 
+Dialogue: 0,0:39:01.98,0:39:03.04,*Default,NTP,0000,0000,0000,,它们直接进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they go right to the liver 
+Dialogue: 0,0:39:03.04,0:39:05.00,*Default,NTP,0000,0000,0000,,并且肝脏会立刻开始对其进行分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your liver starts to break it down right away
+Dialogue: 0,0:39:06.00,0:39:07.83,*Default,NTP,0000,0000,0000,,在它真正进入血流之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before it even gets to your bloodstream really, 
+Dialogue: 0,0:39:08.22,0:39:09.84,*Default,NTP,0000,0000,0000,,在它循环到身体的其它部位之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before it circulates to the rest of your body.
+Dialogue: 0,0:39:10.38,0:39:11.79,*Default,NTP,0000,0000,0000,,一部分的药物损失\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I lose a fraction of drug
+Dialogue: 0,0:39:11.79,0:39:13.71,*Default,NTP,0000,0000,0000,,是因为其在肠道中被分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's degraded within the gut,
+Dialogue: 0,0:39:14.93,0:39:17.91,*Default,NTP,0000,0000,0000,,一部分的损失是因为它不能被快速吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I lose a fraction because it can't absorb very rapidly, 
+Dialogue: 0,0:39:18.50,0:39:21.13,*Default,NTP,0000,0000,0000,,另一部分的损失是因为肝脏将其分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I lose another fraction because the liver breaks it down
+Dialogue: 0,0:39:21.61,0:39:26.04,*Default,NTP,0000,0000,0000,,在它能够回到心脏并被心脏循环之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before it ever gets back to my heart and then your heart can circulate it.
+Dialogue: 0,0:39:26.92,0:39:28.40,*Default,NTP,0000,0000,0000,,归根结底是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it turns out that 
+Dialogue: 0,0:39:28.40,0:39:31.37,*Default,NTP,0000,0000,0000,,口腔黏膜的血液供应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the blood supply to the membranes in your mouth
+Dialogue: 0,0:39:31.37,0:39:33.59,*Default,NTP,0000,0000,0000,,是不会流经肝脏的  这是不常见的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't go to the liver, it's unusual.
+Dialogue: 0,0:39:34.11,0:39:38.23,*Default,NTP,0000,0000,0000,,它们直接进入上腔静脉并流入心脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They go directly into the superior vena cava and into your heart.
+Dialogue: 0,0:39:38.66,0:39:42.41,*Default,NTP,0000,0000,0000,,所以说  被口腔黏膜吸收的药物分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, drug molecules that are absorbed in your mouth 
+Dialogue: 0,0:39:42.41,0:39:45.87,*Default,NTP,0000,0000,0000,,绕过肝脏而直接进入了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bypass the liver and they go directly to your--
+Dialogue: 0,0:39:45.87,0:39:47.92,*Default,NTP,0000,0000,0000,,你身体的其它各部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rest of your body first.
+Dialogue: 0,0:39:48.19,0:39:52.40,*Default,NTP,0000,0000,0000,,当然它们循环后最终会在肝脏内被分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then of course they're going to end up in the liver as things get circulated around.
+Dialogue: 0,0:39:52.90,0:39:56.14,*Default,NTP,0000,0000,0000,,它们避免了第一时间进入肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They avoid going to the liver the first time 
+Dialogue: 0,0:39:56.15,0:39:58.96,*Default,NTP,0000,0000,0000,,并且这叫做  看图上这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's called, here on this graph, 
+Dialogue: 0,0:39:58.96,0:40:02.14,*Default,NTP,0000,0000,0000,,避免肝脏的首过代谢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}avoiding first-pass metabolism in the liver.
+Dialogue: 0,0:40:03.23,0:40:07.21,*Default,NTP,0000,0000,0000,,这种在肠里发生的首应效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This metabolism that occurs on the first shot right from the intestine
+Dialogue: 0,0:40:07.21,0:40:09.08,*Default,NTP,0000,0000,0000,,被称为首过代谢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is called first-pass metabolism.
+Dialogue: 0,0:40:09.78,0:40:14.18,*Default,NTP,0000,0000,0000,,硝酸甘油在肝脏内会很快被降解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nitroglycerin would be very readily broken down in the liver.
+Dialogue: 0,0:40:14.89,0:40:17.43,*Default,NTP,0000,0000,0000,,因此这条途径是直接导向心脏的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this way it goes directly to the heart 
+Dialogue: 0,0:40:17.43,0:40:20.21,*Default,NTP,0000,0000,0000,,都不需要经过肝脏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without ever having to pass through the liver 
+Dialogue: 0,0:40:20.21,0:40:22.57,*Default,NTP,0000,0000,0000,,并且能及时地治疗心脏疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it can quickly treat heart disease.
+Dialogue: 0,0:40:23.23,0:40:25.21,*Default,NTP,0000,0000,0000,,那为什么你们不利用最便捷的方式呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, why don't you do that with all sorts of things?
+Dialogue: 0,0:40:26.53,0:40:29.63,*Default,NTP,0000,0000,0000,,是的  它只对特定种类的化合物起作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it only works for certain kinds of compounds, 
+Dialogue: 0,0:40:29.63,0:40:33.73,*Default,NTP,0000,0000,0000,,这些化合物能在口中通过细胞膜被吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}compounds that can be absorbed through those membranes in your mouth 
+Dialogue: 0,0:40:33.73,0:40:35.81,*Default,NTP,0000,0000,0000,,因此它们是脂溶性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so they have to very lipid soluble.
+Dialogue: 0,0:40:36.03,0:40:38.34,*Default,NTP,0000,0000,0000,,它们也是非常有效的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They also have to be very potent
+Dialogue: 0,0:40:38.34,0:40:42.97,*Default,NTP,0000,0000,0000,,因为口腔和肠其中的一个区别就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because one difference between your mouth and the intestine is 
+Dialogue: 0,0:40:42.97,0:40:46.72,*Default,NTP,0000,0000,0000,,口腔的表面面积太小了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the surface area in your mouth is fairly small.
+Dialogue: 0,0:40:47.23,0:40:50.12,*Default,NTP,0000,0000,0000,,只有有限数量的药物能被口腔吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Only a limited number of drugs can absorb through, 
+Dialogue: 0,0:40:50.12,0:40:52.33,*Default,NTP,0000,0000,0000,,反之  为什么肠有那么长呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whereas--why is your intestine so long?
+Dialogue: 0,0:40:53.09,0:40:57.32,*Default,NTP,0000,0000,0000,,你们知道如果将你的肠拿出来并伸展开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know that your intestinal--you took it out and stretched it out 
+Dialogue: 0,0:40:57.32,0:41:00.12,*Default,NTP,0000,0000,0000,,它是个管状样的  一个连续的管状  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would be a tube, a continuous tube, 
+Dialogue: 0,0:41:00.12,0:41:01.36,*Default,NTP,0000,0000,0000,,大约有三十英尺长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's about 30 feet long.
+Dialogue: 0,0:41:02.49,0:41:04.33,*Default,NTP,0000,0000,0000,,为什么你们的肠道会那么长呢  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is your intestine that long, 
+Dialogue: 0,0:41:04.33,0:41:05.68,*Default,NTP,0000,0000,0000,,还被塞进这么小的空间里呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}packed into this small space?
+Dialogue: 0,0:41:06.65,0:41:10.10,*Default,NTP,0000,0000,0000,,如此一来它吸收物质的表面积就很大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that it can have a big surface area to absorb lots of stuff;
+Dialogue: 0,0:41:12.19,0:41:14.31,*Default,NTP,0000,0000,0000,,足够大的表面面积  大的吸收量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}big surface area--lots of absorption, 
+Dialogue: 0,0:41:14.31,0:41:16.42,*Default,NTP,0000,0000,0000,,小的表面面积  小的吸收量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}small surface area--little absorption.
+Dialogue: 0,0:41:18.83,0:41:20.63,*Default,NTP,0000,0000,0000,,这就要求药物非常强有效的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has to be a very potent drug 
+Dialogue: 0,0:41:20.63,0:41:23.67,*Default,NTP,0000,0000,0000,,通过这一有限的空间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to be absorbed at a sufficient concentration 
+Dialogue: 0,0:41:23.67,0:41:25.19,*Default,NTP,0000,0000,0000,,达到足够浓度而被被吸收\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through this limited space.
+Dialogue: 0,0:41:25.94,0:41:27.81,*Default,NTP,0000,0000,0000,,我认为这些就是我想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think those are the main concepts 
+Dialogue: 0,0:41:27.81,0:41:29.16,*Default,NTP,0000,0000,0000,,给你们介绍的主要概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I wanted to introduce
+Dialogue: 0,0:41:29.16,0:41:32.32,*Default,NTP,0000,0000,0000,,即思考各种不同的药物摄入方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by thinking about these different methods of administration.
+Dialogue: 0,0:41:32.78,0:41:34.74,*Default,NTP,0000,0000,0000,,这里列出了许多  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's more of them listed here, 
+Dialogue: 0,0:41:34.74,0:41:37.78,*Default,NTP,0000,0000,0000,,其中的一些与凯特琳提出的有关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of them have to do with what Caitlin mentioned.
+Dialogue: 0,0:41:38.40,0:41:41.91,*Default,NTP,0000,0000,0000,,例如  如果你想要一个用于眼睛的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you want a drug that works in the eye, for example, 
+Dialogue: 0,0:41:42.16,0:41:43.71,*Default,NTP,0000,0000,0000,,来治疗青光眼  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a drug to treat glaucoma, 
+Dialogue: 0,0:41:43.71,0:41:48.43,*Default,NTP,0000,0000,0000,,那何须口服药物 使你的全身都接触到呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why take a drug orally and expose your whole body to the drug
+Dialogue: 0,0:41:48.43,0:41:52.06,*Default,NTP,0000,0000,0000,,这时只需要把药物直接滴入眼睛即可\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you could just put drops in your eye directly?
+Dialogue: 0,0:41:53.51,0:41:55.76,*Default,NTP,0000,0000,0000,,并且有多少青光眼药物被输送进来了呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's how many glaucoma drugs are delivered?
+Dialogue: 0,0:41:57.14,0:42:00.56,*Default,NTP,0000,0000,0000,,例如你也许把眼药水滴在眼睑的下面  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You might have eye drops that you just put into the space underneath your eye,
+Dialogue: 0,0:42:00.56,0:42:02.11,*Default,NTP,0000,0000,0000,,那就是靶向性更强的输送\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, and that's a more targeted delivery.
+Dialogue: 0,0:42:05.76,0:42:09.42,*Default,NTP,0000,0000,0000,,靶向性强是因为将药物施用在所需的位置\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Targeted because you are putting the drug at the site where it's needed.
+Dialogue: 0,0:42:09.66,0:42:11.11,*Default,NTP,0000,0000,0000,,我相信你们也有这样的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm sure you have examples of that;
+Dialogue: 0,0:42:13.80,0:42:15.25,*Default,NTP,0000,0000,0000,,类似抗菌药膏的局部药膏  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}topical ointments like antibacterial cream 
+Dialogue: 0,0:42:15.26,0:42:15.93,*Default,NTP,0000,0000,0000,,如果你有切伤而想免于被感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might put on something if you have a cut 
+Dialogue: 0,0:42:15.93,0:42:18.27,*Default,NTP,0000,0000,0000,,这时你会把药物涂在伤口上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you want to keep it from being infected.
+Dialogue: 0,0:42:23.76,0:42:25.82,*Default,NTP,0000,0000,0000,,你不会口服抗生素使之充满全身  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't take antibiotics by mouth and have them all over your body, 
+Dialogue: 0,0:42:25.82,0:42:26.97,*Default,NTP,0000,0000,0000,,而是涂在特定的位点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you put a little topical treatment on the site 
+Dialogue: 0,0:42:26.98,0:42:28.26,*Default,NTP,0000,0000,0000,,因为你知道哪里需要它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you're targeting the drug to the site that you need.
+Dialogue: 0,0:42:36.86,0:42:38.30,*Default,NTP,0000,0000,0000,,在下一章幻灯片上有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On the next slide there's some other more 
+Dialogue: 0,0:42:38.30,0:42:39.74,*Default,NTP,0000,0000,0000,,一些罕见的药物摄入模式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}uncommon modes of administration,
+Dialogue: 0,0:42:39.74,0:42:41.75,*Default,NTP,0000,0000,0000,,像通过直肠的  经皮的  阴道的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}rectal, transdermal, vaginal.
+Dialogue: 0,0:42:44.31,0:42:46.31,*Default,NTP,0000,0000,0000,,但是我们将不会在这些上谈太多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We won't talk very much about those,
+Dialogue: 0,0:42:47.03,0:42:51.20,*Default,NTP,0000,0000,0000,,下周我们将讲特殊种类的药物输送系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and next week we'll talk about special kinds of drug delivery systems 
+Dialogue: 0,0:42:51.81,0:42:53.94,*Default,NTP,0000,0000,0000,,一些对特定类型的治疗很有用的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are useful for certain kinds of administration 
+Dialogue: 0,0:42:55.46,0:43:00.38,*Default,NTP,0000,0000,0000,,即所谓的控释剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like what are called controlled release implants, 
+Dialogue: 0,0:43:01.73,0:43:02.35,*Default,NTP,0000,0000,0000,,我们将会在下节课讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about next time.
+Dialogue: 0,0:43:05.30,0:43:07.16,*Default,NTP,0000,0000,0000,,我想  我已经说了很多了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want--I've given you a lot of words 
+Dialogue: 0,0:43:07.16,0:43:09.42,*Default,NTP,0000,0000,0000,,然后我会试着介绍更多概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I've tried to introduce a lot of concepts 
+Dialogue: 0,0:43:09.43,0:43:11.64,*Default,NTP,0000,0000,0000,,通过思考你们所了解的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by thinking about things that you know about.
+Dialogue: 0,0:43:11.90,0:43:14.45,*Default,NTP,0000,0000,0000,,我会把这个放在一些框架上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to try to put this in some framework 
+Dialogue: 0,0:43:14.45,0:43:17.11,*Default,NTP,0000,0000,0000,,使你们能定性的思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that allows you to think about quantitatively 
+Dialogue: 0,0:43:17.11,0:43:19.37,*Default,NTP,0000,0000,0000,,它的含义以及这些因素的含义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what it means--what these factors mean.
+Dialogue: 0,0:43:20.19,0:43:23.27,*Default,NTP,0000,0000,0000,,我们还将介绍给病人服用的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to introduce drugs into a patient 
+Dialogue: 0,0:43:23.27,0:43:25.34,*Default,NTP,0000,0000,0000,,并且我们还需要知道的就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what we would like to know 
+Dialogue: 0,0:43:25.34,0:43:28.55,*Default,NTP,0000,0000,0000,,如何快速地使这些药物起效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is how rapidly do those drugs become available, 
+Dialogue: 0,0:43:28.55,0:43:31.56,*Default,NTP,0000,0000,0000,,药物的哪部分是有效的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what fraction of the drugs become available, 
+Dialogue: 0,0:43:31.56,0:43:34.51,*Default,NTP,0000,0000,0000,,用药间隔是多长时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how long does the one dose we give last?
+Dialogue: 0,0:43:36.06,0:43:38.03,*Default,NTP,0000,0000,0000,,就像我所说的  那是很复杂的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As I mentioned, that's complicated, 
+Dialogue: 0,0:43:38.03,0:43:40.66,*Default,NTP,0000,0000,0000,,复杂是因为我们的结构器官是复杂的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}complicated because our anatomy is complicated, 
+Dialogue: 0,0:43:40.66,0:43:43.73,*Default,NTP,0000,0000,0000,,并且个体的差异也是复杂的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and complicated because we're all different individuals 
+Dialogue: 0,0:43:43.73,0:43:45.87,*Default,NTP,0000,0000,0000,,我们的解剖学和生理学是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and our anatomy and physiology differs.
+Dialogue: 0,0:43:46.52,0:43:48.23,*Default,NTP,0000,0000,0000,,因此  这是件很难描述的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it's a hard thing to, 
+Dialogue: 0,0:43:48.24,0:43:51.67,*Default,NTP,0000,0000,0000,,对于特定种类的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do to describe how even one particular kind of drug 
+Dialogue: 0,0:43:51.67,0:43:54.57,*Default,NTP,0000,0000,0000,,在人群中的作用方式是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}acts in a population of people is difficult.
+Dialogue: 0,0:43:55.51,0:43:57.05,*Default,NTP,0000,0000,0000,,我们不得不从某一点开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have to start somewhere 
+Dialogue: 0,0:43:57.05,0:43:58.47,*Default,NTP,0000,0000,0000,,这样我们就有一个简单的开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we're going to start with a simplification.
+Dialogue: 0,0:44:00.12,0:44:05.12,*Default,NTP,0000,0000,0000,,简单化就是使这些复杂的东西  像人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That simplification is that these complex things--people--
+Dialogue: 0,0:44:05.18,0:44:09.89,*Default,NTP,0000,0000,0000,,转化为非常简单的结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can be represented by very simple constructs.
+Dialogue: 0,0:44:10.44,0:44:13.20,*Default,NTP,0000,0000,0000,,我展示在这里的简单结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The simple construct that I show here 
+Dialogue: 0,0:44:13.20,0:44:15.23,*Default,NTP,0000,0000,0000,,可以代替一个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that instead of a person 
+Dialogue: 0,0:44:15.23,0:44:18.20,*Default,NTP,0000,0000,0000,,我们将人体比喻成一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're going to consider the person to be 
+Dialogue: 0,0:44:18.20,0:44:21.68,*Default,NTP,0000,0000,0000,,很好的液体搅拌桶  例如水这样的液体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a well stirred vat of liquid, water for example.
+Dialogue: 0,0:44:22.69,0:44:24.96,*Default,NTP,0000,0000,0000,,现在  你如何能做成这个呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, how can you get away with that?
+Dialogue: 0,0:44:26.30,0:44:28.45,*Default,NTP,0000,0000,0000,,是的  对于你们来说其中一种方法是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, one to say you can get away with it is 
+Dialogue: 0,0:44:28.45,0:44:29.96,*Default,NTP,0000,0000,0000,,我们人体几乎是由水组成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we are mostly water,
+Dialogue: 0,0:44:30.61,0:44:32.05,*Default,NTP,0000,0000,0000,,我们的身体中百分之九十是水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}our bodies are 90% water 
+Dialogue: 0,0:44:32.05,0:44:34.12,*Default,NTP,0000,0000,0000,,因此如果你要用最简单的方式描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so if you wanted to describe us 
+Dialogue: 0,0:44:34.12,0:44:36.93,*Default,NTP,0000,0000,0000,,那就是我们是水组成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of in the simplest possible way we're water,
+Dialogue: 0,0:44:37.68,0:44:38.66,*Default,NTP,0000,0000,0000,,水是人体中最多的物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's largely what we are.
+Dialogue: 0,0:44:39.12,0:44:40.39,*Default,NTP,0000,0000,0000,,人体内的水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're structured water 
+Dialogue: 0,0:44:40.39,0:44:42.05,*Default,NTP,0000,0000,0000,,有着特定的组成和形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a particular kind of shape and form,
+Dialogue: 0,0:44:42.05,0:44:44.04,*Default,NTP,0000,0000,0000,,然而我们大部分还是水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're largely water.
+Dialogue: 0,0:44:44.57,0:44:46.96,*Default,NTP,0000,0000,0000,,我们通过思考  药物如何溶于水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We could describe where drugs go in the body
+Dialogue: 0,0:44:46.96,0:44:49.74,*Default,NTP,0000,0000,0000,,来描述药物从哪里进入人体的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by just thinking about how they dissolve in water.
+Dialogue: 0,0:44:50.32,0:44:52.61,*Default,NTP,0000,0000,0000,,你们所必须要知道的是  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All you'd need to know is, 
+Dialogue: 0,0:44:52.62,0:44:54.33,*Default,NTP,0000,0000,0000,,水的体积有多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'What's the volume of the water?'
+Dialogue: 0,0:44:54.61,0:44:57.06,*Default,NTP,0000,0000,0000,,因此我给你们十毫克药量  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, if I give a dose what concentration do you get, 
+Dialogue: 0,0:44:57.06,0:44:58.41,*Default,NTP,0000,0000,0000,,那药物的浓度是多少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I give ten milligrams.
+Dialogue: 0,0:44:58.67,0:45:00.18,*Default,NTP,0000,0000,0000,,如果你的体积是五公升 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If your volume is five liters, 
+Dialogue: 0,0:45:00.19,0:45:02.25,*Default,NTP,0000,0000,0000,,那么在体内可以达到什么浓度呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's the concentration you achieve inside?
+Dialogue: 0,0:45:03.69,0:45:04.57,*Default,NTP,0000,0000,0000,,我刚才说了药物  十毫克吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What did I say? Ten milligrams?
+Dialogue: 0,0:45:05.95,0:45:07.41,*Default,NTP,0000,0000,0000,,我忘记我刚才说的数量了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I forgot what number I said now, 
+Dialogue: 0,0:45:07.67,0:45:09.98,*Default,NTP,0000,0000,0000,,十毫克溶解在五公升的体积里  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ten milligrams divided by five liters, 
+Dialogue: 0,0:45:09.98,0:45:11.13,*Default,NTP,0000,0000,0000,,就是每公升两毫克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two milligrams per liter.
+Dialogue: 0,0:45:12.25,0:45:17.25,*Default,NTP,0000,0000,0000,,浓度如此  且是解释这个的最简单方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the concentration and that's the simplest way to define it.
+Dialogue: 0,0:45:18.12,0:45:19.12,*Default,NTP,0000,0000,0000,,现在  我如何达到我所说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, how can I get away with saying 
+Dialogue: 0,0:45:19.12,0:45:20.03,*Default,NTP,0000,0000,0000,,搅拌好的那种状态呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're well-stirred?
+Dialogue: 0,0:45:20.48,0:45:24.48,*Default,NTP,0000,0000,0000,,我指通过一个搅拌桶中的液体的推进器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I indicate that in this simple drawing by having a--
+Dialogue: 0,0:45:25.04,0:45:26.41,*Default,NTP,0000,0000,0000,,这样简单的描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is a propeller that's stirring the vat of liquid,
+Dialogue: 0,0:45:27.07,0:45:28.68,*Default,NTP,0000,0000,0000,,我如何能处理好我所说的我们是搅拌好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how can I get away with saying we're well-stirred?
+Dialogue: 0,0:45:30.40,0:45:32.16,*Default,NTP,0000,0000,0000,,是的  在某种程度上我们是的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, in some senses we are, 
+Dialogue: 0,0:45:32.52,0:45:34.19,*Default,NTP,0000,0000,0000,,那是我们的循环系统做的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's what our circulatory system does,
+Dialogue: 0,0:45:34.55,0:45:37.46,*Default,NTP,0000,0000,0000,,我将会在接下来几个星期介绍这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'm going to talk about that in the weeks to come,
+Dialogue: 0,0:45:38.25,0:45:40.54,*Default,NTP,0000,0000,0000,,然而我们的心脏是一个非常有效的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but our heart is a very effective--
+Dialogue: 0,0:45:40.93,0:45:44.23,*Default,NTP,0000,0000,0000,,我们的心脏和血管利用其巨很大的容积\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}our heart and our blood vessels are a very effective system 
+Dialogue: 0,0:45:44.23,0:45:47.87,*Default,NTP,0000,0000,0000,,非常快速高效地分配分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for distributing molecules very rapidly throughout a large volume
+Dialogue: 0,0:45:48.47,0:45:50.51,*Default,NTP,0000,0000,0000,,因此我们是被搅拌着的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so we are stirred--
+Dialogue: 0,0:45:50.52,0:45:53.19,*Default,NTP,0000,0000,0000,,在某种程度上我们就是被很好地搅拌着的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we are well-stirred in certain senses.
+Dialogue: 0,0:45:53.89,0:45:56.04,*Default,NTP,0000,0000,0000,,现在你可能因为许多不同的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you could object to this simple model 
+Dialogue: 0,0:45:56.04,0:45:57.58,*Default,NTP,0000,0000,0000,,而反对这一简单的模型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for lots of different reasons
+Dialogue: 0,0:45:57.98,0:45:59.47,*Default,NTP,0000,0000,0000,,但是正是因为它非常简单\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're going to start with it 
+Dialogue: 0,0:45:59.47,0:46:00.95,*Default,NTP,0000,0000,0000,,所以我们才从这里开始讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's a very simple place to start.
+Dialogue: 0,0:46:01.74,0:46:05.15,*Default,NTP,0000,0000,0000,,我们要讲的是当我们服用药物时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to say then when we administer a drug
+Dialogue: 0,0:46:05.15,0:46:09.47,*Default,NTP,0000,0000,0000,,我们就在讲药摄入到这个有一定体积的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're introducing a drug into this well stirred vat of water 
+Dialogue: 0,0:46:09.48,0:46:11.50,*Default,NTP,0000,0000,0000,,搅拌的桶中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that has a particular volume.
+Dialogue: 0,0:46:11.93,0:46:12.93,*Default,NTP,0000,0000,0000,,我们服用一些药剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to administer some dose 
+Dialogue: 0,0:46:12.93,0:46:14.20,*Default,NTP,0000,0000,0000,,并使其形成一定的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to produce some concentration.
+Dialogue: 0,0:46:15.37,0:46:17.19,*Default,NTP,0000,0000,0000,,那么  之后会发生什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, what happens afterwards?
+Dialogue: 0,0:46:17.88,0:46:21.30,*Default,NTP,0000,0000,0000,,药物会一直持续在同样的浓度吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that concentration stay the same forever?
+Dialogue: 0,0:46:22.17,0:46:24.47,*Default,NTP,0000,0000,0000,,不是的  它不会  因为我们  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No, it doesn't because we--
+Dialogue: 0,0:46:24.48,0:46:26.35,*Default,NTP,0000,0000,0000,,我们的身体有清除药物的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}our body has mechanisms for getting rid of drugs.
+Dialogue: 0,0:46:26.82,0:46:29.82,*Default,NTP,0000,0000,0000,,我们现在要描述的是这个简单模型中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to describe that in our simple model
+Dialogue: 0,0:46:29.82,0:46:33.14,*Default,NTP,0000,0000,0000,,有箭头指出的部分说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by having an arrow pointing out that tells you how--
+Dialogue: 0,0:46:36.27,0:46:38.54,*Default,NTP,0000,0000,0000,,当药物进入身体之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that tells you that drugs are eliminated 
+Dialogue: 0,0:46:38.54,0:46:40.20,*Default,NTP,0000,0000,0000,,药物是如何被排除出身体的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they're within your body.
+Dialogue: 0,0:46:40.78,0:46:44.40,*Default,NTP,0000,0000,0000,,我们将使这个成为一个简单的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to make this a very simple process also 
+Dialogue: 0,0:46:44.40,0:46:49.34,*Default,NTP,0000,0000,0000,,并认为药物的排出与它们的浓度成比例的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and say that drugs are eliminated in proportion to their concentration.
+Dialogue: 0,0:46:51.96,0:46:55.69,*Default,NTP,0000,0000,0000,,你服的药越多它就越快被排除\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The more drug you have the faster it gets eliminated, 
+Dialogue: 0,0:46:55.69,0:47:00.26,*Default,NTP,0000,0000,0000,,服用的药物越少  被排除的时间就越慢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as you have less and less drug it gets eliminated more slowly.
+Dialogue: 0,0:47:02.17,0:47:07.12,*Default,NTP,0000,0000,0000,,现在呢  最简单描述这一过程的说法是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, this--the simplest way to describe this 
+Dialogue: 0,0:47:10.12,0:47:15.12,*Default,NTP,0000,0000,0000,,药物排除率与一定的药物浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to say that the rate of disappearance of a drug
+Dialogue: 0,0:47:16.48,0:47:21.47,*Default,NTP,0000,0000,0000,,等于常数乘以浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is equal to some constant times the concentration.
+Dialogue: 0,0:47:22.25,0:47:24.03,*Default,NTP,0000,0000,0000,,药物排除的速率等于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The rate of disappearance of a drug 
+Dialogue: 0,0:47:24.03,0:47:26.51,*Default,NTP,0000,0000,0000,,某一常数乘以时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is equal to some constant times the concentration.
+Dialogue: 0,0:47:27.81,0:47:30.35,*Default,NTP,0000,0000,0000,,这个常数叫做速率常数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This constant is called a rate constant 
+Dialogue: 0,0:47:30.35,0:47:34.18,*Default,NTP,0000,0000,0000,,且这也是药物可以在体内存留的浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is the concentration that would be within the body.
+Dialogue: 0,0:47:37.17,0:47:39.15,*Default,NTP,0000,0000,0000,,这是一个初级方程式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a first-order equation.
+Dialogue: 0,0:47:40.39,0:47:43.68,*Default,NTP,0000,0000,0000,,意味着药物被排除的速率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Means that the rate at which the drug is eliminated
+Dialogue: 0,0:47:43.68,0:47:45.84,*Default,NTP,0000,0000,0000,,与浓度的一次幂或者说是成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is proportional to concentration 
+Dialogue: 0,0:47:45.84,0:47:48.98,*Default,NTP,0000,0000,0000,,线性比例关系的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the first-power or linear with concentration.
+Dialogue: 0,0:47:50.59,0:47:52.42,*Default,NTP,0000,0000,0000,,随着药物浓度下降\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As drug concentration goes down, 
+Dialogue: 0,0:47:52.42,0:47:54.95,*Default,NTP,0000,0000,0000,,k就是任何特定药物的常数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}since k is a constant for any particular drug.
+Dialogue: 0,0:47:57.32,0:48:00.07,*Default,NTP,0000,0000,0000,,只是个数字  就像浓度从2毫克每公升\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's one number, as the concentration 
+Dialogue: 0,0:48:00.07,0:48:04.63,*Default,NTP,0000,0000,0000,,下降到1毫克每公升\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}drops from two milligrams per liter to one milligram per liter,
+Dialogue: 0,0:48:05.19,0:48:08.18,*Default,NTP,0000,0000,0000,,等于你身体排除药物的速率下降到一半\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the rate that your body eliminates it goes down by half as well.
+Dialogue: 0,0:48:09.93,0:48:11.79,*Default,NTP,0000,0000,0000,,我认为这就像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I like to think about this 
+Dialogue: 0,0:48:11.79,0:48:16.13,*Default,NTP,0000,0000,0000,,你思考你的口袋里的钱的数量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as you could think about concentration as money in your wallet,
+Dialogue: 0,0:48:17.65,0:48:19.57,*Default,NTP,0000,0000,0000,,那个速率就是我把钱用了哪些后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the rate at which I spend money anyway 
+Dialogue: 0,0:48:19.57,0:48:22.03,*Default,NTP,0000,0000,0000,,口袋里剩余的钱是成比例的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is proportional to the amount that I have in my wallet;
+Dialogue: 0,0:48:23.07,0:48:23.87,*Default,NTP,0000,0000,0000,,我有越多钱时就花得越多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I have more I spend more, 
+Dialogue: 0,0:48:24.86,0:48:27.75,*Default,NTP,0000,0000,0000,,而钱越少花得越少  最后钱就花得越慢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I have less I spend less, and the last dollar goes really slowly.
+Dialogue: 0,0:48:29.19,0:48:30.43,*Default,NTP,0000,0000,0000,,同样地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same thing here, 
+Dialogue: 0,0:48:30.43,0:48:34.38,*Default,NTP,0000,0000,0000,,当你体内药物浓度越高时排除得越快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you have a lot of concentration your body gets rid of it fast,
+Dialogue: 0,0:48:34.72,0:48:36.71,*Default,NTP,0000,0000,0000,,但是最后剩下的药物会排除得非常慢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the last molecules go out very slowly.
+Dialogue: 0,0:48:38.74,0:48:43.07,*Default,NTP,0000,0000,0000,,如果我们拿这一简单的模型并利用它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we take this simple model and then apply it, 
+Dialogue: 0,0:48:44.39,0:48:46.48,*Default,NTP,0000,0000,0000,,并直接地服用药物进入体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we introduce a dose directly into the body, 
+Dialogue: 0,0:48:47.19,0:48:48.29,*Default,NTP,0000,0000,0000,,这时就是良好的搅拌桶了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now this well-stirred vat, 
+Dialogue: 0,0:48:48.83,0:48:51.07,*Default,NTP,0000,0000,0000,,我们说它是有一定体积的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we say that it has some volume 
+Dialogue: 0,0:48:51.07,0:48:54.97,*Default,NTP,0000,0000,0000,,并且药物会随着某一速率常数k被排除\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we say that drug is eliminated with some rate constant k,
+Dialogue: 0,0:48:55.85,0:48:57.54,*Default,NTP,0000,0000,0000,,我们能得到一个简易方程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we could derive a simple equation.
+Dialogue: 0,0:48:57.90,0:49:00.86,*Default,NTP,0000,0000,0000,,这是从书上得到的  在章节后的方框中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is derived in the book, in the box at the back of the chapter,
+Dialogue: 0,0:49:01.59,0:49:02.66,*Default,NTP,0000,0000,0000,,那就能告诉我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would tell us 
+Dialogue: 0,0:49:02.66,0:49:04.70,*Default,NTP,0000,0000,0000,,浓度是怎样随时间而变化的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how concentration varies with time 
+Dialogue: 0,0:49:04.70,0:49:06.62,*Default,NTP,0000,0000,0000,,方程式就在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that equation is shown here.
+Dialogue: 0,0:49:07.14,0:49:10.29,*Default,NTP,0000,0000,0000,,浓度就等于我介绍过的药物的量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The concentration is equal to the dose that I introduced
+Dialogue: 0,0:49:10.70,0:49:14.47,*Default,NTP,0000,0000,0000,,M0除以身体中水的体积\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is M0 divided by the volume of the body, 
+Dialogue: 0,0:49:15.89,0:49:19.72,*Default,NTP,0000,0000,0000,,乘以e-kt  k是药物排除速率常数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}times e-kt, where k is this rate constant for disappearance of the drug;
+Dialogue: 0,0:49:20.78,0:49:22.08,*Default,NTP,0000,0000,0000,,得到C = (M0/V)*e-kt\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}C = (M0/V)*e-kt.
+Dialogue: 0,0:49:22.50,0:49:23.80,*Default,NTP,0000,0000,0000,,当你们看书上这个方程式的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, if you don't understand 
+Dialogue: 0,0:49:23.80,0:49:26.40,*Default,NTP,0000,0000,0000,,仍然不明白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you look at the book where this equation comes from, 
+Dialogue: 0,0:49:26.40,0:49:27.34,*Default,NTP,0000,0000,0000,,也没有关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not important.
+Dialogue: 0,0:49:27.86,0:49:28.98,*Default,NTP,0000,0000,0000,,你们其中一些人会明白另一些人不会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of you will and some of you won't,
+Dialogue: 0,0:49:30.44,0:49:32.69,*Default,NTP,0000,0000,0000,,但是你们可以相信我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you could trust me that 
+Dialogue: 0,0:49:32.69,0:49:37.69,*Default,NTP,0000,0000,0000,,我有讲过这是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is the equation that results from those simple assumptions 
+Dialogue: 0,0:49:37.81,0:49:39.41,*Default,NTP,0000,0000,0000,,由这些简单的假设而来的方程式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I talked about.
+Dialogue: 0,0:49:40.56,0:49:44.33,*Default,NTP,0000,0000,0000,,C是存在于你们的血液中的药物浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}C is the concentration that's available in your bloodstream 
+Dialogue: 0,0:49:44.33,0:49:47.66,*Default,NTP,0000,0000,0000,,即这个液体桶中的  能起效的药物量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or in this vat of fluid, that's available for action.
+Dialogue: 0,0:49:48.42,0:49:50.37,*Default,NTP,0000,0000,0000,,M0是服用的药物总量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}M0 is the amount that's introduced, 
+Dialogue: 0,0:49:50.70,0:49:53.47,*Default,NTP,0000,0000,0000,,记得我用一个特殊的方式介绍过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and remember I introduced it in a special way, 
+Dialogue: 0,0:49:53.47,0:49:55.47,*Default,NTP,0000,0000,0000,,我直接将其注射进身体中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I injected it right into the body.
+Dialogue: 0,0:49:56.34,0:49:58.82,*Default,NTP,0000,0000,0000,,或者全部注射进入身体  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I injected it all into the body, 
+Dialogue: 0,0:49:58.82,0:50:01.08,*Default,NTP,0000,0000,0000,,整体的药剂在t时等于0\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the whole dose at time t equals 0.
+Dialogue: 0,0:50:01.34,0:50:03.41,*Default,NTP,0000,0000,0000,,要是一次性将药物引进体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I introduced it all into the body at once 
+Dialogue: 0,0:50:03.41,0:50:05.24,*Default,NTP,0000,0000,0000,,那么它就会全部参与循环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it was all available to circulate.
+Dialogue: 0,0:50:06.15,0:50:08.36,*Default,NTP,0000,0000,0000,,可以假定生物利用率是100%\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That assumes the bioavailability is 100% 
+Dialogue: 0,0:50:08.84,0:50:11.79,*Default,NTP,0000,0000,0000,,而如果是在一个特定的时间引入药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that I've introduced it all at one particular time.
+Dialogue: 0,0:50:13.67,0:50:16.09,*Default,NTP,0000,0000,0000,,那这真的会代表什么吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is this really a representation of?
+Dialogue: 0,0:50:16.59,0:50:19.32,*Default,NTP,0000,0000,0000,,这就代表静脉注射\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a representation of intravenous injection 
+Dialogue: 0,0:50:19.32,0:50:22.69,*Default,NTP,0000,0000,0000,,所注射的地方和我一次性注射所有的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where I have syringe and I inject all of the drug at once.
+Dialogue: 0,0:50:24.61,0:50:26.95,*Default,NTP,0000,0000,0000,,在那种情况下  这个方程式告诉你的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In that case, what this equation tells you is
+Dialogue: 0,0:50:26.95,0:50:29.72,*Default,NTP,0000,0000,0000,,在你们注射药物的同时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the concentration immediately after you inject 
+Dialogue: 0,0:50:29.72,0:50:30.99,*Default,NTP,0000,0000,0000,,药物浓度是最高的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the drug is the highest,
+Dialogue: 0,0:50:32.81,0:50:34.26,*Default,NTP,0000,0000,0000,,之后就会不断地下降\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and after that it continually goes down.
+Dialogue: 0,0:50:35.22,0:50:40.22,*Default,NTP,0000,0000,0000,,它的下降按照依赖于常数k的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It goes down in an exponential fashion with a time course 
+Dialogue: 0,0:50:41.23,0:50:44.19,*Default,NTP,0000,0000,0000,,时间进程的指数式改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that depends on this constant k.
+Dialogue: 0,0:50:45.91,0:50:46.57,*Default,NTP,0000,0000,0000,,那这有意义吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does that make sense?
+Dialogue: 0,0:50:48.40,0:50:51.18,*Default,NTP,0000,0000,0000,,如果我静脉摄入的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have intravenous administration of a drug 
+Dialogue: 0,0:50:51.18,0:50:53.78,*Default,NTP,0000,0000,0000,,先经过首过消除后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's eliminated by a first-order process, 
+Dialogue: 0,0:50:53.78,0:50:57.09,*Default,NTP,0000,0000,0000,,它的浓度会达到一个高峰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as soon as I administer it, the concentration is a peak.
+Dialogue: 0,0:50:57.53,0:50:59.02,*Default,NTP,0000,0000,0000,,之后浓度下降\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After that it goes down 
+Dialogue: 0,0:50:59.02,0:51:01.20,*Default,NTP,0000,0000,0000,,而其下降的速率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the rate at which it goes down 
+Dialogue: 0,0:51:01.20,0:51:03.19,*Default,NTP,0000,0000,0000,,就依赖于速率常数k\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depends on this rate constant k.
+Dialogue: 0,0:51:05.91,0:51:07.11,*Default,NTP,0000,0000,0000,,另外我还展示给你们的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I also show you here
+Dialogue: 0,0:51:07.11,0:51:10.07,*Default,NTP,0000,0000,0000,,是如果我就这个方程式提问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that if I plugged into this equation I asked the question,
+Dialogue: 0,0:51:10.41,0:51:13.69,*Default,NTP,0000,0000,0000,,"什么时候浓度会以二为因数下降\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'When does the concentration go down by a factor of two, 
+Dialogue: 0,0:51:13.69,0:51:15.36,*Default,NTP,0000,0000,0000,,什么时候以50%的速率下降"\Nwhen does it go down by 50%?’
+Dialogue: 0,0:51:15.86,0:51:17.69,*Default,NTP,0000,0000,0000,,我能从这个图上看出并说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would look on this graph here 
+Dialogue: 0,0:51:17.69,0:51:20.03,*Default,NTP,0000,0000,0000,,只是药物已经下降了50%\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and say 50% of the drug is gone by this time.
+Dialogue: 0,0:51:21.73,0:51:23.59,*Default,NTP,0000,0000,0000,,我还能计算出药物浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I could calculate that time 
+Dialogue: 0,0:51:23.60,0:51:26.93,*Default,NTP,0000,0000,0000,,下降到50%时的那个时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at which the drug concentration goes down by half
+Dialogue: 0,0:51:26.94,0:51:29.07,*Default,NTP,0000,0000,0000,,那就等于ln(2/k)\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's equal to the ln(2/k),
+Dialogue: 0,0:51:29.70,0:51:32.12,*Default,NTP,0000,0000,0000,,这里就是速率常数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this rate constant here, 
+Dialogue: 0,0:51:32.12,0:51:37.12,*Default,NTP,0000,0000,0000,,所以当这个数越小  药物半衰期就越长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so when this number is smaller the half life is longer.
+Dialogue: 0,0:51:38.05,0:51:41.26,*Default,NTP,0000,0000,0000,,k值越高的分子被排除得越快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Molecules with a high k are eliminated rapidly;
+Dialogue: 0,0:51:42.08,0:51:44.49,*Default,NTP,0000,0000,0000,,反之则越慢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}molecules with a low k are eliminated slowly.
+Dialogue: 0,0:51:45.40,0:51:47.88,*Default,NTP,0000,0000,0000,,半衰期是药物在体内作用持续时间长度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That half-life is a good measure of 
+Dialogue: 0,0:51:47.88,0:51:51.04,*Default,NTP,0000,0000,0000,,的一个很好的量度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how long the drug activity lasts in your body;
+Dialogue: 0,0:51:51.46,0:51:53.30,*Default,NTP,0000,0000,0000,,例如  思考我在需要服用下一剂药之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a good way of thinking about 
+Dialogue: 0,0:51:53.30,0:51:54.70,*Default,NTP,0000,0000,0000,,需要等待多长时间的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how long I'd have to wait 
+Dialogue: 0,0:51:54.70,0:51:56.97,*Default,NTP,0000,0000,0000,,一个好的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before I needed another dose, for example.
+Dialogue: 0,0:51:58.83,0:52:03.06,*Default,NTP,0000,0000,0000,,这个图是已经画好的半对数坐标图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What this graph shows you here is just plotted on a semi-log plot.
+Dialogue: 0,0:52:03.34,0:52:04.52,*Default,NTP,0000,0000,0000,,这些路缘的不同在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The difference between these curbs,
+Dialogue: 0,0:52:05.02,0:52:06.61,*Default,NTP,0000,0000,0000,,是否我服用了不同半衰期的药物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I had drugs with different half-life, 
+Dialogue: 0,0:52:07.24,0:52:10.37,*Default,NTP,0000,0000,0000,,半衰期600分钟的药物持续的时间最长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a drug with a half-life of 600 minutes last a long time;
+Dialogue: 0,0:52:11.09,0:52:14.60,*Default,NTP,0000,0000,0000,,直到过了很久浓度才改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}concentration doesn't drop until a long time, 
+Dialogue: 0,0:52:14.60,0:52:16.43,*Default,NTP,0000,0000,0000,,这需要很多  很多个小时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has many, many hours.
+Dialogue: 0,0:52:16.83,0:52:18.43,*Default,NTP,0000,0000,0000,,如果药物半衰期是60分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If it has a half-life of 60 minutes,
+Dialogue: 0,0:52:19.25,0:52:24.25,*Default,NTP,0000,0000,0000,,几小时之后药物会降到起始浓度的10%\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}concentration drops to 10% of its initial level after a few hours.
+Dialogue: 0,0:52:25.24,0:52:27.39,*Default,NTP,0000,0000,0000,,而如果我的药物的半衰期是6分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have a drug with the half-life of six minutes
+Dialogue: 0,0:52:28.26,0:52:31.81,*Default,NTP,0000,0000,0000,,那么只要几分钟药物浓度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}concentration drops to 10% of its initial level 
+Dialogue: 0,0:52:31.81,0:52:33.66,*Default,NTP,0000,0000,0000,,就会降到起始浓度的10%\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after only a few minutes.
+Dialogue: 0,0:52:34.41,0:52:38.45,*Default,NTP,0000,0000,0000,,我们将在下节课继续介绍这个模型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, we're going to take this model and extend it next time
+Dialogue: 0,0:52:38.66,0:52:40.66,*Default,NTP,0000,0000,0000,,并谈论更多的复杂的模型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and talk about more complicated modes of administration 
+Dialogue: 0,0:52:41.16,0:52:43.32,*Default,NTP,0000,0000,0000,,及药物运输的几个新的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and talk about sort of new forms of drug delivery, 
+Dialogue: 0,0:52:43.82,0:52:47.76,*Default,NTP,0000,0000,0000,,这些形式你们将在接下来的几年后看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}forms that you can expect to see in the next few years.

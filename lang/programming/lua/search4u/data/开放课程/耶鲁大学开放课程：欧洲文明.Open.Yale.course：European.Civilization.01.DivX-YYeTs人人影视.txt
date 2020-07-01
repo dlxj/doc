@@ -1,0 +1,785 @@
+[Script Info]
+; // 此字幕由PopSub生成  2010-07-02 16:36:05
+; // 版本: 0.75
+; // popgo_fansub@yahoo.co.jp
+; // 欢迎访问漫游天下 http://bbs.popgo.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,5,134
+Style: top,楷体,16,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,-1,0,0,0,100,100,0,0.00,1,1,1,8,5,5,10,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:00.00,0:02:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:20:00.00,0:21:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 1,0:00:00.01,0:00:02.50,*Default,NTP,0000,0000,0000,,{\fe134}{\fad(500,500)}{\c&HFFFFFF&}{\pos(190,270)}{\fs16} {\fn方正准圆简体}{\bord0}本字幕由{\fs24}{\fn方正综艺简体}{\fe0}{\c&H26F4FF&}YYeTs{\fe134}{\fn方正宋黑简体}{\c&HFFAE1A&}人人影视{\fscy100}{\fe134}{\fn方正准圆简体}{\c&HFFFFFF&}{\fs16}翻译制作\N{\fn方正准圆简体}{\fs14}{\b0}{\bord0}{\shad0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}{\fsp0}{\fs16}{\c&HFFFFFF&}更多教程中文版 请登陆 {\c&H26F4FF&}{\fn方正综艺简体}{\fs24}www.YYeTs.net
+Dialogue: 0,0:00:04.00,0:00:10.00,top,NTP,0000,0000,0000,,{\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}翻译：{\fs18}{\c&HFFFFFF&}芮然紫夜  Alvinwcq {\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}特别感谢：{\fs18}{\c&HFFFFFF&}ORESAMA{\fs16} {\c&H24EFFF&}{\fn方正准圆简体}{\bord0}校对监制：{\fs18}{\c&HFFFFFF&}Alvinwcq 桥头堡 weiran111 梁良
+Dialogue: 0,0:00:02.60,0:00:04.57,*Default,NTP,0000,0000,0000,,我是约翰·梅里曼  这门课是历史202\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Prof: I'm John Merriman and this is History 202.
+Dialogue: 0,0:00:06.02,0:00:07.97,*Default,NTP,0000,0000,0000,,我每周一  三上午\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm here every Monday and Wednesday, 
+Dialogue: 0,0:00:07.97,0:00:11.15,*Default,NTP,0000,0000,0000,,10:30到11:20上课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}10:30 a.m. to 11:20 a.m.
+Dialogue: 0,0:00:11.26,0:00:14.87,*Default,NTP,0000,0000,0000,,这门课程将要讲述一些极为重要的事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The way this course is, these are all really major themes.
+Dialogue: 0,0:00:14.98,0:00:17.78,*Default,NTP,0000,0000,0000,,我将要就其稍作阐释 并且将会探讨其中一些事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to go over this a little bit, and I'm going to talk about some of the themes.
+Dialogue: 0,0:00:18.36,0:00:20.38,*Default,NTP,0000,0000,0000,,我喜欢讲一些我认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I kind of lecture on things that 
+Dialogue: 0,0:00:20.38,0:00:23.01,*Default,NTP,0000,0000,0000,,补充你们课本知识以外的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think that complement what you're doing.
+Dialogue: 0,0:00:23.18,0:00:24.25,*Default,NTP,0000,0000,0000,,举个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me give you an example.
+Dialogue: 0,0:00:25.39,0:00:27.89,*Default,NTP,0000,0000,0000,,我会提到新帝国主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I talk about the New Imperialism,
+Dialogue: 0,0:00:28.60,0:00:32.08,*Default,NTP,0000,0000,0000,,为何欧洲在19世纪80年代到1914年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why it is that Europe basically took over the entire world
+Dialogue: 0,0:00:32.20,0:00:36.50,*Default,NTP,0000,0000,0000,,基本控制了整个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the 1880s and 1914, 
+Dialogue: 0,0:00:37.67,0:00:39.70,*Default,NTP,0000,0000,0000,,你可以在我写的《现代欧洲史》中找到对应的章节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can read the chapter in a History of Modern Europe,
+Dialogue: 0,0:00:39.70,0:00:41.01,*Default,NTP,0000,0000,0000,,写这本书的经历很有趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I had fun writing,
+Dialogue: 0,0:00:42.16,0:00:43.63,*Default,NTP,0000,0000,0000,,但是讲这些的时候我会提到童子军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I lecture on the Boy Scouts.
+Dialogue: 0,0:00:44.69,0:00:47.04,*Default,NTP,0000,0000,0000,,我总喜欢提到童子军是因为我小时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I often say that I lecture on the Boy Scouts because I was thrown out of 
+Dialogue: 0,0:00:47.14,0:00:50.48,*Default,NTP,0000,0000,0000,,被俄勒冈州波特兰的童子军踢了出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Boy Scouts in Portland, Oregon, when I was a kid,
+Dialogue: 0,0:00:50.58,0:00:53.37,*Default,NTP,0000,0000,0000,,由于我一个徽章都没有收集到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I didn't manage to accumulate a single badge 
+Dialogue: 0,0:00:53.47,0:00:56.66,*Default,NTP,0000,0000,0000,,体育比赛结束后  我就完全没用了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and was totally useless after sports seasons ended.
+Dialogue: 0,0:00:57.19,0:00:57.84,*Default,NTP,0000,0000,0000,,但这不是我在讲新帝国主义时说到它的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that's not why I do it.
+Dialogue: 0,0:00:57.95,0:00:59.99,*Default,NTP,0000,0000,0000,,因为要理解新帝国主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To understand the New Imperialism,
+Dialogue: 0,0:01:00.31,0:01:05.14,*Default,NTP,0000,0000,0000,,要明白为何欧洲控制了几乎整个非洲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why Europe took over essentially all of Africa,
+Dialogue: 0,0:01:05.35,0:01:07.26,*Default,NTP,0000,0000,0000,,就必定要对帝国主义文化有所了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where they had places that were totally uncharted 
+Dialogue: 0,0:01:07.89,0:01:11.78,*Default,NTP,0000,0000,0000,,那是一片对他们来说完全陌生的土地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that suddenly became highly contested between
+Dialogue: 0,0:01:11.78,0:01:16.63,*Default,NTP,0000,0000,0000,,但是突然之间这里就成为了英  法  德  意的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} British, French, German, and Italian conquerors, 
+Dialogue: 0,0:01:16.63,0:01:19.06,*Default,NTP,0000,0000,0000,,征服者们竞相角逐之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one has to understand the culture of imperialism.
+Dialogue: 0,0:01:19.52,0:01:23.92,*Default,NTP,0000,0000,0000,,为何英国一代代的年轻人们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The ordinance of the Boy Scouts in Britain has a lot to do with that.
+Dialogue: 0,0:01:24.61,0:01:27.45,*Default,NTP,0000,0000,0000,,会急于看到在他们校舍的地图上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why generations of British youth and their counterparts in germany, 
+Dialogue: 0,0:01:27.71,0:01:28.73,*Default,NTP,0000,0000,0000,,代表英国统治的红色区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and even Australia, 
+Dialogue: 0,0:01:28.73,0:01:30.63,*Default,NTP,0000,0000,0000,,持续向亚非以及其它地区蔓延\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}new Zealand, and other places,
+Dialogue: 0,0:01:32.12,0:01:35.59,*Default,NTP,0000,0000,0000,,我们可以从英国童子军的条例中找到原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}began to think that it was important to be able to look at a map in their schoolhouse 
+Dialogue: 0,0:01:36.29,0:01:45.57,*Default,NTP,0000,0000,0000,,在其他国家  像德国  甚至澳大利亚  新西兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that had the color red for Britain increasingly taking over the map of Asia and Africa, 
+Dialogue: 0,0:01:45.67,0:01:47.25,*Default,NTP,0000,0000,0000,,情况也都一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and lots of other places as well.
+Dialogue: 0,0:01:47.74,0:01:49.55,*Default,NTP,0000,0000,0000,,所以  在这场讲座刚开始时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, instead of -- at the very beginning of that lecture,
+Dialogue: 0,0:01:49.64,0:01:50.33,*Default,NTP,0000,0000,0000,,我会说  "听着  你们必须了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll say, "Look, there are three things
+Dialogue: 0,0:01:50.33,0:01:50.88,*Default,NTP,0000,0000,0000,,关于新帝国主义的三件事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you really ought to
+Dialogue: 0,0:01:50.98,0:01:54.30,*Default,NTP,0000,0000,0000,,那就是他们为什么这么做"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}know about the New Imperialism, why they did this."
+Dialogue: 0,0:01:54.41,0:01:56.93,*Default,NTP,0000,0000,0000,,接下来我会转而讲童子军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then I talk about the Boy Scouts, 
+Dialogue: 0,0:01:56.99,0:01:59.81,*Default,NTP,0000,0000,0000,,你们就可以看到两者之间的关联\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that those two things will fit together.
+Dialogue: 0,0:02:00.01,0:02:02.72,*Default,NTP,0000,0000,0000,,或者将会有两个关于一战的课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, when I talk about World War I, and we'll have two lectures.
+Dialogue: 0,0:02:02.83,0:02:04.89,*Default,NTP,0000,0000,0000,,我的同事兼朋友  杰·温特\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My friend and colleague, Jay Winter, 
+Dialogue: 0,0:02:05.13,0:02:08.24,*Default,NTP,0000,0000,0000,,正在准备关于一战以及对它的当代解读的课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is doing one of them on the Great War and modern memory.
+Dialogue: 0,0:02:09.62,0:02:11.80,*Default,NTP,0000,0000,0000,,当我讲一战时  我会细谈堑壕战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Instead of trying to do the entire war, and there is,
+Dialogue: 0,0:02:12.10,0:02:14.64,*Default,NTP,0000,0000,0000,,而不是概述整个战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think, a quite sporty chapter on that in the book,
+Dialogue: 0,0:02:15.80,0:02:17.97,*Default,NTP,0000,0000,0000,,这部分在我那本书中也有比较详细的介绍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk about trench warfare.
+Dialogue: 0,0:02:18.34,0:02:20.80,*Default,NTP,0000,0000,0000,,我将会放一部名叫《光荣之路》的电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'll see a film called Paths of Glory.
+Dialogue: 0,0:02:21.28,0:02:23.14,*Default,NTP,0000,0000,0000,,它是库布里克早期的一部作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's an early Kubrick film 
+Dialogue: 0,0:02:23.14,0:02:25.67,*Default,NTP,0000,0000,0000,,讲述的了发生在1917年的战事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the mutinies in 1917.
+Dialogue: 0,0:02:25.82,0:02:28.27,*Default,NTP,0000,0000,0000,,我将会谈到1917的那场战事 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk about the mutinies in 1917 
+Dialogue: 0,0:02:28.27,0:02:29.25,*Default,NTP,0000,0000,0000,,士兵们宣泄他们的不满\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when people just said,
+Dialogue: 0,0:02:29.29,0:02:30.09,*Default,NTP,0000,0000,0000,,"够了  我再也受不了了"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Enough is enough.
+Dialogue: 0,0:02:30.40,0:02:31.99,*Default,NTP,0000,0000,0000,,别再做无谓的牺牲了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no sense dying for nothing.
+Dialogue: 0,0:02:32.07,0:02:34.24,*Default,NTP,0000,0000,0000,,我们不会胜利的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We won't go over the top."
+Dialogue: 0,0:02:34.88,0:02:37.71,*Default,NTP,0000,0000,0000,,我会讲很多课本知识以外的内容  所以按时出勤十分重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Which is to say that it's important to come to lecture,
+Dialogue: 0,0:02:37.82,0:02:39.50,*Default,NTP,0000,0000,0000,,参加读书讨论课也很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's important to come to sections.
+Dialogue: 0,0:02:39.91,0:02:40.90,*Default,NTP,0000,0000,0000,,我已经削减了阅读量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've cut back on the reading.
+Dialogue: 0,0:02:41.01,0:02:43.51,*Default,NTP,0000,0000,0000,,以前的学生要比你们多读四本书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I used to use about four more books than I use now,
+Dialogue: 0,0:02:43.81,0:02:46.14,*Default,NTP,0000,0000,0000,,减少几本书是让你们能够精读剩下的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's better to concentrate on what you're doing.
+Dialogue: 0,0:02:46.36,0:02:50.99,*Default,NTP,0000,0000,0000,,其中包括第二版的《欧洲现代史》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The books are A History of Modern Europe, second edition, 
+Dialogue: 0,0:02:51.29,0:02:52.74,*Default,NTP,0000,0000,0000,,是我为了像你们这样的人编写的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I wrote for people like you.
+Dialogue: 0,0:02:53.87,0:02:55.33,*Default,NTP,0000,0000,0000,,你们接下来要阅读《波斯人信札》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you'll read Persian Letters, 
+Dialogue: 0,0:02:55.33,0:02:56.11,*Default,NTP,0000,0000,0000,,倒不是整本书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not all of it.
+Dialogue: 0,0:02:56.26,0:02:59.90,*Default,NTP,0000,0000,0000,,读完整本书需要很长时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That would be a rather lengthy day or so.
+Dialogue: 0,0:03:00.24,0:03:02.13,*Default,NTP,0000,0000,0000,,你们只需要阅读读节选内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'll read excerpts in Persian Letters,
+Dialogue: 0,0:03:02.24,0:03:07.59,*Default,NTP,0000,0000,0000,,以及孟德斯鸠关于东西方关系的评论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Montesquieu talks about relations between West and East,
+Dialogue: 0,0:03:07.70,0:03:12.35,*Default,NTP,0000,0000,0000,,这是启蒙运动的历史上的一个非凡的时刻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's a phenomenal moment in the history of the enlightenment.
+Dialogue: 0,0:03:14.05,0:03:16.13,*Default,NTP,0000,0000,0000,,接着在阅读我的作品时  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you have a pause 
+Dialogue: 0,0:03:16.13,0:03:17.32,*Default,NTP,0000,0000,0000,,你们可以稍作休整 ［教授的意思是他的作品较为易懂］\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you're basically just reading me,
+Dialogue: 0,0:03:18.28,0:03:19.00,*Default,NTP,0000,0000,0000,,我不知道这么做是好是坏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for better or for worse,
+Dialogue: 0,0:03:19.10,0:03:20.00,*Default,NTP,0000,0000,0000,,当然我希望是好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I hope for better, 
+Dialogue: 0,0:03:20.23,0:03:21.00,*Default,NTP,0000,0000,0000,,然后你们会读到埃米尔·左拉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until you get to émile zola,
+Dialogue: 0,0:03:21.00,0:03:25.26,*Default,NTP,0000,0000,0000,,他伟大的小说  《萌芽》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his great novel,Germinal
+Dialogue: 0,0:03:26.26,0:03:27.83,*Default,NTP,0000,0000,0000,,一部经典之作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is a classic.
+Dialogue: 0,0:03:27.93,0:03:33.97,*Default,NTP,0000,0000,0000,,左拉是第一位自然主义小说家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Zola was the first sort of naturalist novelist,
+Dialogue: 0,0:03:34.14,0:03:36.08,*Default,NTP,0000,0000,0000,,至少在法国来说是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in France.
+Dialogue: 0,0:03:36.37,0:03:37.80,*Default,NTP,0000,0000,0000,,当他在创作《萌芽》时 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he wrote Germinal, 
+Dialogue: 0,0:03:37.80,0:03:39.38,*Default,NTP,0000,0000,0000,,他指的是工人们对于自我认知的萌芽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}germinal means budding,
+Dialogue: 0,0:03:39.60,0:03:41.05,*Default,NTP,0000,0000,0000,,germinal在法语的意思是抽芽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the budding of trees.
+Dialogue: 0,0:03:41.17,0:03:45.78,*Default,NTP,0000,0000,0000,,就像树木抽芽一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he means the budding of people being aware of themselves as workers 
+Dialogue: 0,0:03:45.90,0:03:49.21,*Default,NTP,0000,0000,0000,,为此他还下到法国北部位于昂赞的矿井\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He went down to the mines in the north of France in the anzin.
+Dialogue: 0,0:03:49.78,0:03:53.90,*Default,NTP,0000,0000,0000,,书中有一位叫做凯瑟琳的女主人公\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the heroes of the book is a woman called Catherine,
+Dialogue: 0,0:03:53.97,0:03:55.27,*Default,NTP,0000,0000,0000,,她虽然才十五岁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who is fifteen years old, 
+Dialogue: 0,0:03:55.36,0:03:57.81,*Default,NTP,0000,0000,0000,,却已经阅历丰富了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but has seen a lot of life for being fifteen years old.
+Dialogue: 0,0:03:58.26,0:04:02.23,*Default,NTP,0000,0000,0000,,当佐拉创作《萌芽》时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When Zola wrote Germinal,
+Dialogue: 0,0:04:02.52,0:04:06.56,*Default,NTP,0000,0000,0000,,他亲自下到矿井去观察那些15岁的年轻女矿工\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he went down into the mines to look at fifteen-year-old young women, 
+Dialogue: 0,0:04:07.49,0:04:08.63,*Default,NTP,0000,0000,0000,,她们稚气未脱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}barely older than girls, 
+Dialogue: 0,0:04:08.99,0:04:11.71,*Default,NTP,0000,0000,0000,,却每天要在矿区工作十二小时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}working in the mines twelve hours a day.
+Dialogue: 0,0:04:12.05,0:04:14.69,*Default,NTP,0000,0000,0000,,这本书的每一页都是冷酷现实的回声\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a book that resounds with reality.
+Dialogue: 0,0:04:14.84,0:04:19.40,*Default,NTP,0000,0000,0000,,它确实是一本惊世巨作  我认为你们会喜欢它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really kind of an amazing book, and I think you'll like that.
+Dialogue: 0,0:04:19.57,0:04:20.39,*Default,NTP,0000,0000,0000,,我希望是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hope you will.
+Dialogue: 0,0:04:21.12,0:04:23.35,*Default,NTP,0000,0000,0000,,接下来是赫尔穆特·史密斯的《屠夫的故事》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then Helmut Smith's The Butcher's Tale 
+Dialogue: 0,0:04:23.47,0:04:27.96,*Default,NTP,0000,0000,0000,,讲述的是他对德国某小镇无情的杀戮的控诉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is about accusations of ritual murder in a German town.  
+Dialogue: 0,0:04:28.15,0:04:30.79,*Default,NTP,0000,0000,0000,,那是发生在德意志第二帝国时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's about the second German Reich, 
+Dialogue: 0,0:04:31.60,0:04:37.47,*Default,NTP,0000,0000,0000,,这本书讲述的是反犹太主义在一个弹丸之地的巨大影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's about anti-Semitism in a small place with bigger consequences.
+Dialogue: 0,0:04:37.89,0:04:41.69,*Default,NTP,0000,0000,0000,,乔治·奥威尔在西班牙内战期间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}George Orwell went off to fight the good 
+Dialogue: 0,0:04:41.70,0:04:44.96,*Default,NTP,0000,0000,0000,,为了信仰和原则而战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fight in Spain during the Spanish Civil War,
+Dialogue: 0,0:04:45.56,0:04:48.82,*Default,NTP,0000,0000,0000,,那场作战为日后更加惨烈的战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it was sort of a dry run for an even more horrible war, 
+Dialogue: 0,0:04:48.82,0:04:52.67,*Default,NTP,0000,0000,0000,,以及冷酷无情的法西斯的上台拉开了序幕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and even more horrible fascists.
+Dialogue: 0,0:04:52.93,0:05:01.50,*Default,NTP,0000,0000,0000,,这本书讲述了他如何加入了西班牙共和军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's about his engagement and disillusionment in the Spanish republican forces, 
+Dialogue: 0,0:05:01.80,0:05:05.50,*Default,NTP,0000,0000,0000,,与保皇军交战后对共和国军的幻灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the loyalist forces, and about the tensions 
+Dialogue: 0,0:05:05.65,0:05:08.31,*Default,NTP,0000,0000,0000,,同时记叙了［共和军内部］斯大林派的两面三刀\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the duplicity of Stalin's folks 
+Dialogue: 0,0:05:08.84,0:05:12.48,*Default,NTP,0000,0000,0000,,他们暗中削弱托洛茨基派和无政府主义者的势力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}undercutting the Trotskyites and undercutting the anarchists.
+Dialogue: 0,0:05:12.82,0:05:14.41,*Default,NTP,0000,0000,0000,,在众多经典中这本书与众不同 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's one of those classics that's a classic
+Dialogue: 0,0:05:14.41,0:05:15.32,*Default,NTP,0000,0000,0000,,是有它的原因的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a very good reason.
+Dialogue: 0,0:05:15.43,0:05:17.96,*Default,NTP,0000,0000,0000,,你将能感受一次奇妙的阅读经历\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really a marvellous read.
+Dialogue: 0,0:05:18.08,0:05:20.31,*Default,NTP,0000,0000,0000,,最后  我们将阅读《普通人》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Finally, there's Ordinary Men.
+Dialogue: 0,0:05:20.43,0:05:21.81,*Default,NTP,0000,0000,0000,,我去过波兰很多次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I go to Poland a lot.
+Dialogue: 0,0:05:21.93,0:05:26.62,*Default,NTP,0000,0000,0000,,近些年由于各种原因去过四、五次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the last couple of years I've been there four or five times for various reasons, 
+Dialogue: 0,0:05:26.78,0:05:28.40,*Default,NTP,0000,0000,0000,,但我从未去过奥斯维辛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'd never been to Auschwitz.
+Dialogue: 0,0:05:29.36,0:05:31.53,*Default,NTP,0000,0000,0000,,一年前我去了那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I went to Auschwitz a year ago.
+Dialogue: 0,0:05:31.62,0:05:33.45,*Default,NTP,0000,0000,0000,,也许你们其中有人也去过那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know, some of you have probably been there.
+Dialogue: 0,0:05:33.51,0:05:36.59,*Default,NTP,0000,0000,0000,,当你亲身经历过它的恐怖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As you're going through the horror of it all,
+Dialogue: 0,0:05:36.71,0:05:40.05,*Default,NTP,0000,0000,0000,,当你看到那些空荡荡的手提箱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as you're seeing empty suitcases 
+Dialogue: 0,0:05:40.15,0:05:42.87,*Default,NTP,0000,0000,0000,,而它们的主人早已长辞于世\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with people's names on them that the people don't exist anymore,
+Dialogue: 0,0:05:42.99,0:05:45.26,*Default,NTP,0000,0000,0000,,当你看到婴儿鞋之类的东西时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're seeing baby shoes and things like that.
+Dialogue: 0,0:05:45.38,0:05:47.23,*Default,NTP,0000,0000,0000,,你会沉思  "谁能出做出如此暴行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You think, "Who could have done this?
+Dialogue: 0,0:05:47.52,0:05:50.35,*Default,NTP,0000,0000,0000,,谁能这样步出房门\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who could have gone out and simply
+Dialogue: 0,0:05:51.28,0:05:53.76,*Default,NTP,0000,0000,0000,,像流水线作业一样地屠杀人类"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in an assembly line way, killed people?"
+Dialogue: 0,0:05:53.88,0:05:58.82,*Default,NTP,0000,0000,0000,,在波兰工业重镇罗兹市的附近\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or in fields around Lodz, which was a large industrial town and still is in Poland, 
+Dialogue: 0,0:05:59.24,0:06:02.70,*Default,NTP,0000,0000,0000,,他们残忍地将母亲  孩子  老人随意杀害\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}simply gone out and blown the brains out of mothers, babies, grandmothers, 
+Dialogue: 0,0:06:02.82,0:06:03.84,*Default,NTP,0000,0000,0000,,无一放过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and anybody they found.
+Dialogue: 0,0:06:03.96,0:06:05.03,*Default,NTP,0000,0000,0000,,谁会做出如此暴行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who could have done it?
+Dialogue: 0,0:06:05.15,0:06:08.54,*Default,NTP,0000,0000,0000,,克里斯·布朗给出的答案是  普通人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the answer that Chris Browning has is ordinary men.
+Dialogue: 0,0:06:09.01,0:06:11.71,*Default,NTP,0000,0000,0000,,对于德国警察\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he had the quite brilliant idea 
+Dialogue: 0,0:06:11.71,0:06:14.68,*Default,NTP,0000,0000,0000,,他有个非常精彩的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of looking at a German unit,
+Dialogue: 0,0:06:14.80,0:06:16.85,*Default,NTP,0000,0000,0000,,那些德国警察基本来自汉堡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}essentially policemen from Hamburg, 
+Dialogue: 0,0:06:17.57,0:06:18.70,*Default,NTP,0000,0000,0000,,汉堡是一个港口城市\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the port town of Hamburg, 
+Dialogue: 0,0:06:18.70,0:06:20.81,*Default,NTP,0000,0000,0000,,一个古老而重要的汉萨同盟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an old important Hanseatic port.
+Dialogue: 0,0:06:20.93,0:06:24.00,*Default,NTP,0000,0000,0000,,他记述了那些警察是如何从\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he follows them from 
+Dialogue: 0,0:06:24.00,0:06:27.82,*Default,NTP,0000,0000,0000,,普通人转变成杀人不眨眼的恶魔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the lives of very ordinary people into the killing fields,
+Dialogue: 0,0:06:27.94,0:06:30.55,*Default,NTP,0000,0000,0000,,对波兰来讲  这一说法绝不过分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was nothing less than that of poland
+Dialogue: 0,0:06:30.67,0:06:31.66,*Default,NTP,0000,0000,0000,,这本书不长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's also short.
+Dialogue: 0,0:06:31.78,0:06:33.31,*Default,NTP,0000,0000,0000,,《萌芽》这本书很长  其他的都很短\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Germinal is long, but these other ones are short.
+Dialogue: 0,0:06:33.43,0:06:36.68,*Default,NTP,0000,0000,0000,,而且引人入胜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's gripping.
+Dialogue: 0,0:06:36.80,0:06:38.89,*Default,NTP,0000,0000,0000,,他们令人惊叹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's quite amazing.
+Dialogue: 0,0:06:39.01,0:06:41.22,*Default,NTP,0000,0000,0000,,以上就是我们要看的书目 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, those are the books.
+Dialogue: 0,0:06:41.41,0:06:42.42,*Default,NTP,0000,0000,0000,,我认为《西方现代史》读起来是很有趣的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think that A History of Modern Europe-
+Dialogue: 0,0:06:42.43,0:06:43.63,*Default,NTP,0000,0000,0000,,我是这么希望的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hope--is fun to read.
+Dialogue: 0,0:06:44.18,0:06:45.67,*Default,NTP,0000,0000,0000,,我想你们会喜欢它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think you will enjoy that.
+Dialogue: 0,0:06:46.55,0:06:51.85,*Default,NTP,0000,0000,0000,,每节大课的课题都很好理解  一目了然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The lectures kind of--you see the themes speak for themselves.
+Dialogue: 0,0:06:51.97,0:06:56.55,*Default,NTP,0000,0000,0000,,而读书讨论课  学生们都喜欢周三晚上的讨论课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sections, everybody likes Wednesday night sections.
+Dialogue: 0,0:06:57.47,0:07:00.08,*Default,NTP,0000,0000,0000,,我一位同事只在周三晚上安排讨论课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of my colleagues has only Wednesday night sections.
+Dialogue: 0,0:07:00.20,0:07:01.38,*Default,NTP,0000,0000,0000,,越来越多的老师也开始这样做了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've gone increasingly to
+Dialogue: 0,0:07:01.38,0:07:03.88,*Default,NTP,0000,0000,0000,,因为有时候就算是安排在周五上午\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that, because sometimes you don't find  a large audience 
+Dialogue: 0,0:07:03.88,0:07:07.25,*Default,NTP,0000,0000,0000,,10:30的讨论课  也没多少人来参加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even on Friday morning 10:30 slots.
+Dialogue: 0,0:07:07.35,0:07:08.08,*Default,NTP,0000,0000,0000,,我们就放弃了那个时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've abandoned that.
+Dialogue: 0,0:07:08.29,0:07:09.56,*Default,NTP,0000,0000,0000,,所以  暂定在周三晚上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, tentatively, we're going to have two at
+Dialogue: 0,0:07:09.56,0:07:12.45,*Default,NTP,0000,0000,0000,,7:00和8:00点有各有两节讨论课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}7:00 p.M., two at 8:00 p.M.,
+Dialogue: 0,0:07:12.75,0:07:20.81,*Default,NTP,0000,0000,0000,,周四下午1:30和2:30各有两节讨论课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then Thursday at 1:30 p.M., and Thursday at 2:30 p.M.
+Dialogue: 0,0:07:20.97,0:07:22.68,*Default,NTP,0000,0000,0000,,我不确定从第几周开始有讨论课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know. When are we starting sections?
+Dialogue: 0,0:07:22.75,0:07:24.68,*Default,NTP,0000,0000,0000,,有时候从第二周开始才有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes we don't do it until the second week.
+Dialogue: 0,0:07:24.81,0:07:26.73,*Default,NTP,0000,0000,0000,,这要看今天周几  今天周几  哦对是周三\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It depends on what day. What day is this? Wednesday.
+Dialogue: 0,0:07:26.86,0:07:28.56,*Default,NTP,0000,0000,0000,,我不确定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know.
+Dialogue: 0,0:07:28.69,0:07:31.09,*Default,NTP,0000,0000,0000,,也许在下周三  也许不是  谁知道呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe we'll start them next week. Maybe we won't. Who knows?
+Dialogue: 0,0:07:31.26,0:07:35.44,*Default,NTP,0000,0000,0000,,反正会有讨论课的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they will happen, and there's also a short,
+Dialogue: 0,0:07:35.68,0:07:37.23,*Default,NTP,0000,0000,0000,,另外你们还要写一篇短小的论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sporty paper assignment.
+Dialogue: 0,0:07:37.84,0:07:40.38,*Default,NTP,0000,0000,0000,,我说短小  不是就指两张纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By short I don't mean two pages, 
+Dialogue: 0,0:07:40.51,0:07:44.99,*Default,NTP,0000,0000,0000,,而是就你们感兴趣的东西写个七  八张纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but something like seven pages, eight pages on something that you want to write about.
+Dialogue: 0,0:07:45.28,0:07:48.81,*Default,NTP,0000,0000,0000,,举几个我头脑中刚蹦出的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, let me give you some examples just off the top of my head.
+Dialogue: 0,0:07:49.08,0:07:51.81,*Default,NTP,0000,0000,0000,,如果你对油画感兴趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you have any interesting in painting, for example,
+Dialogue: 0,0:07:51.88,0:07:58.01,*Default,NTP,0000,0000,0000,,那么谈谈例如毕沙罗和雷诺阿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would be interesting to take looks by, say, 
+Dialogue: 0,0:07:58.01,0:08:02.60,*Default,NTP,0000,0000,0000,,这两位印象派画家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two Impressionist painters like Pissarro and Renoir,
+Dialogue: 0,0:08:02.73,0:08:06.27,*Default,NTP,0000,0000,0000,,探讨他们是如何看待十九世纪的巴黎改造\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to see how they viewed the transformation of nineteenth-century Paris, 
+Dialogue: 0,0:08:06.37,0:08:08.85,*Default,NTP,0000,0000,0000,,他们对林荫大道的看法之类的  就很有趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the big boulevards and all of that.
+Dialogue: 0,0:08:08.98,0:08:11.16,*Default,NTP,0000,0000,0000,,你还可以以一本类似《萌芽》的小说为题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or you could take another novel. Germinal, 
+Dialogue: 0,0:08:11.26,0:08:13.45,*Default,NTP,0000,0000,0000,,《萌芽》这本书有趣的一点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the interesting things about it is that 
+Dialogue: 0,0:08:13.45,0:08:14.80,*Default,NTP,0000,0000,0000,,它是一本历史文献\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a document of history.
+Dialogue: 0,0:08:14.80,0:08:17.75,*Default,NTP,0000,0000,0000,,但同时也是一本小说 出场人物是虚构的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a novel, so these are invented people,
+Dialogue: 0,0:08:17.89,0:08:20.28,*Default,NTP,0000,0000,0000,,但在某种程度上它也是历史文献\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a document of history in some ways,
+Dialogue: 0,0:08:20.41,0:08:23.98,*Default,NTP,0000,0000,0000,,就像一战期间很多的文学作品一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as is lots of the great literature of World War I.
+Dialogue: 0,0:08:24.11,0:08:26.40,*Default,NTP,0000,0000,0000,,现代史上从未有任何时代像一战一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There isn't any period in modern history that 
+Dialogue: 0,0:08:26.50,0:08:30.93,*Default,NTP,0000,0000,0000,,拥有如此多引人入胜的史料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has so much gripping literature about it as the Great War,
+Dialogue: 0,0:08:31.06,0:08:33.78,*Default,NTP,0000,0000,0000,,英国的军旅诗人们  例如齐格弗里德·沙逊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the British war poets like Siegfried Sassoon.
+Dialogue: 0,0:08:33.91,0:08:34.90,*Default,NTP,0000,0000,0000,,这些人中的很大一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And a lot of these people 
+Dialogue: 0,0:08:34.90,0:08:36.18,*Default,NTP,0000,0000,0000,,在他们完成创作以后就去世了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were dead after they wrote.
+Dialogue: 0,0:08:36.76,0:08:39.07,*Default,NTP,0000,0000,0000,,但沙逊没有  至少不是马上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sassoon wasn't, at least not immediately.
+Dialogue: 0,0:08:39.17,0:08:40.50,*Default,NTP,0000,0000,0000,,我记不大清他是否于1918年去世\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't remember if he dies in 1918 or not.
+Dialogue: 0,0:08:40.60,0:08:42.90,*Default,NTP,0000,0000,0000,,如果细细品读这些战争诗作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But to take some of the poetry,
+Dialogue: 0,0:08:42.90,0:08:45.20,*Default,NTP,0000,0000,0000,,或其他关于一战的文学作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the writing of the war,
+Dialogue: 0,0:08:45.58,0:08:46.97,*Default,NTP,0000,0000,0000,,你就能写出一份论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and write a paper about it.
+Dialogue: 0,0:08:47.10,0:08:48.24,*Default,NTP,0000,0000,0000,,如果你对外交史感兴趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, if you're into diplomatic history, 
+Dialogue: 0,0:08:48.34,0:08:50.14,*Default,NTP,0000,0000,0000,,或者别的什么与之相关的东西 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or something like that--I don't know, 
+Dialogue: 0,0:08:50.27,0:08:51.51,*Default,NTP,0000,0000,0000,,我不知道你们能否驾驭这个题目  例如写一篇论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a paper re-evaluating
+Dialogue: 0,0:08:51.51,0:08:53.53,*Default,NTP,0000,0000,0000,,来重新评估克里米亚战争的起源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the origins of the Crimean War.
+Dialogue: 0,0:08:53.86,0:08:56.87,*Default,NTP,0000,0000,0000,,或许助教还没看完你就先趴下了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That might put you to sleep before it puts your TA to sleep.
+Dialogue: 0,0:08:56.97,0:08:58.61,*Default,NTP,0000,0000,0000,,但你们可以思考如何就这个话题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you can imagine
+Dialogue: 0,0:08:58.61,0:08:59.66,*Default,NTP,0000,0000,0000,,写出一篇优秀的论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} a good paper on that.
+Dialogue: 0,0:08:59.76,0:09:01.02,*Default,NTP,0000,0000,0000,,你们可以研究任何你们想研究的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can do whatever you want.
+Dialogue: 0,0:09:01.55,0:09:03.86,*Default,NTP,0000,0000,0000,,当我讲到启蒙运动那一节时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I do the Enlightenment, 
+Dialogue: 0,0:09:04.23,0:09:06.01,*Default,NTP,0000,0000,0000,,我会借用我的好朋友鲍勃·达顿的观点解释边缘文人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}borrowing from my good friend bob Darnton, 
+Dialogue: 0,0:09:06.14,0:09:09.91,*Default,NTP,0000,0000,0000,,我先会阐释启蒙运动的重要性何在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll do a thing at the beginning about why the Enlightenment was important, 
+Dialogue: 0,0:09:10.04,0:09:11.02,*Default,NTP,0000,0000,0000,,启蒙运动是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what it is.
+Dialogue: 0,0:09:11.15,0:09:14.37,*Default,NTP,0000,0000,0000,,它是世俗化的进程  探寻理性的光芒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's secularization, rational inquiry,
+Dialogue: 0,0:09:14.37,0:09:15.38,*Default,NTP,0000,0000,0000,,等等[启蒙运动的内容]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and all of that,
+Dialogue: 0,0:09:15.48,0:09:17.03,*Default,NTP,0000,0000,0000,,你们或有所耳闻  或毫不知晓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}stuff that you may already know, maybe not.
+Dialogue: 0,0:09:17.13,0:09:18.19,*Default,NTP,0000,0000,0000,,这都只是照本宣科\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's in the book.
+Dialogue: 0,0:09:18.62,0:09:20.76,*Default,NTP,0000,0000,0000,,然后我则会更加强调启蒙运动中的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But then what I do is I look at 
+Dialogue: 0,0:09:20.76,0:09:22.13,*Default,NTP,0000,0000,0000,,边缘文人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the third string,
+Dialogue: 0,0:09:22.43,0:09:26.78,*Default,NTP,0000,0000,0000,,他们在启蒙哲人中的地位就像欧洲足球丙级联赛一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the third division in the European football sense, of Enlightenment hacks, 
+Dialogue: 0,0:09:27.38,0:09:31.48,*Default,NTP,0000,0000,0000,,他们的写作嘲讽王室  谩骂贵族\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what they wrote about royalty, and about aristocrats,
+Dialogue: 0,0:09:31.58,0:09:34.84,*Default,NTP,0000,0000,0000,,这种做法削弱了特权阶级的势力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the way they kind of undermined those traditional hierarchies 
+Dialogue: 0,0:09:34.94,0:09:39.89,*Default,NTP,0000,0000,0000,,而这些权贵被后来的法国大革命扫除到所剩无几\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would be swept away, to a large extent, by the French Revolution.
+Dialogue: 0,0:09:40.02,0:09:41.82,*Default,NTP,0000,0000,0000,,或者你们可以截取法国大革命中的某一个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or you could take somebody out of the French Revolution,
+Dialogue: 0,0:09:41.95,0:09:44.15,*Default,NTP,0000,0000,0000,,比如冷酷的圣茹斯特 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as the steely Saint-Just, 
+Dialogue: 0,0:09:44.31,0:09:46.58,*Default,NTP,0000,0000,0000,,他十六岁的时候卷携了母亲的钱财周游法国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who ran off with his mother's silver at age sixteen
+Dialogue: 0,0:09:46.68,0:09:50.79,*Default,NTP,0000,0000,0000,,你们也可以谈谈他在公共安全委员会的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or something and went on the grand tour of France, and talk about him 
+Dialogue: 0,0:09:50.89,0:09:54.22,*Default,NTP,0000,0000,0000,,一纸法令断送了很多人的性命  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the committee of Public Safety that signed away the lives of lots of people, 
+Dialogue: 0,0:09:54.35,0:09:56.18,*Default,NTP,0000,0000,0000,,但是他的行为也可能挽救了革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but may have also saved the revolution.
+Dialogue: 0,0:09:56.31,0:09:57.87,*Default,NTP,0000,0000,0000,,你们可以研究任何你们想研究的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can do whatever you want.
+Dialogue: 0,0:09:58.00,0:10:00.98,*Default,NTP,0000,0000,0000,,但是要与这门课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it should have something to do with the course 
+Dialogue: 0,0:10:01.23,0:10:03.40,*Default,NTP,0000,0000,0000,,以及我们所讲到的时代相关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in the time period we're talking about.
+Dialogue: 0,0:10:03.53,0:10:06.43,*Default,NTP,0000,0000,0000,,波士顿红袜队什么的就算了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nothing on the Red Sox or something, 
+Dialogue: 0,0:10:06.53,0:10:10.31,*Default,NTP,0000,0000,0000,,你们可以多和助教联系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you would work with your teaching participant.
+Dialogue: 0,0:10:10.57,0:10:11.89,*Default,NTP,0000,0000,0000,,我喜欢发E-mail\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm an email animal.
+Dialogue: 0,0:10:11.98,0:10:13.25,*Default,NTP,0000,0000,0000,,你们经常可以通过邮件联系到我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm always available on email, 
+Dialogue: 0,0:10:13.55,0:10:14.66,*Default,NTP,0000,0000,0000,,也可以到办公室找我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I have office hours as well, 
+Dialogue: 0,0:10:14.76,0:10:15.80,*Default,NTP,0000,0000,0000,,但是一般人都不怎么去那儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but people don't come much anymore.
+Dialogue: 0,0:10:15.90,0:10:18.16,*Default,NTP,0000,0000,0000,,大家都在忙着上NBA.Com\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're doing NBA.Com, 
+Dialogue: 0,0:10:18.29,0:10:19.58,*Default,NTP,0000,0000,0000,,因为E-mail的便捷 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because email has made 
+Dialogue: 0,0:10:19.58,0:10:20.86,*Default,NTP,0000,0000,0000,,办公时间变得没人记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}office hours sort of oblivious.
+Dialogue: 0,0:10:21.01,0:10:22.76,*Default,NTP,0000,0000,0000,,应该说 是变得没人去记  不是没人记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mean, irrelevant, not oblivious.
+Dialogue: 0,0:10:22.86,0:10:25.49,*Default,NTP,0000,0000,0000,,不过人们也不太在意我的办公时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But people are oblivious to my office hours.
+Dialogue: 0,0:10:25.59,0:10:27.56,*Default,NTP,0000,0000,0000,,不管怎么说 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, anyway, 
+Dialogue: 0,0:10:27.57,0:10:31.52,*Default,NTP,0000,0000,0000,,我每周一下午1:00到2:30在办公室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they are Mondays, 1:00 to 2:30 p.m.
+Dialogue: 0,0:10:31.62,0:10:32.45,*Default,NTP,0000,0000,0000,,以前是到3:00 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It used to be 3:00 P.M.,
+Dialogue: 0,0:10:32.45,0:10:33.74,*Default,NTP,0000,0000,0000,,但我总是一个人在那儿傻坐着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I just sit there by myself,
+Dialogue: 0,0:10:33.84,0:10:35.72,*Default,NTP,0000,0000,0000,,1:00到2:30 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}1:00 to 2:30 p.m. 
+Dialogue: 0,0:10:35.72,0:10:40.04,*Default,NTP,0000,0000,0000,,在布兰福德学院  K13\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Branford College, K13.
+Dialogue: 0,0:10:40.17,0:10:44.39,*Default,NTP,0000,0000,0000,,当我们讲到法西斯主义和阿道夫·希特勒时 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are also two other movies when we get to fascism,
+Dialogue: 0,0:10:44.91,0:10:46.29,*Default,NTP,0000,0000,0000,,我们还要放映两部电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we get to Adolf Hitler.
+Dialogue: 0,0:10:46.37,0:10:50.84,*Default,NTP,0000,0000,0000,,希特勒仅是众多独裁者中的一员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was only one of a whole bunch of dictators.
+Dialogue: 0,0:10:50.97,0:10:53.41,*Default,NTP,0000,0000,0000,,在1939年的欧洲大陆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were hardly any parliamentary regimes left 
+Dialogue: 0,0:10:53.51,0:10:57.29,*Default,NTP,0000,0000,0000,,几乎所有国家的议会都成了摆设\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in continental Europe by the time 1939 comes.
+Dialogue: 0,0:10:57.92,0:10:59.43,*Default,NTP,0000,0000,0000,,有位女士叫做莱尼·里芬斯塔尔 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A woman called Leni Riefenstahl, 
+Dialogue: 0,0:10:59.53,0:11:02.27,*Default,NTP,0000,0000,0000,,前不久在2002年以102岁的高龄辞世\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who just died in 2002 at age 102, 
+Dialogue: 0,0:11:02.41,0:11:04.90,*Default,NTP,0000,0000,0000,,她年轻的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when she was a young woman did a propaganda film 
+Dialogue: 0,0:11:04.90,0:11:07.15,*Default,NTP,0000,0000,0000,,为希特勒制作了一部宣传电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for Hitler.
+Dialogue: 0,0:11:07.29,0:11:08.30,*Default,NTP,0000,0000,0000,,希特勒和墨索尼里一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hitler, like Mussolini,
+Dialogue: 0,0:11:08.30,0:11:09.21,*Default,NTP,0000,0000,0000,,都相信高科技的用处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}believed in high tech.
+Dialogue: 0,0:11:09.31,0:11:11.50,*Default,NTP,0000,0000,0000,,墨索里尼是最早使用无线电的人之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was one of the first people to use the radio.
+Dialogue: 0,0:11:11.60,0:11:12.52,*Default,NTP,0000,0000,0000,,弗兰克林·罗斯福\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Franklin Roosevelt 
+Dialogue: 0,0:11:12.52,0:11:14.25,*Default,NTP,0000,0000,0000,,使用无线电"炉边谈话"的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}used the fireside chat of the radio.
+Dialogue: 0,0:11:14.39,0:11:19.47,*Default,NTP,0000,0000,0000,,墨索尼里已经在用它来编制一个个谎言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Mussolini was already there piling falsehood upon falsehood,
+Dialogue: 0,0:11:19.67,0:11:21.96,*Default,NTP,0000,0000,0000,,在意大利  但凡是能勉强填饱肚子的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Italians who could barely afford to eat 
+Dialogue: 0,0:11:21.97,0:11:22.73,*Default,NTP,0000,0000,0000,,都有台收音机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all had their radios.
+Dialogue: 0,0:11:22.83,0:11:25.35,*Default,NTP,0000,0000,0000,,在德国也是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The same thing happened in Germany as well.
+Dialogue: 0,0:11:25.49,0:11:27.19,*Default,NTP,0000,0000,0000,,她制作了一部部电影 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}She did a movie,
+Dialogue: 0,0:11:27.19,0:11:29.17,*Default,NTP,0000,0000,0000,,这部纪录片名叫《意志的胜利》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a documentary called Triumph of the Will,
+Dialogue: 0,0:11:29.17,0:11:31.34,*Default,NTP,0000,0000,0000,,拍的是纽伦堡  [1934年第三帝国代表大会在此召开]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about Nuremburg.
+Dialogue: 0,0:11:31.48,0:11:33.95,*Default,NTP,0000,0000,0000,,这部电影令人不寒而栗而又连连称奇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It is truly chilling. It's amazing, 
+Dialogue: 0,0:11:34.09,0:11:38.67,*Default,NTP,0000,0000,0000,,看起来是一次政治集会之类的记录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it looks like a political convention or something in some ways.
+Dialogue: 0,0:11:38.81,0:11:42.54,*Default,NTP,0000,0000,0000,,所有的这些电影你们都可以在布兰福德\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All of these movies you can see in the privacy of your 
+Dialogue: 0,0:11:42.64,0:11:46.77,*Default,NTP,0000,0000,0000,,或者皮尔逊学院的你们自己的"豪华套间"里看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}luxurious suites in Branford or Pierson College or wherever,
+Dialogue: 0,0:11:46.91,0:11:49.47,*Default,NTP,0000,0000,0000,,因为在互联网上资源随处可得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they're available now in ways I don't even understand,
+Dialogue: 0,0:11:49.57,0:11:51.27,*Default,NTP,0000,0000,0000,,我都不知道是怎么做到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but on your Internet.
+Dialogue: 0,0:11:51.31,0:11:53.38,*Default,NTP,0000,0000,0000,,以前我们是在课堂上放映的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We used to actually show them here.
+Dialogue: 0,0:11:53.52,0:11:55.24,*Default,NTP,0000,0000,0000,,我放过一部电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I used to use a great movie 
+Dialogue: 0,0:11:55.34,0:11:58.50,*Default,NTP,0000,0000,0000,,叫做《悲哀与怜悯》 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called The Sorrow and the pity, Le Chagrin et la pitié.
+Dialogue: 0,0:11:58.71,0:12:00.07,*Default,NTP,0000,0000,0000,,片子有四小时长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was four hours long.
+Dialogue: 0,0:12:01.08,0:12:03.58,*Default,NTP,0000,0000,0000,,学生戏称为"十二瓶啤酒才能打发的电影"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}People described it as a two six-pack movie.
+Dialogue: 0,0:12:03.85,0:12:07.07,*Default,NTP,0000,0000,0000,,校工都会抱怨  因为地上到处都是啤酒瓶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The janitors complained because there were so many beer bottles rattling around.
+Dialogue: 0,0:12:07.17,0:12:08.52,*Default,NTP,0000,0000,0000,,不过 当然了 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, of course, 
+Dialogue: 0,0:12:08.52,0:12:11.41,*Default,NTP,0000,0000,0000,,这是饮酒年龄提高之前的事了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this was before the drinking age was raised.
+Dialogue: 0,0:12:11.55,0:12:13.62,*Default,NTP,0000,0000,0000,,所以我现在不放这部片子了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, of course, I don't show that movie.
+Dialogue: 0,0:12:14.16,0:12:15.81,*Default,NTP,0000,0000,0000,,我撤销放映这部电影  不是我要撤销\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take that back. I don't take that back, but what the hell.
+Dialogue: 0,0:12:15.95,0:12:19.32,*Default,NTP,0000,0000,0000,,不管怎么说吧  我是不会再放这部片子了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, I don't show that movie anymore.
+Dialogue: 0,0:12:19.46,0:12:21.25,*Default,NTP,0000,0000,0000,,我会放《意志的胜利》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I do show Triumph of the Will, 
+Dialogue: 0,0:12:21.39,0:12:22.65,*Default,NTP,0000,0000,0000,,你们可以在寝室看《悲哀与怜悯》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can watch that at home.
+Dialogue: 0,0:12:22.79,0:12:25.70,*Default,NTP,0000,0000,0000,,另一部叫做《再见童年》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other one is Au revoir les enfants.
+Dialogue: 0,0:12:25.84,0:12:31.74,*Default,NTP,0000,0000,0000,,因为最后几节大课我会谈到欧洲的合作与抵制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because one of the last lectures I talk about resistance and collaboration in Europe, 
+Dialogue: 0,0:12:31.88,0:12:36.42,*Default,NTP,0000,0000,0000,,也由于我在法国呆了很久  所以我要谈谈法国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and because I live in France much of the time, I talk about France.
+Dialogue: 0,0:12:36.56,0:12:40.91,*Default,NTP,0000,0000,0000,,你们其中一些人有可能看过《再见童年》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Au revoir les enfants, Goodbye Children, some of you have probably seen.
+Dialogue: 0,0:12:41.02,0:12:44.38,*Default,NTP,0000,0000,0000,,导演是路易·马勒导演  几年前刚过世\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was made by Louis Malle, who just died a couple of years ago.
+Dialogue: 0,0:12:44.52,0:12:46.97,*Default,NTP,0000,0000,0000,,讲述的是他的学生年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was about when he was in college,
+Dialogue: 0,0:12:47.13,0:12:49.62,*Default,NTP,0000,0000,0000,,那时候他大约七  八年级\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so he was the equivalent of 7^ and 8^ grade.
+Dialogue: 0,0:12:49.93,0:12:51.82,*Default,NTP,0000,0000,0000,,他的学校在巴黎东南部的枫丹白露\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was a new boy that shows up at school 
+Dialogue: 0,0:12:51.92,0:12:54.34,*Default,NTP,0000,0000,0000,,二战的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during World War II in Fontainebleau,
+Dialogue: 0,0:12:54.34,0:12:56.01,*Default,NTP,0000,0000,0000,,转来了一个男生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is just southeast of paris.
+Dialogue: 0,0:12:56.15,0:12:59.77,*Default,NTP,0000,0000,0000,,他是个犹太人并且刚搬去那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's a boy who hadn't been there before. He's a Jewish boy.
+Dialogue: 0,0:12:59.85,0:13:04.17,*Default,NTP,0000,0000,0000,,这部片子讲述了两个男孩的友谊和经历\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's about his friendship with this boy, and what happens.
+Dialogue: 0,0:13:04.31,0:13:08.60,*Default,NTP,0000,0000,0000,,最后并非是大团圆结局  但它是部伟大的电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the end, it's not a happy film, but it's a great, great film.
+Dialogue: 0,0:13:10.02,0:13:12.20,*Default,NTP,0000,0000,0000,,还有什么我没提到吗  这门课程将会有场期中考试 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What else? What to say? There's a midterm.
+Dialogue: 0,0:13:12.23,0:13:14.73,*Default,NTP,0000,0000,0000,,比起浪费讲课的时间考试\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't like to waste a lecture giving a midterm.
+Dialogue: 0,0:13:14.97,0:13:16.66,*Default,NTP,0000,0000,0000,,我更希望讲课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would rather give a lecture,
+Dialogue: 0,0:13:16.66,0:13:20.27,*Default,NTP,0000,0000,0000,,但是我们一定要反馈你们的学期表现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we have to have something to report to you.
+Dialogue: 0,0:13:20.76,0:13:23.92,*Default,NTP,0000,0000,0000,,如果你没有及格  或是考得不尽如人意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you tube it, if you don't do very well at all, 
+Dialogue: 0,0:13:24.03,0:13:26.01,*Default,NTP,0000,0000,0000,,我们就不能给你高分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't count it as much as if you do well.
+Dialogue: 0,0:13:26.15,0:13:27.62,*Default,NTP,0000,0000,0000,,大家总会问一些问题 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}People ask these questions,
+Dialogue: 0,0:13:27.62,0:13:29.53,*Default,NTP,0000,0000,0000,,考试有什么意义  这一点我了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know. How much is it worth?
+Dialogue: 0,0:13:29.63,0:13:31.19,*Default,NTP,0000,0000,0000,,生活比分数重要多了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Geez, there's more to live than grades, 
+Dialogue: 0,0:13:31.29,0:13:35.42,*Default,NTP,0000,0000,0000,,但它占最终成绩的25%  论文也占25%\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's something like twenty-five percent and the paper is twenty-five percent. 
+Dialogue: 0,0:13:35.75,0:13:39.42,*Default,NTP,0000,0000,0000,,讨论课出勤占10%  这些分数将会板上钉钉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Section participation is ten percent, whatever we work out,
+Dialogue: 0,0:13:39.42,0:13:41.35,*Default,NTP,0000,0000,0000,,剩下的就是期末考了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the final.
+Dialogue: 0,0:13:41.49,0:13:47.23,*Default,NTP,0000,0000,0000,,考试的目的是为了检测你们的学期表现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an exercise in seeing how you're doing.
+Dialogue: 0,0:13:47.37,0:13:50.57,*Default,NTP,0000,0000,0000,,没什么大不了的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It really is no big deal,
+Dialogue: 0,0:13:50.57,0:13:56.15,*Default,NTP,0000,0000,0000,,但它可以帮你整合学过的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it will help you pull the themes of the course together.
+Dialogue: 0,0:13:56.29,0:13:58.40,*Default,NTP,0000,0000,0000,,所以没必要提心吊胆 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's no scary situation.
+Dialogue: 0,0:13:58.40,0:14:03.12,*Default,NTP,0000,0000,0000,,一般人成绩都会在A-到B+的范围里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We all live in this sort of A-, B range.
+Dialogue: 0,0:14:03.26,0:14:05.89,*Default,NTP,0000,0000,0000,,跟你们说  几年前我遇到过一个学生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll tell you, a couple of years ago I ran into this student.
+Dialogue: 0,0:14:06.03,0:14:08.38,*Default,NTP,0000,0000,0000,,遇到学生的时候  我总是很和善\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I run into students, I'm a friendly guy 
+Dialogue: 0,0:14:08.47,0:14:11.24,*Default,NTP,0000,0000,0000,,我会说  "Hi  你好吗 "\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I see people, and I say, "Hi, how are you?"
+Dialogue: 0,0:14:11.38,0:14:13.72,*Default,NTP,0000,0000,0000,,我也这样对那个学生打招呼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I ran into this one person. I said, "Hi, how are you?"
+Dialogue: 0,0:14:13.86,0:14:16.46,*Default,NTP,0000,0000,0000,,她回答说  "呃  你好"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And she went, "Oh, hello."
+Dialogue: 0,0:14:16.60,0:14:18.63,*Default,NTP,0000,0000,0000,,我记得她的名字 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh? I remembered her name 
+Dialogue: 0,0:14:18.73,0:14:20.60,*Default,NTP,0000,0000,0000,,然后我去查了成绩册  是B+\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I went and looked it up, and there was the B+.
+Dialogue: 0,0:14:20.70,0:14:26.22,*Default,NTP,0000,0000,0000,,说明我并非只记得得A或者A-的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It wasn't that, "Hi, how are you? A- or A," But whatever.
+Dialogue: 0,0:14:26.32,0:14:28.18,*Default,NTP,0000,0000,0000,,我敢说她其他门门都是A\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm sure she had all A's in the other courses,
+Dialogue: 0,0:14:28.18,0:14:29.24,*Default,NTP,0000,0000,0000,,但是B不是世界末日 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a B is not the end of the world,
+Dialogue: 0,0:14:29.24,0:14:31.37,*Default,NTP,0000,0000,0000,,更何况大部份同学都会在我的课上拿到A\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and most people get A's,
+Dialogue: 0,0:14:31.47,0:14:34.45,*Default,NTP,0000,0000,0000,,不管怎样  你们得考期中考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but whatever. You have to take the midterm.
+Dialogue: 0,0:14:34.60,0:14:36.52,*Default,NTP,0000,0000,0000,,这是学校的规定  可不是我的主意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the way they run it here. That's not my idea, 
+Dialogue: 0,0:14:36.62,0:14:38.71,*Default,NTP,0000,0000,0000,,所以我们只能服从决定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's what we're going to do.
+Dialogue: 0,0:14:38.81,0:14:41.89,*Default,NTP,0000,0000,0000,,好吧  现在我来谈谈一些课题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, now I'm going to talk about some of the themes.
+Dialogue: 0,0:14:42.22,0:14:44.50,*Default,NTP,0000,0000,0000,,快下课时我要给你们读首诗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the end, I'm going to read you a poem.
+Dialogue: 0,0:14:45.24,0:14:50.30,*Default,NTP,0000,0000,0000,,正是由于读了这首诗  我对待历史十分严肃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I started history in a serious way because I read this poem.
+Dialogue: 0,0:14:50.40,0:14:52.93,*Default,NTP,0000,0000,0000,,所以我会在下课前把它读给你们听\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, I'll leave that until the end of it.
+Dialogue: 0,0:14:53.08,0:14:56.69,*Default,NTP,0000,0000,0000,,我上的不是耶鲁大学而是密歇根大学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I didn't got to Yale. I went to the University of Michigan, 
+Dialogue: 0,0:14:56.88,0:15:01.26,*Default,NTP,0000,0000,0000,,我永远支持黄蓝军团  上周他们输了球  我很伤心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maize and blue forever, very sad since last weekend.
+Dialogue: 0,0:15:01.99,0:15:04.54,*Default,NTP,0000,0000,0000,,我来自俄勒冈州波特兰市 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I came from Portland, Oregon.
+Dialogue: 0,0:15:05.19,0:15:06.67,*Default,NTP,0000,0000,0000,,也许你们其中有人来自那个地方 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know if any of you come from Portland, oregon, 
+Dialogue: 0,0:15:06.67,0:15:07.56,*Default,NTP,0000,0000,0000,,我就是从那儿来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's where I'm from.
+Dialogue: 0,0:15:07.69,0:15:09.26,*Default,NTP,0000,0000,0000,,在我去密歇根大学之前 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I went off to Michigan, 
+Dialogue: 0,0:15:09.26,0:15:10.84,*Default,NTP,0000,0000,0000,,我读的是一所耶稣会高中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd been at a Jesuit high school.
+Dialogue: 0,0:15:11.58,0:15:14.61,*Default,NTP,0000,0000,0000,,在某种程度上  耶稣会高中就是体校\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Jesuit high school was a sports factory, in part,
+Dialogue: 0,0:15:15.17,0:15:17.96,*Default,NTP,0000,0000,0000,,但是它确实是所很好的高中  然而也非常严苛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it was a very good school, but it was very repressive.
+Dialogue: 0,0:15:18.11,0:15:19.49,*Default,NTP,0000,0000,0000,,我在耶稣会高中呆了四年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I went off to the University of Michigan 
+Dialogue: 0,0:15:19.59,0:15:22.27,*Default,NTP,0000,0000,0000,,之后去了密歇根大学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after having been in jesuit school for four years.
+Dialogue: 0,0:15:24.46,0:15:26.33,*Default,NTP,0000,0000,0000,,大学充斥了酒精  女人  狂欢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was wine, women, and song.
+Dialogue: 0,0:15:26.48,0:15:28.90,*Default,NTP,0000,0000,0000,,可能对于老鸟这没什么大不了的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There weren't enough in the middle 
+Dialogue: 0,0:15:28.90,0:15:31.63,*Default,NTP,0000,0000,0000,,但对刚进大学的新生来说却是太过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and probably too much of the first.
+Dialogue: 0,0:15:32.17,0:15:37.80,*Default,NTP,0000,0000,0000,,第一学期的时候我的平均成绩是1.93\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My first semester I got a 1.93 grade point average,
+Dialogue: 0,0:15:37.95,0:15:41.77,*Default,NTP,0000,0000,0000,,我妈妈问我是不是两分制的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and my mother asked me if that was on a two-point scale.
+Dialogue: 0,0:15:41.92,0:15:45.60,*Default,NTP,0000,0000,0000,,没开玩笑  我拿到了一个F \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm serious. I had an F.
+Dialogue: 0,0:15:45.75,0:15:47.20,*Default,NTP,0000,0000,0000,,往事不堪回首啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I shouldn't laugh at myself.
+Dialogue: 0,0:15:47.35,0:15:47.78,*Default,NTP,0000,0000,0000,,我孩子说 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My kids say, 
+Dialogue: 0,0:15:47.78,0:15:49.22,*Default,NTP,0000,0000,0000,,"别唠叨了  这都说了一万遍了"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, my god, not the same story again."
+Dialogue: 0,0:15:49.37,0:15:53.21,*Default,NTP,0000,0000,0000,,我拿到了一个F  两个C和一个B\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I got an F, and I got two C's, and I got a B.
+Dialogue: 0,0:15:53.36,0:15:58.20,*Default,NTP,0000,0000,0000,,我在安娜堡市认识的都是些庸碌之辈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The people I hung around with in Ann Arbor were so unaccomplished,
+Dialogue: 0,0:15:58.30,0:15:59.59,*Default,NTP,0000,0000,0000,,至少其中某些人是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of them anyway,
+Dialogue: 0,0:15:59.83,0:16:02.97,*Default,NTP,0000,0000,0000,,仅仅因为我拿个B他们就认为我很聪明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they thought I was smart because I got a B.
+Dialogue: 0,0:16:03.12,0:16:04.71,*Default,NTP,0000,0000,0000,,我去饭厅时  他们就会指指点点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd go by in the dining room and they'd say,
+Dialogue: 0,0:16:04.71,0:16:06.05,*Default,NTP,0000,0000,0000,,"嘿  他得了个B"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"He got a B."
+Dialogue: 0,0:16:06.15,0:16:09.62,*Default,NTP,0000,0000,0000,,他们让我教他们 你们能想象吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They asked me to tutor them. Can you imagine that?
+Dialogue: 0,0:16:09.77,0:16:11.58,*Default,NTP,0000,0000,0000,,我认识的一些人真让人无语\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of the people that I hung around with were amazing.
+Dialogue: 0,0:16:11.68,0:16:13.50,*Default,NTP,0000,0000,0000,,这样的人真是极品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You may even know people like that,
+Dialogue: 0,0:16:13.50,0:16:14.07,*Default,NTP,0000,0000,0000,,我都不相信你们会遇上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I don't think so.
+Dialogue: 0,0:16:14.17,0:16:15.39,*Default,NTP,0000,0000,0000,,有个我认识的家伙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But one of the guys that I knew, 
+Dialogue: 0,0:16:15.49,0:16:17.09,*Default,NTP,0000,0000,0000,,一分钟后回归正题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've got to get back to the topic in a minute, 
+Dialogue: 0,0:16:17.11,0:16:19.04,*Default,NTP,0000,0000,0000,,但是让我把他的事讲完\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I just thought of this, 
+Dialogue: 0,0:16:19.04,0:16:21.33,*Default,NTP,0000,0000,0000,,他简直称得上"口误帝"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was sort of the king of malapropisms.
+Dialogue: 0,0:16:21.48,0:16:23.53,*Default,NTP,0000,0000,0000,,有一天他絮絮叨叨说个没完\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One day he was going on and on.
+Dialogue: 0,0:16:23.67,0:16:24.64,*Default,NTP,0000,0000,0000,,说这个事是让你们见识下我的狐朋狗友\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are the people I hung around with.
+Dialogue: 0,0:16:24.74,0:16:27.08,*Default,NTP,0000,0000,0000,,有一天吃饭  他没完没了地说他吃的某顿大餐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was going on and on about this good meal 
+Dialogue: 0,0:16:27.08,0:16:29.58,*Default,NTP,0000,0000,0000,,什么美食佳肴一盘又一盘啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he had of one course after another,
+Dialogue: 0,0:16:29.68,0:16:32.39,*Default,NTP,0000,0000,0000,,有人竟然能做到这一点  什么酒店的环境好得不行啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it was fantastic. It was a really good restaurant, 
+Dialogue: 0,0:16:32.54,0:16:35.72,*Default,NTP,0000,0000,0000,,过了不久  什么有人偷偷给他灌酒啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and somebody snuck him some wine.
+Dialogue: 0,0:16:35.87,0:16:37.44,*Default,NTP,0000,0000,0000,,最后我厌倦了这无聊的话题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Finally, I'm tired of the whole thing 
+Dialogue: 0,0:16:37.44,0:16:39.14,*Default,NTP,0000,0000,0000,,我问道  "有人请吗"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I said, "Was it gratis?"
+Dialogue: 0,0:16:39.24,0:16:40.75,*Default,NTP,0000,0000,0000,,他回答  "对  爱吃鸡"  ［此处的笑点在于他把gratis当作了某种肉］\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He said, "No, it was chicken."
+Dialogue: 0,0:16:41.33,0:16:44.53,*Default,NTP,0000,0000,0000,,我就是跟这些人在密歇根大学厮混了四年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are the people that I hung around with at the university of Michigan.
+Dialogue: 0,0:16:44.63,0:16:46.38,*Default,NTP,0000,0000,0000,,不过我已经在这儿执教很多年了 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I've taught here a long time 
+Dialogue: 0,0:16:46.38,0:16:48.48,*Default,NTP,0000,0000,0000,,虽然我支持密歇根橄榄球队  但是我热爱耶鲁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I stand by maize and blue, but I love Yale.
+Dialogue: 0,0:16:48.58,0:16:49.63,*Default,NTP,0000,0000,0000,,原因之一就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the things I love about Yale
+Dialogue: 0,0:16:49.63,0:16:50.89,*Default,NTP,0000,0000,0000,,在这儿可以教到像你们一样的学生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is being able to teach people like you.
+Dialogue: 0,0:16:50.99,0:16:52.23,*Default,NTP,0000,0000,0000,,我的确是这样想的  我喜欢这门课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I mean it, and I love this course,
+Dialogue: 0,0:16:52.33,0:16:54.67,*Default,NTP,0000,0000,0000,,所以如果你们最终确定选这门课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I hope that you will enjoy it,
+Dialogue: 0,0:16:54.67,0:16:56.82,*Default,NTP,0000,0000,0000,,我希望你们也能喜欢它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if indeed you take it.
+Dialogue: 0,0:16:57.07,0:16:59.09,*Default,NTP,0000,0000,0000,,回到课程的主题上来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What about some of the themes?
+Dialogue: 0,0:16:59.24,0:17:01.02,*Default,NTP,0000,0000,0000,,我们将会探讨什么课题呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What kind of stuff are we going to do?
+Dialogue: 0,0:17:01.17,0:17:05.12,*Default,NTP,0000,0000,0000,,你能帮后面的同学拿些教学大纲过来吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Could you get some syllabi for some of those folks back there?
+Dialogue: 0,0:17:05.27,0:17:08.54,*Default,NTP,0000,0000,0000,,就在那上面  多谢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're up on the thing. Thanks a lot.
+Dialogue: 0,0:17:09.25,0:17:12.89,*Default,NTP,0000,0000,0000,,我们会讨论若干课题  有人说历史是一串串年份数字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A couple of themes. I don't believe, and I've never believed,
+Dialogue: 0,0:17:13.04,0:17:14.54,*Default,NTP,0000,0000,0000,,我不认同这点  从未认同过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that history is a series of bins.
+Dialogue: 0,0:17:14.64,0:17:16.47,*Default,NTP,0000,0000,0000,,我想我在《现代欧洲史》里谈到过这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I guess I wrote that in the book,
+Dialogue: 0,0:17:16.47,0:17:17.69,*Default,NTP,0000,0000,0000,,千万别这样读书  你打开书  说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that you open up and you say,
+Dialogue: 0,0:17:17.79,0:17:19.03,*Default,NTP,0000,0000,0000,,"嗯 课上讲了启蒙运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, there goes the Enlightenment.
+Dialogue: 0,0:17:19.03,0:17:19.87,*Default,NTP,0000,0000,0000,,我只看这一章就行了"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shut that baby down."
+Dialogue: 0,0:17:20.02,0:17:21.44,*Default,NTP,0000,0000,0000,,然后我们讲到18世纪商业竞争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you open up the next one,
+Dialogue: 0,0:17:21.44,0:17:23.39,*Default,NTP,0000,0000,0000,,你也就跳到书上对应的部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and here comes eighteenth-century rivalries,
+Dialogue: 0,0:17:23.54,0:17:25.15,*Default,NTP,0000,0000,0000,,看完这一节又算完事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you shut that baby.
+Dialogue: 0,0:17:25.30,0:17:26.30,*Default,NTP,0000,0000,0000,,然后我们讲到法国大革命 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then the French Revolution,
+Dialogue: 0,0:17:26.31,0:17:27.82,*Default,NTP,0000,0000,0000,,"噢  看看书上这一章就行"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, I know all about that now."
+Dialogue: 0,0:17:27.99,0:17:29.12,*Default,NTP,0000,0000,0000,,很快你就跳读到最后的俄国革命了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pretty soon you go on to Russian Revolution eventually,
+Dialogue: 0,0:17:29.12,0:17:31.60,*Default,NTP,0000,0000,0000,,看完完事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and all that.
+Dialogue: 0,0:17:31.84,0:17:34.98,*Default,NTP,0000,0000,0000,,这门课程的目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To do a course like this where you're going to learn much of
+Dialogue: 0,0:17:35.28,0:17:38.36,*Default,NTP,0000,0000,0000,,是让你了解西方文明的要旨何在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what is important to know about western civilization,
+Dialogue: 0,0:17:38.48,0:17:38.95,*Default,NTP,0000,0000,0000,,我确信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I do believe, 
+Dialogue: 0,0:17:38.96,0:17:41.19,*Default,NTP,0000,0000,0000,,如果你能够踏踏实实地读下去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you do the reading and stuff,
+Dialogue: 0,0:17:41.19,0:17:42.46,*Default,NTP,0000,0000,0000,,并且参与大课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if you enjoy the lectures,
+Dialogue: 0,0:17:43.20,0:17:44.71,*Default,NTP,0000,0000,0000,,你将会明白一个个独立的事件背后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there have to be some threads 
+Dialogue: 0,0:17:44.71,0:17:45.72,*Default,NTP,0000,0000,0000,,都是紧密联系在一起的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that go all the way through that
+Dialogue: 0,0:17:45.82,0:17:50.10,*Default,NTP,0000,0000,0000,,这样才能真正学到点什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}make it worth it so you learn something.
+Dialogue: 0,0:17:50.35,0:17:52.39,*Default,NTP,0000,0000,0000,,课题里当然会包括国家的构建\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is certainly state-making.
+Dialogue: 0,0:17:52.48,0:17:54.40,*Default,NTP,0000,0000,0000,,现代国家  即使像美国这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if you take a sort of federalized,
+Dialogue: 0,0:17:54.66,0:17:56.29,*Default,NTP,0000,0000,0000,,联邦复合  三权分立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}decentralized state like with this
+Dialogue: 0,0:17:56.29,0:17:57.81,*Default,NTP,0000,0000,0000,,选举体系繁复而周密\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very bizarre electoral system
+Dialogue: 0,0:17:57.99,0:18:03.03,*Default,NTP,0000,0000,0000,,也并非在20世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the United States, that the growth of modern states, 
+Dialogue: 0,0:18:03.37,0:18:05.03,*Default,NTP,0000,0000,0000,,随着英格兰首建福利社会之后而产生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it doesn't really just come in the twentieth century
+Dialogue: 0,0:18:05.13,0:18:07.69,*Default,NTP,0000,0000,0000,,在此之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the welfare state beginning in England, 
+Dialogue: 0,0:18:07.80,0:18:11.51,*Default,NTP,0000,0000,0000,,在别的地方  社会保障体系已经出现了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and even before that in some other places, insurance programs and things like that.
+Dialogue: 0,0:18:11.81,0:18:14.81,*Default,NTP,0000,0000,0000,,现代国家起源于中世纪晚期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It begins with the consolidation of state power 
+Dialogue: 0,0:18:15.04,0:18:20.15,*Default,NTP,0000,0000,0000,,由西班牙  法国  英国等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the late Middle Ages with territorial monarchies, the Spanish, and the French, 
+Dialogue: 0,0:18:20.25,0:18:21.75,*Default,NTP,0000,0000,0000,,君主国家强兼并强化而成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the English monarchies.
+Dialogue: 0,0:18:22.79,0:18:25.80,*Default,NTP,0000,0000,0000,,它与绝对王权的建立息息相关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot to do with the growth of absolute rule.
+Dialogue: 0,0:18:25.90,0:18:30.28,*Default,NTP,0000,0000,0000,,这就是我下节课将谈到的  绝对王权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what I'm going to talk about next time, absolute rule, absolutism.
+Dialogue: 0,0:18:30.44,0:18:34.04,*Default,NTP,0000,0000,0000,,与之相关的还有  常备军的扩充  数量空前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The growth of standing armies, huge standing armies,
+Dialogue: 0,0:18:34.14,0:18:38.70,*Default,NTP,0000,0000,0000,,边界防御工事的建设\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}never seen before, of big forts built on frontiers.
+Dialogue: 0,0:18:39.24,0:18:44.88,*Default,NTP,0000,0000,0000,,官僚系统的建立  税收效率的提高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a lot to do with bureaucrats who could extract resources from ordinary people.
+Dialogue: 0,0:18:45.04,0:18:47.67,*Default,NTP,0000,0000,0000,,而达官贵族几乎不用缴税\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of the rich didn't pay anything or hardly anything at all.
+Dialogue: 0,0:18:47.83,0:18:49.47,*Default,NTP,0000,0000,0000,,绝对王权还与忠诚有关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has to do with an allegiance, 
+Dialogue: 0,0:18:49.57,0:18:55.08,*Default,NTP,0000,0000,0000,,这种对王朝的忠诚再后来上升为对民族国家的忠诚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a dynastic allegiance that could be transferred later to a nation, the idea of nation.
+Dialogue: 0,0:18:55.18,0:18:58.41,*Default,NTP,0000,0000,0000,,民族国家的概念始于18世纪  而非19世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That starts in the eighteenth century. It doesn't start in the nineteenth century.
+Dialogue: 0,0:18:58.51,0:19:02.31,*Default,NTP,0000,0000,0000,,至少英国是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It starts in the eighteenth century, at least in Britain.
+Dialogue: 0,0:19:02.79,0:19:06.15,*Default,NTP,0000,0000,0000,,我们也将要论证这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's an argument that we'll make also.
+Dialogue: 0,0:19:06.67,0:19:09.26,*Default,NTP,0000,0000,0000,,1500年，差不多也就是《现代欧洲史》的起始年份\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1500, which is kind of when that book gets rolling--
+Dialogue: 0,0:19:09.36,0:19:11.88,*Default,NTP,0000,0000,0000,,其实这本书是从1648年开始写起的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they only start in about 1648--
+Dialogue: 0,0:19:13.22,0:19:17.75,*Default,NTP,0000,0000,0000,,欧洲当时大约有1500个领地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there were about 1500 different territorial units in Europe.
+Dialogue: 0,0:19:17.91,0:19:21.99,*Default,NTP,0000,0000,0000,,有些还没有德国的"主教花园"大  [这个花园只有12公顷]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some were no bigger than Archbishop's Garden in Germany,
+Dialogue: 0,0:19:22.15,0:19:25.96,*Default,NTP,0000,0000,0000,,还有些较大的国家  但是也没有现在的规模\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some were larger states--not yet what they are now in terms of size, 
+Dialogue: 0,0:19:26.12,0:19:32.37,*Default,NTP,0000,0000,0000,,譬如法国  路易十四时法国的领土扩大到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as France, which expanded under Louis XIV into 
+Dialogue: 0,0:19:32.47,0:19:37.23,*Default,NTP,0000,0000,0000,,阿尔萨斯和洛林以及其他的一些地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Alsace and Lorraine, and various other places.
+Dialogue: 0,0:19:37.42,0:19:40.10,*Default,NTP,0000,0000,0000,,当时的1500个领地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there's about 1500 territorial units.
+Dialogue: 0,0:19:40.20,0:19:42.88,*Default,NTP,0000,0000,0000,,到了1890年  就兼并成了30个了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1890, there were thirty.
+Dialogue: 0,0:19:43.19,0:19:48.60,*Default,NTP,0000,0000,0000,,随着王权的强化  民族文化和认同的统一加强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the consolidation of state power, which is looking at it from the state out,
+Dialogue: 0,0:19:48.76,0:19:56.23,*Default,NTP,0000,0000,0000,,人们会自视为德国人而非巴伐利亚人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the emergence of an identity where you see yourself as German as opposed to Bavarian, 
+Dialogue: 0,0:19:56.39,0:20:00.66,*Default,NTP,0000,0000,0000,,法国人  而非加斯科尼或普罗旺斯人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}French as opposed to Gascon or provencal, 
+Dialogue: 0,0:20:00.82,0:20:06.02,*Default,NTP,0000,0000,0000,,西班牙人  而非卡斯提尔人或者加泰罗尼亚人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Spanish as opposed to Castilian or as opposed to Catalan.
+Dialogue: 0,0:20:06.05,0:20:08.54,*Default,NTP,0000,0000,0000,,直到1975年11月\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Catalan language
+Dialogue: 0,0:20:08.54,0:20:11.53,*Default,NTP,0000,0000,0000,,弗朗西斯科·佛朗哥去世后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was illegal until 1975,
+Dialogue: 0,0:20:11.63,0:20:16.78,*Default,NTP,0000,0000,0000,,加泰罗尼亚语才被承认合法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until Francisco Franco finally croaked in 1975, in November.
+Dialogue: 0,0:20:18.75,0:20:19.62,*Default,NTP,0000,0000,0000,,有一句话说的好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a great phrase;
+Dialogue: 0,0:20:19.62,0:20:21.45,*Default,NTP,0000,0000,0000,,我希望我是它的原创者  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wish I'd said it originally.
+Dialogue: 0,0:20:21.55,0:20:23.58,*Default,NTP,0000,0000,0000,,我不知道是谁说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know who said it, but someone once said that 
+Dialogue: 0,0:20:23.68,0:20:27.79,*Default,NTP,0000,0000,0000,,有人曾说  语言是一只强大的军队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a language is a dialect with a powerful army.
+Dialogue: 0,0:20:27.95,0:20:29.27,*Default,NTP,0000,0000,0000,,的确是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's it. That's true.
+Dialogue: 0,0:20:29.37,0:20:31.38,*Default,NTP,0000,0000,0000,,法国大革命的时候 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}France at the time of the French Revolution, 
+Dialogue: 0,0:20:31.38,0:20:34.05,*Default,NTP,0000,0000,0000,,只有半数的法国人通晓法语\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}half the people in France knew French.
+Dialogue: 0,0:20:34.21,0:20:36.08,*Default,NTP,0000,0000,0000,,法国当时是一个双语国家  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was bilingualism.
+Dialogue: 0,0:20:36.09,0:20:39.37,*Default,NTP,0000,0000,0000,,在法国南方人们可能会说加泰罗尼亚语  或者奥弗涅的方言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could know Catalan. You could know Auvergnat patois.
+Dialogue: 0,0:20:39.53,0:20:41.73,*Default,NTP,0000,0000,0000,,我们居住在法国南部的时候 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We live in the south of France where a lot of old people still
+Dialogue: 0,0:20:41.83,0:20:43.26,*Default,NTP,0000,0000,0000,,还有很多老人说方言 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}speak a patois,
+Dialogue: 0,0:20:43.26,0:20:44.84,*Default,NTP,0000,0000,0000,,即使大部份已经失传了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though that's mostly dying out.
+Dialogue: 0,0:20:45.62,0:20:49.65,*Default,NTP,0000,0000,0000,,这样怎么会形成一种对自我身份的认知 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does it come that identity, 
+Dialogue: 0,0:20:49.65,0:20:52.34,*Default,NTP,0000,0000,0000,,以及对国家的忠诚呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a sense of allegiance to a state or a country?
+Dialogue: 0,0:20:52.50,0:20:53.51,*Default,NTP,0000,0000,0000,,不是所有人都是如此的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not everybody, 
+Dialogue: 0,0:20:53.61,0:20:57.60,*Default,NTP,0000,0000,0000,,可为何在1914年的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but how does it come to 1914 when people go marching off to get killed 
+Dialogue: 0,0:20:58.05,0:21:01.94,*Default,NTP,0000,0000,0000,,人们用流利的法语高唱着《马赛曲》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}singing the marseillaise, the French national anthem, 
+Dialogue: 0,0:21:01.94,0:21:03.40,*Default,NTP,0000,0000,0000,,而慷慨赴死呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in pretty good French?
+Dialogue: 0,0:21:03.56,0:21:04.52,*Default,NTP,0000,0000,0000,,这是什么原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does that happen?
+Dialogue: 0,0:21:04.80,0:21:07.62,*Default,NTP,0000,0000,0000,,一个国家如何能扩展至此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does a state increase its reach?
+Dialogue: 0,0:21:07.83,0:21:10.27,*Default,NTP,0000,0000,0000,,现代世界是如何建立的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How is the modern world created?
+Dialogue: 0,0:21:10.37,0:21:11.74,*Default,NTP,0000,0000,0000,,用一个拙略的词 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We call this process, 
+Dialogue: 0,0:21:11.75,0:21:14.49,*Default,NTP,0000,0000,0000,,我们称这个过程为民族国家的建立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a clumsy word, but state-making.
+Dialogue: 0,0:21:14.65,0:21:15.68,*Default,NTP,0000,0000,0000,,民族国家是如何形成的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do states form?
+Dialogue: 0,0:21:15.84,0:21:16.34,*Default,NTP,0000,0000,0000,,另一方面 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other side 
+Dialogue: 0,0:21:16.34,0:21:17.95,*Default,NTP,0000,0000,0000,,这种民族认同感是如何演变的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of this is how do identities change?
+Dialogue: 0,0:21:18.11,0:21:21.28,*Default,NTP,0000,0000,0000,,在16、17世纪  问一个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the sixteenth century, seventeenth century, ask somebody they were.
+Dialogue: 0,0:21:21.37,0:21:22.46,*Default,NTP,0000,0000,0000,,说  "你是什么人"  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Say, "Who are you?"
+Dialogue: 0,0:21:23.10,0:21:25.67,*Default,NTP,0000,0000,0000,,他可能回答  "我是某某家族的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They'd say, "I'm so and so. I'm of this family." or,
+Dialogue: 0,0:21:25.67,0:21:27.11,*Default,NTP,0000,0000,0000,,或说"我是新教徒"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I am Protestant,"
+Dialogue: 0,0:21:27.22,0:21:31.06,*Default,NTP,0000,0000,0000,,如果是在16世纪或16世纪晚期 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it was the sixteenth century or late sixteenth century,
+Dialogue: 0,0:21:31.16,0:21:34.31,*Default,NTP,0000,0000,0000,,又或者在16世纪2  30年代的 德意志地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}any time after 1520s or 1530s in parts of Germany.
+Dialogue: 0,0:21:34.42,0:21:36.47,*Default,NTP,0000,0000,0000,,"我是新教徒  我是犹太教徒" \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I'm Protestant. I'm Jewish."
+Dialogue: 0,0:21:36.63,0:21:40.55,*Default,NTP,0000,0000,0000,,在巴尔干地区"我是穆斯林" \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In much of the Balkans, "I am Muslim."
+Dialogue: 0,0:21:40.71,0:21:43.69,*Default,NTP,0000,0000,0000,,在欧洲的绝大部份地区"我是天主教徒"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In most of Europe, "I am Catholic."
+Dialogue: 0,0:21:43.85,0:21:47.06,*Default,NTP,0000,0000,0000,,在东欧"我是俄罗斯的正教徒 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In Eastern Europe, "I am Russian Orthodox.
+Dialogue: 0,0:21:47.07,0:21:50.05,*Default,NTP,0000,0000,0000,,我生活在一个俄罗斯村庄"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} I live in a mir in Russia."
+Dialogue: 0,0:21:50.22,0:21:52.46,*Default,NTP,0000,0000,0000,,那为什么到了19世纪 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does that happen by the end of the nineteenth century 
+Dialogue: 0,0:21:52.56,0:21:55.25,*Default,NTP,0000,0000,0000,,当俄罗斯人遭遇饥荒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that people have, even Russia as they're starving to death, 
+Dialogue: 0,0:21:55.70,0:22:00.62,*Default,NTP,0000,0000,0000,,文豪托尔斯泰对这一饥荒的描写曾引起全世界的关注\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}starving in the famine that tolstoy, the great writer, called the world's attention to.
+Dialogue: 0,0:22:01.12,0:22:03.42,*Default,NTP,0000,0000,0000,,大部分饥饿的农奴们临死前还想着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of them died in fields thinking,
+Dialogue: 0,0:22:03.73,0:22:04.95,*Default,NTP,0000,0000,0000,,"要是沙皇知道了就好了 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Only if the czar only knew 
+Dialogue: 0,0:22:04.95,0:22:06.26,*Default,NTP,0000,0000,0000,,我们每天吃不饱  穿不暖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we were starving,
+Dialogue: 0,0:22:06.37,0:22:09.72,*Default,NTP,0000,0000,0000,,大臣奴役我们  他该多么震怒啊"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that his ministers were treating us bad, how angry he would be."
+Dialogue: 0,0:22:09.89,0:22:10.82,*Default,NTP,0000,0000,0000,,他们很傻很天真\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, they didn't get it. 
+Dialogue: 0,0:22:10.86,0:22:13.54,*Default,NTP,0000,0000,0000,,他们不知道的是沙皇才不会管民众死活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They didn't know that the czar could have given one damn.
+Dialogue: 0,0:22:14.27,0:22:19.64,*Default,NTP,0000,0000,0000,,俄国人对沙皇的忠诚  对俄罗斯民族的认同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the allegiance to the czar, the sense of being Russian or 
+Dialogue: 0,0:22:19.74,0:22:23.06,*Default,NTP,0000,0000,0000,,甘受沙皇统治的信念已经逐渐根深蒂固\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being dominated by the Russian czar, is something that had to be constructed.
+Dialogue: 0,0:22:24.19,0:22:30.09,*Default,NTP,0000,0000,0000,,所以国家能够征税\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the state constructs its ability to extract taxes,
+Dialogue: 0,0:22:30.19,0:22:33.64,*Default,NTP,0000,0000,0000,,募兵征军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}extract bodies for national armies, 
+Dialogue: 0,0:22:33.68,0:22:35.09,*Default,NTP,0000,0000,0000,,敛聚物资\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}also to provide resources, 
+Dialogue: 0,0:22:35.09,0:22:37.06,*Default,NTP,0000,0000,0000,,这些都是由于民族认同感的改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but identities are transformed.
+Dialogue: 0,0:22:37.16,0:22:38.73,*Default,NTP,0000,0000,0000,,我以此为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, I give this as an example, 
+Dialogue: 0,0:22:38.83,0:22:41.09,*Default,NTP,0000,0000,0000,,因为民族国家的形成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because state-making 
+Dialogue: 0,0:22:41.09,0:22:44.86,*Default,NTP,0000,0000,0000,,贯穿了所有问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is one of the themes that kind of ties everything together.
+Dialogue: 0,0:22:45.51,0:22:47.45,*Default,NTP,0000,0000,0000,,这门课只会讲到1945年 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This course ends in 1945, 
+Dialogue: 0,0:22:47.50,0:22:51.79,*Default,NTP,0000,0000,0000,,让我们来看看后共产主义时期民族国家的构建\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but look at the problems in the post-communist world of state-making.
+Dialogue: 0,0:22:52.01,0:22:53.06,*Default,NTP,0000,0000,0000,,看看在格鲁吉亚发生的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look what's going on in Georgia, 
+Dialogue: 0,0:22:53.16,0:22:59.21,*Default,NTP,0000,0000,0000,,那些事情比媒体报导的都要复杂得多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is more complicated than the newspapers present in very many ways.
+Dialogue: 0,0:22:59.38,0:23:01.26,*Default,NTP,0000,0000,0000,,将介绍20世纪90年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look at the horror
+Dialogue: 0,0:23:01.27,0:23:03.83,*Default,NTP,0000,0000,0000,,在巴尔干半岛上发生的恐怖的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} show of the Balkans in the 1990s.
+Dialogue: 0,0:23:04.00,0:23:04.95,*Default,NTP,0000,0000,0000,,大部分源于宗教仇恨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of the issues, 
+Dialogue: 0,0:23:04.95,0:23:08.76,*Default,NTP,0000,0000,0000,,提起宗教仇恨  我们只会想到北爱尔兰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}religious hatreds that we thought only would be limited to Northern Ireland.
+Dialogue: 0,0:23:09.15,0:23:10.04,*Default,NTP,0000,0000,0000,,这也是我们要讨论的课题之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's another theme
+Dialogue: 0,0:23:10.04,0:23:11.82,*Default,NTP,0000,0000,0000,,还有一个重要问题  事关全局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's very important to the whole thing.
+Dialogue: 0,0:23:12.01,0:23:14.06,*Default,NTP,0000,0000,0000,,那就是经济的变革\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another, of course, is economic change.
+Dialogue: 0,0:23:14.76,0:23:17.61,*Default,NTP,0000,0000,0000,,当然  这门课程不是经济史课程 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Obviously, this is not a course in economic history,
+Dialogue: 0,0:23:17.65,0:23:19.99,*Default,NTP,0000,0000,0000,,但是资本主义的兴起  所谓的资本主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the rise of capitalism, that's what it's called, 
+Dialogue: 0,0:23:20.29,0:23:22.92,*Default,NTP,0000,0000,0000,,或者称为大规模工业化时代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}capitalism or large-scale industrialization.
+Dialogue: 0,0:23:23.08,0:23:26.20,*Default,NTP,0000,0000,0000,,就像我在书里写的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It changes in ways that we'll suggest in the reading,
+Dialogue: 0,0:23:26.31,0:23:29.95,*Default,NTP,0000,0000,0000,,经济变革改变了人类生存生活的基本方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then I'll talk about a little bit, the way people live in very fundamental ways.
+Dialogue: 0,0:23:30.22,0:23:33.79,*Default,NTP,0000,0000,0000,,有很多生活方式得以保留  但更多的发生了改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's lot of continuities, but there's lots of big changes.
+Dialogue: 0,0:23:33.95,0:23:36.58,*Default,NTP,0000,0000,0000,,并不是说有了人们很快就能接受工业化的大生产\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Everybody doesn't end up in the assembly lines right away.
+Dialogue: 0,0:23:37.37,0:23:40.64,*Default,NTP,0000,0000,0000,,在农村地区的生产方式中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are other ways of rural production.
+Dialogue: 0,0:23:40.85,0:23:43.91,*Default,NTP,0000,0000,0000,,妇女的(手工生产)工作仍然非常非常的重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Women's work remains terribly, terribly important.
+Dialogue: 0,0:23:44.08,0:23:46.17,*Default,NTP,0000,0000,0000,,我会花点时间来讲这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll spend some time doing that.
+Dialogue: 0,0:23:46.34,0:23:48.00,*Default,NTP,0000,0000,0000,,我一位非常亲密的朋友 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A very dear friend of mine,
+Dialogue: 0,0:23:48.00,0:23:49.37,*Default,NTP,0000,0000,0000,,实际上是我的导师  查克·蒂利  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my mentor indeed,
+Dialogue: 0,0:23:49.37,0:23:51.84,*Default,NTP,0000,0000,0000,,几个月前过世了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Chuck Tilley, who just died a couple months ago,
+Dialogue: 0,0:23:51.84,0:23:53.00,*Default,NTP,0000,0000,0000,,我十分悲痛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to my great sadness,
+Dialogue: 0,0:23:53.17,0:24:01.07,*Default,NTP,0000,0000,0000,,他曾经说过  "为历史的遗民著史十分痛心"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}once said that "It's bitter hard to write the history of remainders."
+Dialogue: 0,0:24:01.24,0:24:04.62,*Default,NTP,0000,0000,0000,,很多人忽略了这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lots of people were left out of all of this.
+Dialogue: 0,0:24:04.79,0:24:07.74,*Default,NTP,0000,0000,0000,,我会给"公众抗议"留一节大课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll do one lecture when I talk about popular protest.
+Dialogue: 0,0:24:07.91,0:24:12.25,*Default,NTP,0000,0000,0000,,将会介绍三个人民抗争的实例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll take three examples of people rebelling.
+Dialogue: 0,0:24:12.87,0:24:13.89,*Default,NTP,0000,0000,0000,,［做研究时］ 我经常退远审视\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I stand back and say,
+Dialogue: 0,0:24:13.89,0:24:17.11,*Default,NTP,0000,0000,0000,,"这意味着什么  这究竟是怎么回事"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What does this mean? What is going on here?"
+Dialogue: 0,0:24:17.28,0:24:17.90,*Default,NTP,0000,0000,0000,,第一个例子发生在比利牛斯山下  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take the example from the Pyrenees Mountains,
+Dialogue: 0,0:24:17.90,0:24:21.72,*Default,NTP,0000,0000,0000,,一个叫阿列日的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take the example from the Pyrenees Mountains,a place called the Ariège.
+Dialogue: 0,0:24:21.82,0:24:24.78,*Default,NTP,0000,0000,0000,,你们不知道那个地方  可能以后也不会知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're not responsible for that name, would never be.
+Dialogue: 0,0:24:24.95,0:24:28.72,*Default,NTP,0000,0000,0000,,突然一天  那儿的男人都乔装成妇女  全副武装\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But where suddenly men dressed as women carrying guns,
+Dialogue: 0,0:24:28.89,0:24:32.95,*Default,NTP,0000,0000,0000,,冒着雾霭风雪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or carrying pitchforks, came down out of the mists, out of the snow 
+Dialogue: 0,0:24:33.12,0:24:37.25,*Default,NTP,0000,0000,0000,,赶走那些烧炭人和护林人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and drove away charcoal burners and drove away forest guards.
+Dialogue: 0,0:24:37.42,0:24:39.91,*Default,NTP,0000,0000,0000,,为什么  因为他们失去了木材的来源 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why? Because they'd lost access to glean, 
+Dialogue: 0,0:24:40.41,0:24:42.51,*Default,NTP,0000,0000,0000,,失去了放养牲畜的牧场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to pasture their miserable animals.
+Dialogue: 0,0:24:42.68,0:24:45.63,*Default,NTP,0000,0000,0000,,因为随着木材价格的上涨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because the wealthy, big surprise, 
+Dialogue: 0,0:24:45.73,0:24:49.07,*Default,NTP,0000,0000,0000,,不出所料  富人们圈起了山林\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}got the law on their side as the price of wood goes up.
+Dialogue: 0,0:24:49.24,0:24:49.76,*Default,NTP,0000,0000,0000,,他们不会到处说 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They didn't walk around saying, 
+Dialogue: 0,0:24:49.77,0:24:50.75,*Default,NTP,0000,0000,0000,,"好吧  历史要向前发展  我无法抗拒"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I'm a remainder.
+Dialogue: 0,0:24:50.85,0:24:52.50,*Default,NTP,0000,0000,0000,,也许我应该移居去图卢兹［当工人］\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Eventually, I'm going to have to move to Toulouse and 
+Dialogue: 0,0:24:52.60,0:24:57.59,*Default,NTP,0000,0000,0000,,这样我的曾曾孙会在航空公司干活”\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my great-great-grandchildren will work in the Aero Spatial, in the air industry there."
+Dialogue: 0,0:24:57.69,0:24:59.95,*Default,NTP,0000,0000,0000,,他们不会说  "我是遗民231号"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They didn't say, "I'm remainder number 231."
+Dialogue: 0,0:25:00.12,0:25:01.60,*Default,NTP,0000,0000,0000,,而会尊严而战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they fought for their dignity,
+Dialogue: 0,0:25:01.79,0:25:05.74,*Default,NTP,0000,0000,0000,,为他们心中的正义而战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for a sense of justice they thought existed at one time 
+Dialogue: 0,0:25:05.84,0:25:06.64,*Default,NTP,0000,0000,0000,,这份正义一度存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that had been taken away by 
+Dialogue: 0,0:25:06.64,0:25:09.05,*Default,NTP,0000,0000,0000,,而现已被经济巨变生生夺去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these economic changes they couldn't control.
+Dialogue: 0,0:25:09.22,0:25:12.50,*Default,NTP,0000,0000,0000,,接着是英格兰南部同期的例子 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then I take an example from the south of England,
+Dialogue: 0,0:25:12.50,0:25:15.78,*Default,NTP,0000,0000,0000,,在1829或1830年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from the same time, 1829,1830,
+Dialogue: 0,0:25:15.95,0:25:19.39,*Default,NTP,0000,0000,0000,,人们发现死去的穷人胃里只有蒲公英\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they find people dead with only dandelions in their stomach, 
+Dialogue: 0,0:25:19.39,0:25:20.73,*Default,NTP,0000,0000,0000,,他们是饿死的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}dead of hunger.
+Dialogue: 0,0:25:20.90,0:25:24.49,*Default,NTP,0000,0000,0000,,这些一贫如洗的农村劳力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then these people start marching the poor, the wretched poor.
+Dialogue: 0,0:25:24.59,0:25:29.07,*Default,NTP,0000,0000,0000,,开始游行示威  威胁有打谷机的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Rural labourers start marching and threatening people with threshing machines.
+Dialogue: 0,0:25:29.17,0:25:30.02,*Default,NTP,0000,0000,0000,,为什么针对打谷机呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why threshing machines?
+Dialogue: 0,0:25:30.12,0:25:34.33,*Default,NTP,0000,0000,0000,,因为打谷机夺走了他们的饭碗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because threshing machines were taking away their work as harvesters.
+Dialogue: 0,0:25:34.91,0:25:36.71,*Default,NTP,0000,0000,0000,,拥有打谷机的人们曾收到这么一封恐吓信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And one day they found a sign that said,
+Dialogue: 0,0:25:36.81,0:25:41.51,*Default,NTP,0000,0000,0000,,斯温队长将会掀起对你们的复仇  走着瞧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}“Revenge from thee is on the wing from thy determined
+Dialogue: 0,0:25:41.61,0:25:44.57,*Default,NTP,0000,0000,0000,,这封信暗示抗议者人多势众\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Captain Swing," Suggesting that they were many.
+Dialogue: 0,0:25:44.75,0:25:46.81,*Default,NTP,0000,0000,0000,,代表正义  公允在握\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were righteous. They were just. 
+Dialogue: 0,0:25:46.81,0:25:49.91,*Default,NTP,0000,0000,0000,,全副武装  准备万全\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were armed. They were ready.
+Dialogue: 0,0:25:50.09,0:25:52.55,*Default,NTP,0000,0000,0000,,真的有这么一位斯温队长吗 当然没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Did Captain Swing exist? Of course not.
+Dialogue: 0,0:25:52.86,0:25:56.61,*Default,NTP,0000,0000,0000,,他们势单力薄并且没人领导  终于失败\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were weak and they get lost. They get defeated.
+Dialogue: 0,0:25:56.71,0:25:57.65,*Default,NTP,0000,0000,0000,,其中的一些人被判处绞刑 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of them are hung.
+Dialogue: 0,0:25:57.75,0:26:01.96,*Default,NTP,0000,0000,0000,,很多人则被关进塔斯马尼亚的阿瑟港监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lots of them are sent to Tasmania to the prison at Port arthur, Tasmania.
+Dialogue: 0,0:26:01.99,0:26:02.99,*Default,NTP,0000,0000,0000,,他们被流放到了澳大利亚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're sent to Australia.
+Dialogue: 0,0:26:03.17,0:26:05.82,*Default,NTP,0000,0000,0000,,所以澳大利亚一有跟英格兰的比赛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why when the Australians play the English,
+Dialogue: 0,0:26:05.92,0:26:08.66,*Default,NTP,0000,0000,0000,,很多人就会唱披头士乐队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a lot of the Australians sing that old Beatles' song,
+Dialogue: 0,0:26:08.84,0:26:10.86,*Default,NTP,0000,0000,0000,,《黄色潜水艇》的改版  你们不会知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Yellow Submarine", which you don't remember,
+Dialogue: 0,0:26:10.86,0:26:11.69,*Default,NTP,0000,0000,0000,,我还依稀记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I vaguely remember.
+Dialogue: 0,0:26:11.87,0:26:17.22,*Default,NTP,0000,0000,0000,,我们都生活在罪人的土地上  罪人的土地上  罪人的土地上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"We all live in a convict colony, a convict colony, a convict colony.
+Dialogue: 0,0:26:17.64,0:26:19.91,*Default,NTP,0000,0000,0000,,斯温队长他们失败了 但他们誓死不屈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Captain Swing, they lost, but they went down fighting.
+Dialogue: 0,0:26:20.09,0:26:22.70,*Default,NTP,0000,0000,0000,,为这些被历史抛弃的遗民著史是让人非常痛心的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's bitter hard to write the history of remainders.
+Dialogue: 0,0:26:22.95,0:26:24.48,*Default,NTP,0000,0000,0000,,当你去探究这一切时  你要学会问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But when you look up from that and you say, 
+Dialogue: 0,0:26:24.48,0:26:26.01,*Default,NTP,0000,0000,0000,,"看看这儿究竟发生了什么"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Look what's going on here."
+Dialogue: 0,0:26:26.19,0:26:29.10,*Default,NTP,0000,0000,0000,,有时人们为了食物而战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you look at people fighting for grain, fighting for food, 
+Dialogue: 0,0:26:29.15,0:26:32.19,*Default,NTP,0000,0000,0000,,其实是在抗争历史潮流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're fighting a larger process 
+Dialogue: 0,0:26:32.19,0:26:34.06,*Default,NTP,0000,0000,0000,,他们无法掌控的历史潮流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they can't control.
+Dialogue: 0,0:26:34.24,0:26:34.96,*Default,NTP,0000,0000,0000,,但这会告诉你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it tells you 
+Dialogue: 0,0:26:34.96,0:26:37.02,*Default,NTP,0000,0000,0000,,历史的宏大画卷中到底发生了什么  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a lot of what's going on over the big picture.
+Dialogue: 0,0:26:37.20,0:26:38.52,*Default,NTP,0000,0000,0000,,这是另一个主题  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's another one.
+Dialogue: 0,0:26:38.70,0:26:40.89,*Default,NTP,0000,0000,0000,,另一个主题  我再啰嗦一会儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then there is, I'll just take one more,
+Dialogue: 0,0:26:40.89,0:26:43.09,*Default,NTP,0000,0000,0000,,也许就十分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe another ten minutes.
+Dialogue: 0,0:26:43.19,0:26:44.65,*Default,NTP,0000,0000,0000,,讲完这个主题  我再朗诵那首我提到的诗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to read you my poem.
+Dialogue: 0,0:26:44.65,0:26:47.32,*Default,NTP,0000,0000,0000,,然后你们就下课  当然我希望你们会选这门课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you can go. But I hope you come back.
+Dialogue: 0,0:26:47.86,0:26:52.27,*Default,NTP,0000,0000,0000,,[这个主题就是]战争  作为变革动因的战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}War--war as a dynamic of change.
+Dialogue: 0,0:26:52.45,0:26:56.61,*Default,NTP,0000,0000,0000,,拿破仑改变了战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Warfare changes with Napoleon.
+Dialogue: 0,0:26:56.79,0:26:59.15,*Default,NTP,0000,0000,0000,,在18世纪时战争形态已经有所变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were already changes in the eighteenth century,
+Dialogue: 0,0:26:59.25,0:27:01.68,*Default,NTP,0000,0000,0000,,但军队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's still basically professional armies or people
+Dialogue: 0,0:27:01.78,0:27:03.71,*Default,NTP,0000,0000,0000,,仍旧基本由职业军人组成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}getting conscripted in the British navy,
+Dialogue: 0,0:27:03.81,0:27:06.06,*Default,NTP,0000,0000,0000,,有些在错误的时间和地点醉倒的平民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they were drunk at the wrong place at the wrong time
+Dialogue: 0,0:27:06.22,0:27:07.86,*Default,NTP,0000,0000,0000,,可能会被抓壮丁  [例如在朴茨茅斯的某个酒馆什么的]  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}outside of a tavern in Portsmouth or something.
+Dialogue: 0,0:27:08.04,0:27:08.64,*Default,NTP,0000,0000,0000,,他们醒来时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The next thing they know, 
+Dialogue: 0,0:27:08.78,0:27:13.91,*Default,NTP,0000,0000,0000,,已经身在一艘开往日不落帝国的"海外领土"的船上了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're throwing up on a ship bobbing off toward the English empire.
+Dialogue: 0,0:27:15.09,0:27:18.44,*Default,NTP,0000,0000,0000,,然而战争随着民族国家的出现而改变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But warfare changes with the nation's state.
+Dialogue: 0,0:27:18.62,0:27:19.10,*Default,NTP,0000,0000,0000,,法国人称之为"全民皆兵"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The French called it leveé en masse,
+Dialogue: 0,0:27:19.10,0:27:21.64,*Default,NTP,0000,0000,0000,,也就是大规模征兵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's mass conscription,
+Dialogue: 0,0:27:21.64,0:27:23.76,*Default,NTP,0000,0000,0000,,一种保家卫国的民族荣誉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sense of defending the nation.
+Dialogue: 0,0:27:23.94,0:27:27.84,*Default,NTP,0000,0000,0000,,奇迹般的时刻出现了  在法国东部的瓦尔米\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's this magic moment where the artisans of Paris defeat the highly-
+Dialogue: 0,0:27:27.94,0:27:33.50,*Default,NTP,0000,0000,0000,,巴黎的工匠击败了高度职业化的正规军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}professionalized army at a windmill called Valmy in the east of France.
+Dialogue: 0,0:27:33.60,0:27:35.50,*Default,NTP,0000,0000,0000,,这改变了已有的战争方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It changes the way things were.
+Dialogue: 0,0:27:35.68,0:27:37.14,*Default,NTP,0000,0000,0000,,下面的说法尽管存在争议\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Napoleon is arguably the first total war,
+Dialogue: 0,0:27:37.14,0:27:41.31,*Default,NTP,0000,0000,0000,,但是拿破仑可能指挥了历史上第一场全面战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of a war against civilians where
+Dialogue: 0,0:27:41.31,0:27:44.02,*Default,NTP,0000,0000,0000,,针对平民的战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are no longer the traditional limits
+Dialogue: 0,0:27:44.12,0:27:46.94,*Default,NTP,0000,0000,0000,,针对军队的战争\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between fighting against civilians and
+Dialogue: 0,0:27:46.94,0:27:48.95,*Default,NTP,0000,0000,0000,,两者之间以往清晰的界限不再存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fighting against armies.
+Dialogue: 0,0:27:49.13,0:27:51.24,*Default,NTP,0000,0000,0000,,这些界限在三十年战争时期已经不存在了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those limits hadn't existed in the Thirty Years' War.
+Dialogue: 0,0:27:51.42,0:27:54.46,*Default,NTP,0000,0000,0000,,下回我会就此稍作阐释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk a little bit about that next time around.
+Dialogue: 0,0:27:54.64,0:27:55.96,*Default,NTP,0000,0000,0000,,战争的形态发生了翻天覆地的变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the wars are very different.
+Dialogue: 0,0:27:56.14,0:27:58.59,*Default,NTP,0000,0000,0000,,戈雅有几幅很有名的油画 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's famous Goya paintings 
+Dialogue: 0,0:27:58.59,0:28:01.71,*Default,NTP,0000,0000,0000,,描绘的是法国士兵射杀［西班牙］农民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of peasants being gunned down by french soldiers,
+Dialogue: 0,0:28:01.81,0:28:05.90,*Default,NTP,0000,0000,0000,,以及士兵在意大利南部对农民的各种暴行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and atrocities against peasants in Calabria in the south of Italy.
+Dialogue: 0,0:28:06.23,0:28:07.84,*Default,NTP,0000,0000,0000,,战争自身发生了变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, warfare really changes,
+Dialogue: 0,0:28:07.84,0:28:09.46,*Default,NTP,0000,0000,0000,,但同时成为了历史变革的动因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it becomes a dynamic of change.
+Dialogue: 0,0:28:09.64,0:28:12.45,*Default,NTP,0000,0000,0000,,回想下1917年的俄国革命 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you think about the Russian Revolution of 1917,
+Dialogue: 0,0:28:12.80,0:28:16.04,*Default,NTP,0000,0000,0000,,如果没有一战也就没有俄国革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Russian Revolution was not inconceivable without World War i, 
+Dialogue: 0,0:28:16.22,0:28:20.98,*Default,NTP,0000,0000,0000,,但如果没有1905年的俄国革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it was sort of inconceivable
+Dialogue: 0,0:28:20.98,0:28:23.22,*Default,NTP,0000,0000,0000,,以及日俄战争中的失败\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without the Russian Revolution of 1905,
+Dialogue: 0,0:28:23.40,0:28:25.09,*Default,NTP,0000,0000,0000,,十月革命也是不可想象的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the defeat by the Japanese 
+Dialogue: 0,0:28:25.09,0:28:27.46,*Default,NTP,0000,0000,0000,,俄国败于日本  令人震惊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in an extraordinary shocking event,
+Dialogue: 0,0:28:27.46,0:28:30.93,*Default,NTP,0000,0000,0000,,至少在1904—1905年的欧洲是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least for Europeans in 1904 and 1905.
+Dialogue: 0,0:28:31.11,0:28:34.01,*Default,NTP,0000,0000,0000,,一战为俄罗斯的持异见者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And World War I provides opportunities for 
+Dialogue: 0,0:28:34.18,0:28:37.70,*Default,NTP,0000,0000,0000,,提供了喊出异见的契机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}dissidents in russia to put forward their claims.
+Dialogue: 0,0:28:37.88,0:28:42.79,*Default,NTP,0000,0000,0000,,当1917年2月沙皇政府倒台 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, when the whole thing collapses on the czar's head in february 1917, 
+Dialogue: 0,0:28:42.89,0:28:44.34,*Default,NTP,0000,0000,0000,,以及后来布尔什维克党上台时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Bolsheviks come to power,
+Dialogue: 0,0:28:44.52,0:28:47.85,*Default,NTP,0000,0000,0000,,这场战争[指一战]本身就是催化剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the war itself was a dynamic of change as well.
+Dialogue: 0,0:28:48.23,0:28:52.51,*Default,NTP,0000,0000,0000,,从来没有任何一场战争像它一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what a war. What wars. There have been nothing ever like it.
+Dialogue: 0,0:28:52.89,0:28:56.72,*Default,NTP,0000,0000,0000,,一些报导日俄战争的记者们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A few journalists who had been in the Russo-Japanese war 
+Dialogue: 0,0:28:56.82,0:29:01.09,*Default,NTP,0000,0000,0000,,虽然看到过建在满洲的战壕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had seen trenches in Manchuria that had been built.
+Dialogue: 0,0:29:01.28,0:29:02.81,*Default,NTP,0000,0000,0000,,但是一战的战壕战与日俄战争的大不一样  旷日持久\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But nobody could have imagined that 
+Dialogue: 0,0:29:02.82,0:29:05.32,*Default,NTP,0000,0000,0000,,没有人会想到  这场本该在六周内结束的战争[指一战]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the war that was supposed to be over in six weeks 
+Dialogue: 0,0:29:05.32,0:29:06.86,*Default,NTP,0000,0000,0000,,将会瓦解四个帝国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was going to destroy four empires--
+Dialogue: 0,0:29:07.05,0:29:10.75,*Default,NTP,0000,0000,0000,,奥斯曼帝国 奥匈帝国 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Ottoman empire, the Austro-Hungarian empire, 
+Dialogue: 0,0:29:10.75,0:29:14.46,*Default,NTP,0000,0000,0000,,德意志帝国和沙皇俄国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the German empire, and the Russian empire,
+Dialogue: 0,0:29:14.65,0:29:17.71,*Default,NTP,0000,0000,0000,,可能还有大英帝国  尽管这个说法充满争议 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and, arguably, we can talk about this 
+Dialogue: 0,0:29:17.71,0:29:19.75,*Default,NTP,0000,0000,0000,,我们可以做进一步探讨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we can debate this, the British empire.
+Dialogue: 0,0:29:19.94,0:29:21.88,*Default,NTP,0000,0000,0000,,因为在印度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because lots of people who had fought in India,
+Dialogue: 0,0:29:21.89,0:29:25.39,*Default,NTP,0000,0000,0000,,参战的人中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indians who had fought in the war,
+Dialogue: 0,0:29:25.49,0:29:27.72,*Default,NTP,0000,0000,0000,,有印度人  也有我们现在所称的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or people now we would call Pakistanis 
+Dialogue: 0,0:29:27.72,0:29:29.62,*Default,NTP,0000,0000,0000,,巴基斯坦人以及肯尼亚人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who'd fought in the war, or people from Kenya
+Dialogue: 0,0:29:29.72,0:29:33.67,*Default,NTP,0000,0000,0000,,他们不再为自己是帝国的一分子而自豪  
+Dialogue: 0,0:29:34.20,0:29:36.44,*Default,NTP,0000,0000,0000,,每天朝不保夕  挨饿受冻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}arguing that they're part of the great empire,
+Dialogue: 0,0:29:36.63,0:29:41.27,*Default,NTP,0000,0000,0000,,一贫如洗  身份低下  只能为有钱人卖命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though they have hardly any rights and no money, and simply work for the big guy.
+Dialogue: 0,0:29:41.46,0:29:48.73,*Default,NTP,0000,0000,0000,,所以这场战争通过瓦解这些帝国来改变欧洲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the war transforms Europe by destroying these empires.
+Dialogue: 0,0:29:48.92,0:29:52.16,*Default,NTP,0000,0000,0000,,它确实也做到了  同时  另一个会引发争议的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What it also does, and it's very possible to argue this, 
+Dialogue: 0,0:29:52.35,0:29:54.25,*Default,NTP,0000,0000,0000,,我的好朋友杰·温特 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and my friend, Jay Winter,
+Dialogue: 0,0:29:54.25,0:29:56.54,*Default,NTP,0000,0000,0000,,他是一位杰出的一战研究家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who is a great expert on World War I,
+Dialogue: 0,0:29:56.64,0:29:58.64,*Default,NTP,0000,0000,0000,,以及今年离世的布鲁诺·卡波\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Bruno Cabanes also, who's on leave this year,
+Dialogue: 0,0:29:58.64,0:29:59.88,*Default,NTP,0000,0000,0000,,都会支持这个观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would agree with this.
+Dialogue: 0,0:30:00.07,0:30:03.70,*Default,NTP,0000,0000,0000,,认为1914—1945年可以看成一场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could see the whole period in 1914-1945 
+Dialogue: 0,0:30:03.71,0:30:06.54,*Default,NTP,0000,0000,0000,,全新的但更为惨烈的"三十年战争"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a new and more terrible Thirty Years' War.
+Dialogue: 0,0:30:06.73,0:30:10.33,*Default,NTP,0000,0000,0000,,因为欧洲在20世纪20到30年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because Europe is in depression all through the 1920s and a€?30s, 
+Dialogue: 0,0:30:10.40,0:30:11.86,*Default,NTP,0000,0000,0000,,处于严重的经济危机中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}agricultural depression the whole time.
+Dialogue: 0,0:30:12.23,0:30:15.75,*Default,NTP,0000,0000,0000,,农业持续萎靡  仅在1924—1929年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Only between 1924 and 1929 
+Dialogue: 0,0:30:15.75,0:30:17.69,*Default,NTP,0000,0000,0000,,工业才短暂的恢复了生气\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is it not a big industrial depression.
+Dialogue: 0,0:30:17.88,0:30:19.78,*Default,NTP,0000,0000,0000,,政治氛围世风日下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The poisoning of the political atmosphere--
+Dialogue: 0,0:30:19.92,0:30:23.63,*Default,NTP,0000,0000,0000,,我将用一节课来讲希特勒和他的国家社会主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to do a whole lecture on Hitler and the national socialists.
+Dialogue: 0,0:30:23.91,0:30:25.58,*Default,NTP,0000,0000,0000,,一战造就了希特勒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}World War I created Hitler.
+Dialogue: 0,0:30:25.77,0:30:27.39,*Default,NTP,0000,0000,0000,,他早年野心勃勃 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was already just this pathetic guy 
+Dialogue: 0,0:30:27.39,0:30:30.43,*Default,NTP,0000,0000,0000,,但却不切实际  终日孤身一人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with grandiose plans, no friends,
+Dialogue: 0,0:30:30.62,0:30:32.89,*Default,NTP,0000,0000,0000,,他衣衫褴褛地在剧院里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sort of a sad sack going to the theatre 
+Dialogue: 0,0:30:32.99,0:30:38.33,*Default,NTP,0000,0000,0000,,不停地说着他喜欢的作曲家瓦格纳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and droning on and on about all he knew about wager, whom he loved, 
+Dialogue: 0,0:30:38.43,0:30:40.71,*Default,NTP,0000,0000,0000,,以及这个剧院的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the theatre, and in a threadbare coat.
+Dialogue: 0,0:30:40.90,0:30:43.04,*Default,NTP,0000,0000,0000,,但是一战使他成为了一个反犹太分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But World War I transforms him into an 
+Dialogue: 0,0:30:43.04,0:30:45.18,*Default,NTP,0000,0000,0000,,他本身已经反社会主义了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}anti-Semite. He was already an anti-socialist.
+Dialogue: 0,0:30:45.53,0:30:47.55,*Default,NTP,0000,0000,0000,,但是一战使他成为了一个反犹太分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It transforms him into an anti-Semite.
+Dialogue: 0,0:30:48.29,0:30:49.69,*Default,NTP,0000,0000,0000,,一战结束后军队回国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The troops that came back,
+Dialogue: 0,0:30:49.69,0:30:51.94,*Default,NTP,0000,0000,0000,,很多军人加入了游行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many of them simply kept on marching.
+Dialogue: 0,0:30:52.13,0:30:53.25,*Default,NTP,0000,0000,0000,,他们从战场上九死一生 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They'd survived the war 
+Dialogue: 0,0:30:53.25,0:30:54.68,*Default,NTP,0000,0000,0000,,但是却成为了游行的一份子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they kept on marching.
+Dialogue: 0,0:30:54.87,0:30:57.81,*Default,NTP,0000,0000,0000,,政治氛围的恶化是关键因素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The poisoning in the political atmosphere was something 
+Dialogue: 0,0:30:57.81,0:30:59.54,*Default,NTP,0000,0000,0000,,有一点绝对不容忽视\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that was simply extraordinary.
+Dialogue: 0,0:31:00.71,0:31:03.30,*Default,NTP,0000,0000,0000,,要理解法西斯主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To understand fascism, this is terribly, terribly important, 
+Dialogue: 0,0:31:03.56,0:31:06.71,*Default,NTP,0000,0000,0000,,你们必须搞清楚一战时到底发生了什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to understand what happens in World War I.
+Dialogue: 0,0:31:06.90,0:31:10.80,*Default,NTP,0000,0000,0000,,《凡尔赛条约》曾被寄予极大的期望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Great expectations dashed the Treaty of Versailles,
+Dialogue: 0,0:31:10.99,0:31:12.33,*Default,NTP,0000,0000,0000,,但只有伟大的英国思想家 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which only the great British thinker, 
+Dialogue: 0,0:31:12.33,0:31:14.36,*Default,NTP,0000,0000,0000,,约翰·梅纳德·凯恩斯的看法是正确的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}john Maynard Keynes, really got right,
+Dialogue: 0,0:31:14.74,0:31:16.33,*Default,NTP,0000,0000,0000,,他预测这纸条约将带来灾难性的后果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}predicting the disaster that came out of it.
+Dialogue: 0,0:31:16.52,0:31:20.48,*Default,NTP,0000,0000,0000,,在我看来没有比这更迷人的时刻了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no more fascinating period in history, in my mind.
+Dialogue: 0,0:31:20.62,0:31:22.96,*Default,NTP,0000,0000,0000,,这一时期具有不可否认的魅力。\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's absolutely fantastic.
+Dialogue: 0,0:31:22.96,0:31:24.94,*Default,NTP,0000,0000,0000,,战争是什么  似乎显而易见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What a war. It's all obvious.
+Dialogue: 0,0:31:25.00,0:31:27.12,*Default,NTP,0000,0000,0000,,每个人都在伦敦的帝国战争博物馆里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Everybody's seen these films from 
+Dialogue: 0,0:31:27.12,0:31:27.91,*Default,NTP,0000,0000,0000,,看过记录电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imperial War Museum --
+Dialogue: 0,0:31:27.99,0:31:29.52,*Default,NTP,0000,0000,0000,,那个博物馆有些太高科技了 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which has been kind of wrecked the way they've done it now, 
+Dialogue: 0,0:31:29.62,0:31:32.19,*Default,NTP,0000,0000,0000,,这么做反而适得其反\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's sort of too high-tech -- in London.
+Dialogue: 0,0:31:32.38,0:31:35.91,*Default,NTP,0000,0000,0000,,当然这只是我的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I leave you with just a couple thoughts.
+Dialogue: 0,0:31:36.10,0:31:39.76,*Default,NTP,0000,0000,0000,,索姆河战役  S-O-M-M-E  始于1916年7月1日 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Battle of the Somme in 1916 that started on July 1
+Dialogue: 0,0:31:39.86,0:31:40.96,*Default,NTP,0000,0000,0000,,那些士兵们吹着口哨说 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they blow the whistle and say,
+Dialogue: 0,0:31:40.96,0:31:42.37,*Default,NTP,0000,0000,0000,,"拿下阵地  伙计们"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} "Over the top, guys."
+Dialogue: 0,0:31:43.29,0:31:47.33,*Default,NTP,0000,0000,0000,,而在战役的头三天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are more British soldiers killed and wounded 
+Dialogue: 0,0:31:47.66,0:31:50.03,*Default,NTP,0000,0000,0000,,就有大量英国士兵伤亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the first three days of the Battle of the Somme,
+Dialogue: 0,0:31:50.18,0:31:53.82,*Default,NTP,0000,0000,0000,,三天的伤亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}S-O-M-M-E, three days, three days, 
+Dialogue: 0,0:31:53.91,0:31:56.40,*Default,NTP,0000,0000,0000,,超过了美国在一战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than there were Americans killed in World War I,
+Dialogue: 0,0:31:56.40,0:31:59.63,*Default,NTP,0000,0000,0000,,朝鲜战争、越南战争中的总和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Korea, and Vietnam combined.
+Dialogue: 0,0:31:59.92,0:32:01.77,*Default,NTP,0000,0000,0000,,仅仅是三天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In three days.
+Dialogue: 0,0:32:01.96,0:32:04.19,*Default,NTP,0000,0000,0000,,一战杀死了整整一代人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Where are the great British leaders 
+Dialogue: 0,0:32:04.20,0:32:06.11,*Default,NTP,0000,0000,0000,,英国20世纪20年代和30年代的精英们都在哪儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the 1920s and the 1930s?
+Dialogue: 0,0:32:06.22,0:32:07.23,*Default,NTP,0000,0000,0000,,他们都牺牲了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're all dead.
+Dialogue: 0,0:32:07.39,0:32:08.87,*Default,NTP,0000,0000,0000,,倒在铁丝网上  倒刺挂进肉里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're hung up on that old barbed wire, 
+Dialogue: 0,0:32:08.87,0:32:11.02,*Default,NTP,0000,0000,0000,,就像英国一位军旅诗人所说的那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as one of the war poets put it.
+Dialogue: 0,0:32:11.33,0:32:13.24,*Default,NTP,0000,0000,0000,,他们倒在铁丝网上 倒刺挂进肉里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're hung up on that old barbed wire.
+Dialogue: 0,0:32:13.67,0:32:20.13,*Default,NTP,0000,0000,0000,,一战中有一位士兵  是个足球运动员  说  "让我们来点活力"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One guy, a soccer player, said, "We'll get some enthusiasm."
+Dialogue: 0,0:32:20.38,0:32:26.45,*Default,NTP,0000,0000,0000,,他试图越过战壕和弹坑运球 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He tried to dribble a ball across these trenches, across the craters.
+Dialogue: 0,0:32:26.55,0:32:28.48,*Default,NTP,0000,0000,0000,,但他并没有成功 他被杀死了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He doesn't make it. He's killed.
+Dialogue: 0,0:32:28.67,0:32:33.72,*Default,NTP,0000,0000,0000,,在1914年的圣诞节  一些英德的士兵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1914 on Christmas Day, the Germans and the British soldiers, 
+Dialogue: 0,0:32:33.82,0:32:36.00,*Default,NTP,0000,0000,0000,,提议  "今天不要开战"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some would say, "Enough of this stuff" For the day.
+Dialogue: 0,0:32:36.10,0:32:38.84,*Default,NTP,0000,0000,0000,,他们相互唱着歌  一起踢足球\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They sing to each other. They actually play soccer; they play football.
+Dialogue: 0,0:32:39.04,0:32:40.62,*Default,NTP,0000,0000,0000,,然而到了1915年  一位英国士兵说 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1915, a British soldier said, 
+Dialogue: 0,0:32:40.62,0:32:41.53,*Default,NTP,0000,0000,0000,,"今年和去年一样吧"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Let's do the same thing."
+Dialogue: 0,0:32:41.63,0:32:43.56,*Default,NTP,0000,0000,0000,,他们却把他抵在墙上射杀了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They put him against the wall and shoot him.
+Dialogue: 0,0:32:44.59,0:32:51.20,*Default,NTP,0000,0000,0000,,战争的残酷改变了整个欧洲  方方面面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The horror of the war transforms Europe, every aspect of Europe.
+Dialogue: 0,0:32:51.40,0:32:53.00,*Default,NTP,0000,0000,0000,,如果不理解一战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's impossible to understand 
+Dialogue: 0,0:32:53.00,0:32:57.54,*Default,NTP,0000,0000,0000,,那就无法理解在纳粹的影响下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the growth of the agrarian sort of semi-fascist regimes in Eastern Europe,
+Dialogue: 0,0:32:58.14,0:33:02.55,*Default,NTP,0000,0000,0000,,东欧的半法西斯主义制度是如何形成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very much under Nazi influence, without understanding World War i.
+Dialogue: 0,0:33:02.75,0:33:06.21,*Default,NTP,0000,0000,0000,,有人曾认为一战是最后的战役\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The war that was supposed to end all wars;
+Dialogue: 0,0:33:06.31,0:33:10.51,*Default,NTP,0000,0000,0000,,显然  大错特错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of course, it doesn't do that at all.
+Dialogue: 0,0:33:10.71,0:33:14.64,*Default,NTP,0000,0000,0000,,我们会细讲这些内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a big stop on our agenda as well.
+Dialogue: 0,0:33:14.78,0:33:17.84,*Default,NTP,0000,0000,0000,,每个人都读过《西线无战事》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We did used to read All Quiet in the Western Front, but everybody's read that.
+Dialogue: 0,0:33:18.04,0:33:20.45,*Default,NTP,0000,0000,0000,,接着我们我们看看罗伯特·格雷夫斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then we read Robert Graves' rather long 
+Dialogue: 0,0:33:20.46,0:33:22.38,*Default,NTP,0000,0000,0000,,冗长芜杂的《向以往告别》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and self-indulgent Goodbye to All That.
+Dialogue: 0,0:33:22.58,0:33:25.40,*Default,NTP,0000,0000,0000,,那太长了 不可能全部看完 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was pretty long, so we don't do that.
+Dialogue: 0,0:33:25.40,0:33:27.57,*Default,NTP,0000,0000,0000,,我们会尽可能都讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we will try to rock.
+Dialogue: 0,0:33:27.67,0:33:32.08,*Default,NTP,0000,0000,0000,,好了 等我把诗读完你们就可以走了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me just read you my poem and then you can go.
+Dialogue: 0,0:33:32.28,0:33:33.83,*Default,NTP,0000,0000,0000,,随便干什么都可以 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, you can do whatever you want,
+Dialogue: 0,0:33:33.83,0:33:36.41,*Default,NTP,0000,0000,0000,,我还记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but anyway. I remember this.
+Dialogue: 0,0:33:36.61,0:33:40.68,*Default,NTP,0000,0000,0000,,我记得在一个周六的下午2:00 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I remember reading this poem 
+Dialogue: 0,0:33:40.68,0:33:43.73,*Default,NTP,0000,0000,0000,,我在密歇根大学一边读着这首诗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}back at University of Michigan at 2:00 on a Saturday,
+Dialogue: 0,0:33:43.83,0:33:45.70,*Default,NTP,0000,0000,0000,,一边反省自己前天晚上做了什么 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}trying to figure out what I'd done the night before.
+Dialogue: 0,0:33:45.70,0:33:46.82,*Default,NTP,0000,0000,0000,,哎  不说这么多了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, anyway, no.
+Dialogue: 0,0:33:48.15,0:33:52.41,*Default,NTP,0000,0000,0000,,诗的作者是布莱希特  一位伟大的东德诗人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is Brecht, the great East German poet.
+Dialogue: 0,0:33:52.61,0:33:55.35,*Default,NTP,0000,0000,0000,,这首诗的名字叫《工人眼中的历史》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's called "A Worker Reads History."
+Dialogue: 0,0:33:55.55,0:33:59.13,*Default,NTP,0000,0000,0000,,在这之前我要说  我们将要学习的是所谓的"伟人"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me begin by saying that we're going to study "Great," 
+Dialogue: 0,0:33:59.23,0:34:02.44,*Default,NTP,0000,0000,0000,,我是说"伟大的人"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mean really "Great" men, "Great" Women.
+Dialogue: 0,0:34:02.64,0:34:04.66,*Default,NTP,0000,0000,0000,,希特勒显然不是"伟人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hitler is obviously not a great man.
+Dialogue: 0,0:34:04.66,0:34:06.67,*Default,NTP,0000,0000,0000,,谈到他人们只会觉得不寒而栗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} He's awful, just awful.
+Dialogue: 0,0:34:06.87,0:34:08.74,*Default,NTP,0000,0000,0000,,但是那些所谓的创造历史的人们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the people who are thought to have made history:
+Dialogue: 0,0:34:08.93,0:34:12.06,*Default,NTP,0000,0000,0000,,拿破仑 彼得大帝 诸如此类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Napoleon, Peter the Great, other people.
+Dialogue: 0,0:34:12.17,0:34:14.84,*Default,NTP,0000,0000,0000,,我们将会讲到这些"伟人"  他们出现在教材中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I do talk about the folks that you read about in textbooks,
+Dialogue: 0,0:34:14.84,0:34:16.62,*Default,NTP,0000,0000,0000,,我的书中也有涉及\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}including mine.
+Dialogue: 0,0:34:16.82,0:34:21.51,*Default,NTP,0000,0000,0000,,但是我想问布莱希特在诗中提出的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I ask the same question and pose to you the same question that Brecht poses.
+Dialogue: 0,0:34:21.84,0:34:23.67,*Default,NTP,0000,0000,0000,,这首诗很短  再坚持一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a short poem, so just hang on.
+Dialogue: 0,0:34:24.45,0:34:27.46,*Default,NTP,0000,0000,0000,,底比斯七门何人建起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who built the seven gates of Thebes?
+Dialogue: 0,0:34:27.76,0:34:31.01,*Default,NTP,0000,0000,0000,,问青史  唯帝王之名\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The books are filled with the names of kings.
+Dialogue: 0,0:34:31.21,0:34:34.76,*Default,NTP,0000,0000,0000,,难道是帝王搬起了基石与墙砖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Was it kings who hauled the craggy blocks of stone?
+Dialogue: 0,0:34:34.96,0:34:38.81,*Default,NTP,0000,0000,0000,,几番倾颓的巴比伦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Babylon so many times destroyed.
+Dialogue: 0,0:34:39.01,0:34:45.63,*Default,NTP,0000,0000,0000,,又是谁将它重建\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who built the city up each time? In which of Lima's houses,
+Dialogue: 0,0:34:45.83,0:34:48.23,*Default,NTP,0000,0000,0000,,金碧辉煌的利马城 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The city glittering with gold, 
+Dialogue: 0,0:34:48.23,0:34:51.42,*Default,NTP,0000,0000,0000,,它的缔造者此刻栖居何处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lived those who built it?
+Dialogue: 0,0:34:51.62,0:34:55.07,*Default,NTP,0000,0000,0000,,万里长城完工之夜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the evening when the Chinese wall was finished
+Dialogue: 0,0:34:55.27,0:34:59.08,*Default,NTP,0000,0000,0000,,工匠们又要去向何方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Where did the masons go? Imperial Rome
+Dialogue: 0,0:34:59.28,0:35:01.91,*Default,NTP,0000,0000,0000,,帝国罗马  笑尽凯旋  那是谁的心血 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is full of arcs of triumph. 
+Dialogue: 0,0:35:01.91,0:35:03.99,*Default,NTP,0000,0000,0000,,谁的战斗浇筑了凯撒的胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who reared them up? Over whom
+Dialogue: 0,0:35:04.19,0:35:09.58,*Default,NTP,0000,0000,0000,,笙歌缭绕的拜占庭啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Did the Caesars triumph? Byzantium lives in song.
+Dialogue: 0,0:35:09.78,0:35:11.88,*Default,NTP,0000,0000,0000,,宫殿岂是它全部的居所\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Were all her dwellings palaces?
+Dialogue: 0,0:35:12.41,0:35:16.49,*Default,NTP,0000,0000,0000,,即便是在那传说中的亚特兰蒂斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And even in Atlantis of the legend
+Dialogue: 0,0:35:16.69,0:35:19.40,*Default,NTP,0000,0000,0000,,在那汪洋肆虐之夜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The night the sea rushed in,
+Dialogue: 0,0:35:19.60,0:35:24.79,*Default,NTP,0000,0000,0000,,濒死的主人们仍在怒吼  为了他们的奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The drowning men still bellowed for their slaves.
+Dialogue: 0,0:35:24.99,0:35:28.44,*Default,NTP,0000,0000,0000,,亚历山大英姿勃发剑指印度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Young Alexander conquered India.
+Dialogue: 0,0:35:28.64,0:35:29.66,*Default,NTP,0000,0000,0000,,岂是千里单骑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He alone?
+Dialogue: 0,0:35:29.86,0:35:32.62,*Default,NTP,0000,0000,0000,,凯撒挥师北征高卢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Caesar beat the Gauls.
+Dialogue: 0,0:35:32.82,0:35:34.78,*Default,NTP,0000,0000,0000,,莫非凭借匹夫之力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Was there not even a cook in his army?
+Dialogue: 0,0:35:34.98,0:35:38.61,*Default,NTP,0000,0000,0000,,当菲利普为沉没的无敌舰队哭泣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Philip of Spain wept as his fleet
+Dialogue: 0,0:35:38.81,0:35:42.74,*Default,NTP,0000,0000,0000,,落泪的  又难道仅此一人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Was sunk and destroyed. Were there no other tears?
+Dialogue: 0,0:35:42.94,0:35:47.95,*Default,NTP,0000,0000,0000,,腓特烈大帝  伟大的七年战争  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Frederick the Great triumphed in the Seven Years' War.
+Dialogue: 0,0:35:48.15,0:35:49.85,*Default,NTP,0000,0000,0000,,谁与他一同凯旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who triumphed with him?
+Dialogue: 0,0:35:50.05,0:35:52.92,*Default,NTP,0000,0000,0000,,翻过一页页光辉的胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Each page a victory.
+Dialogue: 0,0:35:53.12,0:35:56.42,*Default,NTP,0000,0000,0000,,谁为金杯斟满了庆功的美酒 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At whose expense the victory ball?
+Dialogue: 0,0:35:56.62,0:35:59.66,*Default,NTP,0000,0000,0000,,人间十年一伟人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every ten years a great man.
+Dialogue: 0,0:35:59.86,0:36:02.49,*Default,NTP,0000,0000,0000,,谁的白骨遍地  谁说莫问封侯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who paid the piper?
+Dialogue: 0,0:36:02.69,0:36:04.90,*Default,NTP,0000,0000,0000,,这样多的历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So many particulars.
+Dialogue: 0,0:36:05.10,0:36:07.28,*Default,NTP,0000,0000,0000,,这样多道不清的谜题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So many questions
+Dialogue: 0,0:36:07.48,0:36:11.91,*Default,NTP,0000,0000,0000,,在这个学期中我们会学习其中的一些问题 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you hang with us this semester, we'll get at some of those.
+Dialogue: 0,0:36:12.24,0:36:13.07,*Default,NTP,0000,0000,0000,,下次见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}See you.
+Dialogue: 1,0:36:13.17,1:00:02.00,*Default,NTP,0000,0000,0000,,{\fe134}{\fad(500,500)}{\c&HFFFFFF&}{\pos(190,270)}{\fs16} {\fn方正准圆简体}{\bord0}本字幕由{\fs24}{\fn方正综艺简体}{\fe0}{\c&H26F4FF&}YYeTs{\fe134}{\fn方正宋黑简体}{\c&HFFAE1A&}人人影视{\fscy100}{\fe134}{\fn方正准圆简体}{\c&HFFFFFF&}{\fs16}翻译制作\N{\fn方正准圆简体}{\fs14}{\b0}{\bord0}{\shad0}{\c&HFFFFFF&}{\3c&H2F2F2F&}{\4c&H000000&}{\fsp0}{\fs16}{\c&HFFFFFF&}更多教程中文版 请登陆 {\c&H26F4FF&}{\fn方正综艺简体}{\fs24}www.YYeTs.net
+
+

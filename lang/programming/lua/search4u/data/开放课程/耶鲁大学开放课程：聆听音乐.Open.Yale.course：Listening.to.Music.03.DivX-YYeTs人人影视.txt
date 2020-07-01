@@ -1,0 +1,923 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.58,0:00:05.44,*Default,NTP,0000,0000,0000,,好的  女士们先生们  大家早上好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, ladies and gentlemen. Good morning.
+Dialogue: 0,0:00:05.44,0:00:07.71,*Default,NTP,0000,0000,0000,,我想今天应该会进行得顺利一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think things are going to work better today.
+Dialogue: 0,0:00:07.71,0:00:10.50,*Default,NTP,0000,0000,0000,,我对我们的音响设备\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm optimistic about the audio equipment
+Dialogue: 0,0:00:10.50,0:00:12.81,*Default,NTP,0000,0000,0000,,和我们的投影材料等都很有信心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and about our slide material and things such as that.
+Dialogue: 0,0:00:12.81,0:00:15.12,*Default,NTP,0000,0000,0000,,请大家关闭手机  我们要开始了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All cell phones off and we will begin.
+Dialogue: 0,0:00:15.12,0:00:18.27,*Default,NTP,0000,0000,0000,,别忘了课后讨论会今晚七点开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Don't forget sections start tonight at seven o'clock
+Dialogue: 0,0:00:18.27,0:00:20.15,*Default,NTP,0000,0000,0000,,还有几场分别在今晚八点 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's another set at eight o'clock
+Dialogue: 0,0:00:20.15,0:00:23.21,*Default,NTP,0000,0000,0000,,周五下午一点半和周一上午\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then Friday afternoon at one thirty and Monday morning.
+Dialogue: 0,0:00:23.21,0:00:25.54,*Default,NTP,0000,0000,0000,,我们会把材料都传到网上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've got that all online for you.
+Dialogue: 0,0:00:25.54,0:00:28.21,*Default,NTP,0000,0000,0000,,请完成并带好你们的作业\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you do your work product and you bring it to sections
+Dialogue: 0,0:00:28.21,0:00:32.12,*Default,NTP,0000,0000,0000,,并在每次上课时交给你们的助教\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and hand it in to your TA in section each time.
+Dialogue: 0,0:00:32.12,0:00:34.49,*Default,NTP,0000,0000,0000,,就这么简单\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's the way this works.
+Dialogue: 0,0:00:34.49,0:00:37.26,*Default,NTP,0000,0000,0000,,我会发给你们一封电子邮件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll be sending you a global e-mail 
+Dialogue: 0,0:00:37.26,0:00:38.90,*Default,NTP,0000,0000,0000,,你们再了解些其他事项  好跟上进度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bringing you up to date with some other things 
+Dialogue: 0,0:00:38.90,0:00:41.04,*Default,NTP,0000,0000,0000,,今天下午晚些时候就发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}later on this afternoon.
+Dialogue: 0,0:00:41.39,0:00:44.54,*Default,NTP,0000,0000,0000,,好的  今天我们  事实上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So today we--Actually,
+Dialogue: 0,0:00:44.54,0:00:47.16,*Default,NTP,0000,0000,0000,,在我开始前  大家有什么问题吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before I get to that, any questions from you?
+Dialogue: 0,0:00:47.16,0:00:50.42,*Default,NTP,0000,0000,0000,,有  有什么要做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah. Is there stuff to do--
+Dialogue: 0,0:00:51.42,0:00:54.30,*Default,NTP,0000,0000,0000,,今晚的讨论要做什么准备吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is there stuff to do for section tonight?
+Dialogue: 0,0:00:54.30,0:00:57.27,*Default,NTP,0000,0000,0000,,有的  不过只要处理好之前布置的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yes, but only the stuff that was assigned,
+Dialogue: 0,0:00:57.27,0:01:00.25,*Default,NTP,0000,0000,0000,,做那些听力练习就可以了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Listening Exercises that are assigned early on.
+Dialogue: 0,0:01:00.25,0:01:02.30,*Default,NTP,0000,0000,0000,,只包括第一节  第九到第十节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's just one, nine through 11,
+Dialogue: 0,0:01:02.30,0:01:04.19,*Default,NTP,0000,0000,0000,,这些你可能好几天前就做好了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which you've probably had done for days now,
+Dialogue: 0,0:01:04.19,0:01:06.16,*Default,NTP,0000,0000,0000,,那你只要带上材料交上来就可以了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you just bring that material and hand it in.
+Dialogue: 0,0:01:06.16,0:01:08.11,*Default,NTP,0000,0000,0000,,今晚会布置另外的作业\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Others will be assigned tonight. 
+Dialogue: 0,0:01:08.11,0:01:09.30,*Default,NTP,0000,0000,0000,,现在是选课期间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is shopping period.
+Dialogue: 0,0:01:09.30,0:01:11.43,*Default,NTP,0000,0000,0000,,在我们开动之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're started sifting through things
+Dialogue: 0,0:01:11.43,0:01:12.29,*Default,NTP,0000,0000,0000,,首先要筛选一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then we'll get rolling. 
+Dialogue: 0,0:01:12.29,0:01:13.52,*Default,NTP,0000,0000,0000,,这位先生  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gentleman here. 
+Dialogue: 0,0:01:13.52,0:01:17.68,*Default,NTP,0000,0000,0000,,我能不能打开麦克风  好主意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Can I turn on my microphone. Very good idea.
+Dialogue: 0,0:01:17.68,0:01:21.40,*Default,NTP,0000,0000,0000,,事实上我好像真丢了一个麦克风\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A matter of fact that I think I'm actually missing a microphone.
+Dialogue: 0,0:01:22.19,0:01:25.18,*Default,NTP,0000,0000,0000,,它在哪里呢  噢  在这儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it was...oh, here.
+Dialogue: 0,0:01:25.32,0:01:26.94,*Default,NTP,0000,0000,0000,,好吧  我要怎么弄\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, what do I do with this?
+Dialogue: 0,0:01:32.44,0:01:34.73,*Default,NTP,0000,0000,0000,,这位先生  你上来调整一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gentleman you will have to come 
+Dialogue: 0,0:01:34.73,0:01:36.61,*Default,NTP,0000,0000,0000,,调到你觉得合适的位置吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and do this as you would like to have it done.
+Dialogue: 0,0:01:39.44,0:01:40.72,*Default,NTP,0000,0000,0000,,好吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay.
+Dialogue: 0,0:01:56.16,0:01:58.02,*Default,NTP,0000,0000,0000,,好了  我们继续吧  不好意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, here we go. Sorry.
+Dialogue: 0,0:01:59.12,0:02:00.69,*Default,NTP,0000,0000,0000,,今天我们要开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Today we're going to come to
+Dialogue: 0,0:02:00.69,0:02:03.14,*Default,NTP,0000,0000,0000,,我所指的实质性课程了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I would call the nitty-gritty of the course.
+Dialogue: 0,0:02:03.14,0:02:04.99,*Default,NTP,0000,0000,0000,,我们不再介绍导言内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We no longer have any introductory material
+Dialogue: 0,0:02:04.99,0:02:08.82,*Default,NTP,0000,0000,0000,,而是直接进入音乐记谱法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're going to jump into musical notation
+Dialogue: 0,0:02:08.82,0:02:11.77,*Default,NTP,0000,0000,0000,,并且学习二分音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to be dealing with things
+Dialogue: 0,0:02:11.77,0:02:14.84,*Default,NTP,0000,0000,0000,,比如说二分音符  四分音符等相关知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as half notes, quarter notes, things like that,
+Dialogue: 0,0:02:15.29,0:02:18.94,*Default,NTP,0000,0000,0000,,但在正式开始之前  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but before we do this 
+Dialogue: 0,0:02:18.94,0:02:20.83,*Default,NTP,0000,0000,0000,,我想就音乐记谱法先说两句\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd like to say a couple of words about musical notation
+Dialogue: 0,0:02:20.83,0:02:24.13,*Default,NTP,0000,0000,0000,,因为这影响到我们如何处理音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it affects how we deal with music
+Dialogue: 0,0:02:24.13,0:02:25.97,*Default,NTP,0000,0000,0000,,和如何看待音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how we treat music.
+Dialogue: 0,0:02:25.97,0:02:29.66,*Default,NTP,0000,0000,0000,,我好像听到这附近有敲击声\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Seems me there does a largely verberation in here now.
+Dialogue: 0,0:02:29.66,0:02:31.97,*Default,NTP,0000,0000,0000,,是那样的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is that the case?
+Dialogue: 0,0:02:31.97,0:02:34.31,*Default,NTP,0000,0000,0000,,你听着是不是也像敲击声呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does it sound like a verberating to you?
+Dialogue: 0,0:02:34.31,0:02:36.48,*Default,NTP,0000,0000,0000,,不  你们没受什么影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No, sounds okay to you.
+Dialogue: 0,0:02:38.37,0:02:43.07,*Default,NTP,0000,0000,0000,,音乐记谱法是西方所特有的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Musical notation is a particularly Western phenomenon
+Dialogue: 0,0:02:43.07,0:02:44.56,*Default,NTP,0000,0000,0000,,你可以停下好好想想  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and when you stop and think about it 
+Dialogue: 0,0:02:44.57,0:02:46.47,*Default,NTP,0000,0000,0000,,只有我们这些土生土长的西方人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only we in the West,
+Dialogue: 0,0:02:46.47,0:02:47.99,*Default,NTP,0000,0000,0000,,所谓西方  我指的是美国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and by West what I mean is the United States
+Dialogue: 0,0:02:47.99,0:02:49.69,*Default,NTP,0000,0000,0000,,加拿大  还有西欧和俄罗斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Canada and Western Europe and Russia,
+Dialogue: 0,0:02:49.69,0:02:51.06,*Default,NTP,0000,0000,0000,,包括一部分南美国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}parts of South America,
+Dialogue: 0,0:02:51.06,0:02:53.75,*Default,NTP,0000,0000,0000,,只有我们使用音乐记谱法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only we use musical notation
+Dialogue: 0,0:02:53.75,0:02:58.09,*Default,NTP,0000,0000,0000,,并且我们把音乐记谱法应用于高雅音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we use it principally for our high art music.
+Dialogue: 0,0:02:58.09,0:02:59.39,*Default,NTP,0000,0000,0000,,这不是说中国人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's not to say that the Chinese
+Dialogue: 0,0:02:59.39,0:03:02.70,*Default,NTP,0000,0000,0000,,没有秘传的记谱方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't have an esoteric form of musical notation,
+Dialogue: 0,0:03:02.70,0:03:04.24,*Default,NTP,0000,0000,0000,,也不是说印度人 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the Indians 
+Dialogue: 0,0:03:04.24,0:03:05.97,*Default,NTP,0000,0000,0000,,没有秘传的记谱方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do not have an esoteric form of musical notation.
+Dialogue: 0,0:03:05.97,0:03:07.32,*Default,NTP,0000,0000,0000,,他们的确有  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They do, 
+Dialogue: 0,0:03:07.32,0:03:10.03,*Default,NTP,0000,0000,0000,,但他们的记谱法并没有贯穿文化的始终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it doesn't intersect quite as intensely
+Dialogue: 0,0:03:10.03,0:03:13.82,*Default,NTP,0000,0000,0000,,比不上音乐记谱法在西方文化中的地位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as musical notation does in Western cultures.
+Dialogue: 0,0:03:13.82,0:03:15.41,*Default,NTP,0000,0000,0000,,很多世界上的其他文化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most cultures around the world,
+Dialogue: 0,0:03:15.41,0:03:16.31,*Default,NTP,0000,0000,0000,,如果你停下来想想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you stop and think about it,
+Dialogue: 0,0:03:16.31,0:03:18.31,*Default,NTP,0000,0000,0000,,并不使用音乐记谱法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't use musical notation.
+Dialogue: 0,0:03:18.31,0:03:20.78,*Default,NTP,0000,0000,0000,,但我们这里的高雅音乐就应用了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we do here with our art music 
+Dialogue: 0,0:03:20.78,0:03:23.39,*Default,NTP,0000,0000,0000,,而且音乐记谱法有两大优势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that has two advantages.
+Dialogue: 0,0:03:23.39,0:03:25.47,*Default,NTP,0000,0000,0000,,我们先谈谈优势所在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's talk about the advantages first.
+Dialogue: 0,0:03:25.47,0:03:28.23,*Default,NTP,0000,0000,0000,,第一  音乐记谱法让作曲家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, it allows the composer 
+Dialogue: 0,0:03:28.23,0:03:34.05,*Default,NTP,0000,0000,0000,,更精确地表达他所想表达的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to specify rather precisely what he or she wants,
+Dialogue: 0,0:03:34.05,0:03:37.96,*Default,NTP,0000,0000,0000,,这种作曲方式可以记录下音乐的细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to sort of write things out in the form of musical details,
+Dialogue: 0,0:03:37.96,0:03:43.45,*Default,NTP,0000,0000,0000,,因此在西方艺术形式中作曲家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so as the result the creator in this Western art form
+Dialogue: 0,0:03:43.45,0:03:48.91,*Default,NTP,0000,0000,0000,,相比其他文化中的创作者拥有更高的地位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}takes on greater importance than the creator in other cultures
+Dialogue: 0,0:03:48.91,0:03:54.26,*Default,NTP,0000,0000,0000,,其它文化中的作曲家有些是佚名的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the composer so to speak is more or less anonymous
+Dialogue: 0,0:03:54.26,0:03:57.52,*Default,NTP,0000,0000,0000,,或者和整个乐队混为一谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and perhaps synonymous with the group as a whole.
+Dialogue: 0,0:03:57.52,0:04:00.54,*Default,NTP,0000,0000,0000,,所以再一次强调记谱法的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So again the process of notation 
+Dialogue: 0,0:04:00.54,0:04:04.81,*Default,NTP,0000,0000,0000,,它让作曲家的地位更加突出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}allows the composer to loom larger.
+Dialogue: 0,0:04:04.81,0:04:07.45,*Default,NTP,0000,0000,0000,,其次  记谱法还有另一个好处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And secondly there's another advantage of notation.
+Dialogue: 0,0:04:07.45,0:04:09.30,*Default,NTP,0000,0000,0000,,记谱法让我们能得以保护艺术成果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It allows us to preserve the work of art.
+Dialogue: 0,0:04:09.30,0:04:12.55,*Default,NTP,0000,0000,0000,,我们相当于把这件作品干燥冷藏起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can kind of freeze dry this thing and store it
+Dialogue: 0,0:04:12.55,0:04:13.87,*Default,NTP,0000,0000,0000,,并能够还原作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then bring it back to life 
+Dialogue: 0,0:04:13.87,0:04:18.05,*Default,NTP,0000,0000,0000,,比较精确地吻合作曲家的原意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more or less exactly as the composer had intended.
+Dialogue: 0,0:04:18.05,0:04:20.53,*Default,NTP,0000,0000,0000,,但如果你再想想  正是这个特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But this, if you stop and think about it
+Dialogue: 0,0:04:20.53,0:04:22.85,*Default,NTP,0000,0000,0000,,取代了传统模式里的均衡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}takes the traditional balance of things
+Dialogue: 0,0:04:22.85,0:04:25.22,*Default,NTP,0000,0000,0000,,并把这种均衡完全舍弃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and throws it out of proportion.
+Dialogue: 0,0:04:25.22,0:04:28.43,*Default,NTP,0000,0000,0000,,在我们的高雅音乐  像我们的交响乐  协奏曲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In our art music, our symphonies, concertos
+Dialogue: 0,0:04:28.92,0:04:30.16,*Default,NTP,0000,0000,0000,,这类的体裁中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}genres of this sort,
+Dialogue: 0,0:04:30.16,0:04:33.55,*Default,NTP,0000,0000,0000,,演奏者往往不那么重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the performer is actually much less important.
+Dialogue: 0,0:04:33.55,0:04:35.83,*Default,NTP,0000,0000,0000,,我们可以想象一下  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's think of this 
+Dialogue: 0,0:04:35.83,0:04:38.33,*Default,NTP,0000,0000,0000,,就像建筑师和木匠的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as architect and carpenter.
+Dialogue: 0,0:04:38.33,0:04:39.93,*Default,NTP,0000,0000,0000,,伟大的建筑师  构想者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The great architect, the thinker
+Dialogue: 0,0:04:39.93,0:04:41.18,*Default,NTP,0000,0000,0000,,是作曲家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the composer 
+Dialogue: 0,0:04:41.18,0:04:44.17,*Default,NTP,0000,0000,0000,,而演奏者  比如小提琴手  拿到这张\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the performer, the violinist, gets this piece of--
+Dialogue: 0,0:04:44.17,0:04:45.56,*Default,NTP,0000,0000,0000,,拿到这张蓝图之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets this blueprint 
+Dialogue: 0,0:04:45.56,0:04:48.03,*Default,NTP,0000,0000,0000,,对音乐记谱法来说该叫  黑图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or black print in the case of musical notation
+Dialogue: 0,0:04:48.03,0:04:51.46,*Default,NTP,0000,0000,0000,,他只是被要求简单地把黑图复制出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and is expected simply to replicate the black print.
+Dialogue: 0,0:04:51.46,0:04:53.24,*Default,NTP,0000,0000,0000,,和其他种类的音乐相比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that's very different
+Dialogue: 0,0:04:53.24,0:04:56.98,*Default,NTP,0000,0000,0000,,这点有很大区别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than what happens in other kinds of music.
+Dialogue: 0,0:04:56.98,0:04:59.68,*Default,NTP,0000,0000,0000,,我们再看一下流行音乐:\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's talk about pop music for a second:
+Dialogue: 0,0:04:59.95,0:05:04.36,*Default,NTP,0000,0000,0000,,爵士  摇滚  嘻哈  蓝调  类似这些音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}jazz, rock, hip-hop, blues, that kind of thing.
+Dialogue: 0,0:05:04.36,0:05:06.00,*Default,NTP,0000,0000,0000,,当你们去Toad's Place夜总会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You go over to Toad's Place 
+Dialogue: 0,0:05:06.00,0:05:07.01,*Default,NTP,0000,0000,0000,,看见乐队出场的时候  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you see the band come out and 
+Dialogue: 0,0:05:07.01,0:05:07.84,*Default,NTP,0000,0000,0000,,难道他们所做的第一件事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first thing they do
+Dialogue: 0,0:05:07.84,0:05:10.07,*Default,NTP,0000,0000,0000,,就是把这玩意儿杵在跟前吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is plunk this in front of them?
+Dialogue: 0,0:05:10.07,0:05:11.44,*Default,NTP,0000,0000,0000,,当然不会  那样太傻了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No. That'd be ridiculous.
+Dialogue: 0,0:05:11.44,0:05:12.74,*Default,NTP,0000,0000,0000,,你们中有哪几位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many of you--
+Dialogue: 0,0:05:12.74,0:05:16.17,*Default,NTP,0000,0000,0000,,前些天我和一个学生在课后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was walking with a student over to my office 
+Dialogue: 0,0:05:16.17,0:05:17.61,*Default,NTP,0000,0000,0000,,一起去我的办公室取材料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after lecture the other day to get some material to him.
+Dialogue: 0,0:05:17.61,0:05:19.47,*Default,NTP,0000,0000,0000,,你们中有哪些参加了摇滚乐队的演出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many of you play in a rock band
+Dialogue: 0,0:05:19.47,0:05:21.78,*Default,NTP,0000,0000,0000,,或者曾经参加过摇滚乐队的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or have ever played in a rock band?
+Dialogue: 0,0:05:21.78,0:05:25.07,*Default,NTP,0000,0000,0000,,好的  相当一部分都有过  这位年轻的女士\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, a number of you. Young lady out there,
+Dialogue: 0,0:05:25.07,0:05:28.22,*Default,NTP,0000,0000,0000,,你用乐谱吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}did you use musical notation?
+Dialogue: 0,0:05:28.22,0:05:31.52,*Default,NTP,0000,0000,0000,,不用  那样会显得很傻  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No. That would be kind of silly. Right?
+Dialogue: 0,0:05:31.52,0:05:33.62,*Default,NTP,0000,0000,0000,,这个很好的  那是怎么办到的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's--Okay. So how is it done?
+Dialogue: 0,0:05:33.62,0:05:35.28,*Default,NTP,0000,0000,0000,,纯粹凭借听力做到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it's all done aurally
+Dialogue: 0,0:05:35.28,0:05:40.03,*Default,NTP,0000,0000,0000,,之后的课程里我们会细谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk a little bit more about that as we go along.
+Dialogue: 0,0:05:41.04,0:05:43.40,*Default,NTP,0000,0000,0000,,所以在西方  作曲家的地位是非常重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the composer in the West is very important,
+Dialogue: 0,0:05:43.40,0:05:45.63,*Default,NTP,0000,0000,0000,,比其他文化中的作曲家更重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more important than the composer in other cultures.
+Dialogue: 0,0:05:45.63,0:05:49.54,*Default,NTP,0000,0000,0000,,其他文化不使用这样说明性的记谱法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Other cultures don't use this type of prescriptive notation.
+Dialogue: 0,0:05:49.54,0:05:50.88,*Default,NTP,0000,0000,0000,,有一个学说称\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's a thought for you.
+Dialogue: 0,0:05:50.88,0:05:55.83,*Default,NTP,0000,0000,0000,,音乐记谱法是西方文化中第一种图示法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Musical notation was the first graph in Western culture.
+Dialogue: 0,0:05:55.83,0:05:56.78,*Default,NTP,0000,0000,0000,,你也许会问  怎么可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"How could that be?" You'd say.
+Dialogue: 0,0:05:56.78,0:05:57.57,*Default,NTP,0000,0000,0000,,怎么可能呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could that be? 
+Dialogue: 0,0:05:57.57,0:06:00.44,*Default,NTP,0000,0000,0000,,回顾一下从公元九世纪至二十世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well,if you go back to the formation of musical notation
+Dialogue: 0,0:06:00.44,0:06:02.90,*Default,NTP,0000,0000,0000,,音乐记谱法的历史形成过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from the ninth through the twelfth centuries
+Dialogue: 0,0:06:02.90,0:06:05.51,*Default,NTP,0000,0000,0000,,我们可以看出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we see that very early on 
+Dialogue: 0,0:06:05.51,0:06:07.02,*Default,NTP,0000,0000,0000,,音乐的两个维度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these two dimensions of music
+Dialogue: 0,0:06:07.02,0:06:09.80,*Default,NTP,0000,0000,0000,,就是我们之前提到的音乐的两个轴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the two axes of music that we talked about before
+Dialogue: 0,0:06:09.80,0:06:12.61,*Default,NTP,0000,0000,0000,,纵轴是音高  横轴是时值  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pitch vertically and duration horizontally, 
+Dialogue: 0,0:06:12.61,0:06:14.01,*Default,NTP,0000,0000,0000,,在早期已经存在了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are in place
+Dialogue: 0,0:06:14.01,0:06:17.49,*Default,NTP,0000,0000,0000,,我们在这样的网格上用点记录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we have these spots in this grid.
+Dialogue: 0,0:06:17.49,0:06:18.66,*Default,NTP,0000,0000,0000,,因此音乐记谱法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So musical notation:
+Dialogue: 0,0:06:18.66,0:06:21.43,*Default,NTP,0000,0000,0000,,是西方文化中最早的网格图示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first grid pattern in Western culture--
+Dialogue: 0,0:06:21.43,0:06:26.06,*Default,NTP,0000,0000,0000,,但这也限制了我们以某种有趣的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it does lock us in in interesting ways that we may--
+Dialogue: 0,0:06:26.60,0:06:31.05,*Default,NTP,0000,0000,0000,,你们也许从来没有想过的方式创作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you perhaps have never considered--
+Dialogue: 0,0:06:31.05,0:06:35.43,*Default,NTP,0000,0000,0000,,相对其他文化中音乐创作的过程而言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}compared to how music is made in other cultures.
+Dialogue: 0,0:06:35.43,0:06:38.01,*Default,NTP,0000,0000,0000,,让我们来看看其他文化中音乐是如何创作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's see how some music is made in other cultures.
+Dialogue: 0,0:06:38.01,0:06:39.58,*Default,NTP,0000,0000,0000,,我们将要播放\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to play here now 
+Dialogue: 0,0:06:39.58,0:06:43.73,*Default,NTP,0000,0000,0000,,一段圣歌的节选\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as our first excerpt an Adhan
+Dialogue: 0,0:06:43.84,0:06:48.80,*Default,NTP,0000,0000,0000,,这是穆斯林祈祷的圣歌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what this is is the Islamic call to worship
+Dialogue: 0,0:06:48.90,0:06:53.26,*Default,NTP,0000,0000,0000,,每天会在世界各地唱响千万次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is sung across the world thousands of times every day
+Dialogue: 0,0:06:53.26,0:06:55.28,*Default,NTP,0000,0000,0000,,在我们聆听的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as we listen to this
+Dialogue: 0,0:06:55.28,0:06:58.75,*Default,NTP,0000,0000,0000,,我在这里要求你们思考一下这部声乐作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want you to think about the vocal production here.
+Dialogue: 0,0:06:58.75,0:07:02.99,*Default,NTP,0000,0000,0000,,感受人声中有趣的微妙变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's interesting are all of the vocal nuances
+Dialogue: 0,0:07:02.99,0:07:05.98,*Default,NTP,0000,0000,0000,,让我们一起听一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so let's listen to just a bit of this please.
+Dialogue: 0,0:07:58.03,0:07:59.09,*Default,NTP,0000,0000,0000,,好的  停\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Let's stop there.
+Dialogue: 0,0:07:59.09,0:08:00.50,*Default,NTP,0000,0000,0000,,非常动听  多美的声音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fascinating. What a wonderful sound
+Dialogue: 0,0:08:00.50,0:08:03.50,*Default,NTP,0000,0000,0000,,而这其中的美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the beauty of it is all between
+Dialogue: 0,0:08:03.50,0:08:05.06,*Default,NTP,0000,0000,0000,,我们称之为音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what we would call the notes.
+Dialogue: 0,0:08:05.06,0:08:07.47,*Default,NTP,0000,0000,0000,,我们指定一个特定的频率  标记在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We would specify a precise frequency here
+Dialogue: 0,0:08:07.47,0:08:08.25,*Default,NTP,0000,0000,0000,,另一个频率标记在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}another one up here
+Dialogue: 0,0:08:08.25,0:08:10.13,*Default,NTP,0000,0000,0000,,但刚才那位先生唱的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but what that gentleman was singing
+Dialogue: 0,0:08:10.13,0:08:11.42,*Default,NTP,0000,0000,0000,,都在音符之间游走\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was all the stuff in between.
+Dialogue: 0,0:08:11.42,0:08:12.19,*Default,NTP,0000,0000,0000,,那使得它十分美丽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That made it very beautiful
+Dialogue: 0,0:08:12.19,0:08:13.69,*Default,NTP,0000,0000,0000,,我们却没有任何办法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's no way in God's earth
+Dialogue: 0,0:08:13.69,0:08:15.24,*Default,NTP,0000,0000,0000,,用西方的乐谱方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we could replicate
+Dialogue: 0,0:08:15.24,0:08:18.68,*Default,NTP,0000,0000,0000,,再现这样的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that to the Western system of musical notation.
+Dialogue: 0,0:08:18.68,0:08:20.08,*Default,NTP,0000,0000,0000,,再举个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's take another example.
+Dialogue: 0,0:08:20.08,0:08:22.68,*Default,NTP,0000,0000,0000,,我们来看看西方的爵士乐领域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to go to the realm of Western jazz here
+Dialogue: 0,0:08:22.68,0:08:24.63,*Default,NTP,0000,0000,0000,,我选了查克·曼卓林\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'm going to pick on Chuck Mangione.
+Dialogue: 0,0:08:24.63,0:08:26.81,*Default,NTP,0000,0000,0000,,有人听说过查克·曼卓林吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anybody ever heard of Chuck Mangione?
+Dialogue: 0,0:08:26.81,0:08:27.71,*Default,NTP,0000,0000,0000,,好的  布莱恩  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah. Okay. Brian, 
+Dialogue: 0,0:08:27.71,0:08:29.22,*Default,NTP,0000,0000,0000,,我们的技术支持人员  他听说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}our tech guy, has.
+Dialogue: 0,0:08:29.22,0:08:32.11,*Default,NTP,0000,0000,0000,,他稍年长些  差不多和我一样大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's an older fellow. He's sort of my age
+Dialogue: 0,0:08:32.11,0:08:36.78,*Default,NTP,0000,0000,0000,,我之所以拿查克·曼卓林来举例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the reason I mention Chuck Mangione is 
+Dialogue: 0,0:08:36.78,0:08:39.33,*Default,NTP,0000,0000,0000,,是因为很多年前我和他一起上过学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that years ago I went to school with him.
+Dialogue: 0,0:08:39.33,0:08:41.00,*Default,NTP,0000,0000,0000,,他在我前面的班上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was a couple of classes ahead of me
+Dialogue: 0,0:08:41.00,0:08:42.33,*Default,NTP,0000,0000,0000,,在伊曼音乐学院\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the Eastman School of Music.
+Dialogue: 0,0:08:42.33,0:08:43.67,*Default,NTP,0000,0000,0000,,我当时是个菜鸟钢琴手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was a fledgling pianist.
+Dialogue: 0,0:08:43.67,0:08:45.20,*Default,NTP,0000,0000,0000,,而他是个非常好的小号手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was a very good trumpeter.
+Dialogue: 0,0:08:45.20,0:08:48.53,*Default,NTP,0000,0000,0000,,的确  他二十岁的时候得过格莱美奖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indeed, he was winning Grammys when he was in his twenties
+Dialogue: 0,0:08:48.53,0:08:50.41,*Default,NTP,0000,0000,0000,,录过一些小众的爵士乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and has been recording sort of esoteric jazz
+Dialogue: 0,0:08:50.41,0:08:53.71,*Default,NTP,0000,0000,0000,,之后还录过一些流行爵士乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sometimes more pop jazz thereafter.
+Dialogue: 0,0:08:53.71,0:08:57.56,*Default,NTP,0000,0000,0000,,现在你可以去听一场曼卓林的演奏会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now you can go to a Mangione concert.
+Dialogue: 0,0:08:57.56,0:08:59.51,*Default,NTP,0000,0000,0000,,他有时候会在舒伯特音乐厅演出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He will sometimes play the Shubert Theater there
+Dialogue: 0,0:08:59.51,0:09:02.88,*Default,NTP,0000,0000,0000,,两个小时精彩绝伦的爵士乐表演\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they'll have two hours of spectacular jazz,
+Dialogue: 0,0:09:03.30,0:09:04.51,*Default,NTP,0000,0000,0000,,但同样  你不会看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but what you won't see, again
+Dialogue: 0,0:09:04.51,0:09:06.11,*Default,NTP,0000,0000,0000,,任何曲谱摆在他们面前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is any sort of music in front of them.
+Dialogue: 0,0:09:06.11,0:09:08.77,*Default,NTP,0000,0000,0000,,那这些音乐家是如何持续演出两个小时的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So how do these musicians generate two hours of music
+Dialogue: 0,0:09:08.77,0:09:11.81,*Default,NTP,0000,0000,0000,,在没有乐谱的情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with no music in front of them?
+Dialogue: 0,0:09:11.81,0:09:14.54,*Default,NTP,0000,0000,0000,,这是不是说他不识乐谱呢  当然不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does this mean he doesn't read music? Of course not.
+Dialogue: 0,0:09:14.54,0:09:17.07,*Default,NTP,0000,0000,0000,,如果没有受过严格的训练  是不可能从\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't get through these conservatories 
+Dialogue: 0,0:09:17.07,0:09:20.04,*Default,NTP,0000,0000,0000,,诸如伊曼  朱莉娅德或者柯蒂斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like eastman or Juilliard or Curtis
+Dialogue: 0,0:09:20.04,0:09:22.53,*Default,NTP,0000,0000,0000,,这样的音乐学府顺利毕业的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without being introduced to an intense regimen of musical notation
+Dialogue: 0,0:09:22.53,0:09:26.61,*Default,NTP,0000,0000,0000,,而这会妨碍到音乐本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it would get in the way of the music.
+Dialogue: 0,0:09:26.61,0:09:30.97,*Default,NTP,0000,0000,0000,,那么我们听一下这段音轨  一段萨克斯独奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let's listen to a track here, a sax solo
+Dialogue: 0,0:09:30.97,0:09:33.86,*Default,NTP,0000,0000,0000,,我会尽量从中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I am going to try to keep--
+Dialogue: 0,0:09:33.86,0:09:35.33,*Default,NTP,0000,0000,0000,,理出一些头绪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}make some sense out of this--
+Dialogue: 0,0:09:35.33,0:09:36.94,*Default,NTP,0000,0000,0000,,因为我们的音乐片段会越来越复杂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it gets more and more complex--
+Dialogue: 0,0:09:36.94,0:09:38.90,*Default,NTP,0000,0000,0000,,大家可以跟着底下电贝斯的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by following the electric bass underneath
+Dialogue: 0,0:09:38.90,0:09:40.73,*Default,NTP,0000,0000,0000,,好的  我们来一下老磁带\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so let's listen to an old tape.
+Dialogue: 0,0:09:40.73,0:09:43.08,*Default,NTP,0000,0000,0000,,我以前曾去过罗切斯特的酒吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I used to go to bars in Rochester
+Dialogue: 0,0:09:43.08,0:09:44.72,*Default,NTP,0000,0000,0000,,听这家伙演出  录下他的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and listen to this guy and tape his stuff.
+Dialogue: 0,0:09:44.72,0:09:46.82,*Default,NTP,0000,0000,0000,,这就是查克·曼卓林\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So here's Chuck Mangione
+Dialogue: 0,0:09:46.82,0:09:50.78,*Default,NTP,0000,0000,0000,,和他的萨克斯手一起演出的一段华彩乐章\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with his saxophonist and a saxophone cadenza.
+Dialogue: 0,0:09:50.78,0:09:54.08,*Default,NTP,0000,0000,0000,,相当狂放的萨克斯即兴演奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a wild riff for saxophone.
+Dialogue: 0,0:11:00.69,0:11:02.17,*Default,NTP,0000,0000,0000,,光这些应该就足够了  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's probably enough. 
+Dialogue: 0,0:11:02.17,0:11:03.24,*Default,NTP,0000,0000,0000,,这能让你有个概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gives you an idea.
+Dialogue: 0,0:11:03.24,0:11:04.96,*Default,NTP,0000,0000,0000,,你怎么可能把刚才这段音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now how in the world 
+Dialogue: 0,0:11:04.96,0:11:06.11,*Default,NTP,0000,0000,0000,,用符号记录下来呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would you ever notate that?
+Dialogue: 0,0:11:06.11,0:11:09.49,*Default,NTP,0000,0000,0000,,制作成一份人人都能遵循的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To produce this as a pre-scripted document
+Dialogue: 0,0:11:09.49,0:11:11.03,*Default,NTP,0000,0000,0000,,那种预制文件呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that anybody else could follow?
+Dialogue: 0,0:11:11.03,0:11:12.26,*Default,NTP,0000,0000,0000,,那段是完全即兴的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was all improvisatory.
+Dialogue: 0,0:11:12.26,0:11:13.36,*Default,NTP,0000,0000,0000,,如果有人试图去记录下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If they tried to notate it, again
+Dialogue: 0,0:11:13.36,0:11:15.34,*Default,NTP,0000,0000,0000,,那也就剥夺了这段音乐所有的神韵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would take all the spirit out
+Dialogue: 0,0:11:15.34,0:11:17.59,*Default,NTP,0000,0000,0000,,取走了这曲子的灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the heart out of the music.
+Dialogue: 0,0:11:17.59,0:11:18.47,*Default,NTP,0000,0000,0000,,那他们是怎么做到的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, how do they do that?
+Dialogue: 0,0:11:18.47,0:11:21.59,*Default,NTP,0000,0000,0000,,这些演奏者是怎样演奏这么长的音乐的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do these performers play such long spans of music
+Dialogue: 0,0:11:21.59,0:11:22.94,*Default,NTP,0000,0000,0000,,在完全没有记谱的情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without any notation?
+Dialogue: 0,0:11:22.94,0:11:24.55,*Default,NTP,0000,0000,0000,,靠死记硬背吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it all memorized?
+Dialogue: 0,0:11:24.55,0:11:26.30,*Default,NTP,0000,0000,0000,,这完全不是想我们猜想的那样是靠死记硬背的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it's not memorized as we think of it
+Dialogue: 0,0:11:26.30,0:11:28.20,*Default,NTP,0000,0000,0000,,也许你上音乐课的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you may have had music lessons along the way
+Dialogue: 0,0:11:28.20,0:11:29.57,*Default,NTP,0000,0000,0000,,你的老师或和你妈妈会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your teacher and your mother said
+Dialogue: 0,0:11:29.57,0:11:32.28,*Default,NTP,0000,0000,0000,,记下这一段  而这段音乐不是像那样靠死记硬背的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Go memorize your piece." It's not memorized like that.
+Dialogue: 0,0:11:32.28,0:11:34.73,*Default,NTP,0000,0000,0000,,他们还是依照某种基本的范式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are certain basic patterns that they have.
+Dialogue: 0,0:11:34.73,0:11:36.93,*Default,NTP,0000,0000,0000,,他们会事先交流好要演出一段怎样的乐章\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They might say for that sort of music:
+Dialogue: 0,0:11:36.93,0:11:39.33,*Default,NTP,0000,0000,0000,,好吧  我们要出一段三十二小节的独奏曲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"All right. We're now going to have a thirty-two-bar solo.
+Dialogue: 0,0:11:39.33,0:11:40.86,*Default,NTP,0000,0000,0000,,用降E调\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll be in the key of E-flat.
+Dialogue: 0,0:11:40.86,0:11:41.61,*Default,NTP,0000,0000,0000,,我们将会采取\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to work through 
+Dialogue: 0,0:11:41.61,0:11:44.36,*Default,NTP,0000,0000,0000,,一  六  四  五  一的和弦进行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a one, six, four, five, one chord progression 
+Dialogue: 0,0:11:44.36,0:11:46.00,*Default,NTP,0000,0000,0000,,然后我们回到开头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as--We'll come back to that.
+Dialogue: 0,0:11:46.00,0:11:49.33,*Default,NTP,0000,0000,0000,,主和弦占八拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll sit on the dominant chord for eight beats
+Dialogue: 0,0:11:49.33,0:11:50.87,*Default,NTP,0000,0000,0000,,然后我会见机行事 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I will look over and 
+Dialogue: 0,0:11:50.87,0:11:54.80,*Default,NTP,0000,0000,0000,,在克里斯的独奏结束时大家回到主调  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}everybody else will come back in at the end of Chris's solo."
+Dialogue: 0,0:11:54.80,0:11:56.12,*Default,NTP,0000,0000,0000,,可能就是这样成曲的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It would be that kind of thing
+Dialogue: 0,0:11:56.12,0:11:58.58,*Default,NTP,0000,0000,0000,,一个起调  一些笼统的计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}kind of head charts, general plans
+Dialogue: 0,0:11:58.86,0:12:03.79,*Default,NTP,0000,0000,0000,,其间有很大余地可以自由发挥的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and within that general plan a lot of freedom of expression.
+Dialogue: 0,0:12:04.11,0:12:08.03,*Default,NTP,0000,0000,0000,,讲完记谱法的一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So having said that about musical notation--
+Dialogue: 0,0:12:08.03,0:12:11.34,*Default,NTP,0000,0000,0000,,足以为戒的故事之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something about a cautionary tale about musical notation--
+Dialogue: 0,0:12:11.34,0:12:12.14,*Default,NTP,0000,0000,0000,,我们也该想一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we should think about 
+Dialogue: 0,0:12:12.14,0:12:15.80,*Default,NTP,0000,0000,0000,,它是如何影响西方音乐的作曲方式的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how it affects the way we compose music in the West
+Dialogue: 0,0:12:15.80,0:12:18.76,*Default,NTP,0000,0000,0000,,以及如何影响西方音乐的演奏方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how we perform music in the West.
+Dialogue: 0,0:12:18.76,0:12:23.24,*Default,NTP,0000,0000,0000,,比如当你们去听古典音乐会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you go to a concert of classical music
+Dialogue: 0,0:12:23.24,0:12:26.31,*Default,NTP,0000,0000,0000,,在演奏进行时  你们开始讲话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the music is played and you start to talk
+Dialogue: 0,0:12:26.31,0:12:28.01,*Default,NTP,0000,0000,0000,,那会发生什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what happens? 
+Dialogue: 0,0:12:29.15,0:12:32.42,*Default,NTP,0000,0000,0000,,一定会有人对你比划  嘘  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Somebody will go, "Shh." Right? 
+Dialogue: 0,0:12:32.42,0:12:36.51,*Default,NTP,0000,0000,0000,,我们去听这些演奏会时都要保持绝对安静\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We go to these concerts and we have to be so quiet.
+Dialogue: 0,0:12:36.51,0:12:38.71,*Default,NTP,0000,0000,0000,,我们为什么要保持安静呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do we have to be quiet?
+Dialogue: 0,0:12:39.83,0:12:42.04,*Default,NTP,0000,0000,0000,,这听起来很无趣啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That doesn't sound like much fun.
+Dialogue: 0,0:12:42.04,0:12:43.56,*Default,NTP,0000,0000,0000,,为什么我们要保持如此的安静\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do we have to be so quiet?
+Dialogue: 0,0:12:43.56,0:12:45.53,*Default,NTP,0000,0000,0000,,是因为台上有演奏人员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's because we have these performers up there
+Dialogue: 0,0:12:45.53,0:12:47.19,*Default,NTP,0000,0000,0000,,他们在看乐谱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are reading this blueprint
+Dialogue: 0,0:12:47.19,0:12:50.60,*Default,NTP,0000,0000,0000,,大家都在听  基本上就是在揣摩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and everyone is listening, basically to see 
+Dialogue: 0,0:12:50.60,0:12:54.46,*Default,NTP,0000,0000,0000,,他们能在多大程度上精确地复制和再现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how accurately they can reproduce, revivify
+Dialogue: 0,0:12:54.46,0:12:57.08,*Default,NTP,0000,0000,0000,,这件人工的艺术作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this artistic artifact.
+Dialogue: 0,0:12:57.08,0:12:58.72,*Default,NTP,0000,0000,0000,,大概就是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's sort of what's going on
+Dialogue: 0,0:12:58.72,0:13:01.92,*Default,NTP,0000,0000,0000,,不过这的确影响到了我们的行为  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it really does affect how we behave, 
+Dialogue: 0,0:13:01.92,0:13:03.33,*Default,NTP,0000,0000,0000,,即使在音乐会上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even, in a concert.
+Dialogue: 0,0:13:03.33,0:13:05.45,*Default,NTP,0000,0000,0000,,如果你去听其他文化的音乐会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now if you go to concerts of other cultures
+Dialogue: 0,0:13:05.45,0:13:08.07,*Default,NTP,0000,0000,0000,,那些文化包括的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they are engaged in their own classical
+Dialogue: 0,0:13:08.07,0:13:10.02,*Default,NTP,0000,0000,0000,,不仅是流行音乐  还有他们的传统音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not just popular, but classical music
+Dialogue: 0,0:13:10.02,0:13:12.04,*Default,NTP,0000,0000,0000,,举个例子  印度尼西亚的加麦兰音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indonesian gamelan music for example
+Dialogue: 0,0:13:12.04,0:13:16.60,*Default,NTP,0000,0000,0000,,届时现场听众会前后摇摆  拍手  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the audience will be there swaying back and forth clapping, 
+Dialogue: 0,0:13:16.60,0:13:20.31,*Default,NTP,0000,0000,0000,,合着一段非常精彩的独奏表演一起鼓掌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}applauding with the performance with particularly good solo
+Dialogue: 0,0:13:20.31,0:13:21.69,*Default,NTP,0000,0000,0000,,同样的情况也会发生在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the same thing with 
+Dialogue: 0,0:13:21.69,0:13:24.60,*Default,NTP,0000,0000,0000,,印度经典传统音乐锡塔尔音乐的演奏现场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indian sitar music that classical tradition.
+Dialogue: 0,0:13:24.60,0:13:28.10,*Default,NTP,0000,0000,0000,,非常奇怪  这很像爵士音乐会的场面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oddly, it's much more like going to a jazz concert
+Dialogue: 0,0:13:28.10,0:13:30.31,*Default,NTP,0000,0000,0000,,观众们为鼓励演奏者而围坐在桌边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the audience is sitting maybe around tables
+Dialogue: 0,0:13:30.31,0:13:31.34,*Default,NTP,0000,0000,0000,,或围着别的什么的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or something like that 
+Dialogue: 0,0:13:31.34,0:13:35.55,*Default,NTP,0000,0000,0000,,并和演奏者积极互动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and encouraging and interacting with the performers
+Dialogue: 0,0:13:35.55,0:13:37.38,*Default,NTP,0000,0000,0000,,而这些文化中都没有记谱法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but again in those cultures no notation.
+Dialogue: 0,0:13:37.38,0:13:40.17,*Default,NTP,0000,0000,0000,,没有乐谱  每个人跟木乃伊一样坐在那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no notation, everybody sits there sort of mummified,
+Dialogue: 0,0:13:40.17,0:13:43.52,*Default,NTP,0000,0000,0000,,等待着伟大的作品再现人间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}waiting for this great work of art to come back to life.
+Dialogue: 0,0:13:43.52,0:13:45.22,*Default,NTP,0000,0000,0000,,这真是件很有趣的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an interesting thing.
+Dialogue: 0,0:13:45.80,0:13:49.02,*Default,NTP,0000,0000,0000,,这是我们很典型的西方思考习惯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And isn't it typical of us in the West 
+Dialogue: 0,0:13:49.02,0:13:51.36,*Default,NTP,0000,0000,0000,,把诸如音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to take something, music
+Dialogue: 0,0:13:51.36,0:13:54.43,*Default,NTP,0000,0000,0000,,这样表达情感  表现情绪和动作的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is expression and feeling and motion and movement
+Dialogue: 0,0:13:54.43,0:13:56.18,*Default,NTP,0000,0000,0000,,对声音的一种反馈  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a response to sound 
+Dialogue: 0,0:13:56.18,0:13:59.86,*Default,NTP,0000,0000,0000,,转换为一种复合模式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and turn it into complex patterns
+Dialogue: 0,0:13:59.86,0:14:03.11,*Default,NTP,0000,0000,0000,,一种可以被形象化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}complex patterns that can be visualized
+Dialogue: 0,0:14:03.11,0:14:06.11,*Default,NTP,0000,0000,0000,,可以被重新整理和分析\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and rearranged and analyzed
+Dialogue: 0,0:14:06.11,0:14:08.71,*Default,NTP,0000,0000,0000,,甚至在今天可以被数字化的复合模式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and nowadays even digitalized.
+Dialogue: 0,0:14:08.71,0:14:10.72,*Default,NTP,0000,0000,0000,,我们所做的就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we've done is take 
+Dialogue: 0,0:14:10.72,0:14:15.30,*Default,NTP,0000,0000,0000,,对于声音的产生以及身体随声音的活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this spontaneous response to the creation of sound
+Dialogue: 0,0:14:15.30,0:14:20.56,*Default,NTP,0000,0000,0000,,做出自发式的反馈  并且进行替换\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and bodily movement with sound and replaced it.
+Dialogue: 0,0:14:20.56,0:14:24.99,*Default,NTP,0000,0000,0000,,我们用眼睛和心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've replaced the ear and the heart
+Dialogue: 0,0:14:24.99,0:14:28.67,*Default,NTP,0000,0000,0000,,取代了耳朵和脏器  耳朵和身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the ear and the body, with the eye and the mind.
+Dialogue: 0,0:14:28.67,0:14:30.28,*Default,NTP,0000,0000,0000,,我们的这种更加可观赏的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ours a much more visual--
+Dialogue: 0,0:14:30.28,0:14:31.89,*Default,NTP,0000,0000,0000,,更易分析的音乐创作途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a much more analytical--
+Dialogue: 0,0:14:31.89,0:14:35.19,*Default,NTP,0000,0000,0000,,自然也有正反两面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}type of approach to music and it has its pros and cons.
+Dialogue: 0,0:14:35.19,0:14:37.28,*Default,NTP,0000,0000,0000,,我们拥有伟大的马勒交响曲的同时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We get great Mahler symphonies yet
+Dialogue: 0,0:14:37.28,0:14:42.20,*Default,NTP,0000,0000,0000,,也要求大家在音乐会上要坐得像块石头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have everybody sitting there rock-still at these concerts.
+Dialogue: 0,0:14:42.60,0:14:44.57,*Default,NTP,0000,0000,0000,,好的  既然我们已经提到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Having said that 
+Dialogue: 0,0:14:44.57,0:14:49.16,*Default,NTP,0000,0000,0000,,并指出了记谱法的优势和劣势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and pointing out the advantages and disadvantages of notation
+Dialogue: 0,0:14:49.16,0:14:51.84,*Default,NTP,0000,0000,0000,,那接下来我们就来对它进行一番讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's plunge in then to a discussion of it.
+Dialogue: 0,0:14:51.84,0:14:53.90,*Default,NTP,0000,0000,0000,,我在白板上写了一下这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've put on the board up here the following
+Dialogue: 0,0:14:53.90,0:14:55.78,*Default,NTP,0000,0000,0000,,我们来复习一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to review this.
+Dialogue: 0,0:14:55.78,0:15:00.43,*Default,NTP,0000,0000,0000,,这是你们教材十五页上的一些简单材料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's simply material found on page fifteen of your textbook
+Dialogue: 0,0:15:00.43,0:15:02.86,*Default,NTP,0000,0000,0000,,我们复习一下  我们说这是个入门课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let's review it. We say this is a beginning course
+Dialogue: 0,0:15:02.86,0:15:05.65,*Default,NTP,0000,0000,0000,,所以假设之前你们没有任何相关知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we assume no previous knowledge.
+Dialogue: 0,0:15:05.65,0:15:07.44,*Default,NTP,0000,0000,0000,,如果你通读这个材料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you've read through that material
+Dialogue: 0,0:15:07.44,0:15:09.09,*Default,NTP,0000,0000,0000,,现在你应该也已经通读过了这一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you should have read through it by now
+Dialogue: 0,0:15:09.09,0:15:12.08,*Default,NTP,0000,0000,0000,,你应该知道我们的音乐中有一种音符值\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know that we have a value in music.
+Dialogue: 0,0:15:12.08,0:15:13.34,*Default,NTP,0000,0000,0000,,称作全音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's called the whole note.
+Dialogue: 0,0:15:13.34,0:15:16.02,*Default,NTP,0000,0000,0000,,什么是全音符  这些符号又都是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the whole note is, what all these symbols are
+Dialogue: 0,0:15:16.02,0:15:18.76,*Default,NTP,0000,0000,0000,,这些就是简单代表了持续时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are simply representations of duration
+Dialogue: 0,0:15:18.76,0:15:21.47,*Default,NTP,0000,0000,0000,,因此我们这里有一套符号语言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we have a symbolic language here
+Dialogue: 0,0:15:21.47,0:15:24.37,*Default,NTP,0000,0000,0000,,来代表横轴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's going to represent the horizontal axis
+Dialogue: 0,0:15:24.37,0:15:26.64,*Default,NTP,0000,0000,0000,,就是时值的那条轴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the axis of duration.
+Dialogue: 0,0:15:26.64,0:15:27.80,*Default,NTP,0000,0000,0000,,这个全音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this whole note
+Dialogue: 0,0:15:27.80,0:15:31.19,*Default,NTP,0000,0000,0000,,很明显  可以再分为两个半音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}obviously can be subdivided into two half notes
+Dialogue: 0,0:15:31.19,0:15:33.39,*Default,NTP,0000,0000,0000,,每个半音符又可以再细分为两个四分之一音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and each of the half notes into two quarter notes
+Dialogue: 0,0:15:33.39,0:15:36.77,*Default,NTP,0000,0000,0000,,每个四分之一音符可以再分为两个八分之一音符  等等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}each of these quarter notes into two eighth notes, and so on.
+Dialogue: 0,0:15:36.77,0:15:38.90,*Default,NTP,0000,0000,0000,,因此  这些符号是告诉我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So these are symbols telling us
+Dialogue: 0,0:15:38.90,0:15:44.57,*Default,NTP,0000,0000,0000,,某个特定的声音频率要持续多长时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how long a particular frequency is to endure.
+Dialogue: 0,0:15:44.57,0:15:47.33,*Default,NTP,0000,0000,0000,,类似的  既然我们有符号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Similarly, just as we have symbols
+Dialogue: 0,0:15:47.33,0:15:51.30,*Default,NTP,0000,0000,0000,,来表示声音的频率和长度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the presence of sound and its length,
+Dialogue: 0,0:15:51.30,0:15:54.46,*Default,NTP,0000,0000,0000,,我们也有表示静音的符号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have symbols that represent the absence of sound.
+Dialogue: 0,0:15:54.46,0:15:58.29,*Default,NTP,0000,0000,0000,,我们称之为  什么  休止符  非常好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We call those of course, what? Rests. Okay.
+Dialogue: 0,0:15:58.29,0:16:00.90,*Default,NTP,0000,0000,0000,,我们在这里休止了  不发出任何声音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we're resting over here. We're not making any music.
+Dialogue: 0,0:16:01.23,0:16:06.00,*Default,NTP,0000,0000,0000,,我们有了音符及其音符值  还有休止符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we have the notes and their values and the rests.
+Dialogue: 0,0:16:06.00,0:16:11.67,*Default,NTP,0000,0000,0000,,你会注意到它们都是以双倍的形式分配的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Notice that they're all pretty much duple in their divisions.
+Dialogue: 0,0:16:11.67,0:16:13.36,*Default,NTP,0000,0000,0000,,那这里有个问题  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now here's a question for you--
+Dialogue: 0,0:16:13.37,0:16:15.25,*Default,NTP,0000,0000,0000,,如果都是双倍形式分配的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all duple divisions.
+Dialogue: 0,0:16:16.58,0:16:17.71,*Default,NTP,0000,0000,0000,,那我们怎么做到--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do we make--
+Dialogue: 0,0:16:17.72,0:16:19.74,*Default,NTP,0000,0000,0000,,当我们需要三倍方式的安排时怎么办\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do we get triple arrangements in music?
+Dialogue: 0,0:16:19.74,0:16:21.06,*Default,NTP,0000,0000,0000,,我们该怎么做呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do we do that?
+Dialogue: 0,0:16:21.66,0:16:23.64,*Default,NTP,0000,0000,0000,,我们有了我们基本的音符  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we take our basic note and 
+Dialogue: 0,0:16:23.64,0:16:25.01,*Default,NTP,0000,0000,0000,,那该怎么处理它们呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what do we do to it?
+Dialogue: 0,0:16:25.01,0:16:27.07,*Default,NTP,0000,0000,0000,,我猜--我肯定你们中有些知道这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I bet--I'm sure some of you know this.
+Dialogue: 0,0:16:27.07,0:16:28.98,*Default,NTP,0000,0000,0000,,我们怎么加上一个二分音符 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How can we get a half note
+Dialogue: 0,0:16:28.98,0:16:31.51,*Default,NTP,0000,0000,0000,,从而正好代表了三个四分音符呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that actually equals now three quarter notes?
+Dialogue: 0,0:16:31.51,0:16:34.69,*Default,NTP,0000,0000,0000,,我们怎么做呢  这位先生  加个附点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What do we do? Gentleman here. Add a dot.
+Dialogue: 0,0:16:34.69,0:16:39.86,*Default,NTP,0000,0000,0000,,这个附点加上了多大比例的音符值呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does that do to this value specifically in terms of ratios?
+Dialogue: 0,0:16:39.86,0:16:41.33,*Default,NTP,0000,0000,0000,,加上了  非常好  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It adds--Okay. 
+Dialogue: 0,0:16:41.33,0:16:44.00,*Default,NTP,0000,0000,0000,,加上了百分之五十或者说一半的原音符值\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It adds fifty percent or a half to that
+Dialogue: 0,0:16:44.00,0:16:45.96,*Default,NTP,0000,0000,0000,,这意味着除了有两个四分音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that means instead of two quarter notes
+Dialogue: 0,0:16:45.96,0:16:47.28,*Default,NTP,0000,0000,0000,,我们现在有三个了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we now have three
+Dialogue: 0,0:16:47.28,0:16:51.30,*Default,NTP,0000,0000,0000,,我们也可以在其他这些音符值后加上附点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we can do the same thing to any one of these other values here
+Dialogue: 0,0:16:51.30,0:16:54.72,*Default,NTP,0000,0000,0000,,这就是我们如何做到三倍形式的安排的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's how we get our triple relationships.
+Dialogue: 0,0:16:54.72,0:16:57.30,*Default,NTP,0000,0000,0000,,清楚了吗  这些就是基本的音符值 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay? So those are the basic note values
+Dialogue: 0,0:16:57.98,0:16:59.75,*Default,NTP,0000,0000,0000,,一般是双倍形式分配\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}normally with a duple division
+Dialogue: 0,0:16:59.75,0:17:01.57,*Default,NTP,0000,0000,0000,,但我们可以把它添加为三倍形式的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we can superimpose triple 
+Dialogue: 0,0:17:01.57,0:17:05.33,*Default,NTP,0000,0000,0000,,通过加上附点当然还有休止符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by using a dot and the absence of sound.
+Dialogue: 0,0:17:05.33,0:17:07.22,*Default,NTP,0000,0000,0000,,接下来我们花点时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now let's talk for a moment 
+Dialogue: 0,0:17:07.22,0:17:09.73,*Default,NTP,0000,0000,0000,,说一下音乐的律动这个概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the idea of pulse in music
+Dialogue: 0,0:17:09.73,0:17:12.39,*Default,NTP,0000,0000,0000,,还有音乐的拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the beat in the music 
+Dialogue: 0,0:17:12.93,0:17:15.03,*Default,NTP,0000,0000,0000,,和音乐的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and rhythms in music.
+Dialogue: 0,0:17:15.03,0:17:17.76,*Default,NTP,0000,0000,0000,,我们都知道在音乐中有种概念称作  拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We all know that there is this thing in music called "Beat"
+Dialogue: 0,0:17:17.76,0:17:20.18,*Default,NTP,0000,0000,0000,,这也就是为什么流行音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to the extent that popular music 
+Dialogue: 0,0:17:20.18,0:17:21.85,*Default,NTP,0000,0000,0000,,从某种意义上说会那么好听\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is more interesting and that you--
+Dialogue: 0,0:17:21.85,0:17:23.57,*Default,NTP,0000,0000,0000,,大家都会喜欢  并且愿意随之起舞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}everybody likes it and will go dance to it is
+Dialogue: 0,0:17:23.57,0:17:26.02,*Default,NTP,0000,0000,0000,,就是因为它把拍和节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's really foregrounding beat and rhythm
+Dialogue: 0,0:17:26.02,0:17:29.80,*Default,NTP,0000,0000,0000,,摆在显要位置  而古典音乐就不是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in an important way that classical music does not.
+Dialogue: 0,0:17:29.80,0:17:33.63,*Default,NTP,0000,0000,0000,,我把拍的概念写在白板上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I've put this idea of the beat up on the board here.
+Dialogue: 0,0:17:33.63,0:17:37.50,*Default,NTP,0000,0000,0000,,这真的是一种律动  很像人类的脉搏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really just a pulse. It's very much like the human pulse.
+Dialogue: 0,0:17:37.50,0:17:39.70,*Default,NTP,0000,0000,0000,,这是音乐的脉搏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the pulse of music and
+Dialogue: 0,0:17:39.70,0:17:43.07,*Default,NTP,0000,0000,0000,,从十五世纪晚期到现在的音乐理论家们 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}music theorists ever since the late fifteenth century from music theory
+Dialogue: 0,0:17:43.07,0:17:44.75,*Default,NTP,0000,0000,0000,,像弗朗西斯·加福瑞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Francinus Gafurius on
+Dialogue: 0,0:17:44.75,0:17:45.67,*Default,NTP,0000,0000,0000,,我们回到那个年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we could go all the way back then
+Dialogue: 0,0:17:45.67,0:17:47.65,*Default,NTP,0000,0000,0000,,那时就曾说过  音乐的律动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have said that the pulse in music
+Dialogue: 0,0:17:47.65,0:17:50.51,*Default,NTP,0000,0000,0000,,和人类的脉搏节奏基本一致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is basically at the same tempo as the human pulse
+Dialogue: 0,0:17:50.51,0:17:52.10,*Default,NTP,0000,0000,0000,,就是说相当于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which comes out to be about oh,
+Dialogue: 0,0:17:52.10,0:17:55.13,*Default,NTP,0000,0000,0000,,我们说如果是你的脉搏的话  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll say seventy-two beats 
+Dialogue: 0,0:17:55.13,0:17:57.09,*Default,NTP,0000,0000,0000,,每分钟七十二下左右\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you will, pulses, per minute.
+Dialogue: 0,0:17:57.46,0:17:59.46,*Default,NTP,0000,0000,0000,,我们拥有这种律动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we have this pulse,
+Dialogue: 0,0:17:59.46,0:18:02.61,*Default,NTP,0000,0000,0000,,而且就像泉水一样流淌出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's just kind of out there streaming,
+Dialogue: 0,0:18:04.67,0:18:07.36,*Default,NTP,0000,0000,0000,,但在西方国家我们不喜欢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we don't like 
+Dialogue: 0,0:18:07.36,0:18:10.53,*Default,NTP,0000,0000,0000,,没有差别的  杂乱无章的素材\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}undifferentiated, disorganized material in the West.
+Dialogue: 0,0:18:10.53,0:18:11.87,*Default,NTP,0000,0000,0000,,我们的心理学家说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our psyche says 
+Dialogue: 0,0:18:11.87,0:18:15.85,*Default,NTP,0000,0000,0000,,我们要把素材依照我们的理性有机地整合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've got to bring rational organization to this.
+Dialogue: 0,0:18:15.85,0:18:16.93,*Default,NTP,0000,0000,0000,,想过这点吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ever think about this?
+Dialogue: 0,0:18:16.93,0:18:21.15,*Default,NTP,0000,0000,0000,,为什么我们上历史课的时候会有一个一个时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do we have this periodicity when you take history courses?
+Dialogue: 0,0:18:21.15,0:18:23.65,*Default,NTP,0000,0000,0000,,为什么我们会有文艺复兴时期  巴洛克时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do we have the Renaissance, the baroque period
+Dialogue: 0,0:18:23.65,0:18:27.35,*Default,NTP,0000,0000,0000,,古典主义时期  浪漫主义时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the classical period, the romantic period and so on?
+Dialogue: 0,0:18:27.35,0:18:28.93,*Default,NTP,0000,0000,0000,,我们在音乐中也有  我们在历史上也有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have it in music. We have it in history.
+Dialogue: 0,0:18:28.93,0:18:30.76,*Default,NTP,0000,0000,0000,,我们的优秀艺术中都有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have it in the fine arts.
+Dialogue: 0,0:18:30.76,0:18:32.00,*Default,NTP,0000,0000,0000,,为什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why do we have it? 
+Dialogue: 0,0:18:32.00,0:18:35.89,*Default,NTP,0000,0000,0000,,这仅仅是在事后建立的一种惯例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's simply a convention established after the fact
+Dialogue: 0,0:18:35.89,0:18:38.94,*Default,NTP,0000,0000,0000,,好让我们组织材料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that allows us to organize material 
+Dialogue: 0,0:18:38.94,0:18:41.20,*Default,NTP,0000,0000,0000,,用容易整理的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in ways that we can grapple with it
+Dialogue: 0,0:18:41.20,0:18:43.27,*Default,NTP,0000,0000,0000,,用容易理解的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ways that we can understand it.
+Dialogue: 0,0:18:43.27,0:18:46.77,*Default,NTP,0000,0000,0000,,因此在音乐里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So in music what has happened is that
+Dialogue: 0,0:18:46.77,0:18:49.14,*Default,NTP,0000,0000,0000,,我们用可以理解的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have organized this steady stream of beats 
+Dialogue: 0,0:18:49.14,0:18:51.11,*Default,NTP,0000,0000,0000,,把这些稳定的一连串拍进行重组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in ways that we can understand.
+Dialogue: 0,0:18:51.11,0:18:55.88,*Default,NTP,0000,0000,0000,,我们把它们重新组织  把它们分成两个一组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We organize them. We subdivide these into units of two
+Dialogue: 0,0:18:55.88,0:18:59.12,*Default,NTP,0000,0000,0000,,比如像这样的两个一组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, groups of two like this
+Dialogue: 0,0:18:59.12,0:19:02.56,*Default,NTP,0000,0000,0000,,或者我们可以有一个没有差别的节奏串  像这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or we have an undifferentiated stream like this.
+Dialogue: 0,0:19:02.56,0:19:05.04,*Default,NTP,0000,0000,0000,,我相信  尽管我确信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I am convinced--even though I'm sure
+Dialogue: 0,0:19:05.04,0:19:08.61,*Default,NTP,0000,0000,0000,,丰田汽车公司不会这样组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the Toyota Motor Company didn't organize it this way—
+Dialogue: 0,0:19:08.61,0:19:12.24,*Default,NTP,0000,0000,0000,,我确信在我车上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I am convinced that on my automobile
+Dialogue: 0,0:19:12.24,0:19:17.24,*Default,NTP,0000,0000,0000,,当我没有系上安全带的时候  会有响铃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I do not plug in my safety belt that there is a bell ringing
+Dialogue: 0,0:19:17.24,0:19:21.10,*Default,NTP,0000,0000,0000,,"叮  叮  叮  叮  叮  叮"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"DING, ding, ding, DING, ding, ding."
+Dialogue: 0,0:19:23.65,0:19:24.47,*Default,NTP,0000,0000,0000,,我不觉得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't think 
+Dialogue: 0,0:19:24.47,0:19:26.96,*Default,NTP,0000,0000,0000,,他们是会按三拍子来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they were thinking of that in terms of triple meter.
+Dialogue: 0,0:19:26.96,0:19:29.62,*Default,NTP,0000,0000,0000,,我想它们就是一组连续的  叮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think they were just a succession of dings
+Dialogue: 0,0:19:29.62,0:19:31.27,*Default,NTP,0000,0000,0000,,但我听到的是这样的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm hearing it--
+Dialogue: 0,0:19:31.27,0:19:33.22,*Default,NTP,0000,0000,0000,,我的大脑希望听到这样的组织方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my mind wants to hear this organization
+Dialogue: 0,0:19:33.27,0:19:36.65,*Default,NTP,0000,0000,0000,,那么这里还有另外一种三拍一组的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there's another organization here of units of three.
+Dialogue: 0,0:19:37.34,0:19:40.22,*Default,NTP,0000,0000,0000,,也许你知道的  还有另外一种组织方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As you may know, there's yet another organization
+Dialogue: 0,0:19:40.22,0:19:43.70,*Default,NTP,0000,0000,0000,,我们可以四拍一组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where we could group this in units of four
+Dialogue: 0,0:19:43.70,0:19:45.54,*Default,NTP,0000,0000,0000,,但是不论出于什么动机或者目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but for all intents and purposes--
+Dialogue: 0,0:19:45.54,0:19:47.09,*Default,NTP,0000,0000,0000,,这其中的区别甚微\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are a few nuances to it--
+Dialogue: 0,0:19:47.09,0:19:51.64,*Default,NTP,0000,0000,0000,,四拍就是两拍的简单相乘\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}four is simply a multiplication of two.
+Dialogue: 0,0:19:51.64,0:19:58.70,*Default,NTP,0000,0000,0000,,所以我们的课程中  只会出现两种拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So in our course we are only going to have two types of meter, 
+Dialogue: 0,0:19:59.05,0:20:03.34,*Default,NTP,0000,0000,0000,,这些组织方式将拍编组  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These organizations taking the beat and organizing it into groups,
+Dialogue: 0,0:20:03.34,0:20:06.61,*Default,NTP,0000,0000,0000,,在音乐中称为拍子的叠加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is called superimposing meter on the music.
+Dialogue: 0,0:20:06.61,0:20:11.13,*Default,NTP,0000,0000,0000,,然后我们要把那个拍子向演奏者说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then we want to indicate that meter to the performer.
+Dialogue: 0,0:20:11.13,0:20:12.69,*Default,NTP,0000,0000,0000,,告诉演奏者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a way to tell the performer
+Dialogue: 0,0:20:12.69,0:20:16.19,*Default,NTP,0000,0000,0000,,该怎么样去演奏这段音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how this music is to be executed.
+Dialogue: 0,0:20:16.19,0:20:17.72,*Default,NTP,0000,0000,0000,,我们怎么做呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what do we do?
+Dialogue: 0,0:20:17.72,0:20:22.75,*Default,NTP,0000,0000,0000,,音乐中表示拍的最基本符号是四分音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, in music the most basic symbol for the beat is the quarter note.
+Dialogue: 0,0:20:22.75,0:20:25.65,*Default,NTP,0000,0000,0000,,四分音符通常表示拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The quarter note usually carries the beat.
+Dialogue: 0,0:20:25.65,0:20:29.74,*Default,NTP,0000,0000,0000,,好的  我们有好多的单元\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So here we have a series of groups 
+Dialogue: 0,0:20:29.74,0:20:31.66,*Default,NTP,0000,0000,0000,,由两个四分音符组成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of two quarter notes.
+Dialogue: 0,0:20:31.70,0:20:35.79,*Default,NTP,0000,0000,0000,,我们有一个约定俗成的书写格式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have the convention of music of writing this symbol
+Dialogue: 0,0:20:35.79,0:20:39.01,*Default,NTP,0000,0000,0000,,来表示四拍一单元\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indicating the beat-carrying unit of four
+Dialogue: 0,0:20:39.01,0:20:41.88,*Default,NTP,0000,0000,0000,,所以我在每行这里的下面写上一个四\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I'm writing a four underneath each of these.
+Dialogue: 0,0:20:41.88,0:20:43.11,*Default,NTP,0000,0000,0000,,然后我看了看这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then I look up here and say\N \N408\N00:20:43,112 --> 00:20:44,894\N这是两拍子的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, in this duple pattern
+Dialogue: 0,0:20:44.89,0:20:47.06,*Default,NTP,0000,0000,0000,,有两个四分音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have two of these quarter notes."
+Dialogue: 0,0:20:47.06,0:20:48.65,*Default,NTP,0000,0000,0000,,所以我在这里在写上一个二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm going to write a two out there.
+Dialogue: 0,0:20:48.65,0:20:50.22,*Default,NTP,0000,0000,0000,,这就告诉演奏者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That tells a performer
+Dialogue: 0,0:20:50.22,0:20:52.24,*Default,NTP,0000,0000,0000,,四分音符表示拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the quarter note is carrying the beat.
+Dialogue: 0,0:20:52.24,0:20:54.95,*Default,NTP,0000,0000,0000,,你看到的四分音符就是拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think of the quarter you see the quarter note that's the beat.
+Dialogue: 0,0:20:54.95,0:20:58.49,*Default,NTP,0000,0000,0000,,而这个二说明每单元两拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the 2 says that there'll be two in each of your units.
+Dialogue: 0,0:20:58.49,0:21:01.89,*Default,NTP,0000,0000,0000,,这些单元我们称之为小节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These units we call bars or measures
+Dialogue: 0,0:21:01.89,0:21:04.17,*Default,NTP,0000,0000,0000,,我们来把接下来的写完\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and just to finish this off down here
+Dialogue: 0,0:21:04.17,0:21:06.49,*Default,NTP,0000,0000,0000,,这里我们有三个四分音符\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we would have three quarter notes
+Dialogue: 0,0:21:06.49,0:21:10.15,*Default,NTP,0000,0000,0000,,当然  按照特定的安排\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of course, in this particular arrangement.
+Dialogue: 0,0:21:10.78,0:21:15.53,*Default,NTP,0000,0000,0000,,好了  这最后的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Now ultimately what happens with this
+Dialogue: 0,0:21:15.53,0:21:20.18,*Default,NTP,0000,0000,0000,,是我们开始把一段无序的节拍流\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that we begin to take this stream
+Dialogue: 0,0:21:20.18,0:21:22.35,*Default,NTP,0000,0000,0000,,组合成了不同的模式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and organize it into different patterns.
+Dialogue: 0,0:21:22.35,0:21:27.04,*Default,NTP,0000,0000,0000,,我可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can go 
+Dialogue: 0,0:21:27.04,0:21:29.24,*Default,NTP,0000,0000,0000,,像这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something like this
+Dialogue: 0,0:21:30.91,0:21:33.95,*Default,NTP,0000,0000,0000,,而我们称这个为节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we would call that a rhythm superimposing 
+Dialogue: 0,0:21:33.95,0:21:39.76,*Default,NTP,0000,0000,0000,,对长短不同经常重复的不同部分的整合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}longs and shorts different patterns, patterns that oftentimes repeat.
+Dialogue: 0,0:21:39.76,0:21:44.65,*Default,NTP,0000,0000,0000,,对于节拍流不同部分的拆分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The dividing up of this stream into different patterns
+Dialogue: 0,0:21:44.65,0:21:46.63,*Default,NTP,0000,0000,0000,,是经常重复的  也是有长有短的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often repeating, of longs and short
+Dialogue: 0,0:21:46.63,0:21:53.10,*Default,NTP,0000,0000,0000,,这就是在基本拍的基础上的旋律叠加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is superimposing rhythm over top of this basic beat
+Dialogue: 0,0:21:53.10,0:21:56.54,*Default,NTP,0000,0000,0000,,也就是说是以这些拍子为组织依据的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is organized in terms of these meters.
+Dialogue: 0,0:21:56.54,0:21:58.82,*Default,NTP,0000,0000,0000,,好了  有什么问题吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So are there questions about that?
+Dialogue: 0,0:21:58.82,0:22:01.17,*Default,NTP,0000,0000,0000,,这个够直观吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Did that seem straightforward enough?
+Dialogue: 0,0:22:01.53,0:22:03.16,*Default,NTP,0000,0000,0000,,好的  正如你们可能知道的那样  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now as you may know--
+Dialogue: 0,0:22:03.16,0:22:05.01,*Default,NTP,0000,0000,0000,,你们中的一些同学可能在高中校乐队里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of you may have played clarinet 
+Dialogue: 0,0:22:05.01,0:22:06.71,*Default,NTP,0000,0000,0000,,吹过单簧管或其它乐器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in a high school band or something like that
+Dialogue: 0,0:22:06.71,0:22:08.11,*Default,NTP,0000,0000,0000,,无论是身在何处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}neither here nor there 
+Dialogue: 0,0:22:08.11,0:22:09.39,*Default,NTP,0000,0000,0000,,不管你是否参加过那样的活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you did or did not--
+Dialogue: 0,0:22:09.39,0:22:13.01,*Default,NTP,0000,0000,0000,,你应该知道还有其他的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you may know that there are other meters out there
+Dialogue: 0,0:22:13.17,0:22:15.16,*Default,NTP,0000,0000,0000,,称为六八拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these things called six-eight .
+Dialogue: 0,0:22:15.16,0:22:16.32,*Default,NTP,0000,0000,0000,,我早上还在想这段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was thinking this morning
+Dialogue: 0,0:22:24.82,0:22:27.60,*Default,NTP,0000,0000,0000,,四  五  六  一  二  三  四  五  六  一  二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}four, five, six, one, two, three, four, five, six, one, two.
+Dialogue: 0,0:22:27.60,0:22:30.08,*Default,NTP,0000,0000,0000,,这就是个典型的二拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that's a beat of basically a duple meter
+Dialogue: 0,0:22:30.08,0:22:31.82,*Default,NTP,0000,0000,0000,,伴随一个三拍子的进一步划分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a triple subdivision,
+Dialogue: 0,0:22:31.82,0:22:34.36,*Default,NTP,0000,0000,0000,,但我们这里不讨论三拍子的进一步划分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're not getting into triple subdivisions here.
+Dialogue: 0,0:22:34.36,0:22:38.17,*Default,NTP,0000,0000,0000,,在我们的课程中  拍  总是会被分割的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In our course the beat is always going to be a--divided,
+Dialogue: 0,0:22:38.17,0:22:39.62,*Default,NTP,0000,0000,0000,,从它的划分程度来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the extent that it's divided--
+Dialogue: 0,0:22:39.62,0:22:41.30,*Default,NTP,0000,0000,0000,,它总是被一分为二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}always going to be divided into two.
+Dialogue: 0,0:22:41.30,0:22:44.50,*Default,NTP,0000,0000,0000,,我们只讨论那些所谓的单拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have only so-called simple meters 
+Dialogue: 0,0:22:44.50,0:22:46.74,*Default,NTP,0000,0000,0000,,不讨论复拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}rather than compound meters.
+Dialogue: 0,0:22:46.74,0:22:48.63,*Default,NTP,0000,0000,0000,,如果你想学习复拍子的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you want to learn about compound meters
+Dialogue: 0,0:22:48.63,0:22:50.05,*Default,NTP,0000,0000,0000,,可以去上音乐210这门课  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}go take music 210 and 
+Dialogue: 0,0:22:50.06,0:22:51.18,*Default,NTP,0000,0000,0000,,成为一名音乐专业的学生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}become a music major.
+Dialogue: 0,0:22:51.18,0:22:53.22,*Default,NTP,0000,0000,0000,,那是他们要深究的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the kind of thing that they get into 
+Dialogue: 0,0:22:53.23,0:22:54.17,*Default,NTP,0000,0000,0000,,我们这里不讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're not doing that here.
+Dialogue: 0,0:22:54.17,0:22:57.20,*Default,NTP,0000,0000,0000,,我们这里只关注两件事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're interested only really in two things:
+Dialogue: 0,0:22:57.20,0:23:00.78,*Default,NTP,0000,0000,0000,,一  你能不能区分两拍子和三拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, can you differentiate between duple and triple meter;
+Dialogue: 0,0:23:00.78,0:23:04.94,*Default,NTP,0000,0000,0000,,二  你能不能识别一些简单的基本节奏形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and two, can you recognize some very basic rhythmic patterns?
+Dialogue: 0,0:23:04.94,0:23:08.24,*Default,NTP,0000,0000,0000,,我们今天就会做一些这样的练习\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we'll be doing some of that today.
+Dialogue: 0,0:23:08.24,0:23:09.95,*Default,NTP,0000,0000,0000,,再问一下  有问题吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Questions again? 
+Dialogue: 0,0:23:10.22,0:23:14.32,*Default,NTP,0000,0000,0000,,很好  让我们接着往下进行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Let's then proceed.
+Dialogue: 0,0:23:14.55,0:23:18.32,*Default,NTP,0000,0000,0000,,应该有副眼镜的  但也没关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Used have some glasses, but that's okay.
+Dialogue: 0,0:23:18.32,0:23:20.45,*Default,NTP,0000,0000,0000,,在这儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh, you there.
+Dialogue: 0,0:23:20.45,0:23:22.28,*Default,NTP,0000,0000,0000,,我用钢琴弹一段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me play some music at the piano.
+Dialogue: 0,0:23:22.28,0:23:25.18,*Default,NTP,0000,0000,0000,,这是  斗牛犬  这不是耶鲁的战歌吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is Bulldog. Isn't this the Yale fight song?
+Dialogue: 0,0:23:25.18,0:23:28.35,*Default,NTP,0000,0000,0000,,谁写的  有谁知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who wrote this? Anybody know? 
+Dialogue: 0,0:23:28.35,0:23:31.61,*Default,NTP,0000,0000,0000,,你可能已经在橄榄球赛上听到过无数遍了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've probably heardit eight zillion times at football games.
+Dialogue: 0,0:23:31.61,0:23:33.46,*Default,NTP,0000,0000,0000,,这是一曲伟大的  一曲美妙的战歌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's great--What a wonderful fight song--
+Dialogue: 0,0:23:33.46,0:23:36.97,*Default,NTP,0000,0000,0000,,很幸运耶鲁能拥有它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yale was so lucky to have this as.
+Dialogue: 0,0:23:36.97,0:23:39.80,*Default,NTP,0000,0000,0000,,对  我想我听到有人说了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So yes, I think I hear somebody out there.
+Dialogue: 0,0:23:40.19,0:23:41.50,*Default,NTP,0000,0000,0000,,科尔·波特\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cole Porter.
+Dialogue: 0,0:23:42.09,0:23:43.61,*Default,NTP,0000,0000,0000,,有没有谁能告诉我科尔·波特\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who was Cole Porter
+Dialogue: 0,0:23:43.61,0:23:47.11,*Default,NTP,0000,0000,0000,,在我找乐谱的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I glance through my music here? Oh, phooey.
+Dialogue: 0,0:23:47.11,0:23:48.21,*Default,NTP,0000,0000,0000,,看来我丢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've lost it.
+Dialogue: 0,0:23:48.21,0:23:50.12,*Default,NTP,0000,0000,0000,,科尔·波特是谁呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who was Cole Porter?
+Dialogue: 0,0:23:50.75,0:23:55.72,*Default,NTP,0000,0000,0000,,他是耶鲁1914级的毕业生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was a Yale graduate, class of 1914
+Dialogue: 0,0:23:56.65,0:24:00.05,*Default,NTP,0000,0000,0000,,真不巧  我找不到乐谱了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and unfortunately I seem to have misplaced--
+Dialogue: 0,0:24:00.05,0:24:03.46,*Default,NTP,0000,0000,0000,,好吧  我试着弹一段吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I can generate a little bit of it here.
+Dialogue: 0,0:24:32.01,0:24:33.07,*Default,NTP,0000,0000,0000,,好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay.
+Dialogue: 0,0:24:33.07,0:24:34.26,*Default,NTP,0000,0000,0000,,我大致记得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was sort of trying to remember
+Dialogue: 0,0:24:34.26,0:24:36.29,*Default,NTP,0000,0000,0000,,第一页的谱子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first page of the missing music there.
+Dialogue: 0,0:24:36.29,0:24:39.51,*Default,NTP,0000,0000,0000,,那么  这是二拍子的还是三拍子的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So is this in duple meter or triple meter?
+Dialogue: 0,0:24:44.93,0:24:47.44,*Default,NTP,0000,0000,0000,,你认为我们该怎么去找呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Huh? What do you think and how do we find out?
+Dialogue: 0,0:24:47.44,0:24:51.63,*Default,NTP,0000,0000,0000,,试试用脚打拍子  你找到节奏了吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Tap your foot. Did we find any music?
+Dialogue: 0,0:24:53.08,0:24:57.27,*Default,NTP,0000,0000,0000,,噢  谢谢  这是林德给我的启迪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ah, thank you. Enlightenment from Lynda.
+Dialogue: 0,0:25:05.33,0:25:07.00,*Default,NTP,0000,0000,0000,,这里的关键是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What-- What's the key here?
+Dialogue: 0,0:25:07.00,0:25:08.25,*Default,NTP,0000,0000,0000,,你们主要听什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What do you listen to?
+Dialogue: 0,0:25:08.25,0:25:10.12,*Default,NTP,0000,0000,0000,,多少人认为是二拍子呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many think it's in duple meter?
+Dialogue: 0,0:25:10.12,0:25:10.82,*Default,NTP,0000,0000,0000,,请举手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Raise your hand.
+Dialogue: 0,0:25:10.82,0:25:14.03,*Default,NTP,0000,0000,0000,,多少人认为是三拍子呢  很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many think it's in triple meter? Okay.
+Dialogue: 0,0:25:14.03,0:25:15.81,*Default,NTP,0000,0000,0000,,大部分都认为是两拍子的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Almost everybody thinks it's in duple meter and 
+Dialogue: 0,0:25:15.81,0:25:16.76,*Default,NTP,0000,0000,0000,,这也是正确答案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's correct.
+Dialogue: 0,0:25:16.76,0:25:19.37,*Default,NTP,0000,0000,0000,,那我们比以前在深入一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now we worked through this just a little bit once before.
+Dialogue: 0,0:25:19.37,0:25:22.24,*Default,NTP,0000,0000,0000,,是什么告诉我们这是二拍子的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is it that tells us that it's in duple meter?
+Dialogue: 0,0:25:22.24,0:25:25.40,*Default,NTP,0000,0000,0000,,是低音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the bass
+Dialogue: 0,0:25:26.27,0:25:30.52,*Default,NTP,0000,0000,0000,,因为低音非常明确地以二拍子的方式组成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's organizing itself very strongly in duple patterns.
+Dialogue: 0,0:25:30.52,0:25:32.54,*Default,NTP,0000,0000,0000,,这里还有一个很有趣的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's one other interesting thing in here.
+Dialogue: 0,0:25:32.54,0:25:33.63,*Default,NTP,0000,0000,0000,,是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This would be? Well
+Dialogue: 0,0:25:33.63,0:25:37.36,*Default,NTP,0000,0000,0000,,我们用另一种方式来想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's think through this in one additional way
+Dialogue: 0,0:25:37.36,0:25:39.95,*Default,NTP,0000,0000,0000,,这个   你们知道二拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that is--notice that in duple meter
+Dialogue: 0,0:25:39.95,0:25:41.44,*Default,NTP,0000,0000,0000,,有很强的鼓点  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have a strong beat, right
+Dialogue: 0,0:25:41.44,0:25:45.70,*Default,NTP,0000,0000,0000,,强  弱  强  弱  强  弱  强  弱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Strong, weak, strong, weak, strong, weak, strong weak"
+Dialogue: 0,0:25:45.70,0:25:48.34,*Default,NTP,0000,0000,0000,,那在这种情况下如果我们拿一段三拍子  那就会是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that sense or if we have triple it would be 
+Dialogue: 0,0:25:48.34,0:25:51.34,*Default,NTP,0000,0000,0000,,强  弱  弱  强  弱  弱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Strong, weak, weak, strong, weak, weak."
+Dialogue: 0,0:25:51.34,0:25:54.68,*Default,NTP,0000,0000,0000,,会有两个弱拍或者说是非强拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There would be two weak beats or two unstressed beats
+Dialogue: 0,0:25:54.68,0:25:56.48,*Default,NTP,0000,0000,0000,,存在于每个强拍间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between each strong beat.
+Dialogue: 0,0:25:56.48,0:25:57.88,*Default,NTP,0000,0000,0000,,我们可以这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We could do this
+Dialogue: 0,0:26:10.52,0:26:13.07,*Default,NTP,0000,0000,0000,,这就成了  斗牛犬华尔兹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'd have the "Waltz of the Bulldog."
+Dialogue: 0,0:26:13.07,0:26:15.16,*Default,NTP,0000,0000,0000,,这听上去很棒啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It'd be pretty cool to see actually.
+Dialogue: 0,0:26:15.16,0:26:18.04,*Default,NTP,0000,0000,0000,,我只是简单的把科尔·波特的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there it's--I'm simply taking the Cole Porter piece
+Dialogue: 0,0:26:18.04,0:26:20.58,*Default,NTP,0000,0000,0000,,在其每小节中  加了一拍  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and throwing in an extra beat in each measure
+Dialogue: 0,0:26:20.58,0:26:22.95,*Default,NTP,0000,0000,0000,,在其每小节中  加了一个非强拍 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an unstressed beat in each measure
+Dialogue: 0,0:26:22.95,0:26:24.23,*Default,NTP,0000,0000,0000,,看起来效果还很不错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it works out pretty well.
+Dialogue: 0,0:26:24.23,0:26:28.29,*Default,NTP,0000,0000,0000,,注意  这个旋律就足够哈佛忙活一阵了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Notice this would be harvard would have had a field day with this melody
+Dialogue: 0,0:26:28.29,0:26:31.34,*Default,NTP,0000,0000,0000,,如果科尔·波特没有做一件事的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if he-- Cole Porter--had not done one thing.
+Dialogue: 0,0:26:31.34,0:26:34.61,*Default,NTP,0000,0000,0000,,他通过运用这样的元素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He makes this really rather snappy
+Dialogue: 0,0:26:34.61,0:26:37.00,*Default,NTP,0000,0000,0000,,让这首曲子更活泼欢快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the use of this kind of stuff.
+Dialogue: 0,0:26:39.08,0:26:42.79,*Default,NTP,0000,0000,0000,,我们一开始是  然后是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll come in on and then it's .
+Dialogue: 0,0:26:45.89,0:26:49.74,*Default,NTP,0000,0000,0000,,那是个什么样的典型例子呢  非常好  切分音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's that a good example of? Syncopation, yeah.
+Dialogue: 0,0:26:49.74,0:26:50.64,*Default,NTP,0000,0000,0000,,这个词已经写在白板上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The term is on the board
+Dialogue: 0,0:26:50.64,0:26:52.37,*Default,NTP,0000,0000,0000,,这是个非常典型的切分音的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's a good example of syncopation
+Dialogue: 0,0:26:52.37,0:26:53.91,*Default,NTP,0000,0000,0000,,它提前跳入\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of jumping in ahead of time
+Dialogue: 0,0:26:53.91,0:26:56.00,*Default,NTP,0000,0000,0000,,切分节奏  提前介入\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cutting off the beat, getting in there ahead of time
+Dialogue: 0,0:26:56.00,0:26:58.53,*Default,NTP,0000,0000,0000,,并在非常短的时间里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and throwing off the metrical balance
+Dialogue: 0,0:26:58.53,0:27:00.72,*Default,NTP,0000,0000,0000,,打破拍子的平衡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a very short period of time.
+Dialogue: 0,0:27:01.44,0:27:04.76,*Default,NTP,0000,0000,0000,,好的  刚才是一段二拍子的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So that's a duple meter piece
+Dialogue: 0,0:27:04.76,0:27:07.11,*Default,NTP,0000,0000,0000,,我们在这里做的  就是去听\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what we're trying to do here is just hear
+Dialogue: 0,0:27:07.11,0:27:10.20,*Default,NTP,0000,0000,0000,,是不是有一强一弱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we've got one strong and one weak beat
+Dialogue: 0,0:27:10.20,0:27:13.54,*Default,NTP,0000,0000,0000,,或者一强两弱的拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or one strong and two weak beats.
+Dialogue: 0,0:27:14.69,0:27:16.83,*Default,NTP,0000,0000,0000,,那我们是怎么做到的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do we--How should we do this?
+Dialogue: 0,0:27:16.83,0:27:17.88,*Default,NTP,0000,0000,0000,,你应该怎么处理呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How are you going to do this?
+Dialogue: 0,0:27:17.88,0:27:20.62,*Default,NTP,0000,0000,0000,,我觉得有一点会很有帮助\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I think one thing that's very helpful
+Dialogue: 0,0:27:20.62,0:27:23.44,*Default,NTP,0000,0000,0000,,那就是你们跟着音乐动起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is for you to start to move, to move around
+Dialogue: 0,0:27:23.44,0:27:25.16,*Default,NTP,0000,0000,0000,,跟着音乐摇摆或者用脚打拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to sway, tap your foot.
+Dialogue: 0,0:27:25.16,0:27:27.52,*Default,NTP,0000,0000,0000,,我们在这里不能这么做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now we can't do this during a test in here.
+Dialogue: 0,0:27:27.52,0:27:28.84,*Default,NTP,0000,0000,0000,,确实有点讨厌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It'd be a little bit annoying 
+Dialogue: 0,0:27:28.84,0:27:31.16,*Default,NTP,0000,0000,0000,,不过我们真的还是要做一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we really have-- we really do have to do this.
+Dialogue: 0,0:27:31.16,0:27:34.15,*Default,NTP,0000,0000,0000,,现在的乐师   常常更加拘束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now musicians, being a bit more uptight oftentimes
+Dialogue: 0,0:27:34.15,0:27:39.10,*Default,NTP,0000,0000,0000,,那些古典音乐乐师  相对于其他普通人更拘束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}classical musicians, than other more spirited folks
+Dialogue: 0,0:27:39.10,0:27:42.82,*Default,NTP,0000,0000,0000,,发展出了这样的传统  采取指挥手势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have developed this tradition of using conducting patterns. 
+Dialogue: 0,0:27:42.82,0:27:43.83,*Default,NTP,0000,0000,0000,,对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right?
+Dialogue: 0,0:27:43.83,0:27:47.62,*Default,NTP,0000,0000,0000,,二拍子的音乐  我们只需下  上  下  上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So for duple meter we just go down, up, down, up.
+Dialogue: 0,0:27:47.62,0:27:49.24,*Default,NTP,0000,0000,0000,,这可能做得不太像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's kind of--maybe a little shape over to the right
+Dialogue: 0,0:27:49.24,0:27:52.50,*Default,NTP,0000,0000,0000,,下  上  下  上  那种手势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}down, up, down, up, that kind of thing\N \N543\N00:27:52,506 --> 00:27:55,776\N三拍子的时候我们就是下  平  上 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for triple we do down, over, up
+Dialogue: 0,0:27:55.77,0:27:59.89,*Default,NTP,0000,0000,0000,,下  平  上  下  平  上  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}down, over, up, down, over, up. Okay?
+Dialogue: 0,0:27:59.89,0:28:02.01,*Default,NTP,0000,0000,0000,,接下来我在这里弹一段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm going to start playing here
+Dialogue: 0,0:28:02.01,0:28:04.08,*Default,NTP,0000,0000,0000,,你们来指挥\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you are going to start conducting.
+Dialogue: 0,0:28:04.08,0:28:05.80,*Default,NTP,0000,0000,0000,,你们听大概一秒钟后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're going to listen just for a second
+Dialogue: 0,0:28:05.80,0:28:07.27,*Default,NTP,0000,0000,0000,,就可以开始行动起来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you're going to move
+Dialogue: 0,0:28:07.27,0:28:10.23,*Default,NTP,0000,0000,0000,,记得用指挥手势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you're going to move using the conducting pattern.
+Dialogue: 0,0:28:21.78,0:28:25.41,*Default,NTP,0000,0000,0000,,很好  我刚看到你们中的一些在那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Good. Now I see some of you out there 
+Dialogue: 0,0:28:26.65,0:28:30.22,*Default,NTP,0000,0000,0000,,像这样  没有真正参与进来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from-- like this, not really participating,
+Dialogue: 0,0:28:30.22,0:28:32.39,*Default,NTP,0000,0000,0000,,如果我在台上  想一想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if I can get up here--Think about this.
+Dialogue: 0,0:28:32.39,0:28:35.27,*Default,NTP,0000,0000,0000,,我已经老了  我已经习惯把自己当作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm old. I'm sort of used to thinking of myself
+Dialogue: 0,0:28:35.27,0:28:36.90,*Default,NTP,0000,0000,0000,,一个盎格鲁萨克森人的清教徒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a "White Anglo-Saxon Protestant."
+Dialogue: 0,0:28:35.27,0:28:36.90,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[译注：比喻保守]
+Dialogue: 0,0:28:36.90,0:28:39.40,*Default,NTP,0000,0000,0000,,我有足够的理由压抑我自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have every reason in the world to be repressed.
+Dialogue: 0,0:28:39.40,0:28:41.67,*Default,NTP,0000,0000,0000,,对吧  我可以  像这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right? I could—This
+Dialogue: 0,0:28:41.67,0:28:43.20,*Default,NTP,0000,0000,0000,,所以如果我可以在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if I could be up here
+Dialogue: 0,0:28:43.20,0:28:45.87,*Default,NTP,0000,0000,0000,,自嘲自己每天的日常生活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}making a fool of myself on a daily basis
+Dialogue: 0,0:28:45.87,0:28:47.32,*Default,NTP,0000,0000,0000,,那你们这些年轻人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you guys are much younger than I 
+Dialogue: 0,0:28:47.32,0:28:48.98,*Default,NTP,0000,0000,0000,,以作风彪悍著称的年轻人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and known for outrageous behaviors.
+Dialogue: 0,0:28:48.98,0:28:50.56,*Default,NTP,0000,0000,0000,,当然可以在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can certainly get in here 
+Dialogue: 0,0:28:50.56,0:28:52.43,*Default,NTP,0000,0000,0000,,合着节拍  翩翩起舞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and move and flow and go with the beat here.
+Dialogue: 0,0:28:52.43,0:28:54.61,*Default,NTP,0000,0000,0000,,好的  我们再来一次  大家一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So here we go. Everybody together.
+Dialogue: 0,0:28:55.82,0:28:58.01,*Default,NTP,0000,0000,0000,,好多了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Much better. 
+Dialogue: 0,0:29:07.07,0:29:08.40,*Default,NTP,0000,0000,0000,,好的  我看到  非常好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. I'm watching-- Good.
+Dialogue: 0,0:29:08.40,0:29:11.50,*Default,NTP,0000,0000,0000,,我看到事实上每个人都这样表示重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Virtually everyone has got the downbeat here.
+Dialogue: 0,0:29:11.50,0:29:12.64,*Default,NTP,0000,0000,0000,,你们不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're not going . 
+Dialogue: 0,0:29:15.29,0:29:16.41,*Default,NTP,0000,0000,0000,,而是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're going
+Dialogue: 0,0:29:16.65,0:29:19.85,*Default,NTP,0000,0000,0000,,有关强拍的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so there is a sense of downbeat
+Dialogue: 0,0:29:19.85,0:29:22.37,*Default,NTP,0000,0000,0000,,我们过一会就会说到这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll come back to that in just a moment.
+Dialogue: 0,0:29:22.37,0:29:25.13,*Default,NTP,0000,0000,0000,,再来一个三拍子的  开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's do a triple meter one. Here we go.
+Dialogue: 0,0:29:35.01,0:29:36.78,*Default,NTP,0000,0000,0000,,好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Good. 
+Dialogue: 0,0:29:47.03,0:29:48.84,*Default,NTP,0000,0000,0000,,很好  非常好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Excellent. Very good. 
+Dialogue: 0,0:29:48.84,0:29:51.37,*Default,NTP,0000,0000,0000,,现在我要转调\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now I'm going to modulate
+Dialogue: 0,0:29:53.06,0:29:55.31,*Default,NTP,0000,0000,0000,,变成另一个调\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}go to a different key.
+Dialogue: 0,0:30:02.02,0:30:04.98,*Default,NTP,0000,0000,0000,,你们能指挥这个吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Can you conduct this? 
+Dialogue: 0,0:30:11.73,0:30:14.01,*Default,NTP,0000,0000,0000,,好的  有点迷糊了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. There's a little confusion here
+Dialogue: 0,0:30:14.01,0:30:15.11,*Default,NTP,0000,0000,0000,,我们一起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so let's try to do it together.
+Dialogue: 0,0:30:15.11,0:30:17.78,*Default,NTP,0000,0000,0000,,准备好了吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Are you ready? 
+Dialogue: 0,0:30:23.55,0:30:25.22,*Default,NTP,0000,0000,0000,,这位先生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Now this gentleman out here 
+Dialogue: 0,0:30:25.22,0:30:27.94,*Default,NTP,0000,0000,0000,,和我做的不太一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is actually doing it different from what I am doing
+Dialogue: 0,0:30:27.94,0:30:29.03,*Default,NTP,0000,0000,0000,,甚至和在座各位做的不太一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what most of you are doing
+Dialogue: 0,0:30:29.03,0:30:31.33,*Default,NTP,0000,0000,0000,,但你知道吗  他做的是对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you know what? He's doing it correctly.
+Dialogue: 0,0:30:31.33,0:30:33.39,*Default,NTP,0000,0000,0000,,我们做的是错的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're doing it incorrectly. 
+Dialogue: 0,0:30:42.28,0:30:43.78,*Default,NTP,0000,0000,0000,,错在哪里呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's wrong here?
+Dialogue: 0,0:30:44.87,0:30:46.78,*Default,NTP,0000,0000,0000,,我们做错了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're off 
+Dialogue: 0,0:30:46.78,0:30:50.39,*Default,NTP,0000,0000,0000,,因为我们的重拍  我们的强拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because our downbeats, our strong pulses
+Dialogue: 0,0:30:50.39,0:30:54.84,*Default,NTP,0000,0000,0000,,总是在每个小节的第一拍的那个音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}always have to come on the first part of the bar, this note.
+Dialogue: 0,0:30:54.84,0:30:56.90,*Default,NTP,0000,0000,0000,,每个小节的第一拍叫做重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The first part of the bar is called the downbeat.
+Dialogue: 0,0:30:56.90,0:30:58.42,*Default,NTP,0000,0000,0000,,这是最为重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the most important thing 
+Dialogue: 0,0:30:58.42,0:30:59.76,*Default,NTP,0000,0000,0000,,而我们的指挥手势  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and our conducting pattern 
+Dialogue: 0,0:30:59.76,0:31:04.12,*Default,NTP,0000,0000,0000,,总是和着乐曲的强音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}always has to have the downbeat of the hand 
+Dialogue: 0,0:31:04.12,0:31:08.09,*Default,NTP,0000,0000,0000,,做出重拍的动作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in sync with the strongest impulse in the music , the strong.
+Dialogue: 0,0:31:08.09,0:31:09.41,*Default,NTP,0000,0000,0000,,音乐的重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The downbeat in the music 
+Dialogue: 0,0:31:09.41,0:31:11.70,*Default,NTP,0000,0000,0000,,合着手势  下摆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}comes with the down motion of the hand.
+Dialogue: 0,0:31:11.70,0:31:13.14,*Default,NTP,0000,0000,0000,,所以我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we were getting . 
+Dialogue: 0,0:31:14.64,0:31:16.17,*Default,NTP,0000,0000,0000,,这里是重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh, there's the downbeat
+Dialogue: 0,0:31:16.17,0:31:18.32,*Default,NTP,0000,0000,0000,,但我们把它放在二上面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we were putting that on two
+Dialogue: 0,0:31:18.32,0:31:21.62,*Default,NTP,0000,0000,0000,,一  二  三  一  二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One two three one two.
+Dialogue: 0,0:31:21.62,0:31:26.03,*Default,NTP,0000,0000,0000,,我们不想那样  我们想放它在这个点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we don't want that. We want at that point.
+Dialogue: 0,0:31:26.03,0:31:28.37,*Default,NTP,0000,0000,0000,,这里出现了什么吗  发生了什么事吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what do we have here? What's happening?
+Dialogue: 0,0:31:28.37,0:31:32.18,*Default,NTP,0000,0000,0000,,在重拍前有一小段音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, there's a little bit of music before the downbeat.
+Dialogue: 0,0:31:32.18,0:31:35.58,*Default,NTP,0000,0000,0000,,我们称之为拾音头或唱头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's called a pick-up. Okay? So we have a little pick-up
+Dialogue: 0,0:31:37.02,0:31:38.81,*Default,NTP,0000,0000,0000,,我想到奥运会上的跳水运动员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was thinking of a diver in the Olympics.
+Dialogue: 0,0:31:38.81,0:31:41.46,*Default,NTP,0000,0000,0000,,他们会先走一些小碎步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They go out there--They do these little steps
+Dialogue: 0,0:31:41.46,0:31:44.15,*Default,NTP,0000,0000,0000,,就在起板之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}just before they spring off of the board
+Dialogue: 0,0:31:47.39,0:31:49.53,*Default,NTP,0000,0000,0000,,就像在帮你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}kind of gets you 
+Dialogue: 0,0:31:49.53,0:31:51.60,*Default,NTP,0000,0000,0000,,扎实地吃准重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}really landing good and hard on that downbeat
+Dialogue: 0,0:31:51.60,0:31:55.16,*Default,NTP,0000,0000,0000,,因此我们说重拍是非常重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so the downbeat is very important to us
+Dialogue: 0,0:31:55.16,0:31:58.78,*Default,NTP,0000,0000,0000,,我们总结一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we could conclude this by saying
+Dialogue: 0,0:31:58.78,0:32:04.37,*Default,NTP,0000,0000,0000,,尽管所有音乐都有重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that although all music has a downbeat
+Dialogue: 0,0:32:04.37,0:32:07.45,*Default,NTP,0000,0000,0000,,不是所有音乐都从重拍开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not all music starts with a downbeat.
+Dialogue: 0,0:32:07.45,0:32:09.97,*Default,NTP,0000,0000,0000,,有的时候听音乐时你要等一会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes when listening to music you have to wait.
+Dialogue: 0,0:32:09.97,0:32:11.76,*Default,NTP,0000,0000,0000,,听一会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Listen for a while 
+Dialogue: 0,0:32:11.76,0:32:15.34,*Default,NTP,0000,0000,0000,,然后你们的身体大致才会告诉你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your body almost will start to tell you
+Dialogue: 0,0:32:15.34,0:32:18.59,*Default,NTP,0000,0000,0000,,开始给你们信号  告诉你重拍在哪里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}start to signal to you, where the downbeat is.
+Dialogue: 0,0:32:18.59,0:32:21.49,*Default,NTP,0000,0000,0000,,真的是你们的身体给你们信号的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it really your body that will signal this to you?
+Dialogue: 0,0:32:21.49,0:32:22.56,*Default,NTP,0000,0000,0000,,我很怀疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I doubt it. 
+Dialogue: 0,0:32:22.56,0:32:26.44,*Default,NTP,0000,0000,0000,,其实是你们的大脑  在处理所有这些信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's your brain up here processing all of this information.
+Dialogue: 0,0:32:26.44,0:32:30.06,*Default,NTP,0000,0000,0000,,我们在第一节课的时候谈到过听觉皮层\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about the auditory cortex the first section
+Dialogue: 0,0:32:30.06,0:32:32.57,*Default,NTP,0000,0000,0000,,也许大脑的其他部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maybe there are other parts of the brain 
+Dialogue: 0,0:32:32.57,0:32:34.24,*Default,NTP,0000,0000,0000,,也参与了进来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are factoring in here as well
+Dialogue: 0,0:32:34.24,0:32:39.05,*Default,NTP,0000,0000,0000,,但作曲家是怎么做到把这些信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but how is it that composers send this information to
+Dialogue: 0,0:32:39.05,0:32:41.43,*Default,NTP,0000,0000,0000,,传送到我们所谓的听觉皮层的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say, our auditory cortex here?
+Dialogue: 0,0:32:41.43,0:32:42.36,*Default,NTP,0000,0000,0000,,他们是怎么做到的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do they do that?
+Dialogue: 0,0:32:42.36,0:32:44.58,*Default,NTP,0000,0000,0000,,以下有四条主要途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, there are four principal ways
+Dialogue: 0,0:32:44.58,0:32:49.05,*Default,NTP,0000,0000,0000,,是作曲家用来告诉我们重拍在哪里的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that composers signal to us the whereabouts of the down beat.
+Dialogue: 0,0:32:49.05,0:32:50.76,*Default,NTP,0000,0000,0000,,好吗  让我们复习一下  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay? So let's review--
+Dialogue: 0,0:32:50.76,0:32:52.08,*Default,NTP,0000,0000,0000,,让我们着重说一下这点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's focus on
+Dialogue: 0,0:32:52.08,0:32:55.71,*Default,NTP,0000,0000,0000,,就一会儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that just for a moment. 
+Dialogue: 0,0:32:57.29,0:33:02.09,*Default,NTP,0000,0000,0000,,第一条途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Way number one: 
+Dialogue: 0,0:33:03.40,0:33:08.32,*Default,NTP,0000,0000,0000,,这和时值有关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That has to do with duration.
+Dialogue: 0,0:33:08.32,0:33:11.56,*Default,NTP,0000,0000,0000,,音符的时值延长  单纯把持续时间延长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Notes are simply longer, held longer.
+Dialogue: 0,0:33:11.56,0:33:14.44,*Default,NTP,0000,0000,0000,,我们就知道哪里是重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's how we have the sense of where the down beat is.
+Dialogue: 0,0:33:46.58,0:33:49.28,*Default,NTP,0000,0000,0000,,我猜这是宗教音乐  对吗  很优美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I guess it's a spiritual, right? Beautiful.
+Dialogue: 0,0:33:49.28,0:33:52.17,*Default,NTP,0000,0000,0000,,非常优美  想想看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's beautiful. But think about that.
+Dialogue: 0,0:33:52.17,0:33:58.99,*Default,NTP,0000,0000,0000,,短长  短长  短长  短长 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Short long, short long, short long, short long,
+Dialogue: 0,0:33:58.99,0:34:04.31,*Default,NTP,0000,0000,0000,,短长  短长  短长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}short long, short long, short long.
+Dialogue: 0,0:34:04.31,0:34:07.82,*Default,NTP,0000,0000,0000,,所有的长音都出现在重拍上  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And all of those long notes are coming on the downbeat
+Dialogue: 0,0:34:07.82,0:34:10.52,*Default,NTP,0000,0000,0000,,这就是我们怎么判断出重拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's how we start to hear that as a downbeat
+Dialogue: 0,0:34:10.52,0:34:13.30,*Default,NTP,0000,0000,0000,,如何判断出该什么时候把手往下摆的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's how we know to make our hand go down at that point
+Dialogue: 0,0:34:13.30,0:34:14.69,*Default,NTP,0000,0000,0000,,所以那是一条途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that's one way.
+Dialogue: 0,0:34:14.69,0:34:17.59,*Default,NTP,0000,0000,0000,,另一条途径是通过重音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now another way is through accent
+Dialogue: 0,0:34:17.59,0:34:20.88,*Default,NTP,0000,0000,0000,,我们到古典音乐中来找个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to exemplify this let's turn to some classical music
+Dialogue: 0,0:34:20.88,0:34:22.37,*Default,NTP,0000,0000,0000,,莫扎特的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the music of Mozart 
+Dialogue: 0,0:34:22.37,0:34:25.17,*Default,NTP,0000,0000,0000,,我们这里要放一段莫扎特的第四十号交响曲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so here we have Mozart's Fortieth Symphony
+Dialogue: 0,0:34:25.17,0:34:27.67,*Default,NTP,0000,0000,0000,,非常著名的g小调交响曲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his famous g Minor Symphony
+Dialogue: 0,0:34:27.67,0:34:30.29,*Default,NTP,0000,0000,0000,,那么我们就开始播放吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we're going to go ahead and start to play it.
+Dialogue: 0,0:34:32.83,0:34:35.37,*Default,NTP,0000,0000,0000,,在出声音前或许要等几秒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}May be a second or two before pops up
+Dialogue: 0,0:34:35.37,0:34:36.98,*Default,NTP,0000,0000,0000,,这就来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's going to come up.
+Dialogue: 0,0:34:58.30,0:35:00.39,*Default,NTP,0000,0000,0000,,你们中的几个开始跟着指挥起来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Several of you were actually conducting this.
+Dialogue: 0,0:35:00.39,0:35:01.93,*Default,NTP,0000,0000,0000,,非常不错  好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's great. Okay.
+Dialogue: 0,0:35:01.93,0:35:04.32,*Default,NTP,0000,0000,0000,,这正好是一个二拍子的曲子  很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This happens to be in duple meter and that's fine.
+Dialogue: 0,0:35:04.32,0:35:06.98,*Default,NTP,0000,0000,0000,,这不是主要问题  不过很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That wasn't the question here but great
+Dialogue: 0,0:35:06.98,0:35:09.43,*Default,NTP,0000,0000,0000,,你听出来了  我很高兴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're hearing that and I'm delighted.
+Dialogue: 0,0:35:09.43,0:35:10.54,*Default,NTP,0000,0000,0000,,莫扎特的曲子里有什么特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What Mozart has done here--
+Dialogue: 0,0:35:10.54,0:35:12.97,*Default,NTP,0000,0000,0000,,如果我们能够看到莫扎特的乐谱的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we could get the score up here of Mozart's music--
+Dialogue: 0,0:35:12.97,0:35:16.11,*Default,NTP,0000,0000,0000,,我们会看到他画了一个小小箭头  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we would see that he has put a little arrow 
+Dialogue: 0,0:35:16.11,0:35:19.52,*Default,NTP,0000,0000,0000,,一个小小的楔形标识  在每个重拍上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over top of--a wedge--over top of each of the down beats
+Dialogue: 0,0:35:27.17,0:35:29.94,*Default,NTP,0000,0000,0000,,这就是弦乐手们拉重音的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that the string player will really accent those
+Dialogue: 0,0:35:29.94,0:35:32.70,*Default,NTP,0000,0000,0000,,可是弦乐手们总是会在那里拉重音的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the string player would be accenting them anyway.
+Dialogue: 0,0:35:32.70,0:35:34.95,*Default,NTP,0000,0000,0000,,这又怎样  这里有小提琴手吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why? Any violinists in here 
+Dialogue: 0,0:35:34.95,0:35:36.78,*Default,NTP,0000,0000,0000,,或者有人拉过弦乐器吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or anybody who ever played a string instrument?
+Dialogue: 0,0:35:36.78,0:35:38.67,*Default,NTP,0000,0000,0000,,老师是怎么教你呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are you always told to do?
+Dialogue: 0,0:35:38.71,0:35:41.96,*Default,NTP,0000,0000,0000,,如果你用上弓去拉重音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you are playing a downbeat with an up-bow
+Dialogue: 0,0:35:41.96,0:35:44.54,*Default,NTP,0000,0000,0000,,你的形状会好吗  不会  绝对不会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are you in good shape? No, no, no, no.
+Dialogue: 0,0:35:44.54,0:35:46.36,*Default,NTP,0000,0000,0000,,你的老师很定会很不高兴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your teacher would not be happy with that.
+Dialogue: 0,0:35:46.36,0:35:49.60,*Default,NTP,0000,0000,0000,,你的弓法在那时应该是用下弓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your bowing pattern is probably backward at that point.
+Dialogue: 0,0:35:49.60,0:35:50.88,*Default,NTP,0000,0000,0000,,弦乐手们都是这样教出来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}String players are taught
+Dialogue: 0,0:35:50.88,0:35:54.29,*Default,NTP,0000,0000,0000,,是不是大提琴手这样的时候或者中提琴手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether it's cellists going this way, downbeat or violas and
+Dialogue: 0,0:35:54.29,0:35:57.36,*Default,NTP,0000,0000,0000,,还有小提琴手们在这里这样拉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}violinists coming down this way
+Dialogue: 0,0:35:57.36,0:35:58.38,*Default,NTP,0000,0000,0000,,当手势冲下  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the downward motion of the hand or 
+Dialogue: 0,0:35:58.38,0:36:00.08,*Default,NTP,0000,0000,0000,,很重的向下的手势时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pull across the strong pull across
+Dialogue: 0,0:36:00.08,0:36:03.75,*Default,NTP,0000,0000,0000,,是重拍出现的时候  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}should come with the downbeat;
+Dialogue: 0,0:36:03.75,0:36:05.18,*Default,NTP,0000,0000,0000,,都是在强调重拍的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that emphasizes the downbeat.
+Dialogue: 0,0:36:05.18,0:36:06.88,*Default,NTP,0000,0000,0000,,这也是我们知道重拍在哪里的途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's how we know the downbeat.
+Dialogue: 0,0:36:06.88,0:36:09.37,*Default,NTP,0000,0000,0000,,目前我们知道了时值和重音这两个途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So so far we've had duration and accent.
+Dialogue: 0,0:36:09.37,0:36:11.91,*Default,NTP,0000,0000,0000,,莫扎特在这里用的是重音的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Mozart is actually writing accent into this.
+Dialogue: 0,0:36:11.91,0:36:15.34,*Default,NTP,0000,0000,0000,,第三条途径  是作曲家给我们的信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The third way that we--that composers signal to us
+Dialogue: 0,0:36:15.34,0:36:17.63,*Default,NTP,0000,0000,0000,,让我们几乎能马上挑出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we pick up almost intuitively 
+Dialogue: 0,0:36:17.63,0:36:21.38,*Default,NTP,0000,0000,0000,,哪个是重拍的途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the whereabouts of downbeats
+Dialogue: 0,0:36:21.38,0:36:25.68,*Default,NTP,0000,0000,0000,,是通过伴奏的样式  我们称之为音域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is through patterns of accompaniment. We'll call it range.
+Dialogue: 0,0:36:25.68,0:36:29.39,*Default,NTP,0000,0000,0000,,这是理查·施特劳斯的一首圆舞曲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So here's a waltz by Richard Strauss
+Dialogue: 0,0:36:29.39,0:36:30.15,*Default,NTP,0000,0000,0000,,别搞错了  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not to be confused--
+Dialogue: 0,0:36:30.15,0:36:32.79,*Default,NTP,0000,0000,0000,,不对  不好意思  是约翰·斯特劳斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no, excuse me, by Johann Strauss
+Dialogue: 0,0:36:32.79,0:36:34.57,*Default,NTP,0000,0000,0000,,别和理查·斯特劳斯的搞混了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not to be confused with Richard Strauss
+Dialogue: 0,0:36:34.57,0:36:35.95,*Default,NTP,0000,0000,0000,,我们上次听过他的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whom we heard last time.
+Dialogue: 0,0:36:47.88,0:36:51.83,*Default,NTP,0000,0000,0000,,还有许多  重要的是左手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so on. What's important here is the left hand.
+Dialogue: 0,0:36:55.73,0:36:57.94,*Default,NTP,0000,0000,0000,,这就是为什么我们会听到三拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why we hear a triple pattern here.
+Dialogue: 0,0:36:57.94,0:36:59.35,*Default,NTP,0000,0000,0000,,我们听到两个弱拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're hearing two weak beats
+Dialogue: 0,0:36:59.35,0:37:02.51,*Default,NTP,0000,0000,0000,,而强拍总是在低音位置  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the strong beat is always in the lower position here
+Dialogue: 0,0:37:02.51,0:37:06.48,*Default,NTP,0000,0000,0000,,所以我们有低  中  中  低  中  中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we're getting low, middle, middle, low, middle, middle
+Dialogue: 0,0:37:06.48,0:37:08.22,*Default,NTP,0000,0000,0000,,或者也可以像我们之前听过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or it could be something as we had the other day 
+Dialogue: 0,0:37:08.22,0:37:10.01,*Default,NTP,0000,0000,0000,,柴可夫斯基的钢琴协奏曲那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the Tchaikovsky Piano Concerto
+Dialogue: 0,0:37:10.01,0:37:14.65,*Default,NTP,0000,0000,0000,,低  中  高  低  中  高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}low, middle, high, low, middle, high
+Dialogue: 0,0:37:14.65,0:37:17.42,*Default,NTP,0000,0000,0000,,不过每次重拍似乎都落在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but each time the downbeat seems to be coming in
+Dialogue: 0,0:37:17.42,0:37:19.83,*Default,NTP,0000,0000,0000,,最低音上面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}association with that lowest note.
+Dialogue: 0,0:37:19.83,0:37:22.92,*Default,NTP,0000,0000,0000,,因此伴奏的音域或者音高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So range or position here in the accompaniment
+Dialogue: 0,0:37:22.92,0:37:26.31,*Default,NTP,0000,0000,0000,,常常告诉我们这个信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can oftentimes signal this information to us.
+Dialogue: 0,0:37:27.16,0:37:30.97,*Default,NTP,0000,0000,0000,,最后  也是最重要的途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And finally, and most important--
+Dialogue: 0,0:37:30.97,0:37:35.70,*Default,NTP,0000,0000,0000,,上述的三种途径都非常直截了当\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these others have been pretty straightforward--
+Dialogue: 0,0:37:36.23,0:37:39.11,*Default,NTP,0000,0000,0000,,不过也有些不那么直接的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but what has not been straightforward 
+Dialogue: 0,0:37:39.11,0:37:43.63,*Default,NTP,0000,0000,0000,,即使你听了成千上百遍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is something that you might listen to many, many times 
+Dialogue: 0,0:37:43.63,0:37:46.72,*Default,NTP,0000,0000,0000,,也不一定会注意到的是和弦的变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not be aware of, and that is chord changes. 
+Dialogue: 0,0:37:46.72,0:37:50.14,*Default,NTP,0000,0000,0000,,我们的音乐里有和弦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have chords in music.
+Dialogue: 0,0:37:54.48,0:37:57.15,*Default,NTP,0000,0000,0000,,这些和弦是旋律的基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're these building blocks that support the melody
+Dialogue: 0,0:37:57.15,0:38:00.95,*Default,NTP,0000,0000,0000,,和弦的变化必须和旋律保持协调一致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they have to change for that melody to be consonant all the time.
+Dialogue: 0,0:38:01.24,0:38:04.98,*Default,NTP,0000,0000,0000,,而和弦的变化往往都在重拍上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But where they change oftentimes is on the downbeat.
+Dialogue: 0,0:38:04.98,0:38:08.20,*Default,NTP,0000,0000,0000,,通常  和弦的变化都在重拍上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most frequently, chord changes come on the downbeat
+Dialogue: 0,0:38:08.20,0:38:10.74,*Default,NTP,0000,0000,0000,,所以作曲家们用这第四种途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so composers signal to us in a fourth way 
+Dialogue: 0,0:38:10.75,0:38:14.29,*Default,NTP,0000,0000,0000,,通过和弦的变化告诉我们重拍的位置  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the downbeat by means of chord change.
+Dialogue: 0,0:38:14.29,0:38:16.60,*Default,NTP,0000,0000,0000,,现在我们将放一段流行音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now we're going to play just a little bit of pop music--
+Dialogue: 0,0:38:16.60,0:38:19.37,*Default,NTP,0000,0000,0000,,不要放得太响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not too laud cause this really hipped up.
+Dialogue: 0,0:38:19.86,0:38:21.27,*Default,NTP,0000,0000,0000,,一段流行音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a bit of pop music here
+Dialogue: 0,0:38:21.27,0:38:23.15,*Default,NTP,0000,0000,0000,,你可能会觉得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and by playing this you might think
+Dialogue: 0,0:38:23.15,0:38:25.89,*Default,NTP,0000,0000,0000,,放这段音乐会让我很兴奋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I think that I'm hip or with it.
+Dialogue: 0,0:38:25.89,0:38:28.03,*Default,NTP,0000,0000,0000,,我们要放一段摇滚乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to play some rock and roll.
+Dialogue: 0,0:38:28.03,0:38:30.55,*Default,NTP,0000,0000,0000,,我看上去很兴奋吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Do I look hip or with it?
+Dialogue: 0,0:38:31.41,0:38:33.93,*Default,NTP,0000,0000,0000,,貌似我和流行文化没有一丁点接轨的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hopelessly out of touch with popular culture
+Dialogue: 0,0:38:33.93,0:38:35.76,*Default,NTP,0000,0000,0000,,这我比谁都清楚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and nobody knows this better than I
+Dialogue: 0,0:38:35.76,0:38:37.90,*Default,NTP,0000,0000,0000,,可以为我证明这点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to prove this I have chosen a piece
+Dialogue: 0,0:38:37.90,0:38:40.06,*Default,NTP,0000,0000,0000,,是一个小故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because there's a little story with it.
+Dialogue: 0,0:38:40.38,0:38:42.42,*Default,NTP,0000,0000,0000,,我很喜欢这曲子  因为它确有独到之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I like this piece because it does something
+Dialogue: 0,0:38:42.42,0:38:44.55,*Default,NTP,0000,0000,0000,,过去几年的教学中我一直用到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I've used it in previous years,
+Dialogue: 0,0:38:44.55,0:38:46.65,*Default,NTP,0000,0000,0000,,我往往会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I put it on and I would announce
+Dialogue: 0,0:38:46.65,0:38:48.72,*Default,NTP,0000,0000,0000,,现在我放一段曲子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I'm now going to play out of the--
+Dialogue: 0,0:38:48.72,0:38:51.85,*Default,NTP,0000,0000,0000,,这张专辑叫  文档  是REM乐队的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an album called Document by REM ,"
+Dialogue: 0,0:38:51.85,0:38:55.86,*Default,NTP,0000,0000,0000,,然后就放曲子  我没觉得有什么问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and put it on and REM and it's fine with me.
+Dialogue: 0,0:38:55.86,0:38:57.70,*Default,NTP,0000,0000,0000,,封面上的确  就是印着  REM\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what it says, "REM," On the printout
+Dialogue: 0,0:38:57.70,0:38:58.81,*Default,NTP,0000,0000,0000,,两年之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and about two years after
+Dialogue: 0,0:38:58.81,0:39:01.02,*Default,NTP,0000,0000,0000,,我开始放的时候  一个学生上来跟我说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was doing this a student came up and said,
+Dialogue: 0,0:39:01.02,0:39:03.67,*Default,NTP,0000,0000,0000,,莱特教授  这真的不是REM乐队\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Professor Wright, it's really not "Rem.""
+Dialogue: 0,0:39:03.67,0:39:05.40,*Default,NTP,0000,0000,0000,,哦  不是吗  好吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh, it's not?" Okay.
+Dialogue: 0,0:39:05.40,0:39:08.25,*Default,NTP,0000,0000,0000,,这就是我和流行音乐的距离\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's how distant I am from all of this
+Dialogue: 0,0:39:08.25,0:39:10.22,*Default,NTP,0000,0000,0000,,但我们还是来听一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let's listen to a little of this.
+Dialogue: 0,0:39:10.22,0:39:12.25,*Default,NTP,0000,0000,0000,,这是个简单的四拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in a straightforward four.
+Dialogue: 0,0:39:12.25,0:39:15.64,*Default,NTP,0000,0000,0000,,摇滚乐都是四拍子  不是二拍子  是四拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Rock really comes forth not so much in twos but in fours 
+Dialogue: 0,0:39:15.64,0:39:17.88,*Default,NTP,0000,0000,0000,,我们称为四四拍  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll call this a 4/4, and you caso we'll call this a 4/4
+Dialogue: 0,0:39:17.88,0:39:19.94,*Default,NTP,0000,0000,0000,,你可以作为四拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can beat a four pattern 
+Dialogue: 0,0:39:19.94,0:39:21.02,*Default,NTP,0000,0000,0000,,也可以作为两拍子来打节拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to it or you can beat a two pattern.
+Dialogue: 0,0:39:21.02,0:39:23.40,*Default,NTP,0000,0000,0000,,这倒无所谓  不过注意一下 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't really matter but notice
+Dialogue: 0,0:39:23.40,0:39:25.12,*Default,NTP,0000,0000,0000,,和弦变化的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that whenever the chords are changing
+Dialogue: 0,0:39:25.12,0:39:26.90,*Default,NTP,0000,0000,0000,,往往都是在重拍上变化的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're changing on down beat.
+Dialogue: 0,0:39:26.90,0:39:28.40,*Default,NTP,0000,0000,0000,,那么我们听一小段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let's hear a little bit of this
+Dialogue: 0,0:39:28.40,0:39:29.21,*Default,NTP,0000,0000,0000,,然后我们就停\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then we'll stop 
+Dialogue: 0,0:39:29.21,0:39:31.27,*Default,NTP,0000,0000,0000,,免得他们告我们侵权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so they don't sue us for copyright infringement
+Dialogue: 0,0:39:31.27,0:39:33.79,*Default,NTP,0000,0000,0000,,然后我们又得去找别的段子了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then we'll go somewhere else and take another chunk.
+Dialogue: 0,0:39:38.12,0:39:39.73,*Default,NTP,0000,0000,0000,,认真听\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So listen.
+Dialogue: 0,0:39:48.97,0:39:50.42,*Default,NTP,0000,0000,0000,,有变化了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Change.
+Dialogue: 0,0:39:52.72,0:39:53.88,*Default,NTP,0000,0000,0000,,又变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Change.
+Dialogue: 0,0:39:56.38,0:39:57.70,*Default,NTP,0000,0000,0000,,变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Change.
+Dialogue: 0,0:40:00.38,0:40:01.62,*Default,NTP,0000,0000,0000,,再变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Change.
+Dialogue: 0,0:40:04.74,0:40:06.84,*Default,NTP,0000,0000,0000,,好的  这就是他们的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So that's all they're doing there.
+Dialogue: 0,0:40:06.84,0:40:08.94,*Default,NTP,0000,0000,0000,,他们变化的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every time they're changing 
+Dialogue: 0,0:40:08.94,0:40:10.59,*Default,NTP,0000,0000,0000,,你知道当我说  变  的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know everytime I say change, and
+Dialogue: 0,0:40:10.59,0:40:13.22,*Default,NTP,0000,0000,0000,,你听到的音乐也随之改变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}eventually you will be hearing there's the same change, too.
+Dialogue: 0,0:40:13.22,0:40:17.38,*Default,NTP,0000,0000,0000,,他们变化的时候你的手势都是向下的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every time they're changing your hand is going down
+Dialogue: 0,0:40:17.38,0:40:22.08,*Default,NTP,0000,0000,0000,,所以在所有的途径当中通过和弦的变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so chord changes may be the most powerful 
+Dialogue: 0,0:40:22.08,0:40:27.93,*Default,NTP,0000,0000,0000,,来判断重拍在哪儿可能是最有效的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of all of these aspects of where the down beat is.
+Dialogue: 0,0:40:29.74,0:40:32.14,*Default,NTP,0000,0000,0000,,好了  我想给你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. I had intended to give you 
+Dialogue: 0,0:40:32.14,0:40:34.09,*Default,NTP,0000,0000,0000,,做一些小小的节奏测验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}just a little bit of a rhythmic quiz
+Dialogue: 0,0:40:34.09,0:40:35.73,*Default,NTP,0000,0000,0000,,不过我们现在就做一个吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let's just do one of these things.
+Dialogue: 0,0:40:35.73,0:40:36.98,*Default,NTP,0000,0000,0000,,我们接下来要做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's something else we have to do in here.
+Dialogue: 0,0:40:36.98,0:40:40.16,*Default,NTP,0000,0000,0000,,就是听一段节奏  然后鉴别一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have to hear a rhythm and recognize it
+Dialogue: 0,0:40:40.16,0:40:44.11,*Default,NTP,0000,0000,0000,,我们白板上有一串节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so we have a series of rhythms on the board up there.
+Dialogue: 0,0:40:44.67,0:40:48.52,*Default,NTP,0000,0000,0000,,请选一个和你听到的相符的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Please choose a rhythm for excerpt one
+Dialogue: 0,0:40:48.52,0:40:51.23,*Default,NTP,0000,0000,0000,,你可以选节奏甲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can choose rhythm A which is
+Dialogue: 0,0:40:55.21,0:40:57.34,*Default,NTP,0000,0000,0000,,也可以选节奏乙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or you could choose rhythm B
+Dialogue: 0,0:41:01.73,0:41:04.33,*Default,NTP,0000,0000,0000,,我现在要弹一段  肖邦的曲子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm about to play a piece. It's by Chopin.
+Dialogue: 0,0:41:04.33,0:41:08.54,*Default,NTP,0000,0000,0000,,刚才曲子的节奏是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Which rhythm is in play here?
+Dialogue: 0,0:41:08.54,0:41:09.94,*Default,NTP,0000,0000,0000,,是哪一个呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Which rhythm am I playing?
+Dialogue: 0,0:41:09.94,0:41:12.19,*Default,NTP,0000,0000,0000,,甲还是乙呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it A or is it B?
+Dialogue: 0,0:41:31.49,0:41:33.63,*Default,NTP,0000,0000,0000,,你们觉得是哪个  有多少选甲的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what do you think? How many think A?
+Dialogue: 0,0:41:33.63,0:41:35.43,*Default,NTP,0000,0000,0000,,有多少选乙的呢  好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many think B? Okay. 
+Dialogue: 0,0:41:35.43,0:41:39.34,*Default,NTP,0000,0000,0000,,那个挑战性不是很强\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's not too challenging.
+Dialogue: 0,0:41:39.34,0:41:40.21,*Default,NTP,0000,0000,0000,,我们尝试一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll be doing some of that.
+Dialogue: 0,0:41:40.21,0:41:43.35,*Default,NTP,0000,0000,0000,,然后肖邦这里徘徊了一下然后转调\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then Chopin is sitting here and he modulates;
+Dialogue: 0,0:41:43.35,0:41:45.99,*Default,NTP,0000,0000,0000,,他变调了  这个呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he changes key. What about this?
+Dialogue: 0,0:41:45.99,0:41:49.20,*Default,NTP,0000,0000,0000,,这个  这个是第二条了  甲还是乙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it--This is number two. Is it A or B?
+Dialogue: 0,0:42:16.82,0:42:18.11,*Default,NTP,0000,0000,0000,,很美  多么动听\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lovely. Wasn't it lovely,
+Dialogue: 0,0:42:18.11,0:42:19.95,*Default,NTP,0000,0000,0000,,这段肖邦的小品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a little thing by Chopin?
+Dialogue: 0,0:42:20.47,0:42:22.49,*Default,NTP,0000,0000,0000,,老肖邦花了多长时间去构思这段曲子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How long did it take old Chopin to think that up
+Dialogue: 0,0:42:22.49,0:42:25.35,*Default,NTP,0000,0000,0000,,你觉得呢  两秒钟吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do you suppose? Two seconds?
+Dialogue: 0,0:42:25.35,0:42:28.07,*Default,NTP,0000,0000,0000,,灵光乍现  三秒钟一蹴而就吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Three seconds of white-hot inspiration?
+Dialogue: 0,0:42:28.07,0:42:29.57,*Default,NTP,0000,0000,0000,,我已经六十四岁了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm sixty-four years old
+Dialogue: 0,0:42:29.57,0:42:34.17,*Default,NTP,0000,0000,0000,,这辈子都没有哪怕一秒钟灵光乍现的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I haven't had one second of genius in my entire life.
+Dialogue: 0,0:42:34.39,0:42:37.64,*Default,NTP,0000,0000,0000,,真是叫人丧气  很挫败啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is really depressing. It's discouraging.
+Dialogue: 0,0:42:37.64,0:42:39.90,*Default,NTP,0000,0000,0000,,我一直迎难而上可就是没有过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I soldier on but it hasn't come to me.
+Dialogue: 0,0:42:39.90,0:42:41.45,*Default,NTP,0000,0000,0000,,你们都还年轻  我相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You are younger and I'm sure
+Dialogue: 0,0:42:41.45,0:42:43.34,*Default,NTP,0000,0000,0000,,属于你们的瞬间一定会有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that your moment of genius is out there.
+Dialogue: 0,0:42:43.34,0:42:47.74,*Default,NTP,0000,0000,0000,,这真是差距  勤奋的普通人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really the difference between perseverance
+Dialogue: 0,0:42:47.74,0:42:49.55,*Default,NTP,0000,0000,0000,,比如我  和天才\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in my case, and genius--
+Dialogue: 0,0:42:49.55,0:42:51.16,*Default,NTP,0000,0000,0000,,浑然天成的天才\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pure, unadulterated genius--
+Dialogue: 0,0:42:51.16,0:42:51.98,*Default,NTP,0000,0000,0000,,比如肖邦  之间的差距\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the case of Chopin.
+Dialogue: 0,0:42:51.98,0:42:52.96,*Default,NTP,0000,0000,0000,,真是一段优美的旋律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What a beautiful melody.
+Dialogue: 0,0:42:52.96,0:42:55.49,*Default,NTP,0000,0000,0000,,扯了那么多  答案是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In any event, the answer is what?
+Dialogue: 0,0:42:56.56,0:42:59.49,*Default,NTP,0000,0000,0000,,第二条  是甲还是乙呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For two, is it A or B? 
+Dialogue: 0,0:43:05.50,0:43:06.74,*Default,NTP,0000,0000,0000,,你们觉得是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What do you think?
+Dialogue: 0,0:43:06.74,0:43:09.57,*Default,NTP,0000,0000,0000,,甲  正解  甲就是它的旋律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A, yeah, so that's his rhythm, A there. 
+Dialogue: 0,0:43:09.57,0:43:12.04,*Default,NTP,0000,0000,0000,,很好  最后一个联系  我们马上结束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right. We're going to end with one final exercise.
+Dialogue: 0,0:43:12.04,0:43:14.64,*Default,NTP,0000,0000,0000,,这是段听有趣的片段  很有意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a fun piece I think. It's fun to do.
+Dialogue: 0,0:43:14.64,0:43:16.67,*Default,NTP,0000,0000,0000,,这是一段莫里斯·拉威尔的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a piece by Maurice Ravel 
+Dialogue: 0,0:43:16.67,0:43:19.03,*Default,NTP,0000,0000,0000,,名叫  波莱罗舞曲  的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called Bolero.
+Dialogue: 0,0:43:19.03,0:43:21.02,*Default,NTP,0000,0000,0000,,很特别的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a unique piece.
+Dialogue: 0,0:43:21.02,0:43:22.90,*Default,NTP,0000,0000,0000,,莫里斯·拉威尔是法国作曲家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maurice Ravel was a French composer
+Dialogue: 0,0:43:22.90,0:43:25.89,*Default,NTP,0000,0000,0000,,是二十世纪早期的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}writing in the early twentieth century.
+Dialogue: 0,0:43:25.89,0:43:27.46,*Default,NTP,0000,0000,0000,,这是件独特的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a unique piece
+Dialogue: 0,0:43:27.46,0:43:30.25,*Default,NTP,0000,0000,0000,,因为他仅仅只是把一些基本的样式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because what he does is take some very basic patterns
+Dialogue: 0,0:43:30.25,0:43:33.33,*Default,NTP,0000,0000,0000,,简单地重复重复再重复\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and simply repeats them over and over and over again
+Dialogue: 0,0:43:33.33,0:43:37.13,*Default,NTP,0000,0000,0000,,大概十四分半钟  当然这也取决于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for about fourteen and a half minutes depending upon 
+Dialogue: 0,0:43:37.13,0:43:40.85,*Default,NTP,0000,0000,0000,,演奏者的演奏速度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the tempo that the conductor is taking the music.
+Dialogue: 0,0:43:40.85,0:43:43.70,*Default,NTP,0000,0000,0000,,我们一起来听一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let's listen to a little bit of this music
+Dialogue: 0,0:43:43.70,0:43:46.03,*Default,NTP,0000,0000,0000,,我希望你们也许以组为单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I want you, maybe as a group
+Dialogue: 0,0:43:46.03,0:43:48.64,*Default,NTP,0000,0000,0000,,一起用脚打拍  拍手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to tap with your foot, your hand
+Dialogue: 0,0:43:48.64,0:43:50.59,*Default,NTP,0000,0000,0000,,随你喜欢  一起打拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever, just the beat as you hear it.
+Dialogue: 0,0:43:50.59,0:43:52.07,*Default,NTP,0000,0000,0000,,我们不用考虑这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't have to pay any attention to this.
+Dialogue: 0,0:43:52.07,0:43:55.43,*Default,NTP,0000,0000,0000,,我们一会儿会回头再来说这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll come to this in just a moment
+Dialogue: 0,0:43:55.43,0:43:59.12,*Default,NTP,0000,0000,0000,,仅仅只需要打拍子  我们一起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but just tap and we'll all-- maybe eventually all together the beat.
+Dialogue: 0,0:43:59.12,0:44:00.41,*Default,NTP,0000,0000,0000,,开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here we go.
+Dialogue: 0,0:44:39.96,0:44:41.78,*Default,NTP,0000,0000,0000,,你们大部分人都没有打拍子啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most of you are not tapping.
+Dialogue: 0,0:44:41.78,0:44:44.79,*Default,NTP,0000,0000,0000,,大家打起来  在你觉得正确的点上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So everybody start tapping where you think it is.
+Dialogue: 0,0:44:49.18,0:44:53.63,*Default,NTP,0000,0000,0000,,好的  很好  好了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Good. All right.
+Dialogue: 0,0:44:53.63,0:44:55.57,*Default,NTP,0000,0000,0000,,那个穿橙色衣服的先生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gentleman out here in the orange shirt.
+Dialogue: 0,0:44:55.57,0:44:57.06,*Default,NTP,0000,0000,0000,,我派你做指挥\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to have you be a conductor.
+Dialogue: 0,0:44:57.06,0:44:58.22,*Default,NTP,0000,0000,0000,,你刚才做得很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You were doing really well
+Dialogue: 0,0:44:58.22,0:45:00.85,*Default,NTP,0000,0000,0000,,手势也很正确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you were conducting correctly early on.
+Dialogue: 0,0:45:01.20,0:45:03.25,*Default,NTP,0000,0000,0000,,很好  这是我们刚才做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So good. Here's what we got.
+Dialogue: 0,0:45:03.25,0:45:05.76,*Default,NTP,0000,0000,0000,,大部分人是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most people have .
+Dialogue: 0,0:45:08.65,0:45:10.48,*Default,NTP,0000,0000,0000,,小部分人是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some people are going 
+Dialogue: 0,0:45:14.95,0:45:17.41,*Default,NTP,0000,0000,0000,,在本课程中我们会知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in this course we would know 
+Dialogue: 0,0:45:17.41,0:45:19.25,*Default,NTP,0000,0000,0000,,你们是否可以根据其他的信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether you're hearing duple or triple
+Dialogue: 0,0:45:19.25,0:45:20.92,*Default,NTP,0000,0000,0000,,辨认出这是三拍子或者二拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on some other information
+Dialogue: 0,0:45:20.92,0:45:22.51,*Default,NTP,0000,0000,0000,,所以也不要担心  哪怕你这样做了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so don't worry about if you're doing .
+Dialogue: 0,0:45:24.19,0:45:25.46,*Default,NTP,0000,0000,0000,,作为拍这有点快啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a little bit fast for a beat.
+Dialogue: 0,0:45:25.46,0:45:26.32,*Default,NTP,0000,0000,0000,,刚才你做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What you're doing there
+Dialogue: 0,0:45:26.32,0:45:28.52,*Default,NTP,0000,0000,0000,,实际上是把鼓点再更细致地一分为二了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is actually subdividing the beat into two
+Dialogue: 0,0:45:28.52,0:45:29.95,*Default,NTP,0000,0000,0000,,不过不用在意  那也是可以的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but don't worry about that. That's fine.
+Dialogue: 0,0:45:29.95,0:45:32.72,*Default,NTP,0000,0000,0000,,你是用八分音符  我们剩下的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're doing eighth notes and the rest of us are doing--
+Dialogue: 0,0:45:32.72,0:45:35.12,*Default,NTP,0000,0000,0000,,即其他人是用四分音符  没事的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}other people are doing quarter notes. Okay.
+Dialogue: 0,0:45:35.12,0:45:36.71,*Default,NTP,0000,0000,0000,,那这个鼓点就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the beat is .
+Dialogue: 0,0:45:38.88,0:45:41.07,*Default,NTP,0000,0000,0000,,我们刚才听到的旋律是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now what music have we been hearing here?
+Dialogue: 0,0:45:41.86,0:45:43.89,*Default,NTP,0000,0000,0000,,桑塔纳  你在哪里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Santana, where are you?
+Dialogue: 0,0:45:43.89,0:45:46.12,*Default,NTP,0000,0000,0000,,好的  到这里来  看一下谱子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Come on up here. Take a look at this.
+Dialogue: 0,0:45:46.12,0:45:48.43,*Default,NTP,0000,0000,0000,,林德  到这里来  看一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lynda, come on over here and take a look at this.
+Dialogue: 0,0:45:48.43,0:45:51.03,*Default,NTP,0000,0000,0000,,我们本该排练一下的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We should have rehearsed this in advance.
+Dialogue: 0,0:45:51.03,0:45:52.25,*Default,NTP,0000,0000,0000,,不过我们还是没有排练过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We did not do this.
+Dialogue: 0,0:45:52.25,0:45:55.37,*Default,NTP,0000,0000,0000,,这两位小姐是经验丰富的歌手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are two ladies that are very experienced singers.
+Dialogue: 0,0:45:55.37,0:45:57.30,*Default,NTP,0000,0000,0000,,我希望能请你们站上去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want you to just stand right up here, please.
+Dialogue: 0,0:45:57.30,0:46:00.16,*Default,NTP,0000,0000,0000,,她们可没有预先接到过通知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have not been forewarned about this!
+Dialogue: 0,0:46:00.16,0:46:02.80,*Default,NTP,0000,0000,0000,,看一下这个谱子  我们一起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Take a look at this. We're going to do it together.
+Dialogue: 0,0:46:00.16,0:46:15.13,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[译注：]此处白板上曲谱的第二小节有误
+Dialogue: 0,0:46:02.80,0:46:05.10,*Default,NTP,0000,0000,0000,,开始  你们唱第一段的旋律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here we go. You're going to sing that top melody.
+Dialogue: 0,0:46:05.10,0:46:07.13,*Default,NTP,0000,0000,0000,,一  准备  开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, ready, go.
+Dialogue: 0,0:46:16.78,0:46:19.26,*Default,NTP,0000,0000,0000,,好的  我们要连续\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, and we're just going to keep--
+Dialogue: 0,0:46:19.26,0:46:23.02,*Default,NTP,0000,0000,0000,,这样可以了  我们要连续唱这段曲子 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It'll be fine, and we're just going to keep going
+Dialogue: 0,0:46:23.02,0:46:24.60,*Default,NTP,0000,0000,0000,,到底的时候再\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and once you get to the end 
+Dialogue: 0,0:46:24.60,0:46:27.73,*Default,NTP,0000,0000,0000,,从头开始  好吗  开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one then we're going to repeat. Okay? Here we go.
+Dialogue: 0,0:46:27.73,0:46:29.47,*Default,NTP,0000,0000,0000,,二  唱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two, sing. 
+Dialogue: 0,0:46:40.24,0:46:40.94,*Default,NTP,0000,0000,0000,,好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay.
+Dialogue: 0,0:46:40.94,0:46:43.14,*Default,NTP,0000,0000,0000,,你们就这样一遍一遍地唱下去  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you're going to keep going over and over and over like that.
+Dialogue: 0,0:46:43.14,0:46:45.35,*Default,NTP,0000,0000,0000,,我就做这段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to be this thing here.
+Dialogue: 0,0:46:45.35,0:46:48.16,*Default,NTP,0000,0000,0000,,我们开始  这个是打击乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's just go--This is the percussion.
+Dialogue: 0,0:46:51.97,0:46:55.52,*Default,NTP,0000,0000,0000,,这里没有音高  只有旋律  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay? There is no pitch to it. It is just rhythm. 
+Dialogue: 0,0:46:55.52,0:46:57.77,*Default,NTP,0000,0000,0000,,上面这条有旋律  有节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Up here we have melody and rhythm.
+Dialogue: 0,0:46:57.77,0:47:01.52,*Default,NTP,0000,0000,0000,,这条只有节奏  下面这条是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here we have just rhythm. Underneath we have .
+Dialogue: 0,0:47:05.36,0:47:07.48,*Default,NTP,0000,0000,0000,,是基本的和声\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have basically harmony
+Dialogue: 0,0:47:07.48,0:47:09.61,*Default,NTP,0000,0000,0000,,不过这只是一个简单的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it has a simple rhythm to it.
+Dialogue: 0,0:47:09.61,0:47:12.00,*Default,NTP,0000,0000,0000,,这是个有几种不同形式的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a rhythm with a couple of different patterns.
+Dialogue: 0,0:47:12.00,0:47:14.45,*Default,NTP,0000,0000,0000,,在座诸位  一起唱这个  好吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You, students, are going to sing this. Okay?
+Dialogue: 0,0:47:14.45,0:47:17.22,*Default,NTP,0000,0000,0000,,开始  大家一起  准备  唱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So here we go. Everybody together, ready, sing.
+Dialogue: 0,0:47:27.15,0:47:29.48,*Default,NTP,0000,0000,0000,,好的  接下来我们要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So here we're going to go--
+Dialogue: 0,0:47:29.48,0:47:30.86,*Default,NTP,0000,0000,0000,,那个穿橙色衣服的先生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The gentleman in the orange shirt--
+Dialogue: 0,0:47:30.86,0:47:32.10,*Default,NTP,0000,0000,0000,,我不想这么对你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hate to do this to you
+Dialogue: 0,0:47:32.10,0:47:33.10,*Default,NTP,0000,0000,0000,,不过我们只有三十秒了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we've got thirty seconds.
+Dialogue: 0,0:47:33.10,0:47:36.07,*Default,NTP,0000,0000,0000,,请站起来  你做的事情很了不起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Stand up. You were doing a great job.
+Dialogue: 0,0:47:36.07,0:47:39.96,*Default,NTP,0000,0000,0000,,请站起来  那样就好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Stand up and you can--That's fine.
+Dialogue: 0,0:47:39.96,0:47:40.75,*Default,NTP,0000,0000,0000,,你可以面对我  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can face me. 
+Dialogue: 0,0:47:40.75,0:47:41.83,*Default,NTP,0000,0000,0000,,我们这样可以更好地配合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll coordinate it better this way
+Dialogue: 0,0:47:41.83,0:47:43.31,*Default,NTP,0000,0000,0000,,用三拍子指挥\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and just conduct this in three.
+Dialogue: 0,0:47:43.31,0:47:45.40,*Default,NTP,0000,0000,0000,,一开始的时候我会和你一起指挥  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll start conducting with you 
+Dialogue: 0,0:47:45.40,0:47:46.18,*Default,NTP,0000,0000,0000,,然后就交给你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you take over.
+Dialogue: 0,0:47:46.18,0:47:49.18,*Default,NTP,0000,0000,0000,,我们开始  一  准备  走\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here we go, one, ready, go.
+Dialogue: 0,0:48:03.46,0:48:05.85,*Default,NTP,0000,0000,0000,,好的  非常好  事实上超乎想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Great. This is actually terrific.
+Dialogue: 0,0:48:05.85,0:48:08.15,*Default,NTP,0000,0000,0000,,我们可以去霍博肯和希博伊根剧场演出了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to take it to Hoboken and Sheboygan.
+Dialogue: 0,0:48:08.15,0:48:11.01,*Default,NTP,0000,0000,0000,,我们甚至可以在全世界开演奏会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to play across the world with this group.
+Dialogue: 0,0:48:11.01,0:48:12.71,*Default,NTP,0000,0000,0000,,非常好  非常感谢  姑娘们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. Thank you very much, ladies.
+Dialogue: 0,0:48:12.71,0:48:15.33,*Default,NTP,0000,0000,0000,,这里的要点是  最后一个要点  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The point here--final point 
+Dialogue: 0,0:48:15.33,0:48:16.14,*Default,NTP,0000,0000,0000,,说完就下课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then I'll let you go.
+Dialogue: 0,0:48:16.14,0:48:18.09,*Default,NTP,0000,0000,0000,,这是个有节奏的旋律 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a melody with rhythm. 
+Dialogue: 0,0:48:18.09,0:48:19.84,*Default,NTP,0000,0000,0000,,这是个纯节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is pure rhythm.
+Dialogue: 0,0:48:19.84,0:48:23.04,*Default,NTP,0000,0000,0000,,这是个和声  有一点简单的节奏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a harmony with a very simple rhythm here.
+Dialogue: 0,0:48:23.04,0:48:24.73,*Default,NTP,0000,0000,0000,,哪个来确定整个乐曲的拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who is playing the beat? 
+Dialogue: 0,0:48:24.73,0:48:28.31,*Default,NTP,0000,0000,0000,,我让你们指挥或者打出节奏来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I asked you to conduct the beat or to tap the beat. 
+Dialogue: 0,0:48:28.31,0:48:31.25,*Default,NTP,0000,0000,0000,,大部分人  每个人都打得很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most people--And everybody was tapping the beat just fine and dandy,
+Dialogue: 0,0:48:31.25,0:48:35.41,*Default,NTP,0000,0000,0000,,但你们有没有注意到没有人打在拍上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but notice up here nobody is playing the beat.
+Dialogue: 0,0:48:35.41,0:48:37.18,*Default,NTP,0000,0000,0000,,没有人在这里打拍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's nobody up here that's playing the beat.
+Dialogue: 0,0:48:37.18,0:48:41.62,*Default,NTP,0000,0000,0000,,我们的大脑感知了所有复杂的信息加工后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The brain perceives all of this complex information and it processes it
+Dialogue: 0,0:48:41.62,0:48:45.58,*Default,NTP,0000,0000,0000,,推算出了拍子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it extrapolates from it the beat,
+Dialogue: 0,0:48:45.58,0:48:47.16,*Default,NTP,0000,0000,0000,,不过没有人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but again nobody in music--
+Dialogue: 0,0:48:47.16,0:48:49.08,*Default,NTP,0000,0000,0000,,除了军乐队的低音鼓手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}except the bass drum player in a marching band--
+Dialogue: 0,0:48:49.08,0:48:53.52,*Default,NTP,0000,0000,0000,,没有人在音乐里仅仅只是打鼓点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nobody in music ever does anything except just play the beat.
+Dialogue: 0,0:48:53.52,0:48:57.00,*Default,NTP,0000,0000,0000,,好的  那晚上讨论会的时候再见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So I'll see you starting this evening in sections.

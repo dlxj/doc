@@ -1,0 +1,801 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:00.00,0:02:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:20:00.00,0:21:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:00:01.30,0:00:02.40,*Default,NTP,0000,0000,0000,,在上次课的最后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the end of last class,
+Dialogue: 0,0:00:02.40,0:00:04.17,*Default,NTP,0000,0000,0000,,我们开始简述一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we started sketching an argument
+Dialogue: 0,0:00:04.17,0:00:05.99,*Default,NTP,0000,0000,0000,,来自笛卡尔的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that comes from Descartes,
+Dialogue: 0,0:00:05.99,0:00:08.28,*Default,NTP,0000,0000,0000,,或称为卡氏论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Cartesian argument,
+Dialogue: 0,0:00:08.28,0:00:12.54,*Default,NTP,0000,0000,0000,,这个论证说仅仅通过思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that says merely by the process of thinking,
+Dialogue: 0,0:00:12.54,0:00:14.70,*Default,NTP,0000,0000,0000,,仅仅在思想的基础上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the basis of thought alone,
+Dialogue: 0,0:00:14.70,0:00:17.07,*Default,NTP,0000,0000,0000,,它就能证明心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it tends to show that the mind--
+Dialogue: 0,0:00:17.07,0:00:18.74,*Default,NTP,0000,0000,0000,,我们都承认有心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We all agree that there are minds.
+Dialogue: 0,0:00:18.74,0:00:20.53,*Default,NTP,0000,0000,0000,,这个论证尝试证明的就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the argument attempts to show is
+Dialogue: 0,0:00:20.53,0:00:26.18,*Default,NTP,0000,0000,0000,,这个心灵肯定和我的身体是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that this mind must be something separate from my body.
+Dialogue: 0,0:00:26.18,0:00:27.95,*Default,NTP,0000,0000,0000,,这个论证令人吃惊的就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what's amazing about the argument is
+Dialogue: 0,0:00:27.95,0:00:32.31,*Default,NTP,0000,0000,0000,,它完全只靠思想实验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it works on the basis of a pure thought experiment.
+Dialogue: 0,0:00:32.31,0:00:33.50,*Default,NTP,0000,0000,0000,,回忆一下 那个思想实验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The thought experiment, you recall,
+Dialogue: 0,0:00:33.50,0:00:35.93,*Default,NTP,0000,0000,0000,,在其中我想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was one in which I imagine,
+Dialogue: 0,0:00:35.93,0:00:37.64,*Default,NTP,0000,0000,0000,,我给自己讲了一个故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I tell myself a story in which
+Dialogue: 0,0:00:37.64,0:00:38.37,*Default,NTP,0000,0000,0000,,在这个故事里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I'm doing is
+Dialogue: 0,0:00:38.37,0:00:43.79,*Default,NTP,0000,0000,0000,,我只是想象我的心灵独立于我的身体存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm imagining my mind existing without my body.
+Dialogue: 0,0:00:43.79,0:00:47.87,*Default,NTP,0000,0000,0000,,似乎这么做不是很难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't seem especially difficult to do that.
+Dialogue: 0,0:00:47.87,0:00:50.97,*Default,NTP,0000,0000,0000,,但是随后我们加上了一个哲学性的前提\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But then, we add this extra philosophical premise.
+Dialogue: 0,0:00:50.97,0:00:56.06,*Default,NTP,0000,0000,0000,,如果我能想象一个东西独立于另一个存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I can imagine one thing without the other,
+Dialogue: 0,0:00:56.06,0:00:59.09,*Default,NTP,0000,0000,0000,,那么这两个东西肯定是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then it must be that those are two things.
+Dialogue: 0,0:00:59.09,0:01:02.68,*Default,NTP,0000,0000,0000,,所以我的心灵肯定不是我的身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So my mind must not be my body.
+Dialogue: 0,0:01:02.68,0:01:04.83,*Default,NTP,0000,0000,0000,,我的心灵肯定和我的身体不是一回事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My mind must not be the same thing
+Dialogue: 0,0:01:04.83,0:01:08.07,*Default,NTP,0000,0000,0000,,也不是我的身体的另一种说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as my body or a way of talking about my body,
+Dialogue: 0,0:01:08.07,0:01:11.23,*Default,NTP,0000,0000,0000,,因为如果我的心灵只是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of course if my mind just was--
+Dialogue: 0,0:01:11.23,0:01:14.48,*Default,NTP,0000,0000,0000,,谈论我的心灵只不过是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talking about my mind just was--
+Dialogue: 0,0:01:14.48,0:01:17.49,*Default,NTP,0000,0000,0000,,谈论我的身体的另一种说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a way of talking about my body,
+Dialogue: 0,0:01:17.49,0:01:20.11,*Default,NTP,0000,0000,0000,,那么要想象心灵存在而身体不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then to try to imagine my mind without
+Dialogue: 0,0:01:20.11,0:01:22.99,*Default,NTP,0000,0000,0000,,就像是想象没有身体而身体存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my body would be trying to imagine my body without my body.
+Dialogue: 0,0:01:22.99,0:01:25.17,*Default,NTP,0000,0000,0000,,而这肯定是不可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that, obviously, can't happen.
+Dialogue: 0,0:01:25.17,0:01:30.58,*Default,NTP,0000,0000,0000,,设想在某个世界里面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look. Suppose we try to imagine a world in
+Dialogue: 0,0:01:30.58,0:01:37.44,*Default,NTP,0000,0000,0000,,薛立存在而卡根不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which Shelly exists but Kagan doesn't.
+Dialogue: 0,0:01:37.44,0:01:38.64,*Default,NTP,0000,0000,0000,,你做不到 不是吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't, right?
+Dialogue: 0,0:01:38.64,0:01:39.49,*Default,NTP,0000,0000,0000,,因为很明显\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because of course,
+Dialogue: 0,0:01:39.49,0:01:42.42,*Default,NTP,0000,0000,0000,,它们是一个东西 薛立·卡根\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're just a single thing, Shelly Kagan.
+Dialogue: 0,0:01:42.42,0:01:44.75,*Default,NTP,0000,0000,0000,,所以如果想象了薛立存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so if you've imagined Shelly existing
+Dialogue: 0,0:01:44.75,0:01:47.00,*Default,NTP,0000,0000,0000,,那么当然你也就想象了那一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then of course you're imagining that single thing,
+Dialogue: 0,0:01:47.00,0:01:48.59,*Default,NTP,0000,0000,0000,,薛立·卡根存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shelly Kagan, existing.
+Dialogue: 0,0:01:48.59,0:01:51.51,*Default,NTP,0000,0000,0000,,如果你想像卡根不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if you imagine Kagan not existing,
+Dialogue: 0,0:01:51.51,0:01:53.47,*Default,NTP,0000,0000,0000,,那么你也就是在想象那个唯一的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you're imagining that single thing,
+Dialogue: 0,0:01:53.47,0:01:55.18,*Default,NTP,0000,0000,0000,,薛立·卡根不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shelly Kagan, not existing.
+Dialogue: 0,0:01:55.18,0:01:56.97,*Default,NTP,0000,0000,0000,,所以你甚至无法想象在一个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you can't even imagine a world in
+Dialogue: 0,0:01:56.97,0:02:00.05,*Default,NTP,0000,0000,0000,,薛立存在而卡根不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which Shelly exists but Kagan doesn't.
+Dialogue: 0,0:02:00.05,0:02:02.75,*Default,NTP,0000,0000,0000,,千万不要被这个搞糊涂了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, it's important not to be confused about this.
+Dialogue: 0,0:02:02.75,0:02:05.64,*Default,NTP,0000,0000,0000,,我们可以容易地想象一个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can easily imagine a world in which
+Dialogue: 0,0:02:06.21,0:02:08.14,*Default,NTP,0000,0000,0000,,我不姓卡根或者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't have the last name Kagan or perhaps
+Dialogue: 0,0:02:08.14,0:02:09.18,*Default,NTP,0000,0000,0000,,反过来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to switch it around,
+Dialogue: 0,0:02:09.18,0:02:11.36,*Default,NTP,0000,0000,0000,,我不叫薛立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shelly's not my name.
+Dialogue: 0,0:02:11.36,0:02:13.73,*Default,NTP,0000,0000,0000,,假设我父母姓布鲁斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Suppose my parents had named me Bruce.
+Dialogue: 0,0:02:13.73,0:02:14.91,*Default,NTP,0000,0000,0000,,问题还是一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nothing would be easier.
+Dialogue: 0,0:02:14.91,0:02:16.80,*Default,NTP,0000,0000,0000,,想象在一个世界里卡根存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagine a world in which Kagan exists,
+Dialogue: 0,0:02:16.80,0:02:18.38,*Default,NTP,0000,0000,0000,,而薛立不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but Shelly doesn't exist,
+Dialogue: 0,0:02:18.38,0:02:21.04,*Default,NTP,0000,0000,0000,,因为这个世界里面没人叫薛立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because nobody in the world is named Shelly.
+Dialogue: 0,0:02:21.40,0:02:22.25,*Default,NTP,0000,0000,0000,,问题并不在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question is not,
+Dialogue: 0,0:02:22.25,0:02:25.47,*Default,NTP,0000,0000,0000,,你能否想象我有另外一个名字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Can you imagine me with a different name?"
+Dialogue: 0,0:02:25.47,0:02:28.14,*Default,NTP,0000,0000,0000,,简单地说  我叫布鲁斯而不是薛立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bruce instead of Shelly, easy enough.
+Dialogue: 0,0:02:28.14,0:02:29.34,*Default,NTP,0000,0000,0000,,而是在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's rather,
+Dialogue: 0,0:02:29.34,0:02:32.54,*Default,NTP,0000,0000,0000,,你能不能想象在一个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Can you imagine a world in which the very thing
+Dialogue: 0,0:02:32.54,0:02:34.44,*Default,NTP,0000,0000,0000,,你用薛立这个名字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you really are picking out
+Dialogue: 0,0:02:34.44,0:02:37.78,*Default,NTP,0000,0000,0000,,指的那个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you refer to me by the name Shelly--
+Dialogue: 0,0:02:37.78,0:02:40.16,*Default,NTP,0000,0000,0000,,也就是这个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}namely this thing--
+Dialogue: 0,0:02:40.16,0:02:42.99,*Default,NTP,0000,0000,0000,,你能不能想象在一个世界里某个东西存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can you imagine a world in which that thing exists,
+Dialogue: 0,0:02:42.99,0:02:44.97,*Default,NTP,0000,0000,0000,,而你用卡根这个词\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the thing that you're picking up
+Dialogue: 0,0:02:44.97,0:02:47.49,*Default,NTP,0000,0000,0000,,所指的这个东西却不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you use the word Kagan does not exist?"
+Dialogue: 0,0:02:47.49,0:02:48.35,*Default,NTP,0000,0000,0000,,你不可能做到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that you can't do,
+Dialogue: 0,0:02:48.35,0:02:50.11,*Default,NTP,0000,0000,0000,,因为在现实世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because in the real world of course Shelly
+Dialogue: 0,0:02:50.11,0:02:51.46,*Default,NTP,0000,0000,0000,,薛立和卡根指的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Kagan pick out just
+Dialogue: 0,0:02:51.46,0:02:53.37,*Default,NTP,0000,0000,0000,,同一个东西的两个不同名字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two different names of this very same thing.
+Dialogue: 0,0:02:53.37,0:02:55.10,*Default,NTP,0000,0000,0000,,就在这里的这个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This thing right here.
+Dialogue: 0,0:02:55.10,0:02:57.11,*Default,NTP,0000,0000,0000,,所以想象在一个世界里薛立存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So imagining a world in which Shelly exists
+Dialogue: 0,0:02:57.11,0:03:00.00,*Default,NTP,0000,0000,0000,,而卡根不存在或者卡根存在而薛立不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but Kagan doesn't or Kagan exists but Shelly doesn't,
+Dialogue: 0,0:03:00.00,0:03:01.44,*Default,NTP,0000,0000,0000,,这就像是要想象在一个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's trying to imagine a world in
+Dialogue: 0,0:03:01.44,0:03:03.26,*Default,NTP,0000,0000,0000,,我存在而我不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I exist but I don't.
+Dialogue: 0,0:03:03.26,0:03:05.72,*Default,NTP,0000,0000,0000,,这当然是矛盾的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's, of course, incoherent.
+Dialogue: 0,0:03:06.08,0:03:08.52,*Default,NTP,0000,0000,0000,,所以另一方面  如果你做得到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you can--On the other hand, contrast.
+Dialogue: 0,0:03:08.52,0:03:10.95,*Default,NTP,0000,0000,0000,,我能不能想象在一个世界里我的左手存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Can I imagine a world in which my left hand exists,
+Dialogue: 0,0:03:10.95,0:03:12.94,*Default,NTP,0000,0000,0000,,而我的右手不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but my right hand doesn't?
+Dialogue: 0,0:03:12.94,0:03:15.85,*Default,NTP,0000,0000,0000,,很容易  为什么那么容易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Easy. Why is it so easy?
+Dialogue: 0,0:03:15.85,0:03:17.58,*Default,NTP,0000,0000,0000,,因为它们是两个不同的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because of course there's two different things.
+Dialogue: 0,0:03:17.58,0:03:18.45,*Default,NTP,0000,0000,0000,,当然  这并不意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, that doesn't mean
+Dialogue: 0,0:03:18.45,0:03:20.66,*Default,NTP,0000,0000,0000,,在现实世界里面其中一个存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in the real world one of them does exist
+Dialogue: 0,0:03:20.66,0:03:22.26,*Default,NTP,0000,0000,0000,,而另一个不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the other one doesn't.
+Dialogue: 0,0:03:22.26,0:03:23.37,*Default,NTP,0000,0000,0000,,但是这表明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it does show
+Dialogue: 0,0:03:23.37,0:03:25.93,*Default,NTP,0000,0000,0000,,在现实世界里它们是不同的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in the real world they are two different things.
+Dialogue: 0,0:03:25.93,0:03:28.64,*Default,NTP,0000,0000,0000,,因此我才能想象在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why I could imagine
+Dialogue: 0,0:03:28.64,0:03:30.52,*Default,NTP,0000,0000,0000,,一个世界里只有其一存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a world with one but not the other.
+Dialogue: 0,0:03:31.80,0:03:39.89,*Default,NTP,0000,0000,0000,,试图想象一个世界里某人的微笑存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Try to imagine a world in which somebody's smile exists
+Dialogue: 0,0:03:39.89,0:03:43.16,*Default,NTP,0000,0000,0000,,而身体不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but their body doesn't.
+Dialogue: 0,0:03:43.16,0:03:44.93,*Default,NTP,0000,0000,0000,,你根本做不到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't do it.
+Dialogue: 0,0:03:44.93,0:03:49.51,*Default,NTP,0000,0000,0000,,你不可能没有身体而有微笑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't have the smile without the body.
+Dialogue: 0,0:03:49.51,0:03:51.51,*Default,NTP,0000,0000,0000,,当然 没什么神秘的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And of course, no mystery about that.
+Dialogue: 0,0:03:51.51,0:03:53.04,*Default,NTP,0000,0000,0000,,因为微笑并不是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's because the smile isn't
+Dialogue: 0,0:03:53.04,0:03:56.79,*Default,NTP,0000,0000,0000,,独立于身体的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}really some separate thing from the body.
+Dialogue: 0,0:03:56.79,0:03:57.90,*Default,NTP,0000,0000,0000,,谈论微笑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Talking about smiles,
+Dialogue: 0,0:03:57.90,0:03:58.86,*Default,NTP,0000,0000,0000,,像我们之前提到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as we've noted before,
+Dialogue: 0,0:03:58.86,0:04:01.52,*Default,NTP,0000,0000,0000,,那只不过是谈论身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just a way of talking about either
+Dialogue: 0,0:04:01.52,0:04:02.66,*Default,NTP,0000,0000,0000,,或者身体的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the body can do
+Dialogue: 0,0:04:02.66,0:04:05.20,*Default,NTP,0000,0000,0000,,能做什么的一种说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or what a certain area of the body can do.
+Dialogue: 0,0:04:05.20,0:04:07.87,*Default,NTP,0000,0000,0000,,你可以尝试想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can try to imagine it.
+Dialogue: 0,0:04:07.87,0:04:09.13,*Default,NTP,0000,0000,0000,,在《爱丽丝漫游仙境》里面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In Alice in Wonderland,
+Dialogue: 0,0:04:09.13,0:04:11.57,*Default,NTP,0000,0000,0000,,笑脸猫消失不见了而剩下的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Cheshire Cat disappears and all we have left,
+Dialogue: 0,0:04:11.57,0:04:12.92,*Default,NTP,0000,0000,0000,,最后一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the last thing that disappears,
+Dialogue: 0,0:04:12.92,0:04:14.33,*Default,NTP,0000,0000,0000,,就是微笑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the smile.
+Dialogue: 0,0:04:14.33,0:04:15.33,*Default,NTP,0000,0000,0000,,但是当然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But of course,
+Dialogue: 0,0:04:15.33,0:04:19.92,*Default,NTP,0000,0000,0000,,当你想象笑脸猫只剩下微笑的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you imagine the Cheshire Cat only having the smile there,
+Dialogue: 0,0:04:19.92,0:04:22.52,*Default,NTP,0000,0000,0000,,你仍然想象着它的嘴唇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're still imagining the cat's lips,
+Dialogue: 0,0:04:22.52,0:04:24.56,*Default,NTP,0000,0000,0000,,牙齿 或许还有舌头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}teeth, maybe tongue,
+Dialogue: 0,0:04:24.56,0:04:26.68,*Default,NTP,0000,0000,0000,,不管是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever it is.
+Dialogue: 0,0:04:26.68,0:04:31.26,*Default,NTP,0000,0000,0000,,如果你要相信一个没有身体的微笑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you try to imagine a smile with no body at all,
+Dialogue: 0,0:04:31.26,0:04:33.25,*Default,NTP,0000,0000,0000,,那是根本做不到的 为什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it can't be done. Why?
+Dialogue: 0,0:04:33.25,0:04:37.12,*Default,NTP,0000,0000,0000,,因为微笑并不是独立于身体存在的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because the smile isn't something separate from the body.
+Dialogue: 0,0:04:37.12,0:04:40.61,*Default,NTP,0000,0000,0000,,试着不通过身体  笛卡尔说道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Try to imagine my mind," Says Descartes,
+Dialogue: 0,0:04:40.61,0:04:42.37,*Default,NTP,0000,0000,0000,,来想象我的心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Without my body."
+Dialogue: 0,0:04:42.37,0:04:44.04,*Default,NTP,0000,0000,0000,,这很容易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Easy.
+Dialogue: 0,0:04:44.04,0:04:46.64,*Default,NTP,0000,0000,0000,,因为我的心灵和我的身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}From which it follows that my mind
+Dialogue: 0,0:04:46.64,0:04:50.73,*Default,NTP,0000,0000,0000,,不是同一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and my body must not be one thing.
+Dialogue: 0,0:04:50.73,0:04:54.34,*Default,NTP,0000,0000,0000,,它们事实上是两个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They must, in fact, be two things.
+Dialogue: 0,0:04:54.34,0:04:55.85,*Default,NTP,0000,0000,0000,,这也就是为什么我们能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why it's possible to
+Dialogue: 0,0:04:55.85,0:04:57.23,*Default,NTP,0000,0000,0000,,不借助其一想象另一个的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}imagine the one without the other.
+Dialogue: 0,0:04:57.23,0:05:01.81,*Default,NTP,0000,0000,0000,,所以这个卡氏论证似乎给我们表明了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this Cartesian argument seems to show us
+Dialogue: 0,0:05:01.81,0:05:05.40,*Default,NTP,0000,0000,0000,,心灵是独立于身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the mind is something separate from,
+Dialogue: 0,0:05:05.40,0:05:06.64,*Default,NTP,0000,0000,0000,,不同于身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}distinct from,
+Dialogue: 0,0:05:06.64,0:05:08.16,*Default,NTP,0000,0000,0000,,不能称作身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not reducible to,
+Dialogue: 0,0:05:08.16,0:05:12.19,*Default,NTP,0000,0000,0000,,不是"我身体"的另一种说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not just a way of talking about, my body.
+Dialogue: 0,0:05:13.32,0:05:16.95,*Default,NTP,0000,0000,0000,,所以心灵肯定是超出身体的额外东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's got to be something extra above and beyond my body.
+Dialogue: 0,0:05:16.95,0:05:18.34,*Default,NTP,0000,0000,0000,,是灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a soul.
+Dialogue: 0,0:05:18.34,0:05:19.53,*Default,NTP,0000,0000,0000,,这就是笛卡尔要证明的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what Descartes argued.
+Dialogue: 0,0:05:19.53,0:05:21.81,*Default,NTP,0000,0000,0000,,我说过  迄今为止\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as I say, to this day,
+Dialogue: 0,0:05:21.81,0:05:26.40,*Default,NTP,0000,0000,0000,,哲学家们对于这个论证是否正确很有争议\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}philosophers disagree about whether this argument works or not.
+Dialogue: 0,0:05:26.40,0:05:28.41,*Default,NTP,0000,0000,0000,,我认为它不正确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't think it does work
+Dialogue: 0,0:05:28.41,0:05:31.25,*Default,NTP,0000,0000,0000,,我会马上给出一个反例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in a second I'll give you a counter example.
+Dialogue: 0,0:05:31.25,0:05:34.17,*Default,NTP,0000,0000,0000,,在给了这个反例之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then, having given the counter example
+Dialogue: 0,0:05:34.17,0:05:34.86,*Default,NTP,0000,0000,0000,,也就是说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is to say,
+Dialogue: 0,0:05:34.86,0:05:35.86,*Default,NTP,0000,0000,0000,,我要给一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I'm going to give is
+Dialogue: 0,0:05:35.86,0:05:38.11,*Default,NTP,0000,0000,0000,,与之相似的论证的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an example of an argument just like it,
+Dialogue: 0,0:05:38.11,0:05:38.83,*Default,NTP,0000,0000,0000,,或者至少看起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or at least an argument
+Dialogue: 0,0:05:38.83,0:05:40.10,*Default,NTP,0000,0000,0000,,与之类似的一个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that seems to be just like it
+Dialogue: 0,0:05:40.10,0:05:41.48,*Default,NTP,0000,0000,0000,,我们能够很容易地看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where we can pretty easily see
+Dialogue: 0,0:05:41.48,0:05:43.32,*Default,NTP,0000,0000,0000,,那个论证是不正确的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that that argument doesn't work.
+Dialogue: 0,0:05:43.32,0:05:48.25,*Default,NTP,0000,0000,0000,,因此笛卡尔的论证肯定也有同样的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so something must go wrong with Descartes' argument as well.
+Dialogue: 0,0:05:48.64,0:05:51.75,*Default,NTP,0000,0000,0000,,这个反例是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, here's the counter example.
+Dialogue: 0,0:05:52.14,0:05:53.40,*Default,NTP,0000,0000,0000,,你们有些人 我肯定你们大部分人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of you, I'm sure most of you,
+Dialogue: 0,0:05:53.40,0:05:57.21,*Default,NTP,0000,0000,0000,,或许全部  很熟悉昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe all of you, are familiar with the Evening Star.
+Dialogue: 0,0:05:57.21,0:06:00.30,*Default,NTP,0000,0000,0000,,粗略说来  昏星就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Evening Star is the, roughly speaking,
+Dialogue: 0,0:06:00.30,0:06:05.29,*Default,NTP,0000,0000,0000,,天黑时第一个能看见的天体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}first heavenly body that's visible in the sky as it gets dark,
+Dialogue: 0,0:06:05.29,0:06:07.77,*Default,NTP,0000,0000,0000,,至少在一年的某个时间段是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least at certain times of the year.
+Dialogue: 0,0:06:10.70,0:06:14.10,*Default,NTP,0000,0000,0000,,我肯定你们也对晨星很熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I'm sure you're also familiar then with the Morning Star.
+Dialogue: 0,0:06:14.10,0:06:15.33,*Default,NTP,0000,0000,0000,,晨星就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Morning Star is
+Dialogue: 0,0:06:15.33,0:06:16.76,*Default,NTP,0000,0000,0000,,这样一个天体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that heavenly body which
+Dialogue: 0,0:06:16.76,0:06:18.86,*Default,NTP,0000,0000,0000,,它是黎明来临\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the last heavenly body
+Dialogue: 0,0:06:18.86,0:06:21.92,*Default,NTP,0000,0000,0000,,天快亮时  还能看到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's still visible as dawn comes in
+Dialogue: 0,0:06:21.92,0:06:23.39,*Default,NTP,0000,0000,0000,,最后一颗星星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it begins to get light.
+Dialogue: 0,0:06:23.39,0:06:24.74,*Default,NTP,0000,0000,0000,,在最初\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So as a first pass,
+Dialogue: 0,0:06:24.74,0:06:27.13,*Default,NTP,0000,0000,0000,,昏星是能看到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Evening Star is the first star
+Dialogue: 0,0:06:27.13,0:06:29.94,*Default,NTP,0000,0000,0000,,第一颗星  而晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's visible and the Morning Star
+Dialogue: 0,0:06:29.94,0:06:31.59,*Default,NTP,0000,0000,0000,,是最后一颗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the last star
+Dialogue: 0,0:06:31.59,0:06:34.75,*Default,NTP,0000,0000,0000,,当然是在每年的特定时段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's visible at the right times of the year.
+Dialogue: 0,0:06:36.61,0:06:40.10,*Default,NTP,0000,0000,0000,,我们所在的世界既有昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The world that we live in has both the Evening Star
+Dialogue: 0,0:06:40.10,0:06:41.89,*Default,NTP,0000,0000,0000,,也有晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star.
+Dialogue: 0,0:06:41.89,0:06:46.00,*Default,NTP,0000,0000,0000,,但是尝试想象在一个世界里昏星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But try to imagine a world in which the Evening Star exists,
+Dialogue: 0,0:06:46.00,0:06:48.66,*Default,NTP,0000,0000,0000,,而晨星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the Morning Star does not.
+Dialogue: 0,0:06:48.66,0:06:50.61,*Default,NTP,0000,0000,0000,,这看来是很容易的  不是吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Seems fairly straightforward, right?
+Dialogue: 0,0:06:50.61,0:06:54.80,*Default,NTP,0000,0000,0000,,黎明快来时  我起床\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I get up in the morning as dawn's approaching.
+Dialogue: 0,0:06:54.80,0:06:57.07,*Default,NTP,0000,0000,0000,,我四周张望  没有看到晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I look around and the Morning Star is not there.
+Dialogue: 0,0:06:57.07,0:06:59.29,*Default,NTP,0000,0000,0000,,一颗星也没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There is no star
+Dialogue: 0,0:06:59.29,0:07:00.82,*Default,NTP,0000,0000,0000,,无论是晨星曾经出现的地方或\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the Morning Star had been or
+Dialogue: 0,0:07:00.82,0:07:05.24,*Default,NTP,0000,0000,0000,,是人们曾断言晨星会出现的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where people have claimed it would be or something.
+Dialogue: 0,0:07:05.24,0:07:06.79,*Default,NTP,0000,0000,0000,,但是昏星仍然存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the Evening Star still exists.
+Dialogue: 0,0:07:06.79,0:07:10.16,*Default,NTP,0000,0000,0000,,当夕阳西下夜幕降临时  我走出去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I go out as sun sets and dusk falls,
+Dialogue: 0,0:07:10.16,0:07:11.15,*Default,NTP,0000,0000,0000,,昏星就在那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there is the Evening Star.
+Dialogue: 0,0:07:11.15,0:07:11.76,*Default,NTP,0000,0000,0000,,我说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, as I say,
+Dialogue: 0,0:07:11.76,0:07:13.83,*Default,NTP,0000,0000,0000,,显而易见  想象在一个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a trivial matter to imagine a world
+Dialogue: 0,0:07:13.83,0:07:15.37,*Default,NTP,0000,0000,0000,,昏星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the Evening Star exists
+Dialogue: 0,0:07:15.37,0:07:16.94,*Default,NTP,0000,0000,0000,,而晨星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star does not.
+Dialogue: 0,0:07:16.94,0:07:19.54,*Default,NTP,0000,0000,0000,,所以我们得到一个  我们可以想象一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we've got a--we could imagine then a--
+Dialogue: 0,0:07:19.54,0:07:21.59,*Default,NTP,0000,0000,0000,,笛卡尔式的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Descartes-like argument saying,
+Dialogue: 0,0:07:21.59,0:07:24.36,*Default,NTP,0000,0000,0000,,如果我能想象昏星存在而晨星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"If I can imagine the Evening Star without the Morning Star,
+Dialogue: 0,0:07:24.36,0:07:25.41,*Default,NTP,0000,0000,0000,,这就证明了昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that shows the Evening Star
+Dialogue: 0,0:07:25.41,0:07:29.91,*Default,NTP,0000,0000,0000,,和晨星肯定是两个不同的天体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star must be two different heavenly bodies."
+Dialogue: 0,0:07:29.91,0:07:32.57,*Default,NTP,0000,0000,0000,,事实并非如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But in fact, that's not so.
+Dialogue: 0,0:07:32.57,0:07:35.24,*Default,NTP,0000,0000,0000,,昏星和晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Evening Star and the Morning Star
+Dialogue: 0,0:07:35.24,0:07:39.75,*Default,NTP,0000,0000,0000,,是同一个天体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are the very same heavenly body.
+Dialogue: 0,0:07:39.75,0:07:41.69,*Default,NTP,0000,0000,0000,,实际上它根本不是恒星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, it's not a star at all.
+Dialogue: 0,0:07:41.69,0:07:46.07,*Default,NTP,0000,0000,0000,,它只是颗行星  金星  我没记错的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a planet. It's Venus, if I recall correctly.
+Dialogue: 0,0:07:46.95,0:07:50.08,*Default,NTP,0000,0000,0000,,看啊  这里只有一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So look, there's only one thing.
+Dialogue: 0,0:07:50.08,0:07:52.23,*Default,NTP,0000,0000,0000,,昏星就是金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Evening Star is Venus.
+Dialogue: 0,0:07:52.23,0:07:54.75,*Default,NTP,0000,0000,0000,,晨星也是金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Morning Star is Venus.
+Dialogue: 0,0:07:54.75,0:07:58.29,*Default,NTP,0000,0000,0000,,所以不可能有一个世界昏星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there couldn't be a world in which the Evening Star exists,
+Dialogue: 0,0:07:58.29,0:07:59.61,*Default,NTP,0000,0000,0000,,而晨星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the Morning Star doesn't,
+Dialogue: 0,0:07:59.61,0:08:02.69,*Default,NTP,0000,0000,0000,,因为那意味着在那个世界里金星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because that would be a world in which Venus exists
+Dialogue: 0,0:08:02.69,0:08:05.12,*Default,NTP,0000,0000,0000,,而同时金星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Venus doesn't exist.
+Dialogue: 0,0:08:05.12,0:08:07.32,*Default,NTP,0000,0000,0000,,很明显  那是不可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Obviously, that's not possible.
+Dialogue: 0,0:08:07.32,0:08:10.74,*Default,NTP,0000,0000,0000,,你能想象的是  在某个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course what you can imagine is a world
+Dialogue: 0,0:08:10.74,0:08:13.71,*Default,NTP,0000,0000,0000,,金星在早上是看不见的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which Venus isn't visible in the morning.
+Dialogue: 0,0:08:13.71,0:08:14.88,*Default,NTP,0000,0000,0000,,但这并不是意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still, that's not a world
+Dialogue: 0,0:08:14.88,0:08:17.73,*Default,NTP,0000,0000,0000,,晨星在这个世界不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the Morning Star doesn't exist,
+Dialogue: 0,0:08:17.73,0:08:19.71,*Default,NTP,0000,0000,0000,,如果给定了晨星的意思就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}given that what we mean by the Morning Star
+Dialogue: 0,0:08:19.71,0:08:21.79,*Default,NTP,0000,0000,0000,,一个这样的天体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that heavenly object,
+Dialogue: 0,0:08:21.79,0:08:22.79,*Default,NTP,0000,0000,0000,,不管它到底是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever it is,
+Dialogue: 0,0:08:22.79,0:08:23.98,*Default,NTP,0000,0000,0000,,在这个世界上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in this world
+Dialogue: 0,0:08:23.98,0:08:26.00,*Default,NTP,0000,0000,0000,,在早晨的那个时候我们仰望天空\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we pick out at that time in the morning
+Dialogue: 0,0:08:26.00,0:08:29.59,*Default,NTP,0000,0000,0000,,就能看到的那个天体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}looking up at the sky.
+Dialogue: 0,0:08:29.59,0:08:32.49,*Default,NTP,0000,0000,0000,,所以说  当我谈到晨星的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So when I refer to the Morning Star,
+Dialogue: 0,0:08:32.49,0:08:33.35,*Default,NTP,0000,0000,0000,,我就是在指金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm talking about Venus,
+Dialogue: 0,0:08:33.35,0:08:35.70,*Default,NTP,0000,0000,0000,,不管怎么样  我认为那是金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether or not I realize it's Venus.
+Dialogue: 0,0:08:35.70,0:08:37.75,*Default,NTP,0000,0000,0000,,当我说到昏星的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I talk about the Evening Star,
+Dialogue: 0,0:08:37.75,0:08:38.67,*Default,NTP,0000,0000,0000,,我指的也是金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm referring to Venus,
+Dialogue: 0,0:08:38.67,0:08:40.35,*Default,NTP,0000,0000,0000,,不管怎么样  我认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether or not I realize
+Dialogue: 0,0:08:40.35,0:08:44.22,*Default,NTP,0000,0000,0000,,金星就是昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Venus is the Evening Star.
+Dialogue: 0,0:08:44.22,0:08:46.88,*Default,NTP,0000,0000,0000,,所以  只要有金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So as long as Venus is around,
+Dialogue: 0,0:08:46.88,0:08:48.08,*Default,NTP,0000,0000,0000,,就有昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, there's the Evening Star,
+Dialogue: 0,0:08:48.08,0:08:50.58,*Default,NTP,0000,0000,0000,,哪里有晨星  哪里就有金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's the Morning Star, there's Venus.
+Dialogue: 0,0:08:50.58,0:08:52.61,*Default,NTP,0000,0000,0000,,不可能在某个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't have a world
+Dialogue: 0,0:08:52.61,0:08:56.08,*Default,NTP,0000,0000,0000,,晨星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the Morning Star doesn't exist
+Dialogue: 0,0:08:56.08,0:08:58.32,*Default,NTP,0000,0000,0000,,而昏星却存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the Evening Star does.
+Dialogue: 0,0:08:58.32,0:08:59.45,*Default,NTP,0000,0000,0000,,虽然  有可能在某个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Although you could have a world
+Dialogue: 0,0:08:59.45,0:09:04.46,*Default,NTP,0000,0000,0000,,金星只是在白天没有出现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which Venus doesn't show up in the morning.
+Dialogue: 0,0:09:04.96,0:09:08.25,*Default,NTP,0000,0000,0000,,事实上  我可以想象这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still, from the fact that I can imagine the world
+Dialogue: 0,0:09:08.25,0:09:10.46,*Default,NTP,0000,0000,0000,,我到处找晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which I look around for the Morning Star--
+Dialogue: 0,0:09:10.46,0:09:11.13,*Default,NTP,0000,0000,0000,,但是却找不到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there it isn't.
+Dialogue: 0,0:09:11.13,0:09:12.21,*Default,NTP,0000,0000,0000,,我找昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I look around for the Evening Star--
+Dialogue: 0,0:09:12.21,0:09:13.14,*Default,NTP,0000,0000,0000,,却找到了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there it is.
+Dialogue: 0,0:09:13.14,0:09:15.07,*Default,NTP,0000,0000,0000,,由此你可能会想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You might have thought
+Dialogue: 0,0:09:15.07,0:09:16.43,*Default,NTP,0000,0000,0000,,这是不是就印证了笛卡尔向我们证明的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that showed--didn't Descartes prove to us that
+Dialogue: 0,0:09:16.43,0:09:18.34,*Default,NTP,0000,0000,0000,,昏星和晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that shows--the Evening Star
+Dialogue: 0,0:09:18.34,0:09:20.69,*Default,NTP,0000,0000,0000,,其实是两样不一样的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star are two different things?
+Dialogue: 0,0:09:20.69,0:09:22.97,*Default,NTP,0000,0000,0000,,错  当然不是了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well no, obviously it didn't.
+Dialogue: 0,0:09:22.97,0:09:24.15,*Default,NTP,0000,0000,0000,,让我们来想一想这到底意味着什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let's think about what that means.
+Dialogue: 0,0:09:24.15,0:09:26.59,*Default,NTP,0000,0000,0000,,我们已经有了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we've got this argument
+Dialogue: 0,0:09:27.25,0:09:28.72,*Default,NTP,0000,0000,0000,,笛卡尔给出的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Descartes puts forward.
+Dialogue: 0,0:09:28.72,0:09:32.56,*Default,NTP,0000,0000,0000,,我可以想象我只有心灵而没有身体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can imagine my mind without my body.
+Dialogue: 0,0:09:32.56,0:09:34.73,*Default,NTP,0000,0000,0000,,笛卡尔说这就证明了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Descartes says that shows that,
+Dialogue: 0,0:09:34.73,0:09:39.26,*Default,NTP,0000,0000,0000,,我的心灵和我的身体是不同的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in fact, my mind is something separate from my body.
+Dialogue: 0,0:09:41.44,0:09:43.74,*Default,NTP,0000,0000,0000,,我可以想象只有晨星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I can imagine the Evening Star
+Dialogue: 0,0:09:43.74,0:09:45.09,*Default,NTP,0000,0000,0000,,而昏星不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without the Morning Star,
+Dialogue: 0,0:09:45.09,0:09:48.35,*Default,NTP,0000,0000,0000,,于是笛卡尔的儿子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so Son of Descartes,
+Dialogue: 0,0:09:48.35,0:09:52.10,*Default,NTP,0000,0000,0000,,笛卡尔森 不得不说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Descarteson," Has to say,
+Dialogue: 0,0:09:52.10,0:09:53.88,*Default,NTP,0000,0000,0000,,那就说明了晨星和昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, so that shows that the Morning Star
+Dialogue: 0,0:09:53.88,0:09:56.15,*Default,NTP,0000,0000,0000,,是两个不一样的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Evening Star are two different things."
+Dialogue: 0,0:09:56.15,0:10:00.45,*Default,NTP,0000,0000,0000,,但是  笛卡尔森说错了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But "Descarteson" Would be wrong when he says that.
+Dialogue: 0,0:10:00.45,0:10:01.84,*Default,NTP,0000,0000,0000,,晨星和昏星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Morning Star and the Evening Star
+Dialogue: 0,0:10:01.84,0:10:03.07,*Default,NTP,0000,0000,0000,,不是不同的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}aren't two different things.
+Dialogue: 0,0:10:03.07,0:10:07.24,*Default,NTP,0000,0000,0000,,它们就是一个东西  即金星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're just one thing, namely Venus.
+Dialogue: 0,0:10:07.69,0:10:08.52,*Default,NTP,0000,0000,0000,,简而要之 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, the sentence,
+Dialogue: 0,0:10:08.52,0:10:09.80,*Default,NTP,0000,0000,0000,,它们是同一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"They are one thing,"
+Dialogue: 0,0:10:09.80,0:10:11.08,*Default,NTP,0000,0000,0000,,这有点歧义对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is slightly misleading, right?
+Dialogue: 0,0:10:11.08,0:10:14.56,*Default,NTP,0000,0000,0000,,应该说  金星  它只是一个东西  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's just one thing, Venus.
+Dialogue: 0,0:10:14.56,0:10:17.44,*Default,NTP,0000,0000,0000,,如果这个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If that argument, if the argument--
+Dialogue: 0,0:10:17.44,0:10:19.48,*Default,NTP,0000,0000,0000,,如果把卡氏论证运用到天文学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If trying to run the Cartesian argument
+Dialogue: 0,0:10:19.48,0:10:22.89,*Default,NTP,0000,0000,0000,,是失败的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for astronomy fails,
+Dialogue: 0,0:10:22.89,0:10:26.44,*Default,NTP,0000,0000,0000,,看来我们也不得不承认\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}yet it seems to be an exactly analogous argument,
+Dialogue: 0,0:10:26.44,0:10:28.60,*Default,NTP,0000,0000,0000,,类似的那个证明心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we ought to conclude that the argument
+Dialogue: 0,0:10:28.60,0:10:30.47,*Default,NTP,0000,0000,0000,,和身体不同的那个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the distinctness of the mind
+Dialogue: 0,0:10:30.47,0:10:33.68,*Default,NTP,0000,0000,0000,,必然也是失败的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the body must fail as well.
+Dialogue: 0,0:10:35.06,0:10:37.10,*Default,NTP,0000,0000,0000,,在我看来  这样才对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, that seems to me to be right.
+Dialogue: 0,0:10:37.10,0:10:39.87,*Default,NTP,0000,0000,0000,,我认为笛卡尔论证的确是不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the Cartesian argument does fail.
+Dialogue: 0,0:10:39.87,0:10:42.43,*Default,NTP,0000,0000,0000,,而且我认为晨星\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I think the example of the Evening Star
+Dialogue: 0,0:10:42.43,0:10:43.12,*Default,NTP,0000,0000,0000,,和昏星的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star--
+Dialogue: 0,0:10:43.12,0:10:45.31,*Default,NTP,0000,0000,0000,,这不是我原创的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is not at all original to me--
+Dialogue: 0,0:10:45.31,0:10:47.20,*Default,NTP,0000,0000,0000,,这个例子说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that this example shows,
+Dialogue: 0,0:10:47.20,0:10:48.72,*Default,NTP,0000,0000,0000,,这个反例说明了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this counter example shows,
+Dialogue: 0,0:10:48.72,0:10:52.35,*Default,NTP,0000,0000,0000,,笛卡尔的原来的那个论证也行不通\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Descartes' original argument doesn't work either.
+Dialogue: 0,0:10:52.35,0:10:54.12,*Default,NTP,0000,0000,0000,,至少  在我看来行不通\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At least, that's how it seems to me,
+Dialogue: 0,0:10:54.12,0:10:55.32,*Default,NTP,0000,0000,0000,,尽管像我说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though as I say,
+Dialogue: 0,0:10:55.32,0:10:56.77,*Default,NTP,0000,0000,0000,,有些哲学家说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are philosophers that say,
+Dialogue: 0,0:10:56.77,0:10:57.94,*Default,NTP,0000,0000,0000,,不 不 那不对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"No, no. That's not right.
+Dialogue: 0,0:10:57.94,0:11:01.10,*Default,NTP,0000,0000,0000,,也许我们误解了这个论证到底怎么进行的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe somehow we misunderstood how the argument goes
+Dialogue: 0,0:11:01.10,0:11:02.36,*Default,NTP,0000,0000,0000,,其实不是的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it doesn't exactly--
+Dialogue: 0,0:11:02.36,0:11:04.97,*Default,NTP,0000,0000,0000,,虽然这两个理论看上去是类似的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although these two arguments seem parallel,
+Dialogue: 0,0:11:04.97,0:11:07.35,*Default,NTP,0000,0000,0000,,但其实它们并不是类似的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not, in fact, parallel.
+Dialogue: 0,0:11:07.35,0:11:09.18,*Default,NTP,0000,0000,0000,,它们之间有非常微妙的不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's some subtle differences
+Dialogue: 0,0:11:09.18,0:11:10.48,*Default,NTP,0000,0000,0000,,如果我们不仔细去看的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that if we're not looking carefully,
+Dialogue: 0,0:11:10.48,0:11:12.30,*Default,NTP,0000,0000,0000,,我们就会忽略\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll overlook."
+Dialogue: 0,0:11:12.30,0:11:16.19,*Default,NTP,0000,0000,0000,,然而就像我说的  争论依旧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, as I say, the debate goes on.
+Dialogue: 0,0:11:16.19,0:11:20.38,*Default,NTP,0000,0000,0000,,并不能确定这个论证是否成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the reasons for thinking
+Dialogue: 0,0:11:20.38,0:11:24.15,*Default,NTP,0000,0000,0000,,的其中一个原因就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not clear whether the argument fails or not
+Dialogue: 0,0:11:24.15,0:11:27.46,*Default,NTP,0000,0000,0000,,我们很难确定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is because it's hard to pin down,
+Dialogue: 0,0:11:27.46,0:11:31.02,*Default,NTP,0000,0000,0000,,到底是哪里出了问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where exactly did it go wrong?
+Dialogue: 0,0:11:31.34,0:11:37.24,*Default,NTP,0000,0000,0000,,拿行星的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look, take the argument of the planets,
+Dialogue: 0,0:11:37.24,0:11:39.89,*Default,NTP,0000,0000,0000,,晨星和昏星的那个例子来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Morning Star and the Evening Star example.
+Dialogue: 0,0:11:39.89,0:11:41.59,*Default,NTP,0000,0000,0000,,我想大家都同意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take it that we all agree
+Dialogue: 0,0:11:41.59,0:11:43.94,*Default,NTP,0000,0000,0000,,当我们试图把卡氏论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that when we attempt to run the Cartesian argument
+Dialogue: 0,0:11:43.94,0:11:45.66,*Default,NTP,0000,0000,0000,,用到晨星和昏星的例子上来时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of the Morning Star and the Evening Star,
+Dialogue: 0,0:11:45.66,0:11:50.90,*Default,NTP,0000,0000,0000,,它行不通了  但是很难说我们哪里错了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it fails. But it's harder to say what went wrong?
+Dialogue: 0,0:11:50.90,0:11:54.02,*Default,NTP,0000,0000,0000,,它怎么会出错的  为什么会出错\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How did it go wrong? Why did it go wrong?
+Dialogue: 0,0:11:54.02,0:11:55.12,*Default,NTP,0000,0000,0000,,有哪些可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are the possibilities?
+Dialogue: 0,0:11:55.12,0:11:57.44,*Default,NTP,0000,0000,0000,,第一个要求  第一个前提\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we said, look, first claim, first premise.
+Dialogue: 0,0:11:57.44,0:12:00.84,*Default,NTP,0000,0000,0000,,我可以想象一个昏星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can imagine a world in which the Evening Star exists,
+Dialogue: 0,0:12:00.84,0:12:03.87,*Default,NTP,0000,0000,0000,,而晨星不存在的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the Morning Star doesn't.
+Dialogue: 0,0:12:03.87,0:12:06.02,*Default,NTP,0000,0000,0000,,我想可能会有人回应说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I suppose one possible response would be,
+Dialogue: 0,0:12:06.02,0:12:08.40,*Default,NTP,0000,0000,0000,,你知道  你其实并不能真的那样做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You know, you couldn't really do that.
+Dialogue: 0,0:12:08.40,0:12:11.19,*Default,NTP,0000,0000,0000,,你觉得你在想象一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You thought you were imagining a world
+Dialogue: 0,0:12:11.19,0:12:12.95,*Default,NTP,0000,0000,0000,,昏星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the Evening Star exists
+Dialogue: 0,0:12:12.95,0:12:14.98,*Default,NTP,0000,0000,0000,,但晨星不存在的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star doesn't,
+Dialogue: 0,0:12:14.98,0:12:18.36,*Default,NTP,0000,0000,0000,,但你并没有真正地想象出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you weren't really imagining a world
+Dialogue: 0,0:12:18.36,0:12:19.90,*Default,NTP,0000,0000,0000,,一个昏星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the Evening Star exists
+Dialogue: 0,0:12:19.90,0:12:21.21,*Default,NTP,0000,0000,0000,,而晨星却不存在的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Morning Star doesn't.
+Dialogue: 0,0:12:21.21,0:12:26.38,*Default,NTP,0000,0000,0000,,你谎报了你所想象的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You misdescribed what it is you've imagined."
+Dialogue: 0,0:12:26.99,0:12:29.08,*Default,NTP,0000,0000,0000,,谈论这个天文学例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's not a silly thing
+Dialogue: 0,0:12:29.08,0:12:31.38,*Default,NTP,0000,0000,0000,,并不是什么傻事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to say about the astronomy case.
+Dialogue: 0,0:12:31.38,0:12:33.67,*Default,NTP,0000,0000,0000,,也许这才是正确的判断\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe that's the right diagnosis.
+Dialogue: 0,0:12:34.08,0:12:36.10,*Default,NTP,0000,0000,0000,,我们可不可以简单地说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Could we similarly say,
+Dialogue: 0,0:12:36.10,0:12:38.35,*Default,NTP,0000,0000,0000,,我并没有真正想象到一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I didn't really imagine a world
+Dialogue: 0,0:12:38.35,0:12:42.12,*Default,NTP,0000,0000,0000,,我的心灵存在  但身体不存在的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which my mind exists but my body doesn't"?
+Dialogue: 0,0:12:42.12,0:12:44.35,*Default,NTP,0000,0000,0000,,我上次讲的那个小故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That little story I told last time,
+Dialogue: 0,0:12:44.35,0:12:46.46,*Default,NTP,0000,0000,0000,,我认为我在描述一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I thought I was describing a world
+Dialogue: 0,0:12:46.46,0:12:48.77,*Default,NTP,0000,0000,0000,,我的心灵存在  但身体不存在的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which my mind exists and my body doesn't,
+Dialogue: 0,0:12:48.77,0:12:52.34,*Default,NTP,0000,0000,0000,,而不是真的想象出那样一个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it wasn't really imagining a world like that.
+Dialogue: 0,0:12:52.34,0:12:55.94,*Default,NTP,0000,0000,0000,,在那里  这么说好像不是很有说服力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That doesn't seem so persuasive over there.
+Dialogue: 0,0:12:55.94,0:12:59.35,*Default,NTP,0000,0000,0000,,我确实想象出来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It did seem as though I was imagining it.
+Dialogue: 0,0:13:01.16,0:13:04.49,*Default,NTP,0000,0000,0000,,天文学的例子里  还有哪里可能出错呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What else could go wrong with the astronomy example?
+Dialogue: 0,0:13:04.49,0:13:06.54,*Default,NTP,0000,0000,0000,,或许我想象这一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, maybe I did imagine a world
+Dialogue: 0,0:13:06.54,0:13:08.10,*Default,NTP,0000,0000,0000,,晨星存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which the Morning Star exists
+Dialogue: 0,0:13:08.10,0:13:09.84,*Default,NTP,0000,0000,0000,,但昏星不存在的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Evening Star doesn't exist,
+Dialogue: 0,0:13:09.84,0:13:15.21,*Default,NTP,0000,0000,0000,,但也许想象并不表示可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but maybe imagining doesn't mean it's possible.
+Dialogue: 0,0:13:15.21,0:13:16.31,*Default,NTP,0000,0000,0000,,通常来说  我们认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Normally, we think,
+Dialogue: 0,0:13:16.31,0:13:17.45,*Default,NTP,0000,0000,0000,,如果我们想象一些东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we imagine something,
+Dialogue: 0,0:13:17.45,0:13:18.35,*Default,NTP,0000,0000,0000,,就意味这它是有可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it means it's possible.
+Dialogue: 0,0:13:18.35,0:13:20.02,*Default,NTP,0000,0000,0000,,当然  我这里不是指在经验上可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here I don't mean, of course, empirically possible.
+Dialogue: 0,0:13:20.02,0:13:22.31,*Default,NTP,0000,0000,0000,,我可以想象一个有独角兽的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I could imagine a world with unicorns.
+Dialogue: 0,0:13:22.31,0:13:24.47,*Default,NTP,0000,0000,0000,,但并不代表我认为独角兽真的可能存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't mean I think unicorns are physically possible.
+Dialogue: 0,0:13:24.47,0:13:27.16,*Default,NTP,0000,0000,0000,,我这里所指的  都是指逻辑上的可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All we mean here is logically possible.
+Dialogue: 0,0:13:27.16,0:13:28.88,*Default,NTP,0000,0000,0000,,我可以想象一个有独角兽的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can imagine a world with unicorns.
+Dialogue: 0,0:13:28.88,0:13:32.69,*Default,NTP,0000,0000,0000,,可以推测  独角兽在逻辑上是可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems to follow that unicorns are logically possible.
+Dialogue: 0,0:13:32.69,0:13:36.40,*Default,NTP,0000,0000,0000,,想象似乎是可能性的向导\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagination seems to be a guide to possibility;
+Dialogue: 0,0:13:36.40,0:13:39.26,*Default,NTP,0000,0000,0000,,但也许并非总是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but maybe not always.
+Dialogue: 0,0:13:39.26,0:13:41.74,*Default,NTP,0000,0000,0000,,也许有时  我们可以想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe sometimes we can imagine something
+Dialogue: 0,0:13:41.74,0:13:44.89,*Default,NTP,0000,0000,0000,,一些完全不可能的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's really impossible.
+Dialogue: 0,0:13:44.89,0:13:47.42,*Default,NTP,0000,0000,0000,,试着去想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Try to imagine--
+Dialogue: 0,0:13:47.42,0:13:48.90,*Default,NTP,0000,0000,0000,,你可不可以这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can you do that or can you not do that?--
+Dialogue: 0,0:13:48.90,0:13:54.04,*Default,NTP,0000,0000,0000,,试着去想象一个圆的方形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}try to imagine a round square.
+Dialogue: 0,0:13:54.04,0:13:55.12,*Default,NTP,0000,0000,0000,,你能想象吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Can you imagine it?
+Dialogue: 0,0:13:55.12,0:13:56.16,*Default,NTP,0000,0000,0000,,你不能想象吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Can you not imagine it?
+Dialogue: 0,0:13:56.16,0:13:57.42,*Default,NTP,0000,0000,0000,,在某些情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In certain moods,
+Dialogue: 0,0:13:57.42,0:13:59.80,*Default,NTP,0000,0000,0000,,我感觉我能想象出圆的方形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I sort of feel I can just begin to imagine it.
+Dialogue: 0,0:13:59.80,0:14:01.75,*Default,NTP,0000,0000,0000,,当然  这并不意味着那有可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, it doesn't really mean it's possible.
+Dialogue: 0,0:14:01.75,0:14:03.12,*Default,NTP,0000,0000,0000,,似乎那是不可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems like it's impossible.
+Dialogue: 0,0:14:03.12,0:14:06.76,*Default,NTP,0000,0000,0000,,也许想象是可能性的一个有缺陷的向导\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe imagination is a flawed guide to possibility.
+Dialogue: 0,0:14:06.76,0:14:07.43,*Default,NTP,0000,0000,0000,,所以  也许\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe that's
+Dialogue: 0,0:14:07.43,0:14:09.70,*Default,NTP,0000,0000,0000,,身体和心灵那个例子  我们该这么说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what we should say about the mind-body case.
+Dialogue: 0,0:14:09.70,0:14:12.50,*Default,NTP,0000,0000,0000,,是的  我可以想象在一个世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Yeah, I can imagine a world
+Dialogue: 0,0:14:12.50,0:14:15.92,*Default,NTP,0000,0000,0000,,我的心灵存在  而我身体不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which my mind exists but my body doesn't.
+Dialogue: 0,0:14:15.92,0:14:18.69,*Default,NTP,0000,0000,0000,,但这并不表示那是真正可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that doesn't show that it's really possible,
+Dialogue: 0,0:14:18.69,0:14:21.40,*Default,NTP,0000,0000,0000,,在逻辑上可能有一个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}logically possible to have a world
+Dialogue: 0,0:14:21.40,0:14:24.16,*Default,NTP,0000,0000,0000,,其中我的心灵存在而身体不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which my mind exists and my body doesn't."
+Dialogue: 0,0:14:24.16,0:14:27.07,*Default,NTP,0000,0000,0000,,也许那个论证就错在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe that's where the argument goes wrong.
+Dialogue: 0,0:14:27.07,0:14:29.02,*Default,NTP,0000,0000,0000,,另一方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On the other hand,
+Dialogue: 0,0:14:29.02,0:14:33.31,*Default,NTP,0000,0000,0000,,想象是通向逻辑可能性的最好的向导吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}isn't imagination our best guide to logical possibility?
+Dialogue: 0,0:14:33.31,0:14:34.22,*Default,NTP,0000,0000,0000,,我认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Isn't the reason
+Dialogue: 0,0:14:34.22,0:14:36.78,*Default,NTP,0000,0000,0000,,独角兽在逻辑上不矛盾的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think unicorns are logically coherent is
+Dialogue: 0,0:14:36.78,0:14:39.95,*Default,NTP,0000,0000,0000,,不正是因为我能够轻易的想象它们吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I can imagine them so easily?
+Dialogue: 0,0:14:41.34,0:14:42.44,*Default,NTP,0000,0000,0000,,还有另一种可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another possibility.
+Dialogue: 0,0:14:42.44,0:14:44.82,*Default,NTP,0000,0000,0000,,也许我们应该说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe we should say,
+Dialogue: 0,0:14:44.82,0:14:47.59,*Default,NTP,0000,0000,0000,,A和B有可能不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the mere fact that it's possible for A and B
+Dialogue: 0,0:14:47.59,0:14:50.29,*Default,NTP,0000,0000,0000,,比如 可能A存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be separate--for A to exist
+Dialogue: 0,0:14:50.29,0:14:51.30,*Default,NTP,0000,0000,0000,,而B不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without B for example,
+Dialogue: 0,0:14:51.30,0:14:52.95,*Default,NTP,0000,0000,0000,,这是它们明显的不同之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's clearly where they're separate--
+Dialogue: 0,0:14:52.95,0:14:54.05,*Default,NTP,0000,0000,0000,,它们有可能不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the mere fact that it's possible for
+Dialogue: 0,0:14:54.05,0:14:55.58,*Default,NTP,0000,0000,0000,,并不意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}them to be separate doesn't mean
+Dialogue: 0,0:14:55.58,0:14:59.41,*Default,NTP,0000,0000,0000,,在现实世界它们也是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in the actual world they are separate.
+Dialogue: 0,0:14:59.41,0:15:01.87,*Default,NTP,0000,0000,0000,,也许这个论证就错在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe the argument goes wrong by assuming
+Dialogue: 0,0:15:01.87,0:15:06.80,*Default,NTP,0000,0000,0000,,假设了同一性  即当A等于B的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that identity--when A is equal to B,
+Dialogue: 0,0:15:06.80,0:15:08.63,*Default,NTP,0000,0000,0000,,它总是等于B\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's always equal to B,
+Dialogue: 0,0:15:08.63,0:15:10.47,*Default,NTP,0000,0000,0000,,无论情况如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no matter what.
+Dialogue: 0,0:15:10.47,0:15:13.28,*Default,NTP,0000,0000,0000,,也许同一性  就像哲学家喜欢说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe identity, as philosophers like to put it,
+Dialogue: 0,0:15:13.28,0:15:16.91,*Default,NTP,0000,0000,0000,,也许同一性是偶然的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe identity is contingent.
+Dialogue: 0,0:15:17.22,0:15:20.90,*Default,NTP,0000,0000,0000,,也许在这某个逻辑世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe A could be the same thing
+Dialogue: 0,0:15:20.90,0:15:24.60,*Default,NTP,0000,0000,0000,,A会和B是同一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as B in this logically possible world,
+Dialogue: 0,0:15:24.60,0:15:25.33,*Default,NTP,0000,0000,0000,,但我们可以想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we could imagine
+Dialogue: 0,0:15:25.33,0:15:28.10,*Default,NTP,0000,0000,0000,,一个完全不同的另一个逻辑世界里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a completely different logically coherent world
+Dialogue: 0,0:15:28.10,0:15:32.24,*Default,NTP,0000,0000,0000,,A和B不是同一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which A was not the same thing as B.
+Dialogue: 0,0:15:33.14,0:15:34.75,*Default,NTP,0000,0000,0000,,如果事实如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If that's right,
+Dialogue: 0,0:15:34.75,0:15:36.45,*Default,NTP,0000,0000,0000,,那么结论该是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then maybe the conclusion should be
+Dialogue: 0,0:15:36.45,0:15:40.29,*Default,NTP,0000,0000,0000,,怎么说呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, you know, yeah,
+Dialogue: 0,0:15:40.29,0:15:42.27,*Default,NTP,0000,0000,0000,,笛卡尔的思想实验表明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Cartesian thought experiment shows
+Dialogue: 0,0:15:42.27,0:15:43.87,*Default,NTP,0000,0000,0000,,可能存在某个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there could be a world
+Dialogue: 0,0:15:43.87,0:15:45.30,*Default,NTP,0000,0000,0000,,其中存在着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which there are minds
+Dialogue: 0,0:15:45.30,0:15:47.47,*Default,NTP,0000,0000,0000,,不同于身体的心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are not identical to bodies.
+Dialogue: 0,0:15:47.47,0:15:48.51,*Default,NTP,0000,0000,0000,,但这并不意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that doesn't mean
+Dialogue: 0,0:15:48.51,0:15:50.03,*Default,NTP,0000,0000,0000,,在现实世界中  我的心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in this world the mind
+Dialogue: 0,0:15:50.03,0:15:52.16,*Default,NTP,0000,0000,0000,,和我的身体不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not identical to my body.
+Dialogue: 0,0:15:52.16,0:15:53.98,*Default,NTP,0000,0000,0000,,也许在这个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe in this world,
+Dialogue: 0,0:15:53.98,0:15:55.57,*Default,NTP,0000,0000,0000,,心灵和身体就是相同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}minds and bodies are identical,
+Dialogue: 0,0:15:55.57,0:15:58.88,*Default,NTP,0000,0000,0000,,即使在其他逻辑世界中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though in other logically possible worlds
+Dialogue: 0,0:15:58.88,0:16:01.11,*Default,NTP,0000,0000,0000,,不存在这种同一性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the identity comes apart.
+Dialogue: 0,0:16:01.11,0:16:02.59,*Default,NTP,0000,0000,0000,,同一性不是必然的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Identity is not necessary,
+Dialogue: 0,0:16:02.59,0:16:06.64,*Default,NTP,0000,0000,0000,,而是偶然的  就像哲学家们常说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but contingent, as the philosophers put it."
+Dialogue: 0,0:16:08.27,0:16:10.13,*Default,NTP,0000,0000,0000,,还不清楚这是不是对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not clear that that's right either.
+Dialogue: 0,0:16:10.13,0:16:12.94,*Default,NTP,0000,0000,0000,,偶然同一性是很令人迷惑的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The notion of contingent identity is very puzzling.
+Dialogue: 0,0:16:12.94,0:16:15.69,*Default,NTP,0000,0000,0000,,毕竟  如果A真的是B\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, if A really is B,
+Dialogue: 0,0:16:15.69,0:16:17.05,*Default,NTP,0000,0000,0000,,它们怎么可能分离呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how could they come apart?
+Dialogue: 0,0:16:17.05,0:16:18.24,*Default,NTP,0000,0000,0000,,那儿就只有一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's only one thing there.
+Dialogue: 0,0:16:18.24,0:16:19.61,*Default,NTP,0000,0000,0000,,没什么可分的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's nothing to come apart.
+Dialogue: 0,0:16:19.61,0:16:22.11,*Default,NTP,0000,0000,0000,,就只有A等于B  那一个东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's just A equals B, that single thing.
+Dialogue: 0,0:16:22.11,0:16:23.95,*Default,NTP,0000,0000,0000,,何来的分离\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's to come apart?
+Dialogue: 0,0:16:23.95,0:16:28.63,*Default,NTP,0000,0000,0000,,那么究竟这个论证哪里出问题了呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So where exactly does the argument break down?
+Dialogue: 0,0:16:28.63,0:16:30.21,*Default,NTP,0000,0000,0000,,难道这不是我的想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it that I'm not really imagining?
+Dialogue: 0,0:16:30.21,0:16:31.83,*Default,NTP,0000,0000,0000,,还是只是我以为我在想象罢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm just thinking I'm imagining?
+Dialogue: 0,0:16:31.83,0:16:33.40,*Default,NTP,0000,0000,0000,,或者说想象并不是通向可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it that imagination's not really
+Dialogue: 0,0:16:33.40,0:16:34.99,*Default,NTP,0000,0000,0000,,的一个好向导\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a good guide to possibility?
+Dialogue: 0,0:16:34.99,0:16:37.44,*Default,NTP,0000,0000,0000,,这是时常发生  而不是一直发生的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just--Often it is, but not always.
+Dialogue: 0,0:16:37.44,0:16:39.89,*Default,NTP,0000,0000,0000,,同一性是偶然的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it that identity is contingent?
+Dialogue: 0,0:16:39.89,0:16:44.37,*Default,NTP,0000,0000,0000,,笛卡尔论证的奇妙之处在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The interesting thing about Descartes' argument is
+Dialogue: 0,0:16:44.37,0:16:49.68,*Default,NTP,0000,0000,0000,,我们能明显感觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it's easy to see something has gone wrong
+Dialogue: 0,0:16:49.68,0:16:52.22,*Default,NTP,0000,0000,0000,,晨星和昏星的例子中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the case of the Morning Star
+Dialogue: 0,0:16:52.22,0:16:53.72,*Default,NTP,0000,0000,0000,,有些东西不对劲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Evening Star,
+Dialogue: 0,0:16:53.72,0:16:55.79,*Default,NTP,0000,0000,0000,,但很难确定 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's difficult to pin down
+Dialogue: 0,0:16:55.79,0:16:59.21,*Default,NTP,0000,0000,0000,,错误到底在出哪里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what exactly went wrong.
+Dialogue: 0,0:16:59.21,0:17:01.38,*Default,NTP,0000,0000,0000,,很多哲学家都认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Different philosophers agree
+Dialogue: 0,0:17:01.38,0:17:03.62,*Default,NTP,0000,0000,0000,,在晨星和昏星的例子中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that something's gone wrong in the Morning Star
+Dialogue: 0,0:17:03.62,0:17:05.39,*Default,NTP,0000,0000,0000,,的确存在错误\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the Evening Star case,
+Dialogue: 0,0:17:05.39,0:17:08.82,*Default,NTP,0000,0000,0000,,但是错误出在哪里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but disagree about the best diagnosis of
+Dialogue: 0,0:17:08.82,0:17:12.10,*Default,NTP,0000,0000,0000,,哲学家们却各执一词\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the mistake went in.
+Dialogue: 0,0:17:12.10,0:17:14.02,*Default,NTP,0000,0000,0000,,当你找到了一种判断这个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Armed with your pet diagnosis of
+Dialogue: 0,0:17:14.02,0:17:15.59,*Default,NTP,0000,0000,0000,,是否错误的方法时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the argument goes wrong there,
+Dialogue: 0,0:17:15.59,0:17:16.62,*Default,NTP,0000,0000,0000,,你肯定会问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've got to ask,
+Dialogue: 0,0:17:16.62,0:17:18.52,*Default,NTP,0000,0000,0000,,在心灵与身体的问题上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Does it also go wrong
+Dialogue: 0,0:17:18.52,0:17:20.80,*Default,NTP,0000,0000,0000,,是不是也出了同样的错误\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the mind and body case?"
+Dialogue: 0,0:17:21.45,0:17:23.61,*Default,NTP,0000,0000,0000,,我们可以在这个问题上花更多的时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we could spend more time,
+Dialogue: 0,0:17:23.61,0:17:25.56,*Default,NTP,0000,0000,0000,,但是我并不打算这么做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm not going to.
+Dialogue: 0,0:17:25.56,0:17:28.90,*Default,NTP,0000,0000,0000,,我认为笛卡尔的论证不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think Descartes' argument fails.
+Dialogue: 0,0:17:28.90,0:17:31.42,*Default,NTP,0000,0000,0000,,晨星和昏星的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the Morning Star,
+Dialogue: 0,0:17:31.42,0:17:33.15,*Default,NTP,0000,0000,0000,,向我们表明了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Evening Star case shows us
+Dialogue: 0,0:17:33.15,0:17:36.30,*Default,NTP,0000,0000,0000,,像这样的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that arguments like this,
+Dialogue: 0,0:17:36.30,0:17:37.44,*Default,NTP,0000,0000,0000,,一般来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the very least,
+Dialogue: 0,0:17:37.44,0:17:40.34,*Default,NTP,0000,0000,0000,,不能轻信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be taken at face value.
+Dialogue: 0,0:17:40.34,0:17:44.03,*Default,NTP,0000,0000,0000,,仅仅是因为我们似乎能够\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just because it looks as though we can imagine it and just
+Dialogue: 0,0:17:44.03,0:17:45.11,*Default,NTP,0000,0000,0000,,想象到一个事物独立于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it seems as though from the fact
+Dialogue: 0,0:17:45.11,0:17:46.45,*Default,NTP,0000,0000,0000,,另一个事物存在这件事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we can imagine one without the other,
+Dialogue: 0,0:17:46.45,0:17:48.29,*Default,NTP,0000,0000,0000,,并不能说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it just won't necessarily follow
+Dialogue: 0,0:17:48.29,0:17:50.15,*Default,NTP,0000,0000,0000,,在现实世界里  有这样两个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we really do have two things
+Dialogue: 0,0:17:50.15,0:17:50.86,*Default,NTP,0000,0000,0000,,相互独立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are separate
+Dialogue: 0,0:17:50.86,0:17:55.92,*Default,NTP,0000,0000,0000,,而且不相同的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not identical in the real world.
+Dialogue: 0,0:17:56.92,0:17:59.88,*Default,NTP,0000,0000,0000,,就笛卡尔的论证到底错在哪儿的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd be happy to discuss with you, outside class,
+Dialogue: 0,0:17:59.88,0:18:02.14,*Default,NTP,0000,0000,0000,,我很愿意在课外\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at greater length my favorite theories as
+Dialogue: 0,0:18:02.14,0:18:03.99,*Default,NTP,0000,0000,0000,,和你们详细谈谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to where the argument goes wrong
+Dialogue: 0,0:18:03.99,0:18:05.54,*Default,NTP,0000,0000,0000,,我最信服的理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and why I think it goes wrong
+Dialogue: 0,0:18:05.54,0:18:07.98,*Default,NTP,0000,0000,0000,,以及我个人的看法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Descartes' case as well.
+Dialogue: 0,0:18:07.98,0:18:11.54,*Default,NTP,0000,0000,0000,,总之我认为笛卡尔的论证是有错误的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I suggest that the argument goes wrong.
+Dialogue: 0,0:18:11.54,0:18:14.40,*Default,NTP,0000,0000,0000,,它是不正确的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not right.
+Dialogue: 0,0:18:14.40,0:18:16.68,*Default,NTP,0000,0000,0000,,所以  笛卡尔试图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, Descartes' attempt to
+Dialogue: 0,0:18:16.68,0:18:19.48,*Default,NTP,0000,0000,0000,,用他的卡式思想实验来证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}establish the distinctness of the mind,
+Dialogue: 0,0:18:19.48,0:18:22.56,*Default,NTP,0000,0000,0000,,心灵的独立存在性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the immateriality of the mind,
+Dialogue: 0,0:18:22.56,0:18:24.94,*Default,NTP,0000,0000,0000,,和非物质性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the basis of this Cartesian thought experiment,
+Dialogue: 0,0:18:24.94,0:18:27.74,*Default,NTP,0000,0000,0000,,我认为这种尝试是失败的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think that's unsuccessful.
+Dialogue: 0,0:18:27.74,0:18:28.60,*Default,NTP,0000,0000,0000,,我们已经花了--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we've spent--
+Dialogue: 0,0:18:28.60,0:18:29.69,*Default,NTP,0000,0000,0000,,让我们退一步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's step back
+Dialogue: 0,0:18:29.69,0:18:30.52,*Default,NTP,0000,0000,0000,,想想我们都讨论了些什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and think of where we've been.
+Dialogue: 0,0:18:30.52,0:18:32.17,*Default,NTP,0000,0000,0000,,我们已经花了一周半\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've spent the last week and a half or so,
+Dialogue: 0,0:18:32.17,0:18:33.55,*Default,NTP,0000,0000,0000,,也许还多点  两周吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe a bit more, two weeks,
+Dialogue: 0,0:18:33.55,0:18:38.00,*Default,NTP,0000,0000,0000,,来讨论证明灵魂存在的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talking about arguments for the existence of the soul.
+Dialogue: 0,0:18:38.00,0:18:42.64,*Default,NTP,0000,0000,0000,,我在课程还没正式开始的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And unsurprisingly-- since I announced this was going to
+Dialogue: 0,0:18:42.64,0:18:46.36,*Default,NTP,0000,0000,0000,,就已经说过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}be the result before the class had barely gotten started--
+Dialogue: 0,0:18:46.36,0:18:50.41,*Default,NTP,0000,0000,0000,,我认为这些论证都站不住脚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't think any of these arguments work.
+Dialogue: 0,0:18:50.41,0:18:52.68,*Default,NTP,0000,0000,0000,,我认为  无论是试图证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I believe the attempts to
+Dialogue: 0,0:18:52.68,0:18:56.03,*Default,NTP,0000,0000,0000,,灵魂作为一种非物质的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}establish the existence of a soul,
+Dialogue: 0,0:18:56.03,0:18:57.32,*Default,NTP,0000,0000,0000,,而存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an immaterial object,
+Dialogue: 0,0:18:57.32,0:18:59.01,*Default,NTP,0000,0000,0000,,还是证明心灵  这个意识的处所\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the house of consciousness separate
+Dialogue: 0,0:18:59.01,0:19:00.41,*Default,NTP,0000,0000,0000,,独立于肉体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and distinct from the body,
+Dialogue: 0,0:19:00.41,0:19:04.08,*Default,NTP,0000,0000,0000,,我认为这些论证都不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think those arguments fail.
+Dialogue: 0,0:19:04.08,0:19:06.28,*Default,NTP,0000,0000,0000,,但我想有些人可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I recognize that this is something
+Dialogue: 0,0:19:06.28,0:19:10.36,*Default,NTP,0000,0000,0000,,会不同意我的看法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that reasonable people can disagree about.
+Dialogue: 0,0:19:10.36,0:19:12.18,*Default,NTP,0000,0000,0000,,所以  我希望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so this is,
+Dialogue: 0,0:19:12.18,0:19:14.41,*Default,NTP,0000,0000,0000,,大家能在课后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as will be many times the case
+Dialogue: 0,0:19:14.41,0:19:15.93,*Default,NTP,0000,0000,0000,,继续思考这个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over the course of this semester,
+Dialogue: 0,0:19:15.93,0:19:18.66,*Default,NTP,0000,0000,0000,,本学期我可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something that I invite you to continue
+Dialogue: 0,0:19:18.66,0:19:20.90,*Default,NTP,0000,0000,0000,,会经常这样要求大家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to reflect on for yourself.
+Dialogue: 0,0:19:20.90,0:19:22.65,*Default,NTP,0000,0000,0000,,如果你相信灵魂是存在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you believe in a soul,
+Dialogue: 0,0:19:22.65,0:19:25.74,*Default,NTP,0000,0000,0000,,你的论证是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's the argument for it?
+Dialogue: 0,0:19:25.74,0:19:27.77,*Default,NTP,0000,0000,0000,,那么  下面我们开始讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, what we're about to turn to
+Dialogue: 0,0:19:27.77,0:19:32.44,*Default,NTP,0000,0000,0000,,柏拉图在斐多篇中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is Plato's discussion of these issues
+Dialogue: 0,0:19:32.44,0:19:34.08,*Default,NTP,0000,0000,0000,,就这些问题进行的讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the dialogue the Phaedo,
+Dialogue: 0,0:19:34.08,0:19:36.92,*Default,NTP,0000,0000,0000,,上个星期我已经提到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which, as I told you last week,
+Dialogue: 0,0:19:36.92,0:19:40.72,*Default,NTP,0000,0000,0000,,斐多篇的主要内容是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}purports to lay out the final day's
+Dialogue: 0,0:19:40.72,0:19:43.94,*Default,NTP,0000,0000,0000,,苏格拉底在被杀前最后一天的谈话--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}discussion with Socrates before
+Dialogue: 0,0:19:43.94,0:19:47.11,*Default,NTP,0000,0000,0000,,他其实是自杀的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he is killed by--he kills himself--
+Dialogue: 0,0:19:47.11,0:19:51.37,*Default,NTP,0000,0000,0000,,他根据判决\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by drinking the hemlock in accordance
+Dialogue: 0,0:19:51.37,0:19:56.16,*Default,NTP,0000,0000,0000,,喝下了毒芹汁而死\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the punishment that's been given to him.
+Dialogue: 0,0:19:56.99,0:20:00.01,*Default,NTP,0000,0000,0000,,在这段谈话中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, in the course of this discussion,
+Dialogue: 0,0:20:00.01,0:20:04.38,*Default,NTP,0000,0000,0000,,苏格拉底和他的学生们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates and his disciples argue about
+Dialogue: 0,0:20:04.38,0:20:07.62,*Default,NTP,0000,0000,0000,,讨论的主要不是灵魂存在的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not so much the existence of the soul,
+Dialogue: 0,0:20:07.62,0:20:11.85,*Default,NTP,0000,0000,0000,,而是灵魂不朽的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the question really is the immortality of the soul.
+Dialogue: 0,0:20:11.85,0:20:15.08,*Default,NTP,0000,0000,0000,,毕竟  就像我之前说过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, even if you believe in a soul,
+Dialogue: 0,0:20:15.08,0:20:16.94,*Default,NTP,0000,0000,0000,,即使灵魂是存在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I have remarked previously,
+Dialogue: 0,0:20:16.94,0:20:19.17,*Default,NTP,0000,0000,0000,,那也不能说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that doesn't give us yet any reason
+Dialogue: 0,0:20:19.17,0:20:21.42,*Default,NTP,0000,0000,0000,,灵魂在肉体死后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to believe the soul continues
+Dialogue: 0,0:20:21.42,0:20:24.62,*Default,NTP,0000,0000,0000,,仍然能继续存在下去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to exist after the death of your body.
+Dialogue: 0,0:20:24.62,0:20:26.64,*Default,NTP,0000,0000,0000,,我们在这门课里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The kind of dualist position
+Dialogue: 0,0:20:26.64,0:20:30.88,*Default,NTP,0000,0000,0000,,所讨论的二元论观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we are considering in this class
+Dialogue: 0,0:20:30.88,0:20:33.89,*Default,NTP,0000,0000,0000,,实际上是一种互动论的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an interactionist position,
+Dialogue: 0,0:20:33.89,0:20:36.21,*Default,NTP,0000,0000,0000,,也就是认为灵魂可以控制肉体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the soul commands the body.
+Dialogue: 0,0:20:36.21,0:20:38.93,*Default,NTP,0000,0000,0000,,是灵魂使我的手指动起来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what makes my fingers move right now.
+Dialogue: 0,0:20:38.93,0:20:42.82,*Default,NTP,0000,0000,0000,,同时肉体又可以影响灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the body can affect the soul.
+Dialogue: 0,0:20:42.82,0:20:45.90,*Default,NTP,0000,0000,0000,,如果我戳自己的身体  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I poke my body,
+Dialogue: 0,0:20:45.90,0:20:48.13,*Default,NTP,0000,0000,0000,,我的心灵能感觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I feel it in my mind.
+Dialogue: 0,0:20:48.13,0:20:50.28,*Default,NTP,0000,0000,0000,,因此  心灵  即灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the mind, the soul,
+Dialogue: 0,0:20:50.28,0:20:52.67,*Default,NTP,0000,0000,0000,,和肉体明显是紧密联系的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the body are obviously very tightly connected.
+Dialogue: 0,0:20:52.67,0:20:54.42,*Default,NTP,0000,0000,0000,,所以 很有可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so it could be--
+Dialogue: 0,0:20:54.42,0:20:57.43,*Default,NTP,0000,0000,0000,,尽管灵魂是独立于肉体的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if the soul is something separate from the body--
+Dialogue: 0,0:20:57.43,0:21:01.30,*Default,NTP,0000,0000,0000,,但是  如果肉体死了  灵魂也就死了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that when the body dies, the soul dies as well.
+Dialogue: 0,0:21:01.30,0:21:07.99,*Default,NTP,0000,0000,0000,,正是这个问题引发了斐多篇中的谈话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the question that's driving the discussion in the Phaedo.
+Dialogue: 0,0:21:07.99,0:21:10.73,*Default,NTP,0000,0000,0000,,我们有什么理由去相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Do we have any good reason to believe
+Dialogue: 0,0:21:10.73,0:21:13.83,*Default,NTP,0000,0000,0000,,灵魂在肉体死亡后仍能存活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul survives the death of the body?
+Dialogue: 0,0:21:13.83,0:21:16.16,*Default,NTP,0000,0000,0000,,确切地讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And more particularly still,
+Dialogue: 0,0:21:16.16,0:21:20.91,*Default,NTP,0000,0000,0000,,我们有理由相信灵魂不朽吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do we have good reason to believe it's immortal?
+Dialogue: 0,0:21:21.26,0:21:25.94,*Default,NTP,0000,0000,0000,,苏格拉底相信灵魂是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates believes in the immortality of the soul.
+Dialogue: 0,0:21:25.94,0:21:28.81,*Default,NTP,0000,0000,0000,,所以  他试图捍卫他的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, he attempts to defend this position,
+Dialogue: 0,0:21:28.81,0:21:33.12,*Default,NTP,0000,0000,0000,,并试图说服  那些怀疑这一点的学生们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}justify it to his disciples who are worried that it may not be true.
+Dialogue: 0,0:21:33.12,0:21:36.04,*Default,NTP,0000,0000,0000,,值得注意的是  当你们读这篇对话时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's important to realize--as you read the dialogue,
+Dialogue: 0,0:21:36.04,0:21:37.01,*Default,NTP,0000,0000,0000,,会发现里面并没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it becomes fairly apparent--
+Dialogue: 0,0:21:37.01,0:21:38.91,*Default,NTP,0000,0000,0000,,多少篇幅很明显地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there isn't so much any
+Dialogue: 0,0:21:38.91,0:21:41.78,*Default,NTP,0000,0000,0000,,论证灵魂的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}defense of the belief in the soul.
+Dialogue: 0,0:21:41.78,0:21:42.70,*Default,NTP,0000,0000,0000,,当然有一些是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's some of it,
+Dialogue: 0,0:21:42.70,0:21:44.52,*Default,NTP,0000,0000,0000,,但那不是这些对话的主要目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's not the primary goal.
+Dialogue: 0,0:21:44.52,0:21:45.42,*Default,NTP,0000,0000,0000,,就大部分篇幅而言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For the most part,
+Dialogue: 0,0:21:45.42,0:21:47.01,*Default,NTP,0000,0000,0000,,这篇对话里将灵魂的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the existence of the soul
+Dialogue: 0,0:21:47.01,0:21:53.38,*Default,NTP,0000,0000,0000,,看作是理所当然的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just taken for granted in the dialogue.
+Dialogue: 0,0:21:53.38,0:21:55.49,*Default,NTP,0000,0000,0000,,作为一个二元论者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato, as a dualist,
+Dialogue: 0,0:21:55.49,0:21:58.11,*Default,NTP,0000,0000,0000,,柏拉图理所当然地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}portrays Socrates as being a dualist
+Dialogue: 0,0:21:58.11,0:22:01.46,*Default,NTP,0000,0000,0000,,把苏格拉底塑造成一个二元论者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's just taken for granted.
+Dialogue: 0,0:22:01.46,0:22:03.49,*Default,NTP,0000,0000,0000,,对话篇中哲学讨论所围绕的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question that the philosophical discussion
+Dialogue: 0,0:22:03.49,0:22:04.72,*Default,NTP,0000,0000,0000,,并不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}turns on is not,
+Dialogue: 0,0:22:04.72,0:22:06.44,*Default,NTP,0000,0000,0000,,灵魂是否存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Is there a soul?"
+Dialogue: 0,0:22:06.44,0:22:09.94,*Default,NTP,0000,0000,0000,,而是  灵魂是否会在肉体死亡后存活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but rather, "Does it survive the death of the body?
+Dialogue: 0,0:22:09.94,0:22:12.48,*Default,NTP,0000,0000,0000,,灵魂是否是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it immortal?"
+Dialogue: 0,0:22:12.48,0:22:14.15,*Default,NTP,0000,0000,0000,,我已经说过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, as I said,
+Dialogue: 0,0:22:14.15,0:22:19.13,*Default,NTP,0000,0000,0000,,这是苏格拉底在人世的最后一天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is Socrates' last day on earth
+Dialogue: 0,0:22:19.13,0:22:22.96,*Default,NTP,0000,0000,0000,,你们肯定以为他很难过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd expect him to be pretty bummed.
+Dialogue: 0,0:22:22.96,0:22:25.38,*Default,NTP,0000,0000,0000,,以为他很伤心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd expect him to be sad.
+Dialogue: 0,0:22:25.38,0:22:28.21,*Default,NTP,0000,0000,0000,,但是  奇怪的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And one of the just striking things is
+Dialogue: 0,0:22:28.21,0:22:30.77,*Default,NTP,0000,0000,0000,,苏格拉底当时非常开心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Socrates is in a very happy,
+Dialogue: 0,0:22:30.77,0:22:35.32,*Default,NTP,0000,0000,0000,,甚至兴奋地和他的朋友们开玩笑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indeed jovial, mood, joking with his friends.
+Dialogue: 0,0:22:35.32,0:22:36.31,*Default,NTP,0000,0000,0000,,这是为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is that?
+Dialogue: 0,0:22:36.31,0:22:38.07,*Default,NTP,0000,0000,0000,,当然  这是因为他认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, of course, it's because he thinks,
+Dialogue: 0,0:22:38.07,0:22:38.92,*Default,NTP,0000,0000,0000,,首先  灵魂是存在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}first of all, there's a soul
+Dialogue: 0,0:22:38.93,0:22:40.11,*Default,NTP,0000,0000,0000,,在肉体死后仍会继续存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it will survive
+Dialogue: 0,0:22:40.11,0:22:41.87,*Default,NTP,0000,0000,0000,,而且灵魂是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's immortal.
+Dialogue: 0,0:22:41.87,0:22:45.40,*Default,NTP,0000,0000,0000,,更重要的是  当然前面几点也很重要  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But more importantly still--those are all crucial
+Dialogue: 0,0:22:45.40,0:22:47.30,*Default,NTP,0000,0000,0000,,但是还有更重要的一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's an extra ingredient as well--
+Dialogue: 0,0:22:47.30,0:22:50.28,*Default,NTP,0000,0000,0000,,他觉得他有理由相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he thinks he's got good reason to believe,
+Dialogue: 0,0:22:50.28,0:22:52.94,*Default,NTP,0000,0000,0000,,他死后他将去到一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when he dies he's going to go, basically,
+Dialogue: 0,0:22:52.94,0:22:55.07,*Default,NTP,0000,0000,0000,,我们通常称为天堂的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to what we'd call heaven.
+Dialogue: 0,0:22:55.07,0:22:59.13,*Default,NTP,0000,0000,0000,,他认为有一个地方  住着众神\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He thinks there's a realm populated by good gods
+Dialogue: 0,0:22:59.13,0:23:01.83,*Default,NTP,0000,0000,0000,,也许还住着和他志同道合的哲学家的灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maybe other philosophical kindred souls.
+Dialogue: 0,0:23:01.83,0:23:06.24,*Default,NTP,0000,0000,0000,,如果你打理好你在尘世中的一切\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if you got your stuff together here on life,
+Dialogue: 0,0:23:06.24,0:23:09.99,*Default,NTP,0000,0000,0000,,等你死了  你就能去到那儿了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll get to go to that when you die.
+Dialogue: 0,0:23:09.99,0:23:16.63,*Default,NTP,0000,0000,0000,,他当时很兴奋  很愉快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so he's excited. He's pleased.
+Dialogue: 0,0:23:17.73,0:23:21.56,*Default,NTP,0000,0000,0000,,为什么他认为他死后将会去那儿呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why does he think he's going to go?
+Dialogue: 0,0:23:21.56,0:23:26.22,*Default,NTP,0000,0000,0000,,为了能够理解苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, in thinking about Socrates' belief
+Dialogue: 0,0:23:26.22,0:23:27.37,*Default,NTP,0000,0000,0000,,关于灵魂存在的想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the existence of a soul,
+Dialogue: 0,0:23:27.37,0:23:28.64,*Default,NTP,0000,0000,0000,,我们应该去了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's important to understand,
+Dialogue: 0,0:23:28.64,0:23:29.95,*Default,NTP,0000,0000,0000,,去注意的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's important to notice,
+Dialogue: 0,0:23:29.95,0:23:32.48,*Default,NTP,0000,0000,0000,,他关于肉体所能做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that his take on which stuff
+Dialogue: 0,0:23:32.48,0:23:34.02,*Default,NTP,0000,0000,0000,,事情的看法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets assigned to the body,
+Dialogue: 0,0:23:34.02,0:23:36.34,*Default,NTP,0000,0000,0000,,也就是  哪些事是肉体负责的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what are the bodily things versus
+Dialogue: 0,0:23:36.34,0:23:37.99,*Default,NTP,0000,0000,0000,,哪些是灵魂负责的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what are the soul-like things,
+Dialogue: 0,0:23:37.99,0:23:39.07,*Default,NTP,0000,0000,0000,,苏格拉底的看法和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is rather different from the way,
+Dialogue: 0,0:23:39.07,0:23:42.69,*Default,NTP,0000,0000,0000,,我们今天的人的看法是不同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think, most of us nowadays would draw the line.
+Dialogue: 0,0:23:44.36,0:23:45.49,*Default,NTP,0000,0000,0000,,当我谈论证明灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I talked about arguments
+Dialogue: 0,0:23:45.49,0:23:46.51,*Default,NTP,0000,0000,0000,,存在的论证时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the existence of a soul,
+Dialogue: 0,0:23:46.51,0:23:48.74,*Default,NTP,0000,0000,0000,,我说过  "这里有个可能的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I said, "Look, here's one possible argument.
+Dialogue: 0,0:23:49.07,0:23:50.48,*Default,NTP,0000,0000,0000,,我能看见颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I see colors.
+Dialogue: 0,0:23:50.48,0:23:52.64,*Default,NTP,0000,0000,0000,,没有哪种物质体能够\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No physical object could,
+Dialogue: 0,0:23:52.64,0:23:54.98,*Default,NTP,0000,0000,0000,,没有哪种纯粹的物体能够看见颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no purely physical object could see colors.
+Dialogue: 0,0:23:54.98,0:23:56.49,*Default,NTP,0000,0000,0000,,我能尝到咖啡的味道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can taste tastes
+Dialogue: 0,0:23:56.49,0:23:59.33,*Default,NTP,0000,0000,0000,,能闻到咖啡的气味  等等"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and have the smell of coffee and so forth."
+Dialogue: 0,0:23:59.33,0:24:04.15,*Default,NTP,0000,0000,0000,,但苏格拉底认为所有这些肉体上的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Socrates thinks all those bodily sensations--
+Dialogue: 0,0:24:04.15,0:24:07.31,*Default,NTP,0000,0000,0000,,都是由肉体来负责的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's all stuff that the body takes care of.
+Dialogue: 0,0:24:07.31,0:24:10.84,*Default,NTP,0000,0000,0000,,而现代的二元论者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So unlike those modern dualists
+Dialogue: 0,0:24:10.84,0:24:13.46,*Default,NTP,0000,0000,0000,,认为需要用非物质的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who think we need to appeal to something immaterial
+Dialogue: 0,0:24:13.46,0:24:15.60,*Default,NTP,0000,0000,0000,,来解释肉体上的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to explain bodily sensations,
+Dialogue: 0,0:24:15.60,0:24:17.12,*Default,NTP,0000,0000,0000,,但苏格拉底不这么想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates thinks no, no,
+Dialogue: 0,0:24:17.12,0:24:21.03,*Default,NTP,0000,0000,0000,,他认为肉体负责所有的肉体上的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the body takes care of all the bodily sensations,
+Dialogue: 0,0:24:21.03,0:24:24.31,*Default,NTP,0000,0000,0000,,所有的欲望  需求  感情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the desirings and the wantings and the emotions
+Dialogue: 0,0:24:24.31,0:24:26.56,*Default,NTP,0000,0000,0000,,感觉和渴望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the feelings and the cravings.
+Dialogue: 0,0:24:26.56,0:24:30.79,*Default,NTP,0000,0000,0000,,那都是身体负责的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's all body stuff.
+Dialogue: 0,0:24:30.79,0:24:31.99,*Default,NTP,0000,0000,0000,,灵魂负责什么呢  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the soul does--
+Dialogue: 0,0:24:31.99,0:24:33.86,*Default,NTP,0000,0000,0000,,苏格拉底认为  灵魂负责思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates thinks--the soul thinks.
+Dialogue: 0,0:24:33.86,0:24:41.48,*Default,NTP,0000,0000,0000,,从本质上说  灵魂是理性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The soul, in its essence, is rational.
+Dialogue: 0,0:24:41.48,0:24:47.45,*Default,NTP,0000,0000,0000,,灵魂负责与思考有关的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It takes care of the thinking side of things.
+Dialogue: 0,0:24:50.89,0:24:54.69,*Default,NTP,0000,0000,0000,,灵魂都思考些什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does the soul think about?
+Dialogue: 0,0:24:54.69,0:24:56.56,*Default,NTP,0000,0000,0000,,当然了  灵魂能思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the soul thinks about
+Dialogue: 0,0:24:56.56,0:24:58.66,*Default,NTP,0000,0000,0000,,所有的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all sorts of things, doubtless.
+Dialogue: 0,0:24:58.66,0:25:02.22,*Default,NTP,0000,0000,0000,,但是  在灵魂能做的所有事情中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But one of the things that it can do,
+Dialogue: 0,0:25:02.22,0:25:02.83,*Default,NTP,0000,0000,0000,,我们会发现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the things
+Dialogue: 0,0:25:02.83,0:25:05.54,*Default,NTP,0000,0000,0000,,有一件事可以说是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that sort of provides the underpinnings, as we'll see,
+Dialogue: 0,0:25:05.54,0:25:08.95,*Default,NTP,0000,0000,0000,,柏拉图论证灵魂不朽的基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for Plato's arguments for the immortality of the soul
+Dialogue: 0,0:25:08.95,0:25:12.79,*Default,NTP,0000,0000,0000,,这件事就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the soul can think about--;
+Dialogue: 0,0:25:12.79,0:25:13.56,*Default,NTP,0000,0000,0000,,灵魂能够思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, here I'll have to
+Dialogue: 0,0:25:13.56,0:25:16.77,*Default,NTP,0000,0000,0000,,在这里我要引入一个哲学术语\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}introduce a word of philosophical jargon.
+Dialogue: 0,0:25:16.77,0:25:18.04,*Default,NTP,0000,0000,0000,,有时候说  理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes the idea,
+Dialogue: 0,0:25:18.04,0:25:20.98,*Default,NTP,0000,0000,0000,,有时候我们称为  理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sometimes the term is called "Ideas."
+Dialogue: 0,0:25:20.98,0:25:24.96,*Default,NTP,0000,0000,0000,,有时候我们称为  型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes the term is called "Forms."
+Dialogue: 0,0:25:24.96,0:25:27.99,*Default,NTP,0000,0000,0000,,他的基本想法就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the thought is that
+Dialogue: 0,0:25:27.99,0:25:33.21,*Default,NTP,0000,0000,0000,,灵魂能够思考纯粹的概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul can think about certain pure concepts
+Dialogue: 0,0:25:33.21,0:25:37.79,*Default,NTP,0000,0000,0000,,或者说理念  比如正义本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or ideas like justice itself,
+Dialogue: 0,0:25:37.79,0:25:41.35,*Default,NTP,0000,0000,0000,,或者美本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or beauty itself,
+Dialogue: 0,0:25:41.35,0:25:44.06,*Default,NTP,0000,0000,0000,,或善本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or goodness itself,
+Dialogue: 0,0:25:44.06,0:25:46.50,*Default,NTP,0000,0000,0000,,或健康本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or health itself.
+Dialogue: 0,0:25:46.50,0:25:48.44,*Default,NTP,0000,0000,0000,,要解释这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So to explain all this
+Dialogue: 0,0:25:48.44,0:25:55.13,*Default,NTP,0000,0000,0000,,我们现在得恶补一点柏拉图的形而上学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we need now a sort of crash course in Plato's metaphysics.
+Dialogue: 0,0:25:55.13,0:25:57.41,*Default,NTP,0000,0000,0000,,当然  这会是比较肤浅的介绍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Obviously, this will be rather superficial.
+Dialogue: 0,0:25:57.41,0:25:59.85,*Default,NTP,0000,0000,0000,,如果你们当中有谁想做更多的了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those of you who would like to know more about it,
+Dialogue: 0,0:25:59.85,0:26:02.12,*Default,NTP,0000,0000,0000,,我推荐去读柏拉图对话集\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I recommend reading more Platonic dialogues
+Dialogue: 0,0:26:02.12,0:26:04.67,*Default,NTP,0000,0000,0000,,或者选修古代哲学课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or taking a class in ancient philosophy.
+Dialogue: 0,0:26:04.67,0:26:07.20,*Default,NTP,0000,0000,0000,,下面我们介绍一下基本观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But here's the basic idea.
+Dialogue: 0,0:26:07.20,0:26:12.33,*Default,NTP,0000,0000,0000,,在这个世界上存在各种美的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's all sorts of beautiful objects in the world.
+Dialogue: 0,0:26:12.33,0:26:17.58,*Default,NTP,0000,0000,0000,,它们美的方式各不相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Objects can vary in terms of how beautiful they are.
+Dialogue: 0,0:26:17.58,0:26:19.54,*Default,NTP,0000,0000,0000,,但是柏拉图认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Plato's got the idea
+Dialogue: 0,0:26:19.54,0:26:24.74,*Default,NTP,0000,0000,0000,,世界上不存在完美的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there's nothing in this world that's perfectly beautiful.
+Dialogue: 0,0:26:24.74,0:26:26.19,*Default,NTP,0000,0000,0000,,尽管如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And yet for all that,
+Dialogue: 0,0:26:26.19,0:26:30.81,*Default,NTP,0000,0000,0000,,我们都能够去思考美的本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can think about beauty itself.
+Dialogue: 0,0:26:30.81,0:26:31.89,*Default,NTP,0000,0000,0000,,换句话说 那就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we might put it this way.
+Dialogue: 0,0:26:31.89,0:26:35.65,*Default,NTP,0000,0000,0000,,我们可以说普通的  平凡的  日常的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We might say, ordinary, humdrum, everyday,
+Dialogue: 0,0:26:35.65,0:26:40.44,*Default,NTP,0000,0000,0000,,物理对象多少有点美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}physical objects are somewhat beautiful.
+Dialogue: 0,0:26:40.44,0:26:42.62,*Default,NTP,0000,0000,0000,,它们只是片面的美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're partially beautiful.
+Dialogue: 0,0:26:42.62,0:26:44.74,*Default,NTP,0000,0000,0000,,像柏拉图主义者有时说的那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As, sometimes, Platonists put it,
+Dialogue: 0,0:26:44.74,0:26:48.39,*Default,NTP,0000,0000,0000,,它们"属于"美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they "Participate" In beauty.
+Dialogue: 0,0:26:48.39,0:26:52.64,*Default,NTP,0000,0000,0000,,它们美的程度不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They partake of beauty to varying degrees.
+Dialogue: 0,0:26:52.64,0:26:57.93,*Default,NTP,0000,0000,0000,,不能把其中任何一个与美本身混为一谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But none of them should be confused with beauty itself.
+Dialogue: 0,0:26:57.93,0:27:01.46,*Default,NTP,0000,0000,0000,,或者以正义为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, take justice.
+Dialogue: 0,0:27:01.46,0:27:03.86,*Default,NTP,0000,0000,0000,,存在各种不同的制度  社会制度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are various arrangements, social arrangements,
+Dialogue: 0,0:27:03.86,0:27:07.17,*Default,NTP,0000,0000,0000,,它们在不同程度上是正义的或不正义的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can be just or unjust to varying degrees.
+Dialogue: 0,0:27:07.17,0:27:08.78,*Default,NTP,0000,0000,0000,,但我们认为世界上无论哪里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we don't think anywhere in the world
+Dialogue: 0,0:27:08.78,0:27:11.78,*Default,NTP,0000,0000,0000,,都不存在完全正义的社会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's any society that's perfectly just.
+Dialogue: 0,0:27:11.78,0:27:12.87,*Default,NTP,0000,0000,0000,,虽然如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yet for all that,
+Dialogue: 0,0:27:12.87,0:27:16.81,*Default,NTP,0000,0000,0000,,但我们的心灵却可以思考完美的正义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the mind can think about perfect justice.
+Dialogue: 0,0:27:16.81,0:27:21.53,*Default,NTP,0000,0000,0000,,并且意识到普通的现实社会制度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And notice how ordinary empirical social arrangements
+Dialogue: 0,0:27:21.53,0:27:23.71,*Default,NTP,0000,0000,0000,,是多么的缺乏完美的正义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fall short of perfect justice.
+Dialogue: 0,0:27:23.71,0:27:26.01,*Default,NTP,0000,0000,0000,,所以无论完美的正义是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So whatever perfect justice is,
+Dialogue: 0,0:27:26.01,0:27:30.91,*Default,NTP,0000,0000,0000,,它不存在于经验世界中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not one more thing in the empirical world.
+Dialogue: 0,0:27:30.91,0:27:32.87,*Default,NTP,0000,0000,0000,,但它却是我们可以构想的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's something we can think about.
+Dialogue: 0,0:27:32.87,0:27:35.29,*Default,NTP,0000,0000,0000,,它是以不同程度参与到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's something that things in the empirical world
+Dialogue: 0,0:27:35.29,0:27:39.80,*Default,NTP,0000,0000,0000,,经验世界中的各种事物 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can participate in or partake of to varying degrees.
+Dialogue: 0,0:27:39.80,0:27:44.02,*Default,NTP,0000,0000,0000,,但是我们不应该把可能正义的现实事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we shouldn't confuse the physical things which can be just,
+Dialogue: 0,0:27:44.02,0:27:46.51,*Default,NTP,0000,0000,0000,,比如  多少有些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the people who can be virtuous
+Dialogue: 0,0:27:46.51,0:27:47.89,*Default,NTP,0000,0000,0000,,德行的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to one degree or another,
+Dialogue: 0,0:27:47.89,0:27:51.35,*Default,NTP,0000,0000,0000,,同完美的德性或完美的正义相混淆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with perfect virtue or perfect justice.
+Dialogue: 0,0:27:51.35,0:27:53.30,*Default,NTP,0000,0000,0000,,那仅仅是心灵可以设想的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's something that only the mind can think about,
+Dialogue: 0,0:27:53.30,0:27:55.93,*Default,NTP,0000,0000,0000,,而在现实的经验世界中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we don't actually have in the world,
+Dialogue: 0,0:27:55.93,0:27:59.64,*Default,NTP,0000,0000,0000,,却是不可能存在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the empirical world itself.
+Dialogue: 0,0:27:59.64,0:28:02.76,*Default,NTP,0000,0000,0000,,或者以圆为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or take being round.
+Dialogue: 0,0:28:02.76,0:28:08.35,*Default,NTP,0000,0000,0000,,心灵可以构想出完美的圆形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The mind can think about perfect circularity.
+Dialogue: 0,0:28:08.35,0:28:13.11,*Default,NTP,0000,0000,0000,,然而任何物体都不是完美的圆形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But no physical object is perfectly circular.
+Dialogue: 0,0:28:13.11,0:28:17.22,*Default,NTP,0000,0000,0000,,只存在相对的圆的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are only things that are circular to a greater or lesser degree.
+Dialogue: 0,0:28:17.22,0:28:19.82,*Default,NTP,0000,0000,0000,,所以  通过思考这个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, by thinking about it,
+Dialogue: 0,0:28:19.82,0:28:21.39,*Default,NTP,0000,0000,0000,,通过思考以上那些问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by thinking about these kinds of issues,
+Dialogue: 0,0:28:21.39,0:28:23.18,*Default,NTP,0000,0000,0000,,我们可以知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can see that the mind
+Dialogue: 0,0:28:23.18,0:28:30.05,*Default,NTP,0000,0000,0000,,心灵可以一定程度上理解完美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has some kind of handle on these perfect,
+Dialogue: 0,0:28:30.05,0:28:31.02,*Default,NTP,0000,0000,0000,,我需要一个词\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, we need a word.
+Dialogue: 0,0:28:31.02,0:28:33.65,*Default,NTP,0000,0000,0000,,我说过  柏拉图给出了一个词  理念 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as I say, Plato gives us a word, "Ideas."
+Dialogue: 0,0:28:33.65,0:28:36.59,*Default,NTP,0000,0000,0000,,有时候翻作理念或型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes it's translated as "Ideas" Or "Forms."
+Dialogue: 0,0:28:36.59,0:28:42.59,*Default,NTP,0000,0000,0000,,我们构想出的这些东西是样板\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These things that we can think about that are the template,
+Dialogue: 0,0:28:42.59,0:28:44.01,*Default,NTP,0000,0000,0000,,至少是标准\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or at least the standard,
+Dialogue: 0,0:28:44.01,0:28:47.15,*Default,NTP,0000,0000,0000,,或最起码它是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or maybe at the very least it's that
+Dialogue: 0,0:28:47.15,0:28:51.01,*Default,NTP,0000,0000,0000,,普通的事物能以不同程度参与的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which the ordinary humdrum things can participate in to varying degrees:
+Dialogue: 0,0:28:51.01,0:28:52.09,*Default,NTP,0000,0000,0000,,如 完美的正义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perfect justice,
+Dialogue: 0,0:28:52.09,0:28:53.23,*Default,NTP,0000,0000,0000,,正义本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}justice itself,
+Dialogue: 0,0:28:53.23,0:28:54.38,*Default,NTP,0000,0000,0000,,美本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}beauty itself,
+Dialogue: 0,0:28:54.38,0:28:55.90,*Default,NTP,0000,0000,0000,,善本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}goodness itself,
+Dialogue: 0,0:28:55.90,0:28:57.76,*Default,NTP,0000,0000,0000,,圆本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}circularity itself,
+Dialogue: 0,0:28:57.76,0:28:59.02,*Default,NTP,0000,0000,0000,,健康本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}health itself.
+Dialogue: 0,0:28:59.02,0:29:01.18,*Default,NTP,0000,0000,0000,,以上这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All of these things are,
+Dialogue: 0,0:29:01.18,0:29:07.47,*Default,NTP,0000,0000,0000,,被当今的哲学家称作柏拉图式的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as philosophers nowadays call them, Platonic forms.
+Dialogue: 0,0:29:07.47,0:29:11.47,*Default,NTP,0000,0000,0000,,现实世界的普通物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ordinary material objects of this world
+Dialogue: 0,0:29:11.47,0:29:15.81,*Default,NTP,0000,0000,0000,,能够分有各种各样的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can partake of the various Platonic forms,
+Dialogue: 0,0:29:15.81,0:29:19.75,*Default,NTP,0000,0000,0000,,但不能把它们同型相混为一谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they should not be confused with the Platonic forms.
+Dialogue: 0,0:29:19.75,0:29:23.76,*Default,NTP,0000,0000,0000,,尽管在这个世界上无法遇到型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we still-- even though we don't bump into the Platonic
+Dialogue: 0,0:29:23.76,0:29:27.45,*Default,NTP,0000,0000,0000,,但是我们仍能去设想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}forms in this world-- we can think about them.
+Dialogue: 0,0:29:27.45,0:29:31.82,*Default,NTP,0000,0000,0000,,我们的心灵多少能掌握一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our mind has a kind of grasp of them.
+Dialogue: 0,0:29:31.82,0:29:33.83,*Default,NTP,0000,0000,0000,,但问题在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, the problem is,
+Dialogue: 0,0:29:33.83,0:29:38.12,*Default,NTP,0000,0000,0000,,在这个普通寻常的世界上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're distracted by the comings and goings,
+Dialogue: 0,0:29:38.12,0:29:43.72,*Default,NTP,0000,0000,0000,,来往喧嚣吸引了我们的注意力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the hurly burly of the ordinary everyday world.
+Dialogue: 0,0:29:43.72,0:29:50.03,*Default,NTP,0000,0000,0000,,我们无法对柏拉图式的型相有深入了解 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we don't have a very good grasp of the Platonic forms.
+Dialogue: 0,0:29:50.03,0:29:51.72,*Default,NTP,0000,0000,0000,,我们可以去设想它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're able to think about them,
+Dialogue: 0,0:29:51.72,0:29:55.13,*Default,NTP,0000,0000,0000,,却无法集中注意力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're distracted.
+Dialogue: 0,0:29:55.13,0:29:58.70,*Default,NTP,0000,0000,0000,,哲学家试图要做的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the philosopher tries to do--
+Dialogue: 0,0:29:58.70,0:30:00.74,*Default,NTP,0000,0000,0000,,至少苏格拉底认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is Socrates' thought,
+Dialogue: 0,0:30:00.74,0:30:02.98,*Default,NTP,0000,0000,0000,,或是柏拉图借苏格拉底之口表达这个观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or Plato's thought that he puts in Socrates' mouth--
+Dialogue: 0,0:30:02.98,0:30:04.03,*Default,NTP,0000,0000,0000,,哲学家的目的就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the philosopher tries to
+Dialogue: 0,0:30:04.03,0:30:09.88,*Default,NTP,0000,0000,0000,,把自己从肉体的干扰中解放出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do is free himself from the distractions
+Dialogue: 0,0:30:09.88,0:30:14.46,*Default,NTP,0000,0000,0000,,比如对食物的欲望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the body poses--the desire for food,
+Dialogue: 0,0:30:14.46,0:30:16.27,*Default,NTP,0000,0000,0000,,对性的渴望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the craving for sex,
+Dialogue: 0,0:30:16.27,0:30:18.17,*Default,NTP,0000,0000,0000,,对痛苦的担忧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being concerned about pain.
+Dialogue: 0,0:30:18.17,0:30:19.35,*Default,NTP,0000,0000,0000,,所有这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All this stuff,
+Dialogue: 0,0:30:19.35,0:30:22.50,*Default,NTP,0000,0000,0000,,还有对享乐的追求\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hungering after pleasure,
+Dialogue: 0,0:30:22.50,0:30:30.01,*Default,NTP,0000,0000,0000,,所有这些都妨碍人们思考柏拉图式的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all this stuff gets in the way of thinking about the Platonic forms.
+Dialogue: 0,0:30:30.01,0:30:31.43,*Default,NTP,0000,0000,0000,,所以 哲学家们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What the philosopher tries to do,
+Dialogue: 0,0:30:31.43,0:30:36.94,*Default,NTP,0000,0000,0000,,为了全神贯注于这些理想事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then, so as to better focus on these ideal things,
+Dialogue: 0,0:30:36.94,0:30:43.07,*Default,NTP,0000,0000,0000,,就要忽略肉体  撇开肉体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to disregard the body, put it aside,
+Dialogue: 0,0:30:43.07,0:30:48.63,*Default,NTP,0000,0000,0000,,尽可能地分离精神和肉体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}separate his mind as much as possible from it.
+Dialogue: 0,0:30:48.63,0:30:53.91,*Default,NTP,0000,0000,0000,,苏格拉底曾说他一直都在做这种努力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what Socrates says he's been trying to do.
+Dialogue: 0,0:30:53.91,0:30:54.90,*Default,NTP,0000,0000,0000,,正因为如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so because of that,
+Dialogue: 0,0:30:54.90,0:31:00.64,*Default,NTP,0000,0000,0000,,他更好地理解了这些理想型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he's got a better handle on these ideal forms.
+Dialogue: 0,0:31:00.64,0:31:02.71,*Default,NTP,0000,0000,0000,,而且  他认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then, he believes,
+Dialogue: 0,0:31:02.71,0:31:06.31,*Default,NTP,0000,0000,0000,,当死亡来临\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when death comes and the final separation
+Dialogue: 0,0:31:06.31,0:31:09.19,*Default,NTP,0000,0000,0000,,当精神和肉体最终分离时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}occurs of the mind and the body,
+Dialogue: 0,0:31:09.19,0:31:10.62,*Default,NTP,0000,0000,0000,,他的精神可以飞升\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his mind gets to go up,
+Dialogue: 0,0:31:10.62,0:31:14.50,*Default,NTP,0000,0000,0000,,他的灵魂可以升至天界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his soul gets to go up to this heavenly realm.
+Dialogue: 0,0:31:14.50,0:31:17.20,*Default,NTP,0000,0000,0000,,当今的哲学家称之为 柏拉图的天堂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Philosophers nowadays call it "Plato's heaven."
+Dialogue: 0,0:31:17.20,0:31:18.58,*Default,NTP,0000,0000,0000,,他可以飞升至柏拉图的天堂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He gets to go up to Plato's heaven
+Dialogue: 0,0:31:18.58,0:31:20.73,*Default,NTP,0000,0000,0000,,在那里他可以更直接地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where he can have more direct
+Dialogue: 0,0:31:20.73,0:31:26.21,*Default,NTP,0000,0000,0000,,接触到型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}contact with these things, with the forms.
+Dialogue: 0,0:31:27.62,0:31:32.17,*Default,NTP,0000,0000,0000,,我现在没有时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I don't have the time here
+Dialogue: 0,0:31:32.17,0:31:36.21,*Default,NTP,0000,0000,0000,,来做更多的阐述以说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to say enough to try and make it clear
+Dialogue: 0,0:31:36.21,0:31:40.16,*Default,NTP,0000,0000,0000,,为什么这个柏拉图式的形而上学观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why this Platonic metaphysical view
+Dialogue: 0,0:31:40.16,0:31:43.11,*Default,NTP,0000,0000,0000,,不仅值得认真对待\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a view that not only is worth taking seriously,
+Dialogue: 0,0:31:43.11,0:31:46.80,*Default,NTP,0000,0000,0000,,而且直至今日  许多哲学家都认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but to this day, many, many philosophers think that,
+Dialogue: 0,0:31:46.80,0:31:51.22,*Default,NTP,0000,0000,0000,,它的基本构架一定是正确的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in it's basic strokes, must be right.
+Dialogue: 0,0:31:51.22,0:31:53.24,*Default,NTP,0000,0000,0000,,不管怎样  先给你们举个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But let me at least give you one example
+Dialogue: 0,0:31:53.24,0:31:56.72,*Default,NTP,0000,0000,0000,,或许能帮你们稍作了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that may give you a feel for it.
+Dialogue: 0,0:31:56.72,0:31:59.98,*Default,NTP,0000,0000,0000,,以数学为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think of math.
+Dialogue: 0,0:31:59.98,0:32:01.74,*Default,NTP,0000,0000,0000,,举些简单的数学论断\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think of some simple mathematical claim
+Dialogue: 0,0:32:01.74,0:32:05.24,*Default,NTP,0000,0000,0000,,如2 + 2 = 4\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like 2 + 2 = 4.
+Dialogue: 0,0:32:05.44,0:32:09.37,*Default,NTP,0000,0000,0000,,当我们说2+2=4或2+3=5时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When we say that 2 + 2 = 4 or 2 + 3 = 5,
+Dialogue: 0,0:32:09.37,0:32:14.50,*Default,NTP,0000,0000,0000,,我们是在讨论心灵可以掌握的数字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're saying something about numbers that our mind is able to grasp.
+Dialogue: 0,0:32:14.50,0:32:19.56,*Default,NTP,0000,0000,0000,,但究竟什么是数字呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what are numbers anyway?
+Dialogue: 0,0:32:19.56,0:32:22.57,*Default,NTP,0000,0000,0000,,它们当然不是实际的物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're certainly not physical objects.
+Dialogue: 0,0:32:22.57,0:32:24.00,*Default,NTP,0000,0000,0000,,你不会在某一天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as though someday
+Dialogue: 0,0:32:24.00,0:32:27.41,*Default,NTP,0000,0000,0000,,打开一本国家地理时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're going to open up an issue of National Geographic
+Dialogue: 0,0:32:27.41,0:32:30.08,*Default,NTP,0000,0000,0000,,发现上面会印着这样的封面故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the cover story's going to be "At long last,
+Dialogue: 0,0:32:30.08,0:32:33.79,*Default,NTP,0000,0000,0000,,探险家们终于发现了数字2\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}explorers have discovered the number two."
+Dialogue: 0,0:32:33.79,0:32:35.72,*Default,NTP,0000,0000,0000,,数字2不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as though the number two is something
+Dialogue: 0,0:32:35.72,0:32:43.22,*Default,NTP,0000,0000,0000,,你能看到或听到或尝到或遇到的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you see or hear or taste or could bump into.
+Dialogue: 0,0:32:43.46,0:32:46.15,*Default,NTP,0000,0000,0000,,不管数字2是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Whatever the number two is,
+Dialogue: 0,0:32:46.15,0:32:49.37,*Default,NTP,0000,0000,0000,,它是心灵可以掌握的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's something that our mind can grasp
+Dialogue: 0,0:32:49.37,0:32:55.04,*Default,NTP,0000,0000,0000,,而在物质世界中却不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but isn't actually in the physical world.
+Dialogue: 0,0:32:56.09,0:33:00.93,*Default,NTP,0000,0000,0000,,这是柏拉图式对数学的理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the Platonic take on mathematics.
+Dialogue: 0,0:33:00.93,0:33:04.68,*Default,NTP,0000,0000,0000,,心灵可以去设想数字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are numbers. The mind can think about them.
+Dialogue: 0,0:33:04.68,0:33:08.01,*Default,NTP,0000,0000,0000,,事物可以分有它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things can partake of them.
+Dialogue: 0,0:33:08.01,0:33:10.90,*Default,NTP,0000,0000,0000,,如果我拿起两张纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I were to hold up two pieces of paper,
+Dialogue: 0,0:33:10.90,0:33:12.04,*Default,NTP,0000,0000,0000,,便有这样一层含义  即\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a sense in which
+Dialogue: 0,0:33:12.04,0:33:16.07,*Default,NTP,0000,0000,0000,,这两张纸分有了 二性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they are participating in "Twohood."
+Dialogue: 0,0:33:16.07,0:33:19.54,*Default,NTP,0000,0000,0000,,但显然  数字2并不在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But of course, this is not the number two here.
+Dialogue: 0,0:33:19.90,0:33:22.08,*Default,NTP,0000,0000,0000,,要是我把这些纸撕碎\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I were to rip these pieces of paper,
+Dialogue: 0,0:33:22.08,0:33:25.23,*Default,NTP,0000,0000,0000,,数字2并没有被我给损毁了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wouldn't be destroying the number two.
+Dialogue: 0,0:33:25.23,0:33:27.11,*Default,NTP,0000,0000,0000,,因而  数字2  数字3\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the number two, the numbers, three,
+Dialogue: 0,0:33:27.11,0:33:29.09,*Default,NTP,0000,0000,0000,,不管它们是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever it is, whatever they are,
+Dialogue: 0,0:33:29.09,0:33:33.40,*Default,NTP,0000,0000,0000,,至少它们都是不存在于时空中的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are these Platonic abstract entities
+Dialogue: 0,0:33:33.40,0:33:35.85,*Default,NTP,0000,0000,0000,,柏拉图式的抽象实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that don't exist in space and time.
+Dialogue: 0,0:33:35.85,0:33:36.78,*Default,NTP,0000,0000,0000,,尽管如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yet, for all that,
+Dialogue: 0,0:33:36.78,0:33:40.10,*Default,NTP,0000,0000,0000,,心灵都可以去构想他们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the mind can think about them.
+Dialogue: 0,0:33:40.10,0:33:41.91,*Default,NTP,0000,0000,0000,,这就是这种观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the idea.
+Dialogue: 0,0:33:41.91,0:33:43.32,*Default,NTP,0000,0000,0000,,它并不愚蠢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it's not a silly idea.
+Dialogue: 0,0:33:43.32,0:33:47.93,*Default,NTP,0000,0000,0000,,似乎对于数学的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems like a very compelling account of
+Dialogue: 0,0:33:47.93,0:33:50.57,*Default,NTP,0000,0000,0000,,这是一种很有说服力的说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's going on in mathematics.
+Dialogue: 0,0:33:50.57,0:33:54.61,*Default,NTP,0000,0000,0000,,数学家所做的就是用他们的心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What mathematicians are doing is using their mind
+Dialogue: 0,0:33:54.61,0:33:59.63,*Default,NTP,0000,0000,0000,,来思考那些数学的柏拉图理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to think about these Platonic ideas of mathematics.
+Dialogue: 0,0:33:59.63,0:34:01.52,*Default,NTP,0000,0000,0000,,柏拉图认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Except Plato's thought was,
+Dialogue: 0,0:34:01.52,0:34:04.10,*Default,NTP,0000,0000,0000,,任何事物都是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}everything is like that.
+Dialogue: 0,0:34:04.10,0:34:05.13,*Default,NTP,0000,0000,0000,,不仅数学如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not just math,
+Dialogue: 0,0:34:05.13,0:34:07.83,*Default,NTP,0000,0000,0000,,正义本身也是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but justice itself is like that.
+Dialogue: 0,0:34:07.83,0:34:10.26,*Default,NTP,0000,0000,0000,,世上有正义或非正义的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are just or unjust things in the world.
+Dialogue: 0,0:34:10.26,0:34:11.67,*Default,NTP,0000,0000,0000,,心灵可以去设想它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The mind can think about them,
+Dialogue: 0,0:34:11.67,0:34:15.28,*Default,NTP,0000,0000,0000,,但是正义本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but justice itself--this perfect,
+Dialogue: 0,0:34:15.28,0:34:17.58,*Default,NTP,0000,0000,0000,,即完美的正义这个理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this idea of being perfectly just--
+Dialogue: 0,0:34:17.58,0:34:19.83,*Default,NTP,0000,0000,0000,,它是可以用心灵去把握的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's something the mind can think about,
+Dialogue: 0,0:34:19.83,0:34:21.22,*Default,NTP,0000,0000,0000,,尽管在现实世界里不存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's not here in the world.
+Dialogue: 0,0:34:21.22,0:34:24.92,*Default,NTP,0000,0000,0000,,它是另一种抽象的柏拉图式的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's another abstract Platonic form.
+Dialogue: 0,0:34:25.94,0:34:28.00,*Default,NTP,0000,0000,0000,,这就是整个构想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's the picture.
+Dialogue: 0,0:34:28.00,0:34:32.51,*Default,NTP,0000,0000,0000,,柏拉图的观点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato's idea is that
+Dialogue: 0,0:34:32.51,0:34:34.46,*Default,NTP,0000,0000,0000,,如果我们对形而上学有充分的研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we start doing enough metaphysics,
+Dialogue: 0,0:34:34.46,0:34:37.21,*Default,NTP,0000,0000,0000,,就必能看到柏拉图式的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can see there must be this
+Dialogue: 0,0:34:37.21,0:34:42.85,*Default,NTP,0000,0000,0000,,理念或是型相组成的世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}realm of Platonic ideas, Platonic forms.
+Dialogue: 0,0:34:42.85,0:34:48.76,*Default,NTP,0000,0000,0000,,同时看到我们能够用心灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we can see that we are able to grasp them
+Dialogue: 0,0:34:48.76,0:34:49.94,*Default,NTP,0000,0000,0000,,去掌握它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through the mind.
+Dialogue: 0,0:34:49.94,0:34:52.24,*Default,NTP,0000,0000,0000,,这是身体做不到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This can't be a job the body does,
+Dialogue: 0,0:34:52.24,0:34:55.93,*Default,NTP,0000,0000,0000,,因为身体仅有其肉体性的功能  不是吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the body's only got its bodily capacities, right?
+Dialogue: 0,0:34:55.93,0:34:58.50,*Default,NTP,0000,0000,0000,,它只能执行五官的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's able to do the five-senses thing.
+Dialogue: 0,0:34:58.50,0:35:03.17,*Default,NTP,0000,0000,0000,,是灵魂在思考柏拉图式的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the soul that thinks about the Platonic forms.
+Dialogue: 0,0:35:03.69,0:35:07.80,*Default,NTP,0000,0000,0000,,给出了心灵能做什么这一设想之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as Plato's then going to go on to try to argue,
+Dialogue: 0,0:35:07.80,0:35:12.28,*Default,NTP,0000,0000,0000,,柏拉图想要进一步证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}given this picture of what the mind can do,
+Dialogue: 0,0:35:12.28,0:35:16.32,*Default,NTP,0000,0000,0000,,他认为他可以说服我们相信心灵  灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he thinks he can persuade us that the mind, the soul,
+Dialogue: 0,0:35:16.32,0:35:20.80,*Default,NTP,0000,0000,0000,,不仅能在肉体死亡时幸免于难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only survives the death of your body,
+Dialogue: 0,0:35:20.80,0:35:23.78,*Default,NTP,0000,0000,0000,,而且恒久不灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but will last forever.
+Dialogue: 0,0:35:23.78,0:35:25.42,*Default,NTP,0000,0000,0000,,它是完美的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's perfect.
+Dialogue: 0,0:35:25.42,0:35:29.87,*Default,NTP,0000,0000,0000,,它是非物质的  不会被毁灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's immaterial and can't be destroyed.
+Dialogue: 0,0:35:29.87,0:35:31.47,*Default,NTP,0000,0000,0000,,它是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's immortal.
+Dialogue: 0,0:35:31.47,0:35:34.18,*Default,NTP,0000,0000,0000,,因而他给出一系列论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So he offers a series of arguments
+Dialogue: 0,0:35:34.18,0:35:35.55,*Default,NTP,0000,0000,0000,,来证明这个结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for that conclusion,
+Dialogue: 0,0:35:35.55,0:35:36.64,*Default,NTP,0000,0000,0000,,证明这个立场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for that position,
+Dialogue: 0,0:35:36.64,0:35:37.93,*Default,NTP,0000,0000,0000,,下节课开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and starting next time,
+Dialogue: 0,0:35:37.93,0:35:40.19,*Default,NTP,0000,0000,0000,,我们将讨论这些论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll work our way through those arguments.

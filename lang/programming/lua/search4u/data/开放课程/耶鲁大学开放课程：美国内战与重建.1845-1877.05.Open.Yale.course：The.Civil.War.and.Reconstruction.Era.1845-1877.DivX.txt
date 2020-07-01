@@ -1,0 +1,931 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.63,0:00:03.83,*Default,NTP,0000,0000,0000,,从某些方面来讲  最重要的见证人--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In some ways, the greatest witnesses--
+Dialogue: 0,0:00:04.09,0:00:07.57,*Default,NTP,0000,0000,0000,,有很多亲历者见证了内战的来临--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are many, many witnesses of the coming of the Civil War--
+Dialogue: 0,0:00:08.76,0:00:11.80,*Default,NTP,0000,0000,0000,,它的成因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what caused it, 
+Dialogue: 0,0:00:11.80,0:00:14.84,*Default,NTP,0000,0000,0000,,南方社会中隐含着什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's percolating from beneath the society of the South,
+Dialogue: 0,0:00:14.84,0:00:17.48,*Default,NTP,0000,0000,0000,,我们已经分析过了北方的社会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've looked at, and the society of the North--
+Dialogue: 0,0:00:19.09,0:00:21.96,*Default,NTP,0000,0000,0000,,当然  从某些方面来讲  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in so many ways, of course, 
+Dialogue: 0,0:00:21.96,0:00:23.94,*Default,NTP,0000,0000,0000,,那些最重要的见证人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the greatest witnesses--
+Dialogue: 0,0:00:24.84,0:00:32.70,*Default,NTP,0000,0000,0000,,他们的故事严谨地  紧密地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and their stories have only been with us, in a serious, robust way, 
+Dialogue: 0,0:00:32.71,0:00:33.05,*Default,NTP,0000,0000,0000,,伴随了我们过去的几十年  仅仅几十年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the past couple of decades or so, a few decades--
+Dialogue: 0,0:00:33.26,0:00:35.33,*Default,NTP,0000,0000,0000,,他们就是苦难的奴隶们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are those of the slaves themselves.
+Dialogue: 0,0:00:36.88,0:00:38.96,*Default,NTP,0000,0000,0000,,如果内战的起因就是奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If it was somehow all about them--
+Dialogue: 0,0:00:40.92,0:00:46.13,*Default,NTP,0000,0000,0000,,就像对战双方宣称一样  虽然有点讽刺\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in varying kind of ironic ways folks on both sides will say that--
+Dialogue: 0,0:00:47.41,0:00:48.75,*Default,NTP,0000,0000,0000,,如果确实如此  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it is somehow all about them, 
+Dialogue: 0,0:00:48.75,0:00:51.11,*Default,NTP,0000,0000,0000,,那么当时的奴隶们是怎么想的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what did they think?
+Dialogue: 0,0:00:52.15,0:00:54.89,*Default,NTP,0000,0000,0000,,这个礼拜你们要读那些主要的奴隶自述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This week you're reading the greatest of the slave narratives.
+Dialogue: 0,0:00:55.54,0:00:59.36,*Default,NTP,0000,0000,0000,,弗雷德里克·道格拉斯的第一本自传  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Frederick Douglass's first autobiography, 
+Dialogue: 0,0:00:59.36,0:01:01.05,*Default,NTP,0000,0000,0000,,于1845年出版\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}published in 1845,
+Dialogue: 0,0:01:01.05,0:01:01.23,*Default,NTP,0000,0000,0000,,我坚持认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is ,I still would maintain,
+Dialogue: 0,0:01:01.23,0:01:03.81,*Default,NTP,0000,0000,0000,,那是文学角度来讲最重要的奴隶著作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the greatest of the slave narratives, certainly in a literary sense.
+Dialogue: 0,0:01:05.79,0:01:10.13,*Default,NTP,0000,0000,0000,,他是一个才华横溢的作家  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was an almost mystically brilliant writer, 
+Dialogue: 0,0:01:10.13,0:01:12.47,*Default,NTP,0000,0000,0000,,他是如此的年轻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for one so young.
+Dialogue: 0,0:01:12.48,0:01:15.05,*Default,NTP,0000,0000,0000,,他着手写这本自传时只有二十六岁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He first drafted this when he was 26.
+Dialogue: 0,0:01:15.48,0:01:17.96,*Default,NTP,0000,0000,0000,,他二十岁时得以解脱奴隶身份\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He escaped from slavery when he was 20-years-old.
+Dialogue: 0,0:01:19.72,0:01:23.03,*Default,NTP,0000,0000,0000,,在书上你会读到他是怎么开始认字的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'll find out in the text how he learned his literacy.
+Dialogue: 0,0:01:23.03,0:01:26.91,*Default,NTP,0000,0000,0000,,他的白人女主人索菲亚小姐教会了他认字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He learned it first from his white mistress, Miss Sophia
+Dialogue: 0,0:01:26.98,0:01:29.77,*Default,NTP,0000,0000,0000,,在她禁止他继续学习之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who became like an angelic mother-figure to him
+Dialogue: 0,0:01:30.21,0:01:32.94,*Default,NTP,0000,0000,0000,,她一直是个天使般的母亲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until she took language away from him.
+Dialogue: 0,0:01:35.11,0:01:36.70,*Default,NTP,0000,0000,0000,,这本书充满了隐喻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The book is full of metaphor,
+Dialogue: 0,0:01:37.04,0:01:41.57,*Default,NTP,0000,0000,0000,,道格拉斯用各种各样连续的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it is full of one kind of tale and story after another
+Dialogue: 0,0:01:41.57,0:01:45.89,*Default,NTP,0000,0000,0000,,组成了一个自由的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Douglass shapes into telling a free story.
+Dialogue: 0,0:01:46.98,0:01:49.13,*Default,NTP,0000,0000,0000,,讲述了一个关于自由的故事  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Telling a free story, 
+Dialogue: 0,0:01:49.13,0:01:51.18,*Default,NTP,0000,0000,0000,,正如此类文学的评论家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the great literary critic of this genre, 
+Dialogue: 0,0:01:51.18,0:01:53.44,*Default,NTP,0000,0000,0000,,比尔·安德鲁斯说的那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bill Andrews, has put it.
+Dialogue: 0,0:01:53.90,0:01:58.28,*Default,NTP,0000,0000,0000,,对于一个逃亡到北部的奴隶来说--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For a fugitive slave to emerge in the Northern states--
+Dialogue: 0,0:01:58.82,0:02:02.26,*Default,NTP,0000,0000,0000,,就像一个逃亡到了英国的奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for that matter a fugitive slave who goes to Britain,
+Dialogue: 0,0:02:02.67,0:02:05.28,*Default,NTP,0000,0000,0000,,非洲出生的埃奎亚诺的事迹就是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like Olaudah Equiano did, African born,
+Dialogue: 0,0:02:05.28,0:02:10.96,*Default,NTP,0000,0000,0000,,并且在英国写下了他的故事--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or so we still think, and writes his story in Britain--
+Dialogue: 0,0:02:11.34,0:02:14.99,*Default,NTP,0000,0000,0000,,对于一个逃亡的奴隶  在西方世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but for a fugitive slave to write his or her story
+Dialogue: 0,0:02:15.00,0:02:18.87,*Default,NTP,0000,0000,0000,,用英文写下并出版自己的故事意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and publish it in English in the western world was to say:
+Dialogue: 0,0:02:18.87,0:02:22.71,*Default,NTP,0000,0000,0000,,"我是一个识字的人  我是一个重要的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I'm a person of letters, I am somebody,
+Dialogue: 0,0:02:22.71,0:02:26.47,*Default,NTP,0000,0000,0000,,我有历史  我是自由的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have a history, I am free,
+Dialogue: 0,0:02:26.47,0:02:29.80,*Default,NTP,0000,0000,0000,,但若你不让我写作我便无法真正获得自由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I am not free until you let me write,
+Dialogue: 0,0:02:30.46,0:02:32.37,*Default,NTP,0000,0000,0000,,如果必要的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I will make myself free,
+Dialogue: 0,0:02:32.37,0:02:35.68,*Default,NTP,0000,0000,0000,,我会以写自传的方式  来让自己自由"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I must, by telling you who I am."
+Dialogue: 0,0:02:36.49,0:02:38.70,*Default,NTP,0000,0000,0000,,当一个奴隶可以逃到英国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When a fugitive slave could go to England
+Dialogue: 0,0:02:38.70,0:02:42.45,*Default,NTP,0000,0000,0000,,并在大众面前举起自己的书--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and hold up his book in front of huge audiences--
+Dialogue: 0,0:02:42.45,0:02:46.39,*Default,NTP,0000,0000,0000,,道格拉斯于1846年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Douglass spoke in London at one point 
+Dialogue: 0,0:02:46.39,0:02:50.32,*Default,NTP,0000,0000,0000,,在伦敦对着一万人演讲--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before 10,000 people, in 1846--
+Dialogue: 0,0:02:50.32,0:02:52.69,*Default,NTP,0000,0000,0000,,当他能够举起一本自己的书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he could hold his little book up in his hand,
+Dialogue: 0,0:02:53.07,0:02:58.61,*Default,NTP,0000,0000,0000,,他大概比之前任何时候都感到自由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he could probably at that moment feel freer than he'd ever felt,
+Dialogue: 0,0:02:58.67,0:03:00.42,*Default,NTP,0000,0000,0000,,因为他可以说  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he could actually say 
+Dialogue: 0,0:03:00.43,0:03:01.30,*Default,NTP,0000,0000,0000,,"这就是我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"This is who I am,
+Dialogue: 0,0:03:03.02,0:03:04.90,*Default,NTP,0000,0000,0000,,我不是个生产制造的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not a manufactured identity,
+Dialogue: 0,0:03:05.25,0:03:08.06,*Default,NTP,0000,0000,0000,,我不一定跟你们想像中的我一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not what you necessarily want me to be.
+Dialogue: 0,0:03:08.79,0:03:11.39,*Default,NTP,0000,0000,0000,,我不会用你期待的语气说话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I won't talk the way you expect me to talk.
+Dialogue: 0,0:03:12.49,0:03:15.43,*Default,NTP,0000,0000,0000,,我跟你讲我的故事时随便杜撰些内容"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I won't scratch my head when I tell my story."
+Dialogue: 0,0:03:17.08,0:03:18.37,*Default,NTP,0000,0000,0000,,但这是怎样的一个故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what a story.
+Dialogue: 0,0:03:19.54,0:03:21.60,*Default,NTP,0000,0000,0000,,当我还是一个懵懵懂懂的毕业生的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I was a fledgling graduate student,
+Dialogue: 0,0:03:21.64,0:03:23.09,*Default,NTP,0000,0000,0000,,我不知道该做些什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not knowing what I was doing
+Dialogue: 0,0:03:23.55,0:03:26.07,*Default,NTP,0000,0000,0000,,当时我在写关于弗雷德里克·道格拉斯的论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and writing a dissertation on Frederick Douglass,
+Dialogue: 0,0:03:27.77,0:03:29.98,*Default,NTP,0000,0000,0000,,那是几十年前的事了  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a couple--a few decades ago, 
+Dialogue: 0,0:03:29.98,0:03:31.38,*Default,NTP,0000,0000,0000,,那时  一本新书面市了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a new book had
+Dialogue: 0,0:03:31.38,0:03:33.89,*Default,NTP,0000,0000,0000,,叫做《年轻的弗雷德里克·道格拉斯》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}come out called Young Frederick Douglass.
+Dialogue: 0,0:03:34.05,0:03:38.86,*Default,NTP,0000,0000,0000,,这部书对于道格拉斯青年时代的分析很精彩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was a wonderful study of Douglass's youth.
+Dialogue: 0,0:03:38.91,0:03:40.53,*Default,NTP,0000,0000,0000,,这是一个记者写的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It had been written by a journalist,
+Dialogue: 0,0:03:40.53,0:03:43.18,*Default,NTP,0000,0000,0000,,所以很难找到他  他不是一个学者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so he was hard to find--he wasn't an academic.
+Dialogue: 0,0:03:43.39,0:03:46.40,*Default,NTP,0000,0000,0000,,当时还没有电邮  没有谷歌  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is pre-email, pre-Google,
+Dialogue: 0,0:03:46.40,0:03:48.00,*Default,NTP,0000,0000,0000,,很多东西都还没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pre-lots of things.
+Dialogue: 0,0:03:48.00,0:03:49.51,*Default,NTP,0000,0000,0000,,我写信给他的出版社  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wrote to his publisher, 
+Dialogue: 0,0:03:49.51,0:03:51.16,*Default,NTP,0000,0000,0000,,约翰霍普金斯大学出版社\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Johns Hopkins University Press,
+Dialogue: 0,0:03:51.16,0:03:53.82,*Default,NTP,0000,0000,0000,,问他们要迪克·普雷斯通的电话号码\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and said can you give me a phone number for Dick Preston--
+Dialogue: 0,0:03:53.82,0:03:55.85,*Default,NTP,0000,0000,0000,,迪克·普雷斯通是他的名字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Dickson Preston was his name.
+Dialogue: 0,0:03:56.31,0:03:59.76,*Default,NTP,0000,0000,0000,,他们说  "好的  这是他的电话号码"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They said, "Yes, here's his phone number."
+Dialogue: 0,0:04:00.61,0:04:05.17,*Default,NTP,0000,0000,0000,,当时我在华盛顿做研究  我打电话给他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was in Washington, D.C., doing research; called him.
+Dialogue: 0,0:04:06.80,0:04:08.68,*Default,NTP,0000,0000,0000,,他住在马里兰东岸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He lived on the Eastern Shore of Maryland,
+Dialogue: 0,0:04:08.68,0:04:11.42,*Default,NTP,0000,0000,0000,,我知道  那是道格拉斯成长的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that much I knew, which is where Douglass grew up.
+Dialogue: 0,0:04:12.84,0:04:14.89,*Default,NTP,0000,0000,0000,,我当时对迪克知之甚少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I didn't know much about Dick except
+Dialogue: 0,0:04:14.89,0:04:15.74,*Default,NTP,0000,0000,0000,,只知道他写过这本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he had written 
+Dialogue: 0,0:04:15.74,0:04:17.87,*Default,NTP,0000,0000,0000,,出色的关于道格拉斯青年时期的著作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this extraordinary book on Douglass's youth.
+Dialogue: 0,0:04:17.87,0:04:19.17,*Default,NTP,0000,0000,0000,,实际上  是普雷斯通发现了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, it was Preston who
+Dialogue: 0,0:04:19.17,0:04:21.20,*Default,NTP,0000,0000,0000,,道格拉斯的出生日期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}actually discovered Douglass's birth date.
+Dialogue: 0,0:04:21.69,0:04:23.35,*Default,NTP,0000,0000,0000,,道格拉斯实际的年龄\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Douglass was one year younger
+Dialogue: 0,0:04:23.35,0:04:25.70,*Default,NTP,0000,0000,0000,,比人们一直认为的小一岁  酷吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than he ever knew--wouldn't that be cool?
+Dialogue: 0,0:04:27.25,0:04:29.60,*Default,NTP,0000,0000,0000,,现在我随时会往后推一年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll take a year back any time at this point.
+Dialogue: 0,0:04:31.72,0:04:33.36,*Default,NTP,0000,0000,0000,,我给他打了电话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Called him, he said,
+Dialogue: 0,0:04:33.36,0:04:34.49,*Default,NTP,0000,0000,0000,,"他说  好啊  过来东岸吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Yeah, come on out to the Eastern Shore,
+Dialogue: 0,0:04:34.49,0:04:37.66,*Default,NTP,0000,0000,0000,,早上9点在伊斯顿社区学院停车场见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}meet me in the Easton Community College parking lot at 9 a.M."--
+Dialogue: 0,0:04:37.66,0:04:40.13,*Default,NTP,0000,0000,0000,,那天是七月某个礼拜三的早晨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on whatever Wednesday morning it was in July--
+Dialogue: 0,0:04:40.80,0:04:41.28,*Default,NTP,0000,0000,0000,,"我会带你看看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I'll give you a tour
+Dialogue: 0,0:04:41.28,0:04:43.89,*Default,NTP,0000,0000,0000,,道格拉斯青年时待过的地方"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the sites of Douglass's youth."
+Dialogue: 0,0:04:44.92,0:04:47.34,*Default,NTP,0000,0000,0000,,那天是我一生中最难忘的时刻之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it was one of the most extraordinary days of my life.
+Dialogue: 0,0:04:48.57,0:04:51.66,*Default,NTP,0000,0000,0000,,我坐进他的旅行车\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I folded myself into his station wagon
+Dialogue: 0,0:04:51.66,0:04:54.95,*Default,NTP,0000,0000,0000,,我们开车走遍了东岸的乡村公路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we drove back roads all over the Eastern Shore.
+Dialogue: 0,0:04:55.04,0:04:58.75,*Default,NTP,0000,0000,0000,,他带我走过一片泥泞的玉米地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He took me for a walk through a muddy cornfield,
+Dialogue: 0,0:04:58.75,0:05:01.97,*Default,NTP,0000,0000,0000,,在那片玉米地后面 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I believe it, out to the back lot of a field,
+Dialogue: 0,0:05:01.98,0:05:04.37,*Default,NTP,0000,0000,0000,,就是茯苓河的转弯处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to a bend in Tuckahoe Creek,
+Dialogue: 0,0:05:04.37,0:05:06.15,*Default,NTP,0000,0000,0000,,他说  "这就是道格拉斯出生的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he said, "This is where Douglass was born.
+Dialogue: 0,0:05:06.64,0:05:09.37,*Default,NTP,0000,0000,0000,,这里曾是他的外祖母伊丽莎白的小屋"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's where Grandmother Betsy's cabin was."
+Dialogue: 0,0:05:09.57,0:05:11.83,*Default,NTP,0000,0000,0000,,然后他带我走过无数乡间公路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then he took me down all kinds of back roads,
+Dialogue: 0,0:05:13.07,0:05:15.75,*Default,NTP,0000,0000,0000,,最后我们停在了弗兰德农场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then we ended up at the Freeland Farm.
+Dialogue: 0,0:05:16.75,0:05:19.06,*Default,NTP,0000,0000,0000,,如果你读了道格拉斯的自述你就知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you've read the Narrative you know the Freeland Farm was--
+Dialogue: 0,0:05:19.06,0:05:23.39,*Default,NTP,0000,0000,0000,,在他年轻时服侍过的三四个主人中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}among Douglass's three or four masters he had as a youth,
+Dialogue: 0,0:05:23.40,0:05:28.59,*Default,NTP,0000,0000,0000,,弗兰德是他最喜欢也最尊敬的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Freeland he admired the most or respected the most.
+Dialogue: 0,0:05:29.36,0:05:31.46,*Default,NTP,0000,0000,0000,,然后他说  "你想看看科维农场吗"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then he said, "Do you want to see Covey's Farm?"
+Dialogue: 0,0:05:32.49,0:05:34.72,*Default,NTP,0000,0000,0000,,爱德华·科维\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Edward Covey, 
+Dialogue: 0,0:05:34.72,0:05:37.51,*Default,NTP,0000,0000,0000,,是那种我们称之为奴隶终结者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the so-called slave-breaker
+Dialogue: 0,0:05:37.51,0:05:41.72,*Default,NTP,0000,0000,0000,,道格拉斯被他的主人托马斯·奥德\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Douglass had been hired out to, or sent to, 
+Dialogue: 0,0:05:41.73,0:05:42.03,*Default,NTP,0000,0000,0000,,出租给或是送到他那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by his master Thomas Auld,
+Dialogue: 0,0:05:42.03,0:05:44.29,*Default,NTP,0000,0000,0000,,那是道格拉斯才17岁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when he was a 17-year-old,
+Dialogue: 0,0:05:44.29,0:05:46.55,*Default,NTP,0000,0000,0000,,正处于反叛  难以控制的青年时期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}quite rebellious and rather uncontrollable teenager.
+Dialogue: 0,0:05:47.65,0:05:49.34,*Default,NTP,0000,0000,0000,,我说  "好啊  带我看看科维农场"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I said, "Sure, show me Covey's farm."
+Dialogue: 0,0:05:49.34,0:05:52.57,*Default,NTP,0000,0000,0000,,于是我们又走上了那条路 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then back roads again 
+Dialogue: 0,0:05:52.57,0:05:52.84,*Default,NTP,0000,0000,0000,,那条路现在我都找不到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I couldn't find today if my life depended on it.
+Dialogue: 0,0:05:52.91,0:05:55.59,*Default,NTP,0000,0000,0000,,我记得  我们从车里出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We get out of a car and, in my memory,
+Dialogue: 0,0:05:56.00,0:05:59.35,*Default,NTP,0000,0000,0000,,跨过栅栏柱  走出山脊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we stepped over a fencepost, we walked out this ridge,
+Dialogue: 0,0:06:00.39,0:06:02.92,*Default,NTP,0000,0000,0000,,迪克似乎跟我说  "转过身"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Dick said something like "Turn around."
+Dialogue: 0,0:06:04.36,0:06:07.45,*Default,NTP,0000,0000,0000,,然后我就看到了那里的情景  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And there they were. 
+Dialogue: 0,0:06:07.45,0:06:08.56,*Default,NTP,0000,0000,0000,,他没有瞎编\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He hadn't made it up.
+Dialogue: 0,0:06:11.99,0:06:14.22,*Default,NTP,0000,0000,0000,,在自述里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the narrative, 
+Dialogue: 0,0:06:14.22,0:06:15.71,*Default,NTP,0000,0000,0000,,如果你已经读了很多  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you've read far enough,
+Dialogue: 0,0:06:15.71,0:06:16.79,*Default,NTP,0000,0000,0000,,读到我手上的版本的83页\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you've read to page 83 in my edition,
+Dialogue: 0,0:06:16.96,0:06:19.26,*Default,NTP,0000,0000,0000,,你会看到反奴隶制文学里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've encountered the most beautiful metaphor
+Dialogue: 0,0:06:19.55,0:06:21.29,*Default,NTP,0000,0000,0000,,写得最美妙的隐喻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in anti-slavery literature.
+Dialogue: 0,0:06:22.13,0:06:23.43,*Default,NTP,0000,0000,0000,,那是道格拉斯写的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's Douglass's metaphor
+Dialogue: 0,0:06:23.43,0:06:25.82,*Default,NTP,0000,0000,0000,,讲述在科维农场的八个月里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the white sailing ships on the Chesapeake
+Dialogue: 0,0:06:26.18,0:06:29.02,*Default,NTP,0000,0000,0000,,他总能看见切萨皮克上的白帆船\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he would see from Covey's farm for eight months,
+Dialogue: 0,0:06:29.10,0:06:32.61,*Default,NTP,0000,0000,0000,,他梦想着能登上它们的甲板\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he would try to dream and imagine his way onto their decks,
+Dialogue: 0,0:06:32.61,0:06:34.65,*Default,NTP,0000,0000,0000,,他称之为  "华丽的甲板"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}their "Gallant decks", as he called them.
+Dialogue: 0,0:06:35.90,0:06:42.34,*Default,NTP,0000,0000,0000,,那天我明白了  有时隐喻不只是隐喻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I realized that day sometimes metaphor is not just a metaphor.
+Dialogue: 0,0:06:43.22,0:06:45.26,*Default,NTP,0000,0000,0000,,"我们的房子到切萨皮克湾的距离 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Our house stood within a few rods 
+Dialogue: 0,0:06:45.26,0:06:46.67,*Default,NTP,0000,0000,0000,,简直是近在咫尺"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the Chesapeake Bay"--
+Dialogue: 0,0:06:46.67,0:06:49.14,*Default,NTP,0000,0000,0000,,这是道格拉斯的描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is Douglass's description--
+Dialogue: 0,0:06:49.85,0:06:52.63,*Default,NTP,0000,0000,0000,,"从地球上所有可居住的角落驶来的帆船\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Whose broad bosom was ever white with sails
+Dialogue: 0,0:06:52.63,0:06:55.01,*Default,NTP,0000,0000,0000,,把海湾宽广的胸怀变的一片茫白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from every quarter of the habitable globe.
+Dialogue: 0,0:06:55.40,0:06:58.22,*Default,NTP,0000,0000,0000,,那些被纯白覆盖的美丽的船只\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those beautiful vessels robed in purest white,
+Dialogue: 0,0:06:58.50,0:07:01.00,*Default,NTP,0000,0000,0000,,在自由民眼中是如此的可爱"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so delightful to the eye of freemen"--
+Dialogue: 0,0:07:01.62,0:07:03.90,*Default,NTP,0000,0000,0000,,你们不想二十六岁就能写出如此的词藻吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't you wish you could write like this when you're 26?--
+Dialogue: 0,0:07:05.16,0:07:07.87,*Default,NTP,0000,0000,0000,,"在我看来却是穿着寿衣的幽灵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Were to me so many shrouded ghosts,
+Dialogue: 0,0:07:08.12,0:07:09.99,*Default,NTP,0000,0000,0000,,恐吓着我  折磨着我  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to terrify and torment me 
+Dialogue: 0,0:07:09.99,0:07:12.07,*Default,NTP,0000,0000,0000,,提醒着我身所处的惨境\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with thoughts of my wretched condition.
+Dialogue: 0,0:07:12.43,0:07:15.74,*Default,NTP,0000,0000,0000,,在夏天安息日深沉的寂静中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have often, in the deep stillness of a summer Sabbath,
+Dialogue: 0,0:07:15.74,0:07:17.50,*Default,NTP,0000,0000,0000,,我常常独自站在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}stood all alone upon the
+Dialogue: 0,0:07:17.50,0:07:20.51,*Default,NTP,0000,0000,0000,,这宏伟的海湾的巍峨的岸边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lofty banks of that noble bay and traced,
+Dialogue: 0,0:07:20.62,0:07:22.87,*Default,NTP,0000,0000,0000,,怀着悲伤的心情泪眼朦胧地望着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with saddened heart and tearful eye,
+Dialogue: 0,0:07:22.87,0:07:26.74,*Default,NTP,0000,0000,0000,,数不尽的风帆驶向浩瀚的大海"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the countless number of sails moving off to the mighty ocean."
+Dialogue: 0,0:07:27.67,0:07:29.86,*Default,NTP,0000,0000,0000,,道格拉斯很喜欢形容词\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Douglass was fond of adjectives.
+Dialogue: 0,0:07:30.53,0:07:33.25,*Default,NTP,0000,0000,0000,,"这个景象总是强烈地影响着我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"The sight of these always affected me powerfully.
+Dialogue: 0,0:07:33.70,0:07:36.00,*Default,NTP,0000,0000,0000,,我的思想强烈地渴望表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My thoughts would compel utterance,
+Dialogue: 0,0:07:36.47,0:07:38.09,*Default,NTP,0000,0000,0000,,却没有听众 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there with no audience but the Almighty
+Dialogue: 0,0:07:38.10,0:07:42.17,*Default,NTP,0000,0000,0000,,我只能向上帝倾吐我的灵魂的怨述"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would pour out my soul's complaint"--
+Dialogue: 0,0:07:42.35,0:07:44.23,*Default,NTP,0000,0000,0000,,这段话直接取自《约伯记》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a phrase right from the Book of Job--
+Dialogue: 0,0:07:44.73,0:07:46.86,*Default,NTP,0000,0000,0000,,"以我粗野的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"In my rude way,
+Dialogue: 0,0:07:46.86,0:07:50.94,*Default,NTP,0000,0000,0000,,向那些远去的船只讲述"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with an apostrophe to the moving multitudes of ships."
+Dialogue: 0,0:07:51.16,0:07:53.09,*Default,NTP,0000,0000,0000,,当你读到这段时  注意他当时在做什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And when you read this, note what he does then,
+Dialogue: 0,0:07:53.24,0:07:57.03,*Default,NTP,0000,0000,0000,,他把自己年轻的声音和记忆 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he puts his own teenage voice, or his memory, 
+Dialogue: 0,0:07:57.03,0:07:58.78,*Default,NTP,0000,0000,0000,,用引号括起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in quotation marks,
+Dialogue: 0,0:08:02.12,0:08:04.12,*Default,NTP,0000,0000,0000,,并且他对船讲话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he speaks to the ships.
+Dialogue: 0,0:08:05.18,0:08:07.93,*Default,NTP,0000,0000,0000,,"当你起锚之时  就是你自由之日\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You are loose from your moorings and are free.
+Dialogue: 0,0:08:07.93,0:08:10.41,*Default,NTP,0000,0000,0000,,我是被铁链牢牢锁住的奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I am fast in my chains and am a slave.
+Dialogue: 0,0:08:10.41,0:08:12.80,*Default,NTP,0000,0000,0000,,儒雅的强风伴随着欢乐的你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You move merrily before the gentle gale
+Dialogue: 0,0:08:12.80,0:08:15.15,*Default,NTP,0000,0000,0000,,残酷的皮鞭纠缠着悲惨的我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I sadly before the bloody whip.
+Dialogue: 0,0:08:15.18,0:08:19.72,*Default,NTP,0000,0000,0000,,你是自由的信使  翱翔于天地之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You are freedom's swift winged angels that fly around the world.
+Dialogue: 0,0:08:19.83,0:08:22.11,*Default,NTP,0000,0000,0000,,我却被禁锢于铁箍之中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I am confined in bands of iron.
+Dialogue: 0,0:08:22.34,0:08:23.81,*Default,NTP,0000,0000,0000,,望我能获得自由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh that I were free.
+Dialogue: 0,0:08:23.85,0:08:26.02,*Default,NTP,0000,0000,0000,,望我能登上那华丽的甲板\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh that I were on one of your gallant decks
+Dialogue: 0,0:08:26.57,0:08:28.35,*Default,NTP,0000,0000,0000,,被你庇护的羽翼包裹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and under your protecting wing.
+Dialogue: 0,0:08:28.89,0:08:32.87,*Default,NTP,0000,0000,0000,,但是啊  你我之间有汪洋相隔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But alas, betwixt me and you the turbid waters roll.
+Dialogue: 0,0:08:33.07,0:08:38.08,*Default,NTP,0000,0000,0000,,去吧  去吧  望我也能离开"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Go on, go on. Oh that I could also go."
+Dialogue: 0,0:08:39.01,0:08:42.27,*Default,NTP,0000,0000,0000,,下面还有一段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he still goes on for another paragraph,
+Dialogue: 0,0:08:43.96,0:08:45.21,*Default,NTP,0000,0000,0000,,如果你想知道的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}milking, if you like,
+Dialogue: 0,0:08:45.21,0:08:47.88,*Default,NTP,0000,0000,0000,,他用这个帆船隐喻发挥得淋漓尽致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sailing ship metaphor for all it's worth.
+Dialogue: 0,0:08:50.34,0:08:53.02,*Default,NTP,0000,0000,0000,,我们中有多少人  也许我们所有人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many of us--perhaps all of us,
+Dialogue: 0,0:08:53.31,0:08:56.01,*Default,NTP,0000,0000,0000,,我想所有人都有自己心中的切萨皮克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think everybody, has their own Chesapeake.
+Dialogue: 0,0:08:57.87,0:09:00.49,*Default,NTP,0000,0000,0000,,也许在每天早上你不得不去上课的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It may be every morning when you have to go to class.
+Dialogue: 0,0:09:01.11,0:09:04.15,*Default,NTP,0000,0000,0000,,我们都有自己期待的切萨皮克湾\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We all have our own Chesapeake Bays we've looked out on
+Dialogue: 0,0:09:04.29,0:09:07.93,*Default,NTP,0000,0000,0000,,想着  "我在那里不是更好吗"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and wondered "Wouldn't I rather be there?"
+Dialogue: 0,0:09:07.93,0:09:10.67,*Default,NTP,0000,0000,0000,,或者  "我怎么离开这里呢"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or "How can I get out of here?"
+Dialogue: 0,0:09:11.53,0:09:15.66,*Default,NTP,0000,0000,0000,,或者  "有没有带我驶向自由的帆船"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or "Is there a sailing ship that will liberate me?"
+Dialogue: 0,0:09:19.23,0:09:22.32,*Default,NTP,0000,0000,0000,,奴隶自述就是讲述自由的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Telling a free story is what the slave narratives were about.
+Dialogue: 0,0:09:22.78,0:09:26.47,*Default,NTP,0000,0000,0000,,这种用语言讲述的行为在一定程度上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were acts of telling that in some ways made
+Dialogue: 0,0:09:26.47,0:09:31.62,*Default,NTP,0000,0000,0000,,让以前的奴隶几乎获得真正的自由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the former slave almost literally free by an act of language.
+Dialogue: 0,0:09:31.99,0:09:34.68,*Default,NTP,0000,0000,0000,,语言本身对于一个会写作的奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Language itself to a former slave
+Dialogue: 0,0:09:34.68,0:09:37.64,*Default,NTP,0000,0000,0000,,是一种解放的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who could write was a form of liberation.
+Dialogue: 0,0:09:38.86,0:09:40.68,*Default,NTP,0000,0000,0000,,这些书和语言 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We tend to take it for granted today, 
+Dialogue: 0,0:09:40.68,0:09:43.54,*Default,NTP,0000,0000,0000,,我们现在都视之为当然了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these books, language.
+Dialogue: 0,0:09:46.13,0:09:49.21,*Default,NTP,0000,0000,0000,,好了  讲讲废奴主义和它的根源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, abolitionism, its roots.
+Dialogue: 0,0:09:49.94,0:09:52.40,*Default,NTP,0000,0000,0000,,改革者们和他们遇到的阻碍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Reformers, the barriers they faced.
+Dialogue: 0,0:09:52.40,0:09:54.80,*Default,NTP,0000,0000,0000,,我会很快地说一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to run through this with some speed,
+Dialogue: 0,0:09:54.94,0:09:59.40,*Default,NTP,0000,0000,0000,,然后是反奴隶制发展过程中的各个阶段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then the stages in the development of an anti-slavery impulse--
+Dialogue: 0,0:09:59.40,0:10:01.14,*Default,NTP,0000,0000,0000,,在一开始我们先这样描述它吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's call it that to begin with.
+Dialogue: 0,0:10:01.53,0:10:04.22,*Default,NTP,0000,0000,0000,,它始于殖民思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It begins with this idea of colonization,
+Dialogue: 0,0:10:04.22,0:10:07.66,*Default,NTP,0000,0000,0000,,对非裔美国自由民的殖民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}colonizing African-American freed people
+Dialogue: 0,0:10:07.66,0:10:10.72,*Default,NTP,0000,0000,0000,,或者对美国境外的前奴隶的殖民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or former slaves outside the United States;
+Dialogue: 0,0:10:10.72,0:10:13.43,*Default,NTP,0000,0000,0000,,讽刺的是  这个思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an idea that never lost its kind of
+Dialogue: 0,0:10:13.43,0:10:16.09,*Default,NTP,0000,0000,0000,,即使到了内战后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}beguiling hold on the American imagination,
+Dialogue: 0,0:10:16.09,0:10:18.74,*Default,NTP,0000,0000,0000,,还是徘徊在美国人的空想里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even well after the Civil War, ironically.
+Dialogue: 0,0:10:19.85,0:10:22.06,*Default,NTP,0000,0000,0000,,然后是反奴隶制思想和行动的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then on to a more radicalized form
+Dialogue: 0,0:10:22.27,0:10:25.06,*Default,NTP,0000,0000,0000,,更为激进的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of anti-slavery thinking and action,
+Dialogue: 0,0:10:26.39,0:10:29.17,*Default,NTP,0000,0000,0000,,威廉?劳埃德?加里森和许多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}exemplified especially by William Lloyd Garrison,
+Dialogue: 0,0:10:29.17,0:10:32.96,*Default,NTP,0000,0000,0000,,黑人和白人废奴主义者都是其代表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but by a host of other black and white abolitionists.
+Dialogue: 0,0:10:34.25,0:10:36.98,*Default,NTP,0000,0000,0000,,然后我至少要告诉你一个故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then I want to work you at least to the story,
+Dialogue: 0,0:10:37.18,0:10:40.88,*Default,NTP,0000,0000,0000,,关于地下铁路的神话和真实情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in myth and reality, of the Underground Railroad,
+Dialogue: 0,0:10:41.32,0:10:44.83,*Default,NTP,0000,0000,0000,,它在我们对这段历史的理解影响很大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}since it is so much a part of our imagination of this story,
+Dialogue: 0,0:10:44.83,0:10:48.23,*Default,NTP,0000,0000,0000,,至少我希望这会让你们能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it would at least I hope take us to the point
+Dialogue: 0,0:10:48.69,0:10:51.12,*Default,NTP,0000,0000,0000,,能理解为什么逃亡奴隶法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of understanding why that Fugitive Slave Act,
+Dialogue: 0,0:10:51.29,0:10:55.12,*Default,NTP,0000,0000,0000,,我们会在礼拜四以及下礼拜说到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we'll hear about on thursday and into next week, that Fugitive--
+Dialogue: 0,0:10:55.12,0:10:58.77,*Default,NTP,0000,0000,0000,,1850年通过的联邦逃亡奴隶法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Federal Fugitive Slave Act passed in 1850,
+Dialogue: 0,0:10:59.11,0:11:02.94,*Default,NTP,0000,0000,0000,,伴随着美墨战争后的1850妥协案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the Compromise of 1850 that flowed out of the Mexican War--
+Dialogue: 0,0:11:03.48,0:11:07.43,*Default,NTP,0000,0000,0000,,在美国人为了自由劳力和奴隶劳力的未来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why that Fugitive Slave Act was so pertinent,
+Dialogue: 0,0:11:07.91,0:11:12.34,*Default,NTP,0000,0000,0000,,开始分裂的情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so divisive, so significant,
+Dialogue: 0,0:11:13.34,0:11:15.90,*Default,NTP,0000,0000,0000,,为什么逃亡奴隶法与之息息相关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the kinds of ways Americans were beginning
+Dialogue: 0,0:11:15.90,0:11:20.56,*Default,NTP,0000,0000,0000,,为什么它如此具有分裂性  如此重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to divide over the future of free labor and slave labor, whatever.
+Dialogue: 0,0:11:21.11,0:11:25.22,*Default,NTP,0000,0000,0000,,他们也许曾把非裔美国人当成邻居\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They may have thought about African-Americans as their neighbors.
+Dialogue: 0,0:11:26.19,0:11:28.03,*Default,NTP,0000,0000,0000,,允许我再次提到爱默生 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But permit me to use Emerson again,
+Dialogue: 0,0:11:28.03,0:11:28.95,*Default,NTP,0000,0000,0000,,至少简短地提一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least briefly.
+Dialogue: 0,0:11:29.72,0:11:30.99,*Default,NTP,0000,0000,0000,,这个改革的思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This idea of reform.
+Dialogue: 0,0:11:30.99,0:11:34.58,*Default,NTP,0000,0000,0000,,我上节课提到过  在最后几分钟里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mentioned last time that--and sort of ended there--
+Dialogue: 0,0:11:34.58,0:11:37.02,*Default,NTP,0000,0000,0000,,在美国历史上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that in American History we've
+Dialogue: 0,0:11:37.02,0:11:42.12,*Default,NTP,0000,0000,0000,,我们至少有四个主要改革期或者说变革潮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had at least four major reform eras or waves of reform.
+Dialogue: 0,0:11:42.91,0:11:44.73,*Default,NTP,0000,0000,0000,,这个肯定是第一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And certainly this is the first.
+Dialogue: 0,0:11:45.25,0:11:48.84,*Default,NTP,0000,0000,0000,,1820到50年代的战前美国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In Antebellum America from the 1820s through the 1850s
+Dialogue: 0,0:11:48.84,0:11:53.40,*Default,NTP,0000,0000,0000,,所有变革前奏慢慢浮现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all kinds of reform ferment came to the surface.
+Dialogue: 0,0:11:53.40,0:11:55.89,*Default,NTP,0000,0000,0000,,有时是反对海军中的鞭笞行为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes that was against flogging in the Navy.
+Dialogue: 0,0:11:56.31,0:12:00.99,*Default,NTP,0000,0000,0000,,有时是乌托邦社会实验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes it was in utopian experiments and communities.
+Dialogue: 0,0:12:01.57,0:12:04.49,*Default,NTP,0000,0000,0000,,有时是女权运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes that was in Women's Rights.
+Dialogue: 0,0:12:05.29,0:12:08.24,*Default,NTP,0000,0000,0000,,有时是禁酒运动  就是我们所知的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes that was in Temperance, which was by far--
+Dialogue: 0,0:12:08.29,0:12:14.12,*Default,NTP,0000,0000,0000,,反酒精  反酗酒  反邪恶的朗姆运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is the anti-alcohol, anti-booze, anti-demon rum movement--
+Dialogue: 0,0:12:14.12,0:12:18.17,*Default,NTP,0000,0000,0000,,禁酒运动是美国战前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Temperance was by far the most widespread American
+Dialogue: 0,0:12:18.17,0:12:20.58,*Default,NTP,0000,0000,0000,,推行最为广泛的改革运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reform movement in pre-Civil War times.
+Dialogue: 0,0:12:21.23,0:12:23.74,*Default,NTP,0000,0000,0000,,这可能是唯一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was probably the only major reform movement
+Dialogue: 0,0:12:23.74,0:12:25.57,*Default,NTP,0000,0000,0000,,影响到南方的主要改革\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that got a hold in the South.
+Dialogue: 0,0:12:26.62,0:12:30.33,*Default,NTP,0000,0000,0000,,个人变革是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Personal reform of some sort was something
+Dialogue: 0,0:12:30.33,0:12:33.35,*Default,NTP,0000,0000,0000,,存在于南方社会中的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that that Southern society we looked at--
+Dialogue: 0,0:12:34.42,0:12:37.50,*Default,NTP,0000,0000,0000,,一个奴隶社会  一个高度阶级化的社会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a slave society, a very hierarchical society--
+Dialogue: 0,0:12:37.51,0:12:42.66,*Default,NTP,0000,0000,0000,,关于个人敬虔和行为的某种个人改革\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}certain kinds of personal reform that dealt with personal piety
+Dialogue: 0,0:12:42.66,0:12:45.25,*Default,NTP,0000,0000,0000,,可能扎根于南方  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and behavior could take hold in the South; 
+Dialogue: 0,0:12:45.25,0:12:48.13,*Default,NTP,0000,0000,0000,,而更广泛的社会改革 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}broader social reforms 
+Dialogue: 0,0:12:48.13,0:12:52.74,*Default,NTP,0000,0000,0000,,可能会挑战社会秩序--并不完全是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would challenge the social order--not so much.
+Dialogue: 0,0:12:53.46,0:12:54.61,*Default,NTP,0000,0000,0000,,听听爱默生是怎么说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But listen to Emerson.
+Dialogue: 0,0:12:55.67,0:12:57.83,*Default,NTP,0000,0000,0000,,他写了篇题为《人即改革者》的文章--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In his essay called "Man the Reformer"--
+Dialogue: 0,0:12:59.05,0:13:00.51,*Default,NTP,0000,0000,0000,,然后思考思考我们的时代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and think about our own times.
+Dialogue: 0,0:13:01.66,0:13:04.23,*Default,NTP,0000,0000,0000,,"人究竟是为何而生的呢"  爱默生问道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What is man born for ?" Said Emerson.
+Dialogue: 0,0:13:05.12,0:13:09.06,*Default,NTP,0000,0000,0000,,"若不是为做一个改革者  还能成为什么"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What is man born for but to be a reformer?"
+Dialogue: 0,0:13:09.78,0:13:12.44,*Default,NTP,0000,0000,0000,,这种说法现在到底对不对  你可以判断\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now he may be right or wrong about this, you can decide.
+Dialogue: 0,0:13:13.04,0:13:16.33,*Default,NTP,0000,0000,0000,,"做为一个重新改造前人产品的创新者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"A re-maker of what man has made,
+Dialogue: 0,0:13:16.33,0:13:18.52,*Default,NTP,0000,0000,0000,,一个谎言的否定者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a renouncer of lies,
+Dialogue: 0,0:13:18.53,0:13:20.62,*Default,NTP,0000,0000,0000,,一个真理与善行的重现者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a restorer of truth and good,
+Dialogue: 0,0:13:20.62,0:13:22.92,*Default,NTP,0000,0000,0000,,模仿那伟大的大自然"--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}imitating that great Nature"--
+Dialogue: 0,0:13:24.05,0:13:26.33,*Default,NTP,0000,0000,0000,,注意这里的比喻--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}note the metaphor here--
+Dialogue: 0,0:13:26.33,0:13:29.40,*Default,NTP,0000,0000,0000,,"她包容着一切 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Which embosoms us all 
+Dialogue: 0,0:13:29.40,0:13:31.32,*Default,NTP,0000,0000,0000,,从不守旧 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and which sleeps no moment on an old past 
+Dialogue: 0,0:13:31.32,0:13:32.86,*Default,NTP,0000,0000,0000,,而是每天都在完善自我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but every hour repairs herself,
+Dialogue: 0,0:13:32.86,0:13:37.71,*Default,NTP,0000,0000,0000,,每一次日出都赋予我们新的一天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}yielding us every morning a new day,
+Dialogue: 0,0:13:38.48,0:13:41.00,*Default,NTP,0000,0000,0000,,每一次脉搏跳动都蕴含着新的生命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and with every pulsation a new life.
+Dialogue: 0,0:13:41.33,0:13:45.05,*Default,NTP,0000,0000,0000,,让改革者否定一切他认为不真实的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let him renounce everything which is not true to him,
+Dialogue: 0,0:13:45.05,0:13:48.69,*Default,NTP,0000,0000,0000,,让他所有的实践都回到最初的构想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and put all his practices back on their first thoughts,
+Dialogue: 0,0:13:48.69,0:13:54.26,*Default,NTP,0000,0000,0000,,让他拒绝做任何与世无益的事情"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and do nothing for which he has not the whole world for his reason."
+Dialogue: 0,0:13:55.55,0:13:58.32,*Default,NTP,0000,0000,0000,,对也好不对也好  爱默生的观点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Emerson is arguing, right or wrong,
+Dialogue: 0,0:13:59.17,0:14:03.30,*Default,NTP,0000,0000,0000,,人本质上就是个改革者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you are a reformer by nature.
+Dialogue: 0,0:14:04.23,0:14:10.16,*Default,NTP,0000,0000,0000,,大自然每天都在自我完善  人类也一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nature recreates itself daily and so do humans.
+Dialogue: 0,0:14:11.33,0:14:12.68,*Default,NTP,0000,0000,0000,,他说得对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is he right?
+Dialogue: 0,0:14:17.46,0:14:19.43,*Default,NTP,0000,0000,0000,,晚上打个电话给爸妈  对他们说--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Call home tonight to your parents and say--
+Dialogue: 0,0:14:21.27,0:14:22.33,*Default,NTP,0000,0000,0000,,你是个大四学生--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're a Senior--
+Dialogue: 0,0:14:22.33,0:14:23.63,*Default,NTP,0000,0000,0000,,"我决定以后要做什么了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I've decided what I'm going to do,
+Dialogue: 0,0:14:23.74,0:14:26.55,*Default,NTP,0000,0000,0000,,爸  我要做一个改革者"\NDad, I’m going to be a reformer."
+Dialogue: 0,0:14:31.37,0:14:33.04,*Default,NTP,0000,0000,0000,,如果我是你父母我会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I were your parent I'd say,
+Dialogue: 0,0:14:33.62,0:14:37.33,*Default,NTP,0000,0000,0000,,"改革什么  为什么  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Of what? For why? 
+Dialogue: 0,0:14:37.33,0:14:39.80,*Default,NTP,0000,0000,0000,,他们给你发工资吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Do they pay you for that?
+Dialogue: 0,0:14:42.78,0:14:44.11,*Default,NTP,0000,0000,0000,,安全不安全\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Will it be safe?
+Dialogue: 0,0:14:47.33,0:14:48.72,*Default,NTP,0000,0000,0000,,谁给你灌的迷魂汤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Who you been talking to?
+Dialogue: 0,0:14:51.74,0:14:53.02,*Default,NTP,0000,0000,0000,,你要做个啥来着"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A what?"
+Dialogue: 0,0:14:54.91,0:14:56.08,*Default,NTP,0000,0000,0000,,"我要做一个改革者"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I'm gonna be a reformer."
+Dialogue: 0,0:14:59.02,0:15:05.06,*Default,NTP,0000,0000,0000,,这是十九世纪三十年代的一个小群体--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This was an age, though, by the 1830s,for a small group--
+Dialogue: 0,0:15:05.46,0:15:07.49,*Default,NTP,0000,0000,0000,,尤其是废奴主义者 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and rest assured abolitionists, in particular, 
+Dialogue: 0,0:15:07.49,0:15:09.97,*Default,NTP,0000,0000,0000,,他们从来都不是大型组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were never a large group.
+Dialogue: 0,0:15:10.81,0:15:12.23,*Default,NTP,0000,0000,0000,,他们可能从来没有--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They probably were never--
+Dialogue: 0,0:15:12.75,0:15:16.19,*Default,NTP,0000,0000,0000,,不好意思  我周末在蒙塔纳作讲座\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}excuse me, I was in Montana on the weekend giving lectures,
+Dialogue: 0,0:15:16.51,0:15:19.01,*Default,NTP,0000,0000,0000,,那里的山很美  但是太冷了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the mountains were gorgeous but it was cold.
+Dialogue: 0,0:15:20.02,0:15:23.54,*Default,NTP,0000,0000,0000,,回到正题  废奴主义者从来没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, abolitionists were never,
+Dialogue: 0,0:15:23.54,0:15:27.47,*Default,NTP,0000,0000,0000,,即使在他们组织活动的顶峰期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even at their peak of organizational action,
+Dialogue: 0,0:15:27.93,0:15:30.97,*Default,NTP,0000,0000,0000,,大概最多最多也不超过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were never more than probably, probably at most,
+Dialogue: 0,0:15:30.97,0:15:35.12,*Default,NTP,0000,0000,0000,,北方地区百分之十五的人口\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}15% of the population of the Northern states.
+Dialogue: 0,0:15:35.12,0:15:38.00,*Default,NTP,0000,0000,0000,,现在有些地方人数可能比较多--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now in some communities they might be larger--
+Dialogue: 0,0:15:39.24,0:15:41.62,*Default,NTP,0000,0000,0000,,纽约北部  马萨诸塞的部分地区\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}upstate New York, parts of Massachusetts
+Dialogue: 0,0:15:41.62,0:15:45.83,*Default,NTP,0000,0000,0000,,康涅狄格或者新罕布什尔--还是小团体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Connecticut or New Hampshire--always a small group.
+Dialogue: 0,0:15:46.51,0:15:49.67,*Default,NTP,0000,0000,0000,,不过正如大部分搞得沸沸扬扬\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But like most vociferous and, 
+Dialogue: 0,0:15:49.67,0:15:53.97,*Default,NTP,0000,0000,0000,,最终通过媒体操控的高度组织化的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}eventually, highly organized--operating by the printing press--
+Dialogue: 0,0:15:54.17,0:15:55.83,*Default,NTP,0000,0000,0000,,改革团体一样 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reform groups, 
+Dialogue: 0,0:15:55.83,0:15:59.62,*Default,NTP,0000,0000,0000,,他们的重要性比他们的数量要大多了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}their significance is much greater than their numbers.
+Dialogue: 0,0:16:01.13,0:16:03.36,*Default,NTP,0000,0000,0000,,现在  他们面临的是什么情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, what were they up against?
+Dialogue: 0,0:16:03.44,0:16:05.46,*Default,NTP,0000,0000,0000,,让我快一点把这一段讲完\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Real quickly let me run through these.
+Dialogue: 0,0:16:06.55,0:16:10.38,*Default,NTP,0000,0000,0000,,我可能上次就开始讲了但没说完\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I may have begun here last time and had to stop.
+Dialogue: 0,0:16:12.25,0:16:13.61,*Default,NTP,0000,0000,0000,,美国的废奴主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The American abolitionists,
+Dialogue: 0,0:16:13.61,0:16:15.95,*Default,NTP,0000,0000,0000,,或者任何一个关心奴隶制的人--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or anybody concerned about slavery--
+Dialogue: 0,0:16:15.95,0:16:17.72,*Default,NTP,0000,0000,0000,,我们就举奴隶问题的例子吧--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's just take the slavery question--
+Dialogue: 0,0:16:18.64,0:16:21.35,*Default,NTP,0000,0000,0000,,到了十九世纪二十年代  都得面对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has to deal, by the 1820s now,
+Dialogue: 0,0:16:21.92,0:16:24.31,*Default,NTP,0000,0000,0000,,新一代的年轻人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the new generations being born
+Dialogue: 0,0:16:24.80,0:16:27.29,*Default,NTP,0000,0000,0000,,他们没有经历过美国革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who did not experience the Revolution,
+Dialogue: 0,0:16:27.92,0:16:30.43,*Default,NTP,0000,0000,0000,,这些孩子现在正在继承\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they are inheriting now 
+Dialogue: 0,0:16:30.43,0:16:34.95,*Default,NTP,0000,0000,0000,,他们父母从美国革命中得到的重要经验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this great experience of their parents, the American Revolution.
+Dialogue: 0,0:16:36.13,0:16:39.18,*Default,NTP,0000,0000,0000,,但这场革命至少留下了一把双刃剑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that revolution had at least a twofold legacy.
+Dialogue: 0,0:16:41.12,0:16:42.94,*Default,NTP,0000,0000,0000,,一方面   这是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On the one hand, it was an event
+Dialogue: 0,0:16:42.94,0:16:47.19,*Default,NTP,0000,0000,0000,,真正给世界带来伟大的启蒙理念的事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that really ushered those great Enlightenment ideas into the world
+Dialogue: 0,0:16:47.19,0:16:51.45,*Default,NTP,0000,0000,0000,,这些理念常常借鉴美国反奴隶制的精神\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that an anti-slavery impulse in America is going to draw upon, constantly.
+Dialogue: 0,0:16:51.49,0:16:53.90,*Default,NTP,0000,0000,0000,,黑人和白人废奴主义者都会依靠这些理念\NBlack and white abolitionists, they’re all going to do it.
+Dialogue: 0,0:16:54.16,0:16:55.67,*Default,NTP,0000,0000,0000,,那些伟大的启蒙理念--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those great Enlightenment ideas--
+Dialogue: 0,0:16:55.68,0:16:58.53,*Default,NTP,0000,0000,0000,,包括对君主制的反抗  共和主义的发展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hostility to monarchy, the growth of Republicanism,
+Dialogue: 0,0:16:58.61,0:17:01.60,*Default,NTP,0000,0000,0000,,代议制政府的出现  对人类理性的坚信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}representative government, the faith in human reason,
+Dialogue: 0,0:17:01.73,0:17:04.01,*Default,NTP,0000,0000,0000,,个人自由的观念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the notion of individual liberty,
+Dialogue: 0,0:17:04.01,0:17:07.03,*Default,NTP,0000,0000,0000,,也就是生来就有的天赋人权\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you're born with certain natural rights.
+Dialogue: 0,0:17:07.86,0:17:09.59,*Default,NTP,0000,0000,0000,,这些都是革命性的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are revolutionary ideas.
+Dialogue: 0,0:17:09.59,0:17:11.02,*Default,NTP,0000,0000,0000,,他们还从没有完全解决所有问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They hadn't worked them out yet either.
+Dialogue: 0,0:17:11.02,0:17:12.58,*Default,NTP,0000,0000,0000,,那么的革命权利呢.\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How about the right of revolution,
+Dialogue: 0,0:17:12.90,0:17:15.02,*Default,NTP,0000,0000,0000,,这是杰弗逊总统的四个第一原则之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of Jefferson's four first principles?
+Dialogue: 0,0:17:15.02,0:17:16.87,*Default,NTP,0000,0000,0000,,同意原则\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The doctrine of consent.
+Dialogue: 0,0:17:17.49,0:17:21.66,*Default,NTP,0000,0000,0000,,人民主权论--这不是个全新概念--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Popular sovereignty--not a brand new idea--
+Dialogue: 0,0:17:21.66,0:17:23.59,*Default,NTP,0000,0000,0000,,它能被追溯到保罗书信中的思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's all the way back there in the Epistles of Paul
+Dialogue: 0,0:17:23.59,0:17:25.64,*Default,NTP,0000,0000,0000,,甚至回到保罗书信之前的某些作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and even before that in certain kinds of writings.
+Dialogue: 0,0:17:25.64,0:17:26.99,*Default,NTP,0000,0000,0000,,但是这个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But how many times had the
+Dialogue: 0,0:17:26.99,0:17:29.11,*Default,NTP,0000,0000,0000,,有多少次真正地出现了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}world actually invented governments truly
+Dialogue: 0,0:17:29.11,0:17:32.11,*Default,NTP,0000,0000,0000,,基于同意原则的政府呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on the doctrine of consent?
+Dialogue: 0,0:17:34.01,0:17:36.23,*Default,NTP,0000,0000,0000,,还有那个还羽翼未丰的平等观念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that fledgling idea of equality,
+Dialogue: 0,0:17:36.23,0:17:38.34,*Default,NTP,0000,0000,0000,,人类平等  已经开始实行了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}human equality, had been put in play.
+Dialogue: 0,0:17:40.15,0:17:42.61,*Default,NTP,0000,0000,0000,,但是美国革命的另一方面是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the other side of the American Revolution is
+Dialogue: 0,0:17:42.61,0:17:46.76,*Default,NTP,0000,0000,0000,,它也在南方加剧了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it had also fostered in the South the necessity
+Dialogue: 0,0:17:46.77,0:17:49.76,*Default,NTP,0000,0000,0000,,保护奴隶制的行动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of an intensification of slavery's defense.
+Dialogue: 0,0:17:51.29,0:17:54.40,*Default,NTP,0000,0000,0000,,从很多角度来说  美国革命的胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In many ways, the success of the American Revolution
+Dialogue: 0,0:17:54.68,0:17:57.36,*Default,NTP,0000,0000,0000,,以及在北方州的对奴隶制抵制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and putting slavery on the run in the Northern states,
+Dialogue: 0,0:17:57.36,0:17:59.67,*Default,NTP,0000,0000,0000,,使北方渐渐地废除了奴隶制--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it was gradually abolished in every Northern--
+Dialogue: 0,0:17:59.67,0:18:01.44,*Default,NTP,0000,0000,0000,,有的州很快就废除了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}immediately abolished in a few
+Dialogue: 0,0:18:01.44,0:18:02.82,*Default,NTP,0000,0000,0000,,但大部分北方州是到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but gradually abolished
+Dialogue: 0,0:18:02.82,0:18:05.51,*Default,NTP,0000,0000,0000,,十九世纪二十年代才得以完全废除的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in most of the Northern States by the 1820s--
+Dialogue: 0,0:18:06.18,0:18:09.61,*Default,NTP,0000,0000,0000,,现在南方必须作出合理的回应  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the South now had to have answers, it had to have justifications.
+Dialogue: 0,0:18:09.61,0:18:12.31,*Default,NTP,0000,0000,0000,,我们上次已经谈了许多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we went through a lot of those defenses
+Dialogue: 0,0:18:12.49,0:18:14.71,*Default,NTP,0000,0000,0000,,那类辩护理由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and justifications the other day.
+Dialogue: 0,0:18:15.32,0:18:16.98,*Default,NTP,0000,0000,0000,,这就是埃德蒙·摩根\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This was what Edmund Morgan,
+Dialogue: 0,0:18:16.98,0:18:19.58,*Default,NTP,0000,0000,0000,,伟大的殖民革命历史学家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the great colonial revolution historian here
+Dialogue: 0,0:18:19.58,0:18:23.28,*Default,NTP,0000,0000,0000,,在耶鲁一次又一次争论过的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at Yale for years argued so brilliantly, over and over.
+Dialogue: 0,0:18:23.28,0:18:27.61,*Default,NTP,0000,0000,0000,,这是美国悖论  重大的美国矛盾\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was the American paradox, this great American contradiction;
+Dialogue: 0,0:18:29.80,0:18:33.75,*Default,NTP,0000,0000,0000,,世界上最大的奴隶体系是由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}largest slave system in the world being built
+Dialogue: 0,0:18:34.41,0:18:37.49,*Default,NTP,0000,0000,0000,,最早成功运行共和政体的国家之一建立的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by one of its first functioning, thriving republics.
+Dialogue: 0,0:18:44.36,0:18:48.84,*Default,NTP,0000,0000,0000,,第二  任何想要和奴隶制对抗的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two, anybody trying to work against slavery,
+Dialogue: 0,0:18:48.84,0:18:51.12,*Default,NTP,0000,0000,0000,,即使是用十九世纪二三十年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even in the most gradual, modest ways,
+Dialogue: 0,0:18:51.12,0:18:52.66,*Default,NTP,0000,0000,0000,,最温和  最适度的办法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the 1820s and the 1830s,
+Dialogue: 0,0:18:52.66,0:18:55.81,*Default,NTP,0000,0000,0000,,也不得不把脑袋直接撞到被我们称作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has got to bump his head right into what we might
+Dialogue: 0,0:18:55.81,0:18:58.54,*Default,NTP,0000,0000,0000,,不可侵犯的美国宪法的枪口上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}simply call the sanctity of the U.S. Constitution.
+Dialogue: 0,0:19:00.05,0:19:04.10,*Default,NTP,0000,0000,0000,,宪法被美国社会所尊崇  是神圣的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Constitution was revered in American society, it was a sacred thing.
+Dialogue: 0,0:19:07.00,0:19:08.35,*Default,NTP,0000,0000,0000,,它的根源在哪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And look what it was rooted in.
+Dialogue: 0,0:19:08.70,0:19:11.21,*Default,NTP,0000,0000,0000,,加里森要称宪法为死亡契约\NNow, Garrison’s going to call it a covenant with death,
+Dialogue: 0,0:19:12.38,0:19:17.25,*Default,NTP,0000,0000,0000,,与恶魔的协定  因为它和奴隶制是同谋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a deal with the devil, because of its complicities in slavery.
+Dialogue: 0,0:19:17.26,0:19:22.15,*Default,NTP,0000,0000,0000,,但它也深深根植于联邦制  在此制度下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's also rooted deeply in Federalism and in what southerners
+Dialogue: 0,0:19:22.16,0:19:25.40,*Default,NTP,0000,0000,0000,,南北方人都会按照州权利声明去操作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and northerners would practice as states rights doctrine--
+Dialogue: 0,0:19:25.40,0:19:28.64,*Default,NTP,0000,0000,0000,,宪法是麦迪逊的智慧结晶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all that localism that the Constitution was designed
+Dialogue: 0,0:19:29.28,0:19:34.49,*Default,NTP,0000,0000,0000,,各地方自我管理  又相互团结\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Madison's genius to try to control, hold together.
+Dialogue: 0,0:19:35.48,0:19:36.80,*Default,NTP,0000,0000,0000,,然后你再看看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you take the
+Dialogue: 0,0:19:36.80,0:19:40.61,*Default,NTP,0000,0000,0000,,五分之三的条款和逃奴条例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}three-fifths clause and the fugitive slave clause
+Dialogue: 0,0:19:41.00,0:19:43.79,*Default,NTP,0000,0000,0000,,以及迟了二十年颁布的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the postponing for 20 years of any consideration
+Dialogue: 0,0:19:43.79,0:19:45.96,*Default,NTP,0000,0000,0000,,外国奴隶贩卖禁令\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the banning of the foreign slave trade.
+Dialogue: 0,0:19:46.84,0:19:49.50,*Default,NTP,0000,0000,0000,,你意识到美国宪法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you realize that the U.S. Constitution
+Dialogue: 0,0:19:49.56,0:19:52.15,*Default,NTP,0000,0000,0000,,在道德上是与奴隶制串通一气的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is morally complicit in slavery,
+Dialogue: 0,0:19:52.15,0:19:53.83,*Default,NTP,0000,0000,0000,,即使它从来没有明确这么说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though it never used the word.
+Dialogue: 0,0:19:57.02,0:20:00.87,*Default,NTP,0000,0000,0000,,为什么美国废奴主义  或者任何相关主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why did abolitionism in America--or any kind of concern--
+Dialogue: 0,0:20:00.87,0:20:02.25,*Default,NTP,0000,0000,0000,,我们就这么说吧--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's just put it that way--
+Dialogue: 0,0:20:02.25,0:20:05.32,*Default,NTP,0000,0000,0000,,随着时间的推移变得更加激进了呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about slavery become more radical with time?
+Dialogue: 0,0:20:07.02,0:20:08.80,*Default,NTP,0000,0000,0000,,这是因为  最终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It is because, ultimately,
+Dialogue: 0,0:20:08.80,0:20:11.96,*Default,NTP,0000,0000,0000,,美国的反奴隶制运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an anti-slavery movement in the United States,
+Dialogue: 0,0:20:11.96,0:20:16.87,*Default,NTP,0000,0000,0000,,要想成功  就不得不游走法外\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to succeed, had to become extra legal.
+Dialogue: 0,0:20:17.48,0:20:20.47,*Default,NTP,0000,0000,0000,,或者换种说法  它只能触犯法律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, put another way, it had to break the law.
+Dialogue: 0,0:20:23.28,0:20:25.42,*Default,NTP,0000,0000,0000,,这就是为什么违法是哈里特·斯托的著名小说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why law breaking is such a central theme
+Dialogue: 0,0:20:25.43,0:20:28.41,*Default,NTP,0000,0000,0000,,《汤姆叔叔的小屋》的主题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Harriet Beecher Stowe's great novel, Uncle Tom's Cabin.
+Dialogue: 0,0:20:30.21,0:20:32.56,*Default,NTP,0000,0000,0000,,然后  当然  反奴隶制运动者们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then, of course, anti-slavery activists were
+Dialogue: 0,0:20:32.56,0:20:36.33,*Default,NTP,0000,0000,0000,,面临着蓄奴派更强烈的抵抗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}up against the increasingly deep defense of slavery,
+Dialogue: 0,0:20:36.33,0:20:37.85,*Default,NTP,0000,0000,0000,,这点我们刚才说过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we've already dealt with.
+Dialogue: 0,0:20:38.30,0:20:42.09,*Default,NTP,0000,0000,0000,,他们面临高度组织化的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were up against an increasingly highly organized
+Dialogue: 0,0:20:42.09,0:20:46.04,*Default,NTP,0000,0000,0000,,广泛纸质传媒化的歧视黑人的种族理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and widely written racial theory about black inferiority.
+Dialogue: 0,0:20:47.86,0:20:50.78,*Default,NTP,0000,0000,0000,,美国的反奴隶浪潮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An anti-slavery impulse in the United States
+Dialogue: 0,0:20:52.51,0:20:55.09,*Default,NTP,0000,0000,0000,,是一个冲击  是一整套的观念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was an impulse, a set of ideas,
+Dialogue: 0,0:20:55.09,0:20:59.72,*Default,NTP,0000,0000,0000,,它们最终会导致某种形式的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that eventually would have to call for some form
+Dialogue: 0,0:20:59.72,0:21:02.26,*Default,NTP,0000,0000,0000,,社会变革  法律变革\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of social revolution, legal revolution,
+Dialogue: 0,0:21:02.26,0:21:06.08,*Default,NTP,0000,0000,0000,,以及社会所不想看到的政治革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and political revolution in a society that did not want it.
+Dialogue: 0,0:21:08.01,0:21:10.72,*Default,NTP,0000,0000,0000,,在一个将巨大的社会财富都悉数 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And in a society where increasingly a tremendous amount of wealth was 
+Dialogue: 0,0:21:10.72,0:21:14.79,*Default,NTP,0000,0000,0000,,赌在奴隶制上面的社会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of course staked in slavery,
+Dialogue: 0,0:21:14.79,0:21:16.46,*Default,NTP,0000,0000,0000,,我们之前也说过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a point we've also made.
+Dialogue: 0,0:21:19.68,0:21:21.14,*Default,NTP,0000,0000,0000,,还有最后一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just a last thought on that.
+Dialogue: 0,0:21:21.85,0:21:24.63,*Default,NTP,0000,0000,0000,,想一想现在你的周围\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think today, just think around you,
+Dialogue: 0,0:21:24.63,0:21:26.25,*Default,NTP,0000,0000,0000,,咱们开拓一下思路\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think out of your box for a moment,
+Dialogue: 0,0:21:26.25,0:21:28.08,*Default,NTP,0000,0000,0000,,想一件世界上发生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of an issue in the world
+Dialogue: 0,0:21:28.08,0:21:31.21,*Default,NTP,0000,0000,0000,,你非常关心的  影响到了你或者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of great concern that really affects you,
+Dialogue: 0,0:21:31.45,0:21:34.58,*Default,NTP,0000,0000,0000,,大多数人的事  因为它关系到整个世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or most of us; for that matter the whole bloody world.
+Dialogue: 0,0:21:36.22,0:21:39.63,*Default,NTP,0000,0000,0000,,你有多少信心能在有生之年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How confident are you in succeeding
+Dialogue: 0,0:21:40.70,0:21:44.23,*Default,NTP,0000,0000,0000,,解决这个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in solving it, in your lifetime?
+Dialogue: 0,0:21:46.59,0:21:50.85,*Default,NTP,0000,0000,0000,,世界贫穷问题  全球变暖问题  任选\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}World poverty, global warming, take your pick.
+Dialogue: 0,0:21:53.26,0:21:56.67,*Default,NTP,0000,0000,0000,,种族主义  去把它终结了吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Racism, go end it.
+Dialogue: 0,0:21:57.74,0:21:59.72,*Default,NTP,0000,0000,0000,,在十九世纪三十年代做一个废奴主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To be an abolitionist in the 1830s
+Dialogue: 0,0:21:59.72,0:22:02.10,*Default,NTP,0000,0000,0000,,就像是给自己这样一个任务  然后说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was to take on an issue like this and say,
+Dialogue: 0,0:22:02.10,0:22:05.27,*Default,NTP,0000,0000,0000,,"也许我们的有生之年不一定解决得了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, you know, maybe not in our lifetime
+Dialogue: 0,0:22:05.28,0:22:06.98,*Default,NTP,0000,0000,0000,,但总有一天我们会胜利的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but maybe sometime."
+Dialogue: 0,0:22:11.07,0:22:12.75,*Default,NTP,0000,0000,0000,,这不是说他们是利他主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't mean they were altruistic,
+Dialogue: 0,0:22:12.76,0:22:15.73,*Default,NTP,0000,0000,0000,,我不确定是不是真有那样的废奴主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not sure there were any altruistic abolitionists.
+Dialogue: 0,0:22:16.71,0:22:19.00,*Default,NTP,0000,0000,0000,,你能在布鲁斯·利维恩的书中读到他们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As you'll see when you read about
+Dialogue: 0,0:22:19.00,0:22:23.54,*Default,NTP,0000,0000,0000,,或者不管你用什么方式了解他们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}them in Bruce Levine's book or any other way we look at them,
+Dialogue: 0,0:22:24.24,0:22:26.77,*Default,NTP,0000,0000,0000,,他们就是一群自我中心的墙头草\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they could be as egotistical and as vane
+Dialogue: 0,0:22:27.15,0:22:29.19,*Default,NTP,0000,0000,0000,,他们的策略  方法  和人格\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as conflicted in their tactics
+Dialogue: 0,0:22:29.19,0:22:31.85,*Default,NTP,0000,0000,0000,,和所有人一样充满矛盾\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and their methods and their personalities as anybody.
+Dialogue: 0,0:22:33.24,0:22:34.74,*Default,NTP,0000,0000,0000,,当然威廉·劳埃德·加里森\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Certainly William Lloyd Garrison
+Dialogue: 0,0:22:34.74,0:22:36.63,*Default,NTP,0000,0000,0000,,不是那么好对付的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was not an easy guy to get along with.
+Dialogue: 0,0:22:37.50,0:22:39.43,*Default,NTP,0000,0000,0000,,就像我之前提到过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, as I mentioned earlier,
+Dialogue: 0,0:22:39.43,0:22:41.46,*Default,NTP,0000,0000,0000,,虽然美国废奴运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}anti-slavery in America, though,
+Dialogue: 0,0:22:41.47,0:22:44.46,*Default,NTP,0000,0000,0000,,并非一蹴而就  它经历了好几个阶段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}takes stages, it goes through periods, stages.
+Dialogue: 0,0:22:44.46,0:22:46.57,*Default,NTP,0000,0000,0000,,第一个阶段是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The first of these is this
+Dialogue: 0,0:22:46.57,0:22:49.97,*Default,NTP,0000,0000,0000,,让黑人殖民化移民的想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}idea of colonizing black people elsewhere.
+Dialogue: 0,0:22:51.17,0:22:54.58,*Default,NTP,0000,0000,0000,,殖民  作为一个观念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now colonization, as an idea,
+Dialogue: 0,0:22:55.11,0:22:58.26,*Default,NTP,0000,0000,0000,,在1816年美国殖民协会建立的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not brand new by 1816,
+Dialogue: 0,0:22:58.53,0:23:01.21,*Default,NTP,0000,0000,0000,,就已经不是什么新生事物了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when the American Colonization Society was formed,
+Dialogue: 0,0:23:02.12,0:23:04.09,*Default,NTP,0000,0000,0000,,但随着1812年美英战争的爆发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it finally took hold
+Dialogue: 0,0:23:04.09,0:23:07.62,*Default,NTP,0000,0000,0000,,它最终在美国政治思想中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the political soil of the United States,
+Dialogue: 0,0:23:07.62,0:23:09.43,*Default,NTP,0000,0000,0000,,站住了脚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the wake of the War of 1812.
+Dialogue: 0,0:23:09.43,0:23:11.82,*Default,NTP,0000,0000,0000,,美国殖民协会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The American Colonization Society
+Dialogue: 0,0:23:11.82,0:23:13.73,*Default,NTP,0000,0000,0000,,实际上是在美国国会大厦建立的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was actually founded in the U.S. Capitol.
+Dialogue: 0,0:23:14.23,0:23:17.26,*Default,NTP,0000,0000,0000,,这件事最早是国会资助的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This thing had congressional funding at first.
+Dialogue: 0,0:23:19.68,0:23:20.97,*Default,NTP,0000,0000,0000,,它实际上是由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was actually founded by
+Dialogue: 0,0:23:20.97,0:23:23.35,*Default,NTP,0000,0000,0000,,当时美国最重要的几位政治家建立起来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the greatest statesmen in America at the time.
+Dialogue: 0,0:23:23.35,0:23:25.54,*Default,NTP,0000,0000,0000,,最早的会议上亨利·克莱也在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Henry Clay was there at the original meeting.
+Dialogue: 0,0:23:25.54,0:23:29.30,*Default,NTP,0000,0000,0000,,詹姆斯·门罗  约翰·马歇尔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}James Monroe; John Marshall--
+Dialogue: 0,0:23:29.30,0:23:30.48,*Default,NTP,0000,0000,0000,,他是最高法院首席大法官--\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Chief Justice of the Supreme Court--
+Dialogue: 0,0:23:31.16,0:23:34.04,*Default,NTP,0000,0000,0000,,还有很多  特别是边境州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and many others, especially border state,
+Dialogue: 0,0:23:34.04,0:23:38.17,*Default,NTP,0000,0000,0000,,上南方的领袖们  像克莱就来自肯塔基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Upper South leaders, like Clay, from Kentucky,
+Dialogue: 0,0:23:38.18,0:23:39.32,*Default,NTP,0000,0000,0000,,还有著名的辉格\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the great Whig who will
+Dialogue: 0,0:23:39.32,0:23:42.23,*Default,NTP,0000,0000,0000,,他后来成为了辉格党之父\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}become the kind of father-figure of the Whig Party.
+Dialogue: 0,0:23:42.99,0:23:45.10,*Default,NTP,0000,0000,0000,,他们中许多人是奴隶主  比如克莱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of them slaveholders, like Clay--
+Dialogue: 0,0:23:45.88,0:23:49.15,*Default,NTP,0000,0000,0000,,在他肯塔基的大麻农庄曾拥有过六十个奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}owned about 60 slaves on his hemp farms in Kentucky.
+Dialogue: 0,0:23:49.75,0:23:52.56,*Default,NTP,0000,0000,0000,,但当时的观念是  随着时间流逝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The idea here is that somehow over time,
+Dialogue: 0,0:23:52.56,0:23:54.21,*Default,NTP,0000,0000,0000,,在那充满希望的美国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that America of the future--
+Dialogue: 0,0:23:54.21,0:23:57.93,*Default,NTP,0000,0000,0000,,那广阔无边  不受摆布的西方美国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that vast, infinite, boundless America of the West--
+Dialogue: 0,0:23:59.28,0:24:02.67,*Default,NTP,0000,0000,0000,,这个奴隶问题最终会得到正视\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that eventually this problem of slavery might have to be faced,
+Dialogue: 0,0:24:03.57,0:24:06.12,*Default,NTP,0000,0000,0000,,但要让它得到正视的办法是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the way it could be faced eventually is
+Dialogue: 0,0:24:06.12,0:24:07.68,*Default,NTP,0000,0000,0000,,开始慢慢地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you start gradually
+Dialogue: 0,0:24:07.68,0:24:10.88,*Default,NTP,0000,0000,0000,,把黑人从美国移出去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}removing black people from the United States.
+Dialogue: 0,0:24:11.63,0:24:16.08,*Default,NTP,0000,0000,0000,,最开始是让自由黑人移民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you do it first with volunteer freed people, free blacks.
+Dialogue: 0,0:24:16.55,0:24:18.91,*Default,NTP,0000,0000,0000,,他们会被请出去  而不是强迫他们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They would be asked, never coerced,
+Dialogue: 0,0:24:19.29,0:24:21.93,*Default,NTP,0000,0000,0000,,这是最初的殖民协会的宗旨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was the theory of the original Colonization Society.
+Dialogue: 0,0:24:22.12,0:24:25.26,*Default,NTP,0000,0000,0000,,当然  当时的殖民协会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That Colonization Society, of course, is the organization--
+Dialogue: 0,0:24:25.26,0:24:27.63,*Default,NTP,0000,0000,0000,,在最初十年左右非常有钱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it had a lot of money in its first decade or so.
+Dialogue: 0,0:24:28.97,0:24:30.85,*Default,NTP,0000,0000,0000,,这是个多么诱人的想法啊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was such a beguiling idea.
+Dialogue: 0,0:24:30.85,0:24:35.22,*Default,NTP,0000,0000,0000,,非常地符合这代人的要求\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It fit in so many ways this generation.
+Dialogue: 0,0:24:35.22,0:24:39.22,*Default,NTP,0000,0000,0000,,实际上  革命一代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it was actually the revolutionary generation
+Dialogue: 0,0:24:39.22,0:24:41.71,*Default,NTP,0000,0000,0000,,和紧接而来的后革命一代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the immediate post-revolutionary generation
+Dialogue: 0,0:24:41.76,0:24:43.75,*Default,NTP,0000,0000,0000,,他们真正被某种所谓杰弗逊理想主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who really were infused with what
+Dialogue: 0,0:24:43.86,0:24:46.79,*Default,NTP,0000,0000,0000,,或者甚至是梅迪逊理想主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might call a kind of Jeffersonian idealism--
+Dialogue: 0,0:24:47.55,0:24:49.74,*Default,NTP,0000,0000,0000,,的东西所影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or even a Madisonian idealism--
+Dialogue: 0,0:24:49.74,0:24:53.05,*Default,NTP,0000,0000,0000,,认为这样的美国总还存在什么问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that somehow this America, yes, it had problems--
+Dialogue: 0,0:24:53.94,0:24:56.25,*Default,NTP,0000,0000,0000,,或者就像杰佛逊说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or as Jefferson said,
+Dialogue: 0,0:24:56.25,0:24:59.08,*Default,NTP,0000,0000,0000,,有奴隶制在  我们就骑虎难下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we got the wolf by the ears, with slavery;
+Dialogue: 0,0:25:00.65,0:25:02.90,*Default,NTP,0000,0000,0000,,没法脱身  因为老虎会吃人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can't get off because the wolf will devour you;
+Dialogue: 0,0:25:03.99,0:25:06.47,*Default,NTP,0000,0000,0000,,但如果一直骑着  就永远下不来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but if you stay on you got to ride that damn wolf forever.
+Dialogue: 0,0:25:09.21,0:25:10.74,*Default,NTP,0000,0000,0000,,不过这是他私下里说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he said that in private--
+Dialogue: 0,0:25:10.79,0:25:12.95,*Default,NTP,0000,0000,0000,,但是这种杰弗逊理想主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this kind of Jeffersonian idealism
+Dialogue: 0,0:25:12.95,0:25:17.49,*Default,NTP,0000,0000,0000,,资源富饶的  美丽壮丽的美国大陆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that somehow this grand american continent with its resources physically,
+Dialogue: 0,0:25:17.49,0:25:21.52,*Default,NTP,0000,0000,0000,,以及伟大的美国宪法  伟大的政治革命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this grand American Constitution, this great experiment,
+Dialogue: 0,0:25:21.91,0:25:24.10,*Default,NTP,0000,0000,0000,,能够解决这个问题  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would dissolve this problem, 
+Dialogue: 0,0:25:24.10,0:25:26.08,*Default,NTP,0000,0000,0000,,特别是你提供帮助的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}especially if you helped it.
+Dialogue: 0,0:25:27.57,0:25:29.81,*Default,NTP,0000,0000,0000,,美国移民协会建立了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The American Colonization Society founded 
+Dialogue: 0,0:25:29.81,0:25:32.05,*Default,NTP,0000,0000,0000,,在非洲西海岸的利比亚殖民地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the colony of Liberia on the West Coast of
+Dialogue: 0,0:25:32.05,0:25:37.05,*Default,NTP,0000,0000,0000,,利比亚是在1821年左右建国的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the nation of Liberia was founded in 1820,'22, 
+Dialogue: 0,0:25:38.70,0:25:41.15,*Default,NTP,0000,0000,0000,,美国殖民委员会促成了这一事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the ACS, the American Colonization Society.
+Dialogue: 0,0:25:43.42,0:25:46.64,*Default,NTP,0000,0000,0000,,大约有一千五百个非裔美国人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It would ship approximately
+Dialogue: 0,0:25:47.30,0:25:51.53,*Default,NTP,0000,0000,0000,,经船运往了利比里亚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}1500 free African-Americans to Liberia--
+Dialogue: 0,0:25:52.38,0:25:57.38,*Default,NTP,0000,0000,0000,,一千五百人  1821年到1831年这十年间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}1500,that's it--between 1821 and 1831,
+Dialogue: 0,0:25:59.40,0:26:01.94,*Default,NTP,0000,0000,0000,,然后他们建立了首都蒙罗维亚  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they would found its capital at Monrovia,
+Dialogue: 0,0:26:01.94,0:26:04.30,*Default,NTP,0000,0000,0000,,并以美国总统詹姆斯·门罗而命名\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}named for James Monroe, the United States President.
+Dialogue: 0,0:26:05.48,0:26:10.27,*Default,NTP,0000,0000,0000,,也许你们知道  利比里亚现在经历了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Liberia today, as you may know, has been through 
+Dialogue: 0,0:26:10.27,0:26:14.53,*Default,NTP,0000,0000,0000,,一场惨烈的内战  那是个灾难  \Na vicious, horrifying Civil War. It’s a disaster. 
+Dialogue: 0,0:26:14.53,0:26:15.06,*Default,NTP,0000,0000,0000,,现在那里诞生了非洲唯一的一个女总统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It does have the only African woman president now.
+Dialogue: 0,0:26:15.10,0:26:18.64,*Default,NTP,0000,0000,0000,,利比亚正在书写一段激动人心的历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a fascinating story of what's happening to Liberia.
+Dialogue: 0,0:26:18.64,0:26:20.23,*Default,NTP,0000,0000,0000,,但究其根源  却在美国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But its roots are back here,
+Dialogue: 0,0:26:20.85,0:26:23.06,*Default,NTP,0000,0000,0000,,这是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the impulse of 
+Dialogue: 0,0:26:23.06,0:26:26.80,*Default,NTP,0000,0000,0000,,美国白人将黑人驱逐出境的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}white Americans to remove black Americans from their native soil.
+Dialogue: 0,0:26:27.19,0:26:29.92,*Default,NTP,0000,0000,0000,,现在的一些非洲裔美国人仍受其影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now some African-Americans bought onto this.
+Dialogue: 0,0:26:30.30,0:26:32.69,*Default,NTP,0000,0000,0000,,这是一次移民的浪潮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the immigration impulse, 
+Dialogue: 0,0:26:32.69,0:26:35.87,*Default,NTP,0000,0000,0000,,背井离乡重新开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}go elsewhere, make a new start.
+Dialogue: 0,0:26:36.06,0:26:38.63,*Default,NTP,0000,0000,0000,,一些人甚至被这样的想法鼓舞着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of them were even inspired by this idea
+Dialogue: 0,0:26:38.64,0:26:40.47,*Default,NTP,0000,0000,0000,,回到祖先的土地上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a return to an ancestral homeland 
+Dialogue: 0,0:26:40.47,0:26:42.30,*Default,NTP,0000,0000,0000,,那片陌生的土地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they knew so little about.
+Dialogue: 0,0:26:43.29,0:26:48.21,*Default,NTP,0000,0000,0000,,但是殖民计划本身就存在许多问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But colonization had all kinds of flaws at its roots.
+Dialogue: 0,0:26:52.76,0:26:55.23,*Default,NTP,0000,0000,0000,,当然  我们把它可以称作缺陷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we can call these flaws; 
+Dialogue: 0,0:26:55.23,0:26:57.09,*Default,NTP,0000,0000,0000,,可以把它叫做现实  或者其他什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can call these realities; we can call them whatever we want.
+Dialogue: 0,0:26:57.71,0:27:00.63,*Default,NTP,0000,0000,0000,,殖民行动源于这些观念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Colonization was essentially rooted in these ideas.
+Dialogue: 0,0:27:01.53,0:27:04.27,*Default,NTP,0000,0000,0000,,第一个是  或许应该叫做假设\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was first these--or assumptions we might call them.
+Dialogue: 0,0:27:04.27,0:27:06.00,*Default,NTP,0000,0000,0000,,第一个假设就是平等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The first assumption was that equality,
+Dialogue: 0,0:27:06.00,0:27:08.90,*Default,NTP,0000,0000,0000,,在美国是无法实现种族平等的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}racial equality in America was never going to happen.
+Dialogue: 0,0:27:09.27,0:27:12.95,*Default,NTP,0000,0000,0000,,那就从这开始吧  支持者们是这样辩解的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just start there, is what the colonizationalists would argue.
+Dialogue: 0,0:27:13.11,0:27:15.84,*Default,NTP,0000,0000,0000,,"现实点吧  种族平等是不会实现的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Be real--ain't gonna happen."
+Dialogue: 0,0:27:17.28,0:27:20.88,*Default,NTP,0000,0000,0000,,人们对自由黑人的数量的增长而担忧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was a fear of the rising free black population 
+Dialogue: 0,0:27:20.88,0:27:23.28,*Default,NTP,0000,0000,0000,,在美国革命之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that had really boomed in numbers 
+Dialogue: 0,0:27:23.28,0:27:24.48,*Default,NTP,0000,0000,0000,,那时黑人的数量增长得相当快\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the wake of the American Revolution,
+Dialogue: 0,0:27:24.48,0:27:26.88,*Default,NTP,0000,0000,0000,,在上南方的农奴解放进行之时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with all the manumissions that went on in the Upper South,
+Dialogue: 0,0:27:26.88,0:27:30.37,*Default,NTP,0000,0000,0000,,紧接着北方也开始了解放运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then the emancipations that had occurred in the north,
+Dialogue: 0,0:27:31.22,0:27:33.14,*Default,NTP,0000,0000,0000,,当时在像纽约这样的州奴隶占总人口的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the slave population of a state like New York
+Dialogue: 0,0:27:33.14,0:27:34.72,*Default,NTP,0000,0000,0000,,百分之六或百分之七\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had been six or seven percent.
+Dialogue: 0,0:27:35.76,0:27:39.53,*Default,NTP,0000,0000,0000,,现在人们的担心转为黑奴的暴动了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was the fear now of the specter of slave insurrection.
+Dialogue: 0,0:27:40.08,0:27:41.20,*Default,NTP,0000,0000,0000,,一八八零年在里士满\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There'd been the Gabriel Prosser plot 
+Dialogue: 0,0:27:41.20,0:27:43.07,*Default,NTP,0000,0000,0000,,有加布里埃尔·普罗瑟的起义计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in 1800 in Richmond.
+Dialogue: 0,0:27:43.07,0:27:47.33,*Default,NTP,0000,0000,0000,,一八八一年在查尔斯顿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There'd been the Denmark Vesey insurrectionary plot 
+Dialogue: 0,0:27:47.33,0:27:48.10,*Default,NTP,0000,0000,0000,,有丹马维斯起义计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Charleston in 1822,
+Dialogue: 0,0:27:48.72,0:27:51.24,*Default,NTP,0000,0000,0000,,这都极大的改变了殖民计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which brought a lot of converts to colonization.
+Dialogue: 0,0:27:52.92,0:27:56.90,*Default,NTP,0000,0000,0000,,当然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And of course 
+Dialogue: 0,0:27:56.90,0:27:57.89,*Default,NTP,0000,0000,0000,,一八三一年最血腥的奈特·特纳暴动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nat Turner's bloodiest of all insurrections in 1831
+Dialogue: 0,0:27:58.03,0:28:01.47,*Default,NTP,0000,0000,0000,,让许多美国人觉得殖民计划是很好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}made colonization look pretty nice to a lot of Americans.
+Dialogue: 0,0:28:04.31,0:28:05.41,*Default,NTP,0000,0000,0000,,当时的一种想法是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was this idea too that 
+Dialogue: 0,0:28:05.41,0:28:08.72,*Default,NTP,0000,0000,0000,,殖民总归能够缓和紧张的安全局势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}somehow colonization would be a safety valve.
+Dialogue: 0,0:28:08.72,0:28:11.36,*Default,NTP,0000,0000,0000,,虽然在数十年的时间里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It might only remove five or ten percent
+Dialogue: 0,0:28:11.85,0:28:15.42,*Default,NTP,0000,0000,0000,,美国自由黑人和黑人奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of American free blacks and slaves 
+Dialogue: 0,0:28:15.42,0:28:16.42,*Default,NTP,0000,0000,0000,,只能减少百分之五至百分之十的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over say a few decades.
+Dialogue: 0,0:28:16.46,0:28:19.46,*Default,NTP,0000,0000,0000,,而就是这个理论上的数据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But even that five or ten percent, the theory was,
+Dialogue: 0,0:28:20.51,0:28:23.39,*Default,NTP,0000,0000,0000,,也能缓和南方的局势\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would ameliorate conditions in the south,
+Dialogue: 0,0:28:23.39,0:28:27.05,*Default,NTP,0000,0000,0000,,它能让这个火药桶不那么危险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would begin to defuse this powder keg
+Dialogue: 0,0:28:27.23,0:28:32.71,*Default,NTP,0000,0000,0000,,也就是黑奴数量随着棉业的蓬勃发展而激增\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a rising slave population being fueled by the great cotton boom.
+Dialogue: 0,0:28:36.94,0:28:40.06,*Default,NTP,0000,0000,0000,,殖民计划有种特别的吸引力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it had a kind of a strange attractiveness,
+Dialogue: 0,0:28:40.90,0:28:42.79,*Default,NTP,0000,0000,0000,,但通常只吸引白人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but mostly to white folks.
+Dialogue: 0,0:28:43.52,0:28:47.18,*Default,NTP,0000,0000,0000,,而强烈反对它的人  毫无疑问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was roundly loathed by--make no mistake
+Dialogue: 0,0:28:47.18,0:28:49.51,*Default,NTP,0000,0000,0000,,是大多数的自由的黑人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by a majority of free african-Americans 
+Dialogue: 0,0:28:49.51,0:28:51.84,*Default,NTP,0000,0000,0000,,他们生活在北方或者中南部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the North or Upper South,
+Dialogue: 0,0:28:53.17,0:28:58.15,*Default,NTP,0000,0000,0000,,甚至黑奴们对它非常恐惧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and feared--to the extent they even grasped the idea
+Dialogue: 0,0:28:59.62,0:29:01.50,*Default,NTP,0000,0000,0000,,那些生活在南方腹地的黑奴们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by slaves in the Deep South.
+Dialogue: 0,0:29:03.93,0:29:07.41,*Default,NTP,0000,0000,0000,,但是正是渐进主义推动着这种殖民行动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it was a gradualism that fueled the idea of colonization
+Dialogue: 0,0:29:07.41,0:29:09.20,*Default,NTP,0000,0000,0000,,在十九世纪二十年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it was gradualism 
+Dialogue: 0,0:29:09.20,0:29:15.48,*Default,NTP,0000,0000,0000,,渐进主义仍被许多美国早期的第一批\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a lot of America's first early youthful generation of abolitionists
+Dialogue: 0,0:29:15.48,0:29:20.48,*Default,NTP,0000,0000,0000,,年轻一代的废奴主义者们视为是最佳方法 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thought might still be the best way to go, in the 1820s.
+Dialogue: 0,0:29:20.84,0:29:22.40,*Default,NTP,0000,0000,0000,,一些平缓的计划已经付诸实施了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gradual plans had been used,
+Dialogue: 0,0:29:22.40,0:29:24.40,*Default,NTP,0000,0000,0000,,例如  在一些州像康乃迪克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, in states like Connecticut.
+Dialogue: 0,0:29:24.98,0:29:29.98,*Default,NTP,0000,0000,0000,,十八世纪九十年代晚期通过了一项法案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Connecticut passed a law in the late-1790s 
+Dialogue: 0,0:29:30.03,0:29:31.94,*Default,NTP,0000,0000,0000,,宣布让所有在这个州出生的黑奴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that said that every slave born in that state,
+Dialogue: 0,0:29:31.94,0:29:32.60,*Default,NTP,0000,0000,0000,,在法案通过后  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after that date, 
+Dialogue: 0,0:29:32.60,0:29:33.85,*Default,NTP,0000,0000,0000,,在自己的二十一岁生日那天将获得自由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on his or her 21st birthday would be freed;
+Dialogue: 0,0:29:34.82,0:29:36.62,*Default,NTP,0000,0000,0000,,这可真是个非常渐进的计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a very gradual plan.
+Dialogue: 0,0:29:36.62,0:29:39.18,*Default,NTP,0000,0000,0000,,亚伯拉罕·林肯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Abraham Lincoln 
+Dialogue: 0,0:29:39.18,0:29:43.95,*Default,NTP,0000,0000,0000,,在内战爆发的时候仍在推行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is still voicing this very kind of gradual plan of emancipation
+Dialogue: 0,0:29:43.95,0:29:44.76,*Default,NTP,0000,0000,0000,,这些解放黑奴的平和的计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the outbreak of the Civil War.
+Dialogue: 0,0:29:45.32,0:29:50.77,*Default,NTP,0000,0000,0000,,当林肯在一八六二年号召和命令诸州时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's still going to suggest it to the states of Kentucky and Delaware
+Dialogue: 0,0:29:50.77,0:29:54.54,*Default,NTP,0000,0000,0000,,他仍然建议卡塔基州和特拉华州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when he calls them in and asks those states in 1862
+Dialogue: 0,0:29:54.54,0:29:58.43,*Default,NTP,0000,0000,0000,,考虑实施平和的农奴解放计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to consider emancipation on a gradual plan.
+Dialogue: 0,0:29:58.43,0:30:00.16,*Default,NTP,0000,0000,0000,,甚至给提供补偿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he would even compensate
+Dialogue: 0,0:30:00.16,0:30:02.57,*Default,NTP,0000,0000,0000,,给奴隶主们每个奴隶六百美元\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the slaveholders 600 bucks a slave or--
+Dialogue: 0,0:30:02.57,0:30:04.21,*Default,NTP,0000,0000,0000,,我不太记得那个准确的数字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I forget exactly what the figure was.
+Dialogue: 0,0:30:07.08,0:30:09.33,*Default,NTP,0000,0000,0000,,对于这种渐进主义  很多人认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And gradualism, many people have argued,
+Dialogue: 0,0:30:09.33,0:30:11.89,*Default,NTP,0000,0000,0000,,是一种美国人解决问题的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is kind of the American way,
+Dialogue: 0,0:30:11.89,0:30:15.26,*Default,NTP,0000,0000,0000,,通过一个长期的计划  为巨变做好准备\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a long-term plan, cushion the change.
+Dialogue: 0,0:30:18.05,0:30:21.07,*Default,NTP,0000,0000,0000,,但是  一些事情的发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, several things began to happen,
+Dialogue: 0,0:30:22.33,0:30:25.68,*Default,NTP,0000,0000,0000,,特别是在十九世纪二十年代到三十年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}especially in the 1820s and into the 1830s
+Dialogue: 0,0:30:25.68,0:30:30.68,*Default,NTP,0000,0000,0000,,让美利坚的反奴思考者开始变得激进起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that radicalized anti-slavery thinkers in the United States.
+Dialogue: 0,0:30:31.60,0:30:33.92,*Default,NTP,0000,0000,0000,,这的确就是根源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this is indeed the roots, if you like,
+Dialogue: 0,0:30:33.92,0:30:36.92,*Default,NTP,0000,0000,0000,,由此产生了激进的废奴主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a more radical abolitionism,
+Dialogue: 0,0:30:36.92,0:30:42.81,*Default,NTP,0000,0000,0000,,这是加里森派的极端主义的根源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the roots of what came to be known among the Garrisonians as Immediatism.
+Dialogue: 0,0:30:42.93,0:30:46.42,*Default,NTP,0000,0000,0000,,对于这些产生原因  我会说到四个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And those roots are these; I'm going to give you four.
+Dialogue: 0,0:30:46.93,0:30:47.99,*Default,NTP,0000,0000,0000,,我写过一篇论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wrote an essay,
+Dialogue: 0,0:30:48.00,0:30:50.36,*Default,NTP,0000,0000,0000,,我研究生时发表的第一篇论文\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first essay I ever published in graduate school
+Dialogue: 0,0:30:50.36,0:30:51.34,*Default,NTP,0000,0000,0000,,就是研究这个课题的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was on this subject,
+Dialogue: 0,0:30:51.75,0:30:54.87,*Default,NTP,0000,0000,0000,,你永远不会忘掉你第一篇论文的论据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you never quite forget your argument of your first essay,
+Dialogue: 0,0:30:54.87,0:30:57.87,*Default,NTP,0000,0000,0000,,即使写的不怎么样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if it wasn't very good.
+Dialogue: 0,0:30:59.04,0:31:04.04,*Default,NTP,0000,0000,0000,,那么什么让美国反奴运动者变的激进了呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what began to radicalize American anti-slavery activists?
+Dialogue: 0,0:31:04.86,0:31:09.04,*Default,NTP,0000,0000,0000,,第一  是因为福音派基督教会的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First, it was Evangelical Christianity.
+Dialogue: 0,0:31:09.30,0:31:12.00,*Default,NTP,0000,0000,0000,,它们从信仰中获得那些激进的思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of the radicalism they took from their faith.
+Dialogue: 0,0:31:12.08,0:31:14.65,*Default,NTP,0000,0000,0000,,从所谓的第二次大觉醒中获得激进思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They took from the so-called Second Great Awakening.
+Dialogue: 0,0:31:14.66,0:31:17.22,*Default,NTP,0000,0000,0000,,总之他们有了这样一种想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They took from this idea that somehow,
+Dialogue: 0,0:31:17.22,0:31:20.92,*Default,NTP,0000,0000,0000,,那是他们的使命和存在于世界上的职责\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was their duty, it was their place in the world
+Dialogue: 0,0:31:20.92,0:31:22.47,*Default,NTP,0000,0000,0000,,他们当中一大部分都是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many of them were 
+Dialogue: 0,0:31:22.47,0:31:25.88,*Default,NTP,0000,0000,0000,,以救赎灵魂为己任的牧师的子女\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sons and daughters of ministers to save souls.
+Dialogue: 0,0:31:26.57,0:31:27.49,*Default,NTP,0000,0000,0000,,如果你深受\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if you'd been inspired 
+Dialogue: 0,0:31:27.50,0:31:31.18,*Default,NTP,0000,0000,0000,,俄亥俄奥柏林的查理斯·加里森·芬尼影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by Charles Grandison Finney out in Oberlin, Ohio,
+Dialogue: 0,0:31:31.19,0:31:33.16,*Default,NTP,0000,0000,0000,,或者像西奥多·韦尔德一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or--as Theodore Weld had
+Dialogue: 0,0:31:33.16,0:31:36.40,*Default,NTP,0000,0000,0000,,或者像那些北方大陆上的牧师一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a number of other ministers across the North,
+Dialogue: 0,0:31:36.40,0:31:38.62,*Default,NTP,0000,0000,0000,,认识到你的使命是去拯救灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it was your duty to go save souls,
+Dialogue: 0,0:31:39.19,0:31:40.97,*Default,NTP,0000,0000,0000,,这只是稍微的更进一步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was only one step further
+Dialogue: 0,0:31:41.00,0:31:44.61,*Default,NTP,0000,0000,0000,,芬尼告诉它们  拯救世界也是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Finney told them that--to save society as well.
+Dialogue: 0,0:31:45.04,0:31:47.51,*Default,NTP,0000,0000,0000,,如果信仰基督抑或是去拥有信念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if conversion to Christ or conversion to faith,
+Dialogue: 0,0:31:47.51,0:31:49.97,*Default,NTP,0000,0000,0000,,或是去拯救\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}conversion to salvation,
+Dialogue: 0,0:31:49.97,0:31:52.86,*Default,NTP,0000,0000,0000,,都可以由一个人完成的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can happen immediately in a person, 
+Dialogue: 0,0:31:52.86,0:31:55.55,*Default,NTP,0000,0000,0000,,那么为什么整个社会又不可以呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why not a whole society?
+Dialogue: 0,0:31:56.33,0:31:58.38,*Default,NTP,0000,0000,0000,,如果你能去拯救一个人的灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you can revolutionize a single soul,
+Dialogue: 0,0:31:58.63,0:32:02.24,*Default,NTP,0000,0000,0000,,为什么你不能拯救一万人  十万人呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why can't you revolutionize a hundred,100,000,1,000,000?
+Dialogue: 0,0:32:09.55,0:32:14.14,*Default,NTP,0000,0000,0000,,激进主义的第二个来源  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A second source--
+Dialogue: 0,0:32:14.14,0:32:18.07,*Default,NTP,0000,0000,0000,,关于福音教义可说的实在是太多了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I can say so much more about the significance of Evangelicalism,
+Dialogue: 0,0:32:18.08,0:32:21.04,*Default,NTP,0000,0000,0000,,来自那些关于信仰重生和灵魂重生的思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this idea of the rebirth of faith and rebirth of the soul,
+Dialogue: 0,0:32:21.04,0:32:26.04,*Default,NTP,0000,0000,0000,,那个时期的重生思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the born-again notion, in this era at least.
+Dialogue: 0,0:32:26.84,0:32:28.07,*Default,NTP,0000,0000,0000,,现在在美国  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're living in a different kind of era 
+Dialogue: 0,0:32:28.07,0:32:32.27,*Default,NTP,0000,0000,0000,,我们生活在一种不同时期的福音主义中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of Evangelicalism in the United States
+Dialogue: 0,0:32:32.27,0:32:35.52,*Default,NTP,0000,0000,0000,,虽然有些福音派是真正的改革者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although some Evangelicals are indeed reformers,
+Dialogue: 0,0:32:36.18,0:32:38.45,*Default,NTP,0000,0000,0000,,如今他们的身份经常是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they tend to be seen today largely
+Dialogue: 0,0:32:38.45,0:32:41.37,*Default,NTP,0000,0000,0000,,一些政治保守派  社会保守派\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as political conservatives, social conservatives.
+Dialogue: 0,0:32:41.67,0:32:45.78,*Default,NTP,0000,0000,0000,,美国十九世纪二十年代的福音主义的思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of the Evangelicalism of the 1820s in America,
+Dialogue: 0,0:32:45.78,0:32:50.65,*Default,NTP,0000,0000,0000,,和他们所主张的社会变革一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the 1830s, became a much more radical kind of Evangelicalism
+Dialogue: 0,0:32:50.65,0:32:55.06,*Default,NTP,0000,0000,0000,,到了十九世纪三十年代变得激进了很多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of the social changes that they were advocating.
+Dialogue: 0,0:32:55.56,0:32:58.94,*Default,NTP,0000,0000,0000,,可以这么说  一个基督教福音派信徒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Having said all that, that same Evangelical Christian
+Dialogue: 0,0:32:58.94,0:33:01.64,*Default,NTP,0000,0000,0000,,从一个单纯的废奴主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who becomes an abolitionist
+Dialogue: 0,0:33:01.64,0:33:04.00,*Default,NTP,0000,0000,0000,,可能已经变成了一个强烈的禁酒拥护者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}may indeed have been a virulent Temperance advocate
+Dialogue: 0,0:33:04.00,0:33:07.53,*Default,NTP,0000,0000,0000,,甚至把酒都视为和奴隶主一样的罪恶之物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and saw demon rum as as big a demon as demon slaveholding.
+Dialogue: 0,0:33:11.25,0:33:16.25,*Default,NTP,0000,0000,0000,,激进主义的第二个来源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The second cause of this roots of radicalism 
+Dialogue: 0,0:33:18.41,0:33:19.84,*Default,NTP,0000,0000,0000,,可以说是对南方毫不让步的认识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is what we might call perceptions of southern intransigence
+Dialogue: 0,0:33:19.92,0:33:22.77,*Default,NTP,0000,0000,0000,,或者说对南方野蛮本性的认识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or perceptions of southern truculence.
+Dialogue: 0,0:33:22.77,0:33:24.56,*Default,NTP,0000,0000,0000,,十九世纪二十年代  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the 1820s 
+Dialogue: 0,0:33:24.56,0:33:28.14,*Default,NTP,0000,0000,0000,,他们正当年  充满活力与激情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a lot of these early young they're youthful, they’re only in their twenties
+Dialogue: 0,0:33:28.14,0:33:31.43,*Default,NTP,0000,0000,0000,,这些反对奴隶制的拥护者们  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}anti-slavery advocates are--some of them are,
+Dialogue: 0,0:33:31.43,0:33:33.27,*Default,NTP,0000,0000,0000,,即使是像威廉?劳埃德?加里森\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even William Lloyd Garrison 
+Dialogue: 0,0:33:33.27,0:33:34.71,*Default,NTP,0000,0000,0000,,一开始也倾向于殖民行动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}flirted with colonization at first,
+Dialogue: 0,0:33:34.71,0:33:36.61,*Default,NTP,0000,0000,0000,,那时他大概二十三四岁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when he was about 23,24-years-old.
+Dialogue: 0,0:33:37.14,0:33:39.77,*Default,NTP,0000,0000,0000,,起初他们是渐进主义者  直至意识到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were gradualists at first, until they began to realize
+Dialogue: 0,0:33:39.77,0:33:43.41,*Default,NTP,0000,0000,0000,,南方对于坚持奴隶制有多么的执着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how deeply committed the South actually was to slavery,
+Dialogue: 0,0:33:45.15,0:33:49.51,*Default,NTP,0000,0000,0000,,并且将其交予南方  留作他们自己的财产\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that leaving it to them, leaving it to their own resources,
+Dialogue: 0,0:33:49.51,0:33:52.23,*Default,NTP,0000,0000,0000,,从来没有打算要去处理那些危机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was never going to solve anything.
+Dialogue: 0,0:33:55.04,0:33:58.61,*Default,NTP,0000,0000,0000,,一个早期的废奴主义者  在一八一八年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}An early, early abolitionist, in 1818,
+Dialogue: 0,0:33:58.61,0:34:00.30,*Default,NTP,0000,0000,0000,,乔治·伯恩曾说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}George Bourne said, quote,
+Dialogue: 0,0:34:00.30,0:34:03.33,*Default,NTP,0000,0000,0000,,"当南方人在奴隶制的问题上遇到挑战时"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"When Southerners are challenged on the slavery question they"
+Dialogue: 0,0:34:03.34,0:34:06.61,*Default,NTP,0000,0000,0000,,"他们就像要窒息了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}quote--"Are choked,
+Dialogue: 0,0:34:06.61,0:34:09.88,*Default,NTP,0000,0000,0000,,好像有一个黑奴一下子卡住他的咽喉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for they have a Negro stuck fast in their throats."
+Dialogue: 0,0:34:11.83,0:34:14.23,*Default,NTP,0000,0000,0000,,越来越多的早期反奴人士开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The more and more that early abolitionists began
+Dialogue: 0,0:34:14.23,0:34:18.56,*Default,NTP,0000,0000,0000,,认识到南方的态度有多么坚定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to realize just how deeply committed the South was
+Dialogue: 0,0:34:18.56,0:34:23.38,*Default,NTP,0000,0000,0000,,从道德  信仰  社会  哲学各个方面 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}morally, biblically, socially, philosophically--
+Dialogue: 0,0:34:24.02,0:34:26.47,*Default,NTP,0000,0000,0000,,都要去维持这个奴隶制社会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to sustaining this slave society,
+Dialogue: 0,0:34:28.26,0:34:29.64,*Default,NTP,0000,0000,0000,,他们越是意识到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the more they began to realize 
+Dialogue: 0,0:34:29.65,0:34:31.03,*Default,NTP,0000,0000,0000,,自己对此是认真对待的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that if they were serious about this,
+Dialogue: 0,0:34:32.27,0:34:34.39,*Default,NTP,0000,0000,0000,,就有了越多激进的计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they had to have much more radical strategies.
+Dialogue: 0,0:34:36.20,0:34:40.61,*Default,NTP,0000,0000,0000,,一八二九年  年轻的加里森\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The young William Lloyd Garrison started by 1829 
+Dialogue: 0,0:34:40.61,0:34:45.02,*Default,NTP,0000,0000,0000,,开始在他的著作中用水泥和冰川\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to use metaphors in his writings of cement and icebergs
+Dialogue: 0,0:34:45.67,0:34:48.86,*Default,NTP,0000,0000,0000,,这些只能用无尽的时间来消融的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would only melt with decades and decades,
+Dialogue: 0,0:34:49.19,0:34:52.15,*Default,NTP,0000,0000,0000,,去描述他当时认识到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to characterize what he perceived now
+Dialogue: 0,0:34:52.94,0:34:56.19,*Default,NTP,0000,0000,0000,,南方那种毫不妥协的态度有多么的坚定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as this deep kind of Southern intransigence.
+Dialogue: 0,0:34:56.19,0:34:59.16,*Default,NTP,0000,0000,0000,,美国激进反奴运动产生的第三个原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A third root of American radical anti-slavery though
+Dialogue: 0,0:34:59.16,0:35:00.69,*Default,NTP,0000,0000,0000,,是来自英国的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was the British influence.
+Dialogue: 0,0:35:01.63,0:35:04.08,*Default,NTP,0000,0000,0000,,毫无疑问是这样  我就不在这里细讲了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Make no mistake--and I won't go into any detail here
+Dialogue: 0,0:35:04.08,0:35:05.50,*Default,NTP,0000,0000,0000,,因为时间不够了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because time doesn't permit
+Dialogue: 0,0:35:05.50,0:35:08.58,*Default,NTP,0000,0000,0000,,但是早期的反奴主义者们深受其影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but these early American abolitionists were deeply influenced
+Dialogue: 0,0:35:08.58,0:35:13.52,*Default,NTP,0000,0000,0000,,那些当时已经过了数十年的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the now decades old two or three decades old--
+Dialogue: 0,0:35:13.52,0:35:15.87,*Default,NTP,0000,0000,0000,,英格兰讨伐奴隶制运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}anti-slavery crusade in England,
+Dialogue: 0,0:35:16.53,0:35:17.71,*Default,NTP,0000,0000,0000,,当然首先是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which at first meant, of course,
+Dialogue: 0,0:35:17.72,0:35:19.59,*Default,NTP,0000,0000,0000,,一场针对反对奴隶贸易的运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a crusade against the slave trade,
+Dialogue: 0,0:35:19.59,0:35:23.91,*Default,NTP,0000,0000,0000,,一八零一年通过议会议案获得了胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}succeeding in that great Act of Parliament in 1807,
+Dialogue: 0,0:35:23.97,0:35:26.34,*Default,NTP,0000,0000,0000,,去年刚庆祝过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was just celebrated last year
+Dialogue: 0,0:35:26.69,0:35:30.90,*Default,NTP,0000,0000,0000,,现在英国到处都在纪念它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's still being celebrated in Britain as we speak, everywhere
+Dialogue: 0,0:35:30.90,0:35:32.71,*Default,NTP,0000,0000,0000,,接着  最终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then, ultimately,
+Dialogue: 0,0:35:33.58,0:35:35.80,*Default,NTP,0000,0000,0000,,这场运动演变成了反对英国奴隶制本身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the movement in England against slavery itself;
+Dialogue: 0,0:35:35.80,0:35:37.13,*Default,NTP,0000,0000,0000,,当然还有大英帝国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the British Empire, of course,
+Dialogue: 0,0:35:37.14,0:35:41.78,*Default,NTP,0000,0000,0000,,终于一八三三年通过国会议案解放了奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will free its slaves by Act of Parliament in 1833.
+Dialogue: 0,0:35:44.27,0:35:46.59,*Default,NTP,0000,0000,0000,,最后  我认为 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And thirdly, I would argue that 
+Dialogue: 0,0:35:46.59,0:35:52.68,*Default,NTP,0000,0000,0000,,极端主义或者激进反奴运动也源于一些事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}immediatism or a radicalization of anti-slavery also stems from events.
+Dialogue: 0,0:35:54.41,0:35:57.81,*Default,NTP,0000,0000,0000,,常常有历史学家会被问到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think--very often historians are asked,
+Dialogue: 0,0:35:57.81,0:35:59.83,*Default,NTP,0000,0000,0000,,"什么是最为关键的原因"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"So what was the most pivotal thing"
+Dialogue: 0,0:35:59.83,0:36:01.92,*Default,NTP,0000,0000,0000,,或者"什么是本质的原因"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or "What's the principle cause of,"
+Dialogue: 0,0:36:02.34,0:36:04.87,*Default,NTP,0000,0000,0000,,或者"你预测到什么"  往往让你去推测\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or "What do you expect to--?" You're always asked to predict,
+Dialogue: 0,0:36:05.45,0:36:07.35,*Default,NTP,0000,0000,0000,,这应该是你可以问史学家最糟糕的问题了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is the worst thing you can ask any historian,
+Dialogue: 0,0:36:07.51,0:36:08.81,*Default,NTP,0000,0000,0000,,因为他们会回答说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the historian will then say,
+Dialogue: 0,0:36:08.82,0:36:10.13,*Default,NTP,0000,0000,0000,,"研究历史的人从不预测什么"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, historians never predict,"
+Dialogue: 0,0:36:10.13,0:36:11.49,*Default,NTP,0000,0000,0000,,然后继续做他们的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then they'll go on and do it.
+Dialogue: 0,0:36:14.00,0:36:17.42,*Default,NTP,0000,0000,0000,,我不知道我是否有足够的阅历\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you know, I don't know if I'm old enough
+Dialogue: 0,0:36:17.42,0:36:20.43,*Default,NTP,0000,0000,0000,,而能对这些事有一些经验或者总结\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to have any wisdom or conclusions about any of this yet,
+Dialogue: 0,0:36:21.93,0:36:25.98,*Default,NTP,0000,0000,0000,,但是对于那些那些你无法预料的事 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but frankly sometimes people simply react
+Dialogue: 0,0:36:26.26,0:36:29.25,*Default,NTP,0000,0000,0000,,有时这就是人最简单的反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to events that you cannot predict.
+Dialogue: 0,0:36:30.79,0:36:35.79,*Default,NTP,0000,0000,0000,,十九世纪二三十年代的年轻人遇到这些事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And there were events in the teens and 1820s and by the 1830s
+Dialogue: 0,0:36:36.45,0:36:40.86,*Default,NTP,0000,0000,0000,,他们的确就是有了直接的反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that did indeed have a direct impact 
+Dialogue: 0,0:36:40.86,0:36:44.17,*Default,NTP,0000,0000,0000,,对于越来越多的激进反奴运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on this growth of a more radical anti-slave
+Dialogue: 0,0:36:44.17,0:36:46.50,*Default,NTP,0000,0000,0000,,丹马维斯起义的计划夭折了    \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Denmark Vesey's insurrection, aborted insurrection,
+Dialogue: 0,0:36:46.50,0:36:49.90,*Default,NTP,0000,0000,0000,,一八二二年在查尔斯顿  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Charleston in 1822 
+Dialogue: 0,0:36:49.90,0:36:52.45,*Default,NTP,0000,0000,0000,,大概三十人在起义开始前被处死\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the twenty-eight or thirty people who were executed in its wake 
+Dialogue: 0,0:36:52.45,0:36:54.15,*Default,NTP,0000,0000,0000,,此事震惊了了全国\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}made huge national news.
+Dialogue: 0,0:36:54.52,0:36:56.56,*Default,NTP,0000,0000,0000,,黑人水手法案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Negro Seaman's Act, 
+Dialogue: 0,0:36:56.56,0:36:58.23,*Default,NTP,0000,0000,0000,,一八八二年在南卡罗来纳得以通过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}passed in South Carolina in 1822,
+Dialogue: 0,0:36:58.52,0:37:02.73,*Default,NTP,0000,0000,0000,,它规定任何过往船只进港时  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that said that any ship that came into charleston Harbor 
+Dialogue: 0,0:37:02.73,0:37:04.53,*Default,NTP,0000,0000,0000,,如果船上有黑人水手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in South Carolina, if it had black sailors,
+Dialogue: 0,0:37:04.53,0:37:07.91,*Default,NTP,0000,0000,0000,,所有黑人水手在查尔斯顿被监禁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those black sailors would be jailed in Charleston
+Dialogue: 0,0:37:07.91,0:37:09.36,*Default,NTP,0000,0000,0000,,直到船离开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}while the ship was in harbor.
+Dialogue: 0,0:37:09.84,0:37:11.79,*Default,NTP,0000,0000,0000,,而白人水手则安然无事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No white sailors would be jailed.
+Dialogue: 0,0:37:14.63,0:37:18.77,*Default,NTP,0000,0000,0000,,一八二四年通过了俄亥俄提案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was a thing called the Ohio Resolutions, passed in 1824.
+Dialogue: 0,0:37:19.23,0:37:22.46,*Default,NTP,0000,0000,0000,,想象一下  俄亥俄州的立法院\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagine this: the legislature of the state of Ohio
+Dialogue: 0,0:37:24.97,0:37:28.93,*Default,NTP,0000,0000,0000,,通过了一项提案  提议一项平缓的计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}passed a resolution suggesting that a gradual plan
+Dialogue: 0,0:37:28.93,0:37:32.43,*Default,NTP,0000,0000,0000,,用二十五年的时间来解放黑奴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of emancipation be put in place over twenty-five years,
+Dialogue: 0,0:37:32.43,0:37:35.30,*Default,NTP,0000,0000,0000,,历经两代人的时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over two generations, 
+Dialogue: 0,0:37:35.31,0:37:36.45,*Default,NTP,0000,0000,0000,,还有那些他们想制定的计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever plan they might want to enact,
+Dialogue: 0,0:37:36.53,0:37:39.91,*Default,NTP,0000,0000,0000,,他们发送了这份提议  这份俄亥俄提案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they sent this suggestion--the so-called Ohio Resolution
+Dialogue: 0,0:37:39.92,0:37:42.43,*Default,NTP,0000,0000,0000,,给所有南方各州的立法院\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to all the southern state legislatures
+Dialogue: 0,0:37:45.93,0:37:48.70,*Default,NTP,0000,0000,0000,,以为能和他们对此展开对话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thinking they were going to open the dialogue.
+Dialogue: 0,0:37:50.80,0:37:52.11,*Default,NTP,0000,0000,0000,,结果他们没有对话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was no dialogue.
+Dialogue: 0,0:37:53.40,0:37:58.16,*Default,NTP,0000,0000,0000,,事实上  他们被告知决议应该在哪里实施\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In effect, Ohio was told where they could put their resolution.
+Dialogue: 0,0:37:58.60,0:38:01.59,*Default,NTP,0000,0000,0000,,他们收到几封来自南方各州的回信  说到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They got letters from a few southern governors that said,
+Dialogue: 0,0:38:02.21,0:38:03.58,*Default,NTP,0000,0000,0000,,一种毫不含糊的口吻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in no uncertain terms,
+Dialogue: 0,0:38:03.67,0:38:05.25,*Default,NTP,0000,0000,0000,,"管好你自己的事吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Mind your own bloody business;
+Dialogue: 0,0:38:06.69,0:38:08.55,*Default,NTP,0000,0000,0000,,这里是我们的地盘  这是我们的政府\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is our society, this is our system,
+Dialogue: 0,0:38:08.55,0:38:10.07,*Default,NTP,0000,0000,0000,,如果我们乐意那么做的话会去做的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll do with it as we please."
+Dialogue: 0,0:38:11.27,0:38:13.98,*Default,NTP,0000,0000,0000,,对于国内黑奴贸易规模的急速增长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That massive growth of the domestic slave trade
+Dialogue: 0,0:38:14.99,0:38:16.36,*Default,NTP,0000,0000,0000,,我已经谈到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I already talked about--
+Dialogue: 0,0:38:16.99,0:38:20.49,*Default,NTP,0000,0000,0000,,在仅仅在十八世纪三十年代这十年间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nearly 150,000 slaves moving from east to west
+Dialogue: 0,0:38:20.49,0:38:22.38,*Default,NTP,0000,0000,0000,,有近十五万的奴隶从东部运到西部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the decade of the 1820s alone;
+Dialogue: 0,0:38:23.50,0:38:26.89,*Default,NTP,0000,0000,0000,,到了30年代  人数翻了两倍至三倍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then it's going to double and triple, in the next decade.
+Dialogue: 0,0:38:27.03,0:38:28.72,*Default,NTP,0000,0000,0000,,北方人开始注意到这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Northerners become aware of this.
+Dialogue: 0,0:38:31.05,0:38:34.07,*Default,NTP,0000,0000,0000,,而且1831年秋天的奈特·特纳的叛乱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Nat Turner's Insurrection in the fall of 1831,
+Dialogue: 0,0:38:34.59,0:38:38.23,*Default,NTP,0000,0000,0000,,毫无疑问  对像加里森一样的人们  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without a question, had a radicalizing effect
+Dialogue: 0,0:38:38.74,0:38:40.25,*Default,NTP,0000,0000,0000,,有一种偏激的影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on people like Garrison.
+Dialogue: 0,0:38:43.12,0:38:44.90,*Default,NTP,0000,0000,0000,,威廉·劳埃德·加里森是谁呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, who was William Lloyd Garrison?
+Dialogue: 0,0:38:45.91,0:38:48.88,*Default,NTP,0000,0000,0000,,我来给你们简略地讲一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to touch on him just at least briefly;
+Dialogue: 0,0:38:51.52,0:38:55.78,*Default,NTP,0000,0000,0000,,我想让我们先了解一下地下铁道的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, I want to get us to this story of the Underground Railroad.
+Dialogue: 0,0:38:55.78,0:38:57.38,*Default,NTP,0000,0000,0000,,如果我把这个地下铁道的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Although, if I save the
+Dialogue: 0,0:38:57.38,0:39:00.78,*Default,NTP,0000,0000,0000,,留到周四课上再讲  也是可以的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Underground Railroad for Thursday, it still fits,
+Dialogue: 0,0:39:00.78,0:39:03.25,*Default,NTP,0000,0000,0000,,因为它正是和逃奴法案有关的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's right there with the Fugitive Slave Act.
+Dialogue: 0,0:39:03.25,0:39:05.49,*Default,NTP,0000,0000,0000,,别担心  我今天讲不完以后也会涉及的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So don't worry if I don't quite get there.
+Dialogue: 0,0:39:07.20,0:39:09.27,*Default,NTP,0000,0000,0000,,加里森绝不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Garrison was by no means
+Dialogue: 0,0:39:09.27,0:39:11.71,*Default,NTP,0000,0000,0000,,整个废除运动的全部  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the whole Abolition movement, 
+Dialogue: 0,0:39:11.71,0:39:15.92,*Default,NTP,0000,0000,0000,,但是他确实建立  编辑并出版了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by any means. He did found, and edited and published,
+Dialogue: 0,0:39:15.92,0:39:18.77,*Default,NTP,0000,0000,0000,,持续时间最长的反奴隶制的报纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the longest lasting anti-slavery newspaper of all.
+Dialogue: 0,0:39:19.65,0:39:21.61,*Default,NTP,0000,0000,0000,,首次出版是在1831年1月1日\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First published it January
+Dialogue: 0,0:39:21.61,0:39:24.69,*Default,NTP,0000,0000,0000,,地点是波士顿  名字是《解放者》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}1st 1831 in Boston, called The Liberator,
+Dialogue: 0,0:39:24.98,0:39:28.38,*Default,NTP,0000,0000,0000,,此后他坚持出版了整整35年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he would publish it for the next 35 years.
+Dialogue: 0,0:39:29.04,0:39:34.33,*Default,NTP,0000,0000,0000,,他在1865年12月停止出版该报\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He would cease publishing it in December 1865;
+Dialogue: 0,0:39:35.25,0:39:37.39,*Default,NTP,0000,0000,0000,,大约在内战结束九个月之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about nine months after the end of the Civil War,
+Dialogue: 0,0:39:37.39,0:39:42.18,*Default,NTP,0000,0000,0000,,他停止了本该在那周出版的解放者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he ceased publication of The Liberator in the week
+Dialogue: 0,0:39:43.16,0:39:45.52,*Default,NTP,0000,0000,0000,,在第十三次宪法修正案批准之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after the ratification of the Thirteenth Amendment.
+Dialogue: 0,0:39:47.39,0:39:51.27,*Default,NTP,0000,0000,0000,,他的生活非常的难懂  复杂  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His life is complicated, complex--
+Dialogue: 0,0:39:51.27,0:39:51.97,*Default,NTP,0000,0000,0000,,他是一个复杂的人物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he was one complex character.
+Dialogue: 0,0:39:53.70,0:39:59.59,*Default,NTP,0000,0000,0000,,但他是一个专业的  激进的改革者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he is the real thing, a professional, radical reformer.
+Dialogue: 0,0:40:01.27,0:40:03.31,*Default,NTP,0000,0000,0000,,他出生在一个极端贫困的家庭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was born in utter poverty,
+Dialogue: 0,0:40:03.31,0:40:05.67,*Default,NTP,0000,0000,0000,,在纽伯里波特  马萨诸塞州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Newburyport, Massachusetts.
+Dialogue: 0,0:40:06.11,0:40:08.63,*Default,NTP,0000,0000,0000,,在他还是孩子的时候他父亲出海并抛弃了他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His father went to sea and abandoned him as a child.
+Dialogue: 0,0:40:08.63,0:40:13.41,*Default,NTP,0000,0000,0000,,他的母亲几乎是两手空空地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His mother tried to raise he 
+Dialogue: 0,0:40:13.41,0:40:15.00,*Default,NTP,0000,0000,0000,,养育他和他没出息的哥哥\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and his equally ne'er-do-well older brother on next to nothing.
+Dialogue: 0,0:40:15.68,0:40:17.88,*Default,NTP,0000,0000,0000,,最后  她送他去做学徒 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At one point, she apprenticed him out 
+Dialogue: 0,0:40:17.88,0:40:19.16,*Default,NTP,0000,0000,0000,,因为实在不能养活他了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because she couldn't feed him.
+Dialogue: 0,0:40:19.91,0:40:24.06,*Default,NTP,0000,0000,0000,,在他十二岁的时候成了一个印刷工的学徒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he was apprenticed out at the age of twelve to a printer,
+Dialogue: 0,0:40:24.79,0:40:27.52,*Default,NTP,0000,0000,0000,,他学习如何使用印刷机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he learned how to make a printing press work,
+Dialogue: 0,0:40:28.22,0:40:29.69,*Default,NTP,0000,0000,0000,,在他以后的生涯中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for the rest of his life 
+Dialogue: 0,0:40:29.69,0:40:31.34,*Default,NTP,0000,0000,0000,,他都自己设置印刷版\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he set his own print,
+Dialogue: 0,0:40:31.92,0:40:33.80,*Default,NTP,0000,0000,0000,,如果他在城里  他每周都工作  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}every week he could, if he was in town,
+Dialogue: 0,0:40:33.80,0:40:36.86,*Default,NTP,0000,0000,0000,,亲自操作解放报的印刷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Boston, on The Liberator.
+Dialogue: 0,0:40:37.16,0:40:39.15,*Default,NTP,0000,0000,0000,,他为自己能比他雇佣的工人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he prided himself at being faster
+Dialogue: 0,0:40:39.15,0:40:41.94,*Default,NTP,0000,0000,0000,,更快地设置印刷版感到骄傲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at setting print than anybody he ever hired.
+Dialogue: 0,0:40:44.46,0:40:46.51,*Default,NTP,0000,0000,0000,,他确实是以一种渐进主义者身份开始的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He did start as a kind of a gradualist.
+Dialogue: 0,0:40:47.14,0:40:48.95,*Default,NTP,0000,0000,0000,,他到巴尔的摩  马里兰州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He went down to Baltimore, Maryland--
+Dialogue: 0,0:40:50.02,0:40:51.84,*Default,NTP,0000,0000,0000,,从这里开始  我要多讲一些关于加里森的\Nhere I go, I’m going to talk too much about Garrison,
+Dialogue: 0,0:40:51.84,0:40:53.14,*Default,NTP,0000,0000,0000,,但是事情就是这个样子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's the way it goes--
+Dialogue: 0,0:40:53.48,0:40:54.77,*Default,NTP,0000,0000,0000,,他去了巴尔的摩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he went down to Baltimore
+Dialogue: 0,0:40:54.77,0:40:56.83,*Default,NTP,0000,0000,0000,,为反奴隶制报纸工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he worked with an anti-slavery paper
+Dialogue: 0,0:40:56.83,0:40:59.04,*Default,NTP,0000,0000,0000,,叫作《普遍自由的精神》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there called The Genius of Universal Liberty,
+Dialogue: 0,0:40:59.31,0:41:01.05,*Default,NTP,0000,0000,0000,,由一个叫本杰明·伦迪的家伙出版的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}published by a guy named Benjamin Lundy,
+Dialogue: 0,0:41:01.69,0:41:03.68,*Default,NTP,0000,0000,0000,,在巴尔的摩  一个奴隶制州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Baltimore, a slave state.
+Dialogue: 0,0:41:06.24,0:41:10.46,*Default,NTP,0000,0000,0000,,有一个叫弗雷德瑞克·贝瑞年轻奴隶在那里长大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was a young slave growing up there named Frederick Bailey,
+Dialogue: 0,0:41:10.46,0:41:13.10,*Default,NTP,0000,0000,0000,,但是他们还未曾谋面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they didn't meet, yet.
+Dialogue: 0,0:41:14.95,0:41:16.59,*Default,NTP,0000,0000,0000,,加里森被关进监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Garrison got thrown in jail,
+Dialogue: 0,0:41:16.59,0:41:19.14,*Default,NTP,0000,0000,0000,,关押他的地方是伯明翰监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which for him was his Birmingham Jail--
+Dialogue: 0,0:41:20.23,0:41:21.84,*Default,NTP,0000,0000,0000,,马丁·路德·金曾说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you remember Martin luther King's 
+Dialogue: 0,0:41:21.85,0:41:22.89,*Default,NTP,0000,0000,0000,,"来自伯明翰监狱的信"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Letter from a Birmingham Jail"--
+Dialogue: 0,0:41:22.89,0:41:26.28,*Default,NTP,0000,0000,0000,,他以诽谤一个奴隶船船长的罪名被投进监狱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he got thrown in jail for slandering a slave ship captain,
+Dialogue: 0,0:41:26.92,0:41:29.11,*Default,NTP,0000,0000,0000,,他指控此人谋杀\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whom he accused of murder.
+Dialogue: 0,0:41:30.70,0:41:32.90,*Default,NTP,0000,0000,0000,,那家伙起诉他  他被定罪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The guy sued him, he was convicted
+Dialogue: 0,0:41:32.90,0:41:34.23,*Default,NTP,0000,0000,0000,,于是他在监狱里呆了九个月\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he spent about nine months in jail,
+Dialogue: 0,0:41:34.23,0:41:36.34,*Default,NTP,0000,0000,0000,,对加里森来说  那是一种荣耀\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which for Garrison was pride.
+Dialogue: 0,0:41:37.81,0:41:39.17,*Default,NTP,0000,0000,0000,,他也是那第一次 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was also the first time 
+Dialogue: 0,0:41:39.18,0:41:42.07,*Default,NTP,0000,0000,0000,,能够接触到其他黑人并得以了解他们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he met and talked at great length with other blacks,
+Dialogue: 0,0:41:42.73,0:41:43.98,*Default,NTP,0000,0000,0000,,那些和他一起坐监的黑人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who were in jail with him.
+Dialogue: 0,0:41:44.99,0:41:46.96,*Default,NTP,0000,0000,0000,,到他出来之后回到北方的时候 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By the time he got out and came back North 
+Dialogue: 0,0:41:46.96,0:41:47.80,*Default,NTP,0000,0000,0000,,在两次创刊失败的尝试之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and finally got the chance,
+Dialogue: 0,0:41:47.80,0:41:52.28,*Default,NTP,0000,0000,0000,,他最终能有一次难得机会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after two other aborted or failed attempts to create a newspaper,
+Dialogue: 0,0:41:52.87,0:41:55.91,*Default,NTP,0000,0000,0000,,能够创办报纸  并且得到一些资助\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he finally got his chance, and a little bit of money,
+Dialogue: 0,0:41:56.40,0:41:58.73,*Default,NTP,0000,0000,0000,,他创办的报纸叫做《解放者》\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he founded this paper called The Liberator,
+Dialogue: 0,0:42:00.31,0:42:04.28,*Default,NTP,0000,0000,0000,,他不会错过这份报纸的每一刊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a paper he would publish without missing an issue--
+Dialogue: 0,0:42:04.32,0:42:08.41,*Default,NTP,0000,0000,0000,,他还为每一刊写稿  这样整整35年\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and write something for every issue--for thirty-five years.
+Dialogue: 0,0:42:11.11,0:42:14.11,*Default,NTP,0000,0000,0000,,如果你想了解威廉·劳埃德·加里森\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, if you want to understand William Lloyd Garrison,
+Dialogue: 0,0:42:14.70,0:42:16.91,*Default,NTP,0000,0000,0000,,你必须了解他的想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to understand through his ideas--
+Dialogue: 0,0:42:16.91,0:42:21.20,*Default,NTP,0000,0000,0000,,我将为你们列出来并简略的解释下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'll just list them for you with the briefest explanation.
+Dialogue: 0,0:42:21.75,0:42:24.47,*Default,NTP,0000,0000,0000,,通过这些想法你们能看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it is here where you see now the fruition
+Dialogue: 0,0:42:24.52,0:42:29.21,*Default,NTP,0000,0000,0000,,19世纪30年代的废除主义者的成就\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the 1830s of an immediatist abolitionism,
+Dialogue: 0,0:42:29.21,0:42:32.26,*Default,NTP,0000,0000,0000,,一种反奴隶制的激进方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a radicalizing form of anti-slavery--
+Dialogue: 0,0:42:32.27,0:42:35.06,*Default,NTP,0000,0000,0000,,这种形式吸引了一群追随者 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which, by the way, will develop a following,
+Dialogue: 0,0:42:35.56,0:42:39.95,*Default,NTP,0000,0000,0000,,尤其是北方的自由黑人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in various forms, among free blacks in particular in the North,
+Dialogue: 0,0:42:40.35,0:42:42.39,*Default,NTP,0000,0000,0000,,但是  与此同时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it will also of course 
+Dialogue: 0,0:42:42.39,0:42:47.49,*Default,NTP,0000,0000,0000,,它也在到处树敌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}begin to garner widespread enemies, widespread enemies.
+Dialogue: 0,0:42:48.45,0:42:50.14,*Default,NTP,0000,0000,0000,,加里森和他的追随者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Garrison and his ilk will
+Dialogue: 0,0:42:50.14,0:42:52.90,*Default,NTP,0000,0000,0000,,被视为是非常危险的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}come to be seen as very dangerous people,
+Dialogue: 0,0:42:53.82,0:42:55.38,*Default,NTP,0000,0000,0000,,这些改革者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these reformers.
+Dialogue: 0,0:42:57.30,0:42:58.67,*Default,NTP,0000,0000,0000,,但是如果你能记住\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if you can remember
+Dialogue: 0,0:42:58.67,0:43:01.34,*Default,NTP,0000,0000,0000,,威廉·劳埃德·加里森的六个理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these six ideas of William Lloyd Garrison's--
+Dialogue: 0,0:43:01.69,0:43:03.11,*Default,NTP,0000,0000,0000,,或者是七个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or do I have seven?
+Dialogue: 0,0:43:03.38,0:43:07.54,*Default,NTP,0000,0000,0000,,就是七个——你就能很好地把握\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's seven, sorry--you can have a handle
+Dialogue: 0,0:43:07.82,0:43:09.37,*Default,NTP,0000,0000,0000,,在加里森手里  直接性和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on what immediacies and
+Dialogue: 0,0:43:09.38,0:43:12.69,*Default,NTP,0000,0000,0000,,激进的反奴隶制运动会怎样发展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}radical anti-slavery became, in Garrison's hands.
+Dialogue: 0,0:43:12.72,0:43:18.08,*Default,NTP,0000,0000,0000,,如果一个领导者  他能提出一个想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, as soon as you get a leader who goes out and pushes an idea,
+Dialogue: 0,0:43:18.08,0:43:21.53,*Default,NTP,0000,0000,0000,,推动一项议程  提出一些道德原则\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pushes an agenda, pushes a set of moral principles
+Dialogue: 0,0:43:21.53,0:43:23.13,*Default,NTP,0000,0000,0000,,并以此来开展革命运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by which this movement should be run,
+Dialogue: 0,0:43:23.13,0:43:25.04,*Default,NTP,0000,0000,0000,,那么毫无疑问  他很快就会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of course he's immediately begun
+Dialogue: 0,0:43:25.04,0:43:27.15,*Default,NTP,0000,0000,0000,,树立一大批该运动的反对者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to develop an opposition within his own movement.
+Dialogue: 0,0:43:28.04,0:43:29.52,*Default,NTP,0000,0000,0000,,并且人们是不会赞同他的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And people will disagree with him.
+Dialogue: 0,0:43:29.52,0:43:32.99,*Default,NTP,0000,0000,0000,,第一  他的第一理念是道德完美主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But number one, his first idea was moral perfectionism.
+Dialogue: 0,0:43:34.79,0:43:37.76,*Default,NTP,0000,0000,0000,,一个严厉的  苛刻的要求\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A stern, demanding call for abolitionists
+Dialogue: 0,0:43:37.90,0:43:40.82,*Default,NTP,0000,0000,0000,,要求废奴主义者个人从\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to remove themselves personally
+Dialogue: 0,0:43:40.82,0:43:45.68,*Default,NTP,0000,0000,0000,,与任何腐败的美国奴隶制度中脱离\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from any corrupting complicity with the American slave system.
+Dialogue: 0,0:43:47.27,0:43:52.75,*Default,NTP,0000,0000,0000,,"你们要完全  就像你们的天父是完全的"  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Be ye perfect, even as your heavenly Father is perfect," 
+Dialogue: 0,0:43:52.75,0:43:53.79,*Default,NTP,0000,0000,0000,,加里森这样说道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Said Garrison.
+Dialogue: 0,0:43:53.90,0:43:55.54,*Default,NTP,0000,0000,0000,,他不是一个受过训练的牧师\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was not a trained minister,
+Dialogue: 0,0:43:55.64,0:43:59.25,*Default,NTP,0000,0000,0000,,但他是一个虔诚的旧约圣经的基督徒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but he was a deeply Old Testament biblical Christian.
+Dialogue: 0,0:44:00.33,0:44:02.48,*Default,NTP,0000,0000,0000,,他的第二个原则是消极主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His second principle was passivism,
+Dialogue: 0,0:44:03.43,0:44:05.79,*Default,NTP,0000,0000,0000,,在十九世纪被称之为  不抵抗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the nineteenth century called non-resistance.
+Dialogue: 0,0:44:07.30,0:44:10.97,*Default,NTP,0000,0000,0000,,加里森反对所有的暴力行为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Garrison rejected all acts of violence, in any form--
+Dialogue: 0,0:44:12.32,0:44:15.84,*Default,NTP,0000,0000,0000,,直至内战爆发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, until the Civil War broke out.
+Dialogue: 0,0:44:16.80,0:44:18.09,*Default,NTP,0000,0000,0000,,这些我们稍后详述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More on that later.
+Dialogue: 0,0:44:19.01,0:44:23.18,*Default,NTP,0000,0000,0000,,他的第三个原则是反教权主义 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His third principle was anti-clericalism 
+Dialogue: 0,0:44:23.18,0:44:25.57,*Default,NTP,0000,0000,0000,,或反对他看到的伪善\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or opposition to what he saw as the hypocrisy
+Dialogue: 0,0:44:25.57,0:44:28.29,*Default,NTP,0000,0000,0000,,以及美国教堂的腐败\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and corruption of the American churches.
+Dialogue: 0,0:44:28.67,0:44:31.88,*Default,NTP,0000,0000,0000,,新教徒牧师是他最理想的目标\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Protestant clergy was one of his greatest targets.
+Dialogue: 0,0:44:32.24,0:44:33.74,*Default,NTP,0000,0000,0000,,毫无疑问  大家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And make no mistake, folks,
+Dialogue: 0,0:44:33.93,0:44:37.33,*Default,NTP,0000,0000,0000,,弗雷德里克·道格拉斯开始是一个知识分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Frederick Douglass began his career as an intellectual,
+Dialogue: 0,0:44:37.33,0:44:40.42,*Default,NTP,0000,0000,0000,,作为一个演说家  作家  加里森人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as an orator, and as a writer, as a Garrisonian.
+Dialogue: 0,0:44:41.13,0:44:43.40,*Default,NTP,0000,0000,0000,,这就是威廉·劳埃德·加里森  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was William Lloyd Garrison who, in part,
+Dialogue: 0,0:44:43.41,0:44:44.84,*Default,NTP,0000,0000,0000,,他在去马萨诸塞州的新贝德福德时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}discovered Frederick Douglass 
+Dialogue: 0,0:44:44.84,0:44:47.82,*Default,NTP,0000,0000,0000,,发现了弗雷德里克·道格拉斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by going down to New Bedford, massachusetts 
+Dialogue: 0,0:44:47.82,0:44:49.59,*Default,NTP,0000,0000,0000,,看到这个有才气的  年轻的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and watching this brilliant, young,
+Dialogue: 0,0:44:49.59,0:44:53.44,*Default,NTP,0000,0000,0000,,21到22岁间的黑人小伙 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}twenty-one-year-old, twenty-two-year-old black guy 
+Dialogue: 0,0:44:53.44,0:44:57.56,*Default,NTP,0000,0000,0000,,在新贝德福德的卫理公会派主教锡安教堂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}get up and speak at the 
+Dialogue: 0,0:44:57.56,0:44:58.48,*Default,NTP,0000,0000,0000,,发表演讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}African methodist Episcopal Zion Church in New Bedford,
+Dialogue: 0,0:44:58.48,0:45:00.38,*Default,NTP,0000,0000,0000,,他说 "上帝啊 这孩子会讲话"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and said, "My God, this kid can speak."
+Dialogue: 0,0:45:01.24,0:45:05.05,*Default,NTP,0000,0000,0000,,在道格拉斯的前五六年的社会生活里 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And for the first five, six years of Douglass's public life 
+Dialogue: 0,0:45:05.05,0:45:07.07,*Default,NTP,0000,0000,0000,,加里森就像他的导师\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Garrison was like his mentor,
+Dialogue: 0,0:45:07.17,0:45:10.09,*Default,NTP,0000,0000,0000,,一个父亲一样的  充满智慧的老师\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a father-figure, and an intellectual teacher.
+Dialogue: 0,0:45:11.10,0:45:15.40,*Default,NTP,0000,0000,0000,,当你读他的故事时留意一下他的这些信条\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look for these Garrisonian tenets when you read the narrative.
+Dialogue: 0,0:45:15.84,0:45:18.76,*Default,NTP,0000,0000,0000,,他的第四个理念被他称为不结盟主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His fourth principle was what he called dis-unionism.
+Dialogue: 0,0:45:19.15,0:45:20.97,*Default,NTP,0000,0000,0000,,"坚决不和奴隶主结盟"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"No union with the slaveholders"
+Dialogue: 0,0:45:20.97,0:45:26.98,*Default,NTP,0000,0000,0000,,是他写在解放者的报头上的箴言或声明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was his motto or his statement on the masthead of The Liberator.
+Dialogue: 0,0:45:27.21,0:45:29.19,*Default,NTP,0000,0000,0000,,他实际上主张一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He actually advocated a kind of 
+Dialogue: 0,0:45:29.19,0:45:31.73,*Default,NTP,0000,0000,0000,,个体从联盟分离出来的理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}personal secession from the Union.
+Dialogue: 0,0:45:32.31,0:45:33.70,*Default,NTP,0000,0000,0000,,这是他的那些理念之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This was one of those ideas.
+Dialogue: 0,0:45:33.70,0:45:35.61,*Default,NTP,0000,0000,0000,,他主张北方诸州\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He advocated that Northern states
+Dialogue: 0,0:45:35.61,0:45:38.11,*Default,NTP,0000,0000,0000,,不遵从使用同一部宪法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not participate in the same Constitution--
+Dialogue: 0,0:45:39.68,0:45:41.85,*Default,NTP,0000,0000,0000,,关于这个等我们讲到1854年时我会详述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more on that later when we get to 1854.
+Dialogue: 0,0:45:43.39,0:45:45.84,*Default,NTP,0000,0000,0000,,他将其推进了一步  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And five, he took it one step further.
+Dialogue: 0,0:45:45.84,0:45:47.38,*Default,NTP,0000,0000,0000,,他主张不投票\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He advocated not voting.
+Dialogue: 0,0:45:48.17,0:45:50.72,*Default,NTP,0000,0000,0000,,在美国选举中的投票  他认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To vote in an American election, he believed,
+Dialogue: 0,0:45:50.72,0:45:53.08,*Default,NTP,0000,0000,0000,,在道德上是奴隶制的共犯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was to be morally complicit with slavery.
+Dialogue: 0,0:45:53.73,0:45:56.98,*Default,NTP,0000,0000,0000,,除非美国宪法撕毁重写\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Until the U.S. Constitution was ripped up
+Dialogue: 0,0:45:57.41,0:46:03.12,*Default,NTP,0000,0000,0000,,他主张政治上的不参与\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and rewritten he advocated political non-participation with it.
+Dialogue: 0,0:46:04.18,0:46:05.90,*Default,NTP,0000,0000,0000,,如何去改变和拯救世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, how that was supposed to change the world
+Dialogue: 0,0:46:05.90,0:46:08.47,*Default,NTP,0000,0000,0000,,对于一些加里森的追随者来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and save it was always a bit of a problem,
+Dialogue: 0,0:46:08.92,0:46:11.29,*Default,NTP,0000,0000,0000,,一直是一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for some of Garrison's own admirers.
+Dialogue: 0,0:46:12.02,0:46:15.28,*Default,NTP,0000,0000,0000,,第六  他是第一批大力支持\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sixth, he was an early and often supporter
+Dialogue: 0,0:46:15.29,0:46:17.43,*Default,NTP,0000,0000,0000,,妇女权利和妇女平等的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of women's rights and women's equality,
+Dialogue: 0,0:46:18.10,0:46:19.81,*Default,NTP,0000,0000,0000,,这是激进主义者的另一种表现形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was another form of radicalism
+Dialogue: 0,0:46:19.81,0:46:22.60,*Default,NTP,0000,0000,0000,,这会给你带来很多敌人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would make you lots of enemies 
+Dialogue: 0,0:46:22.60,0:46:24.08,*Default,NTP,0000,0000,0000,,在19世纪30年代 40年代 50年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the 1830s,'40s,and '50s.
+Dialogue: 0,0:46:25.35,0:46:28.38,*Default,NTP,0000,0000,0000,,第七  他大力主张\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And seventh, he was a tremendous advocate
+Dialogue: 0,0:46:28.38,0:46:31.24,*Default,NTP,0000,0000,0000,,非裔美国人的公民权利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of African-American civil rights--
+Dialogue: 0,0:46:31.81,0:46:37.55,*Default,NTP,0000,0000,0000,,这在当时来世是史无前例的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}early, in a time when there in effect weren't any.
+Dialogue: 0,0:46:39.24,0:46:43.84,*Default,NTP,0000,0000,0000,,这里  我要留给你们几分钟去思考\NNow, I’m going to leave you here
+Dialogue: 0,0:46:44.22,0:46:45.94,*Default,NTP,0000,0000,0000,,和我一起思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thinking with me just for a moment--
+Dialogue: 0,0:46:45.94,0:46:47.51,*Default,NTP,0000,0000,0000,,我认为我有两分钟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think I have two minutes--
+Dialogue: 0,0:46:47.90,0:46:51.18,*Default,NTP,0000,0000,0000,,关于这个反奴隶制的浪潮会带来什么后果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about what's going to happen now with this anti-slavery impulse,
+Dialogue: 0,0:46:51.19,0:46:56.39,*Default,NTP,0000,0000,0000,,因为已经出现了两种废奴主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because in part what happened is that two kinds of abolitionisms emerged,
+Dialogue: 0,0:46:56.79,0:46:58.33,*Default,NTP,0000,0000,0000,,一种白人的和一种黑人的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one white and one black.
+Dialogue: 0,0:47:00.32,0:47:02.60,*Default,NTP,0000,0000,0000,,有数以百计的白人废奴主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And there were hundreds and hundreds of white abolitionists,
+Dialogue: 0,0:47:02.60,0:47:05.00,*Default,NTP,0000,0000,0000,,甚至成千上万  遍布整个北方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thousands eventually, across the North,
+Dialogue: 0,0:47:05.00,0:47:08.17,*Default,NTP,0000,0000,0000,,他们被卷入组织反奴隶制社会的运动中去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who became deeply involved in organizing anti-slavery societies
+Dialogue: 0,0:47:08.18,0:47:09.86,*Default,NTP,0000,0000,0000,,创办报纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and creating newspapers
+Dialogue: 0,0:47:09.86,0:47:13.09,*Default,NTP,0000,0000,0000,,举行19世纪30年代的请愿运动  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and running petition campaigns by the 1830s,
+Dialogue: 0,0:47:13.14,0:47:15.31,*Default,NTP,0000,0000,0000,,甚至开始参与\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and eventually even beginning to be involved
+Dialogue: 0,0:47:15.31,0:47:17.94,*Default,NTP,0000,0000,0000,,第一个反奴隶制政党\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the first fledging anti-slavery political parties--
+Dialogue: 0,0:47:17.94,0:47:19.67,*Default,NTP,0000,0000,0000,,虽然加里森不会去那里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although Garrison wouldn't go there.
+Dialogue: 0,0:47:20.97,0:47:24.84,*Default,NTP,0000,0000,0000,,但是北方仍然有许多黑人废奴主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there are also lots of black abolitionists in the North,
+Dialogue: 0,0:47:24.84,0:47:26.91,*Default,NTP,0000,0000,0000,,自由的黑人  他们中的很多人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}free blacks, many of them, though,
+Dialogue: 0,0:47:26.91,0:47:28.73,*Default,NTP,0000,0000,0000,,都是从前逃难的奴隶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}former fugitive slaves who
+Dialogue: 0,0:47:28.73,0:47:31.87,*Default,NTP,0000,0000,0000,,奴隶制在他们的背上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wore the experience of slavery on their backs
+Dialogue: 0,0:47:31.87,0:47:33.92,*Default,NTP,0000,0000,0000,,以及他们的灵魂里和心灵上留下了印记\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in their souls and in their psyche,
+Dialogue: 0,0:47:34.38,0:47:39.34,*Default,NTP,0000,0000,0000,,他们往往不会为这类理想的事情去冒险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and often could not risk the kind of abstractions,
+Dialogue: 0,0:47:40.03,0:47:43.12,*Default,NTP,0000,0000,0000,,这种在数据和策略的理论性的争辩和议论 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the kind of theoretical debates and arguments over tactics and strategy 
+Dialogue: 0,0:47:43.12,0:47:45.74,*Default,NTP,0000,0000,0000,,白人废奴主义者对这乐此不疲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the white abolitionists would spend hours on.
+Dialogue: 0,0:47:46.81,0:47:48.33,*Default,NTP,0000,0000,0000,,许多黑人废奴主义者说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of black abolitionists said
+Dialogue: 0,0:47:48.33,0:47:51.60,*Default,NTP,0000,0000,0000,,"够了  我们在为奴隶们做什么"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"All right already, what are we doing for the slaves?"
+Dialogue: 0,0:47:51.96,0:47:54.08,*Default,NTP,0000,0000,0000,,或  "我们在为没有上学的孩子做什么"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or "What are we doing for my children that don't have a school?"
+Dialogue: 0,0:47:54.08,0:47:56.13,*Default,NTP,0000,0000,0000,,"我们为那些没有父母的孩子做什么 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What are we doing for that child who doesn't have parents? 
+Dialogue: 0,0:47:56.14,0:47:57.29,*Default,NTP,0000,0000,0000,,我们需要一个孤儿院"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We need an orphanage."
+Dialogue: 0,0:48:00.16,0:48:05.10,*Default,NTP,0000,0000,0000,,到19世纪40年代和50年代  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A real division will evolve by the 1840s and into the 1850s 
+Dialogue: 0,0:48:05.10,0:48:10.40,*Default,NTP,0000,0000,0000,,真正的分裂发生在北方自由黑人的需求\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the very real, practical needs of northern free blacks
+Dialogue: 0,0:48:10.40,0:48:13.22,*Default,NTP,0000,0000,0000,,和黑人废奴主义者与白人废奴主义者之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and black abolitionists and white abolitionists.
+Dialogue: 0,0:48:13.97,0:48:16.57,*Default,NTP,0000,0000,0000,,但是在这一切之下  逃难者继续到来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But beneath all of this, the fugitives kept coming.
+Dialogue: 0,0:48:18.28,0:48:20.43,*Default,NTP,0000,0000,0000,,南方的奴隶不断逃难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The fugitive slaves kept coming out of the south.
+Dialogue: 0,0:48:20.43,0:48:22.45,*Default,NTP,0000,0000,0000,,他们的实际数目从未达到 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They never came in the numbers 
+Dialogue: 0,0:48:22.45,0:48:25.89,*Default,NTP,0000,0000,0000,,地下铁道的神话和传说告诉我们的数目\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the myth and the legend of the Underground Railroad teaches us today.
+Dialogue: 0,0:48:25.89,0:48:27.11,*Default,NTP,0000,0000,0000,,周四上课我要回到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I'm going to return to
+Dialogue: 0,0:48:27.11,0:48:31.19,*Default,NTP,0000,0000,0000,,神话和传说的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that myth-and-legend problem when we begin on Thursday.
+Dialogue: 0,0:48:32.05,0:48:33.36,*Default,NTP,0000,0000,0000,,我想把这个留给你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I want to leave you with this.
+Dialogue: 0,0:48:33.36,0:48:36.44,*Default,NTP,0000,0000,0000,,当你们周四读道格拉斯作品的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is just a way of thinking your way to Thursday,
+Dialogue: 0,0:48:36.72,0:48:38.16,*Default,NTP,0000,0000,0000,,这便是你们考虑问题的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as you read Douglass.
+Dialogue: 0,0:48:39.28,0:48:41.10,*Default,NTP,0000,0000,0000,,就像你们已经知道的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As you already know 
+Dialogue: 0,0:48:41.10,0:48:44.57,*Default,NTP,0000,0000,0000,,有时我认为诗人比历史学家更加博学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sometimes I think the poets tell us more than the historians.
+Dialogue: 0,0:48:44.57,0:48:45.68,*Default,NTP,0000,0000,0000,,我不想承认这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hate to admit it.
+Dialogue: 0,0:48:47.46,0:48:49.63,*Default,NTP,0000,0000,0000,,罗伯特·海顿  伟大的非裔美国诗人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Robert Hayden, the great African-American poet
+Dialogue: 0,0:48:49.63,0:48:52.09,*Default,NTP,0000,0000,0000,,他的大部分作品都是在20世纪60年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who wrote mostly in the 1960s,
+Dialogue: 0,0:48:54.09,0:48:58.02,*Default,NTP,0000,0000,0000,,他写了一首非常精妙的逃亡者的诗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wrote a magnificent poem about runaway slaves,
+Dialogue: 0,0:48:58.49,0:49:00.53,*Default,NTP,0000,0000,0000,,他们是谁  他们代表什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who they were, what they represent,
+Dialogue: 0,0:49:00.53,0:49:02.15,*Default,NTP,0000,0000,0000,,他们帮我们讲述的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the story they help us tell.
+Dialogue: 0,0:49:02.16,0:49:04.01,*Default,NTP,0000,0000,0000,,他称作  "逃亡者  逃亡者"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He called it "Runagate, Runagate."
+Dialogue: 0,0:49:04.30,0:49:06.09,*Default,NTP,0000,0000,0000,,他将之融入到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he rooted it in the refrain
+Dialogue: 0,0:49:06.09,0:49:09.87,*Default,NTP,0000,0000,0000,,黑人伟大的精神作品《千万流亡者》中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the great negro spiritual "Many Thousands Gone."
+Dialogue: 0,0:49:10.98,0:49:12.48,*Default,NTP,0000,0000,0000,,仅仅几行诗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just a couple of verses.
+Dialogue: 0,0:49:13.16,0:49:15.14,*Default,NTP,0000,0000,0000,,周四我们回来讲这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll return to it on Thursday.
+Dialogue: 0,0:49:15.73,0:49:17.85,*Default,NTP,0000,0000,0000,,这可能是助教们想听的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It might be something TAs want to pick up.
+Dialogue: 0,0:49:19.21,0:49:24.04,*Default,NTP,0000,0000,0000,,"奔跑  跌倒  站起  绊倒  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Runs falls rises stumbles on 
+Dialogue: 0,0:49:24.04,0:49:24.34,*Default,NTP,0000,0000,0000,,从黑暗到黑暗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from darkness into darkness,
+Dialogue: 0,0:49:24.34,0:49:27.15,*Default,NTP,0000,0000,0000,,黑暗中充满了恐怖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the darkness thicketed with shapes of terror,
+Dialogue: 0,0:49:27.15,0:49:29.97,*Default,NTP,0000,0000,0000,,猎手追踪猎狗追逐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the hunters pursuing and the hounds pursuing,
+Dialogue: 0,0:49:29.98,0:49:32.45,*Default,NTP,0000,0000,0000,,夜晚冰冷  夜晚漫长  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the night cold and the night long 
+Dialogue: 0,0:49:32.45,0:49:33.71,*Default,NTP,0000,0000,0000,,河流 渡过河流  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the river, to cross 
+Dialogue: 0,0:49:33.71,0:49:35.81,*Default,NTP,0000,0000,0000,,南瓜灯  闪耀  闪耀  闪耀\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the jack-muh-lanterns beckoning beckoning beckoning,
+Dialogue: 0,0:49:35.81,0:49:40.05,*Default,NTP,0000,0000,0000,,前方黑暗  清晨我会达到何方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and blackness ahead and when shall I reach that somewhere morning
+Dialogue: 0,0:49:40.05,0:49:43.91,*Default,NTP,0000,0000,0000,,向前走  莫回头  向前走\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and keep on going and never turn back and keep on going.
+Dialogue: 0,0:49:44.00,0:49:46.61,*Default,NTP,0000,0000,0000,,逃亡  逃亡  逃亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Runagate, Runagate, Runagate.
+Dialogue: 0,0:49:47.20,0:49:49.09,*Default,NTP,0000,0000,0000,,许许多多的站起来并奔跑着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many thousands rise and go,
+Dialogue: 0,0:49:49.80,0:49:51.84,*Default,NTP,0000,0000,0000,,许许多多的横渡和翻越\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many thousands crossing over.
+Dialogue: 0,0:49:52.61,0:49:57.91,*Default,NTP,0000,0000,0000,,神秘的北方  星状的远方的圣城\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}O mythic North, O star-shaped yonder Bible city.
+Dialogue: 0,0:49:58.41,0:50:01.27,*Default,NTP,0000,0000,0000,,有人哭泣  有人欢喜  有人已经长眠\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some go weeping and some rejoice and some in coffins.
+Dialogue: 0,0:50:01.27,0:50:03.99,*Default,NTP,0000,0000,0000,,有人在车厢里  有人身着绸衣  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And some in carriages, and some in silks 
+Dialogue: 0,0:50:03.99,0:50:05.19,*Default,NTP,0000,0000,0000,,有人已套上镣铐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some in shackles.
+Dialogue: 0,0:50:05.56,0:50:08.24,*Default,NTP,0000,0000,0000,,站起来  奔跑  为了自由的空气"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Rise and go, air you well."
+Dialogue: 0,0:50:09.97,0:50:11.23,*Default,NTP,0000,0000,0000,,周四见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}See ya Thursday.

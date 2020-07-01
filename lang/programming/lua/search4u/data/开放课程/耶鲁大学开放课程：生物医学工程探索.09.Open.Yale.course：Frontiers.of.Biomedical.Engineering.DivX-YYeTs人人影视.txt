@@ -1,0 +1,892 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:12.33,0:00:13.91,*Default,NTP,0000,0000,0000,,好  这一周我们将\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, this week we're going to
+Dialogue: 0,0:00:14.04,0:00:17.75,*Default,NTP,0000,0000,0000,,继续讨论免疫系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}continue in our discussion about the immune system.
+Dialogue: 0,0:00:17.88,0:00:20.64,*Default,NTP,0000,0000,0000,,讨论免疫系统的构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But talk about sort of engineering the immune system,
+Dialogue: 0,0:00:20.76,0:00:24.37,*Default,NTP,0000,0000,0000,,以及个体是如何产生免疫力的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to produce immunity in individuals.
+Dialogue: 0,0:00:24.90,0:00:27.75,*Default,NTP,0000,0000,0000,,我们将通过讨论一些例子来讲解这个主题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we're going to do that by talking about some examples,
+Dialogue: 0,0:00:27.88,0:00:30.12,*Default,NTP,0000,0000,0000,,一些历史上的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some historical examples,
+Dialogue: 0,0:00:30.12,0:00:34.04,*Default,NTP,0000,0000,0000,,关于科技和疫苗发展的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the sort of technology and vaccine development.
+Dialogue: 0,0:00:34.27,0:00:39.03,*Default,NTP,0000,0000,0000,,在这一节课和星期四那节课的讲授中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what I hope to do over the course of this lecture
+Dialogue: 0,0:00:39.17,0:00:40.62,*Default,NTP,0000,0000,0000,,我所想做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the lecture on Thursday,
+Dialogue: 0,0:00:40.92,0:00:46.46,*Default,NTP,0000,0000,0000,,是完成幻灯片上显示的大纲内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is complete what's described on this outline slide here.
+Dialogue: 0,0:00:46.72,0:00:52.68,*Default,NTP,0000,0000,0000,,首先  举两个重要的事例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First, using a couple of examples that have turned out to be very important,
+Dialogue: 0,0:00:52.87,0:00:55.07,*Default,NTP,0000,0000,0000,,其中一个例子是天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one is the example of smallpox,
+Dialogue: 0,0:00:55.62,0:00:58.55,*Default,NTP,0000,0000,0000,,另一个是小儿麻痹症\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the second is the example of polio.
+Dialogue: 0,0:00:59.00,0:01:05.75,*Default,NTP,0000,0000,0000,,谈谈在这些特殊的情况下疫苗如何发展的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Talk about how vaccines were developed in these particular situations,
+Dialogue: 0,0:01:06.14,0:01:11.10,*Default,NTP,0000,0000,0000,,生物学的发展是如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how the development of the biology is
+Dialogue: 0,0:01:11.25,0:01:15.20,*Default,NTP,0000,0000,0000,,与对公众分发疫苗相结合的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}coupled with delivering this through populations,
+Dialogue: 0,0:01:15.45,0:01:19.68,*Default,NTP,0000,0000,0000,,而它们又是如何错综复杂地接合的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how these sort of intricately woven together.
+Dialogue: 0,0:01:20.00,0:01:22.69,*Default,NTP,0000,0000,0000,,仅仅知道疫苗制造的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not enough to understand the biology
+Dialogue: 0,0:01:22.69,0:01:25.65,*Default,NTP,0000,0000,0000,,生物学原理是不够的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of how to create a vaccine,
+Dialogue: 0,0:01:25.65,0:01:28.43,*Default,NTP,0000,0000,0000,,还得能生产出足够的疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you can't make enough of the vaccine or
+Dialogue: 0,0:01:28.43,0:01:29.54,*Default,NTP,0000,0000,0000,,并在公众中广泛使用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}deliver it to people in ways that it's useful.
+Dialogue: 0,0:01:29.85,0:01:33.81,*Default,NTP,0000,0000,0000,,所以我们会以天花和小儿麻痹症为例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we'll talk about how that happened in the—
+Dialogue: 0,0:01:34.01,0:01:36.93,*Default,NTP,0000,0000,0000,,讨论上述目标是如何实现的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}using the examples of smallpox and polio.
+Dialogue: 0,0:01:37.35,0:01:40.58,*Default,NTP,0000,0000,0000,,并且进一步探讨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that will bring us to a general discussion of
+Dialogue: 0,0:01:40.71,0:01:44.31,*Default,NTP,0000,0000,0000,,现阶段推动疫苗发展的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of the tools that are available now for vaccine development,
+Dialogue: 0,0:01:44.45,0:01:47.69,*Default,NTP,0000,0000,0000,,我们会在星期四讨论这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we'll talk about on Thursday.
+Dialogue: 0,0:01:50.37,0:01:54.80,*Default,NTP,0000,0000,0000,,疫苗的重要性无需多言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't have to say too much about why vaccines are important.
+Dialogue: 0,0:01:55.62,0:01:57.04,*Default,NTP,0000,0000,0000,,你们知道这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know about this,
+Dialogue: 0,0:01:57.05,0:02:00.38,*Default,NTP,0000,0000,0000,,这是一幅我展示过的幻灯片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is a slide that I showed you.
+Dialogue: 0,0:02:00.50,0:02:03.56,*Default,NTP,0000,0000,0000,,第一节课我就给你们展示过这幅图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The graph is something I showed you on the first day of class,
+Dialogue: 0,0:02:03.80,0:02:07.04,*Default,NTP,0000,0000,0000,,该图特别地关注了近一百年的情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that over the last hundred years in particular,
+Dialogue: 0,0:02:07.38,0:02:10.51,*Default,NTP,0000,0000,0000,,但它涵盖了过去三百多年的历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but what's shown on this slide is over the last 300 years.
+Dialogue: 0,0:02:10.80,0:02:15.14,*Default,NTP,0000,0000,0000,,人类的预期寿命已有显著提高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Life expectancy for humans has increased dramatically.
+Dialogue: 0,0:02:15.49,0:02:20.06,*Default,NTP,0000,0000,0000,,最重要的一个原因就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And one of the reasons that's most responsible for that is that
+Dialogue: 0,0:02:20.25,0:02:24.29,*Default,NTP,0000,0000,0000,,人们不会在年轻的时候死于传染性疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}humans aren't dying at as young an age from infectious diseases
+Dialogue: 0,0:02:24.46,0:02:27.35,*Default,NTP,0000,0000,0000,,而这在三四百年前确实会发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as they did three or four hundred years ago.
+Dialogue: 0,0:02:27.96,0:02:30.55,*Default,NTP,0000,0000,0000,,还有很多原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And there are many reasons for this,
+Dialogue: 0,0:02:31.45,0:02:37.37,*Default,NTP,0000,0000,0000,,在发达国家我们成功地消灭了感染性疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}our success in eliminating infectious diseases as causes in the developed world.
+Dialogue: 0,0:02:37.74,0:02:39.48,*Default,NTP,0000,0000,0000,,你们肯定知道这些原因是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you know what those reasons are.
+Dialogue: 0,0:02:39.72,0:02:43.70,*Default,NTP,0000,0000,0000,,其一是医生现在在看完病人之后会洗手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is that doctors started washing their hands in between when they saw patients.
+Dialogue: 0,0:02:43.90,0:02:45.58,*Default,NTP,0000,0000,0000,,这显著的减少了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That had a remarkable effect on reducing
+Dialogue: 0,0:02:45.59,0:02:48.47,*Default,NTP,0000,0000,0000,,在医生的办公室和医院内部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}transmission of infectious diseases,
+Dialogue: 0,0:02:48.47,0:02:50.39,*Default,NTP,0000,0000,0000,,感染性疾病的传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in doctor's offices and hospitals.
+Dialogue: 0,0:02:50.82,0:02:53.62,*Default,NTP,0000,0000,0000,,另一个原因是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another is that
+Dialogue: 0,0:02:53.62,0:02:59.70,*Default,NTP,0000,0000,0000,,我们懂得了有关公共系统知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we learned a lot of things about engineering of public systems,
+Dialogue: 0,0:02:59.87,0:03:00.91,*Default,NTP,0000,0000,0000,,比如供水系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like water supplies.
+Dialogue: 0,0:03:01.06,0:03:03.19,*Default,NTP,0000,0000,0000,,把净水和污水分开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Separating our water supply from sewage 
+Dialogue: 0,0:03:03.33,0:03:05.41,*Default,NTP,0000,0000,0000,,以及学会污水处理的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and learning how to do wastewater treatment
+Dialogue: 0,0:03:05.56,0:03:08.88,*Default,NTP,0000,0000,0000,,是减少感染性疾病传播方法中的重要部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was a really important part of reducing infectious diseases.
+Dialogue: 0,0:03:09.39,0:03:13.60,*Default,NTP,0000,0000,0000,,但是疫苗  尤其是在近一百年来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But vaccines, and particularly in the last hundred years,
+Dialogue: 0,0:03:13.80,0:03:15.45,*Default,NTP,0000,0000,0000,,疫苗已经成为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}vaccines have been
+Dialogue: 0,0:03:15.45,0:03:19.86,*Default,NTP,0000,0000,0000,,感染性疾病防治进程中最重要的一环\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the most important elements in our progress.
+Dialogue: 0,0:03:20.56,0:03:23.82,*Default,NTP,0000,0000,0000,,那这个幻灯片会使你们想起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so what this slide just reminds you
+Dialogue: 0,0:03:23.82,0:03:26.54,*Default,NTP,0000,0000,0000,,我们取得的巨大进步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of how much progress we've made.
+Dialogue: 0,0:03:26.84,0:03:30.49,*Default,NTP,0000,0000,0000,,同样也向你们展示这其中的一些挑战\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Also, shows you something about the challenge of it,
+Dialogue: 0,0:03:30.63,0:03:32.92,*Default,NTP,0000,0000,0000,,因为我们也容易受到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because we are susceptible to attack from
+Dialogue: 0,0:03:32.93,0:03:35.47,*Default,NTP,0000,0000,0000,,各类微生物感染的危害\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lots of different kinds of microorganisms.
+Dialogue: 0,0:03:35.87,0:03:39.11,*Default,NTP,0000,0000,0000,,所以  不是只有病毒  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, not just a spectrum of viruses,
+Dialogue: 0,0:03:39.11,0:03:42.36,*Default,NTP,0000,0000,0000,,还有病毒  细菌  寄生虫\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's viruses and bacteria and parasites
+Dialogue: 0,0:03:42.60,0:03:45.60,*Default,NTP,0000,0000,0000,,和其它各种微生物都能导致疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and other microorganisms that can cause disease.
+Dialogue: 0,0:03:45.72,0:03:50.14,*Default,NTP,0000,0000,0000,,这个幻灯片只是简要概括了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so this slide just illustrates that in a simple way,
+Dialogue: 0,0:03:50.44,0:03:53.89,*Default,NTP,0000,0000,0000,,各种不同微生物的范围\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the range of different kinds of organisms that
+Dialogue: 0,0:03:53.97,0:03:58.26,*Default,NTP,0000,0000,0000,,你的免疫系统正在尝试  噢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your immune system is trying to--whoops! 
+Dialogue: 0,0:03:59.04,0:04:07.93,*Default,NTP,0000,0000,0000,,稍等  我控制不了  我不  在这\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Wait a minute, I've lost control of--I'm not--Oh, there it is.
+Dialogue: 0,0:04:08.09,0:04:10.17,*Default,NTP,0000,0000,0000,,不知怎么回事  屏幕上不显示了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not showing up on the screen for some reason.
+Dialogue: 0,0:04:12.32,0:04:14.34,*Default,NTP,0000,0000,0000,,这里列举了一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That, this shows the range of
+Dialogue: 0,0:04:14.48,0:04:19.49,*Default,NTP,0000,0000,0000,,你的免疫系统可能会遭遇的微生物的种类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}morphologies of microorganisms that your immune system has to potentially encounter,
+Dialogue: 0,0:04:19.71,0:04:21.40,*Default,NTP,0000,0000,0000,,一些复杂的生物体比如\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from complex organisms like
+Dialogue: 0,0:04:21.40,0:04:23.75,*Default,NTP,0000,0000,0000,,梅毒病原体  一种病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the syphilis pathogen here, a virus,
+Dialogue: 0,0:04:23.90,0:04:25.77,*Default,NTP,0000,0000,0000,,这一个病毒图像的颜色不对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is a false-colored image of a virus,
+Dialogue: 0,0:04:25.77,0:04:28.74,*Default,NTP,0000,0000,0000,,它非常小  不像这里看到的这么大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very tiny, not shown to scale here;
+Dialogue: 0,0:04:29.11,0:04:34.08,*Default,NTP,0000,0000,0000,,还有一些细菌如沙门氏菌和葡萄球菌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and bacteria like salmonella and staphylococcus.
+Dialogue: 0,0:04:34.19,0:04:37.21,*Default,NTP,0000,0000,0000,,在我们周围充斥着像这样的生物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So these organisms like this are abundant in the world around us
+Dialogue: 0,0:04:37.63,0:04:41.02,*Default,NTP,0000,0000,0000,,而免疫系统在大多数时候能够抵御疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and our immune system prevents us from getting sick most of the time.
+Dialogue: 0,0:04:42.29,0:04:44.54,*Default,NTP,0000,0000,0000,,那么疫苗是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what is a vaccine?
+Dialogue: 0,0:04:44.96,0:04:48.59,*Default,NTP,0000,0000,0000,,疫苗是一种筹备  是一种准备\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A vaccine is a prepared, it's a preparation,
+Dialogue: 0,0:04:48.80,0:04:50.13,*Default,NTP,0000,0000,0000,,它通过某种方式预防疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's prepared in some way.
+Dialogue: 0,0:04:50.30,0:04:52.05,*Default,NTP,0000,0000,0000,,我们会讲它们是如何做准备的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about how they're prepared,
+Dialogue: 0,0:04:52.31,0:04:56.77,*Default,NTP,0000,0000,0000,,它通过刺激你的免疫系统来进行准备\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a preparation that is intended to stimulate your immune system.
+Dialogue: 0,0:04:57.04,0:04:58.55,*Default,NTP,0000,0000,0000,,所以  这就意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, what that really means,
+Dialogue: 0,0:04:58.55,0:05:00.06,*Default,NTP,0000,0000,0000,,通过上周的课程  你们知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know, from last week's lecture,
+Dialogue: 0,0:05:00.30,0:05:05.04,*Default,NTP,0000,0000,0000,,疫苗通过刺激免疫系统中的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that the vaccine stimulates these particular cells
+Dialogue: 0,0:05:05.04,0:05:07.23,*Default,NTP,0000,0000,0000,,特定细胞来使人获得免疫力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in your immune system to give you immunity.
+Dialogue: 0,0:05:09.61,0:05:12.23,*Default,NTP,0000,0000,0000,,这就是我们经常说的获得性免疫\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're usually talking about adaptive immunity here.
+Dialogue: 0,0:05:12.63,0:05:15.43,*Default,NTP,0000,0000,0000,,所以  疫苗的刺激要么能够\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, either stimulates the production of--
+Dialogue: 0,0:05:15.43,0:05:17.98,*Default,NTP,0000,0000,0000,,促进B淋巴细胞产生和分化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and differentiation of B-cells,
+Dialogue: 0,0:05:18.23,0:05:21.64,*Default,NTP,0000,0000,0000,,以生成特定的抗体来杀灭病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to produce a specific antibody that can neutralize the virus,
+Dialogue: 0,0:05:22.04,0:05:26.42,*Default,NTP,0000,0000,0000,,要么刺激T细胞释放细胞毒素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or stimulates the production of cytotoxic T-cells
+Dialogue: 0,0:05:26.68,0:05:29.13,*Default,NTP,0000,0000,0000,,杀死身体里被感染的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can kill infected cells within your body.
+Dialogue: 0,0:05:29.42,0:05:32.63,*Default,NTP,0000,0000,0000,,但无论如何  疫苗是通过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But in any event, the vaccine is intended to
+Dialogue: 0,0:05:32.87,0:05:36.68,*Default,NTP,0000,0000,0000,,刺激免疫系统来使身体产生应答\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}stimulate the immune system to produce an effector response—
+Dialogue: 0,0:05:36.90,0:05:40.43,*Default,NTP,0000,0000,0000,,无论是抗体还是特定的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}either antibodies or specific cells—
+Dialogue: 0,0:05:40.70,0:05:46.30,*Default,NTP,0000,0000,0000,,都可以阻止微生物在体内扩散\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can combat spread of the microorganism through your body.
+Dialogue: 0,0:05:48.65,0:05:53.46,*Default,NTP,0000,0000,0000,,通常它会带着全部或部分抗原介质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Usually it's done by taking all or part of the infectious agent,
+Dialogue: 0,0:05:54.17,0:05:57.55,*Default,NTP,0000,0000,0000,,并以某种方式呈递给你的免疫系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and showing them to your immune system in some way.
+Dialogue: 0,0:05:58.40,0:06:02.28,*Default,NTP,0000,0000,0000,,上次我们简单的提到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we talked very briefly last time about
+Dialogue: 0,0:06:02.28,0:06:03.83,*Default,NTP,0000,0000,0000,,有关抗原呈递的一些知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this business of antigen presentation,
+Dialogue: 0,0:06:04.58,0:06:06.10,*Default,NTP,0000,0000,0000,,你的免疫系统如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how your immune system--
+Dialogue: 0,0:06:06.10,0:06:08.74,*Default,NTP,0000,0000,0000,,这也是免疫系统尤其擅长的一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the things that it does especially well,
+Dialogue: 0,0:06:09.13,0:06:13.30,*Default,NTP,0000,0000,0000,,就是识别哪些部分属于你  哪些不属于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is recognize what's part of you and what's not part of you.
+Dialogue: 0,0:06:13.60,0:06:16.26,*Default,NTP,0000,0000,0000,,免疫系统可以识别出哪些是属于你的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can separate between what's part of yourself
+Dialogue: 0,0:06:16.26,0:06:17.51,*Default,NTP,0000,0000,0000,,哪些是外来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what's foreign,
+Dialogue: 0,0:06:17.80,0:06:21.59,*Default,NTP,0000,0000,0000,,它通过呈递和识别抗原达到目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it does that by presenting, by recognizing antigens
+Dialogue: 0,0:06:21.85,0:06:23.61,*Default,NTP,0000,0000,0000,,而抗原是存在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are presented in the context of
+Dialogue: 0,0:06:23.61,0:06:27.12,*Default,NTP,0000,0000,0000,,主要组织相容性复合体[MHC]中的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the major histocompatibility complex, MHC.
+Dialogue: 0,0:06:28.55,0:06:33.02,*Default,NTP,0000,0000,0000,,所以疫苗的作用就是参与这个生理活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So a vaccine is designed in order to engage that biology,
+Dialogue: 0,0:06:33.83,0:06:41.12,*Default,NTP,0000,0000,0000,,提供抗原 来刺激你的免疫系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to provide antigens that will stimulate specifically your immune system.
+Dialogue: 0,0:06:41.29,0:06:45.24,*Default,NTP,0000,0000,0000,,通常疫苗自身也包含部分传染性介质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Usually it involves pieces of the infectious agent itself,
+Dialogue: 0,0:06:46.88,0:06:49.10,*Default,NTP,0000,0000,0000,,以便达成匹配\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to cause that engagement.
+Dialogue: 0,0:06:49.86,0:06:51.40,*Default,NTP,0000,0000,0000,,这就是疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, that's what a vaccine is,
+Dialogue: 0,0:06:51.45,0:06:53.85,*Default,NTP,0000,0000,0000,,接种疫苗的过程就是生产疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and vaccination is the process of taking that vaccine
+Dialogue: 0,0:06:53.95,0:06:56.56,*Default,NTP,0000,0000,0000,,并把它分发给大众\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you've developed and giving it to people,
+Dialogue: 0,0:06:58.17,0:06:59.98,*Default,NTP,0000,0000,0000,,不论是给个人还是给群体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}either individual people or groups of people,
+Dialogue: 0,0:07:00.26,0:07:02.52,*Default,NTP,0000,0000,0000,,或者就像我们今天所说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or as we'll talk about today,
+Dialogue: 0,0:07:02.52,0:07:04.37,*Default,NTP,0000,0000,0000,,给全世界的人民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}people all over the world.
+Dialogue: 0,0:07:04.83,0:07:06.72,*Default,NTP,0000,0000,0000,,而这是完全不同的  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so that's a very different thing, right?
+Dialogue: 0,0:07:06.91,0:07:09.89,*Default,NTP,0000,0000,0000,,设计在特定个体身上生效的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Designing something that works in a particular individual,
+Dialogue: 0,0:07:10.16,0:07:13.83,*Default,NTP,0000,0000,0000,,和设计可以在全世界人民身上生效的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and designing something that can be used in people all over the world,
+Dialogue: 0,0:07:14.24,0:07:17.48,*Default,NTP,0000,0000,0000,,是完全不同的成果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}involve different sorts of accomplishments.
+Dialogue: 0,0:07:19.14,0:07:22.68,*Default,NTP,0000,0000,0000,,其实我们都有接种疫苗的经历\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, we've all had some experience with vaccines.
+Dialogue: 0,0:07:23.09,0:07:25.34,*Default,NTP,0000,0000,0000,,在我国  接种规定的疫苗之前  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't go to school in this country,
+Dialogue: 0,0:07:25.57,0:07:27.41,*Default,NTP,0000,0000,0000,,许多国家也一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in many countries,
+Dialogue: 0,0:07:27.41,0:07:29.48,*Default,NTP,0000,0000,0000,,你都不能去上学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until you've had your prescribed set of vaccinations.
+Dialogue: 0,0:07:29.62,0:07:32.35,*Default,NTP,0000,0000,0000,,所以这些疫苗非常安全有效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so they're already very safe, very effective vaccines
+Dialogue: 0,0:07:32.35,0:07:35.31,*Default,NTP,0000,0000,0000,,常备用来对付各种传染病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}available for many infectious diseases.
+Dialogue: 0,0:07:35.46,0:07:37.71,*Default,NTP,0000,0000,0000,,这是列表的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a partial list that's shown here,
+Dialogue: 0,0:07:37.71,0:07:40.52,*Default,NTP,0000,0000,0000,,表上第一个是天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}starting the top of the list with smallpox,
+Dialogue: 0,0:07:40.74,0:07:42.98,*Default,NTP,0000,0000,0000,,今天我们要用大部分时间讨论它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's what we're going to spend most of the time talking about today.
+Dialogue: 0,0:07:43.41,0:07:46.77,*Default,NTP,0000,0000,0000,,有狂犬病疫苗  伤寒疫苗  白喉疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are vaccines for rabies, for typhoid, diphtheria.
+Dialogue: 0,0:07:47.45,0:07:50.03,*Default,NTP,0000,0000,0000,,近期  或者更近一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most recently, or more recently,
+Dialogue: 0,0:07:50.03,0:07:52.61,*Default,NTP,0000,0000,0000,,还出现了水痘疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was a vaccine for varicella,
+Dialogue: 0,0:07:53.15,0:07:57.86,*Default,NTP,0000,0000,0000,,你们知道  就是近十年出现的水痘\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which you know is chickenpox that was developed in the last ten years.
+Dialogue: 0,0:07:58.27,0:08:01.90,*Default,NTP,0000,0000,0000,,现在  这间教室中的很多人也许\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, so there's probably a number of people in this room,
+Dialogue: 0,0:08:02.13,0:08:05.00,*Default,NTP,0000,0000,0000,,在二十年前  我第一次教这门课的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so when I first started teaching this class 20 years ago,
+Dialogue: 0,0:08:06.24,0:08:08.53,*Default,NTP,0000,0000,0000,,当时教室里的每个人都得过水痘\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}everybody in the room had had chickenpox.
+Dialogue: 0,0:08:08.84,0:08:10.56,*Default,NTP,0000,0000,0000,,好  现在这里的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right, now are there people here
+Dialogue: 0,0:08:10.56,0:08:12.66,*Default,NTP,0000,0000,0000,,有人没得过水痘  是吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have not had chickenpox, right?
+Dialogue: 0,0:08:12.80,0:08:15.31,*Default,NTP,0000,0000,0000,,不难猜测因为你接种了疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because you had the vaccine, presumably,
+Dialogue: 0,0:08:15.31,0:08:17.60,*Default,NTP,0000,0000,0000,,所以你就不得这病了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you didn't get the disease.
+Dialogue: 0,0:08:19.16,0:08:22.04,*Default,NTP,0000,0000,0000,,所以这是微生物和人类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so this is a substantial change
+Dialogue: 0,0:08:22.37,0:08:27.45,*Default,NTP,0000,0000,0000,,之间关系的一个巨大改变  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the interaction of a microorganism with a population, right?
+Dialogue: 0,0:08:27.45,0:08:28.67,*Default,NTP,0000,0000,0000,,许多人不会再因为微生物得病了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of didn't get sick from it now,
+Dialogue: 0,0:08:28.83,0:08:30.25,*Default,NTP,0000,0000,0000,,而人们以前则会因此生病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we got sick from it before.
+Dialogue: 0,0:08:30.96,0:08:32.82,*Default,NTP,0000,0000,0000,,你们知道现在还有一些疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You also know that there's some vaccines
+Dialogue: 0,0:08:32.82,0:08:33.90,*Default,NTP,0000,0000,0000,,仍没有研制出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are not yet available,
+Dialogue: 0,0:08:34.20,0:08:36.68,*Default,NTP,0000,0000,0000,,都是针对那些亟需预防的疾病的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for diseases that we would very much like to prevent.
+Dialogue: 0,0:08:37.79,0:08:41.98,*Default,NTP,0000,0000,0000,,HIV感染和艾滋病是我们第一个想到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}HIV infection and AIDS is the one that comes first to mind,
+Dialogue: 0,0:08:42.28,0:08:44.56,*Default,NTP,0000,0000,0000,,在这幅幻灯片上也提到了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and is responsible for this slide,
+Dialogue: 0,0:08:44.56,0:08:47.04,*Default,NTP,0000,0000,0000,,我想这是几年前的数据了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think this is data from a few years ago,
+Dialogue: 0,0:08:49.94,0:08:52.07,*Default,NTP,0000,0000,0000,,每年死亡七十万人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}700,000 deaths per year.
+Dialogue: 0,0:08:52.24,0:08:54.86,*Default,NTP,0000,0000,0000,,这个数值毫无疑问比现在要高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That number is undoubtedly higher than now.
+Dialogue: 0,0:08:55.19,0:08:56.62,*Default,NTP,0000,0000,0000,,艾滋病是一个巨大的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}AIDS is a tremendous problem,
+Dialogue: 0,0:08:56.83,0:08:58.12,*Default,NTP,0000,0000,0000,,在非洲和世界其他地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}deaths from HIV infection and AIDS
+Dialogue: 0,0:08:58.12,0:09:00.44,*Default,NTP,0000,0000,0000,,艾滋病毒感染和艾滋病带来的死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a tremendous problem in Africa
+Dialogue: 0,0:09:00.44,0:09:02.05,*Default,NTP,0000,0000,0000,,是一个巨大的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and other parts of the world.
+Dialogue: 0,0:09:02.58,0:09:04.28,*Default,NTP,0000,0000,0000,,但是从数据上来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there are other diseases
+Dialogue: 0,0:09:04.28,0:09:06.19,*Default,NTP,0000,0000,0000,,有一些疾病更严重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are numerically even more important.
+Dialogue: 0,0:09:06.46,0:09:09.45,*Default,NTP,0000,0000,0000,,所有种类的腹泻 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The whole category of diarrheal diseases,
+Dialogue: 0,0:09:10.00,0:09:12.76,*Default,NTP,0000,0000,0000,,都是由肠道病毒引起的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}caused by viruses called enteroviruses,
+Dialogue: 0,0:09:12.76,0:09:16.56,*Default,NTP,0000,0000,0000,,它们感染了肠道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where they, it infects your gut.
+Dialogue: 0,0:09:16.91,0:09:18.82,*Default,NTP,0000,0000,0000,,使肠道不能正常工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your gut's unable to function in the normal way,
+Dialogue: 0,0:09:19.16,0:09:21.27,*Default,NTP,0000,0000,0000,,这时人就得了严重的腹泻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you get severe diarrhea.
+Dialogue: 0,0:09:21.42,0:09:22.81,*Default,NTP,0000,0000,0000,,就会脱水\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can become dehydrated
+Dialogue: 0,0:09:22.82,0:09:26.17,*Default,NTP,0000,0000,0000,,而失水的后果就是死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and die just as a result of the loss of water there,
+Dialogue: 0,0:09:27.62,0:09:30.30,*Default,NTP,0000,0000,0000,,这是你身体对于这种感染的自然反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of your body's natural response to the infection.
+Dialogue: 0,0:09:30.65,0:09:33.75,*Default,NTP,0000,0000,0000,,每年这会导致五百到一千万的人死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that causes five to ten million deaths per year.
+Dialogue: 0,0:09:33.94,0:09:37.35,*Default,NTP,0000,0000,0000,,儿童特别容易受到这些病毒的摧残\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And children are particularly susceptible to these.
+Dialogue: 0,0:09:37.63,0:09:40.91,*Default,NTP,0000,0000,0000,,儿童因轮状病毒而生病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Children get diseases from a class of viruses called rotaviruses,
+Dialogue: 0,0:09:41.22,0:09:42.87,*Default,NTP,0000,0000,0000,,而我们没有针对这种病毒的疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for which we have no vaccine,
+Dialogue: 0,0:09:42.87,0:09:47.11,*Default,NTP,0000,0000,0000,,所以  所以我们没有办法保护儿童\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and- and so no way to protect them.
+Dialogue: 0,0:09:47.27,0:09:51.12,*Default,NTP,0000,0000,0000,,疟疾每年造成一百万死亡  而血吸虫病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Malaria causes a million deaths per year, and schistosomiasis,
+Dialogue: 0,0:09:51.32,0:09:52.79,*Default,NTP,0000,0000,0000,,这是一种寄生虫病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is a parasitic disease,
+Dialogue: 0,0:09:53.38,0:09:59.52,*Default,NTP,0000,0000,0000,,不幸的是  它是世界上很常见的死因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is unfortunately a common cause of death in the world.
+Dialogue: 0,0:09:59.76,0:10:05.38,*Default,NTP,0000,0000,0000,,我们十分想生产疫苗来解决这些问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so these are situations where we would very much like to produce a vaccine,
+Dialogue: 0,0:10:05.54,0:10:06.25,*Default,NTP,0000,0000,0000,,但我们还不行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we can't yet,
+Dialogue: 0,0:10:06.25,0:10:07.80,*Default,NTP,0000,0000,0000,,你们会问  为什么会这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the question is 'Why? '.
+Dialogue: 0,0:10:08.07,0:10:11.11,*Default,NTP,0000,0000,0000,,为什么某些疾病的疫苗很难研制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is it difficult in some cases to produce a vaccine
+Dialogue: 0,0:10:11.38,0:10:13.45,*Default,NTP,0000,0000,0000,,即使我们已经成功生产了很多种疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we've been successful in so many others?
+Dialogue: 0,0:10:13.82,0:10:17.48,*Default,NTP,0000,0000,0000,,在幻灯片上我想强调的一个重点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so one of the points I want to make here, on this slide,
+Dialogue: 0,0:10:17.65,0:10:20.76,*Default,NTP,0000,0000,0000,,疫苗是有疾病特异性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that this is a very disease-specific thing.
+Dialogue: 0,0:10:21.06,0:10:24.20,*Default,NTP,0000,0000,0000,,它发动你的免疫系统来保护你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Learning how to turn on your immune system to protect you
+Dialogue: 0,0:10:24.43,0:10:26.37,*Default,NTP,0000,0000,0000,,免受某种病原体的侵袭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from a specific pathogen turns out to be
+Dialogue: 0,0:10:26.37,0:10:28.50,*Default,NTP,0000,0000,0000,,只是针对这种特定病原体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very particular to that pathogen.
+Dialogue: 0,0:10:28.72,0:10:30.09,*Default,NTP,0000,0000,0000,,你们不必惊讶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That shouldn't be too surprising
+Dialogue: 0,0:10:30.09,0:10:32.83,*Default,NTP,0000,0000,0000,,上周我们讲过免疫系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}given what we talked about last week, that your immune system,
+Dialogue: 0,0:10:32.83,0:10:36.49,*Default,NTP,0000,0000,0000,,特别是适应性免疫系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the adaptive immune system in particular,
+Dialogue: 0,0:10:37.30,0:10:39.96,*Default,NTP,0000,0000,0000,,对不同抗原的应答是具有特异性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}responds to individual antigens differently.
+Dialogue: 0,0:10:44.08,0:10:48.43,*Default,NTP,0000,0000,0000,,想一想在美国什么是最严重的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just to think about what's most important in the U.S.,
+Dialogue: 0,0:10:48.87,0:10:51.83,*Default,NTP,0000,0000,0000,,在美国排名前五的传染病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the top five reported infections in the U.S.,
+Dialogue: 0,0:10:52.28,0:10:53.99,*Default,NTP,0000,0000,0000,,虽然这是几年前的数据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is again from a few years ago,
+Dialogue: 0,0:10:54.19,0:10:56.41,*Default,NTP,0000,0000,0000,,但我非常确定排名没有变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm fairly sure that the numbers haven't changed,
+Dialogue: 0,0:10:56.75,0:10:59.35,*Default,NTP,0000,0000,0000,,排名前五的传染病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}three of the top five infectious diseases,
+Dialogue: 0,0:10:59.53,0:11:02.47,*Default,NTP,0000,0000,0000,,或者说美国最经常报道的传染病中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the infectious diseases most commonly reported in the U.S.,
+Dialogue: 0,0:11:02.80,0:11:04.95,*Default,NTP,0000,0000,0000,,有三个是性传播疾病  包括衣原体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are sexually transmitted diseases: Chlamydia,
+Dialogue: 0,0:11:05.28,0:11:07.58,*Default,NTP,0000,0000,0000,,淋病和HIV感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gonorrhea and HIV infection.
+Dialogue: 0,0:11:07.82,0:11:12.04,*Default,NTP,0000,0000,0000,,这些病我们都没有疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}None of these do we have vaccines for,
+Dialogue: 0,0:11:12.33,0:11:14.53,*Default,NTP,0000,0000,0000,,已经证明  对于性传播疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's turned out that sexually transmitted diseases
+Dialogue: 0,0:11:14.53,0:11:16.06,*Default,NTP,0000,0000,0000,,有很多原因使得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a variety of reasons,
+Dialogue: 0,0:11:16.24,0:11:17.94,*Default,NTP,0000,0000,0000,,我们稍后回来再讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll come back to later,
+Dialogue: 0,0:11:17.94,0:11:21.54,*Default,NTP,0000,0000,0000,,针对这类疾病的疫苗特别难做出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are particularly difficult to develop vaccines for.
+Dialogue: 0,0:11:22.55,0:11:23.86,*Default,NTP,0000,0000,0000,,随着课程的进行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about
+Dialogue: 0,0:11:23.86,0:11:26.28,*Default,NTP,0000,0000,0000,,会讲为什么出现这种情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why that's been the case as we go through.
+Dialogue: 0,0:11:27.60,0:11:29.91,*Default,NTP,0000,0000,0000,,这是另一个表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this just is another list,
+Dialogue: 0,0:11:30.26,0:11:34.47,*Default,NTP,0000,0000,0000,,我希望你们做笔记时把它加到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mainly wanted you to have it in your notes of diseases
+Dialogue: 0,0:11:34.68,0:11:36.19,*Default,NTP,0000,0000,0000,,世界上这些严重的传染疾病上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are important around the world,
+Dialogue: 0,0:11:36.44,0:11:39.49,*Default,NTP,0000,0000,0000,,因为现在有一些项目致力于开发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for which there are very active programs to develop
+Dialogue: 0,0:11:39.82,0:11:42.35,*Default,NTP,0000,0000,0000,,针对这些疾病的疫苗或者改进式疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}either vaccines or more effective vaccines.
+Dialogue: 0,0:11:42.88,0:11:46.51,*Default,NTP,0000,0000,0000,,比如  你们知道现在有乙肝疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know that there is a vaccine for hepatitis B, for example,
+Dialogue: 0,0:11:46.51,0:11:48.20,*Default,NTP,0000,0000,0000,,它就在这个表上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is on this list.
+Dialogue: 0,0:11:48.49,0:11:52.61,*Default,NTP,0000,0000,0000,,我猜  你们都接种过乙肝疫苗了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you've all been vaccinated, I would guess, for hepatitis B.
+Dialogue: 0,0:11:52.80,0:11:57.11,*Default,NTP,0000,0000,0000,,这种疫苗需要在六个月里注射三次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the one where you have to get three shots over a period of six months,
+Dialogue: 0,0:11:57.39,0:11:58.94,*Default,NTP,0000,0000,0000,,所以你要记得再去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so you have to remember to go back,
+Dialogue: 0,0:11:59.20,0:12:01.13,*Default,NTP,0000,0000,0000,,你第一次  你第一次注射后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you get a first ba--you get a first shot,
+Dialogue: 0,0:12:01.56,0:12:03.69,*Default,NTP,0000,0000,0000,,你要记得一个月后再去注射第二次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to remember to go back after a month and get a second shot,
+Dialogue: 0,0:12:03.87,0:12:06.58,*Default,NTP,0000,0000,0000,,六个月后  你还得再去注射第三次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to go back after six months and get a third shot.
+Dialogue: 0,0:12:06.90,0:12:10.73,*Default,NTP,0000,0000,0000,,然后医生会检测以确定你已获得了保护\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then they test you to make sure that you have adequate protection,
+Dialogue: 0,0:12:10.93,0:12:12.89,*Default,NTP,0000,0000,0000,,有些人在测试完后需要再打一针\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some people need an additional shot after that.
+Dialogue: 0,0:12:13.24,0:12:14.86,*Default,NTP,0000,0000,0000,,它是一种有效的疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so that's an effective vaccines.
+Dialogue: 0,0:12:15.19,0:12:17.59,*Default,NTP,0000,0000,0000,,但为了保证接种效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's only an effective vaccine in the context
+Dialogue: 0,0:12:17.83,0:12:21.52,*Default,NTP,0000,0000,0000,,人们必须亲自去诊疗室\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you have people who can go to the doctor's office,
+Dialogue: 0,0:12:21.69,0:12:23.39,*Default,NTP,0000,0000,0000,,或者在急诊室里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or to an urgent care,
+Dialogue: 0,0:12:23.40,0:12:26.23,*Default,NTP,0000,0000,0000,,使用一些医学设施辅助接种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some kind of medical facility,
+Dialogue: 0,0:12:26.72,0:12:28.05,*Default,NTP,0000,0000,0000,,还需要接种三次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}three times,
+Dialogue: 0,0:12:28.05,0:12:30.15,*Default,NTP,0000,0000,0000,,它只在一段时间内有效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reliably, at a specified period of time.
+Dialogue: 0,0:12:30.69,0:12:33.30,*Default,NTP,0000,0000,0000,,而这不可能在世界各处都能实现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's not possible in all parts of the world,
+Dialogue: 0,0:12:33.44,0:12:39.01,*Default,NTP,0000,0000,0000,,并不是每个人都经常有机会见到医生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not everybody has that opportunity to interact with medical professionals that often.
+Dialogue: 0,0:12:39.22,0:12:40.10,*Default,NTP,0000,0000,0000,,所以我们感兴趣的领域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so there's a lot of interest,
+Dialogue: 0,0:12:40.24,0:12:42.99,*Default,NTP,0000,0000,0000,,不仅包括针对还没有疫苗的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not just in developing vaccines for diseases
+Dialogue: 0,0:12:43.18,0:12:45.21,*Default,NTP,0000,0000,0000,,来研发疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we don't have vaccines for,
+Dialogue: 0,0:12:45.21,0:12:51.32,*Default,NTP,0000,0000,0000,,还要开发更有效的疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but for delivering vaccines that are more effective.
+Dialogue: 0,0:12:51.76,0:12:54.20,*Default,NTP,0000,0000,0000,,比方说  如果你研制的一种肝炎疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, what if you could make a hepatitis vaccine
+Dialogue: 0,0:12:54.31,0:12:56.56,*Default,NTP,0000,0000,0000,,只需接种一次  而不是三次会怎么样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that was good in one shot instead of three shots?
+Dialogue: 0,0:12:57.15,0:12:59.75,*Default,NTP,0000,0000,0000,,或者令疫苗更易于运输\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or vaccines that could be transported more easily—
+Dialogue: 0,0:13:00.14,0:13:03.14,*Default,NTP,0000,0000,0000,,现在的肝炎疫苗一定要冷藏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the hepatitis vaccine that we get is not stable
+Dialogue: 0,0:13:03.14,0:13:04.85,*Default,NTP,0000,0000,0000,,否则它就不稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}unless it's refrigerated.
+Dialogue: 0,0:13:05.07,0:13:07.14,*Default,NTP,0000,0000,0000,,疫苗需要溶解在水中  还要冷藏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's in solution, it's refrigerated,
+Dialogue: 0,0:13:07.59,0:13:11.14,*Default,NTP,0000,0000,0000,,而将这些冷藏的疫苗运送到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's very difficult to transport refrigerated vaccines
+Dialogue: 0,0:13:11.50,0:13:15.69,*Default,NTP,0000,0000,0000,,世界上所有的偏远地区是十分困难的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to all the remote parts of the world where you would like to transport them.
+Dialogue: 0,0:13:15.95,0:13:19.58,*Default,NTP,0000,0000,0000,,所以  如何使疫苗接种更便于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so that very practical consideration turns out to be important
+Dialogue: 0,0:13:19.74,0:13:22.75,*Default,NTP,0000,0000,0000,,实际操作就变得非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in how we use vaccines in real populations.
+Dialogue: 0,0:13:23.11,0:13:25.18,*Default,NTP,0000,0000,0000,,所以如果你可以开发出这样的乙肝疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you could make a hepatitis B vaccine
+Dialogue: 0,0:13:25.54,0:13:29.19,*Default,NTP,0000,0000,0000,,它不需注射就能接种  或者不需要冷藏\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that didn't require a shot or that didn't require refrigeration,
+Dialogue: 0,0:13:29.46,0:13:30.83,*Default,NTP,0000,0000,0000,,这样的巨大进步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would be a tremendous advance
+Dialogue: 0,0:13:30.83,0:13:33.77,*Default,NTP,0000,0000,0000,,能够将疫苗的使用普及至全世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in spreading that vaccine through the world.
+Dialogue: 0,0:13:33.90,0:13:36.72,*Default,NTP,0000,0000,0000,,所以  这个例子讲的是研发疫苗和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, that's another example of the difference
+Dialogue: 0,0:13:36.72,0:13:39.71,*Default,NTP,0000,0000,0000,,研究疫苗接种的不同之处  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between a vaccine that works, and a vaccination that works, right?
+Dialogue: 0,0:13:39.86,0:13:41.24,*Default,NTP,0000,0000,0000,,当人就在这里你可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A vaccine might work if the person is there
+Dialogue: 0,0:13:41.24,0:13:43.23,*Default,NTP,0000,0000,0000,,接触他们的时候疫苗也许有用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can interact with them.
+Dialogue: 0,0:13:43.39,0:13:45.54,*Default,NTP,0000,0000,0000,,而疫苗接种  为了能适用于全世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A vaccination, for it to work around the world,
+Dialogue: 0,0:13:45.73,0:13:49.04,*Default,NTP,0000,0000,0000,,它必须便宜  便于运输\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has to be inexpensive, transportable,
+Dialogue: 0,0:13:49.38,0:13:53.75,*Default,NTP,0000,0000,0000,,还要能在没有高级医生的情况下使用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}possible to use without advanced medical personnel,
+Dialogue: 0,0:13:54.02,0:13:55.42,*Default,NTP,0000,0000,0000,,它应该具有诸如此类的特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those kinds of things.
+Dialogue: 0,0:13:57.04,0:14:00.46,*Default,NTP,0000,0000,0000,,我们现在来谈一谈天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, so let's talk about the example of smallpox,
+Dialogue: 0,0:14:00.68,0:14:04.64,*Default,NTP,0000,0000,0000,,它是人类与传染病的斗争中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is one of the world's great successes
+Dialogue: 0,0:14:04.64,0:14:06.95,*Default,NTP,0000,0000,0000,,获得的一项伟大胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the battle against infectious diseases.
+Dialogue: 0,0:14:07.15,0:14:09.37,*Default,NTP,0000,0000,0000,,我们稍微说一下天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just to say a little bit about smallpox,
+Dialogue: 0,0:14:10.30,0:14:12.24,*Default,NTP,0000,0000,0000,,因为它不像水痘那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because unlike chickenpox,
+Dialogue: 0,0:14:12.24,0:14:14.60,*Default,NTP,0000,0000,0000,,就算你没得过你也见过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which if you haven't had, you've probably seen a case of it.
+Dialogue: 0,0:14:14.78,0:14:16.99,*Default,NTP,0000,0000,0000,,我们没人见过天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}None of us have seen a case of smallpox,
+Dialogue: 0,0:14:17.20,0:14:21.66,*Default,NTP,0000,0000,0000,,在这个世界上它已经被消灭几十年了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it hasn't existed in the world for many decades now.
+Dialogue: 0,0:14:21.94,0:14:23.87,*Default,NTP,0000,0000,0000,,但是天花曾经\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But smallpox was, at one time,
+Dialogue: 0,0:14:23.87,0:14:28.46,*Default,NTP,0000,0000,0000,,是这个星球上最令人恐惧的疾病之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the most frightening diseases on the planet.
+Dialogue: 0,0:14:28.70,0:14:30.19,*Default,NTP,0000,0000,0000,,它是一种毁灭性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a devastating,
+Dialogue: 0,0:14:30.19,0:14:32.25,*Default,NTP,0000,0000,0000,,频繁发病的致命疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}frequently fatal infectious disease.
+Dialogue: 0,0:14:32.62,0:14:34.77,*Default,NTP,0000,0000,0000,,如果你周围有人得了天花的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If smallpox occurred in your community,
+Dialogue: 0,0:14:35.02,0:14:37.97,*Default,NTP,0000,0000,0000,,那么百分之三十的天花病人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about 30 percent of the people that acquire the disease
+Dialogue: 0,0:14:37.97,0:14:39.44,*Default,NTP,0000,0000,0000,,会因此死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would die from it;
+Dialogue: 0,0:14:39.68,0:14:43.35,*Default,NTP,0000,0000,0000,,剩下的百分之七十会成为残疾或永久毁容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the other 70 percent could be disabled or permanently disfigured
+Dialogue: 0,0:14:43.35,0:14:44.65,*Default,NTP,0000,0000,0000,,这都是天花造成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as a result of the disease.
+Dialogue: 0,0:14:44.92,0:14:48.54,*Default,NTP,0000,0000,0000,,它是一种传染病  通过空气传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an infectious disease; it is spread by--through the air.
+Dialogue: 0,0:14:48.74,0:14:52.63,*Default,NTP,0000,0000,0000,,所以  只要吸入病原体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it first infects you
+Dialogue: 0,0:14:52.63,0:14:54.75,*Default,NTP,0000,0000,0000,,你就会被感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you breathe in some of the infectious agent.
+Dialogue: 0,0:14:54.91,0:14:59.08,*Default,NTP,0000,0000,0000,,天花是病毒引起的  这种病毒含DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Smallpox is a virus called variola, it's a virus that contains DNA.
+Dialogue: 0,0:14:59.51,0:15:01.20,*Default,NTP,0000,0000,0000,,病毒的名字叫天花病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The name of the virus is variola.
+Dialogue: 0,0:15:02.73,0:15:04.47,*Default,NTP,0000,0000,0000,,它是病毒家族的一员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's part of a family of viruses,
+Dialogue: 0,0:15:04.61,0:15:06.50,*Default,NTP,0000,0000,0000,,我们将会讨论病毒家族的其他成员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll talk about at least one other member of
+Dialogue: 0,0:15:06.61,0:15:09.44,*Default,NTP,0000,0000,0000,,至少要讨论一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that family of viruses as we go through here.
+Dialogue: 0,0:15:09.87,0:15:13.43,*Default,NTP,0000,0000,0000,,天花会通过空气传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it can be acquired in the air,
+Dialogue: 0,0:15:13.82,0:15:17.03,*Default,NTP,0000,0000,0000,,通过病人和其他感染者呼出的空气传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from patients that are from- from other individuals that are infected.
+Dialogue: 0,0:15:17.18,0:15:20.65,*Default,NTP,0000,0000,0000,,你将之吸入  病原体感染了呼吸道细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You breathe it in, it infects the cells of your respiratory tract,
+Dialogue: 0,0:15:21.00,0:15:22.63,*Default,NTP,0000,0000,0000,,病毒开始繁殖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the virus begins to reproduce,
+Dialogue: 0,0:15:22.63,0:15:25.35,*Default,NTP,0000,0000,0000,,接着传遍你的全身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then it spreads throughout your body.
+Dialogue: 0,0:15:25.65,0:15:27.35,*Default,NTP,0000,0000,0000,,所以你感染这种病后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so during the first period
+Dialogue: 0,0:15:27.35,0:15:29.05,*Default,NTP,0000,0000,0000,,刚开始的一段时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after you come in contact with the disease,
+Dialogue: 0,0:15:29.18,0:15:31.45,*Default,NTP,0000,0000,0000,,会处于潜伏期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have an incubation period
+Dialogue: 0,0:15:31.52,0:15:33.56,*Default,NTP,0000,0000,0000,,这一阶段出现的种种症状\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you get sort of the kind of symptoms
+Dialogue: 0,0:15:33.63,0:15:37.43,*Default,NTP,0000,0000,0000,,可以表现在多种由病毒感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we associate with lots of kinds of viral infections
+Dialogue: 0,0:15:37.55,0:15:40.48,*Default,NTP,0000,0000,0000,,导致的呼吸系统疾病中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we contract through our respiratory system;
+Dialogue: 0,0:15:40.90,0:15:42.53,*Default,NTP,0000,0000,0000,,也许你会发烧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might have a fever;
+Dialogue: 0,0:15:43.69,0:15:45.43,*Default,NTP,0000,0000,0000,,会不舒服  这种感觉就和你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a malaise, which is just that feeling that
+Dialogue: 0,0:15:45.55,0:15:47.61,*Default,NTP,0000,0000,0000,,不想起床  不想来上课的感觉一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't want to get out of bed and go to class.
+Dialogue: 0,0:15:48.15,0:15:49.37,*Default,NTP,0000,0000,0000,,你们都有过这种经历\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You might have that commonly,
+Dialogue: 0,0:15:49.52,0:15:52.74,*Default,NTP,0000,0000,0000,,有时也许比平常的更加严重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but even more severe than normal;
+Dialogue: 0,0:15:52.75,0:15:54.90,*Default,NTP,0000,0000,0000,,疼痛  皮疹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}aches; and a rash.
+Dialogue: 0,0:15:55.16,0:15:57.40,*Default,NTP,0000,0000,0000,,这是天花的特征\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this is what's characteristic of smallpox,
+Dialogue: 0,0:15:57.60,0:15:59.52,*Default,NTP,0000,0000,0000,,当病毒传遍全身时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that as the virus spreads through your body,
+Dialogue: 0,0:15:59.82,0:16:03.40,*Default,NTP,0000,0000,0000,,它特别的  特别地作用于皮肤细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it particularly, it particularly affects cells of your skin.
+Dialogue: 0,0:16:03.89,0:16:07.58,*Default,NTP,0000,0000,0000,,所以  你会出皮疹  或者皮肤变红\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, you get a rash, or a redness of the skin.
+Dialogue: 0,0:16:08.05,0:16:09.84,*Default,NTP,0000,0000,0000,,接着你会暂时恢复\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then you would recover for a while,
+Dialogue: 0,0:16:10.01,0:16:12.83,*Default,NTP,0000,0000,0000,,在开始阶段出现的症状会消失\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that initial phase of the illness would disappear,
+Dialogue: 0,0:16:12.95,0:16:13.94,*Default,NTP,0000,0000,0000,,你的体温会降下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your fever might go down,
+Dialogue: 0,0:16:13.94,0:16:15.42,*Default,NTP,0000,0000,0000,,看起来似乎比较健康\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might appear to be normal.
+Dialogue: 0,0:16:15.77,0:16:18.38,*Default,NTP,0000,0000,0000,,然后你的皮肤就会遭到损害\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then you start to get lesions on your skin
+Dialogue: 0,0:16:18.38,0:16:20.56,*Default,NTP,0000,0000,0000,,这就是天花的典型特征\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are very characteristic of smallpox.
+Dialogue: 0,0:16:20.95,0:16:23.78,*Default,NTP,0000,0000,0000,,这往往以出水痘开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They start as what are called vesicular lesions,
+Dialogue: 0,0:16:23.99,0:16:26.61,*Default,NTP,0000,0000,0000,,或者起水疱  里面充满液体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or like blisters, where they're filled with a fluid.
+Dialogue: 0,0:16:26.94,0:16:30.65,*Default,NTP,0000,0000,0000,,它们逐渐变成粘稠  发硬\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They evolve to become very dense, hard,
+Dialogue: 0,0:16:30.65,0:16:33.74,*Default,NTP,0000,0000,0000,,产生脓包状的伤痕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pustular lesions,
+Dialogue: 0,0:16:34.12,0:16:38.43,*Default,NTP,0000,0000,0000,,而这些粘稠的脓事实上是组织残骸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which are filled with what turns out to be tissue debris.
+Dialogue: 0,0:16:38.77,0:16:42.04,*Default,NTP,0000,0000,0000,,这便是病毒在皮肤细胞内部\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really just the result of the virus dividing
+Dialogue: 0,0:16:42.04,0:16:43.40,*Default,NTP,0000,0000,0000,,分裂的结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}within cells of your skin,
+Dialogue: 0,0:16:43.54,0:16:45.10,*Default,NTP,0000,0000,0000,,这个过程会产生大量的死亡细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and producing a lot of dead cells.
+Dialogue: 0,0:16:45.47,0:16:47.65,*Default,NTP,0000,0000,0000,,然后这些死亡细胞都填充在一个点上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so that debris fills up a little spot
+Dialogue: 0,0:16:47.65,0:16:48.73,*Default,NTP,0000,0000,0000,,会有一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would feel,
+Dialogue: 0,0:16:49.38,0:16:51.39,*Default,NTP,0000,0000,0000,,根据记录所说  因为我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}according to reports, because again we
+Dialogue: 0,0:16:51.39,0:16:52.73,*Default,NTP,0000,0000,0000,,没有再见过这病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't see it now,
+Dialogue: 0,0:16:53.30,0:16:55.87,*Default,NTP,0000,0000,0000,,会感觉皮肤下面有个小球\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}feels like a little pellet underneath your skin.
+Dialogue: 0,0:16:56.33,0:16:59.80,*Default,NTP,0000,0000,0000,,这些液体最终会流出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this fluid eventually starts to leak out
+Dialogue: 0,0:16:59.80,0:17:02.57,*Default,NTP,0000,0000,0000,,伤痕也会痊愈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those lesions would heal,
+Dialogue: 0,0:17:02.87,0:17:05.19,*Default,NTP,0000,0000,0000,,但大部分情况下会留下疤痕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they leave scars in most cases.
+Dialogue: 0,0:17:05.35,0:17:06.46,*Default,NTP,0000,0000,0000,,这些伤非常深\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are very deep lesions
+Dialogue: 0,0:17:06.47,0:17:10.00,*Default,NTP,0000,0000,0000,,它们不仅像水泡那样存在于皮肤表面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that go not just on the surface of your skin like a blister would,
+Dialogue: 0,0:17:10.31,0:17:13.22,*Default,NTP,0000,0000,0000,,还深入到真皮层或者皮下更深的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but down into the dermis or deeper layers of the skins, as well.
+Dialogue: 0,0:17:13.70,0:17:16.70,*Default,NTP,0000,0000,0000,,事实上  皮肤某些区域将受到严重伤害\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, certain areas of the skin would be impacted most,
+Dialogue: 0,0:17:16.98,0:17:18.24,*Default,NTP,0000,0000,0000,,尤其触目惊心的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}most dramatically,
+Dialogue: 0,0:17:18.24,0:17:20.45,*Default,NTP,0000,0000,0000,,在面部  胸部和手臂位置\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the face and the chest, the arms,
+Dialogue: 0,0:17:21.02,0:17:26.22,*Default,NTP,0000,0000,0000,,很多都出现在手臂的末端  比如手掌上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but more distal point of the arms, like the palms of your hands.
+Dialogue: 0,0:17:26.60,0:17:28.61,*Default,NTP,0000,0000,0000,,你可以想象这些  即使在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so you can imagine that even in its—
+Dialogue: 0,0:17:28.96,0:17:31.40,*Default,NTP,0000,0000,0000,,伴随着皮肤上的任何运动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with all of this activity on your skin,
+Dialogue: 0,0:17:31.69,0:17:35.26,*Default,NTP,0000,0000,0000,,即使是最轻微的活动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even at its most--least serious level,
+Dialogue: 0,0:17:35.56,0:17:38.39,*Default,NTP,0000,0000,0000,,也会带来严重的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a terrible disease.
+Dialogue: 0,0:17:38.57,0:17:40.25,*Default,NTP,0000,0000,0000,,等一会我会给你们展示一幅图片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll show you a picture in just a moment.
+Dialogue: 0,0:17:40.94,0:17:45.92,*Default,NTP,0000,0000,0000,,但在某些情况下  疾病的蔓延\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But in some cases, that progressions of the disease
+Dialogue: 0,0:17:46.10,0:17:49.79,*Default,NTP,0000,0000,0000,,会开始影响其它器官  不仅是皮肤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would start to affect other organs, in addition to your skin,
+Dialogue: 0,0:17:51.07,0:17:54.33,*Default,NTP,0000,0000,0000,,你的身体在受到感染后全线崩溃\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your body would become overwhelmed with the infection
+Dialogue: 0,0:17:54.33,0:17:55.72,*Default,NTP,0000,0000,0000,,直至死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and eventually die.
+Dialogue: 0,0:17:55.95,0:17:57.17,*Default,NTP,0000,0000,0000,,就像我刚说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as I mentioned before,
+Dialogue: 0,0:17:57.17,0:17:59.41,*Default,NTP,0000,0000,0000,,百分之二十到三十的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}death would occur in 20-30 percent of the cases
+Dialogue: 0,0:17:59.90,0:18:02.19,*Default,NTP,0000,0000,0000,,天花重症病人会死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that got the most severe form of smallpox.
+Dialogue: 0,0:18:02.57,0:18:04.92,*Default,NTP,0000,0000,0000,,所以  假如这病出现在你周围\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, if this was a disease that entered your community,
+Dialogue: 0,0:18:05.40,0:18:09.43,*Default,NTP,0000,0000,0000,,可以料到在几个世纪前  情况会怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could have expected several centuries ago.
+Dialogue: 0,0:18:09.67,0:18:12.91,*Default,NTP,0000,0000,0000,,当这场疾病风暴肆虐完毕之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the end of this sweep of the disease through your community,
+Dialogue: 0,0:18:13.20,0:18:14.40,*Default,NTP,0000,0000,0000,,你的邻居中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one in four, or one in five,
+Dialogue: 0,0:18:14.40,0:18:18.70,*Default,NTP,0000,0000,0000,,有四分之一或者五分之一的人会死去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of your neighbors would die from the disease.
+Dialogue: 0,0:18:18.88,0:18:19.53,*Default,NTP,0000,0000,0000,,这就是说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that says,
+Dialogue: 0,0:18:19.53,0:18:22.32,*Default,NTP,0000,0000,0000,,这种病对社会产生了严重后果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a dramatic effect on communities.
+Dialogue: 0,0:18:23.00,0:18:26.12,*Default,NTP,0000,0000,0000,,天花影响了世界历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, smallpox affected world history,
+Dialogue: 0,0:18:26.13,0:18:31.73,*Default,NTP,0000,0000,0000,,正如艾滋病现在正在影响世界历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's--just as HIV infection is affecting world history now.
+Dialogue: 0,0:18:31.86,0:18:34.75,*Default,NTP,0000,0000,0000,,天花影响了几个世纪前的历史\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Smallpox affected world history hundreds of years ago,
+Dialogue: 0,0:18:35.23,0:18:37.65,*Default,NTP,0000,0000,0000,,这种病在欧洲很常见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it was a disease that was common in Europe,
+Dialogue: 0,0:18:37.65,0:18:39.53,*Default,NTP,0000,0000,0000,,但在美国不多见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but not common in the Americas
+Dialogue: 0,0:18:39.53,0:18:41.95,*Default,NTP,0000,0000,0000,,直到美国成为殖民地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until the Americas were colonized.
+Dialogue: 0,0:18:42.19,0:18:46.22,*Default,NTP,0000,0000,0000,,有报道说阿兹特克文明如何发达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so there are famous reports of how the Aztecs,
+Dialogue: 0,0:18:46.48,0:18:49.72,*Default,NTP,0000,0000,0000,,但这整个文明  都毁灭于天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that whole civilization, was devastated by smallpox.
+Dialogue: 0,0:18:50.16,0:18:52.56,*Default,NTP,0000,0000,0000,,西班牙人在十六世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That disease was brought to them by the Spanish
+Dialogue: 0,0:18:52.69,0:18:56.18,*Default,NTP,0000,0000,0000,,来到这个大陆时带来了这种疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they came to these continents in the 16th Century.
+Dialogue: 0,0:18:56.78,0:19:00.41,*Default,NTP,0000,0000,0000,,那些西班牙人  只是一支较小的队伍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the Spanish, a much smaller group of people
+Dialogue: 0,0:19:00.74,0:19:05.38,*Default,NTP,0000,0000,0000,,他们之所以战胜高度发达的阿兹特克文明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was able to overtake the Aztec civilization, very well established,
+Dialogue: 0,0:19:05.39,0:19:09.54,*Default,NTP,0000,0000,0000,,是因为阿兹特克人被这种疾病摧残了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because that group of people was devastated by the disease.
+Dialogue: 0,0:19:10.49,0:19:14.59,*Default,NTP,0000,0000,0000,,最终他们变得很虚弱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And they were weakened as a result,
+Dialogue: 0,0:19:14.76,0:19:17.05,*Default,NTP,0000,0000,0000,,所以这群西班牙人  尽管数量很少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the Spaniards, even in fewer numbers,
+Dialogue: 0,0:19:17.30,0:19:20.02,*Default,NTP,0000,0000,0000,,还是取得了胜利\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were able to conquer.
+Dialogue: 0,0:19:21.97,0:19:24.82,*Default,NTP,0000,0000,0000,,所以这里给你们展示一些图片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So these are just some pictures to show you
+Dialogue: 0,0:19:24.98,0:19:28.94,*Default,NTP,0000,0000,0000,,这就是小孩脸上的天花伤痕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the smallpox lesions look like on the face of a child,
+Dialogue: 0,0:19:29.26,0:19:33.16,*Default,NTP,0000,0000,0000,,这是天花遍布成人全身的样子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then distributed over the whole body of an adult,
+Dialogue: 0,0:19:34.47,0:19:36.09,*Default,NTP,0000,0000,0000,,它能让你们更好的理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to give you some better idea of
+Dialogue: 0,0:19:36.09,0:19:38.07,*Default,NTP,0000,0000,0000,,天花是一种什么样的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what kind of a disease this was.
+Dialogue: 0,0:19:39.87,0:19:46.40,*Default,NTP,0000,0000,0000,,疫苗的发展经历了很长一段时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the process of developing a vaccine occurred over a long period of time.
+Dialogue: 0,0:19:46.62,0:19:50.19,*Default,NTP,0000,0000,0000,,事实上  有证据表明在几千年前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, there's evidence that even thousands of years ago,
+Dialogue: 0,0:19:51.41,0:19:57.92,*Default,NTP,0000,0000,0000,,印度和中国的医生就在使用一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indian and Chinese healers were using a form of something
+Dialogue: 0,0:19:58.09,0:19:59.90,*Default,NTP,0000,0000,0000,,类似于疫苗的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we would recognize as vaccination.
+Dialogue: 0,0:20:00.31,0:20:01.38,*Default,NTP,0000,0000,0000,,他们通过用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And they did this by taking--
+Dialogue: 0,0:20:01.38,0:20:04.18,*Default,NTP,0000,0000,0000,,他们通过某种方式意识到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they recognized that somehow,
+Dialogue: 0,0:20:04.98,0:20:07.56,*Default,NTP,0000,0000,0000,,如果较轻微地得过这种病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you had a mild exposure to the disease,
+Dialogue: 0,0:20:07.90,0:20:10.99,*Default,NTP,0000,0000,0000,,你的身体会发展保护机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your body could then develop protection
+Dialogue: 0,0:20:10.99,0:20:13.79,*Default,NTP,0000,0000,0000,,来抵挡更为严重的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}against more severe forms of the disease.
+Dialogue: 0,0:20:14.27,0:20:19.92,*Default,NTP,0000,0000,0000,,所以  古老的方法就是把疾病传递给你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, the older way, the more ancient way of exposing you to disease,
+Dialogue: 0,0:20:20.08,0:20:21.28,*Default,NTP,0000,0000,0000,,在天花这个例子中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was in the case of smallpox,
+Dialogue: 0,0:20:21.55,0:20:26.53,*Default,NTP,0000,0000,0000,,就是从被感染的人身上取一点组织\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to take pieces of tissue from somebody that was infected,
+Dialogue: 0,0:20:26.70,0:20:31.82,*Default,NTP,0000,0000,0000,,它通常取自皮肤损伤之后留下的疤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and usually it was one of the scabs that formed as a result of these skin lesions,
+Dialogue: 0,0:20:32.48,0:20:35.22,*Default,NTP,0000,0000,0000,,用某种方式把疤磨碎\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to grind up that scab somehow
+Dialogue: 0,0:20:35.47,0:20:38.02,*Default,NTP,0000,0000,0000,,把它弄进想免受病毒侵袭的人的体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and expose it to somebody who you wanted to protect from the disease.
+Dialogue: 0,0:20:38.44,0:20:41.53,*Default,NTP,0000,0000,0000,,印度医疗者的方法是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the way that India healers did this
+Dialogue: 0,0:20:41.76,0:20:43.99,*Default,NTP,0000,0000,0000,,把这些磨碎的东西放进你的鼻子里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was by putting pieces of this in your nose,
+Dialogue: 0,0:20:44.68,0:20:46.95,*Default,NTP,0000,0000,0000,,或者注射进皮肤里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or injecting it under your skin.
+Dialogue: 0,0:20:48.25,0:20:56.58,*Default,NTP,0000,0000,0000,,这会使你觉得受到了保护不会得这种病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And there was a feeling that this could protect you against the disease.
+Dialogue: 0,0:20:57.67,0:21:01.58,*Default,NTP,0000,0000,0000,,而这确实有这种效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it turns out that there is.
+Dialogue: 0,0:21:01.91,0:21:04.19,*Default,NTP,0000,0000,0000,,我们都知道这样做的科学依据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We now know what the scientific basis of that is,
+Dialogue: 0,0:21:04.35,0:21:06.31,*Default,NTP,0000,0000,0000,,这牵涉到激活你的免疫系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it involves activation of our immune system.
+Dialogue: 0,0:21:06.93,0:21:10.19,*Default,NTP,0000,0000,0000,,这项技术一直没有广泛应用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it was a practice that was not broadly used
+Dialogue: 0,0:21:10.37,0:21:13.01,*Default,NTP,0000,0000,0000,,直到有人系统地研究它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until somebody really studied systematically.
+Dialogue: 0,0:21:13.17,0:21:15.36,*Default,NTP,0000,0000,0000,,而那个系统研究疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that person who really studied it systematically,
+Dialogue: 0,0:21:15.54,0:21:18.10,*Default,NTP,0000,0000,0000,,并被誉为发明了第一支疫苗的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and is given credit for developing the first vaccine,
+Dialogue: 0,0:21:18.35,0:21:20.65,*Default,NTP,0000,0000,0000,,叫爱德华•詹纳  是苏格兰的一名医生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a Scottish physician named Edward Jenner.
+Dialogue: 0,0:21:21.24,0:21:27.11,*Default,NTP,0000,0000,0000,,他首先观察到一种类似但不同的情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he started with a similar but different observation,
+Dialogue: 0,0:21:27.27,0:21:31.60,*Default,NTP,0000,0000,0000,,就是牛得了一种很像天花的病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that was that cows get a disease that's very similar to smallpox.
+Dialogue: 0,0:21:31.88,0:21:34.45,*Default,NTP,0000,0000,0000,,我们现在知道这病由一种相关的病毒引起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We know now that it's caused by a related virus,
+Dialogue: 0,0:21:35.67,0:21:36.95,*Default,NTP,0000,0000,0000,,这种病毒叫牛痘病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called vaccinia,
+Dialogue: 0,0:21:37.03,0:21:41.64,*Default,NTP,0000,0000,0000,,想想天花病毒也被叫做牛痘病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}remember the virus that causes smallpox is called variola.
+Dialogue: 0,0:21:42.02,0:21:46.10,*Default,NTP,0000,0000,0000,,但是导致天花的人痘病毒  和导致牛痘\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But variola, which causes smallpox in humans, and vaccinia,
+Dialogue: 0,0:21:46.39,0:21:50.41,*Default,NTP,0000,0000,0000,,的牛痘病毒  后来发现其实是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which causes a disease called cowpox in cattle, turned out to be,
+Dialogue: 0,0:21:50.71,0:21:51.64,*Default,NTP,0000,0000,0000,,我们现在知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we now know,
+Dialogue: 0,0:21:51.64,0:21:54.26,*Default,NTP,0000,0000,0000,,这两种病毒在分子水平上十分相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}viruses that are molecularly very similar.
+Dialogue: 0,0:21:56.02,0:21:57.71,*Default,NTP,0000,0000,0000,,当时人们所知道的就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What was known at that time was that
+Dialogue: 0,0:21:57.71,0:21:58.72,*Default,NTP,0000,0000,0000,,人得了一种病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was a disease in people,
+Dialogue: 0,0:21:59.11,0:22:00.82,*Default,NTP,0000,0000,0000,,奶牛得了另一种病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there was a different disease in cows,
+Dialogue: 0,0:22:01.44,0:22:03.44,*Default,NTP,0000,0000,0000,,这两种病在某些方面很像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they looked the same some way.
+Dialogue: 0,0:22:04.20,0:22:06.91,*Default,NTP,0000,0000,0000,,詹纳观察到的现象别人也曾观察到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Jenner made the observation that others had made,
+Dialogue: 0,0:22:07.22,0:22:11.86,*Default,NTP,0000,0000,0000,,就是经常接触奶牛的人不容易患天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that people that were around cows a lot tended not to get smallpox.
+Dialogue: 0,0:22:12.47,0:22:16.81,*Default,NTP,0000,0000,0000,,特别是挤奶女工  她们的工作就是挤奶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And in particular, dairy maids, whose responsibility was to milk cows,
+Dialogue: 0,0:22:17.06,0:22:19.91,*Default,NTP,0000,0000,0000,,她们与奶牛有紧密的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so they had a very intimate relationship with cattle,
+Dialogue: 0,0:22:20.43,0:22:22.38,*Default,NTP,0000,0000,0000,,通常不会得天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}often didn't get disease.
+Dialogue: 0,0:22:22.73,0:22:25.36,*Default,NTP,0000,0000,0000,,有时她们会出现轻微的症状\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And sometimes they developed a mild form of the disease.
+Dialogue: 0,0:22:25.62,0:22:27.95,*Default,NTP,0000,0000,0000,,比如  在与奶牛亲密接触的身体部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They would get lesions on their hands, for example,
+Dialogue: 0,0:22:28.13,0:22:30.91,*Default,NTP,0000,0000,0000,,也就是手上 也许会出斑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the part of their body that was really in close contact with the cows.
+Dialogue: 0,0:22:31.26,0:22:37.81,*Default,NTP,0000,0000,0000,,他假定奶牛将这种疾病传染给挤奶女工\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he hypothesized that they were getting the disease in cows,
+Dialogue: 0,0:22:37.96,0:22:42.93,*Default,NTP,0000,0000,0000,,这种源自奶牛的疾病比天花更温和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which the disease from cows that caused a milder disease than smallpox,
+Dialogue: 0,0:22:43.13,0:22:44.37,*Default,NTP,0000,0000,0000,,它保护女工们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that protected them
+Dialogue: 0,0:22:44.37,0:22:46.65,*Default,NTP,0000,0000,0000,,免受更为严重的天花感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from getting the more severe forms of smallpox later.
+Dialogue: 0,0:22:48.37,0:22:53.68,*Default,NTP,0000,0000,0000,,我提到过这只是过去所做的观察里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I mentioned that this was just sort of a more modern observation
+Dialogue: 0,0:22:53.84,0:22:56.09,*Default,NTP,0000,0000,0000,,较为先进的一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of one that had been made in the past.
+Dialogue: 0,0:22:56.27,0:22:58.17,*Default,NTP,0000,0000,0000,,这个过程  我想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This process, I said,
+Dialogue: 0,0:22:58.17,0:23:00.78,*Default,NTP,0000,0000,0000,,这个从病人身上取痂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this ancient process of taking scabs from patients
+Dialogue: 0,0:23:00.94,0:23:03.75,*Default,NTP,0000,0000,0000,,接种到你想保护的人身上的古老过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and introducing them to people you wanted to protect,
+Dialogue: 0,0:23:03.75,0:23:05.15,*Default,NTP,0000,0000,0000,,叫做天花接种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was called variolation.
+Dialogue: 0,0:23:06.28,0:23:12.56,*Default,NTP,0000,0000,0000,,詹纳通过观察发现了一种可能有用的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Jenner was making another observation that might be useful that way.
+Dialogue: 0,0:23:14.31,0:23:17.23,*Default,NTP,0000,0000,0000,,同一时期也有人做过类似的观察\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were other individuals that were making this observation at that time.
+Dialogue: 0,0:23:17.38,0:23:18.02,*Default,NTP,0000,0000,0000,,除了詹纳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In addition to Jenner,
+Dialogue: 0,0:23:18.02,0:23:20.59,*Default,NTP,0000,0000,0000,,还有个叫本杰明•加斯特的农民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was a farmer named Benjamin Jesty,
+Dialogue: 0,0:23:20.86,0:23:25.93,*Default,NTP,0000,0000,0000,,他发现与奶牛接触的农民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who recognized that farmers, being in contact with cows,
+Dialogue: 0,0:23:26.08,0:23:31.00,*Default,NTP,0000,0000,0000,,不像其他人那样容易患天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}didn't get disease as often as non-farmers did.
+Dialogue: 0,0:23:31.14,0:23:37.77,*Default,NTP,0000,0000,0000,,所以他给自己的妻子和两个孩子接种了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, he intentionally inoculated his wife and two children with fluid
+Dialogue: 0,0:23:37.93,0:23:40.07,*Default,NTP,0000,0000,0000,,取自病牛的体液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he got from one of his sick cows.
+Dialogue: 0,0:23:40.32,0:23:42.62,*Default,NTP,0000,0000,0000,,就是这样  他从奶牛身上的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right. So, he took
+Dialogue: 0,0:23:42.62,0:23:44.71,*Default,NTP,0000,0000,0000,,天花瘢痕中取出液体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fluid from a cowpox lesion on a cow,
+Dialogue: 0,0:23:44.88,0:23:46.49,*Default,NTP,0000,0000,0000,,将之注入他的妻儿体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he injected it into his children and his wife,
+Dialogue: 0,0:23:46.63,0:23:49.88,*Default,NTP,0000,0000,0000,,认为这样可以保护他们不得天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reasoning that this would protect them from disease,
+Dialogue: 0,0:23:50.52,0:23:53.60,*Default,NTP,0000,0000,0000,,即使他们并不像农民一样时时与奶牛接触\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though they didn't have as much contact with cows as farmers did.
+Dialogue: 0,0:23:54.11,0:23:56.31,*Default,NTP,0000,0000,0000,,他是对的  当天花在周围流行时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he was right; they got immunity and were protected
+Dialogue: 0,0:23:56.59,0:23:59.63,*Default,NTP,0000,0000,0000,,他们具备了对天花的免疫力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from smallpox when it affected their community.
+Dialogue: 0,0:24:00.49,0:24:02.44,*Default,NTP,0000,0000,0000,,詹纳的方法则更加系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Jenner did this in a much more systematic way.
+Dialogue: 0,0:24:02.87,0:24:05.99,*Default,NTP,0000,0000,0000,,他不仅给家人接种  也接种给全体人民\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He used not just his family, but he used whole populations of people.
+Dialogue: 0,0:24:06.19,0:24:11.59,*Default,NTP,0000,0000,0000,,他生产出一种取自牛痘\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he produced a fluid from cowpox lesions,
+Dialogue: 0,0:24:11.81,0:24:15.72,*Default,NTP,0000,0000,0000,,即牛皮肤上的瘢痕的液体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so these were these lesions, these skin lesions on cows.
+Dialogue: 0,0:24:15.95,0:24:18.94,*Default,NTP,0000,0000,0000,,他取出脓包中的  由这种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He took this pustular fluid that was produced
+Dialogue: 0,0:24:19.05,0:24:21.32,*Default,NTP,0000,0000,0000,,非常特殊的过程产生的液体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at this very specific phase of the disease,
+Dialogue: 0,0:24:23.10,0:24:27.18,*Default,NTP,0000,0000,0000,,他还发明了一种将之接种到人身上的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he developed a way for giving that to people.
+Dialogue: 0,0:24:28.50,0:24:32.88,*Default,NTP,0000,0000,0000,,所以  种痘这个词  就出典于此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, 'vaccination', the word vaccination, comes from this event.
+Dialogue: 0,0:24:34.13,0:24:35.16,*Default,NTP,0000,0000,0000,,vacca是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Vacca is the,
+Dialogue: 0,0:24:35.16,0:24:37.88,*Default,NTP,0000,0000,0000,,我确定这里有一个拉丁学者的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm sure there's a Latin scholar in here
+Dialogue: 0,0:24:37.88,0:24:39.95,*Default,NTP,0000,0000,0000,,他会纠正我的拉丁发音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that will correct my pronunciation,
+Dialogue: 0,0:24:39.95,0:24:43.83,*Default,NTP,0000,0000,0000,,vacca是拉丁语中"牛"的意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but vacca is the Latin word for cow.
+Dialogue: 0,0:24:44.02,0:24:46.06,*Default,NTP,0000,0000,0000,,从牛身上获取牛痘疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Vaccination from cows,
+Dialogue: 0,0:24:46.06,0:24:48.10,*Default,NTP,0000,0000,0000,,这是疫苗首次亮相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's where the first vaccine came from.
+Dialogue: 0,0:24:49.05,0:24:53.61,*Default,NTP,0000,0000,0000,,而詹纳  因为他是个受过训练的医生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Jenner, because he was a trained physician,
+Dialogue: 0,0:24:53.73,0:24:56.22,*Default,NTP,0000,0000,0000,,懂得一些科学方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he knew something about the scientific method,
+Dialogue: 0,0:24:56.49,0:25:01.54,*Default,NTP,0000,0000,0000,,他做了那些古老的医生们没有做的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}did something that these more ancient healers had not done in the past,
+Dialogue: 0,0:25:01.65,0:25:03.29,*Default,NTP,0000,0000,0000,,就是记录了自己的所作所为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was that he wrote down what he did.
+Dialogue: 0,0:25:03.86,0:25:08.10,*Default,NTP,0000,0000,0000,,他与接种过牛痘的人保持联系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he kept track of how many people he gave the vaccines to,
+Dialogue: 0,0:25:08.22,0:25:10.86,*Default,NTP,0000,0000,0000,,关注当天花在这些人周围肆虐时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then he kept track of what would happen to those people
+Dialogue: 0,0:25:11.07,0:25:13.59,*Default,NTP,0000,0000,0000,,他们身上发生了什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when a smallpox infection occurred in their community.
+Dialogue: 0,0:25:14.05,0:25:16.72,*Default,NTP,0000,0000,0000,,凭借他的持续关注和追踪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as a result of writing it down and keeping track,
+Dialogue: 0,0:25:17.23,0:25:19.30,*Default,NTP,0000,0000,0000,,他做出了十分清晰的记录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he produced a very clear record,
+Dialogue: 0,0:25:19.31,0:25:21.00,*Default,NTP,0000,0000,0000,,留下了科学证据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and scientific evidence,
+Dialogue: 0,0:25:21.12,0:25:23.02,*Default,NTP,0000,0000,0000,,证明这种方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that using this procedure
+Dialogue: 0,0:25:23.02,0:25:26.51,*Default,NTP,0000,0000,0000,,可以让人们不再得这种病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could protect a population of people from the disease.
+Dialogue: 0,0:25:28.14,0:25:35.73,*Default,NTP,0000,0000,0000,,而这就是现代疫苗接种实践的开端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, that was the start of the modern practice of vaccination.
+Dialogue: 0,0:25:36.82,0:25:38.61,*Default,NTP,0000,0000,0000,,詹纳的方法中存在一些问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were problems with Jenner's approach,
+Dialogue: 0,0:25:38.74,0:25:40.43,*Default,NTP,0000,0000,0000,,你们想想问题出在哪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can imagine what some of those problems are.
+Dialogue: 0,0:25:41.27,0:25:47.56,*Default,NTP,0000,0000,0000,,一是  你若要想从奶牛身上得到疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is that you got to get the vaccine from cows,
+Dialogue: 0,0:25:47.71,0:25:51.30,*Default,NTP,0000,0000,0000,,那就得有一头奶牛感染病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you got to have an infected cow in order to produce the vaccine.
+Dialogue: 0,0:25:51.56,0:25:54.53,*Default,NTP,0000,0000,0000,,在给人们预防接种之前  你只有干等着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, it's awkward to have to wait for a cow to get infected
+Dialogue: 0,0:25:54.59,0:25:56.88,*Default,NTP,0000,0000,0000,,直到有一头奶牛感染了病毒才行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before you can vaccinate a population.
+Dialogue: 0,0:25:57.34,0:25:58.82,*Default,NTP,0000,0000,0000,,万一你遇到一群人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What if you're talking about a group of people
+Dialogue: 0,0:25:58.96,0:26:01.08,*Default,NTP,0000,0000,0000,,他们附近连头奶牛都没有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that don't have any cows in their vicinity,
+Dialogue: 0,0:26:01.20,0:26:02.32,*Default,NTP,0000,0000,0000,,更不用说受病毒感染的奶牛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let alone a sick cow?
+Dialogue: 0,0:26:02.42,0:26:04.58,*Default,NTP,0000,0000,0000,,你怎么获得疫苗来给他们接种呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do you get the vaccine to them?
+Dialogue: 0,0:26:05.06,0:26:09.39,*Default,NTP,0000,0000,0000,,这个问题一定程度上可以这样解决\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that problem was partly solved by saying,
+Dialogue: 0,0:26:09.53,0:26:13.38,*Default,NTP,0000,0000,0000,,如果我给一个人接种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'Well,if I'm giving the inoculation to one person,
+Dialogue: 0,0:26:13.55,0:26:15.70,*Default,NTP,0000,0000,0000,,他们发生局部病变\Nand they develop a lesion locally…',
+Dialogue: 0,0:26:15.84,0:26:16.95,*Default,NTP,0000,0000,0000,,然后就可以解决了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's what would happen.
+Dialogue: 0,0:26:17.03,0:26:19.18,*Default,NTP,0000,0000,0000,,当你从奶牛上得到脓液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you would take the fluid from the cow,
+Dialogue: 0,0:26:19.32,0:26:22.93,*Default,NTP,0000,0000,0000,,并把脓液注射到想受到保护的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you would inject it underneath the skin
+Dialogue: 0,0:26:23.31,0:26:25.67,*Default,NTP,0000,0000,0000,,人的皮肤下面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a person you wanted to protect,
+Dialogue: 0,0:26:25.99,0:26:28.05,*Default,NTP,0000,0000,0000,,然后在你注射的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then at that site where you injected it,
+Dialogue: 0,0:26:28.19,0:26:33.18,*Default,NTP,0000,0000,0000,,你会看到像天花或者牛痘一样的病变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you would get a lesion that looked like a smallpox or cowpox lesion.
+Dialogue: 0,0:26:33.36,0:26:36.49,*Default,NTP,0000,0000,0000,,然后经过我之前描述的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it would go through these same phases that I described before.
+Dialogue: 0,0:26:36.99,0:26:41.20,*Default,NTP,0000,0000,0000,,你会看到一个透明的像水泡一样的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it would,you'd get a clear blister-like region,
+Dialogue: 0,0:26:41.22,0:26:42.73,*Default,NTP,0000,0000,0000,,它会变成脓疱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would turn pustular.
+Dialogue: 0,0:26:42.74,0:26:45.45,*Default,NTP,0000,0000,0000,,愈合之后会变成一个疤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Eventually you develop a scab, as it healed,
+Dialogue: 0,0:26:45.55,0:26:47.95,*Default,NTP,0000,0000,0000,,这个疤后来会脱落\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then it would--and then the scab would fall off,
+Dialogue: 0,0:26:47.96,0:26:49.28,*Default,NTP,0000,0000,0000,,你身上会留下疤痕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you'd be left with a scar.
+Dialogue: 0,0:26:49.88,0:26:52.88,*Default,NTP,0000,0000,0000,,但假如不从奶牛那儿取得脓液\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what if instead of taking the fluid from a cow,
+Dialogue: 0,0:26:53.29,0:26:56.65,*Default,NTP,0000,0000,0000,,假设说是从他那里接种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I inoculated--he inoculated me, let's say,
+Dialogue: 0,0:26:56.83,0:27:00.01,*Default,NTP,0000,0000,0000,,等到病变程度合适\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and waited until I had the lesion at the right stage,
+Dialogue: 0,0:27:00.30,0:27:02.57,*Default,NTP,0000,0000,0000,,然后把我的脓液给\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then took some of my fluid and gave it to
+Dialogue: 0,0:27:02.58,0:27:05.98,*Default,NTP,0000,0000,0000,,布莱恩和纳特还有米特拉 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Brian and Nate and Mirtalla
+Dialogue: 0,0:27:05.99,0:27:08.83,*Default,NTP,0000,0000,0000,,并在我身边的人们之间传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and spread it through the community around me.
+Dialogue: 0,0:27:08.96,0:27:11.53,*Default,NTP,0000,0000,0000,,由于它可以在人与人之间传播 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now we don't need the cow anymore
+Dialogue: 0,0:27:11.53,0:27:14.10,*Default,NTP,0000,0000,0000,,就不再需要奶牛了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you could pass it from one person to another,
+Dialogue: 0,0:27:14.22,0:27:16.19,*Default,NTP,0000,0000,0000,,就可以把免疫力在人与人之间传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and pass the immunity from one person to another.
+Dialogue: 0,0:27:16.51,0:27:17.45,*Default,NTP,0000,0000,0000,,这样就行得通了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that works.
+Dialogue: 0,0:27:18.20,0:27:20.25,*Default,NTP,0000,0000,0000,,这个方法的问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The problem with it is that
+Dialogue: 0,0:27:20.25,0:27:23.05,*Default,NTP,0000,0000,0000,,其它疾病也会通过这种方式来传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you also can spread other diseases in that way.
+Dialogue: 0,0:27:23.19,0:27:24.80,*Default,NTP,0000,0000,0000,,你传播的不仅仅是特定一种传染病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're not only spreading the infection.
+Dialogue: 0,0:27:25.11,0:27:29.27,*Default,NTP,0000,0000,0000,,如果正好还有其他传染病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I happen to have some other infectious disease,
+Dialogue: 0,0:27:29.46,0:27:33.68,*Default,NTP,0000,0000,0000,,那不仅会传播对天花的免疫能力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then not only would you passing the protection to smallpox,
+Dialogue: 0,0:27:33.82,0:27:37.44,*Default,NTP,0000,0000,0000,,也在人群中传播其它传染病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you'd be passing that disease among the population as well.
+Dialogue: 0,0:27:37.56,0:27:38.61,*Default,NTP,0000,0000,0000,,现在已知另外一种疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it turned out that another,
+Dialogue: 0,0:27:38.92,0:27:42.03,*Default,NTP,0000,0000,0000,,它并不完全致命但也很严重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not quite as deadly, but still very serious disease
+Dialogue: 0,0:27:42.04,0:27:46.99,*Default,NTP,0000,0000,0000,,它叫梅毒  在那时的一些地方也很常见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called syphilis was also common in this part of the world at that time.
+Dialogue: 0,0:27:47.13,0:27:49.51,*Default,NTP,0000,0000,0000,,所以你可能把像梅毒这样的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so you could pass diseases like syphilis
+Dialogue: 0,0:27:49.51,0:27:51.21,*Default,NTP,0000,0000,0000,,从一个人传到另一个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from one individual to another.
+Dialogue: 0,0:27:51.37,0:27:53.85,*Default,NTP,0000,0000,0000,,这可不妙  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's not great, right?
+Dialogue: 0,0:27:53.99,0:27:55.58,*Default,NTP,0000,0000,0000,,这方法并不完美\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's not perfect.
+Dialogue: 0,0:27:56.07,0:28:00.70,*Default,NTP,0000,0000,0000,,另外一个问题是当疫苗从我这传到另一人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other problem is that as it was passed from me to another individual,
+Dialogue: 0,0:28:00.83,0:28:01.87,*Default,NTP,0000,0000,0000,,到另一个个体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to another individual,
+Dialogue: 0,0:28:02.22,0:28:05.58,*Default,NTP,0000,0000,0000,,疫苗可能会发生某些改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the vaccine could change in some ways
+Dialogue: 0,0:28:05.70,0:28:07.72,*Default,NTP,0000,0000,0000,,这种改变很难预测\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were hard to predict
+Dialogue: 0,0:28:07.72,0:28:10.53,*Default,NTP,0000,0000,0000,,因为胳膊上积累的病变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because what accumulates in the lesion in my arm
+Dialogue: 0,0:28:10.53,0:28:15.03,*Default,NTP,0000,0000,0000,,与牛身上积累的病变是不太一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is different in some way  than what accumulates in the lesion on a cow.
+Dialogue: 0,0:28:15.54,0:28:18.83,*Default,NTP,0000,0000,0000,,随着疫苗在人群中的传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as you move through the human population,
+Dialogue: 0,0:28:19.14,0:28:25.00,*Default,NTP,0000,0000,0000,,它的效果会发生改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the kind of response that you get could change
+Dialogue: 0,0:28:25.20,0:28:28.36,*Default,NTP,0000,0000,0000,,这是因为病毒自身变异\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the virus itself mutates
+Dialogue: 0,0:28:28.36,0:28:30.76,*Default,NTP,0000,0000,0000,,或者这个过程也传播了一些东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or because you're also passing on some factors
+Dialogue: 0,0:28:30.77,0:28:32.82,*Default,NTP,0000,0000,0000,,它提供了某种保护机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that provide some protection
+Dialogue: 0,0:28:32.83,0:28:36.26,*Default,NTP,0000,0000,0000,,改变了疾病在疫苗接受者体内的发病过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that changes the course of disease in the recipient.
+Dialogue: 0,0:28:37.01,0:28:40.35,*Default,NTP,0000,0000,0000,,所以当疫苗从一个人传给另一个人之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So,as the vaccine was passed from arm to arm,
+Dialogue: 0,0:28:40.49,0:28:42.23,*Default,NTP,0000,0000,0000,,它的防治效力会减弱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it became less potent,
+Dialogue: 0,0:28:42.35,0:28:45.91,*Default,NTP,0000,0000,0000,,它带给人的免疫期限也会改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the length of protection that it would give you varied.
+Dialogue: 0,0:28:45.92,0:28:47.88,*Default,NTP,0000,0000,0000,,如果一个疫苗经过很多人的传递\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, if you were someone that was getting it
+Dialogue: 0,0:28:48.07,0:28:50.01,*Default,NTP,0000,0000,0000,,再接种到你身上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after it had been passed through many people,
+Dialogue: 0,0:28:50.17,0:28:54.02,*Default,NTP,0000,0000,0000,,你不会获得像第一个接受疫苗的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you wouldn't have as strong or as lengthy a protection
+Dialogue: 0,0:28:54.02,0:28:57.28,*Default,NTP,0000,0000,0000,,那样强效持久的免疫效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the first individual did.
+Dialogue: 0,0:28:57.52,0:28:59.59,*Default,NTP,0000,0000,0000,,我们要记住这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we're going to just keep that in mind.
+Dialogue: 0,0:28:59.73,0:29:02.83,*Default,NTP,0000,0000,0000,,随着课程的进行我们会讲到其中的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about the reasons for that as we go along,
+Dialogue: 0,0:29:02.96,0:29:05.21,*Default,NTP,0000,0000,0000,,尤其是下次课开始时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly at the beginning of class next time.
+Dialogue: 0,0:29:05.86,0:29:08.74,*Default,NTP,0000,0000,0000,,为了给每个人带来相同的免疫效果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what was really needed
+Dialogue: 0,0:29:08.74,0:29:11.18,*Default,NTP,0000,0000,0000,,我们需要精准的疫苗制剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to do this was a defined preparation, right?
+Dialogue: 0,0:29:11.31,0:29:14.63,*Default,NTP,0000,0000,0000,,最好是把完全一致的制剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What you would like to is everybody in the community
+Dialogue: 0,0:29:14.64,0:29:17.36,*Default,NTP,0000,0000,0000,,分发给每个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}exactly the same preparation
+Dialogue: 0,0:29:17.59,0:29:20.56,*Default,NTP,0000,0000,0000,,这样才能预测每个人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you could predict what everybody's response
+Dialogue: 0,0:29:20.72,0:29:22.33,*Default,NTP,0000,0000,0000,,对疫苗的反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the vaccine would be.
+Dialogue: 0,0:29:24.64,0:29:28.37,*Default,NTP,0000,0000,0000,,在詹纳研制出天花疫苗二百多年后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It wasn't until the 20th century,
+Dialogue: 0,0:29:28.58,0:29:31.50,*Default,NTP,0000,0000,0000,,直到二十世纪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so almost 200 years later,
+Dialogue: 0,0:29:32.46,0:29:34.73,*Default,NTP,0000,0000,0000,,我们才知道如何做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we learned how to do this.
+Dialogue: 0,0:29:34.92,0:29:40.05,*Default,NTP,0000,0000,0000,,它基于这样几个原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it was based on a couple of things.
+Dialogue: 0,0:29:40.15,0:29:41.86,*Default,NTP,0000,0000,0000,,一是更好的理解了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One was, a better understanding of
+Dialogue: 0,0:29:41.86,0:29:44.43,*Default,NTP,0000,0000,0000,,当你接种时究竟发生了什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what you were doing when you vaccinated.
+Dialogue: 0,0:29:44.62,0:29:46.98,*Default,NTP,0000,0000,0000,,我刚刚已经向你们提示了一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I've already given you some clues about this,
+Dialogue: 0,0:29:47.30,0:29:50.75,*Default,NTP,0000,0000,0000,,在詹纳发明的接种过程里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that this process of vaccination that Jenner had developed
+Dialogue: 0,0:29:51.00,0:29:58.15,*Default,NTP,0000,0000,0000,,故意把微生物注射到健康病人身上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was intentionally injecting into healthy patients, a microorganism.
+Dialogue: 0,0:29:58.27,0:30:01.70,*Default,NTP,0000,0000,0000,,这个例子里牛痘病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In this case the virus vaccinia,
+Dialogue: 0,0:30:01.84,0:30:04.14,*Default,NTP,0000,0000,0000,,可以引起奶牛严重的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which causes a serious disease in cows
+Dialogue: 0,0:30:04.40,0:30:06.24,*Default,NTP,0000,0000,0000,,但只能引起人体温和的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but only a mild disease in people,
+Dialogue: 0,0:30:08.00,0:30:13.03,*Default,NTP,0000,0000,0000,,注射它  因为它在某些方面很像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and injecting that--because it was similar to variola,
+Dialogue: 0,0:30:13.16,0:30:15.14,*Default,NTP,0000,0000,0000,,引起天花的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the smallpox causing virus in some way,
+Dialogue: 0,0:30:16.21,0:30:21.16,*Default,NTP,0000,0000,0000,,会使你的免疫系统产生对牛痘的免疫应答\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that your immune system would develop a response to vaccinia.
+Dialogue: 0,0:30:21.68,0:30:24.24,*Default,NTP,0000,0000,0000,,因为这两种病毒很相像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But because of the similarity of the viruses,
+Dialogue: 0,0:30:24.82,0:30:27.89,*Default,NTP,0000,0000,0000,,人体的免疫应答也能保护自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the immune response that people developed would also
+Dialogue: 0,0:30:28.02,0:30:30.99,*Default,NTP,0000,0000,0000,,免受天花的感染\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}protect them against natural infections with variola.
+Dialogue: 0,0:30:32.11,0:30:34.52,*Default,NTP,0000,0000,0000,,我们把这样一个过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we call that now,
+Dialogue: 0,0:30:34.66,0:30:38.46,*Default,NTP,0000,0000,0000,,即注射活病毒到人体以产生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that process of infecting with a life virus,
+Dialogue: 0,0:30:38.78,0:30:42.69,*Default,NTP,0000,0000,0000,,对其他病毒有交叉反应的免疫应答 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that produces an immune response that cross-reacts with another,
+Dialogue: 0,0:30:42.86,0:30:45.21,*Default,NTP,0000,0000,0000,,叫做天然产生的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's called a naturally occurring,
+Dialogue: 0,0:30:45.33,0:30:48.47,*Default,NTP,0000,0000,0000,,减毒疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}attenuated vaccine:
+Dialogue: 0,0:30:48.70,0:30:49.75,*Default,NTP,0000,0000,0000,,叫做天然的是因为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}naturally occurring because
+Dialogue: 0,0:30:49.75,0:30:51.33,*Default,NTP,0000,0000,0000,,我们用了自然界产生的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we took a virus that occurred in nature;
+Dialogue: 0,0:30:51.79,0:30:56.86,*Default,NTP,0000,0000,0000,,叫做减毒的是因为尽管它引起了免疫应答\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}attenuated because it causes an immune response in people
+Dialogue: 0,0:30:56.86,0:31:00.03,*Default,NTP,0000,0000,0000,,但只引起了温和的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a mild form of disease,
+Dialogue: 0,0:31:00.28,0:31:01.83,*Default,NTP,0000,0000,0000,,而不是全面的病发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not the full form of disease.
+Dialogue: 0,0:31:02.98,0:31:07.13,*Default,NTP,0000,0000,0000,,这就是一个天然减毒疫苗的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so this is an example of a naturally occurring, attenuated vaccine.
+Dialogue: 0,0:31:08.38,0:31:11.25,*Default,NTP,0000,0000,0000,,问题是该怎么进行生产  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, how could you produce--the question is,
+Dialogue: 0,0:31:11.43,0:31:16.30,*Default,NTP,0000,0000,0000,,你怎么大批量生产这种微生物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how could you produce large quantities of this- of this microorganism,
+Dialogue: 0,0:31:16.50,0:31:20.33,*Default,NTP,0000,0000,0000,,即在可控条件下生产牛痘病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this virus vaccinia under controlled conditions?
+Dialogue: 0,0:31:20.63,0:31:23.69,*Default,NTP,0000,0000,0000,,你知道  因为我们已经讲过细胞培养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you know, because we talked about cell culture already,
+Dialogue: 0,0:31:23.99,0:31:27.50,*Default,NTP,0000,0000,0000,,我们上周讲过的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a great--that we talked about last week,
+Dialogue: 0,0:31:27.62,0:31:28.90,*Default,NTP,0000,0000,0000,,细胞的大规模制造\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}manufacturing of cells.
+Dialogue: 0,0:31:29.17,0:31:30.33,*Default,NTP,0000,0000,0000,,两周前我们讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We talked about two weeks ago,
+Dialogue: 0,0:31:30.46,0:31:31.97,*Default,NTP,0000,0000,0000,,如果你有一群细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that if you had a population of cells,
+Dialogue: 0,0:31:32.20,0:31:34.75,*Default,NTP,0000,0000,0000,,你可以使细胞数量增长\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could grow those population of cells and you could make,
+Dialogue: 0,0:31:34.99,0:31:37.08,*Default,NTP,0000,0000,0000,,如果培养得当  你可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if they adapted the culture properly,
+Dialogue: 0,0:31:37.19,0:31:40.88,*Default,NTP,0000,0000,0000,,从开始的营养液中制造出无限数量的细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could make an infinite number of cells from one starting solution.
+Dialogue: 0,0:31:41.25,0:31:45.64,*Default,NTP,0000,0000,0000,,如果你知道细胞可以变成病毒的宿主\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, if you knew a cell that could serve as a host for a virus,
+Dialogue: 0,0:31:45.78,0:31:47.85,*Default,NTP,0000,0000,0000,,可以用培养细胞的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could use this process of cell culture
+Dialogue: 0,0:31:47.85,0:31:49.91,*Default,NTP,0000,0000,0000,,制造大量病毒  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to make large quantities of virus,right?
+Dialogue: 0,0:31:50.23,0:31:53.18,*Default,NTP,0000,0000,0000,,你只要培养细胞直到得到大量细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You just grow up cells until you've got a lot of cells.
+Dialogue: 0,0:31:53.30,0:31:54.66,*Default,NTP,0000,0000,0000,,再用病毒感染它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You infect them with the virus,
+Dialogue: 0,0:31:54.89,0:31:59.41,*Default,NTP,0000,0000,0000,,使培养基中的细胞产生病毒 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you let the cells, in culture, produce the virus.
+Dialogue: 0,0:31:59.72,0:32:02.10,*Default,NTP,0000,0000,0000,,然而我们还不能断定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it turns out that we could not identify,
+Dialogue: 0,0:32:02.25,0:32:03.32,*Default,NTP,0000,0000,0000,,至少这个时候无法断定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least at that point,
+Dialogue: 0,0:32:03.58,0:32:09.43,*Default,NTP,0000,0000,0000,,这些被感染的细胞就是牛痘病毒的宿主\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a cell culture that would serve as a host for vaccinia.
+Dialogue: 0,0:32:09.58,0:32:11.82,*Default,NTP,0000,0000,0000,,因此把细胞作为病毒培养基行不通 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So cell culture production wasn't an option.
+Dialogue: 0,0:32:12.43,0:32:15.75,*Default,NTP,0000,0000,0000,,那目前我们所知道的唯一途径就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The only way that we knew how to grow it reliably was
+Dialogue: 0,0:32:15.75,0:32:18.18,*Default,NTP,0000,0000,0000,,利用它的自然宿主  奶牛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to grow it in its natural host: cows.
+Dialogue: 0,0:32:18.94,0:32:21.75,*Default,NTP,0000,0000,0000,,在二十世纪四十年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so in the 1940s,
+Dialogue: 0,0:32:22.04,0:32:27.09,*Default,NTP,0000,0000,0000,,科利尔带领一群人开始研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a group of people led by Collier started to develop
+Dialogue: 0,0:32:27.34,0:32:29.07,*Default,NTP,0000,0000,0000,,一种大规模的生产方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a large scale production method
+Dialogue: 0,0:32:29.08,0:32:32.19,*Default,NTP,0000,0000,0000,,这种方法能制得牛痘病毒的可靠来源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for making a reliable source of vaccinia virus.
+Dialogue: 0,0:32:32.20,0:32:35.27,*Default,NTP,0000,0000,0000,,他们有意感染很多小牛\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And they did that by intentionally infecting calves,
+Dialogue: 0,0:32:36.02,0:32:38.37,*Default,NTP,0000,0000,0000,,当小牛疾病发展到一定程度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by harvesting their skin
+Dialogue: 0,0:32:38.37,0:32:39.34,*Default,NTP,0000,0000,0000,,就收割牛皮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they were at a certain point of the disease,
+Dialogue: 0,0:32:39.59,0:32:42.79,*Default,NTP,0000,0000,0000,,然后把病毒从牛皮里分离出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and by isolating the virus from the skin of the calves.
+Dialogue: 0,0:32:44.35,0:32:45.16,*Default,NTP,0000,0000,0000,,当然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And of course,
+Dialogue: 0,0:32:45.27,0:32:48.85,*Default,NTP,0000,0000,0000,,你能够想象  这种方法需要时间来发展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could imagine that this took some time to develop.
+Dialogue: 0,0:32:48.85,0:32:49.89,*Default,NTP,0000,0000,0000,,你要保证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd want to make sure that
+Dialogue: 0,0:32:50.28,0:32:53.03,*Default,NTP,0000,0000,0000,,你从所有的牛皮组织上分离出病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you separated the virus from all the other parts of cow skin
+Dialogue: 0,0:32:53.31,0:32:57.27,*Default,NTP,0000,0000,0000,,这样最终的制剂产品才会富集病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that your ultimate preparation was enriched in the virus
+Dialogue: 0,0:32:57.41,0:32:59.18,*Default,NTP,0000,0000,0000,,并且不会携带其它物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and didn't contain quantities of other things
+Dialogue: 0,0:32:59.18,0:33:01.29,*Default,NTP,0000,0000,0000,,这些物质可能带来危险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would be hazardous.
+Dialogue: 0,0:33:01.50,0:33:03.90,*Default,NTP,0000,0000,0000,,这就是十九世纪四十年代完成的工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so that's what was done in the 1940s.
+Dialogue: 0,0:33:04.20,0:33:08.97,*Default,NTP,0000,0000,0000,,研究者们发现可以冷冻干燥这些病毒制剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then they found that they could freeze-dry this preparation of virus,
+Dialogue: 0,0:33:09.09,0:33:11.99,*Default,NTP,0000,0000,0000,,冷冻干燥就是就是降低温度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and freeze-drying to lower the temperature,
+Dialogue: 0,0:33:11.99,0:33:13.89,*Default,NTP,0000,0000,0000,,冷冻病毒  然后提取出所有水份\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}freeze it, then extract out all the water,
+Dialogue: 0,0:33:14.02,0:33:15.26,*Default,NTP,0000,0000,0000,,然后就剩下一些粉末\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you're left with a powder,
+Dialogue: 0,0:33:15.52,0:33:17.16,*Default,NTP,0000,0000,0000,,这主要是粉末状的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}basically a powdered form of the virus,
+Dialogue: 0,0:33:17.49,0:33:19.21,*Default,NTP,0000,0000,0000,,这样就能将它运往全世界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that could be shipped all over the world,
+Dialogue: 0,0:33:19.48,0:33:21.86,*Default,NTP,0000,0000,0000,,并可以通过加水来恢复病毒的活性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then reconstituted by adding water to it.
+Dialogue: 0,0:33:22.54,0:33:29.88,*Default,NTP,0000,0000,0000,,对  这很像Kool-Aid[速溶饮料]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right, so it's like--it's like Kool-Aid,
+Dialogue: 0,0:33:29.88,0:33:31.64,*Default,NTP,0000,0000,0000,,但更有效\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but more potent.
+Dialogue: 0,0:33:32.58,0:33:34.27,*Default,NTP,0000,0000,0000,,而且用法是一样的  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But used the same way, right?
+Dialogue: 0,0:33:34.41,0:33:35.71,*Default,NTP,0000,0000,0000,,你可以把粉末运送到任何地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The powder you could ship anywhere,
+Dialogue: 0,0:33:35.84,0:33:38.54,*Default,NTP,0000,0000,0000,,就地恢复活性  并将其注射到人体内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and reconstitute it onsite, and then it gets injected.
+Dialogue: 0,0:33:38.75,0:33:42.02,*Default,NTP,0000,0000,0000,,他们还发明了一种可靠的方法来引入病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And they also developed a very reliable way for introducing the virus,
+Dialogue: 0,0:33:42.22,0:33:44.81,*Default,NTP,0000,0000,0000,,当人们有了确定的病毒制剂之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that when they had a defined preparation of virus,
+Dialogue: 0,0:33:44.97,0:33:45.89,*Default,NTP,0000,0000,0000,,就要要保证这些制剂都以正确的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you want to make sure that everybody gets it
+Dialogue: 0,0:33:45.89,0:33:47.74,*Default,NTP,0000,0000,0000,,注射至皮下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in their skin in the right way.
+Dialogue: 0,0:33:47.95,0:33:50.44,*Default,NTP,0000,0000,0000,,所以他们发明了一种分为两叉的工具\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, they developed this bifurcated tool,
+Dialogue: 0,0:33:50.85,0:33:55.08,*Default,NTP,0000,0000,0000,,把疫苗抹在这种工具表面上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which would be appl--you'd put the stuff on the surface of the tool
+Dialogue: 0,0:33:55.19,0:33:59.11,*Default,NTP,0000,0000,0000,,然后以某种方式在皮肤上刮\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you'd scratch the skin in a certain way
+Dialogue: 0,0:33:59.11,0:34:01.54,*Default,NTP,0000,0000,0000,,这样就能将疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that you could produce sort of
+Dialogue: 0,0:34:01.54,0:34:05.00,*Default,NTP,0000,0000,0000,,重复不断地引入到皮下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a reproducible introduction of the vaccine into the skin.
+Dialogue: 0,0:34:06.57,0:34:09.70,*Default,NTP,0000,0000,0000,,冻干疫苗的应用能使医护人员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Availability of this freeze-dried vaccine made it,
+Dialogue: 0,0:34:09.82,0:34:13.05,*Default,NTP,0000,0000,0000,,考虑向全世界人民接种疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then, possible to think about vaccinating people all over the world.
+Dialogue: 0,0:34:13.58,0:34:17.31,*Default,NTP,0000,0000,0000,,这并不会花费很多时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so it didn't take long,
+Dialogue: 0,0:34:17.43,0:34:19.80,*Default,NTP,0000,0000,0000,,一旦疫苗生产完毕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}once this vaccine were--was available,
+Dialogue: 0,0:34:20.08,0:34:23.81,*Default,NTP,0000,0000,0000,,一些人就会组织起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for people to want to get organized
+Dialogue: 0,0:34:23.81,0:34:28.89,*Default,NTP,0000,0000,0000,,并想办法把将这些疫苗送往\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and think about ways of delivering this vaccine
+Dialogue: 0,0:34:29.09,0:34:29.97,*Default,NTP,0000,0000,0000,,世界上一些地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to all the regions of the world
+Dialogue: 0,0:34:29.97,0:34:32.12,*Default,NTP,0000,0000,0000,,那些地方的人很有可能感染疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where people were potentially infected.
+Dialogue: 0,0:34:32.23,0:34:34.54,*Default,NTP,0000,0000,0000,,世界卫生组织  或者叫WHO\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was the World Health Organization, or WHO,
+Dialogue: 0,0:34:34.79,0:34:36.46,*Default,NTP,0000,0000,0000,,正在努力完成这项工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which led this effort.
+Dialogue: 0,0:34:36.79,0:34:39.66,*Default,NTP,0000,0000,0000,,其目标是根除病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the goal was to eradicate the virus,
+Dialogue: 0,0:34:39.86,0:34:41.49,*Default,NTP,0000,0000,0000,,完全除掉病毒  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to get rid of it
+Dialogue: 0,0:34:41.49,0:34:44.73,*Default,NTP,0000,0000,0000,,让这个星球上不再有病毒的自然来源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that there were no natural sources of the virus on the planet.
+Dialogue: 0,0:34:45.18,0:34:47.00,*Default,NTP,0000,0000,0000,,天花能够被根治的原因在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that was possible in smallpox
+Dialogue: 0,0:34:47.00,0:34:49.59,*Default,NTP,0000,0000,0000,,这种疾病具有以下几个特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of a few characteristics of the disease:
+Dialogue: 0,0:34:49.81,0:34:52.85,*Default,NTP,0000,0000,0000,,一是  它是一种只有人类才得的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one is that it's a--it's purely a human disease,
+Dialogue: 0,0:34:53.01,0:34:57.67,*Default,NTP,0000,0000,0000,,人类是唯一受天花感染的生物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}humans are the only organisms that are affected by it.
+Dialogue: 0,0:34:58.32,0:34:59.53,*Default,NTP,0000,0000,0000,,这很重要  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's important, right?
+Dialogue: 0,0:34:59.67,0:35:02.33,*Default,NTP,0000,0000,0000,,因为假如人和松鼠都能携带\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because if it was a disease that was carried by
+Dialogue: 0,0:35:02.33,0:35:04.50,*Default,NTP,0000,0000,0000,,某种疾病的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}both humans and squirrels, for example,
+Dialogue: 0,0:35:04.50,0:35:08.84,*Default,NTP,0000,0000,0000,,想要把这种疾病从地球上清除\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then in order to get rid of it on the planet,
+Dialogue: 0,0:35:08.98,0:35:10.36,*Default,NTP,0000,0000,0000,,不仅要给所有人接种疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'd have to vaccinate not only all the people
+Dialogue: 0,0:35:10.36,0:35:11.53,*Default,NTP,0000,0000,0000,,还要给所有松鼠接种疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but all the squirrels, right?
+Dialogue: 0,0:35:11.91,0:35:14.02,*Default,NTP,0000,0000,0000,,否则松鼠就会变成宿主\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Otherwise you could have a squirrel host--
+Dialogue: 0,0:35:14.02,0:35:15.70,*Default,NTP,0000,0000,0000,,我拿松鼠举例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm using squirrels,
+Dialogue: 0,0:35:17.67,0:35:20.10,*Default,NTP,0000,0000,0000,,是因为我觉得它比别的动物更有趣\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I think that's funnier than other animals to think of—
+Dialogue: 0,0:35:20.50,0:35:23.34,*Default,NTP,0000,0000,0000,,但潜在宿主可以是任何动物  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it could be any potential host, right?
+Dialogue: 0,0:35:23.51,0:35:28.48,*Default,NTP,0000,0000,0000,,而给野生动物接种是非常困难的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it would be really difficult to vaccinate a wildlife.
+Dialogue: 0,0:35:29.40,0:35:31.59,*Default,NTP,0000,0000,0000,,天花不仅没有非人类的藏身之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there are no non-human reservoirs.
+Dialogue: 0,0:35:32.18,0:35:34.06,*Default,NTP,0000,0000,0000,,也没有无症状的病毒携带者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were no asymptomatic carriers.
+Dialogue: 0,0:35:34.34,0:35:37.17,*Default,NTP,0000,0000,0000,,如果你感染了天花病毒  就会得这种病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you got infected with smallpox, you got the disease.
+Dialogue: 0,0:35:37.39,0:35:39.23,*Default,NTP,0000,0000,0000,,这不像人们感染了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There weren't people that got infected,
+Dialogue: 0,0:35:39.35,0:35:42.85,*Default,NTP,0000,0000,0000,,像B型肝炎或者肺结核这类病时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like you can get infected with hepatitis B or tuberculosis,
+Dialogue: 0,0:35:43.09,0:35:44.88,*Default,NTP,0000,0000,0000,,都有可能不知道自己被感染了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not even know you're infected.
+Dialogue: 0,0:35:45.00,0:35:46.25,*Default,NTP,0000,0000,0000,,你可能没有任何症状\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You might not know have any symptoms,
+Dialogue: 0,0:35:46.30,0:35:48.36,*Default,NTP,0000,0000,0000,,微生物可能只是在体内某处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might just have a latent source of the microorganism
+Dialogue: 0,0:35:48.36,0:35:50.65,*Default,NTP,0000,0000,0000,,暗中不断滋生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}somewhere in your body.
+Dialogue: 0,0:35:50.66,0:35:52.13,*Default,NTP,0000,0000,0000,,天花则不会这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that didn't happen with smallpox.
+Dialogue: 0,0:35:52.21,0:35:53.30,*Default,NTP,0000,0000,0000,,这一点也非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's important, too,
+Dialogue: 0,0:35:53.48,0:35:56.76,*Default,NTP,0000,0000,0000,,因为你要能够分辨出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you need to be able to tell
+Dialogue: 0,0:35:56.76,0:36:00.76,*Default,NTP,0000,0000,0000,,人群中是否有人感染了天花病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the virus is present in the human population.
+Dialogue: 0,0:36:01.24,0:36:02.97,*Default,NTP,0000,0000,0000,,基于天花的这两个特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so because of those two things
+Dialogue: 0,0:36:02.97,0:36:05.18,*Default,NTP,0000,0000,0000,,有关人员就能想出根除天花的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could think about eradicating the virus.
+Dialogue: 0,0:36:05.32,0:36:06.90,*Default,NTP,0000,0000,0000,,他们做了系统的工作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They did this very systematically,
+Dialogue: 0,0:36:07.04,0:36:10.80,*Default,NTP,0000,0000,0000,,把大量天花疫苗送到世界各地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by giving quantities of the vaccine to countries all over the world.
+Dialogue: 0,0:36:10.92,0:36:11.99,*Default,NTP,0000,0000,0000,,这是消灭病毒的一个环节  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's part of it, right?
+Dialogue: 0,0:36:12.16,0:36:13.34,*Default,NTP,0000,0000,0000,,疫苗的数量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Give enough of the vaccine
+Dialogue: 0,0:36:13.34,0:36:16.64,*Default,NTP,0000,0000,0000,,足以让世界上每个人都接种一支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you have a dose for everybody in the world,
+Dialogue: 0,0:36:16.84,0:36:18.04,*Default,NTP,0000,0000,0000,,或者让绝大多数人都能接种一支\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a large fraction of the people.
+Dialogue: 0,0:36:18.16,0:36:20.49,*Default,NTP,0000,0000,0000,,我们在讨论会上讲这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll think about it in section,
+Dialogue: 0,0:36:20.77,0:36:22.76,*Default,NTP,0000,0000,0000,,为什么不需要给每个人都接种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how you don't need to vaccinate everybody,
+Dialogue: 0,0:36:22.96,0:36:24.86,*Default,NTP,0000,0000,0000,,但你只需要让接种人数达到一个临界值\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you just need to vaccinate a critical number
+Dialogue: 0,0:36:24.86,0:36:27.38,*Default,NTP,0000,0000,0000,,就能阻止这个疾病在社会中传播\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to stop the disease from progressing through a community.
+Dialogue: 0,0:36:27.38,0:36:29.57,*Default,NTP,0000,0000,0000,,我们会在周四讨论会再讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we'll think about that in section on Thursday.
+Dialogue: 0,0:36:29.98,0:36:31.82,*Default,NTP,0000,0000,0000,,你仍需要足够的剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But so you needed enough doses,
+Dialogue: 0,0:36:31.83,0:36:34.28,*Default,NTP,0000,0000,0000,,这是事实  因为人数很多  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this is real, and this is a lot of people, right?
+Dialogue: 0,0:36:34.40,0:36:37.27,*Default,NTP,0000,0000,0000,,至少需要上亿支的剂量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you need hundreds of millions of doses, at least,
+Dialogue: 0,0:36:37.78,0:36:42.80,*Default,NTP,0000,0000,0000,,还得有办法将疫苗运送到世界各地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you need a way to distribute that around the world,
+Dialogue: 0,0:36:43.06,0:36:45.95,*Default,NTP,0000,0000,0000,,你还要一种方法进行跟踪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you need a way to keep track of
+Dialogue: 0,0:36:45.95,0:36:48.52,*Default,NTP,0000,0000,0000,,在接种疫苗之后谁得病了和谁没得病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who got sick and who didn't after they got vaccinated.
+Dialogue: 0,0:36:48.67,0:36:49.87,*Default,NTP,0000,0000,0000,,还需要某种上报方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you needed some way of reporting.
+Dialogue: 0,0:36:50.10,0:36:51.75,*Default,NTP,0000,0000,0000,,世界卫生组织拥有这一切条件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the WHO had all those,
+Dialogue: 0,0:36:51.90,0:36:53.84,*Default,NTP,0000,0000,0000,,它有完善的基础设施\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had that whole infrastructure in place.
+Dialogue: 0,0:36:54.11,0:36:56.57,*Default,NTP,0000,0000,0000,,它跟踪调查了一个又一个国家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So they kept track of country-by-country,
+Dialogue: 0,0:36:56.86,0:36:59.01,*Default,NTP,0000,0000,0000,,记录天花在这个国家中何时发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when cases of smallpox occurred,
+Dialogue: 0,0:36:59.60,0:37:03.82,*Default,NTP,0000,0000,0000,,又是何时清除的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and as it was eliminated from regions of the country,
+Dialogue: 0,0:37:04.07,0:37:07.02,*Default,NTP,0000,0000,0000,,并确证这个区域已经没有天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they then certified those regions to be smallpox free.
+Dialogue: 0,0:37:08.51,0:37:10.30,*Default,NTP,0000,0000,0000,,就这样不停地做下去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so it went,
+Dialogue: 0,0:37:10.54,0:37:14.35,*Default,NTP,0000,0000,0000,,从二十世纪五十年代到了七十年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through the years from the 1950s through the 1970s.
+Dialogue: 0,0:37:14.60,0:37:17.03,*Default,NTP,0000,0000,0000,,最后一例天花报告\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The last reported case of smallpox in the--
+Dialogue: 0,0:37:17.03,0:37:19.78,*Default,NTP,0000,0000,0000,,自然产生的天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}naturally occurring smallpox,
+Dialogue: 0,0:37:19.97,0:37:25.29,*Default,NTP,0000,0000,0000,,是在一九七七年  一个索马里人感染了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was in 1977, a man in Somalia was infected.
+Dialogue: 0,0:37:25.30,0:37:27.51,*Default,NTP,0000,0000,0000,,在那之后就再也没有过报告\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were no reported cases after that,
+Dialogue: 0,0:37:27.73,0:37:29.24,*Default,NTP,0000,0000,0000,,到七十年代晚些时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so by the late '70s,
+Dialogue: 0,0:37:29.54,0:37:35.25,*Default,NTP,0000,0000,0000,,已经确认世界各国都摆脱了天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the world was certified sort of free of smallpox worldwide.
+Dialogue: 0,0:37:35.47,0:37:39.88,*Default,NTP,0000,0000,0000,,美国在七十年代早期就确认已无天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The U.S.was certified free in the early '70s, years before that.
+Dialogue: 0,0:37:40.12,0:37:42.43,*Default,NTP,0000,0000,0000,,我出生在一九七零年之前 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was born before 1970,
+Dialogue: 0,0:37:42.43,0:37:44.16,*Default,NTP,0000,0000,0000,,我接种过天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I got a smallpox vaccination.
+Dialogue: 0,0:37:44.43,0:37:46.51,*Default,NTP,0000,0000,0000,,你们当中没人接种过天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}None of you got smallpox vaccinations,
+Dialogue: 0,0:37:46.66,0:37:50.60,*Default,NTP,0000,0000,0000,,因为一旦一个国家确认不再有天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because once a country was certified to be smallpox free,
+Dialogue: 0,0:37:50.75,0:37:52.61,*Default,NTP,0000,0000,0000,,就没有理由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was no reason to--
+Dialogue: 0,0:37:52.61,0:37:57.44,*Default,NTP,0000,0000,0000,,就没有理由再给人们接种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was no reason to vaccinate people any longer.
+Dialogue: 0,0:37:59.14,0:38:03.03,*Default,NTP,0000,0000,0000,,所以我百分百确信这间教室里所有人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, none of you in this room, I'm 100% confident,
+Dialogue: 0,0:38:03.20,0:38:05.53,*Default,NTP,0000,0000,0000,,没有一个人接种过天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}never ever got a smallpox vaccine.
+Dialogue: 0,0:38:08.22,0:38:14.05,*Default,NTP,0000,0000,0000,,这是一个很伟大的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that's a great story,
+Dialogue: 0,0:38:14.19,0:38:18.22,*Default,NTP,0000,0000,0000,,是医学取得成功的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's an example of a great success in medicine.
+Dialogue: 0,0:38:19.62,0:38:24.01,*Default,NTP,0000,0000,0000,,也是生物医学工程成功的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's also an example of a great success in biomedical engineering.
+Dialogue: 0,0:38:24.20,0:38:27.32,*Default,NTP,0000,0000,0000,,这其中的工程部分就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the engineering part of that is sort of the part
+Dialogue: 0,0:38:27.32,0:38:29.30,*Default,NTP,0000,0000,0000,,我曾经在一个幻灯片中讲过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I talked about in one slide,
+Dialogue: 0,0:38:29.30,0:38:30.22,*Default,NTP,0000,0000,0000,,在我讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I talked about
+Dialogue: 0,0:38:30.23,0:38:33.71,*Default,NTP,0000,0000,0000,,如何将先进的科学技术成果转化为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do you convert this scientific advance into something
+Dialogue: 0,0:38:33.83,0:38:35.48,*Default,NTP,0000,0000,0000,,可以在世界范围传播的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can be delivered all over the world.
+Dialogue: 0,0:38:35.63,0:38:44.22,*Default,NTP,0000,0000,0000,,在这个例子中应用的技术就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the technology that was used in this case
+Dialogue: 0,0:38:44.55,0:38:47.94,*Default,NTP,0000,0000,0000,,在天然来源中培养并收集疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was growing the vaccine in a natural source, harvesting it,
+Dialogue: 0,0:38:48.29,0:38:51.25,*Default,NTP,0000,0000,0000,,以及如何生产能够运输\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}figuring out how to produce a preparation that
+Dialogue: 0,0:38:51.25,0:38:54.51,*Default,NTP,0000,0000,0000,,并在运输过程中保持生物活性的制剂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could be distributed but was still biologically active;
+Dialogue: 0,0:38:54.52,0:38:57.59,*Default,NTP,0000,0000,0000,,保持生物活性是指它仍然能用于抵抗疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is, still could protect against the disease.
+Dialogue: 0,0:38:57.80,0:39:00.06,*Default,NTP,0000,0000,0000,,我下节课会讲  我们现在知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We now know, and I'm going to talk about next time,
+Dialogue: 0,0:39:00.36,0:39:01.93,*Default,NTP,0000,0000,0000,,有很多方法能做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lots of ways to do this,
+Dialogue: 0,0:39:02.14,0:39:07.33,*Default,NTP,0000,0000,0000,,并能替代上述生物医学工程方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}alternatives to this method of bioengineering.
+Dialogue: 0,0:39:07.67,0:39:11.16,*Default,NTP,0000,0000,0000,,你可以猜一下是什么技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you could guess what those techniques are.
+Dialogue: 0,0:39:11.47,0:39:13.44,*Default,NTP,0000,0000,0000,,你可以利用细胞培养技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could use cell culture,
+Dialogue: 0,0:39:13.68,0:39:16.18,*Default,NTP,0000,0000,0000,,那你就不必在动物身上培养病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you don't have to grow the virus naturally in animals.
+Dialogue: 0,0:39:16.46,0:39:18.79,*Default,NTP,0000,0000,0000,,而且采用细胞培养疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you can grow it in cultured cells,
+Dialogue: 0,0:39:18.94,0:39:20.80,*Default,NTP,0000,0000,0000,,这种方法的优点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the advantages of that are that
+Dialogue: 0,0:39:20.80,0:39:24.25,*Default,NTP,0000,0000,0000,,你可以在同样条件下进行再培养\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can do this under very reproducible conditions.
+Dialogue: 0,0:39:24.43,0:39:26.34,*Default,NTP,0000,0000,0000,,保存一小瓶细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Much easier to keep a flask of cells
+Dialogue: 0,0:39:26.34,0:39:30.17,*Default,NTP,0000,0000,0000,,该细胞可在无菌条件下再生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}under very sterile, very reproducible conditions
+Dialogue: 0,0:39:30.17,0:39:33.72,*Default,NTP,0000,0000,0000,,这要比保存小动物容易的多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than it is to keep a small animal, right?
+Dialogue: 0,0:39:33.85,0:39:36.02,*Default,NTP,0000,0000,0000,,而像奶牛这样大的动物就更难保存了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even--or a large animal like a cow.
+Dialogue: 0,0:39:36.58,0:39:39.57,*Default,NTP,0000,0000,0000,,最终产品的纯化和鉴定也比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And much easier to purify and know what you have at the end,
+Dialogue: 0,0:39:39.98,0:39:43.86,*Default,NTP,0000,0000,0000,,从复杂的生物体上提取和鉴定容易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than if you're trying to harvest it from a whole complex organism.
+Dialogue: 0,0:39:44.61,0:39:46.75,*Default,NTP,0000,0000,0000,,我们拥有重组DNA技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have techniques of recombinant DNA,
+Dialogue: 0,0:39:47.51,0:39:52.39,*Default,NTP,0000,0000,0000,,它可以用来生产任一种减毒病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those can be used to produce either modified viruses,
+Dialogue: 0,0:39:52.78,0:39:53.54,*Default,NTP,0000,0000,0000,,这个以后会再讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about that.
+Dialogue: 0,0:39:53.68,0:39:57.24,*Default,NTP,0000,0000,0000,,也许我们可以不用再依靠运气\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe I could take an infe--maybe I could instead of getting lucky,
+Dialogue: 0,0:39:57.46,0:40:01.82,*Default,NTP,0000,0000,0000,,就像是在天花的故事中靠运气找到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like we did in smallpox and finding a naturally occurring organism
+Dialogue: 0,0:40:02.17,0:40:04.63,*Default,NTP,0000,0000,0000,,天生的只能引起减毒形式病症的微生物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that causes an attenuated form of the disease,
+Dialogue: 0,0:40:04.88,0:40:07.15,*Default,NTP,0000,0000,0000,,我们可以在基因层面设计病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe we could genetically engineer a virus,
+Dialogue: 0,0:40:07.36,0:40:11.40,*Default,NTP,0000,0000,0000,,这样既能减少病毒的致病性 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to make it less pathogenic,right,
+Dialogue: 0,0:40:11.50,0:40:14.08,*Default,NTP,0000,0000,0000,,又能保证病毒能够诱发免疫效应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but still immunogenic, right?
+Dialogue: 0,0:40:14.15,0:40:15.53,*Default,NTP,0000,0000,0000,,这两个词有不同的意义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And those words mean different things:
+Dialogue: 0,0:40:15.53,0:40:16.78,*Default,NTP,0000,0000,0000,,免疫效应是指\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}immunogenic means that
+Dialogue: 0,0:40:16.78,0:40:19.21,*Default,NTP,0000,0000,0000,,刺激免疫系统产生免疫应答\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it stimulates your immune system for a response;
+Dialogue: 0,0:40:19.73,0:40:22.26,*Default,NTP,0000,0000,0000,,致病性意指它能使你患病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pathogenic means that it causes a disease.
+Dialogue: 0,0:40:23.49,0:40:26.04,*Default,NTP,0000,0000,0000,,也许你能指出如何使用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe you could figure out how to use
+Dialogue: 0,0:40:26.04,0:40:27.89,*Default,NTP,0000,0000,0000,,分子生物学的有关知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what we know about molecular biology,
+Dialogue: 0,0:40:28.28,0:40:31.09,*Default,NTP,0000,0000,0000,,来设计一个既能产生免疫性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to engineer a new virus that's still immunogenic,
+Dialogue: 0,0:40:31.35,0:40:33.23,*Default,NTP,0000,0000,0000,,但又不再有致病性的新病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but not pathogenic any longer.
+Dialogue: 0,0:40:33.39,0:40:39.76,*Default,NTP,0000,0000,0000,,这就是制造疫苗的新方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's a new approach to producing vaccines.
+Dialogue: 0,0:40:39.88,0:40:42.06,*Default,NTP,0000,0000,0000,,也许你并不需要完整的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or maybe you don't need the whole virus.
+Dialogue: 0,0:40:42.91,0:40:44.32,*Default,NTP,0000,0000,0000,,也许你并不需要完整的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe you don't need the whole virus,
+Dialogue: 0,0:40:44.47,0:40:46.86,*Default,NTP,0000,0000,0000,,你只需使用病毒的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you could just use a piece of the virus,right?
+Dialogue: 0,0:40:47.00,0:40:48.26,*Default,NTP,0000,0000,0000,,只用一部分病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just use a piece,
+Dialogue: 0,0:40:48.41,0:40:49.79,*Default,NTP,0000,0000,0000,,就是其具有抗原性的部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an antigenic piece of the virus.
+Dialogue: 0,0:40:50.40,0:40:53.60,*Default,NTP,0000,0000,0000,,那么无需合成完整的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then I don't have to produce the whole virus
+Dialogue: 0,0:40:53.60,0:40:55.20,*Default,NTP,0000,0000,0000,,就能制造疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to make a vaccine.
+Dialogue: 0,0:40:55.40,0:40:57.38,*Default,NTP,0000,0000,0000,,只需要制造许许多多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just have to produce many, many copies of
+Dialogue: 0,0:40:57.38,0:40:59.57,*Default,NTP,0000,0000,0000,,病毒片段和蛋白的拷贝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a piece of the virus, a protein, say.
+Dialogue: 0,0:41:00.42,0:41:02.92,*Default,NTP,0000,0000,0000,,怎样大量制造蛋白质呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And how would you produce a protein in large quantities?
+Dialogue: 0,0:41:03.02,0:41:05.90,*Default,NTP,0000,0000,0000,,你可以再次利用DNA重组技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, again you could use recombinant DNA technology.
+Dialogue: 0,0:41:06.91,0:41:08.91,*Default,NTP,0000,0000,0000,,把一个基因导入一个质粒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Get a gene, put it in a plasmid,
+Dialogue: 0,0:41:09.15,0:41:11.11,*Default,NTP,0000,0000,0000,,让质粒在宿主中表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}get that plasmid expressed in a host,
+Dialogue: 0,0:41:11.43,0:41:13.16,*Default,NTP,0000,0000,0000,,这个宿主甚至可以是细菌  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could even be a bacterial host,right?
+Dialogue: 0,0:41:13.72,0:41:15.42,*Default,NTP,0000,0000,0000,,就像我们讲过的胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Like we talked about with insulin;
+Dialogue: 0,0:41:15.71,0:41:20.69,*Default,NTP,0000,0000,0000,,生成大量重组的病毒蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}make large quantities of this recombinant viral protein,
+Dialogue: 0,0:41:20.94,0:41:22.52,*Default,NTP,0000,0000,0000,,并将其作为疫苗使用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and use that as a vaccine.
+Dialogue: 0,0:41:22.77,0:41:25.26,*Default,NTP,0000,0000,0000,,在下节课我们会再讲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we're going to talk about how that--
+Dialogue: 0,0:41:25.26,0:41:28.04,*Default,NTP,0000,0000,0000,,这些步骤是如何实现的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how those steps can happen next time.
+Dialogue: 0,0:41:28.33,0:41:30.58,*Default,NTP,0000,0000,0000,,我想以这个图片作为结束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to end with this picture.
+Dialogue: 0,0:41:30.76,0:41:34.02,*Default,NTP,0000,0000,0000,,这是新英格兰医学杂志的封面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this is the cover of the New England Journal of Medicine,
+Dialogue: 0,0:41:34.17,0:41:36.35,*Default,NTP,0000,0000,0000,,它是世界上最负盛名\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the most famous and
+Dialogue: 0,0:41:36.35,0:41:38.31,*Default,NTP,0000,0000,0000,,最有影响力的医学期刊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}influential medical journals in the world.
+Dialogue: 0,0:41:38.66,0:41:41.13,*Default,NTP,0000,0000,0000,,这个封面来自二零零二年四月的那期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And this is from April of 2002.
+Dialogue: 0,0:41:41.43,0:41:46.23,*Default,NTP,0000,0000,0000,,我刚刚已经讲了一九七七年根除天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I talked about eradicating smallpox in 1977,
+Dialogue: 0,0:41:46.68,0:41:48.87,*Default,NTP,0000,0000,0000,,当时发布了最后一例官方报告\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right when officially the last case was reported,
+Dialogue: 0,0:41:49.05,0:41:52.32,*Default,NTP,0000,0000,0000,,自此之后  天花已经确认根除\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it was certified to be eradicated shortly after that.
+Dialogue: 0,0:41:52.63,0:41:54.52,*Default,NTP,0000,0000,0000,,但在这个封面上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But on this cover,
+Dialogue: 0,0:41:54.82,0:41:58.76,*Default,NTP,0000,0000,0000,,你可以看到几篇关于天花的研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can see that there are several stories about smallpox.
+Dialogue: 0,0:41:59.69,0:42:00.30,*Default,NTP,0000,0000,0000,,一篇名为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is called the
+Dialogue: 0,0:42:00.30,0:42:03.75,*Default,NTP,0000,0000,0000,,稀释和未稀释的天花疫苗在临床的反应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}'Clinical Responses to Undiluted and Diluted Smallpox Vaccine';
+Dialogue: 0,0:42:04.13,0:42:09.10,*Default,NTP,0000,0000,0000,,一篇是现代方法诊断和处理天花病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one is called 'Current Concepts, Diagnosis and Management of Smallpox.'
+Dialogue: 0,0:42:09.37,0:42:14.61,*Default,NTP,0000,0000,0000,,作为世界上最权威和有影响的期刊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why would one of the most prominent and influential medical journals in the world
+Dialogue: 0,0:42:14.87,0:42:19.37,*Default,NTP,0000,0000,0000,,为什么要发表一篇讲如何处理天花的综述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}be publishing a review article about how to manage cases of smallpox
+Dialogue: 0,0:42:19.52,0:42:22.75,*Default,NTP,0000,0000,0000,,而那时天花已经绝迹二十五年了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when there had not been any cases of smallpox for 25 years?
+Dialogue: 0,0:42:24.20,0:42:25.10,*Default,NTP,0000,0000,0000,,嗯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah.
+Dialogue: 0,0:42:25.49,0:42:26.67,*Default,NTP,0000,0000,0000,,生物恐怖主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bioterrorism?
+Dialogue: 0,0:42:26.86,0:42:28.52,*Default,NTP,0000,0000,0000,,当时有一些担心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the concern at this time,
+Dialogue: 0,0:42:28.68,0:42:29.72,*Default,NTP,0000,0000,0000,,现在还在担心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and still remains a concern,
+Dialogue: 0,0:42:30.01,0:42:32.91,*Default,NTP,0000,0000,0000,,这些传染源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that infectious agents,
+Dialogue: 0,0:42:33.07,0:42:35.89,*Default,NTP,0000,0000,0000,,尤其是像天花非常具有致命性的传染源\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly very deadly infectious agents like smallpox,
+Dialogue: 0,0:42:35.99,0:42:37.72,*Default,NTP,0000,0000,0000,,可以进行某种程度的武器化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could be weaponized in some way,
+Dialogue: 0,0:42:37.91,0:42:39.15,*Default,NTP,0000,0000,0000,,或者转变成武器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or converted into a weapon.
+Dialogue: 0,0:42:39.54,0:42:43.15,*Default,NTP,0000,0000,0000,,如果向一个城市散布天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if smallpox was somehow introduced into a city
+Dialogue: 0,0:42:43.15,0:42:47.57,*Default,NTP,0000,0000,0000,,这个城市是纽约的话  会发生什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like New York City, what would happen?
+Dialogue: 0,0:42:47.68,0:42:50.25,*Default,NTP,0000,0000,0000,,所有比我小的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, there's a whole population of people who
+Dialogue: 0,0:42:50.33,0:42:53.46,*Default,NTP,0000,0000,0000,,都没有接种过天花疫苗  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are younger than me that never got smallpox vaccines, right?
+Dialogue: 0,0:42:53.97,0:42:56.90,*Default,NTP,0000,0000,0000,,你们对天花没有任何免疫力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't have it, you don't have any immunity to smallpox,
+Dialogue: 0,0:42:57.25,0:42:59.55,*Default,NTP,0000,0000,0000,,你没有任何理由能对天花免疫\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't have any reason to immunity to smallpox.
+Dialogue: 0,0:43:00.13,0:43:04.31,*Default,NTP,0000,0000,0000,,所以你很可能会感染天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so you would be susceptible to infection by this organism.
+Dialogue: 0,0:43:04.59,0:43:06.96,*Default,NTP,0000,0000,0000,,此外  即便是像我这样的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In addition, even people--
+Dialogue: 0,0:43:06.96,0:43:09.32,*Default,NTP,0000,0000,0000,,接种天花已经四十年了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I got vaccinated 40 years ago,right?
+Dialogue: 0,0:43:09.69,0:43:13.32,*Default,NTP,0000,0000,0000,,我身上的疫苗还有保护性吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is my vaccine still protective?
+Dialogue: 0,0:43:13.32,0:43:13.65,*Default,NTP,0000,0000,0000,,恐怕没有了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Probably not.
+Dialogue: 0,0:43:13.92,0:43:16.01,*Default,NTP,0000,0000,0000,,所以就算那些接种过天花疫苗的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so even people that got vaccinated,
+Dialogue: 0,0:43:16.29,0:43:19.26,*Default,NTP,0000,0000,0000,,到那时候也不一定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}most of us either have questionable or
+Dialogue: 0,0:43:19.26,0:43:21.57,*Default,NTP,0000,0000,0000,,或者压根无法抵御病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no protection against the virus at this point.
+Dialogue: 0,0:43:22.14,0:43:27.56,*Default,NTP,0000,0000,0000,,如果天花被转化成生化武器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And who, where would--If it was, if it was converted into a weapon,
+Dialogue: 0,0:43:27.83,0:43:32.13,*Default,NTP,0000,0000,0000,,去哪里才能找来保护国家的疫苗呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where would the vaccines to protect the rest of the country come from?
+Dialogue: 0,0:43:33.13,0:43:36.02,*Default,NTP,0000,0000,0000,,没有公司还生产天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no company that's making smallpox vaccine anymore
+Dialogue: 0,0:43:36.24,0:43:37.60,*Default,NTP,0000,0000,0000,,因为没有人购买天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because there's no reason to make smallpox vaccine,
+Dialogue: 0,0:43:37.60,0:43:39.76,*Default,NTP,0000,0000,0000,,因此早就没有理由继续生产它了  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because nobody would buy it, right?
+Dialogue: 0,0:43:39.96,0:43:42.30,*Default,NTP,0000,0000,0000,,因为没有天然的天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because there's no naturally occurring smallpox.
+Dialogue: 0,0:43:42.54,0:43:45.83,*Default,NTP,0000,0000,0000,,我们很担心会这样受到伤害\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so there was great concern that we were vulnerable in this way,
+Dialogue: 0,0:43:46.04,0:43:51.52,*Default,NTP,0000,0000,0000,,因为这个疾病仍是可以感染人类的疾病\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the disease is still a disease that could affect people.
+Dialogue: 0,0:43:51.73,0:43:55.35,*Default,NTP,0000,0000,0000,,世界上仍有地方保存着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are still some active smallpox virus specimens
+Dialogue: 0,0:43:55.35,0:44:02.08,*Default,NTP,0000,0000,0000,,一些具有活性的天花病毒样本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}kept in the world,
+Dialogue: 0,0:44:02.37,0:44:08.31,*Default,NTP,0000,0000,0000,,有两个地方还储存着天花病毒样本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there are two sources of small--two places where smallpox is stored now.
+Dialogue: 0,0:44:08.52,0:44:11.56,*Default,NTP,0000,0000,0000,,一个在美国的疾病控制中心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is in the U.S.at the Centers for Disease Control,
+Dialogue: 0,0:44:11.91,0:44:16.32,*Default,NTP,0000,0000,0000,,那有一支天花病毒的样本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there is a sample of variola,
+Dialogue: 0,0:44:16.54,0:44:21.38,*Default,NTP,0000,0000,0000,,冰冻后置于重重保护之下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is kept, you know, frozen on ice in a heavily guarded facility.
+Dialogue: 0,0:44:21.60,0:44:24.84,*Default,NTP,0000,0000,0000,,另一个样本在俄罗斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's another sample which is in Russia,
+Dialogue: 0,0:44:25.02,0:44:26.81,*Default,NTP,0000,0000,0000,,前苏联的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}part of the former Soviet Union,
+Dialogue: 0,0:44:27.04,0:44:29.18,*Default,NTP,0000,0000,0000,,那也有储存的样本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there are samples that were stored.
+Dialogue: 0,0:44:29.45,0:44:33.07,*Default,NTP,0000,0000,0000,,这些样本可以用于科学目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And these samples are used for scientific purposes.
+Dialogue: 0,0:44:33.30,0:44:37.86,*Default,NTP,0000,0000,0000,,并且科学家们仔细记录病毒的使用情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are kept track of very closely,
+Dialogue: 0,0:44:38.17,0:44:41.89,*Default,NTP,0000,0000,0000,,但因为这星球上仍存在天花\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but because there's still smallpox that exists on the planet,
+Dialogue: 0,0:44:42.04,0:44:47.09,*Default,NTP,0000,0000,0000,,就会有人担心  某些人会获得天花病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there is some concern that that could be obtained and
+Dialogue: 0,0:44:47.09,0:44:49.20,*Default,NTP,0000,0000,0000,,并将其制成武器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}used to develop a weapon.
+Dialogue: 0,0:44:49.34,0:44:51.71,*Default,NTP,0000,0000,0000,,这就是人们担惊受怕的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So,that's the reason for it.
+Dialogue: 0,0:44:51.85,0:44:52.86,*Default,NTP,0000,0000,0000,,不久之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shortly after this,
+Dialogue: 0,0:44:52.86,0:44:55.22,*Default,NTP,0000,0000,0000,,为何又在二零零二年提出来了呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and why did that come up 2002?
+Dialogue: 0,0:44:55.22,0:44:59.31,*Default,NTP,0000,0000,0000,,是由于二零零一年发生的911袭击事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because of what happened in 2001, is why that became a concern.
+Dialogue: 0,0:45:00.20,0:45:02.93,*Default,NTP,0000,0000,0000,,在此事件之后  美国政府\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The government, after this time,
+Dialogue: 0,0:45:03.04,0:45:06.36,*Default,NTP,0000,0000,0000,,和病毒生产企业签了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}did issue contracts to manufacturing companies
+Dialogue: 0,0:45:06.50,0:45:08.34,*Default,NTP,0000,0000,0000,,生产一些病毒的合同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to produce new quantities of the virus.
+Dialogue: 0,0:45:08.71,0:45:12.67,*Default,NTP,0000,0000,0000,,政府也在马里兰军队驻地发现了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They also found some stockpiles of the virus from the 1950s
+Dialogue: 0,0:45:13.02,0:45:16.46,*Default,NTP,0000,0000,0000,,从十九世纪五十年代储存到现在的病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they still had on an Army base in Maryland,I think.
+Dialogue: 0,0:45:16.61,0:45:18.69,*Default,NTP,0000,0000,0000,,他们检测这些病毒是否仍有活性  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They tested those to see if they were still active,
+Dialogue: 0,0:45:18.69,0:45:19.42,*Default,NTP,0000,0000,0000,,结果是肯定的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they were.
+Dialogue: 0,0:45:19.58,0:45:27.30,*Default,NTP,0000,0000,0000,,为了以防万一  现在正积极重建\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, there's been an active effort to reestablish the process
+Dialogue: 0,0:45:27.45,0:45:30.19,*Default,NTP,0000,0000,0000,,能够制造天花疫苗的工艺进程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of smallpox vaccination in case that's needed.
+Dialogue: 0,0:45:30.34,0:45:34.17,*Default,NTP,0000,0000,0000,,现在有些军人甚至已经接种天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are even some military personnel now who get immunized
+Dialogue: 0,0:45:34.29,0:45:37.96,*Default,NTP,0000,0000,0000,,以使他们在战场上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}against smallpox in the event that when they're going into areas,
+Dialogue: 0,0:45:38.13,0:45:43.20,*Default,NTP,0000,0000,0000,,免受天花病毒的威胁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they might be exposed when they're in combat areas.
+Dialogue: 0,0:45:43.77,0:45:45.82,*Default,NTP,0000,0000,0000,,我讲这个例子是说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, I give you this example to say
+Dialogue: 0,0:45:45.82,0:45:48.91,*Default,NTP,0000,0000,0000,,即便我们取得了巨大的进步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though tremendous progress was made.
+Dialogue: 0,0:45:49.05,0:45:50.35,*Default,NTP,0000,0000,0000,,刚才就是一个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is one example that,
+Dialogue: 0,0:45:50.46,0:45:51.80,*Default,NTP,0000,0000,0000,,在技术上我们并没有失败\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without fail,
+Dialogue: 0,0:45:51.80,0:45:56.99,*Default,NTP,0000,0000,0000,,人们也会称赞医学和生物工程的神奇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}people would say is a marvel of medicine and bioengineering,
+Dialogue: 0,0:45:57.80,0:46:00.71,*Default,NTP,0000,0000,0000,,但仍然需要注意可能发生的情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that it's still something to keep track of.
+Dialogue: 0,0:46:01.40,0:46:04.57,*Default,NTP,0000,0000,0000,,这亦有很多机遇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are still opportunities to use what
+Dialogue: 0,0:46:04.57,0:46:06.63,*Default,NTP,0000,0000,0000,,我们要了解这些机遇以便更好地发展技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we know about this to develop even better methods.
+Dialogue: 0,0:46:06.75,0:46:10.06,*Default,NTP,0000,0000,0000,,我相信若我们现在制造天花疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the smallpox vaccine we made now would probably be better,
+Dialogue: 0,0:46:10.22,0:46:16.65,*Default,NTP,0000,0000,0000,,应该会比五十年代的更有效更安全\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more effective, and safer than the vaccines we made in the '50s.
+Dialogue: 0,0:46:17.55,0:46:20.38,*Default,NTP,0000,0000,0000,,周四我们会继续讲疫苗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, I'm going to continue talking about vaccines on Thursday.
+Dialogue: 0,0:46:20.69,0:46:21.26,*Default,NTP,0000,0000,0000,,特别地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In particular,
+Dialogue: 0,0:46:21.26,0:46:24.65,*Default,NTP,0000,0000,0000,,在开始我们会关注脊髓灰质炎病毒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're going to focus in the beginning, on polio virus,
+Dialogue: 0,0:46:24.77,0:46:27.38,*Default,NTP,0000,0000,0000,,那是又一个成功的故事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is another great success story,
+Dialogue: 0,0:46:27.68,0:46:31.49,*Default,NTP,0000,0000,0000,,但又与发现疫苗的过程不尽相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but where a very different approach to vaccine development was used.
+Dialogue: 0,0:46:31.94,0:46:34.37,*Default,NTP,0000,0000,0000,,我们还会讲疫苗未来的发展\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That will be instructive in thinking about what vaccines
+Dialogue: 0,0:46:34.37,0:46:35.74,*Default,NTP,0000,0000,0000,,希望带给大家一些启发\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the future might look like.
+Dialogue: 0,0:46:37.41,0:46:38.38,*Default,NTP,0000,0000,0000,,有问题吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Questions?
+Dialogue: 0,0:46:41.58,0:46:43.15,*Default,NTP,0000,0000,0000,,很好  周四见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Great, see you on Thursday.

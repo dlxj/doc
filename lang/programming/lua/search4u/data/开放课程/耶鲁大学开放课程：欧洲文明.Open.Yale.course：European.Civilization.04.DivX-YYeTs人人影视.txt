@@ -1,0 +1,854 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:00.00,0:02:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:20:00.00,0:21:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:00:01.20,0:00:05.07,*Default,NTP,0000,0000,0000,,今天我要讲的是彼得大帝\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ok, I want to talk about Peter the Great today.
+Dialogue: 0,0:00:07.93,0:00:09.24,*Default,NTP,0000,0000,0000,,俄帝国可以说是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Russian empire is
+Dialogue: 0,0:00:09.24,0:00:13.86,*Default,NTP,0000,0000,0000,,那些得以延续的帝国之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of those empires that continued, arguably--
+Dialogue: 0,0:00:13.86,0:00:15.21,*Default,NTP,0000,0000,0000,,这的确是事实\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not arguably, it was the case--
+Dialogue: 0,0:00:15.22,0:00:19.01,*Default,NTP,0000,0000,0000,,毕竟此前的四大帝国在一战中相继陨落\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after the four empires disappeared with World War I.
+Dialogue: 0,0:00:19.01,0:00:20.56,*Default,NTP,0000,0000,0000,,但俄帝国仍延续着 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Russian empire continues,
+Dialogue: 0,0:00:20.56,0:00:24.02,*Default,NTP,0000,0000,0000,,虽然是以一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though it continues under
+Dialogue: 0,0:00:24.02,0:00:27.48,*Default,NTP,0000,0000,0000,,极其不同的方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a very different way
+Dialogue: 0,0:00:27.48,0:00:30.04,*Default,NTP,0000,0000,0000,,它成为了苏维埃帝国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with what became the Soviet empire.
+Dialogue: 0,0:00:30.05,0:00:32.51,*Default,NTP,0000,0000,0000,,这是事实\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what it became.
+Dialogue: 0,0:00:32.86,0:00:39.71,*Default,NTP,0000,0000,0000,,随着1991-1992年苏联的解体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}With the end of the Soviet Union in 1991-92,
+Dialogue: 0,0:00:39.71,0:00:44.26,*Default,NTP,0000,0000,0000,,或者说苏维埃帝国的倾覆\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Soviet Empire collapsed, the Soviet Union collapses,
+Dialogue: 0,0:00:44.26,0:00:47.46,*Default,NTP,0000,0000,0000,,我想现在唯一留存于世的帝国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I guess the only remaining empire in the world is
+Dialogue: 0,0:00:47.47,0:00:48.75,*Default,NTP,0000,0000,0000,,就只有美国了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that of the United States,
+Dialogue: 0,0:00:48.75,0:00:50.91,*Default,NTP,0000,0000,0000,,虽然只是非正式帝国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is a more informal empire,
+Dialogue: 0,0:00:50.91,0:00:52.51,*Default,NTP,0000,0000,0000,,但却依然存在着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but still one that is out there
+Dialogue: 0,0:00:52.51,0:00:55.97,*Default,NTP,0000,0000,0000,,其军事基地几乎遍布世界各地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}almost everywhere with the military bases everywhere.
+Dialogue: 0,0:00:55.97,0:00:58.97,*Default,NTP,0000,0000,0000,,因此  帝国的兴衰\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the rise and fall of empires
+Dialogue: 0,0:00:58.97,0:01:01.20,*Default,NTP,0000,0000,0000,,显然是这门课关注的主题之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is obviously a theme of this course.
+Dialogue: 0,0:01:01.51,0:01:08.36,*Default,NTP,0000,0000,0000,,沙俄帝国在此之前已有大幅扩张\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Russian empire, the state of Muscovy had already expanded greatly,
+Dialogue: 0,0:01:08.36,0:01:09.91,*Default,NTP,0000,0000,0000,,但是  是彼得大帝\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's really Peter the Great,
+Dialogue: 0,0:01:09.91,0:01:15.01,*Default,NTP,0000,0000,0000,,是这个大家伙扩张了俄国领土\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's the big guy who expanded Russia,
+Dialogue: 0,0:01:15.54,0:01:19.23,*Default,NTP,0000,0000,0000,,他统治下的沙俄幅员辽阔\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}its territorial size enormously.
+Dialogue: 0,0:01:21.50,0:01:26.74,*Default,NTP,0000,0000,0000,,俄国曾是蒙古的进贡国之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Muscovy had been one of the tributaries of the Mongols,
+Dialogue: 0,0:01:26.75,0:01:30.99,*Default,NTP,0000,0000,0000,,1230年代  蒙古人洗劫了基辅\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who sacked Kiev in the 1230s,
+Dialogue: 0,0:01:31.00,0:01:34.30,*Default,NTP,0000,0000,0000,,蒙古铁骑涌入俄国以及现在的乌克兰\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after pouring into Russia and what now is Ukraine.
+Dialogue: 0,0:01:35.26,0:01:40.09,*Default,NTP,0000,0000,0000,,俄国曾是一个君主制国家\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Muscovy was a princely state.
+Dialogue: 0,0:01:40.10,0:01:42.49,*Default,NTP,0000,0000,0000,,其领土逐渐扩大\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gradually expanded in size,
+Dialogue: 0,0:01:42.50,0:01:46.35,*Default,NTP,0000,0000,0000,,延伸至乌拉尔山脉南端和里海\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reaching to the Southern Ural Mountains and the Caspian Sea,
+Dialogue: 0,0:01:46.35,0:01:50.70,*Default,NTP,0000,0000,0000,,并发展成为王朝国家 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and emerging as a dynastic state.
+Dialogue: 0,0:01:50.86,0:01:54.91,*Default,NTP,0000,0000,0000,,但俄国的影响力仍远不及\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But yet Muscovy was considerably less important
+Dialogue: 0,0:01:54.91,0:01:58.09,*Default,NTP,0000,0000,0000,,波兰-立陶宛联邦\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than the commonwealth of Poland-Lithuania,
+Dialogue: 0,0:01:58.09,0:02:01.24,*Default,NTP,0000,0000,0000,,后者远远比俄国强大\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was considerably much greater
+Dialogue: 0,0:02:01.25,0:02:07.20,*Default,NTP,0000,0000,0000,,但却受制于两国的争端所照成的影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and subject to struggles with and influence by that state.
+Dialogue: 0,0:02:07.40,0:02:12.49,*Default,NTP,0000,0000,0000,,彼得大帝所做的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What Peter the Great did was
+Dialogue: 0,0:02:12.79,0:02:15.26,*Default,NTP,0000,0000,0000,,就是击退了邻国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he pushed back the neighbours
+Dialogue: 0,0:02:15.26,0:02:21.97,*Default,NTP,0000,0000,0000,,即阻碍俄国扩张的瑞典\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who had blocked the expansion of Muscovy, that is Sweden,
+Dialogue: 0,0:02:21.98,0:02:27.34,*Default,NTP,0000,0000,0000,,他在著名的波尔塔瓦战役中将其击败\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who he defeats in a battle worth noting in Poltava,
+Dialogue: 0,0:02:27.35,0:02:28.14,*Default,NTP,0000,0000,0000,,这在书上有记载\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's in the book,
+Dialogue: 0,0:02:28.15,0:02:32.80,*Default,NTP,0000,0000,0000,,1709  波兰与奥斯曼土耳其一章\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}1709, Poland and the Ottoman Turks.
+Dialogue: 0,0:02:32.80,0:02:36.78,*Default,NTP,0000,0000,0000,,彼得大帝越过欧洲山脉 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter the Great expands territory beyond the Euro mountains
+Dialogue: 0,0:02:36.78,0:02:38.35,*Default,NTP,0000,0000,0000,,沿着里海扩张\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}along the Caspian Sea
+Dialogue: 0,0:02:38.35,0:02:41.01,*Default,NTP,0000,0000,0000,,吞并着土耳其的土地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the expense of the Turks.
+Dialogue: 0,0:02:41.11,0:02:44.12,*Default,NTP,0000,0000,0000,,正如他所有的继任者们一样  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Like all of his successors,
+Dialogue: 0,0:02:44.13,0:02:45.49,*Default,NTP,0000,0000,0000,,他曾梦想征服\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he dreamed of conquering
+Dialogue: 0,0:02:45.49,0:02:48.59,*Default,NTP,0000,0000,0000,,土耳其首都君士坦丁堡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Turkish capital of Constantinople,
+Dialogue: 0,0:02:48.60,0:02:49.89,*Default,NTP,0000,0000,0000,,即现在的伊斯坦布尔 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is, Istanbul,
+Dialogue: 0,0:02:49.90,0:03:00.19,*Default,NTP,0000,0000,0000,,这样他就能掌控达达尼尔海峡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which would have given him control of the Dardanelles Straits there,
+Dialogue: 0,0:03:00.20,0:03:03.96,*Default,NTP,0000,0000,0000,,这条航道联通欧亚  通向黑海\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the passage between Europe and Asia leading to the Black Sea.
+Dialogue: 0,0:03:03.97,0:03:04.89,*Default,NTP,0000,0000,0000,,所有这些都很重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All this stuff really matters,
+Dialogue: 0,0:03:04.90,0:03:06.81,*Default,NTP,0000,0000,0000,,因为这些事件\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because all these events now
+Dialogue: 0,0:03:06.81,0:03:09.90,*Default,NTP,0000,0000,0000,,与现在的格鲁吉亚问题有关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the problems in Georgia.
+Dialogue: 0,0:03:10.12,0:03:14.89,*Default,NTP,0000,0000,0000,,这是一个十分微妙  诡异的局面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a very, very delicate, strange situation,
+Dialogue: 0,0:03:14.90,0:03:18.23,*Default,NTP,0000,0000,0000,,使得现在的大国  即美国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the great power now, the United States,
+Dialogue: 0,0:03:18.24,0:03:21.39,*Default,NTP,0000,0000,0000,,不合时宜地声称\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}finds itself rather incongruously arguing that
+Dialogue: 0,0:03:21.40,0:03:23.89,*Default,NTP,0000,0000,0000,,科索沃显然应当独立\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Kosovo--which should be, obviously, independent--
+Dialogue: 0,0:03:23.90,0:03:27.20,*Default,NTP,0000,0000,0000,,我记得小时候曾去过科索沃的佩克\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I remember going to Pec in Kosovo when I was a kid--
+Dialogue: 0,0:03:27.31,0:03:30.54,*Default,NTP,0000,0000,0000,,很难说科索沃是否该独立\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a little hard to argue that Kosovo should be independent
+Dialogue: 0,0:03:30.55,0:03:35.54,*Default,NTP,0000,0000,0000,,也很难说塞尔维亚的领土不应得到尊重\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that what was the territorial unit of Serbia
+Dialogue: 0,0:03:35.55,0:03:38.45,*Default,NTP,0000,0000,0000,,我认为科索沃应当独立\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I agree with this, Kosovo should be independent.
+Dialogue: 0,0:03:42.24,0:03:45.59,*Default,NTP,0000,0000,0000,,话说回来  美国政府也认为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then to turn around and argue that
+Dialogue: 0,0:03:45.60,0:03:48.79,*Default,NTP,0000,0000,0000,,那些格鲁吉亚境内的非格鲁吉亚人   \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the people in Georgia, who are not Georgians,
+Dialogue: 0,0:03:48.80,0:03:50.40,*Default,NTP,0000,0000,0000,,不应享有和科索沃人同样的权利\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}should not have the same rights that the people in Kosovo have.
+Dialogue: 0,0:03:50.41,0:03:52.94,*Default,NTP,0000,0000,0000,,这整件事--媒体上的报道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The whole thing--the presentation in the press is
+Dialogue: 0,0:03:52.94,0:03:56.29,*Default,NTP,0000,0000,0000,,十分虚伪  纯属荒诞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is absolutely hypocritical and just bizarre.
+Dialogue: 0,0:03:56.30,0:03:59.99,*Default,NTP,0000,0000,0000,,这样跑题去讽刺美国  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the only point of that little diatribe in parentheses
+Dialogue: 0,0:04:00.00,0:04:03.04,*Default,NTP,0000,0000,0000,,唯一的意义是为了说明  黑海的确很重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was that the Black Sea really does still matter a lot,
+Dialogue: 0,0:04:03.05,0:04:07.59,*Default,NTP,0000,0000,0000,,而彼得大帝是帝俄沙皇中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that Peter the Great was the first of the Russian czars
+Dialogue: 0,0:04:07.60,0:04:13.22,*Default,NTP,0000,0000,0000,,最早梦想进驻黑海\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to dream of this access on to the Black Sea
+Dialogue: 0,0:04:13.24,0:04:18.04,*Default,NTP,0000,0000,0000,,进而最终掌控君士坦丁堡海峡的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then  finally controlling the Straits of Constantinople.
+Dialogue: 0,0:04:18.05,0:04:19.08,*Default,NTP,0000,0000,0000,,凯瑟琳大帝\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Catherine the Great--
+Dialogue: 0,0:04:19.08,0:04:21.05,*Default,NTP,0000,0000,0000,,-沙皇都喜欢称自己为"大帝"--\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they all like to call themselves "The Great"--
+Dialogue: 0,0:04:21.67,0:04:25.04,*Default,NTP,0000,0000,0000,,她将黑海列为重要政策\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}She would make this an important part of her policy,
+Dialogue: 0,0:04:25.05,0:04:26.67,*Default,NTP,0000,0000,0000,,然而她也未能如愿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but she doesn't get there either.
+Dialogue: 0,0:04:26.70,0:04:30.29,*Default,NTP,0000,0000,0000,,直到十九世纪\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the nineteenth century
+Dialogue: 0,0:04:30.30,0:04:33.90,*Default,NTP,0000,0000,0000,,沙皇仍然在想方设法争夺黑海\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Russian czars are still trying to get there as well.
+Dialogue: 0,0:04:34.52,0:04:38.04,*Default,NTP,0000,0000,0000,,我们接下来讲讲彼得的新舰队\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter's new fleet, we'll talk about his new fleet,
+Dialogue: 0,0:04:38.05,0:04:40.22,*Default,NTP,0000,0000,0000,,尽管影响不大  但他亲自监督\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which he oversaw and, in a very minor way,
+Dialogue: 0,0:04:40.22,0:04:41.97,*Default,NTP,0000,0000,0000,,并且参与组建了这个舰队\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}helped build himself,
+Dialogue: 0,0:04:41.97,0:04:45.22,*Default,NTP,0000,0000,0000,,舰队于1698年沿顿河顺流而下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sails down the Don River in 1698
+Dialogue: 0,0:04:45.22,0:04:49.82,*Default,NTP,0000,0000,0000,,直取土耳其的亚速港\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and takes the Turkish port of Azov, A-Z-O-V,
+Dialogue: 0,0:04:49.82,0:04:52.89,*Default,NTP,0000,0000,0000,,在亚速海上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the Sea of Azov.
+Dialogue: 0,0:04:53.88,0:04:56.28,*Default,NTP,0000,0000,0000,,俄国开辟了通往黑海之路\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This gave them access to the Black Sea.
+Dialogue: 0,0:04:56.28,0:04:58.67,*Default,NTP,0000,0000,0000,,但随后他们却被迫撤退\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But then they're forced to back up.
+Dialogue: 0,0:04:58.68,0:05:04.49,*Default,NTP,0000,0000,0000,,他们被打败  在一场战败之后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They lose, and they're forced to surrender Azov to the Turks
+Dialogue: 0,0:05:04.50,0:05:06.51,*Default,NTP,0000,0000,0000,,俄国不得不把亚速奉还给土耳其人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after an unsuccessful war.
+Dialogue: 0,0:05:06.51,0:05:07.64,*Default,NTP,0000,0000,0000,,所以  彼得大帝  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, Peter the Great,
+Dialogue: 0,0:05:07.64,0:05:16.10,*Default,NTP,0000,0000,0000,,虽然为俄帝国的扩张立下汗马功劳\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}despite his dramatic expansion of the Russian empire,
+Dialogue: 0,0:05:16.10,0:05:20.94,*Default,NTP,0000,0000,0000,,仍旧没能夺取黑海的入海口\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}does not get this outlet on the Black Sea.
+Dialogue: 0,0:05:20.95,0:05:23.39,*Default,NTP,0000,0000,0000,,但真正带来的变化 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what does change,
+Dialogue: 0,0:05:23.40,0:05:25.54,*Default,NTP,0000,0000,0000,,以及这场战役的意义\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what the battle represents is,
+Dialogue: 0,0:05:25.55,0:05:26.29,*Default,NTP,0000,0000,0000,,当然了 是指波尔塔瓦战役\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of course, Poltava--
+Dialogue: 0,0:05:26.30,0:05:29.98,*Default,NTP,0000,0000,0000,,在于俄国在欧洲事务的参与度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that Russia's participation in European affairs
+Dialogue: 0,0:05:29.98,0:05:32.20,*Default,NTP,0000,0000,0000,,一度微不足道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}had been totally minimal.
+Dialogue: 0,0:05:32.21,0:05:35.78,*Default,NTP,0000,0000,0000,,书上提到一个家喻户晓的故事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a story often told, indeed told in the book that
+Dialogue: 0,0:05:35.78,0:05:37.52,*Default,NTP,0000,0000,0000,,要是你们能去看看就好了  说的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're kind enough to read, that--
+Dialogue: 0,0:05:37.52,0:05:39.77,*Default,NTP,0000,0000,0000,,我想是路易十四的一个大臣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think it was Louis XIV's
+Dialogue: 0,0:05:39.77,0:05:41.69,*Default,NTP,0000,0000,0000,,相当于现在的外交部部长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}equivalent of minister of foreign affairs--
+Dialogue: 0,0:05:41.69,0:05:44.79,*Default,NTP,0000,0000,0000,,他给沙皇寄了封正式信函\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sends a formal letter to a Russian czar--
+Dialogue: 0,0:05:44.80,0:05:46.27,*Default,NTP,0000,0000,0000,,也不一定是路易十四\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it couldn't have been Louis XIV,
+Dialogue: 0,0:05:46.27,0:05:47.90,*Default,NTP,0000,0000,0000,,可能是其他的什么人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but one of those dudes--
+Dialogue: 0,0:05:49.00,0:05:50.16,*Default,NTP,0000,0000,0000,,也可能是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it might have been--
+Dialogue: 0,0:05:50.16,0:05:53.05,*Default,NTP,0000,0000,0000,,他给一个已经去世12年的沙皇寄了封信\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he sends a letter to a czar who had been dead for twelve years.
+Dialogue: 0,0:05:53.27,0:05:55.78,*Default,NTP,0000,0000,0000,,俄国如此遥远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Russia was that far away.
+Dialogue: 0,0:05:55.79,0:06:01.10,*Default,NTP,0000,0000,0000,,以至于其它帝国不曾意识到它的存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was not in the consciousness of the great powers.
+Dialogue: 0,0:06:01.24,0:06:04.97,*Default,NTP,0000,0000,0000,,但在彼得的一场大胜后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But after one of Peter's victories,
+Dialogue: 0,0:06:04.97,0:06:06.68,*Default,NTP,0000,0000,0000,,俄国驻维也纳大使\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Russian ambassador in Vienna
+Dialogue: 0,0:06:06.68,0:06:09.29,*Default,NTP,0000,0000,0000,,报告了彼得取胜的消息\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reported that the news of Peter's victory,
+Dialogue: 0,0:06:09.30,0:06:11.74,*Default,NTP,0000,0000,0000,,人们开始惧怕沙皇  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}people began to fear the czar
+Dialogue: 0,0:06:11.74,0:06:15.16,*Default,NTP,0000,0000,0000,,就如同他们先前惧怕瑞典一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as they formerly feared Sweden.
+Dialogue: 0,0:06:15.17,0:06:16.47,*Default,NTP,0000,0000,0000,,现在对于我们来说很难理解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's very difficult for us to imagine
+Dialogue: 0,0:06:16.48,0:06:18.45,*Default,NTP,0000,0000,0000,,瑞典能有什么好怕的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a fear of Sweden.
+Dialogue: 0,0:06:18.62,0:06:23.03,*Default,NTP,0000,0000,0000,,但那时的人们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that fear--the last real
+Dialogue: 0,0:06:23.04,0:06:24.94,*Default,NTP,0000,0000,0000,,确实惧怕古斯塔夫·阿道弗斯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gustavus Adolphus,
+Dialogue: 0,0:06:24.94,0:06:27.34,*Default,NTP,0000,0000,0000,,即三十年战争的杀戮\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during the Thirty Years' War,
+Dialogue: 0,0:06:27.35,0:06:29.48,*Default,NTP,0000,0000,0000,,这是瑞典最后一次\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was the last really major
+Dialogue: 0,0:06:29.49,0:06:33.17,*Default,NTP,0000,0000,0000,,真正意义上插手欧洲大陆事务\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Swedish interlude in the continental European affairs,
+Dialogue: 0,0:06:33.18,0:06:39.40,*Default,NTP,0000,0000,0000,,虽然直到1709年才有了波尔塔瓦一战\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although Poltava doesn't come until 1709,
+Dialogue: 0,0:06:40.70,0:06:43.50,*Default,NTP,0000,0000,0000,,就是这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so voilà.
+Dialogue: 0,0:06:44.20,0:06:52.09,*Default,NTP,0000,0000,0000,,欧洲其他进行海外扩张的国家\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what he does is that there's no other European state
+Dialogue: 0,0:06:52.10,0:06:54.54,*Default,NTP,0000,0000,0000,,没有一个能像西班牙和英国那样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}expanding their empires overseas,
+Dialogue: 0,0:06:54.54,0:06:57.10,*Default,NTP,0000,0000,0000,,扩张如此之多的领土\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the case of the Spanish and the English,
+Dialogue: 0,0:06:57.10,0:07:02.40,*Default,NTP,0000,0000,0000,,但彼得大帝做到了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that adds so much territory on land to its empire.
+Dialogue: 0,0:07:02.76,0:07:07.36,*Default,NTP,0000,0000,0000,,在17世纪20年代到40年代间 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Between the 1620s and the 1740s,
+Dialogue: 0,0:07:07.36,0:07:10.44,*Default,NTP,0000,0000,0000,,俄帝国的领土 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the land of the Russian empire
+Dialogue: 0,0:07:10.45,0:07:14.10,*Default,NTP,0000,0000,0000,,由210万平方英里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}increases from 2.1 million square miles
+Dialogue: 0,0:07:14.10,0:07:18.14,*Default,NTP,0000,0000,0000,,增加到590万平方英里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to 5.9 million square miles.
+Dialogue: 0,0:07:18.18,0:07:20.10,*Default,NTP,0000,0000,0000,,现在  可以肯定  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, to be sure,
+Dialogue: 0,0:07:20.10,0:07:24.14,*Default,NTP,0000,0000,0000,,当时的俄国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in Siberia in the far reaches of the north, North Asia,
+Dialogue: 0,0:07:24.15,0:07:28.19,*Default,NTP,0000,0000,0000,,在西伯利亚和北亚并没有多少商栈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this empire amounted to little more than a series of trading posts,
+Dialogue: 0,0:07:28.20,0:07:30.29,*Default,NTP,0000,0000,0000,,俄国耗费了很多时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it took a very long time
+Dialogue: 0,0:07:30.30,0:07:32.77,*Default,NTP,0000,0000,0000,,才使得其首都市容变成现在这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for any semblance of Russian authority
+Dialogue: 0,0:07:32.77,0:07:33.96,*Default,NTP,0000,0000,0000,,无论是莫斯科\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from Moscow and soon
+Dialogue: 0,0:07:33.97,0:07:36.32,*Default,NTP,0000,0000,0000,,还是之后的圣彼得堡  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from St. Petersburg, for reasons that we'll see,
+Dialogue: 0,0:07:36.32,0:07:37.39,*Default,NTP,0000,0000,0000,,原因我们会讲到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to reach there.
+Dialogue: 0,0:07:37.39,0:07:40.19,*Default,NTP,0000,0000,0000,,即使如此  彼得大帝还是一手创造了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But nonetheless, Peter the Great creates
+Dialogue: 0,0:07:40.19,0:07:42.77,*Default,NTP,0000,0000,0000,,这个庞大的帝国  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this huge empire that will have
+Dialogue: 0,0:07:42.77,0:07:45.69,*Default,NTP,0000,0000,0000,,长远来看将对欧洲事务产生极大影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over the long run, an enormous influence in European affairs.
+Dialogue: 0,0:07:45.70,0:07:50.56,*Default,NTP,0000,0000,0000,,毕竟俄帝国的欧洲部分也是欧陆的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because, after all, European Russia is part of Europe
+Dialogue: 0,0:07:50.56,0:07:53.72,*Default,NTP,0000,0000,0000,,它也将会在亚洲事务方面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and will have an enormous influence
+Dialogue: 0,0:07:53.72,0:07:57.69,*Default,NTP,0000,0000,0000,,产生极大影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on Asian affairs as well.
+Dialogue: 0,0:07:57.69,0:08:02.44,*Default,NTP,0000,0000,0000,,1904至1905年  日俄战争见证了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Witness the Russo-Japanese War in 1904-1905
+Dialogue: 0,0:08:02.44,0:08:03.83,*Default,NTP,0000,0000,0000,,俄国人的失败\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the Russians lose.
+Dialogue: 0,0:08:03.83,0:08:08.38,*Default,NTP,0000,0000,0000,,这是俄国革命变革的关键时刻\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a key moment in the evolution of revolutionary politics in Russia
+Dialogue: 0,0:08:08.38,0:08:15.32,*Default,NTP,0000,0000,0000,,我们之后会谈到这些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as we shall see a little later on.
+Dialogue: 0,0:08:15.32,0:08:16.99,*Default,NTP,0000,0000,0000,,那么 彼得大帝是怎么样一个人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, what about Peter the Great?
+Dialogue: 0,0:08:17.00,0:08:18.74,*Default,NTP,0000,0000,0000,,以前我总请我的朋友保罗·布施科维奇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I used to ask my friend Paul Bushkovitch
+Dialogue: 0,0:08:18.74,0:08:20.10,*Default,NTP,0000,0000,0000,,来讲这个讲座\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to come in and give the lecture,
+Dialogue: 0,0:08:20.11,0:08:21.19,*Default,NTP,0000,0000,0000,,而我对此产生了兴趣 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I got so interested in it
+Dialogue: 0,0:08:21.20,0:08:23.52,*Default,NTP,0000,0000,0000,,最后自己也读了一些资料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I did some reading on my own---
+Dialogue: 0,0:08:25.93,0:08:28.79,*Default,NTP,0000,0000,0000,,比如林赛·休斯和其他人的著作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Lindsey Hughes and various other people
+Dialogue: 0,0:08:28.80,0:08:32.79,*Default,NTP,0000,0000,0000,,我在上个学期总结了一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}put this together last semester--
+Dialogue: 0,0:08:32.80,0:08:37.00,*Default,NTP,0000,0000,0000,,从各方面来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because he is not a terribly engaging
+Dialogue: 0,0:08:37.00,0:08:41.01,*Default,NTP,0000,0000,0000,,彼得都不受人欢迎  并且性格冷酷\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or warm personality in many ways,
+Dialogue: 0,0:08:41.01,0:08:43.12,*Default,NTP,0000,0000,0000,,喜欢看别人受虐\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}since he enjoyed watching people being tortured,
+Dialogue: 0,0:08:43.12,0:08:45.49,*Default,NTP,0000,0000,0000,,甚至包括自己的儿子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}including his own son;
+Dialogue: 0,0:08:45.49,0:08:47.16,*Default,NTP,0000,0000,0000,,不过  他是一个很有意思的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, he is an interesting person.
+Dialogue: 0,0:08:47.17,0:08:49.41,*Default,NTP,0000,0000,0000,,他的成就之一 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the things he does, and I guess
+Dialogue: 0,0:08:49.41,0:08:51.79,*Default,NTP,0000,0000,0000,,我想这也是今天讲座的重点之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is one of the things to be put in neon from this lecture,
+Dialogue: 0,0:08:51.79,0:08:54.75,*Default,NTP,0000,0000,0000,,就是他将西方思想引入俄国  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is he opens up Russia,
+Dialogue: 0,0:08:54.75,0:09:01.92,*Default,NTP,0000,0000,0000,,在此之前 俄国没有受到任何外界世俗的影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which had no secular influences at all, to western ideas.
+Dialogue: 0,0:09:02.01,0:09:05.21,*Default,NTP,0000,0000,0000,,这是彼得大帝\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an extraordinarily important
+Dialogue: 0,0:09:05.21,0:09:11.15,*Default,NTP,0000,0000,0000,,一个非常重要的转折性成就\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and transforming accomplishment of Peter the Great.
+Dialogue: 0,0:09:11.23,0:09:15.31,*Default,NTP,0000,0000,0000,,他在动乱的波雅尔世界幸存了下来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He emerges from the violent world of Boyars.
+Dialogue: 0,0:09:15.31,0:09:19.10,*Default,NTP,0000,0000,0000,,波雅尔指贵族 容克是普鲁士贵族\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Boyars are the nobles; the Junkers are the Prussian nobles.
+Dialogue: 0,0:09:19.10,0:09:23.88,*Default,NTP,0000,0000,0000,,波雅尔是沙俄贵族和皇家政客\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Boyars, are the Russian nobles and royal politics.
+Dialogue: 0,0:09:23.89,0:09:27.20,*Default,NTP,0000,0000,0000,,彼得是他父亲与其第二任妻子的长子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter was the first child of his father's second wife
+Dialogue: 0,0:09:27.26,0:09:29.11,*Default,NTP,0000,0000,0000,,因此对第一任妻子的亲戚们而言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and thus a potential threat
+Dialogue: 0,0:09:29.11,0:09:33.46,*Default,NTP,0000,0000,0000,,彼得是他们的一个潜在威胁\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the ambition of the relatives of the first wife.
+Dialogue: 0,0:09:33.46,0:09:36.41,*Default,NTP,0000,0000,0000,,他母亲及其波雅尔中的同僚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His mother and her allies among the Boyars,
+Dialogue: 0,0:09:36.41,0:09:37.51,*Default,NTP,0000,0000,0000,,也就是当时的贵族\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is the nobles,
+Dialogue: 0,0:09:37.51,0:09:41.05,*Default,NTP,0000,0000,0000,,于1689年推翻了摄政王的统治\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}overthrew the regents in 1689.
+Dialogue: 0,0:09:41.05,0:09:44.18,*Default,NTP,0000,0000,0000,,彼得从1682年起掌权\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter's rule is from 1682
+Dialogue: 0,0:09:44.18,0:09:47.69,*Default,NTP,0000,0000,0000,,直到1725年他去世\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until his death in 1725.
+Dialogue: 0,0:09:47.70,0:09:52.01,*Default,NTP,0000,0000,0000,,当时还没有严格的沙皇继承制度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There were no strict rules for the succession of the czar.
+Dialogue: 0,0:09:52.01,0:09:57.35,*Default,NTP,0000,0000,0000,,基本上皇室家族内部 人们不择手段\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's basically just kind of an uncomely family battle royal,
+Dialogue: 0,0:09:57.35,0:10:02.16,*Default,NTP,0000,0000,0000,,数十载血雨腥风不断\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which there were bloody settlings of scores.
+Dialogue: 0,0:10:02.16,0:10:05.03,*Default,NTP,0000,0000,0000,,当时没有外交部长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was no foreign minister.
+Dialogue: 0,0:10:05.03,0:10:08.17,*Default,NTP,0000,0000,0000,,波雅尔议会 也就是贵族们的议会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Boyars' counsel, that is the counsel of the nobles,
+Dialogue: 0,0:10:08.17,0:10:12.32,*Default,NTP,0000,0000,0000,,实际上就在宫殿内举行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}literally met in the throne of the palace.
+Dialogue: 0,0:10:12.32,0:10:14.45,*Default,NTP,0000,0000,0000,,也就是后来的杜马[俄国议会]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It became known as the Duma.
+Dialogue: 0,0:10:14.45,0:10:21.75,*Default,NTP,0000,0000,0000,,1905年  尼古拉斯二世最终被迫承认杜马\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Eventually in 1905, Nicholas II will be forced to grant a Duma,
+Dialogue: 0,0:10:21.75,0:10:23.79,*Default,NTP,0000,0000,0000,,即俄国议会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an assembly to Russia.
+Dialogue: 0,0:10:23.80,0:10:24.66,*Default,NTP,0000,0000,0000,,后来他又食言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then he withdraws,
+Dialogue: 0,0:10:24.67,0:10:26.56,*Default,NTP,0000,0000,0000,,几乎取消了议会的所有权利\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}eliminates basically all of its rights,
+Dialogue: 0,0:10:26.56,0:10:31.80,*Default,NTP,0000,0000,0000,,此后杜马又卷土重来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then the Duma will come back later on.
+Dialogue: 0,0:10:31.80,0:10:35.37,*Default,NTP,0000,0000,0000,,彼得是欧洲历史上那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter is one of those cases in European history
+Dialogue: 0,0:10:35.38,0:10:39.81,*Default,NTP,0000,0000,0000,,凭借自己的个性和喜好 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where one person's personality and interest
+Dialogue: 0,0:10:39.82,0:10:41.00,*Default,NTP,0000,0000,0000,,起到重大影响的例子之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}does make an enormous difference.
+Dialogue: 0,0:10:41.00,0:10:43.19,*Default,NTP,0000,0000,0000,,由于他是绝对统治者\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because he is an absolute ruler.
+Dialogue: 0,0:10:43.20,0:10:45.19,*Default,NTP,0000,0000,0000,,他能随心所欲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He can do what he damn well pleases.
+Dialogue: 0,0:10:45.31,0:10:48.56,*Default,NTP,0000,0000,0000,,他负起了改革的责任\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He is personally responsible for the reforms,
+Dialogue: 0,0:10:48.56,0:10:50.85,*Default,NTP,0000,0000,0000,,即俄国对于西欧思想\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the opening up of Russia
+Dialogue: 0,0:10:50.85,0:10:56.93,*Default,NTP,0000,0000,0000,,如此大程度的开放\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to a considerable extent to western European ideas.
+Dialogue: 0,0:10:56.93,0:10:59.33,*Default,NTP,0000,0000,0000,,这都是他的功劳\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is something that he does himself.
+Dialogue: 0,0:10:59.34,0:11:02.44,*Default,NTP,0000,0000,0000,,孩童时期  他就很聪明\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As a boy, he was very smart
+Dialogue: 0,0:11:02.45,0:11:03.86,*Default,NTP,0000,0000,0000,,并对科学有着浓厚的兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he was very interested in science.
+Dialogue: 0,0:11:03.87,0:11:05.97,*Default,NTP,0000,0000,0000,,他总想知道事物运作的原理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He always wanted to know how things worked.
+Dialogue: 0,0:11:05.98,0:11:11.23,*Default,NTP,0000,0000,0000,,他着迷于星盘  并对航海很感兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was fascinated with astrolabes and was interested in sailing.
+Dialogue: 0,0:11:11.23,0:11:13.08,*Default,NTP,0000,0000,0000,,俄国并没有港口\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Russia doesn't have a port.
+Dialogue: 0,0:11:13.08,0:11:15.70,*Default,NTP,0000,0000,0000,,他喜欢航海\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's interested in sailing
+Dialogue: 0,0:11:15.70,0:11:19.48,*Default,NTP,0000,0000,0000,,并在湖泊  池塘  河流里学习航行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and learns about sailing on lakes, and ponds, and rivers.
+Dialogue: 0,0:11:19.48,0:11:23.32,*Default,NTP,0000,0000,0000,,俄国确实有个港口  但长年冰封\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It does have a port, but it's frozen all the time.
+Dialogue: 0,0:11:23.48,0:11:25.99,*Default,NTP,0000,0000,0000,,他到处游历  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His travels took him into contact with
+Dialogue: 0,0:11:26.00,0:11:29.65,*Default,NTP,0000,0000,0000,,接触到了天文台  博物馆  医院  植物园\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}observatories, museums, hospitals, botanical gardens.
+Dialogue: 0,0:11:29.65,0:11:31.26,*Default,NTP,0000,0000,0000,,他对花园十分着迷\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's fascinated by gardens.
+Dialogue: 0,0:11:31.26,0:11:35.24,*Default,NTP,0000,0000,0000,,他的访问团曾到欧洲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he goes to Europe on his big sortie,
+Dialogue: 0,0:11:35.25,0:11:38.70,*Default,NTP,0000,0000,0000,,在穿越欧洲的成年之旅中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on his big-boy trek through Europe
+Dialogue: 0,0:11:38.70,0:11:41.33,*Default,NTP,0000,0000,0000,,他到处游历  参观了各种植物园\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he goes around and he visits all of these botanical gardens.
+Dialogue: 0,0:11:41.33,0:11:42.49,*Default,NTP,0000,0000,0000,,他热爱素描\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He sketches things.
+Dialogue: 0,0:11:42.50,0:11:44.93,*Default,NTP,0000,0000,0000,,所以他不断用素描\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's constantly sketching
+Dialogue: 0,0:11:44.93,0:11:46.20,*Default,NTP,0000,0000,0000,,把事物的原貌和运作方式记下来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the way things work, the way things are.
+Dialogue: 0,0:11:46.20,0:11:50.37,*Default,NTP,0000,0000,0000,,他的求知欲使得他藐视\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had this intellectual curiosity that defied the kind of
+Dialogue: 0,0:11:50.37,0:11:56.31,*Default,NTP,0000,0000,0000,,传统宗教对于任何理性观点的怀疑\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}orthodox religious skepticism about any kind of rational belief.
+Dialogue: 0,0:11:56.32,0:11:58.46,*Default,NTP,0000,0000,0000,,这种怀疑不仅渗入俄国东正教\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This permeated not only the Russian Orthodox Church,
+Dialogue: 0,0:11:58.47,0:12:01.73,*Default,NTP,0000,0000,0000,,同时也渗入了天主教\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it permeates the Catholic Church as well.
+Dialogue: 0,0:12:01.74,0:12:04.00,*Default,NTP,0000,0000,0000,,看看伽利略的遭遇吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look what happens to Galileo,
+Dialogue: 0,0:12:04.00,0:12:05.93,*Default,NTP,0000,0000,0000,,他足够幸运\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who was lucky enough
+Dialogue: 0,0:12:05.94,0:12:10.92,*Default,NTP,0000,0000,0000,,没有被他的教皇朋友绑在火刑柱上烧死\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not to have been burn on the stake by his friend, the pope.
+Dialogue: 0,0:12:12.23,0:12:15.99,*Default,NTP,0000,0000,0000,,彼得对数学和地理也很感兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was interested in math and in geography,
+Dialogue: 0,0:12:15.99,0:12:19.15,*Default,NTP,0000,0000,0000,,进而喜欢地图和制图\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and thus in maps and map making.
+Dialogue: 0,0:12:20.07,0:12:25.34,*Default,NTP,0000,0000,0000,,他激进而彻底的变革改变了俄国陈旧的国家结构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What he does is he takes this archaic state structure in which
+Dialogue: 0,0:12:25.34,0:12:28.19,*Default,NTP,0000,0000,0000,,这种陈旧的国家结构没有任何文献资料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}literally nothing had been written down.
+Dialogue: 0,0:12:28.19,0:12:31.14,*Default,NTP,0000,0000,0000,,只是民间的传言罢了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's all just passed down from word to mouth.
+Dialogue: 0,0:12:31.14,0:12:37.82,*Default,NTP,0000,0000,0000,,他将俄国变成一个欧洲君主专制国家\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He transforms Russia into an European absolute monarchy
+Dialogue: 0,0:12:37.82,0:12:41.30,*Default,NTP,0000,0000,0000,,同腓特烈大帝非常类似\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with much in common with Frederick the Great,
+Dialogue: 0,0:12:41.30,0:12:44.35,*Default,NTP,0000,0000,0000,,也与瑞典  奥地利  哈布斯王朝的奥地利\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with Sweden, with Austria, the Austria of the Hapsburgs,
+Dialogue: 0,0:12:44.35,0:12:48.64,*Default,NTP,0000,0000,0000,,西班牙 以及法国类似\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with Spain, and with France.
+Dialogue: 0,0:12:48.91,0:12:53.27,*Default,NTP,0000,0000,0000,,他不仅试图仿效欧洲的绝对主义\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He tries not only to copy European absolutism,
+Dialogue: 0,0:12:53.28,0:12:57.13,*Default,NTP,0000,0000,0000,,也开放了俄国的商业贸易\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but to open up Russia to commerce,
+Dialogue: 0,0:12:57.13,0:13:02.04,*Default,NTP,0000,0000,0000,,他意识到贸易意味着财富\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}realizing that trade meant wealth
+Dialogue: 0,0:13:02.04,0:13:05.74,*Default,NTP,0000,0000,0000,,而财富则等同于俄国民众生活水平的提高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that wealth meant improvements in the lives of the Russian people.
+Dialogue: 0,0:13:05.89,0:13:07.85,*Default,NTP,0000,0000,0000,,我们待会再详细说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More about that in a while.
+Dialogue: 0,0:13:08.02,0:13:12.34,*Default,NTP,0000,0000,0000,,他把俄国建成一个军事大国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He makes Russia a military power.
+Dialogue: 0,0:13:12.34,0:13:14.62,*Default,NTP,0000,0000,0000,,至少在十七世纪和十八世纪早期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indeed, arguably a modern military power,
+Dialogue: 0,0:13:14.62,0:13:18.50,*Default,NTP,0000,0000,0000,,它可以算是一个现代化的军事大国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in the seventeenth and early eighteenth-century sense,
+Dialogue: 0,0:13:18.50,0:13:23.19,*Default,NTP,0000,0000,0000,,同时 他将欧洲文化注入俄国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he injects European culture into Russia.
+Dialogue: 0,0:13:23.20,0:13:25.72,*Default,NTP,0000,0000,0000,,这儿我只是稍微讲讲  等到阅读讨论课的时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, just as an aside, but it's one that we'll come
+Dialogue: 0,0:13:25.72,0:13:27.53,*Default,NTP,0000,0000,0000,,我们还会着重研讨\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}back to particularly in your reading,
+Dialogue: 0,0:13:27.53,0:13:31.26,*Default,NTP,0000,0000,0000,,当时俄国两派思潮激烈交锋\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the tension in Russia between an absolute repugnance for
+Dialogue: 0,0:13:31.26,0:13:37.11,*Default,NTP,0000,0000,0000,,一派对俄国引入西方文化极端抵触\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}western influence and the constant assertion that Russia's
+Dialogue: 0,0:13:37.11,0:13:40.09,*Default,NTP,0000,0000,0000,,同时坚信俄国传统才是正宗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}traditional ways of doing things are the right way of doing things
+Dialogue: 0,0:13:40.09,0:13:44.56,*Default,NTP,0000,0000,0000,,这批人后来被称作斯拉夫派\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}long identified with people who would be called Slavophiles.
+Dialogue: 0,0:13:45.41,0:13:49.46,*Default,NTP,0000,0000,0000,,他们与西化派之间剑拔弩张的气氛\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Their tensions with westernizers would last
+Dialogue: 0,0:13:49.46,0:13:53.38,*Default,NTP,0000,0000,0000,,在俄国思想史上持续了整个十九世纪\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right through Russian intellectual history in the nineteenth century.
+Dialogue: 0,0:13:53.47,0:13:56.50,*Default,NTP,0000,0000,0000,,我记得在密歇根大学读书的时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I remember when I was a student of one of the biggest classes at
+Dialogue: 0,0:13:56.50,0:13:57.98,*Default,NTP,0000,0000,0000,,我们在橄榄球赛的时候会喊"冲啊 蓝色军团" \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the University of Michigan--go blue!
+Dialogue: 0,0:13:57.98,0:14:01.06,*Default,NTP,0000,0000,0000,,这周末我真的很伤心  当时我选了俄国思想史\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I am so sad this weekend--it was Russian intellectual history.
+Dialogue: 0,0:14:01.06,0:14:04.32,*Default,NTP,0000,0000,0000,,俄国学者亚瑟·门德尔曾教授这门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We would read the Slavophiles, and we'd read the westernizers,
+Dialogue: 0,0:14:04.73,0:14:09.12,*Default,NTP,0000,0000,0000,,我们读到斯拉夫派和西化派\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}taught by the late scholar of Russia, Arthur Mendel.
+Dialogue: 0,0:14:09.12,0:14:13.33,*Default,NTP,0000,0000,0000,,两派间关于俄国走向的辩论  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was fabulous to read these people as they debated what will
+Dialogue: 0,0:14:13.34,0:14:16.05,*Default,NTP,0000,0000,0000,,读起来实在是一件快事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}happen to Russia, the kind of westernizers and those in between.
+Dialogue: 0,0:14:16.05,0:14:19.58,*Default,NTP,0000,0000,0000,,在十九世纪 他们中的很多人都在巴黎撰文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of them were writing from Paris in the nineteenth century.
+Dialogue: 0,0:14:19.65,0:14:21.51,*Default,NTP,0000,0000,0000,,其中一些人是非常著名的作家\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of them were great, great writers.
+Dialogue: 0,0:14:21.51,0:14:23.40,*Default,NTP,0000,0000,0000,,两派的辩论形成了一种思辨的力量\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was this kind of intellectual energy.
+Dialogue: 0,0:14:23.40,0:14:26.34,*Default,NTP,0000,0000,0000,,但是归根结底  这牵扯到一个相当重要的主题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it came down to this theme that still is so important,
+Dialogue: 0,0:14:26.35,0:14:29.94,*Default,NTP,0000,0000,0000,,那就是俄国的哪些特质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and was already so important, which is, what is Russian that
+Dialogue: 0,0:14:29.94,0:14:33.09,*Default,NTP,0000,0000,0000,,该不受外界影响而保留下来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}should be kept uniquely Russian and closed to outside influence?
+Dialogue: 0,0:14:33.18,0:14:36.82,*Default,NTP,0000,0000,0000,,同时俄国的哪些方面应该允许\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what is Russian that should be modified by being open to
+Dialogue: 0,0:14:37.46,0:14:41.64,*Default,NTP,0000,0000,0000,,非宗教势力的影响而做出相应的调整\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}non-religious influences that come from other places?
+Dialogue: 0,0:14:41.75,0:14:44.52,*Default,NTP,0000,0000,0000,,如你所见\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is not just a uniquely Russian tale,
+Dialogue: 0,0:14:44.52,0:14:46.58,*Default,NTP,0000,0000,0000,,这并非俄国独有的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as you can see.
+Dialogue: 0,0:14:47.28,0:14:49.10,*Default,NTP,0000,0000,0000,,彼得大帝本人是怎么样的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What about Peter himself?
+Dialogue: 0,0:14:49.37,0:14:53.08,*Default,NTP,0000,0000,0000,,有人描述他至少身长6英尺7英寸[约两米]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Somebody figured out that he was at least 6'7".
+Dialogue: 0,0:14:53.47,0:14:55.24,*Default,NTP,0000,0000,0000,,很魁梧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, that's just huge.
+Dialogue: 0,0:14:55.24,0:14:57.43,*Default,NTP,0000,0000,0000,,当然不能和现在NBA的球员比了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's tiny in the NBA now.
+Dialogue: 0,0:14:59.39,0:15:02.76,*Default,NTP,0000,0000,0000,,不过  腓特烈大帝的警卫团\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the guards, the "Giants,"
+Dialogue: 0,0:15:02.81,0:15:05.04,*Default,NTP,0000,0000,0000,,只是因为身高6英尺[约1.8米]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they were called, who guarded Frederick the Great
+Dialogue: 0,0:15:05.04,0:15:07.63,*Default,NTP,0000,0000,0000,,就被称为"巨人团"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were giants because they were six feet tall.
+Dialogue: 0,0:15:08.04,0:15:17.04,*Default,NTP,0000,0000,0000,,当时法国人的平均身高约1.6米\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The average person was about 5'3" Or 5'4" in France.
+Dialogue: 0,0:15:17.04,0:15:19.80,*Default,NTP,0000,0000,0000,,拿破仑被人们公认为是个矮子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Napoleon, who was always considered to be kind of a dwarf,
+Dialogue: 0,0:15:19.80,0:15:22.40,*Default,NTP,0000,0000,0000,,夸张点叫侏儒 实际上并非如此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a midget, really wasn't at all.
+Dialogue: 0,0:15:22.41,0:15:24.12,*Default,NTP,0000,0000,0000,,他仅仅是有点肥硕\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was just sort of corpulent.
+Dialogue: 0,0:15:24.12,0:15:26.53,*Default,NTP,0000,0000,0000,,像寻常人那样逐渐发福而已\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was the average kind of increasingly corpulent.
+Dialogue: 0,0:15:26.53,0:15:29.28,*Default,NTP,0000,0000,0000,,他算是法国人里中等个子的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was the average height of most people in France.
+Dialogue: 0,0:15:30.09,0:15:34.96,*Default,NTP,0000,0000,0000,,彼得大帝是一个高个子 身高两米\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter the Great was a big guy, 6'7".
+Dialogue: 0,0:15:35.21,0:15:39.16,*Default,NTP,0000,0000,0000,,他的手和脚却十分小\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had extremely small hands, very small feet,
+Dialogue: 0,0:15:39.16,0:15:43.93,*Default,NTP,0000,0000,0000,,这意味着他走路时可能有些蹒跚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which meant he sort of lurched and stumbled sometimes when he walked,
+Dialogue: 0,0:15:43.93,0:15:46.16,*Default,NTP,0000,0000,0000,,在他豪饮之后更是如此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly because he drank enormous quantities.
+Dialogue: 0,0:15:46.29,0:15:48.91,*Default,NTP,0000,0000,0000,,他的脸部会不自觉地抽搐\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had these odd kind of facial ticks that
+Dialogue: 0,0:15:48.91,0:15:51.46,*Default,NTP,0000,0000,0000,,完全无法控制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he couldn't really help at all.
+Dialogue: 0,0:15:51.46,0:15:55.65,*Default,NTP,0000,0000,0000,,当然了  我们没有任何\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We don't have a documentary
+Dialogue: 0,0:15:55.65,0:16:01.19,*Default,NTP,0000,0000,0000,,我们没有任何彼得大帝的影像资料	\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}showing Peter the Great in action, for obvious reasons.
+Dialogue: 0,0:16:01.19,0:16:04.47,*Default,NTP,0000,0000,0000,,不过  那些在伦敦的豪华宴会上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the people that he visited when he was snatching huge
+Dialogue: 0,0:16:04.47,0:16:08.67,*Default,NTP,0000,0000,0000,,目睹他大快朵颐的人评价说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}roasts off the table at the fancy parties in London
+Dialogue: 0,0:16:08.67,0:16:12.96,*Default,NTP,0000,0000,0000,,他脸部的抽搐使其面目扭曲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}commented on these facial ticks that he had that would bend his face.
+Dialogue: 0,0:16:12.97,0:16:19.53,*Default,NTP,0000,0000,0000,,他的下嘴唇存在畸形\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had a misshapen lower lip and his head sometimes when he
+Dialogue: 0,0:16:19.53,0:16:22.29,*Default,NTP,0000,0000,0000,,当他说话的时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when he was talking would seem convulsed to the right.
+Dialogue: 0,0:16:22.30,0:16:23.92,*Default,NTP,0000,0000,0000,,他的头会总是会歪向右边\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It would move to the right all the time.
+Dialogue: 0,0:16:23.92,0:16:25.50,*Default,NTP,0000,0000,0000,,他虽然比普通人个子大很多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was so much bigger than everybody else,
+Dialogue: 0,0:16:25.50,0:16:28.54,*Default,NTP,0000,0000,0000,,但人们并不会感到惊异\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so people really were not taken aback,
+Dialogue: 0,0:16:28.64,0:16:37.21,*Default,NTP,0000,0000,0000,,因为在那个时代有生理缺陷极为寻常\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this was a time when physical imperfections were commonplace.
+Dialogue: 0,0:16:37.21,0:16:42.48,*Default,NTP,0000,0000,0000,,在俄国的任何一个角落\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You couldn't go anywhere without seeing people who nature had given,
+Dialogue: 0,0:16:42.48,0:16:45.53,*Default,NTP,0000,0000,0000,,你都会看到极端贫苦造成的自然生理缺陷\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in many ways, a very bad deal along with crushing poverty.
+Dialogue: 0,0:16:45.87,0:16:50.92,*Default,NTP,0000,0000,0000,,而彼得大帝是沙皇  加上发起怒来十分可怕 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the fact that Peter was a czar and was rather scary in his temperament,
+Dialogue: 0,0:16:50.92,0:16:53.44,*Default,NTP,0000,0000,0000,,因为他暴躁易怒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he had a rather bad temper, too,
+Dialogue: 0,0:16:53.44,0:16:56.82,*Default,NTP,0000,0000,0000,,人们畏惧他[而不会去注意他的缺陷]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}meant that he could be alarming.
+Dialogue: 0,0:16:56.82,0:16:58.25,*Default,NTP,0000,0000,0000,,他可以变得很可怕\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He could be scary.
+Dialogue: 0,0:16:58.25,0:17:01.76,*Default,NTP,0000,0000,0000,,他的仁慈和残忍都被人们当传奇一样诉说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His generosity was legend, but so was his cruelty.
+Dialogue: 0,0:17:02.35,0:17:07.02,*Default,NTP,0000,0000,0000,,在1698年和1699年的数次公开行刑里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Several times at public executions in 1698 and 1699,
+Dialogue: 0,0:17:07.02,0:17:09.22,*Default,NTP,0000,0000,0000,,他轰走了刽子手\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he brushed the executioner away,
+Dialogue: 0,0:17:09.23,0:17:11.57,*Default,NTP,0000,0000,0000,,抄起斧子亲自动手\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}grabbed the axe and did the dirty work himself,
+Dialogue: 0,0:17:11.71,0:17:14.57,*Default,NTP,0000,0000,0000,,手刃了几个囚犯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}chopping off a head or two.
+Dialogue: 0,0:17:14.80,0:17:20.37,*Default,NTP,0000,0000,0000,,1718年 他下令救活一名遭受酷刑的男子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1718, he ordered a man kept alive after being horribly tortured,
+Dialogue: 0,0:17:20.37,0:17:26.02,*Default,NTP,0000,0000,0000,,却是为了尽可能长时间地折磨他\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so he could be tortured some more and suffer as long as humanly possible.
+Dialogue: 0,0:17:26.51,0:17:29.30,*Default,NTP,0000,0000,0000,,他所有的内阁大臣和官员们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All officials from the chancelleries
+Dialogue: 0,0:17:29.30,0:17:33.38,*Default,NTP,0000,0000,0000,,都被迫出席拷打的场面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he had created and all of the officers were obliged
+Dialogue: 0,0:17:33.38,0:17:39.02,*Default,NTP,0000,0000,0000,,这么做是以儆效尤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to attend this torture scene as a way of warning them that,
+Dialogue: 0,0:17:40.69,0:17:42.10,*Default,NTP,0000,0000,0000,,"你们最好别到处惹是生非"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You'd better not mess around."
+Dialogue: 0,0:17:42.10,0:17:44.46,*Default,NTP,0000,0000,0000,,要记得一点  我们后面还会讲到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember, this is a time, as we'll see in a while,
+Dialogue: 0,0:17:44.46,0:17:46.32,*Default,NTP,0000,0000,0000,,因为彼得大帝经常外出\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the czar was on the road a lot,
+Dialogue: 0,0:17:46.32,0:17:48.97,*Default,NTP,0000,0000,0000,,而当时的俄帝国幅员辽阔\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and distances in the Russian empire are enormous.
+Dialogue: 0,0:17:49.28,0:17:52.78,*Default,NTP,0000,0000,0000,,当他离开莫斯科和圣彼得堡外出时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he is gone from Moscow and then St. Petersburg,
+Dialogue: 0,0:17:53.15,0:17:55.60,*Default,NTP,0000,0000,0000,,就会有人秘密集会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was always this tendency to have these sort of cabales
+Dialogue: 0,0:17:55.60,0:17:58.47,*Default,NTP,0000,0000,0000,,结党营私  秘谋造反\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to get together and sort of plot.
+Dialogue: 0,0:17:58.47,0:18:01.46,*Default,NTP,0000,0000,0000,,他的儿子日后很不明智地牵扯在其中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His son has the bad idea of getting involved in this later,
+Dialogue: 0,0:18:01.47,0:18:02.97,*Default,NTP,0000,0000,0000,,这一点我们后面会讲到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as we shall see.
+Dialogue: 0,0:18:02.97,0:18:08.40,*Default,NTP,0000,0000,0000,,不过也有些事情显露出他仁慈的一面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yet there were incidents that his merciful side came through as well.
+Dialogue: 0,0:18:08.40,0:18:12.65,*Default,NTP,0000,0000,0000,,只是对于背叛者  他是绝不手软的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But when it came to treason, he was less likely to be merciful,
+Dialogue: 0,0:18:12.65,0:18:17.96,*Default,NTP,0000,0000,0000,,他那不幸的儿子阿列克思就是一个例证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as the case of Alexis, his ill-fated son would demonstrate.
+Dialogue: 0,0:18:18.35,0:18:19.58,*Default,NTP,0000,0000,0000,,有一件事情很明显\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One thing is clear.
+Dialogue: 0,0:18:19.58,0:18:22.99,*Default,NTP,0000,0000,0000,,即彼得大帝的一言一行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter the Great had an enormous ambivalence
+Dialogue: 0,0:18:23.18,0:18:27.54,*Default,NTP,0000,0000,0000,,很不符合沙皇的身份\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about his role and his image as a czar.
+Dialogue: 0,0:18:27.73,0:18:31.18,*Default,NTP,0000,0000,0000,,他的第二任妻子是一位拉脱维亚农民出身的女佣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His second wife was a Latvian peasant maid.
+Dialogue: 0,0:18:31.49,0:18:34.46,*Default,NTP,0000,0000,0000,,这令贵族们感到恐慌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This horrified the Boyars,
+Dialogue: 0,0:18:34.46,0:18:37.99,*Default,NTP,0000,0000,0000,,他们认为这门婚事极不般配\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who thought that this was unbecoming.
+Dialogue: 0,0:18:37.99,0:18:40.64,*Default,NTP,0000,0000,0000,,首先  一个俄国人怎么能娶一个拉脱维亚人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How can you marry a Latvian to begin with,
+Dialogue: 0,0:18:41.57,0:18:45.74,*Default,NTP,0000,0000,0000,,何况女方还是个平民\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you're a Russian and marry somebody who was a commoner?
+Dialogue: 0,0:18:45.74,0:18:46.86,*Default,NTP,0000,0000,0000,,彼得大帝有将帅之才\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was capable,
+Dialogue: 0,0:18:46.86,0:18:49.09,*Default,NTP,0000,0000,0000,,在很多绘画里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there are a lot of paintings of him dressing up
+Dialogue: 0,0:18:49.09,0:18:51.54,*Default,NTP,0000,0000,0000,,他都衣着光鲜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and playing the role of a czar,
+Dialogue: 0,0:18:52.17,0:18:53.77,*Default,NTP,0000,0000,0000,,很符合沙皇的身份\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}dressing in fancy clothes.
+Dialogue: 0,0:18:53.77,0:18:57.78,*Default,NTP,0000,0000,0000,,不过在更多的绘画中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there are more images of him identified with horribly
+Dialogue: 0,0:18:57.78,0:19:01.38,*Default,NTP,0000,0000,0000,,他都穿着双破旧的靴子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}worn boots with his toes sometimes sneaking through at the end
+Dialogue: 0,0:19:01.38,0:19:04.72,*Default,NTP,0000,0000,0000,,有时还露出穿着袜子的脚趾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that seemed to reflect his great personal thrift,
+Dialogue: 0,0:19:05.31,0:19:07.03,*Default,NTP,0000,0000,0000,,可能是为了显示节俭\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wearing stockings, it was said,
+Dialogue: 0,0:19:07.03,0:19:08.62,*Default,NTP,0000,0000,0000,,据说  他亲手补袜子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he darned himself,
+Dialogue: 0,0:19:09.07,0:19:12.99,*Default,NTP,0000,0000,0000,,[画中]他还戴着一顶破烂帽子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a battered hat that he kept on wearing that he had worn at
+Dialogue: 0,0:19:12.99,0:19:16.34,*Default,NTP,0000,0000,0000,,自1709年波尔塔瓦战役  这顶帽子就一直陪伴着她\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Battle of Poltava in 1709,
+Dialogue: 0,0:19:16.34,0:19:17.21,*Default,NTP,0000,0000,0000,,帽子上有个洞\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}complete with a bullet hole
+Dialogue: 0,0:19:17.21,0:19:22.74,*Default,NTP,0000,0000,0000,,是一枚本该打穿他脑袋的子弹留下的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that supposedly tore through it, missing his head.
+Dialogue: 0,0:19:23.43,0:19:26.05,*Default,NTP,0000,0000,0000,,他喜欢和普通人在一起\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He liked the company of ordinary people.
+Dialogue: 0,0:19:26.86,0:19:28.44,*Default,NTP,0000,0000,0000,,这是他不变的特质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This was a constant trait.
+Dialogue: 0,0:19:28.86,0:19:31.85,*Default,NTP,0000,0000,0000,,他认为自己和俄国人民血肉相连\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He identified himself with the Russian people.
+Dialogue: 0,0:19:31.91,0:19:33.44,*Default,NTP,0000,0000,0000,,我们待会再谈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More about this in a while.
+Dialogue: 0,0:19:33.70,0:19:35.25,*Default,NTP,0000,0000,0000,,他撤消了车驾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He avoided carriages.
+Dialogue: 0,0:19:35.88,0:19:37.09,*Default,NTP,0000,0000,0000,,因为他喜欢走路\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He liked to walk.
+Dialogue: 0,0:19:37.37,0:19:40.92,*Default,NTP,0000,0000,0000,,他弃置车马  解雇马夫\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He would leave the carriage behind, dismissing carriage drivers
+Dialogue: 0,0:19:40.92,0:19:45.10,*Default,NTP,0000,0000,0000,,而他自己以及他的警卫还没这些马夫穿得好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who were more well-dressed than he was and his guards.
+Dialogue: 0,0:19:45.28,0:19:51.53,*Default,NTP,0000,0000,0000,,他无视精心布置的晚餐座位\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He ignored carefully-crafted seating plans at dinner.
+Dialogue: 0,0:19:51.70,0:19:55.26,*Default,NTP,0000,0000,0000,,在不同的桌子间窜来窜去  站着吃东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He jumped from table to table, eating standing up--he didn't
+Dialogue: 0,0:19:55.26,0:19:57.47,*Default,NTP,0000,0000,0000,,他不怎么喜欢坐着  因为长年背痛\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like to sit down very much, his back hurt--;
+Dialogue: 0,0:19:58.11,0:19:59.57,*Default,NTP,0000,0000,0000,,或者在宴席间四处走动\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or walking around.
+Dialogue: 0,0:19:59.60,0:20:02.48,*Default,NTP,0000,0000,0000,,他无法在同一处呆很久\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He couldn't stay still very long.
+Dialogue: 0,0:20:03.28,0:20:04.93,*Default,NTP,0000,0000,0000,,当他要投宿时 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he was lodged
+Dialogue: 0,0:20:04.93,0:20:09.81,*Default,NTP,0000,0000,0000,,他喜欢住在朴素的俄式农舍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he liked living in your basic Russian wooden, peasant house,
+Dialogue: 0,0:20:10.25,0:20:13.30,*Default,NTP,0000,0000,0000,,就如你能在莫斯科郊外找到的那种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as you could find on the outskirts of Moscow.
+Dialogue: 0,0:20:13.30,0:20:14.87,*Default,NTP,0000,0000,0000,,有一件关于莫斯科的史实\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the things that's very true about Moscow,
+Dialogue: 0,0:20:14.87,0:20:16.26,*Default,NTP,0000,0000,0000,,直到二十世纪\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right into the twentieth century,
+Dialogue: 0,0:20:16.26,0:20:18.52,*Default,NTP,0000,0000,0000,,在莫斯科的郊外\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that you had all sorts of peasants
+Dialogue: 0,0:20:18.52,0:20:22.05,*Default,NTP,0000,0000,0000,,还有许多农民住在这样的小木屋里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}living on the edge of Moscow living in these wooden houses.
+Dialogue: 0,0:20:22.05,0:20:23.04,*Default,NTP,0000,0000,0000,,他就喜欢这样[指睡在小木屋里]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He liked that.
+Dialogue: 0,0:20:23.04,0:20:27.34,*Default,NTP,0000,0000,0000,,他说在那些木屋里睡的很好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He said he slept well in these wooden houses
+Dialogue: 0,0:20:27.34,0:20:31.13,*Default,NTP,0000,0000,0000,,这可能是缘于他那并不愉快的童年\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that probably is because of his very unhappy childhood
+Dialogue: 0,0:20:31.14,0:20:32.82,*Default,NTP,0000,0000,0000,,在这冰冷的大房子里  亲戚们的高声谩骂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}listening to relatives shouting at each other
+Dialogue: 0,0:20:32.82,0:20:35.61,*Default,NTP,0000,0000,0000,,彼此的秘谋暗杀  给他的童年留下了阴影\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and plotting to kill each other in the big house.
+Dialogue: 0,0:20:38.79,0:20:40.31,*Default,NTP,0000,0000,0000,,他从不喜欢莫斯科\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he never liked Moscow.
+Dialogue: 0,0:20:40.43,0:20:42.66,*Default,NTP,0000,0000,0000,,稍后  我们会再次谈到这一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll see more about that in a minute,
+Dialogue: 0,0:20:42.67,0:20:46.06,*Default,NTP,0000,0000,0000,,他之所以建造圣彼得堡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in part because of its overwhelming religious influence and that's one reason,
+Dialogue: 0,0:20:46.06,0:20:50.40,*Default,NTP,0000,0000,0000,,除了要建立一个出海口这个原因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}besides the quest for a port on the sea,
+Dialogue: 0,0:20:50.52,0:20:55.70,*Default,NTP,0000,0000,0000,,还因为莫斯科的宗教势力根深蒂固\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why he builds St. Petersburg.
+Dialogue: 0,0:20:55.70,0:20:57.18,*Default,NTP,0000,0000,0000,,在国外旅行时  他拒绝住在为贵客\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When traveling abroad, he refused the fancy lodgings
+Dialogue: 0,0:20:57.18,0:21:02.23,*Default,NTP,0000,0000,0000,,准备的精致寓所中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were reserved for such distinguished visitors.
+Dialogue: 0,0:21:02.38,0:21:06.99,*Default,NTP,0000,0000,0000,,林赛·休斯曾写道  彼得大帝1717年去巴黎时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1717 in Paris, Lindsey Hughes reports,
+Dialogue: 0,0:21:07.00,0:21:11.06,*Default,NTP,0000,0000,0000,,他没有住在卢浮宫而是住在一所私宅里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he went to a private house instead of the Louvre palace.
+Dialogue: 0,0:21:11.06,0:21:15.30,*Default,NTP,0000,0000,0000,,我之前说过 卢浮宫里有一个很大的宫殿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The museum had a big palace, which is, as I said before,
+Dialogue: 0,0:21:15.30,0:21:17.39,*Default,NTP,0000,0000,0000,,路易十四小时候曾住在那里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the small boy, Louis XIV, lived,
+Dialogue: 0,0:21:19.30,0:21:21.76,*Default,NTP,0000,0000,0000,,这座宫殿后来在1871年被烧毁\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then was burned in 1871.
+Dialogue: 0,0:21:21.76,0:21:25.44,*Default,NTP,0000,0000,0000,,当时彼得大帝直接租了一栋民宅\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Instead he just went and rented a private house
+Dialogue: 0,0:21:25.44,0:21:27.16,*Default,NTP,0000,0000,0000,,几乎一趴下就睡着了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and fell asleep almost immediately.
+Dialogue: 0,0:21:28.25,0:21:29.92,*Default,NTP,0000,0000,0000,,他喜欢睡在船上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved sleeping on ships;
+Dialogue: 0,0:21:29.92,0:21:32.25,*Default,NTP,0000,0000,0000,,波涛的起伏能使他入眠\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he thought that the rocking of the waves rocked him to sleep
+Dialogue: 0,0:21:32.25,0:21:35.57,*Default,NTP,0000,0000,0000,,所以他乐此不疲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so he liked doing that.
+Dialogue: 0,0:21:35.57,0:21:39.40,*Default,NTP,0000,0000,0000,,据传他爱吃农家食物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Legend has him eating peasant food--cabbage soup,
+Dialogue: 0,0:21:39.40,0:21:44.34,*Default,NTP,0000,0000,0000,,诸如卷心菜汤  稀粥  腌黄瓜拌肉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cabbage soup, porridge, meat with pickled cucumbers,
+Dialogue: 0,0:21:44.42,0:21:46.88,*Default,NTP,0000,0000,0000,,芝士火腿和克瓦斯[一种微酸的淡啤酒]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ham and cheese, and kvass,
+Dialogue: 0,0:21:46.88,0:21:52.14,*Default,NTP,0000,0000,0000,,这种酒由发酵的黑面包做成  我曾经尝过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is a drink that I've actually tasted from fermented black bread.
+Dialogue: 0,0:21:52.20,0:21:55.01,*Default,NTP,0000,0000,0000,,不过他对外国食物也很热衷\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he was not indifferent to foreign food.
+Dialogue: 0,0:21:55.01,0:21:56.42,*Default,NTP,0000,0000,0000,,有人曾找到一张他的订单\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Somebody found an order.
+Dialogue: 0,0:21:56.42,0:21:59.50,*Default,NTP,0000,0000,0000,,200瓶"隐士山"葡萄酒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He ordered 200 bottles of Hermitage wine.
+Dialogue: 0,0:21:59.56,0:22:03.39,*Default,NTP,0000,0000,0000,,"隐士山"是一种很棒的葡萄酒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hermitage is a really wonderful
+Dialogue: 0,0:22:03.39,0:22:04.80,*Default,NTP,0000,0000,0000,,不过标价奇高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and now just horribly overpriced wine from the Drome,
+Dialogue: 0,0:22:04.80,0:22:08.27,*Default,NTP,0000,0000,0000,,产自法国罗纳河谷左岸  离当时我们住的地方不远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the left bank of the Rhone not very far away from where we live.
+Dialogue: 0,0:22:08.28,0:22:09.43,*Default,NTP,0000,0000,0000,,但真的是贵得离谱\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's totally out of price.
+Dialogue: 0,0:22:09.43,0:22:12.15,*Default,NTP,0000,0000,0000,,在17和18世纪\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Hermitage was a wine that was known by connoisseurs
+Dialogue: 0,0:22:12.15,0:22:15.33,*Default,NTP,0000,0000,0000,,"隐士山"葡萄酒为品酒师所熟知  推崇至今\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the seventeenth and eighteenth century, and ever since then.
+Dialogue: 0,0:22:16.08,0:22:20.30,*Default,NTP,0000,0000,0000,,尽管他花了大笔金钱在"隐士山"葡萄酒上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For all the talk about eating cabbage and eating with ordinary people,
+Dialogue: 0,0:22:20.30,0:22:23.37,*Default,NTP,0000,0000,0000,,但是他爱吃卷心菜以及与普通民众一同进餐\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even then Hermitage cost a lot of money.
+Dialogue: 0,0:22:23.47,0:22:27.22,*Default,NTP,0000,0000,0000,,人们对此还是津津乐道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He ordered 200 good bottles of Hermitage wine.
+Dialogue: 0,0:22:27.22,0:22:28.82,*Default,NTP,0000,0000,0000,,就是如此\NSo, voilà.
+Dialogue: 0,0:22:28.82,0:22:31.25,*Default,NTP,0000,0000,0000,,我真希望有机会去尝尝那酒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wish I had been invited to these things.
+Dialogue: 0,0:22:31.25,0:22:33.36,*Default,NTP,0000,0000,0000,,他生性十分随意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was very informal.
+Dialogue: 0,0:22:33.36,0:22:36.24,*Default,NTP,0000,0000,0000,,据说他习惯用手抓着一大块肉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There is this legend that he used to grab these huge chunks of meat
+Dialogue: 0,0:22:36.24,0:22:40.25,*Default,NTP,0000,0000,0000,,就像我们在看棒球比赛时吃热狗那样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and started gnawing on them like he would on a hotdog
+Dialogue: 0,0:22:40.25,0:22:42.66,*Default,NTP,0000,0000,0000,,狼吞虎咽\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or something like that at a Yankee game,
+Dialogue: 0,0:22:42.66,0:22:46.56,*Default,NTP,0000,0000,0000,,尽管别人都衣冠整齐\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}except that other people were already dressed up
+Dialogue: 0,0:22:46.57,0:22:49.07,*Default,NTP,0000,0000,0000,,等着肉和酱汁端上来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the meat and the gravy was flying over them
+Dialogue: 0,0:22:49.07,0:22:50.82,*Default,NTP,0000,0000,0000,,而他却边啃着那些肉边四处游走\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as he just sort of walked around gnawing on this stuff.
+Dialogue: 0,0:22:51.69,0:22:54.30,*Default,NTP,0000,0000,0000,,勃兰登堡的索菲亚·夏洛特\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sofia Charlotte of Brandenburg--
+Dialogue: 0,0:22:54.36,0:22:55.79,*Default,NTP,0000,0000,0000,,我不知道那是谁\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know who the hell that is,
+Dialogue: 0,0:22:55.79,0:22:59.04,*Default,NTP,0000,0000,0000,,不貌似是位皇家食客\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's got to be some royal hanger-on--
+Dialogue: 0,0:22:59.09,0:23:03.45,*Default,NTP,0000,0000,0000,,她写道  "很明显没人教过他吃饭的礼仪"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wrote that "It is evident that he has not been taught how to eat properly."
+Dialogue: 0,0:23:03.45,0:23:06.65,*Default,NTP,0000,0000,0000,,不过她喜欢他那自然不做作的举止\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But she liked his natural manner and informality.
+Dialogue: 0,0:23:07.19,0:23:12.03,*Default,NTP,0000,0000,0000,,丹麦的弗雷德里克四世认为他举止粗野  不够得体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}King Frederick of Denmark found him ill-mannered and inappropriate.
+Dialogue: 0,0:23:13.14,0:23:15.15,*Default,NTP,0000,0000,0000,,他喜欢去化装舞会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He liked to masquerade.
+Dialogue: 0,0:23:15.15,0:23:19.88,*Default,NTP,0000,0000,0000,,这也是他形象的两面性的证明\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, this is his personal ambivalence about his own role,
+Dialogue: 0,0:23:20.35,0:23:22.47,*Default,NTP,0000,0000,0000,,他喜欢在普通人身边游荡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hanging around with ordinary people,
+Dialogue: 0,0:23:22.92,0:23:27.05,*Default,NTP,0000,0000,0000,,或者住在农家小屋之类的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sleeping in peasant lodgings and that sort of thing.
+Dialogue: 0,0:23:27.35,0:23:31.53,*Default,NTP,0000,0000,0000,,他喜欢穿成水手\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He liked to dress up as a sailor.
+Dialogue: 0,0:23:31.96,0:23:34.72,*Default,NTP,0000,0000,0000,,当他环游西欧时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One thing that he always did when he went on his grand tour
+Dialogue: 0,0:23:34.72,0:23:36.67,*Default,NTP,0000,0000,0000,,他常常使用假名\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is he always took fake names,
+Dialogue: 0,0:23:37.09,0:23:43.14,*Default,NTP,0000,0000,0000,,就好像入住酒店时登记用"张三"或"李四"做名字一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as if he was signing into a hotel as Mr. and Mrs. John Smith.
+Dialogue: 0,0:23:43.73,0:23:46.00,*Default,NTP,0000,0000,0000,,他会用一个普通人的名字\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He would take the name of a commoner.
+Dialogue: 0,0:23:46.28,0:23:49.55,*Default,NTP,0000,0000,0000,,他在酒店登记时不会签彼得大帝之类的名字\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He didn't sign into a hotel as Peter the Great or whatever,
+Dialogue: 0,0:23:49.55,0:23:51.95,*Default,NTP,0000,0000,0000,,而是用一个假名来代替\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but he would go in with a name that wasn't his.
+Dialogue: 0,0:23:51.96,0:23:55.60,*Default,NTP,0000,0000,0000,,这也表明他对自己的身份的矛盾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, this is just his personal ambivalence about who he was,
+Dialogue: 0,0:23:55.89,0:24:02.94,*Default,NTP,0000,0000,0000,,以及自己在家庭中的角色的不确定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and his uncertainty about the role that he had in his own family
+Dialogue: 0,0:24:02.97,0:24:08.16,*Default,NTP,0000,0000,0000,,所以  这种角色扮演成为他生活的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, this was a play-acting that was part of his life.
+Dialogue: 0,0:24:08.34,0:24:12.46,*Default,NTP,0000,0000,0000,,这些华丽的化装舞会和猜谜游戏\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These ornate masquerades and charades that are part of his
+Dialogue: 0,0:24:12.47,0:24:16.40,*Default,NTP,0000,0000,0000,,揭露了他复杂个性中的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}complexity reveal something about his identity.
+Dialogue: 0,0:24:16.40,0:24:18.45,*Default,NTP,0000,0000,0000,,当你看到他的画像时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then when you see these portraits of him,
+Dialogue: 0,0:24:18.45,0:24:19.69,*Default,NTP,0000,0000,0000,,你会发现他很有沙皇的气质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he looks very czar-like.
+Dialogue: 0,0:24:19.69,0:24:24.38,*Default,NTP,0000,0000,0000,,他的神态很像通常画像中的皇室成员\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He looks like one of these royal people that were painted all the time.
+Dialogue: 0,0:24:24.38,0:24:28.85,*Default,NTP,0000,0000,0000,,在1697年他用假名彼得·米哈伊洛夫向西私访\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1697 he goes west with the name of Peter Michaeloff.
+Dialogue: 0,0:24:29.58,0:24:33.16,*Default,NTP,0000,0000,0000,,他甚至在自己的账本里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even in his own account books
+Dialogue: 0,0:24:33.16,0:24:34.57,*Default,NTP,0000,0000,0000,,精心记录了他使用的经费\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which he kept very carefully about how much money he spent.
+Dialogue: 0,0:24:34.58,0:24:36.67,*Default,NTP,0000,0000,0000,,他并不吝啬\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He wasn't radin, he wasn't a cheapskate.
+Dialogue: 0,0:24:36.83,0:24:43.11,*Default,NTP,0000,0000,0000,,但他很留心皇室的花销  个人的花销\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he paid attention to royal expenses, personal expenses.
+Dialogue: 0,0:24:43.11,0:24:47.46,*Default,NTP,0000,0000,0000,,他用许多称号来称呼自己\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He refers to himself with a variety of names and titles,
+Dialogue: 0,0:24:47.46,0:24:49.81,*Default,NTP,0000,0000,0000,,例如 某某上尉  某某上校\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as captain this, colonel that,
+Dialogue: 0,0:24:50.06,0:24:51.28,*Default,NTP,0000,0000,0000,,某某将军\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}general that.
+Dialogue: 0,0:24:52.24,0:24:54.87,*Default,NTP,0000,0000,0000,,他并不是试着对日后的学者隐瞒身份\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's not trying to hide his identity to the future.
+Dialogue: 0,0:24:54.87,0:24:56.63,*Default,NTP,0000,0000,0000,,他是谁太明显了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was very obvious who he was.
+Dialogue: 0,0:24:56.64,0:24:59.40,*Default,NTP,0000,0000,0000,,他的字迹行家一看就能认出来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His handwriting is recognized by experts.
+Dialogue: 0,0:24:59.41,0:25:02.61,*Default,NTP,0000,0000,0000,,不过这种逢场作戏无处不在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But role-playing takes on dimensions of the state.
+Dialogue: 0,0:25:02.61,0:25:04.46,*Default,NTP,0000,0000,0000,,我不记得何时何地提到过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I mentioned, I don't remember in what context, the other day
+Dialogue: 0,0:25:04.46,0:25:08.03,*Default,NTP,0000,0000,0000,,最典型的一个案例便是醉酒议会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the most famous example is the drunken assembly.
+Dialogue: 0,0:25:08.62,0:25:12.16,*Default,NTP,0000,0000,0000,,这是个他和他的狐朋狗友们模仿的政府\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's sort of a mock parallel government with his buddies.
+Dialogue: 0,0:25:12.16,0:25:15.56,*Default,NTP,0000,0000,0000,,这个政府充斥了彼得的心腹和同党\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has personnel who are his buddies, those in favour,
+Dialogue: 0,0:25:15.74,0:25:17.89,*Default,NTP,0000,0000,0000,,吃吃喝喝  不务正业  诸如此类的事宜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lots of eating, drinking, et cetera.
+Dialogue: 0,0:25:18.04,0:25:22.49,*Default,NTP,0000,0000,0000,,他们有自己的规则 一种仿宪法的章程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has its statutes, sort of the mock constitution,
+Dialogue: 0,0:25:22.50,0:25:26.70,*Default,NTP,0000,0000,0000,,还有基本上是腐败挥霍的仪式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and its rituals that involve basically getting wasted.
+Dialogue: 0,0:25:27.38,0:25:32.90,*Default,NTP,0000,0000,0000,,这又是他多重人格的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, this is part of his split personality about who he was.
+Dialogue: 0,0:25:33.17,0:25:36.84,*Default,NTP,0000,0000,0000,,如果休斯是对的  他的这一部分性格说明了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If Hughes is correct, this is part of him saying that
+Dialogue: 0,0:25:36.84,0:25:39.48,*Default,NTP,0000,0000,0000,,作为沙皇不仅仅要衣着华丽\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being a czar is more than just dressing up,
+Dialogue: 0,0:25:39.48,0:25:42.48,*Default,NTP,0000,0000,0000,,扮演沙皇的角色 参加华丽的舞会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and playing the role, and going to fancy dances,
+Dialogue: 0,0:25:42.67,0:25:44.79,*Default,NTP,0000,0000,0000,,和贵族上层一起消磨时光\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and hanging around with fancy people
+Dialogue: 0,0:25:44.79,0:25:46.28,*Default,NTP,0000,0000,0000,,整日无所事事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who don't do a damn thing.
+Dialogue: 0,0:25:47.06,0:25:48.51,*Default,NTP,0000,0000,0000,,作为沙皇要做实事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have to do the work.
+Dialogue: 0,0:25:48.51,0:25:49.87,*Default,NTP,0000,0000,0000,,要脚踏实地 勤勤恳恳\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have to walk the walk.
+Dialogue: 0,0:25:50.50,0:25:52.03,*Default,NTP,0000,0000,0000,,他的确这样做了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That he did.
+Dialogue: 0,0:25:52.03,0:25:54.32,*Default,NTP,0000,0000,0000,,沙皇要展现出雄才武略 刚强坚毅\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You had to manifest strength, and firmness,
+Dialogue: 0,0:25:54.32,0:25:58.43,*Default,NTP,0000,0000,0000,,勇敢无畏  并且在史书写满功绩\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and bravery, and worthy deeds that would be
+Dialogue: 0,0:25:58.44,0:26:01.84,*Default,NTP,0000,0000,0000,,能被当代人看做不世之功\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}recognized as being real deeds by contemporaries.
+Dialogue: 0,0:26:02.18,0:26:05.15,*Default,NTP,0000,0000,0000,,他不断提醒那一事无成的儿子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He constantly warns his son, who was kind of an n'er do well,
+Dialogue: 0,0:26:05.51,0:26:06.92,*Default,NTP,0000,0000,0000,,"你要加倍用功\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that, "You better work hard,
+Dialogue: 0,0:26:06.92,0:26:08.27,*Default,NTP,0000,0000,0000,,哪怕只是稍微用点心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}" Or, "You better work a little harder
+Dialogue: 0,0:26:08.27,0:26:09.98,*Default,NTP,0000,0000,0000,,对你做的事要更上心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and pay more attention to what you're doing.
+Dialogue: 0,0:26:09.98,0:26:12.90,*Default,NTP,0000,0000,0000,,多花点时间在军政大事上  不要成天四处游荡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd better care about military things more than you do.
+Dialogue: 0,0:26:13.06,0:26:15.07,*Default,NTP,0000,0000,0000,,我告诉你  你最好这样做"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is what I'm telling you you'd better do.
+Dialogue: 0,0:26:15.24,0:26:17.20,*Default,NTP,0000,0000,0000,,别打算反抗我的旨意"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You'd better listen to what I'm doing."
+Dialogue: 0,0:26:18.27,0:26:22.27,*Default,NTP,0000,0000,0000,,但是有时候他也汹酒 暴饮暴食\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But sometimes he would drink a lot and eat a lot
+Dialogue: 0,0:26:22.27,0:26:23.39,*Default,NTP,0000,0000,0000,,因为他也需要放松\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he just needed to relax.
+Dialogue: 0,0:26:23.40,0:26:24.69,*Default,NTP,0000,0000,0000,,沙皇是很辛苦的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Being a czar was a busy job.
+Dialogue: 0,0:26:24.69,0:26:26.42,*Default,NTP,0000,0000,0000,,他早上4点起床\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He got up at 4:00 in the morning.
+Dialogue: 0,0:26:26.53,0:26:28.55,*Default,NTP,0000,0000,0000,,比谁都早到办公室\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was at his office before anybody else was.
+Dialogue: 0,0:26:28.98,0:26:30.53,*Default,NTP,0000,0000,0000,,哪行都是这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}People began, like in any business,
+Dialogue: 0,0:26:30.53,0:26:34.52,*Default,NTP,0000,0000,0000,,人们都开始留意自己是否来得够早\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be attentive to whether or not they were early enough.
+Dialogue: 0,0:26:34.52,0:26:38.94,*Default,NTP,0000,0000,0000,,"他有没有看到我天黑了还在这里工作"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Does he see me that I am still here when it's getting dark?"
+Dialogue: 0,0:26:39.07,0:26:44.20,*Default,NTP,0000,0000,0000,,不过  冬天的圣彼得堡中午之后就天黑了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, it gets dark in the winter in St. Petersburg about noon.
+Dialogue: 0,0:26:45.58,0:26:47.68,*Default,NTP,0000,0000,0000,,不管怎样  他喜欢实用的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But anyway, he loved practical things.
+Dialogue: 0,0:26:47.68,0:26:49.67,*Default,NTP,0000,0000,0000,,比如他喜欢玩火\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved firefighting, for example.
+Dialogue: 0,0:26:50.38,0:26:54.21,*Default,NTP,0000,0000,0000,,对烟火  炸药  大炮情有独钟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had a passion for fireworks, explosives, cannon fire.
+Dialogue: 0,0:26:54.24,0:26:55.84,*Default,NTP,0000,0000,0000,,他会打鼓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He played the drums.
+Dialogue: 0,0:26:56.63,0:26:59.13,*Default,NTP,0000,0000,0000,,他热衷于跳舞和宗教诗歌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved dancing and he loved religious singing.
+Dialogue: 0,0:26:59.46,0:27:04.76,*Default,NTP,0000,0000,0000,,他喜欢俄国东正教中唱诗班的音乐\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved the choir music of Russian Orthodox services.
+Dialogue: 0,0:27:04.77,0:27:07.96,*Default,NTP,0000,0000,0000,,他喜欢下棋  打桌球\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved to play chess and he loved to play billiards.
+Dialogue: 0,0:27:08.63,0:27:09.95,*Default,NTP,0000,0000,0000,,我之前还说过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And, as I already said,
+Dialogue: 0,0:27:09.95,0:27:12.29,*Default,NTP,0000,0000,0000,,他喜欢数学仪器和望远镜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he loved mathematical instruments and telescopes.
+Dialogue: 0,0:27:12.29,0:27:14.37,*Default,NTP,0000,0000,0000,,不论到哪里他总是随身带着望远镜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He carried a telescope with him wherever he went.
+Dialogue: 0,0:27:14.48,0:27:16.94,*Default,NTP,0000,0000,0000,,他知道如何使用  而且知道想看什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He knew how to use it and he knew what he was looking for.
+Dialogue: 0,0:27:17.60,0:27:18.92,*Default,NTP,0000,0000,0000,,他喜欢地球仪\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved globes.
+Dialogue: 0,0:27:18.92,0:27:20.52,*Default,NTP,0000,0000,0000,,喜欢看东西的地理位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He loved to see where things were.
+Dialogue: 0,0:27:20.69,0:27:24.35,*Default,NTP,0000,0000,0000,,喜欢看到地图上标出来的部分的西伯利亚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He liked to see that they mapped parts of Siberia that
+Dialogue: 0,0:27:24.35,0:27:25.95,*Default,NTP,0000,0000,0000,,人们曾经不知道那里有什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}people didn't know what was there.
+Dialogue: 0,0:27:25.95,0:27:28.63,*Default,NTP,0000,0000,0000,,有点像17世纪80年代前非洲的部分地区\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was rather like parts of Africa before the 1880s.
+Dialogue: 0,0:27:28.63,0:27:32.24,*Default,NTP,0000,0000,0000,,那里在地图上是大片空白  没有人到过那里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You see these big blanks, because nobody had ever been there.
+Dialogue: 0,0:27:33.20,0:27:34.72,*Default,NTP,0000,0000,0000,,他对那些东西感兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was interested in that.
+Dialogue: 0,0:27:34.93,0:27:36.56,*Default,NTP,0000,0000,0000,,他是自学成才的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was self-taught.
+Dialogue: 0,0:27:37.07,0:27:40.09,*Default,NTP,0000,0000,0000,,如果你是沙皇  你不需要读什么贵族学校\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You didn't have to go to some fancy school if you were a czar,
+Dialogue: 0,0:27:40.09,0:27:42.30,*Default,NTP,0000,0000,0000,,沙皇太子有私人导师\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be a czar in training. You had tutors
+Dialogue: 0,0:27:42.30,0:27:44.47,*Default,NTP,0000,0000,0000,,所有的太子都有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as all these folks did.
+Dialogue: 0,0:27:46.31,0:27:48.92,*Default,NTP,0000,0000,0000,,他时常犯拼写错误  你们可以看到这一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He made spelling mistakes, which you can see.
+Dialogue: 0,0:27:48.92,0:27:51.42,*Default,NTP,0000,0000,0000,,我虽然不懂俄语  但他写东西的时候会拼错\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't read Russian, but he made spelling mistakes when he wrote.
+Dialogue: 0,0:27:51.44,0:27:53.06,*Default,NTP,0000,0000,0000,,他的字迹很难辨认\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His handwriting was awful.
+Dialogue: 0,0:27:53.09,0:27:58.45,*Default,NTP,0000,0000,0000,,难以辨认的字迹毫无疑问是历史学家的噩梦\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bad handwriting is the nemesis of historians,
+Dialogue: 0,0:27:58.45,0:28:00.29,*Default,NTP,0000,0000,0000,,他建了个私人图书馆\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he built a private library,
+Dialogue: 0,0:28:00.34,0:28:02.47,*Default,NTP,0000,0000,0000,,里面装的并不都是宗教书籍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it wasn't just full of religious books.
+Dialogue: 0,0:28:02.53,0:28:05.38,*Default,NTP,0000,0000,0000,,而是实际的书籍  比如有关防御工事的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was practical books about fortifications,
+Dialogue: 0,0:28:05.38,0:28:09.81,*Default,NTP,0000,0000,0000,,水力学  炮术  航海和造船的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hydraulics, artillery, navigation, and shipbuilding.
+Dialogue: 0,0:28:10.00,0:28:12.56,*Default,NTP,0000,0000,0000,,但他也唱宗教诗歌\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he also sang religious music.
+Dialogue: 0,0:28:12.56,0:28:15.53,*Default,NTP,0000,0000,0000,,他有许多宗教书籍 大多是关于标准的礼拜仪式的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He had many religious books, the kind of standard liturgical texts
+Dialogue: 0,0:28:15.53,0:28:20.05,*Default,NTP,0000,0000,0000,,也就是一些宗教狂热的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were the stuff of religious enthusiasm,
+Dialogue: 0,0:28:20.05,0:28:28.16,*Default,NTP,0000,0000,0000,,还有一些俄国东正教传统中更现代的神学作品\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and more modern theological works in the Russian Orthodox tradition.
+Dialogue: 0,0:28:29.02,0:28:32.28,*Default,NTP,0000,0000,0000,,他作为沙皇矛盾的另一点是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another point about this sort of ambivalence about being czar
+Dialogue: 0,0:28:32.28,0:28:36.01,*Default,NTP,0000,0000,0000,,他最信任的顾问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that he often made a point of choosing his most trusted
+Dialogue: 0,0:28:36.01,0:28:40.28,*Default,NTP,0000,0000,0000,,常常是从普通民众中选出来的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}advisors from the ranks of commoners
+Dialogue: 0,0:28:40.28,0:28:44.19,*Default,NTP,0000,0000,0000,,而且经过一段时间后  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and gave them the right to become titled after a certain amount of time
+Dialogue: 0,0:28:44.26,0:28:46.25,*Default,NTP,0000,0000,0000,,他会在皇家官僚机构中给他们一个头衔\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after a certain amount of time in the royal bureaucracy.
+Dialogue: 0,0:28:46.25,0:28:48.26,*Default,NTP,0000,0000,0000,,但有时他倾向于选择\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But sometimes he had a tendency to pick people
+Dialogue: 0,0:28:48.26,0:28:50.39,*Default,NTP,0000,0000,0000,,他很喜欢但完全不合格的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whom he liked a lot but were totally unqualified,
+Dialogue: 0,0:28:50.61,0:28:56.05,*Default,NTP,0000,0000,0000,,例如不很得力的军事指挥者 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}military commanders who weren't very good.
+Dialogue: 0,0:28:56.39,0:29:03.93,*Default,NTP,0000,0000,0000,,但他把俄国的极权主义\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what he does is he cuts off Russian absolutism from this
+Dialogue: 0,0:29:04.17,0:29:12.47,*Default,NTP,0000,0000,0000,,从带有浓厚官方色彩的宗教文化完全分离\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}totally religious culture that represented 100 percent of the official culture,
+Dialogue: 0,0:29:13.44,0:29:18.13,*Default,NTP,0000,0000,0000,,实际上这就是彼得大帝之前的俄国文化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in a real sense the culture of pre-Petrian,
+Dialogue: 0,0:29:18.16,0:29:20.51,*Default,NTP,0000,0000,0000,,也就是彼得大帝之前的俄国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is pre-Peter, Russia.
+Dialogue: 0,0:29:20.89,0:29:23.46,*Default,NTP,0000,0000,0000,,那时的俄国文化完全就是宗教文化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Russian culture was entirely religious.
+Dialogue: 0,0:29:23.61,0:29:26.57,*Default,NTP,0000,0000,0000,,如果你去过波兰 我经常去波兰\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you went to Poland, where I go often,
+Dialogue: 0,0:29:26.57,0:29:28.90,*Default,NTP,0000,0000,0000,,就像我之前说的那样  如果你到过波兰的卡拉科夫\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I've said before, if you went to Krakow,
+Dialogue: 0,0:29:28.90,0:29:35.59,*Default,NTP,0000,0000,0000,,那是哥白尼工作过的地方  我曾去过他的工作室\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where Copernicus worked--I've been in Copernicus' workroom,
+Dialogue: 0,0:29:39.06,0:29:41.09,*Default,NTP,0000,0000,0000,,那是一个重要的学习中心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It was an important center of learning,
+Dialogue: 0,0:29:41.09,0:29:44.82,*Default,NTP,0000,0000,0000,,科学革命时科学知识传播的中心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a diffusion of scientific ideas in the scientific revolution
+Dialogue: 0,0:29:44.82,0:29:45.93,*Default,NTP,0000,0000,0000,,后来启蒙运动思想的传播中心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and later of Enlightenment ideals.
+Dialogue: 0,0:29:45.93,0:29:50.78,*Default,NTP,0000,0000,0000,,在立陶宛的首都维尔纽斯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In Vilnius, which is the capital of Lithuania,
+Dialogue: 0,0:29:51.03,0:29:52.65,*Default,NTP,0000,0000,0000,,也有一个大学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you had a university as well.
+Dialogue: 0,0:29:52.65,0:29:54.80,*Default,NTP,0000,0000,0000,,但在俄国没有大学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there wasn't a university in Russia.
+Dialogue: 0,0:29:55.02,0:29:58.29,*Default,NTP,0000,0000,0000,,在俄国没有与英国皇家学会一样的组织\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was no equivalent of the Royal Society that you're
+Dialogue: 0,0:29:58.29,0:30:04.45,*Default,NTP,0000,0000,0000,,伦敦的皇家学会对科学革命的传播非常重要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reading about in London that was very important in the diffusion of the scientific revolution.
+Dialogue: 0,0:30:04.48,0:30:07.04,*Default,NTP,0000,0000,0000,,没有像Académie des sciences[法语]一样的组织\NThere's nothing like the Académie des sciences,
+Dialogue: 0,0:30:07.11,0:30:10.47,*Default,NTP,0000,0000,0000,,也就是巴黎的法国科学院\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Academy of Sciences in Paris,
+Dialogue: 0,0:30:10.47,0:30:13.87,*Default,NTP,0000,0000,0000,,在1666年创立\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which was founded in 1666.
+Dialogue: 0,0:30:13.87,0:30:17.45,*Default,NTP,0000,0000,0000,,俄国没有法律传统  也就没有法学院\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no legal tradition, so there's no law school.
+Dialogue: 0,0:30:17.45,0:30:19.04,*Default,NTP,0000,0000,0000,,没有医学院\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no medical school.
+Dialogue: 0,0:30:19.43,0:30:21.22,*Default,NTP,0000,0000,0000,,没有世俗文化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no secular culture.
+Dialogue: 0,0:30:21.45,0:30:25.32,*Default,NTP,0000,0000,0000,,彼得之前的百分之九十的书籍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ninety-percent of all the books that were published before Peter
+Dialogue: 0,0:30:25.37,0:30:28.70,*Default,NTP,0000,0000,0000,,都是教堂里的祈祷文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}were devotional texts in the church.
+Dialogue: 0,0:30:28.70,0:30:32.49,*Default,NTP,0000,0000,0000,,在俄语中都没有"国家"这个词\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was no word literally in Russian for the state,
+Dialogue: 0,0:30:32.65,0:30:35.49,*Default,NTP,0000,0000,0000,,也没有"君主制"或"政府"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or for the monarchy, or for the government.
+Dialogue: 0,0:30:35.50,0:30:37.48,*Default,NTP,0000,0000,0000,,这些词当时根本不存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They did not exist.
+Dialogue: 0,0:30:37.74,0:30:40.33,*Default,NTP,0000,0000,0000,,"国家" 只是个抽象概念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The state was an abstraction,
+Dialogue: 0,0:30:40.33,0:30:44.44,*Default,NTP,0000,0000,0000,,但沙皇这个人是真实存在的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but in the person of the czar it was a reality.
+Dialogue: 0,0:30:44.44,0:30:47.64,*Default,NTP,0000,0000,0000,,在15世纪60和70年代  那些波维尔们[沙俄贵族]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the Boyars, in the 1660s and the 1670s,
+Dialogue: 0,0:30:47.64,0:30:50.62,*Default,NTP,0000,0000,0000,,波维尔中的一些人开始学拉丁语和波兰语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of them began to learn Latin and Polish.
+Dialogue: 0,0:30:51.25,0:30:54.79,*Default,NTP,0000,0000,0000,,直到17世纪末期  外交活动仍然用拉丁语进行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Diplomacy is still in Latin until the end of the seventeenth
+Dialogue: 0,0:30:54.79,0:30:56.52,*Default,NTP,0000,0000,0000,,后来  你们知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}century and then, as you know,
+Dialogue: 0,0:30:56.53,0:30:58.23,*Default,NTP,0000,0000,0000,,就变成了法语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it becomes French.
+Dialogue: 0,0:30:59.84,0:31:03.62,*Default,NTP,0000,0000,0000,,那么  彼得的成就有哪些呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, what about his accomplishments,
+Dialogue: 0,0:31:03.67,0:31:05.27,*Default,NTP,0000,0000,0000,,除了我已经提到过的那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}besides the ones I've already mentioned,
+Dialogue: 0,0:31:05.28,0:31:07.24,*Default,NTP,0000,0000,0000,,我等一会还会再提\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to which I will return in a little bit.
+Dialogue: 0,0:31:07.46,0:31:12.29,*Default,NTP,0000,0000,0000,,16世纪时莫斯科公国已经征服了伏尔加盆地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Muscovy had already conquered the Volga basin in the 16th century,
+Dialogue: 0,0:31:12.29,0:31:16.12,*Default,NTP,0000,0000,0000,,游牧鞑靼民族住的地方\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the nomadic Tatars were, T-A-T-A-R-S.
+Dialogue: 0,0:31:16.12,0:31:17.12,*Default,NTP,0000,0000,0000,,这是很重要的一点 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is important,
+Dialogue: 0,0:31:17.12,0:31:20.85,*Default,NTP,0000,0000,0000,,因为他们住在农业发达的黑土地区\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's the black earth region of rich agriculture there.
+Dialogue: 0,0:31:20.85,0:31:25.30,*Default,NTP,0000,0000,0000,,在普鲁士发生了与俄国一样的事情\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What happens in Russia is what happens in Prussia,
+Dialogue: 0,0:31:25.30,0:31:27.77,*Default,NTP,0000,0000,0000,,东欧的其他地区也是一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as well, and in other parts of Eastern Europe,
+Dialogue: 0,0:31:27.78,0:31:30.04,*Default,NTP,0000,0000,0000,,特别是哈布斯堡王朝的领域\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly in the Hapsburg domains--you have,
+Dialogue: 0,0:31:30.04,0:31:31.08,*Default,NTP,0000,0000,0000,,说个不好的双关语吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to make a very bad pun,
+Dialogue: 0,0:31:31.08,0:31:37.40,*Default,NTP,0000,0000,0000,,被迫签下契约变成农奴的人们把这些地区改头换面了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a resurfacing of the region by people forced into serf contracts.
+Dialogue: 0,0:31:37.40,0:31:38.83,*Default,NTP,0000,0000,0000,,其实并不是契约\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not contracts.
+Dialogue: 0,0:31:38.83,0:31:43.92,*Default,NTP,0000,0000,0000,,他们通过法律上成了这块土地的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They become legally part of the land, literally.
+Dialogue: 0,0:31:45.30,0:31:51.93,*Default,NTP,0000,0000,0000,,这是随着农奴制的扩张发生的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This follows the arrival of the expansion of serfdom.
+Dialogue: 0,0:31:51.93,0:31:55.22,*Default,NTP,0000,0000,0000,,农奴制度随着俄帝国的扩张而扩张\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Serfdom expands along with the Russian empire.
+Dialogue: 0,0:31:55.96,0:31:58.37,*Default,NTP,0000,0000,0000,,他们已经控制了西伯利亚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They already held Siberia and they reached
+Dialogue: 0,0:31:58.37,0:32:01.18,*Default,NTP,0000,0000,0000,,在15世纪40年代  其势力已经到达太平洋西岸\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Pacific Ocean in the 1640s.
+Dialogue: 0,0:32:01.30,0:32:06.41,*Default,NTP,0000,0000,0000,,我已经提过了领土扩大的面积有多少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, I already said what the number of square miles that were increased,
+Dialogue: 0,0:32:06.41,0:32:11.43,*Default,NTP,0000,0000,0000,,而人口从六百万增加到一千六百万\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it increases from six to sixteen million of the population.
+Dialogue: 0,0:32:11.43,0:32:14.47,*Default,NTP,0000,0000,0000,,他们向北扩张到阿尔汉格尔  有了一个港口\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They expand north to Archangel, so this gives them a port,
+Dialogue: 0,0:32:14.47,0:32:15.68,*Default,NTP,0000,0000,0000,,但常年冰冻\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a frozen one.
+Dialogue: 0,0:32:15.68,0:32:16.84,*Default,NTP,0000,0000,0000,,而且  我已经说过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And, as I already said,
+Dialogue: 0,0:32:16.84,0:32:20.33,*Default,NTP,0000,0000,0000,,向南和东南扩张到了土耳其\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}south and southeast to the expense of the Turks.
+Dialogue: 0,0:32:20.38,0:32:22.88,*Default,NTP,0000,0000,0000,,但是彼得想要一支海军\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Peter wanted a navy.
+Dialogue: 0,0:32:23.23,0:32:26.37,*Default,NTP,0000,0000,0000,,某种程度上这是一个循环推理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's sort of circular reasoning.
+Dialogue: 0,0:32:26.37,0:32:28.55,*Default,NTP,0000,0000,0000,,如果你想要一支海军  你就得有一个港口\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you want to have a navy, you have to have a port.
+Dialogue: 0,0:32:28.55,0:32:29.65,*Default,NTP,0000,0000,0000,,如果你有了港口\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if you're going to have a port,
+Dialogue: 0,0:32:29.65,0:32:30.85,*Default,NTP,0000,0000,0000,,那你就必须有一支海军\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you have to have a navy.
+Dialogue: 0,0:32:30.85,0:32:32.05,*Default,NTP,0000,0000,0000,,为什么不建一支呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why not?
+Dialogue: 0,0:32:33.04,0:32:39.71,*Default,NTP,0000,0000,0000,,他先找荷兰造船师在河流上建了支海军 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He first built a navy on rivers using Dutch shipmasters from amsterdam.
+Dialogue: 0,0:32:39.95,0:32:42.60,*Default,NTP,0000,0000,0000,,他曾经说过  如果他不是俄国人的沙皇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He once said that if he wasn't the czar of all the Russians,
+Dialogue: 0,0:32:42.62,0:32:45.80,*Default,NTP,0000,0000,0000,,他会做个英国的海军上将\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what he would want to be would be an English admiral.
+Dialogue: 0,0:32:45.94,0:32:47.09,*Default,NTP,0000,0000,0000,,他学会了荷兰语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He learned Dutch--
+Dialogue: 0,0:32:47.09,0:32:48.84,*Default,NTP,0000,0000,0000,,荷兰语是很复杂的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and Dutch is a very difficult language--
+Dialogue: 0,0:32:49.16,0:32:51.66,*Default,NTP,0000,0000,0000,,在1696年  当土耳其战争发生的时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in 1696, while the Turkish war went on,
+Dialogue: 0,0:32:51.66,0:32:52.53,*Default,NTP,0000,0000,0000,,或者其中一次战争时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or one of them
+Dialogue: 0,0:32:52.53,0:32:56.77,*Default,NTP,0000,0000,0000,,他以一名大使馆军人的身份匿名去了西欧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he went off to Western Europe incognito as an embassy soldier.
+Dialogue: 0,0:32:56.78,0:32:59.54,*Default,NTP,0000,0000,0000,,这又是他的小花招之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, it was part of his gamesmanship,
+Dialogue: 0,0:32:59.54,0:33:00.78,*Default,NTP,0000,0000,0000,,他的角色扮演游戏\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his pretend games.
+Dialogue: 0,0:33:00.78,0:33:04.33,*Default,NTP,0000,0000,0000,,在那里他认真地学习了木工\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There he learned carpentry in a very serious way.
+Dialogue: 0,0:33:04.98,0:33:07.08,*Default,NTP,0000,0000,0000,,他去了莱顿医学院\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He went to the Leiden Medical School,
+Dialogue: 0,0:33:07.15,0:33:10.10,*Default,NTP,0000,0000,0000,,他想看看如何解剖人体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he wanted to see how you dissected bodies.
+Dialogue: 0,0:33:10.36,0:33:12.59,*Default,NTP,0000,0000,0000,,所以他也去了那里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He went there, too.
+Dialogue: 0,0:33:12.91,0:33:17.35,*Default,NTP,0000,0000,0000,,然后他去了伦敦  沿着泰晤士河\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then he went to London, along the Thames,
+Dialogue: 0,0:33:17.35,0:33:21.68,*Default,NTP,0000,0000,0000,,伦敦是当时世界的主要港口  和阿姆斯特丹一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the major port of the world then, along with Amsterdam.
+Dialogue: 0,0:33:22.27,0:33:25.80,*Default,NTP,0000,0000,0000,,他在那里学了造船\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He learned shipbuilding there as well.
+Dialogue: 0,0:33:26.87,0:33:29.08,*Default,NTP,0000,0000,0000,,因为造船在他看来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because the building of ships was,
+Dialogue: 0,0:33:29.08,0:33:31.87,*Default,NTP,0000,0000,0000,,是理性思想的应用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to him, the application of rationality,
+Dialogue: 0,0:33:32.28,0:33:34.63,*Default,NTP,0000,0000,0000,,是推理  思考  实验的实际应用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of reason, thinking, and experimentation,
+Dialogue: 0,0:33:34.79,0:33:38.04,*Default,NTP,0000,0000,0000,,这让他对科学革命有了兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this got him interested in the scientific revolution.
+Dialogue: 0,0:33:38.20,0:33:40.58,*Default,NTP,0000,0000,0000,,这并不令人惊讶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's nothing too surprising about that.
+Dialogue: 0,0:33:40.58,0:33:42.71,*Default,NTP,0000,0000,0000,,因为应用科学就是科学革命的本质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The essence of the scientific revolution.
+Dialogue: 0,0:33:42.88,0:33:44.99,*Default,NTP,0000,0000,0000,,他甚至可能参加过贵格会议\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He may have even attended a Quaker meeting,
+Dialogue: 0,0:33:45.33,0:33:47.49,*Default,NTP,0000,0000,0000,,但我们对此不能确定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we're not sure about that.
+Dialogue: 0,0:33:47.67,0:33:50.64,*Default,NTP,0000,0000,0000,,问题是  如果你是一个强大的内陆国家\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The problem was if you have a basically landlocked power and
+Dialogue: 0,0:33:50.64,0:33:51.93,*Default,NTP,0000,0000,0000,,你想使自己的势力到达海洋\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}want to get to the sea,
+Dialogue: 0,0:33:51.93,0:33:54.50,*Default,NTP,0000,0000,0000,,最好要有一支海军\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you'd better have a navy.
+Dialogue: 0,0:33:54.53,0:33:58.21,*Default,NTP,0000,0000,0000,,他年轻时就学会了航海  但是在河上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He'd learned to sail when he was young, but on the river.
+Dialogue: 0,0:33:58.85,0:34:00.17,*Default,NTP,0000,0000,0000,,这也同时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This also, by the way,
+Dialogue: 0,0:34:00.18,0:34:01.01,*Default,NTP,0000,0000,0000,,使他对巴洛克艺术有兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets him interested in Baroque
+Dialogue: 0,0:34:01.01,0:34:05.37,*Default,NTP,0000,0000,0000,,他在莫斯科有许多巴洛克风格的面具\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these kinds of Baroque masquerades that he had back in
+Dialogue: 0,0:34:05.37,0:34:08.56,*Default,NTP,0000,0000,0000,,后来在圣彼得堡也有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Moscow and then in St. Petersburg as well.
+Dialogue: 0,0:34:09.35,0:34:14.73,*Default,NTP,0000,0000,0000,,所以  通过所有的这些事情\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, in all of this, what he does is he makes,
+Dialogue: 0,0:34:14.91,0:34:18.05,*Default,NTP,0000,0000,0000,,用我之前用过的一个词来形容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to use an expression that I've already used before in the context of absolutism,
+Dialogue: 0,0:34:18.06,0:34:19.94,*Default,NTP,0000,0000,0000,,他使得波维尔们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he makes the Boyars,
+Dialogue: 0,0:34:19.94,0:34:22.12,*Default,NTP,0000,0000,0000,,当他在建海军和扩张领土时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}while he's building his navy and expanding Russia,
+Dialogue: 0,0:34:22.12,0:34:26.62,*Default,NTP,0000,0000,0000,,他使得波维尔贵族臣服在他的绝对权威之下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he makes the Boyar junior partners in absolutism.
+Dialogue: 0,0:34:26.69,0:34:28.28,*Default,NTP,0000,0000,0000,,又是这个表达\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That phrase again.
+Dialogue: 0,0:34:28.29,0:34:32.95,*Default,NTP,0000,0000,0000,,那时只有两三百个波维尔家族\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, there are only about 200-300 Boyar families.
+Dialogue: 0,0:34:33.12,0:34:36.02,*Default,NTP,0000,0000,0000,,他们共拥有四万农奴\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They own, by the way, 40,000 serfs,
+Dialogue: 0,0:34:36.02,0:34:41.02,*Default,NTP,0000,0000,0000,,两三百个家庭就拥有四万农奴\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}own 40,000 serfs, just these 200 to 300 families.
+Dialogue: 0,0:34:41.25,0:34:45.62,*Default,NTP,0000,0000,0000,,在17世纪  他们在莫斯科建造了巨大的房屋\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They build huge houses in the seventeenth century in Moscow
+Dialogue: 0,0:34:45.74,0:34:50.71,*Default,NTP,0000,0000,0000,,用的是老式传统的俄国的建筑风格\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with very old-fashioned traditional Russian architecture.
+Dialogue: 0,0:34:51.71,0:34:56.14,*Default,NTP,0000,0000,0000,,沙皇俄国倒是非常像查理曼帝国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Russian empire was rather like Charlemagne's empire in 800
+Dialogue: 0,0:34:56.14,0:34:59.39,*Default,NTP,0000,0000,0000,,即公元800年在亚琛加冕称王的查理曼帝国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the coronation at Aachen or Aix-la-Chapelle and all of that.
+Dialogue: 0,0:34:59.40,0:35:04.84,*Default,NTP,0000,0000,0000,,拥有庞大的官僚机构  并非是真正的官僚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have this bureaucracy that's--it's not really a bureaucracy,
+Dialogue: 0,0:35:04.84,0:35:07.62,*Default,NTP,0000,0000,0000,,但这些皇亲贵戚的确代表了王室的意愿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you've got these royal officials representing the royal will,
+Dialogue: 0,0:35:07.66,0:35:11.66,*Default,NTP,0000,0000,0000,,而实际上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the actual impact
+Dialogue: 0,0:35:11.66,0:35:13.62,*Default,NTP,0000,0000,0000,,它对幅员辽阔的俄国产生的影响绝非那般重大\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this vast expanse of the Russian empire isn't that great.
+Dialogue: 0,0:35:13.62,0:35:18.29,*Default,NTP,0000,0000,0000,,没人告诉民众他们该怎么做\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's nobody telling people what to do on a day-to-day or even a month-to-month basis.
+Dialogue: 0,0:35:18.40,0:35:22.41,*Default,NTP,0000,0000,0000,,但每个俄国人对沙皇效忠的意愿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yet there's an enhanced sense of obligation
+Dialogue: 0,0:35:22.41,0:35:26.27,*Default,NTP,0000,0000,0000,,却被加强了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the czar of all the Russian people.
+Dialogue: 0,0:35:26.27,0:35:30.69,*Default,NTP,0000,0000,0000,,这算是一种先进的国家政权形式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's an advanced sense of state and of organization.
+Dialogue: 0,0:35:30.74,0:35:33.65,*Default,NTP,0000,0000,0000,,也是他值得褒扬的事迹之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That also is one of the things to put in neon.
+Dialogue: 0,0:35:33.65,0:35:36.85,*Default,NTP,0000,0000,0000,,彼得大帝建立了顾问委员会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He creates committees of advisors that,
+Dialogue: 0,0:35:36.85,0:35:38.87,*Default,NTP,0000,0000,0000,,在很多方面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in many ways, are not that different than the
+Dialogue: 0,0:35:38.87,0:35:44.00,*Default,NTP,0000,0000,0000,,这都和西方绝对统治者的内阁相差无几\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}kinds of ministries that would evolve in western absolute rulers--
+Dialogue: 0,0:35:44.27,0:35:49.28,*Default,NTP,0000,0000,0000,,无论是绝对主义国家还是非绝对主义国家\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}absolute states, and in non-absolute states as well.
+Dialogue: 0,0:35:49.47,0:35:54.80,*Default,NTP,0000,0000,0000,,从一七零八年到一七零九年间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}By 1708 and 1709 he has created a more European-style
+Dialogue: 0,0:35:54.81,0:35:58.02,*Default,NTP,0000,0000,0000,,他在广袤帝国中推行了欧式的政权管理机构\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}administration for this vast empire.
+Dialogue: 0,0:35:59.40,0:36:01.36,*Default,NTP,0000,0000,0000,,他还打算修建新的帝国首都\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He wants to build a capital city.
+Dialogue: 0,0:36:01.36,0:36:03.76,*Default,NTP,0000,0000,0000,,这就是圣彼得堡的来历\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's where St. Petersburg comes from.
+Dialogue: 0,0:36:06.20,0:36:07.84,*Default,NTP,0000,0000,0000,,那儿曾经是瑞典的领土\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It had been Swedish territory,
+Dialogue: 0,0:36:07.84,0:36:10.82,*Default,NTP,0000,0000,0000,,但他通过战争赢得了这片土地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and his victories give him this land.
+Dialogue: 0,0:36:10.82,0:36:16.14,*Default,NTP,0000,0000,0000,,我曾到过他修建的夏宫看过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I once went to visit the summer palace that he created
+Dialogue: 0,0:36:16.14,0:36:19.19,*Default,NTP,0000,0000,0000,,据说尼古拉二世特别喜欢那个地方\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that Nicholas II loved so much there.
+Dialogue: 0,0:36:19.43,0:36:21.81,*Default,NTP,0000,0000,0000,,彼得大帝修建了这座新都\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He constructs this new capital.
+Dialogue: 0,0:36:21.93,0:36:24.93,*Default,NTP,0000,0000,0000,,那么修建圣彼得堡到底有什么重要的意义呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's important about the construction of St. Petersburg--
+Dialogue: 0,0:36:24.93,0:36:26.28,*Default,NTP,0000,0000,0000,,我不知道你们之中有多少人去过那儿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know how many of you have ever been there;
+Dialogue: 0,0:36:26.29,0:36:28.17,*Default,NTP,0000,0000,0000,,我并没有在那个地方逗留过很久\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I haven't been there for a very, very long time--
+Dialogue: 0,0:36:28.17,0:36:31.31,*Default,NTP,0000,0000,0000,,但这座城市和莫斯科完全不一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this city is not like Moscow at all.
+Dialogue: 0,0:36:31.31,0:36:33.79,*Default,NTP,0000,0000,0000,,在莫斯科  你会看到许多古老的传统教堂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you look at Moscow you see these old traditional,
+Dialogue: 0,0:36:33.79,0:36:36.40,*Default,NTP,0000,0000,0000,,其尖顶高高耸立于天际\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the skyline is dominated by churches,
+Dialogue: 0,0:36:36.41,0:36:38.51,*Default,NTP,0000,0000,0000,,即那些受俄国东正教风格影响的教堂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the influence of the Russian Orthodox Church.
+Dialogue: 0,0:36:38.51,0:36:40.70,*Default,NTP,0000,0000,0000,,而圣彼得堡却是另一番光景\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}St. Petersburg is completely different.
+Dialogue: 0,0:36:40.72,0:36:50.02,*Default,NTP,0000,0000,0000,,它是一个经过传统强权严格规划的城市典型\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It is an example of classic great power, absolute urban planning.
+Dialogue: 0,0:36:50.12,0:36:51.76,*Default,NTP,0000,0000,0000,,它拥有一条幽长的林荫大道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has a long boulevard,
+Dialogue: 0,0:36:51.76,0:36:53.59,*Default,NTP,0000,0000,0000,,这便是有名的涅瓦大街\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Nevski Prospect,
+Dialogue: 0,0:36:53.59,0:36:55.31,*Default,NTP,0000,0000,0000,,它见证了一九一七年的二月革命\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very important in 1917.
+Dialogue: 0,0:36:55.86,0:36:58.59,*Default,NTP,0000,0000,0000,,这里占统治地位的建筑并不是那些教堂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The most dominant buildings are not churches;
+Dialogue: 0,0:36:58.69,0:37:00.31,*Default,NTP,0000,0000,0000,,而是那些政府建筑\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they are state buildings.
+Dialogue: 0,0:37:00.31,0:37:01.69,*Default,NTP,0000,0000,0000,,即政府机关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are state structures.
+Dialogue: 0,0:37:01.82,0:37:03.45,*Default,NTP,0000,0000,0000,,这是一个与众不同的地方\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a different place.
+Dialogue: 0,0:37:03.51,0:37:05.79,*Default,NTP,0000,0000,0000,,会让你想起马德里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It reminds you of Madrid.
+Dialogue: 0,0:37:05.87,0:37:07.87,*Default,NTP,0000,0000,0000,,会让你想起柏林\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It reminds you of Berlin.
+Dialogue: 0,0:37:07.88,0:37:11.42,*Default,NTP,0000,0000,0000,,也会让你想起凡尔赛宫\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It reminds you of Versailles
+Dialogue: 0,0:37:11.42,0:37:13.83,*Default,NTP,0000,0000,0000,,更会让你想起后欧斯曼时期的巴黎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it reminds you of the post-Haussman Paris
+Dialogue: 0,0:37:13.83,0:37:16.48,*Default,NTP,0000,0000,0000,,即十八世纪五六十年代的巴黎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is, post 1850s and 1860 Paris.
+Dialogue: 0,0:37:16.56,0:37:22.26,*Default,NTP,0000,0000,0000,,我所称的帝国主义直线型风格的范本\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It is an example of what I call the imperialism of the straight line,
+Dialogue: 0,0:37:22.50,0:37:25.56,*Default,NTP,0000,0000,0000,,有足以让军队列队通过的宽阔的林荫大道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where you have large boulevards that you can march armies down to,
+Dialogue: 0,0:37:25.56,0:37:27.98,*Default,NTP,0000,0000,0000,,还有阅兵台之类的设计\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}reviewing stands and all of that,
+Dialogue: 0,0:37:27.98,0:37:29.72,*Default,NTP,0000,0000,0000,,这些和莫斯科太不一样了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}totally different than Moscow.
+Dialogue: 0,0:37:29.75,0:37:33.06,*Default,NTP,0000,0000,0000,,那些宗教领袖并不喜欢彼得大帝\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The religious leaders did not like Peter,
+Dialogue: 0,0:37:33.07,0:37:37.79,*Default,NTP,0000,0000,0000,,因为彼得大帝为俄国文化带来了外来元素\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because Peter is bringing in to Russian culture foreign elements.
+Dialogue: 0,0:37:38.43,0:37:41.32,*Default,NTP,0000,0000,0000,,他们对那些改革的措施本来就上下不定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were already suspicious of the implementation
+Dialogue: 0,0:37:41.32,0:37:46.71,*Default,NTP,0000,0000,0000,,反对将巴洛克式的宗教仪式  建筑模式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the annexation of Baroque religious forms, architectural forms
+Dialogue: 0,0:37:46.71,0:37:52.47,*Default,NTP,0000,0000,0000,,和源自中欧及奥地利的圣仪的影响相结合\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and liturgical influences from Austria and from Central Europe,
+Dialogue: 0,0:37:53.04,0:37:58.16,*Default,NTP,0000,0000,0000,,现在可好了  有这么一个家伙\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and now they've got a guy who's telling the Boyars' women
+Dialogue: 0,0:37:58.29,0:38:01.64,*Default,NTP,0000,0000,0000,,让俄国的贵妇人们穿得像西欧的女人一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to dress like western European women.
+Dialogue: 0,0:38:01.90,0:38:06.74,*Default,NTP,0000,0000,0000,,在当时人们把大胡子当做虔诚的象征\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At a time when beards meant a great deal religiously,
+Dialogue: 0,0:38:06.76,0:38:09.94,*Default,NTP,0000,0000,0000,,彼得却叫人把胡子都刮了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he's telling the men to shave off their beards.
+Dialogue: 0,0:38:10.12,0:38:16.57,*Default,NTP,0000,0000,0000,,他叫人们要像熟练挥动武器一样来挥动刀叉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's telling the men to wield forks and knives as well as weapons,
+Dialogue: 0,0:38:16.82,0:38:20.73,*Default,NTP,0000,0000,0000,,他把那些非俄国的习俗都引了进来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to adopt non-Russian customs,
+Dialogue: 0,0:38:20.81,0:38:22.58,*Default,NTP,0000,0000,0000,,将他们带到了沙俄\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to bring them into Russia.
+Dialogue: 0,0:38:22.77,0:38:25.70,*Default,NTP,0000,0000,0000,,这导致他和教堂的关系极为紧张\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's tremendous tension with the church.
+Dialogue: 0,0:38:25.71,0:38:28.39,*Default,NTP,0000,0000,0000,,但他同时还是...他是一个非常虔诚的信徒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he remains--he is a true believer,
+Dialogue: 0,0:38:28.57,0:38:33.16,*Default,NTP,0000,0000,0000,,但他所带来的宗教改革\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but he is bringing into Russian religious culture changes
+Dialogue: 0,0:38:33.18,0:38:37.26,*Default,NTP,0000,0000,0000,,让教堂深恶痛绝\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that were deeply resented.
+Dialogue: 0,0:38:37.69,0:38:41.16,*Default,NTP,0000,0000,0000,,一些俄国贵族开始戴上了西方风格的假发\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some aristocrats began to put on western style wigs,
+Dialogue: 0,0:38:41.35,0:38:44.75,*Default,NTP,0000,0000,0000,,这样的假发你可以在凡尔赛的宫廷里面见到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such as you could find at the court of Versailles.
+Dialogue: 0,0:38:44.75,0:38:47.31,*Default,NTP,0000,0000,0000,,妇女们不得不穿上高跟鞋和欧式女装 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Women had to wear high heels and they were tottering along
+Dialogue: 0,0:38:47.31,0:38:51.00,*Default,NTP,0000,0000,0000,,在鹅卵石铺的路上步履蹒跚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and falling on the cobblestones wearing high heels
+Dialogue: 0,0:38:51.34,0:38:53.75,*Default,NTP,0000,0000,0000,,有时甚至会摔得四脚朝天\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and European style dresses.
+Dialogue: 0,0:38:53.76,0:38:58.05,*Default,NTP,0000,0000,0000,,他也以沙皇之尊颁布有关日常生活的法令\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He promulgates decrees as czar about daily life.
+Dialogue: 0,0:38:58.08,0:39:00.97,*Default,NTP,0000,0000,0000,,这可真是一个巨大的转变\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a big transformation.
+Dialogue: 0,0:39:01.17,0:39:03.78,*Default,NTP,0000,0000,0000,,而说到彼得的儿子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As to his son, his son was more 
+Dialogue: 0,0:39:03.78,0:39:06.50,*Default,NTP,0000,0000,0000,,就是一个深受传统宗教影响的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}under the influence of these traditional religious influences.
+Dialogue: 0,0:39:06.67,0:39:09.76,*Default,NTP,0000,0000,0000,,他在彼得大帝结束了一次欧洲旅行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He is plotting against his own father.
+Dialogue: 0,0:39:10.86,0:39:15.13,*Default,NTP,0000,0000,0000,,回到俄国时密谋反抗他的父亲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when Peter, on one of his trips, has to return back to Russia.
+Dialogue: 0,0:39:15.89,0:39:19.45,*Default,NTP,0000,0000,0000,,在一七一六年到一七一八年的离婚案中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 1716 and 1718
+Dialogue: 0,0:39:19.45,0:39:22.23,*Default,NTP,0000,0000,0000,,阿列克谢站在了母亲这一边\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Alexis had taken his mother's side in the divorce
+Dialogue: 0,0:39:22.23,0:39:26.60,*Default,NTP,0000,0000,0000,,他也不喜欢拉脱维亚乡下出身的第二任妻子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and did not like the Latvian peasant second wife.
+Dialogue: 0,0:39:26.60,0:39:28.70,*Default,NTP,0000,0000,0000,,这个王子也对兵役没兴趣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He also didn't like military service.
+Dialogue: 0,0:39:28.73,0:39:29.96,*Default,NTP,0000,0000,0000,,他非常懒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was lazy.
+Dialogue: 0,0:39:29.97,0:39:31.81,*Default,NTP,0000,0000,0000,,他的父亲对他说  "我老是发现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His father said, "I see you are spending
+Dialogue: 0,0:39:31.81,0:39:33.36,*Default,NTP,0000,0000,0000,,你成天游手好闲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more of your time in idleness
+Dialogue: 0,0:39:33.37,0:39:35.47,*Default,NTP,0000,0000,0000,,而不在这节骨眼儿上多花点功夫做正经事"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than in taking care of business at this crucial time."
+Dialogue: 0,0:39:35.60,0:39:38.64,*Default,NTP,0000,0000,0000,,但阿列克谢根本听不进去\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Alexis doesn't get the point.
+Dialogue: 0,0:39:38.64,0:39:43.58,*Default,NTP,0000,0000,0000,,他开始通过各种途径和保守派贵族们进行密谋\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He begins to plot in various ways with dissident Boyars.
+Dialogue: 0,0:39:43.65,0:39:46.52,*Default,NTP,0000,0000,0000,,他前往奥地利想得到奥地利国王的支持\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He goes off and gets the support of the emperor of
+Dialogue: 0,0:39:46.52,0:39:49.04,*Default,NTP,0000,0000,0000,,从而通过向俄国开战来反抗他的父亲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Austria to wage a war against his own father.
+Dialogue: 0,0:39:49.15,0:39:50.49,*Default,NTP,0000,0000,0000,,真是个馊主意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Terrible idea.
+Dialogue: 0,0:39:50.59,0:39:54.38,*Default,NTP,0000,0000,0000,,他一回到俄国  他的父亲就下令对他用刑\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he returns, his father orders him tortured.
+Dialogue: 0,0:39:54.50,0:39:59.30,*Default,NTP,0000,0000,0000,,严刑之下  阿列克谢命丧黄泉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Under torture, Alexis--who probably dies of cold,
+Dialogue: 0,0:39:59.30,0:40:02.66,*Default,NTP,0000,0000,0000,,他本人可能并非死于严刑\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not of torture, in a very frozen cell--
+Dialogue: 0,0:40:02.77,0:40:04.51,*Default,NTP,0000,0000,0000,,而是在冰冷的牢房里冻死的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}named Boyar accomplices.
+Dialogue: 0,0:40:04.59,0:40:07.15,*Default,NTP,0000,0000,0000,,而他的同伙当然也被大刑伺候了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These people are toast, obviously.
+Dialogue: 0,0:40:07.24,0:40:09.77,*Default,NTP,0000,0000,0000,,他最终可能死于肺结核\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The son probably died of TB,
+Dialogue: 0,0:40:09.77,0:40:13.17,*Default,NTP,0000,0000,0000,,但这也和他一落千丈的地位有关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it related to all this other business in his weakened state.
+Dialogue: 0,0:40:15.23,0:40:16.93,*Default,NTP,0000,0000,0000,,这就是他悲惨的结局\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was the end of the son.
+Dialogue: 0,0:40:16.93,0:40:20.09,*Default,NTP,0000,0000,0000,,但是俄国文化西化的时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what lasted longer than Alexis
+Dialogue: 0,0:40:20.09,0:40:23.23,*Default,NTP,0000,0000,0000,,其持续时间超过了阿列克谢的一生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was the Europeanization of Russian culture.
+Dialogue: 0,0:40:25.18,0:40:29.69,*Default,NTP,0000,0000,0000,,彼得大帝引进大量的西方著作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter the Great has books translated from the west,
+Dialogue: 0,0:40:29.69,0:40:33.28,*Default,NTP,0000,0000,0000,,包括约翰·洛克的著作\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}including John Locke, into Russian.
+Dialogue: 0,0:40:33.41,0:40:36.28,*Default,NTP,0000,0000,0000,,从这件事本身来说就是一件了不起的成就\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This, itself, was a remarkable accomplishment.
+Dialogue: 0,0:40:36.29,0:40:38.39,*Default,NTP,0000,0000,0000,,毕竟  对俄国东正教的教士们来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, the Russian Orthodox churchmen had not been
+Dialogue: 0,0:40:38.39,0:40:40.65,*Default,NTP,0000,0000,0000,,他们对文艺复兴一点兴趣也没有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}interested in the Renaissance at all,
+Dialogue: 0,0:40:40.77,0:40:45.49,*Default,NTP,0000,0000,0000,,也不关心科学上的革命  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not interested in the scientific revolution at all;
+Dialogue: 0,0:40:45.50,0:40:49.30,*Default,NTP,0000,0000,0000,,在一七一零年  俄国开始派大学生外出深造\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and, by 1710, Russian students are being sent abroad to foreign universities,
+Dialogue: 0,0:40:49.34,0:40:52.48,*Default,NTP,0000,0000,0000,,主要是去意大利  当然法国和英国的都有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}particularly in Italy, but also in France and in England.
+Dialogue: 0,0:40:53.28,0:40:55.62,*Default,NTP,0000,0000,0000,,他们学习一些实用的东西  比如大理石打磨\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're studying practical things like marble work,
+Dialogue: 0,0:40:55.62,0:40:57.11,*Default,NTP,0000,0000,0000,,金属冶炼和铜器制造\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and metal work, and copper work,
+Dialogue: 0,0:40:57.12,0:40:58.62,*Default,NTP,0000,0000,0000,,并且不仅仅是造船术\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not just shipbuilding.
+Dialogue: 0,0:40:58.62,0:41:02.38,*Default,NTP,0000,0000,0000,,他们也学习精神生活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're also studying the life of the mind.
+Dialogue: 0,0:41:03.95,0:41:06.17,*Default,NTP,0000,0000,0000,,在某种程度上  这点很可能有争论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In a way, it's possible to argue,
+Dialogue: 0,0:41:06.17,0:41:07.10,*Default,NTP,0000,0000,0000,,比如我现在的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is what I'm arguing
+Dialogue: 0,0:41:07.10,0:41:09.00,*Default,NTP,0000,0000,0000,,而且我并不是第一个这么做的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'm not the first to do it,
+Dialogue: 0,0:41:09.00,0:41:10.58,*Default,NTP,0000,0000,0000,,但我承认  彼得大帝在许多方面像一个学生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but Peter the Great was, in many ways,
+Dialogue: 0,0:41:10.58,0:41:15.96,*Default,NTP,0000,0000,0000,,他是西方理性主义思潮的学生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}himself a child of European rationalism,
+Dialogue: 0,0:41:16.09,0:41:21.72,*Default,NTP,0000,0000,0000,,是科学理性主义的学生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a scientific culture of rationality and of,
+Dialogue: 0,0:41:21.72,0:41:23.37,*Default,NTP,0000,0000,0000,,也是启蒙运动思想的学生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in the earlier stages,
+Dialogue: 0,0:41:23.38,0:41:25.88,*Default,NTP,0000,0000,0000,,至少是早期的启蒙思想\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Enlightenment.
+Dialogue: 0,0:41:25.99,0:41:28.87,*Default,NTP,0000,0000,0000,,他并不反对东正教  但他认为人们当僧侣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He was not against the church, but he thought that people were
+Dialogue: 0,0:41:28.87,0:41:33.96,*Default,NTP,0000,0000,0000,,简直就是浪费时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wasting time being monks, and other people were all over
+Dialogue: 0,0:41:33.96,0:41:36.80,*Default,NTP,0000,0000,0000,,所有的人在东正教堂里都是地位平等的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the place in their Russian Orthodox equivalent.
+Dialogue: 0,0:41:36.80,0:41:39.46,*Default,NTP,0000,0000,0000,,他对修士们的态度就像某个僧侣说的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He believed whatever one wag once set of monks,
+Dialogue: 0,0:41:40.35,0:41:42.39,*Default,NTP,0000,0000,0000,,"吃了就睡  睡了再吃"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I sleep, I eat, I digest,"
+Dialogue: 0,0:41:43.05,0:41:44.47,*Default,NTP,0000,0000,0000,,当然他们也会祈祷\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they prayed, of course.
+Dialogue: 0,0:41:44.47,0:41:45.99,*Default,NTP,0000,0000,0000,,这对彼得大帝来说无所功用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To him this was not useless,
+Dialogue: 0,0:41:45.99,0:41:48.04,*Default,NTP,0000,0000,0000,,因为这对俄国没有任何贡献\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it didn't serve the state.
+Dialogue: 0,0:41:48.04,0:41:53.40,*Default,NTP,0000,0000,0000,,全然没有为王朝的利益服务\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It didn't serve the dynastic interests of the dynasty,
+Dialogue: 0,0:41:53.42,0:41:56.70,*Default,NTP,0000,0000,0000,,而这点上他和俄国人民的看法一致\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which he identified with the Russian people.
+Dialogue: 0,0:41:56.80,0:42:01.38,*Default,NTP,0000,0000,0000,,他绝不会想要抛弃一个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He did not ever imagine the abandonment of the table of ranks,
+Dialogue: 0,0:42:01.38,0:42:03.54,*Default,NTP,0000,0000,0000,,把每个人都划分阶层的等级社会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which set everybody in a hierarchy,
+Dialogue: 0,0:42:04.25,0:42:05.73,*Default,NTP,0000,0000,0000,,从来没有动过这个念头\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not for a minute--
+Dialogue: 0,0:42:05.73,0:42:08.68,*Default,NTP,0000,0000,0000,,我们说的是在十七世纪末到十八世纪初\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're talking about the end of the end of the 17th and 18th century.
+Dialogue: 0,0:42:08.68,0:42:12.05,*Default,NTP,0000,0000,0000,,但他同时还认为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he believed that it was important to take the tools of science,
+Dialogue: 0,0:42:12.21,0:42:13.86,*Default,NTP,0000,0000,0000,,借助利用科学和理性的工具\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to take the tools of rational thought
+Dialogue: 0,0:42:13.86,0:42:16.27,*Default,NTP,0000,0000,0000,,来为国家利益服务也是非常重要的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and apply them to the good of the state,
+Dialogue: 0,0:42:16.27,0:42:20.13,*Default,NTP,0000,0000,0000,,即使你所看到的所谓"国家利益"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if you saw that good of the state as in ships that could
+Dialogue: 0,0:42:20.13,0:42:23.65,*Default,NTP,0000,0000,0000,,只是军舰上的炮弹能比敌舰射得更远\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lob cannonballs even further against hostile ships,
+Dialogue: 0,0:42:23.65,0:42:25.05,*Default,NTP,0000,0000,0000,,或者其他诸如此类的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that kind of thing.
+Dialogue: 0,0:42:25.44,0:42:27.74,*Default,NTP,0000,0000,0000,,但彼得大帝还修建了俄国第一家博物馆\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he founds the first Russian museum,
+Dialogue: 0,0:42:28.13,0:42:29.95,*Default,NTP,0000,0000,0000,,第一家航运学校\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first school of navigation,
+Dialogue: 0,0:42:30.52,0:42:32.43,*Default,NTP,0000,0000,0000,,还有很多方面上的"第一所"学校\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first school of this and that.
+Dialogue: 0,0:42:32.95,0:42:35.93,*Default,NTP,0000,0000,0000,,彼得大帝在位时期发行了大量的书籍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are 100 times more books, pamphlets, prints,
+Dialogue: 0,0:42:35.93,0:42:39.76,*Default,NTP,0000,0000,0000,,宣传册子  报纸和地图等印刷制品\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maps produced in Russia under the time of Peter the great
+Dialogue: 0,0:42:39.77,0:42:43.03,*Default,NTP,0000,0000,0000,,数量比俄国过去一个世纪的总和还多百倍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than there had been in the whole previous century.
+Dialogue: 0,0:42:44.35,0:42:46.85,*Default,NTP,0000,0000,0000,,正如林赛·休斯所说的那样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Peter, as Lindsey Hughes has argued,
+Dialogue: 0,0:42:46.86,0:42:49.93,*Default,NTP,0000,0000,0000,,彼得对任何以其他方式服务国家的行为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was highly suspicious of any alternative to state service,
+Dialogue: 0,0:42:50.97,0:42:52.94,*Default,NTP,0000,0000,0000,,都持怀疑态度  尤其是僧侣生活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}especially the monastic way of life,
+Dialogue: 0,0:42:52.94,0:42:54.29,*Default,NTP,0000,0000,0000,,这我在前面已经提到过了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I've already said.
+Dialogue: 0,0:42:54.82,0:42:57.74,*Default,NTP,0000,0000,0000,,他认为为国尽忠就应该\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But he thought that it should be channeled through state
+Dialogue: 0,0:42:57.74,0:43:00.65,*Default,NTP,0000,0000,0000,,通过缴税或者服劳役来履行国家义务\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}obligations, be there taxes or labor duties.
+Dialogue: 0,0:43:01.01,0:43:02.37,*Default,NTP,0000,0000,0000,,而与此同时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the same time,
+Dialogue: 0,0:43:02.37,0:43:04.63,*Default,NTP,0000,0000,0000,,他对无神论也是持怀疑态度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he's equally suspicious of the godless.
+Dialogue: 0,0:43:04.77,0:43:07.17,*Default,NTP,0000,0000,0000,,因此他还是一个很正宗的俄国人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, he remained very Russian,
+Dialogue: 0,0:43:07.18,0:43:08.99,*Default,NTP,0000,0000,0000,,但鼓励引进更西欧文明式的思考方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it was the importation of
+Dialogue: 0,0:43:09.15,0:43:15.46,*Default,NTP,0000,0000,0000,,这对于落后的俄国来说还是非常重要的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}more western ways of looking at things that were very important.
+Dialogue: 0,0:43:15.55,0:43:16.65,*Default,NTP,0000,0000,0000,,他曾经这样写道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He wrote once that,
+Dialogue: 0,0:43:16.65,0:43:18.95,*Default,NTP,0000,0000,0000,,"最要紧的事就是牢记我们的职责和法令\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"The chief thing is to know your duties and our edicts by heart
+Dialogue: 0,0:43:18.95,0:43:21.02,*Default,NTP,0000,0000,0000,,并且不把今天能做的事拖延到明天去做"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not put off things until tomorrow,
+Dialogue: 0,0:43:21.02,0:43:22.13,*Default,NTP,0000,0000,0000,,他儿子就是这么拖沓的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like his son did.
+Dialogue: 0,0:43:22.13,0:43:24.65,*Default,NTP,0000,0000,0000,,"如果一个政府的颁行的法令成了一纸空文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"For how can a state government exist
+Dialogue: 0,0:43:24.65,0:43:27.43,*Default,NTP,0000,0000,0000,,这样的政府还有存在下去的必要吗"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if edicts are not put into use?"
+Dialogue: 0,0:43:27.98,0:43:30.33,*Default,NTP,0000,0000,0000,,他说了诸如此类的很多话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}et cetera, et cetera.
+Dialogue: 0,0:43:30.46,0:43:33.51,*Default,NTP,0000,0000,0000,,俄国人们的生活应该更好一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Their lives should be better.
+Dialogue: 0,0:43:34.13,0:43:38.68,*Default,NTP,0000,0000,0000,,彼得的治国理念对于俄国是前所未闻的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The concept of the state was fundamentally new to Russia,
+Dialogue: 0,0:43:38.68,0:43:40.67,*Default,NTP,0000,0000,0000,,但也逐渐扎下根来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but gradually came into existence,
+Dialogue: 0,0:43:40.67,0:43:46.39,*Default,NTP,0000,0000,0000,,他的功绩即在于此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and his accomplishments had a lot to do with that.
+Dialogue: 0,0:43:46.39,0:43:48.28,*Default,NTP,0000,0000,0000,,他在一七零四年写给他的儿子信中说到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He wrote his son in 1704, he said,
+Dialogue: 0,0:43:48.28,0:43:49.28,*Default,NTP,0000,0000,0000,,"我可能明天就死了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I may die tomorrow,
+Dialogue: 0,0:43:49.44,0:43:51.08,*Default,NTP,0000,0000,0000,,而如果你不能遵循我的的脚步\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but be sure that you have little pleasure
+Dialogue: 0,0:43:51.08,0:43:52.86,*Default,NTP,0000,0000,0000,,你是不会快乐的的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you fail to follow my example.
+Dialogue: 0,0:43:53.26,0:43:55.53,*Default,NTP,0000,0000,0000,,你一定要热爱那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You must love everything that contributes to the glory
+Dialogue: 0,0:43:55.53,0:43:56.76,*Default,NTP,0000,0000,0000,,能为祖国增添光荣和辉煌的事物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and honour of the fatherland.
+Dialogue: 0,0:43:56.95,0:43:59.32,*Default,NTP,0000,0000,0000,,你一定要热爱俄国那些忠诚的大臣和臣民\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You must love loyal advisors and servants,
+Dialogue: 0,0:43:59.32,0:44:01.91,*Default,NTP,0000,0000,0000,,不管他是来自外国还是国内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether they be foreigners or our own people,
+Dialogue: 0,0:44:01.91,0:44:05.04,*Default,NTP,0000,0000,0000,,同时你也必须不遗余力地为公共利益服务"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and spare no effort to serve the common good."
+Dialogue: 0,0:44:05.05,0:44:07.88,*Default,NTP,0000,0000,0000,,"公共利益"是非常明显的启蒙思想\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The common good comes right out of enlightened thought.
+Dialogue: 0,0:44:08.00,0:44:11.30,*Default,NTP,0000,0000,0000,,它最早出自于洛克那些人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It comes out of Locke and those folks.
+Dialogue: 0,0:44:11.35,0:44:14.79,*Default,NTP,0000,0000,0000,,"如果你辜负了我对你的期望\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"If my advice is lost in the wind
+Dialogue: 0,0:44:14.79,0:44:19.13,*Default,NTP,0000,0000,0000,,胆敢把我的话当耳边风  我就绝不认你这个儿子"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you do not do as I wish, I do not recognize you as my son."
+Dialogue: 0,0:44:19.46,0:44:23.68,*Default,NTP,0000,0000,0000,,而这也是他儿子最终的下场\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That, in the end, is what came in the long run.
+Dialogue: 0,0:44:23.76,0:44:26.11,*Default,NTP,0000,0000,0000,,彼得是一个狂热的爱国者\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He remained a fanatically Russian patriot,
+Dialogue: 0,0:44:26.23,0:44:27.99,*Default,NTP,0000,0000,0000,,他爱民如子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the father of his people.
+Dialogue: 0,0:44:28.04,0:44:30.88,*Default,NTP,0000,0000,0000,,正如休斯所说  他虽然歆慕外国文化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His admiration for foreign things and approaches was
+Dialogue: 0,0:44:30.88,0:44:34.19,*Default,NTP,0000,0000,0000,,但仍被本国传统所抑制\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}tempered by, as Hughes argues, his devotion to Russia,
+Dialogue: 0,0:44:34.41,0:44:35.80,*Default,NTP,0000,0000,0000,,他还是忠于他统治之下的俄国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which he oversaw.
+Dialogue: 0,0:44:36.58,0:44:40.11,*Default,NTP,0000,0000,0000,,他使追求公共利益真正成为深入人心的理念\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The common good became a real concept and one that,
+Dialogue: 0,0:44:40.23,0:44:44.12,*Default,NTP,0000,0000,0000,,不幸的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}unfortunately, some of his successors didn't
+Dialogue: 0,0:44:44.12,0:44:46.49,*Default,NTP,0000,0000,0000,,他的接下来的继任者并不把这当回事儿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of his successors didn't take terribly seriously.
+Dialogue: 0,0:44:46.67,0:44:49.26,*Default,NTP,0000,0000,0000,,总之  他勇于挑战  深谋远虑\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In conclusion, he defiantly,
+Dialogue: 0,0:44:49.26,0:44:52.41,*Default,NTP,0000,0000,0000,,卓有成效地摧毁了俄国落后的传统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}deliberately, and effectively broke with tradition.
+Dialogue: 0,0:44:52.76,0:44:56.87,*Default,NTP,0000,0000,0000,,而这样以来  他就如同是一个局外人一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In doing so he made himself sort of an outsider to
+Dialogue: 0,0:44:57.11,0:45:00.53,*Default,NTP,0000,0000,0000,,来对待俄国传统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}traditional Russian ways of looking at this thing.
+Dialogue: 0,0:45:00.60,0:45:04.36,*Default,NTP,0000,0000,0000,,这种矛盾成了他个人生活的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This ambivalence that was part of his personal life,
+Dialogue: 0,0:45:04.37,0:45:08.64,*Default,NTP,0000,0000,0000,,他的这种矛盾的生活方式在接下来的俄国\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the way he lived, would be a constant theme in subsequent Russian and still,
+Dialogue: 0,0:45:08.64,0:45:10.27,*Default,NTP,0000,0000,0000,,即便是在今天的俄国也是个不变的主题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in many ways, is today.
+Dialogue: 0,0:45:10.31,0:45:12.70,*Default,NTP,0000,0000,0000,,俄国现在有斯拉夫派和西化派\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Between Slavophiles and westernizers,
+Dialogue: 0,0:45:12.72,0:45:18.13,*Default,NTP,0000,0000,0000,,一些人是希望基于俄国国情找到一种永恒真理\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those are the people that look inside Russia to finding what
+Dialogue: 0,0:45:18.13,0:45:21.55,*Default,NTP,0000,0000,0000,,而另一些人则是希望\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they think to be eternal truth and those people who want to
+Dialogue: 0,0:45:21.55,0:45:24.68,*Default,NTP,0000,0000,0000,,调和西方文化和俄国本土文化\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}temper such looks with a look to the west.
+Dialogue: 0,0:45:24.69,0:45:27.92,*Default,NTP,0000,0000,0000,,彼得大帝曾探求着调和两者之间的解决之道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That, in neon, is what Peter the Great did
+Dialogue: 0,0:45:27.95,0:45:32.99,*Default,NTP,0000,0000,0000,,他所做的这些努力应该被永远铭记\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}above all and for which he shall most be remembered.
+Dialogue: 0,0:45:33.11,0:45:36.56,*Default,NTP,0000,0000,0000,,下一次课是关于启蒙运动的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Next time to the Enlightenment
+Dialogue: 0,0:45:36.56,0:45:38.74,*Default,NTP,0000,0000,0000,,有些你们乍看之下绝对想不到的人物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some people whom you might not think of at first glance
+Dialogue: 0,0:45:38.74,0:45:40.05,*Default,NTP,0000,0000,0000,,却引领了那个时代\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would seem terribly enlightened.
+Dialogue: 0,0:45:40.16,0:45:41.66,*Default,NTP,0000,0000,0000,,下周三见\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}See you on Wednesday.

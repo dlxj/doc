@@ -1,0 +1,952 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:00.00,0:02:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:20:00.00,0:21:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:00:00.85,0:00:04.55,*Default,NTP,0000,0000,0000,,之前我们讨论了柏拉图灵魂不朽的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've been looking at Plato's arguments for the immortality of the soul, 
+Dialogue: 0,0:00:04.76,0:00:05.56,*Default,NTP,0000,0000,0000,,但到目前为止  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so far 
+Dialogue: 0,0:00:05.56,0:00:09.50,*Default,NTP,0000,0000,0000,,我觉得没有一个能令人信服\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have to say I haven't found them very compelling arguments.
+Dialogue: 0,0:00:09.61,0:00:11.25,*Default,NTP,0000,0000,0000,,接下来  我们继续讨论一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In a minute, I'm going to turn to an argument that 
+Dialogue: 0,0:00:11.25,0:00:12.96,*Default,NTP,0000,0000,0000,,至少我个人觉得更为有趣的论点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least strikes me as more interesting. 
+Dialogue: 0,0:00:12.96,0:00:15.92,*Default,NTP,0000,0000,0000,,想找出它的具体错误更为不易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's more difficult to pin down where it goes wrong. 
+Dialogue: 0,0:00:16.19,0:00:18.59,*Default,NTP,0000,0000,0000,,不过讨论之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But before we do, 
+Dialogue: 0,0:00:18.65,0:00:21.25,*Default,NTP,0000,0000,0000,,我想对上节课末尾讨论的那个观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to make a couple of comments about the arguments 
+Dialogue: 0,0:00:21.30,0:00:23.33,*Default,NTP,0000,0000,0000,,简单的再讨论一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we were considering at the end of last class.
+Dialogue: 0,0:00:23.39,0:00:25.27,*Default,NTP,0000,0000,0000,,上堂课最后我们谈到了"回忆论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was the argument from recollection. 
+Dialogue: 0,0:00:25.44,0:00:27.49,*Default,NTP,0000,0000,0000,,它的大意为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You recall the basic idea was that 
+Dialogue: 0,0:00:27.62,0:00:31.89,*Default,NTP,0000,0000,0000,,尽管在我们所熟知的现实世界里面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although objects in the ordinary familiar empirical world 
+Dialogue: 0,0:00:31.90,0:00:33.67,*Default,NTP,0000,0000,0000,,没有绝对的公正\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are not perfectly just,
+Dialogue: 0,0:00:33.75,0:00:36.60,*Default,NTP,0000,0000,0000,,没有正圆  或者其他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perfectly round, what have you, 
+Dialogue: 0,0:00:36.91,0:00:40.02,*Default,NTP,0000,0000,0000,,但这些事物却让我们联想到绝对公正\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're able to remind us of perfect justice, 
+Dialogue: 0,0:00:40.10,0:00:41.73,*Default,NTP,0000,0000,0000,,正圆等等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perfect roundness and the like. 
+Dialogue: 0,0:00:41.79,0:00:43.88,*Default,NTP,0000,0000,0000,,于是柏拉图问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And when Plato asked himself, 
+Dialogue: 0,0:00:43.94,0:00:45.14,*Default,NTP,0000,0000,0000,,那是为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"How could that be?" 
+Dialogue: 0,0:00:45.23,0:00:46.37,*Default,NTP,0000,0000,0000,,他给出的答案是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the answer he gives is, 
+Dialogue: 0,0:00:46.42,0:00:49.42,*Default,NTP,0000,0000,0000,,这是因为我们来到这个世界之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, it's got to be that we were previously acquainted
+Dialogue: 0,0:00:49.42,0:00:52.68,*Default,NTP,0000,0000,0000,,就已经熟知那些事物了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the forms before our life in this world."
+Dialogue: 0,0:00:52.76,0:00:54.41,*Default,NTP,0000,0000,0000,,这就说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that shows that 
+Dialogue: 0,0:00:54.48,0:00:58.48,*Default,NTP,0000,0000,0000,,灵魂必须先于肉体而存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul must be something that existed prior to the creation of the body. 
+Dialogue: 0,0:01:00.02,0:01:01.52,*Default,NTP,0000,0000,0000,,这就是"回忆论"的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the argument from recollection. 
+Dialogue: 0,0:01:01.59,0:01:03.29,*Default,NTP,0000,0000,0000,,还有在下课前我提到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And at the very end of class I suggested that, 
+Dialogue: 0,0:01:03.34,0:01:07.55,*Default,NTP,0000,0000,0000,,即使柏拉图的观点是对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}look, even if we were to grant to Plato that
+Dialogue: 0,0:01:07.55,0:01:11.93,*Default,NTP,0000,0000,0000,,他说为了探讨正义  正圆  或者其他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to think about justice,circularity, what have you,
+Dialogue: 0,0:01:11.93,0:01:15.07,*Default,NTP,0000,0000,0000,,我们必须对柏拉图型相有所了解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} we had to somehow grasp the forms,
+Dialogue: 0,0:01:15.27,0:01:17.25,*Default,NTP,0000,0000,0000,,就算我们承认柏拉图是对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and even if we were to grant to Plato that 
+Dialogue: 0,0:01:17.32,0:01:21.51,*Default,NTP,0000,0000,0000,,这个世界上并不存在绝对的正圆和公正\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nothing in this world is perfectly round or perfectly just, 
+Dialogue: 0,0:01:22.25,0:01:24.65,*Default,NTP,0000,0000,0000,,但这并不意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not necessarily correct to say, 
+Dialogue: 0,0:01:24.71,0:01:27.89,*Default,NTP,0000,0000,0000,,对此唯一合理的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"So the only possible explanation of what's going on is  
+Dialogue: 0,0:01:27.95,0:01:31.50,*Default,NTP,0000,0000,0000,,就是这个现实世界里的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that these things in the empirical world 
+Dialogue: 0,0:01:31.50,0:01:36.64,*Default,NTP,0000,0000,0000,,让我们想起了曾经遇见的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}remind us of our prior acquaintance with the forms."
+Dialogue: 0,0:01:36.70,0:01:39.09,*Default,NTP,0000,0000,0000,,还有可能是因为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It could be that what goes on is,
+Dialogue: 0,0:01:39.25,0:01:42.85,*Default,NTP,0000,0000,0000,,当我们接触到一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we bump up against something 
+Dialogue: 0,0:01:42.91,0:01:47.05,*Default,NTP,0000,0000,0000,,并非绝对公正  绝对美丽  绝对正圆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's partially just or partially beautiful or partially round--
+Dialogue: 0,0:01:47.73,0:01:50.06,*Default,NTP,0000,0000,0000,,即有缺陷的事物时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}imperfectly round--what happens is, 
+Dialogue: 0,0:01:50.20,0:01:55.11,*Default,NTP,0000,0000,0000,,这些事物会在某种程度上驱使我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those things sort of trigger our minds in such a way that 
+Dialogue: 0,0:01:55.17,0:02:01.19,*Default,NTP,0000,0000,0000,,去首次开始认知这些型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we begin to think about the forms for the very first time. 
+Dialogue: 0,0:02:01.57,0:02:04.38,*Default,NTP,0000,0000,0000,,因此可以说为了探讨公正和正圆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it might be, in order to think about justice and roundness, 
+Dialogue: 0,0:02:04.45,0:02:06.42,*Default,NTP,0000,0000,0000,,我们必须先掌握型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have to grasp the forms. 
+Dialogue: 0,0:02:06.59,0:02:12.00,*Default,NTP,0000,0000,0000,,但也可能我们只是此生才开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it could be that we only grasp the forms in this life, 
+Dialogue: 0,0:02:12.09,0:02:14.58,*Default,NTP,0000,0000,0000,,认知这些型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the very first time.
+Dialogue: 0,0:02:14.88,0:02:17.02,*Default,NTP,0000,0000,0000,,在接触并\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Exposure to the things that 
+Dialogue: 0,0:02:17.08,0:02:23.60,*Default,NTP,0000,0000,0000,,见识了这些型相后  它们会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}participate in the forms may nudge our minds or our souls in such a way 
+Dialogue: 0,0:02:23.66,0:02:30.15,*Default,NTP,0000,0000,0000,,驱使我们的心灵或灵魂去认知它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that at that point--given that exposure--we begin to grasp the forms. 
+Dialogue: 0,0:02:30.76,0:02:34.98,*Default,NTP,0000,0000,0000,,就好比生活中最平常的琐屑小物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's as though the ordinary earthly objects, 
+Dialogue: 0,0:02:35.17,0:02:37.82,*Default,NTP,0000,0000,0000,,与我们彼此相遇之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we bump into them or they bump into us, 
+Dialogue: 0,0:02:37.91,0:02:44.29,*Default,NTP,0000,0000,0000,,会指引我们仰望美好的柏拉图境界\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they get us to look upwards to the heavenly Platonic realm. 
+Dialogue: 0,0:02:44.49,0:02:45.77,*Default,NTP,0000,0000,0000,,我不是说真的仰望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't mean literally upwards. 
+Dialogue: 0,0:02:45.83,0:02:48.24,*Default,NTP,0000,0000,0000,,这不是在说数字3\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as though these things--the number three--
+Dialogue: 0,0:02:48.24,0:02:49.14,*Default,NTP,0000,0000,0000,,在上面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is up there.
+Dialogue: 0,0:02:49.36,0:02:51.50,*Default,NTP,0000,0000,0000,,而是说一旦你理解了这个隐喻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if you accept the metaphor, 
+Dialogue: 0,0:02:51.63,0:02:55.77,*Default,NTP,0000,0000,0000,,在现实世界中碰到一些东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}running into things in the empirical world
+Dialogue: 0,0:02:55.77,0:03:00.67,*Default,NTP,0000,0000,0000,,使我们的心灵开始第一次的思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets our minds to start thinking about, for the first time,
+Dialogue: 0,0:03:00.88,0:03:05.15,*Default,NTP,0000,0000,0000,,美好的柏拉图境界的型相和理念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the heavenly realm of the Platonic forms and ideas.
+Dialogue: 0,0:03:06.10,0:03:10.79,*Default,NTP,0000,0000,0000,,这个解释和之前的那个理论一样合理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That would be just as likely a possibility as the alternative explanation  
+Dialogue: 0,0:03:10.85,0:03:15.52,*Default,NTP,0000,0000,0000,,就是说普通的现实物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that what's going on is that ordinary empirical objects 
+Dialogue: 0,0:03:15.52,0:03:19.12,*Default,NTP,0000,0000,0000,,使我们想起之前的印象(不是唯一解释)\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are reminding us of our prior acquaintance.
+Dialogue: 0,0:03:19.26,0:03:24.59,*Default,NTP,0000,0000,0000,,或许这些普通物体就像入门引言一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Perhaps these ordinary objects act like letters of introduction, 
+Dialogue: 0,0:03:25.31,0:03:28.61,*Default,NTP,0000,0000,0000,,指引我们  帮助我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}getting us to, helping us to, 
+Dialogue: 0,0:03:28.75,0:03:31.45,*Default,NTP,0000,0000,0000,,去开始首次思考这些型相上的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think about the forms for the very first time. 
+Dialogue: 0,0:03:31.45,0:03:32.93,*Default,NTP,0000,0000,0000,,如果这是对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, if that's right, then of course, 
+Dialogue: 0,0:03:32.94,0:03:38.23,*Default,NTP,0000,0000,0000,,我们当然就不必相信柏拉图之后的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't have any good reason to follow Plato when he says, 
+Dialogue: 0,0:03:38.24,0:03:43.80,*Default,NTP,0000,0000,0000,,灵魂一定是先于肉体而存在的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"It must be the case that the soul existed prior to the--prior to birth."
+Dialogue: 0,0:03:46.94,0:03:49.90,*Default,NTP,0000,0000,0000,,我刚刚提出的这个反驳不是柏拉图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the objection I've just raised is not an objection 
+Dialogue: 0,0:03:49.91,0:03:51.66,*Default,NTP,0000,0000,0000,,在《斐多篇》中提到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Plato raises in the Phaedo,
+Dialogue: 0,0:03:51.72,0:03:54.87,*Default,NTP,0000,0000,0000,,不过他提出了另外一个异议\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but he does raise a different objection. 
+Dialogue: 0,0:03:55.16,0:03:57.68,*Default,NTP,0000,0000,0000,,请记住我们的讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember our concern isn't, 
+Dialogue: 0,0:03:57.79,0:03:59.93,*Default,NTP,0000,0000,0000,,严格来讲不仅仅是问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}strictly speaking, with the question, 
+Dialogue: 0,0:04:00.12,0:04:02.17,*Default,NTP,0000,0000,0000,,灵魂在我们出生前存在吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Did the soul exist before our birth? 
+Dialogue: 0,0:04:02.22,0:04:04.04,*Default,NTP,0000,0000,0000,,灵魂是先于肉体的存在吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Did the soul exist before our bodies?" 
+Dialogue: 0,0:04:04.11,0:04:05.92,*Default,NTP,0000,0000,0000,,而是要问  灵魂是不朽的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but rather, "Is the soul immortal?" 
+Dialogue: 0,0:04:06.58,0:04:09.98,*Default,NTP,0000,0000,0000,,现在根据他的"回忆论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, having now given the argument from recollection, 
+Dialogue: 0,0:04:10.35,0:04:13.84,*Default,NTP,0000,0000,0000,,柏拉图假设出的苏格拉底的两个门徒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato envisions two of Socrates' disciples, 
+Dialogue: 0,0:04:13.90,0:04:14.99,*Default,NTP,0000,0000,0000,,西米亚斯和塞贝斯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Simmias and Cebes, 
+Dialogue: 0,0:04:15.56,0:04:17.90,*Default,NTP,0000,0000,0000,,做了如下的反驳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}responding, objecting, by saying,
+Dialogue: 0,0:04:17.95,0:04:22.08,*Default,NTP,0000,0000,0000,,就算灵魂在人出生前就存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Look, even if the soul existed before birth, 
+Dialogue: 0,0:04:22.54,0:04:26.08,*Default,NTP,0000,0000,0000,,这并不能说明它在肉体死亡后依然存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it doesn't follow that it exists after death. 
+Dialogue: 0,0:04:26.14,0:04:27.29,*Default,NTP,0000,0000,0000,,毕竟这才是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's, after all, 
+Dialogue: 0,0:04:27.34,0:04:28.44,*Default,NTP,0000,0000,0000,,我们真正想要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what we really want, 
+Dialogue: 0,0:04:28.49,0:04:29.25,*Default,NTP,0000,0000,0000,,并且在思考的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are wondering about. 
+Dialogue: 0,0:04:29.30,0:04:30.13,*Default,NTP,0000,0000,0000,,我们想知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We want to know, 
+Dialogue: 0,0:04:30.17,0:04:31.64,*Default,NTP,0000,0000,0000,,我们能否在死亡之后继续存活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will we survive our deaths? 
+Dialogue: 0,0:04:31.68,0:04:32.73,*Default,NTP,0000,0000,0000,,灵魂是否不朽 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is the soul immortal? 
+Dialogue: 0,0:04:32.99,0:04:34.04,*Default,NTP,0000,0000,0000,,但是苏格拉底  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you haven't yet 
+Dialogue: 0,0:04:34.04,0:04:36.15,*Default,NTP,0000,0000,0000,,你还没有进行证明呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}shown that Socrates,"
+Dialogue: 0,0:04:36.15,0:04:37.01,*Default,NTP,0000,0000,0000,,他们继续反驳道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they object.
+Dialogue: 0,0:04:37.06,0:04:38.58,*Default,NTP,0000,0000,0000,,也许它先前确实存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Could be that it existed before, 
+Dialogue: 0,0:04:38.62,0:04:40.67,*Default,NTP,0000,0000,0000,,但此后它未必依然存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but won't exist afterwards.
+Dialogue: 0,0:04:40.72,0:04:42.23,*Default,NTP,0000,0000,0000,,但有趣的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But very nicely--
+Dialogue: 0,0:04:42.29,0:04:44.36,*Default,NTP,0000,0000,0000,,这里的结构非常巧妙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's quite elegant structure at this point--
+Dialogue: 0,0:04:44.44,0:04:48.25,*Default,NTP,0000,0000,0000,,苏格拉底把我们前面提到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates puts together the two arguments that 
+Dialogue: 0,0:04:48.30,0:04:49.43,*Default,NTP,0000,0000,0000,,这两种观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've just been rehearsing--
+Dialogue: 0,0:04:50.06,0:04:53.26,*Default,NTP,0000,0000,0000,,即"回忆论"及其之前的另一种观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the argument from recollection and the argument that came before that, 
+Dialogue: 0,0:04:53.31,0:04:56.08,*Default,NTP,0000,0000,0000,,我称作"循环论"的观点结合起来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the one that I dubbed "the argument from recycling." 
+Dialogue: 0,0:04:56.16,0:04:58.81,*Default,NTP,0000,0000,0000,,回忆一下  "循环论"的观点认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember, the argument from recycling says, 
+Dialogue: 0,0:04:58.98,0:05:00.57,*Default,NTP,0000,0000,0000,,当你组装一件东西时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you build something, 
+Dialogue: 0,0:05:00.65,0:05:01.84,*Default,NTP,0000,0000,0000,,你用的是零件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you build it out of parts, 
+Dialogue: 0,0:05:01.91,0:05:05.14,*Default,NTP,0000,0000,0000,,当东西解体后则又变成了各种零件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and when that thing falls apart you go back to the parts. 
+Dialogue: 0,0:05:09.02,0:05:11.34,*Default,NTP,0000,0000,0000,,所以先前的零件被循环利用了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the prior parts get recycled. 
+Dialogue: 0,0:05:12.94,0:05:15.30,*Default,NTP,0000,0000,0000,,而灵魂  我们可以说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The soul, we now say--
+Dialogue: 0,0:05:15.37,0:05:17.10,*Default,NTP,0000,0000,0000,,根据"回忆论"的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on the argument from recollection--
+Dialogue: 0,0:05:18.19,0:05:21.39,*Default,NTP,0000,0000,0000,,灵魂好比我们出生前的一零件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul is one of our prior parts. 
+Dialogue: 0,0:05:22.27,0:05:25.13,*Default,NTP,0000,0000,0000,,灵魂在我们出生之前就存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The soul existed before we were put together, 
+Dialogue: 0,0:05:25.19,0:05:27.16,*Default,NTP,0000,0000,0000,,或者说灵魂先于肉体而存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or before we were put together with our bodies. 
+Dialogue: 0,0:05:27.40,0:05:30.30,*Default,NTP,0000,0000,0000,,如果把"循环论"和之前的观点结合起来看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you then combine the argument from recycling and say, 
+Dialogue: 0,0:05:30.38,0:05:34.29,*Default,NTP,0000,0000,0000,,之前存在的零件  之后依然存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the parts that existed before are going to exist afterwards, 
+Dialogue: 0,0:05:34.41,0:05:37.93,*Default,NTP,0000,0000,0000,,那就说明了如果灵魂之前就存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it must follow that if the soul existed before, 
+Dialogue: 0,0:05:37.93,0:05:41.63,*Default,NTP,0000,0000,0000,,那么之后它也一定存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it will exist afterwards as well. 
+Dialogue: 0,0:05:41.76,0:05:44.90,*Default,NTP,0000,0000,0000,,由此我们就证明了灵魂是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we've got the immortality of the soul after all.
+Dialogue: 0,0:05:46.05,0:05:50.41,*Default,NTP,0000,0000,0000,,但是  事实上 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, bracket the fact that, 
+Dialogue: 0,0:05:50.47,0:05:51.12,*Default,NTP,0000,0000,0000,,如我之前所说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I just explained, 
+Dialogue: 0,0:05:51.18,0:05:54.91,*Default,NTP,0000,0000,0000,,我本人并不认为"回忆论"很有说服力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't myself find the argument from recollection persuasive. 
+Dialogue: 0,0:05:55.18,0:05:58.07,*Default,NTP,0000,0000,0000,,我认为我们没有理由去相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't think we've got any good reason to believe--
+Dialogue: 0,0:05:58.16,0:05:59.79,*Default,NTP,0000,0000,0000,,根据柏拉图那些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on the sort of things that 
+Dialogue: 0,0:05:59.85,0:06:01.35,*Default,NTP,0000,0000,0000,,引起我们注意的理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato is drawing our attention to--
+Dialogue: 0,0:06:01.49,0:06:03.20,*Default,NTP,0000,0000,0000,,我不觉得我们有充分的理由去相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't think we've got any good reason to believe that 
+Dialogue: 0,0:06:03.26,0:06:05.66,*Default,NTP,0000,0000,0000,,灵魂先于肉体而存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul existed before we were born. 
+Dialogue: 0,0:06:08.23,0:06:13.44,*Default,NTP,0000,0000,0000,,即便我们认为他是对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But even if we grant him that, 
+Dialogue: 0,0:06:13.82,0:06:16.80,*Default,NTP,0000,0000,0000,,我们也不要过早认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we shouldn't be so quick to conclude, 
+Dialogue: 0,0:06:16.94,0:06:19.73,*Default,NTP,0000,0000,0000,,根据"回忆论"和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the basis of combining the argument from recollection 
+Dialogue: 0,0:06:19.73,0:06:21.35,*Default,NTP,0000,0000,0000,,"循环论"的结合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the argument from recycling,
+Dialogue: 0,0:06:21.50,0:06:26.20,*Default,NTP,0000,0000,0000,,灵魂在肉体死亡之后会继续存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the soul will continue to exist after the death of our bodies. 
+Dialogue: 0,0:06:26.94,0:06:28.93,*Default,NTP,0000,0000,0000,,我们举个熟悉的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, take a more familiar, 
+Dialogue: 0,0:06:28.99,0:06:30.26,*Default,NTP,0000,0000,0000,,一个平常的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}humdrum example. 
+Dialogue: 0,0:06:31.18,0:06:36.44,*Default,NTP,0000,0000,0000,,汽车在造出来之前不是汽车  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cars are built out of non-cars, right? 
+Dialogue: 0,0:06:36.53,0:06:40.36,*Default,NTP,0000,0000,0000,,它由引擎  轮胎  和方向盘组装而成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cars get built out of engines and tires and steering wheels. 
+Dialogue: 0,0:06:40.57,0:06:42.90,*Default,NTP,0000,0000,0000,,但是引擎不是汽车\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the engine is not a car; 
+Dialogue: 0,0:06:43.19,0:06:44.80,*Default,NTP,0000,0000,0000,,方向盘也不是汽车\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the steering wheel is not a car. 
+Dialogue: 0,0:06:46.09,0:06:49.48,*Default,NTP,0000,0000,0000,,你是用零件将汽车组装起来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you build the car out of its parts. 
+Dialogue: 0,0:06:50.08,0:06:53.34,*Default,NTP,0000,0000,0000,,引擎是先于汽车存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the engine is a prior-existing part. 
+Dialogue: 0,0:06:54.04,0:06:57.51,*Default,NTP,0000,0000,0000,,那么我们是不是可以做出这样的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So can we conclude then that from the fact that--
+Dialogue: 0,0:06:58.03,0:06:59.51,*Default,NTP,0000,0000,0000,,根据"循环论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}argument from recycling: 
+Dialogue: 0,0:06:59.57,0:07:01.18,*Default,NTP,0000,0000,0000,,零件可以再利用  可以再装配\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}parts get reused, get rebuilt, 
+Dialogue: 0,0:07:01.24,0:07:02.32,*Default,NTP,0000,0000,0000,,当车坏掉了以后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when cars get destroyed, 
+Dialogue: 0,0:07:02.36,0:07:03.61,*Default,NTP,0000,0000,0000,,零件依然还存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the parts are still around--
+Dialogue: 0,0:07:03.77,0:07:05.96,*Default,NTP,0000,0000,0000,,那我们能不能根据"循环论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can we conclude from the argument from recycling 
+Dialogue: 0,0:07:06.01,0:07:09.98,*Default,NTP,0000,0000,0000,,以及引擎是先于汽车存在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the fact that the engine is a prior-existing part 
+Dialogue: 0,0:07:09.98,0:07:12.19,*Default,NTP,0000,0000,0000,,这一个事实\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from which the car was built,
+Dialogue: 0,0:07:12.53,0:07:15.19,*Default,NTP,0000,0000,0000,,来断言说引擎会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the engine will continue 
+Dialogue: 0,0:07:15.19,0:07:19.72,*Default,NTP,0000,0000,0000,,在汽车毁坏之后依然永远存在呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to exist forever after the destruction of the car?
+Dialogue: 0,0:07:20.71,0:07:22.90,*Default,NTP,0000,0000,0000,,很显然  我们不能做出这样的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No, obviously you can't conclude that at all. 
+Dialogue: 0,0:07:22.99,0:07:26.37,*Default,NTP,0000,0000,0000,,有时车子毁坏的同时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes when cars get destroyed the engine 
+Dialogue: 0,0:07:26.37,0:07:29.08,*Default,NTP,0000,0000,0000,,引擎也一起损坏了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets destroyed right along with it.
+Dialogue: 0,0:07:29.36,0:07:30.95,*Default,NTP,0000,0000,0000,,当然了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And of course, even if--
+Dialogue: 0,0:07:31.01,0:07:32.30,*Default,NTP,0000,0000,0000,,即使有时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in many cases--
+Dialogue: 0,0:07:32.36,0:07:36.18,*Default,NTP,0000,0000,0000,,引擎在车子毁坏了之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the engine continues to exist for a while 
+Dialogue: 0,0:07:36.18,0:07:39.28,*Default,NTP,0000,0000,0000,,还是会存在一段时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after the destruction of the car,
+Dialogue: 0,0:07:39.95,0:07:42.52,*Default,NTP,0000,0000,0000,,但这不是说引擎是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it certainly doesn't follow that the engine is immortal, 
+Dialogue: 0,0:07:42.52,0:07:44.31,*Default,NTP,0000,0000,0000,,引擎会永远存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it continues to exist forever. 
+Dialogue: 0,0:07:44.32,0:07:49.50,*Default,NTP,0000,0000,0000,,引擎终将分解  变成原子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Engines will eventually decompose and turn back into atoms. 
+Dialogue: 0,0:07:50.18,0:07:54.74,*Default,NTP,0000,0000,0000,,所以仅仅根据引擎是一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So from the mere fact that the engine was a part 
+Dialogue: 0,0:07:54.75,0:07:58.20,*Default,NTP,0000,0000,0000,,先于汽车存在的零件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that existed before the car existed,
+Dialogue: 0,0:07:58.21,0:08:00.40,*Default,NTP,0000,0000,0000,,以及后来当汽车被拆解时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the further fact that when the car breaks down, 
+Dialogue: 0,0:08:00.40,0:08:03.10,*Default,NTP,0000,0000,0000,,它又变成了零件的这一事实\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it decomposes back into parts, 
+Dialogue: 0,0:08:03.19,0:08:04.78,*Default,NTP,0000,0000,0000,,自然不能说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it certainly doesn't follow that 
+Dialogue: 0,0:08:04.78,0:08:07.30,*Default,NTP,0000,0000,0000,,所有先于汽车存在的零件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all of the parts that existed prior 
+Dialogue: 0,0:08:07.30,0:08:10.96,*Default,NTP,0000,0000,0000,,都会永远存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the existence of the car will be around forever.
+Dialogue: 0,0:08:11.01,0:08:12.35,*Default,NTP,0000,0000,0000,,这是错的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That would just be false.
+Dialogue: 0,0:08:13.88,0:08:19.61,*Default,NTP,0000,0000,0000,,纵使我们接受了苏格拉底的假设\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So even if we were to give Socrates the assumption that--
+Dialogue: 0,0:08:19.69,0:08:21.12,*Default,NTP,0000,0000,0000,,或者说他的理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the thesis that--
+Dialogue: 0,0:08:21.25,0:08:24.56,*Default,NTP,0000,0000,0000,,即使(承认)灵魂先于我们存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul existed before we were put together, 
+Dialogue: 0,0:08:25.08,0:08:26.42,*Default,NTP,0000,0000,0000,,在我们出生前存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}before we were born, 
+Dialogue: 0,0:08:26.82,0:08:29.30,*Default,NTP,0000,0000,0000,,但这仍不能表明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it still wouldn't follow that 
+Dialogue: 0,0:08:29.37,0:08:34.18,*Default,NTP,0000,0000,0000,,当我们的肉体分解后灵魂依旧存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul will continue to exist after we're taken back apart. 
+Dialogue: 0,0:08:35.45,0:08:40.69,*Default,NTP,0000,0000,0000,,灵魂可能迟早会像引擎那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The soul might eventually decay just like the engine 
+Dialogue: 0,0:08:40.69,0:08:42.97,*Default,NTP,0000,0000,0000,,慢慢地消散\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will eventually decay.
+Dialogue: 0,0:08:43.88,0:08:45.32,*Default,NTP,0000,0000,0000,,我们需要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we need, 
+Dialogue: 0,0:08:45.45,0:08:49.08,*Default,NTP,0000,0000,0000,,一个真正能说服我们灵魂是不朽的理由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to really become convinced of the immortality of the soul, 
+Dialogue: 0,0:08:49.14,0:08:51.88,*Default,NTP,0000,0000,0000,,不能仅仅依靠假设\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not the mere suggestion, 
+Dialogue: 0,0:08:51.99,0:08:52.96,*Default,NTP,0000,0000,0000,,即使是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even it was--
+Dialogue: 0,0:08:53.00,0:08:54.01,*Default,NTP,0000,0000,0000,,即使我们确信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if we were convinced--
+Dialogue: 0,0:08:54.06,0:08:58.47,*Default,NTP,0000,0000,0000,,灵魂的确是先于肉体存在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not the mere suggestion that the soul was around before our birth. 
+Dialogue: 0,0:08:59.44,0:09:02.08,*Default,NTP,0000,0000,0000,,我们需要证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We need to believe that the soul, 
+Dialogue: 0,0:09:02.19,0:09:04.69,*Default,NTP,0000,0000,0000,,灵魂不同于引擎\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}unlike an engine, 
+Dialogue: 0,0:09:05.06,0:09:07.96,*Default,NTP,0000,0000,0000,,它不会被毁灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't itself be destroyed, 
+Dialogue: 0,0:09:08.34,0:09:11.48,*Default,NTP,0000,0000,0000,,不会分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't itself decompose, 
+Dialogue: 0,0:09:12.34,0:09:14.08,*Default,NTP,0000,0000,0000,,不会消亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't fall apart. 
+Dialogue: 0,0:09:15.30,0:09:17.32,*Default,NTP,0000,0000,0000,,这才是让使我们信服\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what we need if we're really going 
+Dialogue: 0,0:09:17.32,0:09:19.78,*Default,NTP,0000,0000,0000,,灵魂是不朽的有力证据\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to become convinced of the immortality of the soul.
+Dialogue: 0,0:09:21.89,0:09:23.61,*Default,NTP,0000,0000,0000,,正如我前面提到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, as I remarked previously, 
+Dialogue: 0,0:09:23.66,0:09:26.09,*Default,NTP,0000,0000,0000,,最不可思议的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the amazing things--
+Dialogue: 0,0:09:26.14,0:09:28.73,*Default,NTP,0000,0000,0000,,不该说不可思议  应说柏拉图的著作里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not amazing but one of the really attractive things 
+Dialogue: 0,0:09:28.73,0:09:30.13,*Default,NTP,0000,0000,0000,,最引人入胜的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about Plato's dialogues is,
+Dialogue: 0,0:09:30.27,0:09:34.24,*Default,NTP,0000,0000,0000,,当你刚要反驳他的观点时  柏拉图本人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you raise an objection and it often seems as though Plato himself, 
+Dialogue: 0,0:09:34.29,0:09:38.40,*Default,NTP,0000,0000,0000,,不管是否已经直白地阐述了这些异议\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether or not he explicitly states the objection, 
+Dialogue: 0,0:09:39.20,0:09:40.99,*Default,NTP,0000,0000,0000,,好似已经知道这些异议了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}seems aware of the objection, 
+Dialogue: 0,0:09:41.04,0:09:45.95,*Default,NTP,0000,0000,0000,,因为接下来他一定会对此进行回应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he'll go on to say something that is responsive to it. 
+Dialogue: 0,0:09:46.04,0:09:46.96,*Default,NTP,0000,0000,0000,,如果你认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And again, that makes sense 
+Dialogue: 0,0:09:47.02,0:09:50.76,*Default,NTP,0000,0000,0000,,这些对话录是完善你哲学思维的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you think of these dialogues as a kind of pedagogical tool 
+Dialogue: 0,0:09:50.76,0:09:53.30,*Default,NTP,0000,0000,0000,,学习工具   这就显的很合理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to help you get better at philosophizing.
+Dialogue: 0,0:09:54.13,0:09:58.66,*Default,NTP,0000,0000,0000,,所以我认为  柏拉图接下来的对话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the very next argument that Plato turns to can be viewed, 
+Dialogue: 0,0:09:58.72,0:10:02.49,*Default,NTP,0000,0000,0000,,可以看作对这个没表达出来的异议的回应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think, as responding to this unstated objection--
+Dialogue: 0,0:10:02.54,0:10:03.64,*Default,NTP,0000,0000,0000,,我在这里说了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, I stated it, 
+Dialogue: 0,0:10:03.64,0:10:05.24,*Default,NTP,0000,0000,0000,,柏拉图可没有在他的书中这么说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but Plato doesn't state it in the dialogue--
+Dialogue: 0,0:10:05.32,0:10:08.74,*Default,NTP,0000,0000,0000,,(他没有问)即使灵魂是我们的一零件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the worry that even if the soul was one of the parts, 
+Dialogue: 0,0:10:08.80,0:10:11.22,*Default,NTP,0000,0000,0000,,尽管灵魂先于肉体而存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if the soul was already around before we were born, 
+Dialogue: 0,0:10:11.29,0:10:14.51,*Default,NTP,0000,0000,0000,,我们怎么能证明它不会分解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do we know it can't come apart? 
+Dialogue: 0,0:10:14.58,0:10:17.54,*Default,NTP,0000,0000,0000,,我们怎么证明它不会被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do we know the soul can't be destroyed? 
+Dialogue: 0,0:10:17.61,0:10:19.87,*Default,NTP,0000,0000,0000,,由于我们想知道灵魂到底是不是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Since what we want to know is whether the soul is immortal, 
+Dialogue: 0,0:10:19.95,0:10:21.78,*Default,NTP,0000,0000,0000,,我们怎么证明它不会消散\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do we know it can't break?
+Dialogue: 0,0:10:23.49,0:10:29.95,*Default,NTP,0000,0000,0000,,柏拉图的下个观点直接回答了这个疑问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato's next argument then tries to deal directly with this worry, 
+Dialogue: 0,0:10:30.01,0:10:31.48,*Default,NTP,0000,0000,0000,,而且这是一个很有趣的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's a quite interesting argument. 
+Dialogue: 0,0:10:31.86,0:10:32.72,*Default,NTP,0000,0000,0000,,我给它一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll give it another--
+Dialogue: 0,0:10:32.86,0:10:33.71,*Default,NTP,0000,0000,0000,,新的名称\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a new label--
+Dialogue: 0,0:10:33.77,0:10:36.24,*Default,NTP,0000,0000,0000,,称为 "精简论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll call it the "argument from simplicity." 
+Dialogue: 0,0:10:38.62,0:10:43.84,*Default,NTP,0000,0000,0000,,苏格拉底做了如下的探讨  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates turns to a discussion of 
+Dialogue: 0,0:10:43.84,0:10:47.46,*Default,NTP,0000,0000,0000,,什么样的东西会消散\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what kinds of things can break
+Dialogue: 0,0:10:47.94,0:10:50.70,*Default,NTP,0000,0000,0000,,什么样的东西不会消散\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what kinds of things can't break; 
+Dialogue: 0,0:10:51.00,0:10:53.06,*Default,NTP,0000,0000,0000,,什么样的东西会损毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what kinds of things can be destroyed, 
+Dialogue: 0,0:10:53.25,0:10:54.98,*Default,NTP,0000,0000,0000,,什么样的东西不会损毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what kinds of things can't be destroyed. 
+Dialogue: 0,0:10:55.05,0:10:57.13,*Default,NTP,0000,0000,0000,,他举了些例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He thinks about examples; 
+Dialogue: 0,0:10:57.19,0:10:59.07,*Default,NTP,0000,0000,0000,,他想通过研究这些例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he surveys examples and tries 
+Dialogue: 0,0:10:59.07,0:11:02.52,*Default,NTP,0000,0000,0000,,来总结出一条形而上学的原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to extract a kind of metaphysical principle from this.
+Dialogue: 0,0:11:02.67,0:11:03.42,*Default,NTP,0000,0000,0000,,然后  我们就会看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then, as we'll see, 
+Dialogue: 0,0:11:03.48,0:11:05.35,*Default,NTP,0000,0000,0000,,他希望运用这条原理使我们信服\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he's going to use this principle to convince us--
+Dialogue: 0,0:11:05.40,0:11:07.79,*Default,NTP,0000,0000,0000,,或者尽量说服我们相信  灵魂是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or to try to convince us--that the soul is immortal, 
+Dialogue: 0,0:11:07.83,0:11:08.84,*Default,NTP,0000,0000,0000,,是坚不可摧的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's indestructible.
+Dialogue: 0,0:11:09.58,0:11:13.27,*Default,NTP,0000,0000,0000,,很多东西都能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, lots of things can be destroyed. 
+Dialogue: 0,0:11:13.87,0:11:14.90,*Default,NTP,0000,0000,0000,,这有一张纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's a piece of paper. 
+Dialogue: 0,0:11:16.00,0:11:18.25,*Default,NTP,0000,0000,0000,,我能撕坏它  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can be destroyed [sound of ripping paper] Right? 
+Dialogue: 0,0:11:23.53,0:11:26.55,*Default,NTP,0000,0000,0000,,那么为什么这东西可以被摧毁呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why was it that this was the sort of thing that could be destroyed? 
+Dialogue: 0,0:11:26.63,0:11:31.05,*Default,NTP,0000,0000,0000,,最直接的回答就是这张纸是有组成部分的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the straightforward answer is the piece of paper had parts. 
+Dialogue: 0,0:11:31.37,0:11:32.92,*Default,NTP,0000,0000,0000,,损坏它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And in breaking it, 
+Dialogue: 0,0:11:33.02,0:11:33.93,*Default,NTP,0000,0000,0000,,撕掉它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in ripping it, 
+Dialogue: 0,0:11:33.98,0:11:37.41,*Default,NTP,0000,0000,0000,,我其实是把其中的一部分与另一部分撕开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I literally did was I ripped one part from another.
+Dialogue: 0,0:11:38.59,0:11:40.58,*Default,NTP,0000,0000,0000,,为了损毁这张纸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To destroy the piece of paper,
+Dialogue: 0,0:11:40.72,0:11:43.94,*Default,NTP,0000,0000,0000,,我把它的部分分开了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take its parts apart.
+Dialogue: 0,0:11:48.94,0:11:49.97,*Default,NTP,0000,0000,0000,,这有一根粉笔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's piece of chalk.
+Dialogue: 0,0:11:51.54,0:11:54.20,*Default,NTP,0000,0000,0000,,它可以被我折断\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The piece of chalk can be broken.
+Dialogue: 0,0:11:56.00,0:11:56.96,*Default,NTP,0000,0000,0000,,我现在在干什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What am I doing?
+Dialogue: 0,0:11:57.13,0:11:59.19,*Default,NTP,0000,0000,0000,,我把它的各个部分分开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Taking its parts apart.
+Dialogue: 0,0:11:59.51,0:12:05.22,*Default,NTP,0000,0000,0000,,可以被摧毁的东西都有"部分"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The kinds of things that can be destroyed have parts.
+Dialogue: 0,0:12:06.45,0:12:08.51,*Default,NTP,0000,0000,0000,,它们是合成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are composite.
+Dialogue: 0,0:12:08.87,0:12:12.03,*Default,NTP,0000,0000,0000,,它们由各个"部分"组成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are composed of their parts.
+Dialogue: 0,0:12:12.71,0:12:19.40,*Default,NTP,0000,0000,0000,,肉体可以被摧毁  因为你可以拿一把刀\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bodies can be destroyed because you can take a sword to it
+Dialogue: 0,0:12:19.82,0:12:22.73,*Default,NTP,0000,0000,0000,,然后切切切  把它切割成片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and go sweep, sweep, sweep and chop it into pieces.
+Dialogue: 0,0:12:24.23,0:12:27.62,*Default,NTP,0000,0000,0000,,合成的东西是可以被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Composite things can be destroyed.
+Dialogue: 0,0:12:27.70,0:12:29.90,*Default,NTP,0000,0000,0000,,有"部分"的事物是可以被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things that have parts can be destroyed.
+Dialogue: 0,0:12:30.72,0:12:33.84,*Default,NTP,0000,0000,0000,,什么样的东西不会被摧毁呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, what kind of things can't be destroyed?
+Dialogue: 0,0:12:33.88,0:12:35.80,*Default,NTP,0000,0000,0000,,不例外的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it won't surprise you
+Dialogue: 0,0:12:35.92,0:12:38.44,*Default,NTP,0000,0000,0000,,柏拉图在寻找永恒的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that when Plato looks for an example of something
+Dialogue: 0,0:12:38.45,0:12:40.22,*Default,NTP,0000,0000,0000,,并且不可摧毁的例子时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's eternal and indestructible,
+Dialogue: 0,0:12:40.81,0:12:44.51,*Default,NTP,0000,0000,0000,,他直接开始思考柏拉图型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his mind immediately starts thinking about the Platonic forms.
+Dialogue: 0,0:12:45.30,0:12:47.84,*Default,NTP,0000,0000,0000,,比如说数字3\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Take the number three.
+Dialogue: 0,0:12:48.43,0:12:52.99,*Default,NTP,0000,0000,0000,,数字3是不能被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three can't be destroyed, right?
+Dialogue: 0,0:12:53.07,0:12:56.22,*Default,NTP,0000,0000,0000,,即使发生了核爆炸  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if nuclear explosion took place
+Dialogue: 0,0:12:56.22,0:12:58.42,*Default,NTP,0000,0000,0000,,地球上的一切\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and everything on Earth
+Dialogue: 0,0:12:58.42,0:13:05.37,*Default,NTP,0000,0000,0000,,都在某种诡异的科幻式连锁反应中毁灭了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}got atomized and destroyed through some bizarre science fiction chain reaction,
+Dialogue: 0,0:13:05.50,0:13:06.78,*Default,NTP,0000,0000,0000,,就像是电影里经常出现的那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like they're always doing in movies,
+Dialogue: 0,0:13:07.58,0:13:10.90,*Default,NTP,0000,0000,0000,,数字3仍旧毫发无损\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the number three wouldn't be touched.
+Dialogue: 0,0:13:11.06,0:13:12.94,*Default,NTP,0000,0000,0000,,数字3不会受到任何影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three wouldn't be fazed.
+Dialogue: 0,0:13:13.00,0:13:17.26,*Default,NTP,0000,0000,0000,,3加1等于4依然是成立的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It would still be true that three plus one equals four.
+Dialogue: 0,0:13:17.45,0:13:20.68,*Default,NTP,0000,0000,0000,,你不可能损害到数字3\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't hurt the number three.
+Dialogue: 0,0:13:21.47,0:13:28.04,*Default,NTP,0000,0000,0000,,你无法改变或摧毁正圆\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't alter or destroy perfect circularity.
+Dialogue: 0,0:13:29.09,0:13:33.68,*Default,NTP,0000,0000,0000,,为什么不能  因为它没有任何”部分”\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why not? Well, it doesn't have any parts.
+Dialogue: 0,0:13:34.11,0:13:35.91,*Default,NTP,0000,0000,0000,,这就是他的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the thought.
+Dialogue: 0,0:13:36.22,0:13:41.13,*Default,NTP,0000,0000,0000,,像柏拉图型相的东西是永恒的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things like the Platonic forms are eternal,
+Dialogue: 0,0:13:41.50,0:13:44.49,*Default,NTP,0000,0000,0000,,它们永远存在  固定不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they're eternal, changeless,
+Dialogue: 0,0:13:44.56,0:13:45.93,*Default,NTP,0000,0000,0000,,坚不可摧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and indestructible,
+Dialogue: 0,0:13:46.39,0:13:49.72,*Default,NTP,0000,0000,0000,,因为它们简单\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they are simple--
+Dialogue: 0,0:13:50.50,0:13:52.42,*Default,NTP,0000,0000,0000,,简单在此是一个形而上学的概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}simple here being the metaphysical notion that
+Dialogue: 0,0:13:52.46,0:13:54.14,*Default,NTP,0000,0000,0000,,指它们不由任何事物组成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not composed of anything.
+Dialogue: 0,0:13:54.31,0:13:57.34,*Default,NTP,0000,0000,0000,,对于所有由”部分”组成的物体  你会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anything that's built up out of parts you could,
+Dialogue: 0,0:13:57.40,0:13:58.48,*Default,NTP,0000,0000,0000,,最起码从理论上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in principle,
+Dialogue: 0,0:13:58.53,0:14:01.09,*Default,NTP,0000,0000,0000,,会担心它们的”部分”会分崩离析  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}worry about the parts coming apart and, 
+Dialogue: 0,0:14:01.09,0:14:02.91,*Default,NTP,0000,0000,0000,,因而导致整个物体的毁灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hence, the thing being destroyed.
+Dialogue: 0,0:14:03.27,0:14:05.62,*Default,NTP,0000,0000,0000,,不过所有简单的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But anything that's simple
+Dialogue: 0,0:14:05.62,0:14:08.77,*Default,NTP,0000,0000,0000,,是不会以那样的方式毁灭的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be destroyed in that way.
+Dialogue: 0,0:14:08.82,0:14:10.75,*Default,NTP,0000,0000,0000,,因为它没有"部分”可分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has no parts to take apart.
+Dialogue: 0,0:14:14.79,0:14:20.77,*Default,NTP,0000,0000,0000,,因此所有能够被摧毁的事物都是有"部分"的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the kinds of things that can be destroyed are the things with parts,
+Dialogue: 0,0:14:20.83,0:14:23.87,*Default,NTP,0000,0000,0000,,这些就是能够变化的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those are the sorts of things that change, right?
+Dialogue: 0,0:14:24.01,0:14:25.36,*Default,NTP,0000,0000,0000,,即使它们现在没有被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if they're not destroyed,
+Dialogue: 0,0:14:25.42,0:14:28.49,*Default,NTP,0000,0000,0000,,又如何判断某物是否是合成的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's a tip off to something being composite?
+Dialogue: 0,0:14:28.49,0:14:30.20,*Default,NTP,0000,0000,0000,,要看它会不会变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The fact that it changes.
+Dialogue: 0,0:14:30.20,0:14:33.47,*Default,NTP,0000,0000,0000,,假设我拿来一根金属条  然后把它掰弯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Suppose I take a bar of metal and I bend it.
+Dialogue: 0,0:14:33.47,0:14:36.08,*Default,NTP,0000,0000,0000,,我并没有摧毁它  但我改变了它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I haven't destroyed it, but I've changed it.
+Dialogue: 0,0:14:36.13,0:14:40.28,*Default,NTP,0000,0000,0000,,我可以通过改变各部分之间的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm able to change it by rearranging the relationships
+Dialogue: 0,0:14:40.28,0:14:42.33,*Default,NTP,0000,0000,0000,,来改变它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the various parts.
+Dialogue: 0,0:14:42.33,0:14:44.60,*Default,NTP,0000,0000,0000,,我的身体一直在变化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My body is constantly changing
+Dialogue: 0,0:14:44.60,0:14:46.34,*Default,NTP,0000,0000,0000,,因为我的胳膊  头 及其他器官\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the relationships between 
+Dialogue: 0,0:14:46.34,0:14:48.67,*Default,NTP,0000,0000,0000,,之间的关系改变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my arms and my head and so forth,
+Dialogue: 0,0:14:48.74,0:14:50.35,*Default,NTP,0000,0000,0000,,我的肌肉在活动  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my muscles are moving. 
+Dialogue: 0,0:14:50.35,0:14:52.33,*Default,NTP,0000,0000,0000,,调整了"部分"之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You rearrange the parts,
+Dialogue: 0,0:14:52.40,0:14:53.23,*Default,NTP,0000,0000,0000,,这个东西就变了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the thing changes.
+Dialogue: 0,0:14:53.29,0:14:54.70,*Default,NTP,0000,0000,0000,,这就意味着这东西是由”部分”组成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Oh, but that means it's got parts
+Dialogue: 0,0:14:54.71,0:14:55.33,*Default,NTP,0000,0000,0000,,而且它可以被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and could be destroyed.
+Dialogue: 0,0:14:55.44,0:14:58.12,*Default,NTP,0000,0000,0000,,现在我们可以归纳出一些有趣的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we've got some nice generalizations.
+Dialogue: 0,0:14:59.45,0:15:03.83,*Default,NTP,0000,0000,0000,,会改变的事物是由"部分"组成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things that change have parts;
+Dialogue: 0,0:15:03.90,0:15:06.18,*Default,NTP,0000,0000,0000,,而由"部分"组成的事物是可以被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}things with parts can be destroyed.
+Dialogue: 0,0:15:06.29,0:15:10.97,*Default,NTP,0000,0000,0000,,哪些事物是可以改变和摧毁的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What are the kinds of things that you can change and destroy?
+Dialogue: 0,0:15:11.07,0:15:15.39,*Default,NTP,0000,0000,0000,,那些现实世界里为我们所熟悉的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are the familiar empirical objects that we can see:
+Dialogue: 0,0:15:15.95,0:15:20.21,*Default,NTP,0000,0000,0000,,比如纸  身体  粉笔和金属条\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pieces of paper, bodies, pieces of chalk, bars of metal.
+Dialogue: 0,0:15:20.77,0:15:23.44,*Default,NTP,0000,0000,0000,,与此相对  另一方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In contrast, on the whole other side,
+Dialogue: 0,0:15:23.57,0:15:29.29,*Default,NTP,0000,0000,0000,,有些事物则是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've got things that are invisible,
+Dialogue: 0,0:15:29.39,0:15:30.36,*Default,NTP,0000,0000,0000,,比如数字3\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the number three--
+Dialogue: 0,0:15:30.42,0:15:33.74,*Default,NTP,0000,0000,0000,,数字3是看不见的  是无形的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nobody sees the number three--things that are invisible,
+Dialogue: 0,0:15:33.91,0:15:35.31,*Default,NTP,0000,0000,0000,,它从不改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that never change.
+Dialogue: 0,0:15:35.37,0:15:37.76,*Default,NTP,0000,0000,0000,,数字3从不改变  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three never changes, right?
+Dialogue: 0,0:15:38.19,0:15:41.29,*Default,NTP,0000,0000,0000,,3是一个奇数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three is an odd number.
+Dialogue: 0,0:15:41.49,0:15:42.56,*Default,NTP,0000,0000,0000,,不会说  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as though, 
+Dialogue: 0,0:15:42.56,0:15:45.80,*Default,NTP,0000,0000,0000,,今天3是奇数明天它就变成偶数了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}oh, today it's odd but maybe tomorrow it'll be even.
+Dialogue: 0,0:15:46.10,0:15:48.89,*Default,NTP,0000,0000,0000,,它永远是个奇数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's eternally an odd number.
+Dialogue: 0,0:15:49.37,0:15:54.28,*Default,NTP,0000,0000,0000,,3加1今天  昨天  且永远都等于4\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Three plus one equals four today, yesterday and forever.
+Dialogue: 0,0:15:54.43,0:15:57.23,*Default,NTP,0000,0000,0000,,这些关于3的事实是永远不会变的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These facts about the number three will never change.
+Dialogue: 0,0:15:57.29,0:15:59.01,*Default,NTP,0000,0000,0000,,数字3不会改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three is changeless.
+Dialogue: 0,0:15:59.69,0:16:02.06,*Default,NTP,0000,0000,0000,,因此型相是永恒的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the forms are eternal;
+Dialogue: 0,0:16:02.50,0:16:03.53,*Default,NTP,0000,0000,0000,,它们无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're invisible;
+Dialogue: 0,0:16:03.82,0:16:05.86,*Default,NTP,0000,0000,0000,,它们不变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they are changeless.
+Dialogue: 0,0:16:06.10,0:16:08.77,*Default,NTP,0000,0000,0000,,它们简单  而简单的事物无法被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're simple, and simple things can't be destroyed;
+Dialogue: 0,0:16:09.34,0:16:10.61,*Default,NTP,0000,0000,0000,,型相是无法被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}forms can't be destroyed.
+Dialogue: 0,0:16:11.63,0:16:12.72,*Default,NTP,0000,0000,0000,,把这些合并在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You put all this together;
+Dialogue: 0,0:16:12.79,0:16:16.69,*Default,NTP,0000,0000,0000,,这些是苏格拉底集中归纳的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these are the sorts of thoughts that Socrates assembles,
+Dialogue: 0,0:16:17.80,0:16:21.00,*Default,NTP,0000,0000,0000,,我已经把刚才谈到的观点写在黑板上了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I've got the initial thoughts up there on the board.
+Dialogue: 0,0:16:21.63,0:16:22.50,*Default,NTP,0000,0000,0000,,[见图8.1]  好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}[See Figure 8.1] All right.
+Dialogue: 0,0:16:22.86,0:16:27.77,*Default,NTP,0000,0000,0000,,前提一  只有合成的事物才能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So premise number one, only composite things can be destroyed.
+Dialogue: 0,0:16:29.38,0:16:34.28,*Default,NTP,0000,0000,0000,,前提二  只有会改变的事物才是合成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Premise number two, only changing things are composite.
+Dialogue: 0,0:16:37.11,0:16:39.21,*Default,NTP,0000,0000,0000,,因此如果把两者结合起来  就可以得到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you put one and two together, you'd get:
+Dialogue: 0,0:16:39.38,0:16:42.15,*Default,NTP,0000,0000,0000,,只有会改变的事物才可以被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only changing things could be destroyed.
+Dialogue: 0,0:16:43.03,0:16:47.43,*Default,NTP,0000,0000,0000,,现在加上前提三  无形的事物不会改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And now add three, invisible things don't change.
+Dialogue: 0,0:16:49.56,0:16:50.79,*Default,NTP,0000,0000,0000,,那么  如果事物必须可以改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, if you've got to be the kind of thing
+Dialogue: 0,0:16:50.83,0:16:52.37,*Default,NTP,0000,0000,0000,,才能是合成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can change in order to be composite
+Dialogue: 0,0:16:52.43,0:16:54.56,*Default,NTP,0000,0000,0000,,而且必须是合成的事物才可以被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you've got to be composite in order to be destroyed,
+Dialogue: 0,0:16:54.75,0:16:56.24,*Default,NTP,0000,0000,0000,,无形的事物不会改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things don't change,
+Dialogue: 0,0:16:56.42,0:17:01.63,*Default,NTP,0000,0000,0000,,可以得出四  无形的事物无法被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}follows four, invisible things can't be destroyed.
+Dialogue: 0,0:17:01.79,0:17:06.65,*Default,NTP,0000,0000,0000,,这就是苏格拉底根据思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the metaphysical thesis that Socrates comes to
+Dialogue: 0,0:17:06.65,0:17:08.90,*Default,NTP,0000,0000,0000,,得出的形而上学的论题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by thinking about cases.
+Dialogue: 0,0:17:09.84,0:17:13.70,*Default,NTP,0000,0000,0000,,而那正是关于灵魂不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's the crucial premise or sub-conclusion
+Dialogue: 0,0:17:13.70,0:17:16.31,*Default,NTP,0000,0000,0000,,关键前提或说是次级结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the immortality of the soul,
+Dialogue: 0,0:17:16.36,0:17:19.22,*Default,NTP,0000,0000,0000,,因为接下来  苏格拉底将促使\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because then Socrates invites 
+Dialogue: 0,0:17:19.22,0:17:21.37,*Default,NTP,0000,0000,0000,,我们思考灵魂的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}us to think about the soul.
+Dialogue: 0,0:17:21.44,0:17:24.98,*Default,NTP,0000,0000,0000,,灵魂是有形还是无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is the soul visible or invisible?
+Dialogue: 0,0:17:25.48,0:17:27.13,*Default,NTP,0000,0000,0000,,他说  很明显\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He says, pretty obviously,
+Dialogue: 0,0:17:27.20,0:17:30.03,*Default,NTP,0000,0000,0000,,灵魂是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"it's invisible."
+Dialogue: 0,0:17:30.55,0:17:32.89,*Default,NTP,0000,0000,0000,,如果无形的事物不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if invisible things can't be destroyed,
+Dialogue: 0,0:17:33.65,0:17:35.05,*Default,NTP,0000,0000,0000,,那么灵魂也就不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul can't be destroyed.
+Dialogue: 0,0:17:35.10,0:17:38.41,*Default,NTP,0000,0000,0000,,因此前提一二三可以导出次级结论四\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So one, two and three got us four,
+Dialogue: 0,0:17:38.77,0:17:40.81,*Default,NTP,0000,0000,0000,,无形的事物是不能被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things can't be destroyed,
+Dialogue: 0,0:17:40.96,0:17:46.01,*Default,NTP,0000,0000,0000,,前提五  灵魂是无形的  得结论六\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but five, the soul is invisible so six,
+Dialogue: 0,0:17:46.07,0:17:48.11,*Default,NTP,0000,0000,0000,,灵魂不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul can't be destroyed.
+Dialogue: 0,0:17:49.85,0:17:52.09,*Default,NTP,0000,0000,0000,,这是我在基于"精简论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's my best attempt
+Dialogue: 0,0:17:52.09,0:17:55.20,*Default,NTP,0000,0000,0000,,重构论点的前提下能给出的最好解释  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at reconstructing the argument from simplicity.
+Dialogue: 0,0:17:55.37,0:17:58.06,*Default,NTP,0000,0000,0000,,这些并不是柏拉图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as though Plato himself spells it out
+Dialogue: 0,0:17:58.06,0:18:00.41,*Default,NTP,0000,0000,0000,,明确说明的前提和结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with premises and conclusions like that,
+Dialogue: 0,0:18:00.48,0:18:02.70,*Default,NTP,0000,0000,0000,,不过我认为这是忠于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I think this is fairly faithful
+Dialogue: 0,0:18:02.70,0:18:05.68,*Default,NTP,0000,0000,0000,,他提出的论证方式的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the kind of argument he means to put forward.
+Dialogue: 0,0:18:07.91,0:18:10.20,*Default,NTP,0000,0000,0000,,一会儿我将评估\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And in a moment I'll turn to evaluating
+Dialogue: 0,0:18:10.20,0:18:12.45,*Default,NTP,0000,0000,0000,,这个论点是否是个好论点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether that's a good argument or not.
+Dialogue: 0,0:18:12.51,0:18:14.39,*Default,NTP,0000,0000,0000,,不过我认为这是一个非常有趣的论点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I think it's a pretty interesting argument;
+Dialogue: 0,0:18:14.78,0:18:17.34,*Default,NTP,0000,0000,0000,,是一个值得我们认真对待的论点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's an argument worth taking fairly seriously.
+Dialogue: 0,0:18:18.61,0:18:20.42,*Default,NTP,0000,0000,0000,,不过  我必须承认\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Except, I've got to confess to you
+Dialogue: 0,0:18:21.51,0:18:24.42,*Default,NTP,0000,0000,0000,,苏格拉底并不一定会完全按照\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Socrates doesn't quite conclude the way
+Dialogue: 0,0:18:24.42,0:18:27.15,*Default,NTP,0000,0000,0000,,我所预料他将采取论证的方式进行论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would've thought he would've concluded.
+Dialogue: 0,0:18:27.24,0:18:29.27,*Default,NTP,0000,0000,0000,,这样我们通过论证得出结论六\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I've had the argument conclude six,
+Dialogue: 0,0:18:29.37,0:18:31.39,*Default,NTP,0000,0000,0000,,灵魂不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul can't be destroyed.
+Dialogue: 0,0:18:31.92,0:18:34.87,*Default,NTP,0000,0000,0000,,但苏格拉底实际说的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But what Socrates actually says is--
+Dialogue: 0,0:18:34.94,0:18:36.42,*Default,NTP,0000,0000,0000,,他实际的结论是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his actual conclusion is--
+Dialogue: 0,0:18:36.60,0:18:39.77,*Default,NTP,0000,0000,0000,,因此灵魂是坚不可摧的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"And so the soul is indestructible
+Dialogue: 0,0:18:39.77,0:18:42.22,*Default,NTP,0000,0000,0000,,或几乎不可摧毁的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or nearly so."
+Dialogue: 0,0:18:43.18,0:18:45.70,*Default,NTP,0000,0000,0000,,一个相当古怪的限定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's rather an odd qualification,
+Dialogue: 0,0:18:45.88,0:18:48.20,*Default,NTP,0000,0000,0000,,"或几乎不可摧毁"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"or nearly so."
+Dialogue: 0,0:18:49.89,0:18:53.40,*Default,NTP,0000,0000,0000,,苏格拉底通过关于改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The conclusion that Socrates reaches from his examination of change
+Dialogue: 0,0:18:53.46,0:18:55.37,*Default,NTP,0000,0000,0000,,无形等等概念的讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and invisibility and so forth and so on,
+Dialogue: 0,0:18:55.48,0:18:57.37,*Default,NTP,0000,0000,0000,,以及合成性与简单性的对比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and compositeness versus simplicity,
+Dialogue: 0,0:18:57.55,0:18:58.78,*Default,NTP,0000,0000,0000,,所得出的结论是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that
+Dialogue: 0,0:18:58.78,0:19:01.42,*Default,NTP,0000,0000,0000,,"灵魂不可摧毁或几乎不可摧毁"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"the soul is indestructible or nearly so."
+Dialogue: 0,0:19:01.48,0:19:07.41,*Default,NTP,0000,0000,0000,,现在  这个限定带来了新的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, adding that qualification opens the door to a worry.
+Dialogue: 0,0:19:08.03,0:19:10.89,*Default,NTP,0000,0000,0000,,这个问题是塞贝斯提出来的  他说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The worry gets raised by Cebes who says,
+Dialogue: 0,0:19:12.36,0:19:16.67,*Default,NTP,0000,0000,0000,,即使我们承认灵魂几乎不可被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if we grant that the soul is nearly indestructible,
+Dialogue: 0,0:19:17.12,0:19:21.31,*Default,NTP,0000,0000,0000,,也不足以说明灵魂的不朽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not good enough to get us immortality.
+Dialogue: 0,0:19:22.14,0:19:26.64,*Default,NTP,0000,0000,0000,,而且他还提出了一个十分有趣的类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he gives a very nice analogy of somebody who's--
+Dialogue: 0,0:19:26.82,0:19:31.30,*Default,NTP,0000,0000,0000,,一件衣服可能比它的主人存在更久  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a coat, which could outlast the owner
+Dialogue: 0,0:19:31.30,0:19:32.96,*Default,NTP,0000,0000,0000,,不过它绝非不朽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but isn't immortal.
+Dialogue: 0,0:19:33.33,0:19:35.61,*Default,NTP,0000,0000,0000,,或者说主人也可能穿过好几件衣服 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or the owner could go through several coats;
+Dialogue: 0,0:19:36.29,0:19:40.75,*Default,NTP,0000,0000,0000,,然而在某个时刻主人仍旧会死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but still at some point the owner's going to die as well.
+Dialogue: 0,0:19:41.08,0:19:44.00,*Default,NTP,0000,0000,0000,,主人远比衣服不朽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The owner is far more immortal,
+Dialogue: 0,0:19:44.08,0:19:46.58,*Default,NTP,0000,0000,0000,,或者可以说是更接近不朽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that sense, closer to immortality.
+Dialogue: 0,0:19:46.71,0:19:48.93,*Default,NTP,0000,0000,0000,,我本人这一辈子也穿过很多的衣服\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I've gone through many coats in my life,
+Dialogue: 0,0:19:49.06,0:19:51.80,*Default,NTP,0000,0000,0000,,虽然如此  我并非坚不可摧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but for all that, I'm not indestructible.
+Dialogue: 0,0:19:52.98,0:19:56.78,*Default,NTP,0000,0000,0000,,如果我们最终所得仅仅是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If all we've got is the mere fact that the soul
+Dialogue: 0,0:19:56.78,0:19:59.01,*Default,NTP,0000,0000,0000,,灵魂是"几乎"不可摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is "nearly" indestructible,
+Dialogue: 0,0:19:59.06,0:20:01.31,*Default,NTP,0000,0000,0000,,需要花费很大的功夫才能摧毁它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it takes a whole lot more work to destroy it,
+Dialogue: 0,0:20:01.38,0:20:03.49,*Default,NTP,0000,0000,0000,,也许它存在的时间更久一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe it lasts a whole lot longer;
+Dialogue: 0,0:20:03.56,0:20:06.24,*Default,NTP,0000,0000,0000,,也许一个灵魂会经历很多的肉体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe it goes through a whole lot of bodies
+Dialogue: 0,0:20:06.24,0:20:08.25,*Default,NTP,0000,0000,0000,,在消耗殆尽被摧毁前转世六次\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being reincarnated a half-dozen,
+Dialogue: 0,0:20:08.30,0:20:12.72,*Default,NTP,0000,0000,0000,,或是十二次  或是好几百次才最终消亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a dozen, or hundred times before it wears out and gets destroyed.
+Dialogue: 0,0:20:12.72,0:20:15.56,*Default,NTP,0000,0000,0000,,这些都不足以使我们得出灵魂不朽的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's not enough to give us the immortality of the soul.
+Dialogue: 0,0:20:18.33,0:20:20.28,*Default,NTP,0000,0000,0000,,这就是塞贝斯提出的质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the objection that Cebes raises.
+Dialogue: 0,0:20:20.33,0:20:23.03,*Default,NTP,0000,0000,0000,,奇怪的一点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And one of the oddities is that,
+Dialogue: 0,0:20:23.08,0:20:24.72,*Default,NTP,0000,0000,0000,,在我看来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as far as I can see,
+Dialogue: 0,0:20:24.79,0:20:29.53,*Default,NTP,0000,0000,0000,,苏格拉底从未回应过这个质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates never responds to that objection.
+Dialogue: 0,0:20:30.69,0:20:32.04,*Default,NTP,0000,0000,0000,,提出这个质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Raises the objection--
+Dialogue: 0,0:20:32.10,0:20:32.75,*Default,NTP,0000,0000,0000,,即是说  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is, 
+Dialogue: 0,0:20:32.75,0:20:35.09,*Default,NTP,0000,0000,0000,,柏拉图凭借塞贝斯之口道出了自己的质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato raises the objection in the voice of Cebes--
+Dialogue: 0,0:20:35.16,0:20:36.14,*Default,NTP,0000,0000,0000,,然而苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but Socrates,
+Dialogue: 0,0:20:36.19,0:20:37.08,*Default,NTP,0000,0000,0000,,柏拉图笔下的苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on Plato's behalf,
+Dialogue: 0,0:20:37.12,0:20:39.55,*Default,NTP,0000,0000,0000,,从未应答过这个质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}never answers the objection.
+Dialogue: 0,0:20:40.63,0:20:42.84,*Default,NTP,0000,0000,0000,,很难道明这其中的缘由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's hard to say what exactly is going on.
+Dialogue: 0,0:20:42.98,0:20:45.75,*Default,NTP,0000,0000,0000,,有可能是因为柏拉图担心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It might be that Plato's worried that
+Dialogue: 0,0:20:45.80,0:20:48.59,*Default,NTP,0000,0000,0000,,他并未真正证明灵魂是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he hasn't really shown that the soul is immortal afterwards.
+Dialogue: 0,0:20:48.63,0:20:51.44,*Default,NTP,0000,0000,0000,,也许这个从"精简论"推理出的论点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe this argument from simplicity isn't really
+Dialogue: 0,0:20:51.44,0:20:52.99,*Default,NTP,0000,0000,0000,,并不如预想中那么严密\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as good as it needs to be.
+Dialogue: 0,0:20:53.10,0:20:56.54,*Default,NTP,0000,0000,0000,,而那也许解释了为什么柏拉图接下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And maybe that explains why Plato then goes on
+Dialogue: 0,0:20:56.54,0:20:58.81,*Default,NTP,0000,0000,0000,,提出了另外一个论点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to offer yet another argument.
+Dialogue: 0,0:20:59.22,0:21:01.05,*Default,NTP,0000,0000,0000,,毕竟  如果这个论点确实\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, if this argument really 
+Dialogue: 0,0:21:01.05,0:21:02.28,*Default,NTP,0000,0000,0000,,证明了灵魂的不朽\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}did show the immortality of the soul,
+Dialogue: 0,0:21:02.40,0:21:05.30,*Default,NTP,0000,0000,0000,,他为什么还要给出另外一个论点呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why would he need to offer a further argument?
+Dialogue: 0,0:21:05.35,0:21:07.18,*Default,NTP,0000,0000,0000,,"必要属性论"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The argument from essential properties,
+Dialogue: 0,0:21:07.23,0:21:08.45,*Default,NTP,0000,0000,0000,,我们以后会讨论它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we'll be turning to later.
+Dialogue: 0,0:21:09.59,0:21:11.79,*Default,NTP,0000,0000,0000,,因此也许柏拉图觉得\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe Plato just thought 
+Dialogue: 0,0:21:11.80,0:21:13.80,*Default,NTP,0000,0000,0000,,对于塞贝斯的质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there wasn't a good answer
+Dialogue: 0,0:21:13.81,0:21:15.42,*Default,NTP,0000,0000,0000,,并没有什么完善的答案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to Cebes' objection.
+Dialogue: 0,0:21:16.11,0:21:17.56,*Default,NTP,0000,0000,0000,,不过我想说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I want to say,
+Dialogue: 0,0:21:17.61,0:21:19.33,*Default,NTP,0000,0000,0000,,站在柏拉图的立场来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on Plato's behalf,
+Dialogue: 0,0:21:20.11,0:21:22.56,*Default,NTP,0000,0000,0000,,或者至少是从这个论点的角度来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or at least on behalf of the argument,
+Dialogue: 0,0:21:23.00,0:21:26.87,*Default,NTP,0000,0000,0000,,苏格拉底不应该以如此奇怪的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates should never have concluded the argument
+Dialogue: 0,0:21:26.87,0:21:29.74,*Default,NTP,0000,0000,0000,,一个限定式的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with this odd qualifying phrase that
+Dialogue: 0,0:21:29.79,0:21:34.21,*Default,NTP,0000,0000,0000,,灵魂"是或几乎是不可摧毁的"来结束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul is "indestructible or nearly so."
+Dialogue: 0,0:21:35.05,0:21:40.09,*Default,NTP,0000,0000,0000,,他应该说灵魂就是不可摧毁的  结束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He should've just said the soul is indestructible, full stop.
+Dialogue: 0,0:21:41.26,0:21:42.29,*Default,NTP,0000,0000,0000,,毕竟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all,
+Dialogue: 0,0:21:42.35,0:21:46.45,*Default,NTP,0000,0000,0000,,在前提一  二  和三成立的情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we have premises one, two, and three--
+Dialogue: 0,0:21:46.76,0:21:49.20,*Default,NTP,0000,0000,0000,,只有合成的事物才能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only composite things can be destroyed,
+Dialogue: 0,0:21:49.43,0:21:51.67,*Default,NTP,0000,0000,0000,,只有会改变的事物才是合成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only changing things are composite,
+Dialogue: 0,0:21:52.19,0:21:54.01,*Default,NTP,0000,0000,0000,,无形的事物不会改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things don't change--
+Dialogue: 0,0:21:54.04,0:21:55.26,*Default,NTP,0000,0000,0000,,如果把这些结合起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you put those together,
+Dialogue: 0,0:21:56.02,0:21:59.69,*Default,NTP,0000,0000,0000,,就可以得到四  无形的事物不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you get four, invisible things can't be destroyed.
+Dialogue: 0,0:22:00.69,0:22:03.68,*Default,NTP,0000,0000,0000,,你是不会得出更加宽泛的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't get the more modest conclusion,
+Dialogue: 0,0:22:04.31,0:22:06.29,*Default,NTP,0000,0000,0000,,无形的东西不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"invisible things can't be destroyed
+Dialogue: 0,0:22:06.30,0:22:08.72,*Default,NTP,0000,0000,0000,,或是很难被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or it's a whole lot harder to destroy them."
+Dialogue: 0,0:22:09.29,0:22:11.65,*Default,NTP,0000,0000,0000,,如果我们有前提一  二  和三\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we've got one, two and three,
+Dialogue: 0,0:22:11.72,0:22:14.38,*Default,NTP,0000,0000,0000,,我们应该得到更加肯定的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're entitled to the bold conclusion:
+Dialogue: 0,0:22:14.56,0:22:17.52,*Default,NTP,0000,0000,0000,,无形的东西不能被摧毁  句号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"invisible things can't be destroyed, period."
+Dialogue: 0,0:22:17.70,0:22:18.64,*Default,NTP,0000,0000,0000,,没了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Full stop.
+Dialogue: 0,0:22:20.05,0:22:22.12,*Default,NTP,0000,0000,0000,,然后如果前提五成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then if five is true,
+Dialogue: 0,0:22:22.17,0:22:23.93,*Default,NTP,0000,0000,0000,,如果灵魂真的是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the soul really is invisible,
+Dialogue: 0,0:22:24.00,0:22:26.42,*Default,NTP,0000,0000,0000,,我们就可以得到结论六\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're entitled to conclude six,
+Dialogue: 0,0:22:26.51,0:22:29.46,*Default,NTP,0000,0000,0000,,灵魂是不能被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul can't be destroyed--
+Dialogue: 0,0:22:30.09,0:22:32.44,*Default,NTP,0000,0000,0000,,而不是  灵魂不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not, the soul can't be destroyed,
+Dialogue: 0,0:22:32.49,0:22:34.33,*Default,NTP,0000,0000,0000,,或是很难很难被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or if it can be destroyed it's very,
+Dialogue: 0,0:22:34.33,0:22:36.52,*Default,NTP,0000,0000,0000,,需要很长很长的时间摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very hard and takes a very, very long time.
+Dialogue: 0,0:22:37.17,0:22:42.25,*Default,NTP,0000,0000,0000,,我们理应得出更肯定的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We are, rather, entitled to the bolder conclusion,
+Dialogue: 0,0:22:42.41,0:22:45.08,*Default,NTP,0000,0000,0000,,灵魂不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul can't be destroyed,
+Dialogue: 0,0:22:45.48,0:22:49.14,*Default,NTP,0000,0000,0000,,句号  完了  讨论结束\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}full stop, period, end of the discussion.
+Dialogue: 0,0:22:51.46,0:22:53.82,*Default,NTP,0000,0000,0000,,所以说尽管苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So despite the fact that Socrates 
+Dialogue: 0,0:22:53.82,0:22:56.01,*Default,NTP,0000,0000,0000,,得出了这个相对无力的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}draws this weaker conclusion,
+Dialogue: 0,0:22:56.41,0:22:59.42,*Default,NTP,0000,0000,0000,,对我来说  他提供的论证似乎\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it seems to me that the argument he's offered us,
+Dialogue: 0,0:22:59.50,0:23:01.33,*Default,NTP,0000,0000,0000,,如果论证正确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it works at all,
+Dialogue: 0,0:23:01.65,0:23:05.53,*Default,NTP,0000,0000,0000,,促使我们得出了更加肯定的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}entitles us to draw the bolder conclusion.
+Dialogue: 0,0:23:06.20,0:23:08.51,*Default,NTP,0000,0000,0000,,不是"灵魂是或几乎不可摧毁"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not that the soul is indestructible or nearly so,
+Dialogue: 0,0:23:08.63,0:23:10.59,*Default,NTP,0000,0000,0000,,而是"灵魂确实不可摧毁"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that the soul is indestructible.
+Dialogue: 0,0:23:13.20,0:23:16.05,*Default,NTP,0000,0000,0000,,也许柏拉图意识到了这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, maybe Plato realized that;
+Dialogue: 0,0:23:16.38,0:23:17.83,*Default,NTP,0000,0000,0000,,也许这就是为什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe that's the reason why 
+Dialogue: 0,0:23:17.83,0:23:20.74,*Default,NTP,0000,0000,0000,,他根本没顾上回答塞贝斯问题的原因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he doesn't bother giving an answer to Cebes.
+Dialogue: 0,0:23:20.80,0:23:25.05,*Default,NTP,0000,0000,0000,,也许他想让读者意识到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe it's an invitation to the reader to recognize that
+Dialogue: 0,0:23:25.10,0:23:30.09,*Default,NTP,0000,0000,0000,,还有一个比剧中的人物所提出的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a better argument here than even the characters
+Dialogue: 0,0:23:30.09,0:23:33.57,*Default,NTP,0000,0000,0000,,更好的论证存在  我们不知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the drama have noticed--don't know,
+Dialogue: 0,0:23:36.28,0:23:38.05,*Default,NTP,0000,0000,0000,,我们无从知道柏拉图的想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't know what Plato had in mind.
+Dialogue: 0,0:23:39.74,0:23:40.51,*Default,NTP,0000,0000,0000,,不过无论如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But at any rate,
+Dialogue: 0,0:23:40.58,0:23:43.04,*Default,NTP,0000,0000,0000,,我们的问题都不应该是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}our question shouldn't be,
+Dialogue: 0,0:23:43.10,0:23:44.74,*Default,NTP,0000,0000,0000,,"柏拉图在想什么"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What was Plato thinking?"
+Dialogue: 0,0:23:44.99,0:23:46.53,*Default,NTP,0000,0000,0000,,而是"这个论点合理吗"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but, "Is the argument any good?"
+Dialogue: 0,0:23:49.80,0:23:53.19,*Default,NTP,0000,0000,0000,,我们得到关于灵魂的不朽结论了吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Do we now have an argument for the immortality of the soul?
+Dialogue: 0,0:23:53.28,0:23:55.08,*Default,NTP,0000,0000,0000,,毕竟  如果灵魂不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, if the soul can't be destroyed,
+Dialogue: 0,0:23:55.14,0:23:56.13,*Default,NTP,0000,0000,0000,,那它就是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's immortal.
+Dialogue: 0,0:23:57.07,0:23:59.67,*Default,NTP,0000,0000,0000,,这是一个好的论点吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it a good argument or not?
+Dialogue: 0,0:24:01.82,0:24:05.49,*Default,NTP,0000,0000,0000,,西米亚司提出了另一个质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Simmias raises a different objection.
+Dialogue: 0,0:24:06.07,0:24:10.02,*Default,NTP,0000,0000,0000,,西米亚司说我们不应该下结论说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Simmias says we can't conclude that 
+Dialogue: 0,0:24:10.02,0:24:11.89,*Default,NTP,0000,0000,0000,,灵魂是或几乎不可摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul is indestructible, or nearly so,
+Dialogue: 0,0:24:11.89,0:24:13.43,*Default,NTP,0000,0000,0000,,或者其他的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&} or whatever,
+Dialogue: 0,0:24:14.51,0:24:20.39,*Default,NTP,0000,0000,0000,,因为我们不应相信四所说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because we should not believe the sub-conclusion four, 
+Dialogue: 0,0:24:21.18,0:24:23.82,*Default,NTP,0000,0000,0000,,无形的物体不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things can't be destroyed. 
+Dialogue: 0,0:24:24.96,0:24:32.18,*Default,NTP,0000,0000,0000,,西米亚司认为无形的物体能够被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Simmias says invisible things can be destroyed. 
+Dialogue: 0,0:24:33.11,0:24:34.28,*Default,NTP,0000,0000,0000,,如果这一点成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if that's true, 
+Dialogue: 0,0:24:34.34,0:24:36.29,*Default,NTP,0000,0000,0000,,那么当然  关于灵魂是不可毁灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then of course we no longer have an argument
+Dialogue: 0,0:24:36.34,0:24:40.70,*Default,NTP,0000,0000,0000,,或者是几乎不可摧毁的论证就不成立了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the indestructibility or near indestructibility of the soul. 
+Dialogue: 0,0:24:41.69,0:24:44.00,*Default,NTP,0000,0000,0000,,因为即使灵魂是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because even if the soul is invisible, 
+Dialogue: 0,0:24:44.28,0:24:47.27,*Default,NTP,0000,0000,0000,,即前提五  然而\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}five, if nonetheless, 
+Dialogue: 0,0:24:47.32,0:24:49.53,*Default,NTP,0000,0000,0000,,如果与苏格拉底所声称的相反\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}contrary to what Socrates was claiming, 
+Dialogue: 0,0:24:49.58,0:24:51.61,*Default,NTP,0000,0000,0000,,无形的事物能够被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things can be destroyed, 
+Dialogue: 0,0:24:51.66,0:24:54.54,*Default,NTP,0000,0000,0000,,那么无形的灵魂也能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then maybe the invisible soul can be destroyed as well.
+Dialogue: 0,0:24:56.06,0:24:59.12,*Default,NTP,0000,0000,0000,,西米亚司并不是仅仅草率地断言 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, Simmias doesn't merely assert, boldly, 
+Dialogue: 0,0:24:59.12,0:25:00.83,*Default,NTP,0000,0000,0000,,无形的物体能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things can be destroyed.
+Dialogue: 0,0:25:00.88,0:25:02.74,*Default,NTP,0000,0000,0000,,他给出了能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He offers an example of an invisible thing 
+Dialogue: 0,0:25:02.74,0:25:10.17,*Default,NTP,0000,0000,0000,,但无形的事物的例子  音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can be destroyed--harmony.
+Dialogue: 0,0:25:11.71,0:25:14.12,*Default,NTP,0000,0000,0000,,他开始讨论音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He starts talking about the harmony 
+Dialogue: 0,0:25:14.12,0:25:17.15,*Default,NTP,0000,0000,0000,,由弦乐器演奏出来的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that gets produced by a stringed instrument;
+Dialogue: 0,0:25:17.20,0:25:18.17,*Default,NTP,0000,0000,0000,,比方说竖琴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say a harp. 
+Dialogue: 0,0:25:19.91,0:25:21.94,*Default,NTP,0000,0000,0000,,事实上  他说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, he says, 
+Dialogue: 0,0:25:21.98,0:25:23.32,*Default,NTP,0000,0000,0000,,这是一个非常值得我们深思的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is a very nice example for us to think about 
+Dialogue: 0,0:25:23.36,0:25:27.96,*Default,NTP,0000,0000,0000,,因为有人提出  西米亚司说道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because some people have suggested--Simmias says--
+Dialogue: 0,0:25:28.01,0:25:32.98,*Default,NTP,0000,0000,0000,,有些人提出心灵就好像音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some people have suggested that the mind is like harmony. 
+Dialogue: 0,0:25:34.34,0:25:37.63,*Default,NTP,0000,0000,0000,,似乎心灵就像躯体演奏的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's as though the mind is like harmony of the body. 
+Dialogue: 0,0:25:38.42,0:25:41.01,*Default,NTP,0000,0000,0000,,为了更加详细完整地说明这个类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So to spell out the analogy a bit more fully, 
+Dialogue: 0,0:25:41.05,0:25:42.69,*Default,NTP,0000,0000,0000,,我待会儿会做更详细的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'll say a bit more about it later, 
+Dialogue: 0,0:25:46.01,0:25:50.46,*Default,NTP,0000,0000,0000,,音乐之于竖琴就好像精神之于躯体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony is to the harp as the mind is to the body. 
+Dialogue: 0,0:25:52.97,0:25:56.30,*Default,NTP,0000,0000,0000,,他说  有人提出了这样的观点 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He says, there are people who put forward views like this, 
+Dialogue: 0,0:25:58.58,0:26:02.80,*Default,NTP,0000,0000,0000,,不管怎么说  音乐是肯定能被损毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and at any rate harmony can certainly be destroyed. 
+Dialogue: 0,0:26:02.86,0:26:04.72,*Default,NTP,0000,0000,0000,,你不能看见音乐  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't see harmony, right? 
+Dialogue: 0,0:26:04.77,0:26:06.36,*Default,NTP,0000,0000,0000,,音乐是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is invisible. 
+Dialogue: 0,0:26:07.96,0:26:08.69,*Default,NTP,0000,0000,0000,,但尽管如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But for all that, 
+Dialogue: 0,0:26:08.73,0:26:10.21,*Default,NTP,0000,0000,0000,,你能够损毁音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can destroy harmony. 
+Dialogue: 0,0:26:10.25,0:26:15.23,*Default,NTP,0000,0000,0000,,一台竖琴正演奏旋律  演奏美妙的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So there's the harp making its melodious, harmonious sounds, 
+Dialogue: 0,0:26:15.55,0:26:17.85,*Default,NTP,0000,0000,0000,,这时有人拿着一把斧子去砍这台竖琴\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then you take an ax to the harp,
+Dialogue: 0,0:26:17.95,0:26:19.95,*Default,NTP,0000,0000,0000,,梆  梆  梆  嚓  嚓  嚓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bang, bang, bang, chop, chop, chop, 
+Dialogue: 0,0:26:20.12,0:26:21.37,*Default,NTP,0000,0000,0000,,或者用个锤子  或其他什么东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a hammer or whatever; 
+Dialogue: 0,0:26:21.88,0:26:23.64,*Default,NTP,0000,0000,0000,,这时音乐就被损毁了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now the harmony's been destroyed. 
+Dialogue: 0,0:26:24.59,0:26:27.44,*Default,NTP,0000,0000,0000,,所以说尽管它是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So even though it's invisible, 
+Dialogue: 0,0:26:28.15,0:26:33.14,*Default,NTP,0000,0000,0000,,你能够通过破坏乐器这个音乐的载体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can destroy it by destroying the musical instrument 
+Dialogue: 0,0:26:33.14,0:26:34.93,*Default,NTP,0000,0000,0000,,来破坏音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on which it depends.
+Dialogue: 0,0:26:36.40,0:26:37.45,*Default,NTP,0000,0000,0000,,当然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And of course, 
+Dialogue: 0,0:26:37.49,0:26:38.66,*Default,NTP,0000,0000,0000,,存在这种顾虑  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's the worry, right? 
+Dialogue: 0,0:26:38.70,0:26:41.86,*Default,NTP,0000,0000,0000,,如果精神之于躯体就像音乐之于乐器的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the mind is like the harmony of the body, 
+Dialogue: 0,0:26:42.51,0:26:45.49,*Default,NTP,0000,0000,0000,,人们就可能通过破坏躯体这个精神的载体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then maybe you could destroy the mind, the soul, 
+Dialogue: 0,0:26:45.56,0:26:50.16,*Default,NTP,0000,0000,0000,,来破坏心灵  或者灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by destroying the body on which the mind depends. 
+Dialogue: 0,0:26:53.71,0:26:57.71,*Default,NTP,0000,0000,0000,,所以现在问题的关键点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the crucial point right now is that thinking about 
+Dialogue: 0,0:26:57.76,0:27:02.32,*Default,NTP,0000,0000,0000,,音乐作为"无形的物体不能被摧毁"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony is offered as a counterexample to the generalization 
+Dialogue: 0,0:27:03.38,0:27:05.48,*Default,NTP,0000,0000,0000,,这个结论的反例是否合适\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that invisible things can't be destroyed. 
+Dialogue: 0,0:27:06.29,0:27:07.44,*Default,NTP,0000,0000,0000,,音乐是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is invisible. 
+Dialogue: 0,0:27:08.00,0:27:09.75,*Default,NTP,0000,0000,0000,,音乐能够被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony can be destroyed. 
+Dialogue: 0,0:27:09.94,0:27:12.57,*Default,NTP,0000,0000,0000,,所以无形的物体是能被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So invisible things can be destroyed. 
+Dialogue: 0,0:27:13.28,0:27:14.99,*Default,NTP,0000,0000,0000,,因此你错了  苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you're wrong, Socrates, 
+Dialogue: 0,0:27:15.04,0:27:16.86,*Default,NTP,0000,0000,0000,,你的"无形的物体不能被摧毁"(是错的)\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you say invisible things can't be destroyed. 
+Dialogue: 0,0:27:16.91,0:27:19.39,*Default,NTP,0000,0000,0000,,即使我们承认灵魂也是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So even if we grant that the soul is invisible as well, 
+Dialogue: 0,0:27:19.45,0:27:22.48,*Default,NTP,0000,0000,0000,,但灵魂也可能是一种能被摧毁的无形事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe the soul also is an invisible thing that can be destroyed.
+Dialogue: 0,0:27:25.50,0:27:26.63,*Default,NTP,0000,0000,0000,,这是极好的质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a great objection. 
+Dialogue: 0,0:27:28.56,0:27:32.52,*Default,NTP,0000,0000,0000,,这是一条值得我们认真探讨的质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's an objection worth taking very seriously. 
+Dialogue: 0,0:27:35.08,0:27:37.32,*Default,NTP,0000,0000,0000,,但奇怪的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the oddity is, 
+Dialogue: 0,0:27:38.32,0:27:42.18,*Default,NTP,0000,0000,0000,,苏格拉底  并没有以他应有的  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates doesn't respond to it in the way that 
+Dialogue: 0,0:27:42.18,0:27:45.26,*Default,NTP,0000,0000,0000,,正确的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he should have,
+Dialogue: 0,0:27:46.13,0:27:47.60,*Default,NTP,0000,0000,0000,,对这一点做出回应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the way that he needed to. 
+Dialogue: 0,0:27:48.32,0:27:57.02,*Default,NTP,0000,0000,0000,,相反  苏格拉底花费了很多时间在 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates instead spends some time worrying about 
+Dialogue: 0,0:27:57.02,0:28:01.58,*Default,NTP,0000,0000,0000,,讨论灵魂是否真的像音乐一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the question, "Is the soul really like harmony or not?"
+Dialogue: 0,0:28:02.54,0:28:04.21,*Default,NTP,0000,0000,0000,,这个比喻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is this metaphor--
+Dialogue: 0,0:28:04.27,0:28:06.63,*Default,NTP,0000,0000,0000,,探讨心灵和躯体之间的关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think about the relationship between the mind 
+Dialogue: 0,0:28:06.67,0:28:11.63,*Default,NTP,0000,0000,0000,,与音乐和竖琴的关系是否类似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and body as similar to the relationship between harmony 
+Dialogue: 0,0:28:11.68,0:28:16.64,*Default,NTP,0000,0000,0000,,苏格拉底花费了一些时间批判这个类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a harp--Socrates spends some time criticizing that analogy.
+Dialogue: 0,0:28:22.46,0:28:27.30,*Default,NTP,0000,0000,0000,,待会我们再继续说这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, in a few minutes I'll turn to the question, 
+Dialogue: 0,0:28:28.49,0:28:33.38,*Default,NTP,0000,0000,0000,,关于苏格拉底是如何批判这个类比的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what about Socrates' criticisms of the analogy? 
+Dialogue: 0,0:28:33.95,0:28:36.41,*Default,NTP,0000,0000,0000,,这是否是有力的批判\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Are they good criticisms or not? 
+Dialogue: 0,0:28:40.17,0:28:42.92,*Default,NTP,0000,0000,0000,,但即使这是有力的批判\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But even if they are good criticisms, 
+Dialogue: 0,0:28:43.57,0:28:44.43,*Default,NTP,0000,0000,0000,,我想说的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to say, 
+Dialogue: 0,0:28:44.51,0:28:47.91,*Default,NTP,0000,0000,0000,,这并不足以支持你的论证  苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not good enough to help your argument Socrates. 
+Dialogue: 0,0:28:48.18,0:28:49.78,*Default,NTP,0000,0000,0000,,即使我们说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if we were to say, 
+Dialogue: 0,0:28:49.95,0:28:50.79,*Default,NTP,0000,0000,0000,,你知道吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know what? 
+Dialogue: 0,0:28:51.43,0:28:54.67,*Default,NTP,0000,0000,0000,,精神与音乐并不相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The mind isn't very much like harmony at all. 
+Dialogue: 0,0:28:55.05,0:28:57.57,*Default,NTP,0000,0000,0000,,这个类比也确实比较烂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That analogy really stinks. 
+Dialogue: 0,0:28:59.12,0:29:00.33,*Default,NTP,0000,0000,0000,,那又如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what? 
+Dialogue: 0,0:29:00.87,0:29:05.16,*Default,NTP,0000,0000,0000,,西米亚司要给苏格拉底的论证挑刺\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All that Simmias needs to cause problems for Socrates' argument 
+Dialogue: 0,0:29:06.25,0:29:11.14,*Default,NTP,0000,0000,0000,,只需要说明音乐是无形的且音乐能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the claim that harmony is invisible and harmony can be destroyed. 
+Dialogue: 0,0:29:12.80,0:29:15.63,*Default,NTP,0000,0000,0000,,只要这些成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As long as that is true, 
+Dialogue: 0,0:29:16.18,0:29:20.24,*Default,NTP,0000,0000,0000,,我们就不能再相信无形的事物不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can't continue to believe that invisible things can't be destroyed.
+Dialogue: 0,0:29:21.99,0:29:24.41,*Default,NTP,0000,0000,0000,,苏格拉底所需要做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what Socrates needs to do is to say 
+Dialogue: 0,0:29:24.41,0:29:26.84,*Default,NTP,0000,0000,0000,,要么是说明音乐是不能被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}either harmony can't be destroyed,
+Dialogue: 0,0:29:28.90,0:29:30.18,*Default,NTP,0000,0000,0000,,但显然它是能够被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but pretty obviously it can, 
+Dialogue: 0,0:29:30.23,0:29:34.79,*Default,NTP,0000,0000,0000,,由乐器发出的乐声是能够被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the melodious sounds coming out of an instrument can be destroyed. 
+Dialogue: 0,0:29:35.27,0:29:37.26,*Default,NTP,0000,0000,0000,,那么  他需要表明 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So he would need to argue then, 
+Dialogue: 0,0:29:37.32,0:29:40.12,*Default,NTP,0000,0000,0000,,也许  音乐不是真的无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perhaps, that harmony is not really invisible. 
+Dialogue: 0,0:29:40.88,0:29:42.14,*Default,NTP,0000,0000,0000,,如果他能向我们展示这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If he could show us, 
+Dialogue: 0,0:29:42.19,0:29:43.26,*Default,NTP,0000,0000,0000,,如果他能说服我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if he could convince us, 
+Dialogue: 0,0:29:43.31,0:29:45.40,*Default,NTP,0000,0000,0000,,音乐不是真的无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that harmony is not really invisible, 
+Dialogue: 0,0:29:45.46,0:29:49.19,*Default,NTP,0000,0000,0000,,那么关于无形的物体不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then we would no longer have a counterexample to the claim
+Dialogue: 0,0:29:49.26,0:29:50.97,*Default,NTP,0000,0000,0000,,这个观点的反例就不存在了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the invisible can't be destroyed, 
+Dialogue: 0,0:29:51.03,0:29:54.57,*Default,NTP,0000,0000,0000,,这条论证就能继续成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the argument could still then proceed as it was before.
+Dialogue: 0,0:29:55.69,0:29:57.73,*Default,NTP,0000,0000,0000,,那才是苏格拉底应该采取的应对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's what Socrates should have done. 
+Dialogue: 0,0:29:58.77,0:30:00.69,*Default,NTP,0000,0000,0000,,他应该说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He should have said, 
+Dialogue: 0,0:30:00.81,0:30:01.63,*Default,NTP,0000,0000,0000,,你知道么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You know what? 
+Dialogue: 0,0:30:01.82,0:30:03.35,*Default,NTP,0000,0000,0000,,音乐不见得是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is not really invisible," 
+Dialogue: 0,0:30:03.41,0:30:04.38,*Default,NTP,0000,0000,0000,,或者说  它不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or "It can't be destroyed." 
+Dialogue: 0,0:30:06.79,0:30:08.27,*Default,NTP,0000,0000,0000,,但实际上并没有一点跟以上相关的信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there's not a whiff of that, 
+Dialogue: 0,0:30:08.56,0:30:10.23,*Default,NTP,0000,0000,0000,,至少在我们现有的对话录当中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least in the dialogue as we've got it, 
+Dialogue: 0,0:30:10.27,0:30:13.24,*Default,NTP,0000,0000,0000,,我都没有看到一点相关的信息  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not a whiff of that as far as I can see. 
+Dialogue: 0,0:30:13.24,0:30:15.34,*Default,NTP,0000,0000,0000,,苏格拉底从没说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates never says,
+Dialogue: 0,0:30:16.37,0:30:18.67,*Default,NTP,0000,0000,0000,,西米亚司  你的质疑错在这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Simmias, here is where your objection goes wrong. 
+Dialogue: 0,0:30:18.69,0:30:21.14,*Default,NTP,0000,0000,0000,,音乐是真的无形  也不能真的被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is not really invisible, can't really be destroyed, 
+Dialogue: 0,0:30:21.17,0:30:22.00,*Default,NTP,0000,0000,0000,,或者类似的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever it is. 
+Dialogue: 0,0:30:22.05,0:30:24.06,*Default,NTP,0000,0000,0000,,所以  我们不见得真有一个反例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we don't really have a counterexample." 
+Dialogue: 0,0:30:24.29,0:30:27.21,*Default,NTP,0000,0000,0000,,相反  他纠结于这样一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Instead, he gets hung up on this question, 
+Dialogue: 0,0:30:27.26,0:30:28.62,*Default,NTP,0000,0000,0000,,这是一个好的类比吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Is it a good analogy? 
+Dialogue: 0,0:30:28.67,0:30:31.82,*Default,NTP,0000,0000,0000,,这是一种思考心灵的合适方式吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it a good way for thinking about the mind or not?" 
+Dialogue: 0,0:30:32.02,0:30:33.72,*Default,NTP,0000,0000,0000,,但即使它不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But even if it isn't, 
+Dialogue: 0,0:30:33.77,0:30:35.31,*Default,NTP,0000,0000,0000,,也不能拯救这条论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that wouldn't save the argument.
+Dialogue: 0,0:30:36.92,0:30:41.39,*Default,NTP,0000,0000,0000,,现在  我将花一点时间来说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I am going to take some time to think about 
+Dialogue: 0,0:30:41.43,0:30:45.17,*Default,NTP,0000,0000,0000,,音乐是否是一个合适的类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether or not harmony is a good analogy, 
+Dialogue: 0,0:30:47.21,0:30:51.45,*Default,NTP,0000,0000,0000,,因为我认为这确实是一个好类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I actually think it is a good analogy. 
+Dialogue: 0,0:30:52.46,0:30:56.14,*Default,NTP,0000,0000,0000,,我觉得关于音乐的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think what's going on in the harmony--
+Dialogue: 0,0:30:56.67,0:30:59.82,*Default,NTP,0000,0000,0000,,心灵像音乐的这个建议\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the suggestion that we should think about the mind like harmony, 
+Dialogue: 0,0:30:59.87,0:31:01.72,*Default,NTP,0000,0000,0000,,好比它是躯体演奏的音乐这种提法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as though it was the harmony of the body--
+Dialogue: 0,0:31:01.89,0:31:06.42,*Default,NTP,0000,0000,0000,,是一种早期的现实主义者尝试表达的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is an early attempt to state the physicalist view. 
+Dialogue: 0,0:31:09.63,0:31:12.17,*Default,NTP,0000,0000,0000,,对于心灵的探讨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Talk about the mind, 
+Dialogue: 0,0:31:12.22,0:31:13.40,*Default,NTP,0000,0000,0000,,现实主义者认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}says the physicalist, 
+Dialogue: 0,0:31:13.58,0:31:17.24,*Default,NTP,0000,0000,0000,,只不过是一种谈论躯体的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just a way of talking about the body. 
+Dialogue: 0,0:31:17.60,0:31:19.11,*Default,NTP,0000,0000,0000,,或者  更确切地说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, more carefully, 
+Dialogue: 0,0:31:19.16,0:31:23.22,*Default,NTP,0000,0000,0000,,这是谈论躯体在正常运转时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a way of talking about certain things the body can do 
+Dialogue: 0,0:31:23.95,0:31:26.22,*Default,NTP,0000,0000,0000,,具备的某些能力的一种方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's functioning properly, 
+Dialogue: 0,0:31:27.01,0:31:29.22,*Default,NTP,0000,0000,0000,,当它被调整的很好时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's well tuned, 
+Dialogue: 0,0:31:31.67,0:31:32.77,*Default,NTP,0000,0000,0000,,就像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just like, 
+Dialogue: 0,0:31:32.83,0:31:37.19,*Default,NTP,0000,0000,0000,,谈论音乐或者乐声\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talk about the harmony or the melodious sounds 
+Dialogue: 0,0:31:37.19,0:31:39.98,*Default,NTP,0000,0000,0000,,或者由竖琴演奏出的其他乐曲\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or what have you of the harp,
+Dialogue: 0,0:31:40.18,0:31:42.33,*Default,NTP,0000,0000,0000,,是一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a way--
+Dialogue: 0,0:31:42.37,0:31:46.96,*Default,NTP,0000,0000,0000,,这是一种谈论竖琴具备的能力的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these things are a way of talking about what things the harp can do. 
+Dialogue: 0,0:31:46.99,0:31:49.86,*Default,NTP,0000,0000,0000,,当它被调好音并正常运转时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can produce melodious, 
+Dialogue: 0,0:31:49.93,0:31:52.20,*Default,NTP,0000,0000,0000,,它能够产生旋律 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmonious sounds when it's functioning properly, 
+Dialogue: 0,0:31:52.38,0:31:54.30,*Default,NTP,0000,0000,0000,,能产生和谐的乐声  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when it's well tuned. 
+Dialogue: 0,0:31:55.31,0:31:59.51,*Default,NTP,0000,0000,0000,,所以关于音乐的类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the harmony analogy is, 
+Dialogue: 0,0:31:59.56,0:32:01.11,*Default,NTP,0000,0000,0000,,我认为是一种尝试\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think, an attempt, 
+Dialogue: 0,0:32:01.17,0:32:02.38,*Default,NTP,0000,0000,0000,,一种并不坏的尝试\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and not a bad attempt, 
+Dialogue: 0,0:32:02.43,0:32:07.74,*Default,NTP,0000,0000,0000,,一个探讨现实主义者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at gesturing towards the question, 
+Dialogue: 0,0:32:07.74,0:32:10.23,*Default,NTP,0000,0000,0000,,如何思考心灵的尝试\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do physicalists think about the mind?
+Dialogue: 0,0:32:11.55,0:32:13.75,*Default,NTP,0000,0000,0000,,当我尝试向你们解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, when I tried to get you 
+Dialogue: 0,0:32:13.75,0:32:17.41,*Default,NTP,0000,0000,0000,,现实主义者如何认识心灵的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to grasp how physicalists think about the mind,
+Dialogue: 0,0:32:17.52,0:32:21.40,*Default,NTP,0000,0000,0000,,我列举了电脑  机器人这样的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I used examples about computers and robots and the like. 
+Dialogue: 0,0:32:21.59,0:32:25.01,*Default,NTP,0000,0000,0000,,而不出意外的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it's not remotely surprising 
+Dialogue: 0,0:32:25.02,0:32:29.82,*Default,NTP,0000,0000,0000,,柏拉图没有使用这样的类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Plato doesn't use those kinds of analogies.
+Dialogue: 0,0:32:29.94,0:32:31.15,*Default,NTP,0000,0000,0000,,他没有电脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He doesn't have computers; 
+Dialogue: 0,0:32:31.21,0:32:32.58,*Default,NTP,0000,0000,0000,,也没见过机器人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he doesn't have robots. 
+Dialogue: 0,0:32:32.77,0:32:37.32,*Default,NTP,0000,0000,0000,,但他有具备某些能力的现实实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still, he has physical objects that can do things. 
+Dialogue: 0,0:32:37.38,0:32:41.66,*Default,NTP,0000,0000,0000,,该物体是否能做一些事情取决于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the ability to do things depends on the proper functioning 
+Dialogue: 0,0:32:41.66,0:32:43.30,*Default,NTP,0000,0000,0000,,它是否正常运转\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the physical object.
+Dialogue: 0,0:32:43.48,0:32:45.90,*Default,NTP,0000,0000,0000,,因此  我认为他可以预见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, I think he can see that 
+Dialogue: 0,0:32:45.90,0:32:48.32,*Default,NTP,0000,0000,0000,,二元论外还存在另一种理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's this alternative to his dualism.
+Dialogue: 0,0:32:49.88,0:32:52.61,*Default,NTP,0000,0000,0000,,他料想到现实主义者会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He can see you could be a physicalist 
+Dialogue: 0,0:32:52.62,0:32:56.08,*Default,NTP,0000,0000,0000,,心灵是依赖于躯体的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and say that the mind is dependent on the body;
+Dialogue: 0,0:32:56.16,0:32:58.53,*Default,NTP,0000,0000,0000,,心灵只是一种在谈论到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the mind is just a way of talking about 
+Dialogue: 0,0:32:58.53,0:33:01.44,*Default,NTP,0000,0000,0000,,躯体正常工作时所具备的能力罢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the body can do when it's working properly.
+Dialogue: 0,0:33:02.17,0:33:04.60,*Default,NTP,0000,0000,0000,,它的这种依赖性与\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's dependent just the same way that, 
+Dialogue: 0,0:33:04.66,0:33:05.87,*Default,NTP,0000,0000,0000,,例如\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, for example, 
+Dialogue: 0,0:33:06.23,0:33:09.22,*Default,NTP,0000,0000,0000,,音乐依赖于乐器实体一致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony is dependent upon the physical instrument. 
+Dialogue: 0,0:33:11.02,0:33:13.17,*Default,NTP,0000,0000,0000,,所以我想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I think 
+Dialogue: 0,0:33:13.24,0:33:15.59,*Default,NTP,0000,0000,0000,,这是一次很好的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a very nice attempt 
+Dialogue: 0,0:33:15.59,0:33:20.14,*Default,NTP,0000,0000,0000,,讨论二元论之外的现实主义观点的尝试\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to discuss the physicalist alternative to Plato's dualism.
+Dialogue: 0,0:33:21.66,0:33:26.24,*Default,NTP,0000,0000,0000,,这也是我们值得花点时间来问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's why it will be worth taking some time to ask ourselves, 
+Dialogue: 0,0:33:26.50,0:33:28.95,*Default,NTP,0000,0000,0000,,柏拉图会对此作出怎样的反驳呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, what about Plato's objections then? 
+Dialogue: 0,0:33:29.26,0:33:31.15,*Default,NTP,0000,0000,0000,,如果他能说服我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If he can convince us that 
+Dialogue: 0,0:33:31.15,0:33:33.39,*Default,NTP,0000,0000,0000,,灵魂不是身体奏出的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul is not like harmony of the body,
+Dialogue: 0,0:33:33.46,0:33:36.15,*Default,NTP,0000,0000,0000,,这也许会给现实主义者提出新的问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe that will be some sort of problem for the physicalists. 
+Dialogue: 0,0:33:36.44,0:33:40.03,*Default,NTP,0000,0000,0000,,待会儿我们再继续讨论这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'll come back to that in a few more minutes.
+Dialogue: 0,0:33:40.87,0:33:44.91,*Default,NTP,0000,0000,0000,,但首先  考虑一下我之前强调过的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But first, let's worry about the point that I was emphasizing earlier, 
+Dialogue: 0,0:33:45.07,0:33:49.22,*Default,NTP,0000,0000,0000,,那就是  即使灵魂与音乐并不十分相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}namely, even if the soul's not very much like harmony, 
+Dialogue: 0,0:33:49.28,0:33:50.21,*Default,NTP,0000,0000,0000,,那又怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so what? 
+Dialogue: 0,0:33:50.81,0:33:53.12,*Default,NTP,0000,0000,0000,,如果音乐确实是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If harmony really is invisible 
+Dialogue: 0,0:33:53.12,0:33:55.22,*Default,NTP,0000,0000,0000,,并且音乐确实能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and harmony really can be destroyed,
+Dialogue: 0,0:33:55.29,0:33:57.59,*Default,NTP,0000,0000,0000,,那么无形的事物就能被摧毁了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then invisible things can be destroyed. 
+Dialogue: 0,0:34:00.59,0:34:02.01,*Default,NTP,0000,0000,0000,,即使灵魂与音乐完全不相似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if the soul's nothing like--
+Dialogue: 0,0:34:02.71,0:34:04.30,*Default,NTP,0000,0000,0000,,从现实主义者或其他角度来看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not a good analogy for thinking 
+Dialogue: 0,0:34:04.31,0:34:06.32,*Default,NTP,0000,0000,0000,,这并不是一个好类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the physicalist position or what have you--
+Dialogue: 0,0:34:06.44,0:34:07.30,*Default,NTP,0000,0000,0000,,那又怎样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so what? 
+Dialogue: 0,0:34:08.43,0:34:10.51,*Default,NTP,0000,0000,0000,,如果有一些无形的事物能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If some invisible things can be destroyed 
+Dialogue: 0,0:34:10.52,0:34:12.26,*Default,NTP,0000,0000,0000,,而音乐是其中的一个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and harmony is an example of that,
+Dialogue: 0,0:34:12.33,0:34:13.99,*Default,NTP,0000,0000,0000,,那么的确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then, by golly, 
+Dialogue: 0,0:34:14.05,0:34:15.06,*Default,NTP,0000,0000,0000,,接下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's going to follow that 
+Dialogue: 0,0:34:15.12,0:34:17.69,*Default,NTP,0000,0000,0000,,我们不能从灵魂的不可见性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can't conclude from the invisibility of the soul 
+Dialogue: 0,0:34:17.69,0:34:19.42,*Default,NTP,0000,0000,0000,,得到灵魂不能被摧毁的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the soul cannot be destroyed.
+Dialogue: 0,0:34:20.43,0:34:24.50,*Default,NTP,0000,0000,0000,,即使苏格拉底没有回应这条质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So even though Socrates doesn't respond to that objection, 
+Dialogue: 0,0:34:24.58,0:34:27.26,*Default,NTP,0000,0000,0000,,我们也要替苏格拉底问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we need to ask on Socrates' behalf, 
+Dialogue: 0,0:34:27.33,0:34:29.60,*Default,NTP,0000,0000,0000,,有回应这条质疑的潜在答案吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is there a possible answer to this objection? 
+Dialogue: 0,0:34:32.19,0:34:34.67,*Default,NTP,0000,0000,0000,,我认为在讨论之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I think there are at least the beginnings of one.
+Dialogue: 0,0:34:38.99,0:34:40.36,*Default,NTP,0000,0000,0000,,我们不得不问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have to ask: 
+Dialogue: 0,0:34:40.59,0:34:41.52,*Default,NTP,0000,0000,0000,,当我们说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we say, 
+Dialogue: 0,0:34:41.76,0:34:44.35,*Default,NTP,0000,0000,0000,,无形的物体不能被摧毁时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"invisible things can't be destroyed," 
+Dialogue: 0,0:34:46.01,0:34:49.14,*Default,NTP,0000,0000,0000,,"无形"这个词究竟是什么意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what did we mean by "invisible?" 
+Dialogue: 0,0:34:51.04,0:34:55.59,*Default,NTP,0000,0000,0000,,我想分别罗列出三种不同的可能解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I want to distinguish three different possible interpretations, 
+Dialogue: 0,0:34:57.18,0:34:59.12,*Default,NTP,0000,0000,0000,,三种不同的说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}three different claims. 
+Dialogue: 0,0:35:01.11,0:35:03.27,*Default,NTP,0000,0000,0000,,"无形"的意思是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So invisible means, 
+Dialogue: 0,0:35:08.02,0:35:13.01,*Default,NTP,0000,0000,0000,,一  第一种可能  不能被看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one, there's one possibility, can't be seen. 
+Dialogue: 0,0:35:18.43,0:35:23.05,*Default,NTP,0000,0000,0000,,二  第二种可能  不能被察觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two, different possibility, can't be observed. 
+Dialogue: 0,0:35:38.51,0:35:42.25,*Default,NTP,0000,0000,0000,,三  无形的又一种可能的概念  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Three, different possible interpretation of invisible, 
+Dialogue: 0,0:35:42.25,0:35:43.36,*Default,NTP,0000,0000,0000,,不能被探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be detected.
+Dialogue: 0,0:35:53.53,0:35:55.06,*Default,NTP,0000,0000,0000,,我们必须问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we have to ask ourselves is, 
+Dialogue: 0,0:35:55.11,0:35:56.38,*Default,NTP,0000,0000,0000,,当苏格拉底提出他的论证时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when Socrates puts his argument forward, 
+Dialogue: 0,0:35:56.43,0:35:57.61,*Default,NTP,0000,0000,0000,,他采用的是哪一种意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which of these did he have in mind? 
+Dialogue: 0,0:35:57.66,0:36:00.52,*Default,NTP,0000,0000,0000,,首先 我们要弄清这些概念之间的区别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First, let's be clear on how these things are different. 
+Dialogue: 0,0:36:01.98,0:36:03.71,*Default,NTP,0000,0000,0000,,有一些事物看不见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some things can't be seen 
+Dialogue: 0,0:36:03.71,0:36:06.54,*Default,NTP,0000,0000,0000,,但可以通过其他方式感觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but can be sensed some other way.
+Dialogue: 0,0:36:11.25,0:36:14.70,*Default,NTP,0000,0000,0000,,色彩能被看见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So colors can be seen; 
+Dialogue: 0,0:36:14.79,0:36:16.66,*Default,NTP,0000,0000,0000,,味道不能被看见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}smells cannot be seen, 
+Dialogue: 0,0:36:16.71,0:36:18.32,*Default,NTP,0000,0000,0000,,但是气味\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but of course smells--
+Dialogue: 0,0:36:18.38,0:36:21.97,*Default,NTP,0000,0000,0000,,咖啡的气味可以通过五感被感觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the smell of coffee--can be sensed through the five senses. 
+Dialogue: 0,0:36:24.80,0:36:26.88,*Default,NTP,0000,0000,0000,,声音不能被看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sounds can't be seen, 
+Dialogue: 0,0:36:26.94,0:36:27.94,*Default,NTP,0000,0000,0000,,它们是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not visible, 
+Dialogue: 0,0:36:28.15,0:36:31.00,*Default,NTP,0000,0000,0000,,但它们能被感觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but for all that they can be sensed. 
+Dialogue: 0,0:36:31.59,0:36:32.97,*Default,NTP,0000,0000,0000,,人能够通过耳朵听到它们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can hear them through your ears. 
+Dialogue: 0,0:36:35.47,0:36:37.72,*Default,NTP,0000,0000,0000,,所以  别再纠结于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, without getting hung up on 
+Dialogue: 0,0:36:37.72,0:36:41.00,*Default,NTP,0000,0000,0000,,"无形"这个单词的字面意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what does the English word "invisible" mean,
+Dialogue: 0,0:36:41.17,0:36:42.19,*Default,NTP,0000,0000,0000,,我们注意到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's just notice that 
+Dialogue: 0,0:36:42.30,0:36:46.05,*Default,NTP,0000,0000,0000,,”不能通过眼睛看见“和"不能通过一种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a difference between saying "it can't be seen through the eyes" 
+Dialogue: 0,0:36:46.18,0:36:51.01,*Default,NTP,0000,0000,0000,,或其他感观觉察到"之间有区别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and "can't be observed through one sense or the other." 
+Dialogue: 0,0:36:54.29,0:36:58.27,*Default,NTP,0000,0000,0000,,之后前提三就是一个完全不同的概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then three is a different notion altogether, 
+Dialogue: 0,0:36:58.39,0:37:00.23,*Default,NTP,0000,0000,0000,,一个更有力的概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a stronger notion altogether. 
+Dialogue: 0,0:37:01.28,0:37:04.51,*Default,NTP,0000,0000,0000,,可能存在无法被五感中的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There might be things that can't even be detected 
+Dialogue: 0,0:37:04.51,0:37:06.58,*Default,NTP,0000,0000,0000,,任意一种探测到的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through any of the five senses.
+Dialogue: 0,0:37:06.83,0:37:07.93,*Default,NTP,0000,0000,0000,,前提三说的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three--
+Dialogue: 0,0:37:08.62,0:37:10.52,*Default,NTP,0000,0000,0000,,我不仅看不到它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only can't I see it, 
+Dialogue: 0,0:37:10.68,0:37:11.96,*Default,NTP,0000,0000,0000,,也不能尝出它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't taste it, 
+Dialogue: 0,0:37:12.17,0:37:13.37,*Default,NTP,0000,0000,0000,,不能听到它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't hear it, 
+Dialogue: 0,0:37:13.50,0:37:14.55,*Default,NTP,0000,0000,0000,,不能闻到它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't smell it, 
+Dialogue: 0,0:37:14.65,0:37:16.23,*Default,NTP,0000,0000,0000,,不能触摸到它  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't touch it, right? 
+Dialogue: 0,0:37:16.44,0:37:20.92,*Default,NTP,0000,0000,0000,,前提三里的"无形"是这种更宽泛的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The number three is invisible in this much bolder way. 
+Dialogue: 0,0:37:21.79,0:37:25.09,*Default,NTP,0000,0000,0000,,它完全不能被五感探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can't be detected at all by the five senses--
+Dialogue: 0,0:37:28.87,0:37:31.33,*Default,NTP,0000,0000,0000,,它不能被探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be detected in terms of its--
+Dialogue: 0,0:37:32.43,0:37:35.19,*Default,NTP,0000,0000,0000,,那它也不会留下痕迹  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it doesn't leave traces behind, right? 
+Dialogue: 0,0:37:36.04,0:37:37.51,*Default,NTP,0000,0000,0000,,我看不到恐龙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't see dinosaurs, 
+Dialogue: 0,0:37:37.57,0:37:40.15,*Default,NTP,0000,0000,0000,,但是恐龙的化石留下了它们的行迹\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but of course they leave traces behind in fossils. 
+Dialogue: 0,0:37:40.21,0:37:42.74,*Default,NTP,0000,0000,0000,,你研究了它产生的效果之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a way in which you can talk about it 
+Dialogue: 0,0:37:42.74,0:37:44.44,*Default,NTP,0000,0000,0000,,就可以讨论它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being detected by its effects.
+Dialogue: 0,0:37:44.97,0:37:46.50,*Default,NTP,0000,0000,0000,,好了  再强调一遍\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right. So again, 
+Dialogue: 0,0:37:46.50,0:37:49.26,*Default,NTP,0000,0000,0000,,不要纠结在英语中"无形"的解释上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}don't get hung up on what does the English word invisible mean. 
+Dialogue: 0,0:37:49.32,0:37:50.58,*Default,NTP,0000,0000,0000,,我们问问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's just ask ourselves, 
+Dialogue: 0,0:37:50.69,0:37:53.29,*Default,NTP,0000,0000,0000,,无形的这个概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what notion of invisibility--
+Dialogue: 0,0:37:53.44,0:37:56.60,*Default,NTP,0000,0000,0000,,如果我们用这个单词的三种解释之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we'll use the word between these three ways--
+Dialogue: 0,0:37:56.71,0:38:00.13,*Default,NTP,0000,0000,0000,,那么苏格拉底的论证用的是哪一个呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what notion did Socrates' argument turn on? 
+Dialogue: 0,0:38:01.81,0:38:03.14,*Default,NTP,0000,0000,0000,,最直接的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the most natural way 
+Dialogue: 0,0:38:03.14,0:38:05.56,*Default,NTP,0000,0000,0000,,是用解释一来解释苏格拉底的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to start by interpreting him is with number one.
+Dialogue: 0,0:38:07.68,0:38:10.11,*Default,NTP,0000,0000,0000,,当他说  无形的东西不改变时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he says, "Invisible things don't change," 
+Dialogue: 0,0:38:11.11,0:38:12.75,*Default,NTP,0000,0000,0000,,他的意思是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what he means is, 
+Dialogue: 0,0:38:13.04,0:38:16.22,*Default,NTP,0000,0000,0000,,看不见的东西不会改变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}things that you can't see don't change, 
+Dialogue: 0,0:38:16.35,0:38:21.56,*Default,NTP,0000,0000,0000,,在前提四中继续沿用刚才"无形"的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so--continue to interpret invisible in number four the same way--
+Dialogue: 0,0:38:21.64,0:38:23.97,*Default,NTP,0000,0000,0000,,无形的东西不能被毁灭\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}invisible things can't be destroyed. 
+Dialogue: 0,0:38:24.23,0:38:26.82,*Default,NTP,0000,0000,0000,,采用第一种解释  他说的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On the first interpretation what he'd be saying is, 
+Dialogue: 0,0:38:26.90,0:38:29.84,*Default,NTP,0000,0000,0000,,如果你的眼睛不能看到它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"If you can't see it with your eyes, 
+Dialogue: 0,0:38:29.91,0:38:31.28,*Default,NTP,0000,0000,0000,,它就不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it can't be destroyed." 
+Dialogue: 0,0:38:33.08,0:38:34.25,*Default,NTP,0000,0000,0000,,现在的问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the trouble is, 
+Dialogue: 0,0:38:34.57,0:38:38.48,*Default,NTP,0000,0000,0000,,音乐的例子表明这并不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony shows that that's not so. 
+Dialogue: 0,0:38:39.09,0:38:42.13,*Default,NTP,0000,0000,0000,,按照解释一  音乐确实是看不见的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is indeed invisible in sense number one. 
+Dialogue: 0,0:38:42.19,0:38:44.02,*Default,NTP,0000,0000,0000,,眼睛看不到音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You cannot see it with your eyes. 
+Dialogue: 0,0:38:44.12,0:38:45.43,*Default,NTP,0000,0000,0000,,尽管如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But for all that, 
+Dialogue: 0,0:38:46.04,0:38:47.29,*Default,NTP,0000,0000,0000,,音乐能够被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it can be destroyed. 
+Dialogue: 0,0:38:49.03,0:38:54.51,*Default,NTP,0000,0000,0000,,如果苏格拉底按第一种解释来说明无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if what Socrates means by invisibility is the first notion, 
+Dialogue: 0,0:38:54.58,0:38:56.84,*Default,NTP,0000,0000,0000,,即不能通过眼睛看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't been seen with your eyes, 
+Dialogue: 0,0:38:57.76,0:38:59.06,*Default,NTP,0000,0000,0000,,那么这个论证就不成立了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then the argument's not any good. 
+Dialogue: 0,0:38:59.12,0:39:02.87,*Default,NTP,0000,0000,0000,,音乐的确是个很有说服力的反例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is a pretty compelling counterexample.
+Dialogue: 0,0:39:03.54,0:39:06.16,*Default,NTP,0000,0000,0000,,但可能苏格拉底所说的无形不是这个定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But maybe that's not what Socrates means by invisible. 
+Dialogue: 0,0:39:07.25,0:39:08.65,*Default,NTP,0000,0000,0000,,可能不是解释一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe instead of one, 
+Dialogue: 0,0:39:08.84,0:39:10.07,*Default,NTP,0000,0000,0000,,而是解释二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he means two. 
+Dialogue: 0,0:39:10.35,0:39:13.02,*Default,NTP,0000,0000,0000,,当他说灵魂无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When he talks about the soul being invisible 
+Dialogue: 0,0:39:13.02,0:39:15.58,*Default,NTP,0000,0000,0000,,以及无形的事物不能被摧毁时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and invisible things being indestructible,
+Dialogue: 0,0:39:15.72,0:39:19.07,*Default,NTP,0000,0000,0000,,这里的无形可能是不能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe he means things that can't be observed 
+Dialogue: 0,0:39:19.07,0:39:21.54,*Default,NTP,0000,0000,0000,,通过五感感知到的意思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through any of your five senses.
+Dialogue: 0,0:39:25.08,0:39:29.46,*Default,NTP,0000,0000,0000,,实际上  我觉得这正是他想要表达的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, in point of fact, i think that is what he meant.
+Dialogue: 0,0:39:32.15,0:39:34.29,*Default,NTP,0000,0000,0000,,我快速的引用一段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me just give a quick quote. 
+Dialogue: 0,0:39:36.98,0:39:41.16,*Default,NTP,0000,0000,0000,,在我们这个版本的二十九页\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In our edition, this is page 29. 
+Dialogue: 0,0:39:42.82,0:39:43.88,*Default,NTP,0000,0000,0000,,你们可能注意到了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of you may have noticed that 
+Dialogue: 0,0:39:43.96,0:39:47.70,*Default,NTP,0000,0000,0000,,我们这一版上有挺小的段落码\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are little standardized paginations in our edition as well. 
+Dialogue: 0,0:39:48.04,0:39:50.20,*Default,NTP,0000,0000,0000,,这是学术的编码\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's in the academy paginations, 
+Dialogue: 0,0:39:50.27,0:39:51.60,*Default,NTP,0000,0000,0000,,第七十九段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}number 79; 
+Dialogue: 0,0:39:53.19,0:39:54.67,*Default,NTP,0000,0000,0000,,他阐述了有形的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he's talking about the difference 
+Dialogue: 0,0:39:54.67,0:39:56.69,*Default,NTP,0000,0000,0000,,与无形的事物之间的不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between the visible and the invisible things,
+Dialogue: 0,0:39:56.82,0:39:58.81,*Default,NTP,0000,0000,0000,,椅子和型相的对比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}chairs versus the forms. 
+Dialogue: 0,0:39:58.88,0:40:03.59,*Default,NTP,0000,0000,0000,,他说  信件  椅子  树  石头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he says, "These latter, chairs, trees, stones,
+Dialogue: 0,0:40:03.65,0:40:05.80,*Default,NTP,0000,0000,0000,,你能看得见摸得着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could touch and see
+Dialogue: 0,0:40:05.80,0:40:09.39,*Default,NTP,0000,0000,0000,,或者以其他感知方式感觉到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and perceive with the other senses.
+Dialogue: 0,0:40:09.64,0:40:12.06,*Default,NTP,0000,0000,0000,,但是那些一直保持不变的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But those that always remain the same, 
+Dialogue: 0,0:40:12.59,0:40:17.03,*Default,NTP,0000,0000,0000,,如型相  只能通过思考推理才能领会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the forms, can only be grasped by the reasoning power of the mind. 
+Dialogue: 0,0:40:17.28,0:40:20.36,*Default,NTP,0000,0000,0000,,它们是看不到的  是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are not seen but are invisible." 
+Dialogue: 0,0:40:22.09,0:40:23.66,*Default,NTP,0000,0000,0000,,所以  我认为这一点很清楚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I think it's pretty clear that
+Dialogue: 0,0:40:23.72,0:40:26.63,*Default,NTP,0000,0000,0000,,苏格拉底在开始讨论有形与无形时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when Socrates starts talking about what's visible versus invisible, 
+Dialogue: 0,0:40:26.68,0:40:28.99,*Default,NTP,0000,0000,0000,,他并未拘泥于视觉感受\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he doesn't mean to limit himself to vision; 
+Dialogue: 0,0:40:29.34,0:40:32.80,*Default,NTP,0000,0000,0000,,他谈论的是五感的感知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he means to be talking about all of the five senses. 
+Dialogue: 0,0:40:34.21,0:40:36.87,*Default,NTP,0000,0000,0000,,所以  当我们说  他说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So when we say--when he says--
+Dialogue: 0,0:40:36.94,0:40:39.19,*Default,NTP,0000,0000,0000,,无形的事物不能被摧毁时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Invisible things can't be destroyed," 
+Dialogue: 0,0:40:39.30,0:40:42.72,*Default,NTP,0000,0000,0000,,他指的是你看不见摸不到听不着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he means the things that you can't see or touch
+Dialogue: 0,0:40:42.73,0:40:46.54,*Default,NTP,0000,0000,0000,,感觉不到的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or hear or feel--
+Dialogue: 0,0:40:46.65,0:40:47.52,*Default,NTP,0000,0000,0000,,或者其他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whatever it is--
+Dialogue: 0,0:40:47.52,0:40:48.79,*Default,NTP,0000,0000,0000,,视觉  触觉  嗅觉  味觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}see, touch, smell, taste.
+Dialogue: 0,0:40:48.85,0:40:51.17,*Default,NTP,0000,0000,0000,,这样的事物都不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those things can't be destroyed.
+Dialogue: 0,0:40:56.98,0:41:00.56,*Default,NTP,0000,0000,0000,,注意  如果我们这样解释他的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, notice that if that's the way we interpret his argument, 
+Dialogue: 0,0:41:01.07,0:41:03.67,*Default,NTP,0000,0000,0000,,音乐就不再是反例了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony no longer works as a counterexample. 
+Dialogue: 0,0:41:04.40,0:41:08.19,*Default,NTP,0000,0000,0000,,按照"无形"的第一解释"不能看到的"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony was invisible when we meant definition number one, 
+Dialogue: 0,0:41:08.31,0:41:09.74,*Default,NTP,0000,0000,0000,,音乐才是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be seen. 
+Dialogue: 0,0:41:10.97,0:41:11.97,*Default,NTP,0000,0000,0000,,但如果用解释二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's not invisible
+Dialogue: 0,0:41:11.97,0:41:14.12,*Default,NTP,0000,0000,0000,,音乐就不再无形了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we mean definition number two,
+Dialogue: 0,0:41:14.32,0:41:16.53,*Default,NTP,0000,0000,0000,,(解释二)即不能感知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be sensed, 
+Dialogue: 0,0:41:16.63,0:41:18.47,*Default,NTP,0000,0000,0000,,不能观察\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be observed. 
+Dialogue: 0,0:41:20.21,0:41:24.21,*Default,NTP,0000,0000,0000,,因为耳朵能够感受到音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony can be sensed through the ears, 
+Dialogue: 0,0:41:25.85,0:41:29.36,*Default,NTP,0000,0000,0000,,在这种情况下  它就不再是反例了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which case it's not a counterexample. 
+Dialogue: 0,0:41:29.90,0:41:32.81,*Default,NTP,0000,0000,0000,,对于结论四  音乐作为反例亦不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not a counterexample to four. 
+Dialogue: 0,0:41:33.84,0:41:36.91,*Default,NTP,0000,0000,0000,,四说  无形的事物不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Four says, "Invisible things can't be destroyed." 
+Dialogue: 0,0:41:37.01,0:41:39.48,*Default,NTP,0000,0000,0000,,苏格拉底要说的应该是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what Socrates should have said is, 
+Dialogue: 0,0:41:39.54,0:41:45.77,*Default,NTP,0000,0000,0000,,就无形的感官含义  音乐不是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony is not invisible in the relevant sense of invisible, 
+Dialogue: 0,0:41:47.42,0:41:49.50,*Default,NTP,0000,0000,0000,,因为人们能够听到音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}since it can be sensed. 
+Dialogue: 0,0:41:49.95,0:41:53.81,*Default,NTP,0000,0000,0000,,但是注意  这一点很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But--and this would be the crucial point--notice, 
+Dialogue: 0,0:41:53.89,0:41:55.39,*Default,NTP,0000,0000,0000,,苏格拉底应当继续论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates should've continued, 
+Dialogue: 0,0:41:55.83,0:42:00.41,*Default,NTP,0000,0000,0000,,从这方面讲灵魂是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul is invisible in that sense. 
+Dialogue: 0,0:42:01.43,0:42:02.62,*Default,NTP,0000,0000,0000,,你看不到灵魂的样子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't see the soul; 
+Dialogue: 0,0:42:02.90,0:42:04.46,*Default,NTP,0000,0000,0000,,尝不到灵魂的味道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't taste the soul; 
+Dialogue: 0,0:42:04.62,0:42:06.07,*Default,NTP,0000,0000,0000,,无法触摸到灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't touch the soul; 
+Dialogue: 0,0:42:06.68,0:42:08.43,*Default,NTP,0000,0000,0000,,也听不到灵魂的声音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you don't hear the soul. 
+Dialogue: 0,0:42:10.09,0:42:12.05,*Default,NTP,0000,0000,0000,,所以我们如果明白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if we understand 
+Dialogue: 0,0:42:12.11,0:42:17.96,*Default,NTP,0000,0000,0000,,论证建立在无形第二种解释的基础之上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the argument in terms of the second interpretation of invisible, 
+Dialogue: 0,0:42:18.03,0:42:19.92,*Default,NTP,0000,0000,0000,,看上去论证仍然成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it looks as though the argument still goes through. 
+Dialogue: 0,0:42:20.02,0:42:23.17,*Default,NTP,0000,0000,0000,,西米亚司的反例失败了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Simmias' counterexample fails. 
+Dialogue: 0,0:42:24.18,0:42:26.50,*Default,NTP,0000,0000,0000,,从感官的角度而言  音乐并非无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Harmony is not invisible in the relevant sense, 
+Dialogue: 0,0:42:26.67,0:42:27.99,*Default,NTP,0000,0000,0000,,无形的事物不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so it could still be true
+Dialogue: 0,0:42:27.99,0:42:29.31,*Default,NTP,0000,0000,0000,,这条论证仍然成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that invisible things can't be destroyed.
+Dialogue: 0,0:42:29.39,0:42:31.60,*Default,NTP,0000,0000,0000,,既然灵魂从感官的角度来说是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Since the soul is invisible in that sense, 
+Dialogue: 0,0:42:31.64,0:42:34.00,*Default,NTP,0000,0000,0000,,那么就能推出灵魂不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it would follow that the soul can't be destroyed.
+Dialogue: 0,0:42:36.77,0:42:42.12,*Default,NTP,0000,0000,0000,,然而  即使 西米亚司的质疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}However, even if Simmias' objection, 
+Dialogue: 0,0:42:42.37,0:42:44.39,*Default,NTP,0000,0000,0000,,他所举的反例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}his particular counterexample, 
+Dialogue: 0,0:42:44.64,0:42:46.14,*Default,NTP,0000,0000,0000,,音乐  不再成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}harmony, fails, 
+Dialogue: 0,0:42:46.49,0:42:47.36,*Default,NTP,0000,0000,0000,,这并不代表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that doesn't mean that 
+Dialogue: 0,0:42:47.42,0:42:50.09,*Default,NTP,0000,0000,0000,,我们就能接受这条论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we should still accept the argument 
+Dialogue: 0,0:42:50.50,0:42:55.32,*Default,NTP,0000,0000,0000,,因为可能还存在其它的反例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because there might be a different counterexample. 
+Dialogue: 0,0:42:56.88,0:42:58.01,*Default,NTP,0000,0000,0000,,这里给出我的见解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So here's my proposal. 
+Dialogue: 0,0:42:58.08,0:43:03.22,*Default,NTP,0000,0000,0000,,假如我们用电波而不是音乐来作为反例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Suppose we think not about harmony but radio waves. 
+Dialogue: 0,0:43:04.76,0:43:08.32,*Default,NTP,0000,0000,0000,,电波是感觉不到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Radio waves are not sensible. 
+Dialogue: 0,0:43:08.44,0:43:10.60,*Default,NTP,0000,0000,0000,,我们无法观察电波\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are not observable. 
+Dialogue: 0,0:43:11.92,0:43:15.17,*Default,NTP,0000,0000,0000,,你看不到电波\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't see a radio wave. 
+Dialogue: 0,0:43:15.31,0:43:17.82,*Default,NTP,0000,0000,0000,,你摸不到电波\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't touch a radio wave; 
+Dialogue: 0,0:43:17.88,0:43:19.82,*Default,NTP,0000,0000,0000,,你闻不到电波的味道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can't smell a radio wave, 
+Dialogue: 0,0:43:19.88,0:43:21.23,*Default,NTP,0000,0000,0000,,有趣的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and interestingly enough, 
+Dialogue: 0,0:43:21.28,0:43:24.43,*Default,NTP,0000,0000,0000,,你无法直接听到电波\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can't hear radio waves. 
+Dialogue: 0,0:43:27.53,0:43:29.06,*Default,NTP,0000,0000,0000,,但是即便如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But of course, for all that, 
+Dialogue: 0,0:43:29.19,0:43:30.23,*Default,NTP,0000,0000,0000,,电波是可以被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they can be destroyed. 
+Dialogue: 0,0:43:33.99,0:43:37.51,*Default,NTP,0000,0000,0000,,即使我们同意苏格拉底所说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So even if we grant that what Socrates meant 
+Dialogue: 0,0:43:37.51,0:43:40.57,*Default,NTP,0000,0000,0000,,无形意味着不能被观察到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by invisible was "cannot be observed,"
+Dialogue: 0,0:43:40.68,0:43:43.29,*Default,NTP,0000,0000,0000,,我们仍然得赞同西米亚司的说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we still have to say, with Simmias, 
+Dialogue: 0,0:43:43.37,0:43:45.62,*Default,NTP,0000,0000,0000,,第四条不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You know, four is just not true. 
+Dialogue: 0,0:43:46.05,0:43:49.29,*Default,NTP,0000,0000,0000,,一些无形的事物是可以被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some invisible things can be destroyed." 
+Dialogue: 0,0:43:49.49,0:43:52.26,*Default,NTP,0000,0000,0000,,即使从感官角度上讲  电波亦是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Radio waves can be destroyed even though 
+Dialogue: 0,0:43:52.26,0:43:55.04,*Default,NTP,0000,0000,0000,,但它可以被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're invisible in the relevant sense.
+Dialogue: 0,0:43:55.15,0:43:56.24,*Default,NTP,0000,0000,0000,,对吗  有问题吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah? Question?
+Dialogue: 0,0:44:10.34,0:44:12.64,*Default,NTP,0000,0000,0000,,好的  所以你的意思是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. So the suggestion was, 
+Dialogue: 0,0:44:12.64,0:44:14.25,*Default,NTP,0000,0000,0000,,电波有点像型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}radio waves are a bit like the forms.
+Dialogue: 0,0:44:15.03,0:44:16.33,*Default,NTP,0000,0000,0000,,但它不是型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're not forms, 
+Dialogue: 0,0:44:16.33,0:44:17.24,*Default,NTP,0000,0000,0000,,但是它以那种方式完美的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're perfect in that way.
+Dialogue: 0,0:44:17.24,0:44:17.98,*Default,NTP,0000,0000,0000,,是这样吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Was that the thought?
+Dialogue: 0,0:44:21.83,0:44:23.19,*Default,NTP,0000,0000,0000,,啊  我理解错了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ah! Okay, I misunderstood. 
+Dialogue: 0,0:44:23.29,0:44:24.53,*Default,NTP,0000,0000,0000,,你提出的问题是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the question is rather, 
+Dialogue: 0,0:44:24.61,0:44:27.37,*Default,NTP,0000,0000,0000,,看  电波并不像型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Look, radio waves are not like forms,"  
+Dialogue: 0,0:44:28.17,0:44:30.64,*Default,NTP,0000,0000,0000,,答案是  这就是问题的所在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to which the answer is "Yes, that's exactly the problem." 
+Dialogue: 0,0:44:31.18,0:44:33.44,*Default,NTP,0000,0000,0000,,它们是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are invisible, 
+Dialogue: 0,0:44:33.59,0:44:38.69,*Default,NTP,0000,0000,0000,,就像型相一样  但是它们可以被摧毁掉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the forms, but unlike the forms they're destructible. 
+Dialogue: 0,0:44:39.57,0:44:44.15,*Default,NTP,0000,0000,0000,,这恰恰就是我们对灵魂的疑问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's precisely why we've got to worry about the soul. 
+Dialogue: 0,0:44:44.80,0:44:48.19,*Default,NTP,0000,0000,0000,,灵魂的无形是等同于形式的型相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is the soul invisible in the way the forms are, 
+Dialogue: 0,0:44:48.46,0:44:49.76,*Default,NTP,0000,0000,0000,,同样不可摧毁呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being indestructible, 
+Dialogue: 0,0:44:50.20,0:44:52.96,*Default,NTP,0000,0000,0000,,还是等同于电波的无形  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or is it invisible in the way that radio waves are, 
+Dialogue: 0,0:44:52.96,0:44:54.80,*Default,NTP,0000,0000,0000,,能被摧毁呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}destructible?
+Dialogue: 0,0:44:55.34,0:44:57.00,*Default,NTP,0000,0000,0000,,同样  我想说的关键不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now again, my point here is not to say, 
+Dialogue: 0,0:44:57.07,0:44:58.66,*Default,NTP,0000,0000,0000,,柏拉图  你这个傻瓜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, you idiot, Plato! 
+Dialogue: 0,0:44:58.71,0:45:00.95,*Default,NTP,0000,0000,0000,,为什么你没想到电波呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why didn't you think of radio waves?" 
+Dialogue: 0,0:45:01.60,0:45:02.79,*Default,NTP,0000,0000,0000,,我们的问题不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our question is not, 
+Dialogue: 0,0:45:02.88,0:45:06.55,*Default,NTP,0000,0000,0000,,柏拉图遗漏了什么他不该遗漏的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was Plato overlooking something he should've thought of? 
+Dialogue: 0,0:45:06.61,0:45:09.10,*Default,NTP,0000,0000,0000,,而是他的论证成立与否\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's, does his argument work or not? 
+Dialogue: 0,0:45:09.50,0:45:14.14,*Default,NTP,0000,0000,0000,,无形的事物不能被摧毁  这是否成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it true that the invisible things can't be destroyed? 
+Dialogue: 0,0:45:14.22,0:45:16.02,*Default,NTP,0000,0000,0000,,对我而言  一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it seems to me that some things 
+Dialogue: 0,0:45:16.02,0:45:18.12,*Default,NTP,0000,0000,0000,,在感官意义上不可见的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are invisible in the relevant sense,
+Dialogue: 0,0:45:18.18,0:45:19.93,*Default,NTP,0000,0000,0000,,电波就是个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}radio waves being an example of that, 
+Dialogue: 0,0:45:20.00,0:45:21.50,*Default,NTP,0000,0000,0000,,是可以被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can be destroyed. 
+Dialogue: 0,0:45:21.72,0:45:24.76,*Default,NTP,0000,0000,0000,,所以即使从感官意义说  灵魂是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So even though the soul is also invisible in the relevant sense, 
+Dialogue: 0,0:45:24.92,0:45:26.78,*Default,NTP,0000,0000,0000,,它也同样可能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe it can be destroyed as well.
+Dialogue: 0,0:45:28.58,0:45:29.48,*Default,NTP,0000,0000,0000,,现在  这个答案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the answer, 
+Dialogue: 0,0:45:29.53,0:45:30.23,*Default,NTP,0000,0000,0000,,对我来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it seems to me, 
+Dialogue: 0,0:45:30.27,0:45:31.53,*Default,NTP,0000,0000,0000,,我能想象在这个问题上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the only answer I can imagine
+Dialogue: 0,0:45:31.53,0:45:33.82,*Default,NTP,0000,0000,0000,,苏格拉底或柏拉图给出唯一答案是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates or Plato giving at this point, is to say, 
+Dialogue: 0,0:45:34.47,0:45:38.07,*Default,NTP,0000,0000,0000,,我需要对无形下个不同的定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Look, I need a different definition of invisible. 
+Dialogue: 0,0:45:38.48,0:45:40.65,*Default,NTP,0000,0000,0000,,不是解释二  而是解释三\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not two, but three. 
+Dialogue: 0,0:45:42.75,0:45:45.19,*Default,NTP,0000,0000,0000,,不要讨论我们能感觉到什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Don't talk about what we can sense; 
+Dialogue: 0,0:45:45.40,0:45:48.28,*Default,NTP,0000,0000,0000,,而是探讨我们能探测到什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talk about what we can detect." 
+Dialogue: 0,0:45:51.31,0:45:55.40,*Default,NTP,0000,0000,0000,,电波能被探测到  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Radio waves can be detected, right? 
+Dialogue: 0,0:45:55.86,0:45:58.42,*Default,NTP,0000,0000,0000,,收音机就能做到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, radios do that. 
+Dialogue: 0,0:45:59.19,0:46:00.26,*Default,NTP,0000,0000,0000,,打开你的收音机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You turn on your radio, 
+Dialogue: 0,0:46:00.32,0:46:01.81,*Default,NTP,0000,0000,0000,,电波从附近路过  砰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the radio wave's passing by, boom--
+Dialogue: 0,0:46:01.93,0:46:03.62,*Default,NTP,0000,0000,0000,,调到合适的频率  收到电波了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}properly tuned, you detect it. 
+Dialogue: 0,0:46:03.83,0:46:05.85,*Default,NTP,0000,0000,0000,,它转变为我们听得到的声音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns it into these sounds that we can hear. 
+Dialogue: 0,0:46:07.67,0:46:14.87,*Default,NTP,0000,0000,0000,,我们能探测到电波是因为它对收音机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can detect radio waves on the basis of their effects on radios, 
+Dialogue: 0,0:46:14.93,0:46:16.13,*Default,NTP,0000,0000,0000,,及其他事物有影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}among other things. 
+Dialogue: 0,0:46:18.91,0:46:23.09,*Default,NTP,0000,0000,0000,,也许他需要采用一个更有力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe by invisible he should've moved to this stronger, 
+Dialogue: 0,0:46:23.14,0:46:25.14,*Default,NTP,0000,0000,0000,,宽泛的"无形"定义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bolder definition of invisible. 
+Dialogue: 0,0:46:25.22,0:46:28.71,*Default,NTP,0000,0000,0000,,一个事物无形  那么它不仅不能被看见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's call something invisible not only if it can't seen, 
+Dialogue: 0,0:46:28.78,0:46:30.85,*Default,NTP,0000,0000,0000,,也不仅是不能被观察到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only if it can't be observed, 
+Dialogue: 0,0:46:30.90,0:46:33.26,*Default,NTP,0000,0000,0000,,而且还始终无法被探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but if it can't be detected at all. 
+Dialogue: 0,0:46:34.15,0:46:36.66,*Default,NTP,0000,0000,0000,,毕竟  事物的型相是探测不到的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look, the forms, after all, can't be detected. 
+Dialogue: 0,0:46:36.71,0:46:41.36,*Default,NTP,0000,0000,0000,,收音机接收不到数字3\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no radio for the number three that will tell--
+Dialogue: 0,0:46:41.42,0:46:43.69,*Default,NTP,0000,0000,0000,,盖格计数器也不会告诉你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no Geiger counter to tell you 
+Dialogue: 0,0:46:43.74,0:46:46.30,*Default,NTP,0000,0000,0000,,数字3或类似东西是否在附近  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the number three is nearby or something, right? 
+Dialogue: 0,0:46:47.85,0:46:51.68,*Default,NTP,0000,0000,0000,,所以柏拉图仍然能坚持  无形的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So Plato could still insist things that are invisible, 
+Dialogue: 0,0:46:51.73,0:46:53.97,*Default,NTP,0000,0000,0000,,那些不可探测到的物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the sense of undetectable, 
+Dialogue: 0,0:46:54.13,0:46:55.53,*Default,NTP,0000,0000,0000,,是不能被摧毁的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can't be destroyed. 
+Dialogue: 0,0:46:56.59,0:46:59.55,*Default,NTP,0000,0000,0000,,而电波可以被探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But radio waves, they're detectable. 
+Dialogue: 0,0:46:59.73,0:47:01.62,*Default,NTP,0000,0000,0000,,现在我们用无法探测\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So they're not a counterexample, 
+Dialogue: 0,0:47:01.69,0:47:03.13,*Default,NTP,0000,0000,0000,,来解释"无形"这个概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now that we interpret 
+Dialogue: 0,0:47:03.18,0:47:06.28,*Default,NTP,0000,0000,0000,,它就不再是反例了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the relevant notion of invisibility as undetectability.
+Dialogue: 0,0:47:07.09,0:47:09.65,*Default,NTP,0000,0000,0000,,这样柏拉图不就可以继续声称\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So couldn't Plato continue to claim, 
+Dialogue: 0,0:47:10.48,0:47:13.25,*Default,NTP,0000,0000,0000,,完全无形的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}things that are fully invisible, 
+Dialogue: 0,0:47:13.54,0:47:14.99,*Default,NTP,0000,0000,0000,,即探测不到的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}meaning undetectable, 
+Dialogue: 0,0:47:15.08,0:47:17.49,*Default,NTP,0000,0000,0000,,它们不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those things can't be destroyed. 
+Dialogue: 0,0:47:18.60,0:47:20.91,*Default,NTP,0000,0000,0000,,电波这里可就不是反例了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Radio waves aren't a counterexample to that. 
+Dialogue: 0,0:47:21.62,0:47:23.55,*Default,NTP,0000,0000,0000,,我认为柏拉图可能会这样说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think maybe Plato could say that. 
+Dialogue: 0,0:47:23.66,0:47:27.40,*Default,NTP,0000,0000,0000,,但是如果我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, if we give him four, 
+Dialogue: 0,0:47:28.96,0:47:33.06,*Default,NTP,0000,0000,0000,,在定义"无形"为彻底探测不到时承认结论四\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where we read invisible as meaning utterly undetectable, 
+Dialogue: 0,0:47:34.36,0:47:37.19,*Default,NTP,0000,0000,0000,,是否承认结论五就不太明确了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's no longer so clear to me that we can give him five. 
+Dialogue: 0,0:47:37.91,0:47:39.89,*Default,NTP,0000,0000,0000,,灵魂是无形的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is the soul invisible? 
+Dialogue: 0,0:47:40.06,0:47:45.32,*Default,NTP,0000,0000,0000,,当"无形"指的是看不到时  它是的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it was, when by invisibility we meant can't be seen; 
+Dialogue: 0,0:47:45.88,0:47:48.27,*Default,NTP,0000,0000,0000,,当"无形"指的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was, when by invisibility 
+Dialogue: 0,0:47:48.33,0:47:53.27,*Default,NTP,0000,0000,0000,,尝不到摸不到听不到闻不到时  它还是的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we meant can't be tasted or touched or heard or smelled. 
+Dialogue: 0,0:47:54.68,0:47:57.65,*Default,NTP,0000,0000,0000,,但如果"无形"指的是不能探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But is it still invisible if by invisibility
+Dialogue: 0,0:47:57.65,0:48:00.84,*Default,NTP,0000,0000,0000,,灵魂是否依旧无形的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we mean can't be detected?
+Dialogue: 0,0:48:01.99,0:48:05.89,*Default,NTP,0000,0000,0000,,是否依然不能被探测到呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is it true that the soul can't be detected? 
+Dialogue: 0,0:48:07.72,0:48:10.54,*Default,NTP,0000,0000,0000,,我必须说  我认为这种说法不再正确了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've got to say, I think it's no longer right. 
+Dialogue: 0,0:48:10.59,0:48:13.21,*Default,NTP,0000,0000,0000,,一旦我们以这种定义解释无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Once we interpret invisibility that way, 
+Dialogue: 0,0:48:13.21,0:48:15.77,*Default,NTP,0000,0000,0000,,灵魂就是可探测的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul is detectable in just the way--
+Dialogue: 0,0:48:15.81,0:48:16.76,*Default,NTP,0000,0000,0000,,不是完全的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not literally just the way, 
+Dialogue: 0,0:48:16.81,0:48:17.83,*Default,NTP,0000,0000,0000,,而是某种程度上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but in something similar to the way--
+Dialogue: 0,0:48:17.88,0:48:19.99,*Default,NTP,0000,0000,0000,,和电波可以被探测到是一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that radio waves are detectable. 
+Dialogue: 0,0:48:20.66,0:48:23.87,*Default,NTP,0000,0000,0000,,如果你将电波和收音机联系起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you hook a radio wave up with a radio, 
+Dialogue: 0,0:48:23.95,0:48:25.49,*Default,NTP,0000,0000,0000,,你就知道的电波存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can tell the radio is--
+Dialogue: 0,0:48:25.54,0:48:29.52,*Default,NTP,0000,0000,0000,,因为收音机所做的正是播放\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}radio wave--was there because of what the radio's doing, 
+Dialogue: 0,0:48:29.57,0:48:31.17,*Default,NTP,0000,0000,0000,,电波转换而来的声音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}giving off these sounds. 
+Dialogue: 0,0:48:31.74,0:48:35.45,*Default,NTP,0000,0000,0000,,如果将灵魂和躯体联系在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you hook a soul up to a body, 
+Dialogue: 0,0:48:35.92,0:48:37.88,*Default,NTP,0000,0000,0000,,你就可以通过我的躯体做的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can tell the soul is there
+Dialogue: 0,0:48:37.88,0:48:40.29,*Default,NTP,0000,0000,0000,,知道灵魂的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by what the body is doing,
+Dialogue: 0,0:48:40.94,0:48:42.93,*Default,NTP,0000,0000,0000,,在与你们讨论哲学呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}discussing philosophy with you. 
+Dialogue: 0,0:48:45.09,0:48:49.45,*Default,NTP,0000,0000,0000,,你能通过灵魂在你朋友身上的表现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You detect the presence of your friend's soul 
+Dialogue: 0,0:48:49.55,0:48:53.42,*Default,NTP,0000,0000,0000,,来感受到这位朋友的灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through its effects on your friend's body.
+Dialogue: 0,0:48:56.63,0:48:59.88,*Default,NTP,0000,0000,0000,,但是这意味着灵魂并非真的不可探测\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that means the soul isn't really undetectable. 
+Dialogue: 0,0:49:00.54,0:49:02.32,*Default,NTP,0000,0000,0000,,如果灵魂并不是不能探测到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if the soul's not really undetectable, 
+Dialogue: 0,0:49:02.38,0:49:05.29,*Default,NTP,0000,0000,0000,,从这个定义上来说  灵魂并非无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not really invisible in the relevant sense. 
+Dialogue: 0,0:49:05.86,0:49:07.39,*Default,NTP,0000,0000,0000,,如果它并非真的无形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if it's not really invisible, 
+Dialogue: 0,0:49:07.44,0:49:10.48,*Default,NTP,0000,0000,0000,,那么即使这种"无形"的定义下的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then even if there is a notion of invisible, 
+Dialogue: 0,0:49:10.53,0:49:13.88,*Default,NTP,0000,0000,0000,,一些无形的事物的确不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such that things that are invisible in that sense can't be destroyed, 
+Dialogue: 0,0:49:14.19,0:49:16.64,*Default,NTP,0000,0000,0000,,这种定义下灵魂也不是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul's not invisible in that sense.
+Dialogue: 0,0:49:19.02,0:49:21.96,*Default,NTP,0000,0000,0000,,我用这么长的时间来讨论这条论证是因为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've gone over this argument at such length because--
+Dialogue: 0,0:49:22.23,0:49:23.35,*Default,NTP,0000,0000,0000,,我希望这很清楚\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hope it's clear--
+Dialogue: 0,0:49:23.35,0:49:25.93,*Default,NTP,0000,0000,0000,,我认为这是一条十分有趣的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think it's a pretty interesting argument.
+Dialogue: 0,0:49:26.55,0:49:31.20,*Default,NTP,0000,0000,0000,,"精简论"确实引人入胜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The argument from simplicity is quite fascinating. 
+Dialogue: 0,0:49:31.26,0:49:34.07,*Default,NTP,0000,0000,0000,,它的论点是  如果灵魂没有"部件"的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The idea that you couldn't break the soul
+Dialogue: 0,0:49:34.07,0:49:35.58,*Default,NTP,0000,0000,0000,,就不能被摧毁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it didn't have parts,
+Dialogue: 0,0:49:35.96,0:49:39.73,*Default,NTP,0000,0000,0000,,而知道它没有"部件"是因为它是无形的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the way to tell that it doesn't have parts is because it's invisible, 
+Dialogue: 0,0:49:40.08,0:49:41.71,*Default,NTP,0000,0000,0000,,因为无形的事物没法有”部分”\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because invisible things can't have parts, 
+Dialogue: 0,0:49:42.19,0:49:44.72,*Default,NTP,0000,0000,0000,,这条论证很难驳倒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a quite difficult argument to pin down, 
+Dialogue: 0,0:49:44.77,0:49:46.22,*Default,NTP,0000,0000,0000,,它到底是成立还是不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}does it work or does it not work. 
+Dialogue: 0,0:49:46.54,0:49:49.32,*Default,NTP,0000,0000,0000,,不过我认为  随着我们深入思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I think, as we think it all through, 
+Dialogue: 0,0:49:49.48,0:49:51.74,*Default,NTP,0000,0000,0000,,我们的结论是  它不成立\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have to conclude it doesn't work. 

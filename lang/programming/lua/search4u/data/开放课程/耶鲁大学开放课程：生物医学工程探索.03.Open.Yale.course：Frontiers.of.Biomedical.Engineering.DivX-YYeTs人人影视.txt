@@ -1,0 +1,956 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:13.55,0:00:16.91,*Default,NTP,0000,0000,0000,,这星期我们将探讨DNA技术\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This week we're going to talk about DNA technology
+Dialogue: 0,0:00:16.91,0:00:18.56,*Default,NTP,0000,0000,0000,,和基因工程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and genetic engineering:
+Dialogue: 0,0:00:18.56,0:00:20.53,*Default,NTP,0000,0000,0000,,这是本书第三章的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is Chapter 3 of the book.
+Dialogue: 0,0:00:22.35,0:00:24.58,*Default,NTP,0000,0000,0000,,对你们来说有些内容会比较熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of this will be familiar to some of you
+Dialogue: 0,0:00:24.58,0:00:27.30,*Default,NTP,0000,0000,0000,,如果在高中或其他地方学习过生物课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who've have had biology in high school or other places,
+Dialogue: 0,0:00:27.74,0:00:28.89,*Default,NTP,0000,0000,0000,,就会多少懂一些有关DNA的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know something about DNA.
+Dialogue: 0,0:00:29.20,0:00:29.74,*Default,NTP,0000,0000,0000,,实际上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact,
+Dialogue: 0,0:00:30.27,0:00:33.12,*Default,NTP,0000,0000,0000,,即使你们没有上过生物课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if you haven't had a biology class
+Dialogue: 0,0:00:33.13,0:00:37.62,*Default,NTP,0000,0000,0000,,也不可能活在当下却对DNA一无所知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's hard to be alive in 2008 and not know something about DNA;
+Dialogue: 0,0:00:37.63,0:00:41.12,*Default,NTP,0000,0000,0000,,它已经与我们的生活密不可分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's become such an important part of our lives.
+Dialogue: 0,0:00:41.51,0:00:43.73,*Default,NTP,0000,0000,0000,,我请求你们容许我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to ask you to indulge me
+Dialogue: 0,0:00:43.73,0:00:45.16,*Default,NTP,0000,0000,0000,,从一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}while I go back to the
+Dialogue: 0,0:00:45.16,0:00:48.42,*Default,NTP,0000,0000,0000,,你们已经懂得的知识讲起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}beginning and talk about some things that you know
+Dialogue: 0,0:00:48.42,0:00:51.47,*Default,NTP,0000,0000,0000,,不过我只会很快的串讲一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'm going to go through this pretty rapidly.
+Dialogue: 0,0:00:52.28,0:00:54.36,*Default,NTP,0000,0000,0000,,我认为课本对DNA表述很详细\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the book has a fairly good description of it
+Dialogue: 0,0:00:54.37,0:00:56.33,*Default,NTP,0000,0000,0000,,所以在课堂上无需面面俱到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so if you don't pick up everything in the lecture,
+Dialogue: 0,0:00:57.15,0:00:58.23,*Default,NTP,0000,0000,0000,,希望你们之前做过预习\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hopefully you've read that beforehand,
+Dialogue: 0,0:00:58.75,0:01:00.38,*Default,NTP,0000,0000,0000,,课后你们可以通过复习\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can go back to it afterwards
+Dialogue: 0,0:01:00.38,0:01:02.37,*Default,NTP,0000,0000,0000,,弄懂那些不甚理解的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and read about things that didn't make sense.
+Dialogue: 0,0:01:03.09,0:01:04.68,*Default,NTP,0000,0000,0000,,今天我们会谈到一些化学结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll talk about some chemistry today,
+Dialogue: 0,0:01:04.68,0:01:05.85,*Default,NTP,0000,0000,0000,,比如DNA分子的形态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what DNA molecules are like,
+Dialogue: 0,0:01:06.31,0:01:07.45,*Default,NTP,0000,0000,0000,,它们为什么会以这种形态存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why they have the behavior that they do,
+Dialogue: 0,0:01:08.28,0:01:09.60,*Default,NTP,0000,0000,0000,,你必须先掌握这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you need to understand this
+Dialogue: 0,0:01:09.60,0:01:11.56,*Default,NTP,0000,0000,0000,,才能理解如何操控DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to understand how you manipulate DNA.
+Dialogue: 0,0:01:12.67,0:01:14.04,*Default,NTP,0000,0000,0000,,所以我今天的任务是告诉你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So my goal today is to talk
+Dialogue: 0,0:01:14.04,0:01:16.18,*Default,NTP,0000,0000,0000,,DNA分子的各种基团\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about sort of the basics of the molecules,
+Dialogue: 0,0:01:18.20,0:01:19.96,*Default,NTP,0000,0000,0000,,它们的化学结构  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}their chemistry, 
+Dialogue: 0,0:01:19.96,0:01:23.20,*Default,NTP,0000,0000,0000,,细胞内DNA分子的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the function of DNA in cells, sort of basic - the basic side of that.
+Dialogue: 0,0:01:25.07,0:01:28.00,*Default,NTP,0000,0000,0000,,周四我们会谈到如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then on Thursday we're going to start talking about
+Dialogue: 0,0:01:28.23,0:01:30.58,*Default,NTP,0000,0000,0000,,如何操控DNA并进一步\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to manipulate DNA and get closer
+Dialogue: 0,0:01:30.58,0:01:32.94,*Default,NTP,0000,0000,0000,,使之应用于生物医学工程领域内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to using it in Biomedical Engineering.
+Dialogue: 0,0:01:35.56,0:01:36.70,*Default,NTP,0000,0000,0000,,DNA是双螺旋结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}DNA is a double helix,
+Dialogue: 0,0:01:37.23,0:01:38.26,*Default,NTP,0000,0000,0000,,众所周知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know this,
+Dialogue: 0,0:01:38.64,0:01:41.63,*Default,NTP,0000,0000,0000,,DNA的这种双螺旋结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the double helix was--the structure of DNA
+Dialogue: 0,0:01:41.63,0:01:43.23,*Default,NTP,0000,0000,0000,,是在我出生的那个年代才被发现的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was discovered about the time that I was born
+Dialogue: 0,0:01:46.15,0:01:47.48,*Default,NTP,0000,0000,0000,,它就是你生命的一部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've always lived with it.
+Dialogue: 0,0:01:47.91,0:01:51.34,*Default,NTP,0000,0000,0000,,我们在短时间内取得了非凡的成就\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really remarkable how far--how fast we have come
+Dialogue: 0,0:01:51.34,0:01:54.44,*Default,NTP,0000,0000,0000,,从最初仅仅知道DNA分子的结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from just knowing the structure of this molecule
+Dialogue: 0,0:01:54.44,0:01:58.06,*Default,NTP,0000,0000,0000,,发展到能够深入研究并加以操控它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be able to manipulate it and study it in great detail.
+Dialogue: 0,0:01:58.53,0:02:00.40,*Default,NTP,0000,0000,0000,,我想要给你们看这张卡通模型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to start by showing you this cartoon
+Dialogue: 0,0:02:00.40,0:02:01.59,*Default,NTP,0000,0000,0000,,你们都知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you already know about
+Dialogue: 0,0:02:01.59,0:02:03.16,*Default,NTP,0000,0000,0000,,这是DNA双螺旋结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with the structure of a double helix.
+Dialogue: 0,0:02:03.91,0:02:05.35,*Default,NTP,0000,0000,0000,,它犹如扭曲的梯子 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a twisted ladder 
+Dialogue: 0,0:02:05.35,0:02:08.47,*Default,NTP,0000,0000,0000,,对于这众所周知的结构有几件事必须注意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's a couple of things to notice about this familiar structure.
+Dialogue: 0,0:02:09.05,0:02:13.60,*Default,NTP,0000,0000,0000,,其一是浅蓝色所代表的两条主链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is that there are two backbones right here in the light blue,
+Dialogue: 0,0:02:15.14,0:02:16.10,*Default,NTP,0000,0000,0000,,这是构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so this would be the
+Dialogue: 0,0:02:16.10,0:02:18.27,*Default,NTP,0000,0000,0000,,扭曲梯子的垂直部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}upright parts of the ladder that are twisted.
+Dialogue: 0,0:02:18.88,0:02:20.62,*Default,NTP,0000,0000,0000,,这两股主链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those are two continuous strands
+Dialogue: 0,0:02:20.62,0:02:23.50,*Default,NTP,0000,0000,0000,,相互缠绕形成双螺旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that wind around each other to form the double helix.
+Dialogue: 0,0:02:24.66,0:02:25.64,*Default,NTP,0000,0000,0000,,要注意的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One thing to notice is
+Dialogue: 0,0:02:25.65,0:02:28.17,*Default,NTP,0000,0000,0000,,这两股构成双螺旋的链我们称之为主链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this part of the double helix that we'll call the backbone.
+Dialogue: 0,0:02:29.17,0:02:31.57,*Default,NTP,0000,0000,0000,,主链位于DNA分子结构外侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The backbone's on the outside of the molecule
+Dialogue: 0,0:02:31.57,0:02:33.44,*Default,NTP,0000,0000,0000,,像梯子两侧上下的支柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the upright struts of a ladder
+Dialogue: 0,0:02:33.45,0:02:34.85,*Default,NTP,0000,0000,0000,,记住是梯子外侧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on the outside of a ladder.
+Dialogue: 0,0:02:36.41,0:02:37.74,*Default,NTP,0000,0000,0000,,梯子内侧是梯阶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On the inside are the rungs
+Dialogue: 0,0:02:37.74,0:02:39.91,*Default,NTP,0000,0000,0000,,也可以说是梯阶把梯子连接在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the struts that hold the ladder together.
+Dialogue: 0,0:02:40.77,0:02:43.29,*Default,NTP,0000,0000,0000,,你们会注意到卡通模型上的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are several things that you'll notice about
+Dialogue: 0,0:02:43.30,0:02:45.21,*Default,NTP,0000,0000,0000,,这些梯阶有些特别之处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the struts in this particular cartoon.
+Dialogue: 0,0:02:45.75,0:02:47.72,*Default,NTP,0000,0000,0000,,一是这些梯阶有四种不同颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One is that there's four different colors and
+Dialogue: 0,0:02:48.29,0:02:51.65,*Default,NTP,0000,0000,0000,,你可以看到红 蓝 黄 绿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you can see red, blue, yellow, green here -
+Dialogue: 0,0:02:52.04,0:02:53.69,*Default,NTP,0000,0000,0000,,恰恰只有四种不同颜色 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}four different colors and that's all there are,
+Dialogue: 0,0:02:54.12,0:02:55.06,*Default,NTP,0000,0000,0000,,不多不少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there aren't more than four.
+Dialogue: 0,0:02:55.65,0:02:57.19,*Default,NTP,0000,0000,0000,,每个梯阶有两个颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That there are two colors per strut,
+Dialogue: 0,0:02:57.76,0:02:59.85,*Default,NTP,0000,0000,0000,,主链是由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so what's linking the two backbones together are
+Dialogue: 0,0:02:59.85,0:03:02.76,*Default,NTP,0000,0000,0000,,两种不同颜色的片段由外向内连接起来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two colored segments that come from the outside towards the middle,
+Dialogue: 0,0:03:03.22,0:03:07.47,*Default,NTP,0000,0000,0000,,这些颜色仅以某种特定方式配对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that the colors occur only in certain combinations,
+Dialogue: 0,0:03:08.09,0:03:10.29,*Default,NTP,0000,0000,0000,,红连接绿  黄连接蓝  大家都能看到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}red and green, yellow and blue, that's all you see.
+Dialogue: 0,0:03:10.95,0:03:13.42,*Default,NTP,0000,0000,0000,,你们不可能看到红连接黄 或者绿连接蓝\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't see a red and yellow, you don't see green and blue.
+Dialogue: 0,0:03:15.52,0:03:19.92,*Default,NTP,0000,0000,0000,,这是卡通模型所表现的DNA的特点之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a feature of DNA shown in this cartoon form,
+Dialogue: 0,0:03:20.61,0:03:23.74,*Default,NTP,0000,0000,0000,,如果你能把这个模型记住\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so if you can keep that sort of schematic in mind,
+Dialogue: 0,0:03:24.92,0:03:27.32,*Default,NTP,0000,0000,0000,,你会很容易理解DNA分子的详细结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it makes it a lot easier to understand the detailed structure.
+Dialogue: 0,0:03:28.62,0:03:29.91,*Default,NTP,0000,0000,0000,,这是我想要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what I want to do
+Dialogue: 0,0:03:29.91,0:03:32.43,*Default,NTP,0000,0000,0000,,在这节课最初几分钟告诉你们的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the first few minutes of the lecture here is
+Dialogue: 0,0:03:32.43,0:03:35.36,*Default,NTP,0000,0000,0000,,有关DNA结构的一些细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}tell you a little bit about the details of the structure
+Dialogue: 0,0:03:35.36,0:03:37.68,*Default,NTP,0000,0000,0000,,DNA分子结构与这个卡通模型如此一致\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how molecules fit into this image of DNA
+Dialogue: 0,0:03:37.68,0:03:39.53,*Default,NTP,0000,0000,0000,,对你们来说很熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's already very familiar to you.
+Dialogue: 0,0:03:40.06,0:03:41.20,*Default,NTP,0000,0000,0000,,你们需要知道的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The things that you need to know
+Dialogue: 0,0:03:41.20,0:03:43.06,*Default,NTP,0000,0000,0000,,都已经列在这个幻灯片上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are the things that are really listed on this slide.
+Dialogue: 0,0:03:44.19,0:03:45.71,*Default,NTP,0000,0000,0000,,通过它  你可以知道更多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're going to know more details about it,
+Dialogue: 0,0:03:46.22,0:03:47.51,*Default,NTP,0000,0000,0000,,DNA不是真有颜色 它们只是化学物质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not really colors, they're chemicals,
+Dialogue: 0,0:03:48.40,0:03:52.48,*Default,NTP,0000,0000,0000,,特殊的化学物质  不过模式是一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}specific chemicals - but the pattern is the same.
+Dialogue: 0,0:03:54.23,0:03:57.36,*Default,NTP,0000,0000,0000,,构成DNA分子的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The molecules that really make up DNA
+Dialogue: 0,0:03:57.37,0:04:01.77,*Default,NTP,0000,0000,0000,,核苷酸  DNA就是核苷酸聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are nucleotides and DNA is a polymer of nucleotides.
+Dialogue: 0,0:04:02.51,0:04:03.79,*Default,NTP,0000,0000,0000,,聚合物就是由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A polymer is just a large
+Dialogue: 0,0:04:03.79,0:04:05.93,*Default,NTP,0000,0000,0000,,重复单位构成的大分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}molecule that's made up of repeated units.
+Dialogue: 0,0:04:07.83,0:04:08.83,*Default,NTP,0000,0000,0000,,我们应该很熟悉聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're familiar with polymers,
+Dialogue: 0,0:04:09.43,0:04:11.48,*Default,NTP,0000,0000,0000,,比如日常生活中的塑料就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}plastics in our daily life;
+Dialogue: 0,0:04:11.48,0:04:13.96,*Default,NTP,0000,0000,0000,,你们坐的椅子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the chairs that you're sitting on
+Dialogue: 0,0:04:13.97,0:04:16.89,*Default,NTP,0000,0000,0000,,就是由一种塑料聚合物构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are made of a kind of a plastic polymer
+Dialogue: 0,0:04:16.89,0:04:21.86,*Default,NTP,0000,0000,0000,,它由基本的有机化学物质交联在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is basically an organic chemical that is cross-linked together.
+Dialogue: 0,0:04:23.70,0:04:25.93,*Default,NTP,0000,0000,0000,,交联这个词不确切\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cross-linked is not the right word--
+Dialogue: 0,0:04:25.93,0:04:27.53,*Default,NTP,0000,0000,0000,,应该是由化学键连接的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is chemically bonded
+Dialogue: 0,0:04:27.53,0:04:30.15,*Default,NTP,0000,0000,0000,,重复单位构成大分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with repeat units to make large molecules
+Dialogue: 0,0:04:30.15,0:04:33.75,*Default,NTP,0000,0000,0000,,当许多分子聚合在一起后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that when you have a bunch of large molecules together
+Dialogue: 0,0:04:33.75,0:04:36.40,*Default,NTP,0000,0000,0000,,它们就会具有某种物理特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they have certain physical properties 
+Dialogue: 0,0:04:36.40,0:04:38.52,*Default,NTP,0000,0000,0000,,就像你们正坐着的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like the solid property of the plastic
+Dialogue: 0,0:04:38.53,0:04:39.95,*Default,NTP,0000,0000,0000,,塑料一样  具有固体特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you're sitting on.
+Dialogue: 0,0:04:41.29,0:04:44.53,*Default,NTP,0000,0000,0000,,核酸以及其中的DNA分子就是个例证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nucleic acids, of which DNA is an example,
+Dialogue: 0,0:04:44.53,0:04:46.69,*Default,NTP,0000,0000,0000,,核酸就是核苷酸聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are polymers of nucleotides.
+Dialogue: 0,0:04:47.85,0:04:52.13,*Default,NTP,0000,0000,0000,,DNA的重复单位就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the repeating unit in DNA is this structure here,
+Dialogue: 0,0:04:54.19,0:04:57.05,*Default,NTP,0000,0000,0000,,核苷酸  它有三个不同的区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a nucleotide, which has three different regions.
+Dialogue: 0,0:04:57.69,0:05:00.77,*Default,NTP,0000,0000,0000,,五碳糖区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a sugar, a five carbon sugar,
+Dialogue: 0,0:05:01.77,0:05:04.41,*Default,NTP,0000,0000,0000,,构成了核苷酸的核心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which forms the core of the nucleotide
+Dialogue: 0,0:05:04.41,0:05:07.05,*Default,NTP,0000,0000,0000,,连接在这个五碳糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and attached to this five carbon sugar
+Dialogue: 0,0:05:07.05,0:05:11.05,*Default,NTP,0000,0000,0000,,糖环上氧原子旁\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at specific positions on the sugar relative to this oxygen,
+Dialogue: 0,0:05:11.68,0:05:12.95,*Default,NTP,0000,0000,0000,,特定位置的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is part of the sugar ring,
+Dialogue: 0,0:05:13.79,0:05:18.35,*Default,NTP,0000,0000,0000,,一个磷酸基团和一个碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a phosphate group and an organic base.
+Dialogue: 0,0:05:21.64,0:05:23.59,*Default,NTP,0000,0000,0000,,当这些核苷酸多聚化\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When these nucleotides get polymerized
+Dialogue: 0,0:05:23.59,0:05:24.99,*Default,NTP,0000,0000,0000,,形成一条长链DNA分子时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to form a long DNA molecule
+Dialogue: 0,0:05:24.99,0:05:27.44,*Default,NTP,0000,0000,0000,,它们的聚合方式和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they all get polymerized in exactly the same way,
+Dialogue: 0,0:05:27.82,0:05:28.64,*Default,NTP,0000,0000,0000,,化学结构都完全相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the chemistry is the same.
+Dialogue: 0,0:05:29.02,0:05:31.50,*Default,NTP,0000,0000,0000,,一个核苷酸上的磷酸基团\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The phosphate group of one nucleotide
+Dialogue: 0,0:05:31.50,0:05:34.90,*Default,NTP,0000,0000,0000,,连接在另外一个核苷酸的糖基上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gets linked to the sugar group of another nucleotide
+Dialogue: 0,0:05:34.90,0:05:38.09,*Default,NTP,0000,0000,0000,,马上我会给你们演示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I'm going to show you that in a few minutes.
+Dialogue: 0,0:05:38.65,0:05:42.15,*Default,NTP,0000,0000,0000,,主链是由这样重复的连接构成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what's going to form the backbone is this continual link,
+Dialogue: 0,0:05:42.99,0:05:46.80,*Default,NTP,0000,0000,0000,,从磷酸到戊糖  周而复始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}phosphate to sugar, phosphate to sugar, phosphate to sugar,
+Dialogue: 0,0:05:47.74,0:05:50.55,*Default,NTP,0000,0000,0000,,所有这些连接起来构成一个长链分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all linked together to form one long, long molecule.
+Dialogue: 0,0:05:52.47,0:05:56.20,*Default,NTP,0000,0000,0000,,在这条由多聚核苷酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's hanging off of the side of this long molecule
+Dialogue: 0,0:05:56.20,0:05:57.19,*Default,NTP,0000,0000,0000,,构成的长链分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's formed
+Dialogue: 0,0:05:57.19,0:06:00.85,*Default,NTP,0000,0000,0000,,一侧悬挂着碱基单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by polymerizing nucleotides are - is this base unit.
+Dialogue: 0,0:06:03.22,0:06:05.72,*Default,NTP,0000,0000,0000,,磷酸基和戊糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the phosphate and the pentose
+Dialogue: 0,0:06:05.72,0:06:07.70,*Default,NTP,0000,0000,0000,,共同构成了主链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that make up the backbone -
+Dialogue: 0,0:06:07.70,0:06:11.01,*Default,NTP,0000,0000,0000,,主链又构成了梯子上下的支柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that make up the upright struts of the ladder
+Dialogue: 0,0:06:11.01,0:06:12.36,*Default,NTP,0000,0000,0000,,而碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's the bases
+Dialogue: 0,0:06:12.36,0:06:14.86,*Default,NTP,0000,0000,0000,,则构成连接支柱的梯阶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that make up the connecting struts,
+Dialogue: 0,0:06:15.71,0:06:16.93,*Default,NTP,0000,0000,0000,,碱基是用各种颜色表示的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so the bases are the colors.
+Dialogue: 0,0:06:17.98,0:06:19.90,*Default,NTP,0000,0000,0000,,有四种不同的碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are four different bases,
+Dialogue: 0,0:06:21.09,0:06:22.13,*Default,NTP,0000,0000,0000,,一会我们会讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which I'll talk about in a moment.
+Dialogue: 0,0:06:22.66,0:06:25.72,*Default,NTP,0000,0000,0000,,让我们先来谈谈两种不同的核酸分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk about two different nucleic acid molecules,
+Dialogue: 0,0:06:27.10,0:06:28.53,*Default,NTP,0000,0000,0000,,两种不同的核酸聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two different nucleic acid polymers,
+Dialogue: 0,0:06:28.93,0:06:29.73,*Default,NTP,0000,0000,0000,,一种称为DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one is DNA,
+Dialogue: 0,0:06:30.04,0:06:32.32,*Default,NTP,0000,0000,0000,,也就是脱氧核糖核酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}deoxyribonucleic acid,
+Dialogue: 0,0:06:32.62,0:06:33.28,*Default,NTP,0000,0000,0000,,另外一种为RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the other is RNA,
+Dialogue: 0,0:06:33.64,0:06:35.54,*Default,NTP,0000,0000,0000,,就是核糖核酸  两者的区别之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ribonucleic acid and one of the
+Dialogue: 0,0:06:35.54,0:06:38.47,*Default,NTP,0000,0000,0000,,就是戊糖的不同 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}differences between the two is that the pentose,
+Dialogue: 0,0:06:38.72,0:06:39.24,*Default,NTP,0000,0000,0000,,或者说是糖区域的不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the sugar,
+Dialogue: 0,0:06:39.57,0:06:42.95,*Default,NTP,0000,0000,0000,,构成DNA的戊糖是脱氧核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that makes up DNA is deoxyribose shown here,
+Dialogue: 0,0:06:44.02,0:06:46.52,*Default,NTP,0000,0000,0000,,而构成RNA的戊糖是核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the pentose that makes up RNA is ribose,
+Dialogue: 0,0:06:47.09,0:06:51.74,*Default,NTP,0000,0000,0000,,在DNA分子里的所有戊糖都是脱氧核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}shown here so every pentose in a DNA polymer is deoxyribose.
+Dialogue: 0,0:06:55.44,0:06:59.73,*Default,NTP,0000,0000,0000,,磷酸基连接在戊糖的一个碳原子上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The phosphate is linked to this carbon on the pentose,
+Dialogue: 0,0:07:00.66,0:07:02.27,*Default,NTP,0000,0000,0000,,注意在这个碳上有个数字\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and notice that there is a number on this carbon,
+Dialogue: 0,0:07:02.91,0:07:04.42,*Default,NTP,0000,0000,0000,,它叫做5'碳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's called - it's the 5' carbon.
+Dialogue: 0,0:07:05.22,0:07:06.34,*Default,NTP,0000,0000,0000,,这种称谓是一种惯例\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a convention
+Dialogue: 0,0:07:06.34,0:07:07.78,*Default,NTP,0000,0000,0000,,是有机化学中描述像这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that organic chemist's use
+Dialogue: 0,0:07:07.79,0:07:10.13,*Default,NTP,0000,0000,0000,,大分子时使用的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they're describing molecules like this.
+Dialogue: 0,0:07:10.54,0:07:12.24,*Default,NTP,0000,0000,0000,,为了在探讨这种大分子的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They'd like to be able to refer to
+Dialogue: 0,0:07:12.24,0:07:13.31,*Default,NTP,0000,0000,0000,,化学反应时能清楚地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}each carbon separately
+Dialogue: 0,0:07:13.31,0:07:15.89,*Default,NTP,0000,0000,0000,,表示每一个碳原子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so they can talk about reactions with this molecule,
+Dialogue: 0,0:07:16.45,0:07:18.01,*Default,NTP,0000,0000,0000,,人们对碳原子进行了编号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so they number the carbons.
+Dialogue: 0,0:07:18.70,0:07:20.47,*Default,NTP,0000,0000,0000,,这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In this case,
+Dialogue: 0,0:07:20.85,0:07:22.28,*Default,NTP,0000,0000,0000,,这些戊糖分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these pentose molecules,
+Dialogue: 0,0:07:22.69,0:07:24.19,*Default,NTP,0000,0000,0000,,不管是核糖还是脱氧核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether it's ribose or deoxyribose,
+Dialogue: 0,0:07:24.74,0:07:29.30,*Default,NTP,0000,0000,0000,,碳都是从1'标注到5'\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the carbons are numbered the same 1', 2', 3', 4', 5',
+Dialogue: 0,0:07:30.35,0:07:31.92,*Default,NTP,0000,0000,0000,,也就是构成戊糖的5个碳原子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}those are the five carbons that make up the pentose.
+Dialogue: 0,0:07:32.81,0:07:33.78,*Default,NTP,0000,0000,0000,,所以当我说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I could refer to the
+Dialogue: 0,0:07:33.78,0:07:35.60,*Default,NTP,0000,0000,0000,,4'碳的时候你就知道是讲到哪个碳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}4' carbon and you'd know I'd mean this one,
+Dialogue: 0,0:07:36.23,0:07:38.21,*Default,NTP,0000,0000,0000,,2'碳的话就是指的这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the 2' carbon you'd know I mean this one.
+Dialogue: 0,0:07:38.65,0:07:40.01,*Default,NTP,0000,0000,0000,,重要的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The ones that are important
+Dialogue: 0,0:07:40.02,0:07:42.14,*Default,NTP,0000,0000,0000,,3'碳和5'碳部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to us are the 3' carbon and the 5' carbon.
+Dialogue: 0,0:07:43.80,0:07:45.06,*Default,NTP,0000,0000,0000,,那是因为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The reason for that is that
+Dialogue: 0,0:07:45.06,0:07:47.35,*Default,NTP,0000,0000,0000,,5'碳部位是磷酸基所连接部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the 5' carbon is where the phosphate is attached.
+Dialogue: 0,0:07:49.77,0:07:51.45,*Default,NTP,0000,0000,0000,,在核苷酸内磷酸基总是连接到5'碳部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In nucleotide the phosphate is always attached to the 5' carbon.
+Dialogue: 0,0:07:54.93,0:07:57.21,*Default,NTP,0000,0000,0000,,3'碳部位重要是因为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The reason that 3' is important is
+Dialogue: 0,0:07:57.22,0:08:00.47,*Default,NTP,0000,0000,0000,,当你把两个核苷酸聚合在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that when you polymerize two nucleotides together
+Dialogue: 0,0:08:00.48,0:08:01.97,*Default,NTP,0000,0000,0000,,然后再聚合第三个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a third nucleotide,
+Dialogue: 0,0:08:02.44,0:08:03.08,*Default,NTP,0000,0000,0000,,第四个的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a fourth nucleotide,
+Dialogue: 0,0:08:03.37,0:08:05.91,*Default,NTP,0000,0000,0000,,核苷酸在聚合时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you polymerize nucleotides together they get polymerized,
+Dialogue: 0,0:08:06.61,0:08:10.59,*Default,NTP,0000,0000,0000,,磷酸基与另外一个戊糖的3'碳部位连接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the phosphate of one gets linked to the 3' carbon of another.
+Dialogue: 0,0:08:14.13,0:08:17.14,*Default,NTP,0000,0000,0000,,这很重要  因为对脱氧核糖来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is important because this molecule here, deoxyribose,
+Dialogue: 0,0:08:17.60,0:08:20.32,*Default,NTP,0000,0000,0000,,不都是像这样自上而下的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not the same upside down as it is -
+Dialogue: 0,0:08:20.32,0:08:23.86,*Default,NTP,0000,0000,0000,,不是对称的自上向下或全部向上的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not symmetrical upside down and right side up,
+Dialogue: 0,0:08:24.47,0:08:25.86,*Default,NTP,0000,0000,0000,,长链不同是由于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's different because the
+Dialogue: 0,0:08:25.86,0:08:28.31,*Default,NTP,0000,0000,0000,,5'碳向上或者向下的指向不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}5' carbon's either pointed up or pointed down.
+Dialogue: 0,0:08:29.44,0:08:31.71,*Default,NTP,0000,0000,0000,,核苷酸有方向性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The nucleotide has a directionality,
+Dialogue: 0,0:08:33.24,0:08:34.84,*Default,NTP,0000,0000,0000,,有上端和下端 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's an up and a down to it
+Dialogue: 0,0:08:34.85,0:08:36.76,*Default,NTP,0000,0000,0000,,核苷酸长链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's going to turn out the chain
+Dialogue: 0,0:08:36.76,0:08:40.12,*Default,NTP,0000,0000,0000,,是由核苷酸沿一个特定方向聚合而成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's formed by polymerizing these has a directionality as well
+Dialogue: 0,0:08:40.12,0:08:42.55,*Default,NTP,0000,0000,0000,,这在定义结构时很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's important in defining the structure.
+Dialogue: 0,0:08:43.94,0:08:46.08,*Default,NTP,0000,0000,0000,,这些就是戊糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are the pentoses -
+Dialogue: 0,0:08:46.08,0:08:49.76,*Default,NTP,0000,0000,0000,,记住了5'碳和3'碳就能够\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}remember 5' and 3' because that orients you
+Dialogue: 0,0:08:49.77,0:08:54.48,*Default,NTP,0000,0000,0000,,帮你确定分子的方向 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with respect to what direction the molecule is facing.
+Dialogue: 0,0:08:55.48,0:08:56.28,*Default,NTP,0000,0000,0000,,现在讲碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now the bases,
+Dialogue: 0,0:08:57.05,0:09:00.07,*Default,NTP,0000,0000,0000,,你不需要记住这些结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you don't need to memorize the structures of these
+Dialogue: 0,0:09:00.07,0:09:02.92,*Default,NTP,0000,0000,0000,,我将给你们详述整个分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going - I'm describing the whole molecule to you
+Dialogue: 0,0:09:02.92,0:09:04.46,*Default,NTP,0000,0000,0000,,的结构细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in its molecular detail and
+Dialogue: 0,0:09:04.46,0:09:07.25,*Default,NTP,0000,0000,0000,,然后我们把它简化为一个模板\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then we're going to simplify it down to a version
+Dialogue: 0,0:09:07.25,0:09:09.17,*Default,NTP,0000,0000,0000,,使我们更容易讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we can talk about more easily.
+Dialogue: 0,0:09:09.91,0:09:12.04,*Default,NTP,0000,0000,0000,,为了尽量讲的详细\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To give you all the detail,
+Dialogue: 0,0:09:12.04,0:09:15.67,*Default,NTP,0000,0000,0000,,这里出现的碱基有两种类型\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's two classes of bases that appear here.
+Dialogue: 0,0:09:15.92,0:09:17.66,*Default,NTP,0000,0000,0000,,一类叫做嘌呤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One class is called the purines
+Dialogue: 0,0:09:17.66,0:09:20.28,*Default,NTP,0000,0000,0000,,它们是类双环结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they have two ring-like structures.
+Dialogue: 0,0:09:21.48,0:09:23.81,*Default,NTP,0000,0000,0000,,有两种嘌呤对我们很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are two of them that are going to be important to us,
+Dialogue: 0,0:09:24.11,0:09:24.96,*Default,NTP,0000,0000,0000,,一种是腺嘌呤  另外一种是鸟嘌呤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one is adenine and the other is guanine, shown here.
+Dialogue: 0,0:09:27.37,0:09:29.57,*Default,NTP,0000,0000,0000,,因为说腺嘌呤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because saying adenine takes a long time
+Dialogue: 0,0:09:29.57,0:09:31.56,*Default,NTP,0000,0000,0000,,和鸟嘌呤太麻烦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and saying guanine takes a long time
+Dialogue: 0,0:09:31.56,0:09:35.10,*Default,NTP,0000,0000,0000,,我把它们简称为A和G\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're going to simplify it by calling adenine(A) and guanine(G).
+Dialogue: 0,0:09:37.46,0:09:39.23,*Default,NTP,0000,0000,0000,,第二类碱基是嘧啶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The second class is the pyrimidines
+Dialogue: 0,0:09:39.23,0:09:41.89,*Default,NTP,0000,0000,0000,,有三种嘧啶  是尿嘧啶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's three of those that are important; uracil,
+Dialogue: 0,0:09:43.14,0:09:44.81,*Default,NTP,0000,0000,0000,,胸腺嘧啶和胞嘧啶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thymine and cytosine
+Dialogue: 0,0:09:44.81,0:09:48.13,*Default,NTP,0000,0000,0000,,把它们也分别简称为 U T C\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we're going too simplify by calling(U), (T)and(C).
+Dialogue: 0,0:09:49.67,0:09:53.11,*Default,NTP,0000,0000,0000,,现在要记住只有四种不同的颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now remember that there were only four different colors
+Dialogue: 0,0:09:53.11,0:09:55.44,*Default,NTP,0000,0000,0000,,在双螺旋DNA的卡通模型上出现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the cartoon of the DNA double helix
+Dialogue: 0,0:09:55.44,0:09:56.79,*Default,NTP,0000,0000,0000,,我们刚说过这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we talked about
+Dialogue: 0,0:09:56.80,0:09:59.62,*Default,NTP,0000,0000,0000,,我告诉你们的这些颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I told you that those colors are really -
+Dialogue: 0,0:09:59.62,0:10:02.69,*Default,NTP,0000,0000,0000,,它们代表不同的碱基  不过有五种碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}represent the bases but there's five of them here.
+Dialogue: 0,0:10:04.74,0:10:06.13,*Default,NTP,0000,0000,0000,,有五种是因为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's five because there's
+Dialogue: 0,0:10:06.13,0:10:08.26,*Default,NTP,0000,0000,0000,,一种为RNA所专有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of these that's particular to RNA only,
+Dialogue: 0,0:10:08.86,0:10:09.76,*Default,NTP,0000,0000,0000,,它只出现在RNA中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that appears in only RNA,
+Dialogue: 0,0:10:09.77,0:10:11.54,*Default,NTP,0000,0000,0000,,另外有一种仅出现在DNA中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's one of them that appears in only DNA.
+Dialogue: 0,0:10:12.55,0:10:14.30,*Default,NTP,0000,0000,0000,,仅出现在RNA中的碱基是U\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The one that appears only in RNA is (U),
+Dialogue: 0,0:10:14.94,0:10:18.19,*Default,NTP,0000,0000,0000,,仅出现在DNA中的是T\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the one that appears only in DNA is (T).
+Dialogue: 0,0:10:18.77,0:10:20.82,*Default,NTP,0000,0000,0000,,在DNA中仅有四种颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In DNA there's only four colors,
+Dialogue: 0,0:10:21.27,0:10:23.26,*Default,NTP,0000,0000,0000,,只有四种碱基CTGA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's only four bases,(C)(T)(G)(A).
+Dialogue: 0,0:10:24.58,0:10:28.94,*Default,NTP,0000,0000,0000,,在RNA中也只有四种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In RNA there's four bases.
+Dialogue: 0,0:10:30.61,0:10:34.46,*Default,NTP,0000,0000,0000,,某种意义上(U)和(T)是可互换的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So (U) and(T) are interchangeable in a sense
+Dialogue: 0,0:10:34.46,0:10:38.40,*Default,NTP,0000,0000,0000,,在RNA中以U替代了T\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that (U) appears where (T) would appear in RNA
+Dialogue: 0,0:10:38.40,0:10:42.26,*Default,NTP,0000,0000,0000,,在DNA中以T取代了U\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and (T) appears where (U) would appear in DNA.
+Dialogue: 0,0:10:45.74,0:10:47.30,*Default,NTP,0000,0000,0000,,如果我把这个放在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I drew this altogether
+Dialogue: 0,0:10:47.30,0:10:49.80,*Default,NTP,0000,0000,0000,,这个核酸分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is one particular nucleic acid,
+Dialogue: 0,0:10:50.43,0:10:51.75,*Default,NTP,0000,0000,0000,,让你们看得到更多细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now shown in more detail,
+Dialogue: 0,0:10:52.44,0:10:55.12,*Default,NTP,0000,0000,0000,,戊糖的五个碳都在这儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all of the carbons of the pentose are shown here,
+Dialogue: 0,0:10:55.94,0:10:59.63,*Default,NTP,0000,0000,0000,,磷酸基在这儿  碱基在这儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the phosphate is shown, and a base is shown.
+Dialogue: 0,0:11:00.19,0:11:03.91,*Default,NTP,0000,0000,0000,,这个特别的碱基是A  这个是核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This particular base is (A), this is ribose.
+Dialogue: 0,0:11:05.28,0:11:07.11,*Default,NTP,0000,0000,0000,,所以这是一个RNA单体 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So this is a monomer 
+Dialogue: 0,0:11:07.11,0:11:09.08,*Default,NTP,0000,0000,0000,,即RNA上一个单独结构单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or a single unit from an RNA molecule,
+Dialogue: 0,0:11:09.56,0:11:11.48,*Default,NTP,0000,0000,0000,,你通过核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you know that because it's ribose
+Dialogue: 0,0:11:11.48,0:11:13.34,*Default,NTP,0000,0000,0000,,和碱基就能够确认它是RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's the particular molecule
+Dialogue: 0,0:11:13.34,0:11:15.20,*Default,NTP,0000,0000,0000,,这个RNA单体的碱基为A\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that has (A) as its organic base.
+Dialogue: 0,0:11:19.24,0:11:21.34,*Default,NTP,0000,0000,0000,,我们在完整的描述一个DNA或RNA时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We don't need to really talk about
+Dialogue: 0,0:11:21.34,0:11:23.36,*Default,NTP,0000,0000,0000,,不需要说明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the molecular detail in order
+Dialogue: 0,0:11:23.36,0:11:26.24,*Default,NTP,0000,0000,0000,,分子上的每一个细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to completely describe a DNA or an RNA molecule
+Dialogue: 0,0:11:26.24,0:11:28.82,*Default,NTP,0000,0000,0000,,因为它们的结构都是重复的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because these structures repeat themselves.
+Dialogue: 0,0:11:29.37,0:11:32.00,*Default,NTP,0000,0000,0000,,主链的每个单位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every unit in the backbone
+Dialogue: 0,0:11:32.00,0:11:35.94,*Default,NTP,0000,0000,0000,,都由相同的糖单位构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of this ladder has the same sugar unit,
+Dialogue: 0,0:11:36.37,0:11:38.07,*Default,NTP,0000,0000,0000,,同样的戊糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the same pentose; it's
+Dialogue: 0,0:11:38.07,0:11:41.78,*Default,NTP,0000,0000,0000,,RNA里是核糖  DNA里是脱氧核糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}either RNA or DNA and has ribose or deoxyribose,
+Dialogue: 0,0:11:42.15,0:11:43.63,*Default,NTP,0000,0000,0000,,所以你不需要所有细节都描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so you don't need to describe the whole thing.
+Dialogue: 0,0:11:43.97,0:11:45.31,*Default,NTP,0000,0000,0000,,你只需要说它是一个RNA或者DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can just say it's RNA or DNA
+Dialogue: 0,0:11:45.31,0:11:46.51,*Default,NTP,0000,0000,0000,,就能知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you know everything about
+Dialogue: 0,0:11:46.51,0:11:48.29,*Default,NTP,0000,0000,0000,,每个核苷酸分子的戊糖\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pentose in every molecule on the chain.
+Dialogue: 0,0:11:49.31,0:11:52.49,*Default,NTP,0000,0000,0000,,不需要再进一步说明磷酸基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You don't need to say anything more about the phosphate
+Dialogue: 0,0:11:52.49,0:11:54.53,*Default,NTP,0000,0000,0000,,因为两种核酸都含有磷酸基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they all have the phosphate
+Dialogue: 0,0:11:54.53,0:11:57.81,*Default,NTP,0000,0000,0000,,并且以同样的方式相互连接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and every set of these is hooked together in the same way.
+Dialogue: 0,0:11:58.48,0:12:01.24,*Default,NTP,0000,0000,0000,,5'碳的磷酸基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The 5' carbon has a phosphate off of it
+Dialogue: 0,0:12:01.24,0:12:05.52,*Default,NTP,0000,0000,0000,,连接到下一个戊糖的3'碳部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that phosphate is linked to the 3' carbon of the next one
+Dialogue: 0,0:12:05.53,0:12:08.70,*Default,NTP,0000,0000,0000,,它们都有连接在一侧的碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they all have a base hanging off the side.
+Dialogue: 0,0:12:09.06,0:12:11.68,*Default,NTP,0000,0000,0000,,想要区别DNA和RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The only thing I need to say in order to distinguish
+Dialogue: 0,0:12:11.69,0:12:14.97,*Default,NTP,0000,0000,0000,,这两种化学结构不同的核酸的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this particular part of the chemistry of a DNA or an RNA molecule
+Dialogue: 0,0:12:14.97,0:12:16.56,*Default,NTP,0000,0000,0000,,我只要说明它是DNA还是RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to say 'it's DNA or its RNA',
+Dialogue: 0,0:12:17.18,0:12:18.02,*Default,NTP,0000,0000,0000,,它的碱基是什么就够了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and 'what the base is'.
+Dialogue: 0,0:12:19.40,0:12:23.71,*Default,NTP,0000,0000,0000,,如果让你找RNA中碱基是A的核苷酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I told you that 'draw me a nucleotide from RNA that has (A)',
+Dialogue: 0,0:12:25.39,0:12:26.11,*Default,NTP,0000,0000,0000,,你可以看着这个图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could go back to this
+Dialogue: 0,0:12:26.11,0:12:27.36,*Default,NTP,0000,0000,0000,,就能找出其全部结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}picture and you could draw the whole thing.
+Dialogue: 0,0:12:28.40,0:12:30.09,*Default,NTP,0000,0000,0000,,你可以用这个简单的方式表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can just talk about it in a simpler way.
+Dialogue: 0,0:12:31.09,0:12:33.90,*Default,NTP,0000,0000,0000,,打个比方  要描述一个由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can say a polymer of DNA,
+Dialogue: 0,0:12:34.66,0:12:37.12,*Default,NTP,0000,0000,0000,,四个核苷酸单位构成的寡聚DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, is four bases long,
+Dialogue: 0,0:12:38.37,0:12:42.00,*Default,NTP,0000,0000,0000,,就是说它由四个核苷酸单位构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that means it has four of these repeat units
+Dialogue: 0,0:12:42.01,0:12:46.68,*Default,NTP,0000,0000,0000,,并且从5'端到3'端的顺序为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they go in the sequence from 5' to 3' of .
+Dialogue: 0,0:12:48.58,0:12:49.71,*Default,NTP,0000,0000,0000,,{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}AGTG  \N(A)(G)(T)(G).
+Dialogue: 0,0:12:49.71,0:12:53.46,*Default,NTP,0000,0000,0000,,如果我告诉你一个DNA链从5'到3'\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I told you that a DNA sequence went 5' to 3'
+Dialogue: 0,0:12:53.46,0:12:55.90,*Default,NTP,0000,0000,0000,,是AGTG  你就可以\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(A)(G)(T)(G) you could draw the whole
+Dialogue: 0,0:12:55.90,0:13:00.27,*Default,NTP,0000,0000,0000,,画出它的整个结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thing referring back to these notes, right?
+Dialogue: 0,0:13:00.74,0:13:02.53,*Default,NTP,0000,0000,0000,,实际上你不必画的这么复杂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, you don't have to draw it this complicated way,
+Dialogue: 0,0:13:02.94,0:13:07.44,*Default,NTP,0000,0000,0000,,你只要画几个线条并标明连接的碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could just draw it as a line with and hanging off of it,
+Dialogue: 0,0:13:09.42,0:13:11.09,*Default,NTP,0000,0000,0000,,别人就能知道它是含四个碱基的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you would know that that's a DNA molecule four bases long.
+Dialogue: 0,0:13:13.03,0:13:14.61,*Default,NTP,0000,0000,0000,,那么这些线条所代表的意义又是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now what does the line represent here?
+Dialogue: 0,0:13:14.99,0:13:15.91,*Default,NTP,0000,0000,0000,,线条代表梯子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This represents the upright
+Dialogue: 0,0:13:15.91,0:13:17.40,*Default,NTP,0000,0000,0000,,上下的支柱 之前给你们演示过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}struts on a ladder that I showed you before,
+Dialogue: 0,0:13:17.94,0:13:21.82,*Default,NTP,0000,0000,0000,,代表由多聚戊糖分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it represents this backbone that's shown by - that's formed
+Dialogue: 0,0:13:21.82,0:13:24.28,*Default,NTP,0000,0000,0000,,通过磷酸基从5'端向3'端方向\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by polymerizing the pentose's together
+Dialogue: 0,0:13:24.28,0:13:28.60,*Default,NTP,0000,0000,0000,,连接起来的主链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through phosphate's always going 5' to 3', 5' to 3'.
+Dialogue: 0,0:13:28.87,0:13:30.41,*Default,NTP,0000,0000,0000,,我可以画一条这样的线\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I could take and draw a line
+Dialogue: 0,0:13:30.42,0:13:33.56,*Default,NTP,0000,0000,0000,,沿着这个分子不断向下延伸到我指的地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}continually down the molecule where my finger was touching;
+Dialogue: 0,0:13:33.56,0:13:36.02,*Default,NTP,0000,0000,0000,,我指的这一点代表着磷酸基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}my finger would be touching a phosphate here,
+Dialogue: 0,0:13:37.10,0:13:38.75,*Default,NTP,0000,0000,0000,,5' 碳部位  4'碳部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the 5' carbon, the 4' carbon,
+Dialogue: 0,0:13:38.76,0:13:40.93,*Default,NTP,0000,0000,0000,,3' 碳以及下一个磷酸基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the 3' carbon, and the next phosphate.
+Dialogue: 0,0:13:43.23,0:13:44.56,*Default,NTP,0000,0000,0000,,主链是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The backbone is what?
+Dialogue: 0,0:13:45.46,0:13:47.13,*Default,NTP,0000,0000,0000,,就是磷酸基与戊糖的碳反复连接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's phosphate, carbon, carbon, carbon, phosphate,
+Dialogue: 0,0:13:47.47,0:13:48.22,*Default,NTP,0000,0000,0000,,如此循环往复\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}carbon, carbon, carbon, phosphate
+Dialogue: 0,0:13:49.30,0:13:51.25,*Default,NTP,0000,0000,0000,,这种结构构成了主链的一边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it has this structure hanging off the side.
+Dialogue: 0,0:13:53.56,0:13:55.57,*Default,NTP,0000,0000,0000,,DNA是双螺旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now DNA is a double helix
+Dialogue: 0,0:13:55.57,0:13:59.27,*Default,NTP,0000,0000,0000,,我只是给你们讲了螺旋的一边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I've only shown you one part of the helix,
+Dialogue: 0,0:13:59.61,0:14:00.45,*Default,NTP,0000,0000,0000,,我给你们演示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right? I've shown you one
+Dialogue: 0,0:14:00.45,0:14:01.90,*Default,NTP,0000,0000,0000,,一条链的支柱及碱基团\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}upright strut and a base hanging off of it,
+Dialogue: 0,0:14:02.65,0:14:04.30,*Default,NTP,0000,0000,0000,,但其能构成双螺旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it forms a double helix
+Dialogue: 0,0:14:04.30,0:14:07.00,*Default,NTP,0000,0000,0000,,是因为DNA是完全互补的两条链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because complementary strands of DNA strongly
+Dialogue: 0,0:14:07.00,0:14:08.58,*Default,NTP,0000,0000,0000,,彼此之间结合紧密\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}associate with one another
+Dialogue: 0,0:14:08.58,0:14:10.64,*Default,NTP,0000,0000,0000,,结构异常稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's a very stable structure.
+Dialogue: 0,0:14:11.38,0:14:11.97,*Default,NTP,0000,0000,0000,,它们结构稳定\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They do that
+Dialogue: 0,0:14:11.97,0:14:13.05,*Default,NTP,0000,0000,0000,,是因为碱基之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the bases can
+Dialogue: 0,0:14:13.05,0:14:15.34,*Default,NTP,0000,0000,0000,,以特定方式相互作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}interact with one another in particular ways,
+Dialogue: 0,0:14:16.97,0:14:17.79,*Default,NTP,0000,0000,0000,,这是你需要知道的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this you know about.
+Dialogue: 0,0:14:18.03,0:14:20.79,*Default,NTP,0000,0000,0000,,沃森和克里克对DNA结构的描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This was the famous finding of Watson and Crick
+Dialogue: 0,0:14:20.79,0:14:22.81,*Default,NTP,0000,0000,0000,,是一项非常伟大的发现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in describing the structure of DNA.
+Dialogue: 0,0:14:23.95,0:14:27.35,*Default,NTP,0000,0000,0000,,你们可以看看这个图表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is - what this diagram shows you is--
+Dialogue: 0,0:14:27.35,0:14:31.63,*Default,NTP,0000,0000,0000,,演示了连接两条DNA长链为双螺旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the forces that hold these individual strands of DNA
+Dialogue: 0,0:14:31.63,0:14:33.90,*Default,NTP,0000,0000,0000,,结构的化学力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}into a double stranded form.
+Dialogue: 0,0:14:34.96,0:14:36.35,*Default,NTP,0000,0000,0000,,这力量来自于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The forces occur
+Dialogue: 0,0:14:36.36,0:14:38.60,*Default,NTP,0000,0000,0000,,互补的碱基间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of hydrogen bonding
+Dialogue: 0,0:14:38.60,0:14:41.93,*Default,NTP,0000,0000,0000,,氢键的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}between complementary pairs of the bases
+Dialogue: 0,0:14:41.94,0:14:45.41,*Default,NTP,0000,0000,0000,,互补配对的规律是腺嘌呤对胸腺嘧啶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the complementary pairs are adenine and thymine,
+Dialogue: 0,0:14:45.41,0:14:46.28,*Default,NTP,0000,0000,0000,,A对T\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(A)(T)
+Dialogue: 0,0:14:46.76,0:14:51.05,*Default,NTP,0000,0000,0000,,鸟嘌呤对胞嘧啶 G对C\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and guanine and cytosine, (G)(C).
+Dialogue: 0,0:14:51.44,0:14:52.00,*Default,NTP,0000,0000,0000,,如果你预习过课本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now if you read in the book,
+Dialogue: 0,0:14:52.79,0:14:54.57,*Default,NTP,0000,0000,0000,,课本中有关于这些详细的描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you read about where this figure is shown in the book,
+Dialogue: 0,0:14:55.35,0:14:57.04,*Default,NTP,0000,0000,0000,,你可以更深刻的理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can understand more about
+Dialogue: 0,0:14:57.04,0:14:59.64,*Default,NTP,0000,0000,0000,,为什么这些结构是采用这种连接方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why these structures line up in the right way
+Dialogue: 0,0:14:59.64,0:15:02.41,*Default,NTP,0000,0000,0000,,以使对应的分子部分靠近\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that the right molecular elements are together
+Dialogue: 0,0:15:02.41,0:15:04.95,*Default,NTP,0000,0000,0000,,并形成氢键连接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to form hydrogen bonding pairs between them.
+Dialogue: 0,0:15:07.00,0:15:08.13,*Default,NTP,0000,0000,0000,,这些内容超过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's really beyond what
+Dialogue: 0,0:15:08.13,0:15:10.12,*Default,NTP,0000,0000,0000,,要求你们在课堂上要了解的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll be asking you understand for the course
+Dialogue: 0,0:15:10.12,0:15:13.01,*Default,NTP,0000,0000,0000,,不过你可以在书中进一步理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you can understand that if you read it, I'm sure.
+Dialogue: 0,0:15:15.00,0:15:17.95,*Default,NTP,0000,0000,0000,,还要记住T只出现在DNA中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now remember that (T) only appears in DNA
+Dialogue: 0,0:15:17.95,0:15:20.00,*Default,NTP,0000,0000,0000,,而U出现在RNA中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and (U) appears in RNA,
+Dialogue: 0,0:15:21.64,0:15:24.63,*Default,NTP,0000,0000,0000,,U和A也可以通过氢键结合就可以了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so (U) can also form a hydrogen binding pair with (A).
+Dialogue: 0,0:15:26.91,0:15:29.26,*Default,NTP,0000,0000,0000,,DNA分子的全部结构都和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The whole structure of a DNA molecule looks like this,
+Dialogue: 0,0:15:30.01,0:15:33.11,*Default,NTP,0000,0000,0000,,刚才的卡通模型上差不多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}going back to a more cartoon version like I showed you before
+Dialogue: 0,0:15:33.12,0:15:34.95,*Default,NTP,0000,0000,0000,,但细节更为丰富\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but adding some detail onto it now.
+Dialogue: 0,0:15:35.42,0:15:37.38,*Default,NTP,0000,0000,0000,,两条上下的主链作为支柱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are two upright struts of the ladder,
+Dialogue: 0,0:15:37.73,0:15:38.70,*Default,NTP,0000,0000,0000,,一条以蓝色表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one shown in blue here,
+Dialogue: 0,0:15:38.99,0:15:39.64,*Default,NTP,0000,0000,0000,,一条以黑色表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the other shown black.
+Dialogue: 0,0:15:41.30,0:15:44.96,*Default,NTP,0000,0000,0000,,它们由四个不同颜色的片段连接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are linked together by four different colored segments
+Dialogue: 0,0:15:44.96,0:15:46.67,*Default,NTP,0000,0000,0000,,这里不是用颜色表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indicated here not by colors
+Dialogue: 0,0:15:46.67,0:15:47.89,*Default,NTP,0000,0000,0000,,是用字母表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now but by letters.
+Dialogue: 0,0:15:49.26,0:15:51.68,*Default,NTP,0000,0000,0000,,这是DNA 就是GCAT\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's DNA, so it's (G)(C)(A)(T)
+Dialogue: 0,0:15:51.68,0:15:53.50,*Default,NTP,0000,0000,0000,,并且总是成对出现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they always occur in pairs.
+Dialogue: 0,0:15:54.62,0:15:55.84,*Default,NTP,0000,0000,0000,,之前用两种成对的颜色表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Where before it was two
+Dialogue: 0,0:15:55.84,0:15:58.12,*Default,NTP,0000,0000,0000,,现在是用两对字母GCTA表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}colored pairs now it's two lettered pairs .
+Dialogue: 0,0:16:01.02,0:16:04.34,*Default,NTP,0000,0000,0000,,所以DNA和刚才看起来有些不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(G)(C)(T)(A)The chains are different now.
+Dialogue: 0,0:16:04.84,0:16:06.41,*Default,NTP,0000,0000,0000,,但颜色是一样的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They were colored the same,
+Dialogue: 0,0:16:07.20,0:16:08.92,*Default,NTP,0000,0000,0000,,在示意图这些主链的颜色是一样的 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the backbones were colored the same in the diagram.
+Dialogue: 0,0:16:09.31,0:16:10.63,*Default,NTP,0000,0000,0000,,这里被涂成不同的颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're colored different here to
+Dialogue: 0,0:16:10.63,0:16:12.71,*Default,NTP,0000,0000,0000,,来表示另一个不同之处 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indicate one new difference that you know about now,
+Dialogue: 0,0:16:13.18,0:16:14.43,*Default,NTP,0000,0000,0000,,它是有方向的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's that there is an orientation,
+Dialogue: 0,0:16:14.75,0:16:16.05,*Default,NTP,0000,0000,0000,,表示双链一条向上  一条向下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's an up and down on the chain.
+Dialogue: 0,0:16:16.89,0:16:20.11,*Default,NTP,0000,0000,0000,,这是由于核苷酸的非对称性造成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's due to the asymmetry of the nucleotide,
+Dialogue: 0,0:16:22.07,0:16:23.11,*Default,NTP,0000,0000,0000,,这里是5'端和3'端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there's a 5' and a 3'
+Dialogue: 0,0:16:23.11,0:16:24.92,*Default,NTP,0000,0000,0000,,这就是它们连接在一起的方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}end and the way that they're linked together.
+Dialogue: 0,0:16:25.22,0:16:26.53,*Default,NTP,0000,0000,0000,,这条蓝色的链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This blue chain here
+Dialogue: 0,0:16:26.53,0:16:29.04,*Default,NTP,0000,0000,0000,,从5'碳开始一直向下延伸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}goes from 5' carbon all along the chain
+Dialogue: 0,0:16:29.04,0:16:32.04,*Default,NTP,0000,0000,0000,,以3'碳做为链的末端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there's a 3' carbon left open at the bottom.
+Dialogue: 0,0:16:35.28,0:16:38.67,*Default,NTP,0000,0000,0000,,如果想把另一核苷酸连接到这条DNA链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I wanted to link another nucleotide to this DNA chain
+Dialogue: 0,0:16:38.67,0:16:40.98,*Default,NTP,0000,0000,0000,,我将会在DNA链末端添加什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what would I attach here on the bottom?
+Dialogue: 0,0:16:42.25,0:16:43.96,*Default,NTP,0000,0000,0000,,我会添加一个磷酸基团到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would attach the phosphate
+Dialogue: 0,0:16:43.96,0:16:47.24,*Default,NTP,0000,0000,0000,,另外一个核苷酸的5'碳原子上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's connected to the 5' carbon of another nucleotide.
+Dialogue: 0,0:16:49.33,0:16:51.65,*Default,NTP,0000,0000,0000,,我将会将这个分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I would link this one
+Dialogue: 0,0:16:51.65,0:16:55.84,*Default,NTP,0000,0000,0000,,在这个方向上进行添加\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}facing in this direction I would add onto this.
+Dialogue: 0,0:16:58.20,0:16:59.92,*Default,NTP,0000,0000,0000,,对面的那条单链方向相反\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other chain is facing in the other direction,
+Dialogue: 0,0:17:00.55,0:17:01.35,*Default,NTP,0000,0000,0000,,3'位的碳原子向上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the 3' carbon is up,
+Dialogue: 0,0:17:01.35,0:17:02.42,*Default,NTP,0000,0000,0000,,5'位的碳原子向下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the 5' carbon is down.
+Dialogue: 0,0:17:06.13,0:17:08.32,*Default,NTP,0000,0000,0000,,让我们记住\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember that this molecule,
+Dialogue: 0,0:17:08.71,0:17:10.19,*Default,NTP,0000,0000,0000,,如果我把蓝色的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's look at the blue one
+Dialogue: 0,0:17:10.19,0:17:10.91,*Default,NTP,0000,0000,0000,,单链倒过来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}wouldn't be the same
+Dialogue: 0,0:17:10.91,0:17:12.93,*Default,NTP,0000,0000,0000,,那么这条链和原来不一样了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I turned it upside down.
+Dialogue: 0,0:17:15.19,0:17:16.78,*Default,NTP,0000,0000,0000,,记住单链倒过来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It wouldn't be the same
+Dialogue: 0,0:17:16.79,0:17:18.58,*Default,NTP,0000,0000,0000,,就和原来不一样了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I turned it upside down
+Dialogue: 0,0:17:18.58,0:17:20.95,*Default,NTP,0000,0000,0000,,这是因为碳原子和糖环结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because the carbons - the rings here,
+Dialogue: 0,0:17:20.95,0:17:22.33,*Default,NTP,0000,0000,0000,,戊糖会翻转\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the pentose's would all be turned over,
+Dialogue: 0,0:17:23.29,0:17:25.28,*Default,NTP,0000,0000,0000,,使得这个化学结构看起来不一样了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the chemistry would look different
+Dialogue: 0,0:17:25.29,0:17:27.96,*Default,NTP,0000,0000,0000,,碱基的顺序也不一样了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the sequence of bases would look different.
+Dialogue: 0,0:17:31.87,0:17:34.52,*Default,NTP,0000,0000,0000,,与任何单链配对的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The corresponding half of the
+Dialogue: 0,0:17:34.52,0:17:38.54,*Default,NTP,0000,0000,0000,,另一条单链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ladder that corresponds to any given ladder,
+Dialogue: 0,0:17:38.90,0:17:41.45,*Default,NTP,0000,0000,0000,,比方说与蓝色DNA分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say the black DNA molecule
+Dialogue: 0,0:17:41.45,0:17:43.99,*Default,NTP,0000,0000,0000,,配对的黑色DNA分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that corresponds to the blue one
+Dialogue: 0,0:17:43.99,0:17:46.07,*Default,NTP,0000,0000,0000,,并不是蓝色DNA分子的镜像\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not just a mirror image.
+Dialogue: 0,0:17:47.87,0:17:52.66,*Default,NTP,0000,0000,0000,,我们称之为互补链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We call it the complement and each strand of DNA,
+Dialogue: 0,0:17:54.67,0:17:56.04,*Default,NTP,0000,0000,0000,,每个DNA聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}each polymer of DNA
+Dialogue: 0,0:17:56.04,0:18:00.31,*Default,NTP,0000,0000,0000,,都只有一种互补链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you could make or you could draw has only one complement
+Dialogue: 0,0:18:00.31,0:18:03.54,*Default,NTP,0000,0000,0000,,互补链有以下特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that complement has the following features.
+Dialogue: 0,0:18:03.95,0:18:06.74,*Default,NTP,0000,0000,0000,,一  这些DNA单链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, its chain is oriented in the
+Dialogue: 0,0:18:06.74,0:18:10.36,*Default,NTP,0000,0000,0000,,方向相反  一条从5'端到 3'端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}opposite direction: where this one goes 5' to 3',
+Dialogue: 0,0:18:10.77,0:18:13.31,*Default,NTP,0000,0000,0000,,另一条从3'端到5'端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this one goes 3' to 5'.
+Dialogue: 0,0:18:14.74,0:18:17.16,*Default,NTP,0000,0000,0000,,它们方向相反\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's oriented in the oppose direction
+Dialogue: 0,0:18:17.16,0:18:20.94,*Default,NTP,0000,0000,0000,,并且所有的碱基都是互补的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it has the complementary base pairs at each position.
+Dialogue: 0,0:18:21.96,0:18:23.65,*Default,NTP,0000,0000,0000,,有碱基A的地方一定有碱基T\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Where there's an (A) here there's got to be a (T) here,
+Dialogue: 0,0:18:24.26,0:18:25.47,*Default,NTP,0000,0000,0000,,有碱基T的地方一定有碱基A\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there's a (T) here there's got to be(A) an here,
+Dialogue: 0,0:18:26.13,0:18:28.60,*Default,NTP,0000,0000,0000,,碱基C对应着G  G对应C\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there's a (C) here a (G), a (G), a (C) .
+Dialogue: 0,0:18:29.92,0:18:33.11,*Default,NTP,0000,0000,0000,,DNA双链要满足互补配对原则\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's because you have to satisfy this base pair matching
+Dialogue: 0,0:18:33.11,0:18:34.50,*Default,NTP,0000,0000,0000,,以使碱基对之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to have hydrogen
+Dialogue: 0,0:18:34.50,0:18:36.89,*Default,NTP,0000,0000,0000,,形成氢键\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bonding in each of the struts of the ladder
+Dialogue: 0,0:18:36.90,0:18:38.84,*Default,NTP,0000,0000,0000,,从而形成稳定的双链结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to form a stable structure.
+Dialogue: 0,0:18:41.91,0:18:43.95,*Default,NTP,0000,0000,0000,,假设有两条DNA单链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I'm talking about two DNA strands
+Dialogue: 0,0:18:43.95,0:18:46.48,*Default,NTP,0000,0000,0000,,有一两个碱基不能配对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they differ only in one or two base pairs
+Dialogue: 0,0:18:46.48,0:18:48.20,*Default,NTP,0000,0000,0000,,它们就不能完全互补\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they won't be exact complements
+Dialogue: 0,0:18:48.21,0:18:50.32,*Default,NTP,0000,0000,0000,,也无法形成双螺旋形结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they won't form this double helix.
+Dialogue: 0,0:18:55.00,0:19:00.00,*Default,NTP,0000,0000,0000,,这个双链互补配对的概念非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This notion of complementary strands is very important.
+Dialogue: 0,0:19:00.99,0:19:03.66,*Default,NTP,0000,0000,0000,,你身上细胞内的DNA就是这样子的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the way that DNA exists inside the cells of your body.
+Dialogue: 0,0:19:04.09,0:19:05.56,*Default,NTP,0000,0000,0000,,这种碱基配对存在于DNA双链中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It exists in a double stranded
+Dialogue: 0,0:19:05.56,0:19:06.86,*Default,NTP,0000,0000,0000,,每条单链都与其互补链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}form where every strand
+Dialogue: 0,0:19:06.86,0:19:08.16,*Default,NTP,0000,0000,0000,,通过这个原则配对组合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is matched by its complement.
+Dialogue: 0,0:19:09.54,0:19:13.44,*Default,NTP,0000,0000,0000,,这些DNA分子是非常长的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These molecules of DNA, very long molecules of DNA,
+Dialogue: 0,0:19:14.46,0:19:16.58,*Default,NTP,0000,0000,0000,,它们通过折叠等方式压缩形成染色体后 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are condensed and packaged
+Dialogue: 0,0:19:16.58,0:19:20.32,*Default,NTP,0000,0000,0000,,被装配在你身体内的每一个细胞内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}within the nucleus of every cell in your body.
+Dialogue: 0,0:19:22.06,0:19:24.40,*Default,NTP,0000,0000,0000,,身体内每一个细胞都有完全相同的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every cell in your body has exactly the same DNA;
+Dialogue: 0,0:19:24.40,0:19:25.87,*Default,NTP,0000,0000,0000,,如果我把整条DNA展开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is if I could stretch out
+Dialogue: 0,0:19:25.87,0:19:28.17,*Default,NTP,0000,0000,0000,,然后检查其碱基对的顺序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the DNA and look at the base pair sequence,
+Dialogue: 0,0:19:29.62,0:19:31.75,*Default,NTP,0000,0000,0000,,你体内每个细胞中染色体上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sequences of bases along all the DNA
+Dialogue: 0,0:19:31.76,0:19:33.36,*Default,NTP,0000,0000,0000,,DNA的碱基对顺序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in your chromosomes,
+Dialogue: 0,0:19:34.16,0:19:36.04,*Default,NTP,0000,0000,0000,,都是完全相同的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they'd be identical in all the cells.
+Dialogue: 0,0:19:36.97,0:19:38.41,*Default,NTP,0000,0000,0000,,不同的人的DNA碱基对顺序是不一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They'd be different in each of us
+Dialogue: 0,0:19:38.41,0:19:41.16,*Default,NTP,0000,0000,0000,,碱基对顺序的不同组合导致了个体多样性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that leads to the difference in the diversity between people.
+Dialogue: 0,0:19:43.51,0:19:46.06,*Default,NTP,0000,0000,0000,,你们一定听说过人类基因组计划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've heard about the human genome project,
+Dialogue: 0,0:19:46.49,0:19:48.71,*Default,NTP,0000,0000,0000,,之后我们会讨论一些有关这个计划的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about that a little bit later.
+Dialogue: 0,0:19:49.44,0:19:50.57,*Default,NTP,0000,0000,0000,,这个计划的目的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The goal of that was
+Dialogue: 0,0:19:50.57,0:19:52.70,*Default,NTP,0000,0000,0000,,建立一个有代表性人类的基因顺序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to take for a typical human,
+Dialogue: 0,0:19:54.22,0:19:55.57,*Default,NTP,0000,0000,0000,,或者说是典型的人类基因组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or for a typical -
+Dialogue: 0,0:19:55.57,0:19:56.92,*Default,NTP,0000,0000,0000,,就人类基因组计划来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the case of the human genome project
+Dialogue: 0,0:19:56.92,0:19:58.65,*Default,NTP,0000,0000,0000,,或许你在研究果蝇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe you're looking at fruit flies,
+Dialogue: 0,0:19:59.16,0:20:01.19,*Default,NTP,0000,0000,0000,,你想观察果蝇内的所有DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you want to look at all the DNA in a fruit fly,
+Dialogue: 0,0:20:01.53,0:20:03.87,*Default,NTP,0000,0000,0000,,而人类基因组计划是观察组成人类的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but to look at the sequence of base pairs
+Dialogue: 0,0:20:03.87,0:20:06.62,*Default,NTP,0000,0000,0000,,DNA的碱基对顺序并且将它们记录下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that makes up human DNA and write them all out;
+Dialogue: 0,0:20:06.62,0:20:08.27,*Default,NTP,0000,0000,0000,,我们不久之后会讨论这些内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about that later.
+Dialogue: 0,0:20:09.88,0:20:11.56,*Default,NTP,0000,0000,0000,,这张幻灯片展示了 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This slide shows one important
+Dialogue: 0,0:20:11.56,0:20:13.80,*Default,NTP,0000,0000,0000,,DNA非常重要的理化特性 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}feature of the physical chemistry of DNA
+Dialogue: 0,0:20:13.80,0:20:15.77,*Default,NTP,0000,0000,0000,,这些特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that turns out to be very important
+Dialogue: 0,0:20:15.77,0:20:18.33,*Default,NTP,0000,0000,0000,,对于所有以DNA为基础的技术很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for all of the technology that is built on DNA.
+Dialogue: 0,0:20:18.94,0:20:23.67,*Default,NTP,0000,0000,0000,,这些特性能从根本上解释 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It has to do with the nature of this complementary
+Dialogue: 0,0:20:23.67,0:20:27.17,*Default,NTP,0000,0000,0000,,为何DNA双链的碱基能互补配对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}binding between double stranded DNA
+Dialogue: 0,0:20:27.17,0:20:29.95,*Default,NTP,0000,0000,0000,,以及在形成稳定的DNA分子结构时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the fidelity of this base
+Dialogue: 0,0:20:29.95,0:20:34.36,*Default,NTP,0000,0000,0000,,碱基互补配对为何具有一致性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pair matching in forming stable DNA molecules.
+Dialogue: 0,0:20:35.02,0:20:37.70,*Default,NTP,0000,0000,0000,,互补配对的一致性是非常高的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I told you that the fidelity is very high.
+Dialogue: 0,0:20:38.05,0:20:38.64,*Default,NTP,0000,0000,0000,,这表示什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does that mean?
+Dialogue: 0,0:20:39.23,0:20:40.77,*Default,NTP,0000,0000,0000,,这表示只有两条链的碱基对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That only strands that have
+Dialogue: 0,0:20:40.77,0:20:43.69,*Default,NTP,0000,0000,0000,,完全互补才能形成DNA双链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this exact complement can form double stranded DNA.
+Dialogue: 0,0:20:45.78,0:20:47.77,*Default,NTP,0000,0000,0000,,我们可以做一个实验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because of that you can do the following experiment,
+Dialogue: 0,0:20:49.36,0:20:51.93,*Default,NTP,0000,0000,0000,,这是一个非常简单容易理解的实验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's a simple experiment, it's simple to understand,
+Dialogue: 0,0:20:52.91,0:20:54.32,*Default,NTP,0000,0000,0000,,但是这个实验验证的概念非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the concept is very important
+Dialogue: 0,0:20:54.32,0:20:55.94,*Default,NTP,0000,0000,0000,,我希望你们能够仔细思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I encourage you to think about it
+Dialogue: 0,0:20:55.94,0:20:57.30,*Default,NTP,0000,0000,0000,,并且能够掌握\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and make sure you understand it.
+Dialogue: 0,0:20:57.31,0:21:00.48,*Default,NTP,0000,0000,0000,,假如我把两条DNA双链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I took two double stranded DNA molecules
+Dialogue: 0,0:21:00.49,0:21:03.44,*Default,NTP,0000,0000,0000,,放在特定的条件下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I exposed them to certain conditions
+Dialogue: 0,0:21:03.44,0:21:05.53,*Default,NTP,0000,0000,0000,,使它们变性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that caused them to denature,
+Dialogue: 0,0:21:06.28,0:21:08.23,*Default,NTP,0000,0000,0000,,变性表示使它们的原始结构分开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that means its native structure falls apart.
+Dialogue: 0,0:21:11.98,0:21:13.15,*Default,NTP,0000,0000,0000,,原始结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The native structure
+Dialogue: 0,0:21:13.15,0:21:15.31,*Default,NTP,0000,0000,0000,,在这里就是指DNA双链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is this double stranded structure here
+Dialogue: 0,0:21:15.31,0:21:16.92,*Default,NTP,0000,0000,0000,,如果我稍微加热\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if I heat it up slightly
+Dialogue: 0,0:21:16.92,0:21:18.03,*Default,NTP,0000,0000,0000,,并且加入一些碱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I add some base,
+Dialogue: 0,0:21:18.62,0:21:19.67,*Default,NTP,0000,0000,0000,,在弱碱性的条件下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so under slightly basic conditions,
+Dialogue: 0,0:21:20.58,0:21:22.44,*Default,NTP,0000,0000,0000,,这些配对碱基会分开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these molecules will fall apart
+Dialogue: 0,0:21:22.44,0:21:24.41,*Default,NTP,0000,0000,0000,,这是因为在一定条件下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you've created conditions
+Dialogue: 0,0:21:24.41,0:21:25.95,*Default,NTP,0000,0000,0000,,碱基对之间的氢键\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the hydrogen bonding
+Dialogue: 0,0:21:25.95,0:21:28.42,*Default,NTP,0000,0000,0000,,不再稳定并且会断裂分开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is no longer favorable so they peel apart.
+Dialogue: 0,0:21:29.91,0:21:32.02,*Default,NTP,0000,0000,0000,,假如我这里有一个烧杯 里面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I had a beaker sitting on the table here
+Dialogue: 0,0:21:32.02,0:21:34.99,*Default,NTP,0000,0000,0000,,盛有一百万条蓝色DNA双链和\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it contained a million blue double stranded DNA molecules
+Dialogue: 0,0:21:34.99,0:21:37.29,*Default,NTP,0000,0000,0000,,一百万条红色DNA双链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and a million red double stranded DNA molecules
+Dialogue: 0,0:21:37.29,0:21:38.48,*Default,NTP,0000,0000,0000,,然后我稍微加热一下烧杯\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I heated it up
+Dialogue: 0,0:21:38.48,0:21:39.35,*Default,NTP,0000,0000,0000,,并且加一些碱\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and added a little base,
+Dialogue: 0,0:21:41.24,0:21:43.56,*Default,NTP,0000,0000,0000,,很快我就有了四百万条DNA单链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd soon have four million individual strands
+Dialogue: 0,0:21:43.56,0:21:45.43,*Default,NTP,0000,0000,0000,,漂浮在溶液里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}just floating around in the solution
+Dialogue: 0,0:21:45.43,0:21:46.81,*Default,NTP,0000,0000,0000,,因为我已经使得氢键断裂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I've broken up this
+Dialogue: 0,0:21:46.81,0:21:49.37,*Default,NTP,0000,0000,0000,,DNA双链也随之打开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}hydrogen bonding and the DNA molecules fall apart.
+Dialogue: 0,0:21:49.97,0:21:50.69,*Default,NTP,0000,0000,0000,,这个过程称为DNA变性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's called denaturing DNA.
+Dialogue: 0,0:21:53.73,0:21:55.25,*Default,NTP,0000,0000,0000,,我们从中可以知道一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That tells you something about
+Dialogue: 0,0:21:55.25,0:21:57.21,*Default,NTP,0000,0000,0000,,DNA分子的理化特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the physical chemistry of the molecule;
+Dialogue: 0,0:21:57.21,0:22:00.15,*Default,NTP,0000,0000,0000,,双链是由氢键连接在一起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it's these hydrogen bonds that hold the double strands
+Dialogue: 0,0:22:00.15,0:22:02.70,*Default,NTP,0000,0000,0000,,在一定条件下这些氢键可以断裂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I can break those down under certain conditions.
+Dialogue: 0,0:22:05.13,0:22:08.63,*Default,NTP,0000,0000,0000,,假如我把烧杯的温度恢复到初始状态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I then put it back into its original condition,
+Dialogue: 0,0:22:09.56,0:22:12.94,*Default,NTP,0000,0000,0000,,降低温度  温度降低到体温\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}lower the heat say, temperature back to body
+Dialogue: 0,0:22:12.94,0:22:15.55,*Default,NTP,0000,0000,0000,,将pH值降低到七\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}temperature and reduce the pH down to seven again,
+Dialogue: 0,0:22:16.13,0:22:17.17,*Default,NTP,0000,0000,0000,,这些分子会复性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the molecules will re-nature.
+Dialogue: 0,0:22:18.60,0:22:20.24,*Default,NTP,0000,0000,0000,,它们将重新形成原本的结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They will reform their natural structure,
+Dialogue: 0,0:22:21.78,0:22:22.42,*Default,NTP,0000,0000,0000,,对于DNA来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for DNA that means
+Dialogue: 0,0:22:22.42,0:22:23.52,*Default,NTP,0000,0000,0000,,就是重新形成DNA双螺旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}forming double helixes.
+Dialogue: 0,0:22:25.59,0:22:27.22,*Default,NTP,0000,0000,0000,,但是双链的形成也不是随意的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they will do that in a very particular way,
+Dialogue: 0,0:22:28.00,0:22:30.63,*Default,NTP,0000,0000,0000,,只有完全互补的单链之间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that only strands that exactly match
+Dialogue: 0,0:22:30.63,0:22:33.66,*Default,NTP,0000,0000,0000,,才成重新恢复到它们原先的结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will be able to reform their native structure.
+Dialogue: 0,0:22:35.96,0:22:38.23,*Default,NTP,0000,0000,0000,,蓝色的单链永远都不会\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A blue strand here will never re-nature
+Dialogue: 0,0:22:38.23,0:22:40.95,*Default,NTP,0000,0000,0000,,和红色的单链复性组成双链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a red strand
+Dialogue: 0,0:22:40.95,0:22:45.15,*Default,NTP,0000,0000,0000,,因为它们的碱基对顺序不是互补的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because their sequences don't match exactly,
+Dialogue: 0,0:22:49.00,0:22:50.53,*Default,NTP,0000,0000,0000,,而相互之间互补的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but a complementary blue
+Dialogue: 0,0:22:50.53,0:22:53.34,*Default,NTP,0000,0000,0000,,蓝色单链之间就会相互配对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}strand will always rematch with its partner.
+Dialogue: 0,0:22:55.44,0:22:57.00,*Default,NTP,0000,0000,0000,,这正是所谓核酸分子杂交的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now this is the basis of a
+Dialogue: 0,0:22:57.00,0:22:59.88,*Default,NTP,0000,0000,0000,,物理化学反应的基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}physical chemistry process called hybridization.
+Dialogue: 0,0:23:01.15,0:23:02.13,*Default,NTP,0000,0000,0000,,事实上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out
+Dialogue: 0,0:23:02.13,0:23:06.80,*Default,NTP,0000,0000,0000,,我们测定DNA序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that this is how we can identify specific DNA sequences
+Dialogue: 0,0:23:06.80,0:23:10.82,*Default,NTP,0000,0000,0000,,进行DNA指纹验证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how we can do things like DNA fingerprinting,
+Dialogue: 0,0:23:11.92,0:23:16.84,*Default,NTP,0000,0000,0000,,以及克隆各种生物DNA分子的原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how we can clone molecules, DNA molecules from one organism to another,
+Dialogue: 0,0:23:17.24,0:23:18.85,*Default,NTP,0000,0000,0000,,所有这些的理论依据都是变性复性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}rely very heavily on this
+Dialogue: 0,0:23:18.85,0:23:21.76,*Default,NTP,0000,0000,0000,,和核酸分子杂交的原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}principle of re-naturation and hybridization.
+Dialogue: 0,0:23:22.75,0:23:25.04,*Default,NTP,0000,0000,0000,,核酸分子杂交表示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hybridization simply means
+Dialogue: 0,0:23:25.04,0:23:29.70,*Default,NTP,0000,0000,0000,,DNA在变性状态下可以恢复活性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that DNA will re-nature and form a stable double helix
+Dialogue: 0,0:23:29.70,0:23:32.33,*Default,NTP,0000,0000,0000,,和与其配对的单链形成稳定的双螺旋结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only with its particular match,
+Dialogue: 0,0:23:34.19,0:23:37.99,*Default,NTP,0000,0000,0000,,只有在完全配对时才会发生这种情况\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only with the hybrid that it is perfectly complementary, too.
+Dialogue: 0,0:23:43.20,0:23:47.22,*Default,NTP,0000,0000,0000,,上面我们直观地讲解了DNA的理化特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's something about the physical chemistry of DNA,
+Dialogue: 0,0:23:48.00,0:23:50.24,*Default,NTP,0000,0000,0000,,DNA的结构  以及它的功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what it looks like, and how it behaves in the simple sense.
+Dialogue: 0,0:23:51.48,0:23:54.27,*Default,NTP,0000,0000,0000,,下面的时间我将讲解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I want to spend the rest of the time doing
+Dialogue: 0,0:23:54.27,0:23:57.63,*Default,NTP,0000,0000,0000,,一些DNA的生物学特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is talking about some of the biological properties of DNA.
+Dialogue: 0,0:23:58.98,0:23:59.49,*Default,NTP,0000,0000,0000,,诚然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again,
+Dialogue: 0,0:23:59.81,0:24:02.34,*Default,NTP,0000,0000,0000,,我知道这些内容大部分同学已经非常熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know this is something that's familiar to most of you
+Dialogue: 0,0:24:02.34,0:24:06.89,*Default,NTP,0000,0000,0000,,所以我在下面的时间里简单的阐述一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so indulge me just for the rest of this lecture, I'll go through it.
+Dialogue: 0,0:24:07.15,0:24:09.85,*Default,NTP,0000,0000,0000,,我会讲一些我认为非常重要的内容和概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to try to hit the points that I think are important
+Dialogue: 0,0:24:09.86,0:24:11.50,*Default,NTP,0000,0000,0000,,这些内容和概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to remember because they're going to be concepts
+Dialogue: 0,0:24:11.69,0:24:13.18,*Default,NTP,0000,0000,0000,,将会在这个课程中反复出现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that come up again and again throughout the course,
+Dialogue: 0,0:24:14.44,0:24:15.54,*Default,NTP,0000,0000,0000,,我要求每个同学都要完全掌握这些内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I want to make sure that we're on the same page.
+Dialogue: 0,0:24:17.41,0:24:18.37,*Default,NTP,0000,0000,0000,,顶部这个示意图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This diagram at the top
+Dialogue: 0,0:24:18.37,0:24:20.17,*Default,NTP,0000,0000,0000,,对大家来说都非常熟悉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}here is a very familiar one to most of you,
+Dialogue: 0,0:24:20.56,0:24:23.68,*Default,NTP,0000,0000,0000,,这叫做分子生物学的中心法则\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's sometimes called the central dogma of molecular biology.
+Dialogue: 0,0:24:24.48,0:24:27.38,*Default,NTP,0000,0000,0000,,这个图展示了信息如何在细胞内传递\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It indicates how information flows in cells
+Dialogue: 0,0:24:27.38,0:24:30.94,*Default,NTP,0000,0000,0000,,以及细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and indicates a lot about the work that a cell does
+Dialogue: 0,0:24:30.94,0:24:33.43,*Default,NTP,0000,0000,0000,,在维持 复制自身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in maintaining and recreating itself,
+Dialogue: 0,0:24:33.75,0:24:34.49,*Default,NTP,0000,0000,0000,,和维持其周围环境所需起的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maintaining its environment.
+Dialogue: 0,0:24:37.37,0:24:38.64,*Default,NTP,0000,0000,0000,,所以说细胞工作所需的的全部信息\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is, that the information needed to operate a cell 
+Dialogue: 0,0:24:38.64,0:24:39.60,*Default,NTP,0000,0000,0000,,都被存储在DNA内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is stored in its DNA.
+Dialogue: 0,0:24:41.26,0:24:44.03,*Default,NTP,0000,0000,0000,,信息通过某种过程起到作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That information gets put into action through a process,
+Dialogue: 0,0:24:44.49,0:24:46.23,*Default,NTP,0000,0000,0000,,这个生物学过程叫转录  在转录过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a biological process called transcription,
+Dialogue: 0,0:24:47.16,0:24:50.30,*Default,NTP,0000,0000,0000,,DNA的特定区域转录成RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where particular regions of DNA are transcribed into RNA.
+Dialogue: 0,0:24:52.99,0:24:55.21,*Default,NTP,0000,0000,0000,,这些RNA指导合成蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That RNA is made into proteins,
+Dialogue: 0,0:24:55.85,0:24:57.73,*Default,NTP,0000,0000,0000,,蛋白质是细胞生命活动的承担者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and proteins are the working molecules of the cell,
+Dialogue: 0,0:24:58.10,0:24:59.61,*Default,NTP,0000,0000,0000,,它们可以是酶  或是结构性分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're enzymes, they're structural molecules,
+Dialogue: 0,0:25:00.62,0:25:02.16,*Default,NTP,0000,0000,0000,,也可以存在于细胞膜上的膜蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're are proteins that exist in the
+Dialogue: 0,0:25:02.16,0:25:04.43,*Default,NTP,0000,0000,0000,,能够让一些物质通过它们进出于细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}membrane that allow things to go in and out of the cell,
+Dialogue: 0,0:25:05.15,0:25:07.05,*Default,NTP,0000,0000,0000,,所以蛋白质才是真正意义上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so really the working molecules
+Dialogue: 0,0:25:07.05,0:25:08.64,*Default,NTP,0000,0000,0000,,细胞生命活动的承担者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are the cell in every sense.
+Dialogue: 0,0:25:09.09,0:25:11.17,*Default,NTP,0000,0000,0000,,RNA通过一个被称作翻译的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}RNA is converted into protein
+Dialogue: 0,0:25:11.17,0:25:12.28,*Default,NTP,0000,0000,0000,,来指导生产蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by a process called translation.
+Dialogue: 0,0:25:14.31,0:25:16.23,*Default,NTP,0000,0000,0000,,这里有一张更加详细的图片\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's another picture of it here,
+Dialogue: 0,0:25:17.27,0:25:18.99,*Default,NTP,0000,0000,0000,,来说明这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}showing it in a little bit more detail,
+Dialogue: 0,0:25:19.58,0:25:22.73,*Default,NTP,0000,0000,0000,,人体内每个细胞中都含有大量DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you have lots of DNA in each of the cells in your body
+Dialogue: 0,0:25:22.73,0:25:25.45,*Default,NTP,0000,0000,0000,,但并不是所有的DNA都会同时发挥作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you're not using all that DNA at any one time.
+Dialogue: 0,0:25:26.53,0:25:27.87,*Default,NTP,0000,0000,0000,,每个细胞只用到了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every cell in your body is only using
+Dialogue: 0,0:25:27.87,0:25:30.53,*Default,NTP,0000,0000,0000,,决定该细胞生物功能的DNA片段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a fraction of the DNA that's available to it.
+Dialogue: 0,0:25:31.38,0:25:33.46,*Default,NTP,0000,0000,0000,,比如说可以产生胰岛素的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Cells in your pancreas, for example,
+Dialogue: 0,0:25:33.46,0:25:35.24,*Default,NTP,0000,0000,0000,,胰腺细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are making the protein insulin.
+Dialogue: 0,0:25:36.32,0:25:38.53,*Default,NTP,0000,0000,0000,,它们产生胰岛素蛋白是因为你需要它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're making that because you need this protein insulin,
+Dialogue: 0,0:25:38.53,0:25:39.27,*Default,NTP,0000,0000,0000,,胰岛素是一种激素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a hormone,
+Dialogue: 0,0:25:39.91,0:25:41.40,*Default,NTP,0000,0000,0000,,它在糖代谢中起着非常重要的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's important for sugar metabolism in your body.
+Dialogue: 0,0:25:42.08,0:25:45.99,*Default,NTP,0000,0000,0000,,胰腺里的细胞产生胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those cells in your pancreas are making insulin.
+Dialogue: 0,0:25:46.46,0:25:49.27,*Default,NTP,0000,0000,0000,,这意味着基因编码了胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That means the gene that encodes insulin,
+Dialogue: 0,0:25:50.52,0:25:52.87,*Default,NTP,0000,0000,0000,,碱基序列编码了胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sequence of base pairs that encode insulin.
+Dialogue: 0,0:25:53.26,0:25:53.91,*Default,NTP,0000,0000,0000,,一会儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll talk about what that means,
+Dialogue: 0,0:25:54.92,0:25:56.18,*Default,NTP,0000,0000,0000,,我将会讨论基因编码胰岛素的意义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}encoding insulin means in a minute,
+Dialogue: 0,0:25:56.57,0:25:59.92,*Default,NTP,0000,0000,0000,,所有细胞都含有相同的胰岛素基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's a gene that tells your body
+Dialogue: 0,0:25:59.92,0:26:04.11,*Default,NTP,0000,0000,0000,,它决定胰岛素的结构以及如何被转录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what insulin looks like and that gets transcribed
+Dialogue: 0,0:26:04.11,0:26:07.63,*Default,NTP,0000,0000,0000,,但是只有胰腺细胞才能产生胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but only in those cells that make insulin.
+Dialogue: 0,0:26:08.15,0:26:10.66,*Default,NTP,0000,0000,0000,,只有在能表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It gets converted into a protein, insulin,
+Dialogue: 0,0:26:11.38,0:26:12.98,*Default,NTP,0000,0000,0000,,胰岛素蛋白RNA的细胞里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}only in those cells that are able
+Dialogue: 0,0:26:12.98,0:26:15.56,*Default,NTP,0000,0000,0000,,基因才能指导产生胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to make the RNA that are able to express the protein.
+Dialogue: 0,0:26:19.11,0:26:20.28,*Default,NTP,0000,0000,0000,,事实表明蛋白质在这个过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it turns out that
+Dialogue: 0,0:26:20.28,0:26:22.87,*Default,NTP,0000,0000,0000,,也起了重要的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}proteins are essential in driving this process too.
+Dialogue: 0,0:26:25.01,0:26:27.81,*Default,NTP,0000,0000,0000,,为了使每个细胞都具有DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In order to have DNA you have to make DNA
+Dialogue: 0,0:26:27.81,0:26:31.73,*Default,NTP,0000,0000,0000,,身体通过一个叫做DNA合成的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and your cells are continually making DNA inside your body,
+Dialogue: 0,0:26:32.24,0:26:34.12,*Default,NTP,0000,0000,0000,,不停的生产DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through a process of DNA synthesis
+Dialogue: 0,0:26:34.12,0:26:35.31,*Default,NTP,0000,0000,0000,,这个合成过程是在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that synthesis is
+Dialogue: 0,0:26:35.31,0:26:37.98,*Default,NTP,0000,0000,0000,,一种酶的催化下进行的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}occurring because of the presence of an enzyme,
+Dialogue: 0,0:26:38.98,0:26:39.50,*Default,NTP,0000,0000,0000,,这种酶叫做DNA聚合酶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a protein called DNA polymerase.
+Dialogue: 0,0:26:40.93,0:26:41.56,*Default,NTP,0000,0000,0000,,RNA的合成也很类似\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In this same way,
+Dialogue: 0,0:26:41.95,0:26:43.44,*Default,NTP,0000,0000,0000,,身体内每个细胞内\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this process of transcription
+Dialogue: 0,0:26:43.44,0:26:46.23,*Default,NTP,0000,0000,0000,,转录过程的进行都是在一种称作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is occurring in cells throughout body all the time
+Dialogue: 0,0:26:46.23,0:26:48.86,*Default,NTP,0000,0000,0000,,RNA聚合酶的蛋白质催化下进行的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is made possible by a protein called RNA polymerase.
+Dialogue: 0,0:26:50.28,0:26:53.76,*Default,NTP,0000,0000,0000,,它催化从DNA模板生成RNA的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It allows RNA to be made from a DNA template.
+Dialogue: 0,0:26:56.06,0:26:59.06,*Default,NTP,0000,0000,0000,,基因表达不是简单的从DNA到RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not as simple as DNA going to RNA going to protein,
+Dialogue: 0,0:26:59.44,0:27:00.94,*Default,NTP,0000,0000,0000,,再到蛋白质  因为整个过程需要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because proteins need to be present
+Dialogue: 0,0:27:01.50,0:27:02.88,*Default,NTP,0000,0000,0000,,不同酶的催化作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to make these things happen as well.
+Dialogue: 0,0:27:06.20,0:27:08.13,*Default,NTP,0000,0000,0000,,下面简要介绍一下DNA的合成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's talk about DNA synthesis for a minute.
+Dialogue: 0,0:27:08.34,0:27:09.69,*Default,NTP,0000,0000,0000,,当体内的细胞分裂的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When a cell divides in your body,
+Dialogue: 0,0:27:10.25,0:27:12.96,*Default,NTP,0000,0000,0000,,比如肠道细胞分裂  皮肤细胞分裂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when cells of your intestine divide, when cells of your skin divide,
+Dialogue: 0,0:27:14.00,0:27:14.97,*Default,NTP,0000,0000,0000,,分裂过程在持续不断的进行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they're doing this all the time,
+Dialogue: 0,0:27:15.69,0:27:19.43,*Default,NTP,0000,0000,0000,,一个细胞将分裂产生两个子代细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order for a cell to divide and form two daughter cells--
+Dialogue: 0,0:27:19.43,0:27:21.32,*Default,NTP,0000,0000,0000,,我们将在下周详细讨论分裂过程 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll talk about that process
+Dialogue: 0,0:27:21.33,0:27:24.06,*Default,NTP,0000,0000,0000,,在分裂过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}next week--but in order for that to happen
+Dialogue: 0,0:27:24.06,0:27:25.83,*Default,NTP,0000,0000,0000,,亲代细胞复制其所有的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the parent cell has to copy
+Dialogue: 0,0:27:25.83,0:27:28.57,*Default,NTP,0000,0000,0000,,使其有足够的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all of its DNA in order to have enough DNA
+Dialogue: 0,0:27:28.57,0:27:30.66,*Default,NTP,0000,0000,0000,,以便传递给子代细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to pass on to two daughter cells.
+Dialogue: 0,0:27:31.48,0:27:32.67,*Default,NTP,0000,0000,0000,,这个过程是通过DNA合成来完成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It does that through a process of DNA synthesis.
+Dialogue: 0,0:27:34.01,0:27:37.15,*Default,NTP,0000,0000,0000,,DNA合成是细胞的一项生存机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What happens is the machinery of the cell,
+Dialogue: 0,0:27:37.72,0:27:40.80,*Default,NTP,0000,0000,0000,,其中有一种蛋白质叫DNA聚合酶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}largely this protein DNA polymerase,
+Dialogue: 0,0:27:41.21,0:27:43.66,*Default,NTP,0000,0000,0000,,它能够打开双链DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is able to open up the double stranded DNA,
+Dialogue: 0,0:27:45.00,0:27:46.01,*Default,NTP,0000,0000,0000,,使其在细胞核内变性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to denature it locally,
+Dialogue: 0,0:27:47.86,0:27:50.22,*Default,NTP,0000,0000,0000,,暴露出复制部位\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}exposing two strands which
+Dialogue: 0,0:27:50.22,0:27:54.21,*Default,NTP,0000,0000,0000,,以便复制DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it then makes - allows it to make copies of.
+Dialogue: 0,0:27:54.83,0:27:58.11,*Default,NTP,0000,0000,0000,,这里展示的是在DNA合成过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's shown here is what's called a replication fork
+Dialogue: 0,0:27:58.11,0:28:00.35,*Default,NTP,0000,0000,0000,,形成的DNA复制叉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in DNA that's undergoing synthesis.
+Dialogue: 0,0:28:01.21,0:28:04.03,*Default,NTP,0000,0000,0000,,这里DNA分子被分开\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The DNA molecule here has been spread apart,
+Dialogue: 0,0:28:04.66,0:28:07.27,*Default,NTP,0000,0000,0000,,形成两条单链DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}opening up two single stranded DNA's
+Dialogue: 0,0:28:07.27,0:28:10.09,*Default,NTP,0000,0000,0000,,这两条单链碱基序列互补\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which have complementary base sequences
+Dialogue: 0,0:28:10.10,0:28:12.78,*Default,NTP,0000,0000,0000,,因为它们是由双链DNA解旋形成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they were double stranded DNA.
+Dialogue: 0,0:28:13.68,0:28:16.01,*Default,NTP,0000,0000,0000,,对两条打开的单链进行复制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A new single stranded DNA is
+Dialogue: 0,0:28:16.01,0:28:20.01,*Default,NTP,0000,0000,0000,,会生成两条新的DNA单链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}formed on each one of these open single strands.
+Dialogue: 0,0:28:22.00,0:28:26.49,*Default,NTP,0000,0000,0000,,所以DNA复制是以DNA单链为模板的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So DNA is replicated using one strand of the DNA as a template.
+Dialogue: 0,0:28:30.58,0:28:33.72,*Default,NTP,0000,0000,0000,,如果复制过程在整条链上持续进行的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The result of this process if this replication went down
+Dialogue: 0,0:28:33.72,0:28:36.97,*Default,NTP,0000,0000,0000,,将生成两条完全一样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the whole length of the DNA would be to form two identical,
+Dialogue: 0,0:28:37.44,0:28:38.30,*Default,NTP,0000,0000,0000,,双链DNA分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}double stranded DNA molecules.
+Dialogue: 0,0:28:40.42,0:28:41.67,*Default,NTP,0000,0000,0000,,书上有更详细的描述\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now the book talks in more
+Dialogue: 0,0:28:41.67,0:28:43.79,*Default,NTP,0000,0000,0000,,你们可以在课后阅读\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}detail about this and you can read about it.
+Dialogue: 0,0:28:44.25,0:28:47.03,*Default,NTP,0000,0000,0000,,聚合酶需要引物  这点非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Polymerase needs a primer and that turns out to be important.
+Dialogue: 0,0:28:47.80,0:28:52.34,*Default,NTP,0000,0000,0000,,引物是一段短的RNA或者DNA序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A primer is a short RNA sequence or DNA sequence
+Dialogue: 0,0:28:52.35,0:28:56.72,*Default,NTP,0000,0000,0000,,引物是整个复制的起点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that gets sort of the process of replication jump started,
+Dialogue: 0,0:28:58.49,0:28:59.55,*Default,NTP,0000,0000,0000,,因为DNA聚合酶的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's just because of
+Dialogue: 0,0:28:59.55,0:29:01.31,*Default,NTP,0000,0000,0000,,生物特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the biological properties of DNA polymerase
+Dialogue: 0,0:29:01.31,0:29:02.35,*Default,NTP,0000,0000,0000,,引物在复制过程是必不可少的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that that primer's needed.
+Dialogue: 0,0:29:02.74,0:29:04.83,*Default,NTP,0000,0000,0000,,DNA复制过程是单向的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Synthesis always occurs in one direction
+Dialogue: 0,0:29:04.83,0:29:06.41,*Default,NTP,0000,0000,0000,,现在你们该明白原因了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that makes sense to you now
+Dialogue: 0,0:29:06.42,0:29:08.58,*Default,NTP,0000,0000,0000,,因为DNA单链有方向性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because you know there's a directionality
+Dialogue: 0,0:29:08.58,0:29:11.67,*Default,NTP,0000,0000,0000,,DNA在两个方向上化学性质不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the chemistry is different going one way than the other
+Dialogue: 0,0:29:11.68,0:29:13.12,*Default,NTP,0000,0000,0000,,DNA聚合酶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this DNA polymerase only
+Dialogue: 0,0:29:13.12,0:29:15.50,*Default,NTP,0000,0000,0000,,只在一个方向上起作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}works on the chemistry going in one direction.
+Dialogue: 0,0:29:17.67,0:29:19.47,*Default,NTP,0000,0000,0000,,剪接配对的正确性源自\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The correct complement is made
+Dialogue: 0,0:29:19.47,0:29:22.77,*Default,NTP,0000,0000,0000,,沃森克里克碱基互补配对原则的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of these principles of Watson-Crick base pairing
+Dialogue: 0,0:29:22.77,0:29:24.39,*Default,NTP,0000,0000,0000,,这我们讲过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we talked about before.
+Dialogue: 0,0:29:24.99,0:29:27.62,*Default,NTP,0000,0000,0000,,这使得复制过程中决定下一个核苷酸位点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's easy to know what nucleotide to put in each position
+Dialogue: 0,0:29:27.62,0:29:30.06,*Default,NTP,0000,0000,0000,,应该用哪一个核苷酸更为容易\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as you're going along and polymerizing a new molecule.
+Dialogue: 0,0:29:32.71,0:29:34.49,*Default,NTP,0000,0000,0000,,由于这样的复制过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because this process occurs this way,
+Dialogue: 0,0:29:35.07,0:29:36.79,*Default,NTP,0000,0000,0000,,如果一个亲代细胞复制了其DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if a parent cell replicates its DNA
+Dialogue: 0,0:29:36.79,0:29:39.14,*Default,NTP,0000,0000,0000,,并将DNA传递给两个子代细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then passes them along to two daughter cells,
+Dialogue: 0,0:29:40.01,0:29:43.23,*Default,NTP,0000,0000,0000,,一个子代细胞中有一条单链来自亲本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the daughter cells has one strand from the parent,
+Dialogue: 0,0:29:44.91,0:29:46.74,*Default,NTP,0000,0000,0000,,比如说就像这里的深蓝色单链\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the dark blue strand here for example,
+Dialogue: 0,0:29:47.11,0:29:48.37,*Default,NTP,0000,0000,0000,,另一个子代细胞有一条浅蓝色的单链  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the other daughter cell has the light blue strand,
+Dialogue: 0,0:29:49.26,0:29:49.94,*Default,NTP,0000,0000,0000,,就是亲代DNA单链的互补链 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the complementary strand,
+Dialogue: 0,0:29:51.13,0:29:52.31,*Default,NTP,0000,0000,0000,,这样每个子代细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and each of the daughter
+Dialogue: 0,0:29:52.31,0:29:54.44,*Default,NTP,0000,0000,0000,,都有新合成的DNA双链 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cells has a newly synthesized piece of DNA.
+Dialogue: 0,0:30:00.57,0:30:01.66,*Default,NTP,0000,0000,0000,,这个DNA合成过程是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's synthesis and that
+Dialogue: 0,0:30:01.66,0:30:03.62,*Default,NTP,0000,0000,0000,,细胞复制中不可或缺的部分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has to happen in order for cells to replicate
+Dialogue: 0,0:30:03.62,0:30:06.16,*Default,NTP,0000,0000,0000,,细胞复制时刻不停的在你身体里进行着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and cell replication is happening in your body all the time.
+Dialogue: 0,0:30:07.44,0:30:08.38,*Default,NTP,0000,0000,0000,,除此之外还有转录过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Transcription is also happening.
+Dialogue: 0,0:30:09.33,0:30:12.22,*Default,NTP,0000,0000,0000,,特定的DNA序列被转录为RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Certain segments of DNA are being converted into RNA,
+Dialogue: 0,0:30:13.23,0:30:14.17,*Default,NTP,0000,0000,0000,,在复制的过程中 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and whereas in replication,
+Dialogue: 0,0:30:14.81,0:30:16.90,*Default,NTP,0000,0000,0000,,整条染色体都被复制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have to copy the whole genome,
+Dialogue: 0,0:30:16.90,0:30:19.04,*Default,NTP,0000,0000,0000,,包括其中的全部DNA序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the whole - all of the chromosomes,
+Dialogue: 0,0:30:19.70,0:30:22.73,*Default,NTP,0000,0000,0000,,都被分毫不差地复制下来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all of the DNA contained in the chromosomes of the cell
+Dialogue: 0,0:30:22.73,0:30:24.73,*Default,NTP,0000,0000,0000,,以保证复制的完整性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to completely replicate it;
+Dialogue: 0,0:30:24.73,0:30:27.76,*Default,NTP,0000,0000,0000,,而转录过程只发生在特定的DNA序列上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}transcription only works on particular sequences of DNA.
+Dialogue: 0,0:30:28.54,0:30:30.21,*Default,NTP,0000,0000,0000,,只发生于编码特定蛋白质的DNA序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The DNA that encodes the proteins
+Dialogue: 0,0:30:30.21,0:30:32.44,*Default,NTP,0000,0000,0000,,这些蛋白质对细胞而言至关重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are important to the life of that cell.
+Dialogue: 0,0:30:34.48,0:30:35.99,*Default,NTP,0000,0000,0000,,举个例子  一个胰腺细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A pancreas--cell in the pancreas,
+Dialogue: 0,0:30:36.29,0:30:38.77,*Default,NTP,0000,0000,0000,,要分泌胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example, needs to make insulin 
+Dialogue: 0,0:30:38.77,0:30:39.80,*Default,NTP,0000,0000,0000,,那么编码胰岛素蛋白的基因就会被转录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the gene for insulin is transcribed.
+Dialogue: 0,0:30:40.64,0:30:45.09,*Default,NTP,0000,0000,0000,,转录的过程就是从一段DNA碱基序列中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Transcription just means making a single stranded RNA copy
+Dialogue: 0,0:30:46.09,0:30:49.51,*Default,NTP,0000,0000,0000,,复制出一段单链RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a sequence of base pairs in a DNA.
+Dialogue: 0,0:30:52.50,0:30:55.49,*Default,NTP,0000,0000,0000,,此过程由称为RNA聚合酶的蛋白所介导\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I told you that that's driven by a protein called RNA polymerase.
+Dialogue: 0,0:30:56.41,0:30:57.40,*Default,NTP,0000,0000,0000,,RNA聚合酶很聪明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}RNA polymerase is smart,
+Dialogue: 0,0:30:58.13,0:31:00.30,*Default,NTP,0000,0000,0000,,它知道该由什么位置介入\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it knows where it needs to go
+Dialogue: 0,0:31:00.30,0:31:03.96,*Default,NTP,0000,0000,0000,,来转录所需要的RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to make the copy of RNA that's required.
+Dialogue: 0,0:31:05.36,0:31:08.29,*Default,NTP,0000,0000,0000,,它的作用机制类似于DNA聚合酶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It operates in a similar fashion to DNA polymerase
+Dialogue: 0,0:31:08.29,0:31:12.16,*Default,NTP,0000,0000,0000,,在局部使DNA双链变性  解旋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that it denatures locally or opens up the double stranded DNA,
+Dialogue: 0,0:31:13.43,0:31:15.52,*Default,NTP,0000,0000,0000,,但不同的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's different in that
+Dialogue: 0,0:31:15.52,0:31:19.16,*Default,NTP,0000,0000,0000,,它合成了一个基于DNA模板的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it creates a new polymer from the DNA template
+Dialogue: 0,0:31:19.16,0:31:20.94,*Default,NTP,0000,0000,0000,,使用RNA编码语言的新聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the language of RNA,
+Dialogue: 0,0:31:22.21,0:31:24.12,*Default,NTP,0000,0000,0000,,即使用核糖核苷而非脱氧核糖核苷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}using RNA nucleotides and not DNA nucleotides.
+Dialogue: 0,0:31:25.63,0:31:29.24,*Default,NTP,0000,0000,0000,,最终的转录产物并非双链的DNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The end result of transcription is not double stranded DNA,
+Dialogue: 0,0:31:30.16,0:31:31.95,*Default,NTP,0000,0000,0000,,而是单链的RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's single stranded RNA
+Dialogue: 0,0:31:31.95,0:31:35.82,*Default,NTP,0000,0000,0000,,称为信使RNA[注:即mRNA]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the RNA that's produced is called messenger RNA.
+Dialogue: 0,0:31:37.75,0:31:42.12,*Default,NTP,0000,0000,0000,,它是DNA的转录版本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the transcribed version of DNA,
+Dialogue: 0,0:31:43.57,0:31:48.56,*Default,NTP,0000,0000,0000,,与特定的DNA序列严格互补\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's the exact complement of a particular region of DNA.
+Dialogue: 0,0:31:51.69,0:31:54.44,*Default,NTP,0000,0000,0000,,同样  你要知道更多细节可以看书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, more details in your book if you want to read that.
+Dialogue: 0,0:31:55.20,0:31:56.77,*Default,NTP,0000,0000,0000,,我刚说的并不完全正确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, what I said is not entirely true.
+Dialogue: 0,0:31:58.08,0:32:00.94,*Default,NTP,0000,0000,0000,,那是我们过去对这个机制的认识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That used to be the way that we thought about it.
+Dialogue: 0,0:32:01.00,0:32:02.57,*Default,NTP,0000,0000,0000,,DNA转录成RNA接着翻译成蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}DNA goes to RNA, goes to protein, 
+Dialogue: 0,0:32:02.57,0:32:03.90,*Default,NTP,0000,0000,0000,,仅此而已\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's it,
+Dialogue: 0,0:32:04.53,0:32:06.84,*Default,NTP,0000,0000,0000,,而这仅是细菌那样的简单有机体中的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that is the way it happens in simple organisms like bacteria.
+Dialogue: 0,0:32:07.53,0:32:09.15,*Default,NTP,0000,0000,0000,,在像人类这样的复杂有机体中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In complex organisms like humans
+Dialogue: 0,0:32:09.15,0:32:12.19,*Default,NTP,0000,0000,0000,,还有另一个我们至今仍未完全了解的步骤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's another step that we're still only learning about now.
+Dialogue: 0,0:32:12.58,0:32:14.12,*Default,NTP,0000,0000,0000,,我们只知其一  而不知其二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We know some parts of it, we don't know all of it.
+Dialogue: 0,0:32:14.65,0:32:17.73,*Default,NTP,0000,0000,0000,,而这对人类细胞生物运作至关重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's very important in the biological
+Dialogue: 0,0:32:17.74,0:32:22.32,*Default,NTP,0000,0000,0000,,这个步骤就是RNA剪接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}operation of human cells and that step is RNA splicing,
+Dialogue: 0,0:32:22.98,0:32:24.68,*Default,NTP,0000,0000,0000,,或者说是对RNA的加工\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or processing of this RNA,
+Dialogue: 0,0:32:25.35,0:32:27.85,*Default,NTP,0000,0000,0000,,对转录出的单链RNA进行加工的步骤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}single stranded RNA that's produced by transcription.
+Dialogue: 0,0:32:29.67,0:32:31.31,*Default,NTP,0000,0000,0000,,我们以后会讲到一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're going to talk more about this
+Dialogue: 0,0:32:31.31,0:32:32.70,*Default,NTP,0000,0000,0000,,特定的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as we go through some specific
+Dialogue: 0,0:32:32.70,0:32:34.83,*Default,NTP,0000,0000,0000,,进一步说明为什么RNA的加工如此重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}examples of where RNA processing is important.
+Dialogue: 0,0:32:38.33,0:32:40.64,*Default,NTP,0000,0000,0000,,现在你们只要修改一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For now, just think about modifying your picture
+Dialogue: 0,0:32:40.75,0:32:42.84,*Default,NTP,0000,0000,0000,,脑海中遗传信息表达的整个流程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of this sort of information flow
+Dialogue: 0,0:32:43.76,0:32:44.82,*Default,NTP,0000,0000,0000,,加一个步骤进去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through a cell to include another step
+Dialogue: 0,0:32:45.71,0:32:47.34,*Default,NTP,0000,0000,0000,,RNA从DNA转录出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that RNA is produced by transcription from DNA,
+Dialogue: 0,0:32:48.57,0:32:52.19,*Default,NTP,0000,0000,0000,,双链的DNA转录为单链的RNA分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}double stranded DNA goes to a single stranded RNA molecule,
+Dialogue: 0,0:32:53.14,0:32:54.72,*Default,NTP,0000,0000,0000,,然后RNA在细胞中被加工剪接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that RNA is processed in the cell
+Dialogue: 0,0:32:55.16,0:32:57.51,*Default,NTP,0000,0000,0000,,最终形成信使RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in some way in order to form messenger RNA.
+Dialogue: 0,0:32:58.20,0:33:00.25,*Default,NTP,0000,0000,0000,,在人类的基因表达中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the forms of processing that happens,
+Dialogue: 0,0:33:01.21,0:33:05.56,*Default,NTP,0000,0000,0000,,有一种非常重要的加工形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's very important in human gene expression
+Dialogue: 0,0:33:05.56,0:33:10.09,*Default,NTP,0000,0000,0000,,那就是在DNA分子中有一些片段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that some of the sections of the DNA molecule
+Dialogue: 0,0:33:10.09,0:33:14.91,*Default,NTP,0000,0000,0000,,对于编码蛋白质而言毫无用处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are not really necessary for describing the protein.
+Dialogue: 0,0:33:16.46,0:33:19.77,*Default,NTP,0000,0000,0000,,因此我们把编码蛋白质的区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The regions that are necessary for describing what the protein
+Dialogue: 0,0:33:19.77,0:33:21.08,*Default,NTP,0000,0000,0000,,称为外显子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is like are called exons,
+Dialogue: 0,0:33:21.94,0:33:23.34,*Default,NTP,0000,0000,0000,,而把不参与编码蛋白的区域称为内含子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the regions that are not are called introns.
+Dialogue: 0,0:33:24.98,0:33:28.29,*Default,NTP,0000,0000,0000,,一段编码蛋白的DNA序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A section of DNA that is responsible for encoding a gene,
+Dialogue: 0,0:33:28.94,0:33:29.86,*Default,NTP,0000,0000,0000,,我们就拿编码胰岛素的基因来举个例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say it's the insulin gene for example,
+Dialogue: 0,0:33:30.88,0:33:32.25,*Default,NTP,0000,0000,0000,,它也许是一段DNA基因序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}might be some stretch of
+Dialogue: 0,0:33:32.25,0:33:36.22,*Default,NTP,0000,0000,0000,,位于你胰腺细胞里的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}DNA on a certain chromosome inside your cells, 
+Dialogue: 0,0:33:36.22,0:33:37.22,*Default,NTP,0000,0000,0000,,某条染色体上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}inside the cells of the pancreas.
+Dialogue: 0,0:33:37.38,0:33:38.63,*Default,NTP,0000,0000,0000,,如果直接转录的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If it was directly transcribed
+Dialogue: 0,0:33:38.64,0:33:40.18,*Default,NTP,0000,0000,0000,,那被转录的序列中就会既包括了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there'd be regions that are important
+Dialogue: 0,0:33:40.18,0:33:41.21,*Default,NTP,0000,0000,0000,,和生成胰岛素有关的重要区域  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for making insulin 
+Dialogue: 0,0:33:41.21,0:33:42.96,*Default,NTP,0000,0000,0000,,也包括了与之无关的区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and regions that are not.
+Dialogue: 0,0:33:43.60,0:33:46.48,*Default,NTP,0000,0000,0000,,而这些与生成胰岛素无关的区域\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those regions that are not are spliced out
+Dialogue: 0,0:33:46.48,0:33:49.83,*Default,NTP,0000,0000,0000,,在RNA剪接过程中就被剔除\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}during RNA processing to form the mRNA transcript
+Dialogue: 0,0:33:49.83,0:33:51.98,*Default,NTP,0000,0000,0000,,从而生成转录蛋白质的mRNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's used to make the protein.
+Dialogue: 0,0:33:54.53,0:33:55.73,*Default,NTP,0000,0000,0000,,如今人们也发现了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now there are other kinds
+Dialogue: 0,0:33:55.73,0:33:57.88,*Default,NTP,0000,0000,0000,,其他的RNA加工机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of processing that can happen to RNA as well,
+Dialogue: 0,0:33:58.44,0:34:02.09,*Default,NTP,0000,0000,0000,,我再一次强调  这真的是一门新兴科学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and again, I said this is really still an emerging science,
+Dialogue: 0,0:34:03.24,0:34:04.32,*Default,NTP,0000,0000,0000,,这是一种目前我们已经熟悉的机制\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this is one that's well known,
+Dialogue: 0,0:34:04.93,0:34:06.32,*Default,NTP,0000,0000,0000,,而你可以想象这是多么重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you could imagine that it's important.
+Dialogue: 0,0:34:07.02,0:34:08.51,*Default,NTP,0000,0000,0000,,如果我想要从一个人类个体克隆基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I want to clone a gene from a human,
+Dialogue: 0,0:34:10.37,0:34:12.09,*Default,NTP,0000,0000,0000,,如果我想要克隆人类胰岛素基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if I want to clone the gene for human isulin,
+Dialogue: 0,0:34:12.60,0:34:14.67,*Default,NTP,0000,0000,0000,,亦即我要把负责生成胰岛素的基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}mean make many copies of the gene
+Dialogue: 0,0:34:14.67,0:34:15.63,*Default,NTP,0000,0000,0000,,复制许多个副本\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's responsible for making insulin,
+Dialogue: 0,0:34:16.31,0:34:18.76,*Default,NTP,0000,0000,0000,,我就得要知道哪些是内含子  哪些不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I need to know whether there are introns there or not.
+Dialogue: 0,0:34:21.36,0:34:23.46,*Default,NTP,0000,0000,0000,,如果我要用这些来生成胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I'm going to make insulin from this
+Dialogue: 0,0:34:23.46,0:34:26.86,*Default,NTP,0000,0000,0000,,我就得知道是不是把内含子都准确剔除了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have to know that I've got the introns spliced out correctly.
+Dialogue: 0,0:34:29.26,0:34:31.16,*Default,NTP,0000,0000,0000,,这也是我们明天的课堂内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's something that will come up in the lecture tomorrow,
+Dialogue: 0,0:34:31.69,0:34:33.10,*Default,NTP,0000,0000,0000,,所以你们脑海中得有这个概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so remember that concept and
+Dialogue: 0,0:34:33.10,0:34:35.51,*Default,NTP,0000,0000,0000,,包括这个经典的细胞流程的修订版\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that revision of this sort of classical picture.
+Dialogue: 0,0:34:38.26,0:34:40.02,*Default,NTP,0000,0000,0000,,我不想在这些上讲太多的细节  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't want to go through this in detail 
+Dialogue: 0,0:34:40.02,0:34:41.55,*Default,NTP,0000,0000,0000,,因为我猜你们之前都有所了解了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I assume that you know it,
+Dialogue: 0,0:34:42.39,0:34:43.24,*Default,NTP,0000,0000,0000,,你们花上一点时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}plus I think it's a little
+Dialogue: 0,0:34:43.24,0:34:44.82,*Default,NTP,0000,0000,0000,,就能消化这些内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}bit easier to read and have some time to digest,
+Dialogue: 0,0:34:45.38,0:34:47.39,*Default,NTP,0000,0000,0000,,但mRNA翻译  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but this process of translation
+Dialogue: 0,0:34:47.39,0:34:50.30,*Default,NTP,0000,0000,0000,,或者说转译成蛋白质的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or conversion of messenger RNA into a protein
+Dialogue: 0,0:34:50.30,0:34:52.03,*Default,NTP,0000,0000,0000,,是个极其复杂的生物过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a complicated biological
+Dialogue: 0,0:34:52.03,0:34:54.46,*Default,NTP,0000,0000,0000,,而且每时每刻都在发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}process that's occurring all the time.
+Dialogue: 0,0:34:55.08,0:34:56.37,*Default,NTP,0000,0000,0000,,在之前的课上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Before, we talked about
+Dialogue: 0,0:34:56.37,0:34:58.78,*Default,NTP,0000,0000,0000,,我们说到如何判断mRNA的具体序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do you know what messenger RNA to make,
+Dialogue: 0,0:34:59.16,0:35:02.75,*Default,NTP,0000,0000,0000,,如何判断RNA从DNA模板复制了什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do you know what RNA to copy from a DNA template?
+Dialogue: 0,0:35:03.40,0:35:05.38,*Default,NTP,0000,0000,0000,,依据的是沃森克里克碱基互补配对原则\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well you do that by this Watson-Crick base pairing,
+Dialogue: 0,0:35:06.30,0:35:08.72,*Default,NTP,0000,0000,0000,,如果给我一个ACGCGA的序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I know if I have (A)(C)(G)(C)(G)(A)
+Dialogue: 0,0:35:08.72,0:35:11.51,*Default,NTP,0000,0000,0000,,就能知道转录出的mRNA会是什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know what messenger RNA to make from that
+Dialogue: 0,0:35:11.52,0:35:14.82,*Default,NTP,0000,0000,0000,,因为我必须满足碱基配对原则\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I have to satisfy these base pairing rules.
+Dialogue: 0,0:35:16.00,0:35:19.68,*Default,NTP,0000,0000,0000,,而从一条单链RNA翻译为蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's more complicated in making protein from an RNA strand
+Dialogue: 0,0:35:19.68,0:35:22.85,*Default,NTP,0000,0000,0000,,这个过程更为复杂  称之为遗传密码\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that complication is called the genetic code.
+Dialogue: 0,0:35:24.18,0:35:29.71,*Default,NTP,0000,0000,0000,,mRNA是按每三个碱基组成一个密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know that messenger RNA is read 
+Dialogue: 0,0:35:29.71,0:35:31.29,*Default,NTP,0000,0000,0000,,进行翻译的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in three base units called codons,
+Dialogue: 0,0:35:32.12,0:35:35.46,*Default,NTP,0000,0000,0000,,在这幅动画中所画的mRNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so this particular piece of messenger RNA
+Dialogue: 0,0:35:35.46,0:35:39.08,*Default,NTP,0000,0000,0000,,就是按三个碱基一组的方式来描绘的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is drawn in this cartoon in three base pair units.
+Dialogue: 0,0:35:40.93,0:35:42.66,*Default,NTP,0000,0000,0000,,那是因为每三个碱基对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's because every three
+Dialogue: 0,0:35:42.66,0:35:45.84,*Default,NTP,0000,0000,0000,,对应一个蛋白质中的一个氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}base pairs describes an amino acid in a protein.
+Dialogue: 0,0:35:48.09,0:35:49.92,*Default,NTP,0000,0000,0000,,在RNA或DNA的构成中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}While there are only four
+Dialogue: 0,0:35:49.92,0:35:53.37,*Default,NTP,0000,0000,0000,,只含四种不同的碱基\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}different bases that make up either RNA or DNA,
+Dialogue: 0,0:35:54.36,0:35:57.41,*Default,NTP,0000,0000,0000,,因此一个RNA分子的复杂程度是有限的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so the complexity of an RNA polymer is limited.
+Dialogue: 0,0:35:59.18,0:36:02.41,*Default,NTP,0000,0000,0000,,每个位点上都只有四种可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's only got one of four possible choices at each position.
+Dialogue: 0,0:36:04.65,0:36:06.26,*Default,NTP,0000,0000,0000,,而那些称为蛋白质的生物活性多聚体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are more than 20 amino acids
+Dialogue: 0,0:36:06.26,0:36:08.69,*Default,NTP,0000,0000,0000,,是由二十种不同氨基酸所构成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that make up the biological polymers called proteins,
+Dialogue: 0,0:36:11.56,0:36:13.47,*Default,NTP,0000,0000,0000,,因此每个蛋白质的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so there are 20 choices of
+Dialogue: 0,0:36:13.47,0:36:16.63,*Default,NTP,0000,0000,0000,,任意位点都有多达二十种氨基酸可供选择\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}each amino acid at a position on a protein.
+Dialogue: 0,0:36:18.01,0:36:20.35,*Default,NTP,0000,0000,0000,,为什么一个密码子有三个碱基呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why are there three bases in a codon?
+Dialogue: 0,0:36:22.48,0:36:25.17,*Default,NTP,0000,0000,0000,,因为每个位点上仅有四种可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because it takes three units
+Dialogue: 0,0:36:25.17,0:36:29.45,*Default,NTP,0000,0000,0000,,只有采用三个碱基一组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where there's only four choices at each position to have
+Dialogue: 0,0:36:30.45,0:36:33.41,*Default,NTP,0000,0000,0000,,才能取得至少二十种不同的组合方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least 20 unique combinations.
+Dialogue: 0,0:36:35.52,0:36:38.03,*Default,NTP,0000,0000,0000,,那密码子的组合方式到底有几种呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many combinations of codons are there
+Dialogue: 0,0:36:38.03,0:36:41.69,*Default,NTP,0000,0000,0000,,三个位点  每个位点四种选择\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if there's three bases and four possibilities at each base?
+Dialogue: 0,0:36:42.95,0:36:44.86,*Default,NTP,0000,0000,0000,,4x4x4种可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}4 x 4 x 4--possibilities,
+Dialogue: 0,0:36:52.23,0:36:53.26,*Default,NTP,0000,0000,0000,,因为这有AGCU四种  这也是四种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I could have here,(A)(G)(C)(U) here, (A)(G)(C)(U), 
+Dialogue: 0,0:36:55.09,0:36:58.34,*Default,NTP,0000,0000,0000,,4x4=16.\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(A)(G)(C)(U), - 4 x 4 = 16.
+Dialogue: 0,0:36:58.66,0:37:00.87,*Default,NTP,0000,0000,0000,,所以如果每个密码子只有两个碱基不够\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I only had two per codon I wouldn't have enough.
+Dialogue: 0,0:37:01.80,0:37:04.63,*Default,NTP,0000,0000,0000,,如果两个碱基一组那一共只有十六种组合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd only have 16 possible two base sequences,
+Dialogue: 0,0:37:05.04,0:37:07.02,*Default,NTP,0000,0000,0000,,不够和二十种氨基酸来一一对应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not enough to specify over 20 amino acids.
+Dialogue: 0,0:37:08.91,0:37:10.12,*Default,NTP,0000,0000,0000,,那如果是三个碱基一组\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have three,
+Dialogue: 0,0:37:10.87,0:37:14.07,*Default,NTP,0000,0000,0000,,那就有16x4种  六十四种组合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have 16 x 4 or 64 possible choices,
+Dialogue: 0,0:37:14.27,0:37:15.14,*Default,NTP,0000,0000,0000,,那就足够了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}way more than enough.
+Dialogue: 0,0:37:18.66,0:37:20.81,*Default,NTP,0000,0000,0000,,这里有个问题  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That creates a problem in the genetic code
+Dialogue: 0,0:37:20.82,0:37:22.19,*Default,NTP,0000,0000,0000,,遗传密码有六十四种可能的序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in that there's 64 possible
+Dialogue: 0,0:37:22.19,0:37:24.58,*Default,NTP,0000,0000,0000,,而只有二十种氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sequences but there's only 20 some amino acids,
+Dialogue: 0,0:37:26.04,0:37:27.90,*Default,NTP,0000,0000,0000,,因此每种氨基酸都有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so each amino acid can be specified
+Dialogue: 0,0:37:27.90,0:37:30.17,*Default,NTP,0000,0000,0000,,不止一种密码子与之对应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by more than one codon.
+Dialogue: 0,0:37:32.52,0:37:34.32,*Default,NTP,0000,0000,0000,,不同的组合可以代表同一个氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are combinations to spare.
+Dialogue: 0,0:37:35.96,0:37:37.25,*Default,NTP,0000,0000,0000,,三个一组的碱基产生六十四种组合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are 64 combinations
+Dialogue: 0,0:37:37.79,0:37:42.16,*Default,NTP,0000,0000,0000,,而我只需对应二十种氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of three bases and I only need to describe 20,
+Dialogue: 0,0:37:43.84,0:37:44.64,*Default,NTP,0000,0000,0000,,所以一种氨基酸会对应不同密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so there's combinations to spare.
+Dialogue: 0,0:37:47.06,0:37:49.03,*Default,NTP,0000,0000,0000,,看一下这里的表格\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I look this table here
+Dialogue: 0,0:37:49.03,0:37:52.80,*Default,NTP,0000,0000,0000,,上面列着当三个碱基序列确定时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}shows you how biological translation takes place
+Dialogue: 0,0:37:52.80,0:37:56.37,*Default,NTP,0000,0000,0000,,其所对应翻译的氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whenever a three base sequence is identified.
+Dialogue: 0,0:37:57.04,0:38:00.88,*Default,NTP,0000,0000,0000,,这里是GCU  这就确定了一个氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Say it's (G)(C)(U), that specify an amino acid.
+Dialogue: 0,0:38:01.60,0:38:03.88,*Default,NTP,0000,0000,0000,,我怎么知道这个氨基酸是什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How would I know what amino acid that is?
+Dialogue: 0,0:38:04.20,0:38:04.94,*Default,NTP,0000,0000,0000,,我可以查这个表\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, I could look up this
+Dialogue: 0,0:38:04.95,0:38:06.31,*Default,NTP,0000,0000,0000,,因为有人已经研究出来了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}table because somebody's figured it out for you.
+Dialogue: 0,0:38:07.53,0:38:11.07,*Default,NTP,0000,0000,0000,,G在第一个位点  C在第二个位点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(G) in the first position, (C) in the second position,
+Dialogue: 0,0:38:12.17,0:38:16.54,*Default,NTP,0000,0000,0000,,U在  GCU在这里是苯丙氨酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(U) in the--(G)(C)(U) right here is alanine
+Dialogue: 0,0:38:17.54,0:38:22.27,*Default,NTP,0000,0000,0000,,这就是蛋白质  这就是氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that's the protein - that's the amino acid
+Dialogue: 0,0:38:23.27,0:38:28.03,*Default,NTP,0000,0000,0000,,这就是蛋白质对应位置的氨基酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's in that position in the protein.
+Dialogue: 0,0:38:30.30,0:38:31.89,*Default,NTP,0000,0000,0000,,因此你可以读一段序列 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You could read through this sequence
+Dialogue: 0,0:38:31.90,0:38:32.95,*Default,NTP,0000,0000,0000,,并推算出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you could figure out
+Dialogue: 0,0:38:32.95,0:38:34.79,*Default,NTP,0000,0000,0000,,对应的氨基酸序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the sequence of amino acids would be.
+Dialogue: 0,0:38:37.76,0:38:39.45,*Default,NTP,0000,0000,0000,,遗传密码的这种性质称为简并性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The genetic code is said to be
+Dialogue: 0,0:38:39.45,0:38:42.11,*Default,NTP,0000,0000,0000,,我可以从一个方向去解读\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}degenerate because I can read in one direction.
+Dialogue: 0,0:38:42.93,0:38:44.69,*Default,NTP,0000,0000,0000,,通过查表我知道GCU对应苯丙氨酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can read (G)(C)(U) as alanine, for example,
+Dialogue: 0,0:38:45.81,0:38:48.02,*Default,NTP,0000,0000,0000,,如果我看到GCU  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from this table and if I see a (G)(C)(U),
+Dialogue: 0,0:38:48.61,0:38:49.56,*Default,NTP,0000,0000,0000,,我就知道肯定会是苯丙氨酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know it has to be alanine.
+Dialogue: 0,0:38:50.48,0:38:51.53,*Default,NTP,0000,0000,0000,,但如果我想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I have the protein
+Dialogue: 0,0:38:51.53,0:38:53.74,*Default,NTP,0000,0000,0000,,从已知的蛋白质逆向推导\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I want to say what does the messenger RNA
+Dialogue: 0,0:38:53.74,0:38:55.61,*Default,NTP,0000,0000,0000,,转录这个蛋白的mRNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that produced that protein looked like,
+Dialogue: 0,0:38:55.94,0:38:58.95,*Default,NTP,0000,0000,0000,,我是不可能逆向推导出来的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't go backwards because
+Dialogue: 0,0:38:58.95,0:39:03.89,*Default,NTP,0000,0000,0000,,因为苯丙氨酸对应的选择可能不止一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's more than one possibility for alanine,
+Dialogue: 0,0:39:04.42,0:39:06.65,*Default,NTP,0000,0000,0000,,对吗  这里看到有四个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right? There's four of them right here ,
+Dialogue: 0,0:39:07.25,0:39:08.71,*Default,NTP,0000,0000,0000,,GCU  GCC GCA  GCG \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(G)(C)(U), (G)(C)(C),(G)(C)(A), (G)(C)(G)
+Dialogue: 0,0:39:09.09,0:39:13.07,*Default,NTP,0000,0000,0000,,因为不能准确推导出到底是哪个密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I don't know exactly what gene that came from,
+Dialogue: 0,0:39:13.56,0:39:14.16,*Default,NTP,0000,0000,0000,,我不能逆向推导\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can't read backwards.
+Dialogue: 0,0:39:15.90,0:39:19.37,*Default,NTP,0000,0000,0000,,这得用到统计方法  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That has to do with the statistics of this, right?
+Dialogue: 0,0:39:19.59,0:39:21.54,*Default,NTP,0000,0000,0000,,一个氨基酸对应不止一个密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's just more sequences in a three unit codon
+Dialogue: 0,0:39:22.54,0:39:23.48,*Default,NTP,0000,0000,0000,,由三碱基所构成的密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than I need for the amino acids.
+Dialogue: 0,0:39:25.11,0:39:27.73,*Default,NTP,0000,0000,0000,,在生物学上翻译是怎么发生的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How does translation occur biologically?
+Dialogue: 0,0:39:28.23,0:39:28.97,*Default,NTP,0000,0000,0000,,像这个动画里画的那样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As shown in this cartoon here,
+Dialogue: 0,0:39:30.48,0:39:32.95,*Default,NTP,0000,0000,0000,,这里你也不需要了解细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}again you don't need to know the details of this,
+Dialogue: 0,0:39:33.27,0:39:34.69,*Default,NTP,0000,0000,0000,,不过如果你很有兴趣想知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but if you're interested in knowing
+Dialogue: 0,0:39:34.69,0:39:37.01,*Default,NTP,0000,0000,0000,,遗传密码的生物学基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's the biological bases of the genetic code this is it.
+Dialogue: 0,0:39:37.41,0:39:39.39,*Default,NTP,0000,0000,0000,,在你体内的细胞中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Inside cells in your body
+Dialogue: 0,0:39:39.39,0:39:41.82,*Default,NTP,0000,0000,0000,,一种很特殊的RNA分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are special RNA molecules 
+Dialogue: 0,0:39:41.82,0:39:43.36,*Default,NTP,0000,0000,0000,,称为转运RNA[注:即tRNA]\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}called transfer RNA.
+Dialogue: 0,0:39:44.75,0:39:46.38,*Default,NTP,0000,0000,0000,,这些是如假包换的RNA分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They are RNA molecules but
+Dialogue: 0,0:39:46.38,0:39:49.14,*Default,NTP,0000,0000,0000,,但在其生命周期的特定时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they have at some points in their life span,
+Dialogue: 0,0:39:50.01,0:39:52.66,*Default,NTP,0000,0000,0000,,它们会携带一个氨基酸分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they have amino acids attached to them.
+Dialogue: 0,0:39:53.88,0:39:58.50,*Default,NTP,0000,0000,0000,,举个例子  这个tRNA的一端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, this transfer RNA has a unit here,
+Dialogue: 0,0:39:58.99,0:40:02.42,*Default,NTP,0000,0000,0000,,有一个GAG的碱基序列单元\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(G)(A)(G) at one end of the transfer RNA molecule.
+Dialogue: 0,0:40:03.03,0:40:05.00,*Default,NTP,0000,0000,0000,,在另一端就携带着一个亮氨酸分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the other end, is attached the amino acid leucine.
+Dialogue: 0,0:40:08.34,0:40:10.80,*Default,NTP,0000,0000,0000,,你的细胞在生成tRNA的过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And your cells making transfer RNA,
+Dialogue: 0,0:40:11.53,0:40:14.24,*Default,NTP,0000,0000,0000,,如果生成的tRNA序列是GAG\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if they make a transfer RNA molecule that has (G)(A)(G) here,
+Dialogue: 0,0:40:14.73,0:40:16.85,*Default,NTP,0000,0000,0000,,那它的另一端携带的就只能是亮氨酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they only put leucine at the other end.
+Dialogue: 0,0:40:19.43,0:40:23.33,*Default,NTP,0000,0000,0000,,这就是遗传密码的物理基础\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the physical basis of the genetic code
+Dialogue: 0,0:40:23.33,0:40:26.55,*Default,NTP,0000,0000,0000,,因为每当一个mRNA序列被翻译的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because when a messenger RNA sequence
+Dialogue: 0,0:40:26.55,0:40:31.39,*Default,NTP,0000,0000,0000,,每次一个碱基对  每次一个密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is being transcribed one base pair - one codon at a time,
+Dialogue: 0,0:40:32.50,0:40:36.82,*Default,NTP,0000,0000,0000,,mRNA的序列为CUC时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when the (C)(U)(C) sequence appears in the messenger RNA,
+Dialogue: 0,0:40:38.54,0:40:41.40,*Default,NTP,0000,0000,0000,,这段CUC序列只能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that sequence (C)(U)(C) can only bind
+Dialogue: 0,0:40:41.40,0:40:45.84,*Default,NTP,0000,0000,0000,,和特定的三个碱基互补\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with one particular three base complement,
+Dialogue: 0,0:40:47.12,0:40:48.77,*Default,NTP,0000,0000,0000,,这个特定的互补序列就是GAG\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has to be the complement (G)(A)(G).
+Dialogue: 0,0:40:50.27,0:40:52.64,*Default,NTP,0000,0000,0000,,这是密码子  这是反密码子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is the codon, this is the anti-codon,
+Dialogue: 0,0:40:53.89,0:40:56.99,*Default,NTP,0000,0000,0000,,只有一个反密码子与之对应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's only one anti-codon that matches this one
+Dialogue: 0,0:40:56.99,0:41:00.37,*Default,NTP,0000,0000,0000,,而反密码子的另一端\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that anti-codon is always - occurs in a molecule
+Dialogue: 0,0:41:00.37,0:41:03.17,*Default,NTP,0000,0000,0000,,总是携带着一个亮氨酸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that has leucine attached to the other side.
+Dialogue: 0,0:41:05.37,0:41:08.59,*Default,NTP,0000,0000,0000,,翻译过程是一种特殊的聚合过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Translation occurs by a special kind of polymerization
+Dialogue: 0,0:41:09.84,0:41:11.25,*Default,NTP,0000,0000,0000,,当tRNA按照\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where these transfer RNA's operate 
+Dialogue: 0,0:41:11.26,0:41:14.44,*Default,NTP,0000,0000,0000,,沃森克里克碱基互补配对原则进行配对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by Watson-Crick base pairing.
+Dialogue: 0,0:41:17.58,0:41:20.15,*Default,NTP,0000,0000,0000,,同时它所携带氨基酸相互邻接\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They bring into proximity an amino acid
+Dialogue: 0,0:41:22.43,0:41:25.48,*Default,NTP,0000,0000,0000,,从而形成了一个氨基酸聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that instead of forming a new polymer of a nucleic acid,
+Dialogue: 0,0:41:26.36,0:41:29.87,*Default,NTP,0000,0000,0000,,而非核酸聚合物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a polymer of an amino acids is formed.
+Dialogue: 0,0:41:30.58,0:41:31.92,*Default,NTP,0000,0000,0000,,而氨基酸聚合物就是蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A polymer of amino acids is a protein.
+Dialogue: 0,0:41:33.09,0:41:34.46,*Default,NTP,0000,0000,0000,,这里我也只是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, I'm just trying to
+Dialogue: 0,0:41:34.46,0:41:37.37,*Default,NTP,0000,0000,0000,,强调一些你可能已略知一二的知识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}highlight things you already know a little bit about,
+Dialogue: 0,0:41:37.67,0:41:38.41,*Default,NTP,0000,0000,0000,,你们教材里面有相关的细节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the book describes the details.
+Dialogue: 0,0:41:40.05,0:41:42.53,*Default,NTP,0000,0000,0000,,我们这里不特别强调这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This isn't particularly important for us to know here,
+Dialogue: 0,0:41:43.99,0:41:45.94,*Default,NTP,0000,0000,0000,,但mRNA转换成一个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that messenger RNA gets
+Dialogue: 0,0:41:45.94,0:41:49.56,*Default,NTP,0000,0000,0000,,特定蛋白质的过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}converted into a protein of a specific composition
+Dialogue: 0,0:41:49.56,0:41:53.86,*Default,NTP,0000,0000,0000,,我们称之为翻译过程  是非常重要的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through a biological process called translation is important.
+Dialogue: 0,0:41:56.17,0:41:57.22,*Default,NTP,0000,0000,0000,,今天我们要讨论的最后一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The last thing I want to
+Dialogue: 0,0:41:57.23,0:41:59.29,*Default,NTP,0000,0000,0000,,是基因表达的调控\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}talk about today is control of gene expression.
+Dialogue: 0,0:41:59.84,0:42:02.60,*Default,NTP,0000,0000,0000,,基因表达的调控是个大课题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Control of gene expression is a very big topic
+Dialogue: 0,0:42:02.60,0:42:06.12,*Default,NTP,0000,0000,0000,,我给你们放一些动画  好让你们理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so I'm going to show you one cartoon to sort of tell you
+Dialogue: 0,0:42:06.12,0:42:08.94,*Default,NTP,0000,0000,0000,,其涉及范围之广  意义之重\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it is a big topic that's really important.
+Dialogue: 0,0:42:09.92,0:42:11.85,*Default,NTP,0000,0000,0000,,为什么说对基因表达的调控是非常重要呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why is control of gene expression important?
+Dialogue: 0,0:42:12.21,0:42:15.59,*Default,NTP,0000,0000,0000,,我之前有说过  我不只一次提到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well I talked about it - earlier I've mentioned several times
+Dialogue: 0,0:42:16.38,0:42:17.63,*Default,NTP,0000,0000,0000,,我体内的所有细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the cells in my body,
+Dialogue: 0,0:42:18.14,0:42:19.14,*Default,NTP,0000,0000,0000,,和你体内的所有细胞一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the cells in your body have essentially
+Dialogue: 0,0:42:20.29,0:42:24.49,*Default,NTP,0000,0000,0000,,核中的染色体基因组DNA本质上都相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the same genomic chromosomal DNA in their nucleus.
+Dialogue: 0,0:42:25.91,0:42:27.82,*Default,NTP,0000,0000,0000,,我的胰腺细胞  脑细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you looked at cells in my pancreas and cells in my brain,
+Dialogue: 0,0:42:28.33,0:42:30.00,*Default,NTP,0000,0000,0000,,和皮肤细胞的DNA都相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and cells in my skin they all have the same DNA.
+Dialogue: 0,0:42:32.23,0:42:34.36,*Default,NTP,0000,0000,0000,,但皮肤细胞  脑细胞和胰腺细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But skin cells and brain cells and pancreas cells
+Dialogue: 0,0:42:34.36,0:42:35.60,*Default,NTP,0000,0000,0000,,却发挥着完全不同的作用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}aren't doing the same things.
+Dialogue: 0,0:42:37.23,0:42:37.84,*Default,NTP,0000,0000,0000,,它们外观上不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They don't look the same,
+Dialogue: 0,0:42:38.07,0:42:38.65,*Default,NTP,0000,0000,0000,,生命活动不一样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they don't behave the same,
+Dialogue: 0,0:42:38.86,0:42:40.32,*Default,NTP,0000,0000,0000,,它们的生物学功能各不相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they don't perform the same biological functions.
+Dialogue: 0,0:42:40.69,0:42:42.54,*Default,NTP,0000,0000,0000,,这是为什么呢  因为脑细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why? Because brain cells and
+Dialogue: 0,0:42:42.54,0:42:45.79,*Default,NTP,0000,0000,0000,,和胰腺细胞表达不同的蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pancreas cells are expressing different proteins.
+Dialogue: 0,0:42:48.18,0:42:49.44,*Default,NTP,0000,0000,0000,,你体内的所有细胞\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All the cells in your body
+Dialogue: 0,0:42:49.44,0:42:52.29,*Default,NTP,0000,0000,0000,,都有表达体内所有种类的蛋白的能力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have the capability of making all the proteins that you make,
+Dialogue: 0,0:42:53.50,0:42:55.33,*Default,NTP,0000,0000,0000,,但细胞并不会表达所有的蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're not all made in every cell.
+Dialogue: 0,0:42:56.18,0:42:57.93,*Default,NTP,0000,0000,0000,,举例来说  只有胰腺细胞生成胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Only cells of your pancreas make insulin, for example.
+Dialogue: 0,0:42:59.88,0:43:01.88,*Default,NTP,0000,0000,0000,,只有脑细胞产生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Only cells in your brain make the enzymes
+Dialogue: 0,0:43:01.89,0:43:03.85,*Default,NTP,0000,0000,0000,,促进神经传导的相关酶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that produce certain neuron transmitters
+Dialogue: 0,0:43:03.85,0:43:05.76,*Default,NTP,0000,0000,0000,,由此维持大脑功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are responsible for brain function.
+Dialogue: 0,0:43:06.64,0:43:07.95,*Default,NTP,0000,0000,0000,,你的脑细胞怎么知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How do cells in your brain
+Dialogue: 0,0:43:07.95,0:43:10.15,*Default,NTP,0000,0000,0000,,该生成哪些蛋白质呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}know which proteins they ought to be making,
+Dialogue: 0,0:43:10.72,0:43:11.72,*Default,NTP,0000,0000,0000,,而你的胰腺细胞又是怎么知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how do cells in the pancreas
+Dialogue: 0,0:43:11.72,0:43:13.09,*Default,NTP,0000,0000,0000,,不该生成哪些蛋白质呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}know which proteins they ought to be making?
+Dialogue: 0,0:43:13.90,0:43:15.15,*Default,NTP,0000,0000,0000,,它们能正确地合成蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They do that 
+Dialogue: 0,0:43:15.15,0:43:16.90,*Default,NTP,0000,0000,0000,,是因为它们可以调控基因的表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because they can control the expression of genes.
+Dialogue: 0,0:43:20.25,0:43:21.83,*Default,NTP,0000,0000,0000,,对我们来说  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Gene expression, for us,
+Dialogue: 0,0:43:22.62,0:43:26.13,*Default,NTP,0000,0000,0000,,基因表达就等于合成特定的蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will mean the same thing as production of a particular protein.
+Dialogue: 0,0:43:27.09,0:43:29.07,*Default,NTP,0000,0000,0000,,一段基因得到表达  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When a gene gets expressed, 
+Dialogue: 0,0:43:29.07,0:43:31.66,*Default,NTP,0000,0000,0000,,就意味着合成它所编码的蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that means its protein is produced.
+Dialogue: 0,0:43:33.48,0:43:34.83,*Default,NTP,0000,0000,0000,,当我们谈到基因表达的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When we talk about gene expression
+Dialogue: 0,0:43:34.84,0:43:35.80,*Default,NTP,0000,0000,0000,,我们就是在讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than we're talking about
+Dialogue: 0,0:43:35.80,0:43:38.20,*Default,NTP,0000,0000,0000,,一系列我们刚才提到的过程  即转录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this whole sequence of events I just described: transcription,
+Dialogue: 0,0:43:41.09,0:43:44.18,*Default,NTP,0000,0000,0000,,RNA加工  翻译成蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}RNA processing, translation to make the protein.
+Dialogue: 0,0:43:45.47,0:43:48.94,*Default,NTP,0000,0000,0000,,所有的步骤必须按部就班\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All those things have to happen in an orderly fashion,
+Dialogue: 0,0:43:50.06,0:43:51.36,*Default,NTP,0000,0000,0000,,保质保量地进行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in enough quantity in order
+Dialogue: 0,0:43:51.36,0:43:53.29,*Default,NTP,0000,0000,0000,,让一个特定的细胞合成特定的蛋白质\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a particular cell to make a protein.
+Dialogue: 0,0:43:54.02,0:43:54.76,*Default,NTP,0000,0000,0000,,举例来说  如果要合成胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To make insulin, for example,
+Dialogue: 0,0:43:55.53,0:43:58.79,*Default,NTP,0000,0000,0000,,你的胰腺细胞必须先转录那一段基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your cells of your pancreas have to be transcribing that gene,
+Dialogue: 0,0:43:59.34,0:44:00.09,*Default,NTP,0000,0000,0000,,然后进行加工  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it has to be processed,
+Dialogue: 0,0:44:00.98,0:44:03.02,*Default,NTP,0000,0000,0000,,继而翻译成为胰岛素蛋白\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has to be translated into the protein insulin.
+Dialogue: 0,0:44:04.19,0:44:04.93,*Default,NTP,0000,0000,0000,,但这还没完\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that's not all,
+Dialogue: 0,0:44:06.03,0:44:08.29,*Default,NTP,0000,0000,0000,,这个胰岛素蛋白刚翻译完成时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that protein insulin is made
+Dialogue: 0,0:44:08.29,0:44:11.12,*Default,NTP,0000,0000,0000,,还是一段长多肽的形式 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the form of a long polypeptide
+Dialogue: 0,0:44:11.12,0:44:16.12,*Default,NTP,0000,0000,0000,,还不是蛋白质的最终形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that not - that's not always the final version of the protein.
+Dialogue: 0,0:44:16.83,0:44:17.40,*Default,NTP,0000,0000,0000,,事实上  就胰岛素而言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, for insulin,
+Dialogue: 0,0:44:17.78,0:44:18.67,*Default,NTP,0000,0000,0000,,翻译完成后的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not the final version
+Dialogue: 0,0:44:18.67,0:44:20.20,*Default,NTP,0000,0000,0000,,还不是蛋白质的最终形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the protein that comes out of translation.
+Dialogue: 0,0:44:21.60,0:44:22.51,*Default,NTP,0000,0000,0000,,还有几个步骤\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are more steps
+Dialogue: 0,0:44:22.51,0:44:23.77,*Default,NTP,0000,0000,0000,,必须正确完成这些步骤后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have to happen correctly
+Dialogue: 0,0:44:23.77,0:44:25.67,*Default,NTP,0000,0000,0000,,才能生成有活性的胰岛素\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order for that insulin to become active.
+Dialogue: 0,0:44:28.66,0:44:31.26,*Default,NTP,0000,0000,0000,,这些步骤称为翻译后修饰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those steps are called post-translational modifications.
+Dialogue: 0,0:44:32.20,0:44:33.63,*Default,NTP,0000,0000,0000,,翻译后修饰意味着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a long word that just means
+Dialogue: 0,0:44:33.63,0:44:36.48,*Default,NTP,0000,0000,0000,,在翻译之后对于产物分子的其他化学修饰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}other chemistry that happens on the molecule after translation.
+Dialogue: 0,0:44:38.61,0:44:42.59,*Default,NTP,0000,0000,0000,,研究结果证实人类细胞所能完成的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It turns out that the kinds of post-translational modifications
+Dialogue: 0,0:44:42.60,0:44:45.89,*Default,NTP,0000,0000,0000,,翻译后修饰非常复杂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}human cells are able to do are very complicated.
+Dialogue: 0,0:44:47.60,0:44:49.44,*Default,NTP,0000,0000,0000,,你能完成很多种类的翻译后修饰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can do many post-translational modifications;
+Dialogue: 0,0:44:49.44,0:44:50.37,*Default,NTP,0000,0000,0000,,你的细胞能完成很多种类的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your cells are capable of
+Dialogue: 0,0:44:50.38,0:44:52.02,*Default,NTP,0000,0000,0000,,翻译后修饰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}doing many post-translational modifications.
+Dialogue: 0,0:44:52.67,0:44:56.79,*Default,NTP,0000,0000,0000,,细菌  或者简单有机体  就不能做到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Bacteria, or simple organisms, are not always capable of that.
+Dialogue: 0,0:44:57.15,0:44:59.67,*Default,NTP,0000,0000,0000,,这一步骤在我们谈到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now that's going to be important when we talk about
+Dialogue: 0,0:44:59.67,0:45:01.70,*Default,NTP,0000,0000,0000,,利用像细菌那样的宿主\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}making human gene - making human proteins
+Dialogue: 0,0:45:01.70,0:45:03.49,*Default,NTP,0000,0000,0000,,来生成人类蛋白时非常重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}inside alternate hosts like bacteria,
+Dialogue: 0,0:45:05.18,0:45:06.72,*Default,NTP,0000,0000,0000,,因为细菌并不具备人类细胞的全部功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that they can't do all the things that your cells can do.
+Dialogue: 0,0:45:08.53,0:45:09.91,*Default,NTP,0000,0000,0000,,基因表达如何调控呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How is gene expression controlled?
+Dialogue: 0,0:45:10.83,0:45:12.58,*Default,NTP,0000,0000,0000,,可以通过多种不同途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It can be controlled in a variety of ways.
+Dialogue: 0,0:45:13.28,0:45:14.57,*Default,NTP,0000,0000,0000,,最基本的途径\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The most basic control is
+Dialogue: 0,0:45:14.57,0:45:16.73,*Default,NTP,0000,0000,0000,,是调控细胞转录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by controlling when transcription happens.
+Dialogue: 0,0:45:19.28,0:45:20.30,*Default,NTP,0000,0000,0000,,研究证明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When transcription happens
+Dialogue: 0,0:45:20.30,0:45:20.95,*Default,NTP,0000,0000,0000,,当细胞转录时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it turns out
+Dialogue: 0,0:45:20.95,0:45:22.86,*Default,NTP,0000,0000,0000,,还有与之相关的一整套生物机制在运作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there's a whole biology associated with this,
+Dialogue: 0,0:45:23.48,0:45:25.34,*Default,NTP,0000,0000,0000,,包括一种在你细胞中飘浮着的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}including molecules that are floating around
+Dialogue: 0,0:45:25.34,0:45:27.28,*Default,NTP,0000,0000,0000,,称为转录因子的分子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}inside your cells called transcription factors,
+Dialogue: 0,0:45:28.00,0:45:29.59,*Default,NTP,0000,0000,0000,,它们的工作就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and their job-- they are
+Dialogue: 0,0:45:29.59,0:45:32.30,*Default,NTP,0000,0000,0000,,它们知道该转录哪一段基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}molecules that are about particular genes
+Dialogue: 0,0:45:32.30,0:45:34.85,*Default,NTP,0000,0000,0000,,该转录哪一段序列\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what some of the sequences and are able to
+Dialogue: 0,0:45:34.85,0:45:36.65,*Default,NTP,0000,0000,0000,,然后把这些细胞中的基因激活\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}turn on those genes inside cells,
+Dialogue: 0,0:45:37.81,0:45:38.87,*Default,NTP,0000,0000,0000,,进行转录\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to make them transcribe.
+Dialogue: 0,0:45:39.45,0:45:41.42,*Default,NTP,0000,0000,0000,,转录需要RNA的顺利加工\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It requires RNA processing to happen smoothly,
+Dialogue: 0,0:45:41.86,0:45:43.45,*Default,NTP,0000,0000,0000,,因此如果你能干扰RNA加工过程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so if you can interfere with RNA processing 
+Dialogue: 0,0:45:43.45,0:45:46.03,*Default,NTP,0000,0000,0000,,你就能阻止一段基因的表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you can stop a gene from being expressed.
+Dialogue: 0,0:45:47.87,0:45:49.42,*Default,NTP,0000,0000,0000,,如果你能干扰RNA加工的任何一个阶段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you can interfere with any stage
+Dialogue: 0,0:45:49.95,0:45:52.03,*Default,NTP,0000,0000,0000,,你就能阻止一段基因的表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in RNA processing you can stop a gene from being expressed
+Dialogue: 0,0:45:52.78,0:45:54.63,*Default,NTP,0000,0000,0000,,这也是当今分子生物学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and this is a very hot topic
+Dialogue: 0,0:45:55.49,0:45:57.71,*Default,NTP,0000,0000,0000,,和新型疗法中非常热门的话题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in molecular biology now and human therapeutics.
+Dialogue: 0,0:45:58.53,0:46:01.24,*Default,NTP,0000,0000,0000,,比如说  你们听说过的RNA干扰 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've heard about RNA interference, for example,
+Dialogue: 0,0:46:01.63,0:46:03.14,*Default,NTP,0000,0000,0000,,就是一种阻止\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and that is the process of stopping this,
+Dialogue: 0,0:46:03.79,0:46:05.11,*Default,NTP,0000,0000,0000,,基因表达的手段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to stop a gene from being expressed.
+Dialogue: 0,0:46:05.65,0:46:07.40,*Default,NTP,0000,0000,0000,,举例来说  如果某段基因导致细胞癌变\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For example, a gene that makes a cell cancerous,
+Dialogue: 0,0:46:08.04,0:46:09.45,*Default,NTP,0000,0000,0000,,我就希望阻止它表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd like to stop it from being expressed.
+Dialogue: 0,0:46:10.22,0:46:11.72,*Default,NTP,0000,0000,0000,,而你就可以通过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you could interfere
+Dialogue: 0,0:46:12.39,0:46:14.32,*Default,NTP,0000,0000,0000,,降解其mRNA来进行干扰\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with a translation by degrading messenger RNA,
+Dialogue: 0,0:46:14.79,0:46:15.69,*Default,NTP,0000,0000,0000,,再举个例子  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example. If you had a way
+Dialogue: 0,0:46:16.02,0:46:17.47,*Default,NTP,0000,0000,0000,,如果你能把表达特定蛋白的RNA\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to specifically chew up all the RNA molecules
+Dialogue: 0,0:46:18.19,0:46:21.00,*Default,NTP,0000,0000,0000,,统统揪出来捣毁的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are responsible for making a particular protein,
+Dialogue: 0,0:46:21.37,0:46:23.06,*Default,NTP,0000,0000,0000,,你也能阻止这段基因表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could stop it from being expressed
+Dialogue: 0,0:46:23.62,0:46:26.58,*Default,NTP,0000,0000,0000,,哪怕是你的细胞在努力表达这段基因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even though your cell is trying to make it.
+Dialogue: 0,0:46:28.42,0:46:29.32,*Default,NTP,0000,0000,0000,,所以我希望你能看一下这张图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want you to look at this picture,
+Dialogue: 0,0:46:29.66,0:46:30.60,*Default,NTP,0000,0000,0000,,读一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}read the little bit about
+Dialogue: 0,0:46:30.81,0:46:32.99,*Default,NTP,0000,0000,0000,,教材里基因调控的章节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}gene - control of gene expression - that's in the book,
+Dialogue: 0,0:46:33.49,0:46:34.73,*Default,NTP,0000,0000,0000,,这是个很大的话题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}know that it's a big topic,
+Dialogue: 0,0:46:35.08,0:46:36.35,*Default,NTP,0000,0000,0000,,我们不会进一步深入去探讨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're not going to talk about it
+Dialogue: 0,0:46:36.58,0:46:37.56,*Default,NTP,0000,0000,0000,,但一些基因调控\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}except we're going to talk about some examples
+Dialogue: 0,0:46:37.90,0:46:39.25,*Default,NTP,0000,0000,0000,,用以治疗疾病的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where control of gene expression
+Dialogue: 0,0:46:39.49,0:46:43.84,*Default,NTP,0000,0000,0000,,我们可能还会在之后的课程中讲到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can be exploited in order to treat diseases,
+Dialogue: 0,0:46:44.31,0:46:46.18,*Default,NTP,0000,0000,0000,,那我们周四见了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for example. So I'll see you on Thursday.

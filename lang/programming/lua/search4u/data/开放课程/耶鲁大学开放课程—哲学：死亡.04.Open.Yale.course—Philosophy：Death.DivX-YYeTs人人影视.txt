@@ -1,0 +1,962 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:00.00,0:02:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:20:00.00,0:21:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:00:00.81,0:00:02.57,*Default,NTP,0000,0000,0000,,我们一直在讨论这样一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We've been talking about the question,
+Dialogue: 0,0:00:02.57,0:00:05.99,*Default,NTP,0000,0000,0000,,用什么论证可以证明灵魂的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What arguments might be offered for the existence of a soul?
+Dialogue: 0,0:00:05.99,0:00:07.64,*Default,NTP,0000,0000,0000,,我们首先会想到的一类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the family of arguments
+Dialogue: 0,0:00:07.65,0:00:10.47,*Default,NTP,0000,0000,0000,,则是那种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're considering initially are arguments
+Dialogue: 0,0:00:10.47,0:00:11.35,*Default,NTP,0000,0000,0000,,被称作推理的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that get known as inference
+Dialogue: 0,0:00:11.35,0:00:13.78,*Default,NTP,0000,0000,0000,,或叫做  最佳解释推理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or inferences to the best explanation.
+Dialogue: 0,0:00:13.78,0:00:15.38,*Default,NTP,0000,0000,0000,,其思路是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The thought is that
+Dialogue: 0,0:00:15.38,0:00:17.80,*Default,NTP,0000,0000,0000,,存在一些有关我们自身的亟待解释的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's something about us that needs explaining.
+Dialogue: 0,0:00:17.80,0:00:21.49,*Default,NTP,0000,0000,0000,,但单从物理的角度  我们无法对其进行解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can't explain it in terms of, in purely physical terms.
+Dialogue: 0,0:00:21.49,0:00:23.05,*Default,NTP,0000,0000,0000,,所以我们需要借助他法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we need to appeal to,
+Dialogue: 0,0:00:23.05,0:00:25.46,*Default,NTP,0000,0000,0000,,我们需要假定灵魂存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we need to posit, the existence of, a soul.
+Dialogue: 0,0:00:25.46,0:00:31.34,*Default,NTP,0000,0000,0000,,我们待会儿再回到这个论题上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I'll come back to that sort of argument in just a minute,
+Dialogue: 0,0:00:31.34,0:00:34.75,*Default,NTP,0000,0000,0000,,现在我们暂且先把它放在一边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but let me bracket that for a moment
+Dialogue: 0,0:00:34.75,0:00:36.39,*Default,NTP,0000,0000,0000,,开始学习柏拉图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and say something about Plato.
+Dialogue: 0,0:00:36.39,0:00:37.55,*Default,NTP,0000,0000,0000,,从下周开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Starting next week,
+Dialogue: 0,0:00:37.55,0:00:40.96,*Default,NTP,0000,0000,0000,,我们要学习柏拉图的对话  斐多篇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're going to be looking at Plato's dialogue, the Phaedo.
+Dialogue: 0,0:00:40.96,0:00:43.29,*Default,NTP,0000,0000,0000,,尽管在讲到斐多篇时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so although I'll be saying a great deal
+Dialogue: 0,0:00:43.29,0:00:44.87,*Default,NTP,0000,0000,0000,,我会向你们详尽介绍其中的内容\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the Phaedo once we turn to it,
+Dialogue: 0,0:00:44.87,0:00:46.90,*Default,NTP,0000,0000,0000,,但现在  我还是想先花一两分钟的时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to just take a minute or two
+Dialogue: 0,0:00:46.90,0:00:49.59,*Default,NTP,0000,0000,0000,,做一个简短的引言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and say a couple of introductory remarks.
+Dialogue: 0,0:00:49.59,0:00:51.38,*Default,NTP,0000,0000,0000,,我不知道你们当中有多少人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know how many of you
+Dialogue: 0,0:00:51.38,0:00:53.16,*Default,NTP,0000,0000,0000,,之前未曾读过柏拉图的作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have not read any Plato before,
+Dialogue: 0,0:00:53.16,0:00:55.42,*Default,NTP,0000,0000,0000,,但是  还未拜读过柏拉图的同学们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but for those of you who haven't,
+Dialogue: 0,0:00:55.42,0:00:57.80,*Default,NTP,0000,0000,0000,,我敢肯定你们会喜欢上他的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I actually think you're in for a treat.
+Dialogue: 0,0:00:57.80,0:01:01.26,*Default,NTP,0000,0000,0000,,柏拉图是历史上最伟大的哲学家之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato is not only one of the greatest philosophers in history,
+Dialogue: 0,0:01:01.26,0:01:06.38,*Default,NTP,0000,0000,0000,,并且  他使用对话体形式来阐述其观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he wrote his philosophy in the form of dialogues.
+Dialogue: 0,0:01:06.38,0:01:08.42,*Default,NTP,0000,0000,0000,,即  以戏剧为表现方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is to say, plays,
+Dialogue: 0,0:01:08.42,0:01:12.58,*Default,NTP,0000,0000,0000,,其间各种人物悠闲地或坐或站  集聚一块儿\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which various characters sit around or stand around
+Dialogue: 0,0:01:12.58,0:01:16.21,*Default,NTP,0000,0000,0000,,探讨各种哲学观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and argue about philosophical positions.
+Dialogue: 0,0:01:16.72,0:01:21.21,*Default,NTP,0000,0000,0000,,我们要学习的这篇对话  斐多篇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The particular dialogue that we're going to reading,the Phaedo,
+Dialogue: 0,0:01:21.21,0:01:25.78,*Default,NTP,0000,0000,0000,,就将场景设定在苏格拉底临死前的一幕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is set at the death scene of Socrates.
+Dialogue: 0,0:01:25.78,0:01:27.52,*Default,NTP,0000,0000,0000,,想必你们都知道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As I'm sure you know,
+Dialogue: 0,0:01:27.52,0:01:29.90,*Default,NTP,0000,0000,0000,,苏格拉底被人指控\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates was put on trial,
+Dialogue: 0,0:01:29.90,0:01:34.18,*Default,NTP,0000,0000,0000,,以教唆雅典青年的罪名  被判处死刑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}condemned to death for corrupting the youth of Athens--
+Dialogue: 0,0:01:34.18,0:01:35.52,*Default,NTP,0000,0000,0000,,也许  罪名还包括\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and perhaps, among other things,
+Dialogue: 0,0:01:35.52,0:01:38.45,*Default,NTP,0000,0000,0000,,和青年们讨论哲学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for arguing philosophy with them.
+Dialogue: 0,0:01:38.45,0:01:45.14,*Default,NTP,0000,0000,0000,,狱卒把毒芹汁端给他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he's given hemlock, poison,
+Dialogue: 0,0:01:45.14,0:01:46.38,*Default,NTP,0000,0000,0000,,他一饮而尽  然后生命就此终结\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he drinks it and he dies.
+Dialogue: 0,0:01:46.38,0:01:48.74,*Default,NTP,0000,0000,0000,,这是一个历史性的事件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, this is a historical event.
+Dialogue: 0,0:01:48.74,0:01:53.82,*Default,NTP,0000,0000,0000,,苏格拉底有一大群朋友和学生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates had a circle of friends and disciples
+Dialogue: 0,0:01:53.82,0:01:55.97,*Default,NTP,0000,0000,0000,,和他讨论哲学\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he would argue philosophy with.
+Dialogue: 0,0:01:55.97,0:01:59.02,*Default,NTP,0000,0000,0000,,而柏拉图就是他的学生之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of his disciples was Plato.
+Dialogue: 0,0:01:59.02,0:02:02.13,*Default,NTP,0000,0000,0000,,柏拉图随后形成自己的思想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato then grew up
+Dialogue: 0,0:02:02.13,0:02:04.72,*Default,NTP,0000,0000,0000,,并写下了许多哲学著作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and wrote philosophical works.
+Dialogue: 0,0:02:06.46,0:02:11.45,*Default,NTP,0000,0000,0000,,柏拉图本人通常并不在自己的对话篇里出现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato does not typically appear in his own dialogues.
+Dialogue: 0,0:02:11.45,0:02:14.51,*Default,NTP,0000,0000,0000,,即使出现了  也仅仅是个次要的角色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, if he does, he's only there as a minor character.
+Dialogue: 0,0:02:14.51,0:02:16.03,*Default,NTP,0000,0000,0000,,实际上  如果我没记错的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact, if I recall correctly,
+Dialogue: 0,0:02:16.03,0:02:18.50,*Default,NTP,0000,0000,0000,,柏拉图曾提到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Plato's mentioned as not
+Dialogue: 0,0:02:18.50,0:02:22.83,*Default,NTP,0000,0000,0000,,苏格拉底死时自己并不在场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}being there on the day that Socrates dies.
+Dialogue: 0,0:02:25.16,0:02:26.55,*Default,NTP,0000,0000,0000,,那么  我们如何辨别\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, how do we know,
+Dialogue: 0,0:02:26.55,0:02:27.19,*Default,NTP,0000,0000,0000,,在戏剧中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we've got this play,
+Dialogue: 0,0:02:27.19,0:02:31.03,*Default,NTP,0000,0000,0000,,谁代表柏拉图本人的立场呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whose position is Plato's position?
+Dialogue: 0,0:02:31.03,0:02:34.84,*Default,NTP,0000,0000,0000,,答案是  苏格拉底\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the answer--the short answer--is, Socrates,
+Dialogue: 0,0:02:34.84,0:02:41.05,*Default,NTP,0000,0000,0000,,即剧中苏格拉底的角色诠释了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the character Socrates in the play, represents Plato,
+Dialogue: 0,0:02:41.05,0:02:44.18,*Default,NTP,0000,0000,0000,,戏剧作者自己的哲学观\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the author of the play's, philosophical views.
+Dialogue: 0,0:02:44.18,0:02:47.92,*Default,NTP,0000,0000,0000,,如果这是在古代哲学的课堂上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, in fact, if this were a class in ancient philosophy,
+Dialogue: 0,0:02:47.92,0:02:50.30,*Default,NTP,0000,0000,0000,,我们可能要将讨论的内容延伸得更广一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'd have to complicate that picture,
+Dialogue: 0,0:02:50.30,0:02:59.72,*Default,NTP,0000,0000,0000,,因为柏拉图后期的哲学观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it's fairly clear that by late in Plato's career Plato has philosophical views
+Dialogue: 0,0:02:59.72,0:03:04.77,*Default,NTP,0000,0000,0000,,同他老师苏格拉底的观点迥然不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are very much unlike the views of his teacher, Socrates.
+Dialogue: 0,0:03:05.24,0:03:09.03,*Default,NTP,0000,0000,0000,,而且  柏拉图一直没有在对话篇中现身\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And yet Plato continues to not appear in the dialogue.
+Dialogue: 0,0:03:09.03,0:03:12.05,*Default,NTP,0000,0000,0000,,而苏格拉底仍继续保持着主角的身份\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates continues to be sort of the hero.
+Dialogue: 0,0:03:12.05,0:03:17.86,*Default,NTP,0000,0000,0000,,所以  学者们一直在争论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so scholars debate which of the views put forward
+Dialogue: 0,0:03:17.86,0:03:22.14,*Default,NTP,0000,0000,0000,,在对话篇里的苏格拉底提出的观点中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by Socrates in which ones of the dialogues represent views
+Dialogue: 0,0:03:22.14,0:03:26.49,*Default,NTP,0000,0000,0000,,哪些属于历史上那个真实的苏格拉底的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that belong to the actual historical figure Socrates,
+Dialogue: 0,0:03:26.49,0:03:29.56,*Default,NTP,0000,0000,0000,,哪些是戏剧中的苏格拉底的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and which of the views put forward by the character Socrates
+Dialogue: 0,0:03:29.56,0:03:32.00,*Default,NTP,0000,0000,0000,,哪些虽在对话篇里说是苏格拉底的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which of the dialogues represent views
+Dialogue: 0,0:03:32.00,0:03:35.18,*Default,NTP,0000,0000,0000,,但却并不符合真实的苏格拉底的原意\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are actually not held by the historical Socrates,
+Dialogue: 0,0:03:35.18,0:03:37.97,*Default,NTP,0000,0000,0000,,即实际上是柏拉图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but were instead held by the historical Plato
+Dialogue: 0,0:03:37.97,0:03:42.19,*Default,NTP,0000,0000,0000,,假借苏格拉底之口来表明自己的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and were merely put in the mouth of the character Socrates.
+Dialogue: 0,0:03:42.19,0:03:46.67,*Default,NTP,0000,0000,0000,,学者们是如此鉴别的  柏拉图早期对话作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Scholars distinguish between the early Platonic dialogues,
+Dialogue: 0,0:03:46.67,0:03:48.94,*Default,NTP,0000,0000,0000,,即  在所谓的苏格拉底的对话中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the so-called Socratic dialogues,
+Dialogue: 0,0:03:48.94,0:03:52.04,*Default,NTP,0000,0000,0000,,主角苏格拉底的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where the thought is, those are the views of Socrates,
+Dialogue: 0,0:03:52.04,0:03:54.13,*Default,NTP,0000,0000,0000,,与历史上那个真实的苏格拉底的思想吻合\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the actual historical figure.
+Dialogue: 0,0:03:54.13,0:03:56.43,*Default,NTP,0000,0000,0000,,而就柏拉图的晚期对话作品而言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then there's the late dialogues,
+Dialogue: 0,0:03:56.43,0:03:58.24,*Default,NTP,0000,0000,0000,,尽管苏格拉底也频频出场\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where even though Socrates appears,
+Dialogue: 0,0:03:58.24,0:04:01.08,*Default,NTP,0000,0000,0000,,大多数学者认为  那些观点很可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}most scholars believe those are probably not the views
+Dialogue: 0,0:04:01.08,0:04:04.16,*Default,NTP,0000,0000,0000,,并不是真实的苏格拉底所持有的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the historical Socrates actually believed.
+Dialogue: 0,0:04:04.16,0:04:06.66,*Default,NTP,0000,0000,0000,,对中期对话作品的鉴别  就比较困难\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You have middle dialogues where you have to worry about
+Dialogue: 0,0:04:06.66,0:04:08.90,*Default,NTP,0000,0000,0000,,因为你无法明确观点与人物的对应关系\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whose views are whose.
+Dialogue: 0,0:04:08.90,0:04:10.80,*Default,NTP,0000,0000,0000,,但是我们不用担心\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we're not going to worry.
+Dialogue: 0,0:04:10.80,0:04:13.99,*Default,NTP,0000,0000,0000,,这不是在古代哲学课课堂上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is not a class in ancient philosophy.
+Dialogue: 0,0:04:13.99,0:04:15.12,*Default,NTP,0000,0000,0000,,所以  出于这门课程的目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So for our purposes,
+Dialogue: 0,0:04:15.12,0:04:16.71,*Default,NTP,0000,0000,0000,,我们无需深究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't have to ask ourselves
+Dialogue: 0,0:04:16.71,0:04:19.25,*Default,NTP,0000,0000,0000,,苏格拉底在对话中的某个观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when Socrates in the dialogue says something,
+Dialogue: 0,0:04:19.25,0:04:23.84,*Default,NTP,0000,0000,0000,,到底是属于那个真实的受死之人苏格拉底的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is this a view that the dead man Socrates actually would have held
+Dialogue: 0,0:04:23.84,0:04:27.22,*Default,NTP,0000,0000,0000,,还是属于已故之人柏拉图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or is this simply a view that the dead man Plato
+Dialogue: 0,0:04:27.22,0:04:30.68,*Default,NTP,0000,0000,0000,,通过作品中苏格拉底这个角色所表述的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}put in the mouth of the character Socrates?
+Dialogue: 0,0:04:30.68,0:04:32.37,*Default,NTP,0000,0000,0000,,就我们这门课程的目的而言  这都无关紧要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For our purposes, it won't really matter.
+Dialogue: 0,0:04:32.37,0:04:34.37,*Default,NTP,0000,0000,0000,,我会把苏格拉底提出的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll take every view that
+Dialogue: 0,0:04:34.38,0:04:37.82,*Default,NTP,0000,0000,0000,,所有观点都当做是柏拉图的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Socrates puts forward as a view of Plato's,
+Dialogue: 0,0:04:37.82,0:04:40.58,*Default,NTP,0000,0000,0000,,尽管我会随意地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though I'll typically sort of run back
+Dialogue: 0,0:04:40.58,0:04:42.93,*Default,NTP,0000,0000,0000,,将两者交替着说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and forth sort of in a careless fashion.
+Dialogue: 0,0:04:42.93,0:04:43.65,*Default,NTP,0000,0000,0000,,我会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll say,
+Dialogue: 0,0:04:43.65,0:04:46.10,*Default,NTP,0000,0000,0000,,"柏拉图认为"或者"苏格拉底认为"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Plato holds" Or "Socrates argues,"
+Dialogue: 0,0:04:46.10,0:04:48.54,*Default,NTP,0000,0000,0000,,因为就这门课的目的而言两种说法是等效的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because for our purposes it's all the same.
+Dialogue: 0,0:04:48.94,0:04:49.75,*Default,NTP,0000,0000,0000,,但是  还有一个地方\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there's one other
+Dialogue: 0,0:04:49.75,0:04:51.61,*Default,NTP,0000,0000,0000,,我要提醒你们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}complication that you've got to be warned about,
+Dialogue: 0,0:04:51.61,0:04:54.28,*Default,NTP,0000,0000,0000,,那就是  由于这些是对话作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is this. Because these are dialogues
+Dialogue: 0,0:04:54.28,0:04:59.26,*Default,NTP,0000,0000,0000,,且它们全都采用了哲学论证的形式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they take the form of philosophical arguments,
+Dialogue: 0,0:04:59.26,0:05:01.33,*Default,NTP,0000,0000,0000,,即  人们先提出观点  然后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}people put forward views and then,
+Dialogue: 0,0:05:01.34,0:05:03.41,*Default,NTP,0000,0000,0000,,在讨论的过程中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}over the course of the discussion,
+Dialogue: 0,0:05:03.41,0:05:06.67,*Default,NTP,0000,0000,0000,,改变自己的关于事物想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}change their minds about things.
+Dialogue: 0,0:05:06.68,0:05:09.13,*Default,NTP,0000,0000,0000,,随即收回之前的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And they take them back.
+Dialogue: 0,0:05:09.13,0:05:11.45,*Default,NTP,0000,0000,0000,,也许类似的情形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And maybe something similar
+Dialogue: 0,0:05:11.46,0:05:14.99,*Default,NTP,0000,0000,0000,,在苏格拉底身上也发生过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is going on when Socrates says something.
+Dialogue: 0,0:05:14.99,0:05:19.45,*Default,NTP,0000,0000,0000,,因为  毕竟柏拉图也没有说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because, after all, this isn't Plato saying,
+Dialogue: 0,0:05:19.45,0:05:21.92,*Default,NTP,0000,0000,0000,,这就是我明确相信的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Here's what I believe explicitly."
+Dialogue: 0,0:05:21.92,0:05:24.77,*Default,NTP,0000,0000,0000,,他只是在写一个关于哲学的戏剧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's just writing a dramatic play about philosophy.
+Dialogue: 0,0:05:24.77,0:05:29.00,*Default,NTP,0000,0000,0000,,所以有时候我们会这样想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so sometimes we'll find ourselves thinking,
+Dialogue: 0,0:05:29.00,0:05:30.44,*Default,NTP,0000,0000,0000,,看  这里有一个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You know, there's an argument here
+Dialogue: 0,0:05:30.44,0:05:32.29,*Default,NTP,0000,0000,0000,,是由苏格拉底提出的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Socrates is putting forward.
+Dialogue: 0,0:05:32.29,0:05:34.45,*Default,NTP,0000,0000,0000,,它也许不是一个很好的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But maybe it's not a very good argument."
+Dialogue: 0,0:05:34.45,0:05:35.45,*Default,NTP,0000,0000,0000,,但至少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it will, at least,
+Dialogue: 0,0:05:35.45,0:05:38.64,*Default,NTP,0000,0000,0000,,它值得我们偶尔停下来  琢磨一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}be worth pausing periodically to ask ourselves,
+Dialogue: 0,0:05:38.64,0:05:43.21,*Default,NTP,0000,0000,0000,,也许柏拉图也意识到这不是一个好论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe Plato realized it wasn't a very good argument.
+Dialogue: 0,0:05:43.21,0:05:48.84,*Default,NTP,0000,0000,0000,,通过了解那些由苏格拉底提出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can often better understand the dialogues by seeing Socrates
+Dialogue: 0,0:05:48.84,0:05:51.68,*Default,NTP,0000,0000,0000,,但他自己也觉得不充分的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as putting forward certain positions
+Dialogue: 0,0:05:51.68,0:05:55.22,*Default,NTP,0000,0000,0000,,我们可以更好地理解这些对话作品\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that he does not think are altogether adequate.
+Dialogue: 0,0:05:55.22,0:05:58.09,*Default,NTP,0000,0000,0000,,他会调整  修改那些观点 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he modifies them or revises them
+Dialogue: 0,0:05:58.09,0:06:00.01,*Default,NTP,0000,0000,0000,,或者以引入新观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or introduces new positions
+Dialogue: 0,0:06:00.01,0:06:05.78,*Default,NTP,0000,0000,0000,,来解决先前他遇到的难题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to deal with some of the difficulties that he was setting himself to be open to earlier.
+Dialogue: 0,0:06:05.78,0:06:09.15,*Default,NTP,0000,0000,0000,,我之前说过  不要过多拘泥于细枝末节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As I say, don't worry about any of those details now,
+Dialogue: 0,0:06:09.15,0:06:12.42,*Default,NTP,0000,0000,0000,,但在阅读对话时应该谨记  细节很重要\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's a point to keep in mind as you read the dialogues.
+Dialogue: 0,0:06:12.42,0:06:15.52,*Default,NTP,0000,0000,0000,,以上就是我对斐多篇做的简介\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that's all I really wanted to say by way of introduction.
+Dialogue: 0,0:06:15.52,0:06:17.22,*Default,NTP,0000,0000,0000,,考虑到下周的课程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You should start reading the Phaedo
+Dialogue: 0,0:06:17.22,0:06:18.92,*Default,NTP,0000,0000,0000,,你们应该提前开始阅读斐多篇了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for next week.
+Dialogue: 0,0:06:18.92,0:06:21.92,*Default,NTP,0000,0000,0000,,我们会在下周开始讨论斐多篇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll be talking about the Phaedo starting some time next week
+Dialogue: 0,0:06:21.92,0:06:23.32,*Default,NTP,0000,0000,0000,,外加下下周的一部分时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and we'll continue the
+Dialogue: 0,0:06:23.32,0:06:26.31,*Default,NTP,0000,0000,0000,,或者全部时间  继续\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}discussion of the Phaedo for at least a bit of,
+Dialogue: 0,0:06:26.31,0:06:29.00,*Default,NTP,0000,0000,0000,,讨论斐多篇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe all of, the week after that.
+Dialogue: 0,0:06:29.40,0:06:32.55,*Default,NTP,0000,0000,0000,,对于柏拉图这块  我会做特别对待\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the case of Plato, I'm going to make an exception.
+Dialogue: 0,0:06:32.55,0:06:35.82,*Default,NTP,0000,0000,0000,,通常  我会提到我们的阅读材料\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Normally, I will mention our readings,
+Dialogue: 0,0:06:35.82,0:06:38.35,*Default,NTP,0000,0000,0000,,但是我不会花过多的时间\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I won't spend a lot of time
+Dialogue: 0,0:06:39.10,0:06:40.79,*Default,NTP,0000,0000,0000,,来讨论细节问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}actually discussing them in detail.
+Dialogue: 0,0:06:41.37,0:06:43.35,*Default,NTP,0000,0000,0000,,这也就是为什么你们不得不\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why you have to
+Dialogue: 0,0:06:43.36,0:06:45.93,*Default,NTP,0000,0000,0000,,把课后阅读当做上课的补充\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think of the readings as complementing the lectures
+Dialogue: 0,0:06:45.94,0:06:48.25,*Default,NTP,0000,0000,0000,,或者把听课当做课后阅读的补充\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or think of the lectures as complementing the readings.
+Dialogue: 0,0:06:48.32,0:06:54.90,*Default,NTP,0000,0000,0000,,这次不是向你们发些名著导读那么简单了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not just giving the Cliff Notes, as it were, of the readings.
+Dialogue: 0,0:06:55.68,0:06:58.30,*Default,NTP,0000,0000,0000,,对于斐多篇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nonetheless, in the case of the Phaedo,
+Dialogue: 0,0:06:58.30,0:07:03.65,*Default,NTP,0000,0000,0000,,我还会花更多的时间来说明诸如\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I am going to spend more time actually saying,
+Dialogue: 0,0:07:03.65,0:07:06.25,*Default,NTP,0000,0000,0000,,我认为首要论证是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Here's what I think the first main argument is.
+Dialogue: 0,0:07:06.25,0:07:07.83,*Default,NTP,0000,0000,0000,,让我们从前提和结论着手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's try to reconstruct it in terms of
+Dialogue: 0,0:07:07.83,0:07:09.94,*Default,NTP,0000,0000,0000,,重新构建这个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}its premises and its conclusions.
+Dialogue: 0,0:07:09.94,0:07:11.50,*Default,NTP,0000,0000,0000,,这是我的一些反驳观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here are some objections I raise.
+Dialogue: 0,0:07:11.50,0:07:14.75,*Default,NTP,0000,0000,0000,,接下来是柏拉图提出的另一个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here is then the next argument that Plato offers.
+Dialogue: 0,0:07:14.75,0:07:16.47,*Default,NTP,0000,0000,0000,,我们试着研究一下前提条件\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's try to get that up in premises."
+Dialogue: 0,0:07:16.47,0:07:20.17,*Default,NTP,0000,0000,0000,,即便如此  我也不会花时间大声朗读\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even there, I won't be spending time reading out loud
+Dialogue: 0,0:07:20.17,0:07:22.08,*Default,NTP,0000,0000,0000,,斐多篇的各大长篇\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}long passages from the Phaedo.
+Dialogue: 0,0:07:22.08,0:07:23.22,*Default,NTP,0000,0000,0000,,但在某种意义上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, in some sense,
+Dialogue: 0,0:07:23.22,0:07:26.09,*Default,NTP,0000,0000,0000,,相对于其他阅读材料  我会对斐多篇作出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll be giving a closer commentary of the Phaedo
+Dialogue: 0,0:07:26.09,0:07:27.75,*Default,NTP,0000,0000,0000,,更为细致的解说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than I'll do for the other readings.
+Dialogue: 0,0:07:27.75,0:07:32.51,*Default,NTP,0000,0000,0000,,为了下周的课程  你们应该开始阅读了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, still, what you should do is start reading it for next week.
+Dialogue: 0,0:07:32.79,0:07:36.07,*Default,NTP,0000,0000,0000,,斐多篇的主题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The topic of the Phaedo,
+Dialogue: 0,0:07:36.07,0:07:41.11,*Default,NTP,0000,0000,0000,,如前所说  被设定在苏格拉底受死当天\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I say, is set on Socrates' last day.
+Dialogue: 0,0:07:41.11,0:07:42.43,*Default,NTP,0000,0000,0000,,在对话的结尾处\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At the end of the dialogue,
+Dialogue: 0,0:07:42.43,0:07:44.99,*Default,NTP,0000,0000,0000,,他饮下毒芹汁  走向死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he drinks the hemlock and he dies.
+Dialogue: 0,0:07:44.99,0:07:47.42,*Default,NTP,0000,0000,0000,,也许  一点也不足为奇的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And perhaps unsurprisingly,
+Dialogue: 0,0:07:47.42,0:07:51.66,*Default,NTP,0000,0000,0000,,直到生命的最后一刻  他都在和朋友们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what he does with his friends up until that moment is,
+Dialogue: 0,0:07:51.66,0:07:54.71,*Default,NTP,0000,0000,0000,,探讨灵魂的不朽性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he argues about the immortality of the soul.
+Dialogue: 0,0:07:54.71,0:07:58.09,*Default,NTP,0000,0000,0000,,最令人惊叹的是  苏格拉底并不苦恼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Quite strikingly, Socrates is not upset.
+Dialogue: 0,0:07:58.09,0:08:01.07,*Default,NTP,0000,0000,0000,,他根本不担心自己即将死去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's not worried about the fact that he's going to die.
+Dialogue: 0,0:08:01.07,0:08:03.97,*Default,NTP,0000,0000,0000,,反而以某种方式迎接死神的降临\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He actually welcomes this in a certain way,
+Dialogue: 0,0:08:03.97,0:08:08.04,*Default,NTP,0000,0000,0000,,因为他坚信灵魂是不朽的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because he believes his soul is immortal.
+Dialogue: 0,0:08:08.04,0:08:11.00,*Default,NTP,0000,0000,0000,,所以  支持和反对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, in addition to philosophical arguments for and against 
+Dialogue: 0,0:08:11.00,0:08:14.62,*Default,NTP,0000,0000,0000,,灵魂的存在与不朽的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the existence and immortality of the soul,
+Dialogue: 0,0:08:14.62,0:08:18.72,*Default,NTP,0000,0000,0000,,以一个感人至深的死亡场景告终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we end the dialogue with a quite moving death scene,
+Dialogue: 0,0:08:18.72,0:08:21.30,*Default,NTP,0000,0000,0000,,这简直就是西方文明史上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the great death scenes,
+Dialogue: 0,0:08:21.30,0:08:22.74,*Default,NTP,0000,0000,0000,,最伟大的死亡场景之一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we could call it that,
+Dialogue: 0,0:08:22.74,0:08:24.99,*Default,NTP,0000,0000,0000,,如果我们可以这样说的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of western civilization.
+Dialogue: 0,0:08:24.99,0:08:27.67,*Default,NTP,0000,0000,0000,,总之  如前所说  下周的安排就是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Anyway, as I say, that's all for next week.
+Dialogue: 0,0:08:27.67,0:08:30.66,*Default,NTP,0000,0000,0000,,现在让我们再回到这个问题上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let's return now to the question,
+Dialogue: 0,0:08:30.66,0:08:34.51,*Default,NTP,0000,0000,0000,,我们怎样论证灵魂存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"How might we argue for the existence of the soul?"
+Dialogue: 0,0:08:34.83,0:08:36.20,*Default,NTP,0000,0000,0000,,起初  上节课上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Initially, last time,
+Dialogue: 0,0:08:36.20,0:08:37.66,*Default,NTP,0000,0000,0000,,我们探讨了一类或者说是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we considered a set of or
+Dialogue: 0,0:08:37.66,0:08:40.11,*Default,NTP,0000,0000,0000,,一小类论证  这些论证的基本观点是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a subset of arguments that basically said,
+Dialogue: 0,0:08:40.11,0:08:44.41,*Default,NTP,0000,0000,0000,,我们肯定不仅仅是些物质实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Look, there's got to be more to us than just material objects.
+Dialogue: 0,0:08:44.41,0:08:46.54,*Default,NTP,0000,0000,0000,,人  不是机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}People can't just be machines,
+Dialogue: 0,0:08:46.54,0:08:48.36,*Default,NTP,0000,0000,0000,,因为机器不能推理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because machines can't reason.
+Dialogue: 0,0:08:48.36,0:08:50.53,*Default,NTP,0000,0000,0000,,机器不能思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Machines can't think."
+Dialogue: 0,0:08:50.53,0:08:51.49,*Default,NTP,0000,0000,0000,,而我也说过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I said,
+Dialogue: 0,0:08:51.49,0:08:53.88,*Default,NTP,0000,0000,0000,,这看上去并不是一个令人信服的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"That doesn't seem to be a compelling argument."
+Dialogue: 0,0:08:53.88,0:08:58.76,*Default,NTP,0000,0000,0000,,毕竟  会下国际象棋的电脑似乎是会推理的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}After all, chess-playing computers, it seems, can reason.
+Dialogue: 0,0:08:58.76,0:09:01.35,*Default,NTP,0000,0000,0000,,它们对我的战术了然于胸\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have beliefs about what I'm likely to do next.
+Dialogue: 0,0:09:01.35,0:09:04.73,*Default,NTP,0000,0000,0000,,它们拥有极力实现自身目标的欲望\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have desires about the goals that they're trying to achieve.
+Dialogue: 0,0:09:04.73,0:09:07.23,*Default,NTP,0000,0000,0000,,它们推算怎样才能最彻底地打败我\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They reason about how best to defeat me.
+Dialogue: 0,0:09:07.23,0:09:09.49,*Default,NTP,0000,0000,0000,,需要指出的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it's worth pointing out that--
+Dialogue: 0,0:09:09.49,0:09:11.27,*Default,NTP,0000,0000,0000,,上次课我并没有提到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a point that I didn't make last time--
+Dialogue: 0,0:09:11.27,0:09:13.92,*Default,NTP,0000,0000,0000,,需要指出的是  电脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's worth pointing out that, what the computers,
+Dialogue: 0,0:09:13.92,0:09:16.22,*Default,NTP,0000,0000,0000,,至少最棒的国际象棋电脑  并没有做什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least the best chess-playing computers don't do.
+Dialogue: 0,0:09:16.22,0:09:18.41,*Default,NTP,0000,0000,0000,,实际上  没有电脑真正会做这些事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indeed, no computer actually does this.
+Dialogue: 0,0:09:18.41,0:09:20.90,*Default,NTP,0000,0000,0000,,你可能认为  一台电脑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You might think that what a computer,
+Dialogue: 0,0:09:20.90,0:09:23.13,*Default,NTP,0000,0000,0000,,或一台下棋电脑所做的工作就是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what a chess-playing computer does is just this:
+Dialogue: 0,0:09:23.13,0:09:27.15,*Default,NTP,0000,0000,0000,,计算出所有可能的下法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it calculates every possible branch,
+Dialogue: 0,0:09:27.15,0:09:30.34,*Default,NTP,0000,0000,0000,,以及与之对应的各种可能的棋局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}every possible game from here on out.
+Dialogue: 0,0:09:30.34,0:09:31.53,*Default,NTP,0000,0000,0000,,然后它再斟酌一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then it sort of works backwards.
+Dialogue: 0,0:09:31.53,0:09:33.29,*Default,NTP,0000,0000,0000,,恩  在这些情形下我能胜出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, these are the ones where I'll win."
+Dialogue: 0,0:09:33.29,0:09:34.92,*Default,NTP,0000,0000,0000,,所以只有当它能够预见到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so it only makes the move
+Dialogue: 0,0:09:34.92,0:09:37.29,*Default,NTP,0000,0000,0000,,自己接下来20步得以制胜的棋路时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where it can sort of look ahead 20 moves,
+Dialogue: 0,0:09:37.29,0:09:41.22,*Default,NTP,0000,0000,0000,,它才会继续往下走\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right, and see which branches have the computer winning.
+Dialogue: 0,0:09:41.68,0:09:45.48,*Default,NTP,0000,0000,0000,,但国际象棋的程序并不是这样工作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is not the way chess-playing programs work.
+Dialogue: 0,0:09:45.48,0:09:47.96,*Default,NTP,0000,0000,0000,,原因很简单\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For the simple reason that
+Dialogue: 0,0:09:47.96,0:09:52.35,*Default,NTP,0000,0000,0000,,棋局的潜在变数相当之大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the number of possible chess games is so huge,
+Dialogue: 0,0:09:52.35,0:09:55.02,*Default,NTP,0000,0000,0000,,以至于计算机根本无法将其完全计算出来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that computers can't calculate it.
+Dialogue: 0,0:09:55.02,0:09:58.00,*Default,NTP,0000,0000,0000,,因为这需要它们数以千年的工作量\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They'd be busy for thousands of years.
+Dialogue: 0,0:09:58.00,0:09:59.13,*Default,NTP,0000,0000,0000,,我们可能会这么做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We can do that sort of:
+Dialogue: 0,0:09:59.13,0:10:00.92,*Default,NTP,0000,0000,0000,,当你和你七岁大的侄子或侄女\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you play tic-tac-toe
+Dialogue: 0,0:10:00.92,0:10:03.85,*Default,NTP,0000,0000,0000,,下三子棋的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with your seven-year old nephew or niece,
+Dialogue: 0,0:10:03.85,0:10:05.48,*Default,NTP,0000,0000,0000,,你就会先预测  然后想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you just look ahead and work backwards.
+Dialogue: 0,0:10:05.48,0:10:06.26,*Default,NTP,0000,0000,0000,,要是我这样下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, if I do that,
+Dialogue: 0,0:10:06.26,0:10:06.78,*Default,NTP,0000,0000,0000,,他就会那样下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he'll do that
+Dialogue: 0,0:10:06.78,0:10:07.76,*Default,NTP,0000,0000,0000,,如果他走了那一步  那他就赢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he'll do that and then he wins,
+Dialogue: 0,0:10:07.76,0:10:09.63,*Default,NTP,0000,0000,0000,,所以我不会走这一步 对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so I won't do that," right?
+Dialogue: 0,0:10:09.63,0:10:11.91,*Default,NTP,0000,0000,0000,,但是在下国际象棋时候我们不会那么做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we can't do that with chess.
+Dialogue: 0,0:10:11.91,0:10:14.33,*Default,NTP,0000,0000,0000,,因为实在有太多盘棋了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's just too many games.
+Dialogue: 0,0:10:14.33,0:10:16.46,*Default,NTP,0000,0000,0000,,那么  下棋程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So how do chess-playing programs,
+Dialogue: 0,0:10:16.46,0:10:18.66,*Default,NTP,0000,0000,0000,,特别是最好的下棋程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and particularly the best chess-playing programs,
+Dialogue: 0,0:10:18.66,0:10:20.09,*Default,NTP,0000,0000,0000,,是如何工作的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how do they work? Well,
+Dialogue: 0,0:10:20.09,0:10:23.64,*Default,NTP,0000,0000,0000,,它们的下棋方式同你们如出一辙\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they play chess the same way you do.
+Dialogue: 0,0:10:23.64,0:10:28.77,*Default,NTP,0000,0000,0000,,它们会想  哪些棋子的威力更大\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They have various ideas about which pieces are more powerful
+Dialogue: 0,0:10:28.77,0:10:31.36,*Default,NTP,0000,0000,0000,,需要重点庇护\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so they're more important to protect.
+Dialogue: 0,0:10:31.36,0:10:32.53,*Default,NTP,0000,0000,0000,,它们会想到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They've got various ideas
+Dialogue: 0,0:10:32.53,0:10:36.08,*Default,NTP,0000,0000,0000,,采用哪种策略  获胜几率更高\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about which strategies tend to be successful.
+Dialogue: 0,0:10:36.08,0:10:40.00,*Default,NTP,0000,0000,0000,,以及这些策略会带来哪些风险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What sorts of dangers come along with them?
+Dialogue: 0,0:10:40.00,0:10:41.76,*Default,NTP,0000,0000,0000,,如果你是一名严谨的棋手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you're a serious chess player,
+Dialogue: 0,0:10:41.76,0:10:47.35,*Default,NTP,0000,0000,0000,,你可能还会研究国际象棋史上最伟大的棋局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you might study some of the great games of chess history.
+Dialogue: 0,0:10:47.35,0:10:49.66,*Default,NTP,0000,0000,0000,,的确  当人们编写游戏程序时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And indeed, when they program these things,
+Dialogue: 0,0:10:49.66,0:10:50.76,*Default,NTP,0000,0000,0000,,会在这些程序中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the programmers will
+Dialogue: 0,0:10:50.76,0:10:55.04,*Default,NTP,0000,0000,0000,,一局接一局地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}feed in game after game after game
+Dialogue: 0,0:10:55.04,0:10:57.43,*Default,NTP,0000,0000,0000,,输入历史上那些最伟大的棋局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the great chess games in history.
+Dialogue: 0,0:10:57.43,0:10:59.56,*Default,NTP,0000,0000,0000,,然后  用这些知识武装好自己之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then armed with all of that,
+Dialogue: 0,0:10:59.56,0:11:01.54,*Default,NTP,0000,0000,0000,,你就能做到最好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you sort of do your best.
+Dialogue: 0,0:11:01.54,0:11:03.16,*Default,NTP,0000,0000,0000,,当你下输了一盘时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And when you lose a game,
+Dialogue: 0,0:11:03.16,0:11:05.53,*Default,NTP,0000,0000,0000,,你也许会在心里记下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you kind of make a mental note to yourself,
+Dialogue: 0,0:11:05.53,0:11:07.27,*Default,NTP,0000,0000,0000,,这次实在太糟糕了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"That really screwed me up.
+Dialogue: 0,0:11:07.27,0:11:08.81,*Default,NTP,0000,0000,0000,,下次再换个别的什么试试\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me try something different next time."
+Dialogue: 0,0:11:08.81,0:11:11.19,*Default,NTP,0000,0000,0000,,你会尽量避免使用那些着数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you avoid those sorts of moves.
+Dialogue: 0,0:11:11.19,0:11:16.65,*Default,NTP,0000,0000,0000,,下棋程序也是这样工作的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's how chess-playing programs work as well.
+Dialogue: 0,0:11:17.77,0:11:19.75,*Default,NTP,0000,0000,0000,,跳转一下话题   我先来对此做一番评论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Jumping ahead, let me make a remark about this,
+Dialogue: 0,0:11:19.75,0:11:21.01,*Default,NTP,0000,0000,0000,,因为这和我们几分钟后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this is going to be relevant for something
+Dialogue: 0,0:11:21.01,0:11:22.51,*Default,NTP,0000,0000,0000,,将要讨论的东西有关\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll get to in a couple of minutes.
+Dialogue: 0,0:11:22.51,0:11:24.22,*Default,NTP,0000,0000,0000,,这意味着什么呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What this means--what this,
+Dialogue: 0,0:11:24.22,0:11:25.55,*Default,NTP,0000,0000,0000,,其含义就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the implication--is that
+Dialogue: 0,0:11:25.55,0:11:31.94,*Default,NTP,0000,0000,0000,,如果你正在玩一个不错的国际象棋程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you're playing a great chess-playing program,
+Dialogue: 0,0:11:31.94,0:11:34.83,*Default,NTP,0000,0000,0000,,要想推测出程序下一步的着数\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not as though the way to tell
+Dialogue: 0,0:11:34.83,0:11:37.11,*Default,NTP,0000,0000,0000,,而对游戏程序进行全方位的研究\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what it's going to do is
+Dialogue: 0,0:11:37.11,0:11:42.79,*Default,NTP,0000,0000,0000,,似乎并不是个有效的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to study its program and think it through.
+Dialogue: 0,0:11:42.79,0:11:47.35,*Default,NTP,0000,0000,0000,,这些程序的设计者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The people who design these programs,
+Dialogue: 0,0:11:47.35,0:11:50.00,*Default,NTP,0000,0000,0000,,很可能本身就棋艺高超\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}presumably fairly decent chess players themselves,
+Dialogue: 0,0:11:50.00,0:11:52.27,*Default,NTP,0000,0000,0000,,他们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the people who design these programs,
+Dialogue: 0,0:11:52.27,0:11:53.76,*Default,NTP,0000,0000,0000,,在玩这个程序游戏时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when they're playing the programs
+Dialogue: 0,0:11:53.76,0:11:57.61,*Default,NTP,0000,0000,0000,,并不会在心里想着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're not thinking to themselves,
+Dialogue: 0,0:11:57.61,0:11:59.79,*Default,NTP,0000,0000,0000,,既然这个程序是我编制的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Let's see. I programmed this computer so
+Dialogue: 0,0:11:59.79,0:12:02.53,*Default,NTP,0000,0000,0000,,所以  如果我把皇后移到这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that when I move a queen forward to this space,
+Dialogue: 0,0:12:02.53,0:12:04.20,*Default,NTP,0000,0000,0000,,它就会出相\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it should come out with a bishop."
+Dialogue: 0,0:12:04.20,0:12:05.49,*Default,NTP,0000,0000,0000,,这种想法根本无用\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's hopeless.
+Dialogue: 0,0:12:05.49,0:12:09.46,*Default,NTP,0000,0000,0000,,因为程序会不断依据过去\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because the program is constantly revising its strategies, 
+Dialogue: 0,0:12:09.46,0:12:13.44,*Default,NTP,0000,0000,0000,,有效无效经验修改其策略\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in light of what's worked and what hasn't worked in the past.
+Dialogue: 0,0:12:13.44,0:12:17.55,*Default,NTP,0000,0000,0000,,当程序员或其他任何人  玩这个程序时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When the programmers play these programs or indeed when anybody,
+Dialogue: 0,0:12:17.55,0:12:20.13,*Default,NTP,0000,0000,0000,,比如  一个优秀的棋手  在玩这些程序时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a good chess player, plays these programs,
+Dialogue: 0,0:12:20.13,0:12:24.56,*Default,NTP,0000,0000,0000,,战胜它们的最好办法就是  问问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the best way to try to beat them is simply ask yourself,
+Dialogue: 0,0:12:24.56,0:12:28.23,*Default,NTP,0000,0000,0000,,现在怎么走才最为明智\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What's the best move to make right now?"
+Dialogue: 0,0:12:28.23,0:12:32.78,*Default,NTP,0000,0000,0000,,推算计算机接下来最可能的动向才是制胜关键\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The odds are the computer's going to make the best possible move.
+Dialogue: 0,0:12:32.78,0:12:39.60,*Default,NTP,0000,0000,0000,,将计算机视为一名象棋健将\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Treat the computer as though it were just a great chess player.
+Dialogue: 0,0:12:40.09,0:12:45.20,*Default,NTP,0000,0000,0000,,事实上  最棒的象棋程序已经是老辣的棋手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And indeed, the best programs are great chess players.
+Dialogue: 0,0:12:45.20,0:12:47.21,*Default,NTP,0000,0000,0000,,尽管曾一度出现过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There was a period of time in which,
+Dialogue: 0,0:12:47.21,0:12:49.48,*Default,NTP,0000,0000,0000,,强劲的象棋程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although there were decent, chess-playing programs
+Dialogue: 0,0:12:49.48,0:12:53.58,*Default,NTP,0000,0000,0000,,无法战胜顶级人类棋手的情形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}couldn't beat the best chess-playing humans.
+Dialogue: 0,0:12:53.58,0:12:55.98,*Default,NTP,0000,0000,0000,,但是那种局面在几年前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That ended some years ago when
+Dialogue: 0,0:12:55.98,0:12:59.57,*Default,NTP,0000,0000,0000,,以象棋程序击败象棋大师而告终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the best programs began to beat grand masters.
+Dialogue: 0,0:12:59.57,0:13:01.03,*Default,NTP,0000,0000,0000,,而现在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And now it's in fact the case
+Dialogue: 0,0:13:01.03,0:13:04.92,*Default,NTP,0000,0000,0000,,最优秀的象棋程序可以称得上是所向披靡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the best programs can beat pretty much anybody.
+Dialogue: 0,0:13:04.92,0:13:09.43,*Default,NTP,0000,0000,0000,,当前的国际象棋世界冠军\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the current world champion of chess,
+Dialogue: 0,0:13:09.43,0:13:11.24,*Default,NTP,0000,0000,0000,,弗拉基米尔•克拉姆尼克\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think Vladimir Kramnik,
+Dialogue: 0,0:13:11.24,0:13:17.13,*Default,NTP,0000,0000,0000,,就在今年12月被一个国际象棋程序击败\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}was defeated in December by a chess-playing program.
+Dialogue: 0,0:13:17.53,0:13:24.75,*Default,NTP,0000,0000,0000,,克拉姆尼克当时只是把它当作一个强劲的对手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So Kramnik's simply treating this as an awesome opponent.
+Dialogue: 0,0:13:24.75,0:13:27.18,*Default,NTP,0000,0000,0000,,其所作所为堪称最佳行棋之道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's the best way to deal with these things.
+Dialogue: 0,0:13:27.18,0:13:32.31,*Default,NTP,0000,0000,0000,,好了  我们还是把这些思考暂且先搁在一边\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right. So, bracket some of those thoughts for a moment.
+Dialogue: 0,0:13:32.31,0:13:33.40,*Default,NTP,0000,0000,0000,,稍后再对其继续讨论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll come back to them a little bit later
+Dialogue: 0,0:13:33.40,0:13:34.55,*Default,NTP,0000,0000,0000,,当我们开始探讨这样一个问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we start talking about the question,
+Dialogue: 0,0:13:34.55,0:13:36.85,*Default,NTP,0000,0000,0000,,机器有创造能力吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Could machines be creative?"
+Dialogue: 0,0:13:36.85,0:13:38.16,*Default,NTP,0000,0000,0000,,我先亮出我自己的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Tipping my hand,
+Dialogue: 0,0:13:38.16,0:13:39.32,*Default,NTP,0000,0000,0000,,显而易见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it seems pretty clear that
+Dialogue: 0,0:13:39.32,0:13:40.34,*Default,NTP,0000,0000,0000,,这个问题正好能够\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that seems like the right
+Dialogue: 0,0:13:40.34,0:13:43.44,*Default,NTP,0000,0000,0000,,对国际象棋程序做出解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thing to say about these chess-playing programs.
+Dialogue: 0,0:13:43.44,0:13:45.09,*Default,NTP,0000,0000,0000,,于是我们便产生了这样一个疑问\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we had the question,
+Dialogue: 0,0:13:45.09,0:13:47.95,*Default,NTP,0000,0000,0000,,机器能推理吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Could machines, could machines reason?"
+Dialogue: 0,0:13:47.95,0:13:49.13,*Default,NTP,0000,0000,0000,,虽然还未曾出现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And although we don't have machines
+Dialogue: 0,0:13:49.13,0:13:51.05,*Default,NTP,0000,0000,0000,,具有推理能力的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can reason about a lot of subjects yet,
+Dialogue: 0,0:13:51.05,0:13:52.06,*Default,NTP,0000,0000,0000,,这一点相当明确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it seems pretty clear.
+Dialogue: 0,0:13:52.06,0:13:53.20,*Default,NTP,0000,0000,0000,,但仿佛  机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems like the natural thing to suggest, machines
+Dialogue: 0,0:13:53.20,0:13:57.38,*Default,NTP,0000,0000,0000,,在某些领域具有推理能力是再自然不过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}can reason in at least some areas.
+Dialogue: 0,0:13:57.38,0:14:00.36,*Default,NTP,0000,0000,0000,,所以  人不是物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so it doesn't seem plausible
+Dialogue: 0,0:14:00.36,0:14:03.87,*Default,NTP,0000,0000,0000,,这一观点似乎并不能站稳脚跟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to suggest that we people must not be physical,
+Dialogue: 0,0:14:03.87,0:14:05.24,*Default,NTP,0000,0000,0000,,因为毕竟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}merely physical, because after all,
+Dialogue: 0,0:14:05.24,0:14:07.22,*Default,NTP,0000,0000,0000,,我们人能推理而机器不能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we can reason and no machine can reason.
+Dialogue: 0,0:14:07.22,0:14:10.12,*Default,NTP,0000,0000,0000,,不  机器可以推理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No, machines could reason.
+Dialogue: 0,0:14:10.12,0:14:11.53,*Default,NTP,0000,0000,0000,,但这引发了灵魂辩护者的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But this prompts a different
+Dialogue: 0,0:14:11.53,0:14:14.41,*Default,NTP,0000,0000,0000,,一个迥然的进程\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}move on the part of the defender of souls.
+Dialogue: 0,0:14:14.41,0:14:17.39,*Default,NTP,0000,0000,0000,,也许论证不应该是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Perhaps the argument shouldn't be,
+Dialogue: 0,0:14:17.39,0:14:18.92,*Default,NTP,0000,0000,0000,,我们必须相信灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"We have to believe in souls
+Dialogue: 0,0:14:18.92,0:14:21.59,*Default,NTP,0000,0000,0000,,因为所有的物理对象都不能推理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because no mere physical object could reason."
+Dialogue: 0,0:14:21.59,0:14:23.19,*Default,NTP,0000,0000,0000,,而应该是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Perhaps the argument should be,
+Dialogue: 0,0:14:23.19,0:14:24.80,*Default,NTP,0000,0000,0000,,我们不得不相信灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"We have to believe in souls
+Dialogue: 0,0:14:24.80,0:14:30.59,*Default,NTP,0000,0000,0000,,因为所有物理对象  所有的机器都没有感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because no mere physical object, no machine could feel."
+Dialogue: 0,0:14:31.90,0:14:33.78,*Default,NTP,0000,0000,0000,,我们人拥有情感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know, we have emotions.
+Dialogue: 0,0:14:33.78,0:14:36.49,*Default,NTP,0000,0000,0000,,会彼此相爱  会心生恐惧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We love. We're afraid.
+Dialogue: 0,0:14:36.49,0:14:40.50,*Default,NTP,0000,0000,0000,,会拥有烦恼  也会欢欣愉悦\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're worried. We'll get elated.
+Dialogue: 0,0:14:40.50,0:14:42.82,*Default,NTP,0000,0000,0000,,还会沮丧消沉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We get depressed.
+Dialogue: 0,0:14:42.82,0:14:45.85,*Default,NTP,0000,0000,0000,,所以  或许这个论证应该这样表达\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So perhaps the argument should go
+Dialogue: 0,0:14:45.85,0:14:46.69,*Default,NTP,0000,0000,0000,,对  思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Yeah, yeah, thinking,
+Dialogue: 0,0:14:46.69,0:14:48.60,*Default,NTP,0000,0000,0000,,机器可以思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the sort of thing a machine can do.
+Dialogue: 0,0:14:48.60,0:14:50.25,*Default,NTP,0000,0000,0000,,我们称之为思维机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know, we call them thinking machines.
+Dialogue: 0,0:14:50.25,0:14:54.61,*Default,NTP,0000,0000,0000,,但是感觉能力  却是任何机器都不具备的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But feeling, that's the sort of thing no machine could do.
+Dialogue: 0,0:14:54.61,0:14:56.10,*Default,NTP,0000,0000,0000,,没有任何纯粹的物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No purely physical object
+Dialogue: 0,0:14:56.10,0:14:58.94,*Default,NTP,0000,0000,0000,,可以感觉到什么  可以有情感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could feel anything, could have emotions.
+Dialogue: 0,0:14:58.94,0:15:03.20,*Default,NTP,0000,0000,0000,,因为我们拥有感觉事物的能力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, since we clearly do feel things,
+Dialogue: 0,0:15:03.20,0:15:07.38,*Default,NTP,0000,0000,0000,,所以我们一定比物理对象高级\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there must be more to us than a physical object."
+Dialogue: 0,0:15:11.43,0:15:12.96,*Default,NTP,0000,0000,0000,,现在  我想我们有理由认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I think it is plausible to suggest
+Dialogue: 0,0:15:12.96,0:15:14.96,*Default,NTP,0000,0000,0000,,与象棋计算机的例子不同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that unlike the case of chess-playing computers,
+Dialogue: 0,0:15:14.96,0:15:20.18,*Default,NTP,0000,0000,0000,,我们现在还没有能感觉事物的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't yet have machines that feel things.
+Dialogue: 0,0:15:20.18,0:15:24.12,*Default,NTP,0000,0000,0000,,但问题不是  我们有没有这样的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the question isn't, "Do we?"
+Dialogue: 0,0:15:24.12,0:15:24.95,*Default,NTP,0000,0000,0000,,而是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question is,
+Dialogue: 0,0:15:24.95,0:15:28.43,*Default,NTP,0000,0000,0000,,能否存在这样的机器  它可以感觉到某物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Could there be a machine that could feel something,
+Dialogue: 0,0:15:28.43,0:15:30.62,*Default,NTP,0000,0000,0000,,可以有某种情感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could have an emotion of some sort?"
+Dialogue: 0,0:15:30.62,0:15:33.94,*Default,NTP,0000,0000,0000,,我们来谈一点科幻作品  想一想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let's go a little science fictiony and think about
+Dialogue: 0,0:15:33.94,0:15:35.53,*Default,NTP,0000,0000,0000,,在科幻电影中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the robots that
+Dialogue: 0,0:15:35.53,0:15:38.44,*Default,NTP,0000,0000,0000,,出现过的一些机器人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have been shown in science fiction movies,
+Dialogue: 0,0:15:38.44,0:15:39.85,*Default,NTP,0000,0000,0000,,在科幻电影\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of the computer programs
+Dialogue: 0,0:15:39.85,0:15:42.21,*Default,NTP,0000,0000,0000,,以及科幻小说等其他科幻作品中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have been shown in science fiction movies,
+Dialogue: 0,0:15:43.06,0:15:45.91,*Default,NTP,0000,0000,0000,,出现过的一些计算机程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}science fiction novels, or what have you.
+Dialogue: 0,0:15:47.45,0:15:48.59,*Default,NTP,0000,0000,0000,,我小时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I was a kid
+Dialogue: 0,0:15:48.59,0:15:51.93,*Default,NTP,0000,0000,0000,,有一部叫"迷失太空"的电视剧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there was a television show called Lost in Space.
+Dialogue: 0,0:15:51.93,0:15:53.24,*Default,NTP,0000,0000,0000,,我已经记不起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm afraid I've forgotten
+Dialogue: 0,0:15:53.24,0:15:57.73,*Default,NTP,0000,0000,0000,,剧中机器人的名字了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the name of the robot that was on that show.
+Dialogue: 0,0:15:57.73,0:16:00.28,*Default,NTP,0000,0000,0000,,但在这档电视节目中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But as it was a TV show and so sure enough,
+Dialogue: 0,0:16:00.28,0:16:05.54,*Default,NTP,0000,0000,0000,,每一集  都会戏剧性地发生一个新的危机\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}every single episode, some new dramatic danger would take place.
+Dialogue: 0,0:16:05.54,0:16:10.47,*Default,NTP,0000,0000,0000,,于是机器人就会开始全速前进   大声疾呼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the robot would start whizzing and binging and shout out,
+Dialogue: 0,0:16:10.47,0:16:12.60,*Default,NTP,0000,0000,0000,,"危险  罗宾逊指挥官"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Danger, Commander Robinson!"
+Dialogue: 0,0:16:12.60,0:16:13.82,*Default,NTP,0000,0000,0000,,"危险  威尔•罗宾逊"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Danger, Will Robinson!"
+Dialogue: 0,0:16:13.82,0:16:15.61,*Default,NTP,0000,0000,0000,,就是这样  "危险  威尔•罗宾逊"\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That was it. "Danger, Will Robinson!"
+Dialogue: 0,0:16:15.61,0:16:19.69,*Default,NTP,0000,0000,0000,,机器人好像一直都很担忧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seemed as though the robot was worried.
+Dialogue: 0,0:16:20.91,0:16:22.48,*Default,NTP,0000,0000,0000,,再举个更近一点的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}More recent example.
+Dialogue: 0,0:16:22.48,0:16:25.63,*Default,NTP,0000,0000,0000,,你们可能有人读过道格拉斯•亚当斯的书\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A number of you have probably read some of Douglas Adams' books.
+Dialogue: 0,0:16:25.63,0:16:29.77,*Default,NTP,0000,0000,0000,,如  银河系漫游指南以及其续集\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The Hitchhiker's Guide to the Galaxy and the sequels to that.
+Dialogue: 0,0:16:29.77,0:16:33.48,*Default,NTP,0000,0000,0000,,书中有一个叫马文的机器人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a robot in those books, Marvin,
+Dialogue: 0,0:16:33.48,0:16:37.92,*Default,NTP,0000,0000,0000,,我想可以用"消极"一词来概括他的特点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who's --depressed, I think is the simple word about it.
+Dialogue: 0,0:16:37.92,0:16:39.33,*Default,NTP,0000,0000,0000,,他很聪明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He sort of--He is very smart.
+Dialogue: 0,0:16:39.33,0:16:40.42,*Default,NTP,0000,0000,0000,,对于宇宙万物都有着自己的思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's thought about the universe,
+Dialogue: 0,0:16:40.42,0:16:45.33,*Default,NTP,0000,0000,0000,,他认为人生毫无意义  所以行事消极\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thinks life is pointless and he acts depressed.
+Dialogue: 0,0:16:45.33,0:16:46.67,*Default,NTP,0000,0000,0000,,他把自己的想法告诉另一个机器人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He talks to another robot,
+Dialogue: 0,0:16:46.67,0:16:47.46,*Default,NTP,0000,0000,0000,,后者的情绪也变得低迷\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}depresses the other robot.
+Dialogue: 0,0:16:47.46,0:16:49.81,*Default,NTP,0000,0000,0000,,最后自杀了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The other robot commits suicide.
+Dialogue: 0,0:16:50.55,0:16:51.24,*Default,NTP,0000,0000,0000,,故事就讲到这里\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:16:51.24,0:16:55.89,*Default,NTP,0000,0000,0000,,"消极"用在机器人身上  似乎再自然不过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Seems natural to ascribe depression to Marvin, the robot.
+Dialogue: 0,0:16:55.89,0:16:58.31,*Default,NTP,0000,0000,0000,,因为他的言行举止就是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's how he behaves.
+Dialogue: 0,0:16:58.89,0:17:02.23,*Default,NTP,0000,0000,0000,,再来举个我最喜欢的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, my favorite example,
+Dialogue: 0,0:17:02.23,0:17:06.03,*Default,NTP,0000,0000,0000,,2001太空漫游(电影名)\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the movie 2001: A Space Odyssey.
+Dialogue: 0,0:17:06.03,0:17:07.25,*Default,NTP,0000,0000,0000,,我先申明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I've got to tell you,
+Dialogue: 0,0:17:07.25,0:17:09.43,*Default,NTP,0000,0000,0000,,没有看过这部电影的同学们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for those of you who have not seen this movie,
+Dialogue: 0,0:17:09.43,0:17:11.16,*Default,NTP,0000,0000,0000,,我要剧透了  好吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm about to spoil it. All right? 
+Dialogue: 0,0:17:11.16,0:17:13.28,*Default,NTP,0000,0000,0000,,所以请你们捂住耳朵\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So you cover your ears.
+Dialogue: 0,0:17:14.69,0:17:16.17,*Default,NTP,0000,0000,0000,,太空漫游\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In 2001:A Space Odyssey,
+Dialogue: 0,0:17:16.17,0:17:18.13,*Default,NTP,0000,0000,0000,,一些迹象表明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we get some kind of indication
+Dialogue: 0,0:17:18.13,0:17:20.83,*Default,NTP,0000,0000,0000,,另一个星球上有生命存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that there's life on another planet.
+Dialogue: 0,0:17:20.83,0:17:22.67,*Default,NTP,0000,0000,0000,,一切都很神秘  所以我们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's all very mysterious and we
+Dialogue: 0,0:17:22.67,0:17:30.06,*Default,NTP,0000,0000,0000,,派遣一艘飞船去调查星球上的印记\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}send off a spaceship to investigate the markings,
+Dialogue: 0,0:17:30.06,0:17:34.73,*Default,NTP,0000,0000,0000,,以及那些从其他星球传来的无线电信号\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the radio signals from the other place.
+Dialogue: 0,0:17:34.73,0:17:36.56,*Default,NTP,0000,0000,0000,,这是一项非常重要的任务\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a very important mission
+Dialogue: 0,0:17:36.56,0:17:42.73,*Default,NTP,0000,0000,0000,,因此  一个被命名为哈尔的计算机程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so there is a computer program named Hal
+Dialogue: 0,0:17:42.73,0:17:45.28,*Default,NTP,0000,0000,0000,,被安排协助飞船的运行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that helps run the ship
+Dialogue: 0,0:17:45.28,0:17:46.53,*Default,NTP,0000,0000,0000,,减轻飞船上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and takes a lot of the
+Dialogue: 0,0:17:46.53,0:17:49.66,*Default,NTP,0000,0000,0000,,人类宇航员的负担\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}burdens off of the part of the human astronauts who are on the ship.
+Dialogue: 0,0:17:50.65,0:17:52.38,*Default,NTP,0000,0000,0000,,哈尔有一个目标\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hal's got the goal--
+Dialogue: 0,0:17:52.38,0:17:54.30,*Default,NTP,0000,0000,0000,,从理性和欲望等角度来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in terms of reasoning and desires and so forth and so on--
+Dialogue: 0,0:17:54.30,0:17:57.72,*Default,NTP,0000,0000,0000,,哈尔的目标就是确保该任务能成功完成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hal's got the goal of making sure the mission is successful.
+Dialogue: 0,0:17:57.72,0:18:01.11,*Default,NTP,0000,0000,0000,,但哈尔看似有凭有据地认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But Hal thinks to himself fairly plausibly,
+Dialogue: 0,0:18:01.11,0:18:03.03,*Default,NTP,0000,0000,0000,,人类只会威胁到任务的执行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}humans really screw things up.
+Dialogue: 0,0:18:03.03,0:18:04.84,*Default,NTP,0000,0000,0000,,这是一项至关重要的任务\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is a very important mission.
+Dialogue: 0,0:18:04.84,0:18:09.14,*Default,NTP,0000,0000,0000,,除掉人类  以确保任务的顺利执行\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let's kill the humans to make sure they don't screw things up.
+Dialogue: 0,0:18:12.83,0:18:15.27,*Default,NTP,0000,0000,0000,,其中的一个宇航员\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One of the astronauts,
+Dialogue: 0,0:18:15.27,0:18:17.25,*Default,NTP,0000,0000,0000,,发现了它的阴谋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}discovering the plot,
+Dialogue: 0,0:18:17.25,0:18:21.24,*Default,NTP,0000,0000,0000,,试图阻止哈尔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}attempts to stop Hal.
+Dialogue: 0,0:18:21.24,0:18:23.04,*Default,NTP,0000,0000,0000,,而他唯一\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And proceeds to do the only
+Dialogue: 0,0:18:23.04,0:18:26.12,*Default,NTP,0000,0000,0000,,能使让哈尔不伤害到自己的举措\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thing he can do to defend himself against Hal,
+Dialogue: 0,0:18:26.12,0:18:32.06,*Default,NTP,0000,0000,0000,,就是关闭该程序  基本上也就是杀死\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is shut down the program, basically killing--
+Dialogue: 0,0:18:32.06,0:18:34.70,*Default,NTP,0000,0000,0000,,如果我们可以那样表达的话  杀死哈尔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if we can talk that way--killing Hal.
+Dialogue: 0,0:18:35.52,0:18:37.19,*Default,NTP,0000,0000,0000,,与此同时  一切都在进行中\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Meanwhile, as all this is going on,
+Dialogue: 0,0:18:37.19,0:18:41.48,*Default,NTP,0000,0000,0000,,哈尔和那个叫戴夫的人类宇航员交谈\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hal and Dave, the human astronaut, are talking to each other.
+Dialogue: 0,0:18:41.48,0:18:43.83,*Default,NTP,0000,0000,0000,,哈尔最终意识到将要发生什么事情了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hal realizes what's going on.
+Dialogue: 0,0:18:43.83,0:18:48.99,*Default,NTP,0000,0000,0000,,它试图阻止戴夫  这一点完全可以理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hal tries to stop Dave, understandably enough.
+Dialogue: 0,0:18:48.99,0:18:53.14,*Default,NTP,0000,0000,0000,,当戴夫开始关闭它的电路时  哈尔说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And Hal says, as Dave begins to shut down Hal's circuits,
+Dialogue: 0,0:18:53.14,0:18:56.73,*Default,NTP,0000,0000,0000,,我害怕  我害怕  戴夫\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I'm afraid. I'm afraid, Dave."
+Dialogue: 0,0:18:56.73,0:18:57.35,*Default,NTP,0000,0000,0000,,他害怕什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's he afraid of?
+Dialogue: 0,0:18:57.35,0:18:59.20,*Default,NTP,0000,0000,0000,,他害怕死亡\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He's afraid of dying.
+Dialogue: 0,0:18:59.20,0:19:06.32,*Default,NTP,0000,0000,0000,,赋予哈尔恐惧感  这似乎也是自然而然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems perfectly natural to ascribe fear to Hal.
+Dialogue: 0,0:19:06.32,0:19:09.77,*Default,NTP,0000,0000,0000,,哈尔准确地表现出你所期望他\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hal is behaving in exactly the way you would expect him to behave,
+Dialogue: 0,0:19:09.77,0:19:13.33,*Default,NTP,0000,0000,0000,,或称为它  理应表现的行为方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or it to behave,
+Dialogue: 0,0:19:13.33,0:19:15.63,*Default,NTP,0000,0000,0000,,如果它确实感到恐惧的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if it felt fear.
+Dialogue: 0,0:19:16.97,0:19:18.52,*Default,NTP,0000,0000,0000,,它有理由恐惧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's got reason to be afraid.
+Dialogue: 0,0:19:18.52,0:19:19.92,*Default,NTP,0000,0000,0000,,它表现得恰如其分\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's behaving appropriately.
+Dialogue: 0,0:19:19.92,0:19:21.71,*Default,NTP,0000,0000,0000,,它告诉我们它很害怕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's telling us that it's afraid.
+Dialogue: 0,0:19:21.71,0:19:25.63,*Default,NTP,0000,0000,0000,,于是自然而然  我们就会说哈尔感到害怕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems natural to say Hal's afraid.
+Dialogue: 0,0:19:26.22,0:19:29.62,*Default,NTP,0000,0000,0000,,现在  你可以继续补充这方面的例子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, you could continue to sort of fill in examples like this.
+Dialogue: 0,0:19:29.62,0:19:30.35,*Default,NTP,0000,0000,0000,,正如我所说  的确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As I say, of course,
+Dialogue: 0,0:19:30.35,0:19:31.57,*Default,NTP,0000,0000,0000,,这些都只是科幻作品而已\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they're all science fiction,
+Dialogue: 0,0:19:31.57,0:19:33.79,*Default,NTP,0000,0000,0000,,但我们仍然可以从中有所领悟\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the fact that we can grasp--
+Dialogue: 0,0:19:33.79,0:19:36.28,*Default,NTP,0000,0000,0000,,我们并不会直接走掉  说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's not as though we go running away saying,
+Dialogue: 0,0:19:36.28,0:19:38.36,*Default,NTP,0000,0000,0000,,哦  不  这实在是太不可思议了  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh no! This was outrageous," Right?
+Dialogue: 0,0:19:38.36,0:19:40.42,*Default,NTP,0000,0000,0000,,计算机会说  我害怕\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"It makes no sense to
+Dialogue: 0,0:19:40.42,0:19:42.59,*Default,NTP,0000,0000,0000,,这简直说不通\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think a computer could have said, I'm afraid.
+Dialogue: 0,0:19:42.59,0:19:45.32,*Default,NTP,0000,0000,0000,,它会有试图杀死要将程序关闭的人等其他举动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"It makes no sense to think that it could try to kill the people
+Dialogue: 0,0:19:45.32,0:19:47.54,*Default,NTP,0000,0000,0000,,这些完全说不通\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who are trying to shut it down and so forth."
+Dialogue: 0,0:19:49.00,0:19:52.28,*Default,NTP,0000,0000,0000,,以上的想法在我看来  是一种偏见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That seems to me to be prejudice,
+Dialogue: 0,0:19:52.28,0:19:53.56,*Default,NTP,0000,0000,0000,,正如我上次所说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I said last time.
+Dialogue: 0,0:19:53.56,0:19:56.96,*Default,NTP,0000,0000,0000,,这边人们可以自然而然地说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The natural inclination here is to say,
+Dialogue: 0,0:19:56.96,0:20:01.79,*Default,NTP,0000,0000,0000,,这些计算机程序  这些机器人能感受情感\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"These computer programs, these robots are feeling emotion."
+Dialogue: 0,0:20:02.32,0:20:04.01,*Default,NTP,0000,0000,0000,,但那边却没有理由相信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there's no particular reason to think
+Dialogue: 0,0:20:04.01,0:20:07.27,*Default,NTP,0000,0000,0000,,电路之外有其他什么东西在运转\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's anything going on there than the circuits.
+Dialogue: 0,0:20:07.27,0:20:09.28,*Default,NTP,0000,0000,0000,,它们只是些物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're just physical objects,
+Dialogue: 0,0:20:09.28,0:20:11.59,*Default,NTP,0000,0000,0000,,只是些机器上的程序罢了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}programs on machines.
+Dialogue: 0,0:20:12.87,0:20:16.32,*Default,NTP,0000,0000,0000,,如果这是正确的  如果这种说法正确\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If that's right, if that's the right thing to say,
+Dialogue: 0,0:20:16.32,0:20:18.38,*Default,NTP,0000,0000,0000,,那么  我们不得不说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then what we have to say is,
+Dialogue: 0,0:20:18.38,0:20:21.15,*Default,NTP,0000,0000,0000,,我们不需要诉诸灵魂来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"We don't need to appeal to souls in order to
+Dialogue: 0,0:20:21.15,0:20:24.40,*Default,NTP,0000,0000,0000,,解释情感和感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}explain emotions and feelings.
+Dialogue: 0,0:20:24.40,0:20:26.45,*Default,NTP,0000,0000,0000,,物理对象可以有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Physical objects could have,
+Dialogue: 0,0:20:26.45,0:20:28.48,*Default,NTP,0000,0000,0000,,纯粹的物理对象可以有\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}mere physical objects could have,
+Dialogue: 0,0:20:28.48,0:20:30.15,*Default,NTP,0000,0000,0000,,情感和感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}emotions and feelings.
+Dialogue: 0,0:20:30.15,0:20:33.74,*Default,NTP,0000,0000,0000,,所以  我们没有理由假定灵魂存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we have no reason to posit the existence of a soul."
+Dialogue: 0,0:20:34.62,0:20:38.98,*Default,NTP,0000,0000,0000,,现在  我认为二元论者对这一答复的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I think the best response on the part of the dualist to
+Dialogue: 0,0:20:38.98,0:20:46.26,*Default,NTP,0000,0000,0000,,最好回应  就是区分感受的两方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this reply is to distinguish two aspects of feelings,
+Dialogue: 0,0:20:46.26,0:20:49.15,*Default,NTP,0000,0000,0000,,情绪的两个方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two aspects of emotions.
+Dialogue: 0,0:20:49.15,0:20:56.54,*Default,NTP,0000,0000,0000,,比方说  感觉恐惧的行为方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's the behavioral aspect of feeling fear, let's say.
+Dialogue: 0,0:20:58.05,0:21:00.26,*Default,NTP,0000,0000,0000,,行为方面是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The behavioral aspect is
+Dialogue: 0,0:21:00.26,0:21:04.36,*Default,NTP,0000,0000,0000,,当你意识到环境中的某种事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you're aware in the environment of something
+Dialogue: 0,0:21:04.36,0:21:09.43,*Default,NTP,0000,0000,0000,,对你构成危险  会伤害或者摧毁你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that poses a danger to you, that will harm you or destroy you,
+Dialogue: 0,0:21:09.43,0:21:12.32,*Default,NTP,0000,0000,0000,,或在这个计算机程序的例子中  关掉你\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or in the case of a computer program, turn you off,
+Dialogue: 0,0:21:12.32,0:21:15.81,*Default,NTP,0000,0000,0000,,于是  你采取各种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then you take various kinds of behaviors
+Dialogue: 0,0:21:15.81,0:21:20.93,*Default,NTP,0000,0000,0000,,反击行动  以解除危险\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in opposition to that to try to disarm the danger,
+Dialogue: 0,0:21:20.93,0:21:23.30,*Default,NTP,0000,0000,0000,,抵消其负面影响\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to try to neutralize it.
+Dialogue: 0,0:21:23.30,0:21:28.88,*Default,NTP,0000,0000,0000,,信念  目标  对策  规划\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is just a matter of beliefs, goals, responses, planning,
+Dialogue: 0,0:21:28.88,0:21:29.87,*Default,NTP,0000,0000,0000,,诸如此类\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sort of thing that we
+Dialogue: 0,0:21:29.87,0:21:32.62,*Default,NTP,0000,0000,0000,,象棋计算机已经能够做到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}already saw the chess-playing computer can do,
+Dialogue: 0,0:21:32.62,0:21:36.47,*Default,NTP,0000,0000,0000,,这些情感的行为方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that behavioral side of emotion.
+Dialogue: 0,0:21:36.93,0:21:39.73,*Default,NTP,0000,0000,0000,,认为机器人可以做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It seems pretty plausible
+Dialogue: 0,0:21:39.73,0:21:41.13,*Default,NTP,0000,0000,0000,,似乎再自然不过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to think robots could do that.
+Dialogue: 0,0:21:41.13,0:21:44.30,*Default,NTP,0000,0000,0000,,物理对象可以做到这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Physical objects could do that.
+Dialogue: 0,0:21:44.78,0:21:49.03,*Default,NTP,0000,0000,0000,,但是  这个反驳的关键点在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But, and here's the crucial point of this objection,
+Dialogue: 0,0:21:49.03,0:21:54.96,*Default,NTP,0000,0000,0000,,情绪和感受还存在另一面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's another side or another aspect to emotions and feelings.
+Dialogue: 0,0:21:54.96,0:22:00.79,*Default,NTP,0000,0000,0000,,感觉的知觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the sensation of what it's feeling like--
+Dialogue: 0,0:22:00.79,0:22:02.66,*Default,NTP,0000,0000,0000,,这就是为什么我们最终还是称之为感受\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's why we call them feelings after all--
+Dialogue: 0,0:22:02.66,0:22:07.40,*Default,NTP,0000,0000,0000,,即  内心的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what it's feeling like on the inside,as it were,
+Dialogue: 0,0:22:07.40,0:22:11.56,*Default,NTP,0000,0000,0000,,与所有这些行为层面的东西同时发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}while all this behavioral stuff's going on.
+Dialogue: 0,0:22:13.15,0:22:15.93,*Default,NTP,0000,0000,0000,,当我害怕时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I'm afraid,
+Dialogue: 0,0:22:15.93,0:22:16.98,*Default,NTP,0000,0000,0000,,我会产生某种\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have this certain sort of
+Dialogue: 0,0:22:16.98,0:22:20.64,*Default,NTP,0000,0000,0000,,湿冷的感觉  又或者  我的心脏猛跳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}clammy feeling or my heart's going poundingly.
+Dialogue: 0,0:22:20.64,0:22:22.69,*Default,NTP,0000,0000,0000,,血流加速\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your blood is racing.
+Dialogue: 0,0:22:22.69,0:22:23.97,*Default,NTP,0000,0000,0000,,当你害怕时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you're afraid,
+Dialogue: 0,0:22:23.97,0:22:26.27,*Default,NTP,0000,0000,0000,,你会有胃部下沉的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've got this sinking feeling in the stomach.
+Dialogue: 0,0:22:26.27,0:22:27.18,*Default,NTP,0000,0000,0000,,当你沮丧时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you're depressed,
+Dialogue: 0,0:22:27.18,0:22:31.47,*Default,NTP,0000,0000,0000,,会有那些我们可以称之为体验的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are these, well, we could call them experiences,
+Dialogue: 0,0:22:31.47,0:22:34.16,*Default,NTP,0000,0000,0000,,虽然"体验"一词也比较含糊\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though the word "experience" is also somewhat ambiguous.
+Dialogue: 0,0:22:34.16,0:22:35.81,*Default,NTP,0000,0000,0000,,所以  我们暂且这么称呼它\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So--we'll use it for the moment--
+Dialogue: 0,0:22:35.81,0:22:42.87,*Default,NTP,0000,0000,0000,,每种情绪到来  都会产生体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's an experience that goes along with each emotion.
+Dialogue: 0,0:22:44.45,0:22:49.73,*Default,NTP,0000,0000,0000,,当你害怕时  就会产生恐惧的体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's what it feels like to you when you're afraid.
+Dialogue: 0,0:22:49.73,0:22:52.91,*Default,NTP,0000,0000,0000,,当你担心时  就会产生烦恼的体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What it feels like to you when you're worried
+Dialogue: 0,0:22:52.91,0:22:57.02,*Default,NTP,0000,0000,0000,,或是沮丧  或是愉悦  或是坠入爱河\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or depressed or joyful or in love.
+Dialogue: 0,0:22:57.86,0:23:00.93,*Default,NTP,0000,0000,0000,,这样一个在我看来极具影响的想法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the thought, and I think this is a pretty powerful thought,
+Dialogue: 0,0:23:00.93,0:23:07.45,*Default,NTP,0000,0000,0000,,就是  即便机器人表现出行为层面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that even if the robots are behaving behaviorally,
+Dialogue: 0,0:23:07.45,0:23:11.12,*Default,NTP,0000,0000,0000,,即使它们已经获得情绪的行为面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they've got the behavior side of the emotions down,
+Dialogue: 0,0:23:11.12,0:23:16.55,*Default,NTP,0000,0000,0000,,但是它们并没有感受面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}they don't have the feeling side at all.
+Dialogue: 0,0:23:20.78,0:23:23.96,*Default,NTP,0000,0000,0000,,当你开始萌生这些想法时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, once you start thinking these thoughts,
+Dialogue: 0,0:23:23.96,0:23:27.98,*Default,NTP,0000,0000,0000,,你会发现  不止情绪如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's no need to restrict yourself to emotions.
+Dialogue: 0,0:23:27.98,0:23:33.50,*Default,NTP,0000,0000,0000,,各种各样的缺失\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The missing stuff,the missing thing is there
+Dialogue: 0,0:23:33.50,0:23:35.87,*Default,NTP,0000,0000,0000,,皆是如此  在以如此熟悉的单调套路进行着\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in all sorts of familiar humdrum ways as well.
+Dialogue: 0,0:23:35.87,0:23:40.65,*Default,NTP,0000,0000,0000,,比如说  我现在正盯着观众席上的椅子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So right now I'm looking at the chairs in the auditorium.
+Dialogue: 0,0:23:40.65,0:23:42.91,*Default,NTP,0000,0000,0000,,它们是蓝色的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're some kind of shade of blue.
+Dialogue: 0,0:23:42.91,0:23:45.03,*Default,NTP,0000,0000,0000,,仔细思考  再看看\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think about--Look at some places
+Dialogue: 0,0:23:45.03,0:23:47.72,*Default,NTP,0000,0000,0000,,教室里其他地方  比如窗帘是红色的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the room where the curtains with their red.
+Dialogue: 0,0:23:47.72,0:23:52.99,*Default,NTP,0000,0000,0000,,想一想  看见红色有什么感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Think about what it's like to see red,
+Dialogue: 0,0:23:52.99,0:23:55.87,*Default,NTP,0000,0000,0000,,对红色的知觉是什么样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the sensation of seeing red.
+Dialogue: 0,0:23:55.87,0:24:00.87,*Default,NTP,0000,0000,0000,,现在  我们来辨别一下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now again, we've got to distinguish between
+Dialogue: 0,0:24:00.87,0:24:05.38,*Default,NTP,0000,0000,0000,,被我称为看见红色的行为方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I'll continue to call the behavioral side of seeing red
+Dialogue: 0,0:24:05.38,0:24:09.14,*Default,NTP,0000,0000,0000,,和看见红色的体验方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the experiential side of seeing red.
+Dialogue: 0,0:24:09.14,0:24:10.26,*Default,NTP,0000,0000,0000,,我们很容易就能想到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's easy enough for us to
+Dialogue: 0,0:24:10.26,0:24:13.88,*Default,NTP,0000,0000,0000,,制造可以分辨红色和蓝色的机器就能达到目的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}build a machine that can tell red from blue.
+Dialogue: 0,0:24:13.88,0:24:15.10,*Default,NTP,0000,0000,0000,,只要能让它检验出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It just checks and sees
+Dialogue: 0,0:24:15.10,0:24:18.36,*Default,NTP,0000,0000,0000,,物体反射的光的频率\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what kind of light frequencies are bouncing off the object.
+Dialogue: 0,0:24:18.36,0:24:19.77,*Default,NTP,0000,0000,0000,,我们就能制造一台\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we can build a machine
+Dialogue: 0,0:24:19.77,0:24:23.51,*Default,NTP,0000,0000,0000,,可以分辨红球和蓝球的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that could sort red balls from blue balls.
+Dialogue: 0,0:24:23.83,0:24:27.16,*Default,NTP,0000,0000,0000,,我儿子的一个玩具机器人就有这种功能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My son has a little robot that can do that.
+Dialogue: 0,0:24:27.16,0:24:29.05,*Default,NTP,0000,0000,0000,,但是  我们可以想想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still, when you think to yourself,
+Dialogue: 0,0:24:29.05,0:24:33.75,*Default,NTP,0000,0000,0000,,机器的内在是什么样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what's the--what's going on inside the machine?
+Dialogue: 0,0:24:33.75,0:24:38.20,*Default,NTP,0000,0000,0000,,当机器以电子眼\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does it feel like to be the machine while it's looking at--
+Dialogue: 0,0:24:38.20,0:24:43.03,*Default,NTP,0000,0000,0000,,对着那个红色的球  它会有什么样的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}while it's got its little light sensors pointed at--the red ball?
+Dialogue: 0,0:24:43.03,0:24:47.64,*Default,NTP,0000,0000,0000,,它有没有看见红色的知觉呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Does it have the sensation of seeing red?
+Dialogue: 0,0:24:47.64,0:24:49.02,*Default,NTP,0000,0000,0000,,我想你们会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I suppose you want to say,
+Dialogue: 0,0:24:49.02,0:24:50.08,*Default,NTP,0000,0000,0000,,当然我也想这么说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}certainly what I want to say is,
+Dialogue: 0,0:24:50.08,0:24:52.83,*Default,NTP,0000,0000,0000,,不  它根本没有那种知觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"No, no, it doesn't have that sensation at all."
+Dialogue: 0,0:24:53.56,0:24:58.30,*Default,NTP,0000,0000,0000,,它只是根据光频来分辨颜色而已\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's sorting things based on the light frequencies,
+Dialogue: 0,0:24:58.30,0:25:02.90,*Default,NTP,0000,0000,0000,,并没有看见红色的体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it doesn't have the experience of seeing red.
+Dialogue: 0,0:25:02.90,0:25:05.70,*Default,NTP,0000,0000,0000,,我要表达的意思  可能非常晦涩\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we're trying to get at here is--it can be very elusive,
+Dialogue: 0,0:25:05.70,0:25:07.83,*Default,NTP,0000,0000,0000,,但我相信你们大多数对它并不陌生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I imagine most of you are familiar with it.
+Dialogue: 0,0:25:07.83,0:25:12.09,*Default,NTP,0000,0000,0000,,有时你会就一些问题问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's the sort of thing you wonder about when you ask yourself,
+Dialogue: 0,0:25:12.09,0:25:15.62,*Default,NTP,0000,0000,0000,,如果某人天生失明\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"If somebody was born blind,
+Dialogue: 0,0:25:15.62,0:25:20.87,*Default,NTP,0000,0000,0000,,他是否可能知道看见颜色是什么感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could he possibly know what it's like to see color?"
+Dialogue: 0,0:25:22.70,0:25:25.31,*Default,NTP,0000,0000,0000,,他可能是个科学家\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He might be a scientist
+Dialogue: 0,0:25:25.31,0:25:29.65,*Default,NTP,0000,0000,0000,,通晓光的原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and know all sorts of things about how light works.
+Dialogue: 0,0:25:29.65,0:25:31.17,*Default,NTP,0000,0000,0000,,知道你用了多少多少频率的光\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You use such and such frequencies,
+Dialogue: 0,0:25:31.17,0:25:33.38,*Default,NTP,0000,0000,0000,,是哪些物体  然后你递给他一个苹果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and which objects, and you hand him an apple
+Dialogue: 0,0:25:33.39,0:25:33.73,*Default,NTP,0000,0000,0000,,他会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and he'll say,
+Dialogue: 0,0:25:33.73,0:25:35.36,*Default,NTP,0000,0000,0000,,哦  这是个很红的苹果吧  是这样吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, it must be very red," Right?
+Dialogue: 0,0:25:35.36,0:25:38.21,*Default,NTP,0000,0000,0000,,他可能会用一个光检测器对准苹果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe he points his little light detector at it
+Dialogue: 0,0:25:38.21,0:25:39.54,*Default,NTP,0000,0000,0000,,仪器显示计量结果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it reads out.
+Dialogue: 0,0:25:39.54,0:25:41.08,*Default,NTP,0000,0000,0000,,数据表明  这光是多少多少频率的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It says, "This is such and such a frequency."
+Dialogue: 0,0:25:41.08,0:25:43.83,*Default,NTP,0000,0000,0000,,然后他会说出  噢  这苹果超红耶\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And he says, "Oh, this is a very red apple,
+Dialogue: 0,0:25:44.76,0:25:46.75,*Default,NTP,0000,0000,0000,,比西红柿还要红  诸如此类的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}much redder than that tomato" Or whatever.
+Dialogue: 0,0:25:46.75,0:25:47.69,*Default,NTP,0000,0000,0000,,就算如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But for all that,
+Dialogue: 0,0:25:47.69,0:25:49.10,*Default,NTP,0000,0000,0000,,我们还是认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we've got the notion,
+Dialogue: 0,0:25:49.10,0:25:51.21,*Default,NTP,0000,0000,0000,,他不但看不见红色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only is he not seeing red,
+Dialogue: 0,0:25:51.21,0:25:54.06,*Default,NTP,0000,0000,0000,,他甚至无法想象看见红色是什么感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he can't even imagine what it's like to see red,
+Dialogue: 0,0:25:54.06,0:25:56.14,*Default,NTP,0000,0000,0000,,因为他从来没有过类似的体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}never having had these experiences.
+Dialogue: 0,0:25:57.93,0:25:59.10,*Default,NTP,0000,0000,0000,,一旦明白了这一点  我们就会发现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And once you start to see this, we realize,
+Dialogue: 0,0:25:59.10,0:26:04.20,*Default,NTP,0000,0000,0000,,生活中处处都是这种体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of course, our life is filled with this aspect.
+Dialogue: 0,0:26:04.20,0:26:05.88,*Default,NTP,0000,0000,0000,,事物的颜色\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things have colors.
+Dialogue: 0,0:26:05.88,0:26:07.43,*Default,NTP,0000,0000,0000,,事物的声音\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things have sounds.
+Dialogue: 0,0:26:07.43,0:26:09.48,*Default,NTP,0000,0000,0000,,事物的气味\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Things have smells.
+Dialogue: 0,0:26:09.97,0:26:16.74,*Default,NTP,0000,0000,0000,,体验的定性方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There is the qualitative aspect of experience.
+Dialogue: 0,0:26:17.50,0:26:19.25,*Default,NTP,0000,0000,0000,,我之前就提到过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the point that I started with earlier,
+Dialogue: 0,0:26:19.25,0:26:21.38,*Default,NTP,0000,0000,0000,,关于情感内在方面的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the internal aspect of emotions,
+Dialogue: 0,0:26:21.38,0:26:24.37,*Default,NTP,0000,0000,0000,,情感不仅是外在的  也是内在的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is it's not just out there, but inside as well.
+Dialogue: 0,0:26:24.37,0:26:29.49,*Default,NTP,0000,0000,0000,,我们能感受到特定的内在感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have certain kinds of sensations inside our body,
+Dialogue: 0,0:26:29.72,0:26:34.02,*Default,NTP,0000,0000,0000,,典型的如恐惧  愉悦  沮丧  等等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the characteristic sensation of fear or joy or depression.
+Dialogue: 0,0:26:35.25,0:26:35.81,*Default,NTP,0000,0000,0000,,好了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:26:35.81,0:26:39.77,*Default,NTP,0000,0000,0000,,所以一个可能的回答是这样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the suggestion then might be this.
+Dialogue: 0,0:26:39.77,0:26:43.63,*Default,NTP,0000,0000,0000,,物理对象无法感受到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What no physical object can get right,
+Dialogue: 0,0:26:43.63,0:26:45.93,*Default,NTP,0000,0000,0000,,对事物的定性体验是什么样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because no physical object can get at all,
+Dialogue: 0,0:26:45.93,0:26:52.00,*Default,NTP,0000,0000,0000,,因为它们根本无法去感受\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the qualitative aspect of experience.
+Dialogue: 0,0:26:52.00,0:26:54.97,*Default,NTP,0000,0000,0000,,这才是我们自问时想要抓住的方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the aspect that we're after when we ask ourselves,
+Dialogue: 0,0:26:54.97,0:26:58.37,*Default,NTP,0000,0000,0000,,看见红色是什么样的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What's it like to see red?
+Dialogue: 0,0:26:58.37,0:27:05.66,*Default,NTP,0000,0000,0000,,闻咖啡和尝菠萝又是怎么样的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What's it like to smell coffee or to taste pineapple?"
+Dialogue: 0,0:27:05.66,0:27:07.47,*Default,NTP,0000,0000,0000,,哲学家们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, it's pretty--Philosophers
+Dialogue: 0,0:27:07.47,0:27:10.62,*Default,NTP,0000,0000,0000,,有时候把这些称作  感受性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sometimes call these things qualia,
+Dialogue: 0,0:27:10.62,0:27:14.15,*Default,NTP,0000,0000,0000,,因为他们认为  事物存在定性方面的概念\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because of the notion of the qualitative aspects of things.
+Dialogue: 0,0:27:14.15,0:27:19.95,*Default,NTP,0000,0000,0000,,我们的体验包括定性的特性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Our experiences have qualitative properties.
+Dialogue: 0,0:27:21.80,0:27:24.75,*Default,NTP,0000,0000,0000,,所以可能有人会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the suggestion then might be,
+Dialogue: 0,0:27:24.75,0:27:26.45,*Default,NTP,0000,0000,0000,,没有哪个物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no physical object,
+Dialogue: 0,0:27:26.45,0:27:35.09,*Default,NTP,0000,0000,0000,,没有任何机器能够拥有定性的体验\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no mere machine could possibly have qualitative experience.
+Dialogue: 0,0:27:35.09,0:27:39.47,*Default,NTP,0000,0000,0000,,但是我们有  所以我们不仅仅是物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we've got it, so we're no mere physical object.
+Dialogue: 0,0:27:39.47,0:27:42.52,*Default,NTP,0000,0000,0000,,我们不是机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're no mere machine.
+Dialogue: 0,0:27:43.90,0:27:44.61,*Default,NTP,0000,0000,0000,,好了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:27:44.61,0:27:47.19,*Default,NTP,0000,0000,0000,,以上就是反方的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, that's the objection.
+Dialogue: 0,0:27:47.19,0:27:48.21,*Default,NTP,0000,0000,0000,,这是个很好的反驳\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a pretty good objection.
+Dialogue: 0,0:27:48.21,0:27:49.25,*Default,NTP,0000,0000,0000,,接下来的问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then the question is,
+Dialogue: 0,0:27:49.25,0:27:52.36,*Default,NTP,0000,0000,0000,,物理主义者能如何回应\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"What can the physicalist say in response?"
+Dialogue: 0,0:27:52.36,0:27:53.74,*Default,NTP,0000,0000,0000,,物理主义者们现在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the best possible
+Dialogue: 0,0:27:53.74,0:27:57.20,*Default,NTP,0000,0000,0000,,能做出的最好的回答就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}response would be for the physicalist to say,
+Dialogue: 0,0:27:57.20,0:27:59.72,*Default,NTP,0000,0000,0000,,从这个意义上去理解  就能造出一台\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Here's how to build a
+Dialogue: 0,0:27:59.72,0:28:05.13,*Default,NTP,0000,0000,0000,,具有意识的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}machine that can be conscious in this sense.
+Dialogue: 0,0:28:05.13,0:28:08.97,*Default,NTP,0000,0000,0000,,即  一台可以有定性体验的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is, have a qualitative experience.
+Dialogue: 0,0:28:08.97,0:28:09.95,*Default,NTP,0000,0000,0000,,应该这么造\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's how to do it.
+Dialogue: 0,0:28:09.95,0:28:11.10,*Default,NTP,0000,0000,0000,,然后  如何如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's how to--
+Dialogue: 0,0:28:11.10,0:28:13.96,*Default,NTP,0000,0000,0000,,正如我们可以从唯物主义\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Just like we can explain in materialist,
+Dialogue: 0,0:28:13.96,0:28:16.68,*Default,NTP,0000,0000,0000,,物理主义的角度解释如何得到欲望 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}physicalist terms how to get desires
+Dialogue: 0,0:28:16.68,0:28:19.14,*Default,NTP,0000,0000,0000,,信念  以及行为层面的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and beliefs and the behavioral stuff down,
+Dialogue: 0,0:28:19.14,0:28:21.91,*Default,NTP,0000,0000,0000,,我们也可以解释如何得到感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}here's how to get the feeling,
+Dialogue: 0,0:28:21.91,0:28:24.64,*Default,NTP,0000,0000,0000,,定性方面的感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}qualitative aspect of things down, too."
+Dialogue: 0,0:28:24.64,0:28:26.02,*Default,NTP,0000,0000,0000,,物理主义者要是能够给出\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It would be best if the
+Dialogue: 0,0:28:26.02,0:28:29.42,*Default,NTP,0000,0000,0000,,这样的解释  那再好不过了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}physicalist could give us that kind of story.
+Dialogue: 0,0:28:29.42,0:28:32.00,*Default,NTP,0000,0000,0000,,我认为  事实上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the truth of the matter has to be--
+Dialogue: 0,0:28:32.00,0:28:34.33,*Default,NTP,0000,0000,0000,,目前的答案就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the answer right now is,
+Dialogue: 0,0:28:34.33,0:28:38.60,*Default,NTP,0000,0000,0000,,我们还没法做出那种解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't know how to give that story.
+Dialogue: 0,0:28:38.60,0:28:40.47,*Default,NTP,0000,0000,0000,,意识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Consciousness,
+Dialogue: 0,0:28:40.47,0:28:42.22,*Default,NTP,0000,0000,0000,,如果我们所说的意识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if what we mean by consciousness
+Dialogue: 0,0:28:42.22,0:28:48.51,*Default,NTP,0000,0000,0000,,就是指我们心理活动定性的方面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is this qualitative aspect of our mental life,
+Dialogue: 0,0:28:48.51,0:28:52.29,*Default,NTP,0000,0000,0000,,那么意识还是一个很大的谜团\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}consciousness remains a pretty big mystery.
+Dialogue: 0,0:28:52.29,0:28:56.99,*Default,NTP,0000,0000,0000,,我们不知道如何从物理主义角度去解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We don't know how to explain it in physicalist terms.
+Dialogue: 0,0:28:56.99,0:28:59.56,*Default,NTP,0000,0000,0000,,正因如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it's because of that
+Dialogue: 0,0:28:59.56,0:29:04.32,*Default,NTP,0000,0000,0000,,我认为我们不应该轻视二元论者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I think we shouldn't be dismissive of the dualist
+Dialogue: 0,0:29:04.32,0:29:06.03,*Default,NTP,0000,0000,0000,,当他们说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when the dualist says,
+Dialogue: 0,0:29:06.03,0:29:13.18,*Default,NTP,0000,0000,0000,,我们只有相信灵魂才能解释这些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"We've got to believe in souls in order to explain it."
+Dialogue: 0,0:29:13.18,0:29:15.67,*Default,NTP,0000,0000,0000,,我们不应该对此不以为然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We shouldn't be dismissive,
+Dialogue: 0,0:29:15.67,0:29:20.27,*Default,NTP,0000,0000,0000,,但也并不是说我们就应该对之深信不疑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's not to say that I think we should be convinced.
+Dialogue: 0,0:29:22.50,0:29:26.14,*Default,NTP,0000,0000,0000,,因为尚不知晓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because it's one thing to say we don't yet know
+Dialogue: 0,0:29:26.14,0:29:30.82,*Default,NTP,0000,0000,0000,,如何从物理的角度去解释意识是一码事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to explain consciousness in physical terms.
+Dialogue: 0,0:29:30.82,0:29:35.50,*Default,NTP,0000,0000,0000,,而永远不能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's another thing to say we won't ever be able to
+Dialogue: 0,0:29:35.50,0:29:40.24,*Default,NTP,0000,0000,0000,,从物理的角度去解释意识是另一码事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}explain consciousness in physical terms.
+Dialogue: 0,0:29:41.21,0:29:47.12,*Default,NTP,0000,0000,0000,,如果我们属于后者  抱歉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we had the latter--excuse me--
+Dialogue: 0,0:29:47.12,0:29:51.47,*Default,NTP,0000,0000,0000,,如果我们大胆放言\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If we had the bold claim that
+Dialogue: 0,0:29:51.47,0:29:58.87,*Default,NTP,0000,0000,0000,,因为没有物体能看见红色  尝到蜂蜜的味道\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no physical object could see red, taste honey,
+Dialogue: 0,0:29:59.50,0:30:01.60,*Default,NTP,0000,0000,0000,,而我们人类能做到  所以我们由此得出结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then we'd have to conclude since we can do all that,
+Dialogue: 0,0:30:01.60,0:30:04.97,*Default,NTP,0000,0000,0000,,我们不是物体  或不仅仅是物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're not a physical object or not merely a physical object.
+Dialogue: 0,0:30:05.76,0:30:09.19,*Default,NTP,0000,0000,0000,,但我认为现在就那样说还为时尚早\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I don't think we're yet in a position to say that.
+Dialogue: 0,0:30:09.19,0:30:10.64,*Default,NTP,0000,0000,0000,,一个简单的事实就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the simple fact of the matter is
+Dialogue: 0,0:30:10.64,0:30:14.05,*Default,NTP,0000,0000,0000,,我们对于意识了解甚少\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we don't know enough about consciousness yet
+Dialogue: 0,0:30:14.05,0:30:19.04,*Default,NTP,0000,0000,0000,,还不知道是否能使用物理的方式对其进行解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to know whether or not it can be explained in physical terms.
+Dialogue: 0,0:30:19.94,0:30:22.03,*Default,NTP,0000,0000,0000,,每当我想到这种情境时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I think about this situation,
+Dialogue: 0,0:30:22.03,0:30:24.15,*Default,NTP,0000,0000,0000,,总会联想到一个类比\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}an analogy always occurs to me.
+Dialogue: 0,0:30:24.15,0:30:26.21,*Default,NTP,0000,0000,0000,,想象一下  我们正处在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Imagine that we're somewhere in,
+Dialogue: 0,0:30:26.21,0:30:32.60,*Default,NTP,0000,0000,0000,,比如  在14世纪人们试图去理解生命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}let's say, the fourteenth century trying to understand life,
+Dialogue: 0,0:30:32.60,0:30:34.41,*Default,NTP,0000,0000,0000,,理解植物的生命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the life of plants.
+Dialogue: 0,0:30:34.85,0:30:37.08,*Default,NTP,0000,0000,0000,,一株植物是一个有生命力的实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A plant is a living thing.
+Dialogue: 0,0:30:37.08,0:30:38.56,*Default,NTP,0000,0000,0000,,我们问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we ask ourselves,
+Dialogue: 0,0:30:38.56,0:30:41.80,*Default,NTP,0000,0000,0000,,能否\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Could it possibly be that
+Dialogue: 0,0:30:41.80,0:30:45.84,*Default,NTP,0000,0000,0000,,从物质的角度来解释生命呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}life could be explained in material terms?"
+Dialogue: 0,0:30:45.84,0:30:48.06,*Default,NTP,0000,0000,0000,,这种想法简直是匪夷所思\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's got to seem very mysterious to us.
+Dialogue: 0,0:30:48.06,0:30:48.92,*Default,NTP,0000,0000,0000,,怎么可能呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could it be?
+Dialogue: 0,0:30:48.92,0:30:52.58,*Default,NTP,0000,0000,0000,,当我们回想14世纪时期的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When we think of the kinds of examples of material machines
+Dialogue: 0,0:30:52.58,0:30:55.45,*Default,NTP,0000,0000,0000,,各种机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we've got available to us in the fourteenth century,
+Dialogue: 0,0:30:55.45,0:30:56.88,*Default,NTP,0000,0000,0000,,我试着想象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I try to imagine
+Dialogue: 0,0:30:56.88,0:30:59.80,*Default,NTP,0000,0000,0000,,一个生活在14世纪的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what would somebody in the fourteenth century
+Dialogue: 0,0:30:59.80,0:31:01.91,*Default,NTP,0000,0000,0000,,他  或她\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think to himself or herself
+Dialogue: 0,0:31:01.91,0:31:04.62,*Default,NTP,0000,0000,0000,,在面对一株植物可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when he entertains the possibility
+Dialogue: 0,0:31:04.62,0:31:07.59,*Default,NTP,0000,0000,0000,,只不过是一台机器的观点时会怎么想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a plant might just be a machine?
+Dialogue: 0,0:31:07.59,0:31:10.29,*Default,NTP,0000,0000,0000,,然后  我们脑海里就会浮现\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then, I have this little image of
+Dialogue: 0,0:31:10.29,0:31:12.75,*Default,NTP,0000,0000,0000,,某种由齿轮构成的植物  对吧\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some plant made out of gears, right?
+Dialogue: 0,0:31:12.75,0:31:14.34,*Default,NTP,0000,0000,0000,,齿轮开始转动\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the gears begin turning
+Dialogue: 0,0:31:14.34,0:31:17.34,*Default,NTP,0000,0000,0000,,随即花蕾绽放  哒  哒  哒  哒\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the bud opens, dot, dot, dot, dot.
+Dialogue: 0,0:31:17.34,0:31:19.08,*Default,NTP,0000,0000,0000,,于是就有人说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the person's just going to say,
+Dialogue: 0,0:31:19.08,0:31:21.95,*Default,NTP,0000,0000,0000,,上帝  那不可能是个活物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"My god! That wouldn't be alive!"
+Dialogue: 0,0:31:21.95,0:31:26.85,*Default,NTP,0000,0000,0000,,所以很明显  机器不可能是具有生命力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's pretty obvious that no machine could be alive.
+Dialogue: 0,0:31:26.85,0:31:28.36,*Default,NTP,0000,0000,0000,,物质实体都不具有生命力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No material object could be alive.
+Dialogue: 0,0:31:28.36,0:31:30.31,*Default,NTP,0000,0000,0000,,要解释生命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In order to explain life,
+Dialogue: 0,0:31:30.31,0:31:34.72,*Default,NTP,0000,0000,0000,,我们必须诉诸原子以外的其他东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have to appeal to something more than just atoms.
+Dialogue: 0,0:31:34.72,0:31:35.59,*Default,NTP,0000,0000,0000,,他们那时还不知道原子呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They didn't have atoms,
+Dialogue: 0,0:31:35.59,0:31:38.32,*Default,NTP,0000,0000,0000,,仅仅略高于物质的层面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but more than just matter.
+Dialogue: 0,0:31:39.06,0:31:40.74,*Default,NTP,0000,0000,0000,,还需要借助某些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Life requires something
+Dialogue: 0,0:31:40.74,0:31:43.49,*Default,NTP,0000,0000,0000,,非物质的  高于并超于物质的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}immaterial above and beyond matter
+Dialogue: 0,0:31:43.49,0:31:44.86,*Default,NTP,0000,0000,0000,,来对生命进行解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to explain it.
+Dialogue: 0,0:31:44.86,0:31:47.61,*Default,NTP,0000,0000,0000,,那可能就是能被14世纪的人们\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That would have been an understandable position
+Dialogue: 0,0:31:47.61,0:31:51.06,*Default,NTP,0000,0000,0000,,所理解的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to come to in the fourteenth century,
+Dialogue: 0,0:31:51.06,0:31:53.40,*Default,NTP,0000,0000,0000,,但它有可能是错的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it would have been wrong.
+Dialogue: 0,0:31:53.40,0:31:55.44,*Default,NTP,0000,0000,0000,,在那个年代\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We didn't have a clue back
+Dialogue: 0,0:31:55.44,0:32:01.78,*Default,NTP,0000,0000,0000,,我们还不知道如何从物质的角度去解释生命\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then how to explain life in material terms.
+Dialogue: 0,0:32:01.78,0:32:06.00,*Default,NTP,0000,0000,0000,,但那并不表示我们永远做不到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But that didn't mean it couldn't be done.
+Dialogue: 0,0:32:06.00,0:32:09.43,*Default,NTP,0000,0000,0000,,我倾向于认为这种规律同样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm inclined to think the same thing
+Dialogue: 0,0:32:09.43,0:32:13.66,*Default,NTP,0000,0000,0000,,适用于解释意识的现阶段\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is true right now for us and consciousness.
+Dialogue: 0,0:32:13.66,0:32:15.36,*Default,NTP,0000,0000,0000,,肯定存在某些理论可以帮助我们解释意识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know there are theories out there.
+Dialogue: 0,0:32:15.36,0:32:17.10,*Default,NTP,0000,0000,0000,,但我认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But my best take is
+Dialogue: 0,0:32:17.10,0:32:20.10,*Default,NTP,0000,0000,0000,,我们现在所处的境地  跟14世纪差不多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're pretty much like in the fourteenth century.
+Dialogue: 0,0:32:20.10,0:32:22.53,*Default,NTP,0000,0000,0000,,毫无头绪\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We don't really have a clue yet,
+Dialogue: 0,0:32:22.53,0:32:23.83,*Default,NTP,0000,0000,0000,,或者说  无从下手\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or not much of a clue,
+Dialogue: 0,0:32:23.83,0:32:26.38,*Default,NTP,0000,0000,0000,,你如何在这种情形下开个头\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as to how you could even so much as begin to--
+Dialogue: 0,0:32:26.38,0:32:29.22,*Default,NTP,0000,0000,0000,,我们不只是不知道细节如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not that merely that we don't have the details worked out.
+Dialogue: 0,0:32:29.22,0:32:33.29,*Default,NTP,0000,0000,0000,,对于如何从物理角度解释意识 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We don't even have the picture in broad strokes
+Dialogue: 0,0:32:33.29,0:32:35.65,*Default,NTP,0000,0000,0000,,我们甚至连笼统的粗线条轮廓\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as far as consciousness is concerned,
+Dialogue: 0,0:32:35.65,0:32:38.47,*Default,NTP,0000,0000,0000,,都尚未建立起来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of how it could be done in physical terms.
+Dialogue: 0,0:32:39.63,0:32:44.99,*Default,NTP,0000,0000,0000,,但现阶段无法预见其可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But not seeing how it's possible
+Dialogue: 0,0:32:44.99,0:32:51.91,*Default,NTP,0000,0000,0000,,并不代表永远不可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is not the same thing as seeing that it's impossible.
+Dialogue: 0,0:32:51.91,0:32:56.29,*Default,NTP,0000,0000,0000,,如果是二元论者  他们则会走过来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the dualist comes and says,
+Dialogue: 0,0:32:56.29,0:32:59.96,*Default,NTP,0000,0000,0000,,你没觉得吗  一个纯粹的物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Can't you just see that it's not remotely possible,
+Dialogue: 0,0:32:59.96,0:33:01.91,*Default,NTP,0000,0000,0000,,能够拥有体验和感受性的可能性\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's not conceivably possible,
+Dialogue: 0,0:33:01.91,0:33:08.15,*Default,NTP,0000,0000,0000,,简直微乎其微  就连想想都觉得难以置信\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a purely physical object to have experiences, to have qualia?"
+Dialogue: 0,0:33:08.15,0:33:08.99,*Default,NTP,0000,0000,0000,,但我想说的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I want to say is,
+Dialogue: 0,0:33:08.99,0:33:12.16,*Default,NTP,0000,0000,0000,,不  我不认为那是不可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"No, I don't see that it's impossible.
+Dialogue: 0,0:33:12.16,0:33:14.08,*Default,NTP,0000,0000,0000,,我承认  我不知道如何去解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I admit I don't see how to do it,
+Dialogue: 0,0:33:14.08,0:33:16.95,*Default,NTP,0000,0000,0000,,但我不认为那是不可能的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I don't see that it's impossible."
+Dialogue: 0,0:33:17.65,0:33:22.39,*Default,NTP,0000,0000,0000,,所以我没觉得我一定要接受灵魂存在的假设\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I don't feel forced to posit the existence of a soul.
+Dialogue: 0,0:33:22.39,0:33:28.10,*Default,NTP,0000,0000,0000,,当然了  笃信灵魂的人会跑来说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Of course, the fan of the soul could come back and say,
+Dialogue: 0,0:33:28.10,0:33:29.56,*Default,NTP,0000,0000,0000,,这不公平\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"But that's not fair.
+Dialogue: 0,0:33:29.56,0:33:31.37,*Default,NTP,0000,0000,0000,,问题不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question isn't,
+Dialogue: 0,0:33:31.37,0:33:35.15,*Default,NTP,0000,0000,0000,,这种解释可不可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is this explanation impossible?'
+Dialogue: 0,0:33:35.15,0:33:36.42,*Default,NTP,0000,0000,0000,,问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question is just,
+Dialogue: 0,0:33:36.42,0:33:40.00,*Default,NTP,0000,0000,0000,,谁的解释更合理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who's got the better explanation?'
+Dialogue: 0,0:33:40.00,0:33:44.38,*Default,NTP,0000,0000,0000,,而你们这群人根本就没能做出任何解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You guys can't offer any kind of explanation at all, yet.
+Dialogue: 0,0:33:44.38,0:33:47.54,*Default,NTP,0000,0000,0000,,我能做出解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I can offer an explanation.
+Dialogue: 0,0:33:47.54,0:33:49.78,*Default,NTP,0000,0000,0000,,意识是怎么一回事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How is consciousness possible?
+Dialogue: 0,0:33:49.78,0:33:51.66,*Default,NTP,0000,0000,0000,,我们都有灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We have souls.
+Dialogue: 0,0:33:51.66,0:33:54.47,*Default,NTP,0000,0000,0000,,灵魂和一般物体大不相同\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Souls are really very different from physical objects
+Dialogue: 0,0:33:54.47,0:33:56.95,*Default,NTP,0000,0000,0000,,所以它们能产生意识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so they can be conscious."
+Dialogue: 0,0:33:59.93,0:34:00.65,*Default,NTP,0000,0000,0000,,但是对于这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But at this point,
+Dialogue: 0,0:34:00.65,0:34:03.13,*Default,NTP,0000,0000,0000,,我认为最为关键的就是记住\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think it's crucial to remember the point
+Dialogue: 0,0:34:03.13,0:34:06.40,*Default,NTP,0000,0000,0000,,问题不仅在于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it's not just the question,
+Dialogue: 0,0:34:06.40,0:34:08.07,*Default,NTP,0000,0000,0000,,谁能解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Who's got an explanation?"
+Dialogue: 0,0:34:08.07,0:34:10.21,*Default,NTP,0000,0000,0000,,还在于  谁的解释更合理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but, "Who's got the better explanation?"
+Dialogue: 0,0:34:10.21,0:34:11.70,*Default,NTP,0000,0000,0000,,在我们承认\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And before we say that
+Dialogue: 0,0:34:11.70,0:34:14.81,*Default,NTP,0000,0000,0000,,灵魂观点更合理之前\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul view's got the better explanation,
+Dialogue: 0,0:34:14.81,0:34:16.55,*Default,NTP,0000,0000,0000,,我们必须问问自己\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have to ask ourselves,
+Dialogue: 0,0:34:16.55,0:34:20.96,*Default,NTP,0000,0000,0000,,这个观点解释得到底如何\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}just how much of an explanation is it to say,
+Dialogue: 0,0:34:20.96,0:34:23.02,*Default,NTP,0000,0000,0000,,我可以解释意识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh I can explain consciousness.
+Dialogue: 0,0:34:23.02,0:34:25.01,*Default,NTP,0000,0000,0000,,意识并非源自肉体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Consciousness is housed not in the body,
+Dialogue: 0,0:34:25.01,0:34:26.48,*Default,NTP,0000,0000,0000,,它源自灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but in the soul."
+Dialogue: 0,0:34:26.48,0:34:29.97,*Default,NTP,0000,0000,0000,,好了  那灵魂到底是怎么产生意识的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay. "How exactly is it that a soul can be conscious?"
+Dialogue: 0,0:34:29.97,0:34:32.58,*Default,NTP,0000,0000,0000,,要是我们这么问  灵魂学说者就会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We ask. And then the soul theorist says,
+Dialogue: 0,0:34:32.58,0:34:38.44,*Default,NTP,0000,0000,0000,,那个  嗯  呃  啊  它就是能产生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, uhm.. er.. ah.. it just can."
+Dialogue: 0,0:34:39.08,0:34:41.92,*Default,NTP,0000,0000,0000,,这算不上是真正的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's not really much of an explanation.
+Dialogue: 0,0:34:41.92,0:34:43.57,*Default,NTP,0000,0000,0000,,我觉得就算我是一个二元论者\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't feel I've got any sort
+Dialogue: 0,0:34:43.57,0:34:50.79,*Default,NTP,0000,0000,0000,,我也还是不懂这番对于意识的解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of account going here as to how consciousness works, even if I become a dualist.
+Dialogue: 0,0:34:51.15,0:34:52.50,*Default,NTP,0000,0000,0000,,如果二元论者试图\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the dualist were to start
+Dialogue: 0,0:34:52.50,0:34:55.58,*Default,NTP,0000,0000,0000,,为我们提供一个详尽的意识理论学说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}offering us some elaborate theory of consciousness,
+Dialogue: 0,0:34:55.58,0:34:57.68,*Default,NTP,0000,0000,0000,,你看  这是灵魂的什么什么结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Well, there's these sorts of soul structures,
+Dialogue: 0,0:34:57.68,0:34:59.16,*Default,NTP,0000,0000,0000,,那是灵魂的什么什么结构\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those sorts of soul structures,
+Dialogue: 0,0:34:59.16,0:35:00.86,*Default,NTP,0000,0000,0000,,这些产生了这种感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and these create these sensations
+Dialogue: 0,0:35:00.86,0:35:02.27,*Default,NTP,0000,0000,0000,,那些产生了那种感觉\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and those create those sensations.
+Dialogue: 0,0:35:02.27,0:35:04.40,*Default,NTP,0000,0000,0000,,这里还有一套理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And here's a theory,"
+Dialogue: 0,0:35:04.40,0:35:08.87,*Default,NTP,0000,0000,0000,,好吧  这样的话我会认真考虑这种解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, then, I'll begin to take it seriously as an explanation.
+Dialogue: 0,0:35:08.87,0:35:11.63,*Default,NTP,0000,0000,0000,,但如果所有的灵魂理论家只是一味地说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if all the soul theorist is just saying is
+Dialogue: 0,0:35:11.63,0:35:14.33,*Default,NTP,0000,0000,0000,,不不不  你们解释不了  但是我能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Nah, nah. You guys can't explain it and I can,
+Dialogue: 0,0:35:14.33,0:35:17.56,*Default,NTP,0000,0000,0000,,因为我就觉得它是解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I say this is an explanation."
+Dialogue: 0,0:35:17.56,0:35:19.04,*Default,NTP,0000,0000,0000,,那我只想说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Then, I find myself wanting to say,
+Dialogue: 0,0:35:19.04,0:35:22.65,*Default,NTP,0000,0000,0000,,这种言论毫无意义  说了等于白说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"That's not really any better. That's no improvement at all."
+Dialogue: 0,0:35:22.65,0:35:24.53,*Default,NTP,0000,0000,0000,,有人提问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There is a question or a comment.
+Dialogue: 0,0:35:44.78,0:35:45.77,*Default,NTP,0000,0000,0000,,这样很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Good.
+Dialogue: 0,0:35:45.77,0:35:47.04,*Default,NTP,0000,0000,0000,,其问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the question was--
+Dialogue: 0,0:35:47.04,0:35:49.75,*Default,NTP,0000,0000,0000,,首先  在这个问题之前他指责\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First, it was the accusation before the question,
+Dialogue: 0,0:35:49.75,0:35:51.74,*Default,NTP,0000,0000,0000,,我在施行双重标准\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I'm holding a sort of double standard.
+Dialogue: 0,0:35:51.74,0:35:53.50,*Default,NTP,0000,0000,0000,,说我在辩护\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm defending,
+Dialogue: 0,0:35:53.50,0:35:57.02,*Default,NTP,0000,0000,0000,,当我给物理主义者辩护时我会说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm defending the physicalist by saying,
+Dialogue: 0,0:35:57.74,0:36:02.26,*Default,NTP,0000,0000,0000,,别怪我们  我们还不知道怎么解释呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Don't blame us. We don't know how to explain it yet."
+Dialogue: 0,0:36:02.26,0:36:05.71,*Default,NTP,0000,0000,0000,,而又为什么不允许灵魂理论说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why aren't I allowing the soul theory to say,
+Dialogue: 0,0:36:05.71,0:36:09.56,*Default,NTP,0000,0000,0000,,别责怪我们  我们只是还不知道怎么去解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Don't blame us. We don't know how to explain it yet."
+Dialogue: 0,0:36:10.88,0:36:14.25,*Default,NTP,0000,0000,0000,,这个问题问得好  而我的答案是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Good question. And my answer is--
+Dialogue: 0,0:36:14.25,0:36:17.45,*Default,NTP,0000,0000,0000,,有时我觉得这是个平局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And sometimes I think this one's a tie.
+Dialogue: 0,0:36:17.45,0:36:21.56,*Default,NTP,0000,0000,0000,,我认为灵魂理论者没能解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think the soul theorist doesn't have an explanation.
+Dialogue: 0,0:36:21.56,0:36:25.16,*Default,NTP,0000,0000,0000,,物理理论者也没能解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The physical theorist doesn't have an explanation.
+Dialogue: 0,0:36:25.16,0:36:26.28,*Default,NTP,0000,0000,0000,,就我所见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As far as I can see,
+Dialogue: 0,0:36:26.28,0:36:28.40,*Default,NTP,0000,0000,0000,,目前还没有人能对\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right now nobody's got a
+Dialogue: 0,0:36:28.40,0:36:31.70,*Default,NTP,0000,0000,0000,,意识的原理做出合理解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}good explanation about how consciousness works.
+Dialogue: 0,0:36:31.70,0:36:36.07,*Default,NTP,0000,0000,0000,,现在这仍是个未解之谜\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's a bit of a mystery right now.
+Dialogue: 0,0:36:36.07,0:36:38.68,*Default,NTP,0000,0000,0000,,所以我不是说  我希望自己没这么做\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I don't mean--I hope I haven't been doing this.
+Dialogue: 0,0:36:38.68,0:36:40.21,*Default,NTP,0000,0000,0000,,无关什么双重标准\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not so much a double standard is needed;
+Dialogue: 0,0:36:40.21,0:36:41.52,*Default,NTP,0000,0000,0000,,双方旗鼓相当\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a tie.
+Dialogue: 0,0:36:41.52,0:36:43.74,*Default,NTP,0000,0000,0000,,不过请注意  如果是平局\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But notice if it's a tie,
+Dialogue: 0,0:36:43.74,0:36:46.41,*Default,NTP,0000,0000,0000,,这还是没有给出我们想要的答案\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that doesn't give us what we were looking for.
+Dialogue: 0,0:36:46.41,0:36:47.39,*Default,NTP,0000,0000,0000,,毕竟  我们所寻求的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What we were looking for,
+Dialogue: 0,0:36:47.39,0:36:51.11,*Default,NTP,0000,0000,0000,,相信灵魂存在的理由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after all, was some reason to believe in souls.
+Dialogue: 0,0:36:51.11,0:36:53.70,*Default,NTP,0000,0000,0000,,如果灵魂理论者最多只能说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if the best the soul theorist can say is,
+Dialogue: 0,0:36:53.70,0:36:56.23,*Default,NTP,0000,0000,0000,,我不能解释  你也不能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"I can't explain it and neither can you,"
+Dialogue: 0,0:36:56.23,0:36:58.87,*Default,NTP,0000,0000,0000,,这不是一个相信灵魂存在的理由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not a reason to believe this side.
+Dialogue: 0,0:37:01.25,0:37:04.79,*Default,NTP,0000,0000,0000,,我们已经相信肉体的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We already believe there are bodies.
+Dialogue: 0,0:37:04.79,0:37:09.47,*Default,NTP,0000,0000,0000,,我们已经知道肉体可以做一些相当神奇的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We already know bodies can do some pretty amazing things.
+Dialogue: 0,0:37:09.47,0:37:11.32,*Default,NTP,0000,0000,0000,,我们的问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question we're asking is,
+Dialogue: 0,0:37:11.32,0:37:13.71,*Default,NTP,0000,0000,0000,,有没有一个很好的理由\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Is there a good reason
+Dialogue: 0,0:37:13.71,0:37:17.78,*Default,NTP,0000,0000,0000,,让我们往已写有东西的清单上再添上几笔\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to add to our list of things there are?
+Dialogue: 0,0:37:17.78,0:37:19.71,*Default,NTP,0000,0000,0000,,有没有很好的理由再加上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is there a good reason to add
+Dialogue: 0,0:37:19.71,0:37:21.64,*Default,NTP,0000,0000,0000,,灵魂之类的非物质实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the soul, something immaterial?"
+Dialogue: 0,0:37:21.64,0:37:25.69,*Default,NTP,0000,0000,0000,,如果灵魂主义者最为充分的理由是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if the best that the soul theorist has is,
+Dialogue: 0,0:37:25.69,0:37:29.11,*Default,NTP,0000,0000,0000,,或许我们需要灵魂来解释些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Maybe we need this to explain something
+Dialogue: 0,0:37:29.11,0:37:31.31,*Default,NTP,0000,0000,0000,,我认为你们不能解释的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I don't see how you guys can explain,
+Dialogue: 0,0:37:31.31,0:37:32.68,*Default,NTP,0000,0000,0000,,或许这样能有些帮助  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe this would help,
+Dialogue: 0,0:37:32.68,0:37:34.58,*Default,NTP,0000,0000,0000,,尽管我也不清楚怎样用灵魂解释\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though I can't quite see how either,"
+Dialogue: 0,0:37:34.58,0:37:37.42,*Default,NTP,0000,0000,0000,,这就不是一个很有说服力的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's not a very compelling argument.
+Dialogue: 0,0:37:39.11,0:37:40.81,*Default,NTP,0000,0000,0000,,所以我倾向于\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what I'm inclined to
+Dialogue: 0,0:37:40.81,0:37:43.54,*Default,NTP,0000,0000,0000,,认为  对于这个特殊的困境\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think with regard to this particular strand
+Dialogue: 0,0:37:43.54,0:37:44.66,*Default,NTP,0000,0000,0000,,或说成是  对这个特定版本的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or this particular version
+Dialogue: 0,0:37:44.66,0:37:48.69,*Default,NTP,0000,0000,0000,,论证  还无法下定论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the argument is, the jury's still out.
+Dialogue: 0,0:37:48.69,0:37:51.99,*Default,NTP,0000,0000,0000,,或许最终  在我们倾尽全力之后\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe at the end of the day we'll give it our best.
+Dialogue: 0,0:37:51.99,0:37:55.53,*Default,NTP,0000,0000,0000,,我们会认定  无法从物理的角度来解释意识\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll decide you can't explain consciousness in physical terms.
+Dialogue: 0,0:37:55.53,0:37:56.70,*Default,NTP,0000,0000,0000,,我们会找到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll begin to work out
+Dialogue: 0,0:37:56.70,0:38:01.25,*Default,NTP,0000,0000,0000,,其他的某种非物质理论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some sort of alternative immaterial theory.
+Dialogue: 0,0:38:01.25,0:38:02.19,*Default,NTP,0000,0000,0000,,或许最终\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe at the end of the day
+Dialogue: 0,0:38:02.19,0:38:03.88,*Default,NTP,0000,0000,0000,,我们会认定我们需要相信灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we will decide we need to believe in souls.
+Dialogue: 0,0:38:03.88,0:38:05.44,*Default,NTP,0000,0000,0000,,但此时此刻\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But right now,
+Dialogue: 0,0:38:05.44,0:38:09.37,*Default,NTP,0000,0000,0000,,我不认为有证据支持这种灵魂存在的结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't think the evidence supports that conclusion.
+Dialogue: 0,0:38:09.91,0:38:12.84,*Default,NTP,0000,0000,0000,,当然  还会有一些其他的可能\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still, there's other possibilities.
+Dialogue: 0,0:38:16.17,0:38:18.46,*Default,NTP,0000,0000,0000,,比如  创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Consider creativity.
+Dialogue: 0,0:38:18.46,0:38:19.48,*Default,NTP,0000,0000,0000,,这是某个论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's another version of an argument
+Dialogue: 0,0:38:19.49,0:38:22.21,*Default,NTP,0000,0000,0000,,从推理发展为最佳解释的另一种说法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that goes from inference to the best explanation.
+Dialogue: 0,0:38:22.21,0:38:22.84,*Default,NTP,0000,0000,0000,,创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Creativity.
+Dialogue: 0,0:38:22.84,0:38:27.33,*Default,NTP,0000,0000,0000,,这种论证的观点是  人们具有创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It says, "People can be creative."
+Dialogue: 0,0:38:27.33,0:38:29.60,*Default,NTP,0000,0000,0000,,我们谱写乐章\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We write new pieces of music.
+Dialogue: 0,0:38:29.60,0:38:30.84,*Default,NTP,0000,0000,0000,,我们创作诗歌\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We write poems.
+Dialogue: 0,0:38:30.84,0:38:34.20,*Default,NTP,0000,0000,0000,,我们用数学去证明从未被证明过的事物\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We prove things in mathematics that have never been proven before
+Dialogue: 0,0:38:34.20,0:38:36.31,*Default,NTP,0000,0000,0000,,我们探寻新的方法去证明那些定理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or we find new ways to prove these theorems
+Dialogue: 0,0:38:36.31,0:38:38.79,*Default,NTP,0000,0000,0000,,或其他诸如此类  总之  我们具有创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or what have you and we can be creative.
+Dialogue: 0,0:38:38.79,0:38:42.43,*Default,NTP,0000,0000,0000,,单纯的机器是没有创造力的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No mere machine can be creative.
+Dialogue: 0,0:38:42.43,0:38:47.75,*Default,NTP,0000,0000,0000,,所以我们肯定不只是单纯的机器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So we must be something more than a mere machine.
+Dialogue: 0,0:38:51.31,0:38:52.48,*Default,NTP,0000,0000,0000,,那么  问题就转到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, then, the question is going to be,
+Dialogue: 0,0:38:52.48,0:38:54.36,*Default,NTP,0000,0000,0000,,是否存在某种情形\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Could it be a case that there
+Dialogue: 0,0:38:54.36,0:38:58.75,*Default,NTP,0000,0000,0000,,使得物理对象在其中也具有创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could be a physical object that's creative?"
+Dialogue: 0,0:39:00.06,0:39:00.90,*Default,NTP,0000,0000,0000,,我倾向于认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I'm inclined to think,
+Dialogue: 0,0:39:00.90,0:39:03.02,*Default,NTP,0000,0000,0000,,有  实际上  当我在谈会下象棋计算机时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Yes." In fact, I already suggested as much
+Dialogue: 0,0:39:03.02,0:39:06.28,*Default,NTP,0000,0000,0000,,我已经暗示过很多次了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I talked about the chess-playing computers.
+Dialogue: 0,0:39:06.28,0:39:13.22,*Default,NTP,0000,0000,0000,,国际象棋程序会思考如何下子\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The chess-playing computer programs think of moves,
+Dialogue: 0,0:39:13.22,0:39:17.35,*Default,NTP,0000,0000,0000,,会想出没有人曾想到的策略\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}think of strategies no one's thought of before.
+Dialogue: 0,0:39:17.35,0:39:21.32,*Default,NTP,0000,0000,0000,,从最直接最自然的意义上理解\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the most straightforward natural meaning of the term,
+Dialogue: 0,0:39:21.32,0:39:25.81,*Default,NTP,0000,0000,0000,,我们不得不说  我想\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have to say--I think the program
+Dialogue: 0,0:39:25.81,0:39:28.58,*Default,NTP,0000,0000,0000,,那个打败世界冠军的计算机程序叫深弗里茨\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that beat the world champion was called Deep Fritz.
+Dialogue: 0,0:39:28.58,0:39:31.60,*Default,NTP,0000,0000,0000,,当深弗里茨打败克拉姆尼克时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So when Deep Fritz beat Kramnik,
+Dialogue: 0,0:39:31.60,0:39:32.80,*Default,NTP,0000,0000,0000,,它是具有创造力的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it was being creative.
+Dialogue: 0,0:39:32.80,0:39:33.64,*Default,NTP,0000,0000,0000,,它走出了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It made a move
+Dialogue: 0,0:39:33.64,0:39:34.44,*Default,NTP,0000,0000,0000,,克拉姆尼克没想到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that Kramnik didn't think of
+Dialogue: 0,0:39:34.44,0:39:35.75,*Default,NTP,0000,0000,0000,,或许是从没有人想到的一步棋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and perhaps nobody had.
+Dialogue: 0,0:39:35.75,0:39:38.89,*Default,NTP,0000,0000,0000,,这也许是象棋史上前所未有的一步棋\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Perhaps no chess game before had had this move.
+Dialogue: 0,0:39:42.47,0:39:45.50,*Default,NTP,0000,0000,0000,,除了下棋  电脑还可以做许多事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Computers can do other sorts of things of this sort.
+Dialogue: 0,0:39:45.50,0:39:52.64,*Default,NTP,0000,0000,0000,,有些程序可以证明数学定理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are mathematical theorem-proving programs.
+Dialogue: 0,0:39:52.64,0:39:54.11,*Default,NTP,0000,0000,0000,,如今  这些程序都可以证明一些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, some of these things can prove things
+Dialogue: 0,0:39:54.11,0:39:56.08,*Default,NTP,0000,0000,0000,,令我头大的数学题了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are mathematically way over my head.
+Dialogue: 0,0:39:56.08,0:39:59.37,*Default,NTP,0000,0000,0000,,不过我们还是说些简单的  比如勾股定理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But let's take something simple like the Pythagorean Theorem,
+Dialogue: 0,0:39:59.37,0:40:01.28,*Default,NTP,0000,0000,0000,,我们中学里都学过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which we all learned in high school.
+Dialogue: 0,0:40:01.28,0:40:03.41,*Default,NTP,0000,0000,0000,,我们都学习过\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And we learned how to prove
+Dialogue: 0,0:40:03.41,0:40:06.51,*Default,NTP,0000,0000,0000,,欧几里得几何中对勾股定理的证明方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Pythagorean Theorem in Euclidean geometry,
+Dialogue: 0,0:40:06.51,0:40:10.37,*Default,NTP,0000,0000,0000,,从繁杂的欧氏几何的公理开始\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}starting with the various axioms in Euclidean geometry,
+Dialogue: 0,0:40:10.37,0:40:12.19,*Default,NTP,0000,0000,0000,,邦  邦邦  邦邦  邦邦 \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ba, ba-ba, ba-ba, ba-ba, ba bum.
+Dialogue: 0,0:40:12.19,0:40:14.01,*Default,NTP,0000,0000,0000,,这就证明了勾股定理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This proves Pythagorean Theorem.
+Dialogue: 0,0:40:14.01,0:40:18.53,*Default,NTP,0000,0000,0000,,其实有很多种证明勾股定理的方法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And it turns out there's a variety of proofs of the Pythagorean Theorem.
+Dialogue: 0,0:40:18.53,0:40:22.67,*Default,NTP,0000,0000,0000,,而实际上  电脑程序的证明方式\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And, in fact, a computer program has come up with a proof that,
+Dialogue: 0,0:40:22.67,0:40:24.22,*Default,NTP,0000,0000,0000,,据目前所知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as far as was known,
+Dialogue: 0,0:40:24.22,0:40:27.97,*Default,NTP,0000,0000,0000,,是前人们从未曾提出过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}nobody in the world had ever come up with before.
+Dialogue: 0,0:40:29.06,0:40:30.22,*Default,NTP,0000,0000,0000,,那么  除了偏见\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, other than prejudice,
+Dialogue: 0,0:40:30.22,0:40:36.29,*Default,NTP,0000,0000,0000,,还有什么能阻止我们说程序具有创造力呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what would stop us from saying the program was being creative?
+Dialogue: 0,0:40:36.29,0:40:40.63,*Default,NTP,0000,0000,0000,,不止是下棋或数学这类跟数理有关的事\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Not just in sort of mathematical things like chess or math,
+Dialogue: 0,0:40:40.63,0:40:43.77,*Default,NTP,0000,0000,0000,,你知道  有些程序甚至能创作音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there are, as you know, programs that can write music.
+Dialogue: 0,0:40:43.77,0:40:47.85,*Default,NTP,0000,0000,0000,,我不是说那种随机抛出各类音符的创作\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I don't just mean throw out some random assortment of notes.
+Dialogue: 0,0:40:47.85,0:40:53.65,*Default,NTP,0000,0000,0000,,这些程序可以生成\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Programs that can produce music that have--
+Dialogue: 0,0:40:53.65,0:40:55.55,*Default,NTP,0000,0000,0000,,我们认可的音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we recognize as music,
+Dialogue: 0,0:40:55.55,0:41:00.33,*Default,NTP,0000,0000,0000,,这些音乐具有旋律形态和递进的主题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have melodic structure and develop themes,
+Dialogue: 0,0:41:00.33,0:41:02.87,*Default,NTP,0000,0000,0000,,有转为和音的章节\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}resolve, music
+Dialogue: 0,0:41:02.87,0:41:04.75,*Default,NTP,0000,0000,0000,,而且从未有人听到过这些音乐\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that nobody's heard before.
+Dialogue: 0,0:41:04.75,0:41:09.19,*Default,NTP,0000,0000,0000,,为什么不能说机器有创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Why not say the machine is creative?
+Dialogue: 0,0:41:09.19,0:41:10.28,*Default,NTP,0000,0000,0000,,除了偏见  还有什么\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What, other than prejudice,
+Dialogue: 0,0:41:10.28,0:41:12.86,*Default,NTP,0000,0000,0000,,能阻止我们这么说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would stop us from saying that?
+Dialogue: 0,0:41:14.76,0:41:16.61,*Default,NTP,0000,0000,0000,,所以如果这个论证要说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if the argument's going to be,
+Dialogue: 0,0:41:16.61,0:41:18.29,*Default,NTP,0000,0000,0000,,我们必须假定灵魂的存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"We need to posit the existence
+Dialogue: 0,0:41:18.29,0:41:20.38,*Default,NTP,0000,0000,0000,,才能解释创造力\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of a soul in order to explain creativity,"
+Dialogue: 0,0:41:20.38,0:41:24.78,*Default,NTP,0000,0000,0000,,再一次  这看起来是错误的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, that just seems wrong.
+Dialogue: 0,0:41:24.78,0:41:27.39,*Default,NTP,0000,0000,0000,,又有人提问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, there's a--question, comment?
+Dialogue: 0,0:41:39.99,0:41:40.53,*Default,NTP,0000,0000,0000,,很好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Good.
+Dialogue: 0,0:41:40.53,0:41:41.33,*Default,NTP,0000,0000,0000,,这个问题是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The question was,
+Dialogue: 0,0:41:41.33,0:41:42.88,*Default,NTP,0000,0000,0000,,当我在这里讨论创造力的时候\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"When I talk about creativity here,
+Dialogue: 0,0:41:42.88,0:41:45.74,*Default,NTP,0000,0000,0000,,我是不是想引入那些"当我们有创造力时  \N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}am I trying to build in some appeal to the feeling that we may have
+Dialogue: 0,0:41:45.74,0:41:48.02,*Default,NTP,0000,0000,0000,,我们可能会有什么样的感受"的观点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we're being creative?"
+Dialogue: 0,0:41:48.02,0:41:48.71,*Default,NTP,0000,0000,0000,,答案是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the answer is,
+Dialogue: 0,0:41:48.71,0:41:49.29,*Default,NTP,0000,0000,0000,,不是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"No."
+Dialogue: 0,0:41:49.29,0:41:50.71,*Default,NTP,0000,0000,0000,,我所想的一切  如你所知\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All I had in mind, as you know,
+Dialogue: 0,0:41:50.71,0:41:53.18,*Default,NTP,0000,0000,0000,,只是  在谈论到创造力这个问题时\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just--in talking about the creativity issue--
+Dialogue: 0,0:41:53.18,0:41:56.51,*Default,NTP,0000,0000,0000,,我只是在脑海中酝酿些新的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just have in mind producing something new,
+Dialogue: 0,0:41:56.51,0:41:59.40,*Default,NTP,0000,0000,0000,,酝酿一些从来没出现的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}producing something that hasn't been around before.
+Dialogue: 0,0:41:59.40,0:42:00.60,*Default,NTP,0000,0000,0000,,而且特别要指出的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And most particularly,
+Dialogue: 0,0:42:00.60,0:42:01.74,*Default,NTP,0000,0000,0000,,酝酿些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}producing something that
+Dialogue: 0,0:42:01.74,0:42:06.19,*Default,NTP,0000,0000,0000,,你们的程序员还没想到的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your programmers didn't already have in mind.
+Dialogue: 0,0:42:06.19,0:42:08.40,*Default,NTP,0000,0000,0000,,记住  那些设计象棋程序的人\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Remember, it's not as though the people
+Dialogue: 0,0:42:08.40,0:42:12.70,*Default,NTP,0000,0000,0000,,貌似也下不过他们的象棋程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who designed the chess-playing programs can beat it.
+Dialogue: 0,0:42:12.70,0:42:14.05,*Default,NTP,0000,0000,0000,,象棋程序的走法\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The chess-playing program
+Dialogue: 0,0:42:14.05,0:42:19.21,*Default,NTP,0000,0000,0000,,是这些程序员也未曾想到过的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}makes moves these guys haven't thought of.
+Dialogue: 0,0:42:20.06,0:42:20.66,*Default,NTP,0000,0000,0000,,好了\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:42:20.66,0:42:23.41,*Default,NTP,0000,0000,0000,,这些关于创造力的观点或许行不通\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The creativity argument may not work,
+Dialogue: 0,0:42:23.41,0:42:24.29,*Default,NTP,0000,0000,0000,,但是有些东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but there's something
+Dialogue: 0,0:42:24.29,0:42:28.39,*Default,NTP,0000,0000,0000,,随之而来\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that sort of immediately comes on its heels.
+Dialogue: 0,0:42:28.39,0:42:30.68,*Default,NTP,0000,0000,0000,,即使我们能编写一个程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Even if we could build a program,
+Dialogue: 0,0:42:30.68,0:42:34.83,*Default,NTP,0000,0000,0000,,即使我们已经编写出具有创造力的程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if we had built programs that can be creative,
+Dialogue: 0,0:42:34.83,0:42:39.68,*Default,NTP,0000,0000,0000,,它们可以做一些从来没有人想到过的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that can do things that nobody's thought of before,
+Dialogue: 0,0:42:40.38,0:42:46.12,*Default,NTP,0000,0000,0000,,程序所做的只不过是执行程序  对吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the program is doing is following its program, right?
+Dialogue: 0,0:42:46.12,0:42:50.12,*Default,NTP,0000,0000,0000,,那只不过是一系列一行行的代码\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's just a series of lines of code.
+Dialogue: 0,0:42:50.12,0:42:53.68,*Default,NTP,0000,0000,0000,,那些机器人  或叫做计算机等等\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the robot or the computer or what have you
+Dialogue: 0,0:42:53.68,0:42:56.84,*Default,NTP,0000,0000,0000,,只是自动地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just automatically,
+Dialogue: 0,0:42:56.84,0:43:04.33,*Default,NTP,0000,0000,0000,,机械地执行程序的命令代码\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}mechanically following the code commands of the program.
+Dialogue: 0,0:43:05.62,0:43:07.12,*Default,NTP,0000,0000,0000,,我们或许说\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We might say,
+Dialogue: 0,0:43:07.12,0:43:12.40,*Default,NTP,0000,0000,0000,,即使我们非常聪明  可以编制些\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}even if we are smart enough to build programs that can,
+Dialogue: 0,0:43:12.40,0:43:15.03,*Default,NTP,0000,0000,0000,,能够机械地执行指令的程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by mechanistically following the program,
+Dialogue: 0,0:43:15.03,0:43:16.58,*Default,NTP,0000,0000,0000,,做一些我们从来没想到的事情\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}do things we've never thought of.
+Dialogue: 0,0:43:16.58,0:43:20.49,*Default,NTP,0000,0000,0000,,即便如此  电脑所能做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still all the computer can do,
+Dialogue: 0,0:43:20.49,0:43:22.01,*Default,NTP,0000,0000,0000,,机器人所能做的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all the robot can do
+Dialogue: 0,0:43:22.01,0:43:30.17,*Default,NTP,0000,0000,0000,,只是自动地必然地机械地执行程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is automatically, necessarily, mechanically follow the program.
+Dialogue: 0,0:43:30.17,0:43:35.08,*Default,NTP,0000,0000,0000,,它没有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't have free will.
+Dialogue: 0,0:43:35.08,0:43:38.58,*Default,NTP,0000,0000,0000,,但我们有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But we have free will.
+Dialogue: 0,0:43:39.38,0:43:44.50,*Default,NTP,0000,0000,0000,,所以  这里有了一个新论证证明灵魂存在\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, here's a new argument for the existence of the soul.
+Dialogue: 0,0:43:44.50,0:43:48.16,*Default,NTP,0000,0000,0000,,人有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}People have free will.
+Dialogue: 0,0:43:48.16,0:43:52.64,*Default,NTP,0000,0000,0000,,没有哪个机械的物体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No merely mechanical object,
+Dialogue: 0,0:43:52.64,0:43:58.95,*Default,NTP,0000,0000,0000,,也没有哪个机器人  哪个电脑能有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}no robot, no computer could have free will.
+Dialogue: 0,0:44:00.28,0:44:02.28,*Default,NTP,0000,0000,0000,,但由于我们拥有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But since we've got free will,
+Dialogue: 0,0:44:02.28,0:44:08.30,*Default,NTP,0000,0000,0000,,我们必定不只是纯粹的物理对象\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we must be something more than a merely physical object.
+Dialogue: 0,0:44:08.30,0:44:10.51,*Default,NTP,0000,0000,0000,,必定存在某些额外的东西\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There must be something extra,
+Dialogue: 0,0:44:10.51,0:44:14.65,*Default,NTP,0000,0000,0000,,某些非物质  比如灵魂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something immaterial about us, the soul.
+Dialogue: 0,0:44:16.65,0:44:19.77,*Default,NTP,0000,0000,0000,,或许我们需要相信灵魂的理由就是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So maybe that's why we need to believe in souls
+Dialogue: 0,0:44:19.77,0:44:22.87,*Default,NTP,0000,0000,0000,,为了便于解释自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in order to explain free will.
+Dialogue: 0,0:44:24.20,0:44:30.99,*Default,NTP,0000,0000,0000,,这个话题  自由意志  是一个非常非常\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the subject, free will, is a very, very--
+Dialogue: 0,0:44:30.99,0:44:34.17,*Default,NTP,0000,0000,0000,,关于意识的话题非常复杂\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The subject of consciousness is a very complicated.
+Dialogue: 0,0:44:34.17,0:44:37.42,*Default,NTP,0000,0000,0000,,一个人可能得花上整整一个学期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One could have an entire semester
+Dialogue: 0,0:44:37.42,0:44:38.64,*Default,NTP,0000,0000,0000,,全身心地思考\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}devoted to thinking about
+Dialogue: 0,0:44:38.64,0:44:40.74,*Default,NTP,0000,0000,0000,,关于意识的哲学问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the philosophical problem of consciousness.
+Dialogue: 0,0:44:40.74,0:44:42.14,*Default,NTP,0000,0000,0000,,当然  这也的确是如此\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And indeed, as it happens,
+Dialogue: 0,0:44:42.14,0:44:44.06,*Default,NTP,0000,0000,0000,,我们系在这一学期\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in our department this very semester
+Dialogue: 0,0:44:44.06,0:44:46.75,*Default,NTP,0000,0000,0000,,就有这么一个班\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there is such a class devoted,
+Dialogue: 0,0:44:46.75,0:44:49.44,*Default,NTP,0000,0000,0000,,花了整整一个学期  来讨论意识问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all semester, to the topic of consciousness.
+Dialogue: 0,0:44:49.44,0:44:52.76,*Default,NTP,0000,0000,0000,,我们系同样还开设有一门课\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One could similarly have a
+Dialogue: 0,0:44:52.76,0:44:57.32,*Default,NTP,0000,0000,0000,,专门讨论自由意志问题\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}course devoted to the problem of free will.
+Dialogue: 0,0:44:57.32,0:45:00.78,*Default,NTP,0000,0000,0000,,我要花两分钟的时间在这上面\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to spend all of two minutes on it.
+Dialogue: 0,0:45:00.78,0:45:02.84,*Default,NTP,0000,0000,0000,,所以我绝不是在暗示\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's by no means do I mean to suggest,
+Dialogue: 0,0:45:02.84,0:45:04.85,*Default,NTP,0000,0000,0000,,关于这个话题  你需要知道的就这么多\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, here's everything you need to know about the subject."
+Dialogue: 0,0:45:04.85,0:45:07.50,*Default,NTP,0000,0000,0000,,我只是想尽可能地\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I simply want to point out enough
+Dialogue: 0,0:45:07.50,0:45:09.52,*Default,NTP,0000,0000,0000,,把这个问题提出来  以帮助你们认识到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the problem to help you see
+Dialogue: 0,0:45:09.52,0:45:15.15,*Default,NTP,0000,0000,0000,,为什么我不认同自由意志是灵魂的制胜利器\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}why I don't think free will is a slam-dunk for the soul.
+Dialogue: 0,0:45:16.28,0:45:17.36,*Default,NTP,0000,0000,0000,,那这个论证究竟是怎样的呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what's the argument?
+Dialogue: 0,0:45:17.36,0:45:20.70,*Default,NTP,0000,0000,0000,,它的想法大概是这样\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the thought seems to be something like this.
+Dialogue: 0,0:45:24.87,0:45:30.14,*Default,NTP,0000,0000,0000,,一  我们有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One, we have free will.
+Dialogue: 0,0:45:33.87,0:45:36.60,*Default,NTP,0000,0000,0000,,二  我想解释一下这一点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two--let me say something about this.
+Dialogue: 0,0:45:36.60,0:45:38.48,*Default,NTP,0000,0000,0000,,电脑仅仅只是在执行程序\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is it about the thought that the computer
+Dialogue: 0,0:45:38.48,0:45:40.35,*Default,NTP,0000,0000,0000,,这个观点到底是什么样的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is just following a program?
+Dialogue: 0,0:45:40.35,0:45:41.66,*Default,NTP,0000,0000,0000,,对于这个观点  我认为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the thought, I suppose is,
+Dialogue: 0,0:45:41.66,0:45:43.36,*Default,NTP,0000,0000,0000,,以哲学的语言可以表达为\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in philosopher's jargon,
+Dialogue: 0,0:45:43.36,0:45:46.89,*Default,NTP,0000,0000,0000,,电脑是个决定论的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the computer is a deterministic system.
+Dialogue: 0,0:45:46.89,0:45:49.24,*Default,NTP,0000,0000,0000,,它服从物理定律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It follows the laws of physics
+Dialogue: 0,0:45:49.24,0:45:52.34,*Default,NTP,0000,0000,0000,,而物理定律是决定性的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the laws of physics are deterministic.
+Dialogue: 0,0:45:52.34,0:45:53.73,*Default,NTP,0000,0000,0000,,如果你站在这个角度\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you're in this state,
+Dialogue: 0,0:45:53.73,0:45:54.54,*Default,NTP,0000,0000,0000,,你必定会考虑\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you will necessarily,
+Dialogue: 0,0:45:54.54,0:45:57.36,*Default,NTP,0000,0000,0000,,在物理定律和电脑编程原理\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}given the laws of physics and the way the computer's programmed
+Dialogue: 0,0:45:57.36,0:45:58.40,*Default,NTP,0000,0000,0000,,如何构造的等等确定的情况下\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and built and so forth,
+Dialogue: 0,0:45:58.40,0:46:02.58,*Default,NTP,0000,0000,0000,,这些电线通或断\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these wires will turn on, turn off,
+Dialogue: 0,0:46:02.58,0:46:03.93,*Default,NTP,0000,0000,0000,,这些回路通或断\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}these circuits will turn on, turn off,
+Dialogue: 0,0:46:03.93,0:46:06.84,*Default,NTP,0000,0000,0000,,嘣  突然你就处在那个位置上\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}boom, suddenly you'll be in that state.
+Dialogue: 0,0:46:06.84,0:46:08.57,*Default,NTP,0000,0000,0000,,存在那样的某些定律\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are certain laws such that,
+Dialogue: 0,0:46:08.57,0:46:10.05,*Default,NTP,0000,0000,0000,,假定电脑处在这种状态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}given that the computer's in this state,
+Dialogue: 0,0:46:10.05,0:46:12.32,*Default,NTP,0000,0000,0000,,它一定会变为那种状态\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it must necessarily move in that state.
+Dialogue: 0,0:46:12.32,0:46:14.99,*Default,NTP,0000,0000,0000,,当你认为因和果\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When you've got a view about cause
+Dialogue: 0,0:46:14.99,0:46:17.08,*Default,NTP,0000,0000,0000,,是以这种方式互相作用的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and effect that works this way--
+Dialogue: 0,0:46:17.08,0:46:19.10,*Default,NTP,0000,0000,0000,,对于所发生的一切\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for everything that happens,
+Dialogue: 0,0:46:19.10,0:46:21.07,*Default,NTP,0000,0000,0000,,总有些事先发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's some earlier thing
+Dialogue: 0,0:46:21.07,0:46:23.63,*Default,NTP,0000,0000,0000,,然后它们导致这些事发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that caused it to happen
+Dialogue: 0,0:46:23.63,0:46:25.40,*Default,NTP,0000,0000,0000,,于是一旦给定了前因\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}such that given that earlier cause,
+Dialogue: 0,0:46:25.40,0:46:28.53,*Default,NTP,0000,0000,0000,,这些后果必定会接着发生\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the event had to follow--
+Dialogue: 0,0:46:28.53,0:46:30.95,*Default,NTP,0000,0000,0000,,这是一个决定论的图景\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a deterministic picture.
+Dialogue: 0,0:46:31.52,0:46:32.79,*Default,NTP,0000,0000,0000,,那个想法  当然\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the thought, of course,
+Dialogue: 0,0:46:32.79,0:46:36.83,*Default,NTP,0000,0000,0000,,是说机器人和电脑只是一种决定论的系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that the robot or the computer is a deterministic system
+Dialogue: 0,0:46:36.83,0:46:39.18,*Default,NTP,0000,0000,0000,,而如果你是个决定论系统的话\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can't have free will
+Dialogue: 0,0:46:39.18,0:46:40.81,*Default,NTP,0000,0000,0000,,就不可能有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you're a deterministic system.
+Dialogue: 0,0:46:42.21,0:46:46.92,*Default,NTP,0000,0000,0000,,所以  一  我们有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So number one, we have free will.
+Dialogue: 0,0:46:46.92,0:47:03.01,*Default,NTP,0000,0000,0000,,二  任何服从决定论的实体都没有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Two, nothing subject to determinism has free will.
+Dialogue: 0,0:47:06.45,0:47:08.54,*Default,NTP,0000,0000,0000,,综合一和二\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Put one and two together.
+Dialogue: 0,0:47:08.54,0:47:10.34,*Default,NTP,0000,0000,0000,,得到结论  如果任何遵守决定论的实体\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It follows, if nothing subject to determinism
+Dialogue: 0,0:47:10.34,0:47:11.38,*Default,NTP,0000,0000,0000,,都没有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}has free will,
+Dialogue: 0,0:47:11.38,0:47:12.59,*Default,NTP,0000,0000,0000,,但我们有自由意志\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but we have free will,
+Dialogue: 0,0:47:12.59,0:47:16.84,*Default,NTP,0000,0000,0000,,那就表明我们不遵守决定论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it follows that we're not subject to determinism.
+Dialogue: 0,0:47:17.94,0:47:20.95,*Default,NTP,0000,0000,0000,,假设我们再往后添加第三点\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Suppose we then add three,
+Dialogue: 0,0:47:20.95,0:47:34.14,*Default,NTP,0000,0000,0000,,所有纯物理系统都遵守决定论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all purely physical systems are subject to determinism.
+Dialogue: 0,0:47:43.60,0:47:48.14,*Default,NTP,0000,0000,0000,,那好  一和二说我们不遵守决定论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, one and two gave us that we are not subject to determinism.
+Dialogue: 0,0:47:48.14,0:47:52.06,*Default,NTP,0000,0000,0000,,三说  所有纯物理系统都遵守决定论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Three says, all purely physical systems are subject to determinism.
+Dialogue: 0,0:47:52.06,0:47:54.38,*Default,NTP,0000,0000,0000,,那么  综合一二三我们得到\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, it would follow then from one, two, and three
+Dialogue: 0,0:47:54.38,0:47:57.98,*Default,NTP,0000,0000,0000,,我们不仅仅是纯粹的物理系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we are not a purely physical system.
+Dialogue: 0,0:47:59.31,0:48:13.59,*Default,NTP,0000,0000,0000,,结论  四  我们不只是纯粹的物理系统\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, conclusion, four, we are not a purely physical system.
+Dialogue: 0,0:48:17.41,0:48:18.02,*Default,NTP,0000,0000,0000,,那好\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:48:18.02,0:48:21.27,*Default,NTP,0000,0000,0000,,这就是从自由意志得出的论证\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's the argument from free will.
+Dialogue: 0,0:48:21.64,0:48:24.43,*Default,NTP,0000,0000,0000,,现在  这个论证是有效的\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, the argument is valid.
+Dialogue: 0,0:48:24.43,0:48:25.64,*Default,NTP,0000,0000,0000,,那是哲学家的术语\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's philosopher's jargon,
+Dialogue: 0,0:48:25.64,0:48:28.72,*Default,NTP,0000,0000,0000,,这就是说  有了这三个前提\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is to say, given the three premises,
+Dialogue: 0,0:48:28.72,0:48:32.79,*Default,NTP,0000,0000,0000,,我们确实能得到这个结论\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the conclusion really does follow.
+Dialogue: 0,0:48:32.79,0:48:34.78,*Default,NTP,0000,0000,0000,,有趣的是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The interesting question is,
+Dialogue: 0,0:48:34.78,0:48:38.07,*Default,NTP,0000,0000,0000,,这三个前提是真的吗\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Are the three premises true?"
+Dialogue: 0,0:48:38.07,0:48:40.79,*Default,NTP,0000,0000,0000,,而且它们要全部为真\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And they've got to all be true.
+Dialogue: 0,0:48:40.79,0:48:45.87,*Default,NTP,0000,0000,0000,,那么其中的每一个都必须为真\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's got to be that every single one of them is so.
+Dialogue: 0,0:48:45.87,0:48:50.81,*Default,NTP,0000,0000,0000,,下次一开始我会花一两分钟时间来讲这个\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll just spend a minute more on this starting next time.
+Dialogue: 0,0:48:50.81,0:48:53.86,*Default,NTP,0000,0000,0000,,但下次要思考的关键是\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the point to think about for next time is just,
+Dialogue: 0,0:48:53.86,0:48:58.19,*Default,NTP,0000,0000,0000,,那三个前提是否的确全部为真\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is it really true that all three of the premises are true,
+Dialogue: 0,0:48:58.19,0:49:00.91,*Default,NTP,0000,0000,0000,,或许一个或几个为假呢\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or might one or more of them be false?
+Dialogue: 0,0:49:00.91,0:49:02.53,*Default,NTP,0000,0000,0000,,那好  下次我们就从那里开始讲起\N{\fn微软雅黑}{\fs14}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right. That's where we'll start next time.

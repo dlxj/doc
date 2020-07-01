@@ -1,0 +1,974 @@
+[Script Info]
+; // 此字幕由TimeM生成
+; // 欢迎访问人人影视 http://www.YYeTs.net
+Title:YYeTs
+Original Script:YYeTs
+Synch Point:1
+ScriptType:v4.00+
+Collisions:Normal
+Timer:100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,方正黑体简体,19,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0.00,1,2,1,2,5,5,6,134
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:00.00,0:02:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:20:00.00,0:21:00.00,*Default,NTP,0000,0000,0000,,{\fn方正黑体简体}{\fs24}{\alpha&HAA&\c&HFF972F&}{\bord0}{\shad0}{\pos(40,45)}人人影视\N{\fn微软雅黑}{\fs16}{\alpha&HAA&\c&H31CAFD&}{\b0}www.YYeTs.net
+Dialogue: 0,0:00:02.01,0:00:04.84,*Default,NTP,0000,0000,0000,,这里是哲学176课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right, so this is Philosophy 176.
+Dialogue: 0,0:00:04.85,0:00:06.86,*Default,NTP,0000,0000,0000,,这门课的内容是关于死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The class is on death.
+Dialogue: 0,0:00:07.05,0:00:09.08,*Default,NTP,0000,0000,0000,,我的名字是雪莱·卡根\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My name is Shelly Kagan.
+Dialogue: 0,0:00:09.33,0:00:10.83,*Default,NTP,0000,0000,0000,,首先\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The very first thing
+Dialogue: 0,0:00:10.83,0:00:15.25,*Default,NTP,0000,0000,0000,,我要说的就是  希望你们称呼我雪莱\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to do is to invite you to call me Shelly.
+Dialogue: 0,0:00:15.79,0:00:18.06,*Default,NTP,0000,0000,0000,,也就是说  如果我们在街上碰见了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is, if we meet on the street,
+Dialogue: 0,0:00:18.06,0:00:19.57,*Default,NTP,0000,0000,0000,,或是你来办公室找我谈话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you come talk to me during office hours,
+Dialogue: 0,0:00:19.57,0:00:20.53,*Default,NTP,0000,0000,0000,,请教我问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you ask some question;
+Dialogue: 0,0:00:20.54,0:00:23.63,*Default,NTP,0000,0000,0000,,我会回应雪莱这个名字\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shelly's the name that I respond to.
+Dialogue: 0,0:00:23.64,0:00:27.60,*Default,NTP,0000,0000,0000,,当然  我也会回应卡根教授这个称呼\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I will, eventually, respond to Professor Kagan,
+Dialogue: 0,0:00:27.62,0:00:30.88,*Default,NTP,0000,0000,0000,,不过我会反应慢一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the synapses take a bit longer for that.
+Dialogue: 0,0:00:30.88,0:00:33.26,*Default,NTP,0000,0000,0000,,因为对于这个称呼我并不敏感\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not the name I immediately recognize.
+Dialogue: 0,0:00:33.28,0:00:36.31,*Default,NTP,0000,0000,0000,,我发现  过去这些年\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have found that over the years,
+Dialogue: 0,0:00:36.31,0:00:39.47,*Default,NTP,0000,0000,0000,,喜欢叫我雪莱的同学越来越少了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fewer and fewer students feel comfortable calling me Shelly.
+Dialogue: 0,0:00:39.47,0:00:41.80,*Default,NTP,0000,0000,0000,,我年轻的时候  还有不少人这么称呼我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I was young, it seemed to work.
+Dialogue: 0,0:00:41.80,0:00:44.85,*Default,NTP,0000,0000,0000,,现在我"德高望重"了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now I'm gray and august.
+Dialogue: 0,0:00:45.51,0:00:47.57,*Default,NTP,0000,0000,0000,,如果你们觉得这样叫顺嘴的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if you're comfortable with it,
+Dialogue: 0,0:00:47.57,0:00:50.81,*Default,NTP,0000,0000,0000,,我还是更喜欢你们这样称呼我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's the name that I prefer to be called by.
+Dialogue: 0,0:00:51.35,0:00:52.97,*Default,NTP,0000,0000,0000,,现在  如我所说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, as I say,
+Dialogue: 0,0:00:52.97,0:00:54.59,*Default,NTP,0000,0000,0000,,这是一门关于死亡的课程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is a class on death.
+Dialogue: 0,0:00:54.84,0:00:56.75,*Default,NTP,0000,0000,0000,,这是一门哲学课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's a philosophy class,
+Dialogue: 0,0:00:56.75,0:00:59.86,*Default,NTP,0000,0000,0000,,这就意味着我们在这门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and what that means is that the set of topics
+Dialogue: 0,0:00:59.86,0:01:02.14,*Default,NTP,0000,0000,0000,,要讨论的一系列问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're going to be talking about in this class
+Dialogue: 0,0:01:02.15,0:01:04.44,*Default,NTP,0000,0000,0000,,与其它关于死亡的课程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}are not identical to the topics
+Dialogue: 0,0:01:04.44,0:01:08.51,*Default,NTP,0000,0000,0000,,所讲授的东西截然不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that other classes on death might try to cover.
+Dialogue: 0,0:01:08.51,0:01:11.00,*Default,NTP,0000,0000,0000,,所以  首先我要说的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the first thing I want to do is say something
+Dialogue: 0,0:01:11.00,0:01:14.98,*Default,NTP,0000,0000,0000,,我们不会谈论那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the things we won't be talking about
+Dialogue: 0,0:01:15.01,0:01:19.12,*Default,NTP,0000,0000,0000,,你们可能强烈希望在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you might reasonably expect or hope
+Dialogue: 0,0:01:19.12,0:01:21.45,*Default,NTP,0000,0000,0000,,死亡课程上听到的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a class on death would talk about,
+Dialogue: 0,0:01:21.50,0:01:26.11,*Default,NTP,0000,0000,0000,,如果那样的话  这不会是你喜欢的课程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that if this is not the class you were looking for,
+Dialogue: 0,0:01:26.12,0:01:29.25,*Default,NTP,0000,0000,0000,,你还有时间去选修其他的课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you still have time to go check out some other class.
+Dialogue: 0,0:01:29.57,0:01:32.09,*Default,NTP,0000,0000,0000,,我想要讲的东西是你们在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So here are some things that a class on death
+Dialogue: 0,0:01:32.09,0:01:34.37,*Default,NTP,0000,0000,0000,,其他死亡课上听不到的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could cover that we won't talk about.
+Dialogue: 0,0:01:34.41,0:01:38.63,*Default,NTP,0000,0000,0000,,首先我想到的是一些关于\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What I primarily have in mind are sort of psychological
+Dialogue: 0,0:01:38.63,0:01:42.41,*Default,NTP,0000,0000,0000,,死亡本质和死亡现象的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and sociological questions about the nature of death,
+Dialogue: 0,0:01:42.41,0:01:43.69,*Default,NTP,0000,0000,0000,,一些心理学和社会学问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or the phenomenon of death.
+Dialogue: 0,0:01:43.69,0:01:45.29,*Default,NTP,0000,0000,0000,,因此  一堂死亡课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, a class on death
+Dialogue: 0,0:01:45.29,0:01:51.19,*Default,NTP,0000,0000,0000,,也许要好好讨论一下死亡的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}might well have a discussion of the process of dying
+Dialogue: 0,0:01:51.19,0:01:54.63,*Default,NTP,0000,0000,0000,,以便让你们接受\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and coming to reconcile yourself with the fact
+Dialogue: 0,0:01:54.63,0:01:56.12,*Default,NTP,0000,0000,0000,,人终会死去的事实\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you're going to die.
+Dialogue: 0,0:01:56.16,0:01:57.99,*Default,NTP,0000,0000,0000,,也许你们有人知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of you may know
+Dialogue: 0,0:01:58.21,0:02:00.26,*Default,NTP,0000,0000,0000,,伊丽莎白·库伯勒·罗斯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about Elisabeth Kübler-Ross' discussion
+Dialogue: 0,0:02:00.26,0:02:03.58,*Default,NTP,0000,0000,0000,,所谓的死亡五部曲论述\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of the so-called five stages of dying.
+Dialogue: 0,0:02:03.58,0:02:06.42,*Default,NTP,0000,0000,0000,,否认  愤怒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's denial, and then there's anger,
+Dialogue: 0,0:02:06.42,0:02:07.54,*Default,NTP,0000,0000,0000,,然后是妥协\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and then there's bargaining.
+Dialogue: 0,0:02:07.55,0:02:09.21,*Default,NTP,0000,0000,0000,,实际上我记不清这五个步骤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I actually don't remember the five stages.
+Dialogue: 0,0:02:09.33,0:02:12.05,*Default,NTP,0000,0000,0000,,我们也不会去讨论它\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're not going to talk about that.
+Dialogue: 0,0:02:12.05,0:02:12.78,*Default,NTP,0000,0000,0000,,同样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Similarly,
+Dialogue: 0,0:02:12.78,0:02:16.75,*Default,NTP,0000,0000,0000,,我们也不会讨论美国的丧葬行业\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we're not going to talk about the funeral industry
+Dialogue: 0,0:02:16.75,0:02:20.49,*Default,NTP,0000,0000,0000,,以及他们如何敲诈百姓\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in America and how it rips off people,
+Dialogue: 0,0:02:20.49,0:02:21.46,*Default,NTP,0000,0000,0000,,实际上就是这样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which it does,
+Dialogue: 0,0:02:21.48,0:02:25.15,*Default,NTP,0000,0000,0000,,在他们悲伤脆弱的时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in their moments of grief and weakness
+Dialogue: 0,0:02:25.15,0:02:28.53,*Default,NTP,0000,0000,0000,,对他们提供的各种服务漫天要价\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and overcharges them for the various things that it offers.
+Dialogue: 0,0:02:28.57,0:02:30.14,*Default,NTP,0000,0000,0000,,我们不会去讨论那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're not going to talk about that.
+Dialogue: 0,0:02:30.14,0:02:36.28,*Default,NTP,0000,0000,0000,,我们不会去讨论丧失亲友时悲伤的过程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're not going to talk about the process of grieving or bereavement.
+Dialogue: 0,0:02:36.28,0:02:40.99,*Default,NTP,0000,0000,0000,,我们不会去讨论在我们的文化中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're not going to talk about sociological attitudes
+Dialogue: 0,0:02:40.99,0:02:44.57,*Default,NTP,0000,0000,0000,,面对死亡的社会学态度\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we have towards the dying in our culture
+Dialogue: 0,0:02:44.57,0:02:51.37,*Default,NTP,0000,0000,0000,,以及我们如何试着去避免面对死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and how we tend to try to keep the dying hidden from the rest of us.
+Dialogue: 0,0:02:51.39,0:02:54.89,*Default,NTP,0000,0000,0000,,这些都是十分重要的话题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are all perfectly important topics,
+Dialogue: 0,0:02:54.89,0:02:56.24,*Default,NTP,0000,0000,0000,,但是  如我所讲 它们不是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're not, as I say,
+Dialogue: 0,0:02:56.24,0:02:59.60,*Default,NTP,0000,0000,0000,,我们在这堂课上要讨论的话题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}topics that we're going to be talking about in this class.
+Dialogue: 0,0:03:00.06,0:03:02.17,*Default,NTP,0000,0000,0000,,那么  我们要讨论什么呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what will we talk about?
+Dialogue: 0,0:03:02.17,0:03:07.22,*Default,NTP,0000,0000,0000,,我们要讨论的是当我们思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, the things we'll talk about are philosophical questions
+Dialogue: 0,0:03:07.22,0:03:11.53,*Default,NTP,0000,0000,0000,,死亡本质或诸如此类的问题时  所产生的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that arise as we begin to think about the nature of death,
+Dialogue: 0,0:03:11.53,0:03:13.76,*Default,NTP,0000,0000,0000,,哲学疑问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}like this.
+Dialogue: 0,0:03:13.76,0:03:15.71,*Default,NTP,0000,0000,0000,,大致说来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In broad scope,
+Dialogue: 0,0:03:15.75,0:03:20.49,*Default,NTP,0000,0000,0000,,这门课首先会讲到形而上学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first half of the class is going to be metaphysics,
+Dialogue: 0,0:03:20.54,0:03:22.89,*Default,NTP,0000,0000,0000,,你们当中  熟悉哲学术语的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for those of you who are familiar with
+Dialogue: 0,0:03:22.90,0:03:24.00,*Default,NTP,0000,0000,0000,,一定知道这个词\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the philosophical piece of jargon.
+Dialogue: 0,0:03:24.00,0:03:29.10,*Default,NTP,0000,0000,0000,,课程的第二部分大致会谈到价值论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And roughly, the second half of the class is going to be value theory.
+Dialogue: 0,0:03:29.27,0:03:31.99,*Default,NTP,0000,0000,0000,,所以  课程的前半部分将会集中在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, the first half of the class is going to be concerned
+Dialogue: 0,0:03:31.99,0:03:35.94,*Default,NTP,0000,0000,0000,,死亡本质的问题上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with questions about the nature of death.
+Dialogue: 0,0:03:36.08,0:03:39.17,*Default,NTP,0000,0000,0000,,我们死亡时发生了什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What happens when we die?
+Dialogue: 0,0:03:39.21,0:03:41.07,*Default,NTP,0000,0000,0000,,事实上  要解决这个问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Indeed, to get at that question,
+Dialogue: 0,0:03:41.07,0:03:44.10,*Default,NTP,0000,0000,0000,,我们首先要考虑的是  我们是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first thing we're going to have to think about is what are we?
+Dialogue: 0,0:03:44.12,0:03:48.31,*Default,NTP,0000,0000,0000,,人是一种什么样的实体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What kind of an entity is a person?
+Dialogue: 0,0:03:48.33,0:03:51.55,*Default,NTP,0000,0000,0000,,特别是  我们有灵魂吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In particular, do we have souls,
+Dialogue: 0,0:03:51.57,0:03:54.04,*Default,NTP,0000,0000,0000,,在这节课上   我所说的灵魂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and for this class when I talk about a soul,
+Dialogue: 0,0:03:54.04,0:03:57.08,*Default,NTP,0000,0000,0000,,是哲学中的术语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I'm going to mean is sort of a bit of philosophical jargon.
+Dialogue: 0,0:03:57.08,0:03:59.30,*Default,NTP,0000,0000,0000,,我的意思是指某些非物质的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to mean something immaterial,
+Dialogue: 0,0:03:59.30,0:04:01.09,*Default,NTP,0000,0000,0000,,某些区别于我们身体的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something distinct from our bodies.
+Dialogue: 0,0:04:01.09,0:04:03.27,*Default,NTP,0000,0000,0000,,我们有非物质的灵魂吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Do we have immaterial souls,
+Dialogue: 0,0:04:03.30,0:04:06.78,*Default,NTP,0000,0000,0000,,会有东西能够从身体的死亡中幸存吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}something that might survive the death of our body?
+Dialogue: 0,0:04:07.66,0:04:11.35,*Default,NTP,0000,0000,0000,,如果没有  那么死亡的本质意味着什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if not, what does that imply about the nature of death?
+Dialogue: 0,0:04:11.35,0:04:14.44,*Default,NTP,0000,0000,0000,,怎么样才称得上死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What kind of an event is death?
+Dialogue: 0,0:04:14.50,0:04:17.28,*Default,NTP,0000,0000,0000,,幸存对我来说是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is it for me to survive?
+Dialogue: 0,0:04:17.28,0:04:19.24,*Default,NTP,0000,0000,0000,,假如我从死亡中幸存  这意味着什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What would it mean for me to survive my death?
+Dialogue: 0,0:04:19.24,0:04:22.14,*Default,NTP,0000,0000,0000,,今晚活着对于我来说又意味着什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What does it mean for me to survive tonight?
+Dialogue: 0,0:04:22.14,0:04:22.84,*Default,NTP,0000,0000,0000,,那就意味着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is, you know,
+Dialogue: 0,0:04:22.84,0:04:27.32,*Default,NTP,0000,0000,0000,,周四  有人会在这儿讲课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}somebody's going to be here lecturing to the class on Thursday,
+Dialogue: 0,0:04:27.32,0:04:28.74,*Default,NTP,0000,0000,0000,,可以推断  那个人就是我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}presumably that will be me.
+Dialogue: 0,0:04:28.74,0:04:30.74,*Default,NTP,0000,0000,0000,,但是  如何证明\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What is it for that person
+Dialogue: 0,0:04:30.74,0:04:33.85,*Default,NTP,0000,0000,0000,,周四站在这里讲课的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who's there on Thursday to be the same person as the person
+Dialogue: 0,0:04:33.85,0:04:36.75,*Default,NTP,0000,0000,0000,,与今天在这里给大家讲课的是同一个人呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who's sitting here lecturing to you today?
+Dialogue: 0,0:04:36.75,0:04:39.70,*Default,NTP,0000,0000,0000,,这些都是个人同一性的问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are questions about the nature of personal identity.
+Dialogue: 0,0:04:39.70,0:04:40.89,*Default,NTP,0000,0000,0000,,显而易见  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pretty clearly, 
+Dialogue: 0,0:04:40.89,0:04:44.09,*Default,NTP,0000,0000,0000,,要想弄明白死亡和生存是怎么一回事儿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to think about death and continued existence and survival,
+Dialogue: 0,0:04:44.09,0:04:46.56,*Default,NTP,0000,0000,0000,,我们必须对个人同一性了然于心\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we have to get clear about the nature of personal identity.
+Dialogue: 0,0:04:46.62,0:04:49.08,*Default,NTP,0000,0000,0000,,我们会用上半学期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These sorts of questions will occupy us
+Dialogue: 0,0:04:49.08,0:04:53.47,*Default,NTP,0000,0000,0000,,来讨论这些问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for roughly the first half of the semester.
+Dialogue: 0,0:04:53.91,0:04:59.11,*Default,NTP,0000,0000,0000,,之后  我们会讨论到价值论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then we'll turn to value questions.
+Dialogue: 0,0:04:59.55,0:05:03.63,*Default,NTP,0000,0000,0000,,如果死亡是终结  那么它是坏事吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If death is the end, is death bad?
+Dialogue: 0,0:05:03.72,0:05:05.41,*Default,NTP,0000,0000,0000,,当然了  毫无疑问  大多数人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, of course, most of us are immediately
+Dialogue: 0,0:05:05.41,0:05:07.54,*Default,NTP,0000,0000,0000,,坚信死亡是件坏事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and strongly inclined to think that death is bad.
+Dialogue: 0,0:05:07.54,0:05:10.74,*Default,NTP,0000,0000,0000,,但是有许多关于死亡到底有多糟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there are a set of philosophical puzzles
+Dialogue: 0,0:05:10.74,0:05:12.81,*Default,NTP,0000,0000,0000,,的哲学之谜\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about how death could be bad.
+Dialogue: 0,0:05:12.81,0:05:14.90,*Default,NTP,0000,0000,0000,,让你们先来体会一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To sort of give you a quick taste,
+Dialogue: 0,0:05:15.82,0:05:19.25,*Default,NTP,0000,0000,0000,,如果在我死后  我不存在了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if after my death I won't exist,
+Dialogue: 0,0:05:19.32,0:05:21.73,*Default,NTP,0000,0000,0000,,对我来说怎么会有坏事呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how could anything be bad for me?
+Dialogue: 0,0:05:21.73,0:05:25.36,*Default,NTP,0000,0000,0000,,对于不存在的东西怎么会有坏事呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How could anything be bad for something that doesn't exist?
+Dialogue: 0,0:05:25.56,0:05:27.81,*Default,NTP,0000,0000,0000,,那么  死亡怎么会是坏事呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So how could death be bad?
+Dialogue: 0,0:05:27.91,0:05:30.16,*Default,NTP,0000,0000,0000,,所以  这么说并不是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's not that the result is going to be
+Dialogue: 0,0:05:30.16,0:05:32.13,*Default,NTP,0000,0000,0000,,我试图让你相信死亡不是坏事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I'm going to try to convince you that death isn't bad,
+Dialogue: 0,0:05:32.13,0:05:35.68,*Default,NTP,0000,0000,0000,,但这的确要花点时间来准确地说清楚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it takes actually a little bit of work to pin down precisely
+Dialogue: 0,0:05:35.68,0:05:38.83,*Default,NTP,0000,0000,0000,,什么让死亡成了坏事和怎样才算死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what is it about death that's bad and how can it be death?
+Dialogue: 0,0:05:38.83,0:05:41.29,*Default,NTP,0000,0000,0000,,使得死亡成为坏事的东西是否\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Is there more than one thing about death
+Dialogue: 0,0:05:41.29,0:05:42.35,*Default,NTP,0000,0000,0000,,不止一件\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that makes it bad?
+Dialogue: 0,0:05:42.71,0:05:43.99,*Default,NTP,0000,0000,0000,,我们可以这样想\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll turn to questions like that.
+Dialogue: 0,0:05:44.15,0:05:45.27,*Default,NTP,0000,0000,0000,,如果死亡是件坏事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If death is bad,
+Dialogue: 0,0:05:45.27,0:05:46.82,*Default,NTP,0000,0000,0000,,那么有人也许会好奇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then one might wonder
+Dialogue: 0,0:05:46.82,0:05:48.38,*Default,NTP,0000,0000,0000,,是不是永生就是件好事了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would immortality be a good thing?
+Dialogue: 0,0:05:48.38,0:05:49.96,*Default,NTP,0000,0000,0000,,那就是我们要思考的问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a question that we'll think about.
+Dialogue: 0,0:05:49.98,0:05:51.09,*Default,NTP,0000,0000,0000,,或者  更通俗地说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, more generally,
+Dialogue: 0,0:05:51.09,0:05:53.53,*Default,NTP,0000,0000,0000,,我们担心如果我们即将死去\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll worry about how should the fact
+Dialogue: 0,0:05:53.53,0:05:58.36,*Default,NTP,0000,0000,0000,,将这会如何影响我们的生活\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I'm going to die affect the way I live?
+Dialogue: 0,0:05:58.36,0:06:01.99,*Default,NTP,0000,0000,0000,,我应该用怎样的态度对待不可避免的死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What should my attitude be towards my mortality?
+Dialogue: 0,0:06:01.99,0:06:07.75,*Default,NTP,0000,0000,0000,,比如  我应该害怕死亡吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Should I be afraid of death, for example?
+Dialogue: 0,0:06:07.75,0:06:10.71,*Default,NTP,0000,0000,0000,,我该对我即将死去这个事实感到绝望吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Should I despair at the fact that I'm going to die?
+Dialogue: 0,0:06:11.05,0:06:14.38,*Default,NTP,0000,0000,0000,,最后  我们将转入自杀问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Finally, we'll turn to questions about suicide.
+Dialogue: 0,0:06:14.50,0:06:17.41,*Default,NTP,0000,0000,0000,,许多人认为既然生命是有价值的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of us think that given the valuable
+Dialogue: 0,0:06:17.41,0:06:19.04,*Default,NTP,0000,0000,0000,,无比珍贵的  那么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and precious thing that life is,
+Dialogue: 0,0:06:19.04,0:06:20.99,*Default,NTP,0000,0000,0000,,自杀就是毫无意义的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}suicide makes no sense.
+Dialogue: 0,0:06:20.99,0:06:23.34,*Default,NTP,0000,0000,0000,,你放弃了你仅有的生命\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're throwing away the only life you're ever going to have.
+Dialogue: 0,0:06:23.36,0:06:25.95,*Default,NTP,0000,0000,0000,,我们将通过思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so we'll end the semester by thinking
+Dialogue: 0,0:06:25.95,0:06:29.05,*Default,NTP,0000,0000,0000,,自杀的合理性和道德性\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about questions along the lines of the rationality
+Dialogue: 0,0:06:29.09,0:06:31.32,*Default,NTP,0000,0000,0000,,结束这个学期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and morality of suicide.
+Dialogue: 0,0:06:31.32,0:06:32.32,*Default,NTP,0000,0000,0000,,大致地讲\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So roughly speaking,
+Dialogue: 0,0:06:32.32,0:06:33.32,*Default,NTP,0000,0000,0000,,这就是我们的课程安排\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's where we're going.
+Dialogue: 0,0:06:33.32,0:06:35.29,*Default,NTP,0000,0000,0000,,前半学期  形而上学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First half of the class, metaphysics;
+Dialogue: 0,0:06:35.29,0:06:37.70,*Default,NTP,0000,0000,0000,,后半学期  价值论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}second half of the class, value theory.
+Dialogue: 0,0:06:38.21,0:06:40.47,*Default,NTP,0000,0000,0000,,下面我需要解释一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Next thing I need to explain is this.
+Dialogue: 0,0:06:40.47,0:06:42.22,*Default,NTP,0000,0000,0000,,简单的说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's, roughly speaking,
+Dialogue: 0,0:06:42.22,0:06:45.19,*Default,NTP,0000,0000,0000,,讲课有两种方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}two ways to do a class,
+Dialogue: 0,0:06:45.19,0:06:47.59,*Default,NTP,0000,0000,0000,,特别是像这种引论课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}especially an introductory class like this.
+Dialogue: 0,0:06:47.69,0:06:49.17,*Default,NTP,0000,0000,0000,,方法一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In approach number one,
+Dialogue: 0,0:06:49.17,0:06:53.48,*Default,NTP,0000,0000,0000,,你们简单的列出不同的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you simply lay out the various positions,
+Dialogue: 0,0:06:53.69,0:06:54.95,*Default,NTP,0000,0000,0000,,正面和反面\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pro and con,
+Dialogue: 0,0:06:54.95,0:06:59.89,*Default,NTP,0000,0000,0000,,老师争取保持中立\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the professor strives to remain neutral;
+Dialogue: 0,0:06:59.97,0:07:03.64,*Default,NTP,0000,0000,0000,,不表明他支持哪个观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}sort of not tip his hand about what he holds.
+Dialogue: 0,0:07:03.64,0:07:04.94,*Default,NTP,0000,0000,0000,,这是方法一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's approach number one.
+Dialogue: 0,0:07:04.94,0:07:06.37,*Default,NTP,0000,0000,0000,,有时我会在介绍课上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And sometimes in my intro classes
+Dialogue: 0,0:07:06.37,0:07:08.34,*Default,NTP,0000,0000,0000,,采用这种方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's the approach that I take.
+Dialogue: 0,0:07:08.44,0:07:09.47,*Default,NTP,0000,0000,0000,,而另一种方法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But the other approach,
+Dialogue: 0,0:07:09.47,0:07:11.02,*Default,NTP,0000,0000,0000,,我要提醒你们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the one that I should warn you
+Dialogue: 0,0:07:11.02,0:07:13.15,*Default,NTP,0000,0000,0000,,这个学期  在这门课上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm going to take this semester,
+Dialogue: 0,0:07:13.17,0:07:15.54,*Default,NTP,0000,0000,0000,,我的讲课方式将与平常不同\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in this class, is rather different.
+Dialogue: 0,0:07:15.62,0:07:20.65,*Default,NTP,0000,0000,0000,,我会始终围绕一个观点来谈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's a line that I'm going to be developing,
+Dialogue: 0,0:07:20.69,0:07:24.50,*Default,NTP,0000,0000,0000,,并推动和论证这个观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}pushing, if you will, or defending in this class.
+Dialogue: 0,0:07:24.52,0:07:25.35,*Default,NTP,0000,0000,0000,,也就是说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is to say,
+Dialogue: 0,0:07:25.35,0:07:28.46,*Default,NTP,0000,0000,0000,,关于我们要讨论的问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's a certain set of views I hold
+Dialogue: 0,0:07:28.46,0:07:30.31,*Default,NTP,0000,0000,0000,,我会持有自己的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the issues that we'll be discussing.
+Dialogue: 0,0:07:30.34,0:07:32.89,*Default,NTP,0000,0000,0000,,而我在课堂上要做的就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what I'm going to try to do in this class
+Dialogue: 0,0:07:32.89,0:07:34.48,*Default,NTP,0000,0000,0000,,与其它的观点辩论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is argue for those views.
+Dialogue: 0,0:07:34.48,0:07:38.04,*Default,NTP,0000,0000,0000,,说服你们并让你们相信我的观点是正确的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Try to convince you that those views are correct.
+Dialogue: 0,0:07:41.72,0:07:46.39,*Default,NTP,0000,0000,0000,,为了让你们先了解一下那些观点是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}To help you know sort of ahead of time quickly what those views are,
+Dialogue: 0,0:07:46.39,0:07:49.96,*Default,NTP,0000,0000,0000,,我想先给大家介绍几种观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to start by describing a set of views
+Dialogue: 0,0:07:49.96,0:07:52.41,*Default,NTP,0000,0000,0000,,你们中可能有人会相信它们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that many of you probably believe.
+Dialogue: 0,0:07:52.41,0:07:54.14,*Default,NTP,0000,0000,0000,,下面  我就给你们介绍这些观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm going to give you a cluster of views.
+Dialogue: 0,0:07:54.14,0:07:55.42,*Default,NTP,0000,0000,0000,,按理说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Logically speaking,
+Dialogue: 0,0:07:55.42,0:07:57.47,*Default,NTP,0000,0000,0000,,你们不会完全相信这些观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could believe some of these things and not all of them.
+Dialogue: 0,0:07:57.47,0:08:00.85,*Default,NTP,0000,0000,0000,,但有一些观点或许你们大多数人是赞同的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But here's a set of views that many of you probably believe,
+Dialogue: 0,0:08:00.85,0:08:05.05,*Default,NTP,0000,0000,0000,,我想你们至少会相信其中一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I imagine most of you believe at least some of these things.
+Dialogue: 0,0:08:05.05,0:08:07.03,*Default,NTP,0000,0000,0000,,这是几种普遍的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So here's the set of common views.
+Dialogue: 0,0:08:07.03,0:08:10.11,*Default,NTP,0000,0000,0000,,第一  我们有灵魂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}First of all, that we have a soul.
+Dialogue: 0,0:08:10.11,0:08:13.29,*Default,NTP,0000,0000,0000,,那就是说我们不仅仅只是个肉体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That is to say we are not just bodies.
+Dialogue: 0,0:08:13.29,0:08:16.53,*Default,NTP,0000,0000,0000,,我们不仅仅只是几块骨头和肉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We're not just lumps of bone and flesh.
+Dialogue: 0,0:08:16.53,0:08:18.09,*Default,NTP,0000,0000,0000,,我们身体中有一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But there's a part of us,
+Dialogue: 0,0:08:18.09,0:08:20.03,*Default,NTP,0000,0000,0000,,可能是极其重要的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perhaps the essential part of us,
+Dialogue: 0,0:08:20.13,0:08:22.96,*Default,NTP,0000,0000,0000,,比身体还重要得多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that is something more than the physical,
+Dialogue: 0,0:08:22.96,0:08:25.67,*Default,NTP,0000,0000,0000,,精神的  非物质的部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the spiritual, immaterial part of us,
+Dialogue: 0,0:08:25.67,0:08:28.15,*Default,NTP,0000,0000,0000,,就像我在这说的灵魂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which as I say in this class we'll call a soul.
+Dialogue: 0,0:08:28.15,0:08:32.11,*Default,NTP,0000,0000,0000,,你们中的大多数人可能相信灵魂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most of us, most of you, probably believe in souls.
+Dialogue: 0,0:08:32.11,0:08:34.02,*Default,NTP,0000,0000,0000,,当然大多美国人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Certainly most people in America
+Dialogue: 0,0:08:34.04,0:08:36.74,*Default,NTP,0000,0000,0000,,相信非物质的灵魂存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}believe in some sort of immaterial soul.
+Dialogue: 0,0:08:36.74,0:08:39.67,*Default,NTP,0000,0000,0000,,鉴于它们的存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And given this existence of this immaterial soul,
+Dialogue: 0,0:08:40.23,0:08:41.97,*Default,NTP,0000,0000,0000,,有可能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a possibility,
+Dialogue: 0,0:08:41.97,0:08:44.32,*Default,NTP,0000,0000,0000,,也的确是有这样的可能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}indeed a fair likelihood,
+Dialogue: 0,0:08:44.32,0:08:47.13,*Default,NTP,0000,0000,0000,,让我们能在死亡后继续存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we will survive our deaths.
+Dialogue: 0,0:08:47.16,0:08:50.25,*Default,NTP,0000,0000,0000,,死亡会破坏我们的身体\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The death will be the destruction of my body,
+Dialogue: 0,0:08:50.25,0:08:52.23,*Default,NTP,0000,0000,0000,,但是我们的灵魂是非物质的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but my soul is immaterial
+Dialogue: 0,0:08:52.24,0:08:56.16,*Default,NTP,0000,0000,0000,,所以能在我们死亡之后仍然存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and so my soul can continue to exist after my death.
+Dialogue: 0,0:08:56.17,0:09:00.69,*Default,NTP,0000,0000,0000,,不论你是否相信灵魂的存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And whether or not you actually believe in a soul,
+Dialogue: 0,0:09:00.72,0:09:04.41,*Default,NTP,0000,0000,0000,,你希望它是存在的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you hope that there's a soul so
+Dialogue: 0,0:09:04.49,0:09:09.96,*Default,NTP,0000,0000,0000,,如果灵魂存在  你就能幸免于死 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that there'll be this serious possibility of surviving your death 
+Dialogue: 0,0:09:09.96,0:09:14.71,*Default,NTP,0000,0000,0000,,因为死亡不仅糟糕而且极为恐怖  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because death is not only bad, but so horrible 
+Dialogue: 0,0:09:14.71,0:09:16.47,*Default,NTP,0000,0000,0000,,我们所希望的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that what we would like to have happen is,
+Dialogue: 0,0:09:16.47,0:09:18.76,*Default,NTP,0000,0000,0000,,我们能够永远活着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we would like to live forever.
+Dialogue: 0,0:09:18.76,0:09:21.07,*Default,NTP,0000,0000,0000,,因此  拥有一个灵魂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so, armed with a soul, as it were,
+Dialogue: 0,0:09:21.07,0:09:24.03,*Default,NTP,0000,0000,0000,,至少可以拥有永生的可能性\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's at least the possibility of immortality.
+Dialogue: 0,0:09:24.09,0:09:26.60,*Default,NTP,0000,0000,0000,,永生是一件很棒的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Immortality would be wonderful.
+Dialogue: 0,0:09:26.60,0:09:28.55,*Default,NTP,0000,0000,0000,,我们希望能够永生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what we hope is the case,
+Dialogue: 0,0:09:28.61,0:09:31.54,*Default,NTP,0000,0000,0000,,无论这是否能够实现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether or not we know that it's the case.
+Dialogue: 0,0:09:31.71,0:09:33.21,*Default,NTP,0000,0000,0000,,但永生无疑很棒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Immortality would be wonderful.
+Dialogue: 0,0:09:33.21,0:09:34.64,*Default,NTP,0000,0000,0000,,这就是为什么死亡是件坏事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's why death's so bad.
+Dialogue: 0,0:09:34.65,0:09:36.35,*Default,NTP,0000,0000,0000,,因为它使我们丧失了永生的机会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It robs us of immortality.
+Dialogue: 0,0:09:37.05,0:09:39.67,*Default,NTP,0000,0000,0000,,如果没有灵魂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if there is no soul,
+Dialogue: 0,0:09:39.67,0:09:40.73,*Default,NTP,0000,0000,0000,,如果死亡是完结\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if death is the end,
+Dialogue: 0,0:09:40.73,0:09:42.55,*Default,NTP,0000,0000,0000,,如果没有永生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if there is no immortality,
+Dialogue: 0,0:09:42.64,0:09:49.52,*Default,NTP,0000,0000,0000,,那么在面对死亡这如此糟糕透顶的事情时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is such an overwhelming bad thing that the only,
+Dialogue: 0,0:09:49.52,0:09:50.74,*Default,NTP,0000,0000,0000,,最明显的反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the obvious reaction,
+Dialogue: 0,0:09:50.74,0:09:51.81,*Default,NTP,0000,0000,0000,,最自然的反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the natural reaction,
+Dialogue: 0,0:09:51.81,0:09:53.01,*Default,NTP,0000,0000,0000,,最普遍的反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the universal reaction,
+Dialogue: 0,0:09:53.08,0:09:59.52,*Default,NTP,0000,0000,0000,,当然会是恐惧和绝望\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to face the prospect of death with fear and despair.
+Dialogue: 0,0:10:00.75,0:10:02.69,*Default,NTP,0000,0000,0000,,就像我之前提到的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And as I mentioned earlier then,
+Dialogue: 0,0:10:04.69,0:10:07.30,*Default,NTP,0000,0000,0000,,死亡是可怕的  相反生命太美好了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}death is so horrible and life is so wonderful
+Dialogue: 0,0:10:07.30,0:10:11.13,*Default,NTP,0000,0000,0000,,所以浪费生命是愚蠢的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it could never make sense to throw it away.
+Dialogue: 0,0:10:11.19,0:10:17.05,*Default,NTP,0000,0000,0000,,自杀当然也是不道德且毫无意义可言的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So suicide is both immoral on the one hand and never makes sense.
+Dialogue: 0,0:10:17.05,0:10:20.15,*Default,NTP,0000,0000,0000,,另外这也是很不理性的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's always irrational as well, in addition.
+Dialogue: 0,0:10:20.23,0:10:24.17,*Default,NTP,0000,0000,0000,,以上我说的是一些关于死亡本质的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That, as I say, is I think a common set of views
+Dialogue: 0,0:10:24.20,0:10:27.37,*Default,NTP,0000,0000,0000,,普遍观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the nature of death.
+Dialogue: 0,0:10:27.83,0:10:29.97,*Default,NTP,0000,0000,0000,,我接下来要做什么呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what I'm going to be doing,
+Dialogue: 0,0:10:29.97,0:10:31.68,*Default,NTP,0000,0000,0000,,我准备在这儿给你们证明的就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I'm going to be arguing in this class,
+Dialogue: 0,0:10:31.68,0:10:36.08,*Default,NTP,0000,0000,0000,,那个观点从头至尾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that that set of views is pretty much mistaken 
+Dialogue: 0,0:10:36.08,0:10:38.09,*Default,NTP,0000,0000,0000,,都是错的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}from beginning to end.
+Dialogue: 0,0:10:38.13,0:10:43.12,*Default,NTP,0000,0000,0000,,我尝试让你们相信灵魂是不存在的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so I'm going to try to convince you that there is no soul.
+Dialogue: 0,0:10:43.17,0:10:45.59,*Default,NTP,0000,0000,0000,,永生并不是一件好事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Immortality would not be a good thing.
+Dialogue: 0,0:10:45.60,0:10:49.83,*Default,NTP,0000,0000,0000,,对死亡感到恐惧是正常的反应\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fear of death isn't actually an appropriate response to death.
+Dialogue: 0,0:10:49.84,0:10:51.97,*Default,NTP,0000,0000,0000,,自杀有时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Suicide, under certain circumstances,
+Dialogue: 0,0:10:51.97,0:10:54.16,*Default,NTP,0000,0000,0000,,也有可能是合理的  在道德上也是正当的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}might be rationally and morally justified.
+Dialogue: 0,0:10:54.18,0:10:54.96,*Default,NTP,0000,0000,0000,,如我所言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As I say,
+Dialogue: 0,0:10:54.96,0:10:59.31,*Default,NTP,0000,0000,0000,,那个普遍观点从头到尾都是错的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the common picture is pretty much mistaken from start to end.
+Dialogue: 0,0:10:59.31,0:11:00.87,*Default,NTP,0000,0000,0000,,那至少是我的目标\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's at least my goal.
+Dialogue: 0,0:11:00.87,0:11:02.00,*Default,NTP,0000,0000,0000,,我的目的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's my aim.
+Dialogue: 0,0:11:02.00,0:11:03.58,*Default,NTP,0000,0000,0000,,那就是我要做的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what I'm going to be doing.
+Dialogue: 0,0:11:03.62,0:11:04.74,*Default,NTP,0000,0000,0000,,现在  从这节课开始\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, since of course,
+Dialogue: 0,0:11:04.74,0:11:06.94,*Default,NTP,0000,0000,0000,,我相信这个观点  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I believe the views I believe...
+Dialogue: 0,0:11:06.94,0:11:11.42,*Default,NTP,0000,0000,0000,,也希望在这个学期末你们能赞同我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I hope at the end of the semester you'll agree with me,
+Dialogue: 0,0:11:11.42,0:11:12.32,*Default,NTP,0000,0000,0000,,因为我相信那是真实的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I think they're true
+Dialogue: 0,0:11:12.32,0:11:13.83,*Default,NTP,0000,0000,0000,,我希望你们最终会相信这个事实\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I hope you'll end up believing the truth.
+Dialogue: 0,0:11:14.03,0:11:16.67,*Default,NTP,0000,0000,0000,,但我得说关键不是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I should say that the crucial point
+Dialogue: 0,0:11:16.67,0:11:19.01,*Default,NTP,0000,0000,0000,,你们要赞同我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}isn't for you to agree with me.
+Dialogue: 0,0:11:19.05,0:11:23.49,*Default,NTP,0000,0000,0000,,关键在于让你们自己思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The crucial point is for you to think for yourself.
+Dialogue: 0,0:11:23.49,0:11:29.06,*Default,NTP,0000,0000,0000,,我要你们做的就是冷静地 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so what I'm really doing is inviting you to take a good,
+Dialogue: 0,0:11:29.11,0:11:33.43,*Default,NTP,0000,0000,0000,,客观地看待死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}cold, hard look at death,
+Dialogue: 0,0:11:33.48,0:11:37.23,*Default,NTP,0000,0000,0000,,并勇于面对  以一种我们从未\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and to face it and think about it in a way
+Dialogue: 0,0:11:37.23,0:11:39.55,*Default,NTP,0000,0000,0000,,用过的方法去思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that most of us don't do.
+Dialogue: 0,0:11:41.01,0:11:43.33,*Default,NTP,0000,0000,0000,,如果你在这个学期末\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you, at the end of the semester,
+Dialogue: 0,0:11:43.34,0:11:46.25,*Default,NTP,0000,0000,0000,,还是不赞同我的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}haven't agreed with me about this particular claim
+Dialogue: 0,0:11:46.25,0:11:48.29,*Default,NTP,0000,0000,0000,,那也没关系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or that particular claim, so be it.
+Dialogue: 0,0:11:48.33,0:11:49.64,*Default,NTP,0000,0000,0000,,我也是满意的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll be content...
+Dialogue: 0,0:11:49.64,0:11:51.07,*Default,NTP,0000,0000,0000,,即使我不完全满意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I won't be completely content...
+Dialogue: 0,0:11:51.07,0:11:53.07,*Default,NTP,0000,0000,0000,,但至少我基本上是满意的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I'll be at least largely content
+Dialogue: 0,0:11:53.07,0:11:56.25,*Default,NTP,0000,0000,0000,,只要你们已经深思熟虑了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as long as you've really thought
+Dialogue: 0,0:11:56.25,0:12:00.21,*Default,NTP,0000,0000,0000,,各种论证所存在的各种问题  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}through the arguments on each side of these various issues.
+Dialogue: 0,0:12:01.04,0:12:03.33,*Default,NTP,0000,0000,0000,,卡伦  现在你可以发\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Karen, maybe this would be a good time for you 
+Dialogue: 0,0:12:03.33,0:12:04.48,*Default,NTP,0000,0000,0000,,教学大纲了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to pass around the syllabus.
+Dialogue: 0,0:12:06.54,0:12:08.04,*Default,NTP,0000,0000,0000,,接下来要做的介绍是...\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Next introductory remark:
+Dialogue: 0,0:12:08.04,0:12:10.74,*Default,NTP,0000,0000,0000,,今天说的很多东西都是以后讨论的重点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A lot of today's talk is going to be devoted to business.
+Dialogue: 0,0:12:10.74,0:12:12.83,*Default,NTP,0000,0000,0000,,如果时间允许\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll get to, if time permits,
+Dialogue: 0,0:12:12.83,0:12:14.21,*Default,NTP,0000,0000,0000,,我会在最后讲一点哲学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some philosophy at the end.
+Dialogue: 0,0:12:14.81,0:12:17.71,*Default,NTP,0000,0000,0000,,我想再说明一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to make one more remark about
+Dialogue: 0,0:12:17.71,0:12:19.26,*Default,NTP,0000,0000,0000,,在这节课上我们都会做些什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what I'll be doing in terms of this class.
+Dialogue: 0,0:12:19.26,0:12:21.22,*Default,NTP,0000,0000,0000,,这节课就像我说的  是节哲学课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This class, as I say, is a philosophy class.
+Dialogue: 0,0:12:21.24,0:12:24.09,*Default,NTP,0000,0000,0000,,我们主要是坐在这里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll basically be sitting here thinking
+Dialogue: 0,0:12:24.09,0:12:27.51,*Default,NTP,0000,0000,0000,,用我们的推理能力来思考  关于死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about what we can know or make sense of with regard
+Dialogue: 0,0:12:27.51,0:12:32.29,*Default,NTP,0000,0000,0000,,我们能知道什么或者能弄清楚什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to death using our reasoning capacity.
+Dialogue: 0,0:12:32.29,0:12:35.57,*Default,NTP,0000,0000,0000,,我们尝试从理性的角度去考虑死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll be trying to think about death from a rational standpoint.
+Dialogue: 0,0:12:36.89,0:12:40.94,*Default,NTP,0000,0000,0000,,有一种证据  一种论证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One kind of evidence or one kind of argument
+Dialogue: 0,0:12:41.44,0:12:43.92,*Default,NTP,0000,0000,0000,,我们不会在这里用到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we won't be making use of here
+Dialogue: 0,0:12:44.38,0:12:47.19,*Default,NTP,0000,0000,0000,,那就是诉诸宗教权威\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is appeal to religious authority.
+Dialogue: 0,0:12:47.46,0:12:50.73,*Default,NTP,0000,0000,0000,,比如说你们中的有些人相信\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So some of you may believe in, for example,
+Dialogue: 0,0:12:50.73,0:12:52.21,*Default,NTP,0000,0000,0000,,有来世存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the existence of an afterlife.
+Dialogue: 0,0:12:52.21,0:12:54.15,*Default,NTP,0000,0000,0000,,你可能相信你会在死后继续存在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You may believe you're going to survive your death.
+Dialogue: 0,0:12:54.19,0:12:56.29,*Default,NTP,0000,0000,0000,,你可能相信永生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You may believe in immortality
+Dialogue: 0,0:12:56.29,0:12:59.13,*Default,NTP,0000,0000,0000,,因为那是教会告诉你的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because that's what your church teaches you.
+Dialogue: 0,0:12:59.16,0:13:01.35,*Default,NTP,0000,0000,0000,,这没关系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And that's fine.
+Dialogue: 0,0:13:01.35,0:13:03.98,*Default,NTP,0000,0000,0000,,我并不打算\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not my purpose or intention here
+Dialogue: 0,0:13:03.98,0:13:07.72,*Default,NTP,0000,0000,0000,,就你的宗教信仰和你争辩\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to try to argue you out of your religious beliefs
+Dialogue: 0,0:13:07.72,0:13:10.50,*Default,NTP,0000,0000,0000,,或者跟它对立\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or to argue against your religious beliefs.
+Dialogue: 0,0:13:10.60,0:13:12.72,*Default,NTP,0000,0000,0000,,我所要求的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All I'm going to ask is
+Dialogue: 0,0:13:12.72,0:13:16.86,*Default,NTP,0000,0000,0000,,在这节课上  我们不诉诸这类宗教的论证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we not appeal to such religious arguments,
+Dialogue: 0,0:13:16.86,0:13:19.76,*Default,NTP,0000,0000,0000,,不会诉诸启示或圣经的权威 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}appeal to revelation or the authority of the Bible,
+Dialogue: 0,0:13:19.76,0:13:23.83,*Default,NTP,0000,0000,0000,,或是诸如此类的论证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or what have you, in the course of this argument.
+Dialogue: 0,0:13:23.83,0:13:25.24,*Default,NTP,0000,0000,0000,,在这节课上  我们都不会涉及\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In the course of this class.
+Dialogue: 0,0:13:25.96,0:13:27.21,*Default,NTP,0000,0000,0000,,如果你愿意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you want to,
+Dialogue: 0,0:13:27.21,0:13:30.88,*Default,NTP,0000,0000,0000,,你可以把它想象成一个大的假设\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could think of this class as one big hypothetical.
+Dialogue: 0,0:13:30.92,0:13:35.79,*Default,NTP,0000,0000,0000,,我们能从死亡的本质得出什么样的结论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What conclusions would we come to about the nature
+Dialogue: 0,0:13:35.79,0:13:38.60,*Default,NTP,0000,0000,0000,,假如我们必须从\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of death if we had to think about
+Dialogue: 0,0:13:38.95,0:13:41.29,*Default,NTP,0000,0000,0000,,世俗的观点考虑它呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it from a secular perspective?
+Dialogue: 0,0:13:41.43,0:13:46.19,*Default,NTP,0000,0000,0000,,只用我们自己的推测\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Making use of only our own reasoning,
+Dialogue: 0,0:13:46.22,0:13:48.96,*Default,NTP,0000,0000,0000,,尽管与神圣的权威\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as opposed to whatever answers
+Dialogue: 0,0:13:48.96,0:13:51.70,*Default,NTP,0000,0000,0000,,所给出的答案截然相反\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we might be given by divine revealed authority.
+Dialogue: 0,0:13:51.75,0:13:55.46,*Default,NTP,0000,0000,0000,,你们中那些相信神圣权威的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Those of you who believe in divine revealed authority,
+Dialogue: 0,0:13:55.50,0:13:57.90,*Default,NTP,0000,0000,0000,,我们下次再来谈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a debate for another day.
+Dialogue: 0,0:13:57.90,0:13:58.87,*Default,NTP,0000,0000,0000,,这不是我们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not a debate
+Dialogue: 0,0:13:58.87,0:14:02.35,*Default,NTP,0000,0000,0000,,这学期要所要进行的讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're going to be engaged in here in this semester.
+Dialogue: 0,0:14:02.39,0:14:04.88,*Default,NTP,0000,0000,0000,,同样地  尽管我没有让你们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Similarly, although I'm not going to ask you
+Dialogue: 0,0:14:04.88,0:14:08.73,*Default,NTP,0000,0000,0000,,在讨论组里隐瞒你们的宗教观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in your discussion sections to hide your religious views,
+Dialogue: 0,0:14:09.29,0:14:11.13,*Default,NTP,0000,0000,0000,,但我会让你在这门课上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you'll be asked in the course
+Dialogue: 0,0:14:11.14,0:14:12.68,*Default,NTP,0000,0000,0000,,为其辩护\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of defending them,
+Dialogue: 0,0:14:12.68,0:14:17.12,*Default,NTP,0000,0000,0000,,给出理由  让我们所有人都理解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to give reasons that would make sense to all of us.
+Dialogue: 0,0:14:20.30,0:14:22.50,*Default,NTP,0000,0000,0000,,以上是我顺带提到的上课方式\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's by way of sort of where the class is going.
+Dialogue: 0,0:14:22.50,0:14:25.69,*Default,NTP,0000,0000,0000,,现在我们转到其他讨论上去\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me now turn to some discussion
+Dialogue: 0,0:14:25.69,0:14:28.21,*Default,NTP,0000,0000,0000,,关于这个课程的要求\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}about the requirements of the class,
+Dialogue: 0,0:14:28.21,0:14:29.74,*Default,NTP,0000,0000,0000,,评分等等\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}grades and so forth and so on.
+Dialogue: 0,0:14:29.77,0:14:32.80,*Default,NTP,0000,0000,0000,,教学大纲已经发下去了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The syllabus is going around the class.
+Dialogue: 0,0:14:33.50,0:14:35.84,*Default,NTP,0000,0000,0000,,大多数人现在已经拿到手了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Almost all of you have it at this point.
+Dialogue: 0,0:14:35.86,0:14:38.45,*Default,NTP,0000,0000,0000,,这个教学大纲大部分并不能说明全部内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The syllabus doesn't really say a whole lot.
+Dialogue: 0,0:14:38.45,0:14:39.33,*Default,NTP,0000,0000,0000,,我已经给你们大致介绍了一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've already given you an overview
+Dialogue: 0,0:14:39.33,0:14:41.21,*Default,NTP,0000,0000,0000,,我们将要进行的主题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of what topics we'll be going to.
+Dialogue: 0,0:14:41.21,0:14:43.66,*Default,NTP,0000,0000,0000,,教学大纲的关键点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The crucial point about the syllabus is
+Dialogue: 0,0:14:43.66,0:14:46.58,*Default,NTP,0000,0000,0000,,是指出了你们需要在制定时间内\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that it indicates what reading you need to
+Dialogue: 0,0:14:46.58,0:14:49.06,*Default,NTP,0000,0000,0000,,所需读完的阅读材料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}have done for any given week.
+Dialogue: 0,0:14:49.39,0:14:51.61,*Default,NTP,0000,0000,0000,,现在我已经尽力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, I've done my best
+Dialogue: 0,0:14:51.61,0:14:54.53,*Default,NTP,0000,0000,0000,,为每周要上的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to peg the readings to where
+Dialogue: 0,0:14:54.53,0:14:57.82,*Default,NTP,0000,0000,0000,,收集了足够多的阅读材料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I will be on that week's lecture,
+Dialogue: 0,0:14:57.83,0:15:02.38,*Default,NTP,0000,0000,0000,,但大部分时候我不按照讲稿来讲课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I don't lecture with lecture notes, for the most part.
+Dialogue: 0,0:15:02.38,0:15:04.70,*Default,NTP,0000,0000,0000,,有时候我花的时间比预期的要长些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes I take a little bit longer than I anticipated.
+Dialogue: 0,0:15:04.71,0:15:05.54,*Default,NTP,0000,0000,0000,,实际上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Actually,
+Dialogue: 0,0:15:05.54,0:15:08.11,*Default,NTP,0000,0000,0000,,我花的时间常常要比我预期的长\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I often take a little bit longer than I anticipated.
+Dialogue: 0,0:15:08.11,0:15:10.45,*Default,NTP,0000,0000,0000,,毫无疑问  有时我会多花些时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}No doubt at some point I'll fall behind.
+Dialogue: 0,0:15:10.45,0:15:12.32,*Default,NTP,0000,0000,0000,,有时我又急着想要超前\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At some point I may rush to catch up ahead.
+Dialogue: 0,0:15:12.42,0:15:14.12,*Default,NTP,0000,0000,0000,,以下这种事情不是常会发生的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It won't always be the case
+Dialogue: 0,0:15:14.12,0:15:15.18,*Default,NTP,0000,0000,0000,,那就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the readings
+Dialogue: 0,0:15:15.18,0:15:18.39,*Default,NTP,0000,0000,0000,,阅读材料恰好与讲课内容一致\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will exactly coincide with where the lectures are at.
+Dialogue: 0,0:15:18.39,0:15:21.14,*Default,NTP,0000,0000,0000,,尽管如此  你们还是需要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nonetheless, in any given week,
+Dialogue: 0,0:15:21.18,0:15:23.16,*Default,NTP,0000,0000,0000,,在给定的时间内  即每星期的开始\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the start of that week,
+Dialogue: 0,0:15:23.16,0:15:24.23,*Default,NTP,0000,0000,0000,,读完每周的清单上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you should have done
+Dialogue: 0,0:15:24.23,0:15:26.82,*Default,NTP,0000,0000,0000,,所列出的阅读材料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the readings that are listed for that week.
+Dialogue: 0,0:15:27.62,0:15:31.75,*Default,NTP,0000,0000,0000,,大纲里的读物简单的地列出了作者名\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The readings on the syllabus simply say the author,
+Dialogue: 0,0:15:31.80,0:15:35.60,*Default,NTP,0000,0000,0000,,而且很多书在书店里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and there are a couple of books
+Dialogue: 0,0:15:35.60,0:15:37.72,*Default,NTP,0000,0000,0000,,都可以找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that are available at the bookstore.
+Dialogue: 0,0:15:37.76,0:15:41.11,*Default,NTP,0000,0000,0000,,大量的读物作为教材集\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There are a larger packet of readings
+Dialogue: 0,0:15:41.11,0:15:43.79,*Default,NTP,0000,0000,0000,,你们可以在泰科[当地书店]\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's available as a course pack
+Dialogue: 0,0:15:43.79,0:15:44.62,*Default,NTP,0000,0000,0000,,那里找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at Tyco's [local print shop].
+Dialogue: 0,0:15:44.72,0:15:47.94,*Default,NTP,0000,0000,0000,,所以在给定的时间里你们可以找到那些书\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And so for any given week you can find the reading.
+Dialogue: 0,0:15:48.45,0:15:52.01,*Default,NTP,0000,0000,0000,,或许会有一两种情况  实际上只有一种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One or two cases, maybe just one actually,
+Dialogue: 0,0:15:52.01,0:15:55.06,*Default,NTP,0000,0000,0000,,我不止找到某作者的一篇文章\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where I've got more than one article by the given author,
+Dialogue: 0,0:15:55.08,0:15:57.75,*Default,NTP,0000,0000,0000,,我也会给出文章的标题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've given the title of the article as well.
+Dialogue: 0,0:15:57.78,0:15:59.17,*Default,NTP,0000,0000,0000,,在给定的时间里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It shouldn't be difficult
+Dialogue: 0,0:15:59.17,0:16:00.77,*Default,NTP,0000,0000,0000,,找到材料应该不难\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to locate the reading for any given week.
+Dialogue: 0,0:16:00.78,0:16:01.96,*Default,NTP,0000,0000,0000,,上课的模式  当然\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The format of the class, of course,
+Dialogue: 0,0:16:01.96,0:16:04.33,*Default,NTP,0000,0000,0000,,是你们所熟悉而且直白的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a familiar and straightforward one.
+Dialogue: 0,0:16:05.15,0:16:09.02,*Default,NTP,0000,0000,0000,,我每周会在这里讲两次课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll be sitting here lecturing twice a week,
+Dialogue: 0,0:16:09.06,0:16:11.42,*Default,NTP,0000,0000,0000,,上午的10:30到11:20\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this time, 10:30 to 11:20.
+Dialogue: 0,0:16:11.51,0:16:16.09,*Default,NTP,0000,0000,0000,,每周你们都将被分成讨论小组\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Once a week you will break up into discussion sections.
+Dialogue: 0,0:16:16.11,0:16:18.84,*Default,NTP,0000,0000,0000,,小组讨论将持续50分钟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The discussion sections will meet for 50 minutes.
+Dialogue: 0,0:16:18.85,0:16:22.28,*Default,NTP,0000,0000,0000,,你们每一个人都将有单独的时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Each one of you will have a single time.
+Dialogue: 0,0:16:22.28,0:16:24.99,*Default,NTP,0000,0000,0000,,但与小组讨论的时间不会相冲突\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it'll be different times the discussion sections meet.
+Dialogue: 0,0:16:25.71,0:16:27.83,*Default,NTP,0000,0000,0000,,这是第一次\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For the first time,
+Dialogue: 0,0:16:27.83,0:16:31.01,*Default,NTP,0000,0000,0000,,哲学系可以使用\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the philosophy department has just switched over
+Dialogue: 0,0:16:31.01,0:16:35.37,*Default,NTP,0000,0000,0000,,在线讨论小组注册系统\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to the online discussion section registration system.
+Dialogue: 0,0:16:35.41,0:16:37.68,*Default,NTP,0000,0000,0000,,它怎样运作我并不十分清楚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not 100% certain how that works.
+Dialogue: 0,0:16:37.68,0:16:39.34,*Default,NTP,0000,0000,0000,,之前我对这个也不习惯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've not used it before.
+Dialogue: 0,0:16:39.40,0:16:42.16,*Default,NTP,0000,0000,0000,,我想它是这么回事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take it the idea is something like this.
+Dialogue: 0,0:16:42.18,0:16:45.27,*Default,NTP,0000,0000,0000,,现在  如果你加入了这个课程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right now, if you were to shop the class,
+Dialogue: 0,0:16:45.27,0:16:49.12,*Default,NTP,0000,0000,0000,,你就能在上面找到具体的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you could find the tentative list of
+Dialogue: 0,0:16:49.12,0:16:51.23,*Default,NTP,0000,0000,0000,,日程时间安排\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}discussion section days and times.
+Dialogue: 0,0:16:51.39,0:16:54.66,*Default,NTP,0000,0000,0000,,以确保你有时间来进行讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So be sure to find some time that works for you.
+Dialogue: 0,0:16:54.66,0:16:55.70,*Default,NTP,0000,0000,0000,,实际上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can't actually
+Dialogue: 0,0:16:55.70,0:17:00.24,*Default,NTP,0000,0000,0000,,你现在还不能注册进入讨论组\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}register for any of those discussion section times yet.
+Dialogue: 0,0:17:00.29,0:17:02.35,*Default,NTP,0000,0000,0000,,但我想\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But as of, I think,
+Dialogue: 0,0:17:02.35,0:17:03.05,*Default,NTP,0000,0000,0000,,下周\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}next week
+Dialogue: 0,0:17:03.05,0:17:06.92,*Default,NTP,0000,0000,0000,,当你能够在线注册时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when you're able to begin your online registration,
+Dialogue: 0,0:17:06.95,0:17:10.45,*Default,NTP,0000,0000,0000,,你就能注册任何讨论小组了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you will be able to register for any discussion section
+Dialogue: 0,0:17:15.70,0:17:17.32,*Default,NTP,0000,0000,0000,,实际上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}In fact,
+Dialogue: 0,0:17:17.32,0:17:23.84,*Default,NTP,0000,0000,0000,,你还不能注册这门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you won't be able to finalize your registration for your courses
+Dialogue: 0,0:17:23.84,0:17:27.04,*Default,NTP,0000,0000,0000,,除非安排表上还有空余的位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until you've actually signed up for an available slot.
+Dialogue: 0,0:17:27.07,0:17:28.99,*Default,NTP,0000,0000,0000,,一旦你注册了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Once you have registered,
+Dialogue: 0,0:17:29.10,0:17:31.69,*Default,NTP,0000,0000,0000,,如果之前一些满额的位置\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if some other slots become available
+Dialogue: 0,0:17:31.69,0:17:33.18,*Default,NTP,0000,0000,0000,,现在空缺了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that weren't previously available,
+Dialogue: 0,0:17:33.18,0:17:36.03,*Default,NTP,0000,0000,0000,,系统会给你发送邮件\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I gather you'll be sent some sort of email by the system,
+Dialogue: 0,0:17:36.08,0:17:38.27,*Default,NTP,0000,0000,0000,,看你什么时候有空\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in case some other time would be better for you.
+Dialogue: 0,0:17:38.29,0:17:40.69,*Default,NTP,0000,0000,0000,,你可以把自己放进候选名单里等等\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You can put yourself on waiting lists and so forth.
+Dialogue: 0,0:17:40.85,0:17:44.64,*Default,NTP,0000,0000,0000,,理论上听起来挺不错\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It sounds pretty good on paper.
+Dialogue: 0,0:17:44.70,0:17:46.69,*Default,NTP,0000,0000,0000,,也许可以顺利实现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe it'll all work smoothly.
+Dialogue: 0,0:17:46.70,0:17:48.21,*Default,NTP,0000,0000,0000,,我从未用过这玩意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've never been through it before.
+Dialogue: 0,0:17:48.21,0:17:49.82,*Default,NTP,0000,0000,0000,,希望我们不会有什么问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I hope we won't have any problems.
+Dialogue: 0,0:17:49.84,0:17:52.23,*Default,NTP,0000,0000,0000,,现在你们需要确定的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Right now what you want to make sure
+Dialogue: 0,0:17:52.23,0:17:54.63,*Default,NTP,0000,0000,0000,,那些时间是否合适\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that there is a time that's available...
+Dialogue: 0,0:17:54.63,0:17:55.98,*Default,NTP,0000,0000,0000,,当然现在任何时间都可以\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}right now all the times are available...
+Dialogue: 0,0:17:56.00,0:17:58.70,*Default,NTP,0000,0000,0000,,但必须是要你有时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that there is a time that works for you.
+Dialogue: 0,0:17:58.70,0:18:00.37,*Default,NTP,0000,0000,0000,,因为如果你不能找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because if you can't find
+Dialogue: 0,0:18:00.37,0:18:01.87,*Default,NTP,0000,0000,0000,,一个适合的小组\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a discussion section that works for you,
+Dialogue: 0,0:18:01.90,0:18:04.34,*Default,NTP,0000,0000,0000,,你就不能选这门课了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you won't be able to take this course.
+Dialogue: 0,0:18:04.98,0:18:06.51,*Default,NTP,0000,0000,0000,,对此有任何问题吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Any questions about that?
+Dialogue: 0,0:18:07.91,0:18:09.14,*Default,NTP,0000,0000,0000,,实际上我应该问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I should actually ask,
+Dialogue: 0,0:18:09.14,0:18:10.21,*Default,NTP,0000,0000,0000,,目前为止\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}any questions about anything
+Dialogue: 0,0:18:10.21,0:18:13.72,*Default,NTP,0000,0000,0000,,对我所说的所有问题有疑问吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I've asked or said so far, up to this point?
+Dialogue: 0,0:18:14.71,0:18:16.68,*Default,NTP,0000,0000,0000,,让我说说我的这些问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me make a remark about questions,
+Dialogue: 0,0:18:16.68,0:18:19.35,*Default,NTP,0000,0000,0000,,目前最主要的事是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which is--today's mostly business.
+Dialogue: 0,0:18:19.35,0:18:21.12,*Default,NTP,0000,0000,0000,,希望答案非常简单\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Hopefully, it'll be fairly straightforward.
+Dialogue: 0,0:18:21.13,0:18:24.37,*Default,NTP,0000,0000,0000,,但是在今天以及整个学期里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But both today and throughout the entire semester,
+Dialogue: 0,0:18:24.37,0:18:26.00,*Default,NTP,0000,0000,0000,,在我讲课时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as I'm lecturing
+Dialogue: 0,0:18:26.00,0:18:29.94,*Default,NTP,0000,0000,0000,,你们可以打断我讲课  向我提问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I want to invite you to jump in with questions.
+Dialogue: 0,0:18:29.94,0:18:31.36,*Default,NTP,0000,0000,0000,,打断我讲课好像有点夸张了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, jump in is a bit of an exaggeration.
+Dialogue: 0,0:18:31.36,0:18:35.19,*Default,NTP,0000,0000,0000,,我不希望你们随意插话  但可以举手\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't want you to just start talking, but raise your hand.
+Dialogue: 0,0:18:35.22,0:18:39.32,*Default,NTP,0000,0000,0000,,如果你们听不懂我在说什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If I'm saying something that you don't understand,
+Dialogue: 0,0:18:39.40,0:18:42.02,*Default,NTP,0000,0000,0000,,那极有可能是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the chances are pretty good that
+Dialogue: 0,0:18:42.02,0:18:47.22,*Default,NTP,0000,0000,0000,,教室里其他25位或50位学生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's 25 or 50 other students in the class
+Dialogue: 0,0:18:47.22,0:18:48.42,*Default,NTP,0000,0000,0000,,都没有听懂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}who don't understand it either.
+Dialogue: 0,0:18:48.42,0:18:50.08,*Default,NTP,0000,0000,0000,,我只是没有表达清楚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm just not being clear.
+Dialogue: 0,0:18:50.11,0:18:53.01,*Default,NTP,0000,0000,0000,,所以我欢迎你们提问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I want to welcome you,
+Dialogue: 0,0:18:53.01,0:18:54.62,*Default,NTP,0000,0000,0000,,我真的希望你们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I really want to invite you,
+Dialogue: 0,0:18:54.63,0:18:55.91,*Default,NTP,0000,0000,0000,,不管何时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whenever
+Dialogue: 0,0:18:55.91,0:18:57.85,*Default,NTP,0000,0000,0000,,你们对我说的有所回应  都能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've got some reactions to the things that I'm saying,
+Dialogue: 0,0:18:57.89,0:19:00.38,*Default,NTP,0000,0000,0000,,举起你们的手  我会让你们说话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}raise your hand, I'll call on you.
+Dialogue: 0,0:19:00.38,0:19:01.54,*Default,NTP,0000,0000,0000,,你们就说  雪莱  我真不明白\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Say, "Shelly, I didn't really understand
+Dialogue: 0,0:19:01.54,0:19:02.80,*Default,NTP,0000,0000,0000,,你所说的灵魂问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what you were saying about the soul.
+Dialogue: 0,0:19:02.82,0:19:04.70,*Default,NTP,0000,0000,0000,,能请您再解释一遍吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Could you please explain that again?"
+Dialogue: 0,0:19:04.70,0:19:05.74,*Default,NTP,0000,0000,0000,,或者就某一观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or, for that matter,
+Dialogue: 0,0:19:05.78,0:19:08.77,*Default,NTP,0000,0000,0000,,如果你对我所说的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you've got some quick reactions
+Dialogue: 0,0:19:08.77,0:19:11.92,*Default,NTP,0000,0000,0000,,某个论证有什么好的回应  好的想法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or thoughts or responses to the arguments
+Dialogue: 0,0:19:11.92,0:19:13.09,*Default,NTP,0000,0000,0000,,或是好的解答\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I'm laying out
+Dialogue: 0,0:19:13.09,0:19:15.84,*Default,NTP,0000,0000,0000,,并且你想和全班同学分享\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you want to share them with the class as a whole,
+Dialogue: 0,0:19:15.85,0:19:18.13,*Default,NTP,0000,0000,0000,,我会非常乐意你这样做的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then very much I want to invite you to do this.
+Dialogue: 0,0:19:18.17,0:19:22.69,*Default,NTP,0000,0000,0000,,这个班级太大了  让我们很难会有机会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now this class is too big for us to have some close,
+Dialogue: 0,0:19:22.69,0:19:26.41,*Default,NTP,0000,0000,0000,,跟150到180个人进行亲密的交谈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}intimate conversation between the 150-180,
+Dialogue: 0,0:19:26.41,0:19:27.38,*Default,NTP,0000,0000,0000,,当然具体人数我也不是很清楚\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}however many students there are here.
+Dialogue: 0,0:19:27.42,0:19:28.88,*Default,NTP,0000,0000,0000,,但那肯定是不可能的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's not going to happen.
+Dialogue: 0,0:19:29.67,0:19:30.73,*Default,NTP,0000,0000,0000,,可是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But
+Dialogue: 0,0:19:30.73,0:19:32.87,*Default,NTP,0000,0000,0000,,小组间的详细讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the chance for detailed discussion ,
+Dialogue: 0,0:19:32.87,0:19:35.01,*Default,NTP,0000,0000,0000,,这还是可以的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the discussion section
+Dialogue: 0,0:19:35.01,0:19:36.31,*Default,NTP,0000,0000,0000,,这些讨论是必须的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's where that should happen.
+Dialogue: 0,0:19:36.95,0:19:40.52,*Default,NTP,0000,0000,0000,,尽管如此  简要回应问题的机会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But still, there is the chance for brief reactions
+Dialogue: 0,0:19:40.52,0:19:42.10,*Default,NTP,0000,0000,0000,,提问的机会肯定还是有的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and definitely a chance for questions.
+Dialogue: 0,0:19:42.13,0:19:44.16,*Default,NTP,0000,0000,0000,,我很乐意你们那样做\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I very much want to invite you to do that.
+Dialogue: 0,0:19:44.16,0:19:44.77,*Default,NTP,0000,0000,0000,,所以\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So,
+Dialogue: 0,0:19:44.77,0:19:46.78,*Default,NTP,0000,0000,0000,,任何时候如果你有想问的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if at any point you've got something you want to ask about
+Dialogue: 0,0:19:46.79,0:19:48.25,*Default,NTP,0000,0000,0000,,或者你想要补充些什么东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or some two bits you want to add,
+Dialogue: 0,0:19:48.27,0:19:52.21,*Default,NTP,0000,0000,0000,,请举手  摇晃起来  确保我能看见\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}raise your hand, wiggle it around, make sure I see you.
+Dialogue: 0,0:19:52.23,0:19:55.76,*Default,NTP,0000,0000,0000,,也许我想先讲完我之前所讲的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I may want to finish the particular point that I'm making,
+Dialogue: 0,0:19:55.76,0:19:56.21,*Default,NTP,0000,0000,0000,,但\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but
+Dialogue: 0,0:19:56.21,0:19:59.65,*Default,NTP,0000,0000,0000,,随后我会把时间留给你们  接受你们的提问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll try to come back to you and I'll then raise your question.
+Dialogue: 0,0:19:59.66,0:20:01.35,*Default,NTP,0000,0000,0000,,如果我记住你的提问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if I remember at least,
+Dialogue: 0,0:20:01.36,0:20:03.78,*Default,NTP,0000,0000,0000,,我会大声地把问题重复一遍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I will repeat the question out loud
+Dialogue: 0,0:20:03.78,0:20:05.80,*Default,NTP,0000,0000,0000,,让所有人都可以听到了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that everybody can hear it.
+Dialogue: 0,0:20:06.40,0:20:12.50,*Default,NTP,0000,0000,0000,,我还想说  我会试着养成一种习惯\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I also want to say that I will try to have the practice of,
+Dialogue: 0,0:20:12.52,0:20:16.81,*Default,NTP,0000,0000,0000,,如果课后你想继续讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}after class ends, if you want to continue the discussion,
+Dialogue: 0,0:20:16.83,0:20:17.65,*Default,NTP,0000,0000,0000,,课程结束时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}towards the end,
+Dialogue: 0,0:20:17.65,0:20:19.63,*Default,NTP,0000,0000,0000,,你脑子里突然冒出了某些想法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you have some questions that occurred to you,
+Dialogue: 0,0:20:19.65,0:20:20.71,*Default,NTP,0000,0000,0000,,之前却没有机会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we didn't have a chance
+Dialogue: 0,0:20:20.71,0:20:22.23,*Default,NTP,0000,0000,0000,,拿出来与全班分享\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to share them with the class as a whole,
+Dialogue: 0,0:20:22.25,0:20:28.22,*Default,NTP,0000,0000,0000,,那么平时我们可以在课外继续交流\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I will, on a normal day, meet outside and continue to talk with
+Dialogue: 0,0:20:28.22,0:20:31.11,*Default,NTP,0000,0000,0000,,不管有多少人想要交流 \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}however many of you want to do that
+Dialogue: 0,0:20:31.11,0:20:32.38,*Default,NTP,0000,0000,0000,,我都会让你们满意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}until you're done.
+Dialogue: 0,0:20:32.41,0:20:35.56,*Default,NTP,0000,0000,0000,,我就是喜欢谈论这些东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I just love talking about this stuff
+Dialogue: 0,0:20:35.57,0:20:39.96,*Default,NTP,0000,0000,0000,,而且我也欢迎你在答疑时间来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I welcome you to come to my office hours.
+Dialogue: 0,0:20:39.99,0:20:42.44,*Default,NTP,0000,0000,0000,,我希望你们在课上提问\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I invite you to ask questions in class or,
+Dialogue: 0,0:20:42.44,0:20:44.44,*Default,NTP,0000,0000,0000,,如果你愿意的话  课后也行\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you prefer, after class as well.
+Dialogue: 0,0:20:44.44,0:20:45.85,*Default,NTP,0000,0000,0000,,再问一次  你们有什么问题吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, any questions about any of that?
+Dialogue: 0,0:20:46.94,0:20:48.01,*Default,NTP,0000,0000,0000,,请说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yeah.
+Dialogue: 0,0:20:48.89,0:20:50.04,*Default,NTP,0000,0000,0000,,我的答疑时间是什么时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When are my office hours?
+Dialogue: 0,0:20:50.04,0:20:51.73,*Default,NTP,0000,0000,0000,,这真是个好问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's a great question and
+Dialogue: 0,0:20:51.74,0:20:53.69,*Default,NTP,0000,0000,0000,,连我也不知道问题的答案\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know the answer to it.
+Dialogue: 0,0:20:54.37,0:20:55.87,*Default,NTP,0000,0000,0000,,我还没有计划好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I haven't planned them yet.
+Dialogue: 0,0:20:55.87,0:20:56.67,*Default,NTP,0000,0000,0000,,星期四\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}On Thursday,
+Dialogue: 0,0:20:56.67,0:20:58.56,*Default,NTP,0000,0000,0000,,一上课就问我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}start the class
+Dialogue: 0,0:20:58.56,0:21:00.45,*Default,NTP,0000,0000,0000,,那时再回答你吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by asking me that and I'll give you an answer.
+Dialogue: 0,0:21:00.56,0:21:01.47,*Default,NTP,0000,0000,0000,,好吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:21:03.19,0:21:04.59,*Default,NTP,0000,0000,0000,,其它的事情\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Other bits of business.
+Dialogue: 0,0:21:04.59,0:21:06.51,*Default,NTP,0000,0000,0000,,关于分数我应该说明一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I should say something about grades.
+Dialogue: 0,0:21:06.61,0:21:10.05,*Default,NTP,0000,0000,0000,,你们中的大多数可能听说过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now many of you may have heard,
+Dialogue: 0,0:21:10.08,0:21:11.56,*Default,NTP,0000,0000,0000,,有人可能知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}many of you may know,
+Dialogue: 0,0:21:11.56,0:21:12.68,*Default,NTP,0000,0000,0000,,如果你真的不知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and if you don't already know this,
+Dialogue: 0,0:21:12.68,0:21:13.58,*Default,NTP,0000,0000,0000,,那么我要警告你\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I should warn you,
+Dialogue: 0,0:21:13.58,0:21:15.14,*Default,NTP,0000,0000,0000,,我在耶鲁\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I have a reputation around Yale
+Dialogue: 0,0:21:15.14,0:21:17.88,*Default,NTP,0000,0000,0000,,是出了名的严厉\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as being a harsh grader.
+Dialogue: 0,0:21:17.88,0:21:18.60,*Default,NTP,0000,0000,0000,,这是真的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know this is true, that is,
+Dialogue: 0,0:21:18.60,0:21:21.71,*Default,NTP,0000,0000,0000,,而我之所以有这样的名声\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know I have the reputation, both because
+Dialogue: 0,0:21:21.71,0:21:24.02,*Default,NTP,0000,0000,0000,,是因为在学生定期评估时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I periodically in my student evaluations
+Dialogue: 0,0:21:24.02,0:21:27.68,*Default,NTP,0000,0000,0000,,我被评为耶鲁最严厉的人之一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}get told I'm one of Yale's harsher graders,
+Dialogue: 0,0:21:27.74,0:21:31.02,*Default,NTP,0000,0000,0000,,还因有时"耶鲁日间新闻"的文章里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and because every now and then the Yale Daily News
+Dialogue: 0,0:21:31.02,0:21:32.83,*Default,NTP,0000,0000,0000,,会谈到关于成绩膨胀[平均成绩上升]的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will have an article about grade inflation
+Dialogue: 0,0:21:32.83,0:21:34.01,*Default,NTP,0000,0000,0000,,然后人们总会问我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and they'll always ask me, "
+Dialogue: 0,0:21:34.01,0:21:35.87,*Default,NTP,0000,0000,0000,,"卡根教授是这样一个人..."\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well Professor Kagan is somebody..."
+Dialogue: 0,0:21:35.88,0:21:38.26,*Default,NTP,0000,0000,0000,,一旦有关于成绩膨胀的故事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Once there was a story on grade inflation
+Dialogue: 0,0:21:38.26,0:21:40.44,*Default,NTP,0000,0000,0000,,耶鲁日间新闻会从下面这句话开始\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the Yale Daily News began by saying, "
+Dialogue: 0,0:21:40.46,0:21:42.30,*Default,NTP,0000,0000,0000,,"雪莱·卡根\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}As Shelly Kagan
+Dialogue: 0,0:21:42.30,0:21:46.73,*Default,NTP,0000,0000,0000,,耶鲁最严厉的老师之一"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(known at Yale as one of the hardest graders)."
+Dialogue: 0,0:21:47.23,0:21:49.37,*Default,NTP,0000,0000,0000,,这起码让我知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I know I've got at least the reputation 
+Dialogue: 0,0:21:49.37,0:21:51.79,*Default,NTP,0000,0000,0000,,我有严厉这个名声\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of being a hard grader.
+Dialogue: 0,0:21:51.85,0:21:55.52,*Default,NTP,0000,0000,0000,,我不知道这名声是不是我应得的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't actually know whether it's deserved or not,
+Dialogue: 0,0:21:55.52,0:21:59.07,*Default,NTP,0000,0000,0000,,因为耶鲁并无明文规定\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because Yale does not publish information about
+Dialogue: 0,0:21:59.07,0:22:01.24,*Default,NTP,0000,0000,0000,,一般评分标准是什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what the grading averages are.
+Dialogue: 0,0:22:01.25,0:22:02.03,*Default,NTP,0000,0000,0000,,在其他我曾授课的学校\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At other schools I've taught at
+Dialogue: 0,0:22:02.03,0:22:04.92,*Default,NTP,0000,0000,0000,,却有此规定  比如人文学科\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's been information along the lines of well
+Dialogue: 0,0:22:04.92,0:22:07.11,*Default,NTP,0000,0000,0000,,入门课程典型的评分标准\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the typical grade in an introductory course
+Dialogue: 0,0:22:07.11,0:22:08.90,*Default,NTP,0000,0000,0000,,是怎样怎样的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in the humanities is such and such.
+Dialogue: 0,0:22:09.31,0:22:11.47,*Default,NTP,0000,0000,0000,,我刚来耶鲁没几天\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Shortly after I came here to Yale,
+Dialogue: 0,0:22:12.07,0:22:14.29,*Default,NTP,0000,0000,0000,,就发现人们认为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and I started realizing that people thought
+Dialogue: 0,0:22:14.29,0:22:17.06,*Default,NTP,0000,0000,0000,,我在评分上比大多耶鲁教授都严格\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was a harder grader than most other Yale professors,
+Dialogue: 0,0:22:17.09,0:22:19.41,*Default,NTP,0000,0000,0000,,我打电话问过教务处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I called the administration and asked,
+Dialogue: 0,0:22:19.41,0:22:21.55,*Default,NTP,0000,0000,0000,,你们是不是有这方面的规定呢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Do you have this sort of information?"
+Dialogue: 0,0:22:21.57,0:22:23.23,*Default,NTP,0000,0000,0000,,回答是  "是"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The answer is "Yes."
+Dialogue: 0,0:22:23.24,0:22:24.73,*Default,NTP,0000,0000,0000,,"能不能让我看看呢"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Will you give it to me?"
+Dialogue: 0,0:22:24.73,0:22:26.28,*Default,NTP,0000,0000,0000,,回答是 "不能"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The answer was "No."
+Dialogue: 0,0:22:26.92,0:22:29.93,*Default,NTP,0000,0000,0000,,他们不把这种规定给耶鲁教员们看\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They don't share this information with the Yale faculty.
+Dialogue: 0,0:22:30.97,0:22:31.99,*Default,NTP,0000,0000,0000,,有点奇怪吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Seems odd.
+Dialogue: 0,0:22:32.88,0:22:35.44,*Default,NTP,0000,0000,0000,,当然  这也不难解释\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The explanation, of course, actually isn't that hard to come by.
+Dialogue: 0,0:22:35.45,0:22:42.43,*Default,NTP,0000,0000,0000,,他们担心我们这些严格的评分者\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The worry is that those of us who are harder graders than average,
+Dialogue: 0,0:22:42.43,0:22:44.86,*Default,NTP,0000,0000,0000,,在这类信息发布后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if the information were published,
+Dialogue: 0,0:22:44.86,0:22:49.07,*Default,NTP,0000,0000,0000,,会因为内疚而稍把评分提高\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}would feel guilty and sort of ease up on our grading.
+Dialogue: 0,0:22:49.09,0:22:51.64,*Default,NTP,0000,0000,0000,,而那些评分本来就比较松的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But those who are easier graders
+Dialogue: 0,0:22:51.64,0:22:55.12,*Default,NTP,0000,0000,0000,,根本不会觉得内疚  不会因此更严格\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than average will never feel guilty and toughen up.
+Dialogue: 0,0:22:55.15,0:23:00.67,*Default,NTP,0000,0000,0000,,这样一来结果就是分数一直往上升\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the result would be a constant push up with the grades.
+Dialogue: 0,0:23:00.70,0:23:01.55,*Default,NTP,0000,0000,0000,,虽然\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}At any rate, 
+Dialogue: 0,0:23:01.55,0:23:03.56,*Default,NTP,0000,0000,0000,,不确定我是否评分严格\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know for certainty that I'm a harder grader,
+Dialogue: 0,0:23:03.58,0:23:07.12,*Default,NTP,0000,0000,0000,,但相信应该就是这如此\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I believe that it's the case
+Dialogue: 0,0:23:07.14,0:23:13.38,*Default,NTP,0000,0000,0000,,就我每次讲课所得到的反应而言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}based on reactions I get when I give the speech that I'm about to give.
+Dialogue: 0,0:23:13.45,0:23:14.49,*Default,NTP,0000,0000,0000,,就这样吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Okay, so.
+Dialogue: 0,0:23:16.98,0:23:21.95,*Default,NTP,0000,0000,0000,,我打开那本蓝皮书  耶鲁指导手册\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}When I open the blue book, the Yale guideline,
+Dialogue: 0,0:23:22.42,0:23:24.86,*Default,NTP,0000,0000,0000,,耶鲁目录  有这么一页\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the Yale catalog, it's got a page,
+Dialogue: 0,0:23:24.86,0:23:28.79,*Default,NTP,0000,0000,0000,,是说耶鲁每个评分字母表示什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as you all know, where it says what letter grades mean at Yale.
+Dialogue: 0,0:23:29.04,0:23:30.57,*Default,NTP,0000,0000,0000,,我今年没把那张纸带过来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I didn't actually bring it this year.
+Dialogue: 0,0:23:30.57,0:23:33.90,*Default,NTP,0000,0000,0000,,我有时会带  不过现在差不多背下来了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes I do, but I've got it pretty much memorized.
+Dialogue: 0,0:23:34.60,0:23:37.49,*Default,NTP,0000,0000,0000,,比方说  每个字母表旁边都注明了含义\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It says, for example, next to each letter grade what it means.
+Dialogue: 0,0:23:37.49,0:23:40.89,*Default,NTP,0000,0000,0000,,比如  B表示好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}B, for example, means good.
+Dialogue: 0,0:23:41.01,0:23:42.55,*Default,NTP,0000,0000,0000,,A表示优秀\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A means excellent,
+Dialogue: 0,0:23:42.55,0:23:43.89,*Default,NTP,0000,0000,0000,,C表示良好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}C means satisfactory,
+Dialogue: 0,0:23:43.94,0:23:44.88,*Default,NTP,0000,0000,0000,,D是合格\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}D is passing,
+Dialogue: 0,0:23:44.88,0:23:45.54,*Default,NTP,0000,0000,0000,,F是不及格\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}F is failing.
+Dialogue: 0,0:23:45.62,0:23:47.01,*Default,NTP,0000,0000,0000,,B  我们先来说B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}B, let's start with B.
+Dialogue: 0,0:23:47.01,0:23:48.60,*Default,NTP,0000,0000,0000,,B表示好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}B means good.
+Dialogue: 0,0:23:48.95,0:23:52.66,*Default,NTP,0000,0000,0000,,现在关键问题是  好是什么意思\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now the crucial question then is what does good mean?
+Dialogue: 0,0:23:53.19,0:24:00.30,*Default,NTP,0000,0000,0000,,我认为好就是好  如此一来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I take good to mean good. Consequently,
+Dialogue: 0,0:24:02.09,0:24:06.95,*Default,NTP,0000,0000,0000,,如果你给我写了篇好论文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you were to write a good paper for me,
+Dialogue: 0,0:24:06.98,0:24:09.54,*Default,NTP,0000,0000,0000,,就会拿B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would get a B.
+Dialogue: 0,0:24:10.00,0:24:12.52,*Default,NTP,0000,0000,0000,,如果你从我这儿拿了个B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And when you get a B from me...
+Dialogue: 0,0:24:12.52,0:24:15.34,*Default,NTP,0000,0000,0000,,我这里说的是我  是指我本人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}now, I say me, this is the royal me.
+Dialogue: 0,0:24:16.70,0:24:19.51,*Default,NTP,0000,0000,0000,,因为我并不会亲自给你们的论文评分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because I won't actually be grading your papers.
+Dialogue: 0,0:24:19.64,0:24:24.29,*Default,NTP,0000,0000,0000,,给你们论文评分是一小队助教\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Your papers will be graded by a small army of TAs.
+Dialogue: 0,0:24:25.16,0:24:28.34,*Default,NTP,0000,0000,0000,,但他们是在我的指导下评分的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But they will grade under my supervision,
+Dialogue: 0,0:24:28.36,0:24:33.39,*Default,NTP,0000,0000,0000,,也会遵守我告诉他们的评分标准\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in keeping with the standards that I ask them to grade with.
+Dialogue: 0,0:24:33.39,0:24:35.61,*Default,NTP,0000,0000,0000,,所以如果你们因为分数而愤怒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So when you're pissed off about your grade,
+Dialogue: 0,0:24:35.61,0:24:36.91,*Default,NTP,0000,0000,0000,,你们要找的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the person to take it up with...
+Dialogue: 0,0:24:36.91,0:24:37.81,*Default,NTP,0000,0000,0000,,就是他们啦\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}well, take it up with them.
+Dialogue: 0,0:24:37.81,0:24:40.80,*Default,NTP,0000,0000,0000,,但最后你会想要来找我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But eventually you'll want to take it up with me.
+Dialogue: 0,0:24:40.94,0:24:43.63,*Default,NTP,0000,0000,0000,,所以如果你从我们这儿拿了个B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So when you get a B from us,
+Dialogue: 0,0:24:44.15,0:24:48.90,*Default,NTP,0000,0000,0000,,B不是说你写的东西是垃圾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}B doesn't mean what a piece of crap.
+Dialogue: 0,0:24:48.95,0:24:55.04,*Default,NTP,0000,0000,0000,,B是做得好  你拿了B应该高兴才是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}B means good job! And so you should be pleased to get a B,
+Dialogue: 0,0:24:55.04,0:24:56.51,*Default,NTP,0000,0000,0000,,因为你做的好啊\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because it meant you were doing good work
+Dialogue: 0,0:24:56.51,0:25:00.27,*Default,NTP,0000,0000,0000,,而且在哲学课上做到好可不容易\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's not easy to do good work in philosophy.
+Dialogue: 0,0:25:00.32,0:25:04.58,*Default,NTP,0000,0000,0000,,A是优秀\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A means excellent.
+Dialogue: 0,0:25:04.68,0:25:08.94,*Default,NTP,0000,0000,0000,,优秀并不是说你可以拿去发表了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now excellent does not mean publishable.
+Dialogue: 0,0:25:09.06,0:25:13.93,*Default,NTP,0000,0000,0000,,优秀也不是说你是上帝赐给哲学界的礼物\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Excellent does not mean you are God's gift to philosophy.
+Dialogue: 0,0:25:15.07,0:25:18.23,*Default,NTP,0000,0000,0000,,所以你们要理解的是拿到A\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's crucial to understand it doesn't mean
+Dialogue: 0,0:25:18.23,0:25:20.27,*Default,NTP,0000,0000,0000,,并不是唯一可以证明你就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the only way you're going to get an A 
+Dialogue: 0,0:25:20.27,0:25:22.51,*Default,NTP,0000,0000,0000,,上帝赐给哲学界的礼物的途径\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is to be God's gift to philosophy.
+Dialogue: 0,0:25:22.51,0:25:28.13,*Default,NTP,0000,0000,0000,,A只是对哲学初学者而言的最大褒奖\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}A means excellent work for a first class in philosophy.
+Dialogue: 0,0:25:28.13,0:25:29.77,*Default,NTP,0000,0000,0000,,这只是启蒙课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an introductory class.
+Dialogue: 0,0:25:29.77,0:25:33.63,*Default,NTP,0000,0000,0000,,是在假设你们没有任何哲学背景下进行的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It does not presuppose any background in philosophy.
+Dialogue: 0,0:25:36.19,0:25:39.51,*Default,NTP,0000,0000,0000,,但依旧  要想拿到A\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Still, to get an A,
+Dialogue: 0,0:25:39.51,0:25:42.28,*Default,NTP,0000,0000,0000,,你们得表现出一点资质\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you've got to show some flair for the subject.
+Dialogue: 0,0:25:42.28,0:25:45.65,*Default,NTP,0000,0000,0000,,不只是表现出你们理解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've got to show not only have you understood the ideas
+Dialogue: 0,0:25:45.65,0:25:46.92,*Default,NTP,0000,0000,0000,,那些阅读中的  课堂上的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that have been put forward in the readings 
+Dialogue: 0,0:25:46.92,0:25:49.06,*Default,NTP,0000,0000,0000,,及其他内容的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and in the lectures and so forth,
+Dialogue: 0,0:25:49.06,0:25:52.61,*Default,NTP,0000,0000,0000,,你们还得想办法在论文中把他们整合起来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you see how to sort of put them together in the paper in a way
+Dialogue: 0,0:25:52.61,0:25:54.56,*Default,NTP,0000,0000,0000,,显得你们有点天分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that shows you've got some aptitude here.
+Dialogue: 0,0:25:54.56,0:25:56.54,*Default,NTP,0000,0000,0000,,要让我们觉得值得注意并记下来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You did it in a way that made us take note.
+Dialogue: 0,0:25:56.83,0:25:59.90,*Default,NTP,0000,0000,0000,,A是给这类人准备的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's what we try to reserve As for.
+Dialogue: 0,0:26:00.35,0:26:02.81,*Default,NTP,0000,0000,0000,,你们中会有些人拿A\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of you will end up getting As,
+Dialogue: 0,0:26:02.81,0:26:03.61,*Default,NTP,0000,0000,0000,,即时刚开始没有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if not at the beginning,
+Dialogue: 0,0:26:03.61,0:26:05.01,*Default,NTP,0000,0000,0000,,学期末也会有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the end of the semester.
+Dialogue: 0,0:26:05.02,0:26:07.06,*Default,NTP,0000,0000,0000,,你们中会有很多人拿B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of you will end up getting Bs,
+Dialogue: 0,0:26:07.06,0:26:07.83,*Default,NTP,0000,0000,0000,,即时不是在刚开始\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if not at the beginning,
+Dialogue: 0,0:26:07.83,0:26:08.90,*Default,NTP,0000,0000,0000,,到学期末也会有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}by the end of the semester.
+Dialogue: 0,0:26:08.92,0:26:13.93,*Default,NTP,0000,0000,0000,,很多人在刚开始时不会很棒\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of you will not start out doing good work.
+Dialogue: 0,0:26:14.07,0:26:18.35,*Default,NTP,0000,0000,0000,,很多人刚开始时只能说令人满意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Many of you will start out doing satisfactory work or,
+Dialogue: 0,0:26:18.45,0:26:22.52,*Default,NTP,0000,0000,0000,,或者说实话  甚至不太令人满意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}truth be told, less than satisfactory work.
+Dialogue: 0,0:26:22.92,0:26:26.01,*Default,NTP,0000,0000,0000,,我以前也是本科生\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now look, I was an undergraduate once.
+Dialogue: 0,0:26:26.03,0:26:31.17,*Default,NTP,0000,0000,0000,,我也知道一般的本科生论文是怎么写的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And I know what it is to write a typical undergraduate paper.
+Dialogue: 0,0:26:31.17,0:26:35.55,*Default,NTP,0000,0000,0000,,交论文前一晚坐下后  想出了几个点子\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You sit down the night before and you had a couple of ideas.
+Dialogue: 0,0:26:35.55,0:26:37.59,*Default,NTP,0000,0000,0000,,你想了大概半个小时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You thought about it maybe for a half an hour.
+Dialogue: 0,0:26:37.61,0:26:39.51,*Default,NTP,0000,0000,0000,,本来是打算早点开始准备的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you meant to get to it sooner,
+Dialogue: 0,0:26:39.51,0:26:41.28,*Default,NTP,0000,0000,0000,,但你总有很多别的事要做\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you had a lot of other things to do.
+Dialogue: 0,0:26:41.29,0:26:46.02,*Default,NTP,0000,0000,0000,,你花几个小时写出来  也许还熬夜了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you throw it off in a couple of hours and maybe stay up late.
+Dialogue: 0,0:26:46.02,0:26:51.14,*Default,NTP,0000,0000,0000,,你知道那不是你写过的最差的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You know it's not the worst thing you ever wrote,
+Dialogue: 0,0:26:51.19,0:26:54.12,*Default,NTP,0000,0000,0000,,也不是最好的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it's not the best thing you ever wrote,
+Dialogue: 0,0:26:54.12,0:26:56.35,*Default,NTP,0000,0000,0000,,里面也有几个不错的主意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and it has a couple of nice ideas,
+Dialogue: 0,0:26:56.35,0:26:57.58,*Default,NTP,0000,0000,0000,,但也许本来可以写得更好一点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but maybe it could be better.
+Dialogue: 0,0:26:57.58,0:27:00.12,*Default,NTP,0000,0000,0000,,只能说还算令人满意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's sort of a satisfactory job.
+Dialogue: 0,0:27:01.33,0:27:05.30,*Default,NTP,0000,0000,0000,,耶鲁认为令人满意就是C\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Yale says satisfactory means C.
+Dialogue: 0,0:27:05.90,0:27:12.04,*Default,NTP,0000,0000,0000,,你们中很多人在学期初会把论文写成那样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So many of you will start off the semester writing that kind of paper.
+Dialogue: 0,0:27:12.07,0:27:14.07,*Default,NTP,0000,0000,0000,,问题是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And the fact of the matter is,
+Dialogue: 0,0:27:14.77,0:27:17.62,*Default,NTP,0000,0000,0000,,有些人开始时的论文会比那更糟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some of you will start off writing worse papers than that.
+Dialogue: 0,0:27:17.76,0:27:19.86,*Default,NTP,0000,0000,0000,,因为哲学论文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because writing a philosophy paper
+Dialogue: 0,0:27:19.86,0:27:23.17,*Default,NTP,0000,0000,0000,,不是那么容易写的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is a difficult thing to learn how to do.
+Dialogue: 0,0:27:23.19,0:27:26.39,*Default,NTP,0000,0000,0000,,写哲学论文是需要一些实力的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's exercising a set of muscles
+Dialogue: 0,0:27:26.39,0:27:31.30,*Default,NTP,0000,0000,0000,,你们很多人平时并没有练习写过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that a lot of you have not spent a lot of time exercising.
+Dialogue: 0,0:27:31.30,0:27:33.67,*Default,NTP,0000,0000,0000,,并不是说你们从来没有花时间做过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now it's not as though you haven't spent any time doing it.
+Dialogue: 0,0:27:33.67,0:27:35.71,*Default,NTP,0000,0000,0000,,你们和高中朋友们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've had bull sessions, right,
+Dialogue: 0,0:27:35.71,0:27:39.42,*Default,NTP,0000,0000,0000,,大学舍友等等有过闲聊\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with your high school friends or in your college dorm or what have you.
+Dialogue: 0,0:27:39.43,0:27:42.50,*Default,NTP,0000,0000,0000,,但你们从未按照我们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But you haven't done it with the kind of discipline
+Dialogue: 0,0:27:42.54,0:27:44.73,*Default,NTP,0000,0000,0000,,标准严密的要求写过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and rigor that we're looking for here.
+Dialogue: 0,0:27:44.73,0:27:46.31,*Default,NTP,0000,0000,0000,,所以正如其他事一样\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, like anything else,
+Dialogue: 0,0:27:46.31,0:27:49.64,*Default,NTP,0000,0000,0000,,这个技巧在练习中会进步\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}it's a skill that gets better with practice.
+Dialogue: 0,0:27:50.11,0:27:52.59,*Default,NTP,0000,0000,0000,,当然这也就是说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And what that means, of course,
+Dialogue: 0,0:27:52.59,0:27:54.66,*Default,NTP,0000,0000,0000,,你们刚开始时做的不会太好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is you won't do as well at the beginning
+Dialogue: 0,0:27:54.66,0:27:57.66,*Default,NTP,0000,0000,0000,,我们期望你们在最后会更好一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}as you're likely to be doing toward the end.
+Dialogue: 0,0:27:58.17,0:27:59.67,*Default,NTP,0000,0000,0000,,其中有些人  很遗憾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of you, unfortunately,
+Dialogue: 0,0:27:59.67,0:28:02.32,*Default,NTP,0000,0000,0000,,在开始时表现不会很好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}won't do very good jobs at the beginning...
+Dialogue: 0,0:28:02.32,0:28:06.34,*Default,NTP,0000,0000,0000,,我会鼓励我的助教们做好给D的准备\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and my TAs, I'll encourage them to be prepared to give Ds.
+Dialogue: 0,0:28:06.36,0:28:09.80,*Default,NTP,0000,0000,0000,,如果论文的缺点明显比优点多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the vices of the paper significantly outweigh the virtues,
+Dialogue: 0,0:28:10.17,0:28:11.28,*Default,NTP,0000,0000,0000,,那就是D\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's a D.
+Dialogue: 0,0:28:11.29,0:28:14.96,*Default,NTP,0000,0000,0000,,如果论文毫无可取之处\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the vices very significantly outweigh whatever virtues there are,
+Dialogue: 0,0:28:14.96,0:28:16.53,*Default,NTP,0000,0000,0000,,那大概就是F了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's some kind of an F.
+Dialogue: 0,0:28:16.78,0:28:23.09,*Default,NTP,0000,0000,0000,,实际上  你们中很多人在第一篇论文上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the fact of the matter is many of you in your initial papers
+Dialogue: 0,0:28:23.10,0:28:25.58,*Default,NTP,0000,0000,0000,,所得的分数可能比\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}will get lower grades than you've probably
+Dialogue: 0,0:28:25.58,0:28:28.69,*Default,NTP,0000,0000,0000,,你们这小半辈子得过的都低\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}ever gotten before in your life.
+Dialogue: 0,0:28:28.96,0:28:31.85,*Default,NTP,0000,0000,0000,,我只是想要警告你们一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wanted to warn you about that.
+Dialogue: 0,0:28:32.91,0:28:38.98,*Default,NTP,0000,0000,0000,,我说这些不是想吓坏你们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now I say this not so much to depress the hell out of you,
+Dialogue: 0,0:28:38.98,0:28:40.95,*Default,NTP,0000,0000,0000,,只是警告你们一下\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but (a) partly to warn you,
+Dialogue: 0,0:28:42.18,0:28:46.69,*Default,NTP,0000,0000,0000,,并且说清楚  我认为这只是种技能\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and (b) to make it clear that I believe that it's a skill.
+Dialogue: 0,0:28:46.78,0:28:48.56,*Default,NTP,0000,0000,0000,,写一篇好哲学论文是一种技巧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Writing a good philosophy paper is a skill
+Dialogue: 0,0:28:48.56,0:28:50.35,*Default,NTP,0000,0000,0000,,并且你会越写越好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you can get better at it.
+Dialogue: 0,0:28:50.85,0:28:54.67,*Default,NTP,0000,0000,0000,,因此  你们中大部分人会做得越来越好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Consequently, most of you will get better at it.
+Dialogue: 0,0:28:54.81,0:28:56.89,*Default,NTP,0000,0000,0000,,所以  让我把下面的话说完\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So let me make the following remark.
+Dialogue: 0,0:28:56.89,0:29:01.87,*Default,NTP,0000,0000,0000,,三篇五页长的论文  每篇论文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Officially, each paper--you have three five-page papers.
+Dialogue: 0,0:29:01.87,0:29:07.32,*Default,NTP,0000,0000,0000,,占分数的百分之二十五  这是规定的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Each paper is worth 25% of your grade, officially.
+Dialogue: 0,0:29:08.07,0:29:10.94,*Default,NTP,0000,0000,0000,,剩下的百分之二十五是小组讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But--the remaining 25% is discussion section;
+Dialogue: 0,0:29:10.94,0:29:13.33,*Default,NTP,0000,0000,0000,,我等一下会谈这个\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'll get to that in a minute--
+Dialogue: 0,0:29:13.37,0:29:15.33,*Default,NTP,0000,0000,0000,,按规定  每一篇论文都占百分之二十五\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}officially, 25% of your grade is for each of the three papers.
+Dialogue: 0,0:29:15.33,0:29:18.35,*Default,NTP,0000,0000,0000,,但如果你在这学期的课程中  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But if, over the course of the semester,
+Dialogue: 0,0:29:18.35,0:29:21.58,*Default,NTP,0000,0000,0000,,进步了  那么我们会\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you get better, then we will give,
+Dialogue: 0,0:29:21.60,0:29:22.70,*Default,NTP,0000,0000,0000,,在学期末\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the end of the semester,
+Dialogue: 0,0:29:22.70,0:29:23.92,*Default,NTP,0000,0000,0000,,当我们算出你的分数后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we're figuring out your semester grade,
+Dialogue: 0,0:29:23.93,0:29:25.82,*Default,NTP,0000,0000,0000,,我们会给之后那篇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we'll give the later,
+Dialogue: 0,0:29:25.82,0:29:30.34,*Default,NTP,0000,0000,0000,,较好的论文更大的分值比重\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}stronger papers more than their official weight.
+Dialogue: 0,0:29:30.44,0:29:31.49,*Default,NTP,0000,0000,0000,,对大部分人而言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For many of you,
+Dialogue: 0,0:29:31.49,0:29:35.41,*Default,NTP,0000,0000,0000,,第一篇论文会很明显是最差的一篇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the first paper will be clearly the worst paper you write.
+Dialogue: 0,0:29:35.42,0:29:37.29,*Default,NTP,0000,0000,0000,,那么我们会把这篇论文的分数扔到一边\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And then we'll just throw that grade away;
+Dialogue: 0,0:29:38.01,0:29:41.29,*Default,NTP,0000,0000,0000,,给第二三篇论文更大比重\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}give greater weight to the second and third papers.
+Dialogue: 0,0:29:41.29,0:29:42.13,*Default,NTP,0000,0000,0000,,如果第三篇论文最好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If the third paper is the strongest,
+Dialogue: 0,0:29:42.13,0:29:44.91,*Default,NTP,0000,0000,0000,,我们会让第三篇论文占更大的比重\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}we will give even more weight to the third paper.
+Dialogue: 0,0:29:44.92,0:29:47.19,*Default,NTP,0000,0000,0000,,这没什么公式定律\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no formula here,
+Dialogue: 0,0:29:47.21,0:29:49.79,*Default,NTP,0000,0000,0000,,主要是看整体情况\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}a great deal depends on the overall pattern,
+Dialogue: 0,0:29:49.79,0:29:51.57,*Default,NTP,0000,0000,0000,,也就是助教告诉我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what your TA tells me about 
+Dialogue: 0,0:29:51.57,0:29:53.19,*Default,NTP,0000,0000,0000,,你们这学期的学习情况\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how you've done over the course of the semester.
+Dialogue: 0,0:29:53.20,0:29:56.79,*Default,NTP,0000,0000,0000,,这个针对你们表现进步所给予的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But this policy of giving greater weight,
+Dialogue: 0,0:29:56.79,0:29:58.15,*Default,NTP,0000,0000,0000,,更大分值比重的方针\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you show improvement,
+Dialogue: 0,0:29:58.17,0:30:02.24,*Default,NTP,0000,0000,0000,,是你们可以从中受益的方针\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is something that most of you will benefit from.
+Dialogue: 0,0:30:02.72,0:30:04.85,*Default,NTP,0000,0000,0000,,所以如果你们最终没有得到好成绩\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So if you end up not doing well,
+Dialogue: 0,0:30:04.86,0:30:08.21,*Default,NTP,0000,0000,0000,,这个分数政策不是想让你们退却或是退课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the moral of the story is not to go running off and dropping the class,
+Dialogue: 0,0:30:08.21,0:30:10.52,*Default,NTP,0000,0000,0000,,而是去思考你所做的对的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but to figure out what you did right,
+Dialogue: 0,0:30:10.52,0:30:11.88,*Default,NTP,0000,0000,0000,,和不对的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what you didn't do right,
+Dialogue: 0,0:30:11.88,0:30:14.17,*Default,NTP,0000,0000,0000,,以及怎样让接下来的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to make the second paper better 
+Dialogue: 0,0:30:14.17,0:30:15.71,*Default,NTP,0000,0000,0000,,论文写得更好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the third paper stronger, again.
+Dialogue: 0,0:30:15.71,0:30:17.23,*Default,NTP,0000,0000,0000,,如果你有了明显的进步\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And if you do show improvement,
+Dialogue: 0,0:30:17.23,0:30:20.09,*Default,NTP,0000,0000,0000,,那将会有很显著地影响\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that will very significantly influence
+Dialogue: 0,0:30:20.09,0:30:21.77,*Default,NTP,0000,0000,0000,,并在你的分数及\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and emerge in terms of the impact it has 
+Dialogue: 0,0:30:21.77,0:30:23.95,*Default,NTP,0000,0000,0000,,学期总评上显示出来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}on your overall semester grade.
+Dialogue: 0,0:30:24.30,0:30:26.25,*Default,NTP,0000,0000,0000,,因为这个政策\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Because of this policy,
+Dialogue: 0,0:30:26.25,0:30:28.56,*Default,NTP,0000,0000,0000,,我其实不知道当所有都\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't actually know when all is said
+Dialogue: 0,0:30:28.56,0:30:33.22,*Default,NTP,0000,0000,0000,,按章进行后  学期末的评分是否依然较低\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and done whether at the end of the semester I'm any harder,
+Dialogue: 0,0:30:33.24,0:30:35.66,*Default,NTP,0000,0000,0000,,分数是否偏离了平均水平\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}whether I depart from the average or not.
+Dialogue: 0,0:30:35.68,0:30:39.93,*Default,NTP,0000,0000,0000,,我简单介绍一下一般的绩分布情况\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me quickly mention there's a fairly typical grade distribution
+Dialogue: 0,0:30:39.94,0:30:43.75,*Default,NTP,0000,0000,0000,,对于期末的学期总评来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for the overall grades of this, at the end of the semester.
+Dialogue: 0,0:30:44.59,0:30:48.13,*Default,NTP,0000,0000,0000,,大概有百分之二十五的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Roughly 25% of you are likely to end up
+Dialogue: 0,0:30:48.13,0:30:52.09,*Default,NTP,0000,0000,0000,,学期末会拿到A\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with some kind of an A at the end of the semester.
+Dialogue: 0,0:30:52.22,0:30:58.71,*Default,NTP,0000,0000,0000,,百分之五十至五十五的人会拿到B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}fifty 55% of you or so are likely to end up with some kind of a B.
+Dialogue: 0,0:30:59.22,0:31:03.30,*Default,NTP,0000,0000,0000,,百分之二十至二十五的人会拿到C\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Twenty,25% percent of you might end up with some sort of a C.
+Dialogue: 0,0:31:03.30,0:31:06.25,*Default,NTP,0000,0000,0000,,有时少数人的分数会低于C\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Sometimes there's a couple of percent that end up worse than that.
+Dialogue: 0,0:31:06.39,0:31:13.20,*Default,NTP,0000,0000,0000,,你有能力完成像样的作业  这不足为奇\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Unsurprisingly, you've got the ability to do decent work in this class
+Dialogue: 0,0:31:13.20,0:31:15.54,*Default,NTP,0000,0000,0000,,大多数人有能力完成好的作业\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and most of you have the ability to do good work,
+Dialogue: 0,0:31:15.54,0:31:17.57,*Default,NTP,0000,0000,0000,,绝大多数人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and some of you have, a fair chunk of you have,
+Dialogue: 0,0:31:17.57,0:31:19.40,*Default,NTP,0000,0000,0000,,有能力完成优秀的作业\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the ability to do excellent work,
+Dialogue: 0,0:31:19.40,0:31:22.82,*Default,NTP,0000,0000,0000,,尽管这需要花一些功夫才能做到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}though it may take some work on your part to get to that point.
+Dialogue: 0,0:31:23.96,0:31:27.76,*Default,NTP,0000,0000,0000,,最后我该说一下为什么我要这样做\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The last thing I should say about the grades is why do I do this?
+Dialogue: 0,0:31:28.57,0:31:34.19,*Default,NTP,0000,0000,0000,,我真的是出于对你们的尊重才这么做的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's really I try to do it as a sign of respect for you.
+Dialogue: 0,0:31:34.19,0:31:35.84,*Default,NTP,0000,0000,0000,,我知道这听起来很奇怪\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I know that may seem like a surprising thing to say
+Dialogue: 0,0:31:35.84,0:31:38.02,*Default,NTP,0000,0000,0000,,在我有些幸灾乐祸地说完\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when I've just sort of gone on my little gleeful amount about
+Dialogue: 0,0:31:38.02,0:31:39.38,*Default,NTP,0000,0000,0000,,我会如何让你们集体挂掉之后\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how I'm going to fail all of you,
+Dialogue: 0,0:31:39.38,0:31:45.49,*Default,NTP,0000,0000,0000,,但你们值得我称赞  你们非常聪明\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it's worth my saying you guys are so smart.
+Dialogue: 0,0:31:45.50,0:31:48.54,*Default,NTP,0000,0000,0000,,你们非常有才\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You're so talented.
+Dialogue: 0,0:31:48.72,0:31:52.20,*Default,NTP,0000,0000,0000,,你们已经通过自己的能力走到现在\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You've gotten so far on your ability
+Dialogue: 0,0:31:52.20,0:31:56.77,*Default,NTP,0000,0000,0000,,并且很多人已学会轻而易举收获成功\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that many of you have learned to coast.
+Dialogue: 0,0:31:56.91,0:32:03.72,*Default,NTP,0000,0000,0000,,你们可能不需要靠完成学业来获得成功\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It's not doing you any kind of service to let you continue coasting.
+Dialogue: 0,0:32:04.30,0:32:07.53,*Default,NTP,0000,0000,0000,,我想要的是诚实的与你们相对  对吧\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}My goal here is to be honest with you, right?
+Dialogue: 0,0:32:07.53,0:32:09.90,*Default,NTP,0000,0000,0000,,你们大多数人也许足够聪明\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Look, you're smart enough probably most of you
+Dialogue: 0,0:32:09.90,0:32:12.62,*Default,NTP,0000,0000,0000,,最终毫不费力就可以得到B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to pull off some sort of B without breaking into a sweat,
+Dialogue: 0,0:32:12.62,0:32:14.06,*Default,NTP,0000,0000,0000,,或是至少花点功夫\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or at least not a significant sweat.
+Dialogue: 0,0:32:14.11,0:32:15.25,*Default,NTP,0000,0000,0000,,这没关系\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So be it.
+Dialogue: 0,0:32:16.02,0:32:18.49,*Default,NTP,0000,0000,0000,,但是  你这是在自欺欺人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But it's just lying to you to pretend
+Dialogue: 0,0:32:18.49,0:32:21.29,*Default,NTP,0000,0000,0000,,你是在佯装你精通哲学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that that's excellence in philosophy.
+Dialogue: 0,0:32:21.44,0:32:24.15,*Default,NTP,0000,0000,0000,,所以我想在这门课里和你们坦诚相待\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So what I want to do in this class is be honest with you 
+Dialogue: 0,0:32:24.15,0:32:25.68,*Default,NTP,0000,0000,0000,,并告诉你们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and tell you,
+Dialogue: 0,0:32:25.80,0:32:27.50,*Default,NTP,0000,0000,0000,,"你们真的是在学东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"You've really done work here
+Dialogue: 0,0:32:27.51,0:32:30.54,*Default,NTP,0000,0000,0000,,你们该为自己感到为豪"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to be extraordinarily proud of yourself"
+Dialogue: 0,0:32:30.72,0:32:33.17,*Default,NTP,0000,0000,0000,,而不是说"你们做的差强人意"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}versus "Yeah, you've done something okay"
+Dialogue: 0,0:32:33.17,0:32:34.67,*Default,NTP,0000,0000,0000,,或是"你们干的不错\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or "You've done good work.
+Dialogue: 0,0:32:34.67,0:32:35.97,*Default,NTP,0000,0000,0000,,诚然  虽不是优秀\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Admittedly, it's not great,
+Dialogue: 0,0:32:35.98,0:32:37.15,*Default,NTP,0000,0000,0000,,但也算不错了"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but you've done good work."
+Dialogue: 0,0:32:38.08,0:32:41.04,*Default,NTP,0000,0000,0000,,百分之七十五的分数取决于论文\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right, that's 75% of your grade is the papers.
+Dialogue: 0,0:32:41.06,0:32:44.72,*Default,NTP,0000,0000,0000,,剩下的百分之二十五基于小组讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The remaining 25% of your grade is based on discussion section.
+Dialogue: 0,0:32:44.75,0:32:48.45,*Default,NTP,0000,0000,0000,,小组讨论可是占了很大的分数比例\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now that's a lot of your grade to turn on discussion section.
+Dialogue: 0,0:32:48.47,0:32:52.55,*Default,NTP,0000,0000,0000,,所以我和你们说的第一件事  就是我是认真的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So the first thing I need to tell you is I really mean it.
+Dialogue: 0,0:32:52.57,0:32:54.98,*Default,NTP,0000,0000,0000,,如果你们不在小组讨论好好表现\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you blow off discussion section,
+Dialogue: 0,0:32:54.98,0:32:57.37,*Default,NTP,0000,0000,0000,,你们的分数会很低\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're grade will suffer.
+Dialogue: 0,0:32:57.47,0:33:00.86,*Default,NTP,0000,0000,0000,,你们需要知道的是  你们在小组讨论时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So it's worth knowing in a general way what you need to do
+Dialogue: 0,0:33:00.88,0:33:04.06,*Default,NTP,0000,0000,0000,,如何做才能得到比较高的分数  答案是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to earn a good grade in discussion section and here the answer is,
+Dialogue: 0,0:33:04.06,0:33:05.24,*Default,NTP,0000,0000,0000,,同样这也是最明显的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}perhaps the obvious one,
+Dialogue: 0,0:33:05.36,0:33:07.93,*Default,NTP,0000,0000,0000,,你需要去参与\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you need to participate.
+Dialogue: 0,0:33:08.31,0:33:10.93,*Default,NTP,0000,0000,0000,,你需要去参与讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You need to come to discussion sections 
+Dialogue: 0,0:33:10.94,0:33:13.24,*Default,NTP,0000,0000,0000,,给出自己的想法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}having thought about the lectures,
+Dialogue: 0,0:33:13.24,0:33:15.16,*Default,NTP,0000,0000,0000,,去读阅读材料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}having done the readings,
+Dialogue: 0,0:33:15.20,0:33:17.98,*Default,NTP,0000,0000,0000,,去思考他们提出的问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}having thought about the questions that they raise,
+Dialogue: 0,0:33:17.99,0:33:20.04,*Default,NTP,0000,0000,0000,,并且你需要去讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you need to come to discussion section
+Dialogue: 0,0:33:20.04,0:33:26.59,*Default,NTP,0000,0000,0000,,然后准备这个星期要讨论的问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}then prepared to discuss this week's set of issues.
+Dialogue: 0,0:33:26.62,0:33:30.93,*Default,NTP,0000,0000,0000,,你需要去聆听你的同学所说的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You need to listen to what your classmates are saying
+Dialogue: 0,0:33:31.52,0:33:34.39,*Default,NTP,0000,0000,0000,,并说明为什么你不同意他们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and say why you disagree with them.
+Dialogue: 0,0:33:34.41,0:33:36.35,*Default,NTP,0000,0000,0000,,不仅是说出你不同意他们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And not just that you disagree with them,
+Dialogue: 0,0:33:36.35,0:33:37.95,*Default,NTP,0000,0000,0000,,还要提出反驳的理由\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but to raise an objection.
+Dialogue: 0,0:33:37.95,0:33:41.00,*Default,NTP,0000,0000,0000,,或者为什么你同意他们的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or why you agree with them.
+Dialogue: 0,0:33:41.00,0:33:42.55,*Default,NTP,0000,0000,0000,,当其他人攻击他们时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And when somebody else then attacks them,
+Dialogue: 0,0:33:42.55,0:33:45.51,*Default,NTP,0000,0000,0000,,你得说  "我觉得约翰说得很对\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}say, "Look, I think that what John was saying was a good point
+Dialogue: 0,0:33:45.51,0:33:47.36,*Default,NTP,0000,0000,0000,,我认为他该这样维护他的立场"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and here's how I think he should have defended his position,"
+Dialogue: 0,0:33:47.36,0:33:48.36,*Default,NTP,0000,0000,0000,,或者说出你的看法\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}or what have you.
+Dialogue: 0,0:33:48.36,0:33:52.72,*Default,NTP,0000,0000,0000,,你需要参与到哲学讨论中去\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You need to engage in philosophical discussion.
+Dialogue: 0,0:33:52.80,0:33:56.88,*Default,NTP,0000,0000,0000,,如果你不参与讨论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you're not participating in discussion section,
+Dialogue: 0,0:33:56.91,0:34:01.57,*Default,NTP,0000,0000,0000,,那你就没有完成讨论的目的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're not doing what the section is there for.
+Dialogue: 0,0:34:02.27,0:34:05.91,*Default,NTP,0000,0000,0000,,哲学家爱谈论  同样也爱辩论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Philosophers love to talk and we love to argue.
+Dialogue: 0,0:34:05.91,0:34:10.47,*Default,NTP,0000,0000,0000,,只有通过通过谈论哲学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The way to get better at thinking about philosophy
+Dialogue: 0,0:34:10.49,0:34:13.84,*Default,NTP,0000,0000,0000,,才能让我们更好地了解哲学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is by talking about philosophy.
+Dialogue: 0,0:34:13.84,0:34:16.27,*Default,NTP,0000,0000,0000,,这就是我让你们积极参与讨论的原因\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm putting my money where my mouth is.
+Dialogue: 0,0:34:16.27,0:34:17.49,*Default,NTP,0000,0000,0000,,我是说"嘿\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm saying, "Look, yeah,
+Dialogue: 0,0:34:17.49,0:34:19.05,*Default,NTP,0000,0000,0000,,那是这门课很重要的一部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that's an important part of the class.
+Dialogue: 0,0:34:19.07,0:34:22.50,*Default,NTP,0000,0000,0000,,重要到要占分数的百分之二十五"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So important that it's going to be worth 25% of your grade."
+Dialogue: 0,0:34:22.64,0:34:24.50,*Default,NTP,0000,0000,0000,,再次重申  这不是意味着\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Again, it doesn't mean...
+Dialogue: 0,0:34:24.50,0:34:25.95,*Default,NTP,0000,0000,0000,,这和论文有些区别\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}this is slightly different from the papers...
+Dialogue: 0,0:34:25.97,0:34:30.17,*Default,NTP,0000,0000,0000,,不是说你要有渊博的哲学知识才能得到A\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that you've got to be brilliant philosophically to get an A.
+Dialogue: 0,0:34:30.28,0:34:34.60,*Default,NTP,0000,0000,0000,,而是  你需要在课堂环节上\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Rather, you've got to be a wonderful class citizen
+Dialogue: 0,0:34:34.62,0:34:37.13,*Default,NTP,0000,0000,0000,,成为一个很棒的学生才能得到A\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}to get an A for discussion section.
+Dialogue: 0,0:34:37.16,0:34:40.01,*Default,NTP,0000,0000,0000,,所以  我把它放到了教学大纲里\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, as I put it, in fact I think I put it this way on the syllabus,
+Dialogue: 0,0:34:40.03,0:34:44.69,*Default,NTP,0000,0000,0000,,参与  在这里我是指要相互尊重的参与\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}participation--and here I mean respectful participation,
+Dialogue: 0,0:34:44.69,0:34:46.22,*Default,NTP,0000,0000,0000,,而不是想出风头的那种\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not hogging the limelight...
+Dialogue: 0,0:34:46.22,0:34:50.32,*Default,NTP,0000,0000,0000,,参与能够加分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}participation can improve your grade,
+Dialogue: 0,0:34:50.46,0:34:52.49,*Default,NTP,0000,0000,0000,,而不会使你的分数变少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it won't lower your grade.
+Dialogue: 0,0:34:52.50,0:34:55.23,*Default,NTP,0000,0000,0000,,不参与  或是不出勤\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Nonparticipation, or not being there,
+Dialogue: 0,0:34:55.24,0:34:57.65,*Default,NTP,0000,0000,0000,,那将会扣分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that will lower your participation grade.
+Dialogue: 0,0:34:57.65,0:34:58.92,*Default,NTP,0000,0000,0000,,有任何问题关于这个的吗\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Any question about any of that?
+Dialogue: 0,0:34:59.91,0:35:00.79,*Default,NTP,0000,0000,0000,,那好\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right.
+Dialogue: 0,0:35:00.79,0:35:03.68,*Default,NTP,0000,0000,0000,,我抱歉说了这么冗长的规矩\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So I'm sorry to have sort of the long gloom and doom,
+Dialogue: 0,0:35:03.69,0:35:06.46,*Default,NTP,0000,0000,0000,,但这些可以让你们了解\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it seems that it's only fair to let you know
+Dialogue: 0,0:35:06.46,0:35:08.69,*Default,NTP,0000,0000,0000,,你们将要面对什么\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what you're getting into.
+Dialogue: 0,0:35:08.69,0:35:10.46,*Default,NTP,0000,0000,0000,,另一个关于小组讨论我要强调的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One other remark about the discussion sections.
+Dialogue: 0,0:35:10.48,0:35:13.09,*Default,NTP,0000,0000,0000,,我认为这就像是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The way I think of it is like
+Dialogue: 0,0:35:13.10,0:35:17.59,*Default,NTP,0000,0000,0000,,你们在外语课堂上的对话时间\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the conversation hour for your foreign language class.
+Dialogue: 0,0:35:17.61,0:35:20.42,*Default,NTP,0000,0000,0000,,你们中有多少人以前上过哲学课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}How many of you have had a philosophy class before?
+Dialogue: 0,0:35:22.25,0:35:25.71,*Default,NTP,0000,0000,0000,,谢谢  也许有百分之十五\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Thanks. Maybe 15% of you.
+Dialogue: 0,0:35:25.71,0:35:26.51,*Default,NTP,0000,0000,0000,,或是百分之二十\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Maybe 20% of you.
+Dialogue: 0,0:35:26.51,0:35:28.10,*Default,NTP,0000,0000,0000,,大多数都没上过\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Most of you have not.
+Dialogue: 0,0:35:28.15,0:35:30.06,*Default,NTP,0000,0000,0000,,这很正常\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's pretty normal.
+Dialogue: 0,0:35:30.44,0:35:32.33,*Default,NTP,0000,0000,0000,,不要在小组讨论上这样想\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Don't go into discussion section thinking,
+Dialogue: 0,0:35:32.44,0:35:35.86,*Default,NTP,0000,0000,0000,,"我不知道说什么  我没有哲学基础\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Oh, I can't talk. I don't have any background in philosophy.
+Dialogue: 0,0:35:35.86,0:35:37.14,*Default,NTP,0000,0000,0000,,我从来没有做过这种事"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I've never done this sort of thing before."
+Dialogue: 0,0:35:37.14,0:35:39.80,*Default,NTP,0000,0000,0000,,对于大多数人来所  这是事实\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}That's true for most of you.
+Dialogue: 0,0:35:39.83,0:35:45.22,*Default,NTP,0000,0000,0000,,你们慢慢适应的方法  只有谈论哲学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The way you get better is by talking philosophy.
+Dialogue: 0,0:35:47.04,0:35:50.28,*Default,NTP,0000,0000,0000,,好  下一件事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right. Next remark.
+Dialogue: 0,0:35:50.28,0:35:52.17,*Default,NTP,0000,0000,0000,,这应该是与你们分数相关的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I guess this is sort of just one last connection
+Dialogue: 0,0:35:52.17,0:35:53.12,*Default,NTP,0000,0000,0000,,最后一件事了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with regard to grades.
+Dialogue: 0,0:35:53.12,0:35:55.00,*Default,NTP,0000,0000,0000,,这是堂哲学导论课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}This is an intro philosophy class.
+Dialogue: 0,0:35:55.00,0:35:58.56,*Default,NTP,0000,0000,0000,,导论课程的关键就是这是第一堂哲学课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The crucial point about intro is it means first class in philosophy.
+Dialogue: 0,0:35:58.56,0:36:01.35,*Default,NTP,0000,0000,0000,,它并不需要任何哲学基础\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't presuppose any background in philosophy.
+Dialogue: 0,0:36:01.51,0:36:04.37,*Default,NTP,0000,0000,0000,,但这不表示它简单\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It doesn't necessarily mean easy.
+Dialogue: 0,0:36:04.48,0:36:07.07,*Default,NTP,0000,0000,0000,,其中一些内容对某些人来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Some of this material for some of you is going to be very,
+Dialogue: 0,0:36:07.07,0:36:08.16,*Default,NTP,0000,0000,0000,,将会非常难\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}very difficult.
+Dialogue: 0,0:36:08.16,0:36:12.61,*Default,NTP,0000,0000,0000,,并且尽管你们要读的材料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And although the number of pages that you'll have to read are not...
+Dialogue: 0,0:36:12.68,0:36:14.34,*Default,NTP,0000,0000,0000,,不是太多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}there's not a lot.
+Dialogue: 0,0:36:14.38,0:36:17.66,*Default,NTP,0000,0000,0000,,也许是一个星期内五十页  或许更少\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Probably in a typical week, 50 pages, maybe less.
+Dialogue: 0,0:36:17.80,0:36:18.93,*Default,NTP,0000,0000,0000,,对大多数人来说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}For many of you,
+Dialogue: 0,0:36:18.93,0:36:20.93,*Default,NTP,0000,0000,0000,,你们可能会觉得这些内容很难懂\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you're going to find it dense material.
+Dialogue: 0,0:36:20.94,0:36:23.87,*Default,NTP,0000,0000,0000,,而且我也不认为\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And although I don't really have the fantasy
+Dialogue: 0,0:36:23.87,0:36:25.95,*Default,NTP,0000,0000,0000,,你们有些人会读两遍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that many of you will read this stuff twice,
+Dialogue: 0,0:36:25.96,0:36:28.07,*Default,NTP,0000,0000,0000,,如果你们有时间的话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if you had the time to do it,
+Dialogue: 0,0:36:28.07,0:36:30.61,*Default,NTP,0000,0000,0000,,那将会是非常值得去做的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that would be a wonderful thing to do.
+Dialogue: 0,0:36:30.61,0:36:34.57,*Default,NTP,0000,0000,0000,,哲学是很难读懂的东西\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Philosophy is hard stuff to read.
+Dialogue: 0,0:36:36.21,0:36:38.39,*Default,NTP,0000,0000,0000,,另一件关于这门介绍课要说的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Other remark about this being an intro class
+Dialogue: 0,0:36:38.39,0:36:41.65,*Default,NTP,0000,0000,0000,,我们对一些问题的介绍\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is that it's introductory in that the issues
+Dialogue: 0,0:36:41.65,0:36:45.93,*Default,NTP,0000,0000,0000,,都是你们头一回听说的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we're talking about are kind of first run through.
+Dialogue: 0,0:36:46.33,0:36:49.37,*Default,NTP,0000,0000,0000,,每一件我们在这讨论的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Every single thing that we discuss here
+Dialogue: 0,0:36:49.37,0:36:52.62,*Default,NTP,0000,0000,0000,,都有可能到一个更深的境界\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}could be pursued at greater depth.
+Dialogue: 0,0:36:52.62,0:36:55.75,*Default,NTP,0000,0000,0000,,例如  我们会花时间讨论一些问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So, for example, we'll spend whatever it is,
+Dialogue: 0,0:36:55.75,0:36:57.30,*Default,NTP,0000,0000,0000,,也许用了一个半星期谈论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}maybe a week and a half talking about
+Dialogue: 0,0:36:57.30,0:36:59.72,*Default,NTP,0000,0000,0000,,个人同一性  或许花了两星期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the nature of personal identity, two weeks.
+Dialogue: 0,0:36:59.76,0:37:03.74,*Default,NTP,0000,0000,0000,,但是也有人会花一整个学期\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But one could easily spend an entire semester
+Dialogue: 0,0:37:03.75,0:37:06.26,*Default,NTP,0000,0000,0000,,独自思考那个问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}thinking about that question alone.
+Dialogue: 0,0:37:06.26,0:37:08.96,*Default,NTP,0000,0000,0000,,所以不管我们讨论什么  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So don't come away thinking that whatever it is
+Dialogue: 0,0:37:08.96,0:37:10.79,*Default,NTP,0000,0000,0000,,都不要以为那些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that we've talked about here in lecture 
+Dialogue: 0,0:37:10.79,0:37:12.90,*Default,NTP,0000,0000,0000,,只能在课堂上思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is the last word on the subject.
+Dialogue: 0,0:37:12.90,0:37:15.82,*Default,NTP,0000,0000,0000,,更确切地说  它只是这个问题的开始\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Rather, it's something more like first words.
+Dialogue: 0,0:37:16.88,0:37:21.11,*Default,NTP,0000,0000,0000,,我还想再说一点关于阅读材料的事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Actually, one other word about the readings and the lectures.
+Dialogue: 0,0:37:21.82,0:37:24.59,*Default,NTP,0000,0000,0000,,有一个例外\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}With one exception,
+Dialogue: 0,0:37:24.61,0:37:29.70,*Default,NTP,0000,0000,0000,,我不会花很多时间讨论阅读材料的内容\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I won't be spending very much time talking about the readings.
+Dialogue: 0,0:37:29.72,0:37:31.19,*Default,NTP,0000,0000,0000,,而这个例外就是柏拉图\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The exception is Plato,
+Dialogue: 0,0:37:31.19,0:37:33.98,*Default,NTP,0000,0000,0000,,也许我会讲上两节课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}where I'll lecture, maybe two lectures,
+Dialogue: 0,0:37:33.98,0:37:37.39,*Default,NTP,0000,0000,0000,,我会重现柏拉图的主要论证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}trying to reconstruct Plato's central arguments,
+Dialogue: 0,0:37:38.35,0:37:40.99,*Default,NTP,0000,0000,0000,,至少这些论证和我们课程相关\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at least the arguments relevant to our class.
+Dialogue: 0,0:37:40.99,0:37:42.81,*Default,NTP,0000,0000,0000,,我们将会读一段柏拉图的对话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}We'll be reading one of Plato's dialogues.
+Dialogue: 0,0:37:42.84,0:37:43.86,*Default,NTP,0000,0000,0000,,但是大部分时候\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But for the most part,
+Dialogue: 0,0:37:43.86,0:37:45.16,*Default,NTP,0000,0000,0000,,尽管我将不时地\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although I'll occasionally,
+Dialogue: 0,0:37:45.16,0:37:50.19,*Default,NTP,0000,0000,0000,,偶尔地提及课外阅读材料\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}periodically refer to the readings,
+Dialogue: 0,0:37:50.19,0:37:55.32,*Default,NTP,0000,0000,0000,,但我不会花很多时间谈论书中的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I won't spend a lot of time talking about the views in the readings.
+Dialogue: 0,0:37:56.81,0:38:02.12,*Default,NTP,0000,0000,0000,,因为你应该把那些书当作是我上课的补充\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The readings you should think of as complementary to my lectures.
+Dialogue: 0,0:38:02.16,0:38:06.81,*Default,NTP,0000,0000,0000,,它们会比我所讲的内容更为丰富\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The idea is that there's more to say than what I've said.
+Dialogue: 0,0:38:06.81,0:38:10.27,*Default,NTP,0000,0000,0000,,你将会在阅读中发现在更多的知识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}And you'll find some more of what there is to say in the readings.
+Dialogue: 0,0:38:10.42,0:38:13.09,*Default,NTP,0000,0000,0000,,或者我会提到其中的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Or there may be positions that I mention,
+Dialogue: 0,0:38:13.09,0:38:14.00,*Default,NTP,0000,0000,0000,,但我不会展开去谈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I don't develop,
+Dialogue: 0,0:38:14.00,0:38:15.61,*Default,NTP,0000,0000,0000,,因为我无法与其产生共鸣\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because I'm not perhaps sympathetic to them,
+Dialogue: 0,0:38:15.61,0:38:16.75,*Default,NTP,0000,0000,0000,,而你可能在阅读中\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and you might find
+Dialogue: 0,0:38:16.75,0:38:18.01,*Default,NTP,0000,0000,0000,,找到与其产生共鸣的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}somebody who is sympathetic to them,
+Dialogue: 0,0:38:18.01,0:38:20.65,*Default,NTP,0000,0000,0000,,并得到更深入的领悟\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}developing them in the readings.
+Dialogue: 0,0:38:20.66,0:38:25.04,*Default,NTP,0000,0000,0000,,阅读材料是本课程最关键的组成部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The readings are a crucial component of the class.
+Dialogue: 0,0:38:25.08,0:38:31.76,*Default,NTP,0000,0000,0000,,只听课无法让你得到所需的全部知识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You won't get everything you need simply by coming to the lectures.
+Dialogue: 0,0:38:31.84,0:38:33.87,*Default,NTP,0000,0000,0000,,于此相同的是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But equally the case,
+Dialogue: 0,0:38:33.89,0:38:37.16,*Default,NTP,0000,0000,0000,,我在讲座中展开讨论的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the views that I'll be developing in the lectures are,
+Dialogue: 0,0:38:37.16,0:38:39.06,*Default,NTP,0000,0000,0000,,尽管也不全是我的个人观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}although not necessarily unique to me,
+Dialogue: 0,0:38:39.08,0:38:41.35,*Default,NTP,0000,0000,0000,,但你们也不是都能在阅读材料里找到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}aren't all laid out in the readings.
+Dialogue: 0,0:38:41.35,0:38:45.06,*Default,NTP,0000,0000,0000,,如果你只是一味地阅读\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You won't get everything I'm talking about in the lectures,
+Dialogue: 0,0:38:45.06,0:38:46.75,*Default,NTP,0000,0000,0000,,你也无法了解我讲课的全部\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}if all you do is the readings.
+Dialogue: 0,0:38:46.75,0:38:48.70,*Default,NTP,0000,0000,0000,,因为阅读与听课都是本课程的组成部分\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}They're both parts of the class.
+Dialogue: 0,0:38:50.84,0:38:54.62,*Default,NTP,0000,0000,0000,,好的  我想以此结尾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}All right. I want to end by...
+Dialogue: 0,0:38:55.51,0:38:56.67,*Default,NTP,0000,0000,0000,,我其实还没说完\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm not close to ending,
+Dialogue: 0,0:38:56.67,0:38:58.71,*Default,NTP,0000,0000,0000,,但我想说的最后一件事\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but the last thing I'm going to do
+Dialogue: 0,0:38:58.71,0:39:01.78,*Default,NTP,0000,0000,0000,,是大声念出一些学生的评价\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}is read aloud some student evaluations.
+Dialogue: 0,0:39:01.80,0:39:06.00,*Default,NTP,0000,0000,0000,,我发现这些年来有些学生喜欢我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I have found over the years that some students like me;
+Dialogue: 0,0:39:06.04,0:39:08.26,*Default,NTP,0000,0000,0000,,有些学生不喜欢我\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}some students don't like me.
+Dialogue: 0,0:39:08.30,0:39:11.10,*Default,NTP,0000,0000,0000,,最能明确这个问题的方法就是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know how to make this point any clearer
+Dialogue: 0,0:39:11.12,0:39:16.93,*Default,NTP,0000,0000,0000,,和你们分享一些学生的抽样评估\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}than to share with you a sampling of the student evaluations.
+Dialogue: 0,0:39:16.93,0:39:18.99,*Default,NTP,0000,0000,0000,,这些不是来自上学期的评估\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are not actually from last spring,
+Dialogue: 0,0:39:18.99,0:39:20.72,*Default,NTP,0000,0000,0000,,但是它们足够典型了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but they're typical enough
+Dialogue: 0,0:39:20.72,0:39:23.03,*Default,NTP,0000,0000,0000,,我都懒得举新的例证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I was too lazy to make some new quotes.
+Dialogue: 0,0:39:25.53,0:39:26.59,*Default,NTP,0000,0000,0000,,例一\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Quote one.
+Dialogue: 0,0:39:26.59,0:39:30.22,*Default,NTP,0000,0000,0000,,这些都是来自之前真实学生的原话\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}These are actual quotes from former actual students.
+Dialogue: 0,0:39:30.26,0:39:35.57,*Default,NTP,0000,0000,0000,,一  "讲座十分明了并符合逻辑顺序"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(1) "The lectures were clear and followed a very logical order."
+Dialogue: 0,0:39:35.96,0:39:40.29,*Default,NTP,0000,0000,0000,,二  "我认为课程有时缺乏条理性"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(2) "I thought the class was not always organized."
+Dialogue: 0,0:39:40.73,0:39:44.52,*Default,NTP,0000,0000,0000,,三 "我认为课程编排十分具有条理性"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(3) "I thought it was a very well organized class."
+Dialogue: 0,0:39:45.39,0:39:49.72,*Default,NTP,0000,0000,0000,,(四) "总体来说  我对本课程不满意"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(4) "Overall, I was unsatisfied with this course.
+Dialogue: 0,0:39:49.76,0:39:53.10,*Default,NTP,0000,0000,0000,,几乎没得出什么实质性的结论"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Few substantive conclusions were reached."
+Dialogue: 0,0:39:53.84,0:39:55.47,*Default,NTP,0000,0000,0000,,五 老生常谈\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(5) Along the same vein, "
+Dialogue: 0,0:39:55.47,0:39:56.96,*Default,NTP,0000,0000,0000,,"我觉得他没必要\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think he should avoid saying
+Dialogue: 0,0:39:56.96,0:39:58.65,*Default,NTP,0000,0000,0000,,每个论证完结后都说\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}at the end of each segment of the class,
+Dialogue: 0,0:39:58.67,0:40:02.32,*Default,NTP,0000,0000,0000,,最终  你还得自己决定如何看待这个问题"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Ultimately, you'll have to decide what to think for yourself."
+Dialogue: 0,0:40:04.23,0:40:05.75,*Default,NTP,0000,0000,0000,,我该这么说来结束课程  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I should end the class by saying, "
+Dialogue: 0,0:40:05.79,0:40:07.31,*Default,NTP,0000,0000,0000,,"你会相信的"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You will believe."
+Dialogue: 0,0:40:07.31,0:40:09.01,*Default,NTP,0000,0000,0000,,事实上  刚上课时我就说了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Actually, I started the class by saying that.
+Dialogue: 0,0:40:09.01,0:40:11.35,*Default,NTP,0000,0000,0000,,你将会相信我所相信的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}You will believe what I believe.
+Dialogue: 0,0:40:11.37,0:40:15.57,*Default,NTP,0000,0000,0000,,六  "更客观地阐述一些观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(6) "It might be improved by presenting other views better
+Dialogue: 0,0:40:15.57,0:40:16.69,*Default,NTP,0000,0000,0000,,或许会好一些\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and more objectively,
+Dialogue: 0,0:40:16.72,0:40:18.92,*Default,NTP,0000,0000,0000,,因为卡根总是用他独有的论点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}since Kagan always ended a particular line
+Dialogue: 0,0:40:18.92,0:40:21.87,*Default,NTP,0000,0000,0000,,来驳斥他不赞同的论证\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}of reasoning by defeating the argument if he didn't agree with it.
+Dialogue: 0,0:40:21.91,0:40:26.05,*Default,NTP,0000,0000,0000,,他可以更公正地容忍其他观点"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}He could be a bit more unbiased and tolerant of other perspectives."
+Dialogue: 0,0:40:27.25,0:40:31.11,*Default,NTP,0000,0000,0000,,七  "上课内容有时重复或是毫无新意\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(7) "Lectures were sometimes repetitive or obvious,
+Dialogue: 0,0:40:31.12,0:40:33.77,*Default,NTP,0000,0000,0000,,但偶尔会提出新的观点"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but occasionally, they provided new insights."
+Dialogue: 0,0:40:34.06,0:40:38.90,*Default,NTP,0000,0000,0000,,八  "我知道有人认为论证过程有点慢\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(8) "I know that some felt the pace of the arguments was a little slow,
+Dialogue: 0,0:40:38.95,0:40:41.42,*Default,NTP,0000,0000,0000,,但我感觉这样做还是有必要的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I felt that this was generally necessary,
+Dialogue: 0,0:40:41.42,0:40:44.08,*Default,NTP,0000,0000,0000,,不只是为了不懂哲学的同学们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}not only for the unphilosophy-savvy population,
+Dialogue: 0,0:40:44.08,0:40:46.39,*Default,NTP,0000,0000,0000,,也是为了能覆盖所有内容"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but also to cover all points."
+Dialogue: 0,0:40:47.44,0:40:50.59,*Default,NTP,0000,0000,0000,,九 "十分全面周到\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(9) "Extremely thorough and thoughtful.
+Dialogue: 0,0:40:50.59,0:40:53.84,*Default,NTP,0000,0000,0000,,接受所有提问  太棒了" 我喜欢这条\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Receptive to questions. Brilliant." I like that one. 
+Dialogue: 0,0:40:54.67,0:40:56.62,*Default,NTP,0000,0000,0000,,"经常罗嗦冗长"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}"Often long-winded." Hmmm.
+Dialogue: 0,0:40:57.42,0:41:03.14,*Default,NTP,0000,0000,0000,,十  "他的确一遍遍重复同样的观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(10) "He does go around and around the same idea a number of times,
+Dialogue: 0,0:41:03.15,0:41:05.58,*Default,NTP,0000,0000,0000,,可这减少了课程的笔记\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which does cut down on the notes for the class,
+Dialogue: 0,0:41:05.64,0:41:07.58,*Default,NTP,0000,0000,0000,,但是会让人感到有点无聊"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but it can get a little boring."
+Dialogue: 0,0:41:07.87,0:41:12.79,*Default,NTP,0000,0000,0000,,十一  "尽管听有些同学说他经常自言自语\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(11) "Though I've heard students say he often repeats himself,
+Dialogue: 0,0:41:12.81,0:41:15.11,*Default,NTP,0000,0000,0000,,但我认为对于哲学课而言这是一个优点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I think this is a merit in a philosophy course
+Dialogue: 0,0:41:15.11,0:41:17.83,*Default,NTP,0000,0000,0000,,因为论证和思路很容易混淆"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}in which arguments and thoughts can quickly become confusing."
+Dialogue: 0,0:41:18.56,0:41:22.33,*Default,NTP,0000,0000,0000,,十二 "雪莱·卡根是个完美的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(12) "Shelly Kagan is a fabulous,
+Dialogue: 0,0:41:22.35,0:41:25.92,*Default,NTP,0000,0000,0000,,足智多谋的  让人彻底信服的演讲者"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}resourceful, utterly convincing lecturer."
+Dialogue: 0,0:41:27.09,0:41:30.84,*Default,NTP,0000,0000,0000,,十三 "他能在大家面前论证论点"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(13) "He would work through arguments right in front of--"
+Dialogue: 0,0:41:31.33,0:41:32.21,*Default,NTP,0000,0000,0000,,我喜欢这条\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I like this one,
+Dialogue: 0,0:41:32.21,0:41:34.63,*Default,NTP,0000,0000,0000,,因为这是我对自己的最低目标\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}because this is what I at least aim to be inside my head.
+Dialogue: 0,0:41:34.63,0:41:35.70,*Default,NTP,0000,0000,0000,,这就是我一直在做的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Here's what I'm doing.
+Dialogue: 0,0:41:35.71,0:41:39.53,*Default,NTP,0000,0000,0000,,十三  "他能在我们面前论证论点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Thirteen: "He would work through arguments right in front of us,
+Dialogue: 0,0:41:39.55,0:41:42.74,*Default,NTP,0000,0000,0000,,这样有助于我自己对其进行论证"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which then helped me work through them on my own."
+Dialogue: 0,0:41:43.45,0:41:47.88,*Default,NTP,0000,0000,0000,,十四  "雪莱是位不可思议  精力充沛的老师"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(14) "Shelly is an incredibly dynamic lecturer."
+Dialogue: 0,0:41:48.48,0:41:54.60,*Default,NTP,0000,0000,0000,,十五  "他只是在自己的世界里胡说八道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(15) "He's just in his own world babbling on and on.
+Dialogue: 0,0:41:54.64,0:41:57.37,*Default,NTP,0000,0000,0000,,我常常心不在焉"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'd zone out with regularity."
+Dialogue: 0,0:41:59.03,0:42:03.36,*Default,NTP,0000,0000,0000,,十六  "我不得不说雪莱·卡根很可能是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(16) "I have to say that Shelly Kagan is probably
+Dialogue: 0,0:42:03.36,0:42:06.84,*Default,NTP,0000,0000,0000,,我在耶鲁四年所遇到的最好的老师"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the best lecturer I had in my four years at Yale."
+Dialogue: 0,0:42:07.25,0:42:12.71,*Default,NTP,0000,0000,0000,,十七  "他是那种让人又爱又恨的老师"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(17) "He's the type of teacher you either love or hate."
+Dialogue: 0,0:42:13.25,0:42:14.85,*Default,NTP,0000,0000,0000,,这估计是真的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now that's pretty clearly true.
+Dialogue: 0,0:42:14.85,0:42:17.59,*Default,NTP,0000,0000,0000,,我希望能有一种简单的石蕊测试\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I wish there were some easy litmus test
+Dialogue: 0,0:42:17.59,0:42:19.88,*Default,NTP,0000,0000,0000,,来给你们测试  然后你们会知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that I could just give you so you'd know
+Dialogue: 0,0:42:19.88,0:42:23.43,*Default,NTP,0000,0000,0000,,你们谁上这门课是一个错误\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}which of you would be making a mistake taking this class.
+Dialogue: 0,0:42:23.43,0:42:24.68,*Default,NTP,0000,0000,0000,,我不知道如何做这个测试\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know how to give it to you.
+Dialogue: 0,0:42:24.91,0:42:27.19,*Default,NTP,0000,0000,0000,,下一个话题  分数\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Next topic, grades.
+Dialogue: 0,0:42:27.65,0:42:31.43,*Default,NTP,0000,0000,0000,,一  "他经常用难以做到的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(1) "He tried to intimidate us too much
+Dialogue: 0,0:42:31.43,0:42:34.06,*Default,NTP,0000,0000,0000,,评分标准来吓唬我们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}with his promise of impossible grading
+Dialogue: 0,0:42:34.08,0:42:37.49,*Default,NTP,0000,0000,0000,,以至每个人都想去报Cr/D/F的课程\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}so that everyone took the class credit/D/fail,
+Dialogue: 0,0:42:34.49,0:42:37.49,*Default,NTP,0000,0000,0000,,{\an8}{\fn方正黑体简体\fs18\b1\bord1\shad1\3c&H2F2F2F&}[选择Cr/D/F的课程  分数在55-100成绩都是Cr  55-50是D及格 \N50一下就是F不及格 该课程的好处是成绩单上不会显示具体的分数]
+Dialogue: 0,0:42:37.93,0:42:40.49,*Default,NTP,0000,0000,0000,,但最后我们几乎都得了A或B\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}when we all probably ended up with As or Bs.
+Dialogue: 0,0:42:40.49,0:42:42.60,*Default,NTP,0000,0000,0000,,他打分显然不是那么苛刻"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}His grading was not hard."
+Dialogue: 0,0:42:42.87,0:42:48.00,*Default,NTP,0000,0000,0000,,二  "我推荐这门课  只是因为Cr/D/F罢了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(2) "I recommend it, but only credit/D/fail.
+Dialogue: 0,0:42:49.44,0:42:52.56,*Default,NTP,0000,0000,0000,,卡根教授的打分太严苛了"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Professor Kagan is harsh with grading."
+Dialogue: 0,0:42:53.42,0:42:57.03,*Default,NTP,0000,0000,0000,,三  "当雪莱说他是全校最严格的评分老师时\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(3) "When Shelly says he's the harshest grader on campus,
+Dialogue: 0,0:42:57.03,0:42:58.09,*Default,NTP,0000,0000,0000,,他没有撒谎\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}he isn't lying.
+Dialogue: 0,0:42:58.12,0:43:00.21,*Default,NTP,0000,0000,0000,,我一直很惊讶\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I was consistently surprised by
+Dialogue: 0,0:43:00.21,0:43:02.42,*Default,NTP,0000,0000,0000,,我的论文究竟有多糟糕\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how poorly I did on papers.
+Dialogue: 0,0:43:04.24,0:43:06.32,*Default,NTP,0000,0000,0000,,这门课的标准和\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The standards in this class are just different from 
+Dialogue: 0,0:43:06.32,0:43:09.30,*Default,NTP,0000,0000,0000,,所有其他的课都不同"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}all other classes."
+Dialogue: 0,0:43:09.62,0:43:15.26,*Default,NTP,0000,0000,0000,,四  "卡根打分严格的谣言  纯属无中生有\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(4) "Kagan's reputation as a harsh grader is unfounded.
+Dialogue: 0,0:43:15.35,0:43:16.69,*Default,NTP,0000,0000,0000,,如果你付出了努力\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}If you put in the effort,
+Dialogue: 0,0:43:16.69,0:43:18.31,*Default,NTP,0000,0000,0000,,分数就是最好的体现"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}the grade will reflect that."
+Dialogue: 0,0:43:19.13,0:43:22.54,*Default,NTP,0000,0000,0000,,所以这就解决了我是否对打分严苛的问题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}So that settles the question am I a harsh grader or not.
+Dialogue: 0,0:43:22.56,0:43:24.51,*Default,NTP,0000,0000,0000,,评估的最后一个问题是\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The last question for the evaluation is 
+Dialogue: 0,0:43:24.51,0:43:25.68,*Default,NTP,0000,0000,0000,,你是否来上课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}should you take the class or not?
+Dialogue: 0,0:43:25.68,0:43:27.43,*Default,NTP,0000,0000,0000,,你是否向其他人推荐这门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Would you recommend it to somebody else?
+Dialogue: 0,0:43:27.53,0:43:30.46,*Default,NTP,0000,0000,0000,,一  "我认为我生命中思维最开放的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(1) "I believe this class is
+Dialogue: 0,0:43:30.46,0:43:34.73,*Default,NTP,0000,0000,0000,,一段经历就是上了这门课"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}one of the most mind-opening experiences of my life."
+Dialogue: 0,0:43:34.75,0:43:38.54,*Default,NTP,0000,0000,0000,,二  "不  这是在浪费时间"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(2) "No. It's a waste of a course."
+Dialogue: 0,0:43:39.97,0:43:43.91,*Default,NTP,0000,0000,0000,,三  "这门课有时会令人感到失望\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(3) "It gets kind of depressing at times,
+Dialogue: 0,0:43:44.73,0:43:47.78,*Default,NTP,0000,0000,0000,,但我认为这应归咎于这门课本身"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but I suppose that's due to the nature of the subject."
+Dialogue: 0,0:43:49.44,0:43:53.72,*Default,NTP,0000,0000,0000,,四  "这门课比我在耶鲁上过的任何\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(4) "This course stands out as one of the more unique
+Dialogue: 0,0:43:53.73,0:43:56.57,*Default,NTP,0000,0000,0000,,课程都独一无二且令人激动"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and stimulating courses I've taken at Yale."
+Dialogue: 0,0:43:57.18,0:43:59.72,*Default,NTP,0000,0000,0000,,五  "精彩的一门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(5) "Excellent class.
+Dialogue: 0,0:43:59.72,0:44:02.45,*Default,NTP,0000,0000,0000,,它让我以一种全新的方式思考生命与死亡\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}It made me think about life and death in a new way.
+Dialogue: 0,0:44:02.46,0:44:05.21,*Default,NTP,0000,0000,0000,,你还能从一门课中要求什么呢"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}What more can you ask for from a class?"
+Dialogue: 0,0:44:05.30,0:44:08.43,*Default,NTP,0000,0000,0000,,六  "我绝不推荐这门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(6) "I would not recommend it.
+Dialogue: 0,0:44:08.44,0:44:11.08,*Default,NTP,0000,0000,0000,,它看起来就像一场演出\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The class just seemed to be a platform
+Dialogue: 0,0:44:11.08,0:44:13.77,*Default,NTP,0000,0000,0000,,演出内容就是卡根随口抛出一些观点\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for Kagan to throw out random ideas
+Dialogue: 0,0:44:13.77,0:44:17.35,*Default,NTP,0000,0000,0000,,而学生们从没被要求参与其中"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and the students were never required to engage in any thought."
+Dialogue: 0,0:44:17.97,0:44:19.36,*Default,NTP,0000,0000,0000,,这部分评估读完了\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, that clears that up.
+Dialogue: 0,0:44:19.88,0:44:22.71,*Default,NTP,0000,0000,0000,,让我用一些其它的短评论来做结尾\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Let me end with a couple of other quick remarks.
+Dialogue: 0,0:44:22.80,0:44:27.42,*Default,NTP,0000,0000,0000,,这些是我早些年的最爱\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}One--these are some of my all-time favorites from previous years.
+Dialogue: 0,0:44:27.42,0:44:32.13,*Default,NTP,0000,0000,0000,,一  "不看课外阅读对我全无影响"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}(1) "Not doing the reading didn't hurt me at all."
+Dialogue: 0,0:44:32.25,0:44:35.35,*Default,NTP,0000,0000,0000,,这些是匿名评论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now, these are anonymous comments.
+Dialogue: 0,0:44:35.35,0:44:36.77,*Default,NTP,0000,0000,0000,,我不知道谁写的这条评论\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know who wrote this comment.
+Dialogue: 0,0:44:36.77,0:44:37.81,*Default,NTP,0000,0000,0000,,但我知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But I do know this.
+Dialogue: 0,0:44:37.82,0:44:41.05,*Default,NTP,0000,0000,0000,,无论谁写的这条评论  他就是个白痴\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Whoever wrote this remark is an idiot.
+Dialogue: 0,0:44:41.84,0:44:46.55,*Default,NTP,0000,0000,0000,,无论谁写的这条评论  都应该铭记\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Whoever wrote this remark seems to be under the impression
+Dialogue: 0,0:44:46.55,0:44:51.93,*Default,NTP,0000,0000,0000,,你父母每年花费四万美金供你在耶鲁上学\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that the point of being at Yale is to spend $40,000 a year of
+Dialogue: 0,0:44:51.93,0:44:57.72,*Default,NTP,0000,0000,0000,,你应该尽可能地学到最多的知识\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}your parents' money and get away with learning as little as possible.
+Dialogue: 0,0:44:58.58,0:45:01.17,*Default,NTP,0000,0000,0000,,对于那些想要尝试这样做的人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Well, for those of you who want to try it,
+Dialogue: 0,0:45:01.17,0:45:03.37,*Default,NTP,0000,0000,0000,,你很可能顺利通过这门课\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}you probably could pass this class
+Dialogue: 0,0:45:03.37,0:45:05.68,*Default,NTP,0000,0000,0000,,甚至可能得到一个不错的分数\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}and maybe even get an okay grade
+Dialogue: 0,0:45:05.68,0:45:07.29,*Default,NTP,0000,0000,0000,,即时你不看课外阅读\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}without doing the readings.
+Dialogue: 0,0:45:07.29,0:45:08.92,*Default,NTP,0000,0000,0000,,本课没有期末考试\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}There's no final exam.
+Dialogue: 0,0:45:09.03,0:45:12.21,*Default,NTP,0000,0000,0000,,但仍旧  你必须知道\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}But still, it's crucial to understand,
+Dialogue: 0,0:45:12.22,0:45:15.68,*Default,NTP,0000,0000,0000,,想要学好这门课  \N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}doing the readings is an important part of learning
+Dialogue: 0,0:45:15.68,0:45:17.44,*Default,NTP,0000,0000,0000,,课外阅读是非常重要的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}what this course has to offer.
+Dialogue: 0,0:45:18.34,0:45:23.51,*Default,NTP,0000,0000,0000,,不同的例证  "卡根是一个自以为是的小个子"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Different quote. "Kagan is a self-righteous little man"
+Dialogue: 0,0:45:25.04,0:45:26.86,*Default,NTP,0000,0000,0000,,现在我必须告诉你们\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Now I've got to tell you,
+Dialogue: 0,0:45:27.34,0:45:30.93,*Default,NTP,0000,0000,0000,,说我小个子  真的很伤人\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}that bit about being little, that really hurts.
+Dialogue: 0,0:45:33.17,0:45:36.36,*Default,NTP,0000,0000,0000,,另一个  "伟大的课程  了不起的教授\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Another one. "Great course. Wonderful professor.
+Dialogue: 0,0:45:36.38,0:45:37.95,*Default,NTP,0000,0000,0000,,吸引人的课题\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Fascinating subjects.
+Dialogue: 0,0:45:37.97,0:45:41.34,*Default,NTP,0000,0000,0000,,令我进行了生命中最为深刻的思考"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}The deepest thinking I've done in my life."
+Dialogue: 0,0:45:41.58,0:45:44.23,*Default,NTP,0000,0000,0000,,最后一例  "这门课比耶鲁大学的\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Final quote. "This class taught me
+Dialogue: 0,0:45:44.23,0:45:47.44,*Default,NTP,0000,0000,0000,,任何人都教会了我如何思考"\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}how to think more than any other at Yale."
+Dialogue: 0,0:45:47.94,0:45:49.78,*Default,NTP,0000,0000,0000,,我不知道我是否成功\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't know whether I pull it off.
+Dialogue: 0,0:45:49.79,0:45:51.10,*Default,NTP,0000,0000,0000,,很明显\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}Pretty obviously,
+Dialogue: 0,0:45:51.10,0:45:52.08,*Default,NTP,0000,0000,0000,,对于不少学生而言\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}for a number of students,
+Dialogue: 0,0:45:52.08,0:45:54.03,*Default,NTP,0000,0000,0000,,我没能让他们收获更多\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I don't manage to pull it off,
+Dialogue: 0,0:45:54.05,0:45:56.37,*Default,NTP,0000,0000,0000,,但那至少是我的目标\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}but that's at least what my aim is.
+Dialogue: 0,0:45:56.39,0:45:58.87,*Default,NTP,0000,0000,0000,,我在试着帮助你们思考\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I'm trying to help you think.
+Dialogue: 0,0:45:58.88,0:46:01.83,*Default,NTP,0000,0000,0000,,欢迎并期待下星期四你们的到来\N{\fn微软雅黑}{\fs15}{\bord1}{\shad1}{\b0}{\c&HFFFFFF&}{\3c&H111111&}{\4c&H111111&}I welcome you and I hope you'll be back on Thursday.
