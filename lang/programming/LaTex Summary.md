@@ -4,6 +4,50 @@
 
 
 
+## mathjax
+
+
+
+**首先斜体加粗是这个\boldsymbol**
+
+例如\boldsymbol{x}
+
+和\mathbf{x}有区别
+
+
+
+**另外在任意Markdown的编辑器中：**
+
+自己设置一下就好：找到mathjax 配置文件写入如下定义tex的代码中的Macros即可定义简写：
+
+```html
+<script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+          processEscapes: true
+        },
+        TeX: {
+          equationNumbers: {autoNumber: 'AMS'},
+          Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': {
+          imageFont: null
+        }
+      });
+  </script>
+```
+
+
+
+
+
+一个简单的办法：
+chrome打开知乎页面，按顺序 F12 - F1 - 在General 里面点选 Disable JavaScript。就可以复制了。
+
+
+
 ## align
 
 $$
@@ -64,6 +108,26 @@ $$
 \frac{\partial}{\partial w_{j}} \bigg [ \frac{1}{2m} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2 \bigg ] \\
 = \frac{1}{2m} \frac{\partial}{\partial w_{j}} \sum^{m}_{i=1}(h_{W}(x^{i}) - y^{i})^2   \text by linearity of the derivative
 $$
+
+
+
+
+
+黑斜体小写字母表示向量 $\textbf{x}$
+
+斜体小写字母表示标量  $\textit{x}$
+
+矩阵表示一组向量 $X$
+
+上标
+
+
+
+
+
+
+
+
 
 
 

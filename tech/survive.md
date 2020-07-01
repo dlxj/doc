@@ -292,6 +292,9 @@ mac mount Android as drive
 - Armadillo
   - C++ 矩阵运算库
 
+- elm+rust
+  - [Look ma, no Electron!](https://github.com/huytd/kanban-app)
+
 ## Cygwin
 
 - 装cmake, g++
@@ -2304,3 +2307,22 @@ YY5EA-00XDJ-480RP-35QQV-XY8F6
 
 VA510-23F57-M85PY-7FN7C-MCRG0
 
+
+
+
+
+## Windows
+
+
+
+　　1、点击当前程序，【Win】键+【方向键左或右】可以使该应用缩至一半，并分别调整应用至屏幕的左右位置放置；
+
+　　2、在上一步的基础上，同时按住【Win】键+【方向键的上或下】，能实现四分一窗口显示；
+
+　　3、除了分屏快捷键，Win10还可以使用快捷键新建和切换虚拟桌面；【Win】+【Ctrl】+【D】组合键是新建桌面窗口；
+
+　　5、【Win】+【Ctrl】+【方向键左或右】，可以切换虚拟桌面窗口；
+
+　　6、【Win】+【Ctrl】+【方向键的上或下】，是程序右上角的最大化、向下还原、最小化的快捷方式。
+
+ 

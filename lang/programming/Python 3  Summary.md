@@ -768,6 +768,47 @@ ss =  re.findall(r'(@@第[一二三四五六七八九十]+章.+?)\n', strs, re.D
 
 
 
+### ^ not ^ at the begin
+
+
+
+[^】]*?  不是字符】，重复0或多次，最短匹配
+
+^ 是“在开始”，如果放在最前面
+
+$ 是“在结尾”，如果放在最后面
+
+
+
+```
+print( re.compile(r'(【[^】]*?)(【[^】]*?】)([^【]*?】)(.*?\n)').sub(ps2[1][1], "【大剂量】常出现在【血清地高辛浓度【＞2ng/ml】】时，\n") )
+```
+
+
+
+
+
+```python
+[^a-z]
+So to match a string that does not contain "y", the regex is: ^[^y]*$
+
+Character by character explanation:
+
+^ means "beginning" if it comes at the start of the regex. Similarly, $ means "end" if it comes at the end. [abAB] matches any character within, or a range. For example, match any hex character (upper or lower case): [a-fA-F0-9]
+
+* means 0 or more of the previous expression. As the first character inside [], ^ has a different meaning: it means "not". So [^a-fA-F0-9] matches any non-hex character.
+
+When you put a pattern between ^ and $, you force the regex to match the string exactly (nothing before or after the pattern). Combine all these facts:
+
+^[^y]*$ means string that is exactly 0 or more characters that are not 'y'. (To do something more interesting, you could check for non-numbers: ^[^0-9]$
+```
+
+
+
+
+
+
+
 ### 捕获
 
 
@@ -859,6 +900,30 @@ p.sub('gray \g<1>',s)
 ```
 
 
+
+```python
+print ( re.sub(
+    pattern=r'【【(【.+?】)】】(.*?)\n', 
+    repl=r'\1\2', 
+    string='【【【aa】】】bb【【【cc】】】dd【【ee】【ff】】\n'
+) )
+-> 【aa】bb【【【cc】】】dd【【ee】【ff】】
+
+print ( re.sub(
+    pattern=r'(【【(【.+?】)】】)(.*?)(\n)', 
+    repl=r'\1\4\2\4\3', 
+    string='【【【aa】】】bb【【【cc】】】dd【【ee】【ff】】\n'
+) )
+大外层是1 内层是2 其他是3
+```
+
+
+
+```
+match = re.match(r"(?P<all>(?:-(?P<one>\w+))*)","-ab-cde-fghi-jkl-mn")
+>>> re.findall(r"-(?P<one>\w+)", match.group("all"))
+['ab', 'cde', 'fghi', 'jkl', 'mn']
+```
 
 
 
