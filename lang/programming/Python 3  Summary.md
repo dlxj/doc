@@ -867,6 +867,19 @@ def extractPattern(strs, reg):
 
 
 
+两层括号展平
+
+```
+print( re.compile(r'(【[^】]*?)(【[^】]*?】)([^【]*?】)(.*?\n)').sub(r'\1】\2【\3\4', "【a【b】c】d\n") )
+-> 【a】【b】【c】d
+```
+
+
+
+
+
+
+
 ```
 echo 'the blue dog and blue cat wore blue hats' | sed 's/blue \(dog\|cat\)/gray \1/g'
 ->the gray dog and gray cat wore blue hats
