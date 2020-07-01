@@ -22,7 +22,6 @@ def writestring(fname, strs):
     with open(fname, "w", encoding="utf-8") as fp:
         fp.write(strs)
         fp.close()
-    return data
 
 if __name__ == "__main__":
 
