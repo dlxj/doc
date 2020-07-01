@@ -844,6 +844,24 @@ p.sub(r'gray \g<animal>','the blue dog and blue cat wore blue hats')
 
 
 
+```
+re.sub(
+    pattern=r'(\d)(\w+)', 
+    repl='word: \\2, digit: \\1', 
+    string='1asdf'
+)
+```
+
+
+
+```
+p.sub('gray \g<1>',s)
+```
+
+
+
+
+
 
 
 ```
