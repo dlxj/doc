@@ -1203,6 +1203,15 @@ make install
 make install-config
 ```
 
+```
+reboot
+Command + R , 进入系统恢复页面
+csrutil disable
+reboot
+csrutil status
+# System Integrity Protection status: disabled. 说明SIP已关闭, 即可使用
+```
+
 
 
 ### 全局配置文件
