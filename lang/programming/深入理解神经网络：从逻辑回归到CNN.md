@@ -78,8 +78,50 @@ $$
 
 
 $$
-length(\textbf{x}) = \sqrt{(x_1)^2 + (x_2)^2}
+length(\textbf{x}) = \sqrt{x_{_1}^2 + x_{_2}^2}
 $$
+
+
+
+向量的模定义为**与自身内积的平方根** ： 
+$$
+\|\boldsymbol{x}\| = \sqrt{\left < \boldsymbol{x},\boldsymbol{x} \right>} 
+= \sqrt{\sum^n_{i=1}\boldsymbol{x}_{_i}^2}
+$$
+方向不变，长度缩放到1
+
+$$
+\frac{\boldsymbol{x}}{\|\boldsymbol{x}\|}
+$$
+
+#### 模长和分量的长度成正比
+
+
+
+## 数乘
+
+
+
+### 数乘是缩放每一个分量
+
+$$
+\|k\boldsymbol{x}\| = 
+\sqrt{\sum^n_{i=1}(k\boldsymbol{x_{_i}})^2} \\
+= 
+\sqrt{\sum^n_{i=1}k^2\boldsymbol{x_{_i}}^2} \\
+= 
+\sqrt{k^2\sum^n_{i=1}\boldsymbol{x_{_i}}^2} \\
+= 
+k  \sqrt{\sum^n_{i=1}\boldsymbol{x_{_i}}^2} \\
+= 
+|k| \ \|\boldsymbol{x}\|
+$$
+
+
+
+
+
+## 内积
 
 
 

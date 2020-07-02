@@ -867,6 +867,12 @@ def extractPattern(strs, reg):
 
 
 
+```python
+ps_text_summary.replace("【】","")
+```
+
+
+
 两层括号展平
 
 ```
@@ -877,6 +883,14 @@ print( re.compile(r'(【[^】]*?)(【[^】]*?】)([^【]*?】)(.*?\n)').sub(r'\1
 
 
 ```
+
+notlr = r"([^【^】]*?)" # 非左非右，最短匹配
+
+left = r'(【[^】]*?)'
+midle = r'(【[^】]*?】)'
+right = r'([^【]*?】)'
+end = r'(.*?\n)'
+
 # 注意依赖顺序，注释掉前面后面就可能不正确
 # not perfect but can use
 ps2 = [
@@ -1020,6 +1034,10 @@ print str[:-5:-3] #逆序截取，具体啥意思没搞明白？
 ```
 
 
+
+### escape
+
+re. escape( )
 
 
 

@@ -41,10 +41,42 @@
 
 
 
+```
+ \left\langle ... \middle| ... \right\rangle
+```
+
+$ \left\langle ... \middle| ... \right\rangle$
+
+
+
 
 
 一个简单的办法：
 chrome打开知乎页面，按顺序 F12 - F1 - 在General 里面点选 Disable JavaScript。就可以复制了。
+
+
+
+## 二级下标
+
+
+
+向量的长度是向量与原点之间的欧式距离。 3 维乃至更高维向量的长度也是它们与原点之间的 欧氏距离一一各分量平方和的平方根。 
+
+
+$$
+length(\textbf{x}) = \sqrt{x_{_1}^2 + x_{_2}^2}
+$$
+
+
+
+向量的模定义为**与自身内积的平方根** ： 
+$$
+\|\boldsymbol{x}\| = \sqrt{\left < \boldsymbol{x},\boldsymbol{x} \right>} 
+= \sqrt{\sum^n_{i=1}\boldsymbol{x}_{_i}^2}
+$$
+
+
+
 
 
 
