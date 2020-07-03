@@ -14,7 +14,7 @@
 
 
 
-关于$x_1, x_2,\dots,x_n$ 的仿射函数(affine function)
+关于$x_1, x_2,\dots,x_n$ 的**仿射函数**(affine function)
 
 
 $$
@@ -131,7 +131,28 @@ $$
 c^2 = a^2+b^2-2ab \  cos\theta \\
 2ab \  cos\theta = 0 \quad \text{when $\theta=\frac{\pi}{2}, cos\theta=0$}
 $$
-> $cos\theta = \frac{斜边的投影}{斜边}$, 180度的时侯斜边无限长
+> $cos\theta = \frac{斜边的投影}{斜边}$, 90度的时侯斜边的投影是0
+
+
+
+### 向量的内积定义为各分量的乘积和
+
+
+$$
+\left< x,y \right> = \sum_{i=1}^n x_i y_i
+$$
+
+### 内积是模长乘积再乘夹角余弦
+
+$$
+\left< x,y \right> = \|\boldsymbol{x}\| \ \|\boldsymbol{y}\| \ cos \theta
+$$
+
+> 在更高维的情况下，向量的夹角反过来由这个式子定义
+
+
+
+#### 内积是0则向量正交
 
 
 
