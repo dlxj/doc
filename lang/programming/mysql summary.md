@@ -275,3 +275,757 @@ END
 
 
 
+## Backup
+
+
+
+
+
+/usr/local/mysql/bin/mysqldump -uksbao -pksbao_4321 -h rm-bp1lino8asl32m84c.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF --routines --opt -R  newmaindb_11 | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/ZC_HLXHSnewmaindb_11.sql
+
+ /usr/local/mysql/bin/mysql  -uksbao -pksbaotest -h 10.29.184.219 -P3306 zc_fc_ytmjnew_21 < /mntt/ksbao/ZC_FC_YTMJnewmaindb_21.sql
+
+/usr/local/mysql/bin/mysqldump -uksbao -pksbao_4321 -h rm-bp16n8v3p3vm3xp4h0o.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF --routines --opt -R  newmaindb_21 | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/ZC_FC_YTMJnewmaindb_21.sql
+
+/usr/local/mysql/bin/mysql  -uksbao -pksbaotest -h 10.29.184.219 -P3306  zc_hlxhs_ytmjnewmaindb_8 < /mntt/ksbao/ZC_HLXHS_YTMJnewmaindb_8.sql
+
+/usr/local/mysql/bin/mysqldump -uksbao -pksbao_4321 -h rm-bp1384s8oqe25n865bo.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF --routines  --opt -R  newmaindb_8 | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/ZC_HLXHS_YTMJnewmaindb_8.sql
+
+routines 
+
+wjwd
+
+--set-gtid-purged=OFF --routines --no-data  --opt -R
+
+/usr/local/mysql/bin/mysql  -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 jiakaodb < /mntt/ksbao/dzdb/wjwdb_20171031.sql
+
+/usr/local/mysql/bin/mysqldump -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF --routines --no-data --opt -R  wjwdb | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/dzdb/wjwdb_20171031.sql
+
+
+
+/usr/local/mysql/bin/mysql  -uksbao -pksbaotest -h  101.37.24.216 -P3306  stdt  < /mntt/ksbao/dzdb/standardized_training_db_20171028.sql
+
+/usr/local/mysql/bin/mysql  -uksbao -pksbaotest -h 101.37.24.216 -P3306 pbc < /mntt/ksbao/dzdb/ytpublicdb_20171028.sql
+
+/usr/local/mysql/bin/mysql  -uksbao -pksbaotest -h 101.37.24.216 -P3306  ytpublicdb2  < /mntt/ksbao/dzdb/ytpublicdb_20171028.sql
+
+/usr/local/mysql/bin/mysqldump -uksbao -pksbaotest -h 101.37.24.216 -P3306 --set-gtid-purged=OFF --routines --opt -R --no-data ytpublicdb | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/dzdb/ytpublicdb_20171028.sql
+
+/usr/local/mysql/bin/mysql  -uksbao -pksbaotest -h 101.37.24.216 -P3306  standardizedtrainingdb  < /mntt/ksbao/dzdb/standardized_training_db_20171028.sql
+
+/usr/local/mysql/bin/mysqldump -uksbao -pksbaotest -h  101.37.24.216 -P3306 --set-gtid-purged=OFF --routines --opt -R --no-data standardized_training_db | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/dzdb/standardized_training_db_20171028.sql
+
+/usr/local/mysql/bin/mysql  -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 jiakaodb < /mntt/ksbao/dzdb/wjwdb_20171027.sql
+
+/usr/local/mysql/bin/mysqldump -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF wjwdb | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/dzdb/wjwdb_20171027.sql
+
+GRANT ALL PRIVILEGES ON *.* TO root@61.234.53.146 IDENTIFIED BY 'adminroot' WITH GRANT OPTION;
+
+ /usr/local/mysql/bin/mysqldump  -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF wjwdzdb2 | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/dzdb/wjwdzdb2_20170606.sql
+
+ /usr/local/mysql/bin/mysqldump  -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 --set-gtid-purged=OFF newmaindb | perl -pe 's/DEFINER=`.+?\ /\ /' > /mntt/ksbao/dzdb/newmaindb_20170512.sql
+
+ /usr/local/mysql/bin/mysql  -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 freemaindb < /mntt/ksbao/dzdb/newmaindb_20170512.sql
+
+/usr/local/mysql/bin/mysql  -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 \
+
+wjwdb < /mntt/ksbao/dzdb/wjwdzdb2_20170428.sql
+
+./mysqldump -uroot -proot -h 127.0.0.1 -P3306 \
+
+--set-gtid-purged=OFF --routines  --opt -R  --no-data wjwdzdb2 \
+
+\> /mntt/ksbao/wjwdzdb2_20170412.sql
+
+newtest
+
+./mysql -uksbao -pksbaotest  -h 101.37.24.216 -P3306 \
+
+ wjwdzdb2 < /mntt/ksbao/wjwdzdb2_20170412.sql
+
+定制版
+
+./mysql -uksbaosuper -pksbaosuper_4321 -h rm-bp1kdu4q0lq56lsqo.mysql.rds.aliyuncs.com -P3306 \
+
+ wjwdzdb2 < /mntt/ksbao/wjwdzdb2_20170412.sql
+
+./mysql -uroot -proot -h 127.0.0.1 -P3306 \
+
+wjwdzdb2 < /mntt/ksbao/wjwdzdb2_20170412.sql
+
+./mysqldump -uroot -proot -h 127.0.0.1 -P3306 \
+
+--set-gtid-purged=OFF --routines --no-data  --opt -R wjwdzdb2 \
+
+\> /mntt/ksbao/wjwdzdb2_20170408.sql
+
+./mysql -uroot -proot -h 127.0.0.1 -P3306 \
+
+ wjwdb < /mntt/ksbao/wjwdzdb2_20170408.sql
+
+./mysql -uksbao -pksbaotest  -h 101.37.24.216 -P3306 \
+
+wjwdb < /mntt/ksbao/wjwdzdb2_20170408.sql
+
+./mysql -uksbao -pksbaotest -h 101.37.24.216 -P3306  -uroot -pksbaotest  \
+
+newmaindb  < /mntt/ksbao/newmaindb20170511.sql
+
+./mysqldump -h rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com -P3306 -urootsuper -prootsuper4321 \
+
+--set-gtid-purged=OFF --routines --no-data  --opt -R newmaindb appidenames | perl -pe 's/DEFINER=`.+?\ /\ /' \
+
+\> /mntt/ksbao/newmaindb20170511.sql
+
+./mysql -h 101.37.24.216 -P3306 -uksbao -pksbaotest \
+
+wjwdb < /mntt/ksbao/newmaindb20170408.sql
+
+./mysql -h 101.37.24.216 -P3306 -uksbao -pksbaotest \
+
+ newmaindb  < /mntt/ksbao/newmaindb_app20170310.sql
+
+./mysql -uroot -proot -h 127.0.0.1 -P3306 newtmaindb </mntt/ksbao/newmaindb_app20170310.sql
+
+6.只导出表结构不导出数据，--no-data
+
+mysqldump -uroot -proot --no-data --databases db1 >/tmp/db1.sql
+
+./mysqldump -h rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com -P3306 -urootsuper -prootsuper4321 \
+
+--set-gtid-purged=OFF --no-data  --opt -R  newmaindb \
+
+\> /mntt/ksbao/newmaindb161107.sql 
+
+./mysql -uroot -proot -h 127.0.0.1 -P3306 wjwdzdb2 </mntt/ksbao/newmaindb161107.sql
+
+./mysqldump -h rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com -P3306 -urootsuper -prootsuper4321 \
+
+--set-gtid-purged=OFF newmaindb book bookandapp materialchapter knowledgepoint knowledgeandtest \
+
+\> /mntt/ksbao/knowledgepoint20160829.sql 
+
+./mysqldump -uroot -proot -h 127.0.0.1 -P3306 \
+
+--set-gtid-purged=OFF newtmaindb book bookandapp materialchapter knowledgepoint knowledgeandtest \
+
+\> /mntt/ksbao/knowledgepoint_newt_20160829.sql
+
+./mysql -uroot -proot -h 127.0.0.1 -P3306 newtmaindb < /mntt/ksbao/knowledgepoint20160829.sql
+
+./mysqldump -uroot -proot -h 127.0.0.1 -P3306  --routines --set-gtid-purged=OFF \
+
+niukedb >/mntt/ksbao/niukedb20160804.sql 
+
+./mysql -uroot -proot -h 127.0.0.1 -P3306  \
+
+nursenotedb </mntt/ksbao/niukedb20160804.sql
+
+nursenotedb
+
+insert into discussion(AppID,UserID,AllTestID,ChildTableID,Type,CreateTime,ReplyToID,CommendCount,Content )
+
+select AppID,UserID,AllTestID,ChildTableID,Type,CreateTime,ReplyToID,CommendCount,Content from discussion_nt;
+
+//
+
+/* Affected rows: 2,411,299 已找到记录: 0 警告: 0 持续时间 1 query: 32.433 sec. */
+
+insert into discussion_backup(AppID,UserID,AllTestID,ChildTableID,Type,CreateTime,ReplyToID,CommendCount,Content )
+
+select AppID,UserID,AllTestID,ChildTableID,Type,CreateTime,ReplyToID,CommendCount,Content from discussion_nt;
+
+./mysql -h rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com -P3306 -urootsuper -prootsuper4321
+
+./mysqldump -h 115.29.210.3 -P3307 -urootsuper -prootsuper4321  --set-gtid-purged=OFF \
+
+community discussion_note > /mntt/ksbao/discussion_note160526.sql
+
+./mysql -h rds4j9p1t26e20v63859.mysql.rds.aliyuncs.com -P3306 -urootsuper2 -prootsuper24321 \
+
+community < /mntt/ksbao/discussion_note160526.sql
+
+ 
+
+GRANT ALL PRIVILEGES ON *.* TO root@100.98.254.80 IDENTIFIED BY 'adminroot' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO rootsuper2@10.161.211.35 IDENTIFIED BY 'rootsuper24321' WITH GRANT OPTION;
+
+./mysql -h rds4j9p1t26e20v63859.mysql.rds.aliyuncs.com  -P3306 -urootsuper2 -prootsuper24321
+
+./mysql -h sub1459349088195-rds4j9p1t26e20v63859.mysql.rds.aliyuncs.com -P3306 -urootsuper2 -prootsuper24321
+
+delete g.* from userexamgather g inner join (select appid, userid from vip where appid=22 and EndTime < '2016-01-01') v on g.AppID=22 and g.AppID = v.AppID and g.UserID = v.UserID;
+
+select count(*) from userexamgather g inner join (select appid, userid from vip where appid=343 and EndTime < '2016-01-01') v on g.AppID=343 and g.AppID = v.AppID and g.UserID = v.UserID;
+
+book
+
+bookandapp
+
+knowledgepoint
+
+knowledge
+
+materialchapter
+
+app
+
+./mysqldump -h 115.29.210.3 -P3307 -uadminroot -p --set-gtid-purged=OFF \
+
+newmaindb app vip users > /mntt/ksbao/newapp160322.sql
+
+mysql  -usuper -psuper -h 192.168.0.23 userexamgatheranalysis < newapp160322.sql
+
+./mysql -h 115.29.210.3 -P3306 -urootsuper -prootsuper4321 newtmaindb < /mntt/ksbao/newapp160314.sql
+
+./mysq  -h 115.29.210.3 -P3307 -urootsuper -prootsuper4321 newmaindb  < /mntt/ksbao/knowledgepoint160414.sql
+
+sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/ ' /mntt/ksbao/knowledgepoint160414.sql > /mntt/ksbao/knowledgepoint1604144.sql
+
+awk '{ if (index($0,"GTID_PURGED")) { getline; while (length($0) > 0) { getline; } } else { print $0 } }'  /mntt/ksbao/knowledgepoint1604144.sql | grep -iv 'set @@' >/mntt/ksbao/knowledgepoint16041444.sql
+
+./mysqldump -h 115.29.210.3 -P3306 -urootsuper -prootsuper4321 --set-gtid-purged=OFF  newtmaindb knowledgepoint  materialchapter  > /mntt/ksbao/knowledgepoint160414.sql
+
+./mysqldump -h 115.29.210.3 -P3306 -urootsuper -prootsuper4321 --set-gtid-purged=OFF  --opt -R newtmaindb book bookandapp knowledgepoint knowledge materialchapter app > /mntt/ksbao/knowledgepoint20160225.sql
+
+./mysql -h 115.29.210.3 -P3306 -urootsuper -prootsuper4321 knowledgepoint < /mntt/ksbao/knowledgepoint20160225.sql
+
+
+
+./mysql -uroot -p  newdb2 < newmaindb.sql
+
+
+
+./mysqldump -uroot -p  newmaindb userexamgather > /root/newmaindb_userexamgather150819.sql
+
+insert into newmaindb2. userexamgather (select * from newmaindb.userexamgather)
+
+
+
+
+
+```
+insert into newytmaindb.users (select * from newymaindb.users)
+```
+
+
+
+
+
+115.29.210.3
+
+115.29.210.3
+
+115.29.210.3
+
+115.29.210.3
+
+curl  -o hins534293_xtra_20150708012023.tar.gz --limit-rate 1M Http://rdsbak-hzf.oss-cn-hangzhou-f-internal.aliyuncs.com/custins340149/hins534293_xtra_20150708012023.tar.gz?OSSAccessKeyId=c9gzsqpauj3duw5whwdv40hb&Expires=1436606855&Signature=9b1GCeOECZzhGnoSI%2Fl6LPd50q8%3D
+
+
+
+mysqldump -uroot  --routines # 存储过程一起dump
+
+
+
+login
+
+   ./mysql -uroot -p -h 127.0.0.1
+
+  ./mysql -urootsuper -p -h 10.140.47.156
+
+PING rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com (10.140.47.156) 56(84) bytes of data.
+
+   
+
+backup
+
+   ./mysqldump -uroot -proot  -h 127.0.0.1 test >~/test.sql
+
+   ./mysqldump -uroot -p115135root  -h 127.0.0.1  newmaindb>~/newmaindb140724.sql
+
+   ./mysqldump -uroot -p  maindb> /mnt/ksbao/maindb140821.sql 
+
+   ./mysqldump -uroot -p  newmaindb> /mntt/ksbao/newmaindb141009.sql
+
+​    ./mysqldump -uroot -p newytmaindb> /mntt/ksbao/newytmaindb1411110800.sql
+
+​     ./mysqldump -uroot -p newtmaindb> /mntt/ksbao/newtmaindb1411111532.sql
+
+​     ./mysqldump -uroot -p useractionanalysis> /mntt/ksbao/useractionanalysis1411121824.sql
+
+​     ./mysqldump -uroot -p  newytmaindb> /mntt/ksbao/newytmaindb1411211702.sql
+
+  ./mysqldump -uroot -p  zhongxindb> /mntt/ksbao/zhongxindb1412010821.sql
+
+  ./mysqldump -uroot -p  tbsmaindb> /mntt/ksbao/tbsmaindb1412030837.sql
+
+  ./mysqldump -uroot -p newtmaindb> /mntt/ksbao/newtmaindb1412040904.sql
+
+ ./mysqldump -uroot -p  newmaindb> /mntt/ksbao/newmaindb1412111506.sql
+
+  ./mysqldump -uroot -p  newmaindb> /mntt/ksbao/newmaindb1412180907.sql
+
+ ./mysqldump -uroot -p newtmaindb> /mntt/ksbao/newtmaindb141226.sql
+
+  ./mysqldump -uroot -p  newmaindb> /mntt/ksbao/newmaindb1501041854.sql
+
+  ./mysqldump -uroot -p  newmaindb> /mntt/ksbao/newmaindb1502041435.sql
+
+  ./mysqldump -uroot -p tbsmaindb> /mntt/ksbao/tbsmaindb150318.sql
+
+ ./mysqldump -uroot -p db789> /mntt/ksbao/db789150330.sql
+
+./mysql -urootsuper -p -h 10.140.47.156 newtmaindb > /mntt/ksbao/newtmaindb150408.sql 
+
+./mysql -urootsuper -p -h 10.140.47.156 newmaindb > /mntt/ksbao/newmaindb150408.sql 
+
+
+
+rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com
+
+3306
+
+ 
+
+./mysql -h rdsazm0i3pizuq6t9dgad.mysql.rds.aliyuncs.com -u rootsuper -p newtmaindb < /mntt/ksbao/db789150330.sql
+
+ 
+
+ ./mysqldump -uroot -p  --routines newdb> /mntt/ksbao/newdb150423.sql
+
+ ./mysql -uroot -p  schooldb < /mntt/ksbao/newdb150423.sql
+
+ ./mysql -uroot -p  newtmaindb < /mntt/ksbao/newdb150423.sql
+
+./mysqldump -uroot -p  newtmaindb users vip viplog userorder > /mntt/ksbao/newtmaindb-users-vip-viplog-userorder150603.sql
+
+./mysql -uroot -p newtmaindb < /mntt/ksbao/newtmaindb-users-vip-viplog-userorder150603.sql
+
+./mysqldump -h 115.29.210.3 -P3307 -uadminroot -p  --set-gtid-purged=OFF newtmaindb users vip viplog userorder vipassistant > /mntt/ksbao/newtmaindb-users-vip-viplog-userorder-vipassistant150603.sql
+
+mysqldump -usuper -p -h 169.254.197.92 newexamsystem >C:\rds\newexamsystem151019.sql
+
+mysqldump -usuper -p -h 169.254.197.92 newexamsystem >C:\rds\newexamsourcedb151019.sql
+
+ ./mysqldump -uroot -padminroot -h 127.0.0.1 --opt -R sipinmaindb > /mntt/ksbao/sipinmaindb151214.sql 
+
+ ./mysql -uroot -padminroot -h 127.0.0.1 sipinmaindbt < /mntt/ksbao/sipinmaindb151214.sql 
+
+ mysqldump -uroot -proot -h YT-WinSer08-23 --opt -R newexamsourcedb4 > /mntt/ksbao/newexamsourcedb4151216.sql 
+
+mysql -usuper -psuper654321 -h iZ23o4w751sZ  newexamsourcedb < E:\upload\newexamsourcedb4151216.sql
+
+cd /usr/bin && \
+
+./mysqldump -h 115.29.210.3 -P3307 -uadminroot -p --set-gtid-purged=OFF \
+
+newmaindb users vip viplog userorder vipassistant examgather > \
+
+/home/ubt/rds/newmaindb-users-vip-viplog-userorder-vipassistant-examgather$(date +\%Y-\%m-\%d-\%H-\%M-\%S).sql && \
+
+echo '##### backup task done.'
+
+ 
+
+backupdb
+
+20 * * * * /home/ubt/sh/backup.sh >/dev/null 2>&1
+
+ 
+
+crontab backupdb
+
+ 
+
+crontab -l
+
+crontab -e
+
+crontab -r
+
+/etc/init.d/cron restart
+
+windows
+
+@echo off
+
+cd C:/mysql-5.6.25-winx64/bin
+
+set "curdate=%date:~0,4%%date:~5,2%%date:~8,2%"
+
+for /f "tokens=1-3 delims=.: " %%1 in ("%time%") do set curtime=%%1%%2%%3
+
+set "datetime=%curdate%-%curtime%"
+
+set "fname=newtmaindb-users-vip-viplog-userorder-vipassistant-examgather%datetime%.sql"
+
+set "path=c:/rds/%fname%"
+
+mysqldump -h 115.29.210.3 -P3307 -uadminroot -p --set-gtid-purged=OFF ^
+
+newtmaindb users vip viplog userorder > %path% && ^
+
+echo ##### backup task done. && ^
+
+echo ##### importing backup to local mysql ... && ^
+
+mysql -uroot -proot newtmaindb < %path% && ^
+
+echo ##### import backup succeess
+
+pause
+
+**mysql_config_editor set --login-path=loginpath133 --user=root --host=127.0.0.1 --password**
+
+**mysql_config_editor set --login-path=loginpath3 --user=adminroot --host=115.29.210.3 -P3307 --password**
+
+**mysql_config_editor set --login-path=loginpath3-3306 --user=root --host=115.29.210.3 -P3306 --password**
+
+**mysql --login-path=loginpath3-3306**
+
+**121.40.239.133**
+
+@echo off
+
+cd C:/mysql-5.6.25-winx64/bin
+
+set "curdate=%date:~0,4%%date:~5,2%%date:~8,2%"
+
+for /f "tokens=1-3 delims=.: " %%1 in ("%time%") do set curtime=%%1%%2%%3
+
+set "datetime=%curdate%-%curtime%"
+
+set "fname=newtmaindb-users-vip-viplog-userorder-vipassistant-examgather%datetime%.sql"
+
+set "path=c:/rds/%fname%"
+
+mysqldump --login-path=loginpath3 --set-gtid-purged=OFF ^
+
+newtmaindb users vip viplog userorder > %path% && ^
+
+echo ##### backup task done. && ^
+
+echo ##### importing backup to local mysql ... && ^
+
+mysql --login-path=loginpath133 newtmaindb < %path% && ^
+
+echo ##### import backup succeess
+
+pause
+
+
+
+revert
+
+   ./mysql -uroot -proot  -h 127.0.0.1 test2 <~/test.sql
+
+./mysql -uroot -padminroot  maindbcolone< ~/maindbcolone.sql
+
+   ./mysql -uroot -p zhongxindb <~/mntt/ksbao/
+
+ ./mysql -uroot -p maindb8011< /mntt/ksbao/maindb140925.sql
+
+./mysql -uroot -p  tbsmaindb< /mntt/ksbao/newtmaindb1411111532.sql
+
+ ./mysql -uroot -p newytmaindb< /mntt/ksbao/newytmaindb1411110800.sql
+
+./mysql -uroot -p useractionanalysis< /mntt/ksbao/useractionanalysis1411121824.sql
+
+./mysql -uroot -p  zhongxindb< /mntt/ksbao/zhongxindb1411101652.sql
+
+ ./mysql -uroot -p newmaindb< /mntt/ksbao/newytmaindb1411211702.sql
+
+./mysql -uroot -p  zhongxindb141202< /mntt/ksbao/zhongxindb1412010821.sql
+
+  ./mysql -uroot -p  tbsmaindb< /mntt/ksbao/tbsmaindb1412030837.sql
+
+  ./mysql -uroot -p newtmaindb< /mntt/ksbao/newtmaindb1412040904.sql
+
+  ./mysql -uroot -p newtmaindb </root/dbbackup141111/newytmaindb1411110800.sql
+ ./mysql -uroot -p xinkedb< /mntt/ksbao/newtmaindb141226.sql
+
+ ./mysql -uroot -p newdb< /mntt/ksbao/newmaindb1502041435.sql
+
+
+
+```
+$ mysqldump yourFirstDatabase -u user -ppassword > yourDatabase.sql$ mysql yourSecondDatabase -u user -ppassword < yourDatabase.sql
+```
+
+
+
+backup database
+
+   ./mysqldump -uroot -proot --all-databases >~/sql.sql
+
+
+
+
+
+windows
+
+   backup
+
+​     mysqldump -uroot -proot -h YT-WinSer08-23  tt >sql.sql
+
+   reverse
+
+​     mysql -uroot -proot -h YT-WinSer08-23  tt2 <sql.sql
+
+​     mysql -uroot -proot -h YT-WinSer08-23  newmaindb140724 < newmaindb140724.sql
+
+​     mysql -uroot -proot -h YT-WinSer08-23  newmaindb140806 < newmaindb140806.sql
+
+
+
+ubuntu
+
+./mysqldump -uroot -proot --all-databases >~/sql.sql
+
+./mysqldump -uroot -proot  test >~/test.sql
+
+./mysqldump -uroot -proot  -h 127.0.0.1 test >~/test.sql
+
+
+
+还原
+
+mysql -uroot -proot -h YT-WinSer08-23 maindb < sql.sql
+
+
+
+
+
+\-----------
+
+```
+mysqldump -h [server] -u [user] -p[password] db1 | mysql -h [server] -u [user] -p[password] db2
+```
+
+Note: There is NO space between `-p` and `[password]`
+
+\-----------
+
+
+
+
+
+备份
+
+mysqldump -uroot -proot -h YT-WinSer08-23 maindb >maindb23.sql
+
+
+
+
+
+还原
+
+mysql -uroot -proot -h YT-WinSer08-23  maindbcolone <maindb23.sql
+
+mysql -uroot -proot -h YT-WinSer08-23  newdb140717 <newdb140717.sql
+
+
+
+**备份MySQL数据库的命令**
+
+mysqldump -hhostname -uusername -ppassword databasename > backupfile.sql
+
+**备份MySQL数据库为带删除表的格式**
+
+备份MySQL数据库为带删除表的格式，能够让该备份覆盖已有数据库而不需要手动删除原有数据库。
+
+mysqldump -–add-drop-table -uusername -ppassword databasename > backupfile.sql
+
+**直接将MySQL数据库压缩备份**
+
+mysqldump -hhostname -uusername -ppassword databasename | gzip > backupfile.sql.gz
+
+**备份MySQL数据库某个(些)表**
+
+mysqldump -hhostname -uusername -ppassword databasename specific_table1 specific_table2 > backupfile.sql
+
+**同时备份多个MySQL数据库**
+
+mysqldump -hhostname -uusername -ppassword –databases databasename1 databasename2 databasename3 > multibackupfile.sql
+
+**仅仅备份数据库结构**
+
+mysqldump –no-data –databases databasename1 databasename2 databasename3 > structurebackupfile.sql
+
+**备份服务器上所有数据库**
+
+mysqldump –all-databases > allbackupfile.sql
+
+**还原MySQL数据库的命令**
+
+mysql -hhostname -uusername -ppassword databasename < backupfile.sql
+
+**还原压缩的MySQL数据库**
+
+gunzip < backupfile.sql.gz | mysql -uusername -ppassword databasename
+
+**将数据库转移到新服务器**
+
+mysqldump -uusername -ppassword databasename | mysql –host=*.*.*.* -C databasename
+
+
+
+
+
+
+
+
+
+# [mysql备份与还原](http://www.cnblogs.com/Cherie/p/3309456.html)
+
+## 一、备份常用操作基本命令
+
+1、备份命令mysqldump格式
+
+  格式：mysqldump -h主机名 -P端口 -u用户名 -p密码 –database 数据库名 > 文件名.sql 
+
+2、备份MySQL数据库为带删除表的格式
+
+备份MySQL数据库为带删除表的格式，能够让该备份覆盖已有数据库而不需要手动删除原有数据库。
+
+mysqldump --add-drop-table -uusername -ppassword -database databasename > backupfile.sql
+
+3、直接将MySQL数据库压缩备份
+
+mysqldump -hhostname -uusername -ppassword -database databasename | gzip > backupfile.sql.gz
+
+4、备份MySQL数据库某个(些)表
+
+mysqldump -hhostname -uusername -ppassword databasename specific_table1 specific_table2 > backupfile.sql
+
+5、同时备份多个MySQL数据库
+
+mysqldump -hhostname -uusername -ppassword –databases databasename1 databasename2 databasename3 > multibackupfile.sql仅仅备6、仅备份份数据库结构
+
+mysqldump –no-data –databases databasename1 databasename2 databasename3 > structurebackupfile.sql
+
+7、备份服务器上所有数据库
+
+mysqldump –all-databases > allbackupfile.sql
+
+8、还原MySQL数据库的命令
+
+mysql -hhostname -uusername -ppassword databasename < backupfile.sql
+
+9、还原压缩的MySQL数据库
+
+gunzip < backupfile.sql.gz | mysql -uusername -ppassword databasename
+
+10、将数据库转移到新服务器
+
+mysqldump -uusername -ppassword databasename | mysql –host=*.*.*.* -C databasename
+
+11、--master-data 和--single-transaction
+
+  在mysqldump中使用--master-data=2，会记录binlog文件和position的信息 。--single-transaction会将隔离级别设置成repeatable-commited
+
+12、导入数据库
+
+常用source命令，用use进入到某个数据库，mysql>source d:\test.sql，后面的参数为脚本文件。
+
+13、查看binlog日志
+
+查看binlog日志可用用命令 mysqlbinlog binlog日志名称|more
+
+ 
+
+14、general_log
+
+General_log记录数据库的任何操作，查看general_log 的状态和位置可以用命令show variables like "general_log%" ,开启general_log可以用命令set global general_log=on
+
+## 二、增量备份
+
+小量的数据库可以每天进行完整备份，因为这也用不了多少时间，但当数据库很大时，就不太可能每天进行一次完整备份了，这时候就可以使用增量备份。增量备份的原理就是使用了[mysql](http://www.centos.bz/category/mysql/)的binlog志。
+
+ 
+
+1、首先做一次完整备份：
+
+mysqldump -h10.6.208.183 -utest2 -p123 -P3310 --single-transaction --master-data=2 test>test.sql这时候就会得到一个全备文件test.sql
+
+在sql文件中我们会看到：
+-- CHANGE MASTER TO MASTER_LOG_FILE='bin-log.000002', MASTER_LOG_POS=107;是指备份后所有的更改将会保存到bin-log.000002二进制文件中。
+2、在test库的t_student表中增加两条记录，然后执行flush logs命令。这时将会产生一个新的二进制日志文件bin-log.000003，bin-log.000002则保存了全备过后的所有更改，既增加记录的操作也保存在了bin-log.00002中。
+
+3、再在test库中的a表中增加两条记录，然后误删除t_student表和a表。a中增加记录的操作和删除表a和t_student的操作都记录在bin-log.000003中。
+
+ 
+
+## 三、恢复
+
+1、首先导入全备数据
+
+mysql -h10.6.208.183 -utest2 -p123 -P3310 < test.sql，也可以直接在mysql命令行下面用source导入
+
+2、恢复bin-log.000002
+
+  mysqlbinlog bin-log.000002 |mysql -h10.6.208.183 -utest2 -p123 -P3310 
+
+3、恢复部分 bin-log.000003
+
+  在general_log中找到误删除的时间点，然后更加对应的时间点到bin-log.000003中找到相应的position点，需要恢复到误删除的前面一个position点。
+
+可以用如下参数来控制binlog的区间
+
+--start-position 开始点 --stop-position 结束点
+
+--start-date 开始时间 --stop-date 结束时间
+
+找到恢复点后，既可以开始恢复。
+
+ mysqlbinlog mysql-bin.000003 --stop-position=208 |mysql -h10.6.208.183 -utest2 -p123 -P3310 
+
+
+
+
+
+
+
+\3. 先停止业务，使用MySQLdump的数据导出工具，将原有数据库数据导出为数据文件。例如：
+
+mysqldump -h cloudcc.mysql.aliyun.com -u user_name -p --opt
+
+--default-character-set=utf8 --extended-insert=false --triggers
+
+--hex-blob db_name > /tmp/db_name.sql
+
+其中user_name以您真实的数据库用户代替 db_name以您真实的数据库名代替。 /tmp/db_name.sql是文件名，由您自己随意填写。
+
+\4. 将数据文件使用ftp工具上传到已经购买的云服务器中。
+
+\5. 远程登录到云服务器，将刚才上传的数据文件导入到example.mysql.aliyun.com：3306中。例如：
+
+mysql -h cloudcc.mysql.aliyun.com -u user_name -p db_name <
+
+/tmp/db_name.sql
+
+数据迁移完毕，可以对RDS正常使用。用户可使用数据库客户端工具（如MySQL-Front）或第三方数据库管理工具(如phpmyadmin)以及程序的方式，通过域名和端口号连接数据库，在输入正确的用户名和密码后即可登陆DB进行操作和开发。
+
+
+
+来源： <http://blog.csdn.net/jk0803_wantao/article/details/9179217>
+
+ 
+
+# 用mysqldump备份和恢复指定表的方法
+
+代码如下:
+mysqldump -u user -p db tab1 tab2 > db.sql 
+ 
+
+恢复 
+复制代码代码如下:
+mysql -u user -p db < db.sql 
+
+备份整个数据库   -->   mysqldump db1 >/backup/db1.20060725  
+压缩备份       -->   mysqldump db1 | gzip >/backup/db1.20060725 
+分表备份       -->   mysqldump db1 tab1 tab2 >/backup/db1_tab1_tab2.sql 
+直接远程备份    -->  mysqladmin -h boa.snake.net create db1 
+              -->   mysqldump db1 | mysql -h boa.snake.net db1 
