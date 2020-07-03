@@ -2,6 +2,44 @@
 
 [TOC]
 
+# install mysql
+
+
+
+```
+sudo apt purge mysql-*
+
+rm -rf /etc/mysql
+rm -rf /var/lib/mysql
+
+```
+
+
+
+```
+shell> groupadd mysql
+shell> useradd -r -g mysql mysql
+shell> cd /usr/local
+shell> tar zxvf /path/to/mysql-VERSION-OS.tar.gz
+shell> ln -s full-path-to-mysql-VERSION-OS mysql
+shell> cd mysql
+shell> chown -R mysql .
+shell> chgrp -R mysql .
+apt-get install libaio1 libaio-dev
+./mysql_install_db --user=mysql --defaults-file=/usr/local/mysql/my.cnf --datadir=/mntt/echodict/mysqldata/
+
+
+
+```
+
+
+
+
+
+/etc/my.cnf, /etc/mysql/my.cnf, /usr/local/etc/my.cnf, ~/.my.cnf 这些就是mysql默认会搜寻my.cnf的目录，顺序排前的优先
+
+
+
 
 
 # Create
