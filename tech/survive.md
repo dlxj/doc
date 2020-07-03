@@ -596,6 +596,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
 >
+> [EPWING format](https://github.com/qunwang6/epwing.rs)
+>
+> - Currently not supported: Images, **sound** and video
+>
 > [Goldendict 支持epwing可导出词头]()
 >
 > ([bob Mac开源取词翻译](https://github.com/ripperhe/Bob)  )
