@@ -178,11 +178,17 @@ $$
 
 
 
-2 维空间中与非零向量内积相同的点构成垂直于该向量的直线 
+**2 维空间中与非零向量内积相同的点构成垂直于该向量的直线** 
 
 $$\|\boldsymbol{x_{_a}}\|cos\theta=\frac{\left<\boldsymbol{x_{_a}},\boldsymbol{w}\right>}{\|\boldsymbol{w}\|}$$  and  $$\|\boldsymbol{x_{_b}}\|cos\theta=\frac{\left<\boldsymbol{x_{_b}},\boldsymbol{w}\right>}{\|\boldsymbol{w}\|}$$
 
 
+
+**3 维空间中与非零向量内积相同的点构成垂直于该向量的平面** 
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200706085636145.png" alt="image-20200706085636145" style="zoom:50%;" />
 
 
 
@@ -247,6 +253,12 @@ $$\|\boldsymbol{x_{_a}}\|cos\theta=\frac{\left<\boldsymbol{x_{_a}},\boldsymbol{w
 仿射函数是线性函数加上一个常量 b 
 
 仿射函数是一类最简单的函数，它的图像在自变量为 1 维的情况下是直线，在自变量为 2 维 的情况下是平面，在更高维情况下是高维超平面。超平面在任意位置的性质都相同，例如 2 维平面任意位置的朝向和倾斜程度都相同。 
+
+
+
+
+
+
 
 
 
