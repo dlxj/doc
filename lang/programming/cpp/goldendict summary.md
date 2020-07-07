@@ -1,5 +1,20 @@
 
 
+
+
+```c++
+epwing.cc
+EpwingDictionary::EpwingDictionary( string const & id,
+                                    string const & indexFile,
+                                    vector< string > const & dictionaryFiles,
+                                    int subBook ):
+  BtreeDictionary( id, dictionaryFiles )
+```
+
+
+
+
+
 ![image-20200707101205887](goldendict summary.assets/image-20200707101205887.png)
 
 ![image-20200707101603370](goldendict summary.assets/image-20200707101603370.png)
