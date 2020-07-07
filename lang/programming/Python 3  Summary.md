@@ -1313,6 +1313,34 @@ print (dbc.connection)
 
 
 ```python
+import sys
+import os
+
+# Version 1.0
+# 需要配合 EBWin4 使用，词典分组需要设置好
+
+
+def output(o):
+    fullstr = '<meta charset="utf-8">'
+    for l in o:
+        fullstr += l
+    # print(fullstr)
+    sys.stdout.buffer.write(fullstr.encode('utf-8'))
+
+
+s = sys.argv[1].strip()
+# s = "organon"
+
+result = os.popen(
+    '"C:\Program Files (x86)\EBWin4\ebwinc.exe" /G=KL /C=1 /O=h ' + s).readlines()
+output(result)
+```
+
+
+
+
+
+```python
 # encoding=utf-8
 # 使用 coding: utf-8 设置中文编码只在 Python 3 有效
 import networkx as nx
