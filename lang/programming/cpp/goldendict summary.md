@@ -6,6 +6,27 @@ D:\workcode\cpp\goldendict\build>D:\Qt\4.8.7\bin\moc.exe -o "D:\workcode\cpp\gol
 
 
 
+linux .o,.a,.so
+        .o,是目标文件,相当于windows中的.obj文件 
+
+　　.so 为共享库,是shared object,用于动态连接的,相当于windows下的dll 
+
+　　.a为静态库,是好多个.o合在一起,用于静态连接 
+
+
+
+```
+
+LoadDictionaries::LoadDictionaries( Config::Class const & cfg )
+cfg.path = "E:\\GoldenDict\\content\\NHK";
+
+/// A list of paths where to search for the dictionaries
+typedef QVector< Path > Paths;
+
+nameFilters QStringList
+["*catalogs"]
+```
+
 
 
 
@@ -96,6 +117,9 @@ user32.lib
 
 loaddictionaries.cc
 
+   for( Config::Paths::const_iterator i = paths.begin(); i != paths.end(); ++i )
+      handlePath( *i );
+    
     void LoadDictionaries::handlePath( Config::Path const & path )
     
     vector< sptr< Dictionary::Class > > epwingDictionaries =
