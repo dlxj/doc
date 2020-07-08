@@ -93,7 +93,25 @@ user32.lib
 
 
 ```c++
+
+loaddictionaries.cc
+
+    void LoadDictionaries::handlePath( Config::Path const & path )
+    
+    vector< sptr< Dictionary::Class > > epwingDictionaries =
+      Epwing::makeDictionaries( allFiles, FsEncoding::encode( Config::getIndexDir() ), *this );
+
+    dictionaries.insert( dictionaries.end(), epwingDictionaries.begin(),
+                         epwingDictionaries.end() );    
+    
 epwing.cc
+    
+vector< sptr< Dictionary::Class > > makeDictionaries(
+                                      vector< string > const & fileNames,
+                                      string const & indicesDir,
+                                      Dictionary::Initializing & initializing )
+
+    
 EpwingDictionary::EpwingDictionary( string const & id,
                                     string const & indexFile,
                                     vector< string > const & dictionaryFiles,
