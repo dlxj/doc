@@ -1,0 +1,282 @@
+Microsoft (R) COFF/PE Dumper Version 14.26.28806.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file libeb-16.dll
+
+File Type: DLL
+
+  Section contains the following exports for libeb-16.dll
+
+    00000000 characteristics
+           0 time date stamp
+        0.00 version
+           1 ordinal base
+         245 number of functions
+         245 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001D81 eb_appendix_path
+          2    1 000028FA eb_appendix_subbook
+          3    2 000029A7 eb_appendix_subbook_directory
+          4    3 00002A59 eb_appendix_subbook_directory2
+          5    4 00002822 eb_appendix_subbook_list
+          6    5 0000F743 eb_backward_narrow_alt_character
+          7    6 00010F84 eb_backward_narrow_font_character
+          8    7 00014205 eb_backward_text
+          9    8 0001CA71 eb_backward_wide_alt_character
+         10    9 0001E2B0 eb_backward_wide_font_character
+         11    A 00003004 eb_bcd2
+         12    B 00003071 eb_bcd4
+         13    C 00003144 eb_bcd6
+         14    D 00007423 eb_bind
+         15    E 0000175D eb_bind_appendix
+         16    F 00008B7D eb_bind_booklist
+         17   10 00006B16 eb_bitmap_to_bmp
+         18   11 00006644 eb_bitmap_to_gif
+         19   12 0000700F eb_bitmap_to_png
+         20   13 00005E54 eb_bitmap_to_xbm
+         21   14 0000614E eb_bitmap_to_xpm
+         22   15 00008BEE eb_booklist_add_book
+         23   16 00008DD1 eb_booklist_book_count
+         24   17 00008E72 eb_booklist_book_name
+         25   18 00008F4F eb_booklist_book_title
+         26   19 0000A111 eb_canonicalize_file_name
+         27   1A 00009CFC eb_canonicalize_path_name
+         28   1B 000089CF eb_character_code
+         29   1C 0000ADF1 eb_compose_movie_file_name
+         30   1D 0000AEEC eb_compose_movie_path_name
+         31   1E 0000A989 eb_compose_path_name
+         32   1F 0000AAEC eb_compose_path_name2
+         33   20 0000AC64 eb_compose_path_name3
+         34   21 000090BA eb_copyright
+         35   22 00013E66 eb_current_candidate
+         36   23 0000B027 eb_decompose_movie_file_name
+         37   24 00034680 eb_default_hookset
+         38   25 0000CACA eb_disable_log
+         39   26 00008925 eb_disc_type
+         40   27 0000CAAA eb_enable_log
+         41   28 00009969 eb_error_message
+         42   29 0000993C eb_error_string
+         43   2A 0000CEE9 eb_exact_match_word_jis
+         44   2B 0000D633 eb_exact_match_word_kana_group
+         45   2C 0000D7DC eb_exact_match_word_kana_single
+         46   2D 0000D0EA eb_exact_match_word_latin
+         47   2E 0000CFEC eb_exact_pre_match_word_jis
+         48   2F 0000D1FA eb_exact_pre_match_word_latin
+         49   30 000015EF eb_finalize_alt_caches
+         50   31 00001697 eb_finalize_appendix
+         51   32 00001F29 eb_finalize_appendix_subbooks
+         52   33 000032D8 eb_finalize_binary_context
+         53   34 00007690 eb_finalize_book
+         54   35 00008ACC eb_finalize_booklist
+         55   36 0000B626 eb_finalize_fonts
+         56   37 0000C1F6 eb_finalize_hookset
+         57   38 0000959E eb_finalize_library
+         58   39 00014ADA eb_finalize_search
+         59   3A 000149D7 eb_finalize_search_contexts
+         60   3B 00014C68 eb_finalize_searches
+         61   3C 0001A168 eb_finalize_subbooks
+         62   3D 000112B5 eb_finalize_text_context
+         63   3E 0000A5BE eb_find_file_name
+         64   3F 0000A8FC eb_find_file_name2
+         65   40 0000A93F eb_find_file_name3
+         66   41 0000A1EA eb_fix_directory_name
+         67   42 0000A35C eb_fix_directory_name2
+         68   43 0000A398 eb_fix_path_name_suffix
+         69   44 0000B714 eb_font
+         70   45 0000BF3C eb_font_height
+         71   46 0000C049 eb_font_height2
+         72   47 0000BD5A eb_font_list
+         73   48 00014079 eb_forward_heading
+         74   49 0000F503 eb_forward_narrow_alt_character
+         75   4A 00010D38 eb_forward_narrow_font_character
+         76   4B 00013ECD eb_forward_text
+         77   4C 0001C831 eb_forward_wide_alt_character
+         78   4D 0001E064 eb_forward_wide_font_character
+         79   4E 00009030 eb_have_copyright
+         80   4F 0000918C eb_have_cross_search
+         81   50 000095D8 eb_have_endword_search
+         82   51 00009998 eb_have_exactword_search
+         83   52 0000BE76 eb_have_font
+         84   53 0000DAC9 eb_have_image_menu
+         85   54 0000C6D8 eb_have_keyword_search
+         86   55 0000D970 eb_have_menu
+         87   56 0000E2B0 eb_have_multi_search
+         88   57 0000EDB0 eb_have_narrow_alt
+         89   58 000101BB eb_have_narrow_font
+         90   59 00019CD0 eb_have_stop_code
+         91   5A 0001BF7C eb_have_text
+         92   5B 0001C0D8 eb_have_wide_alt
+         93   5C 0001D4E7 eb_have_wide_font
+         94   5D 0001E4FC eb_have_word_search
+         95   5E 000151CC eb_hit_list
+         96   5F 0000C579 eb_hook_empty
+         97   60 0000C3EF eb_hook_euc_to_ascii
+         98   61 0000C4A7 eb_hook_narrow_character_text
+         99   62 0000C559 eb_hook_newline
+        100   63 0000C500 eb_hook_wide_character_text
+        101   64 0000DB53 eb_image_menu
+        102   65 00001560 eb_initialize_alt_caches
+        103   66 00001615 eb_initialize_appendix
+        104   67 00001E30 eb_initialize_appendix_subbooks
+        105   68 00003238 eb_initialize_binary_context
+        106   69 00007380 eb_initialize_book
+        107   6A 00008A7C eb_initialize_booklist
+        108   6B 0000C128 eb_initialize_default_hookset
+        109   6C 0000B30C eb_initialize_fonts
+        110   6D 0000C166 eb_initialize_hookset
+        111   6E 000094F4 eb_initialize_library
+        112   6F 0000CA4C eb_initialize_log
+        113   70 00014A43 eb_initialize_search
+        114   71 000148AC eb_initialize_search_contexts
+        115   72 00014ADF eb_initialize_searches
+        116   73 00019FC8 eb_initialize_subbooks
+        117   74 000111D0 eb_initialize_text_context
+        118   75 000113DD eb_invalidate_text_context
+        119   76 00001D2B eb_is_appendix_bound
+        120   77 00008820 eb_is_bound
+        121   78 0001383C eb_is_text_stopped
+        122   79 0000C584 eb_jisx0208_to_euc
+        123   7A 000026FC eb_load_all_appendix_subbooks
+        124   7B 0001A3BB eb_load_all_subbooks
+        125   7C 0000B42C eb_load_font_headers
+        126   7D 0000DC24 eb_load_multi_searches
+        127   7E 0000DFD9 eb_load_multi_titles
+        128   7F 0000FF6C eb_load_narrow_font_glyphs
+        129   80 0000FC52 eb_load_narrow_font_header
+        130   81 0001D298 eb_load_wide_font_glyphs
+        131   82 0001CF7E eb_load_wide_font_header
+        132   83 0000CAEA eb_log
+        133   84 00033044 eb_log_flag
+        134   85 00033040 eb_log_initialized
+        135   86 0000CB1E eb_log_stderr
+        136   87 0000CD24 eb_match_word
+        137   88 0000D305 eb_match_word_kana_group
+        138   89 0000D4A7 eb_match_word_kana_single
+        139   8A 0000D9FA eb_menu
+        140   8B 0000E8A8 eb_multi_entry_candidates
+        141   8C 0000E526 eb_multi_entry_count
+        142   8D 0000E7B9 eb_multi_entry_have_candidates
+        143   8E 0000E67C eb_multi_entry_label
+        144   8F 0000E61F eb_multi_entry_list
+        145   90 0000E438 eb_multi_search_list
+        146   91 0000E33A eb_multi_title
+        147   92 0000EFBB eb_narrow_alt_character_text
+        148   93 0000EEF9 eb_narrow_alt_end
+        149   94 0000EE37 eb_narrow_alt_start
+        150   95 00005844 eb_narrow_font_bmp_size
+        151   96 000107C9 eb_narrow_font_character_bitmap
+        152   97 00010707 eb_narrow_font_end
+        153   98 00005768 eb_narrow_font_gif_size
+        154   99 00005922 eb_narrow_font_png_size
+        155   9A 00010442 eb_narrow_font_size
+        156   9B 00010567 eb_narrow_font_size2
+        157   9C 00010645 eb_narrow_font_start
+        158   9D 0001027F eb_narrow_font_width
+        159   9E 00010364 eb_narrow_font_width2
+        160   9F 000055AC eb_narrow_font_xbm_size
+        161   A0 0000568A eb_narrow_font_xpm_size
+        162   A1 0000F984 eb_open_narrow_font_file
+        163   A2 0001CCB0 eb_open_wide_font_file
+        164   A3 00008876 eb_path
+        165   A4 0000B18F eb_path_name_zio_code
+        166   A5 0000CE09 eb_pre_match_word
+        167   A6 00014DD6 eb_presearch_word
+        168   A7 0000CA40 eb_pthread_enabled
+        169   A8 0000CB94 eb_quoted_stream
+        170   A9 0000CCFF eb_quoted_string
+        171   AA 00004857 eb_read_binary
+        172   AB 00011968 eb_read_heading
+        173   AC 00011B3A eb_read_rawtext
+        174   AD 000116DF eb_read_text
+        175   AE 000032FE eb_reset_binary_context
+        176   AF 000149FD eb_reset_search_contexts
+        177   B0 00011308 eb_reset_text_context
+        178   B1 00009216 eb_search_cross
+        179   B2 00009682 eb_search_endword
+        180   B3 00009A42 eb_search_exactword
+        181   B4 0000C762 eb_search_keyword
+        182   B5 0000EA05 eb_search_multi
+        183   B6 0001E5A6 eb_search_word
+        184   B7 00011438 eb_seek_text
+        185   B8 00002B36 eb_set_appendix_subbook
+        186   B9 00004385 eb_set_binary_color_graphic
+        187   BA 00003956 eb_set_binary_gray_graphic
+        188   BB 00003344 eb_set_binary_mono_graphic
+        189   BC 0000461C eb_set_binary_mpeg
+        190   BD 00003F12 eb_set_binary_wave
+        191   BE 00018584 eb_set_endword
+        192   BF 0000B808 eb_set_font
+        193   C0 0000C255 eb_set_hook
+        194   C1 0000C2FD eb_set_hooks
+        195   C2 00018810 eb_set_keyword
+        196   C3 0000CA8C eb_set_log_function
+        197   C4 0001897F eb_set_multiword
+        198   C5 0001B519 eb_set_subbook
+        199   C6 00018334 eb_set_word
+        200   C7 0000C5C4 eb_sjis_to_euc
+        201   C8 00019D57 eb_stop_code
+        202   C9 00019E44 eb_strcasecmp
+        203   CA 00019EF1 eb_strncasecmp
+        204   CB 0001B091 eb_subbook
+        205   CC 0001B2D1 eb_subbook_directory
+        206   CD 0001B3E0 eb_subbook_directory2
+        207   CE 0001AFB9 eb_subbook_list
+        208   CF 0001B13E eb_subbook_title
+        209   D0 0001B1F2 eb_subbook_title2
+        210   D1 00011567 eb_tell_text
+        211   D2 0001C006 eb_text
+        212   D3 00002FA4 eb_unset_appendix_subbook
+        213   D4 00005566 eb_unset_binary
+        214   D5 0000BC41 eb_unset_font
+        215   D6 0001BECD eb_unset_subbook
+        216   D7 0001C2E3 eb_wide_alt_character_text
+        217   D8 0001C221 eb_wide_alt_end
+        218   D9 0001C15F eb_wide_alt_start
+        219   DA 00005C98 eb_wide_font_bmp_size
+        220   DB 0001DAF5 eb_wide_font_character_bitmap
+        221   DC 0001DA33 eb_wide_font_end
+        222   DD 00005BBA eb_wide_font_gif_size
+        223   DE 00005D76 eb_wide_font_png_size
+        224   DF 0001D76E eb_wide_font_size
+        225   E0 0001D893 eb_wide_font_size2
+        226   E1 0001D971 eb_wide_font_start
+        227   E2 0001D5AB eb_wide_font_width
+        228   E3 0001D690 eb_wide_font_width2
+        229   E4 000059FE eb_wide_font_xbm_size
+        230   E5 00005ADC eb_wide_font_xpm_size
+        231   E6 00013C23 eb_write_text
+        232   E7 000138CE eb_write_text_byte1
+        233   E8 000139CE eb_write_text_byte2
+        234   E9 00013AFE eb_write_text_string
+        235   EA 000203B5 zio_close
+        236   EB 0002040F zio_file
+        237   EC 0001EA2A zio_finalize
+        238   ED 0001E950 zio_finalize_library
+        239   EE 0001E9AC zio_initialize
+        240   EF 0001E8C7 zio_initialize_library
+        241   F0 0002047B zio_lseek
+        242   F1 00020445 zio_mode
+        243   F2 0001EBD4 zio_open
+        244   F3 00020618 zio_read
+        245   F4 0001EAAF zio_set_sebxa_mode
+
+  Summary
+
+        1000 .CRT
+        2000 .bss
+        1000 .data
+        1000 .debug_abbrev
+        1000 .debug_aranges
+        1000 .debug_frame
+        1000 .debug_info
+        1000 .debug_line
+        2000 .edata
+        4000 .eh_frame
+        1000 .idata
+        A000 .rdata
+        2000 .reloc
+       23000 .text
+        1000 .tls
