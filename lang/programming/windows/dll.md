@@ -6,6 +6,10 @@
 
 
 
+**注意dll 的相互依赖**，调用不成功可能是因为缺了它的依赖dll
+
+
+
 Visual studio，Tools -> Visual studio  Command Prompt
 
 ```
