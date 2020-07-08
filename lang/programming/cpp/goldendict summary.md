@@ -6,6 +6,33 @@ D:\workcode\cpp\goldendict\build>D:\Qt\4.8.7\bin\moc.exe -o "D:\workcode\cpp\gol
 
 
 
+
+
+
+
+## QT compile
+
+```
+08:21:01: 为项目goldendict执行步骤 ...
+08:21:01: 正在启动 "E:\Qt\4.8.7\bin\qmake.exe" D:\workcode\cpp\goldendict-qt\goldendict.pro -r -spec win32-g++
+
+08:21:04: 进程"E:\Qt\4.8.7\bin\qmake.exe"正常退出。
+08:21:04: 正在启动 "E:\mingw32\bin\mingw32-make.exe" 
+
+E:/mingw32/bin/mingw32-make -f Makefile.Debug
+mingw32-make[1]: Entering directory 'D:/workcode/cpp/build-goldendict-unknown-Debug'
+e:\Qt\4.8.7\bin\rcc.exe -name resources ..\goldendict-qt\resources.qrc -o build\qrc_resources.cpp
+g++ -c -pipe -Wextra -Wempty-body -g -frtti -fexceptions -mthreads -Wall -Wextra -DUNICODE -DMAKE_FFMPEG_PLAYER -DPROGRAM_VERSION=\"1.5.0-RC2+git\" -DMAKE_ZIM_SUPPORT -DMAKE_EXTRA_TIFF_HANDLER -DMAKE_CHINESE_CONVERSION_SUPPORT -DQT_DLL -DQT_WEBKIT_LIB -DQT_SVG_LIB -DQT_SQL_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"e:\Qt\4.8.7\include\QtCore" -I"e:\Qt\4.8.7\include\QtNetwork" -I"e:\Qt\4.8.7\include\QtGui" -I"e:\Qt\4.8.7\include\QtXml" -I"e:\Qt\4.8.7\include\QtSql" -I"e:\Qt\4.8.7\include\QtSvg" -I"e:\Qt\4.8.7\include\QtWebKit" -I"e:\Qt\4.8.7\include" -I"e:\Qt\4.8.7\include\QtHelp" -I"..\goldendict-qt" -I"..\goldendict-qt\winlibs\include" -I"..\goldendict-qt\qtsingleapplication\src" -I"e:\Qt\4.8.7\include\ActiveQt" -I"build" -I"build" -I"." -I"e:\Qt\4.8.7\mkspecs\win32-g++" -o build\qrc_resources.o build\qrc_resources.cpp
+g++ -Wl,--large-address-aware -Wl,-subsystem,console -mthreads -o debug\GoldenDict.exe object_script.GoldenDict.Debug  -L"e:\Qt\4.8.7\lib" build\goldendict_res.o -lz -lbz2 -llzo2 -LD:/workcode/cpp/goldendict-qt/winlibs/lib -lhunspell-1.6.1 -liconv -lwsock32 -lpsapi -lole32 -loleaut32 -ladvapi32 -lcomdlg32 -lvorbisfile -lvorbis -logg -lao -lavutil-gd -lavformat-gd -lavcodec-gd -llzma -lzstd -ltiff -leb -lopencc -lQtHelpd4 -lQtWebKitd4 -lQtSvgd4 -lQtSqld4 -lQtXmld4 -lQtGuid4 -lQtNetworkd4 -lQtCored4 
+mingw32-make[1]: Leaving directory 'D:/workcode/cpp/build-goldendict-unknown-Debug'
+08:21:19: 进程"E:\mingw32\bin\mingw32-make.exe"正常退出。
+08:21:19: Elapsed time: 00:18.
+```
+
+
+
+
+
 ```
 $(QTDIR)\lib\QtWebKitd4.lib
 $(QTDIR)\lib\Qt5Quickd.lib
