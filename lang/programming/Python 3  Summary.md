@@ -1528,6 +1528,7 @@ Python: Select interpreter to start Jupyter server
 
 ```
 python -m pip install -U matplotlib
+pip install sklearn
 ```
 
 
