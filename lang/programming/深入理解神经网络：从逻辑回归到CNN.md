@@ -8,6 +8,10 @@
 
 
 
+What I cannot create I do not understand
+
+Things Happen for A Reason
+
 
 
 ## affine function

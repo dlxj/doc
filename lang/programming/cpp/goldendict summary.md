@@ -17,6 +17,12 @@ linux .o,.a,.so
 
 ```
 
+ui_mainwindow.h
+	QAction *rescanFiles;  
+    rescanFiles = new QAction(MainWindow);
+    rescanFiles->setObjectName(QString::fromUtf8("rescanFiles"));
+    rescanFiles->setMenuRole(QAction::NoRole);
+
 epwing_book.cc
  EB_Book book;
  EB_Error_Code ret = eb_bind( &book, directory.c_str() );  // 469
