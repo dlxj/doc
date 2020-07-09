@@ -156,6 +156,31 @@ $$
 
 
 
+#### 想到内积就要想到投影和法向量模长
+
+
+
+
+$$
+\left<\boldsymbol{w},\boldsymbol{x}\right> = \|\boldsymbol{w}\| \|\boldsymbol{x}\| cos\theta 
+= c
+$$
+$\|\boldsymbol{x}\|cos\theta=\frac{\left<\boldsymbol{w},\boldsymbol{x}\right>}{\|\boldsymbol{w}\|}\text{（projection $\boldsymbol{x}$ to $\boldsymbol{w}$）}$ 
+
+> 想到内积就要想就投影和法向量模长
+
+
+
+#### 法向量是烤肉串的那根棍，肉上的所有点向量在棍上的投影相同
+
+> 投影就是从棍尾到肉块的长度
+>
+> 内积就是投影乘以棍长
+
+
+
+#### 
+
 
 
 ### 内积定义为各分量的乘积和
