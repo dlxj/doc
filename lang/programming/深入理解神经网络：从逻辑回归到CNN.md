@@ -124,6 +124,10 @@ $$
 
 ## 内积
 
+dot product
+
+> product 是积，积量的积累
+
 
 
 ### 三角形三边关系
@@ -133,6 +137,8 @@ c^2 = a^2+b^2-2ab \  cos\theta \\
 2ab \  cos\theta = 0 \quad \text{when $\theta=\frac{\pi}{2}, cos\theta=0$}
 $$
 > $cos\theta = \frac{斜边的投影}{斜边}$, 90度的时侯斜边的投影是0
+
+# 余弦是投影的长度比自已的模长
 
 
 
