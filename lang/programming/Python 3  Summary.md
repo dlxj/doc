@@ -2139,7 +2139,6 @@ plt.savefig(os.path.join(all_pic_path, '1-3.png'), format='png', dpi=600)
 ```python
 from book_draw_util import *
 
-
 fig = plt.figure(figsize=SQUARE_FIG_SIZE)
 ax = axisartist.Subplot(fig, 111)
 fig.add_axes(ax)
@@ -2151,8 +2150,6 @@ ax.axis["y"] = ax.new_floating_axis(1,0)
 ax.axis["y"].set_axisline_style("-|>", size = 1.0)
 ax.axis["x"].set_axis_direction("bottom")
 ax.axis["y"].set_axis_direction("right")
-
-
 
 plt.xlim(-6.01, 6.02)
 plt.ylim(-6.02, 6.01)
