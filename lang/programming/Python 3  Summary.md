@@ -167,6 +167,7 @@ print("hi,,,")
 ## Path
 
 ```python
+currDir = os.getcwd()
 os.path.abspath(__file__)                   # current file
 os.path.dirname(os.path.abspath(__file__))  # current file directory
 os.path.dirname(os.path.abspath(__name__))  # ?? directory
@@ -1500,9 +1501,12 @@ pip install jupyter
 
 python -m jupyter notebook --version
 
-
-
+```
 python -m pip install -U matplotlib
+pip install seaborn
+pip install sklearn
+pip install scikit-image
+```
 
 
 
@@ -1522,18 +1526,80 @@ Python: Select interpreter to start Jupyter server
 
 
 
+### 不用print 打印
 
 
 
+#### **其他技巧**
 
+**1. 不用print即可输出多个变量**
+
+比如下面一段代码
+
+```text
+a, b = 1, 2
+a
+b
 ```
-python -m pip install -U matplotlib
-pip install seaborn
-pip install sklearn
-pip install scikit-image
+
+运行结果只会展示`b`的值，如果要同时展示`a b`的值，需要使用`print`，如下所示
+
+```text
+a, b = 1, 2
+print(a)
+print(b)
+```
+
+如果希望不需要`print`即可同时输出`a b`的值，则可以先运行下面这两行代码，则之后在这个笔记本中执行代码都不需要`print`
+
+```text
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+```
+
+如果不喜欢这个配置，要改回来只需要
+
+```text
+InteractiveShell.ast_node_interactivity = "last"
 ```
 
 
+
+题外话：如果想直接打变量名不输出，只需要在后面加一个`;`，这个在`plt.hist()`的使用中比较有用。
+
+**2. 默认执行代码**
+
+本节分为两个部分：修改默认配置，默认执行代码。
+
+像上一节的`print`配置，如果希望对所有notebook都适用，不用每次都重新指定，可以在配置文件中修改。只需要在`~/.ipython/profile_default/ipython_config.py`文件中添加
+
+```text
+c = get_config()
+c.InteractiveShell.ast_node_interactivity = "all"
+```
+
+保存后重新打开notebook会发现这些配置自动生效。
+
+（如果该路径下没有这个文件则创建一个，用这条命令`ipython profile create`）
+
+配置这个文件的另一个功能是执行默认代码，即有一些代码希望在每一个notebook都默认执行时，可以像这样写入配置文件
+
+```text
+c.InteractiveShellApp.exec_lines = [
+ 'import sys; sys.path.append("C:\\Miniconda3\\Lib\\site-packages")',
+ 'import matplotlib.pyplot as plt; %matplotlib inline'
+]
+```
+
+**3. 将ipynb文件转化为py文件**
+
+文本内容全部变成注释
+
+```text
+ipython nbconvert --to python abc.ipynb
+```
+
+另一种方式：在notebook页面菜单中选择 `File-->Download as-->py`
 
 
 
@@ -1892,6 +1958,171 @@ seg.to_csv(fname_results, index=False ,encoding="utf-8")
 ```
 
 
+
+
+
+## Matplotlib
+
+
+
+### probability distribution
+
+
+
+```python
+import os, sys;
+currDir = os.getcwd()
+sys.path.append( os.path.dirname( os.path.dirname( currDir ) ) ) # std 包在此模块的上上上级目录
+
+import math
+import std.iFile as iFile
+import std.iJson as iJson
+import std.iList as iList
+import std.seg.iSeg as iSeg
+import std.iSql as iSql
+import util.fectchData as fectchData
+
+
+import pandas as pd # 导入另一个包“pandas” 命名为 pd，理解成pandas是在 numpy 基础上的升级包
+import numpy as np #导入一个数据分析用的包“numpy” 命名为 np
+import matplotlib.pyplot as plt # 导入 matplotlib 命名为 plt，类似 matlab，集成了许多可视化命令
+
+
+fname_results = os.path.join(currDir, '知识点关联试题2020.7.10.11.03.json')
+fname_similarity = os.path.join(currDir, 'similarity.csv')
+rs = iJson.load_json(fname_results)
+
+sims = []
+for ls in rs:
+    for l in ls:
+        sims.append( l[3] )
+
+sims = sorted(sims, key=lambda x: x, reverse=True)
+
+frame = pd.DataFrame(sims,columns=['similarity'])
+frame.to_csv(fname_similarity, index=False ,encoding="utf-8")
+
+print(max(sims), min(sims))
+
+
+
+#jupyter 的魔术关键字（magic keywords）
+#在文档中显示 matplotlib 包生成的图形
+# 设置图形的风格
+%matplotlib inline 
+%config InlineBackend.figure_format = 'retina'
+
+data = pd.read_csv(fname_similarity) #载入数据文件
+
+print( data.head(3), '\n\n')
+print('row num:', len(data) )
+
+
+time = data["similarity"] #把数据集中的 time 定义为 time
+mean = time.mean()  #mean均值，是正态分布的中心，把 数据集中的均值 定义为 mean
+print('mean value: ', mean)
+
+#S.D.标准差，把数据集中的标准差 定义为 std
+std = time.std()
+
+#正态分布的概率密度函数。可以理解成 x 是 mu（均值）和 sigma（标准差）的函数
+def normfun(x,mu,sigma):
+    pdf = np.exp(-((x - mu)**2)/(2*sigma**2)) / (sigma * np.sqrt(2*np.pi))
+    return pdf
+
+
+# 设定 x 轴前两个数字是 X 轴的开始和结束，第三个数字表示步长，或者区间的间隔长度
+x = np.arange(0.0,6.0,0.05) 
+#设定 y 轴，载入刚才的正态分布函数
+y = normfun(x, mean, std)
+plt.plot(x,y)
+#画出直方图，最后的“density”参数，是赋范的意思，数学概念
+plt.hist(time, bins=50, rwidth=0.5, density=True)
+plt.title('Time distribution')
+plt.xlabel('Time')
+plt.ylabel('Probability')
+
+plt.savefig(os.path.join("D:\workcode\python\AUTOMATIC_TEXT_SUMMARIZATION\matchTestAndExampoint", 'distribution.png'), format='png', dpi=600)
+#输出
+plt.show()
+```
+
+
+
+
+
+### logistic
+
+```python
+import mpl_toolkits.axisartist as axisartist
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(10, 6)) # width, height in inches.  1英寸=2.54厘米
+ax = axisartist.Subplot(fig, 111)
+fig.add_axes(ax)
+
+ax.axis[:].set_visible(False)
+ax.axis["x"] = ax.new_floating_axis(0,0)
+ax.axis["x"].set_axisline_style("-|>", size = 1.0)
+ax.axis["y"] = ax.new_floating_axis(1,0)
+ax.axis["y"].set_axisline_style("-|>", size = 1.0)
+ax.axis["x"].set_axis_direction("bottom")
+ax.axis["y"].set_axis_direction("right")
+
+
+sigma = np.arange(-8, 8, 0.01)
+ax.grid(True)
+ax.plot(sigma, logistic(sigma), c="k")
+plt.xlim(-8, 8)
+plt.ylim(-.21, 1.2)
+ax.text(x=8.5 , y=-0.02, s=r"$a$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.text(x=-1.2, y=1.3, s=r"$\mathrm{Logistic}\left(a\right)$", fontsize=AXIS_LABEL_FONT_SIZE)
+
+plt.savefig(os.path.join("D:\workcode\python\plot\高品质图片", '1-1.png'), format='png', dpi=600)
+```
+
+
+
+<img src="Python 3  Summary.assets/image-20200710103820788.png" alt="image-20200710103820788" style="zoom:50%;" />
+
+
+
+### two vector
+
+```
+from book_draw_util import *
+
+fig = plt.figure(figsize=SQUARE_FIG_SIZE)
+ax = axisartist.Subplot(fig, 111)
+fig.add_axes(ax)
+
+ax.axis[:].set_visible(False)
+ax.axis["x"] = ax.new_floating_axis(0,0)
+ax.axis["x"].set_axisline_style("-|>", size = 1.0)
+ax.axis["y"] = ax.new_floating_axis(1,0)
+ax.axis["y"].set_axisline_style("-|>", size = 1.0)
+ax.axis["x"].set_axis_direction("bottom")
+ax.axis["y"].set_axis_direction("right")
+
+
+
+plt.xlim(-6.01, 6.02)
+plt.ylim(-6.02, 6.01)
+ax.grid(True)
+ax.text(x=6.3, y=-0.08, s=r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.text(x=-0.1, y=6.3, s=r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.arrow(0,0,4,2, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+ax.arrow(0,0,-2,4, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+
+ax.text(x=4.1, y=2.1, s=r"$\left(4,2\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+ax.text(x=-2.5, y=4.1, s=r"$\left(-2,4\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+
+plt.savefig(os.path.join(all_pic_path, '1-3.png'), format='png', dpi=600) 
+```
+
+
+
+<img src="Python 3  Summary.assets/image-20200710110902610.png" alt="image-20200710110902610" style="zoom:50%;" />
 
 
 
