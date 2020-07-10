@@ -16,6 +16,14 @@
 
 
 
+**正体** \mathrm{}
+
+$\mathrm{Logistic}\left(a\right)$
+
+
+
+
+
 **另外在任意Markdown的编辑器中：**
 
 自己设置一下就好：找到mathjax 配置文件写入如下定义tex的代码中的Macros即可定义简写：
