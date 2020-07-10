@@ -1965,6 +1965,16 @@ seg.to_csv(fname_results, index=False ,encoding="utf-8")
 
 
 
+所有cell 的变量是共享的，全局变量放最前面运行一次
+
+```
+all_pic_path = "D:\GitHub\doc\lang\programming\python\高品质图片"
+```
+
+
+
+doc\lang\programming\python\深入理解神经网络：从逻辑回归到CNN\neural_network-neural_network_code-master\neural_network_code\画图脚本
+
 ### probability distribution
 
 
@@ -2047,7 +2057,7 @@ plt.savefig(os.path.join("D:\workcode\python\AUTOMATIC_TEXT_SUMMARIZATION\matchT
 plt.show()
 ```
 
-
+<img src="Python 3  Summary.assets/image-20200710154652277.png" alt="image-20200710154652277" style="zoom:50%;" />
 
 
 
@@ -2123,6 +2133,61 @@ plt.savefig(os.path.join(all_pic_path, '1-3.png'), format='png', dpi=600)
 
 
 <img src="Python 3  Summary.assets/image-20200710110902610.png" alt="image-20200710110902610" style="zoom:50%;" />
+
+
+
+```python
+from book_draw_util import *
+
+
+fig = plt.figure(figsize=SQUARE_FIG_SIZE)
+ax = axisartist.Subplot(fig, 111)
+fig.add_axes(ax)
+
+ax.axis[:].set_visible(False)
+ax.axis["x"] = ax.new_floating_axis(0,0)
+ax.axis["x"].set_axisline_style("-|>", size = 1.0)
+ax.axis["y"] = ax.new_floating_axis(1,0)
+ax.axis["y"].set_axisline_style("-|>", size = 1.0)
+ax.axis["x"].set_axis_direction("bottom")
+ax.axis["y"].set_axis_direction("right")
+
+
+
+plt.xlim(-6.01, 6.02)
+plt.ylim(-6.02, 6.01)
+ax.grid(True)
+ax.text(x=6.3, y=-0.08, s=r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.text(x=-0.1, y=6.3, s=r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.arrow(0,0,2,1, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+ax.arrow(0,0,1,3, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+ax.arrow(0,0,3,4, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+
+ax.arrow(1,3,2,1, head_width=0, length_includes_head=True, color="k", linestyle="dashed", alpha=0.3)
+ax.arrow(2,1,1,3, head_width=0, length_includes_head=True, color="k", linestyle="dashed", alpha=0.3)
+
+ax.text(x=2.2, y=1, s=r"$x=\left(2,1\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+ax.text(x=0.4, y=3.4, s=r"$y=\left(1,3\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+ax.text(x=3.1, y=4.1, s=r"$x+y=\left(3,4\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+
+plt.savefig(os.path.join(all_pic_path, '1-4.png'), format='png', dpi=600) 
+```
+
+
+
+<img src="Python 3  Summary.assets/image-20200710163043611.png" alt="image-20200710163043611" style="zoom:50%;" />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
