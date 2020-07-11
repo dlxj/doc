@@ -323,6 +323,7 @@ raise RuntimeError('some err')
 
 ```python
 list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+sorted(results, key=lambda l: l[3], reverse=True) # 按相似度高到低排序
 list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过滤非中文词
 {k: v for k, v in points.items() if v[0] < 5 and v[1] < 5}
 lambda 返回true 的保留
