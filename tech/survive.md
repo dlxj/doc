@@ -604,7 +604,11 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [Goldendict 支持epwing可导出词头]()
 >
-> ([bob Mac开源取词翻译](https://github.com/ripperhe/Bob)  )
+> [bob Mac开源取词翻译](https://github.com/ripperhe/Bob)
+>
+> [textshot开源文字识别](https://github.com/ianzhao05/textshot)
+>
+> [react+markdown](https://github.com/mdx-js/mdx)
 >
 > > ```shell
 > > sudo mount -uw /
