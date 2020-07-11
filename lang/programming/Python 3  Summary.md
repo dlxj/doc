@@ -1980,7 +1980,7 @@ doc\lang\programming\python\深入理解神经网络：从逻辑回归到CNN\neu
 
 
 
-**alpha 控制向量颜色浅淡**
+### alpha 控制向量颜色浅淡
 
 ```
 ax.arrow(0,0,4,2, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k", alpha=ALPHA)
@@ -1988,10 +1988,25 @@ ax.arrow(0,0,4,2, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color=
 
 
 
-**linestyle 设置虚线风格**
+### linestyle 设置虚线风格
+
+```python
+ax.arrow(p[0], p[1], (p_next.A1-p)[0], (p_next.A1-p)[1], head_width=0.3, length_includes_head=True, color="k", linestyle="--", alpha=DARK_ALPHA)
+
+linestyle="dashed"
+```
+
+
+
+### arrow
+
+两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
 
 ```
-ax.arrow(p[0], p[1], (p_next.A1-p)[0], (p_next.A1-p)[1], head_width=0.3, length_includes_head=True, color="k", linestyle="--", alpha=DARK_ALPHA)
+arrow = Arrow3D([0,0],[0,0],[-2,0], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+arrow = Arrow3D([-2,0],[0,0],[0,0], arrowstyle="-|>", linestyle="--", lw=1,mutation_scale=10,color="k", ALPHA=0.2)
+ax.add_artist(arrow)
 ```
 
 
