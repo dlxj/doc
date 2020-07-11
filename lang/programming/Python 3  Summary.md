@@ -1975,6 +1975,18 @@ all_pic_path = "D:\GitHub\doc\lang\programming\python\高品质图片"
 
 doc\lang\programming\python\深入理解神经网络：从逻辑回归到CNN\neural_network-neural_network_code-master\neural_network_code\画图脚本
 
+
+
+**alpha 控制向量颜色浅淡**
+
+```
+ax.arrow(0,0,4,2, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k", alpha=ALPHA)
+```
+
+
+
+
+
 ### probability distribution
 
 
@@ -2178,11 +2190,123 @@ plt.savefig(os.path.join(all_pic_path, '1-4.png'), format='png', dpi=600)
 
 
 
+```python
+from book_draw_util import *
+
+
+fig = plt.figure(figsize=SQUARE_FIG_SIZE)
+ax = axisartist.Subplot(fig, 111)
+fig.add_axes(ax)
+
+ax.axis[:].set_visible(False)
+ax.axis["x"] = ax.new_floating_axis(0,0)
+ax.axis["x"].set_axisline_style("-|>", size = 1.0)
+ax.axis["y"] = ax.new_floating_axis(1,0)
+ax.axis["y"].set_axisline_style("-|>", size = 1.0)
+ax.axis["x"].set_axis_direction("bottom")
+ax.axis["y"].set_axis_direction("right")
+
+
+
+plt.xlim(-6.01, 6.02)
+plt.ylim(-6.02, 6.01)
+ax.grid(True)
+ax.text(x=6.3, y=-0.08, s=r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.text(x=-0.1, y=6.3, s=r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.arrow(0,0,4,2, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+ax.arrow(0,0,1,2, head_width=ARROW_HEAD_WIDTH, length_includes_head=True, color="k")
+
+
+ax.arrow(1.6,0.8,-0.6,1.2, head_width=0, length_includes_head=True, color="k", linestyle="dashed", alpha=ALPHA)
+ax.arrow(1.4,0.7,-0.1,0.2, head_width=0, length_includes_head=True, color="k", linestyle="dashed", alpha=ALPHA)
+ax.arrow(1.3,0.9,0.2,0.1, head_width=0, length_includes_head=True, color="k", linestyle="dashed", alpha=ALPHA)
+
+ax.text(x=4.1, y=2.1, s=r"$y=\left(4,2\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+ax.text(x=1.1, y=2.1, s=r"$x=\left(1,2\right)^\mathrm{T}$", fontsize=TEXT_FONT_SIZE)
+ax.text(x=0.2, y=0.2, s=r"$\theta$", fontsize=TEXT_FONT_SIZE)
+ax.text(x=0.05, y=1.6, s=r"$\left||x\right||$", fontsize=TEXT_FONT_SIZE)
+ax.annotate(s=r"$\left||x\right||\mathrm{cos}\theta=\frac{\left<x,y\right>}{\left||y\right||}$", 
+        xy=(0.7,0.3), xytext=(2,0.25), arrowprops=dict
+        (width=0.1, 
+        facecolor='black',
+        headwidth=6,
+        shrink=0.05), fontsize=TEXT_FONT_SIZE)
+
+plt.savefig(os.path.join(all_pic_path, '1-8.png'), format='png', dpi=600) 
+```
+
+
+
+<img src="Python 3  Summary.assets/image-20200710170341783.png" alt="image-20200710170341783" style="zoom:50%;" />
 
 
 
 
 
+
+
+```python
+from book_draw_util import *
+
+fig = plt.figure(figsize=SQUARE_FIG_SIZE, facecolor='white')
+ax = Axes3D(fig)
+# ax.axis("off")
+ax.clear()
+
+
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+# ax.set_title(r"$Lorenz\ Attractor$")
+ax.set_xlabel(r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_ylabel(r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_zlabel(r"$x_3$", fontsize=AXIS_LABEL_FONT_SIZE)
+
+arrow = Arrow3D([0,3],[0,-1.5],[0,3], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(3, -1.5, 3, r"$w$", fontsize=TEXT_FONT_SIZE)
+
+
+x1 = np.linspace(-0.6, 2, endpoint=True, num=2)
+x2 = np.linspace(-2, 0.8, endpoint=True, num=2)
+x1, x2 = np.meshgrid(x1, x2)
+x1, x2 = x1.flatten(), x2.flatten()
+x3 = 2 - x1 + 0.5 * x2
+tri = mtri.Triangulation(x1, x2)
+ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
+
+
+arrow = Arrow3D([0,0],[0,0],[0,2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(0, 0, 2, r"$x_a$", fontsize=TEXT_FONT_SIZE)
+ax.text(-0.05, 0.2, 0.1, r"$\theta_a$", fontsize=TEXT_FONT_SIZE)
+
+arrow = Arrow3D([0,2],[0,0],[0,0], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(2, 0, 0, r"$x_b$", fontsize=TEXT_FONT_SIZE)
+ax.text(0.2, 0, .05, r"$\theta_b$", fontsize=TEXT_FONT_SIZE)
+
+arrow = Arrow3D([0,0],[0,2],[0,1], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(0, 2, 1, r"$x_c$", fontsize=TEXT_FONT_SIZE)
+ax.text(0, 0.6, 0.12, r"$\theta_c$", fontsize=TEXT_FONT_SIZE)
+
+
+ax.plot((8/7, 0), (-4/7, 0), (8/7, 2), "k--", alpha=ALPHA)
+ax.plot((8/7, 2), (-4/7, 0), (8/7, 0), "k--", alpha=ALPHA)
+ax.plot((8/7, 0), (-4/7, 2), (8/7, 1), "k--", alpha=ALPHA)
+ax.scatter(8/7, -4/7, 8/7, s=POINT_SIZE, c="k")
+ax.scatter(0, 0, 0, s=POINT_SIZE, c="k")
+
+ax.set_title(r"$||x_a||\mathrm{cos}\theta_a=||x_b||\mathrm{cos}\theta_b=||x_c||\mathrm{cos}\theta_c=\frac{x_a^\mathrm{T}w}{||w||}=\frac{x_b^\mathrm{T}w}{||w||}=\frac{x_c^\mathrm{T}w}{||w||}$", fontsize=TEXT_FONT_SIZE)
+
+plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600) 
+```
+
+
+
+<img src="Python 3  Summary.assets/image-20200710172303832.png" alt="image-20200710172303832" style="zoom:50%;" />
 
 
 
