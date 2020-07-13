@@ -32,6 +32,14 @@ sources.cc
   		emit rescan();
 	}
 
+editdictionaries.cc
+	connect( &sources, SIGNAL( rescan() ), this, SLOT( rescanSources() ) );
+
+	void EditDictionaries::rescanSources()
+	{
+  		acceptChangedSources( true );
+	}
+
 
 ui_mainwindow.h
 	QAction *rescanFiles;  
