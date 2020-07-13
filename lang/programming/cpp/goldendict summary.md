@@ -39,6 +39,25 @@ editdictionaries.cc
 	{
   		acceptChangedSources( true );
 	}
+	
+	void EditDictionaries::acceptChangedSources( bool rebuildGroups )
+		loadDictionaries( this, true, cfg, dictionaries, dictNetMgr );
+
+	
+	void loadDictionaries( QWidget * parent, bool showInitially,
+                       Config::Class const & cfg,
+                       std::vector< sptr< Dictionary::Class > > & dictionaries,
+                       QNetworkAccessManager & dictNetMgr,
+                       bool doDeferredInit_ )
+    	 dictionaries.clear();
+		 ::Initializing init( parent, showInitially );
+		 
+		 // Start a thread to load all the dictionaries
+		 LoadDictionaries loadDicts( cfg );  # 初始化一个类
+
+  		 loadDicts.start();
+		 localLoop.exec();
+  		 loadDicts.wait();
 
 
 ui_mainwindow.h
