@@ -15,7 +15,39 @@ linux .o,.a,.so
 
 
 
+
+
+```c++
+#include <eb/eb.h>
+#include <eb/text.h>
+#include <eb/appendix.h>
+#include <eb/error.h>
+#include <eb/binary.h>
+#include <eb/font.h>
+
+int iloadDict() {
+
+   EB_Book book;
+   QString error_string;
+
+   eb_initialize_book( &book );
+   EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
+   if( ret != EB_SUCCESS )
+   {
+     const char * errs =  eb_error_string( ret );
+     const char * errmsg = eb_error_message( ret );
+
+   }
+}
 ```
+
+
+
+
+
+```
+EB_Book book;
+
 epwing_book.cc
 	int EpwingBook::setBook( string const & directory )
 ```
