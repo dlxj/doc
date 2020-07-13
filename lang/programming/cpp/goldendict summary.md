@@ -2,7 +2,7 @@
 
 
 
-D:\workcode\cpp\goldendict\build>D:\Qt\4.8.7\bin\moc.exe -o "D:\workcode\cpp\goldendict\build\moc_ui_dictheadwords.cpp"    "D:\workcode\cpp\goldendict\build\ui_dictheadwords.h"
+  D:\workcode\cpp\goldendict\build>D:\Qt\4.8.7\bin\moc.exe -o "D:\workcode\cpp\goldendict\build\moc_ui_dictheadwords.cpp"    "D:\workcode\cpp\goldendict\build\ui_dictheadwords.h"
 
 
 
@@ -12,6 +12,22 @@ linux .o,.a,.so
 　　.so 为共享库,是shared object,用于动态连接的,相当于windows下的dll 
 
 　　.a为静态库,是好多个.o合在一起,用于静态连接 
+
+
+
+```
+epwing_book.cc
+	int EpwingBook::setBook( string const & directory )
+```
+
+
+
+
+
+```
+std::vector< sptr< Dictionary::Class > > & dictionaries
+dictionaries.clear();
+```
 
 
 
@@ -55,6 +71,7 @@ editdictionaries.cc
 		 
 		 // Start a thread to load all the dictionaries
 		 LoadDictionaries loadDicts( cfg );  # 初始化一个类
+		 
 
   		 loadDicts.start();  # 多线程开始
 		 localLoop.exec();
