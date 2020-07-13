@@ -17,6 +17,22 @@ linux .o,.a,.so
 
 ```
 
+sources.ui
+	QPushButton
+		rescan  # objectName
+		Re&scan now # Text
+
+sources.hh
+	private slots:
+		void on_rescan_clicked();
+
+sources.cc
+	void Sources::on_rescan_clicked()
+	{
+  		emit rescan();
+	}
+
+
 ui_mainwindow.h
 	QAction *rescanFiles;  
     rescanFiles = new QAction(MainWindow);
