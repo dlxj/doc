@@ -1088,6 +1088,14 @@ a1 = x.reshape(x.shape[0], 1) # Getting the training example as a column vector.
 
 
 
+### transpose
+
+```
+numpy.ndarray.T
+.T is just np.transpose() 
+# If the matrix has less than 2 dimensions it returns the original. 
+```
+
 
 
 ### matrix op
