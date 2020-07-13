@@ -44,6 +44,7 @@ editdictionaries.cc
 		loadDictionaries( this, true, cfg, dictionaries, dictNetMgr );
 
 	
+	# 这里下断
 	void loadDictionaries( QWidget * parent, bool showInitially,
                        Config::Class const & cfg,
                        std::vector< sptr< Dictionary::Class > > & dictionaries,
@@ -55,10 +56,21 @@ editdictionaries.cc
 		 // Start a thread to load all the dictionaries
 		 LoadDictionaries loadDicts( cfg );  # 初始化一个类
 
-  		 loadDicts.start();
+  		 loadDicts.start();  # 多线程开始
 		 localLoop.exec();
   		 loadDicts.wait();
 
+
+loaddictionaries.cc
+void LoadDictionaries::handlePath( Config::Path const & path )
+#ifndef NO_EPWING_SUPPORT
+  {
+    vector< sptr< Dictionary::Class > > epwingDictionaries =
+      Epwing::makeDictionaries( allFiles, FsEncoding::encode( Config::getIndexDir() ), *this );
+
+    dictionaries.insert( dictionaries.end(), epwingDictionaries.begin(),
+                         epwingDictionaries.end() );
+  }
 
 ui_mainwindow.h
 	QAction *rescanFiles;  
