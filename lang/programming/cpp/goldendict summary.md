@@ -15,6 +15,114 @@ linux .o,.a,.so
 
 
 
+```
+#include <QString>
+#include <QTextCodec>
+
+#include <QTextStream>
+#include <QTextDocumentFragment>
+
+#include <eb/eb.h>
+#include <eb/text.h>
+#include <eb/appendix.h>
+#include <eb/error.h>
+#include <eb/binary.h>
+#include <eb/font.h>
+
+
+int iloadDict() {
+
+   EB_Book book;
+   EB_Subbook_Code subBookList[ EB_MAX_SUBBOOKS ];
+
+   int subBookCount;
+   int currentSubBook;
+
+   QString error_string;
+   const char * errs;
+   const char * errmsg;
+
+   char buf[ EB_MAX_TITLE_LENGTH + 1 ];
+
+   eb_initialize_book( &book );
+   EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
+
+   ret = eb_subbook_list( &book, subBookList, &subBookCount );
+   ret = eb_set_subbook( &book, subBookList[ 0 ] );
+
+
+   ret = eb_subbook_title( &book, buf );
+   QTextCodec * codec_ISO, * codec_GB, * codec_Euc;
+   codec_ISO = QTextCodec::codecForName( "ISO8859-1" );
+   codec_GB = QTextCodec::codecForName( "GB2312" );
+   codec_Euc = QTextCodec::codecForName("EUC-JP");
+
+   QString title = codec_Euc->toUnicode( buf ); // QString
+
+   if( ret != EB_SUCCESS )
+   {
+     errs =  eb_error_string( ret );
+     errmsg = eb_error_message( ret );
+
+   }
+
+
+   eb_finalize_book( &book );
+
+}
+```
+
+
+
+```c++
+#include <QTextStream>
+#include <QTextDocumentFragment>
+
+#include <eb/eb.h>
+#include <eb/text.h>
+#include <eb/appendix.h>
+#include <eb/error.h>
+#include <eb/binary.h>
+#include <eb/font.h>
+
+
+int iloadDict() {
+
+   EB_Book book;
+   EB_Subbook_Code subBookList[ EB_MAX_SUBBOOKS ];
+
+   int subBookCount;
+   int currentSubBook;
+
+   QString error_string;
+   const char * errs;
+   const char * errmsg;
+
+   char buf[ EB_MAX_TITLE_LENGTH + 1 ];
+
+   eb_initialize_book( &book );
+   EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
+
+   ret = eb_subbook_list( &book, subBookList, &subBookCount );
+   ret = eb_set_subbook( &book, subBookList[ 0 ] );
+
+
+   ret = eb_subbook_title( &book, buf );
+
+   if( ret != EB_SUCCESS )
+   {
+     errs =  eb_error_string( ret );
+     errmsg = eb_error_message( ret );
+
+   }
+
+
+   eb_finalize_book( &book );
+}
+```
+
+
+
 
 
 ```c++
