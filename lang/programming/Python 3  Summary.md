@@ -258,6 +258,13 @@ a-b if a>b else a+b
 
 
 
+### round
+
+```python
+round(2.12) # 四舍六入五成双 # 它的作用是让统计数据更公平，降低舍入的误差
+round(2.51, 2) # 保留两位小数
+```
+
 
 
 ## 静态函数 构造函数 析构函数
@@ -1087,6 +1094,12 @@ a1 = x.reshape(x.shape[0], 1) # Getting the training example as a column vector.
 ```
 
 
+
+#### flatten
+
+```
+ndarray.flatten(order='C') # c by row; f by column
+```
 
 ### transpose
 
