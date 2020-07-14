@@ -1977,6 +1977,57 @@ seg.to_csv(fname_results, index=False ,encoding="utf-8")
 
 
 
+### 楼房坐标系
+
+
+
+```
+from book_draw_util import *
+import numpy as np
+
+fig = plt.figure(figsize=SQUARE_FIG_SIZE, facecolor='white')
+ax = Axes3D(fig)
+# ax.axis("off")
+ax.clear()
+
+
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+ax.set_xlabel(r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_ylabel(r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_zlabel(r"$x_3$", fontsize=AXIS_LABEL_FONT_SIZE)
+"""
+坐标系的原点在一楼中心
+"""
+
+# 两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
+#pts = np.array([ [0, 0, 0], [0, 0, -1] ], np.int32).T # 从一楼的中心指向地下室的中心
+#pts = np.array([ [2, 0, 0], [-2, 0, 0] ], np.int32).T
+#ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+
+pts = np.array([ [0, 0, 2], [0, 0, -2] ], np.int32).T
+ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+"""
+楼顶中心指向地下室中心
+"""
+
+pts = np.array([ [-2, 0, 2], [0, 0, 2]], np.int32).T
+ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+pts = np.array([ [0, 2, 2], [0, 0, 2]], np.int32).T
+ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+"""
+两块楼顶地板
+"""
+```
+
+
+
+
+
+
+
 所有cell 的变量是共享的，全局变量放最前面运行一次
 
 ```

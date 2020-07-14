@@ -16,6 +16,14 @@ linux .o,.a,.so
 
 
 ```
+if( readHeadword( hits[ i ].heading, headword, true ) )
+```
+
+
+
+```python
+
+
 #include <QString>
 #include <QTextCodec>
 
@@ -36,19 +44,21 @@ int iloadDict() {
    EB_Subbook_Code subBookList[ EB_MAX_SUBBOOKS ];
 
    int subBookCount;
-   int currentSubBook;
+   int currentSubBook = 0;
+   EB_Position currentPosition;
 
    QString error_string;
    const char * errs;
    const char * errmsg;
 
    char buf[ EB_MAX_TITLE_LENGTH + 1 ];
+   char buffer[ EB_MAX_PATH_LENGTH + 1 ];
 
    eb_initialize_book( &book );
    EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
 
    ret = eb_subbook_list( &book, subBookList, &subBookCount );
-   ret = eb_set_subbook( &book, subBookList[ 0 ] );
+   ret = eb_set_subbook( &book, subBookList[ currentSubBook ] );
 
 
    ret = eb_subbook_title( &book, buf );
@@ -58,6 +68,25 @@ int iloadDict() {
    codec_Euc = QTextCodec::codecForName("EUC-JP");
 
    QString title = codec_Euc->toUnicode( buf ); // QString
+
+   ret = eb_subbook_directory2( &book, subBookList[ currentSubBook ], buffer );
+
+
+   QString subbook_dir = QString::fromLocal8Bit( buffer );
+
+   int isHaveCopyrightQ = eb_have_copyright( &book );
+
+   if( isHaveCopyrightQ ) {
+       EB_Position position;
+       ret = eb_copyright( &book, &position );
+       currentPosition = position;
+   }
+
+
+
+
+   //return getText( position.page, position.offset, true );
+
 
    if( ret != EB_SUCCESS )
    {
