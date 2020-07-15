@@ -15,9 +15,23 @@ linux .o,.a,.so
 
 
 
+**一定要观察qtcreator 的堆栈窗口** 
+
+控件 ->视图 ->栈
+
+> 锁定取消就可以拖大窗口了
+
 ```c++
+
+// 把这个条件改成True
+if ( Dictionary::needToRebuildIndex( dictFiles, indexFile ) ||
+                 indexIsOldOrBad( indexFile ) )
+
 EpwingDictionary::EpwingDictionary
-bool indexIsOldOrBad( string const & indexFile )
+
+vector< sptr< Dictionary::Class > > makeDictionaries
+	bool indexIsOldOrBad( string const & indexFile )
+
 ```
 
 
