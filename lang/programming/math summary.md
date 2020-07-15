@@ -449,6 +449,12 @@ $$
 
 
 
+<img src="math summary.assets/image-20200715195930728.png" alt="image-20200715195930728" style="zoom:50%;" />
+
+**目的是找投影矩阵**
+
+
+
 <img src="math summary.assets/image-20200715192401975.png" alt="image-20200715192401975" style="zoom: 33%;" />
 
 直线上等距分布的点投影到数轴上后仍然等距分布
