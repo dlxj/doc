@@ -167,7 +167,8 @@ print("hi,,,")
 ## Path
 
 ```python
-currDir = os.getcwd()
+currDir = os.getcwd() # 兼容jupyter 
+currDir = os.path.dirname(os.path.abspath(__file__)) # 不兼容jupyter
 os.path.abspath(__file__)                   # current file
 os.path.dirname(os.path.abspath(__file__))  # current file directory
 os.path.dirname(os.path.abspath(__name__))  # ?? directory
@@ -2004,6 +2005,34 @@ seg.to_csv(fname_results, index=False ,encoding="utf-8")
 ```
 
 
+
+### read csv
+
+If you only want to read the first 999,999 (non-header) rows:
+
+```py
+read_csv(..., nrows=999999)
+```
+
+If you only want to read rows 1,000,000 ... 1,999,999
+
+```py
+read_csv(..., skiprows=1000000, nrows=999999)
+```
+
+***nrows\*** : int, default None Number of rows of file to read. Useful for reading pieces of large files*
+
+***skiprows\*** : list-like or integer Row numbers to skip (0-indexed) or number of rows to skip (int) at the start of the file
+
+and for large files, you'll probably also want to use chunksize:
+
+***chunksize\*** : int, default None Return TextFileReader object for iteration
+
+
+
+[geeks4geeks](https://www.geeksforgeeks.org/python-read-csv-using-pandas-read_csv/)
+
+[read csv](https://towardsdatascience.com/how-to-read-csv-file-using-pandas-ab1f5e7e7b58)
 
 
 
