@@ -17,6 +17,7 @@ linux .o,.a,.so
 
 ```c++
 EpwingDictionary::EpwingDictionary
+bool indexIsOldOrBad( string const & indexFile )
 ```
 
 
