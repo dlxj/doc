@@ -261,9 +261,27 @@ a-b if a>b else a+b
 ### round
 
 ```python
-round(2.12) # 四舍六入五成双 # 它的作用是让统计数据更公平，降低舍入的误差
-round(2.51, 2) # 保留两位小数
+round(2.145,2) # 四舍六入五成双 # 它的作用是让统计数据更公平，降低舍入的误差
+> 2.15 # 保留两位小数
 ```
+
+
+
+### sigmoid
+
+
+
+输入正数，值域在0.5 ~ 1 之间
+
+  $h(x)=\frac{1}{1+e^{-x}}$
+
+```python
+exp(-x)
+```
+
+
+
+
 
 
 
@@ -382,6 +400,9 @@ sum( list( map(lambda k: len( tests_segs[k] ), tests_segs) ) )
 
 ```python
 sorted(results, key=lambda l: l[3], reverse=True) # 按相似度高到低排序
+
+math.log(len(arr[6])) # 可以近似认为后一项的值域是 [0, 10]
+
 ```
 
 

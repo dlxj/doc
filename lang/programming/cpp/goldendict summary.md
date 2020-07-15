@@ -15,6 +15,14 @@ linux .o,.a,.so
 
 
 
+```c++
+EpwingDictionary::EpwingDictionary
+```
+
+
+
+
+
 ```
 if( readHeadword( hits[ i ].heading, headword, true ) )
 ```
