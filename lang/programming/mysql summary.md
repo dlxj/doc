@@ -278,6 +278,9 @@ SHOW VARIABLES LIKE "%version%";
 ```mysql
 SELECT tr.* FROM trialexampoint tr INNER JOIN (SELECT ts.ID AS menuID FROM trialexampointmenus ts INNER JOIN ( SELECT ID AS subjectID FROM tiku_new.trialsubject tt WHERE tt.appID = 8911 AND tt.name = '药学专业知识二' ) tt 
 ON ts.subjectID = tt.subjectID WHERE ts.appID = 8911 AND ts.enable = 1) ts ON tr.menuID = ts.menuID  WHERE tr.enable = 1
+
+sql = f"SELECT tr.ID as exampointID, CONCAT(tr.attribute,'\n', tr.context) as text FROM trialexampoint tr INNER JOIN (SELECT ts.ID AS menuID FROM trialexampointmenus ts INNER JOIN ( SELECT ID AS subjectID FROM tiku_new.trialsubject tt WHERE tt.appID = {appid} AND tt.name = '{subject}' ) tt ON ts.subjectID = tt.subjectID WHERE ts.appID = {appid} AND ts.enable = 1) ts ON tr.menuID = ts.menuID  WHERE tr.enable = 1 ORDER BY tr.ID asc;"
+
 ```
 
 
