@@ -1,5 +1,35 @@
 
 
+```cpp
+
+qeb.cpp
+EB_Error_Code QEb::setBinaryWave(const EB_Position &start, EB_Position &end)
+{
+    EB_Error_Code ecode = eb_set_binary_wave(&book, &start, &end);
+    if (ecode != EB_SUCCESS)
+        dispError("eb_set_binary_wave", ecode);
+    return ecode;
+}
+QByteArray QEb::readBinary()
+{
+    char buff[1024];
+    ssize_t len;
+    QByteArray b;
+    for(;;) {
+        EB_Error_Code ecode = eb_read_binary(&book, 1024, buff, &len);
+        if (ecode != EB_SUCCESS) {
+            dispError("eb_read_binary", ecode);
+            return b;
+        }
+        if (len > 0 )
+            b += QByteArray(buff, (int)len);
+        if (len < 1024)
+            break;
+    }
+    return b;
+}
+```
+
 
 
 
