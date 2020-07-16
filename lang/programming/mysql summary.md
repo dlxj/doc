@@ -271,6 +271,15 @@ SHOW VARIABLES LIKE "%version%";
 
 
 
+### Inner join
+
+
+
+```mysql
+SELECT tr.* FROM trialexampoint tr INNER JOIN (SELECT ts.ID AS menuID FROM trialexampointmenus ts INNER JOIN ( SELECT ID AS subjectID FROM tiku_new.trialsubject tt WHERE tt.appID = 8911 AND tt.name = '药学专业知识二' ) tt 
+ON ts.subjectID = tt.subjectID WHERE ts.appID = 8911 AND ts.enable = 1) ts ON tr.menuID = ts.menuID  WHERE tr.enable = 1
+```
+
 
 
 
@@ -1056,7 +1065,7 @@ mysql -h cloudcc.mysql.aliyun.com -u user_name -p db_name <
 
 代码如下:
 mysqldump -u user -p db tab1 tab2 > db.sql 
- 
+
 
 恢复 
 复制代码代码如下:
