@@ -747,6 +747,33 @@ suggest_freq（segment,tune=True）
 
 
 
+```python
+import jieba
+
+#载入自定义词典
+jieba.load_userdict('word_dict.txt')
+
+#查看用户自定义词典中的内容
+print(jieba.user_word_tag_tab)
+
+#往自定义词典中添加新词
+jieba.add_word('人民广场',freq=5,tag='n')
+
+#添加新词后的结果
+print(jieba.user_word_tag_tab)
+
+string='上海市浦东新区世纪大道100号楼501'
+text_cut=jieba.cut(string)
+print(" ".join(text_cut))
+
+#调整词频，重新分词
+jieba.suggest_freq(('上海市','浦东新区'),tune=True)
+text_cut=jieba.cut(string)
+print(" ".join(text_cut))
+```
+
+
+
 - 用法： `jieba.load_userdict(file_name)` # file_name为自定义词典的路径
 - 词典格式和`dict.txt`一样，一个词占一行；每一行分三部分，一部分为词语，另一部分为词频，最后为词性（可省略），用空格隔开
 
