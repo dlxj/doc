@@ -24,7 +24,12 @@ linux .o,.a,.so
 ```c++
 
 epwing.cc
+    vector< WordArticleLink > chain = dict.findArticles( word, ignoreDiacritics );
 	EpwingArticleRequest
+    eBook.getArticle( headword, text, articlePage, articleOffset, false );
+	headword       A级
+    articlePage    11721
+    articleOffset  1490
 
 epwing_book.cc
 EB_Error_Code hook_wave( EB_Book * book, EB_Appendix *, void * container,
