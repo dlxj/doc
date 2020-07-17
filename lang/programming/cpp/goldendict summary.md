@@ -24,6 +24,14 @@ linux .o,.a,.so
 ```c++
 
 epwing.cc
+    
+    vector< sptr< Dictionary::Class > > makeDictionaries
+    	# 总入口	
+    
+    sptr< Dictionary::DataRequest > req = getArticle( GD_NATIVE_TO_WS( L"00databaseinfo" 
+    
+    dict.eBook.getArticlePos( gd::toQString( word ), pg, off );
+      # 输入词，得到词的 page, offset
     vector< WordArticleLink > chain = dict.findArticles( word, ignoreDiacritics );
 	EpwingArticleRequest
     eBook.getArticle( headword, text, articlePage, articleOffset, false );
