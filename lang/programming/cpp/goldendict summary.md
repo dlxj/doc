@@ -32,6 +32,9 @@ epwing.cc
     
     dict.eBook.getArticlePos( gd::toQString( word ), pg, off );
       # 输入词，得到词的 page, offset
+      # 查词方法就在里面了，词头列表还不知道
+      # 声音也还不知道
+                                                       
     vector< WordArticleLink > chain = dict.findArticles( word, ignoreDiacritics );
 	EpwingArticleRequest
     eBook.getArticle( headword, text, articlePage, articleOffset, false );
