@@ -23,6 +23,9 @@ linux .o,.a,.so
 
 ```c++
 
+epwing.cc
+	EpwingArticleRequest
+
 epwing_book.cc
 EB_Error_Code hook_wave( EB_Book * book, EB_Appendix *, void * container,
                          EB_Hook_Code code, int, const unsigned int * argv )
