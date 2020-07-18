@@ -854,11 +854,81 @@ $$
 
 
 
+### 抽象向量空间
+
+
+
+行列式和特征向量与所选坐标系无关 
+
+> 这二者都是暗含在空间中的性质
+
+
+
+从某种意义上说,函数实际上只是另一种向量
+
+> f + g = (f + g)
+>
+> > (f+g)(x) = f(x) + g(x)
+
+因为向量相加与数乘能用于函数
 
 
 
 
-  
+
+### 算子就是变换的别名
+
+$$
+L(\frac{1}{9} x^3 -x ) = \frac{1}{3} - 1
+$$
+
+函数的线性变换有一个合理的解释
+
+> 这个变换接收一个函数,并把它变成另一个函数
+>
+> 导数就是这样一个例子,它将一个函数变成另一个函数
+>
+> 有时你听到的是"算子" 而不是变换, 不过它们是一个意思
+
+
+
+一个函数的变换是线性的是什么意思?
+
+> Additivity: $L(\overrightarrow{v}+\overrightarrow{w}) = L(\overrightarrow{v})+L(\overrightarrow{w})$
+> Scaling: $L(c \overrightarrow{v}) = c L(\overrightarrow{v})$
+
+<img src="math summary.assets/image-20200718160301631.png" alt="image-20200718160301631" style="zoom:67%;" />
+
+
+
+函数空间倾向于有无穷维
+
+<img src="math summary.assets/image-20200718160718276.png" alt="image-20200718160718276" style="zoom:80%;" />
+
+<img src="math summary.assets/image-20200718160740957.png" alt="image-20200718160740957" style="zoom:67%;" />
+
+### 选多项式的不同次幂作为一组基
+
+> 换句话说,第一个基函数是一个常函数,既$b_{0}(x)=1,$ 第二个基函数是$b_{1}=x$,然后是 $b_{1}=x^2$ 以此类推  
+>
+> 基函数的作用和i-hat,j-hat,k-hat 在向量的世界中起到的作用类似
+
+> 因为多项式的次数可以任意高,所以这个基函数集也是无穷大的
+
+
+
+<img src="math summary.assets/image-20200718161535679.png" alt="image-20200718161535679" style="zoom: 50%;" />
+
+
+
+
+
+
+
+
+
+
+
 
 ## 线性函数
 
