@@ -3,6 +3,56 @@
 ```cpp
 
 qeb.cpp
+  ecode = eb_menu(&book, &pos);
+  QString t;
+  candidate(pos, &t)
+    candidate(const EB_Position &pos, QString *txt)
+      *txt = text(pos)
+      	 eb_seek_text(&book, &pos)
+           
+
+QString QEb::readText(void *para, bool hook_flag)
+{
+    char buff[1024+1];
+    ssize_t len;
+    QByteArray b;
+    for(;;) {
+        EB_Error_Code ecode;
+        if (hook_flag)
+            ecode = eb_read_text(&book, &appendix, &hookset, para,
+                                 1024, buff, &len);
+        else
+            ecode = eb_read_text(&book, &appendix, NULL, para,
+                                 1024, buff, &len);
+        if (ecode != EB_SUCCESS) {
+            dispError("eb_read_text", ecode);
+            break;
+        }
+        if (len > 0)
+            b += QByteArray(buff, (int)len);
+        if (isTextStopped())
+            break;
+        //if (len < 1024)
+        //    break;
+    }
+    return b;
+
+}
+
+EB_Position QEb::startText()
+{
+    EB_Position pos;
+    EB_Error_Code ecode = eb_text(&book, &pos);  # 获得pos
+    if (ecode != EB_SUCCESS) {
+        dispError("eb_text", ecode);
+        return invalidPosition();
+    }
+    return pos;
+}    
+
+QEb::seekText(const EB_Position &pos)  # 根据pos 获得文本
+
+
 EB_Error_Code QEb::setBinaryWave(const EB_Position &start, EB_Position &end)
 {
     EB_Error_Code ecode = eb_set_binary_wave(&book, &start, &end);

@@ -153,6 +153,20 @@ $$
 
 
 
+## top arrow
+
+
+
+$A \overrightarrow{V} = \lambda \overrightarrow{V}$
+
+
+
+
+
+## 斜体小写字母
+
+
+
 黑斜体小写字母表示向量 $\textbf{x}$
 
 斜体小写字母表示标量  $\textit{x}$

@@ -26,6 +26,15 @@ linux .o,.a,.so
 epwing_book.cc
   eb_set_binary_wave( &book, &spos, &epos );
     # 音频读取在这里
+	spos.offset = 1630
+    spos.page = 201297
+    
+    epos.offset = 1839
+    epos.page = 201298
+    
+    eb_read_binary( &book, BinaryBufferSize,
+                              buffer.data(), &length );
+	
 
 epwing.cc
     
@@ -72,9 +81,7 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 
 
 
-```python
-
-
+```c++
 #include <QString>
 #include <QTextCodec>
 
@@ -92,6 +99,7 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 int iloadDict() {
 
    EB_Book book;
+   EB_Appendix appendix;
    EB_Subbook_Code subBookList[ EB_MAX_SUBBOOKS ];
 
    int subBookCount;
@@ -107,6 +115,8 @@ int iloadDict() {
 
    eb_initialize_book( &book );
    EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
+
+   eb_initialize_appendix(&appendix);
 
    ret = eb_subbook_list( &book, subBookList, &subBookCount );
    ret = eb_set_subbook( &book, subBookList[ currentSubBook ] );
@@ -134,6 +144,16 @@ int iloadDict() {
    }
 
 
+   EB_Position pos;
+
+   int isHaveMenu = eb_have_menu(&book);
+   if ( isHaveMenu == 1) {
+       eb_menu(&book, &pos);
+   }
+
+
+   ret = eb_text(&book, &pos);
+   ret = eb_seek_text(&book, &pos);
 
 
    //return getText( position.page, position.offset, true );
@@ -148,56 +168,8 @@ int iloadDict() {
 
 
    eb_finalize_book( &book );
+   eb_finalize_appendix(&appendix);
 
-}
-```
-
-
-
-```c++
-#include <QTextStream>
-#include <QTextDocumentFragment>
-
-#include <eb/eb.h>
-#include <eb/text.h>
-#include <eb/appendix.h>
-#include <eb/error.h>
-#include <eb/binary.h>
-#include <eb/font.h>
-
-
-int iloadDict() {
-
-   EB_Book book;
-   EB_Subbook_Code subBookList[ EB_MAX_SUBBOOKS ];
-
-   int subBookCount;
-   int currentSubBook;
-
-   QString error_string;
-   const char * errs;
-   const char * errmsg;
-
-   char buf[ EB_MAX_TITLE_LENGTH + 1 ];
-
-   eb_initialize_book( &book );
-   EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
-
-   ret = eb_subbook_list( &book, subBookList, &subBookCount );
-   ret = eb_set_subbook( &book, subBookList[ 0 ] );
-
-
-   ret = eb_subbook_title( &book, buf );
-
-   if( ret != EB_SUCCESS )
-   {
-     errs =  eb_error_string( ret );
-     errmsg = eb_error_message( ret );
-
-   }
-
-
-   eb_finalize_book( &book );
 }
 ```
 
