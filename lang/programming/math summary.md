@@ -925,7 +925,7 @@ $$
 
 
 
-<img src="math summary.assets/image-20200718162748186.png" alt="image-20200718162748186" style="zoom:50%;" />
+<img src="math summary.assets/image-20200718163900916.png" alt="image-20200718163900916" style="zoom: 33%;" />
 
 
 
