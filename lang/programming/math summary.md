@@ -943,6 +943,10 @@ $$
 
 
 
+<img src="math summary.assets/image-20200718165232240.png" alt="image-20200718165232240" style="zoom: 50%;" />
+
+
+
 
 
 
