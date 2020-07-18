@@ -788,11 +788,36 @@ $$
 
 #### 特征向量的符号表示
 
-$A \overrightarrow{V} = \lambda \overrightarrow{V}$
+
+$$
+\begin{align}
+A \overrightarrow{V} &= \lambda \overrightarrow{V}  \\ 
+&= (\lambda I) \overrightarrow{V} \\
+A \overrightarrow{V} - (\lambda I) \overrightarrow{V} &= 0 \\
+(A - \lambda I) \overrightarrow{V} &= 0
+\end{align}
+$$
+
+
+
+So:
+
+$$
+det (A - \lambda I) = 0
+$$
+
+#### 空间压缩对应的是矩阵行列式为零
+
+> **空间压缩对应的是矩阵行列式为零**
+>
+> $\overrightarrow{V}$ 是$A$ 的特征向量, 在变换中停留在它张成的空间里
+>
+
+
 
 > A 是线性变换矩阵
 >
-> $\overrightarrow{A}$ 是特征向量
+> $\overrightarrow{V}$ 是特征向量
 >
 > $ \lambda$ 是特征值，一个数
 
