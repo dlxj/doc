@@ -122,6 +122,8 @@ $$
 
 
 
+
+
 ### Cos 是投影后前模长比
 
 > **你点乘别人是别人向你投影，内积等于你长乘投影长**
@@ -131,6 +133,10 @@ $$
 > $\|\boldsymbol{y}\|cos\theta=\frac{\left<\boldsymbol{x},\boldsymbol{y}\right>}{\|\boldsymbol{x}\|}$ 
 >
 > 内积就是线性变换
+>
+> > **你点乘别人，你就是变换矩阵，你就是新空间的基**
+
+
 
 
 
