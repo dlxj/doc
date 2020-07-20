@@ -2094,6 +2094,29 @@ f"INSERT INTO trialexampointrelevanttest (examPointID, appID, testID, childTestI
 
 
 
+## pymysql
+
+
+
+
+### debug
+
+
+```python
+    q = iSql.db88(db="temp")
+    for sql in sqls:
+        try:
+            q.query(sql)
+        except Exception as e:
+            print(sql)
+            print(str(e))
+            q.close()
+            raise RuntimeError('some err')
+    q.close()
+```
+
+
+
 ## Excel
 
 

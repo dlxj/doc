@@ -594,6 +594,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # 字典制作
 
+> [epwing doc](http://www.mistys-internet.website/eb/index-en.html)
+>
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
 >
 > [EB Librar](https://github.com/aehlke/eb) 支持声音
