@@ -84,6 +84,8 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 
 
 ```c++
+
+
 #include <QString>
 #include <QTextCodec>
 
@@ -150,7 +152,23 @@ int iloadDict() {
 
    int isHaveMenu = eb_have_menu(&book);
    if ( isHaveMenu == 1) {
-       eb_menu(&book, &pos);
+       ret = eb_menu(&book, &pos);
+       if (pos.offset != -1 && pos.page != -1) {
+           ret = eb_seek_text(&book, &pos);
+           char buff[1024+1] = {0};
+           ssize_t len;
+           ret = eb_read_text(&book, &appendix, NULL, NULL,
+                                1024, buff, &len);
+
+           QByteArray b;
+           if (len > 0)
+               b += QByteArray(buff, (int)len);
+
+           QString ss = codec_Euc->toUnicode( buff );
+           QString s(b);
+           int i;
+           i = 0;
+       }
    }
 
 
@@ -173,6 +191,7 @@ int iloadDict() {
    eb_finalize_appendix(&appendix);
 
 }
+
 ```
 
 
