@@ -2,6 +2,17 @@
 
 [epwing doc](http://www.mistys-internet.website/eb/index-en.html)
 
+> https://github.com/mistydemeo/eb/blob/master/eb/menu.c
+>
+> book->subbook_current->menu.start_page  # 有没有end_page?  
+>
+> - eb_menu 函数只是简单的设置了position 
+>
+>   > page = book->subbook_current->menu.start_page;
+>   >
+>   >  position->page = page;
+>   >  position->offset = 0;
+
 
 
   D:\workcode\cpp\goldendict\build>D:\Qt\4.8.7\bin\moc.exe -o "D:\workcode\cpp\goldendict\build\moc_ui_dictheadwords.cpp"    "D:\workcode\cpp\goldendict\build\ui_dictheadwords.h"
