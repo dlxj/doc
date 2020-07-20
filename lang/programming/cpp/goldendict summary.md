@@ -84,8 +84,6 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 
 
 ```c++
-
-
 #include <QString>
 #include <QTextCodec>
 
@@ -176,8 +174,19 @@ int iloadDict() {
                QString s = codec_Euc->toUnicode( bf );
                QString ss = codec_Euc->toUnicode( buff );
 
-               if (eb_is_text_stopped(&book) == 1) {
-                   break;
+
+               if (!eb_is_text_stopped(&book))  // 返回1 表示当前这条数据已读完，可以开始读下一条数据了，否则continue 继续读
+                       continue;
+
+               ret = eb_forward_text(&book, NULL);
+               if (ret != EB_SUCCESS) {
+                   errs =  eb_error_string( ret );
+                   errmsg = eb_error_message( ret );
+                   if (ret == EB_ERR_END_OF_CONTENT) {
+                       break;
+                   } else {
+                       break;
+                   }
                }
 
                int i;
