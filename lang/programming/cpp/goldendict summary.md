@@ -157,18 +157,33 @@ int iloadDict() {
            ret = eb_seek_text(&book, &pos);
            char buff[1024+1] = {0};
            ssize_t len;
-           ret = eb_read_text(&book, &appendix, NULL, NULL,
-                                1024, buff, &len);
 
            QByteArray b;
-           if (len > 0)
-               b += QByteArray(buff, (int)len);
+           for (;;) {
 
-           QString ss = codec_Euc->toUnicode( buff );
-           QString s(b);
-           int i;
-           i = 0;
-       }
+               ret = eb_read_text(&book, &appendix, NULL, NULL,
+                                1024, buff, &len);
+               if (ret != EB_SUCCESS) {
+                   errs =  eb_error_string( ret );
+                   errmsg = eb_error_message( ret );
+                   break;
+               }
+
+               if (len > 0)
+                   b += QByteArray(buff, (int)len);
+
+               char* bf = b.data();
+               QString s = codec_Euc->toUnicode( bf );
+               QString ss = codec_Euc->toUnicode( buff );
+
+               if (eb_is_text_stopped(&book) == 1) {
+                   break;
+               }
+
+               int i;
+               i = 0;
+           }
+        }
    }
 
 
@@ -194,33 +209,6 @@ int iloadDict() {
 
 ```
 
-
-
-
-
-```c++
-#include <eb/eb.h>
-#include <eb/text.h>
-#include <eb/appendix.h>
-#include <eb/error.h>
-#include <eb/binary.h>
-#include <eb/font.h>
-
-int iloadDict() {
-
-   EB_Book book;
-   QString error_string;
-
-   eb_initialize_book( &book );
-   EB_Error_Code ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
-   if( ret != EB_SUCCESS )
-   {
-     const char * errs =  eb_error_string( ret );
-     const char * errmsg = eb_error_message( ret );
-
-   }
-}
-```
 
 
 
