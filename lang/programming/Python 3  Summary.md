@@ -857,6 +857,20 @@ https://zhuanlan.zhihu.com/p/42944600
 
 bool(re.match(r'\s+', '  '))   # 是否含空白符
 
+提取中文部分
+
+```python
+print(re.compile(r'\d+\s+(.+?)\s+').sub(r'\1', '1 跨膜  ') )  
+	# 只取第一个分组 r'\1'
+print(re.findall(r"\d+\s+(.+?)\s+", "0 跨膜激活物、钙调节物、亲环蛋白配体相互作用物   1  1"))
+	# findall 得到的结果是数组，不如前一种方法好用
+
+```
+
+
+
+
+
 
 
 ### compile
