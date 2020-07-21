@@ -2,6 +2,8 @@
 
 ```cpp
 
+eb_search_keyword(&book, wlist);
+
 qeb.cpp
   ecode = eb_menu(&book, &pos);
   QString t;
