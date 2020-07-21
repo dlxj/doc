@@ -36,6 +36,24 @@ linux .o,.a,.so
 
 ```c++
 
+struct EB_Position_Struct {
+    /*
+     * Page. (1, 2, 3 ...)
+     */
+    int page;
+
+    /*
+     * Offset in `page'. (0 ... 2047)
+     */
+    int offset;
+}
+
+bool EpwingBook::getArticlePos( QString word, QVector< int > & pages, QVector< int > & offsets )
+    # 通过精确搜索得到词条的postion，然后再通过postion 得到文本
+
+void EpwingBook::getFirstHeadword( EpwingHeadword & head )    
+    
+
 BinaryBufferSize = 50000
 eb_set_binary_wave( &book, &spos, &epos );
 QString name = makeFName( "wav", spos.page, spos.offset );
