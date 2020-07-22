@@ -36,6 +36,25 @@ linux .o,.a,.so
 
 ```c++
 
+eb-4.43
+readtext.c
+		# 好像声音的position 是通过回调得到的，eblib 在读text 的时侯主动回调你
+		/* beginning of WAVE sound */
+		in_step = 18;
+		if (cache_rest_length < in_step) {
+		    error_code = EB_ERR_UNEXP_TEXT;
+		    goto failed;
+		}
+		argc = 6;
+		argv[1] = eb_uint4(cache_p + 2);
+		argv[2] = eb_bcd4(cache_p + 6);
+		argv[3] = eb_bcd2(cache_p + 10);
+		argv[4] = eb_bcd4(cache_p + 12);
+		argv[5] = eb_bcd2(cache_p + 16);
+		hook = hookset->hooks + EB_HOOK_BEGIN_WAVE;
+		break;
+
+
 struct EB_Position_Struct {
     /*
      * Page. (1, 2, 3 ...)
@@ -51,6 +70,24 @@ struct EB_Position_Struct {
 bool EpwingBook::getArticlePos( QString word, QVector< int > & pages, QVector< int > & offsets )
     # 通过精确搜索得到词条的postion，然后再通过postion 得到文本
 
+       // 精确查询
+   QString word = "Ａ級";
+   QByteArray bword;
+
+   bword = codec_Euc->fromUnicode( word );
+   QString bs = codec_Euc->toUnicode( bword.data() );
+   
+   ret = eb_search_exactword( &book, bword.data() );
+   
+   #define HitsBufferSize 512
+   EB_Hit hits[ HitsBufferSize ];
+   int hitCount = 0;
+   
+   ret = eb_hit_list( &book, HitsBufferSize, hits, &hitCount );
+   QVector< int > pages, offsets;
+
+
+    
 void EpwingBook::getFirstHeadword( EpwingHeadword & head )    
     
 

@@ -1,5 +1,18 @@
 [TOC]
 
+
+
+[语法糖](https://www.zhihu.com/question/298981020)
+
+```c++
+std::tuple<int,string> nextToken(){
+    return {4,"fallthrough"};
+}
+auto[tokenType,lexeme] = nextToken();
+```
+
+
+
 vscode configure
 
 ```
