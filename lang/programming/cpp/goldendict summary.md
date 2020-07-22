@@ -36,6 +36,40 @@ linux .o,.a,.so
 
 ```c++
 
+EpwingBook::isHeadwordCorrect( QString const & headword )
+    eb_search_exactword( &book, buf.data() )
+
+    
+#define HookFunc(name) \
+    EB_Error_Code name(EB_Book *, EB_Appendix *, void*, EB_Hook_Code, int, \
+                       const unsigned int*)
+
+HookFunc( hook_wave );
+
+const EB_Hook hooks[] = {
+  { EB_HOOK_BEGIN_WAVE, hook_wave },
+  { EB_HOOK_END_WAVE, hook_wave }
+}
+
+eb_set_hooks( &hookSet, hooks );
+	# 源头可能在这里
+
+EB_Error_Code hook_wave( EB_Book * book, EB_Appendix *, void * container,
+                         EB_Hook_Code code, int, const unsigned int * argv )
+{
+  EContainer * cn = static_cast< EContainer * >( container );
+
+  if( cn->textOnly )
+    return EB_SUCCESS;
+
+  QByteArray str = cn->book->handleWave( code, argv );
+  if( !str.isEmpty() )
+    eb_write_text( book, str.data(), str.size() );
+
+  return EB_SUCCESS;
+}
+
+
 eb-4.43
 readtext.c
 		# 好像声音的position 是通过回调得到的，eblib 在读text 的时侯主动回调你
