@@ -36,9 +36,12 @@ linux .o,.a,.so
 
 ```c++
 
+eb_read_text
+    # 有hookset 参数
+
 EpwingBook::isHeadwordCorrect( QString const & headword )
     eb_search_exactword( &book, buf.data() )
-
+	# 里面没有hookset 参数
     
 #define HookFunc(name) \
     EB_Error_Code name(EB_Book *, EB_Appendix *, void*, EB_Hook_Code, int, \
@@ -48,9 +51,11 @@ HookFunc( hook_wave );
 
 const EB_Hook hooks[] = {
   { EB_HOOK_BEGIN_WAVE, hook_wave },
-  { EB_HOOK_END_WAVE, hook_wave }
+  { EB_HOOK_END_WAVE, hook_wave },
+  { EB_HOOK_NULL, NULL }
 }
 
+EB_Hookset hookSet;
 eb_set_hooks( &hookSet, hooks );
 	# 源头可能在这里
 
@@ -229,8 +234,10 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 # Read WAV from epwing NHK
 
 ```c++
+
 #include <QString>
 #include <QTextCodec>
+#include <QVector>
 
 #include <QTextStream>
 #include <QTextDocumentFragment>
@@ -243,6 +250,58 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 #include <eb/binary.h>
 #include <eb/font.h>
 
+
+void readtext(EB_Book &book, EB_Appendix &appendix, EB_Position &pos) {
+
+    QTextCodec * codec_ISO, * codec_GB, * codec_Euc;
+    codec_ISO = QTextCodec::codecForName( "ISO8859-1" );
+    codec_GB = QTextCodec::codecForName( "GB2312" );
+    codec_Euc = QTextCodec::codecForName("EUC-JP");
+
+    const char * errs;
+    const char * errmsg;
+
+    EB_Error_Code ret = eb_seek_text(&book, &pos);
+    char buff[1024+1] = {0};
+    ssize_t len;
+
+    QByteArray b;
+    for (;;) {
+
+        ret = eb_read_text(&book, &appendix, NULL, NULL,
+                         1024, buff, &len);
+        if (ret != EB_SUCCESS) {
+            errs =  eb_error_string( ret );
+            errmsg = eb_error_message( ret );
+            break;
+        }
+
+        if (len > 0)
+            b += QByteArray(buff, (int)len);
+
+        char* bf = b.data();
+        QString s = codec_Euc->toUnicode( bf );
+        QString ss = codec_Euc->toUnicode( buff );
+
+
+        if (!eb_is_text_stopped(&book))  // 返回1 表示当前这条数据已读完，可以开始读下一条数据了，否则continue 继续读
+                continue;
+
+        ret = eb_forward_text(&book, NULL);
+        if (ret != EB_SUCCESS) {
+            errs =  eb_error_string( ret );
+            errmsg = eb_error_message( ret );
+            if (ret == EB_ERR_END_OF_CONTENT) {
+                break;
+            } else {
+                break;
+            }
+        }
+
+        int i;
+        i = 0;
+    }
+}
 
 int iloadDict() {
 
@@ -400,6 +459,56 @@ int iloadDict() {
 
        }
        f.close();
+   }
+
+
+   // 精确查询
+   QString word = "Ａ級";
+   QByteArray bword;
+
+
+   bword = codec_Euc->fromUnicode( word );
+   QString bs = codec_Euc->toUnicode( bword.data() );
+
+   ret = eb_search_exactword( &book, bword.data() );
+
+   #define HitsBufferSize 512
+   EB_Hit hits[ HitsBufferSize ];
+   int hitCount = 0;
+
+   ret = eb_hit_list( &book, HitsBufferSize, hits, &hitCount );
+   QVector< int > pages, offsets;
+
+
+   for( int i = 0; i < hitCount; i++ )
+   {
+     bool same_article = false;
+     for( int n = 0; n < pages.size(); n++ )
+     {
+       if( pages.at( n ) == hits[ i ].text.page
+           && offsets.at( n ) == hits[ i ].text.offset )
+       {
+         same_article = true;
+         continue;
+       }
+     }
+     if( !same_article )
+     {
+       pages.push_back( hits[ i ].text.page );
+       offsets.push_back( hits[ i ].text.offset );
+     }
+   }
+
+   if ( !pages.empty() )
+   {
+      pos.page = pages[0];
+      pos.offset = offsets[0];
+
+      readtext(book, appendix, pos);
+      //ret = eb_seek_text(&book, &pos);
+
+      int i;
+      i = 0;
    }
 
 
