@@ -36,6 +36,10 @@ linux .o,.a,.so
 
 ```c++
 
+# 导出全部词头
+DictHeadwords::saveHeadersToFile()
+showDictionaryHeadwords
+
 # 问题：它能多次回调，自已的就只回调一次？
 EB_Error_Code ret = eb_seek_text(&book, &pos);
    # pos.page   11721
