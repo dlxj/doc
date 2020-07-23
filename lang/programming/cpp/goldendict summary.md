@@ -36,7 +36,7 @@ linux .o,.a,.so
 
 ```c++
 
-
+Ａ級
 # 确定sound 回调的触发点了
 EpwingBook::getText( int page, int offset, bool text_only )
     eb_read_text
@@ -44,12 +44,17 @@ EpwingBook::getText( int page, int offset, bool text_only )
         Epwing::Book::hook_wave
     EB_Error_Code hook_wave( EB_Book * book, EB_Appendix *, void * container,
                          EB_Hook_Code code, int, const unsigned int * argv )
-
-    
     
 eb_read_text
     # 有hookset 参数
 
+    
+EContainer container    
+    # 是在 eb_read_text( &book, &appendix, &refHookSet, &container,
+      # ret = eb_read_heading( &book, &appendix, &hookSet, &container,
+        # 的时侯传进去的
+    
+    
 EpwingBook::isHeadwordCorrect( QString const & headword )
     eb_search_exactword( &book, buf.data() )
 	# 里面没有hookset 参数
@@ -209,7 +214,7 @@ epwing.cc
     vector< WordArticleLink > chain = dict.findArticles( word, ignoreDiacritics );
 	EpwingArticleRequest
     eBook.getArticle( headword, text, articlePage, articleOffset, false );
-	headword       A级
+	headword       Ａ級
     articlePage    11721
     articleOffset  1490
 
@@ -243,6 +248,252 @@ if( readHeadword( hits[ i ].heading, headword, true ) )
 
 
 # Read WAV from epwing NHK
+
+
+
+```c++
+// 利用回调成功读取sound
+
+#include <QString>
+#include <QTextCodec>
+#include <QVector>
+
+#include <QTextStream>
+#include <QTextDocumentFragment>
+#include <QDir>
+
+
+#include <eb/eb.h>
+#include <eb/text.h>
+#include <eb/appendix.h>
+#include <eb/error.h>
+#include <eb/binary.h>
+#include <eb/font.h>
+
+EB_Error_Code ret;
+
+EB_Error_Code ihook_wave( EB_Book * book, EB_Appendix *, void * container,
+                         EB_Hook_Code code, int, const unsigned int * argv )
+{
+
+    EB_Position spos, epos;
+    spos.page = argv[ 2 ];
+    spos.offset = argv[ 3 ];
+    epos.page = argv[ 4 ];
+    epos.offset = argv[ 5 ];
+
+    ret = eb_set_binary_wave( book, &spos, &epos );
+
+    int BinaryBufferSize = 50000;
+    //   EB_Position spos, epos;
+    //   spos.offset = 1630;
+    //   spos.page = 201297;
+
+    //   epos.offset = 1839;
+    //   epos.page = 201298;
+
+
+       QString name = QString::number( spos.page )
+                  + "x"
+                  + QString::number( spos.offset )
+                  + "."
+                  + "wav";
+
+       QString cacheSoundsDir = "E:\\tmp";
+       QString fullName;
+
+       fullName = cacheSoundsDir + QDir::separator() + name;
+       ret = eb_set_binary_wave( book, &spos, &epos );
+
+       QFile f( fullName );
+       if( f.open( QFile::WriteOnly | QFile::Truncate ) )
+       {
+           QByteArray buffer;
+           buffer.resize( BinaryBufferSize );
+           ssize_t length;
+
+           for( ; ; )
+           {
+               EB_Error_Code ret = eb_read_binary( book, BinaryBufferSize,
+                                                   buffer.data(), &length );
+               if( ret != EB_SUCCESS )
+               {
+                 //setErrorString( "eb_read_binary", ret );
+                 //gdWarning( "Epwing sound retrieve error: %s",
+                 //           error_string.toUtf8().data() );
+                 break;
+               }
+
+               f.write( buffer.data(), length );
+
+               if( length < BinaryBufferSize )
+                 break;
+
+           }
+           f.close();
+       }
+
+}
+
+const EB_Hook hooks[] = {
+    { EB_HOOK_BEGIN_WAVE, ihook_wave },
+    { EB_HOOK_END_WAVE, ihook_wave },
+};
+
+EB_Book book;
+EB_Hookset hookSet;
+EB_Appendix appendix;
+EB_Subbook_Code subBookList[ EB_MAX_SUBBOOKS ];
+int subBookCount;
+int currentSubBook = 0;
+
+EB_Position pos;
+
+QTextCodec * codec_ISO, * codec_GB, * codec_Euc;
+
+const char * errs;
+const char * errmsg;
+
+#define TextBufferSize 4095
+char buffer[ TextBufferSize + 1 ];
+ssize_t buffer_length;
+
+
+void readtext(EB_Book &book, EB_Appendix &appendix, EB_Position &pos) {
+
+    EB_Error_Code ret = eb_seek_text(&book, &pos);
+    char buff[1024+1] = {0};
+    ssize_t len;
+
+    QByteArray b;
+    for (;;) {
+
+        //ret = eb_read_text(&book, &appendix, NULL, NULL,
+        //                 1024, buff, &len);
+
+        ret = eb_read_text( &book, &appendix, &hookSet, NULL,
+                            TextBufferSize, buffer, &buffer_length );
+
+        if (ret != EB_SUCCESS) {
+            errs =  eb_error_string( ret );
+            errmsg = eb_error_message( ret );
+            break;
+        }
+
+        if (len > 0)
+            b += QByteArray(buff, (int)len);
+
+        char* bf = b.data();
+        QString s = codec_Euc->toUnicode( bf );
+        QString ss = codec_Euc->toUnicode( buff );
+
+
+        if (!eb_is_text_stopped(&book))  // 返回1 表示当前这条数据已读完，可以开始读下一条数据了，否则continue 继续读
+                continue;
+
+        ret = eb_forward_text(&book, NULL);
+        if (ret != EB_SUCCESS) {
+            errs =  eb_error_string( ret );
+            errmsg = eb_error_message( ret );
+            if (ret == EB_ERR_END_OF_CONTENT) {
+                break;
+            } else {
+                break;
+            }
+        }
+
+        int i;
+        i = 0;
+    }
+}
+
+void init(){
+
+    codec_ISO = QTextCodec::codecForName( "ISO8859-1" );
+    codec_GB = QTextCodec::codecForName( "GB2312" );
+    codec_Euc = QTextCodec::codecForName("EUC-JP");
+
+    eb_initialize_book( &book );
+    eb_initialize_appendix( &appendix );
+
+    eb_initialize_hookset( &hookSet );
+    eb_set_hooks( &hookSet, hooks );
+
+    ret = eb_bind( &book, "E:\\GoldenDict\\content\\NHK" );
+
+    ret = eb_subbook_list( &book, subBookList, &subBookCount );
+    ret = eb_set_subbook( &book, subBookList[ currentSubBook ] );
+
+
+    // 精确查询
+    QString word = "Ａ級";
+    QByteArray bword;
+
+
+    bword = codec_Euc->fromUnicode( word );
+    QString bs = codec_Euc->toUnicode( bword.data() );
+
+    ret = eb_search_exactword( &book, bword.data() );
+
+    #define HitsBufferSize 512
+    EB_Hit hits[ HitsBufferSize ];
+    int hitCount = 0;
+
+    ret = eb_hit_list( &book, HitsBufferSize, hits, &hitCount );
+    QVector< int > pages, offsets;
+
+
+    for( int i = 0; i < hitCount; i++ )
+    {
+        bool same_article = false;
+        for( int n = 0; n < pages.size(); n++ )
+        {
+            if( pages.at( n ) == hits[ i ].text.page
+                    && offsets.at( n ) == hits[ i ].text.offset )
+            {
+                same_article = true;
+                continue;
+            }
+        }
+        if( !same_article )
+        {
+            pages.push_back( hits[ i ].text.page );
+            offsets.push_back( hits[ i ].text.offset );
+        }
+    }
+
+    if ( !pages.empty() )
+    {
+        pos.page = pages[0];
+        pos.offset = offsets[0];
+
+        readtext(book, appendix, pos);
+        //ret = eb_seek_text(&book, &pos);
+
+        int i;
+        i = 0;
+    }
+
+
+
+    if( ret != EB_SUCCESS )
+    {
+        errs =  eb_error_string( ret );
+        errmsg = eb_error_message( ret );
+
+    }
+
+
+    eb_finalize_book( &book );
+    eb_finalize_appendix(&appendix);
+}
+```
+
+
+
+
+
+
 
 ```c++
 
