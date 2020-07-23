@@ -36,6 +36,17 @@ linux .o,.a,.so
 
 ```c++
 
+
+# 确定sound 回调的触发点了
+EpwingBook::getText( int page, int offset, bool text_only )
+    eb_read_text
+      eb_read_text_internal
+        Epwing::Book::hook_wave
+    EB_Error_Code hook_wave( EB_Book * book, EB_Appendix *, void * container,
+                         EB_Hook_Code code, int, const unsigned int * argv )
+
+    
+    
 eb_read_text
     # 有hookset 参数
 
