@@ -36,6 +36,14 @@ linux .o,.a,.so
 
 ```c++
 
+# 问题：它能多次回调，自已的就只回调一次？
+EB_Error_Code ret = eb_seek_text(&book, &pos);
+   # pos.page   11721
+   # pos.offset 1490
+
+ret = eb_read_text( &book, &appendix, &hookSet, &container,
+                     TextBufferSize, buffer, &buffer_length );
+
 Ａ級
 # 确定sound 回调的触发点了
 EpwingBook::getText( int page, int offset, bool text_only )
