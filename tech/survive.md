@@ -612,6 +612,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [textshot开源文字识别](https://github.com/ianzhao05/textshot)
 >
+> [simple-chinese-ocr 有配套算法详细文章](https://github.com/bojone/simple-chinese-ocr)
+>
 > [react+markdown](https://github.com/mdx-js/mdx)
 >
 > > ```shell
