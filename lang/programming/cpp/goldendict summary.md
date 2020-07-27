@@ -1,5 +1,9 @@
 
 
+https://download.qt.io/archive/qt/4.8/4.8.7/
+
+
+
 [epwing doc](http://www.mistys-internet.website/eb/index-en.html)
 
 > https://github.com/mistydemeo/eb/blob/master/eb/menu.c
@@ -36,11 +40,18 @@ linux .o,.a,.so
 
 ```c++
 
+# 问题：为什么图片hook 不成功？
+
+
+void Sources::on_rescan_clicked()
+  iloadDict();
+    
 # 导出全部词头
 DictHeadwords::saveHeadersToFile()
 showDictionaryHeadwords
 
 # 问题：它能多次回调，自已的就只回调一次？
+    # 因为回调函数必须返回成功码
 EB_Error_Code ret = eb_seek_text(&book, &pos);
    # pos.page   11721
    # pos.offset 1490

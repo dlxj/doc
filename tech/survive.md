@@ -606,6 +606,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [Goldendict 支持epwing可导出词头，支持声音]()
 >
+> [YUKI Galgame 翻译器](https://github.com/project-yuki/YUKI)
+>
 > [qolibri 比Goldendict清清晰， 技持声音](https://github.com/ludios/qolibri)
 >
 > [bob Mac开源取词翻译](https://github.com/ripperhe/Bob)
