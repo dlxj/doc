@@ -1175,6 +1175,106 @@ re. escape( )
 
 
 
+### book_2_json
+
+
+
+```python
+import math
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname( os.path.dirname(os.path.abspath(__file__)))))  # std 包在此模块的上上上级目录
+sys.path.append( os.path.dirname(os.path.abspath(__file__) ) )
+
+import re
+import util.fectchData as fectchData
+import util.seg as seg
+import util.saveTempData as saveTempData
+import std.iSql as iSql
+import std.seg.iSeg as iSeg
+import std.iList as iList
+import std.iJson as iJson
+import std.iFile as iFile
+import std.iTextrank as iTextrank
+
+from joblib import Parallel, delayed
+import itertools
+
+
+regs = [
+        r'(@@第[一二三四五六七八九十]+章.+?)\n',
+        r'(@@第[一二三四五六七八九十]+节.+?)\n',
+        r'@@[一二三四五六七八九十]+、.+?\n',
+        r'@@（[一二三四五六七八九十]+）.+?\n',
+        r'@@[1-9]+.+?\n'
+    ]
+
+
+# 输入字符串，标题正则
+# 返回标题、标题位置(strat, end), 标题下的文本
+def extractPattern(strs, regs, idx):
+    #ss =  re.findall(reg, strs, re.DOTALL)
+    iters = re.finditer(regs[idx], strs, re.DOTALL)
+    poss =  [ i.span() for i in iters ] # 标题positions
+    rs = []
+    for i in range( len(poss) ):
+        (start, end) = poss[i]
+        title = strs[start:end]
+        contents = None
+        if i == ( len(poss) - 1 ):
+            contents = strs[ end : len(strs) ]
+        else:
+            contents = strs[ end : poss[i+1][0] ]
+        rs.append( [ start, end, title, contents ] )
+
+    return rs
+
+def walks(arr, regs, idx):
+    if idx >= len(regs) or len(arr) <= 0:
+        return
+
+    for l in arr:
+        strs = l[3]
+        rs = extractPattern(strs, regs, idx)
+        if len(rs) > 0:
+            l[3] = rs
+            walks(l[3], regs, idx+1)
+        else:
+            walks([l], regs, idx+1)
+
+        #print(rs)
+
+
+if __name__ == "__main__":
+    
+    currDir = os.path.dirname(os.path.abspath(__file__))
+
+    fname_book = os.path.join(currDir, '药二20200617.txt')
+    fname_results = os.path.join(currDir, 'results.json')
+    
+
+    book = iFile.readfile_line_by_line(fname_book)
+    strs = "\n".join(book)
+    
+    print( len(strs), '@@第十六章' in strs )
+
+
+    rs = extractPattern(strs, regs, 0)
+    #iJson.save_json(fname_results, rs)
+    #print(rs)
+
+    walks(rs, regs, 1)
+    iJson.save_json(fname_results, rs)
+    #print(rs[0])
+
+
+"""
+https://zhuanlan.zhihu.com/p/42944600
+"""
+```
+
+
+
 
 
 ## Sort
