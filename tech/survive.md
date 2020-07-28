@@ -598,7 +598,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [Epwing数据导出](https://github.com/cegfdb/zero-epwing)
 >
-> [EB Librar](https://github.com/aehlke/eb) 支持声音
+> [ep lib](https://github.com/mistydemeo/eb)
 >
 > [EPWING format](https://github.com/qunwang6/epwing.rs)
 >
