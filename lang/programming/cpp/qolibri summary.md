@@ -1,5 +1,42 @@
 
 
+## QT Creator 导入CMakelist.txt 既可生成项目文件
+
+
+
+```cpp
+unning /usr/local/Cellar/cmake/3.18.0/bin/cmake /Users/vvw/Documents/qolibri '-GCodeBlocks - Unix Makefiles' -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_CXX_COMPILER:STRING=/usr/bin/clang++ -DCMAKE_C_COMPILER:STRING=/usr/bin/clang -DCMAKE_PREFIX_PATH:STRING=/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64 -DQT_QMAKE_EXECUTABLE:STRING=/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake in /private/var/folders/62/j3_wjvp97n30cs5sd9pxs3zc0000gn/T/QtCreator-LxOSNf/qtc-cmake-xgVaEUaB.
+-- The C compiler identification is AppleClang 11.0.3.11030032
+-- The CXX compiler identification is AppleClang 11.0.3.11030032
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    QT_QMAKE_EXECUTABLE
+
+
+-- Build files have been written to: /private/var/folders/62/j3_wjvp97n30cs5sd9pxs3zc0000gn/T/QtCreator-LxOSNf/qtc-cmake-xgVaEUaB
+```
+
+
+
+
+
+
+
 ```cpp
 
 eb_search_keyword(&book, wlist);
