@@ -1,5 +1,13 @@
 
 
+https://download.qt.io/archive/qt/5.14/5.14.2/
+
+
+
+wget "https://download.qt.io/archive/qt/5.14/5.14.2/qt-opensource-linux-x64-5.14.2.run"
+
+
+
 https://wiki.qt.io/Building_Qt_5_from_Git
 
 

@@ -1147,6 +1147,18 @@ def replaceall(strs, ps, idx):
 
 
 
+### split
+
+
+
+```python
+# 对文本进行分句
+def splitSentences(text):
+    sents = re.split(u'[\n。*+@+]', text) # 以句号或换行符作为分句标准
+    sents = [sent for sent in sents if len(sent) > 0]  # 去除只包含\n或空白符的句子
+    return sents
+```
+
 
 
 

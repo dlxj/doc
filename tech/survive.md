@@ -618,6 +618,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [react+markdown](https://github.com/mdx-js/mdx)
 >
+> [cmake for qt+ios](https://github.com/OlivierLDff/QtIosCMake)
+>
 > > ```shell
 > > sudo mount -uw /
 > > >重启按 cmd+R  
