@@ -22,6 +22,16 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/maclib/include")
 
 
 
+ipaly/doc/koreader4k3.txt
+
+```
+arm-none-linux-gnueabi-gcc -o iplay iplay.c -I/usr/include -I/usr/include/alsa -L/usr/lib -lasound -lpthread -lm -lrt -ldl
+```
+
+
+
+
+
 ## compile .so
 
 
