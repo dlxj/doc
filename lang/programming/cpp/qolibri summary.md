@@ -16,15 +16,29 @@ eb_set_hooks  搜这个
 
 
 
+201297x1630.wav  # 先生成这个
+
+12284x419.jpeg # 再生成这个
+
+
+
+
+
 实验代码写这里
 
 
 
-```
+```c++
 // 图片能正常断下来，看看自已写的代码能否断下来？
 void MainWindow::viewSearch()
 	viewSearch(str, model->method);
 		// 实验代码写这里
+		
+		QByteArray EbCore::hookBeginInColorJpeg(int, const unsigned int *argv)
+			// 用自已的代码替换这个函数
+		QByteArray EbCore::hookEndInColorGraphic(int, const unsigned int*)
+      // 用自已的代码替换这个函数
+      
 ```
 
 
@@ -69,11 +83,38 @@ int main(int argc, char *argv[])
 
 
 
+手动触发
+
+```c++
+// ebhook.cpp
+EB_Error_Code iHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*,
+    void *classp, EB_Hook_Code, int argc, const unsigned int* argv)
+{
+    EbCore *p = static_cast<EbCore*>(classp);
+    QByteArray b =  p->hookBeginInColorJpeg(argc,argv);
+    if (!b.isEmpty()) {
+        return eb_write_text_string(book, b);
+    } else {
+        return EB_SUCCESS;
+    }
+}
+
+EB_Hook hooks[] = {
+  { EB_HOOK_BEGIN_IN_COLOR_JPEG, iHookBEGIN_IN_COLOR_JPEG },
+  { EB_HOOK_NULL, NULL }
+}
+
+```
+
+
+
 
 
 ## QT Creator 导入CMakelist.txt 既可生成项目文件
 
-
+```
+EB_Error_Code ecode = eb_set_hooks(&hookset, hooks);
+```
 
 ```cpp
 unning /usr/local/Cellar/cmake/3.18.0/bin/cmake /Users/vvw/Documents/qolibri '-GCodeBlocks - Unix Makefiles' -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_CXX_COMPILER:STRING=/usr/bin/clang++ -DCMAKE_C_COMPILER:STRING=/usr/bin/clang -DCMAKE_PREFIX_PATH:STRING=/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64 -DQT_QMAKE_EXECUTABLE:STRING=/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake in /private/var/folders/62/j3_wjvp97n30cs5sd9pxs3zc0000gn/T/QtCreator-LxOSNf/qtc-cmake-xgVaEUaB.
