@@ -83,6 +83,18 @@ int main(int argc, char *argv[])
 
 
 
+```c++
+// 初始化
+EbCore::EbCore(HookMode hmode) : QEb()
+    initializeBook();
+    initializeAppendix();
+    initializeHookset();
+```
+
+
+
+
+
 手动触发
 
 ```c++
@@ -103,6 +115,33 @@ EB_Hook hooks[] = {
   { EB_HOOK_BEGIN_IN_COLOR_JPEG, iHookBEGIN_IN_COLOR_JPEG },
   { EB_HOOK_NULL, NULL }
 }
+
+    EB_Book book;
+    EB_Appendix appendix;
+    EB_Hookset hookset;
+    EB_BookList bookList;
+
+    eb_initialize_book(&book);
+    eb_initialize_appendix(&appendix);
+    eb_initialize_hookset(&hookset);
+
+		EB_Error_Code ecode;
+		ecode = eb_set_hooks(&hookset, hooks);
+		ecode = eb_bind(&book, 
+            	QString("/Users/vvw/Documents/dic/NHK").toLocal8Bit());  
+				// path.toUtf8();
+		
+		
+		
+		EB_Subbook_Code codes[EB_MAX_SUBBOOKS];
+    int cnt;
+
+    QList <EB_Subbook_Code> list;
+    ecode = eb_subbook_list(&book, codes, &cnt);
+		
+		ecode = eb_set_subbook(&book, codes[0]);
+
+
 
 ```
 
