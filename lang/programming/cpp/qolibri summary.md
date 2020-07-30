@@ -1,5 +1,46 @@
 
 
+
+
+eb_set_hooks  搜这个
+
+Ａ級
+
+
+
+先删除缓存
+
+/Users/vvw/Library/Caches/qolibri/ＮＨＫ　日本語発音アクセント辞典
+
+>font	image	mpeg	wave
+
+
+
+搜索入口
+
+```
+void MainWindow::viewSearch()
+	viewSearch(str, model->method);
+```
+
+
+
+
+
+```c++
+EbCore::EbCore(HookMode hmode) : QEb()
+	setHooks(hooks);
+
+ebhook.cpp
+	HOOK_FUNC(BEGIN_WAVE, EbCore, hookBeginWave)
+	HOOK_FUNC(END_WAVE, EbCore, hookEndWave)
+
+```
+
+
+
+
+
 ## QT Creator 导入CMakelist.txt 既可生成项目文件
 
 
