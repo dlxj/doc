@@ -16,11 +16,31 @@ eb_set_hooks  搜这个
 
 
 
-搜索入口
+实验代码写这里
+
+
 
 ```
+// 图片能正常断下来，看看自已写的代码能否断下来？
 void MainWindow::viewSearch()
 	viewSearch(str, model->method);
+		// 实验代码写这里
+```
+
+
+
+
+
+搜索入口
+
+```c++
+void MainWindow::viewSearch()
+	viewSearch(str, model->method);
+
+// 断这里
+QByteArray EbCore::hookBeginWave(int, const unsigned int *argv)
+
+ 
 ```
 
 
@@ -35,6 +55,16 @@ ebhook.cpp
 	HOOK_FUNC(BEGIN_WAVE, EbCore, hookBeginWave)
 	HOOK_FUNC(END_WAVE, EbCore, hookEndWave)
 
+```
+
+
+
+```c++
+// 一切的开始
+qolibri.cpp
+int main(int argc, char *argv[])
+	QApplication app(argc, argv);
+	int ret = app.exec();
 ```
 
 
