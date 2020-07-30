@@ -712,6 +712,22 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 
 
+# 游戏汉化
+
+
+
+[关于Rom Hacking你可以了解到的一些事](https://geocld.github.io/2020/01/16/rom-hacking/)
+
+## 3DS
+
+### 解包工具
+
+- [HackingToolkit9DS](https://github.com/Asia81/HackingToolkit9DS-Deprecated-)
+
+- [translation toolkit](https://github.com/IcySon55/Kuriimu)
+
+
+
 # 深度学习
 
 > 深度学习入门：基于Python的理论与实现  Deep Learning book  introduction to hmatrix
