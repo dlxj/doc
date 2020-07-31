@@ -2397,6 +2397,18 @@ if __name__ == '__main__':
 
 
 
+等间隔数字
+
+Return **evenly spaced numbers** over a specified interval.
+
+> even 等，均等
+>
+> space 间隔，距离，空隙
+
+
+
+
+
 ### 楼房坐标系
 
 
