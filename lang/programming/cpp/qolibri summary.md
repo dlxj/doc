@@ -18,7 +18,7 @@ eb_set_hooks  搜这个
 
 201297x1630.wav  # 先生成这个
 
-12284x419.jpeg # 再生成这个
+12284x419.jpeg      # 再生成这个
 
 
 
@@ -93,6 +93,29 @@ EbCore::EbCore(HookMode hmode) : QEb()
 
 
 
+```c++
+// 遍历词条的方法
+QList <EB_Hit> hits;  // 存所有命中的位置
+int count = 0;
+
+EB_Position pos;
+eb_text(&book, &pos);  // first word position
+
+EB_Hit hit;
+hit.heading = pos;
+hit.text = pos;
+hits << hit;  // 存进链表
+count++;
+
+eb_seek_text(&book, &pos);
+eb_forward_text(&book, &appendix);
+
+
+
+```
+
+
+
 
 
 手动触发
@@ -140,7 +163,7 @@ EB_Hook hooks[] = {
     ecode = eb_subbook_list(&book, codes, &cnt);
 		
 		ecode = eb_set_subbook(&book, codes[0]);
-
+		
 
 
 ```
