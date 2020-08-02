@@ -653,6 +653,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [cmake for qt+ios](https://github.com/OlivierLDff/QtIosCMake)
 >
+> [般若波罗蜜多心经 敦煌 法国国家图书馆藏](http://read.nlc.cn/allSearch/searchDetail?searchType=1002&showType=1&indexName=data_892&fid=BNF01487#)
+>
+> [敦煌文獻《般若波羅蜜多心經》 唐‧佚名注本再探]()
+>
 > > ```shell
 > > sudo mount -uw /
 > > >重启按 cmd+R  
