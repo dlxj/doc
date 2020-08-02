@@ -1944,7 +1944,8 @@ html5
 - 52pojie  0daydown 资源下载  
 - Moho Pro 13 动画制作  
 - 半次元  多绘画素材  
-- https://nyaa.si/ 动漫书  
+- https://nyaa.si/ 动漫书
+-   http://uniondht.org 俄毛动漫
 - https://pt.eastgame.org/  aiiniyo tlf电影  
 - https://futaacg.com  扶她动漫   
 
