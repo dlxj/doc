@@ -2481,6 +2481,19 @@ matplotlib.tri.Triangulation(x, y, triangles=None, mask=None)
 
 
 
+得到三维数据，接着使用散点图观察大致形状，然后使用 plot_trisurf 绘图，plot_trisurf 使用三角形来构造表面并填充配色
+
+
+
+```python
+fig = plt.figure(figsize=(10,4))
+ax = fig.add_subplot(1, 2, 1, projection='3d', title='scatter')
+ax.scatter(x, y, z, c=z, cmap='viridis', linewidth=0.5)
+
+ax = fig.add_subplot(1, 2, 2, projection='3d', title='trisurf')
+ax.plot_trisurf(x, y, z, cmap='viridis', edgecolor='none');
+```
+
 
 
 
