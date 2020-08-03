@@ -700,6 +700,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 >
 > [cmake for qt+ios](https://github.com/OlivierLDff/QtIosCMake)
 >
+> [般若波罗蜜多心经 敦煌 法国国家图书馆藏](http://read.nlc.cn/allSearch/searchDetail?searchType=1002&showType=1&indexName=data_892&fid=BNF01487#)
+>
+> [敦煌文獻《般若波羅蜜多心經》 唐‧佚名注本再探]()
+>
 > > ```shell
 > > sudo mount -uw /
 > > >重启按 cmd+R  
@@ -1991,7 +1995,8 @@ html5
 - 52pojie  0daydown 资源下载  
 - Moho Pro 13 动画制作  
 - 半次元  多绘画素材  
-- https://nyaa.si/ 动漫书  
+- https://nyaa.si/ 动漫书
+-   http://uniondht.org 俄毛动漫
 - https://pt.eastgame.org/  aiiniyo tlf电影  
 - https://futaacg.com  扶她动漫   
 
