@@ -2397,6 +2397,10 @@ if __name__ == '__main__':
 
 
 
+[Numpy中Meshgrid函数介绍及2种应用场景](https://zhuanlan.zhihu.com/p/29663486)
+
+
+
 等间隔数字
 
 Return **evenly spaced numbers** over a specified interval.
@@ -2406,6 +2410,26 @@ Return **evenly spaced numbers** over a specified interval.
 > space 间隔，距离，空隙
 
 
+
+```python
+# 生成等间距的n 个数的list, 包含尾端的数
+np.linspace(-1.5, 1.5, endpoint=True, num=2)
+```
+
+
+
+```python
+# 以行向量x1 构建新矩阵，行数是len(x2)
+# 以列向量x2 构建新矩阵，列数是len(x1)
+# 既len(x1) 定所有新矩阵的行数，len(x2) 定所有新矩阵的列数
+# 生成形状一样的两个矩阵是为了待会把它们“叠”到一起，形成有序对(pair), (x1', x2')
+x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+x1, x2 = np.meshgrid(x1, x2)
+
+```
+
+<img src="Python 3  Summary.assets/image-20200731184147007.png" alt="image-20200731184147007" style="zoom:50%;" />
 
 
 

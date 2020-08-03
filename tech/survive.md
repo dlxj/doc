@@ -10,7 +10,7 @@
 
 [mdbook 自动发布](https://github.com/peaceiris/actions-gh-pages)
 
-
+[how to insert images](https://github.com/docsifyjs/docsify/issues/936)
 
 ## mdbook
 
@@ -25,6 +25,53 @@ mdbook build # 生成html
 mdbook watch # 监视文件改变，自动build
 mdbook serve # 效果同watch，另外还创建web 服务器，并监听地址 http://localhost:3000
 mdbook clean # 清除已生成的html
+```
+
+
+
+Q:
+
+>I already have a written document:
+
+```
+- docs
+  - chap1
+     - doc1.md
+  ...
+  - img
+     - img1.png 
+```
+
+here I inserted the image `img1.png` into `doc1.md` using
+
+```
+<div align=center>
+<img width="200" src="../img/img1.png"/>
+</div>
+```
+
+This will show the img1 very well in GitHub or other markdown editor. But if I deploy the doc in gitpages, the image broken.
+
+If I use
+
+```
+<div align=center>
+<img width="200" src="./img/img1.png"/>
+</div>
+```
+
+it works.
+
+But I don't want to make changes to my doc, how should I configure docsify to show the image properly?
+
+
+
+A:
+
+```
+hook.beforeEach(function(content) {
+            return content.replace(/..\/..\/img/g, "img");
+          })
 ```
 
 
