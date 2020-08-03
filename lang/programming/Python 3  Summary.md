@@ -2399,6 +2399,8 @@ if __name__ == '__main__':
 
 [readthedocs.io matplotlib](https://mlhowto.readthedocs.io/en/latest/matplot.html)
 
+[mtri.Triangulation](https://matplotlib.org/3.1.1/api/tri_api.html)
+
 [Numpy中Meshgrid函数介绍及2种应用场景](https://zhuanlan.zhihu.com/p/29663486)
 
 
