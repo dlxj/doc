@@ -1,5 +1,7 @@
 
 
+
+
 [TOC]
 
 # Python 3  Summary
@@ -2391,11 +2393,11 @@ if __name__ == '__main__':
 
 
 
-
-
 ## Matplotlib
 
 
+
+[readthedocs.io matplotlib](https://mlhowto.readthedocs.io/en/latest/matplot.html)
 
 [Numpy中Meshgrid函数介绍及2种应用场景](https://zhuanlan.zhihu.com/p/29663486)
 
@@ -2422,14 +2424,62 @@ np.linspace(-1.5, 1.5, endpoint=True, num=2)
 # 以行向量x1 构建新矩阵，行数是len(x2)
 # 以列向量x2 构建新矩阵，列数是len(x1)
 # 既len(x1) 定所有新矩阵的行数，len(x2) 定所有新矩阵的列数
-# 生成形状一样的两个矩阵是为了待会把它们“叠”到一起，形成有序对(pair), (x1', x2')
+# 生成形状一样的两个矩阵是为了待会把它们“叠”到一起，形成有序对(pair), (x1,y1), (x2,y1)
 x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
 x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
 x1, x2 = np.meshgrid(x1, x2)
-
 ```
 
 <img src="Python 3  Summary.assets/image-20200731184147007.png" alt="image-20200731184147007" style="zoom:50%;" />
+
+
+
+### meshgrid 用N个坐标轴上的点在空间中画网格
+
+
+
+> numpy.meshgrid（ \*xi，\*\* kwargs ）
+>
+> xi 是变长参数，可传$x_1, x_2,...,x_n$ 代表n 个坐标轴的点
+>
+> - 每一个都是**一维数组**
+>
+> indexing 是可选参数，默认值'xy' 代表笛卡尔；'ij' 代表矩阵
+>
+> - 'xy' 返回的shape 是(M,N)，Y 定行数，X 定列数
+> - ‘ij’ 返回的shape 是(N,M)，X 定行数，Y 定列数
+>
+> 返回值 是N 个N 维矩阵
+>
+> - 每一个**矩阵的shape 由indexing 参数决定**
+
+
+
+
+
+```python
+xv, yv = np.meshgrid( x, y )
+```
+
+<img src="Python 3  Summary.assets/image-20200803091424334.png" alt="image-20200803091424334" style="zoom:50%;" />
+
+
+
+<img src="Python 3  Summary.assets/image-20200803091622368.png" alt="image-20200803091622368" style="zoom: 50%;" />
+
+
+
+<img src="Python 3  Summary.assets/image-20200803092919491.png" alt="image-20200803092919491" style="zoom:50%;" />
+
+
+
+https://matplotlib.org/3.1.1/api/tri_api.html
+
+matplotlib.tri.Triangulation(x, y, triangles=None, mask=None)
+
+
+
+
 
 
 
