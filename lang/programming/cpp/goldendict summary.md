@@ -397,7 +397,7 @@ void readtext(EB_Book &book, EB_Appendix &appendix, EB_Position &pos) {
 
         ret = eb_read_text( &book, &appendix, &hookSet, NULL,
                             TextBufferSize, buffer, &buffer_length );
-
+				
         if (ret != EB_SUCCESS) {
             errs =  eb_error_string( ret );
             errmsg = eb_error_message( ret );

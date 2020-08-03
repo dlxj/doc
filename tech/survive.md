@@ -796,6 +796,21 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 
 
+# 爬虫
+
+```
+            ecode = eb_read_text(&book, &appendix, &hookset, para,
+                                 1024, buff, &len);
+```
+
+
+
+
+
+
+
+
+
 # 游戏汉化
 
 

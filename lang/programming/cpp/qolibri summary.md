@@ -164,6 +164,18 @@ EB_Hook hooks[] = {
 		
 		ecode = eb_set_subbook(&book, codes[0]);
 		
+		EB_Position pos;
+		ecode = eb_text(&book, &pos);  // first word position
+		ecode = eb_seek_text(&book, &pos);
+		
+    char buff[1024+1];
+    ssize_t len;
+    QByteArray b;
+
+		ecode = eb_read_text(&book, &appendix, &hookset, para,
+            	1024, buff, &len);
+		
+
 
 
 ```
