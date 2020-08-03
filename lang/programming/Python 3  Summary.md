@@ -2486,13 +2486,29 @@ matplotlib.tri.Triangulation(x, y, triangles=None, mask=None)
 
 
 ```python
+import matplotlib.pyplot as plt
+
+def f(x, y):
+    return np.sin(x) * np.cos(y) * 2
+
+theta = 2 * np.pi * np.random.random(1000)
+r = 6 * np.random.random(1000)
+x = np.ravel(r * np.sin(theta))
+y = np.ravel(r * np.cos(theta))
+
+z = f(x, y)
+
 fig = plt.figure(figsize=(10,4))
 ax = fig.add_subplot(1, 2, 1, projection='3d', title='scatter')
 ax.scatter(x, y, z, c=z, cmap='viridis', linewidth=0.5)
 
 ax = fig.add_subplot(1, 2, 2, projection='3d', title='trisurf')
-ax.plot_trisurf(x, y, z, cmap='viridis', edgecolor='none');
+ax.plot_trisurf(x, y, z, cmap='viridis', edgecolor='none')
 ```
+
+
+
+<img src="Python 3  Summary.assets/image-20200803174755594.png" alt="image-20200803174755594" style="zoom: 67%;" />
 
 
 
