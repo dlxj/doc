@@ -22,6 +22,14 @@ eb_set_hooks  搜这个
 
 
 
+直接调用eblib 获取图片试试
+
+```cpp
+
+```
+
+
+
 
 
 实验代码写这里
@@ -121,6 +129,10 @@ eb_forward_text(&book, &appendix);
 手动触发
 
 ```c++
+
+extern EB_Hook hooks[];  // 用的时侯声明一下这个符号是在别的地方定义的，链接时再去找
+
+
 // ebhook.cpp
 EB_Error_Code iHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*,
     void *classp, EB_Hook_Code, int argc, const unsigned int* argv)
@@ -172,13 +184,71 @@ EB_Hook hooks[] = {
     ssize_t len;
     QByteArray b;
 
-		ecode = eb_read_text(&book, &appendix, &hookset, para,
+		ecode = eb_read_text(&book, &appendix, &hookset, NULL,  // 可以传void** 进去，
+                         // 发生回调的时侯别人会原样回传给你
             	1024, buff, &len);
 		
-
-
+		
 
 ```
+
+
+
+
+
+```cpp
+// 成功回调图片
+EB_Error_Code iHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*,
+    void *classp, EB_Hook_Code, int argc, const unsigned int* argv)
+{
+    EbCore *p = static_cast<EbCore*>(classp);
+    QByteArray b =  p->hookBeginInColorJpeg(argc,argv);
+    if (!b.isEmpty()) {
+        return eb_write_text_string(book, b);
+    } else {
+        return EB_SUCCESS;
+    }
+}
+
+EB_Hook ihooks[] = {
+  { EB_HOOK_BEGIN_IN_COLOR_JPEG, iHookBEGIN_IN_COLOR_JPEG },
+  { EB_HOOK_NULL, NULL }
+};
+
+		EB_Book book;
+    EB_Appendix appendix;
+    EB_Hookset hookset;
+    EB_BookList bookList;
+
+    eb_initialize_book(&book);
+    eb_initialize_appendix(&appendix);
+    eb_initialize_hookset(&hookset);
+
+    EB_Error_Code ecode;
+    extern EB_Hook ihooks[];
+    ecode = eb_set_hooks(&hookset, ihooks);
+    ecode = eb_bind( &book,QString("/Users/vvw/Documents/dic/NHK").toLocal8Bit() );  // path.toUtf8();
+
+    EB_Subbook_Code codes[EB_MAX_SUBBOOKS];
+    int cnt;
+
+    QList <EB_Subbook_Code> list;
+    ecode = eb_subbook_list(&book, codes, &cnt);
+    ecode = eb_set_subbook(&book, codes[0]);
+
+    EB_Position pos;
+    ecode = eb_text(&book, &pos);  // first word position
+    ecode = eb_seek_text(&book, &pos);
+
+    char buff[1024+1];
+    ssize_t len;
+    QByteArray b;
+
+    ecode = eb_read_text(&book, &appendix, &hookset, NULL,  // 可以传void** 进去，发生回调的时侯别人会原样回传给你
+                1024, buff, &len);
+```
+
+
 
 
 
