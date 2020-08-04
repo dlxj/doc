@@ -20,7 +20,7 @@ F11 切换全屏
 
 
 
-```
+```python
 yum update -y
 yum groupinstall -y 'Development Tools'
 yum install -y gcc libffi-devel bzip2-devel expat-devel gdbm-devel \
@@ -28,7 +28,7 @@ ncurses-devel openssl-devel readline-devel \
 sqlite-devel tk-devel xz-devel zlib-devel wget
 ```
 
-```
+```python
 VERSION=3.8.3
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
 tar -xf Python-${VERSION}.tgz
@@ -2402,6 +2402,12 @@ if __name__ == '__main__':
 [mtri.Triangulation](https://matplotlib.org/3.1.1/api/tri_api.html)
 
 [Numpy中Meshgrid函数介绍及2种应用场景](https://zhuanlan.zhihu.com/p/29663486)
+
+
+
+### np.float，注意数据类型！别让小数变整数了！
+
+pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T
 
 
 
