@@ -2405,9 +2405,89 @@ if __name__ == '__main__':
 
 
 
+
+
+### ax.plot AND ax.add_artist(Arrow3D)
+
+
+
+#### 三维点(0, 0, 2)到点(0, 0, -2) 画线的两种方法
+
+```python
+pts = np.array([ [0, 0, 2], [0, 0, -2] ], np.float).T
+ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]))
+```
+
+```python
+pts = np.array([ [0, 0, 2], [0, 0, -2] ], np.float).T
+arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+```
+
+
+
+
+
+
+
+```python
+from book_draw_util import *
+import numpy as np
+
+fig = plt.figure(figsize=SQUARE_FIG_SIZE, facecolor='white')
+ax = Axes3D(fig)
+# ax.axis("off")
+ax.clear()
+
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+ax.set_xlabel(r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_ylabel(r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_zlabel(r"$x_3$", fontsize=AXIS_LABEL_FONT_SIZE)
+"""
+坐标系的原点在一楼中心
+"""
+
+pts = np.array([ [0, 0, 2], [0, 0, -2] ], np.float).T
+ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+"""
+楼顶中心指向地下室中心
+"""
+```
+
+<img src="Python 3  Summary.assets/image-20200804112140778.png" alt="image-20200804112140778" style="zoom: 33%;" />
+
+
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+
 ### np.float，注意数据类型！别让小数变整数了！
 
-pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T
+```python
+# 绘制法向量
+w = [0.1, -0.2]
+pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T  # 从原点(0, 0, 0)指向(0.1, -0.2, -1)
+arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+"""
+两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数两个3d 点, 
+    A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
+"""
+```
+
+
 
 
 

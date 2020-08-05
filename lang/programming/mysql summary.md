@@ -285,6 +285,24 @@ sql = f"SELECT tr.ID as exampointID, CONCAT(tr.attribute,'\n', tr.context) as te
 
 
 
+## 查知识点目录树
+
+```
+SELECT * FROM tiku_new.trialexampointmenus ts WHERE ts.appid = 8911 AND ts.enable = 1 AND ts.subjectID = ( SELECT ID AS subid FROM tiku_new.trialsubject sb WHERE sb.appid = 8911 AND sb.enable = 1 AND sb.name = '药学综合知识与技能' ) 
+
+
+-- SELECT * FROM tiku_new.trialexampointmenus ts WHERE ts.appid = 8911 AND PID = 61040  -- AND ts.enable = 1 AND ts.subjectID = ( SELECT ID AS subid FROM tiku_new.trialsubject sb WHERE sb.appid = 8911 AND sb.enable = 1 AND sb.name = '药学综合知识与技能' )  order BY ts.sort 
+
+
+-- SELECT * FROM tiku_new.trialexampointmenus ts WHERE ts.appid = 8911 AND PID = 61080 
+
+-- 61223
+
+SELECT * FROM tiku_new.trialexampoint WHERE menuid IN (61223,61719,61720,61721,61722,62671,62672,62673,62679,62680,62685,63235,63236);
+```
+
+
+
 
 
 # PROCEDURE
