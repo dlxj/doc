@@ -287,18 +287,28 @@ sql = f"SELECT tr.ID as exampointID, CONCAT(tr.attribute,'\n', tr.context) as te
 
 ## 查知识点目录树
 
-```
+```python
 SELECT * FROM tiku_new.trialexampointmenus ts WHERE ts.appid = 8911 AND ts.enable = 1 AND ts.subjectID = ( SELECT ID AS subid FROM tiku_new.trialsubject sb WHERE sb.appid = 8911 AND sb.enable = 1 AND sb.name = '药学综合知识与技能' ) 
 
-
 -- SELECT * FROM tiku_new.trialexampointmenus ts WHERE ts.appid = 8911 AND PID = 61040  -- AND ts.enable = 1 AND ts.subjectID = ( SELECT ID AS subid FROM tiku_new.trialsubject sb WHERE sb.appid = 8911 AND sb.enable = 1 AND sb.name = '药学综合知识与技能' )  order BY ts.sort 
-
 
 -- SELECT * FROM tiku_new.trialexampointmenus ts WHERE ts.appid = 8911 AND PID = 61080 
 
 -- 61223
 
 SELECT * FROM tiku_new.trialexampoint WHERE menuid IN (61223,61719,61720,61721,61722,62671,62672,62673,62679,62680,62685,63235,63236);
+```
+
+
+
+```python
+// 查题
+http://192.168.2.88:5002/test/getTestByOldCpt1
+appID: 8911
+cptID: 1722,1830,1832,1909,2006,2115,2116
+testFilterType: 选择范围所有题
+guid: 719b099e-48f2-406f-88cc-689495310d2b
+userID: 840
 ```
 
 
