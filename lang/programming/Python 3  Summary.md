@@ -2458,8 +2458,17 @@ ax.add_artist(arrow)
 
 
 
-```
+### 画虚线 
 
+
+
+```python
+# 画虚线 p1 [x, y, z] 坐标 p2 [x, y, z] 坐标 
+def drawDashe(p1, p2, ax):
+    pts = np.array([ p1, p2 ], np.float).T
+    ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+
+drawDashe([0, 0, 2], [0, 0, -2], ax)
 ```
 
 
