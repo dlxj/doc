@@ -39,6 +39,9 @@
 #include "eb/error.h"
 #include "eb/font.h"
 #include "eb/booklist.h"
+#include <eb/binary.h>
+#include <eb/text.h>
+#include <eb/appendix.h>
 
 #include "getopt.h"
 #include "ebutils.h"
@@ -98,13 +101,287 @@ static struct option long_options[] = {
  */
 #define DEFAULT_BOOK_DIRECTORY	"."
 
+
+EB_Error_Code myHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*a,
+    void *classp, EB_Hook_Code c, int argc, const unsigned int* argv)
+{
+    EB_Position pos;
+    pos.page = argv[2];
+    pos.offset = argv[3];
+
+    return EB_SUCCESS;
+}
+
+EB_Hook myhooks[] = {
+  { EB_HOOK_BEGIN_IN_COLOR_JPEG, myHookBEGIN_IN_COLOR_JPEG },
+  { EB_HOOK_NULL, NULL }
+};
+/*
+ * Output information about the book at `path'.
+ * If `multi_flag' is enabled, multi-search information are also output.
+ */
+static EB_Error_Code
+output_information(const char *book_path, int multi_flag)
+{
+    EB_Book book;
+    EB_Error_Code return_code = EB_SUCCESS;
+    EB_Error_Code error_code;
+    EB_Disc_Code disc_code;
+    EB_Character_Code character_code;
+    EB_Subbook_Code subbook_list[EB_MAX_SUBBOOKS];
+    EB_Font_Code font_list[EB_MAX_FONTS];
+    char title[EB_MAX_TITLE_LENGTH + 1];
+    char directory[EB_MAX_DIRECTORY_NAME_LENGTH + 1];
+    int font_height, font_start, font_end;
+    int subbook_count;
+    int font_count;
+    int i, j;
+
+    /*
+     * Start to use a book.
+     */
+    error_code = eb_initialize_library();
+    if (error_code != EB_SUCCESS) {
+    output_error_message(error_code);
+    return_code = error_code;
+    goto failed;
+    }
+    eb_initialize_book(&book);
+    error_code = eb_bind(&book, book_path);
+    if (error_code != EB_SUCCESS) {
+    output_error_message(error_code);
+    return_code = error_code;
+    goto failed;
+    }
+
+    /*
+     * Output disc type.
+     */
+    error_code = eb_disc_type(&book, &disc_code);
+    if (error_code != EB_SUCCESS) {
+    output_error_message(error_code);
+    return_code = error_code;
+    goto failed;
+    }
+    printf(_("disc type: "));
+    if (disc_code == EB_DISC_EB)
+    printf("EB/EBG/EBXA/EBXA-C/S-EBXA\n");
+    else
+    printf("EPWING\n");
+
+    /*
+     * Output character code.
+     */
+    error_code = eb_character_code(&book, &character_code);
+    if (error_code != EB_SUCCESS) {
+    output_error_message(error_code);
+    return_code = error_code;
+    goto failed;
+    }
+    printf(_("character code: "));
+    switch (character_code) {
+    case EB_CHARCODE_ISO8859_1:
+    printf("ISO 8859-1\n");
+    break;
+    case EB_CHARCODE_JISX0208:
+    printf("JIS X 0208\n");
+    break;
+    case EB_CHARCODE_JISX0208_GB2312:
+    printf("JIS X 0208 + GB 2312\n");
+    break;
+    default:
+    printf(_("unknown\n"));
+    break;
+    }
+
+    /*
+     * Output the number of subbooks in the book.
+     */
+    error_code = eb_subbook_list(&book, subbook_list, &subbook_count);
+    if (error_code != EB_SUCCESS) {
+    output_error_message(error_code);
+    return_code = error_code;
+    goto failed;
+    }
+    printf(_("the number of subbooks: %d\n\n"), subbook_count);
+
+    /*
+     * Output information about each subbook.
+     */
+    for (i = 0; i < subbook_count; i++) {
+    printf(_("subbook %d:\n"), i + 1);
+
+    /*
+     * Output a title of the subbook.
+     */
+    error_code = eb_subbook_title2(&book, subbook_list[i], title);
+    if (error_code != EB_SUCCESS) {
+        return_code = error_code;
+        continue;
+    }
+    printf(_("  title: "), title);
+    fputs_eucjp_to_locale(title, stdout);
+    fputc('\n', stdout);
+
+    /*
+     * Output a directory name of the subbook.
+     */
+    error_code = eb_subbook_directory2(&book, subbook_list[i], directory);
+    if (error_code != EB_SUCCESS) {
+        return_code = error_code;
+        continue;
+    }
+    printf(_("  directory: %s\n"), directory);
+
+    /*
+     * Set the current subbook to `i'.
+     */
+    error_code = eb_set_subbook(&book, subbook_list[i]);
+    if (error_code != EB_SUCCESS) {
+        output_error_message(error_code);
+        return_code = error_code;
+        continue;
+    }
+
+    /*
+     * Output supported methods.
+     */
+    printf(_("  search methods: "));
+    if (eb_have_word_search(&book))
+        fputs(_("word "), stdout);
+    if (eb_have_endword_search(&book))
+        fputs(_("endword "), stdout);
+    if (eb_have_keyword_search(&book))
+        fputs(_("keyword "), stdout);
+    if (eb_have_cross_search(&book))
+        fputs(_("cross "), stdout);
+    if (eb_have_multi_search(&book))
+        fputs(_("multi "), stdout);
+    if (eb_have_menu(&book))
+        fputs(_("menu "), stdout);
+    if (eb_have_image_menu(&book))
+        fputs(_("image-menu "), stdout);
+    if (eb_have_copyright(&book))
+        fputs(_("copyright "), stdout);
+    fputc('\n', stdout);
+
+    /*
+     * Output a font list.
+     */
+    fputs(_("  font sizes: "), stdout);
+    error_code = eb_font_list(&book, font_list, &font_count);
+    if (error_code != EB_SUCCESS) {
+        fputc('\n', stdout);
+        output_error_message(error_code);
+        return_code = error_code;
+    } else {
+        for (j = 0; j < font_count; j++) {
+        error_code = eb_font_height2(font_list[j], &font_height);
+        if (error_code == EB_SUCCESS)
+            printf("%d ", font_height);
+        else {
+            output_error_message(error_code);
+            return_code = error_code;
+        }
+        }
+        fputc('\n', stdout);
+    }
+
+    /*
+     * Output character range of the narrow font.
+     */
+        fputs(_("  narrow font characters: "), stdout);
+    if (eb_have_narrow_font(&book)) {
+        do {
+        error_code = eb_set_font(&book, font_list[0]);
+        if (error_code != EB_SUCCESS)
+            break;
+        error_code = eb_narrow_font_start(&book, &font_start);
+        if (error_code != EB_SUCCESS)
+            break;
+        error_code = eb_narrow_font_end(&book, &font_end);
+        if (error_code != EB_SUCCESS)
+            break;
+        } while (0);
+
+        if (error_code == EB_SUCCESS)
+        printf("0x%04x -- 0x%04x\n", font_start, font_end);
+        else {
+        fputc('\n', stdout);
+        output_error_message(error_code);
+        return_code = error_code;
+        }
+    } else {
+        fputc('\n', stdout);
+    }
+
+    /*
+     * Output character range of the wide font.
+     */
+    printf(_("  wide font characters: "));
+    if (eb_have_wide_font(&book)) {
+        do {
+        error_code = eb_set_font(&book, font_list[0]);
+        if (error_code != EB_SUCCESS)
+            break;
+        error_code = eb_wide_font_start(&book, &font_start);
+        if (error_code != EB_SUCCESS)
+            break;
+        error_code = eb_wide_font_end(&book, &font_end);
+        if (error_code != EB_SUCCESS)
+            break;
+        } while (0);
+
+        if (error_code == EB_SUCCESS)
+        printf("0x%04x -- 0x%04x\n", font_start, font_end);
+        else {
+        fputc('\n', stdout);
+        output_error_message(error_code);
+        return_code = error_code;
+        }
+    } else {
+        fputc('\n', stdout);
+    }
+
+    if (multi_flag) {
+        error_code = output_multi_information(&book);
+        if (error_code != EB_SUCCESS)
+        return_code = error_code;
+    }
+    fputc('\n', stdout);
+    }
+    fflush(stdout);
+
+    /*
+     * End to use the book.
+     */
+    eb_finalize_book(&book);
+    eb_finalize_library();
+
+    return return_code;
+
+    /*
+     * An error occurs...
+     */
+  failed:
+    fflush(stdout);
+    fflush(stderr);
+    eb_finalize_book(&book);
+    eb_finalize_library();
+
+    return return_code;
+}
+
 int
 main(int argc, char *argv[])
 {
+    
+    
     EB_Error_Code error_code;
 
-	//error_code = output_booklist("/Users/vvw/Documents/dic/NHK");
-	//return 0;
+
+    error_code = output_information("/Users/vvw/Documents/dic/NHK", 0);
+    return 0;
 
     int ch;
     char *book_path;
@@ -178,6 +455,8 @@ main(int argc, char *argv[])
 	exit(1);
     }
 
+
+    
     /*
      * Output information about the book.
      */
@@ -187,8 +466,8 @@ main(int argc, char *argv[])
 	book_path = argv[optind];
 	printf("----->%s\n",book_path);
     if (booklist_flag)
-	error_code = output_booklist(book_path);
-	//error_code = output_booklist("/Users/vvw/Documents/dic/NHK");
+	//error_code = output_booklist(book_path);
+	error_code = output_booklist("/Users/vvw/Documents/dic/NHK");
     else
 	error_code = output_information(book_path, multi_flag);
     if (error_code != EB_SUCCESS)
@@ -273,261 +552,6 @@ output_booklist(const char *url)
 }
 
 
-/*
- * Output information about the book at `path'.
- * If `multi_flag' is enabled, multi-search information are also output.
- */
-static EB_Error_Code
-output_information(const char *book_path, int multi_flag)
-{
-    EB_Book book;
-    EB_Error_Code return_code = EB_SUCCESS;
-    EB_Error_Code error_code;
-    EB_Disc_Code disc_code;
-    EB_Character_Code character_code;
-    EB_Subbook_Code subbook_list[EB_MAX_SUBBOOKS];
-    EB_Font_Code font_list[EB_MAX_FONTS];
-    char title[EB_MAX_TITLE_LENGTH + 1];
-    char directory[EB_MAX_DIRECTORY_NAME_LENGTH + 1];
-    int font_height, font_start, font_end;
-    int subbook_count;
-    int font_count;
-    int i, j;
-
-    /*
-     * Start to use a book.
-     */
-    error_code = eb_initialize_library();
-    if (error_code != EB_SUCCESS) {
-	output_error_message(error_code);
-	return_code = error_code;
-	goto failed;
-    }
-    eb_initialize_book(&book);
-    error_code = eb_bind(&book, book_path);
-    if (error_code != EB_SUCCESS) {
-	output_error_message(error_code);
-	return_code = error_code;
-	goto failed;
-    }
-
-    /*
-     * Output disc type.
-     */
-    error_code = eb_disc_type(&book, &disc_code);
-    if (error_code != EB_SUCCESS) {
-	output_error_message(error_code);
-	return_code = error_code;
-	goto failed;
-    }
-    printf(_("disc type: "));
-    if (disc_code == EB_DISC_EB)
-	printf("EB/EBG/EBXA/EBXA-C/S-EBXA\n");
-    else
-	printf("EPWING\n");
-
-    /*
-     * Output character code.
-     */
-    error_code = eb_character_code(&book, &character_code);
-    if (error_code != EB_SUCCESS) {
-	output_error_message(error_code);
-	return_code = error_code;
-	goto failed;
-    }
-    printf(_("character code: "));
-    switch (character_code) {
-    case EB_CHARCODE_ISO8859_1:
-	printf("ISO 8859-1\n");
-	break;
-    case EB_CHARCODE_JISX0208:
-	printf("JIS X 0208\n");
-	break;
-    case EB_CHARCODE_JISX0208_GB2312:
-	printf("JIS X 0208 + GB 2312\n");
-	break;
-    default:
-	printf(_("unknown\n"));
-	break;
-    }
-
-    /*
-     * Output the number of subbooks in the book.
-     */
-    error_code = eb_subbook_list(&book, subbook_list, &subbook_count);
-    if (error_code != EB_SUCCESS) {
-	output_error_message(error_code);
-	return_code = error_code;
-	goto failed;
-    }
-    printf(_("the number of subbooks: %d\n\n"), subbook_count);
-
-    /*
-     * Output information about each subbook.
-     */
-    for (i = 0; i < subbook_count; i++) {
-	printf(_("subbook %d:\n"), i + 1);
-
-	/*
-	 * Output a title of the subbook.
-	 */
-	error_code = eb_subbook_title2(&book, subbook_list[i], title);
-	if (error_code != EB_SUCCESS) {
-	    return_code = error_code;
-	    continue;
-	}
-	printf(_("  title: "), title);
-	fputs_eucjp_to_locale(title, stdout);
-	fputc('\n', stdout);
-
-	/*
-	 * Output a directory name of the subbook.
-	 */
-	error_code = eb_subbook_directory2(&book, subbook_list[i], directory);
-	if (error_code != EB_SUCCESS) {
-	    return_code = error_code;
-	    continue;
-	}
-	printf(_("  directory: %s\n"), directory);
-
-	/*
-	 * Set the current subbook to `i'.
-	 */
-	error_code = eb_set_subbook(&book, subbook_list[i]);
-	if (error_code != EB_SUCCESS) {
-	    output_error_message(error_code);
-	    return_code = error_code;
-	    continue;
-	}
-
-	/*
-	 * Output supported methods.
-	 */
-	printf(_("  search methods: "));
-	if (eb_have_word_search(&book))
-	    fputs(_("word "), stdout);
-	if (eb_have_endword_search(&book))
-	    fputs(_("endword "), stdout);
-	if (eb_have_keyword_search(&book))
-	    fputs(_("keyword "), stdout);
-	if (eb_have_cross_search(&book))
-	    fputs(_("cross "), stdout);
-	if (eb_have_multi_search(&book))
-	    fputs(_("multi "), stdout);
-	if (eb_have_menu(&book))
-	    fputs(_("menu "), stdout);
-	if (eb_have_image_menu(&book))
-	    fputs(_("image-menu "), stdout);
-	if (eb_have_copyright(&book))
-	    fputs(_("copyright "), stdout);
-	fputc('\n', stdout);
-
-	/*
-	 * Output a font list.
-	 */
-	fputs(_("  font sizes: "), stdout);
-	error_code = eb_font_list(&book, font_list, &font_count);
-	if (error_code != EB_SUCCESS) {
-	    fputc('\n', stdout);
-	    output_error_message(error_code);
-	    return_code = error_code;
-	} else {
-	    for (j = 0; j < font_count; j++) {
-		error_code = eb_font_height2(font_list[j], &font_height);
-		if (error_code == EB_SUCCESS)
-		    printf("%d ", font_height);
-		else {
-		    output_error_message(error_code);
-		    return_code = error_code;
-		}
-	    }
-	    fputc('\n', stdout);
-	}
-
-	/*
-	 * Output character range of the narrow font.
-	 */
-        fputs(_("  narrow font characters: "), stdout);
-	if (eb_have_narrow_font(&book)) {
-	    do {
-		error_code = eb_set_font(&book, font_list[0]);
-		if (error_code != EB_SUCCESS)
-		    break;
-		error_code = eb_narrow_font_start(&book, &font_start);
-		if (error_code != EB_SUCCESS)
-		    break;
-		error_code = eb_narrow_font_end(&book, &font_end);
-		if (error_code != EB_SUCCESS)
-		    break;
-	    } while (0);
-
-	    if (error_code == EB_SUCCESS)
-		printf("0x%04x -- 0x%04x\n", font_start, font_end);
-	    else {
-		fputc('\n', stdout);
-		output_error_message(error_code);
-		return_code = error_code;
-	    }
-	} else {
-	    fputc('\n', stdout);
-	}
-
-	/*
-	 * Output character range of the wide font.
-	 */
-	printf(_("  wide font characters: "));
-	if (eb_have_wide_font(&book)) {
-	    do {
-		error_code = eb_set_font(&book, font_list[0]);
-		if (error_code != EB_SUCCESS)
-		    break;
-		error_code = eb_wide_font_start(&book, &font_start);
-		if (error_code != EB_SUCCESS)
-		    break;
-		error_code = eb_wide_font_end(&book, &font_end);
-		if (error_code != EB_SUCCESS)
-		    break;
-	    } while (0);
-
-	    if (error_code == EB_SUCCESS)
-		printf("0x%04x -- 0x%04x\n", font_start, font_end);
-	    else {
-		fputc('\n', stdout);
-		output_error_message(error_code);
-		return_code = error_code;
-	    }
-	} else {
-	    fputc('\n', stdout);
-	}
-
-	if (multi_flag) {
-	    error_code = output_multi_information(&book);
-	    if (error_code != EB_SUCCESS)
-		return_code = error_code;
-	}
-	fputc('\n', stdout);
-    }
-    fflush(stdout);
-
-    /*
-     * End to use the book.
-     */
-    eb_finalize_book(&book);
-    eb_finalize_library();
-
-    return return_code;
-
-    /*
-     * An error occurs...
-     */
-  failed:
-    fflush(stdout);
-    fflush(stderr);
-    eb_finalize_book(&book);
-    eb_finalize_library();
-
-    return return_code;
-}
 
 /*
  * Output information about multi searches.
