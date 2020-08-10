@@ -62,6 +62,15 @@ pip show jieba
 
 
 
+```python
+pm2 start run.sh
+pm2 restart id --name assist 
+```
+
+
+
+
+
 ```
 python -m pip install --upgrade pip
 pip install wheel
@@ -70,6 +79,16 @@ pip install jupyter
 python -m jupyter notebook --version
 python -m pip install -U matplotlib
 ```
+
+
+
+### 使用昨时源
+
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
+```
+
+
 
 
 
