@@ -1766,7 +1766,19 @@ cat 学研国語大辞典ku00.txt | iconv -f SHIFT_JIS-2004 -t utf-8 > 学研国
 
 
 
+```python
+@echo off
+cd /d D:
+cd %cd%
+jupyter notebook
+cmd.exe
 ```
+
+
+
+
+
+```python
 python -m pip install --upgrade pip
 pip install wheel
 ```
@@ -2438,9 +2450,16 @@ ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]))
 ```
 
 ```python
+# 两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
 pts = np.array([ [0, 0, 2], [0, 0, -2] ], np.float).T
 arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
 ax.add_artist(arrow)
+```
+
+
+
+```
+
 ```
 
 
