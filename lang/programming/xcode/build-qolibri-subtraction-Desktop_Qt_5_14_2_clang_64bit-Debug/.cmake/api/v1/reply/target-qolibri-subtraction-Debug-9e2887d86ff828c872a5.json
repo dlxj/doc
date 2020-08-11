@@ -1,0 +1,1105 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"install",
+			"target_link_libraries",
+			"target_compile_options",
+			"target_compile_definitions",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 166,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 164,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 138,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 122,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 132,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 135,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 109,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 110,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 162,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.13"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-pedantic"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fPIC"
+				},
+				{
+					"fragment" : "-std=gnu++17"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 5,
+					"define" : "QOLIBRI_GIT_COMMIT_DATE=\"2020-08-11 05:41:26 +0800\""
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QOLIBRI_VERSION_STR=\"eee4a8d\""
+				},
+				{
+					"backtrace" : 7,
+					"define" : "QOLIBRI_WEBSITE=\"https://github.com/ludios/qolibri\""
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_MULTIMEDIA_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_POSITIONING_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_PRINTSUPPORT_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_QMLMODELS_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_QUICK_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_USE_QSTRINGBUILDER"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_WEBCHANNEL_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_WEBENGINECORE_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_WEBENGINEWIDGETS_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_WEBENGINE_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/include"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/./mkspecs/macx-clang"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework/Headers"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				4,
+				6,
+				8,
+				10,
+				12,
+				14,
+				16,
+				18,
+				21,
+				24,
+				26,
+				28,
+				30,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43,
+				45,
+				47,
+				49,
+				51,
+				54,
+				56,
+				58,
+				60,
+				61,
+				63,
+				65,
+				68,
+				70,
+				72,
+				74,
+				76,
+				81,
+				82
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "qolibri-subtraction_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "qolibri-subtraction::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework/QtMultimedia",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework/QtWebEngine",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework/QtWebEngineWidgets",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-leb",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lz",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework/QtWebEngineCore",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework/QtWebChannel",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework/QtPositioning",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework/QtQuick",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework/QtQmlModels",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework/QtQml",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework/QtNetwork",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework/QtPrintSupport",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/QtWidgets",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework/QtGui",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/QtCore",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "qolibri-subtraction",
+	"nameOnDisk" : "qolibri-subtraction",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				3,
+				4,
+				6,
+				8,
+				10,
+				12,
+				14,
+				16,
+				18,
+				21,
+				24,
+				26,
+				28,
+				30,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43,
+				45,
+				47,
+				49,
+				51,
+				54,
+				56,
+				58,
+				60,
+				61,
+				63,
+				65,
+				68,
+				70,
+				72,
+				74,
+				76,
+				81,
+				82
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				23,
+				53,
+				78,
+				79,
+				80
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				5,
+				7,
+				9,
+				11,
+				13,
+				15,
+				17,
+				19,
+				20,
+				22,
+				25,
+				27,
+				29,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				46,
+				48,
+				50,
+				52,
+				55,
+				57,
+				59,
+				62,
+				64,
+				66,
+				67,
+				69,
+				71,
+				73,
+				75,
+				77
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				83,
+				84,
+				85
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "images/qolibri.icns",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "qolibri.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "qolibri.rc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/allpage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/allpage.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/book.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/book.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/bookbrowser.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/bookbrowser.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/bookbrowserpopup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/bookbrowserpopup.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/booksetting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/booksetting.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/bookview.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/bookview.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/bookwidget.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/bookwidget.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/browsefileedit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/browsefileedit.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/clipboardoptionswidget.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/clipboardoptionswidget.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/clipboardoptionswidget.ui",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/configure.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/configure.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ebcache.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ebcache.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ebcore.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ebcore.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ebhook.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ebook.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ebook.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/fontsetting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/fontsetting.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/globaleventfilter.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/globaleventfilter.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/groupdock.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/groupdock.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/groupwidget.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/groupwidget.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/infopage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/infopage.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/mainwindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/mainwindow.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/menupage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/menupage.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/method.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/method.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/model.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/model.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/optiondialog.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/optiondialog.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/optiondialog.ui",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/pageitems.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/pageitems.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/pagewidget.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/pagewidget.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/qeb.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/qeb.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/qolibri.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/referencepopup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/referencepopup.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/searchpage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/searchpage.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/searchwholepage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/searchwholepage.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/server.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ssheetsetting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ssheetsetting.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/toolbar.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/toolbar.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/treescrollpopup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/treescrollpopup.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/webpage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/webpage.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/webview.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/webview.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 10,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/translations.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 10,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/qolibri_ja_JP.qm",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 10,
+			"path" : "translations/qolibri_ja_JP.ts",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/EWIEGA46WW/qrc_qolibri.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/FE4VBTWS2P/qrc_translations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/qolibri_ja_JP.qm.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/EWIEGA46WW/qrc_qolibri.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/FE4VBTWS2P/qrc_translations.cpp.rule",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "EXECUTABLE"
+}

@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="qolibri-subtraction"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5LinguistTools\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Network\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngine\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngineCore\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Quick\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5QmlModels\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebChannel\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Positioning\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngineWidgets\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5PrintSupport\;CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Widgets\;CMake Files\..\build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug\;CMake Files\..\build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug\translations\;CMake Files\translations\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="qolibri-subtraction">
+				<Option output="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_USE_QSTRINGBUILDER"/>
+					<Add option="-DQOLIBRI_GIT_COMMIT_DATE=&quot;2020-08-11 05:41:26 +0800&quot;"/>
+					<Add option="-DQOLIBRI_VERSION_STR=&quot;eee4a8d&quot;"/>
+					<Add option="-DQOLIBRI_WEBSITE=&quot;https://github.com/ludios/qolibri&quot;"/>
+					<Add option="-DQT_MULTIMEDIA_LIB"/>
+					<Add option="-DQT_NETWORK_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WEBENGINE_LIB"/>
+					<Add option="-DQT_WEBENGINECORE_LIB"/>
+					<Add option="-DQT_QUICK_LIB"/>
+					<Add option="-DQT_QMLMODELS_LIB"/>
+					<Add option="-DQT_QML_LIB"/>
+					<Add option="-DQT_WEBCHANNEL_LIB"/>
+					<Add option="-DQT_POSITIONING_LIB"/>
+					<Add option="-DQT_WEBENGINEWIDGETS_LIB"/>
+					<Add option="-DQT_PRINTSUPPORT_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add directory="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/include"/>
+					<Add directory="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/./mkspecs/macx-clang"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework/Headers"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 qolibri-subtraction"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="qolibri-subtraction/fast">
+				<Option output="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_USE_QSTRINGBUILDER"/>
+					<Add option="-DQOLIBRI_GIT_COMMIT_DATE=&quot;2020-08-11 05:41:26 +0800&quot;"/>
+					<Add option="-DQOLIBRI_VERSION_STR=&quot;eee4a8d&quot;"/>
+					<Add option="-DQOLIBRI_WEBSITE=&quot;https://github.com/ludios/qolibri&quot;"/>
+					<Add option="-DQT_MULTIMEDIA_LIB"/>
+					<Add option="-DQT_NETWORK_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WEBENGINE_LIB"/>
+					<Add option="-DQT_WEBENGINECORE_LIB"/>
+					<Add option="-DQT_QUICK_LIB"/>
+					<Add option="-DQT_QMLMODELS_LIB"/>
+					<Add option="-DQT_QML_LIB"/>
+					<Add option="-DQT_WEBCHANNEL_LIB"/>
+					<Add option="-DQT_POSITIONING_LIB"/>
+					<Add option="-DQT_WEBENGINEWIDGETS_LIB"/>
+					<Add option="-DQT_PRINTSUPPORT_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add directory="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/include"/>
+					<Add directory="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtNetwork.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/./mkspecs/macx-clang"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework/Headers"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQuick.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQmlModels.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtQml.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPrintSupport.framework/Headers"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework"/>
+					<Add directory="/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 qolibri-subtraction/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="qolibri-subtraction_autogen">
+				<Option working_dir="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 qolibri-subtraction_autogen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/EWIEGA46WW/qrc_qolibri.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/EWIEGA46WW/qrc_qolibri.cpp.rule">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/FE4VBTWS2P/qrc_translations.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/FE4VBTWS2P/qrc_translations.cpp.rule">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/qolibri-subtraction_autogen/mocs_compilation.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/qolibri_ja_JP.qm">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/qolibri_ja_JP.qm.rule">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/translations.qrc">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/images/qolibri.icns">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/qolibri.qrc">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/qolibri.rc">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/allpage.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/allpage.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/book.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/book.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowser.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowser.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowserpopup.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowserpopup.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/booksetting.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/booksetting.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookview.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookview.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookwidget.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookwidget.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/browsefileedit.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/browsefileedit.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/client.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/clipboardoptionswidget.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/clipboardoptionswidget.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/clipboardoptionswidget.ui">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/configure.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/configure.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcache.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcache.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcore.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcore.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebhook.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebook.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebook.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/fontsetting.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/fontsetting.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/globaleventfilter.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/globaleventfilter.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupdock.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupdock.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupwidget.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupwidget.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/infopage.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/infopage.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/mainwindow.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/mainwindow.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/menupage.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/menupage.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/method.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/method.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/model.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/model.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/optiondialog.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/optiondialog.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/optiondialog.ui">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pageitems.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pageitems.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pagewidget.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pagewidget.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qeb.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qeb.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qolibri.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/referencepopup.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/referencepopup.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchpage.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchpage.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchwholepage.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchwholepage.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/server.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ssheetsetting.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ssheetsetting.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/toolbar.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/toolbar.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/treescrollpopup.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/treescrollpopup.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/webpage.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/webpage.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/webview.cpp">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/webview.h">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/translations/qolibri_ja_JP.ts">
+			<Option target="qolibri-subtraction"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/Info.plist.in">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/qolibri.qrc">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5LinguistTools\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5LinguistTools\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5LinguistTools\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_AVFMediaPlayerServicePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_AVFServicePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_AudioCaptureServicePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_CoreAudioPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Multimedia\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngine\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebEngine/Qt5WebEngineConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngine\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngineCore\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngineCore\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Quick\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Quick/Qt5QuickConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Quick\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5QmlModels/Qt5QmlModelsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5QmlModels\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5QmlModels/Qt5QmlModelsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5QmlModels\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5QmlConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5QmlConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5QmlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QDebugMessageServiceFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QLocalClientConnectionFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebugServerFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebuggerServiceFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlInspectorServiceFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlNativeDebugConnectorFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlNativeDebugServiceFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlPreviewServiceFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlProfilerServiceFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QQuickProfilerAdapterFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Qml/Qt5Qml_QTcpServerConnectionFactory.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Qml\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebChannel/Qt5WebChannelConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebChannel\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebChannel\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Positioning/Qt5PositioningConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Positioning\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Positioning/Qt5PositioningConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Positioning\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngineWidgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5WebEngineWidgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5PrintSupport\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5PrintSupport\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupport_QCocoaPrinterSupportPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5PrintSupport\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\local\Qt5.14.2\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/Info.plist">
+			<Option virtualFolder="CMake Files\..\build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/../build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/translations.qrc">
+			<Option virtualFolder="CMake Files\..\build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug\translations\"/>
+		</Unit>
+		<Unit filename="/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/translations/translations.qrc">
+			<Option virtualFolder="CMake Files\translations\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
