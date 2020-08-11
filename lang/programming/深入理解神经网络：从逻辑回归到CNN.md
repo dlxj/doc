@@ -45,7 +45,17 @@ x_2 \ \text{j-hat} \\
 y \ \ \text{k-hat} \\
 \end{bmatrix}
 $$
-变换后是
+也就是
+$$
+\begin{bmatrix}
+ 1 \ \text{i-hat} * x_1 \\
+1 \ \text{j-hat} * x_2 \\
+1 \ \ \text{k-hat} * y \\
+\end{bmatrix}
+$$
+
+
+首先把基向量 $(1 \ \text{i-hat}, 1 \ \text{j-hat}, 1 \ \ \text{k-hat} )^T$ 变换成新的基向量： 
 $$
 \begin{bmatrix}
 w_1 \ \text{i-hat} & w_2 \ \text{i-hat} & -1\ \ \text{i-hat}
