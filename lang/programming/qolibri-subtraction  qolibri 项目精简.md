@@ -54,6 +54,10 @@ target_link_libraries(qolibri Qt5::Multimedia Qt5::Network Qt5::WebEngine Qt5::W
 
 
 
+
+
+## hook 的关键是加eb_initialize_library();  函数
+
 ```cpp
 EB_Error_Code myHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*a,
     void *classp, EB_Hook_Code c, int argc, const unsigned int* argv)
@@ -114,6 +118,13 @@ void starthook() {
 ```
 
 
+
+```
+#include "ebook.h"
+#include "book.h"
+
+QEb::initialize();
+```
 
 
 

@@ -3,19 +3,17 @@
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookview.h
  mmc:Q_OBJECT
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/configure.h
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/globaleventfilter.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupdock.h
  mmc:Q_OBJECT
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/menupage.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowserpopup.h
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/globaleventfilter.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/configure.h
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/browsefileedit.h
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/webview.h
  mmc:Q_OBJECT
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/booksetting.h
- mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/fontsetting.h
+ mmc:Q_OBJECT
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/booksetting.h
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcache.h
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowser.cpp
@@ -24,16 +22,20 @@
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/clipboardoptionswidget.h
  mmc:Q_OBJECT
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/menupage.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowserpopup.h
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/infopage.h
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/infopage.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcache.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/book.h
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/menupage.h
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupwidget.h
  mmc:Q_OBJECT
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pageitems.h
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupdock.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/referencepopup.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/method.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupwidget.h
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/menupage.h
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookview.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/referencepopup.h
@@ -45,10 +47,8 @@
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchpage.h
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/browsefileedit.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowserpopup.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebcore.h
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/groupdock.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pageitems.h
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookbrowserpopup.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/allpage.h
  mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchwholepage.h
@@ -77,10 +77,6 @@
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/configure.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qeb.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/mainwindow.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/server.h
- mmc:Q_OBJECT
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/treescrollpopup.h
- mmc:Q_OBJECT
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebook.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/method.h
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/clipboardoptionswidget.cpp
@@ -91,12 +87,16 @@
  uic:ui_optiondialog.h
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/searchwholepage.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qeb.h
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qolibri.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/bookwidget.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/optiondialog.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/fontsetting.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/qolibri.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/toolbar.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ssheetsetting.cpp
-/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebhook.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/fontsetting.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/pageitems.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/server.h
+ mmc:Q_OBJECT
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/treescrollpopup.h
+ mmc:Q_OBJECT
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/optiondialog.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ebhook.cpp
+/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/ssheetsetting.cpp
 /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/webpage.cpp

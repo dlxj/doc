@@ -805,7 +805,7 @@ void starthook() {
 
 void MainWindow::viewSearch()
 {
-    starthook();
+    //starthook();
 
     QString str = searchTextEdit->text();
 
