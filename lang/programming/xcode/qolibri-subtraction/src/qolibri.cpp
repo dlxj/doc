@@ -128,6 +128,9 @@ int main(int argc, char *argv[])
 
     MainWindow mainWin(&model, searchText);
 
+    extern void starthook();
+    starthook();
+
     mainWin.show();
 
     if (qserv) {
