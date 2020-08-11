@@ -19,21 +19,101 @@ Things Happen for A Reason
 #### 平面的朝向由法向量在平面上的投影决定
 
 
+
+仿射函数
 $$
 y = b + \sum^{n}_{i=1} w_i x_i
 $$
 
 $$
-w_1 x_1 + w_2 x_2 - y = (w_1, w_2, -1) \begin{pmatrix} x_1 \\ x_2 \\ y \end{pmatrix}
+w_1 x_1 + w_2 x_2 - y = (w_1, w_2, -1) \begin{pmatrix} x_1 \\ x_2 \\ y \end{pmatrix} = -b
+$$
+
+内积为常数，也就是说**仿射变换的图像是3维空间中的一张平面**。
+
+> **点积是把向量从二维变换到一维，然后缩放**
+>
+> - 缩放的数乘就是另一个向量的模长
+
+
+
+变换前是
+$$
+\begin{bmatrix}
+x_1 \ \text{i-hat} \\
+x_2 \ \text{j-hat} \\
+y \ \ \text{k-hat} \\
+\end{bmatrix}
+$$
+也就是
+$$
+\begin{bmatrix}
+ 1 \ \text{i-hat} * x_1 \\
+1 \ \text{j-hat} * x_2 \\
+1 \ \ \text{k-hat} * y \\
+\end{bmatrix}
 $$
 
 
+首先把基向量 $(1 \ \text{i-hat}, 1 \ \text{j-hat}, 1 \ \ \text{k-hat} )^T$ 变换成新的基向量：
+$$
+\begin{bmatrix}
+w_1 \ \text{i-hat} & w_2 \ \text{i-hat} & -1\ \ \text{i-hat}
+\end{bmatrix}
+$$
+所以，**三个不同维度的向量(共同构成原空间的基)线性变换成同一维度的三个向量(构成新空间的基)**：
+
+- $1 \ \text{i-hat} \rightarrow w_1 \ \text{i-hat}$
+- $1 \ \text{j-hat} \rightarrow w_2 \ \text{i-hat}$
+- $1 \ \text{k-hat} \rightarrow -1 \ \text{i-hat}$
+
+三个相同维度的向量，其中每一个都不能贡献新的维度，所以它们是**线性相关的**
+
+
+
+然后，把原来的数乘（缩放）放进来就得到**真实变换后的向量**：
+
+- $w_1 \ \text{i-hat} \rightarrow w_1 * x_1 \ \text{i-hat}$ 
+- $w_2 \ \text{j-hat} \rightarrow w_2 * x_2 \ \text{i-hat}$
+- $-1 \ \text{k-hat} \rightarrow -1 * y \ \text{i-hat}$
+
+
+
+#### 内积就是线性变换
+
+##### 变换后的向量其实是“本体”向量在各数轴上的投影
+
+##### 所有投影向量的和等于本体
+
+所以，
+
+
+
+# 内积是线性变换，变换的结果是"本体"所有投影的和
+
+$$
+\begin{align}
+(w_1, w_2, -1) \begin{pmatrix} x_1 \\ x_2 \\ y \end{pmatrix} &=
+w_1 * x_1 \ \text{i-hat} + w_2 * x_2 \ \text{i-hat} + -1 * y \ \text{i-hat}
+\\
+&= -b 
+\end{align}
+$$
+
+## 所有投影都投到同一个数轴上了，这使得内积的值是一个常量
 
 
 
 
 
-### 一个矩阵代表一个线性变换，矩阵的列是新空间的基向量
+
+
+
+
+
+
+
+#### 一个矩阵代表一个线性变换，矩阵的列是新空间的基向量
 
 > 如果网格线保持平行且等距分布，并且原点映射为自身，就称它是线性的
 

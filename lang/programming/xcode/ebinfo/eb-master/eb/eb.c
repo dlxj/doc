@@ -47,7 +47,7 @@ eb_initialize_library(void)
     LOG(("in: eb_initialize_library()"));
     LOG(("aux: EB Library version %s", EB_VERSION_STRING));
 
-    eb_initialize_default_hookset();
+    //eb_initialize_default_hookset();
 #ifdef ENABLE_NLS
     bindtextdomain(EB_TEXT_DOMAIN_NAME, EB_LOCALEDIR);
 #endif
