@@ -55,12 +55,18 @@ $$
 $$
 
 
-首先把基向量 $(1 \ \text{i-hat}, 1 \ \text{j-hat}, 1 \ \ \text{k-hat} )^T$ 变换成新的基向量： 
+首先把基向量 $(1 \ \text{i-hat}, 1 \ \text{j-hat}, 1 \ \ \text{k-hat} )^T$ 变换成新的基向量：
 $$
 \begin{bmatrix}
 w_1 \ \text{i-hat} & w_2 \ \text{i-hat} & -1\ \ \text{i-hat}
 \end{bmatrix}
 $$
+所以，**三个不同维度的向量(共同构成原空间的基)线性变换成同一维度的三个向量(构成新空间的基)**：
+
+- $1 \ \text{i-hat} \rightarrow w_1 \ \text{i-hat}$
+- $1 \ \text{j-hat} \rightarrow w_2 \ \text{i-hat}$
+- $1 \ \text{k-hat} \rightarrow w_2 \ \text{i-hat}$
+
 
 
 
