@@ -1374,6 +1374,14 @@ np.dot(W, TR) * 0.85 + C
 
 
 
+### append
+
+```python
+np.append(0, (radii*np.cos(angles)).flatten())
+```
+
+
+
 
 
 
@@ -2436,6 +2444,59 @@ if __name__ == '__main__':
 
 
 
+### 可以拖动的图形
+
+#### plot_trisurf
+
+[plot_trisurf](https://matplotlib.org/3.1.1/tutorials/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.plot_trisurf)
+
+```python
+trisurf3d.py
+'''
+======================
+Triangular 3D surfaces
+======================
+
+Plot a 3D surface with a triangular mesh.
+'''
+
+# This import registers the 3D projection, but is otherwise unused.
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+n_radii = 8
+n_angles = 36
+
+# Make radii and angles spaces (radius r=0 omitted to eliminate duplication).
+radii = np.linspace(0.125, 1.0, n_radii)
+angles = np.linspace(0, 2*np.pi, n_angles, endpoint=False)[..., np.newaxis]
+
+# Convert polar (radii, angles) coords to cartesian (x, y) coords.
+# (0, 0) is manually added at this stage,  so there will be no duplicate
+# points in the (x, y) plane.
+x = np.append(0, (radii*np.cos(angles)).flatten())
+y = np.append(0, (radii*np.sin(angles)).flatten())
+
+# Compute z to make the pringle surface.
+z = np.sin(-x*y)
+
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+
+ax.plot_trisurf(x, y, z, linewidth=0.2, antialiased=True)
+
+plt.show()
+```
+
+
+
+
+
+
+
 
 
 ### ax.plot AND ax.add_artist(Arrow3D)
@@ -2605,7 +2666,7 @@ ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
 
 
 
-### 画垂直于以向量的平面
+### 画垂直于向量的平面
 
 ```python
 import numpy as np
@@ -2674,13 +2735,34 @@ x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
 x1, x2 = np.meshgrid(x1, x2)
 x1, x2 = x1.flatten(), x2.flatten()
 x3 = w[0] * x1 + w[1] * x2
-#tri = mtri.Triangulation(x1, x2)
+
+print(x1, x2, x3)
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+
 ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
 ```
 
+<img src="Python 3  Summary.assets/image-20200811102936920.png" alt="image-20200811102936920" style="zoom:50%;" />
 
 
 
+#### 先画散点，再画平面
+
+##### ax.scatter，plot_trisurf 
+
+```python
+# 画散点
+print(x1, x2, x3)
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+```
+
+<img src="Python 3  Summary.assets/image-20200811101543133.png" alt="image-20200811101543133" style="zoom: 50%;" />
+
+```
+[-1.5  1.5 -1.5  1.5] [-1.5 -1.5  1.5  1.5] [ 0.15  0.45 -0.45 -0.15]
+```
+
+**z轴是 0.15到-0.15，是平面的厚度**
 
 
 
