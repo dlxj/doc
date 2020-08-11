@@ -65,7 +65,19 @@ $$
 
 - $1 \ \text{i-hat} \rightarrow w_1 \ \text{i-hat}$
 - $1 \ \text{j-hat} \rightarrow w_2 \ \text{i-hat}$
-- $1 \ \text{k-hat} \rightarrow w_2 \ \text{i-hat}$
+- $1 \ \text{k-hat} \rightarrow -1 \ \text{i-hat}$
+
+三个相同维度的向量，其中每一个都不能贡献新的维度，所以它们是**线性相关的**
+
+
+
+然后，把原来的数乘（缩放）放进来就得到**真实变换后的向量**：
+
+- $w_1 \ \text{i-hat} \rightarrow w_1 * x_1 \ \text{i-hat}$ 
+- $w_2 \ \text{j-hat} \rightarrow w_2 * x_2 \ \text{i-hat}$
+- $-1 \ \text{k-hat} \rightarrow -1 * y \ \text{i-hat}$
+
+
 
 
 
