@@ -2451,6 +2451,7 @@ if __name__ == '__main__':
 [plot_trisurf](https://matplotlib.org/3.1.1/tutorials/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.plot_trisurf)
 
 ```python
+trisurf3d.py
 '''
 ======================
 Triangular 3D surfaces
@@ -2665,7 +2666,7 @@ ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
 
 
 
-### 画垂直于以向量的平面
+### 画垂直于向量的平面
 
 ```python
 import numpy as np
@@ -2734,13 +2735,34 @@ x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
 x1, x2 = np.meshgrid(x1, x2)
 x1, x2 = x1.flatten(), x2.flatten()
 x3 = w[0] * x1 + w[1] * x2
-#tri = mtri.Triangulation(x1, x2)
+
+print(x1, x2, x3)
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+
 ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
 ```
 
+<img src="Python 3  Summary.assets/image-20200811102936920.png" alt="image-20200811102936920" style="zoom:50%;" />
 
 
 
+#### 先画散点，再画平面
+
+##### ax.scatter，plot_trisurf 
+
+```python
+# 画散点
+print(x1, x2, x3)
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+```
+
+<img src="Python 3  Summary.assets/image-20200811101543133.png" alt="image-20200811101543133" style="zoom: 50%;" />
+
+```
+[-1.5  1.5 -1.5  1.5] [-1.5 -1.5  1.5  1.5] [ 0.15  0.45 -0.45 -0.15]
+```
+
+**z轴是 0.15到-0.15，是平面的厚度**
 
 
 
