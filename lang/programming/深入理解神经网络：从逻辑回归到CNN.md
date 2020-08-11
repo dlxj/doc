@@ -19,12 +19,37 @@ Things Happen for A Reason
 #### 平面的朝向由法向量在平面上的投影决定
 
 
+
+仿射函数
 $$
 y = b + \sum^{n}_{i=1} w_i x_i
 $$
 
 $$
-w_1 x_1 + w_2 x_2 - y = (w_1, w_2, -1) \begin{pmatrix} x_1 \\ x_2 \\ y \end{pmatrix}
+w_1 x_1 + w_2 x_2 - y = (w_1, w_2, -1) \begin{pmatrix} x_1 \\ x_2 \\ y \end{pmatrix} = -b
+$$
+
+内积为常数，也就是说**仿射变换的图像是3维空间中的一张平面**。
+
+> **点积是把向量从二维变换到一维，然后缩放**
+>
+> - 缩放的数乘就是另一个向量的模长
+
+
+
+变换前是
+$$
+\begin{bmatrix}
+x_1 \ \text{i-hat} \\
+x_2 \ \text{j-hat} \\
+y \ \ \text{k-hat} \\
+\end{bmatrix}
+$$
+变换后是
+$$
+\begin{bmatrix}
+w_1 \ \text{i-hat} & w_2 \ \text{i-hat} & -1\ \ \text{i-hat}
+\end{bmatrix}
 $$
 
 
@@ -33,7 +58,7 @@ $$
 
 
 
-### 一个矩阵代表一个线性变换，矩阵的列是新空间的基向量
+#### 一个矩阵代表一个线性变换，矩阵的列是新空间的基向量
 
 > 如果网格线保持平行且等距分布，并且原点映射为自身，就称它是线性的
 
