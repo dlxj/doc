@@ -1,64 +1,11 @@
 
+#include <eb/eb.h>
+#include <eb/text.h>
+#include <eb/appendix.h>
+#include <eb/error.h>
+#include <eb/binary.h>
+#include <eb/font.h>
 
-
-
-# qolibri-subtraction  qolibri 项目精简
-
-
-
-只留搜索框。并图片回调保持正常
-
-
-
-## 先自行编译eblib 安装到 /usr/local/lib
-
-
-
-## 原始CMake 的修改
-
-
-
-加入：
-
-find_library(EB_LIBRARY eb /usr/local/lib/ REQUIRED)
-
-include_directories("/usr/local/include/")
-
-
-
-然后在链接的最后加入：
-
-${EB_LIBRARY}
-
-
-
-target_link_libraries(qolibri Qt5::Multimedia Qt5::Network Qt5::WebEngine Qt5::WebEngineWidgets Qt5::Widgets z ${EB_LIBRARY}) # eb
-
-
-
-## 搜索 Ａ級
-
-
-
-
-
-## qolibri.cpp mainWin.show();   前可以hook 到图片
-
-
-
-```cpp
-    extern void starthook();
-    starthook();
-    mainWin.show();
-```
-
-
-
-
-
-## hook 的关键是加eb_initialize_library();  函数
-
-```cpp
 EB_Error_Code myHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*a,
     void *classp, EB_Hook_Code c, int argc, const unsigned int* argv)
 {
@@ -83,7 +30,7 @@ void starthook() {
     EB_Appendix appendix;
     EB_Hookset hookset;
 
-  	eb_initialize_library();
+    eb_initialize_library();
     eb_initialize_book(&book);
     eb_initialize_appendix(&appendix);
     eb_initialize_hookset(&hookset);
@@ -116,20 +63,9 @@ void starthook() {
     ecode = eb_read_text(&book, &appendix, &hookset, NULL,  // 可以传void** 进去，发生回调的时侯别人会原样回传给你
                 1024, buff, &len);
 }
-```
 
-
-
-```
-#include "ebook.h"
-#include "book.h"
-
-QEb::initialize();
-```
-
-
-
-
-
-
-
+int main(int argc, char *argv[])
+{
+    starthook();
+    return 0;
+}

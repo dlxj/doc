@@ -103,50 +103,6 @@ static struct option long_options[] = {
 #define DEFAULT_BOOK_DIRECTORY	"."
 
 
-EB_Error_Code myHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*a,
-    void *classp, EB_Hook_Code c, int argc, const unsigned int* argv)
-{
-    EB_Position pos;
-    pos.page = argv[2];
-    pos.offset = argv[3];
-
-    return EB_SUCCESS;
-}
-
-EB_Hook myhooks[] = {
-  { EB_HOOK_BEGIN_IN_COLOR_JPEG, myHookBEGIN_IN_COLOR_JPEG },
-  { EB_HOOK_NULL, NULL }
-};
-
-EB_Hookset hookset;
-
-void
-myinitialize_hookset(EB_Hookset *hookset)
-{
-    int i;
-
-    LOG(("in: eb_initialize_hookset()"));
-
-    eb_initialize_lock(&hookset->lock);
-
-    for (i = 0; i < EB_NUMBER_OF_HOOKS; i++) {
-    hookset->hooks[i].code = i;
-    hookset->hooks[i].function = NULL;
-    }
-    hookset->hooks[EB_HOOK_BEGIN_IN_COLOR_JPEG].function
-    = myHookBEGIN_IN_COLOR_JPEG;
-    hookset->hooks[EB_HOOK_NARROW_JISX0208].function
-    = eb_hook_euc_to_ascii;
-    hookset->hooks[EB_HOOK_NARROW_FONT].function
-    = eb_hook_narrow_character_text;
-    hookset->hooks[EB_HOOK_WIDE_FONT].function
-    = eb_hook_wide_character_text;
-    hookset->hooks[EB_HOOK_NEWLINE].function
-    = eb_hook_newline;
-
-    LOG(("out: eb_initialize_hookset()"));
-}
-
 /*
  * Output information about the book at `path'.
  * If `multi_flag' is enabled, multi-search information are also output.
@@ -173,9 +129,6 @@ output_information(const char *book_path, int multi_flag)
      * Start to use a book.
      */
     error_code = eb_initialize_library();
-    //eb_initialize_hookset(&hookset);
-    myinitialize_hookset(&hookset);
-    //eb_set_hooks(&hookset, myhooks);
     if (error_code != EB_SUCCESS) {
     output_error_message(error_code);
     return_code = error_code;
@@ -190,17 +143,6 @@ output_information(const char *book_path, int multi_flag)
     goto failed;
     }
     
-    
-    EB_Position pos;
-    error_code = eb_text(&book, &pos);  // first word position
-
-    error_code = eb_seek_text(&book, &pos);
-
-    char buff[1024+1];
-    ssize_t len;
-
-    error_code = eb_read_text(&book, &appendix, &hookset, NULL,  // 可以传void** 进去，发生回调的时侯别人会原样回传给你
-                1024, buff, &len);
 
     /*
      * Output disc type.
@@ -421,7 +363,7 @@ output_information(const char *book_path, int multi_flag)
 }
 
 int
-main(int argc, char *argv[])
+mainn(int argc, char *argv[])
 {
     
     

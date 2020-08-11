@@ -59,6 +59,7 @@
 		EFE3DDA224E1372700094A64 /* yesno.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE3DD9924E1372700094A64 /* yesno.c */; };
 		EFE3DDA324E1372700094A64 /* puts_eucjp.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE3DD9A24E1372700094A64 /* puts_eucjp.c */; };
 		EFE3DDA424E1372700094A64 /* makedir.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE3DD9B24E1372700094A64 /* makedir.c */; };
+		EFEDFE1724E351A900D88A69 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EFEDFE1624E351A900D88A69 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +128,7 @@
 		EFE3DD9924E1372700094A64 /* yesno.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yesno.c; path = "eb-master/libebutils/yesno.c"; sourceTree = SOURCE_ROOT; };
 		EFE3DD9A24E1372700094A64 /* puts_eucjp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = puts_eucjp.c; path = "eb-master/libebutils/puts_eucjp.c"; sourceTree = SOURCE_ROOT; };
 		EFE3DD9B24E1372700094A64 /* makedir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = makedir.c; path = "eb-master/libebutils/makedir.c"; sourceTree = SOURCE_ROOT; };
+		EFEDFE1624E351A900D88A69 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "eb-master/ebinfo/main.c"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +145,6 @@
 		EFE3DCC124E123FC00094A64 = {
 			isa = PBXGroup;
 			children = (
-				EFE3DD2A24E1279A00094A64 /* ebutil */,
 				EFE3DCCC24E123FC00094A64 /* ebinfo */,
 				EFE3DCCB24E123FC00094A64 /* Products */,
 			);
@@ -163,6 +164,7 @@
 				EFE3DD4124E1363800094A64 /* appendix.c */,
 				EFE3DD9824E1372700094A64 /* ebutils.c */,
 				EFE3DD9624E1372600094A64 /* getopt.c */,
+				EFEDFE1624E351A900D88A69 /* main.c */,
 				EFE3DD9424E1372600094A64 /* getumask.c */,
 				EFE3DD9B24E1372700094A64 /* makedir.c */,
 				EFE3DD9A24E1372700094A64 /* puts_eucjp.c */,
@@ -214,13 +216,6 @@
 				EFE3DD3D24E135B200094A64 /* ebinfo.c */,
 			);
 			path = ebinfo;
-			sourceTree = "<group>";
-		};
-		EFE3DD2A24E1279A00094A64 /* ebutil */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ebutil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +298,7 @@
 				EFE3DD7624E1363B00094A64 /* strcasecmp.c in Sources */,
 				EFE3DD7924E1363B00094A64 /* menu.c in Sources */,
 				EFE3DD7224E1363B00094A64 /* multiplex.c in Sources */,
+				EFEDFE1724E351A900D88A69 /* main.c in Sources */,
 				EFE3DD6E24E1363B00094A64 /* log.c in Sources */,
 				EFE3DD8124E1363B00094A64 /* widefont.c in Sources */,
 				EFE3DD8624E1363B00094A64 /* booklist.c in Sources */,
