@@ -62,6 +62,15 @@ pip show jieba
 
 
 
+```python
+pm2 start run.sh
+pm2 restart id --name assist 
+```
+
+
+
+
+
 ```
 python -m pip install --upgrade pip
 pip install wheel
@@ -70,6 +79,16 @@ pip install jupyter
 python -m jupyter notebook --version
 python -m pip install -U matplotlib
 ```
+
+
+
+### 使用昨时源
+
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
+```
+
+
 
 
 
@@ -1355,6 +1374,14 @@ np.dot(W, TR) * 0.85 + C
 
 
 
+### append
+
+```python
+np.append(0, (radii*np.cos(angles)).flatten())
+```
+
+
+
 
 
 
@@ -1747,7 +1774,19 @@ cat 学研国語大辞典ku00.txt | iconv -f SHIFT_JIS-2004 -t utf-8 > 学研国
 
 
 
+```python
+@echo off
+cd /d D:
+cd %cd%
+jupyter notebook
+cmd.exe
 ```
+
+
+
+
+
+```python
 python -m pip install --upgrade pip
 pip install wheel
 ```
@@ -2405,6 +2444,59 @@ if __name__ == '__main__':
 
 
 
+### 可以拖动的图形
+
+#### plot_trisurf
+
+[plot_trisurf](https://matplotlib.org/3.1.1/tutorials/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.plot_trisurf)
+
+```python
+trisurf3d.py
+'''
+======================
+Triangular 3D surfaces
+======================
+
+Plot a 3D surface with a triangular mesh.
+'''
+
+# This import registers the 3D projection, but is otherwise unused.
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+n_radii = 8
+n_angles = 36
+
+# Make radii and angles spaces (radius r=0 omitted to eliminate duplication).
+radii = np.linspace(0.125, 1.0, n_radii)
+angles = np.linspace(0, 2*np.pi, n_angles, endpoint=False)[..., np.newaxis]
+
+# Convert polar (radii, angles) coords to cartesian (x, y) coords.
+# (0, 0) is manually added at this stage,  so there will be no duplicate
+# points in the (x, y) plane.
+x = np.append(0, (radii*np.cos(angles)).flatten())
+y = np.append(0, (radii*np.sin(angles)).flatten())
+
+# Compute z to make the pringle surface.
+z = np.sin(-x*y)
+
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+
+ax.plot_trisurf(x, y, z, linewidth=0.2, antialiased=True)
+
+plt.show()
+```
+
+
+
+
+
+
+
 
 
 ### ax.plot AND ax.add_artist(Arrow3D)
@@ -2419,9 +2511,25 @@ ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]))
 ```
 
 ```python
+# 两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
 pts = np.array([ [0, 0, 2], [0, 0, -2] ], np.float).T
 arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
 ax.add_artist(arrow)
+```
+
+
+
+### 画虚线 
+
+
+
+```python
+# 画虚线 p1 [x, y, z] 坐标 p2 [x, y, z] 坐标 
+def drawDashe(p1, p2, ax):
+    pts = np.array([ p1, p2 ], np.float).T
+    ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
+
+drawDashe([0, 0, 2], [0, 0, -2], ax)
 ```
 
 
@@ -2523,6 +2631,138 @@ x1, x2 = np.meshgrid(x1, x2)
 
 
 ### meshgrid 用N个坐标轴上的点在空间中画网格
+
+>```python
+># 用两个坐标轴的点画网格
+>x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+>x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+>[-1.5  1.5] [-1.5  1.5]
+>```
+
+```python
+# 两个点，生成两个2*2 的矩阵
+# x1当成行向量，行复制len(x2) 次，生成新矩阵。这是第一个返回值
+# x2当成列向量，列复制len(x1) 次，生成新矩阵。这是第一个返回值
+x1, x2 = np.meshgrid(x1, x2) 
+
+[[-1.5  1.5]
+ [-1.5  1.5]] 
+
+[[-1.5 -1.5]
+ [ 1.5  1.5]]
+```
+
+```python
+# 网格矩阵降维成1 维
+x1, x2 = x1.flatten(), x2.flatten()
+# ？？
+x3 = w[0] * x1 + w[1] * x2
+```
+
+```python
+# 画垂直于法向量的平面
+ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
+```
+
+
+
+### 画垂直于向量的平面
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import proj3d
+from matplotlib.patches import FancyArrowPatch
+from mpl_toolkits.mplot3d import Axes3D
+
+SQUARE_FIG_SIZE = (10 ,10)
+AXIS_LABEL_FONT_SIZE = 16
+TEXT_FONT_SIZE = 16
+ALPHA = 0.3
+LIGHT_ALPHA = 0.1
+
+
+fig = plt.figure(figsize=np.array(SQUARE_FIG_SIZE) * 2, facecolor='white')
+
+T = "\mathrm{T}"
+
+ax = fig.add_subplot(2, 2, 1, projection="3d")
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+class Arrow3D(FancyArrowPatch):
+    def __init__(self, xs, ys, zs, *args, **kwargs):
+        FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
+        self._verts3d = xs, ys, zs
+ 
+    def draw(self, renderer):
+        xs3d, ys3d, zs3d = self._verts3d
+        xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
+        self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
+        FancyArrowPatch.draw(self, renderer)
+ 
+    def set_data(self, xs, ys, zs):
+        self._verts3d = xs, ys, zs
+
+# ax.set_title(r"$Lorenz\ Attractor$")
+ax.set_xlabel(r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_ylabel(r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_zlabel(r"$y$", fontsize=AXIS_LABEL_FONT_SIZE)
+
+"""
+法向量W
+两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数两个3d 点, 
+    A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
+"""
+w = [0.1, -0.2]
+pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T  # 从原点(0, 0, 0)指向(0.1, -0.2, -1)
+arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(w[0] - 1.6, w[1], -2, r"$w=\left({:.1f},{:.1f},-1\right)^{:s}$".format(w[0], w[1], T), fontsize=TEXT_FONT_SIZE)
+
+
+# 从原点(0, 0, 0)指向(0.1, -0.2, 0)
+pts = np.array([ [0, 0, 0], [w[0], w[1], 0] ], np.float).T
+arrow = Arrow3D([0, w[0]],[0, w[1]],[0, 0], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(w[0] - 1, w[1], 0.1, r"$\left({:.1f},{:.1f},0\right)^{:s}$".format(w[0], w[1], T), fontsize=TEXT_FONT_SIZE)
+
+
+ax.plot((w[0], w[0]), (w[1], w[1]), (-1, 0), "k--", alpha=ALPHA)    
+x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+x1, x2 = np.meshgrid(x1, x2)
+x1, x2 = x1.flatten(), x2.flatten()
+x3 = w[0] * x1 + w[1] * x2
+
+print(x1, x2, x3)
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+
+ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
+```
+
+<img src="Python 3  Summary.assets/image-20200811102936920.png" alt="image-20200811102936920" style="zoom:50%;" />
+
+
+
+#### 先画散点，再画平面
+
+##### ax.scatter，plot_trisurf 
+
+```python
+# 画散点
+print(x1, x2, x3)
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+```
+
+<img src="Python 3  Summary.assets/image-20200811101543133.png" alt="image-20200811101543133" style="zoom: 50%;" />
+
+```
+[-1.5  1.5 -1.5  1.5] [-1.5 -1.5  1.5  1.5] [ 0.15  0.45 -0.45 -0.15]
+```
+
+**z轴是 0.15到-0.15，是平面的厚度**
 
 
 
