@@ -15,6 +15,7 @@
 			"target_link_libraries",
 			"target_compile_options",
 			"target_compile_definitions",
+			"include_directories",
 			"target_include_directories",
 			"target_sources"
 		],
@@ -30,61 +31,67 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 24,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 166,
+				"line" : 170,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 164,
+				"line" : 168,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 138,
+				"line" : 142,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 122,
+				"line" : 126,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 132,
+				"line" : 136,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 135,
+				"line" : 139,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 109,
+				"line" : 113,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 110,
+				"line" : 111,
 				"parent" : 0
 			},
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 162,
+				"line" : 114,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 166,
 				"parent" : 0
 			}
 		]
@@ -192,6 +199,10 @@
 				},
 				{
 					"backtrace" : 9,
+					"path" : "/usr/local/include"
+				},
+				{
+					"backtrace" : 10,
 					"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src"
 				},
 				{
@@ -445,12 +456,12 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-leb",
+				"fragment" : "-lz",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-lz",
+				"fragment" : "/usr/local/lib/libeb.dylib",
 				"role" : "libraries"
 			},
 			{
@@ -1053,18 +1064,18 @@
 			"sourceGroupIndex" : 2
 		},
 		{
-			"backtrace" : 10,
+			"backtrace" : 11,
 			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/translations.qrc",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 10,
+			"backtrace" : 11,
 			"isGenerated" : true,
 			"path" : "/Users/vvw/Documents/github/doc/lang/programming/xcode/build-qolibri-subtraction-Desktop_Qt_5_14_2_clang_64bit-Debug/translations/qolibri_ja_JP.qm",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 10,
+			"backtrace" : 11,
 			"path" : "translations/qolibri_ja_JP.ts",
 			"sourceGroupIndex" : 1
 		},

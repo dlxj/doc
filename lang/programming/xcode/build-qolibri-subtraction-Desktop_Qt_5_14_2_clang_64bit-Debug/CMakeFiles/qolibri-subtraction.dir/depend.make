@@ -128,6 +128,16 @@ CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.
 CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qtextedit.h
 CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qtreewidget.h
 CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/appendix.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/binary.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/booklist.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/defs.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/eb.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/error.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/font.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/sysdefs.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/text.h
+CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: /usr/local/include/eb/zio.h
 CMakeFiles/qolibri-subtraction.dir/qolibri-subtraction_autogen/mocs_compilation.cpp.o: qolibri-subtraction_autogen/include/ui_optiondialog.h
 
 CMakeFiles/qolibri-subtraction.dir/src/allpage.cpp.o: /Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src/allpage.cpp

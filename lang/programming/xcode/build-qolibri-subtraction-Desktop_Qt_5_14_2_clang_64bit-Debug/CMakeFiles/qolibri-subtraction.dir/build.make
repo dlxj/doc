@@ -746,6 +746,7 @@ qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: CMakeFiles/qolibri-s
 qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework/QtMultimedia
 qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngine.framework/QtWebEngine
 qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineWidgets.framework/QtWebEngineWidgets
+qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /usr/local/lib/libeb.dylib
 qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebEngineCore.framework/QtWebEngineCore
 qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtWebChannel.framework/QtWebChannel
 qolibri-subtraction.app/Contents/MacOS/qolibri-subtraction: /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtPositioning.framework/QtPositioning

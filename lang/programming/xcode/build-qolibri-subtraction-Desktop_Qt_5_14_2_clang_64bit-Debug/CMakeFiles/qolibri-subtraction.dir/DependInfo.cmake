@@ -71,6 +71,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "qolibri-subtraction_autogen/include"
+  "/usr/local/include"
   "/Users/vvw/Documents/github/doc/lang/programming/xcode/qolibri-subtraction/src"
   "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework"
   "/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtMultimedia.framework/Headers"

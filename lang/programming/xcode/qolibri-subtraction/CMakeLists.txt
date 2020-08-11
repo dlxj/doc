@@ -21,6 +21,8 @@ set(CMAKE_AUTORCC ON)
 
 find_package(Qt5 COMPONENTS LinguistTools Multimedia Network WebEngine WebEngineWidgets Widgets REQUIRED)
 
+find_library(EB_LIBRARY eb /usr/local/lib/ REQUIRED)
+
 add_executable(qolibri-subtraction MACOSX_BUNDLE WIN32
     images/qolibri.icns
     qolibri.qrc
@@ -106,6 +108,8 @@ if(QOLIBRI_EB_SOURCE_DIR)
     add_subdirectory("${QOLIBRI_EB_SOURCE_DIR}" eb)
 endif()
 
+include_directories("/usr/local/include/")
+
 target_compile_definitions(qolibri-subtraction PRIVATE QT_USE_QSTRINGBUILDER)
 target_include_directories(qolibri-subtraction PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
@@ -161,6 +165,6 @@ set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION "${CMAKE_CURR
 qt5_add_translation(QM_FILES ${TS_FILES})
 target_sources(qolibri-subtraction PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/translations/translations.qrc" ${QM_FILES} ${TS_FILES})
 
-target_link_libraries(qolibri-subtraction Qt5::Multimedia Qt5::Network Qt5::WebEngine Qt5::WebEngineWidgets Qt5::Widgets eb z)
+target_link_libraries(qolibri-subtraction Qt5::Multimedia Qt5::Network Qt5::WebEngine Qt5::WebEngineWidgets Qt5::Widgets z ${EB_LIBRARY})
 
 install(TARGETS qolibri-subtraction DESTINATION "${CMAKE_INSTALL_BINDIR}")

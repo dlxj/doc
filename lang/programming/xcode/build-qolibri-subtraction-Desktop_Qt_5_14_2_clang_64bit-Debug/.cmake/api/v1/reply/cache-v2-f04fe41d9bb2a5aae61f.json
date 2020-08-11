@@ -1510,6 +1510,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "EB_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/lib/libeb.dylib"
+		},
+		{
 			"name" : "ProcessorCount_cmd_sysctl",
 			"properties" : 
 			[
