@@ -2588,6 +2588,88 @@ $$
 
 
 
+```
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import proj3d
+from matplotlib.patches import FancyArrowPatch
+from mpl_toolkits.mplot3d import Axes3D
+
+SQUARE_FIG_SIZE = (10 ,10)
+AXIS_LABEL_FONT_SIZE = 16
+TEXT_FONT_SIZE = 16
+ALPHA = 0.3
+LIGHT_ALPHA = 0.1
+
+
+fig = plt.figure(figsize=np.array(SQUARE_FIG_SIZE) * 2, facecolor='white')
+
+T = "\mathrm{T}"
+
+ax = fig.add_subplot(2, 2, 1, projection="3d")
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+class Arrow3D(FancyArrowPatch):
+    def __init__(self, xs, ys, zs, *args, **kwargs):
+        FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
+        self._verts3d = xs, ys, zs
+ 
+    def draw(self, renderer):
+        xs3d, ys3d, zs3d = self._verts3d
+        xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
+        self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
+        FancyArrowPatch.draw(self, renderer)
+ 
+    def set_data(self, xs, ys, zs):
+        self._verts3d = xs, ys, zs
+
+# ax.set_title(r"$Lorenz\ Attractor$")
+ax.set_xlabel(r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_ylabel(r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
+ax.set_zlabel(r"$y$", fontsize=AXIS_LABEL_FONT_SIZE)
+
+"""
+法向量W
+两个3d 点, A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数两个3d 点, 
+    A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
+"""
+w = [0.1, -0.2]
+pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T  # 从原点(0, 0, 0)指向(0.1, -0.2, -1)
+arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(w[0] - 1.6, w[1], -2, r"$w=\left({:.1f},{:.1f},-1\right)^{:s}$".format(w[0], w[1], T), fontsize=TEXT_FONT_SIZE)
+
+
+# 从原点(0, 0, 0)指向(0.1, -0.2, 0)
+pts = np.array([ [0, 0, 0], [w[0], w[1], 0] ], np.float).T
+arrow = Arrow3D([0, w[0]],[0, w[1]],[0, 0], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+ax.add_artist(arrow)
+ax.text(w[0] - 1, w[1], 0.1, r"$\left({:.1f},{:.1f},0\right)^{:s}$".format(w[0], w[1], T), fontsize=TEXT_FONT_SIZE)
+
+
+ax.plot((w[0], w[0]), (w[1], w[1]), (-1, 0), "k--", alpha=ALPHA)    
+x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+x1, x2 = np.meshgrid(x1, x2)
+x1, x2 = x1.flatten(), x2.flatten()
+x3 = w[0] * x1 + w[1] * x2
+
+print(x1, x2, x3)
+print(x1*0.1)
+print(x2*(-0.2))
+ax.scatter(x1, x2, x3, c=x3, cmap='viridis', linewidth=0.5)
+
+#ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
+
+ax.plot_trisurf(x1, x2, [ -2,-2,-2,-2], antialiased=True, alpha=LIGHT_ALPHA, color="black")
+```
+
+<img src="Python 3  Summary.assets/image-20200812113924159.png" alt="image-20200812113924159" style="zoom:50%;" />
+
+
+
 
 
 
