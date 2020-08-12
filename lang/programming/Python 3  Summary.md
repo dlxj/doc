@@ -2470,9 +2470,10 @@ x1, x2 = np.meshgrid(x1, x2)  # x1 作为行复制两次（行数是len(x2)）�
  
 """
 print(x1, "\n\n",x2)
+ax.plot_trisurf(x1, x2, [ -2,-2,-2,-2], antialiased=True, alpha=LIGHT_ALPHA, color="black")
 ```
 
-
+<img src="Python 3  Summary.assets/image-20200812093025409.png" alt="image-20200812093025409" style="zoom:50%;" />
 
 
 
