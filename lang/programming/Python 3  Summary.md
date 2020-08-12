@@ -2360,7 +2360,7 @@ writer.close()
 
 
 
-```
+```python
 # coding:utf-8
 # 写word文档文件
 import sys
@@ -2441,6 +2441,16 @@ if __name__ == '__main__':
 [mtri.Triangulation](https://matplotlib.org/3.1.1/api/tri_api.html)
 
 [Numpy中Meshgrid函数介绍及2种应用场景](https://zhuanlan.zhihu.com/p/29663486)
+
+
+
+#### 记得调用plt.show() 秀图
+
+````
+plt.show()
+````
+
+普通的 .py 文件这样出来的图是可以3d 旋转的
 
 
 
@@ -2636,7 +2646,9 @@ ax.set_zlabel(r"$y$", fontsize=AXIS_LABEL_FONT_SIZE)
     A,B 分别写成列向量的形式，凑成一个矩阵，矩阵的所有行作为Arrow3D 的坐标参数
 """
 w = [0.1, -0.2]
-pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T  # 从原点(0, 0, 0)指向(0.1, -0.2, -1)
+
+# 从原点(0, 0, 0)指向(0.1, -0.2, -1)
+pts = np.array([ [0, 0, 0], [w[0], w[1], -1] ], np.float).T  
 arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
 ax.add_artist(arrow)
 ax.text(w[0] - 1.6, w[1], -2, r"$w=\left({:.1f},{:.1f},-1\right)^{:s}$".format(w[0], w[1], T), fontsize=TEXT_FONT_SIZE)
@@ -2669,6 +2681,69 @@ ax.plot_trisurf(x1, x2, [ -2,-2,-2,-2], antialiased=True, alpha=LIGHT_ALPHA, col
 <img src="Python 3  Summary.assets/image-20200812113924159.png" alt="image-20200812113924159" style="zoom:50%;" />
 
 
+
+### 自定义Plot 类
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import proj3d
+from matplotlib.patches import FancyArrowPatch
+from mpl_toolkits.mplot3d import Axes3D
+
+class Arrow3D(FancyArrowPatch):
+    def __init__(self, xs, ys, zs, *args, **kwargs):
+        FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
+        self._verts3d = xs, ys, zs
+ 
+    def draw(self, renderer):
+        xs3d, ys3d, zs3d = self._verts3d
+        xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
+        self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
+        FancyArrowPatch.draw(self, renderer)
+ 
+    def set_data(self, xs, ys, zs):
+        self._verts3d = xs, ys, zs
+
+# 返回ax 对象，可以进行各种绘制
+class Plot():
+    def __init__(self):
+        self.SQUARE_FIG_SIZE = (10 ,10)
+        self.AXIS_LABEL_FONT_SIZE = 16
+        self.TEXT_FONT_SIZE = 16
+        self.ALPHA = 0.3
+        self.LIGHT_ALPHA = 0.1
+        self.fig = plt.figure(figsize=np.array(self.SQUARE_FIG_SIZE) * 2, facecolor='white')
+        self.T = "\mathrm{T}"
+        self.ax = self.fig.add_subplot(2, 2, 1, projection="3d")
+        self.ax.set_xlim([-2, 2])
+        self.ax.set_ylim([-2, 2])
+        self.ax.set_zlim([-2, 2])
+        
+        # ax.set_title(r"$Lorenz\ Attractor$")
+        self.ax.set_xlabel(r"$x_1$", fontsize=self.AXIS_LABEL_FONT_SIZE)
+        self.ax.set_ylabel(r"$x_2$", fontsize=self.AXIS_LABEL_FONT_SIZE)
+        self.ax.set_zlabel(r"$y$",   fontsize=self.AXIS_LABEL_FONT_SIZE)
+
+        # 画简头，从p1 指向p2        
+    def drawArrow(self, p1, p2):
+        pts = np.array([ p1, p2 ], np.float).T  
+        arrow = Arrow3D(pts[0], pts[1], pts[2], arrowstyle="-|>", lw=1,mutation_scale=10,color="black")
+        self.ax.add_artist(arrow)
+
+    def drawText(self, w):
+        self.ax.text(w[0] - 1.6, w[1], -2, r"$w=\left({:.1f},{:.1f},-1\right)^{:s}$".format(w[0], w[1], self.T), fontsize=self.TEXT_FONT_SIZE)
+
+    def show(self):
+        plt.show()
+
+if __name__ == "__main__":
+    p = Plot()
+    w = [0.1, -0.2]
+    p.drawArrow([0, 0, 0], [w[0], w[1], -2])
+    p.drawText( w )
+    p.show()
+```
 
 
 
