@@ -2444,21 +2444,31 @@ if __name__ == '__main__':
 
 
 
-### plot_trisurf
+### 绘制平面
 
 
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=np.array(SQUARE_FIG_SIZE) * 2, facecolor='white')
+ax = fig.add_subplot(2, 2, 1, projection="3d")
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+# 生成等间距的n 个数的list, 包含尾端的数
 x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)  # x1 = [-1.5  1.5]
 x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)  # x2 = [-1.5  1.5]
 x1, x2 = np.meshgrid(x1, x2)  # x1 作为行复制两次（行数是len(x2)），返回这个新矩阵
                               # x2 作为列复制两次（列数是len(x1)），返回这个新矩阵
 
 """
-两个新矩阵x1, x2分别是：
+两个新矩阵是：
 
  [[-1.5  1.5]
- [-1.5  1.5]]
+ [-1.5  1.5]] 
 
  [[-1.5 -1.5]
  [ 1.5  1.5]]
@@ -2470,12 +2480,100 @@ x1, x2 = np.meshgrid(x1, x2)  # x1 作为行复制两次（行数是len(x2)）�
  
 """
 print(x1, "\n\n",x2)
+
+x1, x2 = x1.flatten(), x2.flatten()  # 网格子矩阵flatten 后就可以传给plot_trisurf 绘制平面
 ax.plot_trisurf(x1, x2, [ -2,-2,-2,-2], antialiased=True, alpha=LIGHT_ALPHA, color="black")
 ```
 
 <img src="Python 3  Summary.assets/image-20200812093025409.png" alt="image-20200812093025409" style="zoom:50%;" />
 
 
+
+### 绘制散点
+
+```python
+ax.scatter(x1, x2, [ -2,-2,-2,-2], c=[ -2,-2,-2,-2], cmap='viridis', linewidth=0.5)
+```
+
+<img src="Python 3  Summary.assets/image-20200812095330608.png" alt="image-20200812095330608" style="zoom:50%;" />
+
+### 平面四个角的高度
+
+#### 高度指定的顺序是：从左到右，从下到上
+
+> [左下，右下，左上，右上]
+
+
+
+<img src="Python 3  Summary.assets/image-20200812101606934.png" alt="image-20200812101606934" style="zoom:50%;" />
+
+
+
+```python
+ax.plot_trisurf(x1, x2, [ -2,0,-2,-2], antialiased=True, alpha=LIGHT_ALPHA, color="black")
+ax.scatter(x1, x2, [ -2,0,-2,-2], c=[ -2,-2,-2,-2], cmap='viridis', linewidth=0.5)
+```
+
+<img src="Python 3  Summary.assets/image-20200812101505894.png" alt="image-20200812101505894" style="zoom:50%;" />
+
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=np.array(SQUARE_FIG_SIZE) * 2, facecolor='white')
+ax = fig.add_subplot(2, 2, 1, projection="3d")
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)  # x1 = [-1.5  1.5]
+x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)  # x2 = [-1.5  1.5]
+x1, x2 = np.meshgrid(x1, x2)  # x1 作为行复制两次（行数是len(x2)），返回这个新矩阵
+                              # x2 作为列复制两次（列数是len(x1)），返回这个新矩阵
+x3 = w[0] * x1 + w[1] * x2
+ 
+    
+"""
+两个新矩阵是：
+
+ [[-1.5  1.5]
+ [-1.5  1.5]] 
+
+ [[-1.5 -1.5]
+ [ 1.5  1.5]]
+ 
+ 两个矩阵叠在一起，就是网格
+ 
+ (-1.5, -1.5) (1.5, -1.5)
+ (-1.5,  1.5) (1.5,  1.5)
+ 
+ 计算四个角的高度
+ x3 = w[0] * x1 + w[1] * x2  # x1, x2 = x1.flatten(), x2.flatten() 注意是展平后的值 
+ 
+ 相当于：
+ (-1.5 * w1 +  -1.5 * w2) (1.5 * w1 +  -1.5 * w2)
+ (-1.5 * w1 +   1.5 * w2) (1.5 * w1 +   1.5 * w2)
+ 其中w1 = 0.1, w2 = -0.2，所以：
+ (0.15)  (0.45)
+ (-0.45) (-0.15)
+ 
+ 四个角的高度既可以直接以二维矩阵的形式传给画散点或平面的函数，也可以展平成一维的形式再传
+ 
+"""
+print(x1, "\n\n",x2, "\n\n\n")
+
+print(x1 * 0.1, "\n\n", x2 *(-0.2), "\n\n\n")
+
+print(x3)
+
+x1, x2 = x1.flatten(), x2.flatten()  # 网格子矩阵flatten 后就可以传给plot_trisurf 绘制平面
+ax.plot_trisurf(x1, x2, [ 0.15,0.45,-0.45,-0.15], antialiased=True, alpha=LIGHT_ALPHA, color="black")
+ax.scatter(x1, x2, [ 0.15,0.45,-0.45,-0.15], c=[ 0.15,0.45,-0.45,-0.15], cmap='viridis', linewidth=0.5)  # 绘制散点
+```
+
+<img src="Python 3  Summary.assets/image-20200812105520835.png" alt="image-20200812105520835" style="zoom:50%;" />
 
 
 
