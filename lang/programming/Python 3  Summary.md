@@ -603,6 +603,19 @@ t.symmetric_difference(s) # 对称差集
 
 
 
+### trick
+
+```python
+def weights_replaceinto(ls):
+    sqls = []
+    for d in ls:
+        columns = ",".join( list(d.keys()) )
+        values = ",".join( ( map(lambda w: r"'" + w + r"'" ,list(d.values()) ) ) )
+        sqls.append(f"INSERT INTO weights ({columns}) VALUES({values}) ON DUPLICATE KEY UPDATE updateTime=now();")
+```
+
+
+
 ### Check if a given key already exists in a dictionary
 
 
@@ -2231,6 +2244,23 @@ def student_add():
 
 
 ## Mysql
+
+
+
+## trick
+
+
+
+```
+def weights_replaceinto(ls):
+    sqls = []
+    for d in ls:
+        columns = ",".join( list(d.keys()) )
+        values = ",".join( ( map(lambda w: r"'" + w + r"'" ,list(d.values()) ) ) )
+        sqls.append(f"INSERT INTO weights ({columns}) VALUES({values}) ON DUPLICATE KEY UPDATE updateTime=now();")
+```
+
+
 
 
 
