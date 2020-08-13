@@ -82,7 +82,7 @@ python -m pip install -U matplotlib
 
 
 
-### 使用昨时源
+### 使用临时源
 
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
@@ -2355,6 +2355,8 @@ writer.close()
 ## Word
 
 
+
+[Python读取word文本](https://blog.csdn.net/woshisangsang/article/details/75221723)
 
 [用python-docx模块读写word文档](https://www.jianshu.com/p/94ac13f6633e)
 
