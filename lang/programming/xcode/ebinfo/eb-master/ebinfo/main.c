@@ -6,12 +6,23 @@
 #include <eb/binary.h>
 #include <eb/font.h>
 
+#include <stdio.h>
+
+#define NHK "/Users/vvw/Documents/dic/NHK/exported/"
+#define PATHJOIN(dir, path) dir##path
+
 EB_Error_Code myHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*a,
     void *classp, EB_Hook_Code c, int argc, const unsigned int* argv)
 {
     EB_Position pos;
     pos.page = argv[2];
     pos.offset = argv[3];
+    
+    EB_Error_Code ecode = eb_set_binary_color_graphic(book, &pos);
+    char imgpath[1024+1];
+    char imgname[512+1];
+    sprintf(imgname, "%dx%d.jpg", pos.page, pos.offset);
+    sprintf(imgpath, "%s%s", NHK, imgname);
 
     return EB_SUCCESS;
 }
