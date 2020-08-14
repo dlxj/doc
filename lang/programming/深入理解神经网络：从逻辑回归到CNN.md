@@ -186,15 +186,20 @@ def drawDashe(p1, p2, ax):
     pts = np.array([ p1, p2 ], np.float).T
     ax.plot((pts[0][0], pts[0][1]), (pts[1][0], pts[1][1]), (pts[2][0], pts[2][1]), "k--", alpha=ALPHA)
 
-    # 画平面 w:法向量
-def drawPlane(ax, w):
+    # 画平面 corner4hight: 4 个角的高度
+def drawPlane(ax, w, DrawScatter=False):
     x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
     x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
     x1, x2 = np.meshgrid(x1, x2)
     x1, x2 = x1.flatten(), x2.flatten()
     x3 = w[0] * x1 + w[1] * x2
+    print("----->x3:", x3)
+    if DrawScatter:
+        #ax.scatter(x1, x2, x3, c=[0, 2.7, -2.7,  2.1], cmap='viridis', linewidth=0.5)
+        ax.scatter(x1, x2, x3, c=['g', 'r', 'g',  'g'], linewidth=0.5)
     ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
 
+    
 # ax.set_title(r"$Lorenz\ Attractor$")
 ax.set_xlabel(r"$x_1$", fontsize=AXIS_LABEL_FONT_SIZE)
 ax.set_ylabel(r"$x_2$", fontsize=AXIS_LABEL_FONT_SIZE)
@@ -204,9 +209,10 @@ w = [1.6, -0.2]
 drawArrow([0,0,0], [w[0], w[1], 0], ax)
 drawArrow([0,0,0], [w[0], w[1], -1], ax)
 drawDashe([w[0], w[1], 0], [w[0], w[1], -1], ax)
-drawPlane(ax, [0,0])  # 四个角高度为0 的平面
-drawPlane(ax, w)      # 大概是垂直于法向量的平面？
-plt.show() # .py 需要, .ipynb 不需要
+#drawPlane(ax, [0,0])                # 四个角高度为0 的平面
+drawPlane(ax, w, DrawScatter=True)   # 大概是垂直于法向量的平面？
+plt.show()                           # .py 需要, .ipynb 不需要
+
 ```
 
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200814151110692.png" alt="image-20200814151110692" style="zoom:50%;" />
