@@ -90,6 +90,12 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
 
 
 
+## 绘图的重要参考
+
+### 深入理解神经网络：从逻辑回归到CNN.md
+
+GitHub\doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md
+
 
 
 ## 优化
@@ -2465,6 +2471,12 @@ if __name__ == '__main__':
 
 
 ## Matplotlib
+
+### 绘图的重要参考
+
+#### 深入理解神经网络：从逻辑回归到CNN.md
+
+GitHub\doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md
 
 
 

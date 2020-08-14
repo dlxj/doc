@@ -306,7 +306,7 @@ drawArrow([0,0,0], [w[0], w[1], -1], ax)
 drawDashe([w[0], w[1], 0], [w[0], w[1], -1], ax)
 #drawPlane(ax, [0,0])                # 四个角高度为0 的平面
 drawPlane(ax, w, DrawScatter=True)   # 大概是垂直于法向量的平面？
-drawDashe([1.5, -1.5, 2.7], [w[0], w[1], -1], ax)  # 红色角点到法向量W 的投影线段
+drawDashe([1.5, -1.5, 2.7], [w[0], w[1], -1], ax)  # 红色角点到法向量W 的线段
 plt.show()                           # .py 需要, .ipynb 不需要
 ```
 
