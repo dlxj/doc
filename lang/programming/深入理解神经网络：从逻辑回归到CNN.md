@@ -320,6 +320,13 @@ plt.show()                           # .py 需要, .ipynb 不需要
 
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200817090603504.png" alt="image-20200817090603504" style="zoom: 50%;" />
 
+```mathematica
+v= {{1.5,-1.5,2.7}}^\[Transpose] ;v//MatrixForm (* 红点向量 *)
+w={{1.6,-0.2,-1}};w//MatrixForm  (* 法向量 *)
+w.v
+--> {{0.}}  (* 内积为零，所以平面和w 是垂直的 *)
+```
+
 
 
 
