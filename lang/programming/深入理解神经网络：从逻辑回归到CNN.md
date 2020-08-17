@@ -318,6 +318,12 @@ plt.show()                           # .py 需要, .ipynb 不需要
 
 
 
+**法向量穿过平面的那个点刚好是原点，这时平面所有的点(向量)都和w 垂直**
+
+> 如果穿过点不是原点，则平面的点向量就不与w 垂直了。此时平面与w 有截距
+
+
+
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200817090603504.png" alt="image-20200817090603504" style="zoom: 50%;" />
 
 ```mathematica
@@ -331,12 +337,51 @@ w.v
 
 > 参见 math summary.md
 
+#### 你点乘别人是别人向你投影，内积等于你长乘投影长
+
+> 内积为0，棍长不为0，所以**投影长一定是零**
+
 
 
 
 #### 一个矩阵代表一个线性变换，矩阵的列是新空间的基向量
 
 > 如果网格线保持平行且等距分布，并且原点映射为自身，就称它是线性的
+
+
+
+
+
+
+
+## 绘制垂直于法向量的平面，截距是b
+
+```python
+    # 画垂直于法向量W 的平观，平面的截距是b（原点到平观与W 的交点）
+def drawPlaneVerticalWithW(ax, w, b, DrawScatter=False):
+    """
+    参见：张觉非《深入理解神经网络》 p.15
+    代码：https://gitee.com/neural_network/neural_network_code
+    """
+    x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+    x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
+    x1, x2 = np.meshgrid(x1, x2)
+    x1, x2 = x1.flatten(), x2.flatten()
+    x3 = w[0] * x1 + w[1] * x2 + b
+    print("----->x1:\n", x1)
+    print("----->x2:\n", x2)
+    print("----->x3:\n", x3)
+    if DrawScatter:
+        #ax.scatter(x1, x2, x3, c=[0, 2.7, -2.7,  2.1], cmap='viridis', linewidth=0.5)
+        ax.scatter(x1, x2, [-2.1, 2.7, -2.7, 2.1], c=['g', 'r', 'g',  'g'], linewidth=0.5)
+    ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
+    
+    
+drawPlaneVerticalWithW(ax, w, -1, DrawScatter=False)
+
+```
+
+
 
 
 
