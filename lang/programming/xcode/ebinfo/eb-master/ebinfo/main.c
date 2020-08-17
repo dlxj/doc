@@ -7,6 +7,7 @@
 #include <eb/font.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define NHK "/Users/vvw/Documents/dic/NHK/exported/"
 #define PATHJOIN(dir, path) dir##path
@@ -23,7 +24,23 @@ EB_Error_Code myHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix*a,
     char imgname[512+1];
     sprintf(imgname, "%dx%d.jpg", pos.page, pos.offset);
     sprintf(imgpath, "%s%s", NHK, imgname);
-
+    
+    FILE * fp = fopen(imgpath, "wb"); // 二进制写
+    #define BinaryBufferSize 50000
+    char *buf = (char*)malloc(BinaryBufferSize);
+    ssize_t length;
+    for( ; ; ) {
+        ecode = eb_read_binary(book, BinaryBufferSize, buf, &length );
+        if (ecode != EB_SUCCESS) {
+            break;
+        }
+        if (length > 0) {
+            fwrite(buf, sizeof(char), length, fp);
+        }
+        if (length < BinaryBufferSize) {
+            break;
+        }
+    }
     return EB_SUCCESS;
 }
 
