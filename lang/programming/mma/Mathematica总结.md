@@ -322,6 +322,14 @@ f[f[f[f[x]]]]
 
 
 
+## List
+
+### Transpose
+
+##### ctrl+^, ESC+tr+ESC
+
+
+
 
 
 ##  DictionaryLookup

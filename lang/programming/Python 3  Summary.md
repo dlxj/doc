@@ -1401,6 +1401,19 @@ np.append(0, (radii*np.cos(angles)).flatten())
 
 
 
+### matrix show
+
+
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = np.array([[1.5, -1.5, 2.7]]).T
+plt.matshow(v, cmap=plt.cm.hot)
+plt.show()
+```
+
 
 
 
