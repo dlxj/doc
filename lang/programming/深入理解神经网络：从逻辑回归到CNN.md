@@ -357,11 +357,12 @@ w.v
 ## 绘制垂直于法向量的平面，截距是b
 
 ```python
-    # 画垂直于法向量W 的平观，平面的截距是b（原点到平观与W 的交点）
+    # 画垂直于法向量W 的平面，平面的截距是b（原点到平面与W 的交点）
 def drawPlaneVerticalWithW(ax, w, b, DrawScatter=False):
     """
     参见：张觉非《深入理解神经网络》 p.15
     代码：https://gitee.com/neural_network/neural_network_code
+    mma： ParametricPlot3D[{x1, x2, 1.6 x1 - 0.2 x2 +1},{x1,-2,2}, {x2,-2,2}]
     """
     x1 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
     x2 = np.linspace(-1.5, 1.5, endpoint=True, num=2)
@@ -375,15 +376,14 @@ def drawPlaneVerticalWithW(ax, w, b, DrawScatter=False):
         #ax.scatter(x1, x2, x3, c=[0, 2.7, -2.7,  2.1], cmap='viridis', linewidth=0.5)
         ax.scatter(x1, x2, [-2.1, 2.7, -2.7, 2.1], c=['g', 'r', 'g',  'g'], linewidth=0.5)
     ax.plot_trisurf(x1, x2, x3, antialiased=True, alpha=LIGHT_ALPHA, color="black")
-    
-    
+
 drawPlaneVerticalWithW(ax, w, -1, DrawScatter=False)
 
 ```
 
 
 
-
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200817141114424.png" alt="image-20200817141114424" style="zoom:50%;" />
 
 ## affine function
 
