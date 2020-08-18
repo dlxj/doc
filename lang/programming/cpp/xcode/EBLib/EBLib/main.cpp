@@ -22,6 +22,10 @@
 
  "Ａ級"
  
+ QTextCodec
+ 
+ 
+ 
  */
 
 #include <stdio.h>
@@ -36,6 +40,8 @@
 #include <eb/appendix.h>
 #include <eb/error.h>
 
+
+#include <QTextCodec>
 
 #define NHK "/Users/vvw/Documents/dic/NHK/exported/"
 

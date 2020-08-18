@@ -22,6 +22,18 @@ set(CMAKE_BUILD_TYPE Debug)
 
 
 
+## Verbose output
+
+
+
+```cmake
+set(CMAKE_VERBOSE_MAKEFILE ON)
+```
+
+
+
+
+
 ```
 cmake_minimum_required(VERSION 3.5)
 project(zero-epwing)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EFE3DB7224D7FFFF00094A64 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE3DB7124D7FFFF00094A64 /* main.c */; };
+		EFE3DB7224D7FFFF00094A64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFE3DB7124D7FFFF00094A64 /* main.cpp */; };
 		EFE3DB7A24D8090F00094A64 /* libeb.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE3DB7924D8090F00094A64 /* libeb.16.dylib */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		EFE3DB6E24D7FFFF00094A64 /* EBLib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EBLib; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFE3DB7124D7FFFF00094A64 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EFE3DB7124D7FFFF00094A64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EFE3DB7924D8090F00094A64 /* libeb.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libeb.16.dylib; path = ../../../../usr/local/lib/libeb.16.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +61,7 @@
 		EFE3DB7024D7FFFF00094A64 /* EBLib */ = {
 			isa = PBXGroup;
 			children = (
-				EFE3DB7124D7FFFF00094A64 /* main.c */,
+				EFE3DB7124D7FFFF00094A64 /* main.cpp */,
 			);
 			path = EBLib;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFE3DB7224D7FFFF00094A64 /* main.c in Sources */,
+				EFE3DB7224D7FFFF00094A64 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +253,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4JB7Y657U;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers,
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/,
+				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -265,7 +269,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4JB7Y657U;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers,
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/,
+				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
