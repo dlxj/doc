@@ -32,6 +32,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 
 
+GCC/Clang：使用-I开关指定附加包含路径即可，和cl相似，每个附加包含目录都要分开用-I指定。也可以设置环境变量C_INCLUDE_PATH（编译C时的默认包含路径）、CPLUS_INCLUDE_PATH（编译C++时的默认包含路径）或者CPATH（同时对C/C++起作用）
+
 
 
 ```
