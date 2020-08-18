@@ -1,8 +1,21 @@
-//
-//  main.c
-//  EBLib
 
 /*
+ 
+ ## xcode 编译QT 项目
+
+ 1. 先用QT Creator 建一个空项目
+ 2. 添加main.cpp 等源文件并保证通过编译，正常运行
+ 3. qmake 生成makefile
+
+ ```
+ /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake -o makefile eblib2.pro
+ /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake -spec macx-clang
+ /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake && make -j4
+ /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake -spec macx-xcode
+ ```
+
+ /usr/local/include
+ 
  
  libeb 从这里下载自行编译，并安装到/usr/local
     https://github.com/mistydemeo/eb/
@@ -17,19 +30,27 @@
     # 从/usr/local/lib 拖这个文件到界面上
  
  
+ 编译选项Realse 再加上：
+    Apple Clang - Custom Compiler Flags
+        Other C Flags
+            -DQT_NO_DEBUG
+        other C++ Flags
+            -DQT_NO_DEBUG
+ 
+ 
  另一个项目在这：
     Documents/github/doc/lang/programming/xcode/ebinfo
 
  "Ａ級"
  
+ 日文编码查询
+    https://www.asahi-net.or.jp/~ax2s-kmtn/ref/jisx0208.html
+ 
  QTextCodec
- 
- 
  
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #define ASSERT(value) if (!(value)) {   __asm__ __volatile__("hlt"); /*_asm {int 3};*/}
 
@@ -39,7 +60,6 @@
 #include <eb/font.h>
 #include <eb/appendix.h>
 #include <eb/error.h>
-
 
 #include <QTextCodec>
 
@@ -59,6 +79,18 @@ void dataWrite(char *fname, char *dat, int siz) {
 EB_Error_Code iHOOK_WIDE_JISX0208(EB_Book *book, EB_Appendix *appendix,
     void *classp, EB_Hook_Code code, int argc, const unsigned int* argv)
 {
+    QTextCodec * codec_ISO, * codec_GB, * codec_Euc;
+    
+    codec_ISO = QTextCodec::codecForName( "ISO8859-1" );
+    codec_GB = QTextCodec::codecForName( "GB2312" );
+    codec_Euc = QTextCodec::codecForName("EUC-JP");
+    
+    const char codes[] = { char(argv[0] >> 8), char(argv[0] & 0xff), 0 };  // 拆出高低两字节
+    //return eucCodec->toUnicode(code, std::size(code)).toUtf8();
+    // A3 C1  -> A  第一次回调
+    // B5 E9  -> 級 第二次回调
+    
+    QString title = codec_Euc->toUnicode(codes); // .toUtf8();
     
     return EB_SUCCESS;
 }
@@ -160,7 +192,7 @@ int main(int argc, const char * argv[]) {
     EB_Book book;
     EB_Appendix appendix;
     EB_Hookset hookset;
-    EB_BookList bookList;
+    //EB_BookList bookList;
     
     
     eb_initialize_library();
@@ -199,3 +231,4 @@ int main(int argc, const char * argv[]) {
     printf("Hello, World!\n");
     return 0;
 }
+

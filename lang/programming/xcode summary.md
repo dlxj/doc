@@ -6,7 +6,25 @@ Product->Scheme->Edit Scheme，弹出一个对话框如下，在Run->Arguments
 
 
 
-xcode 编译QT 项目
+## xcode 编译QT 项目
+
+
+
+1. 先用QT Creator 建一个空项目
+2. 添加main.cpp 等源文件并保证通过编译，正常运行
+3. qmake 生成makefile
+4. qmake 生成xcode 工程
+
+```
+/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake -o makefile eblib2.pro
+/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake -spec macx-clang
+/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake && make -j4
+/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/bin/qmake -spec macx-xcode
+```
+
+
+
+
 
 
 
