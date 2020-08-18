@@ -49,6 +49,13 @@ void dataWrite(char *fname, char *dat, int siz) {
     fclose(pf);
 }
 
+
+EB_Error_Code iHOOK_WIDE_JISX0208(EB_Book *book, EB_Appendix *appendix,
+    void *classp, EB_Hook_Code code, int argc, const unsigned int* argv)
+{
+    return EB_SUCCESS;
+}
+
 EB_Error_Code iHook_WAVE(EB_Book *book, EB_Appendix *appendix,
     void *classp, EB_Hook_Code code, int argc, const unsigned int* argv)
 {
@@ -134,6 +141,7 @@ EB_Error_Code iHookBEGIN_IN_COLOR_JPEG(EB_Book *book, EB_Appendix *appendix,
 }
 
 EB_Hook ihooks[] = {
+  { EB_HOOK_WIDE_JISX0208, iHOOK_WIDE_JISX0208},
   { EB_HOOK_BEGIN_IN_COLOR_JPEG, iHookBEGIN_IN_COLOR_JPEG },
   { EB_HOOK_BEGIN_WAVE, iHook_WAVE },
   { EB_HOOK_END_WAVE, iHook_WAVE },

@@ -40,6 +40,8 @@ target_link_libraries(qolibri Qt5::Multimedia Qt5::Network Qt5::WebEngine Qt5::W
 
 
 
+EB_HOOK_WIDE_JISX0208
+
 
 
 ## qolibri.cpp mainWin.show();   前可以hook 到图片
