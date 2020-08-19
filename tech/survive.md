@@ -80,7 +80,9 @@ hook.beforeEach(function(content) {
 
 # 知乎大佬
 
-> 王赟 Maig [z](https://www.zhihu.com/people/maigo) 
+> 王赟 Maig [z](https://www.zhihu.com/people/maigo) [g](https://maigoakisame.github.io/)
+>
+> > [声乐合成初探]([https://github.com/MaigoAkisame/VocalSynth-2007/blob/master/thesis/%E5%A3%B0%E4%B9%90%E5%90%88%E6%88%90%E5%88%9D%E6%8E%A2.pdf](https://github.com/MaigoAkisame/VocalSynth-2007/blob/master/thesis/声乐合成初探.pdf))
 >
 > 酱紫君 随机取牌算不出 24 点的概率是多少[z](https://www.zhihu.com/question/307729091/answer/1119004801)
 >
