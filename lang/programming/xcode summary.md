@@ -8,6 +8,8 @@ Product->Scheme->Edit Scheme，弹出一个对话框如下，在Run->Arguments
 
 ## xcode 编译QT 项目
 
+[关于dyld: Library not loaded那点事儿](https://www.jianshu.com/p/5bf7795db50d)
+
 
 
 1. 先用QT Creator 建一个空项目
