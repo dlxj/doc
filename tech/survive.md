@@ -83,6 +83,8 @@ hook.beforeEach(function(content) {
 > 王赟 Maig [z](https://www.zhihu.com/people/maigo) [g](https://maigoakisame.github.io/)
 >
 > > [声乐合成初探]([https://github.com/MaigoAkisame/VocalSynth-2007/blob/master/thesis/%E5%A3%B0%E4%B9%90%E5%90%88%E6%88%90%E5%88%9D%E6%8E%A2.pdf](https://github.com/MaigoAkisame/VocalSynth-2007/blob/master/thesis/声乐合成初探.pdf))
+> >
+> > [不同元音辅音在声音频谱的表现是什么样子？](https://www.zhihu.com/question/27126800)
 >
 > 酱紫君 随机取牌算不出 24 点的概率是多少[z](https://www.zhihu.com/question/307729091/answer/1119004801)
 >
