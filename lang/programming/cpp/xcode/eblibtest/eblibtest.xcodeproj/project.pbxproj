@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFCEB1CF24EBDB6E007995F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFCEB1CE24EBDB6E007995F2 /* main.cpp */; };
+		EFCEB1D624EBDD38007995F2 /* QtCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCEB1D524EBDD38007995F2 /* QtCore.framework */; };
+		EFCEB1D924EBE16E007995F2 /* libeb.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCEB1D824EBE16E007995F2 /* libeb.16.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EFCEB1C924EBDB6E007995F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EFCEB1CB24EBDB6E007995F2 /* eblibtest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = eblibtest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFCEB1CE24EBDB6E007995F2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EFCEB1D524EBDD38007995F2 /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = ../../../../../../../../usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework; sourceTree = "<group>"; };
+		EFCEB1D824EBE16E007995F2 /* libeb.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libeb.16.dylib; path = ../../../../../../../../../../usr/local/lib/libeb.16.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFCEB1C824EBDB6E007995F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCEB1D624EBDD38007995F2 /* QtCore.framework in Frameworks */,
+				EFCEB1D924EBE16E007995F2 /* libeb.16.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFCEB1C224EBDB6E007995F2 = {
+			isa = PBXGroup;
+			children = (
+				EFCEB1CD24EBDB6E007995F2 /* eblibtest */,
+				EFCEB1CC24EBDB6E007995F2 /* Products */,
+				EFCEB1D824EBE16E007995F2 /* libeb.16.dylib */,
+				EFCEB1D524EBDD38007995F2 /* QtCore.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		EFCEB1CC24EBDB6E007995F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFCEB1CB24EBDB6E007995F2 /* eblibtest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFCEB1CD24EBDB6E007995F2 /* eblibtest */ = {
+			isa = PBXGroup;
+			children = (
+				EFCEB1CE24EBDB6E007995F2 /* main.cpp */,
+			);
+			path = eblibtest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFCEB1CA24EBDB6E007995F2 /* eblibtest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFCEB1D224EBDB6E007995F2 /* Build configuration list for PBXNativeTarget "eblibtest" */;
+			buildPhases = (
+				EFCEB1C724EBDB6E007995F2 /* Sources */,
+				EFCEB1C824EBDB6E007995F2 /* Frameworks */,
+				EFCEB1C924EBDB6E007995F2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eblibtest;
+			productName = eblibtest;
+			productReference = EFCEB1CB24EBDB6E007995F2 /* eblibtest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFCEB1C324EBDB6E007995F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = v;
+				TargetAttributes = {
+					EFCEB1CA24EBDB6E007995F2 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = EFCEB1C624EBDB6E007995F2 /* Build configuration list for PBXProject "eblibtest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFCEB1C224EBDB6E007995F2;
+			productRefGroup = EFCEB1CC24EBDB6E007995F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFCEB1CA24EBDB6E007995F2 /* eblibtest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFCEB1C724EBDB6E007995F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCEB1CF24EBDB6E007995F2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EFCEB1D024EBDB6E007995F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EFCEB1D124EBDB6E007995F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EFCEB1D324EBDB6E007995F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4JB7Y657U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib;
+				HEADER_SEARCH_PATHS = (
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib,
+					/usr/local/lib,
+					/System/Library/Frameworks/,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EFCEB1D424EBDB6E007995F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4JB7Y657U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = /Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib;
+				HEADER_SEARCH_PATHS = (
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib,
+					/usr/local/lib,
+					/System/Library/Frameworks/,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFCEB1C624EBDB6E007995F2 /* Build configuration list for PBXProject "eblibtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCEB1D024EBDB6E007995F2 /* Debug */,
+				EFCEB1D124EBDB6E007995F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFCEB1D224EBDB6E007995F2 /* Build configuration list for PBXNativeTarget "eblibtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCEB1D324EBDB6E007995F2 /* Debug */,
+				EFCEB1D424EBDB6E007995F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFCEB1C324EBDB6E007995F2 /* Project object */;
+}
