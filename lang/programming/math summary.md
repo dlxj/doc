@@ -1040,6 +1040,8 @@ $$
 
 ### 抽象向量空间
 
+[线性代数的本质11 抽象向量空间](https://zhuanlan.zhihu.com/p/111287930)
+
 
 
 行列式和特征向量与所选坐标系无关 
@@ -1056,12 +1058,15 @@ $$
 
 因为向量相加与数乘能用于函数
 
+所以最初以空间中箭头为背景来建立的线性代数的合理概念和解决问题的手段，例如：线性变换，列空间、点积、特征值、特征向量等，应该能够直接应用于函数
+
 
 
 
 
 ### 算子就是变换的别名
 
+**算子就是变换的别名，而变换又是函数的花俏说法。**
 $$
 L(\frac{1}{9} x^3 -x ) = \frac{1}{3} - 1
 $$
@@ -1081,7 +1086,11 @@ $$
 > Additivity: $L(\overrightarrow{v}+\overrightarrow{w}) = L(\overrightarrow{v})+L(\overrightarrow{w})$
 > Scaling: $L(c \overrightarrow{v}) = c L(\overrightarrow{v})$
 
+求导就是一种线性运算，他符合以上两个条件
+
 <img src="math summary.assets/image-20200718160301631.png" alt="image-20200718160301631" style="zoom:67%;" />
+
+
 
 
 
