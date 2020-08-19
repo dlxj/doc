@@ -777,3 +777,15 @@ chrome打开知乎页面，按顺序 F12 - F1 - 在General 里面点选 Disable 
 
 
 
+
+
+## 雅可比矩阵
+
+
+
+[雅可比矩阵和雅可比行列式](https://zhuanlan.zhihu.com/p/39762178)
+
+[The Jacobian matrix Video](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/jacobian/v/the-jacobian-matrix)
+
+
+
