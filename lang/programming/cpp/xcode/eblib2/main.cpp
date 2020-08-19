@@ -48,6 +48,10 @@
  
  QTextCodec
  
+ 
+ 关于dyld: Library not loaded那点事儿
+    https://www.jianshu.com/p/5bf7795db50d
+ 
  */
 
 #include <stdio.h>
