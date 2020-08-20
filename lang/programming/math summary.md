@@ -18,6 +18,25 @@
 
 
 
+## 导数是输出输入比
+
+[G.Strang的微分方程和线性代数（1.1）](https://zhuanlan.zhihu.com/p/21291705)
+
+
+
+对于f = f(x, y, z)的微小改变Δf，是对其所有变量的微小扰动的总量：
+$$
+\Delta f \approx f_x \Delta x + f_y\Delta y + f_z \Delta z
+$$
+当Δx→0，Δy→0，Δz→0时，约等于就变成了等于：
+$$
+d f = f_x d x + f_y d y + f_z d z = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy + \frac{\partial f}{\partial z} d
+z
+$$
+这就是全微分，全微分包括所有能改变函数值的因素
+
+
+
 
 
 ## 矩阵求导
@@ -31,6 +50,10 @@
 [矩阵求导术](https://zhuanlan.zhihu.com/p/24709748)
 
 [矩阵微积分]([https://zh.wikipedia.org/wiki/%E7%9F%A9%E9%98%B5%E5%BE%AE%E7%A7%AF%E5%88%86](https://zh.wikipedia.org/wiki/矩阵微积分))
+
+[GS的线性代数世界](https://zhuanlan.zhihu.com/douTintin14)
+
+[AI算法工程师手册 - 反向传播算法](http://www.huaxiaozhuan.com/)
 
 
 
