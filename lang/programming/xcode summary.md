@@ -1,5 +1,39 @@
 
 
+
+
+QtCore.framework  拖进xcode 工程
+
+​	/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework
+
+
+
+Search Paths
+
+​	Framework Search Paths
+
+​		/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib
+
+​	Header Search Paths
+
+​		/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Headers /usr/local/include
+
+​	Library Search Paths
+
+​		/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib /System/Library/Frameworks/ /usr/local/lib
+
+
+
+Linking -> other Linker Flags
+
+```
+-stdlib=libc++ -headerpad_max_install_names -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib -F/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib
+```
+
+
+
+
+
 ## 传参
 
 Product->Scheme->Edit Scheme，弹出一个对话框如下，在Run->Arguments

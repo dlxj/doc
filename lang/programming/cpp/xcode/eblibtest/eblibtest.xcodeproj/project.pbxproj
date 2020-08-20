@@ -256,8 +256,15 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib,
-					/usr/local/lib,
 					/System/Library/Frameworks/,
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-stdlib=libc++",
+					"-headerpad_max_install_names",
+					"-Wl,-rpath,@executable_path/../Frameworks",
+					"-Wl,-rpath,/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib",
+					"-F/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -276,8 +283,15 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib,
-					/usr/local/lib,
 					/System/Library/Frameworks/,
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-stdlib=libc++",
+					"-headerpad_max_install_names",
+					"-Wl,-rpath,@executable_path/../Frameworks",
+					"-Wl,-rpath,/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib",
+					"-F/Users/vvw/usr/local/Qt5.14.2/5.14.2/clang_64/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
