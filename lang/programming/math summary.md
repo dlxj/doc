@@ -37,8 +37,18 @@ $$
 
 
 
-## 链式法则
+## 链式法则(chain rule)
 
+
+
+链式法则是**求复合函数导数的一个法则**
+
+
+
+$(f \circ g)(x)$ 的导数$(f \circ g)'(x)$  为：
+$$
+(f \circ g)'(x) = f'(g(x)) \ g'(x)
+$$
 
 $$
 \vec{x} \in \mathbb{R}^m, \ \vec{x} = (x_1,x_2,\cdots,x_m)
@@ -53,6 +63,21 @@ z = f(\vec{y})
 \\
 z = (f \circ g)(\vec{x})
 $$
+
+复合函数z 求导
+$$
+z' = (f \circ g)'(\vec{x}) = f'(g(\vec{x})) \ g'(\vec{x})
+$$
+
+z 的偏导
+$$
+\frac{\partial z}{\partial x_i} = 
+$$
+
+
+
+
+
 
 
 
