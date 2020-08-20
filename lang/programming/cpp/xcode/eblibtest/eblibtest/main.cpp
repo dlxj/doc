@@ -46,7 +46,26 @@
  日文编码查询
     https://www.asahi-net.or.jp/~ax2s-kmtn/ref/jisx0208.html
  
- QTextCodec
+ 
+ QByteArray b;
+ b += QByteArray(buff, (int)len);
+ char* bf = b.data();
+ 
+ char buf[ EB_MAX_TITLE_LENGTH + 1 ];
+ char buffer[ EB_MAX_PATH_LENGTH + 1 ];
+ 
+ QString::fromLocal8Bit( buffer );
+ QString::fromUtf8("rescanFiles")
+ 
+ QString ss = codec_Euc->toUnicode( buff );
+ 
+ 
+ QString word = "Ａ級";
+ QByteArray bword;
+ bword = codec_Euc->fromUnicode( word );
+ QString bs = codec_Euc->toUnicode( bword.data() );
+ 
+ ret = eb_search_exactword( &book, bword.data() );
  
  
  关于dyld: Library not loaded那点事儿
@@ -94,6 +113,17 @@ EB_Error_Code iHOOK_WIDE_JISX0208(EB_Book *book, EB_Appendix *appendix,
     //return eucCodec->toUnicode(code, std::size(code)).toUtf8();
     // A3 C1  -> A  第一次回调
     // B5 E9  -> 級 第二次回调
+    
+    QString word = "Ａ級";
+    QByteArray bword;
+    bword = codec_Euc->fromUnicode( word );
+    QString bs = codec_Euc->toUnicode( bword.data() );
+    
+    char* buffer = bs.toLocal8Bit().data();
+    
+    
+    char tmp[1024] = {0};
+    sprintf(tmp, "%s", bword.data());
     
     QString title = codec_Euc->toUnicode(codes); // .toUtf8();
     
