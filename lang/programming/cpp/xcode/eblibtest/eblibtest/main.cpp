@@ -115,9 +115,13 @@ EB_Error_Code iHOOK_WIDE_JISX0208(EB_Book *book, EB_Appendix *appendix,
     // B5 E9  -> 級 第二次回调
     
     QString word = "Ａ級";
+    //printf("%s\n", word.toUtf8().data());
     QByteArray bword;
     bword = codec_Euc->fromUnicode( word );
     QString bs = codec_Euc->toUnicode( bword.data() );
+    //printf("%s\n", bs.toUtf8().data());
+    
+    printf("%s\n",codec_Euc->toUnicode(codes).toUtf8().data() );
     
     char* buffer = bs.toLocal8Bit().data();
     
