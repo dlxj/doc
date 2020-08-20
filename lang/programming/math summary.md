@@ -67,11 +67,13 @@ $$
 复合函数z 求导
 $$
 z' = (f \circ g)'(\vec{x}) = f'(g(\vec{x})) \ g'(\vec{x})
+\\
+其中：\vec{x} \in \mathbb{R}^m, \ \vec{x} = (x_1,x_2,\cdots,x_m)
 $$
 
 z 的偏导
 $$
-\frac{\partial z}{\partial x_i} = 
+\frac{\partial z}{\partial x_1} = \frac{\partial (f \circ g)}{\partial x_1}
 $$
 
 
