@@ -48,6 +48,10 @@
  
  QTextCodec
  
+ 
+ 关于dyld: Library not loaded那点事儿
+    https://www.jianshu.com/p/5bf7795db50d
+ 
  */
 
 #include <stdio.h>
@@ -86,6 +90,7 @@ EB_Error_Code iHOOK_WIDE_JISX0208(EB_Book *book, EB_Appendix *appendix,
     codec_Euc = QTextCodec::codecForName("EUC-JP");
     
     const char codes[] = { char(argv[0] >> 8), char(argv[0] & 0xff), 0 };  // 拆出高低两字节
+    // \xa3 \xc1 \0  0xa3 0xc1 0x0
     //return eucCodec->toUnicode(code, std::size(code)).toUtf8();
     // A3 C1  -> A  第一次回调
     // B5 E9  -> 級 第二次回调
