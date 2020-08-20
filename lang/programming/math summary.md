@@ -37,6 +37,43 @@ $$
 
 
 
+## 链式法则
+
+
+$$
+\vec{x} \in \mathbb{R}^m, \ \vec{x} = (x_1,x_2,\cdots,x_m)
+\\
+\vec{y} \in \mathbb{R}^n, \ \vec{y} = (y_1,y_2,\cdots,y_n)
+$$
+
+$$
+\vec{y} = g(\vec{x})
+\\
+z = f(\vec{y})
+\\
+z = (f \circ g)(\vec{x})
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+$$
+f(y_1,y_2,\cdots,y_n)
+$$
+
+
+
+
+
+
 
 
 ## 矩阵求导

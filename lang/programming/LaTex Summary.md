@@ -177,6 +177,16 @@ $A \overrightarrow{V} = \lambda \overrightarrow{V}$
 
 
 
+## 集合符号
+
+### 属于
+
+$$
+\vec{y} \in \mathbb{R}^n, \ \vec{y} = (y_1,y_2,\cdots,y_n)
+$$
+
+
+
 
 
 
