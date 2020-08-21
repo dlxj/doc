@@ -45,9 +45,22 @@ $$
 f(a \vec{x}+b\vec{y}) = af(\vec{x}) + bf(\vec{y})
 $$
 
+**则称$f$ 是线性映射**(linear map)
+
 > 可以将$f$ 看成一个变换矩阵，$\vec{x}, \vec{y}$ 看成基向量，$a \vec{x}+b\vec{y}$ 是基向量的线性组合得到的一个新向量，
 >
 > 整个操作是：对向量进行变换，等同于先分别对向量的分量中的基向量进行变换，然后再把数乘(模长缩放)放进来
+
+
+
+$f:\mathbb{R}^n \rightarrow \mathbb{R}^m$ 是线性映射，必然存在一个$m \times n$ 的矩阵A，对任意$\vec{x} \in \mathbb{R}^n$ 满足：
+$$
+f(\vec{x}) = A \vec{x}
+$$
+
+> 维度检查：$(m \times n) (n \times 1) \rightarrow (m \times 1)$ 
+
+
 
 
 
