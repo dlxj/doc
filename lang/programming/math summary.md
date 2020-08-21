@@ -119,6 +119,8 @@ $$
 
 [AI算法工程师手册 - 反向传播算法](http://www.huaxiaozhuan.com/)
 
+[多变量函数的微分学 - 中国科学技术大学](http://staff.ustc.edu.cn/~rui/ppt/calculus2/chap6_3.html#/)
+
 
 
 ### 求导矩阵
