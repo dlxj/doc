@@ -1,0 +1,1 @@
+@PPTVIEW.EXE /L "playlist.txt"
