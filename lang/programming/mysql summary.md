@@ -313,6 +313,21 @@ userID: 840
 
 
 
+## 查来源科目试题
+
+```mysql
+来源和章节名都查出来了
+SELECT t.AppID, t.TestID, t.TestCptID, t.PageNo, t.TestJson,  IFNULL(sc.SourceName, '-') as SourceName,  IFNULL(sc.SubjectName, '-') as SubjectName 
+
+from tiku.test t 
+LEFT JOIN ( SELECT c.TestCptID, sb.SubjectName, IFNULL(s.SourceName, '-') AS SourceName FROM tiku.testchapter c
+LEFT JOIN tiku.subject sb ON sb.AppID = c.AppID AND sb.SbjID = c.SbjID  
+LEFT JOIN tiku.source s ON s.AppID = c.AppID AND s.SrcID = c.SrcID WHERE c.AppID = 8911  ) AS sc ON sc.TestCptID = t.TestCptID 
+where appid=8911 and `Enable`='1' ORDER BY TestCptID asc;
+```
+
+
+
 
 
 # PROCEDURE
