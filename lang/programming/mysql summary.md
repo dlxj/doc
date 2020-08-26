@@ -328,6 +328,16 @@ where appid=8911 and `Enable`='1' ORDER BY TestCptID asc;
 
 
 
+## 查表结构
+
+```
+select * from information_schema.columns
+where table_schema = 'tiku'
+and table_name = 'test';
+```
+
+
+
 
 
 # PROCEDURE
