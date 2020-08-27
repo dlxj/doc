@@ -674,6 +674,22 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 
+### Max value
+
+```python
+dic={0: 1.4984074067880424, 1: 1.0984074067880423, 2: 1.8984074067880425, 3: 2.2984074067880425, 4: 2.2984074067880425}
+max_value = max(dic.values())  # maximum value
+max_keys = [k for k, v in dic.items() if v == max_value] # getting all keys containing the `maximum`
+
+print(max_value, max_keys)
+```
+
+
+
+
+
+
+
 
 
 ## Str
