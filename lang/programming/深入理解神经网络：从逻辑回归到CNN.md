@@ -108,13 +108,15 @@ $$
 $$
 f(x) = A \ x + b
 $$
+
+
 如果b 不是零向量，则仿射映射不保持量向量。仿射映射可以看作由若干个仿射函数组成：
 $$
 f(x) = \begin{pmatrix} f^1(x) \\ \vdots \\ f^m(x) \end{pmatrix} = A \ x + b = \begin{pmatrix} (a_{1, \ *})^T x + b_1 \\ \vdots \\ (a_{m, \ *})^T x + b_m \end{pmatrix}
 $$
 
 
-
+$f$ 的第$i$ 分量 用$f^i$ 表示，$(a_i,*)^T$ 是矩阵A 的第$i$ 行。
 
 
 
