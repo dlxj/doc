@@ -20,6 +20,10 @@ Things Happen for A Reason
 
 
 
+<img src="math summary.assets/image-20200820082343457.png" alt="image-20200820082343457" style="zoom: 67%;" />
+
+
+
 ## 反向传播
 
 若要透彻理解反向传播算法的原理，需要掌握**映射、仿射映射、雅可比矩阵，以及映射求导的链式法则**。
@@ -84,9 +88,30 @@ $$
 > 整个操作是：对向量进行变换，等同于先分别对向量的分量中的基向量进行变换，然后再把数乘(模长的缩放)放进来
 
 $f:\mathbb{R}^n \rightarrow \mathbb{R}^m$ ，所以$e^i$ 是n 维列向量，$f(e^i)$ 是m 维列向量，$
-A$ 是 $m \times n$ 矩阵。
+A$ 是 $m \times n$ 矩阵(**$n$ 个$m$ 维向量** )。
 
  
+
+线性映射必将$\mathbb{R^n}$ 中的零向量映射到$\mathbb{R^m}$  中的零向量，因为：
+
+$$
+f(0) = A \ 0 = 0
+$$
+
+
+
+#### 仿射映射
+
+
+
+仿射映射(affine map)是线性映射加上一个常向量，b：
+$$
+f(x) = A \ x + b
+$$
+如果b 不是零向量，则仿射映射不保持量向量。仿射映射可以看作由若干个仿射函数组成：
+$$
+f(x) = \begin{pmatrix} f^1(x) \\ \vdots \\ f^m(x) \end{pmatrix} = A \ x + b = \begin{pmatrix} (a_{1, \ *})^T x + b_1 \\ \vdots \\ (a_{m, \ *})^T x + b_m \end{pmatrix}
+$$
 
 
 
