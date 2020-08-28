@@ -132,7 +132,13 @@ $f$ 的第$i$ 分量用$f^i$ 表示，$(a_i,*)^T$ 是矩阵A 的第$i$ 行。
 $$
 f(x+h) = f(x) + A h + \mathcal{R}(h)
 $$
-$A$ 由$x$ 决定，余项$\mathcal{R}(h)$ 
+
+
+$A$ 由$x$ 决定，余项$\mathcal{R}(h)$ 是$m$ 维向量，满足：
+$$
+lim \|\boldsymbol{h}\| 
+$$
+
 
 
 
