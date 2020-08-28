@@ -116,7 +116,27 @@ f(x) = \begin{pmatrix} f^1(x) \\ \vdots \\ f^m(x) \end{pmatrix} = A \ x + b = \b
 $$
 
 
-$f$ 的第$i$ 分量 用$f^i$ 表示，$(a_i,*)^T$ 是矩阵A 的第$i$ 行。
+
+
+
+
+$f$ 的第$i$ 分量用$f^i$ 表示，$(a_i,*)^T$ 是矩阵A 的第$i$ 行。
+
+
+
+
+
+#### 雅可比矩阵
+
+如果映射$f:\mathbb{R}^n \rightarrow \mathbb{R}^m$ 在自变量$x$ 附近可以写成：
+$$
+f(x+h) = f(x) + A h + \mathcal{R}(h)
+$$
+$A$ 由$x$ 决定，余项$\mathcal{R}(h)$ 
+
+
+
+
 
 
 
