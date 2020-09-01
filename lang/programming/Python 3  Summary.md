@@ -686,6 +686,112 @@ print(max_value, max_keys)
 
 
 
+### 递归生成知识点目录
+
+```python
+
+import os, sys; sys.path.append( os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))) )  # std 包在此模块的上上上级目录
+import math
+import std.iFile as iFile
+import std.iJson as iJson
+import std.iList as iList
+#import std.seg.iSeg as iSeg
+import std.iSql as iSql
+import util.saveTempData as saveTempData
+import util.fectchData as fectchData
+
+#from reg import inverseQuestionQ
+#from optimization import similarOfSentsWithMedWords
+#from optimization import medWords
+
+import pandas as pd
+import re
+
+appid = 16629
+
+# SELECT * from appinfo a WHERE a.AppEname = 'ZC_ZGHS_YTMJ_TEST';
+# 16629  ZC_ZGHS_YTMJ_TEST  2020版主管护师考试宝典(护理学)特训密卷［专业代码：368］
+
+"""
+
+查出所有根结点
+    SELECT ID AS menuID, PID, `name` FROM trialexampointmenus ts WHERE ts.appid = 16629 AND ts.`enable` = 1 AND ID IN (13394,15859,17852,19629,21271,22383,22660,22897);
+        # 本来条件应该是 PID == -1, 但是根结点有很多重复，所以指定了ID
+
+得到根结点再递归遍历它们的子结点
+
+
+TODO:
+    构造两颗树
+        1. 基于trialexampointmenus 表的知识点目录树
+        2. 基于护理学（中级）大纲.xls 导出文本的目录树
+    
+    对比两颗树，找出需要掌握的熟练度   
+
+
+Pandas处理Excel - 复杂多列到多行转换（三十八）
+https://blog.csdn.net/qq_41706810/article/details/106042694
+
+Pandas | 表格整合三大神技之CONCATENATE
+https://zhuanlan.zhihu.com/p/24892205
+
+
+SELECT ID AS menuID, PID, `name` FROM trialexampointmenus ts WHERE ts.appid = 16629 AND ts.`enable` = 1;
+
+PID = -1 的是root, 否则它的father 是menuID = 它的PID 的结点
+
+"""
+
+rootids = [13394,15859,17852,19629,21271,22383,22660,22897]
+
+def addChilds(menus, rootnode):
+    def add(menus, node, cur, maxIter):
+        if cur > maxIter:
+            return
+        mid = node["menuID"]
+        for d in menus: 
+            if d["PID"] == mid:
+                if "Childs" not in node:
+                    node["Childs"] = []
+                newd = d.copy()
+                node["Childs"].append(newd)
+                add(menus, newd, cur+1, maxIter)
+
+    add(menus, rootnode, 1, 5)
+
+def menuTree(menus):
+    tree = []
+    for d in menus:
+        if d["menuID"] in rootids:
+            tree.append( d.copy() )
+    #print(tree)
+    for d in tree:
+        addChilds(menus, d)
+    #print(tree)
+    return tree
+
+def readCSV():
+    currDir = os.path.dirname(os.path.abspath(__file__))
+    fname_csv = os.path.join(currDir, '护理学（中级）大纲.csv') # '护理学（中级）大纲.xls'
+    ds = pd.read_csv(fname_csv, usecols= ['无'], encoding='gbk') # utf-8
+    print(ds.shape, ds.size)
+    for l in ds.values:
+        if type(l[0]) == str:
+            print(l[0])
+    
+
+if __name__ == "__main__":
+    currDir = os.path.dirname(os.path.abspath(__file__))
+    fname_tree = os.path.join(currDir, 'tree.json')
+    fname_menus = os.path.join(currDir, 'menus.json')
+    menus = fectchData.query('SELECT ID AS menuID, PID, `name` FROM trialexampointmenus ts WHERE ts.appid = 16629 AND ts.`enable` = 1;')
+    #print(menus)
+    tree = menuTree(menus)
+    iJson.save_json(fname_tree, tree)
+    iJson.save_json(fname_menus, menus)
+    #readCSV()
+```
+
 
 
 
@@ -2349,6 +2455,45 @@ seg.to_csv(fname_results, index=False ,encoding="utf-8")
 
 ### read csv
 
+
+
+#### encoding
+
+```python
+ds = pd.read_csv(fname_csv, usecols= ['列名'], encoding='gbk') # utf-8
+```
+
+
+
+
+
+
+
+```python
+    csvs = ['药学专业知识一-考频.csv', '药学专业知识二-考频.csv', '药事管理与法规-考频.csv', '药学综合知识与技能-考频.csv']
+    currDir = os.path.dirname(os.path.abspath(__file__))
+    
+    dic_pl = {}  # Point Level
+
+    for fname in csvs:
+        fname_csv = os.path.join(currDir, DIRNAME, fname)
+        print(fname_csv)
+        ds = pd.read_csv(fname_csv, usecols= ['知识点ID', '考频分类']) # header=None
+        print(ds.shape, ds.size)
+        for l in ds.values:
+            examPoinID = str(l[0])
+            level = l[1]
+            if examPoinID not in dic_pl:                
+                dic_pl[examPoinID] = level
+                #print(examPoinID, level)
+            else:
+                raise RuntimeError('something wrong.')  # 不同科目不应该有相同的知识点ID
+```
+
+
+
+
+
 If you only want to read the first 999,999 (non-header) rows:
 
 ```py
@@ -2368,6 +2513,12 @@ read_csv(..., skiprows=1000000, nrows=999999)
 and for large files, you'll probably also want to use chunksize:
 
 ***chunksize\*** : int, default None Return TextFileReader object for iteration
+
+
+
+
+
+
 
 
 
