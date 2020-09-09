@@ -658,6 +658,16 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 ```python
+d = {'one':1,'three':3,'five':5,'two':2,'four':4}
+a = sorted(d.items(), key=lambda x: x[1])    
+print(a)
+```
+
+
+
+
+
+```python
     # 通过构造有序字典，根据词频排序
     for cptid in results:
         d = results[cptid]
