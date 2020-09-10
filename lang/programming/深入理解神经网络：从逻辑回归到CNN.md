@@ -90,11 +90,63 @@ $$
 
 
 仿射映射可以看作由若干个仿射函数组成
+
+
+
+$f$ 是一个仿射映射
+
+
 $$
-f(x) = \begin{pmatrix} f^1(x) \\ \vdots \\ f^m(x) \end{pmatrix} 
+f(X) = \begin{pmatrix} f^1(x^{(1)}) \\ \vdots \\ f^m(x^{(m)}) \end{pmatrix}
 $$
 
 
+$f'$ 是一个仿射函数
+$$
+f'(x) = w \cdot \ x^T + b
+$$
+
+> 仿射函数是一个线性函数加上一个常向量，b
+>
+> > 线性函数，等同于线性变换，函数又可以认为是一种向量
+> >
+> > 所以这里的指的线性变换就是权重向量$w$
+
+
+
+
+$$
+h_{W}(X) =
+X \cdot W
+=
+\begin{bmatrix}
+x^{1}_{0} & x^{1}_{1} & \cdots & x^{1}_{n}  \\
+x^{2}_{0} & x^{2}_{1} & \cdots & x^{2}_{n} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{m}_{0} & x^{m}_{1} & \cdots & x^{m}_{n} \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+w_{0}  \\
+w_{1}  \\
+\vdots \\
+w_{n}  \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+w_{0} x^{1}_{0} + w_{1} x^{1}_{1} + \ \cdots \  + w_{n} x^{1}_{n}  \\
+w_{0} x^{2}_{0} + w_{1} x^{2}_{1} +\ \cdots \  + w_{n} x^{2}_{n}  \\
+\vdots \\
+w_{0} x^{m}_{0} + w_{1} x^{m}_{1} + \ \cdots \  + w_{n} x^{m}_{n}  \\
+\end{bmatrix}  \\
+=
+\begin{bmatrix}
+h_{W}(x^{^{(1)}}) \\
+h_{W}(x^{^{(2)}})  \\
+...  \\
+h_{W}(x^{^{(m)}}) \\
+\end{bmatrix}
+$$
 
 
 
