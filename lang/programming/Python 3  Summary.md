@@ -2463,6 +2463,29 @@ seg.to_csv(fname_results, index=False ,encoding="utf-8")
 
 
 
+### xlsx
+
+
+
+```
+pip install openpyxl
+pip install xlrd
+```
+
+
+
+扩展名 xlsx 才是真excel，csv 不是
+
+```python
+    csv = pd.DataFrame(data,columns=['知识点ID', '考频', '考频分类', '考试大纲', '关联真题数', '关联非真题数', '知识点内容'])
+    csv.to_excel(fname_csv, index=False ,encoding="utf-8")
+```
+
+
+
+
+
+
 ### read csv
 
 

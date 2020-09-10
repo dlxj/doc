@@ -58,7 +58,7 @@ X = \begin{bmatrix}
 1 & 0 \\
 1 & 1 \\
 \end{bmatrix}
-\text {（XOR 问题的实际输入）}
+\text {（OR 问题的实际输入）}
 $$
 
 > 总共4 组输入，每一个行向量就是一组输入
@@ -71,7 +71,7 @@ y^{1}  \\
 y^{2}  \\
 ...  \\
 y^{m}  \\
-\end{bmatrix}
+\end{bmatrix}
 $$
 
 $$
@@ -80,13 +80,19 @@ Y =
 0  \\
 1  \\
 1  \\
-0  \\
+1  \\
 \end{bmatrix}
-\text{（XOR 问题的实际输出）}
+\text{（OR 问题的实际输出）}
 $$
 
 > 总共4个输出
 
+
+
+仿射映射可以看作由若干个仿射函数组成
+$$
+f(x) = \begin{pmatrix} f^1(x) \\ \vdots \\ f^m(x) \end{pmatrix} 
+$$
 
 
 
