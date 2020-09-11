@@ -309,6 +309,43 @@ exp(-x)
 
 
 
+## 递归方法
+
+
+
+```python
+#  收集所有Childs 的大纲outline，挂到结点下
+def collectAllChildsOutline(tree):
+
+    def walk(d, father, cur, maxIter):
+        if cur > maxIter:
+            return
+
+        if "Childs" not in d:  # 叶子结点，给它的父数组贡献大纲
+            if "Outlines" not in father:
+                father["Outlines"] = []
+            if "level" in d:
+                if d["level"] != '-':
+                    father["Outlines"].append(replaceOutline(d["level"])) # 父数组加子结点大纲
+
+        if "Childs" in d:                    # 非叶子结点
+           for dd in d["Childs"]:            # 遍历孩子
+               walk(dd, d, cur+1, maxIter)   # 递归孩子
+               if "Outlines" not in d:       # 递归结束后，叶子结点的上一层已经有了大纲
+                    d["Outlines"] = []       # d  是当前非叶子
+               if "Outlines" in dd:          # dd 是当前非叶子的孩子
+                    if "level" in dd and dd["level"] != '-':        # 如果当前孩子有大纲 
+                        d["Outlines"] += [ replaceOutline(dd["level"]) ] + dd["Outlines"]   # 当前非叶子大纲数组  加上  当前孩子大纲，当前孩子大纲数组
+                    else:                    # 如果当前孩子无大纲
+                        d["Outlines"] += dd["Outlines"]                     # 当前非叶子大纲数组  加上  当前孩子大纲数组
+    for d in tree:
+        walk(d, d, 1, 5)
+    
+    return tree
+```
+
+
+
 
 
 
