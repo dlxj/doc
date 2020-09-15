@@ -178,11 +178,11 @@ $$
 >
 > - 注意前面函数就是向量这个事实，$f$ 就是线性变换，$f$ 和$A$ 是同一个东西
 >
-> 
+> 为什么从$n$ 维到$m$ 维向量的线性映射的维度是$m \times n$ ?
 >
-> 
+> > 
 >
-> 维度检查：$(4 \times 1) (2 \times 4) \rightarrow (m \times 1)$ 
+> 维度检查：$(m \times n) (n \times 1) \rightarrow (m \times 1)$ 
 
 
 
