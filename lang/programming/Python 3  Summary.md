@@ -440,6 +440,26 @@ product 笛卡尔集
 
 
 
+### delete 
+
+```python
+        for t, l in tests_segs.items():  # t: 'BTEST', 'XTEST'，l: [ {'ChildTestID': '27001584'...} ]
+            removes = []
+            for i in range(len(l)):
+                d = l[i]
+                key = f"{d['TestID']},{d['ChildTestID']}"
+                if key in dicDup:
+                    removes.append(i)  # 记录待删除的项
+            print('before del: ', len(l))
+            for i in sorted(removes, reverse = True):  # 排序，从后面开始删起。前面的索引是不会变的
+                del l[i]
+            print('after del:', len(l))
+```
+
+
+
+
+
 ### delete_duplicates
 
 
@@ -456,6 +476,17 @@ def delete_duplicates(lst):
 ```
 sum( list( map(lambda k: len( tests_segs[k] ), tests_segs) ) )
 ```
+
+
+
+### copy
+
+```python
+import copy
+tests_segsNew = copy.deepcopy(tests_segs)
+```
+
+
 
 
 

@@ -80,6 +80,39 @@ and id
 
 
 
+## 唯一索引和主键
+
+
+
+```mysql
+CREATE TABLE `duplicatetest` (
+	`ID` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`appID` INT(11) NOT NULL,
+	`testID` INT(11) NOT NULL COMMENT '试题ID',
+	`childTestID` INT(11) NOT NULL,
+	`isMaster` ENUM('1','0') NOT NULL DEFAULT '0' COMMENT '是否为主试题' COLLATE 'utf8_general_ci',
+	`masterAppID` INT(11) NULL DEFAULT NULL COMMENT '主试题AppID',
+	`masterTestID` INT(11) NULL DEFAULT NULL COMMENT '主试题ID',
+	`masterChildTestID` INT(11) NULL DEFAULT NULL COMMENT '主试题小题ID',
+	`addTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`updateTime` DATETIME NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`appID`, `testID`, `childTestID`) USING BTREE,
+	UNIQUE INDEX `ID` (`ID`) USING BTREE,
+	INDEX `findByMaster` (`appID`, `masterTestID`, `masterChildTestID`) USING BTREE,
+	INDEX `masterAppID` (`masterAppID`) USING BTREE
+)
+COMMENT='多科目之间的重复试题'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+```
+
+
+
+
+
+
+
 
 
 # Insert
@@ -330,7 +363,7 @@ where appid=8911 and `Enable`='1' ORDER BY TestCptID asc;
 
 ## 查表结构
 
-```
+```python
 select * from information_schema.columns
 where table_schema = 'tiku'
 and table_name = 'test';
