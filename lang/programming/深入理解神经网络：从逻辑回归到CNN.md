@@ -94,19 +94,37 @@ $$
 
 
 
+$$
+X = 
+\begin{bmatrix}
+x^{1}_{0} & x^{1}_{1} & \cdots & x^{1}_{m}  \\
+x^{2}_{0} & x^{2}_{1} & \cdots & x^{2}_{m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{n}_{0} & x^{n}_{1} & \cdots & x^{n}_{m} \\
+\end{bmatrix}
+$$
 
 
+$f'':\mathbb{R}^n \rightarrow \mathbb{R}^1$ 是一个线性函数
 
-$f''$ 是一个线性函数
 
 $$
-f''(x) = w \cdot \ x^T
+f''(x_i) = w \cdot \ x_i \ , i \in 0 \cdots m
 $$
+
+维度变化：$(1 \times n) (n \times 1) \rightarrow (1 \times 1)$ ，所以线性变换$w$ 的维度是$(1 \times n)$
+
+
+
+
+
+$f:\mathbb{R}^n \rightarrow \mathbb{R}^1$ 是线性映射
+
 
 
 $f'$ 是一个仿射函数
 $$
-f'(x) = w \cdot \ x^T + b
+f'(x) = w \cdot \ x + b
 $$
 
 > 仿射函数是一个线性函数加上一个常量 b
@@ -123,7 +141,7 @@ $$
 
 $f$ 是一个仿射映射
 $$
-f(X) = \begin{pmatrix} f'^1(x^{1}) \\ \vdots \\ f'^m(x^{m}) \end{pmatrix}
+f(X) = \begin{pmatrix} f'_0(x_{0}) \\ \vdots \\ f'_m(x_{m}) \end{pmatrix}
 $$
 
 > 仿射映射可以看作由若干个仿射函数组成
@@ -206,9 +224,9 @@ $$
 
 与门(OR) 运算的仿性映射$f$ 表示为：
 $$
-f(X) = W \cdot X^T + B = Y
+f(X) = W \cdot X + B = Y
 $$
-其中$X^T$ 的维度是$(2 \times 4)$，$Y^T$ 的维度是$(1 \times 4)$
+其中$X$ 的维度是$(2 \times 4)$，$Y$ 的维度是$(1 \times 4)$
 
 > 将4 个2 维向量，线性变换成4个1 维向量
 >
@@ -232,6 +250,44 @@ Y =
 \end{bmatrix}
 \text{（与门的输出）}
 $$
+
+$$
+W =
+\begin{bmatrix}
+w_1 & w_2  \\
+\end{bmatrix}
+\text{（线性变换）}
+$$
+
+$$
+B =
+\begin{bmatrix}
+b_1 & b_2 & b_3 & b_4  \\
+\end{bmatrix}
+\text{（偏置）}
+$$
+
+
+
+前向
+
+
+$$
+h_{W}(X) =
+W \cdot X
+=
+\begin{bmatrix}
+w_1 & w_2  \\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+\end{bmatrix}
+$$
+
 
 
 
