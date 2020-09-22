@@ -211,6 +211,31 @@ $$
 其中$X^T$ 的维度是$(2 \times 4)$，$Y^T$ 的维度是$(1 \times 4)$
 
 > 将4 个2 维向量，线性变换成4个1 维向量
+>
+> 这个变换$W$ 的维度是$(1 \times 2)$
+>
+> 维度检查：$(1 \times 2) (2 \times 4) \rightarrow (1 \times 4)$ 
+
+
+$$
+X = \begin{bmatrix}
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+\end{bmatrix}
+\text {（与门的输入）}
+$$
+
+$$
+Y =
+\begin{bmatrix}
+0 & 1 & 1 & 1 \\
+\end{bmatrix}
+\text{（与门的输出）}
+$$
+
+
+
+
 
 
 
