@@ -105,35 +105,31 @@ x^{n}_{0} & x^{n}_{1} & \cdots & x^{n}_{m} \\
 $$
 
 
+
 $f'':\mathbb{R}^n \rightarrow \mathbb{R}^1$ 是一个线性函数
 
-
 $$
-f''(x_i) = w \cdot \ x_i \ , i \in 0 \cdots m
+f''(x_i) = W \cdot \ x_i \ , i \in 0 \cdots m
 $$
 
-维度变化：$(1 \times n) (n \times 1) \rightarrow (1 \times 1)$ ，所以线性变换$w$ 的维度是$(1 \times n)$
+> 线性函数，等同于线性变换，函数又可以认为是一种向量
+>
+> 所以这里的指的线性变换就是权重向量$W$，$W$对$x_i$ 进行了线性变换
+>
+> 维度变化：$(1 \times n) (n \times 1) \rightarrow (1 \times 1)$ ，所以线性变换$W$ **的维度是$(1 \times n)$**
 
 
-
-
-
-$f:\mathbb{R}^n \rightarrow \mathbb{R}^1$ 是线性映射
 
 
 
 $f'$ 是一个仿射函数
 $$
-f'(x) = w \cdot \ x + b
+f'(x_i) = W \cdot \ x_i + b_i \ , i \in 0 \cdots m
 $$
 
-> 仿射函数是一个线性函数加上一个常量 b
+> 仿射函数是一个线性函数加上一个常量
 >
-> > 线性函数，等同于线性变换，函数又可以认为是一种向量
-> >
-> > 所以这里的指的线性变换就是权重向量$w$，$w$ 对$x^T$ 进行了线性变换
-> >
-> > $x$ 是行向量，转置成列向量
+> $b_i$ 的维度是$(1 \times 1)$ ，$B$ 的维度是$(1 \times m)$ 
 
 
 
@@ -141,7 +137,7 @@ $$
 
 $f$ 是一个仿射映射
 $$
-f(X) = \begin{pmatrix} f'_0(x_{0}) \\ \vdots \\ f'_m(x_{m}) \end{pmatrix}
+f(X) = \begin{bmatrix} f'_0(x_{0}) & \cdots &  f'_m(x_{m}) \end{bmatrix}
 $$
 
 > 仿射映射可以看作由若干个仿射函数组成
