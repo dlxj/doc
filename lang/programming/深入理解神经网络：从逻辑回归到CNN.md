@@ -30,6 +30,8 @@ Things Happen for A Reason
 
 映射是函数的推广，**雅可比是梯度的推广**
 
+> 梯度是偏导的向量，雅可比是梯度的向量
+
 
 
 一个多元函数求偏导，每一元就得到一个偏导，n元偏导组成一个向量，这就是梯度。
@@ -104,6 +106,8 @@ $$
 
 
 $$
+f_W(X) =
+
 \begin{bmatrix}
 w_1 & \cdots & w_n  \\
 \end{bmatrix}
@@ -122,8 +126,18 @@ x^{n}_{1} & x^{n}_{2} & \cdots & x^{n}_{m} \\
 \begin{bmatrix}
 b_1 & \cdots & b_m  \\
 \end{bmatrix}
+
+\\
+
+= 
+
+\begin{bmatrix}
+W \cdot x_1 + b_1 & \cdots & W \cdot x_m + b_m \\
+\end{bmatrix}
 $$
 
+
+梯度是偏导的向量，雅可比是梯度的向量
 
 
 
