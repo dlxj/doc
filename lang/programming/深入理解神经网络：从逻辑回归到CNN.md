@@ -94,22 +94,69 @@ $$
 
 
 
+
+
+
+$X$ 是神经网络的输入，总共$m$ 组，每一组是一个$n$ 维向量
+
+
+
 $$
 X = 
 \begin{bmatrix}
-x^{1}_{0} & x^{1}_{1} & \cdots & x^{1}_{m}  \\
-x^{2}_{0} & x^{2}_{1} & \cdots & x^{2}_{m} \\
+x^{1}_{1} & x^{1}_{1} & \cdots & x^{1}_{m}  \\
+x^{2}_{1} & x^{2}_{1} & \cdots & x^{2}_{m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-x^{n}_{0} & x^{n}_{1} & \cdots & x^{n}_{m} \\
+x^{n}_{1} & x^{n}_{1} & \cdots & x^{n}_{m} \\
 \end{bmatrix}
 $$
+
+
+
+例如，与门(OR Gate) 的全部参数为：
+
+$$
+X = \begin{bmatrix}
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+\end{bmatrix}
+\text {（与门的输入）}
+$$
+
+$$
+Y =
+\begin{bmatrix}
+0 & 1 & 1 & 1 \\
+\end{bmatrix}
+\text{（与门的输出）}
+$$
+
+$$
+W =
+\begin{bmatrix}
+w_1 & w_2  \\
+\end{bmatrix}
+\text{（线性变换，也就是权重）}
+$$
+
+$$
+B =
+\begin{bmatrix}
+b_1 & b_2 & b_3 & b_4  \\
+\end{bmatrix}
+\text{（偏置）}
+$$
+
+
+
+
 
 
 
 $f'':\mathbb{R}^n \rightarrow \mathbb{R}^1$ 是一个线性函数
 
 $$
-f''(x_i) = W \cdot \ x_i \ , i \in 0 \cdots m
+f''(x_i) = W \cdot \ x_i \ , i \in 1 \cdots m
 $$
 
 > 线性函数，等同于线性变换，函数又可以认为是一种向量
@@ -126,7 +173,7 @@ $$
 
 $f'$ 是一个仿射函数
 $$
-f'(x_i) = W \cdot \ x_i + b_i \ , i \in 0 \cdots m
+f'(x_i) = W \cdot \ x_i + b_i \ , i \in 1 \cdots m
 $$
 
 > 仿射函数是一个线性函数加上一个常量
@@ -139,7 +186,26 @@ $$
 
 $f$ 是一个仿射映射
 $$
-f(X) = \begin{bmatrix} f'_0(x_{0}) & \cdots &  f'_m(x_{m}) \end{bmatrix}
+f(X) = \begin{bmatrix} f'_1(x_{1}) & \cdots &  f'_m(x_{m}) \end{bmatrix} = W \cdot X + B \\
+=
+\begin{bmatrix}
+w_1 & \cdots & w_n  \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+x^{1}_{1} & x^{1}_{2} & \cdots & x^{1}_{m}  \\
+x^{2}_{1} & x^{2}_{2} & \cdots & x^{2}_{m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{n}_{1} & x^{n}_{2} & \cdots & x^{n}_{m} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b_1 & \cdots & b_m  \\
+\end{bmatrix}
 $$
 
 > 仿射映射可以看作由若干个仿射函数组成
@@ -149,6 +215,53 @@ $$
 > 小写的$x$ 表示这是一个向量，$x$ 的下标表示这是一个列向量，下标的数字指出它是矩阵中的第几列
 
 
+
+
+
+
+
+
+
+
+$$
+\begin{bmatrix}
+w_1 & \cdots & w_n  \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+x^{1}_{1} & x^{1}_{2} & \cdots & x^{1}_{m}  \\
+x^{2}_{1} & x^{2}_{2} & \cdots & x^{2}_{m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{n}_{1} & x^{n}_{2} & \cdots & x^{n}_{m} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b_1 & \cdots & b_m  \\
+\end{bmatrix}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+如果映射$f:\mathbb{R}^{n \times m} \rightarrow \mathbb{R}^m$ 在自变量$x$ 附近可以写成：
+$$
+f(x+h) = f(x) + A h + \mathcal{R}(h)
+$$
+
+
+$A$ 由$x$ 决定，余项$\mathcal{R}(h)$ 是$m$ 维向量，满足：
 
 
 
