@@ -45,53 +45,6 @@ m个多元函数求偏导，每一函数得到一个梯度，m个梯度组成一
 > > m 组输入构成的**向量**是**神经网络(映射)**的输入，m个预测构成的**向量**是**神经网络(映射)**的输出
 
 
-$$
-X = 
-\begin{bmatrix}
-x^{1}_{0} & x^{1}_{1} & \cdots & x^{1}_{n}  \\
-x^{2}_{0} & x^{2}_{1} & \cdots & x^{2}_{n} \\
-\vdots & \vdots & \ddots & \vdots & \\
-x^{m}_{0} & x^{m}_{1} & \cdots & x^{m}_{n} \\
-\end{bmatrix}
-$$
-
-$$
-X = \begin{bmatrix}
-0 & 0 \\
-0 & 1 \\
-1 & 0 \\
-1 & 1 \\
-\end{bmatrix}
-\text {（OR 问题的实际输入）}
-$$
-
-> 总共4 组输入，每一个行向量就是一组输入
-
-
-$$
-Y =
-\begin{bmatrix}
-y^{1}  \\
-y^{2}  \\
-...  \\
-y^{m}  \\
-\end{bmatrix}
-$$
-
-$$
-Y =
-\begin{bmatrix}
-0  \\
-1  \\
-1  \\
-1  \\
-\end{bmatrix}
-\text{（OR 问题的实际输出）}
-$$
-
-> 总共4个输出
-
-
 
 
 
@@ -146,6 +99,31 @@ b_1 & b_2 & b_3 & b_4  \\
 \end{bmatrix}
 \text{（偏置）}
 $$
+
+前向传播的过程：
+
+
+$$
+\begin{bmatrix}
+w_1 & \cdots & w_n  \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+x^{1}_{1} & x^{1}_{2} & \cdots & x^{1}_{m}  \\
+x^{2}_{1} & x^{2}_{2} & \cdots & x^{2}_{m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{n}_{1} & x^{n}_{2} & \cdots & x^{n}_{m} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b_1 & \cdots & b_m  \\
+\end{bmatrix}
+$$
+
 
 
 
