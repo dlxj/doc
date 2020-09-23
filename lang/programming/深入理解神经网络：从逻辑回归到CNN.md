@@ -106,7 +106,7 @@ $$
 
 
 $$
-f_W(X) =
+f_W(X) = W \cdot X + B =
 
 \begin{bmatrix}
 w_1 & \cdots & w_n  \\
@@ -133,6 +133,10 @@ b_1 & \cdots & b_m  \\
 
 \begin{bmatrix}
 W \cdot x_1 + b_1 & \cdots & W \cdot x_m + b_m \\
+\end{bmatrix} \\
+= 
+\begin{bmatrix}
+f'_1(x_1) & \cdots & f'_m(x_m) \\
 \end{bmatrix}
 $$
 
@@ -636,9 +640,9 @@ $$
 
 映射是函数的推广，**雅可比是梯度的推广**
 
+https://blog.csdn.net/m0_46510245/article/details/108614235
 
-
-
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200923155803237.png" alt="image-20200923155803237" style="zoom:50%;" />
 
 
 
