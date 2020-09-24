@@ -106,7 +106,7 @@ $$
 
 
 $$
-f_W(X) = W \cdot X + B =
+f(W,X) = W \cdot X + B =
 
 \begin{bmatrix}
 w_1 & \cdots & w_n  \\
@@ -136,7 +136,7 @@ W \cdot x_1 + b_1 & \cdots & W \cdot x_m + b_m \\
 \end{bmatrix} \\
 = 
 \begin{bmatrix}
-f'_1(x_1) & \cdots & f'_m(x_m) \\
+f'_1(W, x_1) & \cdots & f'_m(W, x_m) \\
 \end{bmatrix}
 $$
 
@@ -145,7 +145,7 @@ $$
 
 
 $$
-a_i = \nabla f'_i(x_i) = \begin{pmatrix} \frac{\partial{f'_i(x_i)}}{\partial{w_1}} \\ \vdots \\ \frac{\partial{f'_i(x_i)}}{\partial{w_n}}  \end{pmatrix}
+a_i = \nabla f'_i(W, x_i) = \begin{pmatrix} \frac{\partial{f'_i(W, x_i)}}{\partial{w_1}} \\ \vdots \\ \frac{\partial{f'_i(W, x_i)}}{\partial{w_n}}  \end{pmatrix}
 , i \in 1 \cdots m
 $$
 
@@ -156,8 +156,10 @@ A = \begin{pmatrix}
 (a_{m})^{T}
 \end{pmatrix}
 $$
-$A$ 就是$f_W(X)$ 的雅可比矩阵
-
+$A$ 就是$f(W,X)$ 的雅可比矩阵
+$$
+f(W+h,X) = f(W) + A h
+$$
 
 
 
