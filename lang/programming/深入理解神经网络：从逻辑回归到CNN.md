@@ -144,6 +144,45 @@ $$
 梯度是偏导的向量，雅可比是梯度的向量
 
 
+$$
+a_i = \nabla f'_i(x_i) = \begin{pmatrix} \frac{\partial{f'_i(x_i)}}{\partial{w_1}} \\ \vdots \\ \frac{\partial{f'_i(x_i)}}{\partial{w_n}}  \end{pmatrix}
+, i \in 1 \cdots m
+$$
+
+$$
+A = \begin{pmatrix}
+(a_{1})^{T} \\
+\vdots \\
+(a_{m})^{T}
+\end{pmatrix}
+$$
+$A$ 就是$f_W(X)$ 的雅可比矩阵
+
+
+
+
+
+#### 神经网络雅可比
+
+$f(x+h) = f(x) + A h$
+
+> $A$ 是$f$ 的雅可比
+
+
+
+
+
+$(a_{i,*})^T$ 是矩阵A 的第$i$ 行，$a_{i,*}$ 是函数$f^i(x)$ 在$x$ 的梯度：
+$$
+a_{i,*} = \nabla f^i(x) = \begin{pmatrix} \frac{\partial{f^i(x)}}{\partial{x_1}} \\ \vdots \\ \frac{\partial{f^i(x)}}{\partial{x_n}}  \end{pmatrix}
+$$
+
+$$
+A_{m \times n} = \begin{pmatrix} \frac{\partial{f^i(x)}}{\partial{x_1}} & \cdots & \frac{\partial{f^i(x)}}{\partial{x_n}} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial{f^m(x)}}{\partial{x_1}} & \cdots & \frac{\partial{f^m(x)}}{\partial{x_n}}
+\end{pmatrix}
+$$
 
 
 
