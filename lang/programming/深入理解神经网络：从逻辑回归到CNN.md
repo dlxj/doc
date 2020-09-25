@@ -48,6 +48,8 @@ m个多元函数求偏导，每一函数得到一个梯度，m个梯度组成一
 
 
 
+应用链式法则求**某节点对其他节点的雅可比矩阵**，它**从结果节点开始**，沿着计算路径向前追溯，**逐节点计算雅可比**。将神经网络和损失函数连接成一个计算图，则它的输入、输出和参数都是节点，可利用自动求导**求损失值对网络参数的雅可比**，从而得到梯度。
+
 
 
 
@@ -218,6 +220,31 @@ $$
 $$
 (f \circ g)'(x) = f'(g(x))g'(x)
 $$
+
+
+
+
+
+
+向量导数的链式法则
+$$
+\vec{x} \in \mathbb{R}^m \ , \vec{y} \in \mathbb{R}^n  \\
+
+g:\mathbb{R}^m \rightarrow \mathbb{R}^n， g(\vec{x}) = \vec{y}  \\
+f:\mathbb{R}^n \rightarrow \mathbb{R}， f(\vec{y}) = z
+$$
+
+
+
+
+[AI算法工程师手册](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
+
+[向量、矩阵和张量的导数](https://zhuanlan.zhihu.com/p/29502026)
+
+
+
+![image-20200925164844085](深入理解神经网络：从逻辑回归到CNN.assets/image-20200925164844085.png)
+
 
 $$
 \frac{\partial}{\partial w_{j}}
