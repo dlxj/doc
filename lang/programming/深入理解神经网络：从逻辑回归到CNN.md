@@ -179,11 +179,70 @@ $$
 均方误差代价函数
 $$
 J(W) = 
- \frac{1}{2m} \sum^{m}_{i=1}( g(f'_i(W, x_i)) - y_i )^2
+ \frac{1}{2m} \sum^{m}_{i=1}( g(f'(W, x_i)) - y_i )^2
 $$
 
 $$
-f'_i(W, x_i) = W \cdot x_i + b_i \ , i \in 1 \cdots m
+f'(W, x_i, b_i) = W \cdot x_i + b_i \ , i \in 1 \cdots m \\
+=
+\begin{bmatrix}
+w_1 & \cdots & w_n  \\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+x^{1}_{i}   \\
+x^{2}_{i}  \\
+\vdots \\
+x^{n}_{i} \\
+\end{bmatrix}
+
++ b_i  \\
+
+= w_1  x^1_i + w_2  x^2_i + \cdots + w_n  x^n_i + b_i
+$$
+
+$$
+\frac{\partial}{\partial w_{j}} f'(W, x_i, b_i) = x^j_i \ , (j \in 1 \cdots n, i \in 1 \cdots m)
+$$
+
+$$
+\frac{d}{d x} g(x) = \frac{d}{d x} (\frac{1}{1 + e^{-x}}) =  \frac{ - \frac{d}{d x} (1 + e^{-x}) }{(1 + e^{-x})^{2}} \\
+= \frac{ - \frac{d}{dx} e^{-x} }{(1 + e^{-x})^{2}} = \frac{ - \frac{d}{dx} \frac{1}{e^{x}} }{(1 + e^{-x})^{2}} = \frac{ - (\frac{- \frac{d}{dx} e^x}{(e^x)^2}) }{(1 + e^{-x})^{2}} = \frac{e^{-x}}{(1 + e^{-x})^2} \\
+= (\frac{1}{1+e^{-x}}) (\frac{e^{-x}}{1 + e^{-x}}) \\
+= (\frac{1}{1+e^{-x}}) (\frac{1 + e^{-x}}{1 + e^{-x}} -\frac{1}{1 + e^{-x}}) \\
+= g(x)(1 - g(x))
+$$
+
+$$
+(f \circ g)'(x) = f'(g(x))g'(x)
+$$
+
+$$
+\frac{\partial}{\partial w_{j}}
+J(W) = 
+ \frac{\partial}{\partial w_{j}} \bigg [ \frac{1}{2m} \sum^{m}_{i=1}( g(f'(W, x_i)) - y_i )^2
+ 
+ \bigg ] \\
+ 
+ = \frac{1}{2m} \sum^{m}_{i=1}\frac{\partial}{\partial w_{j}} ( g(f'(W, x_i)) - y_i )^2   \quad \text{(by linearity of the derivative)} \\
+= \frac{1}{2m} \sum^{m}_{i=1} 
+
+2 \cdot ( g(f'(W, x_i)) - y_i ) \frac{\partial}{\partial w_{j}} ( g(f'(W, x_i)) - y_i )   \quad \text{(by chain rule)} \\
+= \frac{1}{2m} \cdot 2 \sum^{m}_{i=1} 
+
+( g(f'(W, x_i)) - y_i ) \bigg [ \frac{\partial}{\partial w_{j}} g(f'(W, x_i)) - \frac{\partial}{\partial w_{j}} y_{i} \bigg ]  \quad \text{(by linearity of the derivative)}  \\
+= \frac{1}{m} \sum^{m}_{i=1} 
+
+(g(f'(W, x_i)) - y_{i}) \bigg [ \frac{\partial}{\partial w_{j}} g(f'(W, x_i)) - 0 \bigg ]   \\
+
+= \frac{1}{m} \sum^{m}_{i=1} 
+
+(g(f'(W, x_i)) - y_{i}) \frac{\partial}{\partial w_{j}} g(f'(W, x_i))     \\
+= \frac{1}{m} \sum^{m}_{i=1} 
+
+(g(f'(W, x_i)) - y_{i}) g(f'(W, x_i))(1 - g(f'(W, x_i))) x^{i}_{j}
 $$
 
 
