@@ -102,8 +102,11 @@ b_1 & b_2 & b_3 & b_4  \\
 \text{（偏置）}
 $$
 
-前向传播的过程：
+维度检查：$(1 \times 2) (2 \times 4) \rightarrow (1 \times 4)$ 
 
+
+
+前向传播的过程：
 
 $$
 f(W,X) = W \cdot X + B =
@@ -140,9 +143,59 @@ f'_1(W, x_1) & \cdots & f'_m(W, x_m) \\
 \end{bmatrix}
 $$
 
+维度检查：$(1 \times n) (n \times m) \rightarrow (1 \times m)$ 
+
+
+
+
+
+激活
+$$
+g(x) = \frac{1}{1 + e^{-x}}
+$$
+
+$$
+g( f(W,X) ) = 
+\begin{bmatrix}
+g(f'_1(W, x_1)) & \cdots & g(f'_m(W, x_m)) \\
+\end{bmatrix}
+$$
+
+
+$$
+E =
+g( f(W,X) ) - Y
+=
+\begin{bmatrix}
+g(f'_1(W, x_1)) - y_1 & \cdots & g(f'_m(W, x_m)) - y_m \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+e_{1} & \cdots & e_{m}
+\end{bmatrix}
+$$
+
+
+均方误差代价函数
+$$
+J(W) = 
+ \frac{1}{2m} \sum^{m}_{i=1}( g(f'_i(W, x_i)) - y_i )^2
+$$
+
+$$
+f'_i(W, x_i) = W \cdot x_i + b_i \ , i \in 1 \cdots m
+$$
+
+
+
+
+
+
+
+
+
 
 梯度是偏导的向量，雅可比是梯度的向量
-
 
 $$
 a_i = \nabla f'_i(W, x_i) = \begin{pmatrix} \frac{\partial{f'_i(W, x_i)}}{\partial{w_1}} \\ \vdots \\ \frac{\partial{f'_i(W, x_i)}}{\partial{w_n}}  \end{pmatrix}
@@ -150,12 +203,22 @@ a_i = \nabla f'_i(W, x_i) = \begin{pmatrix} \frac{\partial{f'_i(W, x_i)}}{\parti
 $$
 
 $$
-A = \begin{pmatrix}
+A_{m \times n} = \begin{pmatrix}
 (a_{1})^{T} \\
 \vdots \\
 (a_{m})^{T}
 \end{pmatrix}
 $$
+
+
+
+
+
+
+
+
+
+
 $A$ 就是$f(W,X)$ 的雅可比矩阵
 $$
 f(W+h,X) = f(W, X) + A h
@@ -637,6 +700,8 @@ $f$ 的第$i$ 分量用$f^i$ 表示，$(a_{i,*})^T$ 是矩阵A 的第$i$ 行。$
 
 
 #### 雅可比矩阵
+
+[计算图反向传播的原理及实现](https://zhuanlan.zhihu.com/p/69175484)
 
 [“瞬时运动学”——还是从关节空间到操作空间（雅可比矩阵上篇）](https://www.guyuehome.com/5627)
 
