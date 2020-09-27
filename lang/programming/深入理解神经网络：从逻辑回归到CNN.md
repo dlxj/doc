@@ -115,7 +115,7 @@ $$
 前向传播的过程：
 
 $$
-f(W,X) = W \cdot X + B =
+f(W,X,B) = W \cdot X + B =
 
 \begin{bmatrix}
 w_1 & \cdots & w_n  \\
@@ -344,6 +344,8 @@ $\mathcal{L}$ 对$a^k_i$ 的雅可比（导数）是这三个映射在相应位�
 $$
 \frac{\partial \mathcal{L}}{\partial a^k_i} = A_h \cdot A_g \cdot A_f
 $$
+
+
 
 
 
