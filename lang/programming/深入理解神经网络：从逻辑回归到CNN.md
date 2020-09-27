@@ -338,6 +338,12 @@ $$
 $$
 
 
+$\mathcal{L}$ 对$a^k_i$ 的雅可比（导数）是这三个映射在相应位置的雅可比之积：
+
+
+$$
+\frac{\partial \mathcal{L}}{\partial a^k_i} = A_h \cdot A_g \cdot A_f
+$$
 
 
 
