@@ -52,6 +52,10 @@ m个多元函数求偏导，每一函数得到一个梯度，m个梯度组成一
 
 
 
+逻辑回归计算图，预测时将 $w$和$b$ 视为常量，将 $x$ 视为变量；训练时则将$x$ 视为常量，将 $w$ 和$b$ 视为变量。
+
+
+
 
 
 $X$ 是神经网络的输入，总共$m$ 组，每一组是一个$n$ 维向量
@@ -220,6 +224,121 @@ $$
 $$
 (f \circ g)'(x) = f'(g(x))g'(x)
 $$
+
+
+
+
+
+#### 计算图雅可比
+
+[计算图反向传播的原理及实现](https://zhuanlan.zhihu.com/p/69175484)
+
+
+
+计算图中的一条有向路径表示一个映射
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200927083845923.png" alt="image-20200927083845923" style="zoom: 33%;" />
+
+由 $x$计算 $y$ 是一个多重复合映射。如果$x$ 是 $n$ 维向量， $y$是$m$ 维向量，则该计算图表示的计算是一个$\mathbb{R}^n \rightarrow \mathbb{R}^m$ 的映射。这个映射的“导数”是一个 $m \times n$的矩阵，即雅可比矩阵。根据链式法则， $y$对$x$的雅可比矩阵是：
+$$
+\frac{\partial y}{\partial x} = \frac{\partial y}{\partial u^k} \frac{\partial u^k}{\partial u^{k-1}} \cdots \frac{\partial u^2}{\partial u^1} \frac{\partial u^1}{\partial x}
+$$
+
+
+
+
+上标表示层，输入是第$0$ 层，输出是第$K$ 层
+
+第$1$ 到$K-1$ 层是隐层
+
+$x^0_i$ 第$0$ 层输入向量的第$i$ 分量
+
+$n_0$ 第$0$ 层总共有$n_0$ 个分量
+
+$a^k_i$ 第$k$ 层第$i$ 个神经元的仿射值
+
+$x^k_i$ 第$k$ 层第$i$ 个神经元的激活值
+
+第$k$ 层有$n_k$ 个神经元，所以该层有$n_k$ 个输出
+
+
+$$
+x^k_i = f(a^k_i) = f(\sum^{n_{k-1}}_{s=1} w^k_{i,s} x^{k-1}_s + b^k_i)
+$$
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200927112132641.png" alt="image-20200927112132641" style="zoom:50%;" />
+
+
+
+
+$$
+a^k_i = \sum^{n_{k-1}}_{j=1} w^k_{i,j} x^{k-1}_j + b^k_i
+$$
+
+$$
+\frac{\partial a^k_i}{\partial w^k_{i,j}} = x^{k-1}_j
+$$
+损失值$\mathcal{L}$  对$w^k_{i,j}$ 的偏导数由链式法则给出：
+$$
+\frac{ \partial{\mathcal{L}} } { \partial w^k_{i,j} } = 
+\frac{ \partial{\mathcal{L}} } { \partial a^k_i }
+\cdot
+\frac{\partial a^k_i}{\partial w^k_{i,j}}
+$$
+既，损失值对某个权值的偏导，等于损失对映射值的偏导乘以映射值对权值的偏导
+
+后偏导  * 前偏导 * 前前偏导 * ... 一直乘到要求的那个偏导
+
+p.164 	
+
+
+
+损失值对某个偏置的偏导
+$$
+\frac{ \partial{\mathcal{L}} } { \partial b^k_{i} } = 
+\frac{ \partial{\mathcal{L}} } { \partial a^k_i }
+\cdot
+\frac{\partial a^k_i}{\partial b^k_{i}}
+= \frac{ \partial{\mathcal{L}} } { \partial a^k_i }
+$$
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200927155441465.png" alt="image-20200927155441465" style="zoom: 50%;"/>
+
+
+
+将激活值$x^k_i$ 看成是变量，同层的其他激活值是常量，则下一层神经元的仿射值由映射$g:\mathbb{R} \rightarrow \mathbb{R}^{n_{k+1}}$ 给出：
+
+
+$$
+g(x^k_i) = \begin{pmatrix}
+a^{k+1}_1 \\
+a^{k+1}_2 \\
+\vdots \\
+a^{k+1}_{n_{k+1}} \\
+\end{pmatrix} 
+= 
+\begin{pmatrix}
+\sum^{n_k}_{j=1} w^{k+1}_{1,j} x^k_j + b^{k+1}_1  \\
+\sum^{n_k}_{j=1} w^{k+1}_{2,j} x^k_j + b^{k+1}_2  \\
+\vdots \\
+\sum^{n_k}_{j=1} w^{k+1}_{{n_{k+1}}, j} x^k_j + b^{k+1}_{n_{k+1}}  \\
+\end{pmatrix}
+$$
+
+
+最后，映射$h:\mathbb{R}^{n_{k+1}} \rightarrow \mathbb{R}$ 将第$k+1$ 层的仿射值映射到损失值$\mathcal{L}$，若将损失值$\mathcal{L}$ 视作$a^k_i$ 的函数，则它是三个映射的复合： 
+
+
+$$
+\mathcal{L}(a^k_i) = (h \circ g \circ f)(a^k_i)
+$$
+
+
+
 
 
 
