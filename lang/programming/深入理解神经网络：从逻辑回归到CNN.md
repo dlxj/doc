@@ -233,6 +233,8 @@ $$
 
 [计算图反向传播的原理及实现](https://zhuanlan.zhihu.com/p/69175484)
 
+[常见激活函数优缺点与dead relu problem](https://zhuanlan.zhihu.com/p/92412922)
+
 
 
 反向传播的含义：被传播的是损失值对仿射值的偏导数
