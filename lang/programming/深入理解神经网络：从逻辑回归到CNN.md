@@ -145,7 +145,7 @@ W \cdot x_1 + b_1 & \cdots & W \cdot x_m + b_m \\
 \end{bmatrix} \\
 = 
 \begin{bmatrix}
-f'_1(W, x_1) & \cdots & f'_m(W, x_m) \\
+f'_1(W, x_1, b_1) & \cdots & f'_m(W, x_m, b_m) \\
 \end{bmatrix}
 $$
 
@@ -185,7 +185,7 @@ $$
 均方误差代价函数
 $$
 J(W) = 
- \frac{1}{2m} \sum^{m}_{i=1}( g(f'(W, x_i)) - y_i )^2
+ \frac{1}{2m} \sum^{m}_{i=1}( g(f'(W, x_i, b_i)) - y_i )^2
 $$
 
 $$
@@ -224,6 +224,12 @@ $$
 $$
 (f \circ g)'(x) = f'(g(x))g'(x)
 $$
+
+
+$$
+\frac{\partial}{\partial w_j} J(W) =  \frac{1}{2m} \sum^{m}_{i=1}( g(f'(W, x_i, b_i)) - y_i )^2
+$$
+
 
 
 
