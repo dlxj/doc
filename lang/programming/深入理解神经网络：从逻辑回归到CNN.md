@@ -387,8 +387,11 @@ $$
 
 ### 多元复合函数求导法则
 
+#### 导数是自变量因变量微小变化比
+
 > 偏导数必须要先选取坐标（选取所有待求偏导的变量）以后，才有意义
 
+[微积分本质](https://zhuanlan.zhihu.com/p/141064528)
 
 $$
 g \bigg (
@@ -420,6 +423,12 @@ y_{n} \\
 = z
 $$
 
+
+
+
+$$
+\frac{\partial z}{x_i} = \sum^n_{j=1} \frac{\partial z}{\partial y_j} \frac{\partial y_j}{\partial x_i} , \ i = 1, 2, \cdots ,m
+$$
 
 
 
