@@ -377,10 +377,48 @@ $$
 
 
 
-
 [AI算法工程师手册](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
 
 [向量、矩阵和张量的导数](https://zhuanlan.zhihu.com/p/29502026)
+
+
+
+**多元复合函数求导法则**
+
+> 偏导数必须要先选取坐标（选取所有待求偏导的变量）以后，才有意义
+
+
+$$
+g \bigg (
+\begin{bmatrix}
+x_{1}  \\
+x_{2}  \\
+\vdots  \\
+x_{m} \\
+\end{bmatrix}
+\bigg ) 
+=
+\begin{bmatrix}
+y_{1}  \\
+y_{2}  \\
+\vdots  \\
+y_{n} \\
+\end{bmatrix}
+$$
+
+$$
+f \bigg (
+\begin{bmatrix}
+y_{1}  \\
+y_{2}  \\
+\vdots  \\
+y_{n} \\
+\end{bmatrix}
+\bigg ) 
+= z
+$$
+
+
 
 
 
