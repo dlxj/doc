@@ -555,3 +555,29 @@ chrome缓存路径
 - grep -rl mresources ./tutorial | xargs  sed -i ""  's/mresources/cegfdb/g'
 
   > 全局替换 mresources替换为cegfdb
+
+
+
+## Neo4j
+
+
+
+> ```
+> # Config
+> sudo vi /etc/environment
+> 
+> # Add the line below
+> # JAVA_HOME="/usr/lib/jdk-11.0.9/"
+> 
+> # Config
+> sudo vi ~/.bashrc
+> # Add the lines below
+> # JAVA_HOME=/usr/lib/jdk-11.0.9/
+> # PATH=$JAVA_HOME/bin:$PATH
+> source ~/.bashrc
+> 
+> # Verify
+> echo $JAVA_HOME
+> javac --version
+> ```
+

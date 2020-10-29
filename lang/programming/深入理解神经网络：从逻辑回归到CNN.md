@@ -56,6 +56,10 @@ m个多元函数求偏导，每一函数得到一个梯度，m个梯度组成一
 
 
 
+梯度、散度、旋度、Jacobian、Hessian、Laplacian 的关系图 [u](https://zhuanlan.zhihu.com/p/35323714) [微分算子](https://zh.wikipedia.org/wiki/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90)
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20201029122824914.png" alt="image-20201029122824914" style="zoom:50%;" />
+
 
 
 $X$ 是神经网络的输入，总共$m$ 组，每一组是一个$n$ 维向量
@@ -377,10 +381,124 @@ $$
 
 
 
-
 [AI算法工程师手册](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
 
 [向量、矩阵和张量的导数](https://zhuanlan.zhihu.com/p/29502026)
+
+[多元复合函数求导法则的教学思考](https://image.hanspub.org/Html/2-1250530_21119.htm)
+
+
+
+### 多元复合函数求导法则
+
+#### 导数是自变量因变量微小变化比
+
+> 偏导数必须要先选取坐标（选取所有待求偏导的变量）以后，才有意义
+
+[微积分本质](https://zhuanlan.zhihu.com/p/141064528)
+
+
+
+
+$$
+A_{()} = \begin{pmatrix} \frac{\partial{f'_i(W, x_i)}}{\partial{w_1}} \\ \vdots \\ \frac{\partial{f'_i(W, x_i)}}{\partial{w_n}}  \end{pmatrix}
+$$
+
+
+
+$$
+g \bigg (
+\begin{bmatrix}
+x_{1}  \\
+x_{2}  \\
+\vdots  \\
+x_{m} \\
+\end{bmatrix}
+\bigg ) 
+=
+\begin{bmatrix}
+y_{1}  \\
+y_{2}  \\
+\vdots  \\
+y_{n} \\
+\end{bmatrix}
+$$
+
+$$
+f \bigg (
+\begin{bmatrix}
+y_{1}  \\
+y_{2}  \\
+\vdots  \\
+y_{n} \\
+\end{bmatrix}
+\bigg ) 
+= z
+$$
+
+
+$$
+\frac{\mathrm{d} z}{ \mathrm{d} X } = \frac{\mathrm{d} z}{ \mathrm{d} Y } \frac{\mathrm{d} Y}{ \mathrm{d}X }
+$$
+
+$$
+\frac{\mathrm{d} z}{ \mathrm{d} Y } =
+
+\begin{bmatrix}
+\frac{\partial z}{\partial y_{1}}  \\
+\frac{\partial z}{\partial y_{2}}  \\
+\vdots  \\
+\frac{\partial z}{\partial y_{n}} \\
+\end{bmatrix}
+$$
+
+$$
+\frac{\mathrm{d} Y}{ \mathrm{d} X } =
+
+\begin{bmatrix}
+\frac{\partial Y}{\partial x_{1}}  &
+\frac{\partial Y}{\partial x_{2}}  &
+\cdots  
+\frac{\partial Y}{\partial x_{m}} &
+\end{bmatrix} 
+=
+
+\begin{bmatrix}
+\frac{\partial y_1}{\partial x_{1}} & \frac{\partial y_2}{\partial x_{1}} & \cdots & \frac{\partial y_n}{\partial x_{1}} \\
+
+\frac{\partial y_1}{\partial x_{2}} & \frac{\partial y_2}{\partial x_{2}} & \cdots & \frac{\partial y_n}{\partial x_{2}} \\
+
+\vdots  & \vdots & \ddots & \vdots\\
+
+\frac{\partial y_1}{\partial x_{m}} & \frac{\partial y_2}{\partial x_{m}} & \cdots & \frac{\partial y_n}{\partial x_{m}} \\
+
+\end{bmatrix}
+$$
+
+(1,n)(n,m)->(1,m)
+
+(m,n)(n,1)->(m,1)
+
+$$
+\frac{\partial z}{\partial x_i} = \sum^n_{j=1} \frac{\partial z}{\partial y_j} \frac{\partial y_j}{\partial x_i} , \ i = 1, 2, \cdots ,m
+$$
+
+
+
+
+映射是函数的推广，**雅可比是梯度的推广**
+
+> 梯度是偏导的向量，雅可比是梯度的向量
+>
+> 有些教材认为，实值函数对列向量求导的结果是**列向量**，有些教材认为上述结果需要再做一次转置，即梯度是**行向量**
+
+
+
+一个多元函数求偏导，每一元就得到一个偏导，n元偏导组成一个向量，这就是梯度。
+
+m个多元函数求偏导，每一函数得到一个梯度，m个梯度组成一个矩阵，这就是雅可比矩阵。
+
+
 
 
 
