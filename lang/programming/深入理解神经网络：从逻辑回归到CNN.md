@@ -401,8 +401,27 @@ $$
 
 
 $$
-A_{()} = \begin{pmatrix} \frac{\partial{f'_i(W, x_i)}}{\partial{w_1}} \\ \vdots \\ \frac{\partial{f'_i(W, x_i)}}{\partial{w_n}}  \end{pmatrix}
+A_{(n \times m)} = \begin{pmatrix} 
+\nabla y_1(X)^T \\
+
+\vdots \\
+
+\nabla y_n(X)^T \\
+\end{pmatrix}
+
+= 
+
+\begin{pmatrix} 
+\frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_m}\\
+
+
+\vdots & \ddots & \vdots \\ 
+
+\frac{\partial y_n}{\partial x_1} & \cdots & \frac{\partial y_n}{\partial x_m}\\
+
+\end{pmatrix}
 $$
+
 
 
 
