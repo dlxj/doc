@@ -397,6 +397,28 @@ $$
 
 [微积分本质](https://zhuanlan.zhihu.com/p/141064528)
 
+ 
+
+一个函数的变换是线性的是什么意思?
+
+> Additivity: $L(\overrightarrow{v}+\overrightarrow{w}) = L(\overrightarrow{v})+L(\overrightarrow{w})$
+> Scaling: $L(c \overrightarrow{v}) = c L(\overrightarrow{v})$
+
+
+
+#### 求导就是一种线性运算，它将一个函数变成另一个函数
+
+他符合以上两个条件
+
+<img src="math summary.assets/image-20200718160301631.png" alt="image-20200718160301631" style="zoom:67%;" />
+
+
+
+
+
+**梯度属于向量分析（或向量微積分）的范畴**
+
+
 
 
 
@@ -422,7 +444,10 @@ A_{(n \times m)} = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-
+ 
+$$
+g:\mathbb{R}^m \rightarrow \mathbb{R}^n
+$$
 
 
 $$
