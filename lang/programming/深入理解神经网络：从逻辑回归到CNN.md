@@ -381,6 +381,10 @@ $$
 
 
 
+[详解Pytorch 自动微分里的（vector-Jacobian product）](https://zhuanlan.zhihu.com/p/65609544)
+
+[带你少走弯路：强烈推荐的Pytorch快速入门资料和翻译](https://zhuanlan.zhihu.com/p/87263048)
+
 [AI算法工程师手册](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/2_bp.html)
 
 [向量、矩阵和张量的导数](https://zhuanlan.zhihu.com/p/29502026)
@@ -518,6 +522,114 @@ $$
 Jacobi(f \oplus g)_{1,j} = \frac{\partial z}{\partial x_j}  = \sum^n_{s=1} \frac{\partial z}{\partial y_s} \frac{\partial y_s}{\partial x_j} , \ for \ j \in 1 ... m
 $$
 
+​	
+
+
+$$
+a^1_{i,*}:\mathbb{R}^{(1 \times n)} \rightarrow \mathbb{R}^{1 \times m}, for \ i \in 1...n
+$$
+
+$$
+A_{a^1_{i,*}} = \begin{pmatrix} 
+\nabla a^1_{i,1}(W^1_{i,*})^T \\
+
+\vdots \\
+
+\nabla a^1_{i,m}(W^1_{i,*})^T \\
+\end{pmatrix}
+
+=
+
+\begin{pmatrix} 
+\frac{\partial a^1_{i,1}}{\partial w_{i,1}} & \cdots & \frac{\partial a^1_{i,1}}{\partial w_{i,n}} \\
+
+
+\vdots & \ddots & \vdots \\ 
+
+\frac{\partial a^1_{i,m}}{\partial w_{i,1}} & \cdots & \frac{\partial a^1_{i,m}}{\partial w_{1,n}} \\
+
+\end{pmatrix}
+$$
+
+$$
+\begin{bmatrix}
+w^{1}_{1,1} & w^{1}_{1,2} & \cdots & w^{1}_{1,n}  \\
+w^{1}_{2,1} & w^{1}_{2,2} & \cdots & w^{1}_{2,n} \\
+\vdots & \vdots & \ddots & \vdots & \\
+w^{1}_{n,1} & w^{1}_{n,2} & \cdots & w^{1}_{n,n} \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+x^{0}_{1,1} & x^{0}_{1,2} & \cdots & x^{0}_{1,m}  \\
+x^{0}_{2,1} & x^{0}_{2,2} & \cdots & x^{0}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{0}_{n,1} & x^{0}_{n,2} & \cdots & x^{0}_{n,m} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b^{1}_{1,1} & b^{1}_{1,2} & \cdots & b^{1}_{1,m}  \\
+b^{1}_{2,1} & b^{1}_{2,2} & \cdots & b^{1}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+b^{1}_{n,1} & b^{1}_{n,2} & \cdots & b^{1}_{n,m} \\
+\end{bmatrix}
+
+\\
+
+= 
+
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,m}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,m} \\
+\end{bmatrix}
+$$
+
+$$
+A_{x^1_{i,*}} = \begin{pmatrix} 
+\nabla x^1_{i,1}(a^1_{i,*})^T \\
+
+\vdots \\
+
+\nabla x ^1_{i,m}(a^1_{i,*})^T \\
+\end{pmatrix}
+
+=
+
+\begin{pmatrix} 
+\frac{\partial x^1_{i,1}}{\partial a^1_{i,1}} \\
+
+
+\vdots \\
+
+\frac{\partial x^1_{i,m}}{\partial a^1_{i,1}} \\
+
+\end{pmatrix}
+$$
+
+$$
+g \bigg (
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,m}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,m} \\
+\end{bmatrix}
+\bigg )
+
+= 
+
+\begin{bmatrix}
+x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,m}  \\
+x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{1}_{n,1} & x^{1}_{n,2} & \cdots & x^{1}_{n,m} \\
+\end{bmatrix}
+$$
 
 
 
