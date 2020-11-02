@@ -414,16 +414,18 @@ $$
 
 
 
+**将曲的函数图像掰直**，掰直的图像就是导函数
+
+
+
 
 
 **梯度属于向量分析（或向量微積分）的范畴**
 
 
 
-
-
 $$
-A_{(n \times m)} = \begin{pmatrix} 
+A_{g} = \begin{pmatrix} 
 \nabla y_1(X)^T \\
 
 \vdots \\
@@ -444,7 +446,7 @@ A_{(n \times m)} = \begin{pmatrix}
 \end{pmatrix}
 $$
 
- 
+
 $$
 g:\mathbb{R}^m \rightarrow \mathbb{R}^n
 $$
@@ -468,6 +470,21 @@ y_{n} \\
 \end{bmatrix}
 $$
 
+
+
+
+$$
+A_{f} = \nabla z(Y)^T =
+
+\begin{pmatrix} 
+\frac{\partial z}{\partial y_1} & \cdots & \frac{\partial z}{\partial y_n}\\
+\end{pmatrix}
+$$
+
+$$
+f:\mathbb{R}^n \rightarrow \mathbb{R}
+$$
+
 $$
 f \bigg (
 \begin{bmatrix}
@@ -479,6 +496,32 @@ y_{n} \\
 \bigg ) 
 = z
 $$
+
+
+$$
+Jacobi(f \oplus g)_{(1 \times m)} = A_f \cdot A_g = \begin{pmatrix} 
+\frac{\partial z}{\partial y_1} & \cdots & \frac{\partial z}{\partial y_n}\\
+\end{pmatrix}
+
+\begin{pmatrix} 
+\frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_m}\\
+
+
+\vdots & \ddots & \vdots \\ 
+
+\frac{\partial y_n}{\partial x_1} & \cdots & \frac{\partial y_n}{\partial x_m}\\
+
+\end{pmatrix}
+$$
+
+$$
+Jacobi(f \oplus g)_{1,j} = \frac{\partial z}{\partial x_j}  = \sum^n_{s=1} \frac{\partial z}{\partial y_s} \frac{\partial y_s}{\partial x_j} , \ for \ j \in 1 ... m
+$$
+
+
+
+
+
 
 
 $$
