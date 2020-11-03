@@ -1,5 +1,19 @@
 
 
+[pytorch-tutorial-for-deep-learning-lovers](https://www.kaggle.com/kanncaa1/pytorch-tutorial-for-deep-learning-lovers)
+
+
+
+[Yann LeCun 深度学习（Pytorch）2020 春季课程【官方字幕】](https://www.bilibili.com/video/av796677275/)
+
+> [讲义](https://atcold.github.io/pytorch-Deep-Learning/)
+
+[全-中英字幕-吴恩达 深度学习_Deep Learning_Pytorch特别制作版](https://www.bilibili.com/video/BV1BZ4y1M7hF/)
+
+> [代码](https://gitee.com/inkCode/pytorch_tutorial)
+
+
+
 Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改变另一个
 
 > a = torch.ones(5)
@@ -22,6 +36,8 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 
 更改Tensor的**requires_grad 自动求导标志**
 
+>  **requires_grad  默认是False, 它有传递性**
+>
 > a.requires_grad_(True)
 >
 > print(a.requires_grad)
@@ -55,6 +71,10 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 > ​       ], np.float)
 >
 > )
+>
+> X.requires_grad = True # **requires_grad  默认是False, 它有传递性**
+>
+> 
 >
 > W = torch.tensor(
 >
