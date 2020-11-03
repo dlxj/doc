@@ -62,6 +62,10 @@
 
 ### 自动求导
 
+> [Pytorch中的vector-Jacobian product](https://juejin.im/post/6844904009841524750)
+>
+> [PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)
+>
 > [PyTorch 101, Part 1: Understanding Graphs, Automatic Differentiation and Autograd](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
 >
 > [pytorch自动求导Autograd系列教程](https://blog.csdn.net/qq_27825451/article/details/89393332)
@@ -73,6 +77,8 @@
 > 作为参数传递给`backward()` 函数
 >
 > Y计算标量损失l。假设向量v恰好是标量损失l关于向量Y的梯度
+>
+> PyTorch从不显式地构造整个雅可比矩阵。直接计算JVP (Jacobian vector product)通常更简单、更有效
 
 
 
