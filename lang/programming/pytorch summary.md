@@ -16,6 +16,12 @@
 
 
 
+## 张量
+
+> x = torch.full((2,3), 4, requires_grad=True)  # (2*3) 初值4
+
+
+
 ## 导数
 
 
@@ -54,9 +60,21 @@
 
 
 
-自动求导
+### 自动求导
 
+> [PyTorch 101, Part 1: Understanding Graphs, Automatic Differentiation and Autograd](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
+>
 > [pytorch自动求导Autograd系列教程](https://blog.csdn.net/qq_27825451/article/details/89393332)
+
+
+
+####  grad_tensor 梯度张量
+
+> 作为参数传递给`backward()` 函数
+>
+> Y计算标量损失l。假设向量v恰好是标量损失l关于向量Y的梯度
+
+
 
 
 
