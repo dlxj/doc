@@ -14,6 +14,31 @@ Things Happen for A Reason
 
 
 
+[PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)
+
+> [Linear Regression with PyTorch](https://jovian.ai/aakashns/02-linear-regression)
+
+李宏毅2020机器学习深度学习(完整版)国语
+
+> [课程主页](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
+>
+> [B站视频](https://www.bilibili.com/video/av94519857/)
+
+
+[Pytorch autograd,backward详解](https://zhuanlan.zhihu.com/p/83172023)
+
+[pytorch-tutorial-for-deep-learning-lovers](https://www.kaggle.com/kanncaa1/pytorch-tutorial-for-deep-learning-lovers)
+
+[Yann LeCun 深度学习（Pytorch）2020 春季课程【官方字幕】](https://www.bilibili.com/video/av796677275/)
+
+> [讲义](https://atcold.github.io/pytorch-Deep-Learning/)
+
+[全-中英字幕-吴恩达 深度学习_Deep Learning_Pytorch特别制作版](https://www.bilibili.com/video/BV1BZ4y1M7hF/)
+
+> [代码](https://gitee.com/inkCode/pytorch_tutorial)
+
+
+
 **算子就是变换的别名，而变换又是函数的花俏说法。**
 
 

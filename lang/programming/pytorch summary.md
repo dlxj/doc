@@ -4,6 +4,15 @@
 
 > [Linear Regression with PyTorch](https://jovian.ai/aakashns/02-linear-regression)
 
+
+
+李宏毅2020机器学习深度学习(完整版)国语
+
+> [课程主页](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
+>
+> [B站视频](https://www.bilibili.com/video/av94519857/)
+
+
 [Pytorch autograd,backward详解](https://zhuanlan.zhihu.com/p/83172023)
 
 [pytorch-tutorial-for-deep-learning-lovers](https://www.kaggle.com/kanncaa1/pytorch-tutorial-for-deep-learning-lovers)
