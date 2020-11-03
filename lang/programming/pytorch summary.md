@@ -111,13 +111,15 @@
 
 ####  grad_tensor 梯度张量
 
+> ```python
+> A.backward( torch.ones_like(A) )
+> ```
+>
 > 作为参数传递给`backward()` 函数
 >
 > Y计算标量损失l。假设向量v恰好是标量损失l关于向量Y的梯度
 >
 > PyTorch从不显式地构造整个雅可比矩阵。直接计算JVP (Jacobian vector product)通常更简单、更有效
-
-
 
 
 
@@ -166,6 +168,11 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 
 使用**torch.no_grad()包装代码块**
 
+> ```python
+> with torch.no_grad():
+> 	errs = torch.sum( torch.abs(E) )
+> ```
+>
 > 显示的指明不需要梯度，既使变量拥有requires_grad = True 属性
 
 
