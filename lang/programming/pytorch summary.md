@@ -1,5 +1,9 @@
 
 
+[PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)
+
+> [Linear Regression with PyTorch](https://jovian.ai/aakashns/02-linear-regression)
+
 [Pytorch autograd,backward详解](https://zhuanlan.zhihu.com/p/83172023)
 
 [pytorch-tutorial-for-deep-learning-lovers](https://www.kaggle.com/kanncaa1/pytorch-tutorial-for-deep-learning-lovers)
@@ -19,6 +23,30 @@
 ## 张量
 
 > x = torch.full((2,3), 4, requires_grad=True)  # (2*3) 初值4
+
+
+
+### 矩阵乘@和转置t
+
+> ```python
+> def model(x):
+>     return x @ w.t() + b
+> ```
+>
+> `@` represents matrix multiplication in PyTorch, and the `.t` method returns the transpose of a tensor.
+
+
+
+## 损失函数
+
+> ```
+> # MSE loss
+> def mse(t1, t2):
+>     diff = t1 - t2
+>     return torch.sum(diff * diff) / diff.numel()
+> ```
+>
+> `torch.sum` returns the sum of all the elements in a tensor, and the `.numel` method returns the number of elements in a tensor. Let's compute the mean squared error for the current predictions of our model.
 
 
 
