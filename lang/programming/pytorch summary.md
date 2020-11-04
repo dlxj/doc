@@ -359,9 +359,23 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 
 
 
+# Coursera.org
+
+## IBM 
+
+[Deep Neural Networks with PyTorch](https://www.coursera.org/learn/deep-neural-networks-with-pytorch/home/welcome)
+
+[第 2 周](https://www.coursera.org/learn/deep-neural-networks-with-pytorch/home/week/2)
+
+<img src="pytorch summary.assets/image-20201104174215977.png" alt="image-20201104174215977" style="zoom:50%;" />
 
 
 
+<img src="pytorch summary.assets/image-20201104174752047.png" alt="image-20201104174752047" style="zoom:50%;" />
+
+
+
+<img src="pytorch summary.assets/image-20201104175236699.png" alt="image-20201104175236699" style="zoom:50%;" />
 
 ```python
 
