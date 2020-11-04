@@ -11,7 +11,8 @@
 > [课程主页](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 >
 > [B站视频](https://www.bilibili.com/video/av94519857/)
-
+>
+> [PyTorch_Introduction.slides](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML2020/PyTorch_Introduction.slides.html#/)
 
 [Pytorch autograd,backward详解](https://zhuanlan.zhihu.com/p/83172023)
 
@@ -29,9 +30,69 @@
 
 
 
+## 线性回归 [u](https://jovian.ai/aakashns/02-linear-regression)
+
+### 要点：更新仅重时不要跟踪梯度
+
+> ```python
+> with torch.no_grad():
+> ```
+
+### 要点：梯度用完后置0再重新算
+
+> ```python
+> .grad.zero_()
+> ```
+
+
+
+> \# 前向传播, @ 是矩阵乘
+>
+> def model(x):
+>
+>   return x @ w.t() + b
+>
+> \# 均方误差损失函数 MSE loss 
+>
+> def mse(t1, t2):
+>
+>   diff = t1 - t2
+>
+>   return torch.sum(diff * diff) / diff.numel()
+>
+> \# Train for 100 epochs
+>
+> for i in range(10000):
+>
+>   preds = model(inputs)
+>
+>   print(preds)
+>
+>   print(targets)
+>
+>   loss = mse(preds, targets)
+>
+>   loss.backward()
+>
+>   **with torch.no_grad()**:
+>
+> ​    w -= w.grad * 1e-5
+>
+> ​    b -= b.grad * 1e-5
+>
+> ​    **w.grad.zero_()**
+>
+> ​    **b.grad.zero_()**
+
+
+
+
+
 ## 张量
 
 > x = torch.full((2,3), 4, requires_grad=True)  # (2*3) 初值4
+>
+> inputs = torch.from_numpy(inputs)
 
 
 
