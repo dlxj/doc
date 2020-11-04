@@ -86,6 +86,43 @@
 
 
 
+## 提前退出
+
+```python
+with torch.no_grad():
+	errs = torch.sum( torch.abs(E) )
+
+if errs < 0.05:
+	print(f'stop at {k}')
+    print("Weight: ")
+    print(W)
+    break
+```
+
+
+
+## 线性模型
+> **自动生成并初始化权重和偏置**
+>
+> ```python
+> """
+> y = x A^T + b --> x @ A.t() + b
+> nn.Linear
+>   第一参：x 一条样本的维数(行向量)
+>   第二参：y 一条样本的维数(行向量)
+> """
+> model = nn.Linear(3, 2)  # 输入3 维(行向量)，输出2 维(行向量)
+> print(model.weight)
+> print(model.bias)
+> list(model.parameters()) # 返回模型中的所有权重和偏置
+> ```
+
+
+
+计算构建了计算图，输出结果带有grad_fn，否则没有
+
+t1.sum().detach() # 和原来的计算图分离
+
 
 
 ## 张量
@@ -273,6 +310,169 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 > A = torch.matmul( X, W )
 
 
+
+
+
+
+
+```python
+
+# https://jovian.ai/aakashns/02-linear-regression
+
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import TensorDataset
+from torch.utils.data import DataLoader
+
+class hardway():
+    # 前向传播, @ 是矩阵乘
+    def model(self, x, w, b):
+        return x @ w.t() + b
+
+    # 均方误差损失函数 MSE loss 
+    def mse(self, t1, t2):
+        diff = t1 - t2
+        return torch.sum(diff * diff) / diff.numel()
+
+    def dosomething(self):
+        
+        model = self.model
+        mse = self.mse
+
+        # Input (temp, rainfall, humidity)
+        inputs = np.array([
+                   [73, 67, 43], 
+                   [91, 88, 64], 
+                   [87, 134, 58], 
+                   [102, 43, 37], 
+                   [69, 96, 70]], dtype='float32')
+        #(5 * 3)
+
+        # Targets (apples, oranges)
+        targets = np.array([[56, 70], 
+                    [81, 101], 
+                    [119, 133], 
+                    [22, 37], 
+                    [103, 119]], dtype='float32')
+        #(5 * 2)
+
+        # Convert inputs and targets to tensors
+        inputs = torch.from_numpy(inputs)
+        targets = torch.from_numpy(targets)
+
+        # Weights and biases
+        w = torch.randn(2, 3, requires_grad=True)
+        b = torch.randn(2, requires_grad=True)
+        print(w)
+        print(b)
+
+        # Train for 100 epochs
+        for i in range(10000):
+            preds = model(inputs, w, b)
+            print(preds)
+            print(targets)
+            loss = mse(preds, targets)
+            loss.backward()
+            with torch.no_grad():
+                w -= w.grad * 1e-5
+                b -= b.grad * 1e-5
+                w.grad.zero_()
+                b.grad.zero_()
+
+class easyway():
+    def dosomething(self):
+
+        # Define loss function
+        loss_fn = F.mse_loss
+
+        # Input (temp, rainfall, humidity)
+        inputs = np.array([[73, 67, 43], [91, 88, 64], [87, 134, 58], 
+                   [102, 43, 37], [69, 96, 70], [73, 67, 43], 
+                   [91, 88, 64], [87, 134, 58], [102, 43, 37], 
+                   [69, 96, 70], [73, 67, 43], [91, 88, 64], 
+                   [87, 134, 58], [102, 43, 37], [69, 96, 70]], 
+                  dtype='float32')
+
+        # Targets (apples, oranges)
+        targets = np.array([[56, 70], [81, 101], [119, 133], 
+                    [22, 37], [103, 119], [56, 70], 
+                    [81, 101], [119, 133], [22, 37], 
+                    [103, 119], [56, 70], [81, 101], 
+                    [119, 133], [22, 37], [103, 119]], 
+                   dtype='float32')
+
+        inputs = torch.from_numpy(inputs)
+        targets = torch.from_numpy(targets)
+
+        # Define dataset
+        train_ds = TensorDataset(inputs, targets)  # 生成训练样本  (  tensor(输入), tensor(输出)  )
+        print( train_ds[0:3] )  # 查看前三条样本
+
+        # Define data loader
+        batch_size = 5
+        train_dl = DataLoader(train_ds, batch_size, shuffle=True)  # 样本分组(batches)，5 条样本一组 # shuffle 重新洗牌，既乱序
+
+        for xb, yb in train_dl:
+            print(xb)
+            print(yb)
+            break
+        
+        # Define model
+        """
+        y = x A^T + b
+        nn.Linear
+            第一参：x 一条样本的维数(行向量)
+            第二参：y 一条样本的维数(行向量)  
+        """
+        model = nn.Linear(3, 2)  # 自动生成并初始化权重和偏置  # 输入3 维(行向量)，输出2 维(行向量)
+        print(model.weight)
+        print(model.bias)
+
+        # Parameters
+        list(model.parameters())  # 返回模型中的所有权重和偏置
+
+        opt = torch.optim.SGD(model.parameters(), lr=1e-5)
+
+        num_epochs = 5000
+
+        # Repeat for given number of epochs
+        for epoch in range(num_epochs):
+        
+            # Train with batches of data
+            for xb,yb in train_dl:
+            
+                # 1. Generate predictions
+                pred = model(xb)
+            
+                # 2. Calculate loss
+                loss = loss_fn(pred, yb)
+            
+                # 3. Compute gradients
+                loss.backward()
+            
+                # 4. Update parameters using gradients
+                opt.step()
+            
+                # 5. Reset the gradients to zero
+                opt.zero_grad()
+        
+            # Print the progress
+            if (epoch+1) % 10 == 0:
+                print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, loss.item()))
+
+
+if __name__ == "__main__":
+
+    hard = hardway()
+    #hard.dosomething()
+
+    easy = easyway()
+    easy.dosomething()
+
+    print('hi,,,')
+```
 
 
 
