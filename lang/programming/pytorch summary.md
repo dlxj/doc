@@ -10,9 +10,13 @@
 
 > [课程主页](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 >
+> > [第一课作业](https://mrsuncodes.github.io/2020/03/15/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B8%80%E8%AF%BE%E4%BD%9C%E4%B8%9A/#more)
+>
 > [B站视频](https://www.bilibili.com/video/av94519857/)
 >
 > [PyTorch_Introduction.slides](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML2020/PyTorch_Introduction.slides.html#/)
+
+
 
 [Pytorch autograd,backward详解](https://zhuanlan.zhihu.com/p/83172023)
 
@@ -106,10 +110,11 @@ if errs < 0.05:
 >
 > ```python
 > """
+> 定义线性模型，自动生成并初始化所需权重和偏置
 > y = x A^T + b --> x @ A.t() + b
 > nn.Linear
->   第一参：x 一条样本的维数(行向量)
->   第二参：y 一条样本的维数(行向量)
+>    第一参：一条输入样本的维数(行向量)
+>    第二参：一条输出样本的维数(行向量)
 > """
 > model = nn.Linear(3, 2)  # 输入3 维(行向量)，输出2 维(行向量)
 > print(model.weight)
@@ -123,6 +128,8 @@ if errs < 0.05:
 
 t1.sum().detach() # 和原来的计算图分离
 
+loss_fn = F.cross_entropy
+
 
 
 ## 张量
@@ -130,6 +137,38 @@ t1.sum().detach() # 和原来的计算图分离
 > x = torch.full((2,3), 4, requires_grad=True)  # (2*3) 初值4
 >
 > inputs = torch.from_numpy(inputs)
+
+>   X = np.array([
+>
+> ​      [0,0],
+>
+> ​      [0,1],
+>
+> ​      [1,0],
+>
+> ​      [1,1]
+>
+> ​    ], dtype=float)
+>
+> 
+>
+>   Y = np.array([
+>
+> ​      [0],
+>
+> ​      [1],
+>
+> ​      [1],
+>
+> ​      [0]
+>
+> ​    ], dtype=float)
+>
+>   X = **torch.from_numpy**(X)
+>
+>   Y = torch.from_numpy(Y)
+
+
 
 
 
@@ -195,7 +234,7 @@ t1.sum().detach() # 和原来的计算图分离
 
 
 
-### 自动求导
+### 自动求导 [u](https://www.jianshu.com/p/aa7e9f65fa3e)
 
 > [Pytorch中的vector-Jacobian product](https://juejin.im/post/6844904009841524750)
 >
@@ -204,6 +243,15 @@ t1.sum().detach() # 和原来的计算图分离
 > [PyTorch 101, Part 1: Understanding Graphs, Automatic Differentiation and Autograd](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
 >
 > [pytorch自动求导Autograd系列教程](https://blog.csdn.net/qq_27825451/article/details/89393332)
+
+
+
+> `torch.autograd.backward(tensors, grad_tensors=None, retain_graph=None, create_graph=False, grad_variables=None)`参数介绍如下：
+>
+> - **tensors**(tensor序列) — 需要被求导的张量
+> - **grad_tensors**(tensor序列或None) — Jacobian矢量积中的矢量，也可理解为链式法则的中间变量的梯度
+> - **create_graph**(bool) — 默认为false，否则会对反向传播过程再次构建计算图，可通过backward of backward实现求高阶函数
+>    `backward()`函数中的grad_tesnors参数size需要与根节点的size相同。当根节点为标量时，则无需说明该参数，例如对`out`进行反向求导
 
 
 
@@ -475,6 +523,85 @@ if __name__ == "__main__":
 ```
 
 
+
+```python
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import TensorDataset
+from torch.utils.data import DataLoader
+
+def OR():
+    X = torch.tensor([
+            [0,0],
+            [0,1],
+            [1,0],
+            [1,1]
+        ], dtype=torch.float32)
+
+    Y = torch.tensor([
+            [0],
+            [1],
+            [1],
+            [1]
+        ], dtype=torch.float32)
+
+    """
+    定义线性模型，自动生成并初始化所需权重和偏置
+    y = x w^T + b --> x @ w.t() + b
+    nn.Linear
+        第一参：一条输入样本的维数(行向量)
+        第二参：一条输出样本的维数(行向量)
+    """
+    model = nn.Linear(2, 1)  # X 第一行维度是2， Y 第一行的维度是1
+    print(model.weight)
+    print(model.bias)
+    list(model.parameters()) # 返回模型中的所有权重和偏置
+
+    # Define dataset
+    train_ds = TensorDataset(X, Y)  # 生成训练样本  (  tensor(输入), tensor(输出)  )
+    print( train_ds[0:2] )          # 查看前两条样本
+
+    # Define data loader
+    batch_size = 2
+    train_dl = DataLoader(train_ds, batch_size, shuffle=True)  # 样本分组(batches)，2 条样本一组 # shuffle 重新洗牌，既乱序
+
+    opt = torch.optim.SGD(model.parameters(), lr=1e-5)  # 定义优化方法：随机梯度下降
+
+    # Define loss function
+    loss_fn = F.mse_loss  # 定义损失函数：均方误差损失函数
+
+    num_epochs = 10000
+
+    # Repeat for given number of epochs
+    for epoch in range(num_epochs):
+        
+        # Train with batches of data
+        for xb,yb in train_dl:
+            
+            # 1. Generate predictions
+            pred = model(xb)
+            
+            # 2. Calculate loss
+            loss = loss_fn(pred, yb)
+            
+            # 3. Compute gradients
+            loss.backward()
+            
+            # 4. Update parameters using gradients
+            opt.step()
+            
+            # 5. Reset the gradients to zero
+            opt.zero_grad()
+        
+        # Print the progress
+        if (epoch+1) % 10 == 0:
+            print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, loss.item()))
+
+if __name__ == "__main__":
+    OR()
+```
 
 
 
