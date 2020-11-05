@@ -2,7 +2,7 @@
 
 
 
-
+**How Pytorch Backward() function works** [u](https://medium.com/@mustafaghali11/how-pytorch-backward-function-works-55669b3b7c62)
 
 CSC321 Lecture 10: Automatic Differentiation [u](https://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/slides/lec10.pdf)
 
