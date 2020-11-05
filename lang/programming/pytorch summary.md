@@ -1,5 +1,19 @@
 
 
+
+
+官方电子书
+
+> [Deep Learning With Pytorch by Eli Stevens, Luca Antiga, Thomas Viehmann (z-lib.org)]()
+
+MatrixSlow 手写框架
+
+> https://gitee.com/zackchen/MatrixSlow
+
+
+
+[动手学深度学习Pytorch版](https://github.com/ShusenTang/Dive-into-DL-PyTorch)
+
 [PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)
 
 > [Linear Regression with PyTorch](https://jovian.ai/aakashns/02-linear-regression)
@@ -618,6 +632,84 @@ if __name__ == "__main__":
 ```
 
 
+
+## 用pytorch实现吴恩达老师深度学习课程课后编程作业 [u](https://blog.csdn.net/weixin_44581161/article/details/106697267)
+
+```python
+import torch.nn as nn
+import torch
+import numpy as np
+#我们随机创建一组训练数据，100个具有500维特征的数据
+M=100
+features=500
+train_x = torch.randn(M, features)
+train_y = torch.randint(0, 2, [M,1]).float()         #数据集统一是float类型
+
+#建立网络
+in_put=features
+Hidden1=10
+Hidden2=5
+out_put=1         #这里是一个输入层，两个隐藏层和一个输出层。
+
+model = torch.nn.Sequential(
+     torch.nn.Linear(in_put, Hidden1, bias=True),
+     torch.nn.Sigmoid(),
+     torch.nn.Linear(Hidden1, Hidden2, bias=True),
+     torch.nn.ReLU(),
+     torch.nn.Linear(Hidden2, out_put, bias=True),
+     torch.nn.Sigmoid(),
+)
+
+
+#模型建好以后要定义损失函数和模型优化方法，torch包含多种方法，可自行百度
+iter_n=1000       #迭代次数
+learn_rate=1e-2
+loss_fn = nn.MSELoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learn_rate)
+
+#开始优化
+for i in range(iter_n):
+    y_pred=model(train_x)            #一次训练后得到的结果
+    loss=loss_fn(y_pred,train_y)
+    print(i,loss.item())
+    optimizer.zero_grad()            #下面这三行可理解为固定搭配，就是更新w，b的值的
+    loss.backward()
+    optimizer.step()
+```
+
+```python
+参数初始化
+#model[0].weight是第0层的w参数，其他层可同样的方法初始化参数，初始化在建好model后使用，怎样建model参考上一篇。
+# 0-1之间均匀分布
+torch.nn.init.uniform_(model[0].weight, a=0, b=1)
+# 初始化为常数0.5
+torch.nn.init.constant_(model[0].weight, 0.5)
+# 正态分布
+torch.nn.init.normal_(model[0].weight)
+
+
+正则化
+正则化是用来减小过拟合的方法，这里给出L2正则化方法和dropout方法
+L2正则化
+
+optimizer = torch.optim.Adam(model.parameters(), lr=learn_rate,weight_decay=0.01)
+#这里的weight_decay=0.01相当于λ参数。
+1
+2
+dropout方法
+
+model=torch.nn.Sequential(
+    torch.nn.Linear(in_put,Hidden1,bias=True),
+    torch.nn.ReLU(),
+    torch.nn.Dropout(0.2),
+    torch.nn.Linear(Hidden1,Hidden2,bias=True),
+    torch.nn.ReLU(),
+    torch.nn.Dropout(0.2),
+    torch.nn.Linear(Hidden2,out_put,bias=True),
+    torch.nn.Sigmoid(),
+)
+#在每层后边加上torch.nn.Dropout(0.2)，0.2是随机架空该层20%神经元。
+```
 
 
 
