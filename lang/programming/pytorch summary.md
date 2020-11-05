@@ -2,6 +2,10 @@
 
 
 
+
+
+CSC321 Lecture 10: Automatic Differentiation [u](https://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/slides/lec10.pdf)
+
 官方电子书
 
 > [Deep Learning With Pytorch by Eli Stevens, Luca Antiga, Thomas Viehmann (z-lib.org)]()
