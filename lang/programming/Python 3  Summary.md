@@ -362,6 +362,31 @@ def collectAllChildsOutline(tree):
 
 
 
+## 变长参数
+
+> *args 与 **kwargs 的区别，两者都是 python 中的可变参数：
+>
+> - *args 表示任何多个无名参数，它本质是一个 tuple
+> - **kwargs 表示关键字参数，它本质上是一个 dict
+>
+> 如果同时使用 *args 和 **kwargs 时，必须 *args 参数列要在 **kwargs 之前。
+>
+> ```python
+> >>> def fun(*args, **kwargs):
+> 	print('args=', args)
+> 	print('kwargs=', kwargs)
+> args= (1, 2, 3, 4)
+> kwargs= {'A': 'a', 'B': 'b', 'C': 'c', 'D': 'd'}
+> ```
+
+> a, b, *c = 0, 1, 2, 3  
+>
+> --> c  
+>
+> [2, 3]
+
+
+
 ## 当前函数名
 
 ```python

@@ -9,6 +9,11 @@
 MatrixSlow 手写框架
 
 > https://gitee.com/zackchen/MatrixSlow
+>
+> ```
+> pip install protobuf
+> pip install grpcio
+> ```
 
 
 
@@ -135,6 +140,24 @@ if errs < 0.05:
 > print(model.bias)
 > list(model.parameters()) # 返回模型中的所有权重和偏置
 > ```
+
+```python
+    seq_model = nn.Sequential( # 双隐层模型
+        nn.Linear(2, 2),       # 一输入，一隐层
+        nn.Sigmoid(),
+        nn.Linear(2, 1),       # 一隐层，一输出
+    )
+	
+    # seq_model = nn.Sequential(OrderedDict([
+    #     ('hidden_linear', nn.Linear(1, 8)),
+    #     ('hidden_activation', nn.Tanh()),
+    #     ('output_linear', nn.Linear(8, 1))
+    # ]))
+```
+
+
+
+
 
 
 
