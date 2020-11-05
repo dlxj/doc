@@ -150,6 +150,19 @@ GitHub\doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md
 
 
 
+```python
+import sys
+sys.path.append('../..')
+import jieba
+import std.seg.iSeg as iSeg
+
+print(iSeg.segment('苯巴比妥显效慢的主要原因是脂溶性较小'))
+```
+
+
+
+
+
 ### 同级目录直接用文件名导入
 
 

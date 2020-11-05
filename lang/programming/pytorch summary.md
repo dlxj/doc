@@ -243,6 +243,24 @@ loss_fn = F.cross_entropy
 
 
 
+### 清空梯度
+
+- 梯度计算时会一直自动累加所以需要清掉
+
+> 清空张量的梯度
+> ```python
+> if W.grad is not None:
+> 	W.grad.data.zero_()
+> ```
+>
+> 清空优化器的梯度
+>
+> ```python
+> opt.zero_grad()
+> ```
+
+
+
 ### leaf nodes (叶子节点)
 
 > **自定义产生**的tensor 是叶子节点
