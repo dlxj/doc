@@ -1,5 +1,13 @@
 
 
+**OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
+
+**Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
+
+DearPyGui 基础 [u](https://blog.csdn.net/hekaiyou/article/details/109386393)
+
+DearPyGui 实现队列模型仿真[u](https://www.zhihu.com/zvideo/1307375212308856832)
+
 
 
 **How Pytorch Backward() function works** [u](https://medium.com/@mustafaghali11/how-pytorch-backward-function-works-55669b3b7c62)

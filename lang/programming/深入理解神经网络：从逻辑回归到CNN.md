@@ -14,6 +14,28 @@ Things Happen for A Reason
 
 
 
+**强化学习** ，是一种通过教会智能体（agents）**反复试错从而完成任务的机器学习方法**。深度强化学习指的是强化学习和 深度学习 的结合。—— **OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
+
+
+
+选择 **PyTorch** 的重要原因是：**用它来实现各种新的想法特别容易**，特别是在 GPU 集群上。
+
+
+
+OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
+
+**Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
+
+DearPyGui 基础 [u](https://blog.csdn.net/hekaiyou/article/details/109386393)
+
+DearPyGui 实现队列模型仿真[u](https://www.zhihu.com/zvideo/1307375212308856832)
+
+
+
+**How Pytorch Backward() function works** [u
+
+
+
 [PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)
 
 > [Linear Regression with PyTorch](https://jovian.ai/aakashns/02-linear-regression)
