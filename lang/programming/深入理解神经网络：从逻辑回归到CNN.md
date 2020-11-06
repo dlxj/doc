@@ -22,9 +22,11 @@ Things Happen for A Reason
 
 
 
-OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
+**OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
 
 **Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
+
+**Open AI Five Dota2** [u](https://aistudio.baidu.com/aistudio/projectdetail/632270)
 
 DearPyGui 基础 [u](https://blog.csdn.net/hekaiyou/article/details/109386393)
 
@@ -32,7 +34,17 @@ DearPyGui 实现队列模型仿真[u](https://www.zhihu.com/zvideo/1307375212308
 
 
 
-**How Pytorch Backward() function works** [u
+**How Pytorch Backward() function works**
+
+
+
+### 优化方法
+
+> Diagonal Gaussian Likelihood 对角高斯似然
+
+
+
+
 
 
 
@@ -58,6 +70,16 @@ DearPyGui 实现队列模型仿真[u](https://www.zhihu.com/zvideo/1307375212308
 [全-中英字幕-吴恩达 深度学习_Deep Learning_Pytorch特别制作版](https://www.bilibili.com/video/BV1BZ4y1M7hF/)
 
 > [代码](https://gitee.com/inkCode/pytorch_tutorial)
+
+
+
+深度神经网络（Deep Neural Networks， 简称DNN）是深度学习的基础
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20201106102822241.png" alt="image-20201106102822241" style="zoom: 67%;" />
+
+
+
+
 
 
 

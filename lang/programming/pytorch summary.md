@@ -65,6 +65,26 @@ MatrixSlow 手写框架
 
 
 
+## Kaggle 练习
+
+
+
+> 1. Titanic（泰坦尼克之灾）
+> 中文教程： 逻辑回归应用之Kaggle泰坦尼克之灾
+> 英文教程：An Interactive Data Science Tutorial
+>
+> 2. House Prices: Advanced Regression Techniques（房价预测）
+> 中文教程：Kaggle竞赛 — 2017年房价预测
+> 英文教程：How to get to TOP 25% with Simple Model using sklearn
+>
+> 3. Digital Recognition（数字识别）
+> 中文教程：大数据竞赛平台—Kaggle 入门
+> 英文教程：Interactive Intro to Dimensionality Reduction
+
+
+
+
+
 ## 线性回归 [u](https://jovian.ai/aakashns/02-linear-regression)
 
 ### 要点：更新仅重时不要跟踪梯度
@@ -232,6 +252,14 @@ loss_fn = F.cross_entropy
 
 
 
+### torch.stack()
+
+> 低维张量堆叠起来（维度增加），生成高维空间中的高维张量
+>
+> > 就像把桌面上的书堆起来一样
+
+
+
 ## 损失函数
 
 > ```
@@ -252,6 +280,125 @@ loss_fn = F.cross_entropy
 计算某个Tensor的导数，需要设置其`.requires_grad`属性为`True`
 
 > 不需要算导数的就不设了吧？
+
+
+
+### Generalized Jacobian
+
+- 广义雅可比
+
+> There are two ways to compute the Generalized Jacobian that I'm aware of in PyTorch.
+>
+> ## Option 1
+>
+> Repeated application of back-propagation on each element of Y.
+>
+> ```python
+> import torch
+> 
+> def construct_jacobian(y, x, retain_graph=False):
+>     x_grads = []
+>     for idx, y_element in enumerate(y.flatten()):
+>         if x.grad is not None:
+>             x.grad.zero_()
+>         # if specified set retain_graph=False on last iteration to clean up
+>         y_element.backward(retain_graph=retain_graph or idx < y.numel() - 1)
+>         x_grads.append(x.grad.clone())
+>     return torch.stack(x_grads).reshape(*y.shape, *x.shape)
+> ```
+>
+> then the Jacobian for your test case may be computed using
+>
+> ```python
+> a = torch.tensor([1., 2., 3.])
+> b = torch.tensor([4., 5., 6.], requires_grad=True)
+> c = a * b
+> 
+> jacobian = construct_jacobian(c, b)
+> 
+> print(jacobian)
+> ```
+>
+> which results in
+>
+> ```py
+> tensor([[1., 0., 0.],
+>         [0., 2., 0.],
+>         [0., 0., 3.]])
+> ```
+>
+> ## Option 2
+>
+> In PyTorch 1.5.1 a new autograd.functional API was introduced, including the new function [`torch.autograd.functional.jacobian`](https://pytorch.org/docs/stable/autograd.html#torch.autograd.functional.jacobian). This produces the same results as the previous example but takes a function as an argument. Not demonstrated here, but you can provide the `jacobian` function a list of inputs if your function takes multiple independent tensors as input. In that case the `jacobian` would return a tuple containing the Generalized Jacobian for each of the input arguments.
+>
+> ```python
+> import torch
+> 
+> a = torch.tensor([1., 2., 3.])
+> 
+> def my_fun(b):
+>     return a * b
+> 
+> b = torch.tensor([4., 5., 6.], requires_grad=True)
+> 
+> jacobian = torch.autograd.functional.jacobian(my_fun, b)
+> 
+> print(jacobian)
+> ```
+>
+> which also produces
+>
+> ```py
+> tensor([[1., 0., 0.],
+>         [0., 2., 0.],
+>         [0., 0., 3.]])
+> ```
+>
+> ------
+>
+> As an aside, in some literature the term "gradient" is used to refer to the transpose of the Jacobian matrix. If that's what you're after then, assuming Y and X are vectors, you can simply use the code above and take the transpose of the resulting Jacobian matrix. If Y or X are higher order tensors (matrices or n-dimensional tensors) then I'm not aware of any literature that distinguishes between gradient and Generalized Jacobian. A natural way to represent such a "transpose" of the Generalized Jacobian would be to use `Tensor.permute` to turn it into a tensor of shape (n1, n2, ..., nD, m1, m2, ..., mE).
+>
+> ------
+>
+> As another aside, the concept of the Generalized Jacobian is rarely used in literature ([example usage](http://cs231n.stanford.edu/handouts/derivatives.pdf)) but is actually relatively useful in practice. This is because it basically works as a bookkeeping technique to keep track of the original dimensionality of Y and X. By this I mean you could just as easily take Y and X and flatten them into vectors, regardless of their original shape. Then the derivative would be a standard Jacobian matrix. Consequently this Jacobian matrix would be equivalent to a reshaped version of the Generalized Jacobian.
+
+
+
+**pytorch: compute vector-Jacobian product for vector function** [u]()
+
+You should not define tensor y by `torch.tensor()`, `torch.tensor()` is a tensor constructor, not an operator, so it is not trackable in the operation graph. You should use `torch.stack()` instead.
+
+Just change that line to:
+
+```py
+y = torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
+```
+
+the result of `x.grad` should be `tensor([ 6., 13., 19.])`
+
+> Thank you very much! Could you please elaborate on why the result is (6, 13, 19)? The Jacobian seems correct and if it multiplies on vector (3, 5, 7) I would expect result to be (11, 17, 14)... Probably I misunderstand how backward + grad are executed. 
+>
+> Got it! We should transpose Jacobian before multiplication. Then everything matches. 
+
+
+
+**CSC321 Lecture 10：Automatic Differentiation** [u]()
+
+<img src="pytorch summary.assets/image-20201106170230230.png" alt="image-20201106170230230" style="zoom:67%;" />
+
+
+
+**Pytorch most efficient Jacobian calculation** [u](https://stackoverflow.com/questions/56480578/pytorch-most-efficient-jacobian-hessian-calculation)
+
+
+
+Choose a Jacobian Method for an Implicit Solver [u](https://www.mathworks.com/help/simulink/ug/choose-a-jacobian-method-for-an-implicit-solver.html)
+
+> 稀疏方程组的“稀疏” 雅可比
+
+![image-20201106150018039](pytorch summary.assets/image-20201106150018039.png)
+
+<img src="pytorch summary.assets/image-20201106150102142.png" alt="image-20201106150102142" style="zoom: 67%;" />
 
 
 
