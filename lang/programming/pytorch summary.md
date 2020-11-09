@@ -283,6 +283,37 @@ loss_fn = F.cross_entropy
 
 
 
+### **vector-Jacobian product** 
+
+- $J \cdot v$ 中v 是人为的给各**微量变化比加权重**，调大调小变化影响力
+
+  > $J^T \cdot v$ 是列向量 [CSC321 Lecture 10：Automatic Differentiation]()
+  >
+  > $v^T \cdot J$ 是行向量
+
+ [u](https://stackoverflow.com/questions/64260561/pytorch-compute-vector-jacobian-product-for-vector-function)
+
+> ```python
+> def j3():
+>     x = torch.ones(3, requires_grad=True)
+> 
+>     y = torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
+> 
+>     v = torch.tensor([3, 5, 7])
+> 
+>     y.backward(v)
+>     print(x.grad)
+>     """
+>     The Jacobian seems correct and if it multiplies on vector (3, 5, 7) I would expect result to be (11, 17, 14).
+>     Got it! We should transpose Jacobian before multiplication. Then everything matches.
+>     """
+> 
+>     print( torch.matmul(  torch.tensor([ [2, 0, 0], [1, 2 , 0], [0, 1, 2] ]),  torch.tensor([ [3], [5], [7] ]) ) )       # J.t() @ v  结果是列向量
+>     print( torch.matmul(  torch.tensor([ [3], [5], [7] ]).t(), torch.tensor([ [2, 1, 0], [0, 2 , 1], [0, 0, 2] ])  ) )   # v.t() @ J  结果是行向量
+> ```
+
+
+
 ### Generalized Jacobian
 
 - 广义雅可比
@@ -364,7 +395,7 @@ loss_fn = F.cross_entropy
 
 
 
-**pytorch: compute vector-Jacobian product for vector function** [u]()
+**pytorch: compute vector-Jacobian product for vector function** [u](https://stackoverflow.com/questions/64260561/pytorch-compute-vector-jacobian-product-for-vector-function)
 
 You should not define tensor y by `torch.tensor()`, `torch.tensor()` is a tensor constructor, not an operator, so it is not trackable in the operation graph. You should use `torch.stack()` instead.
 
