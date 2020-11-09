@@ -277,6 +277,17 @@ loss_fn = F.cross_entropy
 
 
 
+### 计算雅可比
+
+```python
+x = torch.ones(3, requires_grad=True)
+def calc(x):
+	return torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
+jacobian = torch.autograd.functional.jacobian(calc, x)
+```
+
+
+
 计算某个Tensor的导数，需要设置其`.requires_grad`属性为`True`
 
 > 不需要算导数的就不设了吧？
@@ -285,7 +296,7 @@ loss_fn = F.cross_entropy
 
 ### **vector-Jacobian product** 
 
-- $J \cdot v$ 中v 是人为的给各**微量变化比加权重**，调大调小变化影响力
+- $J \cdot v$ 中的v 是人为的给各**微量变化比加权重**，调大调小变化影响力
 
   > $J^T \cdot v$ 是列向量 [CSC321 Lecture 10：Automatic Differentiation]()
   >

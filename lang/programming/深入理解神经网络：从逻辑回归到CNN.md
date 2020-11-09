@@ -472,6 +472,37 @@ $$
 
  
 
+##### Pytorch 计算雅可比
+
+```python
+x = torch.ones(3, requires_grad=True)
+def calc(x):
+	return torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
+jacobian = torch.autograd.functional.jacobian(calc, x)
+```
+
+
+
+##### vector-Jacobian product 
+
+- $J \cdot v$ 中的v 是人为的给各**微量变化比加权重**，调大调小变化影响力
+
+  > $J^T \cdot v$ 是列向量 [CSC321 Lecture 10：Automatic Differentiation]()
+  >
+  > $v^T \cdot J$ 是行向量
+
+```python
+x = torch.ones(3, requires_grad=True)
+y = torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
+v = torch.tensor([3, 5, 7])
+y.backward(v)
+print(x.grad)
+```
+
+
+
+
+
 一个函数的变换是线性的是什么意思?
 
 > Additivity: $L(\overrightarrow{v}+\overrightarrow{w}) = L(\overrightarrow{v})+L(\overrightarrow{w})$
