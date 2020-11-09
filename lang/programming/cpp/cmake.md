@@ -4,6 +4,13 @@
 
 
 
+```
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -glldb")
+```
+
+
+
 cmake --build . --target all
 
 
