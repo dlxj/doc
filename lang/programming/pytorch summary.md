@@ -1,8 +1,8 @@
 
 
-**OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
-
 **Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
+
+**OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
 
 DearPyGui 基础 [u](https://blog.csdn.net/hekaiyou/article/details/109386393)
 
@@ -34,6 +34,8 @@ MatrixSlow 手写框架
 [PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)
 
 > [Linear Regression with PyTorch](https://jovian.ai/aakashns/02-linear-regression)
+
+> conda list
 
 
 
@@ -203,41 +205,35 @@ loss_fn = F.cross_entropy
 
 ## 张量
 
-> x = torch.full((2,3), 4, requires_grad=True)  # (2*3) 初值4
->
-> inputs = torch.from_numpy(inputs)
+```python
+torch.rand()
+torch.randn()
+torch.normal()
+torch.linespace()
+```
 
->   X = np.array([
->
-> ​      [0,0],
->
-> ​      [0,1],
->
-> ​      [1,0],
->
-> ​      [1,1]
->
-> ​    ], dtype=float)
->
-> 
->
->   Y = np.array([
->
-> ​      [0],
->
-> ​      [1],
->
-> ​      [1],
->
-> ​      [0]
->
-> ​    ], dtype=float)
->
->   X = **torch.from_numpy**(X)
->
->   Y = torch.from_numpy(Y)
+```python
+x = torch.full((2,3), 4, requires_grad=True)  # (2*3) 初值4
+inputs = torch.from_numpy(inputs)
+```
 
+```python
+X = np.array([
+	[0,0],
+	[0,1],
+	[1,0],
+	[1,1]
+], dtype=float)
 
+Y = np.array([
+	[0],
+	[1],
+	[1],
+	[0]
+], dtype=float)
+X = torch.from_numpy(X)
+Y = torch.from_numpy(Y)
+```
 
 
 
@@ -277,7 +273,7 @@ loss_fn = F.cross_entropy
 
 
 
-### 计算雅可比
+### 计算雅可比 [u](https://pytorch.org/docs/stable/autograd.html)
 
 ```python
 x = torch.ones(3, requires_grad=True)
@@ -285,6 +281,17 @@ def calc(x):
 	return torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
 jacobian = torch.autograd.functional.jacobian(calc, x)
 ```
+
+```python
+def calc(w, x):
+	return w @ x
+j = torch.autograd.functional.jacobian( lambda w: calc(w, X), W ) 
+# 现在X是常量了，只算W的雅可比
+```
+
+
+
+
 
 
 
