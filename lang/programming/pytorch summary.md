@@ -29,6 +29,10 @@ MatrixSlow 手写框架
 
 
 
+
+
+**PyTorch 学习笔记汇总** [u](https://zhuanlan.zhihu.com/p/265394674)
+
 [动手学深度学习Pytorch版](https://github.com/ShusenTang/Dive-into-DL-PyTorch)
 
 [PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY&ab_channel=freeCodeCamp.org)

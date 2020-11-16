@@ -14,6 +14,34 @@ F11 切换全屏
 
 
 
+## Anaconda
+
+```bash
+conda create -n tensorflow_cpu pip python=3.6
+conda activate tensorflow_cpu
+conda install pytorch-cpu==1.0.0 torchvision-cpu==0.2.1 cpuonly -c pytorch
+pip install stanfordnlp
+pip install tensorflow==1.15
+conda deactivate
+conda info -e
+conda env remove -n tensorflow_cpu
+
+python -m spacy download en
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
+nlp = spacy.load("en_core_web_sm")
+```
+
+pip install tensorflow==1.12 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+```
+install_requires=['numpy', 'tensorflow-gpu==1.12', 'tensorflow-hub', "tqdm", "spacy", "jieba",
+                        "stanfordnlp"],
+```
+
+
+
+
+
 ## Source install on CentOS
 
 [How to Install Python 3.8 on CentOS 8](https://linuxize.com/post/how-to-install-python-3-8-on-centos-8/)
@@ -213,6 +241,39 @@ os.path.abspath(__file__)                   # current file
 os.path.dirname(os.path.abspath(__file__))  # current file directory
 os.path.dirname(os.path.abspath(__name__))  # ?? directory
 ```
+
+## File
+
+```python
+import re
+import glob
+
+# 语料生成器，并且初步预处理语料
+# 这个生成器例子的具体含义不重要，只需要知道它就是逐句地把文本yield出来就行了
+def text_generator():
+    txts = glob.glob('/root/thuctc/THUCNews/*/*.txt')
+    for txt in txts:
+        d = open(txt).read()
+        d = d.decode('utf-8').replace(u'\u3000', ' ').strip()
+        yield re.sub(u'[^\u4e00-\u9fa50-9a-zA-Z ]+', '\n', d)
+ # https://kexue.fm/archives/6920
+```
+
+```python
+def readstring(fname):
+    with open(fname, "r", encoding="utf-8") as fp:
+        data = fp.read()
+        fp.close()
+    return data
+
+def unchinese_remove(s):
+    return re.sub(r"[^\u4e00-\u9fa5]", "", s, flags=re.UNICODE)
+```
+
+
+
+
+
 
 ## package
 
@@ -471,6 +532,17 @@ lambda 返回true 的保留
 for i, name in enumerate(names):
     print(i, name)
 ```
+
+
+
+### slice
+
+```python
+To slice a list, there's a simple syntax: array[start:stop:step]
+You can omit any parameter. These are all valid: array[start:], array[:stop], array[::step]
+```
+
+
 
 
 
@@ -2793,6 +2865,71 @@ if __name__ == '__main__':
 
 
 
+## Panda
+
+
+
+### DataFrame 
+
+> "dict-like" Series **container** for **Series objects**
+>
+> - **是序列对象的容器，能够以字典方式存取数据**
+
+
+
+## Series [u](https://towardsdatascience.com/gaining-a-solid-understanding-of-pandas-series-893fb8f785aa)
+
+>  Series 可以是**数据集**的行，也可以是数据集的列 
+
+
+
+### 统计每个字出现次数
+
+```python
+counts = pd.Series(list(s)).value_counts() # 每个字出现多少次
+totol = counts.sum()  # 总共有多少个字
+```
+
+```python
+    ls = list(s)
+    for N in range(2, MAX_N+1):
+        print(f'正在生成{N}-Gram词...')
+        t.append([])
+        for i in range(0,len(ls)):
+            if i+N <= len(ls):
+                t[N-1].append( "".join(ls[i:N+i]) )  # array[start:stop:step]
+            
+        t[N-1] = pd.Series(t[N-1]).value_counts()  # 所有N-Gram 词出现次数
+        t[N-1] = t[N-1][t[N-1] > min_count]        # 最小次数筛选
+        tt = t[N-1][:]
+```
+
+
+
+
+
+```python
+revenue = pd.Series([1000, 1200, 1500, 800, 900], index=['2014', '2015', '2016', '2017', '2018'])
+```
+
+```python
+revenue.sort_values(ascending=False).index[0]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Matplotlib
@@ -3930,6 +4067,29 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 
 <img src="Python 3  Summary.assets/image-20200710172303832.png" alt="image-20200710172303832" style="zoom:50%;" />
+
+
+
+## Algo
+
+
+
+### N-Gram
+
+```python
+myre = {2:'(..)', 3:'(...)', 4:'(....)', 5:'(.....)', 6:'(......)', 7:'(.......)'}
+max_sep = 4 #候选词语的最大字数
+for m in range(2, max_sep+1):
+    print(u'正在生成%s字词...'%m)
+    t.append([])
+    for i in range(m): #生成所有可能的m字词
+        t[m-1] = t[m-1] + re.findall(myre[m], s[i:])
+
+```
+
+
+
+
 
 
 

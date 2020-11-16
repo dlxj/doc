@@ -1061,7 +1061,14 @@ haproxy或nginx的stream{}完成TCP中转，不要令你的IDC发现你的主机
       主订阅域名采用的是永久域名，国内用户可能会出现订阅不了的情况，如果订阅不了，可以尝试使用备用订阅域名
   节点信息被修改~俄罗斯 [VIP1] [**隧道中继**] 伯力
 
-  
+> FaceTheWorld的各种地址：
+国内访问主域名(国内CDN，访问速度优化)：https://ftw.jzfj.shop/
+备用国内访问域名(国内CDN，访问速度优化)：
+https://ftw.cywl.tech/
+自动换选优跳转页：https://tz.cywl.tech/
+永久主域名(已被GFW污染，请挂代理访问)：https://www.ftwssr.com/
+
+
 
 ## CloudFlare +  JSProxy
 
