@@ -613,6 +613,14 @@ math.log(len(arr[6])) # 可以近似认为后一项的值域是 [0, 10]
 
 
 
+```python
+index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
+```
+
+
+
+
+
 ### remove the value  first occur
 
 a.remove(1)
@@ -655,6 +663,16 @@ def listToDict(lst):
 ```
 X -= np.mean(X, axis=0)  # 减去均值
 ```
+
+
+
+### intersect
+
+```python
+index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
+```
+
+
 
 
 
