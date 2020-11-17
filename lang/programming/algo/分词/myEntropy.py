@@ -30,12 +30,12 @@ def unchinese_remove(s):
 s = readstring('data.txt')
 s = unchinese_remove(s)
 
-s = s[:10000]
+#s = s[:30000]
 
 MAX_N = 5 # N-Gram 词的最大长度
-min_count = 10 #录取词语最小出现次数
-min_sticky = 30 # 30 #录取词语最低支持度，1代表着随机组合  # 凝合程度 = 词概率 / 里面所有字随机拼在一起的概率
-min_s = 3 #录取词语最低信息熵，越大说明越有可能独立成词
+min_count = 10  # 最小出现次数
+min_sticky = 30 # 最小凝合程度，1代表着随机组合  # 凝合程度 = 词概率 / 词的两部分随机拼在一起的概率
+min_s = 0.9 # 最低左右邻信息熵，越大说明越有可能独立成词
 t = []    # 保存结果
 rt = []   # 保存结果
 """
@@ -53,7 +53,7 @@ total_alphabets = t[0].sum() # 总共有多少个字
 # print(list(s))
 
 if __name__ == "__main__":
-    for N in range(2, MAX_N+1):
+    for N in range(2, 3+1): # MAX_N+1
         print(f'正在生成{N}-Gram词...')
         t.append([])
         for i in range(0,len(s)):
@@ -115,7 +115,7 @@ if __name__ == "__main__":
         rt.append( tt.index )
 
 
-    for N in range(2, MAX_N+1):
+    for N in range(2, 3+1): # MAX_N+1
         print(f'正在进行{N}-Gram词的最大熵筛选({len(rt[N-2])})...')
         pp = []
         for i in range(0,len(s)):
@@ -126,10 +126,58 @@ if __name__ == "__main__":
         现在输入N-Gram 词，可以得到它的左邻右邻字
         """
 
-        index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集 
+        index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
 
+
+        will_drops = []
+
+        totol =  len(index)
+        curr   =  1
+
+        # 先算左邻信息熵
+        for word in index:
+            left = pp2[0][word]                            # word 的所有左邻字
+            n_lefts = pd.Series(left).value_counts()       # 每个左邻字出现多少次
+            p_lefts = n_lefts / n_lefts.sum()              # 算左邻字集合里面每个元素的出现概率
+            entropy_lefts = p_lefts.apply( lambda p: -p * log(p) )  # 算每个左邻字的信息熵
+            """
+            单个左邻字的信息熵描述了这个左邻字平均能带来多少信息量
+            """
+
+            en_left = entropy_lefts.sum() # 左邻信息熵
+            """
+            左邻字信息熵描述了这个左邻字集合平均能带来多少信息量
+            """
+
+            right = pp2[2][word]                           # word 的所有右邻字
+            n_right = pd.Series(right).value_counts()
+            p_right =  n_right.value_counts() / n_right.sum()
+            en_right = p_right.apply( lambda p: -p * log(p) ).sum()
+
+            entropy = en_left if en_left < en_right else en_right
+
+            if entropy < min_s:
+                will_drops.append( word )
+
+            print(f'{curr}/{totol}')
+            curr += 1
+
+        rt[N-2] = rt[N-2].drop(labels=will_drops)
+
+
+        #保存结果并输出
+        #pd.DataFrame(rt[N-2]).to_csv('result.txt', header = False)
+
+    for i in range(len(rt)):
+        t[i+1] = t[i+1][rt[i]]
+        t[i+1].sort_values(ascending = False)
+        
+    pd.DataFrame(pd.concat(t[1:])).to_csv('result.txt', header = False)
 
     print(',,')
+
+
+    
 
 
 
