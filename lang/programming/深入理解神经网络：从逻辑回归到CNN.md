@@ -73,6 +73,12 @@ DearPyGui 实现队列模型仿真[u](https://www.zhihu.com/zvideo/1307375212308
 
 
 
+SVD分解(一)：自编码器与人工智能 [u](https://kexue.fm/archives/4208)
+
+
+
+
+
 深度神经网络（Deep Neural Networks， 简称DNN）是深度学习的基础
 
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20201106102822241.png" alt="image-20201106102822241" style="zoom: 67%;" />
