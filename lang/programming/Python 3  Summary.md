@@ -244,6 +244,15 @@ os.path.dirname(os.path.abspath(__name__))  # ?? directory
 
 ## File
 
+
+
+```python
+f = file('data/lsat.csv')
+score = np.loadtxt(f, delimiter=",")
+```
+
+
+
 ```python
 import re
 import glob
@@ -288,6 +297,11 @@ python3 -m mypackage.A.spam # Relative imports work
 - 让每个目录都包含一个__init__.py，就可以import
 
 ###  \_\_init\_\_.py 可以为下层目录代为import 一些东西
+
+```python
+# -*- coding: utf-8 -*-
+from .util import *
+```
 
 > ```python
 > # graphics/formats/__init__.py
