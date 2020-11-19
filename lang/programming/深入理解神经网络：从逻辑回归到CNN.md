@@ -2150,6 +2150,12 @@ $$
 
 ## 香农信息量
 
+
+
+熵是不确定性的测度，对某件事情知道得越多，熵越小
+
+ 
+
 ### 熵(entropy)  是所有事件的概率及其信息量之积的总和
 
 
@@ -2186,6 +2192,43 @@ $$
 
 
 
+$arg \ max$ 的意思是求使后面的值最大的参数 
+
+
+
+### 随机变量
+
+
+
+随机变量是和一颗筛子，随机变量的取值是筛子的点数
+
+$\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布 [u](DeepLearningBook-chinese.pdf) 
+
+
+
+连续随机变量$X$ 有 **概率密度函数**（probability density function, PDF）有时简称为**密度**函数
+$$
+f\scriptsize{X}(x)
+$$
+
+
+离散随机变量$X$ 有**概率质量函数**（probability mass function, PMF），有时简称为**分布律**函数
+$$
+p\scriptsize{X}(x)
+$$
+
+
+**联合概率分布**（joint probability distribution）
+$$
+P(\scriptsize{X} = x, \scriptsize{Y}=y) \\
+P(x, y)
+$$
+表示 $x,y$ 同时发生的概率
+
+
+
+
+
 ### 分布列
 
 分布列是**随机变量的取值概率**
@@ -2200,6 +2243,34 @@ $$
 
 ### 期望
 
+
+
+函数$f(x)$ 关于某分布$P(\scriptsize{X})$ 的期望(expectation) 是指，当$x$ 由$P$ 产生时，$f$ 作用于$x$ 的平均值。
+
+
+
+离散随机变量的期望可以通过求和得到：
+
+
+$$
+E_{\scriptsize{X} \sim P}[f(x)] = \sum_x P(x) f(x)
+$$
+连续随机变量的期望可以通过积分得到：
+
+
+$$
+E_{\scriptsize{X} \sim P}[f(x)] = \int P(x) f(x) dx
+$$
+
+
+
+
+
+
+
+
+
+
 设随机变量$X$ 的分布列为 $p\scriptsize{X}$. $X$ 的**期望值 （ 也称期望或均值 ）** 由下式给出
 $$
 E[X] = \sum_x x \ p\scriptsize{X}(x)
@@ -2207,9 +2278,19 @@ $$
 
 
 
-
-
 ### 方差
+
+
+
+方差（variance）衡量的是当我们对$x$ 依据它的概率分布**进行采样时**，随机变量$x$ 的函数值**会呈现多大的差异**：
+
+
+$$
+Var(f(x)) = E [( f(x) - E[f(x)] )^2]
+$$
+
+
+
 
 **方差是期望离散度**
 $$
