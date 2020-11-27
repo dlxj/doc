@@ -1766,6 +1766,17 @@ plt.show()
 
 
 
+### loadtext
+
+```
+f = 'lsat.csv'
+score = np.loadtxt(f, delimiter=",")
+```
+
+
+
+
+
 ## System
 
 
