@@ -1796,6 +1796,14 @@ score = np.loadtxt(f, delimiter=",")
 
 
 
+### universal function
+
+```
+ufunc是universal function的缩写，意思是这些函数能够作用于narray对象的每一个元素上，而不是针对narray对象操作，numpy提供了大量的ufunc的函数。
+```
+
+
+
 
 
 ## System
