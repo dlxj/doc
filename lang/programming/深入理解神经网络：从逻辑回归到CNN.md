@@ -2214,9 +2214,17 @@ $arg \ max$ 的意思是求使后面的值最大的参数
 
 
 
-随机变量是和一颗筛子，随机变量的取值是筛子的点数
+随机变量是一颗筛子，随机变量的取值是筛子的点数
 
 $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布 [u](DeepLearningBook-chinese.pdf) 
+
+> $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
+>
+> **采样随机变量$X$ 的概率分布$P(X)$ 得到$x$**
+
+$p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
+
+- **变分贝叶斯初探** [u](https://www.jianshu.com/p/86c5d1e1ef93)
 
 
 
