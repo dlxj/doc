@@ -189,6 +189,27 @@ print(iSeg.segment('苯巴比妥显效慢的主要原因是脂溶性较小'))
 
 
 
+### args parse
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-e', '--num-epochs', default=1000, type=int)
+parser.add_argument('--gpu', action='store_true')
+parser.add_argument('--priors', help='[vague, hierarchical]', default='hierarchical')
+parser.add_argument('--model', help='[1PL,2PL(coming soon)]', default='1PL')  # 2pl not implemented yet
+args = parser.parse_args()
+
+device = torch.device('cpu')
+if args.gpu:
+    device = torch.device('cuda')
+```
+
+
+
+
+
 
 
 ### 同级目录直接用文件名导入
