@@ -1804,6 +1804,20 @@ ufunc是universal function的缩写，意思是这些函数能够作用于narray
 
 
 
+### 归一化数据集
+
+
+
+```python
+def scaleData(dataMat):
+    max = dataMat[:,0].max()
+    min = dataMat[:,0].min()
+    dataMat[:,0] = (dataMat[:,0] - min) / (max - min)
+    return dataMat
+```
+
+> Max 为所有数据中最大的值，min 为所有数据中最小的值，对每个数据减去最小值然后除以最大值和最小值的差，从而进行归一化，**使得每一个数据在 0 到 1 范围内**。
+
 
 
 ## System
