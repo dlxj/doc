@@ -1,5 +1,13 @@
 
 
+
+
+**A MATLAB Package for Markov Chain Monte Carlo with a Multi-Unidimensional IRT Model** [u](https://www.jstatsoft.org/article/view/v028i10)
+
+- **此网站论文+代码 全开放下载，概率统计专题**
+
+
+
 **Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
 
 **OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
@@ -209,6 +217,29 @@ loss_fn = F.cross_entropy
 
 ## 张量
 
+
+
+### 转浮点数
+
+
+
+```python
+answers = torch.tensor(answers).float() # convert to tensor
+```
+
+
+
+### numpy 互转
+
+```python
+.from_numpy(x)
+.numpy()
+```
+
+
+
+
+
 ```python
 torch.rand()
 torch.randn()
@@ -241,6 +272,26 @@ Y = torch.from_numpy(Y)
 
 
 
+### 按行求和
+
+```python
+print(torch.sum(x))   #按列求和
+print(torch.sum(x, 0))#按列求和
+print(torch.sum(x, 1))#按行求和
+```
+
+```python
+a = torch.tensor(np.array([[1,2],[3,4]]))
+b = torch.sum(a, 1)
+-> [3, 7] 
+```
+
+
+
+
+
+
+
 ### 矩阵乘@和转置t
 
 > ```python
@@ -257,6 +308,76 @@ Y = torch.from_numpy(Y)
 > 低维张量堆叠起来（维度增加），生成高维空间中的高维张量
 >
 > > 就像把桌面上的书堆起来一样
+
+
+
+### 柱状图
+
+
+
+```python
+"""
+概率编程语言入门指南
+
+有偏差的掷硬币(a biased coin toss)
+
+随机函数被叫做模型，表达模型的方法，和正常的Python方法没有区别
+模型（model）和变分分布（guide）的参数。【注：所谓变分就是将原始函数换作另一（易处理的）函数的数学技巧】
+最大化证据（evidence）  证据下限”ELBO（evidence lower bound）
+
+
+https://colab.research.google.com/drive/1SZDm5ppWBFIpowO8KIATfoYZXEVbuVGr#scrollTo=tdhST1QE8MuX
+
+Fitting a Distribution with Pyro: Part 2 - Beta
+https://www.richard-stanton.com/2020/05/03/fit-dist-with-pyro_2.html
+
+
+A Gentle Introduction to Probabilistic Programming Languages
+https://medium.com/swlh/a-gentle-introduction-to-probabilistic-programming-languages-bf1e19042ab6
+"""
+
+import numpy as np
+import torch
+from torch.distributions import constraints
+import pyro
+import pyro.infer
+import pyro.optim
+import pyro.distributions as dist
+
+import matplotlib.pyplot as plt
+
+
+n_persons = 5
+n_questions = 5
+pyro.enable_validation(True)
+np.random.seed(543678)
+true_theta = np.random.normal(loc=0, scale=1, size=(n_persons,1))   # 2个人的能力 (2*1)
+true_theta = np.tile(true_theta, n_questions)                       # 2个人每道题的能力都一样，列复制2次 (2*1) -> (2*2)
+true_beta = np.random.normal(loc=0, scale=1, size=(1,n_questions))  # 2个问题的难度 (1*2)
+
+"""
+维度不同的减法：
+(2*2) - (1*2) = ( (1*2) - (1*2),
+                  (1*2) - (1*2)
+                )
+= (2*2) 
+"""
+likelihood = np.exp(true_theta - true_beta) / (1 + np.exp(true_theta - true_beta))
+answers = np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1) # calculate answers based on theta and likelihood function
+answers = torch.tensor(answers).float() # convert to tensor
+"""
+size 和 p 的维度相同
+二项分布，值为1 的概率由p 给出
+"""
+
+sums = torch.sum(answers, 1)  # 按行求和  # 每个人答对多少题
+plt.hist(sums) 
+plt.show()
+```
+
+纵坐标表示**有几个人**，横坐标表示**答对多少题**
+
+
 
 
 
@@ -629,6 +750,21 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 ## Data load
 
 > 比如你有1000组数据（假设每组数据为三通道256px×256px的图像），batchsize为4，那么每次训练则提取(4,3,256,256)维度的张量来训练，刚好250个epoch解决(250×4=1000)。但是如果你有999组数据，你继续使用batchsize为4的话，这样999和4并不能整除，你在训练前249组时的张量维度都为(4,3,256,256)但是最后一个批次的维度为(3,3,256,256)，Pytorch检查到(4,3,256,256) != (3,3,256,256)，维度不匹配，自然就会报错了，这可以称为一个小bug
+
+
+
+## CPU OR GPU [u](https://github.com/mhw32/variational-item-response-theory-public/blob/master/src/pyro_core/hmc.py)
+
+
+
+```python
+device = torch.device("cuda" if args.cuda else "cpu")
+```
+
+
+
+
+
 
 
 ## Coursera.org

@@ -1710,6 +1710,44 @@ sorted(trank_res, key=lambda x: x['index'], reverse=False)
 
 
 
+### 维度不同的减法
+
+```python
+"""
+两个1*2 减一个1*2
+(2*2) - (1*2) = ( (1*2) - (1*2),
+                  (1*2) - (1*2)
+                )
+= (2*2)
+"""
+a = np.array(
+    [
+        [-0.51632716, -0.51632716],
+        [-0.56524826, -0.56524826]
+    ])
+
+b = np.array(
+    [
+        [-0.1491838, 2.63128067]
+    ])
+
+c = a - b
+print(c)
+"""
+shoud be:
+[[-0.36714335 -3.14760782]
+ [-0.41606446 -3.19652893]]
+"""
+```
+
+
+
+a, b 的列数相同，a行更多，**按列来减**
+
+
+
+
+
 ### shape
 
 ```python
@@ -1743,6 +1781,20 @@ a1 = x.reshape(x.shape[0], 1) # Getting the training example as a column vector.
 ```
 ndarray.flatten(order='C') # c by row; f by column
 ```
+
+
+
+#### tile 复制列
+
+```python
+true_theta = np.random.normal(loc=0, scale=1, size=(n_persons,1))   # 5个人的能力 (5*1)
+true_theta = np.tile(true_theta, n_questions)                       # 5个人每道题的能力都一样，列复制5次 (5*1) -> (5*5)
+true_beta = np.random.normal(loc=0, scale=1, size=(1,n_questions))  # 5个问题的难度 (1*5)
+```
+
+
+
+
 
 ### transpose
 
@@ -1817,6 +1869,43 @@ def scaleData(dataMat):
 ```
 
 > Max 为所有数据中最大的值，min 为所有数据中最小的值，对每个数据减去最小值然后除以最大值和最小值的差，从而进行归一化，**使得每一个数据在 0 到 1 范围内**。
+
+
+
+### 概率分布
+
+
+
+```
+"""
+概率编程语言入门指南
+
+有偏差的掷硬币(a biased coin toss)
+
+随机函数被叫做模型，表达模型的方法，和正常的Python方法没有区别
+模型（model）和变分分布（guide）的参数。【注：所谓变分就是将原始函数换作另一（易处理的）函数的数学技巧】
+最大化证据（evidence）  证据下限”ELBO（evidence lower bound）
+
+
+https://colab.research.google.com/drive/1SZDm5ppWBFIpowO8KIATfoYZXEVbuVGr#scrollTo=tdhST1QE8MuX
+
+Fitting a Distribution with Pyro: Part 2 - Beta
+https://www.richard-stanton.com/2020/05/03/fit-dist-with-pyro_2.html
+
+
+A Gentle Introduction to Probabilistic Programming Languages
+https://medium.com/swlh/a-gentle-introduction-to-probabilistic-programming-languages-bf1e19042ab6
+"""
+answers = np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1) # calculate answers based on theta and likelihood function
+```
+
+
+
+np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1)
+
+> size 和 p 的维度相同
+>
+> **二项分布，值为1 的概率由p 给出**
 
 
 

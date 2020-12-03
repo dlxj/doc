@@ -22,6 +22,12 @@ Things Happen for A Reason
 
 
 
+**A MATLAB Package for Markov Chain Monte Carlo with a Multi-Unidimensional IRT Model** [u](https://www.jstatsoft.org/article/view/v028i10)
+
+- **此网站论文+代码 全开放下载，概率统计专题**
+
+
+
 **OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
 
 **Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
@@ -2213,6 +2219,10 @@ $arg \ max$ 的意思是求使后面的值最大的参数
 **伯努利分布**（Bernoulli Distribution），「只有两种可能，试验结果相互独立且对立」的随机变量通常称为伯努利随机变量。
 
 - 从伯努利分布**采样得到的结果只有两种可能，结果之间互相独立**
+
+
+
+**贝塔分布**（Beta Distribution），也称Β分布，是指一组定义在(0,1) 区间的连续概率分布。
 
 
 
