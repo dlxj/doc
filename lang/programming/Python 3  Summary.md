@@ -559,6 +559,15 @@ lambda 返回true 的保留
 
 
 
+### Map
+
+```python
+__version_info__ = (0, 1, 1, 0)
+__version__ = '.'.join(map(str,__version_info__))
+```
+
+
+
 ###  iterate with index
 
 
@@ -1919,6 +1928,29 @@ np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1)
 sys.stdout.flush() # Updating the text.
 sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 ```
+
+
+
+### 子进程
+
+```python
+import subprocess
+out_bytes = subprocess.check_output([r"C:\Program Files\R\R-4.0.3\bin\x64\Rscript.exe", r"C:\Program Files\R\R-4.0.3\bin\x64\op.R"])
+out_text = out_bytes.decode('utf-8')
+```
+
+```R
+`op` <-
+function(x){
+  y <- list(name=x)
+  y
+}
+
+o <- op(1)
+class(o)
+```
+
+
 
 
 

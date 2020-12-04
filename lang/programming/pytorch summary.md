@@ -2,6 +2,12 @@
 
 
 
+**IRT 教科书代码实现 in github** [u](https://github.com/pluralsight/irt_parameter_estimation)
+
+- book [u](https://www.routledge.com/Item-Response-Theory-Parameter-Estimation-Techniques-Second-Edition/Baker-Kim/p/book/9780824758257)
+
+
+
 **A MATLAB Package for Markov Chain Monte Carlo with a Multi-Unidimensional IRT Model** [u](https://www.jstatsoft.org/article/view/v028i10)
 
 - **此网站论文+代码 全开放下载，概率统计专题**
@@ -391,6 +397,25 @@ plt.show()
 > ```
 >
 > `torch.sum` returns the sum of all the elements in a tensor, and the `.numel` method returns the number of elements in a tensor. Let's compute the mean squared error for the current predictions of our model.
+
+
+
+### 均方误差
+
+```python
+for name in pyro.get_param_store().get_all_param_names():
+    print(name)
+    val = pyro.param(name).data.numpy()
+    print(val)
+    if name == 'loc_diff':
+        print('mse: {}'.format(np.mean((val - real_diff) ** 2)))
+    elif name == 'loc_ability':
+        print('mse: {}'.format(np.mean((val - real_theta) ** 2)))
+```
+
+
+
+
 
 
 
