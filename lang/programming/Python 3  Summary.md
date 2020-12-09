@@ -14,7 +14,11 @@ F11 切换全屏
 
 
 
-## Anaconda
+## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
+
+```bash
+conda config --set auto_activate_base true
+```
 
 ```bash
 conda create -n tensorflow_cpu pip python=3.6
@@ -37,6 +41,35 @@ pip install tensorflow==1.12 -i https://pypi.tuna.tsinghua.edu.cn/simple
 install_requires=['numpy', 'tensorflow-gpu==1.12', 'tensorflow-hub', "tqdm", "spacy", "jieba",
                         "stanfordnlp"],
 ```
+
+
+
+**基于论文的实现**  [u](https://github.com/17zuoye/pyirt)
+
+- IRT Parameter Estimation using the EM Algorithm By Brad Hanson 2000
+
+  - Github 实现 [u](https://github.com/17zuoye/pyirt/blob/master/pyirt/solver/model.py)
+
+    > **创建环境**
+    >
+    > conda create -n irt  python=3.8
+    >
+    > conda activate irt
+    >
+    > cd ~/pyirt-master
+    >
+    > pipenv --three
+    > make
+    >
+    > pipenv shell
+    >
+    > **使用环境**
+    >
+    > conda activate irt
+    >
+    > cd ~/pyirt-master
+    >
+    > pipenv shell
 
 
 
@@ -189,7 +222,7 @@ print(iSeg.segment('苯巴比妥显效慢的主要原因是脂溶性较小'))
 
 
 
-### args parse
+### args parse  [u](https://github.com/jplalor/py-irt)
 
 ```python
 import argparse
@@ -204,6 +237,15 @@ args = parser.parse_args()
 device = torch.device('cpu')
 if args.gpu:
     device = torch.device('cuda')
+    
+for name in pyro.get_param_store().get_all_param_names():
+    print(name)
+    val = pyro.param(name).data.numpy()
+    print(val)
+    if name == 'loc_diff':
+        print('mse: {}'.format(np.mean((val - real_diff) ** 2)))
+    elif name == 'loc_ability':
+        print('mse: {}'.format(np.mean((val - real_theta) ** 2)))    
 ```
 
 
@@ -1060,6 +1102,19 @@ r''
 
 ### format
 
+irt [u](https://github.com/17zuoye/pyirt/blob/master/tests/test_model_wrapper.py)
+
+```python
+c = [0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5]
+
+guess_param = {}
+for t in range(T):
+    guess_param['q%d' % t] = c[t]
+--> {'q0': 0.5, 'q1': 0, 'q2': 0, 'q3': 0, 'q4': 0.5, 'q5': 0, 'q6': 0, 'q7': 0, 'q8': 0.5}
+```
+
+
+
 ```
 ax.text(n[0], n[1], n[2], "法向量" + r"$=\left({:.2f},{:.2f},{:.2f}\right)^{:s}$".format(g[0], g[1], -1, T), fontsize=TEXT_FONT_SIZE, fontproperties=myfont)
 doc\lang\programming\python\深入理解神经网络：从逻辑回归到CNN\neural_network-neural_network_code-master\neural_network_code\画图脚本
@@ -1915,6 +1970,18 @@ np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1)
 > size 和 p 的维度相同
 >
 > **二项分布，值为1 的概率由p 给出**
+
+
+
+### assert_equal
+
+```python
+# test if samples are 0 or 1
+sm = rm.sample().flatten()
+assert_equal(np.all((sm == 0) | (sm == 1)),True)
+```
+
+
 
 
 

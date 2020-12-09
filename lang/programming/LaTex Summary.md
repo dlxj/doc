@@ -98,6 +98,15 @@ $$
 \end{align}
 $$
 
+$$
+\begin{align}
+(w_1, w_2, -1) \begin{pmatrix} x_1 \\ x_2 \\ y \end{pmatrix} &=
+w_1 * x_1 \ \text{i-hat} + w_2 * x_2 \ \text{i-hat} + -1 * y \ \text{i-hat}
+\\
+&= -b 
+\end{align}
+$$
+
 
 
 ## tag
