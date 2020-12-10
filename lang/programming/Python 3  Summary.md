@@ -1868,6 +1868,14 @@ score = np.random.binomial(1, p, 1000)
 
 
 
+### 均方误差
+
+```python
+print('mse: {}'.format(np.mean((val - real_diff) ** 2)))
+```
+
+
+
 
 
 ### shape
@@ -1913,6 +1921,16 @@ true_theta = np.random.normal(loc=0, scale=1, size=(n_persons,1))   # 5个人的
 true_theta = np.tile(true_theta, n_questions)                       # 5个人每道题的能力都一样，列复制5次 (5*1) -> (5*5)
 true_beta = np.random.normal(loc=0, scale=1, size=(1,n_questions))  # 5个问题的难度 (1*5)
 ```
+
+
+
+#### 取第一列
+
+```python
+a[:,0]
+```
+
+
 
 
 
