@@ -1113,7 +1113,10 @@ for t in range(T):
 --> {'q0': 0.5, 'q1': 0, 'q2': 0, 'q3': 0, 'q4': 0.5, 'q5': 0, 'q6': 0, 'q7': 0, 'q8': 0.5}
 ```
 
-
+```python
+print(f"{name} is {age} years old")
+print (item, end=" ")
+```
 
 ```
 ax.text(n[0], n[1], n[2], "法向量" + r"$=\left({:.2f},{:.2f},{:.2f}\right)^{:s}$".format(g[0], g[1], -1, T), fontsize=TEXT_FONT_SIZE, fontproperties=myfont)
@@ -1282,6 +1285,47 @@ re_han_default = re.compile("([\u4E00-\u9FD5a-zA-Z0-9+#&.\xb7%]+)", re.U)
 ```
 
 
+
+## Class
+
+
+
+```python
+class BaseIrt(object):
+
+    def __init__(self, scores=None):
+        self.scores = scores
+
+    @staticmethod
+    def p(z):
+        # 回答正确的概率函数
+        e = np.exp(z)
+        p = e / (1.0 + e)
+        return p
+
+    def _lik(self, p_val):
+        # 似然函数
+        scores = self.scores
+        loglik_val = np.dot(np.log(p_val + 1e-200), scores.transpose()) + \
+                     np.dot(np.log(1 - p_val + 1e-200), (1 - scores).transpose())
+        return np.exp(loglik_val)
+
+    def _get_theta_dis(self, p_val, weights):
+        # 计算theta的分布人数
+        scores = self.scores
+        lik_wt = self._lik(p_val) * weights
+        # 归一化
+        lik_wt_sum = np.sum(lik_wt, axis=0)
+        _temp = lik_wt / lik_wt_sum
+        # theta的人数分布
+        full_dis = np.sum(_temp, axis=1)
+        # theta下回答正确的人数分布
+        right_dis = np.dot(_temp, scores)
+        full_dis.shape = full_dis.shape[0], 1
+        # 对数似然值
+        print(np.sum(np.log(lik_wt_sum)))
+        return full_dis, right_dis
+```
 
 
 
@@ -1807,6 +1851,20 @@ shoud be:
 
 
 a, b 的列数相同，a行更多，**按列来减**
+
+
+
+### 取样
+
+```python
+# 模拟参数
+a = np.random.uniform(1, 3, 1000)  # 均匀分布
+b = np.random.normal(0, 1, size=1000)
+z = Irt2PL.z(a, b, 1)
+p = Irt2PL.p(z)
+score = np.random.binomial(1, p, 1000)
+# D:\workcode\algo\项目反应理论\irt_zhihu.py
+```
 
 
 
