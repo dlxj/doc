@@ -229,15 +229,75 @@ co
 """
 
 
+"""
+估计一个人的能力，用1000 道题的得分和参数
+"""
 # 模拟参数
 a = np.random.uniform(1, 3, 1000)
 b = np.random.normal(0, 1, size=1000)
-z = Irt2PL.z(a, b, 1)
+z = Irt2PL.z(a, b, 1) # slop, threshold, theta (_z = slop * theta + threshold )
 p = Irt2PL.p(z)
 score = np.random.binomial(1, p, 1000)
 # 计算并打印潜在特质估计值
 eap = EAPIrt2PLModel(score, a, b)
 print(eap.res)
 
+
+"""
+阀值 = -1 * ( 难度 * 区分度 )
+难度 = -1 * ( 阀值 / 区分度 )
+"""
+
+n_persons = 1000
+n_questions = 10
+np.random.seed(543678)
+true_theta = np.random.normal(loc=0, scale=1, size=(n_persons,1))   # 能力 (1000*1)
+true_theta = np.tile(true_theta, n_questions)                       # 每道题的能力都一样，列复制10次 (1000*1) -> (1000*10)
+true_beta = np.random.normal(loc=0, scale=1, size=(1,n_questions))  # 10个问题的难度 (1*10)
+
+true_alpha = np.random.uniform(1, 3, (1,n_questions) ) # 区分度 (1*10)
+true_threshold = -1 * ( true_beta * true_alpha )
+z = Irt2PL.z(true_alpha, true_threshold, true_theta) # slop, threshold, theta (_z = slop * theta + threshold )
+likelihood = Irt2PL.p(z)
+
+score = np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1)
+res = Irt2PL(scores=score).em()
+alpha = res[0]                   # 区分度(斜率) slop
+threshold = res[1]               # 阀值
+beta = -1 * (threshold / alpha)  # 难度
+
+
+# 难度的均方误差
+print('difficulty mse: {}'.format(np.mean((beta - true_beta) ** 2)))
+
+# 区分度的均方误差
+print('slop mse: {}'.format(np.mean((alpha - true_alpha) ** 2)))
+
+
+
+"""
+下面估计第一个人的能力
+EAP（expected a posteriori）算法是唯一不需要迭代的算法，所以它的计算速度是最快的，常用于在线测验的参数估计，其理论依据是贝叶斯法则。
+"""
+# 第一个人10 道题的得分(用0 或1表示)
+theta = []
+for i in range(n_persons):
+    sc = score[i]
+    eap = EAPIrt2PLModel(sc, alpha, threshold)  # 得分，区分度，阀值
+    theta.append( eap.res )
+    #print(eap.res)
+
+true_theta_first_col = true_theta[:,0] # 取第一列 
+true_theta_first_col = list( map( lambda x:round(x, 2), true_theta_first_col ) )
+theta = list( map( lambda x:round(x, 2), theta ) )
+print( true_theta_first_col[:25] )
+print( theta[:25] )
+
+# 能力均方误差
+# print('theta mse: {}'.format(np.mean((theta - true_theta_first_col) ** 2)))
+
+
+
 print('hi,,,')
+
 

@@ -1290,7 +1290,11 @@ re_han_default = re.compile("([\u4E00-\u9FD5a-zA-Z0-9+#&.\xb7%]+)", re.U)
 
 
 
+### 继承和静态方法
+
 ```python
+# https://zhuanlan.zhihu.com/p/29887184
+# GitHub\doc\lang\programming\项目反应理论\irt_zhihu.py
 class BaseIrt(object):
 
     def __init__(self, scores=None):
@@ -1326,6 +1330,37 @@ class BaseIrt(object):
         print(np.sum(np.log(lik_wt_sum)))
         return full_dis, right_dis
 ```
+
+
+
+### 属性
+
+```python
+class EAPIrt2PLModel(object):
+
+    def __init__(self, score, slop, threshold, model=Irt2PL):
+        self.x_nodes, self.x_weights = model.get_gh_point(21)
+        z = model.z(slop, threshold, self.x_nodes)
+        p = model.p(z)
+        self.lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1)
+
+    @property
+    def g(self):
+        x = self.x_nodes[:, 0]
+        weight = self.x_weights[:, 0]
+        return np.sum(x * weight * self.lik_values)
+
+    @property
+    def h(self):
+        weight = self.x_weights[:, 0]
+        return np.sum(weight * self.lik_values)
+
+    @property
+    def res(self):
+        return round(self.g / self.h, 3)
+```
+
+
 
 
 
