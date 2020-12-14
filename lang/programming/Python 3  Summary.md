@@ -1366,6 +1366,7 @@ class EAPIrt2PLModel(object):
     @property
     def res(self):
         return round(self.g / self.h, 3)
+# https://zhuanlan.zhihu.com/p/29887184
 ```
 
 
@@ -1922,6 +1923,16 @@ print(np.mean(np.abs(est_slop - a[0]))) # 平均误差
 ```
 
 
+
+### 计算所有元素给的乘积
+
+
+
+```python
+np.prod([...]) # 不指定轴，则不管是几维都展平成一维然后连乘
+np.prod([...], axis=1) # 按行连乘(维度变成n*1)
+
+```
 
 
 
