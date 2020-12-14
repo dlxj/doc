@@ -344,6 +344,14 @@ def unchinese_remove(s):
 
 
 
+### basename
+
+```python
+os.path.basename
+```
+
+
+
 
 
 
@@ -1909,6 +1917,12 @@ score = np.random.binomial(1, p, 1000)
 print('mse: {}'.format(np.mean((val - real_diff) ** 2)))
 ```
 
+```python
+print(np.mean(np.abs(est_slop - a[0]))) # 平均误差
+```
+
+
+
 
 
 
@@ -2097,6 +2111,27 @@ assert_equal(np.all((sm == 0) | (sm == 1)),True)
 
 
 ## System
+
+
+
+### OS Type
+
+
+
+```python
+try:
+    test = os.uname()
+    if test[0] == "Linux":
+        OS = "Linux"
+except Exception as e:
+    OS = "Windows"
+
+indir = 'F:/11/*/*.txt' if OS == "Windows" else '/home/data/11/*.txt'
+otdir = 'E:/11' if OS == "Windows" else '/home/data/22'
+# D:\workcode\python\std\iEncoding.py
+```
+
+
 
 
 
