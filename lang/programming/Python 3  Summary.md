@@ -468,6 +468,27 @@ exp(-x)
 
 
 
+### log
+
+```python
+np.log(x) 以e为底的对数(自然对数)
+np.log10(x) 以10为底的对数
+np.log2(x) 以2为底的对数
+np.log1p(x) 等价于：np.log(x + 1)
+备注：np.expm1(x) 等价于 np.exp(x) - 1，也是np.log1p(x)的逆运算。
+```
+
+```
+math.pi：圆周率，值为3.141592653589793.
+math.e：自然对数，值为2.718281828459045.
+math.inf：正无穷大，负无穷大为-math.inf.
+math.nan：Not a Number，非正常值
+```
+
+
+
+
+
 ## 递归方法
 
 

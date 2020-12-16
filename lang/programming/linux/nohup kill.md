@@ -20,5 +20,8 @@ PS:"n"为jobs查看到的进程编号.
 
 
 
-
 nohup python iEncoding.py >outlog &
+
+> ```bash
+> ps -aux|grep iEncoding.py| grep -v grep # 显示后台进程
+> ```
