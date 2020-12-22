@@ -3329,9 +3329,67 @@ if __name__ == '__main__':
 
 
 
+```python
+    for N in range(2, MAX_N+1): # MAX_N+1
+        print(f'正在进行{N}-Gram词的最大熵筛选({len(rt[N-2])})...')
+        pp = []
+        for i in range(0,len(s)):
+            if i+N+2 <= len(s):  # +2 是因为一个左邻字，一个右邻字
+                pp.append( [ s[i:i+1], s[i+1:N+i+1], s[N+i+1:N+i+2] ] )
+        pp2 = pd.DataFrame(pp).set_index(1).sort_index() # 排序，可以加快检索速度
+        """
+        现在输入N-Gram 词，可以得到它的左邻右邻字
+        """
+
+        index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
+        
+        left = pp2[0][word]                            # word 的所有左邻字
+        right = pp2[2][word]                           # word 的所有右邻字
+```
+
+
+
+
+
 ## Series [u](https://towardsdatascience.com/gaining-a-solid-understanding-of-pandas-series-893fb8f785aa)
 
 >  Series 可以是**数据集**的行，也可以是数据集的列 
+
+
+
+bigdataEntropy.py
+
+```python
+tt = tt.drop(labels=will_drops)  # 第二次筛选：凝合程度
+rt.append( tt.index )
+```
+
+
+
+
+
+### 转有转字典
+
+```python
+from collections import OrderedDict, defaultdict
+cs = pd.Series(list(s)).value_counts().to_dict(OrderedDict)
+```
+
+
+
+```python
+dic_tosave = {
+        'total_alphabets':0,
+        't':[],
+        'tt':[]
+    }
+
+    cs = pd.Series(list(s)).value_counts()              # 所有字的出现次数 
+    dic_tosave['total_alphabets'] = int( cs.sum() )     # 总共有多少个字
+    dic_tosave['t'].append( cs.to_dict(OrderedDict) )   # Series 转成有序字典才能保存JSON
+```
+
+
 
 
 
