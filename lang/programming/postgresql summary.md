@@ -1,8 +1,38 @@
+## Install PG
+
+
+
+用**Navicat** 客户端查数据
+
+- HeidiSQL 有点问题
+
+
+```bash
+apt install postgresql-server-dev-13
+find / -name "postgres.h" -print  # 后面编译pg_jieba 要用
+```
+
+
+
+
+
+
+
 Success. You can now start the database server using:
 
 ```bash
 pg_ctlcluster 13 main start
 ```
+
+```
+# windows # 需要管理员仅限
+pg_ctl.exe restart -D "E:\Program Files\PostgreSQL\13\data"
+
+# 登录，用户名密码都是postgres
+E:\Program Files\PostgreSQL\13\bin>psql -U postgres
+```
+
+
 
 
 
@@ -50,6 +80,14 @@ show data_directory;
 
 \l
 
+\c studio  # 切换数据库
+
+```mysql
+insert into studio(en, zh, type, time, v_en, v_zh ) values('When something does not go as you expected and you feel anxious or upset, it helps to understand that these feelings are part of the package.', '當事情進行不如預期，讓你感到焦慮心煩時，若能瞭解這些情緒是不可避免的，將會大有幫助。','AD050851', '01:20.3', 'no', to_tsvector('jiebacfg', '當事情進行不如預期，讓你感到焦慮心煩時，若能瞭解這些情緒是不可避免的，將會大有幫助。'));
+```
+
+
+
 
 
 ```sql
@@ -64,20 +102,26 @@ sudo -u postgres psql -c '\set AUTOCOMMIT on'
 
 ## insert studio
 
-```python
-# https://github.com/coleifer/pysqlite3
-pip install pysqlite3-binary
-```
+
 
 ```python
-# https://www.cnblogs.com/yungiu/p/10983792.html
+
+# sql 语句里本身有单引号时用两个单引号来还替之
+
+"""
+GFW
+https://www.ishells.cn/archives/linux-ssr-server-client-install
+"""
 
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+import sqlite3 as sqlite # Python 自带的
+
 
 with psycopg2.connect(database='postgres', user='postgres', password='postgres',host='111.229.53.195', port='5432') as conn:
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     with conn.cursor() as cur:
+        cur.execute("DROP DATABASE IF EXISTS studio;")
         cur.execute("CREATE DATABASE studio \
             WITH OWNER = postgres \
             ENCODING = 'UTF8' \
@@ -97,52 +141,24 @@ with psycopg2.connect(database='studio', user='postgres', password='postgres',ho
             v_en  tsvector, \
             v_zh  tsvector \
         );")
-```
+        cur.execute("create extension pg_jieba;")
+        cur.execute("insert into studio(en, zh, type, time, v_en, v_zh ) values('When something does not go as you expected and you feel anxious or upset, it helps to understand that these feelings are part of the package.', '當事情進行不如預期，讓你感到焦慮心煩時，若能瞭解這些情緒是不可避免的，將會大有幫助。','AD050851', '01:20.3', 'no', to_tsvector('jiebacfg', '當事情進行不如預期，讓你感到焦慮心煩時，若能瞭解這些情緒是不可避免的，將會大有幫助。'));")
+        
+        cx = sqlite.connect('./db/studioclassroom.db')
+        cu = cx.cursor()
+        cu.execute("SELECT * FROM studioclassroom_content;", [])
+        rows = cu.fetchall()
+        cx.commit()
+        cx.close()
 
-
-
-```python
-
-# https://github.com/coleifer/pysqlite3
-
-import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-from pysqlite3 import dbapi2 as sqlite
-
-# with psycopg2.connect(database='postgres', user='postgres', password='postgres',host='111.229.53.195', port='5432') as conn:
-#     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-#     with conn.cursor() as cur:
-#         cur.execute("CREATE DATABASE studio \
-#             WITH OWNER = postgres \
-#             ENCODING = 'UTF8' \
-#             TABLESPACE = pg_default \
-#             CONNECTION LIMIT = -1 \
-#             TEMPLATE template0;")
-
-# with psycopg2.connect(database='studio', user='postgres', password='postgres',host='111.229.53.195', port='5432') as conn:
-#     with conn.cursor() as cur:
-#         cur.execute("DROP TABLE IF EXISTS studio;")
-#         cur.execute("create table studio( \
-#             id serial primary key, \
-#             en text, \
-#             zh text, \
-#             type text, \
-#             time text, \
-#             v_en  tsvector, \
-#             v_zh  tsvector \
-#         );")
-
-cx = sqlite.connect('./db/studioclassroom.db')
-cu = cx.cursor()
-cu.execute("SELECT * FROM studioclassroom_content;", [])
-row = cu.fetchone()
-cx.commit()
-
-print(row)
-
+        row = rows[0]
+        print(row[0])
+        print(row[1])
+        print(row[2])
 
 print('hi')
 ```
+
 
 
 
@@ -327,48 +343,7 @@ db.tx.series([
 
 
 ```python
-import psycopg2
 
-def create_table():
-    conn=psycopg2.connect("dbname= 'database1' user='postgres' password='postgres123' host='localhost' port='5432'")
-    cur=conn.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS store(item TEXT, quantity INTEGER, price REAL)")
-    conn.commit()
-    conn.close()
-
-def insert(item, quantity, price):
-    conn=psycopg2.connect("dbname= 'database1' user='postgres' password='postgres123' host='localhost' port='5432'")
-    cur=conn.cursor()
-    cur.execute("INSERT INTO store VALUES ('%s', '%s', '%s')" % (item,quantity,price))
-    conn.commit()
-    conn.close()
-
-
-
-def view():
-    conn=psycopg2.connect("lite.db")
-    cur=conn.cursor()
-    cur.execute("SELECT * FROM store")
-    rows=cur.fetchall()
-    conn.close()
-    return rows
-
-def delete(item):
-    conn=psycopg2.connect("dbname= 'database1' user='postgres' password='postgres123' host='localhost' port='5432'")
-    cur=conn.cursor()
-    cur.execute("DELETE FROM store WHERE item=?",(item,))
-    conn.commit()
-    conn.close()
-
-def update(quantity,price,item):
-    conn=psycopg2.connect("dbname= 'database1' user='postgres' password='postgres123' host='localhost' port='5432'")
-    cur=conn.cursor()
-    cur.execute("UPDATE store SET quantity=?, price=? WHERE item=?",(quantity,price,item))
-    conn.commit()
-    conn.close()
-
-create_table()
-insert("Apple", 10, 15)
 ```
 
 
@@ -609,6 +584,49 @@ def execute_query(query: str):
 ```
 
 
+
+
+
+
+
+## Install PG_Jieba [u](https://github.com/jaiminpan/pg_jieba)
+
+
+
+```bash
+cmake -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/include/postgresql/13/server/ ..
+make
+make install
+
+-- Installing: /usr/lib/postgresql/13/lib/pg_jieba.so
+-- Installing: /usr/share/postgresql/13/extension/pg_jieba.control
+-- Installing: /usr/share/postgresql/13/extension/pg_jieba--1.1.1.sql
+-- Installing: /usr/share/postgresql/13/tsearch_data/jieba_base.dict
+-- Installing: /usr/share/postgresql/13/tsearch_data/jieba_hmm.model
+-- Installing: /usr/share/postgresql/13/tsearch_data/jieba_user.dict
+-- Installing: /usr/share/postgresql/13/tsearch_data/jieba.stop
+-- Installing: /usr/share/postgresql/13/tsearch_data/jieba.idf
+```
+
+
+
+```mysql
+sudo -u postgres psql
+create extension pg_jieba;
+select * from to_tsquery('jiebacfg', '是拖拉机学院手扶拖拉机专业的。不用多久，我就会升职加薪，当上CEO，走上人生巅峰。');
+select * from to_tsquery('jiebacfg', '當事情進行不如預期，讓你感到焦慮心煩時，若能瞭解這些情緒是不可避免的，將會大有幫助。');
+```
+
+
+
+替换成同时支持简繁的字典
+
+```
+proxy wget https://github.com/fxsjy/jieba/raw/master/extra_dict/dict.txt.big
+
+# 出错了，不用替换也可以查繁体
+cp  /usr/share/postgresql/13/tsearch_data/jieba_user.dict
+```
 
 
 
