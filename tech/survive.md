@@ -1458,6 +1458,10 @@ sslocal -c /path/to/shadowsocks.json
 
 
 
+**(客户端可以用，省事)**Linux安装SSR服务端、客户端 [u](https://www.ishells.cn/archives/linux-ssr-server-client-install)
+
+
+
 ## proxychains 命令行代理
 
 [proxychains-ng](https://github.com/rofl0r/proxychains-ng)

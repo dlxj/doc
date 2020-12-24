@@ -2794,6 +2794,56 @@ $$
 
 ## 数值积分
 
+数值积分和高斯点简介 [u](https://cn.comsol.com/blogs/introduction-to-numerical-integration-and-gauss-points/)
+
+数值积分也称为*数值求积*，其本质是**用求和代替积分**，其中**被积函数在多个离散点被采样**
+
+
+
+其中 $x_i$ 是积分点的位置，$w_i$ 是相应的权重因子。积分点通常称为高斯点，但是严格来说，这种命名法仅适用于高斯求积 法定义的积分点。
+
+
+
+在高斯求积算法中，需要选择积分点的位置及其权重，以便精确地对阶次尽可能高的多项式进行积分。由于 N 次多项式包含 N + 1 个系数，而具有 M 个点的高斯点规则包含 2M 个参数（位置+权重），因此可以精确积分的多项式的最高阶次是 N = 2M-1。
+
+高斯求积对于可由一定程度的多项式很好地进行近似的积分场非常有效
+
+
+
+
+
+### Gauss–Hermite积分 [u](https://zhuanlan.zhihu.com/p/29887184)
+
+
+$$
+\int e^{-x^2} f(x)dx \approx \sum w_i f(x_i)
+$$
+假设$\theta$ 服从正态分布 $\theta \sim N(0,1)$，于是有：
+$$
+\sum \frac{w_i}{\sqrt\pi}f(\sqrt2 x_i)
+$$
+
+```python
+class Irt2PL(BaseIrt):
+    ''
+    @staticmethod
+    def get_gh_point(gp_size):
+        x_nodes, x_weights = np.polynomial.hermite.hermgauss(gp_size)
+        x_nodes = x_nodes * 2 ** 0.5
+        x_nodes.shape = x_nodes.shape[0], 1
+        x_weights = x_weights / np.pi ** 0.5
+        x_weights.shape = x_weights.shape[0], 1
+        return x_nodes, x_weights
+```
+
+
+
+
+
+MLE, MAP and Bayesian Inference [u](https://towardsdatascience.com/mle-map-and-bayesian-inference-3407b2d6d4d9)
+
+A Gentle Introduction to Maximum Likelihood Estimation and Maximum A Posteriori Estimation [u](https://towardsdatascience.com/a-gentle-introduction-to-maximum-likelihood-estimation-and-maximum-a-posteriori-estimation-d7c318f9d22d)
+
 
 
 在统计计算中经常需要计算积分。比如，从密度$p(x)$**计算分布函数**$F(x)$，如果**没有解析表达式**和精确的计算公式， **需要用积分来计算**
