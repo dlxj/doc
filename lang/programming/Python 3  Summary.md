@@ -1985,6 +1985,14 @@ np.random.uniform(size=(inputLayerNeurons,hiddenLayerNeurons))
 a1 = x.reshape(x.shape[0], 1) # Getting the training example as a column vector.
 ```
 
+```python
+# 一维变二维
+sc = simScores[:, i]  # 取一列
+sc.reshape(sc.shape[0],-1)
+```
+
+
+
 
 
 #### flatten
