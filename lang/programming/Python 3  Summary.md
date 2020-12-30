@@ -344,6 +344,19 @@ def unchinese_remove(s):
 
 
 
+递归遍历
+
+```python
+xmls = glob.glob('./db/economist/**/article.xml', recursive=True)
+for xml in xmls:
+	with open(xml, "r", encoding="utf-8") as fp:
+		data = fp.read()
+```
+
+
+
+
+
 ### basename
 
 ```python

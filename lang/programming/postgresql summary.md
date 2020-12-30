@@ -2,6 +2,8 @@
 
 centos7 install [u](https://computingforgeeks.com/how-to-install-postgresql-13-on-centos-7/)
 
+vps [ramnode](https://www.ramnode.com/)
+
 
 
 用**Navicat** 客户端查数据
@@ -176,6 +178,148 @@ print('hi')
 ## nodejs
 
 https://github.com/sehrope/node-pg-db
+
+
+
+```javascript
+const { Pool, Client } = require('pg')
+const connectionString = 'postgresql://postgres:postgres@111.229.53.195:5432/studio'
+const pool = new Pool({
+  connectionString,
+})
+
+sql = "select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;"
+keywd = '情緒'
+pool.query(sql, [keywd], (err, res) => {
+  if(err) {
+    return console.error('error fetching client from pool', err);
+  }
+  console.log(res['rows'])
+  pool.end()
+})
+```
+
+
+
+### Server
+
+
+
+```javascript
+'use strict';
+var express = require('express'),
+  app = express(),
+  cookieParser = require('cookie-parser'),
+  expressSession = require('express-session'),
+  bodyParser = require('body-parser');
+
+const { Pool, Client } = require('pg')
+const connectionString = 'postgresql://postgres:postgres@111.229.53.195:5432/studio'
+const pool = new Pool({
+  connectionString,
+})
+
+// var db = require('pg-db')("postgres://postgres:psql@192.157.212.220/studio");
+
+app.use(cookieParser());
+app.use(expressSession({
+  secret: 'somesecrettokenhere'
+}));
+app.use(bodyParser());
+
+app.get('/', function(req, res) {
+
+  var html = '<form action="/" method="post">' +
+    'keyword: <input type="text" name="keyword"><br>' +
+    '<button type="submit">Search</button>' +
+    '</form>';
+  if (req.session.keyword) {
+    var keywd = req.session.keyword;
+    if (typeof keywd != 'undefined' &&
+      typeof keywd != null && keywd.trim().length > 0) {
+      keywd = keywd.trim();
+      var zhQ = false;
+      for (var i in keywd) {
+        if (keywd.charCodeAt(i) > 127) {
+          zhQ = true;
+          break;
+        }
+      }
+
+      /*
+
+      select id, en, zh, type, time from studio where v_en @@  to_tsquery('en', 'achieving') limit 3;
+
+SELECT id, ts_headline(en, q), rank
+FROM (SELECT id, en, q, ts_rank_cd(en, q) AS rank
+FROM studio, to_tsquery('en', 'achieving') q
+WHERE en @@ q
+ORDER BY rank DESC
+LIMIT 3) AS foo;
+      */
+
+      var sql = "";
+      if (zhQ) {
+        sql = "select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;"
+      } else {
+        sql = "SELECT id, ts_headline(en, q) as en, zh, type \
+                FROM studio, plainto_tsquery('en', $1) q \
+                WHERE v_en @@ q \
+                ORDER BY RANDOM() LIMIT 3 ;";
+      }
+
+      pool.query(sql, [keywd], (err, rt) => {
+        if (err) throw err;
+        // JSON.stringify
+        for (var i in rt['rows']) {
+          html += ('<br>' + rt['rows'][i].en + '<br>' + rt['rows'][i].zh + '<br>' + rt['rows'][i].type);
+          html += ('<br>' + '<br>');
+        }
+
+        res.cookie('keywd', req.session.keyword);
+        html += '<br>Your keyword is: ' + req.session.keyword;
+        console.log('session is: ' + req.session.keyword);
+        html += '<form action="/next" method="post">' +
+          '<button type="submit">Next</button>' +
+          '</form>';
+
+        res.send(html);
+      });
+
+    } else {
+      html += 'ooops: keyword plz.'
+      res.send(html);
+    }
+  } else {
+    res.send(html);
+  }
+});
+
+app.post('/', function(req, res) {
+  //if (req.cookies.bar) {
+  //req.session.keyword = req.body.keyword;
+  req.session.keyword = req.body.keyword;
+  res.redirect('/');
+    //}
+    //res.send(req.cookies.bar);
+    //res.redirect('/');
+});
+
+app.post('/next', function(req, res) {
+  console.log('cookies is: ', req.cookies.keywd);
+  req.session.keyword = req.cookies.keywd;
+  res.redirect('/');
+});
+
+
+app.listen(80, function() {
+  console.log("ready captain.");
+});
+```
+
+
+
+
 
 
 
@@ -830,11 +974,181 @@ PostgreSQL 全文检索加速 快到没有朋友 - RUM索引接口(潘多拉魔�
 
 
 
+RUM索引
+
+- 安装 https://github.com/postgrespro/rum
+
+短语搜索
+
+
+
+> create extension rum;
+>
+> CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);
+
 
 
 ## a
 
 ```bash
 C:\>w2 start -z rootCA.crt
+```
+
+
+
+```python
+
+"""
+pip install xmltodict
+GFW
+https://www.ishells.cn/archives/linux-ssr-server-client-install
+"""
+
+import psycopg2
+from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+import sqlite3 as sqlite # Python 自带的
+
+from pymysql import escape_string
+import glob
+
+import json
+import decimal
+import datetime
+
+import xmltodict
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return float(o)
+        elif isinstance(o, datetime.datetime):
+            return str(o)
+        super(DecimalEncoder, self).default(o)
+
+def save_json(filename, dics):
+    with open(filename, 'w', encoding='utf-8') as fp:
+        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
+        fp.close()
+
+def load_json(filename):
+    with open(filename, encoding='utf-8') as fp:
+        js = json.load(fp)
+        fp.close()
+        return js
+
+#escape_string = pymysql.escape_string
+
+#host = '111.229.53.195'
+host = '127.0.0.1'
+#host = '192.168.1.166'
+
+
+
+def createDatabase_studio( host = '127.0.0.1', studiodb = './db/studioclassroom.db' ):
+
+    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
+        conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        with conn.cursor() as cur:
+            cur.execute("DROP DATABASE IF EXISTS studio;")
+            cur.execute("CREATE DATABASE studio \
+                WITH OWNER = postgres \
+                ENCODING = 'UTF8' \
+                TABLESPACE = pg_default \
+                CONNECTION LIMIT = -1 \
+                TEMPLATE template0;")
+
+    with psycopg2.connect(database='studio', user='postgres', password='postgres',host=host, port='5432') as conn:
+
+        with conn.cursor() as cur:
+        
+            cur.execute("DROP TABLE IF EXISTS studio;")
+            cur.execute("create table studio( \
+                id serial primary key, \
+                en text, \
+                zh text, \
+                type text, \
+                time text, \
+                v_en  tsvector, \
+                v_zh  tsvector \
+            );")
+            """
+            需要安装两个扩展，一个分词，一个FTS
+                https://github.com/postgrespro/rum
+            """
+            cur.execute("create extension pg_jieba;")
+            cur.execute("create extension rum;")
+            cur.execute("CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);")
+        
+            with sqlite.connect(studiodb) as cx: # './db/studioclassroom.db'
+
+                cu = cx.cursor()
+                cu.execute("SELECT * FROM studioclassroom_content;", [])
+                rows = cu.fetchall()
+
+                cur.execute('BEGIN;')
+
+                for row in rows:
+                    # sql 语句里本身有单引号时用两个单引号来代替
+                    en = row[1].replace("'", "''").replace("\n",'')
+                    zh = row[2].replace("'", "''").replace("\n",'')
+                    ty = row[3].replace("'", "''").replace("\n",'')
+                    ti = row[4].replace("'", "''").replace("\n",'')
+
+                    sql = f"""insert into studio(en, zh, type, time, v_en, v_zh ) values('{en}', '{zh}', '{ty}', '{ti}', 'no', to_tsvector('jiebacfg', '{zh}'));"""
+
+                    cur.execute( sql )
+        
+            cur.execute('COMMIT;')
+
+
+def createDatabase_economistglobl( host = '127.0.0.1',  economistglobl= './db/economist/data/data/com.economist.hummingbird/databases/t_economics_database.db' ):
+        
+        with sqlite.connect(economistglobl) as cx:
+            
+            cu = cx.cursor()
+            cu.execute("select issue_id, title as issue_time from issue_table;", [])
+            rows = cu.fetchall()
+
+            issue_time = {}
+
+            for row in rows:
+                issueid = row[0]
+                issuetime = row[1]
+                issue_time[ issueid ] = issuetime
+
+            cu.execute("select article_folder as folder_id, issue_id from article_table;", [])
+            rows = cu.fetchall()
+            
+            
+            folder_id = {}
+            
+            for row in rows:
+                folderid = row[0]
+                issueid  = row[1]
+                folder_id[ folderid ] = issueid
+
+
+            xmls = glob.glob('./db/economist/**/article.xml', recursive=True)
+            for xml in xmls:
+                with open(xml, "r", encoding="utf-8") as fp:
+                    data = fp.read()
+                    js = xmltodict.parse(data)
+                    article = {}
+                    idiom = {}
+                    _id = js['article']['@id']
+                    pubdate = js['article']['pubdate']
+                    
+                    article['issue_time'] = issue_time[ folder_id[_id] ]
+                    article['pubdate'] = pubdate
+
+                    print(type( js['article']['body']['idioms'] ))
+                    
+                    if js['article']['body']['idioms'] != None:
+                        idiom['idiom'] = js['article']['body']['idioms']['idiom']
+
+
+# createDatabase_studio()
+createDatabase_economistglobl()
+
 ```
 
