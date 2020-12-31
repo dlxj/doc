@@ -8,6 +8,34 @@
 
 
 
+## 2020 斯坦福（Stanford）SwiftUI教程 
+
+
+
+所有Swift关键字都是洋红色 [u](https://www.bilibili.com/video/BV1EV411C77B)
+
+struct 里可以有变量、函数、**行为(behaviors)**
+
+```swift
+// 这不是面向对象编程，是面向行为(function)编程
+// 这句话是说这个结构行为类似View
+struct ContentView: View {
+  // 属性，行为类似View 则必须有some View 属性
+  // some View 是说，查看我的代码，看看它返回值是什么，确保它的行为类似View
+  var body: some View {
+      // 每次对body 取值都执行一次函数体里的代码
+      // 花括号就是函数体，实际上Text 的前面省略了 return 语句
+    	Text("Hello, World!")
+```
+
+
+
+
+
+
+
+
+
 > Option values  值有可能是nil 的变量，变量后面要加一个问号?
 >
 > > xx as? String ?? ” “  option强转String,  转不了就给个空串默认值
