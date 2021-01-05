@@ -2300,11 +2300,33 @@ $$
 
 
 
+**Gaussian Processes for Machine Learning** (Adaptive Computation and Machine Learning) by Carl Edward Rasmussen, Christopher K. I. Williams (z-lib.org).pdf
+
+
+
 ```python
 np.random.binomial(p=0.5, n=1)
 ```
 
 
+
+### EM 算法
+
+因为log函数是单调递增的，所以求p(x, z)的最大值，即求log(p(x, z))的最大值。[u](http://blog.sciencenet.cn/blog-2970729-1191928.html)
+
+
+
+EM算法(期望最大化算法)简介 [u](http://blog.sciencenet.cn/blog-2970729-1191928.html)
+
+- 二项系数刚好等于$n$ 选$k$ 的组合数
+
+$$
+\begin{pmatrix}
+n \\
+k
+\end{pmatrix}
+= C^k_n = \frac{n!}{k!(n-k)!}
+$$
 
 
 
