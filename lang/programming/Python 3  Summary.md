@@ -643,6 +643,19 @@ lambda 返回true 的保留
 
 
 
+### range
+
+
+
+```python
+list( range(5, 0, -1) )  # begin, stop, step
+[5, 4, 3, 2, 1]
+```
+
+
+
+
+
 ### Map
 
 ```python

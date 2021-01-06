@@ -2300,6 +2300,12 @@ $$
 
 
 
+**The Probability Lifesaver** All the Tools You Need to Understand Chance by Steven J. Miller (z-lib.org).pdf
+
+- 二项定理和二项分布
+
+
+
 **Gaussian Processes for Machine Learning** (Adaptive Computation and Machine Learning) by Carl Edward Rasmussen, Christopher K. I. Williams (z-lib.org).pdf
 
 
@@ -2316,7 +2322,7 @@ np.random.binomial(p=0.5, n=1)
 
 
 
-EM算法(期望最大化算法)简介 [u](http://blog.sciencenet.cn/blog-2970729-1191928.html)
+(**讲得最清楚**)**EM算法(期望最大化算法)简介** [u](http://blog.sciencenet.cn/blog-2970729-1191928.html)
 
 - 二项系数刚好等于$n$ 选$k$ 的组合数
 
@@ -2327,6 +2333,10 @@ k
 \end{pmatrix}
 = C^k_n = \frac{n!}{k!(n-k)!}
 $$
+
+**(也很清楚)EM Algorithm 从直观到数学理解** [u](https://hanspond.github.io/2018/09/02/EM%20Algorithm%20%E4%BB%8E%E7%9B%B4%E8%A7%82%E5%88%B0%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3/)
+
+**(提高编)EM算法的九層境界：Hinton和Jordan理解的EM算法** [u](https://www.luoow.com/dc_hk/108333860)
 
 
 
@@ -2385,6 +2395,41 @@ $arg \ max$ 的意思是求使后面的值最大的参数
 > 随机函数被叫做模型，表达模型的方法，和正常的Python方法没有区别
 > 模型（model）和变分分布（guide）的参数。【注：所谓变分就是将原始函数换作另一（易处理的）函数的数学技巧】
 > 最大化证据（evidence）  证据下限”ELBO（evidence lower bound）
+
+
+
+### 条件概率
+
+
+
+(a) 在连续两次抛掷骰子的试验中，已知两粒骰子的点数的总和为 9 ，第一粒骰子的点数为 6 的可能性有多大？
+
+
+
+条件概率是在小样本空间里算概率 概率导论p.17
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+- 分子是同时发生的概率
+
+
+
+Think Bayes Bayesian Statistics in Python by Allen B. Downey (z-lib.org).pdf
+$$
+P(A\ and\ B) = P(A)P(B|A) \\
+P(B\ and\ A) = P(B)P(A|B)
+$$
+
+- The cookie problem p.3
+
+  > 贝叶斯定理把两个对立的条件概率联系起来了 $P(A|B)和P(B|A)$
+  >
+  > - **贝叶斯定理通过上面那两个等式导出**
+
+
+
+
 
 
 
