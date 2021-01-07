@@ -1977,8 +1977,8 @@ print(np.mean(np.abs(est_slop - a[0]))) # 平均误差
 
 ```python
 np.prod([...]) # 不指定轴，则不管是几维都展平成一维然后连乘
-np.prod([...], axis=1) # 按行连乘(维度变成n*1)
-
+np.prod([...], axis=1) # 按行连乘(维度变成??)
+np.prod([...], axis=0) # 按列连乘
 ```
 
 
@@ -2161,6 +2161,23 @@ np.random.binomial(size=(n_persons, n_questions), p=likelihood, n=1)
 > size 和 p 的维度相同
 >
 > **二项分布，值为1 的概率由p 给出**
+
+
+
+### 阶乘
+
+
+
+```python
+import numpy as np
+
+# n 选k 的组合数
+def C(n, k):
+    return np.math.factorial(n) / ( np.math.factorial(k) * np.math.factorial(n - k) )
+
+```
+
+
 
 
 

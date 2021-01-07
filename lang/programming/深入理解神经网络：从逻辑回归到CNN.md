@@ -2302,7 +2302,22 @@ $$
 
 **The Probability Lifesaver** All the Tools You Need to Understand Chance by Steven J. Miller (z-lib.org).pdf
 
-- 二项定理和二项分布
+- 二项定理和二项分布 p.330
+
+随机变量 $X$ 为正面向上的次数，它的均值（期望）是$np$
+
+$$
+\begin{align}
+\mu \mathbf{x} &= E[X] \\
+&= E[X_1 + \cdots + X_n] \\
+&= E[X_1] + \cdots + E[X_n] \\
+&= p + \cdots + p = np
+\end{align}
+$$
+
+- ？？
+
+
 
 
 
@@ -2323,6 +2338,10 @@ np.random.binomial(p=0.5, n=1)
 
 
 (**讲得最清楚**)**EM算法(期望最大化算法)简介** [u](http://blog.sciencenet.cn/blog-2970729-1191928.html)
+
+- $P(A \cap H) + P(B \cap H) = P(H) ？$ **AB是空间的分割就成立，且不要求H 也在同一空间**
+  - **Think Bayes - 我所理解的贝叶斯定理** [u](https://zhuanlan.zhihu.com/p/22467549)
+  - **全概率公式**
 
 - 二项系数刚好等于$n$ 选$k$ 的组合数
 
@@ -2892,6 +2911,14 @@ $$
 
 
 ## 数值积分
+
+
+
+**高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024)
+
+
+
+
 
 数值积分和高斯点简介 [u](https://cn.comsol.com/blogs/introduction-to-numerical-integration-and-gauss-points/)
 
