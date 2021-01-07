@@ -2914,7 +2914,20 @@ $$
 
 
 
-**高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024)
+**高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024) [u2](GitHub\doc\lang\programming\高斯求积简介.pdf)
+
+函数$f(x)$ 的积分可以用n 个矩形的面积来逼近，一般会在函数上等间距采 n个点的值 $f(x_1),f(x_2),\cdots,f(x_n)$，然后分别乘以间隔（权重）得到面积，再累加求和得到积分
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210107110026248.png" alt="image-20210107110026248" style="zoom:50%;" />
+
+- node 是函数值$f(x_i)$ ，是小矩形的长
+- weight 是小矩形的宽
+
+
+
+
+
+
 
 
 
