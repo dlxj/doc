@@ -49,7 +49,7 @@ def get_gh_point(gp_size):
 class EAPIrt2PLModel(object):
 
     def __init__(self, score, slop, threshold): # 得分，区分度，阀值
-        self.x_nodes, self.x_weights = get_gh_point(21)
+        self.x_nodes, self.x_weights = get_gh_point(51)
         z = Z(slop, threshold, self.x_nodes)
         p = P(z)
         self.lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1) 
@@ -75,30 +75,75 @@ class EAPIrt2PLModel(object):
 
 
 
+
+
+"""
+一个人的真实能力是1，他答了1000 道题，使用EAP 算法估计他的能力
+"""
+# num = 5 # 题数
+# a = np.random.uniform(1, 3, num)       # 1000 道题的区分度  # 均匀分布
+# b = np.random.normal(0, 1, size=num)   # 1000 个阀值        # 正态分存
+# z = Z(a, b, 1) # 区分度，阀值，能力
+# p = P(z)
+# score = np.random.binomial(1, p, num)
+# # 计算并打印潜在特质估计值
+# eap = EAPIrt2PLModel(score, a, b)  # 得分，区分度，阀值
+# print(eap.res)
+
+
+
+"""
+阀值 = -1 * ( 难度 * 区分度 )
+难度 = -1 * ( 阀值 / 区分度 )
+"""
 if __name__ == "__main__":
 
     """
-    一个人的真实能力是1，他答了1000 道题，使用EAP 算法估计他的能力
+    一个人的真实能力是1，他答了3 道题，使用EAP 算法估计他的能力
     """
-    num = 3 # 题数
-    a = np.random.uniform(1, 3, num)       # 1000 道题的区分度  # 均匀分布
-    b = np.random.normal(0, 1, size=num)   # 1000 个阀值        # 正态分存
-    z = Z(a, b, 1) # 区分度，阀值，能力
+    num = 5 # 题数
+    slop = np.random.uniform(1, 3, num)            # 1000 道题的区分度  # 均匀分布
+    threshold = np.random.normal(0, 1, size=num)   # 1000 个阀值        # 正态分存
+    z = Z(slop, threshold, 1) # 区分度，阀值，能力
     p = P(z)
     score = np.random.binomial(1, p, num)
-    # 计算并打印潜在特质估计值
-    eap = EAPIrt2PLModel(score, a, b)  # 得分，区分度，阀值
-    print(eap.res)
-
 
     """
-    阀值 = -1 * ( 难度 * 区分度 )
-    难度 = -1 * ( 阀值 / 区分度 )
+    先求11 个积分点
+    """
+    x_nodes, x_weights = np.polynomial.hermite.hermgauss(21)  # Gauss–Hermite积分点数
+    x_nodes = x_nodes * 2 ** 0.5
+    x_nodes.shape = x_nodes.shape[0], 1
+    x_weights = x_weights / np.pi ** 0.5
+    x_weights.shape = x_weights.shape[0], 1
+
+    z = Z(slop, threshold, x_nodes)
+    p = P(z)
+    lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1)
+    """
+    计算所有元素的乘积，按行连乘(维度变成n*1)。
+    如果不指定轴，则不管是几维都展平成一维然后连乘
     """
 
+    x = x_nodes[:, 0]
+    weight = x_weights[:, 0]
+    g = np.sum(x * weight * lik_values)
+
+
+    weight = x_weights[:, 0]
+    h = np.sum(weight * lik_values)
+
     """
-    SELECT t.Alpha, t.Beta FROM testirt t ORDER BY RAND() LIMIT 1000;
+    估计的能力值
     """
+    theta = round(g / h, 3)
+    print(theta)
+
+
+
+"""
+SELECT t.Alpha, t.Beta FROM testirt t ORDER BY RAND() LIMIT 1000;
+"""
 
 
 

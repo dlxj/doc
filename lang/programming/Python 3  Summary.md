@@ -443,6 +443,59 @@ print(tis2-tis1)
 
 
 
+## 语法
+
+```python
+# 换行写法
+def _lik(scores, p_val):
+    # 似然函数
+    loglik_val = np.dot(np.log(p_val + 1e-200), scores.transpose()) + \
+                    np.dot(np.log(1 - p_val + 1e-200), (1 - scores).transpose())
+    return np.exp(loglik_val)
+# GitHub\doc\lang\programming\algo\EM.py
+```
+
+
+
+### Class
+
+#### 属性
+
+```python
+class EAPIrt2PLModel(object):
+
+    def __init__(self, score, slop, threshold): # 得分，区分度，阀值
+        self.x_nodes, self.x_weights = get_gh_point(21)
+        z = Z(slop, threshold, self.x_nodes)
+        p = P(z)
+        self.lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1) 
+        """
+        计算所有元素的乘积，按行连乘(维度变成n*1)。
+        如果不指定轴，则不管是几维都展平成一维然后连乘
+        """
+
+    @property
+    def g(self):
+        x = self.x_nodes[:, 0]
+        weight = self.x_weights[:, 0]
+        return np.sum(x * weight * self.lik_values)
+
+    @property
+    def h(self):
+        weight = self.x_weights[:, 0]
+        return np.sum(weight * self.lik_values)
+
+    @property
+    def res(self):
+        return round(self.g / self.h, 3)
+```
+
+
+
+
+
+
+
 ## OP
 
 
@@ -497,6 +550,8 @@ math.e：自然对数，值为2.718281828459045.
 math.inf：正无穷大，负无穷大为-math.inf.
 math.nan：Not a Number，非正常值
 ```
+
+
 
 
 
@@ -681,6 +736,13 @@ for i, name in enumerate(names):
 ```python
 To slice a list, there's a simple syntax: array[start:stop:step]
 You can omit any parameter. These are all valid: array[start:], array[:stop], array[::step]
+```
+
+
+
+```python
+x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
+# (11,1) -> (11,)
 ```
 
 
@@ -1909,6 +1971,15 @@ sorted(trank_res, key=lambda x: x['index'], reverse=False)
 
 
 
+```python
+x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
+# (11,1) -> (11,)
+```
+
+
+
+
+
 ### 维度不同的减法
 
 ```python
@@ -1955,6 +2026,35 @@ a, b 的列数相同，a行更多，**按列来减**
 	# 2个0有序对，11个1有序对，11个2有序对
 
 (11,2) + (2,) -> (11,2)
+```
+
+
+
+```python
+x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
+# (11,1) -> (11,)
+```
+
+
+
+#### 乘方
+
+```python
+# 按列乘方
+array([[2, 2],
+       [2, 2]])
+>>> b=np.array(b)
+>>> b
+array([0, 1])
+>>> a**b
+array([[1, 2],
+       [1, 2]], dtype=int32)
+"""
+    tmp1 = p**score
+    tmp2 = (1.0 - p)**(1-score)
+
+    lik_values = np.prod(tmp1*tmp2, axis=1)
+"""
 ```
 
 
