@@ -30,6 +30,59 @@ struct ContentView: View {
 
 
 
+```swift
+Text("👻") // 插入表情符号：Edit ->Emoji ->搜索ghost
+```
+
+
+
+```swift
+    var body: some View {
+      	// Z轴方向从下往上堆叠，上层会遮挡下层 
+        ZStack(content: {
+            // 底层用白纸打底，填充白色
+            RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
+          	// 中层用线条描边，线条前景色由父容器广播得来，相当于默认属性
+            RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
+            // 上层放表情文字
+            Text("👻").font(.largeTitle)
+        })
+      			// ZStack 外围留出一点空白，并给内部所有对象广播一种前景色 
+      			.padding().foregroundColor(Color.orange)
+```
+
+
+
+![image-20210101012512982](swift summary.assets/image-20210101012512982.png)
+
+
+
+```swift
+    var body: some View {
+        HStack(){
+            ForEach(0..<4) { index in
+                ZStack(content: {
+                    RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
+                    RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
+                    Text("👻").font(.largeTitle)
+                })
+            }
+            
+        }.padding().foregroundColor(Color.orange)
+            .font(.largeTitle)
+    }
+```
+
+
+
+![image-20210105221249365](swift summary.assets/image-20210105221249365.png)
+
+
+
+
+
+
+
 
 
 
