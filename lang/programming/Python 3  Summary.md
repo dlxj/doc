@@ -151,6 +151,44 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
 
 
 
+## Julia
+
+
+
+**高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024) [u2](GitHub\doc\lang\programming\高斯求积简介.pdf)
+
+
+
+```python
+>pip3 install pycall # for julia to using sympy package
+
+from sympy import  integrate ,cos,sin
+from sympy.abc import  a,x,y
+
+print( integrate(sin(x)/x,(x,-float("inf"),float("inf"))) ) # 积分结果是pi
+print( integrate(1+15*x+2*x**2+12*x**3,(x,float(-1),float(1))) ) # 3.333
+```
+
+
+
+```julia
+# 全程开全局代理 Proxifier
+julia>import Pkg; Pkg.add("SymPy")
+julia>using SymPy
+julia>sympy.sqrt(3)
+
+# vscode
+using SymPy
+x = symbols("x")
+println( integrate(sin(x)/x, (x, -oo, oo)) )
+println( integrate(1+15*x+2*x^2+12*x^3, (x, -1.0, 1.0)) )
+
+```
+
+
+
+
+
 ## 绘图的重要参考
 
 ### 深入理解神经网络：从逻辑回归到CNN.md
@@ -1021,7 +1059,7 @@ def weights_replaceinto(ls):
 
 
 
-### Check if a given key already exists in a diction 0ary
+### Check if a given key already exists in a dictionary
 
 
 

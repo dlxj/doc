@@ -2943,6 +2943,32 @@ $$
 
 
 
+```python
+>pip3 install pycall # for julia to using sympy package
+
+from sympy import  integrate ,cos,sin
+from sympy.abc import  a,x,y
+
+print( integrate(sin(x)/x,(x,-float("inf"),float("inf"))) ) # 积分结果是pi
+print( integrate(1+15*x+2*x**2+12*x**3,(x,float(-1),float(1))) ) # 3.333
+```
+
+
+
+```julia
+# 全程开全局代理 Proxifier
+julia>import Pkg; Pkg.add("SymPy")
+julia>using SymPy
+julia>sympy.sqrt(3)
+
+# vscode
+using SymPy
+x = symbols("x")
+println( integrate(sin(x)/x, (x, -oo, oo)) )
+println( integrate(1+15*x+2*x^2+12*x^3, (x, -1.0, 1.0)) )
+
+```
+
 
 
 
@@ -3049,6 +3075,8 @@ $$
 [中英字幕] 科普：**费马大定理的证明** | 椭圆曲线与模形式 [u](https://www.bilibili.com/video/BV1ut4y1C7Z1?t=41)
 
 - **sage 库**,python
+
+**vscode+jupyternotebook+sagemath配置** [u]()
 
 
 

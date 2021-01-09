@@ -16,6 +16,37 @@ wikibook [u](https://zh.m.wikibooks.org/zh-hans/Introducing_Julia/Arrays_and_tup
 
 
 
+
+
+```python
+>pip3 install pycall # for julia to using sympy package
+
+from sympy import  integrate ,cos,sin
+from sympy.abc import  a,x,y
+
+print( integrate(sin(x)/x,(x,-float("inf"),float("inf"))) ) # 积分结果是pi
+print( integrate(1+15*x+2*x**2+12*x**3,(x,float(-1),float(1))) ) # 3.333
+```
+
+
+
+```julia
+# 全程开全局代理 Proxifier
+julia>import Pkg; Pkg.add("SymPy")
+julia>using SymPy
+julia>sympy.sqrt(3)
+
+# vscode
+using SymPy
+x = symbols("x")
+println( integrate(sin(x)/x, (x, -oo, oo)) )
+println( integrate(1+15*x+2*x^2+12*x^3, (x, -1.0, 1.0)) )
+```
+
+
+
+
+
 Julia中，定义 A × B = C 则 A \ C = B （ \ 为**矩阵左除**运算符，A \ B = inv(A) * B）
 
 Julia还有一个矩阵的右除运算符（/，就是标准的除法，A / B = A * inv(B) )
