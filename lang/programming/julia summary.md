@@ -12,6 +12,10 @@ wikibook [u](https://zh.m.wikibooks.org/zh-hans/Introducing_Julia/Arrays_and_tup
 
 
 
+**高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024) [u2](GitHub\doc\lang\programming\高斯求积简介.pdf)
+
+
+
 Julia中，定义 A × B = C 则 A \ C = B （ \ 为**矩阵左除**运算符，A \ B = inv(A) * B）
 
 Julia还有一个矩阵的右除运算符（/，就是标准的除法，A / B = A * inv(B) )

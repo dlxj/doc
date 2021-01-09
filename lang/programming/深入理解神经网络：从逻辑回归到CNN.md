@@ -2925,7 +2925,7 @@ $$
 
 $$
 \int^{1}_{-1} f(x)dx \approx  w_1 f(x_1) + w_2 f(x_2) 
-+ w_3 f(x_3) + w_4 f(x_4)
++ w_3 f(x_3) + w_4 f(x_4)
 $$
 
 > 随机选4 个点对$f(x)$ 都成立
@@ -3039,6 +3039,16 @@ p(\theta|x) = \frac{p(\theta,x)}{p(x)} = \frac{\pi(\theta)p(x|\theta)}{\int \pi(
 $$
 
  不能得到后验密度 $p(\theta|x)$ 的解析表达式时，需要计算积分，**用后验密度求期望、平均损失函数**也需要计算积分
+
+
+
+## 数论
+
+
+
+[中英字幕] 科普：**费马大定理的证明** | 椭圆曲线与模形式 [u](https://www.bilibili.com/video/BV1ut4y1C7Z1?t=41)
+
+- **sage 库**,python
 
 
 
