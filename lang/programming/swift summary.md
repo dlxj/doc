@@ -79,6 +79,10 @@ Text("👻") // 插入表情符号：Edit ->Emoji ->搜索ghost
 
 
 
+```swift
+private(set) var // 私有写
+```
+
 
 
 

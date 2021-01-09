@@ -4806,6 +4806,16 @@ for m in range(2, max_sep+1):
 
 
 
+## 数论
+
+
+
+[中英字幕] 科普：**费马大定理的证明** | 椭圆曲线与模形式 [u](https://www.bilibili.com/video/BV1ut4y1C7Z1?t=41)
+
+- **sage 库**,python
+
+**vscode+jupyternotebook+sagemath配置** [u]()
+
 
 
 
