@@ -10,7 +10,16 @@
 import SwiftUI
 
 struct EmojiMemoryGame {
-    private(set) var model:MemoryGame<String>
+    private(set) var model:MemoryGame<String> = createMemoryGame()
+    
+    static func factoryCardContent(index:Int)->String {
+        let emojis = ["👻","🎃"]
+        return emojis[index]
+    }
+    
+    static func createMemoryGame()->MemoryGame<String> {
+        return MemoryGame<String>(numberOfPairsCards: 2, cardContentFactory: factoryCardContent)
+    }
     
     var cards:Array<MemoryGame<String>.Card> {
         return model.cards

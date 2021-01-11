@@ -85,6 +85,14 @@ private(set) var // 私有写
 
 
 
+```swift
+struct Card:Identifiable {
+	 var id:Int
+// 实际化时赋值唯一值
+```
+
+
+
 
 
 
