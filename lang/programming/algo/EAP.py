@@ -15,6 +15,8 @@ EAP（expected a posteriori）期望后验参数估计算法中的高斯-埃尔�
 # 另一个参考项目，基于论文的实现 IRT Parameter Estimation using the EM Algorithm By Brad Hanson 2000
 
 
+高斯求积简介 https://discourse.juliacn.com/t/topic/1024
+
 高斯厄米特积分点的数量，影响积分计算的精度
     肯定是越大越好，但也没太多必要，6个积分点就够了
 
@@ -46,52 +48,6 @@ def get_gh_point(gp_size):
     return x_nodes, x_weights
 
 
-class EAPIrt2PLModel(object):
-
-    def __init__(self, score, slop, threshold): # 得分，区分度，阀值
-        self.x_nodes, self.x_weights = get_gh_point(51)
-        z = Z(slop, threshold, self.x_nodes)
-        p = P(z)
-        self.lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1) 
-        """
-        计算所有元素的乘积，按行连乘(维度变成n*1)。
-        如果不指定轴，则不管是几维都展平成一维然后连乘
-        """
-
-    @property
-    def g(self):
-        x = self.x_nodes[:, 0]
-        weight = self.x_weights[:, 0]
-        return np.sum(x * weight * self.lik_values)
-
-    @property
-    def h(self):
-        weight = self.x_weights[:, 0]
-        return np.sum(weight * self.lik_values)
-
-    @property
-    def res(self):
-        return round(self.g / self.h, 3)
-
-
-
-
-
-"""
-一个人的真实能力是1，他答了1000 道题，使用EAP 算法估计他的能力
-"""
-# num = 5 # 题数
-# a = np.random.uniform(1, 3, num)       # 1000 道题的区分度  # 均匀分布
-# b = np.random.normal(0, 1, size=num)   # 1000 个阀值        # 正态分存
-# z = Z(a, b, 1) # 区分度，阀值，能力
-# p = P(z)
-# score = np.random.binomial(1, p, num)
-# # 计算并打印潜在特质估计值
-# eap = EAPIrt2PLModel(score, a, b)  # 得分，区分度，阀值
-# print(eap.res)
-
-
-
 """
 阀值 = -1 * ( 难度 * 区分度 )
 难度 = -1 * ( 阀值 / 区分度 )
@@ -109,7 +65,7 @@ if __name__ == "__main__":
     score = np.random.binomial(1, p, num)
 
     """
-    先求11 个积分点
+    先求21 个积分点
     """
     x_nodes, x_weights = np.polynomial.hermite.hermgauss(21)  # Gauss–Hermite积分点数
     x_nodes = x_nodes * 2 ** 0.5
@@ -117,9 +73,14 @@ if __name__ == "__main__":
     x_weights = x_weights / np.pi ** 0.5
     x_weights.shape = x_weights.shape[0], 1
 
-    z = Z(slop, threshold, x_nodes)
-    p = P(z)
-    lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1)
+    z = Z(slop, threshold, x_nodes)  # x_nodes是21 个theta 采样值
+    p = P(z)                         # (21 * 5) 的正确率
+    tmp1 = p**score # p 被按列乘方，p 的列数要等于score 的列数
+    tmp2 = (1.0 - p)**(1-score)
+
+    lik_values = np.prod(tmp1*tmp2, axis=1)
+
+    # lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1)
     """
     计算所有元素的乘积，按行连乘(维度变成n*1)。
     如果不指定轴，则不管是几维都展平成一维然后连乘
@@ -138,7 +99,6 @@ if __name__ == "__main__":
     """
     theta = round(g / h, 3)
     print(theta)
-
 
 
 """

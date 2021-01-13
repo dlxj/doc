@@ -116,6 +116,19 @@ pip --version
 deactivate # 关闭临时python 环境
 ```
 
+
+
+### 明明pip 装了某个包却找不到
+
+```python
+export PYTHONPATH=/root/flask_server/server_venv/lib/python3.8/site-packages
+```
+
+
+
+
+
+
 ```
 pip list
 pip show jieba
@@ -3293,6 +3306,25 @@ f"INSERT INTO trialexampointrelevanttest (examPointID, appID, testID, childTestI
 
 
 ## Excel
+
+
+
+找不开xlsx，用engine=‘openpyxl’  替代
+
+```bash
+原因是最近xlrd更新到了2.0.1版本，只支持.xls文件。所以pandas.read_excel(‘xxx.xlsx’)会报错。
+
+可以安装旧版xlrd，在cmd中运行：
+
+pip uninstall xlrd
+pip install xlrd==1.2.0
+
+也可以用openpyxl代替xlrd打开.xlsx文件：
+
+df=pandas.read_excel(‘data.xlsx’,engine=‘openpyxl’)
+```
+
+
 
 
 

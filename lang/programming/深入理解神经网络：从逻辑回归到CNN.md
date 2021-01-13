@@ -28,6 +28,19 @@ Things Happen for A Reason
 
 
 
+```
+Kaggle 是一个数据科学竞赛的平台，很多公司会发布一些接近真实业务的问题，吸引爱好数据科学的人来一起解决。
+可以锻炼数据挖掘和机器学习技能
+```
+
+
+
+PyTorch入门: Kaggle 泰坦尼克幸存者预测 [u](https://magolor.cn/2020/01/12/2020-01-12-blog-01/)
+
+- [u](https://zhuanlan.zhihu.com/p/50194676)
+
+
+
 **OpenAI — Spinning Up** [u](https://spinningup.readthedocs.io/zh_CN/latest/user/introduction.html)
 
 **Udacity — deep-learning**-v2-pytorch [u](https://github.com/udacity/deep-learning-v2-pytorch)
