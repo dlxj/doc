@@ -15,10 +15,20 @@ struct MemoryGame<CardContent> {
         print("card choose:\(card)")
     }
     
-    struct Card {
-        var isFaceUp: Bool
-        var isMatch: Bool
-        var conten: CardContent
+    init(numberOfPairsCards:Int, cardContentFactory:(Int)->CardContent) {
+        cards = Array<Card>()
         
+        for pairIndex in 0..<numberOfPairsCards {
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card(content: content, id:pairIndex*2))
+            cards.append(Card(content: content, id:pairIndex*2+1))
+        }
+    }
+    
+    struct Card:Identifiable {
+        var isFaceUp: Bool = false
+        var isMatch: Bool = false
+        var content: CardContent
+        var id:Int
     }
 }
