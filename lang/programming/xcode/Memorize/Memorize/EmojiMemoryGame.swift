@@ -12,13 +12,13 @@ import SwiftUI
 struct EmojiMemoryGame {
     private(set) var model:MemoryGame<String> = createMemoryGame()
     
-    static func factoryCardContent(index:Int)->String {
-        let emojis = ["👻","🎃"]
-        return emojis[index]
-    }
-    
     static func createMemoryGame()->MemoryGame<String> {
-        return MemoryGame<String>(numberOfPairsCards: 2, cardContentFactory: factoryCardContent)
+        let emojis = ["👻","🎃", "🕷"]
+        return MemoryGame<String>(numberOfPairsCards: emojis.count,
+                                  cardContentFactory: {
+                                    (index:Int)->String in return emojis[index]
+                                  }
+        )
     }
     
     var cards:Array<MemoryGame<String>.Card> {
@@ -29,3 +29,4 @@ struct EmojiMemoryGame {
         model.choose(card: card)
     }
 }
+
