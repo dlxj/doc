@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct mainView: View {
+struct EmojiGameView: View {
     
     var model = EmojiMemoryGame()
 
@@ -20,7 +20,9 @@ struct mainView: View {
                     RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
                     RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
                     Text(card.content).font(.largeTitle)
-                })
+                }).onTapGesture {
+                    self.model.choose(card: card)
+                }
             }
             
         }.padding().foregroundColor(Color.orange)
@@ -31,6 +33,6 @@ struct mainView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        mainView()
+        EmojiGameView()
     }
 }

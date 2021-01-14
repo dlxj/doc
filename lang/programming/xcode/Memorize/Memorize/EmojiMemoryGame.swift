@@ -9,8 +9,8 @@
 
 import SwiftUI
 
-struct EmojiMemoryGame {
-    private(set) var model:MemoryGame<String> = createMemoryGame()
+class EmojiMemoryGame :ObservableObject {
+    @Published private(set) var model:MemoryGame<String> = createMemoryGame() // @Published 会在每次数据改变时都发通知
     
     static func createMemoryGame()->MemoryGame<String> {
         let emojis = ["👻","🎃", "🕷"]
