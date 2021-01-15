@@ -37,7 +37,7 @@ Kaggle 是一个数据科学竞赛的平台，很多公司会发布一些接近�
 
 PyTorch入门: Kaggle 泰坦尼克幸存者预测 [u](https://magolor.cn/2020/01/12/2020-01-12-blog-01/)
 
-- [u](https://zhuanlan.zhihu.com/p/50194676)
+- top 3% [u](https://zhuanlan.zhihu.com/p/50194676)
 
 
 
@@ -2929,6 +2929,25 @@ $$
 
 **高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024) [u2](GitHub\doc\lang\programming\高斯求积简介.pdf)
 
+**Gauss quadrature nodes and weights** [u](https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/23972/versions/22/previews/chebfun/examples/quad/html/GaussQuad.html)
+
+```matlab
+% Golub-Welsch algorithm
+% The classical method for computing the Gauss nodes and weights is the Golub-Welsch algorithm [2], which reduces the problem to a symmetric tridiagonal eigenvalue problem. We refrain from deriving this relation, but give a small snippet of the code (borrowed from [3, p. 129]).
+
+n = 5; format short
+
+    beta = .5./sqrt(1-(2*(1:n-1)).^(-2)); % 3-term recurrence coeffs
+    T = diag(beta,1) + diag(beta,-1)      % Jacobi matrix
+    [V,D] = eig(T);                       % Eigenvalue decomposition
+    x = diag(D); [x,i] = sort(x);         % Legendre points
+    w = 2*V(1,i).^2;                      % Quadrature weights
+```
+
+
+
+
+
 函数$f(x)$ 的积分可以用n 个矩形的面积来逼近，一般会在函数上等间距采 n个点的值 $f(x_1),f(x_2),\cdots,f(x_n)$，然后分别乘以间隔（权重）得到面积，再累加求和得到积分
 
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210107110026248.png" alt="image-20210107110026248" style="zoom:50%;" />
@@ -2983,6 +3002,50 @@ println( integrate(1+15*x+2*x^2+12*x^3, (x, -1.0, 1.0)) )
 ```
 
 
+
+
+
+SymTridiagonal  对称三对角矩阵
+
+
+
+@. 的作用是同时向量向化函数调用和赋值
+
+```
+f(x) to f.(x)
++= to .+=
+```
+
+
+
+https://www.zhihu.com/column/p/22141637
+
+同时，我们可以通过求解一个三对角对称矩阵的本征值和本征向量来得到所需的零点位置和积分权值（这可以通过QR分解来快速精确求解），事实上这就是实际计算中所采用的办法。
+
+上面的Golub-Welsch算法里得到点和权重的方法就是利用Jacobi矩阵的特征多项式的三项递归特性。
+
+
+
+定义内积和系统问题本身其实关系极大，而内积也不一定要这么定义，例如在Hermite多项式中，其内积就加上一个权重函数：
+$$
+<H_M,H_n> = \int^{\infty}_{-\infty} dx \cdot H_m(x)H_n(x) e^{-x^2}
+$$
+
+这种连续函数的内积的定义，我是这样看的：每一个函数都是一个矢量，而矢量中每一值是在不同的x的值，即
+$$
+f(x) = [f(x_0),f(x_1),f(x_2)]^T
+$$
+
+
+内积就是两普通矢量的内积，即
+
+把这转成积分，加上权重，就成了一般所见的函数的内积定义。
+
+
+
+![image-20210115145527050](深入理解神经网络：从逻辑回归到CNN.assets/image-20210115145527050.png)
+
+![image-20210115145540640](深入理解神经网络：从逻辑回归到CNN.assets/image-20210115145540640.png)
 
 
 

@@ -1030,6 +1030,12 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 # GFW
 
+
+
+Linux安装SSR服务端、客户端 [u](https://www.ishells.cn/archives/linux-ssr-server-client-install)
+
+
+
 # 黑科技
 
 [搭建备用梯子：V2Ray + WebSocket + TLS + CloudFlare](https://printempw.github.io/v2ray-ws-tls-cloudflare/)
