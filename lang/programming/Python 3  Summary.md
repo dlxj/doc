@@ -35,6 +35,8 @@ pip install https://github.com/explosion/spacy-models/releases/download/en_core_
 nlp = spacy.load("en_core_web_sm")
 ```
 
+pip install **pymysql==0.9.3** # 高版本没有escape_string
+
 pip install tensorflow==1.12 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ```
@@ -161,6 +163,22 @@ python -m pip install -U matplotlib
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
 ```
+
+
+
+## nohup
+
+```bash
+# 加 -u 才能看到打印的输出
+nohup python -u sametest.py >outlog &
+tail -f log.file
+jobs -l # 查看运行中的进程
+ps -aux | grep "sametest.py"
+```
+
+
+
+
 
 
 
@@ -355,6 +373,20 @@ os.path.abspath(__file__)                   # current file
 os.path.dirname(os.path.abspath(__file__))  # current file directory
 os.path.dirname(os.path.abspath(__name__))  # ?? directory
 ```
+
+
+
+```python
+# 递归创建目录
+currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )   
+
+    if not os.path.exists( currDir ):
+        os.makedirs( currDir )
+```
+
+
+
+
 
 ## File
 
