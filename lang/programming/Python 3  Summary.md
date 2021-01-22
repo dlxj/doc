@@ -3249,6 +3249,16 @@ https://blog.csdn.net/weixin_36380516/java/article/details/80008496
 
 
 ```python
+import requests
+re = requests.post(url="http://192.168.0.140:6001/api/planckWord/splitAll", data={'array':"""[{"id":"1","context":"$"}]""".replace('$', '这里是内容')}, headers={'Content-Type':'application/x-www-form-urlencoded'}).json()
+if re['status'] == 200
+```
+
+
+
+
+
+```python
 # -*- coding: utf-8 -*-
 from flask import request, jsonify, json, Module
 import logging
