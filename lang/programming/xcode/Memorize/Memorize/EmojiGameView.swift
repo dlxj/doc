@@ -10,16 +10,20 @@ import SwiftUI
 
 struct EmojiGameView: View {
     
-    var model = EmojiMemoryGame()
+    @ObservedObject var model = EmojiMemoryGame()
 
-    
     var body: some View {
         HStack(){
             ForEach(model.cards) { card in
                 ZStack(content: {
-                    RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
-                    RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
-                    Text(card.content).font(.largeTitle)
+                    if card.isFaceUp {
+                        RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
+                        RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
+                        Text(card.content).font(.largeTitle)
+                    } else {
+                        RoundedRectangle(cornerRadius: 10.0).fill()
+                    }
+
                 }).onTapGesture {
                     self.model.choose(card: card)
                 }
