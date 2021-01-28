@@ -14,6 +14,25 @@ F11 切换全屏
 
 
 
+```
+.gitignore
+*.json
+*.doc
+*.docx
+*.rar
+*.zip
+*.7z
+*.csv
+*.pyc
+.DS_Store
+*.pyc
+__pycache__/
+```
+
+
+
+
+
 ## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
 ```bash
@@ -117,6 +136,17 @@ python --version
 pip --version
 deactivate # 关闭临时python 环境
 ```
+
+
+
+```
+pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
+pm2 resurrect // 重启备份的所有项目
+```
+
+
+
+
 
 
 
@@ -1621,6 +1651,34 @@ print(re.findall(r"\d+\s+(.+?)\s+", "0 跨膜激活物、钙调节物、亲环�
 ```
 
 
+
+### 不是特定字符
+
+
+
+```python
+r'@*?([1-9][0-9]*\.[^0-9a-zA-Z].+?)\n' # . 后面不能出现特定字符
+```
+
+
+
+
+
+
+
+
+
+### 提取
+
+```python
+print( re.compile('([一二三四五六七八九十]+)').search('三四五').group(1) )
+```
+
+```python
+# python 3.8 新特性
+if match := re.compile('([一二三四五六七八九十]+)').search('三四五'):  
+	print( match.group(1) )
+```
 
 
 
