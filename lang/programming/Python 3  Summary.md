@@ -2505,6 +2505,19 @@ class(o)
 
 
 
+### time
+
+```python
+import datetime
+now = datetime.datetime.now()
+print now.year, now.month, now.day, now.hour, now.minute, now.second
+# 2015 5 6 8 53 40
+```
+
+
+
+
+
 
 
 ## Multiprocessing 
@@ -3663,7 +3676,7 @@ if __name__ == '__main__':
 
 
 
-### DataFrame 
+### DataFrame
 
 > "dict-like" Series **container** for **Series objects**
 >
@@ -3688,6 +3701,20 @@ if __name__ == '__main__':
         left = pp2[0][word]                            # word 的所有左邻字
         right = pp2[2][word]                           # word 的所有右邻字
 ```
+
+
+
+#### 合并数据帧
+
+```python
+full = pd.DataFrame()
+full = pd.concat([train,test],ignore_index=True)  # 列数不一至的数据帧合并，缺失列的一方会添加空列(所有数据为空白)
+print(full.columns)
+```
+
+
+
+
 
 
 

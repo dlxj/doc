@@ -22,6 +22,10 @@ Things Happen for A Reason
 
 
 
+
+
+
+
 **A MATLAB Package for Markov Chain Monte Carlo with a Multi-Unidimensional IRT Model** [u](https://www.jstatsoft.org/article/view/v028i10)
 
 - **此网站论文+代码 全开放下载，概率统计专题**
@@ -37,7 +41,15 @@ Kaggle 是一个数据科学竞赛的平台，很多公司会发布一些接近�
 
 PyTorch入门: Kaggle 泰坦尼克幸存者预测 [u](https://magolor.cn/2020/01/12/2020-01-12-blog-01/)
 
+- 入门很细致 [u](https://zhuanlan.zhihu.com/p/53176091)
+
 - top 3% [u](https://zhuanlan.zhihu.com/p/50194676)
+
+
+
+线代笔记 jupyter
+
+https://github.com/MacroAnalyst/Linear_Algebra_With_Python
 
 
 
@@ -1851,6 +1863,12 @@ $$
 ### 矩阵分析 哈工大严质彬
 
 看完Gilbert Strang教授的线性代数后，我推荐可以继续看看国内哈工大严质彬老师的《矩阵分析》(矩阵分析_严质彬_哈尔滨工业大学-超星学术视频 1122)，同样是循序渐进通俗易通。特别是在描叙矩阵本质的时候非常精彩，把握住了思想要领，在回头来看基，相似相合，不变子空间，特征值时又会有更深的认识。视频后面部分用Gram矩阵描述最小二乘问题和李雅普夫稳定性理论的推导证明直观给力！
+
+
+
+线代笔记 jupyter
+
+https://github.com/MacroAnalyst/Linear_Algebra_With_Python
 
 
 
