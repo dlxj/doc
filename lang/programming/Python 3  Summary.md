@@ -3719,6 +3719,16 @@ if __name__ == '__main__':
 
 
 
+#### copy
+
+```python
+dataframe1 = dataframe.copy(deep=True)
+```
+
+
+
+
+
 #### 前几列前几行
 
 ```python
@@ -3807,6 +3817,29 @@ full['Age']  = full['Age'].fillna(full['Age'].mean())
 full.info()
 ```
 
+```python
+# 缺失值计数
+df['Age'].isnull().sum()
+```
+
+
+
+```python
+def fill_in_age(x):
+    if x['Pclass_1']==1:
+        return 37
+    elif x['Pclass_2']==1:
+        return 29
+    else:
+        return 25
+df['Age']=df.apply(fill_in_age, axis=1)
+sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+```
+
+
+
+
+
 
 
 #### One hot encode
@@ -3867,6 +3900,28 @@ sns.distplot(dataframe.Fare)
 ```
 
 <img src="Python 3  Summary.assets/image-20210203151255163.png" alt="image-20210203151255163" style="zoom:50%;" />
+
+
+
+#### 热力图
+
+```python
+# 缺失值高亮
+sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+```
+
+<img src="Python 3  Summary.assets/image-20210203165600556.png" alt="image-20210203165600556" style="zoom:50%;" />
+
+
+
+#### 箱形图
+
+```python
+plt.figure(figsize=(12, 7))
+sns.boxplot(x='Pclass',y='Age',data=titanic,palette='winter')
+```
+
+
 
 
 
