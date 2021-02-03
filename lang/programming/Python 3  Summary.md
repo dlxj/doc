@@ -3824,6 +3824,8 @@ df['Age'].isnull().sum()
 
 
 
+##### apply
+
 ```python
 def fill_in_age(x):
     if x['Pclass_1']==1:
@@ -3837,6 +3839,21 @@ sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
 ```
 
 
+
+#### 数据标准化
+
+z-score标准化
+
+- 经过处理后的数据符合标准正态分布，即均值为0，标准差为1
+
+```python
+to_normalize=['Age','Fare']
+for each in to_normalize:
+    mean, std= df[each].mean(), df[each].std()
+    df.loc[:, each]=(df[each]-mean)/std
+```
+
+标准化后的变量值围绕0上下波动，**大于0说明高于平均水平，小于0说明低于平均水平**。
 
 
 
