@@ -3704,12 +3704,71 @@ if __name__ == '__main__':
 
 
 
+#### 前几列前几行
+
+```python
+full['Cabin'].head() # 前5列
+full.head(10) # 前10行
+```
+
+
+
+
+
 #### 合并数据帧
 
 ```python
 full = pd.DataFrame()
 full = pd.concat([train,test],ignore_index=True)  # 列数不一至的数据帧合并，缺失列的一方会添加空列(所有数据为空白)
 print(full.columns)
+```
+
+
+
+#### 填充缺失值
+
+```python
+from pandas import DataFrame
+full['Age']  = full['Age'].fillna(full['Age'].mean())
+#年龄因为不可从其他途径得知，采用平均年龄填充，此步骤对最终预测结果有影响。
+full.info()
+```
+
+
+
+#### One hot encode
+
+[u](https://blog.csdn.net/maymay_/article/details/80198468)
+
+get_dummies 是利用pandas实现one hot encode的方式
+
+<img src="Python 3  Summary.assets/image-20210203095930108.png" alt="image-20210203095930108" style="zoom:50%;" />
+
+
+
+```python
+# 直观上是把一列变成了很多列，值不是0就是1
+embarkedDf = pd.get_dummies(full['Embarked'],prefix='Embarked')#predix参数用于指定类别标签
+full = pd.concat([full,embarkedDf],axis=1)
+full.drop('Embarked',axis=1,inplace=True)#删除‘Embarked’列
+full.head()
+```
+
+![image-20210203101608443](Python 3  Summary.assets/image-20210203101608443.png)
+
+
+
+#### Map
+
+```python
+def get_title(name):#定义称谓提取函数
+    str1=name.split(',')[1]#提取，后边的字符串
+    str2=str1.split('.')[0]#提取.前面的字符串
+    str3=str2.strip()#用于去除空格
+    return str3
+titleDf = pd.DataFrame()
+titleDf['Title'] = full['Name'].map(get_title)
+titleDf['Title'].value_counts()
 ```
 
 

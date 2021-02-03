@@ -1,0 +1,37 @@
+目录
+
+1. 提出问题（Business Understanding ）
+2. 理解数据（Data Understanding）
+3. 数据清洗（Data Preparation ）
+4. 构建模型（Modeling）
+5. 模型评估（Evaluation）
+6. 方案实施 （Deployment）
+1.提出问题
+带有什么特征的人在Titanic号事件中有更高的生存率？我们构建一个模型来预测不同特征的人的生存情况。
+
+2.理解数据
+1、下载数据。https://www.kaggle.com/c/titanic
+
+其中
+
+gender_submission.csv 文件记录真实的存活情况，1表示存活，0表示不幸遇难；
+test.csv 为测试数据集；
+train.csv 为训练数据集。
+
+各字段含义如下：
+
+Age 年龄
+Cabin 船舱号
+Embarked 登船港口
+Fare 票价
+Name 乘客姓名
+Parch 不同代直系亲属人数
+SibSp 同代直系亲属人数
+PassengerId 乘客ID
+Pclass 客舱等级
+Sex 性别
+Ticket 船票编号
+Survived 存活情况
+
+
+
