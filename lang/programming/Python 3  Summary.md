@@ -196,6 +196,17 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
 
 
 
+### 使用代理
+
+```bash
+pip install pysocks
+pip install -r requirements.txt --proxy='socks5://127.0.0.1:4781'
+```
+
+
+
+
+
 ## nohup
 
 ```bash
@@ -1355,6 +1366,10 @@ doc\lang\programming\python\深入理解神经网络：从逻辑回归到CNN\neu
 
 ```python
 print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, loss.item()))
+```
+
+```python
+print("Total probability of survival for all passengers --> {:.4f}".format(dataframe.Survived.mean()))
 ```
 
 
@@ -3713,6 +3728,64 @@ full.head(10) # 前10行
 
 
 
+#### 行数和列数
+
+```python
+len(dataframe.index)
+len(dataframe.columns)
+dataframe.shape
+```
+
+
+
+#### 筛选数据
+
+```python
+# https://medium.com/jovianml/https-jovian-ml-undefined-none-titanic-logistic-regression-v-105-cellid-55-bb7b2b1b5de1
+len(dataframe[(dataframe["Survived"]==1) & (dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index)
+```
+
+```python
+# 头等舱女性的存活率
+len(dataframe[(dataframe["Survived"]==1) & (dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index) / \
+    len(dataframe[(dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index)
+--> 0.968
+```
+
+
+
+#### loc
+
+```python
+#原始数据集有891行
+sourceRow=891
+'''
+sourceRow是我们在最开始合并数据前知道的，原始数据集有总共有891条数据
+从特征集合full_X中提取原始数据集提取前891行数据时，我们要减去1，因为行号是从0开始的。
+'''
+#原始数据集：特征
+source_X = full_X.loc[0:sourceRow-1,:]
+#原始数据集：标签
+source_y = full.loc[0:sourceRow-1,'Survived']   
+
+#预测数据集：特征
+pred_X = full_X.loc[sourceRow:,:]
+```
+
+
+
+
+
+#### 最大最小值均值
+
+```python
+print("Average age of all passengers -->  {0:.1f}".format(dataframe.Age.mean()))
+print("Age of oldest passenger -->  {:.1f}".format(dataframe.Age.max()))
+print("Age of youngest passenger -->  {:.1f}".format(dataframe.Age.min()))
+```
+
+
+
 
 
 #### 合并数据帧
@@ -3773,7 +3846,27 @@ titleDf['Title'].value_counts()
 
 
 
+#### 柱状图
 
+
+
+##### 三种舱生存情况
+
+```python
+sns.countplot(x="Survived", hue="Pclass", data=dataframe)
+plt.title("No. of people survived from different classes")
+```
+
+<img src="Python 3  Summary.assets/image-20210203150631837.png" alt="image-20210203150631837" style="zoom:50%;" />
+
+#### 分布图
+
+```python
+# 票价分布
+sns.distplot(dataframe.Fare)
+```
+
+<img src="Python 3  Summary.assets/image-20210203151255163.png" alt="image-20210203151255163" style="zoom:50%;" />
 
 
 
