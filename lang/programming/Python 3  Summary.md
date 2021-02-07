@@ -65,6 +65,25 @@ install_requires=['numpy', 'tensorflow-gpu==1.12', 'tensorflow-hub', "tqdm", "sp
 
 
 
+```bash
+conda create -n tf114 pip python=3.7
+conda activate tf114
+pip install -i https://mirrors.aliyun.com/pypi/simple/ tensorflow==1.14
+pip install -i https://mirrors.aliyun.com/pypi/simple/ bert4keras==0.9.8
+
+```
+
+
+
+```
+# 清除dns缓存
+ipconfig /flushdns
+```
+
+
+
+
+
 **基于论文的实现**  [u](https://github.com/17zuoye/pyirt)
 
 - IRT Parameter Estimation using the EM Algorithm By Brad Hanson 2000
@@ -201,6 +220,30 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple panda
 ```bash
 pip install pysocks
 pip install -r requirements.txt --proxy='socks5://127.0.0.1:4781'
+pip3 --proxy 127.0.0.1:6152 install snowlp
+```
+
+
+
+```bash
+使用pip命令全局配置pip 阿里云镜像源
+pip config --global set global.index-url https://mirrors.aliyun.com/pypi/simple/
+ 
+pip config --global set install.trusted-host mirrors.aliyun.com
+复制代码不用找pip配置文件路径，pip会根据当前系统的环境变量自动完成配置
+器通过代理临时上网：
+执行命令行：
+export http_proxy=http://136.15.2.3:909/ && export https_proxy=http://136.15.2.3:909/
+复制代码取消代理：
+unset http_proxy
+unset https_proxy
+```
+
+
+
+```
+set HTTP_PROXY=http://127.0.0.1:4780
+set HTTPS_PROXY=https://127.0.0.1:4780
 ```
 
 
@@ -423,6 +466,13 @@ currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str
 
     if not os.path.exists( currDir ):
         os.makedirs( currDir )
+```
+
+
+
+```python
+# ./datasets/train.json --> ./datasets/train
+data_random_order_json = data_json[:-5] + '_random_order.json'
 ```
 
 
@@ -1372,6 +1422,10 @@ print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, loss.item()))
 print("Total probability of survival for all passengers --> {:.4f}".format(dataframe.Survived.mean()))
 ```
 
+```python
+print(u'输出路径：%s.npy' % data_extract_npy)
+```
+
 
 
 
@@ -1664,6 +1718,21 @@ print(re.findall(r"\d+\s+(.+?)\s+", "0 跨膜激活物、钙调节物、亲环�
 	# findall 得到的结果是数组，不如前一种方法好用
 
 ```
+
+
+
+### 非捕获分组 (?:)
+
+
+
+```
+pattern = re.compile('[A-Z](?:、[A-Z])+')
+print( pattern.findall('SDAFQ、W、D、W、D、W二个人个、D') )
+```
+
+
+
+
 
 
 
@@ -3378,6 +3447,78 @@ def student_add():
     return jsonify(code=200, status=0, message='ok', data={})
 
 ```
+
+
+
+### 跨域
+
+```python
+"""
+pip install flask-cors # 允许跨域
+from flask_cors import CORS, cross_origin
+CORS(app, supports_credentials=True) # 全局
+
+@app.route('/')
+@cross_origin(supports_credentials=True) # 单个接口
+"""
+```
+
+
+
+
+
+### ajax
+
+```javascript
+ajax 前后向后台传递json 数据
+
+contentType 默认值 "application/x-www-form-urlencoded" 适合于大多数请求json text xml 等都会自动进行解析；
+
+contentType为application/json 适用于 向后台传递json字符串 ， 此时data 里面需要用 JSON.stringify()进行序列化，将其转为json形式的字符串。传递到后台！
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<script>
+    function loadDoc() {
+        a = 1
+        var data = {"book":"a"};
+        $.ajax({
+            url:"http://192.168.0.140:666/bookmenu",
+            type:"post",
+            data:JSON.stringify(data),
+            contentType:"application/json", 
+            dataType: "string", //返回的数据格式string
+            success:function (result) {
+                // 请求成功
+            },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+                // 很可能是参数错误
+                re = JSON.parse(XMLHttpRequest.responseText)
+                console.log(re)
+            }
+        });
+    }
+</script> 
+</head>
+
+<body>   
+
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+</body>
+
+
+</html>
+
+```
+
+
 
 
 
