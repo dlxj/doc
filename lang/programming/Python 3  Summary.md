@@ -36,7 +36,7 @@ __pycache__/
 ## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
 ```bash
-conda config --set auto_activate_base true
+conda config --set auto_activate_base true # 开启或关闭自动激活
 ```
 
 ```bash
@@ -79,6 +79,36 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ bert4keras==0.9.8
 # 清除dns缓存
 ipconfig /flushdns
 ```
+
+
+
+```bash
+# flask_plank 124高配服务器，安装路径
+./Anaconda3-2020.11-Linux-x86_64.sh
+/home/data/users/weiqibang/project/flask_server/Anaconda3
+
+conda create -n plan_evn pip python=3.8
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+```
+
+
+
+```
+export PYTHONPATH=/root/flask_server/server_venv/lib/python3.8/site-packages
+```
+
+
+
+
+
+### pip
+
+```
+https://zhuanlan.zhihu.com/p/72480936
+requirements.txt
+```
+
+
 
 
 
@@ -1723,7 +1753,7 @@ print(re.findall(r"\d+\s+(.+?)\s+", "0 跨膜激活物、钙调节物、亲环�
 
 ### 非捕获分组 (?:)
 
-
+[u](https://blog.csdn.net/okyoung188/article/details/53407021)
 
 ```
 pattern = re.compile('[A-Z](?:、[A-Z])+')
@@ -3396,6 +3426,83 @@ def frequencyStatistics():
     return jsonify(iJson.parse("[1,2,3]"))
 https://blog.csdn.net/weixin_36380516/java/article/details/80008496
 ```
+
+
+
+### 异步
+
+```python
+https://zhuanlan.zhihu.com/p/30897711    
+from flask import Flask
+from time import sleep
+from concurrent.futures import ThreadPoolExecutor
+
+# DOCS https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor
+executor = ThreadPoolExecutor(2)
+
+app = Flask(__name__)
+
+
+@app.route('/jobs')
+def run_jobs():
+    executor.submit(some_long_task1)
+    executor.submit(some_long_task2, 'hello', 123)
+    return 'Two jobs was launched in background!'
+
+
+def some_long_task1():
+    print("Task #1 started!")
+    sleep(10)
+    print("Task #1 is done!")
+
+
+def some_long_task2(arg1, arg2):
+    print("Task #2 started with args: %s %s!" % (arg1, arg2))
+    sleep(5)
+    print("Task #2 is done!")
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+```python
+from concurrent.futures import ThreadPoolExecutor
+import requests
+
+def task(url):
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        return response
+
+def download(futures):
+    response = futures.result()  #会得到一个返回值，这个返回值就是task函数的返回值
+    content = response.text
+    tmp_list = response.url.split("/")
+    filename = tmp_list[len(tmp_list)-1]
+    print("正在下载：%s" %response.url)
+    with open(filename,"w",encoding="utf-8") as f:
+        f.write("%s\n%s" %(response.url,content))
+        print("下载完成")
+
+url_list = [
+    "http://www.cnblogs.com/wupeiqi/articles/5713330.html",
+    "http://blog.csdn.net/anzhsoft/article/details/19563091",
+    "http://blog.csdn.net/anzhsoft/article/details/19570187"
+]
+
+thread_pool = ThreadPoolExecutor(max_workers=2) #生一个线程池对象，最大线程数为2个
+
+for url in url_list:
+    futures = thread_pool.submit(task,url)  #会得到一个Future对象
+    #回调函数,会将futures本身当作参数传给download函数
+    futures.add_done_callback(download)
+```
+
+
+
+
 
 
 
