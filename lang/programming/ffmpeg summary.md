@@ -1,3 +1,15 @@
+```
+ffmpeg -i "G:\棒球英豪国日双语1080p\[棒球英豪].[zhbconan][Touch][001][HDTVRip][1440x1080][AVC_AAC_AC3][CHS&JPN](ED2000.COM).mkv" -map 0:s:0 out.srt
+```
+
+```
+ffmpeg -i "G:\棒球英豪国日双语1080p\[棒球英豪].[zhbconan][Touch][001][HDTVRip][1440x1080][AVC_AAC_AC3][CHS&JPN](ED2000.COM).mkv" -map 0:s:0 out.lrc
+```
+
+
+
+
+
 
 
 ```bash

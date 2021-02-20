@@ -6,6 +6,24 @@ vps [ramnode](https://www.ramnode.com/)
 
 
 
+```
+pm2 -n ftspg8084 start /root/insertstudio/ftspg.js
+pm2 save
+```
+
+
+
+
+
+```
+# 日语分词插件
+https://pgroonga.github.io/install/ubuntu.html
+```
+
+
+
+
+
 用**Navicat** 客户端查数据
 
 - HeidiSQL 有点问题
