@@ -232,6 +232,8 @@ mac mount Android as drive
 
 [virmach](virmach.com) gmail silu  2.25$ /month，做梯子测试
 
+- @doublev doubleW
+
 [hostodo](hostodo.com) 20\$ / year 建站
 
 [buyvm](buyvm) 8\$ /month 贵，或许质量好？

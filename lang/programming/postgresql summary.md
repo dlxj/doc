@@ -13,12 +13,37 @@ pm2 save
 
 
 
+```
+which pg_config
+--> /usr/bin/pg_config
+
+ERROR:  could not open extension control file "/usr/share/postgresql/13/extension/pgroonga.control": No such file or directory
+```
+
+
+
 
 
 ```
 # 日语分词插件
 https://pgroonga.github.io/install/ubuntu.html
 ```
+
+```
+https://web.chaperone.jp/w/index.php?PostgreSQL/pgroonga
+```
+
+```
+CREATE TABLE memos (
+  id integer,
+  content text
+);
+CREATE EXTENSION pgroonga
+CREATE INDEX pgroonga_content_index ON memos USING pgroonga (content);
+
+```
+
+
 
 
 
