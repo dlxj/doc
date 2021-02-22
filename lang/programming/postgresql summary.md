@@ -27,6 +27,8 @@ ERROR:  could not open extension control file "/usr/share/postgresql/13/extensio
 ```
 # 日语分词插件
 https://pgroonga.github.io/install/ubuntu.html
+# 使用
+https://ravenonhill.blogspot.com/2019/09/pgroonga-traditional-chinese-full-text-search-in-postgresql-for-taiwanese.html
 ```
 
 ```
@@ -44,6 +46,52 @@ CREATE INDEX pgroonga_content_index ON memos USING pgroonga (content);
 ```
 
 
+
+```
+pgroonga_test=# CREATE TABLE memos (
+pgroonga_test(#   id integer,
+pgroonga_test(#   content text
+pgroonga_test(# );
+CREATE TABLE
+pgroonga_test=#
+pgroonga_test=# CREATE INDEX pgroonga_content_index ON memos USING pgroonga (content);
+CREATE INDEX
+pgroonga_test=# INSERT INTO memos VALUES (1, 'PostgreSQLはリレーショナル・データベース管理システムです。');
+INSERT 0 1
+pgroonga_test=# INSERT INTO memos VALUES (2, 'Groongaは日本語対応の高速な全文検索エンジンです。');
+INSERT 0 1
+pgroonga_test=# INSERT INTO memos VALUES (3, 'PGroongaはインデックスとしてGroongaを使うためのPostgreSQLの拡張機能です。');
+INSERT 0 1
+pgroonga_test=# INSERT INTO memos VALUES (4, 'groongaコマンドがあります。');
+INSERT 0 1
+pgroonga_test=#
+pgroonga_test=# SET enable_seqscan = off;
+SET
+pgroonga_test=#
+pgroonga_test=# SELECT * FROM memos WHERE content &@ '全文検索';
+ id |                      content
+----+---------------------------------------------------
+  2 | Groongaは日本語対応の高速な全文検索エンジンです。
+(1 row)
+
+pgroonga_test=# explain analyze SELECT * FROM memos WHERE content &@ '全文検索';
+                                                           QUERY PLAN
+--------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on memos  (cost=0.16..10.85 rows=635 width=36) (actual time=0.424..0.425 rows=1 loops=1)
+   Recheck Cond: (content &@ '全文検索'::text)
+   Heap Blocks: exact=1
+   ->  Bitmap Index Scan on pgroonga_content_index  (cost=0.00..0.00 rows=13 width=0) (actual time=0.413..0.413 rows=1 loops=1)
+         Index Cond: (content &@ '全文検索'::text)
+ Planning time: 0.137 ms
+ Execution time: 0.641 ms
+(7 rows)
+```
+
+ 
+
+
+
+to_tsvector('Chinese', content);
 
 
 
@@ -64,8 +112,9 @@ find / -name "postgres.h" -print  # 后面编译pg_jieba 要用
 After fresh installation of PostgreSQL 13 on **CentOS 7** initialization is required.
 
 ```
-$ sudo /usr/pgsql-13/bin/postgresql-13-setup initdb
-Initializing database ... OK
+$ sudo /usr/bin/postgresql-13-setup initdb
+$ sudo systemctl start postgresql-13
+$ systemctl status postgresql-13
 ```
 
 
