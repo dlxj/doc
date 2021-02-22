@@ -11,7 +11,7 @@ import Foundation
 struct MemoryGame<CardContent> {
     var cards:Array<Card>
     
-    mutating func choose(card:Card) {
+    mutating func choose(card:Card) { 
         
         func index(card:Card)->Int{
             for i in 0..<cards.count {
