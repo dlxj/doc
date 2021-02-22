@@ -1137,6 +1137,7 @@ m = X.shape[0] # 样本数
 
 
 ```python
+# 多进程不能共享变量
 from joblib import Parallel, delayed
 def parallelCompare(func, l):
     def f(l, i):
@@ -1145,9 +1146,61 @@ def parallelCompare(func, l):
             rs.append( (i, j) )
         return rs
     return Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(f)(l, i) for i in range(len(l)-1))
+
+# 多线程可以共享变量，但要注意写入冲突
+Parallel(n_jobs=4, backend="threading")
 ```
 
 
+
+```python
+# 异步回调
+from concurrent.futures import ThreadPoolExecutor
+executor = ThreadPoolExecutor(2)
+
+    def done(futures):
+        print('############ call into callback function')
+        global g_planktestsim_done
+        sims_MultipleApp = futures.result()  #会得到一个返回值，这个返回值就是task函数的返回值
+        del tasks_planktestsim[key] # 移除已完成任务
+
+        data = simtests.tempResult()
+        data["finished"] = True
+
+        data = copy.deepcopy(data)
+        simtests.saveTempResult(key2, data)
+        simtests.resetTempResult()
+        # g_planktestsim_done = True
+
+    futures = executor.submit(simtests.calcSimtest, appids, threshold, MaxResults)
+    futures.add_done_callback(done)
+
+```
+
+
+
+```python
+    def parallelCompare(l, tests, origs):
+        def f(l, i, ts, rgs):
+            k = l[i][0]
+            appid, TestID, ChildTestID = k.split(',')
+            seg_titleright = ts[k]["seg_titleright"]
+            titleright = ts[k]["titleright"]
+
+            rs = []
+            l2 = l[i][1]
+            for k2 in l2:
+                appid2, TestID2, ChildTestID2 = k2.split(',')
+                seg_titleright2 = ts[k2]["seg_titleright"]
+                titleright2 = ts[k2]["titleright"]
+
+                
+
+            return rs
+        return Parallel(n_jobs=1, verbose=10)(delayed(f)(l, i, tests, origs) for i in range(len(l))) # os.cpu_count()
+
+    results = parallelCompare(compare_tids, inverttests, ts_dic)
+```
 
 
 
