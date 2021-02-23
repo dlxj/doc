@@ -29,6 +29,9 @@ ERROR:  could not open extension control file "/usr/share/postgresql/13/extensio
 https://pgroonga.github.io/install/ubuntu.html
 # 使用
 https://ravenonhill.blogspot.com/2019/09/pgroonga-traditional-chinese-full-text-search-in-postgresql-for-taiwanese.html
+
+# 这样查
+SELECT * FROM anime WHERE jp &@ '遅刻';
 ```
 
 ```
