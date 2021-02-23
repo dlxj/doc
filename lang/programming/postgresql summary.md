@@ -36,12 +36,46 @@ https://web.chaperone.jp/w/index.php?PostgreSQL/pgroonga
 ```
 
 ```
-CREATE TABLE memos (
-  id integer,
-  content text
-);
-CREATE EXTENSION pgroonga
-CREATE INDEX pgroonga_content_index ON memos USING pgroonga (content);
+def createDatabase_anime( host = '192.168.1.166'):
+
+    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
+        conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        with conn.cursor() as cur:
+            cur.execute("DROP DATABASE IF EXISTS anime;")
+            cur.execute("CREATE DATABASE anime \
+                WITH OWNER = postgres \
+                ENCODING = 'UTF8' \
+                TABLESPACE = pg_default \
+                CONNECTION LIMIT = -1 \
+                TEMPLATE template0;")
+
+    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port='5432') as conn:
+
+        with conn.cursor() as cur:
+        
+            cur.execute("DROP TABLE IF EXISTS anime;")
+            cur.execute("create table anime( \
+                id serial primary key, \
+                jp text, \
+                zh text, \
+                en text, \
+                type text, \
+                time text, \
+                v_jp  tsvector, \
+                v_zh  tsvector, \
+                v_en  tsvector \
+            );")
+
+            cur.execute("create extension pgroonga;")
+            cur.execute("CREATE INDEX pgroonga_jp_index ON anime USING pgroonga (jp);")
+            # cur.execute("create extension rum;")
+            # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
+
+            cur.execute('BEGIN;')
+            jp = '今日は学校に遅刻した。'
+            sql = f"""insert into anime(jp) values('{jp}');"""
+            cur.execute( sql )
+            cur.execute('COMMIT;')
 
 ```
 
