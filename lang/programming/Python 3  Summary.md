@@ -913,6 +913,17 @@ list( range(5, 0, -1) )  # begin, stop, step
 
 
 
+### group
+
+
+
+```python
+a = list(range(5))
+[ a[i:i+2] for i in range(0, len(a), 2) ]
+```
+
+
+
 
 
 ### Map
@@ -932,6 +943,13 @@ __version__ = '.'.join(map(str,__version_info__))
 for i, name in enumerate(names):
     print(i, name)
 ```
+
+```
+# list 转字典
+us_dic = { w:i for i, w in enumerate(us) }
+```
+
+
 
 
 
@@ -1203,6 +1221,11 @@ executor = ThreadPoolExecutor(2)
 ```
 
 
+
+```
+# 共享内存
+https://joblib.readthedocs.io/en/latest/auto_examples/parallel_memmap.html#sphx-glr-auto-examples-parallel-memmap-py
+```
 
 
 
@@ -5504,6 +5527,19 @@ for m in range(2, max_sep+1):
 - **sage 库**,python
 
 **vscode+jupyternotebook+sagemath配置** [u]()
+
+
+
+# Redis
+
+```
+https://linuxize.com/post/how-to-install-and-configure-redis-on-centos-7/
+```
+
+```
+# 无需密码
+CONFIG SET protected-mode no
+```
 
 
 
