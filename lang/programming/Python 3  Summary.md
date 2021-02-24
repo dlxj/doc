@@ -1225,7 +1225,31 @@ executor = ThreadPoolExecutor(2)
 ```
 # 共享内存
 https://joblib.readthedocs.io/en/latest/auto_examples/parallel_memmap.html#sphx-glr-auto-examples-parallel-memmap-py
+
+https://zhuanlan.zhihu.com/p/146769255
+
 ```
+
+
+
+```
+# 进程池
+from concurrent import futures
+
+def task(n):
+    print(n)
+
+with futures.ThreadPoolExecutor(max_workers=2) as ex:
+    print('main: starting')
+    ex.submit(task, 1)
+    ex.submit(task, 2)
+    ex.submit(task, 3)
+    ex.submit(task, 4)
+
+print('main: done')
+```
+
+
 
 
 
