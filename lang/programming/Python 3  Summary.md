@@ -110,6 +110,28 @@ requirements.txt
 
 
 
+### redist
+
+```
+# 安装
+https://linuxize.com/post/how-to-install-and-configure-redis-on-centos-7/
+
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+#requirements.txt
+requests
+Levenshtein
+jieba
+pymysql==0.9.3
+numpy
+flask
+flask_cors
+joblib
+sklearn
+pandas
+redis
+
+```
+
 
 
 
