@@ -1097,6 +1097,13 @@ X -= np.mean(X, axis=0)  # 减去均值
 index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
 ```
 
+```
+a = t | s          # t 和 s的并集  
+b = t & s          # t 和 s的交集  
+c = t – s          # 求差集（项在t中，但不在s中）  
+d = t ^ s          # 对称差集（项在t或s中，但不会同时出现在二者中）  
+```
+
 
 
 
@@ -1228,12 +1235,45 @@ https://joblib.readthedocs.io/en/latest/auto_examples/parallel_memmap.html#sphx-
 
 https://zhuanlan.zhihu.com/p/146769255
 
-```
+对于cpu密集型的任务来说，线程数等于cpu数是最好的了
 
-
-
-```
 # 进程池
+https://juejin.cn/post/6856222178250391560
+
+```
+
+
+
+```
+# 全局锁
+def send_request(data):
+	api_url = 'http://api.xxxx.com/?data=%s'
+	start_time = clock()
+	print urllib2.urlopen(api_url % data).read()
+	end_time = clock()
+	lock.acquire()
+	whit open('request.log', 'a+') as logs:
+		logs.write('request %s cost: %s\n' % (data, end_time - start_time))
+	lock.release()
+def init(l):
+	global lock
+	lock = l
+ 
+if __name__ == '__main__':
+	data_list = ['data1', 'data2', 'data3']
+	lock = Lock()
+	pool = Pool(8, initializer=init, initargs=(lock,))
+	pool.map(send_request, data_list)
+	pool.close()
+	pool.join()
+```
+
+
+
+
+
+```
+# 线程池
 from concurrent import futures
 
 def task(n):
@@ -1247,6 +1287,192 @@ with futures.ThreadPoolExecutor(max_workers=2) as ex:
     ex.submit(task, 4)
 
 print('main: done')
+```
+
+
+
+#### 进程池锁
+
+```python
+
+import os, sys
+sys.path.append('../..')
+import std.iJson as iJson
+
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity, paired_distances  # 余弦相似度
+
+import numpy as np
+
+import multiprocessing
+
+def load(fname_invertedIndexs):
+    if os.path.exists( fname_invertedIndexs ):
+        print('loading exists invertedIndexs...')
+        t = iJson.load_json(fname_invertedIndexs)
+        return t[0], t[1], t[2]
+
+def func( shared_wds, shared_ts, cmprs, shared_estids, k, i ):
+    tids = [] # 所有可能需要比较的题id
+    seg_titleright = shared_ts[k]["seg_titleright"]
+    for w in seg_titleright:
+        tids += shared_wds[w]
+        
+    tids = list( set(tids) ) # 去重
+    if len(tids) > 0:
+        cmprs.append( [k, tids] ) 
+
+    print('\n task ', i, 'done.')
+
+
+
+# 余弦相似度
+def sim_cos(ws1, ws2):
+
+    s1 = set(ws1)
+    s2 = set(ws2)
+
+    # 相同的词太少不比较
+    ss1 = list( s1 )
+    ss2 = list( s2 )
+    longs = max( len(ss1), len(ss2) )
+
+    sames = list( np.intersect1d(ss1, ss2) ) # list( np.intersect1d(s1, s2) ) # 求交集，得到相同词列表
+    if len(sames) == 0:
+        return -1
+    if longs / len(sames) >= 4:
+        return -1
+
+    counts1 = pd.Series(ws1).value_counts() # 统计每个词出现多少次
+    counts2 = pd.Series(ws2).value_counts()
+
+
+    us = list( s1.union(s2) )
+    idxs = { w:i for i, w in enumerate(us) }
+
+    v1 = [ 0 for i in range( len(us) ) ]
+    v2 = [ 0 for i in range( len(us) ) ]
+
+    for w, c in counts1.items():
+        v1[ idxs[w] ] = c
+
+    for w, c in counts2.items():
+        v2[ idxs[w] ] = c
+
+    # 余弦相似度
+    simi = cosine_similarity([v1], [v2])[0][0]
+
+    return round(simi, 4)
+
+
+def compare_parllel( shared_wds, shared_ts, cmprs, shared_estids, k, i, threshold = 0.9 ):
+
+    # 长度差太多就不用比
+    def skipQ(ws1, ws2):
+        len1 = len(ws1)
+        len2 = len(ws2)
+
+        if len1 == 0 or len2 == 0:
+            return True
+
+        if max(len1, len2) / min(len1, len2) >= 4: # 长度差5倍以上不用比
+            return True
+
+        return False
+
+    tids = [] # 所有可能需要比较的题id
+    seg_titleright = shared_ts[k]["seg_titleright"]
+    for w in seg_titleright:
+        tids += shared_wds[w]
+        
+    tids = list( set(tids) ) # 去重
+
+
+    appid, TestID, ChildTestID = k.split(',')
+
+    tmp = []
+    for k2 in tids:
+        if k == k2:  # 不用和自已比
+            continue
+        
+        appid2, TestID2, ChildTestID2 = k2.split(',')
+        seg_titleright2 = shared_ts[k2]["seg_titleright"]
+        
+        if appid == appid2 and TestID == TestID2: # 相同大题不比较
+            continue
+        
+        skQ = skipQ(seg_titleright, seg_titleright2)
+        if skQ:
+            continue
+        
+        sim = sim_cos(seg_titleright, seg_titleright2) # 余弦距离相似度
+
+        if sim >= threshold:
+            k3 = k + "," + k2
+            k4 = k2 + "," + k
+            if k3 not in shared_estids and k4 not in shared_estids:
+                lock.acquire()
+                shared_estids[k3] = True
+                shared_estids[k4] = True
+                lock.release()
+
+                tmp.append( [ k2, round(sim, 4) ] )
+    
+    if len(tmp) > 0:
+        tmp = [k] + tmp
+        cmprs.append( tmp )
+
+    print('\n task ', i, 'done.')
+
+
+
+def init(l):
+	global lock
+	lock = l
+
+if __name__ == "__main__":
+
+    appids = [4468, 4469]
+
+    currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache' )   
+
+    if not os.path.exists( currDir ):
+        os.makedirs( currDir )
+
+    tmp = ",".join( list( map(lambda n:str(n),appids) ) )
+    fname_invertedIndexs = os.path.join(currDir, tmp+'invertedIndexs.json')
+
+    invertwords, inverttests, ts_dic = load(fname_invertedIndexs)
+
+
+    lock = multiprocessing.Lock()
+
+    pool = multiprocessing.Pool(processes = os.cpu_count(), initializer=init, initargs=(lock,)) # os.cpu_count()
+
+    # 多进程共享变量
+    manager = multiprocessing.Manager()
+    shared_invertwords = manager.dict(invertwords)
+    shared_inverttests = manager.dict(inverttests)
+
+    shared_existids = manager.dict() # 记录已存在id，防止重复添加
+
+
+    cmprs = manager.list()
+
+    
+    keys = list( inverttests.keys() )
+    keys = keys[:100]
+
+    for i, k in enumerate(keys):
+        pool.apply_async(compare_parllel, ( shared_invertwords, shared_inverttests, cmprs, shared_existids, k, i, 0.8 ))
+
+    pool.close()
+    pool.join()
+
+    cmprs = list(cmprs)
+
+    print('all task done. result num:', len(cmprs))
+
 ```
 
 
@@ -5539,6 +5765,60 @@ for m in range(2, max_sep+1):
 ```
 
 
+
+### 算润年
+
+```
+通常，我求一个区间内的闰年数时，常规方法是会使用一个循环进行遍历，然后依据以上的两个条件对每一个年份进行判断，从而得出给定区间内有多少个闰年，比如0~2017，但是这里就有个问题，如果所求区间较小，还没什么影响。如果所求区间较大，比如0~2017000000，那么使用常规的循环方法就会非常耗时。
+
+-------------------------------下面是集合的方法--------------------------
+
+我们定义三个集合A，B，C。
+
+其中A集合中为区间内所有的4的倍数；
+
+B集合中为区间内所有的100的倍数；
+
+C集合中为区间内所有的400的倍数；
+
+那么，很显然，C包含于B，B包含于A。
+
+这里我们假设A集合中的元素个数为a，B集合中的元素个数为b，C集合中的元素个数为c，那么：
+
+条件1、年份能被4整除但不能被400整除
+
+即为a-b
+
+条件2、年份能被400整除
+
+即为c
+
+区间内闰年的总数即为：a-b+c
+```
+
+```python
+import math
+
+A = [i*4 for i in range(1, math.floor(2021/4)+1) ]
+B = [i*100 for i in range(1, math.floor(2021/100)+1) ]
+C = [i*400 for i in range(1, math.floor(2021/400)+1) ]
+num = len(A)-len(B)+len(C)
+print(num)
+```
+
+```python
+import math
+
+A = set( [i*4 for i in range(1, math.floor(2021/4)+1) ] )
+B = set( [i*100 for i in range(1, math.floor(2021/100)+1) ] )
+C = set( [i*400 for i in range(1, math.floor(2021/400)+1) ] )
+
+leapYears = ( A - B ) | C
+print( len(leapYears) )
+print( leapYears )
+```
+
+![image-20210225100710499](Python 3  Summary.assets/image-20210225100710499.png)
 
 
 
