@@ -314,6 +314,16 @@ ps -aux | grep "sametest.py"
 
 
 
+```
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
+flask run --host 0.0.0.0 --port 6002
+kill -9 $(lsof -i:6002 | tail -n +2  |  awk '{print $2}' | tr '\n' ' ')
+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+```
+
+
+
 
 
 

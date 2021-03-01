@@ -16,6 +16,11 @@ centos only
 
 cat /etc/redhat-release
 
+```csharp
+# cpu info
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+```
+
 
 
 ```bash
