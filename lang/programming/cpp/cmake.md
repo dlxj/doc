@@ -6,6 +6,19 @@
 
 
 
+## c99
+
+```
+一种是比较常见的全局设置
+
+set(CMAKE_C_FLAGS "-std=c99")
+1
+另外一种是针对某个target设置，这样不同的target之间可以不受影响
+
+add_executable(BiquadFilter biquad_filter.c)
+set_property(TARGET BiquadFilter PROPERTY C_STANDARD 99)
+```
+
 
 
 ```
@@ -242,18 +255,13 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/maclib/include")
 
 
 
-## c99
-
 ```
-一种是比较常见的全局设置
-
-set(CMAKE_C_FLAGS "-std=c99")
-1
-另外一种是针对某个target设置，这样不同的target之间可以不受影响
-
-add_executable(BiquadFilter biquad_filter.c)
-set_property(TARGET BiquadFilter PROPERTY C_STANDARD 99)
+# https://github.com/optimyze/simple_simhash
+gcc -O2 -std=c99 -ggdb simhash_compare.c simple_simhash.c counting_bloom_filter.c trivial_hash.c -o simhash_compare
 ```
+
+
+
 
 
 

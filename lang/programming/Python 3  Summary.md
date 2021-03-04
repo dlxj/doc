@@ -5930,6 +5930,33 @@ simhash算法其实与随机超平面hash算法是相同的
  };
 
 
+
+
+纯C 实现
+https://github.com/optimyze/simple_simhash
+	GCC有一个叫做__builtin_popcount的内建函数，它可以精确的计算1的个数
+
+
+
+可逆hash
+	Jenkins Hash算法
+	http://d0evi1.com/wang-jenkins-hash/
+
+
+浅谈基于simhash的文本去重原理
+	https://juejin.cn/post/6844904031865798664
+
+
+与simhash的位数b有关，b越大精确度越高
+simhash和bloom filter算法可能出现误判现象，即不相似的文件可能会判定为相似
+
+
+256bit c实现
+simhash github 搜，选C语言
+
+256位，python实现
+https://github.com/sean-public/python-hashes
+
 ```
 
 ```
