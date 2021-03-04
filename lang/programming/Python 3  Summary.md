@@ -2959,6 +2959,7 @@ sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 ### 子进程
 
 ```python
+# https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
 import subprocess
 out_bytes = subprocess.check_output([r"C:\Program Files\R\R-4.0.3\bin\x64\Rscript.exe", r"C:\Program Files\R\R-4.0.3\bin\x64\op.R"])
 out_text = out_bytes.decode('utf-8')
@@ -5851,6 +5852,128 @@ print( leapYears )
 ```
 
 ![image-20210225100710499](Python 3  Summary.assets/image-20210225100710499.png)
+
+
+
+### simhash
+
+```
+
+https://www.jianshu.com/p/1187fb7c59c5
+
+http://gameofdimension.com/2020/04/04/simhash/
+
+https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/06.03.html
+
+https://zhuanlan.zhihu.com/p/71488127
+
+http://www.jouypub.com/2018/9b9f561f6a0893f3d74a153b8f2e8dcb/
+
+http://debugger.wiki/article/html/1562565630032326
+	https://github.com/1e0ng/simhash  # 优秀
+		sklearn-TfidfVectorizer彻底说清楚
+			https://zhuanlan.zhihu.com/p/67883024
+	https://www.cnblogs.com/maybe2030/p/5203186.html#_label4
+
+
+
+
+https://github.com/yanyiwu/simhash
+https://github.com/yanyiwu/simhash_server
+
+
+原理较透彻
+https://vimsky.com/article/145.html
+https://tech.igengmei.com/20190531/locality-sensitive-hashing/
+https://kexue.fm/archives/8159
+	LSH
+	从几何视角来理解模型参数的初始化策略
+		https://kexue.fm/archives/7180
+
+高维球上的取样和分布：讨论与证明
+	https://re-ra.xyz/%E9%AB%98%E7%BB%B4%E7%90%83%E4%B8%8A%E7%9A%84%E5%8F%96%E6%A0%B7%E5%92%8C%E5%88%86%E5%B8%83-%E8%AE%A8%E8%AE%BA%E4%B8%8E%E8%AF%81%E6%98%8E/
+
+
+随机超平面hash算法非常简单
+	http://wfwei.github.io/posts/hash-rel/
+	随机超平面哈希 Random projection hash
+	相似哈希 simhash(Bit sampling for Hamming distance)
+	最小哈希 minhash(Min-wise independent permutations)
+
+从NLP任务中文本向量的降维问题，引出LSH（Locality Sensitive Hash 局部敏感哈希）算法及其思想的
+	https://flashgene.com/archives/43580.html
+
+
+维数大于3的空间中的平面一般被称为超平面
+
+
+Simhash与随机超平面hash算法的联系与区别 
+	https://www.cnblogs.com/LittleHann/p/11002030.html
+
+
+simhash算法其实与随机超平面hash算法是相同的
+	http://wfwei.github.io/posts/hash-rel/
+	在simhash算法中，并没有直接产生用于分割空间的随机向量，而是间接产生的：第k个特征的hash签名的第i位拿出来，如果为0，则改为-1，如果为1则不变，作为第i个随机向量的第k维。由于hash签名是f位的，因此这样能产生f个随机向量，对应f个随机超平面。
+
+
+汉明距离-海明距离
+
+
+ var hammingDistance = function(x, y) {
+ var num = x^y;
+ var res = 0; //计数器
+  while(num) {
+  res += num&0X01; //num和1相与，因为1前面都是零，所以与之后可以判断出num的最后一位是不是1，若是1，则计数器就会加1.
+  num>>=1;//num右移一位，注意要有等号，不然类似于i+1;只是一个公式，没有复制给变量。
+  }
+ return res;
+ };
+
+
+```
+
+```
+汉明距离-海明距离
+
+
+ var hammingDistance = function(x, y) {
+ var num = x^y;
+ var res = 0; //计数器
+  while(num) {
+  res += num&0X01; //num和1相与，因为1前面都是零，所以与之后可以判断出num的最后一位是不是1，若是1，则计数器就会加1.
+  num>>=1;//num右移一位，注意要有等号，不然类似于i+1;只是一个公式，没有复制给变量。
+  }
+ return res;
+ };
+```
+
+![image-20210302160454870](Python 3  Summary.assets/image-20210302160454870.png)
+
+![image-20210302160526564](Python 3  Summary.assets/image-20210302160526564.png)
+
+
+
+```c++
+    int hamming_distance(unsigned long x, unsigned long y) {
+        int dist = 0;
+        unsigned long val = x^y;
+
+        while (val != 0) {
+            dist++;
+            val &= val -1;
+        }
+        return dist;
+    }
+
+    double similarity(const std::string s, const std::string k) {
+        unsigned long hash_s = simhash(s);
+        unsigned long hash_k = simhash(k);
+        return 1 - hamming_distance(hash_s, hash_k) / 64.0;
+    }
+}
+```
+
+
 
 
 
