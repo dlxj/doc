@@ -34,3 +34,61 @@ ffmpeg -i F:\video.mkv -vn -an -codec:s:0 srt F:\subtitle.srt
 
 
 
+```
+
+# ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
+# https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
+
+import subprocess
+import re
+
+
+# out_bytes = subprocess.check_output([r"ffmpeg", "-i", "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv", "-map", "0:s:0", "out.srt"])
+# out_text = out_bytes.decode('utf-8')
+
+def readstring(fanme):
+    with open(fanme, "r", encoding="utf-8") as fp:
+        return fp.read()
+
+def unchinese_remove(s):
+    return re.sub(r"[^\u4e00-\u9fa5]", "", s, flags=re.UNICODE)
+
+
+if __name__ == "__main__":
+    strs = "\n"+readstring("out.srt")+"\n"
+    iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
+    poss = [ i.span() for i in iters ]
+
+
+    chinese = []
+    for i in range( len(poss) ):
+        (start, end) = poss[i]
+        
+        n = strs[start:end]
+
+        content = None
+        if i == ( len(poss) - 1 ):
+            content = strs[ end : len(strs) ]
+        else:
+            content = strs[ end : poss[i+1][0] ]
+        
+        time = content.strip().split('\n')[0]
+        content = content.strip().split('\n')[1]
+        subtitle = re.compile(r'size=.+>(.+?)\<\/font\>').findall(content)[0]
+        subtitle = subtitle.replace('<b>','').replace('</b>','')
+        if len( unchinese_remove(subtitle) ) > 0:
+            chinese.append( subtitle )
+
+
+    print("hi,,,")
+
+
+
+
+
+# "</font>"
+
+
+
+```
+
