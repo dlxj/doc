@@ -34,6 +34,19 @@ ffmpeg -i F:\video.mkv -vn -an -codec:s:0 srt F:\subtitle.srt
 
 
 
+# insert anime
+
+
+
+```
+pip install chardet
+
+```
+
+
+
+
+
 ```
 
 # ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt

@@ -1,5 +1,110 @@
 [TOC]
 
+# windows
+
+
+
+## dll
+
+
+
+### stdcall
+
+```
+#pragma comment(lib, "FreeImage.lib")
+
+https://github.com/node-ffi/node-ffi/blob/master/example/factorial/factorial.c
+
+#include <stdint.h>
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+EXPORT uint64_t factorial(int max) {
+    int i = max;
+    uint64_t result = 1;
+    while (i >= 2) {
+        result *= i--;
+    }
+    return result;
+}  
+
+
+var FFI = require('ffi');
+var hi = new FFI.Library('hi', {
+   'factorial': [
+      'int32', ['int32']
+   ]
+});
+console.log ( hi.factorial(3) );
+
+原因：win7下的64位系统，在运行程序的时候，需要的DLL必须是64位系统编译的，VS2010也必须在安装的时候，选择了32位编译的支持。如果安装的时候，已经选择了，那么出现该问题的解决办法：
+
+      （1）右键项目名，点击属性，弹出项目属性页，找到链接器----高级，修改右侧的目标计算机，选择有X64的那个选项。
+
+      （2）右键项目名，选择清理解决方案，清理完之后选择X64平台编译器，然后重新生成解决方案，便可以调试成功。选择X64平台编译器如下图：
+
+
+```
+
+
+
+
+
+
+
+### _cdecl
+
+```
+
+
+extern "C" __declspec(dllexport)  int __cdecl reconize(char * imageFileName, char * p, int numOfTest, int numOfOption, double rate, unsigned int brightness) {
+
+
+calldll
+int dll() {
+    typedef int(_cdecl*FunctionPtr)(char * imageFileName, char * p, int numOfTest, int numOfOption, double rate, unsigned int brightness);
+    //typedef int(_stdcall*FunctionPtr)(char * imageFileName, char * p, int numOfTest, int numOfOption, double rate, unsigned int brightness);
+    
+    //reconize(char * imageFileName, char * p, int numOfTest, int numOfOption, double rate, unsigned int brightness);
+    char *imageName = "IMG_0167.JPG";
+    char *fileName = "hi.txt";
+    char *buf = (char*)malloc(1024*1024*3);
+    memset(buf, 0, 1024 * 1024 * 3);
+    HINSTANCE   ghDLL = NULL;
+    FunctionPtr   reconize;
+    ghDLL = LoadLibrary("rec32160622.dll");
+    ASSERT(ghDLL != NULL);
+    reconize = (FunctionPtr)GetProcAddress(ghDLL, "reconize");
+    ASSERT(reconize != NULL);
+    //reconize(imageName, buf);
+    reconize("IMG_1119.jpg", buf, 100, 4, 0.4, 125);
+    //dataWrite(fileName, buf, strlen(buf));
+    //fprintf(stdout, buf);
+    printf("done.");
+    free(buf);
+    getchar();
+    return 0;
+} 
+
+
+2)_cdecl调用
+   _cdecl是C/C++的缺省调用方式，参数采用从右到左的压栈方式，由调用者完成压栈操作 ，传送参数的内存栈由调用者维护。
+   _cedcl约定的函数只能被C/C++调用，每一个调用它的函数都包含清空堆栈的代码，所以产生的可执行文件大小会比调用_stdcall函数的大。
+   按C编译方式，_cdecl调用约定仅在输出函数名前面加下划线，形如_functionname。
+   按C++编译方式，可参看（三）
+
+
+ 
+```
+
+
+
+
+
+
+
 
 
 [语法糖](https://www.zhihu.com/question/298981020)
@@ -132,7 +237,60 @@ clang -std=c++98 -pedantic-errors
 
 
 
-## Dictionary
+## C# interop
+
+
+
+```
+# C 分配的内存只能由自已释放，C# 不可以
+
+# C#
+IntPtr pout = Simhash256.simhash256();
+
+            var hs = Marshal.PtrToStringUTF8(pout);
+            Marshal.FreeHGlobal(pout);
+            
+        class Simhash256
+        {
+
+            [DllImport("simhash256.dll")]
+            public static extern IntPtr simhash256();
+        }
+ 
+ # C
+ 
+ #include <inttypes.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+__declspec(dllexport) void* simhash256() { // uint8_t* input, size_t number_of_bytes
+    //uint64_t hash_1, hash_2, hash_3, hash_4;
+    //simple_simhash(input, number_of_bytes, &hash_1, &hash_2, &hash_3, &hash_4);
+    char* out = (char*)malloc(128);
+    sprintf_s(out, 128, "%s", "hello, wrold!\n");
+    //free(out);
+    //sprintf_s(out, 128, "%16.16" PRIx64 "-%16.16" PRIx64 "-%16.16" PRIx64 "-%16.16"
+    //    PRIx64 "\n", hash_1, hash_2, hash_3, hash_4);
+    return (void*)out;
+}
+
+int main() {
+
+    simhash256();
+    //free(pout);
+}
+        
+        
+```
+
+
+
+
+
+
+
+# Dictionary
 
 
 
