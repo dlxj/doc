@@ -286,6 +286,117 @@ int main() {
 
 
 
+```C#
+# https://www.cnblogs.com/s5689412/p/12773177.html
+static string PtrToStringUTF8(IntPtr ptr)
+{
+    var bytesCount = 0;
+    byte b;
+    do
+    {
+        b = Marshal.ReadByte(ptr, bytesCount);
+        bytesCount++;
+    }
+    while (b != 0);
+    var bytes = new byte[bytesCount - 1];
+    Marshal.Copy(ptr, bytes, 0, bytesCount - 1);
+    return Encoding.UTF8.GetString(bytes);
+}
+
+
+byte[] bytes = new byte[4096];
+GCHandle pinned = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+var result = iReadXXX(pinned.AddrOfPinnedObject());
+pinned.Free();
+int count = bytes.ToList().FindIndex(b => b == 0);
+var text = Encoding.Default.GetString(bytes, 0, count);
+
+```
+
+
+
+```
+// Unmanaged Signature
+int MessageBoxEx(
+    HWND hWnd,
+    LPCTSTR lpText,
+    LPCTSTR lpCaption,
+    UINT uType,
+    WORD wLanguageId);
+    
+[DllImport("User32.dll", CharSet = CharSet.Unicode)]
+[return: MarshalAs(UnmanagedType.I4)]
+static extern Int32 MessageBoxEx
+    (IntPtr hWnd,
+    // Marshaling as Unicode characters
+    [param: MarshalAs(UnmanagedType.LPTStr)]
+    String lpText,
+    // Marshaling as Unicode characters
+    [param: MarshalAs(UnmanagedType.LPTStr)]
+    String lpCaption,
+    // Marshaling as 4-bytes (32-bit) unsigned integer
+    [param: MarshalAs(UnmanagedType.U4)]
+    UInt32 uType,
+    // Marshaling as 2-bytes (16-bit) unsigned integer
+    [param: MarshalAs(UnmanagedType.U2)]
+    UInt16 wLanguageId);    
+  
+```
+
+
+
+```C++
+
+#include <inttypes.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+__declspec(dllexport) void simhash256(void* input, size_t number_of_bytes, uint64_t* hash256, void* buffer) { // uint8_t* input, size_t number_of_bytes
+    uint64_t hash_1, hash_2, hash_3, hash_4;
+
+    simple_simhash((uint8_t*)input, number_of_bytes, &hash256[0], &hash256[1], &hash256[2], &hash256[3]);
+    sprintf_s((char*)buffer, 128, "%16.16" PRIx64 "-%16.16" PRIx64 "-%16.16" PRIx64 "-%16.16"
+        PRIx64, hash256[0], hash256[1], hash256[2], hash256[3]);
+}
+
+int main() {
+
+    uint8_t input[] = "0123456789";
+
+    char buffer[128] = { 0 };
+    char buf[128] = { 0 };
+    uint64_t hash256[] = { 0, 0, 0, 0 };
+
+    simhash256(input, strlen(input), hash256, buffer);
+
+    sprintf_s((char*)buf, 128, "%16.16" PRIx64 "-%16.16" PRIx64 "-%16.16" PRIx64 "-%16.16"
+        PRIx64 "\n", hash256[0], hash256[1], hash256[2], hash256[3]);
+
+}
+
+```
+
+
+
+
+
+### 指针
+
+```
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/pointer-related-operators
+
+
+
+
+```
+
+
+
+
+
+
+
 
 
 
