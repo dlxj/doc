@@ -14,6 +14,54 @@ F12 跳转到定义，Ctrl + "-"  返回
 
 
 
+```
+        // 余弦相似度
+        public double SimCos(List<wordToken> diffWords1, List<wordToken> diffWords2)
+        {
+            var allWords = (from w in diffWords1.Concat(diffWords2) group w by w.word into g select g.First()).ToList();
+
+            // 不同的词计数（相同的词分在一个组，取list 的第一个元素和list 的长度）
+            var wordCount1 = (from w in diffWords1 group w by w.word into g select (new Tuple<string, int>(g.First().word, g.ToList().Count())) ).ToList();
+            var wordCount2 = (from w in diffWords2 group w by w.word into g select (new Tuple<string, int>(g.First().word, g.ToList().Count()))).ToList();
+
+            var wordDict1 = new Dictionary<string, int>();
+            var wordDict2 = new Dictionary<string, int>();
+
+            foreach( var t in wordCount1 )
+            {
+                wordDict1.Add(t.Item1, t.Item2);
+            }
+
+            foreach (var t in wordCount2)
+            {
+                wordDict2.Add(t.Item1, t.Item2);
+            }
+
+            double v1 = 0.000000d;
+
+            double v2 = 0.000000d;
+            double v3 = 0.000000d;
+
+            double c1, c2;
+            foreach (var w in allWords)
+            {
+                c1 = wordDict1.ContainsKey(w.word) ? wordDict1[w.word] : 0;
+                c2 = wordDict2.ContainsKey(w.word) ? wordDict2[w.word] : 0;
+
+                v1 += c1 * c2;
+                v2 += c1 * c1;
+                v3 += c2 * c2;
+            }
+            double result = v1 / (Math.Sqrt(v2) * Math.Sqrt(v3));
+
+            return 0;
+        }
+```
+
+
+
+
+
 ```c#
 
 
