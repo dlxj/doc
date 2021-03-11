@@ -161,3 +161,60 @@ https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
 
 
 
+## 委托（函数指针）、匿名委托
+
+```
+https://www.cnblogs.com/sntetwt/p/5402734.html
+
+            var dicfuncs = new Dictionary<string, Func<string, string>>();
+            dicfuncs.Add("A型题、多选题|非真题|非真题|题干60以上|答案不同|干扰60以下|有解析", new Func<string, string>(delegate (string x)
+            {
+                return "";
+            }));
+
+            dicfuncs["A型题、多选题|非真题|非真题|题干60以上|答案不同|干扰60以下|有解析"]("");
+```
+
+
+
+
+
+
+
+# Windows
+
+## 应用商启
+
+
+
+```
+Microsoft.WindowsStore_11810.1001.12.0_x64__8wekyb3d8bbwe
+
+add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_11810.1001.12.0_x64__8wekyb3d8bbwe*\appxmanifest.xml" -disabledevelopmentmode
+
+```
+
+
+
+
+
+```
+【卸载Microsoft Store命令】
+get-appxpackage *store* | remove-Appxpackage
+卸载以后，在开始菜单中确认Microsoft Store已经移除了
+
+
+【查看Microsoft Store安装包位置】
+get-appxpackage -allusers | Select Name, PackageFullName
+执行上面命令会列出所有Windows自带的软件，只需要找到【Microsoft.WindowsStore】以及其后面对应的安装包位置，复制后面的安装包位置：Microsoft.WindowsStore_12001.1001.5.0_x64__8wekyb3d8bbwe进行安装即可
+Microsoft.WindowsStore                      Microsoft.WindowsStore_12001.1001.5.0_x64__8wekyb3d8bbwe
+
+【安装Microsoft Store 】
+add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_12001.1001.5.0_x64__8wekyb3d8bbwe*\appxmanifest.xml" -disabledevelopmentmode 
+安装后，开始菜单中确认Microsoft Store已经又添加回来了
+
+#https://blog.csdn.net/sunny05296/article/details/104623355
+```
+
+
+
