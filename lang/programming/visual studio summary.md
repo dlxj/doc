@@ -177,6 +177,32 @@ https://www.cnblogs.com/sntetwt/p/5402734.html
 
 
 
+```
+            var dicfuncs = new Dictionary<string, Func<string, Result>>();
+            dicfuncs.Add("A型题、多选题|非真题|非真题|题干相同|答案相同|干扰相同|有解析", new Func<string, Result>(delegate (string x)
+            {
+                // "4468/81016337/-1"  "4468/80000113/-1"
+                var newer = newandold.Item1;
+                var older = newandold.Item2;
+
+                // 删除新试题
+                newer.isMachineDelete = true;  // 多线程这里应该加锁
+
+                if (newer.hasExplain && !older.hasExplain)
+                {
+                    thisguy.transExplain = another.testCode;
+                }
+                var r = new Result
+                {
+                    isSame = true,
+                    simTitle = simTitle,
+                    simRight = simRight,
+                    simWrong = simWrong
+                };
+                return r;
+            }));
+```
+
 
 
 
