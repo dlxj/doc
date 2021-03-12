@@ -94,3 +94,16 @@ C:\Users\i>  ping 192.168.163.129 # ping虚拟
 
 ```
 
+
+
+```
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/lib/dpkg/lock
+sudo rm /var/cache/apt/archives/lock
+都运行一遍，具体也不知道哪条起了作用。
+
+用 lsof 命令看看这几个文件是被哪个进程锁住的啊，然后先杀掉那几个进程。
+
+不杀进程，直接移除文件的话，可能仍有其他进程在操作 apt 的缓存，多个命令同时写 apt 缓存很容易发生冲突。
+```
+
