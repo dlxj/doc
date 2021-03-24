@@ -96,6 +96,16 @@ C:\Users\i>  ping 192.168.163.129 # ping虚拟
 
 
 
+# ssh
+
+```
+https://cloud.tencent.com/developer/article/1679861
+```
+
+
+
+
+
 ```
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/lib/dpkg/lock
@@ -106,4 +116,16 @@ sudo rm /var/cache/apt/archives/lock
 
 不杀进程，直接移除文件的话，可能仍有其他进程在操作 apt 的缓存，多个命令同时写 apt 缓存很容易发生冲突。
 ```
+
+
+
+# 防火墙
+
+```
+https://blog.csdn.net/Manipula/article/details/91491699
+```
+
+
+
+
 

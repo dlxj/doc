@@ -4355,6 +4355,16 @@ dataframe.shape
 
 
 
+##### 所有列名
+
+```python
+train.columns.values.tolist()
+```
+
+
+
+
+
 #### 筛选数据
 
 ```python

@@ -159,6 +159,16 @@ select ts.appID,ts.testID from tiku.test ts where ts.appID in  (4468,4469) and t
 https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
 ```
 
+```c#
+                    var xsd = new XSD { 
+                        simTitle = repeat.test.compareResult.simTitle 
+                    };
+
+                    var xsdstr =  JsonConvert.SerializeObject(xsd);
+```
+
+
+
 
 
 ## 委托（函数指针）、匿名委托
@@ -205,6 +215,27 @@ https://www.cnblogs.com/sntetwt/p/5402734.html
 
 
 
+```c#
+        private static void ApplyJam(Toast toast) =>
+            Console.WriteLine("Putting jam on the toast");
+```
+
+
+
+
+
+
+
+## 格式化
+
+```C#
+Console.WriteLine($"cracking {howMany} eggs");
+```
+
+
+
+
+
 
 
 # Windows
@@ -240,6 +271,272 @@ add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_1
 安装后，开始菜单中确认Microsoft Store已经又添加回来了
 
 #https://blog.csdn.net/sunny05296/article/details/104623355
+```
+
+
+
+# 多线程
+
+```
+https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/
+	        Task sleepTask = Task.Delay(TimeSpan.FromSeconds(2));
+            await sleepTask;
+
+    public class Utils
+    {
+        public static async Task<string> GetStringAsync()
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            return "hi,,,,";
+        }
+    }
+
+
+https://www.cnblogs.com/hez2010/p/async-in-dotnet.html
+	Task是一个异步任务，运行在预先分配好的线程池中
+```
+
+
+
+```c#
+using System;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            var hi = Utils.GetStringAsync();
+            var sayhi = await hi;
+            Console.WriteLine(sayhi);
+
+            Console.WriteLine("Hello World!");
+        }
+
+    }
+
+    public class Utils
+    {
+        public static async Task<string> GetStringAsync()
+        {
+
+            Task sleepTask = Task.Delay(TimeSpan.FromSeconds(2));
+            await sleepTask;
+            return "hi,,,,";
+        }
+    }
+
+}
+
+```
+
+
+
+```C#
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace AsyncBreakfast
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            Coffee cup = PourCoffee();
+            Console.WriteLine("coffee is ready");
+
+            var eggsTask = FryEggsAsync(2);
+            var baconTask = FryBaconAsync(3);
+            var toastTask = MakeToastWithButterAndJamAsync(2);
+
+            var breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
+            while (breakfastTasks.Count > 0)
+            {
+                Task finishedTask = await Task.WhenAny(breakfastTasks);
+                if (finishedTask == eggsTask)
+                {
+                    Console.WriteLine("eggs are ready");
+                }
+                else if (finishedTask == baconTask)
+                {
+                    Console.WriteLine("bacon is ready");
+                }
+                else if (finishedTask == toastTask)
+                {
+                    Console.WriteLine("toast is ready");
+                }
+                breakfastTasks.Remove(finishedTask);
+            }
+
+            Juice oj = PourOJ();
+            Console.WriteLine("oj is ready");
+            Console.WriteLine("Breakfast is ready!");
+        }
+
+        static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
+        {
+            var toast = await ToastBreadAsync(number);
+            ApplyButter(toast);
+            ApplyJam(toast);
+
+            return toast;
+        }
+
+        private static Juice PourOJ()
+        {
+            Console.WriteLine("Pouring orange juice");
+            return new Juice();
+        }
+
+        private static void ApplyJam(Toast toast) =>
+            Console.WriteLine("Putting jam on the toast");
+
+        private static void ApplyButter(Toast toast) =>
+            Console.WriteLine("Putting butter on the toast");
+
+        private static async Task<Toast> ToastBreadAsync(int slices)
+        {
+            for (int slice = 0; slice < slices; slice++)
+            {
+                Console.WriteLine("Putting a slice of bread in the toaster");
+            }
+            Console.WriteLine("Start toasting...");
+            await Task.Delay(3000);
+            Console.WriteLine("Remove toast from toaster");
+
+            return new Toast();
+        }
+
+        private static async Task<Bacon> FryBaconAsync(int slices)
+        {
+            Console.WriteLine($"putting {slices} slices of bacon in the pan");
+            Console.WriteLine("cooking first side of bacon...");
+            await Task.Delay(3000);
+            for (int slice = 0; slice < slices; slice++)
+            {
+                Console.WriteLine("flipping a slice of bacon");
+            }
+            Console.WriteLine("cooking the second side of bacon...");
+            await Task.Delay(3000);
+            Console.WriteLine("Put bacon on plate");
+
+            return new Bacon();
+        }
+
+        private static async Task<Egg> FryEggsAsync(int howMany)
+        {
+            Console.WriteLine("Warming the egg pan...");
+            await Task.Delay(3000);
+            Console.WriteLine($"cracking {howMany} eggs");
+            Console.WriteLine("cooking the eggs ...");
+            await Task.Delay(3000);
+            Console.WriteLine("Put eggs on plate");
+
+            return new Egg();
+        }
+
+        private static Coffee PourCoffee()
+        {
+            Console.WriteLine("Pouring coffee");
+            return new Coffee();
+        }
+    }
+
+    internal class Egg
+    {
+        public Egg()
+        {
+        }
+    }
+
+    internal class Bacon
+    {
+    }
+
+    internal class Toast
+    {
+    }
+
+    internal class Juice
+    {
+    }
+
+    internal class Coffee
+    {
+    }
+}
+```
+
+
+
+```
+using System.Collections.Concurrent;
+static ConcurrentDictionary<>
+```
+
+
+
+
+
+# C# 
+
+await一个 async 方法是由多个同步执行的程序块组成的，每个同步程序块之间由 await 语句分隔。**第一个同步程序块在调用这个方法的线程中运行，但其他同步程序块在哪里运行呢？情况比较复杂**。
+
+
+
+```C#
+SelectedItems.Select(e => e.ItemName).ToList();
+```
+
+```C#
+(from e in axtest.SelectedItems where e.ItemName == anser select e).ToList();
+```
+
+
+
+
+
+```C#
+(from l in tools.splitAll(content.ToString()) where l.pos != "stopWord" select l).ToList();
+```
+
+```C#
+(from w in test.words orderby w.tfidf descending select w).Take(10);
+```
+
+```C#
+(from t in diffList group t by t.testCode into g select g.First()).ToList();
+```
+
+
+
+
+
+
+
+# 知识空间理论
+
+
+
+```
+https://blog.csdn.net/qq_36317312/article/details/110871925
+
+对于准确的评估出学生的在每个知识点的掌握水平，解决方案是认知诊断（Cognitive Diagnosis）。
+对于快速综合测试来评估学生的认知水平，根据诊断结果出题，主要的解决方案是自适应测评（Adaptive Testing）
+
+
+ALEKS
+	知识空间理论
+		https://zhuanlan.zhihu.com/p/139141469
+
+	知识域 -> 有限问题(知识点)的集合Q ={q1，q2，q3，q4}
+
+
+	知识状态：问题之间的关系
+		不清
 ```
 
 
