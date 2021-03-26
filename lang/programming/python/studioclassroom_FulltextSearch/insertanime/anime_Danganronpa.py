@@ -63,9 +63,9 @@ if __name__ == "__main__":
             b = 1
         elif jpQ(subtitle):
             a = unhana_remove(subtitle)
-            jpanese.append( subtitle )
+            jpanese.append( (subtitle, time) )
         else:
-            chinese.append( subtitle )
+            chinese.append( (subtitle, time) )
 
 
     print("hi,,,")
