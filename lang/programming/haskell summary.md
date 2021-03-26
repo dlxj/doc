@@ -2,7 +2,9 @@
 
 ```
 # mario
-https://github.com/GunioRobot/monao
+https://github.com/Enzo-Liu/monao # 编译成功
+	https://github.com/cryptomeme/nario # 2020 还有更新
+	https://github.com/GunioRobot/monao # 更原始，有错误
 
 # sdl lib
 apt-get install libsdl1.2-dev libsdl-mixer1.2-dev
@@ -107,8 +109,8 @@ https://cloud.tencent.com/developer/article/1679861
 
 
 ```
-sudo rm /var/lib/dpkg/lock-frontend
-sudo rm /var/lib/dpkg/lock
+sudo rm /var/lib/dpkg/lock-frontend && \
+sudo rm /var/lib/dpkg/lock && \
 sudo rm /var/cache/apt/archives/lock
 都运行一遍，具体也不知道哪条起了作用。
 
