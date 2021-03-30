@@ -1452,3 +1452,236 @@ createDatabase_economistglobl()
 
 ```
 
+
+
+## Docker
+
+```
+# https://yeasy.gitbook.io/docker_practice/image/pull
+# 进入docker
+docker run -it --rm ubuntu:18.04 bash
+```
+
+```bash
+只习惯用Centos系统，但是有些软件编译安装很麻烦不方便，但是呢在Ubuntu中就变得容易方便，所以我打算用docker运行Ubuntu系统弥补Centos短板和不足之处；
+
+项目地址：https://hub.docker.com/_/ubuntu/
+
+1、安装Ubuntu系统命令：
+docker pull ubuntu
+这是一个极度精简的系统，连最基本的wget命令都没有；所以先要apt-get update升级系统和安装apt-get install wget命令；
+
+2、运行进入Ubuntu系统命令：
+docker run -ti ubuntu bash
+
+3、正确退出系统方式：
+先按，ctrl+p
+再按，ctrl+q
+绝对不能使用exit或者ctrl+d来退出，这样整个系统就退出了！！！
+
+4、共享宿主机目录到Ubuntu系统中：
+docker run -it -v /AAA:/BBB ubuntu bash
+这样宿主机根目录中的AAA文件夹就映射到了容器Ubuntu中去了，两者之间能够共享；
+
+5、登陆docker中的ubuntu镜像系统：
+docker run -ti ubuntu /bin/bash
+#6866 是 IMAGE ID 前四位数字-能区分出是哪个image即可
+
+6、退出后 再进入ubuntu
+1、首先用docker ps -a 查找到该CONTAINER ID对应编号（比如：0a3309a3b29e）
+2、进入该系统docker attach 0a3309a3b29e （此时没反应，ctrl+c就进入到ubuntu系统中去了）
+
+PS:我运行的命令
+
+docker run -it -v /download:/download -p 53:53 ubuntu bash
+
+附加常用命令：
+一、查看ubuntu版本：cat /etc/issue
+二、修改ubuntu镜像源为ubuntu：
+1、备份 cp /etc/apt/sources.list /etc/apt/sources.list.backup
+2、清空内容加入以下内容 vi /etc/apt/sources.list
+
+3、更新生效：apt-get update
+
+三、安装开启ssh运行用户远程登录
+1、安装sshd命令：apt-get install openssh-server openssh-client
+
+2、编辑/etc/ssh/sshd_config ，注释掉：PermitRootLogin without-password，增加PermitRootLogin yes
+
+3、启动命令
+service ssh start
+service ssh stop
+service ssh restart
+```
+
+
+
+### Xshell如何连接Docker容器中的Linux
+
+```
+
+# https://blog.csdn.net/u010046887/article/details/90406725
+
+步骤一：配置centos:7 容器SSH服务
+ 
+# 1、获取系统镜像
+[root@izwz9eftauv7x69f5jvi96z ~]# docker pull centos:7 
+# 2、启动（可以使用systemd管理服务进程）
+[root@izwz9eftauv7x69f5jvi96z ~]# docker run -tdi --privileged centos init
+# 3、进入容器的bash
+[root@izwz9eftauv7x69f5jvi96z ~]# docker ps
+CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS              PORTS                         NAMES
+0d77d1bf15b3        centos                                 "init"                   8 seconds ago       Up 8 seconds                                      elegant_joliot
+[root@d26c58c4f740 /]# docker exec -it 0d bash
+# 4、修改root密码，初始化密码Qwer1234
+[root@d26c58c4f740 /]# passwd
+Changing password for user root.
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+# 5、安装容器的openssh-server
+[root@d26c58c4f740 /]# yum install openssh-server -y
+………………
+# 6、修改/etc/ssh/sshd_config配置并保存：PermitRootLogin yes    UsePAM no
+[root@d26c58c4f740 /]# vi /etc/ssh/sshd_config
+ 
+# 7、启动ssh服务
+[root@0d77d1bf15b3 /]# systemctl start sshd
+# 8、退出容器
+[root@0d77d1bf15b3 /]# exit
+exit
+步骤二：构建并启动镜像
+
+# 1、查看刚刚的容器ID
+[root@izwz9eftauv7x69f5jvi96z ~]# docker ps
+CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS              PORTS                         NAMES
+0d77d1bf15b3        centos                                 "init"                   5 minutes ago       Up 5 minutes                                      elegant_joliot  
+ 
+# 2、通过commit构建镜像
+[root@izwz9eftauv7x69f5jvi96z ~]# docker commit \
+> --author "wwx<wuweixiang.alex@gmail.com>" \
+> --message "容器centos开启远程ssh成功" \
+> 0d \
+> wuweixiang/centos7-ssh:1.0.0
+sha256:983d8f4594dc6ef98d0432c34331faa307a82e85bd15ed1a6d15bfb91bc81359
+ 
+# 3、启动这个镜像的容器，并映射本地的一个闲置的端口（例如10000）到容器的22端口
+[root@izwz9eftauv7x69f5jvi96z ~]# docker images
+REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+wuweixiang/centos7-ssh          1.0.0               983d8f4594dc        2 minutes ago       302MB
+[root@izwz9eftauv7x69f5jvi96z ~]# docker run -d -p 10000:22 --name wwx-centos7-ssh 983 /usr/sbin/sshd -D
+9004a532ed73cee18fb804cd2e36491785b26df885fb20f226929dd4428df859
+三、用Xshell进行ssh连接成功
+Connecting to 112.74.185.172:10000...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+ 
+Last login: Fri Nov 23 07:58:34 2018 from 120.42.130.201
+[root@9004a532ed73 ~]#
+```
+
+
+
+docker ps -a  # 全部状态都列出来，强大一些
+
+docker start centos7
+
+
+
+### 移除镜像
+
+docker images
+
+docker rmi xxx
+
+
+
+### 移除容器
+
+docker stop 17b3d18c1428
+
+docker rm 17b3d18c1428
+
+
+
+
+
+
+
+
+
+docker pull centos:7
+
+docker run -it --rm centos:7 bash
+
+```
+# 特权模式创建容器
+docker run -tid --name centos7 -p 222:22 --privileged=true centos:7 /sbin/init 
+		# 此命令会自动下载镜像
+		# -p 222:22 表示将宿主的222端口映射容器的22端口
+# 运行
+docker exec -it centos7 /bin/bash
+# 安装ssh
+yum install openssh-server -y
+# 修改配置
+vi /etc/ssh/sshd_config
+PermitRootLogin yes # 改成这个
+UsePAM no # 改成这个
+# 启动ssh
+systemctl start sshd
+# 退出容器
+eixt
+
+# 查看容器的IP
+docker inspect centos7 | grep IPAddress
+  --> "IPAddress": "172.18.0.3"
+
+# 登录看看
+ssh root@172.18.0.3
+  --> 成功
+
+
+
+
+
+
+```
+
+https://plutoacharon.github.io/2020/02/23/Docker%E5%AE%B9%E5%99%A8%E5%87%BA%E7%8E%B0%E4%BD%BF%E7%94%A8systemctl%E9%97%AE%E9%A2%98%EF%BC%9AFailed-to-get-D-Bus-connection-Operation-not-permitted/
+
+
+
+### 如果需要更多的端映射
+
+```
+# 将宿主机的222端口映射到IP为172.18.0.3容器的22端口
+# 些方法可以用于增加额外的端口？？？
+iptables -t nat -A  DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+```
+
+
+
+
+
+
+1、获得容器IP
+将container_name 换成实际环境中的容器名
+docker inspect `container_name` | grep IPAddress
+
+2、iptable转发端口
+将宿主机的8888端口映射到IP为192.168.1.15容器的8080端口
+iptables -t nat -A  DOCKER -p tcp --dport 8888 -j DNAT --to-destination 192.168.1.15:8080
+
+
+
+一、添加docker容器端口映射
+以tomcat容器为例：
+
+root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
+1
+–name：创建的tomcat镜像名称
+‐d：后台运行
+‐p：将主机的端口映射到容器的一个端口，8888:8080代表：主机端口:容器内部的端口
+
+执行完会返回新创建的tomcat镜像ID
