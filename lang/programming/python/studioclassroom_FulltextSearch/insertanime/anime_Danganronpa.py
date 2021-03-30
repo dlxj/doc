@@ -26,6 +26,8 @@ import datetime
 
 import xmltodict
 
+
+
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, decimal.Decimal):
@@ -70,6 +72,10 @@ def jpQ(s):
 
 
 if __name__ == "__main__":
+
+    # host = '111.229.53.195'
+    host = '192.168.1.166'
+
     strs = "\n"+readstring("out.srt")+"\n"
     iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
     poss = [ i.span() for i in iters ]
@@ -134,10 +140,7 @@ if __name__ == "__main__":
                 v_zh  tsvector, \
                 v_en  tsvector \
             );")
-            """
-            需要安装两个扩展，一个分词，一个FTS
-                https://github.com/postgrespro/rum
-            """
+
             cur.execute("create extension pgroonga;")
             cur.execute("CREATE INDEX pgroonga_jp_index ON anime USING pgroonga (jp);")
             # cur.execute("create extension rum;")
@@ -145,19 +148,25 @@ if __name__ == "__main__":
 
             cur.execute('BEGIN;')
 
-
+            for tu in jpanese:
+                j = tu[0]
+                t = tu[1]
+                sql = f"""insert into anime(jp, time) values('{j}', '{t}');"""
+                cur.execute( sql )
             
-            jp = '。'
-            sql = f"""insert into anime(jp) values('{jp}');"""
-            cur.execute( sql )
             cur.execute('COMMIT;')
+
+    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port='5432') as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
+            rows = cur.fetchall()
+    
+    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
+        conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        with conn.cursor() as cur:
+            cur.execute("DROP DATABASE IF EXISTS anime;")
 
     print("hi,,,")
 
-
-
-
-
-# "</font>"
 
 

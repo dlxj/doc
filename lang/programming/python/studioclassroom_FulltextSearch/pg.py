@@ -260,6 +260,8 @@ def createDatabase_anime( host = '192.168.1.166'):
             cur.execute( sql )
             cur.execute('COMMIT;')
         
+    
+
 
 # createDatabase_studio()
 # articles, idioms = createDatabase_economistglobl()

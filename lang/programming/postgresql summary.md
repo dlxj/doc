@@ -39,7 +39,7 @@ https://web.chaperone.jp/w/index.php?PostgreSQL/pgroonga
 ```
 
 ```
-def createDatabase_anime( host = '192.168.1.166'):
+def createDatabase_anime( host = 'xxxxx.166'):
 
     with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
@@ -285,9 +285,9 @@ def load_json(filename):
 
 #escape_string = pymysql.escape_string
 
-#host = '111.229.53.195'
+#host = 'xxxxx.195'
 host = '127.0.0.1'
-#host = '192.168.1.166'
+#host = 'xxxxx.166'
 
 
 
@@ -1338,9 +1338,9 @@ def load_json(filename):
 
 #escape_string = pymysql.escape_string
 
-#host = '111.229.53.195'
+#host = 'xxxxx.195'
 host = '127.0.0.1'
-#host = '192.168.1.166'
+#host = 'xxx.166'
 
 
 
