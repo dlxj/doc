@@ -1664,7 +1664,6 @@ iptables -t nat -A  DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.
 
 
 
-
 1、获得容器IP
 将container_name 换成实际环境中的容器名
 docker inspect `container_name` | grep IPAddress
@@ -1685,3 +1684,60 @@ root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
 ‐p：将主机的端口映射到容器的一个端口，8888:8080代表：主机端口:容器内部的端口
 
 执行完会返回新创建的tomcat镜像ID
+
+
+
+
+### Docker 中的postgreql
+
+
+
+```
+# 特权模式创建容器
+docker run -tid --name centos7PG10 -p 54322:5432 --privileged=true centos:7 /sbin/init 
+		# 此命令会自动下载镜像
+		# -p 222:22 表示将宿主的222端口映射容器的22端口
+
+# 运行docker 的shell
+docker exec -it centos7PG10 /bin/bash
+
+# 安装PG13
+yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+yum -y update
+yum search postgresql13
+yum -y install postgresql13 postgresql13-server
+/usr/pgsql-13/bin/postgresql-13-setup initdb
+systemctl start postgresql-13
+systemctl status postgresql-13
+systemctl enable postgresql-13 # 自启动
+
+# 改强密码
+su - postgres
+psql -c "alter user postgres with password '这里填的一个强密码'"
+# 允许运程连接
+vi /var/lib/pgsql/13/data/postgresql.conf
+	listen_addresses = '*' # 改成这个
+vi /var/lib/pgsql/13/data/pg_hba.conf
+hostnossl    all          all            0.0.0.0/0  trust  
+	# 加在最后面，接受所有远程IP
+
+systemctl restart postgresql-13
+
+# docker 连接测试
+psql -h 127.0.0.1 -p 5432 -U postgres  # 注意端口
+  --> 成功
+# 宿主连接测试
+psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
+  --> 成功
+  
+```
+
+<img src="postgresql summary.assets/image-20210330185047454.png" alt="image-20210330185047454" style="zoom:50%;" />
+
+**navicat 连接**
+
+
+
+
+
