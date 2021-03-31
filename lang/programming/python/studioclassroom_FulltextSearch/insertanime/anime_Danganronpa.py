@@ -6,8 +6,15 @@ import subprocess
 import re
 import chardet
 
+import MeCab
+tagger = MeCab.Tagger()
+#tags = tagger.parse("pythonが大好きです")
 
 """
+
+pip install mecab-python3
+pip install unidic-lite
+
 pip install xmltodict
 GFW
 https://www.ishells.cn/archives/linux-ssr-server-client-install
@@ -137,6 +144,7 @@ if __name__ == "__main__":
                 en text, \
                 type text, \
                 time text, \
+                jp_mecab text, \
                 v_jp  tsvector, \
                 v_zh  tsvector, \
                 v_en  tsvector \
@@ -144,6 +152,7 @@ if __name__ == "__main__":
 
             cur.execute("create extension pgroonga;")
             cur.execute("CREATE INDEX pgroonga_jp_index ON anime USING pgroonga (jp);")
+            cur.execute("CREATE INDEX pgroonga_jpmecab_index ON anime USING pgroonga (jp_mecab);")
             # cur.execute("create extension rum;")
             # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
 
@@ -151,15 +160,18 @@ if __name__ == "__main__":
 
             for tu in jpanese:
                 j = tu[0]
+                tags = tagger.parse(j)
+                #tags = tags.split('\n')
                 t = tu[1]
-                sql = f"""insert into anime(jp, time) values('{j}', '{t}');"""
+                sql = f"""insert into anime(jp, time, jp_mecab) values('{j}', '{t}', '{tags}');"""
                 cur.execute( sql )
             
             cur.execute('COMMIT;')
 
     with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
+            #cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
+            cur.execute("SELECT * FROM anime WHERE jp_mecab &@ 'チコク';")
             rows = cur.fetchall()
     
     # with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port=port) as conn:
