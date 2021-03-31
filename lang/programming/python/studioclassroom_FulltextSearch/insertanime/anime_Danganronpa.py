@@ -73,8 +73,9 @@ def jpQ(s):
 
 if __name__ == "__main__":
 
-    # host = '111.229.53.195'
-    host = '192.168.1.166'
+    host = '111.229.53.195'
+    #host = '192.168.1.166'
+    port = 54322
 
     strs = "\n"+readstring("out.srt")+"\n"
     iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
@@ -113,7 +114,7 @@ if __name__ == "__main__":
             chinese.append( (subtitle, time) )
 
     
-    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
+    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port=port) as conn:
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with conn.cursor() as cur:
             cur.execute("DROP DATABASE IF EXISTS anime;")
@@ -124,7 +125,7 @@ if __name__ == "__main__":
                 CONNECTION LIMIT = -1 \
                 TEMPLATE template0;")
 
-    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port='5432') as conn:
+    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
 
         with conn.cursor() as cur:
         
@@ -156,15 +157,15 @@ if __name__ == "__main__":
             
             cur.execute('COMMIT;')
 
-    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port='5432') as conn:
+    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
         with conn.cursor() as cur:
             cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
             rows = cur.fetchall()
     
-    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
-        conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-        with conn.cursor() as cur:
-            cur.execute("DROP DATABASE IF EXISTS anime;")
+    # with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port=port) as conn:
+    #     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+    #     with conn.cursor() as cur:
+    #         cur.execute("DROP DATABASE IF EXISTS anime;")
 
     print("hi,,,")
 
