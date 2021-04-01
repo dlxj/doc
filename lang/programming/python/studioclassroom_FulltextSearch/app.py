@@ -210,3 +210,21 @@ def default_post():
 
     return redirect('/')
 
+
+@app.route('/next', methods=['post'])
+@cross_origin(supports_credentials=True)
+def next():
+
+    html = """
+    <form action="/" method="post">
+    keyword: <input type="text" name="keyword"><br>
+    <button type="submit">Search</button>
+    </form>
+    """
+
+    if 'keyword' in session and  session['keyword'].strip() != "":
+        print('/next redirect.')
+        return redirect('/')
+
+    print('/next default page.')
+    return render_template_string(html)
