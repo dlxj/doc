@@ -1739,5 +1739,90 @@ psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
 
 
 
+#### 启动已停止的容器
 
+docker start 2416f0b833b2
+
+
+
+
+
+
+
+## RUM
+
+
+
+好文
+
+https://www.mengqingzhong.com/2020/10/01/postgresql-index-rum-8/
+
+
+
+我们再一个相对大一点的数据比较GIN和RUM：找出包含hello和hackers的十篇最相关的文档。
+
+```sql
+explain (costs off, analyze)
+select * from mail_messages
+where tsv @@ to_tsquery('hello & hackers')
+order by ts_rank(tsv,to_tsquery('hello & hackers'))
+limit 10;
+```
+
+
+
+select id, en, zh, type from studio where v_zh @@ to_tsquery('jiebacfg', '情緒') ORDER BY RANDOM() limit 3;
+
+
+
+SELECT id, ts_headline(body, q), rank
+
+FROM (SELECT id, body, q, ts_rank_cd(ti, q) AS rank
+
+   FROM apod, to_tsquery('stars') q
+
+   WHERE ti @@ q
+
+   ORDER BY rank DESC
+
+   LIMIT 10) AS foo;
+
+
+
+```
+ # rise err
+ sql = f"SELECT id, ts_headline(en, q) as en, zh, type \
+                FROM studio, plainto_tsquery('en', '{keywd}') q \
+                WHERE v_en @@ q \
+                ORDER BY RANDOM() LIMIT 3 ;"
+```
+
+
+
+```sql
+drop index tsv_gin;
+create index tsv_rum on mail_messages using rum(tsv);
+```
+
+
+
+这个索引包含了所有所需的信息，查询非常精确：
+
+```sql
+explain (costs off, analyze)
+select * from mail_messages
+where tsv @@ to_tsquery('hello <-> hackers');
+```
+
+
+
+**create index en_rum on studio using rum(en);**
+
+
+
+SELECT id, ts_headline(en, q) as en, zh, type \
+
+FROM studio, to_tsquery('rebell')  q
+
+where en @@ to_tsquery('rebell')
 
