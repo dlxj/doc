@@ -8,6 +8,14 @@ conda activate flask_ftspg
 
 
 
+
+
+sftp root@172.18.0.3 # 连接远程服务器
+
+put -r pg_jieba .    # 上传目录到运程服务器（docker）
+
+
+
 https://github.com/TyrantLucifer/ssr-command-client
 
 
@@ -1056,7 +1064,35 @@ def execute_query(query: str):
 
 ## Install PG_Jieba [u](https://github.com/jaiminpan/pg_jieba)
 
+which pg_config
 
+
+
+```
+yum groupinstall "Development Tools"
+```
+
+```
+
+```
+
+```
+yum install centos-release-scl-rh
+yum install llvm-toolset-7-clang
+yum install postgresql13-devel
+```
+
+
+
+export PostgreSQL_ROOT=/usr/pgsql-13
+
+cmake  -DCMAKE_PREFIX_PATH=/usr/pgsql-13  -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/pgsql-13/include/server/ ..
+
+
+
+
+
+-DCMAKE_PREFIX_PATH=/usr/pgsql-13
 
 ```bash
 cmake -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/include/postgresql/13/server/ ..
@@ -1691,7 +1727,7 @@ iptables -t nat -vnL DOCKER
   --> tcp dpt:54322 to:172.18.0.3:5432
 
 # 这种方法每次docker 重启会失效
-iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.17.0.3:22
+iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
 
 ```
 
