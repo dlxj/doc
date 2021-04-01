@@ -1,5 +1,31 @@
 
 
+```
+docker ps -a
+docker rm xxx
+docker images
+docker rmi xxxx
+exit  (quit)
+CTRL + P + Q (quit)
+docker inspect container_name | grep IPAddress
+  --> 172.18.0.3
+# 需要更多IP 时
+iptables -t nat -A  DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+
+iptables -t nat -A  DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+```
+
+
+
+```
+# 查看规则
+iptables -L 
+```
+
+
+
+
+
 
 
 docker ps -a  # 全部状态都列出来，强大一些

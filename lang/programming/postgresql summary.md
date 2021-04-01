@@ -1457,6 +1457,22 @@ createDatabase_economistglobl()
 ## Docker
 
 ```
+docker exec -it centos7PG10 /bin/bash
+docker ps -a
+docker inspect
+exit  (quit)
+CTRL + P + Q (quit)
+docker inspect container_name | grep IPAddress
+  --> 172.18.0.3
+# 需要更多IP 时
+iptables -t nat -A  DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+```
+
+
+
+
+
+```
 # https://yeasy.gitbook.io/docker_practice/image/pull
 # 进入docker
 docker run -it --rm ubuntu:18.04 bash
@@ -1652,7 +1668,95 @@ https://plutoacharon.github.io/2020/02/23/Docker%E5%AE%B9%E5%99%A8%E5%87%BA%E7%8
 
 
 
-### 如果需要更多的端映射
+### 如果需要更多的端口映射
+
+```
+# https://blog.opensvc.net/yun-xing-zhong-de-dockerrong-qi/
+
+# 已有端口映射
+iptables -t nat -vnL DOCKER
+  --> tcp dpt:8083 to:172.18.0.2:8083
+  --> tcp dpt:54322 to:172.18.0.3:5432
+
+# 这种方法每次docker 重启会失效
+iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.17.0.3:22
+
+```
+
+
+
+
+
+
+
+```
+# https://www.jianshu.com/p/5c71b4f40612
+
+docker ps -a
+docker inspect 短hash # 然后得到长ID
+vi /var/lib/docker/containers/2416f0b833b226332db69fe5a5664d3ce6b11adfe8956be293ff87d6995bdebc/hostconfig.json
+
+# 已有端口映射
+"PortBindings":{"5432/tcp":[{"HostIp":"","HostPort":"54322"}]}
+
+cp /var/lib/docker/containers/2416f0b833b226332db69fe5a5664d3ce6b11adfe8956be293ff87d6995bdebc/hostconfig.json /var/lib/docker/containers/2416f0b833b226332db69fe5a5664d3ce6b11adfe8956be293ff87d6995bdebc/hostconfig.json-backup
+
+# 增加新的
+"PortBindings":{"5432/tcp":[{"HostIp":"","HostPort":"54322"}],"22/tcp":[{"HostIp":"","HostPort":"222"}]} # 这里是直接改
+
+cp /var/lib/docker/containers/2416f0b833b226332db69fe5a5664d3ce6b11adfe8956be293ff87d6995bdebc/config.v2.json /var/lib/docker/containers/2416f0b833b226332db69fe5a5664d3ce6b11adfe8956be293ff87d6995bdebc/config.v2.json-backup
+
+vi /var/lib/docker/containers/2416f0b833b226332db69fe5a5664d3ce6b11adfe8956be293ff87d6995bdebc/config.v2.json
+
+# 已有
+"ExposedPorts":{"5432/tcp":{}}
+
+# 增加
+"ExposedPorts":{"5432/tcp":{},"22/tcp":{}} # 原
+"ExposedPorts":{"22/tcp":{}} # 在它后面加
+
+service docker restart
+
+# 查看配置，是否修改成功
+docker inspect 短hash
+
+docker start xxx
+```
+
+
+
+```
+ "Config": {
+  "ExposedPorts": {
+   // 添加内部端口5432映射
+   "5432/tcp": {},
+   "8080/tcp": {}
+  },s
+  ...
+ },
+
+"PortBindings":{
+  // 添加内部端口以及外部端口15432
+  "5432/tcp":[
+   {
+    "HostIp":"",
+    "HostPort":"15432"
+   }
+  ],
+  "8080/tcp":[
+   {
+    "HostIp":"",
+    "HostPort":"28080"
+   }
+  ]
+ },
+```
+
+
+
+
+
+
 
 ```
 # 将宿主机的222端口映射到IP为172.18.0.3容器的22端口
