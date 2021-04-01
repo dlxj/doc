@@ -59,6 +59,13 @@ GFW
 https://www.ishells.cn/archives/linux-ssr-server-client-install
 """
 
+"""
+<select name="lang_select">
+  <option value ="jp">jp</option>
+  <option value ="en">en</option>
+</select>
+"""
+
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import sqlite3 as sqlite # Python 自带的
@@ -148,6 +155,10 @@ def default_get():
     html = """
     <form action="/" method="post">
     keyword: <input type="text" name="keyword"><br>
+    <select name="lang_select">
+    <option value ="en">en</option>
+    <option value ="jp">jp</option>
+    </select>
     <button type="submit">Search</button>
     </form>
     """
@@ -230,9 +241,16 @@ def default_get():
 @cross_origin(supports_credentials=True)
 def default_post():
     keyword = request.values.get("keyword")
-    print(keyword)
+    print(f"keyword: {keyword}")
+    select = request.values.get('lang_select')
+    print(f"select: {select}")
+
+    #<select name="comp_select" class="selectpicker form-control">
+    # select = request.form.get('comp_select')
+    # return(str(select))
 
     session['keyword'] = keyword
+    session['select'] = select
 
     return redirect('/')
 
@@ -244,6 +262,8 @@ def next():
     html = """
     <form action="/" method="post">
     keyword: <input type="text" name="keyword"><br>
+    <option value ="en">en</option>
+    <option value ="jp">jp</option>
     <button type="submit">Search</button>
     </form>
     """
