@@ -9,6 +9,9 @@ import MeCab
 tagger = MeCab.Tagger()
 
 """
+D:\GitHub\doc\lang\programming\postgresql summary.md
+    docker exec -it centos7PG10 /bin/bash
+        54322 port
 
 pip install mecab-python3
 pip install unidic-lite
@@ -175,7 +178,14 @@ def default_get():
                         html += ('<br>' + r[1] + '<br>' + r[2] + '<br>' + r[3])
                         html += ('<br>' + '<br>')
                 
-                
+                if (isJp):
+                    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
+                        with conn2.cursor() as cur2:
+                            cur2.execute(f"SELECT jp, time FROM anime WHERE jp_mecab &@ '{keywd}';")
+                            rows = cur2.fetchall()
+                            for r in rows:
+                                html += ('<br>' + r[0] + '<br>' + r[1])
+                                html += ('<br>' + '<br>')
                 
                 #cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
                 # cur.execute("SELECT * FROM anime WHERE jp_mecab &@ 'チコク';")
