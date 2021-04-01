@@ -245,10 +245,6 @@ def default_post():
     select = request.values.get('lang_select')
     print(f"select: {select}")
 
-    #<select name="comp_select" class="selectpicker form-control">
-    # select = request.form.get('comp_select')
-    # return(str(select))
-
     session['keyword'] = keyword
     session['select'] = select
 
