@@ -54,13 +54,20 @@ def load_json(filename):
         fp.close()
         return js
 
+def readstring(fname):
+    with open(fname, "r", encoding="utf-8") as fp:
+        data = fp.read()
+        fp.close()
+    return data
+
+def writestring(fname, strs):
+    with open(fname, "w", encoding="utf-8") as fp:
+        fp.write(strs)
+        fp.close()
 
 # out_bytes = subprocess.check_output([r"ffmpeg", "-i", "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv", "-map", "0:s:0", "out.srt"])
 # out_text = out_bytes.decode('utf-8')
 
-def readstring(fanme):
-    with open(fanme, "r", encoding="utf-8") as fp:
-        return fp.read()
 
 def unchinese_remove(s):
     return re.sub(r"[^\u4e00-\u9fa5]", "", s, flags=re.UNICODE)
@@ -120,7 +127,9 @@ if __name__ == "__main__":
         else:
             chinese.append( (subtitle, time) )
 
-    
+    writestring('jp.txt', "\r\n".join(jpanese[0]+jpanese[1]))
+    writestring('ch.txt', "\r\n".join(chinese[0]+chinese[1]))
+
     with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port=port) as conn:
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with conn.cursor() as cur:
