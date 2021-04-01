@@ -99,6 +99,16 @@ export PYTHONPATH=/root/flask_server/server_venv/lib/python3.8/site-packages
 
 
 
+```bash
+# on echo
+conda deactivate
+ls /usr/bin/python*
+apt-get purge --auto-remove python2.7
+apt-get purge --auto-remove python3.6
+apt-get purge --auto-remove python3.8
+pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
+```
+
 
 
 ### pip
@@ -225,6 +235,7 @@ pm2 resurrect // 重启备份的所有项目
 
 ```python
 export PYTHONPATH=/root/flask_server/server_venv/lib/python3.8/site-packages
+export PYTHONPATH=/root/anaconda3/lib/python3.8/site-packages
 ```
 
 

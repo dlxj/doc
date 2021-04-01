@@ -8,14 +8,39 @@ import chardet
 import MeCab
 tagger = MeCab.Tagger()
 
+from zhconv import convert
+
 """
+rebell 情緒 チコク 情绪
 D:\GitHub\doc\lang\programming\postgresql summary.md
     docker exec -it centos7PG10 /bin/bash
         54322 port
 
+conda create -n flask_ftspg pip python=3.8
+conda activate flask_ftspg
 pip install mecab-python3
 pip install unidic-lite
+pip install flask
+pip install flask_cors
+pip install psycopg2
+pip install zhconv
+python -m flask run --host 0.0.0.0 --port 8085 # for test
+losof -i:8085
+kill -9 xxx
+pm2 --name "flask_ftspg8085" start "python -m flask run --host 0.0.0.0 --port 8085"
 
+# pm2 依赖python2.7，删完等下又要装
+conda deactivate
+ls /usr/bin/python*
+apt purge -y python2.7-minimal
+apt-get purge --auto-remove python2.7
+apt-get purge --auto-remove python3.6
+apt-get purge --auto-remove python3.8
+pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
+
+
+明明pip 装了某个包却找不到
+export PYTHONPATH=/root/anaconda3/lib/python3.8/site-packages
 
 # RUM index
 create index en_rum on studio using rum(en);
@@ -38,14 +63,14 @@ import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import sqlite3 as sqlite # Python 自带的
 
-from pymysql import escape_string
+# from pymysql import escape_string  # pip install **pymysql==0.9.3** # 高版本没有escape_string
 import glob
 
 import json
 import decimal
 import datetime
 
-import xmltodict
+# import xmltodict
 
 
 
@@ -131,7 +156,7 @@ def default_get():
     isCh = False
     isJp = False
 
-    if ('keyword' in session):
+    if ('keyword' in session and len( session['keyword'].strip() ) > 0 ):
         keywd = session['keyword']
         keywd = keywd.strip()
         print(f'session is: {keywd}')
@@ -139,6 +164,7 @@ def default_get():
         if ( chQ(keywd)):
             #a = unhana_remove(keywd)
             print('### ch.')
+            keywd = convert(keywd, 'zh-hant')
             isCh = True
         elif ( jpQ(keywd)):
             print('### jp.')
@@ -171,7 +197,7 @@ def default_get():
                         html += ('<br>' + '<br>')
 
                 if (isCh):
-                    sql = "select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;"
+                    sql = f"select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;"
                     cur.execute(sql)
                     rows = cur.fetchall()
                     for r in rows:
