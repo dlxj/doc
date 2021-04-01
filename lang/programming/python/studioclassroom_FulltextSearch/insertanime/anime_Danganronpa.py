@@ -8,9 +8,15 @@ import chardet
 
 import MeCab
 tagger = MeCab.Tagger()
-#tags = tagger.parse("pythonが大好きです")
+
 
 """
+
+
+D:\GitHub\doc\lang\programming\postgresql summary.md
+    docker exec -it centos7PG10 /bin/bash
+        54322 port
+    Install PG_Jieba [u](https://github.com/jaiminpan/pg_jieba)
 
 pip install mecab-python3
 pip install unidic-lite
@@ -162,17 +168,24 @@ if __name__ == "__main__":
             cur.execute("create extension pgroonga;")
             cur.execute("CREATE INDEX pgroonga_jp_index ON anime USING pgroonga (jp);")
             cur.execute("CREATE INDEX pgroonga_jpmecab_index ON anime USING pgroonga (jp_mecab);")
+
+            cur.execute("create extension pg_jieba;")
+            
             # cur.execute("create extension rum;")
             # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
 
             cur.execute('BEGIN;')
 
-            for tu in jpanese:
+            
+            for idx, tu in enumerate(jpanese):
                 j = tu[0]
+                zh = ""
+                if (idx < len(chinese)):
+                    zh = chinese[idx][0].replace("(", "`(`").replace(")", "`)`")
                 tags = tagger.parse(j)
                 #tags = tags.split('\n')
                 t = tu[1]
-                sql = f"""insert into anime(jp, time, jp_mecab) values('{j}', '{t}', '{tags}');"""
+                sql = f"""insert into anime(jp, time, jp_mecab, zh, v_zh) values('{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'));"""
                 cur.execute( sql )
             
             cur.execute('COMMIT;')
