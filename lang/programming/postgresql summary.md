@@ -1,5 +1,17 @@
 ## Install PG
 
+
+
+conda info --env
+
+conda activate flask_ftspg
+
+
+
+https://github.com/TyrantLucifer/ssr-command-client
+
+
+
 centos7 install [u](https://computingforgeeks.com/how-to-install-postgresql-13-on-centos-7/)
 
 vps [ramnode](https://www.ramnode.com/)
