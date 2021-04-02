@@ -1679,7 +1679,13 @@ iptables -t nat -vnL DOCKER
   --> tcp dpt:54322 to:172.18.0.3:5432
 
 # 这种方法每次docker 重启会失效
-iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.17.0.3:22
+iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+
+# 获取规则编号
+iptables -t nat -nL --line-number
+
+# 删除某条规则
+iptables -t nat -D DOCKER 编号
 
 ```
 

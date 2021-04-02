@@ -1,5 +1,9 @@
 
 
+docker exec -it centos7PG10 /bin/bash
+
+
+
 ```
 docker ps -a
 docker rm xxx
@@ -97,15 +101,22 @@ https://plutoacharon.github.io/2020/02/23/Docker%E5%AE%B9%E5%99%A8%E5%87%BA%E7%8
 
 
 
-### 如果需要更多的端映射
+### 
+
+### 如果需要更多的端口映射
 
 ```
-# 将宿主机的222端口映射到IP为172.18.0.3容器的22端口
-# 些方法可以用于增加额外的端口？？？
-iptables -t nat -A  DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+# https://blog.opensvc.net/yun-xing-zhong-de-dockerrong-qi/
+
+# 已有端口映射
+iptables -t nat -vnL DOCKER
+  --> tcp dpt:8083 to:172.18.0.2:8083
+  --> tcp dpt:54322 to:172.18.0.3:5432
+
+# 这种方法每次docker 重启会失效
+iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.17.0.3:22
+
 ```
-
-
 
 
 
