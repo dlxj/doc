@@ -4402,6 +4402,20 @@ if __name__ == '__main__':
 
 
 
+### 分组、聚合
+
+```python
+# https://zhuanlan.zhihu.com/p/101284491
+# 不同公司薪水按中位数显示，年龄按平均数显示
+data.groupby('company').agg({'salary':'median','age':'mean'})
+```
+
+
+
+
+
+
+
 ### DataFrame
 
 > "dict-like" Series **container** for **Series objects**

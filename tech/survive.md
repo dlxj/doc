@@ -1077,6 +1077,30 @@ https://www.ishells.cn/archives/linux-ssr-server-client-install
 
 [搭建备用梯子：V2Ray + WebSocket + TLS + CloudFlare](https://printempw.github.io/v2ray-ws-tls-cloudflare/)
 
+```
+curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
+
+bash install-release.sh
+
+installed: /usr/local/bin/v2ray
+installed: /usr/local/bin/v2ctl
+installed: /usr/local/share/v2ray/geoip.dat
+installed: /usr/local/share/v2ray/geosite.dat
+installed: /usr/local/etc/v2ray/config.json
+installed: /var/log/v2ray/
+installed: /var/log/v2ray/access.log
+installed: /var/log/v2ray/error.log
+installed: /etc/systemd/system/v2ray.service
+installed: /etc/systemd/system/v2ray@.service
+
+Please execute the command: systemctl enable v2ray; systemctl start v2ray
+
+```
+
+[CSharp V2Ray 客户端](https://github.com/2dust/v2rayN)
+
+
+
 [新的扶墙加速姿势，完美替代CF](http://machbbs.com/hostloc/33418)
 
 [如何用一月6RMB购买一台外国服务器](https://zhuanlan.zhihu.com/p/73610444)
