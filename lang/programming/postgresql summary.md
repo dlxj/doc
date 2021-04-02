@@ -1133,7 +1133,27 @@ cmake  -DCMAKE_PREFIX_PATH=/usr/pgsql-13  -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/pgs
 
 
 ```bash
-# ubuntu 成功
+# centos7 成功，比ubuntu 复杂很多，上方设置都需要
+[root@2416f0b833b2 build]# make install
+[100%] Built target pg_jieba
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/pgsql-13/lib/pg_jieba.so
+-- Installing: /usr/pgsql-13/share/extension/pg_jieba.control
+-- Installing: /usr/pgsql-13/share/extension/pg_jieba--1.1.1.sql
+-- Installing: /usr/pgsql-13/share/tsearch_data/jieba_base.dict
+-- Installing: /usr/pgsql-13/share/tsearch_data/jieba_hmm.model
+-- Installing: /usr/pgsql-13/share/tsearch_data/jieba_user.dict
+-- Installing: /usr/pgsql-13/share/tsearch_data/jieba.stop
+-- Installing: /usr/pgsql-13/share/tsearch_data/jieba.idf
+```
+
+
+
+
+
+```bash
+# ubuntu 比较简单，以下几就就可以成功
 cmake -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/include/postgresql/13/server/ ..
 make
 make install
