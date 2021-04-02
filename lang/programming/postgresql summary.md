@@ -2,6 +2,10 @@
 
 
 
+好用的代理  https://github.com/TyrantLucifer/ssr-command-client
+
+
+
 conda info --env
 
 conda activate flask_ftspg
@@ -1068,13 +1072,14 @@ which pg_config
 
 
 
+CentOS7 编译成功 https://github.com/jaiminpan/pg_jieba
+
+
+
 ```
 yum groupinstall "Development Tools"
 ```
 
-```
-
-```
 
 ```
 yum install centos-release-scl-rh
@@ -1082,19 +1087,53 @@ yum install llvm-toolset-7-clang
 yum install postgresql13-devel
 ```
 
-
-
 export PostgreSQL_ROOT=/usr/pgsql-13
+
+
+
+submodule 拉取错误(git submodule update --init --recursive)
+
+
+```
+git submodule foreach git pull
+```
+
+
 
 cmake  -DCMAKE_PREFIX_PATH=/usr/pgsql-13  -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/pgsql-13/include/server/ ..
 
 
 
+pg_config 在这个目录，但是CMAKE 找不到
+
+ls /usr/pgsql-13/bin/
+
+```
+export PATH=$PATH:/usr/pgsql-13/bin/
+```
+
+c99 错误
+
+```
+# 在Cmakelist.txt 加一句
+set(CMAKE_C_FLAGS "-std=gnu99")
+```
+
+CXX错误
+
+```
+# 在Cmakelist.txt 加一句
+set(CMAKE_CXX_FLAGS "-std=c++11")
+```
 
 
--DCMAKE_PREFIX_PATH=/usr/pgsql-13
+
+cmake  -DCMAKE_PREFIX_PATH=/usr/pgsql-13  -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/pgsql-13/include/server/ ..
+
+
 
 ```bash
+# ubuntu 成功
 cmake -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/include/postgresql/13/server/ ..
 make
 make install
