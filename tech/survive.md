@@ -228,6 +228,35 @@ mac mount Android as drive
 
 [腾讯云qq 1234](https://cloud.tencent.com/ qq 1234) 
 
+
+
+## buyvm
+
+```
+frantech.ca
+slplsy@
+auto strong passwd
+
+LV RYZEN KVM 512MB
+
+Hostname: xxxx
+Main IP: xxx.xxx.xxx.77
+
+Username: root
+Password: xxxx
+
+Hosting Package: LV RYZEN KVM 512MB
+
+First Payment Amount: $48.00 USD
+Recurring Amount: $48.00 USD
+Billing Cycle: Biennially
+Next Due Date: 04/01/2023
+```
+
+
+
+
+
 # virmach
 
 [virmach](virmach.com) gmail silu  2.25$ /month，做梯子测试

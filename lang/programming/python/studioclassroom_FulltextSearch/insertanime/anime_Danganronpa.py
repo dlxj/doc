@@ -26,6 +26,120 @@ GFW
 https://www.ishells.cn/archives/linux-ssr-server-client-install
 """
 
+"""
+
+https://groonga.org/docs/reference/tokenizers/token_mecab.html
+
+https://github.com/pgroonga/pgroonga/issues/171
+
+My thought has become
+
+CREATE TABLE dict.tatoeba (
+  "id"            INT NOT NULL,
+  "jpn"           TEXT,
+  "eng"           TEXT NOT NULL,
+  PRIMARY KEY ("id")
+);
+
+CREATE INDEX idx_tatoeba_jpn ON dict.tatoeba
+  USING pgroonga ("jpn")
+  WITH (
+    tokenizer='TokenMecab("use_base_form", true, "include_form", true, "include_reading", true)',
+    normalizer='NormalizerNFKC100("unify_kana", true)'
+  );
+CREATE INDEX idx_tatoeba_eng ON dict.tatoeba
+  USING pgroonga ("eng")
+  WITH (plugins='token_filters/stem', token_filters='TokenFilterStem');
+Then
+
+SELECT * FROM dict.tatoeba
+WHERE jpn &@ 'うみ'
+ORDER BY pgroonga_score(tableoid, ctid) DESC
+LIMIT 10;
+But it isn't comparable to 海.
+"""
+
+"""
+
+&@ 单关键词的fulltext search
+
+CREATE TABLE dict.tatoeba (
+  "id"            INT NOT NULL,
+  "jpn"           TEXT,
+  "eng"           TEXT NOT NULL,
+  PRIMARY KEY ("id")
+);
+
+
+
+CREATE INDEX idx_tatoeba_jpn_base_form ON dict.tatoeba
+  USING pgroonga ((jpn || ''))
+  WITH (
+    tokenizer='TokenMecab("use_base_form", true)',
+    normalizer='NormalizerNFKC100("unify_kana", true)'
+  );
+
+CREATE INDEX idx_tatoeba_jpn_reading ON dict.tatoeba
+  USING pgroonga ((jpn || '' || ''))
+  WITH (
+    tokenizer='TokenMecab("use_reading", true)',
+    normalizer='NormalizerNFKC100("unify_kana", true)'
+  );
+
+SELECT * FROM dict.tatoeba
+WHERE (jpn || '')       &@~ ja_expand('海') -- search by base_form
+   OR (jpn || '' || '') &@~ ja_expand('海') -- search by reading
+LIMIT 10;
+"""
+
+"""
+CREATE TABLE dict.tatoeba (
+  "id"            INT NOT NULL,
+  "jpn"           TEXT,
+  "eng"           TEXT NOT NULL,
+  PRIMARY KEY ("id")
+);
+
+CREATE OR REPLACE FUNCTION ja_reading (TEXT) RETURNS TEXT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+BEGIN
+  FOREACH js IN ARRAY pgroonga_tokenize($1,
+    'tokenizer', 'TokenMecab("include_reading", true)')
+  LOOP
+    reading = (js -> 'metadata' ->> 'reading');
+
+    IF reading IS NULL THEN
+      total = total || (js ->> 'value');
+    ELSE
+      total = total || reading;
+    END IF;
+  END LOOP;
+
+  RETURN array_to_string(total, '');
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+
+CREATE OR REPLACE FUNCTION ja_expand (TEXT) RETURNS TEXT AS
+$func$
+BEGIN
+  IF $1 ~ '[\u4e00-\u9fa5]' THEN
+    RETURN  $1||' OR '||ja_reading($1);
+  END IF;
+
+  RETURN $1;
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+
+SELECT * FROM dict.tatoeba
+WHERE jpn &@~ ja_expand('海')
+LIMIT 10;
+"""
+
+
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import sqlite3 as sqlite # Python 自带的
@@ -74,6 +188,7 @@ def writestring(fname, strs):
 # out_bytes = subprocess.check_output([r"ffmpeg", "-i", "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv", "-map", "0:s:0", "out.srt"])
 # out_text = out_bytes.decode('utf-8')
 
+# \u4e00-\u9fa5
 
 def unchinese_remove(s):
     return re.sub(r"[^\u4e00-\u9fa5]", "", s, flags=re.UNICODE)
@@ -87,6 +202,10 @@ def unjp_remove(s):
 def unhana_remove(s):
     return re.sub(r"[^\u3040-\u309F^\u30A0-\u30FF]", "", s, flags=re.UNICODE)
 
+def hasHanaQ(s):
+    return len( unhana_remove(s) ) > 0
+
+# 有假名的是日语，有繁体字的是日语
 def jpQ(s):
     return len( unhana_remove(s) ) > 0
 
@@ -101,6 +220,8 @@ if __name__ == "__main__":
     iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
     poss = [ i.span() for i in iters ]
 
+
+    animename = 'Danganronpa'
 
     chinese = []
     jpanese = []
@@ -154,6 +275,7 @@ if __name__ == "__main__":
             cur.execute("DROP TABLE IF EXISTS anime;")
             cur.execute("create table anime( \
                 id serial primary key, \
+                name text, \
                 jp text, \
                 zh text, \
                 en text, \
@@ -185,7 +307,7 @@ if __name__ == "__main__":
                 tags = tagger.parse(j)
                 #tags = tags.split('\n')
                 t = tu[1]
-                sql = f"""insert into anime(jp, time, jp_mecab, zh, v_zh) values('{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'));"""
+                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'));"""
                 cur.execute( sql )
             
             cur.execute('COMMIT;')
