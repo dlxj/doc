@@ -2,7 +2,7 @@
 # ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
 # https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
 
-import subprocess
+import os,subprocess
 import re
 import chardet
 
@@ -219,7 +219,9 @@ if __name__ == "__main__":
     #host = '192.168.1.166'
     port = 54322
 
-    strs = "\n"+readstring("out.srt")+"\n"
+    currDir = os.path.dirname(os.path.abspath(__file__))
+    fsrt = os.path.join(currDir, "out.srt")
+    strs = "\n"+readstring(fsrt)+"\n"
     iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
     poss = [ i.span() for i in iters ]
 
