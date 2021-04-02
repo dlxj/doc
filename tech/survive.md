@@ -1036,6 +1036,8 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 Linux安装SSR服务端、客户端 [u](https://www.ishells.cn/archives/linux-ssr-server-client-install)
 
+https://www.ishells.cn/archives/linux-ssr-server-client-install
+
 
 
 # 黑科技

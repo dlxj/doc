@@ -1,5 +1,25 @@
 ## Install PG
 
+
+
+conda info --env
+
+conda activate flask_ftspg
+
+
+
+
+
+sftp root@172.18.0.3 # 连接远程服务器
+
+put -r pg_jieba .    # 上传目录到运程服务器（docker）
+
+
+
+https://github.com/TyrantLucifer/ssr-command-client
+
+
+
 centos7 install [u](https://computingforgeeks.com/how-to-install-postgresql-13-on-centos-7/)
 
 vps [ramnode](https://www.ramnode.com/)
@@ -1044,7 +1064,35 @@ def execute_query(query: str):
 
 ## Install PG_Jieba [u](https://github.com/jaiminpan/pg_jieba)
 
+which pg_config
 
+
+
+```
+yum groupinstall "Development Tools"
+```
+
+```
+
+```
+
+```
+yum install centos-release-scl-rh
+yum install llvm-toolset-7-clang
+yum install postgresql13-devel
+```
+
+
+
+export PostgreSQL_ROOT=/usr/pgsql-13
+
+cmake  -DCMAKE_PREFIX_PATH=/usr/pgsql-13  -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/pgsql-13/include/server/ ..
+
+
+
+
+
+-DCMAKE_PREFIX_PATH=/usr/pgsql-13
 
 ```bash
 cmake -DPostgreSQL_TYPE_INCLUDE_DIR=/usr/include/postgresql/13/server/ ..
