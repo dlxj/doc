@@ -4,6 +4,8 @@
 
 好用的代理  https://github.com/TyrantLucifer/ssr-command-client
 
+v2ray  https://printempw.github.io/v2ray-ws-tls-cloudflare/
+
 
 
 conda info --env
@@ -1187,6 +1189,12 @@ proxy wget https://github.com/fxsjy/jieba/raw/master/extra_dict/dict.txt.big
 # 出错了，不用替换也可以查繁体
 cp  /usr/share/postgresql/13/tsearch_data/jieba_user.dict
 ```
+
+
+
+## Install pgroonga
+
+https://pgroonga.github.io/install/
 
 
 
