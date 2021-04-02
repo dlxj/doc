@@ -253,7 +253,7 @@ Billing Cycle: Biennially
 Next Due Date: 04/01/2023
 ```
 
-
+ios的shadowrocket可以连接vmess协议
 
 
 

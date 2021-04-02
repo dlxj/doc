@@ -11,8 +11,6 @@ tagger = MeCab.Tagger()
 
 
 """
-
-
 D:\GitHub\doc\lang\programming\postgresql summary.md
     docker exec -it centos7PG10 /bin/bash
         54322 port
@@ -206,6 +204,11 @@ def hasHanaQ(s):
     return len( unhana_remove(s) ) > 0
 
 # 有假名的是日语，有繁体字的是日语
+# 没有读音的不是
+# SELECT pgroonga_tokenize('并','tokenizer', 'TokenMecab("use_base_form", true,"include_reading", true)') # use_base_form 可能会把变形转成原形？
+# SELECT pgroonga_tokenize('します','tokenizer', 'TokenMecab("use_base_form", true,"include_reading", true)')
+  # --> {"{\"value\":\"する\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"シ\"}}","{\"value\":\"ます\",\"position\":1,\"force_prefix_search\":true,\"metadata\":{\"reading\":\"マス\"}}"}
+
 def jpQ(s):
     return len( unhana_remove(s) ) > 0
 
