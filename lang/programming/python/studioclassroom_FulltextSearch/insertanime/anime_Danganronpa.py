@@ -24,6 +24,59 @@ GFW
 https://www.ishells.cn/archives/linux-ssr-server-client-install
 """
 
+
+"""
+
+SELECT pgroonga_tokenize('します','tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+ --> {"{\"value\":\"する\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"シ\"}}","{\"value\":\"ます\",\"position\":1,\"force_prefix_search\":true,\"metadata\":{\"reading\":\"マス\"}}"}
+
+
+CREATE OR REPLACE FUNCTION ja_reading (TEXT) RETURNS TEXT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+BEGIN
+  FOREACH js IN ARRAY pgroonga_tokenize($1,
+    'tokenizer', 'TokenMecab("include_reading", true)')
+  LOOP
+    reading = (js -> 'metadata' ->> 'reading');
+
+    IF reading IS NULL THEN
+      total = total || (js ->> 'value');
+    ELSE
+      total = total || reading;
+    END IF;
+  END LOOP;
+
+  RETURN array_to_string(total, '');
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+
+
+SELECT ja_reading ('有');
+-- 
+
+/*
+{"{\"value\":\"海\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"ウミ\"}}"}
+{"{\"value\":\"1\",\"position\":0,\"force_prefix_search\":false}"}
+*/
+
+
+{
+  "force_prefix_search": false,
+  "metadata": {
+    "reading": "シ"
+  },
+  "position": 0,
+  "value": "する"
+}
+
+
+
+"""
+
 """
 
 https://groonga.org/docs/reference/tokenizers/token_mecab.html
@@ -216,7 +269,6 @@ def jpQ(s):
 if __name__ == "__main__":
 
     host = '111.229.53.195'
-    #host = '192.168.1.166'
     port = 54322
 
     strs = "\n"+readstring("out.srt")+"\n"

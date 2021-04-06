@@ -2051,3 +2051,115 @@ FROM studio, to_tsquery('rebell')  q
 
 where en @@ to_tsquery('rebell')
 
+
+
+
+
+# 调试
+
+
+
+```
+https://gist.github.com/jhngrant/c1787346fcb4b0e3001a
+https://www.techsupportpk.com/2020/12/how-to-install-pldebugger-centos.html
+
+plugin_debugger
+
+# GFW https://github.com/TyrantLucifer/ssr-command-client
+yum install -y python3
+shadowsocksr-cli --add-url https://subscription.ftwapi.com/link/xxxxxxx?sub=1
+shadowsocksr-cli -u
+
+git clone https://git.postgresql.org/git/pldebugger.git
+cd pldebugger
+PATH=$PATH:/usr/pgsql-13/bin
+export PATH
+export USE_PGXS=1
+yum -y install gcc gcc-c++ kernel-devel make git nano openssl openssl-devel krb5-libs krb5-devel
+make
+make install
+	--> '/usr/pgsql-13/lib/plugin_debugger.so'
+
+
+vi /var/lib/pgsql/13/data/postgresql.conf
+shared_preload_libraries = 'plugin_debugger' # 找到这一句，改成这样
+
+systemctl restart postgresql-13
+
+
+su postgres
+psql
+CREATE EXTENSION pldbgapi;
+\q
+
+```
+
+
+
+```
+http://www.postgres.cn/docs/9.4/functions-json.html
+
+'[1,2,3]'::json->>2  # 数组，索引2
+	--> 3
+'{"a":1,"b":2}'::json->>'b' # json 索引 "b"
+	--> 2
+
+
+
+```
+
+
+
+
+
+```mysql
+
+CREATE OR REPLACE FUNCTION ja_reading (TEXT) RETURNS TEXT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+BEGIN
+  FOREACH js IN ARRAY pgroonga_tokenize($1,
+    'tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+  LOOP
+    reading = (js -> 'metadata' ->> 'reading');
+
+    IF reading IS NULL THEN
+      total = total || (js ->> 'value');
+    ELSE
+      total = total || reading;
+    END IF;
+  END LOOP;
+
+  RETURN array_to_string(total, '');
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+
+
+
+
+
+SELECT ja_reading ('します');
+-- 
+
+/*
+{"{\"value\":\"海\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"ウミ\"}}"}
+{"{\"value\":\"1\",\"position\":0,\"force_prefix_search\":false}"}
+
+
+SELECT pgroonga_tokenize('します','tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+ --> {"{\"value\":\"する\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"シ\"}}","{\"value\":\"ます\",\"position\":1,\"force_prefix_search\":true,\"metadata\":{\"reading\":\"マス\"}}"}
+
+
+
+*/
+```
+
+
+
+
+
+
+
