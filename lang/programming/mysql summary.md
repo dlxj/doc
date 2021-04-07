@@ -1165,3 +1165,28 @@ mysql -u user -p db < db.sql
 分表备份       -->   mysqldump db1 tab1 tab2 >/backup/db1_tab1_tab2.sql 
 直接远程备份    -->  mysqladmin -h boa.snake.net create db1 
               -->   mysqldump db1 | mysql -h boa.snake.net db1 
+
+
+
+# 排除表不备份
+
+
+
+```
+--ignore-table=
+```
+
+
+
+```
+mysqldump -h主机名 -P端口 -u用户名 -p密码 –database 数据库名 > 文件名.sql
+```
+
+
+
+
+
+
+
+
+

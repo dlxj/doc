@@ -2110,6 +2110,42 @@ http://www.postgres.cn/docs/9.4/functions-json.html
 
 
 
+```
+regexp_split_to_array('hello world', E'\\s+')
+  --> {hello,world}
+```
+
+
+
+```
+with my_table(resource_name, readiops, writeiops) as (
+values
+('90832-00:29:3E', 3.21, 4.00),
+('90833-00:30:3E', 2.12, 3.45),
+('90834-00:31:3E', 2.33, 2.78),
+('90832-00:29:3E', 4.21, 6.00)
+)
+
+select 
+    split_part(resource_name::text, '-', 1) as array_serial,
+    split_part(resource_name::text, '-', 2) as ldev,
+    string_agg(readiops::text, ',') as readiops,
+    string_agg(writeiops::text, ',') as writeiops
+from my_table
+group by 1, 2;
+
+ array_serial |   ldev   | readiops  | writeiops 
+--------------+----------+-----------+-----------
+ 90832        | 00:29:3E | 3.21,4.21 | 4.00,6.00
+ 90833        | 00:30:3E | 2.12      | 3.45
+ 90834        | 00:31:3E | 2.33      | 2.78
+(3 rows)
+```
+
+
+
+
+
 
 
 ```mysql
@@ -2158,6 +2194,91 @@ SELECT pgroonga_tokenize('します','tokenizer', 'TokenMecab("use_base_form", t
 ```
 
 
+
+
+
+```
+CREATE OR REPLACE FUNCTION "public"."ja_reading"(text)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+	s TEXT;
+BEGIN
+  FOREACH js IN ARRAY pgroonga_tokenize($1, 'tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+  LOOP
+    
+		FOREACH s IN ARRAY string_to_array($1, '|')
+		LOOP
+		
+			RETURN s; 
+		
+		END LOOP;
+
+		
+		reading = (js -> 'metadata' ->> 'reading');
+
+		-- total = total || (js ->> 'value');
+		-- RETURN total || (js ->> 'value');
+		
+		-- RETURN total || (js ->> 'value');
+		
+		
+		/*
+    IF reading IS NULL THEN
+      total = total || (js ->> 'value');
+    ELSE
+      total = total || reading;
+    END IF;
+		*/
+  END LOOP;
+
+  RETURN array_to_string(total, '');
+END;
+$BODY$
+  LANGUAGE plpgsql IMMUTABLE
+  COST 100
+```
+
+
+
+
+
+
+
+# JPQ
+
+
+
+```mysql
+
+CREATE OR REPLACE FUNCTION JPQ (TEXT) RETURNS TEXT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+	s TEXT;
+BEGIN
+  FOREACH s IN ARRAY string_to_array($1, '|')
+  LOOP
+    
+		FOREACH js IN ARRAY pgroonga_tokenize(s, 'tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+		LOOP
+			reading = (js -> 'metadata' ->> 'reading');
+			IF reading IS NULL THEN
+					RETURN 0;
+      END IF;
+		
+		END LOOP;
+  END LOOP;
+	
+	RETURN 1;
+	
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+```
 
 
 
