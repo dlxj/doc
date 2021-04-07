@@ -430,7 +430,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                   if row[0] == 1:
                     allhasjpduyingQ = True
                   else:
-                     allhasjpduyingQ = False
+                    allhasjpduyingQ = False
 
               chinese.append( (subtitle, time) )
 
