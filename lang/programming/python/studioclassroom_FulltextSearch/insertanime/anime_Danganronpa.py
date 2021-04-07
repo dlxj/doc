@@ -330,8 +330,8 @@ if __name__ == "__main__":
                 id serial primary key, \
                 name text, \
                 jp text, \
-                zh text, \
-                en text, \
+                zh text DEFAULT '', \
+                en text DEFAULT '', \
                 type text, \
                 time text, \
                 jp_mecab text, \
@@ -421,7 +421,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
               tmp = "|".join( list(tmp) )
 
               allhasjpduyingQ = False
-              # with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
+              # with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn: 
               #   with conn.cursor() as cur:
               #     sql = f"select JPQ ('{tmp}');"
               #     cur.execute( sql )

@@ -218,10 +218,10 @@ def default_get():
                 if (isJp):
                     with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
                         with conn2.cursor() as cur2:
-                            cur2.execute(f"SELECT jp, time FROM anime WHERE jp_mecab &@ '{keywd}';")
+                            cur2.execute(f"SELECT jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}';")
                             rows = cur2.fetchall()
                             for r in rows:
-                                html += ('<br>' + r[0] + '<br>' + r[1])
+                                html += ('<br>' + r[0] + '<br>' + r[1]+ '<br>' + r[2])
                                 html += ('<br>' + '<br>')
                 
                 #cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
