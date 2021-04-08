@@ -4,8 +4,8 @@
 
 import os,subprocess
 import re
+import glob
 import chardet
-
 import MeCab
 tagger = MeCab.Tagger()
 
@@ -304,8 +304,16 @@ def parseSrtTime(time):
 	  print( match.group(1), int(match.group(1)) )
 
 
-
-
+def allfname(root, ext):
+    names = os.listdir(root)
+    # if os.path.exists( root ):
+    #   p =  os.path.join( root, '*.mkv' )
+    #   names = os.listdir(root) # glob.glob(p)
+    #   a = 1    
+    # path = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"+ f'/*.mkv'
+    # names = glob.glob(path)
+    return names
+  
 
 
 
@@ -327,15 +335,7 @@ def jpQ(s):
     return len( unhana_remove(s) ) > 0
 
 
-if __name__ == "__main__":
-
-    parseSrtTime('')
-
-    host = '111.229.53.195'
-    port = 54322
-
-    currDir = os.path.dirname(os.path.abspath(__file__))
-
+def createAnimeDB(host, port):
     with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port=port) as conn:
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with conn.cursor() as cur:
@@ -370,6 +370,8 @@ if __name__ == "__main__":
             cur.execute("CREATE INDEX pgroonga_jpmecab_index ON anime USING pgroonga (jp_mecab);")
 
             cur.execute("create extension pg_jieba;")
+
+            cur.execute("CREATE INDEX animename_index ON anime (name);")
             
             # cur.execute("create extension rum;") 
             # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
@@ -405,14 +407,19 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
               """
             )
 
+def importAnime(animename, frtname):
+    dic_chs = {}
 
-    fsrt = os.path.join(currDir, "out.srt")
+    currDir = os.path.dirname(os.path.abspath(__file__))
+
+    
+    fsrt = os.path.join(currDir, frtname)
     strs = "\n"+readstring(fsrt)+"\n"
     iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
     poss = [ i.span() for i in iters ]
 
 
-    animename = 'Danganronpa'
+    #animename = 'Danganronpa'
 
     chinese = []
     jpanese = []
@@ -427,9 +434,36 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
         else:
             content = strs[ end : poss[i+1][0] ]
         
+        arr = content.strip().split('\n')
+        if len(arr) < 2:
+          continue
         time = content.strip().split('\n')[0]
         content = content.strip().split('\n')[1]
-        subtitle = re.compile(r'size=.+>(.+?)\<\/font\>').findall(content)[0]
+
+
+
+        
+
+        if len( re.compile(r'size=.+>(.+?)\<\/font\>').findall(content) ) > 0:
+          subtitle = re.compile(r'size=.+>(.+?)\<\/font\>').findall(content)[0]
+        else:
+          content = re.compile(r"""face=".+?\"""").sub('', content)
+          content = re.compile(r"""size="\d+\"""").sub('', content)
+          content = re.compile(r"""color=".+?\"""").sub('', content)
+          content = re.compile(r"""<font.+?>""").sub('', content)
+          content = re.compile(r"""{\\an7}""").sub('', content)
+          
+          subtitle = content
+
+        # elif match := re.compile("""(<font face=".+?" size="\d+"><font size="\d+">).+?""").search(content):
+        #   m = match.group(1)
+        #   subtitle = content.replace(m, "")
+        # elif match := re.compile(r"""(<font face=".+?" size="\d+"><font face=".+?">{\\an\d+}<font size="\d+">).+?""").search(content):
+        #   m = match.group(1)
+        #   subtitle = content.replace(m, "")
+        # else:
+        #   raise RuntimeError('some err')
+
         subtitle = subtitle.replace('<b>','').replace('</b>','')
         
         chrst = chardet.detect(subtitle.encode())
@@ -441,11 +475,23 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
           jpanese.append( (subtitle, time) )
         else:
             tmp = unchinese_remove(subtitle)
-
             if tmp != "":
-              tmp = "|".join( list(tmp) )
+              
+              if time in dic_chs:
+                continue
+                #raise RuntimeError('some err')
+              
+              dic_chs[time] = subtitle
 
+              tmp = "|".join( list(tmp) )
+              begin = time.split('-->')[0].strip()
+              end = time.split('-->')[1].strip()
               allhasjpduyingQ = False
+
+
+
+
+
               # with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn: 
               #   with conn.cursor() as cur:
               #     sql = f"select JPQ ('{tmp}');"
@@ -457,10 +503,10 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
               #     else:
               #       allhasjpduyingQ = False
 
-              chinese.append( (subtitle, time) )
+              #chinese.append( (subtitle, time) )
 
-    writestring('jp.txt', "\r\n".join(jpanese[0]+jpanese[1]))
-    writestring('ch.txt', "\r\n".join(chinese[0]+chinese[1]))
+    # writestring('jp.txt', "\r\n".join(jpanese[0]+jpanese[1]))
+    # writestring('ch.txt', "\r\n".join(chinese[0]+chinese[1]))
 
 
     with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
@@ -471,11 +517,13 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             for idx, tu in enumerate(jpanese):
                 j = tu[0]
                 zh = ""
-                if (idx < len(chinese)):
-                    zh = chinese[idx][0].replace("(", "`(`").replace(")", "`)`")
+                # if (idx < len(chinese)):
+                #     zh = chinese[idx][0].replace("(", "`(`").replace(")", "`)`")
                 tags = tagger.parse(j)
                 #tags = tags.split('\n')
                 t = tu[1]
+                if (t in dic_chs):
+                  zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'));"""
                 cur.execute( sql )
             
@@ -494,6 +542,33 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
     #         cur.execute("DROP DATABASE IF EXISTS anime;")
 
     print("hi,,,")
+
+if __name__ == "__main__":
+
+    host = '111.229.53.195'
+    port = 54322
+
+    createAnimeDB(host, port)
+
+    #parseSrtTime('')
+    root = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+    #root = r"F:\Downloads\Dan"
+
+    fnames = allfname(root, 'mkv')
+    for fname in fnames:
+      frtname = f"{fname}.srt"
+      fname = os.path.join( root, fname )
+      out_bytes = subprocess.check_output([r"ffmpeg", "-i", fname, "-map", "0:s:0", frtname])
+      out_text = out_bytes.decode('utf-8')
+
+      animename = 'Danganronpa'
+      importAnime(animename, frtname)
+
+
+
+
+
+
 
 
 
