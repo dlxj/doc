@@ -296,13 +296,32 @@ def fanti():
 
 def parseSrtTime(time):
   
-  time = "01:02:03,004 --> 00:00:00,070"
+  time = "00:01:12,960 --> 00:01:14,640"
   begin = time.split('-->')[0].strip()
   end = time.split('-->')[1].strip()
 
-  if match := re.compile(r'\d\d:(\d\d):\d\d,\d\d\d').search(begin):  
-	  print( match.group(1), int(match.group(1)) )
+  if match := re.compile(r'(\d\d):(\d\d):(\d\d),(\d\d\d)').search(begin):
+    h1 = int(match.group(1))
+    m1 = int(match.group(2))
+    s1 = int(match.group(3))
+    ms1 = int(match.group(4))
 
+    totalMs1 = h1 * 3600 * 1000 + m1 * 60 * 1000 + s1 * 1000 + ms1
+
+    if match := re.compile(r'(\d\d):(\d\d):(\d\d),(\d\d\d)').search(begin):
+      h2 = int(match.group(1))
+      m2 = int(match.group(2))
+      s2 = int(match.group(3))
+      ms2 = int(match.group(4))
+
+      totalMs2 = h2 * 3600 * 1000 + m2 * 60 * 1000 + s2 * 1000 + ms2
+
+      ms3 = totalMs1 - totalMs2
+      
+
+
+    
+    print(h1)
 
 def allfname(root, ext):
     names = os.listdir(root)
@@ -548,12 +567,14 @@ def importAnime(animename, frtname, videoname):
 
 if __name__ == "__main__":
 
+    parseSrtTime('')
+
     host = '111.229.53.195'
     port = 54322
 
     createAnimeDB(host, port)
 
-    #parseSrtTime('')
+    
     root = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     #root = r"F:\Downloads\Dan"
 

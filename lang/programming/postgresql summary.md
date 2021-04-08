@@ -2289,6 +2289,76 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 ```
+ffmpeg -i -ss 0 -t 00:01:00
+```
+
+
+
+```
+with -t which specifies the duration, like -ss 60 -t 10 to capture from second 60 to 70
+
+```
+
+## Cutting small sections
+
+To extract only a small segment in the middle of a movie, it can be used in combination with `-t` which specifies the duration, like `-ss 60 -t 10` to capture from second 60 to 70. Or you can use the `-to` option to specify an out point, like `-ss 60 -to 70` to capture from second 60 to 70. `-t` and `-to` are mutually exclusive. If you use both, `-t` will be used.
+
+Note that if you specify `-ss` before `-i` only, the timestamps will be reset to zero, so `-t` and `-to` will have the same effect. If you want to keep the original timestamps, add the `-copyts` option.
+
+The first command will cut from 00:01:00 to 00:03:00 (in the original), using the faster seek.
+The second command will cut from 00:01:00 to 00:02:00, as intended, using the slower seek.
+The third command will cut from 00:01:00 to 00:02:00, as intended, using the faster seek.
+
+```
+ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy cut.mp4
+ffmpeg -i video.mp4 -ss 00:01:00 -to 00:02:00 -c copy cut.mp4
+ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy -copyts cut.mp4
+```
+
+If you cut with stream copy (`-c copy`) you need to use the [-avoid_negative_ts 1](https://ffmpeg.org/ffmpeg-all.html#Format-Options) option if you want to use that segment with the [concat demuxer](https://trac.ffmpeg.org/wiki/How to concatenate (join, merge) media files#demuxer) .
+
+Example:
+
+```
+ffmpeg -ss 00:03:00 -i video.mp4 -t 60 -c copy -avoid_negative_ts 1 cut.mp4
+```
+
+If you have to re-encode anyway, e.g., to apply filters like [afade](https://trac.ffmpeg.org/wiki/AfadeCurves), which can be very slow, make sure to use, e.g., `-ss 120 -i some.mov -to 60` to get one minute from 120s to 120+60s, not `-to 180` for three minutes starting at 120s.
+
+
+
+```
+# show info
+ffprobe xxx.mp4
+
+“-an”（no audio）和“-vn”（no video）
+ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -vn -acodec copy -ss 0 -t 00:01:00 ttttttttt.ts
+
+ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -vn -acodec copy -ss 00:01:12.960 -to 00:01:14.640 ttttttttt.ts
+
+00:01:12,960 --> 00:01:14,640
+
+
+ffmpeg -i test.mp4 -codec copy -bsf h264_mp4toannexb test.ts
+```
+
+
+
+
+
+```
+/usr/local/ffmpeg/bin/ffmpeg -ss START  -t LENGTH -i INPUTFILE  -vcodec copy -acodec copy OUTFILE
+
+00:01:00 长度1分钟
+/usr/local/ffmpeg/bin/ffmpeg -ss 0 -t 00:01:00 -i movie.mp4  -vcodec copy -acodec copy movie-1.mp4
+
+```
+
+
+
+
+
+```
 https://it3q.com/article/59
 
 ```
