@@ -362,7 +362,8 @@ def createAnimeDB(host, port):
                 jp_mecab text, \
                 v_jp  tsvector, \
                 v_zh  tsvector, \
-                v_en  tsvector \
+                v_en  tsvector, \
+                videoname text \
             );")
 
             cur.execute("create extension pgroonga;")
@@ -372,6 +373,7 @@ def createAnimeDB(host, port):
             cur.execute("create extension pg_jieba;")
 
             cur.execute("CREATE INDEX animename_index ON anime (name);")
+            cur.execute("CREATE INDEX videoname_index ON anime (videoname);")
             
             # cur.execute("create extension rum;") 
             # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
@@ -407,7 +409,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
               """
             )
 
-def importAnime(animename, frtname):
+def importAnime(animename, frtname, videoname):
     dic_chs = {}
 
     currDir = os.path.dirname(os.path.abspath(__file__))
@@ -524,7 +526,8 @@ def importAnime(animename, frtname):
                 t = tu[1]
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
-                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'));"""
+                videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
+                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 cur.execute( sql )
             
             cur.execute('COMMIT;')
@@ -556,13 +559,14 @@ if __name__ == "__main__":
 
     fnames = allfname(root, 'mkv')
     for fname in fnames:
+      videoname = fname
       frtname = f"{fname}.srt"
       fname = os.path.join( root, fname )
       out_bytes = subprocess.check_output([r"ffmpeg", "-i", fname, "-map", "0:s:0", frtname])
       out_text = out_bytes.decode('utf-8')
 
       animename = 'Danganronpa'
-      importAnime(animename, frtname)
+      importAnime(animename, frtname, videoname)
 
 
 

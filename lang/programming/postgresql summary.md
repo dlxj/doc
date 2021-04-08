@@ -2284,3 +2284,397 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
+# push stream
+
+
+
+```
+https://it3q.com/article/59
+
+```
+
+
+
+```
+今天考虑一个mcu混合的实现，也就是接收多路过来的rtp流，然后转发出去一路的rtmp流，使用ffmpeg测试做的记录，刚开始一直通过ffmpeg推送的文件流不能满足要求，还是对参数配置不熟悉；
+
+
+
+0、ffmpeg 命令格式：
+
+$ ffmpeg \
+
+-y \ # 全局参数
+
+-c:a libfdk_aac -c:v libx264 \ # 输入文件参数
+
+-i input.mp4 \ # 输入文件
+
+-c:v libvpx-vp9 -c:a libvorbis \ # 输出文件参数
+
+output.webm # 输出文件
+
+
+
+下列为较常使用的参数：
+
+ 
+
+-i——设置输入文件名。
+
+-f——设置输出格式。
+
+-y——若输出文件已存在时则覆盖文件。
+
+-fs——超过指定的文件大小时则结束转换。
+
+-t——指定输出文件的持续时间，以秒为单位。
+
+-ss——从指定时间开始转换，以秒为单位。
+
+-t从-ss时间开始转换（如-ss 00:00:01.00 -t 00:00:10.00即从00:00:01.00开始到00:00:11.00）。
+
+-title——设置标题。
+
+-timestamp——设置时间戳。
+
+-vsync——增减Frame使影音同步。
+
+-c——指定输出文件的编码。
+
+-metadata——更改输出文件的元数据。
+
+-help——查看帮助信息
+
+影像参数：
+
+-b:v——设置影像流量，默认为200Kbit/秒。（单位请引用下方注意事项）
+
+-r——设置帧率值，默认为25。
+
+-s——设置画面的宽与高。
+
+-aspect——设置画面的比例。
+
+-vn——不处理影像，于仅针对声音做处理时使用。
+
+-vcodec( -c:v )——设置影像影像编解码器，未设置时则使用与输入文件相同之编解码器。
+
+声音参数：
+
+-b:a——设置每Channel（最近的SVN版为所有Channel的总合）的流量。（单位请引用下方注意事项）
+
+-ar——设置采样率。
+
+-ac——设置声音的Channel数。
+
+-acodec ( -c:a ) ——设置声音编解码器，未设置时与影像相同，使用与输入文件相同之编解码器。
+
+-an——不处理声音，于仅针对影像做处理时使用。
+
+-vol——设置音量大小，256为标准音量。（要设置成两倍音量时则输入512，依此类推。）
+
+-preset：指定输出的视频质量，会影响文件的生成速度，有以下几个可用的值 ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow。 
+
+
+
+1、udp或者rtp推流
+
+>最简单模式：
+
+ffmpeg -re -i d:\videos\1080P.264 -vcodec copy -f rtp rtp://127.0.0.1:1234
+
+ffplay接收端的命令：
+
+ffplay -protocol_whitelist "file,udp,rtp" -i rtp://127.0.0.1:1234
+
+
+
+>复杂模式，决定rtp包封装大小，封装格式，决定I帧间隔
+
+ffmpeg -re -i tuiliu_mp4.mp4 -vcodec libx264 -b:v 800k -s 480x320   -preset:v ultrafast -tune:v zerolatency   -an -f rtp  -profile baseline  -rtpflags h264_mode0 -pkt_size 1460 -slice-max-size 1400 -maxrate 600k -minrate 600k  -r 20 -g 20 -keyint_min 20   -an -f rtp rtp://11.12.112.42:49196
+
+关键命令参数说明：
+
+-re一定要加，代表按照帧率发送
+
+-i url (input)   输入文件路径或者 url
+
+-vcodec libx264 ，表示使用x264重新编码
+
+-b:v 800k  码率设置
+
+-s 480x320   分辨率设置
+
+-preset:v ultrafast    开启x264的 -preset fast/faster/verfast/superfast/ultrafast参数
+
+-tune:v zerolatency   即时编码，去掉编码延迟
+
+-profile: 设置编码等级，baseline, main, high 
+
+-payload_type ：rtp的pt值
+
+-pkt_size：rtp发送的最大长度
+
+-slice-max-size：一个nula包数据的最大长度
+
+-rtpflags h264_mode0  rtp打包模式 packetizition-mode=0， 当 packetization-mode 的值为 0 时或不存在时, 必须使用单一 NALU 单元模式.；当 packetization-mode 的值为 1 时必须使用非交错(non-interleaved)封包模式.；当 packetization-mode 的值为 2 时必须使用交错(interleaved)封包模式.
+
+-pkt_size 1460 
+
+-slice-max-size 1400 
+
+-maxrate 600k 
+
+-minrate 600k  (可以使用 -crf 24替换，控制视频码率和质量的均衡)
+
+-r 20  设置帧率为20帧/s
+
+-g 20 GOP间隔，每隔20个帧为一个GOP，两个关键帧之间的帧数称为一个GOP，将关键帧帧间隔设置为1s,也就是每秒一个关键帧
+
+-keyint_min 20   最小关键帧间隔 
+
+-an 没有音频，“-an”（no audio）和“-vn”（no video）分别用来单独输出视频和音频
+
+-f:rtp 强制ffmpeg采用某种格式，后跟对应的格式。
+
+
+
+> 使用RTP分别发送音频流和视频流
+
+FFmpeg命令：
+
+ffmpeg  -re -i <media_file> -an -vcodec copy -f rtp rtp://<IP>:5004 -vn -acodec copy -f rtp rtp://<IP>:5005 > test.sdp
+
+
+
+FFplay接收的SDP文件：
+
+SDP:
+v=2 
+m=video 5004 RTP/AVP 96
+a=rtpmap:96 H264
+t=0 0 
+a=framerate:25
+c=IN IP4 192.168.0.100
+  
+m=audio 5005 RTP/AVP 97
+a=rtpmap:97 PCM/8000/1
+a=framerate:25
+c=IN IP4 192.168.0.100
+
+2、rtsp推流
+
+ffmpeg -re -i /root/mp4/1.mp4 -vcodec copy -acodec copy  -rtsp_transport tcp -f rtsp rtsp://192.168.2.161/live/rtsp_test
+
+-rtsp_transport tcp 标识使用tcp作为rtp的通道
+
+
+
+3、rtmp推流 
+
+ffmpeg -re -i /root/mp4/1.flv -vcodec copy -acodec copy -f flv rtmp://192.168.2.161/live/rtsp_test
+
+
+
+修改-i参数为rtsp的地址，可以拉监控流然后转发为rtmp流：
+
+ffmpeg -f rtsp -i rtsp://admin:xdddd1998@11.12.112.249:554/h264/ch1/sub/av_stream -vcodec libx264 -b:v 800k -s 480x320 -preset:v ultrafast -tune:v zerolatency   -an -f rtp  -profile baseline  -rtpflags h264_mode0 -pkt_size 1460 -slice-max-size 1400 -maxrate 600k -minrate 600k -g 20 -keyint_min 20  -y rtp://11.12.112.42:62159
+
+
+
+4、ffmpeg切片，很多人会问，直接播放mp4不就好了么，为什么要切片再播放？
+
+如果是MP4文件，需要先完整的下载格式为 mp4 的视频文件，当视频文件下载完成后，网站才可以播放该视频，这就对于用户体验是极大的下降，所以需要切片为多个ts文件，以及m3u8文件，m3u8格式的视频是将文件分成一小段一小段的ts文件，播放完一个在播放下一个，由于每次请求的ts文件都很小，所以基本可以做到无延时播放：
+
+切片mp4视频文件：
+
+ffmpeg -i ./video.mp4 -c:v libx264 -hls_time 60 -hls_list_size 0 -c:a aac -strict -2 -f hls ./video.m3u8
+
+
+
+切片mp3音频文件：
+
+ffmpeg -i ./kczfrr.mp3 -c:a libmp3lame -map 0:0 -f segment -segment_time 10 -segment_list ./kczfrr.m3u8
+
+
+
+web页面播放m3u8，一方面可以使用腾讯的js插件，另一方面就是使用video.js的插件:
+
+引入相关资源
+    <link href="https://cdn.bootcss.com/video.js/6.3.3/video-js.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/video.js/6.3.3/video.min.js"></script>
+    <script src="https://cdn.bootcss.com/videojs-contrib-hls/5.11.0/videojs-contrib-hls.js"></script>
+    <!–[if lt IE 9]>
+    <script type="text/javascript" src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]–>
+说明：
+ 
+video-js.min.css 是播放器的主题样式
+video.min.js 是video.js的核心代码
+videojs-contrib-hls.js 用于支持HLS的库文件
+html5shiv.min.js 由于video.js是基于H5构建的播放器，所以在浏览器不支持H5的时候，需要将相关资源引入到浏览器
+放置播放器控件
+<video  id="myVideo"  class="video-js vjs-default-skin vjs-big-play-centered"  width="400"
+        controls="controls" autoplay="autoplay"
+       x-webkit-airplay="true" x5-video-player-fullscreen="true"
+       preload="auto" playsinline="true" webkit-playsinline
+       x5-video-player-typ="h5">
+    <source type="application/x-mpegURL" src="https://cn4.creativemas.cn/ppvod/DD7AB8D25F6AD21E4291775FEAC1F710.m3u8">
+</video>
+说明：
+ 
+该控件中用于播放一个网络上找的m3u8的视频资源
+给控件一个id主要方便video.js获取控件对象
+使用video.js
+<script>
+    // videojs 简单使用
+    var myVideo = videojs('myVideo',{
+        bigPlayButton : true,
+        textTrackDisplay : false,
+        posterImage: false,
+        errorDisplay : false,
+    })
+    myVideo.play() // 视频播放
+    myVideo.pause() // 视频暂停
+</script>
+
+
+5、合并音视频
+
+合并视频和音频
+1、直接合并
+视频文件中没有音频
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4video.mp4,audio.wav分别是要合并的视频和音频，output.mp4是合并后输出的音视频文件。
+ 
+下面的命令是用audio音频替换video中的音频ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental -map 0:v:0 -map 1:a:0 output.mp4
+ 
+2、先提取视频中的音频，将两个音频合并成一个音频，然后将合并的音频与视频进行合并
+#获取视频中的音频
+ffmpeg -i input.mp4 -vn -y -acodec copy output.aac
+#去掉视频中的音频
+ffmpeg -i input.mp4 -an output.mp4
+#合并两个音频
+ffmpeg -i input1.mp3 -i output.aac -filter_complex amerge -ac 2 -c:a libmp3lame -q:a 4 output.mp3
+#合并音频和视频
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4
+ 
+ 
+3、合并视频
+#横向合并视频
+ffmpeg -i input1.mp4 -i input2.mp4 -lavfi hstack output.mp4
+ 
+上面的命令虽然可以合并视频，两个视频可以正常播放，但是只保留了前面一个的音频。
+#合并多个视频，可以使用下面命令行：
+ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -lavfi hstack=inputs=3 output.mp4
+ 
+#纵向合并视频
+ffmpeg -i input1.mp4 -i input2.mp4 -lavfi vstack output.mp4
+ 
+ 
+#网格合并视频，来源:https://www.zhihu.com/question/300182407
+当多个视频时，还可以合并成网格状，比如2x2，3x3这种。但是视频个数不一定需要是偶数，如果是奇数，可以用黑色图片来占位。
+ 
+ffmpeg -f lavfi -i color=c=black:s=1280x720 -vframes 1 black.png
+该命令将创建一张1280*720的图片
+ 
+然后就可以使用下面这个命令来合并成网格视频了，如果只有三个视频，可以选择上面创建的黑色图片替代。
+ffmpeg -i top_left.mp4 -i top_right.mp4 -i bottom_left.mp4 -i bottom_right.mp4 \
+-lavfi "[0:v][1:v]hstack[top];[2:v][3:v]hstack[bottom];[top][bottom]vstack"
+-shortest 2by2grid.mp4
+ 
+上面创建的是正规的2x2网格视频。想象一下，现在只有三个视频，我想把第一个视频摆放在第一行的中间，然后把第二、三个视频摆放在第二行。那么就可以使用下面两个命令了。
+ 
+ffmpeg -f lavfi -i color=c=black:s=640x720 -vframes 1 black.png
+ 
+ffmpeg -i black.png -i top_center.mp4 -i bottom_left.mp4 -i bottom_right.mp4
+-lavfi "[0:v][1:v][0:v]hstack=inputs=3[top];[2:v][3:v]hstack[bottom];[top][bottom]vstack"
+-shortest 3_videos_2x2_grid.mp4
+  
+4、怎么合并两个视频并保留两个视频中的音频，注意视频的分辨率和格式必须一样。
+#合并两个视频，只有一个声音;
+纵向合并视频
+ffmpeg -i input1.mp4 -i input2.mp4 -lavfi vstack output.mp4
+ 
+#抽取两个视频中的音频，然后合并成一个音频; 
+ffmpeg -i input_1.mp4 -vn -y -acodec copy output_a1.m4a
+ffmpeg -i input_2.mp4 -vn -y -acodec copy output_a2.m4a
+ffmpeg -i output_a1.m4a -i output_a2.m4a -filter_complex amerge -ac 2 -c:a copy -q:a 4 output_a.m4a
+ 
+#将这个音频替换到之前的合并视频中;
+ffmpeg -i video.mp4 -i output_a.m4a -c:v copy -c:a aac -strict experimental output.mp4
+ 
+ 
+5、音频拼接
+#两个拼接
+/usr/local/ffmpeg/bin/ffmpeg -i d1.mp3 -i d2.mp3 -filter_complex '[0:0] [1:0] concat=n=2:v=0:a=1 [a]' -map [a] j5.mp3
+#三个拼接
+/usr/local/ffmpeg/bin/ffmpeg -i 片头.wav -i 内容.WAV -i 片尾.wav -filter_complex '[0:0] [1:0] [2:0] concat=n=3:v=0:a=1 [a]' -map [a] 合成.wav
+ 
+#多文件拼接
+ffmpeg -f concat -ilist.txt -c copycutebaby.mp3
+list.txt文件内容:à按顺序连接cutebaby_1.mp3, football.mp3,cutebaby_2.mp3,cutebaby_3.mp3
+ 
+#拼接不同格式的文件，下面的命令合并了三种不同格式的文件，FFmpeg concat 过滤器会重新编码它们。注意这是有损压缩。
+[0:0] [0:1] [1:0] [1:1] [2:0] [2:1] 分别表示第一个输入文件的视频、音频、第二个输入文件的视频、音频、第三个输入文件的视频、音频。concat=n=3:v=1:a=1 表示有三个输入文件，输出一条视频流和一条音频流。[v] [a] 就是得到的视频流和音频流的名字，注意在 bash 等 shell 中需要用引号，防止通配符扩展。 
+ 
+ffmpeg -i input1.mp4 -i input2.webm -i input3.avi -filter_complex '[0:0] [0:1] [1:0] [1:1] [2:0] [2:1] concat=n=3:v=1:a=1 [v] [a]' -map '[v]' -map '[a]' <编码器选项> output.mkv
+```
+
+
+
+```
+m3u8格式的视频是将文件分成一小段一小段的ts文件，播放完一个在播放下一个，由于每次请求的ts文件都很小，所以基本可以做到无延时播放。目前WEB上主流的直播方案主要是HLS和RTMP，移动端主要是HLS，PC端主要是RTMP。
+
+HLS是苹果推出的，移动端不管是IOS还是Android都天然支持HLS协议，直接在h5页面直接配置即可使用；PC端只有safari浏览器支持，其他浏览器均不支持。
+
+可以用video.js和videojs-contrib-hls.js。video.js是非常好用的插件，关于它如何使用这里就不一一介绍了。
+
+```
+
+
+
+```
+流媒体：ffmpeg生成HLS的m3u8与ts片段
+ 
+
+转换方式一
+1.直接把媒体文件转为ts
+
+ffmpeg -i cat.mp4 -c copy -bsf h264_mp4toannexb cat.ts
+2.使用segment参数进行切片
+
+ffmpeg -i cat.ts -c copy -map 0 -f segment -segment_list playlist.m3u8 -segment_time 2 cat_output%03d.ts
+ 
+
+ 
+
+转换方式二
+1.ffmpeg切片命令，以H264和AAC的形式对视频进行输出
+
+ffmpeg -i input.mp4 -c:v libx264 -c:a aac -strict -2 -f hls output.m3u8
+2.ffmpeg转化成HLS时附带的指令
+
+-hls_time n: 设置每片的长度，默认值为2。单位为秒
+
+-hls_list_size n:设置播放列表保存的最多条目，设置为0会保存有所片信息，默认值为5
+
+-hls_wrap n:设置多少片之后开始覆盖，如果设置为0则不会覆盖，默认值为0.这个选项能够避免在磁盘上存储过多的片，而且能够限制写入磁盘的最多的片的数量
+
+-hls_start_number n:设置播放列表中sequence number的值为number，默认值为0
+
+3.对ffmpeg切片指令的使用
+
+ffmpeg -i output.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 0 -hls_time 5 data/output.m3u8 
+参数:
+
+-hls_base_url   m3u8播放地址前缀
+
+-segment_list_entry_prefix  m3u8播放地址前缀
+
+-s 1280x720    :  720p分辨率
+-b 1500k  比特率
+-r 设定帧速率，默认为25
+-aspect 设定画面的比例
+```
+
