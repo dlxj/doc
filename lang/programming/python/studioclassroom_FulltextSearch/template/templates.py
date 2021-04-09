@@ -133,15 +133,22 @@ def default_get():
                     cur.execute(sql)
                     rows = cur.fetchall()
 
-                    print('### rows num: %d' % len(rows))
-
                     return render_template('result.html', title='Welcom!', enrows=rows, keywd=keywd)
                 
                 if (isCh):
                     sql = f"select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;"
+
                     cur.execute(sql)
                     rows = cur.fetchall()
                     return render_template('result.html', title='Welcom!', enrows=rows, keywd=keywd)
+
+                if (isJp):
+                    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
+                        with conn2.cursor() as cur2:
+                            cur2.execute(f"SELECT jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;")
+                            rows = cur2.fetchall()
+
+                            return render_template('result.html', title='Welcom!', jprows=rows, keywd=keywd)
 
     return render_template('result.html', title='Welcom!')
 

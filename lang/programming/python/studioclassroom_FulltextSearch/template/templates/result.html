@@ -5,12 +5,15 @@
 {% for r in enrows %}
     <br>{{ r[1] | safe }}<br>{{ r[2] | safe }}<br>{{ r[3] | safe }}
     <br><br>
-{% else %}
-    {# no en...... #}
 {% endfor %}
 {% endblock %}
 
-
+{% block JpBlock %}
+{% for r in jprows %}
+    <br>{{ r[0] | safe }}<br>{{ r[1] | safe }}<br>{{ r[2] | safe }}
+    <br><br>
+{% endfor %}
+{% endblock %}
 
 {% block KeywdBlock %}
 {% if keywd %}
