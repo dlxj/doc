@@ -2289,6 +2289,56 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 ```
+ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
+```
+
+
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    </script>
+</head>
+<body>
+	<audio controls="controls" autoplay="autoplay">
+	<source src="http://127.0.0.1:12345/cgmedia/28181/getaudio?id=34020000001310000001@192.168.1.108:5060&format=mp3&transporttype=udp&transportport=22000" type="audio/mpeg">
+	</audio>
+</body>
+</html>
+```
+
+
+
+
+
+
+
+```
+ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 192k output.mp3
+Explanation of the used arguments in this example:
+
+-i - input file
+
+-vn - Disable video, to make sure no video (including album cover image) is included if the source would be a video file
+
+-ar - Set the audio sampling frequency. For output streams it is set by default to the frequency of the corresponding input stream. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options.
+
+-ac - Set the number of audio channels. For output streams it is set by default to the number of input audio channels. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options. So used here to make sure it is stereo (2 channels)
+
+-b:a - Converts the audio bitrate to be exact 192kbit per second
+```
+
+
+
+
+
+
+
+```
 ffmpeg -i -ss 0 -t 00:01:00
 ```
 

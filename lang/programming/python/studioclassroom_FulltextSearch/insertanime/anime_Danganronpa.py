@@ -296,32 +296,43 @@ def fanti():
 
 def parseSrtTime(time):
   
-  time = "00:01:12,960 --> 00:01:14,640"
+  #time = "00:01:12,960 --> 00:01:14,640"
   begin = time.split('-->')[0].strip()
   end = time.split('-->')[1].strip()
 
-  if match := re.compile(r'(\d\d):(\d\d):(\d\d),(\d\d\d)').search(begin):
-    h1 = int(match.group(1))
-    m1 = int(match.group(2))
-    s1 = int(match.group(3))
-    ms1 = int(match.group(4))
+  begin = begin.replace(',', '.')
+  end = end.replace(',', '.')
 
-    totalMs1 = h1 * 3600 * 1000 + m1 * 60 * 1000 + s1 * 1000 + ms1
+  return begin, end
 
-    if match := re.compile(r'(\d\d):(\d\d):(\d\d),(\d\d\d)').search(begin):
-      h2 = int(match.group(1))
-      m2 = int(match.group(2))
-      s2 = int(match.group(3))
-      ms2 = int(match.group(4))
+  # if match := re.compile(r'(\d\d):(\d\d):(\d\d),(\d\d\d)').search(begin):
+  #   h1 = int(match.group(1))
+  #   m1 = int(match.group(2))
+  #   s1 = int(match.group(3))
+  #   ms1 = int(match.group(4))
 
-      totalMs2 = h2 * 3600 * 1000 + m2 * 60 * 1000 + s2 * 1000 + ms2
+  #   totalMs1 = h1 * 3600 * 1000 + m1 * 60 * 1000 + s1 * 1000 + ms1
 
-      ms3 = totalMs1 - totalMs2
-      
+  #   if match := re.compile(r'(\d\d):(\d\d):(\d\d),(\d\d\d)').search(begin):
+  #     h2 = int(match.group(1))
+  #     m2 = int(match.group(2))
+  #     s2 = int(match.group(3))
+  #     ms2 = int(match.group(4))
+
+  #     totalMs2 = h2 * 3600 * 1000 + m2 * 60 * 1000 + s2 * 1000 + ms2
+
+  #     ms3 = totalMs1 - totalMs2  
+  # print(h1)
 
 
+def extractAudio(videopath, begintime, endtime):
+  # Audio: mp3 (libmp3lame), 44100 Hz, stereo, fltp, 192 kb/s (default)
+  # -vn  no video
+    out_bytes = subprocess.check_output([r"ffmpeg", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+      "-ar", "44100", "-ac", "2", "-b:a", "192k", \
+        "tttttt.ts"])
+    out_text = out_bytes.decode('utf-8')
     
-    print(h1)
 
 def allfname(root, ext):
     names = os.listdir(root)
@@ -428,7 +439,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
               """
             )
 
-def importAnime(animename, frtname, videoname):
+def importAnime(animename, frtname, videoname, videopath):
     dic_chs = {}
 
     currDir = os.path.dirname(os.path.abspath(__file__))
@@ -543,11 +554,14 @@ def importAnime(animename, frtname, videoname):
                 tags = tagger.parse(j)
                 #tags = tags.split('\n')
                 t = tu[1]
+                begintime, endtime = parseSrtTime(t)
+                extractAudio(videopath, begintime, endtime)
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 cur.execute( sql )
+
             
             cur.execute('COMMIT;')
 
@@ -567,7 +581,7 @@ def importAnime(animename, frtname, videoname):
 
 if __name__ == "__main__":
 
-    parseSrtTime('')
+    #begin, end = parseSrtTime("00:01:12,960 --> 00:01:14,640")
 
     host = '111.229.53.195'
     port = 54322
@@ -583,11 +597,12 @@ if __name__ == "__main__":
       videoname = fname
       frtname = f"{fname}.srt"
       fname = os.path.join( root, fname )
+      videopath = os.path.join( root, videoname )
       out_bytes = subprocess.check_output([r"ffmpeg", "-i", fname, "-map", "0:s:0", frtname])
       out_text = out_bytes.decode('utf-8')
 
       animename = 'Danganronpa'
-      importAnime(animename, frtname, videoname)
+      importAnime(animename, frtname, videoname, videopath)
 
 
 
