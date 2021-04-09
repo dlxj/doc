@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+{% block EnBlock %}
+{% for r in enrows %}
+    <br>{{ r[1] | safe }}<br>{{ r[2] | safe }}<br>{{ r[3] | safe }}
+    <br><br>
+{% else %}
+    {# no en...... #}
+{% endfor %}
+{% endblock %}
+
+
+
+{% block KeywdBlock %}
+{% if keywd %}
+    <br>Your keyword is: {{keywd}}
+{% endif %}
+{% endblock %}
+
+
+{% block NextBlock %}
+{% if keywd %}
+    <form action="/next" method="post">
+        <button type="submit">Next</button>
+    </form>
+{% endif %}
+{% endblock %}
+

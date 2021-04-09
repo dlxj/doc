@@ -1,5 +1,5 @@
-# ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
-# https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
+
+# https://www.jianshu.com/p/765afe303bf8
 
 import subprocess
 import re
@@ -10,61 +10,6 @@ tagger = MeCab.Tagger()
 
 from zhconv import convert
 
-"""
-rebell 情緒 チコク 情绪
-D:\GitHub\doc\lang\programming\postgresql summary.md
-    docker exec -it centos7PG10 /bin/bash
-        54322 port
-
-conda create -n flask_ftspg pip python=3.8
-conda activate flask_ftspg
-pip install mecab-python3
-pip install unidic-lite
-pip install flask
-pip install flask_cors
-pip install psycopg2
-pip install zhconv
-python -m flask run --host 0.0.0.0 --port 8085 # for test
-losof -i:8085
-kill -9 xxx
-pm2 --name "flask_ftspg8085" start "python -m flask run --host 0.0.0.0 --port 8085"
-
-# pm2 依赖python2.7，删完等下又要装
-conda deactivate
-ls /usr/bin/python*
-apt purge -y python2.7-minimal
-apt-get purge --auto-remove python2.7
-apt-get purge --auto-remove python3.6
-apt-get purge --auto-remove python3.8
-pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
-
-
-明明pip 装了某个包却找不到
-export PYTHONPATH=/root/anaconda3/lib/python3.8/site-packages
-
-# RUM index
-create index en_rum on studio using rum(en);
-
-select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', '情緒') ORDER BY RANDOM() limit 3;
-
-SELECT id, ts_headline(body, q), rank
-FROM (SELECT id, body, q, ts_rank_cd(ti, q) AS rank
-      FROM apod, to_tsquery('stars') q
-      WHERE ti @@ q
-      ORDER BY rank DESC
-      LIMIT 10) AS foo;
-
-pip install xmltodict
-GFW
-https://www.ishells.cn/archives/linux-ssr-server-client-install
-"""
-
-"""
-<select name="lang_select">
-  <option value ="jp">jp</option>
-  <option value ="en">en</option>
-</select>
-"""
 
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -78,8 +23,6 @@ import decimal
 import datetime
 
 # import xmltodict
-
-
 
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
@@ -127,7 +70,7 @@ def chQ(s):
     return not jpQ(s) and len( chinese_remove(s) ) == 0
     
 
-from flask import Flask, request, jsonify, redirect, render_template_string,session,Response
+from flask import Flask, request, jsonify, redirect, render_template_string,session,Response,render_template
 
 
 import datetime
@@ -146,24 +89,12 @@ host = '111.229.53.195'
 port1 = 5432
 port2 = 54322
 
-
 @app.route('/', methods=['get'])
 @cross_origin(supports_credentials=True)
 def default_get():
-    # args = request.json  # request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据 request.json 的类型直接就是dict 
-    # print(args)
-    
-    html = """
-    <form action="/" method="post">
-    keyword: <input type="text" name="keyword"><br>
-    <select name="lang_select">
-    <option value ="en">en</option>
-    <option value ="jp">jp</option>
-    </select>
-    <button type="submit">Search</button>
-    </form>
-    """
 
+    #session['keyword'] = 'result'
+    
     isEn = False
     isCh = False
     isJp = False
@@ -191,10 +122,7 @@ def default_get():
 
                 sql = ""
                 if (isEn):
-                #     sql = f"SELECT id, ts_headline(en, q) as en, zh, type \
-                # FROM studio, plainto_tsquery('en', '{keywd}') q \
-                # WHERE v_en @@ q \
-                # ORDER BY RANDOM() LIMIT 3 ;"
+                    print('### select en.')
 
                     sql = f"SELECT id, ts_headline(en, q) as en, zh, type \
                     FROM studio, to_tsquery('{keywd}')  q \
@@ -204,51 +132,20 @@ def default_get():
 
                     cur.execute(sql)
                     rows = cur.fetchall()
-                    for r in rows:
-                        html += ('<br>' + r[1] + '<br>' + r[2] + '<br>' + r[3])
-                        html += ('<br>' + '<br>')
 
+                    print('### rows num: %d' % len(rows))
+
+                    return render_template('result.html', title='Welcom!', enrows=rows, keywd=keywd)
+                
                 if (isCh):
                     sql = f"select id, en, zh, type from studio where v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;"
                     cur.execute(sql)
                     rows = cur.fetchall()
-                    for r in rows:
-                        html += ('<br>' + r[1] + '<br>' + r[2] + '<br>' + r[3])
-                        html += ('<br>' + '<br>')
-                
-                if (isJp):
-                    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
-                        with conn2.cursor() as cur2:
-                            cur2.execute(f"SELECT jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;")
-                            rows = cur2.fetchall()
-                            for r in rows:
-                                html += ('<br>' + r[0] + '<br>' + r[1]+ '<br>' + r[2])
-                                html += ('<br>' + '<br>')
-                
-                #cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
-                # cur.execute("SELECT * FROM anime WHERE jp_mecab &@ 'チコク';")
+                    return render_template('result.html', title='Welcom!', enrows=rows, keywd=keywd)
 
-                
-                html += '<br>Your keyword is: ' + keywd
-
-                html += """<form action="/next" method="post">
-                        <button type="submit">Next</button>
-                        </form>
-                        """
+    return render_template('result.html', title='Welcom!')
 
 
-    html += "<br><br>"
-
-    html += """
-    <audio controls="controls" autoplay="autoplay">
-	<source src="http://echodict.com:8085/audio" type="audio/mpeg">
-	</audio>
-    """
-    # http://echodict.com:8085/audio
-
-
-    return render_template_string(html)
-   
 @app.route('/', methods=['post'])
 @cross_origin(supports_credentials=True)
 def default_post():
@@ -259,7 +156,7 @@ def default_post():
 
     session['keyword'] = keyword
     session['select'] = select
-
+    
     return redirect('/')
 
 
@@ -295,3 +192,8 @@ def stream_mp3():
                 data = fmp3.read(1024)
 
     return Response(generate(), mimetype="audio/mpeg3")
+
+
+if __name__ == "__main__":
+
+    app.run(host="0.0.0.0", port=8085, debug=True)

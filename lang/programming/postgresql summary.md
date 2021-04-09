@@ -2294,7 +2294,15 @@ ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can
 
 
 
+
+
+
+
+
+
 ```
+https://my.oschina.net/u/4394125/blog/3310836
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2309,6 +2317,84 @@ ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can
 	</audio>
 </body>
 </html>
+```
+
+
+
+```
+
+# http://codingsky.com/doc/day/2018-06-10/12141.html
+动态JPEG流传输：
+
+    #!/usr/bin/env python
+    from flask import Flask, render_template, Response
+    from camera import Camera
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():  
+      return render_template('index.html')
+
+    def gen(camera):
+      while True:
+        frame = camera.get_frame()
+        yield (b'--framern'
+            b'Content-Type: image/jpegrnrn' + frame + b'rn')
+
+    @app.route('/video_feed')
+    def video_feed():
+      return Response(gen(Camera()),
+              mimetype='multipart/x-mixed-replace; boundary=frame')
+
+    if __name__ == '__main__':
+      app.run(host='0.0.0.0', debug=True)
+这个应用导入一个Camera类来负责提供帧序列。在这个例子中，将camera控制部分放入一个单独的模块是一个很好的主意。这样，Web应用会保持干净、简单和通用。
+
+该应用有两个路由（route）。/路由为主页服务，被定义在index.html模板中。下面你能看到这个模板文件中的内容：
+
+
+
+    <html>
+     <head>
+      <title>Video Streaming Demonstration</title>
+     </head>
+     <body>
+      <h1>Video Streaming Demonstration</h1>
+      <img src="{{ url_for('video_feed') }}">
+     </body>
+    </html>
+```
+
+
+
+```
+# jquery
+https://blog.csdn.net/l333f/article/details/60877276
+
+# flask blog
+https://github.com/zengxuanlin/my_blog
+
+```
+
+
+
+```
+# auto play
+<script type="text/javascript">
+    window.onload = function(){
+             setInterval("toggleSound()",100);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("vd");//获取ID  
+                    
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
+</script>
 ```
 
 

@@ -555,7 +555,7 @@ def importAnime(animename, frtname, videoname, videopath):
                 #tags = tags.split('\n')
                 t = tu[1]
                 begintime, endtime = parseSrtTime(t)
-                extractAudio(videopath, begintime, endtime)
+                #extractAudio(videopath, begintime, endtime)
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
