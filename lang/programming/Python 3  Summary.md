@@ -37,6 +37,8 @@ __pycache__/
 
 ```bash
 conda config --set auto_activate_base true # 开启或关闭自动激活
+conda env list
+conda activate xx
 ```
 
 ```bash
