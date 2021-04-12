@@ -2296,10 +2296,6 @@ ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can
 
 
 
-
-
-
-
 ```
 https://my.oschina.net/u/4394125/blog/3310836
 
@@ -2317,6 +2313,37 @@ https://my.oschina.net/u/4394125/blog/3310836
 	</audio>
 </body>
 </html>
+
+
+@app.route('/audio')
+def stream_mp3():
+    def generate():
+        path = 't.mp3'
+        with open(path, 'rb') as fmp3:
+            data = fmp3.read(1024)
+            while data:
+                yield data
+                data = fmp3.read(1024)
+
+    return Response(generate(), mimetype="audio/mpeg3")
+
+
+<td width="15%" align="center" valign="middle" style="border:1px solid #999;"><audio id="fayint99" src="/sound/mp3/ngo5.mp3" preload="preload"> <font color="#FF0000">您的浏览器不支持此发音。</font> </audio>
+<img src="images/pc_fayin.gif" alt="点击发音" onclick="fyint99()" style=" cursor: pointer">
+<script type="text/javascript">
+<!--
+var fyt99=document.getElementById("fayint99");
+function fyint99()
+{
+if (fyt99.paused)
+fyt99.play();
+else
+fyt99.pause();
+}
+//-->
+</script>
+</td>
+
 ```
 
 
