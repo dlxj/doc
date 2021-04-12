@@ -2327,6 +2327,16 @@ def stream_mp3():
 
     return Response(generate(), mimetype="audio/mpeg3")
 
+# 在audio标记中，如果不包含controls属性，则audio播放器将不会呈现在页面上。
+# <img src="{{ url_for('static', filename='foo.jpg') }}">
+# 在 Python 脚本里，url_for() 函数需要从 flask 包中导入，而在模板中则可以直接使用，因为 Flask 把一些常用的函数和对象添加到了模板上下文（环境）里。
+# url_for('.static',_external=True,filename='pic/test.png') # 完整url
+# https://zhuanlan.zhihu.com/p/67747626 让 Flask 模板引擎 Jinja2 和 JavaScript 模板引擎和平共存
+{% raw %}
+<div id="app">
+    {{ js_var }}
+</div>
+{% endraw %}
 
 <td width="15%" align="center" valign="middle" style="border:1px solid #999;"><audio id="fayint99" src="/sound/mp3/ngo5.mp3" preload="preload"> <font color="#FF0000">您的浏览器不支持此发音。</font> </audio>
 <img src="images/pc_fayin.gif" alt="点击发音" onclick="fyint99()" style=" cursor: pointer">

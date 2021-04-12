@@ -10,7 +10,8 @@
 
 {% block JpBlock %}
 {% for r in jprows %}
-    <br>{{ r[0] | safe }}<br>{{ r[1] | safe }}<br>{{ r[2] | safe }}
+    <br>{{ r[1] | safe }} <img src="{{ url_for('static', filename='images/play.gif') }}" alt="play" onclick="play()" style=" cursor: pointer">
+    <br>{{ r[2] | safe }}<br>{{ r[3] | safe }}
     <br><br>
 {% endfor %}
 {% endblock %}
@@ -30,3 +31,15 @@
 {% endif %}
 {% endblock %}
 
+{% raw %}
+<script type="text/javascript">
+    var fyt99=document.getElementById("fayint99");
+    function play()
+    {
+        if (fyt99.paused)
+            fyt99.play();
+        else
+        fyt99.pause();
+    }
+    </script>
+{% endraw %}

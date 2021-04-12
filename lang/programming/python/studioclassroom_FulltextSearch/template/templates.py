@@ -70,7 +70,7 @@ def chQ(s):
     return not jpQ(s) and len( chinese_remove(s) ) == 0
     
 
-from flask import Flask, request, jsonify, redirect, render_template_string,session,Response,render_template
+from flask import Flask, request, jsonify, redirect, render_template_string,session,Response,render_template,url_for
 
 
 import datetime
@@ -145,7 +145,7 @@ def default_get():
                 if (isJp):
                     with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
                         with conn2.cursor() as cur2:
-                            cur2.execute(f"SELECT jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;")
+                            cur2.execute(f"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;")
                             rows = cur2.fetchall()
 
                             return render_template('result.html', title='Welcom!', jprows=rows, keywd=keywd)
@@ -191,7 +191,7 @@ def next():
 @app.route('/audio')
 def stream_mp3():
     def generate():
-        path = 't.mp3'
+        path = 'static/t.mp3'
         with open(path, 'rb') as fmp3:
             data = fmp3.read(1024)
             while data:
