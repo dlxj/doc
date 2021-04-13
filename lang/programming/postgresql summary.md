@@ -2362,12 +2362,21 @@ The mogrify is a psycopg2 extension to the Python DB API that returns a query st
 # Binary
 https://zetcode.com/python/psycopg2/
 CREATE TABLE images(id SERIAL PRIMARY KEY, data BYTEA);
+create table a(a bytea);
+create unique index a_bytea_unique_hash on a (md5(a)); # md5 唯一索引
+
     cur = con.cursor()
     data = readImage()
     binary = psycopg2.Binary(data)
     cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
 
     con.commit()
+
+
+CREATE TABLE btable (bvalue bytea);
+INSERT INTO btable (bvalue) values(decode(‘%s’,’base64′));
+SELECT encode(bvalue,’base64′) FROM btable;
+
 
 def writeImage(data):
 

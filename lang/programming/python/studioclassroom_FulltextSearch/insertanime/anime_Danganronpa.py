@@ -2,7 +2,7 @@
 # ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
 # https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
 
-import os,subprocess
+import os,sys,subprocess
 import re
 import glob
 import chardet
@@ -324,15 +324,36 @@ def parseSrtTime(time):
   #     ms3 = totalMs1 - totalMs2  
   # print(h1)
 
+def readImage(fname):
+
+    fin = None
+
+    try:
+        fin = open(fname, "rb")
+        img = fin.read()
+        return img
+
+    except IOError as e:
+
+        print(f'Error {e.args[0]}, {e.args[1]}')
+        sys.exit(1)
+
+    finally:
+
+        if fin:
+            fin.close()
 
 def extractAudio(videopath, begintime, endtime):
   # Audio: mp3 (libmp3lame), 44100 Hz, stereo, fltp, 192 kb/s (default)
   # -vn  no video
-    out_bytes = subprocess.check_output([r"ffmpeg", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
       "-ar", "44100", "-ac", "2", "-b:a", "192k", \
-        "tttttt.ts"])
+        "t.ts"])
     out_text = out_bytes.decode('utf-8')
+    bts = readImage(fname)
+    return bts
     
+
 
 def allfname(root, ext):
     names = os.listdir(root)
@@ -393,7 +414,8 @@ def createAnimeDB(host, port):
                 v_jp  tsvector, \
                 v_zh  tsvector, \
                 v_en  tsvector, \
-                videoname text \
+                videoname text, \
+                audio bytea \
             );")
 
             cur.execute("create extension pgroonga;")
@@ -404,6 +426,8 @@ def createAnimeDB(host, port):
 
             cur.execute("CREATE INDEX animename_index ON anime (name);")
             cur.execute("CREATE INDEX videoname_index ON anime (videoname);")
+            #cur.execute("create unique index audio_unique_hash_index on anime (md5(audio));")
+            
             
             # cur.execute("create extension rum;") 
             # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
@@ -555,14 +579,16 @@ def importAnime(animename, frtname, videoname, videopath):
                 #tags = tags.split('\n')
                 t = tu[1]
                 begintime, endtime = parseSrtTime(t)
-                #extractAudio(videopath, begintime, endtime)
+                bts = extractAudio(videopath, begintime, endtime)
+                bts = psycopg2.Binary(bts)
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
-                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
-                cur.execute( sql )
+                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'), %s);"""
+                cur.execute( sql, (bts,) )
+                # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
+                # cur.execute( sql )
 
-            
             cur.execute('COMMIT;')
 
 
@@ -583,7 +609,8 @@ if __name__ == "__main__":
 
     #begin, end = parseSrtTime("00:01:12,960 --> 00:01:14,640")
 
-    host = '111.229.53.195'
+    #host = '111.229.53.195'
+    host = '209.141.34.77'
     port = 54322
 
     createAnimeDB(host, port)
@@ -598,7 +625,7 @@ if __name__ == "__main__":
       frtname = f"{fname}.srt"
       fname = os.path.join( root, fname )
       videopath = os.path.join( root, videoname )
-      out_bytes = subprocess.check_output([r"ffmpeg", "-i", fname, "-map", "0:s:0", frtname])
+      out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", fname, "-map", "0:s:0", frtname])
       out_text = out_bytes.decode('utf-8')
 
       animename = 'Danganronpa'
