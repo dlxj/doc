@@ -2352,6 +2352,52 @@ def tk():
 https://www.zhangxinxu.com/wordpress/2019/07/html-audio-api-guide/
 HTML audio基础API完全使用指南
 
+连接池
+https://pynative.com/psycopg2-python-postgresql-connection-pooling/
+
+Python psycopg2 mogrify
+The mogrify is a psycopg2 extension to the Python DB API that returns a query string after arguments binding. The returned string is exactly the one that would be sent to the database running the execute() method or similar.
+ print(cur.mogrify("SELECT name, price FROM cars WHERE id=%s", (2,)))
+
+# Binary
+https://zetcode.com/python/psycopg2/
+CREATE TABLE images(id SERIAL PRIMARY KEY, data BYTEA);
+    cur = con.cursor()
+    data = readImage()
+    binary = psycopg2.Binary(data)
+    cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
+
+    con.commit()
+
+def writeImage(data):
+
+    fout = None
+
+    try:
+        fout = open('sid2.jpg', 'wb')
+        fout.write(data)
+
+    except IOError as e:
+
+        print(f"Error {0}")
+        sys.exit(1)
+
+    finally:
+
+        if fout:
+            fout.close()
+
+
+try:
+    con = psycopg2.connect(database='testdb', user='postgres',
+                    password='s$cret')
+
+    cur = con.cursor()
+    cur.execute("SELECT data FROM images LIMIT 1")
+    data = cur.fetchone()[0]
+
+    writeImage(data)
+
 
 <td width="15%" align="center" valign="middle" style="border:1px solid #999;"><audio id="fayint99" src="/sound/mp3/ngo5.mp3" preload="preload"> <font color="#FF0000">您的浏览器不支持此发音。</font> </audio>
 <img src="images/pc_fayin.gif" alt="点击发音" onclick="fyint99()" style=" cursor: pointer">

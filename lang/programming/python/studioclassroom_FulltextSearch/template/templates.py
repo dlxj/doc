@@ -1,6 +1,8 @@
 
 # https://www.jianshu.com/p/765afe303bf8
 
+# pip install psycopg2-binary
+
 import subprocess
 import re
 import chardet
@@ -12,6 +14,7 @@ from zhconv import convert
 
 
 import psycopg2
+import psycopg2.pool
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import sqlite3 as sqlite # Python 自带的
 
@@ -89,6 +92,27 @@ host = '111.229.53.195'
 port1 = 5432
 port2 = 54322
 
+
+pool1 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
+    password="postgres",
+    host=host,
+    port=port1,
+    database="studio")
+
+pool2 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
+    password="postgres",
+    host=host,
+    port=port2,
+    database="anime")
+
+
+connection = pool1.getconn()
+cursor = connection.cursor()
+cursor.execute('select 1;')
+records = cursor.fetchall()
+cursor.close()
+pool1.putconn(connection)
+
 @app.route('/', methods=['get'])
 @cross_origin(supports_credentials=True)
 def default_get():
@@ -117,7 +141,10 @@ def default_get():
             isEn = True
 
 
-        with psycopg2.connect(database='studio', user='postgres', password='postgres',host=host, port=port1) as conn:
+        # with psycopg2.connect(database='studio', user='postgres', password='postgres',host=host, port=port1) as conn:
+        #with pool1.getconn() as conn:
+        conn = pool1.getconn()
+        if True:
             with conn.cursor() as cur:
 
                 sql = ""
@@ -132,6 +159,7 @@ def default_get():
 
                     cur.execute(sql)
                     rows = cur.fetchall()
+                    pool1.putconn(conn)
 
                     return render_template('result.html', title='Welcom!', enrows=rows, keywd=keywd)
                 
@@ -140,13 +168,20 @@ def default_get():
 
                     cur.execute(sql)
                     rows = cur.fetchall()
+                    pool1.putconn(conn)
+
                     return render_template('result.html', title='Welcom!', enrows=rows, keywd=keywd)
 
                 if (isJp):
-                    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
+                    #with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
+                    
+                    conn2 = pool2.getconn()
+                    #with pool2.getconn() as conn2:
+                    if True:
                         with conn2.cursor() as cur2:
                             cur2.execute(f"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;")
                             rows = cur2.fetchall()
+                            pool2.putconn(conn2)
 
                             return render_template('result.html', title='Welcom!', jprows=rows, keywd=keywd)
 
