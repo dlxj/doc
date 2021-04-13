@@ -2051,3 +2051,943 @@ FROM studio, to_tsquery('rebell')  q
 
 where en @@ to_tsquery('rebell')
 
+
+
+
+
+# 调试
+
+
+
+```
+https://gist.github.com/jhngrant/c1787346fcb4b0e3001a
+https://www.techsupportpk.com/2020/12/how-to-install-pldebugger-centos.html
+
+plugin_debugger
+
+# GFW https://github.com/TyrantLucifer/ssr-command-client
+yum install -y python3
+shadowsocksr-cli --add-url https://subscription.ftwapi.com/link/xxxxxxx?sub=1
+shadowsocksr-cli -u
+
+git clone https://git.postgresql.org/git/pldebugger.git
+cd pldebugger
+PATH=$PATH:/usr/pgsql-13/bin
+export PATH
+export USE_PGXS=1
+yum -y install gcc gcc-c++ kernel-devel make git nano openssl openssl-devel krb5-libs krb5-devel
+make
+make install
+	--> '/usr/pgsql-13/lib/plugin_debugger.so'
+
+
+vi /var/lib/pgsql/13/data/postgresql.conf
+shared_preload_libraries = 'plugin_debugger' # 找到这一句，改成这样
+
+systemctl restart postgresql-13
+
+
+su postgres
+psql
+CREATE EXTENSION pldbgapi;
+\q
+
+```
+
+
+
+```
+http://www.postgres.cn/docs/9.4/functions-json.html
+
+'[1,2,3]'::json->>2  # 数组，索引2
+	--> 3
+'{"a":1,"b":2}'::json->>'b' # json 索引 "b"
+	--> 2
+
+
+
+```
+
+
+
+```
+regexp_split_to_array('hello world', E'\\s+')
+  --> {hello,world}
+```
+
+
+
+```
+with my_table(resource_name, readiops, writeiops) as (
+values
+('90832-00:29:3E', 3.21, 4.00),
+('90833-00:30:3E', 2.12, 3.45),
+('90834-00:31:3E', 2.33, 2.78),
+('90832-00:29:3E', 4.21, 6.00)
+)
+
+select 
+    split_part(resource_name::text, '-', 1) as array_serial,
+    split_part(resource_name::text, '-', 2) as ldev,
+    string_agg(readiops::text, ',') as readiops,
+    string_agg(writeiops::text, ',') as writeiops
+from my_table
+group by 1, 2;
+
+ array_serial |   ldev   | readiops  | writeiops 
+--------------+----------+-----------+-----------
+ 90832        | 00:29:3E | 3.21,4.21 | 4.00,6.00
+ 90833        | 00:30:3E | 2.12      | 3.45
+ 90834        | 00:31:3E | 2.33      | 2.78
+(3 rows)
+```
+
+
+
+
+
+
+
+```mysql
+
+CREATE OR REPLACE FUNCTION ja_reading (TEXT) RETURNS TEXT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+BEGIN
+  FOREACH js IN ARRAY pgroonga_tokenize($1,
+    'tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+  LOOP
+    reading = (js -> 'metadata' ->> 'reading');
+
+    IF reading IS NULL THEN
+      total = total || (js ->> 'value');
+    ELSE
+      total = total || reading;
+    END IF;
+  END LOOP;
+
+  RETURN array_to_string(total, '');
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+
+
+
+
+
+SELECT ja_reading ('します');
+-- 
+
+/*
+{"{\"value\":\"海\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"ウミ\"}}"}
+{"{\"value\":\"1\",\"position\":0,\"force_prefix_search\":false}"}
+
+
+SELECT pgroonga_tokenize('します','tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+ --> {"{\"value\":\"する\",\"position\":0,\"force_prefix_search\":false,\"metadata\":{\"reading\":\"シ\"}}","{\"value\":\"ます\",\"position\":1,\"force_prefix_search\":true,\"metadata\":{\"reading\":\"マス\"}}"}
+
+
+
+*/
+```
+
+
+
+
+
+```
+CREATE OR REPLACE FUNCTION "public"."ja_reading"(text)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+	s TEXT;
+BEGIN
+  FOREACH js IN ARRAY pgroonga_tokenize($1, 'tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+  LOOP
+    
+		FOREACH s IN ARRAY string_to_array($1, '|')
+		LOOP
+		
+			RETURN s; 
+		
+		END LOOP;
+
+		
+		reading = (js -> 'metadata' ->> 'reading');
+
+		-- total = total || (js ->> 'value');
+		-- RETURN total || (js ->> 'value');
+		
+		-- RETURN total || (js ->> 'value');
+		
+		
+		/*
+    IF reading IS NULL THEN
+      total = total || (js ->> 'value');
+    ELSE
+      total = total || reading;
+    END IF;
+		*/
+  END LOOP;
+
+  RETURN array_to_string(total, '');
+END;
+$BODY$
+  LANGUAGE plpgsql IMMUTABLE
+  COST 100
+```
+
+
+
+
+
+
+
+# JPQ
+
+
+
+```mysql
+
+CREATE OR REPLACE FUNCTION JPQ (TEXT) RETURNS TEXT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+	s TEXT;
+BEGIN
+  FOREACH s IN ARRAY string_to_array($1, '|')
+  LOOP
+    
+		FOREACH js IN ARRAY pgroonga_tokenize(s, 'tokenizer', 'TokenMecab("use_base_form", true, "include_reading", true)')
+		LOOP
+			reading = (js -> 'metadata' ->> 'reading');
+			IF reading IS NULL THEN
+					RETURN 0;
+      END IF;
+		
+		END LOOP;
+  END LOOP;
+	
+	RETURN 1;
+	
+END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+```
+
+
+
+
+
+# push stream
+
+
+
+```
+ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
+```
+
+
+
+
+
+```
+https://my.oschina.net/u/4394125/blog/3310836
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    </script>
+</head>
+<body>
+	<audio controls="controls" autoplay="autoplay">
+	<source src="http://127.0.0.1:12345/cgmedia/28181/getaudio?id=34020000001310000001@192.168.1.108:5060&format=mp3&transporttype=udp&transportport=22000" type="audio/mpeg">
+	</audio>
+</body>
+</html>
+
+
+@app.route('/audio')
+def stream_mp3():
+    def generate():
+        path = 't.mp3'
+        with open(path, 'rb') as fmp3:
+            data = fmp3.read(1024)
+            while data:
+                yield data
+                data = fmp3.read(1024)
+
+    return Response(generate(), mimetype="audio/mpeg3")
+
+# 在audio标记中，如果不包含controls属性，则audio播放器将不会呈现在页面上。
+# <img src="{{ url_for('static', filename='foo.jpg') }}">
+# 在 Python 脚本里，url_for() 函数需要从 flask 包中导入，而在模板中则可以直接使用，因为 Flask 把一些常用的函数和对象添加到了模板上下文（环境）里。
+# url_for('.static',_external=True,filename='pic/test.png') # 完整url
+# https://zhuanlan.zhihu.com/p/67747626 让 Flask 模板引擎 Jinja2 和 JavaScript 模板引擎和平共存
+{% raw %}
+<div id="app">
+    {{ js_var }}
+</div>
+{% endraw %}
+
+{{ url_for('test',name=1) }} 相当于我们传递的XXX/?name=1 
+@app.route('/test/<name>', methods=['GET'])
+def test(name):
+
+URL中传参
+可以使用Flask request方法：request.args.get()，例如，前台请求URL为 http://localhost:5000/tk?p=1&type=1
+@app.route('/tk', methods=['post','get'])
+def tk():
+    p = request.args.get('p')
+    type = request.args.get('type')
+
+https://www.zhangxinxu.com/wordpress/2019/07/html-audio-api-guide/
+HTML audio基础API完全使用指南
+
+连接池
+https://pynative.com/psycopg2-python-postgresql-connection-pooling/
+
+Python psycopg2 mogrify
+The mogrify is a psycopg2 extension to the Python DB API that returns a query string after arguments binding. The returned string is exactly the one that would be sent to the database running the execute() method or similar.
+ print(cur.mogrify("SELECT name, price FROM cars WHERE id=%s", (2,)))
+
+# Binary
+https://zetcode.com/python/psycopg2/
+CREATE TABLE images(id SERIAL PRIMARY KEY, data BYTEA);
+create table a(a bytea);
+create unique index a_bytea_unique_hash on a (md5(a)); # md5 唯一索引
+
+    cur = con.cursor()
+    data = readImage()
+    binary = psycopg2.Binary(data)
+    cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
+
+    con.commit()
+
+
+CREATE TABLE btable (bvalue bytea);
+INSERT INTO btable (bvalue) values(decode(‘%s’,’base64′));
+SELECT encode(bvalue,’base64′) FROM btable;
+
+
+def writeImage(data):
+
+    fout = None
+
+    try:
+        fout = open('sid2.jpg', 'wb')
+        fout.write(data)
+
+    except IOError as e:
+
+        print(f"Error {0}")
+        sys.exit(1)
+
+    finally:
+
+        if fout:
+            fout.close()
+
+
+try:
+    con = psycopg2.connect(database='testdb', user='postgres',
+                    password='s$cret')
+
+    cur = con.cursor()
+    cur.execute("SELECT data FROM images LIMIT 1")
+    data = cur.fetchone()[0]
+
+    writeImage(data)
+
+
+<td width="15%" align="center" valign="middle" style="border:1px solid #999;"><audio id="fayint99" src="/sound/mp3/ngo5.mp3" preload="preload"> <font color="#FF0000">您的浏览器不支持此发音。</font> </audio>
+<img src="images/pc_fayin.gif" alt="点击发音" onclick="fyint99()" style=" cursor: pointer">
+<script type="text/javascript">
+<!--
+var fyt99=document.getElementById("fayint99");
+function fyint99()
+{
+if (fyt99.paused)
+fyt99.play();
+else
+fyt99.pause();
+}
+//-->
+</script>
+</td>
+
+```
+
+
+
+```
+
+# http://codingsky.com/doc/day/2018-06-10/12141.html
+动态JPEG流传输：
+
+    #!/usr/bin/env python
+    from flask import Flask, render_template, Response
+    from camera import Camera
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():  
+      return render_template('index.html')
+
+    def gen(camera):
+      while True:
+        frame = camera.get_frame()
+        yield (b'--framern'
+            b'Content-Type: image/jpegrnrn' + frame + b'rn')
+
+    @app.route('/video_feed')
+    def video_feed():
+      return Response(gen(Camera()),
+              mimetype='multipart/x-mixed-replace; boundary=frame')
+
+    if __name__ == '__main__':
+      app.run(host='0.0.0.0', debug=True)
+这个应用导入一个Camera类来负责提供帧序列。在这个例子中，将camera控制部分放入一个单独的模块是一个很好的主意。这样，Web应用会保持干净、简单和通用。
+
+该应用有两个路由（route）。/路由为主页服务，被定义在index.html模板中。下面你能看到这个模板文件中的内容：
+
+
+
+    <html>
+     <head>
+      <title>Video Streaming Demonstration</title>
+     </head>
+     <body>
+      <h1>Video Streaming Demonstration</h1>
+      <img src="{{ url_for('video_feed') }}">
+     </body>
+    </html>
+```
+
+
+
+```
+# jquery
+https://blog.csdn.net/l333f/article/details/60877276
+
+# flask blog
+https://github.com/zengxuanlin/my_blog
+
+```
+
+
+
+```
+# auto play
+<script type="text/javascript">
+    window.onload = function(){
+             setInterval("toggleSound()",100);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("vd");//获取ID  
+                    
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
+</script>
+```
+
+
+
+
+
+
+
+```
+ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 192k output.mp3
+Explanation of the used arguments in this example:
+
+-i - input file
+
+-vn - Disable video, to make sure no video (including album cover image) is included if the source would be a video file
+
+-ar - Set the audio sampling frequency. For output streams it is set by default to the frequency of the corresponding input stream. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options.
+
+-ac - Set the number of audio channels. For output streams it is set by default to the number of input audio channels. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options. So used here to make sure it is stereo (2 channels)
+
+-b:a - Converts the audio bitrate to be exact 192kbit per second
+```
+
+
+
+
+
+
+
+```
+ffmpeg -i -ss 0 -t 00:01:00
+```
+
+
+
+```
+with -t which specifies the duration, like -ss 60 -t 10 to capture from second 60 to 70
+
+```
+
+## Cutting small sections
+
+To extract only a small segment in the middle of a movie, it can be used in combination with `-t` which specifies the duration, like `-ss 60 -t 10` to capture from second 60 to 70. Or you can use the `-to` option to specify an out point, like `-ss 60 -to 70` to capture from second 60 to 70. `-t` and `-to` are mutually exclusive. If you use both, `-t` will be used.
+
+Note that if you specify `-ss` before `-i` only, the timestamps will be reset to zero, so `-t` and `-to` will have the same effect. If you want to keep the original timestamps, add the `-copyts` option.
+
+The first command will cut from 00:01:00 to 00:03:00 (in the original), using the faster seek.
+The second command will cut from 00:01:00 to 00:02:00, as intended, using the slower seek.
+The third command will cut from 00:01:00 to 00:02:00, as intended, using the faster seek.
+
+```
+ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy cut.mp4
+ffmpeg -i video.mp4 -ss 00:01:00 -to 00:02:00 -c copy cut.mp4
+ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy -copyts cut.mp4
+```
+
+If you cut with stream copy (`-c copy`) you need to use the [-avoid_negative_ts 1](https://ffmpeg.org/ffmpeg-all.html#Format-Options) option if you want to use that segment with the [concat demuxer](https://trac.ffmpeg.org/wiki/How to concatenate (join, merge) media files#demuxer) .
+
+Example:
+
+```
+ffmpeg -ss 00:03:00 -i video.mp4 -t 60 -c copy -avoid_negative_ts 1 cut.mp4
+```
+
+If you have to re-encode anyway, e.g., to apply filters like [afade](https://trac.ffmpeg.org/wiki/AfadeCurves), which can be very slow, make sure to use, e.g., `-ss 120 -i some.mov -to 60` to get one minute from 120s to 120+60s, not `-to 180` for three minutes starting at 120s.
+
+
+
+```
+# show info
+ffprobe xxx.mp4
+
+“-an”（no audio）和“-vn”（no video）
+ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -vn -acodec copy -ss 0 -t 00:01:00 ttttttttt.ts
+
+ffmpeg -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -vn -acodec copy -ss 00:01:12.960 -to 00:01:14.640 ttttttttt.ts
+
+00:01:12,960 --> 00:01:14,640
+
+
+ffmpeg -i test.mp4 -codec copy -bsf h264_mp4toannexb test.ts
+```
+
+
+
+
+
+```
+/usr/local/ffmpeg/bin/ffmpeg -ss START  -t LENGTH -i INPUTFILE  -vcodec copy -acodec copy OUTFILE
+
+00:01:00 长度1分钟
+/usr/local/ffmpeg/bin/ffmpeg -ss 0 -t 00:01:00 -i movie.mp4  -vcodec copy -acodec copy movie-1.mp4
+
+```
+
+
+
+
+
+```
+https://it3q.com/article/59
+
+```
+
+
+
+```
+今天考虑一个mcu混合的实现，也就是接收多路过来的rtp流，然后转发出去一路的rtmp流，使用ffmpeg测试做的记录，刚开始一直通过ffmpeg推送的文件流不能满足要求，还是对参数配置不熟悉；
+
+
+
+0、ffmpeg 命令格式：
+
+$ ffmpeg \
+
+-y \ # 全局参数
+
+-c:a libfdk_aac -c:v libx264 \ # 输入文件参数
+
+-i input.mp4 \ # 输入文件
+
+-c:v libvpx-vp9 -c:a libvorbis \ # 输出文件参数
+
+output.webm # 输出文件
+
+
+
+下列为较常使用的参数：
+
+ 
+
+-i——设置输入文件名。
+
+-f——设置输出格式。
+
+-y——若输出文件已存在时则覆盖文件。
+
+-fs——超过指定的文件大小时则结束转换。
+
+-t——指定输出文件的持续时间，以秒为单位。
+
+-ss——从指定时间开始转换，以秒为单位。
+
+-t从-ss时间开始转换（如-ss 00:00:01.00 -t 00:00:10.00即从00:00:01.00开始到00:00:11.00）。
+
+-title——设置标题。
+
+-timestamp——设置时间戳。
+
+-vsync——增减Frame使影音同步。
+
+-c——指定输出文件的编码。
+
+-metadata——更改输出文件的元数据。
+
+-help——查看帮助信息
+
+影像参数：
+
+-b:v——设置影像流量，默认为200Kbit/秒。（单位请引用下方注意事项）
+
+-r——设置帧率值，默认为25。
+
+-s——设置画面的宽与高。
+
+-aspect——设置画面的比例。
+
+-vn——不处理影像，于仅针对声音做处理时使用。
+
+-vcodec( -c:v )——设置影像影像编解码器，未设置时则使用与输入文件相同之编解码器。
+
+声音参数：
+
+-b:a——设置每Channel（最近的SVN版为所有Channel的总合）的流量。（单位请引用下方注意事项）
+
+-ar——设置采样率。
+
+-ac——设置声音的Channel数。
+
+-acodec ( -c:a ) ——设置声音编解码器，未设置时与影像相同，使用与输入文件相同之编解码器。
+
+-an——不处理声音，于仅针对影像做处理时使用。
+
+-vol——设置音量大小，256为标准音量。（要设置成两倍音量时则输入512，依此类推。）
+
+-preset：指定输出的视频质量，会影响文件的生成速度，有以下几个可用的值 ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow。 
+
+
+
+1、udp或者rtp推流
+
+>最简单模式：
+
+ffmpeg -re -i d:\videos\1080P.264 -vcodec copy -f rtp rtp://127.0.0.1:1234
+
+ffplay接收端的命令：
+
+ffplay -protocol_whitelist "file,udp,rtp" -i rtp://127.0.0.1:1234
+
+
+
+>复杂模式，决定rtp包封装大小，封装格式，决定I帧间隔
+
+ffmpeg -re -i tuiliu_mp4.mp4 -vcodec libx264 -b:v 800k -s 480x320   -preset:v ultrafast -tune:v zerolatency   -an -f rtp  -profile baseline  -rtpflags h264_mode0 -pkt_size 1460 -slice-max-size 1400 -maxrate 600k -minrate 600k  -r 20 -g 20 -keyint_min 20   -an -f rtp rtp://11.12.112.42:49196
+
+关键命令参数说明：
+
+-re一定要加，代表按照帧率发送
+
+-i url (input)   输入文件路径或者 url
+
+-vcodec libx264 ，表示使用x264重新编码
+
+-b:v 800k  码率设置
+
+-s 480x320   分辨率设置
+
+-preset:v ultrafast    开启x264的 -preset fast/faster/verfast/superfast/ultrafast参数
+
+-tune:v zerolatency   即时编码，去掉编码延迟
+
+-profile: 设置编码等级，baseline, main, high 
+
+-payload_type ：rtp的pt值
+
+-pkt_size：rtp发送的最大长度
+
+-slice-max-size：一个nula包数据的最大长度
+
+-rtpflags h264_mode0  rtp打包模式 packetizition-mode=0， 当 packetization-mode 的值为 0 时或不存在时, 必须使用单一 NALU 单元模式.；当 packetization-mode 的值为 1 时必须使用非交错(non-interleaved)封包模式.；当 packetization-mode 的值为 2 时必须使用交错(interleaved)封包模式.
+
+-pkt_size 1460 
+
+-slice-max-size 1400 
+
+-maxrate 600k 
+
+-minrate 600k  (可以使用 -crf 24替换，控制视频码率和质量的均衡)
+
+-r 20  设置帧率为20帧/s
+
+-g 20 GOP间隔，每隔20个帧为一个GOP，两个关键帧之间的帧数称为一个GOP，将关键帧帧间隔设置为1s,也就是每秒一个关键帧
+
+-keyint_min 20   最小关键帧间隔 
+
+-an 没有音频，“-an”（no audio）和“-vn”（no video）分别用来单独输出视频和音频
+
+-f:rtp 强制ffmpeg采用某种格式，后跟对应的格式。
+
+
+
+> 使用RTP分别发送音频流和视频流
+
+FFmpeg命令：
+
+ffmpeg  -re -i <media_file> -an -vcodec copy -f rtp rtp://<IP>:5004 -vn -acodec copy -f rtp rtp://<IP>:5005 > test.sdp
+
+
+
+FFplay接收的SDP文件：
+
+SDP:
+v=2 
+m=video 5004 RTP/AVP 96
+a=rtpmap:96 H264
+t=0 0 
+a=framerate:25
+c=IN IP4 192.168.0.100
+  
+m=audio 5005 RTP/AVP 97
+a=rtpmap:97 PCM/8000/1
+a=framerate:25
+c=IN IP4 192.168.0.100
+
+2、rtsp推流
+
+ffmpeg -re -i /root/mp4/1.mp4 -vcodec copy -acodec copy  -rtsp_transport tcp -f rtsp rtsp://192.168.2.161/live/rtsp_test
+
+-rtsp_transport tcp 标识使用tcp作为rtp的通道
+
+
+
+3、rtmp推流 
+
+ffmpeg -re -i /root/mp4/1.flv -vcodec copy -acodec copy -f flv rtmp://192.168.2.161/live/rtsp_test
+
+
+
+修改-i参数为rtsp的地址，可以拉监控流然后转发为rtmp流：
+
+ffmpeg -f rtsp -i rtsp://admin:xdddd1998@11.12.112.249:554/h264/ch1/sub/av_stream -vcodec libx264 -b:v 800k -s 480x320 -preset:v ultrafast -tune:v zerolatency   -an -f rtp  -profile baseline  -rtpflags h264_mode0 -pkt_size 1460 -slice-max-size 1400 -maxrate 600k -minrate 600k -g 20 -keyint_min 20  -y rtp://11.12.112.42:62159
+
+
+
+4、ffmpeg切片，很多人会问，直接播放mp4不就好了么，为什么要切片再播放？
+
+如果是MP4文件，需要先完整的下载格式为 mp4 的视频文件，当视频文件下载完成后，网站才可以播放该视频，这就对于用户体验是极大的下降，所以需要切片为多个ts文件，以及m3u8文件，m3u8格式的视频是将文件分成一小段一小段的ts文件，播放完一个在播放下一个，由于每次请求的ts文件都很小，所以基本可以做到无延时播放：
+
+切片mp4视频文件：
+
+ffmpeg -i ./video.mp4 -c:v libx264 -hls_time 60 -hls_list_size 0 -c:a aac -strict -2 -f hls ./video.m3u8
+
+
+
+切片mp3音频文件：
+
+ffmpeg -i ./kczfrr.mp3 -c:a libmp3lame -map 0:0 -f segment -segment_time 10 -segment_list ./kczfrr.m3u8
+
+
+
+web页面播放m3u8，一方面可以使用腾讯的js插件，另一方面就是使用video.js的插件:
+
+引入相关资源
+    <link href="https://cdn.bootcss.com/video.js/6.3.3/video-js.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/video.js/6.3.3/video.min.js"></script>
+    <script src="https://cdn.bootcss.com/videojs-contrib-hls/5.11.0/videojs-contrib-hls.js"></script>
+    <!–[if lt IE 9]>
+    <script type="text/javascript" src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]–>
+说明：
+ 
+video-js.min.css 是播放器的主题样式
+video.min.js 是video.js的核心代码
+videojs-contrib-hls.js 用于支持HLS的库文件
+html5shiv.min.js 由于video.js是基于H5构建的播放器，所以在浏览器不支持H5的时候，需要将相关资源引入到浏览器
+放置播放器控件
+<video  id="myVideo"  class="video-js vjs-default-skin vjs-big-play-centered"  width="400"
+        controls="controls" autoplay="autoplay"
+       x-webkit-airplay="true" x5-video-player-fullscreen="true"
+       preload="auto" playsinline="true" webkit-playsinline
+       x5-video-player-typ="h5">
+    <source type="application/x-mpegURL" src="https://cn4.creativemas.cn/ppvod/DD7AB8D25F6AD21E4291775FEAC1F710.m3u8">
+</video>
+说明：
+ 
+该控件中用于播放一个网络上找的m3u8的视频资源
+给控件一个id主要方便video.js获取控件对象
+使用video.js
+<script>
+    // videojs 简单使用
+    var myVideo = videojs('myVideo',{
+        bigPlayButton : true,
+        textTrackDisplay : false,
+        posterImage: false,
+        errorDisplay : false,
+    })
+    myVideo.play() // 视频播放
+    myVideo.pause() // 视频暂停
+</script>
+
+
+5、合并音视频
+
+合并视频和音频
+1、直接合并
+视频文件中没有音频
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4video.mp4,audio.wav分别是要合并的视频和音频，output.mp4是合并后输出的音视频文件。
+ 
+下面的命令是用audio音频替换video中的音频ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental -map 0:v:0 -map 1:a:0 output.mp4
+ 
+2、先提取视频中的音频，将两个音频合并成一个音频，然后将合并的音频与视频进行合并
+#获取视频中的音频
+ffmpeg -i input.mp4 -vn -y -acodec copy output.aac
+#去掉视频中的音频
+ffmpeg -i input.mp4 -an output.mp4
+#合并两个音频
+ffmpeg -i input1.mp3 -i output.aac -filter_complex amerge -ac 2 -c:a libmp3lame -q:a 4 output.mp3
+#合并音频和视频
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4
+ 
+ 
+3、合并视频
+#横向合并视频
+ffmpeg -i input1.mp4 -i input2.mp4 -lavfi hstack output.mp4
+ 
+上面的命令虽然可以合并视频，两个视频可以正常播放，但是只保留了前面一个的音频。
+#合并多个视频，可以使用下面命令行：
+ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -lavfi hstack=inputs=3 output.mp4
+ 
+#纵向合并视频
+ffmpeg -i input1.mp4 -i input2.mp4 -lavfi vstack output.mp4
+ 
+ 
+#网格合并视频，来源:https://www.zhihu.com/question/300182407
+当多个视频时，还可以合并成网格状，比如2x2，3x3这种。但是视频个数不一定需要是偶数，如果是奇数，可以用黑色图片来占位。
+ 
+ffmpeg -f lavfi -i color=c=black:s=1280x720 -vframes 1 black.png
+该命令将创建一张1280*720的图片
+ 
+然后就可以使用下面这个命令来合并成网格视频了，如果只有三个视频，可以选择上面创建的黑色图片替代。
+ffmpeg -i top_left.mp4 -i top_right.mp4 -i bottom_left.mp4 -i bottom_right.mp4 \
+-lavfi "[0:v][1:v]hstack[top];[2:v][3:v]hstack[bottom];[top][bottom]vstack"
+-shortest 2by2grid.mp4
+ 
+上面创建的是正规的2x2网格视频。想象一下，现在只有三个视频，我想把第一个视频摆放在第一行的中间，然后把第二、三个视频摆放在第二行。那么就可以使用下面两个命令了。
+ 
+ffmpeg -f lavfi -i color=c=black:s=640x720 -vframes 1 black.png
+ 
+ffmpeg -i black.png -i top_center.mp4 -i bottom_left.mp4 -i bottom_right.mp4
+-lavfi "[0:v][1:v][0:v]hstack=inputs=3[top];[2:v][3:v]hstack[bottom];[top][bottom]vstack"
+-shortest 3_videos_2x2_grid.mp4
+  
+4、怎么合并两个视频并保留两个视频中的音频，注意视频的分辨率和格式必须一样。
+#合并两个视频，只有一个声音;
+纵向合并视频
+ffmpeg -i input1.mp4 -i input2.mp4 -lavfi vstack output.mp4
+ 
+#抽取两个视频中的音频，然后合并成一个音频; 
+ffmpeg -i input_1.mp4 -vn -y -acodec copy output_a1.m4a
+ffmpeg -i input_2.mp4 -vn -y -acodec copy output_a2.m4a
+ffmpeg -i output_a1.m4a -i output_a2.m4a -filter_complex amerge -ac 2 -c:a copy -q:a 4 output_a.m4a
+ 
+#将这个音频替换到之前的合并视频中;
+ffmpeg -i video.mp4 -i output_a.m4a -c:v copy -c:a aac -strict experimental output.mp4
+ 
+ 
+5、音频拼接
+#两个拼接
+/usr/local/ffmpeg/bin/ffmpeg -i d1.mp3 -i d2.mp3 -filter_complex '[0:0] [1:0] concat=n=2:v=0:a=1 [a]' -map [a] j5.mp3
+#三个拼接
+/usr/local/ffmpeg/bin/ffmpeg -i 片头.wav -i 内容.WAV -i 片尾.wav -filter_complex '[0:0] [1:0] [2:0] concat=n=3:v=0:a=1 [a]' -map [a] 合成.wav
+ 
+#多文件拼接
+ffmpeg -f concat -ilist.txt -c copycutebaby.mp3
+list.txt文件内容:à按顺序连接cutebaby_1.mp3, football.mp3,cutebaby_2.mp3,cutebaby_3.mp3
+ 
+#拼接不同格式的文件，下面的命令合并了三种不同格式的文件，FFmpeg concat 过滤器会重新编码它们。注意这是有损压缩。
+[0:0] [0:1] [1:0] [1:1] [2:0] [2:1] 分别表示第一个输入文件的视频、音频、第二个输入文件的视频、音频、第三个输入文件的视频、音频。concat=n=3:v=1:a=1 表示有三个输入文件，输出一条视频流和一条音频流。[v] [a] 就是得到的视频流和音频流的名字，注意在 bash 等 shell 中需要用引号，防止通配符扩展。 
+ 
+ffmpeg -i input1.mp4 -i input2.webm -i input3.avi -filter_complex '[0:0] [0:1] [1:0] [1:1] [2:0] [2:1] concat=n=3:v=1:a=1 [v] [a]' -map '[v]' -map '[a]' <编码器选项> output.mkv
+```
+
+
+
+```
+m3u8格式的视频是将文件分成一小段一小段的ts文件，播放完一个在播放下一个，由于每次请求的ts文件都很小，所以基本可以做到无延时播放。目前WEB上主流的直播方案主要是HLS和RTMP，移动端主要是HLS，PC端主要是RTMP。
+
+HLS是苹果推出的，移动端不管是IOS还是Android都天然支持HLS协议，直接在h5页面直接配置即可使用；PC端只有safari浏览器支持，其他浏览器均不支持。
+
+可以用video.js和videojs-contrib-hls.js。video.js是非常好用的插件，关于它如何使用这里就不一一介绍了。
+
+```
+
+
+
+```
+流媒体：ffmpeg生成HLS的m3u8与ts片段
+ 
+
+转换方式一
+1.直接把媒体文件转为ts
+
+ffmpeg -i cat.mp4 -c copy -bsf h264_mp4toannexb cat.ts
+2.使用segment参数进行切片
+
+ffmpeg -i cat.ts -c copy -map 0 -f segment -segment_list playlist.m3u8 -segment_time 2 cat_output%03d.ts
+ 
+
+ 
+
+转换方式二
+1.ffmpeg切片命令，以H264和AAC的形式对视频进行输出
+
+ffmpeg -i input.mp4 -c:v libx264 -c:a aac -strict -2 -f hls output.m3u8
+2.ffmpeg转化成HLS时附带的指令
+
+-hls_time n: 设置每片的长度，默认值为2。单位为秒
+
+-hls_list_size n:设置播放列表保存的最多条目，设置为0会保存有所片信息，默认值为5
+
+-hls_wrap n:设置多少片之后开始覆盖，如果设置为0则不会覆盖，默认值为0.这个选项能够避免在磁盘上存储过多的片，而且能够限制写入磁盘的最多的片的数量
+
+-hls_start_number n:设置播放列表中sequence number的值为number，默认值为0
+
+3.对ffmpeg切片指令的使用
+
+ffmpeg -i output.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 0 -hls_time 5 data/output.m3u8 
+参数:
+
+-hls_base_url   m3u8播放地址前缀
+
+-segment_list_entry_prefix  m3u8播放地址前缀
+
+-s 1280x720    :  720p分辨率
+-b 1500k  比特率
+-r 设定帧速率，默认为25
+-aspect 设定画面的比例
+```
+

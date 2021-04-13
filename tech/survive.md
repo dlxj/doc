@@ -155,6 +155,12 @@ hook.beforeEach(function(content) {
 
 
 
+# 前端大佬
+
+[借助ffmpeg.wasm纯前端实现多音频和视频的合成](https://www.zhangxinxu.com/wordpress/2021/03/ffmpeg-wasm-audio-video-merge/)
+
+
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 

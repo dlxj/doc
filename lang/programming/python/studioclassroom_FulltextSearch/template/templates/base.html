@@ -1,0 +1,28 @@
+
+<!doctype html>
+    <head>
+        {% if title %}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Default title</title>
+        {% endif %}
+    </head>
+    
+    <form action="/" method="post">
+        keyword: <input type="text" name="keyword"><br>
+        <select name="lang_select">
+        <option value ="en">en</option>
+        <option value ="jp">jp</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    {% block EnBlock %}{% endblock %}
+
+    {% block JpBlock %}{% endblock %}
+
+    {% block KeywdBlock %}{% endblock %}
+
+    {% block NextBlock %}{% endblock %}
+
+    {% block RawBlock %}{% endblock %}
