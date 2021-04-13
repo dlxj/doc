@@ -2338,6 +2338,21 @@ def stream_mp3():
 </div>
 {% endraw %}
 
+{{ url_for('test',name=1) }} 相当于我们传递的XXX/?name=1 
+@app.route('/test/<name>', methods=['GET'])
+def test(name):
+
+URL中传参
+可以使用Flask request方法：request.args.get()，例如，前台请求URL为 http://localhost:5000/tk?p=1&type=1
+@app.route('/tk', methods=['post','get'])
+def tk():
+    p = request.args.get('p')
+    type = request.args.get('type')
+
+https://www.zhangxinxu.com/wordpress/2019/07/html-audio-api-guide/
+HTML audio基础API完全使用指南
+
+
 <td width="15%" align="center" valign="middle" style="border:1px solid #999;"><audio id="fayint99" src="/sound/mp3/ngo5.mp3" preload="preload"> <font color="#FF0000">您的浏览器不支持此发音。</font> </audio>
 <img src="images/pc_fayin.gif" alt="点击发音" onclick="fyint99()" style=" cursor: pointer">
 <script type="text/javascript">

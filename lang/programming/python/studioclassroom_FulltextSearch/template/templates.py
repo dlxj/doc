@@ -188,8 +188,13 @@ def next():
     return render_template_string(html)
 
 
-@app.route('/audio')
+@app.route('/audio', methods=['get'])
 def stream_mp3():
+    print('request.args:', request.args)
+    if 'id' in request.args:
+        rowid = request.args.get('id')
+        print(rowid)
+
     def generate():
         path = 'static/t.mp3'
         with open(path, 'rb') as fmp3:
@@ -198,7 +203,7 @@ def stream_mp3():
                 yield data
                 data = fmp3.read(1024)
 
-    return Response(generate(), mimetype="audio/mpeg3")
+    return Response(generate(), mimetype="audio/mpeg")
 
 
 if __name__ == "__main__":
