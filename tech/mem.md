@@ -4,7 +4,15 @@
 に 地点身份证，静态、不消耗能量  比如存在
 
 
-  
+
+**culprit** /ˈkʌlprɪt/
+***\*n.\**** 
+**1.** 被控犯罪的人，刑事被告，未决犯 
+**2.** 犯人，罪犯 
+**3.** 导致过错的人；产生事故的原因；引起不良后果的事物
+The big culprit in the drain of electrical power is air-conditioning. 电力过度消耗的重要原因是使用空调。 
+[< Ang-Fr cul., culpable guity 的缩略 + prit ready (for trial) < L praestō I am on hand, I am ready]
+
 
 
 维度

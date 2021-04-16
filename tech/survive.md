@@ -1105,7 +1105,7 @@ Please execute the command: systemctl enable v2ray; systemctl start v2ray
 
 [CSharp V2Ray 客户端](https://github.com/2dust/v2rayN)
 
-
+[V2Ray+透明网关](https://tstrs.me/1488.html)
 
 [新的扶墙加速姿势，完美替代CF](http://machbbs.com/hostloc/33418)
 
