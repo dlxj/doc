@@ -2625,6 +2625,7 @@ ssh root@172.17.0.2
 cp t.mp3 /var/lib/pgsql
 su - postgres
 psql
+CREATE TABLE audio(id SERIAL PRIMARY KEY, data BYTEA);
 INSERT INTO audio(data) VALUES(pg_read_binary_file('/var/lib/pgsql/t.mp3')::bytea);
 ```
 
@@ -2648,6 +2649,10 @@ INSERT INTO test_table
 VALUES(1, pg_read_binary_file('/path/to/file')::bytea);
 
 
+
+### 高端操作
+
+https://bbengfort.github.io/2017/12/psycopg2-transactions/
 
 
 

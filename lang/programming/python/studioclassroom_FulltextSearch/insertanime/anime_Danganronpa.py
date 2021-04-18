@@ -343,14 +343,29 @@ def readImage(fname):
         if fin:
             fin.close()
 
+
+"""
+ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 192k output.mp3
+Explanation of the used arguments in this example:
+
+-i - input file
+
+-vn - Disable video, to make sure no video (including album cover image) is included if the source would be a video file
+
+-ar - Set the audio sampling frequency. For output streams it is set by default to the frequency of the corresponding input stream. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options.
+
+-ac - Set the number of audio channels. For output streams it is set by default to the number of input audio channels. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options. So used here to make sure it is stereo (2 channels)
+
+-b:a - Converts the audio bitrate to be exact 192kbit per second
+"""
 def extractAudio(videopath, begintime, endtime):
   # Audio: mp3 (libmp3lame), 44100 Hz, stereo, fltp, 192 kb/s (default)
   # -vn  no video
     out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
       "-ar", "44100", "-ac", "2", "-b:a", "192k", \
-        "t.ts"])
+        "tmp.mp3"])
     out_text = out_bytes.decode('utf-8')
-    bts = readImage(fname)
+    bts = readImage("tmp.mp3")
     return bts
     
 
@@ -417,6 +432,7 @@ def createAnimeDB(host, port):
                 videoname text, \
                 audio bytea \
             );")
+            cur.execute("CREATE TABLE audio(id SERIAL PRIMARY KEY, data BYTEA);")
 
             cur.execute("create extension pgroonga;")
             cur.execute("CREATE INDEX pgroonga_jp_index ON anime USING pgroonga (jp);")
@@ -584,10 +600,12 @@ def importAnime(animename, frtname, videoname, videopath):
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
-                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'), %s);"""
-                cur.execute( sql, (bts,) )
-                # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
-                # cur.execute( sql )
+                # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'), %s);"""
+                # cur.execute( sql, (bts,) )
+                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
+                cur.execute( sql )
+
+                cur.execute("""INSERT INTO audio(data) VALUES(%s);""", (bts,))
 
             cur.execute('COMMIT;')
 
