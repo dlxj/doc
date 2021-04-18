@@ -2290,12 +2290,47 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
-
+```
+ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
+```
 
 
 
 ```
-ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
+# The adapter: converts from python to postgres
+# note: this only works on numpy version whose arrays 
+# support the buffer protocol,
+# e.g. it works on 1.5.1 but not on 1.0.4 on my tests.
+
+In [12]: def adapt_array(a):
+  ....:     return psycopg2.Binary(a)
+  ....:
+
+In [13]: psycopg2.extensions.register_adapter(np.ndarray, adapt_array)
+
+
+# The typecaster: from postgres to python
+
+In [21]: def typecast_array(data, cur):
+  ....:     if data is None: return None
+  ....:     buf = psycopg2.BINARY(data, cur)
+  ....:     return np.frombuffer(buf)
+  ....:
+
+In [24]: ARRAY = psycopg2.extensions.new_type(psycopg2.BINARY.values,
+'ARRAY', typecast_array)
+
+In [25]: psycopg2.extensions.register_type(ARRAY)
+
+
+# Now it works "as expected"
+
+In [26]: cur = cnn.cursor()
+
+In [27]: cur.execute("select %s", (a,))
+
+In [28]: cur.fetchone()[0]
+Out[28]: array([ 1.,  0.,  0.,  0.,  1.,  0.,  0.,  0.,  1.])
 ```
 
 
@@ -2381,6 +2416,8 @@ VALUES(1, pg_read_binary_file('/path/to/file')::bytea);
     cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
 
     con.commit()
+
+
 
 
 CREATE TABLE btable (bvalue bytea);
@@ -2588,8 +2625,19 @@ ssh root@172.17.0.2
 cp t.mp3 /var/lib/pgsql
 su - postgres
 psql
-INSERT INTO audio(data) VALUES(pg_read_binary_file('/root/t.mp3')::bytea);
+INSERT INTO audio(data) VALUES(pg_read_binary_file('/var/lib/pgsql/t.mp3')::bytea);
 ```
+
+
+
+### insert from psycopg2
+
+```
+binary = psycopg2.Binary(data)
+cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
+```
+
+
 
 
 
