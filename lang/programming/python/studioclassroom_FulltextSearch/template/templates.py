@@ -11,6 +11,7 @@ import MeCab
 tagger = MeCab.Tagger()
 
 from zhconv import convert
+import jaconv
 
 
 import psycopg2
@@ -174,7 +175,13 @@ def default_get():
 
                 if (isJp):
                     #with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port2) as conn2:
+
+                    if len( unhana_remove(keywd) ) == len(keywd):
+                        keywd = jaconv.hira2kata(keywd)
                     
+
+                    
+
                     conn2 = pool2.getconn()
                     #with pool2.getconn() as conn2:
                     if True:
@@ -229,6 +236,20 @@ def stream_mp3():
     if 'id' in request.args:
         rowid = request.args.get('id')
         print(rowid)
+
+
+    conn2 = pool2.getconn()
+    with conn2.cursor() as cur2:
+        sql = f"SELECT id, audio FROM anime WHERE id={rowid};"
+        cur2.execute(sql)
+        row = cur2.fetchone()
+        pool2.putconn(conn2)
+
+#         import base64
+
+# rows = cur.fetchall()
+# binary_img = rows[0][0]
+# base64_img = base64.b64encode(binary_img)
 
     def generate():
         path = 'static/t.mp3'

@@ -2297,6 +2297,23 @@ ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can
 
 
 ```
+psycopg2 returns the binary data (probably stored in a bytea column in your table) in a buffer object in Python 2, or in a memoryview in Python 3.
+
+Both buffer and memoryview objects can be passed directly to a base64 string encoder, so this will encode the binary data in base 64:
+
+import base64
+
+rows = cur.fetchall()
+binary_img = rows[0][0]
+base64_img = base64.b64encode(binary_img)
+In Python 2, if you want the binary data itself you can use str() or slice with [:] the buffer object. In Python 3 you can use the tobytes() method of the memoryview object.
+```
+
+
+
+
+
+```
 # The adapter: converts from python to postgres
 # note: this only works on numpy version whose arrays 
 # support the buffer protocol,
@@ -3104,4 +3121,86 @@ ffmpeg -i output.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 0 -h
 -r 设定帧速率，默认为25
 -aspect 设定画面的比例
 ```
+
+
+
+
+
+# hira2kata
+
+
+
+```
+pip install jaconv
+```
+
+
+
+```
+import jaconv
+
+# Hiragana to Katakana 平假名 ===> 片假名
+jaconv.hira2kata(u'ともえまみ')
+# => u'トモエマミ'
+
+# Hiragana to half-width Katakana 平假名 ===> 半角片假名
+jaconv.hira2hkata(u'ともえまみ')
+# => u'ﾄﾓｴﾏﾐ'
+
+# Katakana to Hiragana 片假名 ====> 平假名
+jaconv.kata2hira(u'巴マミ')
+# => u'巴まみ'
+
+# half-width character to full-width character 半角 ===> 全角
+jaconv.h2z(u'ﾃｨﾛ･ﾌｨﾅｰﾚ')
+# => u'ティロ･フィナーレ'
+
+# half-width character to full-width character
+# but only ascii characters 只限ascii字符
+jaconv.h2z(u'abc', ascii=True)
+# => u'ａｂｃ'
+
+# half-width character to full-width character
+# but only digit characters
+jaconv.h2z(u'123', digit=True)
+# => u'１２３'
+
+# half-width character to full-width character
+# except half-width Katakana 除半角片假名
+jaconv.h2z(u'ｱabc123', kana=False, digit=True, ascii=True)
+# => u'ｱａｂｃ１２３'
+
+# full-width character to half-width character 全角 ===> 半角
+jaconv.z2h(u'ティロ・フィナーレ')
+# => u'ﾃｨﾛ・ﾌｨﾅｰﾚ'
+
+# full-width character to half-width character
+# but only ascii characters 只限ascii字符
+jaconv.z2h(u'ａｂｃ', ascii=True)
+# => u'abc'
+
+# full-width character to half-width character
+# but only digit characters 只限数字
+jaconv.z2h(u'１２３', digit=True)
+# => u'123'
+
+# full-width character to half-width character
+# except full-width Katakana 除全角片假名
+jaconv.z2h(u'アａｂｃ１２３', kana=False, digit=True, ascii=True)
+# => u'アabc123'
+
+# normalize
+jaconv.normalize(u'ティロ･フィナ〜レ', 'NFKC')
+# => u'ティロ・フィナーレ'
+
+# Hiragana to alphabet 平假名===>罗马字
+jaconv.kana2alphabet(u'じゃぱん')
+# => japan
+
+# Alphabet to Hiragana 罗马字===>平假名
+jaconv.alphabet2kana(u'japan')
+# => じゃぱん
+```
+
+
 
