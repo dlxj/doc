@@ -354,13 +354,21 @@ Explanation of the used arguments in this example:
 -ac - Set the number of audio channels. For output streams it is set by default to the number of input audio channels. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options. So used here to make sure it is stereo (2 channels)
 
 -b:a - Converts the audio bitrate to be exact 192kbit per second
+
+-hide_banner -loglevel error
+
 """
 def extractAudio(videopath, begintime, endtime):
   # Audio: mp3 (libmp3lame), 44100 Hz, stereo, fltp, 192 kb/s (default)
   # -vn  no video
-    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+    # out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+    #   "-ar", "44100", "-ac", "2", "-b:a", "192k", \
+    #     "tmp.mp3"])
+    
+    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
       "-ar", "44100", "-ac", "2", "-b:a", "192k", \
         "tmp.mp3"])
+
     out_text = out_bytes.decode('utf-8')
     bts = readImage("tmp.mp3")
     os.remove("tmp.mp3")
@@ -601,8 +609,11 @@ def importAnime(animename, frtname, videoname, videopath):
                 sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'), %s);"""
                 cur.execute( sql, (bts,) )
                 count += 1
-                if count >= 10:
-                  break
+                #if count % 10 == 0:
+                print( f"###### {count} / {len(jpanese)}" )
+                
+                # if count >= 10:
+                #   break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 # cur.execute( sql )
 
@@ -627,17 +638,24 @@ def importAnime(animename, frtname, videoname, videopath):
 
 if __name__ == "__main__":
 
-  """
-  pg_ctlcluster 13 main start # echo pg
-  """
+    """
+    pg_ctlcluster 13 main start       # echo pg
+
+    docker exec -it centos7PG10 /bin/bash
+    systemctl restart postgresql-13   # echo docker pg
+    """
+
+    print("start")
 
 
-  try:
-    test = os.uname()
-    if test[0] == "Linux":
-      OS = "Linux"
-  except Exception as e:
-    OS = "Windows"
+    try:
+      test = os.uname()
+      if test[0] == "Linux":
+        OS = "Linux"
+    except Exception as e:
+      OS = "Windows"
+
+    print(f"OS: {OS}")
 
     #begin, end = parseSrtTime("00:01:12,960 --> 00:01:14,640")
 
@@ -651,6 +669,8 @@ if __name__ == "__main__":
     root = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "Linux":
       root = r"/root/insertstudio/insertanime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+
+    print( f"root path: \n{root}" )
 
     fnames = allfname(root, 'mkv')
     for fname in fnames:
