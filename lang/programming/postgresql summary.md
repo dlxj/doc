@@ -2288,6 +2288,12 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
+
+
+
+
+
+
 ```
 ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
 ```
@@ -2364,6 +2370,10 @@ https://zetcode.com/python/psycopg2/
 CREATE TABLE images(id SERIAL PRIMARY KEY, data BYTEA);
 create table a(a bytea);
 create unique index a_bytea_unique_hash on a (md5(a)); # md5 唯一索引
+
+
+INSERT INTO test_table  
+VALUES(1, pg_read_binary_file('/path/to/file')::bytea); 
 
     cur = con.cursor()
     data = readImage()
@@ -2541,6 +2551,57 @@ ffmpeg -i -ss 0 -t 00:01:00
 with -t which specifies the duration, like -ss 60 -t 10 to capture from second 60 to 70
 
 ```
+
+
+
+## insert bytea
+
+
+
+```
+# 已有端口映射
+iptables -t nat -vnL DOCKER
+```
+
+```
+yum install openssh-server -y
+vi /etc/ssh/sshd_config
+	配置并保存：PermitRootLogin yes    UsePAM no
+systemctl start sshd
+exit (CTRL + P, CTRL + Q)
+```
+
+
+
+```
+sftp root@172.17.0.2
+ls lls pwd llpwd
+put t.mp3 .
+exit
+
+ssh root@172.17.0.2
+```
+
+
+
+```
+cp t.mp3 /var/lib/pgsql
+su - postgres
+psql
+INSERT INTO audio(data) VALUES(pg_read_binary_file('/root/t.mp3')::bytea);
+```
+
+
+
+
+
+INSERT INTO test_table  
+
+VALUES(1, pg_read_binary_file('/path/to/file')::bytea);
+
+
+
+
 
 ## Cutting small sections
 
