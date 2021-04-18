@@ -93,6 +93,8 @@ host = '111.229.53.195'
 port1 = 5432
 port2 = 54322
 
+hostAPI = 'echodict.com'
+#hostAPI = '127.0.0.1'
 
 pool1 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
     password="postgres",
@@ -190,7 +192,7 @@ def default_get():
                             rows = cur2.fetchall()
                             pool2.putconn(conn2)
 
-                            return render_template('result.html', title='Welcom!', jprows=rows, keywd=keywd)
+                            return render_template('result.html', title='Welcom!', jprows=rows, keywd=keywd, hostAPI=hostAPI)
 
     return render_template('result.html', title='Welcom!')
 
@@ -235,15 +237,18 @@ def stream_mp3():
     print('request.args:', request.args)
     if 'id' in request.args:
         rowid = request.args.get('id')
-        print(rowid)
-
 
     conn2 = pool2.getconn()
     with conn2.cursor() as cur2:
         sql = f"SELECT id, audio FROM anime WHERE id={rowid};"
         cur2.execute(sql)
         row = cur2.fetchone()
+        idd = row[0]
+        bytea = row[1]
+
         pool2.putconn(conn2)
+
+        return Response(bytea, mimetype="audio/mpeg")
 
 #         import base64
 
@@ -259,9 +264,17 @@ def stream_mp3():
                 yield data
                 data = fmp3.read(1024)
 
-    return Response(generate(), mimetype="audio/mpeg")
+    bytea = generate()
+    return Response(bytea, mimetype="audio/mpeg")
 
 
 if __name__ == "__main__":
 
     app.run(host="0.0.0.0", port=8085, debug=True)
+
+
+
+
+    """
+    とかい【都会】  トカイ
+    """

@@ -11,7 +11,8 @@
 
 {% block JpBlock %}
 {% for r in jprows %}
-    <audio id="{{r[0]}}" src="http://echodict.com:8085/audio?id={{r[0]}}" type="audio/mpeg" preload="auto"></audio>
+    {#<audio id="{{r[0]}}" src="http://echodict.com:8085/audio?id={{r[0]}}" type="audio/mpeg" preload="auto"></audio>#}
+    <audio id="{{r[0]}}" src="http://{{ hostAPI }}:8085/audio?id={{r[0]}}" type="audio/mpeg" preload="auto"></audio>
     <br>{{ r[1] | safe }} <img src="{{ url_for('static', filename='images/play.gif') }}" alt="play" onclick="play('{{r[0]}}')" style=" cursor: pointer">
     <br>{{ r[2] | safe }}<br>{{ r[3] | safe }}
     <br><br>
