@@ -9,11 +9,16 @@
 {% endblock %}
 
 
+
 {% block JpBlock %}
 {% for r in jprows %}
+    {% set imgid = 'img' + r[0]|string %}
+    {% set pathimg1 = url_for('static', filename='images/play.gif') %}
+    {% set pathimg2 = url_for('static', filename='images/play2.gif') %}
     {#<audio id="{{r[0]}}" src="http://echodict.com:8085/audio?id={{r[0]}}" type="audio/mpeg" preload="auto"></audio>#}
     <audio id="{{r[0]}}" src="http://{{ hostAPI }}:8085/audio?id={{r[0]}}" type="audio/mpeg" preload="auto"></audio>
-    <br>{{ r[1] | safe }} <img src="{{ url_for('static', filename='images/play.gif') }}" alt="play" onclick="play('{{r[0]}}')" style=" cursor: pointer">
+    {#<br>{{ r[1] | safe }} <img id="{{'img'+string(r[0])}}" src="{{ url_for('static', filename='images/play.gif') }}" alt="play" onclick="play('{{r[0]}}','{{img2}}')" style=" cursor: pointer">#}
+    <br>{{ r[1] | safe }} <img id="{{imgid}}" src="{{ pathimg1 }}" alt="play" onclick="play('{{r[0]}}','{{pathimg1}}','{{pathimg2}}')" style=" cursor: pointer">
     <br>{{ r[2] | safe }}<br>{{ r[3] | safe }}
     <br><br>
 {% endfor %}
@@ -40,13 +45,17 @@
 {% raw %}
 
 <script type="text/javascript">
-    function play(id)
+    function play(id,g1,g2)
     {
         var au=document.getElementById(id);
-        if (au.paused)
+        var ig=document.getElementById('img'+id.toString());
+        if (au.paused) {
+            ig.src=g2;
             au.play();
-        else
-            au.pause();
+            au.addEventListener("pause", function() {
+                ig.src=g1;
+            });
+        }
     }
 </script>
 {% endraw %}
