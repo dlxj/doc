@@ -243,6 +243,9 @@ frantech.ca
 slplsy@
 auto strong passwd
 
+# 后台管理
+https://manage.buyvm.net/login
+
 LV RYZEN KVM 512MB
 
 Hostname: xxxx

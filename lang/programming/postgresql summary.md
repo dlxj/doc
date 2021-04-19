@@ -3212,3 +3212,58 @@ jaconv.alphabet2kana(u'japan')
 
 
 
+# CentOS 远程
+
+
+
+```
+yum install -y epel-release && systemctl start xrdp && \
+systemctl start xrdp && \
+systemctl enable xrdp
+
+
+firewall-cmd --zone=public  --add-port=3389/tcp --permanent
+systemctl restart firewalld.service
+```
+
+
+
+```
+# https://serverok.in/install-xfce-vnc-remote-desktop-on-centos-7
+
+yum -y install epel-release
+yum -y update
+
+yum -y groupinstall "Server with GUI"
+yum -y groupinstall "Xfce"
+systemctl get-default
+systemctl set-default graphical.target
+systemctl isolate graphical.target
+# yum groupremove "Xfce"
+reboot
+
+
+yum install -y tigervnc-server
+vi ~/.vnc/xstartup
+#!/bin/sh
+
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+/etc/X11/xinit/xinitrc
+/bin/startxfce4
+# 替换成上面
+
+
+vncserver
+vncserver -kill :1
+
+
+https://www.realvnc.com/en/connect/download/viewer/windows/
+# VNC Viewer 连接
+209.141.34.77:1
+```
+
+
+
+
+

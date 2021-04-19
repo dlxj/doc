@@ -93,8 +93,8 @@ host = '111.229.53.195'
 port1 = 5432
 port2 = 54322
 
-#hostAPI = 'echodict.com'
-hostAPI = '127.0.0.1'
+hostAPI = 'echodict.com'
+#hostAPI = '127.0.0.1'
 
 pool1 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
     password="postgres",
@@ -191,9 +191,7 @@ def default_get():
                             cur2.execute(f"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;")
                             rows = cur2.fetchall()
                             pool2.putconn(conn2)
-                            
-                            img1 = url_for('static', filename='images/play.gif')
-                            img2 = url_for('static', filename='images/play2.gif')
+
                             return render_template('result.html', title='Welcom!', jprows=rows, keywd=keywd, hostAPI=hostAPI)
 
     return render_template('result.html', title='Welcom!')
@@ -255,7 +253,7 @@ def stream_mp3():
 #         import base64
 
 # rows = cur.fetchall()
-# binary_img = rows[0][0]
+# binary_img = rows[0][0] # 
 # base64_img = base64.b64encode(binary_img)
 
     def generate():
