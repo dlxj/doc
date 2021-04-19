@@ -3265,5 +3265,10 @@ https://www.realvnc.com/en/connect/download/viewer/windows/
 
 
 
+```
+# 查看端口
+netstat -lntp | grep vnc
+```
+
 
 
