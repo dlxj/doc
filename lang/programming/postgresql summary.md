@@ -3272,3 +3272,57 @@ netstat -lntp | grep vnc
 
 
 
+
+
+# FRP
+
+
+
+```
+frps.ini
+[common]
+bind_port = 7000
+
+./frps -c frps.ini 
+```
+
+
+
+```
+frpc.ini
+[common]
+server_addr = 209.141.34.77
+server_port = 7000
+
+[tcp_port]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 8085
+remote_port = 7075
+
+frpc.exe -c frpc.ini
+```
+
+
+
+```
+209.141.34.77:7075 --> 会转到内网的8085
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

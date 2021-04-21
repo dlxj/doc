@@ -4243,6 +4243,22 @@ if __name__ == "__main__":
 
 
 ```python
+def prowords(s, url="http://xxxxxxxxxx:6001/api/planckWord/splitAll"):
+
+    re = requests.post(url="http://xxxxxx:6001/api/planckWord/splitAll", data={'array':"""[{"id":"1","context":"$"}]""".replace('$', s)}, headers={'Content-Type':'application/x-www-form-urlencoded'}).json()
+
+    if re['status'] == 200:
+        data = re['data']
+        wls = data[0]['words']
+        prowords = [ d['word'] for d in wls if d['type'] == 'pro' ]
+        return prowords
+    else:
+        return []
+```
+
+
+
+```python
 d = {"book":"\n@@第一章 执业药师与健康中国战略\n\n@@第二章 执业药师与健康中国战略\n"}
 re = requests.post(url="http://192.168.0.140:666/bookmenu", json=d, headers={'Content-Type':'application/json'}).json()
 ```
