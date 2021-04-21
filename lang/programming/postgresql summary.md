@@ -2299,6 +2299,20 @@ yum install ffmpeg ffmpeg-devel -y
 
 
 ```
+ffmpeg -ss 01:23:45 -i input -frames:v 1 -q:v 2 output.jpg
+For JPEG output use -q:v to control output quality. Full range is a linear scale of 1-31 where a lower value results in a higher quality. 2-5 is a good range to try.
+
+# 出错解决
+https://www.reddit.com/r/ffmpeg/comments/lcttpl/deprecated_pixel_format_used_make_sure_you_did/ 
+
+ffmpeg -i test.avi -y -f image2 -ss 00:00:00 -vframes 1 test.jpg
+```
+
+
+
+
+
+```
 ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
 ```
 
