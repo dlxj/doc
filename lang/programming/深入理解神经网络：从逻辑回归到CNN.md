@@ -3630,7 +3630,7 @@ https://github.com/duolingo/halflife-regression
 
 [Google Colab 的正确使用姿势](https://zhuanlan.zhihu.com/p/218133131)
 
-
+[How To Run CUDA C or C++ on Google Colab or Azure Notebook](https://harshityadav95.medium.com/how-to-run-cuda-c-or-c-on-google-colab-or-azure-notebook-ea75a23a5962)
 
 
 
