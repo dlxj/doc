@@ -3491,6 +3491,49 @@ https://zhuanlan.zhihu.com/p/83596443
 
 
 
+```
+抽取式摘要的模式主要是使用算法从源文档中提取现成的句子作为摘要
+生成式摘要比较接近于我们先理解文本内容，然后再自己写出一段话来对给定的文本进行概括的一种方式
+    https://kexue.fm/archives/8046
+
+
+TextRank的优点在于不需要标注数据，不需要进行预训练，效果尚可。但是缺点也很明显。从其核心思想可以看出来，它挑选摘要句时会侧重于挑选那些与很多句子相似度高的句子。
+    https://zhuanlan.zhihu.com/p/83596443
+
+
+摘要抽取算法——最大边界相关算法MMR(Maximal Marginal Relevance) 实践
+    https://www.jianshu.com/p/4a2f7e5d45da
+    生成式一般采用的是监督式学习算法，最常见的就是sequence2sequence模型，需要大量的训练数据。生成式的优点是模型可以学会自己总结文章的内容，而它的缺点是生成的摘要可能会出现语句不通顺的情况。
+    抽取式指的摘要是从文章中抽出一些重要的句子，代表整篇文章的内容。抽取式的优点是生成的摘要不会出现语句不通顺的情况，而它的缺点是缺乏文本总结能力，生成的摘要可能出现信息丢失的情况。
+
+
+利用最大边缘相关改进一个简单的文本摘要程序
+    https://www.cnblogs.com/little-horse/p/7191287.html
+    具体地说，在MMR模型中，同时将相关性和多样性进行衡量。因此，可以方便的调节相关性和多样性的权重来满足偏向“需要相似的内容”或者偏向“需要不同方面的内容”的要求。摘要的核心便是要从原文句子中选一个句子集合，使得该集合在相关性与多样性的评测标准下，得分最高。
+
+
+《自动文摘研究进展与趋势》
+    最大边缘相关法(Maximal Marginal Relevance – MMR)(Carbonell and Goldstein, 1998)，即在每次选取过程中，贪心选择与查询最相关或内容最重要、同时和已选择信息重叠性最小的结果。
+
+
+《基于分层最大边缘相关的柬语多文档抽取式摘要方法》
+    最大边缘相关算法MMR(maximalmarginalrelevance),是一种用于实现文档摘要的方法。新闻文本    
+    中包含许多重复的背景信息。MMR的主要思想是使所选的摘要句与文档主旨高度相关,在确保摘要多样
+    性的同时,使候选摘要句与已选摘要句之间的差异性尽可能大,最终摘要结果仅有较低冗余信息,达到平衡
+    摘要句之间多样性和差异性的目的。
+
+    https://blog.csdn.net/qq_25222361/article/details/78694617
+        自动文摘评测方法：Rouge-1、Rouge-2、Rouge-L、Rouge-S
+
+
+算法的思想：
+    与总体相关性越高越好（相关性），与已抽出部分相关性越低越好（冗余性）
+```
+
+
+
+
+
 ### 遗忘曲线
 
 
@@ -3580,6 +3623,14 @@ https://github.com/duolingo/halflife-regression
 ## 高端玩法：标题生成
 
 [从语言模型到Seq2Seq：Transformer如戏，全靠Mask](https://kexue.fm/archives/6933)
+
+[万创杯 中医药天池大数据竞赛](https://github.com/kangyishuai/CHINESE-MEDICINE-QUESTION-GENERATION)
+
+[NLP实战：使用Bert4Keras工具包+Colab实现命名实体识别NER任务](https://www.jianshu.com/p/4254053ff601)
+
+[Google Colab 的正确使用姿势](https://zhuanlan.zhihu.com/p/218133131)
+
+
 
 
 

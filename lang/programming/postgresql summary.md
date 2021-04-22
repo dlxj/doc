@@ -2299,7 +2299,19 @@ yum install ffmpeg ffmpeg-devel -y
 
 
 ```
-ffmpeg -ss 01:23:45 -i input -frames:v 1 -q:v 2 output.jpg
+ffmpeg -ss <start_time> -i video.mp4 -t <duration> -q:v 2 -vf select="eq(pict_type\,PICT_TYPE_I)" -vsync 0 frame%03d.jpg
+
+ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640 -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -r 1 -q:v 2 -f image2 -frames:v 1 snapshot.jpg
+
+```
+
+
+
+
+
+```
+ffmpeg -y -ss 00:01:12.960 -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -skip_frame nokey -frames:v 1 -q:v 2 output.jpg
+
 For JPEG output use -q:v to control output quality. Full range is a linear scale of 1-31 where a lower value results in a higher quality. 2-5 is a good range to try.
 
 # 出错解决
@@ -2313,7 +2325,7 @@ ffmpeg -i test.avi -y -f image2 -ss 00:00:00 -vframes 1 test.jpg
 
 
 ```
-ffmpeg -i "F:\Downloads\[Kamigami] Slam Dunk [HDTV x264 960×720 AAC(Jap,Man,Can) MKV Sub(Chs,Cht,Jap)]\[Kamigami] Slam Dunk - 01 [HDTV x264 960×720 AAC(Jap,Man,Can) Sub(Chs,Cht,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
+ffmpeg -i "[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -vn -ss 00:01:12.960 -to 00:01:14.640 -acodec mp3 -ar 44100 -ac 2 -b:a 192k ttttt.ts
 ```
 
 
@@ -3331,7 +3343,22 @@ frpc.exe -c frpc.ini
 
 
 
+# NAS
 
+
+
+```
+linux使用LVM合并硬盘
+FreeNAS11.0-U4配置iSCSI，给你电脑安装一个远程硬盘
+ISCSI实现磁盘网络共享以及LVM方式共享拓展
+用LVM，把四个盘在逻辑上集合成一个大盘组，再分区。
+```
+
+
+
+```
+以 FreeNAS 举例，创建 iSCSI 存储的数量没有限制，还可以对已创建的 iSCSI 存储执行动态扩容，给电脑挂载一块无限容量的硬盘，很美妙吧。
+```
 
 
 
