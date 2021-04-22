@@ -3536,6 +3536,156 @@ TextRank的优点在于不需要标注数据，不需要进行预训练，效果
 
 ### 遗忘曲线
 
+#### 曲线拟合
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import torch as t
+from torch.autograd import Variable as var
+
+
+def get_data(x,w,b,d):
+    c,r = x.shape
+    #y = (w * x * x + b*x + d) #+ (0.1*(2*np.random.rand(c,r)-1))
+    y = x * x
+    return(y)
+
+xs = np.arange(-3,3,0.01).reshape(-1,1)
+ys = get_data(xs,1,-2,3)
+
+xs = var(t.Tensor(xs))
+ys = var(t.Tensor(ys))
+
+class Fit_model(t.nn.Module):
+    def __init__(self):
+        super(Fit_model,self).__init__()
+        self.linear1 = t.nn.Linear(1,16)
+        self.relu = t.nn.ReLU()
+        self.linear2 = t.nn.Linear(16,1)
+
+        self.criterion = t.nn.MSELoss()
+        self.opt = t.optim.SGD(self.parameters(),lr=0.01)
+    def forward(self, input):
+        y = self.linear1(input)
+        y = self.relu(y)
+        y = self.linear2(y)
+        return y
+        
+model = Fit_model()
+for e in range(4001):
+    y_pre = model(xs)
+
+    loss = model.criterion(y_pre,ys)
+    if(e%200==0):
+        print(e,loss.data)
+    
+    # Zero gradients
+    model.opt.zero_grad()
+    # perform backward pass
+    loss.backward()
+    # update weights
+    model.opt.step()
+
+ys_pre = model(xs)
+
+plt.title("curve")
+plt.plot(xs.data.numpy(),ys.data.numpy())
+plt.plot(xs.data.numpy(),ys_pre.data.numpy())
+plt.legend("ys","ys_pre")
+plt.show()
+```
+
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import torch as t
+from torch.autograd import Variable as var
+
+"""
+20分钟后，42%被遗忘掉，58%被记住。
+1小时后，56%被遗忘掉，44%被记住。
+1天后，74%被遗忘掉，26%被记住。
+1周后，77%被遗忘掉，23%被记住。
+1个月后，79%被遗忘掉，21%被记住。
+
+但是，艾宾浩斯的实验中使用的是毫无意义的字母组合，因此，相对于有意义的词汇而言，其实验没有可比性和参照性的指责也同时存在。并且，再认知可能的遗忘与完全遗忘也没有被区分开来
+"""
+
+
+def get_data(x,w,b,d):
+    c,r = x.shape
+    #y = (w * x * x + b*x + d) #+ (0.1*(2*np.random.rand(c,r)-1))
+    y = x * x
+    return(y)
+
+# xs = np.arange(-3,3,0.01).reshape(-1,1)
+# ys = get_data(xs,1,-2,3)
+
+# 单位统一成天
+xs = np.array( [
+    20/60/24,
+    1/24,
+    1,
+    1*7,
+    1*30
+] ).reshape(-1,1)
+
+ys = np.array( [
+    0.42,
+    0.56,
+    0.74,
+    0.77,
+    0.79
+] ).reshape(-1,1)
+
+
+xs = var(t.Tensor(xs))
+ys = var(t.Tensor(ys))
+
+class Fit_model(t.nn.Module):
+    def __init__(self):
+        super(Fit_model,self).__init__()
+        self.linear1 = t.nn.Linear(1,16)
+        self.relu = t.nn.ReLU()
+        self.linear2 = t.nn.Linear(16,1)
+
+        self.criterion = t.nn.MSELoss()
+        self.opt = t.optim.SGD(self.parameters(),lr=0.01)
+    def forward(self, input):
+        y = self.linear1(input)
+        y = self.relu(y)
+        y = self.linear2(y)
+        return y
+        
+model = Fit_model()
+for e in range(4001):
+    y_pre = model(xs)
+
+    loss = model.criterion(y_pre,ys)
+    if(e%200==0):
+        print(e,loss.data)
+    
+    # Zero gradients
+    model.opt.zero_grad()
+    # perform backward pass
+    loss.backward()
+    # update weights
+    model.opt.step()
+
+ys_pre = model(xs)
+
+plt.title("curve")
+plt.plot(xs.data.numpy(),ys.data.numpy())
+plt.plot(xs.data.numpy(),ys_pre.data.numpy())
+plt.legend("ys","ys_pre")
+plt.show()
+```
+
+
+
 
 
 ```
@@ -3628,9 +3778,31 @@ https://github.com/duolingo/halflife-regression
 
 [NLP实战：使用Bert4Keras工具包+Colab实现命名实体识别NER任务](https://www.jianshu.com/p/4254053ff601)
 
+- https://github.com/bojone/bert4keras/blob/master/examples/task_sequence_labeling_ner_crf.py
+- https://colab.research.google.com/drive/1p53J9wH5PI5Fb7vhRCexTSot1TShIOxA#scrollTo=_lPjP3oURiRX
+
+> NER（named entity recognition）的本质其实就是从文本识别某些特定实体指称的边界和类别。这些特定的实体可以是：人名、地名、组织机构名、时间和数字表达（包括时间、日期、货币量和百分数等）。
+
 [Google Colab 的正确使用姿势](https://zhuanlan.zhihu.com/p/218133131)
 
 [How To Run CUDA C or C++ on Google Colab or Azure Notebook](https://harshityadav95.medium.com/how-to-run-cuda-c-or-c-on-google-colab-or-azure-notebook-ea75a23a5962)
+
+[CS224N: PyTorch Tutorial (Winter '21)](http://web.stanford.edu/class/cs224n/materials/CS224N_PyTorch_Tutorial.html)
+
+[图解 BERT 预训练模型](https://zhuanlan.zhihu.com/p/279452588)
+
+[当Bert遇上Keras：这可能是Bert最简单的打开姿势](https://kexue.fm/archives/6736)
+
+
+
+```
+Google Colab可直接从github打开Jupyter notebooks，
+
+只需将“http:// github.com/”替换为“https:// colab.research.google.com/github/”，就会直接加载到Colab中 
+
+```
+
+
 
 
 
