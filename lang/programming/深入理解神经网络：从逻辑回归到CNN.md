@@ -3793,6 +3793,8 @@ https://github.com/duolingo/halflife-regression
 
 [当Bert遇上Keras：这可能是Bert最简单的打开姿势](https://kexue.fm/archives/6736)
 
+[《Attention is All You Need》浅读（简介+代码）](https://kexue.fm/archives/4765)
+
 
 
 ```
