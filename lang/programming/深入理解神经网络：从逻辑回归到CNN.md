@@ -3626,6 +3626,7 @@ def get_data(x,w,b,d):
 
 # 单位统一成天
 xs = np.array( [
+    0,
     20/60/24,
     1/24,
     1,
@@ -3634,11 +3635,12 @@ xs = np.array( [
 ] ).reshape(-1,1)
 
 ys = np.array( [
-    0.42,
-    0.56,
-    0.74,
-    0.77,
-    0.79
+    1.0,
+    1-0.42,
+    1-0.56,
+    1-0.74,
+    1-0.77,
+    1-0.79
 ] ).reshape(-1,1)
 
 
@@ -3682,6 +3684,7 @@ plt.plot(xs.data.numpy(),ys.data.numpy())
 plt.plot(xs.data.numpy(),ys_pre.data.numpy())
 plt.legend("ys","ys_pre")
 plt.show()
+
 ```
 
 
@@ -3776,6 +3779,8 @@ https://github.com/duolingo/halflife-regression
 
 [万创杯 中医药天池大数据竞赛](https://github.com/kangyishuai/CHINESE-MEDICINE-QUESTION-GENERATION)
 
+[SPACES：“抽取-生成”式长文本摘要（法研杯总结）](https://github.com/bojone/SPACES)
+
 [NLP实战：使用Bert4Keras工具包+Colab实现命名实体识别NER任务](https://www.jianshu.com/p/4254053ff601)
 
 - https://github.com/bojone/bert4keras/blob/master/examples/task_sequence_labeling_ner_crf.py
@@ -3795,6 +3800,8 @@ https://github.com/duolingo/halflife-regression
 
 [《Attention is All You Need》浅读（简介+代码）](https://kexue.fm/archives/4765)
 
+[Attention Is All You Need | 源码解析（pytorch）](https://zhuanlan.zhihu.com/p/126671976)
+
 
 
 ```
@@ -3802,6 +3809,15 @@ Google Colab可直接从github打开Jupyter notebooks，
 
 只需将“http:// github.com/”替换为“https:// colab.research.google.com/github/”，就会直接加载到Colab中 
 
+```
+
+```
+https://colab.research.google.com/github/bojone/SPACES
+```
+
+```python
+import os
+os.chdir("/content/gdrive/MyDrive")
 ```
 
 
@@ -3831,6 +3847,28 @@ TextRank的优点在于不需要标注数据，不需要进行预训练，效果
 ```
 
 
+
+### BERT
+
+#### MASK
+
+```
+# https://github.com/ymcui/Chinese-BERT-wwm#%E7%AE%80%E4%BB%8B
+简介
+Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。 简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个子词，在生成训练样本时，这些被分开的子词会随机被mask。 在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即全词Mask。
+
+需要注意的是，这里的mask指的是广义的mask（替换成[MASK]；保持原词汇；随机替换成另外一个词），并非只局限于单词替换成[MASK]标签的情况。 更详细的说明及样例请参考：#4
+
+同理，由于谷歌官方发布的BERT-base, Chinese中，中文是以字为粒度进行切分，没有考虑到传统NLP中的中文分词（CWS）。 我们将全词Mask的方法应用在了中文中，使用了中文维基百科（包括简体和繁体）进行训练，并且使用了哈工大LTP作为分词工具，即对组成同一个词的汉字全部进行Mask。
+
+下述文本展示了全词Mask的生成样例。 注意：为了方便理解，下述例子中只考虑替换成[MASK]标签的情况。
+
+说明	样例
+原始文本	使用语言模型来预测下一个词的probability。
+分词文本	使用 语言 模型 来 预测 下 一个 词 的 probability 。
+原始Mask输入	使 用 语 言 [MASK] 型 来 [MASK] 测 下 一 个 词 的 pro [MASK] ##lity 。
+全词Mask输入	使 用 语 言 [MASK] [MASK] 来 [MASK] [MASK] 下 一 个 词 的 [MASK] [MASK] [MASK] 。
+```
 
 
 
