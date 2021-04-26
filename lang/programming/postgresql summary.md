@@ -2303,6 +2303,17 @@ ffmpeg -ss <start_time> -i video.mp4 -t <duration> -q:v 2 -vf select="eq(pict_ty
 
 ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640 -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -r 1 -q:v 2 -f image2 -frames:v 1 snapshot.jpg
 
+
+
+
+ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640 -i "/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" "frames/out-%03d.jpg"
+
+
+# 成功
+# https://www.cnblogs.com/jisongxie/p/9948845.html
+ffmpeg -y -ss 00:01:12.960 -t 10 -i "/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -r 1 -q:v 2 -f image2 "frames/out-%03d.jpg"
+
+
 ```
 
 
@@ -3359,7 +3370,6 @@ ISCSI实现磁盘网络共享以及LVM方式共享拓展
 ```
 以 FreeNAS 举例，创建 iSCSI 存储的数量没有限制，还可以对已创建的 iSCSI 存储执行动态扩容，给电脑挂载一块无限容量的硬盘，很美妙吧。
 ```
-
 
 
 
