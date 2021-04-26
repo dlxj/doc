@@ -3781,6 +3781,44 @@ https://github.com/duolingo/halflife-regression
 
 [SPACES：“抽取-生成”式长文本摘要（法研杯总结）](https://github.com/bojone/SPACES)
 
+> ```
+> ”代码唯一修改的地方就是在运行extract_convert.py文件的时候报错，TypeError: Object of type int64 is not JSON serializable“该问题我也遇到过，在写入文档前，即 f.write(json.dumps(d, ensure_ascii=False) + '\n')前，加入两行代码
+> d = repr(d)
+> d = eval(d)就可以正常运行了，不太明白什么原因，转换数据类型再转回来就可以存储了，确实很奇怪
+> ```
+>
+> ```
+> import os
+> #os.environ["TF_KERAS"] = '1'  # 关键配配，出错的时侯切换试试
+> %tensorflow_version 1.14
+> ```
+>
+> ```
+> # ! git clone https://github.com/bojone/SPACES.git
+> ! git clone https://github.com/dlxj/SPACES.git 
+> ```
+> ```
+> # 授权要点出来的url ，然后复制key 回来，输入，回车
+> from google.colab import drive
+> drive.mount('/gdrive')
+> ! ln -s "/gdrive/My Drive/BERT" "/content/"
+> ! unzip ./BERT/chinese_roberta_wwm_ext_L-12_H-768_A-12.zip # -d ./BERT/chinese_roberta_wwm_ext_L-12_H-768_A-12
+> ```
+>
+> ```
+> https://drive.google.com/drive/folders/1tFs-wMoXIY8zganI2hQgDBoDPqA8pSmh
+> ```
+
+[提速不掉点：基于词颗粒度的中文WoBERT](https://kexue.fm/archives/7758)
+
+
+
+[BERT多分类：你还要我怎样？----bert源码使用](https://blog.csdn.net/sjyttkl/article/details/104767467)
+
+[手写Transformer以及思考](http://www.sniper97.cn/index.php/note/deep-learning/note-deep-learning/3620/)
+
+
+
 [NLP实战：使用Bert4Keras工具包+Colab实现命名实体识别NER任务](https://www.jianshu.com/p/4254053ff601)
 
 - https://github.com/bojone/bert4keras/blob/master/examples/task_sequence_labeling_ner_crf.py
@@ -3818,6 +3856,8 @@ https://colab.research.google.com/github/bojone/SPACES
 ```python
 import os
 os.chdir("/content/gdrive/MyDrive")
+
+import pdb; pdb.set_trace() # 调试， exit 退出
 ```
 
 
@@ -3871,6 +3911,33 @@ Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在201
 ```
 
 
+
+
+
+## BERT
+
+
+```
+# # http://www.sniper97.cn/index.php/note/deep-learning/traslation/3509/
+2018年是机器学习模型处理文本（更准确的说是自然语言处理，NLP）的转折点。我们对于如何以最佳方式表达单词和句子的概念理解正在迅速发展，这种理解能够更好的捕捉句子的潜在含义和关系。
+```
+
+```
+最近的里程碑式发展是BERT的发布，该事件被描述为NLP新时代的开始。BERT模型在多个基于语言处理的任务中都打破了记录。
+```
+
+> BERT**是一个经过训练的Transformer编码器，它是BERT的基础**
+
+
+
+#### 两种大小的BERT：
+
+- BERT BASE 和OpenAI Transformer大小差不多，目的是比较性能。
+- BERT LARGE 一个巨大的模型，它达到了论文中提出的SOTA。
+
+```
+两种BERT模型都有大量的编码层（论文中称作Transformer块）——BASE版有12层，LARGE版有24层。他们也有一个前馈神经网络（BASE有768个隐藏单元，而LARGE有1024个）和多头注意力机制（BASE有12个，LARGE有16个），而不是Transformer中默认的6个编码层、512个隐藏单元和8头。
+```
 
 
 

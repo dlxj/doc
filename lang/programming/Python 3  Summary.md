@@ -4375,6 +4375,25 @@ contentType为application/json 适用于 向后台传递json字符串 ， 此时
 
 
 
+### aria2
+
+
+
+```
+通过不断优化参数，最终最优的命令为：aria2c -j 10 -i test_url.csv -s 1 -q，其中-j 10表示10个进程同时下载，-i test_url.csv表示从文件中逐行读取URL进行下载，-s 1表示单个线程(主要是由于文件小，如果大文件则选用多线程会更快)，-q表示静默模式(不会逐行打印下载信息，节约时间)。
+
+```
+
+```
+ https://github.com/aria2/aria2/
+ Aria2 for Chrome
+ https://github.com/dlxj/fake115
+```
+
+
+
+
+
 
 
 ## Mysql
@@ -4392,6 +4411,11 @@ def weights_replaceinto(ls):
         columns = ",".join( list(d.keys()) )
         values = ",".join( ( map(lambda w: r"'" + w + r"'" ,list(d.values()) ) ) )
         sqls.append(f"INSERT INTO weights ({columns}) VALUES({values}) ON DUPLICATE KEY UPDATE updateTime=now();")
+```
+
+```
+# decimal 类型转换
+cast(s.DifficultyScore as signed) AS '正确率'
 ```
 
 
