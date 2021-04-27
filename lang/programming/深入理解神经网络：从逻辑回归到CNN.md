@@ -3779,11 +3779,15 @@ https://github.com/duolingo/halflife-regression
 
 [李宏毅2021作业](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
+[手写实现李航《统计学习方法》书中全部算法](https://github.com/Dod-o/Statistical-Learning-Method_Code)
+
 [动手深度学习——编码器—解码器（seq2seq）](https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter10_natural-language-processing/10.9_seq2seq)
 
 [一文看懂 NLP 里的模型框架 Encoder-Decoder 和 Seq2Seq](https://easyaitech.medium.com/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82-nlp-%E9%87%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6-encoder-decoder-%E5%92%8C-seq2seq-1012abf88572)
 
 [《百面机器学习》]()
+
+
 
 
 
@@ -3953,5 +3957,77 @@ Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在201
 
 
 
+#### Encoder-Decoder
+
+```
+https://easyaitech.medium.com/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82-nlp-%E9%87%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6-encoder-decoder-%E5%92%8C-seq2seq-1012abf88572
+
+Encoder-Decoder 是一类算法的统称，是一个通用的框架，在这个框架下可以使用不同的算法来解决不同的任务
+
+```
 
 
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210427095256319.png" alt="image-20210427095256319" style="zoom:50%;" />
+
+1. 不论输入和输出的长度是什么，中间的「向量 c」 长度都是固定的（这也是它的缺陷，下文会详细说明）
+2. 根据不同的任务可以选择不同的编码器和解码器（可以是一个 [*RNN*](https://easyai.tech/ai-definition/rnn/) ，但通常是其变种 [*LSTM*](https://easyai.tech/ai-definition/lstm/) 或者 *GRU* ）
+
+只要是符合上面的框架，都可以统称为 Encoder-Decoder 模型。说到 Encoder-Decoder 模型就经常提到一个名词 — — Seq2Seq。
+
+
+
+**Encoder-Decoder 强调的是方法，既把输入编码成定长的向量，然后生成人类可以理解的输入**
+
+应用：**机器翻译、对话机器人、诗词生成、代码补全、文章摘要（文本 — 文本）**
+
+
+
+
+
+#### Seq2Seq
+
+Seq2Seq（是 Sequence-to-sequence 的缩写），就如字面意思，输入一个序列，输出另一个序列。这种结构最重要的地方在于输入序列和输出序列的长度是可变的。
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210427095816591.png" alt="image-20210427095816591" style="zoom:50%;" />
+
+如上图：输入了 6 个汉字，输出了 3 个英文单词。输入和输出的长度不同。
+
+
+
+在 Seq2Seq 框架提出之前，深度神经网络在图像分类等问题上取得了非常好的效果。在其擅长解决的问题中，输入和输出通常都可以表示为固定长度的向量，如果长度稍有变化，会使用补零等操作。
+然而许多重要的问题，例如机器翻译、语音识别、自动对话等，表示成序列后，其长度事先并不知道。因此如何突破先前深度神经网络的局限，使其可以适应这些场景，成为了13年以来的研究热点，Seq2Seq框架应运而生。
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210427110249918.png" alt="image-20210427110249918" style="zoom: 67%;" />
+
+“<eos>”（end of sequence）
+
+"<bos>"（beginning of sequence）
+
+https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter10_natural-language-processing/10.9_seq2seq
+
+
+
+
+
+**Seq2Seq 强调的是目的，既满足输入序列、输出序列的都可称为Seq2Seq**
+
+
+
+
+
+
+
+#### Attention 解决信息丢失问题
+
+**Attention 机制就是为了解决「信息过长，信息丢失」的问题。**
+
+Encoder-Decoder 因为中间是定长向量，当输入信息太长时，会丢失掉一些信息。
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210427104701228.png" alt="image-20210427104701228" style="zoom:50%;" />
+
+*Ａttention* 模型的特点是 Eecoder 不再将整个输入序列编码为固定长度的「中间向量 Ｃ」 ，而是编码成一个向量的序列。
