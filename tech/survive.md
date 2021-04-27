@@ -2,6 +2,20 @@
 
 
 
+
+
+[李宏毅2020作业](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
+
+[李宏毅2021作业 pytorch+colab](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
+
+[动手深度学习——编码器—解码器（seq2seq）](https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter10_natural-language-processing/10.9_seq2seq)
+
+[一文看懂 NLP 里的模型框架 Encoder-Decoder 和 Seq2Seq](https://easyaitech.medium.com/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82-nlp-%E9%87%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6-encoder-decoder-%E5%92%8C-seq2seq-1012abf88572)
+
+[《百面机器学习》]()
+
+
+
 # Doc
 
 [用 github actions 自動發佈 gh-pages]([https://medium.com/@milkmidi/%E6%B7%B1%E5%85%A5%E4%BD%86%E4%B8%8D%E6%B7%BA%E5%87%BA-%E5%A6%82%E4%BD%95%E7%94%A8-github-actions-%E8%87%AA%E5%8B%95%E7%99%BC%E4%BD%88-gh-pages-8183464dfe84](https://medium.com/@milkmidi/深入但不淺出-如何用-github-actions-自動發佈-gh-pages-8183464dfe84))
