@@ -3777,9 +3777,20 @@ https://github.com/duolingo/halflife-regression
 
 [李宏毅2020作业](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 
+- [cs224n lec08](https://blog.csdn.net/weixin_41332009/article/details/114129748?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-18.control&dist_request_id=1332049.21748.16195148309019773&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-18.control)
+- [cs224 Neural-Machine-Translation-with-Attention](https://github.com/dlxj/DeepNLP-models-Pytorch)
+
 [李宏毅2021作业](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
+[《机器翻译：基础与模型》肖桐 朱靖波](https://github.com/NiuTrans/MTBook)
+
+- 束搜索（Beam Search）p.73 （又称束剪枝（Beam Pruning））
+
 [手写实现李航《统计学习方法》书中全部算法](https://github.com/Dod-o/Statistical-Learning-Method_Code)
+
+[GitHub中文排行榜](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
+
+[西瓜书公式推导](https://datawhalechina.github.io/pumpkin-book/#/)
 
 [动手深度学习——编码器—解码器（seq2seq）](https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter10_natural-language-processing/10.9_seq2seq)
 

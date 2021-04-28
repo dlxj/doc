@@ -1,4 +1,12 @@
 ```
+Google Colab可直接从github打开Jupyter notebooks，
+
+只需将“github.com”替换为“colab.research.google.com/github”，就会直接加载到Colab中 
+```
+
+
+
+```
 import os
 os.chdir("/content/gdrive/MyDrive")
 
