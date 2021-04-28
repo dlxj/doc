@@ -1,5 +1,6 @@
 
 # https://www.jianshu.com/p/765afe303bf8
+# https://github.com/MikimotoH/furigana 汉字标注
 
 # pip install psycopg2-binary
 
@@ -93,16 +94,16 @@ host = '111.229.53.195'
 port1 = 5432
 port2 = 54322
 
-hostAPI = 'echodict.com'
-#hostAPI = '127.0.0.1'
+#hostAPI = 'echodict.com'
+hostAPI = '127.0.0.1'
 
-pool1 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
+pool1 = psycopg2.pool.SimpleConnectionPool(20, 20, user="postgres",
     password="postgres",
     host=host,
     port=port1,
     database="studio")
 
-pool2 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
+pool2 = psycopg2.pool.SimpleConnectionPool(20, 20, user="postgres",
     password="postgres",
     host=host,
     port=port2,
