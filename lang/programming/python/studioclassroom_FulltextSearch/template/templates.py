@@ -1,6 +1,7 @@
 
 # https://www.jianshu.com/p/765afe303bf8
 # https://github.com/MikimotoH/furigana 汉字标注
+# ThreadedConnectionPool
 
 # pip install psycopg2-binary
 
