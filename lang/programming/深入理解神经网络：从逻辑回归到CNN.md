@@ -3800,6 +3800,8 @@ https://github.com/duolingo/halflife-regression
 
 [西瓜书公式推导](https://datawhalechina.github.io/pumpkin-book/#/)
 
+[(花书) 数学推导](https://github.com/MingchaoZhu/DeepLearning)
+
 [动手深度学习——编码器—解码器（seq2seq）](https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter10_natural-language-processing/10.9_seq2seq)
 
 [一文看懂 NLP 里的模型框架 Encoder-Decoder 和 Seq2Seq](https://easyaitech.medium.com/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82-nlp-%E9%87%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6-encoder-decoder-%E5%92%8C-seq2seq-1012abf88572)
