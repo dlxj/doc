@@ -2308,6 +2308,21 @@ https://zhuanlan.zhihu.com/p/147019759
 
 
 
+```
+# hls.js
+https://zhuanlan.zhihu.com/p/158525554
+https://segmentfault.com/a/1190000018503818 # 干货
+https://blog.csdn.net/weixin_43029824/article/details/103391494 # 更干货
+```
+
+
+
+
+
+
+
+![image-20210428171601026](postgresql summary.assets/image-20210428171601026.png)
+
 
 
 ```
