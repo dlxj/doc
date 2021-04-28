@@ -98,13 +98,13 @@ port2 = 54322
 #hostAPI = 'echodict.com'
 hostAPI = '127.0.0.1'
 
-pool1 = psycopg2.pool.SimpleConnectionPool(20, 20, user="postgres",
+pool1 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="postgres",
     host=host,
     port=port1,
     database="studio")
 
-pool2 = psycopg2.pool.SimpleConnectionPool(20, 20, user="postgres",
+pool2 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="postgres",
     host=host,
     port=port2,
@@ -121,6 +121,11 @@ pool1.putconn(connection)
 @app.route('/', methods=['get'])
 @cross_origin(supports_credentials=True)
 def default_get():
+
+    
+
+    #return render_template_string(readstring('static/index.html'))
+
 
     #session['keyword'] = 'result'
     
