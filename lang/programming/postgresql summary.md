@@ -2299,6 +2299,18 @@ yum install ffmpeg ffmpeg-devel -y
 
 
 ```
+# m3u8
+https://yocoha.com/article/31
+https://www.jianshu.com/p/e97f6555a070
+https://zhuanlan.zhihu.com/p/147019759
+
+```
+
+
+
+
+
+```
 ffmpeg -ss <start_time> -i video.mp4 -t <duration> -q:v 2 -vf select="eq(pict_type\,PICT_TYPE_I)" -vsync 0 frame%03d.jpg
 
 ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640 -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -r 1 -q:v 2 -f image2 -frames:v 1 snapshot.jpg
