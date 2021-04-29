@@ -3796,6 +3796,8 @@ https://github.com/duolingo/halflife-regression
 
 [教育目的的GPT](https://github.com/karpathy/minGPT)
 
+[numpy 手写所有主流ML](https://github.com/ddbourgin/numpy-ml)
+
 
 
 [循环神经网络 RNN-算法工程师手册](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/6_RNN.html)
@@ -4058,3 +4060,15 @@ Encoder-Decoder 因为中间是定长向量，当输入信息太长时，会丢�
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210427104701228.png" alt="image-20210427104701228" style="zoom:50%;" />
 
 *Ａttention* 模型的特点是 Eecoder 不再将整个输入序列编码为固定长度的「中间向量 Ｃ」 ，而是编码成一个向量的序列。
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210429141931516.png" alt="image-20210429141931516" style="zoom:50%;" />
+
+p.353《机器翻译：基础与模型》肖桐 朱靖波
+
+
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210429143540051.png" alt="image-20210429143540051" style="zoom: 67%;" />
+
+p.355
