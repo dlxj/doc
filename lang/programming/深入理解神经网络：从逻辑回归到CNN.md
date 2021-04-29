@@ -3792,6 +3792,12 @@ https://github.com/duolingo/halflife-regression
 
     
 
+[seq2seq pytorch 机器翻译源码](https://github.com/SamLynnEvans/Transformer)
+
+[教育目的的GPT](https://github.com/karpathy/minGPT)
+
+
+
 [循环神经网络 RNN-算法工程师手册](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/chapters/6_RNN.html)
 
 [手写实现李航《统计学习方法》书中全部算法](https://github.com/Dod-o/Statistical-Learning-Method_Code)
