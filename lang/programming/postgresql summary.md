@@ -2288,6 +2288,12 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
+详细命令
+
+https://www.huaweicloud.com/articles/4a48bc251c6378d717caaf1f27acf1c4.html
+
+
+
 ```
 # ffmpeg on centos7
 yum -y install epel-release
