@@ -2317,6 +2317,12 @@ https://blog.csdn.net/weixin_43029824/article/details/103391494 # 更干货
 
 
 
+```
+# success
+# hevc 表示使用h.265 编码
+ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640  -i t.mkv  -codec:v hevc -acodec mp3 -ar 44100 -ac 2 -b:a 192k t.ts
+```
+
 
 
 
