@@ -1,5 +1,7 @@
 
 # https://www.jianshu.com/p/765afe303bf8
+# https://github.com/MikimotoH/furigana 汉字标注
+# ThreadedConnectionPool
 
 # pip install psycopg2-binary
 
@@ -93,16 +95,16 @@ host = '111.229.53.195'
 port1 = 5432
 port2 = 54322
 
-hostAPI = 'echodict.com'
-#hostAPI = '127.0.0.1'
+#hostAPI = 'echodict.com'
+hostAPI = '127.0.0.1'
 
-pool1 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
+pool1 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="postgres",
     host=host,
     port=port1,
     database="studio")
 
-pool2 = psycopg2.pool.SimpleConnectionPool(1, 20, user="postgres",
+pool2 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="postgres",
     host=host,
     port=port2,
@@ -119,6 +121,14 @@ pool1.putconn(connection)
 @app.route('/', methods=['get'])
 @cross_origin(supports_credentials=True)
 def default_get():
+
+    path = 'static/index.html'
+    with open(path, 'r', encoding="utf-8") as fmp3:
+        data = fmp3.read()
+        return render_template_string(data)
+
+    #return render_template_string(readstring('static/index.html'))
+
 
     #session['keyword'] = 'result'
     
@@ -238,17 +248,17 @@ def stream_mp3():
     if 'id' in request.args:
         rowid = request.args.get('id')
 
-    conn2 = pool2.getconn()
-    with conn2.cursor() as cur2:
-        sql = f"SELECT id, audio FROM anime WHERE id={rowid};"
-        cur2.execute(sql)
-        row = cur2.fetchone()
-        idd = row[0]
-        bytea = row[1]
+    # conn2 = pool2.getconn()
+    # with conn2.cursor() as cur2:
+    #     sql = f"SELECT id, audio FROM anime WHERE id={rowid};"
+    #     cur2.execute(sql)
+    #     row = cur2.fetchone()
+    #     idd = row[0]
+    #     bytea = row[1]
 
-        pool2.putconn(conn2)
+    #     pool2.putconn(conn2)
 
-        return Response(bytea, mimetype="audio/mpeg")
+    #     return Response(bytea, mimetype="audio/mpeg")
 
 #         import base64
 
@@ -280,4 +290,42 @@ if __name__ == "__main__":
 
 
     とかい【都会】  トカイ
+    """
+
+
+
+
+
+
+    """
+
+进程安全池
+
+    import os
+from psycopg2.pool import ThreadedConnectionPool
+
+
+class ProcessSafePoolManager:
+
+    def __init__(self, *args, **kwargs):
+        self.last_seen_process_id = os.getpid()
+        self.args = args
+        self.kwargs = kwargs
+        self._init()
+
+    def _init(self):
+        self._pool = ThreadedConnectionPool(*self.args, **self.kwargs)
+
+    def getconn(self):
+        current_pid = os.getpid()
+        if not (current_pid == self.last_seen_process_id):
+            self._init()
+            print "New id is %s, old id was %s" % (current_pid, self.last_seen_process_id)
+            self.last_seen_process_id = current_pid
+        return self._pool.getconn()
+
+    def putconn(self, conn):
+        return self._pool.putconn(conn)
+
+pool = ProcessSafePoolManager(1, 10, "host='127.0.0.1' port=12099")
     """
