@@ -3803,6 +3803,8 @@ https://github.com/duolingo/halflife-regression
 
 - 这个是真大佬  机翻、语音识别、图像识别
 
+[AI Challenger 2018 中的阅读理解数据集](https://github.com/foamliu/Reading-Comprehension)
+
 
 
 [seq2seq pytorch 机器翻译源码](https://github.com/SamLynnEvans/Transformer)

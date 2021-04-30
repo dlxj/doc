@@ -561,6 +561,19 @@ data_random_order_json = data_json[:-5] + '_random_order.json'
 
 
 
+### ``__all__``
+
+```
+__all__ 以”白名单“的形式暴露里面定义的符号
+
+__init__.py
+from .sampler import Sampler, ... xxx ...
+__all__ = ['Sampler', 'SequentialSampler', ... xxx ...]
+
+```
+
+
+
 
 
 ## File
@@ -571,6 +584,20 @@ data_random_order_json = data_json[:-5] + '_random_order.json'
 f = file('data/lsat.csv')
 score = np.loadtxt(f, delimiter=",")
 ```
+
+
+
+```
+  def get_dictionary(self, language):
+    # 載入字典
+    with open(os.path.join(self.root, f'word2int_{language}.json'), "r", encoding='UTF-8') as f:
+      word2int = json.load(f)
+    with open(os.path.join(self.root, f'int2word_{language}.json'), "r", encoding='UTF-8') as f:
+      int2word = json.load(f)
+    return word2int, int2word
+```
+
+
 
 
 
@@ -599,6 +626,21 @@ def readstring(fname):
 def unchinese_remove(s):
     return re.sub(r"[^\u4e00-\u9fa5]", "", s, flags=re.UNICODE)
 ```
+
+
+
+### Read Line
+
+
+
+```python
+    self.data = []
+    with open(os.path.join(self.root, f'{set_name}.txt'), "r", encoding='UTF-8') as f:
+      for line in f:
+        self.data.append(line)
+```
+
+
 
 
 
@@ -935,6 +977,25 @@ raise RuntimeError('some err')
  [x for x in range(11) if x%2 == 0]
  len([ k for k, _ in tasks.items()]) # 现有总任务数
 ```
+
+
+
+## yield
+
+```python
+def infinite_iter(data_loader):
+  it = iter(data_loader)
+  while True:
+    try:
+      ret = next(it)
+      yield ret
+    except StopIteration:
+      it = iter(data_loader)
+```
+
+
+
+
 
 
 
