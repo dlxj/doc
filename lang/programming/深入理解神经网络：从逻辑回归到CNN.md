@@ -1582,7 +1582,6 @@ $$
 > 投影是线性变换的同义词，投影向量的模长是垂直法向量的平面的截距
 >
 > - 这个截距就是仿射变换中的常数b
-> 
 
 
 
@@ -3779,7 +3778,14 @@ https://github.com/duolingo/halflife-regression
 
 - [作业答案 NTU_MachineLearning](https://github.com/IPINGCHOU/NTU_MachineLearning)
 
+  - > 工行纯visa卡（不要限联）可以，刚刚买了，邮编填了蒙大洲的59601，似乎免税了，9.9刀
+    >
+    > 以上卡的特点就是都只能在境外消费使用，在国内无法使用，这就是为什么国内很多人用信用卡申请失败的原因，失败的往往是那些用了VISA双币卡的信用卡，不是所有中国发行的信用卡都是被拒绝的。
+    >
+    > 招行的VISA全币卡，中国银行长城跨境通国际借记卡(VISA版)，交通银行信用卡(Master Card)，建设银行信用卡（Master Card）
+
 - [cs224n lec08](https://blog.csdn.net/weixin_41332009/article/details/114129748?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-18.control&dist_request_id=1332049.21748.16195148309019773&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-18.control)
+
 - [cs224 Neural-Machine-Translation-with-Attention](https://github.com/dlxj/DeepNLP-models-Pytorch)
 
 [李宏毅2021作业](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
