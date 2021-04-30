@@ -1572,6 +1572,13 @@ createDatabase_economistglobl()
 ## Docker
 
 ```
+service docker status
+service docker start
+```
+
+
+
+```
 docker exec -it centos7PG10 /bin/bash
 docker ps -a
 docker inspect

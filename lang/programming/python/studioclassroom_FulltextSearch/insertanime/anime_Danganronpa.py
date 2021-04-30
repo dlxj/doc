@@ -386,10 +386,10 @@ def extractVideo(videopath, begintime, endtime):
     
     out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-codec:v", "hevc",  "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
       "-ar", "44100", "-ac", "2", "-b:a", "192k", \
-        "tmp.t"])
+        "tmp.ts"])
 
     out_text = out_bytes.decode('utf-8')
-    bts = readImage("tmp.t")
+    bts = readImage("tmp.ts")
     #os.remove("tmp.t")
     return bts
 
@@ -621,6 +621,9 @@ def importAnime(animename, frtname, videoname, videopath):
                 begintime, endtime = parseSrtTime(t)
                 bts = extractAudio(videopath, begintime, endtime)
                 bts = psycopg2.Binary(bts)
+                bts_video = extractVideo(videopath, begintime, endtime)
+                bts_video = psycopg2.Binary(bts_video)
+
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
@@ -677,8 +680,8 @@ if __name__ == "__main__":
 
     #begin, end = parseSrtTime("00:01:12,960 --> 00:01:14,640")
 
-    host = '111.229.53.195'
-    #host = '209.141.34.77'
+    #host = '111.229.53.195'
+    host = '209.141.34.77'
     port = 54322
 
     createAnimeDB(host, port)
