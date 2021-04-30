@@ -3777,6 +3777,8 @@ https://github.com/duolingo/halflife-regression
 
 [李宏毅2020作业](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 
+- [作业答案 NTU_MachineLearning](https://github.com/IPINGCHOU/NTU_MachineLearning)
+
 - [cs224n lec08](https://blog.csdn.net/weixin_41332009/article/details/114129748?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-18.control&dist_request_id=1332049.21748.16195148309019773&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-18.control)
 - [cs224 Neural-Machine-Translation-with-Attention](https://github.com/dlxj/DeepNLP-models-Pytorch)
 
@@ -3789,8 +3791,11 @@ https://github.com/duolingo/halflife-regression
   - “<eos>”（end of sequence）
 
     "<bos>"（beginning of sequence）
+- Scheduled Sampling
+  - 改善RNN模型在生成任务中的错误累积问题
+  - 主要应用在序列到序列模型的训练阶段，而生成阶段则不需要使用
 
-    
+
 
 [seq2seq pytorch 机器翻译源码](https://github.com/SamLynnEvans/Transformer)
 
