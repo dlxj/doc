@@ -8,6 +8,14 @@
 
 [李宏毅2021作业 pytorch+colab](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
+[英中文本机器翻译源码](https://github.com/foamliu/Transformer-v2)
+
+> AI Challenger 2017中的英中机器文本翻译数据集，超过1000万的英中对照的句子对作为数据集合。其中，训练集合占据绝大部分，为12904955对，验证集合8000对，测试集A 8000条，测试集B 8000条。
+
+- 这个是真大佬  机翻、语音识别、图像识别
+
+
+
 [手写实现李航《统计学习方法》书中全部算法](https://github.com/Dod-o/Statistical-Learning-Method_Code)
 
 [动手深度学习——编码器—解码器（seq2seq）](https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter10_natural-language-processing/10.9_seq2seq)

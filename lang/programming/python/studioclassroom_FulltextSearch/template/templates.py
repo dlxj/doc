@@ -248,17 +248,17 @@ def stream_mp3():
     if 'id' in request.args:
         rowid = request.args.get('id')
 
-    # conn2 = pool2.getconn()
-    # with conn2.cursor() as cur2:
-    #     sql = f"SELECT id, audio FROM anime WHERE id={rowid};"
-    #     cur2.execute(sql)
-    #     row = cur2.fetchone()
-    #     idd = row[0]
-    #     bytea = row[1]
+    conn2 = pool2.getconn()
+    with conn2.cursor() as cur2:
+        sql = f"SELECT id, audio FROM anime WHERE id={rowid};"
+        cur2.execute(sql)
+        row = cur2.fetchone()
+        idd = row[0]
+        bytea = row[1]
 
-    #     pool2.putconn(conn2)
+        pool2.putconn(conn2)
 
-    #     return Response(bytea, mimetype="audio/mpeg")
+        return Response(bytea, mimetype="audio/mpeg")
 
 #         import base64
 
