@@ -9,6 +9,11 @@ import chardet
 import MeCab
 tagger = MeCab.Tagger()
 
+import platform
+
+def OSXQ():
+    return platform.system() == 'Darwin'
+
 
 """
 D:\GitHub\doc\lang\programming\postgresql summary.md
@@ -454,7 +459,8 @@ def createAnimeDB(host, port):
                 v_zh  tsvector, \
                 v_en  tsvector, \
                 videoname text, \
-                audio bytea \
+                audio bytea, \
+                video bytea \
             );")
             #cur.execute("CREATE TABLE audio(id SERIAL PRIMARY KEY, data BYTEA);")
 
@@ -627,8 +633,8 @@ def importAnime(animename, frtname, videoname, videopath):
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
-                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'), %s);"""
-                cur.execute( sql, (bts,) )
+                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', %s, %s);"""
+                cur.execute( sql, (bts,bts_video,) )
                 count += 1
                 #if count % 10 == 0:
                 print( f"###### {count} / {len(jpanese)}" )
@@ -639,7 +645,7 @@ def importAnime(animename, frtname, videoname, videopath):
                 # cur.execute( sql )
 
                 #cur.execute("""INSERT INTO audio(data) VALUES(%s);""", (bts,))
-                #break
+                break
 
             #cur.execute('COMMIT;')
 
@@ -668,13 +674,16 @@ if __name__ == "__main__":
 
     print("start")
 
-
+    OS = ''
     try:
       test = os.uname()
       if test[0] == "Linux":
         OS = "Linux"
+      elif test[0] == 'Darwin':
+        OS = "OSX"
     except Exception as e:
       OS = "Windows"
+
 
     print(f"OS: {OS}")
 
@@ -690,6 +699,8 @@ if __name__ == "__main__":
     root = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "Linux":
       root = r"/root/insertstudio/insertanime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+    if OS == "OSX":
+      root = r"/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
 
     print( f"root path: \n{root}" )
 

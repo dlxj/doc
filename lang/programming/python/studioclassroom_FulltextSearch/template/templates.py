@@ -27,6 +27,11 @@ import glob
 import json
 import decimal
 import datetime
+import platform
+
+def OSXQ():
+    return platform.system() == 'Darwin'
+
 
 # import xmltodict
 

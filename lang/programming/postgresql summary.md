@@ -2748,6 +2748,14 @@ cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
 
 
 
+### time out
+
+```
+psycopg2.connect( dbname = databaseName, user = userName, host = hostName, port = 5432, connect_timeout = 5, options='-c statement_timeout=5000')
+```
+
+
+
 
 
 
