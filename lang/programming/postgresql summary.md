@@ -3306,6 +3306,7 @@ jaconv.alphabet2kana(u'japan')
 # CentOS 远程
 
 ```
+# https://vitux.com/centos-vnc-server/
 # https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/
 
 
