@@ -3305,6 +3305,16 @@ jaconv.alphabet2kana(u'japan')
 
 # CentOS 远程
 
+```
+# https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/
+
+
+
+
+```
+
+
+
 
 
 ```
@@ -3322,7 +3332,7 @@ systemctl restart firewalld.service
 ```
 # https://serverok.in/install-xfce-vnc-remote-desktop-on-centos-7
 
-yum -y install epel-release
+yum -y install epel-release & \
 yum -y update
 
 yum -y groupinstall "Server with GUI"
