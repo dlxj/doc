@@ -269,6 +269,8 @@ auto strong passwd
 
 # 后台管理
 https://manage.buyvm.net/login
+# 测速脚本
+https://zhuanlan.zhihu.com/p/117547388
 
 LV RYZEN KVM 512MB
 
@@ -1139,6 +1141,10 @@ Please execute the command: systemctl enable v2ray; systemctl start v2ray
 [如何用一月6RMB购买一台外国服务器](https://zhuanlan.zhihu.com/p/73610444)
 
 [使用sftp自动上传文件到服务器](https://github.com/coppyC/blog/issues/3)
+
+[Royal TSX 比XShell好用]()
+
+
 
 
 
