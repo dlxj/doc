@@ -3306,6 +3306,7 @@ jaconv.alphabet2kana(u'japan')
 # CentOS 远程
 
 ```
+https://www.51sec.org/2020/07/06/install-configure-xfce-and-vnc-server-on-centos7/
 # https://vitux.com/centos-vnc-server/
 # https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/
 
