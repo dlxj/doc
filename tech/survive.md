@@ -185,6 +185,12 @@ hook.beforeEach(function(content) {
 
 
 
+# Python 大佬
+
+[《Machine Learning In Action》 中knn部分的代码精简优化](https://cugtyt.github.io/blog/ml-in-action/201711081901)
+
+
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
