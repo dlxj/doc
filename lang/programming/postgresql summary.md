@@ -3307,12 +3307,14 @@ jaconv.alphabet2kana(u'japan')
 
 ```
 https://www.51sec.org/2020/07/06/install-configure-xfce-and-vnc-server-on-centos7/
+	# 成功
+	# 注意vncserver 的密码和linux 账号的密码是分开的
+	# 要得设密码先切换某个linux 账号，然后 rm ~/.vnc/passwd
+	# vncserver # 提示输入密码，后面再问设置 view only 密码，选择不设置
 # https://vitux.com/centos-vnc-server/
 # https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/
 
-
-
-
+VNC 连接客户端用 Royal TSX，免费版就可以。只能建一个document
 ```
 
 
