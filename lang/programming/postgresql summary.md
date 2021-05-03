@@ -3375,6 +3375,27 @@ netstat -lntp | grep vnc
 
 
 
+## 中文
+
+
+
+```
+locale -a |grep "zh_CN"
+	yum groupinstall "fonts" -y # 没有输出则安装
+
+vi /etc/locale.conf
+LANG="zh_CN.uft8"  # 改成这样
+
+source   /etc/locale.conf
+echo $LANG 
+date # 是否成功
+
+```
+
+
+
+
+
 
 
 # FRP
