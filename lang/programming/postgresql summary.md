@@ -1790,6 +1790,18 @@ https://plutoacharon.github.io/2020/02/23/Docker%E5%AE%B9%E5%99%A8%E5%87%BA%E7%8
 
 
 
+### 保存配置好的镜像
+
+
+
+```
+docker commit   --message "host 222 --> docker 22"  4ace0a92d191
+```
+
+
+
+
+
 ### 如果需要更多的端口映射
 
 ```

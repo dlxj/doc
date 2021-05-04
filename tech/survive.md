@@ -303,8 +303,11 @@ ios的shadowrocket可以连接vmess协议
 
 
 - **长城跨境通国际借记卡**
+- **中银跨境一卡通**
 
  > *信用卡客服与投诉热线：*40066-95566(中国境内)；
+ >
+ > https://poplite.xyz/post/2018/03/05/boc-debit-card-guide-for-online-payment.html
  >
  > https://cloud.bankofchina.com/sh/html/h5/card/indexreal.html?index=1&apply=direct
  >
@@ -326,9 +329,11 @@ ios的shadowrocket可以连接vmess协议
  >
  > https://www.imtqy.com/boc-debit-card.html
 
-  
+  0772-2608031
 
   
+
+7714956160
 
 
 
