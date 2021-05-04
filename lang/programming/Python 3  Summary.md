@@ -186,7 +186,7 @@ redis
 
 
 ```python
-yum update -y
+yum update -y && \
 yum groupinstall -y 'Development Tools'
 yum install -y gcc libffi-devel bzip2-devel expat-devel gdbm-devel \
 ncurses-devel openssl-devel readline-devel \
@@ -407,13 +407,10 @@ GitHub\doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md
 [z](https://zhuanlan.zhihu.com/p/64893308)
 
 1. 有\__init\__.py 文件的文件夹被认为是一个包，否则只是普通文件夹
-   
 - 普通文件夹不能 import, package 才可以
-  
 2.  .py 文件被认为是一个模块
 
 - 单独一个py 文件就是一个module
-  
 3. import 后面必须是模块名
 
 4. from 模块名 import 变量名 

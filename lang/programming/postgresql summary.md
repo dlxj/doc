@@ -1958,7 +1958,12 @@ systemctl enable postgresql-13 # 自启动
 
 # 改强密码
 su - postgres
-psql -c "alter user postgres with password '这里填的一个强密码'"
+	psql
+	\password postgres
+	然后输入密码
+	\q
+			这句不成功# psql -c "alter user postgres with password '这里填的一个强密码'"
+		
 # 允许运程连接
 vi /var/lib/pgsql/13/data/postgresql.conf
 	listen_addresses = '*' # 改成这个
@@ -1988,6 +1993,21 @@ psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
 docker start 2416f0b833b2
 
 
+
+
+
+### ssh 保持连接
+
+
+
+```
+vi /etc/ssh/sshd_config
+
+TCPKeepAlive yes #表示TCP保持连接不断开
+ClientAliveInterval 300 #指定服务端向客户端请求消息的时间间隔，单位是秒，默认是0，不发送。设置个300表示5分钟发送一次（注意，这里是服务端主动发起），然后等待客户端响应，成功，则保持连接。
+ClientAliveCountMax 3 #指服务端发出请求后客户端无响应则自动断开的最大次数。使用默认给的3即可。
+（注意：TCPKeepAlive必须打开，否则直接影响后面的设置。ClientAliveInterval设置的值要小于各层防火墙的最小值，不然，也就没用了。）
+```
 
 
 
