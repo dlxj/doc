@@ -1574,6 +1574,8 @@ createDatabase_economistglobl()
 ```
 service docker status
 service docker start
+systemctl enable docker  # 开机自启动
+docker update --restart always xxxx  # 容器随docker 启动
 ```
 
 
