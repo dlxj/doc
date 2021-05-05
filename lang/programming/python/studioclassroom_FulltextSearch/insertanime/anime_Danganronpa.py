@@ -431,7 +431,7 @@ def jpQ(s):
 
 
 def createAnimeDB(host, port):
-    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port=port) as conn:
+    with psycopg2.connect(database='postgres', user='postgres', password='echodict.com',host=host, port=port) as conn:
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with conn.cursor() as cur:
             cur.execute("DROP DATABASE IF EXISTS anime;")
@@ -442,7 +442,7 @@ def createAnimeDB(host, port):
                 CONNECTION LIMIT = -1 \
                 TEMPLATE template0;")
 
-    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
+    with psycopg2.connect(database='anime', user='postgres', password='echodict.com',host=host, port=port) as conn:
         with conn.cursor() as cur:
         
             cur.execute("DROP TABLE IF EXISTS anime;")
@@ -611,7 +611,7 @@ def importAnime(animename, frtname, videoname, videopath):
     # writestring('ch.txt', "\r\n".join(chinese[0]+chinese[1]))
 
 
-    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
+    with psycopg2.connect(database='anime', user='postgres', password='echodict.com',host=host, port=port) as conn:
         with conn.cursor() as cur:
           
             #cur.execute('BEGIN;')
@@ -650,7 +650,7 @@ def importAnime(animename, frtname, videoname, videopath):
             #cur.execute('COMMIT;')
 
 
-    with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn:
+    with psycopg2.connect(database='anime', user='postgres', password='echodict.com',host=host, port=port) as conn:
         with conn.cursor() as cur:
             #cur.execute("SELECT * FROM anime WHERE jp &@ '遅刻';")
             cur.execute("SELECT * FROM anime WHERE jp_mecab &@ 'チコク';")
@@ -691,7 +691,7 @@ if __name__ == "__main__":
 
     #host = '111.229.53.195'
     host = '209.141.34.77'
-    port = 54322
+    port = 5432
 
     createAnimeDB(host, port)
 
