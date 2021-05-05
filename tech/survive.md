@@ -315,6 +315,14 @@ ios的shadowrocket可以连接vmess协议
 - **长城跨境通国际借记卡**
 - **中银跨境一卡通**
 
+ > #### 中银万事达非人哉小玉借记卡
+ >
+ > 长城冰雪借记卡
+ >
+ > https://cloud.bankofchina.com/sh/api/net/common/url/adr?id=mastecardsubroadbranch&applyCode=2019050876406015
+ >
+ > 
+ >
  > *信用卡客服与投诉热线：*40066-95566(中国境内)；
  >
  > https://poplite.xyz/post/2018/03/05/boc-debit-card-guide-for-online-payment.html#3-%E7%94%B3%E5%8D%A1%E6%8C%87%E5%8D%97
