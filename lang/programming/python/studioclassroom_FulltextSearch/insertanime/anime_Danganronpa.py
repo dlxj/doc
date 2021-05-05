@@ -401,14 +401,14 @@ def extractVideo(videopath, begintime, endtime):
 
 def allfname(root, ext):
     names = os.listdir(root)
-    names = list( filter(lambda s: ext in s,names) )
+    #names = list( filter(lambda s: ext in s,names) )
     
     # tmp = f'{root}/*.{ext}'
     # tmp = '/Users/olnymyself/Downloads/*.mkv'
     # tmp = "/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]/*.mkv"
     # names = glob.glob(tmp)
     names = list(map(lambda ns:os.path.basename(ns),names))
-    names.sort()
+    #names.sort() # key = lambda x: int(x[:-4])
 
     # if os.path.exists( root ):
     #   p =  os.path.join( root, '*.mkv' )
