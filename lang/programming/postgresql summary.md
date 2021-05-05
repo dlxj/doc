@@ -1403,12 +1403,6 @@ RUM索引
 
 
 
-## a
-
-```bash
-C:\>w2 start -z rootCA.crt
-```
-
 
 
 ```python
@@ -1970,7 +1964,8 @@ su - postgres
 vi /var/lib/pgsql/13/data/postgresql.conf
 	listen_addresses = '*' # 改成这个
 vi /var/lib/pgsql/13/data/pg_hba.conf
-hostnossl    all          all            0.0.0.0/0  trust  
+hostnossl    all          all            0.0.0.0/0  md5  
+	# hostnossl    all          all            0.0.0.0/0  trust  # 任何密码都能连
 	# 加在最后面，接受所有远程IP
 
 systemctl restart postgresql-13
