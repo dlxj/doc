@@ -321,6 +321,8 @@ ios的shadowrocket可以连接vmess协议
  >
  > https://cloud.bankofchina.com/sh/api/net/common/url/adr?id=mastecardsubroadbranch&applyCode=2019050876406015
  >
+ > 4nlp2go  gmail  移动花卡
+ >
  > 
  >
  > *信用卡客服与投诉热线：*40066-95566(中国境内)；

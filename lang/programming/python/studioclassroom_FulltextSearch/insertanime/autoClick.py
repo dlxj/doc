@@ -1,4 +1,8 @@
 
+# windows
+# pip install pygetwindow==0.0.1
+# pip install pyautogui===0.9.0
+
 import pyautogui as pygui
 import time
 
