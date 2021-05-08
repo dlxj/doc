@@ -97,8 +97,9 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'STRONGSECRTKEY'
 
 host = '111.229.53.195'
+host2 = '209.141.34.77'
 port1 = 5432
-port2 = 54322
+port2 = 5432
 
 #hostAPI = 'echodict.com'
 hostAPI = '127.0.0.1'
@@ -110,8 +111,8 @@ pool1 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     database="studio")
 
 pool2 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
-    password="postgres",
-    host=host,
+    password="echodict.com",
+    host=host2,
     port=port2,
     database="anime")
 
