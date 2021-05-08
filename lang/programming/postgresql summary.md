@@ -3425,6 +3425,25 @@ date # 是否成功
 
 
 
+```
+# 成功，只要安装这个 VNC 就正常显示中文了
+wget http://mirror.centos.org/centos/7/os/x86_64/Packages/google-noto-sans-cjk-fonts-20141117-5.el7.noarch.rpm
+
+yum install google-noto-sans-cjk-fonts-20141117-5.el7.noarch.rpm -y
+```
+
+
+
+# Syncthing  同步
+
+```
+# https://www.cnblogs.com/jackadam/p/8568833.html
+
+sed 's/127.0.0.1/0.0.0.0/g' /root/.config/syncthing/config.xml
+	# 默认监听网络是127.0.0.1，远程不能访问
+
+```
+
 
 
 

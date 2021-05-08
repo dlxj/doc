@@ -411,6 +411,59 @@ END
 
 
 
+```
+
+# 知识点摘要，以及对应书中的原文
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS SummaryText;
+CREATE PROCEDURE `SummaryText`(IN `in_appid` INT)
+BEGIN
+
+	declare currAppId INT;
+	declare currTestid INT;
+	declare currChildTestID INT;
+	
+	
+	DECLARE done BOOLEAN DEFAULT 0;
+	DECLARE cur CURSOR FOR
+   	select appid, testid, childTestID from trialexampointrelevanttest WHERE appid = in_appid;
+	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET done=1;
+	
+	CREATE TEMPORARY TABLE if not exists IAMTMPTABLET1(pcontext LONGTEXT, ccontext LONGTEXT, scontext LONGTEXT);
+	
+	truncate TABLE IAMTMPTABLET1;
+	
+	prepare stmtOfInsert FROM
+		'INSERT INTO IAMTMPTABLET1 SELECT ppm.context AS pcontext, tmp.ccontext, tmp.context FROM ( SELECT pm.PID, pm.`name`, pm.`context` AS ccontext , pt.context  from trialexampointrelevanttest rt INNER JOIN trialexampoint pt ON rt.examPointID = pt.ID INNER JOIN trialexampointmenus pm ON pm.ID = pt.menuID  WHERE rt.appid = ? AND rt.testid = ? AND rt.childTestID = ? AND rt.`enable` = 1  ) AS tmp INNER JOIN trialexampointmenus ppm on tmp.PID = ppm.ID WHERE NOT ( ppm.context IS NULL AND tmp.ccontext IS NULL )'; 
+	
+	
+	open cur;
+	repeat
+ 		FETCH cur INTO currAppId, currTestid, currChildTestID;
+ 		set @apId = currAppId;
+		set @tsId = currTestid;
+		set @chId = currChildTestID;
+		
+		execute stmtOfInsert using @apId, @tsId, @chId;
+
+	until done end repeat;
+	close cur;
+	
+	DEALLOCATE PREPARE stmtOfInsert;
+
+	SELECT * FROM IAMTMPTABLET1;
+	
+END $$
+
+
+CALL SummaryText(17397);
+```
+
+
+
+
+
 ## Backup
 
 
