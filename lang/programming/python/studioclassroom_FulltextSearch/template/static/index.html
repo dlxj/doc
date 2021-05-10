@@ -17,7 +17,7 @@
     <script type="text/javascript" src="static/jsmpeg.min.js"></script>
     <script type="text/javascript">
       var canvas = document.getElementById('video-canvas')
-      var url = 'static/t.ts'
+      var url = 'static/g.ts'
       var player = new JSMpeg.Player(url, {
         canvas: canvas,
         loop: false,
@@ -27,6 +27,8 @@
         disableWebAssembly: true,
         progressive: false,
         throttled: false,
+        videoBufferSize: 2*1024*1024,
+        audioBufferSize: 2*1024*1024,
         onEnded: () => {
           console.log('JSMpeg already end')
         },

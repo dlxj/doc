@@ -2380,29 +2380,8 @@ ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640  -i t.mkv  -codec:v hevc -acodec mp3
 ! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -codec:v hevc_nvenc -acodec aac -ar 44100 -ac 2 -b:a 192k -vf subtitles=t.mkv t.ts # 硬字幕
 
 
-! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -f mpegts -codec:v mpeg1video -codec:a mp2 -b 0 t.ts
-
-
-Input #0, mpegts, from 'demo.ts':
-  Duration: 00:00:22.06, start: 1.431644, bitrate: 1775 kb/s
-  Program 1 
-    Metadata:
-      service_name    : Service01
-      service_provider: FFmpeg
-  Stream #0:0[0x100]: Video: mpeg1video ([2][0][0][0] / 0x0002), yuv420p(tv), 1280x720 [SAR 1:1 DAR 16:9], 104857 kb/s, 24 fps, 24 tbr, 90k tbn, 24 tbc
-  Stream #0:1[0x101](und): Audio: mp2 ([3][0][0][0] / 0x0003), 48000 Hz, stereo, fltp, 384 kb/s
-
-Input #0, mpegts, from 't.ts':
-  Duration: 00:00:02.01, start: 1.400000, bitrate: 720 kb/s
-  Program 1 
-    Metadata:
-      service_name    : Service01
-      service_provider: FFmpeg
-  Stream #0:0[0x100]: Video: mpeg1video ([2][0][0][0] / 0x0002), yuv420p(tv), 1280x720 [SAR 1:1 DAR 16:9], 104857 kb/s, 23.98 fps, 23.98 tbr, 90k tbn, 23.98 tbc
-  Stream #0:1[0x101](jpn): Audio: mp2 ([3][0][0][0] / 0x0003), 48000 Hz, stereo, fltp, 384 kb/s
-
-
-ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -f mpegts -codec:v mpeg1video -s 960x540 -b:v 1500k -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 1 -b:a 128k t.ts
+# jsmpeg.js 正常播放
+! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -f mpegts -codec:v mpeg1video -b:v 1500k -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=t.mkv t.ts
 
 
 行 ffmpeg -i Tor_Animation_en.mp4 -i Tor_animation.zh-CN.srt Tor_Animation_subtitled.mkv 的时候，就会看到这样的输出：
