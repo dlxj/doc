@@ -2330,6 +2330,12 @@ https://www.huaweicloud.com/articles/4a48bc251c6378d717caaf1f27acf1c4.html
 
 
 
+NVIDIA FFmpeg 转码指南
+
+https://developer.nvidia.com/zh-cn/blog/nvidia-ffmpeg-transcoding-guide/
+
+
+
 ```
 # ffmpeg on centos7
 yum -y install epel-release
@@ -2364,6 +2370,143 @@ https://blog.csdn.net/weixin_43029824/article/details/103391494 # 更干货
 # hevc 表示使用h.265 编码
 ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640  -i t.mkv  -codec:v hevc -acodec mp3 -ar 44100 -ac 2 -b:a 192k t.ts
 ```
+
+
+
+```
+! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -codec:v hevc -acodec mp3 -ar 44100 -ac 2 -b:a 192k -c:s mov_text t.ts # 软字慕
+
+
+! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -codec:v hevc_nvenc -acodec aac -ar 44100 -ac 2 -b:a 192k -vf subtitles=t.mkv t.ts # 硬字幕
+
+
+行 ffmpeg -i Tor_Animation_en.mp4 -i Tor_animation.zh-CN.srt Tor_Animation_subtitled.mkv 的时候，就会看到这样的输出：
+
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (aac (native) -> vorbis (libvorbis))
+  Stream #1:0 -> #0:2 (subrip (srt) -> ass (native))
+它很直观地告诉我，在本次操作中， 0 号输入文件（也就是 Tor_Animation_en.mp4 ）中的 0 号媒体流变成了 0 号输出文件的 0 号媒体流， 0 号输入文件中的 1 号媒体流变成了 0 号输出文件的 1 号媒体流， 1 号输入文件（也就是 Tor_animation.zh-CN.srt ）的 0 号媒体流变成了 0 号输出文件的 2 号媒体流。编码的转换也被清晰地显示了出来。
+
+
+因为字幕流也是媒体流，也有各种编码，所以，我们也可以通过 -scodec 或 -c:s 选项来指定字幕流的编码。这个例子可以让 FFmpeg 复制视频流和音频流（不用重新编码，加快了速度），而将字幕流转换为 ass 编码：
+
+ffmpeg -i Tor_Animation_en.mp4 -i Tor_animation.zh-CN.srt -c:v copy -c:a copy -c:s ass Tor_Animation_subtitled.mkv
+同样的， -c 选项除了会影响到视频流和音频流以外，也会影响到字幕流，也就是说，指定 -c copy 也会让 FFmpeg 不对字幕流进行重新编码。
+
+你甚至可以将字幕文件作为单独的输入文件！也就是对字幕文件进行转码，比如 ffmpeg -i Tor_animation.zh-CN.srt Tor_animation.zh-CN.ass 就会将 SubRip 字幕转换为 ASS 字幕。（因为 ASS 封装格式的默认字幕编码就是 ass ，所以你在这条命令中不用写 -c:s ass ）
+
+
+
+基于图像的字幕格式输入  使用覆盖滤镜。此示例将第四字幕流覆盖在第二视频流上，并复制第七音频流：
+ffmpeg -i input.mkv -filter_complex "[0:v:2][0:s:3]overlay[v]" -map "[v]" -map 0:a:6 -c:a copy output.mp4
+
+10.7 内嵌字幕
+在播放器不支持独立字幕流的场合，需要将字幕混入视频流中（因此需要重编码）。
+
+ffmpeg -i input.mp4 -vf subtitles=input.srt output.mp4
+如果字幕以字幕流的形式位于一个视频文件中，可以直接调用：
+ffmpeg -i input.mkv -vf subtitles=input.mkv output.mp4
+
+处理方案
+软字幕
+MP4 格式支持流文字格式字幕，播放时可在播放器中选择对应的字幕，但该软字幕功能可能在有些播放器或者设备上不支持。
+
+1
+ffmpeg -i input.mkv -map 0:v:0 -map 0:a:1 -map 0:s:34 -c:v copy -c:a copy -c:s mov_text -metadata:s:s:0 language=chs output.mp4
+相关参数:
+
+-map 选项可将你想选择的原mkv文件中的视频流 (v) /音频流 (a) / 字幕流 (s) 复制到输出中；: 后的数字代表原mkv文件中的第几个流（mkv 里有多个音频流/字幕流）。
+本例中选择了第0个视频流（默认），第1个音频流，第34个字幕流（简体中文）。
+-c 选项则代编解码器名称，: 后的 v/a/s 意义同上；
+在本例中视频和音频的编解码器直接复制的原视频音频流的编码器，所以编码器设置的为 copy 。
+而 mov_text 则为此类软字幕编码器
+-metadata 选项可设置视频的元数据信息，之后的 :s:s:0 为可选项，空格之后接一个要设置元信息的键值对。
+本例中的 :s:0 表示对输出文件第0个字幕流进行元信息的设置，将字幕标识为简体中文。
+如果要设置第0个视频流的元信息，则在 -metadata 之后加 :s:a:0
+外挂字幕
+尴尬的是 iOS 版的暴风影音不支持 mov_text 编码的软字幕，那就只能尝试能不能用外挂字幕了。
+
+直接通过 -map 选项将简体中文字幕流导出到 output.srt 文件
+
+1
+ffmpeg -i input.mkv -map 0:s:34 output.srt
+在暴风影音中选择这个 output.srt 文件，显示出来却是乱码，然而在电脑上的播放器上却一切正常，这暴风影音真的是不行啊。
+
+硬字幕
+字幕文件嵌入视频
+将刚才导出的 srt 文件”烧入”到先前生成的那个 output.mp4 文件中，因为此处要对有字幕的视频帧进行压制，所以会比较慢。
+
+1
+ffmpeg -i output.mp4 -vf subtitles=output.srt output-Subtitles.mp4
+-vf 选项代表使用视频过滤器 (Video Filters)
+
+subtitles 就代表设置字幕为 = 之后接的字幕文件 / 流
+如果需要嵌入的是 ass 格式的字幕，只需要将 subtitles 替换为 ass ，然后 = 之后接上 ass 字幕文件即可，例如 ffmpeg -i output.mp4 -vf ass=subtitle.ass output-Subtitles.mp4
+这次生成的 mp4 文件终于能在暴风影音里播放了，真是够折腾的……
+
+视频字幕流嵌入视频
+但我不想生成中间的 srt 字幕文件，我们可以直接将 mkv 的字幕流在转成 mp4 的时候直接压制进视频文件中
+
+1
+ffmpeg -i input.mkv -filter_complex "[0:v:0]subtitles=input.mkv:si=34[v]" -map "[v]" -map 0:a:0 -c:a copy output.mp4
+此处使用复杂图像过滤器 (Complex filtergraphs) 选项 -filter_complex 来处理视频，将第0个视频流加上 input.mkv 中的第34个字幕流一起压制到视频流 v 中，同时通过 -map 选项将第0个音频流直接导出到 output.mp4 中。
+
+自此，又能完美的在 iOS 端的暴风影音上愉快地追剧了 d(`･∀･)b
+
+```
+
+
+
+```
+# CUDA 加速
+ffmpeg -vsync 0 -hwaccel cuvid -c:v h264_cuvid -i input.mp4 -c:a copy -c:v h264_nvenc -b:v 5M output.mp4
+
+
+将一张图片循环20000次生成视频，一个是硬编码一个是软编码，比较它们运行时间。
+# time ./ffmpeg -f image2 -stream_loop 20000 -i 1.jpg -vcodec h264_nvenc -b:v 200k -r 10 -s 1920x1080 -y 2.mp4 
+# time ./ffmpeg -f image2 -stream_loop 20000 -i 1.jpg -vcodec libx264 -b:v 200k -r 10 -s 1920x1080 -y 2.mp4 
+
+
+  Duration: 00:23:30.01, start: 0.000000, bitrate: 1841 kb/s
+    Stream #0:0: Video: h264 (High), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 23.98 fps, 23.98 tbr, 1k tbn, 47.95 tbc (default)
+    Stream #0:1(jpn): Audio: aac (LC), 48000 Hz, stereo, fltp (default)
+    Stream #0:2(chi): Subtitle: ass (default)
+```
+
+```
+# using libfaac on Mac OS X 10.6.8
+# -vn : not copying video
+# -acodec : specify codec used in flv file
+# -ac : channels. 1 is for mono, 2 is for stereo
+# -ab : specify bitrate for output file (note that rate is not kbps but bps)
+# -ar : sampling frequency (Hz)
+# -threads: number of threads for encoding
+# "-strict experimental" is necessary to use libfaac
+
+ffmpeg -y -i xxxxxxxxxxx.flv -vn -acodec aac -ac 2 -ab 128000 -ar 44100 -threads 4 -strict experimental xxxxx.m4a
+
+# note that codec is 'libmp3lame'
+ffmpeg -i xxxxxxxxxx.m4a -vn -acodec libmp3lame -ac 2 -ab 128 -ar 44100 -threads 4 -f mp3 zzzzzzzzzzz.mp3
+
+# or you can directly convert audio track
+ffmpeg -i xxxxxxxxxxx.flv -vn -acodec libmp3lame -ac 2 -ab 128000 -ar 44100 -threads 4 -f mp3  xxxxx.mp3
+
+# for wav -acodec option is not necessary
+ffmpeg -i xxxxxxxxxx.flv -vn -threads 4 -ac 1 -ar 44100 xxxxxx.wav
+
+# for ogg
+ffmpeg -i xxxxxxxxxx.flv -vn -threads 4 -acodec libvorbis -ac 2 -ar 44100 xxxxxxx.ogg
+
+# simply extract audio without transcoding it.
+ffmpeg -i xxxxxxxxxx -vn -threads 4 -acodec copy output.filename
+
+# chop mp4 with/without transcoding
+ffmpeg -ss <start.second> -i xxxxxx -t <duration.second> output.filename
+ffmpeg -ss <start.second> -i xxxxxx -t <duration.second> -acodec copy -vcodec copy output.filename
+```
+
+
 
 
 
@@ -3507,6 +3650,34 @@ ISCSI实现磁盘网络共享以及LVM方式共享拓展
 ```
 以 FreeNAS 举例，创建 iSCSI 存储的数量没有限制，还可以对已创建的 iSCSI 存储执行动态扩容，给电脑挂载一块无限容量的硬盘，很美妙吧。
 ```
+
+
+
+# Colab
+
+```
+# star()开始
+# stop()结束
+
+function getElementByXpath(path) {
+       return document.evaluate(path, document, null, 
+       XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+ 
+function reconnect(){
+	  console.log('working')
+	  getElementByXpath("//div[@id='top-toolbar']/colab-connect-button").click()
+}
+var a = setInterval(reconnect, 1*60*1000);
+function stop(){
+	 clearInterval(a)
+}
+function start(){
+	 a = setInterval(reconnect, 1*60*1000);
+}
+```
+
+
 
 
 

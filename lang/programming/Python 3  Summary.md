@@ -1692,6 +1692,50 @@ t.symmetric_difference(s) # 对称差集
 
 
 
+### json
+
+```python
+import json
+import decimal
+import datetime
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return float(o)
+        elif isinstance(o, datetime.datetime):
+            return str(o)
+        super(DecimalEncoder, self).default(o)
+
+def save_json(filename, dics):
+    with open(filename, 'w', encoding='utf-8') as fp:
+        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
+        fp.close()
+
+def load_json(filename):
+    with open(filename, encoding='utf-8') as fp:
+        js = json.load(fp)
+        fp.close()
+        return js
+
+# convert string to json 
+def parse(s):
+    return json.loads(s, strict=False )
+
+# convert dict to string
+def string(d):
+    return json.dumps(d, cls=DecimalEncoder, ensure_ascii=False)
+
+if __name__ == "__main__":
+    dicts = { 0:'中文', 1:'b' }
+    save_json('./j.json', dicts)
+    print(string(dicts))
+```
+
+
+
+
+
 ### trick
 
 ```python
