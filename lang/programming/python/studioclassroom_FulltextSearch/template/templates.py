@@ -128,7 +128,7 @@ pool1.putconn(connection)
 @cross_origin(supports_credentials=True)
 def default_get():
 
-    path = 'static/index.html'
+    path = 'static/index2.html'
     with open(path, 'r', encoding="utf-8") as fmp3:
         data = fmp3.read()
         return render_template_string(data)
