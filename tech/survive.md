@@ -304,6 +304,35 @@ Billing Cycle: Biennially
 Next Due Date: 04/01/2023
 ```
 
+```
+# 硬盘扩容
+ls /dev/disk/by-id/
+	--> ata-QEMU_DVD-ROM_QM00004  scsi-0BUYVM_SLAB_VOLUME-7514
+		# scsi-0BUYVM_SLAB_VOLUME-7514 是新增的512G
+
+fdisk -l
+	# 看到新硬盘是sda
+
+# 分区
+# https://www.daniao.org/9632.html
+fdisk /dev/sda
+
+
+
+# 格式化
+mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
+
+
+# 挂载
+mkdir /data
+mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data
+# 开机自动挂
+echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
+
+```
+
+
+
 ios的shadowrocket可以连接vmess协议
 
 
