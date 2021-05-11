@@ -3708,5 +3708,83 @@ https://www.51ittech.com/knowledge-base/centos-7-install-vmware-workstation-15/
 
 
 
+```
+https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.1.0-13591040.x86_64.bundle
+YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8
+UG5J2-0ME12-M89WY-NPWXX-WQH88
+UA5DR-2ZD4H-089FY-6YQ5T-YPRX6
+GA590-86Y05-4806Y-X4PEE-ZV8E0
+ZF582-0NW5N-H8D2P-0XZEE-Z22VA
+YA18K-0WY8P-H85DY-L4NZG-X7RAD
+```
+
+```
+Windows7旗舰版32位 ed2k://|file|cn_windows_7_ultimate_x86_dvd_x15-65907.iso|2604238848|D6F139D7A45E81B76199DDCCDDC4B509|/
+
+Windows7旗舰版64位 ed2k://|file|cn_windows_7_ultimate_x64_dvd_x15-66043.iso|3341268992|7DD7FA757CE6D2DB78B6901F81A6907A|/
+
+Windows7企业版32位 ed2k://|file|cn_windows_7_enterprise_x86_dvd_x15-70737.iso|2465783808|41ABFA74E57353B2F35BC33E56BD5202|/
+
+Windows7企业版64位 ed2k://|file|cn_windows_7_enterprise_x64_dvd_x15-70741.iso|3203516416|876DCF115C2EE28D74B178BE1A84AB3B|/
+
+Windows7专业版32位 ed2k://|file|cn_windows_7_professional_x86_dvd_x15-65790.iso|2604238848|E812FBE758F05B485C5A858C22060785|/
+
+Windows7专业版64位 ed2k://|file|cn_windows_7_professional_x64_dvd_x15-65791.iso|3341268992|3474800521D169FBF3F5E527CD835156|/
+
+Windows7家庭高级版32位 ed2k://|file|cn_windows_7_home_premium_x86_dvd_x15-65717.iso|2604238848|98E1EB474F92343B06737F227665DF1C|/
+
+Windows7家庭高级版64位 ed2k://|file|cn_windows_7_home_premium_x64_dvd_x15-65718.iso|3341268992|9F976045631A6A2162ABE32FC77C8ACC|/
+
+Windows7家庭初级版32位 ed2k://|file|cn_windows_7_home_basic_x86_dvd_x15-65975.iso|2604238848|AF82993DCF8F3D7AA08D54693691BB48|/
+
+Windows7简易版32位 ed2k://|file|cn_windows_7_starter_x86_dvd_x15-69303.iso|2604238848|5A6796B2B6A97B3E372F7C37D3A42AA4|/
+
+---------------------------------
+
+Windows7英文旗舰版32位 ed2k://|file|en_windows_7_ultimate_x86_dvd_X15-65921.iso|2501894144|09902C7687C9CA86BD935BD0EFB61D3A|/
+
+Windows7英文旗舰版64位 ed2k://|file|en_windows_7_ultimate_x64_dvd_X15-65922.iso|3224686592|6719AFC5486F38BE75F2DF39C8527113|/
+
+Windows7繁体（台）旗舰版32位 ed2k://|file|tw_windows_7_ultimate_x86_dvd_x15-65908.iso|2578382848|D3570ECAED1D132724FCD399B523DB23|/
+
+Windows7繁体（台）旗舰版64位 ed2k://|file|tw_windows_7_ultimate_x64_dvd_x15-65909.iso|3317223424|E6C906D22060285BE18929FADBA37F48|/
+
+Windows7繁体（港）旗舰版32位 ed2k://|file|hk_windows_7_ultimate_x86_dvd_x15-65912.iso|2574176256|4AA63D85BEA48F5742BD22B8655363B2|/
+
+Windows7繁体（港）旗舰版64位 ed2k://|file|hk_windows_7_ultimate_x64_dvd_x15-65911.iso|3313936384|917F16D04FBBFDE763A35E2A32595AD9|/
+
+Windows7日文旗舰版32位  ed2k://|file|ja_windows_7_ultimate_x86_dvd_x15-65939.iso|2503079936|B02221E9B203CD065155D395B8C56E7F|/
+
+Windows7日文旗舰版64位  ed2k://|file|ja_windows_7_ultimate_x64_dvd_x15-65940.iso|3241390080|826D4EF10382972267E39ECC011B81BA|/
+
+Windows7多国语言包32位  ed2k://|file|mu_windows_7_language_pack_x86_dvd_x15-73272.iso|1936062464|A5FB4917B281929F30256924D8D0715E|/
+
+Windows7多国语言包64位  ed2k://|file|mu_windows_7_language_pack_x64_dvd_x15-73276.iso|2306793472|21D6652E82D87305525366D5824AAFA2|/
+
+---------------------------------
+
+Windows Vista SP2简体中文32位  ed2k://|file|cn_windows_vista_with_sp2_x86_dvd_x15-36285.iso|3078893568|F50709974F03C63BB41B5CA0D406160D|/
+
+Windows Vista SP2简体中文64位  ed2k://|file|cn_windows_vista_with_sp2_x64_dvd_x15-36322.iso|3817512960|3719CEC49ECC2D73FCF7AF152A42049A|/
+
+Windows 2008 企业版&标准版 简体中文32位 ed2k://|file|cn_windows_server_standard_enterprise_and_datacenter_with_sp2_x86_dvd_x15-41045.iso|2190057472|E93B029C442F19024AA9EF8FB02AC90B|/
+
+Windows 2008 企业版&标准版 简体中文64位 ed2k://|file|cn_windows_server_2008_standard_enterprise_and_datacenter_with_sp2_x64_dvd_x15-41319.iso|2952992768|5F2CA73C9DA296CB05E7C0319F7D0E62|/
+
+Windows 2008 R2 企业版&标准版 简体中文64位 ed2k://|file|cn_windows_server_2008_r2_standard_enterprise_datacenter_web_vl_build_x64_dvd_x15-59777.iso|3270465536|1C7FDB37C0CEC1765A52CD49B2227CBE|/
+
+==============================================
+```
+
+
+
+# YY
+
+```
+https://github.com/tgbot-collection/YYeTsBot
+https://github.com/ffffffff0x/Dork-Admin  # hack
+https://github.com/hudunkey/Red-Team-links # hack
+```
+
 
 
