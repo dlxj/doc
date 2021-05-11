@@ -1863,7 +1863,9 @@ $$
 
 ### 四个基本子空间
 
-https://zhuanlan.zhihu.com/p/34056351
+ https://zhuanlan.zhihu.com/p/34056351
+
+GitHub\doc\lang\programming\矩阵的四个子空间及其联系 - 知乎.pdf
 
 - 严格地说, 线性变换一般是指 R^n 到R^n 的线性映射。R^n 到R^m（m≠n）叫线性映射或者线性算子，不叫线性变换。
 
@@ -1885,6 +1887,8 @@ https://zhuanlan.zhihu.com/p/34056351
 ##### 主元列
 
 > 主元所在的列，也称为**pivot columns**主元所在的列，所有主元列构成空间的一组基
+>
+> 主元所在的列，又称为**pivot variables**，不含主元的列称为**free variables**
 
 
 

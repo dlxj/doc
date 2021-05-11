@@ -331,6 +331,17 @@ echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data ext4 defaults,nofail,di
 
 ```
 
+```
+# windows server 2012 安装Docker
+https://www.jianshu.com/p/9dd33f2f625d
+
+Windows平台： 使用cpu-Z即可查看。
+Linux平台： 在终端执行#cat /proc/cpuinfo（或#grep -E '(vmx|svm)' /proc/cpuinfo）命令，找到flags部分，如果其中输出有VMX或SVM，即表明支持虚拟化技术。
+
+```
+
+
+
 
 
 ios的shadowrocket可以连接vmess协议
