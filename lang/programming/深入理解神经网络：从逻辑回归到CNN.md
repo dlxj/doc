@@ -1863,6 +1863,15 @@ $$
 
 ### 四个基本子空间
 
+https://zhuanlan.zhihu.com/p/34056351
+
+- 阶梯形矩阵（或行阶梯型）
+
+  > 1. 非零行必在零行之上
+  > 2. 
+
+
+
 https://cloud.tencent.com/developer/article/1402805
 
 https://zhuanlan.zhihu.com/p/37236365
@@ -3852,7 +3861,9 @@ https://github.com/duolingo/halflife-regression
 
 [AI Challenger 2018 中的阅读理解数据集](https://github.com/foamliu/Reading-Comprehension)
 
+[边做边学深度强化学习：PyTorch程序设计实践 源码](https://github.com/YutaroOgawa/Deep-Reinforcement-Learning-Book)
 
+- pytorch 实现打砖块
 
 [seq2seq pytorch 机器翻译源码](https://github.com/SamLynnEvans/Transformer)
 
