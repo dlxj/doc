@@ -332,6 +332,13 @@ echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data ext4 defaults,nofail,di
 ```
 
 ```
+老毛桃winpe启动光盘制作教程
+https://www.laomaotao.net/doc/dvdwinpe.html
+
+DD 命令一键将 Linux 安装成 Windows 系统
+https://oldtang.com/881.html
+https://zhuanlan.zhihu.com/p/56897277
+
 # windows server 2012 安装Docker
 https://www.jianshu.com/p/9dd33f2f625d
 
