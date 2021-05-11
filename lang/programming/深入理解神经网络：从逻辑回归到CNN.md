@@ -4148,6 +4148,35 @@ p.355
 
 
 
+
+## Colab
+
+```
+# star()开始
+# stop()结束
+
+function getElementByXpath(path) {
+       return document.evaluate(path, document, null, 
+       XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+ 
+function reconnect(){
+	  console.log('working')
+	  getElementByXpath("//div[@id='top-toolbar']/colab-connect-button").click()
+}
+var a = setInterval(reconnect, 1*60*1000);
+function stop(){
+	 clearInterval(a)
+}
+function start(){
+	 a = setInterval(reconnect, 1*60*1000);
+}
+```
+
+
+
+
+
 # 复分析-可视化方法
 
 
