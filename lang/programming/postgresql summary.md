@@ -2374,6 +2374,8 @@ ffmpeg -y -ss 00:01:12.960 -to 00:01:14.640  -i t.mkv  -codec:v hevc -acodec mp3
 
 
 ```
+# http://ffmpeg.org/ffmpeg-filters.html#subtitles
+
 ! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -codec:v hevc -acodec mp3 -ar 44100 -ac 2 -b:a 192k -c:s mov_text t.ts # 软字慕
 
 
