@@ -3863,7 +3863,7 @@ https://github.com/duolingo/halflife-regression
 
 [边做边学深度强化学习：PyTorch程序设计实践 源码](https://github.com/YutaroOgawa/Deep-Reinforcement-Learning-Book)
 
-- pytorch 实现打砖块
+- **pytorch 实现打砖块**
 
 [seq2seq pytorch 机器翻译源码](https://github.com/SamLynnEvans/Transformer)
 
