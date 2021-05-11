@@ -3719,6 +3719,9 @@ YA18K-0WY8P-H85DY-L4NZG-X7RAD
 ```
 
 ```
+# 俄罗斯精简狂人 超级精简版集合 
+# http://y-os.net/?p=770
+
 Windows7旗舰版32位 ed2k://|file|cn_windows_7_ultimate_x86_dvd_x15-65907.iso|2604238848|D6F139D7A45E81B76199DDCCDDC4B509|/
 
 Windows7旗舰版64位 ed2k://|file|cn_windows_7_ultimate_x64_dvd_x15-66043.iso|3341268992|7DD7FA757CE6D2DB78B6901F81A6907A|/
