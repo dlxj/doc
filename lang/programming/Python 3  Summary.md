@@ -665,13 +665,15 @@ os.path.basename
 ### MD5
 
 ```python
+dataset = {"id": hashlib.md5( bytes(k, encoding='utf-8') ).hexdigest(),  "summary":k, "text": []}
+```
+
+```python
 inp = 'GeeksforGeeks'
 result = hashlib.md5( bytes(inp, encoding='utf-8') )
 print("The byte equivalent of hash is : ", end ="")
 print(result.hexdigest())
 ```
-
-
 
 
 

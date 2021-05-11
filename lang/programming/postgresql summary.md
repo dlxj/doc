@@ -3700,7 +3700,11 @@ function start(){
 
 
 
+# VMWare
 
+
+
+https://www.51ittech.com/knowledge-base/centos-7-install-vmware-workstation-15/
 
 
 
