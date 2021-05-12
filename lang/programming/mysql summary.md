@@ -427,7 +427,7 @@ BEGIN
 	
 	DECLARE done BOOLEAN DEFAULT 0;
 	DECLARE cur CURSOR FOR
-   	select appid, testid, childTestID from trialexampointrelevanttest WHERE appid = in_appid;
+   	select appid, testid, childTestID from trxxxxxxxxxxxxxxxt WHERE appid = in_appid;
 	DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET done=1;
 	
 	CREATE TEMPORARY TABLE if not exists IAMTMPTABLET1(pcontext LONGTEXT, ccontext LONGTEXT, scontext LONGTEXT);
@@ -453,7 +453,7 @@ BEGIN
 	DEALLOCATE PREPARE stmtOfInsert;
 
 	SELECT * FROM IAMTMPTABLET1;
-	
+		
 END $$
 
 

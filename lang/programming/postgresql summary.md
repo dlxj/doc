@@ -1,5 +1,14 @@
 ## Install PG
 
+```
+systemctl start postgresql.service  # ubuntu 18.04 
+
+```
+
+
+
+
+
 
 
 好用的代理  https://github.com/TyrantLucifer/ssr-command-client
@@ -218,7 +227,7 @@ Added the line as below in `pg_hba.conf`:
 ```sql
 # vi /etc/postgresql/13/main/pg_hba.conf
 # 加在最后面
-hostnossl    all          all            0.0.0.0/0  trust        
+hostnossl    all          all            0.0.0.0/0  md5        
 ```
 
 and this was modified in `postgresql.conf`, as shown:

@@ -347,6 +347,88 @@ Linux平台： 在终端执行#cat /proc/cpuinfo（或#grep -E '(vmx|svm)' /proc
 
 ```
 
+```
+# https://hostloc.com/thread-788243-1-1.html
+
+链接地址1：
+https://fr1.teddyvps.com/iso/cn_windows10_20h2.gz
+https://fr1.teddyvps.com/iso/en_windows10_20h2.gz
+https://fr1.teddyvps.com/iso/ja_windows10_20h2.gz
+
+链接地址2（感谢云图小镇的分流下载）：
+https://mirrors.yuntu.ca/teddysun/cn_windows10_20h2.gz
+https://mirrors.yuntu.ca/teddysun/en_windows10_20h2.gz
+https://mirrors.yuntu.ca/teddysun/ja_windows10_20h2.gz
+
+远程桌面的默认用户名和密码
+用户名: administrator
+密码: Teddysun.com
+
+
+下载链接(DD download URL)
+链接地址1：
+https://fr1.teddyvps.com/iso/cn_windows2019_v2.gz
+https://fr1.teddyvps.com/iso/en_windows2019_v2.gz
+https://fr1.teddyvps.com/iso/ja_windows2019_v2.gz
+
+链接地址2（感谢云图小镇的分流下载）：
+https://mirrors.yuntu.ca/teddysun/cn_windows2019_v2.gz
+https://mirrors.yuntu.ca/teddysun/en_windows2019_v2.gz
+https://mirrors.yuntu.ca/teddysun/ja_windows2019_v2.gz
+
+远程桌面的默认用户名和密码
+用户名: administrator
+密码: Teddysun.com
+
+
+安装方式
+
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd '[Windows dd包直连地址]'
+
+
+
+目前经过测试已在腾讯云，Vultr，DigitalOcean，Cloudcone，Kimsufi 上成功安装。
+
+1，在基于 virtio 的 KVM 上安装过程
+
+选 CentOS 7 或 Debian 9 系统。内存不能太小，建议 4GB 起步。
+用 root 用户 ssh 进去后执行以下的命令，然后静静等待即可。
+安装速度取决于网络下载镜像的速度，基本上等待 15 – 60 分钟后，
+再次打开 VNC 就能看到熟悉的 Windows 登录界面了。
+
+wget -qO DebianNET.sh qiu.sh/dd && bash DebianNET.sh -dd "DD download URL"
+复制代码
+
+注：DebianNET.sh 脚本由 Vicer 开发，参考网址：https://moeclub.org
+
+2，在 Kimsufi 的服务器上安装过程
+
+进入救援模式后，用 root 用户 ssh 进去后执行以下的命令，然后静静等待即可。
+
+wget -O- "DD download URL" | gunzip | dd of=/dev/sda
+复制代码
+
+
+注：关于 Kimsufi 的服务器如何进入救援模式，网上有很多图文教程，一搜便知。
+
+
+
+下面这几个来自秋水大佬：
+https://fr1.teddyvps.com/iso/cn_windows2019.gz
+https://fr1.teddyvps.com/iso/en_windows2019.gz
+https://fr1.teddyvps.com/iso/ja_windows2019.gz
+https://fr1.teddyvps.com/iso/cn_windows2016.gz
+https://fr1.teddyvps.com/iso/en_windows2016.gz
+https://fr1.teddyvps.com/iso/ja_windows2016.gz
+https://fr1.teddyvps.com/iso/cn_windows2012r2.gz
+https://fr1.teddyvps.com/iso/en_windows2012r2.gz
+https://fr1.teddyvps.com/iso/ja_windows2012r2.gz
+
+默认账户：administrator，默认密码：Password147
+
+使用方法：把上面的 Windows 包的地址替换掉安装命令里的地址即可。
+```
+
 
 
 
