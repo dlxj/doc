@@ -1952,7 +1952,7 @@ GitHub\doc\lang\programming\矩阵的四个子空间及其联系 - 知乎.pdf
 
 
 
-[投影矩阵与最小二乘法](https://zhuanlan.zhihu.com/p/34208141)
+[投影矩阵与最小二乘法](https://zhuanlan.zhihu.com/p/34208141) D:\GitHub\doc\lang\programming\投影矩阵与最小二乘法 - 知乎.pdf
 
 **最小二乘方法用于求投影矩阵**
 
