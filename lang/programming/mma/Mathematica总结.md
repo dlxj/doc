@@ -1125,7 +1125,6 @@ Input Stream
 输入流
 StringToStream
 
-
 文字识别
 ref/TextRecognize
 guide/LowLevelNotebookProgramming
@@ -1160,7 +1159,6 @@ GoogleTranslate-谷歌翻译
 [诸神字幕组][少女终末旅行 Shoujo Shuumatsu Ryokou][简繁外挂字幕][01-12][WEBrip][1080P]
 	  [深入理解计算机系统视频及字幕](https://github.com/EugeneLiu/translationCSAPP)
 		str 字幕
-
 
 弹系统对话框，选颜色、录音、保存文件什么的
 SystemDialogInput 
@@ -1226,4 +1224,16 @@ Run["say -o gym.mp4 -v Zarvox "<>gymString]
 
 
 ![image-20200523190009649](C:\Users\echod\AppData\Roaming\Typora\typora-user-images\image-20200523190009649.png)
+
+
+
+# 汉字画图
+
+```mathematica
+BoundaryDiscretizeGraphics[
+ Text[Style["国", FontFamily -> "Microsoft YaHei", 
+   FontSize -> 12]], _Text]
+```
+
+
 
