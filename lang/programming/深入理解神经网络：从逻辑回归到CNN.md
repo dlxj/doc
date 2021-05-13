@@ -1946,6 +1946,16 @@ GitHub\doc\lang\programming\矩阵的四个子空间及其联系 - 知乎.pdf
 
 
 
+**向量的内积 = $\|$投影向量 * 被变换向量$\|$（投影后它们的夹解是0）**
+
+> 但是为什么结果是标量？因为夹解的关系？
+
+
+
+**最小二乘方法用于求投影矩阵**
+
+
+
 https://cloud.tencent.com/developer/article/1402805
 
 https://zhuanlan.zhihu.com/p/37236365
