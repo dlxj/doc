@@ -201,6 +201,12 @@ hook.beforeEach(function(content) {
 
 
 
+## DD windows 大佬
+
+[DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）](https://sunpma.com/137.html)
+
+
+
 # 免费论文
 
 > [广西壮族自治区图书馆](http://www.gxlib.org.cn/) 
@@ -329,6 +335,13 @@ mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data
 # 开机自动挂
 echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
 
+
+
+# chrome for windows 2012
+https://www.google.com/intl/en/chrome/?standalone=1
+# 磁盘管理
+https://hostloc.com/thread-830521-1-1.html
+	diskmgmt.msc
 ```
 
 ```
@@ -427,6 +440,22 @@ https://fr1.teddyvps.com/iso/ja_windows2012r2.gz
 默认账户：administrator，默认密码：Password147
 
 使用方法：把上面的 Windows 包的地址替换掉安装命令里的地址即可。
+```
+
+
+
+```
+# 绝对大佬
+https://sunpma.com/137.html
+https://www.locmjj.com/374.html
+
+这是我dd win7企业精简版的步骤。
+
+先重装系统，debian10，kvm架构
+
+apt-get update
+apt-get install -y xz-utils openssl gawk file
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win7_sp1_64_Administrator_nat.ee.gz'
 ```
 
 
