@@ -532,6 +532,11 @@ https://hostloc.com/forum.php?mod=viewthread&tid=716600&extra=&highlight=%E5%8F%
 
 https://hostloc.com/forum.php?mod=viewthread&tid=790452&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F
 
+buyvm装arch linux
+https://lala.im/7262.html
+
+http://www.360doc.com/content/18/0714/18/21175922_770377533.shtml
+
 Dual boot with Windows (简体中文)
 https://wiki.archlinux.org/title/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 
