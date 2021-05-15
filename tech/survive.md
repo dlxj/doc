@@ -519,6 +519,19 @@ https://www.locmjj.com/374.html
 apt-get update
 apt-get install -y xz-utils openssl gawk file
 wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win7_sp1_64_Administrator_nat.ee.gz'
+
+# 激活（以管理员运行）
+slmgr /skms kms.sunpma.com
+slmgr /ato
+slmgr /xpr
+
+
+
+双系统
+https://hostloc.com/forum.php?mod=viewthread&tid=716600&extra=&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F&page=1
+
+https://hostloc.com/forum.php?mod=viewthread&tid=790452&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F
+
 ```
 
 
