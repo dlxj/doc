@@ -532,6 +532,20 @@ https://hostloc.com/forum.php?mod=viewthread&tid=716600&extra=&highlight=%E5%8F%
 
 https://hostloc.com/forum.php?mod=viewthread&tid=790452&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F
 
+Dual boot with Windows (简体中文)
+https://wiki.archlinux.org/title/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+
+Windows7+Archlinux双系统安装指南
+https://www.jianshu.com/p/27ea66e1838c
+
+Win7启动过程及启动项修复
+http://dreambt.github.io/Windows/2011/05/18/win7-boot-process-and-restoration/
+
+Centos7 修复 引导启动
+https://blog.51cto.com/puppydong/1962085
+
+DD命令备份Linux系统
+https://blog.csdn.net/u013896064/article/details/56842939
 ```
 
 
