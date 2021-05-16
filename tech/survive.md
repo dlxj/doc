@@ -344,6 +344,49 @@ https://hostloc.com/thread-830521-1-1.html
 	diskmgmt.msc
 ```
 
+
+
+```
+# centos7 引导win7
+
+fdisk -l
+vad1 是win7
+vad2 是centos7
+
+vi  /etc/grub.d/40_custom # 加在最后
+menuentry "Windows 7" {
+	set root=(hd0,1)
+	chainloader +1
+}
+
+grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+reboot
+
+重启就看到win7 了
+
+```
+
+
+
+```
+
+Paragon ExtFS for Windows # windows 读写ext4 分区
+
+把 keygen 和另外两个文件放到 ExtFS 的安装目录下，我的安装目录是 "C:\Program Files (x86)\Paragon Software\ExtFS for Windows"
+
+打开 keygen，先点击 Patch RSA 2048，选择安装目录下的 Paragon ExtFS for Windows.exe
+
+再次点击 Patch RSA 2048，选择安装目录下的 extservice.exe
+
+点击 Generate 让生成 License，keygen 会重启 ExtFS 的服务。
+
+之后打开 ExtFS 就发现已经破解完成。
+
+```
+
+
+
 ```
 老毛桃winpe启动光盘制作教程
 https://www.laomaotao.net/doc/dvdwinpe.html
@@ -527,6 +570,8 @@ slmgr /xpr
 
 
 
+
+
 双系统
 https://hostloc.com/forum.php?mod=viewthread&tid=716600&extra=&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F&page=1
 
@@ -535,7 +580,40 @@ https://hostloc.com/forum.php?mod=viewthread&tid=790452&highlight=%E5%8F%8C%E7%B
 buyvm装arch linux
 https://lala.im/7262.html
 
+.com32 chain.c32 hd0 0   # 成功启动win7
+
+
 http://www.360doc.com/content/18/0714/18/21175922_770377533.shtml
+
+
+https://www.cnblogs.com/fps2tao/p/11273658.html
+Linux只能认识Ext3/4，fat32格式，如果Windows是NTFS格式磁盘分区，Grub2将无法识别。
+
+
+https://linuxhint.com/grub_rescue_commands_centos/
+https://www.thegeekdiary.com/centos-rhel-7-how-to-reinstall-grub2-from-rescue-mode/
+
+grub> rootnoverify (hd0,0)
+grub> chainloader +1
+grub> makeactive
+grub> boot
+
+vi /etc/grub.d/40_custom
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+menuentry 'Windows7'{
+set root=(hd0,1)
+chainloader +1
+}
+
+yum install -y epel-release
+yum –y install ntfs-3g
+grub2-mkconfig -o /boot/grub2/grub.cfg
+	# 会自动found win7 启动项
+	# 重启就是两启动了
 
 Dual boot with Windows (简体中文)
 https://wiki.archlinux.org/title/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
