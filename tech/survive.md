@@ -344,6 +344,49 @@ https://hostloc.com/thread-830521-1-1.html
 	diskmgmt.msc
 ```
 
+
+
+```
+# centos7 引导win7
+
+fdisk -l
+vad1 是win7
+vad2 是centos7
+
+vi  /etc/grub.d/40_custom # 加在最后
+menuentry "Windows 7" {
+	set root=(hd0,1)
+	chainloader +1
+}
+
+grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+reboot
+
+重启就看到win7 了
+
+```
+
+
+
+```
+
+Paragon ExtFS for Windows # windows 读写ext4 分区
+
+把 keygen 和另外两个文件放到 ExtFS 的安装目录下，我的安装目录是 "C:\Program Files (x86)\Paragon Software\ExtFS for Windows"
+
+打开 keygen，先点击 Patch RSA 2048，选择安装目录下的 Paragon ExtFS for Windows.exe
+
+再次点击 Patch RSA 2048，选择安装目录下的 extservice.exe
+
+点击 Generate 让生成 License，keygen 会重启 ExtFS 的服务。
+
+之后打开 ExtFS 就发现已经破解完成。
+
+```
+
+
+
 ```
 老毛桃winpe启动光盘制作教程
 https://www.laomaotao.net/doc/dvdwinpe.html
@@ -361,85 +404,148 @@ Linux平台： 在终端执行#cat /proc/cpuinfo（或#grep -E '(vmx|svm)' /proc
 ```
 
 ```
-# https://hostloc.com/thread-788243-1-1.html
+DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）
+说明
+无限制全自动dd安装Windows
+突破没有VNC,没有救援模式,内存比dd包小的限制
+使用Debian Live CD中的busybox做中间媒介,经过复杂的处理使本机的网络参数传进Windows操作系统中
+即使没有DHCP能够让Windows获取网络参数,也能让Windows操作系统在开机的第一时间能够连通网络
+特别注意：OpenVZ构架不适用
 
-链接地址1：
-https://fr1.teddyvps.com/iso/cn_windows10_20h2.gz
-https://fr1.teddyvps.com/iso/en_windows10_20h2.gz
-https://fr1.teddyvps.com/iso/ja_windows10_20h2.gz
+安装运行库
+#Debian/Ubuntu:
+apt-get install -y xz-utils openssl gawk file
 
-链接地址2（感谢云图小镇的分流下载）：
-https://mirrors.yuntu.ca/teddysun/cn_windows10_20h2.gz
-https://mirrors.yuntu.ca/teddysun/en_windows10_20h2.gz
-https://mirrors.yuntu.ca/teddysun/ja_windows10_20h2.gz
+#RedHat/CentOS:
+yum install -y xz openssl gawk file
+如果出现错误，运行以下代码
 
-远程桌面的默认用户名和密码
-用户名: administrator
-密码: Teddysun.com
+#Debian/Ubuntu:
+apt-get update
 
-
-下载链接(DD download URL)
-链接地址1：
-https://fr1.teddyvps.com/iso/cn_windows2019_v2.gz
-https://fr1.teddyvps.com/iso/en_windows2019_v2.gz
-https://fr1.teddyvps.com/iso/ja_windows2019_v2.gz
-
-链接地址2（感谢云图小镇的分流下载）：
-https://mirrors.yuntu.ca/teddysun/cn_windows2019_v2.gz
-https://mirrors.yuntu.ca/teddysun/en_windows2019_v2.gz
-https://mirrors.yuntu.ca/teddysun/ja_windows2019_v2.gz
-
-远程桌面的默认用户名和密码
-用户名: administrator
-密码: Teddysun.com
-
-
-安装方式
+#RedHat/CentOS:
+yum update
+一键脚本
+示例脚本，补全DD包直连地址后运行即可；
 
 wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd '[Windows dd包直连地址]'
+精简版DD包
+选择好版本，输入以下一键脚本即可
 
+# DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win_Server2003_86_Administrator_cxthhhhh.com.gz'
 
+# DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win_Server2008R2_sp1_64_Administrator_nat.ee.gz'
 
-目前经过测试已在腾讯云，Vultr，DigitalOcean，Cloudcone，Kimsufi 上成功安装。
+# DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win_Server2012R2_64_Administrator_WinSrv2012r2x64-Chinese.gz'
 
-1，在基于 virtio 的 KVM 上安装过程
+# DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win_Server2019_64_Administrator_WinSrv2019dc-Chinese.gz'
 
-选 CentOS 7 或 Debian 9 系统。内存不能太小，建议 4GB 起步。
-用 root 用户 ssh 进去后执行以下的命令，然后静静等待即可。
-安装速度取决于网络下载镜像的速度，基本上等待 15 – 60 分钟后，
-再次打开 VNC 就能看到熟悉的 Windows 登录界面了。
+# DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win7_86_Administrator_Windows7x86-Chinese.gz'
 
-wget -qO DebianNET.sh qiu.sh/dd && bash DebianNET.sh -dd "DD download URL"
-复制代码
+# DD Windows7 sp1 64位 企业精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win7_sp1_64_Administrator_nat.ee.gz'
 
-注：DebianNET.sh 脚本由 Vicer 开发，参考网址：https://moeclub.org
+#DD Windows8.1 64位 专业精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win8.1_64_Administrator_nat.ee.gz'
 
-2，在 Kimsufi 的服务器上安装过程
+# DD Windows10 2019LTSC 64位 企业精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win10_2019LTSC_64_Administrator_nat.ee.gz'
+完整版DD包
+# DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Whole/cn_windows2012r2_administrator_Password147.gz'
 
-进入救援模式后，用 root 用户 ssh 进去后执行以下的命令，然后静静等待即可。
+# DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Whole/cn_windows2016_administrator_Password147.gz'
 
-wget -O- "DD download URL" | gunzip | dd of=/dev/sda
-复制代码
+# DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Whole/cn_windows2019_administrator_Password147.gz'
 
+# DD Windows7 sp1 64位 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Whole/Win7_sp1_64_Administrator_nat.ee.gz'
 
-注：关于 Kimsufi 的服务器如何进入救援模式，网上有很多图文教程，一搜便知。
+# DD Windows8.1 64位 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Whole/Win8.1_64_Administrator_nat.ee.gz'
 
+# DD Windows10 LTSC 64位 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Whole/Win10_LTSC_64_Administrator_nat.ee.gz'
+Oracle甲骨文
+此DD包仅适用于Oracle甲骨文DD Win使用
 
+# DD Windows7 sp1 64位 企业精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Oracle_Win7_sp1_64_Administrator_nat.ee.gz'
 
-下面这几个来自秋水大佬：
-https://fr1.teddyvps.com/iso/cn_windows2019.gz
-https://fr1.teddyvps.com/iso/en_windows2019.gz
-https://fr1.teddyvps.com/iso/ja_windows2019.gz
-https://fr1.teddyvps.com/iso/cn_windows2016.gz
-https://fr1.teddyvps.com/iso/en_windows2016.gz
-https://fr1.teddyvps.com/iso/ja_windows2016.gz
-https://fr1.teddyvps.com/iso/cn_windows2012r2.gz
-https://fr1.teddyvps.com/iso/en_windows2012r2.gz
-https://fr1.teddyvps.com/iso/ja_windows2012r2.gz
+# DD Windows8.1 64位 企业精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Oracle_Win8.1_64_Administrator_nat.ee.gz'
 
-默认账户：administrator，默认密码：Password147
+# DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Oracle_Win_Server2008R2_sp1_64_Administrator_nat.ee.gz'
 
-使用方法：把上面的 Windows 包的地址替换掉安装命令里的地址即可。
+# DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Oracle_Win_Server2012R2_64_Administrator_nat.ee.gz'
+OVH
+此DD包仅适用于OVH云服务器DD Win使用
+说明：OVH需要使用网络参数进行安装，需要的可以参考下面的安装方法，博主并未进行测试，这里仅提供直链包；
+
+# DD Windows7 64位 精简版 [账户administrator密码www.80host.com]
+https://oss.sunpma.com/Windows/win/OVH_Win7_64_administrator_www.80host.com.gz
+网络参数安装
+比如GCP谷歌云Azure微软云OVH云服务器等需要指定网络参数安装的方式，示例为GCP谷歌云
+
+# 将X.X.X.X替换为自己的网络参数.
+# --ip-addr :IP Address/内网IP地址
+# --ip-mask :Netmask   /子网掩码
+# --ip-gate :Gateway   /网关
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh --ip-addr X.X.X.X --ip-mask X.X.X.X --ip-gate X.X.X.X -dd 'DD包 直链地址'
+例：
+替换--ip-addr后面的X.X.X.X为你自己的内网IP即可；
+在GCP谷歌云 Debian / Ubuntu 测试成功， CentOS 未测试；
+账户：Administrator 密码：nat.ee
+GCP谷歌云 香港
+
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.170.0.1 -dd 'https://oss.sunpma.com/Windows/Win7_sp1_64_Administrator_nat.ee.gz'
+GCP谷歌云-台湾
+
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.140.0.1 -dd 'https://oss.sunpma.com/Windows/Win7_sp1_64_Administrator_nat.ee.gz'
+连接上后如果遇到无法打开网页的情况，修改DNS即可
+
+8.8.8.8
+8.8.4.4
+关于激活
+可以使用本博客的KMS激活
+
+如果不能使用KMS激活，可以试试下面的Key（不一定都能成功激活）
+
+# Windows 7 企业版
+KMS密钥：33PXH-7Y6KF-2VJC9-XBBR8-HVTHH / RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289 / H8PDJ-H4NKW-3GKH7-YHKJ7-4C2JR
+
+# Windows 8.1 专业版
+KMS密钥：GCRJD-8NW9H-F2CDX-CCM8D-9D6T9
+
+# Windows 10 LTSC 2019 企业版
+KMS密钥：M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+
+# Windows Server 2019 数据中心版
+KMS密钥：WMDGN-G9PQG-XVVXX-R3X43-63DFG
+右键以管理员身份运行CMD（命令提示符），依次执行下面的命令；
+
+slmgr.vbs -upk
+slmgr.vbs -ipk KMS密钥
+slmgr.vbs -ato
+slmgr.vbs -dlv
+Windows 7 旗舰版可能无法使用KMS进行激活，可以使用以下工具永久激活
+激活工具：https://sunpma.lanzous.com/i0ohrjljzwb
+
+Windows服务器开启Ping功能，打开系统运行服务 Win+R 输入命令
+
+## 开启Ping ##
+netsh firewall set icmpsetting 8
+## 关闭Ping ##
+netsh firewall set icmpsetting 8 disable
 ```
 
 
@@ -456,6 +562,73 @@ https://www.locmjj.com/374.html
 apt-get update
 apt-get install -y xz-utils openssl gawk file
 wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && bash InstallNET.sh -dd 'https://oss.sunpma.com/Windows/Win7_sp1_64_Administrator_nat.ee.gz'
+
+# 激活（以管理员运行）
+slmgr /skms kms.sunpma.com
+slmgr /ato
+slmgr /xpr
+
+
+
+
+
+双系统
+https://hostloc.com/forum.php?mod=viewthread&tid=716600&extra=&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F&page=1
+
+https://hostloc.com/forum.php?mod=viewthread&tid=790452&highlight=%E5%8F%8C%E7%B3%BB%E7%BB%9F
+
+buyvm装arch linux
+https://lala.im/7262.html
+
+.com32 chain.c32 hd0 0   # 成功启动win7
+
+
+http://www.360doc.com/content/18/0714/18/21175922_770377533.shtml
+
+
+https://www.cnblogs.com/fps2tao/p/11273658.html
+Linux只能认识Ext3/4，fat32格式，如果Windows是NTFS格式磁盘分区，Grub2将无法识别。
+
+
+https://linuxhint.com/grub_rescue_commands_centos/
+https://www.thegeekdiary.com/centos-rhel-7-how-to-reinstall-grub2-from-rescue-mode/
+
+grub> rootnoverify (hd0,0)
+grub> chainloader +1
+grub> makeactive
+grub> boot
+
+vi /etc/grub.d/40_custom
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+menuentry 'Windows7'{
+set root=(hd0,1)
+chainloader +1
+}
+
+yum install -y epel-release
+yum –y install ntfs-3g
+grub2-mkconfig -o /boot/grub2/grub.cfg
+	# 会自动found win7 启动项
+	# 重启就是两启动了
+
+Dual boot with Windows (简体中文)
+https://wiki.archlinux.org/title/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+
+Windows7+Archlinux双系统安装指南
+https://www.jianshu.com/p/27ea66e1838c
+
+Win7启动过程及启动项修复
+http://dreambt.github.io/Windows/2011/05/18/win7-boot-process-and-restoration/
+
+Centos7 修复 引导启动
+https://blog.51cto.com/puppydong/1962085
+
+DD命令备份Linux系统
+https://blog.csdn.net/u013896064/article/details/56842939
 ```
 
 
