@@ -34,6 +34,27 @@ apt-get install libaio1 libaio-dev
 
 
 
+```
+my.cnf
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8
+[mysqld]
+collation-server = utf8_general_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+# binding IPv4 and 3306 port
+bind-address = 0.0.0.0
+port = 3306
+basedir  = /usr/local/mysql
+datadir  = /usr/local/mysql/data
+lc-messages-dir = /usr/local/mysql/share
+innodb_use_native_aio = 0
+```
+
+
+
 
 
 /etc/my.cnf, /etc/mysql/my.cnf, /usr/local/etc/my.cnf, ~/.my.cnf 这些就是mysql默认会搜寻my.cnf的目录，顺序排前的优先
@@ -206,6 +227,18 @@ end
 
 
 # Update
+
+
+
+```mysql
+UPDATE knowledgecard_test kt
+
+INNER JOIN knowledgecard_info kn
+
+ON kn.AllTestID1 = kt.AllTestId AND kn.ChildTableID1 = kt.ChildtableId
+
+SET kt.KnowledgeCardId = kn.KnowledgeCardId
+```
 
 
 
