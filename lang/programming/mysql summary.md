@@ -17,6 +17,50 @@ rm -rf /var/lib/mysql
 
 
 ```
+# 安装mysql 5.7 
+	https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html
+
+# centos7
+shell> yum search libaio  # search for info
+shell> yum install libaio openssl # install library
+# ubuntu
+shell> apt-cache search libaio # search for info
+shell> apt-get install libaio1 # install library
+
+shell> groupadd mysql
+shell> useradd -r -g mysql -s /bin/false mysql
+shell> cd /usr/local
+shell> tar zxvf /path/to/mysql-VERSION-OS.tar.gz
+shell> ln -s full-path-to-mysql-VERSION-OS mysql
+shell> cd mysql
+shell> mkdir mysql-files
+shell> chown mysql:mysql mysql-files
+shell> chmod 750 mysql-files
+shell> bin/mysqld --initialize --user=mysql
+shell> bin/mysql_ssl_rsa_setup
+shell> bin/mysqld_safe --user=mysql &
+# Next command is optional
+shell> cp support-files/mysql.server /etc/init.d/mysql.server
+
+
+2021-05-17T07:20:33.335052Z 1 [Note] A temporary password is generated for root@localhost: 9JhTjjTeHs/z
+```
+
+
+
+
+
+```
+# 安装mysql 5.6
+
+free -m
+     # -m -g # m or g size show
+
+dpkg -l '*mysql*'
+dpkg --force-depends --purge mysql
+     # uninstall mysql
+
+http://dev.mysql.com/doc/refman/5.6/en/binary-installation.html
 shell> groupadd mysql
 shell> useradd -r -g mysql mysql
 shell> cd /usr/local
@@ -25,8 +69,15 @@ shell> ln -s full-path-to-mysql-VERSION-OS mysql
 shell> cd mysql
 shell> chown -R mysql .
 shell> chgrp -R mysql .
-apt-get install libaio1 libaio-dev
-./mysql_install_db --user=mysql --defaults-file=/usr/local/mysql/my.cnf --datadir=/mntt/echodict/mysqldata/
+shell> scripts/mysql_install_db --user=mysql
+    apt-get install libaio1 libaio-dev
+    scripts/mysql_install_db --user=mysql --defaults-file=/usr/local/mysql/my.cnf
+    scripts/mysql_install_db --user=mysql --no-defaults
+shell> chown -R root .
+shell> chown -R mysql data
+shell> bin/mysqld_safe --user=mysql &
+# Next command is optional
+shell> cp support-files/mysql.server /etc/init.d/mysql.server
 
 
 
@@ -58,6 +109,27 @@ innodb_use_native_aio = 0
 
 
 /etc/my.cnf, /etc/mysql/my.cnf, /usr/local/etc/my.cnf, ~/.my.cnf 这些就是mysql默认会搜寻my.cnf的目录，顺序排前的优先
+
+
+
+```
+查看运行的配置信息
+    cat /proc/$(pidof mysqld)/cmdline
+    tr '\0' '\n' < /proc/$(pidof mysqld)/environ | grep -i cnf
+    /usr/sbin/mysqld --help --verbose --skip-networking --pid-file=$(tempfile) 2> /dev/null | grep -A1 'Default options are read'
+```
+
+```
+rpm -qa | grep mysql
+rpm -qa | grep maria
+yum remove and run yum install mysql-devel
+
+yum remove mysql*
+
+find / -name mysql
+
+rm -rf (all folders listed in find)
+```
 
 
 
