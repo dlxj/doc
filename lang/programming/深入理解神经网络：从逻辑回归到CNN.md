@@ -1871,6 +1871,10 @@ $$
 
 
 
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210518172728970.png" alt="image-20210518172728970" style="zoom:50%;" />
+
+
+
 ### 四个基本子空间
 
  https://zhuanlan.zhihu.com/p/34056351
