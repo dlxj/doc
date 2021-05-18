@@ -17,9 +17,6 @@ rm -rf /var/lib/mysql
 
 
 ```
-# 安装mysql 5.7 
-	https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html
-
 # centos7
 shell> yum search libaio  # search for info
 shell> yum install libaio openssl # install library
@@ -27,31 +24,17 @@ shell> yum install libaio openssl # install library
 shell> apt-cache search libaio # search for info
 shell> apt-get install libaio1 # install library
 
-shell> groupadd mysql
-shell> useradd -r -g mysql -s /bin/false mysql
-shell> cd /usr/local
-shell> tar zxvf /path/to/mysql-VERSION-OS.tar.gz
-shell> ln -s full-path-to-mysql-VERSION-OS mysql
-shell> cd mysql
-shell> mkdir mysql-files
-shell> chown mysql:mysql mysql-files
-shell> chmod 750 mysql-files
-shell> bin/mysqld --initialize --user=mysql
-shell> bin/mysql_ssl_rsa_setup
-shell> bin/mysqld_safe --user=mysql &
-# Next command is optional
-shell> cp support-files/mysql.server /etc/init.d/mysql.server
-
-
-2021-05-17T07:20:33.335052Z 1 [Note] A temporary password is generated for root@localhost: 9JhTjjTeHs/z
 ```
-
-
 
 
 
 ```
 # 安装mysql 5.6
+
+yum install perl
+yum install perl-Data-Dumper.x86_64
+
+
 
 free -m
      # -m -g # m or g size show
@@ -78,8 +61,6 @@ shell> chown -R mysql data
 shell> bin/mysqld_safe --user=mysql &
 # Next command is optional
 shell> cp support-files/mysql.server /etc/init.d/mysql.server
-
-
 
 ```
 
