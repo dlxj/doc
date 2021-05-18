@@ -31,6 +31,18 @@ shell> apt-get install libaio1 # install library
 ```
 # 安装mysql 5.6
 
+# 先把发现的mysql 文件或包全删干净
+rpm -qa | grep mysql
+rpm -qa | grep maria
+yum remove and run yum install mysql-devel
+yum clean all
+
+find / -name mysql   # 全删干净
+find / -name my.cnf  # 全删干净
+
+rm -rf (all folders listed in find)
+
+
 yum install perl
 yum install perl-Data-Dumper.x86_64
 
@@ -64,6 +76,22 @@ shell> cp support-files/mysql.server /etc/init.d/mysql.server
 
 ```
 
+```
+cd bin
+mysql -uroot # 直接进，并不需要密码
+	# GRANT ALL PRIVILEGES ON *.* TO rootsuper@'%' IDENTIFIED BY 'rootsuper4321' WITH GRANT OPTION;
+	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
+
+UPDATE mysql.user SET Password=PASSWORD('AIDev@2020') WHERE User='root';
+
+GRANT ALL PRIVILEGES ON *.* TO 'unamehere'@'%' IDENTIFIED BY 'passwdhere' WITH GRANT OPTION;
+
+service mysql.server status
+
+```
+
+
+
 
 
 ```
@@ -80,7 +108,7 @@ character-set-server = utf8
 bind-address = 0.0.0.0
 port = 3306
 basedir  = /usr/local/mysql
-datadir  = /usr/local/mysql/data
+datadir  = /home/mysqldata
 lc-messages-dir = /usr/local/mysql/share
 innodb_use_native_aio = 0
 ```
@@ -104,8 +132,6 @@ innodb_use_native_aio = 0
 rpm -qa | grep mysql
 rpm -qa | grep maria
 yum remove and run yum install mysql-devel
-
-yum remove mysql*
 
 find / -name mysql
 
