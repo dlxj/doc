@@ -1877,6 +1877,129 @@ $$
 
 
 
+
+$$
+\begin{bmatrix}
+3 & 1 \\
+2 & 4 \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+3 \\
+2 \\
+\end{bmatrix}
+$$
+
+- $A$ 将$x$ 轴的单位向量变换到$(3,2)^T$ 
+
+$$
+\begin{bmatrix}
+3 & 1 \\
+2 & 4 \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+1 \\
+4 \\
+\end{bmatrix}
+$$
+
+- $A$ 将$y$ 轴的单位向量变换到$(1,4)^T$ 
+
+
+$$
+A^{\ } = 
+\begin{bmatrix}
+3 & 1 \\
+2 & 4 \\
+\end{bmatrix}
+
+\ \text{（列空间）}
+
+\\
+
+A^T = 
+\begin{bmatrix}
+3 & 2 \\
+1 & 4 \\
+\end{bmatrix}
+
+\ \text{（行空间）}
+$$
+
+- 列空间和行空间
+
+$$
+\begin{bmatrix}
+3 & 1 \\
+2 & 4 \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+3 \\
+1 \\
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+10 \\
+10 \\
+\end{bmatrix}
+$$
+
+- $A$ 把行空间变换到列空间
+
+
+$$
+\begin{bmatrix}
+3 & 2 \\
+1 & 4 \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+3 \\
+2 \\
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+13 \\
+11 \\
+\end{bmatrix}
+$$
+
+- $A^T$ 把列空间变换到行空间
+
+
+
+
+
+
+
 ### 四个基本子空间
 
  https://zhuanlan.zhihu.com/p/34056351
