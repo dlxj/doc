@@ -2333,6 +2333,16 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
+可能要考虑使用像 par这样的档案格式，该格式除了提供错误检测功能外，还提供*纠错*功能。当然，这种格式的缺点是纠错所需的冗余必然会增加文件大小。
+
+
+
+利用Nginx WebDAV搭建自己的网盘
+
+https://www.cnblogs.com/DragonStart/p/13410090.html
+
+
+
 详细命令
 
 https://www.huaweicloud.com/articles/4a48bc251c6378d717caaf1f27acf1c4.html
@@ -2535,6 +2545,8 @@ ffmpeg -i xxxxxxxxxx -vn -threads 4 -acodec copy output.filename
 ffmpeg -ss <start.second> -i xxxxxx -t <duration.second> output.filename
 ffmpeg -ss <start.second> -i xxxxxx -t <duration.second> -acodec copy -vcodec copy output.filename
 ```
+
+
 
 
 

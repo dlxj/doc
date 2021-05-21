@@ -4055,6 +4055,10 @@ https://github.com/duolingo/halflife-regression
 
 [李宏毅2021作业](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
+- [李宏毅机器学习2021笔记—self-attention（上）](https://blog.csdn.net/zghnwsc/article/details/115982794)
+- [浅谈Attention-based Model【原理篇】](https://blog.csdn.net/wuzqChom/article/details/75792501)
+- [Attention-based Model](https://mmchiou.gitbooks.io/ai_gc_methodology_2018_v1-private/content/attention-based-model-li-hong-yi-jiao-638829/attention-based-model-prof-li-hong-6bc529.html)
+
 [《机器翻译：基础与模型》肖桐 朱靖波](https://github.com/NiuTrans/MTBook)
 
 - 束搜索（Beam Search）p.73 （又称束剪枝（Beam Pruning））
@@ -4113,6 +4117,8 @@ https://github.com/duolingo/halflife-regression
 [万创杯 中医药天池大数据竞赛](https://github.com/kangyishuai/CHINESE-MEDICINE-QUESTION-GENERATION)
 
 [SPACES：“抽取-生成”式长文本摘要（法研杯总结）](https://github.com/bojone/SPACES)
+
+[](https://github.com/bojone/SimCSE)
 
 > ```
 > ”代码唯一修改的地方就是在运行extract_convert.py文件的时候报错，TypeError: Object of type int64 is not JSON serializable“该问题我也遇到过，在写入文档前，即 f.write(json.dumps(d, ensure_ascii=False) + '\n')前，加入两行代码
