@@ -1957,7 +1957,11 @@ yum -y update
 yum search postgresql13
 yum -y install postgresql13 postgresql13-server
 /usr/pgsql-13/bin/postgresql-13-setup initdb
-	# /usr/pgsql-13/bin/postgresql-13-setup initdb --pgdata=Dirhere
+	# adduser postgres
+	# chown postgres /mnt/psqldata
+	# su - postgres
+	# /usr/pgsql-13/bin/initdb -D /mnt/psqldata
+	# /usr/pgsql-13/bin/pg_ctl -D /mnt/psqldata -l logfile start
 systemctl start postgresql-13
 systemctl status postgresql-13
 systemctl enable postgresql-13 # 自启动
