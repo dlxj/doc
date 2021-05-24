@@ -2345,7 +2345,9 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 
-可能要考虑使用像 par这样的档案格式，该格式除了提供错误检测功能外，还提供*纠错*功能。当然，这种格式的缺点是纠错所需的冗余必然会增加文件大小。
+How to configure data directory in PostgreSQL 13
+
+https://dsquarehelp.com/postgresql-13-data-directory/
 
 
 
