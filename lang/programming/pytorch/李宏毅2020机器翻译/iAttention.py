@@ -52,12 +52,52 @@ class LabelTransform(object):
     label = np.pad(label, (0, (self.size - label.shape[0])), mode='constant', constant_values=self.pad)
     return label
 
+import re
 class TorchDataset(torch_data.Dataset):
-    def __init__(self, data):
-        self.data = data
+  def __init__(self, data):
+    self.data = data
         
-    def __len__(self):
-        return len(self.data)
+  def __len__(self):
+    return len(self.data)
+  def __getitem__(self, Index):
+    # 先將中英文分開
+    sentences = self.data[Index]
+    sentences = re.split('[\t\n]', sentences)
+    sentences = list(filter(None, sentences))
+    #print (sentences)
+    assert len(sentences) == 2
+
+    # 預備特殊字元
+    BOS = word2int_en['<BOS>']
+    EOS = word2int_en['<EOS>']
+    UNK = word2int_en['<UNK>']
+
+    # 在開頭添加 <BOS>，在結尾添加 <EOS> ，不在字典的 subword (詞) 用 <UNK> 取代
+    en, cn = [BOS], [BOS]
+    # 將句子拆解為 subword 並轉為整數
+    sentence = re.split(' ', sentences[0])
+    sentence = list(filter(None, sentence))
+    #print (f'en: {sentence}')
+    for word in sentence:
+      en.append(word2int_en.get(word, UNK))
+    en.append(EOS)
+
+    # 將句子拆解為單詞並轉為整數
+    # e.g. < BOS >, we, are, friends, < EOS > --> 1, 28, 29, 205, 2
+    sentence = re.split(' ', sentences[1])
+    sentence = list(filter(None, sentence))
+    #print (f'cn: {sentence}')
+    for word in sentence:
+      cn.append(word2int_cn.get(word, UNK))
+    cn.append(EOS)
+
+    en, cn = np.asarray(en), np.asarray(cn)
+
+    # 用 <PAD> 將句子補到相同長度
+    en, cn = transform(en), transform(cn)
+    en, cn = torch.LongTensor(en), torch.LongTensor(cn)
+
+    return en, cn
 
 def infinite_iter(data_loader):
   it = iter(data_loader)
@@ -490,7 +530,7 @@ if  __name__ == "__main__":
     
       # 儲存模型和結果
       if total_steps % store_steps == 0 or total_steps >= num_steps:
-        a = 1
+        print(1)
       #   save_model(model, optimizer, config.store_model_path, total_steps)
       #   with open(f'{config.store_model_path}/output_{total_steps}.txt', 'w', encoding='UTF-8') as f:
       #     for line in result:
@@ -498,6 +538,6 @@ if  __name__ == "__main__":
     
       #  return train_losses, val_losses, bleu_scores
 
-    a = 1
+    print(2)
 
 
