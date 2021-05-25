@@ -1952,6 +1952,13 @@ r''
 irt [u](https://github.com/17zuoye/pyirt/blob/master/tests/test_model_wrapper.py)
 
 ```python
+print ("\r", "train [{}] loss: {:.3f}, Perplexity: {:.3f}, teach: {:.3f}      ".format(total_steps + step + 1, loss_sum, np.exp(loss_sum), now_tf), end=" ")
+
+```
+
+
+
+```python
 c = [0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5]
 
 guess_param = {}

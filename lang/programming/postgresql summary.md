@@ -1951,6 +1951,7 @@ docker run -tid --name centos7PG10 -p 54322:5432 --privileged=true centos:7 /sbi
 docker exec -it centos7PG10 /bin/bash
 
 # 安装PG13
+# https://gist.github.com/coder4web/13419dbfe7c22dc5bad8bb4e135138bc # 安装脚本
 yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 yum -y update
@@ -1958,11 +1959,22 @@ yum search postgresql13
 yum -y install postgresql13 postgresql13-server
 /usr/pgsql-13/bin/postgresql-13-setup initdb
 	# adduser postgres
-	# chown postgres /mnt/psqldata
+	# chown postgres:postgres /mnt/psqldata
 	# su - postgres
 	# /usr/pgsql-13/bin/initdb -D /mnt/psqldata
-	# /usr/pgsql-13/bin/pg_ctl -D /mnt/psqldata -l logfile start
+	# /usr/pgsql-13/bin/pg_ctl -D /mnt/psqldata -l logfile -o '--config-file=/mnt/psqldata/postgresql.conf' start
+	# /usr/pgsql-13/bin/pg_ctl -D /mnt/psqldata -l logfile status # 查看状态
+	# vi /mnt/psqldata/postgresql.conf
+		listen_addresses = '*' # 改成这个
+	# vi /mnt/psqldata/pg_hba.conf
+		hostnossl    all          all            0.0.0.0/0  md5
+		# 加在最后面，接受所有远程IP
+	# psql -c "show config_file"
+	# ps aux | grep /postgres
+	# select name, setting from pg_Settings where name ='data_directory';
+	
 systemctl start postgresql-13
+	# /usr/pgsql-13/bin/postmaster -D /var/lib/pgsql/13/data/
 systemctl status postgresql-13
 systemctl enable postgresql-13 # 自启动
 
