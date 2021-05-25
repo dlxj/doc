@@ -1959,7 +1959,10 @@ yum search postgresql13
 yum -y install postgresql13 postgresql13-server
 /usr/pgsql-13/bin/postgresql-13-setup initdb
 	# adduser postgres
-	# chown postgres:postgres /mnt/psqldata
+	# chown -R postgres:postgres /mnt/psqldata
+		# cp -R /var/lib/pgsql/13/data/* /mnt/psqldata # 只能透亮换柱了
+		# ln -s  /mnt/psqldata  /var/lib/pgsql/13/data
+	# sudo -u postgres /usr/pgsql-13/bin/initdb -D /mnt/psqldata
 	# su - postgres
 	# /usr/pgsql-13/bin/initdb -D /mnt/psqldata
 	# /usr/pgsql-13/bin/pg_ctl -D /mnt/psqldata -l logfile -o '--config-file=/mnt/psqldata/postgresql.conf' start
@@ -1975,6 +1978,9 @@ yum -y install postgresql13 postgresql13-server
 	
 systemctl start postgresql-13
 	# /usr/pgsql-13/bin/postmaster -D /var/lib/pgsql/13/data/
+	# sudo -u postgres psql
+	# SHOW data_directory;
+	
 systemctl status postgresql-13
 systemctl enable postgresql-13 # 自启动
 
