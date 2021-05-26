@@ -1944,6 +1944,12 @@ root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
 ```
 # 关闭防火墙
 systemctl stop firewalld
+
+# atuto run when reboot
+chmod +x /etc/rc.d/rc.local
+vi /etc/rc.d/rc.local
+mount /dev/sda1 /mnt  # 加一句，挂载存储块
+
 # 特权模式创建容器
 docker run -tid --name centos7PG10 -p 54322:5432 --privileged=true centos:7 /sbin/init 
 		# 此命令会自动下载镜像
