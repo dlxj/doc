@@ -1635,6 +1635,8 @@ if __name__ == "__main__":
 
 
 
+
+
 ## Tuples
 
 ```
@@ -2855,6 +2857,57 @@ array([[1, 2],
     lik_values = np.prod(tmp1*tmp2, axis=1)
 """
 ```
+
+
+
+
+
+### 类型转换
+
+
+
+```python
+# doc\lang\programming\pytorch\李宏毅2020机器翻译\iAttention.py
+
+a = np.array([1, 2], dtype=np.float32)
+np.asarray(a, dtype=np.float32) is a
+True
+np.asarray(a, dtype=np.float64) is a
+False
+
+issubclass(np.recarray, np.ndarray)
+True
+a = np.array([(1.0, 2), (3.0, 4)], dtype='f4,i4').view(np.recarray)
+np.asarray(a) is a
+False
+np.asanyarray(a) is a
+True
+```
+
+```
+# 填充物
+class LabelTransform(object):
+  def __init__(self, size, pad):
+    self.size = size
+    self.pad = pad
+
+  def __call__(self, label):
+    label = np.pad(label, (0, (self.size - label.shape[0])), mode='constant', constant_values=self.pad)
+    return label
+    
+transform = LabelTransform(max_output_len, word2int_en['<PAD>'])
+
+
+ # 用 <PAD> 將句子補到相同長度
+ en, cn = transform(en), transform(cn)
+ en, cn = torch.LongTensor(en), torch.LongTensor(cn)
+	# en, cn 是list[int]，int 表示单词的唯一编号
+
+```
+
+
+
+
 
 
 
