@@ -4058,6 +4058,12 @@ https://github.com/duolingo/halflife-regression
 - [李宏毅机器学习2021笔记—self-attention（上）](https://blog.csdn.net/zghnwsc/article/details/115982794)
 - [浅谈Attention-based Model【原理篇】](https://blog.csdn.net/wuzqChom/article/details/75792501)
 - [Attention-based Model](https://mmchiou.gitbooks.io/ai_gc_methodology_2018_v1-private/content/attention-based-model-li-hong-yi-jiao-638829/attention-based-model-prof-li-hong-6bc529.html)
+- [编写高效的PyTorch代码技巧](https://zhuanlan.zhihu.com/p/137965337)
+  - 高效DataLoad
+
+- [7 个有用的 PyTorch 技巧](https://zhuanlan.zhihu.com/p/372733826)
+
+
 
 [《机器翻译：基础与模型》肖桐 朱靖波](https://github.com/NiuTrans/MTBook)
 

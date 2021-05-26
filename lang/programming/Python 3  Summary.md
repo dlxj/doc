@@ -2266,6 +2266,17 @@ list(filter(lambda w: not bool(re.match(r'[^\u4e00-\u9fa5]', w)), words)) # 过�
 
 
 
+### 去除 list 中的空串
+
+```python
+# 去除 list 中的空串
+sentences = list(filter(None, sentences)) 
+```
+
+
+
+
+
 ## Regex
 
 https://zhuanlan.zhihu.com/p/42944600

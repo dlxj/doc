@@ -1,7 +1,11 @@
 # ! git clone https://github.com/dlxj/NTU_MachineLearning.git
 
 import os
-os.chdir('/content/NTU_MachineLearning/') # HW8_Seq2Seq
+try:
+  if os.uname()[0] == "Linux":
+    os.chdir('/content/NTU_MachineLearning/') # HW8_Seq2Seq
+except:
+  print('OS type: windows')
 
 import torch
 import torch.nn as nn
