@@ -359,8 +359,8 @@ def train(model, optimizer, train_iter, loss_function, total_steps, summary_step
   for step in range(summary_steps):
     now_tf = schedule_sampling(total_steps + step, num_steps, MODE) # 计划采样
     """
-    以 now_tf 的概率使用模型上一步的输出作为模型的输入
-    以 (1 - now_tf) 的概率使用标注出作为模型的输入
+    以 now_tf 的概率使用标注（正确答案）作为模型的输入
+    以 (1- now_tf) 的概率使用模型上一步的输出作为模型的输入
 
     Exposure Bias
       而在测试时，模型的输入是上一步的输出，如果一步出错，可能就会步步出错。这个问题叫做Exposure Bias
