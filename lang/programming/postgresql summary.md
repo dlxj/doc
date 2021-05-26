@@ -1941,6 +1941,10 @@ root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
 
 
 
+<img src="postgresql summary.assets/image-20210526154947175.png" alt="image-20210526154947175" style="zoom:50%;" />
+
+
+
 ```
 # 关闭防火墙
 systemctl stop firewalld
