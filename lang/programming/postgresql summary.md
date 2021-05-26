@@ -1973,7 +1973,9 @@ yum -y install postgresql13 postgresql13-server
 	# adduser postgres
 	# chown -R postgres:postgres /mnt/psqldata
 		# cp -R /var/lib/pgsql/13/data/* /mnt/psqldata # 只能透亮换柱了
+		# mv /var/lib/pgsql/13/data /var/lib/pgsql/13/data__link__to_mnt_psqldata
 		# ln -s  /mnt/psqldata  /var/lib/pgsql/13/data
+		# chown -R postgres:postgres /mnt/psqldata
 	# sudo -u postgres /usr/pgsql-13/bin/initdb -D /mnt/psqldata
 	# su - postgres
 	# /usr/pgsql-13/bin/initdb -D /mnt/psqldata
