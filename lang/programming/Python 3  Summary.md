@@ -1784,6 +1784,17 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 
 
 
+### Get default if none
+
+```
+# doc\lang\programming\pytorch\李宏毅2020机器翻译\iAttention.py
+word2int_en.get(word, UNK)  # key 不存在，则返回默认值UNK
+```
+
+
+
+
+
 ### Order
 
 
@@ -2899,7 +2910,7 @@ transform = LabelTransform(max_output_len, word2int_en['<PAD>'])
 
 
  # 用 <PAD> 將句子補到相同長度
- en, cn = transform(en), transform(cn)
+ en, cn = transform(en), transform(cn)  # 就是在list 后面填0
  en, cn = torch.LongTensor(en), torch.LongTensor(cn)
 	# en, cn 是list[int]，int 表示单词的唯一编号
 
