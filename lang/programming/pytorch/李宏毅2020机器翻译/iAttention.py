@@ -1,6 +1,7 @@
+# ! git clone https://github.com/dlxj/NTU_MachineLearning.git
 
 import os
-#os.chdir('/content/NTU_MachineLearning/HW8_Seq2Seq')
+os.chdir('/content/NTU_MachineLearning/') # HW8_Seq2Seq
 
 import torch
 import torch.nn as nn
@@ -428,9 +429,9 @@ def test(model, dataloader, loss_function):
 
     # 將預測結果轉為文字
     targets = targets.view(sources.size(0), -1)
-    preds = tokens2sentence(preds, dataloader.dataset.int2word_cn)
-    sources = tokens2sentence(sources, dataloader.dataset.int2word_en)
-    targets = tokens2sentence(targets, dataloader.dataset.int2word_cn)
+    preds = tokens2sentence(preds, int2word_cn)
+    sources = tokens2sentence(sources, int2word_en)
+    targets = tokens2sentence(targets, int2word_cn)
     for source, pred, target in zip(sources, preds, targets):
       result.append((source, pred, target))
     # 計算 Bleu Score
@@ -440,6 +441,15 @@ def test(model, dataloader, loss_function):
 
   return loss_sum / len(dataloader), bleu_score / n, result
 
+
+def save_model(model, optimizer, store_model_path, step):
+  torch.save(model.state_dict(), f'{store_model_path}/model_{step}.ckpt')
+  return
+
+def Load_Model(model, load_model_path):
+  print(f'Load model from {load_model_path}')
+  model.load_state_dict(torch.load(f'{load_model_path}.ckpt'))
+  return model
 
 if  __name__ == "__main__": 
 
@@ -531,12 +541,16 @@ if  __name__ == "__main__":
       # 儲存模型和結果
       if total_steps % store_steps == 0 or total_steps >= num_steps:
         print(1)
-      #   save_model(model, optimizer, config.store_model_path, total_steps)
-      #   with open(f'{config.store_model_path}/output_{total_steps}.txt', 'w', encoding='UTF-8') as f:
-      #     for line in result:
-      #       print (line, file=f)
+        save_model(model, optimizer, store_model_path, total_steps)
+        with open(f'{store_model_path}/output_{total_steps}.txt', 'w', encoding='UTF-8') as f:
+          for line in result:
+            print (line, file=f)
     
-      #  return train_losses, val_losses, bleu_scores
+
+    load_model_path = f'{store_model_path}/model_{total_steps}'
+    print( load_model_path )
+    Load_Model(model, load_model_path)
+     
 
     print(2)
 
