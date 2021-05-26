@@ -357,9 +357,17 @@ def train(model, optimizer, train_iter, loss_function, total_steps, summary_step
   loss_sum = 0.0
 
   for step in range(summary_steps):
-    now_tf = schedule_sampling(total_steps + step, num_steps, MODE)
-    sources, targets = next(train_iter)
-    sources, targets = sources.to(device), targets.to(device)
+    now_tf = schedule_sampling(total_steps + step, num_steps, MODE) # 计划采样
+    """
+    以 now_tf 的概率使用模型上一步的输出作为模型的输入
+    以 (1 - now_tf) 的概率使用标注出作为模型的输入
+
+    Exposure Bias
+      而在测试时，模型的输入是上一步的输出，如果一步出错，可能就会步步出错。这个问题叫做Exposure Bias
+      有一个可行的方法是Scheduled Sampling，按一定概率选择模型上一步的输出或者标注作为模型的输入，可以在刚开始时只使用标注作为输入然后慢慢开始使用模型上一步的输出作为输入。
+    """
+    sources, targets = next(train_iter) # 都是(60,50) 的张量，60 是批大小，50 是50 个唯一整数表示的单词，合起来代表一个句子，sources 是英文句子，targets 是对应的中文翻译
+    sources, targets = sources.to(device), targets.to(device) 
     outputs, preds = model(sources, targets, now_tf)
     # targets 的第一個 token 是 <BOS> 所以忽略
     outputs = outputs[:, 1:].reshape(-1, outputs.size(2))

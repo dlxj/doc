@@ -4043,6 +4043,8 @@ https://github.com/duolingo/halflife-regression
 
 - [作业答案 NTU_MachineLearning](https://github.com/IPINGCHOU/NTU_MachineLearning)
 
+  - [Scheduled Sampling](https://zhuanlan.zhihu.com/p/374340958)
+
   - > 工行纯visa卡（不要限联）可以，刚刚买了，邮编填了蒙大洲的59601，似乎免税了，9.9刀
     >
     > 以上卡的特点就是都只能在境外消费使用，在国内无法使用，这就是为什么国内很多人用信用卡申请失败的原因，失败的往往是那些用了VISA双币卡的信用卡，不是所有中国发行的信用卡都是被拒绝的。
@@ -4062,6 +4064,8 @@ https://github.com/duolingo/halflife-regression
   - 高效DataLoad
 
 - [7 个有用的 PyTorch 技巧](https://zhuanlan.zhihu.com/p/372733826)
+
+- [Kaggle竞赛实战系列：手写数字识别器](https://zhuanlan.zhihu.com/p/101810169)
 
 
 
