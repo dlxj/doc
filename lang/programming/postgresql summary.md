@@ -1093,8 +1093,8 @@ yum groupinstall "Development Tools"
 
 
 ```
-yum install centos-release-scl-rh
-yum install llvm-toolset-7-clang
+yum install centos-release-scl-rh && \
+yum install llvm-toolset-7-clang && \
 yum install postgresql13-devel
 ```
 
