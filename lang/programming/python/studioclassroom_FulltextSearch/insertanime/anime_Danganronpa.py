@@ -389,9 +389,20 @@ def extractVideo(videopath, begintime, endtime):
     #   "-ar", "44100", "-ac", "2", "-b:a", "192k", \
     #     "tmp.mp3"])
     
-    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-codec:v", "hevc",  "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+    # out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-codec:v", "hevc",  "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+    #   "-ar", "44100", "-ac", "2", "-b:a", "192k", \
+    #     "tmp.ts"])
+
+    """
+    # jsmpeg.js normal play
+    ! ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=t.mkv t.ts
+    """
+    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-f", "mpegts", "-codec:v", "mpeg1video",  "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
       "-ar", "44100", "-ac", "2", "-b:a", "192k", \
         "tmp.ts"])
+
+    
+        subprocess.check_output('ffmpeg -i t.mkv -y -ss 00:01:12.960 -to 00:01:14.640 -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=t.mkv t.ts' % 变量, shell=True)
 
     out_text = out_bytes.decode('utf-8')
     bts = readImage("tmp.ts")
@@ -654,7 +665,7 @@ def importAnime(animename, frtname, videoname, videopath):
                 # cur.execute( sql )
 
                 #cur.execute("""INSERT INTO audio(data) VALUES(%s);""", (bts,))
-                break
+                #break
 
             #cur.execute('COMMIT;')
 
