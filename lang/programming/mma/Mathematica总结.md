@@ -353,6 +353,8 @@ DictionaryLookup[x__/;StringLength[x]>6]
 
 
 
+
+
 ## Lookup
 
 ### Lookup 配合Association 使用
@@ -1224,6 +1226,22 @@ Run["say -o gym.mp4 -v Zarvox "<>gymString]
 
 
 ![image-20200523190009649](C:\Users\echod\AppData\Roaming\Typora\typora-user-images\image-20200523190009649.png)
+
+
+
+
+
+# Image
+
+
+
+### 填充到指定宽度
+
+```
+padRight[image_,width_]:=PadRight[#, width,1]& /@ (ImageData@image)//Image
+```
+
+
 
 
 
