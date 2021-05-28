@@ -1235,11 +1235,52 @@ Run["say -o gym.mp4 -v Zarvox "<>gymString]
 
 
 
+### 清理图片
+
+
+
+```mathematica
+clean[i_]:=i//ColorNegate//DeleteSmallComponents[#, 20]&
+i//clean
+```
+
+
+
+### 倾斜校正
+
+```mathematica
+clean[i_]:=i//ColorNegate//DeleteSmallComponents[#, 20]&
+preserveHLine[i_]:=i//ImageConvolve[#,{{1},{-1}}]&//DeleteSmallComponents//
+	Binarize[#,.999]&//DeleteSmallComponents[#, 7]&
+lines = preserveHLine[i//clean]//ImageLines[#,0,1]&
+HighlightImage[i,lines]
+skewAngle[i_]:=i//clean//preserveHLine//ImageLines[#,0,1]&//#[[1]]&//#[[1]]&//#[[2]]-#[[1]]&//Complex@@#&//Arg@#&
+correctSkew[i_]:=With[{radian=i//skewAngle,
+	iClean=i//clean},
+ImageRotate[iClean,-radian]
+]
+skewAngle[i]
+correctSkew[i]
+```
+
+
+
+
+
+
+
 ### 填充到指定宽度
 
-```
+```mathematica
 padRight[image_,width_]:=PadRight[#, width,1]& /@ (ImageData@image)//Image
 ```
+
+```
+# 同宽度的图片合成一张图
+ImageAssemble
+```
+
+
 
 
 
