@@ -3775,6 +3775,20 @@ function start(){
 
 
 
+
+
+# NTFS
+
+
+
+```
+yum install ntfsprogs  # for mkfs.ntfs
+```
+
+
+
+
+
 https://www.51ittech.com/knowledge-base/centos-7-install-vmware-workstation-15/
 
 
