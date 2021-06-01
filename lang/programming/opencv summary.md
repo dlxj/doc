@@ -126,6 +126,19 @@ class Sample
 
 
 
+# 反色
+
+```python
+img = cv2.imread('0001.bmp')
+img = cv2.bitwise_not(img)
+```
+
+
+
+
+
+
+
 
 
 # 边缘检测
