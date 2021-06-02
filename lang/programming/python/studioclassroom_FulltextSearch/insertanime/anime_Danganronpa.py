@@ -402,8 +402,8 @@ def extractVideo(videopath, begintime, endtime):
     #     "tmp.ts"])
 
     
-    cmd = 'ffmpeg -i %s -y -ss 00:01:12.960 -to 00:01:14.640 -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=%s t.ts' % (videopath, videopath)
-    subprocess.check_output(cmd, shell=True)
+    cmd = f'ffmpeg -i \"{videopath}\" -y -ss {begintime} -to {endtime} -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=\"{videopath}\" tmp.ts' #% (videopath,videopath)#('t.mkv', 't.mkv')
+    out_bytes = subprocess.check_output(cmd, shell=True)
 
     out_text = out_bytes.decode('utf-8')
     bts = readImage("tmp.ts")
@@ -663,10 +663,10 @@ def importAnime(animename, frtname, videoname, videopath):
                 # if count >= 10:
                 #   break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
-                # cur.execute( sql )
+                #cur.execute( sql )
 
                 #cur.execute("""INSERT INTO audio(data) VALUES(%s);""", (bts,))
-                #break
+                break
 
             #cur.execute('COMMIT;')
 
@@ -721,7 +721,8 @@ if __name__ == "__main__":
     if OS == "Linux":
       root = r"/root/insertstudio/insertanime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "OSX":
-      root = r"/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+      #root = r"/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+      root = r"/Users/olnymyself/Downloads/d"
 
     print( f"root path: \n{root}" )
 
