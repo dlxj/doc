@@ -3,7 +3,10 @@
 #  删除边缘的对象
 
 ```
-    // 删除边缘的对象
+
+// opencvsharp
+
+// 删除边缘的对象
     public static Mat DeleteBorderComponents(string path_src)
     {
         // https://stackoverflow.com/questions/65534370/remove-the-element-attached-to-the-image-border
@@ -500,6 +503,33 @@ int main()
     std::cout << "Hello World!\n";
 }
 ```
+
+
+
+# distanceTransform
+
+```
+
+# https://blog.csdn.net/ftimes/article/details/106836803
+
+import numpy as np
+import cv2 as cv
+from matplotlib import pyplot as plt
+
+img = cv.imread('coin.jpg', cv.IMREAD_GRAYSCALE)
+_ret, img2 = cv.threshold(img, 0, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
+kernel = np.ones((3, 3), np.uint8)
+opn = cv.morphologyEx(img2, cv.MORPH_OPEN, kernel)
+distance = cv.distanceTransform(opn, cv.DIST_L2, 3)
+_ret, result = cv.threshold(distance, 0.7 * distance.max(), 255, cv.THRESH_BINARY)
+
+plt.subplot(141), plt.imshow(img, cmap='gray'), plt.title('org'), plt.axis('off')
+plt.subplot(142), plt.imshow(opn, cmap='gray'), plt.title('opn'), plt.axis('off')
+plt.subplot(143), plt.imshow(distance, cmap='gray'), plt.title('distance'), plt.axis('off')
+plt.subplot(144), plt.imshow(result, cmap='gray'), plt.title('result'), plt.axis('off')
+```
+
+
 
 
 
