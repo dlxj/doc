@@ -361,6 +361,91 @@ int main()
 
 
 
+# 无损删除过小对象
+
+```c++
+#include <iostream>
+#include <opencv.hpp>
+#include <opencv2/imgproc.hpp>
+
+using namespace cv;
+using namespace std;
+
+int main()
+{
+
+    Mat img = cv::imread("small.jpg", CV_LOAD_IMAGE_COLOR);
+    cv::cvtColor(img, img, CV_BGR2GRAY);
+
+    cv::Mat outputLabels, stats, img_color, centroids;
+
+    // 计算所有8 个方向的连通块
+    int numberofComponents = cv::connectedComponentsWithStats(img, outputLabels,
+        stats, centroids, 4);
+
+    std::vector<cv::Vec3b> colors(numberofComponents + 1);
+    
+
+    //do not count the original background-> label = 0:
+    colors[0] = cv::Vec3b(0, 0, 0);
+
+    // 每个连通块随机分配一种不同的颜色
+    for (int i = 1; i <= numberofComponents; i++) {
+        colors[i] = cv::Vec3b(rand() % 256, rand() % 256, rand() % 256);
+    }
+
+    //Area threshold:
+    int minArea = 25*25; //10 px
+
+
+    // 面积过小的块用粉色标注
+    for (int i = 1; i <= numberofComponents; i++) {
+
+        //get the area of the current blob:
+        auto blobArea = stats.at<int>(i - 1, cv::CC_STAT_AREA);
+
+        //apply the area filter:
+        if (blobArea < minArea)
+        {
+            //filter blob below minimum area:
+            //small regions are painted with (ridiculous) pink color
+            colors[i - 1] =  cv::Vec3b(248, 48, 213);  // cv::Vec3b(0, 0, 0);
+
+        }
+
+    }
+
+    // 新建一张彩图
+    Mat color_img = Mat::zeros(img.size(), CV_8UC3);
+
+    for (int x = 0; x < img.rows; x++) 
+    {
+        for (int y = 0; y < img.cols; y++)
+        {
+            int label = outputLabels.at<int>(x, y);  //注意labels是int型，不是uchar.
+            color_img.at<Vec3b>(x, y) = colors[label];
+
+            if (colors[label] == cv::Vec3b(248, 48, 213)) {
+                img.at<cv::uint8_t>(x, y) = 0;
+            }
+
+        }
+    }
+
+    imshow("color", color_img);
+    imshow("origin", img);
+    cv::waitKey();
+
+    std::cout << "Hello World!\n";
+}
+```
+
+
+
+
+
+
+
 
 
 
