@@ -315,7 +315,24 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 
 
+# 对所有Components 着色
+
+
+
 ```c++
+
+// 对所有Components 着色
+
+#include <iostream>
+#include <opencv.hpp>
+#include <opencv2/imgproc.hpp>
+
+using namespace cv;
+using namespace std;
+
+int main()
+{
+
     Mat img = cv::imread("small3.jpg", CV_LOAD_IMAGE_COLOR);
     cv::cvtColor(img, img, CV_BGR2GRAY);
 
@@ -337,6 +354,9 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
         }
     imshow("labelMap", src_color);
     cv::waitKey();
+
+    std::cout << "Hello World!\n";
+}
 ```
 
 
