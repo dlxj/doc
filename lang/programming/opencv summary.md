@@ -322,6 +322,10 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 
 
+<img src="opencv summary.assets/small3.jpg" alt="image-20210602102807446" style="zoom: 33%;" />
+
+
+
 ```c++
 
 // 对所有Components 着色
@@ -365,6 +369,12 @@ int main()
 
 
 # 无损删除过小对象
+
+
+
+<img src="opencv summary.assets/small.jpg" alt="image-20210602102807446" style="zoom:50%;" />
+
+
 
 ```c++
 #include <iostream>
