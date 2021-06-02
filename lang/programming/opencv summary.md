@@ -336,7 +336,100 @@ cv2.imwrite('hsv_new.jpg',newHsv)
 
 
 
+# Removing horizontal underlines
+
+
+
+```
+# https://stackoverflow.com/questions/48327567/removing-horizontal-underlines/48363834#48363834
+
+# 很不错
+
+
+```
+
+
+
+
+
 # C++
+
+
+
+```c++
+#include <iostream>
+#include <opencv.hpp>
+#include <opencv2/imgproc.hpp>
+
+using namespace cv;
+using namespace std;
+
+void clean(Mat& im) {
+    // apply Otsu threshold
+    Mat bw;
+    threshold(im, bw, 0, 255, CV_THRESH_BINARY_INV | CV_THRESH_OTSU);
+    // take the distance transform
+    Mat dist;
+    distanceTransform(bw, dist, CV_DIST_L2, CV_DIST_MASK_PRECISE);
+
+    Mat dibw;
+    // threshold the distance transformed image
+    double SWTHRESH = 2;    // stroke width threshold
+    threshold(dist, dibw, SWTHRESH / 2, 255, CV_THRESH_BINARY);
+
+    dibw.convertTo(dibw, CV_8U);
+
+    Mat neg;
+
+    cv::bitwise_not(dibw, im);
+}
+
+
+void DeleteBorderComponents(Mat& im) {
+
+    Mat neg;
+    cv::bitwise_not(im, neg);  // 反色
+
+    Mat pad;
+
+    cv::copyMakeBorder(neg, pad, 1,1,1,1, cv::BorderTypes::BORDER_CONSTANT, 255); // 上下左右各加一像素
+
+    Size size = pad.size();
+    Mat mask = Mat::zeros(size.height + 2, size.width + 2, CV_8UC1);  // Mask 图像宽高都比pad 多两像素
+
+
+    cv::floodFill(pad, mask, Point(0, 0), cv::Scalar(0), 0, cv::Scalar(), cv::Scalar(), 8); // 填充
+
+   
+    cv::Rect r(2, 2, size.width - 2, size.height - 2);
+    Mat tmp = pad(r).clone();
+
+    cv::bitwise_not(tmp, tmp);
+
+    tmp.copyTo(im);
+
+    //imshow("cleaned", tmp);
+    //cv::waitKey();
+}
+
+
+int main()
+{
+
+    Mat im = cv::imread("booktitle.jpg", CV_LOAD_IMAGE_COLOR); // booktitle.png
+    cv::cvtColor(im, im, CV_BGR2GRAY);
+
+    DeleteBorderComponents(im);
+
+    clean(im);
+    clean(im);
+
+    imshow("cleaned", im);
+    cv::waitKey();
+}
+```
+
+
 
 
 
