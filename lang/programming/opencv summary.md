@@ -506,27 +506,93 @@ int main()
 
 
 
-# distanceTransform
+# Distance transform
 
-```
+```c++
 
 # https://blog.csdn.net/ftimes/article/details/106836803
 
-import numpy as np
-import cv2 as cv
-from matplotlib import pyplot as plt
 
-img = cv.imread('coin.jpg', cv.IMREAD_GRAYSCALE)
-_ret, img2 = cv.threshold(img, 0, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
-kernel = np.ones((3, 3), np.uint8)
-opn = cv.morphologyEx(img2, cv.MORPH_OPEN, kernel)
-distance = cv.distanceTransform(opn, cv.DIST_L2, 3)
-_ret, result = cv.threshold(distance, 0.7 * distance.max(), 255, cv.THRESH_BINARY)
+#include <iostream>
+#include <opencv.hpp>
+#include <opencv2/imgproc.hpp>
 
-plt.subplot(141), plt.imshow(img, cmap='gray'), plt.title('org'), plt.axis('off')
-plt.subplot(142), plt.imshow(opn, cmap='gray'), plt.title('opn'), plt.axis('off')
-plt.subplot(143), plt.imshow(distance, cmap='gray'), plt.title('distance'), plt.axis('off')
-plt.subplot(144), plt.imshow(result, cmap='gray'), plt.title('result'), plt.axis('off')
+using namespace cv;
+using namespace std;
+
+int main()
+{
+
+    Mat im = cv::imread("aRh8C.png", CV_LOAD_IMAGE_COLOR);
+    cv::cvtColor(im, im, CV_BGR2GRAY);
+
+    // apply Otsu threshold
+    Mat bw;
+    threshold(im, bw, 0, 255, CV_THRESH_BINARY_INV | CV_THRESH_OTSU);
+    // take the distance transform
+    Mat dist;
+    distanceTransform(bw, dist, CV_DIST_L2, CV_DIST_MASK_PRECISE);
+
+    Mat dibw;
+    // threshold the distance transformed image
+    double SWTHRESH = 10;    // stroke width threshold
+    threshold(dist, dibw, SWTHRESH / 2, 255, CV_THRESH_BINARY);
+
+    Mat kernel = getStructuringElement(MORPH_RECT, Size(3, 3));
+    // perform opening, in case digits are still connected
+    Mat morph;
+    morphologyEx(dibw, morph, CV_MOP_OPEN, kernel);
+    dibw.convertTo(dibw, CV_8U);
+
+    // find contours and filter
+    Mat cont;
+    morph.convertTo(cont, CV_8U);
+
+    Mat binary;
+    cvtColor(dibw, binary, CV_GRAY2BGR);
+
+    const double HTHRESH = im.rows * .5;    // height threshold
+    vector<vector<Point>> contours;
+    vector<Vec4i> hierarchy;
+    vector<Point> digits; // points corresponding to digit contours
+
+    findContours(cont, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+    for (int idx = 0; idx >= 0; idx = hierarchy[idx][0])
+    {
+        Rect rect = boundingRect(contours[idx]);
+        if (rect.height > HTHRESH)
+        {
+            // append the points of this contour to digit points
+            digits.insert(digits.end(), contours[idx].begin(), contours[idx].end());
+
+            rectangle(binary,
+                Point(rect.x, rect.y), Point(rect.x + rect.width - 1, rect.y + rect.height - 1),
+                Scalar(0, 0, 255), 1);
+        }
+    }
+
+    // take the convexhull of the digit contours
+    vector<Point> digitsHull;
+    convexHull(digits, digitsHull);
+    // prepare a mask
+    vector<vector<Point>> digitsRegion;
+    digitsRegion.push_back(digitsHull);
+    Mat digitsMask = Mat::zeros(im.rows, im.cols, CV_8U);
+    drawContours(digitsMask, digitsRegion, 0, Scalar(255, 255, 255), -1);
+    // expand the mask to include any information we lost in earlier morphological opening
+    morphologyEx(digitsMask, digitsMask, CV_MOP_DILATE, kernel);
+    // copy the region to get a cleaned image
+    Mat cleaned = Mat::zeros(im.rows, im.cols, CV_8U);
+    dibw.copyTo(cleaned, digitsMask);
+
+    //imshow("Otsu threshold", bw);
+    imshow("cleaned", cleaned);
+    cv::waitKey();
+
+
+    std::cout << "Hello World!\n";
+}
+
 ```
 
 
