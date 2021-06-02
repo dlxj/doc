@@ -508,6 +508,12 @@ int main()
 
 # Distance transform
 
+
+
+![image-20210602102807446](opencv summary.assets/aRh8C.png)
+
+
+
 ```c++
 
 # https://blog.csdn.net/ftimes/article/details/106836803
