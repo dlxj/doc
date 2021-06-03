@@ -4385,6 +4385,32 @@ p.355
 
 
 
+## OCR
+
+```
+# https://blog.csdn.net/Vermont_/article/details/108424547?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-19.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-19.control
+
+# https://github.com/YCG09/chinese_ocr
+# https://mp.weixin.qq.com/s/jWo8cdbnM-bO3ImTi4gZLg
+
+【OCR学习笔记】9、OCR中文项目综合实践（CTPN+CRNN+CTC Loss原理讲解）
+
+
+```
+
+
+
+
+
+
+
+- 开运算：先腐蚀后膨胀，用于移除由图像噪音形成的斑点
+- 闭运算：先膨胀后腐蚀，用来连接被误分为许多小块的对象
+
+
+
+
+
 
 
 ## Colab

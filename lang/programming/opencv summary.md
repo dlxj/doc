@@ -7,6 +7,7 @@
 ```
 
 // opencvsharp
+// https://github.com/VahidN/OpenCVSharp-Samples/blob/master/OpenCVSharpSample19/Program.cs
 
 // 删除边缘的对象
     public static Mat DeleteBorderComponents(string path_src)
@@ -353,6 +354,10 @@ cv2.imwrite('hsv_new.jpg',newHsv)
 
 
 # C++
+
+
+
+![image-20210602102807446](opencv summary.assets/booktitle.jpg)
 
 
 
