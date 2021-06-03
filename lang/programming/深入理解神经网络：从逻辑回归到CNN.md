@@ -4388,6 +4388,10 @@ p.355
 ## OCR
 
 ```
+
+# https://github.com/chenjun2hao/Attention_ocr.pytorch
+
+
 # https://blog.csdn.net/Vermont_/article/details/108424547?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-19.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-19.control
 
 # https://github.com/YCG09/chinese_ocr
