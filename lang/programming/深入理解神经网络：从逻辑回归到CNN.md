@@ -4394,6 +4394,9 @@ p.355
 # https://github.com/xiaofengShi/CHINESE-OCR
 	# 也很好
 
+# http://xiaofengshi.com/2019/01/23/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-TextDetection/
+	# 全是干货
+
 # https://blog.csdn.net/u014453898/article/details/104784212
 	加入attention的crnn ---- ocr之pytorch代码解释(带代码)
 # https://zhuanlan.zhihu.com/p/142886134
