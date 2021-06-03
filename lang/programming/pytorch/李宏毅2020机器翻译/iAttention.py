@@ -125,7 +125,7 @@ class Encoder(nn.Module):
   def forward(self, input):
     # input = [batch size, sequence len, vocab size]
     embedding = self.embedding(input)
-    outputs, hidden = self.rnn(self.dropout(embedding))
+    outputs, hidden = self.rnn(self.dropout(embedding))  # # dropout 是決定有多少的機率會將某個節點變為 0，主要是為了防止 overfitting ，一般來說是在訓練時使用，測試時則不使用
     # outputs = [batch size, sequence len, hid dim * directions]
     # hidden =  [num_layers * directions, batch size  , hid dim]
     # outputs 是最上層RNN的輸出

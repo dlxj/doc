@@ -4389,6 +4389,11 @@ p.355
 
 ```
 
+# https://github.com/yizt/crnn.pytorch
+	# 很好
+# https://github.com/xiaofengShi/CHINESE-OCR
+	# 也很好
+
 # https://blog.csdn.net/u014453898/article/details/104784212
 	加入attention的crnn ---- ocr之pytorch代码解释(带代码)
 # https://zhuanlan.zhihu.com/p/142886134
