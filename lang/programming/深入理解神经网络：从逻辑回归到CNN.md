@@ -4391,6 +4391,11 @@ p.355
 
 # https://blog.csdn.net/u014453898/article/details/104784212
 	加入attention的crnn ---- ocr之pytorch代码解释(带代码)
+# https://zhuanlan.zhihu.com/p/142886134
+	基于transformer的文本识别方法
+# https://zhuanlan.zhihu.com/p/141389516
+	文本识别中的注意力机制
+
 # https://github.com/chenjun2hao/Attention_ocr.pytorch
 
 

@@ -1077,6 +1077,19 @@ __version__ = '.'.join(map(str,__version_info__))
 
 
 
+### zip
+
+#### 有序对
+
+```
+for sentence, target in zip(sentences, targets):
+	sentence = cut_token(sentence)
+```
+
+
+
+
+
 ###  iterate with index
 
 
