@@ -4389,6 +4389,8 @@ p.355
 
 ```
 
+# https://blog.csdn.net/u014453898/article/details/104784212
+	加入attention的crnn ---- ocr之pytorch代码解释(带代码)
 # https://github.com/chenjun2hao/Attention_ocr.pytorch
 
 
