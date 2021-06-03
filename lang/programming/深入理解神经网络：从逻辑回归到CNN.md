@@ -4397,6 +4397,14 @@ p.355
 # http://xiaofengshi.com/2019/01/23/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-TextDetection/
 	# 全是干货
 
+# https://github.com/wangqingbaidu/Dr.Sure/blob/master/Algorithm/Attention-based_Extraction_of_Structured_Information_from_Street_View_Imagery.md
+
+	一般来说，OCR过程包括两个部分，一个是检测，一个是识别，这个pipeline与人脸识别类似。
+
+	检测，就是把包括文字的区域检测出来，但是与人脸检测不同的是，文字识别不像人脸识别那样包括一些特别通用的pattern，这个检测的难度还是不小。
+
+	识别，就是把检测输出的包括文字的图像块里面的具体文字识别出来，这个地方与人脸识别也有所不同，通常来说人脸识别的识别阶段不是一个分类任务，而是一个最近邻匹配任务，但是OCR的识别则是一个文字的分类任务，而且是sequence的分类任务。
+
 # https://blog.csdn.net/u014453898/article/details/104784212
 	加入attention的crnn ---- ocr之pytorch代码解释(带代码)
 # https://zhuanlan.zhihu.com/p/142886134
