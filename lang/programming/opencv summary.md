@@ -6,6 +6,17 @@
 
 ```
 
+        /// <summary>
+        /// computes weighted sum of two arrays (dst = alpha*src1 + beta*src2 + gamma)
+        /// </summary>
+        /// <param name="src1"></param>
+        /// <param name="alpha"></param>
+        /// <param name="src2"></param>
+        /// <param name="beta"></param>
+        /// <param name="gamma"></param>
+        /// <param name="dst"></param>
+        /// <param name="dtype"></param>
+
 // opencvsharp
 // https://github.com/VahidN/OpenCVSharp-Samples/blob/master/OpenCVSharpSample19/Program.cs
 
@@ -509,6 +520,10 @@ int main()
 
 
 ```c++
+
+# https://qiita.com/kaiyu_tech/items/a37fc929ac0f3328fea1
+	# C# 版的写法有很大的不同
+
 #include <iostream>
 #include <opencv.hpp>
 #include <opencv2/imgproc.hpp>
