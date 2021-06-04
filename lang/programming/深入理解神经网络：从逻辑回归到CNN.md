@@ -4392,7 +4392,11 @@ p.355
 # https://github.com/yizt/crnn.pytorch
 	# 很好
 # https://github.com/xiaofengShi/CHINESE-OCR
+	ctpn是一种基于目标检测方法的文本检测模型
 	# 也很好
+	
+	理解文本检测网络CTPN
+		https://zhuanlan.zhihu.com/p/77883736
 
 # http://xiaofengshi.com/2019/01/23/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-TextDetection/
 	# 全是干货

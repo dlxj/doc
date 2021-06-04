@@ -98,6 +98,9 @@ app.config['SECRET_KEY'] = 'STRONGSECRTKEY'
 
 host = '111.229.53.195'
 host2 = '209.141.34.77'
+
+host = host2 # 暂时这样先，host 关机了
+
 port1 = 5432
 port2 = 5432
 
@@ -105,10 +108,12 @@ port2 = 5432
 hostAPI = '127.0.0.1'
 
 pool1 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
-    password="postgres",
+    #password="postgres",
+    password="echodict.com",
     host=host,
     port=port1,
-    database="studio")
+    #database="studio")
+    database="anime")
 
 pool2 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="echodict.com",
