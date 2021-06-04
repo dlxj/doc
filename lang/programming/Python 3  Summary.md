@@ -187,19 +187,19 @@ redis
 
 ```python
 yum update -y && \
-yum groupinstall -y 'Development Tools'
+yum groupinstall -y 'Development Tools' && \
 yum install -y gcc libffi-devel bzip2-devel expat-devel gdbm-devel \
 ncurses-devel openssl-devel readline-devel \
 sqlite-devel tk-devel xz-devel zlib-devel wget
 ```
 
 ```python
-VERSION=3.8.3
-wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
-tar -xf Python-${VERSION}.tgz
-cd Python-${VERSION}
-./configure --enable-optimizations
-make -j 4
+VERSION=3.8.3 && \
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
+tar -xf Python-${VERSION}.tgz && \
+cd Python-${VERSION} && \
+./configure && \
+make -j 4 && \
 sudo make altinstall 
 # Please do not use the standard make install as it-
 # will overwrite the default system python binary.

@@ -511,6 +511,146 @@ int main()
 
 
 
+
+
+# 卷积、连通面积、小对象着色
+
+<img src="opencv summary.assets/data.png" alt="image-20210602102807446" style="zoom: 50%;" />
+
+```C#
+        static void demo()
+        {
+            var src = new Mat(@"D:\workcode\csharp\imageprocessing\data.png", ImreadModes.Grayscale);
+
+            float[,] filterX = { { 0,  0, 0 },
+                     { 0, -1, 1 },
+                     { 0,  0, 0 },
+};
+
+            float[,] filterY =  { { 0,  0, 0 },
+                      { 0, -1, 0 },
+                      { 0,  1, 0 },
+};
+
+            var filter2D = new Mat();
+
+            Cv2.Filter2D(src, filter2D, MatType.CV_32FC1, InputArray.Create(filterX));
+            Cv2.Filter2D(filter2D, filter2D, MatType.CV_32FC1, InputArray.Create(filterY));
+
+            filter2D = Cv2.Abs(filter2D);
+
+            Cv2.Normalize(filter2D, filter2D, 0, 255, NormTypes.MinMax, MatType.CV_8UC1);
+
+            Cv2.Threshold(filter2D, filter2D, 1, 255, ThresholdTypes.Binary);
+
+
+
+            byte[,] element1 = { { 0, 0, 1 },
+                     { 0, 1, 0 },
+                     { 1, 0, 0 },
+};
+
+            Cv2.MorphologyEx(filter2D, filter2D, MorphTypes.Close, InputArray.Create(element1));
+
+            byte[,] element2 = { { 1, 0 },
+                     { 0, 1 },
+};
+
+            Cv2.MorphologyEx(filter2D, filter2D, MorphTypes.Close, InputArray.Create(element2));
+
+            var labels = new Mat();
+            var stats = new Mat();
+            var centroids = new Mat();
+            var count = Cv2.ConnectedComponentsWithStats(filter2D, labels, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
+
+            var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+            
+
+            var indexer = stats.GetGenericIndexer<int>();
+
+            var output = filter2D.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+            for (int i = 0; i < indexes.Rows - 1; i++)
+            {
+                var index = indexes.Get<int>(i);
+
+                var area = indexer[index, (int)ConnectedComponentsTypes.Area];
+
+                var rect = new Rect
+                {
+                    X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                    Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                    Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                    Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+                };
+
+                if (area < 8)
+                {
+                    output.Rectangle(rect, Scalar.Blue);
+                }
+                else
+                {
+                    output.Rectangle(rect, Scalar.Red);
+                }
+            }
+
+
+
+            Vec3b[] colors = new Vec3b[ count + 1 ];
+
+            // 背景色，对应的label 是 0，总共有 count 个label
+            colors[0] = new Vec3b(0, 0, 0);
+
+            // 每个连通块随机分配一种不同的颜色
+            for (int i = 1; i <= count; i++)
+            {
+                // 随机生成红、绿、蓝 三个通道的颜色
+                Random rand = new Random();
+                Byte r = (Byte)(rand.Next(0, Int32.MaxValue) % 256);
+                Byte g = (Byte)(rand.Next(0, Int32.MaxValue) % 256);
+                Byte b = (Byte)(rand.Next(0, Int32.MaxValue) % 256);
+
+                colors[i] = new Vec3b(r, g, b);
+            }
+
+
+            // 新建一张彩图
+            Mat color_img = Mat.Zeros(output.Size(), MatType.CV_8UC3);
+
+            for (int x = 0; x < output.Rows; x++)
+            {
+                for (int y = 0; y < output.Cols; y++)
+                {
+
+                    int label = labels.At<int>(x, y);
+                    color_img.At<Vec3b>(x, y) = colors[label];
+
+                    if (label != 0)
+                    {
+                        var area = indexer[label, (int)ConnectedComponentsTypes.Area];
+
+                        // small regions are painted with (ridiculous) pink color
+                        if (area < 8)
+                        {
+                            color_img.At<Vec3b>(x, y) = new Vec3b(248, 48, 213);
+                        }
+                    }
+
+                }
+            }
+
+            Cv2.ImShow("color_img", color_img);
+            Cv2.ImShow("filter2D", filter2D);
+            Cv2.ImShow("output", output);
+            Cv2.WaitKey();
+
+        }
+```
+
+
+
+
+
 # 无损删除过小对象
 
 
@@ -601,6 +741,94 @@ int main()
 ```
 
 
+
+```c#
+
+# https://qiita.com/kaiyu_tech/items/a37fc929ac0f3328fea1
+	# C# 版的写法有很大的不同
+
+static void demo()
+        {
+            var src = new Mat(@"D:\workcode\csharp\imageprocessing\data.png", ImreadModes.Grayscale);
+
+            float[,] filterX = { { 0,  0, 0 },
+                     { 0, -1, 1 },
+                     { 0,  0, 0 },
+};
+
+            float[,] filterY =  { { 0,  0, 0 },
+                      { 0, -1, 0 },
+                      { 0,  1, 0 },
+};
+
+            var filter2D = new Mat();
+
+            Cv2.Filter2D(src, filter2D, MatType.CV_32FC1, InputArray.Create(filterX));
+            Cv2.Filter2D(filter2D, filter2D, MatType.CV_32FC1, InputArray.Create(filterY));
+
+            filter2D = Cv2.Abs(filter2D);
+
+            Cv2.Normalize(filter2D, filter2D, 0, 255, NormTypes.MinMax, MatType.CV_8UC1);
+
+            Cv2.Threshold(filter2D, filter2D, 1, 255, ThresholdTypes.Binary);
+
+
+
+            byte[,] element1 = { { 0, 0, 1 },
+                     { 0, 1, 0 },
+                     { 1, 0, 0 },
+};
+
+            Cv2.MorphologyEx(filter2D, filter2D, MorphTypes.Close, InputArray.Create(element1));
+
+            byte[,] element2 = { { 1, 0 },
+                     { 0, 1 },
+};
+
+            Cv2.MorphologyEx(filter2D, filter2D, MorphTypes.Close, InputArray.Create(element2));
+
+            var label = new Mat();
+            var stats = new Mat();
+            var centroids = new Mat();
+            var count = Cv2.ConnectedComponentsWithStats(filter2D, label, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
+
+            var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+
+            var indexer = stats.GetGenericIndexer<int>();
+
+            var output = filter2D.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+            for (int i = 0; i < indexes.Rows - 1; i++)
+            {
+                var index = indexes.Get<int>(i);
+
+                var area = indexer[index, (int)ConnectedComponentsTypes.Area];
+
+                var rect = new Rect
+                {
+                    X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                    Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                    Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                    Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+                };
+
+                if (area < 8)
+                {
+                    output.Rectangle(rect, Scalar.Black, -1);
+                }
+                else
+                {
+                    output.Rectangle(rect, Scalar.Red);
+                }
+            }
+
+            
+            Cv2.ImShow("filter2D", filter2D);
+            Cv2.ImShow("output", output);
+            Cv2.WaitKey();
+
+        }
+```
 
 
 
