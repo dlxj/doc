@@ -655,6 +655,97 @@ int main()
 
 
 
+```C#
+                Mat tmp = sample.Grayize(src);  // 以灰度图加载
+                tmp = sample.Binarize(tmp);  // 二值化
+                tmp = sample.DeleteBorderComponents(tmp);  // 删除边缘对象
+
+                Cv2.BitwiseNot(tmp, tmp);  // 反色
+
+                var labels = new Mat();
+                var stats = new Mat();
+                var centroids = new Mat();
+                var count = Cv2.ConnectedComponentsWithStats(tmp, labels, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
+
+                var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+
+
+                var indexer = stats.GetGenericIndexer<int>();
+
+                var output = tmp.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+
+                // 遍历每一个像素
+                for (int x = 0; x < tmp.Rows; x++)
+                {
+                    for (int y = 0; y < tmp.Cols; y++)
+                    {
+
+                        int label = labels.At<int>(x, y);
+
+                        if (label == 0)
+                        {
+                            // 是背景对象，跳过
+                            continue;
+                        }
+
+                        var area = indexer[label, (int)ConnectedComponentsTypes.Area];
+
+                        var rect = new Rect
+                        {
+                            X = indexer[label, (int)ConnectedComponentsTypes.Left],
+                            Y = indexer[label, (int)ConnectedComponentsTypes.Top],
+                            Width = indexer[label, (int)ConnectedComponentsTypes.Width],
+                            Height = indexer[label, (int)ConnectedComponentsTypes.Height]
+                        };
+
+                        // 所处的连通块面积过小则删除（变成背景色）
+                        if (area < 20)
+                        {
+                            tmp.At<Byte>(x, y) = 0;
+                        }
+                    }
+                }
+
+                // 遍历每一个连通块
+                for (int i = 0; i < indexes.Rows - 1; i++)
+                {
+                    var index = indexes.Get<int>(i);
+
+                    var area = indexer[index, (int)ConnectedComponentsTypes.Area];
+
+                    var rect = new Rect
+                    {
+                        X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                        Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                        Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                        Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+                    };
+
+                    // 绘制矩形
+                    if (area < 20)
+                    {
+                        output.Rectangle(rect, Scalar.Blue);
+                    }
+                    //else
+                    //{
+                    //    output.Rectangle(rect, Scalar.Red);
+                    //}
+                }
+
+
+
+
+                Cv2.BitwiseNot(tmp, tmp);
+
+                Cv2.ImWrite(dst, output);
+                Cv2.ImWrite(dst+".jpg", tmp);
+```
+
+
+
+
+
 <img src="opencv summary.assets/small.jpg" alt="image-20210602102807446" style="zoom:50%;" />
 
 
@@ -1040,6 +1131,104 @@ int main()
 ```
 
 
+
+# cari
+
+
+
+<img src="opencv summary.assets/dot_Bobbin_img.png" alt="image-20210602102807446" style="zoom:50%;" />
+
+
+
+```
+// 透视变换
+        static void demo2()
+        {
+            // https://github.com/shimat/opencvsharp/blob/c925abadf53cc82396c4be2bbfe839c773235113/test/OpenCvSharp.Tests/calib3d/Calib3dTest.cs
+            // https://www.youtube.com/watch?v=ZZ5M7Q5ZWX4
+            // https://www.gitmemory.com/issue/shimat/opencvsharp/1093/739471217
+
+
+            string impath = @"D:\workcode\csharp\imageprocessing\dot_Bobbin_img.png";
+
+            var src = new Mat(impath, ImreadModes.Grayscale);
+
+            var patternSize = new Size(18, 13);
+
+            var centers = new Mat();
+            var found = Cv2.FindCirclesGrid(src, patternSize, centers, FindCirclesGridFlags.SymmetricGrid);
+
+            var points_img = new Mat();
+            Cv2.CvtColor(src.Clone(), points_img, ColorConversionCodes.GRAY2BGR);
+
+            Cv2.DrawChessboardCorners(points_img, patternSize, centers, true);
+
+
+            int left_margin = 26;
+            int top_margin = 18;
+            int interval = 44;
+
+            //var object_points = new Mat<Point3f>();
+            var object_points = new Mat<Point3f>(patternSize.Height * patternSize.Width, 1);
+            Point3f[] arr = new Point3f[patternSize.Height * patternSize.Width];
+
+            //List<List<Point3f>> object_points = new List<List<Point3f>>();
+
+            for (int j = 0; j < patternSize.Height; j++)
+            {
+                for (int i = 0; i < patternSize.Width; i++)
+                {
+
+                    Point3f p = new Point3f(left_margin + i * interval, top_margin + j * interval, 0);
+
+                    arr.SetValue(p, j * patternSize.Width + i);
+
+                }
+            }
+
+            object_points.SetArray(arr);
+
+            var imageSize = src.Size();
+
+            var cameraMatrix = new Mat<double>(3, 3);
+            var distCoeffs = new Mat<double>(5, 1);
+
+            Cv2.CalibrateCamera(new[] { object_points }, new[] { centers }, imageSize, cameraMatrix, distCoeffs, out Mat[] rvecs, out Mat[] tvecs);
+
+            var newImageSize = new Size();
+            var newCameraMatrix = Cv2.GetOptimalNewCameraMatrix(cameraMatrix, distCoeffs, imageSize, 1, newImageSize, out Rect validPixROI);
+
+            var data = new Mat(impath, ImreadModes.Grayscale);
+
+            var temp_img = new Mat();
+            Cv2.Undistort(data, temp_img, cameraMatrix, distCoeffs, newCameraMatrix);
+
+            var rotation = new Mat();
+            Cv2.Rodrigues(rvecs[0], rotation);
+
+            var transRot = new Mat<double>(3, 3);
+            rotation.Col(0).CopyTo(transRot.Col(0));
+            rotation.Col(1).CopyTo(transRot.Col(1));
+
+            var transData = new double[3, 3] { { 0, 0, tvecs[0].At<double>(0) }, { 0, 0, tvecs[0].At<double>(1) }, { 0, 0, tvecs[0].At<double>(2) } };
+            var translate = InputArray.Create(transData).GetMat();
+            translate.Col(2).CopyTo(transRot.Col(2));
+
+            var dst_img = new Mat();
+            var m = newCameraMatrix * transRot;
+            Cv2.WarpPerspective(temp_img, dst_img, m, newImageSize, InterpolationFlags.WarpInverseMap);
+
+
+
+            Cv2.ImShow("points", points_img);
+
+            Cv2.ImShow("temp", temp_img);
+
+
+            Cv2.ImShow("dst", dst_img);
+            Cv2.WaitKey();
+        }
+```
 
 
 
