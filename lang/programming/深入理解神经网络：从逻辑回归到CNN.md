@@ -4446,6 +4446,63 @@ p.355
 
 ```
 https://github.com/amitrajitbose/handwritten-digit-recognition
+doc\lang\programming\pytorch\数字识别\handwritten_digit_recognition_GPU.ipynb
+```
+
+
+
+### 完全解析RNN, Seq2Seq, Attention注意力机制
+
+
+
+https://zhuanlan.zhihu.com/p/141799551 
+
+完全解析RNN, Seq2Seq, Attention注意力机制
+https://zhuanlan.zhihu.com/p/51383402
+
+
+
+###  三维重建 &&  Numpy && OpenCV in C# && 数据增强
+
+
+
+```
+
+
+# 三维重建
+
+
+
+​```
+https://zhuanlan.zhihu.com/p/141799551
+
+
+完全解析RNN, Seq2Seq, Attention注意力机制
+https://zhuanlan.zhihu.com/p/51383402
+​```
+
+
+
+
+
+# Numpy && OpenCV in C#
+
+
+
+​```
+https://www.gitmemory.com/issue/shimat/opencvsharp/1093/739471217
+https://www.youtube.com/watch?v=ZZ5M7Q5ZWX4
+​```
+
+
+
+## 验证码识别（含数据增强）
+
+
+
+​```
+https://github.com/pprp/captcha.Pytorch
+​```
 ```
 
 

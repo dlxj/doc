@@ -1132,9 +1132,7 @@ int main()
 
 
 
-# cari
-
-
+# 透视变换
 
 <img src="opencv summary.assets/dot_Bobbin_img.png" alt="image-20210602102807446" style="zoom:50%;" />
 
@@ -1229,6 +1227,18 @@ int main()
             Cv2.WaitKey();
         }
 ```
+
+
+
+# 三维重建
+
+
+
+```
+https://zhuanlan.zhihu.com/p/141799551
+```
+
+
 
 
 
