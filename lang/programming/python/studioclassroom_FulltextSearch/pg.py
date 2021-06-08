@@ -40,7 +40,7 @@ def load_json(filename):
 #escape_string = pymysql.escape_string
 
 #host = '111.229.53.195'
-host = '127.0.0.1'
+host = '209.141.34.77'
 #host = '192.168.1.166'
 
 
@@ -48,9 +48,9 @@ host = '127.0.0.1'
 
 
 
-def createDatabase_studio( host = '127.0.0.1', studiodb = './db/studioclassroom.db' ):
+def createDatabase_studio( host = host, studiodb = './db/studioclassroom.db' ):
 
-    with psycopg2.connect(database='postgres', user='postgres', password='postgres',host=host, port='5432') as conn:
+    with psycopg2.connect(database='postgres', user='postgres', password='echodict.com',host=host, port='5432') as conn:
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with conn.cursor() as cur:
             cur.execute("DROP DATABASE IF EXISTS studio;")
@@ -61,7 +61,7 @@ def createDatabase_studio( host = '127.0.0.1', studiodb = './db/studioclassroom.
                 CONNECTION LIMIT = -1 \
                 TEMPLATE template0;")
 
-    with psycopg2.connect(database='studio', user='postgres', password='postgres',host=host, port='5432') as conn:
+    with psycopg2.connect(database='studio', user='postgres', password='echodict.com',host=host, port='5432') as conn:
 
         with conn.cursor() as cur:
         
@@ -263,9 +263,9 @@ def createDatabase_anime( host = '192.168.1.166'):
     
 
 
-# createDatabase_studio()
+createDatabase_studio()
 # articles, idioms = createDatabase_economistglobl()
-createDatabase_anime()
+#createDatabase_anime()
 
 print('hi')
 

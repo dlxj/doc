@@ -2,6 +2,7 @@
 
 ```
 systemctl start postgresql.service  # ubuntu 18.04 
+systemctl status postgresql-13      # centos7
 
 ```
 
