@@ -3021,6 +3021,14 @@ ndarray.flatten(order='C') # c by row; f by column
 
 
 
+```
+np.squeeze  # 也是起到降维的作用
+```
+
+
+
+
+
 #### tile 复制列
 
 ```python
@@ -3180,6 +3188,40 @@ def C(n, k):
 sm = rm.sample().flatten()
 assert_equal(np.all((sm == 0) | (sm == 1)),True)
 ```
+
+
+
+## Pytorch
+
+
+
+#### TENSOR VIEWS
+
+
+
+- views 是已存在张量的一个视图，内部共享同一份数据，但是可以有不同的维度，相当于一个子空间
+- views 得到的结果是：元素的总数不变，对维度有全新的解释
+
+```python
+# handwritten_digit_recognition_GPU.ipynb
+criterion = nn.NLLLoss()
+images, labels = next(iter(trainloader))
+images = images.view(images.shape[0], -1)
+```
+
+
+
+```python
+# 强制copy data，不共享内存
+c = t.contiguous()
+t.is_contiguous()
+
+# 是否是同一块数据
+t.storage().data_ptr() == b.storage().data_ptr()
+
+```
+
+
 
 
 
@@ -5376,6 +5418,32 @@ plt.show()
 ````
 
 普通的 .py 文件这样出来的图是可以3d 旋转的
+
+
+
+### 显示灰度图
+
+
+
+```python
+# handwritten_digit_recognition_GPU.ipynb
+dataiter = iter(trainloader)
+images, labels = dataiter.next()  # images [64, 1, 28, 28]，64 张，1 通道，28 宽，28 高 的图片  # labels [64] 64个标签
+plt.imshow(images[0].numpy().squeeze(), cmap='gray_r');  # squeeze 将 [1, 28, 28] 降维成 [28, 28]
+```
+
+
+
+```python
+figure = plt.figure()
+num_of_images = 60
+for index in range(1, num_of_images + 1):
+    plt.subplot(6, 10, index)  # 绘制  6 行，10 列 个对象
+    plt.axis('off')            # 关闭坐标轴显示
+    plt.imshow(images[index].numpy().squeeze(), cmap='gray_r')
+```
+
+
 
 
 

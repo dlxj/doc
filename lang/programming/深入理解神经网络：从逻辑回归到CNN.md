@@ -4440,6 +4440,18 @@ p.355
 
 
 
+### pytorch 实现数字识别
+
+
+
+```
+https://github.com/amitrajitbose/handwritten-digit-recognition
+```
+
+
+
+
+
 
 
 ### 手写数字识别
@@ -4628,11 +4640,78 @@ https://github.com/pprp/captcha.Pytorch
 
 
 
+### Attention 讲原理
+
+
+
+```
+
+https://blog.csdn.net/zshluckydogs/article/details/88912273
+
+摘要：
+针对NLP领域的问题，谷歌创造性的提出了Attention机制，优点是可以获得较长的依赖，捕捉局部与全局的关系，并且每一步的计算都是独立的所以可以很好的并行加速，缺点是抛弃了序列的语序顺序，在NLP中是一个致命的缺点，但是研究人员通过加入position-embedding可以解决这个问题。简单点说，attention就是高端的词袋模型（BOW），给一个词根据上下文的关系赋予不同的权重，然后用这个向量表示这个词。
+
+网络结构及其实现：
+本文CRNN+Attention 的网络架构，是在CRNN网络的输出层后面加上一层attention机制，详细的说就是（这里用GRU代替LSTM）CNN+GRU（一层，hidden_units = 1024），把GRU网络的输出作为 encoder的输出，然后对其做attention得到attention输出s，假设网络上一时刻的输出 y1, 则y2时刻的输出由y1和s共同作用得到，对y1做embedding然后把（embediing(y1)+s)输入到 GRU网络中，通过softmax得到输出，在进行label转换，即可得到最后的输出序列。
+
+input: x  gray-scale image
+ 
+net = cnn + gru
+ 
+Encoder = net(x)
+ 
+Attention = BahdanauAttention(features, hidden_units)  attention的一种实现方式，更多详情可以Google，其中features是Encoder的输出，hidden_units 与gru的对齐。
+ 
+y0 = s   假设y0时刻输出是 s, s 就代表英文字母 s
+ 
+ 
+ 
+y1_input = embedding(s) + Attention  y1时刻的输入
+ 
+y2 = softmax(gru(y1_input)) 对y1时刻的输入进行embedding然后输入到gru层做soft Max得到y2输出。
+ 
+ 
+y2 --> e  查lable表得到标签。
+大概就是上面这个过程，如果你对CRNN和Attention有一定的了解，这个实质就是对二者的一个结合而已，没有什么特别难以理解的地方。另外，本文没有提到Attention的计算方式，这个可以参考：http://jalammar.github.io/illustrated-transformer/，这篇文章讲解的非常细致，不过是英文的。
+
+对于代码部分，只要你自己清楚的知道所设计的网络结构，根据这个去查需要的工具即可，无非是选择框架，caffe、tensorflow、keras、pytorch等，重点是你必须很清楚的知道网络是怎样的架构，然后去找相应的函数构造出来这个架构即可。所以对于研究算法的同学，写代码不是第一要务，理解算法本身才是。
+
+参考代码：https://github.com/koibiki/CRNN-ATTENTION
+
+我是在这个代码的基础上加了自己的东西，等有时间上传链接吧。补充，这种Attention机制的网络，在进行长文本的识别时效果比较差，而且网络的robust非常差，用训练好的CRNN网络和这个ATTENTION网络对同样的样本（来自于真实扫描版PDF截图）进行识别时两个网络的表现都很差，但是CRNN的效果却是远远优于ATTENTION的。但是Attention堆叠起来的Transformer在机器翻译任务上的表现优于传统的基于LSTM（GRU）的encoder-decoder架构，这得益于attention能够捕捉更长的时间依赖，这是机器翻领域最影响性能的因素，尤其大量的翻译样本都是长句。但是对OCR这个跟图像有着密切关联的领域，在进行Attention时由于只考虑了词间的关联性，可能会破坏词的一些可以帮助识别的视觉特征，所以性能不如经典的CRNN。
+
+```
+
+
+
+### 一文读懂CRNN+CTC文字识别
+
+
+
+```
+# https://zhuanlan.zhihu.com/p/43534801
+
+```
+
+
+
 
 
 
 
 ## Colab
+
+
+
+```
+Google Colab可直接从github打开Jupyter notebooks，
+
+只需将“github.com”替换为“colab.research.google.com/github”，就会直接加载到Colab中 
+```
+
+
+
+
 
 ```
 # start()开始
