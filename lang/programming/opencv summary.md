@@ -1232,6 +1232,25 @@ int main()
 
 
 
+# Numpy && OpenCV in C#
+
+
+
+```
+https://www.gitmemory.com/issue/shimat/opencvsharp/1093/739471217
+https://www.youtube.com/watch?v=ZZ5M7Q5ZWX4
+```
+
+
+
+## 验证码识别（含数据增强）
+
+
+
+```
+https://github.com/pprp/captcha.Pytorch
+```
+
 
 
 
