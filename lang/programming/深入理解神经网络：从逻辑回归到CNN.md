@@ -4451,6 +4451,51 @@ doc\lang\programming\pytorch\数字识别\handwritten_digit_recognition_GPU.ipyn
 
 
 
+```python
+# [-1, 1] 的小数规范到[0, 255]
+import cv2
+a = ((images[0].numpy().squeeze() + 1) / 2) * 255
+b = np.rint(a) # 小数变成它最接近的整数
+plt.imshow(b, cmap='gray_r')
+b
+```
+
+
+
+
+
+```python
+输出[ 0.5 1. 1. ]，即原像素值除以102，超出1的变为1
+如果一个数组里面有负数，现在想调整到正数，就使用out_range参数。如：
+
+import numpy as np
+from skimage import exposure
+image = np.array([-10, 0, 10], dtype=np.int8)
+mat=exposure.rescale_intensity(image, out_range=(0, 127))
+print(mat)
+```
+
+
+
+
+
+```
+ 
+ 在看https://zhuanlan.zhihu.com/p/28057434这篇文章的代码时， 没明白为啥能把图片数据 转成有负数的数据.. batch_images = batch_images*2 -1 即结果在[-1,1]区间   
+图片的像素 整数应该在[0,255]之间，浮点数在[0,1]之间，负数怎么能表示像素呢，负数是如何表示像素的呢?......
+
+后来才知道，是imshow 默认做了标准化。 vmin, vmax 或noraml参数可以调节这个最大最小区间。 实际显示时，不会用到负值。
+
+可以看到前两张图的分布是一样的，都是均匀的。由于标准化方式的不一致， 第三张图黑点更多，第四张图白点更多。
+ 
+ 
+ 最近在做Android上的图像处理，在Android上直接对像素操作，居然出现了意想不到的事情。Bitmap类getPixel方法获取的像素值全部是负的，本来应该是黑色的，也就是0的，全部变成了-16777216，很是奇怪。但是仔细研究研究这个16777216又比较特殊，因为16777216=256*256*256，刚好是RGB三种颜色分量最大值的乘积。其实这个值的不精确表示，我们很熟悉，手机广告中宣传屏幕的时候经常会说支持1600万色，诺基亚最喜欢这样宣传了。-16777216的补码十六进制表示就是#FF000000，刚好是加了alpha通道的不透明黑色。查了Android 的文档才知道，Android中颜色由四个分量组成，而我想当然的YY成了RGB三个分量，忽略了A这个分量，默认的A值是255。所以无A通道的图像素最高位总是1，而JAVA中又没有无符号整型，返回一个32位的int型变量，就这样出现了我遇到的各种负数。
+```
+
+
+
+
+
 ### 完全解析RNN, Seq2Seq, Attention注意力机制
 
 

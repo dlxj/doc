@@ -1236,6 +1236,10 @@ int main()
 
 ```
 https://zhuanlan.zhihu.com/p/141799551
+
+
+完全解析RNN, Seq2Seq, Attention注意力机制
+https://zhuanlan.zhihu.com/p/51383402
 ```
 
 
@@ -1260,6 +1264,129 @@ https://www.youtube.com/watch?v=ZZ5M7Q5ZWX4
 ```
 https://github.com/pprp/captcha.Pytorch
 ```
+
+
+
+
+
+# VC6 & A* & 遗传算法
+
+
+
+```
+
+DX9 的所有inclue 目录和库目录全部放在最后一项，否则会出错。提示缺少";"
+	https://blog.51cto.com/itsdf/1106989
+
+
+将VC项目->配置属性->C/C++->预处理器->预处理器定义->
+WIN32
+_WINDOWS
+_DEBUG
+改为
+_INTEL
+WIN32
+_DEBUG
+_CONSOLE
+_Windows
+_CRT_SECURE_NO_DEPRECATE
+_WINNT
+就可在VC项目中编译C源程序
+```
+
+
+
+
+
+```
+
+# https://www.laozuo.org/6180.html
+	# DD XP
+
+# https://blog.csdn.net/cosmoslife/article/details/50855620?utm_medium=distribute.pc_relevant_download.none-task-blog-baidujs-4.nonecase&depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-baidujs-4.nonecase
+
+
+# https://www.cnblogs.com/kingangWang/archive/2012/03/14/2396005.html
+# https://blog.csdn.net/luckye1988/article/details/6150939?utm_medium=distribute.pc_relevant_bbs_down.none-task--2~all~sobaiduend~default-1.nonecase&depth_1-utm_source=distribute.pc_relevant_bbs_down.none-task--2~all~sobaiduend~default-1.nonecase
+
+```
+
+
+
+```c++
+刚接触视频开发，就遇到了困难，把自己的经验分享给他家，希望少走弯路：
+
+安装好vc++6.0，及derectx9.0 SDK 及Microsoft Platform SDK for Windows Server 2003 SP1（xp系统）
+
+出现错误：
+
+        环境配置 ：
+
+分directXInput 和directXshow的不同开发：
+
+        要将directx sdk的include和lib目录配置到vc的系统目录中，并且放到标准的vc目录之前，以保证编译器能拿到最新版本的源文件。
+
+DirectXshow;
+
+     1)选择include files
+
+                说明：将C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)换成自己的SDK的安装目录
+
+          添加这些路径：
+
+             C:\Program Files\Microsoft Platform SDK\Include
+
+              C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)\Include
+
+              C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)\Samples\C++\DirectShow\BaseClasses
+
+              C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)\Samples\C++\Common\INCLUDE
+
+               D:\VC98\MFC\INCLUDE（这个是vc本身自带的）
+
+     2）选择Liberary files
+
+        添加这些路径：
+
+             C:\Program Files\Microsoft Platform SDK\Lib
+
+             C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)\Lib
+
+             C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004\Samples\C++\DirectShow\BaseClasses\release
+
+                      C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)\Samples\C++\DirectShow\BaseClasses\debug
+
+                      D:\VC98\MFC\LIB（这个vc本身就带的）
+
+    DirectXInput:
+
+    只在vs2010的视图-->属性管理----》win32\debug--->vc++添加自己安装的directX SDK 的安装路径下的include和lib路径即可
+
+1）缺少“streams.h”
+
+    解决办法：
+
+   streams.h这个文件在路径
+
+    C:\Program Files\Microsoft DirectX 9.0 SDK (Summer 2004)\Samples\C++\DirectShow\BaseClasses下。、
+
+    在VC++6.0里面设置如下：
+
+    tools-->options--->derectories--->右边栏，Show derectories for
+
+2）
+
+出现 DirectX9.missing ';' before identifier 'HSEMAPHORE错误：
+
+解决方法：
+
+1/ 将#include "c:\dxsdk\include\strmif.h"加入VC的"stdafx.h"文件中
+
+2/编译运行，如果成功的话，再把#include "c:\dxsdk\include\strmif.h"从"stdafx.h"中删除掉
+
+```
+
+
 
 
 
