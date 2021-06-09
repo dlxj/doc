@@ -112,8 +112,8 @@ pool1 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="echodict.com",
     host=host,
     port=port1,
-    #database="studio")
-    database="anime")
+    database="studio")
+    #database="anime")
 
 pool2 = psycopg2.pool.SimpleConnectionPool(1, 200, user="postgres",
     password="echodict.com",
