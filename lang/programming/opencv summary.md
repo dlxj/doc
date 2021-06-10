@@ -1365,11 +1365,12 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\cppwinrt
 C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um
 
-dinput.h 在：
+dinput.h 在：这是DX12
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um
 
 找不到
 objbase.h
+	VC6\VC98\Include\OBJBASE.H
 
 
 将VC项目->配置属性->C/C++->预处理器->预处理器定义->
