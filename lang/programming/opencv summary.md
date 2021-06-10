@@ -1297,6 +1297,25 @@ https://github.com/pprp/captcha.Pytorch
 
 
 
+```c++
+D:\workcode\directx\XP_dev\myastar\src
+
+#define DIRECTINPUT_VERSION 0x0700
+	# 加在#include <dinput.h> 前面
+    
+注意：
+    只需要VC6 就可以编译成功，VC6 自带dx7b
+    头文件
+    	Tools -> Options
+    		D:\workcode\directx\XP_dev\VC6\dx7a\include
+                # 加入后一定要调整顺序，放在 \VC6\VC98\INCLUDE 等的前面
+    
+```
+
+
+
+
+
 ```
 显示DX 版本
 	dxdiag
