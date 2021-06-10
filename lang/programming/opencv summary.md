@@ -1297,6 +1297,23 @@ https://github.com/pprp/captcha.Pytorch
 
 
 
+```
+# 全屏窗口切换
+https://github.com/microsoft/DirectX-Graphics-Samples/tree/master/Samples/Desktop/D3D12Fullscreen/src
+
+# DX12 入门示例
+	https://github.com/GamebabyRockSun/GRSD3D12Sample
+
+# Introduction to 3D Game Programming with DirectX 12
+	https://github.com/d3dcoder/d3d12book
+
+# C# DX12
+	https://github.com/discosultan/dx12-game-programming
+
+```
+
+
+
 ```c++
 D:\workcode\directx\XP_dev\myastar\src
 
