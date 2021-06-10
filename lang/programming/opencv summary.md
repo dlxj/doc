@@ -1257,6 +1257,30 @@ https://www.youtube.com/watch?v=ZZ5M7Q5ZWX4
 
 
 
+## 导出MNIST 手写数字图片
+
+```
+import cv2
+
+print( images.shape[0] )
+
+for i in range(images.shape[0]):
+  a = ((images[i].numpy().squeeze() + 1) / 2) * 255
+  b = np.rint(a)
+  plt.imshow(b, cmap='gray_r')
+  b
+  label = labels.numpy()[i]
+  print(label)
+  #cv2.imshow('Binary Threshold', b)
+  cv2.imwrite(f'./out/{label}_{i}.jpg',b)
+```
+
+
+
+
+
+
+
 ## 验证码识别（含数据增强）
 
 
@@ -1274,9 +1298,78 @@ https://github.com/pprp/captcha.Pytorch
 
 
 ```
+显示DX 版本
+	dxdiag
+
+Directx12 Ultimate
+	https://devblogs.microsoft.com/directx/directx-12-ultimate-getting-started-guide/
+```
+
+```
+# 全屏窗口切换
+https://github.com/microsoft/DirectX-Graphics-Samples/tree/master/Samples/Desktop/D3D12Fullscreen/src
+
+	# 1290*1080
+```
+
+
+
+```
+VC6 返回上一次位置
+	Ctrl + F6
+
+```
+
+
+
+
+
+```
+o create a DirectX 7.0 interface from the DirectX 8.x or latest DirectX SDK without using CoCreateInstance:
+
+Set "#define DIRECTINPUT_VERSION 0x0700" before the include statement for dinput.h.
+
+Call DirectInputCreateEx instead of DirectInput8Create.
+
+Link to the Dinput.lib library instead of Dinput8.lib.
+```
+
+
+
+
+
+```
+
+https://archive.org/details/dx70eng
+
+http://www.oldversion.com/windows/download/directx-8-1
+
+https://www.xcode.me/post/862
+	# 历代 vs
 
 DX9 的所有inclue 目录和库目录全部放在最后一项，否则会出错。提示缺少";"
 	https://blog.51cto.com/itsdf/1106989
+
+vs2019 默认 include
+	$(VC_IncludePath)
+	$(WindowsSDK_IncludePath)
+的值是：
+
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\atlmfc\include
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\VS\include
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\cppwinrt
+C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um
+
+dinput.h 在：
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um
+
+找不到
+objbase.h
 
 
 将VC项目->配置属性->C/C++->预处理器->预处理器定义->
