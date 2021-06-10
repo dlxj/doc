@@ -1301,6 +1301,9 @@ https://github.com/pprp/captcha.Pytorch
 # 全屏窗口切换
 https://github.com/microsoft/DirectX-Graphics-Samples/tree/master/Samples/Desktop/D3D12Fullscreen/src
 
+Drawing text in DirectX 12
+	https://www.braynzarsoft.net/viewtutorial/q16390-11-drawing-text-in-directx-12
+
 # DX12 入门示例
 	https://github.com/GamebabyRockSun/GRSD3D12Sample
 
