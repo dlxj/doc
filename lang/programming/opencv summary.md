@@ -1298,11 +1298,24 @@ https://github.com/pprp/captcha.Pytorch
 
 
 ```
+
+# Direct2d
+	https://stackoverflow.com/questions/60121151/why-is-direct2d-not-drawing-to-the-screen
+
+# DX12 开源书
+	https://github.com/Gavin991/DirectX12CodeSamples
+
+# 使用WIC、Computer Shader显示GIF动画纹理（上）
+	https://blog.csdn.net/u014038143/article/details/105038239
+
 # 全屏窗口切换
 https://github.com/microsoft/DirectX-Graphics-Samples/tree/master/Samples/Desktop/D3D12Fullscreen/src
 
 # Drawing text in DirectX 12
 	https://www.braynzarsoft.net/viewtutorial/q16390-11-drawing-text-in-directx-12
+
+# 地形渲染
+	https://www.rastertek.com/tutdx11s2ter.html
 
 # 动态棋盘渲染
 https://software.intel.com/content/www/us/en/develop/articles/checkerboard-rendering-for-real-time-upscaling-on-intel-integrated-graphics.html
