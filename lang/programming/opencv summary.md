@@ -1301,6 +1301,9 @@ https://github.com/pprp/captcha.Pytorch
 
 # Direct2d
 	https://stackoverflow.com/questions/60121151/why-is-direct2d-not-drawing-to-the-screen
+	
+# 算法详细
+	https://www.redblobgames.com/pathfinding/a-star/introduction.html
 
 # DX12 开源书
 	https://github.com/Gavin991/DirectX12CodeSamples
