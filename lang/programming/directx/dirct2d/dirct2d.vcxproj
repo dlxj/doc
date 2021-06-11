@@ -139,20 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="astar.hpp" />
+    <ClInclude Include="checkinput.hpp" />
     <ClInclude Include="dirct2d.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="graphics.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dirct2d.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="dirct2d.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="dirct2d.ico" />
-    <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

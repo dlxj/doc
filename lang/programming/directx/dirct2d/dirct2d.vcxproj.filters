@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="dirct2d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="astar.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="checkinput.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,18 +32,5 @@
     <ClCompile Include="dirct2d.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="dirct2d.rc">
-      <Filter>资源文件</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="dirct2d.ico">
-      <Filter>资源文件</Filter>
-    </Image>
   </ItemGroup>
 </Project>
