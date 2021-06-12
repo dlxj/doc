@@ -1132,6 +1132,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
    -  [**汉字音典**](https://www.zhihu.com/pin/1385527602149388288) [2](https://link.zhihu.com/?target=https%3A//github.com/osfans/MCPDict)
    - 林熹老师 词根词缀 https://b23.tv/UZcTmW
    - 美国英语应用语音学 桂灿昆
+   - 国际语音学会手册 115 github
    - 【官方双语】e的矩阵指数——怎么算？为什么？https://b23.tv/5bY2ZO
 
 
