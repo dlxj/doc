@@ -1127,7 +1127,15 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
    - IPA真人发音，有英文解说
    - 日语语法，有中文解说
      - [日本語文法日本語文法](http://www.coelang.tufs.ac.jp/ja/zt/gmod/)
-3. **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102)  
+3. **英語語音學** (含發音練習) 外文系  **Karen Steffen Chung 史嘉琳** [tw](https://e10aa8944c668c5e049e3851c3215aaa.cloudflareworkers.com/-----http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S102) 
+4. **汉字音典** 配合 《av phonetics app》 使用，绝配
+   -  [**汉字音典**](https://www.zhihu.com/pin/1385527602149388288) [2](https://link.zhihu.com/?target=https%3A//github.com/osfans/MCPDict)
+   - 林熹老师 词根词缀 https://b23.tv/UZcTmW
+   - 美国英语应用语音学 桂灿昆
+   - 国际语音学会手册 115 github
+   - 【官方双语】e的矩阵指数——怎么算？为什么？https://b23.tv/5bY2ZO
+
+
 
 
 
