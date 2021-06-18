@@ -1298,6 +1298,63 @@ https://github.com/pprp/captcha.Pytorch
 
 
 ```
+https://github.com/hashimg/maze-genetic-algorithm
+https://wenku.baidu.com/view/c46d51c65fbfc77da269b180.html
+```
+
+
+
+
+
+```
+# 迷宫适应度函数的设计
+https://blog.csdn.net/Androidlushangderen/article/details/44656809
+```
+
+![image-20210615093825714](opencv summary.assets/image-20210615093825714.png)
+
+```
+# 基因表示
+已经将角色的每一次的移动步骤转化为基因的表示，每次的移动总共有4种可能，上下左右，基因编码是标准的二进制形式，所以可以取值为00代表向上，01向下，10向左，11向右，也就是说，每个基因组用2个编码表示，所以总共的编码数字就是2*7=14个，两两一对。
+```
+
+
+
+
+
+```
+一般我们用适应性函数（fitness function）来衡量这个解决方案的优劣
+
+遗传算法并不保证你能获得问题的最优解，但是使用遗传算法的最大优点在于你不必去了解和操心如何去“找”最优解。（你不必去指导袋鼠向那边跳，跳多远。）而只要简单的“否定”一些表现不好的个体就行了。
+
+人类的基因有AGCT 4种碱基序列一样。不过在这里我们只用了0和1两种碱基,然后将他们串成一条链形成染色体。
+
+https://www.huaweicloud.com/articles/ad738e6e6d477fcd372dd8df3cb9c163.html
+在遗传算法中一定要注意,变异不会导致个体发生改变,而是会产生新的个体.在遗传算法中,一切个体一旦生成它的基因就不再发生改变.否则,好不容易求出来的最佳解可能一变异就消失了,导致算法收敛缓慢.一言以蔽之,变异就像是无性生殖,是个体自己复制了一个自己然后在复制的过程中发生了很多错乱.在进行交叉繁殖时,是优先选择优秀的个体,在变异中,每个个体人人平等,大家都有平等的概率来发生变异.
+
+(3)选择概率p
+把整个种群的fitness求个总和s,每个个体的选择概率就是person.fitness/s.然后就可以像转盘抽奖一样进行选择,以person.fitness/s的概率选择该个体去繁殖后代.
+
+```
+
+
+
+```
+# 用深度优先搜索算法走迷宫
+python3 search.py
+# 用强化学习走迷宫
+python3 RL.py
+# 用遗传算法走迷宫
+python3 GA.py
+
+https://github.com/HangHuang/maze
+```
+
+
+
+
+
+```
 
 # Direct2d
 	https://stackoverflow.com/questions/60121151/why-is-direct2d-not-drawing-to-the-screen

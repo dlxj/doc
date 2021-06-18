@@ -2933,6 +2933,17 @@ transform = LabelTransform(max_output_len, word2int_en['<PAD>'])
 
 
 
+### 小数变成它最接近的整数
+
+```
+# [-1, 1] 的小数规范到[0, 255]
+import cv2
+a = ((images[0].numpy().squeeze() + 1) / 2) * 255
+b = np.rint(a) # 小数变成它最接近的整数
+plt.imshow(b, cmap='gray_r')
+b
+```
+
 
 
 
@@ -4491,6 +4502,21 @@ if __name__ == "__main__":
 
 
 ## Post 
+
+
+
+```python
+d = {"book":docText}
+# d = {'book':'a'}
+ret = requests.post(url="http://192.168.0.140:666/bookmenu", json=d, headers={'Content-Type':'application/json'}).json()
+
+if ret['status'] == 200:
+    data = ret["data"]
+    iJson.save_json( 'post.json', data )
+    pass
+```
+
+
 
 
 

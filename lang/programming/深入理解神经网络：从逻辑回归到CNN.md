@@ -3287,6 +3287,12 @@ $$
 
 
 
+## 三角函数
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210618114742424.png" alt="image-20210618114742424" style="zoom:50%;" />
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210618114812409.png" alt="image-20210618114812409" style="zoom:50%;" />
+
 
 
 ## 数值积分
