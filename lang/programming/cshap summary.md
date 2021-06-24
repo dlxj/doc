@@ -12,6 +12,18 @@
 
 
 
+```c#
+# 不需要事先定义结构
+JsonConvert.SerializeObject( new {
+                                simTitle = xx,
+                                simRight = xx
+                            }
+```
+
+
+
+
+
 ```
          
          Newtonsoft.Json 动态添加字段
@@ -59,6 +71,21 @@ var lst = new List<Dictionary<string, string>>();
             var test = "{ \"simTitle\":0.7142857142857143,\"simRight\":1.0,\"simWrong\":1.0, \"maincode\":\"009725\"}".FromJson<object>();
             var teststr = test.ToJson();
 ```
+
+
+
+## 正则
+
+
+
+```c#
+                Regex r = new Regex(@"[^0-9,]*");
+                srcList = r.Replace(srcList, "");
+```
+
+
+
+
 
 
 
