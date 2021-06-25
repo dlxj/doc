@@ -1,3 +1,27 @@
+
+
+
+
+
+
+## .net core
+
+
+
+```
+        // /home/data/users/xxx/soft/dotnet ainlp.dll
+        // /home/data/users/xxx/project/smartsearch
+
+        // curl -d "" "http://localhost:63164/api/smarsearch/search"
+        // 要禁止强制跳转，只需要在项目的 Startup.cs 程序的 Configure 方法中注释掉 “app.UseHttpsRedirection();” 这一行代码即可。
+```
+
+
+
+
+
+
+
 ## datatime
 
 ```c#
@@ -71,6 +95,36 @@ var lst = new List<Dictionary<string, string>>();
             var test = "{ \"simTitle\":0.7142857142857143,\"simRight\":1.0,\"simWrong\":1.0, \"maincode\":\"009725\"}".FromJson<object>();
             var teststr = test.ToJson();
 ```
+
+
+
+### 数组
+
+```
+# https://blog.csdn.net/stwuyiyu/article/details/79170019
+
+Linq to JSON是用来操作JSON对象的.可以用于快速查询,修改和创建JSON对象.当JSON对象内容比较复杂,而我们仅仅需要其中的一小部分数据时,可以考虑使用Linq to JSON来读取和修改部分的数据而非反序列化全部.
+
+二.创建JSON数组和对象
+在进行Linq to JSON之前,首先要了解一下用于操作Linq to JSON的类.
+
+类名	说明
+JObject
+ 用于操作JSON对象
+JArray
+ 用语操作JSON数组
+JValue
+ 表示数组中的值
+JProperty
+ 表示对象中的属性,以"key/value"形式
+JToken
+ 用于存放Linq to JSON查询后的结果
+
+```
+
+
+
+
 
 
 

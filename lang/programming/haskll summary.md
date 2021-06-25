@@ -24,3 +24,12 @@ Project setup (mostly from Haskell debugger extension `readme`):
 - Switch to `Run and Debug` tab in VSCode and press `Create a launch.json file` link. Select `haskell-debug-adapter` there.
 - In toolbar select `haskell(cabal)` configuration.
 - Put a breakpoint and press F5 to run.
+
+
+
+## Excel
+
+https://github.com/v0d1ch/HExcel
+
+
+
