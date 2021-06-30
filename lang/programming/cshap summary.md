@@ -124,6 +124,24 @@ JToken
 
 
 
+```c#
+            var datalist = new JArray();
+
+            foreach (DataRow row in appTable.Rows)
+            {
+                string AppID = row["AppID"].ToString();
+                string CName = row["CName"].ToString();
+                string AppEname = row["AppEname"].ToString();
+
+                datalist.Add( new JObject { { "AppID", AppID }, { "CName", CName }, { "AppEname", AppEname } } );
+
+            }
+
+            var ret = datalist.ToString();
+```
+
+
+
 
 
 
@@ -138,6 +156,59 @@ JToken
 ```
 
 
+
+```c#
+        // 移除非中文、26个英文字母以外的字符
+        static public string unAZchinese_remove(string s)
+        {
+            return Regex.Replace(s, @"[^\u4e00-\u9fa5^a-z^A-Z]", "");
+        }
+```
+
+
+
+
+
+##　去重
+
+
+
+https://www.jianshu.com/p/c38baf286dd7
+
+
+
+```
+
+public class Comparer: IEqualityComparer<TBINPN>
+{
+    public bool Equals(TBINPN x, TBINPN y)
+    {
+        //这里定义比较的逻辑
+        return x.ID == y.ID && x.PN == y.PN;
+    }
+
+    public int GetHashCode(TBINPN obj)
+    {
+        //返回字段的HashCode，只有HashCode相同才会去比较
+        return obj.ID.GetHashCode();
+    }
+}
+
+List<TBINPN> newTbinpns = tbinpns.Distinct(new Comparer()).ToList();
+
+```
+
+
+
+
+
+## 自动格工化
+
+
+
+```
+Ctrl + K ,  Ctrl + D.  自动整理代码
+```
 
 
 

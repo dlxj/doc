@@ -517,6 +517,19 @@ https://github.com/sehrope/node-pg-db
 
 
 
+```
+
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+sudo yum install nodejs
+
+
+
+```
+
+
+
+
+
 ```javascript
 const { Pool, Client } = require('pg')
 const connectionString = 'postgresql://postgres:postgres@111.229.53.195:5432/studio'
