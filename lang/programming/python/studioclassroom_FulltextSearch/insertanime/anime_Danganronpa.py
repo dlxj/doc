@@ -480,6 +480,7 @@ def createAnimeDB(host, port):
                 v_zh  tsvector, \
                 v_en  tsvector, \
                 videoname text, \
+                seasion text DEFAULT '', \
                 audio bytea, \
                 video bytea \
             );")
@@ -530,7 +531,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
               """
             )
 
-def importAnime(animename, frtname, videoname, videopath):
+def importAnime(animename, seasion, frtname, videoname, videopath):
     dic_chs = {}
 
     currDir = os.path.dirname(os.path.abspath(__file__))
@@ -654,7 +655,7 @@ def importAnime(animename, frtname, videoname, videopath):
                 if (t in dic_chs):
                   zh = dic_chs[t].replace("(", "`(`").replace(")", "`)`").replace("'", "''")
                 videoname = videoname.replace("(", "`(`").replace(")", "`)`").replace("'", "''")
-                sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', %s, %s);"""
+                sql = f"""insert into anime(name, seasion, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{seasion}','{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', %s, %s);"""
                 cur.execute( sql, (bts,bts_video,) )
                 count += 1
                 #if count % 10 == 0:
@@ -736,7 +737,8 @@ if __name__ == "__main__":
       out_text = out_bytes.decode('utf-8')
 
       animename = 'Danganronpa'
-      importAnime(animename, frtname, videoname, videopath)
+      seasion = '01'
+      importAnime(animename, seasion, frtname, videoname, videopath)
 
       break
 
