@@ -1963,6 +1963,8 @@ root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
 # 关闭防火墙
 systemctl stop firewalld
 
+# pm2 resurrect  # pm2 save 后恢复
+
 # atuto run when reboot
 chmod +x /etc/rc.d/rc.local
 vi /etc/rc.d/rc.local
