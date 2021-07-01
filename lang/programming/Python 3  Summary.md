@@ -677,6 +677,55 @@ print(result.hexdigest())
 
 
 
+## OS
+
+
+
+### 软链接
+
+
+
+```
+# create
+
+import os
+
+src = r"""D:\GitHub\doc\lang\programming\haskell\supermario\Util.hs"""
+
+dst = r"""G:\tmp.hs"""
+
+os.symlink(src, dst)
+  
+print("Symbolic link created successfully")
+
+```
+
+```
+# modify
+os.symlink(target, tmpLink)
+os.replace(tmpLink, linkName)
+You can check to make sure it was updated correctly too:
+
+if os.path.realpath(linkName) == target:
+    # Symlink was updated
+```
+
+
+
+```
+# delete
+os.unlink(dst)
+```
+
+
+
+```py
+# check type
+if not os.path.islink(link_name) and os.path.isdir(link_name):
+```
+
+
+
 
 ## package
 
