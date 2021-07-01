@@ -33,3 +33,41 @@ https://github.com/v0d1ch/HExcel
 
 
 
+
+
+
+
+## mr
+
+
+
+https://github.com/Enzo-Liu/monao/blob/master/Main.hs
+
+
+
+```
+fromJust is pretty much equivalent to:
+
+fromJust :: Maybe a -> a
+fromJust (Just t) = t
+Note that it’s the same pattern match! If you’re sure that your Maybe going to be a Just and not a Nothing, you can use fromJust to get its value without pattern matching
+```
+
+
+
+
+
+## 定义类型别名
+
+
+
+```
+Type Synonyms
+定义类型别名的方法
+type B = Int
+data A = A BookInfo Int B
+type C = (A, B)
+
+这里C 的类型是tupe(A,B)，这些类型别名没有值构造器
+```
+

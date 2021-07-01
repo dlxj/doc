@@ -4248,6 +4248,41 @@ TextRank的优点在于不需要标注数据，不需要进行预训练，效果
 #### MASK
 
 ```
+https://github.com/JunnYu/WoBERT_pytorch
+
+import torch
+from transformers import BertForMaskedLM as WoBertForMaskedLM
+from wobert import WoBertTokenizer
+pretrained_model_or_path_list = [
+    "junnyu/wobert_chinese_plus_base", "junnyu/wobert_chinese_base"
+]
+for path in pretrained_model_or_path_list:
+    text = "今天[MASK]很好，我[MASK]去公园玩。"
+    tokenizer = WoBertTokenizer.from_pretrained(path)
+    model = WoBertForMaskedLM.from_pretrained(path)
+    inputs = tokenizer(text, return_tensors="pt")
+    with torch.no_grad():
+        outputs = model(**inputs).logits[0]
+    outputs_sentence = ""
+    for i, id in enumerate(tokenizer.encode(text)):
+        if id == tokenizer.mask_token_id:
+            tokens = tokenizer.convert_ids_to_tokens(outputs[i].topk(k=5)[1])
+            outputs_sentence += "[" + "||".join(tokens) + "]"
+        else:
+            outputs_sentence += "".join(
+                tokenizer.convert_ids_to_tokens([id],
+                                                skip_special_tokens=True))
+    print(outputs_sentence)
+# PLUS WoBERT 今天[天气||阳光||天||心情||空气]很好，我[想||要||打算||准备||就]去公园玩。
+# WoBERT 今天[天气||阳光||天||心情||空气]很好，我[想||要||就||准备||也]去公园玩。
+
+```
+
+
+
+
+
+```
 # https://github.com/ymcui/Chinese-BERT-wwm#%E7%AE%80%E4%BB%8B
 简介
 Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。 简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个子词，在生成训练样本时，这些被分开的子词会随机被mask。 在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即全词Mask。
