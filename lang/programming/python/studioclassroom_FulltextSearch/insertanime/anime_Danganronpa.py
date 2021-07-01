@@ -233,6 +233,8 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+#from psycopg2.extensions import ISOLATION_LEVEL_DEFAULT
+
 import sqlite3 as sqlite # Python 自带的
 
 from pymysql import escape_string
@@ -465,7 +467,7 @@ def createAnimeDB(host, port):
 
     with psycopg2.connect(database='anime', user='postgres', password='echodict.com',host=host, port=port) as conn:
         with conn.cursor() as cur:
-        
+            conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
             cur.execute("DROP TABLE IF EXISTS anime;")
             cur.execute("create table anime( \
                 id serial primary key, \

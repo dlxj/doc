@@ -167,6 +167,14 @@ JToken
 
 
 
+```c#
+# 重复两次以上
+		str = Regex.Replace(str, "\\{2,}\"", "");
+        str = Regex.Replace(str, "\\{2,}n", "");
+```
+
+
+
 
 
 ##　去重
@@ -196,6 +204,14 @@ public class Comparer: IEqualityComparer<TBINPN>
 
 List<TBINPN> newTbinpns = tbinpns.Distinct(new Comparer()).ToList();
 
+```
+
+
+
+## 不回收内存
+
+```
+System.GC.SuppressFinalize(obj);
 ```
 
 
