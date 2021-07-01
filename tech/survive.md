@@ -1098,6 +1098,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       - 赋值是真赋值 内部的newVule 就是新值，但是get 又可以返回别的东西，不返回newVule 
       - 所以set 的时侯就是一种希望，如果它是这个值会怎么样的逻辑，只是打印买得起或买不起
 
+### SwiftUI GraphQL Movie app
+https://www.0daydown.com/06/1664465.html
+GraphQL with iOS and SwiftUI: The Complete Developers Guide
+
 > [Ass字幕上下标](ASS字幕（ae字幕-Aegisub）制作数学符号中的上下角标https://www.jianshu.com/p/b027c364def5)
 >
 > [VLC IOS开源播放器](https://github.com/videolan/vlc-ios)
