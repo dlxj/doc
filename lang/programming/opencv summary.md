@@ -1260,6 +1260,9 @@ https://www.youtube.com/watch?v=ZZ5M7Q5ZWX4
 ## 导出MNIST 手写数字图片
 
 ```
+
+# https://towardsdatascience.com/handwritten-digit-mnist-pytorch-977b5338e627
+
 import cv2
 
 print( images.shape[0] )
