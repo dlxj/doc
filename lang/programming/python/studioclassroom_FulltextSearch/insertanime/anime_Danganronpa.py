@@ -403,6 +403,9 @@ def extractVideo(videopath, begintime, endtime):
     #   "-ar", "44100", "-ac", "2", "-b:a", "192k", \
     #     "tmp.ts"])
 
+    tmpmkv = "tmp.mkv"
+    if ( os.path.exists(tmpmkv) ):
+      os.unlink("tmp.mkv")
     os.symlink(videopath, "tmp.mkv")
     
     #cmd = f'ffmpeg -i \"{videopath}\" -y -ss {begintime} -to {endtime} -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=\"{videopath}\" tmp.ts' #% (videopath,videopath)#('t.mkv', 't.mkv')
@@ -410,7 +413,7 @@ def extractVideo(videopath, begintime, endtime):
 
     out_bytes = subprocess.check_output(cmd, shell=True)
 
-    os.unlink("tmp.mkv")
+    
 
     out_text = out_bytes.decode('utf-8')
     bts = readImage("tmp.ts")
@@ -727,7 +730,7 @@ if __name__ == "__main__":
     
     root = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "Linux":
-      root = r"/root/insertstudio/insertanime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+      root = r"/mnt/videos/anime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "OSX":
       #root = r"/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
       root = r"/Users/olnymyself/Downloads/d"

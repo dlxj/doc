@@ -1221,6 +1221,19 @@ https://pgroonga.github.io/install/
 
 
 
+## Install ffmpeg
+
+
+
+```
+# ffmpeg on centos7
+sudo yum install epel-release && \
+sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm && \
+sudo yum install ffmpeg ffmpeg-devel
+```
+
+
+
 ## 事务
 
 
@@ -1229,14 +1242,12 @@ PostgreSQL 事务 [u](https://www.jianshu.com/p/f35d01b95a38)
 
 > 默认情况下 PostgreSQL会将每一个SQL语句都作为一个事务来执行。如果我们没有发出BEGIN命令，则每个独立的语句都会被加上一个隐式的BEGIN以及（如果成功）COMMIT来包围它。一组被BEGIN和COMMIT包围的语句也被称为一个事务块。
 >
-> 
->
 > ```sql
-> BEGIN;
+>BEGIN;
 > UPDATE accounts SET balance = balance - 100.00
->     WHERE name = 'Alice';
+>  WHERE name = 'Alice';
 > COMMIT;
-> ```
+>    ```
 
 
 
@@ -2428,10 +2439,9 @@ https://developer.nvidia.com/zh-cn/blog/nvidia-ffmpeg-transcoding-guide/
 
 ```
 # ffmpeg on centos7
-yum -y install epel-release
-rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
-rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
-yum install ffmpeg ffmpeg-devel -y
+sudo yum install epel-release
+sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+sudo yum install ffmpeg ffmpeg-devel
 ```
 
 
