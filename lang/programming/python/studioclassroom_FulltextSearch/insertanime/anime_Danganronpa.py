@@ -620,7 +620,7 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
               allhasjpduyingQ = False
 
 
-
+    jpanese = sorted(jpanese, key=lambda tu: tu[1], reverse=False)  # sort by time asc
 
 
               # with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port=port) as conn: 
