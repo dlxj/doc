@@ -671,8 +671,8 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #if count % 10 == 0:
                 print( f"###### {count} / {len(jpanese)}" )
                 
-                if count >= 10:
-                  break
+                # if count >= 10:
+                #   break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 #cur.execute( sql )
 
@@ -738,6 +738,9 @@ if __name__ == "__main__":
     print( f"root path: \n{root}" )
 
     fnames = allfname(root, 'mkv')
+
+    fnames = sorted(fnames, key=lambda s: s, reverse=False)  # sort by name
+
     for fname in fnames:
       videoname = fname
       frtname = f"{fname}.srt"
@@ -750,7 +753,7 @@ if __name__ == "__main__":
       seasion = '01'
       importAnime(animename, seasion, frtname, videoname, videopath)
 
-      break
+      #break
 
 
     """

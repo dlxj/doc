@@ -519,8 +519,9 @@ https://github.com/sehrope/node-pg-db
 
 ```
 
-curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
-sudo yum install nodejs
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash - && \
+sudo yum install nodejs && \
+npm install -g pm2
 
 
 
