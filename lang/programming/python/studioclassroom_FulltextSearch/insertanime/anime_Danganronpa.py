@@ -668,13 +668,13 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #if count % 10 == 0:
                 print( f"###### {count} / {len(jpanese)}" )
                 
-                # if count >= 10:
-                #   break
+                if count >= 10:
+                  break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 #cur.execute( sql )
 
                 #cur.execute("""INSERT INTO audio(data) VALUES(%s);""", (bts,))
-                break
+                #break
 
             #cur.execute('COMMIT;')
 

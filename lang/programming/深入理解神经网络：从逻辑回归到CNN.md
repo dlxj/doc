@@ -4426,6 +4426,48 @@ p.355
 
 
 
+## 深度文本匹配
+
+
+
+```
+1、背景介绍
+文本匹配是自然语言处理中的一个核心问题，很多自然语言处理的任务都可以抽象成文本匹配问题，例如信息检索可以归结成查询项和文档的匹配，问答系统可以归结为问题和候选答案的匹配，对话系统可以归结为对话和回复的匹配。针对不同的任务选取合适的匹配模型，提高匹配的准确率成为自然语言处理任务的重要挑战。
+
+2、数据集介绍
+论文中经常用到的数据集：
+
+SNLI：570K条人工标注的英文句子对，label有三个：矛盾、中立和支持
+MultiNLI：433K个句子对，与SNLI相似，但是SNLI中对应的句子都用同一种表达方式，但是MultiNLI涵盖了口头和书面语表达，可能表示形式会不同(Mismatched)
+Quora 400k个问题对，每个问题和答案有一个二值的label表示他们是否匹配
+WikiQA
+是问题是相对应的句子的数据集，相对比较小。
+```
+
+
+
+### pairwise、pointwise 、 listwise
+
+
+
+```
+# pairwise、pointwise 、 listwise算法是什么?怎么理解？主要区别是什么？
+https://blog.csdn.net/pearl8899/article/details/102920628
+```
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210702091101111.png" alt="image-20210702091101111" style="zoom:50%;" />
+
+```
+# https://zhuanlan.zhihu.com/p/111636490
+Learning to Rank： pointwise 、 pairwise 、 listwise
+```
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210702091438189.png" alt="image-20210702091438189" style="zoom: 80%;" />
+
+
+
+
+
 ## OCR
 
 ```
