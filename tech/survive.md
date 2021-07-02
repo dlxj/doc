@@ -1546,6 +1546,8 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 >  Syncthing 开源P2P文件同步工具
 >  smb文件共享  smb://10.168.1.1   
+>
+>  天翼云 https://laowangblog.com/cloud-189-add-storage.html
 
 # GFW
 
