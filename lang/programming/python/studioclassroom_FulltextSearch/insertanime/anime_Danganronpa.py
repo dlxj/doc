@@ -409,7 +409,7 @@ def extractVideo(videopath, begintime, endtime):
     os.symlink(videopath, "tmp.mkv")
     
     #cmd = f'ffmpeg -i \"{videopath}\" -y -ss {begintime} -to {endtime} -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=\"{videopath}\" tmp.ts' #% (videopath,videopath)#('t.mkv', 't.mkv')
-    cmd = f'ffmpeg -i \"{videopath}\" -y -ss {begintime} -to {endtime} -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=\"tmp.mkv\" tmp.ts' #% (videopath,videopath)#('t.mkv', 't.mkv')
+    cmd = f'ffmpeg -i \"{videopath}\" -y -hide_banner -loglevel error -ss {begintime} -to {endtime} -f mpegts -codec:v mpeg1video -b:v 1500k -s 960x540 -r 30 -bf 0 -codec:a mp2 -ar 44100 -ac 2 -b:a 192k -vf subtitles=\"tmp.mkv\" tmp.ts' #% (videopath,videopath)#('t.mkv', 't.mkv')
 
     out_bytes = subprocess.check_output(cmd, shell=True)
 
@@ -746,8 +746,8 @@ if __name__ == "__main__":
       frtname = f"{fname}.srt"
       fname = os.path.join( root, fname )
       videopath = os.path.join( root, videoname )
-      out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", fname, "-map", "0:s:0", frtname])
-      out_text = out_bytes.decode('utf-8')
+      #out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", fname, "-map", "0:s:0", frtname])
+      #out_text = out_bytes.decode('utf-8')
 
       animename = 'Danganronpa'
       seasion = '01'
