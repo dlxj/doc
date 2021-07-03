@@ -12,7 +12,16 @@ systemctl status postgresql-13      # centos7
 
 https://github.com/ShadowsocksR-Live/shadowsocksr-native
 
-好用的代理  https://github.com/TyrantLucifer/ssr-command-client
+```
+curl --proxy socks5h://127.0.0.1:1080 www.google.com
+
+```
+
+
+
+
+
+不好用的代理  https://github.com/TyrantLucifer/ssr-command-client
 
 ```
 重置订阅链接 shadowsocksr-cli --setting-url https://tyrantlucifer.com/ssr/ssr.txt
