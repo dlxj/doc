@@ -10,9 +10,22 @@ systemctl status postgresql-13      # centos7
 
 
 
-
+https://github.com/ShadowsocksR-Live/shadowsocksr-native
 
 好用的代理  https://github.com/TyrantLucifer/ssr-command-client
+
+```
+重置订阅链接 shadowsocksr-cli --setting-url https://tyrantlucifer.com/ssr/ssr.txt
+更新订阅列表 shadowsocksr-cli -u
+打印节点列表 shadowsocksr-cli -l
+开启美国节点代理 shadowsocksr-cli -s 1
+
+
+查看订阅链接列表 shadowsocksr-cli --list-url
+查看本地监听地址 shadowsocksr-cli --list-address
+```
+
+
 
 v2ray  https://printempw.github.io/v2ray-ws-tls-cloudflare/
 
