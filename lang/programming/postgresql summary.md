@@ -4,9 +4,22 @@
 systemctl start postgresql.service  # ubuntu 18.04 
 systemctl status postgresql-13      # centos7
 
+
 ```
 
+## nohup
 
+```bash
+# 加 -u 才能看到打印的输出
+nohup proxy python3.8 -u anime_Danganronpa.py >outlog &
+tail -f outlog
+jobs -l # 查看运行中的进程
+ps -aux | grep "anime_Danganronpa.py"
+
+kill -9 $(lsof outlog | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:8077 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+
+```
 
 
 

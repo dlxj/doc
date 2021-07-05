@@ -746,8 +746,8 @@ if __name__ == "__main__":
       frtname = f"{fname}.srt"
       fname = os.path.join( root, fname )
       videopath = os.path.join( root, videoname )
-      #out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", fname, "-map", "0:s:0", frtname])
-      #out_text = out_bytes.decode('utf-8')
+      out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
+      out_text = out_bytes.decode('utf-8')
 
       animename = 'Danganronpa'
       seasion = '01'

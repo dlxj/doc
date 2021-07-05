@@ -2011,10 +2011,6 @@ kill -9 $(lsof -i:1080 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
 
 
 
-![image-20200329200420234](survive.assets/image-20200329200420234.png)
-
-
-
 - password 需要登录**FaceTheWorld** ，点某个服务器的节点，选JSON 格式的配置
 
 ## Socks5 Local client
