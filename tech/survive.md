@@ -1553,6 +1553,13 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 ## 好用
 
+https://github.com/ShadowsocksR-Live/shadowsocksr-native
+
+```
+curl --proxy socks5h://127.0.0.1:1080 www.google.com
+
+```
+
 ​	https://github.com/TyrantLucifer/ssr-command-client
 
 
