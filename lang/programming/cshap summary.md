@@ -142,6 +142,25 @@ JToken
 
 
 
+```c#
+# 从字符串解析出数组
+
+			var datalist = new JArray();
+            datalist.Add(new JObject { { "AppID", 1 }, { "CName", 1 }, { "AppEname", 1 } });
+
+            var s = datalist.ToString();
+
+            JArray jar = JArray.Parse(s);
+            foreach( JObject jo in jar)
+            {
+                string appid =  jo["AppID"].ToString();
+            }
+```
+
+
+
+
+
 
 
 
@@ -172,6 +191,23 @@ JToken
 		str = Regex.Replace(str, "\\{2,}\"", "");
         str = Regex.Replace(str, "\\{2,}n", "");
 ```
+
+
+
+
+
+## 乱码解决
+
+
+
+```
+            string aa =  @"\u4E94\u5473";
+            string bb = System.Text.RegularExpressions.Regex.Unescape(aa);
+            
+            --> 五味
+```
+
+
 
 
 
@@ -212,6 +248,235 @@ List<TBINPN> newTbinpns = tbinpns.Distinct(new Comparer()).ToList();
 
 ```
 System.GC.SuppressFinalize(obj);
+```
+
+
+
+
+
+## Get 请求
+
+
+
+```
+1.简单发送Get请求
+
+/// <summary>
+/// 指定Url地址使用Get 方式获取全部字符串
+/// </summary>
+/// <param name="url">请求链接地址</param>
+/// <returns></returns>
+public static string Get(string url)
+{
+    string result = "";
+    HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+    HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+    Stream stream = resp.GetResponseStream();
+    try
+    {
+        //获取内容
+        using (StreamReader reader = new StreamReader(stream))
+        {
+            result = reader.ReadToEnd();
+        }
+    }
+    finally
+    {
+        stream.Close();
+    }
+    return result;
+}
+2.带请求参数的Get方法
+/// <summary>
+/// 发送Get请求
+/// </summary>
+/// <param name="url">地址</param>
+/// <param name="dic">请求参数定义</param>
+/// <returns></returns>
+public static string Get(string url, Dictionary<string, string> dic)
+{
+    string result = "";
+    StringBuilder builder = new StringBuilder();
+    builder.Append(url);
+    if (dic.Count > 0)
+    {
+        builder.Append("?");
+        int i = 0;
+        foreach (var item in dic)
+        {
+            if (i > 0)
+                builder.Append("&");
+            builder.AppendFormat("{0}={1}", item.Key, item.Value);
+            i++;
+        }
+    }
+    HttpWebRequest req = (HttpWebRequest)WebRequest.Create(builder.ToString());
+    //添加参数
+    HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+    Stream stream = resp.GetResponseStream();
+    try
+    {
+        //获取内容
+        using (StreamReader reader = new StreamReader(stream))
+        {
+            result = reader.ReadToEnd();
+        }
+    }
+    finally
+    {
+        stream.Close();
+    }
+    return result;
+}
+
+3.自定义指定Http请求头，自定义指定编码解析返回结果
+HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+req.Method = "GET";
+req.Headers["Accept-Language"] = "zh-CN,zh;q=0.8";
+req.Referer = "https://www.baidu.com/";
+HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+Stream stream = resp.GetResponseStream();
+string result = "";
+//注意，此处使用的编码是：gb2312
+//using (StreamReader reader = new StreamReader(stream, Encoding.Default))
+using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding("gb2312")))
+{
+    result = reader.ReadToEnd();
+}
+
+```
+
+
+
+## Post
+
+
+
+```
+ public static List<wordToken> Get(string url)
+        {
+
+            string result = "";
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+
+            req.Method = "GET";
+            req.ContentType = "application/json; charset=utf-8";
+            req.Timeout = 20000;
+
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+
+            Stream stream = resp.GetResponseStream();
+            try
+            {
+                //获取内容
+                using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding("utf-8")))
+                {
+                    result = reader.ReadToEnd();
+                }
+            }
+            finally
+            {
+                stream.Close();
+            }
+
+            result = System.Text.RegularExpressions.Regex.Unescape(result);  //  \u4E94\u5473  会被替换成 “五味”
+
+
+            List<wordToken> wordsSearch = new List<wordToken>();
+
+            JArray jar = JArray.Parse(result);
+            foreach (JObject jo in jar)
+            {
+                wordToken to = new wordToken
+                {
+                    word = jo["word"].ToString(),
+                    pos = jo["type"].ToString(),
+                    enable = true,
+                    tf = double.Parse(jo["tf"].ToString()),
+                    tfidf = double.Parse(jo["tfidf"].ToString())
+                };
+
+                wordsSearch.Add(to);
+
+            }
+
+            return wordsSearch;
+        }
+
+        // [{id:"1",context:"\"用药错误\"A级（1级）的标准"}]
+
+
+        public static List<wordToken> Post(string url, string str)
+        {
+
+
+            // "assist" "pro" "stopWord"
+
+
+            var datalist = new JArray();
+            datalist.Add(new JObject { { "id", 1 }, { "context", str } });
+
+            var content = datalist.ToString();
+
+
+            // 以键值对的形式Post
+            StringBuilder buffer = new StringBuilder();
+            buffer.AppendFormat("&{0}={1}", "array", content);
+
+
+            string result = "";
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+
+
+            byte[] kvdata = Encoding.UTF8.GetBytes(buffer.ToString());
+            req.ContentLength = kvdata.Length;
+
+            using (Stream strm = req.GetRequestStream())
+            {
+                strm.Write(kvdata, 0, kvdata.Length);
+            }
+
+            using (Stream strm = req.GetResponse().GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(strm, Encoding.UTF8))
+                {
+                    result = reader.ReadToEnd();
+                }
+            }
+
+            result = System.Text.RegularExpressions.Regex.Unescape(result);  //  \u4E94\u5473  会被替换成 “五味”
+
+
+            JObject job = JObject.Parse(result);
+            var status = job["status"].ToString();
+            if (status != "200")
+            {
+
+            }
+
+            List<wordToken> wordsSearch = new List<wordToken>();
+
+            JArray jar = JArray.Parse(job["data"].ToString());
+            foreach (JObject jo in jar[0]["words"])
+            {
+                wordToken to = new wordToken
+                {
+                    word = jo["word"].ToString(),
+                    pos = jo["type"].ToString(),
+                    enable = true,
+                    tf = double.Parse(jo["tf"].ToString()),
+                    tfidf = double.Parse(jo["tfidf"].ToString())
+                };
+
+                wordsSearch.Add(to);
+
+            }
+
+            return wordsSearch;
+
+        }
 ```
 
 
