@@ -671,6 +671,23 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
             #cur.execute('BEGIN;')
             count = 0
             for idx, tu in enumerate(jpanese):
+
+                status = conn.get_transaction_status()
+                if status == _ext.TRANSACTION_STATUS_UNKNOWN:
+                    # server connection lost
+                    conn.close()
+                    conn = psycopg2.connect(database='anime', user='postgres', password='echodict.com',host=host, port=port)
+                    cur = conn.cursor()
+                elif status != _ext.TRANSACTION_STATUS_IDLE:
+                    # connection in error or in transaction
+                    #conn.rollback()
+                    #self._pool.append(conn)
+                    pass
+                else:
+                    # regular idle connection
+                    #self._pool.append(conn)
+                    pass
+
                 j = tu[0]
                 zh = ""
                 # if (idx < len(chinese)):

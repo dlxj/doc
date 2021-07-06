@@ -281,6 +281,33 @@ npm install pg
 
 
 
+## 备份表
+
+
+
+```
+一、备份表
+
+    1. 这里使用的是Linux服务器，首先进入安装当前数据库的服务器，可以在home目录下新建一个文件夹。
+
+    2.输入命令：  pg_dump -t 表名 -U postgres 数据库名 > 备份文件名.dump
+
+        例如：pg_dump -t user -t dept -t employee -U postgres test_table > test_copy.dump
+
+       这样就可以实现多表同时备份。
+
+二、还原表
+
+     输入命令：psql -d 数据库名 -U postgres -f 备份文件名.dump
+
+    例如：psql -d test_table -U postgres -f test_copy.dump
+
+```
+
+
+
+
+
 ## 显示数据目录
 
 show data_directory;
