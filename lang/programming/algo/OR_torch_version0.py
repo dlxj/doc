@@ -72,7 +72,7 @@ print( sources, targets )
 
 
 optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.05)
-criterion = nn.MSELoss() #nn.NLLLoss()
+criterion = nn.MSELoss() #nn.NLLLoss()  # https://zhuanlan.zhihu.com/p/264366034
 
 time0 = time()
 epochs = 50000
