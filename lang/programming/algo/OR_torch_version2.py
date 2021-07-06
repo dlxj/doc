@@ -28,6 +28,20 @@ class Net(nn.Module):
         x = self.fc2(x)
         return x
 
+
+# # Layer details for the neural network
+# input_size = 2 # 输入层两个神经元
+# # hidden_sizes = [128, 64] # 没有隐层
+# output_size = 1 # 输出一个值
+
+# # Build a feed-forward network
+# model = nn.Sequential(nn.Linear(input_size, output_size))
+# print(model)
+
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# print(device)
+# model.to(device)
+
 net = Net()
 inputs = list(map(lambda s: Variable(torch.Tensor([s])), [
     [0, 0],
