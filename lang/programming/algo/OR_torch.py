@@ -69,15 +69,19 @@ sources, targets = next(train_iter)
 print( sources, targets )
 
 
-optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
-criterion = nn.NLLLoss()
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.05)
+criterion = nn.MSELoss() #nn.NLLLoss()
 
 time0 = time()
-epochs = 15
+epochs = 10000
 
 for e in range(epochs):
     running_loss = 0
     sources, targets = next(train_iter)
+
+    #targets = targets.squeeze(1) # 降维
+    #targets = targets.to(device=device, dtype=torch.long)
+    #targets =torch.tensor(targets, dtype=torch.long) # 类型转换
 
     # Training pass
     optimizer.zero_grad()
@@ -92,6 +96,12 @@ for e in range(epochs):
         
     running_loss += loss.item()
     
-    print("Epoch {} - Training loss: {}".format(e, running_loss/len(train_iter)))
+    print("Epoch {} - Training loss: {}".format(e, running_loss/4))
 
 print("\nTraining Time (in minutes) =",(time()-time0)/60)
+
+
+sources, targets = next(train_iter)
+with torch.no_grad():
+    output = model(sources.cpu())
+    print( sources, output )
