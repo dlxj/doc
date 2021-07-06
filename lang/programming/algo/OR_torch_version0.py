@@ -73,7 +73,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.05)
 criterion = nn.MSELoss() #nn.NLLLoss()
 
 time0 = time()
-epochs = 10000
+epochs = 50000
 
 for e in range(epochs):
     running_loss = 0
