@@ -5,19 +5,24 @@ OR 的pytorch 实现
 reference:
     doc\lang\programming\pytorch\李宏毅2020机器翻译\iAttention.py
     doc\lang\programming\pytorch\数字识别\ihandwritten_digit_recognition_GPU.ipynb
+    https://gist.github.com/user01/68514db1127eb007f24d28bfd11dd60e
 
 """
 import torch
 import torch.utils.data as torch_data
 from torch import nn
+from torch import optim
+
+from time import time
 
 def Data(type='training'):
     data = [
-        [ [0, 0], [0] ],
-        [ [0, 1], [1] ],
-        [ [1, 0], [1] ],
-        [ [1, 1], [1] ]
+        [ torch.Tensor([0, 0]), torch.Tensor([0]) ],
+        [ torch.Tensor([0, 1]), torch.Tensor([1]) ],
+        [ torch.Tensor([1, 0]), torch.Tensor([1]) ],
+        [ torch.Tensor([1, 1]), torch.Tensor([1]) ]
     ]
+
     return data
 
 class TorchDataset(torch_data.Dataset):
@@ -31,6 +36,14 @@ class TorchDataset(torch_data.Dataset):
 
     return item[0], item[1]
 
+def infinite_iter(data_loader):
+  it = iter(data_loader)
+  while True:
+    try:
+      item_in , item_out = next(it)
+      yield item_in, item_out
+    except StopIteration:
+      it = iter(data_loader)
 
 # Layer details for the neural network
 input_size = 2 # 输入层两个神经元
@@ -46,9 +59,39 @@ print(device)
 model.to(device)
 
 
+
 train_dataset = TorchDataset(Data(type='training'))
-trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=1, shuffle=True)
+train_loader = torch_data.DataLoader(train_dataset, batch_size = 2, shuffle=True)  # 每个输入是维度是(2) 的一维数组，每一批总共输入2 组，维度既是：(2, 2)
+train_iter = infinite_iter(train_loader)
+
+sources, targets = next(train_iter)
+
+print( sources, targets )
 
 
+optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
+criterion = nn.NLLLoss()
 
+time0 = time()
+epochs = 15
 
+for e in range(epochs):
+    running_loss = 0
+    sources, targets = next(train_iter)
+
+    # Training pass
+    optimizer.zero_grad()
+        
+    output = model(sources.cpu())
+    loss = criterion(output, targets.cpu())
+    #This is where the model learns by backpropagating
+    loss.backward()
+        
+    #And optimizes its weights here
+    optimizer.step()
+        
+    running_loss += loss.item()
+    
+    print("Epoch {} - Training loss: {}".format(e, running_loss/len(train_iter)))
+
+print("\nTraining Time (in minutes) =",(time()-time0)/60)
