@@ -231,7 +231,28 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 """
 
 
+"""
+
+自动重连
+
+https://github.com/psycopg/psycopg2/blob/9e6c3322d8640bca7007a222973d87d8ea60057c/lib/pool.py#L103
+
+status = conn.get_transaction_status()
+                if status == _ext.TRANSACTION_STATUS_UNKNOWN:
+                    # server connection lost
+                    conn.close()
+                elif status != _ext.TRANSACTION_STATUS_IDLE:
+                    # connection in error or in transaction
+                    conn.rollback()
+                    self._pool.append(conn)
+                else:
+                    # regular idle connection
+                    self._pool.append(conn)
+"""
+
+
 import psycopg2
+import psycopg2.extensions as _ext
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 #from psycopg2.extensions import ISOLATION_LEVEL_DEFAULT
 
@@ -644,6 +665,7 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
 
 
     with psycopg2.connect(database='anime', user='postgres', password='echodict.com',host=host, port=port) as conn:
+        #conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT) # 不自动开启事务？
         with conn.cursor() as cur:
           
             #cur.execute('BEGIN;')

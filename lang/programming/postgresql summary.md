@@ -11,7 +11,7 @@ systemctl status postgresql-13      # centos7
 
 ```bash
 # 加 -u 才能看到打印的输出
-nohup proxy python3.8 -u anime_Danganronpa.py >outlog &
+nohup python3.8 -u anime_Danganronpa.py >outlog &
 tail -f outlog
 jobs -l # 查看运行中的进程
 ps -aux | grep "anime_Danganronpa.py"
@@ -3084,6 +3084,14 @@ cur.execute("INSERT INTO images(data) VALUES (%s)", (binary,))
 ```
 psycopg2.connect( dbname = databaseName, user = userName, host = hostName, port = 5432, connect_timeout = 5, options='-c statement_timeout=5000')
 ```
+
+### 自动重连
+
+```
+https://github.com/psycopg/psycopg2/issues/419
+```
+
+
 
 
 
