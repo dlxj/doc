@@ -91,8 +91,8 @@ for e in range(epochs):
     # Training pass
     optimizer.zero_grad()
         
-    output = model(sources.cpu())
-    loss = criterion(output, targets.cpu())
+    output = model( sources.gpu() if torch.cuda.is_available() else sources.cpu() )
+    loss = criterion(output,  targets.gpu() if torch.cuda.is_available() else targets.cpu() )
     #This is where the model learns by backpropagating
     loss.backward()
         
@@ -106,8 +106,16 @@ for e in range(epochs):
 print("\nTraining Time (in minutes) =",(time()-time0)/60)
 
 
+# 保存训练好的参数
+torch.save(model.state_dict(), "save_OR_torch.pt")
+
 # 验证训练出的模型是否正确
 sources, targets = next(train_iter)
 with torch.no_grad():
-    output = model(sources.cpu())
+    
+    # 加载训练好的参数
+    model.load_state_dict(torch.load("save_OR_torch.pt"))
+    model.eval()
+
+    output = model( sources.gpu() if torch.cuda.is_available() else sources.cpu() )
     print( sources, output )
