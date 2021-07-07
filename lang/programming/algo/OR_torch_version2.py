@@ -1,6 +1,6 @@
 import torch as pt
 from torch.nn.functional import mse_loss
-pt.manual_seed(33);
+pt.manual_seed(33)
 
 model = pt.nn.Sequential(
     pt.nn.Linear(2, 5),

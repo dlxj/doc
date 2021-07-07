@@ -136,21 +136,23 @@ def readImage(fname):
         if fin:
             fin.close()
 
-def extractAudio(videopath, begintime, endtime):
+def extractAudio(videopath, begintime, endtime, newdir):
   # Audio: mp3 (libmp3lame), 44100 Hz, stereo, fltp, 192 kb/s (default)
   # -vn  no video
     # out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
     #   "-ar", "44100", "-ac", "2", "-b:a", "192k", \
     #     "tmp.mp3"])
+
+    fnameaudio = os.path.join(newdir, begintime.replace(":", "_") + ".mp3")
     
     out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
       "-ar", "44100", "-ac", "2", "-b:a", "192k", \
-        "tmp.mp3"])
+        fnameaudio]) #"tmp.mp3"
 
     out_text = out_bytes.decode('utf-8')
-    bts = readImage("tmp.mp3")
-    os.remove("tmp.mp3")
-    return bts
+    #bts = readImage("tmp.mp3")
+    #os.remove("tmp.mp3")
+    #return bts
 
 # success
 # hevc 表示使用h.265 编码
@@ -192,7 +194,7 @@ def extractVideo(videopath, begintime, endtime):
     return bts
 
 
-def cutAnime(animename, seasion, frtname, videoname, videopath):
+def cutAnime(animename, seasion, frtname, videoname, videopath, newdir):
     dic_chs = {}
 
     currDir = os.path.dirname(os.path.abspath(__file__))
@@ -284,7 +286,7 @@ def cutAnime(animename, seasion, frtname, videoname, videopath):
         #tags = tagger.parse(j)
         t = tu[1]
         begintime, endtime = parseSrtTime(t)
-        bmp3_audio = extractAudio(videopath, begintime, endtime)
+        bmp3_audio = extractAudio(videopath, begintime, endtime, newdir)
         #bts = psycopg2.Binary(bts)
         #bts_video = extractVideo(videopath, begintime, endtime)
         #bts_video = psycopg2.Binary(bts_video)
@@ -292,6 +294,8 @@ def cutAnime(animename, seasion, frtname, videoname, videopath):
 
 
 def cut(rootdir, fname, idx):
+
+    print("### idx {} start.", idx)
 
     outdir = os.path.join(rootdir, "ffmpeg")
 
@@ -318,13 +322,14 @@ def cut(rootdir, fname, idx):
     shutil.copy2(frtname_temp, newdir)
     os.remove(frtname_temp)
 
-    print("### idx {0} doen.", idx)
+    
 
     animename = 'Danganronpa'
     seasion = '01'
 
-    cutAnime(animename, seasion, frtname, videoname, videopath)
+    cutAnime(animename, seasion, frtname, videoname, videopath, newdir)
 
+    print("$$$ idx {} doen.", idx)
 
 if __name__ == "__main__":
 
