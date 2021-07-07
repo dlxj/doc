@@ -1,5 +1,16 @@
 
 
+"""
+### windows Long path
+
+1. Open the Start menu and type “regedit.” Launch the application.
+2. Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem`
+3. Right-click the value “LongPathsEnabled” and select Modify.
+4. Change “Value data” from 0 to 1.
+5. Click OK.
+
+"""
+
 import os,sys,subprocess
 import re
 import glob
@@ -12,6 +23,7 @@ from joblib import Parallel, delayed
 from multiprocessing import cpu_count
 
 from pathlib import Path
+import shutil
 
 print("cpu count: {0}".format(os.cpu_count()))
 
@@ -31,22 +43,35 @@ def cut(rootdir, fname, idx):
 
     outdir = os.path.join(rootdir, "ffmpeg")
 
-    basename = Path(fname)
+    basename = Path(fname) # without extention
     newdir = os.path.join(outdir, basename.stem)
+    #newdir = os.path.join(outdir, "s")
     
-    
-    
+    if not os.path.exists( newdir ):
+        os.makedirs( newdir )
+    else:
+        shutil.rmtree( newdir ) # remove directory
+        os.makedirs( newdir )
 
-    
 
-    #currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )
-    
     videoname = fname
-    frtname = f"{fname}.srt"
+    frtname_temp = f"{fname}.srt"
+    frtname =  os.path.join(newdir,  os.path.basename(fname) + ".srt" ) # f"{fname}.srt"
+    #frtname =  os.path.join(newdir,  "s.srt" )
     fname = os.path.join( root, fname )
     videopath = os.path.join( root, videoname )
-    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
+    out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname_temp])
     out_text = out_bytes.decode('utf-8')
+
+    # if ( os.path.exists( newdir ) ):
+    #     if ( os.path.exists( frtname_temp ) ):
+    #         with open(frtname, 'w') as f:
+    #             f.write('original')
+
+    shutil.copy2(frtname_temp, newdir)
+    os.remove(frtname_temp)
+        
+
 
     print("### idx {0} doen.", idx)
 
@@ -103,7 +128,7 @@ if __name__ == "__main__":
 
     fnames = sorted(fnames, key=lambda s: s, reverse=False)  # sort by name
 
-    ret = Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(cut)(root, fnames[i], i) for i in range(len(fnames)-1))
+    ret = Parallel(n_jobs=1, verbose=10)(delayed(cut)(root, fnames[i], i) for i in range(len(fnames)-1)) # os.cpu_count()
 
     # for fname in fnames:
     #   videoname = fname

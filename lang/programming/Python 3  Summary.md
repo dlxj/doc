@@ -604,6 +604,31 @@ __all__ = ['Sampler', 'SequentialSampler', ... xxx ...]
 
 
 
+### windows Long path
+
+1. Open the Start menu and type “regedit.” Launch the application.
+2. Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem`
+3. Right-click the value “LongPathsEnabled” and select Modify.
+4. Change “Value data” from 0 to 1.
+5. Click OK.
+
+
+
+### soft link
+
+
+
+```python
+    tmpmkv = "tmp.mkv"
+    if ( os.path.exists(tmpmkv) ):
+      os.unlink("tmp.mkv")
+    os.symlink(videopath, "tmp.mkv")
+```
+
+
+
+
+
 ```python
 f = file('data/lsat.csv')
 score = np.loadtxt(f, delimiter=",")
@@ -3355,6 +3380,16 @@ currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str
     else:
         RELOADQ = False
 ```
+
+
+
+```
+# removing directory
+import shutil
+shutil.rmtree(path)
+```
+
+
 
 
 
