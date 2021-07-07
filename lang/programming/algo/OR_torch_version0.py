@@ -52,8 +52,10 @@ output_size = 1 # 输出一个值
 
 # Build a feed-forward network
 model = nn.Sequential(
-  nn.Linear(input_size, output_size),
-  nn.ReLU())
+  nn.Linear(input_size, 5),
+  nn.ReLU(),
+  nn.Linear(5, output_size)
+)
 print(model)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -71,7 +73,7 @@ sources, targets = next(train_iter)
 print( sources, targets )
 
 
-optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.05)
+optimizer = optim.SGD(model.parameters(), lr=0.001) # momentum=0.05
 criterion = nn.MSELoss() #nn.NLLLoss()  # https://zhuanlan.zhihu.com/p/264366034
   # NLLloss 和交叉熵一样只适用于分类任务， NLLLoss是基于softmax，softmax得到结果向量的概率分布，是离散值。回归任务建议MSE或MAE等损失函数
   # 否则提示多个target报错
@@ -91,8 +93,8 @@ for e in range(epochs):
     # Training pass
     optimizer.zero_grad()
         
-    output = model( sources.gpu() if torch.cuda.is_available() else sources.cpu() )
-    loss = criterion(output,  targets.gpu() if torch.cuda.is_available() else targets.cpu() )
+    output = model( sources.cuda() if torch.cuda.is_available() else sources.cpu() )
+    loss = criterion(output,  targets.cuda() if torch.cuda.is_available() else targets.cpu() )
     #This is where the model learns by backpropagating
     loss.backward()
         
@@ -117,5 +119,5 @@ with torch.no_grad():
     model.load_state_dict(torch.load("save_OR_torch.pt"))
     model.eval()
 
-    output = model( sources.gpu() if torch.cuda.is_available() else sources.cpu() )
+    output = model( sources.cuda() if torch.cuda.is_available() else sources.cpu() )
     print( sources, output )

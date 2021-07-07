@@ -1,13 +1,3 @@
-
-"""
-OR 的pytorch 实现
-
-reference:
-    doc\lang\programming\pytorch\李宏毅2020机器翻译\iAttention.py
-    doc\lang\programming\pytorch\数字识别\ihandwritten_digit_recognition_GPU.ipynb
-    https://gist.github.com/user01/68514db1127eb007f24d28bfd11dd60e
-
-"""
 import torch
 from torch.autograd import Variable
 import torch.nn as nn
@@ -55,7 +45,7 @@ for idx in range(0, EPOCHS_TO_TRAIN):
         loss.backward()
         optimizer.step()    # Does the update
     if idx % 5000 == 0:
-        print("Epoch {: >8} Loss: {}".format(idx, loss.data.numpy()))
+        print("Epoch {: >8} Loss: {}".format(idx, loss.data.numpy()[0]))
 
 
 

@@ -1,86 +1,38 @@
+import torch as pt
+from torch.nn.functional import mse_loss
+pt.manual_seed(33);
 
-"""
-OR 的pytorch 实现
+model = pt.nn.Sequential(
+    pt.nn.Linear(2, 5),
+    pt.nn.ReLU(),
+    pt.nn.Linear(5, 1)
+)
 
-reference:
-    doc\lang\programming\pytorch\李宏毅2020机器翻译\iAttention.py
-    doc\lang\programming\pytorch\数字识别\ihandwritten_digit_recognition_GPU.ipynb
-    https://gist.github.com/user01/68514db1127eb007f24d28bfd11dd60e
+X = pt.tensor([[0, 0],
+               [0, 1],
+               [1, 0],
+               [1, 1]], dtype=pt.float32)
 
-"""
-import torch
-from torch.autograd import Variable
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
+y = pt.tensor([0, 1, 1, 0], dtype=pt.float32).reshape(X.shape[0], 1)
 
-EPOCHS_TO_TRAIN = 50000
+EPOCHS = 100
 
-class Net(nn.Module):
+optimizer = pt.optim.Adam(model.parameters(), lr = 0.03)
 
-    def __init__(self):
-        super(Net, self).__init__()
-        self.fc1 = nn.Linear(2, 3, True)
-        self.fc2 = nn.Linear(3, 1, True)
+for epoch in range(EPOCHS):
+  #forward
+  y_est = model(X)
+  
+  #compute mean squared error loss
+  loss = mse_loss(y_est, y)
 
-    def forward(self, x):
-        x = F.sigmoid(self.fc1(x))
-        x = self.fc2(x)
-        return x
+  #backprop the loss gradients
+  loss.backward()
 
+  #update the model weights using the gradients
+  optimizer.step()
 
-# # Layer details for the neural network
-# input_size = 2 # 输入层两个神经元
-# # hidden_sizes = [128, 64] # 没有隐层
-# output_size = 1 # 输出一个值
+  #empty the gradients for the next iteration
+  optimizer.zero_grad()
 
-# # Build a feed-forward network
-# model = nn.Sequential(nn.Linear(input_size, output_size))
-# print(model)
-
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# print(device)
-# model.to(device)
-
-net = Net()
-inputs = list(map(lambda s: Variable(torch.Tensor([s])), [
-    [0, 0],
-    [0, 1],
-    [1, 0],
-    [1, 1]
-]))
-targets = list(map(lambda s: Variable(torch.Tensor([s])), [
-    [0],
-    [1],
-    [1],
-    [1]
-]))
-
-
-criterion = nn.MSELoss()
-optimizer = optim.SGD(net.parameters(), lr=0.01)
-
-print("Training loop:")
-for idx in range(0, EPOCHS_TO_TRAIN):
-    for input, target in zip(inputs, targets):
-        optimizer.zero_grad()   # zero the gradient buffers
-        output = net(input)
-        loss = criterion(output, target)
-        loss.backward()
-        optimizer.step()    # Does the update
-    if idx % 5000 == 0:
-        print("Epoch {: >8} Loss: {}".format(idx, loss.data.numpy()))
-
-
-
-print("")
-print("Final results:")
-for input, target in zip(inputs, targets):
-    output = net(input)
-    print("Input:[{},{}] Target:[{}] Predicted:[{}] Error:[{}]".format(
-        int(input.data.numpy()[0][0]),
-        int(input.data.numpy()[0][1]),
-        int(target.data.numpy()[0]),
-        round(float(output.data.numpy()[0]), 4),
-        round(float(abs(target.data.numpy()[0] - output.data.numpy()[0])), 4)
-    ))
+  

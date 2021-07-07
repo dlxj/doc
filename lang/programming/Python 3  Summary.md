@@ -3405,6 +3405,11 @@ from multiprocessing import cpu_count
 print(cpu_count)
 ```
 
+```
+from joblib import Parallel, delayed
+return Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(f)(ts, i) for i in range(len(ts)-1))  # 子循环多核并发执行，加速运算
+```
+
 
 
 
