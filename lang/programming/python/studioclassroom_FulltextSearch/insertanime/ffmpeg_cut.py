@@ -11,6 +11,8 @@ import platform
 from joblib import Parallel, delayed
 from multiprocessing import cpu_count
 
+from pathlib import Path
+
 print("cpu count: {0}".format(os.cpu_count()))
 
 
@@ -25,7 +27,19 @@ def allfname(root, ext):
     return names
 
 
-def cut(fname, idx):
+def cut(rootdir, fname, idx):
+
+    outdir = os.path.join(rootdir, "ffmpeg")
+
+    basename = Path(fname)
+    newdir = os.path.join(outdir, basename.stem)
+    
+    
+    
+
+    
+
+    #currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )
     
     videoname = fname
     frtname = f"{fname}.srt"
@@ -89,7 +103,7 @@ if __name__ == "__main__":
 
     fnames = sorted(fnames, key=lambda s: s, reverse=False)  # sort by name
 
-    ret = Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(cut)(fnames[i], i) for i in range(len(fnames)-1))
+    ret = Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(cut)(root, fnames[i], i) for i in range(len(fnames)-1))
 
     # for fname in fnames:
     #   videoname = fname

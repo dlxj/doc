@@ -3323,16 +3323,50 @@ t.storage().data_ptr() == b.storage().data_ptr()
 
 
 ```python
-try:
-    test = os.uname()
-    if test[0] == "Linux":
+    OS = ''
+    try:
+      test = os.uname()
+      if test[0] == "Linux":
         OS = "Linux"
-except Exception as e:
-    OS = "Windows"
+      elif test[0] == 'Darwin':
+        OS = "OSX"
+    except Exception as e:
+      OS = "Windows"
 
-indir = 'F:/11/*/*.txt' if OS == "Windows" else '/home/data/11/*.txt'
-otdir = 'E:/11' if OS == "Windows" else '/home/data/22'
+    root = r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+    if OS == "Linux":
+      root = r"/mnt/videos/anime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+    if OS == "OSX":
+      #root = r"/Users/olnymyself/Downloads/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+      root = r"/Users/olnymyself/Downloads/d"
 # D:\workcode\python\std\iEncoding.py
+```
+
+
+
+### Dir
+
+```
+currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )   
+
+    if not os.path.exists( currDir ):
+        os.makedirs( currDir )
+        RELOADQ = True
+    else:
+        RELOADQ = False
+```
+
+
+
+### basename
+
+
+
+```
+# basename without extention
+from pathlib import Path
+Path('/root/dir/sub/file.ext').stem
+
 ```
 
 
