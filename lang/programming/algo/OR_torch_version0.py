@@ -52,9 +52,9 @@ output_size = 1 # 输出一个值
 
 # Build a feed-forward network
 model = nn.Sequential(
-  nn.Linear(2, 3),
+  nn.Linear(2, 2),
   nn.ReLU(),
-  nn.Linear(3, 1)
+  nn.Linear(2, 1)
 )
 print(model)
 
@@ -65,7 +65,7 @@ model.to(device)
 
 
 train_dataset = TorchDataset(Data(type='training'))
-train_loader = torch_data.DataLoader(train_dataset, batch_size = 2, shuffle=True)  # 每个输入是维度是(2) 的一维数组，每一批输入2 组 来训练
+train_loader = torch_data.DataLoader(train_dataset, batch_size = 4, shuffle=True)  # 每个输入是维度是(2) 的一维数组，每一批输入2 组 来训练
 train_iter = infinite_iter(train_loader)
 
 sources, targets = next(train_iter)
@@ -73,13 +73,13 @@ sources, targets = next(train_iter)
 print( sources, targets )
 
 
-optimizer = optim.SGD(model.parameters(), lr=0.01) # momentum=0.05
+optimizer = optim.SGD(model.parameters(), lr=0.05) # momentum=0.05
 criterion = nn.MSELoss() #nn.NLLLoss()  # https://zhuanlan.zhihu.com/p/264366034
   # NLLloss 和交叉熵一样只适用于分类任务， NLLLoss是基于softmax，softmax得到结果向量的概率分布，是离散值。回归任务建议MSE或MAE等损失函数
   # 否则提示多个target报错
 
 time0 = time()
-epochs = 50000
+epochs = 10000
 
 # 训练模型
 for e in range(epochs):
