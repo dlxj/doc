@@ -39,7 +39,7 @@ async function getUserids(){
         })
     }
     
-    row = await query("SELECT DISTINCT v.UserID from vip v WHERE v.appid = ? AND v.Remark IS NULL AND v.BeginTime > '2018-01-01' AND v.Operator IS NULL", [KsbaoAppID])
+    row = await query("SELECT xxxxx", [xxx])
     
     connection.end();
     
@@ -52,7 +52,7 @@ app.get('/gendifficulty', async (req, res) => {
   
     if ( !('AppID' in req.query) || !('KsbaoAppID' in req.query)){
         res.writeHead(300, {"Content-Type": "text/plain"});
-        res.write("参数错误\n");
+        res.write("err\n");
         res.end();
         return
     }
@@ -65,7 +65,7 @@ app.get('/gendifficulty', async (req, res) => {
 
     if (Number.isNaN(AppID) || Number.isNaN(KsbaoAppID)) {
         res.writeHead(300, {"Content-Type": "text/plain"});
-        res.write("参数类型错误\n");
+        res.write("err\n");
         res.end();
         return
     }
@@ -77,10 +77,39 @@ app.get('/gendifficulty', async (req, res) => {
 })
 
 app.listen(port, function() {
-  console.log('服务器启动成功了');
+  console.log('ok');
 })
 
 ```
+
+
+
+## Post
+
+```
+    let data = await new Promise(function (resolve) {
+      request.post({
+        timeout: 6000000,
+        url: 'http:xxxxxxxxx',
+        form: {
+          word, type, enable,
+        },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;',
+        }, callback(erro, response, body) {
+          console.log(body);
+          if (erro) {
+            throw erro;
+          }
+          resolve(body);
+        },
+      });
+    });
+```
+
+
+
+
 
 
 
