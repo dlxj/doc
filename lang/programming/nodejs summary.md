@@ -84,7 +84,46 @@ app.listen(port, function() {
 
 
 
+## 两条sql 语句写一起
 
+
+
+```javascript
+
+'use strict'
+
+const request = require('request');
+
+module.exports = {
+
+  params: {
+    word: {
+      type: 'String',
+      remark: 'xx'
+    }
+  },
+  remark: '',
+  action: async function (req, res) {
+    let { word, type, testID, childTestID, appID, enable } = req.body;
+
+    let sql = `
+    insert into xx.xx(appID,testID,childTestID,word,type)values(?,?,?,?,?);
+    insert into xx.xx(word,type,\`enable\`)values(?,?,?) 
+    on duplicate key update 
+    type=values(type),
+    \`enable\`=values(\`enable\`);
+    `;
+
+    await new Promise((resolve) => {
+      this.DB.query(sql, [appID, testID, childTestID, word, type, word, type, enable], (erro, result) => {
+        if (erro) {
+          res.send(201, erro.message);
+          return;
+        }
+        resolve(result);
+      });
+    });
+```
 
 
 
