@@ -194,6 +194,64 @@ JToken
 
 
 
+### 出现次数
+
+```
+            Regex RegexWords = new Regex("a");
+            int WordCount = RegexWords.Matches("a321adfklsaabcd2a").Count;
+```
+
+
+
+### 分组
+
+```c#
+# https://www.cnblogs.com/stu-acer/archive/2010/01/23/1655011.html
+Regex regex = new Regex(@"(\d+)/(\d+)");
+
+MatchCollection matches = regex.Matches(@"最后比分是：19/24");
+
+//show matches
+
+Console.WriteLine("////////////////----------------------------------////////////////");
+
+foreach(Match m in matches)
+
+{
+
+//Console.WriteLine("match string is: \"{0}\", length: {1}", // m.Value.ToString(), m.Value.Length);
+
+foreach(string name in regex.GetGroupNames())
+
+{
+
+Console.WriteLine("\r capture group \"{0}\" value is:\"{1}\""
+
+, name, m.Groups[name].Value);
+
+}
+
+}
+
+Console.WriteLine("matched count: {0}", matches.Count);
+
+输出：
+
+////////////////----------------------------------////////////////
+
+capture group "0" value is:"19/24"
+
+capture group "1" value is:"19"
+
+capture group "2" value is:"24"
+
+matched count: 1
+```
+
+
+
+
+
 
 
 ## 乱码解决
