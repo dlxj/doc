@@ -1558,6 +1558,9 @@ https://github.com/ShadowsocksR-Live/shadowsocksr-native
 ```
 curl --proxy socks5h://127.0.0.1:1080 www.google.com
 
+cd /root/ssr-n/src
+./ssr-client -c config.json -d  # 后台运行
+./ssr-client -f # 退出
 ```
 
 ​	https://github.com/TyrantLucifer/ssr-command-client
