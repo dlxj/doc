@@ -1561,6 +1561,8 @@ curl --proxy socks5h://127.0.0.1:1080 www.google.com
 cd /root/ssr-n/src
 ./ssr-client -c config.json -d  # 后台运行
 ./ssr-client -f # 退出
+
+SSRoT（SSR over TLS）
 ```
 
 ​	https://github.com/TyrantLucifer/ssr-command-client
