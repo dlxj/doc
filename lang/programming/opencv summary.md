@@ -1268,14 +1268,56 @@ import cv2
 print( images.shape[0] )
 
 for i in range(images.shape[0]):
-  a = ((images[i].numpy().squeeze() + 1) / 2) * 255
+  a = ((images[i].numpy().squeeze() + 1) / 2) * 255 
+  	# 原来的数值范围是 -1.0 ~ +1.0 ，规范为 0 ~ 255
   b = np.rint(a)
+  	# Round elements of the array to the nearest integer.
   plt.imshow(b, cmap='gray_r')
   b
   label = labels.numpy()[i]
   print(label)
   #cv2.imshow('Binary Threshold', b)
   cv2.imwrite(f'./out/{label}_{i}.jpg',b)
+```
+
+
+
+### 读取
+
+```
+    import os
+    import matplotlib.pyplot as plt
+    from google.colab.patches import cv2_imshow
+
+    currDir = "/content" # jupyter not ok
+
+    root = os.path.join(currDir, "MNIST")
+
+    names = os.listdir(root)
+
+    for name in names:
+
+        print("name: ", name)
+
+        num = name.split('_')[0]  # number in fname already 
+        num = int(num)
+
+        print( "label: ", num )
+
+        num = num / 10  # normalize number to 0.0 ~ 1.0
+
+        path = os.path.join(root, name)
+        im = cv2.imread(path)
+        im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+        print( type(im) )
+        print(im.shape)
+        #print(im)
+
+        # cv2.imshow('image', im) # BUG: crash the colab kernel
+        cv2_imshow(im)
+        plt.imshow(im.squeeze(), cmap='gray_r'); 
+
+        break
 ```
 
 

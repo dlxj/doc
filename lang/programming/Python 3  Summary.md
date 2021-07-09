@@ -3372,6 +3372,14 @@ t.storage().data_ptr() == b.storage().data_ptr()
 ### Dir
 
 ```
+names = os.listdir(root)
+```
+
+
+
+
+
+```
 currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )   
 
     if not os.path.exists( currDir ):
