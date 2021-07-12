@@ -286,6 +286,21 @@ npm install pg
 
 
 ```
+	# sudo -u postgres psql
+	# SHOW data_directory;
+	ls -al 
+	/var/lib/pgsql/13/data -> /mnt/psqldata  # 建了软链
+	
+	du -h --max-depth=9 /mnt/psqldata # 三个mkv 大小1G 
+	
+	pg_dump -t anime -U postgres anime > anime.dump
+```
+
+
+
+
+
+```
 一、备份表
 
     1. 这里使用的是Linux服务器，首先进入安装当前数据库的服务器，可以在home目录下新建一个文件夹。
