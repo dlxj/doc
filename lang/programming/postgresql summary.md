@@ -306,6 +306,9 @@ npm install pg
 
 # 恢复数据库
 
+#先建db
+CREATE DATABASE anime WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default CONNECTION LIMIT = -1 TEMPLATE template0;
+
 PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07-11.psql
 
 	
