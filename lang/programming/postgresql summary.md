@@ -293,7 +293,12 @@ npm install pg
 	
 	du -h --max-depth=9 /mnt/psqldata # 三个mkv 大小1G 
 	
-	pg_dump -t anime -U postgres anime > anime.dump
+	PGPASSWORD="xxx" pg_dump -U postgres -h localhost anime > anime.pgsql # 成功
+	
+	PGPASSWORD="xxx" pg_dump -U postgres -h localhost anime | gzip -9 > ./anime_$(date +%Y-%m-%d).psql.gz
+	
+	psql -h 127.0.0.1 -p 5432 -U postgres # 提示输入密码
+	
 ```
 
 
