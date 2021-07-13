@@ -286,6 +286,9 @@ npm install pg
 
 
 ```
+# http://blog.itpub.net/28833846/viewspace-2742419/
+	# PGPASSWORD="xxx" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d anime -t public.anime --inserts | gzip -9 > ./anime_$(date +%Y-%m-%d).psql.gz
+
 	# sudo -u postgres psql
 	# SHOW data_directory;
 	ls -al 
@@ -298,6 +301,13 @@ npm install pg
 	PGPASSWORD="xxx" pg_dump -U postgres -h localhost anime | gzip -9 > ./anime_$(date +%Y-%m-%d).psql.gz
 	
 	psql -h 127.0.0.1 -p 5432 -U postgres # 提示输入密码
+	
+
+
+# 恢复数据库
+
+PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07-11.psql
+
 	
 ```
 

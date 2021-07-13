@@ -541,6 +541,111 @@ using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding("gb23
 
 
 
+## 字典排序
+
+
+
+```c#
+# SortedDictionary 排序
+dic_orders 输入key 会返回一个int ，作为顺序的定义
+
+dic_testmenutree[AppID] = new SortedDictionary<string, SortedDictionary<string, List<string>>>(new SourceComparer(dic_orders));
+
+public class SourceComparer : IComparer<string>
+{
+    Dictionary<string, int> dic_orders;
+
+    public SourceComparer(Dictionary<string, int> dic_orders)
+    {
+        this.dic_orders = dic_orders;
+    }
+    public int Compare(string x, string y)
+    {
+        return dic_orders[x].CompareTo(dic_orders[y]);
+    }
+}
+```
+
+
+
+```
+var D = new SortedDictionary<int, string>();
+var qD = from kvp in D
+         orderby kvp.Value
+         select kvp
+;
+```
+
+
+
+
+
+```C#
+# https://csharpsage.com/sort-dictionary-by-key/
+var fruit = new Dictionary<string, int>
+{
+    ["apple"] = 1,
+    ["pear"] = 4,
+    ["banana"] = 6,
+};
+foreach (var item in fruit.OrderByDescending(x => x.Key))
+{
+    Console.WriteLine(item);
+}
+```
+
+
+
+```C#
+public class KeyComparer<TItem, TKey> : Comparer<TItem>
+{
+    private readonly Func<TItem, TKey> extract;
+    private readonly IComparer<TKey> comparer;
+
+    public KeyComparer(Func<TItem, TKey> extract)
+        : this(extract, Comparer<TKey>.Default)
+    { }
+
+    public KeyComparer(Func<TItem, TKey> extract, IComparer<TKey> comparer)
+    {
+        this.extract = extract;
+        this.comparer = comparer;
+    }
+
+    public override int Compare(TItem x, TItem y)
+    {
+        // need to handle nulls
+        TKey xKey = extract(x);
+        TKey yKey = extract(y);
+        return comparer.Compare(xKey, yKey);
+    }
+}
+
+
+SortedDictionary<string, int> sortDict = new SortedDictionary<string, int>(
+    new KeyComparer<string, string>(s => new string(s.Reverse().ToArray())));
+    
+    
+```
+
+
+
+## Select
+
+
+
+```
+tokens.Where(t => appList.Contains(t.appID)).ToList();  # 这种更简洁
+
+List<testToken> tokens2 = (from t in tokens where appList.Contains(t.appID) select t).ToList();
+```
+
+
+
+
+
+
+
 ## 自动格工化
 
 
