@@ -546,6 +546,13 @@ using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding("gb23
 
 
 ```c#
+# 双排序
+dict.OrderByDescending(i => i.Value).ThenBy(i => i.Key)
+```
+
+
+
+```c#
 # SortedDictionary 排序
 dic_orders 输入key 会返回一个int ，作为顺序的定义
 
@@ -630,7 +637,29 @@ SortedDictionary<string, int> sortDict = new SortedDictionary<string, int>(
 
 
 
+## 字典 filter
+
+
+
+```c#
+dic = dic.Where(p => p.Key == 1)
+         .ToDictionary(p => p.Key, p => p.Value);
+```
+
+
+
+
+
 ## Select
+
+
+
+```
+dic = dic.Where(p => p.Key == 1)
+         .ToDictionary(p => p.Key, p => p.Value);
+```
+
+
 
 
 

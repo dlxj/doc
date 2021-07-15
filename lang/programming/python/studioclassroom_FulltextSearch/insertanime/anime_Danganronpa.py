@@ -696,9 +696,11 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #tags = tags.split('\n')
                 t = tu[1]
                 begintime, endtime = parseSrtTime(t)
-                bts = extractAudio(videopath, begintime, endtime)
+                #bts = extractAudio(videopath, begintime, endtime)
+                bts = b''
                 bts = psycopg2.Binary(bts)
-                bts_video = extractVideo(videopath, begintime, endtime)
+                #bts_video = extractVideo(videopath, begintime, endtime)
+                bts_video = b''
                 bts_video = psycopg2.Binary(bts_video)
 
                 if (t in dic_chs):
@@ -710,8 +712,8 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #if count % 10 == 0:
                 print( f"###### {count} / {len(jpanese)}" )
                 
-                # if count >= 10:
-                #   break
+                if count >= 10:
+                   break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 #cur.execute( sql )
 
@@ -792,7 +794,7 @@ if __name__ == "__main__":
       seasion = '01'
       importAnime(animename, seasion, frtname, videoname, videopath)
 
-      #break
+      break
 
 
     """
