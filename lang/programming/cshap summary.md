@@ -539,6 +539,41 @@ using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding("gb23
 
 
 
+## String join
+
+```
+string.Join(",", wmids.appids.Keys.ToList());
+```
+
+
+
+
+
+## List 交集
+
+
+
+```
+ List<char> a = new List<char>();
+            List<char> b = new List<char>();
+            foreach (wordToken w in diffWords1)
+            {
+                a.AddRange(w.word.ToList<char>());
+            }
+            foreach (wordToken w in diffWords2)
+            {
+                b.AddRange(w.word.ToList<char>());
+            }
+            //并集
+            var union = a.Union(b).Count();
+            //交集
+            var intersection = a.Intersect(b).Count();
+
+            var score = Convert.ToDouble(intersection) / Convert.ToDouble(union);
+```
+
+
+
 
 
 ## 字典排序

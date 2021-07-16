@@ -1569,6 +1569,8 @@ SSRoT（SSR over TLS）
 
 
 
+https://tlanyan.pp.ua/trojan-tutorial/   TROJ
+
 Linux安装SSR服务端、客户端 [u](https://www.ishells.cn/archives/linux-ssr-server-client-install)
 
 https://www.ishells.cn/archives/linux-ssr-server-client-install
