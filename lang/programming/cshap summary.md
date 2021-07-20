@@ -742,6 +742,16 @@ dicfuncs.Add("xxxx", deletnewTrans);
 
 
 
+### Action 可以没有返回值
+
+```
+Action func = () => {  };
+```
+
+func 必须有返回值
+
+
+
 
 
 ## 自动格工化
