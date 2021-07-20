@@ -36,6 +36,18 @@
 
 
 
+```
+var strtk = Newtonsoft.Json.JsonConvert.SerializeObject(tk);
+
+Regex rex = new Regex(@"\r\n|\r|\n|\t|\s", RegexOptions.IgnoreCase);
+context = rex.Replace(context, "");
+var contextJson = (JObject)JsonConvert.DeserializeObject(context);
+```
+
+
+
+
+
 ```c#
 # 不需要事先定义结构
 JsonConvert.SerializeObject( new {
@@ -705,6 +717,28 @@ List<testToken> tokens2 = (from t in tokens where appList.Contains(t.appID) sele
 ```
 
 
+
+## 匿名函数
+
+
+
+```
+Func<int> fun = () => { return 1; };
+```
+
+
+
+```
+Dictionary<string, Func<CompareResult>>  dicfuncs
+
+ Func<CompareResult> deletnewTrans = new Func<CompareResult>(delegate ()
+           {
+
+               return r;
+           });
+           
+dicfuncs.Add("xxxx", deletnewTrans);
+```
 
 
 
