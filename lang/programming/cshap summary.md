@@ -752,6 +752,89 @@ func 必须有返回值
 
 
 
+```c#
+                Action<JObject, JObject> func = null;
+
+                func = (jobj, jobj_father) =>
+                {
+
+                    string PID = jobj_father["code"].ToString();
+
+                    string id = jobj["id"].ToString();
+                    string key = jobj["key"].ToString();
+                    string cntxt = jobj["context"].ToString();
+
+                    List<wordToken> words = new List<wordToken>();
+
+                    if (cntxt != "")
+                    {
+                        string cntxt2 = Util.removeTrivial(cntxt);
+                        words = Util.splitAll(cntxt2);
+                    }
+
+
+                    string code = string.Format("{0}/{1}/{2}", appID, bookID, id);
+                    jobj.Add("code", code);
+
+                    bookItemModel bi = new bookItemModel { AppID = appID, bookID = bookID, id = id, PID = PID, code = code, key = key, context = cntxt, words = words, wordDict = new Dictionary<string, double>(), childs = new Dictionary<string, bookItemModel>() };
+
+
+                    string father_code = jobj_father["code"].ToString();
+
+                    if (dic_allbooksItems.ContainsKey(father_code))
+                    {
+                        bookItemModel father = dic_allbooksItems[father_code];
+                        if (!father.childs.ContainsKey(bi.code))
+                        {
+                            father.childs.Add(bi.code, bi);
+                        }
+
+                    }
+
+                    foreach (var w in words)
+                    {
+                        // 词频计数
+                        if (!bi.wordDict.ContainsKey(w.word))
+                        {
+                            bi.wordDict.Add(w.word, 1);
+                        }
+                        else
+                        {
+                            bi.wordDict[w.word]++;
+                        }
+
+                        // 有这个词的所有书籍段落
+                        if (!dict_wordbooks.ContainsKey(w.word))
+                        {
+                            dict_wordbooks.Add(w.word, new List<bookItemModel>());
+                        }
+
+                        if (!dict_wordbooks[w.word].Contains(bi))
+                        {
+                            dict_wordbooks[w.word].Add(bi);
+                        }
+                    }
+
+                    dic_allbooksItems.Add(code, bi);
+
+                    foreach (JObject jobj_child in jobj["childs"])
+                    {
+                        func(jobj_child, jobj); // 递归调用
+                    }
+
+                };
+
+
+                foreach (JObject jobj in contextJson["childs"])
+                {
+                    func(jobj, contextJson);
+                }
+```
+
+
+
+
+
 
 
 ## 自动格工化
