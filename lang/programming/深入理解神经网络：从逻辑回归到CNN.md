@@ -4468,6 +4468,22 @@ Learning to Rank： pointwise 、 pairwise 、 listwise
 
 
 
+## 深度信息检索
+
+
+
+```
+https://www.cnblogs.com/zhangxianrong/p/14793120.html
+
+Sentence Transformers + Faiss
+```
+
+
+
+
+
+
+
 ## OCR
 
 ```
