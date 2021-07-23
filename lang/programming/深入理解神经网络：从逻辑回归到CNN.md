@@ -4546,6 +4546,11 @@ Sentence Transformers + Faiss
 ```
 https://github.com/amitrajitbose/handwritten-digit-recognition
 doc\lang\programming\pytorch\数字识别\handwritten_digit_recognition_GPU.ipynb
+
+
+https://zhuanlan.zhihu.com/p/36233589
+	tensor 很详细
+
 ```
 
 
