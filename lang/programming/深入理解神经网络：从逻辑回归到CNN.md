@@ -4517,6 +4517,19 @@ Softmax中使用了指数，这样可以让大的值更大，让小的更小，�
 
 
 ```
+# https://zhuanlan.zhihu.com/p/61944055
+均方误差（mse）实际就是高斯分布的最大似然，交叉熵（crossEntropy）是多项式分布的最大似然，分类问题当然得用多项式分布
+
+# https://segmentfault.com/a/1190000018510069
+北大旁听 - 深入Loss Function的来源
+
+```
+
+
+
+
+
+```
 # mnist手写数字识别之损失函数精讲(百度架构师手把手带你零基础实践深度学习原版笔记系列)
 https://blog.csdn.net/coolyoung520/article/details/109015443
 
