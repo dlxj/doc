@@ -4480,11 +4480,72 @@ Sentence Transformers + Faiss
 
 
 
+## 激活函数
+
+
+
+```
+Softmax与交叉熵损失的实现及求导
+	https://zhuanlan.zhihu.com/p/67759205
+	einsum 爱因斯坦求和约定（极大简化代码）
+		https://zhuanlan.zhihu.com/p/71639781
+	
+
+Softmax（归一化指数函数，sigmoid函数就是其输入数为2时的特例）
+	dim=0：对每一列的所有元素进行softmax运算，并使得每一列所有元素和为1。
+	dim=1：对每一行的所有元素进行softmax运算，并使得每一行所有元素和为1。
+	
+
+LogSoftmax其实就是对softmax的结果进行log，即Log(Softmax(x))
+
+
+Softmax将多个神经元的输出，映射到（0,1）区间内,并且做了归一化，所有元素的和累加起来等于1。可以直接当作概率对待
+
+Softmax中使用了指数，这样可以让大的值更大，让小的更小，增加了区分对比度，学习效率更高。第二个是因为softmax是连续可导的，消除了拐点，这个特性在机器学习的梯度下降法等地方非常必要。
+
+
+
+
+```
+
+
+
+
+
+## 损失函数
+
+
+
+```
+# mnist手写数字识别之损失函数精讲(百度架构师手把手带你零基础实践深度学习原版笔记系列)
+https://blog.csdn.net/coolyoung520/article/details/109015443
+
+```
+
 
 
 
 
 ## OCR
+
+
+
+```
+    # Output of the network are log-probabilities, need to take exponential for probabilities
+    ps = torch.exp(logps)
+
+    import pdb; pdb.set_trace() # 调试， exit 退出
+
+    probab = list(ps.cpu().numpy()[0])
+    pred_label = probab.index(max(probab))  # 这一句特别精髓
+    	# 先求list 里的最大值，再求最大值在list 里的索引，索引既是手写数字的以预测值
+    
+    
+```
+
+
+
+
 
 ```
 
