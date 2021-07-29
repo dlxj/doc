@@ -4530,6 +4530,10 @@ Softmax中使用了指数，这样可以让大的值更大，让小的更小，�
 
 而对交叉熵损失，既然类别间复杂的相似度矩阵是难以量化的，索性只能关注样本所属的类别，只要y^p越接近于1就好，这显示是更合理的。
 
+# https://www.cnblogs.com/tornadomeet/archive/2013/03/23/2977621.html
+Softmax Regression 练习
+
+
 ```
 
 
@@ -4621,6 +4625,22 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 
 ### pytorch 实现数字识别
+
+
+
+```
+# https://zh.d2l.ai/chapter_deep-learning-basics/softmax-regression.html
+动手学深度学习 -> softmax回归
+
+其实衡量两个概率分布的差距，应该用KL散度更合理，但是在真实概率标签为one-hot的时候（即狗=0，猫=1）时，最小化KL散度等价于最小化交叉熵。
+因为有如下公式：
+假设p为真实分布(狗=0，猫=1), q为模型预测的分布（狗=0.4，猫=0.6）
+KL(p||q) = 交叉熵H(p, q) - 熵H( p)
+而由于后者 熵H( p)在one-hot定义时值恒为0，所以KL(q||p) = 交叉熵H(q,p) , 最小化KL相当于最小化熵。
+
+# https://blog.csdn.net/Runner_of_nku/article/details/88815894
+这个数据集的分布也是很有趣的，0-499都是0，然后500-999是1...一直到9，都是每500个一聚，这样也方便我们从中选取训练集和预测集
+```
 
 
 
