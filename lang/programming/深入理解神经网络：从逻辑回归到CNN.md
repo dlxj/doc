@@ -4517,6 +4517,29 @@ Softmax中使用了指数，这样可以让大的值更大，让小的更小，�
 
 
 ```
+交叉熵（cross entropy）是一个常用的衡量两个概率分布差异的测量函数
+
+
+
+# https://blog.csdn.net/xg123321123/article/details/80781611
+
+分类问题和回归问题是监督学习的两大种类：分类问题的目标变量是离散的；回归问题的目标变量是连续的数值。神经网络模型的效果及优化的目标是通过损失函数来定义的。
+
+回归问题解决的是对具体数值的预测。比如房价预测、销量预测等都是回归问题。这些问题需要预测的不是一个事先定义好的类别，而是一个任意实数。解决回顾问题的神经网络一般只有一个输出节点，这个节点的输出值就是预测值。对于回归问题，常用的损失函数是均方误差( MSE，mean squared error )。
+
+
+https://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-stability/
+	Softmax vs. Softmax-Loss: Numerical Stability
+
+
+
+```
+
+
+
+
+
+```
 # https://zhuanlan.zhihu.com/p/61944055
 均方误差（mse）实际就是高斯分布的最大似然，交叉熵（crossEntropy）是多项式分布的最大似然，分类问题当然得用多项式分布
 
