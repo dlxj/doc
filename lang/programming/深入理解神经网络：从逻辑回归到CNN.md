@@ -4532,6 +4532,8 @@ https://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-
 	Softmax vs. Softmax-Loss: Numerical Stability
 
 
+Softmax loss是由softmax和交叉熵(cross-entropy loss)loss组合而成，所以全称是softmax with cross-entropy loss，在caffe，tensorflow等开源框架的实现中，直接将两者放在一个层中，而不是分开不同层，可以让数值计算更加稳定，因为正指数概率可能会有非常大的值。
+
 
 ```
 
@@ -4545,6 +4547,15 @@ https://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-
 
 # https://segmentfault.com/a/1190000018510069
 北大旁听 - 深入Loss Function的来源
+
+其实目前大部分使用的损失函数都是以最大似然原理为核心而设计的。
+
+深度学习的核心问题就是让网络产生的数据分布尽可能贴近样本分布，所以极大似然原理就很自然的用在了深度学习上。
+
+而要评判分布的“差别”，首先需要可以评判分布的指标，而这个指标就是香农的信息熵。
+
+
+
 
 # https://www.cnblogs.com/shine-lee/p/12032066.html
 损失函数是网络学习的指挥棒，它引导着网络学习的方向——能让损失函数变小的参数就是好参数。
