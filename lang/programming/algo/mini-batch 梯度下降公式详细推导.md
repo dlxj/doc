@@ -198,8 +198,11 @@ x^{1}_{(i)} \cdot w^2  +  b^2_{i,1}
 
 \frac{\partial}{\partial w^1_{i,j}} 
 \bigg [
-x^{1}_{(i)} \cdot w^2  +  b^2_{i,1}
-\bigg ] \\
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,n}  \\
+\end{bmatrix}
+\cdot w^2  +  b^2_{i,1}
+\bigg ] \\
 $$
 
 
