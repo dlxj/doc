@@ -198,16 +198,7 @@ x^{1}_{(i)} \cdot w^2  +  b^2_{i,1}
 
 \frac{\partial}{\partial w^1_{i,j}} 
 \bigg [
-g \bigg (
-\begin{bmatrix}
-a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,n}  \\
-a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,n} \\
-\vdots & \vdots & \ddots & \vdots & \\
-a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,n} \\
-\end{bmatrix}
-\bigg )
-
-\cdot w^2  +  b^2_{i,1}
+x^{1}_{(i)} \cdot w^2  +  b^2_{i,1}
 \bigg ] \\
 $$
 
