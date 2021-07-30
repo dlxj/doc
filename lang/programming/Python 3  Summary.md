@@ -3324,6 +3324,85 @@ assert_equal(np.all((sm == 0) | (sm == 1)),True)
 
 
 
+## CuPy
+
+
+
+```python
+>>> import cupy as cp
+>>> x = cp.arange(6).reshape(2, 3).astype('f')
+>>> x
+array([[ 0.,  1.,  2.],
+       [ 3.,  4.,  5.]], dtype=float32)
+>>> x.sum(axis=1)
+array([  3.,  12.], dtype=float32)
+```
+
+
+
+```
+前提：传统的数组和矩阵都是通过numpy来设定，然后numpy来调用cpu计算！
+cupy的作用：数组和矩阵都是通过cupy来设定，然后cupy来调用gpu并行计算！
+
+区别与联系：
+
+区别：numpy自动调用cpu来进行"数组和矩阵间"的计算，计算任务默认单进程；cupy自动调用gpu来进行"数组和矩阵间"的计算，gpu中默认并行计算！
+联系：二者的函数和实操的功能基本完全一样，一般只需把np.xxx()改成cp.xxx()即可。当然，cupy还未完全写完，有些numpy的函数它还未实现（基本用不到）。
+cupy的优势：专门进行大型、高维数组/矩阵的快速计算（非常非常快）！
+要想实现数组/矩阵的快速运算，要注意3点：
+
+数组/矩阵的维度、尺寸一定要够大，计算量够大才行，否则gpu的初始化都耗的时间比计算时间都长！总之：计算量一定要够大，最好矢量化编程；
+数组/矩阵间的运算，比如矩阵相加、相乘、点乘等，一定要直接使用cupy自带的函数（如加法：cupy.add(x1,x2)）！不要直接写一个：+ 运算符！即：能用自带函数就尽量用自带函数！
+一定避免cpu和gpu混合编程：比如在一个循环计算中，每一步循环中的计算量不大，但是又有cpu计算（比如加减乘除赋值等），又用gpu矩阵计算。此时用cupy反而会降低运算效率！因为"cpu和gpu之间的切换、数据互通等一系列初始化非常耗时"（相比计算任务来说）！
+下面用一个很简单的例子即可体现上面的内容：循环矩阵相加
+
+import cupy as cp
+import numpy as np
+import time
+
+# 高维矩阵/数组：
+gpu = cp.ones( (1024,512,4,4) )
+cpu = np.ones( (1024,512,4,4) )
+
+# 纯numpy的cpu测试：
+ctime1 = time.time()
+for c in range(1024):
+    cpu = np.add(cpu,cpu)   # 这里用np.add()和直接用 + 一样！内核都是cpu来算
+ctime2 = time.time()
+ctotal = ctime2 - ctime1
+print('纯cpu计算时间：', ctotal)
+
+# 纯cupy的gpu测试：
+gtime1 = time.time()
+for g in range(1024):
+    gpu = cp.add(gpu,gpu)   # 自带的加法函数
+gtime2 = time.time()
+gtotal = gtime2 - gtime1
+print('纯gpu计算时间：', gtotal)
+
+# gpu和cpu混合编程：
+ggtime1 = time.time()
+for g in range(1024):
+    gpu = gpu + gpu         # 手工加法：+ 默认回到cpu计算！！！
+ggtime2 = time.time()
+ggtotal = ggtime2 - ggtime1
+print('混合的计算时间：', ggtotal)
+三组循环矩阵相加的耗时结果：
+
+纯cpu计算时间： 43.857738733291626
+纯gpu计算时间： 0.02496480941772461
+混合的计算时间： 1.4730699062347412
+彼此差距非常明显！上文中需要注意的2、3点非常非常重要！
+由本例也可看出，cupy的gpu并行计算潜力有多大！
+本例的计算量还是太小，一个GTX-1050的笔记本显卡，都根本还没发挥其功力！如果将cupy应用到服务器上、应用到深度学习之中，潜力非常大！
+
+
+```
+
+
+
+
+
 ## Pytorch
 
 

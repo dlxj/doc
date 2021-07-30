@@ -49,3 +49,44 @@ $$
 >
 > 
 
+
+
+
+$$
+
+\begin{bmatrix}
+x^{0}_{1,1} & x^{0}_{1,2} & \cdots & x^{0}_{1,m}  \\
+x^{0}_{2,1} & x^{0}_{2,2} & \cdots & x^{0}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{0}_{n,1} & x^{0}_{n,2} & \cdots & x^{0}_{n,m} \\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+w^{1}_{1,1} & w^{1}_{1,2} & \cdots & w^{1}_{1,n}  \\
+w^{1}_{2,1} & w^{1}_{2,2} & \cdots & w^{1}_{2,n} \\
+\vdots & \vdots & \ddots & \vdots & \\
+w^{1}_{n,1} & w^{1}_{n,2} & \cdots & w^{1}_{n,n} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b^{1}_{1,1} & b^{1}_{1,2} & \cdots & b^{1}_{1,m}  \\
+b^{1}_{2,1} & b^{1}_{2,2} & \cdots & b^{1}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+b^{1}_{n,1} & b^{1}_{n,2} & \cdots & b^{1}_{n,m} \\
+\end{bmatrix}
+
+\\
+
+= 
+
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,m}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,m} \\
+\end{bmatrix}
+$$
