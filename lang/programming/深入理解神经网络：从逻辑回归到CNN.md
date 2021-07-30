@@ -4585,6 +4585,21 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 
 
+## mini-batch 学习
+
+
+
+```
+# 《深度学习入门：基于Python的理论与实现》 p.90
+和收视率一样，mini-batch 的损失函数也是利用
+一部分样本数据来近似地计算整体。也就是说，用随机选择的小批
+量数据（mini-batch）作为全体训练数据的近似值。
+```
+
+
+
+
+
 ## OCR
 
 
