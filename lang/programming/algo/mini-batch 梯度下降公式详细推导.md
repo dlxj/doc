@@ -18,28 +18,28 @@ Xor 问题的每一个输入维度是 (2,) ,  batch 大小设为3，既每次训
 
 $$
 \begin{bmatrix}
-x^{0}_{1,1} & x^{0}_{1,2} & \cdots & x^{0}_{1,m}  \\
-x^{0}_{2,1} & x^{0}_{2,2} & \cdots & x^{0}_{2,m} \\
+x^{0}_{1,1} & x^{0}_{1,2} & \cdots & x^{0}_{1,n}  \\
+x^{0}_{2,1} & x^{0}_{2,2} & \cdots & x^{0}_{2,n} \\
 \vdots & \vdots & \ddots & \vdots & \\
-x^{0}_{n,1} & x^{0}_{n,2} & \cdots & x^{0}_{n,m} \\
+x^{0}_{m,1} & x^{0}_{m,2} & \cdots & x^{0}_{m,n} \\
 \end{bmatrix}
 
 \cdot
 
 \begin{bmatrix}
-w^{1}_{1,1} & w^{1}_{1,2} & \cdots & w^{1}_{1,n}  \\
-w^{1}_{2,1} & w^{1}_{2,2} & \cdots & w^{1}_{2,n} \\
+w^{1}_{1,1} & w^{1}_{1,2} & \cdots & w^{1}_{1,m}  \\
+w^{1}_{2,1} & w^{1}_{2,2} & \cdots & w^{1}_{2,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-w^{1}_{m,1} & w^{1}_{m,2} & \cdots & w^{1}_{m,n} \\
+w^{1}_{n,1} & w^{1}_{n,2} & \cdots & w^{1}_{n,m} \\
 \end{bmatrix}
 
 + 
 
 \begin{bmatrix}
-b^{1}_{1,1} & b^{1}_{1,2} & \cdots & b^{1}_{1,n}  \\
-b^{1}_{2,1} & b^{1}_{2,2} & \cdots & b^{1}_{2,n} \\
+b^{1}_{1,1} & b^{1}_{1,2} & \cdots & b^{1}_{1,m}  \\
+b^{1}_{2,1} & b^{1}_{2,2} & \cdots & b^{1}_{2,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-b^{1}_{n,1} & b^{1}_{n,2} & \cdots & b^{1}_{n,n} \\
+b^{1}_{m,1} & b^{1}_{m,2} & \cdots & b^{1}_{m,m} \\
 \end{bmatrix}
 
 \\
@@ -47,39 +47,39 @@ b^{1}_{n,1} & b^{1}_{n,2} & \cdots & b^{1}_{n,n} \\
 = 
 
 \begin{bmatrix}
-a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,n}  \\
-a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,n} \\
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,m}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,n} \\
+a^{1}_{m,1} & a^{1}_{m,2} & \cdots & a^{1}_{m,m} \\
 \end{bmatrix}
 $$
 
 $$
 g \bigg (
 \begin{bmatrix}
-a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,n}  \\
-a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,n} \\
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,m}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,n} \\
+a^{1}_{m,1} & a^{1}_{m,2} & \cdots & a^{1}_{m,m} \\
 \end{bmatrix}
 \bigg )
 
 = 
 
 \begin{bmatrix}
-x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,n}  \\
-x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,n} \\
+x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,m}  \\
+x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-x^{1}_{n,1} & x^{1}_{n,2} & \cdots & x^{1}_{n,n} \\
+x^{1}_{m,1} & x^{1}_{m,2} & \cdots & x^{1}_{m,m} \\
 \end{bmatrix}
 $$
 
 $$
 \begin{bmatrix}
-x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,n}  \\
-x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,n} \\
+x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,m}  \\
+x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
-x^{1}_{n,1} & x^{1}_{n,2} & \cdots & x^{1}_{n,n} \\
+x^{1}_{m,1} & x^{1}_{m,2} & \cdots & x^{1}_{m,m} \\
 \end{bmatrix}
 
 
@@ -89,7 +89,7 @@ x^{1}_{n,1} & x^{1}_{n,2} & \cdots & x^{1}_{n,n} \\
 w^{2}_{1,1}  \\
 w^{2}_{2,1}  \\
 \vdots  \\
-w^{2}_{n,1}  \\
+w^{2}_{m,1}  \\
 \end{bmatrix}
 
 + 
@@ -98,16 +98,16 @@ w^{2}_{n,1}  \\
 b^{2}_{1,1} \\
 b^{2}_{2,1} \\
 \vdots \\
-b^{2}_{n,1}  \\
+b^{2}_{m,1}  \\
 \end{bmatrix}
 
 = 
 
 \begin{bmatrix}
 a^{2}_{1,1} \\
-a^{2}_{1,1} \\ 
+a^{2}_{2,1} \\ 
 \vdots \\
-a^{2}_{n,1}  \\
+a^{2}_{m,1}  \\
 \end{bmatrix}
 $$
 
@@ -117,9 +117,9 @@ $$
 g \bigg (
 \begin{bmatrix}
 a^{2}_{1,1} \\
-a^{2}_{1,2} \\ 
+a^{2}_{2,1} \\ 
 \vdots \\
-a^{2}_{1,n}  \\
+a^{2}_{m,1}  \\
 \end{bmatrix}
 \bigg )
 
@@ -127,9 +127,9 @@ a^{2}_{1,n}  \\
 
 \begin{bmatrix}
 h^{2}_{1,1} \\
-h^{2}_{1,2} \\ 
+h^{2}_{2,1} \\ 
 \vdots \\
-h^{2}_{1,n}  \\
+h^{2}_{m,1}  \\
 \end{bmatrix}
 $$
 
@@ -184,28 +184,52 @@ a^{2}_{i,1}
 $$
 
 
-### 第一层偏导
+
+### 第二层偏导
+
 
 $$
-\frac{\partial}{\partial w^1_{i,j}} a^2_{i,1} =
+\\
 
-\frac{\partial}{\partial w^1_{i,j}} 
-\bigg [
-x^{1}_{(i)} \cdot w^2  +  b^2_{i,1}
-\bigg ] \\
+\ for s \in 1 \cdots m; \ (x^{1}_{s,} 代表行向量) \\
+a^2_{s,1} = x^{1}_{s,} \cdot w^2
+$$
 
-= 
+$$
+\ for \ j \in 1 \cdots m; \  s \in 1 \cdots m; \\
 
-\frac{\partial}{\partial w^1_{i,j}} 
-\bigg [
-\begin{bmatrix}
-a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,n}  \\
-\end{bmatrix}
-\cdot w^2  +  b^2_{i,1}
-\bigg ] \\
+\frac{\partial}{\partial w^2_{j,1}} g( a^2_{s,1} ) = \frac{\partial}{\partial w^2_{j,1}} g( x^{1}_{s,} \cdot w^2 ) \\
 $$
 
 
+
+
+
+
+$$
+\frac{\partial}{\partial w^2_{j,1}} \mathcal{L} = \frac{\partial}{\partial w^2_{j,1}} 
+\bigg [
+\frac{1}{2m} \sum^{m}_{s=1}(h^{2}_{s,1} - y_{s,1})^2 
+\bigg ]
+, \ for \ j \in 1 \cdots m  \\
+\\
+
+= \frac{1}{2m} \sum^{m}_{i=1}\frac{\partial}{\partial w^2_{j,1}} (g( a^2_{s,1} ) - y_{s,1})^2   \quad \text{(by linearity of the derivative)} \\
+
+
+= \frac{1}{2m} \sum^{m}_{i=1} 
+
+2 \cdot (g( a^2_{s,1} ) - y_{s,1}) \frac{\partial}{\partial w^2_{j,1}} (g( a^2_{s,1} ) - y_{s,1})   \quad \text{(by chain rule)} \\
+
+
+= \frac{1}{2m} \cdot 2 \sum^{m}_{i=1} 
+
+(g( a^2_{s,1} ) - y_{s,1}) \bigg [ \frac{\partial}{\partial w^2_{j,1}} g( a^2_{s,1} ) - \frac{\partial}{\partial w^2_{j,1}} y_{s,1} \bigg ]  \quad \text{(by linearity of the derivative)}  \\
+
+= \frac{1}{m} \sum^{m}_{i=1} 
+
+(g( a^2_{s,1} ) - y_{s,1}) \bigg [ \frac{\partial}{\partial w^2_{j,1}} g( a^2_{s,1} ) - 0 \bigg ]   \\
+$$
 
 
 
