@@ -7,7 +7,7 @@ import numpy as np
 
 
 g_batch_size = 4 # 批大小
-g_alpha = 0.5 # 学习率
+g_alpha = 0.8# 学习率
 maxIter = 50000 # 最大迭代次数
 
 
@@ -58,15 +58,15 @@ train_loader = DataLoader(Data())
 train_iter = infinite_iter(train_loader, g_batch_size)
 
 
-W_1 = np.random.uniform(size=(2, 3))   # 2*3 权重
+W_1 = np.random.uniform(size=(2, 4))   # 2*3 权重
 #W_1 = W_1 * 0.1 # 据说对于sigmoid 激活函数，更小的权重更容易收敛
 
-W_2 = np.random.uniform(size=(3, 1))   # 3*1 权重
+W_2 = np.random.uniform(size=(4, 1))   # 3*1 权重
 
 
-b_1 = np.random.uniform(size=(3, 3))   # 3*3 偏置
+b_1 = np.random.uniform(size=(4, 4))   # 3*3 偏置
 
-b_2 = np.random.uniform(size=(3, 1))   # 3*1 偏置
+b_2 = np.random.uniform(size=(4, 1))   # 3*1 偏置
 
 
 
@@ -74,8 +74,8 @@ for kk in range(15):
 
     X_0, Y = next(train_iter)
     """
-        X_0: (3,2)
-        Y:   (3,1)
+        X_0: (4,2)
+        Y:   (4,1)
     """
 
     for epoch in range(maxIter):
@@ -85,7 +85,7 @@ for kk in range(15):
 
 
 
-        A_1 = np.dot(X_0, W_1)  # 前向传播 (3,2) . (3,1) = (3,3)
+        A_1 = np.dot(X_0, W_1)  # 前向传播 (4,2) . (2,4) = (4,4)
         a_1 = A_1 + b_1 
 
 
@@ -106,7 +106,7 @@ for kk in range(15):
 
 
         n = 2  # 这是个输入的列数
-        m = 3  # 这就是批大小
+        m = g_batch_size  # 这就是批大小
 
 
         loss = (1.0 / 2 * m ) * np.sum( E ** 2 )
