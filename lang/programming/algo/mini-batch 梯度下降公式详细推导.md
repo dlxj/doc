@@ -29,6 +29,27 @@
 
 
 
+$$
+h(x) = \frac{f(x)}{g(x)}  \\ 
+= \frac{f'(x)g(x) - g'(x)f(x)}{g(x)^2}
+$$
+
+
+## Softmax 函数
+
+
+
+softmax 把向量$z$  变成概率
+$$
+\sigma(z) = (\sigma_1(z), \cdots,\sigma_m(z))
+$$
+
+$$
+\sigma_i(z) = \frac{exp(z_i)}{\sum^m_{j=1}z_j}, \ i = 1, \cdots, m
+$$
+
+
+
 
 
 

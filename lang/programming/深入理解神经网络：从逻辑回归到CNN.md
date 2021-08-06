@@ -4577,6 +4577,7 @@ KL散度可以被用于计算代价，而在特定情况下最小化KL散度等�
 	Classification and Loss Evaluation - Softmax and Cross Entropy Loss
 #  http://blog.prince2015.club/2020/03/27/softmax/
 	Softmax函数求导详解
+		Softmax函数有和Sigmoid函数类似的功能，Sigmoid常常被用于二分类问题的顶层，作为类标为   1的概率。当问题被推广为多分类问题时，Sigmoid函数就不能使用了，此时往往使用Softmax函数。
 
 
 # https://blog.csdn.net/xg123321123/article/details/80781611
