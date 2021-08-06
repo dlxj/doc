@@ -2629,8 +2629,16 @@ $$
 - 一个事件$x$ 的自信息量的度量是$I(x)$
 - 一个随机变量（信息源）的自信息量的度量（熵）是其所有事件自信息量的数学期望（均值）
   - 熵代表随机变量的平均信息量
+  - 随机变量$X \sim p(X)$的熵$H(p)$即是编码随机变量$X$ 的最优平均编码长度
 
 
+
+为什么要让偏差符合正态分布呢？
+
+- 同分布中心极限定理：n个独立同分布的随机变量之和，服从正态分布。
+- 非同分布的李雅普诺夫定理：大量随机因素叠加的结果，近似服从正态分布。
+
+有了这已经证明的两条理论，才可以基于正态分布，得出MSE的标准形式。
 
 
 
@@ -2834,6 +2842,10 @@ $$
 
 
 ### 随机变量
+
+
+
+样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $p$ 给出了随机变量所有取值的概率
 
 
 
@@ -4528,6 +4540,28 @@ Softmax中使用了指数，这样可以让大的值更大，让小的更小，�
 
 
 
+```python
+# 问题：数值溢出
+def softmax(X):
+    exps = np.exp(X)
+    return exps / np.sum(exps)
+```
+
+
+
+```python
+# 改进
+def stable_softmax(X):
+    exps = np.exp(X - np.max(X))
+    return exps / np.sum(exps)
+```
+
+![image-20210806114907337](深入理解神经网络：从逻辑回归到CNN.assets/image-20210806114907337.png)
+
+
+
+
+
 
 
 ## 损失函数
@@ -4537,6 +4571,12 @@ Softmax中使用了指数，这样可以让大的值更大，让小的更小，�
 ```
 交叉熵（cross entropy）是一个常用的衡量两个概率分布差异的测量函数
 
+KL散度可以被用于计算代价，而在特定情况下最小化KL散度等价于最小化交叉熵。而交叉熵的运算更简单，所以用交叉熵来当做代价。
+
+# https://deepnotes.io/softmax-crossentropy
+	Classification and Loss Evaluation - Softmax and Cross Entropy Loss
+#  http://blog.prince2015.club/2020/03/27/softmax/
+	Softmax函数求导详解
 
 
 # https://blog.csdn.net/xg123321123/article/details/80781611
@@ -4552,6 +4592,8 @@ https://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-
 
 Softmax loss是由softmax和交叉熵(cross-entropy loss)loss组合而成，所以全称是softmax with cross-entropy loss，在caffe，tensorflow等开源框架的实现中，直接将两者放在一个层中，而不是分开不同层，可以让数值计算更加稳定，因为正指数概率可能会有非常大的值。
 
+# https://deepnotes.io/softmax-crossentropy
+	Classification and Loss Evaluation - Softmax and Cross Entropy Loss
 
 ```
 
@@ -4571,6 +4613,19 @@ Softmax loss是由softmax和交叉熵(cross-entropy loss)loss组合而成，所�
 深度学习的核心问题就是让网络产生的数据分布尽可能贴近样本分布，所以极大似然原理就很自然的用在了深度学习上。
 
 而要评判分布的“差别”，首先需要可以评判分布的指标，而这个指标就是香农的信息熵。
+
+为什么要让偏差符合正态分布呢？
+
+其实这是由以下两条理论得出的：
+
+同分布中心极限定理：n个独立同分布的随机变量之和，服从正态分布。
+非同分布的李雅普诺夫定理：大量随机因素叠加的结果，近似服从正态分布。
+有了这已经证明的两条理论，才可以基于正态分布，得出MSE的标准形式。
+
+二项分布的典型例子是抛硬币，每次试验有正反两种对立的可能，多项分布的例子是扔骰子，每次试验有多种可能，进行多次试验，多项分布描述的是每种可能发生次数的联合概率分布。
+
+# https://deepnotes.io/softmax-crossentropy
+	Classification and Loss Evaluation - Softmax and Cross Entropy Loss
 
 # https://zhuanlan.zhihu.com/p/345025351
 	机器学习理论—信息论：自信息、熵、交叉熵与KL散度
