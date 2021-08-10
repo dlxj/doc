@@ -156,3 +156,124 @@ module.exports = {
 
 
 
+## Regex
+
+
+
+> https://javascript.info/regexp-groups
+
+
+
+### matchAll
+
+- 相当于python 的 finditer
+
+```javascript
+const string = 'black*raven lime*parrot white*seagull';
+const regex = /(?<color>.*?)\*(?<bird>[a-z0-9]+)/;
+for (const match of string.matchAll(regex)) {
+    let value = match[0];
+    let index = match.index;
+    let input = match.input;
+    console.log(`${value} at ${index} with '${input}'`);
+console.log(match.groups.color);
+    console.log(match.groups.bird);
+}
+```
+
+
+
+```python
+# '[A1型题]'
+
+strs = docText.replace('**********', '')
+strs = strs.strip()
+strs = '\n\n' + strs +  '\n\n'
+
+
+"""
+单项选择题（无序号，答案附在后边）
+"""
+def ANONUM(strs):
+
+    strs += 'A.'
+
+    result = []
+    
+    #od = {} # OrderedDict()
+
+    iters = re.finditer('\n.+?\nA\.', strs, re.DOTALL)
+    poss = [ i.span() for i in iters ] # 标题positions
+
+    for i in range( len(poss) - 1 ):
+        (start, end) = poss[i]
+        (start2, end2) = poss[i+1] 
+
+        pre = strs[start:end]
+        last = strs[end-2:end2]
+
+
+        dic = {}
+
+        title = re.compile('\n(.+?)\nA\.').search(pre).group(1)
+
+        print(title)
+
+        dic["Title"] = title
+
+        arr = last.split('\n')
+
+
+        selectItems = []
+
+        for s in arr:
+            
+            s = s.replace('\n','')
+
+            if '【答案】' in s:
+                
+                rr2 = s.split('【答案】')
+                Answer = rr2[1]
+
+                dic["Answer"] = Answer
+
+                break
+            
+            rr = s.split('.')
+            itemName = rr[0]
+            itemStr = rr[1]
+
+            selectItems.append( {"Content":itemStr,"ItemName": itemName} )
+            
+
+        dic["SelectedItems"] = selectItems
+        dic["Explain"] = ""
+        dic["Type"] = ""
+
+        
+        result.append(dic)
+
+    
+    j = string(result)
+
+    return j
+
+j = ANONUM(strs)
+```
+
+
+
+
+
+## 不转义
+
+
+
+```javascript
+String.raw `Hi\u000A!`;
+```
+
+
+
+
+
