@@ -39,12 +39,28 @@ $$
 
 softmax 把向量$z$  变成概率
 $$
-\sigma(z) = (\sigma_1(z), \cdots,\sigma_m(z))
+\sigma(z) = (\sigma_1(z), \cdots,\sigma_k(z))
 $$
 
 $$
-\sigma_i(z) = \frac{exp(z_i)}{\sum^m_{j=1}z_j}, \ i = 1, \cdots, m
+\sigma_i(z) = \frac{e^{z_{i}}}{\sum^k_{j=1} e^{z_{j}}}, \ i = 1, \cdots, k
 $$
+
+
+- 总共有 $k$ 类，样本被分为第 $i$ 类的概率是 $\sigma_i(z)$
+
+
+$$
+\frac{\partial}{\partial z_{i}} \sigma_i(z) =
+$$
+
+
+
+
+
+
+
+
 
 
 **概率**是已知参数求**结果的可能性**
