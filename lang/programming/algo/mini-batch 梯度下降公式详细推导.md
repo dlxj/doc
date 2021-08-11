@@ -43,15 +43,19 @@ $$
 $$
 
 $$
-\sigma_i(z) = \frac{e^{z_{i}}}{\sum^k_{j=1} e^{z_{j}}}, \ i = 1, \cdots, k
+\sigma_i(z) = \frac{e^{z_{i}}}{\sum^k_{j=1} e^{z_{j}}}, \ i \in 1 \cdots k
 $$
 
 
 - 总共有 $k$ 类，样本被分为第 $i$ 类的概率是 $\sigma_i(z)$
 
+  求 $z$ 的任意一个分量对概率 $\sigma_i(z)$ 的偏导
+
 
 $$
-\frac{\partial}{\partial z_{i}} \sigma_i(z) =
+\frac{\partial}{\partial z_{s}} \sigma_i(z) = \frac{\partial}{\partial z_{s}} \bigg ( \frac{e^{z_{i}}}{\sum^k_{j=1} e^{z_{j}}} \bigg ) \ for \ 
+
+\ i \in 1 \cdots k, \ s \in 1 \cdots k
 $$
 
 
