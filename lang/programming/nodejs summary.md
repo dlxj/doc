@@ -263,6 +263,21 @@ j = ANONUM(strs)
 
 
 
+### replace
+
+
+
+```
+var strs = fs.readFileSync(fdoc, "utf8")
+
+strs = strs.replace(/\*\*\*\*\*\*\*\*\*\*/g, '').replace(/\r\n/g, '\n').replace(/\t/g, '  ').trim()
+strs = '\n\n' + strs +  '\n\n'
+```
+
+
+
+
+
 
 
 ## 不转义

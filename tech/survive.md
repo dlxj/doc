@@ -26,6 +26,18 @@
 
 
 
+# Project Euler
+
+
+
+https://www.nayuki.io/page/project-euler-solutions
+
+https://pe-cn.github.io/problems/
+
+https://pe.metaquant.org/
+
+
+
 # Doc
 
 [用 github actions 自動發佈 gh-pages]([https://medium.com/@milkmidi/%E6%B7%B1%E5%85%A5%E4%BD%86%E4%B8%8D%E6%B7%BA%E5%87%BA-%E5%A6%82%E4%BD%95%E7%94%A8-github-actions-%E8%87%AA%E5%8B%95%E7%99%BC%E4%BD%88-gh-pages-8183464dfe84](https://medium.com/@milkmidi/深入但不淺出-如何用-github-actions-自動發佈-gh-pages-8183464dfe84))

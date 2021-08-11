@@ -4350,6 +4350,12 @@ Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在201
 
 
 
+#### 从零开始训练
+
+https://huggingface.co/blog/how-to-train
+
+
+
 #### 两种大小的BERT：
 
 - BERT BASE 和OpenAI Transformer大小差不多，目的是比较性能。
