@@ -768,8 +768,33 @@ if __name__ == "__main__":
 
     #createAnimeDB(host, port)
 
+
+
+
+
+
+    realroot = r"F:\videos\anime"
+    fnames2 = glob.glob(realroot + '/**/*.mkv', recursive=True)
+    tmp = fnames2[0]
+    dir = os.path.dirname(tmp)
+    dir2 = os.path.dirname(dir)
+    dir3 = os.path.dirname(dir2)
+    rootorigin = dir  # root origin
+    seasion = os.path.basename(dir2)
+    animename = os.path.basename(dir3)
+
+
+
+
+
+
+
+
+
+
+
     
-    root = r"F:\videos\anime\Danganronpa\S01\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]" # r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
+    root = rootorigin # r"F:\videos\anime\Danganronpa\S01\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]" # r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "Linux":
       root = r"/mnt/videos/anime/[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
     if OS == "OSX":
@@ -791,8 +816,8 @@ if __name__ == "__main__":
       out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
       out_text = out_bytes.decode('utf-8')
 
-      animename = 'Danganronpa'
-      seasion = '01'
+      #animename = 'Danganronpa'
+      #seasion = '01'
       importAnime(animename, seasion, frtname, videoname, videopath)
 
       cur = cur + 1
