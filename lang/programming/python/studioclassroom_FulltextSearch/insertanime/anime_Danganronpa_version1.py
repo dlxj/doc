@@ -498,8 +498,9 @@ def createAnimeDB(host, port):
         with conn.cursor() as cur:
             conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
             cur.execute("DROP TABLE IF EXISTS anime;")
+            #  id serial primary key, \
             cur.execute("create table anime( \
-                id serial primary key, \
+                id integer primary key generated always as identity, \
                 name text, \
                 jp text, \
                 zh text DEFAULT '', \
@@ -713,7 +714,7 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 print( f"###### {count} / {len(jpanese)}" )
                 
                 #if count >= 10:
-                #   break
+                #  break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 #cur.execute( sql )
 
@@ -766,7 +767,7 @@ if __name__ == "__main__":
     host = '209.141.34.77'
     port = 5432
 
-    #createAnimeDB(host, port)
+    createAnimeDB(host, port)
 
 
 
@@ -774,6 +775,12 @@ if __name__ == "__main__":
 
 
     realroot = r"F:\videos\anime"
+    if OS == "Linux":
+      realroot = r"/mnt/videos/anime"
+    if OS == "OSX":
+      root = r"/Users/olnymyself/Downloads/videos/anime"
+
+
     fnames2 = glob.glob(realroot + '/**/*.mkv', recursive=True)
     tmp = fnames2[0]
     dir = os.path.dirname(tmp)
@@ -782,16 +789,6 @@ if __name__ == "__main__":
     rootorigin = dir  # root origin
     seasion = os.path.basename(dir2)
     animename = os.path.basename(dir3)
-
-
-
-
-
-
-
-
-
-
 
     
     root = rootorigin # r"F:\videos\anime\Danganronpa\S01\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]" # r"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"

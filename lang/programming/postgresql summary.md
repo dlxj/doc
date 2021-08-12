@@ -339,6 +339,16 @@ PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07
 
 
 
+# 重设自增ID
+
+
+
+```
+ALTER TABLE <table name> 
+    ALTER COLUMN <column name> 
+        RESTART WITH <new value to restart with>;
+```
+
 
 
 ## 显示数据目录

@@ -1351,6 +1351,29 @@ mysqldump -h主机名 -P端口 -u用户名 -p密码 –database 数据库名 > �
 
 
 
+# 用户权限
+
+
+
+```mysql
+show grants for 'xx';
+
+mysql>select * from mysql.user where user='user1'\G
+
+mysql>show grants for user1@'localhost';
+
+例如，如果想让用户能读取和修改已有表的内容，但又不允许创建新表或删除表，可按如下授权：
+GRANT SELECT,INSERT,DELETE,UPDATE ON samp_db.* TO 'user'@'%' IDENTIFIED BY "pass"
+
+grant select,insert,update,delete on mydb.* to test2@localhost identified by "abc"; 
+
+grant select on useractionanalysis.* to guest@222.217.18.123 identified by "guest";
+```
+
+
+
+
+
 
 
 
