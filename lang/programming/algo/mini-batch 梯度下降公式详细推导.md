@@ -27,13 +27,15 @@
 样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $p$ 给出了随机变量所有取值的概率
 
 
-$$
-h(x) = \frac{f(x)}{g(x)}  \\ 
-= \frac{f'(x)g(x) - g'(x)f(x)}{g(x)^2}
-$$
 
 
 ## Softmax 函数
+
+
+
+https://deepnotes.io/softmax-crossentropy
+
+https://aimatters.wordpress.com/2019/06/17/the-softmax-function-derivative/
 
 
 
@@ -55,12 +57,52 @@ $$
 $$
 \frac{\partial}{\partial z_{s}} \sigma_i(z) = \frac{\partial}{\partial z_{s}} \bigg ( \frac{e^{z_{i}}}{\sum^k_{j=1} e^{z_{j}}} \bigg ) \ for \ 
 
-\ i \in 1 \cdots k, \ s \in 1 \cdots k
+\ i \in 1 \cdots k, \ s \in 1 \cdots k \\
+
+=   \frac{ \frac{\partial}{\partial z_{s}} e^{z_{i}} * (\sum^k_{j=1} e^{z_{j}}) - \frac{\partial}{\partial z_{s}} (\sum^k_{j=1} e^{z_{j}}) * e^{z_{i}}  }{(\sum^k_{j=1} e^{z_{j}})^2}  \\
+$$
+
+$$
+if \  s = i,  \\
+
+=   \frac{ e^{z_{i}} * (\sum^k_{j=1} e^{z_{j}}) - \frac{\partial}{\partial z_{s}} ( e^{z_{i}}) * e^{z_{i}}  }{(\sum^k_{j=1} e^{z_{j}})^2}  \\
+
+=   \frac{ e^{z_{i}} * (\sum^k_{j=1} e^{z_{j}}) - e^{z_{i}} * e^{z_{i}}  }{(\sum^k_{j=1} e^{z_{j}})^2}  \\
+
+
+=   \frac{ e^{z_{i}} * (\sum^k_{j=1} e^{z_{j}} - e^{z_{i}} )  }{(\sum^k_{j=1} e^{z_{j}})^2}  \\
+
+
+=   \frac{ e^{z_{i}}   }{\sum^k_{j=1} e^{z_{j}}} * \frac{  \sum^k_{j=1} e^{z_{j}} - e^{z_{i}} }{\sum^k_{j=1} e^{z_{j}}}  \\ 
+
+= \sigma_i(z) * (1 - \sigma_i(z))
 $$
 
 
 
 
+
+
+
+
+
+
+$$
+h(x) = f(x) g(x) \\
+h'(x) = f'(x)g(x) + f(x)g'(x)
+$$
+
+$$
+h(x) = \frac{f(x)}{g(x)}  \\
+令：\frac{1}{g(x)} = z(x)，则：
+h(x) = f(x) z(x) \\
+h'(x) = f'(x)z(x) + f(x)z'(x) \\
+= f'(x)\frac{1}{g(x)} + f(x) ( - \frac{ \frac{d}{d x}g(x) }{g(x)^{2}} ) \\
+
+= \frac{f'(x)g(x)}{g(x)^2} - \frac{g'(x)f(x)}{g(x)^2} \\
+
+=  \frac{f'(x)g(x) - g'(x)f(x)}{g(x)^2} 
+$$
 
 
 
