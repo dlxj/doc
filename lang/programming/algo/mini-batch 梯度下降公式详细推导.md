@@ -79,13 +79,15 @@ if \  s = i,  \\
 $$
 
 
+$$
+if \  s \neq i,  \\
 
+=   \frac{ 0 -  e^{z_{s}} * e^{z_{i}}  }{(\sum^k_{j=1} e^{z_{j}})^2}  \\
 
+=   - \ \frac{ e^{z_{s}} }{\sum^k_{j=1} e^{z_{j}}} * \frac{  e^{z_{i}} }{\sum^k_{j=1} e^{z_{j}}}  \\
 
-
-
-
-
+= - \sigma_s(z) \sigma_i(z)  \\
+$$
 
 $$
 h(x) = f(x) g(x) \\
