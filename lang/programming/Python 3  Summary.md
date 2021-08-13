@@ -3327,6 +3327,29 @@ assert_equal(np.all((sm == 0) | (sm == 1)),True)
 
 
 
+## JAX
+
+
+
+```
+import numpy as np
+q = np.arange(-5, 5)
+q[q < 0] = 0
+print(q)
+# [0 0 0 0 0 0 1 2 3 4]
+
+import jax.numpy as jnp
+q = jnp.arange(-5, 5)
+q = q.at[q < 0].set(0)  # NB: this does not modify the original array,
+                        # but rather returns a modified copy.
+print(q)
+# [0 0 0 0 0 0 1 2 3 4]
+```
+
+
+
+
+
 ## CuPy
 
 
