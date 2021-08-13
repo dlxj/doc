@@ -4579,6 +4579,7 @@ def stable_softmax(X):
 
 KL散度可以被用于计算代价，而在特定情况下最小化KL散度等价于最小化交叉熵。而交叉熵的运算更简单，所以用交叉熵来当做代价。
 
+
 # https://deepnotes.io/softmax-crossentropy
 	Classification and Loss Evaluation - Softmax and Cross Entropy Loss
 #  http://blog.prince2015.club/2020/03/27/softmax/
@@ -4621,7 +4622,7 @@ Softmax loss是由softmax和交叉熵(cross-entropy loss)loss组合而成，所�
 
 而要评判分布的“差别”，首先需要可以评判分布的指标，而这个指标就是香农的信息熵。
 
-为什么要让偏差符合正态分布呢？
+为什么要让偏差符合正态分布呢？D
 
 其实这是由以下两条理论得出的：
 
