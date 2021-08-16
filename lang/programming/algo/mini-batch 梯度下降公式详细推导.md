@@ -198,11 +198,64 @@ $$
 
 
 $$
-L = - \sum^{k}_{i=1} p(x)  log \ q(x)
+L = - \sum^{k}_{i=1} p(x_i)  log \ q(x_i)
+$$
+
+> $x_i$ 代表输入被分类为第$i$ 类的事件，$p(x_i)$ 是这个事件发生的真实概率，$q(x_i)$ 是预测得到的近似概率
+
+
+
+把前面的$\sigma_i(z)$ 代入交叉熵损失函数：
+$$
+L = - \sum^{k}_{i=1} p(x_i)  log \ \sigma_i(z)
 $$
 
 
 
+$p(x_i)$代表真实标签，在真实标签中，除了对应类别其它类别的概率都为0，实际上，交叉熵可以简写为：
+
+
+$$
+L = -log \ \sigma_i(z)
+$$
+
+> 求和符号被去掉了，因为真实标签中只有一项为1，其他都为0
+>
+> $p(x_i)$ 也不见了，因为它的值是1
+
+
+
+
+
+## mini-batch 交叉熵
+
+
+
+就是多个交叉熵损失的算术平均
+
+mini batch的平均loss
+
+
+
+## 交叉熵 pytorch 计算
+
+```python
+import torch
+import torch.nn as nn
+
+input = torch.tensor([[ 0.8082,  1.3686, -0.6107],
+        [ 1.2787,  0.1579,  0.6178],
+        [-0.6033, -1.1306,  0.0672],
+        [-0.7814,  0.1185, -0.2945]])
+target = torch.tensor([1,0,2,1])
+
+loss = nn.CrossEntropyLoss()
+output = loss(input, target)
+output.backward()
+```
+
+
+> **当使用交叉熵作为损失函数的时候，标签不能为onehot形式，只能是一维的向量**，例如，当batch size是5时，这一个batch的标签只能时[0,1,4,2,6]这样的形式。
 
 
 
