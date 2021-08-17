@@ -226,6 +226,21 @@ $$
 
 
 
+$$
+\begin{eqnarray*} y = \ln(x) &\Longleftrightarrow & x =
+      e^y \cr y = \log_a(x) & \Longleftrightarrow & x = a^y
+      \end{eqnarray*}
+$$
+
+$$
+\frac{d}{dx}
+            \ln(x) = \frac{1}{x}, \qquad \frac{d}{dx}\log_a(x) =
+            \frac{1}{x \ln(a)}
+$$
+
+
+
+
 
 ## mini-batch 交叉熵
 
