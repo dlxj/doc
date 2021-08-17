@@ -213,6 +213,39 @@ L = - \sum^{k}_{i=1} p(x_i)  log \ \sigma_i(z)
 $$
 
 
+$$
+\frac{\partial}{\partial z_{s}} L = - \sum^{k}_{i=1} p(x_i) \frac{\partial}{\partial z_{s}} \big( log \ \sigma_i(z) \big ) \\ 
+
+= - \sum^{k}_{i=1} p(x_i) \frac{1}{\sigma_i(z)} 
+
+\frac{\partial}{\partial z_{s}} \sigma_i(z) \\
+$$
+
+$$
+\ if \ s = i \\
+
+= - \sum^{k}_{i=1} p(x_i) \frac{1}{\sigma_i(z)}  \sigma_i(z) * (1 - \sigma_i(z)) \\ 
+
+= - \sum^{k}_{i=1} p(x_i)  (1 - \sigma_i(z)) \\
+$$
+
+
+
+
+$$
+\frac{\partial}{\partial z_{s}} \big( log \ \sigma_i(z) \big ) 
+
+= \frac{1}{\sigma_i(z)} 
+
+\frac{\partial}{\partial z_{s}} \sigma_i(z)
+$$
+
+
+
+
+
+
+
 
 $p(x_i)$代表真实标签，在真实标签中，除了对应类别其它类别的概率都为0，实际上，交叉熵可以简写为：
 
