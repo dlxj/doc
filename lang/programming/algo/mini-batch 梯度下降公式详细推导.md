@@ -121,21 +121,17 @@ $$
 = s_2 + 2s_1
 $$
 
+$$
+\frac{\partial E}{\partial s_{1}} = \frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} +\frac{\partial E}{\partial y_{2}} \frac{\partial y_2}{\partial s_{1}} 
+$$
 
-$$
-\frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} =  \frac{\partial E}{\partial s_{1}}
-$$
+- 两种方法都对
 
-$$
-\frac{\partial E}{\partial s_{1}} = \frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} + \frac{\partial E}{\partial y_{2}} \frac{\partial y_2}{\partial s_{1}} \\
-= \frac{\partial E}{\partial s_{1}} + \frac{\partial E}{\partial s_{1}} \\
-= 2 \frac{\partial E}{\partial s_{1}}
-$$
 
 
 
 $$
-y_i = \frac{e^{s_i}}{\sum^{nclass}_{c} e^{s_c}} 
+y_i = \frac{e^{s_i}}{\sum^{nclass}_{c} e^{s_c}}
 $$
 
 $$
@@ -151,13 +147,25 @@ $$
 
 = -t_1 \frac{1}{y_1} \frac{\partial}{\partial s_i} y_1 \cdots -t_n \frac{1}{y_n} \frac{\partial}{\partial s_i} y_n \\
 
-
+= -t_i \frac{1}{y_i} \frac{\partial}{\partial s_i} y_i - \sum_{k \neq i} t_k \frac{1}{y_k} \frac{\partial}{\partial s_i} y_k \\
+
+= -t_i \frac{1}{y_i} y_i (1 - y_i) - \sum_{k \neq i} t_k \frac{1}{y_k} ( - y_i y_k  ) \\
+
+= -t_i (1 - y_i) + \sum_{k \neq i} t_k y_i \\
+
+= -t_i + t_i y_i + \sum_{k \neq i} t_k y_i \\
+
+= -t_i + \sum_{k } t_k y_i  \\
+
+= -t_i + y_i  \sum_{k } t_k \\
+
+= y_i - t_i
 $$
 
-$$
-y_i (1-y_i) \\
--y_i y_?
-$$
+
+
+
+
 
 
 
