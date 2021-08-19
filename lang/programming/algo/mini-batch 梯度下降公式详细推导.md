@@ -136,12 +136,17 @@ $$
 (f \circ g)'(x) = f'\big( g(x) \big ) g'(x)
 $$
 
+
+
+
+
 $$
-\frac{\partial{E}}{\partial{s_i}} = - \sum^{nclass}_k t_k \ log (y_k)
+y_i = \frac{e^{s_i}}{\sum^{nclass}_{c} e^{s_c}}
 $$
 
-
-
+$$
+E = - \sum^{nclass}_k t_k \ log (y_k)
+$$
 
 
 $$
@@ -149,9 +154,27 @@ E = X_1 + \cdots + X_n \\
 
 X_k = - t_k log(y_k) \\ 
 
-\frac{\partial{E}}{\partial{s_i}} = \frac{\partial{E}}{\partial{X_1}} \frac{\partial{X_1}}{\partial{s_i}} + \cdots + \frac{\partial{E}}{\partial{X_n}} \frac{\partial{X_n}}{\partial{s_i}} \\
-
+\frac{\partial{E}}{\partial{s_i}} = \frac{\partial{E}}{\partial{X_1}} \frac{\partial{X_1}}{\partial{y_1}} \frac{\partial{y_1}}{\partial{s_i}} + \cdots +
+
+\frac{\partial{E}}{\partial{X_n}} \frac{\partial{X_n}}{\partial{y_n}} \frac{\partial{y_n}}{\partial{s_i}} \\
+
+= \frac{\partial{E}}{\partial{y_1}}  \frac{\partial{y_1}}{\partial{s_i}} + \dots +
+
+\frac{\partial{E}}{\partial{y_n}} \frac{\partial{y_n}}{\partial{s_i}} \\
+
+= \sum_k^{nclass} \frac{\partial{E}}{\partial{y_k}}  \frac{\partial{y_k}}{\partial{s_i}} \\
+
+
+= \frac{\partial{E}}{\partial{y_i}}  \frac{\partial{y_i}}{\partial{s_i}} + \sum_{k \neq i}^{nclass} \frac{\partial{E}}{\partial{y_k}}  \frac{\partial{y_k}}{\partial{s_i}}  \\
 $$
+
+
+
+
+$$
+\frac{\partial{E}}{\partial{X_1}} \frac{\partial{X_1}}{\partial{y_1}} \frac{\partial{y_1}}{\partial{s_i}} = \frac{\partial{E}}{\partial{y_1}}  \frac{\partial{y_1}}{\partial{s_i}}
+$$
+
 
 
 
