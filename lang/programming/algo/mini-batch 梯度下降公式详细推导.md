@@ -136,6 +136,23 @@ $$
 (f \circ g)'(x) = f'\big( g(x) \big ) g'(x)
 $$
 
+$$
+\frac{\partial{E}}{\partial{s_i}} = - \sum^{nclass}_k t_k \ log (y_k)
+$$
+
+
+
+
+
+$$
+E = X_1 + \cdots + X_n \\
+
+X_k = - t_k log(y_k) \\ 
+
+\frac{\partial{E}}{\partial{s_i}} = \frac{\partial{E}}{\partial{X_1}} \frac{\partial{X_1}}{\partial{s_i}} + \cdots + \frac{\partial{E}}{\partial{X_n}} \frac{\partial{X_n}}{\partial{s_i}} \\
+
+$$
+
 
 
 
@@ -149,9 +166,9 @@ E = - \sum^{nclass}_k t_k \ log (y_k)
 $$
 
 $$
-\frac{\partial{E}}{\partial{s_i}} = - t_1 log(y_1) - t_2 log(y_2) \cdots - t_n log(y_n) \\
+E = - t_1 log(y_1) - t_2 log(y_2) \cdots - t_n log(y_n) \\
 
-= \frac{\partial}{\partial s_i} (- t_1 log(y_1)) + \frac{\partial}{\partial s_i} (- t_2 log(y_2)) \cdots + \frac{\partial}{\partial s_i} (- t_n log(y_n)) \\
+\frac{\partial{E}}{\partial{s_i}} = \frac{\partial}{\partial s_i} (- t_1 log(y_1)) + \frac{\partial}{\partial s_i} (- t_2 log(y_2)) \cdots + \frac{\partial}{\partial s_i} (- t_n log(y_n)) \\
 
 = -t_1 \frac{\partial}{\partial s_i} log(y_1)  \cdots  -t_n \frac{\partial}{\partial s_i} log(y_n) \\
 
