@@ -122,10 +122,20 @@ $$
 $$
 
 $$
-\frac{\partial E}{\partial s_{1}} = \frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} +\frac{\partial E}{\partial y_{2}} \frac{\partial y_2}{\partial s_{1}} 
+\frac{\partial E}{\partial s_{1}} = \frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} +\frac{\partial E}{\partial y_{2}} \frac{\partial y_2}{\partial s_{1}}
 $$
 
 - 两种方法都对
+
+  > 多元复合函数求导法则，后一种方法更通用。其中：
+  >
+  > $\frac{\partial E}{\partial y_{1}}$ = 1
+
+
+$$
+(f \circ g)'(x) = f'\big( g(x) \big ) g'(x)
+$$
+
 
 
 
