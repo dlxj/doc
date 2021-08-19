@@ -111,6 +111,56 @@ h'(x) = f'(x)z(x) + f(x)z'(x) \\
 $$
 
 
+$$
+E = y_1 + y_2 \\
+y_1 = s_1 s_2, \ y_2 = s_1^2
+$$
+
+$$
+\frac{\partial}{\partial s_{1}} E = \frac{\partial}{\partial s_{1}} y_1 + \frac{\partial} {\partial s_{1}} y_2 \\
+= s_2 + 2s_1
+$$
+
+
+$$
+\frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} =  \frac{\partial E}{\partial s_{1}}
+$$
+
+$$
+\frac{\partial E}{\partial s_{1}} = \frac{\partial E}{\partial y_{1}} \frac{\partial y_1}{\partial s_{1}} + \frac{\partial E}{\partial y_{2}} \frac{\partial y_2}{\partial s_{1}} \\
+= \frac{\partial E}{\partial s_{1}} + \frac{\partial E}{\partial s_{1}} \\
+= 2 \frac{\partial E}{\partial s_{1}}
+$$
+
+
+
+$$
+y_i = \frac{e^{s_i}}{\sum^{nclass}_{c} e^{s_c}} 
+$$
+
+$$
+E = - \sum^{nclass}_k t_k \ log (y_k)
+$$
+
+$$
+\frac{\partial{E}}{\partial{s_i}} = - t_1 log(y_1) - t_2 log(y_2) \cdots - t_n log(y_n) \\
+
+= \frac{\partial}{\partial s_i} (- t_1 log(y_1)) + \frac{\partial}{\partial s_i} (- t_2 log(y_2)) \cdots + \frac{\partial}{\partial s_i} (- t_n log(y_n)) \\
+
+= -t_1 \frac{\partial}{\partial s_i} log(y_1)  \cdots  -t_n \frac{\partial}{\partial s_i} log(y_n) \\
+
+= -t_1 \frac{1}{y_1} \frac{\partial}{\partial s_i} y_1 \cdots -t_n \frac{1}{y_n} \frac{\partial}{\partial s_i} y_n \\
+
+
+$$
+
+$$
+y_i (1-y_i) \\
+-y_i y_?
+$$
+
+
+
 
 ### 自信息量
 
