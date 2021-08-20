@@ -722,16 +722,52 @@ p_{1,1} & p_{1,2} & \cdots & p_{1,nclass}  \\
 p_{2,1} & p_{2,2} & \cdots & p_{2,nclass} \\
 \vdots & \vdots & \ddots & \vdots & \\
 p_{m,1} & p_{m,2} & \cdots & p_{m,ncalss} \\
-\end{bmatrix}
+\end{bmatrix}
 $$
 
+$$
+CE \bigg (
+
+\begin{bmatrix}
+p_{1,1} & p_{1,2} & \cdots & p_{1,nclass}  \\
+p_{2,1} & p_{2,2} & \cdots & p_{2,nclass} \\
+\vdots & \vdots & \ddots & \vdots & \\
+p_{m,1} & p_{m,2} & \cdots & p_{m,ncalss} \\
+\end{bmatrix}
+
+\bigg ) 
 
 
+\\ =
+
+\begin{bmatrix}
+ce_{1,1} \\
+ce_{2,1}  \\
+\vdots  \\
+ce_{m,1} \\
+\end{bmatrix}
+$$
+
+> CE 代表求交叉熵
 
 
+$$
+L \bigg (
+
+\begin{bmatrix}
+ce_{1,1} \\
+ce_{2,1}  \\
+\vdots  \\
+ce_{m,1} \\
+\end{bmatrix}
+
+\bigg ) 
 
 
+= 
 
+\frac{1}{m} \sum^{m}_{i=1} ce_{i,1}
+$$
 
 
 
