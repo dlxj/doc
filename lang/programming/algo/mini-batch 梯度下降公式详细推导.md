@@ -37,6 +37,8 @@ https://charlee.li/how-to-compute-the-derivative-of-softmax-and-cross-entropy/
 
 https://deepnotes.io/softmax-crossentropy
 
+- 数值技巧
+
 https://aimatters.wordpress.com/2019/06/17/the-softmax-function-derivative/
 
 
@@ -394,6 +396,83 @@ $$
 
 
 
+## 激活函数-ReLU
+
+
+
+```
+# https://zhuanlan.zhihu.com/p/92412922
+
+激活函数为什么是非线性的？如果使用线性激活函数，那么输入跟输出之间的关系为线性的，无论神经网络有多少层都是线性组合。输出层可能会使用线性激活函数，但在隐含层都使用非线性激活函数。
+
+常用的激活函数：sigmoid，Tanh，ReLU，Leaky ReLU，PReLU，ELU，Maxout
+
+
+```
+
+
+
+```
+# https://oldpan.me/archives/non-linear-activation-relu-or-lrelu
+RELU的优点即计算特别简单，高度非线性，但是RELU的缺点也很明显：
+
+因为其将所有的输入负数变为0，在训练中可能很脆弱，很容易导致神经元失活，使其不会在任何数据点上再次激活。简单地说，ReLu可能导致神经元死亡。
+对于ReLu中(x<0)的激活，此时梯度为0，因此在下降过程中权重不会被调整。这意味着进入这种状态的神经元将停止对错误/输入的变化做出反应(仅仅因为梯度为0，没有任何变化)。这就是所谓的dying ReLu problem.
+平时使用的时候RELU的缺点并不是特别明显，只有在学习率设置不恰当(较大)的时候，会加快神经网络中神经元的“死亡”。
+
+而LeakyRelu是RELU的变体，对输入小于0部分的反应有所变化，减轻了RELU的稀疏性，因为我们可以设置negative_slop这个系数保证在输入小于0的时候有微弱的输出。
+
+LeakyReLU的优点是什么，就是缓解一些RELU导致神经元死亡的问题，但是缺点也很明显，因为有了负数的输出，导致其非线性程度没有RELU强大，在一些分类任务中效果还没有Sigmoid好，更不要提RELU。
+
+自己在尝试生成类的时候，使用自编码器生成图像，上述这两个激活函数的时候并没有发现明显的差别。可能LRELU稍好一些，总结一下就是RELU适合分类，LRELU适合生成类的任务。
+
+```
+
+
+
+```
+
+# https://zhuanlan.zhihu.com/p/73214810
+
+ReLU的有效导数是常数1，解决了深层网络中出现的梯度消失问题，也就使得深层网络可训练。同时ReLU又是非线性函数，所谓非线性，就是一阶导数不为常数；对ReLU求导，在输入值分别为正和为负的情况下，导数是不同的，即ReLU的导数不是常数，所以ReLU是非线性的（只是不同于Sigmoid和tanh，relu的非线性不是光滑的）。
+
+ReLU在x>0下，导数为常数1的特点：
+
+导数为常数1的好处就是在“链式反应”中不会出现梯度消失，但梯度下降的强度就完全取决于权值的乘积，这样就可能会出现梯度爆炸问题。解决这类问题：一是控制权值，让它们在（0，1）范围内；二是做梯度裁剪，控制梯度下降强度，如ReLU(x)=min(6, max(0,x))
+
+ReLU在x<0下，输出置为0的特点：
+
+描述该特征前，需要明确深度学习的目标：深度学习是根据大批量样本数据，从错综复杂的数据关系中，找到关键信息（关键特征）。换句话说，就是把密集矩阵转化为稀疏矩阵，保留数据的关键信息，去除噪音，这样的模型就有了鲁棒性。ReLU将x<0的输出置为0，就是一个去噪音，稀疏矩阵的过程。而且在训练过程中，这种稀疏性是动态调节的，网络会自动调整稀疏比例，保证矩阵有最优的有效特征。
+
+但是ReLU 强制将x<0部分的输出置为0（置为0就是屏蔽该特征），可能会导致模型无法学习到有效特征，所以如果学习率设置的太大，就可能会导致网络的大部分神经元处于‘dead’状态，所以使用ReLU的网络，学习率不能设置太大。
+
+ReLU作为激活函数的特点：
+
+相比Sigmoid和tanh，ReLU摒弃了复杂的计算，提高了运算速度。
+解决了梯度消失问题，收敛速度快于Sigmoid和tanh函数，但要防范ReLU的梯度爆炸
+容易得到更好的模型，但也要防止训练中出现模型‘Dead’情况。
+```
+
+
+
+```
+梯度剪切。另外一种解决梯度爆炸的手段是采用权重正则化（weithts regularization）。
+```
+
+
+
+
+$$
+\mathrm{ReLU}(x) = \mathrm{max}(0, x)
+$$
+
+
+![image-20210820101952538](mini-batch 梯度下降公式详细推导.assets/image-20210820101952538.png)
+
+
+
+
+
 ## mini-batch 交叉熵
 
 
@@ -457,6 +536,202 @@ $$
 
 
 
+```
+用随机选择的小批量数据（mini-batch）作为全体训练数据的近似值，损失函数要计算这一批数据的总体损失
+
+Xor 问题的每一个输入维度是 (2,) , batch 大小设为3，既每次训练三组输入数据，作为全体训练数据的近似
+
+使用双隐层网络结构，矩阵的维度变化：
+	(3,2).(2,5) = (3,5)
+	(3,5).(5,5) = (3,5)
+	(3,5).(5,2) = (3,2)
+```
+
+
+
+$m=3, n=2, c=5, nclass=2$
+$$
+\begin{bmatrix}
+x^{0}_{1,1} & x^{0}_{1,2} & \cdots & x^{0}_{1,n}  \\
+x^{0}_{2,1} & x^{0}_{2,2} & \cdots & x^{0}_{2,n} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{0}_{m,1} & x^{0}_{m,2} & \cdots & x^{0}_{m,n} \\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+w^{1}_{1,1} & w^{1}_{1,2} & \cdots & w^{1}_{1,c}  \\
+w^{1}_{2,1} & w^{1}_{2,2} & \cdots & w^{1}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+w^{1}_{n,1} & w^{1}_{n,2} & \cdots & w^{1}_{n,c} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b^{1}_{1,1} & b^{1}_{1,2} & \cdots & b^{1}_{1,c}  \\
+b^{1}_{2,1} & b^{1}_{2,2} & \cdots & b^{1}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+b^{1}_{m,1} & b^{1}_{m,2} & \cdots & b^{1}_{m,c} \\
+\end{bmatrix}
+
+\\
+
+= 
+
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,c}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{1}_{m,1} & a^{1}_{m,2} & \cdots & a^{1}_{m,c} \\
+\end{bmatrix}
+$$
+
+$$
+g \bigg (
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,c}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{1}_{m,1} & a^{1}_{m,2} & \cdots & a^{1}_{m,c} \\
+\end{bmatrix}
+\bigg )
+
+= 
+
+\begin{bmatrix}
+x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,c}  \\
+x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{1}_{m,1} & x^{1}_{m,2} & \cdots & x^{1}_{m,c} \\
+\end{bmatrix}
+$$
+
+
+
+$$
+\begin{bmatrix}
+x^{1}_{1,1} & x^{1}_{1,2} & \cdots & x^{1}_{1,c}  \\
+x^{1}_{2,1} & x^{1}_{2,2} & \cdots & x^{1}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{1}_{m,1} & x^{1}_{m,2} & \cdots & x^{1}_{m,c} \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+w^{2}_{1,1} & w^{2}_{1,2} & \cdots & w^{2}_{1,c}  \\
+w^{2}_{2,1} & w^{2}_{2,2} & \cdots & w^{2}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+w^{2}_{c,1} & w^{2}_{c,2} & \cdots & w^{2}_{c,c} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b^{2}_{1,1} & b^{2}_{1,2} & \cdots & b^{2}_{1,c}  \\
+b^{2}_{2,1} & b^{2}_{2,2} & \cdots & b^{2}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+b^{2}_{m,1} & b^{2}_{m,2} & \cdots & b^{2}_{m,c} \\
+\end{bmatrix}
+
+\\ = 
+
+\begin{bmatrix}
+a^{2}_{1,1} & a^{2}_{1,2} & \cdots & a^{2}_{1,c}  \\
+a^{2}_{2,1} & a^{2}_{2,2} & \cdots & a^{2}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{2}_{m,1} & a^{2}_{m,2} & \cdots & a^{2}_{m,c} \\
+\end{bmatrix}
+$$
+
+$$
+g \bigg (
+\begin{bmatrix}
+a^{2}_{1,1} & a^{2}_{1,2} & \cdots & a^{2}_{1,c}  \\
+a^{2}_{2,1} & a^{2}_{2,2} & \cdots & a^{2}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{2}_{m,1} & a^{2}_{m,2} & \cdots & a^{2}_{m,c} \\
+\end{bmatrix}
+\bigg )
+
+= 
+
+\begin{bmatrix}
+x^{2}_{1,1} & x^{2}_{1,2} & \cdots & x^{2}_{1,c}  \\
+x^{2}_{2,1} & x^{2}_{2,2} & \cdots & x^{2}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{2}_{m,1} & x^{2}_{m,2} & \cdots & x^{2}_{m,c} \\
+\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}
+x^{2}_{1,1} & x^{2}_{1,2} & \cdots & x^{2}_{1,c}  \\
+x^{2}_{2,1} & x^{2}_{2,2} & \cdots & x^{2}_{2,c} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{2}_{m,1} & x^{2}_{m,2} & \cdots & x^{2}_{m,c} \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+w^{3}_{1,1} & w^{3}_{1,2} & \cdots & w^{3}_{1,nclass}  \\
+w^{3}_{2,1} & w^{3}_{2,2} & \cdots & w^{3}_{2,nclass} \\
+\vdots & \vdots & \ddots & \vdots & \\
+w^{3}_{c,1} & w^{3}_{c,2} & \cdots & w^{3}_{c,nclass} \\
+\end{bmatrix}
+
++ 
+
+\begin{bmatrix}
+b^{3}_{1,1} & b^{3}_{1,2} & \cdots & b^{3}_{1,nclass}  \\
+b^{3}_{2,1} & b^{3}_{2,2} & \cdots & b^{3}_{2,nclass} \\
+\vdots & \vdots & \ddots & \vdots & \\
+b^{3}_{m,1} & b^{3}_{m,2} & \cdots & b^{3}_{m,nclass} \\
+\end{bmatrix}
+
+\\ = 
+
+\begin{bmatrix}
+a^{3}_{1,1} & a^{3}_{1,2} & \cdots & a^{3}_{1,nclass}  \\
+a^{3}_{2,1} & a^{3}_{2,2} & \cdots & a^{3}_{2,nclass} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{3}_{m,1} & a^{3}_{m,2} & \cdots & a^{3}_{m,ncalss} \\
+\end{bmatrix}
+$$
+
+$$
+Softmax \bigg (
+
+\begin{bmatrix}
+a^{3}_{1,1} & a^{3}_{1,2} & \cdots & a^{3}_{1,nclass}  \\
+a^{3}_{2,1} & a^{3}_{2,2} & \cdots & a^{3}_{2,nclass} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{3}_{m,1} & a^{3}_{m,2} & \cdots & a^{3}_{m,ncalss} \\
+\end{bmatrix}
+
+\bigg ) 
+
+
+\\ =
+
+\begin{bmatrix}
+p_{1,1} & p_{1,2} & \cdots & p_{1,nclass}  \\
+p_{2,1} & p_{2,2} & \cdots & p_{2,nclass} \\
+\vdots & \vdots & \ddots & \vdots & \\
+p_{m,1} & p_{m,2} & \cdots & p_{m,ncalss} \\
+\end{bmatrix}
+$$
+
+
+
+
+
+
+
+
 
 
 
@@ -464,7 +739,6 @@ $$
 
 
 ```
-
 用随机选择的小批量数据（mini-batch）作为全体训练数据的近似值，损失函数要计算这一批数据的总体损失
 
 Xor 问题的每一个输入维度是 (2,) ,  batch 大小设为3，既每次训练三组输入数据，作为全体训练数据的近似
