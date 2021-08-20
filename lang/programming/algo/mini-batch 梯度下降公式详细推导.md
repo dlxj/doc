@@ -463,7 +463,7 @@ ReLU作为激活函数的特点：
 
 
 $$
-\mathrm{ReLU}(x) = \mathrm{max}(0, x)
+\mathrm{ReLU}(x) = \mathrm{max}(0, x)
 $$
 
 > relu函数仅仅在0点处不可导，因为左导数不等于右导数。一般这个间断点处的导数认为是0
@@ -493,7 +493,10 @@ mini batch的平均loss
 # https://wzbtech.com/tech/matrix-derivatives1.html
 # https://zhuanlan.zhihu.com/p/83859554
 # https://zhuanlan.zhihu.com/p/50319086
+	全微分 是梯度向量 (nx1)与微分向量  (nx1)的内积）
 
+# https://www.cnblogs.com/hechangchun/p/11087943.html
+	hadamard product（哈达玛积）、kronecker product（克罗内克积）
 ```
 
 
@@ -607,9 +610,19 @@ a^{1}_{m,1} & a^{1}_{m,2} & \cdots & a^{1}_{m,c} \\
 \end{bmatrix}
 $$
 
+
 $$
 a^1_{*,j} = X^0 \cdot w^1_{*,j} + b^1_{*,j}
 $$
+
+
+$$
+L = g(x^0 w^1 + b^1)
+$$
+
+
+> Matrix Differentiation  
+
 
 
 
