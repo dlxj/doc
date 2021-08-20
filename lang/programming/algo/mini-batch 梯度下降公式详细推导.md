@@ -466,8 +466,9 @@ $$
 \mathrm{ReLU}(x) = \mathrm{max}(0, x)
 $$
 
+> relu函数仅仅在0点处不可导，因为左导数不等于右导数。一般这个间断点处的导数认为是0
 
-![image-20210820101952538](mini-batch 梯度下降公式详细推导.assets/image-20210820101952538.png)
+
 
 
 
@@ -587,6 +588,14 @@ a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,c} \\
 a^{1}_{m,1} & a^{1}_{m,2} & \cdots & a^{1}_{m,c} \\
 \end{bmatrix}
 $$
+
+$$
+a^1_{*,j} = X^0 \cdot w^1_{*,j} + b^1_{*,j}
+$$
+
+
+
+
 
 $$
 g \bigg (
@@ -770,6 +779,16 @@ ce_{m,1} \\
 $$
 
 > L 代表求损失
+
+
+
+
+$$
+\frac{\partial}{\partial w^1_{i,j}} L,   \  for \ i \in 1 \cdots n; \ j \in 1 \cdots c
+$$
+
+
+
 
 
 
