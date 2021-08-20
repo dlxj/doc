@@ -492,6 +492,7 @@ mini batch的平均loss
 # https://zhuanlan.zhihu.com/p/24709748
 # https://wzbtech.com/tech/matrix-derivatives1.html
 # https://zhuanlan.zhihu.com/p/83859554
+# https://zhuanlan.zhihu.com/p/50319086
 
 ```
 
