@@ -33,6 +33,8 @@
 
 
 
+https://charlee.li/how-to-compute-the-derivative-of-softmax-and-cross-entropy/
+
 https://deepnotes.io/softmax-crossentropy
 
 https://aimatters.wordpress.com/2019/06/17/the-softmax-function-derivative/
