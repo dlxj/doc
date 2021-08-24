@@ -68,6 +68,20 @@ a^{1}_{m,c} = x^0_{m,*} \cdot w^1_{*,c} \\
 = x^0_{m,1} w^1_{1,c} + x^0_{m,2} w^1_{2,c} + \cdots + x^0_{m,n} w^1_{n,c}
 $$
 
+
+$$
+\frac{ \partial }{ \partial w^1_{s,r} } a^1_{i,j} = 0, if \ r  \neq j
+$$
+
+$$
+\frac{ \partial }{ \partial w^1_{s,r} } a^1_{i,j} = 0, if \ r  = j
+$$
+
+
+
+
+
+
 $$
 Softmax \bigg (
 
