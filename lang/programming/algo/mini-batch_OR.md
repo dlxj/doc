@@ -226,7 +226,7 @@ $$
 
 
 $$
-\frac{\partial}{\partial w^1_{i,j}} L = \frac{\partial a^1_{,j}}{\partial w^1_{i,j}}
+\frac{\partial}{\partial w^1_{s,r}} L = = - \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j}  \frac{\partial}{\partial w^1_{s,r}} log \ p_{i,j} \\
 $$
 
 
