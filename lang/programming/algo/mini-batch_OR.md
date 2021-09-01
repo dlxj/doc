@@ -215,6 +215,16 @@ $$
 \sum^{nclass}_{j \neq r} y_{i,j} p_{i,r} \bigg )
 $$
 
+
+
+$$
+L(w^1_{1,1}, w^1_{1,2}, \cdots, w^1_{n,c}) = \frac{1}{m} \sum^{m}_{i=1} ce_{i,1} \\
+
+= - \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j}  log \ p_{i,j} \\
+$$
+
+
+
 $$
 \frac{\partial}{\partial w^1_{i,j}} L = \frac{\partial a^1_{,j}}{\partial w^1_{i,j}}
 $$
