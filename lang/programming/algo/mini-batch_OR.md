@@ -215,7 +215,9 @@ $$
 \sum^{nclass}_{j \neq r} y_{i,j} p_{i,r} \bigg )
 $$
 
-
+$$
+\frac{\partial}{\partial w^1_{i,j}} L = \frac{\partial a^1_{,j}}{\partial w^1_{i,j}}
+$$
 
 
 
