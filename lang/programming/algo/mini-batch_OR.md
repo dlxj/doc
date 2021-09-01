@@ -131,8 +131,6 @@ $$
 
 
 
-
-
 $$
 CE \bigg (
 
@@ -155,6 +153,14 @@ ce_{2,1}  \\
 ce_{m,1} \\
 \end{bmatrix}
 $$
+
+
+$$
+y_i 是真实概率 \\
+ce_{i,1} = - \sum^{nclass}_{i=1} y_i  log \ p_{i,1}
+$$
+
+
 
 $$
 L \bigg (
