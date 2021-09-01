@@ -162,7 +162,7 @@ $$
 
 $$
 \ if \ s = i \  AND \ \ r = j \\
-\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - \sum^{nclass}_{j=1} y_{i,j}  (1 - p_{i,j}) \\
+\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - y_{i,r}  (1 - p_{i,r}) \\
 $$
 
 $$
@@ -171,9 +171,18 @@ $$
 
 = - \sum^{nclass}_{j=1} y_{i,j} \frac{1}{p_{i,j}} \frac{\partial}{\partial a^1_{s,r}} p_{i,j} \\
 
-= - \sum^{nclass}_{j=1} y_{i,j} \frac{1}{p_{i,j}} (-p_{i,j} \ p_{i,r}) \\
+= - \sum^{nclass}_{j \neq r} y_{i,j} \frac{1}{p_{i,j}} (-p_{i,j} \ p_{i,r}) \\
 
-=  \sum^{nclass}_{j=1} y_{i,j} p_{i,r}
+=  \sum^{nclass}_{j \neq r} y_{i,j} p_{i,r}
+$$
+
+$$
+\ if \ s = i \ \\
+\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - y_{i,r}  (1 - p_{i,r}) +  
+
+\sum^{nclass}_{j \neq r} y_{i,j} p_{i,r}
+
+\\
 $$
 
 
