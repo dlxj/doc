@@ -129,6 +129,12 @@ $$
 $$
 
 
+$$
+\frac{\partial}{\partial w^1_{s,r}} log(p_{i,j}) = log'(p_{i,j}(w^1_{s,r})) p_{i,j}'(w^1_{s,r})
+$$
+
+
+
 
 
 $$
