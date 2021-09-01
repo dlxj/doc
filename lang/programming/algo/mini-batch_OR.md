@@ -207,10 +207,12 @@ $$
 
 
 $$
-\ if \ s = i \  AND \ \ r \neq j \\ 
+\ if \ s = i \  \\ 
 \frac{\partial}{\partial a^1_{s,r}} L = \frac{1}{m} \frac{\partial}{\partial a^1_{s,r}} ce_{s,1} \\
 
-= \frac{1}{m} \sum^{nclass}_{j=1} y_{i,j} p_{s,r}
+= \frac{1}{m} \bigg ( - y_{i,r}  (1 - p_{i,r}) +  
+
+\sum^{nclass}_{j \neq r} y_{i,j} p_{i,r} \bigg )
 $$
 
 
