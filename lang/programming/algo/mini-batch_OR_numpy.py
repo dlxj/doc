@@ -99,9 +99,7 @@ for kk in range(3):
 
         # 前向传播
 
-
-
-        A_1 = np.dot(X_0, W_1)  # 前向传播 (4,2) . (2,4) = (4,4)
+        A_1 = np.dot(X_0, W_1)  # 前向传播 (3,2) . (2,2) = (3,2)
         a_1 = A_1 + b_1 
 
         p = stable_softmax(a_1)
@@ -131,7 +129,7 @@ for kk in range(3):
         L = (1.0 / M) * np.sum(ce)  # 损失
 
 
-
+        
 
 
             
