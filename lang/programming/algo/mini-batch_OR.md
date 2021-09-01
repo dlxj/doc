@@ -6,8 +6,9 @@
 OR 问题的每一个输入维度是 (2,) , batch 大小设为3，既每次训练三组输入数据，作为全体训练数据的近似
 
 
-使用双隐层网络结构，矩阵的维度变化：
+使用单隐层网络结构，矩阵的维度变化：
 	(3,2).(2,2) = (3,2)
+	
 ```
 
 
@@ -113,6 +114,24 @@ p_{2,1} & p_{2,2} & \cdots & p_{2,nclass} \\
 p_{m,1} & p_{m,2} & \cdots & p_{m,ncalss} \\
 \end{bmatrix}
 $$
+
+
+$$ { }
+\frac{\partial}{\partial a^1_{s,r}} p_{i,j} = 0, if \ s  \neq i
+$$
+
+$$
+\frac{\partial}{\partial a^1_{s,r}} p_{i,j} = p_{i,j} (1 - p_{i,j}), \ if \ s  = i \ AND \ r = j
+$$
+
+$$
+\frac{\partial}{\partial a^1_{s,r}} p_{i,j} = -p_{i,j} \ p_{i,r}, \ if \ s  = i \ AND \ r \neq j
+$$
+
+
+
+
+
 
 $$
 CE \bigg (
