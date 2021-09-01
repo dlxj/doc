@@ -157,8 +157,14 @@ $$
 
 $$
 y_i 是真实概率 \\
-ce_{i,1} = - \sum^{nclass}_{i=1} y_i  log \ p_{i,1}
+ce_{i,1} = - \sum^{nclass}_{j=1} y_{i,j}  log \ p_{i,j}
 $$
+
+$$
+\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = 
+$$
+
+
 
 
 
