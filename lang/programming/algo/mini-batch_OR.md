@@ -162,19 +162,18 @@ $$
 
 $$
 \ if \ s = i \  AND \ \ r = j \\
-\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - \sum^{nclass}_{i=1} y_{i,j}  (1 - p_{i,j}) \\
+\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - \sum^{nclass}_{j=1} y_{i,j}  (1 - p_{i,j}) \\
 $$
 
 $$
 \ if \ s = i \  AND \ \ r \neq j \\
-\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - \sum^{nclass}_{i=1} y_{i,j} \frac{1}{p_{i,j}} \frac{\partial}{\partial a^1_{s,r}} p_{i,j}  \\
+\frac{\partial}{\partial a^1_{s,r}} ce_{i,1} = - \sum^{nclass}_{j=1} y_{i,j} \frac{1}{p_{i,j}} \frac{\partial}{\partial a^1_{s,r}} p_{i,j}  \\
 
-= - \sum^{nclass}_{i=1} y_{i,j} \frac{1}{p_{i,j}} \frac{\partial}{\partial a^1_{s,r}} p_{i,j} \\
+= - \sum^{nclass}_{j=1} y_{i,j} \frac{1}{p_{i,j}} \frac{\partial}{\partial a^1_{s,r}} p_{i,j} \\
 
-= - \sum^{nclass}_{i=1} y_{i,j} \frac{1}{p_{i,j}} (-p_{i,j} \ p_{i,r}) \\
+= - \sum^{nclass}_{j=1} y_{i,j} \frac{1}{p_{i,j}} (-p_{i,j} \ p_{i,r}) \\
 
-=  \sum^{nclass}_{i=1} y_{i,j} p_{i,r}
-
+=  \sum^{nclass}_{j=1} y_{i,j} p_{i,r}
 $$
 
 
@@ -197,6 +196,13 @@ ce_{m,1} \\
 \frac{1}{m} \sum^{m}_{i=1} ce_{i,1}
 $$
 
+
+$$
+\ if \ s = i \  AND \ \ r \neq j \\ 
+\frac{\partial}{\partial a^1_{s,r}} L = \frac{1}{m} \sum^{m}_{i=1} \frac{\partial}{\partial a^1_{s,r}} ce_{i,1} \\
+
+= \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j} p_{i,r}
+$$
 
 
 
