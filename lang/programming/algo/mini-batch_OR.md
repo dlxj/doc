@@ -199,9 +199,9 @@ $$
 
 $$
 \ if \ s = i \  AND \ \ r \neq j \\ 
-\frac{\partial}{\partial a^1_{s,r}} L = \frac{1}{m} \sum^{m}_{i=1} \frac{\partial}{\partial a^1_{s,r}} ce_{i,1} \\
+\frac{\partial}{\partial a^1_{s,r}} L = \frac{1}{m} \frac{\partial}{\partial a^1_{s,r}} ce_{s,1} \\
 
-= \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j} p_{i,r}
+= \frac{1}{m} \sum^{nclass}_{j=1} y_{i,j} p_{s,r}
 $$
 
 
