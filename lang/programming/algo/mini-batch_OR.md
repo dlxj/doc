@@ -74,7 +74,7 @@ $$
 $$
 
 $$
-\frac{ \partial }{ \partial w^1_{s,r} } a^1_{i,j} = 0, if \ r  = j
+\frac{ \partial }{ \partial w^1_{s,r} } a^1_{i,j} = x^0_{i,s} \ , if \ r  = j
 $$
 
 
