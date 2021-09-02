@@ -315,6 +315,15 @@ a_{1,2} = x_{1,1} w_{1,2} + x_{1,2} w_{2,2} + b_{1,2}
 $$
 
 $$
+a_{2,1} = x_{2,1} w_{1,1} + x_{2,2} w_{2,1} + b_{2,1} \\
+
+a_{2,2} = x_{2,1} w_{1,2} + x_{2,2} w_{2,2} + b_{2,2}
+$$
+
+
+
+
+$$
 \text{q 是预测出的近似概率} \\ 
 
 Softmax \bigg (
@@ -344,6 +353,15 @@ q_{1,2} = \frac{e^{a_{1,2}}}{e^{a_{1,1}} + e^{a_{1,2}} }
 $$
 
 $$
+q_{2,1} = \frac{e^{a_{2,1}}}{e^{a_{2,1}} + e^{a_{2,2}} } \\
+
+q_{2,2} = \frac{e^{a_{2,2}}}{e^{a_{2,1}} + e^{a_{2,2}} }
+$$
+
+
+
+
+$$
 \text{交叉熵} \\
 
 Cross \bigg (
@@ -371,8 +389,105 @@ c_1 = -p_{1,1} log(q_{1,1}) - p_{1,2} log(q_{1,2})
 $$
 
 $$
+c_2 = -p_{2,1} log(q_{2,1}) - p_{2,2} log(q_{2,2})
+$$
+
+
+$$
 \text{ mini-batch 的总损失 } \\
-L = \frac{1}{3} (c_1 + c_2 + c3)
+L = \frac{1}{2} (c_1 + c_2)
+$$
+
+$$
+\frac{ \partial }{ \partial w_{1,1} } L = 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial w_{1,1} }
+
++ 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial w_{1,1} } \\
+
+
++ \frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,1} }
+
+\frac{ \partial q_{2,1}}{ \partial a_{2,1} }
+
+\frac{ \partial a_{2,1}}{ \partial w_{1,1} }
+
++ 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,2} }
+
+\frac{ \partial q_{2,2}}{ \partial a_{2,1} }
+
+\frac{ \partial a_{2,1}}{ \partial w_{1,1} }
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$$
+a_{1,1} = x_{1,1} w_{1,1} + x_{1,2} w_{2,1} + b_{1,1} \\
+
+a_{1,2} = x_{1,1} w_{1,2} + x_{1,2} w_{2,2} + b_{1,2}
+$$
+
+$$
+a_{2,1} = x_{2,1} w_{1,1} + x_{2,2} w_{2,1} + b_{2,1} \\
+
+a_{2,2} = x_{2,1} w_{1,2} + x_{2,2} w_{2,2} + b_{2,2}
+$$
+
+$$
+q_{1,1} = \frac{e^{a_{1,1}}}{e^{a_{1,1}} + e^{a_{1,2}} } \\
+
+q_{1,2} = \frac{e^{a_{1,2}}}{e^{a_{1,1}} + e^{a_{1,2}} }
+$$
+
+$$
+q_{2,1} = \frac{e^{a_{2,1}}}{e^{a_{2,1}} + e^{a_{2,2}} } \\
+
+q_{2,2} = \frac{e^{a_{2,2}}}{e^{a_{2,1}} + e^{a_{2,2}} }
+$$
+
+$$
+c_1 = -p_{1,1} log(q_{1,1}) - p_{1,2} log(q_{1,2})
+$$
+
+$$
+c_2 = -p_{2,1} log(q_{2,1}) - p_{2,2} log(q_{2,2})
+$$
+
+$$
+\text{ mini-batch 的总损失 } \\
+L = \frac{1}{2} (c_1 + c_2)
 $$
 
 $$
@@ -396,5 +511,4 @@ $$
 
 \frac{ \partial a_{1,1}}{ \partial w_{1,1} }
 $$
-
 
