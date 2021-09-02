@@ -5147,6 +5147,18 @@ y2 --> e  查lable表得到标签。
 
 
 
+# MatrixSlow
+
+
+
+```python
+# https://gitee.com/zackchen/MatrixSlow
+pip install protobuf
+pip install grpcio==1.11.0
+```
+
+
+
 
 
 
