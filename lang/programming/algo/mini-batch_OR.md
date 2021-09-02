@@ -258,9 +258,15 @@ $$
 
 
 
+$$
+\text{p 是真实分类概率，one-hot encoding}  \\
 
-
-
+\begin{bmatrix}
+p_{1,1} & p_{1,2} \\
+p_{2,1} & p_{2,2} \\
+p_{3,1} & p_{3,2} \\
+\end{bmatrix}
+$$
 
 $$
 \begin{bmatrix}
@@ -301,13 +307,66 @@ a_{1,1} = x_{1,1} w_{1,1} + x_{1,2} w_{2,1} + b_{1,1} \\
 a_{1,2} = x_{1,1} w_{1,2} + x_{1,2} w_{2,2} + b_{1,2}
 $$
 
+$$
+\text{q 是预测出的近似概率} \\ 
+
+Softmax \bigg (
+
+\begin{bmatrix}
+a_{1,1} & a_{1,2} \\
+a_{2,1} & a_{2,2} \\
+a_{3,1} & a_{3,2} \\
+\end{bmatrix}
+
+\bigg ) 
 
 
+= 
+
+\begin{bmatrix}
+q_{1,1} & q_{1,2} \\
+q_{2,1} & q_{2,2} \\
+q_{3,1} & q_{3,2} \\
+\end{bmatrix}
+$$
+
+$$
+q_{1,1} = \frac{e^{a_{1,1}}}{e^{a_{1,1}} + e^{a_{1,2}} } \\
+
+q_{1,2} = \frac{e^{a_{1,2}}}{e^{a_{1,1}} + e^{a_{1,2}} }
+$$
+
+$$
+\text{交叉熵} \\
+
+Cross \bigg (
+
+\begin{bmatrix}
+q_{1,1} & q_{1,2} \\
+q_{2,1} & q_{2,2} \\
+q_{3,1} & q_{3,2} \\
+\end{bmatrix}
+
+\bigg ) 
 
 
+= 
 
+\begin{bmatrix}
+c_{1} \\
+c_{2} \\
+c_{3} \\
+\end{bmatrix}
+$$
 
+$$
+c_1 = -p_{1,1} log(q_{1,1}) - p_{1,2} log(q_{1,2}) 
+$$
 
+$$
+\text{ mini-batch 的总损失 } \\
+L = \frac{1}{3} (c_1 + c_2 + c3)
+$$
 
 
 
