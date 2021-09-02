@@ -4685,6 +4685,22 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 
 
+### BP Cross Entropy
+
+
+
+```
+# https://stats.stackexchange.com/questions/235528/backpropagation-with-softmax-cross-entropy
+```
+
+
+
+
+
+
+
+
+
 ## mini-batch 学习
 
 
