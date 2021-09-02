@@ -134,6 +134,10 @@ $$
 $$
 
 
+$$
+p_{i,j} = \frac{e^{a^1_{i,j}}}{\sum^{nclass}_{k=1} e^{a^1_{i,k}}}, \ i \in 1 \cdots m; \ j \in 1 \cdots nclass \\
+$$
+
 
 
 
@@ -232,10 +236,22 @@ $$
 
 
 $$
-\frac{\partial}{\partial w^1_{s,r}} L = = - \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j}  \frac{\partial}{\partial w^1_{s,r}} log \ p_{i,j} \\
+\frac{\partial}{\partial w^1_{s,r}} L = - \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j}  \frac{\partial}{\partial w^1_{s,r}} log \ p_{i,j} \\
+
+
+
+$$
+
+
+$$
+\frac{\partial}{\partial w^1_{s,r}} log ( \ p_{i,j} ) = \frac{1}{p_{i,j}}  \frac{\partial}{\partial w^1_{s,r}} p_{i,j} \\
 $$
 
 
 
+
+$$
+\frac{\partial}{\partial w^1_{s,r}} p_{i,j}  = \frac{\partial}{\partial w^1_{s,r}} \frac{e^{a^1_{i,j}}}{\sum^{nclass}_{k=1} e^{a^1_{i,k}}}, \ i \in 1 \cdots m; \ j \in 1 \cdots nclass \\
+$$
 
 
