@@ -4579,6 +4579,8 @@ def stable_softmax(X):
 
 KL散度可以被用于计算代价，而在特定情况下最小化KL散度等价于最小化交叉熵。而交叉熵的运算更简单，所以用交叉熵来当做代价。
 
+# https://zhuanlan.zhihu.com/p/86787709
+
 # https://gombru.github.io/2018/05/23/cross_entropy_loss/
 
 # https://stats.stackexchange.com/questions/235528/backpropagation-with-softmax-cross-entropy
