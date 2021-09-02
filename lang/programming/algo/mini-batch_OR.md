@@ -257,6 +257,13 @@ $$
 
 
 
+```
+# https://zhuanlan.zhihu.com/p/86184547
+# https://stats.stackexchange.com/questions/235528/backpropagation-with-softmax-cross-entropy
+```
+
+
+
 
 $$
 \text{p 是真实分类概率，one-hot encoding}  \\
@@ -368,6 +375,26 @@ $$
 L = \frac{1}{3} (c_1 + c_2 + c3)
 $$
 
+$$
+\frac{ \partial }{ \partial w_{1,1} } L = 
 
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial w_{1,1} }
+
++ 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial w_{1,1} }
+$$
 
 
