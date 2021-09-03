@@ -6,7 +6,9 @@
 import numpy as np
 
 
-g_batch_size = 4 # 批大小
+
+
+g_batch_size = 2 # 批大小
 g_alpha = 0.1 # 学习率
 maxIter = 10000 # 最大迭代次数
 
@@ -18,7 +20,7 @@ maxIter = 10000 # 最大迭代次数
     NClass: 分类数 
 
 """
-M=3; N=2; C=2; NClass=2
+M=2; N=2; C=2; NClass=2
 
 
 
@@ -80,15 +82,17 @@ print(X_0, Y)
 
 
 
-W_1 = np.random.uniform(size=(N, C))   # 2*2 权重
+w = np.random.uniform(size=(N, C))   # 2*2 权重
 
-b_1 = np.random.uniform(size=(M, C))   # 3*2 偏置
+b = np.random.uniform(size=(M, C))   # 2*2 偏置
+
+
 
 
 
 for kk in range(3):
 
-    X_0, Y = next(train_iter)
+    x, p = next(train_iter)
     """
         X_0: (4,2)
         Y:   (4,1)
@@ -99,13 +103,13 @@ for kk in range(3):
 
         # 前向传播
 
-        A_1 = np.dot(X_0, W_1)  # 前向传播 (3,2) . (2,2) = (3,2)
-        a_1 = A_1 + b_1 
+        A = np.dot(x, w)  # 前向传播 (2,2) . (2,2) = (2,2)
+        a = A + b 
 
-        p = stable_softmax(a_1)
+        q = stable_softmax(a)
 
 
-        ce = np.zeros( (M,1) )
+        c = np.zeros( (M,1) )  # 存交叉熵
 
         # 交叉熵
         for i in range(M):
@@ -114,19 +118,19 @@ for kk in range(3):
 
             for j in range(NClass):
 
+                q_i_j = q[i][j]
+
                 p_i_j = p[i][j]
 
-                y_i_j = Y[i][j]
 
-
-                ce_i_1 += y_i_j * np.log( p_i_j )
+                ce_i_1 += p_i_j * np.log( q_i_j )
 
             ce_i_1 = -1 * ce_i_1
 
-            ce[i][0] = ce_i_1
+            c[i][0] = ce_i_1
 
 
-        L = (1.0 / M) * np.sum(ce)  # 损失
+        L = (1.0 / M) * np.sum(c)  # 损失
 
 
         
