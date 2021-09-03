@@ -89,8 +89,9 @@ b = np.random.uniform(size=(M, C))   # 2*2 偏置
 
 
 
+epoch = 3
 
-for kk in range(3):
+for _ in range(epoch):
 
     x, p = next(train_iter)
     """
@@ -98,7 +99,7 @@ for kk in range(3):
         Y:   (4,1)
     """
 
-    for epoch in range(maxIter):
+    for iter in range(maxIter):
 
 
         # 前向传播
@@ -245,7 +246,7 @@ for kk in range(3):
         #     b_2[s][0] = b_2[s][0] - g_alpha * b_2_j_1_derivative
 
 
-    print(X_0, Y)
+    print('hi,,,')
 
 
 
