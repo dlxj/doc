@@ -5169,6 +5169,30 @@ y2 --> e  查lable表得到标签。
 
 
 
+# 自动微分
+
+
+
+```
+import numpy as np
+import torch
+
+from torch.autograd.functional import jacobian
+
+
+def exp_reducer(x):
+    return x.exp().sum(dim=1)
+
+inputs = torch.rand(2, 2)
+jacobian(exp_reducer, inputs)
+```
+
+
+
+
+
+
+
 # 矩阵求导
 
 
