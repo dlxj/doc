@@ -4691,6 +4691,8 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 ```
 # https://stats.stackexchange.com/questions/235528/backpropagation-with-softmax-cross-entropy
+
+# https://zhuanlan.zhihu.com/p/86184547
 ```
 
 
@@ -5164,6 +5166,22 @@ y2 --> e  查lable表得到标签。
 # https://zhuanlan.zhihu.com/p/43534801
 
 ```
+
+
+
+# 矩阵求导
+
+
+
+```
+# https://zhuanlan.zhihu.com/p/352215536
+	绝对不会出 bug 的矩阵求导——定义，推导，动机；非交换链式法则
+
+```
+
+
+
+
 
 
 

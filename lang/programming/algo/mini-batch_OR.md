@@ -239,12 +239,12 @@ $$
 \frac{\partial}{\partial w^1_{s,r}} L = - \frac{1}{m} \sum^{m}_{i=1} \sum^{nclass}_{j=1} y_{i,j}  \frac{\partial}{\partial w^1_{s,r}} log \ p_{i,j} \\
 
 
-
+
 $$
 
 
 $$
-\frac{\partial}{\partial w^1_{s,r}} log ( \ p_{i,j} ) = \frac{1}{p_{i,j}}  \frac{\partial}{\partial w^1_{s,r}} p_{i,j} \\
+\frac{\partial}{\partial w^1_{s,r}} log ( \ p_{i,j} ) = \frac{1}{p_{i,j}}  \frac{\partial}{\partial w^1_{s,r}} p_{i,j} \\
 $$
 
 
@@ -441,16 +441,229 @@ $$
 
 
 
+$$
+\frac{ \partial }{ \partial w_{2,1} } L = 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial w_{2,1} }
+
++
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial w_{2,1} } \\
+
+
+
++ \frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,1} }
+
+\frac{ \partial q_{2,1}}{ \partial a_{2,1} }
+
+\frac{ \partial a_{2,1}}{ \partial w_{2,1} }
+
++ 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,2} }
+
+\frac{ \partial q_{2,2}}{ \partial a_{2,1} }
+
+\frac{ \partial a_{2,1}}{ \partial w_{2,1} }
+$$
+
+$$
+\frac{ \partial }{ \partial w_{1,2} } L = 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,2} }
+
+\frac{ \partial a_{1,2}}{ \partial w_{1,2} }
+
++ 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,2} }
+
+\frac{ \partial a_{1,2}}{ \partial w_{1,2} } \\
+
+
++ \frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,1} }
+
+\frac{ \partial q_{2,1}}{ \partial a_{2,2} }
+
+\frac{ \partial a_{2,2}}{ \partial w_{1,2} }
+
++ 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,2} }
+
+\frac{ \partial q_{2,2}}{ \partial a_{2,2} }
+
+\frac{ \partial a_{2,2}}{ \partial w_{1,2} }
+$$
+
+$$
+\frac{ \partial }{ \partial w_{2,2} } L = 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,2} }
+
+\frac{ \partial a_{1,2}}{ \partial w_{2,2} }
+
++ 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,2} }
+
+\frac{ \partial a_{1,2}}{ \partial w_{2,2} } \\
+
+
++ \frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,1} }
+
+\frac{ \partial q_{2,1}}{ \partial a_{2,2} }
+
+\frac{ \partial a_{2,2}}{ \partial w_{2,2} }
+
++ 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,2} }
+
+\frac{ \partial q_{2,2}}{ \partial a_{2,2} }
+
+\frac{ \partial a_{2,2}}{ \partial w_{2,2} }
+$$
+
+
+
+$$
+\frac{ \partial }{ \partial b_{1,1} } L = 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial b_{1,1} }
+
++ 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,1} }
+
+\frac{ \partial a_{1,1}}{ \partial b_{1,1} } \\
+
+$$
+
+$$
+\frac{ \partial }{ \partial b_{1,2} } L = 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,2} }
+
+\frac{ \partial a_{1,2}}{ \partial b_{1,2} }
+
++ 
+
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,2} }
+
+\frac{ \partial a_{1,2}}{ \partial b_{1,2} } \\
+$$
+
+$$
+\frac{ \partial }{ \partial b_{2,1} } L = 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,1} }
+
+\frac{ \partial q_{2,1}}{ \partial a_{2,1} }
+
+\frac{ \partial a_{2,1}}{ \partial b_{2,1} }
+
++ 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,2} }
+
+\frac{ \partial q_{2,2}}{ \partial a_{2,1} }
+
+\frac{ \partial a_{2,1}}{ \partial b_{2,1} } \\
+$$
+
+$$
+\frac{ \partial }{ \partial b_{2,2} } L = 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,1} }
+
+\frac{ \partial q_{2,1}}{ \partial a_{2,2} }
+
+\frac{ \partial a_{2,2}}{ \partial b_{2,2} }
+
++ 
+
+\frac{ \partial L}{ \partial c_2 }
+
+\frac{ \partial c_2}{ \partial q_{2,2} }
+
+\frac{ \partial q_{2,2}}{ \partial a_{2,2} }
+
+\frac{ \partial a_{2,2}}{ \partial b_{2,2} } \\
+$$
 
 
 
 
 
-
-
-
-
-
+```
+# https://zhuanlan.zhihu.com/p/352215536
+	绝对不会出 bug 的矩阵求导——定义，推导，动机；非交换链式法则
+```
 
 
 $$
