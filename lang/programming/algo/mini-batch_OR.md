@@ -587,7 +587,6 @@ $$
 \frac{ \partial q_{1,2}}{ \partial a_{1,1} }
 
 \frac{ \partial a_{1,1}}{ \partial b_{1,1} } \\
-
 $$
 
 $$
@@ -655,6 +654,42 @@ $$
 
 \frac{ \partial a_{2,2}}{ \partial b_{2,2} } \\
 $$
+
+
+$$
+\frac{ \partial c_1}{ \partial q_{1,1} } =  -p_{1,1} \frac{1}{q_{1,1}}  \\
+
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,1} } = q_{1,1} (1 - q_{1,1})
+$$
+
+$$
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,1} }
+
+\frac{ \partial q_{1,1}}{ \partial a_{1,1} } = \frac{1}{2} (-p_{1,1} \frac{1}{q_{1,1}} ) q_{1,1} (1 - q_{1,1})
+$$
+
+
+
+
+$$
+\frac{ \partial c_1}{ \partial q_{1,2} } = - p_{1,2} \frac{1}{q_{1,2}} \\
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,1} } = -q_{1,1} q_{1,2}
+$$
+
+$$
+\frac{ \partial L}{ \partial c_1 }
+
+\frac{ \partial c_1}{ \partial q_{1,2} }
+
+\frac{ \partial q_{1,2}}{ \partial a_{1,1} } =
+$$
+
+
+
 
 
 
