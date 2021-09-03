@@ -727,6 +727,25 @@ $$
 
 
 
+```python
+import numpy as np
+import torch
+
+from torch.autograd.functional import jacobian
+from torch.functional import Tensor
+
+
+def exp_reducer(x):
+    return x.exp() # .sum(dim=1)
+
+inputs =  Tensor( [ [1, 2], [3, 4] ] ) # torch.rand(2, 2)
+outputs = exp_reducer(inputs)
+
+ja = jacobian(exp_reducer, inputs)
+
+print(ja)
+```
+
 
 
 

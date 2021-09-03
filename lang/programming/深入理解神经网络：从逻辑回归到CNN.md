@@ -5173,6 +5173,14 @@ y2 --> e  查lable表得到标签。
 
 
 
+
+
+```
+# https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html
+```
+
+
+
 ```
 import numpy as np
 import torch

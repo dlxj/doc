@@ -3728,6 +3728,13 @@ VNC 连接客户端用 Royal TSX，免费版就可以。只能建一个document
 
 
 
+```
+# https://www.getpagespeed.com/server-setup/clear-disk-space-centos
+	清理空间
+```
+
+
+
 
 
 ```
