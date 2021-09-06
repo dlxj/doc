@@ -2622,6 +2622,16 @@ def extractPattern(strs, reg):
 
 
 ```python
+s = "     1  0.D【解析】阿托品阻断M受体，交感神经相对亢奋，进而影响窦房结和房室结"
+pattern = re.compile('(\d+)\s+?(\d)')
+print( pattern.sub(r'\1\2', s) )
+```
+
+
+
+
+
+```python
 ps_text_summary.replace("【】","")
 ```
 

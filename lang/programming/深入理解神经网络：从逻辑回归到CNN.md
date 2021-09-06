@@ -5174,6 +5174,55 @@ y2 --> e  查lable表得到标签。
 
 
 ```python
+# https://www.geeksforgeeks.org/jacobian-matrix-in-pytorch/
+from torch.autograd.functional import jacobian
+from torch import tensor
+ 
+#Defining the main function
+def f(x1,x2,x3):
+    return (x1 + x2, x3*x1, x2**3)
+ 
+#Defining input tensors
+x1 = tensor(3.0)
+x2 = tensor(4.0)
+x3 = tensor(5.0)
+ 
+#Printing the Jacobian
+print(jacobian(f,(x1,x2,x3)))
+```
+
+
+
+```python
+# https://github.com/google/jax/issues/47
+import jax
+import jax.numpy as jnp
+from jax import grad, jit, vmap
+from jax import random
+
+def f(x1,x2,x3):
+    return (x1 + x2, x3*x1, x2**3)
+
+x1 = 3.
+x2 = 4.
+x3 = 5.
+
+jac_x1 = jax.jacfwd(lambda x: f(x,x2,x3))(x1)
+jac_x2 = jax.jacfwd(lambda x: f(x1,x,x3))(x2)
+jac_x3 = jax.jacfwd(lambda x: f(x1,x2,x))(x3)
+
+print(jac_x1)
+
+print(jac_x2)
+
+print(jac_x3)
+```
+
+
+
+
+
+```python
 
 # https://github.com/google/jax/issues/47
 
