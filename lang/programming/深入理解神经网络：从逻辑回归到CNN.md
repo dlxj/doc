@@ -5173,6 +5173,71 @@ y2 --> e  查lable表得到标签。
 
 
 
+```python
+
+# https://github.com/google/jax/issues/47
+
+grad 只适用于输出为标量的函数
+
+def f(x, y):
+  return 2 * x * y
+
+grad(f)(3., 4.)  # 8.
+grad(f, 0)(3., 4.)  # 8.
+grad(f, 1)(3., 4.)  # 6
+grad(f, (0, 1))(3., 4.)  # (8., 6.)
+
+
+jacfwd 和 jacrev 当前只适用于单参的函数，所以如果需要微分多参函数时需要手动封装一下：
+
+
+jacrev(lambda x: f(x, 4.))(3.)  # 8. 
+jacrev(lambda y: f(3., y))(4.)  # 6.
+
+
+```
+
+
+
+```python
+import jax
+import jax.numpy as jnp
+from jax import grad, jit, vmap
+from jax import random
+
+key = random.PRNGKey(0)
+
+
+w = jax.random.uniform(key, shape=(2, 2))   # 2*2 权重
+
+b = jax.random.uniform(key, shape=(2, 2))   # 2*2 偏置
+
+x = jnp.array(
+    [ [1, 2], 
+      [3, 4] ]
+    ) 
+
+p =  jnp.array(
+    [ [1, 0], 
+      [0, 1] ]
+    ) 
+
+def A(w, b):
+  return x.dot( w ) + b
+
+
+jac_w = jax.jacfwd(lambda x: A(x, b))(w)
+jac_b = jax.jacfwd(lambda x: A(w, x))(b)
+
+
+print(jac_w)
+
+
+print(jac_b)
+```
+
+
+
 
 
 ```
