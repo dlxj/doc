@@ -5330,6 +5330,17 @@ jacobian(exp_reducer, inputs)
 
 
 
+```python
+def f(x) : return 3*x[0]**2 
+gradf = grad(f)
+gradf(np.array([2.0]))
+>> 12.0
+```
+
+
+
+
+
 ### you-don-t-know-jax
 
 
@@ -5337,6 +5348,18 @@ jacobian(exp_reducer, inputs)
 ```
 # https://colinraffel.com/blog/you-don-t-know-jax.html
 ```
+
+
+
+### vmap 自动mini-batch
+
+
+
+```
+ While in PyTorch one always has to be careful over which dimension you want to perform computations, vmap lets you simply write your computations for a single sample case and afterwards wrap it to make it batch compatible. 
+```
+
+
 
 
 
