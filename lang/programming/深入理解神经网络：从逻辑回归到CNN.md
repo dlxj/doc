@@ -5311,6 +5311,53 @@ jacobian(exp_reducer, inputs)
 
 
 
+### a
+
+
+
+```
+# Solving Optimization Problems with JAX
+# https://medium.com/swlh/solving-optimization-problems-with-jax-98376508bd4f
+```
+
+
+
+
+
+### 行列式
+
+
+
+```python
+import autograd.numpy as np
+import autograd as ag
+
+def f(x):
+    return np.array([x[0]**2,x[1]**2])
+
+x = np.array([3.,11.])
+jac = ag.jacobian(f)(x)
+result = np.linalg.det(jac)
+print(result)
+```
+
+```python
+import jax.numpy as np
+import jax
+
+def f(x):
+    return np.array([x[0]**2,x[1]**2])
+
+x = np.array([[3.,11.],[5.,13.],[7.,17.]])
+
+jac = jax.jacobian(f)
+vmap_jac = jax.vmap(jac)
+result = np.linalg.det(vmap_jac(x))
+print(result)
+```
+
+
+
 
 
 
