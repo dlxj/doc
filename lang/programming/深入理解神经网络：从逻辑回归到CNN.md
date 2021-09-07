@@ -5440,6 +5440,17 @@ for n in itertools.count():
 
 
 
+### 初试JAX - AutoGrad与JIT
+
+
+
+```
+# https://zhuanlan.zhihu.com/p/111254887
+	初试JAX - AutoGrad与JIT
+```
+
+
+
 
 
 ### vmap 自动mini-batch
