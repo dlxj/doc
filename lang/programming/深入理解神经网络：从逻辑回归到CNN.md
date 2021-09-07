@@ -5451,6 +5451,17 @@ for n in itertools.count():
 
 
 
+### 自动微分
+
+
+
+```
+#　http://fancyerii.github.io/books/autodiff/
+	自动微分
+```
+
+
+
 
 
 ### vmap 自动mini-batch
