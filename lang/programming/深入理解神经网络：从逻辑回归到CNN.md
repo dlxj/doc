@@ -5173,6 +5173,14 @@ y2 --> e  查lable表得到标签。
 
 
 
+```
+(JVP = Jacobian-vector product) ... Jacobian-vector products (JVPs) 
+```
+
+
+
+
+
 ```python
 # https://www.geeksforgeeks.org/jacobian-matrix-in-pytorch/
 from torch.autograd.functional import jacobian
@@ -5329,6 +5337,35 @@ jacobian(exp_reducer, inputs)
 ```
 # https://colinraffel.com/blog/you-don-t-know-jax.html
 ```
+
+
+
+
+
+### Pytorch中的vector-Jacobian product
+
+
+
+```
+# https://juejin.cn/post/6844904009841524750
+Pytorch中的vector-Jacobian product
+
+
+```
+
+
+
+### csc2541_2021
+
+
+
+```
+#　https://www.cs.toronto.edu/~rgrosse/courses/csc2541_2021/  
+	jax colab 代码质量很高
+
+```
+
+
 
 
 
