@@ -5311,7 +5311,7 @@ jacobian(exp_reducer, inputs)
 
 
 
-### a
+### Solving Optimization Problems with JAX
 
 
 
