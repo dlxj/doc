@@ -5322,6 +5322,18 @@ jacobian(exp_reducer, inputs)
 
 
 
+### you-don-t-know-jax
+
+
+
+```
+# https://colinraffel.com/blog/you-don-t-know-jax.html
+```
+
+
+
+
+
 
 
 ### 行列式
