@@ -1146,6 +1146,19 @@ print(sample(l, 5)) # 随机抽取5个元素
 
 
 
+```
+inputs = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+
+# Grab a single random input
+x = inputs[onp.random.choice(inputs.shape[0])]
+# Compute the target output
+y = np.bitwise_xor(*x)
+```
+
+
+
+
+
 
 
 ### range
