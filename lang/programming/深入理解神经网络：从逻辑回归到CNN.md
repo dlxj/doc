@@ -4540,7 +4540,10 @@ Softmax将多个神经元的输出，映射到（0,1）区间内,并且做了归
 Softmax中使用了指数，这样可以让大的值更大，让小的更小，增加了区分对比度，学习效率更高。第二个是因为softmax是连续可导的，消除了拐点，这个特性在机器学习的梯度下降法等地方非常必要。
 
 
+# https://zhuanlan.zhihu.com/p/48776056
+	也谈激活函数Sigmoid,Tanh,ReLu,softplus,softmax
 
+建议使用ReLU函数，但是要注意初始化和learning rate的设置；可以尝试使用Leaky ReLU或ELU函数；不建议使用tanh，尤其是sigmoid函数。
 
 ```
 
