@@ -356,6 +356,23 @@ where bind.appid in(1332,1325,1326,1327)
 
 
 
+## Info
+
+
+
+```
+mysql -h ip -uUserName -pPassWd
+	SHOW DATABASES;
+	use DBName;
+	show tables;
+	DESCRIBE DBName.TableName;
+	SHOW TABLE STATUS WHERE Name='TableName';  # 显示表的备注
+```
+
+
+
+
+
 ## IFNULL
 
 ```
@@ -1352,6 +1369,18 @@ mysqldump -h主机名 -P端口 -u用户名 -p密码 –database 数据库名 > �
 
 
 # 用户权限
+
+
+
+```mysql
+show grants for username; # 现在权限
+
+GRANT ALL PRIVILEGES ON `dbname`.* TO 'username'@'%' WITH GRANT OPTION;  
+	# 给他某库的所有权限
+
+```
+
+
 
 
 

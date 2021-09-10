@@ -422,6 +422,143 @@ using (StreamReader reader = new StreamReader(stream, Encoding.GetEncoding("gb23
 
 
 
+```C#
+namespace ksb_aiexam.Controllers
+{
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ksbaiexamController : ControllerBase
+    {
+        [HttpPost("gettest")]
+        public JsonResult gettest()
+        {
+
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            string prms = Request.Form["params"];
+
+            return new JsonResult(new { status = 200, msg = "success.", data = prms });
+        }
+    }
+}
+```
+
+
+
+
+
+```
+
+        public static void Main(string[] args)
+        {
+        
+        Stopwatch stopw = new Stopwatch();
+
+            stopw.Start();
+            
+            stopw.Stop();
+            Console.WriteLine(string.Format("加载完成,耗时{0}", stopw.Elapsed.TotalSeconds + "s"));
+
+            CreateHostBuilder(args).Build().Run();
+        
+        }
+        
+                public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+
+                    webBuilder.UseStartup<Startup>().ConfigureAppConfiguration(builder =>
+                    {
+                        builder.AddJsonFile("host.json");
+                    });
+                });
+                
+                
+                
+
+
+namespace xxx.Controllers.SmartSearch
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class smarsearchController : ControllerBase
+    {
+    
+            [HttpPost("search")]
+        public JsonResult search()
+        {
+
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            string prms = Request.Form["params"];
+
+
+            string typeSearch = null;
+            string strSearch = null;
+            string appList = null;
+
+            Dictionary<string, string> prmsJson = null;
+            if (prms == null || prms == "")
+            {
+                return new JsonResult(new
+                {
+                    status = 201,
+                    msg = "参数为空",
+                    data = new JArray()
+                });
+            }
+            else
+            {
+                try
+                {
+                    prmsJson = JsonConvert.DeserializeObject<Dictionary<string, string>>(prms);
+                    typeSearch = prmsJson["type"];
+                    strSearch = prmsJson["search"];
+
+                    appList = prmsJson["appList"];
+
+                    if (!"1,2,3,4".Contains(typeSearch))
+                    {
+                        return new JsonResult(new
+                        {
+                            status = 201,
+                            msg = "参数错误",
+                            data = new JArray()
+                        });
+                    }
+
+                    if (strSearch == "")
+                    {
+                        return new JsonResult(new
+                        {
+                            status = 201,
+                            msg = "参数为空",
+                            data = new JArray()
+                        });
+                    }
+
+                }
+                catch (Exception)
+                {
+                    return new JsonResult(new
+                    {
+                        status = 201,
+                        msg = "参数json 解析错误",
+                        data = new JArray()
+                    });
+                }
+            }
+    
+    }
+}
+```
+
+
+
+
+
 ```
  public static List<wordToken> Get(string url)
         {
@@ -559,9 +696,20 @@ string.Join(",", wmids.appids.Keys.ToList());
 
 
 
+## List
 
 
-## List 交集
+
+```c#
+static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b", "2401", "2906" }
+};
+```
+
+
+
+
+
+### List 交集
 
 
 
@@ -837,7 +985,7 @@ func 必须有返回值
 
 
 
-## 自动格工化
+## 自动格式化
 
 
 

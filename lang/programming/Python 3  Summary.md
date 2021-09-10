@@ -1977,6 +1977,16 @@ print(a)
 
 
 
+### Key With Max vaule
+
+
+
+```python
+k = max(Outlines, key=Outlines.get) # 拥有最大值的键
+```
+
+
+
 ### Max value
 
 ```python
