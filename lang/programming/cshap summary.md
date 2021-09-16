@@ -843,6 +843,13 @@ dic = dic.Where(p => p.Key == 1)
 
 
 
+```
+# 随机选择 (值是 kvpair)
+return dict.ElementAt(rand.Next(0, dict.Count)).Value;
+```
+
+
+
 
 
 ## Select
@@ -978,6 +985,30 @@ func 必须有返回值
                     func(jobj, contextJson);
                 }
 ```
+
+
+
+
+
+## blazor
+
+```
+# https://zhuanlan.zhihu.com/p/157582707
+	# 使用Blazor组件 - 创建一个音乐播放器
+```
+
+
+
+### 嵌套页面
+
+
+
+```
+# https://blog.csdn.net/weixin_46295080/article/details/107167429
+	# Blazor中的布局页面以及嵌套
+```
+
+
 
 
 

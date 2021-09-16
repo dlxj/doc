@@ -4820,6 +4820,25 @@ if __name__ == "__main__":
 
 
 
+### ftp
+
+
+
+```python
+@app.route('/iso', methods=['get'])
+def stream_ISO():
+    def generate():
+        path = 'static/LaoMaoTao.iso'
+        with open(path, 'rb') as fmp3:
+            data = fmp3.read(1024)
+            while data:
+                yield data
+                data = fmp3.read(1024)
+
+    bytea = generate()
+    return Response(bytea, mimetype="application/octet-stream")
+```
+
 
 
 

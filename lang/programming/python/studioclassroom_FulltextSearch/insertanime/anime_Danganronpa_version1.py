@@ -697,8 +697,8 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #tags = tags.split('\n')
                 t = tu[1]
                 begintime, endtime = parseSrtTime(t)
-                #bts = extractAudio(videopath, begintime, endtime)
-                bts = b''
+                bts = extractAudio(videopath, begintime, endtime)
+                #bts = b''
                 bts = psycopg2.Binary(bts)
                 #bts_video = extractVideo(videopath, begintime, endtime)
                 bts_video = b''

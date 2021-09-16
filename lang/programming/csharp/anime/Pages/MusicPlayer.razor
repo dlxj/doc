@@ -1,0 +1,32 @@
+﻿@namespace SoBrian.MVC.Components
+@inherits AntDesign.AntDomComponentBase
+
+<audio id="audio" preload="auto" src="@_currentSrc"></audio>
+<div>
+    <AntDesign.Row Justify="center" Align="middle">
+        <AntDesign.Col Span="4">
+            <p>@System.IO.Path.GetFileNameWithoutExtension(_currentSrc)</p>
+        </AntDesign.Col>
+        <AntDesign.Col Span="4">
+            <AntDesign.Space>
+                <AntDesign.SpaceItem>
+                    <AntDesign.Button Type="primary" Shape="circle" Icon="left" OnClick="OnLast" />
+                </AntDesign.SpaceItem>
+                <AntDesign.SpaceItem>
+                    <AntDesign.Button Type="primary" Shape="circle" Icon="@PlayPauseIcon" Size="large" OnClick="OnPlayPause" />
+                </AntDesign.SpaceItem>
+                <AntDesign.SpaceItem>
+                    <AntDesign.Button Type="primary" Shape="circle" Icon="right" OnClick="OnNext" />
+                </AntDesign.SpaceItem>
+            </AntDesign.Space>
+        </AntDesign.Col>
+        <AntDesign.Col Span="9">
+            <AntDesign.Slider Value="@_currentTimeSlide" OnAfterChange="OnSliderChange" />
+        </AntDesign.Col>
+        <AntDesign.Col Span="3">
+            <p>@($"{_currentTime.ToString("mm\\:ss")} / {_duration.ToString("mm\\:ss")}")</p>
+        </AntDesign.Col>
+    </AntDesign.Row>
+</div>
+
+
