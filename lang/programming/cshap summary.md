@@ -1032,6 +1032,144 @@ func 必须有返回值
 
 
 
+```
+
+# Bug test
+# https://github.com/ant-design-blazor/ant-design-blazor/issues/1912
+
+@page "/test"
+
+<div class="queryDiv">
+    <Select Mode="default"
+            DataSource="@jobTypeList"
+            @bind-Value="@jobType"
+            LabelName="@nameof(NameValueRecord<string, string>.Name)"
+            ValueName="@nameof(NameValueRecord<string, string>.Value)"
+            DefaultActiveFirstOption="true"
+            OnSelectedItemChanged="JobTypeChanged">
+    </Select>
+    <Select Mode="tags"
+            EnableSearch="true"
+            MaxTagCount="5"
+            TItem="string"
+            TItemValue="string"
+            @bind-Values="@queryModel.Area"
+            AllowClear="true">
+        <SelectOptions>
+            @if (AreaList?.Any() ?? false)
+            {
+                @foreach (TestNameSpace.AreaDTO area in AreaList)
+                {
+                    <SelectOption @key="@area.ObjectID" TItemValue="string" TItem="string" Value="@area.AreaID" Label="@area.AreaID" />
+                }
+            }
+        </SelectOptions>
+    </Select>
+</div>
+
+
+using Model.Record;
+using System.Collections.Generic;
+using System.Linq;
+using TestNameSpace;
+
+namespace Client.Pages
+{
+    public partial class Test
+    {
+        #region Field
+        private string jobType = "List1";
+        #endregion
+
+        #region Properity
+        private List<AreaDTO> RTAreaList { get; set; } = new();
+
+        private List<AreaDTO> NonRTAreaList { get; set; } = new();
+
+        readonly QueryModel queryModel = new();
+
+        private static readonly List<NameValueRecord<string, string>> jobTypeList = new()
+        {
+            new NameValueRecord<string, string>("List1", "List1"),
+            new NameValueRecord<string, string>("List2", "List2")
+        };
+        #endregion
+
+        #region DataSource
+        private List<AreaDTO> AreaList { get; set; } = new();
+        #endregion
+        protected override void OnInitialized()
+        {
+            InitAreaInfo();
+        }
+
+        private void InitAreaInfo()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                RTAreaList.Add(new AreaDTO { ObjectID = i, AreaID = i.ToString() });
+            }
+            for (int i = 7; i < 10; i++)
+            {
+                NonRTAreaList.Add(new AreaDTO { ObjectID = i, AreaID = i.ToString() });
+            }
+            AreaList = RTAreaList;
+        }
+
+        private void JobTypeChanged(NameValueRecord<string, string> item)
+        {
+            switch (item.Value)
+            {
+                case "List1":
+                    AreaList = RTAreaList;
+                    break;
+                case "List2":
+                    AreaList = NonRTAreaList;
+                    break;
+                default:
+                    break;
+            }
+            queryModel.area = string.Join(",", AreaList.Select(a => a.AreaID));
+            StateHasChanged();
+        }
+    }
+    
+}
+
+namespace TestNameSpace
+{
+    public class AreaDTO
+    {
+        /// <summary>
+        /// AREA_ID
+        /// </summary>
+        public string AreaID { get; set; }
+
+        /// <summary>
+        /// OBJECT_ID
+        /// </summary>
+        public long ObjectID { get; set; }
+    }
+
+    public class QueryModel
+    {
+        public IEnumerable<string> Area
+        {
+            get => string.IsNullOrWhiteSpace(area) ? null : area?.Split(",");
+            set => area = value is null ? null : string.Join(",", value.Where(v => !string.IsNullOrWhiteSpace(v)));
+        }
+        #region Field
+        public string area;
+        #endregion
+    }
+}
+
+```
+
+
+
+
+
 
 
 ## 自动格式化
