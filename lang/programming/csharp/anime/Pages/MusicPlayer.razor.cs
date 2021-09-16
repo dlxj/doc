@@ -1,21 +1,29 @@
 ﻿
+// https://zhuanlan.zhihu.com/p/157582707 
+
+
 
 using AntDesign;
 using AntDesign.JsInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using OneOf;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Timers;
 
-public partial class MusicPlayer : AntDomComponentBase
+
+namespace anime.music
 {
-    private bool _isPlaying = false;
-    private bool _canPlayFlag = false;
-    private string _currentSrc;
-    private List<string> _musicList = new List<string>
+
+    public partial class MusicPlayer : AntDomComponentBase
+    {
+        private bool _isPlaying = false;
+        private bool _canPlayFlag = false;
+        private string _currentSrc;
+        private List<string> _musicList = new List<string>
     {
         "music/周杰伦 - 兰亭序.mp3",
         "music/周杰伦 - 告白气球.mp3",
@@ -25,131 +33,133 @@ public partial class MusicPlayer : AntDomComponentBase
         "music/周杰伦 - 夜的第七章.mp3",
         "music/周杰伦 - 搁浅.mp3"
     };
-    private Timer _timer;
-    private double _currentTimeSlide = 0;
-    private TimeSpan _currentTime = new TimeSpan(0);
-    private TimeSpan _duration = new TimeSpan(0);
-    private string PlayPauseIcon { get => _isPlaying ? "pause" : "caret-right"; }
-    private Action _afterCanPlay;
-    [Inject]
-    private DomEventService DomEventService { get; set; }
+        private Timer _timer;
+        private double _currentTimeSlide = 0;
+        private TimeSpan _currentTime = new TimeSpan(0);
+        private TimeSpan _duration = new TimeSpan(0);
+        private string PlayPauseIcon { get => _isPlaying ? "pause" : "caret-right"; }
+        private Action _afterCanPlay;
+        [Inject]
+        private IDomEventListener DomEventListener { get; set; }
 
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        _currentSrc = _musicList[0];
-        _afterCanPlay = async () =>
+        protected override void OnInitialized()
         {
-            // do not use _isPlaying, this delegate will be triggered when user clicked play button
-            if (_canPlayFlag)
+            base.OnInitialized();
+
+            _currentSrc = _musicList[0];
+            _afterCanPlay = async () =>
             {
-                try
+                // do not use _isPlaying, this delegate will be triggered when user clicked play button
+                if (_canPlayFlag)
                 {
-                    await JsInvokeAsync("Music.play", "#audio", true);
-                    _canPlayFlag = false;
+                    try
+                    {
+                        await JsInvokeAsync("Music.play", "#audio", true);
+                        _canPlayFlag = false;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
                 }
-                catch (Exception ex)
-                {
-                }
+            };
+        }
+
+        protected override Task OnFirstAfterRenderAsync()
+        {
+
+
+            // cannot listen to dom events in OnInitialized while render-mode is ServerPrerendered
+            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "timeupdate", OnTimeUpdate);
+            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "canplay", OnCanPlay);
+            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "play", OnPlay);
+            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "pause", OnPause);
+            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "ended", OnEnd);
+            return base.OnFirstAfterRenderAsync();
+        }
+
+        #region Audio EventHandlers
+
+        private async void OnPlayPause(MouseEventArgs args)
+        {
+            try
+            {
+                await JsInvokeAsync("Music.play", "#audio", !_isPlaying);
             }
-        };
-    }
-
-    protected override Task OnFirstAfterRenderAsync()
-    {
-       
-
-        // cannot listen to dom events in OnInitialized while render-mode is ServerPrerendered
-        //DomEventService.AddEventListener<JsonElement>("#audio", "timeupdate", OnTimeUpdate);
-        //DomEventService.AddEventListener<JsonElement>("#audio", "canplay", OnCanPlay);
-        //DomEventService.AddEventListener<JsonElement>("#audio", "play", OnPlay);
-        //DomEventService.AddEventListener<JsonElement>("#audio", "pause", OnPause);
-        //DomEventService.AddEventListener<JsonElement>("#audio", "ended", OnEnd);
-        return base.OnFirstAfterRenderAsync();
-    }
-
-    #region Audio EventHandlers
-
-    private async void OnPlayPause(MouseEventArgs args)
-    {
-        try
-        {
-            await JsInvokeAsync("Music.play", "#audio", !_isPlaying);
+            catch (Exception ex)
+            {
+            }
         }
-        catch (Exception ex)
-        {
-        }
-    }
 
-    private async void OnCanPlay(JsonElement jsonElement)
-    {
-        try
+        private async void OnCanPlay(JsonElement jsonElement)
         {
+            try
+            {
+                string json = await JsInvokeAsync<string>("Music.getMusicTime", "#audio");
+                jsonElement = JsonDocument.Parse(json).RootElement;
+                _duration = TimeSpan.FromSeconds(jsonElement.GetProperty("duration").GetDouble());
+
+                _afterCanPlay();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void OnPlay(JsonElement jsonElement)
+        {
+            _isPlaying = true;
+        }
+
+        private async void OnLast(MouseEventArgs args)
+        {
+            _canPlayFlag = true;
+            int index = _musicList.IndexOf(_currentSrc);
+            index = index == 0 ? _musicList.Count - 1 : index - 1;
+            _currentSrc = _musicList[index];
+        }
+
+        private async void OnNext(MouseEventArgs args)
+        {
+            _canPlayFlag = true;
+            int index = _musicList.IndexOf(_currentSrc);
+            index = index == _musicList.Count - 1 ? 0 : index + 1;
+            _currentSrc = _musicList[index];
+        }
+
+        private void OnPause(JsonElement jsonElement)
+        {
+            _isPlaying = false;
+            StateHasChanged();
+        }
+
+        private void OnEnd(JsonElement jsonElement)
+        {
+            _isPlaying = false;
+            StateHasChanged();
+
+            OnNext(new MouseEventArgs());
+        }
+
+        private async void OnTimeUpdate(JsonElement jsonElement)
+        {
+            // do not use the timestamp from timeupdate event, which is the total time the audio has been working
+            // use the currentTime property from audio element
             string json = await JsInvokeAsync<string>("Music.getMusicTime", "#audio");
             jsonElement = JsonDocument.Parse(json).RootElement;
-            _duration = TimeSpan.FromSeconds(jsonElement.GetProperty("duration").GetDouble());
+            _currentTime = TimeSpan.FromSeconds(jsonElement.GetProperty("currentTime").GetDouble());
+            _currentTimeSlide = _currentTime / _duration * 100;
 
-            _afterCanPlay();
+            StateHasChanged();
         }
-        catch (Exception)
+
+        #endregion
+
+        private async void OnSliderChange(double value) // OneOf<double, (double, double)>
         {
+            //_currentTime = value.AsT0 * _duration / 100;
+            _currentTime = value * _duration / 100;
+            _currentTimeSlide = _currentTime / _duration * 100;
+            await JsInvokeAsync("Music.setMusicTime", "#audio", _currentTime.TotalSeconds);
         }
-    }
-
-    private void OnPlay(JsonElement jsonElement)
-    {
-        _isPlaying = true;
-    }
-
-    private async void OnLast(MouseEventArgs args)
-    {
-        _canPlayFlag = true;
-        int index = _musicList.IndexOf(_currentSrc);
-        index = index == 0 ? _musicList.Count - 1 : index - 1;
-        _currentSrc = _musicList[index];
-    }
-
-    private async void OnNext(MouseEventArgs args)
-    {
-        _canPlayFlag = true;
-        int index = _musicList.IndexOf(_currentSrc);
-        index = index == _musicList.Count - 1 ? 0 : index + 1;
-        _currentSrc = _musicList[index];
-    }
-
-    private void OnPause(JsonElement jsonElement)
-    {
-        _isPlaying = false;
-        StateHasChanged();
-    }
-
-    private void OnEnd(JsonElement jsonElement)
-    {
-        _isPlaying = false;
-        StateHasChanged();
-
-        OnNext(new MouseEventArgs());
-    }
-
-    private async void OnTimeUpdate(JsonElement jsonElement)
-    {
-        // do not use the timestamp from timeupdate event, which is the total time the audio has been working
-        // use the currentTime property from audio element
-        string json = await JsInvokeAsync<string>("Music.getMusicTime", "#audio");
-        jsonElement = JsonDocument.Parse(json).RootElement;
-        _currentTime = TimeSpan.FromSeconds(jsonElement.GetProperty("currentTime").GetDouble());
-        _currentTimeSlide = _currentTime / _duration * 100;
-
-        StateHasChanged();
-    }
-
-    #endregion
-
-    private async void OnSliderChange(OneOf<double, (double, double)> value)
-    {
-        _currentTime = value.AsT0 * _duration / 100;
-        _currentTimeSlide = _currentTime / _duration * 100;
-        await JsInvokeAsync("Music.setMusicTime", "#audio", _currentTime.TotalSeconds);
     }
 }
