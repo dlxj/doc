@@ -1,5 +1,5 @@
 ﻿
-// https://zhuanlan.zhihu.com/p/157582707 
+// https://zhuanlan.zhihu.com/p/157582707 GetMusicTime
 
 
 
@@ -24,15 +24,9 @@ namespace anime.music
         private bool _canPlayFlag = false;
         private string _currentSrc;
         private List<string> _musicList = new List<string>
-    {
-        "music/周杰伦 - 兰亭序.mp3",
-        "music/周杰伦 - 告白气球.mp3",
-        "music/周杰伦 - 听妈妈的话.mp3",
-        "music/周杰伦 - 园游会.mp3",
-        "music/周杰伦 - 夜曲.mp3",
-        "music/周杰伦 - 夜的第七章.mp3",
-        "music/周杰伦 - 搁浅.mp3"
-    };
+        {
+            "music/01.mp3",
+        };
         private Timer _timer;
         private double _currentTimeSlide = 0;
         private TimeSpan _currentTime = new TimeSpan(0);
@@ -47,21 +41,21 @@ namespace anime.music
             base.OnInitialized();
 
             _currentSrc = _musicList[0];
-            _afterCanPlay = async () =>
-            {
-                // do not use _isPlaying, this delegate will be triggered when user clicked play button
-                if (_canPlayFlag)
-                {
-                    try
-                    {
-                        await JsInvokeAsync("Music.play", "#audio", true);
-                        _canPlayFlag = false;
-                    }
-                    catch (Exception ex)
-                    {
-                    }
-                }
-            };
+            //_afterCanPlay = async () =>
+            //{
+            //    // do not use _isPlaying, this delegate will be triggered when user clicked play button
+            //    if (_canPlayFlag)
+            //    {
+            //        try
+            //        {
+            //            await JsInvokeAsync("Music.play", "#audio", true);
+            //            _canPlayFlag = false;
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //        }
+            //    }
+            //};
         }
 
         protected override Task OnFirstAfterRenderAsync()
@@ -69,11 +63,11 @@ namespace anime.music
 
 
             // cannot listen to dom events in OnInitialized while render-mode is ServerPrerendered
-            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "timeupdate", OnTimeUpdate);
-            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "canplay", OnCanPlay);
+            //DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "timeupdate", OnTimeUpdate);
+            //DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "canplay", OnCanPlay);
             DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "play", OnPlay);
-            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "pause", OnPause);
-            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "ended", OnEnd);
+            //DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "pause", OnPause);
+            //DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "ended", OnEnd);
             return base.OnFirstAfterRenderAsync();
         }
 

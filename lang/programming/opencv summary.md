@@ -1,3 +1,17 @@
+# 坐标系不要被坑了
+
+
+
+```c#
+Point p(x, y); //第几行第几列
+im.At(y, x) //第几列第几行
+Rect(X=y, Y=x) //第几列第几行
+// 注意这两个传参的顺序是不一样的
+int pixel = im.At<Byte>(y, x);
+```
+
+
+
 
 
 #  删除边缘的对象
@@ -165,6 +179,102 @@ if cv2.waitKey(0) & 0xff == 27:
 
 
 
+# 遍历像素
+
+
+
+```c#
+public Mat DeleteSmallComponents(Mat im)
+    {
+
+        // https://qiita.com/kaiyu_tech/items/a37fc929ac0f3328fea1
+
+        Cv2.BitwiseNot(im, im);  // 反色
+
+        var labels = new Mat();
+        var stats = new Mat();
+        var centroids = new Mat();
+        var count = Cv2.ConnectedComponentsWithStats(im, labels, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
+
+        var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+
+
+        var indexer = stats.GetGenericIndexer<int>();
+
+        var output = im.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+
+        // 遍历每一个像素
+        for (int x = 0; x < im.Rows; x++)
+        {
+            for (int y = 0; y < im.Cols; y++)
+            {
+
+                int label = labels.At<int>(x, y);
+
+                if (label == 0)
+                {
+                    // 是背景对象，跳过
+                    continue;
+                }
+
+                var area = indexer[label, (int)ConnectedComponentsTypes.Area];
+
+                var rect = new Rect
+                {
+                    X = indexer[label, (int)ConnectedComponentsTypes.Left],
+                    Y = indexer[label, (int)ConnectedComponentsTypes.Top],
+                    Width = indexer[label, (int)ConnectedComponentsTypes.Width],
+                    Height = indexer[label, (int)ConnectedComponentsTypes.Height]
+                };
+
+                // 所处的连通块面积过小则删除（变成背景色）
+                if (area < 20)
+                {
+                    im.At<Byte>(x, y) = 0;
+                }
+            }
+        }
+
+        // 遍历每一个连通块
+        for (int i = 0; i < indexes.Rows - 1; i++)
+        {
+            var index = indexes.Get<int>(i);
+
+            var area = indexer[index, (int)ConnectedComponentsTypes.Area];
+
+            var rect = new Rect
+            {
+                X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+            };
+
+            // 绘制矩形
+            if (area < 20)
+            {
+                output.Rectangle(rect, Scalar.Blue);
+            }
+            //else
+            //{
+            //    output.Rectangle(rect, Scalar.Red);
+            //}
+        }
+
+
+        Cv2.BitwiseNot(im, im);
+
+        return im;
+
+    }
+
+```
+
+
+
+
+
 # 反色
 
 ```python
@@ -213,6 +323,39 @@ img = cv2.bitwise_not(img)
 
 
 
+```
+
+
+
+# 压缩图片
+
+```c#
+        public static bool CompressImage(string path, string outPath)
+        {
+            try
+            {
+                Bitmap img = new Bitmap(path);
+
+                Bitmap newImg = new Bitmap(img.Width, img.Height);
+                Graphics g = Graphics.FromImage(newImg);
+
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                g.DrawImage(img, 0, 0, img.Width, img.Height);
+
+                newImg.Save(outPath, ImageFormat.Jpeg);
+                g.Dispose();
+                newImg.Dispose();
+                img.Dispose();
+            }
+            catch (Exception)
+            {
+                File.Copy(path, outPath);
+            }
+            return true;
+
+        }
 ```
 
 

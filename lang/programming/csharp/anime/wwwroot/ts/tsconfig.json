@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "es2015",
+    "outDir": "wwwroot/js"
+  },
+  "files": [ "main.ts" ],
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

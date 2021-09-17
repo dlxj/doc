@@ -995,6 +995,10 @@ func 必须有返回值
 ```
 # https://zhuanlan.zhihu.com/p/157582707
 	# 使用Blazor组件 - 创建一个音乐播放器
+    
+# https://zhuanlan.zhihu.com/p/367531004
+	# 通过 EmbededFileProvider 实现 Blazor 的静态文件访问
+
 ```
 
 
@@ -1183,6 +1187,16 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+
+# 图像
+
+
+
+```
+                Image img = Image.FromFile(distPath);
+                string showImgData = util.imgToBase64(img);
+                img.Dispose();
+```
 
 
 
