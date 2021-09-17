@@ -4,10 +4,10 @@
 
 ```c#
 Point p(x, y); //第几行第几列
-im.At(y, x) //第几列第几行
+im.At(x, y) //第几行第几列
 Rect(X=y, Y=x) //第几列第几行
 // 注意这两个传参的顺序是不一样的
-int pixel = im.At<Byte>(y, x);
+int pixel = im.At<Byte>(x, y);
 ```
 
 
