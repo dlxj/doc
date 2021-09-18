@@ -995,11 +995,29 @@ func 必须有返回值
 ```
 # https://zhuanlan.zhihu.com/p/157582707
 	# 使用Blazor组件 - 创建一个音乐播放器
-    
+# https://zhuanlan.zhihu.com/p/136802873
+	# 拖拽 .NET Blazor Development - Drag & Drop
+
 # https://zhuanlan.zhihu.com/p/367531004
 	# 通过 EmbededFileProvider 实现 Blazor 的静态文件访问
 
 ```
+
+
+
+```c#
+<MatButton TrailingIcon="favorite" @onclick="@(async () => await AddItemtoShoppingCart(@item))" Label="add"></MatButton>
+    
+@code{
+public async Task AddItemtoShoppingCart(FoodItem selectedItem)
+    {
+        var test = await JSRuntime.InvokeAsync<object>("blazorExtensions.WriteCookie", "cookieName", "cookieValue", "cookieExpiryDate");
+    }
+}
+
+```
+
+
 
 
 
