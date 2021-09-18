@@ -58,7 +58,7 @@ class Sample
         // https://www.geeksforgeeks.org/python-thresholding-techniques-using-opencv-set-1-simple-thresholding/
         using (Mat img_binary = new Mat())
         {
-            Cv2.Threshold(src, img_binary, 175, 255, ThresholdTypes.Binary); // 二值化
+            Cv2.Threshold(src, img_binary, 185, 255, ThresholdTypes.Binary); // 二值化
             return img_binary.Clone();
         }
     }
@@ -197,114 +197,262 @@ class Sample
     }
 
 
-    // 删除过小的非连通对象
+    // 删除过小的对象
     public Mat DeleteSmallComponents(Mat im)
     {
+
         // https://qiita.com/kaiyu_tech/items/a37fc929ac0f3328fea1
 
-        Mat outputLabels = new Mat();
-        Mat stats = new Mat();
-        Mat img_color = new Mat();
-        Mat centroids = new Mat();
+        Cv2.BitwiseNot(im, im);  // 反色
 
-        // 计算所有4 个方向的连通块
-        int numberofComponents = Cv2.ConnectedComponentsWithStats(im, outputLabels, stats, centroids, PixelConnectivity.Connectivity4, MatType.CV_32SC1);
+        var labels = new Mat();
+        var stats = new Mat();
+        var centroids = new Mat();
+        var count = Cv2.ConnectedComponentsWithStats(im, labels, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
 
         var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+
+
         var indexer = stats.GetGenericIndexer<int>();
 
+        var output = im.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+
+        // 遍历每一个像素
+        for (int x = 0; x < im.Rows; x++)
+        {
+            for (int y = 0; y < im.Cols; y++)
+            {
+
+                int label = labels.At<int>(x, y);
+
+                if (label == 0)
+                {
+                    // 是背景对象，跳过
+                    continue;
+                }
+
+                var area = indexer[label, (int)ConnectedComponentsTypes.Area];
+
+                var rect = new Rect
+                {
+                    X = indexer[label, (int)ConnectedComponentsTypes.Left],
+                    Y = indexer[label, (int)ConnectedComponentsTypes.Top],
+                    Width = indexer[label, (int)ConnectedComponentsTypes.Width],
+                    Height = indexer[label, (int)ConnectedComponentsTypes.Height]
+                };
+
+                // 所处的连通块面积过小则删除（变成背景色）
+                if (area < 20)
+                {
+                    im.At<Byte>(x, y) = 0;
+                }
+            }
+        }
+
+        // 遍历每一个连通块
         for (int i = 0; i < indexes.Rows - 1; i++)
         {
             var index = indexes.Get<int>(i);
 
             var area = indexer[index, (int)ConnectedComponentsTypes.Area];
 
+            var rect = new Rect
+            {
+                X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+            };
+
+            // 绘制矩形
+            if (area < 20)
+            {
+                output.Rectangle(rect, Scalar.Blue);
+            }
+            //else
+            //{
+            //    output.Rectangle(rect, Scalar.Red);
+            //}
+        }
+
+
+        Cv2.BitwiseNot(im, im);
+
+        return im;
+
+    }
+
+
+    // 去除黑边后的矩形区域
+
+    public Rect DeBoardRect(Mat t)
+    {
+
+        Sample sample = new Sample();
+
+        Mat im = sample.Binarize(t);  // 二值化
+        im = sample.DeleteBorderComponents(im);  // 删除边缘对象
+
+        im = sample.DeleteSmallComponents(im);  // 删除面积过小的像素点
+
+        //im = sample.Binarize(im);
+
+        // 遍历每一个像素
+        for (int x = 0; x < im.Rows; x++)
+        {
+            for (int y = 0; y < im.Cols; y++)
+            {
+                // Point p(x, y); 第几行第几列
+                // At(y, x) 第几行第几列
+                // Rect(X=y, Y=x) 第几列第几行
+                // 注意这两个传参的顺序是不一样的
+                int pixel = im.At<Byte>(y, x);
+
+                if (pixel == 255)  // 未反色前255 是白色
+                {
+                    //im.At<Byte>(y, x) = 135;  // 纯白全部变成一个特定的灰色
+
+                }
+            }
+        }
+
+        int X = 0;
+        // 从左向右移动，条件是这一整列的像素几乎都是0
+        for (int x = 0; x < im.Cols; x++)  // x 代表的是第几列
+        {
+            double count = 0;
+
+            for (int y = 0; y < im.Rows; y++)  // y 代表的是第几行
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一列有多少个非纯白像素点
+                }
+            }
+
+            if (count > 0)
+            {
+                X = x;
+                break;
+            }
 
         }
 
 
-            Vec3b[] colors = new Vec3b[numberofComponents + 1];
+        int X2 = im.Cols;
+        // 从右向左移动，条件是这一整列的像素几乎都是0
+        for (int x = im.Cols - 1; x >= 0; x--)  // x 代表的是第几列
+        {
+            double count = 0;
 
-        // 背景色
-        colors[0] = new Vec3b(0, 0, 0);
+            for (int y = 0; y < im.Rows; y++)  // y 代表的是第几行
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一列有多少个非0 像素点
+                }
+            }
 
-        //Random rand = new Random();
-        
+            if (count > 0.01)
+            {
+                X2 = x;
+                break;
+            }
 
-        //// 每个连通块随机分配一种不同的颜色
-        //for (int i = 1; i <= numberofComponents; i++)
-        //{
-        //    // 随机产生红绿蓝三个通道的颜色
-        //    Byte r = (Byte)(rand.Next(0, 32767) % 256);  // R
-        //    Byte g = (Byte)(rand.Next(0, 32767) % 256);  // G
-        //    Byte b = (Byte)(rand.Next(0, 32767) % 256);  // B
-
-        //    colors[i] = new Vec3b(r, g, b);
-        //}
-
-        ////Area threshold:
-        //int minArea = 25 * 25; // px
-
-
-        //// 面积过小的块用粉色标注
-        ////for (int i = 1; i <= numberofComponents; i++)
-        ////{
-
-        ////    int blobArea = stats.At<int>(i - 1);
-
-        ////    //apply the area filter:
-        ////    if (blobArea < minArea)
-        ////    {
-        ////        //filter blob below minimum area:
-        ////        //small regions are painted with (ridiculous) pink color
-        ////        colors[i - 1] = new Vec3b(248, 48, 213);  // cv::Vec3b(0, 0, 0);
-
-        ////    }
-        ////}
-
-        //for (int i = 0; i < indexes.Rows; i++)
-        //{
-        //    var index = indexes.Get<int>(i);
-
-        //    var blobArea = indexer[index, (int)ConnectedComponentsTypes.Area];
-
-        //    if (blobArea < minArea)
-        //    {
-        //        colors[i + 1] = new Vec3b(248, 48, 213);  // cv::Vec3b(0, 0, 0);
-        //    }
-        //}
+        }
 
 
+        int Y = 0;
+        // 从上向下移动，条件是这一整行的像素几乎都是0
+        for (int y = 0; y < im.Rows; y++)  // y 代表的是第几行
+        {
+            double count = 0;
 
-        //// 新建一张彩图
-        //Mat color_img = Mat.Zeros(im.Size(), MatType.CV_8UC3);
+            for (int x = 0; x < im.Cols; x++) // x 代表的是第几列
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一列有多少个非纯白像素点
+                }
+            }
 
-        //Mat cleaned = im.Clone();
-
-        //for (int x = 0; x < im.Rows; x++)
-        //{
-        //    for (int y = 0; y < im.Cols; y++)
-        //    {
-        //        int label = outputLabels.At<int>(x, y);
-        //        color_img.At<Vec3b>(x, y) = colors[label];
-
-        //        //if (colors[label] == new Vec3b(248, 48, 213))
-        //        //{
-        //        //    cleaned.At<Byte>(x, y) = 0;
-        //        //}
-
-        //    }
-        //}
-
-
-        //Cv2.ImShow("color", color_img);
-        ////Cv2.ImShow("clean", cleaned);
-        //Cv2.ImShow("origin", im);
-        //Cv2.WaitKey();
-
-        return im;
+            if (count > 0)
+            {
+                Y = y;
+                break;
+            }
+        }
 
 
+        int Y2 = im.Rows;
+        // 从下向上移动，条件是这一整行的像素几乎都是0
+        for (int y = im.Rows - 1; y >= 0; y--)  // y 代表的是第几行
+        {
+            double count = 0;
+
+            for (int x = 0; x < im.Cols; x++) // x 代表的是第几列
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一行有多少个非0 像素点
+                }
+            }
+
+            if (count > 0)
+            {
+                Y2 = y;
+                break;
+            }
+        }
+
+
+        // 宽度 = 有多少列 im.Cols
+        // 高度 = 有多少行 im.Rows
+        // x in im.Cols 是 第几列
+        // y in im.Rows 是 第几行
+
+        var rect = new Rect
+        {
+            X = X,
+            Y = Y,
+            Width = im.Cols - (X + (im.Cols - X2)),
+            Height = im.Rows - (Y + (im.Rows - Y2))
+        };
+
+        return rect;
     }
 
+
+    //  // rect 矩形区域以外全部变白
+    public Mat Whited(Mat t, Rect rect)
+    {
+        for (int x = 0; x < t.Cols; x++)  // x 第几列
+        { 
+            for (int y = 0; y < t.Rows; y++)  // y 第几行
+            {
+                bool whiteQ = true;
+
+                if (x >= rect.X && x <= rect.X + rect.Width)
+                {
+                    if ( y >= rect.Y && y<= rect.Y + rect.Height )
+                    {
+                        whiteQ = false;  // 矩形区域以内的像素保留
+                    }
+                }
+
+                if (whiteQ)
+                {
+                    t.At<Byte>(y, x) = 255;   // 矩形区域以外的像素变白
+                }
+
+            }
+        }
+
+        return t;
+    }
 }
