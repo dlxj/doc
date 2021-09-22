@@ -1309,6 +1309,22 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+### 表头
+
+```
+# https://blog.csdn.net/weixin_30333885/article/details/99901696
+	# winform ListView点击行表头，排序
+
+```
+
+
+
+
+
+
+
+
+
 ## 入口点
 
 
@@ -1416,4 +1432,13 @@ NotifyICon 控件，会显示一个图标在Windows 桌面右下角的工具栏�
 
 
 
+
+## 打开程序文件夹
+
+
+
+```
+            string path = Directory.GetCurrentDirectory();
+            System.Diagnostics.Process.Start("explorer.exe", path);
+```
 
