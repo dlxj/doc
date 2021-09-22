@@ -1241,3 +1241,179 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+# WinForm
+
+
+
+## 显示图片
+
+```c#
+# pictureBox    
+    	public void loadImage(string _imagePath)
+        {
+            if (_imagePath == "")
+            {
+                return;
+            }
+            this.imagePath = _imagePath;
+            if (this.img != null)
+            {
+                this.img.Dispose();
+            }
+            this.img = new Mat(this.imagePath);
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.Dispose();
+            }
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
+            File.Copy(_imagePath, dist);
+            this.pictureBox1.Image = Image.FromFile(dist);
+        }
+```
+
+
+
+```c#
+# OpenCvSharp.Mat
+
+        void showImage()
+        {
+            using (var memoryStream = img.ToMemoryStream())
+            {
+
+                var image = Image.FromStream(memoryStream);
+                this.pictureBox1.Image = image;
+            }
+        }
+
+```
+
+
+
+
+
+## 列表
+
+
+
+```c#
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            loadImage(listView1.SelectedItems[0].Tag.ToString());
+        }
+```
+
+
+
+## 入口点
+
+
+
+```c#
+        static void Main()
+        {
+            string erroLogPath = Directory.GetCurrentDirectory() + "/error.log";
+
+            File.AppendAllText(erroLogPath, $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\r\nstart:启动\r\n---------------------------------\r\n\r\n");
+
+            ThreadPool.SetMinThreads(20, 20);
+            ThreadPool.SetMaxThreads(20, 20);
+
+
+
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+            //处理UI线程异常
+            Application.ThreadException += new ThreadExceptionEventHandler((o, teea) =>
+            {
+                File.AppendAllText(erroLogPath, $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\r\nThreadException:\r\n{teea.Exception.Message},{teea.Exception.StackTrace}\r\n---------------------------------\r\n\r\n");
+            });
+
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler((o, ueea) =>
+            {
+                var err = ueea.ExceptionObject as Exception;
+                File.AppendAllText(erroLogPath, $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\r\nUnhandledException:\r\n{err.Message},{err.StackTrace}\r\n---------------------------------\r\n\r\n");
+            });
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+        }
+```
+
+
+
+```
+# 窗体初始化完成回调
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            new ws(this);  // websockes 连接初始化
+        }
+        
+        // 改这里，窗体外观也会跟着变
+        private void InitializeComponent()
+        {
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(0, 0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form1";
+            this.ShowInTaskbar = false;
+            this.Text = "ocr";
+            this.TransparencyKey = System.Drawing.SystemColors.Window;
+            this.Load += new System.EventHandler(this.Form1_Load); // 窗体完成后回调，做其他初始化
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.ResumeLayout(false);
+        }
+```
+
+
+
+## 添加资源
+
+
+
+```
+# 先生成资源文件
+Open the Form1, right click Properties, look for the Localizable property, turn it to true then to False. You should see a new Form1.resx file being generated.
+
+右键点击项目，选择属性
+点击左侧的“应用程序”，选择“图标和清单”，在资源里面添加一个图标文件（*.ico或者*.icon）
+
+
+
+
+
+```
+
+
+
+
+
+## 拖盘图标
+
+
+
+```
+NotifyICon 控件，会显示一个图标在Windows 桌面右下角的工具栏里，图标可以设置右键菜单
+
+重要：右击NotifyICon 属性，有一个icon，选一个图标，否则拖盘图标不会显示出来 
+
+先往窗体上拖一个NotifyICon（这是拖盘图标），再拖一个ContextMenuStrip（这里右键菜单），右点NotifyICon 属性，把它的ContextMenuStrip 设成刚刚拖进来的ContextMenuStrip
+
+在ContextMenuStrip 的Items 添加item ，这就是菜单项
+
+```
+
+
+
+
+
