@@ -3662,6 +3662,56 @@ return Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(f)(ts, i) for i in ra
 
 ## JSON
 
+
+
+### dict、list和string 互转  
+
+
+
+```python
+import json
+import decimal
+import datetime
+import numpy as np
+
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return float(o)
+        elif isinstance(o, datetime.datetime):
+            return str(o)
+        elif isinstance(o, (np.int_, np.intc, np.intp, np.int8,
+                            np.int16, np.int32, np.int64, np.uint8,
+                            np.uint16, np.uint32, np.uint64)):
+
+            return int(o)
+        super(DecimalEncoder, self).default(o)
+
+def save_json(filename, dics):
+    with open(filename, 'w', encoding='utf-8') as fp:
+        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
+        fp.close()
+
+def load_json(filename):
+    with open(filename, encoding='utf-8') as fp:
+        js = json.load(fp)
+        fp.close()
+        return js
+
+# convert string to json 
+def parse(s):
+    return json.loads(s, strict=False )
+
+# convert dict to string
+def string(d):
+    return json.dumps(d, cls=DecimalEncoder, ensure_ascii=False)
+```
+
+
+
+
+
 ```python
 # encoding=utf-8
 import jieba

@@ -18,6 +18,22 @@
 
 
 
+## LINQPad
+
+```
+LINQPad的优点
+快速POC
+POC是指概念验证，比如开发过程中遇到以下这类情况：
+
+Dictionary使用.Add()添加相同的key，是否会报错？（会）
+数组形式的JToken，转字符串数组string[]应该用强转？还是用.ToArray<string>()？还是.ToObject<string[]>()？
+ASP.NET Core获取远程IPv6地址，使用Connection.RemoteIpAddress是否可行？（可行）
+Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时、内存分配各相差多少倍？（…）
+面对这些问题，下意识地会想必须要做实验——不然到了测试时甚至生产环境时才暴露出来就太迟了。而做实验就要写代码——而这个做实验的过程，就叫POC——Proof of Concept。
+```
+
+
+
 
 
 
@@ -688,7 +704,24 @@ namespace xxx.Controllers.SmartSearch
 
 
 
-## String join
+## String
+
+
+
+### 拼接
+
+
+
+```c#
+# {} 里面的是动态计算
+string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
+```
+
+
+
+
+
+### String join
 
 ```
 string.Join(",", wmids.appids.Keys.ToList());
@@ -1233,6 +1266,95 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+# FFMPEG
+
+
+
+```c#
+            /*
+            out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
+            out_text = out_bytes.decode('utf-8')
+
+            https://gist.github.com/bobend/ae229860d4f69c563c3555e3ccfc190d
+				# LINQPad
+
+            c# ffmpeg stream
+
+			https://stackoverflow.com/questions/15758114/using-ffmpeg-in-c-sharp-project
+		
+
+            https://github.com/rosenbjerg/FFMpegCore
+                // FFMpegCore
+
+            */
+
+
+            //ffmpeg.StartInfo.UseShellExecute = false;
+            //ffmpeg.StartInfo.RedirectStandardOutput = true;
+            //ffmpeg.StartInfo.FileName = Server.MapPath("~/Video_Clips/ffmpeg.exe");
+
+            //ffmpeg.StartInfo.Arguments = String.Format(@"-i ""{0}"" -threads 8 -f webm -aspect 16:9 -vcodec libvpx -deinterlace -g 120 -level 216 -profile 0 -qmax 42 -qmin 10 -rc_buf_aggressivity 0.95 -vb 2M -acodec libvorbis -aq 90 -ac 2 ""{1}""",
+            //										   Server.MapPath("~/Video_Clips/" + sNameWithoutExtension + ".wmv"),
+            //										   Server.MapPath("~/Video_Clips/" + sNameWithoutExtension + ".webm"));
+            //ffmpeg.Start();
+
+            //ffmpeg.WaitForExit();
+
+            var startInfo = new ProcessStartInfo('path/to/ffmpeg');
+            startInfo.RedirectStandardInput = true;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.UseShellExecute = false;
+
+            var argumentBuilder = new List<string>();
+            argumentBuilder.Add("-loglevel panic"); // this makes sure only data is sent to stdout
+            argumentBuilder.Add("-i pipe:.mp3"); //this sets the input to stdin
+
+            // the target audio specs are as follows
+            argumentBuilder.Add($"-f wav");
+            argumentBuilder.Add("-ac 1");
+            argumentBuilder.Add($"-ar 44100");
+            argumentBuilder.Add("pipe:1"); // this sets the output to stdout
+
+            startInfo.Arguments = String.Join(" ", argumentBuilder.ToArray());
+
+            var _ffMpegProcess = new Process();
+            _ffMpegProcess.StartInfo = startInfo;
+
+            _ffMpegProcess.Start();
+
+            _ffMpegProcess.WaitForExit();
+
+
+            // _ffMpegProcess.StandardInput.BaseStream.Write(byteBuffer);
+            // We have to write the data to the FFMpeg input channel using Standard Input, we can do it like so:
+            // 写入它的输入流
+
+            while (true)
+            {
+                var bytes = new byte[1024];
+
+
+                var result = await _ffMpegProcess.StandardOutput.BaseStream.ReadAsync(bytes);
+
+                if (result == 0)
+                {
+                    // no data retrieved
+                }
+                else
+                {
+                    // do something with the data
+                }
+            }
+```
+
+
+
+
+
+
+
+
+
 ```
                 Image img = Image.FromFile(distPath);
                 string showImgData = util.imgToBase64(img);
@@ -1242,6 +1364,19 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 # WinForm
+
+
+
+## Path
+
+
+
+```c#
+string path = $"{Directory.GetCurrentDirectory()}"; // exe 文件目录
+
+```
+
+
 
 
 
@@ -1273,8 +1408,12 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+### 显示内存流的图片
+
+
+
 ```c#
-# OpenCvSharp.Mat
+#  OpenCvSharp.Mat
 
         void showImage()
         {
@@ -1286,6 +1425,28 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
             }
         }
 
+```
+
+
+
+## 保存图片
+
+
+
+```c#
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
+            
+            //保存到临时目录
+            this.img_des.SaveImage(dist);
+
+            this.img_des.Dispose();
+            this.img_des = null;
+
+            this.pictureBox2.Image.Dispose();
+            Thread.Sleep(100);
+            File.Delete(this.imagePath);
+            Thread.Sleep(100);
+            File.Move(dist, this.imagePath);
 ```
 
 
@@ -1441,4 +1602,30 @@ NotifyICon 控件，会显示一个图标在Windows 桌面右下角的工具栏�
             string path = Directory.GetCurrentDirectory();
             System.Diagnostics.Process.Start("explorer.exe", path);
 ```
+
+
+
+## 保存文件
+
+
+
+```
+
+json = (JObject)JsonConvert.DeserializeObject(result);  // str to json
+string strj = json.ToString();  // json to str
+
+
+
+private void btnSave_Click(object sender, EventArgs e)
+{
+    string result = txtWrite.Text.Trim(); //输入文本
+    StreamWriter sw = File.AppendText(@"D:\\test.txt"); //保存到指定路径
+    sw.Write(result);
+    sw.Flush();
+    sw.Close();
+}
+
+```
+
+
 
