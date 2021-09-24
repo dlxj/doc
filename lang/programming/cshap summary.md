@@ -52,6 +52,10 @@ Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时�
 
 
 
+Newtonsoft.Json
+
+
+
 ```
 var strtk = Newtonsoft.Json.JsonConvert.SerializeObject(tk);
 
@@ -1354,6 +1358,7 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 ```
+# vs2019 用NuGet 安装MedallionShell
 # ffmpeg-process-pining-MedallionShell.linq
 
 <Query Kind="Program">
@@ -1405,6 +1410,128 @@ async Task ReadError(ProcessStreamReader reader, CancellationToken token) {
                 string showImgData = util.imgToBase64(img);
                 img.Dispose();
 ```
+
+
+
+# 进程、异步、流
+
+
+
+```
+The much easier way would be to do just use cmd as your process.
+
+Process test = new Process();
+test.StartInfo.FileName = "cmd";
+test.StartInfo.Arguments = @"/C ""echo testing | grep test""";
+test.Start();
+You can capture the output or whatever else you want like any normal process then. This was just a quick test I built, but it works outputting testing to the console so I would expect this would work for anything else you plan on doing with the piping. If you want the command to stay open then use /K instead of /C and the window will not close once the process finishes.
+```
+
+
+
+
+
+```c#
+# https://github.com/steaks/codeducky/blob/master/blogs/Processes.md
+            https://gist.github.com/bobend/ae229860d4f69c563c3555e3ccfc190d
+				# LINQPad
+wrapping much of this complexity into a new .NET library: MedallionShell. With MedallionShell, this kind of task is a one-liner:
+
+var output = Command.Run(pathToExecutable, arg1, ...).Result.StandardOutput;
+More on that later, though. For now, let's get back to Process. As a concrete example, I recently wanted my application to launch an instance of NodeJS from .NET to run the less css compiler. I needed to write to Node's standard input while capturing the standard output text, standard error text, and exit code.
+
+An initial attempt
+Here's the code I started out with:
+
+// not-quite-functional code
+using (var process = new Process
+	{
+		StartInfo = 
+		{
+			FileName = /* Path to node */,
+			// in my case, these were some file paths and options
+			Arguments = string.Join(" ", new[] { arg1, arg2, ... }),
+			CreateNoWindow = true,
+			RedirectStandardError = true,
+			RedirectStandardInput = true,
+			RedirectStandardOutput = true,
+			UseShellExecute = true,
+		}
+	}
+)
+{
+	process.Start();
+	process.StandardInput.Write(/* input data */);
+	// signals to the process that there's no more input coming
+	process.StandardInput.Close();
+	var outText = process.StandardOutput.ReadToEnd();
+	var errText = process.StandardError.ReadToEnd();
+	process.WaitForExit();
+	var exitCode = process.ExitCode;
+}	
+This code is quite verbose; unfortunately it's quite buggy as well.
+
+Dealing with process arguments
+One of the first problems we notice with this code is that the Arguments property on ProcessStartInfo is just a string. If the arguments we are passing are dynamic, we'll need to provide the appropriate escape logic before concatenating to prevent things like spaces in file paths from breaking. Escaping windows command line arguments is oddly complex; luckily, the code needed to implement it is well documented in this StackOverflow post. Thus, the first change we'll make is to add escaping logic:
+
+...
+// Escape() implementation based on the SO post
+Arguments = string.Join(" ", new[] { arg1, arg2, ... }.Select(Escape)),
+...
+Dealing with deadlocks
+A less-obvious problem is that of deadlocking. All three process streams (in, out, and error) are finite in how much content they can buffer. If the internal buffer fills up, then whoever is writing to the stream will block. In this code, for example, we don't read from the out and error streams until after the process has exited. That means that we could find ourselves in a case where Node exhausts it's error buffer. In that case, Node would block on writing to standard error, while our .NET app is blocked reading to the end of standard out. Thus, we've found ourselves in a deadlock!
+
+The Process API provides a method that seems designed for dealing with this: BeginOutput/ErrorReadLine. With this method, you can subscribe to asynchronous "DataReceived" events instead of reading from the output streams directly. That way, you can listen to both streams at once. Unfortunately, this method provides no way to know when the last bit of data has been received. Because everything is asynchronous, it is possible (and I have observed this) for events to fire after WaitForExit() has returned.
+
+Luckily, we can provide our own workaround using Tasks to asynchronously read from the streams while we wait for Node to exit:
+
+...
+var outTask = process.StandardOutput.ReadToEndAsync();
+var errTask = process.StandardError.ReadToEndAsync();
+process.WaitForExit();
+var outText = outTask.Result;
+var errText = errTask.Result;
+...
+Adding a timeout
+Another issue we'd like to handle is that of a process hanging. Rather than waiting forever for the process to exit, our code would be more robust if we enforced a timeout instead:
+
+...
+if (!process.WaitForExit(TimeoutMillis))
+{
+	process.Kill();
+	throw new TimeoutException(...);
+}
+...
+Async all the way!
+While we are now using async IO to read from the process streams, we are still blocking one .NET thread while waiting for the process to complete. We can further improve efficiency here by going fully async:
+
+// now inside an async method
+using (var process = new Process
+	{
+		...
+		EnableRaisingEvents = true,
+		...
+	}
+)
+{
+	...	
+	var processExitedSource = new TaskCompletionSource();
+	process.Exited += (o, e) => processExitedSource.SetResult(true);
+	
+	var exitOrTimeout = Task.WhenAny(processExitedSource.Task, Task.Delay(Timeout));
+	if (await exitOrTimeout.ConfigureAwait(false) != processExitedSource.Task)
+	{
+		process.Kill();
+		throw new TimeoutException(...);
+	}
+	...
+}
+Adapting to larger data volumes
+Another question that might come up when trying to generalize this approach is that of data volume. If we are piping a large amount of data through the process, we'll likely want to replace the convenient ReadToEndAsync() calls with async read loops that process each piece of data as it comes in.				
+
+```
+
+
 
 
 
@@ -1650,17 +1777,48 @@ NotifyICon 控件，会显示一个图标在Windows 桌面右下角的工具栏�
 
 
 
-## 保存文件
+## 目录
 
 
 
 ```
+当前目录
 
+stringpath= Environment.CurrentDirectory;
+
+上级目录
+
+string path = new DirectoryInfo("../").FullName;
+
+上上级目录
+
+string path = new DirectoryInfo("../../").FullName;
+
+```
+
+
+
+
+
+## 文件读写
+
+
+
+```
+# 写文件
+File.WriteAllText(@"xx\xx\", strj, new System.Text.UTF8Encoding(false));
+# 读文件
+File.ReadAllText(@"xx\xx", new System.Text.UTF8Encoding(false));  // utf8 无BOM
+```
+
+
+
+```
+# string、json 互转
 json = (JObject)JsonConvert.DeserializeObject(result);  // str to json
 string strj = json.ToString();  // json to str
 
-
-
+# 用流来读写
 private void btnSave_Click(object sender, EventArgs e)
 {
     string result = txtWrite.Text.Trim(); //输入文本
