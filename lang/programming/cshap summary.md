@@ -1349,6 +1349,51 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+### LINQPad
+
+
+
+```
+# ffmpeg-process-pining-MedallionShell.linq
+
+<Query Kind="Program">
+  <NuGetReference>MedallionShell</NuGetReference>
+  <Namespace>System.Threading.Tasks</Namespace>
+  <Namespace>Medallion.Shell</Namespace>
+  <Namespace>Medallion.Shell.Streams</Namespace>
+</Query>
+
+DumpContainer dc;
+async Task Main()
+{	var input = @"D:\Temp\fieldtest.mxf".Dump("input file");
+	var output = @"D:\Temp\out43.mp4".Dump("output file");
+	var cmdPath =  @"D:\Temp\ffmpeg.exe"; 
+	var args = "-i pipe:0 -c:v libx264 -b:v 2600k -c:a aac -b:a 128k -f mp4 -movflags frag_keyframe+empty_moov -y pipe:1";	
+	$"{cmdPath} {args}".Dump("cmd line");
+	dc = new DumpContainer().Dump("ffmpeg standard error out");
+	
+	using (var inputStream = File.OpenRead(input))
+	using (var outputStream = File.OpenWrite(output))
+	using (var cmd = Command.Run(cmdPath, options: o => o.StartInfo(i => i.Arguments = args)))
+	{		
+		var inputTask = cmd.StandardInput.PipeFromAsync(inputStream);
+		var outputTask = cmd.StandardOutput.PipeToAsync(outputStream);
+		var cs = new CancellationTokenSource();	
+		var logTask = ReadError(cmd.StandardError, cs.Token);			
+		await inputTask;
+		await outputTask;
+		cs.Cancel();
+		await logTask;
+	}
+}
+
+async Task ReadError(ProcessStreamReader reader, CancellationToken token) {
+	while (!token.IsCancellationRequested)
+		dc.Content += $"{await Task<string>.Run(reader.ReadLineAsync, token)}{Environment.NewLine}";
+	
+}
+```
+
 
 
 
