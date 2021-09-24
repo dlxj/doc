@@ -733,6 +733,26 @@ string.Join(",", wmids.appids.Keys.ToList());
 
 
 
+### UTF8
+
+```c#
+# https://github.com/madelson/MedallionShell/blob/master/SampleCommand/Program.cs
+
+var encoding = args.Contains("--utf8") ? new UTF8Encoding(encoderShouldEmitUTF8Identifier: false)
+                        : args.Contains("--utf162") ? new UnicodeEncoding(bigEndian: false, byteOrderMark: false)
+                        : default(Encoding);
+                    if (encoding != null)
+                    {
+                        Console.InputEncoding = Console.OutputEncoding = encoding;
+                    }
+```
+
+
+
+
+
+
+
 ## List
 
 
@@ -1357,6 +1377,56 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+```C#
+            await Command.Run(
+                executable: "PING.exe",
+                arguments: new object[] { "127.0.0.1", "/t" },
+                options: o => o.Timeout(TimeSpan.FromSeconds(1))
+             )
+            .RedirectTo(new FileInfo(@"C:\Temp\shellTestOuput.txt"))
+            .Task;
+# Timeout 异常需要处理
+```
+
+
+
+```c#
+# https://github.com/madelson/MedallionShell/issues/80
+	var command = Command.Run(
+                  executable: "cmd.exe",
+                  arguments: new[] { "/c", "ping", "127.0.0.1", "/t" },
+                  options: o => { } // no timeout
+        )
+        .RedirectTo(new FileInfo(@"C:\Temp\shellTestOuput.txt"));
+            // manually set up a timeout with graceful shutdown
+            await Task.Delay(TimeSpan.FromSeconds(1))
+               .ContinueWith(_ =>
+               {
+                   // 尝试给目标进程发送 CTRL+C 命令，让它自动退出终止自身进程
+                   if (!command.TrySignalAsync(CommandSignal.ControlC).Result
+                       || !command.Task.Wait(TimeSpan.FromSeconds(1)))
+                   {
+                       // only resort to kill if sending the signal fails (it shouldn't) or if the command doesn't
+                       // promptly exit after the signal is sent
+                       command.Kill();  // 超时以后还没有退出，则强行Kill 掉
+                   }
+               });
+```
+
+
+
+
+
+```
+# vs2019 用NuGet 安装MedallionShell
+Command.Run("/path/to/bash", "-c", $"/usr/local/bin/youtube-dl --no-progress {cleanURL}");
+
+```
+
+
+
+
+
 ```
 # vs2019 用NuGet 安装MedallionShell
 # ffmpeg-process-pining-MedallionShell.linq
@@ -1530,6 +1600,23 @@ Adapting to larger data volumes
 Another question that might come up when trying to generalize this approach is that of data volume. If we are piping a large amount of data through the process, we'll likely want to replace the convenient ReadToEndAsync() calls with async read loops that process each piece of data as it comes in.				
 
 ```
+
+
+
+# OS 兼容
+
+
+
+```c#
+# https://github.com/madelson/MedallionShell/blob/master/SampleCommand/PlatformCompatibilityTests.cs
+
+public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+            ? @"C:\Program Files\dotnet\dotnet.exe"
+            : "/usr/bin/dotnet";
+            
+```
+
+
 
 
 
