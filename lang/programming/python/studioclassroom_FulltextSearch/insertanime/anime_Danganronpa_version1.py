@@ -767,7 +767,7 @@ if __name__ == "__main__":
     host = '209.141.34.77'
     port = 5432
 
-    createAnimeDB(host, port)
+    #createAnimeDB(host, port)
 
 
 
