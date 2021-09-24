@@ -1294,6 +1294,32 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+```
+# Nuget 安装 MedallionShell
+            string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
+            string path = new DirectoryInfo("../").FullName;  // 上级目录
+
+            string fname = @"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv";
+            string frtname = $"{ecxutePath}/out.srt";
+            var ffmpegExe = @"E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe";
+            var ffmpegArgs = new List<string>() { "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname };
+
+            var outlog = $"{ecxutePath}/outlog.txt";
+
+            var command = Command.Run(ffmpegExe, ffmpegArgs); // 执行命令
+
+            using (StreamWriter sw = File.AppendText(outlog)) // 写入日志
+            {
+                sw.WriteLine($"Exit code: {command.Result.ExitCode}");
+                sw.WriteLine($"Stdout: {command.Result.StandardOutput}");
+                sw.WriteLine($"Stderr: {command.Result.StandardError}");
+            }
+```
+
+
+
+
+
 ```c#
             /*
             out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
@@ -1411,6 +1437,54 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
                        command.Kill();  // 超时以后还没有退出，则强行Kill 掉
                    }
                });
+```
+
+
+
+```c#
+void Main()
+{
+	var sc = @"C:\Users\...\MedallionShell\SampleCommand\bin\Debug\net46\SampleCommand.exe";
+	var process = new Process { StartInfo = { FileName = sc, RedirectStandardOutput = true, RedirectStandardInput = true, UseShellExecute = false, CreateNoWindow = true } };
+	process.Start();
+	try
+	{
+		var standardOutput = (FileStream)process.StandardOutput.BaseStream;
+		var newHandle = ReOpenFile(standardOutput.SafeFileHandle.DangerousGetHandle(), FileAccess.Read, FileShare.Write, ((FileAttributes)0x40000000).Dump());
+		newHandle.Dump();
+		Marshal.GetLastWin32Error().Dump();
+		var newSafeHandle = new SafeFileHandle(newHandle, ownsHandle: true);
+		var stream = new FileStream(newSafeHandle, FileAccess.Read, 1024, isAsync: true);
+	}
+	finally {
+		process.Kill();
+	}
+}
+
+[DllImport("kernel32.dll", SetLastError = true)]
+public static extern IntPtr ReOpenFile(IntPtr originalFile, FileAccess dwDesiredAccess, FileShare dwShareMode, FileAttributes dwFlagsAndAttributes);
+```
+
+
+
+```c#
+# 原命令
+c:\tmp\magick.exe c:\tmp\a.jpg -depth 8 ppm:- | c:\tmp\jpeg-recompress.exe --ppm - c:\tmp\b.jpg
+
+# MedallionShell 实现
+string magickExe = @"c:\tmp\magick.exe";
+string jpegRecompressExe = @"c:\tmp\jpeg-recompress.exe";
+string logFile = @"c:\tmp\log.txt";
+var magickArgs = new List<string>() { @"c:\tmp\a.jpg", "-depth", "8", "ppm:-" };
+var jpegRecompressArgs = new List<string>() { "--ppm", "-", @"c:\tmp\b.jpg" };
+
+var command = Command.Run(magickExe, magickArgs).PipeTo(Command.Run(jpegRecompressExe, jpegRecompressArgs));
+using (StreamWriter sw = File.AppendText(logFile))
+{
+  sw.WriteLine($"Exit code: {command.Result.ExitCode}");
+  sw.WriteLine($"Stdout: {command.Result.StandardOutput}");
+  sw.WriteLine($"Stderr: {command.Result.StandardError}");
+}
 ```
 
 
