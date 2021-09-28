@@ -1867,7 +1867,6 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
 
 
 ```c#
-
         public static string unhana_remove(string s)
         {
             return Regex.Replace(s, @"[^\u3040-\u309F^\u30A0-\u30FF]", "");
@@ -1893,17 +1892,6 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
             end = end.Replace(',', '.');
 
             return new Tuple<string, string>(begin, end);
-        }
-
-        public static bool TestConnection(string connectionString)
-        {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
-                if (conn.State == System.Data.ConnectionState.Open)
-                    return true;
-                else return false;
-            }
         }
 
         public static Byte[] extractAudio(string ffmpegExe, string videopath, string begintime, string endtime)
@@ -1944,21 +1932,132 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
             return bts;
         }
 
-        void  test2()
+        public static void createAnimeDB(string host, string port)
+        {
+            using (var conn = new NpgsqlConnection($"Server={host};Port={port};Database=postgres;User Id=postgres;Password=echodict.com;"))
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("DROP DATABASE IF EXISTS anime;", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                using (var cmd = new NpgsqlCommand(@"CREATE DATABASE anime 
+                        WITH OWNER = postgres 
+                        ENCODING = 'UTF8' 
+                        TABLESPACE = pg_default 
+                        CONNECTION LIMIT = -1 
+                        TEMPLATE template0; ", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+
+
+                conn.Close();
+
+            }
+
+            using (var conn = new NpgsqlConnection($"Server={host};Port={port};Database=anime;User Id=postgres;Password=echodict.com;"))
+            {
+                conn.Open();
+
+
+
+                using (var cmd = new NpgsqlCommand("DROP TABLE IF EXISTS anime;", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                using (var cmd = new NpgsqlCommand(@"create table anime( 
+                        id integer primary key generated always as identity, 
+                        name text, 
+                        jp text, 
+                        zh text DEFAULT '', 
+                        en text DEFAULT '', 
+                        type text, 
+                        time text, 
+                        jp_mecab text, 
+                        v_jp  tsvector, 
+                        v_zh  tsvector, 
+                        v_en  tsvector, 
+                        videoname text, 
+                        seasion text DEFAULT '', 
+                        audio bytea, 
+                        video bytea 
+                    ); ", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+
+                using (var cmd = new NpgsqlCommand(@"CREATE extension pgroonga;
+                        CREATE INDEX pgroonga_jp_index ON anime USING pgroonga(jp);
+                        CREATE INDEX pgroonga_jpmecab_index ON anime USING pgroonga (jp_mecab);
+                        CREATE extension pg_jieba;
+                        CREATE INDEX animename_index ON anime (name);
+                        CREATE INDEX videoname_index ON anime (videoname);
+                    ", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                // @禁止转义符内部用两个双引"" 表示单个双引，否则出现语法错误 
+                using (var cmd = new NpgsqlCommand(@"
+CREATE OR REPLACE FUNCTION JPQ (TEXT) RETURNS INT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+	s TEXT;
+BEGIN
+  FOREACH s IN ARRAY string_to_array($1, '|')
+  LOOP
+    
+		FOREACH js IN ARRAY pgroonga_tokenize(s, 'tokenizer', 'TokenMecab(""use_base_form"", true, ""include_reading"", true)')
+
+        LOOP
+
+            reading = (js-> 'metadata'->> 'reading');
+                    IF reading IS NULL THEN
+                            RETURN 0;
+                    END IF;
+
+                    END LOOP;
+                    END LOOP;
+
+                    RETURN 1;
+
+                    END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+                    ", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                conn.Close();
+            }
+        }
+
+        void test2()
         {
             /*
-              
+
              python3.8
 
                 out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
                 out_text = out_bytes.decode('utf-8')
-             
+
              windows cmd
                 ffmpeg -y -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
-             
+
              MedallionShell
-             
+
              */
+
+            createAnimeDB("209.141.34.77", "5432");
 
             string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
             string path = new DirectoryInfo("../").FullName;  // 上级目录
@@ -2077,44 +2176,43 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
 
                 var bts = extractAudio(ffmpegExe, fname, begintime, endtime);
 
-                //string connString = "";
 
-                string connectionString = "Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;";
+                string animename = "a";
+                string seasion = "b";
+                string tags = "c";
+                string videoname = fname;
 
-                //bool okQ = TestConnection(connectionString);
+                string sql = $"insert into anime(name, seasion, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{seasion}','{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', @audio, @video);";
 
-                using (var conn = new NpgsqlConnection(connectionString))
+                var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;");
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
                 {
-                    string animename = "a";
-                    string seasion = "b";
-                    string tags = "c";
-                    string videoname = fname;
+                    NpgsqlParameter paramAudio = cmd.CreateParameter();
+                    paramAudio.ParameterName = "@audio";
+                    paramAudio.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
+                    paramAudio.Value = bts;
+                    cmd.Parameters.Add(paramAudio);
 
-                    string sql = $"insert into anime(name, seasion, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{seasion}','{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', @audio, @video);";
+                    NpgsqlParameter paramVideo = cmd.CreateParameter();
+                    paramVideo.ParameterName = "@video";
+                    paramVideo.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
+                    paramVideo.Value = bts;
+                    cmd.Parameters.Add(paramVideo);
 
-                    //string sQL = "insert into picturetable (id, photo) VALUES(65, @bytes)";
-                    using (var cmd = new NpgsqlCommand(sql, conn))
-                    {
-                        NpgsqlParameter paramAudio = cmd.CreateParameter();
-                        paramAudio.ParameterName = "@audio";
-                        paramAudio.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
-                        paramAudio.Value = bts;
-                        cmd.Parameters.Add(paramAudio);
 
-                        NpgsqlParameter paramVideo = cmd.CreateParameter();
-                        paramVideo.ParameterName = "@video";
-                        paramVideo.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
-                        paramVideo.Value = bts;
-                        cmd.Parameters.Add(paramVideo);
-
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.ExecuteNonQuery();
                 }
+
+
+
+                conn.Close();
 
             }
 
         }
+
 ```
 
 

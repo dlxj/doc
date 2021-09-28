@@ -156,7 +156,28 @@ module.exports = {
 
 
 
-## Regex
+# Syntax
+
+
+
+## typeof
+
+
+
+```javascript
+            if (typeof content == 'object') {
+
+            } else if (typeof content == 'string') {
+                var j = { "title":title, "content":content, childs:[] }
+                
+            }
+```
+
+
+
+
+
+# Regex
 
 
 
@@ -164,7 +185,7 @@ module.exports = {
 
 
 
-### matchAll
+## matchAll
 
 - 相当于python 的 finditer
 
@@ -263,7 +284,7 @@ j = ANONUM(strs)
 
 
 
-### replace
+## replace
 
 
 
@@ -272,6 +293,25 @@ var strs = fs.readFileSync(fdoc, "utf8")
 
 strs = strs.replace(/\*\*\*\*\*\*\*\*\*\*/g, '').replace(/\r\n/g, '\n').replace(/\t/g, '  ').trim()
 strs = '\n\n' + strs +  '\n\n'
+```
+
+
+
+
+
+## Iterator 转数组
+
+
+
+```javascript
+    let regexp = new RegExp(p,'g');
+    let matches = strs.matchAll(regexp);
+
+    let arr = Array.from(matches)
+    for (let i = 0; i < arr.length; i++) {
+        let match = arr[i]
+        console.log(`Found ${match[0]} start=${match.index} end=${match.index + match[0].length}.`);
+    }
 ```
 
 
