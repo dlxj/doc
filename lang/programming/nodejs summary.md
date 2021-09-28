@@ -278,6 +278,8 @@ strs = '\n\n' + strs +  '\n\n'
 
 
 
+# String
+
 
 
 ## 不转义
@@ -290,9 +292,19 @@ String.raw `Hi\u000A!`;
 
 
 
+## 动态计算
 
 
-## Docx
+
+```javascript
+`Found ${match[0]} start=${match.index} end=${match.index + match[0].length}.`
+```
+
+
+
+
+
+# Docx
 
 
 
