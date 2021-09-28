@@ -793,6 +793,55 @@ namespace xxx.Controllers.SmartSearch
 
 
 
+### 不转义
+
+
+
+```c#
+ // @禁止转义符内部用两个双引"" 表示单个双引，否则出现语法错误 
+                    using (var cmd = new NpgsqlCommand(@"
+CREATE OR REPLACE FUNCTION JPQ (TEXT) RETURNS INT AS
+$func$
+DECLARE
+  js      JSON;
+  total   TEXT[] := '{}';
+  reading TEXT;
+	s TEXT;
+BEGIN
+  FOREACH s IN ARRAY string_to_array($1, '|')
+  LOOP
+    
+		FOREACH js IN ARRAY pgroonga_tokenize(s, 'tokenizer', 'TokenMecab(""use_base_form"", true, ""include_reading"", true)')
+
+        LOOP
+
+            reading = (js-> 'metadata'->> 'reading');
+                    IF reading IS NULL THEN
+                            RETURN 0;
+                    END IF;
+
+                    END LOOP;
+                    END LOOP;
+
+                    RETURN 1;
+
+                    END;
+$func$ LANGUAGE plpgsql IMMUTABLE;
+                    ", conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+
+
+                    conn.Close();
+
+                }
+```
+
+
+
+
+
 ### 拼接
 
 
@@ -1400,6 +1449,18 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 # FFMPEG
+
+
+
+```
+# ffmpeg 录制 hls 直播经常出现 HTTP error 404 Not Found
+ffmpeg -headers "Referer: http://popkontv.com`r`nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36 Edg/94.0.992.31`r`n" -i "input.m3u8" -c copy "C:\live\output.mp4"
+
+紧跟着 -i 的前面，加个 -re，再试试。
+
+```
+
+
 
 
 

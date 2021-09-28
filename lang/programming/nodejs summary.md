@@ -292,3 +292,76 @@ String.raw `Hi\u000A!`;
 
 
 
+## Docx
+
+
+
+```javascript
+// https://www.jianshu.com/p/68a420a68ded
+	十行代码教你用node.js读取docx中的文本
+let rd = require('rd');
+let fs = require('fs');
+let path = require("path")
+
+let docx4js = require('docx4js');
+const AdmZip = require('adm-zip'); //引入查看zip文件的包
+const zip = new AdmZip("alldata/A1-1&1-2.docx"); //filePath为文件路径
+
+// 同步遍历目录下的所有 word 文件
+rd.eachFileFilterSync('alldata', /\.docx$/, function (fullpath, stats) {
+
+    let basename = path.basename(fullpath);
+    
+    if (basename != "A1-1&1-2.docx") {
+        return;
+    }
+
+    let contentXml = zip.readAsText("word/document.xml");   // 内容文本
+    
+    let str = "";
+    contentXml.match(/<w:t>[\s\S]*?<\/w:t>/ig).forEach((item)=>{
+
+        str = str + item.slice(5,-6) + "\n";  // 不知道为什么读出来文档自带的换行没了
+    }) 
+
+    fs.writeFileSync('2.txt', str);
+
+});
+```
+
+
+
+
+
+```javascript
+
+// import docx4js from "docx4js"
+
+
+const docx4js = require('docx4js');
+
+
+docx4js.docx.load("alldata/A1-1&1-2.docx").then(docx => {
+    var content = docx.officeDocument.content.text()
+    console.log("[Docx.jsx] docx:", content); // I am able to get the data here.
+}).catch(err => {
+    console.error("[Docx.jsx] err:", err);
+});
+
+To get header you do it like
+
+docx.getObjectPart("word/header1.xml").text();
+
+And you can do the same thing for the footer
+
+docx.getObjectPart("word/footer1.xml").text();
+
+you can get the content/body as well doing like
+
+docx.getObjectPart("word/document.xml").text();
+```
+
+
+
+
+
