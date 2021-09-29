@@ -1217,6 +1217,17 @@ func 必须有返回值
 
 
 
+```
+# linux 服务端布署（先安装aspnetcore-runtime-5.0.10-linux-x64 运行时）
+./dotnet anime/dangan.Server.dll
+curl  http://localhost:5000/WeatherForecast
+	# 成功响应默认的Get 接口
+```
+
+
+
+
+
 ```c#
     // http://localhost:2575/api/ksbaiexam/gettest
 
@@ -1232,8 +1243,9 @@ func 必须有返回值
 
 http://localhost:44732/WeatherForecast/gettest
 	// 这里既可以get 前端页面，又可以POST 后端接口，是自动选择的
-
 ```
+
+
 
 
 
