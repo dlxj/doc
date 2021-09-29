@@ -12,9 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace dangan
 {
-    // /mnt/aspnetcore-runtime-5.0.10-linux-x64/dotnet publish/dangan.dll
-
-    class Program
+    public class anime
     {
 
         public static string unhana_remove(string s)
@@ -235,7 +233,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
         }
 
 
-        public static void allfiles(string targetDirectory, List<string> fnames )
+        public static void allfiles(string targetDirectory, List<string> fnames)
         {
             // Process the list of files found in the directory.
             string[] fileEntries = Directory.GetFiles(targetDirectory);
@@ -417,13 +415,16 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 OS = "Windows";
-            } else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 OS = "OSX";
-            } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 OS = "Linux";
-            } else
+            }
+            else
             {
                 Console.WriteLine("##### ERROR:Unkonw OS Type!");
                 return;
@@ -470,11 +471,11 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
             int cur = 0;
 
-            foreach(var fname in fnames)
+            foreach (var fname in fnames)
             {
                 string videoname = Path.GetFileName(fname);
                 string frtname = $"{ecxutePath}/out.srt";
-                
+
 
                 string srts = extractSRT(ffmpegExe, fname, frtname, ecxutePath);
 
@@ -487,11 +488,6 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                 break;
             }
 
-        }
-
-        static void Main(string[] args)
-        {
-            import();
         }
     }
 }
