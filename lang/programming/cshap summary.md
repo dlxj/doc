@@ -1228,7 +1228,7 @@ func 必须有返回值
 
 
 ```c#
-# ASP.NET Core hosted模式中前端和服务端共用一个IP端口
+# ASP.NET Core hosted模式中，如果用IIS 启动，前端和服务端共用一个IP端口
 
 http://localhost:44732/WeatherForecast/gettest
 	// 这里既可以get 前端页面，又可以POST 后端接口，是自动选择的
