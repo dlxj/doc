@@ -344,7 +344,93 @@ String.raw `Hi\u000A!`;
 
 
 
+# 异步
+
+
+
+```javascript
+
+let path = require('path')
+var mammoth = require("mammoth");
+
+function getTestByWord(fileName) {
+    return new Promise((ok, err) => {
+        // var url = path.join(__dirname, 'A1-3-2.docx');
+        // var url = path.join(__dirname, "../../../file/" + fileName);
+        var url = fileName
+        mammoth.extractRawText({
+                path: url
+            })
+            .then(function (result) {
+                var text = result.value; // The raw text
+                var messages = result.messages;
+                ok(text);
+
+            })
+            .catch((e) => {
+                err(false)
+            })
+            .done();
+    })
+}
+
+( async()=>{
+
+    let fileName = path.join(__dirname, 'A3-2&3-1.docx');
+    let s = await getTestByWord(fileName)
+    let a = 1
+
+}) ()
+
+
+```
+
+
+
+
+
 # Docx
+
+
+
+```javascript
+
+let path = require('path')
+var mammoth = require("mammoth");
+
+function getTestByWord(fileName) {
+    return new Promise((ok, err) => {
+        // var url = path.join(__dirname, 'A1-3-2.docx');
+        // var url = path.join(__dirname, "../../../file/" + fileName);
+        var url = fileName
+        mammoth.extractRawText({
+                path: url
+            })
+            .then(function (result) {
+                var text = result.value; // The raw text
+                var messages = result.messages;
+                ok(text);
+
+            })
+            .catch((e) => {
+                err(false)
+            })
+            .done();
+    })
+}
+
+( async()=>{
+
+    let fileName = path.join(__dirname, 'A3-2&3-1.docx');
+    let s = await getTestByWord(fileName)
+    let a = 1
+
+}) ()
+
+
+```
+
+
 
 
 
