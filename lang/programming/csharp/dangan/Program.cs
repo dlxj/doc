@@ -210,13 +210,27 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             return result;
         }
 
+
+        public static void allfiles(string targetDirectory, List<string> fnames )
+        {
+            // Process the list of files found in the directory.
+            string[] fileEntries = Directory.GetFiles(targetDirectory);
+            foreach (string fileName in fileEntries)
+                fnames.Add(fileName);
+
+            // Recurse into subdirectories of this directory.
+            string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
+            foreach (string subdirectory in subdirectoryEntries)
+                allfiles(subdirectory, fnames);
+        }
+
         public static void importAnime(string animename, string seasion, string frtname, string videoname, string videopath)
         {
 
         }
 
 
-        public void test()
+        public static void test()
         {
             /*
 
@@ -266,6 +280,18 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             {
                 realroot = @"/Users/olnymyself/Downloads/videos/anime";
             }
+
+            List<string> fnames2 = new List<string>();
+
+            allfiles(realroot, fnames2);
+
+            string dir = Directory.GetParent(fnames2[0]).FullName;
+            string dir2 = Directory.GetParent(dir).FullName;
+            string dir3 = Directory.GetParent(dir2).FullName;
+            string rootorigin = dir;  //# root origin
+            string seasion = Path.GetFileName(dir2);
+            string animename = Path.GetFileName(dir3);
+
 
             string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
             string path = new DirectoryInfo("../").FullName;  // 上级目录
@@ -394,8 +420,8 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                 var bts = extractAudio(ffmpegExe, fname, begintime, endtime);
 
 
-                string animename = "a";
-                string seasion = "b";
+                //string animename = "a";
+                //string seasion = "b";
                 string tags = mecab(j);
                 string videoname = Path.GetFileName(fname);
 
@@ -433,6 +459,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
         static void Main(string[] args)
         {
+            test();
             Console.WriteLine("Hello World!");
         }
     }

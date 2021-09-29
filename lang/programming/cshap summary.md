@@ -3372,7 +3372,41 @@ NotifyICon 控件，会显示一个图标在Windows 桌面右下角的工具栏�
 
 
 
+### 遍历所有文件
+
 ```
+        public static void allfiles(string targetDirectory, List<string> fnames )
+        {
+            // Process the list of files found in the directory.
+            string[] fileEntries = Directory.GetFiles(targetDirectory);
+            foreach (string fileName in fileEntries)
+                fnames.Add(fileName);
+
+            // Recurse into subdirectories of this directory.
+            string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
+            foreach (string subdirectory in subdirectoryEntries)
+                allfiles(subdirectory, fnames);
+        }
+```
+
+
+
+### 上级目录名
+
+
+
+```
+ string dir = Directory.GetParent(fnames2[0]).Name;
+```
+
+
+
+
+
+```
+
+
+
 当前目录
 
 stringpath= Environment.CurrentDirectory;
