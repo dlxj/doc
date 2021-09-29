@@ -1217,7 +1217,11 @@ func 必须有返回值
 
 
 
-```
+linux 没有IIS，服务端和客户端应该要分别运行
+
+
+
+```c#
 # linux 服务端布署（先安装aspnetcore-runtime-5.0.10-linux-x64 运行时）
 ./dotnet anime/dangan.Server.dll
 curl  http://localhost:5000/WeatherForecast
