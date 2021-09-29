@@ -3385,6 +3385,17 @@ string path = new DirectoryInfo("../").FullName;
 
 string path = new DirectoryInfo("../../").FullName;
 
+
+```
+
+
+
+```
+# 只要文件名
+string name = Path.GetFileName(path);
+# 扩展名
+Path.GetExtension(imagePath)
+
 ```
 
 
