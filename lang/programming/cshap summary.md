@@ -1207,6 +1207,38 @@ func 必须有返回值
 
 ## blazor
 
+
+
+要使用Blazor WebAssembly 的**ASP.NET Core hosted模式**,即模板具有Client，**Server**，Share三个项目。
+
+
+
+### 路由地址
+
+
+
+```c#
+    // http://localhost:2575/api/ksbaiexam/gettest
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ksbaiexamController : ControllerBase
+```
+
+
+
+```c#
+# ASP.NET Core hosted模式中前端和服务端共用一个IP端口
+
+http://localhost:44732/WeatherForecast/gettest
+	// 这里既可以get 前端页面，又可以POST 后端接口，是自动选择的
+
+```
+
+
+
+
+
 ```
 # https://zhuanlan.zhihu.com/p/157582707
 	# 使用Blazor组件 - 创建一个音乐播放器
@@ -3269,6 +3301,28 @@ using (var conn = new NpgsqlConnection(connString))
         }
     }
 }
+```
+
+
+
+
+
+# Network
+
+
+
+## localhost 可以127.0.0.1 不可
+
+
+
+```
+C:/WINDOWS/system32/drivers/etc/hosts
+127.0.0.1 localhost # 修改
+
+ipconfig /flushdns # 刷新DNS
+
+#https://blog.csdn.net/StrideBin/article/details/78063685
+	localhost不能访问127.0.0.1可以访问
 ```
 
 
