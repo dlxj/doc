@@ -1867,6 +1867,25 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
 
 
 ```c#
+using System;
+
+using Medallion.Shell;
+using Npgsql;
+using NpgsqlTypes;
+using MeCab;
+using System.Text.RegularExpressions;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+
+namespace dangan
+{
+    // /mnt/aspnetcore-runtime-5.0.10-linux-x64/dotnet publish/dangan.dll
+
+    class Program
+    {
+
         public static string unhana_remove(string s)
         {
             return Regex.Replace(s, @"[^\u3040-\u309F^\u30A0-\u30FF]", "");
@@ -1894,6 +1913,28 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
             return new Tuple<string, string>(begin, end);
         }
 
+        public static string extractSRT(string ffmpegExe, string videopath, string frtname, string ecxutePath)
+        {
+            //string fname = @"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv";
+            //string frtname = $"{ecxutePath}/out.srt";
+            //var ffmpegExe = @"E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe";
+            var ffmpegArgs = new List<string>() { "-y", "-loglevel", "error", "-i", videopath, "-map", "0:s:0", frtname };
+
+            var outlog = $"{ecxutePath}/outlog.txt";
+
+            var command = Command.Run(ffmpegExe, ffmpegArgs); // 执行命令
+
+            using (StreamWriter sw = File.AppendText(outlog)) // 写入日志
+            {
+                sw.WriteLine($"Exit code: {command.Result.ExitCode}");
+                sw.WriteLine($"Stdout: {command.Result.StandardOutput}");
+                sw.WriteLine($"Stderr: {command.Result.StandardError}");
+            }
+
+            string strs = "\n" + File.ReadAllText(frtname, new System.Text.UTF8Encoding(false)) + "\n";   // utf8 无BOM
+
+            return strs;
+        }
         public static Byte[] extractAudio(string ffmpegExe, string videopath, string begintime, string endtime)
         {
             //# Audio: mp3 (libmp3lame), 44100 Hz, stereo, fltp, 192 kb/s (default)
@@ -2041,54 +2082,55 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             }
         }
 
-        void test2()
+        public static string mecab(string sentence)
         {
-            /*
+            string result = "";
 
-             python3.8
+            var parameter = new MeCabParam();
+            var tagger = MeCabTagger.Create(parameter);
 
-                out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
-                out_text = out_bytes.decode('utf-8')
-
-             windows cmd
-                ffmpeg -y -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
-
-             MedallionShell
-
-             */
-
-            createAnimeDB("209.141.34.77", "5432");
-
-            string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
-            string path = new DirectoryInfo("../").FullName;  // 上级目录
-
-            string fname = @"F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv";
-            string frtname = $"{ecxutePath}/out.srt";
-            var ffmpegExe = @"E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe";
-            var ffmpegArgs = new List<string>() { "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname };
-
-            var outlog = $"{ecxutePath}/outlog.txt";
-
-            var command = Command.Run(ffmpegExe, ffmpegArgs); // 执行命令
-
-            using (StreamWriter sw = File.AppendText(outlog)) // 写入日志
+            foreach (var node in tagger.ParseToNodes(sentence))
             {
-                sw.WriteLine($"Exit code: {command.Result.ExitCode}");
-                sw.WriteLine($"Stdout: {command.Result.StandardOutput}");
-                sw.WriteLine($"Stderr: {command.Result.StandardError}");
+                if (node.CharType > 0)
+                {
+                    var features = node.Feature.Split(',');
+                    var displayFeatures = string.Join(", ", features);
+
+                    result += $"{node.Surface}\t{displayFeatures}\n";
+                }
             }
+
+            return result;
+        }
+
+
+        public static void allfiles(string targetDirectory, List<string> fnames )
+        {
+            // Process the list of files found in the directory.
+            string[] fileEntries = Directory.GetFiles(targetDirectory);
+            foreach (string fileName in fileEntries)
+                fnames.Add(fileName);
+
+            // Recurse into subdirectories of this directory.
+            string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
+            foreach (string subdirectory in subdirectoryEntries)
+                allfiles(subdirectory, fnames);
+        }
+
+
+
+        public static void importAnime(string ffmpegExe, string animename, string seasion, string frtname, string videoname, string videopath)
+        {
+            List<string> chinese = new List<string>();
+            List<Tuple<string, string>> japanese = new List<Tuple<string, string>>();
+
+            Dictionary<string, string> dic_chs = new Dictionary<string, string>();
 
             string strs = "\n" + File.ReadAllText(frtname, new System.Text.UTF8Encoding(false)) + "\n";   // utf8 无BOM
 
             MatchCollection matches = Regex.Matches(strs, @"\n\d+\n");
 
             int count = matches.Count;
-
-
-            List<string> chinese = new List<string>();
-            List<Tuple<string, string>> japanese = new List<Tuple<string, string>>();
-
-            Dictionary<string, string> dic_chs = new Dictionary<string, string>();
 
             for (int i = 0; i < count; i++)
             {
@@ -2158,13 +2200,16 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
                         string beginTime = time.Split(new string[] { "-->" }, StringSplitOptions.None)[0].Trim();
                         string endTime = time.Split(new string[] { "-->" }, StringSplitOptions.None)[1].Trim();
-                        //allhasjpduyingQ = False
                     }
                 }
             }
 
             japanese = japanese.OrderBy(tu => tu.Item2).ToList<Tuple<string, string>>(); // sort by time asc
 
+            var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;");
+            conn.Open();
+
+            int total = 0;
 
             foreach (var tu in japanese)
             {
@@ -2174,18 +2219,20 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                 string t = tu.Item2;
                 var (begintime, endtime) = parseSrtTime(t);
 
-                var bts = extractAudio(ffmpegExe, fname, begintime, endtime);
+                if (dic_chs.ContainsKey(t))
+                {
+                    zh = dic_chs[t];
+                }
+
+                var bts = extractAudio(ffmpegExe, videopath, begintime, endtime);
 
 
-                string animename = "a";
-                string seasion = "b";
-                string tags = "c";
-                string videoname = fname;
+                //string animename = "a";
+                //string seasion = "b";
+                string tags = mecab(j);
+                //string videoname = Path.GetFileName(fname);
 
                 string sql = $"insert into anime(name, seasion, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{seasion}','{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', @audio, @video);";
-
-                var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;");
-                conn.Open();
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -2205,13 +2252,118 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                     cmd.ExecuteNonQuery();
                 }
 
+                total += 1;
+                Console.WriteLine($"###### {total} / {japanese.Count}");
+
+                break;
+            }
+
+            conn.Close();
+        }
 
 
-                conn.Close();
+        public static void import()
+        {
+            /*
 
+             python3.8
+
+                out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
+                out_text = out_bytes.decode('utf-8')
+
+             windows cmd
+                ffmpeg -y -i "F:\Downloads\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no ...he Animation - 01 [1280x720 x264 AAC Sub(Chs,Jap)].mkv" -map 0:s:0 out.srt
+
+             MedallionShell
+
+             */
+
+            string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
+            string path = new DirectoryInfo("../").FullName;  // 上级目录
+
+            string OS = "";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                OS = "Windows";
+            } else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                OS = "OSX";
+            } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                OS = "Linux";
+            } else
+            {
+                Console.WriteLine("##### ERROR:Unkonw OS Type!");
+                return;
+            }
+
+            Console.WriteLine($"OS: {OS}");
+
+
+            string host = "209.141.34.77";
+            string port = "5432";
+
+            createAnimeDB(host, port);
+
+
+            var ffmpegExe = @"E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe";
+            string realroot = @"F:\videos\anime";
+
+            if (OS == "Linux")
+            {
+                realroot = @"/mnt/videos/anime";
+                ffmpegExe = "/usr/bin/ffmpeg";
+            }
+            if (OS == "OSX")
+            {
+                realroot = @"/Users/olnymyself/Downloads/videos/anime";
+            }
+
+            List<string> fnames = new List<string>();
+
+
+            allfiles(realroot, fnames);
+
+            fnames = fnames.OrderBy(s => s).ToList();
+
+
+            string dir = Directory.GetParent(fnames[0]).FullName;
+            string dir2 = Directory.GetParent(dir).FullName;
+            string dir3 = Directory.GetParent(dir2).FullName;
+            string rootorigin = dir;  //# root origin
+            string seasion = Path.GetFileName(dir2);
+            string animename = Path.GetFileName(dir3);
+
+
+
+            int cur = 0;
+
+            foreach(var fname in fnames)
+            {
+                string videoname = Path.GetFileName(fname);
+                string frtname = $"{ecxutePath}/out.srt";
+                
+
+                string srts = extractSRT(ffmpegExe, fname, frtname, ecxutePath);
+
+                importAnime(ffmpegExe, animename, seasion, frtname, videoname, fname);
+
+                cur = cur + 1;
+
+                Console.WriteLine($"one task done.  {cur} / {fnames.Count}");
+
+                break;
             }
 
         }
+
+        static void Main(string[] args)
+        {
+            import();
+        }
+    }
+}
 
 ```
 
