@@ -6,7 +6,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace dangan.Server.Controllers
 {
@@ -44,7 +43,17 @@ namespace dangan.Server.Controllers
         {
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
 
-            string prms = Request.Form["params"];
+            if (!Request.Form.ContainsKey("keyword") || !Request.Form.ContainsKey("lang_select"))
+            {
+                return new JsonResult(new
+                {
+                    status = 201,
+                    msg = "Form args not correct.",
+                    data = new JArray()
+                });
+            }
+
+            string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\": \"{Request.Form["lang_select"]}\" }} ";  // $ 里面的 { 要双写进行转义
 
             string keyword = "";
             string lang_select = "";
@@ -87,6 +96,7 @@ namespace dangan.Server.Controllers
                     });
                 }
             }
+
 
             return new JsonResult(new { status = 200, msg = "success.", data = prms });
         }

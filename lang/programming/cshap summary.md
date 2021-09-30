@@ -840,6 +840,16 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
+### 动态计算
+
+
+
+```c#
+string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\": \"{Request.Form["lang_select"]}\" }} ";  // $ 里面的 { 要双写进行转义
+```
+
+
+
 
 
 ### 拼接
@@ -1328,6 +1338,45 @@ public async Task AddItemtoShoppingCart(FoodItem selectedItem)
 
 
 
+### Form
+
+
+
+```c#
+# https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0
+
+```
+
+
+
+
+
+### Action
+
+
+
+```c#
+# https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-5.0
+[HttpGet("{id}")]
+public ActionResult<Pet> GetById(int id, bool dogsOnly)
+
+And the app receives a request with this URL:
+http://contoso.com/api/pets/2?DogsOnly=true
+```
+
+
+
+### SignalR
+
+```
+# https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-5.0
+	# 实时响应
+```
+
+
+
+
+
 
 
 ### 嵌套页面
@@ -1495,6 +1544,30 @@ namespace TestNameSpace
     }
 }
 
+```
+
+
+
+### 重定向
+
+
+
+```C#
+@page "/YourPageName"
+@inject NavigationManager NavigationManager
+
+<h1>xxx</h1>
+.
+.
+.
+
+@code {
+
+    void MethodToTriggerUrl()
+    {
+        NavigationManager.NavigateTo("PageToRedirect");
+    }
+}
 ```
 
 

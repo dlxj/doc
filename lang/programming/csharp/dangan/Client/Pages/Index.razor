@@ -1,12 +1,45 @@
 ﻿@page "/"
 
-    <form action="/" method="post">
-        keyword: <input type="text" name="keyword"> <button type="submit">Search</button> <br>
-        <select name="lang_select">
-            <option value="en">en</option>
-            <option value="jp">jp</option>
-        </select>
-        
-    </form>
+using System.ComponentModel.DataAnnotations;
 
-    @*<SurveyPrompt Title="How is Blazor working for you?" />*@
+@inject NavigationManager NavigationManager
+
+
+<form action="/search" method="post">
+    keyword: <InputText id="keyword" /> <button type="submit">Search</button> <br>
+    <select name="lang_select">
+        <option value="en">en</option>
+        <option value="jp">jp</option>
+    </select>
+
+</form>
+
+
+@*
+    https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0
+    <input type="text" name="keyword">
+    <SurveyPrompt Title="How is Blazor working for you?" />
+*@
+
+
+@code {
+
+    public class KeywordModel
+    {
+        [Required]
+        [StringLength(10, ErrorMessage = "Name is too long.")]
+        public string Name { get; set; }
+    }
+
+    private void HandleSubmit()
+    {
+
+    }
+
+
+
+    void MethodToTriggerUrl()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}
