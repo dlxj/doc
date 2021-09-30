@@ -935,6 +935,20 @@ static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b"
 
 
 
+
+
+### IEnumerable
+
+
+
+```c#
+public IEnumerable<People> peopleList => new List<People> {
+```
+
+
+
+
+
 ## Tuple
 
 
@@ -1206,6 +1220,15 @@ func 必须有返回值
 
 
 ## blazor
+
+
+
+```
+# https://www.yogihosting.com/blazor-first-application/
+	# begining
+```
+
+
 
 
 
