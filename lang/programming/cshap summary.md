@@ -1265,13 +1265,14 @@ ln -s ~/.dotnet/dotnet  /usr/bin  #新建软链接
 
 cd Server/  # 这是windows 用Visual studio 2019 创建的hosted（有client和server）的项目
 dotnet run
-
+	# wget http://localhost:5000  正常返回主页面
 
 
 dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
 
 cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64
 ./dangan.Server
+	# 奇怪的是wget http://localhost:5000 返回404
 
 [root@localhost linux-x64]# ./dangan.Server
 info: Microsoft.Hosting.Lifetime[0]
@@ -1286,6 +1287,13 @@ info: Microsoft.Hosting.Lifetime[0]
       Content root path: /mnt/dangan/Server/bin/Release/net5.0/linux-x64
 
 
+
+# 关闭防火墙
+systemctl stop firewalld
+
+Client\Properties\launchSettings.json
+Server\Properties\launchSettings.json
+	# 把localhost 改成 0.0.0.0 就可以在外网访问了
 
 ```
 
