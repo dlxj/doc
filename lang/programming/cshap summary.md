@@ -1266,6 +1266,27 @@ ln -s ~/.dotnet/dotnet  /usr/bin  #新建软链接
 cd Server/  # 这是windows 用Visual studio 2019 创建的hosted（有client和server）的项目
 dotnet run
 
+
+
+dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
+
+cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64
+./dangan.Server
+
+[root@localhost linux-x64]# ./dangan.Server
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: https://localhost:5001
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /mnt/dangan/Server/bin/Release/net5.0/linux-x64
+
+
+
 ```
 
 
