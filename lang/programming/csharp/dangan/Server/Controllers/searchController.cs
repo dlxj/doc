@@ -98,7 +98,7 @@ namespace dangan.Server.Controllers
             }
 
 
-            return new JsonResult(new { status = 200, msg = "success.", data = prms });
+            return new JsonResult(new { status = 200, msg = "success.", data = prmsJson });
         }
     }
 }

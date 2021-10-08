@@ -1,18 +1,28 @@
 ﻿@page "/"
 
-using System.ComponentModel.DataAnnotations;
+@using dangan.Client.Model;
 
 @inject NavigationManager NavigationManager
-
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 
 <form action="/search" method="post">
-    keyword: <InputText id="keyword" /> <button type="submit">Search</button> <br>
+    keyword: <input type="text" name="keyword">  <button type="submit">Search</button> <br>
     <select name="lang_select">
         <option value="en">en</option>
         <option value="jp">jp</option>
     </select>
 
 </form>
+
+
+@*<EditForm Model="@model" OnValidSubmit="@HandleSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        keyword:<InputText id="keyowrdInput" @bind-Value="model.keyword" />
+
+        <button type="submit">Submit</button>
+    </EditForm>*@
 
 
 @*
@@ -24,12 +34,16 @@ using System.ComponentModel.DataAnnotations;
 
 @code {
 
-    public class KeywordModel
-    {
-        [Required]
-        [StringLength(10, ErrorMessage = "Name is too long.")]
-        public string Name { get; set; }
-    }
+
+
+    KeywordModel model = new KeywordModel();
+
+    //public class KeywordModel
+    //{
+    //    //[Required]
+    //    //[StringLength(10, ErrorMessage = "Name is too long.")]
+    //    public string Name { get; set; }
+    //}
 
     private void HandleSubmit()
     {

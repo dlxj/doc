@@ -56,6 +56,25 @@ Newtonsoft.Json
 
 
 
+```c#
+            // 没有中文，认为是乱码
+            if (Util.unAZchinese_remove(strSearch) == "")
+            {
+                var ret = new
+                {
+                    keywords = "",
+                    type = -1,
+                    testlist = new { }
+                };
+
+                return new JsonResult(new { status = 200, msg = "输入为乱码", data = ret });
+            }
+```
+
+
+
+
+
 ```
 var strtk = Newtonsoft.Json.JsonConvert.SerializeObject(tk);
 
@@ -1243,6 +1262,54 @@ func 必须有返回值
 
 
 要使用Blazor WebAssembly 的**ASP.NET Core hosted模式**,即模板具有Client，**Server**，Share三个项目。
+
+
+
+### using
+
+
+
+```c#
+# .razor 代码内要用@using  而不是普通的using，否则既不报错又不生效
+
+@page "/"
+
+@using dangan.Client.Model;
+
+@inject NavigationManager NavigationManager
+@*<form action="/search" method="post">
+        keyword: <InputText id="keyword" /> <button type="submit">Search</button> <br>
+        <select name="lang_select">
+            <option value="en">en</option>
+            <option value="jp">jp</option>
+        </select>
+
+    </form>*@
+
+
+<EditForm Model="@model" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="keyowrdInput" @bind-Value="model.keyword" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+```
+
+
+
+### section
+
+
+
+```c#
+# https://tutorialslink.com/Articles/How-to-use-Sessions-in-Blazor-Application/2057
+```
+
+
+
+
 
 
 
