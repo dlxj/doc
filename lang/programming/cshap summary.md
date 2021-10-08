@@ -1253,6 +1253,9 @@ func 必须有返回值
 
 
 ```
+# https://github.com/TimChen44/Blazor-ToDo
+	# 进击吧blazor
+	
 # https://www.yogihosting.com/blazor-first-application/
 	# begining
 ```
@@ -1308,6 +1311,28 @@ func 必须有返回值
 ```
 
 
+
+### hosted
+
+
+
+```
+
+dotnet run --urls http://0.0.0.0:5005
+
+# https://www.jeremymorgan.com/blog/linux/blazor-in-linux/
+	# cool
+
+# https://github.com/TimChen44/Blazor-ToDo
+	# 进击吧blazor
+
+--hosted when using the client-hosted Blazor.
+
+https://docs.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-3.1#linux-with-apache
+
+Using the Blazor Server hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
+
+```
 
 
 
