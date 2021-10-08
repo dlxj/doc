@@ -1326,7 +1326,7 @@ location / {
 systemctl start nginx
 nginx -s reload # 重新加载配置
 
-
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 5000
 ```
 
 
