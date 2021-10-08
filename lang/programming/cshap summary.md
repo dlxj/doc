@@ -1295,6 +1295,38 @@ Client\Properties\launchSettings.json
 Server\Properties\launchSettings.json
 	# 把localhost 改成 0.0.0.0 就可以在外网访问了
 
+
+# 转发80 端口
+yum install nginx
+
+/etc/nginx/nginx.conf
+
+
+把访问 http://127.0.0.1:9001/edu 的请求转发到 http://127.0.0.1:8080
+把访问 http://127.0.0.1:9001/vod 的请求转发到 http://127.0.0.1:8081
+这种要怎么配置呢，首先同样打开主配置文件，然后在 http 模块下增加一个 server 块：
+
+server {
+  listen 9001;
+  server_name localhost;
+
+  location ~ /edu/ {
+    proxy_pass http://127.0.0.1:8080;
+  }
+  
+  location ~ /vod/ {
+    proxy_pass http://127.0.0.1:8081;
+  }
+}
+
+location / {
+    proxy_pass http://localhost:5000;
+}
+
+systemctl start nginx
+nginx -s reload # 重新加载配置
+
+
 ```
 
 
