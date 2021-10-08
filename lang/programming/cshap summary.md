@@ -1253,6 +1253,26 @@ func 必须有返回值
 
 
 ```
+# https://www.jeremymorgan.com/blog/linux/blazor-in-linux/
+	# cool
+# .NET SDK on CentOS
+	# https://docs.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install
+	
+./dotnet-install.sh -c 5.0
+
+~/.dotnet/dotnet --version  # 装到root 文件夹里面了
+ln -s ~/.dotnet/dotnet  /usr/bin  #新建软链接
+
+cd Server/  # 这是windows 用Visual studio 2019 创建的hosted（有client和server）的项目
+dotnet run
+
+```
+
+
+
+
+
+```
 # https://github.com/TimChen44/Blazor-ToDo
 	# 进击吧blazor
 	
