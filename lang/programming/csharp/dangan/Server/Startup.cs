@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.Linq;
 
 namespace dangan.Server
@@ -14,6 +15,8 @@ namespace dangan.Server
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            Console.WriteLine(@"Configuration[""urls""] = ""{0}""", configuration["urls"]);
         }
 
         public IConfiguration Configuration { get; }

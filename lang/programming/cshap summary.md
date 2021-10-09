@@ -1267,12 +1267,17 @@ cd Server/  # 这是windows 用Visual studio 2019 创建的hosted（有client和
 dotnet run
 	# wget http://localhost:5000  正常返回主页面
 
+	dotnet run --urls http://0.0.0.0:5000
+
 
 dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
 
 cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64
 ./dangan.Server
 	# 奇怪的是wget http://localhost:5000 返回404
+	
+./dangan.Server --urls http://0.0.0.0:5000
+	# 外网正常访问
 
 [root@localhost linux-x64]# ./dangan.Server
 info: Microsoft.Hosting.Lifetime[0]
@@ -1399,7 +1404,8 @@ iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 5000
 
 ```
 
-dotnet run --urls http://0.0.0.0:5005
+dotnet run --urls http://0.0.0.0:5000
+
 
 # https://www.jeremymorgan.com/blog/linux/blazor-in-linux/
 	# cool
