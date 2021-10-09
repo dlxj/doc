@@ -1,10 +1,11 @@
 ﻿@page "/"
 
 @using dangan.Client.Model;
+@using System.Text.Json;
+
 
 @inject NavigationManager NavigationManager
-@*@inject Blazored.SessionStorage.ISessionStorageService sessionStorage*@
-
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 @*<form action="/search" method="post">
         keyword: <input type="text" name="keyword">  <button type="submit">Search</button> <br>
         <select name="lang_select">
@@ -14,6 +15,7 @@
 
     </form>*@
 
+<title>Welcome!</title>
 
 <EditForm Model="@model" OnValidSubmit="@HandleSubmit">
     <DataAnnotationsValidator />
@@ -51,13 +53,26 @@
         //发送Post请求
         var values = new Dictionary<string, string>
         {
-            { "keyword", "a" },
+            { "keyword", keyword },
             { "lang_select", "b" }
         };
 
         var content = new FormUrlEncodedContent(values);
         var response = await client.PostAsync("http://localhost:5000/search", content);
         var responseString = await response.Content.ReadAsStringAsync();
+
+        var json = JsonDocument.Parse(responseString);
+
+        JsonElement root = json.RootElement;
+
+        var status = root.GetProperty("status").ToString();
+
+        if (status == "200")
+        {
+            await sessionStorage.SetItemAsync("keyword", keyword);
+            await sessionStorage.SetItemAsync("lang_select", values["lang_select"]);
+            var keyword_from_section = await sessionStorage.GetItemAsync<string>("keyword");
+        }
 
         MethodToTriggerUrl();  // jump to page x
     }

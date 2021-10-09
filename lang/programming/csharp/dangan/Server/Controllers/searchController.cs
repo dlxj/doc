@@ -98,6 +98,9 @@ namespace dangan.Server.Controllers
             }
 
 
+            //await sessionStorage.SetItemAsync("name", "John Smith");
+            //var name = await sessionStorage.GetItemAsync<string>("name");
+
             return new JsonResult(new { status = 200, msg = "success.", data = prmsJson });
         }
     }
