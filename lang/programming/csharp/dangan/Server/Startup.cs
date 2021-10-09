@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace dangan.Server
 {
@@ -25,7 +27,15 @@ namespace dangan.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            // section 支持
             services.AddBlazoredSessionStorage();
+
+            // json 里的中文乱码
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping; // JavaScriptEncoder.Create(UnicodeRanges.All);
+                //options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

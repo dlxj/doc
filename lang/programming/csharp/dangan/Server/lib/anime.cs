@@ -524,7 +524,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
         }
 
-        public async static Task<string> search(string keywd)
+        public async static Task<List<Dictionary<string, string>>> search(string keywd)
         {
 
             if (!initQ)
@@ -558,7 +558,9 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
             //var jaconv = new KawazuConverter();
 
-            JArray ret = new JArray();
+            //JArray ret = new JArray();
+
+            List<Dictionary<string, string>> ret = new List<Dictionary<string, string>>();
 
             if (true)
             {
@@ -593,9 +595,13 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                             string zh = reader["zh"].ToString();
                             string time = reader["time"].ToString();
 
+                            var d = new Dictionary<string, string> { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+
+                            ret.Add(d);
+
                             JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
 
-                            ret.Add(jo);
+                            //ret.Add(jo);
                         }
                     }
                 }
@@ -604,7 +610,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
             }
 
-            return ret.ToString();
+            return ret;//ret.ToString();
         }
 
     }

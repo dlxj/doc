@@ -34,6 +34,7 @@
 
 @*
     https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
+        https://github.com/kevin-montrose/Jil
     https://www.0daydown.com/04/1611202.html
     https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0
     <input type="text" name="keyword">
@@ -53,7 +54,7 @@
 
         //发送Post请求
         var values = new Dictionary<string, string>
-    {
+{
             { "keyword", keyword },
             { "lang_select", "b" }
         };
@@ -75,6 +76,8 @@
             var jd = JsonDocument.Parse(data).RootElement;
 
             var result = jd.GetProperty("result").ToString();
+
+
 
             await sessionStorage.SetItemAsync("keyword", keyword);
             await sessionStorage.SetItemAsync("lang_select", values["lang_select"]);
