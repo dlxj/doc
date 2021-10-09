@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace dangan.Server.Controllers
 {
@@ -13,6 +14,9 @@ namespace dangan.Server.Controllers
     [Route("[controller]")]
     public class searchController : ControllerBase
     {
+
+        public static bool initQ = false; 
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -39,8 +43,9 @@ namespace dangan.Server.Controllers
         }
 
         [HttpPost]
-        public JsonResult Post()
+        public async Task<JsonResult> Post()
         {
+
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
 
             if (!Request.Form.ContainsKey("keyword") || !Request.Form.ContainsKey("lang_select"))
@@ -98,8 +103,9 @@ namespace dangan.Server.Controllers
             }
 
 
-            //await sessionStorage.SetItemAsync("name", "John Smith");
-            //var name = await sessionStorage.GetItemAsync<string>("name");
+
+            string ret = await anime.search(keyword);
+            prmsJson["result"] = ret;
 
             return new JsonResult(new { status = 200, msg = "success.", data = prmsJson });
         }

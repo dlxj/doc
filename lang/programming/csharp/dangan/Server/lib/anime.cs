@@ -9,6 +9,10 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using OpenCCNET;
+using Kawazu;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 /*
  
@@ -26,6 +30,10 @@ namespace dangan
     public class anime
     {
 
+        public static bool initQ = false;
+
+        public static NpgsqlConnection g_conn = null;
+
         public static string unhana_remove(string s)
         {
             return Regex.Replace(s, @"[^\u3040-\u309F^\u30A0-\u30FF]", "");
@@ -36,9 +44,24 @@ namespace dangan
             return Regex.Replace(s, @"[^\u4e00-\u9fa5]", "");
         }
 
+        public static string chinese_remove(string s)
+        {
+            return Regex.Replace(s, @"[\u4e00-\u9fa5]", "");
+        }
+
         public static bool hasHanaQ(string s)
         {
             return unhana_remove(s).Length > 0;
+        }
+
+        public static bool jpQ(string s)
+        {
+            return unhana_remove(s).Length > 0;
+        }
+
+        public static bool chQ(string s)
+        {
+            return !jpQ(s) && chinese_remove(s).Length == 0;
         }
 
         public static Tuple<string, string> parseSrtTime(string time)
@@ -500,5 +523,89 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             }
 
         }
+
+        public async static Task<string> search(string keywd)
+        {
+
+            if (!initQ)
+            {
+                g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+                initQ = true;
+            }
+
+            bool isEn = false;
+            bool isCh = false;
+            bool isJp = false;
+
+            //keyword = ZhConverter.HansToHant(keyword);  // chs to cht  
+
+            if (chQ(keywd))
+            {
+                Console.WriteLine("### ch.");
+                //keywd = ZhConverter.HansToHant(keywd);  // chs to cht // https://github.com/CosineG/OpenCC.NET
+                isCh = true;
+            }
+            else if (jpQ(keywd))
+            {
+                Console.WriteLine("### jp.");
+                isJp = true;
+            }
+            else
+            {
+                Console.WriteLine("### en.");
+                isEn = true;
+            }
+
+            //var jaconv = new KawazuConverter();
+
+            JArray ret = new JArray();
+
+            if (true)
+            {
+                keywd = "その";
+
+                if (unhana_remove(keywd).Length == keywd.Length)
+                {
+                    //keywd = await jaconv.Convert(keywd, To.Katakana, Mode.Normal);
+                }
+
+                // Pooling=true;MinPoolSize=17;Maximum Pool Size=40;
+                // Connection Idle Lifetime=200
+                //Tcp Keepalive = true
+                //Keepalive = 30
+
+                //var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+                g_conn.Open();
+
+                string sql = $"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;";
+
+                
+
+                using (var cmd = new NpgsqlCommand(sql, g_conn))
+                {
+                    NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    if ( reader.HasRows )
+                    {
+                        while (reader.Read())
+                        {
+                            string id = reader["id"].ToString();
+                            string jp = reader["jp"].ToString();
+                            string zh = reader["zh"].ToString();
+                            string time = reader["time"].ToString();
+
+                            JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+
+                            ret.Add(jo);
+                        }
+                    }
+                }
+
+                g_conn.Close();
+
+            }
+
+            return ret.ToString();
+        }
+
     }
 }

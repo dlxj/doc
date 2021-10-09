@@ -13,6 +13,8 @@ namespace dangan.Server
     {
         public static void Main(string[] args)
         {
+            //anime.import();
+
             CreateHostBuilder(args).Build().Run();
         }
 
