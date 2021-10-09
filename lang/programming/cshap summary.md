@@ -990,6 +990,28 @@ var (begintime, endtime) = new Tuple<int, int>(1, 1);
 
 
 
+## Dictionary
+
+
+
+```c#
+    private async void HandleSubmit()
+    {
+        var values = new Dictionary<string,string>{
+            { "keyword", "hello" },
+            { "lang_select", "jp" }
+        };
+
+        var content = new FormUrlEncodedContent(values);
+        var response = await client.PostAsync("http://www.example.com/recepticle.aspx", content);
+        var responseString = await response.Content.ReadAsStringAsync();
+    }
+```
+
+
+
+
+
 
 
 
@@ -1249,6 +1271,30 @@ func 必须有返回值
 
 
 ## blazor
+
+
+
+```c#
+1. Server\dangan.Server.csproj 加入
+  <ItemGroup>
+    <PackageReference Include="Blazored.SessionStorage" Version="2.1.0" />
+    <PackageReference Include="MeCab.DotNet" Version="0.0.40" />
+    <PackageReference Include="MedallionShell" Version="1.6.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Npgsql" Version="5.0.10" />
+  </ItemGroup>
+2. MainLayout.razor 把导航和关于都去掉，只留body
+
+3. debug 和 Release 的端口不一样  launchSettings.json 里面有设置
+    
+4. 发布以后再重设
+    dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
+    cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64/publish/
+	./dangan.Server --urls http://0.0.0.0:5000
+```
+
+
 
 
 
@@ -1525,6 +1571,31 @@ public async Task AddItemtoShoppingCart(FoodItem selectedItem)
 # https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0
 
 ```
+
+
+
+#### Post
+
+
+
+```c#
+private static readonly HttpClient client = new HttpClient();
+//发送Get请求
+var responseString = await client.GetStringAsync("http://www.example.com/recepticle.aspx");
+        
+        //发送Post请求
+        var values = new Dictionary<string, string>
+        {
+            { "keyword", "a" },
+            { "lang_select", "b" }
+        };
+
+        var content = new FormUrlEncodedContent(values);
+        var response = await client.PostAsync("http://localhost:5000/search", content);
+        var responseString = await response.Content.ReadAsStringAsync();
+```
+
+
 
 
 

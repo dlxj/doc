@@ -3,26 +3,31 @@
 @using dangan.Client.Model;
 
 @inject NavigationManager NavigationManager
-@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@*@inject Blazored.SessionStorage.ISessionStorageService sessionStorage*@
 
-<form action="/search" method="post">
-    keyword: <input type="text" name="keyword">  <button type="submit">Search</button> <br>
+@*<form action="/search" method="post">
+        keyword: <input type="text" name="keyword">  <button type="submit">Search</button> <br>
+        <select name="lang_select">
+            <option value="en">en</option>
+            <option value="jp">jp</option>
+        </select>
+
+    </form>*@
+
+
+<EditForm Model="@model" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    keyword:<InputText id="keyowrdInput" @bind-Value="model.keyword" />
+
+    <button type="submit">Submit</button> <br>
+
     <select name="lang_select">
         <option value="en">en</option>
         <option value="jp">jp</option>
     </select>
-
-</form>
-
-
-@*<EditForm Model="@model" OnValidSubmit="@HandleSubmit">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-
-        keyword:<InputText id="keyowrdInput" @bind-Value="model.keyword" />
-
-        <button type="submit">Submit</button>
-    </EditForm>*@
+</EditForm>
 
 
 @*
@@ -35,20 +40,26 @@
 
 @code {
 
-
+    private static readonly HttpClient client = new HttpClient();
 
     KeywordModel model = new KeywordModel();
 
-    //public class KeywordModel
-    //{
-    //    //[Required]
-    //    //[StringLength(10, ErrorMessage = "Name is too long.")]
-    //    public string Name { get; set; }
-    //}
-
-    private void HandleSubmit()
+    private async void HandleSubmit()
     {
+        string keyword = model.keyword;
 
+        //发送Post请求
+        var values = new Dictionary<string, string>
+        {
+            { "keyword", "a" },
+            { "lang_select", "b" }
+        };
+
+        var content = new FormUrlEncodedContent(values);
+        var response = await client.PostAsync("http://localhost:5000/search", content);
+        var responseString = await response.Content.ReadAsStringAsync();
+
+        MethodToTriggerUrl();  // jump to page x
     }
 
 
