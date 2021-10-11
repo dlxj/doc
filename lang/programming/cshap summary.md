@@ -2160,6 +2160,1012 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+# Word
+
+
+
+```
+
+# https://blog.csdn.net/yw1688/article/details/52067699
+
+以前的项目都是导出数据到Excel中，这个对于NPOI来说，技术是比较成熟的，但是导出到Word的，就差一些。
+
+刚好手头的项目需要导出一些数据到Word中，基于对NPOI导出到Word的认知是一片黑，于是到处找资料，结合了网上其他网友的代码，简单的封装了一下，因为赶项目进度，没有细调，插入表格的部分有bug,插入普通内容的没问题，图文混排的需要完善，本版只支持文字和图片分离的情况，代码等以后有空了再完善，先在这里留个记号。
+
+using NPOI.OpenXmlFormats.Dml.WordProcessing;
+using NPOI.OpenXmlFormats.Wordprocessing;
+using NPOI.XWPF.UserModel;
+using System.Drawing;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+namespace zifar.PublicSentimentCommonMethod
+{
+    public class WordHelper
+    {
+        public void CreateWord(string filePath, List<WordModel> ContentList)
+        {
+            //1‘=1440twip=25.4mm=72pt(磅point)=96px(像素pixel)
+            // A4:W=11906 twip=8.269''=210mm,h=16838twip=11.693''=297mm
+            //A5:W=8390 twip=5.827''=148mm,h=11906 twip=8.269''=210mm
+            //A6:W=5953 twip=4.134''=105mm,h=8390twip=5.827''=1148mm
+            CT_SectPr srcpr = new CT_SectPr();
+            //设置A4纸纵向，如果要横向，两个值调换即可
+            srcpr.pgSz.w = (ulong)11906;
+            srcpr.pgSz.h = (ulong)16838;
+            var doc = new XWPFDocument();
+            doc.Document.body.sectPr = srcpr;
+            foreach (var c in ContentList)
+            {
+                #region 普通段落文字
+                if (c.Xpara != null)
+                {
+                    if (c.Xpara.Pic != null)
+                    {
+                        if (string.IsNullOrEmpty(c.Xpara.Pic.FilePath) || !File.Exists(c.Xpara.Pic.FilePath))
+                        {
+                            continue;
+                        }
+                        #region 图片流,图片流也是要作为一个段落插入
+                        CT_P m_p = doc.Document.body.AddNewP();
+                        m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                        XWPFParagraph gp = new XWPFParagraph(m_p, doc);
+                        XWPFRun gr = gp.CreateRun();
+ 
+                        如果需要图文混排,在图片前面加文字，可以加下面的这些属性
+                        //gr.GetCTR().AddNewRPr().AddNewRFonts().ascii = "黑体";
+                        //gr.GetCTR().AddNewRPr().AddNewRFonts().eastAsia = "黑体";
+                        //gr.GetCTR().AddNewRPr().AddNewRFonts().hint = ST_Hint.eastAsia;
+                        //gr.GetCTR().AddNewRPr().AddNewSz().val = (ulong)44;
+                        //gr.GetCTR().AddNewRPr().AddNewSzCs().val = (ulong)44;
+                        //gr.GetCTR().AddNewRPr().AddNewColor().val = "red"; 
+ 
+                        #region 插入图片
+ 
+                        FileStream stream = new FileStream(c.Xpara.Pic.FilePath, FileMode.Open, FileAccess.Read);
+                        switch (c.Xpara.Pic.Ptype)
+                        {
+                            case ParType.inline:
+                                {
+                                    gr.AddPicture(stream, (int)c.Xpara.Pic.PicFormat, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height);
+                                    m_p = doc.Document.body.AddNewP();
+                                    m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                    gp = new XWPFParagraph(m_p, doc);//再添加一个段落，空点距离
+                                }
+                                break;
+                            case ParType.anchor:
+                                {
+                                    CT_Anchor anchor = new CT_Anchor();
+                                    //图片距正文上(distT)、下(distB)、左(distL)、右(distR)的距离。114300EMUS=3.1mm
+                                    anchor.distT = 0u;
+                                    anchor.distB = 0u;
+                                    anchor.distL = 114300u;
+                                    anchor.distR = 114300u;
+                                    anchor.simplePos1 = false;
+                                    anchor.relativeHeight = 251658240u;
+                                    anchor.behindDoc = false;
+                                    anchor.locked = false;
+                                    anchor.layoutInCell = true;
+                                    anchor.allowOverlap = true;
+ 
+                                    CT_Positive2D simplePos = new CT_Positive2D();
+                                    simplePos.x = 0;
+                                    simplePos.y = 0;
+ 
+                                    CT_EffectExtent effectExtent = new CT_EffectExtent();
+                                    effectExtent.l = 0;
+                                    effectExtent.t = 0;
+                                    effectExtent.r = 0;
+                                    effectExtent.b = 0;
+                                    switch (c.Xpara.Pic.Wrap)
+                                    {
+                                        case WrapType.wrapSquare:
+                                            {
+                                                //四周型
+                                                gr.GetCTR().AddNewRPr().AddNewRFonts().ascii = "宋体";
+                                                gr.GetCTR().AddNewRPr().AddNewRFonts().eastAsia = "宋体";
+ 
+                                                gr.GetCTR().AddNewRPr().AddNewSz().val = (ulong)28;//四号
+                                                gr.GetCTR().AddNewRPr().AddNewSzCs().val = (ulong)28;
+ 
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.both;
+ 
+                                                gr.GetCTR().AddNewRPr().AddNewB().val = true; //加粗      
+                                                gp.IndentationFirstLine = Indentation("宋体", 28, 2, FontStyle.Bold);
+                                                //图左上角坐标
+                                                CT_PosH posH = new CT_PosH();
+                                                posH.relativeFrom = ST_RelFromH.column;
+                                                posH.posOffset = 4000000;//单位：EMUS,1CM=360000EMUS
+                                                CT_PosV posV = new CT_PosV();
+                                                posV.relativeFrom = ST_RelFromV.paragraph;
+                                                posV.posOffset = 200000;
+                                                CT_WrapSquare wrapSquare = new CT_WrapSquare();
+                                                switch (c.Xpara.Pic.Postp)
+                                                {
+                                                    case PosType.Besides:
+                                                        //两侧
+                                                        wrapSquare.wrapText = ST_WrapText.bothSides;
+                                                        break;
+                                                    case PosType.Largest:
+                                                        //最大一侧
+                                                        wrapSquare.wrapText = ST_WrapText.largest;
+                                                        break;
+                                                    case PosType.Left:
+                                                        //左侧
+                                                        wrapSquare.wrapText = ST_WrapText.left;
+                                                        break;
+                                                    case PosType.Right:
+                                                        //右侧
+                                                        wrapSquare.wrapText = ST_WrapText.right;
+                                                        break;
+                                                }
+                                                gr.AddPicture(stream, (int)c.Xpara.Pic.PicFormat, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height, posH, posV, wrapSquare, anchor, simplePos, effectExtent);
+                                                m_p = doc.Document.body.AddNewP();
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                                gp = new XWPFParagraph(m_p, doc);
+                                                gr = gp.CreateRun();
+                                            }
+                                            break;
+                                        case WrapType.wrapTight:
+                                            {
+                                                //紧密型
+                                                gr.GetCTR().AddNewRPr().AddNewRFonts().ascii = "宋体";
+                                                gr.GetCTR().AddNewRPr().AddNewRFonts().eastAsia = "宋体";
+ 
+                                                gr.GetCTR().AddNewRPr().AddNewSz().val = (ulong)28;//四号
+                                                gr.GetCTR().AddNewRPr().AddNewSzCs().val = (ulong)28;
+ 
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.both;
+                                                m_p.AddNewPPr().AddNewSpacing().line = "400";//行距固定20磅
+                                                m_p.AddNewPPr().AddNewSpacing().lineRule = ST_LineSpacingRule.exact;
+ 
+                                                //gr.GetCTR().AddNewRPr().AddNewB().val = true; //加粗      
+                                                gp.IndentationFirstLine = Indentation("宋体", 21, 2, FontStyle.Regular);
+ 
+                                                CT_WrapTight wrapTight = new CT_WrapTight();
+                                                switch (c.Xpara.Pic.Postp)
+                                                {
+                                                    case PosType.Besides:
+                                                        //两侧
+                                                        wrapTight.wrapText = ST_WrapText.bothSides;
+                                                        break;
+                                                    case PosType.Largest:
+                                                        //最大一侧
+                                                        wrapTight.wrapText = ST_WrapText.largest;
+                                                        break;
+                                                    case PosType.Left:
+                                                        //左侧
+                                                        wrapTight.wrapText = ST_WrapText.left;
+                                                        break;
+                                                    case PosType.Right:
+                                                        //右侧
+                                                        wrapTight.wrapText = ST_WrapText.right;
+                                                        break;
+                                                }
+                                                wrapTight.wrapPolygon = new CT_WrapPath();
+                                                wrapTight.wrapPolygon.edited = false;
+                                                wrapTight.wrapPolygon.start = new CT_Positive2D();
+                                                wrapTight.wrapPolygon.start.x = 0;
+                                                wrapTight.wrapPolygon.start.y = 0;
+                                                CT_Positive2D lineTo = new CT_Positive2D();
+                                                wrapTight.wrapPolygon.lineTo = new List<CT_Positive2D>();
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 0;
+                                                lineTo.y = 21394;
+                                                wrapTight.wrapPolygon.lineTo.Add(lineTo);
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 21806;
+                                                lineTo.y = 21394;
+                                                wrapTight.wrapPolygon.lineTo.Add(lineTo);
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 21806;
+                                                lineTo.y = 0;
+                                                wrapTight.wrapPolygon.lineTo.Add(lineTo);
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 0;
+                                                lineTo.y = 0;
+                                                wrapTight.wrapPolygon.lineTo.Add(lineTo);
+                                                //图位置
+                                                CT_PosH posH = new CT_PosH();
+                                                posH.relativeFrom = ST_RelFromH.column;
+                                                posH.posOffset = 4000000;
+                                                CT_PosV posV = new CT_PosV();
+                                                posV.relativeFrom = ST_RelFromV.paragraph;
+                                                posV.posOffset = -432000;//-1.2cm*360000
+ 
+                                                gr.AddPicture(stream, (int)c.Xpara.Pic.PicFormat, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height, posH, posV, wrapTight, anchor, simplePos, effectExtent);
+                                                m_p = doc.Document.body.AddNewP();
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                                gp = new XWPFParagraph(m_p, doc);
+                                                gr = gp.CreateRun();
+                                            }
+                                            break;
+                                        case WrapType.wrapThrough:
+                                            {
+                                                //穿越型-两边
+                                                gr.GetCTR().AddNewRPr().AddNewRFonts().ascii = "宋体";
+                                                gr.GetCTR().AddNewRPr().AddNewRFonts().eastAsia = "宋体";
+ 
+                                                gr.GetCTR().AddNewRPr().AddNewSz().val = (ulong)28;//四号
+                                                gr.GetCTR().AddNewRPr().AddNewSzCs().val = (ulong)28;
+ 
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.both;
+                                                m_p.AddNewPPr().AddNewSpacing().line = "400";//行距固定20磅
+                                                m_p.AddNewPPr().AddNewSpacing().lineRule = ST_LineSpacingRule.exact;
+ 
+                                                CT_WrapThrough wrapThrough = new CT_WrapThrough();
+                                                switch (c.Xpara.Pic.Postp)
+                                                {
+                                                    case PosType.Besides:
+                                                        //两侧
+                                                        wrapThrough.wrapText = ST_WrapText.bothSides;
+                                                        break;
+                                                    case PosType.Largest:
+                                                        //最大一侧
+                                                        wrapThrough.wrapText = ST_WrapText.largest;
+                                                        break;
+                                                    case PosType.Left:
+                                                        //左侧
+                                                        wrapThrough.wrapText = ST_WrapText.left;
+                                                        break;
+                                                    case PosType.Right:
+                                                        //右侧
+                                                        wrapThrough.wrapText = ST_WrapText.right;
+                                                        break;
+                                                }
+                                                wrapThrough.wrapPolygon = new CT_WrapPath();
+                                                wrapThrough.wrapPolygon.edited = false;
+                                                wrapThrough.wrapPolygon.start = new CT_Positive2D();
+                                                wrapThrough.wrapPolygon.start.x = 0;
+                                                wrapThrough.wrapPolygon.start.y = 0;
+                                                CT_Positive2D lineTo = new CT_Positive2D();
+                                                wrapThrough.wrapPolygon.lineTo = new List<CT_Positive2D>();
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 0;
+                                                lineTo.y = 21394;
+                                                wrapThrough.wrapPolygon.lineTo.Add(lineTo);
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 21806;
+                                                lineTo.y = 21394;
+                                                wrapThrough.wrapPolygon.lineTo.Add(lineTo);
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 21806;
+                                                lineTo.y = 0;
+                                                wrapThrough.wrapPolygon.lineTo.Add(lineTo);
+                                                lineTo = new CT_Positive2D();
+                                                lineTo.x = 0;
+                                                lineTo.y = 0;
+                                                wrapThrough.wrapPolygon.lineTo.Add(lineTo);
+                                                CT_PosH posH = new CT_PosH();
+                                                posH.relativeFrom = ST_RelFromH.column;
+                                                posH.posOffset = 4000000;
+                                                CT_PosV posV = new CT_PosV();
+                                                posV.relativeFrom = ST_RelFromV.paragraph;
+                                                posV.posOffset = -432000;//-1.2cm*360000
+ 
+                                                gr.AddPicture(stream, (int)NPOI.XWPF.UserModel.PictureType.JPEG, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height, posH, posV, wrapThrough, anchor, simplePos, effectExtent);
+                                                //gp = m_Docx.CreateParagraph();
+                                                //gp.GetCTPPr().AddNewJc().val = ST_Jc.center; //水平居中
+                                                m_p = doc.Document.body.AddNewP();
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                                gp = new XWPFParagraph(m_p, doc);
+                                                gr = gp.CreateRun();
+                                            }
+                                            break;
+                                        case WrapType.wrapTopAndBottom:
+                                            {
+                                                //上下型
+                                                //图左上角坐标
+                                                CT_PosH posH = new CT_PosH();
+                                                posH.relativeFrom = ST_RelFromH.column;
+                                                posH.posOffset = 400000;//单位：EMUS,1CM=360000EMUS
+                                                CT_PosV posV = new CT_PosV();
+                                                posV.relativeFrom = ST_RelFromV.paragraph;
+                                                posV.posOffset = 200000;
+                                                CT_WrapTopBottom wrapTopandBottom = new CT_WrapTopBottom();
+                                                gr.AddPicture(stream, (int)c.Xpara.Pic.PicFormat, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height, posH, posV, wrapTopandBottom, anchor, simplePos, effectExtent);
+                                                m_p = doc.Document.body.AddNewP();
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                                gp = new XWPFParagraph(m_p, doc);
+                                                gr = gp.CreateRun();
+                                            }
+                                            break;
+                                        case WrapType.wrapNoneBehindDoc:
+                                            {
+                                                //上方型
+                                                //图左上角坐标
+                                                CT_PosH posH = new CT_PosH();
+                                                posH.relativeFrom = ST_RelFromH.column;
+                                                posH.posOffset = 4000000;//单位：EMUS,1CM=360000EMUS
+                                                CT_PosV posV = new CT_PosV();
+                                                posV.relativeFrom = ST_RelFromV.paragraph;
+                                                posV.posOffset = 0;
+                                                CT_WrapNone wrapNone = new CT_WrapNone();
+                                                anchor.behindDoc = false;
+                                                gr.AddPicture(stream, (int)c.Xpara.Pic.PicFormat, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height, posH, posV, wrapNone, anchor, simplePos, effectExtent);
+                                                m_p = doc.Document.body.AddNewP();
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                                gp = new XWPFParagraph(m_p, doc);
+                                                gr = gp.CreateRun();
+                                            }
+                                            break;
+                                        case WrapType.wrapBehindDoc:
+                                            {
+                                                //下方型
+                                                //图左上角坐标
+                                                CT_PosH posH = new CT_PosH();
+                                                posH.relativeFrom = ST_RelFromH.column;
+                                                posH.posOffset = 4000000;//单位：EMUS,1CM=360000EMUS
+                                                CT_PosV posV = new CT_PosV();
+                                                posV.relativeFrom = ST_RelFromV.paragraph;
+                                                posV.posOffset = 0;
+                                                CT_WrapNone wrapNone = new CT_WrapNone();
+                                                anchor.behindDoc = true;
+                                                gr.AddPicture(stream, (int)c.Xpara.Pic.PicFormat, c.Xpara.Pic.PicName, c.Xpara.Pic.Width, c.Xpara.Pic.Height, posH, posV, wrapNone, anchor, simplePos, effectExtent);
+                                                m_p = doc.Document.body.AddNewP();
+                                                m_p.AddNewPPr().AddNewJc().val = ST_Jc.center;//段落水平居中
+                                                gp = new XWPFParagraph(m_p, doc);
+                                                gr = gp.CreateRun();
+                                            }
+                                            break;
+                                    }
+                                }
+                                break;
+                        }
+                        
+                        #endregion
+ 
+                        #endregion
+                    }
+                    else
+                    {
+                        #region 普通文本
+                        if (c.Xpara.ParaStyle == null) c.Xpara.ParaStyle = new Style();
+                        第一种创建段落的方式
+                        //XWPFParagraph p = doc.CreateParagraph();
+                        //p.Alignment = (ParagraphAlignment)Enum.Parse(typeof(ParagraphAlignment), c.Xpara.ToString());
+ 
+                        //第二种创建段落的方法
+                        CT_P ctp = doc.Document.body.AddNewP();
+                        ctp.AddNewPPr().AddNewJc().val = (ST_Jc)Enum.Parse(typeof(ST_Jc), c.Xpara.Align.ToString().ToLower());//ST_Jc.center
+ 
+                        XWPFParagraph gp = new XWPFParagraph(ctp, doc);
+                        if (c.Xpara.FirstIdentity > 0)
+                        {
+                            gp.IndentationFirstLine = c.Xpara.FirstIdentity;
+                        }
+                        //单倍为默认值（240twip）不需设置，1.5倍=240X1.5=360twip，2倍=240X2=480twip
+                        if (!string.IsNullOrEmpty(c.Xpara.ParaStyle.LineDistance))
+                        {
+                            ctp.AddNewPPr().AddNewSpacing().line = c.Xpara.ParaStyle.LineDistance;
+                        }
+                        ctp.AddNewPPr().AddNewSpacing().lineRule = ST_LineSpacingRule.exact;
+ 
+                        //创建run
+                        XWPFRun pr = gp.CreateRun();
+                        if (!string.IsNullOrEmpty(c.Xpara.ParaStyle.FontFamily))
+                        {
+                            pr.GetCTR().AddNewRPr().AddNewRFonts().ascii = c.Xpara.ParaStyle.FontFamily;
+                            pr.GetCTR().AddNewRPr().AddNewRFonts().eastAsia = c.Xpara.ParaStyle.FontFamily;
+                            pr.GetCTR().AddNewRPr().AddNewRFonts().hint = ST_Hint.eastAsia;
+                        }
+                        if (c.Xpara.ParaStyle.FontSize > 0)
+                        {
+                            pr.GetCTR().AddNewRPr().AddNewSz().val = (ulong)c.Xpara.ParaStyle.FontSize;
+                            pr.GetCTR().AddNewRPr().AddNewSzCs().val = (ulong)c.Xpara.ParaStyle.FontSize;
+                        }
+                        pr.GetCTR().AddNewRPr().AddNewB().val = c.Xpara.ParaStyle.IsBold;
+                        pr.GetCTR().AddNewRPr().AddNewI().val = c.Xpara.ParaStyle.IsItalic;
+                        if (!string.IsNullOrEmpty(c.Xpara.ParaStyle.RgbColor))
+                        {
+                            pr.GetCTR().AddNewRPr().AddNewColor().val = c.Xpara.ParaStyle.RgbColor;
+                        }
+                        pr.SetText(c.Xpara.Content);
+                        #endregion
+                    }
+                    
+                }
+                #endregion
+ 
+                #region 表格
+                if (c.XTable != null)
+                {
+                    //第一种新增表格的方法
+                    CT_Tbl tbl = doc.Document.body.AddNewTbl();
+                    XWPFTable tab = new XWPFTable(tbl, doc);//创建一行一列表
+                    tab.SetCellMargins(c.XTable.MarginTop, c.XTable.MarginLeft, c.XTable.MarginBottom, c.XTable.MarginRight);
+                    tbl.AddNewTblPr().jc = new CT_Jc();
+                    tbl.AddNewTblPr().jc.val = ST_Jc.center;//表格居中对齐
+ 
+                    //设置表格宽度
+                    if (c.XTable.Width > 0)
+                    {
+                        tbl.AddNewTblPr().AddNewTblW().w = c.XTable.Width.ToString();
+                    }
+                    tbl.AddNewTblPr().AddNewTblW().type = ST_TblWidth.dxa;
+ 
+                    tbl.tblPr.tblpPr = new CT_TblPPr();
+                    //表格定位
+                    //若tblpXSpec、tblpX同时存在，则tblpXSpec优先tblpX；
+                    //若tblpYSpec、tblpY同时存在，则tblpYSpec优先tblpY；
+                    if (c.XTable.Pxy != null)
+                    {
+                        tbl.tblPr = new CT_TblPr();
+                        tbl.tblPr.tblpPr.tblpX = c.XTable.Pxy.X.ToString();//左上角坐标
+                        tbl.tblPr.tblpPr.tblpY = c.XTable.Pxy.Y.ToString();
+                    }
+ 
+                    if (c.XTable.TabLeft > 0) tbl.tblPr.tblpPr.leftFromText = (ulong)c.XTable.TabLeft;
+                    if (c.XTable.TabRight > 0) tbl.tblPr.tblpPr.rightFromText = (ulong)c.XTable.TabRight;
+                    tbl.tblPr.tblpPr.vertAnchor = ST_VAnchor.text;
+                    tbl.tblPr.tblpPr.horzAnchor = ST_HAnchor.page;
+ 
+                    第二种方式新增表格
+                    //var t = doc.CreateTable(c.XTable.RowNum, c.XTable.ColNum);
+                    //t.SetCellMargins(c.XTable.MarginTop, c.XTable.MarginLeft, c.XTable.MarginBottom, c.XTable.MarginRight);
+                    //foreach (var row in c.XTable.Rows)
+ 
+                    //前面创建的表只有一行一列,这里将它补齐
+                    //按c.XTable的RowNum和ColNum生成x行y列表格，并且设置好单元格的宽度
+                    if (c.XTable.RowNum > 0 && c.XTable.ColNum > 0)
+                    {
+                        if (c.XTable.Rows == null) c.XTable.Rows = new List<TabRow>();
+                    }
+                    for (int i = 0; i < c.XTable.RowNum; i++)
+                    {
+                        XWPFTableRow tr = null;
+                        if (i > 0)
+                        {
+                            tr = tab.InsertNewTableRow(i - 1);
+                        }
+                        else
+                        {
+                            tr = tab.GetRow(i);
+                        }
+                        var myrow = c.XTable.Rows.FirstOrDefault(m => m.RowIndex == i);
+                        if (myrow == null)
+                        {
+                            myrow = new TabRow();
+                        }
+                        if (myrow.Cells == null)
+                        {
+                            myrow.Cells = new List<TabCell>();
+                        }
+                        for (int k = 0; k < c.XTable.ColNum-1; k++)
+                        {
+                            //因为是在已有的单元格内进行分割，因此要减一
+                            XWPFTableCell cell = tr.AddNewTableCell();
+                            CT_Tc ctc = cell.GetCTTc();
+                            var curcell = myrow.Cells.FirstOrDefault(m => m.CellIndex == k);
+                            if (curcell == null)
+                            {
+                                continue;
+                            }
+                            if (curcell.Width > 0)
+                            {
+                                CT_TcPr curtcpr = ctc.AddNewTcPr();
+                                curtcpr.tcW = new CT_TblWidth();
+                                curtcpr.tcW.w = curcell.Width.ToString();
+                            }
+                            
+                            if (curcell.CStyle != null)
+                            {
+                                //给单元格的内容加格式
+                                XWPFParagraph para = cell.AddParagraph();
+                                XWPFRun xr= para.CreateRun();
+                                //设置字体
+                                if (!string.IsNullOrEmpty(curcell.CStyle.FontFamily))
+                                {
+                                    xr.GetCTR().AddNewRPr().AddNewRFonts().ascii = curcell.CStyle.FontFamily;
+                                    xr.GetCTR().AddNewRPr().AddNewRFonts().eastAsia = curcell.CStyle.FontFamily;
+                                    xr.GetCTR().AddNewRPr().AddNewRFonts().hint = ST_Hint.eastAsia;
+                                    //xr.SetFontFamily(curcell.CStyle.FontFamily, FontCharRange.Ascii);
+                                    //xr.SetFontFamily(curcell.CStyle.FontFamily, FontCharRange.EastAsia);
+                                }
+                                if (curcell.CStyle.FontSize > 0)
+                                {
+                                    xr.GetCTR().AddNewRPr().AddNewSz().val = (ulong)curcell.CStyle.FontSize;
+                                    xr.GetCTR().AddNewRPr().AddNewSzCs().val = (ulong)curcell.CStyle.FontSize;
+                                }
+                                xr.GetCTR().AddNewRPr().AddNewB().val = curcell.CStyle.IsBold;
+                                xr.GetCTR().AddNewRPr().AddNewI().val = curcell.CStyle.IsItalic;
+                                //设置颜色
+                                if(!string.IsNullOrEmpty(curcell.CStyle.RgbColor))
+                                    xr.SetColor(curcell.CStyle.RgbColor);
+                                xr.SetText(curcell.Content);
+                                
+                            }
+                            else
+                            {
+                                if (curcell.Content != null) cell.SetText(curcell.Content);
+                            }
+                        }
+                        
+                    }
+                }
+                #endregion
+            }
+ 
+            using (MemoryStream stream=new MemoryStream())
+            {
+                doc.Write(stream);
+                stream.Flush();
+                stream.Close();
+                stream.Dispose();
+                SaveToFile(stream, filePath);
+            }
+        }
+ 
+        static void SaveToFile(MemoryStream ms, string fileName)
+        {
+            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+            {
+                byte[] data = ms.ToArray();
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                data = null;
+            }
+        }
+ 
+        /// <summary>
+        /// 计算点数
+        /// </summary>
+        /// <param name="fontname"></param>
+        /// <param name="fontsize"></param>
+        /// <param name="Indentationfonts"></param>
+        /// <param name="fs"></param>
+        /// <returns></returns>
+        protected int Indentation(String fontname, int fontsize, int Indentationfonts, FontStyle fs)
+        {
+            //字显示宽度，用于段首行缩进
+            /*字号与fontsize关系
+             * 初号（0号）=84，小初=72，1号=52，2号=44，小2=36，3号=32，小3=30，4号=28，小4=24，5号=21，小5=18，6号=15，小6=13，7号=11，8号=10
+             */
+            Graphics m_tmpGr = new Control().CreateGraphics();
+            //Graphics m_tmpGr = this.CreateGraphics();
+            
+            m_tmpGr.PageUnit = GraphicsUnit.Point;
+            SizeF size = m_tmpGr.MeasureString("好", new Font(fontname, fontsize * 0.75F, fs));
+            return (int)size.Width * Indentationfonts * 10;
+        }
+ 
+        /// <summary>
+        /// 给定一个图片路径，得出合适的长宽插入文档中
+        /// </summary>
+        /// <param name="imgpath"></param>
+        /// <param name="imgw"></param>
+        /// <param name="imgh"></param>
+        public static void CalcImgWH(string imgpath, ref int imgw, ref int imgh)
+        {
+            if (!File.Exists(imgpath)) return;
+            Bitmap bmap = new Bitmap(imgpath);
+            SizeF size = bmap.PhysicalDimension;
+            imgw = (int)size.Width;
+            imgh = (int)size.Height;
+            decimal d = 70;//算出一厘米的大概像素,1CM=360000EMUS
+            imgw = (int)(imgw * 360000 / d);
+            imgh = (int)(imgh * 360000 / d);
+        }
+ 
+        /// <summary>
+        /// 给定一个图片流，得出合适的长宽插入文档中
+        /// </summary>
+        /// <param name="imgpath"></param>
+        /// <param name="imgw"></param>
+        /// <param name="imgh"></param>
+        public static void CalcImgWH(Stream stream, ref int imgw, ref int imgh)
+        {
+            Bitmap bmap = new Bitmap(stream);
+            SizeF size = bmap.PhysicalDimension;
+            imgw = (int)size.Width;
+            imgh = (int)size.Height;
+            decimal d = 70;//算出一厘米的大概像素,1CM=360000EMUS
+            imgw = (int)(imgw * 360000 / d);
+            imgh = (int)(imgh * 360000 / d);
+        }
+    }
+ 
+    
+ 
+    public class WordModel
+    {
+        /// <summary>
+        /// 段落
+        /// </summary>
+        public ParaGragh Xpara { set; get; }
+ 
+        /// <summary>
+        /// 表格集合
+        /// </summary>
+        public Table XTable { set; get; }
+    }
+ 
+    /// <summary>
+    /// 段落实体
+    /// </summary>
+    public class ParaGragh
+    {
+        /// <summary>
+        /// 段落的文本内容
+        /// </summary>
+        public string Content { set; get; }
+ 
+        /// <summary>
+        /// 首行缩进点数，一般设置为100,约两个字
+        /// </summary>
+        public int FirstIdentity { set; get; }
+ 
+        /// <summary>
+        /// 文字的对齐方式
+        /// </summary>
+        public AlignMent Align { set; get; }
+ 
+        /// <summary>
+        /// 字体样式
+        /// </summary>
+        public Style ParaStyle { set; get; }
+ 
+        /// <summary>
+        /// 图片
+        /// </summary>
+        public Picture Pic { set; get; }
+        
+    }
+ 
+    /// <summary>
+    /// 图片
+    /// </summary>
+    public class Picture
+    {
+        public ParType Ptype { set; get; }
+        public WrapType Wrap { set; get; }
+ 
+        public PictureTp PicFormat { set; get; }
+ 
+        public string PicName { set; get; }
+        public string FilePath { set; get; }
+ 
+        /// <summary>
+        /// 宽，单位：EMUS,1CM=360000EMUS
+        /// </summary>
+        public int Width { set; get; }
+ 
+        /// <summary>
+        /// 高，单位：EMUS,1CM=360000EMUS
+        /// </summary>
+        public int Height { set; get; }
+ 
+        /// <summary>
+        /// 对齐方式
+        /// </summary>
+        public PosType Postp { set; get; }
+ 
+        /*项目中的图基本上都会以上下的方式进行显示，所以图片特效和阴影之类的都不考虑*/
+    }
+ 
+    public class Table
+    {
+        /// <summary>
+        /// 表格有多少行
+        /// </summary>
+        public int RowNum { set; get; }
+ 
+        /// <summary>
+        /// 表格有多少列
+        /// </summary>
+        public int ColNum { set; get; }
+ 
+        /// <summary>
+        /// 左边距
+        /// </summary>
+        public int MarginLeft { set; get; }
+ 
+        /// <summary>
+        /// 右边距
+        /// </summary>
+        public int MarginRight { set; get; }
+ 
+        /// <summary>
+        /// 下边距
+        /// </summary>
+        public int MarginBottom { set; get; }
+ 
+        /// <summary>
+        /// 上边距
+        /// </summary>
+        public int MarginTop { set; get; }
+ 
+        /// <summary>
+        /// 表格的行的集合
+        /// </summary>
+        public List<TabRow> Rows { set; get; }
+ 
+        /// <summary>
+        /// 宽度
+        /// </summary>
+        public int Width { set; get; }
+ 
+        /// <summary>
+        /// 左上角位置
+        /// </summary>
+        public Point Pxy { set; get; }
+ 
+        /// <summary>
+        /// 表格离左边的间距
+        /// </summary>
+        public int TabLeft { set; get; }
+ 
+        /// <summary>
+        /// 表格离右边的间距
+        /// </summary>
+        public int TabRight { set; get; }
+    }
+ 
+    public class TabRow
+    {
+        /// <summary>
+        /// 行标
+        /// </summary>
+        public int RowIndex { set; get; }
+ 
+        /// <summary>
+        /// 本行的单元格集合
+        /// </summary>
+        public List<TabCell> Cells { set; get; }
+    }
+ 
+    public class TabCell
+    {
+        /// <summary>
+        /// 列标
+        /// </summary>
+        public int CellIndex { set; get; }
+ 
+        /// <summary>
+        /// 是否是合并列
+        /// </summary>
+        public bool IsMege { set; get; }
+ 
+        /// <summary>
+        /// 合并的列数，此处只考虑在本行水平往后合并
+        /// </summary>
+        public int MegeNum { set; get; }
+ 
+        /// <summary>
+        /// 单元格宽
+        /// </summary>
+        public int Width { set; get; }
+ 
+        /// <summary>
+        /// 单元格高
+        /// </summary>
+        public int Height { set; get; }
+ 
+        /// <summary>
+        /// 单元格的内容
+        /// </summary>
+        public string Content { set; get; }
+ 
+        /// <summary>
+        /// 带格式的单元格内容
+        /// </summary>
+        public Style CStyle { set; get; }
+    }
+ 
+    /// <summary>
+    /// 样式
+    /// </summary>
+    public class Style
+    {
+        /// <summary>
+        /// 行间距，固定值是20磅
+        /// </summary>
+        public string LineDistance { set; get; }
+ 
+        /// <summary>
+        /// 文字大小
+        /// </summary>
+        public int FontSize { set; get; }
+ 
+        /// <summary>
+        /// 字体
+        /// </summary>
+        public string FontFamily { set; get; }
+ 
+        /// <summary>
+        /// 是否倾斜
+        /// </summary>
+        public bool IsItalic { set; get; }
+ 
+        /// <summary>
+        /// 是否加粗
+        /// </summary>
+        public bool IsBold { set; get; }
+ 
+        /// <summary>
+        /// 文字RGB色,如：red
+        /// </summary>
+        public string RgbColor { set; get; }
+    }
+ 
+    public class Point
+    {
+        /// <summary>
+        /// x坐标
+        /// </summary>
+        public int X { set; get; }
+ 
+        /// <summary>
+        /// y坐标
+        /// </summary>
+        public int Y { set; get; }
+    }
+ 
+    /// <summary>
+    /// 文字的水平对齐方式
+    /// </summary>
+    public enum AlignMent
+    {
+        BOTH = 1,
+        CENTER = 2,
+        DISTRIBUTE = 3,
+        HIGH_KASHIDA = 4,
+        LEFT = 5,
+        LOW_KASHIDA = 6,
+        MEDIUM_KASHIDA = 7,
+        NUM_TAB = 8,
+        RIGHT = 9,
+        THAI_DISTRIBUTE = 10
+    }
+ 
+    /// <summary>
+    /// 图片插入的方式
+    /// </summary>
+    public enum ParType
+    {
+        /// <summary>
+        /// 内嵌式
+        /// </summary>
+        inline=1,
+        /// <summary>
+        /// 锚式，可以拖动的那种
+        /// </summary>
+        anchor=2
+    }
+ 
+    /// <summary>
+    /// 图片与文字关系
+    /// </summary>
+    public enum WrapType
+    {
+        /// <summary>
+        ///四周型
+        /// </summary>
+        wrapSquare= 1,
+        /// <summary>
+        /// 紧密型
+        /// </summary>
+        wrapTight=2,
+        /// <summary>
+        /// 穿越型
+        /// </summary>
+        wrapThrough=3,
+        /// <summary>
+        /// 上下型
+        /// </summary>
+        wrapTopAndBottom=4,
+        /// <summary>
+        /// 上方型，图在左上角
+        /// </summary>
+        wrapNoneBehindDoc=5,
+        /// <summary>
+        /// 下方型，图左下角
+        /// </summary>
+        wrapBehindDoc=6
+    }
+ 
+    /// <summary>
+    /// 图片类型
+    /// </summary>
+    public enum PictureTp
+    {
+        EMF = 2,
+        WMF = 3,
+        PICT = 4,
+        JPEG = 5,
+        PNG = 6,
+        DIB = 7,
+        GIF = 8,
+        TIFF = 9,
+        EPS = 10,
+        BMP = 11,
+        WPG = 12,
+    }
+ 
+    /// <summary>
+    /// 图片与文字的对齐方式
+    /// </summary>
+    public enum PosType
+    {
+        /// <summary>
+        /// 两侧
+        /// </summary>
+        Besides=1,
+        /// <summary>
+        /// 左
+        /// </summary>
+        Left=2,
+        /// <summary>
+        /// 右
+        /// </summary>
+        Right=3,
+        /// <summary>
+        /// 最大一侧
+        /// </summary>
+        Largest=4
+    }
+}
+
+以下是测试代码：
+chart1.Series.Clear();//清除默认的图例
+            chart1.BackColor = ColorTranslator.FromHtml("#D3DFF0");//用网页颜色
+            chart1.BackGradientStyle = GradientStyle.TopBottom;//渐变背景，从上到下
+            chart1.BorderlineDashStyle = ChartDashStyle.Solid;//外框线为实线
+            chart1.BorderlineWidth = 2;
+ 
+            Series zser = new Series("正面");
+            Series fser = new Series("负面");
+ 
+            //构造正面数据
+            zser.Points.AddXY("昨日", 4);
+            zser.Points.AddXY("今日", 5);
+            zser.Points.AddXY("上周", 20);
+            zser.Points.AddXY("本周", 15);
+            zser.Points.AddXY("上月", 40);
+            zser.Points.AddXY("本月", 50);
+            zser["PointWidth"] = "0.6";
+ 
+            //构造负面数据
+            fser.Points.AddXY("昨日", 6);
+            fser.Points.AddXY("今日", 23);
+            fser.Points.AddXY("上周", 37);
+            fser.Points.AddXY("本周", 25);
+            fser.Points.AddXY("上月", 30);
+            fser.Points.AddXY("本月", 40);
+            fser["PointWidth"] = "0.6";
+            zser.IsValueShownAsLabel = true;
+            zser.ChartType = SeriesChartType.Column;
+            fser.IsValueShownAsLabel = true;
+            fser.ChartType = SeriesChartType.Column;
+            //fser.Color = Color.Red;
+            //series["DrawingStyle"] = "cylinder";
+            //chart1.Legends[0].Enabled = false;//是否显示图例
+ 
+            chart1.Series.Add(zser);
+            chart1.Series.Add(fser);
+            chart1.ChartAreas[0].BackColor = Color.Transparent;//数据区域的背景，默认为白色
+            chart1.ChartAreas[0].BackGradientStyle = GradientStyle.TopBottom;
+            chart1.ChartAreas[0].BorderDashStyle = ChartDashStyle.Solid;
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.FromArgb(64, 64, 64, 64);//数据区域，纵向的线条颜色
+            chart1.ChartAreas[0].AxisX.MajorGrid.Interval = 3;//主网格间距
+            chart1.ChartAreas[0].AxisX.MinorGrid.Interval = 2;//副网格间距
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(64, 64, 64, 64);//数据区域，横向线条的颜色
+            chart1.Titles.Add(string.Format("舆情统计"));
+            chart1.Titles.Add(string.Format("{0}",DateTime.Now.ToString("yyyy-MM-dd HH:mm")));
+            chart1.Titles[0].Font = new Font("微软雅黑", 18, FontStyle.Bold);
+            chart1.ChartAreas[0].AxisY.Title = "数量";
+            chart1.Width = 900;
+            chart1.Height = 450;
+
+测试是用winform写的，所以直接拖了个图表控件在窗体上。
+
+
+```
+
+
+
 
 
 # FFMPEG
