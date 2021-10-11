@@ -32,6 +32,11 @@
 </EditForm>
 
 
+@if (rowData != null)
+{
+    <h3>hello, world...</h3>
+}
+
 @*
     https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
         https://github.com/kevin-montrose/Jil
@@ -56,7 +61,7 @@
 
         //发送Post请求
         var values = new Dictionary<string, string>
-        {
+    {
             { "keyword", keyword },
             { "lang_select", "b" }
         };
@@ -82,9 +87,13 @@
             await sessionStorage.SetItemAsync("keyword", keyword);
             await sessionStorage.SetItemAsync("lang_select", values["lang_select"]);
             var keyword_from_section = await sessionStorage.GetItemAsync<string>("keyword");
+
+            Refresh();
+
+            //MethodToTriggerUrl();  // jump to page x
         }
 
-        MethodToTriggerUrl();  // jump to page x
+
     }
 
 
@@ -92,5 +101,14 @@
     void MethodToTriggerUrl()
     {
         NavigationManager.NavigateTo("/");
+    }
+
+    public void Refresh()
+    {
+        // Update the UI
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
     }
 }
