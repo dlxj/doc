@@ -37,12 +37,20 @@
 
     @foreach (var row in rowData)
     {
-        <br>@row.jp
-        <br>@row.zh
         <br><br>
+        @row.jp
+        <br>
+        @row.zh
     }
 
-    <h3>hello, world...</h3>
+    <br><br>
+    <button @onclick="@HandleSubmit">next</button>
+    <br>
+}
+
+@if (debugQ)
+{
+    HandleSubmit();
 }
 
 @*
@@ -50,8 +58,10 @@
         https://github.com/kevin-montrose/Jil
     https://www.0daydown.com/04/1611202.html
     https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0
-    <input type="text" name="keyword">
-    <SurveyPrompt Title="How is Blazor working for you?" />
+
+
+    https://jonhilton.net/blazor-markdown-editor/
+
 *@
 
 
@@ -61,10 +71,17 @@
 
     private static List<rowModel> rowData = null;
 
+    bool debugQ = false;
+
     KeywordModel model = new KeywordModel();
 
     private async void HandleSubmit()
     {
+        if (debugQ)
+        {
+            model.keyword = "ここ";
+        }
+
         string keyword = model.keyword;
 
         //发送Post请求

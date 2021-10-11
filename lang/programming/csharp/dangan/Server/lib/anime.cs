@@ -418,7 +418,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                 total += 1;
                 Console.WriteLine($"###### {total} / {japanese.Count}");
 
-                break;
+                //break;
             }
 
             conn.Close();
@@ -564,7 +564,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
             if (true)
             {
-                keywd = "その";
+                //keywd = "その";
 
                 if (unhana_remove(keywd).Length == keywd.Length)
                 {

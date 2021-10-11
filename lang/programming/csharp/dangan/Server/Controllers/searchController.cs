@@ -105,7 +105,6 @@ namespace dangan.Server.Controllers
 
 
             var ret = await anime.search(keyword);
-            //prmsJson["result"] = ret;
 
             return new JsonResult(new { status = 200, msg = "success.", data = ret });
         }
