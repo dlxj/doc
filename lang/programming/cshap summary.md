@@ -2082,6 +2082,84 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+### 字符数组图片互转
+
+
+
+```
+    using OpenCvSharp;
+	using SixLabors.ImageSharp;
+    
+    public static void convertToGif(byte[] data, string savePath)
+    {
+        var img = SixLabors.ImageSharp.Image.Load(data);
+
+        img.SaveAsGif(savePath);
+    }
+
+    public static void convertToGif(System.Drawing.Bitmap img, string savePath)
+    {
+        Mat src = OpenCvSharp.Extensions.BitmapConverter.ToMat(img);
+        src.SaveImage(savePath);
+    }
+```
+
+
+
+```c#
+ Regex regex = new Regex("<img src=\"data: image / ([a-zA-Z]{3,4}); base64,(.+?)\"\\s*/>");
+
+            if (regex.IsMatch(s))
+            {
+                MatchCollection matches = regex.Matches(s);
+
+                int count = matches.Count;
+
+                foreach (Match m in matches)
+                {
+                    string sub = m.Value;
+
+                    string extname = ""; // 图片扩展名
+                    string base64 = "";
+
+                    foreach (string name in regex.GetGroupNames())
+                    {
+                        string g = m.Groups[name].Value;
+
+                        if (name == "0")
+                        {
+                            // 整个匹配
+                        }
+
+                        if (name == "1")
+                        {
+                            // 第一个分组
+                            extname = g;
+                        }
+
+
+                        if (name == "2")
+                        {
+                            // 第二个分组
+                            base64 = g;
+                        }
+
+                    }
+
+                    byte[] imageBytes = Convert.FromBase64String(base64);
+
+                    var img = SixLabors.ImageSharp.Image.Load(imageBytes);
+
+                    if (extname == "png")
+                    {
+                        img.SaveAsPng("xx.png");
+                    }
+                }
+            }
+```
+
+
+
 
 
 # FFMPEG
