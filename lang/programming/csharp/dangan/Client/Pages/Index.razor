@@ -34,6 +34,14 @@
 
 @if (rowData != null)
 {
+
+    @foreach (var row in rowData)
+    {
+        <br>@row.jp
+        <br>@row.zh
+        <br><br>
+    }
+
     <h3>hello, world...</h3>
 }
 
@@ -61,7 +69,7 @@
 
         //发送Post请求
         var values = new Dictionary<string, string>
-    {
+{
             { "keyword", keyword },
             { "lang_select", "b" }
         };

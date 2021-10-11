@@ -1728,6 +1728,26 @@ public async Task AddItemtoShoppingCart(FoodItem selectedItem)
 
 
 
+### JSON 乱码
+
+
+
+```c#
+            # Startup.cs
+            public void ConfigureServices(IServiceCollection services)
+            
+            // json 里的中文乱码
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping; // JavaScriptEncoder.Create(UnicodeRanges.All);
+                //options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
+            });
+```
+
+
+
+
+
 ### Form
 
 
