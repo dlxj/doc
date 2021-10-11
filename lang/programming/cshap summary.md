@@ -2165,6 +2165,62 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 ```
+private void A_Btn(object sender, RoutedEventArgs e)
+        {
+            var path = @"C:\_whosawbo\temp\myw.dotx";
+            var outPath = @"C:\_whosawbo\temp\out.dotx";
+
+            using (FileStream fs = File.OpenRead(path))
+            {
+                XWPFDocument doc = new XWPFDocument(fs);
+
+                // 替换模板中的#image#等标记
+                // 同理可以替换标记为图片
+                foreach (var para in doc.Paragraphs)
+                {
+                    string oldtext = para.ParagraphText;
+                    if (oldtext == "")
+                        continue;
+                    string tempText = para.ParagraphText;
+                    if(tempText.Contains("#image#"))
+                    {
+                        tempText = tempText.Replace("#image#", "");
+                        var pos = doc.GetPosOfParagraph(para);
+                        var run = para.CreateRun();
+
+                        var p1 = @"C:\_ace\temp\1.jpg";
+                        using (FileStream picData = new FileStream(p1, FileMode.Open, FileAccess.Read))
+                        {
+                            run.AddPicture(picData, (int)PictureType.JPEG,"1.jpg", 480 * 9525, 270 * 9525);
+                        }
+                    }
+                    if(tempText.Contains("#LoverName#"))
+                    {
+                        tempText = tempText.Replace("#LoverName#", "Eyes Open");
+                    }
+
+                    if(tempText.Contains("#JJLength#"))
+                    {
+                        tempText = tempText.Replace("#JJLength", "-0.2 ~ 0.7");
+                    }
+                    para.ReplaceText(oldtext, tempText);
+                }
+
+                FileStream file = new FileStream(outPath, FileMode.Create, FileAccess.Write);
+                doc.Write(file);
+                file.Close();
+                file.Dispose();
+            }
+
+            
+        }
+```
+
+
+
+
+
+```
 
 # https://blog.csdn.net/yw1688/article/details/52067699
 
