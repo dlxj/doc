@@ -3166,6 +3166,19 @@ chart1.Series.Clear();//清除默认的图例
 
 
 
+# Excel
+
+
+
+```
+# https://blog.csdn.net/weixin_42176639/article/details/101648803
+	# NOPI读写Excel，并插入图片
+
+
+```
+
+
+
 
 
 # FFMPEG
