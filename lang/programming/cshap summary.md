@@ -1457,6 +1457,7 @@ func 必须有返回值
     dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
     cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64/publish/
 	./dangan.Server --urls http://0.0.0.0:5000
+systemctl stop firewalld
 ```
 
 
@@ -1468,7 +1469,7 @@ func 必须有返回值
 	# cool
 # .NET SDK on CentOS
 	# https://docs.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install
-	
+
 ./dotnet-install.sh -c 5.0
 
 ~/.dotnet/dotnet --version  # 装到root 文件夹里面了
@@ -1725,6 +1726,30 @@ public async Task AddItemtoShoppingCart(FoodItem selectedItem)
         }
     </script>
 ```
+
+
+
+### switch when
+
+
+
+```C#
+            <span style="color:@(days switch { _ when days > 3 => "#ccc", _ when days > 0 => "#ffd800", _ => "#ff0000" })">
+                @Item.Deadline?.ToShortDateString()
+            </span>
+```
+
+
+
+
+
+### Serverless
+
+```
+https://www.v2ex.com/t/653978
+```
+
+
 
 
 
@@ -2024,6 +2049,38 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 # 图像
+
+
+
+###  Base64 图片互转 
+
+
+
+```
+        public static Image convertBase64ToImage(string base64String)
+        {
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            using (MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                ms.Write(imageBytes, 0, imageBytes.Length);
+                return Image.FromStream(ms, true);
+            }
+        }
+        
+        public static string imgToBase64(Bitmap img, ImageFormat format)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                img.Save(memoryStream, format);
+
+                byte[] imageBytes = memoryStream.ToArray();
+                string imgData = Convert.ToBase64String(imageBytes);
+                return imgData;
+            }
+        }
+```
+
+
 
 
 
