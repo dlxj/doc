@@ -212,6 +212,171 @@ JToken
 
 
 
+## System.Text.Json
+
+
+
+```
+# https://stackoverflow.com/questions/58271901/converting-newtonsoft-code-to-system-text-json-in-net-core-3-whats-equivalent/58273914
+
+//https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#using-declarations 
+using var doc = JsonDocument.Parse(json);
+
+//Print the property names.
+var names = doc.RootElement.EnumerateObject().Select(p => p.Name);
+Console.WriteLine("Property names: {0}", string.Join(",", names)); // Property names: status,message,Log_id,Log_status,FailureReason
+
+//Re-serialize with indentation.
+using var ms = new MemoryStream();
+using (var writer = new Utf8JsonWriter(ms, new JsonWriterOptions { Indented = true }))
+{
+    doc.WriteTo(writer);
+}
+var json2 = Encoding.UTF8.GetString(ms.GetBuffer(), 0, checked((int)ms.Length));
+
+Console.WriteLine(json2);
+```
+
+
+
+```c#
+
+# https://dotnetfiddle.net/OSaW78
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Reflection;
+
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+using NUnit.Framework; // Throws NUnit.Framework.AssertionException
+
+//https://stackoverflow.com/questions/58271901/converting-newtonsoft-code-to-system-text-json-in-net-core-3-whats-equivalent
+
+	public class ResponseJson
+	{
+		[JsonPropertyName("status")]
+		public bool Status { get; set; }
+		[JsonPropertyName("message")]
+		public string Message { get; set; }
+		[JsonPropertyName("Log_id")]
+		public string LogId { get; set; }
+		[JsonPropertyName("Log_status")]
+		public string LogStatus { get; set; }
+
+		public string FailureReason { get; set; }
+	}
+
+    class TestClass
+    {
+        public static void Test()
+        {
+			var response = new ResponseJson
+			{
+				Status = true, 
+				Message = "my message",
+				LogId = "my log id",
+				LogStatus = "my log status",
+				FailureReason = "my failure reason"
+			};
+			
+			var options = new JsonSerializerOptions
+			{
+				WriteIndented = false,
+			};
+			var json = JsonSerializer.Serialize(response, options);
+
+			Console.WriteLine("Serialized {0}", response);
+			Console.WriteLine(json);
+			
+			Console.WriteLine("\nParsing JSON using JsonDocument.Parse:");
+			
+			//https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#using-declarations 
+			using var doc = JsonDocument.Parse(json);
+			
+			var names = doc.RootElement.EnumerateObject().Select(p => p.Name);
+			Console.WriteLine("Property names: {0}", string.Join(",", names)); // Property names: status,message,Log_id,Log_status,FailureReason
+			
+			using var ms = new MemoryStream();
+			using (var writer = new Utf8JsonWriter(ms, new JsonWriterOptions { Indented = true }))
+			{
+				doc.WriteTo(writer);
+			}
+			var json2 = Encoding.UTF8.GetString(ms.GetBuffer(), 0, checked((int)ms.Length));
+			
+			Console.WriteLine(json2);
+		}	
+	}
+
+
+	public class Program
+	{
+		public static void Main()
+		{
+			Console.WriteLine("Environment version: {0} ({1})", System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription , GetNetCoreVersion());
+			Console.WriteLine();
+
+			try
+			{
+				TestClass.Test();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Failed with unhandled exception: ");
+				Console.WriteLine(ex);
+				throw;
+			}
+		}
+		
+		public static string GetNetCoreVersion()
+		{
+			//https://techblog.dorogin.com/how-to-detect-net-core-version-in-runtime-ecd65ad695be
+			//
+			var assembly = typeof(System.Runtime.GCSettings).GetTypeInfo().Assembly;
+			var assemblyPath = assembly.CodeBase.Split(new[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
+			int netCoreAppIndex = Array.IndexOf(assemblyPath, "Microsoft.NETCore.App");
+			if (netCoreAppIndex > 0 && netCoreAppIndex < assemblyPath.Length - 2)
+				return assemblyPath[netCoreAppIndex + 1];
+			return null;
+		}
+	}
+
+```
+
+
+
+```c#
+WeatherForecast Deserialize(string json)
+{
+    var options = new JsonSerializerOptions
+    {
+        AllowTrailingCommas = true
+    };
+    return JsonSerializer.Parse<WeatherForecast>(json, options);
+}
+
+class WeatherForecast {
+    public DateTimeOffset Date { get; set; }
+
+    // Always in Celsius.
+    [JsonPropertyName("temp")]
+    public int TemperatureC { get; set; }
+
+    public string Summary { get; set; }
+
+    // Don't serialize this property.
+    [JsonIgnore]
+    public bool IsHot => TemperatureC >= 30;
+}
+```
+
+
+
 
 
 
