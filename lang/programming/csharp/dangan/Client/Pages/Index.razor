@@ -46,6 +46,8 @@
 
     private static readonly HttpClient client = new HttpClient();
 
+    private static List<rowModel> rowData = null;
+
     KeywordModel model = new KeywordModel();
 
     private async void HandleSubmit()
@@ -54,7 +56,7 @@
 
         //发送Post请求
         var values = new Dictionary<string, string>
-{
+        {
             { "keyword", keyword },
             { "lang_select", "b" }
         };
@@ -73,11 +75,9 @@
         {
             var data = root.GetProperty("data").ToString();
 
-            var jd = JsonDocument.Parse(data).RootElement;
+            var ls = JsonSerializer.Deserialize<List<rowModel>>(data);
 
-            var result = jd.GetProperty("result").ToString();
-
-
+            rowData = ls;
 
             await sessionStorage.SetItemAsync("keyword", keyword);
             await sessionStorage.SetItemAsync("lang_select", values["lang_select"]);
