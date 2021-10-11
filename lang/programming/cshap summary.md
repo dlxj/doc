@@ -1645,6 +1645,10 @@ Using the Blazor Server hosting model, Blazor is executed on the server from wit
 
 # https://www.telerik.com/blogs/10-blazor-features-you-probably-didnt-know
 
+# https://zhuanlan.zhihu.com/p/393065362
+	# 基于 Blazor 打造一款实时字幕
+
+
 ```
 
 
