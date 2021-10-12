@@ -29,9 +29,33 @@ namespace dangan.Server.Controllers
             _logger = logger;
         }
 
+
+        // http://localhost:5000/search?clear=1 重新导入数据
+
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            if (!initQ)
+            {
+                Console.WriteLine("##### Attention！！！！！Hit Get Method, And Not init yet.");
+
+                //int fc = Request.Form.Count;
+                var querys = Request.Query.Keys.ToList();
+
+                if ( Request.Query.ContainsKey("clear"))
+                {
+                    Console.WriteLine("##### importting ...");
+
+                    Task.Run(anime.import);
+                }
+
+                //if (!)
+                //{
+
+                //}
+
+            }
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

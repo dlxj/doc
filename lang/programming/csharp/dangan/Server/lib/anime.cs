@@ -425,7 +425,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
         }
 
 
-        public static void import()
+        public static Action import = () =>
         {
             /*
 
@@ -519,10 +519,10 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
                 Console.WriteLine($"one task done.  {cur} / {fnames.Count}");
 
-                break;
+                //break;
             }
 
-        }
+        };
 
         public async static Task<List<Dictionary<string, string>>> search(string keywd)
         {

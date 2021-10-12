@@ -73,8 +73,12 @@
 
     bool debugQ = false;
 
-    //string host = "localhost";
-    string host = "209.141.34.77";
+    string hostDebug = "localhost";
+    string hostHK = "35.241.67.141";
+    string hostLV = "209.141.34.77";
+
+    //string host = "209.141.34.77";
+    //string host = "35.241.67.141";
 
     KeywordModel model = new KeywordModel();
 
@@ -89,13 +93,17 @@
 
         //发送Post请求
         var values = new Dictionary<string, string>
-{
+        {
             { "keyword", keyword },
             { "lang_select", "b" }
         };
 
         var content = new FormUrlEncodedContent(values);
-        var response = await client.PostAsync($"http://{host}:5000/search", content);
+        string url = debugQ ? $"http://{hostDebug}:5000/search" : $"http://{hostLV}:5000/search";
+
+        Console.WriteLine($"### Post URL: {url}");
+
+        var response = await client.PostAsync(url, content);
         var responseString = await response.Content.ReadAsStringAsync();
 
         var json = JsonDocument.Parse(responseString);

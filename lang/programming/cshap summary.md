@@ -1439,6 +1439,19 @@ func 必须有返回值
 
 
 
+```
+# sdk
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-5.0.401-linux-x64.tar.gz -C $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+
+ln -s /root/dotnet/dotnet /usr/bin
+```
+
+
+
+
+
 ```c#
 1. Server\dangan.Server.csproj 加入
   <ItemGroup>
@@ -1458,6 +1471,12 @@ func 必须有返回值
     cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64/publish/
 	./dangan.Server --urls http://0.0.0.0:5000
 systemctl stop firewalld
+    
+5. pm2 --name dangan_80 start "./dangan.Server --urls http://0.0.0.0:80"
+    
+6. 
+    
+
 ```
 
 
