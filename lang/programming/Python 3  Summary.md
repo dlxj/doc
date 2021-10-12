@@ -355,10 +355,14 @@ set HTTPS_PROXY=https://127.0.0.1:4780
 
 ```bash
 # 加 -u 才能看到打印的输出
-nohup python -u sametest.py >outlog &
-tail -f log.file
+nohup python3.8 -u anime_Danganronpa_version1.py >outlog &
+tail -f outlog
 jobs -l # 查看运行中的进程
-ps -aux | grep "sametest.py"
+ps -aux | grep "anime_Danganronpa_version1.py"
+
+kill -9 $(lsof outlog | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:8077 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+
 ```
 
 

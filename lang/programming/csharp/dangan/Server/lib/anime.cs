@@ -441,6 +441,10 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
              */
 
+            // CommandTimeout=0;
+            //NpgsqlConnection conn_pool = 
+
+
             string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
             string path = new DirectoryInfo("../").FullName;  // 上级目录
 
