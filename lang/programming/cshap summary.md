@@ -2187,6 +2187,15 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 ```
+# https://cloud.tencent.com/developer/article/1802670
+	# 换页
+```
+
+
+
+
+
+```
 private void A_Btn(object sender, RoutedEventArgs e)
         {
             var path = @"C:\_whosawbo\temp\myw.dotx";
