@@ -1648,6 +1648,10 @@ Using the Blazor Server hosting model, Blazor is executed on the server from wit
 # https://zhuanlan.zhihu.com/p/393065362
 	# 基于 Blazor 打造一款实时字幕
 
+# https://gitee.com/LongbowEnterprise/BootstrapAdmin/wikis/CentOS%20nginx%20%E5%BC%80%E5%90%AF%20br%20%E5%8E%8B%E7%BC%A9
+
+	# CentOS nginx 开启 br 压缩
+
 
 ```
 
