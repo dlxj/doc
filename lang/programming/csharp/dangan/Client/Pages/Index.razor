@@ -99,7 +99,7 @@
         };
 
         var content = new FormUrlEncodedContent(values);
-        string url = debugQ ? $"http://{hostDebug}:5000/search" : $"http://{hostLV}:5000/search";
+        string url = debugQ ? $"http://{hostDebug}:5000/search" : $"http://{hostLV}:80/search";
 
         Console.WriteLine($"### Post URL: {url}");
 
