@@ -1473,7 +1473,9 @@ ln -s /root/dotnet/dotnet /usr/bin
 systemctl stop firewalld
     
 5. pm2 --name dangan_80 start "./dangan.Server --urls http://0.0.0.0:80"
-    
+
+6. dotnet dangan.Server.dll --urls http://0.0.0.0:80
+	# windows 发布的这样
 
 ## nohup
 
