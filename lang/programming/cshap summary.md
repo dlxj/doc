@@ -48,11 +48,48 @@ Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时�
 
 
 
+## Grammar
+
+
+
+### Switch
+
+
+
+```C#
+            <span style="color:@(days switch { _ when days > 3 => "#ccc", _ when days > 0 => "#ffd800", _ => "#ff0000" })">
+                @Item.Deadline?.ToShortDateString()
+            </span>
+```
+
+
+
+```
+// C# switch
+					system = systemStr switch
+                    {
+                        "1" => RomajiSystem.Nippon,
+                        "2" => RomajiSystem.Passport,
+                        "3" => RomajiSystem.Hepburn,
+                        _ => RomajiSystem.Hepburn
+                    };
+```
+
+
+
+
+
 ## Json
 
 
 
 Newtonsoft.Json
+
+
+
+```c#
+json["status"].Value<int>() != 200
+```
 
 
 
@@ -1440,6 +1477,12 @@ func 必须有返回值
 
 
 ```
+<p>@($"{_currentTime.ToString("mm\\:ss")} / {_duration.ToString("mm\\:ss")}")</p>
+```
+
+
+
+```
 # sdk
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-5.0.401-linux-x64.tar.gz -C $HOME/dotnet
 export DOTNET_ROOT=$HOME/dotnet
@@ -1791,6 +1834,19 @@ public async Task AddItemtoShoppingCart(FoodItem selectedItem)
             <span style="color:@(days switch { _ when days > 3 => "#ccc", _ when days > 0 => "#ffd800", _ => "#ff0000" })">
                 @Item.Deadline?.ToShortDateString()
             </span>
+```
+
+
+
+```
+// C# switch
+					system = systemStr switch
+                    {
+                        "1" => RomajiSystem.Nippon,
+                        "2" => RomajiSystem.Passport,
+                        "3" => RomajiSystem.Hepburn,
+                        _ => RomajiSystem.Hepburn
+                    };
 ```
 
 

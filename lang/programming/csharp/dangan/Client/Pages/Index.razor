@@ -3,6 +3,9 @@
 @using dangan.Client.Model;
 @using System.Text.Json;
 
+@namespace dangan.Client
+@inherits AntDesign.AntDomComponentBase
+
 
 @inject NavigationManager NavigationManager
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
@@ -16,6 +19,8 @@
     </form>*@
 
 <title>Welcome!</title>
+
+<audio id="audio" preload="auto" src="01.mp3"></audio>
 
 <EditForm Model="@model" OnValidSubmit="@HandleSubmit">
     <DataAnnotationsValidator />
@@ -37,21 +42,28 @@
 
     @foreach (var row in rowData)
     {
-        <br><br>
+        <br>
+        <br>
         @row.jp
         <br>
         @row.zh
+
+        @*<img id="img{@row.id}" src="~/images/play.gif" alt="play" onclick="@HandlePlayAudio" style=" cursor: pointer">*@
     }
 
-    <br><br>
+    <br>
+    <AntDesign.Button Type="primary" Shape="circle" Icon="@PlayPauseIcon" Size="large" OnClick="OnPlayPause" />
+
+    <br>
+    <br>
     <button @onclick="@HandleSubmit">next</button>
     <br>
 }
 
-@if (debugQ)
+@*@if (debugQ)
 {
     HandleSubmit();
-}
+}*@
 
 @*
     https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
@@ -71,7 +83,7 @@
 
     private static List<rowModel> rowData = null;
 
-    bool debugQ = false;
+    bool debugQ = true;
 
     string hostDebug = "localhost";
     string hostHK = "35.241.67.141";
@@ -86,14 +98,15 @@
     {
         if (debugQ)
         {
-            model.keyword = "ここ";
+            model.keyword = "ここ"; // それぞれ  房间
+                                  //model.keyword = "房间";
         }
 
         string keyword = model.keyword;
 
         //发送Post请求
         var values = new Dictionary<string, string>
-        {
+{
             { "keyword", keyword },
             { "lang_select", "b" }
         };
@@ -129,6 +142,11 @@
             //MethodToTriggerUrl();  // jump to page x
         }
 
+
+    }
+
+    private async void HandlePlayAudio()
+    {
 
     }
 

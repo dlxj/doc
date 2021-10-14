@@ -531,7 +531,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
         public async static Task<List<Dictionary<string, string>>> search(string keywd)
         {
 
-            if (!initQ)
+           if (!initQ)
             {
                 g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
                 initQ = true;
@@ -566,31 +566,34 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
             List<Dictionary<string, string>> ret = new List<Dictionary<string, string>>();
 
-            if (true)
-            {
-                //keywd = "その";
+            string sql = "";
 
+            if (isJp)
+            {
                 if (unhana_remove(keywd).Length == keywd.Length)
                 {
-                    //keywd = await jaconv.Convert(keywd, To.Katakana, Mode.Normal);
+                    //var converter = new KawazuConverter(); // https://github.com/Cutano/Kawazu
+                    //keywd = await converter.Convert(keywd, To.Katakana, Mode.Normal, RomajiSystem.Hepburn, "(", ")");
                 }
 
-                // Pooling=true;MinPoolSize=17;Maximum Pool Size=40;
-                // Connection Idle Lifetime=200
-                //Tcp Keepalive = true
-                //Keepalive = 30
+                sql = $"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;";
 
-                //var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+            }
+            else if (isCh)
+            {
+                sql = $"SELECT id, jp, zh, time FROM anime WHERE v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;";
+            }
+
+
+            if (sql != "")
+            {
+
                 g_conn.Open();
-
-                string sql = $"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;";
-
-                
 
                 using (var cmd = new NpgsqlCommand(sql, g_conn))
                 {
                     NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
-                    if ( reader.HasRows )
+                    if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
@@ -603,18 +606,15 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
                             ret.Add(d);
 
-                            JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
-
-                            //ret.Add(jo);
+                            //JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
                         }
                     }
                 }
 
                 g_conn.Close();
-
             }
 
-            return ret;//ret.ToString();
+            return ret;
         }
 
     }

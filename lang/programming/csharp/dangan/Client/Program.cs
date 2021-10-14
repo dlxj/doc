@@ -16,6 +16,7 @@ namespace dangan.Client
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            builder.Services.AddAntDesign();
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddBlazoredSessionStorage();
