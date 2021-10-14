@@ -1,5 +1,4 @@
 ﻿
-
 using AntDesign;
 using AntDesign.JsInterop;
 using Microsoft.AspNetCore.Components;
@@ -12,7 +11,7 @@ using System.Timers;
 
 namespace dangan.Client
 {
-    public partial class Index : AntDomComponentBase
+    public partial class Search : AntDomComponentBase
     {
         private bool _isPlaying = false;
         private string PlayPauseIcon { get => _isPlaying ? "pause" : "caret-right"; }
@@ -25,16 +24,28 @@ namespace dangan.Client
             base.OnInitialized();
         }
 
-        //protected override Task OnFirstAfterRenderAsync()
-        //{
-        //    DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "play", OnPlay);
+        protected override Task OnFirstAfterRenderAsync()
+        {
+            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "play", OnPlay);
 
-        //    return base.OnFirstAfterRenderAsync();
-        //}
+            return base.OnFirstAfterRenderAsync();
+        }
 
         private void OnPlay(JsonElement jsonElement)
         {
             _isPlaying = true;
+            Refresh();
+        }
+
+
+
+        public void Refresh()
+        {
+            // Update the UI
+            InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
         }
 
         private async void OnPlayPause(MouseEventArgs args)
