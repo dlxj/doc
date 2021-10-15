@@ -26,16 +26,16 @@ namespace dangan.Client
 
         protected override Task OnFirstAfterRenderAsync()
         {
-            DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "play", OnPlay);
+            //DomEventListener.AddEventListenerToFirstChild<JsonElement>("#audio", "play", OnPlay);
 
             return base.OnFirstAfterRenderAsync();
         }
 
-        private void OnPlay(JsonElement jsonElement)
-        {
-            _isPlaying = true;
-            Refresh();
-        }
+        //private void OnPlay(JsonElement jsonElement)
+        //{
+        //    _isPlaying = true;
+        //    Refresh();
+        //}
 
 
 
@@ -48,19 +48,19 @@ namespace dangan.Client
             });
         }
 
-        private async void OnPlayPause(MouseEventArgs args)
-        {
-            try
-            {
-                await JsInvokeAsync("Music.play", "#audio", !_isPlaying);
+        //private async void OnPlayPause(MouseEventArgs args)
+        //{
+        //    try
+        //    {
+        //        await JsInvokeAsync("Music.play", "#audio", !_isPlaying);
 
-                _isPlaying = true;
+        //        _isPlaying = true;
 
-                Refresh();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
+        //        Refresh();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //}
     }
 }

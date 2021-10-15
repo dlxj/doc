@@ -51,7 +51,7 @@
             <br>
             @row.zh
 
-            
+
         }
 
         <br>
@@ -150,9 +150,16 @@
 
     }
 
-    private void HandlePlayAudio(string imgid)
+    private async void HandlePlayAudio(string imgid)
     {
         Console.WriteLine("### HandlePlayAudio hitting..." + imgid);
+
+        //playaudio(imgid)
+
+        await JsInvokeAsync("playaudio", imgid);
+
+        //Refresh();
+
     }
 
 
