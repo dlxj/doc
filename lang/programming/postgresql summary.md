@@ -4018,6 +4018,53 @@ Windows 2008 R2 企业版&标准版 简体中文64位 ed2k://|file|cn_windows_se
 
 
 
+# whistle 抓包
+
+
+
+https://wproxy.org/whistle/
+
+https://github.com/whistle-plugins/examples
+
+
+
+```
+C:\Users\i\AppData\Roaming\npm
+```
+
+
+
+
+
+## 1. 启动 whistle： 
+
+```shell
+npm run start
+```
+
+## 2. 安装插件 
+
+```shell
+# npm 全局安装，跟普通 npm 包全局安装一样：
+npm i -g whistle.autosave
+```
+
+## 3.启动前端
+
+```shell
+# 前端在插件根目录下的 public文件夹里边， \public\catchjson。也是安装了依赖的。
+npm run serve
+```
+
+## 存在的问题
+
+1. socket 没有做超时验证
+2. 过于复杂
+
+
+
+
+
 # YY
 
 ```
