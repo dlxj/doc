@@ -35,8 +35,9 @@ window.Music = {
     setMusicTime: SetMusicTime
 }
 
-function playaudio(imgid) {
-    var ig = <HTMLImageElement>document.getElementById(imgid);
+function playaudio(id) {
+    var au = document.getElementById("audio"+id);
+    var ig = <HTMLImageElement>document.getElementById("img"+id);
     ig.src = "images/play2.gif";
 
     /*

@@ -45,9 +45,10 @@
 
         @foreach (var row in rowData)
         {
+            <audio id="@($"audio{row.id}")" src="01.mp3" type="audio/mpeg" preload="auto"></audio>
             <br>
             <br>
-            @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"img{row.id}"))" style=" cursor: pointer">
+            @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"{row.id}"))" style=" cursor: pointer">
             <br>
             @row.zh
 
@@ -150,13 +151,13 @@
 
     }
 
-    private async void HandlePlayAudio(string imgid)
+    private async void HandlePlayAudio(string id)
     {
-        Console.WriteLine("### HandlePlayAudio hitting..." + imgid);
+        Console.WriteLine("### HandlePlayAudio hitting..." + id);
 
         //playaudio(imgid)
 
-        await JsInvokeAsync("playaudio", imgid);
+        await JsInvokeAsync("playaudio", id);
 
         //Refresh();
 
