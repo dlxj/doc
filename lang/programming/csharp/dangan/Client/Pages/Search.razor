@@ -47,15 +47,15 @@
         {
             <br>
             <br>
-            @row.jp
+            @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@HandlePlayAudio" style=" cursor: pointer">
             <br>
             @row.zh
 
-            @*<img id="img{@row.id}" src="~/images/play.gif" alt="play" onclick="@HandlePlayAudio" style=" cursor: pointer">*@
+            
         }
 
         <br>
-        <AntDesign.Button Type="primary" Shape="circle" Icon="@PlayPauseIcon" Size="large" OnClick="OnPlayPause" />
+        @*<AntDesign.Button Type="primary" Shape="circle" Icon="@PlayPauseIcon" Size="large" OnClick="OnPlayPause" />*@
 
         <br>
         <br>
@@ -145,15 +145,14 @@
 
             Refresh();
 
-            //MethodToTriggerUrl();  // jump to page x
         }
 
 
     }
 
-    private async void HandlePlayAudio()
+    private void HandlePlayAudio(MouseEventArgs e)
     {
-
+        Console.WriteLine("### HandlePlayAudio hitting...");
     }
 
 
