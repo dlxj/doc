@@ -47,7 +47,7 @@
         {
             <br>
             <br>
-            @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@HandlePlayAudio" style=" cursor: pointer">
+            @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"img{row.id}"))" style=" cursor: pointer">
             <br>
             @row.zh
 
@@ -150,9 +150,9 @@
 
     }
 
-    private void HandlePlayAudio(MouseEventArgs e)
+    private void HandlePlayAudio(string imgid)
     {
-        Console.WriteLine("### HandlePlayAudio hitting...");
+        Console.WriteLine("### HandlePlayAudio hitting..." + imgid);
     }
 
 
