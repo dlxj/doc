@@ -36,9 +36,16 @@ window.Music = {
 }
 
 function playaudio(id) {
-    var au = document.getElementById("audio"+id);
+    var au = <HTMLAudioElement>document.getElementById("audio"+id);
     var ig = <HTMLImageElement>document.getElementById("img"+id);
-    ig.src = "images/play2.gif";
+
+    if (au.paused) {
+        au.play();
+        ig.src = "images/play2.gif";
+        au.addEventListener("pause", function () {
+            ig.src = "images/play.gif";
+        });
+    }
 
     /*
      

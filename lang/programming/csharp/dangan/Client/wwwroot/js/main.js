@@ -29,7 +29,13 @@ window.Music = {
 function playaudio(id) {
     var au = document.getElementById("audio" + id);
     var ig = document.getElementById("img" + id);
-    ig.src = "images/play2.gif";
+    if (au.paused) {
+        au.play();
+        ig.src = "images/play2.gif";
+        au.addEventListener("pause", function () {
+            ig.src = "images/play.gif";
+        });
+    }
     /*
      
      document.getElementById('img').setAttribute('src', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==');
