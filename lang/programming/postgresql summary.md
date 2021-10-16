@@ -4030,6 +4030,10 @@ Windows 2008 R2 企业版&标准版 简体中文64位 ed2k://|file|cn_windows_se
 		buyvm是frantech的分销商，最近正式推出了全新解锁多流媒体的VPS，一次性帮你搞定很多很多平时对IP要求严格的平台
 
 	# buyvm官方流媒体优化机器中国特殊版China Special - STREAM RYZEN
+		使用注意：
+		1，自行把流媒体IP绑定到网卡，注意避免冲突，比如eth0:1
+		2，后台设置出站IP为流媒体解锁IP
+		3，相关程序 可能 也要修改出站IP
 	
 	# AbemaTV 不能看！台灣與香港解除地區限制懶人包
 	
@@ -4045,6 +4049,10 @@ Windows 2008 R2 企业版&标准版 简体中文64位 ed2k://|file|cn_windows_se
 		https://www.ablenet.jp/
 			ablenet.jp之前用过，机器已经过期停掉了，没法给你做测试，但我的使用经验都是亲身体验，有个2个IP段给你作参考：	128.22.141.X、128.22.130.X，日本大阪原生IP
 Netflix只能看自制剧，版权剧看不了，可以解锁公主连结日服、AbemaTV、DMM这些日本本地游戏、流媒体服务，网络标称200M带宽共享，流量不限，实际speedtest能跑出100多M这样，回大陆非晚高峰最高带宽只能再打个对折，甚至更慢，一旦短时间出现高带宽占用，无论是进网还是出网，比如运行测试脚本下载全世界多地区测试节点1GB大小的测试文件，就会被限速到10M以下
+
+	    kagoya.jp
+            你可以试试kagoya.jp，按天计费，最低配月付价格和ablenet差不多，内存1G，比ablenet最低配高一倍，比cloudsigma日本最低配还便宜一些
+
 	
 #!/bin/bash
 shell_version="1.4.1";
