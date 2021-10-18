@@ -1010,6 +1010,80 @@ namespace xxx.Controllers.SmartSearch
 
 
 
+## 长连接
+
+
+
+```c#
+      但除了程序本身的原因，还有可能是客服端访问造成（当然这个客户端也包含如蜘蛛软件等搜索引擎），如果服务器和客户端建立的是长链接(可以用"netstat -a"命令查看网络访问信息)，这就需要对http响应头的connection做一定的设置。
+
+      介绍如下：
+
+ 
+
+1. 解释一下：
+
+ 
+
+    在http1.1中request和reponse header中都有可能出现一个connection头字段，此header的含义是当client和server通信时对于长链接如何进行处理。
+
+    在http1.1中，client和server都是默认对方支持长链接的， 如果client使用http1.1协议，但又不希望使用长链接，则需要在header中指明connection的值为close；如果server方也不想支持长链接，则在response中也需要明确说明connection的值为close.
+
+    不论request还是response的header中包含了值为close的connection，都表明当前正在使用的tcp链接在请求处理完毕后会被断掉。以后client再进行新的请求时就必须创建新的tcp链接了。 HTTP Connection的 close设置允许客户端或服务器中任何一方关闭底层的连接双方都会要求在处理请求后关闭它们的TCP连接。
+
+ 
+
+2.如何在程序中设置：
+
+ 
+
+    可以在过滤器中加入：response.setHeader("connection", "close");
+
+ 
+
+ 
+
+ 
+
+与之相关：解决服务器产生大量close_wait问题
+
+ 
+
+ 
+
+要解决这个问题的可以修改系统的参数(/etc/sysctl.conf文件)，系统默认超时时间的是7200秒，也就是2小时。
+
+默认如下：
+
+tcp_keepalive_time = 7200 seconds (2 hours)
+tcp_keepalive_probes = 9
+tcp_keepalive_intvl = 75 seconds
+
+ 
+
+意思是如果某个TCP连接在idle 2个小时后,内核才发起probe.如果probe 9次(每次75秒)不成功,内核才彻底放弃,认为该连接已失效
+
+ 
+
+修改后
+
+ 
+
+sysctl -w net.ipv4.tcp_keepalive_time=30
+sysctl -w net.ipv4.tcp_keepalive_probes=2
+sysctl -w net.ipv4.tcp_keepalive_intvl=2
+
+ 
+
+经过这个修改后，服务器会在短时间里回收没有关闭的tcp连接。
+```
+
+
+
+
+
+
+
 ## String
 
 
