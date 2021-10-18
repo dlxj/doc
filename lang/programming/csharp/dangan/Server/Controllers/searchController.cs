@@ -132,5 +132,15 @@ namespace dangan.Server.Controllers
 
             return new JsonResult(new { status = 200, msg = "success.", data = ret });
         }
+
+        [HttpGet("getaudio")]
+        public JsonResult getaudio()
+        {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            return new JsonResult(new { status = 200, msg = "success.", data = "ok." });
+        }
+
+
     }
 }
