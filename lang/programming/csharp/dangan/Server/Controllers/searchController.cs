@@ -137,25 +137,6 @@ namespace dangan.Server.Controllers
             return new JsonResult(new { status = 200, msg = "success.", data = ret });
         }
 
-        /*
-         
-        [HttpGet("download/{recordingFile}")]
-    public async Task<IActionResult> DownloadVoiceRecording(string recordingFile)
-    {
-        
-        string filePath = Directory.GetCurrentDirectory() + @"\audio\Processed\" + recordingFile;
-        var memory = new MemoryStream();
-        using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-        {
-            await stream.CopyToAsync(memory);
-        }
-        memory.Position = 0;
-        var types = GetMimeTypes();
-        var ext = Path.GetExtension(filePath).ToLowerInvariant();
-        return File(memory, types[ext], recordingFile);
-    }
-         
-         */
 
         [HttpGet("getaudio")]
         public async Task<IActionResult> getaudio()
@@ -224,9 +205,8 @@ namespace dangan.Server.Controllers
                 await stream.CopyToAsync(memory);
             }
             memory.Position = 0;
-            //var types = GetMimeTypes();
-            //var ext = Path.GetExtension(filePath).ToLowerInvariant();
-            return File(memory, "audio/mpeg", "tmp.mp3");
+
+            return File(memory, "audio/mpeg", $"{id}.mp3");
 
         }
 
