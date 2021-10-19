@@ -5598,6 +5598,11 @@ Path.GetExtension(imagePath)
 
 ```c#
 # 字节流
+    
+ 		    string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
+
+            var outlog = $"{ecxutePath}/outlog.txt";
+
 			byte[] bts = null;
 
             using (FileStream stream = new FileStream("tmp.mp3", FileMode.Open, FileAccess.Read))

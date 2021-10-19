@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -137,6 +138,25 @@ namespace dangan.Server.Controllers
         public JsonResult getaudio()
         {
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
+
+            string dir_audio = Path.Combine(ecxutePath, "audio");
+
+            var outlog = $"{ecxutePath}/outlog.txt";
+
+            if ( !Directory.Exists(dir_audio) )
+            {
+                Directory.CreateDirectory(dir_audio);
+            }
+
+            byte[] bts = null;
+
+            using (FileStream stream = new FileStream("tmp.mp3", FileMode.Open, FileAccess.Read))
+            using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+            {
+                bts = reader.ReadBytes(Convert.ToInt32(stream.Length));
+            }
 
             return new JsonResult(new { status = 200, msg = "success.", data = "ok." });
         }
