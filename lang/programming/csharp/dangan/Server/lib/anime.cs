@@ -34,6 +34,13 @@ namespace dangan
 
         public static NpgsqlConnection g_conn = null;
 
+
+        public static void initConn()
+        {
+            g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+            initQ = true;
+        }
+
         public static string unhana_remove(string s)
         {
             return Regex.Replace(s, @"[^\u3040-\u309F^\u30A0-\u30FF]", "");
@@ -531,11 +538,19 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
         public async static Task<List<Dictionary<string, string>>> search(string keywd)
         {
 
-           if (!initQ)
+            //if (!initQ)
+            // {
+            //     g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+            //     initQ = true;
+            // }
+
+            if (!initQ)
             {
-                g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
-                initQ = true;
+                initConn();
             }
+
+            
+
 
             bool isEn = false;
             bool isCh = false;

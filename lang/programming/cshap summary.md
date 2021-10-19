@@ -650,6 +650,87 @@ System.GC.SuppressFinalize(obj);
 
 
 
+```c#
+# 返回字节 
+    	// http://localhost:5000/search/getaudio?id=1
+		[HttpGet("getaudio")]
+        public async Task<IActionResult> getaudio()
+        {
+            string id = "1";
+
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
+
+            string dir_audio = Path.Combine(ecxutePath, "audio");
+
+            if ( !Directory.Exists(dir_audio) )
+            {
+                Directory.CreateDirectory(dir_audio);
+            }
+
+            if (Request.Query.ContainsKey("id"))
+            {
+                id = Request.Query["id"].ToString();
+            }
+
+            string audioPath = Path.Combine(dir_audio, id + ".mp3");
+
+            if (!System.IO.File.Exists(audioPath))
+            {
+                if (!anime.initQ)
+                {
+                    anime.initConn();
+                }
+
+                anime.g_conn.Open();
+
+                string sql = $"SELECT id, audio FROM anime WHERE id={id};";
+
+                using (var cmd = new NpgsqlCommand(sql, anime.g_conn))
+                {
+                    NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string idd = reader["id"].ToString();
+                            byte[] audio = (byte[])reader["audio"];
+
+                            try
+                            {
+                                System.IO.File.WriteAllBytes(audioPath, audio);
+                            } catch(Exception ex)
+                            {
+                                Console.WriteLine("### ERROR: 写入audio 失败. " + ex.Message);
+                                throw new Exception(ex.Message);
+                            }
+
+                        }
+                    }
+                }
+
+                anime.g_conn.Close();
+
+            }
+
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(audioPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                await stream.CopyToAsync(memory);
+            }
+            memory.Position = 0;
+            //var types = GetMimeTypes();
+            //var ext = Path.GetExtension(filePath).ToLowerInvariant();
+            return File(memory, "audio/mpeg", "tmp.mp3");
+
+        }
+```
+
+
+
+
+
 ```
 1.简单发送Get请求
 
@@ -1085,6 +1166,10 @@ sysctl -w net.ipv4.tcp_keepalive_intvl=2
 
 
 ## String
+
+
+
+var ext = Path.GetExtension(filePath).ToLowerInvariant();
 
 
 
@@ -5293,6 +5378,8 @@ ipconfig /flushdns # 刷新DNS
 ```c#
 string path = $"{Directory.GetCurrentDirectory()}"; // exe 文件目录
 
+var ext = Path.GetExtension(filePath).ToLowerInvariant();
+
 ```
 
 
@@ -5613,6 +5700,46 @@ Path.GetExtension(imagePath)
 
             return bts;
 ```
+
+
+
+```c#
+
+            g_conn = new NpgsqlConnection("Server=xx.xx.xx.xx;Port=5432;Database=anime;User Id=postgres;Password=xx;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+            initQ = true;
+
+				anime.g_conn.Open();
+
+                string sql = $"SELECT id, audio FROM anime WHERE id={id};";
+
+                using (var cmd = new NpgsqlCommand(sql, anime.g_conn))
+                {
+                    NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string idd = reader["id"].ToString();
+                            byte[] audio = (byte[])reader["audio"];
+
+                            try
+                            {
+                                System.IO.File.WriteAllBytes(audioPath, audio);
+                            } catch(Exception ex)
+                            {
+                                Console.WriteLine("### ERROR: 写入audio 失败. " + ex.Message);
+                                throw new Exception(ex.Message);
+                            }
+
+                        }
+                    }
+                }
+
+
+                anime.g_conn.Close();
+```
+
+
 
 
 

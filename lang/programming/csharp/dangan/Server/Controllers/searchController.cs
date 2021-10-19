@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,23 +19,23 @@ namespace dangan.Server.Controllers
 
         public static bool initQ = false; 
 
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        //private static readonly string[] Summaries = new[]
+        //{
+        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        //};
 
-        private readonly ILogger<searchController> _logger;
+        //private readonly ILogger<searchController> _logger;
 
-        public searchController(ILogger<searchController> logger)
-        {
-            _logger = logger;
-        }
+        //public searchController(ILogger<searchController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
 
         // http://localhost:5000/search?clear=1 重新导入数据
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public string Get()
         {
             if (!initQ)
             {
@@ -57,14 +58,16 @@ namespace dangan.Server.Controllers
 
             }
 
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return "";
+
+            //var rng = new Random();
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = rng.Next(-20, 55),
+            //    Summary = Summaries[rng.Next(Summaries.Length)]
+            //})
+            //.ToArray();
         }
 
         [HttpPost]
@@ -134,33 +137,98 @@ namespace dangan.Server.Controllers
             return new JsonResult(new { status = 200, msg = "success.", data = ret });
         }
 
-        [HttpGet("getaudio")]
-        public JsonResult getaudio()
+        /*
+         
+        [HttpGet("download/{recordingFile}")]
+    public async Task<IActionResult> DownloadVoiceRecording(string recordingFile)
+    {
+        
+        string filePath = Directory.GetCurrentDirectory() + @"\audio\Processed\" + recordingFile;
+        var memory = new MemoryStream();
+        using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
         {
+            await stream.CopyToAsync(memory);
+        }
+        memory.Position = 0;
+        var types = GetMimeTypes();
+        var ext = Path.GetExtension(filePath).ToLowerInvariant();
+        return File(memory, types[ext], recordingFile);
+    }
+         
+         */
+
+        [HttpGet("getaudio")]
+        public async Task<IActionResult> getaudio()
+        {
+            string id = "1";
+
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
 
             string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
 
             string dir_audio = Path.Combine(ecxutePath, "audio");
 
-            var outlog = $"{ecxutePath}/outlog.txt";
-
             if ( !Directory.Exists(dir_audio) )
             {
                 Directory.CreateDirectory(dir_audio);
             }
 
-            byte[] bts = null;
-
-            using (FileStream stream = new FileStream("tmp.mp3", FileMode.Open, FileAccess.Read))
-            using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+            if (Request.Query.ContainsKey("id"))
             {
-                bts = reader.ReadBytes(Convert.ToInt32(stream.Length));
+                id = Request.Query["id"].ToString();
             }
 
-            return new JsonResult(new { status = 200, msg = "success.", data = "ok." });
-        }
+            string audioPath = Path.Combine(dir_audio, id + ".mp3");
 
+            if (!System.IO.File.Exists(audioPath))
+            {
+                if (!anime.initQ)
+                {
+                    anime.initConn();
+                }
+
+                anime.g_conn.Open();
+
+                string sql = $"SELECT id, audio FROM anime WHERE id={id};";
+
+                using (var cmd = new NpgsqlCommand(sql, anime.g_conn))
+                {
+                    NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string idd = reader["id"].ToString();
+                            byte[] audio = (byte[])reader["audio"];
+
+                            try
+                            {
+                                System.IO.File.WriteAllBytes(audioPath, audio);
+                            } catch(Exception ex)
+                            {
+                                Console.WriteLine("### ERROR: 写入audio 失败. " + ex.Message);
+                                throw new Exception(ex.Message);
+                            }
+
+                        }
+                    }
+                }
+
+                anime.g_conn.Close();
+
+            }
+
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(audioPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                await stream.CopyToAsync(memory);
+            }
+            memory.Position = 0;
+            //var types = GetMimeTypes();
+            //var ext = Path.GetExtension(filePath).ToLowerInvariant();
+            return File(memory, "audio/mpeg", "tmp.mp3");
+
+        }
 
     }
 }
