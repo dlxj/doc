@@ -37,7 +37,38 @@ namespace dangan
 
         public static void initConn()
         {
-            g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
+            /*
+             
+            1. Increase max_connection and shared_buffers
+
+in /var/lib/pgsql/{version_number}/data/postgresql.conf
+
+change
+
+ max_connections = 100
+shared_buffers = 24MB
+to
+
+ max_connections = 1000
+shared_buffers = 240MB
+The shared_buffers configuration parameter determines how much memory is dedicated to PostgreSQL to use for caching data.
+
+If you have a system with 1GB or more of RAM, a reasonable starting value for shared_buffers is 1/4 of the memory in your system.it's unlikely you'll find using more than 40% of RAM to work better than a smaller amount (like 25%)Be aware that if your system or PostgreSQL build is 32-bit, it might not be practical to set shared_buffers above 2 ~ 2.5GB.Note that on Windows, large values for shared_buffers aren't as effective, and you may find better results keeping it relatively low and using the OS cache more instead. On Windows, the useful range is 64MB to 512MB.
+2. Change kernel.shmmax
+
+You would need to increase kernel max segment size to be slightly larger than the shared_buffers.
+
+In file /etc/sysctl.conf set the parameter as shown below. It will take effect when PostgreSQL reboots (The following line makes the kernel max to 96Mb)
+
+ kernel.shmmax=100663296
+But I want you to know that increase it may not resolve issues for you if your traffic is large. You need to check all your code and sure that you no connect to DB in a LOOP.
+             
+             */
+
+            // https://www.npgsql.org/doc/connection-string-parameters.html
+            g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;");
+            //g_conn.Open();
+            System.GC.SuppressFinalize(g_conn);
             initQ = true;
         }
 

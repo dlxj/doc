@@ -45,7 +45,10 @@
 
         @foreach (var row in rowData)
         {
-            <audio id="@($"audio{row.id}")" src="01.mp3" type="audio/mpeg" preload="auto"></audio>
+            string url = debugQ ? $"http://{hostDebug}:5000/search/getaudio?id={row.id}" : $"http://{hostLV}:80/search/getaudio?id={row.id}";
+
+            //<audio id="@($"audio{row.id}")" src="01.mp3" type="audio/mpeg" preload="auto"></audio>
+            <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
             <br>
             <br>
             @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"{row.id}"))" style=" cursor: pointer">
