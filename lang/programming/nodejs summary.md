@@ -337,6 +337,7 @@ String.raw `Hi\u000A!`;
 
 
 ```javascript
+`${type}Mid`
 `Found ${match[0]} start=${match.index} end=${match.index + match[0].length}.`
 ```
 
