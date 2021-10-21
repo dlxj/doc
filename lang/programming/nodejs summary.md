@@ -343,6 +343,40 @@ String.raw `Hi\u000A!`;
 
 
 
+# json
+
+
+
+```javascript
+1238
+
+Under ECMAScript 5, you can combine Object.keys() and Array.prototype.forEach():
+
+var obj = { first: "John", last: "Doe" };
+
+Object.keys(obj).forEach(function(key) {
+    console.log(key, obj[key]);
+});
+ECMAScript 6 adds for...of:
+
+for (const key of Object.keys(obj)) {
+    console.log(key, obj[key]);
+}
+ECMAScript 8 adds Object.entries() which avoids having to look up each value in the original object:
+
+Object.entries(obj).forEach(
+    ([key, value]) => console.log(key, value)
+);
+You can combine for...of, destructuring, and Object.entries:
+
+for (const [key, value] of Object.entries(obj)) {
+    console.log(key, value);
+}
+Both Object.keys() and Object.entries() iterate properties in the same order as a for...in loop but ignore the prototype chain. Only the object's own enumerable properties are iterated.
+```
+
+
+
 
 
 # lodash
