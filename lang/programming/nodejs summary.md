@@ -345,6 +345,43 @@ String.raw `Hi\u000A!`;
 
 
 
+# lodash
+
+
+
+```javascript
+var _ = require('lodash')  // https://lodash.com/docs/4.17.15
+
+
+修改key
+
+_.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
+  return key + value;
+});
+// => { 'a1': 1, 'b2': 2 }
+
+
+修改value
+
+var users = {
+  'fred':    { 'user': 'fred',    'age': 40 },
+  'pebbles': { 'user': 'pebbles', 'age': 1 }
+};
+ 
+_.mapValues(users, function(o) { return o.age; });
+// => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+ 
+// The `_.property` iteratee shorthand.
+_.mapValues(users, 'age');
+// => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+```
+
+
+
+
+
+
+
 # 异步
 
 
