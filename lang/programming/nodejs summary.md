@@ -422,6 +422,9 @@ _.mapValues(users, 'age');
 
 ```javascript
 
+// 骚操作
+// await 外层必须是 async 函数，所以建了一个匿名函数标记为async，并立既调用这个匿名（里面装await）
+
 let path = require('path')
 var mammoth = require("mammoth");
 
