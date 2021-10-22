@@ -347,6 +347,10 @@ String.raw `Hi\u000A!`;
 
 
 
+## 遍历
+
+
+
 ```javascript
 1238
 
@@ -374,6 +378,18 @@ for (const [key, value] of Object.entries(obj)) {
 }
 Both Object.keys() and Object.entries() iterate properties in the same order as a for...in loop but ignore the prototype chain. Only the object's own enumerable properties are iterated.
 ```
+
+
+
+## exist
+
+
+
+```javascript
+if ( !(keyParent in menus) ) {
+```
+
+
 
 
 
