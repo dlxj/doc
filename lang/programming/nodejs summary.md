@@ -86,6 +86,73 @@ app.listen(port, function() {
 
 ## Post
 
+
+
+```javascript
+var request = require('request')
+
+module.exports =
+{
+  name: `getTestbyids`,
+  author: `gd`,
+  params: {
+    appEName: {
+      type: 'string',
+      remark: ''
+    },
+    idArray:{
+      type: 'string',
+      remark: ''
+    }
+  },
+  async handler({appEName, idArray}) {
+
+    
+
+    var data = await new Promise(function (resolve) {
+
+      url = 'http://xxxxx:xx/api/xxxxx'
+      request.post(url, {
+        'form': {
+          SessionKey: "xxxxx",
+          appEName: appEName,
+          idArray: idArray
+        }
+      },
+      function(err, response, result) {
+        if (err || response.statusCode != 200) {
+          console.log(url + err + response.statusCode)
+          //throw (url + err + response.statusCode)
+          return resolve({})
+        }
+  
+        return resolve(result)
+      })
+
+    })
+
+    data = JSON.parse(data).data
+
+    // var testids = {}
+
+    // data.forEach(d => {
+    //   let key = d.AllTestID + "/" + d.ChildTableID
+    //   testids[key] = 0
+    // });
+
+    return data
+    
+    
+  },
+  remark: ``
+}
+
+```
+
+
+
+
+
 ```
     let data = await new Promise(function (resolve) {
       request.post({
@@ -393,6 +460,35 @@ if ( !(keyParent in menus) ) {
 
 
 
+# tuple
+
+
+
+```javascript
+function getCoordinates(element) {
+  let x, y, z;
+
+  return [x, y, z];
+}
+```
+
+
+
+```javascript
+// with returned objects
+const {x: Ax, y: Ay, z: Az } = getCoordinates(A);
+const {x: Bx, y: By, z: Bz } = getCoordinates(B);
+// with returned tuples
+const [Ax, Ay, Az] = getCoordinates(A);
+const [Bx, By, Bz] = getCoordinates(B);
+
+onst [, , thisOne, , thatOne] = getTuple();
+const [_1, _2, thisOne, _3, thatOne] = getTuple();
+
+```
+
+
+
 
 
 # lodash
@@ -474,6 +570,39 @@ function getTestByWord(fileName) {
 }) ()
 
 
+```
+
+
+
+# nodejs 绿色
+
+
+
+```
+、下载
+
+wget https://npm.taobao.org/mirrors/node/v14.1.0/node-v14.1.0-linux-x64.tar.gz
+1.
+2、解压
+
+tar zvxf node-v14.1.0-linux-x64.tar.gz -C /usr/local
+1.
+3、更改文件夹名字
+
+mv node-v14.1.0-linux-x64/ nodejs
+1.
+4、增加软连接
+
+ln -s /usr/local/nodejs/bin/node /usr/local/bin
+ln -s /usr/local/nodejs/bin/npm /usr/local/bin
+1.
+2.
+5、检查
+
+# node -v
+v14.1.0
+# npm -v
+6.14.4
 ```
 
 

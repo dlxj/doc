@@ -20,3 +20,11 @@ kill -9 $(lsof -i:8888 | tail -n +2  |  awk '{print $2}' | tr '\n' ' ')
 
 jobs 查看后台运行程序
 
+
+
+进程所在路径
+
+```
+PID为1521，ls -al /proc/1521  , CWD 就是进程所在路径
+```
+
