@@ -88,6 +88,14 @@ app.listen(port, function() {
 
 
 
+```
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "appEName=ZC_HLXHS_YTMJ&SessionKey=xxxxx&idArray=[{"AllTestID":6004390,"ChildTableID":-1,"CptID":459,"Enabled":1},{"AllTestID":6004391,"ChildTableID":-1,"CptID":459,"Enabled":1},{"AllTestID":6004392,"ChildTableID":-1,"CptID":459,"Enabled":1}]"  http://xxxxx/api/xxxxx
+```
+
+
+
+
+
 ```javascript
 var request = require('request')
 
