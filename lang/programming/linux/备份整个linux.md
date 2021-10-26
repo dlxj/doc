@@ -7,6 +7,11 @@ https://blog.csdn.net/mmh19891113/article/details/81698453
 ```
 在做整个系统的备份前我们要做一些准备工作。
 删除所有的emails
+  删除/var/mail/username文件以删除特定用户的所有电子邮件。此外，电子邮件传出但尚未发送将被存储  在/var/spool/mqueue中
+  
+  rm /var/mail/root
+  rm /var/spool/mqueue
+
 清空你的浏览器的一些历史
 取消挂载的硬盘等设备
 删除家目录里你不想要备份的文件
