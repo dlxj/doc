@@ -548,8 +548,10 @@ _.mapValues(users, 'age');
 // await 外层必须是 async 函数，所以建了一个匿名函数标记为async，并立既调用这个匿名（里面装await）
 
 // 测试接口
+// 测试接口
 
 ( async()=>{
+
   // 注意 require 写在外面会出错！！！！！！！！！！！！！！
   var request = require('request')
 
@@ -557,19 +559,18 @@ _.mapValues(users, 'age');
 
     let appename = "ZC_ZXYJHNKX_YTMJ"
 
-    console.log( 1 )
-  
     var data = await new Promise(function (resolve) {
   
-      url = 'http://xxxxxxx'
+      url = 'http://101.37.23.135:8005/gettest'
       request.post(url, {
         'form': {
-          appename: "xxxxxxx"
+          appename: "ZC_ZXYJHNKX_YTMJ"
         }
       },
       function(err, response, result) {
         if (err || response.statusCode != 200) {
           console.log(url + err + response.statusCode)
+          //throw (url + err + response.statusCode)
           return resolve({})
         }
   
@@ -587,13 +588,19 @@ _.mapValues(users, 'age');
     return data
   }
 
+  async function sleep(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+  }
+
   for (let i = 0; i < 50001; i++) {
     let d = await get()
     console.log(`${i}th : ${JSON.stringify(d)}`)
+    await sleep(100)
   }
 
 })()
-
 ```
 
 
