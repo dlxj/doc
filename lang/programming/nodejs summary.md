@@ -712,6 +712,26 @@ flushdb 清空当前数据库
 
 
 
+# Chrome
+
+
+
+```
+# 更改缓存目录
+chrome://version/
+	C:\Users\i\AppData\Local\Google\Chrome\User Data\Default
+		# 缓存在这
+
+退出chrome ，删除C:\Users\i\AppData\Local\Google\Chrome\User Data\Default\Cache
+	
+mklink /D "C:\Users\i\AppData\Local\Google\Chrome\User Data\Default\Cache" "Z:\Chrome"
+	# Z 盘是内存硬盘
+
+	
+```
+
+
+
 
 
 # nodejs 绿色
