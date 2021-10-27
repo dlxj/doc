@@ -547,38 +547,52 @@ _.mapValues(users, 'age');
 // 骚操作
 // await 外层必须是 async 函数，所以建了一个匿名函数标记为async，并立既调用这个匿名（里面装await）
 
-let path = require('path')
-var mammoth = require("mammoth");
-
-function getTestByWord(fileName) {
-    return new Promise((ok, err) => {
-        // var url = path.join(__dirname, 'A1-3-2.docx');
-        // var url = path.join(__dirname, "../../../file/" + fileName);
-        var url = fileName
-        mammoth.extractRawText({
-                path: url
-            })
-            .then(function (result) {
-                var text = result.value; // The raw text
-                var messages = result.messages;
-                ok(text);
-
-            })
-            .catch((e) => {
-                err(false)
-            })
-            .done();
-    })
-}
+// 测试接口
 
 ( async()=>{
+  // 注意 require 写在外面会出错！！！！！！！！！！！！！！
+  var request = require('request')
 
-    let fileName = path.join(__dirname, 'A3-2&3-1.docx');
-    let s = await getTestByWord(fileName)
-    let a = 1
+  async function get() {
 
-}) ()
+    let appename = "ZC_ZXYJHNKX_YTMJ"
 
+    console.log( 1 )
+  
+    var data = await new Promise(function (resolve) {
+  
+      url = 'http://xxxxxxx'
+      request.post(url, {
+        'form': {
+          appename: "xxxxxxx"
+        }
+      },
+      function(err, response, result) {
+        if (err || response.statusCode != 200) {
+          console.log(url + err + response.statusCode)
+          return resolve({})
+        }
+  
+        return resolve(result)
+      })
+  
+    })
+  
+    data = JSON.parse(data).data
+
+    delete data["idArray"]
+    delete data["tests"]
+    delete data["appEName"]
+
+    return data
+  }
+
+  for (let i = 0; i < 50001; i++) {
+    let d = await get()
+    console.log(`${i}th : ${JSON.stringify(d)}`)
+  }
+
+})()
 
 ```
 
