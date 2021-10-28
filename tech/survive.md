@@ -740,6 +740,53 @@ tar -cvpzf backup.tar.gz --exclude=/mnt --exclude=/data  --one-file-system /
 
 
 
+#### 原系统启动信息
+
+
+
+```
+cat /etc/fstab
+UUID=8727c528-a369-431b-a732-7275351f63e3 /    ext4    defaults        1 1
+
+
+# mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data
+	# 当时设为自动挂载的数据盘
+
+# 挂载
+mkdir /data
+mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data
+# 开机自动挂
+echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
+
+
+Win7 启动linux
+	# EasyBCD 2.4
+	有一个2项已列入bootloader.
+
+默认: Windows 7
+超时: 30 秒
+引导驱动器: C:\
+
+条目 #1
+名称: Windows 7
+BCD ID: {current}
+驱动器: C:\
+Bootloader的路径: \Windows\system32\winload.exe
+
+条目 #2
+名称: Centos7
+BCD ID: {d9d11376-45f2-11eb-99cd-80fa5b2093f2}
+驱动器: C:\
+Bootloader的路径: \NST\nst_linux.mbr
+
+
+
+```
+
+
+
+
+
 
 
 
