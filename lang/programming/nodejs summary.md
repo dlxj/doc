@@ -468,6 +468,16 @@ if ( !(keyParent in menus) ) {
 
 
 
+# File
+
+
+
+```
+fs.writeFileSync('menu.json', JSON.stringify(menujson) );
+```
+
+
+
 
 
 # tuple
@@ -605,6 +615,24 @@ _.mapValues(users, 'age');
 
 
 
+## sleep
+
+
+
+```javascript
+  async function sleep(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+  }
+```
+
+
+
+
+
+
+
 # 随机
 
 
@@ -720,7 +748,7 @@ flushdb 清空当前数据库
 
 ### mysql.js
 
-```
+```javascript
 const mysql = require('mysql');
 
 module.exports = {
@@ -859,8 +887,45 @@ function buildSQL(sql, par) {
 
 
 
-```
+```javascript
+
 ( async()=>{
+
+  async function get(db) {
+
+    async function sleep(ms) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, ms)
+      })
+    }
+
+    //let ID = 10000
+
+    var r = null
+
+    while(r === null || r === undefined || r.length === 0) {
+
+      let tmp = 100000 * Math.random() + 10000  // 随机数本来是均匀分存在 0 ~ 100000 之间，把它们整体往后挪10000
+
+      var ID = Math.floor( tmp + 1 )
+    
+      if (ID > 100000) {
+        ID = 100000
+      }
+        
+      r = await db.query(`SELECT \`MD5\`, content FROM img_context WHERE ID = $(ID)`, { ID })
+
+      //await sleep(500)
+
+    }
+
+    return [ JSON.parse(r[0].content), ID]
+
+    
+  }
+
+  // ID 在 10000 ~  100000 之间随机取
+  // Math.random() 范围：0 ~ 0.99999
 
   let mysql = require('./mysql')
 
@@ -874,15 +939,18 @@ function buildSQL(sql, par) {
     connectTimeout: 60 * 1000,
     connectionLimit: 50
   })
-  
 
-  let ID = 2
-  
-  let r = await db.query(`select $(ID);`, { ID })
-  
-  //.query({ appename })
-  
-  console.log(1)
+
+  for (let i = 0; i < 500; i++) {
+
+    let [j, ID] = await get(db)
+
+    require('fs').writeFileSync(`./out/${ID}.json`, JSON.stringify(j) )
+
+    console.log(`done ${i}, ID: ${ID}`)
+
+  }
+
 
 }) ()
 ```
