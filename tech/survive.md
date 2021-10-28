@@ -724,6 +724,21 @@ fdisk /dev/vda3
 
 
 
+#### 备份整个Linux
+
+
+
+```
+# 删除所有邮件
+rm /var/mail/root
+rm /var/spool/mqueue
+
+cd /mnt # 一盘大磁盘mount 在这里
+tar -cvpzf backup.tar.gz --exclude=/mnt --one-file-system /
+```
+
+
+
 
 
 
