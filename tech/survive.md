@@ -734,7 +734,8 @@ rm /var/mail/root
 rm /var/spool/mqueue
 
 cd /mnt # 一盘大磁盘mount 在这里
-tar -cvpzf backup.tar.gz --exclude=/mnt --one-file-system /
+	# /data 应该mount 大物在里面，排除掉
+tar -cvpzf backup.tar.gz --exclude=/mnt --exclude=/data  --one-file-system /
 ```
 
 
