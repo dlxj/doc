@@ -780,6 +780,10 @@ BCD ID: {d9d11376-45f2-11eb-99cd-80fa5b2093f2}
 Bootloader的路径: \NST\nst_linux.mbr
 
 
+https://www.jianshu.com/p/d4c3ccd75f0c
+	# centos 7破坏grub实验和修复
+	
+	
 
 ```
 

@@ -47,7 +47,7 @@ async function getUserids(){
 }
 
 const app = express()
-// http://127.0.0.1:666/gendifficulty?AppID=8911&KsbaoAppID=1202
+// http://xxxxx/xxxxx?xxx=xx&xxx=xx
 app.get('/gendifficulty', async (req, res) => {
   
     if ( !('AppID' in req.query) || !('KsbaoAppID' in req.query)){
@@ -85,6 +85,10 @@ app.listen(port, function() {
 
 
 ## Post
+
+
+
+ request 已弃用，用这个  https://github.com/mikeal/bent
 
 
 
