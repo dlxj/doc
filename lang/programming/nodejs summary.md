@@ -93,6 +93,15 @@ app.listen(port, function() {
 
 
 ```
+const post = bent('http://localhost:666', 'POST', 'json', 200) # 返回类型是 json
+const response = await post('/gettest', { appename: 'ZC_ZXYJHNKX_YTMJ' })
+```
+
+
+
+
+
+```
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "appEName=ZC_HLXHS_YTMJ&SessionKey=38B0535F89F1A02ED984B7888048D392&idArray=[{"AllTestID":6004390,"ChildTableID":-1,"CptID":459,"Enabled":1},{"AllTestID":6004391,"ChildTableID":-1,"CptID":459,"Enabled":1},{"AllTestID":6004392,"ChildTableID":-1,"CptID":459,"Enabled":1}]" 
 http://10.94.183.7:9013/api/test/findAll
 http://120.27.142.68:9013/api/test/findAll
@@ -421,6 +430,26 @@ String.raw `Hi\u000A!`;
 `${type}Mid`
 `Found ${match[0]} start=${match.index} end=${match.index + match[0].length}.`
 ```
+
+
+
+# Array
+
+
+
+## sort
+
+
+
+```javascript
+// Lodash 4.x:
+_.orderBy(data, [
+  function (item) { return item.sortData.a; },
+  function (item) { return item.sortData.b; }
+], ["asc", "desc"]);
+```
+
+
 
 
 
