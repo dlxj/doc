@@ -406,6 +406,12 @@ strs = '\n\n' + strs +  '\n\n'
 
 
 
+## split by
+
+
+
+
+
 
 
 # String
@@ -434,6 +440,20 @@ String.raw `Hi\u000A!`;
 
 
 # Array
+
+
+
+## 遍历
+
+
+
+```
+arr.forEach(element => {
+  console.log(element);
+});
+```
+
+
 
 
 
@@ -506,7 +526,7 @@ if ( !(keyParent in menus) ) {
 
 
 ```
-fs.writeFileSync('menu.json', JSON.stringify(menujson) );
+require('fs').writeFileSync('menu.json', JSON.stringify(menujson) )
 ```
 
 

@@ -733,6 +733,11 @@ mkdir /data
 mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data                 # 数据盘挂载到 /data
 
 
+### linux live cd下修复linux 引导
+linux live CD,所以登录后直接执行grub命令，然后执行：
+root (hdX,Y)
+setup (hdX)
+这里的X，如果是一个盘，就是0，如果你所安装的linux的根分区在第二个硬盘上，那X就是1了；Y，就是装有linux系统所在的根分区。因为我只有 一块硬盘，所以就是root (hd0,0)了。setup (hd0)就是把GRUB写到硬盘的MBR上。 然后重启，之前arch linux启动的grub菜单顺利出现。
 
 
 
