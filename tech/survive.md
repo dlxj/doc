@@ -720,6 +720,23 @@ fdisk /dev/vda3
 # 先用 arch linux 启动，备份整个linux ，重建分区，再从linux 备份恢复？
 
 
+将 /dev/vda2 /dev/vda3 分区删掉，重建分区  
+fdisk /dev/vda
+	# m for help
+
+格式化新建的/dev/vda2
+	mkfs.ext4 /dev/vda2
+
+恢复备份的linux 到新分区
+mount /dev/vda2  /mnt # 新分区挂载到 /mnt
+mkdir /data
+mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data                 # 数据盘挂载到 /data
+
+
+
+
+
+
 ```
 
 
