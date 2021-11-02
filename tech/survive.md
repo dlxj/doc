@@ -742,11 +742,26 @@ mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data    
 输入linux text进入文本安装界面：
 这里前面带有”！” 号的是需要设置的，按2进入时区设置：
 我们设置的是北京时间，所以选择5 （亚太地区）
-然后输入62 （上海） 按C继续
+然后输入63 （上海） 按C继续
 输入3，选择安装源
 选择，本地光驱安装 ...
 默认是最小化安装
 
+配置网络
+ip addr
+	# eth0 显示的网卡名称是这个
+
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+	# ONBOOT 的值改为yes
+reboot
+	# 重启就自动边接了
+	
+开启root 远程登录
+vi /etc/ssh/sshd_config
+输入 /
+输入 Permit，回车，查找到后 把# 符号去掉
+
+service sshd restart
 
 
 ### linux live cd下修复linux 引导
