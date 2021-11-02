@@ -764,6 +764,10 @@ vi /etc/ssh/sshd_config
 service sshd restart
 
 
+急求模式安装grub2
+# https://www.thegeekdiary.com/centos-rhel-7-how-to-reinstall-grub2-from-rescue-mode/
+
+
 ### linux live cd下修复linux 引导
 linux live CD,所以登录后直接执行grub命令，然后执行：
 root (hdX,Y)
