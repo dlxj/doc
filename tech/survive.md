@@ -732,6 +732,17 @@ mount /dev/vda2  /mnt # 新分区挂载到 /mnt
 mkdir /data
 mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data                 # 数据盘挂载到 /data
 
+文本模式安装centos7
+按Esc键进入：
+输入linux text进入文本安装界面：
+这里前面带有”！” 号的是需要设置的，按2进入时区设置：
+我们设置的是北京时间，所以选择5 （亚太地区）
+然后输入62 （上海） 按C继续
+输入3，选择安装源
+选择，本地光驱安装 ...
+默认是最小化安装
+
+
 
 ### linux live cd下修复linux 引导
 linux live CD,所以登录后直接执行grub命令，然后执行：
