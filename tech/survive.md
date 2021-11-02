@@ -719,7 +719,8 @@ fdisk /dev/vda3
 
 # 先用 arch linux 启动，备份整个linux ，重建分区，再从linux 备份恢复？
 
-
+/******************************************
+不要了
 将 /dev/vda2 /dev/vda3 分区删掉，重建分区  
 fdisk /dev/vda
 	# m for help
@@ -731,6 +732,10 @@ fdisk /dev/vda
 mount /dev/vda2  /mnt # 新分区挂载到 /mnt
 mkdir /data
 mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data                 # 数据盘挂载到 /data
+不要了
+******************************************/
+
+先用arch linux live CD 删掉分区，成为free space，再用centos7 live cd 安装系统
 
 文本模式安装centos7
 按Esc键进入：

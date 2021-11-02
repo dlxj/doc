@@ -439,6 +439,27 @@ String.raw `Hi\u000A!`;
 
 
 
+## Replace
+
+
+
+```javascript
+// replaceAll node v15 才有，这里自定义之
+
+        String.prototype.replaceAll = function(search, replacement) {
+            var target = this
+            return target.replace(new RegExp(search, 'g'), replacement)
+        }
+      
+        strs = strs.trim()
+        strs = '\n\n' + strs +  '\n\n'
+        strs = strs.replaceAll('\xa0', "\n").replaceAll("Ｂ", "B").replaceAll("Ｄ", "D")
+```
+
+
+
+
+
 # Array
 
 
@@ -462,6 +483,7 @@ arr.forEach(element => {
 
 
 ```javascript
+// 双排序，类似C# 的 order by then by
 // Lodash 4.x:
 _.orderBy(data, [
   function (item) { return item.sortData.a; },
