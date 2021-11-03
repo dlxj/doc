@@ -764,6 +764,27 @@ vi /etc/ssh/sshd_config
 service sshd restart
 
 
+grub2 引导win7
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-working_with_the_grub_2_boot_loader
+
+BIOS 启动grub2 读取配置
+	/boot/grub2/grub.cfg
+
+UEFI 启动grub2 读取配置
+	/boot/efi/EFI/redhat/grub.cfg
+
+重新生成配置文件用
+/usr/sbin/grub2-mkconfig
+	它是根据模板文件 /etc/grub.d/ 以及"定制配置"/etc/default/grub  生成的
+		只改前一个不改后一个的话，重新生成后会丢失更改
+	# 新内核安装后自动调用 grubby 程序更新配置
+
+修改grub.cfg 请使用grubby 程序
+
+
+
+
+
 急求模式安装grub2
 # https://www.thegeekdiary.com/centos-rhel-7-how-to-reinstall-grub2-from-rescue-mode/
 
