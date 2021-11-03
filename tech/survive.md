@@ -782,6 +782,13 @@ UEFI 启动grub2 读取配置
 修改grub.cfg 请使用grubby 程序
 
 
+Grub2 使用
+https://linuxhint.com/grub_rescue_commands_centos/
+
+centos7 live cd启动  -> Troubleshooting -> Rescue a CentOS system 
+	-> type 1 for the rescue mode -> enter
+	-> chroot /mnt/sysimage
+
 
 
 
