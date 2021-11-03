@@ -12,6 +12,16 @@ npm install --dependencies
 
 ## Get
 
+
+
+```javascript
+let bent = require('bent')
+let get = bent('https://xxxxxx', 'GET', 'json', 200)
+let ssss = JSON.stringify(response)
+```
+
+
+
 ```
 
 
@@ -275,6 +285,34 @@ module.exports = {
 
 
 
+## test
+
+
+
+```javascript
+// 是否匹配
+const regex = new RegExp('foo*');
+const globalRegex = new RegExp('foo*', 'g');
+console.log(regex.test(str));
+// expected output: true
+```
+
+
+
+## dotAll
+
+. 默认不匹配换行符
+
+```
+const regex1 = new RegExp('foo', 's');  // 's' 选项开启 . 增加匹配换行符功能
+console.log(regex1.dotAll);
+// expected output: true
+```
+
+
+
+
+
 ## matchAll
 
 - 相当于python 的 finditer
@@ -455,6 +493,18 @@ String.raw `Hi\u000A!`;
         strs = '\n\n' + strs +  '\n\n'
         strs = strs.replaceAll('\xa0', "\n").replaceAll("Ｂ", "B").replaceAll("Ｄ", "D")
 ```
+
+
+
+## split
+
+```javascript
+const splits = myString.split(' ', 3)
+```
+
+
+
+
 
 
 
