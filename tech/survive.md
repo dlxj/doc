@@ -789,6 +789,19 @@ centos7 live cd启动  -> Troubleshooting -> Rescue a CentOS system
 	-> type 1 for the rescue mode -> enter
 	-> chroot /mnt/sysimage
 
+确定磁盘类型
+ls /dev/vd* # vps 是这种类型
+ls /dev/sd*
+ls /dev/hd* # very old IDE disks type
+
+安装grub2 到硬盘，开机就可进grub 了
+grub2-install /dev/vda
+
+
+
+
+
+
 
 
 
