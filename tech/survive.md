@@ -796,10 +796,16 @@ ls /dev/hd* # very old IDE disks type
 
 安装grub2 到硬盘，开机就可进grub 了
 grub2-install /dev/vda
+exit
+reboot
 
 
-
-
+重启进centos7 找回win7
+yum install -y epel-release
+yum –y install ntfs-3g
+grub2-mkconfig -o /boot/grub2/grub.cfg
+	# 会自动found win7 启动项
+	# 重启就是两启动了
 
 
 
