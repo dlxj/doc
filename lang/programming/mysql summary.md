@@ -500,6 +500,16 @@ and table_name = 'test';
 
 
 
+## 重置自增ID 
+
+
+
+```
+alter table xxx AUTO_INCREMENT=0;
+```
+
+
+
 
 
 # PROCEDURE

@@ -1082,6 +1082,34 @@ function buildSQL(sql, par) {
 
 
 
+## 存储过程
+
+
+
+### 循环
+
+
+
+```
+DROP PROCEDURE IF EXISTS `insertManyDate`;
+ 
+CREATE DEFINER =  PROCEDURE `insertManyDate`(IN `beginDate` date,IN `endDate` date)
+    COMMENT '根据输入的起止日期，循环插入每天的时间'
+BEGIN
+ 
+DECLARE nowdate date DEFAULT NOW();
+DECLARE endtmp date DEFAULT NOW();
+set nowdate = DATE_FORMAT(beginDate,'%Y%m%d');
+set endtmp = DATE_FORMAT(endDate,'%Y%m%d');
+WHILE nowdate<endtmp 
+DO
+INSERT INTO belial.date(date) VALUES(nowdate);
+set nowdate = DATE_ADD(nowdate,INTERVAL 1 DAY);
+END WHILE;
+```
+
+
+
 
 
 
