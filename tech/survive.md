@@ -802,12 +802,12 @@ reboot
 
 重启进centos7 找回win7
 yum install -y epel-release
-yum –y install ntfs-3g
+yum install -y ntfs-3g
 grub2-mkconfig -o /boot/grub2/grub.cfg
 	# 会自动found win7 启动项
 	# 重启就是两启动了
 
-
+mount -t ntfs-3g /dev/vda1 /mnt
 
 
 
@@ -892,6 +892,14 @@ https://www.jianshu.com/p/d4c3ccd75f0c
 ```
 
 
+
+#### U盘安装centos7
+
+
+
+```
+http://zhangqijun.com/%E5%AE%89%E8%A3%85win10%E5%92%8Ccentos7%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%8F%8A%E5%BC%95%E5%AF%BC%E4%BF%AE%E5%A4%8D/
+```
 
 
 
