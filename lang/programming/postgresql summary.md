@@ -4,6 +4,9 @@
 systemctl start postgresql.service  # ubuntu 18.04 
 systemctl status postgresql-13      # centos7
 
+pm2 save
+pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
+pm2 resurrect // 重启备份的所有项目
 
 ```
 
