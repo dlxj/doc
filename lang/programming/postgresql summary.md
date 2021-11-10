@@ -2330,6 +2330,9 @@ shared_buffer=512
 
 	pgpool-II
 
+# https://www.cnblogs.com/wy123/p/14087274.html
+	在Postgre中设置max_connections时，为什么需要使用连接池 （译）
+
 ```
 
 
