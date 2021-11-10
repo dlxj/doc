@@ -26,7 +26,7 @@ pip3.8 install unidic-lite
 pip3.8 install chardet
 
 export PATH=$PATH:/usr/pgsql-13/bin/   # doc\lang\programming\postgresql summary.md
-pip3.8 install psycopg2
+pip3.8 install psycopg2==2.8.6
 
 
 pip install xmltodict
@@ -263,14 +263,14 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 import sqlite3 as sqlite # Python 自带的
 
-from pymysql import escape_string
+#from pymysql import escape_string
 import glob
 
 import json
 import decimal
 import datetime
 
-import xmltodict
+#import xmltodict
 
 
 
