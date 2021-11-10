@@ -2304,6 +2304,40 @@ where en @@ to_tsquery('rebell')
 
 
 
+# pool
+
+
+
+```
+# 最大连接配置
+
+RAM 16GB
+
+Our configs:
+
+/etc/sysctl.conf
+kernel.shmmax=100663296
+
+/var/lib/pgsql/13/data/postgresql.conf
+max_connection=100
+shared_buffer=512
+```
+
+```
+# https://www.enterprisedb.com/blog/postgresql-pgpool-connection-pool-database-load
+
+# https://stackoverflow.blog/2020/10/14/improve-database-performance-with-connection-pooling/
+
+	pgpool-II
+
+```
+
+
+
+
+
+
+
 # 调试
 
 
