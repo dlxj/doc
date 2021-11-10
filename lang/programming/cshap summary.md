@@ -5289,6 +5289,47 @@ HeidiSQL 、Navicat Premium
 
 
 
+```
+using Npgsql;
+
+namespace NpgsqlTest
+{
+    class NpgsqlTestClass
+    {
+        static void Main(string[] args)
+        {
+            NpgsqlConnectionStringBuilder connectionBuilder = new NpgsqlConnectionStringBuilder();
+            connectionBuilder.Host = "localhost";
+            connectionBuilder.Username = "postgres";
+            connectionBuilder.Password = "test";
+            connectionBuilder.Port = 5432;
+            connectionBuilder.Database = "";
+
+            NpgsqlConnection connection = new NpgsqlConnection(connectionBuilder);
+            connection.Open();
+            NpgsqlCommand command = new NpgsqlCommand("CREATE DATABASE \"newDataBase\" \n" +
+                                                      "WITH OWNER \"postgres\" \n" +
+                                                      "ENCODING = 'UTF8' \n" +
+                                                      "TEMPLATE = template0 \n" +
+                                                      "CONNECTION LIMIT = -1; \n", connection);
+
+            command.ExecuteNonQuery();
+            connection.Close();
+            connectionBuilder.Database = "newDataBase";
+            connection = new NpgsqlConnection(connectionBuilder);
+            connection.Open();
+            command = new NpgsqlCommand("CREATE EXTENSION postgis \n" +
+                                        "SCHEMA public ; \n", connection);
+            command.ExecuteNonQuery();
+        }
+    }
+}
+```
+
+
+
+
+
 
 
 ```c#
