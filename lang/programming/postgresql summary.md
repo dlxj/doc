@@ -1333,7 +1333,7 @@ https://pgroonga.github.io/install/
 ```
 $ sudo -H yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(cut -d: -f5 /etc/system-release-cpe | cut -d. -f1)-$(rpm -qf --queryformat="%{ARCH}" /etc/redhat-release)/pgdg-redhat-repo-latest.noarch.rpm
 $ sudo -H yum install -y https://packages.groonga.org/centos/groonga-release-latest.noarch.rpm
-$ sudo -H yum install -y postgresql14-pgdg-pgroonga
+$ sudo -H yum install -y postgresql13-pgdg-pgroonga
 ```
 
 
