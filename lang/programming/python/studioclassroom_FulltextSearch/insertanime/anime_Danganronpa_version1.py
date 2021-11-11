@@ -21,8 +21,13 @@ D:\GitHub\doc\lang\programming\postgresql summary.md
         54322 port
     Install PG_Jieba [u](https://github.com/jaiminpan/pg_jieba)
 
-pip install mecab-python3
-pip install unidic-lite
+pip3.8s install mecab-python3
+pip3.8 install unidic-lite
+pip3.8 install chardet
+
+export PATH=$PATH:/usr/pgsql-13/bin/   # doc\lang\programming\postgresql summary.md
+pip3.8 install psycopg2==2.8.6
+
 
 pip install xmltodict
 GFW
@@ -258,14 +263,14 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 import sqlite3 as sqlite # Python 自带的
 
-from pymysql import escape_string
+#from pymysql import escape_string
 import glob
 
 import json
 import decimal
 import datetime
 
-import xmltodict
+#import xmltodict
 
 
 
@@ -713,8 +718,8 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #if count % 10 == 0:
                 print( f"###### {count} / {len(jpanese)}" )
                 
-                #if count >= 10:
-                #  break
+                # if count >= 10:
+                #   break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 #cur.execute( sql )
 
@@ -767,7 +772,7 @@ if __name__ == "__main__":
     host = '209.141.34.77'
     port = 5432
 
-    #createAnimeDB(host, port)
+    createAnimeDB(host, port)
 
 
 
@@ -821,7 +826,7 @@ if __name__ == "__main__":
 
       print('one task done. ', cur, '/', len(fnames) )
 
-      #break
+      # break
 
 
     print("all task done.")

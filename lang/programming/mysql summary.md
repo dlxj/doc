@@ -500,6 +500,181 @@ and table_name = 'test';
 
 
 
+## 连接
+
+
+
+```
+sql 左，右，内连接都可以 一对多。多对一。多对多的
+
+左连接：保留左边全部行。按左边行顺序和右边比较是否相等。相等就连接成一行。可以多对多
+
+右连接：保留右边全部行。按右边行顺序和左边比较是否相等。相等就连接成一行。可以多对多
+
+内连接：不保留不相等的行。左右有相等的就连接，不相等的多去掉不要。可以多对多
+
+```
+
+
+
+
+
+## group by distinct 
+
+
+
+```
+DISTINCT实际上和GROUP BY的操作非常相似，只不过是在GROUP BY之后的每组中只取出一条记录而已。所以，DISTINCT的实现和GROUP BY的实现也基本差不多，没有太大的区别。同样可以通过松散索引扫描或者是紧凑索引扫描来实现，当然，在无法仅仅使用索引即能完成DISTINCT的时候，MySQL只能通过临时表来完成。但是，和GROUP BY有一点差别的是，DISTINCT并不需要进行排序。也就是说，在仅仅只是DISTINCT操作的Query如果无法仅仅利用索引完成操作的时候，MySQL会利用临时表来做一次数据的“缓存”，但是不会对临时表中的数据进行filesort操作。当然，如果我们在进行DISTINCT的时候还使用了GROUP BY并进行了分组，并使用了类似于MAX之类的聚合函数操作，就无法避免filesort了。
+
+下面我们就通过几个简单的Query示例来展示一下DISTINCT的实现。
+
+ 
+
+1.首先看看通过松散索引扫描完成DISTINCT的操作：
+
+
+sky@localhost:  example 11:03:41>EXPLAIN SELECT  DISTINCT group_id
+
+->  FROM group_message\G
+
+***************************1.  row  ***************************
+
+id:  1SELECT_type:SIMPLE
+
+table:group_message
+
+type:range
+
+possible_keys:NULL
+
+key:  idx_gid_uid_gc
+
+key_len:4ref:  NULL
+
+rows:10Extra: Using index for  group-by
+
+1  row  in  set  (0.00sec)
+
+
+ 
+
+我们可以很清晰的看到，执行计划中的Extra信息为“Usingindex for group-by”，这代表什么意思？为什么我没有进行GROUP BY操作的时候，执行计划中会告诉我这里通过索引进行了GROUP BY呢？其实这就是于DISTINCT的实现原理相关的，在实现DISTINCT的过程中，同样也是需要分组的，然后再从每组数据中取出一条返回给客户端。而这里的Extra信息就告诉我们，MySQL利用松散索引扫描就完成了整个操作。当然，如果MySQLQuery Optimizer要是能够做的再人性化一点将这里的信息换成“Using index for distinct”那就更好更容易让人理解了，呵呵。
+
+ 
+
+2.  我们再来看看通过紧凑索引扫描的示例：
+
+
+sky@localhost: example 11:03:53> EXPLAIN SELECT DISTINCT user_id
+
+->FROM group_message
+
+->WHERE group_id = 2\G
+
+***************************1. row ***************************
+
+id:1SELECT_type: SIMPLE
+
+table:group_message
+
+type:ref
+
+possible_keys:idx_gid_uid_gc
+
+key:idx_gid_uid_gc
+
+key_len:4ref: const
+
+rows:4Extra: Using WHERE; Using index
+
+1row in set (0.00 sec)
+
+
+这里的显示和通过紧凑索引扫描实现GROUP BY也完全一样。实际上，这个Query的实现过程中，MySQL会让存储引擎扫描group_id=2的所有索引键，得出所有的user_id，然后利用索引的已排序特性，每更换一个user_id的索引键值的时候保留一条信息，即可在扫描完所有gruop_id=2的索引键的时候完成整个DISTINCT操作。
+
+3.下面我们在看看无法单独使用索引即可完成DISTINCT的时候会是怎样：
+
+
+sky@localhost: example 11:04:40> EXPLAIN SELECT DISTINCT user_id
+
+->FROM group_message
+
+->WHERE group_id > 1 AND group_id < 10\G
+
+***************************1. row ***************************
+
+id:1SELECT_type: SIMPLE
+
+table:group_message
+
+type:range
+
+possible_keys:idx_gid_uid_gc
+
+key:idx_gid_uid_gc
+
+key_len:4ref: NULL
+
+rows:32Extra: Using WHERE; Using index; Using temporary
+
+1row in set (0.00 sec)
+
+
+当MySQL无法仅仅依赖索引即可完成DISTINCT操作的时候，就不得不使用临时表来进行相应的操作了。但是我们可以看到，在MySQL利用临时表来完成DISTINCT的时候，和处理GROUP BY有一点区别，就是少了filesort。实际上，在MySQL的分组算法中，并不一定非要排序才能完成分组操作的，这一点在上面的GROUP BY优化小技巧中我已经提到过了。实际上这里MySQL正是在没有排序的情况下实现分组最后完成DISTINCT操作的，所以少了filesort这个排序操作。
+
+4.最后再和GROUP BY结合试试看：
+
+
+sky@localhost: example 11:05:06> EXPLAIN SELECT DISTINCT max(user_id)
+
+->FROM group_message
+
+->WHERE group_id > 1 AND group_id < 10
+
+->GROUP BY group_id\G
+
+***************************1. row ***************************
+
+id:1SELECT_type: SIMPLE
+
+table:group_message
+
+type:range
+
+possible_keys:idx_gid_uid_gc
+
+key:idx_gid_uid_gc
+
+key_len:4ref: NULL
+
+rows:32Extra: Using WHERE; Using index; Using temporary; Usingfilesort
+
+1row in set (0.00 sec)
+
+
+最后我们再看一下这个和GROUP BY一起使用带有聚合函数的示例，和上面第三个示例相比，可以看到已经多了filesort排序操作了，因为我们使用了MAX函数的缘故。
+
+对于DISTINCT的优化，和GROUP BY基本上一致的思路，关键在于利用好索引，在无法利用索引的时候，确保尽量不要在大结果集上面进行DISTINCT操作，磁盘上面的IO操作和内存中的IO操作性能完全不是一个数量级的差距。
+```
+
+
+
+
+
+
+
+
+
+## 重置自增ID 
+
+
+
+```
+alter table xxx AUTO_INCREMENT=0;
+```
+
+
+
 
 
 # PROCEDURE

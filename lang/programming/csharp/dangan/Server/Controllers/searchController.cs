@@ -168,7 +168,7 @@ namespace dangan.Server.Controllers
                     anime.initConn();
                 }
 
-                anime.g_conn.Open();
+                //anime.g_conn.Open();
 
                 string sql = $"SELECT id, audio FROM anime WHERE id={id};";
 
@@ -195,7 +195,7 @@ namespace dangan.Server.Controllers
                     }
                 }
 
-                anime.g_conn.Close();
+                //anime.g_conn.Close();
 
             }
 

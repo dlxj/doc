@@ -5289,6 +5289,138 @@ HeidiSQL 、Navicat Premium
 
 
 
+```
+
+# https://github.com/npgsql/npgsql/issues/3829
+
+using the below SQL to find the running sql
+
+SELECT pid, age(clock_timestamp(), query_start), usename, query,state,* FROM pg_stat_activity WHERE --state = 'idle' AND query NOT ILIKE '%pg_stat_activity%' and usename='autovhcowner' and application_name='nelson_console' ORDER BY query_start desc;
+
+this is how we are testing, but we are struggling to recreate at the moment, but we did notice this difference.
+
+ public static void MyThread()
+        {
+            //int index = 0;
+            Console.WriteLine($"{DateTime.Now} - program started ");
+            Console.ReadKey();
+            for (int i = 0; i < 5; i++)
+            {
+                //index++;
+                Console.WriteLine($"{DateTime.Now} - thread created  {i}");
+
+                Thread t = new Thread(ConnectionCheck);
+                t.Start(i);
+
+            }
+            Console.WriteLine($"{DateTime.Now} - program finished ");
+            Console.ReadKey();
+        }
+        public static void ConnectionCheck(object index)
+        {
+            try
+            {
+              
+                Thread.Sleep(5000);
+                Console.WriteLine($"{DateTime.Now} ConnectionCheck thread {index} ");
+                var query = @"select pg_sleep(1)";
+                var connectionType = CoreConfigurationManager.DBConnectionType();
+                
+                if (connectionType == "NPGSQL")
+                {
+                    using (var connection =
+                        new NpgsqlConnection(ConnectionConfigurationManager.MasterConnectionString))
+                    {
+                        using (var command = new NpgsqlCommand(query, connection))
+                        {
+
+                            if (command.Connection.State == ConnectionState.Closed)
+                                command.Connection.Open();
+
+                            var res = command.ExecuteNonQuery();
+                            Console.WriteLine($"{DateTime.Now} - thread completed  {index} - result {res}");
+                        }
+                    }
+                }
+                else if (connectionType == "EDB")
+                {
+                    using (var connection = new EDBConnection(ConnectionConfigurationManager.MasterConnectionString))
+                    using (var command = new EDBCommand(query, connection))
+                    {
+
+                        if (command.Connection.State == ConnectionState.Closed)
+                            command.Connection.Open();
+
+                        var res = command.ExecuteNonQuery();
+                        Console.WriteLine($"{DateTime.Now} - thread completed  {index} - result {res}");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+Connectionstring :
+
+ <add name="MasterConnectionString" connectionString="Host='XXX';port=9999;username='XXX';password='XXX;Database='XXXX';Timeout=300;ConnectionLifetime=2;MinPoolSize=5;MaxPoolSize=25;CommandTimeout=300;ApplicationName=nelson_console;" />
+   <add name="NPGSQLMasterConnectionString" connectionString="Host='XXX';port=9999;username='XXX';password='XXX';Database='XXXX';Timeout=300;ConnectionLifetime=2;MinPoolSize=5;MaxPoolSize=25;CommandTimeout=300;Application Name=nelson_console;" />      
+
+
+```
+
+
+
+
+
+```
+using Npgsql;
+
+namespace NpgsqlTest
+{
+    class NpgsqlTestClass
+    {
+        static void Main(string[] args)
+        {
+            NpgsqlConnectionStringBuilder connectionBuilder = new NpgsqlConnectionStringBuilder();
+            connectionBuilder.Host = "localhost";
+            connectionBuilder.Username = "postgres";
+            connectionBuilder.Password = "test";
+            connectionBuilder.Port = 5432;
+            connectionBuilder.Database = "";
+
+            NpgsqlConnection connection = new NpgsqlConnection(connectionBuilder);
+            connection.Open();
+            NpgsqlCommand command = new NpgsqlCommand("CREATE DATABASE \"newDataBase\" \n" +
+                                                      "WITH OWNER \"postgres\" \n" +
+                                                      "ENCODING = 'UTF8' \n" +
+                                                      "TEMPLATE = template0 \n" +
+                                                      "CONNECTION LIMIT = -1; \n", connection);
+
+            command.ExecuteNonQuery();
+            connection.Close();
+            connectionBuilder.Database = "newDataBase";
+            connection = new NpgsqlConnection(connectionBuilder);
+            connection.Open();
+            command = new NpgsqlCommand("CREATE EXTENSION postgis \n" +
+                                        "SCHEMA public ; \n", connection);
+            command.ExecuteNonQuery();
+        }
+    }
+}
+```
+
+
+
+```
+
+```
+
+
+
+
+
 
 
 ```c#

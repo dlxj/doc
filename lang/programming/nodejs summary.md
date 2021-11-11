@@ -209,6 +209,62 @@ module.exports =
 
 
 
+### bent
+
+
+
+```
+# 参数太长也会出错
+
+( async ()=>{
+
+  let bent = require('bent')
+  let _ = require('lodash')
+
+  let host = `xxxx`
+  let appename = 'xxxxx'
+  
+  let json = {
+    SessionKey: "xxxx",
+    appEName: xxxx
+  }
+
+  let url = `http://${host}`
+
+  let post = bent(url, 'POST', 'json', 200)
+  let response = await post('xxxxx', json)
+
+  var idArray = response.data
+
+  let arr_chunks = _.chunk(idArray, 10000)
+
+  idArray = [ idArray[0] ]
+
+  idArray = JSON.stringify(arr_chunks[0])
+
+
+  json = {
+      SessionKey: "xxxx",
+      appEName: xxxx,
+      idArray:xxxx
+  }
+
+  var tests = []
+  
+  let response2 = await post('xxxxx', json)
+
+  tests =tests.concat(response2.data.test)
+
+  
+
+  a = 1
+
+
+}) ()
+```
+
+
+
 
 
 
@@ -1079,6 +1135,89 @@ function buildSQL(sql, par) {
 
 }) ()
 ```
+
+
+
+## 存储过程
+
+
+
+### 循环
+
+
+
+```
+DROP PROCEDURE IF EXISTS `insertManyDate`;
+ 
+CREATE DEFINER =  PROCEDURE `insertManyDate`(IN `beginDate` date,IN `endDate` date)
+    COMMENT '根据输入的起止日期，循环插入每天的时间'
+BEGIN
+ 
+DECLARE nowdate date DEFAULT NOW();
+DECLARE endtmp date DEFAULT NOW();
+set nowdate = DATE_FORMAT(beginDate,'%Y%m%d');
+set endtmp = DATE_FORMAT(endDate,'%Y%m%d');
+WHILE nowdate<endtmp 
+DO
+INSERT INTO belial.date(date) VALUES(nowdate);
+set nowdate = DATE_ADD(nowdate,INTERVAL 1 DAY);
+END WHILE;
+```
+
+
+
+## 取用户最新的一条数据
+
+
+
+```mysql
+# 前提：ID 是自增ID
+# MAX(r.ID) 是最新的，但其他不是，所以必须要用子查询
+
+    SELECT r.ID AS reportID, r.appID, r.userID, r.rightRate FROM report r WHERE r.ID IN ( SELECT MAX(r.ID) AS reportID from report r WHERE r.appID=$(appid) GROUP BY r.userID ORDER BY reportID DESC ) ORDER BY reportID DESC;
+
+```
+
+
+
+## 时区转换
+
+
+
+```
+select NOW();
+SELECT convert_tz(now(),@@session.time_zone,'+08:00')
+
+
+# 24小时制
+let u = re[0].updateTime
+let tt = new Date(u).toLocaleString('chinese',{hour12:false})
+
+```
+
+
+
+# time
+
+
+
+## 24 小时制
+
+
+
+```javascript
+select NOW();
+SELECT convert_tz(now(),@@session.time_zone,'+08:00')
+
+
+# 24小时制
+let u = re[0].updateTime
+let tt = new Date(u).toLocaleString('chinese',{hour12:false})
+```
+
+
+
+
 
 
 
