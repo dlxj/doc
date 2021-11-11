@@ -3698,6 +3698,197 @@ ffmpeg -i output.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 0 -h
 
 
 
+# nginx
+
+
+
+```
+有没有人遇到 Nginx 做反代 https 登陆页面出现问题
+
+无聊做了个反代上dmm
+结果dmm的https登陆页面一直不太对
+首先响应的时间就非常长，经常超时
+然后也无法正常登陆,一直提示密码错误
+
+然而用squid正代就没有任何问题
+基本可以确定肯定是nginx哪里错了
+
+研究了半天还是没什么成果。。。所以我就想问问我究竟在哪里掉坑里了
+
+贴部分配置：
+server {
+listen server_ip:443 ssl;
+server_name www.dmmm.com;
+
+ssl_certificate     /usr/local/nginx/conf/server.crt;
+    ssl_certificate_key  /usr/local/nginx/conf/server.key;
+
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+
+    location / {
+        proxy_pass https://www.dmm.com;
+
+        proxy_set_header Host $http_host;
+
+        proxy_max_temp_file_size     0k;
+        proxy_connect_timeout       60;
+        proxy_send_timeout         60;
+        proxy_read_timeout         60;
+        proxy_buffers             256 4k;
+        proxy_busy_buffers_size      64k;
+        proxy_redirect            off;
+    }
+}
+第 1 条附言  ·  2015-03-31 22:08:05 +08:00
+今天已经完成排错任务原因为:
+[kQBYS09a1******@********* ~]$ cat /usr/local/nginx/logs/error.log | grep invalid
+2015/03/31 16:15:46 [info] 11637#0: *73 client sent invalid header line: "DMM_TOKEN: b909db2e73f6d2c9ab1a6**********" while reading client request headers, client: ********, server: www.dmm.com, request: "POST /my/-/login/ajax-get-token/ HTTP/1.1", host: "www.dmm.com"
+经过查阅文档nginx对于"DMM_TOKEN"这类带有下划线的header认为不合法自动忽略
+nginx作者和下划线到底有多大仇~~~~~
+解决方法也很简单:
+underscores_in_headers on
+```
+
+
+
+
+
+# 解密
+
+
+
+```
+https://www.v2ex.com/t/311275
+
+求帮忙破解 AES-128 加密的 m3u8+ts+key 视频
+     gushengren · 2016-10-09 01:21:20 +08:00 · 18439 次点击  
+这是一个创建于 1859 天前的主题，其中的信息可能已经有所发展或是发生改变。
+把浏览器缓存的东西都复制出来了,除了 m3u8 和 key,其他的都是 ts 文件,哪位大神能帮忙破解一下,想把这个视频下下来啊.生成一个可以播放的视频
+链接： http://pan.baidu.com/s/1nvvZCSh 密码： hoqf
+18439 次点击  ∙  12 人收藏  加入收藏  Tweet  忽略主题  感谢
+ M3U8 key 破解 帮忙32 条回复  •  2017-05-18 17:51:15 +08:00
+gushengren		        Reply    1
+gushengren   2016-10-09 02:49:26 +08:00
+求大神来帮忙
+annielong		        Reply    2
+annielong   2016-10-09 09:21:47 +08:00
+ts 文件也加密了吗？先看看 ts 文件能不能直接播放，如果可以直接播放就是没有加密，直接合并就行了
+xxxyyy		        Reply    3
+xxxyyy   2016-10-09 09:43:19 +08:00 via Android
+av 来的呀，不过分辨率也太小了，只有 320x180 ，而且还打码了
+Ellison		        Reply    4
+Ellison   2016-10-09 11:25:49 +08:00
+@xxxyyy 推荐楼主直接问老司机要番号
+gushengren		        Reply    5
+gushengren   2016-10-09 12:39:37 +08:00
+@annielong TS 如果不加密,我就不用在这问了
+gushengren		        Reply    6
+gushengren   2016-10-09 12:40:10 +08:00
+@xxxyyy 神人,你破了吗?
+xxxyyy		        Reply    7
+xxxyyy   2016-10-09 12:50:56 +08:00 via Android
+@gushengren 你不知道里面的内容的吗？
+gushengren		        Reply    8
+gushengren   2016-10-09 12:56:05 +08:00
+@xxxyyy 我知道啊,我看你居然知道里面的内容,你是破解了吗?兄弟,跪求方法啊
+gushengren		        Reply    9
+gushengren   2016-10-09 12:57:23 +08:00
+@xxxyyy 可以留个联系方式吗?
+gushengren		        Reply    10
+gushengren   2016-10-09 14:12:33 +08:00
+哪位大神神帮帮我啊.555555555555555555
+xxxyyy		        Reply    11
+xxxyyy   2016-10-09 14:50:15 +08:00 via Android
+有 telegram 吗？
+gushengren		        Reply    12
+gushengren   2016-10-09 14:55:47 +08:00
+@xxxyyy 没有呢,有没有比较低端的联系方式啊,呵呵
+likuku		        Reply    13
+likuku   2016-10-09 15:10:01 +08:00
+暴力穷举猜密码的话，就放弃吧，当前地球人的计算设备还不够强。
+
+坐等量子超级电脑。
+xxxyyy		        Reply    14
+xxxyyy   2016-10-09 15:20:13 +08:00
+@gushengren QQ ：(捌)361(零)992(壹)
+v2014		        Reply    15
+v2014   2016-10-09 15:47:29 +08:00
+费了洪荒之力终于看到那女的穿的是条纹衣服
+gushengren		        Reply    16
+gushengren   2016-10-09 15:55:23 +08:00
+@v2014 哈哈,你能也破?跪求指导
+v2014		        Reply    17
+v2014   2016-10-09 16:02:33 +08:00
+@gushengren 楼上不是有 QQ 么，你拿 key 和视频用 aes128 算法解密就可以了
+gushengren		        Reply    18
+gushengren   2016-10-09 16:04:12 +08:00
+就是不知道怎么解密啊,兄弟,原理我都懂的,不然我也不会提供出解密需要的东西啊,能提供下 QQ 指导一下么,不胜感激
+gushengren		        Reply    19
+gushengren   2016-10-09 16:06:20 +08:00
+@v2014 我用 ffmpeg 接收 它报个未知格式的错误,我 TM 就 SB 了,不知道咋办了
+v2014		        Reply    20
+v2014   2016-10-09 16:15:39 +08:00
+@gushengren 我不会 ffmpeg ，只是用 python 解了个视频。你可以看看这个 http://dola.xinfan.org/?p=549
+monkeygo		        Reply    21
+monkeygo   2016-10-09 16:20:03 +08:00 via iPhone
+都是老司机
+gushengren		        Reply    22
+gushengren   2016-10-09 16:22:18 +08:00
+@v2014 这个我看了,根本不知道如何操作,提到命令行的时候,呵呵
+tinyproxy		        Reply    23
+tinyproxy   2016-10-09 17:09:44 +08:00   ❤️ 2
+这个不叫破解。。。 AES 的 mode 就那么几个，你知道是 AES-128 ，试一下不就好了。
+
+我随便下了一个文件，这个是我的代码，其它的你自己处理吧。
+#!/usr/bin/env python
+# -*- coding: utf8 -*-
+from Crypto.Cipher import AES
+
+raw = file('dyVuoO%2BiKIqY%2B3Ebf3CavNpB5RKlXfGtInP31znaGCfYnVkrSsAF46r2hg-1', 'rb').read()
+iv = raw[0:16]
+data = raw[16:]
+key = file('key', 'rb').read()
+
+plain_data = AES.new(key, AES.MODE_CBC, iv).decrypt(data)
+file('fuck.mp4', 'wb').write(plain_data)
+VYSE		        Reply    24
+VYSE   2016-10-09 17:39:32 +08:00
+http://www.dmm.co.jp
+提取番号不就行了,这都是预览吧?
+21grams		        Reply    25
+21grams   2016-10-09 17:48:50 +08:00
+key 都有了还不会解吗？
+gushengren		        Reply    26
+gushengren   2016-10-09 17:54:17 +08:00
+@21grams 不会,我是小白
+Jat001		        Reply    27
+Jat001   2016-10-09 17:58:28 +08:00
+@tinyproxy 万一是 gcm 怎么办？你怎么知道 iv 是前 16 字节？
+tinyproxy		        Reply    28
+tinyproxy   2016-10-09 18:48:49 +08:00   ❤️ 1
+@Jat001
+1. 楼上几位都明确暗示解密成功了，所以我也就是随便拿一种 mode 来猜的，当时第一反应是 CBC 。至于 GCM 咋办，因为没用过这种 mode ，所以暂时不了解加解密操作，不回复。
+2. iv 是前 16 字节这个问题，这个是个人经验。我目前为止看过的所有代码都是直接把 iv 添加到密文前面去，所以也就随手试试，你看我的代码也没几行，不成功就算了呗。
+Jat001		        Reply    29
+Jat001   2016-10-09 19:08:57 +08:00
+@tinyproxy gcm 加密时还需要 associated data ，加密完还会生成 tag 用作校验，具体实现可以参考。
+https://cryptography.io/en/latest/hazmat/primitives/symmetric-encryption/#cryptography.hazmat.primitives.ciphers.modes.GCM
+crab		        Reply    30
+crab   2016-10-09 19:13:56 +08:00
+dmm 这网站的？
+hwsdien		        Reply    31
+hwsdien   2016-10-09 19:16:54 +08:00
+key 都有了。。。
+```
+
+
+
+
+
 
 
 # hira2kata
