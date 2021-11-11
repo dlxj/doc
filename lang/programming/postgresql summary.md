@@ -3755,6 +3755,18 @@ underscores_in_headers on
 
 
 
+# acg power 代理
+
+
+
+```
+http://127.0.0.1:8123/proxy.pac  # 它定义的ip、网址规则，改它(for dmm game player)
+```
+
+
+
+
+
 
 
 # 解密
