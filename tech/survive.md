@@ -802,8 +802,9 @@ reboot
 
 重启进centos7 找回win7
 yum install -y epel-release
-yum install -y ntfs-3g
-grub2-mkconfig -o /boot/grub2/grub.cfg
+yum –y install ntfs-3g
+grub2-mkconfig -o /boot/grub2/grub.cfg  # 确实成功了，不需要其他配置
+
 	# 会自动found win7 启动项
 	# 重启就是两启动了
 
