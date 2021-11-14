@@ -163,12 +163,15 @@ namespace dangan.Server.Controllers
 
             if (!System.IO.File.Exists(audioPath))
             {
-                if (!anime.initQ)
-                {
-                    anime.initConn();
-                }
+                //if (!anime.initQ)
+                //{
+                //    anime.initConn();
+                //}
 
                 //anime.g_conn.Open();
+
+                var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Connection Idle Lifetime=200;Tcp Keepalive = false;");
+                conn.Open();
 
                 string sql = $"SELECT id, audio FROM anime WHERE id={id};";
 
@@ -194,6 +197,8 @@ namespace dangan.Server.Controllers
                         }
                     }
                 }
+
+                conn.Close();
 
                 //anime.g_conn.Close();
 

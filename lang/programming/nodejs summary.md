@@ -560,7 +560,13 @@ const splits = myString.split(' ', 3)
 
 
 
+## includes
 
+
+
+```
+if (text.includes(word)) {}
+```
 
 
 
@@ -655,6 +661,78 @@ if ( !(keyParent in menus) ) {
 
 ```
 require('fs').writeFileSync('menu.json', JSON.stringify(menujson) )
+```
+
+
+
+
+
+## 遍历目录读取word
+
+
+
+```
+
+# docx.js
+
+let rd = require('rd');
+let fs = require('fs');
+let path = require("path")
+
+var mammoth = require("mammoth")
+//const AdmZip = require('adm-zip'); //引入查看zip文件的包
+
+module.exports = {
+    //
+    // 目录下所有docx 的内容文本
+    //
+    contents : async function(dir) {
+
+        var arr = []
+
+        var paths = []
+
+        // 目录下的所有文件名
+        rd.eachFileFilterSync(dir, /\.docx$/, function (fullpath, stats) {
+
+            let basename = path.basename(fullpath)
+            if (basename != "A1-3.docx") {
+                return
+            }
+
+            paths.push(fullpath)
+        })
+
+        for (let i = 0; i < paths.length; i++) {
+            let content = await getContent(paths[i])
+            arr.push(content)
+        }
+
+        return arr
+    }
+}
+
+
+function getContent(fileName) {
+    return new Promise((resolve, err) => {
+        // var url = path.join(__dirname, 'A1-3-2.docx');
+        // var url = path.join(__dirname, "../../../file/" + fileName);
+        var url = fileName
+        mammoth.extractRawText({
+                path: url
+            })
+            .then(function (result) {
+                var text = result.value // The raw text
+                var messages = result.messages
+                resolve(text)
+
+            })
+            .catch((e) => {
+                err(false)
+            })
+            .done()
+    })
+}
 ```
 
 
