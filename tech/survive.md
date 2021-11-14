@@ -227,7 +227,7 @@ hook.beforeEach(function(content) {
 
 # 外国友人
 
-
+阿倍仲麻侣
 
 日本狸猫田中裕之
 
