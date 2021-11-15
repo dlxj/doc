@@ -472,12 +472,56 @@ j = ANONUM(strs)
 
 
 
+### 零宽度断言
+
+
+
 ```
 # https://www.cnblogs.com/wangqiguo/archive/2012/05/08/2486548.html
 
-匹配不含hello的字符串
-^(?!.*hello)
 
+# https://www.cnblogs.com/wangqiguo/archive/2012/05/08/2486548.html
+	利用正则表达式排除特定字符串
+
+// 匹配不以baidu开头的字符串
+//ss = 'baidu.com'
+ss = 'sina.com.cn'
+let matches = ss.matchAll('^(?!baidu).*$')
+let arr = Array.from(matches)  # 成功匹配'sina.com.cn'
+
+
+
+// 匹配不以com 结尾的字符串
+ss = 'www.hao.cc'
+//ss = 'www.baidu.com'
+let matches = ss.matchAll('^.*?(?<!com)$')
+let arr = Array.from(matches)  # 成功匹配 'www.hao.cc'
+
+// 匹配不含if 的字符串
+//ss = 'else if (a>b) {}'
+ss = 'else (a>b) {}'
+
+let matches = ss.matchAll('^([^f]|[^i]f)+$')  # 成功匹配 'else (a>b) {}'
+
+let arr = Array.from(matches)
+
+
+
+// 匹配不含if 的字符串 （优化版）
+//ss = 'else if (a>b) {}'
+ss = 'else (a>b) {}'
+
+let matches = ss.matchAll('^(?!.*if).*$')  # 成功匹配 'else (a>b) {}'
+
+let arr = Array.from(matches)
+
+
+// 匹配不含E. 的字符串
+ss = 'else E. (a>b) {}'
+
+let matches = ss.matchAll('^(?!.*E\\.).*$')
+
+let arr = Array.from(matches)  # OKOKOK 不匹配E.  ，其他的都匹配
 
 ```
 
