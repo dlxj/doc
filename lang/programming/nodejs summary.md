@@ -808,7 +808,13 @@ n # 下一行
 break in file:////yingedu/project_test/ksbaiexam/http/api/submit.js
 
 
+# https://zhuanlan.zhihu.com/p/98571113
+	# chrome 远程调试node
 
+
+node14 --inspect-brk=0.0.0.0:9229 server.js
+
+chrome://inspect/#devices
 
 ```
 
