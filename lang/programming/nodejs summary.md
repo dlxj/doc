@@ -761,8 +761,60 @@ function getContent(fileName) {
 
 
 ```
-https://medium.com/the-node-js-collection/live-debugging-node-js-apps-at-the-command-line-cd5b58f883e1
+# https://medium.com/the-node-js-collection/live-debugging-node-js-apps-at-the-command-line-cd5b58f883e1
+
+# http://www.ruanyifeng.com/blog/2018/03/node-debugger.html
+
+# https://juejin.cn/post/6844904098618163207
+	# VSCode 远程调试
+
+# https://zhuanlan.zhihu.com/p/100092504
+
+	# http://www.baiguangnan.com/2019/03/13/vscoderemotedebugnodejs/
+
+		# vscode node remote debug
+
+# https://nodejs.org/api/debugger.html
+node inspect -p 32168  # 进程ID
+	# help # 打印帮助
+
+	# debug> setBreakpoint('main.js', 4, 'num < 0')  # 条件断点
+
+list(100): shows the first 100 lines of code
+setBreakpoint(17): sets a breakpoint on the 17th line
+clearBreakpoint(17): removes a breakpoint on the 17th line
+exec body: evaluates the body variable and prints out its result
+cont: continues the program's execution
+
+Resume execution(continue): c or cont
+Next line: n or next
+Step into a function: s or step
+Step out: o or out
+Set breakpoint: sb or setBreakpoint
+Clear breakpoint: sc or clearBreakpoint
+
+watch('counter')
+
+
+
+# https://betterprogramming.pub/how-to-debug-using-node-js-built-in-debugger-f3ab3ba6e7c8
+	# Debug Using Node.js’s Built-In Debugger
+	
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 43)
+clearBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 43)
+
+n # 下一行
+
+break in file:////yingedu/project_test/ksbaiexam/http/api/submit.js
+
+
+
+
 ```
+
+
+
+
 
 
 
