@@ -468,6 +468,23 @@ j = ANONUM(strs)
 
 
 
+## 不匹配某个串
+
+
+
+```
+# https://www.cnblogs.com/wangqiguo/archive/2012/05/08/2486548.html
+
+匹配不含hello的字符串
+^(?!.*hello)
+
+
+```
+
+
+
+
+
 ## replace
 
 
@@ -734,6 +751,19 @@ function getContent(fileName) {
     })
 }
 ```
+
+
+
+
+
+# live debug 
+
+
+
+```
+https://medium.com/the-node-js-collection/live-debugging-node-js-apps-at-the-command-line-cd5b58f883e1
+```
+
 
 
 
