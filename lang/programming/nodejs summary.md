@@ -1139,6 +1139,20 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 
 ```
+Redisson 的 getLocalCachedMap 对应的 Redis 类型就是 hash 吧，那就没啥问题了啊就是这样用的啊，甚至都不需要这 1000key 吧
+
+使用 redisson 连接的 redis(哨兵)
+目前是存人群信息, 分了 1000 个 key (redis 中 key 如果很多的话会有问题么)
+1000 个 key 的 value 是 一个大 Map ,存取这个 map 用的是 getLocalCachedMap
+map 的每个 key 对应一个人 value 就是他的数据(数据量肯定不大 几百 k 吧)
+然后业务集群每天大概请求在 40 -50 亿 然后峰值是 70 亿
+```
+
+
+
+
+
+```
  安装  npm install redis --save
 
 demo
