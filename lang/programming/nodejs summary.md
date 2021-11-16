@@ -1146,6 +1146,12 @@ Redisson 的 getLocalCachedMap 对应的 Redis 类型就是 hash 吧，那就没
 1000 个 key 的 value 是 一个大 Map ,存取这个 map 用的是 getLocalCachedMap
 map 的每个 key 对应一个人 value 就是他的数据(数据量肯定不大 几百 k 吧)
 然后业务集群每天大概请求在 40 -50 亿 然后峰值是 70 亿
+
+我觉得不是很妥当，key 数量并不会显著影响存取性能，但是大 key or 大 value 会显著降低 redis 性能
+小于 1k 的键值对操作性能，和 10k 以上的 k-v 操作性能，有数量级差距
+印象中 redis hash 结构推荐的 field 数量应该在 100 左右以内
+
+
 ```
 
 
