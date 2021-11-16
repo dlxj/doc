@@ -477,6 +477,10 @@ j = ANONUM(strs)
 
 
 ```
+
+# https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word
+	国外大佬
+
 # https://www.cnblogs.com/wangqiguo/archive/2012/05/08/2486548.html
 
 
@@ -523,7 +527,93 @@ let matches = ss.matchAll('^(?!.*E\\.).*$')
 
 let arr = Array.from(matches)  # OKOKOK 不匹配E.  ，其他的都匹配
 
+
+
+
+
+
+// 匹配不含E. 的字符串
+ss = 'else E . (a>b) {}'
+
+let regg = '^(?!.*E\\.).*$'
+let regg2 = String.raw`^(?!.*E\.).*$`
+
+let regg3 = new RegExp(String.raw`^(?!.*E\.).*$`, 'gs')  // 参数g 全局匹配，参数s 让. 匹配 \n
+
+console.log( regg3.dotAll )
+
+let matches = ss.matchAll(regg3)  // 正则必须有 g 参数，否则报错
+
+let arr = Array.from(matches)  // # OKOKOK 不匹配E.  ，其他的都匹配
+
+
+console.log(/foo/ig.flags)   // 正则的简写，参数加了 i, g,g 表示全局匹配
+
+a = 1
+
 ```
+
+
+
+### 匹配不含 A. B. C. D. E. 的串
+
+```
+# 匹配不含 A. B. C. D. E. 的串
+ss = '\n\nelse E .  D. (a>b) {}\n\n'
+let regg4 = new RegExp(String.raw`^\n\n(?!.*?(A\.|B\.|C\.|D\.|E\.)).*\n\n$`, 'gs')
+let matches = ss.matchAll(regg4)  // 正则必须有 g 参数，否则报错
+let arr = Array.from(matches)
+```
+
+
+
+
+
+```
+
+# https://stackoverflow.com/questions/7801581/regex-for-string-not-containing-multiple-specific-words
+
+// 匹配不含E. 且还不含D. 的字符串
+ss = '\n\nelse E .  D . (a>b) {}\n\n'
+
+let regg = '^(?!.*E\\.).*$'
+let regg2 = String.raw`^(?!.*E\.).*$`
+
+let regg3 = new RegExp(String.raw`^(?!.*E\.).*$`, 'gs')  // 参数g 全局匹配，参数s 让. 匹配 \n
+
+
+let regg4 = new RegExp(String.raw`^\n\n(?!.*?(E\.|D\.)).*\n\n$`, 'gs')
+
+// (?!.*98|.*2000|.*xp)
+
+// ^([^h].*$)|(h([^e].*$|$))|(he([^h].*$|$))|(heh([^e].*$|$))|(hehe.+$) 
+
+
+console.log( regg3.dotAll )
+
+let matches = ss.matchAll(regg4)  // 正则必须有 g 参数，否则报错
+
+let arr = Array.from(matches)  // # OKOKOK 不匹配E.  ，其他的都匹配
+
+
+console.log(/foo/ig.flags)   // 正则的简写，参数加了 i, g,g 表示全局匹配
+
+if (arr.length > 0) {
+
+  for (let i = 0; i < arr.length; i++) {
+    let match = arr[i]
+    let begin = match.index
+    let end = begin + match[0].length
+
+    let title = match[1]  // get the match group text
+    let testOrigin = ss.substring(begin, end) // get the origin match text
+
+    testOrigins.push(testOrigin)
+
+  }
+```
+
+
 
 
 
@@ -819,7 +909,7 @@ function getContent(fileName) {
 		# vscode node remote debug
 
 # https://nodejs.org/api/debugger.html
-node inspect -p 32168  # 进程ID
+node inspect -p 9436  # 进程ID
 	# help # 打印帮助
 
 	# debug> setBreakpoint('main.js', 4, 'num < 0')  # 条件断点
@@ -844,8 +934,16 @@ watch('counter')
 # https://betterprogramming.pub/how-to-debug-using-node-js-built-in-debugger-f3ab3ba6e7c8
 	# Debug Using Node.js’s Built-In Debugger
 	
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 43)
-clearBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 43)
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 45)
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 142)
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 164)
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 208)
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 219)
+setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 226)
+clearBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 45)
+
+# 可能是这一句的错误
+let retSaveExam = await this.services.saveExamgather({examgahters})
 
 n # 下一行
 
