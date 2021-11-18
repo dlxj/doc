@@ -367,6 +367,16 @@ console.log(regex1.dotAll);
 
 
 
+## new RegExp
+
+
+
+```
+new RegExp(String.raw`^(?!.*E\.).*$`, 'gs')  // 参数g 全局匹配，参数s 让. 匹配 \n
+```
+
+
+
 
 
 ## matchAll
@@ -374,16 +384,31 @@ console.log(regex1.dotAll);
 - 相当于python 的 finditer
 
 ```javascript
-const string = 'black*raven lime*parrot white*seagull';
-const regex = /(?<color>.*?)\*(?<bird>[a-z0-9]+)/;
-for (const match of string.matchAll(regex)) {
-    let value = match[0];
-    let index = match.index;
-    let input = match.input;
-    console.log(`${value} at ${index} with '${input}'`);
-console.log(match.groups.color);
-    console.log(match.groups.bird);
-}
+  let regAX = String.raw`\n\d+\..+?（\s*?）.*?\n`
+  
+  if ((new RegExp(regAX).test(strs))) {  //匹配标题
+
+    let matches = strs.matchAll(regAX)
+
+    let arr = Array.from(matches)
+
+    if (arr.length > 0) {
+
+      for (let i = 0; i < arr.length; i++) {
+        let match = arr[i]
+        let begin = match.index
+        let end = begin + match[0].length
+
+        let title = match[1]  // get the match group text
+        let testOrigin = strs.substring(begin, end) // get the origin match text
+
+        testOrigins.push(testOrigin)
+
+      }
+
+    }
+
+  }
 ```
 
 
