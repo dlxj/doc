@@ -831,6 +831,21 @@ if ( !(keyParent in menus) ) {
 
 
 
+## isEmpty
+
+
+
+```javascript
+let _ = require('lodash')
+_.isEmpty(dic_ansers)
+```
+
+
+
+
+
+
+
 # File
 
 
