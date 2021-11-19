@@ -1591,6 +1591,22 @@ let tt = new Date(u).toLocaleString('chinese',{hour12:false})
 
 
 
+# pm2
+
+
+
+## rename
+
+
+
+```
+pm2 restart id --name newName
+```
+
+
+
+
+
 
 
 # Chrome
