@@ -15,6 +15,17 @@ F11 切换全屏
 
 
 ```
+# 不安装依赖
+On some systems (like Termux), it is not possible to install pycryptodomex. In that case, install without dependancies:
+
+python3 -m pip install --no-deps -U yt-dlp "
+```
+
+
+
+
+
+```
 .gitignore
 *.json
 *.doc
