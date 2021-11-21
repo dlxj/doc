@@ -2042,6 +2042,59 @@ https://www.v2ex.com/t/653978
 
 
 
+### config
+
+
+
+```c#
+# https://www.daveabrock.com/2021/01/19/config-top-level-programs/
+
+{
+    "Name": "Dave Brock",
+    "Hobbies": {
+        "Weekday": "code",
+        "Weekend": "play guitar"
+    },
+    "SwansonApiUri": "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
+}
+
+
+Then, make sure your project file has the following packages installed, and that the appSettings.json file is being copied to the output directory:
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+  
+using Microsoft.Extensions.Configuration;
+
+var config = new ConfigurationBuilder()
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                 .AddJsonFile("appsettings.json")
+                 .Build();
+
+var name = config["Name"];
+var weekdayHobby = config.GetSection("Hobbies:Weekdays");
+var weekendHobby = config.GetSection("Hobbies:Weekends");
+var quote = await new HttpClient().GetStringAsync(config["SwansonApiUri"]);
+
+Console.WriteLine($"Hey, I'm {name}!");
+  
+  
+```
+
+
+
+
+
 ### Form
 
 
