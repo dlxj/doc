@@ -2042,7 +2042,7 @@ https://www.v2ex.com/t/653978
 
 
 
-### config
+### 读取配置文件
 
 
 
@@ -3995,7 +3995,8 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
 
  cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64
 
- ./dangan.Server --urls http://0.0.0.0:5000
+# 更新：现在需要vs studio 编译的版本才能外网了
+ ./dangan.Server --urls http://0.0.0.0:80
 	# 外网正常访问
 ```
 

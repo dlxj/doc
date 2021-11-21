@@ -369,7 +369,16 @@ fdisk /dev/sda
 
 # 格式化
 mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
+	# yum install ntfsprogs
+	# fdisk /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
+	# 这里用fdisk 分好区
+	# mkfs.ntfs --fast -F /dev/sda1
+		# 因为windows 不知为什么不识别ext4 分区了，只能让linux 去识别ntfs 分区
 
+	# mount -t ntfs-3g /dev/sda1 /mnt
+	# df -T
+		# /dev/sda1           fuseblk  536867836  104168 536763668   1% /mnt
+	# 注意：linux 分出来的ntfs 分区并不能被windows 识别，所以还是用windows 格式化吧，然后linux 装ntfsprogs，和ntfs-3g 挂载
 
 # 挂载
 mkdir /data

@@ -2,6 +2,7 @@
 
 @using dangan.Client.Model;
 @using System.Text.Json;
+@using dangan.Shared;
 
 @namespace dangan.Client
 @inherits AntDesign.AntDomComponentBase
@@ -45,7 +46,10 @@
 
         @foreach (var row in rowData)
         {
-            string url = debugQ ? $"http://{hostDebug}:5000/search/getaudio?id={row.id}" : $"http://{hostLV}:80/search/getaudio?id={row.id}";
+            //string url = debugQ ? $"http://{hostDebug}:5000/search/getaudio?id={row.id}" : $"http://{hostLV}:80/search/getaudio?id={row.id}";
+
+            string url = debugQ ? $"http://{hostDebug}/search/getaudio?id={row.id}" : $"http://{host}/search/getaudio?id={row.id}";
+
 
             //<audio id="@($"audio{row.id}")" src="01.mp3" type="audio/mpeg" preload="auto"></audio>
             <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
@@ -92,11 +96,13 @@
 
     private static List<rowModel> rowData = null;
 
-    bool debugQ = true;
+    bool debugQ = Config.debugQ;
+    string hostDebug = Config.hostDebug;
+    string host = Config.host;
 
-    string hostDebug = "localhost";
-    string hostHK = "35.241.67.141";
-    string hostLV = "209.141.34.77";
+    //string hostDebug = "localhost";
+    //string hostHK = "35.241.67.141";
+    //string hostLV = "209.141.34.77";
 
     //string host = "209.141.34.77";
     //string host = "35.241.67.141";
@@ -122,7 +128,10 @@
         };
 
         var content = new FormUrlEncodedContent(values);
-        string url = debugQ ? $"http://{hostDebug}:5000/search" : $"http://{hostLV}:80/search";
+        //string url = debugQ ? $"http://{hostDebug}:5000/search" : $"http://{hostLV}:80/search";
+
+        string url = debugQ ? $"http://{hostDebug}/search" : $"http://{host}/search";
+
 
         Console.WriteLine($"### Post URL: {url}");
 

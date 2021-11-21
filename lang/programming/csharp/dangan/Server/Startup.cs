@@ -11,10 +11,14 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 
+using dangan.Shared;
+
 namespace dangan.Server
 {
     public class Startup
     {
+        
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -49,10 +53,19 @@ namespace dangan.Server
             //});
 
 
-            var config = new ConfigurationBuilder()
-                 .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile("appsettings.json")
-                 .Build();
+            //var config = new ConfigurationBuilder()
+            //     .SetBasePath(Directory.GetCurrentDirectory())
+            //     .AddJsonFile("appsettings.json")
+            //     .Build();
+
+            //var debugQ = bool.Parse(config["debugQ"]);
+            //var hostDebug = config["hostDebug"];
+            //var host = config["host"];
+
+            //Config.debugQ = debugQ;
+            //Config.hostDebug = hostDebug;
+            //Config.host = host;
+
 
             services.AddCors(options =>
             {
