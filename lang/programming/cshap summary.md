@@ -6185,6 +6185,202 @@ namespace dangan.Server.Controllers
 
 
 
+## Search.razor
+
+
+
+```c#
+@page "/search"
+
+@using dangan.Client.Model;
+@using System.Text.Json;
+
+@namespace dangan.Client
+@inherits AntDesign.AntDomComponentBase
+
+
+@inject NavigationManager NavigationManager
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@*<form action="/search" method="post">
+        keyword: <input type="text" name="keyword">  <button type="submit">Search</button> <br>
+        <select name="lang_select">
+            <option value="en">en</option>
+            <option value="jp">jp</option>
+        </select>
+
+    </form>*@
+
+<title>Welcome!</title>
+
+<div>
+
+
+    <audio id="audio" preload="auto" src="01.mp3"></audio>
+
+    <EditForm Model="@model" OnValidSubmit="@HandleSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        keyword:<InputText id="keyowrdInput" @bind-Value="model.keyword" />
+
+        <button type="submit">Submit</button> <br>
+
+        <select name="lang_select">
+            <option value="en">en</option>
+            <option value="jp">jp</option>
+        </select>
+    </EditForm>
+
+
+    @if (rowData != null)
+    {
+
+        @foreach (var row in rowData)
+        {
+            string url = debugQ ? $"http://{hostDebug}:5000/search/getaudio?id={row.id}" : $"http://{hostLV}:80/search/getaudio?id={row.id}";
+
+            //<audio id="@($"audio{row.id}")" src="01.mp3" type="audio/mpeg" preload="auto"></audio>
+            <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
+            <br>
+            <br>
+            @row.jp <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"{row.id}"))" style=" cursor: pointer">
+            <br>
+            @row.zh
+
+
+        }
+
+        <br>
+        @*<AntDesign.Button Type="primary" Shape="circle" Icon="@PlayPauseIcon" Size="large" OnClick="OnPlayPause" />*@
+
+        <br>
+        <br>
+        <button @onclick="@HandleSubmit">next</button>
+        <br>
+    }
+
+</div>
+
+@*@if (debugQ)
+    {
+        HandleSubmit();
+    }*@
+
+@*
+    https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
+        https://github.com/kevin-montrose/Jil
+    https://www.0daydown.com/04/1611202.html
+    https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0
+
+
+    https://jonhilton.net/blazor-markdown-editor/
+
+*@
+
+
+@code {
+
+    private static readonly HttpClient client = new HttpClient();
+
+    private static List<rowModel> rowData = null;
+
+    bool debugQ = true;
+
+    string hostDebug = "localhost";
+    string hostHK = "35.241.67.141";
+    string hostLV = "209.141.34.77";
+
+    //string host = "209.141.34.77";
+    //string host = "35.241.67.141";
+
+    KeywordModel model = new KeywordModel();
+
+
+    private async void HandleSubmit()
+    {
+        if (debugQ)
+        {
+            model.keyword = "ここ"; // それぞれ  房间
+                                  //model.keyword = "房间";
+        }
+
+        string keyword = model.keyword;
+
+        //发送Post请求
+        var values = new Dictionary<string, string>
+        {
+            { "keyword", keyword },
+            { "lang_select", "b" }
+        };
+
+        var content = new FormUrlEncodedContent(values);
+        string url = debugQ ? $"http://{hostDebug}:5000/search" : $"http://{hostLV}:80/search";
+
+        Console.WriteLine($"### Post URL: {url}");
+
+        var response = await client.PostAsync(url, content);
+        var responseString = await response.Content.ReadAsStringAsync();
+
+        var json = JsonDocument.Parse(responseString);
+
+        JsonElement root = json.RootElement;
+
+        var status = root.GetProperty("status").ToString();
+
+        if (status == "200")
+        {
+            var data = root.GetProperty("data").ToString();
+
+            var ls = JsonSerializer.Deserialize<List<rowModel>>(data);
+
+            rowData = ls;
+
+            await sessionStorage.SetItemAsync("keyword", keyword);
+            await sessionStorage.SetItemAsync("lang_select", values["lang_select"]);
+            var keyword_from_section = await sessionStorage.GetItemAsync<string>("keyword");
+
+            Refresh();
+
+        }
+
+
+    }
+
+    private async void HandlePlayAudio(string id)
+    {
+        Console.WriteLine("### HandlePlayAudio hitting..." + id);
+
+        //playaudio(imgid)
+
+        await JsInvokeAsync("playaudio", id);
+
+        //Refresh();
+
+    }
+
+
+
+    void MethodToTriggerUrl()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    //public void Refresh()
+    //{
+    //    // Update the UI
+    //    InvokeAsync(() =>
+    //    {
+    //        StateHasChanged();
+    //    });
+    //}
+}
+
+```
+
+
+
+
+
 
 
 # Postgresql
