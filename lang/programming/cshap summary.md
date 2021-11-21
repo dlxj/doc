@@ -6132,7 +6132,7 @@ namespace dangan.Server.Controllers
             if (!System.IO.File.Exists(audioPath))
             {
 
-                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
+                using (var conn = new NpgsqlConnection("Server=xxx;Port=5432;Database=anime;User Id=postgres;Password=xxxx;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
                 {
 
                     conn.Open();
