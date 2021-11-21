@@ -569,19 +569,6 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
         public async static Task<List<Dictionary<string, string>>> search(string keywd)
         {
 
-            //if (!initQ)
-            // {
-            //     g_conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;MinPoolSize=2;Maximum Pool Size=3;Connection Idle Lifetime=200;Tcp Keepalive = true;Keepalive = 30;");
-            //     initQ = true;
-            // }
-
-            if (!initQ)
-            {
-                initConn();
-            }
-
-            
-
 
             bool isEn = false;
             bool isCh = false;
@@ -634,30 +621,32 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             if (sql != "")
             {
 
-                g_conn.Open();
-
-                using (var cmd = new NpgsqlCommand(sql, g_conn))
+                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
                 {
-                    NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
-                    if (reader.HasRows)
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        while (reader.Read())
+                        NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                        if (reader.HasRows)
                         {
-                            string id = reader["id"].ToString();
-                            string jp = reader["jp"].ToString();
-                            string zh = reader["zh"].ToString();
-                            string time = reader["time"].ToString();
+                            while (reader.Read())
+                            {
+                                string id = reader["id"].ToString();
+                                string jp = reader["jp"].ToString();
+                                string zh = reader["zh"].ToString();
+                                string time = reader["time"].ToString();
 
-                            var d = new Dictionary<string, string> { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+                                var d = new Dictionary<string, string> { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
 
-                            ret.Add(d);
+                                ret.Add(d);
 
-                            //JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+                                //JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+                            }
                         }
                     }
                 }
 
-                g_conn.Close();
             }
 
             return ret;

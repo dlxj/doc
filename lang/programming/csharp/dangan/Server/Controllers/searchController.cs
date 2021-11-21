@@ -163,44 +163,39 @@ namespace dangan.Server.Controllers
 
             if (!System.IO.File.Exists(audioPath))
             {
-                //if (!anime.initQ)
-                //{
-                //    anime.initConn();
-                //}
 
-                //anime.g_conn.Open();
-
-                var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Connection Idle Lifetime=200;Tcp Keepalive = false;");
-                conn.Open();
-
-                string sql = $"SELECT id, audio FROM anime WHERE id={id};";
-
-                using (var cmd = new NpgsqlCommand(sql, conn))
+                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
                 {
-                    NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
-                    if (reader.HasRows)
+
+                    conn.Open();
+
+                    string sql = $"SELECT id, audio FROM anime WHERE id={id};";
+
+                    //using (var cmd = new NpgsqlCommand(sql, conn))
+                    using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        while (reader.Read())
+                        NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                        if (reader.HasRows)
                         {
-                            string idd = reader["id"].ToString();
-                            byte[] audio = (byte[])reader["audio"];
+                            while (reader.Read())
+                            {
+                                string idd = reader["id"].ToString();
+                                byte[] audio = (byte[])reader["audio"];
 
-                            try
-                            {
-                                System.IO.File.WriteAllBytes(audioPath, audio);
-                            } catch(Exception ex)
-                            {
-                                Console.WriteLine("### ERROR: 写入audio 失败. " + ex.Message);
-                                throw new Exception(ex.Message);
+                                try
+                                {
+                                    System.IO.File.WriteAllBytes(audioPath, audio);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("### ERROR: 写入audio 失败. " + ex.Message);
+                                    throw new Exception(ex.Message);
+                                }
+
                             }
-
                         }
                     }
                 }
-
-                conn.Close();
-
-                //anime.g_conn.Close();
 
             }
 
