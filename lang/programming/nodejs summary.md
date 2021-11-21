@@ -1289,6 +1289,22 @@ flushdb 清空当前数据库
 
 
 
+## 性能
+
+
+
+```
+# https://www.jianshu.com/p/31ab9b020cd9
+	Redis-击穿、穿透和雪崩
+# https://www.jianshu.com/p/4838f8be00c9
+	分布式锁
+
+```
+
+
+
+
+
 # mysql 
 
 
