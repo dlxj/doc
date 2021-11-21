@@ -6379,6 +6379,29 @@ namespace dangan.Server.Controllers
 
 
 
+## Index.razor
+
+
+
+```c#
+@page "/"
+
+@inherits AntDesign.AntDomComponentBase
+
+@inject NavigationManager NavigationManager
+
+@code {
+
+    protected override Task OnFirstAfterRenderAsync()
+    {
+        NavigationManager.NavigateTo("/search");
+
+        return base.OnFirstAfterRenderAsync();
+    }
+}
+
+```
+
 
 
 
