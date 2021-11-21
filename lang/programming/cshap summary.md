@@ -2048,6 +2048,8 @@ https://www.v2ex.com/t/653978
 
 ```c#
 # https://www.daveabrock.com/2021/01/19/config-top-level-programs/
+# https://www.zhihu.com/people/dotnetkai-fa-zhe
+	# .net 6 的做法
 
 {
     "Name": "Dave Brock",
