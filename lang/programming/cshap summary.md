@@ -3933,6 +3933,23 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
 
 
 
+```
+
+ systemctl stop firewalld
+ pm2 resurrect  # pm2 save 后恢复
+ 
+ dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
+
+ cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64
+
+ ./dangan.Server --urls http://0.0.0.0:5000
+	# 外网正常访问
+```
+
+
+
+
+
 ```c#
 using System;
 
