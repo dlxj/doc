@@ -175,7 +175,7 @@ namespace dangan.Server.Controllers
 
                 string sql = $"SELECT id, audio FROM anime WHERE id={id};";
 
-                using (var cmd = new NpgsqlCommand(sql, anime.g_conn))
+                using (var cmd = new NpgsqlCommand(sql, conn))
                 {
                     NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
                     if (reader.HasRows)
