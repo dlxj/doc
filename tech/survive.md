@@ -352,6 +352,12 @@ Billing Cycle: Biennially
 Next Due Date: 04/01/2023
 ```
 
+
+
+## 后来的方案，让linux 适应windows 的分区
+
+
+
 ```
 # 硬盘扩容
 ls /dev/disk/by-id/
@@ -369,6 +375,8 @@ fdisk /dev/sda
 
 # 格式化
 mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
+
+	============   后来的方案，让linux 适应windows 的分区 =======================
 	# yum install ntfsprogs
 	# fdisk /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
 	# 这里用fdisk 分好区
@@ -378,7 +386,14 @@ mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
 	# mount -t ntfs-3g /dev/sda1 /mnt
 	# df -T
 		# /dev/sda1           fuseblk  536867836  104168 536763668   1% /mnt
+	
+	# 开机自动挂
+	# echo '/dev/sda1 /mnt/ ntfs-3g defaults 0 0' | sudo tee -a /etc/fstab
 	# 注意：linux 分出来的ntfs 分区并不能被windows 识别，所以还是用windows 格式化吧，然后linux 装ntfsprogs，和ntfs-3g 挂载
+
+    ======================================================================
+
+
 
 # 挂载
 mkdir /data
