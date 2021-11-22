@@ -2139,7 +2139,9 @@ yum -y install postgresql13 postgresql13-server
 /usr/pgsql-13/bin/postgresql-13-setup initdb
 	# adduser postgres
 	# chown -R postgres:postgres /mnt/psqldata
-		# cp -R /var/lib/pgsql/13/data/* /mnt/psqldata # 只能透亮换柱了
+		# https://unix.stackexchange.com/questions/491098/cannot-chown-chmod-on-mounted-ntfs-partition
+			# linux mount ntfs chown 搜这个，改不了owner 属性
+		# cp -R /var/lib/pgsql/13/data /mnt/psqldata # 只能透亮换柱了
 		# mv /var/lib/pgsql/13/data /var/lib/pgsql/13/data__link__to_mnt_psqldata
 		# ln -s  /mnt/psqldata  /var/lib/pgsql/13/data
 		# chown -R postgres:postgres /mnt/psqldata
