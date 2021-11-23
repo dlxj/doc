@@ -1073,6 +1073,18 @@ _.mapValues(users, 'age');
 
 
 
+## deep copy
+
+
+
+```
+_.cloneDeep
+```
+
+
+
+
+
 
 
 
