@@ -14,6 +14,17 @@ import platform
 def OSXQ():
     return platform.system() == 'Darwin'
 
+"""
+# 加 -u 才能看到打印的输出
+nohup python3.8 -u anime_Danganronpa_version1.py >outlog &
+tail -f outlog
+jobs -l # 查看运行中的进程
+ps -aux | grep "anime_Danganronpa_version1.py"
+
+kill -9 $(lsof outlog | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:8077 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
+"""
+
 
 """
 D:\GitHub\doc\lang\programming\postgresql summary.md
