@@ -2203,7 +2203,12 @@ psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
 #### WIN7+centos 双启问题 
 
 ```
-后来的方案，让linux 适应windows 的分区
+
+务必看这里
+\doc\tech\survive.md
+	后来的方案，让linux 适应windows 的分区
+
+
 ```
 
 

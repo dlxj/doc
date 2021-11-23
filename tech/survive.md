@@ -400,8 +400,19 @@ mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
 	id -g postgres  # 用户组ID
 	26
 	
-	mount -o uid=26,gid=26,dmask=022,fmask=133 -t ntfs-3g /dev/sda1 /mnt
+	mount -o uid=26,gid=26,dmask=077,fmask=077 -t ntfs-3g /dev/sda1 /mnt
 		# 成功挂载，而且权限是对的
+			# 设成077 以后就没错了，它要求只有自已有完全权限，其他人完全没有任何权限
+		# 更新：仅限不对导至psql 启动失败
+			# Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).  他希望的权限是这个
+		https://superuser.com/questions/1271534/file-permissions-correct-ntfs-mount-option
+			fmask=133 sets files permissions to 644
+		
+		https://www.nixonli.com/22806.html
+			实际权限 = 777 - mask
+				644 = 777 - 133
+				700 = 777 - 077
+				755 = 777 - 022
 
 	
 	echo '/dev/sda1 /mnt ntfs-3g defaults,noatime,uid=26,gid=26,dmask=022,fmask=133 0 0' | sudo tee -a /etc/fstab
