@@ -2200,6 +2200,14 @@ psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
 
 
 
+#### WIN7+centos 双启问题 
+
+```
+后来的方案，让linux 适应windows 的分区
+```
+
+
+
 #### 启动已停止的容器
 
 docker start 2416f0b833b2

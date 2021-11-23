@@ -394,11 +394,25 @@ mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
  ------------->  mount 出来的ntfs分区全部是 root 权限，psql 读不了   <---------------------
 	Thanks, I solved mounting the disk on fstab with this options: UUID=XXXXXXX   /mnt/shared ntfs-3g defaults,noatime,uid=1000,gid=users,dmask=022,fmask=133  0   0 
 	
+	
+	id -u postgres  # 用户ID
+	26
+	id -g postgres  # 用户组ID
+	26
+	
+	mount -o uid=26,gid=26,dmask=022,fmask=133 -t ntfs-3g /dev/sda1 /mnt
+		# 成功挂载，而且权限是对的
+
+	
+	echo '/dev/sda1 /mnt ntfs-3g defaults,noatime,uid=26,gid=26,dmask=022,fmask=133 0 0' | sudo tee -a /etc/fstab
+	# 成功开机自动挂载
+	
+	
 	Windows and Linux have a very different user and permissions model that is incompatible. For either chmod or chown to work, the file system needs to support users and permissions in a Linux-like way. NTFS is a Windows file system and so these commands can't possibly work.
 
 One thing you can do is to mount the NTFS partition specifying a different user and mode for all of the files / directories:
 
-mount -o uid=userid,gid=groupid,dmask=022,fmask=133 /path/to/disk /mnt 
+mount -o uid=26,gid=26,dmask=022,fmask=133 /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /mnt 
 This will mount with specified user and group giving directories mode 755 and files mode 644.
 
 
