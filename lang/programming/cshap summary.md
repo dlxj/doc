@@ -2137,6 +2137,46 @@ var responseString = await client.GetStringAsync("http://www.example.com/recepti
 
 ```
 # https://blog.csdn.net/catshitone/article/details/118224052
+
+# https://www.shuzhiduo.com/A/n2d9WW74JD/
+
+
+ public class Startup
+    {
+        //其他代码.....
+ 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+　　　　　　　　　　　　//替换成你Blazor wasm（client）的域名
+                    builder.WithOrigins("http://localhost:5001").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+            //其他代码.......
+ 
+        }
+ 
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+ 
+            app.UseRouting();
+ 
+            //添加CORS到管道中，记得一定要放在UseRouting和UseEndpoints之间，否则没用
+            app.UseCors(MyAllowSpecificOrigins);
+ 
+ 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+    }  
+
 ```
 
 

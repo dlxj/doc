@@ -17,7 +17,7 @@ namespace dangan.Server
 {
     public class Startup
     {
-        
+        readonly string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public Startup(IConfiguration configuration)
         {
@@ -44,13 +44,13 @@ namespace dangan.Server
             });
 
             // 支持跨域
-            //services.AddCors(policy =>
-            //{
-            //    policy.AddPolicy("_myAllowSpecificOrigins", builder => builder.WithOrigins("http://external:80/")
-            //         .AllowAnyMethod()
-            //         .AllowAnyHeader()
-            //         .AllowCredentials());
-            //});
+            services.AddCors(policy =>
+            {
+                policy.AddPolicy(myAllowSpecificOrigins, builder => builder.WithOrigins("http://echodict.com:80/")
+                     .AllowAnyMethod()
+                     .AllowAnyHeader()
+                     .AllowCredentials());
+            });
 
 
             //var config = new ConfigurationBuilder()
@@ -67,16 +67,16 @@ namespace dangan.Server
             //Config.host = host;
 
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("any", builder =>
-                {
-                    builder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("any", builder =>
+            //    {
+            //        builder.AllowAnyOrigin()
+            //        .AllowAnyMethod()
+            //        .AllowAnyHeader();
 
-                });
-            });
+            //    });
+            //});
 
         }
 
@@ -97,6 +97,9 @@ namespace dangan.Server
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            //添加CORS到管道中，记得一定要放在UseRouting和UseEndpoints之间，否则没用
+            app.UseCors(myAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
