@@ -2663,6 +2663,19 @@ https://sukebei.nyaa.si/view/2929794 [ak](magnet:?xt=urn:btih:8042d9e22f7152571f
 
 
 
+# music
+
+## 实现谱文混排
+
+```
+# https://www.cnblogs.com/lilypondgaspard/p/15600901.html
+Lilypond+TexLive（LuaLatex+lyluatex）+VS Code实现谱文混排
+```
+
+
+
+
+
 # echodict
 
 1. 粤日英中互翻 
