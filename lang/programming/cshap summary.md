@@ -2131,6 +2131,16 @@ var responseString = await client.GetStringAsync("http://www.example.com/recepti
 
 
 
+### 跨域
+
+
+
+```
+# https://blog.csdn.net/catshitone/article/details/118224052
+```
+
+
+
 
 
 
