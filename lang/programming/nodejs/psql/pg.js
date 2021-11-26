@@ -1,13 +1,4 @@
 
-
-/*
-
-select id, en, zh, type from anime where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;
-
-*/
-
-
-
 (async () => {
 
     const { Pool, Client } = require('pg')
@@ -25,9 +16,11 @@ select id, en, zh, type from anime where v_zh @@  to_tsquery('jiebacfg', $1) ORD
     var client = await pool.connect()
     try {
       //var result = await client.query('select $1::text as name', ['brianc'])
-      var result = await client.query(`select id, en, zh, type from anime where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;`, ['黑白'])
-      console.log('hello from', result.rows[0])
+      //var result = await client.query(`select id, en, zh, type from anime where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;`, ['黑白'])
+      var result = await client.query(`SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ $1 ORDER BY RANDOM() limit 3;`, ['ここ'])
+      console.log('hello from', result.rows)
     } finally {
       client.release()
+      a = 1
     }
 })().catch(e => console.error(e.message, e.stack))
