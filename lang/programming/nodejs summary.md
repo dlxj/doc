@@ -1755,11 +1755,22 @@ npm install pg pg-pool --save
 
 
 ```
+# https://www.skypyb.com/2020/12/jishu/1705/
+索引
+当数据量庞大时， 那么不可避免地查询速度就会变慢， 此时就需要去加索引。
+PostgreSQL自然也提供了强大的索引支持， 使用以下语句增加 pg_trgm 拓展就可以引入两个索引 gin 、 gist， 需要注意的是执行语句需要提权到 postgres 用户。
+
+CREATE EXTENSION pg_trgm;
+gin和gist的区别就是 gin查询更快， 但是构建速度可能会慢一点。 而 gist 的构建速度快， 查询会慢一点。
+一般建议预计数据量不大时可以使用gist索引， 如果预计数据量很大请直接上gin。
+
 # https://developer.aliyun.com/article/672261
 # https://blog.csdn.net/weixin_37096493/article/details/106302184
 ```
 
 
+
+- https://github.com/valeriansaliou/sonic
 
 
 
