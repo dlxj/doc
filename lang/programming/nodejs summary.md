@@ -590,7 +590,7 @@ let matches = ss.matchAll(regg4)  // 正则必须有 g 参数，否则报错
 let arr = Array.from(matches)
 ```
 
-
+https://salesforce.stackexchange.com/questions/329256/how-can-i-match-second-last-char-of-a-string-with-regex
 
 
 
@@ -637,6 +637,46 @@ if (arr.length > 0) {
 
   }
 ```
+
+
+
+### 匹配不以  题\s*\n  结尾的字符串
+
+
+
+```javascript
+// 匹配不以    题\s*\n    结尾的字符串
+ss = '\n一、www.hao.题com \n'
+
+let regStr = String.raw`(\n\s*[一二三四五六七八九十百千万]+?、(?!.*?(题\s*\n)).+?\n)`
+
+let matches = ss.matchAll(new RegExp(regStr,'gs'))
+let arr = Array.from(matches)
+```
+
+
+
+
+
+
+
+
+
+### ?= 向前查找
+
+- = 后面必须匹配，但不吃掉它(consume)
+
+```
+# https://www.jianshu.com/p/eec1a081b4b7
+```
+
+
+
+### <= 向后查找
+
+- < 前面必须匹配，但不吃掉它(consume)
+
+
 
 
 
