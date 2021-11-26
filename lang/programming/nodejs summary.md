@@ -645,13 +645,20 @@ if (arr.length > 0) {
 
 
 ```javascript
-// 匹配不以    题\s*\n    结尾的字符串
-ss = '\n一、www.hao.题com \n'
+/*
+三、共用题干单选题(1~3题共用题干)
+最后一串可见字符不能是   题|共用题干|共用题干\)
+*/
+ss = '\n一、www.hao.com题共用 \n'
 
-let regStr = String.raw`(\n\s*[一二三四五六七八九十百千万]+?、(?!.*?(题\s*\n)).+?\n)`
+let regStr = String.raw`\n\s*([一二三四五六七八九十百千万]+?、(?!.*?((题|共用题干|共用题干\))\s*\n)).+?)\s*\n`
 
 let matches = ss.matchAll(new RegExp(regStr,'gs'))
 let arr = Array.from(matches)
+
+说明：
+	(?!.*?(题\s*\n))  预先保证了整个串不以 题\s*\n  结尾，然后才去匹配
+
 ```
 
 
@@ -677,6 +684,26 @@ let arr = Array.from(matches)
 - < 前面必须匹配，但不吃掉它(consume)
 
 
+
+
+
+## 命名捕获组
+
+
+
+`(?<name>group)` 或 `(?'name'group)`，其中`name`表示捕获组的名称，`group`表示捕获组里面的正则。
+
+
+
+#### 反向引用
+
+\k<name> 或 \k'name'的形式来对前面的命名捕获组捕获到的值进行引用。如之前的
+
+```
+(\d{2})\1
+可以改写为
+(?<key>\d{2})\k<key>
+```
 
 
 
