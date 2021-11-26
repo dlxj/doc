@@ -1737,6 +1737,19 @@ npm install pg pg-pool --save
 
 
 
+## Random
+
+
+
+```
+# https://www.redpill-linpro.com/techblog/2021/05/07/getting-random-rows-faster.html
+	Getting random rows faster. Very much faster.
+```
+
+
+
+
+
 ## FTS
 
 

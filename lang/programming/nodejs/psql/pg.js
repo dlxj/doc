@@ -2,12 +2,7 @@
 
 /*
 
-
-const { Pool, Client } = require('pg')
-const connectionString = 'postgresql://postgres:echodict.com@111.229.53.195:5432/anime'
-const pool = new Pool({
-  connectionString,
-})
+select id, en, zh, type from anime where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;
 
 */
 
@@ -22,14 +17,15 @@ const pool = new Pool({
         password: 'echodict.com',
         host: '209.141.34.77',
         port: '5432',
-        database: 'postgres',
+        database: 'anime',
         ssl: false
     }
 
     var pool = new Pool(config)
     var client = await pool.connect()
     try {
-      var result = await client.query('select $1::text as name', ['brianc'])
+      //var result = await client.query('select $1::text as name', ['brianc'])
+      var result = await client.query(`select id, en, zh, type from anime where v_zh @@  to_tsquery('jiebacfg', $1) ORDER BY RANDOM() limit 3;`, ['黑白'])
       console.log('hello from', result.rows[0])
     } finally {
       client.release()
