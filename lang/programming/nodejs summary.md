@@ -1643,7 +1643,13 @@ END WHILE;
 
 
 
-## 时区转换
+
+
+
+
+## Time
+
+### 时区转换
 
 
 
@@ -1658,13 +1664,7 @@ let tt = new Date(u).toLocaleString('chinese',{hour12:false})
 
 ```
 
-
-
-# time
-
-
-
-## 24 小时制
+### 24 小时制
 
 
 
@@ -1679,6 +1679,72 @@ let tt = new Date(u).toLocaleString('chinese',{hour12:false})
 ```
 
 
+
+# PG
+
+
+
+## Pool
+
+
+
+```
+/*
+  Transforms, 'postgres://DBuser:secret@DBHost:#####/myDB', into
+  config = {
+    user: 'DBuser',
+    password: 'secret',
+    host: 'DBHost',
+    port: '#####',
+    database: 'myDB',
+    ssl: true
+  }
+*/
+```
+
+
+
+```javascript
+# https://github.com/brianc/node-postgres/tree/master/packages/pg-pool
+
+npm install pg pg-pool --save
+
+(async () => {
+
+    const { Pool, Client } = require('pg')
+
+    const config = {
+        user: 'postgres',
+        password: 'xxxx',
+        host: 'xxxx',
+        port: '5432',
+        database: 'postgres',
+        ssl: false
+    }
+
+    var pool = new Pool(config)
+    var client = await pool.connect()
+    try {
+      var result = await client.query('select $1::text as name', ['brianc'])
+      console.log('hello from', result.rows[0])
+    } finally {
+      client.release()
+    }
+})().catch(e => console.error(e.message, e.stack))
+```
+
+
+
+
+
+## FTS
+
+
+
+```
+# https://developer.aliyun.com/article/672261
+# https://blog.csdn.net/weixin_37096493/article/details/106302184
+```
 
 
 
