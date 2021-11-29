@@ -665,6 +665,88 @@ let arr = Array.from(matches)
 
 
 
+### 解析选择题选项
+
+
+
+```javascript
+
+
+strs = `[A1型选择题]
+1.最易发生阴阳互损的脏腑是
+A.心
+B.肺
+C.脾
+D.肝
+E.肾
+F.天气
+G.空气
+`
+
+var selects = []
+
+if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).test(strs)) {  // 匹配选项
+
+  let match = strs.match(String.raw`\n(A\..+?)\s+(B\..+)?\s+(C\..+?)\s+(D\..+?)\s*((?:E\..+?)*)\s*((?:F\..+?)*)\s`)  // ((?:G\..+?)*)\s+  // (?:[a-zA-Z]\..+?)+
+
+  //let match = strs.match(String.raw`\n(?:[A-H]\..+?)+`)
+
+  for (let i = 1; i < match.length; i++) {
+    let t = match[i] // get the match group text
+
+    if (t === null || t === undefined || t === '' ) {
+      continue
+    }
+
+    let ItemName = t.split('.')[0]
+    let Content = t.split('.')[1]
+
+    selects.push({ ItemName, Content })
+
+  }
+
+  if (selects.length > 0) {
+
+    let last = selects[ selects.length - 1 ]
+
+    let laststr = last.ItemName + '.' + last.Content
+
+    let arr = strs.split( new RegExp(laststr) )
+
+    if (arr.length === 2) {
+
+      let strs2 = arr[1]
+
+      if ((new RegExp(String.raw`\n((?:G\..+?)*)\s*((?:H\..+?)*)\s`)).test(strs)) {
+
+        let match2 = strs.match(String.raw`\n((?:G\..+?)*)\s*((?:H\..+?)*)\s*((?:I\..+?)*)\s*((?:J\..+?)*)\s*((?:K\..+?)*)\s*((?:L\..+?)*)\s`) 
+
+        for (let i = 1; i < match2.length; i++) {
+          let t = match2[i] // get the match group text
+      
+          if (t === null || t === undefined || t === '' ) {
+            continue
+          }
+      
+          let ItemName = t.split('.')[0]
+          let Content = t.split('.')[1]
+      
+          selects.push({ ItemName, Content })
+      
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
+```
+
+
+
 
 
 
