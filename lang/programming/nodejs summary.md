@@ -1748,6 +1748,114 @@ npm install pg pg-pool --save
 
 
 
+## Grup
+
+
+
+```mysql
+分组聚合
+# https://www.skypyb.com/2021/08/jishu/1871/
+
+解决PostgreSQL分组聚合时SELECT中字段必须在group或聚合函数中的问题
+PG的分组函数是比较严格的。 你的select字段必须得存在于group子句、或者聚合函数中才行。
+
+假设场景是这样的：
+
+表结构name、class、score
+
+我现在要按照name分组，聚合score数据，还能查出额外的这个 class 字段
+
+ 
+
+如果是MySQL， 你可以直接group name 然后 select class，avg(score)， 但是你在PostgreSQL里就不行。
+
+ 
+
+他会爆出以下的错误
+
+column “class” must appear in the GROUP BY clause or be used in an aggregate function
+
+ 
+
+就是说这个 select class是非法的。
+
+刚从MySQL切到PostgreSQL后很可能会比较难受这个点。
+
+ 
+
+其实有一种很简单的方法， 那就是你反正其他的字段其实都一样，随便取一个就行，所以还是保持原来的GROUP BY 子句，然后直接给所有的字段全部加上一个 max() 函数就行了。
+
+不过这样子的代价就是整个SQL看起来挺怪的， 语义上也有点微妙。我这只是个简单场景， 实际上你可能得有好几十个字段，这样子每个字段都得加上个max函数。
+
+ 
+
+所以我推荐第二种方法。
+
+Window function（窗口函数） + distinct 去重
+
+ 
+
+窗口函数语法：
+
+聚合函数(sum，min，avg……) + OVER ( …… )
+
+ 
+
+窗口函数会将计算出来的结果带回到计算行上，还是以上面的例子作参考，一个表name、class、score。
+
+ 
+
+那我直接一个普通查询，不GROUP了，我们想要的class自然就可以查出来了。
+
+然后用窗口函数去算我需要聚合的数据，这里直接写上关键字OVER放在avg(score)后面， 然后括号里跟上一个PARTITION BY name， 意思就是按照name去分组，把结果计算出来。
+
+唉！这个效果其实就和GROUP BY差不多，对不对。
+
+不过这样子的话你数据是有了，但是行数却没变，原来是多少行现在还是多少行。 好，那我就直接给它安排一个 dictinct 函数，指定我 PARTITION BY 的那个字段，也就是name。
+
+这样子我们就完成了一波上流且奢华的SQL查询，大功告成~
+
+SELECT distinct on (name) 
+    name,
+    class,
+    avg(score) OVER (PARTITION BY name) AS score,
+FROM table
+语义上清晰不少， 效果也给满足了（指按照name分组，聚合score数据，还能查出不处于GROUP子句和聚合函数中的 class 字段）
+
+```
+
+
+
+## with
+
+
+
+```mysql
+# https://www.postgresql.org/docs/9.1/queries-with.html
+
+WITH regional_sales AS (
+        SELECT region, SUM(amount) AS total_sales
+        FROM orders
+        GROUP BY region
+     ), top_regions AS (
+        SELECT region
+        FROM regional_sales
+        WHERE total_sales > (SELECT SUM(total_sales)/10 FROM regional_sales)
+     )
+SELECT region,
+       product,
+       SUM(quantity) AS product_units,
+       SUM(amount) AS product_sales
+FROM orders
+WHERE region IN (SELECT region FROM top_regions)
+GROUP BY region, product;
+
+```
+
+
+
+
+
 
 
 ## FTS
