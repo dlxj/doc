@@ -1941,6 +1941,18 @@ GROUP BY region, product;
 
 
 ```
+pip3.8 install mecab-python3
+pip3.8 install unidic-lite
+pip3.8 install chardet
+
+D:\usr\Lib\site-packages\unidic_lite
+```
+
+
+
+
+
+```
 # https://github.com/hecomi/node-mecab-async
 npm install mecab-async
 ```
@@ -2000,6 +2012,11 @@ var exec = require('child_process').exec;
 
 
 ```javascript
+
+const mecabSpawn = require('mecab-spawn')
+const mecab = mecabSpawn.spawn()
+
+
 var spawn = require('child_process').spawn,
     child = spawn('phantomjs');
 
