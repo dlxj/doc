@@ -1936,6 +1936,17 @@ GROUP BY region, product;
 
 
 
+## Mecab
+
+
+
+```
+# https://github.com/hecomi/node-mecab-async
+npm install mecab-async
+```
+
+
+
 
 
 
@@ -1961,6 +1972,44 @@ gin和gist的区别就是 gin查询更快， 但是构建速度可能会慢一�
 
 
 - https://github.com/valeriansaliou/sonic
+
+
+
+
+
+## exec
+
+
+
+```javascript
+var exec = require('child_process').exec;
+
+    const cmd = `cd ${global.startPath} && git pull origin master`;
+    console.log(`updateCode:${new Date().getTime()}`);
+    exec(cmd, (error, stdout, stderr) => {
+      if (error) {
+        throw error;
+      }
+      return res.msg(200, {
+        stdout: stdout,
+        stderr: stderr
+      });
+    })
+```
+
+
+
+```javascript
+var spawn = require('child_process').spawn,
+    child = spawn('phantomjs');
+
+child.stdin.setEncoding('utf-8');
+child.stdout.pipe(process.stdout);
+
+child.stdin.write("console.log('Hello from PhantomJS')\n");
+
+child.stdin.end(); /// this call seems necessary, at least with plain node.js executable
+```
 
 
 
