@@ -1,14 +1,6 @@
 
 (async () => {
 
-    var MeCab = new require('mecab-async')
-    let mecab = new MeCab()
-
-    mecab.parse('いつもニコニコあなたの隣に這い寄る混沌ニャルラトホテプです！', function(err, result) {
-      if (err) throw err
-      console.log(result)
-    })
-
     const { Pool, Client } = require('pg')
 
     const config = {
