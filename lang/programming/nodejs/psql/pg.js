@@ -15,7 +15,11 @@
 
     })
 
-    let a = tokenizer.tokenize('あたしたちがここに来たのはついこの間なんだよ')
+    let arr = require('fs').readFileSync('./data.json', {encoding:'utf8', flag:'r'})
+
+    
+
+    let a = tokenizer.tokenize(arr[0])
 
 
     const { Pool, Client } = require('pg')

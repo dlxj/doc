@@ -1014,6 +1014,12 @@ _.isEmpty(dic_ansers)
 require('fs').writeFileSync('menu.json', JSON.stringify(menujson) )
 ```
 
+```
+require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
+```
+
+
+
 
 
 
