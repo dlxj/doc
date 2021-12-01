@@ -1969,6 +1969,18 @@ npm install mecab-async
 
 
 
+### kuromoji.js + mecab-ipadic-neologd
+
+
+
+```
+# https://qiita.com/mabasasi/items/17b0bf735c38b4642682
+```
+
+
+
+
+
 
 
 
