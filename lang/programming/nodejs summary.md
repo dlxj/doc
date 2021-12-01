@@ -1975,6 +1975,9 @@ npm install mecab-async
 
 ```
 # https://qiita.com/mabasasi/items/17b0bf735c38b4642682
+	
+	# https://github.com/reneeter123/kuromoji.js-vs-neologd
+		# pure js in browser
 
 npm install kuromoji --save
 
