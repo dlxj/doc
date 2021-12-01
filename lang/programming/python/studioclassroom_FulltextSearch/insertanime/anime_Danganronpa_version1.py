@@ -32,7 +32,7 @@ D:\GitHub\doc\lang\programming\postgresql summary.md
         54322 port
     Install PG_Jieba [u](https://github.com/jaiminpan/pg_jieba)
 
-pip3.8s install mecab-python3
+pip3.8 install mecab-python3
 pip3.8 install unidic-lite
 pip3.8 install chardet
 

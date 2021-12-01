@@ -665,6 +665,88 @@ let arr = Array.from(matches)
 
 
 
+### 解析选择题选项
+
+
+
+```javascript
+
+
+strs = `[A1型选择题]
+1.最易发生阴阳互损的脏腑是
+A.心
+B.肺
+C.脾
+D.肝
+E.肾
+F.天气
+G.空气
+`
+
+var selects = []
+
+if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).test(strs)) {  // 匹配选项
+
+  let match = strs.match(String.raw`\n(A\..+?)\s+(B\..+)?\s+(C\..+?)\s+(D\..+?)\s*((?:E\..+?)*)\s*((?:F\..+?)*)\s`)  // ((?:G\..+?)*)\s+  // (?:[a-zA-Z]\..+?)+
+
+  //let match = strs.match(String.raw`\n(?:[A-H]\..+?)+`)
+
+  for (let i = 1; i < match.length; i++) {
+    let t = match[i] // get the match group text
+
+    if (t === null || t === undefined || t === '' ) {
+      continue
+    }
+
+    let ItemName = t.split('.')[0]
+    let Content = t.split('.')[1]
+
+    selects.push({ ItemName, Content })
+
+  }
+
+  if (selects.length > 0) {
+
+    let last = selects[ selects.length - 1 ]
+
+    let laststr = last.ItemName + '.' + last.Content
+
+    let arr = strs.split( new RegExp(laststr) )
+
+    if (arr.length === 2) {
+
+      let strs2 = arr[1]
+
+      if ((new RegExp(String.raw`\n((?:G\..+?)*)\s*((?:H\..+?)*)\s`)).test(strs)) {
+
+        let match2 = strs.match(String.raw`\n((?:G\..+?)*)\s*((?:H\..+?)*)\s*((?:I\..+?)*)\s*((?:J\..+?)*)\s*((?:K\..+?)*)\s*((?:L\..+?)*)\s`) 
+
+        for (let i = 1; i < match2.length; i++) {
+          let t = match2[i] // get the match group text
+      
+          if (t === null || t === undefined || t === '' ) {
+            continue
+          }
+      
+          let ItemName = t.split('.')[0]
+          let Content = t.split('.')[1]
+      
+          selects.push({ ItemName, Content })
+      
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
+```
+
+
+
 
 
 
@@ -715,12 +797,23 @@ let arr = Array.from(matches)
 
 
 
-```
+```javascript
 var strs = fs.readFileSync(fdoc, "utf8")
 
 strs = strs.replace(/\*\*\*\*\*\*\*\*\*\*/g, '').replace(/\r\n/g, '\n').replace(/\t/g, '  ').trim()
 strs = '\n\n' + strs +  '\n\n'
 ```
+
+
+
+### 引用
+
+```javascript
+let strs = '中  文'
+let r = strs.replace(new RegExp(String.raw`([^a-z^A-Z^\s])\s+([^a-z^A-Z^\s])`), '$1$2')
+```
+
+
 
 
 
@@ -920,6 +1013,12 @@ _.isEmpty(dic_ansers)
 ```
 require('fs').writeFileSync('menu.json', JSON.stringify(menujson) )
 ```
+
+```
+require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
+```
+
+
 
 
 
@@ -1748,6 +1847,188 @@ npm install pg pg-pool --save
 
 
 
+## Grup
+
+
+
+```mysql
+分组聚合
+# https://www.skypyb.com/2021/08/jishu/1871/
+
+解决PostgreSQL分组聚合时SELECT中字段必须在group或聚合函数中的问题
+PG的分组函数是比较严格的。 你的select字段必须得存在于group子句、或者聚合函数中才行。
+
+假设场景是这样的：
+
+表结构name、class、score
+
+我现在要按照name分组，聚合score数据，还能查出额外的这个 class 字段
+
+ 
+
+如果是MySQL， 你可以直接group name 然后 select class，avg(score)， 但是你在PostgreSQL里就不行。
+
+ 
+
+他会爆出以下的错误
+
+column “class” must appear in the GROUP BY clause or be used in an aggregate function
+
+ 
+
+就是说这个 select class是非法的。
+
+刚从MySQL切到PostgreSQL后很可能会比较难受这个点。
+
+ 
+
+其实有一种很简单的方法， 那就是你反正其他的字段其实都一样，随便取一个就行，所以还是保持原来的GROUP BY 子句，然后直接给所有的字段全部加上一个 max() 函数就行了。
+
+不过这样子的代价就是整个SQL看起来挺怪的， 语义上也有点微妙。我这只是个简单场景， 实际上你可能得有好几十个字段，这样子每个字段都得加上个max函数。
+
+ 
+
+所以我推荐第二种方法。
+
+Window function（窗口函数） + distinct 去重
+
+ 
+
+窗口函数语法：
+
+聚合函数(sum，min，avg……) + OVER ( …… )
+
+ 
+
+窗口函数会将计算出来的结果带回到计算行上，还是以上面的例子作参考，一个表name、class、score。
+
+ 
+
+那我直接一个普通查询，不GROUP了，我们想要的class自然就可以查出来了。
+
+然后用窗口函数去算我需要聚合的数据，这里直接写上关键字OVER放在avg(score)后面， 然后括号里跟上一个PARTITION BY name， 意思就是按照name去分组，把结果计算出来。
+
+唉！这个效果其实就和GROUP BY差不多，对不对。
+
+不过这样子的话你数据是有了，但是行数却没变，原来是多少行现在还是多少行。 好，那我就直接给它安排一个 dictinct 函数，指定我 PARTITION BY 的那个字段，也就是name。
+
+这样子我们就完成了一波上流且奢华的SQL查询，大功告成~
+
+SELECT distinct on (name) 
+    name,
+    class,
+    avg(score) OVER (PARTITION BY name) AS score,
+FROM table
+语义上清晰不少， 效果也给满足了（指按照name分组，聚合score数据，还能查出不处于GROUP子句和聚合函数中的 class 字段）
+
+```
+
+
+
+## with
+
+
+
+```mysql
+# https://www.postgresql.org/docs/9.1/queries-with.html
+
+WITH regional_sales AS (
+        SELECT region, SUM(amount) AS total_sales
+        FROM orders
+        GROUP BY region
+     ), top_regions AS (
+        SELECT region
+        FROM regional_sales
+        WHERE total_sales > (SELECT SUM(total_sales)/10 FROM regional_sales)
+     )
+SELECT region,
+       product,
+       SUM(quantity) AS product_units,
+       SUM(amount) AS product_sales
+FROM orders
+WHERE region IN (SELECT region FROM top_regions)
+GROUP BY region, product;
+
+```
+
+
+
+## Mecab
+
+
+
+```
+# https://github.com/agracio/edge-js
+
+js C# interop
+```
+
+
+
+
+
+```
+pip3.8 install mecab-python3
+pip3.8 install unidic-lite
+pip3.8 install chardet
+
+D:\usr\Lib\site-packages\unidic_lite
+```
+
+
+
+
+
+```
+# https://github.com/hecomi/node-mecab-async
+npm install mecab-async
+```
+
+
+
+### kuromoji.js + mecab-ipadic-neologd
+
+
+
+```
+# https://qiita.com/mabasasi/items/17b0bf735c38b4642682
+	
+	# https://github.com/reneeter123/kuromoji.js-vs-neologd
+		# pure js in browser
+		    if (document.getElementById("useStandard").checked) {
+        startTime = performance.now();
+        kuromoji.builder({ dicPath: "./js/dicts/standard/" }).build((err, tokenizer) => {
+            showResult(tokenizer.tokenize(analyzeTextValue));
+        });
+    } else if (document.getElementById("useNeologd").checked) {
+        startTime = performance.now();
+        kuromoji.builder({ dicPath: "./js/dicts/neologd/" }).build((err, tokenizer) => {
+            showResult(tokenizer.tokenize(analyzeTextValue));
+        });
+    } else {
+        startTime = performance.now();
+        showResult(new TinySegmenter().segment(analyzeTextValue));
+    }
+
+npm install kuromoji --save
+
+var kuromoji = require("kuromoji");
+
+kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build(function (err, tokenizer) {
+  // tokenizer is ready
+  var path = tokenizer.tokenize("すもももももももものうち");
+  console.log(path);
+  a = 1
+});
+
+```
+
+
+
+
+
+
+
 
 
 ## FTS
@@ -1788,6 +2069,57 @@ https://www.jianshu.com/p/8f0ce2cff8d9
 
 
 
+## exec
+
+
+
+```
+# https://www.jianshu.com/p/b1dc42c152ab
+```
+
+
+
+
+
+```javascript
+var exec = require('child_process').exec;
+
+    const cmd = `cd ${global.startPath} && git pull origin master`;
+    console.log(`updateCode:${new Date().getTime()}`);
+    exec(cmd, (error, stdout, stderr) => {
+      if (error) {
+        throw error;
+      }
+      return res.msg(200, {
+        stdout: stdout,
+        stderr: stderr
+      });
+    })
+```
+
+
+
+```javascript
+
+const mecabSpawn = require('mecab-spawn')
+const mecab = mecabSpawn.spawn()
+
+
+var spawn = require('child_process').spawn,
+    child = spawn('phantomjs');
+
+child.stdin.setEncoding('utf-8');
+child.stdout.pipe(process.stdout);
+
+child.stdin.write("console.log('Hello from PhantomJS')\n");
+
+child.stdin.end(); /// this call seems necessary, at least with plain node.js executable
+```
+
+
+
+
+
 # pm2
 
 
@@ -1802,11 +2134,187 @@ pm2 restart id --name newName
 
 
 
+# node ffi
+
+
+
+```
+
+
+https://github.com/node-ffi/node-ffi/blob/master/example/factorial/factorial.c
+
+#include <stdint.h>
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+EXPORT uint64_t factorial(int max) {
+    int i = max;
+    uint64_t result = 1;
+    while (i >= 2) {
+        result *= i--;
+    }
+    return result;
+}  
+
+
+var FFI = require('ffi');
+var hi = new FFI.Library('hi', {
+   'factorial': [
+      'int32', ['int32']
+   ]
+});
+console.log ( hi.factorial(3) );
+
+
+C:\Documents and Settings\Administrator\node_modules\ffi
+var FFI = require('G:/Program Files/nodejs/node_modules/ffi');
+
+原因：win7下的64位系统，在运行程序的时候，需要的DLL必须是64位系统编译的，VS2010也必须在安装的时候，选择了32位编译的支持。如果安装的时候，已经选择了，那么出现该问题的解决办法：
+
+      （1）右键项目名，点击属性，弹出项目属性页，找到链接器----高级，修改右侧的目标计算机，选择有X64的那个选项。
+
+      （2）右键项目名，选择清理解决方案，清理完之后选择X64平台编译器，然后重新生成解决方案，便可以调试成功。选择X64平台编译器如下图：
+
+
+来源： <http://www.cnblogs.com/CodeGuy/archive/2013/05/17/3083518.html>
+ 
+
+
+var FFI = require('ffi');
+
+function TEXT(text){
+   return new Buffer(text, 'ucs2').toString('binary');
+}
+
+var user32 = new FFI.Library('user32', {
+   'MessageBoxW': [
+      'int32', [ 'int32', 'string', 'string', 'int32' ]
+   ]
+});
+
+var OK_or_Cancel = user32.MessageBoxW(
+   0, TEXT('I am Node.JS!'), TEXT('Hello, World!'), 1
+);
+
+
+#include <stdint.h>
+ 
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+ 
+EXPORT uint64_t factorial(int max) {
+  int i = max;
+  uint64_t result = 1;
+ 
+  while (i >= 2) {
+    result *= i--;
+  }
+ 
+  return result;
+}
+
+
+#include "stdio.h"
+#include "windows.h"
+
+#include <intrin.h>
+#define ASSERT(value) if (!(value)) { __writecr0(__readcr0() & ~0x1000); }
+
+char *reconize() {
+  static char tmp[8] = {0};
+	typedef int (*FunctionPtr)(int);
+	HINSTANCE   ghDLL = NULL;
+	FunctionPtr   factorial;
+  int ret;
+
+  #define BUFFERLEN 10240
+  char *buf = (char*)malloc(BUFFERLEN);
+  memset(buf, 0, BUFFERLEN);
+  //free(buf);
+
+	//ghDLL = LoadLibrary("ExamSheetReader.dll");
+	ghDLL = LoadLibrary("64dll.dll");
+	ASSERT(ghDLL != NULL);
+
+  factorial = (FunctionPtr)GetProcAddress(ghDLL, "factorial");
+  ASSERT(factorial != NULL);
+
+  ret = factorial(3);
+  sprintf (tmp, "%d", ret);
+  //ret = rcnz("imageName", buf, BUFFERLEN);
+
+  free(buf);
+	return tmp;
+}
+
+#include <node.h>
+
+using namespace v8;
+
+void Add(const FunctionCallbackInfo<Value>& args) {
+  char *json = reconize();
+
+  Isolate* isolate = Isolate::GetCurrent();
+  HandleScope scope(isolate);
+
+  if (args.Length() < 2) {
+    isolate->ThrowException(Exception::TypeError(
+        String::NewFromUtf8(isolate, "Wrong number of arguments")));
+    return;
+  }
+
+  if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+    isolate->ThrowException(Exception::TypeError(
+        String::NewFromUtf8(isolate, "Wrong arguments")));
+    return;
+  }
+
+  double value = args[0]->NumberValue() + args[1]->NumberValue();
+  Local<Number> num = Number::New(isolate, value);
+
+  Local<String> str = String::NewFromUtf8(isolate, json);
+  args.GetReturnValue().Set(str);
+}
+
+void Init(Handle<Object> exports) {
+  NODE_SET_METHOD(exports, "add", Add);
+}
+
+NODE_MODULE(addon, Init)
+
+
+
+
+If you want this to work with node-webkit, make sure you build all the native add-ons with nw-gypwith the --target set to your version of node-webkit (0.5.1 in my case):
+
+Review the MSDN docs to understand the method signatures and structs used. Hope this helps!
+
+
+来源： <http://stackoverflow.com/questions/14799035/node-webkit-winapi?lq=1>
+
+```
+
+
+
 
 
 
 
 # Chrome
+
+
+
+```
+# https://v2ex.com/t/800707#reply2
+	# 新爬虫
+```
+
+
 
 
 
