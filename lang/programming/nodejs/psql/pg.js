@@ -1,6 +1,23 @@
 
 (async () => {
 
+    let kuromoji = require('kuromoji')
+
+    let [ tokenizer, ms ] = await new Promise(function (resolve) {
+
+      kuromoji.builder({ dicPath: "./dicts/neologd/" }).build((err, tokenizer) => {
+
+        if (err) resolve([ null, err.toString() ] )
+   
+        resolve([ tokenizer, ''])
+     
+     })
+
+    })
+
+    let a = tokenizer.tokenize('あたしたちがここに来たのはついこの間なんだよ')
+
+
     const { Pool, Client } = require('pg')
 
     const config = {
