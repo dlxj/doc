@@ -797,12 +797,23 @@ if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).
 
 
 
-```
+```javascript
 var strs = fs.readFileSync(fdoc, "utf8")
 
 strs = strs.replace(/\*\*\*\*\*\*\*\*\*\*/g, '').replace(/\r\n/g, '\n').replace(/\t/g, '  ').trim()
 strs = '\n\n' + strs +  '\n\n'
 ```
+
+
+
+### 引用
+
+```javascript
+let strs = '中  文'
+let r = strs.replace(new RegExp(String.raw`([^a-z^A-Z^\s])\s+([^a-z^A-Z^\s])`), '$1$2')
+```
+
+
 
 
 
