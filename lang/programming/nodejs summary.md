@@ -1975,6 +1975,18 @@ npm install mecab-async
 
 ```
 # https://qiita.com/mabasasi/items/17b0bf735c38b4642682
+
+npm install kuromoji --save
+
+var kuromoji = require("kuromoji");
+
+kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build(function (err, tokenizer) {
+  // tokenizer is ready
+  var path = tokenizer.tokenize("すもももももももものうち");
+  console.log(path);
+  a = 1
+});
+
 ```
 
 
