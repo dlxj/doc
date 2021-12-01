@@ -1978,6 +1978,20 @@ npm install mecab-async
 	
 	# https://github.com/reneeter123/kuromoji.js-vs-neologd
 		# pure js in browser
+		    if (document.getElementById("useStandard").checked) {
+        startTime = performance.now();
+        kuromoji.builder({ dicPath: "./js/dicts/standard/" }).build((err, tokenizer) => {
+            showResult(tokenizer.tokenize(analyzeTextValue));
+        });
+    } else if (document.getElementById("useNeologd").checked) {
+        startTime = performance.now();
+        kuromoji.builder({ dicPath: "./js/dicts/neologd/" }).build((err, tokenizer) => {
+            showResult(tokenizer.tokenize(analyzeTextValue));
+        });
+    } else {
+        startTime = performance.now();
+        showResult(new TinySegmenter().segment(analyzeTextValue));
+    }
 
 npm install kuromoji --save
 
