@@ -2064,6 +2064,173 @@ pm2 restart id --name newName
 
 
 
+# node ffi
+
+
+
+```
+
+
+https://github.com/node-ffi/node-ffi/blob/master/example/factorial/factorial.c
+
+#include <stdint.h>
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+EXPORT uint64_t factorial(int max) {
+    int i = max;
+    uint64_t result = 1;
+    while (i >= 2) {
+        result *= i--;
+    }
+    return result;
+}  
+
+
+var FFI = require('ffi');
+var hi = new FFI.Library('hi', {
+   'factorial': [
+      'int32', ['int32']
+   ]
+});
+console.log ( hi.factorial(3) );
+
+
+C:\Documents and Settings\Administrator\node_modules\ffi
+var FFI = require('G:/Program Files/nodejs/node_modules/ffi');
+
+原因：win7下的64位系统，在运行程序的时候，需要的DLL必须是64位系统编译的，VS2010也必须在安装的时候，选择了32位编译的支持。如果安装的时候，已经选择了，那么出现该问题的解决办法：
+
+      （1）右键项目名，点击属性，弹出项目属性页，找到链接器----高级，修改右侧的目标计算机，选择有X64的那个选项。
+
+      （2）右键项目名，选择清理解决方案，清理完之后选择X64平台编译器，然后重新生成解决方案，便可以调试成功。选择X64平台编译器如下图：
+
+
+来源： <http://www.cnblogs.com/CodeGuy/archive/2013/05/17/3083518.html>
+ 
+
+
+var FFI = require('ffi');
+
+function TEXT(text){
+   return new Buffer(text, 'ucs2').toString('binary');
+}
+
+var user32 = new FFI.Library('user32', {
+   'MessageBoxW': [
+      'int32', [ 'int32', 'string', 'string', 'int32' ]
+   ]
+});
+
+var OK_or_Cancel = user32.MessageBoxW(
+   0, TEXT('I am Node.JS!'), TEXT('Hello, World!'), 1
+);
+
+
+#include <stdint.h>
+ 
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+ 
+EXPORT uint64_t factorial(int max) {
+  int i = max;
+  uint64_t result = 1;
+ 
+  while (i >= 2) {
+    result *= i--;
+  }
+ 
+  return result;
+}
+
+
+#include "stdio.h"
+#include "windows.h"
+
+#include <intrin.h>
+#define ASSERT(value) if (!(value)) { __writecr0(__readcr0() & ~0x1000); }
+
+char *reconize() {
+  static char tmp[8] = {0};
+	typedef int (*FunctionPtr)(int);
+	HINSTANCE   ghDLL = NULL;
+	FunctionPtr   factorial;
+  int ret;
+
+  #define BUFFERLEN 10240
+  char *buf = (char*)malloc(BUFFERLEN);
+  memset(buf, 0, BUFFERLEN);
+  //free(buf);
+
+	//ghDLL = LoadLibrary("ExamSheetReader.dll");
+	ghDLL = LoadLibrary("64dll.dll");
+	ASSERT(ghDLL != NULL);
+
+  factorial = (FunctionPtr)GetProcAddress(ghDLL, "factorial");
+  ASSERT(factorial != NULL);
+
+  ret = factorial(3);
+  sprintf (tmp, "%d", ret);
+  //ret = rcnz("imageName", buf, BUFFERLEN);
+
+  free(buf);
+	return tmp;
+}
+
+#include <node.h>
+
+using namespace v8;
+
+void Add(const FunctionCallbackInfo<Value>& args) {
+  char *json = reconize();
+
+  Isolate* isolate = Isolate::GetCurrent();
+  HandleScope scope(isolate);
+
+  if (args.Length() < 2) {
+    isolate->ThrowException(Exception::TypeError(
+        String::NewFromUtf8(isolate, "Wrong number of arguments")));
+    return;
+  }
+
+  if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+    isolate->ThrowException(Exception::TypeError(
+        String::NewFromUtf8(isolate, "Wrong arguments")));
+    return;
+  }
+
+  double value = args[0]->NumberValue() + args[1]->NumberValue();
+  Local<Number> num = Number::New(isolate, value);
+
+  Local<String> str = String::NewFromUtf8(isolate, json);
+  args.GetReturnValue().Set(str);
+}
+
+void Init(Handle<Object> exports) {
+  NODE_SET_METHOD(exports, "add", Add);
+}
+
+NODE_MODULE(addon, Init)
+
+
+
+
+If you want this to work with node-webkit, make sure you build all the native add-ons with nw-gypwith the --target set to your version of node-webkit (0.5.1 in my case):
+
+Review the MSDN docs to understand the method signatures and structs used. Hope this helps!
+
+
+来源： <http://stackoverflow.com/questions/14799035/node-webkit-winapi?lq=1>
+
+```
+
+
+
 
 
 
