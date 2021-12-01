@@ -7221,3 +7221,28 @@ private void btnSave_Click(object sender, EventArgs e)
 
 
 
+# VS Code
+
+
+
+```
+dotnet new console --framework net5.0
+
+dotnet run
+```
+
+
+
+```
+# https://github.com/agracio/edge-js
+
+js C# interop
+
+```
+
+
+
+
+
+
+

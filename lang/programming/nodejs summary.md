@@ -1941,6 +1941,16 @@ GROUP BY region, product;
 
 
 ```
+# https://github.com/agracio/edge-js
+
+js C# interop
+```
+
+
+
+
+
+```
 pip3.8 install mecab-python3
 pip3.8 install unidic-lite
 pip3.8 install chardet
