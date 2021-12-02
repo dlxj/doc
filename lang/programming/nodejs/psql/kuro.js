@@ -14,49 +14,73 @@
 
 (async () => {
 
-   let kuromoji = require('kuromoji')
-
-   let [ tokenizer, ms ] = await new Promise(function (resolve) {
-
-     kuromoji.builder({ dicPath: "./dicts/neologd/" }).build((err, tokenizer) => {
-
-       if (err) resolve([ null, err.toString() ] )
-  
-       resolve([ tokenizer, ''])
-    
-    })
-
-   })
-
    let arr = require('fs').readFileSync('./data.json', {encoding:'utf8', flag:'r'})
 
    arr = JSON.parse(arr)
 
-   
+   // let kuromoji = require('kuromoji')
 
-   let a = tokenizer.tokenize(arr[0])
+   // let [ tokenizer, ms ] = await new Promise(function (resolve) {
 
-   let basics = ''
-   let surfaces = ''
-   let readings = ''
+   //   kuromoji.builder({ dicPath: "./dicts/neologd/" }).build((err, tokenizer) => {
 
-   for (let i = 0; i < a.length; i++) {
+   //     if (err) resolve([ null, err.toString() ] )
+  
+   //     resolve([ tokenizer, ''])
+    
+   //  })
 
-      let item = a[i]
+   // })
 
-      let basic_form = item.basic_form
-      let surface_form = item.surface_form
-      let reading =  item.reading
 
-      basics += basic_form + " "
-      surfaces += surface_form + " "
-      readings += reading + " "
-
-   }
 
    
 
-   console.log(a)
+   // let a = tokenizer.tokenize(arr[0])
+
+   // let basics = ''
+   // let surfaces = ''
+   // let readings = ''
+
+   // for (let i = 0; i < a.length; i++) {
+
+   //    let item = a[i]
+
+   //    let basic_form = item.basic_form
+   //    let surface_form = item.surface_form
+   //    let reading =  item.reading
+
+   //    basics += basic_form + " "
+   //    surfaces += surface_form + " "
+   //    readings += reading + " "
+
+   // }
+
+   
+
+   // console.log(a)
+
+
+
+   var MeCab = new require('mecab-async-winfix')
+   , mecab = new MeCab()
+ 
+
+   let [ result, ms2 ] = await new Promise(function (resolve) {
+
+      mecab.parse(arr[0], function(err, result) {
+
+         if (err) resolve([ null, err.toString() ] )
+
+         resolve([ result, ''])
+
+      })
+
+ 
+    })
+
+   
+   console.log(result)
 
    b  = 1
 
