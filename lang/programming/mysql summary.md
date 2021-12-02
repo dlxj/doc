@@ -188,12 +188,12 @@ and id
 CREATE TABLE `duplicatetest` (
 	`ID` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`appID` INT(11) NOT NULL,
-	`testID` INT(11) NOT NULL COMMENT '试题ID',
+	`testID` INT(11) NOT NULL COMMENT '',
 	`childTestID` INT(11) NOT NULL,
-	`isMaster` ENUM('1','0') NOT NULL DEFAULT '0' COMMENT '是否为主试题' COLLATE 'utf8_general_ci',
-	`masterAppID` INT(11) NULL DEFAULT NULL COMMENT '主试题AppID',
-	`masterTestID` INT(11) NULL DEFAULT NULL COMMENT '主试题ID',
-	`masterChildTestID` INT(11) NULL DEFAULT NULL COMMENT '主试题小题ID',
+	`isMaster` ENUM('1','0') NOT NULL DEFAULT '0' COMMENT '' COLLATE 'utf8_general_ci',
+	`masterAppID` INT(11) NULL DEFAULT NULL COMMENT '',
+	`masterTestID` INT(11) NULL DEFAULT NULL COMMENT '',
+	`masterChildTestID` INT(11) NULL DEFAULT NULL COMMENT '',
 	`addTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`updateTime` DATETIME NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (`appID`, `testID`, `childTestID`) USING BTREE,
@@ -201,7 +201,7 @@ CREATE TABLE `duplicatetest` (
 	INDEX `findByMaster` (`appID`, `masterTestID`, `masterChildTestID`) USING BTREE,
 	INDEX `masterAppID` (`masterAppID`) USING BTREE
 )
-COMMENT='多科目之间的重复试题'
+COMMENT=''
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
@@ -210,6 +210,15 @@ ENGINE=InnoDB
 
 
 
+
+## upateTime
+
+
+
+```
+`createTime` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,  # 仅创建时写入
+`updateTime` DATETIME NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,  # 仅更新时写入
+```
 
 
 
