@@ -36,15 +36,21 @@
 
    let a = tokenizer.tokenize(arr[0])
 
-   let hanas = ''
+   let basics = ''
+   let surfaces = ''
+   let readings = ''
 
    for (let i = 0; i < a.length; i++) {
 
       let item = a[i]
 
       let basic_form = item.basic_form
+      let surface_form = item.surface_form
+      let reading =  item.reading
 
-      hanas += basic_form
+      basics += basic_form + " "
+      surfaces += surface_form + " "
+      readings += reading + " "
 
    }
 
