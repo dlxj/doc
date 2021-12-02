@@ -1958,6 +1958,31 @@ GROUP BY region, product;
 
 
 ```
+# https://qiita.com/PonDad/items/81b85d76b1a89ee2598b
+	# https://blog.knjcode.com/neologd-on-nodejs/
+var MeCab = new require('mecab-async')
+var mecab = new MeCab();
+    MeCab.command = "mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd"
+    var text = 'こんにちは、サミュエルLジャクソンです。'
+    //注：パースコマンドを利用する時 "MeCab.~"と大文字にしないと動かないみたいです
+    MeCab.parseFormat(text, function(err, morphs) {
+        if (err) throw err;
+        morphs.map(function(morph) {
+        if (morph.lexical === '感動詞') {
+          console.log(morph.lexical + ' : ' + morph.original);
+        }
+        if (morph.lexical === '名詞') {
+          console.log(morph.lexical + ' : ' +morph.original);
+        }
+    });
+    });
+```
+
+
+
+
+
+```
 # https://github.com/agracio/edge-js
 
 js C# interop

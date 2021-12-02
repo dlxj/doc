@@ -64,6 +64,8 @@
 
    var MeCab = new require('mecab-async-winfix')
    , mecab = new MeCab()
+
+   mecab.ENCODING = 'UTF-8'
  
 
    let [ result, ms2 ] = await new Promise(function (resolve) {
