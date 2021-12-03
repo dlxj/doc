@@ -62,27 +62,47 @@
 
 
 
-   var MeCab = new require('mecab-async-winfix')
-   , mecab = new MeCab()
+   // //var MeCab = new require('mecab-async-winfix')
+   // var MeCab = new require('mecab-async')
+   // , mecab = new MeCab()
 
-   mecab.ENCODING = 'UTF-8'
+   // //mecab.ENCODING = 'UTF-8'
  
 
-   let [ result, ms2 ] = await new Promise(function (resolve) {
+   // let [ result, ms2 ] = await new Promise(function (resolve) {
 
-      mecab.parse(arr[0], function(err, result) {
+   //    mecab.parse('ここ', function(err, result) {
 
-         if (err) resolve([ null, err.toString() ] )
+   //       if (err) resolve([ null, err.toString() ] )
 
-         resolve([ result, ''])
+   //       resolve([ result, ''])
 
-      })
+   //    })
 
  
-    })
+   //  })
 
    
-   console.log(result)
+   // console.log(result)
+
+
+   var MeCab = new require('mecab-async')
+   var mecab = new MeCab();
+       //MeCab.command = "mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd"
+       var text = 'こんにちは、サミュエルLジャクソンです。'
+       //注：パースコマンドを利用する時 "MeCab.~"と大文字にしないと動かないみたいです
+       MeCab.parseFormat(text, function(err, morphs) {
+           if (err) throw err;
+           morphs.map(function(morph) {
+           if (morph.lexical === '感動詞') {
+             console.log(morph.lexical + ' : ' + morph.original);
+           }
+           if (morph.lexical === '名詞') {
+             console.log(morph.lexical + ' : ' +morph.original);
+           }
+       });
+       });
+
 
    b  = 1
 
