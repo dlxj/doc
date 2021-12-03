@@ -1958,6 +1958,14 @@ GROUP BY region, product;
 
 
 ```
+unidic nodejs
+```
+
+
+
+
+
+```
 # https://qiita.com/PonDad/items/81b85d76b1a89ee2598b
 	# https://blog.knjcode.com/neologd-on-nodejs/
 var MeCab = new require('mecab-async')

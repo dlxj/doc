@@ -88,30 +88,29 @@
 
   var MeCab = new require('mecab-async')
   var mecab = new MeCab()
+  MeCab.command = "mecab"
   //MeCab.command = "mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd"
   //var text = arr[0]
   
   
 
-
-
-
-
   let str = arr[0]
-  
-  MeCab.parseFormat(str, function (err, morphs) {
-    if (err) throw err;
-    morphs.map(function (morph) {
 
+  let [ result, ms ] = await new Promise(function (resolve) {
 
-      console.log(morph.lexical + ' : ' + morph.original)
+    MeCab.parseFormat(str, function (err, morphs) {
+      
+      if (err) resolve([ null, err.toString() ] )
 
-
-      a = 1
+      resolve([ morphs, ''])
 
     })
-  })
 
+  })
+  
+  console.log( result )
+
+  a = 1
 
 })()
 
