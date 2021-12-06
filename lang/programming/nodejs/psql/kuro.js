@@ -18,6 +18,9 @@
 
   arr = JSON.parse(arr)
 
+  NG('abcdefg')
+
+
   // let kuromoji = require('kuromoji')
 
   // let [ tokenizer, ms ] = await new Promise(function (resolve) {
@@ -107,10 +110,52 @@
     })
 
   })
+
+  let kanjis = ''
+  let originals = ''
+  result.forEach(d => {
+
+    kanjis += d.kanji
+    originals += d.original
+
+  })
   
+
+
   console.log( result )
+
+ 
 
   a = 1
 
 })()
+
+
+
+function NG(strs) {
+
+  function ng(s, n) {
+
+    for (let i = 0; i < s.length; i++) {
+
+      let j = i
+      
+      do {
+
+        
+
+        j += 1
+
+      }
+      while(j < s.length)
+      
+
+    }
+
+  }
+
+  a = 1
+
+}
+
 
