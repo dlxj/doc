@@ -1958,7 +1958,8 @@ GROUP BY region, product;
 
 
 ```
-unidic nodejs
+https://mebee.info/2021/02/18/post-29277/
+	# mecab centos7
 ```
 
 
