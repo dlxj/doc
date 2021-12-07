@@ -2392,6 +2392,24 @@ ffmepgFunction(2000, 5);
 
 
 
+### bytea
+
+
+
+```
+You can insert Buffer (https://nodejs.org/dist/latest-v14.x/docs/api/buffer.html) values into bytea fields.
+```
+
+
+
+```
+ combinedBuffer = Buffer.allocUnsafe(this.remainingBuffer.byteLength + buffer.byteLength) 
+ this.remainingBuffer.copy(combinedBuffer) 
+ buffer.copy(combinedBuffer, this.remainingBuffer.byteLength) 
+```
+
+
+
 
 
 ## exec
