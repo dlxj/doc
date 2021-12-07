@@ -1,4 +1,15 @@
 
+/*
+
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "kuroshiro": "~1.2.0",
+    "pg": "^8.7.1",
+    "pg-pool": "^3.4.1"
+  }
+
+*/
+
 (async () => {
 
     var arguments = process.argv
