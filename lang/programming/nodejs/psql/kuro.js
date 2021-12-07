@@ -123,8 +123,16 @@
   })
   
 
+  let kanji_ngrams = NG(kanjis)
+  let original_ngrams = NG(originals)
+
 
   console.log( result )
+
+  console.log( kanji_ngrams )
+
+  console.log( original_ngrams )
+  
 
  
 
@@ -141,24 +149,6 @@ function NG(strs) {
     var grs = []
 
     for (let i = 0; i < s.length; i++) {
-
-      // let j = i
-      
-      // do {
-
-      //   if ( j + n > s.length ) {
-      //     break
-      //   }
-
-      //   var gr = s.substring(j, j+n)
-
-      //   grs.push(gr)
-
-
-      //   j += 1
-
-      // }
-      // while(j < s.length)
 
       if ( i + n > s.length ) {
         break
@@ -195,17 +185,3 @@ function NG(strs) {
   return gss
 
 }
-
-
-/*
-
-abcd
-
-0:'ab'
-1:'bc'
-2:'cd'
-3:'bc'
-4:'cd'
-5:'cd'
-
-*/

@@ -2059,6 +2059,59 @@ kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build(function (err,
 
 
 
+### centos7+mecab+neologd
+
+
+
+```
+https://omohikane.com/centos7_mecab_neologd/
+
+# install libs
+sudo yum install -y  bzip2 bzip2-devel gcc gcc-c++ git make wget curl openssl-devel readline-devel zlib-devel
+ 
+# install mecab
+sudo mkdir -p /tmp/install_mecab
+cd /tmp/install_mecab
+wget 'https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE' -O mecab-0.996.tar.gz
+tar zxvf mecab-0.996.tar.gz && cd mecab-0.996 && ./configure --with-charset=utf8 --enable-utf8-only &&  make && sudo make install
+ 
+# install ipadic
+sudo mkdir -p /tmp/install_mecab
+cd /tmp/install_mecab
+wget 'https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM' -O mecab-ipadic-2.7.0-20070801.tar.gz && tar zxvf mecab-ipadic-2.7.0-20070801.tar.gz && cd mecab-ipadic-2.7.0-20070801 && ./configure --with-charset=utf8 && make && sudo make install  
+ 
+# install neologd
+sudo rpm -ivh http://packages.groonga.org/centos/groonga-release-1.1.0-1.noarch.rpm && sudo yum -y install mecab mecab-devel mecab-ipadic xz && cd /usr/local/src/ && sudo su - root
+ 
+git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && cd mecab-ipadic-neologd
+ 
+echo "yes" | ./bin/install-mecab-ipadic-neologd -n
+./libexec/make-mecab-ipadic-neologd.sh 
+echo "yes" | ./bin/install-mecab-ipadic-neologd -n
+
+
+mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd/
+
+```
+
+
+
+
+
+#### Error: mecab-config not found
+
+```
+# mecab-config not found
+# If you're installing MeCab via a package manager, be sure to get libmecab-dev to get mecab-config too.
+
+# https://qiita.com/mhiro216/items/391ae79848129ac1cb2d
+
+
+sudo rpm -ivh http://packages.groonga.org/centos/groonga-release-1.1.0-1.noarch.rpm
+sudo yum install mecab-devel
+	# 成功解决 mecab-config not found
+```
+
 
 
 
