@@ -137,21 +137,20 @@
   const KuromojiAnalyzer = require("kuroshiro-analyzer-kuromoji")
   const kuroshiro = new Kuroshiro()
 
-  let hiras =  await new Promise(function (resolve) {
+  let [ hiras, msg] =  await new Promise(function (resolve) {
 
     kuroshiro.init(new KuromojiAnalyzer())
     .then(function(){
-        return kuroshiro.convert(str, { to: "hiragana" })
+      return kuroshiro.convert(str, { to: "hiragana" } )
     })
-    .then(function(result){
-        console.log(result)
-
-        resolve(result)
+    .then(function(result) {  
+      resolve( [ result, '' ] )
+    }).catch((err) => {
+      resolve( [ null, err ] )
     })
 
   })
   
-
   console.log(hiras)
  
 
