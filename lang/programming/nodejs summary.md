@@ -2240,9 +2240,6 @@ function NG(strs) {
 
 
 ```javascript
-  var ffmpeg = require('fluent-ffmpeg');
-  const path = require('path');
-
   var vd = require('fs').createReadStream('F:/1.mkv')
   var au = require('fs').createWriteStream('tmp.mp3')
 
@@ -2252,8 +2249,43 @@ function NG(strs) {
   .outputOptions('-ab','192k')
   .outputOptions('-ss','00:01:12.960')
   .outputOptions('-to','00:01:14.640')
+  .on('start',()=>{
+
+    a = 1
+    
+  })
+  .on('end', ()=>{ 
+
+    a = 1
+  })
   .run()
 ```
+
+
+
+```javascript
+  var vd = require('fs').createReadStream('F:/1.mkv')
+  var au = require('fs').createWriteStream('tmp.srt')
+
+  ffmpeg(vd).output(au)
+  .noVideo()
+  .format('srt')
+  .outputOptions('-map','0:s:0')
+  //.outputOptions('-ss','00:01:12.960')
+  //.outputOptions('-to','00:01:14.640')
+  .on('start',()=>{
+
+    a = 1
+    
+  })
+  .on('end', ()=>{ 
+
+    a = 1
+  })
+  .run()
+```
+
+
 
 
 
@@ -2333,6 +2365,29 @@ function streamtogif(stream, begintime = 0, duration){ //Return promise buffer
               console.log(err);
             })
 
+```
+
+
+
+```
+var FFmpeg = require('ffmpeg')
+
+function ffmepgFunction(timeout, attempts) {
+    try {
+    var command = FFmpeg("http://localhost:9001");
+
+    var stream = command.pipe();
+    stream.on('data', function(chunk) {
+    // do something with the data
+    });
+    } catch(e) {
+        console.log(e);
+        if(attempts > 0)
+            setTimeout(() => ffmepgFunction(timeout, --attempts), timeout);
+    }
+}
+
+ffmepgFunction(2000, 5);
 ```
 
 

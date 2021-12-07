@@ -127,16 +127,38 @@ isJapanese(char)
   //   '-acodec copy',
   // ]).save('output-audio.aac')
 
+  // var vd = require('fs').createReadStream('F:/1.mkv')
+  // var au = require('fs').createWriteStream('tmp.mp3')
+
+  // ffmpeg(vd).output(au)
+  // .noVideo()
+  // .format('mp3')
+  // .outputOptions('-ab','192k')
+  // .outputOptions('-ss','00:01:12.960')
+  // .outputOptions('-to','00:01:14.640')
+  // .on('start',()=>{
+
+  //   a = 1
+    
+  // })
+  // .on('end', ()=>{ 
+
+  //   a = 1
+  // })
+  // .run()
+
+
+
   var vd = require('fs').createReadStream('F:/1.mkv')
-  var au = require('fs').createWriteStream('tmp.mp3')
+  var au = require('fs').createWriteStream('tmp.srt')
 
   ffmpeg(vd).output(au)
   .noVideo()
-  .format('mp3')
-  .outputOptions('-ab','192k')
-  .outputOptions('-ss','00:01:12.960')
-  .outputOptions('-to','00:01:14.640')
-  .run().on('start',()=>{
+  .format('srt')
+  .outputOptions('-map','0:s:0')
+  //.outputOptions('-ss','00:01:12.960')
+  //.outputOptions('-to','00:01:14.640')
+  .on('start',()=>{
 
     a = 1
     
@@ -145,6 +167,7 @@ isJapanese(char)
 
     a = 1
   })
+  .run()
 
 
   a = 1
@@ -307,13 +330,7 @@ String.prototype.replaceAll = function(search, replacement) {
 /*
 
 
-var video = fs.createReadStream('F:/1.mkv')
-var audio = fs.createWriteStream('1.mp3')
-ffmpeg(video).output(audio)
-.noVideo()
-.format('mp3')
-.outputOptions('-ab','192k')
-.run();
 
+out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-loglevel", "error", "-i", fname, "-map", "0:s:0", frtname])
 
 */
