@@ -18,7 +18,9 @@
 
   arr = JSON.parse(arr)
 
-  NG('abcd')
+  let gss = NG('abcd')
+
+  a = 1
 
 
   // let kuromoji = require('kuromoji')
@@ -140,23 +142,31 @@ function NG(strs) {
 
     for (let i = 0; i < s.length; i++) {
 
-      let j = i
+      // let j = i
       
-      do {
+      // do {
 
-        if ( j + n > s.length ) {
-          break
-        }
+      //   if ( j + n > s.length ) {
+      //     break
+      //   }
 
-        var gr = s.substring(j, j+n)
+      //   var gr = s.substring(j, j+n)
 
-        grs.push(gr)
+      //   grs.push(gr)
 
 
-        j += 1
+      //   j += 1
 
+      // }
+      // while(j < s.length)
+
+      if ( i + n > s.length ) {
+        break
       }
-      while(j < s.length)
+
+      var gr = s.substring(i, i+n)
+
+      grs.push(gr)
       
 
     }
@@ -165,9 +175,24 @@ function NG(strs) {
 
   }
 
-  let gs = ng(strs, 2)
+  var gss = []
+  for (let i = 2; i <= 10; i++) {
+    
+    let gs = ng(strs, i)
 
-  return gs
+    if (gs.length > 0) {
+
+      gss = gss.concat( gs )
+
+    } else {
+
+      break
+
+    }
+
+  }
+
+  return gss
 
 }
 

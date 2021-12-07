@@ -2099,6 +2099,56 @@ https://www.jianshu.com/p/8f0ce2cff8d9
 
 
 
+### NGram
+
+
+
+```javascript
+function NG(strs) {
+
+  function ng(s, n) {
+
+    var grs = []
+
+    for (let i = 0; i < s.length; i++) {
+
+      if ( i + n > s.length ) {
+        break
+      }
+
+      var gr = s.substring(i, i+n)
+
+      grs.push(gr)
+      
+
+    }
+
+    return grs
+
+  }
+
+  var gss = []
+  for (let i = 2; i <= 10; i++) {
+    
+    let gs = ng(strs, i)
+
+    if (gs.length > 0) {
+
+      gss = gss.concat( gs )
+
+    } else {
+
+      break
+
+    }
+
+  }
+
+  return gss
+
+}
+```
+
 
 
 
