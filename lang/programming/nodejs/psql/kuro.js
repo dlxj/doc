@@ -3,7 +3,16 @@
 /*
 
 
+
 See: nodejs summary.md -> centos7+mecab+neologd
+
+https://kuroshiro.org/
+
+const result = Kuroshiro.Util.isHiragana("あ"))
+
+isKanji(char)
+
+isJapanese(char)
 
 */
 
@@ -108,7 +117,7 @@ See: nodejs summary.md -> centos7+mecab+neologd
   
   
 
-  let str = arr[0]
+  let str = arr[1]
 
   let [ result, ms ] = await new Promise(function (resolve) {
 
@@ -127,16 +136,16 @@ See: nodejs summary.md -> centos7+mecab+neologd
   result.forEach(d => {
 
     kanjis += d.kanji
-    originals += d.original
+    originals += d.original + " "
 
   })
   
 
-  let kanji_ngrams = NG(kanjis)
-  let original_ngrams = NG(originals)
+  //let kanji_ngrams = NG(kanjis)
+  //let original_ngrams = NG(originals)
 
 
-  //console.log( result )
+  console.log( result )
 
   //console.log( kanji_ngrams )
 
@@ -170,14 +179,14 @@ See: nodejs summary.md -> centos7+mecab+neologd
 
   })
   
-  originals = originals.replaceAll(String.raw`\s`, '')
+  //originals = originals.replaceAll(String.raw`\s`, '')
   hiras = hiras.replaceAll(String.raw`\s`, '')
   let hiras_ngrams = NG(hiras)
 
+  console.log( hiras_ngrams )
+
   console.log(originals)
   console.log(hiras)
-
-  //console.log( hiras_ngrams )
 
   a = 1
 
