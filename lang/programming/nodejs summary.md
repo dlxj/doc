@@ -2091,7 +2091,8 @@ echo "yes" | ./bin/install-mecab-ipadic-neologd -n
 echo "yes" | ./bin/install-mecab-ipadic-neologd -n
 
 
-mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd/
+mecab -d /usr/lib64/mecab/dic/mecab-ipadic-neologd
+	# 成功
 
 ```
 
@@ -2112,6 +2113,23 @@ sudo rpm -ivh http://packages.groonga.org/centos/groonga-release-1.1.0-1.noarch.
 sudo yum install mecab-devel
 	# 成功解决 mecab-config not found
 ```
+
+
+
+#### Error: no such file  mecab-ipadic-neologd/dicrc 
+
+
+
+```
+# https://qiita.com/MuggyTea/items/dd1ea3a781b59c6b5979
+
+
+
+
+
+```
+
+
 
 
 

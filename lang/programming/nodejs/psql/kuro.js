@@ -93,8 +93,8 @@
 
   var MeCab = new require('mecab-async')
   var mecab = new MeCab()
-  MeCab.command = "mecab"
-  //MeCab.command = "mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd"
+  //MeCab.command = "mecab"
+  MeCab.command = "mecab -d /usr/lib64/mecab/dic/mecab-ipadic-neologd"
   //var text = arr[0]
   
   
