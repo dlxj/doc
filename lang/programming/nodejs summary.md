@@ -2086,6 +2086,7 @@ sudo rpm -ivh http://packages.groonga.org/centos/groonga-release-1.1.0-1.noarch.
 git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && cd mecab-ipadic-neologd
  
 echo "yes" | ./bin/install-mecab-ipadic-neologd -n
+	# mecab -d /usr/lib64/mecab/dic/mecab-ipadic-neologd  成功，这样使用
 ./libexec/make-mecab-ipadic-neologd.sh 
 echo "yes" | ./bin/install-mecab-ipadic-neologd -n
 
@@ -2113,6 +2114,14 @@ sudo yum install mecab-devel
 ```
 
 
+
+### kuroshiro 省心方案
+
+
+
+```
+https://www.npmjs.com/package/kuroshiro
+```
 
 
 
