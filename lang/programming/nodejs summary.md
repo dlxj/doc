@@ -2138,7 +2138,11 @@ sudo yum install mecab-devel
 
 
 ```
-https://www.npmjs.com/package/kuroshiro
+# https://www.npmjs.com/package/kuroshiro
+
+npm install kuroshiro@1.1.2
+	# 其他版本有Bug
+
 ```
 
 

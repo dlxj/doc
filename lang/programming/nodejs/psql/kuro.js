@@ -133,7 +133,26 @@
 
   console.log( original_ngrams )
   
+  const Kuroshiro = require("kuroshiro")
+  const KuromojiAnalyzer = require("kuroshiro-analyzer-kuromoji")
+  const kuroshiro = new Kuroshiro()
 
+  let hiras =  await new Promise(function (resolve) {
+
+    kuroshiro.init(new KuromojiAnalyzer())
+    .then(function(){
+        return kuroshiro.convert(str, { to: "hiragana" })
+    })
+    .then(function(result){
+        console.log(result)
+
+        resolve(result)
+    })
+
+  })
+  
+
+  console.log(hiras)
  
 
   a = 1
