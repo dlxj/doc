@@ -1094,6 +1094,17 @@ function getContent(fileName) {
 
 
 
+# args
+
+
+
+```
+var arguments = process.argv
+console.log( arguments )
+```
+
+
+
 
 
 # live debug 
@@ -1140,13 +1151,9 @@ watch('counter')
 # https://betterprogramming.pub/how-to-debug-using-node-js-built-in-debugger-f3ab3ba6e7c8
 	# Debug Using Node.js’s Built-In Debugger
 	
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 45)
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 142)
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 164)
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 208)
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 219)
-setBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 226)
-clearBreakpoint('/yingedu/project_test/ksbaiexam/http/api/submit.js', 45)
+setBreakpoint('xxxxxx.js', 45)
+setBreakpoint('xxxxxx.js', 142)
+clearBreakpoint('xxxx.js', 45)
 
 # 可能是这一句的错误
 let retSaveExam = await this.services.saveExamgather({examgahters})

@@ -1,6 +1,10 @@
 
 (async () => {
 
+    var arguments = process.argv
+
+    console.log( arguments[2] )
+
     String.prototype.replaceAll = function (search, replacement) {
         var target = this
         return target.replace(new RegExp(search, 'g'), replacement)
@@ -23,7 +27,7 @@
         }
     })
 
-    let str = arr[0]
+    let str = arguments[2] // arr[0]
 
     let [hiras, msg] = await new Promise(function (resolve) {
 
