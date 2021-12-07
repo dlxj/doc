@@ -1,4 +1,13 @@
 
+
+/*
+
+
+See: nodejs summary.md -> centos7+mecab+neologd
+
+*/
+
+
 // let kuromoji = require('kuromoji')
 
 // kuromoji.builder({ dicPath: "./dicts/neologd/" }).build((err, tokenizer) => {
@@ -127,19 +136,29 @@
   let original_ngrams = NG(originals)
 
 
-  console.log( result )
+  //console.log( result )
 
-  console.log( kanji_ngrams )
+  //console.log( kanji_ngrams )
 
-  console.log( original_ngrams )
+  //console.log( original_ngrams )
   
   const Kuroshiro = require("kuroshiro")
   const KuromojiAnalyzer = require("kuroshiro-analyzer-kuromoji")
+  const MecabAnalyzer = require("kuroshiro-analyzer-mecab")
   const kuroshiro = new Kuroshiro()
 
-  let [ hiras, msg] =  await new Promise(function (resolve) {
+  const mecabAnalyzer = new MecabAnalyzer({
+    dictPath: "/usr/lib64/mecab/dic/mecab-ipadic-neologd",
+    execOptions: {
+      maxBuffer: 200 * 1024,
+      timeout: 0
+    }
+  })
 
-    kuroshiro.init(new KuromojiAnalyzer())
+  let [ hiras, msg] = await new Promise(function (resolve) {
+
+    //kuroshiro.init(new KuromojiAnalyzer())
+    kuroshiro.init(mecabAnalyzer)
     .then(function(){
       return kuroshiro.convert(str, { to: "hiragana" } )
     })
@@ -151,8 +170,14 @@
 
   })
   
+  originals = originals.replaceAll(String.raw`\s`, '')
+  hiras = hiras.replaceAll(String.raw`\s`, '')
+  let hiras_ngrams = NG(hiras)
+
+  console.log(originals)
   console.log(hiras)
- 
+
+  //console.log( hiras_ngrams )
 
   a = 1
 
@@ -202,4 +227,10 @@ function NG(strs) {
 
   return gss
 
+}
+
+
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this
+  return target.replace(new RegExp(search, 'g'), replacement)
 }
