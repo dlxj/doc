@@ -109,6 +109,61 @@ isJapanese(char)
   // console.log(result)
 
 
+
+
+
+
+
+  var ffmpeg = require('fluent-ffmpeg');
+  const path = require('path');
+  
+  // var filename = './not-commit-test-file/1.mp4';
+  // var full_path = path.resolve(filename);
+  
+  // var command = ffmpeg(full_path)
+
+  // command.outputOptions([
+  //   '-vn',
+  //   '-acodec copy',
+  // ]).save('output-audio.aac')
+
+  var vd = require('fs').createReadStream('F:/1.mkv')
+  var au = require('fs').createWriteStream('tmp.mp3')
+
+  ffmpeg(vd).output(au)
+  .noVideo()
+  .format('mp3')
+  .outputOptions('-ab','192k')
+  .outputOptions('-ss','00:01:12.960')
+  .outputOptions('-to','00:01:14.640')
+  .run().on('start',()=>{
+
+    a = 1
+    
+  })
+  .on('end', ()=>{ 
+
+    a = 1
+  })
+
+
+  a = 1
+
+
+  /*
+  
+00:01:12.960 -to 00:01:14.640
+
+  "-ss", begintime, "-to", endtime
+
+  */
+
+
+
+
+
+
+
   var MeCab = new require('mecab-async')
   var mecab = new MeCab()
   //MeCab.command = "mecab"
@@ -188,6 +243,9 @@ isJapanese(char)
   console.log(originals)
   console.log(hiras)
 
+
+
+
   a = 1
 
 })()
@@ -243,3 +301,19 @@ String.prototype.replaceAll = function(search, replacement) {
   var target = this
   return target.replace(new RegExp(search, 'g'), replacement)
 }
+
+
+
+/*
+
+
+var video = fs.createReadStream('F:/1.mkv')
+var audio = fs.createWriteStream('1.mp3')
+ffmpeg(video).output(audio)
+.noVideo()
+.format('mp3')
+.outputOptions('-ab','192k')
+.run();
+
+
+*/

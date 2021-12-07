@@ -2235,6 +2235,108 @@ function NG(strs) {
 
 
 
+## FFMPEG
+
+
+
+```javascript
+  var ffmpeg = require('fluent-ffmpeg');
+  const path = require('path');
+
+  var vd = require('fs').createReadStream('F:/1.mkv')
+  var au = require('fs').createWriteStream('tmp.mp3')
+
+  ffmpeg(vd).output(au)
+  .noVideo()
+  .format('mp3')
+  .outputOptions('-ab','192k')
+  .outputOptions('-ss','00:01:12.960')
+  .outputOptions('-to','00:01:14.640')
+  .run()
+```
+
+
+
+```javascript
+npm i fluent-ffmpeg
+var ffmpeg = require('fluent-ffmpeg');
+const path = require('path');
+
+var filename = './not-commit-test-file/1.mp4';
+var full_path = path.resolve(filename);
+console.log(full_path);
+
+var command = ffmpeg(full_path);
+command.outputOptions([
+  '-vn',
+  '-acodec copy',
+]).save('output-audio.aac');
+```
+
+
+
+```javascript
+function streamtogif(stream, begintime = 0, duration){ //Return promise buffer
+  return new Promise((resolve, reject)=>{
+  buffer = [] //prepare creation of the buffer for the gif
+    function addChunk(chunk){ 
+      this.buffer.push(chunk)
+    }
+    function getBuffer(cb){ //get buffer array
+      cb(this.buffer);
+    }
+    ffmpegstream = ffmpeg()
+    .outputOptions('-metadata', 'title=test')
+    .input(stream)
+    .fps(20)
+    .setStartTime(begintime)
+    .noAudio()
+    .videoCodec('gif')
+    .format('gif')
+
+    if(duration){ffmpegstream.duration(duration)} //only define duration if defined in function's parameters
+    ffmpegstream.on('start',()=>{
+      //console.log("starting")
+      this.buffer = []
+    })
+    .on('end', ()=>{ 
+      getBuffer((buff)=>{
+      finalBuffer = Buffer.concat(buff);
+      resolve(finalBuffer);
+      });
+  }) 
+
+    var ffstream = ffmpegstream.pipe(); //handle data 
+    ffstream.on('data', function(chunk) {
+      addChunk(chunk);
+    })
+
+
+    ffmpegstream.run()
+  });
+}
+
+            finalBuffer = Buffer.concat(this.fileRead)
+            const bufferStream = new Stream.PassThrough();
+            bufferStream.end(finalBuffer);
+            streamtogif(bufferStream).then((buffer)=>{
+              upload = uploadpicture(buffer, "source/sportifeed").then((response)=>{ //success request
+                res.status(200).json({success: true, message: "Successfully uploaded !", url: response.data.link});
+              },(err)=>{ //error
+                console.log(err)
+                res.status(500).json({success: false, message: "Error happenned while uploading !"});
+              }).catch((err)=>{
+                console.log(err)
+                res.status(500).json({success: false, message: "Error happenned while uploading !"});
+              });
+            },(err)=>{
+              console.log(err);
+            })
+
+```
+
+
+
 
 
 ## exec
