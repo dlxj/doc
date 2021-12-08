@@ -5256,6 +5256,14 @@ pip install xlrd
 
 
 
+```
+pd.read_excel('tmp.xlsx', index_col=None, header=None) 
+```
+
+
+
+
+
 
 
 
@@ -5319,6 +5327,75 @@ read_csv(..., skiprows=1000000, nrows=999999)
 and for large files, you'll probably also want to use chunksize:
 
 ***chunksize\*** : int, default None Return TextFileReader object for iteration
+
+
+
+### write xlsx
+
+
+
+```
+import json
+import decimal
+import datetime
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return float(o)
+        elif isinstance(o, datetime.datetime):
+            return str(o)
+        super(DecimalEncoder, self).default(o)
+
+def save_json(filename, dics):
+    with open(filename, 'w', encoding='utf-8') as fp:
+        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
+        fp.close()
+
+def load_json(filename):
+    with open(filename, encoding='utf-8') as fp:
+        js = json.load(fp)
+        fp.close()
+        return js
+
+# convert string to json 
+def parse(s):
+    return json.loads(s, strict=False )
+
+# convert dict to string
+def string(d):
+    return json.dumps(d, cls=DecimalEncoder, ensure_ascii=False)
+
+
+
+import pandas as pd
+
+
+if __name__ == "__main__":
+
+    dic_domains = {}
+
+    sheet_names = [ 'xx', 'xx', 'xx' ]
+
+    for sheet in sheet_names:
+
+        ds = pd.read_excel("xxx.xlsx", sheet_name = sheet, usecols= ['xxx','xxx'])
+
+        print(ds.shape, ds.size)
+        for l in ds.values:
+            AppCName = str(l[0])
+            AppEName = str(l[1])
+
+            if (AppEName in dic_domains):
+                raise Exception(xx + " already exist.")
+            
+        
+            dic_domains[xx] = { "xx":AppEName, "xx":xx, "Domain":sheet }
+
+        a = 1
+
+    save_json('./domains.json', dic_domains)
+```
 
 
 
