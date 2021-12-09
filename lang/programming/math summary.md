@@ -20,6 +20,11 @@
 
 **算子就是变换的别名，而变换又是函数的花俏说法。**
 
+一个函数的变换是线性的是什么意思?
+
+> Additivity: $L(\overrightarrow{v}+\overrightarrow{w}) = L(\overrightarrow{v})+L(\overrightarrow{w})$
+> Scaling: $L(c \overrightarrow{v}) = c L(\overrightarrow{v})$
+
 
 
 映射是函数的推广，**雅可比是梯度的推广**
