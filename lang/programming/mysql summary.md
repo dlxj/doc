@@ -1589,6 +1589,12 @@ grant select on useractionanalysis.* to guest@222.217.18.123 identified by "gues
 
 
 
+```
+00   01    11      12   *   echo 'say hi from auto.'>/root/hi.txt
+```
+
+
+
 
 
 ```
@@ -1702,7 +1708,9 @@ crond 0:关闭 1:关闭 2:启用 3:启用 4:启用 5:启用 6:关闭
 新增调度任务可用两种方法：
 
 1)、在命令行输入: crontab -e 然后添加相应的任务，wq存盘退出。
-
+	crontab -e
+	20   18    10      12   *   echo 'hi from crontab.' >sayhi.txt
+	
 2)、直接编辑/etc/crontab 文件，即vi /etc/crontab，添加相应的任务。
 
 crontab -e配置是针对某个用户的，而编辑/etc/crontab是针对系统的任务
