@@ -1652,9 +1652,9 @@ no crontab for root
 ```
 1.安装crontab
 
-[root@CentOS ~]# yum install vixie-cron
+[root@CentOS ~]# yum install cronie
 [root@CentOS ~]# yum install crontabs
-vixie-cron软件包是cron的主程序；
+cronie软件包是cron的主程序；
 
 crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。
 
