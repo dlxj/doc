@@ -14,7 +14,7 @@
 
     var arguments = process.argv
 
-    console.log( arguments[2] )
+    //console.log( arguments[2] )
 
     String.prototype.replaceAll = function (search, replacement) {
         var target = this
@@ -56,19 +56,21 @@
     })
 
     //originals = originals.replaceAll(String.raw`\s`, '')
-    hiras = hiras.replaceAll(String.raw`\s`, '')
+    //hiras = hiras.replaceAll(String.raw`\s`, '')
     let hiras_ngrams = NG(hiras)
 
-    // console.log( hiras_ngrams )
+    console.log( hiras_ngrams.join(' ') )
 
-    // console.log(originals)
-    console.log(hiras)
+    //console.log(originals)
+    //console.log(hiras)
 
     a = 1
 
 })()
 
 function NG(strs) {
+
+  strs = strs.replaceAll(String.raw`\s`, '')
 
     function ng(s, n) {
   
@@ -111,10 +113,13 @@ function NG(strs) {
     return gss
   
   }
-  
+
   
   String.prototype.replaceAll = function(search, replacement) {
     var target = this
     return target.replace(new RegExp(search, 'g'), replacement)
   }
+
+  // s = NG(' ab cdefg')
+  // a = 1
 

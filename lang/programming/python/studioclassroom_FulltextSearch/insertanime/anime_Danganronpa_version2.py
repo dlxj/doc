@@ -714,8 +714,16 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
 
                 # get pure hana
                 out_bytes_hira = subprocess.check_output([r"node", "hira.js", j])
-                out_text_hira = out_bytes.decode('utf-8')
-                j_purehana = out_text_hira.strip()
+                out_text_hira = out_bytes_hira.decode('utf-8')
+                #j_purehana = out_text_hira.strip()
+                j_NG = out_text_hira.strip()
+                #print("j_purehana: " + j_purehana)
+
+                #tags2 = tagger.parse(j_purehana)
+
+                #tags = tags2 + tags
+
+                tags = j_NG + " " + tags
 
                 t = tu[1]
                 begintime, endtime = parseSrtTime(t)

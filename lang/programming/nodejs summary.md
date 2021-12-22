@@ -493,6 +493,24 @@ j = ANONUM(strs)
 
 
 
+## 匹配不消耗
+
+
+
+```
+/a(?=b)bc/中的正向肯定预查(?=b)匹配了a后面的字母b，但是并没有消耗它，所以，后面再跟一个“bc”串，这就完整地匹配了字符串“abc”。其实，它的真正意义应该是确定了这个字母a，因为不是每个字母a后面都会跟一个字母b的！ 
+而a(b)bc因为匹配并消耗了字母a后面的b，再来添加一个“bc”串的时候，就变成了“abbc”，就不能匹配字符串“abc”。
+
+到这，估计后面的正向否定预查就没什么问题了，以及反向预查，只不过是类似的，但是位置变了。
+
+(?<=pattern) 
+这是反向肯定预查，因为Javascript不支持反向预查，所以以下用Python实现
+```
+
+
+
+
+
 ## 不匹配某个串
 
 
@@ -839,6 +857,10 @@ let r = strs.replace(new RegExp(String.raw`([^a-z^A-Z^\s])\s+([^a-z^A-Z^\s])`), 
 ## split by
 
 
+
+```javascript
+ arrans = anss.split(new RegExp( String.raw`[\s、，\,]`) )
+```
 
 
 
