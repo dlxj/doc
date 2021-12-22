@@ -21,9 +21,9 @@
         return target.replace(new RegExp(search, 'g'), replacement)
     }
 
-    let arr = require('fs').readFileSync('./data.json', { encoding: 'utf8', flag: 'r' })
+    // let arr = require('fs').readFileSync('./data.json', { encoding: 'utf8', flag: 'r' })
 
-    arr = JSON.parse(arr)
+    // arr = JSON.parse(arr)
 
     const Kuroshiro = require("kuroshiro")
     const KuromojiAnalyzer = require("kuroshiro-analyzer-kuromoji")
