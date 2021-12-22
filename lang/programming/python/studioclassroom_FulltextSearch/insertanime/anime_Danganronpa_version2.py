@@ -335,6 +335,40 @@ def unhana_remove(s):
 def hasHanaQ(s):
     return len( unhana_remove(s) ) > 0
 
+def NG(strs):
+    strs = re.sub(r"\s+", "", strs, flags=re.UNICODE)
+
+    def ng(s, n):
+  
+      grs = []
+  
+      #for (i = 0; i < s.length; i++):
+      for i in range(len(s)):
+  
+        if ( i + n > len(s) ):
+          break
+  
+        gr = s[i:i+n]
+  
+        grs.append(gr)
+  
+      return grs
+
+
+    gss = []
+    for i  in range(2, 10):
+      gs = ng(strs, i)
+  
+      if (len(gs) > 0):
+  
+        gss = gss + gs
+  
+      else:
+        break
+  
+    return " ".join(gss)
+
+
 def parseSrtTime(time):
   
   #time = "00:01:12,960 --> 00:01:14,640"
@@ -717,13 +751,15 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 out_text_hira = out_bytes_hira.decode('utf-8')
                 #j_purehana = out_text_hira.strip()
                 j_NG = out_text_hira.strip()
+                j_tags_NG = NG(j)
                 #print("j_purehana: " + j_purehana)
+                #print('j_tags_NG:' + j_tags_NG)
 
                 #tags2 = tagger.parse(j_purehana)
 
                 #tags = tags2 + tags
 
-                tags = j_NG + " " + tags
+                tags = j_NG + " " + j_tags_NG
 
                 t = tu[1]
                 begintime, endtime = parseSrtTime(t)
