@@ -2421,6 +2421,49 @@ ffmepgFunction(2000, 5);
 
 
 
+### buffer
+
+```
+let FFmpeg = require('fluent-ffmpeg');
+let bufferStream = new stream.PassThrough();
+new FFmpeg({
+  // Create a Readable stream from the base64 data
+  source: stream.Readable.from([new Buffer(data, 'base64')], { objectMode: false })
+})
+.audioCodec('pcm_mulaw')
+.on('error', function(err) {
+socket.emit('ffmpeg-error', 'ffmpeg : сообщение ошибки: ' + err.message);
+})
+.on('progress', function(progress) {
+socket.emit('ffmpeg-output', Math.round(progress.percent));
+console.log("progress")
+})
+.on('end', function(){
+//socket.emit('merged', dateTimeString + fileName + '-pcm_mulaw.wav');
+console.log('Formating finished!');
+//fs.unlinkSync(audioFile);
+console.log("after");
+//console.log(this.Buffer);
+})
+.writeToStream(bufferStream);
+
+// Read the passthrough stream
+const buffers = [];
+bufferStream.on('data', function (buf) {
+  buffers.push(buf);
+});
+bufferStream.on('end', function () {
+  const outputBuffer = Buffer.concat(buffers);
+  // use outputBuffer
+});
+```
+
+
+
+
+
+
+
 ### bytea
 
 

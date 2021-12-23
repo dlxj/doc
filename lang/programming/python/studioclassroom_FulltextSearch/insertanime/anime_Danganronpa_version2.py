@@ -356,7 +356,7 @@ def NG(strs):
 
 
     gss = []
-    for i  in range(2, 10):
+    for i  in range(1, 10):
       gs = ng(strs, i)
   
       if (len(gs) > 0):
@@ -779,8 +779,8 @@ def importAnime(animename, seasion, frtname, videoname, videopath):
                 #if count % 10 == 0:
                 print( f"###### {count} / {len(jpanese)}" )
                 
-                if count >= 10:
-                  break
+                # if count >= 10:
+                #   break
                 # sql = f"""insert into anime(name, jp, time, jp_mecab, zh, v_zh, videoname) values('{animename}', '{j}', '{t}', '{tags}', '{zh}', '{videoname}', to_tsvector('jiebacfg', '{zh}'));"""
                 #cur.execute( sql )
 
@@ -887,7 +887,7 @@ if __name__ == "__main__":
 
       print('one task done. ', cur, '/', len(fnames) )
 
-      break
+      #break
 
 
     print("all task done.")
