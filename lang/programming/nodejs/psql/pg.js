@@ -1,5 +1,23 @@
 
+
+
+
 (async () => {
+
+  String.prototype.replaceAll = function (search, replacement) {
+    var target = this
+    return target.replace(new RegExp(search, 'g'), replacement)
+  }
+
+
+  let rc = require('fs').readFileSync(require('path').join(require('path').dirname(__filename), '1.lrc'),{encoding:'utf8', flag:'r'})
+  rc = rc.replaceAll('\r\n', '\n')
+
+
+
+
+
+
 
   // let kuromoji = require('kuromoji')
 
@@ -21,6 +39,135 @@
 
   // let a = tokenizer.tokenize(arr[0])
 
+
+
+
+
+
+  //[00:00.00]
+
+  let matchs = rc.matchAll( new RegExp(String.raw`\[\d\d:\d\d\.\d\d\]`, 'g') )
+  let arr = Array.from( matchs )
+  for (let i = 0; i < arr.length; i++) {
+
+    let match = arr[i]
+    let begin = match.index
+
+    let text = ''
+    if (i == arr.length -1) {
+
+      text = rc.substring(begin)
+
+    } else {
+
+      let end = arr[i+1].index
+
+      text = rc.substring(begin, end)
+
+    }
+
+    let match2 = text.match( new RegExp(String.raw`\[(\d\d):(\d\d)\.(\d\d)\](.+)`, 's') )
+    if (match2 != null) {
+
+      let h = match2[1]
+      let m = match2[2]
+      let s = match2[3]
+
+      let text2 = match2[4]
+      if (text2.replaceAll(/\s+/, '') == '') {
+
+        a = 1
+
+      } else {
+
+        let j = ''
+        let arr_j = text2.split(/[（(]/)
+        if (arr_j.length > 0) {
+          j = arr_j[0].trim()
+        } else {
+          throw 'Error: LRC Format not correct. '
+        }
+
+        a = 1
+      }
+
+
+      a = 1
+
+    }
+
+    a = 1
+
+  }
+
+
+  a = 1
+
+
+
+
+
+
+
+
+
+  //a = 1
+
+  let [sr1, ms1] = await new Promise(function (resolve) {
+
+    var ffmpeg = require('fluent-ffmpeg')
+
+    var vd = require('fs').createReadStream('F:/1.mp3')
+    //var au = require('fs').createWriteStream('tmp.srt')
+
+    const stream = require('stream')
+    let bufferStream = new stream.PassThrough()
+    // Read the passthrough stream
+    const buffers = []
+    bufferStream.on('data', function (buf) {
+      buffers.push(buf)
+    })
+    bufferStream.on('end', function () {
+      const outputBuffer = Buffer.concat(buffers)
+      //let sr = outputBuffer.toString('utf8')
+      let dir =  require('path').dirname(__filename)
+      let fname = require('path').join(dir, 'tmp.mp3')
+      require('fs').writeFileSync(fname, outputBuffer, 'binary')
+      // use outputBuffer
+      resolve([sr, ''])
+    })
+
+    ffmpeg(vd)//.output(au)
+      .noVideo()
+      .format('mp3')
+      .outputOptions('-ss','00:01:12.960')
+      .outputOptions('-to','00:01:14.640')
+      .writeToStream(bufferStream)
+      // .on('start', () => {
+
+      //   a = 1
+
+      // })
+      // .on('end', () => {
+
+      //   a = 1
+
+      //   resolve(['ok', 'ok.'])
+      // })
+      // .run()
+  })
+
+
+  /*
+  
+      out_bytes = subprocess.check_output([r"ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", videopath, "-vn", "-ss", begintime, "-to", endtime, "-acodec", "mp3", \
+      "-ar", "44100", "-ac", "2", "-b:a", "192k", \
+        "tmp.mp3"])
+  
+  */
+
+
+  a = 1
 
 
 
@@ -115,4 +262,5 @@
     a = 1
   }
 })().catch(e => console.error(e.message, e.stack))
+
 

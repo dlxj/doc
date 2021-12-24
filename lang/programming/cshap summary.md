@@ -6529,6 +6529,38 @@ namespace dangan.Server.Controllers
 
 
 
+### markdig
+
+```
+@page "/editor"
+@using Markdig;
+
+<div class="row">
+    <div class="col-6">
+        <textarea class="form-control" @bind-value="Body" @bind-value:event="oninput"></textarea>
+    </div>
+    <div class="col-6">
+        @if (!string.IsNullOrWhiteSpace(Body))
+        {
+            @((MarkupString)Preview)
+        }
+    </div>
+</div>
+
+@code {
+    public string Body { get; set; }
+
+    //public string Preview => Markdown.ToHtml(Body);
+    public string Preview => Markdown.ToHtml(Body, new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
+}
+```
+
+
+
+
+
+
+
 
 
 # Postgresql
