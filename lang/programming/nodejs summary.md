@@ -2424,38 +2424,50 @@ ffmepgFunction(2000, 5);
 ### buffer
 
 ```
-let FFmpeg = require('fluent-ffmpeg');
-let bufferStream = new stream.PassThrough();
-new FFmpeg({
-  // Create a Readable stream from the base64 data
-  source: stream.Readable.from([new Buffer(data, 'base64')], { objectMode: false })
-})
-.audioCodec('pcm_mulaw')
-.on('error', function(err) {
-socket.emit('ffmpeg-error', 'ffmpeg : сообщение ошибки: ' + err.message);
-})
-.on('progress', function(progress) {
-socket.emit('ffmpeg-output', Math.round(progress.percent));
-console.log("progress")
-})
-.on('end', function(){
-//socket.emit('merged', dateTimeString + fileName + '-pcm_mulaw.wav');
-console.log('Formating finished!');
-//fs.unlinkSync(audioFile);
-console.log("after");
-//console.log(this.Buffer);
-})
-.writeToStream(bufferStream);
+# 写文件改写内存流
+(async () => {
+  let [sr, ms] = await new Promise(function (resolve) {
 
-// Read the passthrough stream
-const buffers = [];
-bufferStream.on('data', function (buf) {
-  buffers.push(buf);
-});
-bufferStream.on('end', function () {
-  const outputBuffer = Buffer.concat(buffers);
-  // use outputBuffer
-});
+    var ffmpeg = require('fluent-ffmpeg')
+
+    var vd = require('fs').createReadStream('F:/1.mkv')
+    //var au = require('fs').createWriteStream('tmp.srt')
+
+    const stream = require('stream')
+    let bufferStream = new stream.PassThrough()
+    // Read the passthrough stream
+    const buffers = []
+    bufferStream.on('data', function (buf) {
+      buffers.push(buf)
+    })
+    bufferStream.on('end', function () {
+      const outputBuffer = Buffer.concat(buffers)
+      let sr = outputBuffer.toString('utf8')
+      // use outputBuffer
+      resolve([sr, ''])
+    })
+
+    ffmpeg(vd)//.output(au)
+      .noVideo()
+      .format('srt')
+      .outputOptions('-map', '0:s:0')
+      //.outputOptions('-ss','00:01:12.960')
+      //.outputOptions('-to','00:01:14.640')
+      .writeToStream(bufferStream)
+      // .on('start', () => {
+
+      //   a = 1
+
+      // })
+      // .on('end', () => {
+
+      //   a = 1
+
+      //   resolve(['ok', 'ok.'])
+      // })
+      // .run()
+  })
+})().catch(e => console.error(e.message, e.stack))
 ```
 
 
