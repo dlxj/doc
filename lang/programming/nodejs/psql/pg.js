@@ -41,10 +41,10 @@
 
 
 
+  var rcs = []
 
 
-
-  //[00:00.00]
+  //[00:00.00]  分、秒、百分之一秒
 
   let matchs = rc.matchAll( new RegExp(String.raw`\[\d\d:\d\d\.\d\d\]`, 'g') )
   let arr = Array.from( matchs )
@@ -54,6 +54,7 @@
     let begin = match.index
 
     let text = ''
+    let endtime = ''
     if (i == arr.length -1) {
 
       text = rc.substring(begin)
@@ -61,6 +62,8 @@
     } else {
 
       let end = arr[i+1].index
+      let endreal = end + arr[i+1][0].length
+      endtime = rc.substring(end, endreal)
 
       text = rc.substring(begin, end)
 
@@ -69,9 +72,10 @@
     let match2 = text.match( new RegExp(String.raw`\[(\d\d):(\d\d)\.(\d\d)\](.+)`, 's') )
     if (match2 != null) {
 
-      let h = match2[1]
-      let m = match2[2]
-      let s = match2[3]
+      let m = match2[1]   // minute
+      let s = match2[2]   // second
+      let ss = match2[3]  // 1% second
+      let begin_time = `00:${m}:${s}.${ss}0`
 
       let text2 = match2[4]
       if (text2.replaceAll(/\s+/, '') == '') {
@@ -81,11 +85,44 @@
       } else {
 
         let j = ''
+        let z = ''
         let arr_j = text2.split(/[（(]/)
         if (arr_j.length > 0) {
           j = arr_j[0].trim()
         } else {
           throw 'Error: LRC Format not correct. '
+        }
+
+        if (endtime != '') {
+
+          let match_endtime = endtime.match( new RegExp(String.raw`\[(\d\d):(\d\d)\.(\d\d)\]`) )
+          if (match_endtime != null) {
+
+            let med = match_endtime[1]   // minute
+            let sed = match_endtime[2]   // second
+            let ssed = match_endtime[3]  // 1% second
+            let end_time = `00:${med}:${sed}.${ssed}0`
+
+            // '00:01:12.960'  // 时 分 秒 毫秒
+
+            let arr_z = text2.split(/[)）\s]/)
+            if (arr_z.length > 0) {
+
+              if (arr_z[1] == undefined) {
+                a = 1
+              }
+
+              z = arr_z[1].trim()
+            } else {
+              throw 'Error: LRC Format not correct. '
+            }
+
+
+            rcs.push( {j, z, begin_time, end_time} )
+
+          }
+
+
         }
 
         a = 1
@@ -218,7 +255,7 @@
 
 
 
-
+  
 
 
 

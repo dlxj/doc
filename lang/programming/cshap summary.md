@@ -1284,6 +1284,15 @@ string.Join(",", wmids.appids.Keys.ToList());
 
 
 
+### IsNullOrWhiteSpace
+
+```
+string.IsNullOrWhiteSpace(Body)
+# See below: markdig
+```
+
+
+
 
 
 ### UTF8
