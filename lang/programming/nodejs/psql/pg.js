@@ -171,7 +171,7 @@
       let fname = require('path').join(dir, 'tmp.mp3')
       require('fs').writeFileSync(fname, outputBuffer, 'binary')
       // use outputBuffer
-      resolve([sr, ''])
+      resolve([outputBuffer, ''])
     })
 
     ffmpeg(vd)//.output(au)
@@ -255,7 +255,7 @@
 
 
 
-  
+
 
 
 
