@@ -4420,6 +4420,19 @@ bert学习的是字与字之间的关系，你给它一句话，它通过字与�
 
 
 
+```
+pytorch+huggingface实现基于bert模型的文本分类（附代码）
+	# https://www.cnblogs.com/tangjianwei/p/13334327.html
+	
+如果你熟悉transformer，相信理解bert对你来说没有任何难度。bert就是encoder的堆叠。
+
+如果你不熟悉transformer，这篇文章是我见过的最棒的transformer图解，可以帮助你理解：http://jalammar.github.io/illustrated-transformer/ 
+
+当然这个作者也做出了很棒的bert图解，链接在此：http://jalammar.github.io/illustrated-bert/
+```
+
+
+
 
 
 
@@ -5761,6 +5774,15 @@ plt.show()
 ```
 
 
+
+### 多分类
+
+
+
+```
+NLP（三十五）使用keras-bert实现文本多分类任务
+https://blog.csdn.net/jclian91/article/details/111742576
+```
 
 
 
