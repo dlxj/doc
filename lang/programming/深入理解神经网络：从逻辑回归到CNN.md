@@ -4549,6 +4549,37 @@ p.355
 
 
 
+## huggingface 企业级bert
+
+
+
+```
+# https://zhuanlan.zhihu.com/p/358525654
+这段时间疯狂用了一些huggingface来打比赛，大概是把整个huggingface的api摸得差不多了，后面分不同的块来记录一下常见的用法。
+
+transformers的前身是pytorch-transformers和pytorch-pretrained-bert，主要提供了自然语言理解（NLU）和自然语言生成（NLG）的通用体系结构（BERT，GPT-2，RoBERTa，XLM，DistilBert，XLNet等） ）包含超过32种以100多种语言编写的预训练模型，以及TensorFlow 2.0和PyTorch之间的深度互操作性。
+
+不过就上手而言，torch还是更顺滑一些（因为很多非官方例子都是用torch来撸的），顺便让我熟悉一下torch的使用。
+
+整体上调研了github上的多个相关的项目，包括huggingface transformer，谷歌开源的bert，bert4keras，tensorflow hub，以及其它的一些个人的keras-bert之类的实现，总的来说，huggingface的优点在于：
+
+1、企业级维护，可靠性高，生产上用起来放心；
+
+2、star多，issues多，网上能够找到的各种各样对应不同需求的demo代码多；
+
+3、适配tf.keras和torch，一次性可以撸两个框架；
+
+4、官方的tutorial是真的太特么全了
+
+5、在PyTorch和TensorFlow 2.0之间轻松切换，从而允许使用一种框架进行训练，而使用另一种框架进行推理。非常灵活，当然其实torch和tf之间框架互相转换的功能的library挺多的；
+```
+
+
+
+
+
+
+
 ## 深度文本匹配
 
 
