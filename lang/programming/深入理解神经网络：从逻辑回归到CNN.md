@@ -4576,6 +4576,12 @@ transformers的前身是pytorch-transformers和pytorch-pretrained-bert，主要�
 
 
 
+### 情感二分类
+
+```
+# https://github.com/karlhl/Bert-classification-pytorch
+```
+
 
 
 

@@ -2494,6 +2494,63 @@ You can insert Buffer (https://nodejs.org/dist/latest-v14.x/docs/api/buffer.html
 
 
 
+## OpenCV
+
+
+
+```
+const mat = cv.imdecode(Buffer.from(data, 'base64))
+mat.SaveImage(savePath)
+```
+
+
+
+
+
+```
+const cv = require('opencv4nodejs');
+ 
+const originalImage = cv.imread('C:/Users/N/Desktop/Test.jpg');
+ 
+const grayImage = originalImage.bgrToGray();
+ 
+cv.imshow('Grey Image', grayImage);
+cv.imshow('Original Image', originalImage);
+ 
+cv.waitKey();
+```
+
+
+
+```
+// convert to normal array
+const normalArray = Array.from(imageData);
+//nest the pixel channels
+const channels = 4 //canvas pixels contain 4 elements: RGBA
+const nestedChannelArray = _.chunk(normalArray, channels);
+const nestedImageArray = _.chunk(nestedChannelArray, height);
+
+//nestedImageArray is the correct shape to be converted to matrix. 
+
+const RGBAmat = new cv.Mat(nestedImageArray, cv.CV_8UC4);
+
+//openCV often defaults to BGR-type image matrix, so lets color convert the pixel order
+
+const BGRAmat = RGBAmat.cvtColor(cv.COLOR_RGBA2BGRA);
+```
+
+
+
+## GIF
+
+
+
+```
+https://github.com/kohler/gifsicle
+```
+
+
+
 
 
 ## exec
