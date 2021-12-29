@@ -2911,6 +2911,14 @@ Review the MSDN docs to understand the method signatures and structs used. Hope 
 
 
 ```
+ExportingAssembly.IntExports.IntInt(4) // return 3 * 4 shoud be
+```
+
+
+
+
+
+```
 https://github.com/AaronRobinsonMSFT/DNNE
 [.NET大牛之路 007] 详解 .NET 程序集 
 	# https://www.cnblogs.com/willick/p/15155192.html
