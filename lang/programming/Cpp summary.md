@@ -1,5 +1,33 @@
 [TOC]
 
+# string
+
+
+
+## 不转义
+
+
+
+```c++
+    // https://github.com/ReneNyffenegger/cpp-base64
+
+    const std::string orig =
+        "René Nyffenegger\n"
+        "http://www.renenyffenegger.ch\n"
+        "passion for data\n";
+
+    std::string str_base64 = R"(a)";  // C++ 11 only, 不转义
+
+    std::string encoded = base64_encode(reinterpret_cast<const unsigned char*>(orig.c_str()), orig.length());
+    std::string decoded = base64_decode(encoded);
+```
+
+
+
+
+
+
+
 # windows
 
 
