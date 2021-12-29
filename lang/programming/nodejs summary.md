@@ -2623,6 +2623,50 @@ pm2 restart id --name newName
 
 
 ```
+npm install -g node-gyp
+npm install ffi-napi
+
+hi.cpp
+#include <stdint.h>
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+
+extern "C" {
+
+    EXPORT uint64_t factorial(int max) {
+        int i = max;
+        uint64_t result = 1;
+        while (i >= 2) {
+            result *= i--;
+        }
+        return result;
+    }
+}
+
+xx.js
+var FFI = require('ffi-napi')
+var kernel32 = FFI.Library("kernel32", {
+    'SetDllDirectoryA': ["bool", ["string"]]
+    })
+kernel32.SetDllDirectoryA("D:\\workcode\\nodejs\\OCR_IMGExtract")
+var hi = new FFI.Library('hi', {
+   'factorial': [
+      'int', ['int']
+   ]
+});
+
+console.log ( hi.factorial(3) )
+
+```
+
+
+
+
+
+```
 
 
 https://github.com/node-ffi/node-ffi/blob/master/example/factorial/factorial.c
