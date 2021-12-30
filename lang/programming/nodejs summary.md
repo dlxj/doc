@@ -214,6 +214,50 @@ module.exports =
 
 
 ```
+	# 新版好像要自已处理 form-urlencoded 了
+	let bent = require('bent')
+    let formurlencoded = require('form-urlencoded')
+    let mysql = require('./mysql')
+
+    let host = 'localhost:62137'
+
+    async function Convert2GIF(str_base64) {
+    
+        let url = `http://${host}`
+
+        let json = {
+            image_base64: str_base64
+        }
+
+        let formurlencoded_json = formurlencoded(json)
+
+        let post = bent(url, 'POST', 'json', 200)
+        let response = await post('/Convert2GIF', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded'})
+
+        if (response.status == 200) {
+            return [ response.data, '']
+        } else {
+            return [null, response.msg]
+        }
+
+        return response
+
+    }
+
+
+    let [str_base64_gif, ms] = await Convert2GIF('aaa')
+    if (str_base64 === null) {
+
+        throw 'Error: convert image to GIF fail! ' + ms
+
+    }
+```
+
+
+
+
+
+```
 # 参数太长也会出错
 
 ( async ()=>{
@@ -232,7 +276,7 @@ module.exports =
   let url = `http://${host}`
 
   let post = bent(url, 'POST', 'json', 200)
-  let response = await post('xxxxx', json)
+  let response = await post('/Convert2GIF', json)
 
   var idArray = response.data
 
@@ -1029,6 +1073,20 @@ _.isEmpty(dic_ansers)
 
 
 # File
+
+
+
+## exist
+
+
+
+```
+fs.existsSync( path )
+```
+
+
+
+## read write
 
 
 
