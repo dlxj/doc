@@ -1,5 +1,39 @@
 [TOC]
 
+# string
+
+
+
+## 不转义
+
+
+
+```c++
+    // https://github.com/ReneNyffenegger/cpp-base64
+
+    const std::string orig =
+        "René Nyffenegger\n"
+        "http://www.renenyffenegger.ch\n"
+        "passion for data\n";
+
+    // C++ 11 only, 不转义 $"(xxx)" 括号里的内容不转义，而且括号前后都可以有其它内容
+    std::ifstream t(R"(D:\workcode\csharp\dll\Examples\DllExport\BasicExport\UnmanagedCppConsole\base64.txt)");
+    std::stringstream buffer;
+    buffer << t.rdbuf();
+
+
+    std::string str_base64 = buffer.str(); 
+
+    std::string encoded = base64_encode(reinterpret_cast<const unsigned char*>(orig.c_str()), orig.length());
+    std::string decoded = base64_decode(encoded);
+```
+
+
+
+
+
+
+
 # windows
 
 
@@ -242,6 +276,17 @@ clang -std=c++98 -pedantic-errors
 
 
 ```
+# 成功调用，就是只支持 .net 4.5
+# https://github.com/3F/DllExport
+PEModule ClassLibrary1(_T("ClassLibrary1.dll")); // 定义函数 origin, 返回int ，参数int
+double re = ClassLibrary1.call<int>("origin", 5);
+```
+
+
+
+
+
+```
 # C 分配的内存只能由自已释放，C# 不可以
 
 # C#
@@ -394,6 +439,14 @@ https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/poin
 
 
 
+
+## C# call C++
+
+
+
+```
+https://github.com/xanatos/CSharpCPlusPlusInteropSamples
+```
 
 
 

@@ -4082,6 +4082,14 @@ public static readonly string DotNetPath = RuntimeInformation.IsOSPlatform(OSPla
 
 
 
+```
+dotnet publish -c Release -r win-x64 --self-contained true
+```
+
+
+
+
+
 
 
 ```c#

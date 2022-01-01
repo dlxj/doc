@@ -4350,6 +4350,93 @@ Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在201
 
 
 
+```
+BERT 模型的训练分为预训练（Pre-training）和微调（Fine-tunning）两步。预训练和下游任务无关，却是一个非常耗时耗钱的过程。Google 坦言，对 BERT 的预训练一般需要 4 到 16 块 TPU 和一周的时间，才可以训练完成。
+
+庆幸的是，大部分 NLP 研究者只需使用 Google 发布的预训练模型，而不需要重复这一过程。你可以把预训练模型想象成一个 Prior，是对语言的先验知识，一旦拥有就不需要重复构造。
+
+微调取决于下游的具体任务。不同的下游任务意味着不同的网络扩展结构：比如一个对句子进行情感分类的任务，只需要在 BERT 的输出层句向量上接入几个 Dense 层，走个 softmax。而对于 SQuAD 上的阅读理解任务，需要对 BERT 输出的词向量增加 match 层和 softmax。
+
+总体来说，对 BERT 的微调是一个轻量级任务，微调主要调整的是扩展网络而非 BERT 本身。换句话说，我们完全可以固定住 BERT 的参数，把 BERT 输出的向量编码当做一个特征（feature）信息，用于各种下游任务。
+
+无论下游是什么任务，对于 NLP 研究者来说，最重要的就是获取一段文字或一个句子的定长向量表示，而将变长的句子编码成定长向量的这一过程叫做 sentence encoding/embedding。
+
+bert-as-service 正是出于此设计理念，将预训练好的 BERT 模型作为一个服务独立运行，客户端仅需通过简单的 API 即可调用服务获取句子、词级别上的向量。在实现下游任务时，无需将整个 BERT 加载到 tf.graph 中，甚至不需要 TensorFlow 也不需要 GPU，就可以在 scikit-learn, PyTorch, Numpy 中直接使用 BERT。
+```
+
+
+
+```
+在实际业务中，对给定Query检索特定范围内的词是十分常见的需求。
+
+对于字面上的匹配总体来说并不复杂，但实际效果就仅限于有字符交集的词语，若是想要上升到语义之间有相关度，就可以化归为学术界常见的语义匹配的问题。
+
+它们给句子的向量编码已经包含足够多的信息了，若是再辅以和业务相关的语料微调，就更好了，这也是最近大家实际应用时的做法。
+
+既然BERT是由多个transformer堆叠而成，而每层transformer都会输出【batch size sequence length hidden size】的向量，那么我们拿其中某层transformer的输出再改造改造作为输入句子的语义编码就好了。
+
+Query通过transformer拿到向量表示，那么词也以此拿到向量表示，而后将query和所有词语的表示计算相似度，按照阈值或者最大n个取出相似的词。
+```
+
+
+
+```
+transfomer的本质是喂入n个token， 输出n个token。当你输入的token不一样时输出的向量也不一样。 比如当你喂入我爱吃苹果， 在pooling_strategy设置为NONE的情况下， 你得到的output的第5和第6（[cls, 我， 爱 ， 吃， 苹， 果]）的代表苹和果的向量， 与你喂入苹果手机真好看的第1， 2的苹和果的向量是不同的。
+
+获得词的向量表示
+https://bert-as-service.readthedocs.io/en/latest/tutorial/token-embed.html
+	#　Getting ELMo-like contextual word embedding
+```
+
+
+
+```
+但是，当前开源的各类中文领域的深度预训练模型，多是面向通用领域的应用需求，在包括金融在内的多个垂直领域均没有看到相关开源模型。熵简科技希望通过本次开源，推动 NLP技术在金融领域的应用发展，欢迎学术界和工业界各位同仁下载使用，我们也将在时机合适的时候推出性能更好的 FinBERT 2.0 & 3.0。
+```
+
+
+
+```
+Soft-Masked BERT：文本纠错与BERT的最新结合
+	# https://zhuanlan.zhihu.com/p/144995580
+```
+
+
+
+```
+在专有领域如何训练自己的BERT？
+	# https://www.zhihu.com/question/434726886/answer/1644141072
+```
+
+
+
+```
+https://zhuanlan.zhihu.com/p/110655509
+	使用bert-serving生成词向量并聚类可视化
+	
+bert学习的是字与字之间的关系，你给它一句话，它通过字与字之间的联系输出句向量，你给它一个词语，她就输出这两个字之间的联系输出向量，因为同一个词在不同的语句里，所以它的上下文也不同，向量也不一样	
+	
+```
+
+
+
+```
+pytorch+huggingface实现基于bert模型的文本分类（附代码）
+	# https://www.cnblogs.com/tangjianwei/p/13334327.html
+	
+如果你熟悉transformer，相信理解bert对你来说没有任何难度。bert就是encoder的堆叠。
+
+如果你不熟悉transformer，这篇文章是我见过的最棒的transformer图解，可以帮助你理解：http://jalammar.github.io/illustrated-transformer/ 
+
+当然这个作者也做出了很棒的bert图解，链接在此：http://jalammar.github.io/illustrated-bert/
+```
+
+
+
+
+
+
+
 #### 从零开始训练
 
 https://huggingface.co/blog/how-to-train
@@ -4459,6 +4546,43 @@ p.355
 #### 过拟合
 
 验证集在训练过程中还可以用来监控模型是否发生过拟合，一般来说验证集表现稳定后，若继续训练，训练集表现还会继续上升，但是验证集会出现不升反降的情况，这样一般就发生了过拟合。
+
+
+
+## huggingface 企业级bert
+
+
+
+```
+# https://zhuanlan.zhihu.com/p/358525654
+这段时间疯狂用了一些huggingface来打比赛，大概是把整个huggingface的api摸得差不多了，后面分不同的块来记录一下常见的用法。
+
+transformers的前身是pytorch-transformers和pytorch-pretrained-bert，主要提供了自然语言理解（NLU）和自然语言生成（NLG）的通用体系结构（BERT，GPT-2，RoBERTa，XLM，DistilBert，XLNet等） ）包含超过32种以100多种语言编写的预训练模型，以及TensorFlow 2.0和PyTorch之间的深度互操作性。
+
+不过就上手而言，torch还是更顺滑一些（因为很多非官方例子都是用torch来撸的），顺便让我熟悉一下torch的使用。
+
+整体上调研了github上的多个相关的项目，包括huggingface transformer，谷歌开源的bert，bert4keras，tensorflow hub，以及其它的一些个人的keras-bert之类的实现，总的来说，huggingface的优点在于：
+
+1、企业级维护，可靠性高，生产上用起来放心；
+
+2、star多，issues多，网上能够找到的各种各样对应不同需求的demo代码多；
+
+3、适配tf.keras和torch，一次性可以撸两个框架；
+
+4、官方的tutorial是真的太特么全了
+
+5、在PyTorch和TensorFlow 2.0之间轻松切换，从而允许使用一种框架进行训练，而使用另一种框架进行推理。非常灵活，当然其实torch和tf之间框架互相转换的功能的library挺多的；
+```
+
+
+
+### 情感二分类
+
+```
+# https://github.com/karlhl/Bert-classification-pytorch
+```
+
+
 
 
 
@@ -5599,6 +5723,111 @@ pip install grpcio==1.11.0
 
 
 ## Colab
+
+
+
+### 中文
+
+
+
+```
+# https://albertauyeung.github.io/2020/03/15/matplotlib-cjk-fonts.html/
+
+!wget 'https://github.com/googlefonts/noto-cjk/raw/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Regular.otf'
+import matplotlib.font_manager as fm
+fprop = fm.FontProperties(fname='/content/NotoSerifCJKsc-Regular.otf')
+
+import matplotlib.pyplot as plt
+import random
+
+# Prepare some data
+x = list(range(20))
+xticks = ["类別{:d}".format(i) for i in x]
+y = [random.randint(10,99) for i in x]
+
+# Plot the graph
+plt.figure(figsize=(8, 2))
+plt.bar(x, y)
+plt.xticks(x, xticks, fontproperties=fprop, fontsize=12, rotation=45)
+plt.title("圖1", fontproperties=fprop, fontsize=18)
+plt.show()
+```
+
+
+
+### 聚类
+
+
+
+```python
+! pip install bert-serving-client
+! pip install -U bert-serving-server[http]
+%tensorflow_version 1.x
+import tensorflow
+print(tensorflow.__version__)
+! python --version
+! wget https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip
+! unzip ./chinese_L-12_H-768_A-12.zip 
+! nohup bert-serving-start -model_dir=/content/chinese_L-12_H-768_A-12 > out.file 2>&1 &
+
+
+from bert_serving.client import BertClient
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+! git clone https://github.com/fighting41love/funNLP.git
+! wget 'https://github.com/googlefonts/noto-cjk/raw/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Regular.otf'
+import matplotlib.font_manager as fm
+fprop = fm.FontProperties(fname='/content/NotoSerifCJKsc-Regular.otf')
+
+
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+corpus = []
+bc = BertClient()
+km = KMeans(n_clusters=2)
+pca = PCA(n_components=2)
+gb = open('/content/funNLP/data/动物词库/THUOCL_animal.txt',encoding='utf-8').readlines()
+for word in gb[:30]:    #为了方便，每个词库只取了前面30个单词
+    word = word.split('\t')
+    corpus.append(word[0])
+
+fb = open('/content/funNLP/data/地名词库/THUOCL_diming.txt',encoding='utf-8').readlines()
+for word in fb[:30]:
+    word = word.split('\t')
+    corpus.append(word[0])
+
+vectors = bc.encode(corpus)
+vectors_ = pca.fit_transform(vectors)   #降维到二维
+y_ = km.fit_predict(vectors_)       #聚类
+#plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.scatter(vectors_[:,0],vectors_[:, 1],c=y_)   #将点画在图上 # fontproperties
+for i in range(len(corpus)):    #给每个点进行标注
+    plt.annotate(s=corpus[i], xy=(vectors_[:, 0][i], vectors_[:, 1][i]),
+                 xytext=(vectors_[:, 0][i] + 0.1, vectors_[:, 1][i] + 0.1),
+                 fontproperties=fprop)
+plt.show()
+```
+
+
+
+### 多分类
+
+
+
+```
+NLP（三十五）使用keras-bert实现文本多分类任务
+https://blog.csdn.net/jclian91/article/details/111742576
+```
+
+
+
+
+
+
+
+
 
 
 

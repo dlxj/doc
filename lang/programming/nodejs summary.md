@@ -214,6 +214,50 @@ module.exports =
 
 
 ```
+	# 新版好像要自已处理 form-urlencoded 了
+	let bent = require('bent')
+    let formurlencoded = require('form-urlencoded')
+    let mysql = require('./mysql')
+
+    let host = 'localhost:62137'
+
+    async function Convert2GIF(str_base64) {
+    
+        let url = `http://${host}`
+
+        let json = {
+            image_base64: str_base64
+        }
+
+        let formurlencoded_json = formurlencoded(json)
+
+        let post = bent(url, 'POST', 'json', 200)
+        let response = await post('/Convert2GIF', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded'})
+
+        if (response.status == 200) {
+            return [ response.data, '']
+        } else {
+            return [null, response.msg]
+        }
+
+        return response
+
+    }
+
+
+    let [str_base64_gif, ms] = await Convert2GIF('aaa')
+    if (str_base64 === null) {
+
+        throw 'Error: convert image to GIF fail! ' + ms
+
+    }
+```
+
+
+
+
+
+```
 # 参数太长也会出错
 
 ( async ()=>{
@@ -232,7 +276,7 @@ module.exports =
   let url = `http://${host}`
 
   let post = bent(url, 'POST', 'json', 200)
-  let response = await post('xxxxx', json)
+  let response = await post('/Convert2GIF', json)
 
   var idArray = response.data
 
@@ -1029,6 +1073,20 @@ _.isEmpty(dic_ansers)
 
 
 # File
+
+
+
+## exist
+
+
+
+```
+fs.existsSync( path )
+```
+
+
+
+## read write
 
 
 
@@ -2494,6 +2552,63 @@ You can insert Buffer (https://nodejs.org/dist/latest-v14.x/docs/api/buffer.html
 
 
 
+## OpenCV
+
+
+
+```
+const mat = cv.imdecode(Buffer.from(data, 'base64))
+mat.SaveImage(savePath)
+```
+
+
+
+
+
+```
+const cv = require('opencv4nodejs');
+ 
+const originalImage = cv.imread('C:/Users/N/Desktop/Test.jpg');
+ 
+const grayImage = originalImage.bgrToGray();
+ 
+cv.imshow('Grey Image', grayImage);
+cv.imshow('Original Image', originalImage);
+ 
+cv.waitKey();
+```
+
+
+
+```
+// convert to normal array
+const normalArray = Array.from(imageData);
+//nest the pixel channels
+const channels = 4 //canvas pixels contain 4 elements: RGBA
+const nestedChannelArray = _.chunk(normalArray, channels);
+const nestedImageArray = _.chunk(nestedChannelArray, height);
+
+//nestedImageArray is the correct shape to be converted to matrix. 
+
+const RGBAmat = new cv.Mat(nestedImageArray, cv.CV_8UC4);
+
+//openCV often defaults to BGR-type image matrix, so lets color convert the pixel order
+
+const BGRAmat = RGBAmat.cvtColor(cv.COLOR_RGBA2BGRA);
+```
+
+
+
+## GIF
+
+
+
+```
+https://github.com/kohler/gifsicle
+```
+
+
+
 
 
 ## exec
@@ -2562,6 +2677,127 @@ pm2 restart id --name newName
 
 
 # node ffi
+
+
+
+```
+npm install -g node-gyp
+npm install ffi-napi
+
+hi.cpp
+#include <stdint.h>
+#if defined(WIN32) || defined(_WIN32)
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT
+#endif
+
+extern "C" {
+
+    EXPORT uint64_t factorial(int max) {
+        int i = max;
+        uint64_t result = 1;
+        while (i >= 2) {
+            result *= i--;
+        }
+        return result;
+    }
+}
+
+xx.js
+var FFI = require('ffi-napi')
+var kernel32 = FFI.Library("kernel32", {
+    'SetDllDirectoryA': ["bool", ["string"]]
+    })
+kernel32.SetDllDirectoryA("D:\\workcode\\nodejs\\OCR_IMGExtract")
+var hi = new FFI.Library('hi', {
+   'factorial': [
+      'int', ['int']
+   ]
+});
+
+console.log ( hi.factorial(3) )
+
+```
+
+
+
+```
+# C# 5.0 的跨平台方案
+# https://stackoverflow.com/questions/1314769/calling-c-sharp-from-native-c-without-clr-or-com
+
+# https://github.com/dotnet/docs/issues/18174
+
+With .NET 5.0 (the successor of .NET core) this is now possible to call C# from C++ in a cross-platform way without using Mono. Please see the solution explained in this Github issue using DNNE to generate a shared library and GCHandles to access C# objects.
+
+With this you get a shared library that can be used from C or C++. Note that this will give a C-like API (no objects, like when using extern C in C++), in the future there may be tools like SWIG for C++ to overcome this limitation.
+
+
+@Gili here is a snippet demonstrating a C# interface that can be called using this method: github.com/dotnet/docs/issues/18174#issuecomment-642124735 People should refer to the DNNE documentation for how to create a DLL. This is a very new feature (.NET 5.0 is still in beta) but as it was not mentioned anywhere on SO I assumed it would be ok to not have more inline content yet. Moreover the other answer was found helpful (+5) despite not having inlined code. – 
+Gabriel Devillers
+ Aug 2 '20 at 20:01
+
+```
+
+
+
+
+
+```
+C#:
+class Test
+{
+  [DllExport("add", CallingConvention = CallingConvention.Cdecl)]
+  public static int TestExport(int left, int right)
+  {
+     return left + right;
+  } 
+}
+F#:
+open RGiesecke.DllExport
+open System.Runtime.InteropServices
+
+type Test() =
+  [<DllExport("add", CallingConvention = CallingConvention.Cdecl)>]
+  static member TestExport(left : int, right : int) : int = left + right
+```
+
+
+
+
+
+
+
+```
+
+.cs
+namespace MyDLL
+{
+    public class Class1
+    {
+        public static double add(double a, double b)
+        {
+            return a + b;
+        }
+    }
+}
+
+.cpp
+#include "pch.h"
+#include "stdafx.h"
+using namespace System;
+#using "MyDLL.dll"
+
+int main(array<System::String ^> ^args)
+{
+    double x = MyDLL::Class1::add(40.1, 1.9);
+    return 0;
+}
+```
+
+
+
+
 
 
 
@@ -2723,6 +2959,193 @@ Review the MSDN docs to understand the method signatures and structs used. Hope 
 
 
 来源： <http://stackoverflow.com/questions/14799035/node-webkit-winapi?lq=1>
+
+```
+
+
+
+## DNNE C# interop lib
+
+
+
+```
+ExportingAssembly.IntExports.IntInt(4) // return 3 * 4 shoud be
+```
+
+
+
+
+
+```
+https://github.com/AaronRobinsonMSFT/DNNE
+[.NET大牛之路 007] 详解 .NET 程序集 
+	# https://www.cnblogs.com/willick/p/15155192.html
+```
+
+
+
+```
+C#
+using System;
+
+namespace ManagedDll
+{
+    public class ManagedClass
+    {
+        public ManagedClass()
+        {
+            
+        }
+
+        public int Add(int i, int j)
+        {
+            return(i+j);
+        }
+    }
+}
+
+
+C++ 
+C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO .NET 2003\SDK\V1.1\BIN, and C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO .NET 2003\SDK\V1.1\LIB for MSCOREE.H and MSCOREE.LIB.
+
+#include "stdafx.h"
+#include <atlbase.h>
+#include <mscoree.h>
+#include <comutil.h>
+
+// Need to be modified as your directory settings.
+#import "C:\\WINNT\\Microsoft.NET\\Framework\\" 
+        "v1.1.4322\\Mscorlib.tlb" raw_interfaces_only    
+
+using namespace mscorlib;
+
+
+int CallManagedFunction(char*, char*, BSTR, int, 
+                          VARIANT *, VARIANT *);
+
+int main(int argc, char* argv[])
+{
+
+    VARIANT varArgs[2] ;
+
+    varArgs[0].vt = VT_INT;
+    varArgs[0].intVal = 1;
+
+    varArgs[1].vt = VT_INT;
+    varArgs[1].intVal = 2;
+
+    VARIANT varRet;
+    varRet.vt = VT_INT;
+    //Calling manageddll.dll Add() method.
+    int iRet = CallManagedFunction("ManagedDll", 
+               "ManagedDll.ManagedClass",L"Add",
+               2,varArgs,&varRet);
+    if(!iRet)
+        printf("\nSum = %d\n",varRet.intVal);
+
+    return 0;
+}
+
+int CallManagedFunction(char* szAsseblyName, 
+    char* szClassNameWithNamespace,BSTR szMethodName, 
+    int iNoOfParams, VARIANT * pvArgs, VARIANT * pvRet)
+{
+    CComPtr<ICorRuntimeHost>    pRuntimeHost;
+    CComPtr<_AppDomain>            pDefAppDomain;
+
+    try
+    {
+        //Retrieve a pointer to the ICorRuntimeHost interface
+        HRESULT hr = CorBindToRuntimeEx(
+            NULL,    //Specify the version 
+                     //of the runtime that will be loaded. 
+            L"wks",  //Indicate whether the server
+                     // or workstation build should be loaded.
+            //Control whether concurrent
+            //or non-concurrent garbage collection
+            //Control whether assemblies are loaded as domain-neutral. 
+            STARTUP_LOADER_SAFEMODE | STARTUP_CONCURRENT_GC, 
+            CLSID_CorRuntimeHost,
+            IID_ICorRuntimeHost,
+            //Obtain an interface pointer to ICorRuntimeHost 
+            (void**)&pRuntimeHost
+            );
+        
+        if (FAILED(hr)) return hr;
+        
+        //Start the CLR
+        hr = pRuntimeHost->Start();
+        
+        CComPtr<IUnknown> pUnknown;
+        
+        //Retrieve the IUnknown default AppDomain
+        hr = pRuntimeHost->GetDefaultDomain(&pUnknown);
+        if (FAILED(hr)) return hr;
+        
+        hr = pUnknown->QueryInterface(&pDefAppDomain.p);
+        if (FAILED(hr)) return hr;
+        
+        CComPtr<_ObjectHandle> pObjectHandle;
+        
+        
+        _bstr_t _bstrAssemblyName(szAsseblyName);
+        _bstr_t _bstrszClassNameWithNamespace(szClassNameWithNamespace);
+        
+        //Creates an instance of the Assembly
+        hr = pDefAppDomain->CreateInstance( 
+            _bstrAssemblyName,
+            _bstrszClassNameWithNamespace,
+            &pObjectHandle
+            );
+        if (FAILED(hr)) return hr;
+        
+        CComVariant VntUnwrapped;
+        hr = pObjectHandle->Unwrap(&VntUnwrapped);
+        if (FAILED(hr)) return hr;
+        
+        if (VntUnwrapped.vt != VT_DISPATCH)    
+            return E_FAIL;
+        
+        CComPtr<IDispatch> pDisp;
+        pDisp = VntUnwrapped.pdispVal;
+        
+        DISPID dispid;
+        
+        DISPPARAMS dispparamsArgs = {NULL, NULL, 0, 0};
+        dispparamsArgs.cArgs = iNoOfParams;
+        dispparamsArgs.rgvarg = pvArgs;
+        
+        hr = pDisp->GetIDsOfNames (
+            IID_NULL, 
+            &szMethodName,
+            1,
+            LOCALE_SYSTEM_DEFAULT,
+            &dispid
+            );
+        if (FAILED(hr)) return hr;
+        
+        //Invoke the method on the Dispatch Interface
+        hr = pDisp->Invoke (
+            dispid,
+            IID_NULL,
+            LOCALE_SYSTEM_DEFAULT,
+            DISPATCH_METHOD,
+            &dispparamsArgs,
+            pvRet,
+            NULL,
+            NULL
+            );
+        if (FAILED(hr)) return hr;
+        
+        pRuntimeHost->Stop();
+
+        return ERROR_SUCCESS;
+    }
+    catch(_com_error e)
+    {
+        //Exception handling.
+    }
+}
 
 ```
 
