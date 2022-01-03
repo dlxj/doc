@@ -7316,11 +7316,44 @@ CONFIG SET protected-mode no
 
 
 
+# Extract Video Subtitle
+
+
+
+### 分离人声伴奏
+
+```
+# https://github.com/deezer/spleeter
+```
+
+
+
+
+
+
+
+```
+# https://github.com/YaoFANGUK/video-subtitle-extractor
+
+from backend.main import SubtitleExtractor
+# 输入视频路径
+# 新建字幕提取对象
+se = SubtitleExtractor(video_path, subtitle_area)
+# 开始提取字幕
+se.run()
+```
+
+
+
+
+
 # PYQT
 
 ## 提取视频人声
 
 ```
+# https://gitee.com/m986883511/python_demo/blob/master/%E5%AD%97%E5%B9%95%E7%A1%AC%E6%8F%90%E5%8F%96/main.py
+
 # marsmarcin
 # 2020.3.11
 # a test version for a beautiful system
