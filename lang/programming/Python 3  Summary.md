@@ -7352,7 +7352,9 @@ se.run()
 ## 提取视频人声
 
 ```
+# https://github.com/YaoFANGUK/video-subtitle-extractor/issues/15
 # https://gitee.com/m986883511/python_demo/blob/master/%E5%AD%97%E5%B9%95%E7%A1%AC%E6%8F%90%E5%8F%96/main.py
+# doc\lang\programming\python\studioclassroom_FulltextSearch\insertanime\extract_human_audio.py
 
 # marsmarcin
 # 2020.3.11
