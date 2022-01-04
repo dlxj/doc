@@ -16,7 +16,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QTextEdit, QLabel, QFileDialog, QMessageBox
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
-from subtext.scripts import get_extract_voice_progress
+#from subtext.scripts import get_extract_voice_progress
 
 current_dir = os.path.dirname(__file__)
 
@@ -165,7 +165,7 @@ class MainUi(QtWidgets.QMainWindow):
         str1 = str1.decode('gbk').strip()
         if str1:
             self.show_text.append(str1)
-            progress = get_extract_voice_progress(str1)
+            progress = False  # get_extract_voice_progress(str1)
             if progress:
                 self.update_process_bar(progress)
 
