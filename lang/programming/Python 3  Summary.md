@@ -7686,7 +7686,13 @@ if __name__ == '__main__':
 
 
 
-# Pyqtdeploy
+# Pyqt5
+
+```
+https://www.zhihu.com/column/xdbcb8
+```
+
+Pyqtdeploy 
 
 
 
