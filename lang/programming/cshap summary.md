@@ -2448,6 +2448,41 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+# File
+
+
+
+## 建目录如不存在
+
+```
+using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+			string dir = Path.Join(new string[] { rootImageDir, bookNO });
+            if ( ! Directory.Exists(dir) )  // 目录不存在，创建
+            {
+                DirectoryInfo di = Directory.CreateDirectory(dir);
+                if (!Directory.Exists(dir))
+                {
+                    return new JsonResult(new { status = 200, msg = "success.", data = new { isSave = false, msg = $"创健目录失败：{dir}" } });
+                }
+            }
+
+            string image_path = Path.Join(new string[] { dir, image_name });
+
+            if (System.IO.File.Exists(image_path))
+            {
+                // 文件已存在
+                return new JsonResult(new { status = 200, msg = "success.", data = new { isSave = false, msg = "文件已存在" } });
+
+            }
+```
+
+
+
+
+
 
 
 # 图像

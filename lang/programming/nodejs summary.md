@@ -421,6 +421,21 @@ new RegExp(String.raw`^(?!.*E\.).*$`, 'gs')  // 参数g 全局匹配，参数s �
 
 
 
+## 匹配所有
+
+
+
+```
+# 更方便的方法,match 有index（注意：str, re 要在while 的外面定义，否则死循环）
+let str = 'axxaxxa'
+let re = /a/g
+while( ( match = re.exec(str)) != null ) {
+  a = 1
+}
+```
+
+
+
 
 
 ## matchAll
@@ -975,6 +990,22 @@ if (text.includes(word)) {}
 
 
 # Array
+
+
+
+## join
+
+
+
+```
+# 连成字符串，中间加空格
+const arr = ['Fire', 'Air', 'Water'];
+console.log(arr.join(' '));
+```
+
+
+
+
 
 
 
