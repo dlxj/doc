@@ -7120,8 +7120,9 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 # https://docs.manim.community/en/stable/examples.html
 	# 高级例子
 
+# https://docs.manim.community/en/stable/installation/jupyter.html
 # https://docs.manim.community/en/stable/reference/manim.utils.ipython_magic.ManimMagic.html
-	# 整合jupyter
+	# 整合jupytern
 
 ```
 
