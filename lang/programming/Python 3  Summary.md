@@ -5905,6 +5905,51 @@ revenue.sort_values(ascending=False).index[0]
 
 ## Matplotlib
 
+
+
+### 显示GIF 
+
+
+
+```python
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+fig, ax = plt.subplots()
+fig.set_tight_layout(True)
+
+print('fig size: {0} DPI, size in inches {1}'.format(
+    fig.get_dpi(), fig.get_size_inches()))
+
+x = np.arange(0, 20, 0.1)
+ax.scatter(x, x + np.random.normal(0, 3.0, len(x)))
+line, = ax.plot(x, x - 5, 'r-', linewidth=2)
+
+def update(i):
+    label = 'timestep {0}'.format(i)
+    line.set_ydata(x - 5 + i)
+    ax.set_xlabel(label)
+    return line, ax
+anim = FuncAnimation(fig, update, frames=np.arange(0, 10), interval=200)
+anim.save('line.gif', dpi=80)
+from IPython.display import HTML
+HTML('<img src="line.gif">')
+```
+
+
+
+### 线性变换
+
+```
+# https://dododas.github.io/linear-algebra-with-python/posts/16-12-29-2d-transformations.html
+```
+
+
+
+
+
 ### 绘图的重要参考
 
 #### 深入理解神经网络：从逻辑回归到CNN.md
@@ -7064,6 +7109,52 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 
 <img src="Python 3  Summary.assets/image-20200710172303832.png" alt="image-20200710172303832" style="zoom:50%;" />
+
+
+
+## ManimCE
+
+
+
+```
+# https://docs.manim.community/en/stable/examples.html
+	# 高级例子
+
+# https://docs.manim.community/en/stable/reference/manim.utils.ipython_magic.ManimMagic.html
+	# 整合jupyter
+
+```
+
+
+
+
+
+### 上滑动画
+
+```
+class Scroll(AnimationGroup):
+    def __init__(self, mob, target_mob, shift=UP):
+        super().__init__(
+            FadeIn(target_mob, shift=shift),
+            FadeOut(mob, shift=shift),
+        )
+        
+class Test(Scene):
+    def construct(self):
+        a = Text("Hello")
+        b = Text("World")
+        self.add(a)
+        # self.play(FadeIn(b, shift=UP), FadeOut(a, shift=UP))
+        self.play(Scroll(a, b))
+        self.wait()
+
+```
+
+
+
+
+
+
 
 
 
