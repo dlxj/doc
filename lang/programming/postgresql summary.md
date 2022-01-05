@@ -1732,6 +1732,44 @@ createDatabase_economistglobl()
 
 
 
+### json
+
+
+
+```
+CREATE TABLE bookdata (
+  id  serial NOT NULL PRIMARY KEY,
+  info json NOT NULL
+)
+
+CREATE INDEX bookdata_fts ON bookdata USING gin((to_tsvector('english',info->'title')));
+
+INSERT INTO bookdata (info)
+VALUES
+ ( '{ "title": "The Tattooed Duke", "items": {"product": "Diaper","qty": 24}}'),
+ ( '{ "title": "She Tempts the Duke", "items": {"product": "Toy Car","qty": 1}}'),
+ ( '{ "title": "The Duke Is Mine", "items": {"product": "Toy Train","qty": 2}}'),
+ ( '{ "title": "What I Did For a Duke", "items": {"product": "Toy Train","qty": 2}}'),
+ ('{ "title": "King Kong", "items": {"product": "Toy Train","qty": 2}}');
+
+SELECT info -> 'title' as title FROM bookdata
+WHERE to_tsvector('english',info->'title') @@ to_tsquery('Duke');
+```
+
+
+
+
+
+```
+https://stackoverflow.com/questions/45680936/how-to-implement-full-text-search-on-complex-nested-jsonb-in-postgresql
+```
+
+
+
+
+
+
+
 ## Docker
 
 ```
