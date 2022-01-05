@@ -7131,6 +7131,52 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 
 
+### 画向量
+
+
+
+```
+from manim import *
+
+class transform(Scene):
+    def construct(self):
+        dot = Dot(ORIGIN)
+        arrow = Arrow(ORIGIN, [2, 2, 0], buff=0)
+        numberplane = NumberPlane()
+        origin_text = Text('(0, 0)').next_to(dot, DOWN)
+        tip_text = Text('(2, 2)').next_to(arrow.get_end(), RIGHT)
+
+        self.add(numberplane)
+        self.add(dot, arrow, origin_text)
+```
+
+
+
+### 线性变换
+
+
+
+```
+from manim import *
+
+class LinearTransformationSceneExample(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            leave_ghost_vectors=True,
+        )
+
+    def construct(self):
+        matrix = [[1, 1], [0, 1]]
+        self.apply_matrix(matrix)
+        self.wait()
+```
+
+
+
+
+
 
 
 ### 上滑动画
