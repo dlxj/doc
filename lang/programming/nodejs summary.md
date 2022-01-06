@@ -1060,7 +1060,7 @@ Object.keys(obj).forEach(function(key) {
 });
 ECMAScript 6 adds for...of:
 
-for (const key of Object.keys(obj)) {
+for (let key of Object.keys(obj)) {
     console.log(key, obj[key]);
 }
 ECMAScript 8 adds Object.entries() which avoids having to look up each value in the original object:
