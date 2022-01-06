@@ -7524,6 +7524,12 @@ CONFIG SET protected-mode no
 
 # Extract Video Subtitle
 
+
+
+- https://github.com/YaoFANGUK/video-subtitle-extractor
+
+
+
 ### 提取关键帧图片带时间
 
 ```
