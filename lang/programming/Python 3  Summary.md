@@ -7117,6 +7117,10 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 
 ```
+# https://github.com/brianamedee/Manim-Tutorials-2021
+	# https://www.youtube.com/watch?v=Yf9QnATooqA
+	# 极好的例子
+
 # https://docs.manim.community/en/stable/examples.html
 	# 高级例子
 	
@@ -7174,6 +7178,67 @@ class LinearTransformationSceneExample(LinearTransformationScene):
 ```
 
 
+
+###　移动的方块
+
+
+
+```
+%%manim -v WARNING -qm Tute1
+
+from manim import *
+config.media_width = "60%"
+
+import numpy as np
+import random
+
+class Tute1(Scene):
+    def construct(self):
+
+        plane = NumberPlane(x_range=[-7,7,1], y_range=[-4,4,1]).add_coordinates()
+        box = Rectangle(stroke_color = GREEN_C, stroke_opacity=0.7, fill_color = RED_B, fill_opacity = 0.5, height=1, width=1)
+
+        dot = always_redraw(lambda : Dot().move_to(box.get_center())) # 始终重绘，每次都移动到盒子的中心
+        
+
+        self.add(box, dot)
+        self.play(box.animate.shift(RIGHT*2), run_time=4)  # 右移
+        self.wait()
+        self.play(box.animate.shift(UP*3), run_time=4)     # 上移
+        self.wait()
+        self.play(box.animate.shift(DOWN*5+LEFT*5), run_time=4)  # 左下移
+        self.wait()
+        self.play(box.animate.shift(UP*1.5+RIGHT*1), run_time=4)  # 右上移
+        self.wait()
+```
+
+
+
+### 取消更新
+
+
+
+```
+        rectangle = RoundedRectangle(stroke_width = 8, stroke_color = WHITE,
+        fill_color = BLUE_B, width = 4.5, height = 2).shift(UP*3+LEFT*4)
+
+        mathtext = MathTex("\\frac{3}{4} = 0.75"
+        ).set_color_by_gradient(GREEN, PINK).set_height(1.5)
+        mathtext.move_to(rectangle.get_center())
+        mathtext.add_updater(lambda x : x.move_to(rectangle.get_center()))
+
+
+        self.play(FadeIn(rectangle))
+        self.wait()
+        self.play(Write(mathtext), run_time=2)
+        self.wait()
+
+        self.play(rectangle.animate.shift(RIGHT*1.5+DOWN*5), run_time=6)
+        self.wait()
+        mathtext.clear_updaters()
+        self.play(rectangle.animate.shift(LEFT*2 + UP*1), run_time=6)
+        self.wait()
+```
 
 
 
@@ -7458,6 +7523,18 @@ CONFIG SET protected-mode no
 
 
 # Extract Video Subtitle
+
+### 提取关键帧图片带时间
+
+```
+"""
+ffmpeg -skip_frame nokey -i 1.mp4 -r 1000 -vsync 0 -frame_pts true tmp/out%d.png
+	# 只要关键帧，数字代表的时间是毫秒数（1/1000秒）
+skip_frame tells the decoder to process only keyframes. -vsync 0 (in this command) preserves timestamps. -frame_pts sets the numeral portion of the output image filename to represent the timestamp. The interpretation of the number requires you to know the framerate e.g. if the framerate is 30 then an image name of out75 corresponds to a timestamp of 75/30 = 2.50 seconds. You can add -r 1000 if you want numbers to represent milliseconds.
+"""
+```
+
+
 
 
 
