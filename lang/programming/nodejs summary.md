@@ -2285,7 +2285,26 @@ npm install kuroshiro@1.1.2
 
 ```
 https://www.postgresql.org/docs/13/functions-textsearch.html
+Tsvector_update_trigger jsonb  site:cnblogs.com
 ```
+
+
+
+### json
+
+
+
+#### trigger
+
+
+
+- https://dba.stackexchange.com/questions/286660/how-to-use-tsvector-update-trigger-with-jsonb-column 
+
+
+
+
+
+
 
 
 
