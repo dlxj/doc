@@ -375,6 +375,14 @@ module.exports = {
 
 
 
+## global 
+
+
+
+global 是内置的全局对象，任意地方可用（可以把任意东西装进出，制造一个合局入口）
+
+
+
 
 
 # Regex
