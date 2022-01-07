@@ -38,7 +38,25 @@
      WHERE to_tsvector('english',info->'title') @@ to_tsquery('Duke');
      `)
 
+    let sta1 = pg.defaultDB.status()
+    let sta2 = tempDB.status()
+
+    re = await tempDB.release()
+    re = await pg.defaultDB.release()
 
     a = 1
 })()
 
+
+/*
+
+sql = $"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;";  // 不用系统的分司插件，手动分词（用NGram）
+
+
+sql = f"""insert into anime(name, seasion, jp, time, jp_mecab, zh, v_zh, videoname, audio, video) values('{animename}', '{seasion}','{j}', '{t}', '{tags}', '{zh}', to_tsvector('jiebacfg', '{zh}'), '{videoname}', %s, %s);"""
+sql = $"SELECT id, jp, zh, time FROM anime WHERE v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;";  // 系统分词
+
+
+to_tsvector('fat cats ate rats') @@ to_tsquery('cat & rat')
+
+*/

@@ -30,9 +30,37 @@ function getDB (dbname) {
 
       //await client.query('select $1::text as name', ['brianc'])
       let result = await conn.query(sql, par)
+      conn.release(true)
+
       return result
 
-    }
+    },
+    async release() {
+      return await new Promise((resolve, reject) => {
+        pool.end().then(() => {
+          resolve(`pool has been release, db is ${config.database}`)
+        })
+      })
+    
+    },
+    status() {
+      let totalCount = pool.totalCount
+      let idleCount = pool.idleCount
+      let waitingCount = pool.waitingCount
+      return { totalCount, idleCount, waitingCount }
+    } 
+
+    /*
+    pool.totalCount: int
+      The total number of clients existing within the pool.
+
+    pool.idleCount: int
+      The number of clients which are not checked out but are currently idle in the pool.
+
+    pool.waitingCount: int
+      The number of queued requests waiting on a client when all clients are checked out. It can be helpful to monitor this number to see if you need to adjust the size of the pool.
+    */
+
   }
 
   return lib
