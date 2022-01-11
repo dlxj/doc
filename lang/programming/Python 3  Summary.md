@@ -7842,6 +7842,21 @@ if __name__ == '__main__':
 
 
 
+# paddleOCR
+
+
+
+```
+anaconda3+ paddleOCR安装使用 
+	# https://www.cnblogs.com/xuanmanstein/p/13840670.html
+```
+
+
+
+
+
+
+
 # EasyOCR
 
 
