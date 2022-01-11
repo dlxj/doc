@@ -7530,6 +7530,17 @@ CONFIG SET protected-mode no
 
 
 
+```
+subtitle_area = (self.ymin, self.ymax, self.xmin, self.xmax)
+from backend.main import SubtitleExtractor
+self.se = SubtitleExtractor(self.video_path, subtitle_area)
+Thread(target=self.se.run, daemon=True).start()
+```
+
+
+
+
+
 ### 提取关键帧图片带时间
 
 ```

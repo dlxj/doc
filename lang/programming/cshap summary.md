@@ -83,6 +83,18 @@ Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时�
 
 
 
+```
+using Newtonsoft.Json;
+JObject json = (JObject)JsonConvert.DeserializeObject(message);
+json["outPath"].ToString(), json["list"].Value<JArray>(), json["fileType"].Value<string>(), json["startPage"].Value<int>()
+```
+
+
+
+
+
+
+
 Newtonsoft.Json
 
 
