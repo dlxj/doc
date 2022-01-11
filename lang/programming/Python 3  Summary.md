@@ -7530,7 +7530,23 @@ CONFIG SET protected-mode no
 
 
 
-```
+```python
+"""
+git clone https://github.com/YaoFANGUK/video-subtitle-extractor.git
+
+pip install -r requirements.txt  # for backend
+
+opencv-python==4.5.4.60
+python-Levenshtein-wheels==0.13.2
+paddlepaddle==2.1.3
+filesplit==3.0.2
+pysrt==1.1.2
+wordsegment==1.3.1
+imgaug==0.4.0
+pyclipper==1.3.0.post2
+lmdb==1.2.1
+"""
+
 subtitle_area = (self.ymin, self.ymax, self.xmin, self.xmax)
 from backend.main import SubtitleExtractor
 self.se = SubtitleExtractor(self.video_path, subtitle_area)
@@ -7823,6 +7839,20 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+
+
+# EasyOCR
+
+
+
+```
+# https://blog.csdn.net/woshicver/article/details/120300161
+```
+
+
+
+
 
 
 
