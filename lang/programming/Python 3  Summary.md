@@ -7549,8 +7549,66 @@ lmdb==1.2.1
 
 subtitle_area = (self.ymin, self.ymax, self.xmin, self.xmax)
 from backend.main import SubtitleExtractor
-self.se = SubtitleExtractor(self.video_path, subtitle_area)
-Thread(target=self.se.run, daemon=True).start()
+self.se = SubtitleExtractor(self.video_path, subtitle_area) 
+# 'D:/Downloads/火影忍者天空树双语/火影忍者001天空树双语.mp4'
+#  (834, 897, 0, 1280)
+
+
+    def _compare_ocr_result(self, img1, img2):
+        """
+        比较两张图片预测出的字幕区域文本是否相同
+        """
+        area_text1 = "".join(self.__get_area_text(self.ocr.predict(img1)))
+        area_text2 = "".join(self.__get_area_text(self.ocr.predict(img2)))
+        if ratio(area_text1, area_text2) > config.THRESHOLD_TEXT_SIMILARITY:
+            return True
+        else:
+            return False
+        
+        
+        
+        
+        
+         # 删除缓存
+        if os.path.exists(self.raw_subtitle_path):
+            os.remove(self.raw_subtitle_path)
+        # 新建文件
+        f = open(self.raw_subtitle_path, mode='w+', encoding='utf-8')
+
+        for i, frame in enumerate(frame_list):
+            # 读取视频帧
+            img = cv2.imread(os.path.join(self.frame_output_dir, frame))
+            # 获取检测结果
+            dt_box, rec_res = text_recogniser.predict(img)
+            # 获取文本坐标
+            coordinates = self.__get_coordinates(dt_box)
+            # 将结果写入txt文本中
+            text_res = [(res[0], res[1]) for res in rec_res]
+            # 进度条
+            self.progress = i / len(frame_list) * 100
+            for content, coordinate in zip(text_res, coordinates):
+                if self.sub_area is not None:
+                    s_ymin = self.sub_area[0]
+                    s_ymax = self.sub_area[1]
+                    s_xmin = self.sub_area[2]
+                    s_xmax = self.sub_area[3]
+                    xmin = coordinate[0]
+                    xmax = coordinate[1]
+                    ymin = coordinate[2]
+                    ymax = coordinate[3]
+                    if s_xmin <= xmin and xmax <= s_xmax and s_ymin <= ymin and ymax <= s_ymax:
+                        print(content[0])
+                        if content[1] > config.DROP_SCORE:
+                            f.write(f'{os.path.splitext(frame)[0]}\t'
+                                    f'{coordinate}\t'
+                                    f'{content[0]}\n')
+                else:
+                    f.write(f'{os.path.splitext(frame)[0]}\t'
+                            f'{coordinate}\t'
+                            f'{content[0]}\n')
+        # 关闭文件
+        f.close()
+        
 ```
 
 
