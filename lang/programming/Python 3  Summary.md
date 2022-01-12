@@ -7615,6 +7615,48 @@ self.se = SubtitleExtractor(self.video_path, subtitle_area)
 
 
 
+```
+
+from tools.infer import utility
+from tools.infer.predict_system import TextSystem
+
+import config
+from config import interface_config
+
+import cv2
+
+
+if __name__ == '__main__':
+
+    args = utility.parse_args()
+
+    args.use_gpu = False
+    
+    # 加载快速模型
+    args.det_model_dir = config.DET_MODEL_FAST_PATH
+    # 加载快速模型
+    args.rec_model_dir = config.REC_MODEL_FAST_PATH
+
+    # 设置字典路径
+    args.rec_char_dict_path = config.DICT_PATH
+    # 设置识别文本的类型
+    args.rec_char_type = config.REC_CHAR_TYPE
+
+    recogniser = TextSystem(args)
+
+    img = cv2.imread('1.png')
+
+    detection_box, recognise_result = recogniser(img)
+
+    a = 1
+```
+
+
+
+
+
+
+
 ### 提取关键帧图片带时间
 
 ```
