@@ -1213,6 +1213,25 @@ function getContent(fileName) {
 
 
 
+## 图片
+
+
+
+```
+
+		if (!fs.existsSync(gifpath)) {
+          return [null, `图片不存在${gifpath}`]
+        }
+
+        let bytes = fs.readFileSync(gifpath)  // 'binary'
+        let b64 = Buffer.from(bytes).toString('base64')  // new Buffer(bytes)
+        b64s.push(b64)
+```
+
+
+
+
+
 # args
 
 
