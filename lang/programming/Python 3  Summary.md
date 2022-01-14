@@ -8134,11 +8134,13 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 # pip install seleniu
 
 
+from pymysql import NULL
 from selenium import webdriver
 
 from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver.common.keys import Keys
 
-
+show = True  # UI OR not
 
 if __name__  ==  "__main__": 
 
@@ -8146,10 +8148,13 @@ if __name__  ==  "__main__":
     
     
     opt = webdriver.ChromeOptions()
-    opt.headless = True
+    opt.headless = show
 
-    #wd=webdriver.Chrome()
-    wd=webdriver.Chrome(options=opt) # NO UI setting
+    # wd = NULL
+    if show:
+        wd=webdriver.Chrome()
+    else:
+        wd=webdriver.Chrome(options=opt) # NO UI setting
     wd.implicitly_wait(1)
 
     # open
@@ -8165,13 +8170,19 @@ if __name__  ==  "__main__":
     input_login = wd.find_element_by_xpath('//*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button')
     input_login.click()
 
+    input_sing = wd.find_element_by_xpath('//*[@id="mn_N462e"]/a')
+    input_sing.send_keys(Keys.ENTER)
+
     """
     <input type="text" name="username" id="ls_username" autocomplete="off" class="px vm" tabindex="901">
     //*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button
     //*[@id="ls_password"]  # 找到元素，复制 xpath
+
+    
+
     """
 
-    wd.quit()
+    #wd.quit()
 ```
 
 

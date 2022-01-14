@@ -7340,5 +7340,55 @@ js C# interop
 
 
 
+# 爬虫
+
+
+
+## sign
+
+
+
+python has same section
+
+```
+using System;
+using OpenQA.Selenium;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Interactions;
+using System.Threading;
+
+namespace BaiduAutoLoginOut
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IWebDriver iw = new InternetExplorerDriver();
+            iw.Navigate().GoToUrl("http://www.baidu.com");
+            IWebElement login = iw.FindElement(By.Id("s_username_top"));
+            Actions action = new Actions(iw);
+            action.MoveToElement(login).Build().Perform();
+            WaitUntilPageLoaded(iw, "//a[text()=' 退出 ']");
+            iw.FindElement(By.XPath("//a[text()=' 退出 ']")).Click();
+        }
+        private static void WaitUntilPageLoaded(IWebDriver iw, string v)
+        {
+            try
+            {
+                iw.FindElement(By.XPath(v));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Thread.Sleep(1000);
+                WaitUntilPageLoaded(iw, v);
+            }
+        }
+    }
+}
+```
+
+
+
 
 
