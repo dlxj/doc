@@ -8124,5 +8124,55 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 
 
+## sign
+
+
+
+```
+# https://jishuin.proginn.com/p/763bfbd5a01a
+
+# pip install seleniu
+
+
+from selenium import webdriver
+
+from selenium.webdriver import Chrome, ChromeOptions
+
+
+
+if __name__  ==  "__main__": 
+
+    # python目录下必须有chromedriver.exe （http://chromedriver.storage.googleapis.com/index.html 这里下载和当前使用版本一致的）
+    
+    
+    opt = webdriver.ChromeOptions()
+    opt.headless = True
+
+    #wd=webdriver.Chrome()
+    wd=webdriver.Chrome(options=opt) # NO UI setting
+    wd.implicitly_wait(1)
+
+    # open
+    url = 'https://www.pdawiki.com/forum/'
+    wd.get(url)
+
+    input_usernanme = wd.find_element_by_xpath('//*[@id="ls_username"]')
+    input_usernanme.send_keys('howdyhappy')
+
+    input_passwd = wd.find_element_by_xpath('//*[@id="ls_password"]')
+    input_passwd.send_keys('vvwCN1234')
+
+    input_login = wd.find_element_by_xpath('//*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button')
+    input_login.click()
+
+    """
+    <input type="text" name="username" id="ls_username" autocomplete="off" class="px vm" tabindex="901">
+    //*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button
+    //*[@id="ls_password"]  # 找到元素，复制 xpath
+    """
+
+    wd.quit()
+```
+
 
 
