@@ -1,6 +1,8 @@
 ```
 # https://www.rootusers.com/how-to-install-xfce-gui-in-centos-7-linux/
 # https://www.hiroom2.com/2017/10/01/centos-7-xrdp-xfce-en/
+# https://www.jianshu.com/p/1cda88d2070a
+# https://draculaservers.com/tutorials/install-xrdp-centos/
 yum install epel-release -y
 yum groupinstall "Server with GUI" -y  
 	#  this will also install GNOME, you’ll be able to change to Xfce later though
@@ -12,6 +14,7 @@ yum groupinstall "Xfce" -y
 
 systemctl get-default
 	# 看默认是不是图形登录
+systemctl set-default graphical.target
 
 which xfce4-session
 	# /usr/bin/xfce4-session  # 成功
