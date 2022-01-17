@@ -8128,7 +8128,8 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 
 
-```
+```python
+
 # https://jishuin.proginn.com/p/763bfbd5a01a
 
 # pip install seleniu
@@ -8140,6 +8141,9 @@ from selenium import webdriver
 from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.common.keys import Keys
 
+import time
+
+
 show = True  # UI OR not
 
 if __name__  ==  "__main__": 
@@ -8150,12 +8154,12 @@ if __name__  ==  "__main__":
     opt = webdriver.ChromeOptions()
     opt.headless = show
 
-    # wd = NULL
     if show:
         wd=webdriver.Chrome()
     else:
         wd=webdriver.Chrome(options=opt) # NO UI setting
-    wd.implicitly_wait(1)
+    wd.implicitly_wait(5)
+    #wd.set_page_load_timeout(10)
 
     # open
     url = 'https://www.pdawiki.com/forum/'
@@ -8165,24 +8169,40 @@ if __name__  ==  "__main__":
     input_usernanme.send_keys('howdyhappy')
 
     input_passwd = wd.find_element_by_xpath('//*[@id="ls_password"]')
-    input_passwd.send_keys('vvwCN1234')
+    input_passwd.send_keys('v14')
 
     input_login = wd.find_element_by_xpath('//*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button')
     input_login.click()
 
-    input_sing = wd.find_element_by_xpath('//*[@id="mn_N462e"]/a')
-    input_sing.send_keys(Keys.ENTER)
+    time.sleep(3)
 
-    """
-    <input type="text" name="username" id="ls_username" autocomplete="off" class="px vm" tabindex="901">
-    //*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button
-    //*[@id="ls_password"]  # 找到元素，复制 xpath
+    try:
+        input_sing = wd.find_element_by_xpath('//*[@id="mn_N462e"]/a')   # click sign label
+        input_sing.send_keys(Keys.ENTER)
+        time.sleep(1)
+    except:
+        print('##### err.....')
+    finally:
+        print('continue.....')
 
+    input_dont = wd.find_element_by_xpath('//*[@id="qiandao"]/table[2]/tbody/tr[1]/td/label[3]/input')  # I don't gonna write text
+    input_dont.click()
+
+    time.sleep(1)
+
+    input_raku_img = wd.find_element_by_xpath('//*[@id="kx"]/center/img')
+    input_raku_img.click()
+
+    time.sleep(1)
     
+    input_sign_img = wd.find_element_by_xpath('//*[@id="qiandao"]/table[1]/tbody/tr/td/div/a/img')
+    input_sign_img.click()
+    
+    time.sleep(1)
 
-    """
+    print('success sign!')
 
-    #wd.quit()
+    wd.quit()
 ```
 
 
