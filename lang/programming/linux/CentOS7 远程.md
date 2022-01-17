@@ -1,8 +1,21 @@
 ```
+vnc4server
+
+vncserver :1 && vncserver -kill :1
+```
+
+
+
+
+
+```
 # https://www.rootusers.com/how-to-install-xfce-gui-in-centos-7-linux/
 # https://www.hiroom2.com/2017/10/01/centos-7-xrdp-xfce-en/
 # https://www.jianshu.com/p/1cda88d2070a
 # https://draculaservers.com/tutorials/install-xrdp-centos/
+
+systemctl stop firewalld
+
 yum install epel-release -y
 yum groupinstall "Server with GUI" -y  
 	#  this will also install GNOME, you’ll be able to change to Xfce later though
