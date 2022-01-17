@@ -1,4 +1,15 @@
 ```
+# https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/
+
+yum install tigervnc-server
+sudo adduser rootvnc
+sudo passwd rootvnc
+su - rootvnc
+
+cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
+
+
+
 vnc4server
 
 vncserver :1 && vncserver -kill :1
