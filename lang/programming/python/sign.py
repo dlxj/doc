@@ -1,10 +1,33 @@
 
 # https://jishuin.proginn.com/p/763bfbd5a01a
+# https://www.cnblogs.com/wqzn/p/14568794.html
 
-# pip install seleniu
+# pip install selenium
+
+"""
+centos7 + selenium
+pip3.8 install selenium
+
+curl https://intoli.com/install-google-chrome.sh | bash
+/opt/google/chrome/chrome  # Running as root without --no-sandbox is not supported.
+
+google-chrome-stable --no-sandbox --headless --disable-gpu --screenshot https://www.baidu.com/  # 成功后后生成一个文件 screenshot.png
+
+google-chrome --version
+    # 97.0.4692.71
+    # http://chromedriver.storage.googleapis.com/index.html  到这里下载这个版本的驱动
 
 
-from pymysql import NULL
+whereis python3.8
+cp chromedriver /usr/local/bin
+
+crontab -e # edit
+crontab -l # list all task
+
+00    07    *    *    *    python3.8 -u /root/sign.py > /root/log_sign.txt
+
+"""
+
 from selenium import webdriver
 
 from selenium.webdriver import Chrome, ChromeOptions
@@ -27,6 +50,12 @@ if __name__  ==  "__main__":
     if show:
         wd=webdriver.Chrome()
     else:
+        # opt.binary_location = '/usr/local/bin/chromedriver'
+        # opt.add_argument('no-sandbox')   # root account need this
+        # opt.add_argument('disable-dev-shm-usage')
+        # opt.add_argument("--remote-debugging-port=9223")
+        # opt.add_experimental_option('useAutomationExtension', False)
+        # opt.add_experimental_option('excludeSwitches', ['enable-automation'])
         wd=webdriver.Chrome(options=opt) # NO UI setting
     wd.implicitly_wait(5)
     #wd.set_page_load_timeout(10)
