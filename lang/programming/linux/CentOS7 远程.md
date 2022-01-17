@@ -27,6 +27,8 @@ systemctl restart xrdp
 
 $ sudo systemctl enable xrdp
 $ sudo systemctl start xrdp
+
+systemctl status xrdp.service  # 查看状态
 ```
 
 
