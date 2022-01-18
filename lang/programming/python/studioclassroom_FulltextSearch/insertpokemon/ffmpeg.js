@@ -4,58 +4,6 @@
 
 module.exports = {
 
-    // extractSRT: async function (vdpath, nth) {
-
-    //     let fs = require('fs')
-    //     let ffmpeg = require('fluent-ffmpeg')
-
-    //     ffmpeg.setFfmpegPath(String.raw`E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe`)
-
-    //     let [au, ms1] = await new Promise(function (resolve) {
-
-    //         const stream = require('stream')
-
-    //         var vd = fs.createReadStream(vdpath)
-
-    //         let bufferStream = new stream.PassThrough()
-    //         // Read the passthrough stream
-    //         const buffers = []
-    //         bufferStream.on('data', function (buf) {
-    //             buffers.push(buf)
-    //         })
-    //         bufferStream.on('end', function () {
-    //             const outputBuffer = Buffer.concat(buffers)
-    //             //let sr = outputBuffer.toString('utf8')
-    //             // let dir = require('path').dirname(__filename)
-    //             // let fname = require('path').join(dir, 'tmp.mp3')
-    //             fs.writeFileSync(`tmp.srt`, outputBuffer, 'binary')
-    //             vd.close()
-    //             resolve([outputBuffer, ''])
-    //         })
-
-    //         ffmpeg(vd)//.output(au)
-    //             .noVideo()
-    //             .format('srt')
-    //             .outputOptions('-map', `0:s:${nth}`)
-    //             .writeToStream(bufferStream)
-    //         // .on('start', () => {
-
-    //         //   a = 1
-
-    //         // })
-    //         // .on('end', () => {
-
-    //         //   a = 1
-
-    //         //   resolve(['ok', 'ok.'])
-    //         // })
-    //         // .run()
-    //     })
-
-    //     return [au, ms1]
-
-
-    // },
     extractAudio: async function (vdpath, type, begin_time, end_time) {
 
         let fs = require('fs')
@@ -63,69 +11,99 @@ module.exports = {
 
         ffmpeg.setFfmpegPath(String.raw`E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe`)
 
-        let [au, ms1] = await new Promise(function (resolve) {
+        try {
+            
+            let [au, ms1] = await new Promise(function (resolve) {
 
-            const stream = require('stream')
+                const stream = require('stream')
 
-            var vd = fs.createReadStream(vdpath)
+                let vd = fs.createReadStream(vdpath)
 
-            let bufferStream = new stream.PassThrough()
-            // Read the passthrough stream
-            const buffers = []
-            bufferStream.on('data', function (buf) {
-                buffers.push(buf)
-            })
-            bufferStream.on('end', function () {
+                let nclose = 0
 
-            })
+                vd.on('close', function () {
+                    nclose += 1
+                })
 
-            ffmpeg(vd)//.output(au)
-                .noVideo()
-                .format(type)
-                // .audioBitrate('128')
-                // .outputOptions('-ss', begin_time) // 00:00:00.000
-                // .outputOptions('-to', end_time)   // 00:00:07.520
-                .outputOption(
-                    [
-                        "-vn", 
-                        "-ss", 
-                        begin_time, 
-                        "-to", 
-                        end_time, 
-                        "-acodec", "mp3",
-                        "-ar", "44100", 
-                        "-ac", "2", 
-                        "-b:a", "192k"
-                    ]
-                )
-                .writeToStream(bufferStream)
-                .on("end", (stdout, stderr) =>{
+                let bufferStream = new stream.PassThrough()
+                // Read the passthrough stream
+                const buffers = []
+                bufferStream.on('data', function (buf) {
+                    buffers.push(buf)
+                })
+                bufferStream.on('end', function () {
+                    //vd.close()
+                    vd.destroy()
+
+                })
+
+                bufferStream.on('close', function () {
+
+                    nclose += 1
+
                     const outputBuffer = Buffer.concat(buffers)
                     //let sr = outputBuffer.toString('utf8')
                     // let dir = require('path').dirname(__filename)
                     // let fname = require('path').join(dir, 'tmp.mp3')
                     fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
-                    vd.close()
                     resolve([outputBuffer, ''])
+
                 })
+
+                ffmpeg(vd)//.output(au)
+                    .noVideo()
+                    .format(type)
+                    // .audioBitrate('128')
+                    // .outputOptions('-ss', begin_time) // 00:00:00.000
+                    // .outputOptions('-to', end_time)   // 00:00:07.520
+                    .outputOption(
+                        [
+                            "-vn",
+                            "-ss",
+                            begin_time,
+                            "-to",
+                            end_time,
+                            "-acodec", "mp3",
+                            "-ar", "44100",
+                            "-ac", "2",
+                            "-b:a", "192k"
+                        ]
+                    )
+                    .writeToStream(bufferStream)
+                    .on("end", (stdout, stderr) => {
+                        const outputBuffer = Buffer.concat(buffers)
+                        //let sr = outputBuffer.toString('utf8')
+                        // let dir = require('path').dirname(__filename)
+                        // let fname = require('path').join(dir, 'tmp.mp3')
+                        // fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
+                        bufferStream.destroy()
+                        // resolve([outputBuffer, ''])
+                    })
+                    .on("error", (err) => {
+                        a = 1
+                    })
 
                 // .on('start', () => {
 
-            //   a = 1
+                //   a = 1
 
-            // })
-            // .on('end', () => {
+                // })
+                // .on('end', () => {
 
-            //   a = 1
+                //   a = 1
 
-            //   resolve(['ok', 'ok.'])
-            // })
-            // .run()
-        })
+                //   resolve(['ok', 'ok.'])
+                // })
+                // .run()
+            })
 
-        return [au, ms1]
+            return [au, ms1]
 
+        } catch (e) {
 
+            return [null, `Error: unkown err.`]
+
+        }
     },
     extractSubtitle: async function (vdpath, type, nth) {
 
@@ -147,7 +125,7 @@ module.exports = {
                 buffers.push(buf)
             })
             bufferStream.on('end', function () {
-
+                vd.destroy()
             })
 
             ffmpeg(vd)
@@ -159,21 +137,22 @@ module.exports = {
                     ]
                 )
                 .writeToStream(bufferStream)
-                .on("end", (stdout, stderr) =>{
+                .on("end", (stdout, stderr) => {
                     const outputBuffer = Buffer.concat(buffers)
                     //let sr = outputBuffer.toString('utf8')
                     // let dir = require('path').dirname(__filename)
                     // let fname = require('path').join(dir, 'tmp.mp3')
                     fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
-                    vd.close()
+                    bufferStream.destroy()
                     resolve([outputBuffer, ''])
+                })
+                .on("error", (err) => {
+                    a = 1
                 })
 
         })
 
         return [au, ms1]
-
-
     },
 
 }
@@ -216,6 +195,9 @@ module.exports = {
   ])
   .outputFormat('mp4')
 };
+
+
+//			.outputOptions(["-movflags", "frag_keyframe+empty_moov"]) //without these options ffmpeg errors with `muxer does not support non seekable output`
 
 
 */
