@@ -10,17 +10,14 @@
     let vdpath = String.raw`F:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
 
     let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', `00:00:00.000`, `00:00:07.520`)  // output type, begintime, endtime
-
-    let [audio2, ms2] = await ff.extractAudio(vdpath, 'mp3', `00:00:00.000`, `00:00:07.520`)  // output type, begintime, endtime
-
     
-    // let [srt_zhs, ms2] = await ff.extractSubtitle(vdpath, 'srt', 0) // the nth subtitle stream
-    // srt_zhs = srt_zhs.toString('utf8')
+    let [srt_zhs, ms2] = await ff.extractSubtitle(vdpath, 'srt', 0) // the nth subtitle stream
+    srt_zhs = srt_zhs.toString('utf8')
 
     // a = 1
 
-    // let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 1) // the nth subtitle stream
-    // srt_jp = srt_jp.toString('utf8')
+    let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 2) // the nth subtitle stream
+    srt_jp = srt_jp.toString('utf8')
 
     a = 1
 

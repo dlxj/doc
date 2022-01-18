@@ -2555,6 +2555,11 @@ function NG(strs) {
 
 ## FFMPEG
 
+```
+//			.outputOptions(["-movflags", "frag_keyframe+empty_moov"]) //without these options ffmpeg errors with `muxer does not support non seekable output`
+
+```
+
 
 
 ### ffmpeg.js

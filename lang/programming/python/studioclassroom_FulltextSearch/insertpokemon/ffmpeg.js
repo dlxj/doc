@@ -1,56 +1,51 @@
 
-
+// https://github.com/mafintosh/pump
 
 
 module.exports = {
 
     extractAudio: async function (vdpath, type, begin_time, end_time) {
 
+        var pump = require('pump')
+
         let fs = require('fs')
         let ffmpeg = require('fluent-ffmpeg')
 
         ffmpeg.setFfmpegPath(String.raw`E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe`)
 
-        try {
-            
+
             let [au, ms1] = await new Promise(function (resolve) {
 
                 const stream = require('stream')
 
                 let vd = fs.createReadStream(vdpath)
 
-                let nclose = 0
-
-                vd.on('close', function () {
-                    nclose += 1
-                })
-
-                let bufferStream = new stream.PassThrough()
-                // Read the passthrough stream
+                // let bufferStream = new stream.PassThrough()
+                // // Read the passthrough stream
                 const buffers = []
-                bufferStream.on('data', function (buf) {
-                    buffers.push(buf)
-                })
-                bufferStream.on('end', function () {
-                    //vd.close()
-                    vd.destroy()
+                // bufferStream.on('data', function (buf) {
+                //     buffers.push(buf)
+                // })
+                // bufferStream.on('end', function () {
+                //     //vd.close()
+                //     vd.destroy()
 
-                })
+                // })
 
-                bufferStream.on('close', function () {
+                // bufferStream.on('close', function () {
 
-                    nclose += 1
+                //     // nclose += 1
 
-                    const outputBuffer = Buffer.concat(buffers)
-                    //let sr = outputBuffer.toString('utf8')
-                    // let dir = require('path').dirname(__filename)
-                    // let fname = require('path').join(dir, 'tmp.mp3')
-                    fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
-                    resolve([outputBuffer, ''])
+                //     // const outputBuffer = Buffer.concat(buffers)
+                //     // //let sr = outputBuffer.toString('utf8')
+                //     // // let dir = require('path').dirname(__filename)
+                //     // // let fname = require('path').join(dir, 'tmp.mp3')
+                //     // fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
+                //     // resolve([outputBuffer, ''])
 
-                })
+                // })
 
-                ffmpeg(vd)//.output(au)
+                let command = ffmpeg(vd)//.output(au)
                     .noVideo()
                     .format(type)
                     // .audioBitrate('128')
@@ -69,19 +64,30 @@ module.exports = {
                             "-b:a", "192k"
                         ]
                     )
-                    .writeToStream(bufferStream)
+                    //.writeToStream(bufferStream)
                     .on("end", (stdout, stderr) => {
+
                         const outputBuffer = Buffer.concat(buffers)
-                        //let sr = outputBuffer.toString('utf8')
+                        // let sr = outputBuffer.toString('utf8')
                         // let dir = require('path').dirname(__filename)
                         // let fname = require('path').join(dir, 'tmp.mp3')
-                        // fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
-                        bufferStream.destroy()
-                        // resolve([outputBuffer, ''])
+                        //fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
+                        //bufferStream.destroy()
+                        resolve([outputBuffer, ''])
                     })
                     .on("error", (err) => {
                         a = 1
                     })
+
+                let ffstream = command.pipe()
+                ffstream.on('data', function (buf) {
+                    buffers.push(buf)
+                })
+                ffstream.on('end', function () {
+                    a = 1
+                })
+
+                //ffmpegProc.on('exit', function(code, signal) {
 
                 // .on('start', () => {
 
@@ -98,12 +104,6 @@ module.exports = {
             })
 
             return [au, ms1]
-
-        } catch (e) {
-
-            return [null, `Error: unkown err.`]
-
-        }
     },
     extractSubtitle: async function (vdpath, type, nth) {
 
@@ -118,17 +118,17 @@ module.exports = {
 
             var vd = fs.createReadStream(vdpath)
 
-            let bufferStream = new stream.PassThrough()
+            // let bufferStream = new stream.PassThrough()
             // Read the passthrough stream
             const buffers = []
-            bufferStream.on('data', function (buf) {
-                buffers.push(buf)
-            })
-            bufferStream.on('end', function () {
-                vd.destroy()
-            })
+            // bufferStream.on('data', function (buf) {
+            //     buffers.push(buf)
+            // })
+            // bufferStream.on('end', function () {
+            //     vd.destroy()
+            // })
 
-            ffmpeg(vd)
+            let command = ffmpeg(vd)
                 .noVideo()
                 .format(type)
                 .outputOption(
@@ -136,17 +136,25 @@ module.exports = {
                         '-map', `0:s:${nth}`
                     ]
                 )
-                .writeToStream(bufferStream)
+                // .writeToStream(bufferStream)
                 .on("end", (stdout, stderr) => {
                     const outputBuffer = Buffer.concat(buffers)
                     //let sr = outputBuffer.toString('utf8')
                     // let dir = require('path').dirname(__filename)
                     // let fname = require('path').join(dir, 'tmp.mp3')
-                    fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
-                    bufferStream.destroy()
+                    //fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
+                    // bufferStream.destroy()
                     resolve([outputBuffer, ''])
                 })
                 .on("error", (err) => {
+                    a = 1
+                })
+
+                let ffstream = command.pipe()
+                ffstream.on('data', function (buf) {
+                    buffers.push(buf)
+                })
+                ffstream.on('end', function () {
                     a = 1
                 })
 
