@@ -1,18 +1,17 @@
 
 // https://github.com/mafintosh/pump
+// https://github.com/ffmpegwasm/ffmpeg.wasm
+// https://github.com/Kagami/ffmpeg.js/
+
+let fs = require('fs')
+let ffmpeg = require('fluent-ffmpeg')
+
+ffmpeg.setFfmpegPath(String.raw`E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe`)
 
 
 module.exports = {
 
     extractAudio: async function (vdpath, type, begin_time, end_time) {
-
-        var pump = require('pump')
-
-        let fs = require('fs')
-        let ffmpeg = require('fluent-ffmpeg')
-
-        ffmpeg.setFfmpegPath(String.raw`E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe`)
-
 
             let [au, ms1] = await new Promise(function (resolve) {
 
@@ -73,7 +72,12 @@ module.exports = {
                         // let fname = require('path').join(dir, 'tmp.mp3')
                         //fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
                         //bufferStream.destroy()
+                        vd.destroy()
+                        // vd.on('close', function() {
+                        //     resolve([outputBuffer, ''])
+                        // })
                         resolve([outputBuffer, ''])
+                        
                     })
                     .on("error", (err) => {
                         a = 1
@@ -107,16 +111,13 @@ module.exports = {
     },
     extractSubtitle: async function (vdpath, type, nth) {
 
-        let fs = require('fs')
-        let ffmpeg = require('fluent-ffmpeg')
 
-        ffmpeg.setFfmpegPath(String.raw`E:\Program Files\ffmpeg-4.3.2-2021-02-02-full_build\bin\ffmpeg.exe`)
 
         let [au, ms1] = await new Promise(function (resolve) {
 
             const stream = require('stream')
 
-            var vd = fs.createReadStream(vdpath)
+            let vd = fs.createReadStream(vdpath)
 
             // let bufferStream = new stream.PassThrough()
             // Read the passthrough stream
@@ -144,6 +145,10 @@ module.exports = {
                     // let fname = require('path').join(dir, 'tmp.mp3')
                     //fs.writeFileSync(`tmp.${type}`, outputBuffer, 'binary')
                     // bufferStream.destroy()
+                    vd.destroy()
+                    // vd.on('close', function() {
+                    //     resolve([outputBuffer, ''])
+                    // })
                     resolve([outputBuffer, ''])
                 })
                 .on("error", (err) => {
