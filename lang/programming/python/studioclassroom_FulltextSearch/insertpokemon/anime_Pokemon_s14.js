@@ -9,6 +9,8 @@
     let libsrt = require('./srt')
     let libmecab = require('./mecab')
 
+    await libmecab.init()
+
     // let [hiras, msg] = await libmecab.haras('感じ取れ')
 
     // console.log( hiras, msg )
@@ -52,6 +54,13 @@
         if (hiras == null) {
             throw `Error: segment fail. ${msg}`
         }
+
+        let ruby = hiras.ruby
+        let hiragana = hiras.hiragana
+
+        let hiragana_ng = libsrt.NG(hiragana)
+        let jp_ng = libsrt.NG(jp)
+        let zh_ng = libsrt.NG(zh)
 
         let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', begintime, endtime)
 

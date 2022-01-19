@@ -21,20 +21,20 @@ let mecabAnalyzer = new MecabAnalyzer({
 let kuroshiro = new Kuroshiro()
 
 module.exports = {
+
+    init: async function () {
+        await kuroshiro.init(new KuromojiAnalyzer())  // for windows
+        //await kuroshiro.init(mecabAnalyzer)           // for linux
+    },
+
     haras: async function haras(str) {
 
         let [hiras, msg] = await new Promise(async function (resolve) {
 
-            kuroshiro.init(new KuromojiAnalyzer())  // for windows
-                //kuroshiro.init(mecabAnalyzer)     // for linux
-                .then(async function () {
-                    let ruby = await kuroshiro.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
-                    let hiragana = await kuroshiro.convert(str, { to: "hiragana" })
-                    resolve([{ ruby, hiragana, origin: str }, ''])
-                })
-                .catch((err) => {
-                    resolve([null, err])
-                })
+            let ruby = await kuroshiro.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
+            let hiragana = await kuroshiro.convert(str, { to: "hiragana" })
+            resolve([{ ruby, hiragana, origin: str }, ''])
+
         })
 
         return [hiras, msg]
