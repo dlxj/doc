@@ -2805,6 +2805,55 @@ function NG(strs) {
 
 ### ffmpeg.js
 
+
+
+#### pipe stream
+
+
+
+```
+app.get('/stream', (req, res) => {
+    let _url = req.query.url;
+
+    if(_url){   
+
+        res.writeHead(200, {
+            'Access-Control-Allow-Origin': '*',
+            'Connection': 'Keep-Alive',
+            'Content-Type': 'video/mp4'
+        });
+
+        // transcode rtsp input from ip-cam to mp4 file format (video: h.264 | audio: aac)
+        let ffmpeg = child_process.spawn("ffmpeg",[
+            "-probesize","2147483647",
+            "-analyzeduration","2147483647",
+            "-i", _url,
+            "-vcodec","copy",
+            "-f", "mp4",            
+            "-movflags","frag_keyframe+empty_moov+faststart",
+            "-frag_duration","3600",
+            "pipe:1"              
+        ]);         
+
+
+        // redirect transcoded ip-cam stream to http response
+        ffmpeg.stdout.pipe(res);
+
+        // error logging
+        ffmpeg.stderr.setEncoding('utf8');      
+        ffmpeg.stderr.on('data', (data) => {
+            console.log(data);
+        });
+    }
+    else{
+        res.end();
+    }
+```
+
+
+
+
+
 ```javascript
 
 // https://github.com/mafintosh/pump
