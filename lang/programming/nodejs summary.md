@@ -360,6 +360,22 @@ module.exports = {
 
 
 
+## commonjs
+
+
+
+```
+var exec = require('child_process').exec;  // 出错
+	//   "type": "commonjs",  // package.json 加上这一句
+	
+let execa = import('execa')  // 这样可以
+	// 出错：Must use import to load ES Module
+```
+
+
+
+
+
 ## typeof
 
 
@@ -1227,6 +1243,19 @@ function getContent(fileName) {
         let b64 = Buffer.from(bytes).toString('base64')  // new Buffer(bytes)
         b64s.push(b64)
 ```
+
+
+
+# process
+
+
+
+```
+var exec = require('child_process').exec;  // 出错
+	//   "type": "commonjs",  // package.json 加上这一句
+```
+
+
 
 
 

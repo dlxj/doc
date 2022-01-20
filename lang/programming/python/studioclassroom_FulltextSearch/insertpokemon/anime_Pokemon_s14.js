@@ -1,9 +1,71 @@
 
-
+// https://github.com/sindresorhus/execa
+// https://gist.github.com/Drubo/1574291
+// https://github.com/sindresorhus/execa
 // https://github.com/Kagami/ffmpeg.js/
 // https://www.postgresql.org/docs/12/functions-textsearch.html
+// https://gist.github.com/srujandeshpande/3b79a2e7809548beea32e9af7597ddb3
+// https://github.com/ColinEberhardt/ffmpeg-wasm-streaming-video-player/blob/main/app.js
+
 
 (async () => {
+
+    let execa = import('execa')
+
+
+    // import { execa } from 'execa'
+
+    // const { stdout } = await execa('dir', [])
+    // console.log(stdout)
+
+    //var exec = require('child_process').exec;
+
+    // let child_process = require('child_process')
+    // let spawn = child_process.spawn;
+    // let exec = child_process.exec;
+
+    // var ffmpeg = spawn('ffmpeg', [`-i`, String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`])
+
+    // //ffmpeg.on('exit', exitCallback)
+
+    // ffmpeg.stderr.on('data', function (data) {
+    //     a = 1
+    // })
+
+    // ffmpeg.stderr.on('data', function (data) {
+    //     console.log('grep stderr: ' + data);
+    // })
+    // let execa = require('execa')
+
+    // let subprocess = execa('dir', [''])
+    // subprocess.stdout.pipe(process.stdout)
+    // ;(async () => {
+    //   const { stdout } = await subprocess
+    //   console.log('child output:', stdout)
+    // })()
+
+
+
+
+
+
+
+
+
+    a = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     let fs = require('fs')
     let ff = require('./ffmpeg')
@@ -75,7 +137,7 @@
     let subtitles = libsrt.merge(jps, zhss)
 
     console.log(`# begin insert...`)
-    for (let i = 0; i < 3; i++) {  // subtitles.length;
+    for (let i = 0; i < subtitles.length; i++) {  // subtitles.length;
 
         let item = subtitles[i]
 
@@ -96,7 +158,7 @@
         let jp_ng = libsrt.NG(jp)
         let zh_ng = libsrt.NG(zh)
 
-        jp_ng = ( jp_ng.concat(hiragana_ng) ).join(' ')  // for fulltext search All in one
+        jp_ng = (jp_ng.concat(hiragana_ng)).join(' ')  // for fulltext search All in one
         zh_ng = zh_ng.join(' ')
         hiragana_ng = hiragana_ng.join(' ')
 
@@ -110,16 +172,22 @@
      ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10 );
      `, [name, seasion, jp, zh, item.begintime, ruby, jp_ng, zh_ng, audio, video])
 
-       // $6::TSVECTOR
-
 
         // re = await tempDB.query(`SELECT audio FROM pokemon limit 1;`)
         // let au = re.rows[0].audio  //  Uint8Array
         // au = Buffer.from(au)
 
-        console.log(`${i+1}/${subtitles.length}`)
+        console.log(`${i + 1}/${subtitles.length}`)
 
     }
+
+    re = await tempDB.query(`SELECT jp_ruby, jp, zh, audio FROM pokemon WHERE v_jp @@ to_tsquery($1);`, ['地方'])
+
+    let jp_ruby = re.rows[0].jp_ruby
+    let jp = re.rows[0].jp
+    let zh = re.rows[0].zh
+    let au = re.rows[0].audio  //  Uint8Array
+    au = Buffer.from(au)
 
     let sta1 = pg.defaultDB.status()
     let sta2 = tempDB.status()
@@ -136,5 +204,14 @@
 
 
 /*
+
+const execa = require('execa')
+
+const subprocess = execa('echo', ['foo'])
+subprocess.stdout.pipe(process.stdout)
+;(async () => {
+  const { stdout } = await subprocess
+  console.log('child output:', stdout)
+})()
 
 */

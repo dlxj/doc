@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "anime_Pokemon_s14.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "execa": "~6.0.0",
     "fluent-ffmpeg": "~2.1.2",
     "kuroshiro": "~1.1.2",
     "kuroshiro-analyzer-kuromoji": "~1.1.0",
