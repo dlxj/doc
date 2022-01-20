@@ -1,18 +1,14 @@
 
 let { Pool, Client } = require('pg')
 
-// global.getconfig = 
-
-// global.getDB = 
-
-// global.defaultDB = global.getDB('postgres')
+let config = require('./config')
 
 function getconfig(dbname) {
   return {
     user: 'postgres',
-    password: 'et.com',
-    host: 'xxx.77',
-    port: '5432',
+    password: config.passwd,
+    host: config.host, 
+    port: config.port,
     database: dbname,
     ssl: false
   }
@@ -49,17 +45,6 @@ function getDB(dbname) {
       let waitingCount = pool.waitingCount
       return { totalCount, idleCount, waitingCount }
     }
-
-    /*
-    pool.totalCount: int
-      The total number of clients existing within the pool.
-
-    pool.idleCount: int
-      The number of clients which are not checked out but are currently idle in the pool.
-
-    pool.waitingCount: int
-      The number of queued requests waiting on a client when all clients are checked out. It can be helpful to monitor this number to see if you need to adjust the size of the pool.
-    */
 
   }
 
