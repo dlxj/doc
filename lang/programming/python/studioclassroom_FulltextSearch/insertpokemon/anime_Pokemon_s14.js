@@ -1,5 +1,7 @@
 
+// https://depth-first.com/articles/2019/01/17/debugging-es-modules-with-mocha-in-vs-code/
 // https://github.com/sindresorhus/execa
+    // https://jestjs.io/docs/ecmascript-modules
 // https://gist.github.com/Drubo/1574291
 // https://github.com/sindresorhus/execa
 // https://github.com/Kagami/ffmpeg.js/
@@ -10,10 +12,10 @@
 
 (async () => {
 
-    let execa = import('execa')
+    let execa = require('execa');
 
 
-    // import { execa } from 'execa'
+    //import execa  from 'execa
 
     // const { stdout } = await execa('dir', [])
     // console.log(stdout)
@@ -37,12 +39,12 @@
     // })
     // let execa = require('execa')
 
-    // let subprocess = execa('dir', [''])
-    // subprocess.stdout.pipe(process.stdout)
-    // ;(async () => {
-    //   const { stdout } = await subprocess
-    //   console.log('child output:', stdout)
-    // })()
+    let subprocess = execa('dir', [''])
+    subprocess.stdout.pipe(process.stdout)
+    ;(async () => {
+      const { stdout } = await subprocess
+      console.log('child output:', stdout)
+    })()
 
 
 

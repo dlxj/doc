@@ -362,6 +362,24 @@ module.exports = {
 
 ## commonjs
 
+- https://depth-first.com/articles/2019/01/17/debugging-es-modules-with-mocha-in-vs-code/
+
+```
+服务器端开发用require/exports ，浏览器端使用import/export
+
+
+方式二  通过Node原生支持ES Module
+
+步骤一、 更改js文件后缀为.mjs
+
+步骤二、 import js的时候，如import './core';不能省略后缀名，需要写成import './core.mjs';
+
+执行：node --experimental-modules ./bin/index.mjs
+
+步骤三、 由于是实验性质特性，所以需要配置开启 --experimental-modules，否则会报如下错误
+
+```
+
 
 
 ```
