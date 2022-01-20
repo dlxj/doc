@@ -140,6 +140,25 @@ rm -rf (all folders listed in find)
 
 
 
+# Gram
+
+
+
+## DataTime
+
+
+
+### 时间差
+
+
+
+```
+# 单位秒数
+select unix_timestamp("2020-01-01 00:01:00") - unix_timestamp("2020-01-01 00:00:00")
+```
+
+
+
 
 
 # Create
