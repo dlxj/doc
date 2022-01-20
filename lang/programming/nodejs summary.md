@@ -362,6 +362,19 @@ module.exports = {
 
 ## commonjs
 
+
+
+```
+// ff.mjs 必须是 .mjs
+// node --experimental-modules .\ff.mjs  成功运行
+import {execa} from 'execa';
+const {stdout} = await execa('dir', []);
+console.log(stdout);
+console.log(111)
+```
+
+
+
 - https://depth-first.com/articles/2019/01/17/debugging-es-modules-with-mocha-in-vs-code/
 
 ```
@@ -391,6 +404,24 @@ let execa = import('execa')  // 这样可以
 ```
 
 
+
+```
+node --experimental-modules ./bin/www
+
+launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "Launch Program",
+          "program": "${workspaceFolder}\\bin\\www",
+        }
+    ]
+}
+
+```
 
 
 
