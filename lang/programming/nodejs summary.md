@@ -398,7 +398,8 @@ export default {
 
 // test.js
 let { default: libff } = await import('./ffmpeg.mjs')
-let { srt, msg } = await libff.extractSubtitle(vdpath, 'srt', 2)
+let { srt: str_jp, msg:msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+let { srt: srt_chs, msg:msg_chs } = await libff.extractSubtitle(vdpath, 'srt', 0)
 ```
 
 
