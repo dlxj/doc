@@ -365,16 +365,38 @@ module.exports = {
 
 
 ```
-// ff.mjs
+// ffmpeg.mjs
+import { execa } from 'execa'
+import path from 'path'
+import { dirname } from 'path'
+//global.__dirname = process.cwd()
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 export default {
-    square: function (x) {
-        return x * x
+    extractSubtitle: async function (vdpath, type, nth) {
+
+        try {
+
+            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, tmp.srt )}`
+            let subprocess = execa(args, {shell:true})
+            await subprocess
+
+        } catch(err) {
+            a = 1
+        }
+
+        return 'hi,,,'
     }
 }
+
 // test.js
-let { default: libff } = await import('./ff.mjs')
-let x = libff.square(2)  // 成功运行
+let { default: libff } = await import('./ffmpeg.mjs')
+let x = await libff.extractSubtitle(vdpath, 'srt', 2)
 ```
+
+
 
 
 
@@ -1329,16 +1351,30 @@ function getContent(fileName) {
 The argument to execa is a command followed by an array of arguments, unless the shell: true option is used. So this should be either execa('npm', ['run', 'start']) or execa('npm run start', { shell: true }).
 
 // 不要忘记 -y 参数，否则或一直等你确认是否覆盖文个
+import { execa } from 'execa'
+import path from 'path'
+import { dirname } from 'path'
+//global.__dirname = process.cwd()
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+export default {
+    extractSubtitle: async function (vdpath, type, nth) {
+
         try {
 
-            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} D:\\tmp.srt`
-
-            let subprocess = execa(args, {shell:true})  // let subprocess = execa('ffmpeg', ['-i', vdpath, '-map', `0:s:${nth}`, 'tmp.srt']) // [ '-i', vdpath, '-map', `0:s:${nth}`, 'tmp.srt']  `-i ${vdpath} -map 0:s:${nth} tmp.srt`
+            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, tmp.srt )}`
+            let subprocess = execa(args, {shell:true})
             await subprocess
 
         } catch(err) {
             a = 1
         }
+
+        return 'hi,,,'
+    }
+}
 
 ```
 
