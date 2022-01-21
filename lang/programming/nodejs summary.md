@@ -366,12 +366,14 @@ module.exports = {
 
 ```
 // ff.mjs
-export default function square(x) {
-    return x * x
+export default {
+    square: function (x) {
+        return x * x
+    }
 }
 // test.js
-let { default: square } = await import('./ff.mjs')
-let x = square(2)  // 成功运行
+let { default: libff } = await import('./ff.mjs')
+let x = libff.square(2)  // 成功运行
 ```
 
 
@@ -385,7 +387,8 @@ console.log(stdout);
 console.log(111)
 ```
 
-
+- https://github.com/chrisveness/geodesy/issues/79
+  - 各种示例
 
 - https://juejin.cn/post/6972006652631318564
 
@@ -1325,6 +1328,24 @@ function getContent(fileName) {
 ```
 var exec = require('child_process').exec;  // 出错
 	//   "type": "commonjs",  // package.json 加上这一句
+```
+
+
+
+## 失败重试
+
+
+
+```
+// https://github.com/sindresorhus/execa
+import pRetry from 'p-retry';
+
+const run = async () => {
+	const results = await execa('curl', ['-sSL', 'https://sindresorhus.com/unicorn']);
+	return results;
+};
+
+console.log(await pRetry(run, {retries: 5}));
 ```
 
 
