@@ -12,25 +12,28 @@
 
 (async () => {
 
-  let vdpath = String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
+  let vdpath = ''
+  if (process.platform ==  'win32') {
+    vdpath = String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
+  } else if (process.platform ==  'linux') {
+    vdpath = String.raw`/mnt/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+  } else if (process.platform ==  'darwin') {
+    vdpath = String.raw`/mnt/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+  } else {
+    throw 'unknow os type.'
+  }
 
   let name = 'Pokemon_Best_Wishes'
   let seasion = 'S14'
 
 
 
-
-
-
-  
   let { default: libff } = await import('./ffmpeg.mjs')
-  let { srt, msg } = await libff.extractSubtitle(vdpath, 'srt', 2)
+  // let { srt: str_jp, msg:msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+  //let { srt: srt_chs, msg:msg_chs } = await libff.extractSubtitle(vdpath, 'srt', 0) 
+  //let { au: axx} = await libff.extractAudio(vdpath, 'mp3', '00:00:01.960', '00:00:05.660')
 
-
-
-
-
-    a = 1
+  a = 1
 
 
 
@@ -94,17 +97,18 @@
     re = await tempDB.query("CREATE INDEX animename_index ON pokemon (name);")
     re = await tempDB.query("CREATE INDEX videoname_index ON pokemon (videoname);")
 
+    // let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 2) // the nth subtitle stream
+    // srt_jp = srt_jp.toString('utf8')
 
-
-    let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 2) // the nth subtitle stream
-    srt_jp = srt_jp.toString('utf8')
+    let { srt: srt_jp, msg:msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
     srt_jp = libsrt.clean(srt_jp)
-    fs.writeFileSync(`tmp.srt`, srt_jp, { encoding: 'utf8' })
+    //fs.writeFileSync(`tmp.srt`, srt_jp, { encoding: 'utf8' })
 
     let jps = libsrt.parse(srt_jp)
 
-    let [srt_zhs, ms2] = await ff.extractSubtitle(vdpath, 'srt', 0) // the nth subtitle stream
-    srt_zhs = srt_zhs.toString('utf8')
+    // let [srt_zhs, ms2] = await ff.extractSubtitle(vdpath, 'srt', 0) // the nth subtitle stream
+    // srt_zhs = srt_zhs.toString('utf8')
+    let { srt: srt_zhs, msg:msg_zhs } = await libff.extractSubtitle(vdpath, 'srt', 0)
     srt_zhs = libsrt.clean(srt_zhs)
 
     let zhss = libsrt.parse(srt_zhs)
@@ -137,7 +141,9 @@
         zh_ng = zh_ng.join(' ')
         hiragana_ng = hiragana_ng.join(' ')
 
-        let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', begintime, endtime)
+        //let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', begintime, endtime)
+
+        let { au: audio} = await libff.extractAudio(vdpath, 'mp3', begintime, endtime)
 
         let video = Buffer.from('')  // empty now
 
