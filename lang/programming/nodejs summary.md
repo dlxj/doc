@@ -379,7 +379,7 @@ export default {
 
         try {
 
-            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, tmp.srt )}`
+            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, 'tmp.srt' )}`
             let subprocess = execa(args, {shell:true})
             await subprocess
 
