@@ -375,25 +375,30 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export default {
+
     extractSubtitle: async function (vdpath, type, nth) {
 
         try {
 
-            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, 'tmp.srt' )}`
-            let subprocess = execa(args, {shell:true})
-            await subprocess
+            // let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, 'tmp.srt' )}` // write file
+            let cmd = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} -f srt pipe:1`   // write stdout
+
+            let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
+            childProcess.stdout.pipe(process.stdout)
+            let { stdout } = await childProcess
+
+            return { srt:stdout, msg:'' }
 
         } catch(err) {
-            a = 1
+           return { srt:null, msg : err }
         }
-
-        return 'hi,,,'
     }
+
 }
 
 // test.js
 let { default: libff } = await import('./ffmpeg.mjs')
-let x = await libff.extractSubtitle(vdpath, 'srt', 2)
+let { srt, msg } = await libff.extractSubtitle(vdpath, 'srt', 2)
 ```
 
 
