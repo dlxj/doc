@@ -1,4 +1,5 @@
 
+// https://juejin.cn/post/6972006652631318564
 // https://depth-first.com/articles/2019/01/17/debugging-es-modules-with-mocha-in-vs-code/
 // https://github.com/sindresorhus/execa
     // https://jestjs.io/docs/ecmascript-modules
@@ -9,46 +10,21 @@
 // https://gist.github.com/srujandeshpande/3b79a2e7809548beea32e9af7597ddb3
 // https://github.com/ColinEberhardt/ffmpeg-wasm-streaming-video-player/blob/main/app.js
 
-
 (async () => {
 
-    let execa = require('execa');
+  let vdpath = String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
 
-
-    //import execa  from 'execa
-
-    // const { stdout } = await execa('dir', [])
-    // console.log(stdout)
-
-    //var exec = require('child_process').exec;
-
-    // let child_process = require('child_process')
-    // let spawn = child_process.spawn;
-    // let exec = child_process.exec;
-
-    // var ffmpeg = spawn('ffmpeg', [`-i`, String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`])
-
-    // //ffmpeg.on('exit', exitCallback)
-
-    // ffmpeg.stderr.on('data', function (data) {
-    //     a = 1
-    // })
-
-    // ffmpeg.stderr.on('data', function (data) {
-    //     console.log('grep stderr: ' + data);
-    // })
-    // let execa = require('execa')
-
-    let subprocess = execa('dir', [''])
-    subprocess.stdout.pipe(process.stdout)
-    ;(async () => {
-      const { stdout } = await subprocess
-      console.log('child output:', stdout)
-    })()
+  let name = 'Pokemon_Best_Wishes'
+  let seasion = 'S14'
 
 
 
 
+
+
+  
+  let { default: libff } = await import('./ffmpeg.mjs')
+  let { srt, msg } = await libff.extractSubtitle(vdpath, 'srt', 2)
 
 
 
@@ -118,10 +94,7 @@
     re = await tempDB.query("CREATE INDEX animename_index ON pokemon (name);")
     re = await tempDB.query("CREATE INDEX videoname_index ON pokemon (videoname);")
 
-    let vdpath = String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
 
-    let name = 'Pokemon_Best_Wishes'
-    let seasion = 'S14'
 
     let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 2) // the nth subtitle stream
     srt_jp = srt_jp.toString('utf8')
