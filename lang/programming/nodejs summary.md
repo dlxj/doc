@@ -1326,6 +1326,25 @@ function getContent(fileName) {
 
 
 ```
+The argument to execa is a command followed by an array of arguments, unless the shell: true option is used. So this should be either execa('npm', ['run', 'start']) or execa('npm run start', { shell: true }).
+
+// 不要忘记 -y 参数，否则或一直等你确认是否覆盖文个
+        try {
+
+            let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} D:\\tmp.srt`
+
+            let subprocess = execa(args, {shell:true})  // let subprocess = execa('ffmpeg', ['-i', vdpath, '-map', `0:s:${nth}`, 'tmp.srt']) // [ '-i', vdpath, '-map', `0:s:${nth}`, 'tmp.srt']  `-i ${vdpath} -map 0:s:${nth} tmp.srt`
+            await subprocess
+
+        } catch(err) {
+            a = 1
+        }
+
+```
+
+
+
+```
 // https://github.com/sindresorhus/execa/
 let subprocess = execa('dir', [''], { 'encoding': 'utf8' })
         //let subprocess = execa('ffmpeg', ['-i', vdpath, 'tmp.srt'], { 'encoding': 'utf8' }) // [ '-i', vdpath, '-map', `0:s:${nth}`, 'tmp.srt']
@@ -1353,6 +1372,25 @@ const { stdout: customPath2 } = execa.shellSync(
   'git config --get core.hooksPath  &2>/dev/null'
 )
 console.log('Path, ', customPath2)
+```
+
+
+
+```
+var spawn = require('child_process').spawn;
+var path = require('path');
+var fs = require('fs');
+
+var barPath = path.join(__dirname, 'child.js');
+var outputPath = path.join(__dirname, 'output.txt');
+
+var s = fs.createWriteStream(outputPath);
+
+s.on('open', () => {
+	spawn(process.execPath, [barPath], {
+		stdio: [null, s, null]
+	});
+});
 ```
 
 
