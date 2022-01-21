@@ -365,6 +365,18 @@ module.exports = {
 
 
 ```
+// ff.mjs
+export default function square(x) {
+    return x * x
+}
+// test.js
+let { default: square } = await import('./ff.mjs')
+let x = square(2)  // 成功运行
+```
+
+
+
+```
 // ff.mjs 必须是 .mjs
 // node --experimental-modules .\ff.mjs  成功运行
 import {execa} from 'execa';
@@ -372,6 +384,17 @@ const {stdout} = await execa('dir', []);
 console.log(stdout);
 console.log(111)
 ```
+
+
+
+- https://juejin.cn/post/6972006652631318564
+
+  - Node 最新 Module 导入导出规范
+
+    
+
+- https://zhuanlan.zhihu.com/p/337796076
+  - ES Modules 的加载、解析和执行都是异步的
 
 
 
