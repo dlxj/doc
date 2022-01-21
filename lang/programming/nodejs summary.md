@@ -1326,9 +1326,36 @@ function getContent(fileName) {
 
 
 ```
+// https://github.com/sindresorhus/execa/
+let subprocess = execa('dir', [''], { 'encoding': 'utf8' })
+        //let subprocess = execa('ffmpeg', ['-i', vdpath, 'tmp.srt'], { 'encoding': 'utf8' }) // [ '-i', vdpath, '-map', `0:s:${nth}`, 'tmp.srt']
+        subprocess.stdout.pipe(process.stdout);
+        let { stdout } = await subprocess
+        console.log('child output:', stdout)
+
+        await subprocess
+```
+
+
+
+
+
+```
 var exec = require('child_process').exec;  // 出错
 	//   "type": "commonjs",  // package.json 加上这一句
 ```
+
+
+
+```
+# https://github.com/sindresorhus/execa/issues/145
+const { stdout: customPath2 } = execa.shellSync(
+  'git config --get core.hooksPath  &2>/dev/null'
+)
+console.log('Path, ', customPath2)
+```
+
+
 
 
 
