@@ -392,6 +392,24 @@ export default {
         } catch(err) {
            return { srt:null, msg : err }
         }
+    },
+    extractAudio: async function (vdpath, type, begin_time, end_time) {
+
+        try {
+
+            let cmd = `ffmpeg -i ${vdpath} -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
+
+            let childProcess = execa(cmd, {shell:true})
+            childProcess.stdout.pipe(process.stdout)
+            let { stdout } = await childProcess
+
+            return { au: Buffer.from(stdout) }
+
+        } catch(err) {
+           return { audi:null}
+        }
+
+        return { au:1 }
     }
 
 }
