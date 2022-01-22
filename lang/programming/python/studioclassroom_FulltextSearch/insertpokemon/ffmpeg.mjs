@@ -17,7 +17,7 @@ export default {
             let cmd = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} -f ${type} pipe:1`   // write stdout
 
             let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
-            childProcess.stdout.pipe(process.stdout)
+            //childProcess.stdout.pipe(process.stdout)  // don't print to screen
             let { stdout } = await childProcess
 
             return { srt:stdout, msg:'' }
@@ -33,7 +33,7 @@ export default {
             let cmd = `ffmpeg -i ${vdpath} -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
 
             let childProcess = execa(cmd, {shell:true})
-            childProcess.stdout.pipe(process.stdout)
+            //childProcess.stdout.pipe(process.stdout) // don't print to screen
             let { stdout } = await childProcess
 
             return { au: Buffer.from(stdout) }
@@ -52,3 +52,16 @@ export default {
   //let { au: axx} = await libff.extractAudio(vdpath, 'mp3', '00:00:01.960', '00:00:05.660')
 
 */
+
+// let vdpath = String.raw`/Users/olnymyself/Downloads/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+// let cmd = `ffmpeg -i ${vdpath} -y -map 0:s:2 -f srt pipe:1`   // write stdout
+// let args = [ '-i', `${vdpath}`, '-y', '-map', '0:s:2', '-f', 'srt', 'pipe:1' ]
+
+// let childProcess = execa('ffmpeg', args, {shell:false, buffer:true, 'encoding': 'utf8'})
+// //childProcess.stdout.pipe(process.stdout)
+// let { stdout } = await childProcess
+
+// console.log(111)
+
+// let a = 1
+

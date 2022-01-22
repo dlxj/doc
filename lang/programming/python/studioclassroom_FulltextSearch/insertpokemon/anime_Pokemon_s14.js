@@ -18,7 +18,7 @@
   } else if (process.platform ==  'linux') {
     vdpath = String.raw`/mnt/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
   } else if (process.platform ==  'darwin') {
-    vdpath = String.raw`/mnt/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+    vdpath = String.raw`/Users/olnymyself/Downloads/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
   } else {
     throw 'unknow os type.'
   }
