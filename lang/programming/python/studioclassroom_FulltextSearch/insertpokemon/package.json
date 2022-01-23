@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "anime_Pokemon_s14.js",
-  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +15,7 @@
     "kuroshiro-analyzer-kuromoji": "~1.1.0",
     "kuroshiro-analyzer-mecab": "~1.0.1",
     "pg": "~8.7.1",
-    "pg-pool": "~3.4.1"
+    "pg-pool": "~3.4.1",
+    "rd": "^2.0.1"
   }
 }

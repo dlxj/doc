@@ -12,43 +12,60 @@
 
 (async () => {
 
-  let vdpath = ''
+  let libdir = require('./dir')
+
+  let root = ''
   if (process.platform == 'win32') {
-    vdpath = String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
+    root = String.raw`E:\videos\anime`
   } else if (process.platform == 'linux') {
-    vdpath = String.raw`/mnt/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+    root = String.raw`/mnt/videos/anime`
   } else if (process.platform == 'darwin') {
-    vdpath = String.raw`/Users/olnymyself/Downloads/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+    root = String.raw`/Users/olnymyself/Downloads/videos/anime`
   } else {
     throw 'unknow os type.'
   }
 
+  let mkvs = libdir.allmkv(root, 'Pokemon')
+
+  // let vdpath = ''
+  // if (process.platform == 'win32') {
+  //   vdpath = String.raw`E:\videos\anime\Pokemon\S14\Best_Wishes\06.mkv`
+  // } else if (process.platform == 'linux') {
+  //   vdpath = String.raw`/mnt/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+  // } else if (process.platform == 'darwin') {
+  //   vdpath = String.raw`/Users/olnymyself/Downloads/videos/anime/Pokemon/S14/Best_Wishes/06.mkv`
+  // } else {
+  //   throw 'unknow os type.'
+  // }
+
   let name = 'Pokemon_Best_Wishes'
   let seasion = 'S14'
 
+  for (let j = 0; j < mkvs.length; j++) {
+
+    let vdpath = mkvs[j]
+
+    let { default: libff } = await import('./ffmpeg.mjs')
+    // let { srt: srt_jpp, msg: msg_jpp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+    //let { srt: srt_chs, msg:msg_chs } = await libff.extractSubtitle(vdpath, 'srt', 0) 
+    //let { au: axx} = await libff.extractAudio(vdpath, 'mp3', '00:00:01.960', '00:00:05.660')
+
+    a = 1
 
 
-  let { default: libff } = await import('./ffmpeg.mjs')
-  let { srt: srt_jpp, msg: msg_jpp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
-  //let { srt: srt_chs, msg:msg_chs } = await libff.extractSubtitle(vdpath, 'srt', 0) 
-  //let { au: axx} = await libff.extractAudio(vdpath, 'mp3', '00:00:01.960', '00:00:05.660')
 
-  a = 1
+    let fs = require('fs')
+    let ff = require('./ffmpeg')
+    let libsrt = require('./srt')
+    let libmecab = require('./mecab')
 
-
-
-  let fs = require('fs')
-  let ff = require('./ffmpeg')
-  let libsrt = require('./srt')
-  let libmecab = require('./mecab')
-
-  await libmecab.init()
+    await libmecab.init()
 
 
-  let pg = require('./pgsql')
-  let re = await pg.defaultDB.query('select $1::text as name', ['brianc'])
-  re = await pg.defaultDB.query('DROP DATABASE IF EXISTS temp;', [])
-  re = await pg.defaultDB.query(`
+    let pg = require('./pgsql')
+    let re = await pg.defaultDB.query('select $1::text as name', ['brianc'])
+    re = await pg.defaultDB.query('DROP DATABASE IF EXISTS temp;', [])
+    re = await pg.defaultDB.query(`
     CREATE DATABASE temp 
         WITH OWNER = postgres 
         ENCODING = 'UTF8' 
@@ -57,8 +74,8 @@
         TEMPLATE template0;
     `, [])
 
-  let tempDB = pg.getDB('temp')
-  re = await tempDB.query(`
+    let tempDB = pg.getDB('temp')
+    re = await tempDB.query(`
     CREATE TABLE pokemon (
         id integer primary key generated always as identity, 
         name text, 
@@ -79,75 +96,77 @@
       )
     `)
 
-  re = await tempDB.query("create extension pgroonga;")
-  re = await tempDB.query("create extension pg_jieba;")
-  re = await tempDB.query("CREATE INDEX pgroonga_jp_index ON pokemon USING pgroonga (jp);")
-  re = await tempDB.query("CREATE INDEX pgroonga_jpmecab_index ON pokemon USING pgroonga (jp_mecab);")
-  re = await tempDB.query("CREATE INDEX animename_index ON pokemon (name);")
-  re = await tempDB.query("CREATE INDEX videoname_index ON pokemon (videoname);")
+    re = await tempDB.query("create extension pgroonga;")
+    re = await tempDB.query("create extension pg_jieba;")
+    re = await tempDB.query("CREATE INDEX pgroonga_jp_index ON pokemon USING pgroonga (jp);")
+    re = await tempDB.query("CREATE INDEX pgroonga_jpmecab_index ON pokemon USING pgroonga (jp_mecab);")
+    re = await tempDB.query("CREATE INDEX animename_index ON pokemon (name);")
+    re = await tempDB.query("CREATE INDEX videoname_index ON pokemon (videoname);")
 
-  // let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 2) // the nth subtitle stream
-  // srt_jp = srt_jp.toString('utf8')
+    // let [srt_jp, ms3] = await ff.extractSubtitle(vdpath, 'srt', 2) // the nth subtitle stream
+    // srt_jp = srt_jp.toString('utf8')
 
-  let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
-  srt_jp = libsrt.clean(srt_jp)
-  //fs.writeFileSync(`tmp.srt`, srt_jp, { encoding: 'utf8' })
+    let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+    srt_jp = libsrt.clean(srt_jp)
+    //fs.writeFileSync(`tmp.srt`, srt_jp, { encoding: 'utf8' })
 
-  let jps = libsrt.parse(srt_jp)
+    let jps = libsrt.parse(srt_jp)
 
-  // let [srt_zhs, ms2] = await ff.extractSubtitle(vdpath, 'srt', 0) // the nth subtitle stream
-  // srt_zhs = srt_zhs.toString('utf8')
-  let { srt: srt_zhs, msg: msg_zhs } = await libff.extractSubtitle(vdpath, 'srt', 0)
-  srt_zhs = libsrt.clean(srt_zhs)
+    // let [srt_zhs, ms2] = await ff.extractSubtitle(vdpath, 'srt', 0) // the nth subtitle stream
+    // srt_zhs = srt_zhs.toString('utf8')
+    let { srt: srt_zhs, msg: msg_zhs } = await libff.extractSubtitle(vdpath, 'srt', 0)
+    srt_zhs = libsrt.clean(srt_zhs)
 
-  let zhss = libsrt.parse(srt_zhs)
+    let zhss = libsrt.parse(srt_zhs)
 
-  let subtitles = libsrt.merge(jps, zhss)
+    let subtitles = libsrt.merge(jps, zhss)
 
-  console.log(`# begin insert...`)
-  for (let i = 0; i < subtitles.length; i++) {  // subtitles.length;
+    console.log(`# begin insert...`)
+    for (let i = 0; i < subtitles.length; i++) {  // subtitles.length;
 
-    let item = subtitles[i]
+      let item = subtitles[i]
 
-    let begintime = item.begintime.replace(',', '.')  // for ffmpeg
-    let endtime = item.endtime.replace(',', '.')
-    let jp = item.jp
-    let zh = item.zh
+      let begintime = item.begintime.replace(',', '.')  // for ffmpeg
+      let endtime = item.endtime.replace(',', '.')
+      let jp = item.jp
+      let zh = item.zh
 
-    let [hiras, msg] = await libmecab.haras(jp)
-    if (hiras == null) {
-      throw `Error: segment fail. ${msg}`
-    }
+      let [hiras, msg] = await libmecab.haras(jp)
+      if (hiras == null) {
+        throw `Error: segment fail. ${msg}`
+      }
 
-    let ruby = hiras.ruby
-    let hiragana = hiras.hiragana
+      let ruby = hiras.ruby
+      let hiragana = hiras.hiragana
 
-    let hiragana_ng = libsrt.NG(hiragana)
-    let jp_ng = libsrt.NG(jp)
-    let zh_ng = libsrt.NG(zh)
+      let hiragana_ng = libsrt.NG(hiragana)
+      let jp_ng = libsrt.NG(jp)
+      let zh_ng = libsrt.NG(zh)
 
-    jp_ng = (jp_ng.concat(hiragana_ng)).join(' ')  // for fulltext search All in one
-    zh_ng = zh_ng.join(' ')
-    hiragana_ng = hiragana_ng.join(' ')
+      jp_ng = (jp_ng.concat(hiragana_ng)).join(' ')  // for fulltext search All in one
+      zh_ng = zh_ng.join(' ')
+      hiragana_ng = hiragana_ng.join(' ')
 
-    //let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', begintime, endtime)
+      //let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', begintime, endtime)
 
-    let { au: audio } = await libff.extractAudio(vdpath, 'mp3', begintime, endtime)
+      let { au: audio } = await libff.extractAudio(vdpath, 'mp3', begintime, endtime)
 
-    let video = Buffer.from('')  // empty now
+      let video = Buffer.from('')  // empty now
 
-    re = await tempDB.query(`
+      re = await tempDB.query(`
     INSERT INTO pokemon (name, seasion, jp, zh, time, jp_ruby, v_jp, v_zh, audio, video)
     VALUES
      ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10 );
      `, [name, seasion, jp, zh, item.begintime, ruby, jp_ng, zh_ng, audio, video])
 
 
-    // re = await tempDB.query(`SELECT audio FROM pokemon limit 1;`)
-    // let au = re.rows[0].audio  //  Uint8Array
-    // au = Buffer.from(au)
+      // re = await tempDB.query(`SELECT audio FROM pokemon limit 1;`)
+      // let au = re.rows[0].audio  //  Uint8Array
+      // au = Buffer.from(au)
 
-    console.log(`${i + 1}/${subtitles.length}`)
+      console.log(`${i + 1}/${subtitles.length}`)
+
+    }
 
   }
 
