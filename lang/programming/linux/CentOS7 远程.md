@@ -38,7 +38,9 @@ yum groupinstall "Xfce" -y
 
 systemctl get-default
 	# 看默认是不是图形登录
-systemctl set-default graphical.target
+
+systemctl set-default multi-user.target # no gui
+systemctl set-default graphical.target  # gui
 
 which xfce4-session
 	# /usr/bin/xfce4-session  # 成功
