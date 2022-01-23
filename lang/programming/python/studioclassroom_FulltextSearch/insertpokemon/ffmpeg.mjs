@@ -14,7 +14,7 @@ export default {
         try {
 
             // let args = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} ${path.join( __dirname, 'tmp.srt' )}` // write file
-            let cmd = `ffmpeg -i ${vdpath} -y -map 0:s:${nth} -f ${type} pipe:1`   // write stdout
+            let cmd = `ffmpeg -i "${vdpath}" -y -map 0:s:${nth} -f ${type} pipe:1`   // write stdout
 
             let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
             //childProcess.stdout.pipe(process.stdout)  // don't print to screen
@@ -30,7 +30,7 @@ export default {
 
         try {
 
-            let cmd = `ffmpeg -i ${vdpath} -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
+            let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
 
             let childProcess = execa(cmd, {shell:true})
             //childProcess.stdout.pipe(process.stdout) // don't print to screen
