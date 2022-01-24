@@ -594,6 +594,8 @@ let { default:config }  = await import('./config.js')
 
 ```javascript
 import pg from 'pg'
+let { Pool, Client } = pg
+
 import path from 'path'
 ```
 
