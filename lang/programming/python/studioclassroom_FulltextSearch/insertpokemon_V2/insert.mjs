@@ -86,8 +86,9 @@ for (let j = 0; j < mkvs.length; j++) {
     srt_zhs = libsrt.clean(srt_zhs)
     let zhss = libsrt.parse(srt_zhs)
     let subtitles = libsrt.merge(jps, zhss)
+    
 
-    for (let i = 0; i < 5; i++) {  // subtitles.length;
+    for (let i = 0; i < subtitles.length; i++) {  // subtitles.length;
 
         let item = subtitles[i]
 
@@ -153,3 +154,25 @@ console.log(`jp_ruby: ${jp_ruby}`)
 
 console.log('hi,,,')
 
+
+import { execa } from 'execa'
+if (process.platform != 'win32') {  // 停止pm2 的执行，否则会无限重启不会结束的
+  
+    let cmd = `pm2 stop insertpokemon`
+    console.log(`execte command: ${cmd}`)
+    let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
+    //childProcess.stdout.pipe(process.stdout)  // don't print to screen
+    let { stdout } = await childProcess
+    
+    console.log(stdout)
+}
+
+
+
+
+
+/*
+
+cp /mnt/Downloads/宠物小精灵BW双语/*第0[0-9]*.mkv /mnt/videos/anime/Pokemon/S14/Best_Wishes
+
+*/
