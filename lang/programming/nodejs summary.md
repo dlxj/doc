@@ -362,6 +362,11 @@ module.exports = {
 
 ## commonjs
 
+```
+import 导入的变量无论是否为基本类型都是引用传递
+module.exports 很像 export default 所以 ES6模块 可以很方便兼容 CommonJs
+```
+
 
 
 ### .mjs .cjs
@@ -544,6 +549,42 @@ export default {
 let { default: libdir } = await import('./dir.mjs')
 let mkvs = libdir.allmkv(root, 'Pokemon')
 ```
+
+
+
+### cjs 导入mjs
+
+
+
+```
+// es.mjs
+let foo = {name: 'foo'};
+export default foo;
+
+export let a = 1
+
+// cjs
+import('./es').then((res)=>{
+  console.log(res) // { get default: {name: 'foo'}, a: 1 }
+})
+```
+
+
+
+### mjs 导入cjs
+
+
+
+```javascript
+// module.js
+module.export.a = 1
+
+// index.mjs node
+import * as a from './module'
+console.log(a) // { default: { a:1 } }
+```
+
+
 
 
 
