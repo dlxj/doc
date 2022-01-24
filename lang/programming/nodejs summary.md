@@ -576,12 +576,25 @@ import('./es').then((res)=>{
 
 
 ```javascript
-// module.js
-module.export.a = 1
+// config.js
+module.exports = {
 
-// index.mjs node
-import * as a from './module'
-console.log(a) // { default: { a:1 } }
+    host:'xxx.77',
+    passwd:'xxx.com',
+    port: '5432'
+}
+
+// insert.mjs
+let { default:config }  = await import('./config.js')
+```
+
+
+
+### mjs 导入标准库
+
+```javascript
+import pg from 'pg'
+import path from 'path'
 ```
 
 
