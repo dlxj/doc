@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "execa": "~6.0.0",
+    "kuroshiro": "~1.1.2",
+    "kuroshiro-analyzer-kuromoji": "~1.1.0",
+    "kuroshiro-analyzer-mecab": "~1.0.1",
+    "pg": "~8.7.1",
+    "pg-pool": "~3.4.1",
+    "rd": "~2.0.1"
+  }
+}

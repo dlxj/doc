@@ -595,8 +595,25 @@ let { default:config }  = await import('./config.js')
 ```javascript
 import pg from 'pg'
 let { Pool, Client } = pg
+// import { Pool, Client } from 'pg'  // 原 cjs 的导入方式是这样
 
 import path from 'path'
+```
+
+
+
+### export default 用this互引用
+
+```
+export default {
+
+	funtion a {
+	
+	},
+	function b {
+		this.a()
+	}
+}
 ```
 
 
