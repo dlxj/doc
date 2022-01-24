@@ -364,6 +364,18 @@ module.exports = {
 
 
 
+### .mjs .cjs
+
+
+
+```
+.mjs 和 .cjs 后缀名保证分别解析为 ECMAScript modules 和 ComandJS 
+```
+
+
+
+
+
 ```
 // ffmpeg.mjs
 import { execa } from 'execa'
