@@ -434,8 +434,9 @@ console.log(111)
 ```
 
 - https://github.com/chrisveness/geodesy/issues/79
-  - 各种示例
-
+  
+- 各种示例
+  
 - https://juejin.cn/post/6972006652631318564
 
   - Node 最新 Module 导入导出规范
@@ -443,6 +444,7 @@ console.log(111)
     
 
 - https://zhuanlan.zhihu.com/p/337796076
+  
   - ES Modules 的加载、解析和执行都是异步的
 
 
@@ -494,6 +496,44 @@ launch.json
 }
 
 ```
+
+
+
+###  dir.mjs
+
+```javascript
+import { eachFileFilterSync } from 'rd'
+import path from 'path'
+
+export default {
+
+    allmkv : function(dir, filter) {
+
+        var paths = []
+
+        // 目录下的所有文件名
+        eachFileFilterSync(dir, /\.mkv$/, function (fullpath, stats) {
+
+            let basename = path.basename(fullpath)
+            if (filter != undefined && fullpath.indexOf(filter) != -1) {
+                paths.push(fullpath)
+            } else if (filter == undefined ) {
+                paths.push(fullpath)
+            }
+            
+        })
+
+        return paths
+
+    }
+
+}
+
+let { default: libdir } = await import('./dir.mjs')
+let mkvs = libdir.allmkv(root, 'Pokemon')
+```
+
+
 
 
 
