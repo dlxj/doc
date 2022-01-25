@@ -18,6 +18,7 @@ let mkvs = libdir.allmkv(root, 'Pokemon')
 let { default: libmecab } = await import('./mecab.mjs')
 await libmecab.init()
 //let [hirass, msgg] = await libmecab.haras('騙して勝つ')
+let [hirass, msgg] = await libmecab.haras("お願いします! ピカピカ! ")  // crash
 
 let { default: libff } = await import('./ffmpeg.mjs')
 // let { srt: srt_jpp, msg: msg_jpp } = await libff.extractSubtitle("E:\\videos\\anime\\Pokemon\\S14\\Best_Wishes\\06.mkv", 'srt', 2)
