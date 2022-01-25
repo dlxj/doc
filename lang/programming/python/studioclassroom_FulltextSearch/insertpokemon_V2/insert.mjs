@@ -79,11 +79,19 @@ for (let j = 0; j < mkvs.length; j++) {
     let vdpath = mkvs[j]
 
     let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+    if (srt_jp == null) {
+        console.log('Warning: srt_jp == null')
+        continue
+    }
     srt_jp = libsrt.clean(srt_jp)
     //fs.writeFileSync(`tmp.srt`, srt_jp, { encoding: 'utf8' })
     let jps = libsrt.parse(srt_jp)
 
     let { srt: srt_zhs, msg: msg_zhs } = await libff.extractSubtitle(vdpath, 'srt', 0)
+    if (srt_zhs == null) {
+        console.log('Warning: srt_zhs == null')
+        continue
+    }
     srt_zhs = libsrt.clean(srt_zhs)
     let zhss = libsrt.parse(srt_zhs)
     let subtitles = libsrt.merge(jps, zhss)

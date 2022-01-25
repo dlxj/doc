@@ -3,9 +3,9 @@ module.exports = {
     remark: '',
     params: {
         keywd: {
-        type: 'string',
-        remark: ''
-      }
+            type: 'string',
+            remark: ''
+        }
     },
     async handler({ keywd }) {
         return keywd
