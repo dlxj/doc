@@ -430,6 +430,16 @@ chrome://inspect/#devices
 
 - https://zhuanlan.zhihu.com/p/338287139
 
+1. chrome 打开： chrome://inspect
+2. 点击 Open dedicated DevTools for Node
+3. xxxx.77:9229  # Add connection # 这样只要服务器脚本运行后就后自动进入调试状态
+
+```
+# centos7 待调试脚本（非服务端，跑一次就结束的脚本）
+node --inspect-brk=xxx.77:9229 insert.cjs # 指定IP端口
+
+```
+
 
 
 
