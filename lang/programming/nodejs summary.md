@@ -424,6 +424,14 @@ chrome://inspect/#devices
 
 
 
+## chrome 远程调试
+
+
+
+- https://zhuanlan.zhihu.com/p/338287139
+
+
+
 
 
 # Syntax
