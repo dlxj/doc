@@ -195,4 +195,6 @@ cp /mnt/Downloads/宠物小精灵BW双语/*第0[0-9]*.mkv /mnt/videos/anime/Poke
 SELECT Max(ID) FROM pokemon;
 SELECT p."id", p.jp_ruby, p.zh, p.v_jp, p.v_zh, p.seasion, p."name" FROM pokemon p WHERE ID IN (1, 7174);
 
+solidjs UI
+
 */
