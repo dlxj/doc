@@ -1,5 +1,7 @@
 
 let http = require('http')
+let url = require('url')
+let path = require('path')
 
 let startPath = path.resolve(__dirname, '.') // startup dir
 
@@ -19,12 +21,18 @@ let httpServer = http.createServer((req, res) => {
     })
   }
 
-  if (req.protocol == undefined) {
-    req.protocol = 'http'
+  // if (req.protocol == undefined) {
+  //   req.protocol = 'http'
+  // }
+
+  let apiBasename = ''
+  if (req.url == '/') {
+    apiBasename = 'search'
   }
 
-  let baseURL =  req.protocol + '://' + req.headers.host + '/'
-  let reqUrl = new URL(req.url,baseURL)
+  const apiPath =  path.join(startPath, `/http/api/${apiBasename}.js`)  //`${startPath}/http/api/${apiBasename}.js`
+
+
 
   return res.end( 'ok' )
 

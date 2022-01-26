@@ -29,13 +29,14 @@ import fs from 'fs'
 let { default: libpg } = await import('./pgsql.mjs')
 // let re = await libpg.defaultDB.query('select $1::text as name', ['brianc'])
 
-let name = 'Pokemon_Best_Wishes'
+let name = 'Pokemon'
 let seasion = 'S14'
+let seasionName = 'Best Wishes'
 
 
-let re = await libpg.defaultDB.query('DROP DATABASE IF EXISTS temp;', [])
+let re = await libpg.defaultDB.query('DROP DATABASE IF EXISTS temp2;', [])
 re = await libpg.defaultDB.query(`
-    CREATE DATABASE temp 
+    CREATE DATABASE temp2 
         WITH OWNER = postgres 
         ENCODING = 'UTF8' 
         TABLESPACE = pg_default 
@@ -43,7 +44,7 @@ re = await libpg.defaultDB.query(`
         TEMPLATE template0;
     `, [])
 
-let tempDB = libpg.getDB('temp')
+let tempDB = libpg.getDB('temp2')
 re = await tempDB.query(`
     CREATE TABLE pokemon (
         id integer primary key generated always as identity, 
@@ -58,10 +59,12 @@ re = await tempDB.query(`
         v_jp  tsvector, 
         v_zh  tsvector, 
         v_en  tsvector, 
-        videoname text, 
-        seasion text DEFAULT '', 
+        seasion text DEFAULT '',
+        seasionname text DEFAULT '',
+        episode text DEFAULT '',
         audio bytea, 
-        video bytea 
+        video bytea,
+        videoname text 
       )
     `)
 
@@ -70,13 +73,18 @@ re = await tempDB.query("create extension pg_jieba;")
 re = await tempDB.query("CREATE INDEX pgroonga_jp_index ON pokemon USING pgroonga (jp);")
 re = await tempDB.query("CREATE INDEX pgroonga_jpmecab_index ON pokemon USING pgroonga (jp_mecab);")
 re = await tempDB.query("CREATE INDEX animename_index ON pokemon (name);")
-re = await tempDB.query("CREATE INDEX videoname_index ON pokemon (videoname);")
+re = await tempDB.query("CREATE INDEX episode_index ON pokemon (episode);")  // nth ji
 
 console.log(`# begin insert...`)
+
+let { default:libvdinfo } = await import('./videoinfo.mjs')
 
 for (let j = 0; j < mkvs.length; j++) {
 
     let vdpath = mkvs[j]
+    let vinfo = libvdinfo.vdinfo(vdpath)
+    let videoname = vinfo.videoname
+    let episode = vinfo.episode
 
     let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
     if (srt_jp == null) {
@@ -128,10 +136,10 @@ for (let j = 0; j < mkvs.length; j++) {
         let video = Buffer.from('')  // empty now
 
         re = await tempDB.query(`
-    INSERT INTO pokemon (name, seasion, jp, zh, time, jp_ruby, v_jp, v_zh, audio, video)
+    INSERT INTO pokemon (name, seasion, jp, zh, time, jp_ruby, v_jp, v_zh, videoname, episode, seasionName, audio, video)
     VALUES
-     ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10 );
-     `, [name, seasion, jp, zh, item.begintime, ruby, jp_ng, zh_ng, audio, video])
+     ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10, $11, $12, $13 );
+     `, [name, seasion, jp, zh, item.begintime, ruby, jp_ng, zh_ng, videoname, episode, seasionName, audio, video])
 
 
         // re = await tempDB.query(`SELECT audio FROM pokemon limit 1;`)
@@ -183,5 +191,8 @@ if (process.platform != 'win32') {  // 停止pm2 的执行，否则会无限重�
 /*
 
 cp /mnt/Downloads/宠物小精灵BW双语/*第0[0-9]*.mkv /mnt/videos/anime/Pokemon/S14/Best_Wishes
+
+SELECT Max(ID) FROM pokemon;
+SELECT p."id", p.jp_ruby, p.zh, p.v_jp, p.v_zh, p.seasion, p."name" FROM pokemon p WHERE ID IN (1, 7174);
 
 */

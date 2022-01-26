@@ -1457,6 +1457,14 @@ _.isEmpty(dic_ansers)
 
 
 
+## Object.assign
+
+
+
+```
+Object.assign(data, req.query)
+```
+
 
 
 

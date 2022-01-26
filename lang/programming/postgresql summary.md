@@ -1774,6 +1774,43 @@ https://stackoverflow.com/questions/45680936/how-to-implement-full-text-search-o
 
 
 
+#### 分页
+
+不过借鉴这个思路，我们可以对某些场景的分页查询进行优化。
+对于按需自动加载（*划到页面底部自动加载更多内容*）或者只提供**上一页/下一页**浏览模式的场景，可以进行如下优化：
+
+1. 每次查询数据时，我们记录最后一条数据的ID或最后更新时间（这个主要根据order by字段来确定）
+2. 加载下一页数据时，把本页的最后一条数据ID作为过滤条件。
+3. 加载上一页数据时，则把本页第一条数据ID作为过滤条件。
+
+**查询下一页**
+
+```n1ql
+SELECT * FROM orders WHERE order_id > page_last_id ORDER BY order_id
+LIMIT page_sieze OFFSET 0;
+```
+
+**查询上一页**
+
+```n1ql
+SELECT * FROM orders WHERE order_id < page_first_id ORDER BY order_id
+LIMIT page_sieze OFFSET 0;
+```
+
+小技巧：*每次查询数据时，多返回一条数据，即返回page_size + 1条数据，但显示时去掉最后一条数据，通过这多出来一条数据，我们可以用来判断数据是否还有下一页*。
+
+另外对于可以跳转到任意页面的场景，也可以进行优化，这种可跳转场景，分页显示也是有限的，一般模式是**第一页/上一页/当前页前后10页……/下一页/最后一页**，也就是说，分页时，数据是在**一定范围内**（前后10页）移动，可以以当前页数据为基础，对数据进行过滤，减少数据扫描范围。
+考虑orders表有10W条记录，每页显示10条，当前页码为1000时的场景，如果按照单独limit和offset模式，offset=1W，也就是数据库要扫码1W条记录。假如现在翻页要从1000页跳转到1005页，我们以第1000页最后一条数据ID为过滤条件，offset跳过1001-1004的40条数据即可。
+
+**查询1005页**
+
+```n1ql
+SELECT * FROM orders WHERE order_id > page_1000_last_id ORDER BY order_id
+LIMIT page_sieze OFFSET page_size * 4;
+```
+
+这种方法相比基础的分页方式，只要order by字段是主键或索引字段，数据扫描的行数从1W多条下降到了几十条，效率大大提升。
+
 
 
 
