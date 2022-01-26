@@ -1885,6 +1885,22 @@ _.cloneDeep
 
 
 
+## 异步函数是Promise的实例
+
+
+
+```
+  //进入API
+  result = api.handler(data)
+  if (result instanceof Promise) {
+    result = await result
+  }
+```
+
+
+
+
+
 
 
 # 随机
