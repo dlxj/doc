@@ -17,6 +17,15 @@ Object.defineProperty(global, 'startPath', {  // global 是保留关键字，系
   }
 })
 
+// 缓存api 对象，不用每次都读磁盘
+let apiCache = {}
+Object.defineProperty(global, 'apiCache', {
+  get() {
+    return apiCache
+  }
+})
+
+
 let httpServer = http.createServer(async (req, res) => {
 
   if (req.method !== 'POST' && req.method !== 'GET') {
@@ -77,22 +86,41 @@ let httpServer = http.createServer(async (req, res) => {
 
   let apiPath = path.join(startPath, `/http/api${req.url}.js`)
 
-  //判断文件是否存在
-  if (!fs.existsSync(apiPath)) {
-    res.writeHead(404)
-    res.send('not found')
-    return
+  let api = ''
+  if (!(apiPath in global.apiCache)) {
+
+    //判断文件是否存在
+    if (!fs.existsSync(apiPath)) {
+      res.writeHead(404)
+      res.send('not found')
+      return
+    }
+
+    api = require(apiPath)
+    //注入msg函数
+    Object.defineProperty(api, "msg", {
+      get() {
+        return (status, data) => {
+          return { status, data }
+        }
+      }
+    })
+
+    global.apiCache[apiPath] = api
+
+
+  } else {
+
+    api = global.apiCache[apiPath]
+
   }
 
-  let api = require(apiPath)
-  //注入msg函数
-  Object.defineProperty(api, "msg", {
-    get() {
-      return (status, data) => {
-        return { status, data }
-      }
-    }
-  })
+
+  //参数验证
+  data = require('./lib/paramVerify.js')(api.params, data)
+  data['__ip__'] = req.ip
+  data['__request__'] = req
+  data['__response__'] = res
 
 
   let result = ''
