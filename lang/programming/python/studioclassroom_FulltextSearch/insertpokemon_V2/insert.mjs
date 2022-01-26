@@ -53,7 +53,8 @@ re = await tempDB.query(`
         zh text DEFAULT '', 
         en text DEFAULT '', 
         type text, 
-        time text,
+        begintime text,
+        endtime text,
         jp_ruby text,
         jp_mecab text, 
         v_jp  tsvector, 
@@ -136,10 +137,10 @@ for (let j = 0; j < mkvs.length; j++) {
         let video = Buffer.from('')  // empty now
 
         re = await tempDB.query(`
-    INSERT INTO pokemon (name, seasion, jp, zh, time, jp_ruby, v_jp, v_zh, videoname, episode, seasionName, audio, video)
+    INSERT INTO pokemon (name, seasion, jp, zh, begintime, jp_ruby, v_jp, v_zh, videoname, episode, seasionName, endtime, audio, video)
     VALUES
-     ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10, $11, $12, $13 );
-     `, [name, seasion, jp, zh, item.begintime, ruby, jp_ng, zh_ng, videoname, episode, seasionName, audio, video])
+     ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10, $11, $12, $13, $14 );
+     `, [name, seasion, jp, zh, begintime, ruby, jp_ng, zh_ng, videoname, episode, seasionName, endtime, audio, video])
 
 
         // re = await tempDB.query(`SELECT audio FROM pokemon limit 1;`)

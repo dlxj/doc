@@ -8,7 +8,7 @@ export default {
         let videoname = path.basename(vdpath)
         let episode = ''
 
-        let match = videoname.match(/第(\d+)话/)
+        let match = videoname.match(/第(\d+(?:~\d+)*)话/)
         if (match != null) {
             episode = match[1]
         } else {
