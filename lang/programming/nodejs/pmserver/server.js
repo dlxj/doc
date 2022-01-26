@@ -17,7 +17,6 @@ Object.defineProperty(global, 'startPath', {  // global 是保留关键字，系
   }
 })
 
-
 let httpServer = http.createServer(async (req, res) => {
 
   if (req.method !== 'POST' && req.method !== 'GET') {
@@ -42,7 +41,24 @@ let httpServer = http.createServer(async (req, res) => {
     res.end(data.toString())
   }
 
-  let form = new formidable.IncomingForm()
+  //接收到的参数
+  let data = {}
+  //填充URL参数到data
+  if (req.method == 'GET') {
+    let query = url.parse(req.url, true).query
+    Object.assign(data, query)
+  }
+  //填充post数据到data里
+  if (req.method == 'POST') {
+    let form = new formidable.IncomingForm()
+    await new Promise((resolve, reject) => {
+      form.parse(req, async (err, body, files) => {
+        if (err) throw err
+        Object.assign(data, body)
+        resolve()
+      })
+    })
+  }
 
   let json = {
     keywd: '',
@@ -52,7 +68,6 @@ let httpServer = http.createServer(async (req, res) => {
     nthpage: '',
     nperpage: ''
   }
-
   let formurlencoded_json = formurlencoded(json)
 
   let apiBasename = ''
@@ -79,8 +94,7 @@ let httpServer = http.createServer(async (req, res) => {
     }
   })
 
-  //接收到的参数
-  let data = {}
+
   let result = ''
 
   //进入API

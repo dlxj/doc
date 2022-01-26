@@ -1461,8 +1461,15 @@ _.isEmpty(dic_ansers)
 
 
 
-```
-Object.assign(data, req.query)
+```javascript
+let url = require('url')
+let httpServer = http.createServer(async (req, res) => {
+	  let query = url.parse(req.url, true).query
+  	  //接收到的参数
+      let data = {}
+      //填充URL参数到data
+      Object.assign(data, query)
+}
 ```
 
 
