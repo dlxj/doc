@@ -8,7 +8,7 @@ module.exports = {
         }
     },
     async handler({ keywd }) {
-        return 'hi,,,'
+        return this.msg(200, 'hi,,,')
     }
 }
 
