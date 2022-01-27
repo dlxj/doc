@@ -5,26 +5,13 @@ let path = require('path')
 let fs = require('fs')
 let formurlencoded = require('form-urlencoded')
 let formidable = require('formidable')
+let rd = require('rd')
 
 process.on('uncaughtException', function (err) {
   console.error(err)
 })
 
-let startPath = path.resolve(__dirname, '.')  // startup dir
-Object.defineProperty(global, 'startPath', {  // global 是保留关键字，系统全局对象
-  get() {
-    return startPath
-  }
-})
-
-// 缓存api 对象，不用每次都读磁盘
-let apiCache = {}
-Object.defineProperty(global, 'apiCache', {
-  get() {
-    return apiCache
-  }
-})
-
+require('./init')()
 
 let httpServer = http.createServer(async (req, res) => {
 
@@ -84,37 +71,15 @@ let httpServer = http.createServer(async (req, res) => {
     req.url = '/search'
   }
 
-  let apiPath = path.join(startPath, `/http/api${req.url}.js`)
-
-  let api = ''
+  //判断api 是否存在
+  let apiPath = path.join(global.startDir, `/http/api${req.url}.js`)
   if (!(apiPath in global.apiCache)) {
-
-    //判断文件是否存在
-    if (!fs.existsSync(apiPath)) {
-      res.writeHead(404)
-      res.send('not found')
-      return
-    }
-
-    api = require(apiPath)
-    //注入msg函数
-    Object.defineProperty(api, "msg", {
-      get() {
-        return (status, data) => {
-          return { status, data }
-        }
-      }
-    })
-
-    global.apiCache[apiPath] = api
-
-
-  } else {
-
-    api = global.apiCache[apiPath]
-
+    res.writeHead(404)
+    res.send('not found')
+    return
   }
 
+  let api = global.apiCache[apiPath]
 
   //参数验证
   data = require('./lib/paramVerify.js')(api.params, data)
@@ -122,12 +87,9 @@ let httpServer = http.createServer(async (req, res) => {
   data['__request__'] = req
   data['__response__'] = res
 
-
-  let result = ''
-
   //进入API
-  result = api.handler(data)
-  if (result instanceof Promise) {
+  let result = api.handler(data)
+  if (result instanceof Promise) {   // async 函数是 Promise的实例
     result = await result
   }
 
