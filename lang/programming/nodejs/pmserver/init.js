@@ -32,6 +32,7 @@ Object.defineProperty(global, 'serviceCache', {
 
 module.exports = function () {
 
+    // 从js 文件加载api 对象
     let apipaths = libfiles.allfiles(apiDir, 'js')
     apipaths.forEach((apiPath) => {
         if (!fs.existsSync(apiPath)) {
@@ -51,6 +52,7 @@ module.exports = function () {
     })
 
 
+    // 从js 文件加载service 对象
     let servicepaths = libfiles.allfiles(serviceDir, 'js')
     servicepaths.forEach((servicePath) => {
         if (!fs.existsSync(servicePath)) {
@@ -67,36 +69,79 @@ module.exports = function () {
         let api = global.apiCache[apiPath]
         api['service'] = {}
 
-        for ( let servicePath in  global.serviceCache) {
+        // for ( let servicePath in  global.serviceCache) {
 
-            let service = global.serviceCache[servicePath]
+        //     let service = global.serviceCache[servicePath]
 
-            let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
-            let arr = basePath.split(new RegExp(String.raw`[\\/]`))
+        //     let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
+        //     let arr = basePath.split(new RegExp(String.raw`[\\/]`))
+        //     service['arr'] = arr
 
-            let lastobj = api['service']
-            for (let i = 0; i < arr.length; i++) {
+        //     let lastobj = api['service']
+        //     for (let i = 0; i < arr.length; i++) {
 
-                let name = arr[i]
+        //         let name = arr[i]
 
-                if (i == arr.length - 1) {
+        //         if (i == arr.length - 1) {
 
-                    lastobj[name] = service.handler
+        //             lastobj[name] = service.handler
 
-                } else {
+        //         } else {
 
-                    if (!(name in lastobj)) {
-                        lastobj[name] = {}
-                        lastobj = lastobj[name]
-                    } else {
-                        lastobj = lastobj[name]
-                    }
-                }
+        //             if (!(name in lastobj)) {
+        //                 lastobj[name] = {}
+        //                 lastobj = lastobj[name]
+        //             } else {
+        //                 lastobj = lastobj[name]
+        //             }
+        //         }
 
-            }
+        //     }
 
-        }
+        // }
 
     }
-    
+
+    // service 注入 其他service
+    for ( let servicePath in  global.serviceCache) {
+
+        let service = global.serviceCache[servicePath]
+        service['service'] = {}
+
+        // let lastobj = service['service']
+        // for ( let other_servicePath in global.serviceCache) {
+
+        //     let other_service = global.serviceCache[other_servicePath]
+
+        //     if (other_service === service) {
+        //         continue // 检查是否为同一个引用, 防止自动调用自已
+        //     }
+
+        //     let arr = other_service['arr']
+        //     for (let i = 0; i < arr.length; i++) {
+
+        //         let name = arr[i]
+
+        //         if (i == arr.length - 1) {
+
+        //             lastobj[name] = other_service.handler
+
+        //         } else {
+
+        //             if (!(name in lastobj)) {
+        //                 lastobj[name] = {}
+        //                 lastobj = lastobj[name]
+        //             } else {
+        //                 lastobj = lastobj[name]
+        //             }
+        //         }
+        //     }
+
+
+        // }
+
+    }
+
+    let a = 1
+
 }
