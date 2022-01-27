@@ -356,6 +356,94 @@ module.exports = {
 
 
 
+# live debug 
+
+
+
+```
+# https://medium.com/the-node-js-collection/live-debugging-node-js-apps-at-the-command-line-cd5b58f883e1
+
+# http://www.ruanyifeng.com/blog/2018/03/node-debugger.html
+
+# https://juejin.cn/post/6844904098618163207
+	# VSCode 远程调试
+
+# https://zhuanlan.zhihu.com/p/100092504
+
+	# http://www.baiguangnan.com/2019/03/13/vscoderemotedebugnodejs/
+
+		# vscode node remote debug
+
+# https://nodejs.org/api/debugger.html
+node inspect -p 9436  # 进程ID
+	# help # 打印帮助
+
+	# debug> setBreakpoint('main.js', 4, 'num < 0')  # 条件断点
+
+list(100): shows the first 100 lines of code
+setBreakpoint(17): sets a breakpoint on the 17th line
+clearBreakpoint(17): removes a breakpoint on the 17th line
+exec body: evaluates the body variable and prints out its result
+cont: continues the program's execution
+
+Resume execution(continue): c or cont
+Next line: n or next
+Step into a function: s or step
+Step out: o or out
+Set breakpoint: sb or setBreakpoint
+Clear breakpoint: sc or clearBreakpoint
+
+watch('counter')
+
+
+
+# https://betterprogramming.pub/how-to-debug-using-node-js-built-in-debugger-f3ab3ba6e7c8
+	# Debug Using Node.js’s Built-In Debugger
+	
+setBreakpoint('xxxxxx.js', 45)
+setBreakpoint('xxxxxx.js', 142)
+clearBreakpoint('xxxx.js', 45)
+
+# 可能是这一句的错误
+let retSaveExam = await this.services.saveExamgather({examgahters})
+
+n # 下一行
+
+break in file:////yingedu/project_test/ksbaiexam/http/api/submit.js
+
+
+# https://zhuanlan.zhihu.com/p/98571113
+	# chrome 远程调试node
+
+
+node14 --inspect-brk=0.0.0.0:9229 server.js
+
+chrome://inspect/#devices
+
+```
+
+
+
+## chrome 远程调试
+
+
+
+- https://zhuanlan.zhihu.com/p/338287139
+
+1. chrome 打开： chrome://inspect
+2. 点击 Open dedicated DevTools for Node
+3. xxxx.77:9229  # Add connection # 这样只要服务器脚本运行后就后自动进入调试状态
+
+```
+# centos7 待调试脚本（非服务端，跑一次就结束的脚本）
+node --inspect-brk=xxx.77:9229 insert.cjs # 指定IP端口
+
+```
+
+
+
+
+
 # Syntax
 
 
@@ -1114,6 +1202,17 @@ if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).
 
 
 
+## ^| 符号 # 必须在开头的位置，前面可以有空白
+
+
+
+```
+(^|\n)[^\r\n\S]*(#[\s\S]+?)  // 符号 # 必须在开头的位置，前面可以有空白
+```
+
+- (^|\n) 符示符号 # 或者出现在开头，或都前面有一个 \n 
+- [^\r\n\S]*  表示 既不是\r 又不是 \n 还不是非空白字符，就只能是 **除\r \n 以外的其他所有空白了**
+
 
 
 ## 命名捕获组
@@ -1319,6 +1418,13 @@ _.orderBy(data, [
 
 
 ```javascript
+for (let key in paramsDefined) {
+}
+```
+
+
+
+```javascript
 1238
 
 Under ECMAScript 5, you can combine Object.keys() and Array.prototype.forEach():
@@ -1368,6 +1474,21 @@ _.isEmpty(dic_ansers)
 ```
 
 
+
+## Object.assign
+
+
+
+```javascript
+let url = require('url')
+let httpServer = http.createServer(async (req, res) => {
+	  let query = url.parse(req.url, true).query
+  	  //接收到的参数
+      let data = {}
+      //填充URL参数到data
+      Object.assign(data, query)
+}
+```
 
 
 
@@ -1617,72 +1738,6 @@ console.log( arguments )
 
 
 
-# live debug 
-
-
-
-```
-# https://medium.com/the-node-js-collection/live-debugging-node-js-apps-at-the-command-line-cd5b58f883e1
-
-# http://www.ruanyifeng.com/blog/2018/03/node-debugger.html
-
-# https://juejin.cn/post/6844904098618163207
-	# VSCode 远程调试
-
-# https://zhuanlan.zhihu.com/p/100092504
-
-	# http://www.baiguangnan.com/2019/03/13/vscoderemotedebugnodejs/
-
-		# vscode node remote debug
-
-# https://nodejs.org/api/debugger.html
-node inspect -p 9436  # 进程ID
-	# help # 打印帮助
-
-	# debug> setBreakpoint('main.js', 4, 'num < 0')  # 条件断点
-
-list(100): shows the first 100 lines of code
-setBreakpoint(17): sets a breakpoint on the 17th line
-clearBreakpoint(17): removes a breakpoint on the 17th line
-exec body: evaluates the body variable and prints out its result
-cont: continues the program's execution
-
-Resume execution(continue): c or cont
-Next line: n or next
-Step into a function: s or step
-Step out: o or out
-Set breakpoint: sb or setBreakpoint
-Clear breakpoint: sc or clearBreakpoint
-
-watch('counter')
-
-
-
-# https://betterprogramming.pub/how-to-debug-using-node-js-built-in-debugger-f3ab3ba6e7c8
-	# Debug Using Node.js’s Built-In Debugger
-	
-setBreakpoint('xxxxxx.js', 45)
-setBreakpoint('xxxxxx.js', 142)
-clearBreakpoint('xxxx.js', 45)
-
-# 可能是这一句的错误
-let retSaveExam = await this.services.saveExamgather({examgahters})
-
-n # 下一行
-
-break in file:////yingedu/project_test/ksbaiexam/http/api/submit.js
-
-
-# https://zhuanlan.zhihu.com/p/98571113
-	# chrome 远程调试node
-
-
-node14 --inspect-brk=0.0.0.0:9229 server.js
-
-chrome://inspect/#devices
-
-```
-
 
 
 
@@ -1848,6 +1903,22 @@ _.cloneDeep
     return new Promise((resolve) => {
       setTimeout(resolve, ms)
     })
+  }
+```
+
+
+
+
+
+## 异步函数是Promise的实例
+
+
+
+```
+  //进入API
+  result = api.handler(data)
+  if (result instanceof Promise) {
+    result = await result
   }
 ```
 

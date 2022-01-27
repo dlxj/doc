@@ -1,4 +1,6 @@
 
+// https://github.com/atilika/kuromoji dict
+
 // https://mebee.info/2021/02/18/post-29277/
 
 // https://www.npmjs.com/package/kuroshiro
@@ -18,16 +20,22 @@ let mecabAnalyzer = new MecabAnalyzer({
     }
 })
 let kuroshiro = new Kuroshiro()
+let kuroshiro2 = new Kuroshiro()
 
 export default {
 
     init: async function () {
+        
+        //await kuroshiro2.init(new KuromojiAnalyzer())
+
         if (process.platform == 'win32') {
             await kuroshiro.init(new KuromojiAnalyzer())  // for windows
         } else if (process.platform == 'linux') {
-            await kuroshiro.init(mecabAnalyzer)           // for linux
+            await kuroshiro.init(new KuromojiAnalyzer(mecabAnalyzer))  // for linux  // has Crash BUG: let [hirass, msgg] = await libmecab.haras("お願いします! ピカピカ! ")  
+            await kuroshiro2.init(new KuromojiAnalyzer())
+            //await kuroshiro.init(new KuromojiAnalyzer({dictPath: "/usr/lib64/mecab/dic/mecab-ipadic-neologd"}))  // dictPath: "/usr/lib64/mecab/dic/mecab-ipadic-neologd"     /usr/lib64/mecab/dic/ipadic
         } else if (process.platform == 'darwin') {
-            await kuroshiro.init(mecabAnalyzer)
+            await kuroshiro.init(new KuromojiAnalyzer())    
         } else {
             throw 'unknow os type.'
         }
@@ -37,8 +45,19 @@ export default {
 
         let [hiras, msg] = await new Promise(async function (resolve) {
 
-            let ruby = await kuroshiro.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
-            let hiragana = await kuroshiro.convert(str, { to: "hiragana" })
+            let ruby = null
+            let hiragana = null
+
+            try {
+
+                ruby = await kuroshiro.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
+                hiragana = await kuroshiro.convert(str, { to: "hiragana" })
+            } catch(e) {
+                console.log(`## error in haras funtion in mecab.mjs change kuroshiro2 to segment...`)
+                ruby = await kuroshiro2.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
+                hiragana = await kuroshiro2.convert(str, { to: "hiragana" })  
+            }
+
             resolve([{ ruby, hiragana, origin: str }, ''])
 
         })
