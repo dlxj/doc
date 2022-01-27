@@ -1,3 +1,4 @@
+
 module.exports = {
     name: 'search',
     remark: '',
@@ -8,6 +9,7 @@ module.exports = {
         }
     },
     async handler({ keywd }) {
+
         return this.msg(200, 'hi,,,')
     }
 }
