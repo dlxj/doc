@@ -13,7 +13,7 @@ module.exports = {
 
         //let re = await this.service.user.getuser( { userid:'' } )
 
-        return obj
+        return 'hi from service.'
 
         // return 'hi from service.'
 

@@ -1216,17 +1216,19 @@ let s = `#abc #def
 ####mno #pqr
 
 `
-let matchs = s.matchAll(new RegExp(String.raw`(^|\n)[^\r\n\S]*(#+)`, 'g'))
+let matchs = s.matchAll(new RegExp(String.raw`(?:^|\n)[^\r\n\S]*(#[\s\S]+?)(?=\n)`, 'g'))
 let arr = Array.from(matchs)
 arr.forEach((match)=>{
 
-    let g2 = match[2]
+    let g2 = match[1]
     console.log(g2)
 
 })
 ```
 
-- (^|\n)  整个串或者出现在开头，或都前面必有一个 \n 
+- (?:^|\n)  整个串或者出现在开头，或都前面必有一个 \n 
+- ?: 表示这不是一个分组
+- \s 表示空白字符，\S 表示非空白字符
 - [^\r\n\S]*  表示 既不是\r 又不是 \n 还不是非空白字符，就只能是 **除\r \n 以外的其他所有空白了**
 
 
