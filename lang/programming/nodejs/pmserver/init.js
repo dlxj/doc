@@ -142,6 +142,4 @@ module.exports = function () {
 
     }
 
-    let a = 1
-
 }

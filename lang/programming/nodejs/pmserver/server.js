@@ -93,6 +93,12 @@ let httpServer = http.createServer(async (req, res) => {
     result = await result
   }
 
+  //进入Service
+  let servicePath = path.join(global.startDir, `/service/api${req.url}.js`)
+  let service = global.serviceCache[servicePath]
+  let result2 = await service.handler(data)
+
+
   return res.send(result)
 
 })
