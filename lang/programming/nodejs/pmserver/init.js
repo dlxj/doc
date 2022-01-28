@@ -74,7 +74,7 @@ module.exports = function () {
             let service = global.serviceCache[servicePath]
 
             let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
-            let arr = basePath.split(new RegExp(String.raw`[\\/]`))
+            let arr = basePath.split(new RegExp(String.raw`[\\/]`))  // 此 service 的 每一个“文件夹”
             service['arr'] = arr
 
             let lastobj = api['service']
@@ -92,7 +92,8 @@ module.exports = function () {
                         lastobj[name] = {}
                         lastobj = lastobj[name]
                     } else {
-                        lastobj = lastobj[name]
+                        //lastobj = lastobj[name]
+                        // 不会进到这里的，因为name 必然不在lastobj 里，因为 lastobj 永远都是 {} 对象
                     }
                 }
 
