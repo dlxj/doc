@@ -69,36 +69,36 @@ module.exports = function () {
         let api = global.apiCache[apiPath]
         api['service'] = {}
 
-        // for ( let servicePath in  global.serviceCache) {
+        for ( let servicePath in  global.serviceCache) {
 
-        //     let service = global.serviceCache[servicePath]
+            let service = global.serviceCache[servicePath]
 
-        //     let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
-        //     let arr = basePath.split(new RegExp(String.raw`[\\/]`))
-        //     service['arr'] = arr
+            let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
+            let arr = basePath.split(new RegExp(String.raw`[\\/]`))
+            service['arr'] = arr
 
-        //     let lastobj = api['service']
-        //     for (let i = 0; i < arr.length; i++) {
+            let lastobj = api['service']
+            for (let i = 0; i < arr.length; i++) {
 
-        //         let name = arr[i]
+                let name = arr[i]
 
-        //         if (i == arr.length - 1) {
+                if (i == arr.length - 1) {
 
-        //             lastobj[name] = service.handler
+                    lastobj[name] = service.handler
 
-        //         } else {
+                } else {
 
-        //             if (!(name in lastobj)) {
-        //                 lastobj[name] = {}
-        //                 lastobj = lastobj[name]
-        //             } else {
-        //                 lastobj = lastobj[name]
-        //             }
-        //         }
+                    if (!(name in lastobj)) {
+                        lastobj[name] = {}
+                        lastobj = lastobj[name]
+                    } else {
+                        lastobj = lastobj[name]
+                    }
+                }
 
-        //     }
+            }
 
-        // }
+        }
 
     }
 
@@ -108,37 +108,37 @@ module.exports = function () {
         let service = global.serviceCache[servicePath]
         service['service'] = {}
 
-        // let lastobj = service['service']
-        // for ( let other_servicePath in global.serviceCache) {
+        let lastobj = service['service']
+        for ( let other_servicePath in global.serviceCache) {
 
-        //     let other_service = global.serviceCache[other_servicePath]
+            let other_service = global.serviceCache[other_servicePath]
 
-        //     if (other_service === service) {
-        //         continue // 检查是否为同一个引用, 防止自动调用自已
-        //     }
+            if (other_service === service) {
+                continue // 检查是否为同一个引用, 防止自已调用自已
+            }
 
-        //     let arr = other_service['arr']
-        //     for (let i = 0; i < arr.length; i++) {
+            let arr = other_service['arr']
+            for (let i = 0; i < arr.length; i++) {
 
-        //         let name = arr[i]
+                let name = arr[i]
 
-        //         if (i == arr.length - 1) {
+                if (i == arr.length - 1) {
 
-        //             lastobj[name] = other_service.handler
+                    lastobj[name] = other_service.handler
 
-        //         } else {
+                } else {
 
-        //             if (!(name in lastobj)) {
-        //                 lastobj[name] = {}
-        //                 lastobj = lastobj[name]
-        //             } else {
-        //                 lastobj = lastobj[name]
-        //             }
-        //         }
-        //     }
+                    if (!(name in lastobj)) {
+                        lastobj[name] = {}
+                        lastobj = lastobj[name]
+                    } else {
+                        lastobj = lastobj[name]
+                    }
+                }
+            }
 
 
-        // }
+        }
 
     }
 
