@@ -7338,6 +7338,24 @@ js C# interop
 
 
 
+# 发布压缩
+
+
+
+- https://www.qiufengblog.com/articles/asp-net-blazor-publish.html
+
+
+
+
+
+# SignalR
+
+SignalR是一个提供实时双向通信能力的组件。所谓双向，就是客户端和服务端都可以向对方发送消息。很多人会有一个误解，认为SignalR就是对WebSockets进行了一下封装，其实不然。WebSockets是SignalR的首选通信方式，但根据应用场景和网络环境等的不同，SignalR也会选择性的自动切换到服务端发送事件（Server-Sent Events）或者长轮询（Long Polling）的方式上。
+
+SignalR使用了**hub**这样一个东西来支持客户端和服务端之间的通信，可以认为它是一个消息集散中心。客户端和服务端通过互相调用对方的方法的方式来进行消息的传递。
+
+SignalR可以利用ASP.NET Core身份验证来识别每一个连接（Connection）所对应的用户，继而可以对hub及其中的方法进行权限控制。
+
 
 
 # 爬虫
