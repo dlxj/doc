@@ -7112,9 +7112,47 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 
 
+
+
 ## ManimCE
 
 
+
+### Colab
+
+- 按顺序分别运行
+
+```
+!sudo apt update
+!sudo apt install libcairo2-dev ffmpeg \
+    texlive texlive-latex-extra texlive-fonts-extra \
+    texlive-latex-recommended texlive-science \
+    tipa libpango1.0-dev
+!pip install manim
+!pip install IPython --upgrade
+```
+
+```
+from manim import *
+```
+
+```
+%%manim -qm -v WARNING SquareToCircle
+
+class SquareToCircle(Scene):
+   def construct(self):
+      square = Square()
+      circle = Circle()
+      circle.set_fill(PINK, opacity=0.5)
+      self.play(Create(square))
+      self.play(Transform(square, circle))
+      self.wait()
+```
+
+
+
+- https://try.manim.community/
+- https://docs.manim.community/en/stable/reference/manim.scene.vector_space_scene.LinearTransformationScene.html
 
 ```
 # https://github.com/brianamedee/Manim-Tutorials-2021
