@@ -7134,19 +7134,25 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 ```
 from manim import *
+config.media_width = "60%"
 ```
 
-```
-%%manim -qm -v WARNING SquareToCircle
+```python
+%%manim -v WARNING -qm LinearTransformationSceneExample
 
-class SquareToCircle(Scene):
-   def construct(self):
-      square = Square()
-      circle = Circle()
-      circle.set_fill(PINK, opacity=0.5)
-      self.play(Create(square))
-      self.play(Transform(square, circle))
-      self.wait()
+class LinearTransformationSceneExample(LinearTransformationScene):
+    def __init__(self, **kwargs):  # Colab 必须要多一个参籹：**kwargs
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            leave_ghost_vectors=True,
+            **kwargs,
+        )
+
+    def construct(self):
+        matrix = [[1, 1], [0, 1]]
+        self.apply_matrix(matrix)
+        self.wait()
 ```
 
 
