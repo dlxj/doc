@@ -625,14 +625,14 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                 sql = $"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;";
 
                 // SELECT id, jp, zh, p.begintime as time FROM pokemon p  WHERE p.v_jp @@ to_tsquery('ここ')  LIMIT 3;
-                sql2 = $"SELECT id, jp_ruby as jp, zh, p.begintime as time FROM pokemon p  WHERE p.v_jp @@ to_tsquery('{keywd}')  ORDER BY RANDOM()  LIMIT 3;";
+                sql2 = $"SELECT id, jp_ruby as jp, zh, p.begintime as time, name, seasion FROM pokemon p  WHERE p.v_jp @@ to_tsquery('{keywd}')  ORDER BY RANDOM()  LIMIT 3;";
 
 
             }
             else if (isCh)
             {
                 sql = $"SELECT id, jp, zh, time FROM anime WHERE v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;";
-                sql2 = $"SELECT id, jp_ruby as jp, zh, p.begintime as time FROM pokemon p  WHERE p.v_zh @@ to_tsquery('{keywd}')  ORDER BY RANDOM() LIMIT 3;";
+                sql2 = $"SELECT id, jp_ruby as jp, zh, p.begintime as time, name, seasion FROM pokemon p  WHERE p.v_zh @@ to_tsquery('{keywd}')  ORDER BY RANDOM() LIMIT 3;";
 
             }
 
@@ -698,8 +698,10 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
                                 string jp = reader["jp"].ToString();
                                 string zh = reader["zh"].ToString();
                                 string time = reader["time"].ToString();
+                                string name = reader["name"].ToString();
+                                string seasion = reader["seasion"].ToString();
 
-                                var d = new Dictionary<string, string> { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+                                var d = new Dictionary<string, string> { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time }, { "name", name }, { "seasion", seasion } };
 
                                 ret.Add(d);
 

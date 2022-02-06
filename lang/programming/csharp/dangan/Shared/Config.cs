@@ -15,7 +15,7 @@ namespace dangan.Shared
         //         .Build();
 
 
-        public static bool debugQ = false;
+        public static bool debugQ = true;
         public static string host { get{ return "echodict.com"; } }  // 209.141.34.77:80  // echodict.com
         public static string hostDebug = "localhost:5000";
 
