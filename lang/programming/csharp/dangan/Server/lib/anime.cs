@@ -566,7 +566,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
         };
 
-        public async static Task<List<Dictionary<string, string>>> search(string keywd)
+        public async static Task<List<Dictionary<string, string>>> search(string keywd, string lang)
         {
 
 
@@ -574,24 +574,36 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             bool isCh = false;
             bool isJp = false;
 
-            //keyword = ZhConverter.HansToHant(keyword);  // chs to cht  
-
-            if (chQ(keywd))
+            if (lang == "ch")
             {
-                Console.WriteLine("### ch.");
-                //keywd = ZhConverter.HansToHant(keywd);  // chs to cht // https://github.com/CosineG/OpenCC.NET
                 isCh = true;
-            }
-            else if (jpQ(keywd))
+            } else
             {
-                Console.WriteLine("### jp.");
                 isJp = true;
             }
-            else
-            {
-                Console.WriteLine("### en.");
-                isEn = true;
-            }
+
+            // 暂时只搜日语
+
+            //keyword = ZhConverter.HansToHant(keyword);  // chs to cht  
+
+            //if (chQ(keywd))
+            //{
+            //    Console.WriteLine("### ch.");
+            //    //keywd = ZhConverter.HansToHant(keywd);  // chs to cht // https://github.com/CosineG/OpenCC.NET
+            //    isCh = true;
+            //}
+            //else if (jpQ(keywd))
+            //{
+            //    Console.WriteLine("### jp.");
+            //    isJp = true;
+            //}
+            //else
+            //{
+            //    //Console.WriteLine("### en.");
+            //    //isEn = true;
+            //    Console.WriteLine("### default jp.");
+            //    isJp = true;
+            //}
 
             //var jaconv = new KawazuConverter();
 
@@ -600,6 +612,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
             List<Dictionary<string, string>> ret = new List<Dictionary<string, string>>();
 
             string sql = "";
+            string sql2 = "";
 
             if (isJp)
             {
@@ -611,21 +624,70 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
                 sql = $"SELECT id, jp, zh, time FROM anime WHERE jp_mecab &@ '{keywd}' ORDER BY RANDOM() limit 3;";
 
+                // SELECT id, jp, zh, p.begintime as time FROM pokemon p  WHERE p.v_jp @@ to_tsquery('ここ')  LIMIT 3;
+                sql2 = $"SELECT id, jp_ruby as jp, zh, p.begintime as time FROM pokemon p  WHERE p.v_jp @@ to_tsquery('{keywd}')  ORDER BY RANDOM()  LIMIT 3;";
+
+
             }
             else if (isCh)
             {
                 sql = $"SELECT id, jp, zh, time FROM anime WHERE v_zh @@  to_tsquery('jiebacfg', '{keywd}') ORDER BY RANDOM() limit 3;";
+                sql2 = $"SELECT id, jp_ruby as jp, zh, p.begintime as time FROM pokemon p  WHERE p.v_zh @@ to_tsquery('{keywd}')  ORDER BY RANDOM() LIMIT 3;";
+
             }
 
 
             if (sql != "")
-            {
+            {         
+                //using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
+                //{
+                //    try
+                //    {
+                //        conn.Open();
+                //    }
+                //    catch (Exception err)
+                //    {
 
-                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
+                //        throw new Exception("连接数据库失败！");
+                //    }
+                    
+
+                //    using (var cmd = new NpgsqlCommand(sql, conn))
+                //    {
+                //        NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
+                //        if (reader.HasRows)
+                //        {
+                //            while (reader.Read())
+                //            {
+                //                string id = reader["id"].ToString();
+                //                string jp = reader["jp"].ToString();
+                //                string zh = reader["zh"].ToString();
+                //                string time = reader["time"].ToString();
+
+                //                var d = new Dictionary<string, string> { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+
+                //                ret.Add(d);
+
+                //                //JObject jo = new JObject { { "id", id }, { "jp", jp }, { "zh", zh }, { "time", time } };
+                //            }
+                //        }
+                //    }
+                //}
+
+                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=temp2;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
                 {
-                    conn.Open();
+                    try
+                    {
+                        conn.Open();
+                    }
+                    catch (Exception err)
+                    {
 
-                    using (var cmd = new NpgsqlCommand(sql, conn))
+                        throw new Exception("连接数据库失败！");
+                    }
+
+
+                    using (var cmd = new NpgsqlCommand(sql2, conn))
                     {
                         NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
                         if (reader.HasRows)
@@ -649,7 +711,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
             }
 
-            return ret;
+           return ret;
         }
 
     }

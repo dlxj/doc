@@ -13,16 +13,22 @@ namespace dangan.Client
 {
     public partial class Search : AntDomComponentBase
     {
+        protected override void OnInitialized()
+        {
+            _list = new List<string> { "jp", "ch" };
+            base.OnInitialized();
+        }
+
         private bool _isPlaying = false;
         private string PlayPauseIcon { get => _isPlaying ? "pause" : "caret-right"; }
 
         [Inject]
         private IDomEventListener DomEventListener { get; set; }
 
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
-        }
+        //protected override void OnInitialized()
+        //{
+        //    base.OnInitialized();
+        //}
 
         protected override Task OnFirstAfterRenderAsync()
         {

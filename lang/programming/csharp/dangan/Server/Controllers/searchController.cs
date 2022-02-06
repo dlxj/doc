@@ -132,7 +132,7 @@ namespace dangan.Server.Controllers
 
 
 
-            var ret = await anime.search(keyword);
+            var ret = await anime.search(keyword, lang_select);
 
             return new JsonResult(new { status = 200, msg = "success.", data = ret });
         }
@@ -164,12 +164,13 @@ namespace dangan.Server.Controllers
             if (!System.IO.File.Exists(audioPath))
             {
 
-                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
+                //using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=anime;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
+                using (var conn = new NpgsqlConnection("Server=209.141.34.77;Port=5432;Database=temp2;User Id=postgres;Password=echodict.com;Minimum Pool Size=10;Maximum Pool Size=20;Connection Idle Lifetime=200;Tcp Keepalive = false;"))
                 {
 
                     conn.Open();
 
-                    string sql = $"SELECT id, audio FROM anime WHERE id={id};";
+                    string sql = $"SELECT id, audio FROM pokemon WHERE id={id};";
 
                     //using (var cmd = new NpgsqlCommand(sql, conn))
                     using (var cmd = new NpgsqlCommand(sql, conn))

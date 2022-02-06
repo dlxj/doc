@@ -14,6 +14,7 @@ namespace dangan.Client.Model
         [Required]
         [StringLength(30, ErrorMessage = "keyword is too long.")]
         public string keyword { get; set; }
+        public string lang { get; set; }
     }
 
     public class rowModel

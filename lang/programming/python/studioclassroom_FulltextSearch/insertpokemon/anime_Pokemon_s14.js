@@ -127,6 +127,11 @@
       //let [audio, ms1] = await ff.extractAudio(vdpath, 'mp3', begintime, endtime)
 
       let { au: audio } = await libff.extractAudio(vdpath, 'mp3', begintime, endtime)
+      if (audio == null) {
+        throw `au is null. ${vdpath} ${begintime}`
+      }
+
+      require('fs').writeFileSync('tmp.mp3', audio )
 
       let video = Buffer.from('')  // empty now
 

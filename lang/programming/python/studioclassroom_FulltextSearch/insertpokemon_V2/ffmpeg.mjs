@@ -1,4 +1,5 @@
 
+import fs from 'fs'
 import { execa } from 'execa'
 import path from 'path'
 import { dirname } from 'path'
@@ -30,16 +31,24 @@ export default {
 
         try {
 
-            let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
+            // 管道读出来的音频流播放不了，改成写临时文件
+            //let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
+
+            let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} tmp.mp3`   // write stdout
+
 
             let childProcess = execa(cmd, {shell:true})
             //childProcess.stdout.pipe(process.stdout) // don't print to screen
             let { stdout } = await childProcess
 
-            return { au: Buffer.from(stdout) }
+            let audio = fs.readFileSync('./tmp.mp3')
+            //fs.writeFileSync('./tmpppp.mp3', audio)
+            fs.unlinkSync('./tmp.mp3')
+
+            return { au: audio }
 
         } catch(err) {
-           return { audi:null}
+           return { au:null}
         }
     }
 }

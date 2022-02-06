@@ -39,7 +39,7 @@ export default {
             return { au: Buffer.from(stdout) }
 
         } catch(err) {
-           return { audi:null}
+           return { au:null}
         }
     }
 }

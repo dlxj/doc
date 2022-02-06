@@ -1,5 +1,4 @@
 
-
 let { default: libdir } = await import('./dir.mjs')
 
 let root = ''
@@ -132,7 +131,11 @@ for (let j = 0; j < mkvs.length; j++) {
         hiragana_ng = hiragana_ng.join(' ')
 
         let { au: audio } = await libff.extractAudio(vdpath, 'mp3', begintime, endtime)
-
+        if (audio == null) {
+            throw `au is null. ${vdpath} ${begintime}`
+        }
+    
+        //fs.writeFileSync('./tmp.mp3', audio )
 
         let video = Buffer.from('')  // empty now
 
