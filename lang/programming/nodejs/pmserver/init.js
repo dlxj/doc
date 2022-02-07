@@ -150,6 +150,27 @@ module.exports = function () {
 
     }
 
+    // api 注入 service,  用于在api 对象支持这种调用：this.service.user.getuser()
+    for (let apiPath in global.apiCache) {
+
+        let api = global.apiCache[apiPath]
+        api['service'] = {}
+
+        for ( let servicePath in  global.serviceCache) {
+
+            let service = global.serviceCache[servicePath]
+
+            for (let [key, value] of Object.entries(service.service)) {
+
+                if ( !(key in api['service']) ) {
+                    api['service'][key] = value
+                }
+            }
+
+        }
+
+    }
+
     let a = 1
 
 }
