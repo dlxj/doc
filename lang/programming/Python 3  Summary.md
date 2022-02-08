@@ -8084,7 +8084,13 @@ Pyqtdeploy
 
 - https://gitee.com/se7enXF/pyside2
 
+- https://github.com/se7enXF/pyside2
+
   
+
+## pyside2 可视化文档纠错
+
+- https://github.com/fiyen/PaddlePaddle-DocCRT
 
 
 
