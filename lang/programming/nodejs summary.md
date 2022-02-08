@@ -309,6 +309,356 @@ module.exports =
 
 
 
+#### keda
+
+
+
+```
+// https://blog.csdn.net/sueRimn/article/details/100134349
+
+( async ()=>{
+
+    // https://www.xfyun.cn/doc/words/xf-printed-word-recognition/API.html#%E6%8E%A5%E5%8F%A3%E8%A6%81%E6%B1%82
+
+async function ocr(imgPath) {
+
+    let bent = require('bent')
+    let formurlencoded = require('form-urlencoded')
+    
+    let X_Param = {
+        "language": "cn|en",
+        "location": "true"
+    }
+    
+    X_Param = Buffer.from(JSON.stringify(X_Param)).toString('base64')
+    //X_Param = Buffer.from(X_Param, 'base64').toString('ascii')
+    
+    let APIKey = "xxxxxx"
+    let X_CurTime = parseInt(new Date().getTime() / 1000).toString()
+    let X_CheckSum = require('md5')(APIKey + X_CurTime + X_Param)
+    
+    let headers = {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        'X-Appid': "xxxx",
+        'X-CurTime': X_CurTime,
+        'X-Param': X_Param,
+        'X-CheckSum': X_CheckSum
+    }
+    
+    let buffer = require('fs').readFileSync(imgPath)
+    let b64 = buffer.toString('base64')
+    
+    let body = {
+        image: b64
+    }
+    
+    let host = 'webapi.xfyun.cn'
+    let url = `https://${host}`
+    
+    let formurlencoded_body = formurlencoded(body)
+    
+    let post = bent(url, 'POST', 'json', 200)
+    let response = await post('/v1/service/v1/ocr/general', formurlencoded_body, headers)
+
+    return response
+}
+
+
+async function ocr2(imgPath) {
+    // npm install moment
+    // npm install crypto-js
+
+    let bent = require('bent')
+    let formurlencoded = require('form-urlencoded')
+    let fs = require('fs')
+
+    if (!fs.existsSync(imgPath)) {
+        throw `图片不存在 ${imgPath}`    
+    }
+
+    let bytes = fs.readFileSync(imgPath)  // 'binary'
+    let img_b64 = Buffer.from(bytes).toString('base64')
+
+    let dateFormat = 'ddd, DD MMM YYYY HH:mm:ss'
+    let dateString =  new Date().toUTCString() //'Mon, 01 Jan 0001 00:00:01 GMT'
+    let date = require('moment').utc(dateString, dateFormat)._i
+
+    let APPId = "xxx"
+    let APISecret = "xxx"
+    let APIKey = "xxx"
+
+    let host = 'api.xf-yun.com'
+    let method = 'POST'
+    let path = '/v1/private/s00b65163'
+
+    let url = `https://${host}${path}`
+
+    let signature_origin = `host: ${host}\ndate: ${date}\n${method} ${path} HTTP/1.1`
+
+    let signature_sha = require("crypto-js").HmacSHA256(signature_origin, APISecret)
+
+    let HmacSHA1 = signature_sha.toString()
+
+    signature_sha = require("crypto-js").enc.Base64.stringify(signature_sha)
+
+    let authorization_origin = `api_key="${APIKey}", algorithm="hmac-sha256", headers="host date request-line", signature="${signature_sha}"`
+
+    let authorization = Buffer.from(authorization_origin).toString('base64')
+
+    let values = {
+        "host": host,
+        "date": date,
+        "authorization": authorization
+    }
+
+    let urlencode_values = formurlencoded(values)
+
+    let request_url = url + "?" + urlencode_values
+
+    let headers = {'content-type': "application/json", 'host': 'api.xf-yun.com', 'app_id': APPId}
+
+    //headers = JSON.stringify(headers)
+
+    let body = {
+        "header": {
+            "app_id": APPId,
+            "status": 3,
+        },
+        "parameter": {
+            "s00b65163": {
+                "category": "mix0",
+                "result": {
+                    "encoding": "utf8",
+                    "compress": "raw",
+                    "format": "json"
+                }
+            }
+        },
+        "payload": {
+            "s00b65163_data_1": {
+                "encoding": "png",
+                "image": img_b64,
+                "status": 3
+            }
+        }
+    }
+
+    let formurlencoded_body = formurlencoded(body)
+
+    body = JSON.stringify(body)
+
+    let benthost = `https://${host}`
+    let bentpath = `${path}`+ "?" + urlencode_values
+
+    let post = bent(benthost, 'POST', 'json', 200)
+    let response = await post(bentpath, body, headers)
+
+    let text = response.payload.result.text
+
+    text = Buffer.from(text, 'base64').toString()
+
+    fs.writeFileSync('./re.json', text)
+
+    return [signature_origin, signature_sha, authorization_origin, authorization, urlencode_values, request_url, headers, body]
+
+}
+
+let imgPath = './韩语.png'
+let imgPath2 = './双栏.bmp'
+let imgPath3 = './双栏.jpg'
+let imgPath4 = './漏字很多.jpg'
+
+let [signature_origin, signature_sha, authorization_origin, authorization, urlencode_values, request_url, headers, body] = await ocr2(imgPath)
+
+let re = body  // signature_origin + "|" + signature_sha
+
+process.stdout.write(re)
+
+let a = 1
+
+})()
+
+
+
+
+/// python begin
+
+from datetime import datetime
+from wsgiref.handlers import format_date_time
+from time import mktime
+import hashlib
+import base64
+import hmac
+from urllib.parse import urlencode
+import os,subprocess
+import traceback
+import json
+import requests
+
+imgeName = './韩语.png'
+imgeName2 = './双栏.bmp'
+
+if os.path.exists("./韩语.png"):
+    a = 1
+else:
+    a = 1
+
+
+'''
+appid、apiSecret、apiKey请到讯飞开放平台控制台获取并填写到此demo中；
+图像数据，base64编码后大小不得超过4M
+'''
+# 请到控制台获取以下信息，并填写
+APPId = "xxx"
+APISecret = "xxx"
+APIKey = "xxx"
+# 图片位置
+with open(imgeName2, "rb") as f:
+    imageBytes = f.read()
+
+
+class AssembleHeaderException(Exception):
+    def __init__(self, msg):
+        self.message = msg
+
+
+class Url:
+    def __init__(this, host, path, schema):
+        this.host = host
+        this.path = path
+        this.schema = schema
+        pass
+
+
+# calculate sha256 and encode to base64
+def sha256base64(data):
+    sha256 = hashlib.sha256()
+    sha256.update(data)
+    digest = base64.b64encode(sha256.digest()).decode(encoding='utf-8')
+    return digest
+
+
+def parse_url(requset_url):
+    stidx = requset_url.index("://")
+    host = requset_url[stidx + 3:]
+    schema = requset_url[:stidx + 3]
+    edidx = host.index("/")
+    if edidx <= 0:
+        raise AssembleHeaderException("invalid request url:" + requset_url)
+    path = host[edidx:]
+    host = host[:edidx]
+    u = Url(host, path, schema)
+    return u
+
+
+# build websocket auth request url
+def assemble_ws_auth_url(requset_url, method="POST", api_key="", api_secret=""):
+    u = parse_url(requset_url)
+    host = u.host
+    path = u.path
+    now = datetime.now()
+    date =  format_date_time(mktime(now.timetuple()))
+    print(date)
+    # date = "Thu, 12 Dec 2019 01:57:27 GMT"
+    signature_origin = "host: {}\ndate: {}\n{} {} HTTP/1.1".format(host, date, method, path)
+    print(signature_origin) # 'host: api.xf-yun.com\ndate: Mon, 07 Feb 2022 09:05:53 GMT\nPOST /v1/private/s00b65163 HTTP/1.1'
+
+    # out_bytes = subprocess.check_output(["node", "keda2.js"])
+    # out_text = out_bytes.decode('utf-8') # 'host: api.xf-yun.com\ndate: Mon, 07 Feb 2022 09:05:53 GMT\nPOST /v1/private/s00b65163 HTTP/1.1'
+
+    #signature_origin = out_text
+
+    signature_origin = signature_origin.encode('utf-8')
+
+    #signature_origin = signature_origin.decode('utf-8')
+
+    signature_sha = hmac.new(api_secret.encode('utf-8'), signature_origin, # .encode('utf-8'),
+                             digestmod=hashlib.sha256).digest()
+    
+    signature_sha = base64.b64encode(signature_sha).decode(encoding='utf-8') # 'JJBIEpM9jKzqDpTL9QEFgoqUzSiLb4YUai+MYP576yc='  '3xJqUrRTgpTopAamjDptLvNK5a0d+/iOxu6rf8tg3N0='
+
+
+    #signature_sha = out_text
+
+    authorization_origin = "api_key=\"%s\", algorithm=\"%s\", headers=\"%s\", signature=\"%s\"" % (
+        api_key, "hmac-sha256", "host date request-line", signature_sha)
+
+    #authorization_origin = out_text
+    
+    authorization = base64.b64encode(authorization_origin.encode('utf-8')).decode(encoding='utf-8')
+
+    #authorization = out_text
+
+    print(authorization_origin)
+    values = {
+        "host": host,
+        "date": date,
+        "authorization": authorization
+    }
+
+    urlencode_values = urlencode(values)
+
+    # urlencode_values = out_text
+
+    re = requset_url + "?" + urlencode_values  # urlencode(values)
+
+    # re = out_text
+
+    return  re
+
+
+url = 'https://api.xf-yun.com/v1/private/s00b65163'
+
+body = {
+    "header": {
+        "app_id": APPId,
+        "status": 3,
+    },
+    "parameter": {
+        "s00b65163": {
+            "category": "mix0",
+            "result": {
+                "encoding": "utf8",
+                "compress": "raw",
+                "format": "json"
+            }
+        }
+    },
+    "payload": {
+        "s00b65163_data_1": {
+            "encoding": "png",
+            "image": str(base64.b64encode(imageBytes), 'UTF-8'),
+            "status": 3
+        }
+    }
+}
+
+body = json.dumps(body)
+
+# out_bytes = subprocess.check_output(["node", "keda2.js"])
+# out_text = out_bytes.decode('utf-8')
+#body = out_text
+
+request_url = assemble_ws_auth_url(url, "POST", APIKey, APISecret)
+
+headers = {'content-type': "application/json", 'host': 'api.xf-yun.com', 'app_id': APPId}
+print(request_url)
+response = requests.post(request_url, data=body, headers=headers) # json.dumps(body)
+print(response)
+# print(response.content)
+print("resp=>" + response.content.decode())
+tempResult = json.loads(response.content.decode())
+finalResult = base64.b64decode(tempResult['payload']['result']['text']).decode()
+finalResult = finalResult.replace(" ", "").replace("\n", "").replace("\t", "").strip()
+print("text字段Base64解码后=>" + finalResult)
+
+// python end
+```
+
+
+
+
+
 
 
 
