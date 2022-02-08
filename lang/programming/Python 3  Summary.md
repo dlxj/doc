@@ -8063,6 +8063,13 @@ anaconda3+ paddleOCR安装使用
 
 
 
+# 目标检测
+
+- https://shliang.blog.csdn.net/article/details/106072347
+  - YOLOv3 Darknet安装编译与训练自己的数据集
+
+
+
 # Pyqt5
 
 ```
