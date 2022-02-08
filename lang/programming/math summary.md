@@ -1186,6 +1186,58 @@ $$
 
 <img src="math summary.assets/image-20200716062733960.png" alt="image-20200716062733960"  />
 
+
+
+1. 假设$\hat{u},\hat{i},\hat{j}$  模长都是1
+2. $\hat{u} = \begin{bmatrix}
+   u_x \\
+   u_y
+   \end{bmatrix}$ ，其中$u_x$ 和$u_y$ 分别是$\hat{u}$ 在水平、垂直两个数轴上的坐标（分量）
+3. $u_x = \hat{u} 向水平方向数轴投影的长度$ ，同理：$u_y = \hat{u} 向垂直方向数轴投影的长度$ 
+4. $u_x = \hat{i} 与\hat{u} 的内积= \hat{u}向\hat{i}投影的长度$ (注：内积=投影的长度 * 被投影向量的长度，而$\hat{i}$ 又是单位向量)
+5. $u_y = \hat{j} 与\hat{u} 的内积= \hat{u}向\hat{j}投影的长度$
+
+现在来考虑一个很重要的问题：$\hat{u}$ 是一个向量，同时又是一个线性函数（可以点乘另一个向量），这个函数是如何将$\hat{i},\hat{j}$ 投影到它的行空间去的？
+
+这个线性变换是：
+$$
+\begin{bmatrix}
+u_x & u_y \\
+\end{bmatrix}
+
+\begin{bmatrix}
+i_x \\
+i_y
+\end{bmatrix}
+
+= p_1 (\hat{i} 向\hat{u}的投影点) \\
+$$
+
+$$
+
+\begin{bmatrix}
+u_x & u_y \\
+\end{bmatrix}
+
+\begin{bmatrix}
+j_x \\
+j_y
+\end{bmatrix}
+
+= p_2 (\hat{j} 向\hat{u}的投影点)
+$$
+
+
+
+其中$\begin{bmatrix}
+u_x & u_y \\
+\end{bmatrix}$ 就是投影矩阵，这个矩阵是一个一维空间，就是$\hat{u}$ 的行空间，也就是说**线性函数$\hat{u}$ 的作用是将其它向量投影(变换)到自已的行空间；它是一个空间变换函数**。
+
+
+
+
+
+
 ## 由于对偶性，$u_x$ 是i-hat 的投影长度，$u_y$ 是j-hat 的投影长度
 
 > 又因为到单位向量的投影长度就是内积，所以u, i 的内积等于 $u_x$ 
