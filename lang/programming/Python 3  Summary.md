@@ -8014,6 +8014,10 @@ anaconda3+ paddleOCR安装使用
 
 
 
+## PaddleOCR训练自己的数据集
+
+- https://blog.csdn.net/u013171226/article/details/115179480
+
 
 
 
