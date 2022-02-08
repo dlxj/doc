@@ -8080,6 +8080,12 @@ Pyqtdeploy
 
 
 
+## pyside2 视频播放器
+
+- https://gitee.com/se7enXF/pyside2
+
+  
+
 
 
 # 爬虫
