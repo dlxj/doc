@@ -8043,7 +8043,19 @@ anaconda3+ paddleOCR安装使用
 
 
 
+# PPOCRLabel 半自动化图形标注
 
+
+
+- https://github.com/Evezerest/PPOCRLabel/blob/dygraph/README_ch.md
+
+
+
+# ppstructure 版面分析
+
+
+
+- https://blog.csdn.net/wss794/article/details/122494246?spm=1001.2014.3001.5502
 
 
 
