@@ -7,6 +7,8 @@ let formurlencoded = require('form-urlencoded')
 let formidable = require('formidable')
 let rd = require('rd')
 
+//let re = await pg.defaultDB.query('select $1::text as name', ['brianc'])
+
 process.on('uncaughtException', function (err) {
   console.error(err)
 })
@@ -14,6 +16,8 @@ process.on('uncaughtException', function (err) {
 require('./init')()
 
 let httpServer = http.createServer(async (req, res) => {
+
+  let r = await pg.defaultDB.query('select $1::text as name', ['brianc'])
 
   if (req.method !== 'POST' && req.method !== 'GET') {
     return res.writeHead(200, {

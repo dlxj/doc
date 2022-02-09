@@ -10,6 +10,9 @@ module.exports = {
     },
     async handler({ keywd }) {
 
+
+        let r = await pg.defaultDB.query('select $1::text as name', ['brianc'])
+
         let services = this.services
 
 

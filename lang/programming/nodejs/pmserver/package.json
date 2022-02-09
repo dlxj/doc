@@ -7,9 +7,15 @@
     "lib": "lib"
   },
   "dependencies": {
-    "form-urlencoded": "^6.0.5",
-    "formidable": "^2.0.1",
-    "rd": "^2.0.1"
+    "form-urlencoded": "~6.0.5",
+    "formidable": "~2.0.1",
+    "execa": "~6.0.0",
+    "kuroshiro": "~1.1.2",
+    "kuroshiro-analyzer-kuromoji": "~1.1.0",
+    "kuroshiro-analyzer-mecab": "~1.0.1",
+    "pg": "~8.7.1",
+    "pg-pool": "~3.4.1",
+    "rd": "~2.0.1"
   },
   "devDependencies": {},
   "scripts": {

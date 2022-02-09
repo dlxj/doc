@@ -3,6 +3,7 @@ let path = require('path')
 let fs = require('fs')
 let rd = require('rd')
 let libfiles = require('./lib/files')
+let pg = require('./application/db/pgsql.js')
 
 let startDir = path.resolve(__dirname, '.')  // startup dir
 let apiDir = path.join(startDir, `/http/api/`)
