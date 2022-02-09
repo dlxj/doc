@@ -64,27 +64,83 @@ module.exports = function () {
     })
 
     // api 注入 service,  用于在api 对象支持这种调用：this.service.user.getuser()
-    // for (let apiPath in global.apiCache) {
+    for (let apiPath in global.apiCache) {
 
-    //     let api = global.apiCache[apiPath]
-    //     api['service'] = {}
+        let api = global.apiCache[apiPath]
+        // api['service'] = {}
 
-    //     for ( let servicePath in  global.serviceCache) {
+        if (api['services'] === undefined) {
+            Object.defineProperty(api, "services", {
+              get() {
+                return {"nothing_now":''}
+              }
+            })
+        }
 
-    //         let service = global.serviceCache[servicePath]
+        // for ( let servicePath in  global.serviceCache) {
 
-    //         let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
-    //         let arr = basePath.split(new RegExp(String.raw`[\\/]`))  // 此 service 的 每一个“文件夹”
-    //         service['arr'] = arr
+        //     let service = global.serviceCache[servicePath]
 
-    //         let lastobj = api['service']
+        //     let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
+        //     let arr = basePath.split(new RegExp(String.raw`[\\/]`))  // 此 service 的 每一个“文件夹”
+        //     service['arr'] = arr
+
+        //     let lastobj = api['service']
+        //     for (let i = 0; i < arr.length; i++) {
+
+        //         let name = arr[i]
+
+        //         if (i == arr.length - 1) {
+
+        //             lastobj[name] = service.handler
+
+        //         } else {
+
+        //             if (!(name in lastobj)) {
+        //                 lastobj[name] = {}
+        //                 lastobj = lastobj[name]
+        //             } else {
+        //                 //lastobj = lastobj[name]
+        //                 // 不会进到这里的，因为name 必然不在lastobj 里，因为 lastobj 永远都是 {} 对象
+        //             }
+        //         }
+
+        //     }
+
+        // }
+
+    }
+
+    // for (let servicePath in global.serviceCache) {
+    //     let service = global.serviceCache[servicePath]
+    //     let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
+    //     let arr = basePath.split(new RegExp(String.raw`[\\/]`))  // 此 service 的 每一个“文件夹”
+    //     service['arr'] = arr
+    // }
+
+    // // service 注入 其他service
+    // for (let servicePath in global.serviceCache) {
+
+    //     let service = global.serviceCache[servicePath]
+    //     service['service'] = {}
+
+    //     let lastobj = service['service']
+    //     for (let other_servicePath in global.serviceCache) {
+
+    //         let other_service = global.serviceCache[other_servicePath]
+
+    //         if (other_service === service) {
+    //             continue // 检查是否为同一个引用, 防止自已调用自已
+    //         }
+
+    //         let arr = other_service['arr']
     //         for (let i = 0; i < arr.length; i++) {
 
     //             let name = arr[i]
 
     //             if (i == arr.length - 1) {
 
-    //                 lastobj[name] = service.handler
+    //                 lastobj[name] = other_service.handler
 
     //             } else {
 
@@ -92,63 +148,15 @@ module.exports = function () {
     //                     lastobj[name] = {}
     //                     lastobj = lastobj[name]
     //                 } else {
-    //                     //lastobj = lastobj[name]
-    //                     // 不会进到这里的，因为name 必然不在lastobj 里，因为 lastobj 永远都是 {} 对象
+    //                     lastobj = lastobj[name]
     //                 }
     //             }
-
     //         }
+
 
     //     }
 
     // }
-
-    for (let servicePath in global.serviceCache) {
-        let service = global.serviceCache[servicePath]
-        let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
-        let arr = basePath.split(new RegExp(String.raw`[\\/]`))  // 此 service 的 每一个“文件夹”
-        service['arr'] = arr
-    }
-
-    // service 注入 其他service
-    for (let servicePath in global.serviceCache) {
-
-        let service = global.serviceCache[servicePath]
-        service['service'] = {}
-
-        let lastobj = service['service']
-        for (let other_servicePath in global.serviceCache) {
-
-            let other_service = global.serviceCache[other_servicePath]
-
-            if (other_service === service) {
-                continue // 检查是否为同一个引用, 防止自已调用自已
-            }
-
-            let arr = other_service['arr']
-            for (let i = 0; i < arr.length; i++) {
-
-                let name = arr[i]
-
-                if (i == arr.length - 1) {
-
-                    lastobj[name] = other_service.handler
-
-                } else {
-
-                    if (!(name in lastobj)) {
-                        lastobj[name] = {}
-                        lastobj = lastobj[name]
-                    } else {
-                        lastobj = lastobj[name]
-                    }
-                }
-            }
-
-
-        }
-
-    }
 
     // api 注入 service,  用于在api 对象支持这种调用：this.service.user.getuser()
     // for (let apiPath in global.apiCache) {

@@ -88,15 +88,15 @@ let httpServer = http.createServer(async (req, res) => {
   data['__response__'] = res
 
   //进入API
-  // let result = api.handler(data)
-  // if (result instanceof Promise) {   // async 函数是 Promise的实例
-  //   result = await result
-  // }
+  let result = api.handler(data)
+  if (result instanceof Promise) {   // async 函数是 Promise的实例
+    result = await result
+  }
 
   //进入Service
-  let servicePath = path.join(global.startDir, `/service/api${req.url}.js`)
-  let service = global.serviceCache[servicePath]
-  let result2 = await service.handler(data)
+  // let servicePath = path.join(global.startDir, `/service/api${req.url}.js`)
+  // let service = global.serviceCache[servicePath]
+  // let result2 = await service.handler(data)
 
 
   return res.send(result)

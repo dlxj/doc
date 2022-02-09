@@ -10,9 +10,9 @@ module.exports = {
     },
     async handler({ keywd }) {
 
-        let obj = this
+        let services = this.services
 
-        let re = await this.service.search( { keywd } )
+        //let re = await this.service.search( { keywd } )
 
         return this.msg(200, 'hi,,,')
     }
