@@ -12,7 +12,8 @@ module.exports = {
 
         let services = this.services
 
-        //let re = await this.service.search( { keywd } )
+
+        let re = await this.services.search( { keywd } )
 
         return this.msg(200, 'hi,,,')
     }

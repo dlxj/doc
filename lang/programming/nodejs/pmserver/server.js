@@ -93,6 +93,12 @@ let httpServer = http.createServer(async (req, res) => {
     result = await result
   }
 
+
+  //
+  // 奇怪的问题：这样进入 service, 在service 的handler 里面的 this 对象是有 services 的，
+  // 但是如果是从 api 里面用 await this.services.search( { keywd } ) 进入service 的handler ，里面的this 对象就没有 services  了 ！
+  // 作为替代方案，当service 需要调用其它接口的时侯只能用 await global.services.user.getuser( { userid:'' } ) 这样子
+  //
   //进入Service
   // let servicePath = path.join(global.startDir, `/service/api${req.url}.js`)
   // let service = global.serviceCache[servicePath]
