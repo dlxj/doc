@@ -11,7 +11,7 @@ module.exports = {
 
         let obj = this
 
-        let re = await global.services.user.getuser( { userid:'' } )
+        let re = await global.services.user.getuser( { userid:'0' } )
 
         return 'hi from service.'
 
