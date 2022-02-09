@@ -86,6 +86,11 @@ module.exports = function () {
         for (let servicePath in global.serviceCache) {
 
             let service = global.serviceCache[servicePath]
+            //套一层参数验证
+            service._handler = async function (param) {
+                const paramData = require('./lib/paramVerify.js')(service.params, param)
+                return service.handler(paramData)
+            }
 
             let basePath = servicePath.replace(serviceDir, '').replace('.js', '')
             let arr = basePath.split(new RegExp(String.raw`[\\/]`))  // 此 service 的 每一个“文件夹”
@@ -97,7 +102,7 @@ module.exports = function () {
 
                 if (i == arr.length - 1) {
 
-                    lastobj[name] = service.handler
+                    lastobj[name] = service._handler //service.handler
 
                 } else {
 
@@ -138,7 +143,7 @@ module.exports = function () {
         })
     }
 
-    
+
 
     let a = 1
 
