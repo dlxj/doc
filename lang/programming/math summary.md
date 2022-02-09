@@ -1214,7 +1214,6 @@ i_y
 $$
 
 $$
-
 \begin{bmatrix}
 u_x & u_y \\
 \end{bmatrix}
@@ -1232,6 +1231,10 @@ $$
 其中$\begin{bmatrix}
 u_x & u_y \\
 \end{bmatrix}$ 就是投影矩阵，这个矩阵是一个一维空间，就是$\hat{u}$ 的行空间，也就是说**线性函数$\hat{u}$ 的作用是将其它向量投影(变换)到自已的行空间；它是一个空间变换函数**。
+
+
+
+<img src="math summary.assets/image-20200715190208568.png" alt="image-20200715190208568" style="zoom:50%;" />
 
 
 
