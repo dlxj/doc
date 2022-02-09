@@ -10,6 +10,12 @@ let apiDir = path.join(startDir, `/http/api/`)
 let serviceDir = path.join(startDir, '/service/api/')
 let libDir = path.join(startDir, '/lib/')
 
+Object.defineProperty(global, 'pg', {
+    get() {
+        return pg
+    }
+})
+
 Object.defineProperty(global, 'startDir', {  // global 是保留关键字，系统全局对象
     get() {
         return startDir

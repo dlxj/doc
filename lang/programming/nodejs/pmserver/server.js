@@ -17,7 +17,12 @@ require('./init')()
 
 let httpServer = http.createServer(async (req, res) => {
 
-  let r = await pg.defaultDB.query('select $1::text as name', ['brianc'])
+  let o = this
+
+  let re = await global.pg.defaultDB.query('select $1::text as name', ['brianc'])
+  //       let rows = await this.dbs.defaultDB.knowledge.menu.query({ appid2 });
+
+
 
   if (req.method !== 'POST' && req.method !== 'GET') {
     return res.writeHead(200, {
