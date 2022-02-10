@@ -1751,5 +1751,45 @@ crontab -r //删除所有任务调度工作
 
 
 
+# 远程数据库映射
+
+
+
+
+
+```
+
+# 远程表映射
+
+xx测xx评远程表  映射到 3x 的xx_material 数据库 
+
+DROP SERVER IF EXISTS AIEval_xxx_aiexam_Server;
+
+CREATE SERVER `AIEval_xxxx_aiexam_Server`
+FOREIGN DATA WRAPPER mysql
+OPTIONS (
+  HOST 'xx',
+  PORT 3306,
+  USER 'xx',
+  PASSWORD 'xxx',
+  DATABASE 'xxx'
+);
+
+CREATE TABLE `knowledgepoint_remote` (
+     `department` VARCHAR(255) NOT NULL,
+) ENGINE=FEDERATED   
+CONNECTION='AIEval_xxx_aiexam_Server/knowledgepoint';
+
+
+CREATE TABLE `knowledgepoint_remote` (
+	`ID` INT(11) NOT NULL 
+)
+COMMENT='xx表（远程：xx宝xx测x的映射）'
+COLLATE='utf8_unicode_ci'
+ENGINE=FEDERATED
+CONNECTION='AIEval_ksb_aiexam_Server/knowledgepoint';
+;
+```
+
 
 

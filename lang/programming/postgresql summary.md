@@ -284,6 +284,8 @@ npm install pg
 
 
 
+
+
 ## 备份表
 
 
@@ -339,6 +341,27 @@ PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07
     例如：psql -d test_table -U postgres -f test_copy.dump
 
 ```
+
+
+
+## 跨库查询
+
+
+
+```
+# dblink() -- executes a query in a remote database
+SELECT * 
+FROM   table1 tb1 
+LEFT   JOIN (
+   SELECT *
+   FROM   dblink('dbname=db2','SELECT id, code FROM table2')
+   AS     tb2(id int, code text);
+) AS tb2 ON tb2.column = tb1.column;
+
+Don't forget to create extension CREATE EXTENSION IF NOT EXISTS dblink; 
+```
+
+
 
 
 
