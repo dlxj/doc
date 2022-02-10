@@ -44,6 +44,14 @@ Object.defineProperty(global, 'services', {
     }
 })
 
+// let rows = await this.dbs.defaultDB.knowledge.menu.query({ appid2 })
+let dbs = {}  // 所有的service 存在这里，service 只能由api 调用
+Object.defineProperty(global, 'dbs', {
+    get() {
+        return dbs
+    }
+})
+
 module.exports = function () {
 
     // 从js 文件加载api 对象
