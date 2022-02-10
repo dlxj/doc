@@ -4,14 +4,7 @@ let { Pool, Client } = require('pg')
 let config = require('../../config.js')
 
 function getconfig(dbname) {
-  return {
-    user: 'postgres',
-    password: config.passwd,
-    host: config.host, 
-    port: config.port,
-    database: dbname,
-    ssl: false
-  }
+  return config[dbname]
 }
 
 function getDB(dbname) {
@@ -21,6 +14,9 @@ function getDB(dbname) {
   let lib = {
 
     async query(sql, par, conn = null) {
+
+      sql = buildSQL(sql, par)  // 替换形参
+
       if (conn == null) {
         conn = await pool.connect()
       }
@@ -52,7 +48,7 @@ function getDB(dbname) {
   return lib
 }
 
-let defaultDB = getDB('postgres')
+let defaultDB = getDB('defaultDB')
 
 // 参数替换，形参 $(parmName) 替换成实参
 function buildSQL(sql, par) {
@@ -71,7 +67,6 @@ function buildSQL(sql, par) {
 }
 
 module.exports = {
-  getconfig,
   getDB,
   defaultDB
 }

@@ -8,7 +8,7 @@ let pg = require('./application/db/pgsql.js')
 let startDir = path.resolve(__dirname, '.')  // startup dir
 let apiDir = path.join(startDir, `/http/api/`)
 let serviceDir = path.join(startDir, '/service/api/')
-let libDir = path.join(startDir, '/lib/')
+let dbsDir = path.join(startDir, '/dbs/')
 
 Object.defineProperty(global, 'pg', {
     get() {
@@ -53,6 +53,58 @@ Object.defineProperty(global, 'dbs', {
 })
 
 module.exports = function () {
+
+    // 从js 文件加载dbs 对象
+    let dbpaths = libfiles.allfiles(dbsDir, 'js')
+    dbpaths.forEach((dbPath) => {
+        if (!fs.existsSync(dbPath)) {
+            throw `file not exists: ${dbPath}`
+        }
+
+        let schema = require(dbPath) // 定义了参数, sql 语句的对象
+
+        let basePath = dbPath.replace(dbsDir, '').replace('.js', '')
+        let arr = basePath.split(new RegExp(String.raw`[\\/]`))
+
+        let dbName = arr[0]
+
+        if ( global.dbs[dbName] == undefined ) {
+            global.dbs[dbName] = global.pg.getDB(dbName)  // 实例化
+        }
+
+        let lastobj = global.dbs
+        for (let i = 0; i < arr.length; i++) {
+
+            let name = arr[i]
+
+            if (i == arr.length - 1) {
+
+                let pgdb = global.dbs[dbName]
+
+                let item = {}
+
+                //套一层参数验证
+                item.query = async function (param) {
+                    const paramData = require('./lib/paramVerify.js')(schema.params, param)
+                    return pgdb.query( schema.sql, paramData)
+                }
+
+                lastobj[name] = item
+
+            } else {
+
+                if (!(name in lastobj)) {
+                    lastobj[name] = {}
+                    lastobj = lastobj[name]
+                } else {
+                    lastobj = lastobj[name]
+                }
+            }
+
+        }
+
+    })
+
 
     // 从js 文件加载api 对象
     let apipaths = libfiles.allfiles(apiDir, 'js')
@@ -158,8 +210,5 @@ module.exports = function () {
         })
     }
 
-
-
-    let a = 1
 
 }
