@@ -54,6 +54,22 @@ function getDB(dbname) {
 
 let defaultDB = getDB('postgres')
 
+// 参数替换，形参 $(parmName) 替换成实参
+function buildSQL(sql, par) {
+  const arr = []
+  const parNames = sql.match(/\$\([0-9a-zA-Z\_]{1,9999}?\)/g)
+  if (parNames != null) {
+    for (let pName of parNames) {
+      //替换参数名
+      sql = sql.replace(pName, '?')
+      //转换参数名
+      pName = pName.replace(/\$\(([[0-9a-zA-Z\_]{1,9999}?)\)/g, '$1')
+      arr.push(par[pName])
+    }
+  }
+  return { sql: sql, params: arr }
+}
+
 module.exports = {
   getconfig,
   getDB,
