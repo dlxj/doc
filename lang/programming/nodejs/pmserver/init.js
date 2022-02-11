@@ -86,7 +86,7 @@ module.exports = function () {
                 //套一层参数验证
                 item.query = async function (param) {
                     const paramData = require('./lib/paramVerify.js')(schema.params, param)
-                    return pgdb.query( schema.sql, paramData)
+                    return pgdb.query( schema.sql, paramData)  // 执行查询
                 }
 
                 lastobj[name] = item
