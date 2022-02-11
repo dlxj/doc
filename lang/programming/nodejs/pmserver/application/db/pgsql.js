@@ -15,14 +15,16 @@ function getDB(dbname) {
 
     async query(sql, par, conn = null) {
 
-      sql = buildSQL(sql, par)  // 替换形参
+      let [sql2, params] = buildSQL(sql, par)  // 替换形参
 
       if (conn == null) {
         conn = await pool.connect()
       }
 
       //await client.query('select $1::text as name', ['brianc'])
-      let result = await conn.query(sql, par)
+      // '\n    DROP DATABASE IF EXISTS $1;\n  '  ['temp']
+      let result = await conn.query('DROP DATABASE IF EXISTS $1;', ['temp'])
+      // let result = await conn.query(sql2, params)
       conn.release(true)
 
       return result
@@ -52,18 +54,20 @@ let defaultDB = getDB('defaultDB')
 
 // 参数替换，形参 $(parmName) 替换成实参
 function buildSQL(sql, par) {
-  const arr = []
+  const params = []
   const parNames = sql.match(/\$\([0-9a-zA-Z\_]{1,9999}?\)/g)
   if (parNames != null) {
-    for (let pName of parNames) {
-      //替换参数名
-      sql = sql.replace(pName, '?')
-      //转换参数名
-      pName = pName.replace(/\$\(([[0-9a-zA-Z\_]{1,9999}?)\)/g, '$1')
-      arr.push(par[pName])
-    }
+      for (let i = 0; i < parNames.length; i++) {
+          let pName = parNames[i]
+      //for (let pName of parNames) {
+          //替换参数名
+          sql = sql.replace(pName, `$${i+1}`)
+          //转换参数名
+          pName = pName.replace(/\$\(([[0-9a-zA-Z\_]{1,9999}?)\)/g, '$1')
+          params.push(par[pName])
+      }
   }
-  return { sql: sql, params: arr }
+  return [sql, params]  // { sql: sql, params: arr }
 }
 
 module.exports = {

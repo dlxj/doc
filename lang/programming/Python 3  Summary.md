@@ -8074,7 +8074,11 @@ anaconda3+ paddleOCR安装使用
 
 - https://blog.csdn.net/qq_41821678/article/details/106851010
 
+- https://zhuanlan.zhihu.com/p/387408410
+  - awesome
 
+- https://blog.csdn.net/wsp_1138886114/article/details/83374333
+  - 基于傅里叶变换图像矫正
 
 
 
