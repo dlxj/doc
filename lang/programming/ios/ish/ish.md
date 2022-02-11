@@ -114,3 +114,7 @@ jail -m jid=3 allow.sysvipc=1
 
 
 
+# browser 
+
+- https://github.com/ish-app/ish/discussions/1486
+

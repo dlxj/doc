@@ -11,12 +11,14 @@ module.exports = {
     async handler({ keywd }) {
 
 
-        let r = await pg.defaultDB.query('select $1::text as name', ['brianc'])
+        //let r = await pg.defaultDB.query('select $1::text as name', ['brianc'])
 
-        let services = this.services
+        let obj = this
 
+        let re = await this.dbs.defaultDB.drop.query({'dbname':'temp'})
+        re = await this.dbs.defaultDB.temp.create.query({})
 
-        let re = await this.services.search( { keywd } )
+        re = await this.services.search( { keywd } )
 
         return this.msg(200, 'hi,,,')
     }

@@ -8236,15 +8236,30 @@ https://chromedriver.storage.googleapis.com/index.html?path=79.0.3945.36/
 
 ```python
 
-
 # https://jishuin.proginn.com/p/763bfbd5a01a
 # https://www.cnblogs.com/wqzn/p/14568794.html
+# https://zhuanlan.zhihu.com/p/113369113
 
 # pip install selenium
 
 """
 centos7 + selenium
 pip3.8 install selenium
+
+yum autoremove -y google-chrome  # 卸载旧版本
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+yum install -y google-chrome-stable_current_x86_64.rpm
+
+google-chrome --version
+    # 97.0.4692.71
+    # http://chromedriver.storage.googleapis.com/index.html  到这里下载这个版本的驱动
+
+wget http://chromedriver.storage.googleapis.com/97.0.4692.71/chromedriver_linux64.zip
+
+mv chromedriver /opt/google/chrome/
+chmod 755 /opt/google/chrome/chromedriver
+
 
 curl https://intoli.com/install-google-chrome.sh | bash
 /opt/google/chrome/chrome  # Running as root without --no-sandbox is not supported.
@@ -8253,7 +8268,7 @@ google-chrome-stable --no-sandbox --headless --disable-gpu --screenshot https://
 
 google-chrome --version
     # 97.0.4692.71
-    # http://chromedriver.storage.googleapis.com/index.html  到这里下载这个版本的驱动
+   
 
 
 whereis python3.8
@@ -8274,8 +8289,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-# show = True  # UI OR not
-show = False
+show = True  # UI OR not
+#show = False
 
 if __name__  ==  "__main__": 
 
@@ -8288,25 +8303,29 @@ if __name__  ==  "__main__":
     if show:
         wd=webdriver.Chrome()
     else:
-        opt.binary_location = '/usr/local/bin/chromedriver'
+        #opt.binary_location = '/usr/local/bin/chromedriver'
         opt.add_argument('no-sandbox')   # root account need this
         opt.add_argument('disable-dev-shm-usage')
-        opt.add_argument("--remote-debugging-port=9223")
-        opt.add_experimental_option('useAutomationExtension', False)
-        opt.add_experimental_option('excludeSwitches', ['enable-automation'])
-        wd=webdriver.Chrome(options=opt) # NO UI setting
+        opt.add_argument('--disable-gpu')
+        opt.add_argument('blink-settings=imagesEnabled=false')
+        # opt.add_argument("--remote-debugging-port=9223")
+        # opt.add_experimental_option('useAutomationExtension', False)
+        # opt.add_experimental_option('excludeSwitches', ['enable-automation'])
+        wd=webdriver.Chrome(options=opt, executable_path='/opt/google/chrome/chromedriver') # NO UI setting
+        
     wd.implicitly_wait(5)
     #wd.set_page_load_timeout(10)
 
     # open
     url = 'https://www.pdawiki.com/forum/'
     wd.get(url)
+    wd.page_source.encode('utf-8')
 
     input_usernanme = wd.find_element_by_xpath('//*[@id="ls_username"]')
     input_usernanme.send_keys('howdyhappy')
 
     input_passwd = wd.find_element_by_xpath('//*[@id="ls_password"]')
-    input_passwd.send_keys('v14')
+    input_passwd.send_keys('v34')
 
     input_login = wd.find_element_by_xpath('//*[@id="lsform"]/div/div[1]/table/tbody/tr[2]/td[3]/button')
     input_login.click()
@@ -8340,6 +8359,7 @@ if __name__  ==  "__main__":
     print('success sign!')
 
     wd.quit()
+
 
 ```
 

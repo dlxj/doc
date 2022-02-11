@@ -44,7 +44,6 @@ Object.defineProperty(global, 'services', {
     }
 })
 
-// let rows = await this.dbs.defaultDB.knowledge.menu.query({ appid2 })
 let dbs = {}  // 所有的service 存在这里，service 只能由api 调用
 Object.defineProperty(global, 'dbs', {
     get() {
@@ -136,6 +135,20 @@ module.exports = function () {
 
         global.serviceCache[servicePath] = service
     })
+
+    // api 注入 dbs,  用于在api 对象支持这种调用：this.dbs.defaultDB.temp.create.query({ dbname })
+    for (let apiPath in global.apiCache) {
+
+        let api = global.apiCache[apiPath]
+        if (api['dbs'] === undefined) {
+            Object.defineProperty(api, "dbs", {
+                get() {
+                    return global.dbs
+                }
+            })
+        }
+        
+    }
 
     // api 注入 service,  用于在api 对象支持这种调用：this.service.user.getuser()
     for (let apiPath in global.apiCache) {
