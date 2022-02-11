@@ -32,6 +32,12 @@ CTRL + P 将歌词转换成**音素**
 - opt + a  移动到开始  
 - space  播放  
 
+- 
 
 
-http://sv.miix.cc/#/  Synthesizer V 中文用户手册  
+
+###  Synthesizer V 中文用户手册 
+
+- http://sv.miix.cc/#/
+
+  Synthesizer V 中文用户手册  

@@ -1620,6 +1620,8 @@ https://github.com/microsoft/DirectX-Graphics-Samples/tree/master/Samples/Deskto
 
 
 
+## VC6 返回上一次位置
+
 ```
 VC6 返回上一次位置
 	Ctrl + F6
