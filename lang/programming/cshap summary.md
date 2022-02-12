@@ -7369,8 +7369,27 @@ SignalR可以利用ASP.NET Core身份验证来识别每一个连接（Connection
 
 # 视频下载
 
+- https://github.com/ytdl-org/youtube-dl
+
+  
+
+```
+--write-sub                      Write subtitle file
+--write-auto-sub                 Write automatic subtitle file (YouTube only)
+--all-subs                       Download all the available subtitles of the video
+--list-subs                      List all available subtitles for the video
+--sub-format FORMAT              Subtitle format, accepts formats preference, for example: "srt" or "ass/srt/best"
+--sub-lang LANGS                 Languages of the subtitles to download (optional) separated by commas, use IETF language tags like 'en,pt'
+
+youtube-dl --list-subs https://www.youtube.com/watch?v=9BSjD3f_FkE&t=83s #王德峰：《资本论》
+
+youtube-dl --write-sub --sub-lang zh --skip-download https://www.youtube.com/watch?v=9BSjD3f_FkE&t=83s 
+```
+
+
+
 - https://github.com/leiurayer/downkyi
-  - 哔哩下载姬 CSharp 缺GUI代码
+  - **哔哩下载姬** CSharp 缺GUI代码
 
 - https://github.com/kengwang/BiliDuang
 
