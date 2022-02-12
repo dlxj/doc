@@ -7367,6 +7367,23 @@ SignalR可以利用ASP.NET Core身份验证来识别每一个连接（Connection
 
 
 
+# 视频下载
+
+- https://github.com/leiurayer/downkyi
+  - 哔哩下载姬 CSharp 缺GUI代码
+
+- https://github.com/kengwang/BiliDuang
+
+  - https://www.52pojie.cn/forum.php?mod=viewthread&tid=1342876&highlight=%CA%D3%C6%B5%CF%C2%D4%D8
+
+  - **BiliDuang - 哔哩哔哩视频下载器** CSharp 有GUI
+
+- https://www.52pojie.cn/forum.php?mod=viewthread&tid=1384315&highlight=%CA%D3%C6%B5%CF%C2%D4%D8
+
+  - you-get 支持多
+
+    
+
 # 爬虫
 
 

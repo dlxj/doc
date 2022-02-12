@@ -1210,7 +1210,7 @@ i_x \\
 i_y
 \end{bmatrix}
 
-= p_1 (\hat{i} 向\hat{u}的投影点) \\
+= l_1 (\hat{i} 向\hat{u}的投影向量的模长) \\
 $$
 
 $$
@@ -1223,7 +1223,7 @@ j_x \\
 j_y
 \end{bmatrix}
 
-= p_2 (\hat{j} 向\hat{u}的投影点)
+= l_2 (\hat{j} 向\hat{u}的投影向量的模长)
 $$
 
 
