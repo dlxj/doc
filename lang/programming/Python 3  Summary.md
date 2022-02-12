@@ -7116,7 +7116,12 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 ## ManimCE
 
+- https://www.youtube.com/watch?v=_CWSYu4mrY4
 
+  - https://github.com/univalency/Manim-animations-code-for-MetaMaths
+  - awesome code
+
+     
 
 ### Colab
 
