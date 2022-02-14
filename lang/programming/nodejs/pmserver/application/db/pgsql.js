@@ -22,8 +22,6 @@ function getDB(dbname) {
       }
 
       //await client.query('select $1::text as name', ['brianc'])
-      // '\n    DROP DATABASE IF EXISTS $1;\n  '  ['temp']
-      //let result = await conn.query('DROP DATABASE IF EXISTS $1;', ['temp'])
       let result = await conn.query(sql2, params)
       conn.release(true)
 
@@ -49,8 +47,6 @@ function getDB(dbname) {
 
   return lib
 }
-
-let defaultDB = getDB('defaultDB')
 
 // 参数替换，形参替换成实参
 function buildSQL(sql, par) {
@@ -81,10 +77,11 @@ function buildSQL(sql, par) {
 }
 
 module.exports = {
-  getDB,
-  defaultDB
+  getDB
 }
 
+
+// defaultDB
 // let sql = `
 // DROP DATABASE IF EXISTS $$(dbname);
 // `

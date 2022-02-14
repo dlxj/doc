@@ -150,6 +150,21 @@ module.exports = function () {
         
     }
 
+    // service 注入 dbs
+    for (let servicePath in global.serviceCache) {
+
+        let service = global.serviceCache[servicePath]
+
+        if (service['dbs'] === undefined) {
+            Object.defineProperty(service, "dbs", {
+                get() {
+                    return global.dbs
+                }
+            })
+        }
+        
+    }
+
     // api 注入 service,  用于在api 对象支持这种调用：this.service.user.getuser()
     for (let apiPath in global.apiCache) {
 

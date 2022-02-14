@@ -2021,6 +2021,11 @@ function getContent(fileName) {
         let bytes = fs.readFileSync(gifpath)  // 'binary'
         let b64 = Buffer.from(bytes).toString('base64')  // new Buffer(bytes)
         b64s.push(b64)
+        
+        
+        Buffer.from(b64, 'base64')
+        
+        
 ```
 
 
