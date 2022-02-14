@@ -9,6 +9,7 @@ let startDir = path.resolve(__dirname, '.')  // startup dir
 let apiDir = path.join(startDir, `/http/api/`)
 let serviceDir = path.join(startDir, '/service/api/')
 let dbsDir = path.join(startDir, '/dbs/')
+let libDir = path.join(startDir, '/lib/')
 
 Object.defineProperty(global, 'pg', {
     get() {
@@ -51,8 +52,22 @@ Object.defineProperty(global, 'dbs', {
     }
 })
 
+let libs = {}  // 所有lib 都存在这里
+Object.defineProperty(global, 'libs', {
+    get() {
+        return libs
+    }
+})
+
+let animes = {}  // 所有mkv 信息都存在这里
+Object.defineProperty(global, 'animes', {
+    get() {
+        return animes
+    }
+})
+
 module.exports = function () {
-    
+
     // 从js 文件加载dbs 对象
     let dbpaths = libfiles.allfiles(dbsDir, 'js')
     dbpaths.forEach((dbPath) => {
@@ -67,7 +82,7 @@ module.exports = function () {
 
         let dbName = arr[0]
 
-        if ( global.dbs[dbName] == undefined ) {
+        if (global.dbs[dbName] == undefined) {
             global.dbs[dbName] = global.pg.getDB(dbName)  // 实例化
         }
 
@@ -85,7 +100,7 @@ module.exports = function () {
                 //套一层参数验证
                 item.query = async function (param) {
                     const paramData = require('./lib/paramVerify.js')(schema.params, param)
-                    return pgdb.query( schema.sql, paramData)  // 执行查询
+                    return pgdb.query(schema.sql, paramData)  // 执行查询
                 }
 
                 lastobj[name] = item
@@ -134,6 +149,40 @@ module.exports = function () {
         global.serviceCache[servicePath] = service
     })
 
+    // 从js 文件加载lib 对象
+    let libpaths = libfiles.allfiles(libDir, 'js')
+    libpaths.forEach((libPath) => {
+        if (!fs.existsSync(libPath)) {
+            throw `file not exists: ${libPath}`
+        }
+
+        let lib = require(libPath) // 定义了参数, sql 语句的对象
+
+        let basePath = libPath.replace(libDir, '').replace('.js', '')
+        let arr = basePath.split(new RegExp(String.raw`[\\/]`))
+
+        let lastobj = global.libs
+        for (let i = 0; i < arr.length; i++) {
+
+            let name = arr[i]
+
+            if (i == arr.length - 1) {
+
+                lastobj[name] = lib
+
+            } else {
+
+                if (!(name in lastobj)) {
+                    lastobj[name] = {}
+                    lastobj = lastobj[name]
+                } else {
+                    lastobj = lastobj[name]
+                }
+            }
+
+        }
+    })
+
     // api 注入 dbs,  用于在api 对象支持这种调用：this.dbs.defaultDB.temp.create.query({ dbname })
     for (let apiPath in global.apiCache) {
 
@@ -145,7 +194,7 @@ module.exports = function () {
                 }
             })
         }
-        
+
     }
 
     // service 注入 dbs
@@ -160,7 +209,7 @@ module.exports = function () {
                 }
             })
         }
-        
+
     }
 
     // api 注入 service,  用于在api 对象支持这种调用：this.service.user.getuser()
@@ -234,6 +283,46 @@ module.exports = function () {
                 return global.services
             }
         })
+    }
+
+    let root = ''
+    if (process.platform == 'win32') {
+        root = String.raw`E:\videos\anime`
+    } else if (process.platform == 'linux') {
+        root = String.raw`/mnt/videos/anime`
+    } else if (process.platform == 'darwin') {
+        root = String.raw`/Users/olnymyself/Downloads/videos/anime`
+    } else {
+        throw 'unknow os type.'
+    }
+    global.animes.root = root
+
+    // service 注入 animes
+    for (let servicePath in global.serviceCache) {
+
+        let service = global.serviceCache[servicePath]
+
+        if (service['animes'] === undefined) {
+            Object.defineProperty(service, "animes", {
+                get() {
+                    return global.animes
+                }
+            })
+        }
+    }
+
+    // service 注入 libs
+    for (let servicePath in global.serviceCache) {
+
+        let service = global.serviceCache[servicePath]
+
+        if (service['libs'] === undefined) {
+            Object.defineProperty(service, "libs", {
+                get() {
+                    return global.libs
+                }
+            })
+        }
     }
 
 }

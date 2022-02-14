@@ -7,7 +7,11 @@ module.exports = {
 
         let obj = this
 
+        
+
         let re = await this.services.danganronpa.insert({})
+
+        // let dbpaths = libfiles.allfiles(dbsDir, 'js')
 
         //let { default:libvdinfo } = await import('./videoinfo.mjs')
 
