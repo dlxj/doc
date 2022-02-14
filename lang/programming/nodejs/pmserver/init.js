@@ -52,7 +52,7 @@ Object.defineProperty(global, 'dbs', {
 })
 
 module.exports = function () {
-
+    
     // 从js 文件加载dbs 对象
     let dbpaths = libfiles.allfiles(dbsDir, 'js')
     dbpaths.forEach((dbPath) => {
@@ -104,7 +104,6 @@ module.exports = function () {
 
     })
 
-
     // 从js 文件加载api 对象
     let apipaths = libfiles.allfiles(apiDir, 'js')
     apipaths.forEach((apiPath) => {
@@ -123,7 +122,6 @@ module.exports = function () {
 
         global.apiCache[apiPath] = api
     })
-
 
     // 从js 文件加载service 对象
     let servicepaths = libfiles.allfiles(serviceDir, 'js')
@@ -237,6 +235,5 @@ module.exports = function () {
             }
         })
     }
-
 
 }
