@@ -9,6 +9,8 @@ module.exports = {
 
         let re = await this.services.danganronpa.insert({})
 
+        //let { default:libvdinfo } = await import('./videoinfo.mjs')
+
         //let re = await this.services.user.getuser( { userid:'0' } )
 
         // let re = await this.dbs.temp2.search.query({keywd})

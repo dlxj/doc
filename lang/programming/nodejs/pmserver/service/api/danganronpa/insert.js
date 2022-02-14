@@ -7,9 +7,10 @@ module.exports = {
 
         let obj = this
 
-        let re = await this.dbs.defaultDB.drop.query({'dbname':'danganronpa'})
-        re = await this.dbs.defaultDB.danganronpa.create.query({})
-
+        let re = await this.dbs.defaultDB.drop.query({'dbname':'danganronpa'})  // drop db
+        re = await this.dbs.defaultDB.danganronpa.create.query({})              // create db
+        re = await this.dbs.danganronpa.createtable.query({})                   // create table 
+        
         //let re = await this.services.user.getuser( { userid:'0' } )
 
         // let re = await this.dbs.temp2.search.query({keywd})
