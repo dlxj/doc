@@ -1687,6 +1687,18 @@ String.raw `Hi\u000A!`;
 
 
 
+## indexOf
+
+
+
+```
+The index of the first occurrence of searchString found, or -1 if not found
+```
+
+
+
+
+
 ## Replace
 
 
@@ -1846,7 +1858,7 @@ Object.entries(obj).forEach(
 );
 You can combine for...of, destructuring, and Object.entries:
 
-for (const [key, value] of Object.entries(obj)) {
+for (let [key, value] of Object.entries(obj)) {
     console.log(key, value);
 }
 Both Object.keys() and Object.entries() iterate properties in the same order as a for...in loop but ignore the prototype chain. Only the object's own enumerable properties are iterated.

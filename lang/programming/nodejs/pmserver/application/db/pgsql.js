@@ -23,8 +23,8 @@ function getDB(dbname) {
 
       //await client.query('select $1::text as name', ['brianc'])
       // '\n    DROP DATABASE IF EXISTS $1;\n  '  ['temp']
-      let result = await conn.query('DROP DATABASE IF EXISTS $1;', ['temp'])
-      // let result = await conn.query(sql2, params)
+      //let result = await conn.query('DROP DATABASE IF EXISTS $1;', ['temp'])
+      let result = await conn.query(sql2, params)
       conn.release(true)
 
       return result
@@ -52,14 +52,24 @@ function getDB(dbname) {
 
 let defaultDB = getDB('defaultDB')
 
-// 参数替换，形参 $(parmName) 替换成实参
+// 参数替换，形参替换成实参
 function buildSQL(sql, par) {
+
+  // 先处理掉 '$$(dbname)' 这样的形参，它是表示字面替换
+  for (let [key, value] of Object.entries(par)) {
+
+    sql = sql.replace(new RegExp(new RegExp(String.raw`\$\$\(${key}\)`,'g')), value)
+
+  }
+
   const params = []
-  const parNames = sql.match(/\$\([0-9a-zA-Z\_]{1,9999}?\)/g)
+  const parNames = sql.match(/\$\([0-9a-zA-Z\_]{1,9999}?\)/g)  // 在sql 语句中匹配所有这样的形参： '$(dbname)' ，返回值是形参的数组
   if (parNames != null) {
       for (let i = 0; i < parNames.length; i++) {
           let pName = parNames[i]
-      //for (let pName of parNames) {
+
+          //sql.indexOf('$$')
+
           //替换参数名
           sql = sql.replace(pName, `$${i+1}`)
           //转换参数名
@@ -74,3 +84,15 @@ module.exports = {
   getDB,
   defaultDB
 }
+
+// let sql = `
+// DROP DATABASE IF EXISTS $$(dbname);
+// `
+// let par = {'dbname':'temp'}
+
+// buildSQL(sql, par)
+
+
+
+
+
