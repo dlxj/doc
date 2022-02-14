@@ -3,16 +3,30 @@ module.exports = {
     remark: '',
     params: {
     },
-    async handler({}) {
+    async handler({ }) {
 
-        
+
 
         let obj = this
 
         let mkvs = this.libs.files.allmkv(global.animes.root, 'Danganronpa')
+        for (let j = 0; j < mkvs.length; j++) {
+
+            let vdpath = mkvs[j]
+            let { videoname, episode } = this.libs.vdinfo.episode(vdpath)
+            //let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+
+            let libff = require('../../../lib/ffmpeg.js')
+            await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+
+            let a = 1
+
+            //let vinfo = libvdinfo.vdinfo(vdpath)
+        }
+
         //dbpaths.forEach((dbPath) => {
 
-        let re = await this.dbs.defaultDB.drop.query({'dbname':'danganronpa'})  // drop db
+        let re = await this.dbs.defaultDB.drop.query({ 'dbname': 'danganronpa' })  // drop db
         re = await this.dbs.defaultDB.danganronpa.create.query({})              // create db
         re = await this.dbs.danganronpa.createtable.query({})                   // create table 
 

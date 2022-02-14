@@ -6,10 +6,6 @@ npm install --dependencies
 
 
 
-
-
-
-
 ## Get
 
 
@@ -1002,6 +998,8 @@ export default foo;
 export let a = 1
 
 // cjs
+let { execa } = await import('execa')  // execa 库这样导入
+
 import('./es').then((res)=>{
   console.log(res) // { get default: {name: 'foo'}, a: 1 }
 })
