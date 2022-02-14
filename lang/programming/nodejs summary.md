@@ -1918,6 +1918,14 @@ fs.existsSync( path )
 
 
 
+## create dir
+
+```
+fs.mkdirSync(targetDir, { recursive: true })
+```
+
+
+
 ## read write
 
 
