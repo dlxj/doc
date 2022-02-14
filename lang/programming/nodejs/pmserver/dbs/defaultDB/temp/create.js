@@ -13,7 +13,7 @@ module.exports = {
         CONNECTION LIMIT = -1 
         TEMPLATE template0;
     `,
-  };
+  }
 
   /*
       dbname: {
