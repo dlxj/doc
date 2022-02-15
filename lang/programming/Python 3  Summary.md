@@ -629,6 +629,16 @@ __all__ = ['Sampler', 'SequentialSampler', ... xxx ...]
 
 
 
+### exists
+
+```
+if os.path.exists(path):
+```
+
+
+
+
+
 ### soft link
 
 
@@ -8075,7 +8085,144 @@ anaconda3+ paddleOCR安装使用
 
 
 
-# OpenCV 透视变换
+# OpenCV
+
+
+
+## 中文文件名错误
+
+```python
+import numpy as np
+import cv2
+
+"""
+虽然python 3 使用统一编码解决了中文字符串的问题，但在使用opencv中imread函数读取中文路径图像文件时仍会报错
+此时可借助于numpy 先将文件数据读取出来，然后使用opencv中imdecode函数将其解码成图像数据。此方法对python 2 和3均使用。
+"""
+
+if __name__ == '__main__':
+
+    imgData = np.fromfile('./密密麻麻.bmp', dtype=np.uint8)
+    img = cv2.imdecode(imgData, -1)
+```
+
+
+
+## 读取图片为字节
+
+
+
+```
+import numpy as np
+import cv2
+
+"""
+虽然python 3 使用统一编码解决了中文字符串的问题，但在使用opencv中imread函数读取中文路径图像文件时仍会报错
+此时可借助于numpy 先将文件数据读取出来，然后使用opencv中imdecode函数将其解码成图像数据。此方法对python 2 和3均使用。
+"""
+
+if __name__ == '__main__':
+    
+    np_array = np.fromfile('./密密麻麻.bmp', dtype=np.uint8)
+    img = cv2.imdecode(np_array, -1)
+    # bytes = img.tobytes()  # 转字节数组  # 或者使用img.tostring()，两者是等价的
+        # 注意了：得到的bytes数据并不等价于open(file,"rb")数据
+
+    # 把img 对象编码为jpg 格式
+    success, encoded_image = cv2.imencode(".jpg", img) 
+    # 将数组转为bytes
+    bytes = encoded_image.tobytes() # 等价于tostring() 
+    
+    with open("yyyyyyyyyyyyy.jpg", "wb") as fp:
+        fp.write(bytes)  # 成功，我们自已写的 bytes
+
+    cv2.imwrite('./ttttttttttttttttttt.jpg', img)  # 成功，opencv 保存 img 对象
+```
+
+
+
+
+
+## PIL、cv2、bytes 图片格式互转换
+
+
+
+### 1. PIL 与 cv2 相互转化
+
+```python
+import cv2
+from PIL import Image
+import numpy as np
+
+# PIL 转 cv2
+img= Image.open("test.jpg")
+img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+print(type(img))
+
+
+
+# cv2 转 PIL
+img = cv2.imread("test.jpg")
+img= Image.fromarray(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
+print(type(img))
+```
+
+### 2. PIL 与 bytes 相互转化
+
+```python
+'''
+    bytes 转 PIL 
+'''
+# 第一类：转换 本地的bytes图片 为 PIL
+with open('test.jpg', 'rb') as f:
+    content = f.read()  
+local_img = Image.open(BytesIO(content))   
+print(type(local_img))  
+
+
+
+# 第二类：转换 网络上的bytes图片 为 PIL
+url = 'https://z3.ax1x.com/2021/07/13/WAuYJU.jpg'
+content = requests.get(url, stream=True).content
+net_img = Image.open(BytesIO(content))   # BytesIO实现了在内存中读写Bytes
+print(type(net_img))    
+
+
+
+
+
+
+'''
+    PIL 转 bytes
+'''
+img_bytes  = BytesIO()
+img = Image.open('test.jpg', mode='r')
+img.save(img_bytes, format='JPEG')
+img_bytes = img_bytes.getvalue()
+print(type(img_bytes))  
+```
+
+### 3. cv2 与bytes 相互转化
+
+```python
+import numpy as np
+import cv2
+
+
+# bytes 转 numpy
+img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将 图片字节码bytes  转换成一维的numpy数组 到缓存中
+img_numpy = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维numpy数据，并把数据转换(解码)成图像矩阵格式
+
+
+
+# numpy 转 bytes
+ _, img_encode = cv2.imencode('.jpg', img_numpy)
+img_bytes = img_encode.tobytes()
+```
+
+
+
+## OpenCV 透视变换
 
 - https://blog.csdn.net/qq_41821678/article/details/106851010
 
