@@ -17,6 +17,22 @@ module.exports = {
             //let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
 
             let { srt: srt_jp, msg: msg_jp } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', 0)
+            if (srt_jp == null) {
+                console.log(`Warning: srt_jp is null\nmsg: ${msg_jp}`)
+                continue
+            }
+            srt_jp = this.libs.srt.clean(srt_jp)
+
+            let jps = this.libs.srt.parse(srt_jp)
+
+            /*
+            
+                fsrt = os.path.join(currDir, frtname)
+    strs = "\n"+readstring(fsrt)+"\n"
+    iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
+    poss = [ i.span() for i in iters ]
+
+            */
 
             let a = 1
 
