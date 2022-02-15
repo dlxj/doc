@@ -16,8 +16,7 @@ module.exports = {
             let { videoname, episode } = this.libs.vdinfo.episode(vdpath)
             //let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
 
-            let libff = require('../../../lib/ffmpeg.js')
-            await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
+            let { srt: srt_jp, msg: msg_jp } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', 0)
 
             let a = 1
 

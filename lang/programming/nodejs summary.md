@@ -1940,6 +1940,14 @@ require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
 
 
 
+## 去掉扩展名
+
+
+
+```
+imgName = path.parse(imgName).name  // 去掉扩展名
+```
+
 
 
 

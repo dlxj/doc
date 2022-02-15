@@ -2473,6 +2473,24 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
+## 读取字节数组
+
+
+
+```csharp
+			byte[] bts = null;
+
+            using (FileStream stream = new FileStream("tmp.mp3", FileMode.Open, FileAccess.Read))
+            using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+            {
+                bts = reader.ReadBytes(Convert.ToInt32(stream.Length));
+            }
+```
+
+
+
+
+
 ## 建目录如不存在
 
 ```
@@ -2615,6 +2633,28 @@ using Newtonsoft.Json.Linq;
                 }
             }
 ```
+
+
+
+### Post的时侯UrlEncode 一下
+
+
+
+```csharp
+HttpUtility.UrlEncode(imgName)}&originImgData={HttpUtility.UrlEncode(originImgData)
+    
+                //读取原始图像
+                byte[] imageBytes = null;
+                using (FileStream stream = new FileStream(fp, FileMode.Open, FileAccess.Read))
+                using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+                {
+                    imageBytes = reader.ReadBytes(Convert.ToInt32(stream.Length));
+                }
+                string originImgData = Convert.ToBase64String(imageBytes);    
+    
+```
+
+
 
 
 
@@ -7389,8 +7429,9 @@ youtube-dl --write-sub --sub-lang zh --skip-download https://www.youtube.com/wat
 
 
 - https://github.com/leiurayer/downkyi
-  - **哔哩下载姬** CSharp 缺GUI代码
-
+  
+- **哔哩下载姬** CSharp 缺GUI代码
+  
 - https://github.com/kengwang/BiliDuang
 
   - https://www.52pojie.cn/forum.php?mod=viewthread&tid=1342876&highlight=%CA%D3%C6%B5%CF%C2%D4%D8
