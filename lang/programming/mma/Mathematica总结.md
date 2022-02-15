@@ -1309,3 +1309,35 @@ BoundaryDiscretizeGraphics[
 
 
 
+# 运行python
+
+- https://mathematica.stackexchange.com/questions/15647/is-there-a-way-to-run-python-from-within-mathematica
+
+```mathematica
+path="D:\\usr\\python.exe";
+p=StartProcess[{path,"-i"}];(*the'-i' argument is important*)
+cmd="print('hello')";(*or any valid python expression*)
+Pause[1];(*important!!!*)
+WriteLine[p,cmd];
+out=ReadString[p,EndOfBuffer]
+KillProcess@p;
+```
+
+
+
+```
+process = StartProcess[$SystemShell];
+WriteLine[process, "cd /home/path/to/folder/"]
+Now, I run the program
+
+WriteLine[process, "./prog"];
+If i want to insert some input, I use the same logic
+
+WriteLine[process, "String with input"];
+Finally, I kill the process
+
+KillProcess@process;
+```
+
+
+
