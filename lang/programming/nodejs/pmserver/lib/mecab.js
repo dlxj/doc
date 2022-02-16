@@ -41,7 +41,6 @@ module.exports = {
             throw 'unknow os type.'
         }
     },
-
     haras: async function haras(str) {
 
         let [hiras, msg] = await new Promise(async function (resolve) {
@@ -64,7 +63,19 @@ module.exports = {
         })
 
         return { hiras, msg }
+    },
+    isJP: async function(str) {
+        // https://github.com/hexenq/kuroshiro
+        if (hasKana(str)) {  // hiragana AND katakana
+            return true
+        }
+        // else if (hasKanji(str)) {
+        //     return true
+        // }
+        return false
+
     }
+
 }
 
 /*

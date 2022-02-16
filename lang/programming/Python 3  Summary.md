@@ -8097,6 +8097,12 @@ anaconda3+ paddleOCR安装使用
 
 
 
+```
+pip install opencv-python  # import cv2  # win10要编译很久的
+```
+
+
+
 ## 中文文件名错误
 
 ```python
@@ -8166,6 +8172,27 @@ if __name__ == '__main__':
         fp.write(bytes)  # 成功，我们自已写的 bytes
 
     cv2.imwrite('./ttttttttttttttttttt.jpg', img)  # 成功，opencv 保存 img 对象
+```
+
+
+
+## 自动旋转180度
+
+```python
+import cv2
+import imutils
+
+
+image=cv2.imread('book.jpg')
+# 获取图像的维度，并计算中心
+(h, w) = image.shape[:2]
+(cX, cY) = (w // 2, h // 2)
+
+# 顺时针旋转33度，并保证图像旋转后完整~,确保整个图都在视野范围
+# 使用imutils.rotata 一行代码实现旋转
+rotated = imutils.rotate_bound(image, 180)
+cv2.imshow("Rotated by 180 Degrees", rotated)
+cv2.waitKey(0)
 ```
 
 
