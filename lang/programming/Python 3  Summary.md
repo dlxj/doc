@@ -8195,8 +8195,8 @@ image = cv2.imdecode(imgData, -1)
 # - (cX,cY): 旋转的中心点坐标
 # - 180: 旋转的度数，正度数表示逆时针旋转，而负度数表示顺时针旋转。
 # - 1.0：旋转后图像的大小，1.0原图，2.0变成原来的2倍，0.5变成原来的0.5倍
-M = cv2.getRotationMatrix2D((cX, cY), 180, 1.0)
-rotated = cv2.warpAffine(image, M, (w, h))
+M = cv2.getRotationMatrix2D((cX, cY), -0.0190033 * (180 / 3.1415926), 1.0)  # 1° = π/180弧度   1 弧度 =  180 / 3.1415926  # 0.0190033 是Mathematica 算出来的弧度，先转换成角度
+rotated = cv2.warpAffine(image, M, (w, h))  # 仿射变换
 
 # 顺时针旋转33度，并保证图像旋转后完整~,确保整个图都在视野范围
 # 使用imutils.rotata 一行代码实现旋转
