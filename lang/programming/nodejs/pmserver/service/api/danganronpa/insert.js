@@ -39,10 +39,12 @@ module.exports = {
 
                 if ( this.libs.mecab.isJP(subtitle) ) {
 
-                    let a = 1
+                    subsjp.push( subtitle )
 
                 } else {
-                    let a = 1
+                    
+                    subszh.push( subtitle )
+                    
                 }
                 
                 
@@ -52,7 +54,6 @@ module.exports = {
                 // let jp = item.jp
                 // let zh = item.zh
 
-                let a = 1
             }
 
             /*
