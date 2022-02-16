@@ -1,4 +1,5 @@
 
+
 let path = require('path')
 let fs = require('fs')
 let rd = require('rd')
@@ -66,7 +67,7 @@ Object.defineProperty(global, 'animes', {
     }
 })
 
-module.exports = function () {
+module.exports = async function () {
 
     // 从js 文件加载dbs 对象
     let dbpaths = libfiles.allfiles(dbsDir, 'js')
@@ -324,5 +325,8 @@ module.exports = function () {
             })
         }
     }
-
+    
+    // 务必只初始化一次
+    await global.libs.mecab.init()
+    
 }
