@@ -8188,9 +8188,15 @@ image=cv2.imread('book.jpg')
 (h, w) = image.shape[:2]
 (cX, cY) = (w // 2, h // 2)
 
-# 顺时针旋转33度，并保证图像旋转后完整~,确保整个图都在视野范围
+# - (cX,cY): 旋转的中心点坐标
+# - 180: 旋转的度数，正度数表示逆时针旋转，而负度数表示顺时针旋转。
+# - 1.0：旋转后图像的大小，1.0原图，2.0变成原来的2倍，0.5变成原来的0.5倍
+M = cv2.getRotationMatrix2D((cX, cY), 180, 1.0)
+rotated = cv2.warpAffine(image, M, (w, h))
+
+# 顺时针旋转180度，并保证图像旋转后完整~,确保整个图都在视野范围
 # 使用imutils.rotata 一行代码实现旋转
-rotated = imutils.rotate_bound(image, 180)
+# rotated = imutils.rotate_bound(image, 180)
 cv2.imshow("Rotated by 180 Degrees", rotated)
 cv2.waitKey(0)
 ```
