@@ -64,9 +64,9 @@ module.exports = {
 
         return { hiras, msg }
     },
-    isJP: async function(str) {
+    isJP: function(str) {
         // https://github.com/hexenq/kuroshiro
-        if (hasKana(str)) {  // hiragana AND katakana
+        if ( Kuroshiro.Util.hasKana(str)) {  // hiragana AND katakana
             return true
         }
         // else if (hasKanji(str)) {
