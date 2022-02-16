@@ -63,7 +63,7 @@ module.exports = {
 
         })
 
-        return [hiras, msg]
+        return { hiras, msg }
     }
 }
 

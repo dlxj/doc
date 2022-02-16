@@ -9,14 +9,7 @@ module.exports = {
 
         let obj = this
 
-        // await this.libs.mecab.init()
 
-        // let { videoname, episode } = this.libs.mecab.episode(vdpath)
-
-        // let libmecab = require('./mecab.mjs')
-// await libmecab.init()
-//let [hirass, msgg] = await libmecab.haras('騙して勝つ')
-// let [hirass, msgg] = await libmecab.haras("お願いします! ピカピカ! ")  // crash
 
         let mkvs = this.libs.files.allmkv(global.animes.root, 'Danganronpa')
         for (let j = 0; j < mkvs.length; j++) {
@@ -76,3 +69,10 @@ module.exports = {
 
     }
 }
+
+/*
+
+//let { hiras, msg }= await this.libs.mecab.haras('騙して勝つ')
+        // let { hiras, msg }= await this.libs.mecab.haras("お願いします! ピカピカ! ")  // crash
+
+*/
