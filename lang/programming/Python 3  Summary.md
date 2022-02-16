@@ -8147,7 +8147,7 @@ print(base64_message)
 
 
 
-```
+```python
 import numpy as np
 import cv2
 
@@ -8179,11 +8179,15 @@ if __name__ == '__main__':
 ## 自动旋转180度
 
 ```python
+import argparse
 import cv2
 import imutils
+import numpy as np
+import base64
 
-
-image=cv2.imread('book.jpg')
+imgData = np.fromfile('./密密麻麻.bmp', dtype=np.uint8)
+image = cv2.imdecode(imgData, -1)
+# image=cv2.imread('book.jpg')
 # 获取图像的维度，并计算中心
 (h, w) = image.shape[:2]
 (cX, cY) = (w // 2, h // 2)
@@ -8194,11 +8198,31 @@ image=cv2.imread('book.jpg')
 M = cv2.getRotationMatrix2D((cX, cY), 180, 1.0)
 rotated = cv2.warpAffine(image, M, (w, h))
 
-# 顺时针旋转180度，并保证图像旋转后完整~,确保整个图都在视野范围
+# 顺时针旋转33度，并保证图像旋转后完整~,确保整个图都在视野范围
 # 使用imutils.rotata 一行代码实现旋转
 # rotated = imutils.rotate_bound(image, 180)
 cv2.imshow("Rotated by 180 Degrees", rotated)
 cv2.waitKey(0)
+
+# bytes = img.tobytes()  # 转字节数组  # 或者使用img.tostring()，两者是等价的
+  # 注意了：得到的bytes数据并不等价于open(file,"rb")数据
+
+# 把img 对象编码为jpg 格式
+success, encoded_image = cv2.imencode(".jpg", rotated)
+# 将数组转为bytes
+bytes = encoded_image.tobytes()  # 等价于tostring()
+
+b64 = base64.b64encode(bytes).decode('ascii')  # base64字符串
+
+bytes2 = base64.b64decode(b64)  # 编码解码以后是否还正确
+
+with open("密密麻麻_base64.txt", "w") as fp:
+    fp.write(b64)
+
+with open("yyyyyyyyyyyyy.jpg", "wb") as fp:
+    fp.write(bytes2)  # 成功，我们自已写的 bytes
+
+cv2.imwrite('./ttttttttttttttttttt.jpg', rotated)  # 成功，opencv 保存 img 对象
 ```
 
 
