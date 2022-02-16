@@ -23,7 +23,19 @@ module.exports = {
             }
             srt_jp = this.libs.srt.clean(srt_jp)
 
-            let jps = this.libs.srt.parse(srt_jp)
+            let subtitles = this.libs.srt.parse(srt_jp)  // jp ch all in one srt, and have the same time
+
+            for (let i = 0; i < subtitles.length; i++) {  // subtitles.length;
+
+                let item = subtitles[i]
+        
+                let begintime = item.begintime.replace(',', '.')  // for ffmpeg
+                let endtime = item.endtime.replace(',', '.')
+                let jp = item.jp
+                let zh = item.zh
+
+                let a = 1
+            }
 
             /*
             
