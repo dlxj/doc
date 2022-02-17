@@ -23,6 +23,14 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+## Python for win10
+
+```bash
+python -m pip install --upgrade pip # 装完先升级pip
+pip install selenium
+pip install opencv-python  # import cv2  # win10要编译很久的
+```
+
 
 
 ```
@@ -8309,6 +8317,9 @@ img_bytes = img_encode.tobytes()
 
 
 ## OpenCV 透视变换
+
+- https://mp.weixin.qq.com/s?__biz=MzA4ODgyMDg0MQ==&mid=100001057&idx=1&sn=ebfd3cf30ffb3a48909bd309fa59f82d&chksm=1025182727529131c5c63d02663bfc517b89c23f4884c4d49334fee27d12947b792e9b36643f#rd
+  - 面对直线，你说霍夫线变换是万能的吗？周旋机器视觉
 
 - https://blog.csdn.net/qq_41821678/article/details/106851010
 
