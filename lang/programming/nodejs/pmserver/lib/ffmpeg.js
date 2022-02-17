@@ -32,6 +32,31 @@ module.exports = {
 
         let a = 1
         
-    }
+    },
+    extractAudio: async function (vdpath, type, begin_time, end_time) {
+        
+        let { execa } = await import('execa')
 
+        try {
+
+            // 管道读出来的音频流播放不了，改成写临时文件
+            //let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
+
+            let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} tmp.mp3`   // write stdout
+
+
+            let childProcess = execa(cmd, {shell:true})
+            //childProcess.stdout.pipe(process.stdout) // don't print to screen
+            let { stdout } = await childProcess
+
+            let audio = fs.readFileSync('./tmp.mp3')
+            //fs.writeFileSync('./tmpppp.mp3', audio)
+            fs.unlinkSync('./tmp.mp3')
+
+            return { au: audio }
+
+        } catch(err) {
+           return { au:null}
+        }
+    }
 }
