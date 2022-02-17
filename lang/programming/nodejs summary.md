@@ -4829,6 +4829,27 @@ v14.1.0
 
 # Vue
 
+## vscode 
+
+- 安装 Vetur 语法高亮
+
+
+
+## 运行前端
+
+- npm  run serve 
+
+  > 默认 8080 端口
+
+## 让chrome 断下
+
+```javascript
+// index.vue
+saveToWord() { debugger // 这样就会断在这一行 
+```
+
+
+
 
 
 - https://www.jianshu.com/p/c013027069ce

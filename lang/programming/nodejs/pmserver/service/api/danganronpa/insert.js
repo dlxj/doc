@@ -21,7 +21,7 @@ module.exports = {
                 console.log(`Warning: srt_jp is null\nmsg: ${msg_jp}`)
                 continue
             }
-            srt_jp = this.libs.srt.clean(srt_jp)
+            //srt_jp = this.libs.srt.clean(srt_jp)
 
             let subtitles = this.libs.srt.parse(srt_jp)  // jp ch all in one srt, and have the same time
 
