@@ -3,6 +3,8 @@ let { Pool, Client } = require('pg')
 
 let config = require('../../config.js')
 
+let a = 1
+
 function getconfig(dbname) {
   return config[dbname]
 }

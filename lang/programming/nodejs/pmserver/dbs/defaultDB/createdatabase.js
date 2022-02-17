@@ -3,10 +3,14 @@ module.exports = {
     name: `create`,
     author: ``,
     params: {
+      dbname: {
+        type: 'string',
+        remark: ''
+      }
     },
     remark: ``,
     sql: `
-    CREATE DATABASE danganronpa 
+    CREATE DATABASE $$(dbname) 
         WITH OWNER = postgres 
         ENCODING = 'UTF8' 
         TABLESPACE = pg_default 

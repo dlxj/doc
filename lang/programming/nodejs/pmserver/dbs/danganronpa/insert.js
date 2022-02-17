@@ -3,12 +3,69 @@ module.exports = {
   name: `insert`,
   author: ``,
   params: {
+    name: {
+      type: 'string',
+      remark: ''
+    },
+    seasion: {
+      type: 'string',
+      remark: ''
+    },
+    jp: {
+      type: 'string',
+      remark: ''
+    },
+    zh: {
+      type: 'string',
+      remark: ''
+    },
+    begintime: {
+      type: 'string',
+      remark: ''
+    },
+    endtime: {
+      type: 'string',
+      remark: ''
+    },
+    jp_ruby: {
+      type: 'string',
+      remark: ''
+    },
+    v_jp: {
+      type: 'string',
+      remark: ''
+    },
+    v_zh: {
+      type: 'string',
+      remark: ''
+    },
+    videoname: {
+      type: 'string',
+      remark: ''
+    },
+    episode: {
+      type: 'string',
+      remark: ''
+    },
+    seasionName: {
+      type: 'string',
+      remark: '',
+      default:''
+    },
+    audio: {
+      type: 'object',
+      remark: ''
+    },
+    video: {
+      type: 'object',
+      remark: ''
+    }
   },
   remark: ``,
   sql: `
-  INSERT INTO danganronpa (name, seasion, jp, zh, begintime, jp_ruby, v_jp, v_zh, videoname, episode, seasionName, endtime, audio, video)
+  INSERT INTO danganronpa (name, seasion, jp, zh, begintime, endtime, jp_ruby, v_jp, v_zh, videoname, episode, seasionName, audio, video)
   VALUES
-  ( $(name), $(seasion), $(jp), $(zh), $(begintime), $(jp_ruby), to_tsvector($(v_jp)), to_tsvector($(v_zh)), $(videoname), $(episode), $(seasionName), $(endtime), $(audio), $(video) );
+  ( $(name), $(seasion), $(jp), $(zh), $(begintime), $(endtime), $(jp_ruby), to_tsvector($(v_jp)), to_tsvector($(v_zh)), $(videoname), $(episode), $(seasionName), $(audio), $(video) );
   `
 }
 

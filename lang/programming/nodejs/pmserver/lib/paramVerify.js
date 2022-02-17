@@ -109,6 +109,9 @@ module.exports = function (paramsDefined, body) {
           throw new Error(`参数${key}时间格式不正确`);
         }
         break;
+      case 'object':
+          newParams[key] = body[key];
+          break;
       default:
         throw new Error(`未知参数类型${p['type']}`);
     }

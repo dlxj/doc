@@ -1,4 +1,4 @@
-### windows Long path
+# windows Long path
 
 1. Open the Start menu and type “regedit.” Launch the application.
 2. Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem`
@@ -23,10 +23,6 @@ rufus-3.17
 
 记住：最重要的是，完成以上步骤之后，返回刚开始的界面重新点击安装Windows，之后，才可以。
 
-作者：He_Yu
-链接：https://www.jianshu.com/p/e747d9cb3153
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
 
 
@@ -46,6 +42,24 @@ rufus-3.17
 
 现在，应该就可以成功ping通了。
 
+```
+
+
+
+# mkdir -p
+
+
+
+```
+mkdir "src/java/resources" "src/main/resources"
+
+src
+-----java
+-------resources
+-----main
+-------resources
+
+mkdir "E:\videos\anime\Danganronpa\S01\[Kamigami] Danganronpa Kibou no Gakuen to Zetsubou no Koukousei The Animation [1280x720 x264 AAC MKV Sub(Chs,Jap)]"
 ```
 
 

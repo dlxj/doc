@@ -5,14 +5,17 @@ module.exports = {
     },
     async handler({ }) {
 
-
+        let name = 'danganronpa'
+        let seasion = 'S01'
+        let seasionName = ''
 
         let obj = this
 
-        let re = await this.dbs.defaultDB.drop.query({'dbname':'danganronpa'})
-        re = await this.dbs.defaultDB.danganronpa.create.query({})
+        let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': name})
+        re = await this.dbs.defaultDB.createdatabase.query({'dbname':name})
+        re = await this.dbs.danganronpa.createtable.query({})
 
-        let mkvs = this.libs.files.allmkv(global.animes.root, 'Danganronpa')
+        let mkvs = this.libs.files.allmkv(global.animes.root, name)
         for (let j = 0; j < mkvs.length; j++) {
 
             let vdpath = mkvs[j]
@@ -64,7 +67,7 @@ module.exports = {
                 }
 
 
-                let ruby = hiras.ruby
+                let jp_ruby = hiras.ruby
                 let hiragana = hiras.hiragana
 
                 let hiragana_ng = this.libs.srt.NG(hiragana)
@@ -84,7 +87,7 @@ module.exports = {
         
                 let video = Buffer.from('')  // empty now
 
-                //let re = await this.dbs.danganronpa.insert.query({keywd})
+                let re = await this.dbs.danganronpa.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionName, endtime, audio, video})
 
 
 
@@ -106,7 +109,7 @@ module.exports = {
                     // let au = re.rows[0].audio  //  Uint8Array
                     // au = Buffer.from(au)
             
-                    console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)
+                console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)
             
 
                 let a = 1
