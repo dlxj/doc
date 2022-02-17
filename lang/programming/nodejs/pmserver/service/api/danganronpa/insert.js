@@ -32,18 +32,34 @@ module.exports = {
             for (let i = 0; i < subtitles.length; i++) {
                 let item = subtitles[i]
                 let subtitle = item.subtitle
-                if ( subtitle.trim() == '' ) {
+                if (subtitle.trim() == '') {
                     continue
                 }
-                if ( this.libs.mecab.isJP(subtitle) ) {
-                    subsjp.push( item )
-                }  else {
-                    subszh.push( item )
+                if (this.libs.mecab.isJP(subtitle)) {
+                    subsjp.push(item)
+                } else {
+                    subszh.push(item)
                 }
             }
 
             let subtitles2 = this.libs.srt.merge(subsjp, subszh)
 
+
+            console.log(`# begin insert...`)
+            for (let i = 0; i < subtitles2.length; i++) {  // subtitles.length;
+
+                let item = subtitles2[i]
+
+                let begintime = item.begintime.replace(',', '.')  // for ffmpeg
+                let endtime = item.endtime.replace(',', '.')
+                let jp = item.jp
+                let zh = item.zh
+
+                let {hiras, msg } = await this.libs.mecab.hiras(jp)
+                if (hiras == null) {
+                    throw `Error: segment fail. ${msg}`
+                }
+            }
 
             let a = 1
 
