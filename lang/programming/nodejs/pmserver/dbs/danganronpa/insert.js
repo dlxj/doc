@@ -37,7 +37,8 @@ module.exports = {
     },
     v_zh: {
       type: 'string',
-      remark: ''
+      remark: '',
+      default:''
     },
     videoname: {
       type: 'string',

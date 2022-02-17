@@ -57,8 +57,8 @@ module.exports = {
 
                 let begintime = item.begintime.replace(',', '.')  // for ffmpeg
                 let endtime = item.endtime.replace(',', '.')
-                let jp = item.jp
-                let zh = item.zh
+                let jp = item.jp.trim()
+                let zh = item.zh.trim()
 
                 let { hiras, msg } = await this.libs.mecab.hiras(jp)
                 if (hiras == null) {
@@ -88,7 +88,9 @@ module.exports = {
 
                 let re = await this.dbs.danganronpa.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionName, endtime, audio, video})
             
-                console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)            
+                console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)   
+                
+                
 
             }
 
