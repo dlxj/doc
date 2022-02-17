@@ -113,7 +113,7 @@
 
   })
 
-  let port = undefined || 80
+  let port = require('./config').port || 80
   httpServer.listen(port)
   console.log(`server listening on ${port} port...`)
 

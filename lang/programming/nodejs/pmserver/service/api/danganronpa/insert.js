@@ -20,7 +20,6 @@ module.exports = {
 
             let vdpath = mkvs[j]
             let { videoname, episode } = this.libs.vdinfo.episode(vdpath)
-            //let { srt: srt_jp, msg: msg_jp } = await libff.extractSubtitle(vdpath, 'srt', 2)  // the nth subtitle stream
 
             let { srt: srt_jp, msg: msg_jp } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', 0)
             if (srt_jp == null) {
@@ -88,51 +87,14 @@ module.exports = {
                 let video = Buffer.from('')  // empty now
 
                 let re = await this.dbs.danganronpa.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionName, endtime, audio, video})
-
-
-
-
-
-
-
-
-
-
-                // re = await tempDB.query(`
-                // INSERT INTO pokemon (name, seasion, jp, zh, begintime, jp_ruby, v_jp, v_zh, videoname, episode, seasionName, endtime, audio, video)
-                // VALUES
-                //  ( $1, $2, $3, $4, $5, $6, to_tsvector($7), to_tsvector($8), $9, $10, $11, $12, $13, $14 );
-                //  `, [name, seasion, jp, zh, begintime, ruby, jp_ng, zh_ng, videoname, episode, seasionName, endtime, audio, video])
             
-            
-                    // re = await tempDB.query(`SELECT audio FROM pokemon limit 1;`)
-                    // let au = re.rows[0].audio  //  Uint8Array
-                    // au = Buffer.from(au)
-            
-                console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)
-            
+                console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)            
 
-                let a = 1
             }
-
-            let a = 1
-
 
         }
 
-        //dbpaths.forEach((dbPath) => {
-
-        re = await this.dbs.defaultDB.drop.query({ 'dbname': 'danganronpa' })  // drop db
-        re = await this.dbs.defaultDB.danganronpa.create.query({})              // create db
-        re = await this.dbs.danganronpa.createtable.query({})                   // create table 
-
-        //let re = await this.services.user.getuser( { userid:'0' } )
-
-        // let re = await this.dbs.temp2.search.query({keywd})
-
-        return 'hi from insert'
-
-        // return 'hi from service.'
+        return 'all taske done.'
 
     }
 }
@@ -140,6 +102,6 @@ module.exports = {
 /*
 
 //let { hiras, msg }= await this.libs.mecab.haras('騙して勝つ')
-        // let { hiras, msg }= await this.libs.mecab.haras("お願いします! ピカピカ! ")  // crash
+// let { hiras, msg }= await this.libs.mecab.haras("お願いします! ピカピカ! ")  // crash
 
 */
