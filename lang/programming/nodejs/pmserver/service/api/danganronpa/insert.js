@@ -21,7 +21,7 @@ module.exports = {
                 console.log(`Warning: srt_jp is null\nmsg: ${msg_jp}`)
                 continue
             }
-            //srt_jp = this.libs.srt.clean(srt_jp)
+            srt_jp = this.libs.srt.clean(srt_jp)
 
             let subtitles = this.libs.srt.parse(srt_jp)  // jp ch all in one srt, and have the same time
 
@@ -29,45 +29,25 @@ module.exports = {
             let subszh = []
 
 
-            for (let i = 0; i < subtitles.length; i++) {  // subtitles.length;
-
+            for (let i = 0; i < subtitles.length; i++) {
                 let item = subtitles[i]
                 let subtitle = item.subtitle
                 if ( subtitle.trim() == '' ) {
                     continue
                 }
-
                 if ( this.libs.mecab.isJP(subtitle) ) {
-
-                    subsjp.push( subtitle )
-
-                } else {
-                    
-                    subszh.push( subtitle )
-                    
+                    subsjp.push( item )
+                }  else {
+                    subszh.push( item )
                 }
-                
-                
-
-                // let begintime = item.begintime.replace(',', '.')  // for ffmpeg
-                // let endtime = item.endtime.replace(',', '.')
-                // let jp = item.jp
-                // let zh = item.zh
-
             }
 
-            /*
-            
-                fsrt = os.path.join(currDir, frtname)
-    strs = "\n"+readstring(fsrt)+"\n"
-    iters = re.finditer(r"\n\d+\n", strs, re.DOTALL)
-    poss = [ i.span() for i in iters ]
+            let subtitles2 = this.libs.srt.merge(subsjp, subszh)
 
-            */
 
             let a = 1
 
-            //let vinfo = libvdinfo.vdinfo(vdpath)
+
         }
 
         //dbpaths.forEach((dbPath) => {

@@ -132,40 +132,59 @@ module.exports = {
 
             let matchQ = false
             for (let j = 0; j < subszh.length; j++) {
-
+                
                 let begintime_zh = subszh[j].begintime
-                let endtime_zh = subszh[j].endtime
+                let endtime_zh = subszh[i].endtime
                 let subtitle_zh = subszh[j].subtitle
-
                 let begin_seconds_zh = parse_srt_time(begintime_zh)
                 let end_seconds_zh = parse_srt_time(endtime_zh)
 
-                let duration_zh = end_seconds_zh - begin_seconds_zh
+                if (begin_seconds_jp == begin_seconds_zh) {
 
-                let deviation = Math.abs(duration_zh - duration_jp)
-                let de_begin = Math.abs(begin_seconds_zh - begin_seconds_jp)
-                let de_end = Math.abs(end_seconds_zh - end_seconds_jp)
+                    //if (j - i > 20) break
 
-                if (deviation <= 1.5) {  // duration less than 1 second
+                    subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
+                    matchQ = true
+                }
+            }
 
-                    if (de_begin <= 1.5) {
+            if (!matchQ) {
+                for (let j = 0; j < subszh.length; j++) {
 
-                        if (de_end <= 1.5) {
+                    let begintime_zh = subszh[j].begintime
+                    let endtime_zh = subszh[j].endtime
+                    let subtitle_zh = subszh[j].subtitle
 
-                            subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
-                            matchQ = true
-                            break
+                    let begin_seconds_zh = parse_srt_time(begintime_zh)
+                    let end_seconds_zh = parse_srt_time(endtime_zh)
+
+                    let duration_zh = end_seconds_zh - begin_seconds_zh
+
+                    let deviation = Math.abs(duration_zh - duration_jp)
+                    let de_begin = Math.abs(begin_seconds_zh - begin_seconds_jp)
+                    let de_end = Math.abs(end_seconds_zh - end_seconds_jp)
+
+                    if (deviation <= 1.5) {  // duration less than 1 second
+
+                        if (de_begin <= 1.5) {
+
+                            if (de_end <= 1.5) {
+
+                                subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
+                                matchQ = true
+                                break
+
+                            }
 
                         }
-
                     }
+
+
+                    if ((j - i > 15)) {
+                        break
+                    }
+
                 }
-
-
-                if ((j - i > 15)) {
-                    break
-                }
-
             }
 
             if (!matchQ) {
