@@ -9,10 +9,20 @@ let regstrs = [
 module.exports = {
 
     episode: function(vdpath) {
+
+        let root = global.animes.root
+
+        let tmp = vdpath.replace(root, '')
+        tmp = tmp.replace(/^[\\\/]/, '')
+
+        let arr = tmp.split(/[\\\/]/)
+        let animename = arr[0]
+        let seasion = arr[1]
+        let seasionname = arr[2]
         
         let videoname = path.basename(vdpath)
         let episode = ''
-
+        
         let regstr = ''
         for (let str of regstrs) {
             if ( videoname.match(new RegExp(str)) != null ) {
@@ -38,7 +48,7 @@ module.exports = {
             }
         }
 
-        return { videoname, episode }
+        return { animename, seasion, seasionname, episode, videoname }
     }
 
 }
