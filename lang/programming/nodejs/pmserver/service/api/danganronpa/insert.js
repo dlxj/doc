@@ -88,13 +88,15 @@ module.exports = {
 
                 let re = await this.dbs.danganronpa.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionName, endtime, audio, video})
             
-                console.log(`${i + 1}/${subtitles.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)   
+                console.log(`${i + 1}/${subtitles2.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)   
                 
                 
 
             }
 
         }
+
+        console.log('all taske done.')
 
         return 'all taske done.'
 
@@ -103,7 +105,11 @@ module.exports = {
 
 /*
 
+
 //let { hiras, msg }= await this.libs.mecab.haras('騙して勝つ')
 // let { hiras, msg }= await this.libs.mecab.haras("お願いします! ピカピカ! ")  // crash
+
+SELECT Max(ID) FROM danganronpa;
+SELECT p."id", p.jp_ruby, p.zh, p.v_jp, p.v_zh, p.seasion, p."name" FROM danganronpa p WHERE ID IN (1, 3);
 
 */
