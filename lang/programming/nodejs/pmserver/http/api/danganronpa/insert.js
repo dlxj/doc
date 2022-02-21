@@ -9,7 +9,7 @@ module.exports = {
 
         
 
-        let re = await this.services.danganronpa.insert({})
+        let re = await this.services.anime.insert({})
 
         // let dbpaths = libfiles.allfiles(dbsDir, 'js')
 

@@ -5,21 +5,34 @@ module.exports = {
     },
     async handler({ }) {
 
-        let name = 'danganronpa'
+        //let name = 'danganronpa'
         // let seasion = 'S01'
         // let seasionName = ''
 
         let obj = this
 
-        let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': name})
-        re = await this.dbs.defaultDB.createdatabase.query({'dbname':name})
-        re = await this.dbs.danganronpa.createanimetable.query({'tablename':name})
+        let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': 'anime'})
+        re = await this.dbs.defaultDB.createdatabase.query({'dbname':'anime'})
+        // re = await this.dbs.anime.createtable.query({'tablename':name})
 
-        let mkvs = this.libs.files.allmkv(global.animes.root, name)
+        //let mkvs = this.libs.files.allmkv(global.animes.root, name)
+        let mkvs = this.libs.files.allmkv(global.animes.root)
+
+
+        let animenames = {}
+        for (let vdpath of mkvs) {
+            let { animename, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
+            if ( !( animename in animenames ) ) {
+                animenames[animename] = animename
+                re = await this.dbs.anime.createtable.query({'tablename':animename})
+            }
+        }
+
         for (let j = 0; j < mkvs.length; j++) {
 
             let vdpath = mkvs[j]
             let { animename, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
+            let name = animename
 
             let { srt: srt_jp, msg: msg_jp } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', 0)
             if (srt_jp == null) {
@@ -86,9 +99,9 @@ module.exports = {
         
                 let video = Buffer.from('')  // empty now
 
-                let re = await this.dbs.danganronpa.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
+                let re = await this.dbs.anime.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
             
-                console.log(`${i + 1}/${subtitles2.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs `)   
+                console.log(`${i + 1}/${subtitles2.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs ${name}`)   
                 
                 
 
