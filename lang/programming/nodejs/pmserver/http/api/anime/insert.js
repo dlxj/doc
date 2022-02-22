@@ -5,9 +5,7 @@ module.exports = {
     },
     async handler({}) {
 
-        let obj = this
-
-        
+        console.log('hit http/anime/insert')        
 
         let re = await this.services.anime.insert({})
 

@@ -2,17 +2,21 @@
 let { Pool, Client } = require('pg')
 
 let config = require('../../config.js')
-
-let a = 1
+let debug = config.debug
 
 function getconfig(dbname) {
-  return config[dbname]
+  let dbconf = config.dbs[dbname]
+  if (debug) {
+    dbconf.host = config.dbs.host_debug
+  }
+  return dbconf
 }
 
 function getDB(dbname) {
 
-  let config = getconfig(dbname)
-  let pool = new Pool(config)
+  let dbconf = getconfig(dbname)
+
+  let pool = new Pool(dbconf)
   let lib = {
 
     async query(sql, par, conn = null) {
@@ -33,7 +37,7 @@ function getDB(dbname) {
     async release() {
       return await new Promise((resolve, reject) => {
         pool.end().then(() => {
-          resolve(`pool has been release, db is ${config.database}`)
+          resolve(`pool has been release, db is ${dbconf.database}`)
         })
       })
 

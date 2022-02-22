@@ -67,7 +67,7 @@ module.exports = {
 
 
             console.log(`# begin insert...`)
-            for (let i = 0; i < 1; i++) {  // subtitles2.length
+            for (let i = 0; i < subtitles2.length; i++) {  // 
 
                 let item = subtitles2[i]
 
