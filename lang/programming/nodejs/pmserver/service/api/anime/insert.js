@@ -8,19 +8,19 @@ module.exports = {
     },
     async handler({}) {
 
-        // drop and create db
+        // drop and create db, then create table
         let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': 'anime'})
         re = await this.dbs.defaultDB.createdatabase.query({'dbname':'anime'})
+        re = await this.dbs.anime.createtable.query({'tablename': 'anime'})
 
         let mkvs = this.libs.files.allmkv(global.animes.root)
 
-        // create table
         let names = {}
         for (let vdpath of mkvs) {
             let { name, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
             if ( !( name in names ) ) {
                 names[name] = name
-                re = await this.dbs.anime.createtable.query({'tablename':name})  // create table
+                //re = await this.dbs.anime.createtable.query({'tablename':name}) // create table, this is separate table, cancel now
             }
         }
 
@@ -102,7 +102,7 @@ module.exports = {
         
                 let video = Buffer.from('')  // empty now
 
-                let re = await this.dbs.anime.insert.query({name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
+                let re = await this.dbs.anime.insert.query({tablename:'anime', name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
             
                 console.log(`${i + 1}/${subtitles2.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs ${name}`)   
                 

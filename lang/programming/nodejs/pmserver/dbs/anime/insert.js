@@ -3,6 +3,10 @@ module.exports = {
   name: `insert`,
   author: ``,
   params: {
+    tablename: {
+      type: 'string',
+      remark: ''
+    },
     name: {
       type: 'string',
       remark: ''
@@ -64,7 +68,7 @@ module.exports = {
   },
   remark: ``,
   sql: `
-  INSERT INTO $$(name) (name, seasion, jp, zh, begintime, endtime, jp_ruby, v_jp, v_zh, videoname, episode, seasionname, audio, video)
+  INSERT INTO $$(tablename) (name, seasion, jp, zh, begintime, endtime, jp_ruby, v_jp, v_zh, videoname, episode, seasionname, audio, video)
   VALUES
   ( $(name), $(seasion), $(jp), $(zh), $(begintime), $(endtime), $(jp_ruby), to_tsvector($(v_jp)), to_tsvector($(v_zh)), $(videoname), $(episode), $(seasionname), $(audio), $(video) );
   `
