@@ -1,70 +1,73 @@
+
+let subtitleSteams = global.config.subtitleSteams
+
 module.exports = {
     name: 'insert',
     remark: '',
     params: {
     },
-    async handler({ }) {
+    async handler({}) {
 
-        //let name = 'danganronpa'
-        // let seasion = 'S01'
-        // let seasionName = ''
-
-        let obj = this
-
+        // drop and create db
         let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': 'anime'})
         re = await this.dbs.defaultDB.createdatabase.query({'dbname':'anime'})
-        // re = await this.dbs.anime.createtable.query({'tablename':name})
 
-        //let mkvs = this.libs.files.allmkv(global.animes.root, name)
         let mkvs = this.libs.files.allmkv(global.animes.root)
 
-
-        let animenames = {}
+        // create table
+        let names = {}
         for (let vdpath of mkvs) {
-            let { animename, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
-            if ( !( animename in animenames ) ) {
-                animenames[animename] = animename
-                re = await this.dbs.anime.createtable.query({'tablename':animename})
+            let { name, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
+            if ( !( name in names ) ) {
+                names[name] = name
+                re = await this.dbs.anime.createtable.query({'tablename':name})  // create table
             }
         }
 
         for (let j = 0; j < mkvs.length; j++) {
 
             let vdpath = mkvs[j]
-            let { animename, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
-            let name = animename
+            let { name, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
 
-            let { srt: srt_jp, msg: msg_jp } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', 0)
-            if (srt_jp == null) {
-                console.log(`Warning: srt_jp is null\nmsg: ${msg_jp}`)
-                continue
+            if ( !(name in subtitleSteams) ) {
+                throw `error: name '${name}' not in config.subtitleSteams!`
             }
-            srt_jp = this.libs.srt.clean(srt_jp)
-
-            let subtitles = this.libs.srt.parse(srt_jp)  // jp ch all in one srt, and have the same time
 
             let subsjp = []
             let subszh = []
 
-
-            for (let i = 0; i < subtitles.length; i++) {
-                let item = subtitles[i]
-                let subtitle = item.subtitle
-                if (subtitle.trim() == '') {
+            let nths = subtitleSteams[name]
+            for (let nth of nths) {
+                let { srt, msg } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', nth)
+                if (srt == null) {
+                    console.log(`Warning: srt_jp is null\nmsg: ${msg}`)
                     continue
                 }
-                if (this.libs.mecab.isJP(subtitle)) {
-                    subsjp.push(item)
-                } else {
-                    subszh.push(item)
+                srt = this.libs.srt.clean(srt)
+    
+                let subtitles = this.libs.srt.parse(srt)  // jp ch all in one srt, and have the same time
+    
+    
+                for (let i = 0; i < subtitles.length; i++) {
+                    let item = subtitles[i]
+                    let subtitle = item.subtitle
+                    if (subtitle.trim() == '') {
+                        continue
+                    }
+                    if (this.libs.mecab.isJP(subtitle)) {
+                        subsjp.push(item)
+                    } else {
+                        subszh.push(item)
+                    }
                 }
             }
+
 
             let subtitles2 = this.libs.srt.merge(subsjp, subszh)
 
 
             console.log(`# begin insert...`)
-            for (let i = 0; i < subtitles2.length; i++) {  // subtitles.length;
+            for (let i = 0; i < 1; i++) {  // subtitles2.length
 
                 let item = subtitles2[i]
 

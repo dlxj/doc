@@ -16,7 +16,7 @@ module.exports = {
         tmp = tmp.replace(/^[\\\/]/, '')
 
         let arr = tmp.split(/[\\\/]/)
-        let animename = arr[0]
+        let name = arr[0]
         let seasion = arr[1]
         let seasionname = arr[2]
         
@@ -48,7 +48,7 @@ module.exports = {
             }
         }
 
-        return { animename, seasion, seasionname, episode, videoname }
+        return { name, seasion, seasionname, episode, videoname }
     }
 
 }

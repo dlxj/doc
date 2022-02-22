@@ -12,6 +12,14 @@ let serviceDir = path.join(startDir, '/service/api/')
 let dbsDir = path.join(startDir, '/dbs/')
 let libDir = path.join(startDir, '/lib/')
 
+let config = require('./config.js')
+
+Object.defineProperty(global, 'config', {
+    get() {
+        return config
+    }
+})
+
 Object.defineProperty(global, 'pg', {
     get() {
         return pg
