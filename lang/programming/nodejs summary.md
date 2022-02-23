@@ -1122,6 +1122,21 @@ console.log(regex.test(str));
 
 
 
+## string.match
+
+
+
+```javascript
+> '###'.match(/#+/)
+[ '###', index: 0, input: '###', groups: undefined ]
+> 'a'.match(/#+/)
+null
+```
+
+
+
+
+
 ## dotAll
 
 . 默认不匹配换行符
@@ -1706,6 +1721,19 @@ let r = strs.replace(new RegExp(String.raw`([^a-z^A-Z^\s])\s+([^a-z^A-Z^\s])`), 
 
 
 # String
+
+
+
+## match
+
+
+
+```javascript
+> '###'.match(/#+/)
+[ '###', index: 0, input: '###', groups: undefined ]
+> 'a'.match(/#+/)
+null
+```
 
 
 
