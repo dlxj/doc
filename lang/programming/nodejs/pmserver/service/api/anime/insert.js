@@ -65,7 +65,6 @@ module.exports = {
 
             let subtitles2 = this.libs.srt.merge(subsjp, subszh)
 
-
             console.log(`# begin insert...`)
             for (let i = 0; i < subtitles2.length; i++) {  // 
 

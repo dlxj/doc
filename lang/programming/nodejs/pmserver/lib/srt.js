@@ -134,7 +134,7 @@ module.exports = {
             for (let j = 0; j < subszh.length; j++) {
                 
                 let begintime_zh = subszh[j].begintime
-                let endtime_zh = subszh[i].endtime
+                let endtime_zh = subszh[j].endtime
                 let subtitle_zh = subszh[j].subtitle
                 let begin_seconds_zh = parse_srt_time(begintime_zh)
                 let end_seconds_zh = parse_srt_time(endtime_zh)
