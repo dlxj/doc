@@ -3665,10 +3665,53 @@ function NG(strs) {
 
 ## FFMPEG
 
+
+
+```
+ffmpeg -rtsp_transport tcp -i rtsp://userxx:xxx@192.168.101.108:554/0:0 -y http://192.168.101.1:8090/feed2.ffm
+```
+
+
+
 ```
 //			.outputOptions(["-movflags", "frag_keyframe+empty_moov"]) //without these options ffmpeg errors with `muxer does not support non seekable output`
 
 ```
+
+
+
+### ffmpeg.wasm
+
+- https://github.com/ffmpegwasm/ffmpeg.wasm
+
+```
+const trim = async ({ target: { files } }) => {
+        videoInput.addEventListener('loadedmetadata', async function () {
+                let duration =  Math.floor(videoInput.duration)-5; 
+                oldDuration.innerText = `Duration before trim: ${duration} сек`;
+                newDuration.innerText = `Duration after trim: ${duration-5} сек`;  
+                await ffmpeg.run('-i', 'myfile.mp4', '-ss', '0', '-to', `${duration}`, '-c','copy', 'output.mp4');
+                const data = await ffmpeg.FS('readFile', 'output.mp4');
+                video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
+                link.download = 'video.mp4';
+                link.href = video.src;
+                link.innerText = DOWNLOAD';
+        });   
+            if (!ffmpeg.isLoaded()) {
+                await ffmpeg.load()
+            }
+            const { name } = files[0];
+            const videofile = await FFmpeg.fetchFile(files[0]);
+            await ffmpeg.FS('writeFile', `myfile.mp4`, videofile);
+            const origData = await ffmpeg.FS('readFile', 'myfile.mp4');
+            // Get the link and mount it in a hidden video tag in order to get the duration
+            videoInput.src = URL.createObjectURL(new Blob([origData.buffer], { type: 'video/mp4' }));
+      }
+```
+
+
+
+
 
 
 
