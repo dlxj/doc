@@ -3675,8 +3675,32 @@ function NG(strs) {
 
 ## FFMPEG
 
-- https://blog.csdn.net/qq_38232816/article/details/109317423
-  - Centos7 安装ffmpeg4.3.1
+- https://www.mysterydata.com/how-to-install-latest-ffmpeg-4-in-centos-8-7-ubuntu-20-04-18-04-cwp-cpanel-plesk-ispconfig/
+
+### 升级
+
+```
+#  rpm -qa | grep -i ffmpeg
+ffmpeg-3.4.9-1.el7.x86_64
+ffmpeg-devel-3.4.9-1.el7.x86_64
+ffmpeg-libs-3.4.9-1.el7.x86_64
+gstreamer-ffmpeg-0.10.13-16.el7.x86_64
+
+yum remove firefox -y
+yum remove ffmpeg -y
+yum update -y
+
+wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+	# ffmpeg 5.0
+	
+mv dir to /usr/local/
+ln ffmpeg to /usr/local/bin
+
+```
+
+
+
+
 
 
 
