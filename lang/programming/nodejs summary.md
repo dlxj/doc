@@ -1991,6 +1991,16 @@ fs.existsSync( path )
 
 
 
+## __dirname
+
+- 代表当前 js 文件所在目录
+
+```
+require('path').join(__dirname, 'temp.json')
+```
+
+
+
 ## create dir
 
 ```
