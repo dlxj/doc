@@ -3665,6 +3665,9 @@ function NG(strs) {
 
 ## FFMPEG
 
+- https://blog.csdn.net/qq_38232816/article/details/109317423
+  - Centos7 安装ffmpeg4.3.1
+
 
 
 ```
