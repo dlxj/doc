@@ -4,7 +4,7 @@ let path = require('path')
 let regstrs = [
     String.raw`.+?Animation - (\d+) \[.+?`,  // 4 danggan
     String.raw`第(\d+(?:~\d+)*)话`,          // 4 pokemon
-    String.raw`.+?- (\d+)(?:v\d+)* \[.+?`,   // 4 hibike_euphonium
+    String.raw` - (\d+)(?:v\d+)* \[`,       // 4 hibike_euphonium
 ]
 
 module.exports = {
