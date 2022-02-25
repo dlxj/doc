@@ -4998,10 +4998,14 @@ v14.1.0
 
 - http://caibaojian.com/vue/guide/installation.html
 
-
+- https://zhuanlan.zhihu.com/p/258781918
+  - WebAssembly + Rust + Vue + Webpack
 
 ```
-npm install --global vue-cli
+npm uninstall --global vue-cli
+npm install -g vue-cli
+vue --version
+	# 2.9.6
 ```
 
 
