@@ -4994,6 +4994,20 @@ v14.1.0
 
 # Vue
 
+
+
+- http://caibaojian.com/vue/guide/installation.html
+
+
+
+```
+npm install --global vue-cli
+```
+
+
+
+
+
 ## vscode 
 
 - 安装 Vetur 语法高亮
