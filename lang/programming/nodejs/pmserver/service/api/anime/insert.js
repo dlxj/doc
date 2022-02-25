@@ -103,7 +103,7 @@ module.exports = {
 
                 let re = await this.dbs.anime.insert.query({tablename:'anime', name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
             
-                console.log(`${i + 1}/${subtitles2.length} subs ｜ ${j + 1} / ${mkvs.length} mkvs ${name}`)   
+                console.log(`${i + 1}/${subtitles2.length} subs | ${j + 1} / ${mkvs.length} mkvs ${name}`)   
                 
                 
 
