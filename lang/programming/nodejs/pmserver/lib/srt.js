@@ -221,7 +221,7 @@ module.exports = {
         }
 
         var gss = []
-        for (let i = 2; i <= 10; i++) {
+        for (let i = 1; i <= 10; i++) {
 
             let gs = ng(strs, i)
 
@@ -260,4 +260,8 @@ function parse_srt_time(strtime) {
 
     return null
 }
+
+// let ns = module.exports.NG('abc')
+// let a = 1
+
 

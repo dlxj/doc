@@ -5105,18 +5105,24 @@ saveToWord() { debugger // 这样就会断在这一行
 ```javascript
     let xlsx = require('node-xlsx')  // npm install node-xlsx --save
 
-    let data = [] // 写入excel 的数据行   
-    let titles = ['id', 'name'] // 列名 
+    function writeExcel(data, fname) {
+        let buffer = xlsx.build([
+            {
+                name: 'sheet1',
+                data
+            }
+        ])
+        require('fs').writeFileSync(`${fname}`, buffer, {'flag':'w'}) // 生成excel
+    }
+
+    let titles = ['id', 'name'] // 列名
+    let data = [] // 写入excel 的数据行
+    let fname = './the_content.xlsx'
+
     data.push(titles)
     data.push([0, 'first'])
     data.push([1, 'second'])
-    let buffer = xlsx.build([
-        {
-            name: 'sheet1',
-            data
-        }
-    ])
-    require('fs').writeFileSync('./the_content.xlsx', buffer, {'flag':'w'}) // 生成excel
+    writeExcel(data, fname)
 ```
 
 
