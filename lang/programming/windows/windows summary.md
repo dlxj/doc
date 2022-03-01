@@ -64,3 +64,13 @@ mkdir "E:\videos\anime\Danganronpa\S01\[Kamigami] Danganronpa Kibou no Gakuen to
 
 
 
+# 查看端口点用
+
+
+
+```
+netstat -aon | findstr "8080"
+```
+
+
+
