@@ -1821,6 +1821,64 @@ if (text.includes(word)) {}
 
 
 
+## 最长公共前缀
+
+- https://github.com/burgaard/string-algorithms
+  - longest common prefixes 
+
+```javascript
+npm i string-algorithms
+
+(async () => {
+    let { longestCommonSubstring } = await import('string-algorithms')
+    const strings = [
+        '12apple',
+        '3apple4',
+        'apple56'
+    ];
+    console.log(longestCommonSubstring(strings))  // 这不是公共前缀，而是公共子串
+})()
+```
+
+
+
+- https://github.com/sisterAn/JavaScript-Algorithms/issues/19
+
+```javascript
+    // 公共指针法
+    function longestCommonPrefix(strs) {
+        if (!strs || !strs.length) {
+            return '';
+        }
+
+        // 从0开始依次比较
+        let currentIndex = 0;
+
+        while (true) {
+            // 取第一个字符串的当前位字符作为参照
+            const refer = strs[0][currentIndex];
+            // 是否全部匹配
+            const currentAllMatch = strs.reduce((pre, str) => {
+                return pre && str.charAt(currentIndex) === refer;
+            }, true);
+
+            if (currentAllMatch) {
+                currentIndex++;
+            } else {
+                break;
+            }
+        }
+
+        return strs[0].substring(0, currentIndex);
+    }
+
+    console.log(longestCommonPrefix(["flower","flow","flight"]))
+```
+
+
+
+
+
 # Array
 
 
@@ -5037,6 +5095,31 @@ saveToWord() { debugger // 这样就会断在这一行
 
 - https://www.jianshu.com/p/c013027069ce
   - Vue前端部署
+
+
+
+# Excel
+
+
+
+```javascript
+    let xlsx = require('node-xlsx')  // npm install node-xlsx --save
+
+    let data = [] // 写入excel 的数据行   
+    let titles = ['id', 'name'] // 列名 
+    data.push(titles)
+    data.push([0, 'first'])
+    data.push([1, 'second'])
+    let buffer = xlsx.build([
+        {
+            name: 'sheet1',
+            data
+        }
+    ])
+    require('fs').writeFileSync('./the_content.xlsx', buffer, {'flag':'w'}) // 生成excel
+```
+
+
 
 # Docx
 
