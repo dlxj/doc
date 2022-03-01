@@ -5092,6 +5092,60 @@ npm run build  # build for production
 
 
 
+- https://blog.csdn.net/Caeser110/article/details/103504082
+
+```
+解决办法汇总
+eslint: Expected indentation of 2 spaces but found 4
+缩进报错 ，所有缩进只能用两个空格
+
+Newline required at end of file but not found
+需要在最后的后面再加一行!!!
+
+Missing space before value for key ‘name’
+在关键字“值”之前缺少空格
+
+A space is required after ‘,’
+在，后面要加空格
+
+space-before-blocks
+关键字后面要空一格。
+
+key-spacing
+对象字面量中冒号的前后空格
+
+no-unused-vars
+不能有声明后未被使用的变量或参数
+
+```
+
+
+
+## HelloWorld.vue
+
+
+
+```
+<template>
+  <div class="hello">
+    hello, world!
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      message: ''
+    }
+  }
+}
+</script>
+```
+
 
 
 ## vscode 
