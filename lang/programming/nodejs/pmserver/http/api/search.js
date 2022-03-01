@@ -16,14 +16,12 @@ module.exports = {
     },
     async handler({ keywd, type }) {
 
-        let obj = this
-
         // let re = await this.dbs.defaultDB.drop.query({'dbname':'temp'})
         // re = await this.dbs.defaultDB.temp.create.query({})
 
-        re = await this.services.search( { keywd } )
+        let re = await this.services.search( { keywd, type } )
 
-        return this.msg(200, 'hi,,,')
+        return this.msg(200, re)
     }
 }
 
