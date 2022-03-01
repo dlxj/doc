@@ -5086,6 +5086,8 @@ vue --version
 vue init webpack pmweb
 cd pmweb
 npm run dev  # listening at localhost:8080
+
+npm run build  # build for production
 ```
 
 
