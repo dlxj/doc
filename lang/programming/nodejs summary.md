@@ -5064,6 +5064,10 @@ npm uninstall --global vue-cli
 npm install -g vue-cli
 vue --version
 	# 2.9.6
+
+vue init webpack pmweb
+cd pmweb
+npm run dev  # listening at localhost:8080
 ```
 
 
