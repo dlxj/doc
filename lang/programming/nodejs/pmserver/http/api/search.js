@@ -6,9 +6,15 @@ module.exports = {
         keywd: {
             type: 'string',
             remark: ''
+        },
+        type: {
+            type: 'enum',
+            range:["anime","drama"],
+            remark: '',
+            default:'anime'
         }
     },
-    async handler({ keywd }) {
+    async handler({ keywd, type }) {
 
         let obj = this
 

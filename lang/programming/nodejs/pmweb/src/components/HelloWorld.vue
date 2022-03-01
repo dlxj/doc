@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    hello, world!
-    <input v-model="message" placeholder="edit me">
+    keywd
+    <input v-model="message" placeholder="">
     <p>Message is: {{ message }}</p>
   </div>
 </template>

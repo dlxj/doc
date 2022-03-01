@@ -1,9 +1,21 @@
+
+let insertPasswd = global.config.insertPasswd
+
 module.exports = {
     name: 'insert',
     remark: '',
     params: {
+        passwd: {
+            type: 'string',
+            remark: ''
+        }
     },
-    async handler({}) {
+    async handler({passwd}) {
+
+        if (passwd != insertPasswd) {
+            console.log('Warning: Passwd not correct!!! hit api http/anime/insert')
+            return this.msg(200, 'hi,,,')
+        }
 
         console.log('hit http/anime/insert')        
 

@@ -13,7 +13,7 @@ module.exports = {
 
         //let re = await this.services.user.getuser( { userid:'0' } )
 
-        let re = await this.dbs.temp2.search.query({keywd})
+        let re = await this.dbs.anime.search.query({tablename:'anime', keywd})
 
         return 'hi from service.'
 
