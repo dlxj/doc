@@ -4478,9 +4478,27 @@ pm2 restart id --name newName
 
 # nginx
 
+- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7
+
+```
+yum install nginx
+nginx -t # 显示主配置文件路径，并检查语法错误
+systemctl start nginx
+```
+
+
+
 
 
 ## 本地端口转发
+
+
+
+```
+yum install nginx
+```
+
+
 
 
 
