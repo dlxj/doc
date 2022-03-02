@@ -5,19 +5,20 @@ module.exports = {
         keywd: {
             type: 'string',
             remark: ''
+        },
+        type: {
+            type: 'enum',
+            range:["anime","drama"],
+            remark: ''
         }
     },
-    async handler({ keywd }) {
+    async handler({ keywd, type }) {
 
-        let obj = this
 
-        //let re = await this.services.user.getuser( { userid:'0' } )
+        let re = await this.dbs.anime.search.query({tablename:'anime', keywd})
 
-        let re = await this.dbs.temp2.search.query({keywd})
+        return re.rows
 
-        return 'hi from service.'
-
-        // return 'hi from service.'
 
     }
 }
