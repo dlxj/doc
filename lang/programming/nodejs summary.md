@@ -5182,6 +5182,53 @@ export default {
 
 
 
+### iput 强制更新
+
+- https://blog.csdn.net/weixin_43611145/article/details/107183944
+
+
+
+```
+    <input v-model="message.msg" placeholder="edit me" />  <button @click="search">search</button>
+
+  data () {
+    return {
+      message: { msg: '' }
+    }
+  },
+  methods: {
+
+    search () {
+      this.$set(this.message, 'msg', 'aaaa')
+      console.log('hited.')
+    }
+
+  }
+
+```
+
+
+
+
+
+```
+1.this.$forceUpdate()
+上网搜索资料才知道写的多层v-for嵌套（嵌套过深）导致的，render函数没有自动更新，需手动强制刷新。
+
+this.$forceUpdate()官方解释：强制Vue 实例重新渲染。注意它仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。
+
+2.this.$set(target, key, value)
+在项目中，有的时候会给一些form中的对象赋值，this.form.xxx = 'xxx’赋值了，但是视图没有更新。
+
+原因：vue实例只有在初始化的时候定义了form中的对象后，才会触发object.defineProperty()的方法，为每个属性和对象增加getter(),setter()方法。这样，这些属性和对象是受vue实例统一管理的，当修改某一个属性的时候，vue实例会监听它们的变化，进而触发dom更新视图。
+
+this.$set(target, key, value)：target为需要添加属性的对象，key是要添加的属性名，一般是字符串形式，也可以是数字，value为属性key对应的值。
+
+例：this.$set(this.form, 'name', '张三')
+```
+
+
+
 
 
 
