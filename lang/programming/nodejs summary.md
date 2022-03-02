@@ -5152,6 +5152,40 @@ export default {
 
 
 
+### 动态添加
+
+
+
+```
+// 点一次就加一个文本框
+<input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button>
+
+  data () {
+    return {
+      items: []
+    }
+  },
+  computed: {
+    itemNum: function () {
+      return this.items.length
+    }
+  },
+  methods: {
+
+    search () {
+      this.items.push('1')
+      console.log('hited.')
+    }
+
+  }
+```
+
+
+
+
+
+
+
 ## vscode 
 
 - 安装 Vetur 语法高亮

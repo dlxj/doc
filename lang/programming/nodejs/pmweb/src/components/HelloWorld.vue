@@ -1,65 +1,111 @@
 <template>
   <div class="hello">
     keywd
-    <input v-model="message" placeholder="edit me" />  <button @click="search">search</button>
-    <p>Message is: {{ message }}</p>
+    <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button>
+    <!-- <input v-model="message" placeholder="edit me" />  <button @click="search">search</button>
+    <p>Message is: {{ message }}</p> -->
 
     <!-- v-if 是条件渲染，每次状态更新都会重新删除或者创建元素，但v-if有较高的切换性能消耗 -->
     <!-- Vue 官方中不推荐v-for 和v-if 在同一标签中共同使用。因此，给上述示例代码外面加上一层div，isListShow 为true 时创建，为false 时销毁 -->
-    <div class="list_main" v-if="isListShow">
+    <!-- <div class="list_main" v-if="isListShow">
       <ul id="example-1">
         <li v-for="item in items" :key="item.message">
           {{ item.message }}
         </li>
       </ul>
-    </div>
+    </div> -->
 
   </div>
 </template>
 
 <script>
 
-let isListShow = true
+// let isListShow = true
 
-let items = [
-  { message: 'Foo' },
-  { message: 'Bar' }
-]
+// let items = [
+//   { message: 'Foo' },
+//   { message: 'Bar' }
+// ]
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      message: '',
-      isListShow,
-      items
+      items: []
+    }
+  },
+  computed: {
+    itemNum: function () {
+      return this.items.length
     }
   },
   methods: {
 
     search () {
-      items = [
-        { message: 'Xoo' },
-        { message: 'Yar' }
-      ]
+      this.items.push('1')
       console.log('hited.')
     }
 
-  },
-  watch: {
-
-    items (newVal) {
-      isListShow = false
-      this.$nextTick(() => {
-        isListShow = true
-      })
-    }
-
   }
+  // watch: {
+
+  //   items (newVal) {
+  //     isListShow = false
+  //     this.$nextTick(() => {
+  //       isListShow = true
+  //     })
+  //   }
+
+  // }
 }
 </script>
 
 <!--
+
+<template>
+  <div>
+    <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i">
+    <button @click="onAdd">添加</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: []
+    }
+  },
+  methods: {
+    onAdd() {
+      this.items.push('')
+    }
+  }
+}
+</script>
+
+// template
+<input type="text" v-model="computeValue">
+
+// js
+data () {
+    return {
+        form: {
+            computeValue: ''
+        }
+    }
+}
+computed: {
+    computeValue: {
+      get () {
+        return this.form.computeValue
+      },
+      set (val) {
+        this.form.computeValue = val.replace(/[9]/g, 'a')
+      }
+    }
+}
+
       // 1. 异步渲染，$nextTick 待 DOM 渲染完再回调
       // 2. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次
       this.$nextTick(() => {
