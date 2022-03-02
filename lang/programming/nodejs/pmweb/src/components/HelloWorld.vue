@@ -38,6 +38,7 @@ export default {
   methods: {
 
     search () {
+
       // 1. 异步渲染，$nextTick 待 DOM 渲染完再回调
       // 2. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次
       this.$nextTick(() => {
@@ -52,6 +53,11 @@ export default {
         console.log('hited.')
       })
     }
+
+  },
+  watch: {
+
+
 
   }
 }
