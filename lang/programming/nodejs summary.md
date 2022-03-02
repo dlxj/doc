@@ -5232,9 +5232,20 @@ this.$set(target, key, value)：target为需要添加属性的对象，key是要
 ### 导入第三方库
 
 - https://blog.csdn.net/yiyueqinghui/article/details/84391749
+- http://eccent.icu/2021/07/20/vue-import/
 
 ```
+另外一种是全局导入，只需要在main.js中
 
+import 'mui-player/dist/mui-player.min.css'
+import MuiPlayer from 'mui-player'
+即可导入了，导入之后还需要注册，由于不是Vue组件，没法利用Vue.use()注册组件，需要将导入的内容(这里是一个名为MuiPlayer的方法)挂载到全局的原型上，这样才能在所有组件中使用：
+
+Vue.prototype.$MuiPlayer = MuiPlayer
+其本质就是把导入的方法挂载到全局的原型上，这样所有组件都拥有了这个方法，只需在组件内部用
+
+this.$MuiPlayer()
+即可调用库中写好的方法。
 ```
 
 
