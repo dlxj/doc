@@ -5075,6 +5075,8 @@ v14.1.0
 - http://caibaojian.com/vue/guide/installation.html
 - https://blog.csdn.net/xiecheng1995/article/details/106884399
   - v-for 刷新
+- https://segmentfault.com/a/1190000012948175
+  - watch
 - https://v2.vuejs.org/v2/guide/forms.html
 - https://zhuanlan.zhihu.com/p/258781918
   - WebAssembly + Rust + Vue + Webpack

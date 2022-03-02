@@ -38,7 +38,28 @@ export default {
   methods: {
 
     search () {
+      items = [
+        { message: 'Xoo' },
+        { message: 'Yar' }
+      ]
+      console.log('hited.')
+    }
 
+  },
+  watch: {
+
+    items (newVal) {
+      isListShow = false
+      this.$nextTick(() => {
+        isListShow = true
+      })
+    }
+
+  }
+}
+</script>
+
+<!--
       // 1. 异步渲染，$nextTick 待 DOM 渲染完再回调
       // 2. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次
       this.$nextTick(() => {
@@ -52,16 +73,7 @@ export default {
         ]
         console.log('hited.')
       })
-    }
-
-  },
-  watch: {
-
-
-
-  }
-}
-</script>
+-->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!--
