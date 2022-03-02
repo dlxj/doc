@@ -2,8 +2,8 @@
   <div class="hello">
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
-    <input v-model="message.msg" placeholder="edit me" />  <button @click="search">search</button>
-    <!-- <p>Message is: {{ message }}</p> -->
+    <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
+    <p>keywd is: {{ keywdModel.keywd }}</p>
 
     <!-- v-if 是条件渲染，每次状态更新都会重新删除或者创建元素，但v-if有较高的切换性能消耗 -->
     <!-- Vue 官方中不推荐v-for 和v-if 在同一标签中共同使用。因此，给上述示例代码外面加上一层div，isListShow 为true 时创建，为false 时销毁 -->
@@ -31,7 +31,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      message: { msg: '' },
+      keywdModel: { keywd: '' },
       items: []
     }
   },
@@ -43,7 +43,7 @@ export default {
   methods: {
 
     search () {
-      this.$set(this.message, 'msg', 'aaaa')
+      this.$set(this.keywdModel, 'keywd', 'aaaa')
       console.log('hited.')
     }
 
