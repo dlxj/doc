@@ -2,6 +2,7 @@
 module.exports = {
 
     debug: true,
+    insertPasswd:'rn',
     http:{
         port:1001,
         port_debug:80
@@ -27,7 +28,8 @@ module.exports = {
     },
     subtitleSteams: {
         "danganronpa": [ 0 ],  // nth stream is srt 4 ffpmeg
-        "pokemon": [ 0, 2 ],   
+        "pokemon": [ 0, 2 ], 
+        "hibike_euphonium": [ 2 ],  // 2 jp_chs
     }
 }
 
