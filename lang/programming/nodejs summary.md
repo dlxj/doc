@@ -5233,6 +5233,7 @@ this.$set(target, key, value)：target为需要添加属性的对象，key是要
 
 - https://blog.csdn.net/yiyueqinghui/article/details/84391749
 - http://eccent.icu/2021/07/20/vue-import/
+- https://blog.csdn.net/lihefei_coder/article/details/92628030
 
 ```
 另外一种是全局导入，只需要在main.js中

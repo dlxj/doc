@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import moment from 'moment'
+// import co from './core.js'
+//let { default:config }  = import('./core.js'); debugger
+import a from './core.js'; debugger
+//let co = import('./core.js')
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
