@@ -1,9 +1,11 @@
-'use strict'
-const encodings = new Set(['json', 'buffer', 'string'])
-
-export default {
-  a:1
+var test = {
+  foo () { console.log('foo') },
+  bar () { console.log('bar') },
+  baz () { console.log('baz') }
 }
+
+export default test
+
 
 /*
 module.exports = mkrequest => (...args) => {

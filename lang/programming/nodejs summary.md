@@ -5231,6 +5231,31 @@ this.$set(target, key, value)：target为需要添加属性的对象，key是要
 
 ### 导入第三方库
 
+- https://stackoverflow.com/questions/43608457/how-to-import-functions-from-different-js-file-in-a-vuewebpackvue-loader-proje
+
+```
+
+Say I want to import data into a component from src/mylib.js:
+
+var test = {
+  foo () { console.log('foo') },
+  bar () { console.log('bar') },
+  baz () { console.log('baz') }
+}
+
+export default test
+In my .Vue file I simply imported test from src/mylib.js:
+
+<script> 
+  import test from '@/mylib'
+
+  console.log(test.foo())
+  ...
+</script>
+```
+
+
+
 - https://blog.csdn.net/yiyueqinghui/article/details/84391749
 - http://eccent.icu/2021/07/20/vue-import/
 - https://blog.csdn.net/lihefei_coder/article/details/92628030

@@ -21,6 +21,7 @@
 <script>
 
 // import config from '@/config.js'
+import test from '@/core.js'
 
 export default {
   name: 'HelloWorld',
@@ -38,7 +39,7 @@ export default {
   methods: {
 
     search () {
-      // let debugQ = config.debug;
+      
       this.$set(this.keywdModel, 'keywd', 'aaaa')
       console.log('hited.')
     }
