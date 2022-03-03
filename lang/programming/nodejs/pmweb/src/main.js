@@ -3,12 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
-// import moment from 'moment'
-// import co from './core.js'
-// let { default:config }  = import('./core.js'); debugger
-// import test from '@/core'; debugger
-// let co = import('./core.js')
+import config from './config'
+console.log(config.server.encrypt)
+//import bent from 'bent'
 
 Vue.config.productionTip = false
 

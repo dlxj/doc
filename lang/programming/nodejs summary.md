@@ -5072,6 +5072,20 @@ v14.1.0
 
 
 
+## bent
+
+```
+// src/main.js
+// import config from './config'  // import 是异步，debugger 看不到值，还是require 好
+const config = require('./config')
+console.log(config.server.encrypt)
+const bent = require('bent')
+const getBuffer = bent('buffer'); debugger
+console.log(getBuffer)
+```
+
+
+
 - http://caibaojian.com/vue/guide/installation.html
 - https://blog.csdn.net/xiecheng1995/article/details/106884399
   - v-for 刷新
@@ -5273,6 +5287,18 @@ Vue.prototype.$MuiPlayer = MuiPlayer
 this.$MuiPlayer()
 即可调用库中写好的方法。
 ```
+
+
+
+### 插件
+
+- https://segmentfault.com/a/1190000021959058
+
+```
+插件是全局的，组件可以全局注册也可以局部注册
+```
+
+
 
 
 
