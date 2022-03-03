@@ -10,7 +10,7 @@ import router from './router'
   let formurlencoded = require('form-urlencoded')
   const bent = require('bent')
   const getBuffer = bent('buffer')
-  let buffer = await getBuffer('https://cn.vuejs.org/images/logo.svg'); debugger
+  let buffer = await getBuffer('https://cn.vuejs.org/images/logo.svg')
 
   let host = 'localhost:80'
   let url = `http://${host}`

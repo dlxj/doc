@@ -22,6 +22,9 @@
 
 // import config from '@/config.js'
 
+const formurlencoded = require('form-urlencoded')
+const bent = require('bent')
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -37,7 +40,28 @@ export default {
   },
   methods: {
 
-    search () {
+    async search () {
+
+      let keywd = this.keywdModel.keywd; debugger
+
+      let host = 'localhost:80'
+      let url = `http://${host}`
+      let json = {
+        keywd: 'ここ',
+        type: 'anime'
+      }
+      let formurlencoded_json = formurlencoded(json)
+
+      let post = bent(url, 'POST', 'json', 200)
+      let response = await post('/search', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
+
+      if (response.status == 200) {
+        // return [response.data, '']
+      } else {
+        // return [null, response.msg]
+      }
+
+
       this.$set(this.keywdModel, 'keywd', 'aaaa')
       console.log('hited.')
     }
