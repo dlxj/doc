@@ -5118,6 +5118,25 @@ v14.1.0
 ## bent
 
 ```
+package.json 改成这样：
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+   "dependencies": {
+    "bent": "^7.3.12",
+    "moment": "^2.29.1",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.5.0",
+
+npm i
+npm run dev
+
+
 // src/main.js
 // import config from './config'  // import 是异步，debugger 看不到值，还是require 好
 const config = require('./config')
