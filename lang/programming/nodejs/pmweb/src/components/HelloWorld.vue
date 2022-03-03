@@ -6,7 +6,18 @@
     <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
     <p></p>
 
-    <div v-html="resultModel.result"></div>
+    <div class="result_main" v-if="isResultShow">
+
+      <div v-html="resultModel.result"></div>
+
+      <ul id="example-1">
+        <li v-for="item in resultsModel" :key="item.result">
+          {{ item.result }}
+        </li>
+      </ul>
+
+    </div>
+
 
     <!-- v-if 是条件渲染，每次状态更新都会重新删除或者创建元素，但v-if有较高的切换性能消耗 -->
     <!-- Vue 官方中不推荐v-for 和v-if 在同一标签中共同使用。因此，给上述示例代码外面加上一层div，isListShow 为true 时创建，为false 时销毁 -->
@@ -34,6 +45,8 @@ export default {
     return {
       keywdModel:  { keywd: '' },
       resultModel: { result: '' },
+      resultsModel: [{"result":'1'}],
+      isResultShow: false,
       items: []
     }
   },
@@ -67,15 +80,20 @@ export default {
 
       if (response.data.length > 0) {
 
-        let { id, jp, name, seasion, time, zh } = response.data[0]; debugger
+        let { id, jp, name, seasion, time, zh } = response.data[0]
         let result = `${jp}<br>${zh}`
 
-        this.$set(this.resultModel, 'result', result)  // 强制重绘
+        this.resultsModel = [{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
+
+        //this.$set(this.resultModel, 'result', result)  // 强制重绘
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
+
+        this.resultModel.result = result
+        this.isResultShow = true
         this.$nextTick(() => {
           // DOM 渲染完后回调
+          debugger
         })
-
 
       }
 
