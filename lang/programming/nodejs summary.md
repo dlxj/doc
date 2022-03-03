@@ -5199,7 +5199,18 @@ if (process.env.NODE_ENV !== 'development') {
 
 
 ```
-  devServer: { //开发模式下使用的配置参数
+    config/index.js
+    proxyTable: {
+      '/': {
+        target: 'http://localhost:80',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/': ''
+        }
+      }
+    },
+    
+devServer: { //开发模式下使用的配置参数
     proxy: {
       '/api': {
         target: 'http://t.weather.sojson.com', // 接口域名
@@ -5233,6 +5244,23 @@ vue --version
 
 vue init webpack pmweb
 cd pmweb
+
+新建 vue.config.js // 根目录下，和package.json 同级
+module.exports = {
+  runtimeCompiler: true
+}
+
+package.json 加入依赖包
+"@vue/cli-service": "^4.5.0"
+npm i
+
+package.json 的scripts 改成这样
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  }
+
 npm run dev  # listening at localhost:8080
 
 npm run build  # build for production

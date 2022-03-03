@@ -3,10 +3,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-(async () => {
+( async () => {
 
-  const config = require('./config')
-  console.log(config.server.encrypt)
+  // const config = require('./config')
+  // console.log(config.server.encrypt)
   let formurlencoded = require('form-urlencoded')
   const bent = require('bent')
   const getBuffer = bent('buffer')
@@ -23,9 +23,9 @@ import router from './router'
   let response = await post('/anime/insert', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
 
   if (response.status == 200) {
-    return [response.data, '']
+    // return [response.data, '']
   } else {
-    return [null, response.msg]
+    // return [null, response.msg]
   }
 
   // require('fs').writeFileSync('logo.svg', buffer)  // 浏览器不能写本地文件
@@ -41,3 +41,5 @@ import router from './router'
   })
 
 })()
+
+

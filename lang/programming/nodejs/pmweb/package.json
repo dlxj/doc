@@ -2,7 +2,7 @@
   "name": "pmweb",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "dlxj <123468935@qq.com>",
+  "author": "echo",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -12,12 +12,11 @@
   "dependencies": {
     "bent": "^7.3.12",
     "form-urlencoded": "^6.0.6",
-    "moment": "^2.29.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "@vue/cli-service": "^4.5.0"
   },
   "devDependencies": {
-    "@vue/cli-service": "^4.5.0",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
