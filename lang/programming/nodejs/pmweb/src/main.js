@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import config from './config'
+const config = require('./config'); debugger
 console.log(config.server.encrypt)
-//import bent from 'bent'
+const bent = require('bent')
+// const getBuffer = bent('buffer'); debugger
+// console.log(getBuffer)
 
 Vue.config.productionTip = false
 

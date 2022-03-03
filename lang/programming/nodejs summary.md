@@ -227,6 +227,49 @@ module.exports =
 
 
 ```
+const fs = require('fs')
+const { promisify } = require('util')
+const stream = require('stream')
+const pipeline = promisify(stream.pipeline)
+const bent = require('bent')
+
+const main = async () => {
+  const readable = await bent('https://images.unsplash.com/photo-1595132938692-83ad2c098e47')()
+  const writable = fs.createWriteStream('./image.jpg')
+  await pipeline(readable, writable)
+}
+
+main()
+```
+
+```
+import bent from "bent";
+import { createWriteStream } from "fs";
+import { resolve } from "path";
+import { pipeline } from "stream";
+import { promisify } from "util";
+
+const pipe = promisify(pipeline);
+
+const URL = "http://***/1.txt";
+
+export const run = async () => {
+  const readable = (await bent(URL)("")) as NodeJS.ReadableStream;
+  const writeable = await createWriteStream(resolve(__dirname, "../2.txt"));
+
+  await pipe(readable, writeable);
+
+  console.log("0");
+};
+```
+
+
+
+
+
+
+
+```
 	# 新版好像要自已处理 form-urlencoded 了
 	let bent = require('bent')
     let formurlencoded = require('form-urlencoded')
