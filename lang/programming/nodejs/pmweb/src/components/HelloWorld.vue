@@ -8,13 +8,12 @@
 
     <div class="result_main" v-if="isResultShow">
 
-      <div v-html="resultModel.result"></div>
+      <!-- <div v-html="resultModel.result"></div> -->
 
-      <ul id="example-1">
-        <li v-for="item in resultsModel" :key="item.result">
-          {{ item.result }}
-        </li>
-      </ul>
+      <div v-for="item in resultsModel" :key="item.result">
+          <div v-html="item.result"></div>
+          <br>
+      </div>
 
     </div>
 
@@ -45,7 +44,7 @@ export default {
     return {
       keywdModel:  { keywd: '' },
       resultModel: { result: '' },
-      resultsModel: [{"result":'1'}],
+      resultsModel: [],
       isResultShow: false,
       items: []
     }
@@ -80,19 +79,25 @@ export default {
 
       if (response.data.length > 0) {
 
-        let { id, jp, name, seasion, time, zh } = response.data[0]
-        let result = `${jp}<br>${zh}`
+        //let { id, jp, name, seasion, time, zh } = response.data[0]
+        //let result = `${jp}<br>${zh}`
 
-        this.resultsModel = [{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
+        const data = []
+        for (let { id, jp, name, seasion, time, zh } of response.data) {
+          let result = `${jp}<br>${zh}`
+          data.push( {result} )
+        }
+
+        this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
 
         //this.$set(this.resultModel, 'result', result)  // 强制重绘
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
 
-        this.resultModel.result = result
+        //this.resultModel.result = result
         this.isResultShow = true
         this.$nextTick(() => {
           // DOM 渲染完后回调
-          debugger
+          //debugger
         })
 
       }
