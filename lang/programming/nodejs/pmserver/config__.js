@@ -5,7 +5,14 @@ module.exports = {
     insertPasswd:'rn',
     http:{
         port:1001,
-        port_debug:80
+        port_debug:80,
+        headers: {
+            "Server": `pmserver`,
+            "Access-Control-Allow-Origin": `*`,
+            "Content-Type": `text/json`,
+            'Access-Control-Allow-Headers': `content-type`,
+            'Access-Control-Request-Method': `GET,POST`
+        }
     },
     dbs:{
         host_debug:'127.0.0.1',

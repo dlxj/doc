@@ -18,17 +18,12 @@
   await require('./init.js')()
 
   let isDebug = global.config.debug
+  let headers = global.config.http.headers
 
   let httpServer = http.createServer(async (req, res) => {
 
     if (req.method !== 'POST' && req.method !== 'GET') {
-      return res.writeHead(200, {
-        "Server": `servername`,
-        "Access-Control-Allow-Origin": `*`,
-        "Content-Type": `text/json`,
-        'Access-Control-Allow-Headers': `content-type`,
-        'Access-Control-Request-Method': `GET,POST`
-      })
+      return res.writeHead(200, headers)
     }
 
     res.send = function (data) {
@@ -80,7 +75,7 @@
     //判断api 是否存在
     let apiPath = path.join(global.startDir, `/http/api${req.url}.js`)
     if (!(apiPath in global.apiCache)) {
-      res.writeHead(404)
+      res.writeHead(404, headers)
       res.send('not found')
       return
     }
@@ -110,7 +105,8 @@
     // let service = global.serviceCache[servicePath]
     // let result2 = await service.handler(data)
 
-
+    
+    res.writeHead(200, headers)
     return res.send(result)
 
   })
