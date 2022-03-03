@@ -5117,6 +5117,8 @@ v14.1.0
 
 ## bent
 
+- https://learnku.com/articles/33597
+
 ```
 package.json 改成这样：
   "scripts": {
@@ -5167,6 +5169,26 @@ import router from './router'
 
 })()
 ```
+
+
+
+### 允许跨域
+
+```
+  devServer: { //开发模式下使用的配置参数
+    proxy: {
+      '/api': {
+        target: 'http://t.weather.sojson.com', // 接口域名
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          '^/api': '/api' //需要rewrite的,
+        }
+      }
+    }
+  }
+```
+
+
 
 
 
