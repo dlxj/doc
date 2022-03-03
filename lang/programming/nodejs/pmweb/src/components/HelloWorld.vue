@@ -3,7 +3,10 @@
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
-    <p>keywd is: {{ keywdModel.keywd }}</p>
+    <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
+    <p></p>
+
+    <div v-html="resultModel.result"></div>
 
     <!-- v-if 是条件渲染，每次状态更新都会重新删除或者创建元素，但v-if有较高的切换性能消耗 -->
     <!-- Vue 官方中不推荐v-for 和v-if 在同一标签中共同使用。因此，给上述示例代码外面加上一层div，isListShow 为true 时创建，为false 时销毁 -->
@@ -29,7 +32,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      keywdModel: { keywd: '' },
+      keywdModel:  { keywd: '' },
+      resultModel: { result: '' },
       items: []
     }
   },
@@ -42,7 +46,7 @@ export default {
 
     async search () {
 
-      let keywd = this.keywdModel.keywd; debugger
+      let keywd = this.keywdModel.keywd
 
       let host = 'localhost:80'
       let url = `http://${host}`
@@ -61,8 +65,21 @@ export default {
         // return [null, response.msg]
       }
 
+      if (response.data.length > 0) {
 
-      this.$set(this.keywdModel, 'keywd', 'aaaa')
+        let { id, jp, name, seasion, time, zh } = response.data[0]; debugger
+        let result = `${jp}<br>${zh}`
+
+        this.$set(this.resultModel, 'result', result)  // 强制重绘
+        // this.$set(this.keywdModel, 'keywd', 'aaaa')
+        this.$nextTick(() => {
+          // DOM 渲染完后回调
+        })
+
+
+      }
+
+
       console.log('hited.')
     }
 
