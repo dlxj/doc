@@ -5174,6 +5174,30 @@ import router from './router'
 
 ### 允许跨域
 
+- https://blog.51cto.com/u_15454291/4775779
+
+```
+用 vue-cli-service serve 启动就会用 vue.config.js；
+用 webpack-dev-server 启动就会用 wepback.config.js（默认）。
+```
+
+```
+代理配置没那么复杂。
+
+//vue.config.js
+devServer: {
+    proxy: 后端api地址
+}
+//网络请求的封装，注意，生产环境才设置api地址，开发环境不需要，否则无法代理
+if (process.env.NODE_ENV !== 'development') {
+    axios.defaults.baseURL = '后端api地址'
+}
+```
+
+
+
+
+
 ```
   devServer: { //开发模式下使用的配置参数
     proxy: {

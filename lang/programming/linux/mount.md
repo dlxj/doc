@@ -12,11 +12,7 @@ umount -f -l  /myfolder  # 失效的文件句柄
 
 # NFS
 
-
-
-```
-https://qizhanming.com/blog/2018/08/08/how-to-install-nfs-on-centos-7
-```
+- https://qizhanming.com/blog/2018/08/08/how-to-install-nfs-on-centos-7
 
 
 
