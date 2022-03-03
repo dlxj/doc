@@ -14,13 +14,21 @@ import router from './router'
 
   let host = 'localhost:80'
   let url = `http://${host}`
+  // let json = {
+  //   passwd: 'rn'
+  // }
+  // let formurlencoded_json = formurlencoded(json)
+
+  // let post = bent(url, 'POST', 'json', 200)
+  // let response = await post('/anime/insert', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
   let json = {
-    passwd: 'rn'
+    keywd: 'ここ',
+    type: 'anime'
   }
   let formurlencoded_json = formurlencoded(json)
 
   let post = bent(url, 'POST', 'json', 200)
-  let response = await post('/anime/insert', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
+  let response = await post('/search', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
 
   if (response.status == 200) {
     // return [response.data, '']
