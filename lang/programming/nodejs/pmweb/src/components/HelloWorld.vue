@@ -91,6 +91,7 @@ export default {
           let result = `${jp}<br>${zh}`
           data.push( {result} )
         }
+        // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
 
         this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
 
