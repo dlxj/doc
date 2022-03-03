@@ -60,10 +60,14 @@ export default {
 
       let keywd = this.keywdModel.keywd
 
+      if (keywd == '') {
+        return
+      }
+
       let host = 'localhost:80'
       let url = `http://${host}`
       let json = {
-        keywd: 'ここ',
+        keywd,
         type: 'anime'
       }
       let formurlencoded_json = formurlencoded(json)
