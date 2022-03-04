@@ -311,16 +311,6 @@ module.exports = async function () {
     root = require('path').join(rootdir, 'videos', 'anime')
     let root_audio = require('path').join(rootdir, 'audios', 'anime')
 
-    // if (process.platform == 'win32') {
-    //     config
-    //     root = String.raw`E:\videos\anime`
-    // } else if (process.platform == 'linux') {
-    //     root = String.raw`/mnt/videos/anime`
-    // } else if (process.platform == 'darwin') {
-    //     root = String.raw`/Users/olnymyself/Downloads/videos/anime`
-    // } else {
-    //     throw 'unknow os type.'
-    // }
 
     global.animes.root = root
     global.animes.root_audio = root_audio
