@@ -3237,6 +3237,21 @@ npm install pg pg-pool --save
 
 
 
+## insert id
+
+```
+  INSERT INTO $$(tablename) (name, seasion, jp, zh, type, begintime, endtime, jp_ruby, v_jp, v_zh, videoname, episode, seasionname, audio, video) 
+  VALUES 
+  ( $(name), $(seasion), $(jp), $(zh), $(type), $(begintime), $(endtime), $(jp_ruby), to_tsvector($(v_jp)), to_tsvector($(v_zh)), $(videoname), $(episode), $(seasionname), $(audio), $(video) ) 
+  RETURNING id;
+
+let re = await this.dbs.anime.insert.query({tablename:type, name, seasion, jp, zh, type, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
+                
+                let { id } = re.fields[0]
+```
+
+
+
 
 
 ## Random
