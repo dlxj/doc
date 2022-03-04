@@ -1,5 +1,31 @@
 
 
+# ish postresql
+
+- https://github.com/ish-app/ish/issues/833
+
+```
+apk add postgresql
+su - postgres
+mkdir /var/lib/postgresql/data
+chmod 0700 /var/lib/postgresql/data
+initdb -D /var/lib/postgresql/data
+```
+
+
+
+```
+I am running PostgreSQL in a FreeBSD jail. The standard way to solve this in that environment is to add:
+
+allow.sysvipc = 1;
+```
+
+
+
+
+
+
+
 # iSH Shell (termux)
 
 https://zhuanlan.zhihu.com/p/299824345
