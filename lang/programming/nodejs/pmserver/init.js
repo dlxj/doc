@@ -308,7 +308,7 @@ module.exports = async function () {
     }
 
     let rootdir = global.config.rootDir[platform]
-    root = ``
+    root = require('path').join(rootdir, 'videos', 'anime')
 
     // if (process.platform == 'win32') {
     //     config
@@ -320,8 +320,6 @@ module.exports = async function () {
     // } else {
     //     throw 'unknow os type.'
     // }
-
-    global.config.rootDir
 
     global.animes.root = root
 

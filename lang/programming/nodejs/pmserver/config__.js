@@ -33,6 +33,11 @@ module.exports = {
             ssl: false
         }
     },
+    rootDir: {
+        "win32": `E:\\`,
+        "linux": `/mnt/`,
+        "darwin": `/Users/olnymyself/Downloads/`
+    },
     subtitleSteams: {
         "danganronpa": [ 0 ],  // nth stream is srt 4 ffpmeg
         "pokemon": [ 0, 2 ], 
