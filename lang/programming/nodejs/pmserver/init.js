@@ -295,15 +295,34 @@ module.exports = async function () {
     }
 
     let root = ''
-    if (process.platform == 'win32') {
-        root = String.raw`E:\videos\anime`
-    } else if (process.platform == 'linux') {
-        root = String.raw`/mnt/videos/anime`
-    } else if (process.platform == 'darwin') {
-        root = String.raw`/Users/olnymyself/Downloads/videos/anime`
-    } else {
+    let platform = process.platform
+    let platforms = [ 'win32', 'linux', 'darwin' ]
+    if ( ! platforms.includes( platform ) ) {
         throw 'unknow os type.'
     }
+
+    // check if config is correct
+    let rootdirs = Object.keys( global.config.rootDir )
+    if ( ! rootdirs.includes(platform) ) {
+        throw `config.js rootDir not includes this platform: ${platform}`
+    }
+
+    let rootdir = global.config.rootDir[platform]
+    root = ``
+
+    // if (process.platform == 'win32') {
+    //     config
+    //     root = String.raw`E:\videos\anime`
+    // } else if (process.platform == 'linux') {
+    //     root = String.raw`/mnt/videos/anime`
+    // } else if (process.platform == 'darwin') {
+    //     root = String.raw`/Users/olnymyself/Downloads/videos/anime`
+    // } else {
+    //     throw 'unknow os type.'
+    // }
+
+    global.config.rootDir
+
     global.animes.root = root
 
     // service 注入 animes
