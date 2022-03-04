@@ -3,7 +3,20 @@
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
-    <p>keywd is: {{ keywdModel.keywd }}</p>
+    <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
+    <p></p>
+
+    <div class="result_main" v-if="isResultShow">
+
+      <!-- <div v-html="resultModel.result"></div> -->
+
+      <div v-for="item in resultsModel" :key="item.result">
+          <div v-html="item.result"></div>
+          <br>
+      </div>
+
+    </div>
+
 
     <!-- v-if 是条件渲染，每次状态更新都会重新删除或者创建元素，但v-if有较高的切换性能消耗 -->
     <!-- Vue 官方中不推荐v-for 和v-if 在同一标签中共同使用。因此，给上述示例代码外面加上一层div，isListShow 为true 时创建，为false 时销毁 -->
@@ -22,11 +35,17 @@
 
 // import config from '@/config.js'
 
+const formurlencoded = require('form-urlencoded')
+const bent = require('bent')
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      keywdModel: { keywd: '' },
+      keywdModel:  { keywd: '' },
+      resultModel: { result: '' },
+      resultsModel: [],
+      isResultShow: false,
       items: []
     }
   },
@@ -37,8 +56,58 @@ export default {
   },
   methods: {
 
-    search () {
-      this.$set(this.keywdModel, 'keywd', 'aaaa')
+    async search () {
+
+      let keywd = this.keywdModel.keywd
+
+      if (keywd == '') {
+        return
+      }
+
+      let host = 'localhost:80'
+      let url = `http://${host}`
+      let json = {
+        keywd,
+        type: 'anime'
+      }
+      let formurlencoded_json = formurlencoded(json)
+
+      let post = bent(url, 'POST', 'json', 200)
+      let response = await post('/search', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
+
+      if (response.status == 200) {
+        // return [response.data, '']
+      } else {
+        // return [null, response.msg]
+      }
+
+      if (response.data.length > 0) {
+
+        //let { id, jp, name, seasion, time, zh } = response.data[0]
+        //let result = `${jp}<br>${zh}`
+
+        const data = []
+        for (let { id, jp, name, seasion, time, zh } of response.data) {
+          let result = `${jp}<br>${zh}`
+          data.push( {result} )
+        }
+        // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
+
+        this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
+
+        //this.$set(this.resultModel, 'result', result)  // 强制重绘
+        // this.$set(this.keywdModel, 'keywd', 'aaaa')
+
+        //this.resultModel.result = result
+        this.isResultShow = true
+        this.$nextTick(() => {
+          // DOM 渲染完后回调
+          //debugger
+        })
+
+      }
+
+
       console.log('hited.')
     }
 
