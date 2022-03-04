@@ -2098,6 +2098,21 @@ let httpServer = http.createServer(async (req, res) => {
 
 
 
+## 函数默认值
+
+- https://es6.ruanyifeng.com/#docs/function#
+  - 解构赋值默认值结合使用
+
+
+
+```
+function foo({x, y = 5} = {}) {
+  console.log(x, y);
+}
+foo() // undefined 5
+// 如果没有提供参数，函数foo的参数默认为一个空对象
+```
+
 
 
 # File

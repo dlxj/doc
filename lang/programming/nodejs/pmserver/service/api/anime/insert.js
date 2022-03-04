@@ -11,11 +11,12 @@ module.exports = {
     async handler({}) {
 
         // drop and create db, then create table
-        let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': 'anime'})
-        re = await this.dbs.defaultDB.createdatabase.query({'dbname':'anime'})
-        re = await this.dbs.anime.createtable.query({'tablename': 'anime'})
+        let type = 'anime'
+        let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': type})
+        re = await this.dbs.defaultDB.createdatabase.query({'dbname':type})
+        re = await this.dbs.anime.createtable.query({'tablename': type})
 
-        let mkvs = this.libs.files.allmkv(global.animes.root)
+        let mkvs = this.libs.files.allmkv(global.animes.root, type)
 
         let names = {}
         for (let vdpath of mkvs) {
@@ -108,7 +109,7 @@ module.exports = {
         
                 let video = Buffer.from('')  // empty now
 
-                let re = await this.dbs.anime.insert.query({tablename:'anime', name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
+                let re = await this.dbs.anime.insert.query({tablename:type, name, seasion, jp, zh, type, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
                 
                 let { tableID } = re.fields[0]
 
