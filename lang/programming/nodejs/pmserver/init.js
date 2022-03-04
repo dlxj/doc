@@ -309,6 +309,7 @@ module.exports = async function () {
 
     let rootdir = global.config.rootDir[platform]
     root = require('path').join(rootdir, 'videos', 'anime')
+    let root_audio = require('path').join(rootdir, 'audios', 'anime')
 
     // if (process.platform == 'win32') {
     //     config
@@ -322,6 +323,7 @@ module.exports = async function () {
     // }
 
     global.animes.root = root
+    global.animes.root_audio = root_audio
 
     // service 注入 animes
     for (let servicePath in global.serviceCache) {
