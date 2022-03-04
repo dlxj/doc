@@ -111,7 +111,7 @@ module.exports = {
 
                 let re = await this.dbs.anime.insert.query({tablename:type, name, seasion, jp, zh, type, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
                 
-                let { id } = re.fields[0]
+                let { id } = re.rows[0]
 
                 let audio_path = path.join(audio_dir, `${id}.mp3`)
 
