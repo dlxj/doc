@@ -1,4 +1,6 @@
 
+let path = require('path')
+let fs = require('fs')
 let subtitleSteams = global.config.subtitleSteams
 
 module.exports = {
@@ -31,6 +33,11 @@ module.exports = {
 
             if ( !(name in subtitleSteams) ) {
                 throw `error: name '${name}' not in config.subtitleSteams!`
+            }
+
+            let audio_dir = path.join(global.animes.root_audio, name, seasion)
+            if ( ! fs.existsSync( audio_dir ) ) {
+                fs.mkdirSync(audio_dir, { recursive: true })
             }
 
             let subsjp = []
@@ -102,7 +109,13 @@ module.exports = {
                 let video = Buffer.from('')  // empty now
 
                 let re = await this.dbs.anime.insert.query({tablename:'anime', name, seasion, jp, zh, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
-            
+                
+                let { tableID } = re.fields[0]
+
+                let audio_path = path.join(audio_dir, `${tableID}.mp3`)
+
+                fs.writeFileSync(audio_path, audio )
+
                 console.log(`${i + 1}/${subtitles2.length} subs | ${j + 1} / ${mkvs.length} mkvs ${name}`)   
                 
                 
