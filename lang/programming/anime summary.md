@@ -2,6 +2,19 @@
 
 # Pokemon
 
+- amazon.jp prime video
+
+  - https://github.com/dlxj/Amazon-video-downloader/blob/main/how.to.use.txt
+
+    - 视频 字幕下载
+
+      > B01IEFPVKG
+      >
+      > python amazon.py -r us -p jp -a B01IEFPVKG
+      >
+      > - https://github.com/Azure/azure-cli/issues/19456
+      > - https://github.com/psf/requests/issues/5740
+
 - https://myanimelist.net/anime/527/Pokemon?q=pokemon&cat=anime
   - 声优 OP 信息
 
