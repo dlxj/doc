@@ -16,8 +16,10 @@
       > >
       > >   sys.argv += ['-r', 'jp', '-p', 'jp', '-a', 'B01IEFPVKG']
       >
-      > - https://github.com/Azure/azure-cli/issues/19456
+      > - https://www.cnblogs.com/hanmk/p/10786271.html
+      >   - Postman 获取cookie
       > - https://github.com/psf/requests/issues/5740
+      > - https://github.com/Azure/azure-cli/issues/19456
 
 - https://myanimelist.net/anime/527/Pokemon?q=pokemon&cat=anime
   - 声优 OP 信息
@@ -81,7 +83,17 @@ https://atv-ps-fe.amazon.co.jp/cdp/catalog/GetPlaybackResources?asin=B01IEFPVKG&
 # Amazon-video-downloader\pyamazon\Helpers\requesthelper.py
 
 
-import json, logging, os, requests, urllib.parse, html, http.cookiejar
+    def getcookies(self, user):
+        try:
+            cookieFile = "cookies/{}.txt".format(user)
+            cj = http.cookiejar.MozillaCookieJar(cookieFile)
+            cj.load()
+            cookies = {}
+            for cookie in cj:
+                cookie.value = urllib.parse.unquote(html.unescape(cookie.value))
+                cookies[cookie.name] = cookie.value
+            return cookies
+
     def getItems(self, url, params=None, data=None, json_data=None, headers=None, proxies=None, user=None):
 
         data = requests.get(url=url, params=params, data=data, json=json_data, headers=headers, proxies=proxies,
