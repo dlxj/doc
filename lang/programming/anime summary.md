@@ -49,11 +49,38 @@
 
 
 
+> **3ds精灵宝可梦作品一览**
+>
+> 《精灵宝可梦：XY》
+>
+> 《精灵宝可梦：OMEGA红/蓝宝石》
+>
+> 《精灵宝可梦：日月》
+>
+> 《精灵宝可梦：究极日月》
+
+
+
 ## 请求
 
 
 
 ```
 https://atv-ps-fe.amazon.co.jp/cdp/catalog/GetPlaybackResources?asin=B01IEFPVKG&consumptionType=Streaming&desiredResources=AudioVideoUrls%2CCatalogMetadata%2CPlaybackSettings%2CSubtitleUrls%2CForcedNarratives&deviceID=520ca3d5cb83a1e64073a33af6f9223d71b7df8d5d04af339491b272&deviceTypeID=AOAGZA014O5RE&firmware=1&marketplaceID=A1VC38T7YXB528&resourceUsage=ImmediateConsumption&videoMaterialType=Feature&deviceDrmOverride=CENC&deviceStreamingTechnologyOverride=DASH&deviceProtocolOverride=Https&supportedDRMKeyScheme=DUAL_KEY&operatingSystemName=Windows&operatingSystemVersion=10.0&customerID=A18CCOQSEH5B6B&token=dc080fd66f01cbcb73751fd8c12b8832&deviceBitrateAdaptationsOverride=CVBR%2CCBR&audioTrackId=all&playbackSettingsFormatVersion=1.0.0&titleDecorationScheme=primary-content&&gascEnabled=False
+```
+
+```
+{'User-Agent': 'Mozilla/5.0 (Windows...ari/537.36', 'Accept': 'application/json', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'en-US,en;q=0.8', 'Origin': 'https://atv-ps-fe.amazon.co.jp'}
+
+```
+
+
+
+```
+import json, logging, os, requests, urllib.parse, html, http.cookiejar
+
+data = requests.get(url=url, params=params, data=data, json=json_data, headers=headers, proxies=proxies,
+            cookies=self.getcookies(user) if user is not None else None)
+        Jdata = json.dumps(data.text)
 ```
 
