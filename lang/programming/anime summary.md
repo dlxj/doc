@@ -78,9 +78,13 @@ https://atv-ps-fe.amazon.co.jp/cdp/catalog/GetPlaybackResources?asin=B01IEFPVKG&
 
 
 ```
-import json, logging, os, requests, urllib.parse, html, http.cookiejar
+# Amazon-video-downloader\pyamazon\Helpers\requesthelper.py
 
-data = requests.get(url=url, params=params, data=data, json=json_data, headers=headers, proxies=proxies,
+
+import json, logging, os, requests, urllib.parse, html, http.cookiejar
+    def getItems(self, url, params=None, data=None, json_data=None, headers=None, proxies=None, user=None):
+
+        data = requests.get(url=url, params=params, data=data, json=json_data, headers=headers, proxies=proxies,
             cookies=self.getcookies(user) if user is not None else None)
         Jdata = json.dumps(data.text)
 ```
