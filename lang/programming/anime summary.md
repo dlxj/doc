@@ -24,7 +24,8 @@
 - https://myanimelist.net/anime/527/Pokemon?q=pokemon&cat=anime
   - 声优 OP 信息
 
-
+- Amazon Prime Video台区港区是有中字的
+- Tuneboto Amazon Video Downloader
 
 > Search a french website (like a normal streaming website) or change the language (for french obviously) in your settings.
 >
