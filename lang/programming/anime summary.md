@@ -82,6 +82,7 @@ https://atv-ps-fe.amazon.co.jp/cdp/catalog/GetPlaybackResources?asin=B01IEFPVKG&
 ```
 # Amazon-video-downloader\pyamazon\Helpers\requesthelper.py
 
+import json, logging, os, requests, urllib.parse, html, http.cookiejar
 
     def getcookies(self, user):
         try:
@@ -101,3 +102,31 @@ https://atv-ps-fe.amazon.co.jp/cdp/catalog/GetPlaybackResources?asin=B01IEFPVKG&
         Jdata = json.dumps(data.text)
 ```
 
+## 代理
+
+
+
+```
+        proxies = {
+            'http': 'http://127.0.0.1:4780',
+            'https': 'http://127.0.0.1:4780',
+        }
+
+        data = requests.get(url=url, params=params, data=data, json=json_data, headers=headers, proxies=proxies,
+            cookies=self.getcookies(user) if user is not None else None)
+        Jdata = json.dumps(data.text)
+        #with open('cc.txt', 'a', encoding='utf-8') as handler:
+        #    handler.write(data.text)
+        if data.status_code == 200:
+```
+
+
+
+
+
+## Solution
+
+For a proxy that only supports HTTP,
+
+- If proxy is configured via `HTTPS_PROXY` environment variable, `HTTPS_PROXY` should point to an `http://` URL.
+- On Windows, this can also be set in **Control Panel -> Internet Options -> Connections -> LAN settings -> Proxy server -> Advanced**, set **Secure** to an `http://` URL. (There is a UI bug that after reopening the dialogue, the protocol is lost.)
