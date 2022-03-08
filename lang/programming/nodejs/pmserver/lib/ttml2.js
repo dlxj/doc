@@ -6,8 +6,16 @@ module.exports = {
     extractSrt: function(mlpath) {
        let ml = fs.readFileSync(mlpath, { encoding:"utf-8"})
        ml = ml.replace(/\r\n/g, '\n')
+       let matchs = ml.matchAll(String.raw`<p begin="(\d\d:\d\d:\d\d.\d\d\d)"\s+end="(\d\d:\d\d:\d\d.\d\d\d)".+?>(.+?)</p>`)
+       let arr = Array.from(matchs)
+       for (let match of arr) {
 
-       // <p begin="00:02:14.802" end="00:02:17.304" style="s1">
+        let origin = match[0]
+        let begin = match[1]
+        let end = match[2]
+
+       } 
+       //a.replace(/<span.+?>/g, '').replace(/<\/span>/g, '').replace(/<br\s*\/>/g, '\n')
 
        let a = 1
 
