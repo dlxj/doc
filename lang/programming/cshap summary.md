@@ -2656,6 +2656,671 @@ HttpUtility.UrlEncode(imgName)}&originImgData={HttpUtility.UrlEncode(originImgDa
 
 
 
+# OpenCV
+
+
+
+```
+# simple.cs
+
+using OpenCvSharp;
+using SixLabors.ImageSharp;
+using System;
+using System.IO;
+
+class Sample
+{
+    // 边缘检测
+    public static void canny()
+    {
+        // https://blog.csdn.net/zanllp/article/details/79829813
+        Mat src = new Mat("1.jpg", ImreadModes.Grayscale);
+        Mat dst = new Mat();
+
+        Cv2.Canny(src, dst, 50, 200);
+        Cv2.ImWrite("2.jpg", dst);
+
+        Cv2.ImShow("src image", src);
+        Cv2.ImShow("dst image", dst);
+        Cv2.WaitKey();
+        //using (new Window("src image", src))
+        //using (new Window("dst image", dst))
+        //{
+        //    Cv2.WaitKey();
+        //}
+    }
+
+    // 最小外接矩形
+    public static void minAreaRect()
+    {
+        // https://www.cnblogs.com/little-monkey/p/7429579.html
+        Mat src = new Mat("minAreaRect.jpg", ImreadModes.Grayscale);
+        Mat dst = src.Clone();
+        Cv2.Threshold(src, src, 100, 255, ThresholdTypes.Binary);
+        Cv2.ImShow("src binary", src);
+        Cv2.WaitKey();
+    }
+
+
+    // 透视变换
+    public static void perspectiveTransformation()
+    {
+        // https://www.cnblogs.com/wj-1314/p/11975977.html
+        // https://github.com/LeBron-Jian/ComputerVisionPractice
+
+
+
+    }
+
+    // 删除边缘的对象
+    public static void deleteBorder()
+    {
+        // https://answers.opencv.org/question/173768/how-to-delete-those-border-component/
+
+    }
+
+    // 删除边缘的对象
+    public static Mat DeleteBorderComponents(Mat src)
+    {
+        // https://stackoverflow.com/questions/65534370/remove-the-element-attached-to-the-image-border
+        using (Mat neg = new Mat())
+        using (Mat pad = new Mat())
+        {
+            Cv2.BitwiseNot(src, neg);  // 反色
+            Cv2.CopyMakeBorder(neg, pad, 1, 1, 1, 1, BorderTypes.Constant, 255);  // 上下左右各加一像素
+            OpenCvSharp.Size size = pad.Size();
+            Mat mask = Mat.Zeros(size.Height + 2, size.Width + 2, MatType.CV_8UC1);  // Mask 图像宽高都比pad 多两像素
+
+            Rect rect_floodfill = new Rect();
+            Cv2.FloodFill(pad, mask, new OpenCvSharp.Point(0, 0), 0, out rect_floodfill, 5, 0, FloodFillFlags.Link8);  // 填充
+
+            Mat tmp = pad.Clone(new Rect(2, 2, size.Width - 2, size.Height - 2));  // 宽高前面各加了共两像素，这里减去
+            Cv2.BitwiseNot(tmp, tmp);
+            return tmp;
+        }
+    }
+
+    // 二值化
+    public static Mat Binarize(Mat src)
+    {
+        // https://www.geeksforgeeks.org/python-thresholding-techniques-using-opencv-set-1-simple-thresholding/
+        using (Mat img_binary = new Mat())
+        {
+            Cv2.Threshold(src, img_binary, 185, 255, ThresholdTypes.Binary); // 二值化
+            return img_binary.Clone();
+        }
+    }
+
+    // 二值化
+    public static Mat Binarize(Mat src, double thresh, double maxval)
+    {
+        // https://www.geeksforgeeks.org/python-thresholding-techniques-using-opencv-set-1-simple-thresholding/
+        using (Mat img_binary = new Mat())
+        {
+            Cv2.Threshold(src, img_binary, thresh, maxval, ThresholdTypes.Binary); // 二值化
+            return img_binary.Clone();
+        }
+    }
+
+    // 去除黑边后的矩形区域
+    public static Rect DeBoardRect(Mat t)
+    {
+
+        Sample sample = new Sample();
+
+        Mat im = Binarize(t);  // 二值化
+        im = DeleteBorderComponents(im);  // 删除边缘对象
+
+        im = DeleteSmallComponents(im);  // 删除面积过小的像素点
+
+        // 遍历每一个像素
+        //for (int x = 0; x < im.Rows; x++)
+        //{
+        //    for (int y = 0; y < im.Cols; y++)
+        //    {
+        //        // Point p(x, y); 第几行第几列
+        //        // At(y, x) 第几行第几列
+        //        // Rect(X=y, Y=x) 第几列第几行
+        //        // 注意这两个传参的顺序是不一样的
+        //        int pixel = im.At<Byte>(y, x);
+
+        //        if (pixel == 255)  // 未反色前255 是白色
+        //        {
+        //            //im.At<Byte>(y, x) = 135;  // 纯白全部变成一个特定的灰色
+
+        //        }
+        //    }
+        //}
+
+        int X = 0;
+        // 从左向右移动，条件是这一整列的像素几乎都是0
+        for (int x = 0; x < im.Cols; x++)  // x 代表的是第几列
+        {
+            double count = 0;
+
+            for (int y = 0; y < im.Rows; y++)  // y 代表的是第几行
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一列有多少个非纯白像素点
+                }
+            }
+
+            if (count > 0)
+            {
+                X = x;
+                break;
+            }
+
+        }
+
+
+        int X2 = im.Cols;
+        // 从右向左移动，条件是这一整列的像素几乎都是0
+        for (int x = im.Cols - 1; x >= 0; x--)  // x 代表的是第几列
+        {
+            double count = 0;
+
+            for (int y = 0; y < im.Rows; y++)  // y 代表的是第几行
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一列有多少个非0 像素点
+                }
+            }
+
+            if (count > 0.01)
+            {
+                X2 = x;
+                break;
+            }
+
+        }
+
+
+        int Y = 0;
+        // 从上向下移动，条件是这一整行的像素几乎都是0
+        for (int y = 0; y < im.Rows; y++)  // y 代表的是第几行
+        {
+            double count = 0;
+
+            for (int x = 0; x < im.Cols; x++) // x 代表的是第几列
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一列有多少个非纯白像素点
+                }
+            }
+
+            if (count > 0)
+            {
+                Y = y;
+                break;
+            }
+        }
+
+
+        int Y2 = im.Rows;
+        // 从下向上移动，条件是这一整行的像素几乎都是0
+        for (int y = im.Rows - 1; y >= 0; y--)  // y 代表的是第几行
+        {
+            double count = 0;
+
+            for (int x = 0; x < im.Cols; x++) // x 代表的是第几列
+            {
+                int pixel = im.At<Byte>(y, x);
+                if (pixel != 255)
+                {
+                    count++;  // 计算这一行有多少个非0 像素点
+                }
+            }
+
+            if (count > 0)
+            {
+                Y2 = y;
+                break;
+            }
+        }
+
+
+        // 宽度 = 有多少列 im.Cols
+        // 高度 = 有多少行 im.Rows
+        // x in im.Cols 是 第几列
+        // y in im.Rows 是 第几行
+
+
+        if (X >= 60)
+        {
+            X = X - 60;
+        }
+
+        if (X2 + 60 <= im.Cols)
+        {
+            X2 = X2 + 60;
+        }
+
+
+        if (Y >= 60)
+        {
+            Y = Y - 60;
+        }
+
+        if (Y2 + 60 <= im.Rows)
+        {
+            Y2 = Y2 + 60;
+        }
+
+        var rect = new Rect
+        {
+            X = X,
+            Y = Y,
+            Width = im.Cols - (X + (im.Cols - X2)),
+            Height = im.Rows - (Y + (im.Rows - Y2))
+        };
+
+        return rect;
+    }
+
+
+    // 去除黑边（图片大小可能会改变）
+    public static Mat DeBoardAndResize(Mat src, bool autoCut, bool binarize = false)
+    {
+        Mat img_gray = new Mat();
+        Cv2.CvtColor(src, img_gray, ColorConversionCodes.BGR2GRAY); // 灰度化
+
+        if (binarize)
+        {
+            img_gray = Sample.Binarize(img_gray, 200, 255);
+        }
+
+        // 找出除掉边框后的区域
+        Rect retct = Sample.DeBoardRect(img_gray);
+
+        Mat img_des = null;
+
+        if (autoCut)
+        {
+            // 自动剪掉白边
+            img_des = img_gray.Clone(retct);
+        }
+        else
+        {
+            // rect 矩形区域以外全部变白
+            img_des = Whited(img_gray, retct);
+        }
+
+        img_gray.Dispose();
+
+        return img_des;
+    }
+
+    // rect 矩形区域以外全部变白
+    public static Mat Whited(Mat t, Rect rect)
+    {
+        for (int x = 0; x < t.Cols; x++)  // x 第几列
+        {
+            for (int y = 0; y < t.Rows; y++)  // y 第几行
+            {
+                bool whiteQ = true;
+
+                if (x >= rect.X && x <= rect.X + rect.Width)
+                {
+                    if (y >= rect.Y && y <= rect.Y + rect.Height)
+                    {
+                        whiteQ = false;  // 矩形区域以内的像素保留
+                    }
+                }
+
+                if (whiteQ)
+                {
+                    t.At<Byte>(y, x) = 255;   // 矩形区域以外的像素变白
+                }
+
+            }
+        }
+
+        return t.Clone();
+    }
+
+    // 删除过小的对象
+    public static Mat DeleteSmallComponents(Mat im)
+    {
+
+        // https://qiita.com/kaiyu_tech/items/a37fc929ac0f3328fea1
+
+        Cv2.BitwiseNot(im, im);  // 反色
+
+        var labels = new Mat();
+        var stats = new Mat();
+        var centroids = new Mat();
+        var count = Cv2.ConnectedComponentsWithStats(im, labels, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
+
+        var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+
+
+        var indexer = stats.GetGenericIndexer<int>();
+
+        var output = im.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+
+        // 遍历每一个像素
+        for (int x = 0; x < im.Rows; x++)
+        {
+            for (int y = 0; y < im.Cols; y++)
+            {
+
+                int label = labels.At<int>(x, y);
+
+                if (label == 0)
+                {
+                    // 是背景对象，跳过
+                    continue;
+                }
+
+                var area = indexer[label, (int)ConnectedComponentsTypes.Area];
+
+                var rect = new Rect
+                {
+                    X = indexer[label, (int)ConnectedComponentsTypes.Left],
+                    Y = indexer[label, (int)ConnectedComponentsTypes.Top],
+                    Width = indexer[label, (int)ConnectedComponentsTypes.Width],
+                    Height = indexer[label, (int)ConnectedComponentsTypes.Height]
+                };
+
+                // 所处的连通块面积过小则删除（变成背景色）
+                if (area < 20)
+                {
+                    im.At<Byte>(x, y) = 0;
+                }
+            }
+        }
+
+        // 遍历每一个连通块
+        for (int i = 0; i < indexes.Rows - 1; i++)
+        {
+            var index = indexes.Get<int>(i);
+
+            var area = indexer[index, (int)ConnectedComponentsTypes.Area];
+
+            var rect = new Rect
+            {
+                X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+            };
+
+            // 绘制矩形
+            if (area < 20)
+            {
+                output.Rectangle(rect, Scalar.Blue);
+            }
+            //else
+            //{
+            //    output.Rectangle(rect, Scalar.Red);
+            //}
+        }
+
+
+        Cv2.BitwiseNot(im, im);
+
+        return im;
+
+    }
+
+
+    public static void convertToGif(byte[] data, string savePath)
+    {
+        var img = SixLabors.ImageSharp.Image.Load(data);
+
+        img.SaveAsGif(savePath);
+    }
+
+    public static void convertToGif(System.Drawing.Bitmap img, string savePath)
+    {
+        Mat src = OpenCvSharp.Extensions.BitmapConverter.ToMat(img);
+        src.SaveImage(savePath);
+    }
+
+    // 二值化
+    public static string binarize(string filePath)
+    {
+        // https://www.geeksforgeeks.org/python-thresholding-techniques-using-opencv-set-1-simple-thresholding/
+        using (Mat src = new Mat(filePath))
+        {
+            Mat img_binary = new Mat();
+            using (Mat img_gray = new Mat())
+            using (Mat img_threshold = new Mat())
+            {
+                Cv2.CvtColor(src, img_gray, ColorConversionCodes.BGR2GRAY); // 灰度化 BGR2HSV 
+                                                                            //Cv2.CvtColor(src, img_gray, ColorConversionCodes.LRGB2Luv); // 灰度化 BGR2HSV 
+                                                                            //Cv2.Threshold(img_gray, img_binary, 250, 255, ThresholdTypes.Binary); // 二值化
+
+                //img_binary = DeleteBorderComponents(img_binary);
+                img_binary = DeleteBorderComponents(img_gray);
+                //img_binary = DeleteSmallComponents(img_binary);
+
+                using (MemoryStream memoryStream = img_binary.ToMemoryStream())
+                {
+                    byte[] imageBytes = memoryStream.ToArray();
+                    string imgData = Convert.ToBase64String(imageBytes);
+                    memoryStream.Dispose();
+                    img_binary.Dispose();
+                    return imgData;
+                }
+            }
+        }
+
+    }
+
+
+    // 预处理
+    public static string prepare(string filePath)
+    {
+
+        // https://www.geeksforgeeks.org/python-thresholding-techniques-using-opencv-set-1-simple-thresholding/
+        using (Mat src = Cv2.ImRead(filePath, ImreadModes.Color))
+        {
+
+            Mat img_gray = new Mat();
+            Cv2.CvtColor(src, img_gray, ColorConversionCodes.BGR2GRAY); // 灰度化
+
+            // 找出除掉边框后的区域
+            Rect retct = DeBoardRect(img_gray);
+
+            // rect 矩形区域以外全部变白
+            //Mat src2 = Whited(img_gray, retct);
+
+            Mat src2 = img_gray.Clone(retct);
+
+            //Cv2.ImWrite(@"D:\workcode\csharp\noboard__src.jpg", src2);
+            Cv2.ImWrite(filePath, src2);
+
+
+            using (MemoryStream memoryStream = src2.ToMemoryStream())
+            {
+                byte[] imageBytes = memoryStream.ToArray();
+                string imgData = Convert.ToBase64String(imageBytes);
+                memoryStream.Dispose();
+                img_gray.Dispose();
+                return imgData;
+            }
+        }
+
+    }
+
+
+    /// <summary>
+    /// 截图
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="w"></param>
+    /// <param name="h"></param>
+    /// <param name="rx"></param>
+    /// <param name="ry"></param>
+    /// <param name="rw"></param>
+    /// <param name="rh"></param>
+    /// <returns></returns>
+    public static string cutImage(string path, int x, int y, int w, int h, int rx, int ry, int rw, int rh)
+    {
+        using (Mat img = new Mat(path))
+        {
+
+            if (x < 0)
+            {
+                x = 0;
+            }
+            if (x + w >= img.Width)
+            {
+                w = img.Width - x - 1;
+            }
+            if (y < 0)
+            {
+                y = 0;
+            }
+            if (y + h >= img.Height)
+            {
+                h = img.Height - y - 1;
+            }
+            var rect = new Rect(x, y, w, h);
+            var minImg = img[rect];
+
+            //Mat dist = new Mat();
+            //Cv2.BitwiseNot(minImg, dist);
+
+            //Cv2.Threshold(minImg, dist, 50, 255, ThresholdTypes.Binary);
+
+            //Cv2.Rectangle(minImg, new Rect(rx, ry, rw, rh), Scalar.Red, 2);
+            using (var memoryStream = minImg.ToMemoryStream(".png"))
+            {
+                byte[] imageBytes = memoryStream.ToArray();
+                string imgData = Convert.ToBase64String(imageBytes);
+                memoryStream.Dispose();
+                img.Dispose();
+                minImg.Dispose();
+                //dist.Dispose();
+                return imgData;
+            }
+        }
+    }
+
+
+    /// <summary>
+    /// 旋转图像
+    /// </summary>
+    /// <param name="src"></param>
+    /// <param name="angle"></param>
+    /// <returns></returns>
+    public static Mat matRotate(Mat src, float angle)
+    {
+        Mat dst = new Mat();
+        Point2f center = new Point2f(src.Cols / 2, src.Rows / 2);
+        Mat rot = Cv2.GetRotationMatrix2D(center, angle, 1);
+        Size2f s2f = new Size2f(src.Size().Width, src.Size().Height);
+        Rect box = new RotatedRect(new Point2f(0, 0), s2f, angle).BoundingRect();
+        double xx = rot.At<double>(0, 2) + box.Width / 2 - src.Cols / 2;
+        double zz = rot.At<double>(1, 2) + box.Height / 2 - src.Rows / 2;
+        rot.Set(0, 2, xx);
+        rot.Set(1, 2, zz);
+        Cv2.WarpAffine(src, dst, rot, box.Size);
+        rot.Dispose();
+        return dst;
+    }
+
+
+    /// <summary>
+    /// 图片转格式
+    /// </summary>
+    /// <param name="src"></param>
+    /// <param name="dist"></param>
+    public static void convertImageFormat(string src, string dist)
+    {
+        using (Mat img = new Mat(src))
+        {
+            img.SaveImage(dist);
+            img.Dispose();
+        }
+    }
+
+    public static string ocrInit(string filePath)
+    {
+        using (Mat src = new Mat(filePath, ImreadModes.Grayscale))
+        {
+            //1.Sobel算子，x方向求梯度
+            Mat sobel = new Mat();
+            Cv2.Sobel(src, sobel, MatType.CV_8U, 1, 0, 3);
+
+            //2.二值化
+            Mat binary = new Mat();
+            Cv2.Threshold(sobel, binary, 0, 255, ThresholdTypes.Otsu | ThresholdTypes.Binary);
+
+            //3. 膨胀和腐蚀操作的核函数
+            Mat element1 = new Mat();
+            Mat element2 = new Mat();
+            OpenCvSharp.Size size1 = new OpenCvSharp.Size(30, 9);
+            OpenCvSharp.Size size2 = new OpenCvSharp.Size(24, 6);
+
+            element1 = Cv2.GetStructuringElement(MorphShapes.Rect, size1);
+            element2 = Cv2.GetStructuringElement(MorphShapes.Rect, size2);
+
+            //4. 膨胀一次，让轮廓突出
+            Mat dilation = new Mat();
+            Cv2.Dilate(binary, dilation, element2);
+
+            //5. 腐蚀一次，去掉细节，如表格线等。注意这里去掉的是竖直的线
+            Mat erosion = new Mat();
+            Cv2.Erode(dilation, erosion, element1);
+
+            Mat dilation2 = new Mat();
+            Cv2.Dilate(binary, dilation2, element2);
+            //6. 再次膨胀，让轮廓明显一些
+            Cv2.Dilate(erosion, dilation2, element2, null, 3);
+
+            using (MemoryStream memoryStream = binary.ToMemoryStream())
+            {
+                byte[] imageBytes = memoryStream.ToArray();
+                string imgData = Convert.ToBase64String(imageBytes);
+                return imgData;
+            }
+
+        }
+    }
+
+    public static System.Drawing.Image test(string src)
+    {
+        using (Mat img = new Mat(src))
+        {
+
+            //Mat dist = new Mat();
+            //Cv2.BitwiseNot(minImg, dist);
+
+            Mat dist = new Mat();
+            Mat hd = new Mat();
+            Cv2.CvtColor(img, hd, ColorConversionCodes.BGR2GRAY); // 灰度化 BGR2HSV 
+
+            Cv2.Threshold(hd, dist, 130, 255, ThresholdTypes.Binary);
+
+            var result = System.Drawing.Image.FromStream(dist.ToMemoryStream());
+
+            dist.Dispose();
+
+            return result;
+        }
+    }
+
+}
+
+```
+
+
+
+
+
 
 
 # Word
