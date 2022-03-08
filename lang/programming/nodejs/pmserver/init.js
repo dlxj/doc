@@ -311,9 +311,12 @@ module.exports = async function () {
     root = require('path').join(rootdir, 'videos', 'anime')
     let root_audio = require('path').join(rootdir, 'audios', 'anime')
 
+    let root_subtitles = require('path').join(rootdir, 'sutitles')
+
 
     global.animes.root = root
     global.animes.root_audio = root_audio
+    global.root_subtitles = root_subtitles
 
     // service 注入 animes
     for (let servicePath in global.serviceCache) {
@@ -327,6 +330,21 @@ module.exports = async function () {
                 }
             })
         }
+    }
+
+
+    // api 注入 libs
+    for (let apiPath in global.apiCache) {
+
+        let api = global.apiCache[apiPath]
+        if (api['libs'] === undefined) {
+            Object.defineProperty(api, "libs", {
+                get() {
+                    return global.libs
+                }
+            })
+        }
+
     }
 
     // service 注入 libs

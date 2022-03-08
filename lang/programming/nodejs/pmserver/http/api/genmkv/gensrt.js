@@ -3,10 +3,6 @@ module.exports = {
     name: 'gensrt',
     remark: '',
     params: {
-        keywd: {
-            type: 'string',
-            remark: ''
-        },
         type: {
             type: 'enum',
             range:["anime","drama"],
@@ -14,14 +10,17 @@ module.exports = {
             default:'anime'
         }
     },
-    async handler({ keywd, type }) {
+    async handler({ type }) {
 
+        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', 'amazon')
 
-        let mkvs = this.libs.files.allfiles(global.animes.root, type)
+        let srt = this.libs.ttml2.extractSrt(ttml2s[0])
 
-        let re = await this.services.search( { keywd, type } )
+        // let { srt, msg } = await this.libs.ffmpeg.extractSubtitle(vdpath, 'srt', nth)
 
-        return this.msg(200, re)
+        //let re = await this.services.search( { keywd, type } )
+
+        return this.msg(200, ttml2s)
     }
 }
 

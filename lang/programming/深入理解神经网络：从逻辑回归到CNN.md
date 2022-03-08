@@ -5305,6 +5305,22 @@ y2 --> e  查lable表得到标签。
 
 
 
+## Deep leaning with Rust 
+
+
+
+- https://able.bio/haixuanTao/deep-learning-in-rust-with-gpu--26c53a7f
+
+> ## My setup
+>
+> I am using a Hugging Face **tokenizer** and a custom **BERT** Model from Pytorch that I have converted to **ONNX** to be run with [**onnxruntime-rs**](https://github.com/nbigaouette/onnxruntime-rs)**.**
+>
+> I have tweaked [onnxruntime-rs](https://github.com/nbigaouette/onnxruntime-rs) to do Deep Learning on GPU with CUDA 11 and onnxruntime 1.8 You can check it out on my git: https://github.com/haixuanTao/onnxruntime-rs
+>
+> Hardware-side, I have a 6 cores/12 threads CPU and a GTX 1050 GPU.
+
+
+
 # 自动微分
 
 
