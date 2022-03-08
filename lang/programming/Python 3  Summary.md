@@ -8103,7 +8103,8 @@ anaconda3+ paddleOCR安装使用
 
 # OpenCV
 
-
+- https://yanshilin.xyz/
+  - 周旋的梦游仙境 | 一个工程师的后花园
 
 ```
 pip install opencv-python  # import cv2  # win10要编译很久的
