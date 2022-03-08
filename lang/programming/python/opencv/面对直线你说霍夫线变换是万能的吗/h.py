@@ -16,8 +16,21 @@ if __name__ == '__main__':
 
     imgData = np.fromfile('./填空题.png', dtype=np.uint8)
     img = cv2.imdecode(imgData, -1)
+
+    w = img.shape[0]
+    h = img.shape[1]
+
+    # slice 子矩阵，既剪裁图像
+    img_crop = img[ 0:w-30, 0:h-70]
+
     cv2.imshow("origin", img)
+    cv2.imshow("croped", img_crop)
     cv2.waitKey(0)
+
+
+    # img = cv2.mat_wrapper.Mat(img)
+
+    #crop_img = img[0:y+h, 0:x+w]
 
     #img2 = img.crop((0, 0, 10, 10))  # (left, upper, right, lower)
 
