@@ -5296,6 +5296,23 @@ y2 --> e  查lable表得到标签。
 
 
 
+## 词嵌入
+
+
+
+### 词向量与Embedding究竟是怎么回事？
+
+- https://spaces.ac.cn/archives/4122
+  - 词向量与Embedding究竟是怎么回事？
+
+### 线性代数及其应用——嵌入向量_张觉非
+
+
+- https://zhuanlan.zhihu.com/p/475086668?utm_source=qzone&utm_medium=social&utm_oi=937649545946140672
+  - 线性代数及其应用——嵌入向量
+
+
+
 ## 语音识别系统
 
 
