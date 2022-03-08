@@ -1995,7 +1995,7 @@ arr.forEach(element => {
 ```javascript
 // 双排序，类似C# 的 order by then by
 // Lodash 4.x:
-_.orderBy(data, [
+data = _.orderBy(data, [
   function (item) { return item.sortData.a; },
   function (item) { return item.sortData.b; }
 ], ["asc", "desc"]);
