@@ -516,3 +516,29 @@ std::make_pair("This is a StringTest.", 9.9);
 
 
 
+# OpenCV
+
+- https://mp.weixin.qq.com/s?__biz=MzA4ODgyMDg0MQ==&mid=100001057&idx=1&sn=ebfd3cf30ffb3a48909bd309fa59f82d&chksm=1025182727529131c5c63d02663bfc517b89c23f4884c4d49334fee27d12947b792e9b36643f#rd
+  - 面对直线，你说霍夫线变换是万能的吗
+
+```
+
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace std;
+using namespace cv;
+
+int main()
+{
+  Mat srcImage, dstImage, binaryImage;
+  srcImage = imread("原图.png",0);  
+  imshow("原图", srcImage);
+  
+  waitKey(0);
+  return 0;
+}
+```
+
+
+
