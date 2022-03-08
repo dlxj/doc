@@ -2,6 +2,9 @@
 """
 https://mp.weixin.qq.com/s?__biz=MzA4ODgyMDg0MQ==&mid=100001057&idx=1&sn=ebfd3cf30ffb3a48909bd309fa59f82d&chksm=1025182727529131c5c63d02663bfc517b89c23f4884c4d49334fee27d12947b792e9b36643f#rd
 面对直线，你说霍夫线变换是万能的吗
+
+https://www.geeksforgeeks.org/line-detection-python-opencv-houghline-method/?ref=gcse
+
 """
 
 import numpy as np
@@ -16,7 +19,7 @@ if __name__ == '__main__':
 
     imgData = np.fromfile('./填空题.png', dtype=np.uint8)
     img = cv2.imdecode(imgData, -1)
-    #img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+    # img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
     print(type(img))
 
     w = img.shape[0]
@@ -26,19 +29,34 @@ if __name__ == '__main__':
     img_crop = img[0:w-30, 0:h-70]
 
     # 二值化
-    ret,img_binary = cv2.threshold(img_crop, 92, 255, cv2.THRESH_BINARY_INV)
-    #imshow("1:二值操作", binaryImage)
+    ret, img_binary = cv2.threshold(img_crop, 92, 255, cv2.THRESH_BINARY_INV)
+    # imshow("1:二值操作", binaryImage)
 
     # 开操作(将文字这些密集的“孔洞”给腐蚀掉，仅留下直线)
-    rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (20, 2))  # 定义了20*2 大小的矩形核
+    rect_kernel = cv2.getStructuringElement(
+        cv2.MORPH_RECT, (20, 2))  # 定义了20*2 大小的矩形核
     img_opening = cv2.morphologyEx(img_binary, cv2.MORPH_OPEN, rect_kernel)
 
     # 膨胀加粗
-    rect_kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))  # 定义了20*2 大小的矩形核
+    rect_kernel2 = cv2.getStructuringElement(
+        cv2.MORPH_RECT, (3, 3))  # 定义了20*2 大小的矩形核
     img_dilate = cv2.dilate(img_opening, rect_kernel2)
 
+    edges = cv2.Canny(img_dilate,50,150,apertureSize=3)
 
 
+    # Apply HoughLinesP method to
+    # to directly obtain line end points
+    lines = cv2.HoughLinesP(
+        edges,  # Input edge image
+        1,  # Distance resolution in pixels
+        np.pi/180,  # Angle resolution in radians
+        threshold=30,  # Min number of votes for valid line
+        minLineLength=20,  # Min allowed length of line
+        maxLineGap=0  # Max allowed gap between line for joining them
+        )
+
+    #HoughLinesP(dilateImage, lines, 1, CV_PI / 180.0, 30, 20.0, 0);
 
     cv2.imshow("origin", img)
     cv2.imshow("croped", img_crop)
@@ -52,13 +70,13 @@ if __name__ == '__main__':
 
 
 
-"""
+    """
 
 cpp origin
 
 
-#include <iostream>
-#include <opencv2/opencv.hpp>
+# include <iostream>
+# include <opencv2/opencv.hpp>
 
 using namespace std;
 using namespace cv;
@@ -104,5 +122,5 @@ int main()
   }
   imshow("4:绘制直线", dstImage);
 
-"""
+    """
 
