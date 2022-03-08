@@ -5296,6 +5296,15 @@ y2 --> e  查lable表得到标签。
 
 
 
+## 语音识别系统
+
+
+
+- https://github.com/nl8590687/ASRT_SpeechRecognition
+  - 中文语音识别系统
+
+
+
 # 自动微分
 
 
