@@ -5307,14 +5307,21 @@ Embedding层 将词ID映射为向量
 one hot 独热，是最原始的用来表示字、词的方式（每一个词分配一个基向量），有多少词就是多少维空间
 ```
 
+### 为将 one-hot这个很长的向量压缩到低维
+
+
 - https://samaelchen.github.io/machine_learning_step13/
   - 台大李宏毅机器学习——词向量
 
 在很古老很古老的时候，如果我们要用向量表示一个单词，只能用一个one-hot的方法来表示，也就是一串很长很长的0-1向量。这个很长很长的向量长度跟单词的数量一样多。比如说，我们有10w个英文单词，那么这个向量就有10w维，然后给每个词在这个向量里面找个位置标记为1，其他位置标记为0，这样就得到了最原始的词向量。
 
-但是这个向量不用想都知道，一个很突出的问题，太大了。另外有一个很大的问题就是这样的表示，没有办法表达出词语的含义。所以word embedding做的事情就是将这个很长很长的向量，压缩到低维。比如现在最常用的100-200维之间。
+但是这个向量不用想都知道，一个很突出的问题，太大了。另外有一个很大的问题就是这样的表示，没有办法表达出词语的含义。所以**word embedding做的事情就是将 one-hot这个很长很长的向量，压缩到低维。比如现在最常用的100-200维之间**。
 
-那word embedding实际上可以做到通过读海量的文档内容，然后理解单词的意思。比如 The cat sat on the pat和The dog sat on the pat这两句话，cat和dog是接近的。
+
+
+### 为了从上下文中理解单词的意思
+
+那word embedding实际上可以做到**通过读海量的文档内容，然后理解单词的意思**。比如 The cat sat on the pat和The dog sat on the pat这两句话，cat和dog是接近的。
 
 那做到word embedding有两种做法。第一种是计算词语的共现次数，另一种是通过上下文的方法去做预测。
 
@@ -5378,15 +5385,19 @@ one hot型的矩阵运算简化为了查表操作
 
 
 - http://www.51blog.com/?p=12663
+  
   - 基础讲得好
 - https://zhuanlan.zhihu.com/p/68339909
+  
   - 李宏毅 CBOW
 - https://blog.csdn.net/weixin_29141505/article/details/112018445
-  - cbow word2vec 损失_谷歌深度学习公开课任务 5: Word2Vec&CBOW
-
+  
+- cbow word2vec 损失_谷歌深度学习公开课任务 5: Word2Vec&CBOW
+  
 - https://zhuanlan.zhihu.com/p/214127337
-  - 负采样采的究竟是什么  知识图谱的嵌入  knowledge graph（KG）
-
+  
+- 负采样采的究竟是什么  知识图谱的嵌入  knowledge graph（KG）
+  
 - https://aws.amazon.com/cn/blogs/china/training-knowledge-graph-embeddings-at-scale-with-the-deep-graph-library/
 
   - 使用 Deep Graph Library 训练知识图谱嵌入
