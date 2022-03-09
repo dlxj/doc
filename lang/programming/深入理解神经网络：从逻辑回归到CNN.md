@@ -5373,6 +5373,9 @@ one hot型的矩阵运算简化为了查表操作
 - https://blog.csdn.net/weixin_29141505/article/details/112018445
   - cbow word2vec 损失_谷歌深度学习公开课任务 5: Word2Vec&CBOW
 
+- https://zhuanlan.zhihu.com/p/214127337
+  - 负采样采的究竟是什么  知识图谱的嵌入  knowledge graph（KG）
+
 
 
 ### 词向量与Embedding究竟是怎么回事？
