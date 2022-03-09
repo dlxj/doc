@@ -70,7 +70,7 @@ class CBOW(torch.nn.Module):
         
 
     def forward(self, inputs):
-        embeds = sum(self.embeddings(inputs)).view(1,-1)
+        embeds = sum(self.embeddings(inputs)).view(1,-1)            # shape:torch.Size([1, 100])
         out = self.linear1(embeds)
         out = self.activation_function1(out)
         out = self.linear2(out)
