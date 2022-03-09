@@ -2167,6 +2167,7 @@ require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
 
 ```
 imgName = path.parse(imgName).name  // 去掉扩展名
+let { base,dir,ext,name,root} = path.parse(mlpath)
 ```
 
 
