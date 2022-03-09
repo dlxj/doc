@@ -5,6 +5,8 @@ https://mp.weixin.qq.com/s?__biz=MzA4ODgyMDg0MQ==&mid=100001057&idx=1&sn=ebfd3cf
 
 https://www.geeksforgeeks.org/line-detection-python-opencv-houghline-method/?ref=gcse
 
+doc\lang\programming\opencv summary.md
+
 """
 
 import numpy as np
