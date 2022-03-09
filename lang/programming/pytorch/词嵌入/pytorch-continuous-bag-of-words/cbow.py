@@ -69,9 +69,10 @@ class CBOW(torch.nn.Module):
         self.activation_function2 = nn.LogSoftmax(dim = -1)        # 激活函数LogSoftmax
         
 
-    def forward(self, inputs):        # inputs shape:torch.Size([4])
-        ed = self.embeddings(inputs)  # shape:torch.Size([4, 100])
-        embeds = sum(ed).view(1,-1)   # shape:torch.Size([1, 100])
+    def forward(self, inputs):        # inputs shape:torch.Size([4])  # 输入由4 个词数组成
+        ed = self.embeddings(inputs)  # shape:torch.Size([4, 100])    # 为每一个词数在100 维空间里面各分配一个基向量
+        ed_sum = sum(ed)              # shape:torch.Size([100])       # 所有基向量求和
+        embeds = ed_sum.view(1,-1)    # shape:torch.Size([1, 100])     
             # tensor.view(no_of_rows,no_of_columns) 改变张量的维度 .view(1,-1) 表示展平成1 行，列数自适应
         out = self.linear1(embeds)
         out = self.activation_function1(out)
