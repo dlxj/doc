@@ -18,7 +18,7 @@ we conjure the spirits of the computer with our spells.""".split()
 
 # By deriving a set from `raw_text`, we deduplicate the array
 vocab = set(raw_text)       # 词集合
-vocab_size = len(vocab)     # 元素个数
+vocab_size = len(vocab)     # 词个数
 
 # 总共49 个不同的词，每一个词每配一个数(0 ~ 48)
 word_to_ix = {word:ix for ix, word in enumerate(vocab)}  # 词 到 数
@@ -36,6 +36,15 @@ for i in range(2, len(raw_text) - 2):
 class CBOW(torch.nn.Module):
     def __init__(self, vocab_size, embedding_dim):
         super(CBOW, self).__init__()
+
+        """
+        torch.nn.modules.sparse.Embedding
+            词嵌入类: 
+                用于存储词嵌入, 以及支持通过索引列表取回词嵌入
+            初始化参数:
+                num_embeddings (int): 词个数
+                embedding_dim (int):  嵌入向量的维度(通常在100 ~ 200 维之间)
+        """
 
         #out: 1 x emdedding_dim
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
