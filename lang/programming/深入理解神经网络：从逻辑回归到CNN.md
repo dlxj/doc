@@ -5377,7 +5377,16 @@ one hot型的矩阵运算简化为了查表操作
   - 负采样采的究竟是什么  知识图谱的嵌入  knowledge graph（KG）
 
 - https://aws.amazon.com/cn/blogs/china/training-knowledge-graph-embeddings-at-scale-with-the-deep-graph-library/
+
   - 使用 Deep Graph Library 训练知识图谱嵌入
+
+    > 今天，我们很高兴与大家分享**知识图谱嵌入库（DGL-KE）**，这是一套以深度图谱库（[Deep Graph Library](https://www.dgl.ai/)，DGL）为基础构建而成的知识图谱（KG）嵌入库。**深度图谱库（DGL）**是一套易于使用、性能出色且可扩展的Python库，主要用于实现对图谱的深度学习。现在，您可以为包含数十亿个节点与边的大型知识图谱库创建嵌入，且[执行速度是其他同类手段的2到5倍](https://arxiv.org/abs/2004.08532)。
+    >
+    > 例如，DGL-KE在“**药物再利用知识图谱（DRKG）**”之上创建嵌入，旨在显示哪些已经批准上市的药物能够用于对抗COVID-19。这些嵌入可用于预测药物治疗疾病的可能性或药物与疾病相关蛋白质结合的可能性。
+    >
+    > 在本文中，我们将重点介绍如何使用[Kensho派生维基媒体数据集（KDWD）](https://blog.kensho.com/announcing-the-kensho-derived-wikimedia-dataset-5d1197d72bcf?source=collection_home---2------1-----------------------)**创建知识图谱嵌入**（KGE knowledge graph embeddings）。例如，在自然语言处理（NLP）与信息检索用例当中，大家可以**解析新查询，并将其句法转换为三元组（subject, predicate, object 即主语、谓词、宾语）**。在**将新的三元组添加至KG**之后，则可以**对节点做分类**并根据现有的KGE来**对关系作出推理**，从而**进一步扩充KG中的节点和关系**。您可以**借此指导聊天机器人发现对话意图，并为客户提供正确的FAQ**（常见问题的回答）或提示信息。
+
+
 
 
 
