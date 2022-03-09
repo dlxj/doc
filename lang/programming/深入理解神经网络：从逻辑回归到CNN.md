@@ -5376,6 +5376,9 @@ one hot型的矩阵运算简化为了查表操作
 - https://zhuanlan.zhihu.com/p/214127337
   - 负采样采的究竟是什么  知识图谱的嵌入  knowledge graph（KG）
 
+- https://aws.amazon.com/cn/blogs/china/training-knowledge-graph-embeddings-at-scale-with-the-deep-graph-library/
+  - 使用 Deep Graph Library 训练知识图谱嵌入
+
 
 
 ### 词向量与Embedding究竟是怎么回事？
