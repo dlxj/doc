@@ -5366,6 +5366,14 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+- http://www.51blog.com/?p=12663
+  - 基础讲得好
+- https://zhuanlan.zhihu.com/p/68339909
+  - 李宏毅 CBOW
+- https://blog.csdn.net/weixin_29141505/article/details/112018445
+
+
+
 ### 词向量与Embedding究竟是怎么回事？
 
 - https://spaces.ac.cn/archives/4122
