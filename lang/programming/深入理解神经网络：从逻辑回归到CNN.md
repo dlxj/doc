@@ -5371,6 +5371,7 @@ one hot型的矩阵运算简化为了查表操作
 - https://zhuanlan.zhihu.com/p/68339909
   - 李宏毅 CBOW
 - https://blog.csdn.net/weixin_29141505/article/details/112018445
+  - cbow word2vec 损失_谷歌深度学习公开课任务 5: Word2Vec&CBOW
 
 
 
