@@ -19,7 +19,9 @@ if __name__ == '__main__':
 
     imgData = np.fromfile('./填空题.png', dtype=np.uint8)
     img = cv2.imdecode(imgData, -1)
-    # img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+
+    # 转灰度图
+    img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2GRAY)   #cv2.COLOR_RGB2BGR
     print(type(img))
 
     w = img.shape[0]
@@ -42,13 +44,13 @@ if __name__ == '__main__':
         cv2.MORPH_RECT, (3, 3))  # 定义了20*2 大小的矩形核
     img_dilate = cv2.dilate(img_opening, rect_kernel2)
 
-    edges = cv2.Canny(img_dilate,50,150,apertureSize=3)
+    #edges = cv2.Canny(img_dilate,50,150,apertureSize=3)
 
 
     # Apply HoughLinesP method to
     # to directly obtain line end points
     lines = cv2.HoughLinesP(
-        edges,  # Input edge image
+        img_dilate,  # Input edge image
         1,  # Distance resolution in pixels
         np.pi/180,  # Angle resolution in radians
         threshold=30,  # Min number of votes for valid line
@@ -56,14 +58,32 @@ if __name__ == '__main__':
         maxLineGap=0  # Max allowed gap between line for joining them
         )
 
+    img_color = cv2.cvtColor(img_binary, cv2.COLOR_GRAY2RGB)
+
+
+
+
+    """
+      for (size_t t = 0; t < lines.size(); t++) {
+    Vec4i ln = lines[t];
+    line(dstImage, Point(ln[0], ln[1]), Point(ln[2], ln[3]), Scalar(0, 0, 255), 2, 8, 0);
+    }
+    """
+
+    #img_lines = cv2.line(img_color, start_point, end_point, color, thickness)
+
+
+
+    #cv2.cvtColor(dstImage, dstImage, COLOR_GRAY2BGR);
+
     #HoughLinesP(dilateImage, lines, 1, CV_PI / 180.0, 30, 20.0, 0);
 
     cv2.imshow("origin", img)
     cv2.imshow("croped", img_crop)
     cv2.imshow("binary", img_binary)
     cv2.imshow("opening", img_opening)
-    cv2.imshow("dilate", img_dilate)
-
+    cv2.imshow("dilate", img_dilate)  
+    cv2.imshow("color", img_color)
 
 
     cv2.waitKey(0)
