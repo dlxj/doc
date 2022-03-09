@@ -1,5 +1,6 @@
 
 let path = require('path')
+let fs = require('fs')
 
 module.exports = {
     name: 'gensrt',
@@ -12,18 +13,31 @@ module.exports = {
             default:'anime'
         }
     },
-    async handler({ type }) {
+    async handler({type}) {
 
         let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', 'amazon')
 
-        let mlpath = ttml2s[0]
-        let { base,dir,ext,name,root} = path.parse(mlpath)
-        let strPath = path.join( dir, `${name}.srt` )
+        let srts = []
 
-        let srt = this.libs.ttml2.extractSrt({mlpath})
-        require('fs').writeFileSync( path.join(__dirname, 'tmp.srt'), srt, {encoding:'utf8'})
+        for (let mlpath of ttml2s) {
 
-        return this.msg(200, srt)
+            let { base, dir, ext, name, root } = path.parse(mlpath)
+    
+            let dir_up = require('path').resolve(dir, '..')
+            let dir_srt = path.join(dir_up, 'srt')
+            if ( !fs.existsSync( dir_srt ) ) {
+                fs.mkdirSync(dir_srt, { recursive: true })
+            }
+            let srtpath = path.join(dir_srt, `${name}.srt`)
+    
+            let srt = this.libs.ttml2.extractSrt({mlpath})
+            require('fs').writeFileSync( srtpath, srt, {encoding:'utf8'})
+
+            srts.push(srt)
+
+        }
+
+        return this.msg(200, srts)
     }
 }
 
