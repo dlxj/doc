@@ -18,17 +18,18 @@ import cv2
 if __name__ == '__main__':
 
     imgData = np.fromfile('./填空题.png', dtype=np.uint8)
-    img = cv2.imdecode(imgData, -1)
+    img_origin = cv2.imdecode(imgData, -1)
+    img_rgb = cv2.cvtColor(np.asarray(img_origin), cv2.COLOR_BGRA2RGB)
 
     # 转灰度图
-    img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2GRAY)   #cv2.COLOR_RGB2BGR
-    print(type(img))
+    img_gray = cv2.cvtColor(np.asarray(img_origin), cv2.COLOR_BGR2GRAY)   #cv2.COLOR_RGB2BGR
+    print(type(img_gray))
 
-    w = img.shape[0]
-    h = img.shape[1]
+    w = img_gray.shape[0]
+    h = img_gray.shape[1]
 
     # slice 子矩阵，既剪裁图像
-    img_crop = img[0:w-30, 0:h-70]
+    img_crop = img_gray[0:w-30, 0:h-70]
 
     # 二值化
     ret, img_binary = cv2.threshold(img_crop, 92, 255, cv2.THRESH_BINARY_INV)
@@ -58,33 +59,24 @@ if __name__ == '__main__':
         maxLineGap=0  # Max allowed gap between line for joining them
         )
 
-    img_color = cv2.cvtColor(img_binary, cv2.COLOR_GRAY2RGB)
+    #img_color = cv2.cvtColor(img_origin, cv2.COLOR_BGR2RGB)
 
 
+    for points in lines:
+      # Extracted points nested in the list
+      x1,y1,x2,y2=points[0]
+      # Draw the lines joing the points
+      # On the original image
+      #cv2.line(img_origin, (x1,y1),(x2,y2),(0,0,255, 255), 2)  # 原图是四通道的BGRA(蓝绿红 + alpha 透明度)
+      cv2.line(img_rgb, (x1,y1),(x2,y2),(0,0,255), 2)  # 看来无论原图怎么样，cv2 的三个通道顺序永远都是: BGR
+      
 
-
-    """
-      for (size_t t = 0; t < lines.size(); t++) {
-    Vec4i ln = lines[t];
-    line(dstImage, Point(ln[0], ln[1]), Point(ln[2], ln[3]), Scalar(0, 0, 255), 2, 8, 0);
-    }
-    """
-
-    #img_lines = cv2.line(img_color, start_point, end_point, color, thickness)
-
-
-
-    #cv2.cvtColor(dstImage, dstImage, COLOR_GRAY2BGR);
-
-    #HoughLinesP(dilateImage, lines, 1, CV_PI / 180.0, 30, 20.0, 0);
-
-    cv2.imshow("origin", img)
+    cv2.imshow("origin", img_origin)
     cv2.imshow("croped", img_crop)
     cv2.imshow("binary", img_binary)
     cv2.imshow("opening", img_opening)
     cv2.imshow("dilate", img_dilate)  
-    cv2.imshow("color", img_color)
-
+    cv2.imshow("result", img_rgb)
 
     cv2.waitKey(0)
 
