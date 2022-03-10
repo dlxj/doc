@@ -76,17 +76,17 @@ class CBOW(torch.nn.Module):
 
         #out: 1 x emdedding_dim
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)  # 总共49 个词, 每个词用100 维的向量表示(就是嵌入向量)
-        self.linear1 = nn.Linear(embedding_dim, 128)               # 输入层100 维，隐层一 128 维
+        self.linear1 = nn.Linear(embedding_dim, 128)               # 隐层一: 输入维度(1*100), 输出维度 (1*128)
         self.activation_function1 = nn.ReLU()                      # 激活函数RELU
         
         #out: 1 x vocab_size
-        self.linear2 = nn.Linear(128, vocab_size)                  # 隐层二 49 维
+        self.linear2 = nn.Linear(128, vocab_size)                  # 隐层二: 输入维度 (1*128), 输出 (1*49)
         self.activation_function2 = nn.LogSoftmax(dim = -1)        # 激活函数LogSoftmax
         
 
-    def forward(self, inputs):        # inputs shape:torch.Size([4])  # 输入由4 个词数组成
-        ed = self.embeddings(inputs)  # shape:torch.Size([4, 100])    # 为每一个词数在100 维空间里面各分配一个基向量
-        ed_sum = sum(ed)              # shape:torch.Size([100])       # 所有基向量求和
+    def forward(self, inputs):        # inputs shape:torch.Size([4])  # 输入由4 个词数组成(对应上下文的四个词)
+        ed = self.embeddings(inputs)  # shape:torch.Size([4, 100])    # 得到4 个100 维的嵌入向量
+        ed_sum = sum(ed)              # shape:torch.Size([100])       # 4 个嵌入向量求和
         embeds = ed_sum.view(1,-1)    # shape:torch.Size([1, 100])     
             # tensor.view(no_of_rows,no_of_columns) 改变张量的维度 .view(1,-1) 表示展平成1 行，列数自适应
         out = self.linear1(embeds)
@@ -112,9 +112,10 @@ for epoch in range(50):
     for context, target in data:
         context_vector = make_context_vector(context, word_to_ix)  
 
-        log_probs = model(context_vector)
+        log_probs = model(context_vector)  # tensor([词数1的概率, 词数2的概率, ..., 词数49 的概率]) # shape:torch.Size([1, 49])
+        target_4_loss = torch.tensor([word_to_ix[target]]) # tensor([目标词数]) # shape:torch.Size([1])  
 
-        total_loss += loss_function(log_probs, torch.tensor([word_to_ix[target]]))
+        total_loss += loss_function(log_probs, target_4_loss)
 
     #optimize at the end of each epoch
     optimizer.zero_grad()

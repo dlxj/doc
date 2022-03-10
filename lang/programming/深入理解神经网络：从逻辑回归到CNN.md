@@ -5456,7 +5456,8 @@ one hot型的矩阵运算简化为了查表操作
 
 ## Deep leaning with Rust 
 
-
+- https://github.com/arrayfire/arrayfire-rust
+  - https://github.com/arrayfire/arrayfire
 
 - https://able.bio/haixuanTao/deep-learning-in-rust-with-gpu--26c53a7f
 
