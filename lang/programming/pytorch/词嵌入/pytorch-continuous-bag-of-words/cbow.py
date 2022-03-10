@@ -52,7 +52,7 @@ class CBOW(torch.nn.Module):
 
         """
         torch.nn.Embedding
-            词嵌入类: 
+            嵌入层: 
                 用于存储词嵌入, 以及支持通过索引列表取回词嵌入
             初始化参数:
                 num_embeddings (int): 词个数
