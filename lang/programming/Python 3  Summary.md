@@ -645,6 +645,31 @@ if os.path.exists(path):
 
 
 
+### mkdir
+
+```
+# create directory recursively
+import os
+ 
+# Leaf directory
+directory = "ihritik"
+ 
+# Parent Directories
+parent_dir = "/home/User/Documents/GeeksForGeeks/Authors"
+ 
+# Path
+path = os.path.join(parent_dir, directory)
+ 
+# Create the directory
+# 'ihritik'
+os.makedirs(path)
+print("Directory '%s' created" %directory)
+```
+
+
+
+
+
 ### __dirname
 
 ```
