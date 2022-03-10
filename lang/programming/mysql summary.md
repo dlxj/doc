@@ -1420,6 +1420,25 @@ begin
 end
 ```
 
+```
+CREATE DEFINER=`book`@`%` FUNCTION `crrval`(
+	`i_BookID` int,
+	`i_tableName` varchar(32)
+)
+RETURNS int(11)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+begin
+    declare v_maxID integer;
+    set v_maxID = 0;
+    select MaxID into v_maxID from TableMaxID  where BookID  = i_BookID  and TableName = i_tableName;
+    return v_maxID;
+end
+```
+
 
 
 
