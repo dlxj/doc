@@ -5457,7 +5457,18 @@ one hot型的矩阵运算简化为了查表操作
 ## Deep leaning with Rust 
 
 - https://github.com/arrayfire/arrayfire-rust
+
   - https://github.com/arrayfire/arrayfire
+
+    - 通用GPU CPU 并行运算库
+
+    - arrayfire底层就是cuda搭建，matmul()速度简直上天
+
+    - https://zhuanlan.zhihu.com/p/435908830
+
+      - 深入浅出GPU优化系列：GEMM优化（一）
+
+      
 
 - https://able.bio/haixuanTao/deep-learning-in-rust-with-gpu--26c53a7f
 
