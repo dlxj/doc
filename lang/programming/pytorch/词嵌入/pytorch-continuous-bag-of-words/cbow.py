@@ -16,6 +16,7 @@ import torch.nn as nn
 CONTEXT_SIZE = 2  # 2 words to the left, 2 to the right
 EMDEDDING_DIM = 100
 
+# 生成以空白分隔的49 个不同的词(包括后面的标点符号, 既标点符号也算是词的一部分)
 raw_text = """We are about to study the idea of a computational process.
 Computational processes are abstract beings that inhabit computers.
 As they evolve, processes manipulate other abstract things called data.
@@ -23,6 +24,8 @@ The evolution of a process is directed by a pattern of rules
 called a program. People create programs to direct processes. In effect,
 we conjure the spirits of the computer with our spells.""".split()
 
+# raw_text.append("<PAD>")  # 因为输入的句子长度不一，有的长有的短。长的截断，短的补齐；这个补齐就用词 "<PAD>" 
+    # nn.Embedding 的第三个参数这样传: padding_idx=word_to_id['<PAD>']
 
 # By deriving a set from `raw_text`, we deduplicate the array
 vocab = set(raw_text)       # 词集合
@@ -53,6 +56,7 @@ class CBOW(torch.nn.Module):
         """
         torch.nn.Embedding
             嵌入层: 
+                嵌入层的权重参数在训练过程中会不断更新调整优化
                 用于存储词嵌入, 以及支持通过索引列表取回词嵌入
             初始化参数:
                 num_embeddings (int): 词个数
@@ -60,7 +64,7 @@ class CBOW(torch.nn.Module):
         """
 
         #out: 1 x emdedding_dim
-        self.embeddings = nn.Embedding(vocab_size, embedding_dim)  # 49 个词, 每个词100 维
+        self.embeddings = nn.Embedding(vocab_size, embedding_dim)  # 总共49 个词, 每个词用100 维的向量表示(就是嵌入向量)
         self.linear1 = nn.Linear(embedding_dim, 128)               # 输入层100 维，隐层一 128 维
         self.activation_function1 = nn.ReLU()                      # 激活函数RELU
         
