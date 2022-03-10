@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s3"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s4"></style> 
+   <style tts:ruby="container" xml:id="s5"></style> 
+   <style tts:ruby="base" xml:id="s6"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s7"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:03.003" end="00:00:08.008" region="縦右">♪～</p> 
+   <p begin="00:01:21.999" end="00:01:29.006" style="s1"><span style="s2">～♪</span></p> 
+   <p begin="00:01:30.591" end="00:01:34.011" style="s1"><span style="s2">（ナレーション）<br /><span style="s3">ジョウトリーグ出場を目指し</span><br /><span style="s3">旅を続けるサトシたち</span></span></p> 
+   <p begin="00:01:34.345" end="00:01:38.349" style="s4"><span style="s2">今日は いよいよ ７番目のジム<br />チョウジジムに挑戦だ</span></p> 
+   <p begin="00:01:39.058" end="00:01:42.394" style="s1"><span style="s2">（サトシ）よーし アイスバッジ<br />必ずゲットしてやるぜ！</span></p> 
+   <p begin="00:01:42.394" end="00:01:43.646" style="s1"><span style="s2">（ピカチュウ）ピカ！</span></p> 
+   <p begin="00:01:51.195" end="00:01:54.156" style="s1"><span style="s2">（サトシ）こんにちは<br />ジム戦 お願いします</span></p> 
+   <p begin="00:01:56.158" end="00:01:57.409" style="s1"><span style="s2">あれ？</span></p> 
+   <p begin="00:01:57.409" end="00:01:59.161" style="s1"><span style="s2">（カスミ）誰も出てこないわね</span></p> 
+   <p begin="00:01:59.161" end="00:02:00.663" style="s1"><span style="s2">（タケシ）今日は休みなのか？</span></p> 
+   <p begin="00:02:00.871" end="00:02:02.414" style="s1"><span style="s2">（シマ）あんたたち！<br />（タケシ･サトシ･カスミ）ん!?</span></p> 
+   <p begin="00:02:02.414" end="00:02:05.125" style="s1"><span style="s2">ジム戦かい？<br />ギッちゃんなら 今 留守だよ</span></p> 
+   <p begin="00:02:05.167" end="00:02:06.335" style="s1"><span style="s2">（サトシ）“ギッちゃん”って？</span></p> 
+   <p begin="00:02:06.335" end="00:02:09.088" style="s1"><span style="s2">（シマ）チョウジジムのジムリーダー<br />ヤナギさんのことさ</span></p> 
+   <p begin="00:02:09.129" end="00:02:11.257" style="s1"><span style="s2">あたしゃ シマって言うんだけどね</span></p> 
+   <p begin="00:02:11.257" end="00:02:15.135" style="s1"><span style="s2">ギッちゃんは いつもこの時間には<br />裏山で滝に打たれてるんだ</span></p> 
+   <p begin="00:02:15.636" end="00:02:19.265" style="s1"><span style="s2">さすが ジムリーダー<br />常に心身を鍛えてるんですね</span></p> 
+   <p begin="00:02:19.265" end="00:02:20.516" style="s1"><span style="s2">そういうことさ</span></p> 
+   <p begin="00:02:20.516" end="00:02:22.268" style="s1"><span style="s2">その滝って どこなんですか？</span></p> 
+   <p begin="00:02:22.268" end="00:02:24.687" style="s1"><span style="s2">ああ あたしが案内してやるよ</span></p> 
+   <p begin="00:02:24.770" end="00:02:26.105" style="s1"><span style="s2">ホントですか？</span></p> 
+   <p begin="00:02:26.146" end="00:02:27.982" style="s1"><span style="s2">（タケシ）よかったな サトシ<br />（サトシ）うん</span></p> 
+   <p begin="00:02:28.399" end="00:02:29.859" style="s1"><span style="s2">ありがとう シマさん</span></p> 
+   <p begin="00:02:30.025" end="00:02:31.277" style="s1"><span style="s2">（一同）ん!?<br />（シマ）お～い！</span></p> 
+   <p begin="00:02:31.402" end="00:02:34.363" style="s1"><span style="s2">（ピカチュウ）ピカ？<br />（シマ）みんな 早くおいで</span></p> 
+   <p begin="00:02:34.572" end="00:02:36.198" style="s1"><span style="s2">い… いつの間に</span></p> 
+   <p begin="00:02:36.240" end="00:02:38.242" style="s1"><span style="s2">なんて素早いご婦人なんだ</span></p> 
+   <p begin="00:02:38.325" end="00:02:39.952" style="s1"><span style="s2">（ピカチュウ）ピ～カ<br />（トゲピー）チョゲ</span></p> 
+   <p begin="00:02:40.286" end="00:02:43.539" style="s1"><span style="s2">（ムサシ）ジムで待ち伏せすれば<br />必ずジャリボーイは来る</span></p> 
+   <p begin="00:02:43.622" end="00:02:45.416" style="s1"><span style="s2">（コジロウ）予想は大当たりだぜ</span></p> 
+   <p begin="00:02:45.499" end="00:02:47.376" region="縦右">（ニャース）早速<br />やつらをつけるのニャ</p> 
+   <p begin="00:02:47.376" end="00:02:48.419" region="縦右">（ムサシ･コジロウ）<br />おう</p> 
+   <p begin="00:02:51.672" end="00:02:53.632" style="s1"><span style="s2">（シマ）ふっ ふっ はっ…</span></p> 
+   <p begin="00:02:54.800" end="00:02:58.429" style="s1"><span style="s2">（カスミ）はあ…<br />（タケシ）な… なんて元気なご婦人なんだ</span></p> 
+   <p begin="00:02:58.637" end="00:03:00.097" style="s1"><span style="s2">シマさ～ん！</span></p> 
+   <p begin="00:03:00.097" end="00:03:01.515" style="s1"><span style="s2">ちょっと待ってよ～</span></p> 
+   <p begin="00:03:01.765" end="00:03:03.976" style="s1"><span style="s2">何 情けないこと言ってんだね</span></p> 
+   <p begin="00:03:04.018" end="00:03:05.978" style="s1"><span style="s2">とっとと ついて来るんだよ</span></p> 
+   <p begin="00:03:06.228" end="00:03:08.105" style="s1"><span style="s2">そ… そんな～</span></p> 
+   <p begin="00:03:08.355" end="00:03:09.732" style="s1"><span style="s2">ピ～カ～</span></p> 
+   <p begin="00:03:10.816" end="00:03:12.067" style="s1"><span style="s2">（シマ）ヨッと</span></p> 
+   <p begin="00:03:12.151" end="00:03:15.905" style="s1"><span style="s2">フウ～ 久しぶりにいい汗かいたね</span></p> 
+   <p begin="00:03:15.946" end="00:03:17.448" style="s1"><span style="s2">（サトシたち）ハア…<br />（シマ）あ？</span></p> 
+   <p begin="00:03:17.656" end="00:03:18.949" style="s1"><span style="s2">もうダメだ～</span></p> 
+   <p begin="00:03:19.158" end="00:03:21.577" style="s1"><span style="s2">（サトシ）俺も～<br />（カスミ）ああ あたしも～</span></p> 
+   <p begin="00:03:21.577" end="00:03:23.037" style="s1"><span style="s2">（トゲピー）チョゲチョゲプリィイイ！</span></p> 
+   <p begin="00:03:23.162" end="00:03:25.205" style="s1"><span style="s2">みんな よく頑張ったよ</span></p> 
+   <p begin="00:03:25.205" end="00:03:27.291" style="s1"><span style="s2">ほれ！ ギッちゃんは あそこだよ</span></p> 
+   <p begin="00:03:27.333" end="00:03:28.584" style="s1"><span style="s2">（サトシたち）えっ!?</span></p> 
+   <p begin="00:03:30.085" end="00:03:31.629" style="s1"><span style="s2">（サトシ）あっ… あの人は!?</span></p> 
+   <p begin="00:03:32.004" end="00:03:33.422" style="s1"><span style="s2">この間のおじいさん</span></p> 
+   <p begin="00:03:33.422" end="00:03:34.673" style="s1"><span style="s2">ピ～カ</span></p> 
+   <p begin="00:03:35.132" end="00:03:37.051" style="s1"><span style="s2">（ヤナギ）ポケモンと友達か…</span></p> 
+   <p begin="00:03:38.093" end="00:03:39.345" style="s1"><span style="s2">甘いな</span></p> 
+   <p begin="00:03:39.428" end="00:03:42.473" style="s1"><span style="s2">人間とポケモンは 友達にはなれん</span></p> 
+   <p begin="00:03:44.475" end="00:03:47.728" style="s1"><span style="s2">できる人だとは思っていたが<br />ジムリーダーだったのか</span></p> 
+   <p begin="00:03:47.728" end="00:03:50.397" style="s1"><span style="s2">でも ちょっと<br />やな感じの人だったじゃない</span></p> 
+   <p begin="00:03:50.481" end="00:03:52.858" style="s1"><span style="s2">とにかく 俺 ジム戦を頼んでみるよ</span></p> 
+   <p begin="00:03:53.192" end="00:03:54.443" style="s1"><span style="s2">（一同）痛い 痛い 痛い…</span></p> 
+   <p begin="00:03:54.443" end="00:03:57.696" style="s1"><span style="s2">ああ ジャリボーイのやつ<br />こんなとこに何の用が？</span></p> 
+   <p begin="00:03:57.947" end="00:03:59.823" style="s1"><span style="s2">（一同）おっ!?<br />（ニャース）ジャリボーイニャ</span></p> 
+   <p begin="00:03:59.865" end="00:04:01.700" style="s1"><span style="s2">（コジロウ）あそこの変なじいさんは？</span></p> 
+   <p begin="00:04:02.826" end="00:04:05.746" style="s1"><span style="s2">ギッちゃん<br />この子が ジム戦 やりたいってさ</span></p> 
+   <p begin="00:04:05.871" end="00:04:07.247" style="s1"><span style="s2">こんにちは</span></p> 
+   <p begin="00:04:07.247" end="00:04:09.875" style="s1"><span style="s2">（サトシ）チョウジジムのジムリーダー<br />ヤナギさんですね</span></p> 
+   <p begin="00:04:10.459" end="00:04:13.045" style="s1"><span style="s2">俺 マサラタウンのサトシと言います</span></p> 
+   <p begin="00:04:13.295" end="00:04:15.089" style="s1"><span style="s2">俺とジム戦をやってください</span></p> 
+   <p begin="00:04:15.464" end="00:04:17.174" style="s1"><span style="s2">お前は この間の</span></p> 
+   <p begin="00:04:17.633" end="00:04:20.302" style="s1"><span style="s2">また ピカチュウを外に出しておるのか</span></p> 
+   <p begin="00:04:20.511" end="00:04:23.305" style="s1"><span style="s2">はい　俺たち とっても仲がいいんです</span></p> 
+   <p begin="00:04:23.305" end="00:04:24.556" style="s1"><span style="s2">ピカ</span></p> 
+   <p begin="00:04:24.556" end="00:04:25.933" style="s1"><span style="s2">（ヤナギ）無駄だ<br />（サトシ）えっ!?</span></p> 
+   <p begin="00:04:25.933" end="00:04:27.559" style="s1"><span style="s2">お前と戦っても無駄だ</span></p> 
+   <p begin="00:04:27.851" end="00:04:30.896" style="s1"><span style="s2">ええっ？ 戦ってもみないで<br />どうしてわかるんですか？</span></p> 
+   <p begin="00:04:31.397" end="00:04:34.733" style="s1"><span style="s2">トレーナーは<br />ポケモンとの間に常に一線を引き—</span></p> 
+   <p begin="00:04:34.733" end="00:04:37.111" style="s1"><span style="s2">緊張感を保っておらねばならん</span></p> 
+   <p begin="00:04:37.403" end="00:04:40.614" style="s1"><span style="s2">なぜなら<br />ポケモンとの情に流されたバトルでは—</span></p> 
+   <p begin="00:04:40.614" end="00:04:45.577" style="s1"><span style="s2">すぐに戦況を見失い<br />戦略を生かせぬまま敗れてしまうからだ</span></p> 
+   <p begin="00:04:45.619" end="00:04:49.289" style="s1"><span style="s2">そんな～<br />ポケモンとは友達のように付き合って—</span></p> 
+   <p begin="00:04:49.289" end="00:04:52.960" style="s1"><span style="s2">その心をわかってあげないと<br />いいバトルはできないよ</span></p> 
+   <p begin="00:04:53.002" end="00:04:55.754" style="s1"><span style="s2">ならば お前の間違いを正してやろう</span></p> 
+   <p begin="00:04:56.005" end="00:04:58.298" style="s1"><span style="s2">いでよ！ ジュゴン!!</span></p> 
+   <p begin="00:04:58.382" end="00:05:00.300" style="s1"><span style="s2">（ジュゴン）ジュゴ～ン！</span></p> 
+   <p begin="00:05:00.300" end="00:05:02.720" style="s1"><span style="s2">お前に こやつを退けることができるか？</span></p> 
+   <p begin="00:05:03.012" end="00:05:06.265" style="s1"><span style="s2">そのジュゴンを倒せば<br />ジム戦やってくれるんですね</span></p> 
+   <p begin="00:05:06.348" end="00:05:07.599" style="s1"><span style="s2">（ヤナギ）よかろう</span></p> 
+   <p begin="00:05:07.641" end="00:05:09.560" style="s1"><span style="s2">さて 誰にしようかな？</span></p> 
+   <p begin="00:05:09.810" end="00:05:13.147" style="s1"><span style="s2">そうだ<br />最近 ゴマゾウの調子が良かったっけ</span></p> 
+   <p begin="00:05:13.522" end="00:05:16.025" style="s1"><span style="s2">よーし いけ！ ゴマゾウ!!</span></p> 
+   <p begin="00:05:16.150" end="00:05:18.068" style="s1"><span style="s2">（ゴマゾウ）ゴママママ ママママ…</span></p> 
+   <p begin="00:05:18.068" end="00:05:21.321" style="s1"><span style="s2">お～っ ゴマゾウ<br />今日も調子良さそうだな</span></p> 
+   <p begin="00:05:21.655" end="00:05:23.198" style="s1"><span style="s2">サトシ ちょっと待て</span></p> 
+   <p begin="00:05:23.198" end="00:05:24.783" style="s1"><span style="s2">そうよ ゴマゾウは…</span></p> 
+   <p begin="00:05:24.908" end="00:05:27.828" style="s1"><span style="s2">大丈夫さ<br />ゴマゾウは 今 絶好調なんだ</span></p> 
+   <p begin="00:05:27.995" end="00:05:29.997" style="s1"><span style="s2">（サトシ）いくぜ ゴマゾウ！<br />（ゴマゾウ）ゴマママ！</span></p> 
+   <p begin="00:05:30.539" end="00:05:32.458" style="s1"><span style="s2">（ヤナギ）ポケモンバトルの戦略は—</span></p> 
+   <p begin="00:05:32.458" end="00:05:36.378" style="s1"><span style="s2">トレーナーがポケモンを制御してこそ<br />真価を発揮するもの</span></p> 
+   <p begin="00:05:36.879" end="00:05:40.049" style="s1"><span style="s2">ポケモンのやる気に頼ったバトルでは<br />どうにもならん</span></p> 
+   <p begin="00:05:40.257" end="00:05:42.760" style="s1"><span style="s2">そんなこと<br />やってみなくちゃ わからないさ</span></p> 
+   <p begin="00:05:42.885" end="00:05:45.012" style="s1"><span style="s2">（サトシ）ゴマゾウ！ ころがる攻撃!!<br />（ゴマゾウ）ゴマ！</span></p> 
+   <p begin="00:05:45.054" end="00:05:46.305" style="s1"><span style="s2">ゴマママ！</span></p> 
+   <p begin="00:05:46.305" end="00:05:47.973" style="s1"><span style="s2">ジュゴン れいとうビーム</span></p> 
+   <p begin="00:05:47.973" end="00:05:49.224" style="s1"><span style="s2">ジュゴー！</span></p> 
+   <p begin="00:05:51.060" end="00:05:52.311" style="s1"><span style="s2">（サトシ）あっ!?<br />（ピカチュウ）ピカ!?</span></p> 
+   <p begin="00:05:55.147" end="00:05:57.566" style="s1"><span style="s2">ゴマゾウ！<br />大丈夫か？ ゴマゾウ？</span></p> 
+   <p begin="00:05:57.900" end="00:06:01.195" style="s1"><span style="s2">（シマ）おやおや<br />（カスミ）ゴマゾウは じめんタイプなのよ</span></p> 
+   <p begin="00:06:01.195" end="00:06:03.781" style="s1"><span style="s2">こおりタイプのジュゴンとは相性が悪い</span></p> 
+   <p begin="00:06:03.906" end="00:06:05.407" style="s1"><span style="s2">（ヤナギ）戻れ ジュゴン</span></p> 
+   <p begin="00:06:05.866" end="00:06:08.911" style="s1"><span style="s2">ポケモンのやる気に頼った<br />お前の戦略ミスだ</span></p> 
+   <p begin="00:06:09.161" end="00:06:13.332" style="s1"><span style="s2">お前は自分の思い入れだけで戦い<br />ポケモンを傷つけたのだ</span></p> 
+   <p begin="00:06:13.749" end="00:06:16.418" style="s1"><span style="s2">ゴマゾウ 俺が悪かった</span></p> 
+   <p begin="00:06:16.418" end="00:06:17.961" style="s1"><span style="s2">（ヤナギ）わかったか？<br />（サトシ）あっ!?</span></p> 
+   <p begin="00:06:18.253" end="00:06:22.007" style="s1"><span style="s2">今のお前が<br />私と戦っても無駄だということが</span></p> 
+   <p begin="00:06:23.383" end="00:06:26.011" style="s1"><span style="s2">ちょっ… ちょっと待ってください<br />ヤナギさん！</span></p> 
+   <p begin="00:06:26.220" end="00:06:28.847" style="s1"><span style="s2">これ！ この山に１人で入ると危ないよ</span></p> 
+   <p begin="00:06:29.223" end="00:06:31.433" style="s1"><span style="s2">（サトシ）ヤナギさん もう一度 チャンスを</span></p> 
+   <p begin="00:06:31.975" end="00:06:33.977" style="s1"><span style="s2">あいつら 山の中に入っていくぞ</span></p> 
+   <p begin="00:06:34.019" end="00:06:36.063" style="s1"><span style="s2">（ムサシ）あたしたちも行くわよ<br />（ニャース･コジロウ）おう</span></p> 
+   <p begin="00:06:38.273" end="00:06:40.109" style="s1"><span style="s2">（サトシ）ヤナギさん！</span></p> 
+   <p begin="00:06:40.109" end="00:06:41.944" style="s1"><span style="s2">ちょっと待ってくださいよ</span></p> 
+   <p begin="00:06:42.444" end="00:06:44.446" style="s1"><span style="s2">（ピカチュウ）ピカピ！<br />（サトシ）ん？</span></p> 
+   <p begin="00:06:44.530" end="00:06:46.532" style="s1"><span style="s2">ピカチュウ？ どこにいるんだ？</span></p> 
+   <p begin="00:06:46.573" end="00:06:49.034" style="s1"><span style="s2">ピーカ… ピカピ…</span></p> 
+   <p begin="00:06:49.785" end="00:06:53.288" region="縦右">おい ムサシ<br />どこ行ったんだ？</p> 
+   <p begin="00:06:53.831" end="00:06:56.750" style="s1"><span style="s2">あれ～？ 今 コジロウの声がしたような…</span></p> 
+   <p begin="00:06:56.750" end="00:06:58.794" style="s1"><span style="s2">ムサシ どこにいるニャ？</span></p> 
+   <p begin="00:06:58.961" end="00:07:00.712" region="縦右">その声は<br />ニャースか？</p> 
+   <p begin="00:07:00.712" end="00:07:02.631" region="縦右">どこにいるんだ？</p> 
+   <p begin="00:07:02.881" end="00:07:05.551" style="s1"><span style="s2">ああ～ このヤブ 一体 なんなんだ？</span></p> 
+   <p begin="00:07:05.801" end="00:07:07.886" style="s1"><span style="s2">（コジロウ･ムサシ）ワーハッハッハ<br />（サトシ）あっ!?</span></p> 
+   <p begin="00:07:08.178" end="00:07:10.013" style="s1"><span style="s2">なんなんだ？ と聞かれたら</span></p> 
+   <p begin="00:07:10.013" end="00:07:12.558" style="s1"><span style="s2">（コジロウ）答えてあげるが世の情け<br />（２人）おっ!?</span></p> 
+   <p begin="00:07:12.933" end="00:07:14.351" style="s1"><span style="s2">（ムサシ）コジロウ<br />（コジロウ）ムサシ</span></p> 
+   <p begin="00:07:14.518" end="00:07:16.520" style="s1"><span style="s2">（サトシ）ロケット団<br />（ピカチュウ）ピカ？</span></p> 
+   <p begin="00:07:16.937" end="00:07:18.939" style="s1"><span style="s2">世界の破壊を防ぐため</span></p> 
+   <p begin="00:07:19.022" end="00:07:20.816" style="s1"><span style="s2">世界の平和を守るため</span></p> 
+   <p begin="00:07:20.899" end="00:07:23.861" style="s1"><span style="s2">ヤブをかき分け<br />ピカチュウ求めてやって来た</span></p> 
+   <p begin="00:07:23.902" end="00:07:26.071" style="s1"><span style="s2">ラブリーチャーミーな<span style="s5"><span style="s6">敵役</span><span style="s7">かたきやく</span></span></span></p> 
+   <p begin="00:07:26.155" end="00:07:27.739" style="s1"><span style="s2">（ムサシ）ムサシ！<br />（コジロウ）コジロウ！</span></p> 
+   <p begin="00:07:28.073" end="00:07:30.993" style="s1"><span style="s2">ピカチュウゲット後<br />ロケット団の２人には</span></p> 
+   <p begin="00:07:31.201" end="00:07:34.246" style="s1"><span style="s2">幹部に昇進<br />輝く未来が待ってるぜ！</span></p> 
+   <p begin="00:07:34.371" end="00:07:35.664" style="s1"><span style="s2">ニャ～んてニャ！</span></p> 
+   <p begin="00:07:35.706" end="00:07:37.249" style="s1"><span style="s2">（ソーナンス）ソ～ナンス</span></p> 
+   <p begin="00:07:37.541" end="00:07:40.210" style="s1"><span style="s2">（サトシ）ピカチュウを渡してたまるか！<br />（ピカチュウ）ピカピカ！</span></p> 
+   <p begin="00:07:40.419" end="00:07:42.713" style="s1"><span style="s2">ニャんだかんだ言わずに渡すニャー</span></p> 
+   <p begin="00:07:42.880" end="00:07:44.131" style="s1"><span style="s2">（コジロウ･ムサシ）はああ～</span></p> 
+   <p begin="00:07:44.464" end="00:07:45.716" style="s1"><span style="s2">（一同）ああっ!?</span></p> 
+   <p begin="00:07:47.259" end="00:07:48.510" style="s1"><span style="s2">（衝突音）</span></p> 
+   <p begin="00:07:49.720" end="00:07:52.139" style="s1"><span style="s2">もう！ 何やってんのよ！</span></p> 
+   <p begin="00:07:52.139" end="00:07:53.891" style="s1"><span style="s2">（サトシ）今だ！ ピカチュウ<br />（ピカチュウ）ピカ！</span></p> 
+   <p begin="00:07:57.019" end="00:07:58.270" style="s1"><span style="s2">（サトシ）うっ!?<br />（ピカチュウ）ピカ！</span></p> 
+   <p begin="00:07:58.270" end="00:07:59.855" style="s1"><span style="s2">（サトシ）しまった　行き止まりだ</span></p> 
+   <p begin="00:07:59.855" end="00:08:01.899" style="s1"><span style="s2">（ピカチュウ）ピ～カ<br />（ムサシ）フフフ…</span></p> 
+   <p begin="00:08:01.899" end="00:08:03.734" style="s1"><span style="s2">（コジロウ）もう逃げられないぞ<br />（サトシ）んっ！</span></p> 
+   <p begin="00:08:03.734" end="00:08:06.195" style="s1"><span style="s2">さあ おとなしくピカチュウを渡すのニャ</span></p> 
+   <p begin="00:08:06.695" end="00:08:08.113" style="s1"><span style="s2">くっ…</span></p> 
+   <p begin="00:08:08.280" end="00:08:09.698" style="s1"><span style="s2">（ヤナギ）待て！<br />（サトシ）ん？</span></p> 
+   <p begin="00:08:09.823" end="00:08:13.702" style="s1"><span style="s2">（ヤナギ）<br />人のポケモンを力ずくで奪おうとは<br />けしからんやつらだ</span></p> 
+   <p begin="00:08:13.994" end="00:08:15.245" style="s1"><span style="s2">（サトシ）ヤナギさん</span></p> 
+   <p begin="00:08:15.454" end="00:08:17.122" style="s1"><span style="s2">あの じいさん さっきの</span></p> 
+   <p begin="00:08:17.206" end="00:08:19.166" style="s1"><span style="s2">な～んか 偉そうで やな感じ</span></p> 
+   <p begin="00:08:19.333" end="00:08:21.084" region="縦右">とにかく ピカチュウ<br />ゲットだニャ</p> 
+   <p begin="00:08:21.084" end="00:08:22.336" style="s1"><span style="s2">（コジロウ･ムサシ）おう！</span></p> 
+   <p begin="00:08:22.336" end="00:08:24.046" style="s1"><span style="s2">マタドガス えんまくだ！</span></p> 
+   <p begin="00:08:24.796" end="00:08:26.798" style="s1"><span style="s2">（マタドガス）ドガース！<br />（ピカチュウ）ピカ～</span></p> 
+   <p begin="00:08:26.798" end="00:08:29.218" style="s1"><span style="s2">（ヤナギ）さっ こっちへ逃げるんだ<br />（サトシ）は… はい</span></p> 
+   <p begin="00:08:29.635" end="00:08:30.886" style="s1"><span style="s2">（一同）うわああ！</span></p> 
+   <p begin="00:08:31.595" end="00:08:33.305" style="s1"><span style="s2">（一同）うわああ！</span></p> 
+   <p begin="00:08:33.889" end="00:08:35.474" style="s1"><span style="s2">ワニノコ！ ヨルノズク！</span></p> 
+   <p begin="00:08:35.933" end="00:08:37.559" style="s1"><span style="s2">（ワニノコ）ワニャー！</span></p> 
+   <p begin="00:08:37.559" end="00:08:38.810" style="s1"><span style="s2">ワニワニワニワニワー</span></p> 
+   <p begin="00:08:40.020" end="00:08:42.564" style="s1"><span style="s2">（ヨルノズクの鳴き声）</span></p> 
+   <p begin="00:08:42.731" end="00:08:45.525" style="s1"><span style="s2">ヨルノズク ヤナギさんを頼む！<br />（鳴き声）</span></p> 
+   <p begin="00:08:45.692" end="00:08:46.944" style="s1"><span style="s2">うわああ！</span></p> 
+   <p begin="00:08:47.152" end="00:08:48.654" style="s1"><span style="s2">（鳴き声）</span></p> 
+   <p begin="00:08:49.321" end="00:08:51.031" style="s1"><span style="s2">ズルッ ズルッ ズルッ</span></p> 
+   <p begin="00:08:51.281" end="00:08:52.741" style="s1"><span style="s2">いいぞ！ ヨルノズク</span></p> 
+   <p begin="00:08:52.866" end="00:08:54.117" style="s1"><span style="s2">ピ～カ～</span></p> 
+   <p begin="00:08:55.035" end="00:08:56.286" style="s1"><span style="s2">ピッカ</span></p> 
+   <p begin="00:08:56.286" end="00:08:57.913" style="s1"><span style="s2">（サトシ）ピカチュウ<br />（ピカチュウ）ピカピ</span></p> 
+   <p begin="00:08:57.913" end="00:09:00.040" style="s1"><span style="s2">よーし ワニノコ みずでっぽうだ！</span></p> 
+   <p begin="00:09:00.082" end="00:09:02.960" style="s1"><span style="s2">ワニャー！</span></p> 
+   <p begin="00:09:09.216" end="00:09:10.759" style="s1"><span style="s2">（サトシ）わっ！<br />（ピカチュウ）ピカピ～カ</span></p> 
+   <p begin="00:09:11.260" end="00:09:13.178" style="s1"><span style="s2">（サトシ）んん… んっ<br />（ワニノコ）ワニャー</span></p> 
+   <p begin="00:09:13.845" end="00:09:17.349" style="s1"><span style="s2"><span style="s5"><span style="s6">痛</span><span style="s7">い</span></span>てて…<br />あっ!? おい ワニノコ 大丈夫か？</span></p> 
+   <p begin="00:09:17.349" end="00:09:18.600" style="s1"><span style="s2">ピカピカ？</span></p> 
+   <p begin="00:09:18.600" end="00:09:19.851" style="s1"><span style="s2">（ヨルノズクの鳴き声）</span></p> 
+   <p begin="00:09:20.560" end="00:09:25.774" style="s1"><span style="s2">う～ん みずでっぽうの使い過ぎで<br />体力を消耗しきってしまったようだな</span></p> 
+   <p begin="00:09:25.983" end="00:09:28.652" style="s1"><span style="s2">ええっ？ ワニノコ しっかりしてくれ</span></p> 
+   <p begin="00:09:28.777" end="00:09:30.320" style="s1"><span style="s2">（サトシ）ワニノコ<br />（ピカチュウ）ピカピーカ！</span></p> 
+   <p begin="00:09:30.320" end="00:09:31.655" style="s1"><span style="s2">（サトシ）ワニノコ！<br />（ヨルノズクの鳴き声）</span></p> 
+   <p begin="00:09:32.030" end="00:09:35.033" style="s1"><span style="s2">ジャリボーイたち<br />こんなとこに落っこっちゃったわよ</span></p> 
+   <p begin="00:09:35.075" end="00:09:36.952" style="s1"><span style="s2">面倒なことになったニャ</span></p> 
+   <p begin="00:09:37.077" end="00:09:40.622" style="s1"><span style="s2">でも ニャースが やれって言ったんだ<br />俺のせいじゃないぞ</span></p> 
+   <p begin="00:09:40.622" end="00:09:44.001" style="s1"><span style="s2">ニャに？ じゃあ ニャーがやれって言ったら<br />なんでもするのニャ？</span></p> 
+   <p begin="00:09:44.334" end="00:09:46.253" style="s1"><span style="s2">（コジロウ）何を？<br />（ニャース）ニャんだニャ？</span></p> 
+   <p begin="00:09:46.295" end="00:09:49.298" style="s1"><span style="s2">ちょっと<br />責任なすりあってる場合じゃないでしょ</span></p> 
+   <p begin="00:09:49.298" end="00:09:50.924" style="s1"><span style="s2">（タケシ）あっ!? ロケット団<br />（コジロウ･ニャース･ムサシ）ん？</span></p> 
+   <p begin="00:09:51.049" end="00:09:53.802" style="s1"><span style="s2">あんたたち こんなとこで何やってんの？</span></p> 
+   <p begin="00:09:53.969" end="00:09:55.887" style="s1"><span style="s2">サトシとピカチュウを見なかったか？</span></p> 
+   <p begin="00:09:56.179" end="00:09:58.181" style="s1"><span style="s2">（コジロウ･ムサシ）し… 知りませーん</span></p> 
+   <p begin="00:09:58.307" end="00:09:59.975" style="s1"><span style="s2">（コジロウ･ムサシ）帰る<br />（ニャース）ニャ… ニャ…</span></p> 
+   <p begin="00:10:00.017" end="00:10:01.560" style="s1"><span style="s2">ニャニャニャニャ… ニャーも</span></p> 
+   <p begin="00:10:01.560" end="00:10:05.856" style="s1"><span style="s2">ジャリボーイとピカチュウと変なじいさんが<br />この谷に落ちたなんて全然知らないニャ</span></p> 
+   <p begin="00:10:06.148" end="00:10:07.399" style="s1"><span style="s2">なんですって？</span></p> 
+   <p begin="00:10:07.399" end="00:10:09.192" style="s1"><span style="s2">ニャ… しまったニャー</span></p> 
+   <p begin="00:10:09.693" end="00:10:12.070" style="s1"><span style="s2">（カスミ）サトシ～！<br />（タケシ）ピカチュウ～！</span></p> 
+   <p begin="00:10:12.070" end="00:10:13.989" style="s1"><span style="s2">（シマ）ギッちゃん！</span></p> 
+   <p begin="00:10:15.699" end="00:10:19.619" style="s1"><span style="s2">はあ… ここは相当深いからね</span></p> 
+   <p begin="00:10:19.619" end="00:10:21.371" style="s1"><span style="s2">早く助けにいかないと</span></p> 
+   <p begin="00:10:21.371" end="00:10:23.457" style="s1"><span style="s2">でも 一体 どうやって？</span></p> 
+   <p begin="00:10:23.915" end="00:10:27.419" style="s1"><span style="s2">そうだ　あっちの方に<br />下りられる所があったはずだよ</span></p> 
+   <p begin="00:10:33.759" end="00:10:35.010" style="s1"><span style="s2">よし できたぞ</span></p> 
+   <p begin="00:10:36.011" end="00:10:38.680" style="s1"><span style="s2">さあ ワニノコ これを飲むんだ</span></p> 
+   <p begin="00:10:44.061" end="00:10:46.271" style="s1"><span style="s2">ワニャ！ ワニワニワー!!</span></p> 
+   <p begin="00:10:46.521" end="00:10:48.732" style="s1"><span style="s2">ワニノコ 元気になったんだな</span></p> 
+   <p begin="00:10:48.732" end="00:10:49.983" style="s1"><span style="s2">ワニワニ</span></p> 
+   <p begin="00:10:49.983" end="00:10:52.986" style="s1"><span style="s2">ヤナギさん<br />ワニノコを助けてくれてありがとう</span></p> 
+   <p begin="00:10:53.153" end="00:10:54.404" style="s1"><span style="s2">ピカピカ</span></p> 
+   <p begin="00:10:54.404" end="00:10:58.116" style="s1"><span style="s2">なあに この谷には<br />いっぱい薬草が生えておるからな</span></p> 
+   <p begin="00:10:58.658" end="00:11:01.161" style="s1"><span style="s2">それに 礼を言うのは私の方だよ</span></p> 
+   <p begin="00:11:01.244" end="00:11:05.290" style="s1"><span style="s2">あの状況で よくあんな奇抜な方法を<br />思いついたものだ</span></p> 
+   <p begin="00:11:05.540" end="00:11:09.419" style="s1"><span style="s2">いやあ ワニノコとヨルノズクが<br />頑張ってくれたからですよ</span></p> 
+   <p begin="00:11:09.586" end="00:11:14.007" style="s1"><span style="s2">それに 俺たち いつも仲良くしてるから<br />あんな方法が浮かんだだけで…</span></p> 
+   <p begin="00:11:14.549" end="00:11:17.969" style="s1"><span style="s2">なるほど<br />そういうこともあるかもしれんな</span></p> 
+   <p begin="00:11:18.220" end="00:11:23.058" style="s1"><span style="s2">しかし 仲が良ければこそ<br />戦いの時には厳しくあらねばならんのだ</span></p> 
+   <p begin="00:11:23.767" end="00:11:27.687" style="s1"><span style="s2">（シマ）ああ見えても ギッちゃん<br />昔は明るい男でね</span></p> 
+   <p begin="00:11:28.063" end="00:11:31.525" style="s1"><span style="s2">ポケモンとトレーニングするのが<br />ホントに楽しそうだった</span></p> 
+   <p begin="00:11:32.025" end="00:11:35.529" style="s1"><span style="s2">ポケモンを家族か友達のように扱っていたよ</span></p> 
+   <p begin="00:11:35.612" end="00:11:37.197" style="s1"><span style="s2">えっ？ でも さっきは…</span></p> 
+   <p begin="00:11:37.239" end="00:11:40.158" style="s1"><span style="s2">ああ 今じゃ“ふゆのヤナギ”と呼ばれてる</span></p> 
+   <p begin="00:11:40.409" end="00:11:42.411" style="s1"><span style="s2">（カスミ）ふゆのヤナギ？<br />（トゲピー）チョゲ？</span></p> 
+   <p begin="00:11:42.577" end="00:11:45.497" style="s1"><span style="s2">常に厳しくポケモンに接し—</span></p> 
+   <p begin="00:11:45.497" end="00:11:50.335" style="s1"><span style="s2">こおりタイプのポケモンが得意なことから<br />そう呼ばれるようになったのさ</span></p> 
+   <p begin="00:11:51.086" end="00:11:52.963" style="s1"><span style="s2">実は ある事件があってね</span></p> 
+   <p begin="00:11:53.213" end="00:11:55.549" style="s1"><span style="s2">（タケシ）ある事件って？<br />（カスミ）一体 なんなんですか？</span></p> 
+   <p begin="00:11:55.924" end="00:11:58.385" style="s1"><span style="s2">（シマ）さーて 誰から行く？<br />（タケシ･カスミ）えっ？</span></p> 
+   <p begin="00:11:58.510" end="00:12:00.178" style="s1"><span style="s2">（カスミ･タケシ）ああ… あはは…</span></p> 
+   <p begin="00:12:00.178" end="00:12:01.805" style="s1"><span style="s2">じゃあ あたしが先だね</span></p> 
+   <p begin="00:12:01.805" end="00:12:03.515" style="s1"><span style="s2">話は下でしてやるよ</span></p> 
+   <p begin="00:12:03.515" end="00:12:06.393" style="s1"><span style="s2">そ～れ～！</span></p> 
+   <p begin="00:12:06.560" end="00:12:08.478" style="s1"><span style="s2">（カスミ･タケシ）え～っ！<br />（トゲピー）チョゲプリィイ！</span></p> 
+   <p begin="00:12:10.439" end="00:12:14.025" style="s1"><span style="s2">（サトシ）ヤナギさん<br />この谷から出られる道はないんですか？</span></p> 
+   <p begin="00:12:14.317" end="00:12:17.487" style="s1"><span style="s2">私も ここへは<br />１～２度 来ただけだからな</span></p> 
+   <p begin="00:12:17.904" end="00:12:19.156" style="s1"><span style="s2">ここは？</span></p> 
+   <p begin="00:12:19.156" end="00:12:22.200" style="s1"><span style="s2">崖崩れ後にできた<span style="s5"><span style="s6">洞窟</span><span style="s7">どうくつ</span></span>のようだが</span></p> 
+   <p begin="00:12:22.200" end="00:12:26.037" style="s1"><span style="s2">さっきのみずでっぽうで<br />入り口をふさいでいた岩が倒れたのか</span></p> 
+   <p begin="00:12:26.663" end="00:12:27.914" style="s1"><span style="s2">（ピカチュウ）ピカピ！<br />（サトシ）ん!?</span></p> 
+   <p begin="00:12:28.540" end="00:12:29.791" style="s1"><span style="s2">どうした？ ピカチュウ</span></p> 
+   <p begin="00:12:30.000" end="00:12:31.918" style="s1"><span style="s2">（サトシ）あれ？ あそこになんかあるぞ</span></p> 
+   <p begin="00:12:33.211" end="00:12:35.088" style="s1"><span style="s2">あっ!? あれは…</span></p> 
+   <p begin="00:12:35.422" end="00:12:36.673" style="s1"><span style="s2">うわっ</span></p> 
+   <p begin="00:12:38.592" end="00:12:41.011" style="s1"><span style="s2">ヤナギさん それがどうかしたんですか？</span></p> 
+   <p begin="00:12:41.344" end="00:12:45.557" style="s1"><span style="s2">これは… この足輪は<br />私のイノムーが付けていたものだ</span></p> 
+   <p begin="00:12:45.891" end="00:12:48.518" style="s1"><span style="s2">（サトシ）ヤナギさんのイノムー？<br />（ピカチュウ）ピーカ？</span></p> 
+   <p begin="00:12:48.768" end="00:12:52.939" style="s1"><span style="s2">（シマ）そう ギッちゃんが<br />家族同然にかわいがってたイノムーが</span></p> 
+   <p begin="00:12:52.939" end="00:12:54.983" style="s1"><span style="s2">ある日 ヒョイっといなくなってしまってね</span></p> 
+   <p begin="00:12:55.317" end="00:12:57.486" style="s1"><span style="s2">（タケシ）イノムーが<br />（カスミ）いなくなった？</span></p> 
+   <p begin="00:12:57.736" end="00:13:02.407" style="s1"><span style="s2">それ以来 ギッちゃんは<br />ポケモンを友達扱いするのをやめたのさ</span></p> 
+   <p begin="00:13:02.699" end="00:13:08.038" style="s1"><span style="s2">私にも 昔はお前のように<br />ポケモンの気持ちがわかると思い込み—</span></p> 
+   <p begin="00:13:08.038" end="00:13:11.041" style="s1"><span style="s2">勢いだけでバトルをしていた時期があった</span></p> 
+   <p begin="00:13:12.375" end="00:13:14.377" style="s1"><span style="s2">イノッ！ イノッ！</span></p> 
+   <p begin="00:13:14.794" end="00:13:16.630" style="s1"><span style="s2">イノッ！ イノッ！</span></p> 
+   <p begin="00:13:16.796" end="00:13:19.549" style="s1"><span style="s2">（ヤナギ）<br />おっ？ イノムー やる気満々だな</span></p> 
+   <p begin="00:13:19.591" end="00:13:22.010" style="s1"><span style="s2">よーし いけ イノムー！<br />とっしんだ!!</span></p> 
+   <p begin="00:13:22.385" end="00:13:24.179" style="s1"><span style="s2">イノー!!</span></p> 
+   <p begin="00:13:24.346" end="00:13:25.639" style="s1"><span style="s2">（ヤナギ）みだれづき！</span></p> 
+   <p begin="00:13:26.389" end="00:13:28.475" style="s1"><span style="s2">よーし とどめのふぶきだ！</span></p> 
+   <p begin="00:13:28.725" end="00:13:30.060" style="s1"><span style="s2">イノー！</span></p> 
+   <p begin="00:13:33.730" end="00:13:36.024" style="s1"><span style="s2">（ヤナギ）やったぜ！ イノムー<br />（イノムー）イノ！</span></p> 
+   <p begin="00:13:36.483" end="00:13:42.239" style="s4"><span style="s2">私とイノムーは快進撃を続け<br />辺りにかなう者はいなくなった</span></p> 
+   <p begin="00:13:42.447" end="00:13:44.491" style="s4"><span style="s2">まさに有頂天だった</span></p> 
+   <p begin="00:13:44.866" end="00:13:47.911" style="s4"><span style="s2">そして ある大きな大会に出た時…</span></p> 
+   <p begin="00:13:48.203" end="00:13:50.872" style="s1"><span style="s2">（ヤナギの声）<br /><span style="s3">相手は ほのおタイプのブーバー</span></span></p> 
+   <p begin="00:13:50.872" end="00:13:53.708" style="s4"><span style="s2">相性からいえば<br />イノムーは分が悪いが…</span></p> 
+   <p begin="00:13:53.708" end="00:13:54.960" style="s1"><span style="s2">（ヤナギ）おっ!?</span></p> 
+   <p begin="00:13:54.960" end="00:13:56.920" style="s1"><span style="s2">イノッ！ イノッ！</span></p> 
+   <p begin="00:13:57.087" end="00:14:00.006" style="s1"><span style="s2">おお！ イノムー　やる気満々だな</span></p> 
+   <p begin="00:14:00.090" end="00:14:01.675" style="s1"><span style="s2">よーし！ いけ イノムー!!</span></p> 
+   <p begin="00:14:01.675" end="00:14:03.260" style="s1"><span style="s2">（ヤナギ）とっしんだ!!<br />（イノムー）イノー！</span></p> 
+   <p begin="00:14:03.510" end="00:14:05.178" style="s1"><span style="s2">（対戦相手）ブーバー かえんほうしゃ！</span></p> 
+   <p begin="00:14:05.262" end="00:14:07.681" style="s1"><span style="s2">（ブーバー）ブオッ！<br />（イノムー）イノー！</span></p> 
+   <p begin="00:14:07.889" end="00:14:09.140" style="s1"><span style="s2">ああっ!? イノムー</span></p> 
+   <p begin="00:14:09.432" end="00:14:11.643" style="s1"><span style="s2">ブーバー とどめのだいもんじだ！</span></p> 
+   <p begin="00:14:12.060" end="00:14:13.311" style="s1"><span style="s2">バ～ッ</span></p> 
+   <p begin="00:14:13.520" end="00:14:14.771" style="s1"><span style="s2">イノムー！ うわっ</span></p> 
+   <p begin="00:14:15.772" end="00:14:17.023" style="s1"><span style="s2">ああ… あっ!!</span></p> 
+   <p begin="00:14:20.860" end="00:14:25.782" style="s4"><span style="s2">もちろん 試合には負け<br />私も大ヤケドを負ってしまった</span></p> 
+   <p begin="00:14:26.616" end="00:14:28.201" style="s1"><span style="s2">イノムー すまない</span></p> 
+   <p begin="00:14:28.577" end="00:14:30.328" style="s1"><span style="s2">俺が悪かった…</span></p> 
+   <p begin="00:14:34.249" end="00:14:35.500" style="s1"><span style="s2">（ドアの開く音）</span></p> 
+   <p begin="00:14:36.751" end="00:14:38.169" style="s1"><span style="s2">ああ!? イノムー？</span></p> 
+   <p begin="00:14:39.879" end="00:14:42.549" style="s1"><span style="s2">イノムー!?<br />どこ行くんだ？ イノムー</span></p> 
+   <p begin="00:14:45.802" end="00:14:49.973" style="s1"><span style="s2">そんな…<br />お前をかばってケガをした俺を置いて—</span></p> 
+   <p begin="00:14:49.973" end="00:14:51.766" style="s1"><span style="s2">お前は出ていくというのか？</span></p> 
+   <p begin="00:14:52.183" end="00:14:55.312" style="s1"><span style="s2">うっ… なぜだ… なぜなんだ</span></p> 
+   <p begin="00:14:56.229" end="00:14:57.731" style="s1"><span style="s2">イノムー!!</span></p> 
+   <p begin="00:14:59.733" end="00:15:03.945" style="s1"><span style="s2">それ以来 私は<br />ポケモンを友達のように扱うのをやめ—</span></p> 
+   <p begin="00:15:03.987" end="00:15:06.072" style="s1"><span style="s2">厳しく接するようになった</span></p> 
+   <p begin="00:15:06.573" end="00:15:10.452" style="s1"><span style="s2">そんな私を 人は<br />“ふゆのヤナギ”と呼ぶようになったんだ</span></p> 
+   <p begin="00:15:10.869" end="00:15:12.120" style="s1"><span style="s2">ヤナギさん</span></p> 
+   <p begin="00:15:12.287" end="00:15:13.538" style="s1"><span style="s2">ピーカ</span></p> 
+   <p begin="00:15:13.830" end="00:15:15.874" style="s1"><span style="s2">（ヤナギ）とにかく先に行ってみよう</span></p> 
+   <p begin="00:15:17.959" end="00:15:20.962" style="s1"><span style="s2">でも どうして<br />ヤナギさんのイノムーの足輪が—</span></p> 
+   <p begin="00:15:20.962" end="00:15:22.547" style="s1"><span style="s2">こんな所にあったんだろう？</span></p> 
+   <p begin="00:15:22.547" end="00:15:23.840" style="s1"><span style="s2">（ヤナギ）う～ん…</span></p> 
+   <p begin="00:15:23.840" end="00:15:25.091" style="s1"><span style="s2">（サトシ）あれ？<br />（ヤナギ）ん？</span></p> 
+   <p begin="00:15:25.091" end="00:15:27.385" style="s1"><span style="s2">（サトシ）<br />ヤナギさん 奥の方が明るくなってるよ</span></p> 
+   <p begin="00:15:27.802" end="00:15:30.555" style="s1"><span style="s2">もしかしたら 上へ出られるかもしれんな</span></p> 
+   <p begin="00:15:30.555" end="00:15:31.806" style="s1"><span style="s2">（サトシ）よーし！</span></p> 
+   <p begin="00:15:33.892" end="00:15:36.144" style="s1"><span style="s2">わーっ！ すっげー!!</span></p> 
+   <p begin="00:15:36.269" end="00:15:37.771" style="s1"><span style="s2">（ピカチュウ）ピカ～！</span></p> 
+   <p begin="00:15:37.896" end="00:15:39.481" style="s1"><span style="s2">（ヤナギ）なるほど</span></p> 
+   <p begin="00:15:39.481" end="00:15:44.027" style="s1"><span style="s2">崩れ落ちた岩が凍りついて<br />水晶のように輝いているわけか</span></p> 
+   <p begin="00:15:44.152" end="00:15:47.280" style="s1"><span style="s2">でも これじゃあ<br />ここを登って上へは行けないな</span></p> 
+   <p begin="00:15:48.156" end="00:15:49.407" style="s1"><span style="s2">（ヤナギ）あっ!?<br />（サトシ）あっ!?</span></p> 
+   <p begin="00:15:50.075" end="00:15:52.827" style="s1"><span style="s2">（サトシ）あっ!? あの氷の中に何かいる</span></p> 
+   <p begin="00:15:54.954" end="00:15:56.206" style="s1"><span style="s2">あっ!? あれは…</span></p> 
+   <p begin="00:15:57.832" end="00:16:00.543" style="s4"><span style="s2">Who's that Pokemon？</span></p> 
+   <p begin="00:16:02.671" end="00:16:03.922" style="s4"><span style="s2">ジュゴン</span></p> 
+   <p begin="00:16:09.052" end="00:16:10.303" style="s1"><span style="s2">あっ!? あれは…</span></p> 
+   <p begin="00:16:10.387" end="00:16:11.638" style="s1"><span style="s2">（サトシ）あっ!? ヤナギさん</span></p> 
+   <p begin="00:16:13.515" end="00:16:14.766" style="s1"><span style="s2">（ヤナギ）ああ…<br />（サトシ）あっ!?</span></p> 
+   <p begin="00:16:16.017" end="00:16:17.686" style="s1"><span style="s2">ああ～</span></p> 
+   <p begin="00:16:19.854" end="00:16:22.399" style="s1"><span style="s2">イノムー 私のイノムーだ</span></p> 
+   <p begin="00:16:22.399" end="00:16:25.485" style="s1"><span style="s2">えっ!? これがヤナギさんのイノムー</span></p> 
+   <p begin="00:16:25.610" end="00:16:26.861" style="s1"><span style="s2">ピーカ…</span></p> 
+   <p begin="00:16:26.945" end="00:16:28.196" style="s1"><span style="s2">ん？</span></p> 
+   <p begin="00:16:28.196" end="00:16:29.781" style="s1"><span style="s2">イノムー なんか持ってる</span></p> 
+   <p begin="00:16:30.156" end="00:16:33.326" style="s1"><span style="s2">あれはヤケドに よく効くという薬草だな</span></p> 
+   <p begin="00:16:33.743" end="00:16:35.286" style="s1"><span style="s2">そうか わかったぞ</span></p> 
+   <p begin="00:16:35.829" end="00:16:37.080" style="s1"><span style="s2">（サトシ）<span style="s3">きっと イノムーは—</span></span></p> 
+   <p begin="00:16:37.080" end="00:16:40.333" style="s4"><span style="s2">この辺りに薬草があることを知ってて<br />取りにきたんだ</span></p> 
+   <p begin="00:16:40.875" end="00:16:42.877" style="s4"><span style="s2">（サトシ）だけど その帰りに…</span></p> 
+   <p begin="00:16:44.379" end="00:16:46.673" style="s1"><span style="s2">イノー！</span></p> 
+   <p begin="00:16:48.466" end="00:16:51.845" style="s1"><span style="s2">お前は 私のために薬草を…</span></p> 
+   <p begin="00:16:52.595" end="00:16:56.224" style="s1"><span style="s2">やっぱり イノムーは<br />ずっとヤナギさんの友達だったんですよ</span></p> 
+   <p begin="00:16:57.016" end="00:16:58.560" style="s1"><span style="s2">おお…</span></p> 
+   <p begin="00:16:59.519" end="00:17:01.187" style="s1"><span style="s2">すまん イノムー</span></p> 
+   <p begin="00:17:01.187" end="00:17:02.605" style="s1"><span style="s2">私がバカだった</span></p> 
+   <p begin="00:17:02.814" end="00:17:07.068" style="s1"><span style="s2">お前に裏切られたと思っておった<br />私は大バカ者だ</span></p> 
+   <p begin="00:17:07.277" end="00:17:10.447" style="s1"><span style="s2">（ヤナギ）許してくれ イノムー イノムー…</span></p> 
+   <p begin="00:17:10.864" end="00:17:13.616" style="s1"><span style="s2">（ヤナギの<span style="s5"><span style="s6">嗚咽</span><span style="s7">おえつ</span></span>）</span></p> 
+   <p begin="00:17:14.701" end="00:17:18.246" style="s1"><span style="s2">ヤナギさん<br />とにかく イノムーを氷から出してやろうよ</span></p> 
+   <p begin="00:17:18.663" end="00:17:20.749" style="s1"><span style="s2">ヒノアラシ かえんほうしゃだ！</span></p> 
+   <p begin="00:17:20.749" end="00:17:25.754" style="s1"><span style="s2">ヒノ～！</span></p> 
+   <p begin="00:17:29.132" end="00:17:31.092" style="s1"><span style="s2">（サトシ）よーし いいぞ</span></p> 
+   <p begin="00:17:31.801" end="00:17:34.053" style="s1"><span style="s2">ピカチュウ<br />次は でんきショックだ！</span></p> 
+   <p begin="00:17:34.053" end="00:17:35.305" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:17:35.513" end="00:17:38.057" style="s1"><span style="s2">ピカ チュウ!!</span></p> 
+   <p begin="00:17:40.059" end="00:17:41.811" style="s1"><span style="s2">ピカチュウ もっと強く</span></p> 
+   <p begin="00:17:41.811" end="00:17:45.356" style="s1"><span style="s2">ピカ チュウ～!!</span></p> 
+   <p begin="00:17:48.109" end="00:17:49.611" style="s1"><span style="s2">ダメか</span></p> 
+   <p begin="00:17:49.736" end="00:17:50.987" style="s1"><span style="s2">無理もない</span></p> 
+   <p begin="00:17:50.987" end="00:17:54.324" style="s1"><span style="s2">イノムーは<br />長い間 氷漬けのままだったんだ</span></p> 
+   <p begin="00:17:54.324" end="00:17:56.451" style="s1"><span style="s2">よーし ピカチュウ 今度は…</span></p> 
+   <p begin="00:17:56.451" end="00:17:57.702" style="s1"><span style="s2">（サトシ）あれ？<br />（ヤナギ）あ？</span></p> 
+   <p begin="00:17:59.412" end="00:18:01.623" style="s1"><span style="s2">イノ… イノ？</span></p> 
+   <p begin="00:18:01.831" end="00:18:04.542" style="s1"><span style="s2">やった～ イノムーが目を覚ましたぞ</span></p> 
+   <p begin="00:18:04.542" end="00:18:05.794" style="s1"><span style="s2">ピッカー</span></p> 
+   <p begin="00:18:05.877" end="00:18:07.879" style="s1"><span style="s2">（ヤナギ）おおお…</span></p> 
+   <p begin="00:18:08.463" end="00:18:11.090" style="s1"><span style="s2">イノムー 私だ わかるか？</span></p> 
+   <p begin="00:18:12.300" end="00:18:13.551" style="s1"><span style="s2">イノイノ！</span></p> 
+   <p begin="00:18:13.593" end="00:18:19.349" style="s1"><span style="s2">おお～ あれから長い時が経ったというのに<br />お前は私を覚えていてくれたのか</span></p> 
+   <p begin="00:18:19.516" end="00:18:21.392" style="s1"><span style="s2">ありがとう イノムー</span></p> 
+   <p begin="00:18:21.392" end="00:18:24.479" style="s1"><span style="s2">やっぱり お前は私の大事な友達だ</span></p> 
+   <p begin="00:18:24.646" end="00:18:26.981" style="s1"><span style="s2">イノ イノイノ！</span></p> 
+   <p begin="00:18:27.690" end="00:18:29.692" style="s1"><span style="s2">ヘヘッ やったな ピカチュウ</span></p> 
+   <p begin="00:18:29.692" end="00:18:30.944" style="s1"><span style="s2">ピカチュウ</span></p> 
+   <p begin="00:18:30.944" end="00:18:33.238" style="s1"><span style="s2">イノ！ イノ！ イノ…</span></p> 
+   <p begin="00:18:33.530" end="00:18:34.781" style="s1"><span style="s2">イノムー</span></p> 
+   <p begin="00:18:34.781" end="00:18:37.617" style="s1"><span style="s2">イノムー お前は まだ本調子じゃないんだ</span></p> 
+   <p begin="00:18:37.617" end="00:18:38.868" style="s1"><span style="s2">ねむるを使え</span></p> 
+   <p begin="00:18:38.993" end="00:18:40.245" style="s1"><span style="s2">イノ！</span></p> 
+   <p begin="00:18:41.996" end="00:18:43.248" style="s1"><span style="s2">“ねむる”？</span></p> 
+   <p begin="00:18:43.540" end="00:18:46.459" style="s1"><span style="s2">イノムーの体力を回復させる技だ</span></p> 
+   <p begin="00:18:46.668" end="00:18:48.211" style="s1"><span style="s2">これで もう大丈夫だろう</span></p> 
+   <p begin="00:18:48.211" end="00:18:50.129" style="s1"><span style="s2">そうか よかった～</span></p> 
+   <p begin="00:18:57.804" end="00:18:59.514" style="s1"><span style="s2">（シマ）ギッちゃ～ん</span></p> 
+   <p begin="00:18:59.514" end="00:19:00.849" style="s1"><span style="s2">（カスミ）サトシ～</span></p> 
+   <p begin="00:19:00.849" end="00:19:03.852" style="s1"><span style="s2">（タケシ）どこにいるんだ～ サトシ～</span></p> 
+   <p begin="00:19:04.561" end="00:19:06.312" style="s1"><span style="s2">（サトシ）あっ!?<br />（カスミ･タケシ）サトシ！</span></p> 
+   <p begin="00:19:06.312" end="00:19:07.730" style="s1"><span style="s2">ギッちゃんも無事だったか</span></p> 
+   <p begin="00:19:08.064" end="00:19:10.066" style="s1"><span style="s2">おう だが それだけじゃないぞ</span></p> 
+   <p begin="00:19:10.108" end="00:19:12.902" style="s1"><span style="s2">見ろ 私のイノムーも無事だったんだ</span></p> 
+   <p begin="00:19:12.902" end="00:19:15.655" style="s1"><span style="s2">（イノムー）イノ！<br />（シマ）ああ!? そのイノムーは…</span></p> 
+   <p begin="00:19:15.655" end="00:19:17.657" style="s1"><span style="s2">もしかして さっき話してたイノムー？</span></p> 
+   <p begin="00:19:17.866" end="00:19:21.286" style="s1"><span style="s2">おお… イノムー よくもまあ無事で</span></p> 
+   <p begin="00:19:21.327" end="00:19:24.038" style="s1"><span style="s2">（シノ）このシマを覚えているかい？<br />（イノムー）イノイノ！</span></p> 
+   <p begin="00:19:24.330" end="00:19:27.250" style="s1"><span style="s2">そうか そうか<br />よかったね ギッちゃん</span></p> 
+   <p begin="00:19:27.542" end="00:19:29.460" style="s1"><span style="s2">ああ これも全て…</span></p> 
+   <p begin="00:19:29.460" end="00:19:31.713" style="s1"><span style="s2">（ロケット団）ワ～ハッハッハ！<br />（サトシ）ん！</span></p> 
+   <p begin="00:19:32.213" end="00:19:34.883" style="s1"><span style="s2">（ムサシ）<br />ピカチュウが無事でホントによかったわ～</span></p> 
+   <p begin="00:19:34.883" end="00:19:36.342" style="s1"><span style="s2">（コジロウ）それでは改めて</span></p> 
+   <p begin="00:19:36.342" end="00:19:37.886" style="s1"><span style="s2">（ニャース）ピカチュウゲットニャ</span></p> 
+   <p begin="00:19:37.886" end="00:19:39.137" style="s1"><span style="s2">（サトシ･カスミ･タケシ）ロケット団！</span></p> 
+   <p begin="00:19:39.137" end="00:19:40.430" style="s1"><span style="s2">いけ！ アーボック!!</span></p> 
+   <p begin="00:19:40.430" end="00:19:41.681" style="s1"><span style="s2">マタドガス！</span></p> 
+   <p begin="00:19:42.682" end="00:19:43.975" style="s1"><span style="s2">（アーボック）シャーボック！</span></p> 
+   <p begin="00:19:44.058" end="00:19:45.810" style="s1"><span style="s2">（マタドガス）マタドガ～ス！</span></p> 
+   <p begin="00:19:46.102" end="00:19:47.770" style="s1"><span style="s2">（サトシ）くっ…<br />（ヤナギ）待てっ！</span></p> 
+   <p begin="00:19:47.937" end="00:19:50.273" style="s1"><span style="s2">このピカチュウはイノムーの恩人</span></p> 
+   <p begin="00:19:50.273" end="00:19:52.567" style="s1"><span style="s2">手を出そうと言うなら 私が相手だ</span></p> 
+   <p begin="00:19:52.692" end="00:19:55.361" style="s1"><span style="s2">あ～ら 元気のいい おじいちゃんだこと</span></p> 
+   <p begin="00:19:55.737" end="00:19:57.488" style="s1"><span style="s2">アーボック やっちゃいなさい！</span></p> 
+   <p begin="00:19:57.655" end="00:19:58.907" style="s1"><span style="s2">マタドガスも いけ！</span></p> 
+   <p begin="00:19:58.990" end="00:20:00.241" style="s1"><span style="s2">（アーボック）シャー！<br />（マタドガス）ドガ～</span></p> 
+   <p begin="00:20:01.075" end="00:20:02.619" style="s1"><span style="s2">イノ！ イノ！</span></p> 
+   <p begin="00:20:02.619" end="00:20:04.996" style="s1"><span style="s2">おお イノムー やる気満々だな</span></p> 
+   <p begin="00:20:05.038" end="00:20:07.081" style="s1"><span style="s2">よーし イノムー とっしんだ！</span></p> 
+   <p begin="00:20:07.081" end="00:20:08.750" style="s1"><span style="s2">ムー！</span></p> 
+   <p begin="00:20:08.917" end="00:20:10.668" style="s1"><span style="s2">続いて みだれづき！</span></p> 
+   <p begin="00:20:10.668" end="00:20:11.920" style="s1"><span style="s2">イノー！</span></p> 
+   <p begin="00:20:12.211" end="00:20:13.630" style="s1"><span style="s2">ムー！</span></p> 
+   <p begin="00:20:13.630" end="00:20:15.089" style="s1"><span style="s2">よーし いいぞ イノムー</span></p> 
+   <p begin="00:20:15.381" end="00:20:16.925" style="s1"><span style="s2">（サトシ）すごい<br />（シマ）うん</span></p> 
+   <p begin="00:20:16.966" end="00:20:20.053" style="s1"><span style="s2">今のギッちゃんとイノムーは<br />昔に戻ったかのようだ</span></p> 
+   <p begin="00:20:20.428" end="00:20:22.472" style="s1"><span style="s2">あんたたち 何やってんのよ</span></p> 
+   <p begin="00:20:22.972" end="00:20:24.766" style="s1"><span style="s2">もっと 根性 出していけ</span></p> 
+   <p begin="00:20:25.099" end="00:20:26.392" style="s1"><span style="s2">（マタドガス）ドガース！<br />（アーボック）シャー！</span></p> 
+   <p begin="00:20:26.643" end="00:20:29.062" style="s1"><span style="s2">イノムー とどめのふぶきだ！</span></p> 
+   <p begin="00:20:29.228" end="00:20:30.772" style="s1"><span style="s2">イノ～!!</span></p> 
+   <p begin="00:20:33.775" end="00:20:35.109" style="s1"><span style="s2">（一同）うわわわわ…</span></p> 
+   <p begin="00:20:35.443" end="00:20:37.862" style="s1"><span style="s2">よーし ピカチュウ<br />10まんボルトだ!!</span></p> 
+   <p begin="00:20:38.196" end="00:20:39.447" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:20:39.697" end="00:20:41.115" style="s1"><span style="s2">ピーカ チュウ!!</span></p> 
+   <p begin="00:20:41.324" end="00:20:43.076" style="s1"><span style="s2">（悲鳴）</span></p> 
+   <p begin="00:20:44.786" end="00:20:47.455" style="s1"><span style="s2">（コジロウ･ニャース･ムサシ）やな感じ～！</span></p> 
+   <p begin="00:20:49.999" end="00:20:51.459" style="s1"><span style="s2">やったぜ！ ピカチュウ</span></p> 
+   <p begin="00:20:51.459" end="00:20:52.710" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:20:52.710" end="00:20:54.253" style="s1"><span style="s2">うん 大したもんだ</span></p> 
+   <p begin="00:20:54.462" end="00:20:58.091" style="s1"><span style="s2">（サトシ）いやあ～<br />（ピカチュウ）ピカピカ～</span></p> 
+   <p begin="00:20:59.634" end="00:21:02.261" style="s1"><span style="s2">ヤナギさん<br />改めて お願いします</span></p> 
+   <p begin="00:21:02.345" end="00:21:04.055" style="s1"><span style="s2">俺とジム戦をしてください</span></p> 
+   <p begin="00:21:04.055" end="00:21:05.306" style="s1"><span style="s2">お願いします</span></p> 
+   <p begin="00:21:07.558" end="00:21:08.810" style="s1"><span style="s2">（ヤナギ）ダメだ！</span></p> 
+   <p begin="00:21:08.810" end="00:21:10.269" style="s1"><span style="s2">（サトシ）ええっ!? そんな…<br />（カスミ･タケシ）えっ…</span></p> 
+   <p begin="00:21:10.436" end="00:21:13.398" style="s1"><span style="s2">（ヤナギ）<br />今日は 君もポケモンも疲れているはずだ</span></p> 
+   <p begin="00:21:14.774" end="00:21:18.611" style="s1"><span style="s2">今夜はポケモンセンターでゆっくり休んで<br />明日また来なさい</span></p> 
+   <p begin="00:21:18.861" end="00:21:21.322" style="s1"><span style="s2">明日なら ジム戦 やってくれるんですね</span></p> 
+   <p begin="00:21:21.447" end="00:21:22.699" style="s1"><span style="s2">もちろんだ</span></p> 
+   <p begin="00:21:22.699" end="00:21:23.950" style="s1"><span style="s2">やった～！</span></p> 
+   <p begin="00:21:23.950" end="00:21:25.535" style="s1"><span style="s2">よかったわね サトシ</span></p> 
+   <p begin="00:21:25.535" end="00:21:27.120" style="s1"><span style="s2">（タケシ）頑張れよ<br />（サトシ）ああ</span></p> 
+   <p begin="00:21:27.578" end="00:21:29.163" style="s1"><span style="s2">よーし やるぞ！</span></p> 
+   <p begin="00:21:29.205" end="00:21:30.456" style="s1"><span style="s2">ピ～カ～！</span></p> 
+   <p begin="00:21:31.124" end="00:21:34.460" style="s1"><span style="s2">（ナレーション）<br /><span style="s3">ついに チョウジジムに</span><br /><span style="s3">挑戦できるようになったサトシ</span></span></p> 
+   <p begin="00:21:34.711" end="00:21:37.380" style="s4"><span style="s2">だが ジムリーダーのヤナギは強い</span></p> 
+   <p begin="00:21:38.047" end="00:21:40.717" region="縦右" style="s3">果たして サトシの<br />バッジゲットは—</p> 
+   <p begin="00:21:40.717" end="00:21:41.968" region="縦右" style="s3">かなうのか？</p> 
+   <p begin="00:21:46.139" end="00:21:49.350" style="s1"><span style="s2">♪～</span></p> 
+   <p begin="00:23:08.763" end="00:23:10.890" style="s1"><span style="s2">（サトシ）<br /><span style="s3">チョウジジムでのバトルが始まった</span></span></p> 
+   <p begin="00:23:11.557" end="00:23:13.518" style="s4"><span style="s2">必死で戦う俺たちだけど—</span></p> 
+   <p begin="00:23:13.518" end="00:23:16.437" style="s4"><span style="s2">得意のスピード技が<br />氷の上では うまく使えない</span></p> 
+   <p begin="00:23:16.938" end="00:23:20.525" style="s4"><span style="s2">そんな俺たちに猛攻を加え追いつめる<br />ジムリーダーのヤナギさん</span></p> 
+   <p begin="00:23:20.983" end="00:23:23.611" style="s4"><span style="s2">負けるもんか<br />いけ！ ピカチュウ</span></p> 
+   <p begin="00:23:23.611" end="00:23:25.822" style="s4"><span style="s2">俺たちの不屈の闘志を見せてやれ！</span></p> 
+   <p begin="00:23:26.489" end="00:23:28.574" style="s4"><span style="s2">次回「ポケットモンスター」</span></p> 
+   <p begin="00:23:28.658" end="00:23:31.119" style="s4"><span style="s2">“チョウジジム！ こおりのバトル！”</span></p> 
+   <p begin="00:23:31.536" end="00:23:33.746" style="s4"><span style="s2">みんなも ポケモンゲットだぜ！</span></p> 
+   <p begin="00:23:41.254" end="00:23:43.840" style="s1"><span style="s2">（オーキド<span style="s5"><span style="s6">博士</span><span style="s7">はかせ</span></span>）<br />さ～て 今回のポケモンは？</span></p> 
+   <p begin="00:23:44.006" end="00:23:45.633" style="s1"><span style="s2">ピッ ピカチュウ！</span></p> 
+   <p begin="00:23:48.845" end="00:23:51.389" style="s1"><span style="s2">ナンバー<span style="s5"><span style="s6">１９０</span><span style="s7">イチキュウゼロ</span></span>といえば？</span></p> 
+   <p begin="00:23:51.389" end="00:23:53.558" style="s1"><span style="s2">そう エイパムじゃな</span></p> 
+   <p begin="00:23:53.933" end="00:23:55.768" style="s1"><span style="s2">（オーキド博士）おながポケモンのエイパム</span></p> 
+   <p begin="00:23:55.810" end="00:23:59.063" style="s1"><span style="s2">高い木の上などを<br />長いシッポを巧みに操って—</span></p> 
+   <p begin="00:23:59.063" end="00:24:01.941" style="s1"><span style="s2">枝から枝へ飛び移る姿をよく見かけるが—</span></p> 
+   <p begin="00:24:01.941" end="00:24:03.276" style="s1"><span style="s2">実は このシッポ—</span></p> 
+   <p begin="00:24:03.276" end="00:24:07.613" style="s1"><span style="s2">先端部分が手のようになっており<br />自由に動かすことができるんじゃ</span></p> 
+   <p begin="00:24:07.822" end="00:24:10.241" style="s1"><span style="s2">これは木の上での移動はもちろん—</span></p> 
+   <p begin="00:24:10.241" end="00:24:15.329" style="s1"><span style="s2">離れた所にある木の実や果物を<br />取る時などにも 大いに役立っておる</span></p> 
+   <p begin="00:24:15.830" end="00:24:21.836" style="s1"><span style="s2">見てのとおり 愛嬌があるポケモンなので<br />ペットとして飼う人も多いようじゃが—</span></p> 
+   <p begin="00:24:21.919" end="00:24:25.381" style="s1"><span style="s2">このとおり<br />イタズラ者なのが たまにきずじゃ</span></p> 
+   <p begin="00:24:25.756" end="00:24:27.425" style="s1"><span style="s2">（オーキド博士）では ここで一句</span></p> 
+   <p begin="00:24:32.889" end="00:24:35.600" region="縦左">みんなも<br />ポケモンゲットじゃぞ！</p> 
+  </div> 
+ </body> </tt>

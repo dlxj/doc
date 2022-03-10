@@ -15,7 +15,7 @@ module.exports = {
     },
     async handler({type}) {
 
-        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', 'amazon')
+        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon'])
 
         let srts = []
 
