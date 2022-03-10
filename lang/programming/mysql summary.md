@@ -1393,6 +1393,54 @@ mysqldump -uusername -ppassword databasename | mysql –host=*.*.*.* -C database
 
 
 
+# Functioin
+
+
+
+```
+CREATE DEFINER=`book`@`%` FUNCTION `ntval`(
+	`i_BookID` int,
+	`i_tableName` varchar(32)
+)
+RETURNS int(11)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+begin
+  update TableMaxID set MaxID = MaxID + 1 where BookID = i_BookID and TableName = i_tableName;
+  if ROW_COUNT() = 0 then
+     insert into TableMaxID(BookID, TableName, MaxID)
+     values(i_BookID, i_tableName, 1);
+     return 1;
+  else
+     return currval(i_BookID, i_tableName);
+  end if;
+end
+```
+
+```
+CREATE DEFINER=`book`@`%` FUNCTION `crrval`(
+	`i_BookID` int,
+	`i_tableName` varchar(32)
+)
+RETURNS int(11)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+begin
+    declare v_maxID integer;
+    set v_maxID = 0;
+    select MaxID into v_maxID from TableMaxID  where BookID  = i_BookID  and TableName = i_tableName;
+    return v_maxID;
+end
+```
+
+
+
 
 
 

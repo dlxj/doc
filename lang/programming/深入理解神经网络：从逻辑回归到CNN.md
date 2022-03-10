@@ -5335,17 +5335,13 @@ one hot 独热，是最原始的用来表示字、词的方式（每一个词分
 
 
 
-### 训练数据需要准备两份
-
-
-
-训练数据在准备的时候需要准备两份，**第一份是词表以及词频**等数据，**另一个就是每个sentence**，这样才能找到每个词的上下文。然后根据不同的模型决定如何**设计feature和target**
-
 
 
 ### pytorch 实现cbow
 
 - https://github.com/FraLotito/pytorch-continuous-bag-of-words
+- https://blog.csdn.net/weixin_43646592/article/details/119180298
+  - 基于Pytorch的torch.nn.embedding()实现词嵌入层
 
 
 
@@ -5460,7 +5456,19 @@ one hot型的矩阵运算简化为了查表操作
 
 ## Deep leaning with Rust 
 
+- https://github.com/arrayfire/arrayfire-rust
 
+  - https://github.com/arrayfire/arrayfire
+
+    - 通用GPU CPU 并行运算库
+
+    - arrayfire底层就是cuda搭建，matmul()速度简直上天
+
+    - https://zhuanlan.zhihu.com/p/435908830
+
+      - 深入浅出GPU优化系列：GEMM优化（一）
+
+      
 
 - https://able.bio/haixuanTao/deep-learning-in-rust-with-gpu--26c53a7f
 
