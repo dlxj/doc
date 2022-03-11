@@ -16,6 +16,10 @@ Things Happen for A Reason
 
 ### NLLloss 损失函数
 
+> **NLLLoss**的全称是Negative Log Likelihood Loss,中文名称是最大似然或者log似然代价函数
+>
+> 似然函数就是我们有一堆观察所得得结果，然后我们用这堆观察结果对模型的参数进行估计
+
 > doc\lang\programming\pytorch\异或\OR_torch_version0.py
 >
 > criterion = nn.MSELoss() #nn.NLLLoss()  # https://zhuanlan.zhihu.com/p/264366034
