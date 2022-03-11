@@ -4605,6 +4605,13 @@ server{
 
 
 
+# NAS
+
+- https://post.smzdm.com/p/aoxq39q9/
+  - 群晖升级7.0后USB外置2.5G网卡如何正常使用
+
+
+
 
 
 # node ffi
