@@ -5354,6 +5354,10 @@ one hot 独热，是最原始的用来表示字、词的方式（每一个词分
 ### pytorch 实现cbow
 
 - https://github.com/FraLotito/pytorch-continuous-bag-of-words
+  - https://nathanrooy.github.io/posts/2018-03-22/word2vec-from-scratch-with-python-and-numpy/
+    - numpy 实现
+  - https://jaketae.github.io/study/word2vec/
+    - numpy 实现2
 - https://blog.csdn.net/weixin_43646592/article/details/119180298
   - 基于Pytorch的torch.nn.embedding()实现词嵌入层
 
