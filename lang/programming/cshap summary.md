@@ -4688,6 +4688,15 @@ async Task ReadError(ProcessStreamReader reader, CancellationToken token) {
 
 
 
+### cs-script
+
+- https://github.com/oleg-shilo/cs-script
+  - C# 脚本语言
+
+
+
+
+
 # 进程、异步、流
 
 
