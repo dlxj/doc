@@ -4,7 +4,7 @@ let path = require('path')
 
 module.exports = {
 
-    allfiles : function(dir, ext, filter=null) {
+    allfiles : function(dir, ext, filters=[]) {
 
         let paths = []
 
@@ -13,9 +13,22 @@ module.exports = {
         rd.eachFileFilterSync(dir, reg, function (fullpath, stats) {
 
             let basename = path.basename(fullpath)
-            if (filter != null && fullpath.indexOf(filter) != -1) {
-                paths.push(fullpath)
-            } else if (filter == null ) {
+            if (filters.length > 0) {
+
+                let allfitQ = true
+                for (let filter of filters) {
+                    if ( fullpath.indexOf(filter) == -1 ) {
+                        allfitQ = false
+                        break
+                    }
+                    
+                }
+
+                if (allfitQ) {
+                    paths.push(fullpath)
+                }
+
+            } else {
                 paths.push(fullpath)
             }
             
