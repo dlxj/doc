@@ -46,18 +46,24 @@ def ModifiedWay(rotateImage, angle):
 # Driver Code
 # Loading an Image from Disk
 Image = cv2.imread("rotate_src.jpg", 1)
+imgHeight, imgWidth = Image.shape[0], Image.shape[1]
   
   
 # Performing 40 degree rotation
 ModifiedVersionRotation = ModifiedWay(Image, 40)
-  
+
+stretch_near = cv2.resize(ModifiedVersionRotation, (imgHeight, imgWidth),
+               interpolation = cv2.INTER_NEAREST)
+
 # Display image on Screen
-cv2.imshow("Original Image", Image)
+cv2.imshow("origin", Image)
   
 # Display rotated image on Screen
-cv2.imshow("Modified Version Rotation", ModifiedVersionRotation)
+cv2.imshow("rotated", ModifiedVersionRotation)
   
-  
+cv2.imshow("rotate and resize", stretch_near)
+
+
 # To hold the GUI screen and control until it is detected
 # the input for closing it, Once it is closed
 # control will be released
