@@ -25,7 +25,17 @@ vocab_size = len(vocab)     # 词个数
 word_to_ix = {word:ix for ix, word in enumerate(vocab)}  # 词 到 数 的字典
 ix_to_word = {ix:word for ix, word in enumerate(vocab)}  # 数 到 词 的字典
 
-onehots = np.identity(EMDEDDING_DIM)[:vocab_size]  # 49 个词对应的 onehot，每个词100 维
+# 49 个词对应的 onehot
+#onehots = np.identity(EMDEDDING_DIM)[:vocab_size] # 每个词100 维 # shape:(49, 100)
+onehots = np.identity(vocab_size) # 每个词49 维, 因为每个词都单独分配一个维度给它, 
+    # 一个onhot 就是一个基向量, 而且全部是正交基向量 # shape:(49, 49)
+
+
+"""
+
+(1 * 100)  (100 * )
+
+"""
 
 # 构建训练数据，由上下文(context, 前后各两个词) 和目标词(target, 机器需要根据上下文猜的词) 组成
 data = []
