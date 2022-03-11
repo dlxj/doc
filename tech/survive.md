@@ -38,9 +38,22 @@ https://pe.metaquant.org/
 
 
 
+# 日语
+
+> 　[日語誤用辭典](https://search.books.com.tw/redirect/move/key/市川保子/area/mid/item/CN11244764/page/1/idx/4/cat/CN1/pdf/0/spell/3)
+>
+> 　[史上最強日本語類義表現](https://www.books.com.tw/products/0010908188?sloc=main)
+>
+> 　- https://www.books.com.tw/
+> 　  - siluplsy 
+
+
+
 # 俄语
 
 - http://www.simplecd.cc/page-ZbZPxeYm.html
+- https://www.wanmen.org/courses/586d23485f07127674135d2a/lectures/586d23535f07127674158989
+  - 俄语初级（上）_吴石磊
 
 
 
