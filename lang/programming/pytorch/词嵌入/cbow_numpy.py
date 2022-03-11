@@ -25,6 +25,8 @@ vocab_size = len(vocab)     # 词个数
 word_to_ix = {word:ix for ix, word in enumerate(vocab)}  # 词 到 数 的字典
 ix_to_word = {ix:word for ix, word in enumerate(vocab)}  # 数 到 词 的字典
 
+onehots = np.identity(EMDEDDING_DIM)[:vocab_size]  # 49 个词对应的 onehot，每个词100 维
+
 # 构建训练数据，由上下文(context, 前后各两个词) 和目标词(target, 机器需要根据上下文猜的词) 组成
 data = []
 for i in range(2, len(raw_text) - 2):
@@ -38,6 +40,9 @@ def make_context_vector(context, word_to_ix):       # context: [ 前词2, 前词
     idxs = [word_to_ix[w] for w in context]         # idxs: [ 前词数2, 前词数1, 后词数1, 后词数2 ]
     return np.array( idxs, np.float)                # 返回由idxs 构造的 torch 张量，各分量类型为长整型long
 
+"""
+()
+"""
 
 class CBOW():
     def __init__(self, vocab_size, embedding_dim):

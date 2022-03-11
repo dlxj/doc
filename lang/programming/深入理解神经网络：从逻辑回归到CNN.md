@@ -5471,12 +5471,23 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+
+
+
+
 ## 语音识别系统
 
 
 
 - https://github.com/nl8590687/ASRT_SpeechRecognition
   - 中文语音识别系统
+
+
+
+## Deep leaning with js
+
+- https://www.npmjs.com/package/onnxruntime-web
+  - 浏览器里的 deep learning
 
 
 
