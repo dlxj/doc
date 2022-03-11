@@ -38,6 +38,12 @@ https://pe.metaquant.org/
 
 
 
+# 俄语
+
+- http://www.simplecd.cc/page-ZbZPxeYm.html
+
+
+
 # mac mdx 词典
 
 
