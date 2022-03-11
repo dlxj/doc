@@ -14,6 +14,16 @@ Things Happen for A Reason
 
 
 
+### NLLloss 损失函数
+
+> doc\lang\programming\pytorch\异或\OR_torch_version0.py
+>
+> criterion = nn.MSELoss() #nn.NLLLoss()  # https://zhuanlan.zhihu.com/p/264366034
+>
+>  \# NLLloss 和交叉熵一样只适用于分类任务， NLLLoss是基于softmax，softmax得到结果向量的概率分布，是离散值。回归任务建议MSE或MAE等损失函数
+>
+>  \# 否则提示多个target报错
+
 
 
 **向量的分量 = 高维空间的点（向量），在低维空间中的投影（分量，坐标轴上的坐标）**
@@ -5343,7 +5353,15 @@ one hot 独热，是最原始的用来表示字、词的方式（每一个词分
 - https://blog.csdn.net/weixin_43646592/article/details/119180298
   - 基于Pytorch的torch.nn.embedding()实现词嵌入层
 
+#### NLLloss 损失函数
 
+> doc\lang\programming\pytorch\异或\OR_torch_version0.py
+>
+> criterion = nn.MSELoss() #nn.NLLLoss()  # https://zhuanlan.zhihu.com/p/264366034
+>
+>  \# NLLloss 和交叉熵一样只适用于分类任务， NLLLoss是基于softmax，softmax得到结果向量的概率分布，是离散值。回归任务建议MSE或MAE等损失函数
+>
+>  \# 否则提示多个target报错
 
 
 
