@@ -26,14 +26,14 @@ word_to_ix = {word:ix for ix, word in enumerate(vocab)}  # 词 到 数 的字典
 ix_to_word = {ix:word for ix, word in enumerate(vocab)}  # 数 到 词 的字典
 
 # 49 个词对应的 onehot
-#onehots = np.identity(EMDEDDING_DIM)[:vocab_size] # 每个词100 维 # shape:(49, 100)
-onehots = np.identity(vocab_size) # 每个词49 维, 因为每个词都单独分配一个维度给它, 
-    # 一个onhot 就是一个基向量, 而且彼此正交 # shape:(49, 49)
+onehots = np.identity(vocab_size) # shape:(49, 49) , 每个词49 维；因为每个词都单独分配一个维度给它, 
+    # 一个onhot 就是一个基向量, 而且彼此正交
 
 
 """
 
-(49 * 49)  (49 * 100) -> (49 * 100)
+(1 * 49)  (49 * 100) -> (1 * 100)
+  独热       嵌入层       嵌入向量
 
 """
 
