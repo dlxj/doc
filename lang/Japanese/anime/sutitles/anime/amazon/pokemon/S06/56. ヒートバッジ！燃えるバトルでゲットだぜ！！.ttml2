@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s3"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s4"></style> 
+   <style tts:ruby="container" xml:id="s5"></style> 
+   <style tts:ruby="base" xml:id="s6"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s7"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:01.335" end="00:00:08.342" region="縦右">♪～</p> 
+   <p begin="00:01:21.916" end="00:01:28.923" region="縦右">～♪</p> 
+   <p begin="00:01:30.758" end="00:01:31.926" style="s1"><span style="s2">（サトシ）あれが フエンタウンだ</span></p> 
+   <p begin="00:01:32.009" end="00:01:33.010" style="s1"><span style="s2">（ピカチュウ）ピーカチュウ</span></p> 
+   <p begin="00:01:33.469" end="00:01:35.554" style="s1"><span style="s2">（ナレーション）<br /><span style="s3">ホウエンリーグ４番目のジムがある—</span></span></p> 
+   <p begin="00:01:35.638" end="00:01:38.015" style="s4"><span style="s2">フエンタウンに到着した<br />サトシたちは—</span></p> 
+   <p begin="00:01:38.098" end="00:01:40.976" style="s4"><span style="s2">なったばかりの新米ジムリーダー<br />アスナと—</span></p> 
+   <p begin="00:01:41.060" end="00:01:43.229" style="s4"><span style="s2">その祖父 ムラ<span style="s5"><span style="s6">爺</span><span style="s7">じい</span></span>に出会った</span></p> 
+   <p begin="00:01:44.355" end="00:01:47.107" style="s1"><span style="s2">（ナレーション）<span style="s3">途中</span><br /><span style="s3">ロケット団(だん)の襲撃を受けたものの—</span></span></p> 
+   <p begin="00:01:47.191" end="00:01:49.276" style="s4"><span style="s2">みんなの協力により これを撃退</span></p> 
+   <p begin="00:01:51.612" end="00:01:54.615" style="s1"><span style="s2">（ナレーション）<br /><span style="s3">見事 奪われたコータスを</span><br /><span style="s3">取り戻した</span></span></p> 
+   <p begin="00:01:56.534" end="00:01:58.369" style="s1"><span style="s2">よし！ ピカチュウ 10まんボルトだ！</span></p> 
+   <p begin="00:01:58.452" end="00:02:00.329" style="s1"><span style="s2">ピーカ チュウウウ！</span></p> 
+   <p begin="00:02:00.412" end="00:02:02.581" style="s1"><span style="s2">（ロケット団の悲鳴）</span></p> 
+   <p begin="00:02:02.665" end="00:02:04.041" style="s1"><span style="s2">（爆発音）</span></p> 
+   <p begin="00:02:04.291" end="00:02:07.670" style="s1"><span style="s2">（ナレーション）<span style="s3">そして 壊れていた</span><br /><span style="s3">バトルフィールドの整備も終わり—</span></span></p> 
+   <p begin="00:02:07.753" end="00:02:12.424" style="s4"><span style="s2">ついに ４つ目のバッジをかけた<br />ジム戦のときを迎えたのである</span></p> 
+   <p begin="00:02:21.809" end="00:02:24.687" style="s1"><span style="s2">（サトシ）よーし！<br />ヒートバッジ 必ずゲットするぞ</span></p> 
+   <p begin="00:02:24.770" end="00:02:25.855" style="s1"><span style="s2">（ピカチュウ）ピカピカ</span></p> 
+   <p begin="00:02:26.188" end="00:02:28.899" style="s1"><span style="s2">（タケシ）サトシ<br />もう作戦は立ててあるのか？</span></p> 
+   <p begin="00:02:28.983" end="00:02:30.526" style="s1"><span style="s2">ああ バッチリさ</span></p> 
+   <p begin="00:02:30.609" end="00:02:32.361" style="s1"><span style="s2">（ハルカ）ほんとに大丈夫なの？</span></p> 
+   <p begin="00:02:32.444" end="00:02:33.696" style="s1"><span style="s2">（マサト）<br />アスナさんのポケモンは—</span></p> 
+   <p begin="00:02:33.779" end="00:02:36.574" style="s1"><span style="s2">すべて ほのおタイプだって<br />分かってるからね</span></p> 
+   <p begin="00:02:36.657" end="00:02:37.867" style="s1"><span style="s2">そういうこと</span></p> 
+   <p begin="00:02:38.117" end="00:02:40.619" style="s1"><span style="s2">ピカチュウが西向きゃ 尾は東</span></p> 
+   <p begin="00:02:40.703" end="00:02:42.621" style="s1"><span style="s2">ほのおタイプには みずタイプだぜ！</span></p> 
+   <p begin="00:02:43.664" end="00:02:44.665" style="s1"><span style="s2">（ヘイガニ）ヘイ！</span></p> 
+   <p begin="00:02:45.291" end="00:02:47.042" style="s1"><span style="s2">ヘイガニで勝負だぜ</span></p> 
+   <p begin="00:02:47.126" end="00:02:48.168" style="s1"><span style="s2">（ヘイガニ）ヘイヘ～イ</span></p> 
+   <p begin="00:02:52.464" end="00:02:55.301" style="s1"><span style="s2">（ムラ爺）これより<br />ジムリーダー１年生のアスナと—</span></p> 
+   <p begin="00:02:55.384" end="00:02:57.928" style="s1"><span style="s2">マサラタウンのサトシによる<br />ジム戦を始める</span></p> 
+   <p begin="00:02:58.012" end="00:03:00.681" style="s1"><span style="s2">（アスナ）じっちゃん<br />“１年生”は余計でしょ！</span></p> 
+   <p begin="00:03:00.931" end="00:03:03.559" style="s1"><span style="s2">コラ アスナ！ わしは審判じゃぞ</span></p> 
+   <p begin="00:03:03.642" end="00:03:04.852" style="s1"><span style="s2">“じっちゃん”は やめなさい</span></p> 
+   <p begin="00:03:04.935" end="00:03:06.395" style="s1"><span style="s2">（アスナ）あっ そうでした</span></p> 
+   <p begin="00:03:06.896" end="00:03:08.689" style="s1"><span style="s2">使用ポケモンは ３体</span></p> 
+   <p begin="00:03:08.772" end="00:03:11.525" style="s1"><span style="s2">ポケモン交代は<br />チャレンジャーのみ認められる</span></p> 
+   <p begin="00:03:11.609" end="00:03:13.193" style="s1"><span style="s2">ええっ そうなの？</span></p> 
+   <p begin="00:03:13.277" end="00:03:14.945" style="s1"><span style="s2">（ムラ爺）昨日 教えたじゃろう</span></p> 
+   <p begin="00:03:15.029" end="00:03:17.448" style="s1"><span style="s2">ああっ そうだったわね<br />アハッ ハハ…</span></p> 
+   <p begin="00:03:17.907" end="00:03:19.909" style="s1"><span style="s2">サトシ君も分かってるわよね？</span></p> 
+   <p begin="00:03:19.992" end="00:03:23.913" style="s1"><span style="s2">はい　アスナさん<br />お互いに いいバトルをしましょう</span></p> 
+   <p begin="00:03:23.996" end="00:03:25.331" style="s1"><span style="s2">えっ？ ええ…</span></p> 
+   <p begin="00:03:25.664" end="00:03:27.583" style="s1"><span style="s2">サトシ 自信満々かも</span></p> 
+   <p begin="00:03:27.666" end="00:03:29.710" style="s1"><span style="s2">きっと いい作戦があるんだろう</span></p> 
+   <p begin="00:03:29.793" end="00:03:30.794" style="s1"><span style="s2">そうだね</span></p> 
+   <p begin="00:03:31.378" end="00:03:34.256" style="s1"><span style="s2">（サトシの声）<span style="s3">アスナさんは</span><br /><span style="s3">やっぱり ジム戦 初めてなんだ</span></span></p> 
+   <p begin="00:03:34.548" end="00:03:36.300" style="s1"><span style="s2">（サトシの声）<span style="s3">今回は 楽勝かもな</span></span></p> 
+   <p begin="00:03:36.592" end="00:03:38.802" style="s1"><span style="s2">（ムラ爺）両者 準備はいいか？<br />（アスナ・サトシ）はい</span></p> 
+   <p begin="00:03:38.886" end="00:03:39.678" style="s1"><span style="s2">始め！</span></p> 
+   <p begin="00:03:39.929" end="00:03:41.680" style="s1"><span style="s2">マグ 出番よ！</span></p> 
+   <p begin="00:03:43.182" end="00:03:44.183" style="s1"><span style="s2">（マグカルゴ）マグ！</span></p> 
+   <p begin="00:03:44.600" end="00:03:47.645" style="s1"><span style="s2">まずは マグカルゴか<br />それなら こっちは！</span></p> 
+   <p begin="00:03:47.728" end="00:03:49.688" style="s1"><span style="s2">ヘイガニ キミに決めた！</span></p> 
+   <p begin="00:03:51.065" end="00:03:52.066" style="s1"><span style="s2">ヘイヘ～イ！</span></p> 
+   <p begin="00:03:52.483" end="00:03:54.693" style="s1"><span style="s2">サトシの一番手は ヘイガニね</span></p> 
+   <p begin="00:03:54.777" end="00:03:56.820" style="s1"><span style="s2">（タケシ）ああ<br />（マサト）まあ 当然だよね</span></p> 
+   <p begin="00:03:57.363" end="00:03:59.281" style="s1"><span style="s2">（アスナ）先攻は<br />そちらから どうぞ！</span></p> 
+   <p begin="00:03:59.365" end="00:04:00.783" style="s1"><span style="s2">（サトシ）それじゃ いきますよ！</span></p> 
+   <p begin="00:04:00.991" end="00:04:02.910" style="s1"><span style="s2">（ムサシ）ジャリボーイたち 発見</span></p> 
+   <p begin="00:04:03.160" end="00:04:05.496" style="s1"><span style="s2">（コジロウ）んじゃ<br />ピカチュウ ゲットといきますか</span></p> 
+   <p begin="00:04:05.579" end="00:04:07.039" style="s1"><span style="s2">（ニャース）いい作戦があるニャ</span></p> 
+   <p begin="00:04:07.748" end="00:04:11.043" style="s1"><span style="s2">（ニャース）まずは ジムの下まで<br />穴を掘っていって—</span></p> 
+   <p begin="00:04:14.588" end="00:04:17.549" style="s1"><span style="s2">ニャンだかんだで<br />ピカチュウとマグカルゴをゲット</span></p> 
+   <p begin="00:04:18.258" end="00:04:21.512" style="s1"><span style="s2">（ニャース）あとは<br />その穴を使って バイニャラ～</span></p> 
+   <p begin="00:04:22.513" end="00:04:24.723" style="s1"><span style="s2">（ムサシ）完璧な作戦ね<br />（コジロウ）完璧 完璧！</span></p> 
+   <p begin="00:04:24.807" end="00:04:26.058" style="s1"><span style="s2">（ソーナンス）ソ～ナンス！</span></p> 
+   <p begin="00:04:26.350" end="00:04:28.769" style="s1"><span style="s2">んじゃ 早速 穴掘り開始ニャ！</span></p> 
+   <p begin="00:04:28.852" end="00:04:31.188" style="s1"><span style="s2">あれ？ デジャブってやつかな？</span></p> 
+   <p begin="00:04:31.271" end="00:04:33.399" style="s1"><span style="s2">この作戦 前にもやったような…</span></p> 
+   <p begin="00:04:33.482" end="00:04:36.026" style="s1"><span style="s2">（ニャース・ムサシ）<br />気にしな～い 気にしな～いっと</span></p> 
+   <p begin="00:04:36.568" end="00:04:38.445" style="s1"><span style="s2">ヘイガニ バブルこうせんだ！</span></p> 
+   <p begin="00:04:38.529" end="00:04:39.571" style="s1"><span style="s2">（ヘイガニ）ヘイガ～！</span></p> 
+   <p begin="00:04:39.822" end="00:04:41.240" style="s1"><span style="s2">マグ かわして！</span></p> 
+   <p begin="00:04:41.323" end="00:04:42.616" style="s1"><span style="s2">（マグカルゴ）マ～グ！</span></p> 
+   <p begin="00:04:42.825" end="00:04:43.826" style="s1"><span style="s2">当たった</span></p> 
+   <p begin="00:04:43.909" end="00:04:45.160" style="s1"><span style="s2">効果は抜群だ</span></p> 
+   <p begin="00:04:45.577" end="00:04:47.955" style="s1"><span style="s2">負けないで マグ！<br />かえんほうしゃよ！</span></p> 
+   <p begin="00:04:48.163" end="00:04:49.164" style="s1"><span style="s2">（マグカルゴ）マグ！</span></p> 
+   <p begin="00:04:49.456" end="00:04:51.166" style="s1"><span style="s2">ヘイガニ かたくなるだ！</span></p> 
+   <p begin="00:04:51.250" end="00:04:52.543" style="s1"><span style="s2">（ヘイガニ）ヘイヘイヘイ！</span></p> 
+   <p begin="00:04:52.960" end="00:04:54.545" style="s1"><span style="s2">（ヘイガニ）ヘイ ヘヘ～イ</span></p> 
+   <p begin="00:04:54.753" end="00:04:57.047" style="s1"><span style="s2">いいぞ ヘイガニ！<br />全然へっちゃらだぜ</span></p> 
+   <p begin="00:04:57.548" end="00:05:01.427" style="s1"><span style="s2">相性がいいうえに かたくなるで<br />さらに防御力を上げたんだ</span></p> 
+   <p begin="00:05:01.510" end="00:05:03.178" style="s1"><span style="s2">なかなか いい作戦かも</span></p> 
+   <p begin="00:05:03.679" end="00:05:05.681" style="s1"><span style="s2">（ヘイガニ）ヘイヘ ヘイヘ ヘ～イ</span></p> 
+   <p begin="00:05:06.056" end="00:05:07.641" style="s1"><span style="s2">気をつけろ サトシ！</span></p> 
+   <p begin="00:05:07.725" end="00:05:10.310" style="s1"><span style="s2">ダメージは少なくても<br />たまっていくんだぞ</span></p> 
+   <p begin="00:05:10.394" end="00:05:11.437" style="s1"><span style="s2">平気 平気！</span></p> 
+   <p begin="00:05:11.979" end="00:05:15.441" style="s1"><span style="s2">余裕かましてくれちゃって！<br />今に見てなさい！</span></p> 
+   <p begin="00:05:15.858" end="00:05:17.568" style="s1"><span style="s2">ヘイガニ バブルこうせん！</span></p> 
+   <p begin="00:05:17.651" end="00:05:20.112" style="s1"><span style="s2">（ヘイガニ）<br />ヘイヘイ ヘ～イ！ ガ～！</span></p> 
+   <p begin="00:05:20.195" end="00:05:21.739" style="s1"><span style="s2">マグ かげぶんしん！</span></p> 
+   <p begin="00:05:21.822" end="00:05:23.574" style="s1"><span style="s2">（マグカルゴ）マグ～！</span></p> 
+   <p begin="00:05:25.701" end="00:05:26.952" style="s1"><span style="s2">（サトシ）ああっ！<br />（ヘイガニ）ヘイ？</span></p> 
+   <p begin="00:05:27.036" end="00:05:30.956" style="s1"><span style="s2">ウフフ… 影に いくら当てたって<br />ダメージはないわよ</span></p> 
+   <p begin="00:05:31.248" end="00:05:34.168" style="s1"><span style="s2">ヘイガニ<br />端から順番に狙い撃つんだ！</span></p> 
+   <p begin="00:05:34.251" end="00:05:36.420" style="s1"><span style="s2">（ヘイガニ）ヘイ ヘ～イ！</span></p> 
+   <p begin="00:05:36.503" end="00:05:38.088" style="s1"><span style="s2">（ヘイガニ）ガ～！</span></p> 
+   <p begin="00:05:39.214" end="00:05:41.258" style="s1"><span style="s2">（マグカルゴ）マグ～！<br />（アスナ）あっ マグ！</span></p> 
+   <p begin="00:05:41.341" end="00:05:42.342" style="s1"><span style="s2">いいぞ ヘイガニ！</span></p> 
+   <p begin="00:05:42.426" end="00:05:43.927" style="s1"><span style="s2">（マサト）すごいぞ！ いいぞ～！<br />（ピカチュウ）ピカピカー！</span></p> 
+   <p begin="00:05:44.261" end="00:05:45.888" style="s1"><span style="s2">ああっ どうしよう…</span></p> 
+   <p begin="00:05:46.305" end="00:05:48.390" style="s1"><span style="s2">（アスナ）<br />マグ しっかりして！ マグ！</span></p> 
+   <p begin="00:05:48.891" end="00:05:50.893" style="s1"><span style="s2">（ムラ爺の声）<span style="s3">落ち着くんじゃ アスナ</span></span></p> 
+   <p begin="00:05:51.310" end="00:05:53.062" style="s1"><span style="s2">（アスナ）あっ…<br />（ムラ爺）ん…</span></p> 
+   <p begin="00:05:53.437" end="00:05:55.856" style="s1"><span style="s2">（アスナの声）<span style="s3">そうだ！</span><br /><span style="s3">そういえば 昨日 じっちゃんに…</span></span></p> 
+   <p begin="00:05:56.523" end="00:05:59.193" style="s1"><span style="s2">（ムラ爺）<br />よいか ジムリーダーたる者—</span></p> 
+   <p begin="00:05:59.276" end="00:06:02.905" style="s1"><span style="s2">いつ<span style="s5"><span style="s6">何時</span><span style="s7">なんどき</span></span>でも<br />冷静沈着であらねばならん</span></p> 
+   <p begin="00:06:03.447" end="00:06:07.326" style="s1"><span style="s2">慌ててしまえば<br />的確な判断力を失ってしまうぞ</span></p> 
+   <p begin="00:06:07.409" end="00:06:08.410" style="s1"><span style="s2">ん？</span></p> 
+   <p begin="00:06:08.494" end="00:06:10.370" style="s1"><span style="s2">（アスナの寝息）</span></p> 
+   <p begin="00:06:11.622" end="00:06:13.123" style="s1"><span style="s2">コラ！ アスナ！</span></p> 
+   <p begin="00:06:13.207" end="00:06:15.459" style="s1"><span style="s2">はっ はい～！</span></p> 
+   <p begin="00:06:17.086" end="00:06:20.089" style="s1"><span style="s2">（アスナの声）<span style="s3">そうよ</span><br /><span style="s3">ここは 落ち着かなきゃ</span></span></p> 
+   <p begin="00:06:20.506" end="00:06:21.632" style="s1"><span style="s2">（アスナの声）<span style="s3">落ち着かなきゃ</span></span></p> 
+   <p begin="00:06:21.924" end="00:06:24.343" style="s1"><span style="s2">ヘイガニ 挟む攻撃で とどめだ！</span></p> 
+   <p begin="00:06:24.426" end="00:06:25.427" style="s1"><span style="s2">（ヘイガニ）ヘイヘ～イ！</span></p> 
+   <p begin="00:06:25.886" end="00:06:27.679" style="s1"><span style="s2">（マグカルゴ）マ～グ…<br />（アスナ）リフレクター！</span></p> 
+   <p begin="00:06:29.890" end="00:06:30.974" style="s1"><span style="s2">（ヘイガニ）ヘイッ！</span></p> 
+   <p begin="00:06:31.809" end="00:06:34.978" style="s1"><span style="s2">なに！ あのマグカルゴ<br />リフレクターを使えるのか</span></p> 
+   <p begin="00:06:35.187" end="00:06:36.396" style="s1"><span style="s2">リフレクター？</span></p> 
+   <p begin="00:06:36.480" end="00:06:39.274" style="s1"><span style="s2">挟む攻撃の威力を半減させちゃうんだ</span></p> 
+   <p begin="00:06:39.358" end="00:06:41.985" style="s1"><span style="s2">これで もう力押しは通用しないぞ</span></p> 
+   <p begin="00:06:42.528" end="00:06:45.114" style="s1"><span style="s2">さあ 本当の勝負は これからよ</span></p> 
+   <p begin="00:06:45.405" end="00:06:47.282" style="s1"><span style="s2">マグ すなあらし！</span></p> 
+   <p begin="00:06:47.366" end="00:06:48.367" style="s1"><span style="s2">（マグカルゴ）マグ！</span></p> 
+   <p begin="00:06:51.120" end="00:06:52.496" style="s1"><span style="s2">（ヘイガニ）ヘイガ…</span></p> 
+   <p begin="00:06:52.746" end="00:06:53.997" style="s1"><span style="s2">ああっ ヘイガニ！</span></p> 
+   <p begin="00:06:54.498" end="00:06:56.542" style="s1"><span style="s2">（ヘイガニ）ヘイ ヘ～イガ</span></p> 
+   <p begin="00:06:56.625" end="00:06:58.752" style="s1"><span style="s2">（荒い息）</span></p> 
+   <p begin="00:06:58.836" end="00:07:01.547" style="s1"><span style="s2">いいぞ ヘイガニ！<br />バブルこうせんだ！</span></p> 
+   <p begin="00:07:01.630" end="00:07:03.048" style="s1"><span style="s2">（ヘイガニ）ヘ～イガ～！</span></p> 
+   <p begin="00:07:03.382" end="00:07:04.842" style="s1"><span style="s2">マグ すなあらしよ！</span></p> 
+   <p begin="00:07:05.467" end="00:07:06.468" style="s1"><span style="s2">（マグカルゴ）マグ～！</span></p> 
+   <p begin="00:07:07.177" end="00:07:09.805" style="s1"><span style="s2">（ヘイガニ）ヘ～イ ヘ… ヘ～イ</span></p> 
+   <p begin="00:07:09.888" end="00:07:11.223" style="s1"><span style="s2">（ヘイガニ）ヘイガ…</span></p> 
+   <p begin="00:07:11.765" end="00:07:13.851" style="s1"><span style="s2">これで バブルこうせんも通じないわ</span></p> 
+   <p begin="00:07:14.268" end="00:07:16.019" style="s1"><span style="s2">くっ… それなら！</span></p> 
+   <p begin="00:07:16.103" end="00:07:18.897" style="s1"><span style="s2">ヘイガニ すなあらしに向かって<br />クラブハンマー！</span></p> 
+   <p begin="00:07:18.981" end="00:07:19.982" style="s1"><span style="s2">（ヘイガニ）ヘイ！</span></p> 
+   <p begin="00:07:20.065" end="00:07:21.191" style="s1"><span style="s2">（ヘイガニ）ヘ～イ！</span></p> 
+   <p begin="00:07:21.525" end="00:07:23.819" style="s1"><span style="s2">（ヘイガニ）ヘイヘイ ヘイヘイ<br />ヘイヘイ ヘイヘイ！</span></p> 
+   <p begin="00:07:24.194" end="00:07:25.863" style="s1"><span style="s2">危ない マグ！ かわして！</span></p> 
+   <p begin="00:07:26.113" end="00:07:27.781" style="s1"><span style="s2">（ヘイガニ）ヘ～イ…</span></p> 
+   <p begin="00:07:27.865" end="00:07:28.866" style="s1"><span style="s2">（ヘイガニ）ガッ！</span></p> 
+   <p begin="00:07:28.949" end="00:07:30.200" style="s1"><span style="s2">（マグカルゴ）マグ…<br />（アスナ）マグ！</span></p> 
+   <p begin="00:07:31.160" end="00:07:32.452" style="s1"><span style="s2">（マグカルゴ）マグ～</span></p> 
+   <p begin="00:07:32.536" end="00:07:35.414" style="s1"><span style="s2">マグカルゴ 戦闘不能！<br />ヘイガニの勝ち！</span></p> 
+   <p begin="00:07:35.789" end="00:07:38.667" style="s1"><span style="s2">どうだ！<br />クラブハンマー真空切りだぜ</span></p> 
+   <p begin="00:07:38.750" end="00:07:40.002" style="s1"><span style="s2">ヘイヘ ヘ～イ！</span></p> 
+   <p begin="00:07:43.672" end="00:07:45.591" style="s1"><span style="s2">あたしの作戦が甘かったわ</span></p> 
+   <p begin="00:07:45.883" end="00:07:47.718" style="s1"><span style="s2">マグ ゆっくり休んでね</span></p> 
+   <p begin="00:07:48.093" end="00:07:50.220" style="s1"><span style="s2">真面目に コツコツやってれば</span></p> 
+   <p begin="00:07:50.304" end="00:07:52.264" style="s1"><span style="s2">いつか幸運 掘り当てて</span></p> 
+   <p begin="00:07:52.347" end="00:07:53.849" style="s1"><span style="s2">プワ～ッと出世して</span></p> 
+   <p begin="00:07:53.932" end="00:07:55.684" style="s1"><span style="s2">プワ～ッと うまい<span style="s5"><span style="s6">物</span><span style="s7">もん</span></span> 食って</span></p> 
+   <p begin="00:07:55.767" end="00:07:59.897" style="s1"><span style="s2">（ロケット団）<br />幹部昇進 支部長就任 いい感触…</span></p> 
+   <p begin="00:08:00.647" end="00:08:01.857" style="s1"><span style="s2">（ロケット団）うがが…</span></p> 
+   <p begin="00:08:01.940" end="00:08:04.443" style="s1"><span style="s2">（ロケット団）どわあああ！</span></p> 
+   <p begin="00:08:04.818" end="00:08:07.571" style="s1"><span style="s2">どうやら 不幸を掘り当てたみたいね</span></p> 
+   <p begin="00:08:07.654" end="00:08:09.698" style="s1"><span style="s2">掘り当てたのは 水道管ニャ～</span></p> 
+   <p begin="00:08:09.781" end="00:08:11.867" style="s1"><span style="s2">あっ またデジャブだ</span></p> 
+   <p begin="00:08:11.950" end="00:08:14.411" style="s1"><span style="s2">（ロケット団）ウッソだ～！</span></p> 
+   <p begin="00:08:16.747" end="00:08:18.457" style="s1"><span style="s2">メグ 出番よ！</span></p> 
+   <p begin="00:08:19.416" end="00:08:20.417" style="s1"><span style="s2">（マグマッグ）マグ！</span></p> 
+   <p begin="00:08:20.959" end="00:08:22.377" style="s1"><span style="s2">戻れ ヘイガニ！</span></p> 
+   <p begin="00:08:24.755" end="00:08:26.965" style="s1"><span style="s2">あれ？ ヘイガニを引っ込めちゃうの？</span></p> 
+   <p begin="00:08:27.049" end="00:08:29.092" style="s1"><span style="s2">バトルは まだまだ続くからな</span></p> 
+   <p begin="00:08:29.176" end="00:08:31.386" style="s1"><span style="s2">ヘイガニは 温存しとくってわけだね</span></p> 
+   <p begin="00:08:31.803" end="00:08:34.640" style="s1"><span style="s2">キモリ キミに決めた！</span></p> 
+   <p begin="00:08:35.224" end="00:08:37.184" style="s1"><span style="s2">（キモリ）キャモ！<br />（ハルカ）キモリ？</span></p> 
+   <p begin="00:08:37.267" end="00:08:39.436" style="s1"><span style="s2">ほのおタイプには 相性が悪いぞ</span></p> 
+   <p begin="00:08:39.728" end="00:08:42.064" style="s1"><span style="s2">そんなの<br />オレたちのコンビネーションで—</span></p> 
+   <p begin="00:08:42.147" end="00:08:43.357" style="s1"><span style="s2">ひっくり返してやるぜ</span></p> 
+   <p begin="00:08:43.440" end="00:08:44.441" style="s1"><span style="s2">（キモリ）キャモ！</span></p> 
+   <p begin="00:08:44.858" end="00:08:46.485" style="s1"><span style="s2">メグ かえんほうしゃよ！</span></p> 
+   <p begin="00:08:46.568" end="00:08:48.278" style="s1"><span style="s2">（マグマッグ）マ～グ～！</span></p> 
+   <p begin="00:08:48.737" end="00:08:49.988" style="s1"><span style="s2">かわすんだ キモリ！</span></p> 
+   <p begin="00:08:50.072" end="00:08:51.073" style="s1"><span style="s2">（キモリ）キャモ！</span></p> 
+   <p begin="00:08:51.657" end="00:08:54.368" style="s1"><span style="s2">当たらなきゃ<br />相性なんか関係ないんだ</span></p> 
+   <p begin="00:08:54.451" end="00:08:55.911" style="s1"><span style="s2">（サトシ）でんこうせっか！<br />（キモリ）キャモ！</span></p> 
+   <p begin="00:08:56.995" end="00:08:58.872" style="s1"><span style="s2">（キモリ）キャモ キャモ キャモ～！</span></p> 
+   <p begin="00:08:59.289" end="00:09:00.958" style="s1"><span style="s2">（キモリ）キャモ！ キャ…<br />（サトシ）あっ！</span></p> 
+   <p begin="00:09:01.166" end="00:09:03.085" style="s1"><span style="s2">ど… どうして リフレクターが？</span></p> 
+   <p begin="00:09:03.168" end="00:09:06.964" style="s1"><span style="s2">ポケモンを交代させても<br />リフレクターの効果は残るんだよ</span></p> 
+   <p begin="00:09:07.172" end="00:09:09.049" style="s1"><span style="s2">このまま一気にいくわよ！</span></p> 
+   <p begin="00:09:09.132" end="00:09:10.592" style="s1"><span style="s2">メグ かえんほうしゃ！</span></p> 
+   <p begin="00:09:10.676" end="00:09:12.386" style="s1"><span style="s2">（マグマッグ）マ～グ～！</span></p> 
+   <p begin="00:09:12.636" end="00:09:14.304" style="s1"><span style="s2">かわして はたく攻撃！</span></p> 
+   <p begin="00:09:14.388" end="00:09:15.889" style="s1"><span style="s2">（キモリ）キャモ～！</span></p> 
+   <p begin="00:09:15.973" end="00:09:17.057" style="s1"><span style="s2">（キモリ）キャーモ！</span></p> 
+   <p begin="00:09:19.851" end="00:09:22.896" style="s1"><span style="s2">くっ… あのリフレクター<br />いつまで残ってるんだ？</span></p> 
+   <p begin="00:09:23.438" end="00:09:25.816" style="s1"><span style="s2">あのキモリ かなりのスピードね</span></p> 
+   <p begin="00:09:25.899" end="00:09:27.442" style="s1"><span style="s2">メグ スモッグよ！</span></p> 
+   <p begin="00:09:27.526" end="00:09:28.819" style="s1"><span style="s2">（マグマッグ）マグ～！</span></p> 
+   <p begin="00:09:31.113" end="00:09:33.115" style="s1"><span style="s2">（サトシ）くっ…<br />（キモリ）キャモ…</span></p> 
+   <p begin="00:09:33.824" end="00:09:36.118" style="s1"><span style="s2">（ムラ爺の声）<span style="s3">うむ　いい展開じゃ</span></span></p> 
+   <p begin="00:09:36.410" end="00:09:39.329" style="s1"><span style="s2">これじゃ マグマッグが<br />どこにいるか分からないよ</span></p> 
+   <p begin="00:09:39.746" end="00:09:42.874" style="s1"><span style="s2">キモリ タネマシンガンで<br />端から攻撃しろ！</span></p> 
+   <p begin="00:09:42.958" end="00:09:47.796" style="s1"><span style="s2">（キモリ）キャ～ モモモモ！<br />モモモモ モモモモ！</span></p> 
+   <p begin="00:09:47.879" end="00:09:50.215" style="s1"><span style="s2">（サトシ）当たらない？<br />（アスナ）同じ手は食わないわよ！</span></p> 
+   <p begin="00:09:50.674" end="00:09:52.634" style="s1"><span style="s2">パターンを読まれちゃったかも</span></p> 
+   <p begin="00:09:52.718" end="00:09:53.719" style="s1"><span style="s2">ピーカ</span></p> 
+   <p begin="00:09:53.969" end="00:09:55.929" style="s1"><span style="s2">メグ のしかかりよ！</span></p> 
+   <p begin="00:09:56.221" end="00:09:57.222" style="s1"><span style="s2">（マグマッグ）マグ！</span></p> 
+   <p begin="00:09:57.306" end="00:09:58.432" style="s1"><span style="s2">（キモリ）キャモ？<br />（サトシ）なに！</span></p> 
+   <p begin="00:09:58.682" end="00:09:59.683" style="s1"><span style="s2">（マグマッグ）マグ～！</span></p> 
+   <p begin="00:10:00.267" end="00:10:01.560" style="s1"><span style="s2">（キモリ）キャモ～</span></p> 
+   <p begin="00:10:01.852" end="00:10:03.228" style="s1"><span style="s2">（ハルカ）ああっ！<br />（タケシ）直撃だ！</span></p> 
+   <p begin="00:10:06.356" end="00:10:08.483" style="s1"><span style="s2">これで キモリのスピードは封じたわ</span></p> 
+   <p begin="00:10:08.859" end="00:10:10.152" style="s1"><span style="s2">負けるもんか！</span></p> 
+   <p begin="00:10:10.235" end="00:10:12.696" style="s1"><span style="s2">（サトシ）キモリ タネマシンガンだ！<br />（キモリ）キャモ</span></p> 
+   <p begin="00:10:12.779" end="00:10:14.823" style="s1"><span style="s2">（キモリ）モモモモ！ モモモモ！<br />（アスナ）ああっ！</span></p> 
+   <p begin="00:10:15.115" end="00:10:16.575" style="s1"><span style="s2">（サトシ）今だ！<br />（キモリ）キャモ</span></p> 
+   <p begin="00:10:16.658" end="00:10:18.493" style="s1"><span style="s2">メグ かえんほうしゃ！</span></p> 
+   <p begin="00:10:18.577" end="00:10:19.995" style="s1"><span style="s2">（マグマッグ）マグ～！</span></p> 
+   <p begin="00:10:20.454" end="00:10:21.788" style="s1"><span style="s2">かわすんだ キモリ！</span></p> 
+   <p begin="00:10:21.872" end="00:10:23.457" style="s1"><span style="s2">（キモリ）キャモ～！</span></p> 
+   <p begin="00:10:23.540" end="00:10:24.708" style="s1"><span style="s2">（キモリ）キャ…<br />（サトシ）ああっ！</span></p> 
+   <p begin="00:10:25.000" end="00:10:27.878" style="s1"><span style="s2">なんとか直撃は避けたが<br />このままじゃマズいぞ</span></p> 
+   <p begin="00:10:28.211" end="00:10:29.546" style="s1"><span style="s2">いいわよ！ メグ</span></p> 
+   <p begin="00:10:29.629" end="00:10:30.630" style="s1"><span style="s2">マグ～</span></p> 
+   <p begin="00:10:31.089" end="00:10:33.842" style="s1"><span style="s2">（ムラ爺の声）<span style="s3">うむ</span><br /><span style="s3">見事な技の組み立てじゃ</span></span></p> 
+   <p begin="00:10:34.426" end="00:10:35.761" style="s1"><span style="s2">戻れ キモリ！</span></p> 
+   <p begin="00:10:38.138" end="00:10:39.848" style="s1"><span style="s2">ちょっと甘く見過ぎたか</span></p> 
+   <p begin="00:10:39.931" end="00:10:40.932" style="s1"><span style="s2">それなら！</span></p> 
+   <p begin="00:10:41.016" end="00:10:42.809" style="s1"><span style="s2">頼むぞ ヘイガニ！</span></p> 
+   <p begin="00:10:44.186" end="00:10:45.187" style="s1"><span style="s2">ヘイヘイヘ～イ！</span></p> 
+   <p begin="00:10:45.562" end="00:10:47.064" style="s1"><span style="s2">メグ スモッグよ！</span></p> 
+   <p begin="00:10:47.147" end="00:10:48.440" style="s1"><span style="s2">（マグマッグ）マグ～！</span></p> 
+   <p begin="00:10:49.066" end="00:10:50.108" style="s1"><span style="s2">（ヘイガニ）ヘイ！</span></p> 
+   <p begin="00:10:50.525" end="00:10:52.652" style="s1"><span style="s2">こっちだって 同じ手は食わないぜ！</span></p> 
+   <p begin="00:10:52.736" end="00:10:55.614" style="s1"><span style="s2">ヘイガニ クラブハンマーで<br />吹き飛ばすんだ！</span></p> 
+   <p begin="00:10:55.697" end="00:10:58.617" style="s1"><span style="s2">（ヘイガニ）<br />ヘイヘイ ヘイヘイ ヘイヘ～イ！</span></p> 
+   <p begin="00:11:01.787" end="00:11:02.788" style="s1"><span style="s2">（ヘイガニ）ガガッ</span></p> 
+   <p begin="00:11:02.996" end="00:11:05.374" style="s1"><span style="s2">（サトシ）今だ！ 挟む攻撃！<br />（ヘイガニ）ヘイガッ！</span></p> 
+   <p begin="00:11:05.707" end="00:11:06.625" style="s1"><span style="s2">メグ あくび！</span></p> 
+   <p begin="00:11:07.292" end="00:11:08.543" style="s1"><span style="s2">（マグマッグ）マグ～！</span></p> 
+   <p begin="00:11:08.627" end="00:11:10.253" style="s1"><span style="s2">（ヘイガニ）ヘ～イ！</span></p> 
+   <p begin="00:11:10.337" end="00:11:11.922" style="s1"><span style="s2">（ヘイガニ）ヘイ？ ヘイ…</span></p> 
+   <p begin="00:11:12.422" end="00:11:13.423" style="s1"><span style="s2">（ヘイガニ）ヘ？</span></p> 
+   <p begin="00:11:13.757" end="00:11:15.801" style="s1"><span style="s2">（ヘイガニ）ヘイ…<br />（ヘイガニの いびき）</span></p> 
+   <p begin="00:11:15.884" end="00:11:16.927" style="s1"><span style="s2">な… なに！</span></p> 
+   <p begin="00:11:17.260" end="00:11:18.804" style="s1"><span style="s2">ヘイガニが寝ちゃった？</span></p> 
+   <p begin="00:11:18.887" end="00:11:21.306" style="s1"><span style="s2">あくびは 相手を眠らせる技なんだ</span></p> 
+   <p begin="00:11:21.390" end="00:11:22.641" style="s1"><span style="s2">ピーカ</span></p> 
+   <p begin="00:11:22.933" end="00:11:26.311" style="s1"><span style="s2">どお？ これぞ みずタイプ封じの<br />とっておきの技よ</span></p> 
+   <p begin="00:11:26.728" end="00:11:30.315" style="s1"><span style="s2">（ムラ爺の声）<br /><span style="s3">さあ ヘイガニを封じられたサトシ君は</span><br /><span style="s3">どうするんじゃ？</span></span></p> 
+   <p begin="00:11:30.816" end="00:11:32.067" style="s1"><span style="s2">ヘイガニ 起きろ！</span></p> 
+   <p begin="00:11:32.150" end="00:11:34.569" style="s1"><span style="s2">（ヘイガニの いびき）<br />（サトシ）起きてくれ！</span></p> 
+   <p begin="00:11:34.653" end="00:11:37.531" style="s1"><span style="s2">メグ とどめの かえんほうしゃよ！</span></p> 
+   <p begin="00:11:37.614" end="00:11:39.032" style="s1"><span style="s2">（マグマッグ）マ～グ～！</span></p> 
+   <p begin="00:11:41.034" end="00:11:42.911" style="s1"><span style="s2">ぐっ… ヘイガニ！</span></p> 
+   <p begin="00:11:56.967" end="00:11:58.718" style="s1"><span style="s2">ヘイガニ 起きるんだ！</span></p> 
+   <p begin="00:11:58.802" end="00:12:00.846" style="s1"><span style="s2">（ヘイガニの寝息）<br />（サトシ）ぐっ…</span></p> 
+   <p begin="00:12:01.346" end="00:12:03.140" style="s1"><span style="s2">戻れ ヘイガニ！</span></p> 
+   <p begin="00:12:04.766" end="00:12:06.977" style="s1"><span style="s2">マズいぞ<br />キモリのダメージは大きいし…</span></p> 
+   <p begin="00:12:07.060" end="00:12:08.645" style="s1"><span style="s2">（ピカチュウ）ピカピ！<br />（サトシ）ん？</span></p> 
+   <p begin="00:12:08.937" end="00:12:10.439" style="s1"><span style="s2">いってくれるか？ ピカチュウ</span></p> 
+   <p begin="00:12:10.522" end="00:12:11.523" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:12:11.606" end="00:12:13.775" style="s1"><span style="s2">（サトシ）よーし 頼んだぞ！<br />（ピカチュウ）ピカッ！</span></p> 
+   <p begin="00:12:14.568" end="00:12:16.111" style="s1"><span style="s2">（アスナ）次は ピカチュウね</span></p> 
+   <p begin="00:12:16.194" end="00:12:17.863" style="s1"><span style="s2">（アスナ）メグ かえんほうしゃ！</span></p> 
+   <p begin="00:12:17.946" end="00:12:19.156" style="s1"><span style="s2">（マグマッグ）マ～グ～！</span></p> 
+   <p begin="00:12:19.698" end="00:12:21.575" style="s1"><span style="s2">ピカチュウ でんこうせっかだ！</span></p> 
+   <p begin="00:12:21.658" end="00:12:23.452" style="s1"><span style="s2">（ピカチュウ）ピカ！ ピ～</span></p> 
+   <p begin="00:12:23.535" end="00:12:24.536" style="s1"><span style="s2">（ピカチュウ）カッ！</span></p> 
+   <p begin="00:12:25.120" end="00:12:26.455" style="s1"><span style="s2">（ピカチュウ）ピカ～</span></p> 
+   <p begin="00:12:26.538" end="00:12:29.207" style="s1"><span style="s2">よーし！<br />リフレクターの効果は消えたぜ</span></p> 
+   <p begin="00:12:29.583" end="00:12:31.209" style="s1"><span style="s2">メグ スモッグよ！</span></p> 
+   <p begin="00:12:31.293" end="00:12:33.211" style="s1"><span style="s2">（マグマッグ）マ～グ～</span></p> 
+   <p begin="00:12:33.295" end="00:12:34.212" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:12:35.172" end="00:12:36.631" style="s1"><span style="s2">（ピカチュウ）ピーカ…</span></p> 
+   <p begin="00:12:37.007" end="00:12:39.718" style="s1"><span style="s2">（サトシ）ピカチュウ<br />マグマッグの気配を感じ取るんだ</span></p> 
+   <p begin="00:12:40.135" end="00:12:41.136" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:12:46.725" end="00:12:47.726" style="s1"><span style="s2">ピカッ！</span></p> 
+   <p begin="00:12:47.809" end="00:12:49.186" style="s1"><span style="s2">よし！ アイアンテールだ！</span></p> 
+   <p begin="00:12:49.853" end="00:12:51.354" style="s1"><span style="s2">チューウ！</span></p> 
+   <p begin="00:12:51.646" end="00:12:53.190" style="s1"><span style="s2">メグ かわして！</span></p> 
+   <p begin="00:12:53.273" end="00:12:55.400" style="s1"><span style="s2">（マグマッグ）マッグ<br />（ピカチュウ）ピーカ？</span></p> 
+   <p begin="00:12:55.734" end="00:12:56.735" style="s1"><span style="s2">うまいわよ メグ！</span></p> 
+   <p begin="00:12:56.818" end="00:12:58.361" style="s1"><span style="s2">（アスナ）かえんほうしゃ！<br />（マグマッグ）マグ！</span></p> 
+   <p begin="00:12:58.904" end="00:13:00.363" style="s1"><span style="s2">（ピカチュウ）ピ… ピカ？<br />（マグマッグ）マ～</span></p> 
+   <p begin="00:13:01.364" end="00:13:03.283" style="s1"><span style="s2">（マグマッグ）グ～！<br />（ピカチュウ）ピカ～！</span></p> 
+   <p begin="00:13:03.366" end="00:13:06.036" style="s1"><span style="s2">（サトシ）ピカチュウ！<br />（ピカチュウ）ピー ピ…</span></p> 
+   <p begin="00:13:06.328" end="00:13:08.538" style="s1"><span style="s2">頑張れ ピカチュウ！<br />10まんボルトだ！</span></p> 
+   <p begin="00:13:08.747" end="00:13:12.375" style="s1"><span style="s2">ピ… ピーカ チュウウウ！</span></p> 
+   <p begin="00:13:12.459" end="00:13:15.754" style="s1"><span style="s2">甘い 甘い！ やみくもに撃っても<br />当たらないわよ！</span></p> 
+   <p begin="00:13:15.837" end="00:13:16.838" style="s1"><span style="s2">（サトシ）うっ…</span></p> 
+   <p begin="00:13:19.633" end="00:13:21.384" style="s1"><span style="s2">（マグマッグ）マググッグッグ…</span></p> 
+   <p begin="00:13:21.468" end="00:13:23.887" style="s1"><span style="s2">（ムラ爺）むっ…<br />（アスナ）ええっ！ 何起こったの？</span></p> 
+   <p begin="00:13:24.179" end="00:13:27.891" style="s1"><span style="s2">10まんボルトが スモッグを伝って<br />マグマッグに当たったんだ</span></p> 
+   <p begin="00:13:27.974" end="00:13:29.643" style="s1"><span style="s2">（マサト）そうか！<br />（ハルカ）ツイてるかも</span></p> 
+   <p begin="00:13:30.018" end="00:13:31.228" style="s1"><span style="s2">いいぞ ピカチュウ！</span></p> 
+   <p begin="00:13:31.311" end="00:13:32.312" style="s1"><span style="s2">ピッカチュウ</span></p> 
+   <p begin="00:13:32.687" end="00:13:35.524" style="s1"><span style="s2">ピカチュウの動きを止めるのよ！<br />メグ あくび！</span></p> 
+   <p begin="00:13:35.899" end="00:13:39.027" style="s1"><span style="s2">そうはいくか！<br />ピカチュウ でんこうせっかだ！</span></p> 
+   <p begin="00:13:39.110" end="00:13:40.737" style="s1"><span style="s2">（ピカチュウ）ピカッ ピー！<br />（アスナ）速い！</span></p> 
+   <p begin="00:13:41.196" end="00:13:42.155" style="s1"><span style="s2">（マグマッグ）マグ～！</span></p> 
+   <p begin="00:13:42.239" end="00:13:43.615" style="s1"><span style="s2">どどめの かみなり！</span></p> 
+   <p begin="00:13:43.698" end="00:13:45.408" style="s1"><span style="s2">ピカー チュウウウ！</span></p> 
+   <p begin="00:13:45.659" end="00:13:47.661" style="s1"><span style="s2">（マグマッグ）マグ！<br />（アヤコ）メグ！</span></p> 
+   <p begin="00:13:48.578" end="00:13:49.913" style="s1"><span style="s2">（マグマッグ）マグ～</span></p> 
+   <p begin="00:13:49.996" end="00:13:52.624" style="s1"><span style="s2">（ムラ爺）マグマッグ 戦闘不能！<br />ピカチュウの勝ち！</span></p> 
+   <p begin="00:13:53.041" end="00:13:54.543" style="s1"><span style="s2">やったぜ ピカチュウ！</span></p> 
+   <p begin="00:13:54.626" end="00:13:55.627" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:13:56.545" end="00:13:58.505" style="s1"><span style="s2">（アスナ）メグ ご苦労さま</span></p> 
+   <p begin="00:13:59.339" end="00:14:00.882" style="s1"><span style="s2">（ムラ爺の声）<br /><span style="s3">スモッグで追い込んだのに—</span></span></p> 
+   <p begin="00:14:00.966" end="00:14:04.636" style="s4"><span style="s2">それが あだになって<br />10まんボルトを浴びてしまうとは…</span></p> 
+   <p begin="00:14:05.095" end="00:14:08.265" style="s1"><span style="s2">（ムラ爺の声）<span style="s3">勝負は</span><br /><span style="s3">どこで流れが変わるか分からん</span></span></p> 
+   <p begin="00:14:08.640" end="00:14:11.434" style="s1"><span style="s2">（ムラ爺の声）<span style="s3">どんな展開にも</span><br /><span style="s3">対処できるようにならねば—</span></span></p> 
+   <p begin="00:14:11.518" end="00:14:14.688" style="s4"><span style="s2">一人前とは言えんぞ アスナ</span></p> 
+   <p begin="00:14:16.523" end="00:14:21.027" style="s1"><span style="s2">（コジロウ）いや～ 落ちた所が<br />天然の露天風呂だなんて ツイてるな～</span></p> 
+   <p begin="00:14:21.111" end="00:14:24.906" style="s1"><span style="s2">お肌ツルツルだし 気持ちいいし<br />もう いいね～</span></p> 
+   <p begin="00:14:25.282" end="00:14:29.119" style="s1"><span style="s2">そうニャ！ この露天風呂を<br />ボスにプレゼントするのニャ</span></p> 
+   <p begin="00:14:29.202" end="00:14:30.912" style="s1"><span style="s2">（コジロウ）すると どうなるんだ？</span></p> 
+   <p begin="00:14:31.162" end="00:14:32.872" style="s1"><span style="s2">（ニャース）例えば ある吹雪の日—</span></p> 
+   <p begin="00:14:32.956" end="00:14:35.792" style="s1"><span style="s2">使えない部下たちの多さに<br />疲れ果てたボスが—</span></p> 
+   <p begin="00:14:35.875" end="00:14:37.669" style="s1"><span style="s2">ここに来たとするニャ</span></p> 
+   <p begin="00:14:37.752" end="00:14:39.796" style="s1"><span style="s2">（ムサシ）ああ 使えない部下ね</span></p> 
+   <p begin="00:14:39.879" end="00:14:41.548" style="s1"><span style="s2">（コジロウ）いるいる そういうやつら</span></p> 
+   <p begin="00:14:41.631" end="00:14:46.469" style="s1"><span style="s2">（ニャース）しかし お湯につかれば<br />お肌ツルツル 心もツルツル</span></p> 
+   <p begin="00:14:46.553" end="00:14:48.471" style="s1"><span style="s2">（ニャース）そして ボスは言うニャ</span></p> 
+   <p begin="00:14:48.763" end="00:14:51.600" style="s1"><span style="s2">（ニャース）<br />“こんな お湯をプレゼントしてくれた<br />ニャースたちに—</span></p> 
+   <p begin="00:14:51.683" end="00:14:53.518" style="s1"><span style="s2">褒美を取らせるニャ”と</span></p> 
+   <p begin="00:14:53.602" end="00:14:54.603" style="s1"><span style="s2">（コジロウ・ムサシ）おお～！</span></p> 
+   <p begin="00:14:54.894" end="00:14:58.857" style="s1"><span style="s2">（ロケット団）幹部昇進 支部長就任<br />いい感じ～！</span></p> 
+   <p begin="00:14:58.940" end="00:15:00.609" style="s1"><span style="s2">ソ～ナンス！</span></p> 
+   <p begin="00:15:00.984" end="00:15:03.653" style="s1"><span style="s2">よーし！ 出番よ コータス！</span></p> 
+   <p begin="00:15:04.904" end="00:15:05.947" style="s1"><span style="s2">（コータス）コ～！</span></p> 
+   <p begin="00:15:07.449" end="00:15:09.326" style="s1"><span style="s2">ついに出てきたな コータス</span></p> 
+   <p begin="00:15:09.659" end="00:15:11.411" style="s1"><span style="s2">ピカチュウ 10まんボルトだ！</span></p> 
+   <p begin="00:15:11.494" end="00:15:13.121" style="s1"><span style="s2">ピーカ チュウウウ！</span></p> 
+   <p begin="00:15:13.204" end="00:15:15.290" style="s1"><span style="s2">コータス てっぺき！</span></p> 
+   <p begin="00:15:15.624" end="00:15:17.459" style="s1"><span style="s2">（コータス）コ～！<br />（サトシ）なに！</span></p> 
+   <p begin="00:15:18.084" end="00:15:19.919" style="s1"><span style="s2">続いて かえんほうしゃ！</span></p> 
+   <p begin="00:15:20.003" end="00:15:22.255" style="s1"><span style="s2">（コータス）コ～タス！</span></p> 
+   <p begin="00:15:22.631" end="00:15:24.132" style="s1"><span style="s2">かわして アイアンテール！</span></p> 
+   <p begin="00:15:24.466" end="00:15:26.384" style="s1"><span style="s2">ピーカチュー！</span></p> 
+   <p begin="00:15:26.676" end="00:15:28.595" style="s1"><span style="s2">（アスナ）てっぺき！<br />（コータス）コ～</span></p> 
+   <p begin="00:15:28.678" end="00:15:30.805" style="s1"><span style="s2">（ピカチュウ）ピッカ… ピカ！</span></p> 
+   <p begin="00:15:31.056" end="00:15:32.599" style="s1"><span style="s2">アイアンテールもダメか</span></p> 
+   <p begin="00:15:32.974" end="00:15:34.976" style="s1"><span style="s2">コータス ヘドロばくだん！</span></p> 
+   <p begin="00:15:35.101" end="00:15:36.603" style="s1"><span style="s2">（コータス）コ～タス！</span></p> 
+   <p begin="00:15:36.936" end="00:15:37.937" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:15:38.730" end="00:15:41.691" style="s1"><span style="s2">（ピカチュウ）ピッ ピーカチュ…</span></p> 
+   <p begin="00:15:41.941" end="00:15:43.318" style="s1"><span style="s2">（サトシ）あっ…</span></p> 
+   <p begin="00:15:43.401" end="00:15:46.279" style="s1"><span style="s2">負けるな ピカチュウ！ かみなりだ！</span></p> 
+   <p begin="00:15:46.363" end="00:15:48.031" style="s1"><span style="s2">（ピカチュウ）ピカー チュウウウ！</span></p> 
+   <p begin="00:15:48.406" end="00:15:50.325" style="s1"><span style="s2">コータス てっぺき！</span></p> 
+   <p begin="00:15:50.909" end="00:15:51.910" style="s1"><span style="s2">（コータス）コ～</span></p> 
+   <p begin="00:15:52.702" end="00:15:54.704" style="s1"><span style="s2">（サトシ）くっ… ダメか！<br />（ピカチュウ）ピーカ！</span></p> 
+   <p begin="00:15:55.038" end="00:15:58.124" style="s1"><span style="s2">電気技も打撃技も効かないなんて…</span></p> 
+   <p begin="00:15:58.208" end="00:16:00.710" style="s1"><span style="s2">てっぺきって完璧な防御技かも</span></p> 
+   <p begin="00:16:01.002" end="00:16:02.879" style="s1"><span style="s2">コータス オーバーヒート！</span></p> 
+   <p begin="00:16:02.962" end="00:16:04.422" style="s1"><span style="s2">（サトシ）オーバーヒート？</span></p> 
+   <p begin="00:16:04.631" end="00:16:07.467" style="s1"><span style="s2">（コータス）コ～タス！</span></p> 
+   <p begin="00:16:08.510" end="00:16:09.552" style="s1"><span style="s2">（ピカチュウ）ピカッ！</span></p> 
+   <p begin="00:16:09.636" end="00:16:10.679" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:16:10.929" end="00:16:12.722" style="s1"><span style="s2">ピ… ピーカー</span></p> 
+   <p begin="00:16:12.806" end="00:16:15.809" style="s1"><span style="s2">（ムラ爺）ピカチュウ 戦闘不能！<br />コータスの勝ち！</span></p> 
+   <p begin="00:16:15.892" end="00:16:17.268" style="s1"><span style="s2">いいわよ！ コータス</span></p> 
+   <p begin="00:16:17.352" end="00:16:18.436" style="s1"><span style="s2">（コータス）コ～</span></p> 
+   <p begin="00:16:18.937" end="00:16:21.898" style="s1"><span style="s2">あのピカチュウを一撃でＫＯとは…</span></p> 
+   <p begin="00:16:21.981" end="00:16:24.651" style="s1"><span style="s2">あれが コータスのオーバーヒート</span></p> 
+   <p begin="00:16:25.276" end="00:16:27.654" style="s1"><span style="s2">ピカチュウ ゆっくり休んでくれ</span></p> 
+   <p begin="00:16:27.737" end="00:16:29.197" style="s1"><span style="s2">ピーカチュ</span></p> 
+   <p begin="00:16:32.575" end="00:16:36.788" style="s1"><span style="s2">（サトシの声）<br /><span style="s3">残るは ダメージを受けてるキモリと</span><br /><span style="s3">眠ってるヘイガニだけか</span></span></p> 
+   <p begin="00:16:36.871" end="00:16:38.123" style="s1"><span style="s2">（サトシの声）<span style="s3">でも いくしかない！</span></span></p> 
+   <p begin="00:16:38.206" end="00:16:40.083" style="s1"><span style="s2">頼むぞ！ キモリ</span></p> 
+   <p begin="00:16:42.335" end="00:16:44.087" style="s1"><span style="s2">キャーモ　キャ…</span></p> 
+   <p begin="00:16:44.170" end="00:16:45.505" style="s1"><span style="s2">（サトシ）ああっ！<br />（マサト・ハルカ）キモリ！</span></p> 
+   <p begin="00:16:45.755" end="00:16:48.717" style="s1"><span style="s2">もらったわ！<br />コータス オーバーヒート！</span></p> 
+   <p begin="00:16:48.800" end="00:16:50.802" style="s1"><span style="s2">（コータス）コ～タス！</span></p> 
+   <p begin="00:16:50.885" end="00:16:52.679" style="s1"><span style="s2">（キモリ）キャモ～！<br />（サトシ）キモリ！</span></p> 
+   <p begin="00:16:53.138" end="00:16:54.723" style="s1"><span style="s2">（キモリ）キャーモ…</span></p> 
+   <p begin="00:16:54.931" end="00:16:57.976" style="s1"><span style="s2">キモリ 戦闘不能！ コータスの勝ち！</span></p> 
+   <p begin="00:16:58.059" end="00:17:01.438" style="s1"><span style="s2">いいわよ コータス！<br />その調子で燃えまくるのよ！</span></p> 
+   <p begin="00:17:01.521" end="00:17:02.939" style="s1"><span style="s2">（コータス）コ～</span></p> 
+   <p begin="00:17:03.148" end="00:17:04.441" style="s1"><span style="s2">ううっ…</span></p> 
+   <p begin="00:17:05.066" end="00:17:08.278" style="s1"><span style="s2">（ヤミカラスたち）<br />ヤミ～ ヤ～ミ　ヤミ～ ヤ～ミ</span></p> 
+   <p begin="00:17:08.737" end="00:17:10.447" style="s1"><span style="s2">（ニャース）ああ～</span></p> 
+   <p begin="00:17:11.448" end="00:17:14.826" style="s1"><span style="s2">あ～ あんまり気持ちいいから<br />寝ちまったぞ</span></p> 
+   <p begin="00:17:14.909" end="00:17:15.994" style="s1"><span style="s2">うニャ～</span></p> 
+   <p begin="00:17:16.077" end="00:17:17.454" style="s1"><span style="s2">あらら～　ん？</span></p> 
+   <p begin="00:17:18.037" end="00:17:20.039" style="s1"><span style="s2">誰か ほかにも入ってるわよ</span></p> 
+   <p begin="00:17:20.415" end="00:17:23.626" style="s1"><span style="s2">コラ～！ ここは<br />ニャーたちの露天風呂だニャ！</span></p> 
+   <p begin="00:17:23.710" end="00:17:24.919" style="s1"><span style="s2">（コジロウ）そうそう</span></p> 
+   <p begin="00:17:25.003" end="00:17:27.672" style="s1"><span style="s2">（ムサシ）早く出てって<br />（リングマたち）グウウウウ…</span></p> 
+   <p begin="00:17:27.756" end="00:17:29.424" style="s1"><span style="s2">（ロケット団）うわ～！ リングマ！</span></p> 
+   <p begin="00:17:29.674" end="00:17:31.134" style="s1"><span style="s2">（リングマたち）ぐあああ！</span></p> 
+   <p begin="00:17:32.719" end="00:17:34.053" style="s1"><span style="s2">（水しぶきの音）</span></p> 
+   <p begin="00:17:34.345" end="00:17:38.141" style="s1"><span style="s2">（ロケット団）<br />湯上がり１発 イヤな感じ～！</span></p> 
+   <p begin="00:17:42.937" end="00:17:45.899" style="s1"><span style="s2">残ってるのは<br />眠ってるヘイガニだけだよ</span></p> 
+   <p begin="00:17:45.982" end="00:17:47.192" style="s1"><span style="s2">マズい展開かも</span></p> 
+   <p begin="00:17:47.275" end="00:17:49.444" style="s1"><span style="s2">頼むぞ！ ヘイガニ</span></p> 
+   <p begin="00:17:51.362" end="00:17:53.072" style="s1"><span style="s2">起きろ！ ヘイガニ</span></p> 
+   <p begin="00:17:53.364" end="00:17:54.491" style="s1"><span style="s2">（サトシ）起きてくれ！</span></p> 
+   <p begin="00:17:54.574" end="00:17:57.452" style="s1"><span style="s2">（アスナ）サトシ君<br />ギブアップしてもいいわよ</span></p> 
+   <p begin="00:17:57.535" end="00:17:59.329" style="s1"><span style="s2">（サトシ）<br />誰が ギブアップなんかするもんか！</span></p> 
+   <p begin="00:17:59.621" end="00:18:01.581" style="s1"><span style="s2">じゃあ 容赦なく いかせてもらうわ</span></p> 
+   <p begin="00:18:01.664" end="00:18:03.625" style="s1"><span style="s2">コータス オーバーヒート！</span></p> 
+   <p begin="00:18:03.708" end="00:18:05.585" style="s1"><span style="s2">（コータス）コ～タス！</span></p> 
+   <p begin="00:18:07.629" end="00:18:09.464" style="s1"><span style="s2">ヘイガニ 耐えてくれ！</span></p> 
+   <p begin="00:18:11.925" end="00:18:13.343" style="s1"><span style="s2">（ヘイガニの寝息）</span></p> 
+   <p begin="00:18:13.426" end="00:18:14.427" style="s1"><span style="s2">フウ…</span></p> 
+   <p begin="00:18:15.053" end="00:18:17.096" style="s1"><span style="s2">なんとか持ちこたえたね</span></p> 
+   <p begin="00:18:17.180" end="00:18:20.767" style="s1"><span style="s2">オーバーヒートは 使うたびに<br />威力が減っていく技だからな</span></p> 
+   <p begin="00:18:20.850" end="00:18:22.477" style="s1"><span style="s2">それで助かったのね</span></p> 
+   <p begin="00:18:22.811" end="00:18:25.396" style="s1"><span style="s2">コータス 続いて かえんほうしゃ！</span></p> 
+   <p begin="00:18:25.480" end="00:18:27.982" style="s1"><span style="s2">（コータス）コ～タス！</span></p> 
+   <p begin="00:18:30.360" end="00:18:32.487" style="s1"><span style="s2">ヘイガニ！ 起きるんだ ヘイガニ！</span></p> 
+   <p begin="00:18:33.112" end="00:18:35.406" style="s1"><span style="s2">（サトシ）ヘイガニ 起きてくれ！</span></p> 
+   <p begin="00:18:35.490" end="00:18:36.491" style="s1"><span style="s2">（ヘイガニ）ヘイ？</span></p> 
+   <p begin="00:18:36.783" end="00:18:37.784" style="s1"><span style="s2">（ヘイガニ）ヘ～ ヘヘヘ！</span></p> 
+   <p begin="00:18:37.867" end="00:18:39.911" style="s1"><span style="s2">やった！ ヘイガニが起きたぞ</span></p> 
+   <p begin="00:18:40.161" end="00:18:41.162" style="s1"><span style="s2">ウソ～！</span></p> 
+   <p begin="00:18:41.746" end="00:18:44.165" style="s1"><span style="s2">ヘイ？ ヘイヘイ　ヘイガ！</span></p> 
+   <p begin="00:18:44.457" end="00:18:46.417" style="s1"><span style="s2">今度は こっちの番だぜ！</span></p> 
+   <p begin="00:18:46.501" end="00:18:49.170" style="s1"><span style="s2">（サトシ）ヘイガニ 挟む攻撃！<br />（ヘイガニ）ヘイ！</span></p> 
+   <p begin="00:18:49.420" end="00:18:50.421" style="s1"><span style="s2">（ヘイガニ）ヘ～イ！</span></p> 
+   <p begin="00:18:50.672" end="00:18:52.382" style="s1"><span style="s2">コータス てっぺきよ！</span></p> 
+   <p begin="00:18:52.465" end="00:18:53.508" style="s1"><span style="s2">（コータス）コ～<br />（ヘイガニ）ヘイ！</span></p> 
+   <p begin="00:18:53.591" end="00:18:55.426" style="s1"><span style="s2">今よ！ ヘドロばくだん！</span></p> 
+   <p begin="00:18:55.510" end="00:18:57.136" style="s1"><span style="s2">（コータス）コ～タス！ タス！</span></p> 
+   <p begin="00:18:58.847" end="00:19:01.140" style="s1"><span style="s2">（ヘイガニ）ヘ… ヘイガ～</span></p> 
+   <p begin="00:19:01.558" end="00:19:04.477" style="s1"><span style="s2">サトシ これ以上<br />ダメージを受けると危ないぞ！</span></p> 
+   <p begin="00:19:04.936" end="00:19:06.729" style="s1"><span style="s2">ヘイガニ かたくなるだ！</span></p> 
+   <p begin="00:19:06.813" end="00:19:08.940" style="s1"><span style="s2">（ヘイガニ）ヘイ！ ヘイヘイヘイ！</span></p> 
+   <p begin="00:19:09.440" end="00:19:11.401" style="s1"><span style="s2">速攻で クラブハンマー！</span></p> 
+   <p begin="00:19:11.484" end="00:19:12.485" style="s1"><span style="s2">（ヘイガニ）ヘ～イ！</span></p> 
+   <p begin="00:19:12.861" end="00:19:13.903" style="s1"><span style="s2">てっぺき！</span></p> 
+   <p begin="00:19:13.987" end="00:19:15.864" style="s1"><span style="s2">（コータス）コ～<br />（ヘイガニ）ガッ！</span></p> 
+   <p begin="00:19:15.947" end="00:19:17.031" style="s1"><span style="s2">ダメだわ</span></p> 
+   <p begin="00:19:17.115" end="00:19:19.742" style="s1"><span style="s2">これじゃ<br />いくら攻撃しても意味ないよ</span></p> 
+   <p begin="00:19:19.951" end="00:19:21.286" style="s1"><span style="s2">うっ 確かに—</span></p> 
+   <p begin="00:19:21.369" end="00:19:25.039" style="s1"><span style="s2">コータスが甲羅の中に引っ込んだら<br />攻撃のしようが…</span></p> 
+   <p begin="00:19:25.123" end="00:19:27.083" style="s1"><span style="s2">ん？ 甲羅の中？</span></p> 
+   <p begin="00:19:27.166" end="00:19:28.793" style="s1"><span style="s2">そうか　だったら！</span></p> 
+   <p begin="00:19:28.877" end="00:19:31.546" style="s1"><span style="s2">ヘイガニ<br />もう一度 クラブハンマーだ！</span></p> 
+   <p begin="00:19:31.629" end="00:19:32.755" style="s1"><span style="s2">（ヘイガニ）ヘイヘイ ヘイヘイ！</span></p> 
+   <p begin="00:19:33.256" end="00:19:37.176" style="s1"><span style="s2">何度 来ても同じこと！<br />コータス てっぺき！</span></p> 
+   <p begin="00:19:37.260" end="00:19:38.261" style="s1"><span style="s2">（コータス）コ～</span></p> 
+   <p begin="00:19:38.553" end="00:19:41.514" style="s1"><span style="s2">ヘイガニ コータスの甲羅を<br />横から たたけ！</span></p> 
+   <p begin="00:19:41.598" end="00:19:44.017" style="s1"><span style="s2">（ヘイガニ）<br />ヘイヘイ ヘイヘイ！ ガ～！</span></p> 
+   <p begin="00:19:44.350" end="00:19:47.645" style="s1"><span style="s2">（コータス）コ～！ コ～！</span></p> 
+   <p begin="00:19:47.729" end="00:19:49.272" style="s1"><span style="s2">（アスナ）あっ…<br />（ムラ爺）これは…</span></p> 
+   <p begin="00:19:49.480" end="00:19:51.274" style="s1"><span style="s2">（コータス）コオオオオ！</span></p> 
+   <p begin="00:19:51.983" end="00:19:54.277" style="s1"><span style="s2">（コータス）コオオオオ…</span></p> 
+   <p begin="00:19:54.360" end="00:19:55.486" style="s1"><span style="s2">（タケシ）おおっ！<br />（マサト）いいぞ！</span></p> 
+   <p begin="00:19:55.570" end="00:19:56.946" style="s1"><span style="s2">コータスの頭が出た</span></p> 
+   <p begin="00:19:57.322" end="00:20:00.241" style="s1"><span style="s2">今だ ヘイガニ！ バブルこうせん！</span></p> 
+   <p begin="00:20:00.325" end="00:20:02.535" style="s1"><span style="s2">（ヘイガニ）ヘ～イガ～！</span></p> 
+   <p begin="00:20:02.785" end="00:20:04.537" style="s1"><span style="s2">（コータス）コ～！</span></p> 
+   <p begin="00:20:04.746" end="00:20:05.830" style="s1"><span style="s2">ああっ コータス！</span></p> 
+   <p begin="00:20:10.418" end="00:20:13.212" style="s1"><span style="s2">（コータス）コオオオ…</span></p> 
+   <p begin="00:20:13.713" end="00:20:16.674" style="s1"><span style="s2">コータス 戦闘不能！<br />ヘイガニの勝ち！</span></p> 
+   <p begin="00:20:16.758" end="00:20:19.177" style="s1"><span style="s2">よって 勝者 マサラタウンのサトシ！</span></p> 
+   <p begin="00:20:19.385" end="00:20:20.887" style="s1"><span style="s2">（マサト・ハルカ）やった やった～！</span></p> 
+   <p begin="00:20:20.970" end="00:20:22.722" style="s1"><span style="s2">見事な逆転勝利だ</span></p> 
+   <p begin="00:20:22.805" end="00:20:24.223" style="s1"><span style="s2">ピカピカー！</span></p> 
+   <p begin="00:20:25.016" end="00:20:26.893" style="s1"><span style="s2">ヘイガニ よく頑張ったな</span></p> 
+   <p begin="00:20:26.976" end="00:20:28.227" style="s1"><span style="s2">（ヘイガニ）ヘイヘ～イ</span></p> 
+   <p begin="00:20:28.519" end="00:20:30.188" style="s1"><span style="s2">（アスナ）コータス 戻って</span></p> 
+   <p begin="00:20:31.814" end="00:20:35.360" style="s1"><span style="s2">負けちゃったか<br />でも よく頑張ってくれたわ</span></p> 
+   <p begin="00:20:35.443" end="00:20:37.487" style="s1"><span style="s2">ゆっくり休んでね コータス</span></p> 
+   <p begin="00:20:37.570" end="00:20:38.696" style="s1"><span style="s2">（ムラ爺）アスナ！<br />（アスナ）あ…</span></p> 
+   <p begin="00:20:38.988" end="00:20:41.741" style="s1"><span style="s2">オーバーヒートは<br />コータスの決め技じゃ</span></p> 
+   <p begin="00:20:41.824" end="00:20:44.285" style="s1"><span style="s2">なのに 使うのが早すぎた</span></p> 
+   <p begin="00:20:44.369" end="00:20:46.162" style="s1"><span style="s2">まだまだ詰めが甘いぞ</span></p> 
+   <p begin="00:20:46.496" end="00:20:49.707" style="s1"><span style="s2">あ… ごめん じっちゃん</span></p> 
+   <p begin="00:20:50.083" end="00:20:53.670" style="s1"><span style="s2">とはいえ<br />なかなか立派な戦いぶりじゃった</span></p> 
+   <p begin="00:20:53.753" end="00:20:56.673" style="s1"><span style="s2">これで わしも<br />心おきなく旅立てるわい</span></p> 
+   <p begin="00:20:57.048" end="00:20:58.466" style="s1"><span style="s2">じ… じっちゃん</span></p> 
+   <p begin="00:20:58.549" end="00:21:02.720" style="s1"><span style="s2">初心を忘れることなく<br />日々の精進を重ねるんじゃぞ</span></p> 
+   <p begin="00:21:02.804" end="00:21:03.805" style="s1"><span style="s2">はい！</span></p> 
+   <p begin="00:21:03.888" end="00:21:06.140" style="s1"><span style="s2">あたし 絶対 じっちゃんに<br />負けないくらいの—</span></p> 
+   <p begin="00:21:06.224" end="00:21:07.934" style="s1"><span style="s2">ジムリーダーになってみせるわ</span></p> 
+   <p begin="00:21:08.476" end="00:21:10.937" style="s1"><span style="s2">うむ　頑張れよ アスナ</span></p> 
+   <p begin="00:21:11.562" end="00:21:14.148" style="s1"><span style="s2">サトシ君<br />すばらしいバトルを ありがとう</span></p> 
+   <p begin="00:21:14.232" end="00:21:15.233" style="s1"><span style="s2">いえ</span></p> 
+   <p begin="00:21:15.316" end="00:21:17.735" style="s1"><span style="s2">じゃあ ヒートバッジを渡すわね</span></p> 
+   <p begin="00:21:18.236" end="00:21:19.445" style="s1"><span style="s2">ありがとうございます</span></p> 
+   <p begin="00:21:19.946" end="00:21:20.947" style="s1"><span style="s2">（サトシ）ヘッ ヘヘ</span></p> 
+   <p begin="00:21:21.364" end="00:21:25.076" style="s1"><span style="s2">よーし！ ヒートバッジ ゲットだぜ！</span></p> 
+   <p begin="00:21:25.159" end="00:21:26.411" style="s1"><span style="s2">ピー ピカチュウ！</span></p> 
+   <p begin="00:21:26.494" end="00:21:28.830" style="s1"><span style="s2">ヘイ ヘイヘイヘ～イ！</span></p> 
+   <p begin="00:21:29.956" end="00:21:31.958" style="s1"><span style="s2">（ナレーション）<br /><span style="s3">強敵 コータスを倒し—</span></span></p> 
+   <p begin="00:21:32.041" end="00:21:34.585" style="s4"><span style="s2">見事 ヒートバッジを<br />ゲットしたサトシ</span></p> 
+   <p begin="00:21:35.128" end="00:21:40.508" style="s1"><span style="s2">（ナレーション）<br /><span style="s3">だが ホウエンリーグ出場を目指す</span><br /><span style="s3">彼らの旅は まだまだ続く</span></span></p> 
+   <p begin="00:21:45.179" end="00:21:52.186" region="縦左">♪～</p> 
+   <p begin="00:22:57.627" end="00:23:04.634" region="縦右">～♪</p> 
+   <p begin="00:23:08.638" end="00:23:11.307" style="s1"><span style="s2">（サトシ）<br /><span style="s3">幸せを呼ぶパッチールを探す</span><br /><span style="s3">クレアさん</span></span></p> 
+   <p begin="00:23:11.599" end="00:23:13.434" style="s1"><span style="s2">（サトシ）<br /><span style="s3">早速 協力するオレたちだけど—</span></span></p> 
+   <p begin="00:23:13.518" end="00:23:16.395" style="s4"><span style="s2">そのパッチールを狙って<br />ロケット団が現れた</span></p> 
+   <p begin="00:23:16.479" end="00:23:17.897" style="s1"><span style="s2">（サトシ）<span style="s3">そうは いくもんか！</span></span></p> 
+   <p begin="00:23:17.980" end="00:23:21.067" style="s4"><span style="s2">幸せを呼ぶパッチールは<br />オレが先に見つけ出してやるぜ！</span></p> 
+   <p begin="00:23:21.734" end="00:23:24.695" style="s1"><span style="s2">（サトシ）<span style="s3">次回「ポケットモンスター</span><br /><span style="s3">アドバンスジェネレーション」</span></span></p> 
+   <p begin="00:23:24.779" end="00:23:28.449" style="s1"><span style="s2">（サトシ）<span style="s3">「パッチールがいっぱい！</span><br /><span style="s3">幸せさがして山の彼方(かなた)に!?」</span></span></p> 
+   <p begin="00:23:28.741" end="00:23:31.119" style="s1"><span style="s2">（サトシ）<span style="s3">みんなも</span><br /><span style="s3">ポケモン ゲットだぜ！</span></span></p> 
+   <p begin="00:23:41.295" end="00:23:43.756" style="s1"><span style="s2">（オーキド<span style="s5"><span style="s6">博士</span><span style="s7">はかせ</span></span>）<br />さあて 今回のポケモンは？</span></p> 
+   <p begin="00:23:43.840" end="00:23:45.466" style="s1"><span style="s2">（オーキド）ピッ ピカチュウ</span></p> 
+   <p begin="00:23:47.885" end="00:23:50.429" style="s1"><span style="s2">これは 何のシルエットかといえば？</span></p> 
+   <p begin="00:23:50.513" end="00:23:52.557" style="s1"><span style="s2">そう　ムチュールじゃな</span></p> 
+   <p begin="00:23:52.932" end="00:23:55.017" style="s1"><span style="s2">（オーキド）<br />くちづけポケモンのムチュール</span></p> 
+   <p begin="00:23:55.101" end="00:23:57.645" style="s1"><span style="s2">（オーキド）<br />唇の感覚が非常に発達しており—</span></p> 
+   <p begin="00:23:57.728" end="00:24:02.024" style="s1"><span style="s2">初めて見るものは<br />まず 唇で触れて確認するんじゃ</span></p> 
+   <p begin="00:24:02.108" end="00:24:04.986" style="s1"><span style="s2">（オーキド）<br />そのしぐさが キスをしているように<br />見えることから—</span></p> 
+   <p begin="00:24:05.069" end="00:24:07.572" style="s1"><span style="s2">“くちづけポケモン”と<br />呼ばれるようになったんじゃよ</span></p> 
+   <p begin="00:24:08.156" end="00:24:11.242" style="s1"><span style="s2">また ムチュールは<br />相手を混乱状態にさせる—</span></p> 
+   <p begin="00:24:11.325" end="00:24:13.828" style="s1"><span style="s2">“てんしのキッス”という<br />技を持っておるが—</span></p> 
+   <p begin="00:24:13.911" end="00:24:15.830" style="s1"><span style="s2">これは… おっ！</span></p> 
+   <p begin="00:24:16.372" end="00:24:18.666" style="s1"><span style="s2">おっ おおおお…</span></p> 
+   <p begin="00:24:19.834" end="00:24:23.337" style="s1"><span style="s2">これは まさに てんしのキッス…</span></p> 
+   <p begin="00:24:24.005" end="00:24:26.048" style="s1"><span style="s2">（オーキド）では<br />今回は神奈川県の—</span></p> 
+   <p begin="00:24:26.132" end="00:24:28.259" style="s1"><span style="s2">むくた あきら君の一句じゃ</span></p> 
+   <p begin="00:24:33.431" end="00:24:35.725" region="縦右">みんなも ポケモン<br />ゲットじゃぞ</p> 
+  </div> 
+ </body> </tt>

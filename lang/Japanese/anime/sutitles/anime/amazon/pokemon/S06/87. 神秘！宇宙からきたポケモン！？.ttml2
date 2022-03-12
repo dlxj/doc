@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:ruby="container" xml:id="s3"></style> 
+   <style tts:ruby="base" xml:id="s4"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s5"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s6"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s7"></style> 
+   <style tts:ruby="text" tts:rubyPosition="after" xml:id="s8"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:01.293" end="00:00:08.300" region="縦右">♪～</p> 
+   <p begin="00:01:21.874" end="00:01:28.881" region="縦右">～♪</p> 
+   <p begin="00:01:38.557" end="00:01:41.560" style="s1"><span style="s2">（衝突音）</span></p> 
+   <p begin="00:01:50.736" end="00:01:53.656" style="s1"><span style="s2">（足音）</span></p> 
+   <p begin="00:01:53.739" end="00:01:56.909" style="s1"><span style="s2">（ケン）<span style="s3"><span style="s4">隕石</span><span style="s5">いんせき</span></span>が落ちたのは<br />ここに間違いないな</span></p> 
+   <p begin="00:01:56.992" end="00:01:58.285" style="s1"><span style="s2">（メリー）間違いありません</span></p> 
+   <p begin="00:01:58.369" end="00:02:00.704" style="s1"><span style="s2">よし <span style="s3"><span style="s4">不思議</span><span style="s5">ふしぎ</span></span>ポケモン回収メカを</span></p> 
+   <p begin="00:02:00.788" end="00:02:01.789" style="s1"><span style="s2">イエッサー</span></p> 
+   <p begin="00:02:15.094" end="00:02:18.138" style="s1"><span style="s2">（電子音）</span></p> 
+   <p begin="00:02:18.597" end="00:02:20.599" style="s1"><span style="s2">よーし 隕石があったぞ</span></p> 
+   <p begin="00:02:20.683" end="00:02:22.226" style="s1"><span style="s2">メリー ミサイル発射！</span></p> 
+   <p begin="00:02:22.309" end="00:02:24.311" style="s1"><span style="s2">（メリー）イエッサー　発射！</span></p> 
+   <p begin="00:02:31.235" end="00:02:32.903" style="s1"><span style="s2">（ケン）んん？<br />（メリー）あの光は！</span></p> 
+   <p begin="00:02:34.196" end="00:02:36.031" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:02:36.615" end="00:02:39.368" style="s1"><span style="s2">あいつが宇宙から来たポケモンだ<br />ゲットしろ！</span></p> 
+   <p begin="00:02:39.451" end="00:02:41.036" style="s1"><span style="s2">（メリー）イエッサー</span></p> 
+   <p begin="00:02:42.454" end="00:02:44.540" style="s1"><span style="s2">（ルナトーン）ル～ナ～</span></p> 
+   <p begin="00:02:45.916" end="00:02:47.042" style="s1"><span style="s2">（ケン・メリー）うわあ</span></p> 
+   <p begin="00:02:47.126" end="00:02:49.003" style="s1"><span style="s2">あいつ なかなか やるぞ</span></p> 
+   <p begin="00:02:49.086" end="00:02:51.255" style="s1"><span style="s2">（ケン）メリー 捕獲ビーム発射！<br />（メリー）イエッサー</span></p> 
+   <p begin="00:02:52.840" end="00:02:56.343" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:02:57.553" end="00:03:00.389" style="s1"><span style="s2">いいぞ このまま<br />やつを弱らせるんだ</span></p> 
+   <p begin="00:03:00.472" end="00:03:02.766" style="s1"><span style="s2">そして 不思議ポケモン ゲットです</span></p> 
+   <p begin="00:03:03.517" end="00:03:06.520" style="s1"><span style="s2">（ルナトーン）ル～ナ～</span></p> 
+   <p begin="00:03:07.479" end="00:03:08.564" style="s1"><span style="s2">（ルナトーン）ルナ！</span></p> 
+   <p begin="00:03:08.856" end="00:03:11.442" style="s1"><span style="s2">（ケン・メリー）ああーっ</span></p> 
+   <p begin="00:03:12.693" end="00:03:14.278" style="s1"><span style="s2">ハア…</span></p> 
+   <p begin="00:03:15.613" end="00:03:17.448" style="s1"><span style="s2">ア… ハッ…</span></p> 
+   <p begin="00:03:19.033" end="00:03:20.326" style="s1"><span style="s2">（ケン）何なんだ…</span></p> 
+   <p begin="00:03:22.077" end="00:03:23.203" style="s1"><span style="s2">（ルナトーン）ル…</span></p> 
+   <p begin="00:03:24.163" end="00:03:25.372" style="s1"><span style="s2">（ルナトーン）ナ…</span></p> 
+   <p begin="00:03:25.456" end="00:03:27.499" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:03:37.176" end="00:03:38.427" style="s1"><span style="s2">（鳥のさえずり）</span></p> 
+   <p begin="00:03:38.510" end="00:03:40.930" style="s1"><span style="s2">（ナレーション）<br /><span style="s6">ホウエンリーグ出場を</span><br /><span style="s6">目指すサトシたちは—</span></span></p> 
+   <p begin="00:03:41.013" end="00:03:42.222" style="s7"><span style="s2">海を渡るため—</span></p> 
+   <p begin="00:03:42.306" end="00:03:46.185" style="s7"><span style="s2">港のあるミナモシティへ向けて<br />旅を続けていた</span></p> 
+   <p begin="00:03:47.186" end="00:03:49.021" style="s1"><span style="s2">（マサト）<br />もうすぐ バレータウンに着くよ</span></p> 
+   <p begin="00:03:49.104" end="00:03:52.066" style="s1"><span style="s2">（ハルカ）早くポケモンセンターで<br />シャワーを浴びたいかも！</span></p> 
+   <p begin="00:03:52.524" end="00:03:54.443" style="s1"><span style="s2">（サトシ）ポケモンたちも<br />休ませなきゃな</span></p> 
+   <p begin="00:03:54.526" end="00:03:55.945" style="s1"><span style="s2">（ピカチュウ）ピカピカ～</span></p> 
+   <p begin="00:03:57.446" end="00:03:59.823" style="s1"><span style="s2">（ムサシ）なんか<br />ジャリボーイたちの声がしなかった？</span></p> 
+   <p begin="00:03:59.907" end="00:04:00.908" style="s1"><span style="s2">（コジロウ）さあ？</span></p> 
+   <p begin="00:04:00.991" end="00:04:03.118" style="s1"><span style="s2">（ニャース）今は そんなこと<br />どうでもいいニャン</span></p> 
+   <p begin="00:04:03.661" end="00:04:05.204" style="s1"><span style="s2">ニャーの仕入れた情報によると—</span></p> 
+   <p begin="00:04:05.287" end="00:04:08.415" style="s1"><span style="s2">この近くに<br />隕石が落ちたらしいのニャ</span></p> 
+   <p begin="00:04:08.499" end="00:04:10.084" style="s1"><span style="s2">まずは それを見つけるのニャ</span></p> 
+   <p begin="00:04:10.459" end="00:04:12.962" style="s1"><span style="s2">でも 隕石なんて<br />そんなに価値あるの？</span></p> 
+   <p begin="00:04:13.295" end="00:04:15.422" style="s1"><span style="s2">おう！ マニアの あいだじゃ—</span></p> 
+   <p begin="00:04:15.506" end="00:04:18.801" style="s1"><span style="s2">形や色が いいやつは<br />高値で取引されるんだぜ</span></p> 
+   <p begin="00:04:18.884" end="00:04:21.762" style="s1"><span style="s2">じゃあ その隕石を<br />ボスに献上すれば</span></p> 
+   <p begin="00:04:21.845" end="00:04:23.013" style="s1"><span style="s2">幹部昇進</span></p> 
+   <p begin="00:04:23.097" end="00:04:24.556" style="s1"><span style="s2">支部長就任</span></p> 
+   <p begin="00:04:24.640" end="00:04:25.891" style="s1"><span style="s2">（ロケット<span style="s3"><span style="s4">団</span><span style="s5">だん</span></span>）いい感じ～！</span></p> 
+   <p begin="00:04:25.975" end="00:04:27.977" style="s1"><span style="s2">（ソーナンス）ソ～ナンス！</span></p> 
+   <p begin="00:04:28.060" end="00:04:30.437" style="s1"><span style="s2">（風の音）</span></p> 
+   <p begin="00:04:30.521" end="00:04:32.314" style="s1"><span style="s2">（サトシ）ここがバレータウン？</span></p> 
+   <p begin="00:04:32.398" end="00:04:33.482" style="s1"><span style="s2">（ピカチュウ）ピーカ？</span></p> 
+   <p begin="00:04:33.816" end="00:04:35.818" style="s1"><span style="s2">（ハルカ）なんだか静かな町ね<br />（風が吹き抜ける音）</span></p> 
+   <p begin="00:04:35.901" end="00:04:38.487" style="s1"><span style="s2">（マサト）<br />町の人は もう寝ちゃったのかな</span></p> 
+   <p begin="00:04:45.995" end="00:04:46.996" style="s1"><span style="s2">こんにちは！</span></p> 
+   <p begin="00:04:47.079" end="00:04:48.288" style="s1"><span style="s2">ピカピカ！</span></p> 
+   <p begin="00:04:48.372" end="00:04:50.290" style="s1"><span style="s2">（ハルカ）誰か いませんかー？</span></p> 
+   <p begin="00:04:52.584" end="00:04:54.378" style="s1"><span style="s2">留守みたいだな</span></p> 
+   <p begin="00:04:54.461" end="00:04:55.462" style="s1"><span style="s2">（タケシ）しょうがない</span></p> 
+   <p begin="00:04:55.546" end="00:04:57.297" style="s1"><span style="s2">しばらくロビーで 待ってみよう</span></p> 
+   <p begin="00:04:57.381" end="00:04:58.924" style="s1"><span style="s2">（ハルカ）そうね<br />（物音）</span></p> 
+   <p begin="00:04:59.008" end="00:05:00.259" style="s1"><span style="s2">（サトシたち）ん？</span></p> 
+   <p begin="00:05:01.802" end="00:05:03.637" style="s1"><span style="s2">（タケシ）ジョーイさ～ん</span></p> 
+   <p begin="00:05:03.887" end="00:05:05.556" style="s1"><span style="s2">（ジョーイ）何か…<br />（タケシたち）えっ</span></p> 
+   <p begin="00:05:05.639" end="00:05:06.932" style="s1"><span style="s2">ご用ですか？</span></p> 
+   <p begin="00:05:07.016" end="00:05:09.601" style="s1"><span style="s2">あの～<br />オレたちのポケモンを…</span></p> 
+   <p begin="00:05:09.893" end="00:05:12.354" style="s1"><span style="s2">お預かり… できません</span></p> 
+   <p begin="00:05:12.438" end="00:05:13.689" style="s1"><span style="s2">（サトシたち）ええ？</span></p> 
+   <p begin="00:05:13.772" end="00:05:16.734" style="s1"><span style="s2">装置が… 壊れています</span></p> 
+   <p begin="00:05:16.817" end="00:05:18.402" style="s1"><span style="s2">そうですか</span></p> 
+   <p begin="00:05:18.485" end="00:05:19.695" style="s1"><span style="s2">じゃあ お部屋を…</span></p> 
+   <p begin="00:05:20.320" end="00:05:22.489" style="s1"><span style="s2">それも… できません</span></p> 
+   <p begin="00:05:23.073" end="00:05:25.242" style="s1"><span style="s2">（ジョーイ）本日は… 満室です</span></p> 
+   <p begin="00:05:25.325" end="00:05:27.286" style="s1"><span style="s2">あっ ちょ… ちょっと！</span></p> 
+   <p begin="00:05:27.494" end="00:05:29.204" style="s1"><span style="s2">（ドアが閉まる音）<br />（ハルカ）ええ～っ</span></p> 
+   <p begin="00:05:29.288" end="00:05:30.873" style="s1"><span style="s2">（虫の<span style="s3"><span style="s4">音</span><span style="s5">ね</span></span>）</span></p> 
+   <p begin="00:05:30.956" end="00:05:33.709" style="s1"><span style="s2">（ハルカ）あ～あ<br />シャワー浴びたかったな</span></p> 
+   <p begin="00:05:33.792" end="00:05:36.587" style="s1"><span style="s2">（マサト）<br />でも さっきのジョーイさん<br />なんか変だったね</span></p> 
+   <p begin="00:05:36.670" end="00:05:38.255" style="s1"><span style="s2">あれは ジョーイさんじゃない</span></p> 
+   <p begin="00:05:38.338" end="00:05:39.339" style="s1"><span style="s2">（サトシたち）ええ！</span></p> 
+   <p begin="00:05:39.423" end="00:05:40.507" style="s1"><span style="s2">どういうこと？</span></p> 
+   <p begin="00:05:40.841" end="00:05:42.676" style="s1"><span style="s2">一口にジョーイさんと言っても—</span></p> 
+   <p begin="00:05:42.760" end="00:05:44.553" style="s1"><span style="s2">いろんなジョーイさんがいる</span></p> 
+   <p begin="00:05:44.636" end="00:05:46.513" style="s1"><span style="s2">（タケシ）<br />だが 外見は違っても—</span></p> 
+   <p begin="00:05:46.597" end="00:05:49.058" style="s1"><span style="s2">ジョーイさんたちには<br />共通の資質があるんだ</span></p> 
+   <p begin="00:05:49.391" end="00:05:51.018" style="s1"><span style="s2">共通の資質？</span></p> 
+   <p begin="00:05:51.101" end="00:05:52.936" style="s1"><span style="s2">それは 愛と優しさ</span></p> 
+   <p begin="00:05:53.020" end="00:05:54.063" style="s1"><span style="s2">なるほど…</span></p> 
+   <p begin="00:05:54.146" end="00:05:57.232" style="s1"><span style="s2">つまり さっきのジョーイさんには<br />それが欠けてるのね</span></p> 
+   <p begin="00:05:57.316" end="00:05:58.317" style="s1"><span style="s2">そうなんだけど—</span></p> 
+   <p begin="00:05:58.400" end="00:06:00.944" style="s1"><span style="s2">においは<br />ジョーイさん だったんだよな</span></p> 
+   <p begin="00:06:01.028" end="00:06:03.072" style="s1"><span style="s2">（ハルカ）えっ<br />いったい どういうこと？</span></p> 
+   <p begin="00:06:03.155" end="00:06:05.824" style="s1"><span style="s2">あのさあ<br />考えるのは あとにして—</span></p> 
+   <p begin="00:06:05.908" end="00:06:07.576" style="s1"><span style="s2">まずは ごはんにしない？</span></p> 
+   <p begin="00:06:07.868" end="00:06:09.745" style="s1"><span style="s2">（タケシ・ハルカ）ああ<br />（サトシ）そ… そうだな</span></p> 
+   <p begin="00:06:09.828" end="00:06:11.580" style="s1"><span style="s2">確かに おなかペコペコかも</span></p> 
+   <p begin="00:06:11.955" end="00:06:15.667" style="s1"><span style="s2">（ポケモンたちが食べる音）</span></p> 
+   <p begin="00:06:15.751" end="00:06:17.586" style="s1"><span style="s2">（ハスブレロ）はむっ</span></p> 
+   <p begin="00:06:22.800" end="00:06:24.676" style="s1"><span style="s2">（タケシ）ん？<br />（サトシ）どうした タケシ？</span></p> 
+   <p begin="00:06:24.968" end="00:06:26.845" style="s1"><span style="s2">（タケシ）<br />ハスブレロが いなくなってる</span></p> 
+   <p begin="00:06:26.929" end="00:06:27.930" style="s1"><span style="s2">（サトシ）えっ</span></p> 
+   <p begin="00:06:30.015" end="00:06:32.059" style="s1"><span style="s2">（ハスブレロ）ハロ～ ハロ？<br />（茂みの揺れる音）</span></p> 
+   <p begin="00:06:32.768" end="00:06:34.520" style="s1"><span style="s2">（ケン）見つけたぞ<br />（メリー）ゲットです</span></p> 
+   <p begin="00:06:34.853" end="00:06:35.854" style="s1"><span style="s2">待ってくれ！</span></p> 
+   <p begin="00:06:35.938" end="00:06:37.564" style="s1"><span style="s2">それは オレのポケモンなんだ！</span></p> 
+   <p begin="00:06:38.023" end="00:06:40.567" style="s1"><span style="s2">（ケン）これは<br />我々が見つけた<span style="s3"><span style="s4">宇宙</span><span style="s8">うちゅう</span></span>ポケモンだ</span></p> 
+   <p begin="00:06:40.651" end="00:06:42.945" style="s1"><span style="s2">違うよ！ それは ハスブレロ</span></p> 
+   <p begin="00:06:43.028" end="00:06:44.446" style="s1"><span style="s2">普通のポケモンだよ！</span></p> 
+   <p begin="00:06:44.530" end="00:06:46.907" style="s1"><span style="s2">（ケン）<br />そんなはずはない！ メリー</span></p> 
+   <p begin="00:06:46.990" end="00:06:48.450" style="s1"><span style="s2">（メリー）イエッサー ケン</span></p> 
+   <p begin="00:06:48.742" end="00:06:52.204" style="s1"><span style="s2">（ポケモン<span style="s3"><span style="s4">図鑑</span><span style="s5">ずかん</span></span>）<span style="s6">ハスブレロ</span><br /><span style="s6">ようきポケモン　ハスボーの進化形</span></span></p> 
+   <p begin="00:06:52.287" end="00:06:53.580" style="s1"><span style="s2">（ケン・メリー）えーっ！</span></p> 
+   <p begin="00:06:53.997" end="00:06:55.457" style="s1"><span style="s2">返してもらうぞ</span></p> 
+   <p begin="00:06:55.541" end="00:06:56.542" style="s1"><span style="s2">（ケン・メリー）ああ～っ</span></p> 
+   <p begin="00:06:57.000" end="00:06:58.377" style="s1"><span style="s2">お前たちは 何者だ！</span></p> 
+   <p begin="00:06:58.836" end="00:07:00.879" style="s1"><span style="s2">（ケン）<br />不思議の陰にポケモンあり</span></p> 
+   <p begin="00:07:01.213" end="00:07:03.090" style="s1"><span style="s2">（ケン・メリー）<span style="s3"><span style="s4">ＰＦＣ</span><span style="s5">ピーエフシー</span></span></span></p> 
+   <p begin="00:07:03.173" end="00:07:05.259" style="s1"><span style="s2">（ケン・メリー）<br />ボクら ポケモン不思議クラブ</span></p> 
+   <p begin="00:07:05.342" end="00:07:06.468" style="s1"><span style="s2">（ケン）ケンと！</span></p> 
+   <p begin="00:07:07.219" end="00:07:08.220" style="s1"><span style="s2">（メリー）メリー！</span></p> 
+   <p begin="00:07:08.554" end="00:07:10.097" style="s1"><span style="s2">あっ！ お前たちは…</span></p> 
+   <p begin="00:07:10.180" end="00:07:12.182" style="s1"><span style="s2">宇宙船に乗ったピィのときの…</span></p> 
+   <p begin="00:07:12.266" end="00:07:13.433" style="s1"><span style="s2">（マサト・ハルカ）知ってるの？</span></p> 
+   <p begin="00:07:13.517" end="00:07:15.060" style="s1"><span style="s2">不思議なことを追いかけてる—</span></p> 
+   <p begin="00:07:15.144" end="00:07:16.228" style="s1"><span style="s2">不思議なやつらさ</span></p> 
+   <p begin="00:07:16.311" end="00:07:17.980" style="s1"><span style="s2">今度は 何を追っかけてるんだ！</span></p> 
+   <p begin="00:07:18.480" end="00:07:20.691" style="s1"><span style="s2">もちろん<br />宇宙から来たポケモンだ</span></p> 
+   <p begin="00:07:21.525" end="00:07:24.653" style="s1"><span style="s2">（ケン）我々ＰＦＣは<br />宇宙から来るポケモンは—</span></p> 
+   <p begin="00:07:24.736" end="00:07:27.197" style="s1"><span style="s2">隕石に乗って<br />やってくると考えた</span></p> 
+   <p begin="00:07:27.906" end="00:07:31.743" style="s1"><span style="s2">（ケン）<br />そこで この近くに落ちた隕石を<br />調査していたのだ</span></p> 
+   <p begin="00:07:32.077" end="00:07:33.996" style="s1"><span style="s2">ところが不思議なことに—</span></p> 
+   <p begin="00:07:34.079" end="00:07:37.207" style="s1"><span style="s2">そのときの記憶が<br />途中から あいまいなのよね</span></p> 
+   <p begin="00:07:37.291" end="00:07:38.208" style="s1"><span style="s2">（サトシたち）えっ</span></p> 
+   <p begin="00:07:38.292" end="00:07:39.585" style="s1"><span style="s2">どういうこと？</span></p> 
+   <p begin="00:07:39.668" end="00:07:41.837" style="s1"><span style="s2">宇宙から来た<br />ポケモンの<span style="s3"><span style="s4">怪</span><span style="s8">かい</span></span>電波で—</span></p> 
+   <p begin="00:07:41.920" end="00:07:43.797" style="s1"><span style="s2">記憶を奪われたに違いない</span></p> 
+   <p begin="00:07:44.131" end="00:07:46.216" style="s1"><span style="s2">調査の結果<br />この町の人たちも—</span></p> 
+   <p begin="00:07:46.300" end="00:07:48.510" style="s1"><span style="s2">その電波で<br />操られてるようだわ</span></p> 
+   <p begin="00:07:48.594" end="00:07:51.638" style="s1"><span style="s2">だが この怪電波 防護マスクがあれば<br />大丈夫だ</span></p> 
+   <p begin="00:07:52.639" end="00:07:55.225" style="s1"><span style="s2">（メリー）必ず不思議ポケモンを<br />我らの手に！</span></p> 
+   <p begin="00:07:55.309" end="00:07:57.728" style="s1"><span style="s2">（ケン）行くぞ メリー！<br />（メリー）イエッサー ケン！</span></p> 
+   <p begin="00:07:58.103" end="00:07:59.980" style="s1"><span style="s2">宇宙から来たポケモンか～</span></p> 
+   <p begin="00:08:00.063" end="00:08:02.316" style="s1"><span style="s2">そんなの ほんとにいるの？</span></p> 
+   <p begin="00:08:02.399" end="00:08:04.526" style="s1"><span style="s2">確かに ピッピやスターミーなんかは—</span></p> 
+   <p begin="00:08:04.610" end="00:08:06.904" style="s1"><span style="s2">宇宙から来たポケモンだって<br />言われているんだ</span></p> 
+   <p begin="00:08:06.987" end="00:08:08.030" style="s1"><span style="s2">（ハルカ）ふ～ん</span></p> 
+   <p begin="00:08:08.113" end="00:08:09.323" style="s1"><span style="s2">それより やつらは—</span></p> 
+   <p begin="00:08:09.406" end="00:08:12.784" style="s1"><span style="s2">町の人たちが<br />怪電波で操られてると言ってたよな</span></p> 
+   <p begin="00:08:13.035" end="00:08:14.703" style="s1"><span style="s2">ああっ　じゃあ もしかして—</span></p> 
+   <p begin="00:08:14.786" end="00:08:16.371" style="s1"><span style="s2">あのジョーイさんも怪電波で…</span></p> 
+   <p begin="00:08:16.830" end="00:08:19.875" style="s1"><span style="s2">よし！ もう一度<br />ポケモンセンターに行ってみようぜ</span></p> 
+   <p begin="00:08:25.255" end="00:08:26.590" style="s1"><span style="s2">気をつけろよ</span></p> 
+   <p begin="00:08:26.798" end="00:08:29.843" style="s1"><span style="s2">まだ この中に ジョーイさんを<br />操ったやつが いるかもしれない</span></p> 
+   <p begin="00:08:30.219" end="00:08:31.261" style="s1"><span style="s2">行くぞ みんな</span></p> 
+   <p begin="00:08:31.345" end="00:08:32.346" style="s1"><span style="s2">（マサトたち）うん</span></p> 
+   <p begin="00:08:34.348" end="00:08:35.974" style="s1"><span style="s2">あれ？ 今さ—</span></p> 
+   <p begin="00:08:36.058" end="00:08:37.643" style="s1"><span style="s2">ジャリボーイたちの声が しなかった？</span></p> 
+   <p begin="00:08:37.726" end="00:08:38.727" style="s1"><span style="s2">さあ？</span></p> 
+   <p begin="00:08:38.810" end="00:08:40.854" style="s1"><span style="s2">そんなことより 今は 隕石ニャ</span></p> 
+   <p begin="00:08:41.647" end="00:08:45.734" style="s1"><span style="s2">（ニャース）隕石が落ちた場所には<br />大きな穴しか なかったニャ</span></p> 
+   <p begin="00:08:45.817" end="00:08:46.860" style="s1"><span style="s2">きっと 町の人が—</span></p> 
+   <p begin="00:08:46.944" end="00:08:48.946" style="s1"><span style="s2">持ってちゃったに違いないニャ</span></p> 
+   <p begin="00:08:49.029" end="00:08:51.156" style="s1"><span style="s2">そういう大事なものを隠すのは—</span></p> 
+   <p begin="00:08:51.240" end="00:08:53.742" style="s1"><span style="s2">町で １番 立派な建物よね</span></p> 
+   <p begin="00:08:53.825" end="00:08:54.826" style="s1"><span style="s2">つまり…</span></p> 
+   <p begin="00:08:54.910" end="00:08:56.119" style="s1"><span style="s2">（ロケット団）ここだ！</span></p> 
+   <p begin="00:09:01.208" end="00:09:03.085" style="s1"><span style="s2">（ムサシ）ちょっとニャース<br />まだ開かないの？</span></p> 
+   <p begin="00:09:03.168" end="00:09:05.170" style="s1"><span style="s2">（鍵をいじる音）<br />（コジロウ）早くしてくれよ</span></p> 
+   <p begin="00:09:05.254" end="00:09:06.880" style="s1"><span style="s2">（ニャース）ニョーし 開いたニャ</span></p> 
+   <p begin="00:09:07.756" end="00:09:10.008" style="s1"><span style="s2">さあ 隕石ちゃんを見つけるわよ</span></p> 
+   <p begin="00:09:10.092" end="00:09:11.551" style="s1"><span style="s2">危ないのニャー</span></p> 
+   <p begin="00:09:11.635" end="00:09:13.470" style="s1"><span style="s2">（ロケット団）わあーっ！<br />（衝撃音）</span></p> 
+   <p begin="00:09:13.804" end="00:09:15.681" style="s1"><span style="s2">（サトシたち）え？<br />（ハルカ）今の音は？</span></p> 
+   <p begin="00:09:15.764" end="00:09:17.182" style="s1"><span style="s2">向こうのほうだよ</span></p> 
+   <p begin="00:09:17.266" end="00:09:18.642" style="s1"><span style="s2">行ってみよう</span></p> 
+   <p begin="00:09:19.101" end="00:09:20.185" style="s1"><span style="s2">（ロケット団の うめき声）</span></p> 
+   <p begin="00:09:20.269" end="00:09:22.646" style="s1"><span style="s2">（ニャース）無理やり<br />入ろうとするからだニャ</span></p> 
+   <p begin="00:09:22.729" end="00:09:25.565" style="s1"><span style="s2">か… 懐中電灯を<br />落としちゃったじゃないか</span></p> 
+   <p begin="00:09:25.649" end="00:09:28.402" style="s1"><span style="s2">だって～<br />隕石を 早く見つけたいんだもん</span></p> 
+   <p begin="00:09:28.485" end="00:09:30.195" style="s1"><span style="s2">（コジロウ）えっと… どこだ？</span></p> 
+   <p begin="00:09:30.279" end="00:09:31.571" style="s1"><span style="s2">（コジロウ）あ… あった！</span></p> 
+   <p begin="00:09:31.655" end="00:09:32.614" style="s1"><span style="s2">（ニャース・ムサシ）うわっ</span></p> 
+   <p begin="00:09:33.073" end="00:09:34.241" style="s1"><span style="s2">（サトシたちの息遣い）<br />（サトシたち）ハッ</span></p> 
+   <p begin="00:09:34.574" end="00:09:35.575" style="s1"><span style="s2">（サトシ）あれは！</span></p> 
+   <p begin="00:09:35.659" end="00:09:36.827" style="s1"><span style="s2">（ピカチュウ）ピ～カ</span></p> 
+   <p begin="00:09:36.910" end="00:09:38.495" style="s1"><span style="s2">さっきの２人組が言ってた—</span></p> 
+   <p begin="00:09:38.578" end="00:09:40.205" style="s1"><span style="s2">宇宙から来たポケモンじゃない？</span></p> 
+   <p begin="00:09:40.289" end="00:09:41.290" style="s1"><span style="s2">…っていうことは—</span></p> 
+   <p begin="00:09:41.373" end="00:09:43.375" style="s1"><span style="s2">やつらが言ってたことは<br />本当だったんだ</span></p> 
+   <p begin="00:09:43.458" end="00:09:45.168" style="s1"><span style="s2">信じらんなーい！</span></p> 
+   <p begin="00:09:45.294" end="00:09:47.170" style="s1"><span style="s2">よし じゃあ 確かめてみよう</span></p> 
+   <p begin="00:09:47.546" end="00:09:50.882" style="s1"><span style="s2">（ムサシ）<br />“よーし じゃあ 確かめてみよう”と<br />言われたら</span></p> 
+   <p begin="00:09:51.216" end="00:09:53.135" style="s1"><span style="s2">答えてあげるが世の情け</span></p> 
+   <p begin="00:09:53.468" end="00:09:55.637" style="s1"><span style="s2">（ムサシ）<br />世界の破壊を防ぐため</span></p> 
+   <p begin="00:09:55.721" end="00:09:57.723" style="s1"><span style="s2">世界の平和を守るため</span></p> 
+   <p begin="00:09:57.806" end="00:10:00.183" style="s1"><span style="s2">愛と真実の悪を貫く</span></p> 
+   <p begin="00:10:00.267" end="00:10:02.436" style="s1"><span style="s2">ラブリーチャーミーな<span style="s3"><span style="s4">敵役</span><span style="s5">かたきやく</span></span></span></p> 
+   <p begin="00:10:02.519" end="00:10:04.146" style="s1"><span style="s2">（ムサシ）ムサシ<br />（コジロウ）コジロウ</span></p> 
+   <p begin="00:10:04.646" end="00:10:07.441" style="s1"><span style="s2">（ムサシ）銀河を駆ける<br />ロケット団の２人には</span></p> 
+   <p begin="00:10:07.524" end="00:10:10.360" style="s1"><span style="s2">（コジロウ）ホワイトホール<br />白いあしたが待ってるぜ</span></p> 
+   <p begin="00:10:10.444" end="00:10:11.737" style="s1"><span style="s2">ニャ～んてニャ！</span></p> 
+   <p begin="00:10:11.820" end="00:10:13.488" style="s1"><span style="s2">ソ～ナンス！</span></p> 
+   <p begin="00:10:13.572" end="00:10:14.573" style="s1"><span style="s2">（チリーン）チリーン</span></p> 
+   <p begin="00:10:14.656" end="00:10:15.782" style="s1"><span style="s2">ロケット団！</span></p> 
+   <p begin="00:10:15.866" end="00:10:16.950" style="s1"><span style="s2">どうして ここに？</span></p> 
+   <p begin="00:10:17.034" end="00:10:20.162" style="s1"><span style="s2">おミャーらこそ<br />あの隕石を狙ってきたんだニャ</span></p> 
+   <p begin="00:10:20.245" end="00:10:22.164" style="s1"><span style="s2">（タケシ）え？<br />（マサト）隕石？</span></p> 
+   <p begin="00:10:22.456" end="00:10:23.707" style="s1"><span style="s2">知らなかったのニャ</span></p> 
+   <p begin="00:10:23.790" end="00:10:25.792" style="s1"><span style="s2">もう！ よけいなことを！</span></p> 
+   <p begin="00:10:25.876" end="00:10:27.377" style="s1"><span style="s2">（ジョーイ）誰ですか？<br />（ロケット団）え？</span></p> 
+   <p begin="00:10:27.461" end="00:10:28.503" style="s1"><span style="s2">ジョーイさんだ</span></p> 
+   <p begin="00:10:28.587" end="00:10:29.588" style="s1"><span style="s2">こっちへ来るわ</span></p> 
+   <p begin="00:10:29.671" end="00:10:31.214" style="s1"><span style="s2">（ロケット団）<br />なっ わあ～ 逃げろー！</span></p> 
+   <p begin="00:10:31.298" end="00:10:32.716" style="s1"><span style="s2">（サトシたち）わああ～っ</span></p> 
+   <p begin="00:10:32.799" end="00:10:33.967" style="s1"><span style="s2">（ロケット団）うわあ～</span></p> 
+   <p begin="00:10:34.051" end="00:10:35.135" style="s1"><span style="s2">（サトシたち）わあ～</span></p> 
+   <p begin="00:10:36.511" end="00:10:39.389" style="s1"><span style="s2">ハアッ ハアッ ハアッ あ？</span></p> 
+   <p begin="00:10:39.473" end="00:10:41.099" style="s1"><span style="s2">だあっ　なんで ついてくんのよ！</span></p> 
+   <p begin="00:10:41.183" end="00:10:42.184" style="s1"><span style="s2">ありゃ～</span></p> 
+   <p begin="00:10:42.267" end="00:10:43.977" style="s1"><span style="s2">つい つられちゃったかも…</span></p> 
+   <p begin="00:10:44.061" end="00:10:45.520" style="s1"><span style="s2">（物音）<br />（サトシたち）あ？</span></p> 
+   <p begin="00:10:45.604" end="00:10:46.646" style="s1"><span style="s2">なに 今の？</span></p> 
+   <p begin="00:10:46.730" end="00:10:49.649" style="s1"><span style="s2">（固いものが触れ合う音）</span></p> 
+   <p begin="00:10:49.733" end="00:10:51.109" style="s1"><span style="s2">何がいるんだ？</span></p> 
+   <p begin="00:10:53.153" end="00:10:54.154" style="s1"><span style="s2">（ルナトーン）ルナ</span></p> 
+   <p begin="00:10:54.237" end="00:10:56.073" style="s1"><span style="s2">（一同）あっ<br />（サトシ）あれは？</span></p> 
+   <p begin="00:10:56.156" end="00:10:58.492" style="s1"><span style="s2">（図鑑）<br /><span style="s6">ルナトーン　いんせきポケモン</span></span></p> 
+   <p begin="00:10:58.575" end="00:11:00.869" style="s1"><span style="s2">（図鑑）<span style="s6">隕石が落ちた場所から</span><br /><span style="s6">見つかったため—</span></span></p> 
+   <p begin="00:11:00.952" end="00:11:03.163" style="s7"><span style="s2">宇宙から来た<br />ポケモンという説がある</span></p> 
+   <p begin="00:11:03.455" end="00:11:05.916" style="s1"><span style="s2">（図鑑）<br /><span style="s6">満月になると 活発に動き回り—</span></span></p> 
+   <p begin="00:11:05.999" end="00:11:08.877" style="s7"><span style="s2">赤い目は<br />見る者を すくませる迫力を持つ</span></p> 
+   <p begin="00:11:08.960" end="00:11:10.420" style="s1"><span style="s2">これが ルナトーン</span></p> 
+   <p begin="00:11:10.712" end="00:11:12.672" style="s1"><span style="s2">へえ～ なんだか…</span></p> 
+   <p begin="00:11:12.756" end="00:11:14.132" style="s1"><span style="s2">（ルナトーン）ルナ！<br />（ムサシ）うっ</span></p> 
+   <p begin="00:11:14.424" end="00:11:16.009" style="s1"><span style="s2">（一同）えっ<br />（サトシ）今のは？</span></p> 
+   <p begin="00:11:16.551" end="00:11:18.637" style="s1"><span style="s2">あんたたち 出て行きなさい！</span></p> 
+   <p begin="00:11:19.096" end="00:11:20.097" style="s1"><span style="s2">どうした ムサシ？</span></p> 
+   <p begin="00:11:20.180" end="00:11:21.765" style="s1"><span style="s2">ニャンか おかしいニャ</span></p> 
+   <p begin="00:11:22.099" end="00:11:24.226" style="s1"><span style="s2">あれ？<br />今 あたし どうかしてた？</span></p> 
+   <p begin="00:11:24.309" end="00:11:26.645" style="s1"><span style="s2">一瞬 あいつに操られてたみたいだぞ</span></p> 
+   <p begin="00:11:26.728" end="00:11:29.356" style="s1"><span style="s2">今のは<br />ルナトーンの さいみんじゅつだ</span></p> 
+   <p begin="00:11:29.439" end="00:11:32.567" style="s1"><span style="s2">てことは 町の人や<br />ジョーイさんを操ってたのは—</span></p> 
+   <p begin="00:11:32.651" end="00:11:33.819" style="s1"><span style="s2">ルナトーンだったのか</span></p> 
+   <p begin="00:11:33.902" end="00:11:35.654" style="s1"><span style="s2">なぜ そんなことを？</span></p> 
+   <p begin="00:11:35.737" end="00:11:38.281" style="s1"><span style="s2">（ルナトーン）ルナ～ ルナ～<br />（コジロウ）ん？ 何だって？</span></p> 
+   <p begin="00:11:38.532" end="00:11:40.700" style="s1"><span style="s2">怖い怖いって<br />言ってるニャ</span></p> 
+   <p begin="00:11:40.784" end="00:11:41.827" style="s1"><span style="s2">怖い？</span></p> 
+   <p begin="00:11:41.910" end="00:11:43.120" style="s1"><span style="s2">（ロケット団）あ？</span></p> 
+   <p begin="00:11:43.745" end="00:11:45.914" style="s1"><span style="s2">ルナトーンを<br />いじめては いけません</span></p> 
+   <p begin="00:11:46.373" end="00:11:47.666" style="s1"><span style="s2">ここから 出て行きなさい</span></p> 
+   <p begin="00:11:47.749" end="00:11:49.084" style="s1"><span style="s2">（サトシたち）ジョーイさん</span></p> 
+   <p begin="00:11:49.167" end="00:11:50.419" style="s1"><span style="s2">そうは いくもんですか！</span></p> 
+   <p begin="00:11:50.961" end="00:11:53.713" style="s1"><span style="s2">お宝の隕石は<br />見つからなかったけど</span></p> 
+   <p begin="00:11:53.797" end="00:11:56.174" style="s1"><span style="s2">ルナトーンなら<br />珍しいポケモンだぜ</span></p> 
+   <p begin="00:11:56.258" end="00:11:58.427" style="s1"><span style="s2">早速 ルナトーンをゲットだニャ</span></p> 
+   <p begin="00:11:58.760" end="00:12:00.929" style="s1"><span style="s2">よ～し　いけ サボネア！</span></p> 
+   <p begin="00:12:02.472" end="00:12:03.598" style="s1"><span style="s2">（サボネア）サーボ ネ～！</span></p> 
+   <p begin="00:12:03.849" end="00:12:05.434" style="s1"><span style="s2">なーっ 違う</span></p> 
+   <p begin="00:12:05.517" end="00:12:06.852" style="s1"><span style="s2">ルナトーンに 二ードルアームだ！</span></p> 
+   <p begin="00:12:07.269" end="00:12:09.479" style="s1"><span style="s2">頼むわよ ハブネーク</span></p> 
+   <p begin="00:12:10.730" end="00:12:12.357" style="s1"><span style="s2">（ハブネーク）ハブッブブブ～</span></p> 
+   <p begin="00:12:12.441" end="00:12:14.985" style="s1"><span style="s2">ハブネーク ルナトーンに<br />かみつく攻撃！</span></p> 
+   <p begin="00:12:15.068" end="00:12:16.611" style="s1"><span style="s2">（ハブネーク）ハーブ！</span></p> 
+   <p begin="00:12:16.695" end="00:12:17.988" style="s1"><span style="s2">よけろ ルナトーン！</span></p> 
+   <p begin="00:12:18.071" end="00:12:19.114" style="s1"><span style="s2">（ルナトーン）ルナーッ</span></p> 
+   <p begin="00:12:19.948" end="00:12:21.992" style="s1"><span style="s2">（ハブネーク）ハブッ　ハプ<br />（サボネア）サッ サボア</span></p> 
+   <p begin="00:12:22.075" end="00:12:23.869" style="s1"><span style="s2">（ムサシ）え？<br />（コジロウ）どうしたんだ？</span></p> 
+   <p begin="00:12:23.952" end="00:12:26.163" style="s1"><span style="s2">ルナトーンのサイコキネシスだ</span></p> 
+   <p begin="00:12:26.246" end="00:12:28.748" style="s1"><span style="s2">（ルナトーン）ルナ～！</span></p> 
+   <p begin="00:12:29.958" end="00:12:31.209" style="s1"><span style="s2">（ルナトーン）ルナッ</span></p> 
+   <p begin="00:12:32.169" end="00:12:33.170" style="s1"><span style="s2">ハッ</span></p> 
+   <p begin="00:12:33.253" end="00:12:35.255" style="s1"><span style="s2">（タケシ）<br />気がつきましたか ジョーイさん</span></p> 
+   <p begin="00:12:35.338" end="00:12:37.632" style="s1"><span style="s2">私 今まで どうしてたの？</span></p> 
+   <p begin="00:12:37.716" end="00:12:39.843" style="s1"><span style="s2">ルナトーンに<br />操られていたんです</span></p> 
+   <p begin="00:12:40.135" end="00:12:41.511" style="s1"><span style="s2">操られてた？</span></p> 
+   <p begin="00:12:41.595" end="00:12:42.637" style="s1"><span style="s2">（ルナトーン）ルナ…<br />（タケシ・ジョーイ）ハッ</span></p> 
+   <p begin="00:12:43.096" end="00:12:45.056" style="s1"><span style="s2">（ルナトーン）ルナ… ルナ…<br />（ニャース）うん うん</span></p> 
+   <p begin="00:12:45.515" end="00:12:48.518" style="s1"><span style="s2">“もう体力が残り少ない”って<br />言ってるニャ</span></p> 
+   <p begin="00:12:48.602" end="00:12:51.104" style="s1"><span style="s2">（ルナトーン）ルナ… ル…<br />（ニャース）ふむ ふむ</span></p> 
+   <p begin="00:12:51.188" end="00:12:55.650" style="s1"><span style="s2">“変な２人組に攻撃され<br />やられてしまった　怖かった”</span></p> 
+   <p begin="00:12:55.984" end="00:12:57.402" style="s1"><span style="s2">変な２人組？</span></p> 
+   <p begin="00:12:57.611" end="00:12:59.404" style="s1"><span style="s2">きっと ＰＦＣのやつらだ</span></p> 
+   <p begin="00:12:59.946" end="00:13:02.532" style="s1"><span style="s2">（ルナトーン）ルナ ル～ナ<br />（ニャース）ふむ ふむふむ</span></p> 
+   <p begin="00:13:02.824" end="00:13:05.744" style="s1"><span style="s2">“満月の光を浴びれば 元気になる”</span></p> 
+   <p begin="00:13:05.952" end="00:13:08.079" style="s1"><span style="s2">（ニャース）<br />“それまで守ってもらおうと思い—</span></p> 
+   <p begin="00:13:08.163" end="00:13:11.124" style="s1"><span style="s2">町の人を操ってしまった”と<br />言っているニャ</span></p> 
+   <p begin="00:13:11.666" end="00:13:13.376" style="s1"><span style="s2">そういうことだったの…</span></p> 
+   <p begin="00:13:13.460" end="00:13:14.878" style="s1"><span style="s2">なるほどな…</span></p> 
+   <p begin="00:13:14.961" end="00:13:18.340" style="s1"><span style="s2">何にしても ルナトーンが弱ってる<br />今がチャンスよ！</span></p> 
+   <p begin="00:13:18.423" end="00:13:20.675" style="s1"><span style="s2">ハブネーク ポイズンテール！</span></p> 
+   <p begin="00:13:20.759" end="00:13:22.260" style="s1"><span style="s2">サボネア ニードルアームだ！</span></p> 
+   <p begin="00:13:22.344" end="00:13:23.637" style="s1"><span style="s2">（ハブネーク）ハブー</span></p> 
+   <p begin="00:13:23.720" end="00:13:26.348" style="s1"><span style="s2">よーし ピカチュウ<br />ルナトーンを助けるぞ</span></p> 
+   <p begin="00:13:26.431" end="00:13:27.682" style="s1"><span style="s2">（ピカチュウ）ピカピカ！</span></p> 
+   <p begin="00:13:27.766" end="00:13:28.850" style="s1"><span style="s2">10まんボルト！</span></p> 
+   <p begin="00:13:28.934" end="00:13:30.644" style="s1"><span style="s2">ピーカ チュウ！</span></p> 
+   <p begin="00:13:30.727" end="00:13:32.062" style="s1"><span style="s2">（ハブネーク）ハブ～<br />（サボネア）サボ～</span></p> 
+   <p begin="00:13:32.145" end="00:13:34.231" style="s1"><span style="s2">（ロケット団の悲鳴）</span></p> 
+   <p begin="00:13:34.314" end="00:13:35.732" style="s1"><span style="s2">（爆発音）<br />（ロケット団）うわーっ！</span></p> 
+   <p begin="00:13:36.316" end="00:13:37.901" style="s1"><span style="s2">隕石は ないし！</span></p> 
+   <p begin="00:13:37.984" end="00:13:40.111" style="s1"><span style="s2">ルナトーンはゲットできないし！</span></p> 
+   <p begin="00:13:40.195" end="00:13:43.573" style="s1"><span style="s2">こんなことニャら 通訳なんか<br />しなきゃよかったニャ～</span></p> 
+   <p begin="00:13:43.657" end="00:13:45.325" style="s1"><span style="s2">ソ～ナンス！</span></p> 
+   <p begin="00:13:45.408" end="00:13:46.910" style="s1"><span style="s2">（ロケット団）イヤな感じ～！</span></p> 
+   <p begin="00:13:46.993" end="00:13:48.411" style="s1"><span style="s2">（ソーナンス）ソ～ナンス！</span></p> 
+   <p begin="00:13:48.495" end="00:13:49.496" style="s1"><span style="s2">（チリーン）チリーン</span></p> 
+   <p begin="00:14:02.717" end="00:14:05.053" style="s1"><span style="s2">（キーボードを打つ音と電子音）</span></p> 
+   <p begin="00:14:05.470" end="00:14:07.556" style="s1"><span style="s2">ルナトーンは 大丈夫かしら？</span></p> 
+   <p begin="00:14:07.764" end="00:14:09.683" style="s1"><span style="s2">ずいぶん 弱ってるみたいだな</span></p> 
+   <p begin="00:14:09.766" end="00:14:10.767" style="s1"><span style="s2">ピーカ</span></p> 
+   <p begin="00:14:10.850" end="00:14:12.310" style="s1"><span style="s2">（タケシ）どうですか ジョーイさん</span></p> 
+   <p begin="00:14:12.561" end="00:14:15.397" style="s1"><span style="s2">（ジョーイ）お薬をあげたから<br />しばらくは大丈夫だけど—</span></p> 
+   <p begin="00:14:15.480" end="00:14:17.566" style="s1"><span style="s2">体力が かなり低下してるの</span></p> 
+   <p begin="00:14:17.857" end="00:14:19.693" style="s1"><span style="s2">助ける方法は ないんですか？</span></p> 
+   <p begin="00:14:19.985" end="00:14:21.903" style="s1"><span style="s2">（ジョーイ）<br />満月の光に当ててあげれば—</span></p> 
+   <p begin="00:14:21.987" end="00:14:23.613" style="s1"><span style="s2">回復すると思うわ</span></p> 
+   <p begin="00:14:23.697" end="00:14:25.865" style="s1"><span style="s2">次の満月は いつなんです？</span></p> 
+   <p begin="00:14:25.949" end="00:14:27.325" style="s1"><span style="s2">（ジョーイ）今日が満月よ</span></p> 
+   <p begin="00:14:27.409" end="00:14:30.161" style="s1"><span style="s2">じゃあ ルナトーンは<br />もう大丈夫だね</span></p> 
+   <p begin="00:14:30.245" end="00:14:31.329" style="s1"><span style="s2">よかった～</span></p> 
+   <p begin="00:14:31.913" end="00:14:35.083" style="s1"><span style="s2">だけど この町で<br />満月を見ることはできないの</span></p> 
+   <p begin="00:14:35.333" end="00:14:37.085" style="s1"><span style="s2">（一同）えっ！<br />（サトシ）どうして？</span></p> 
+   <p begin="00:14:37.168" end="00:14:40.547" style="s1"><span style="s2">（ジョーイ）バレータウンは<br />四方を高い山に囲まれてるから—</span></p> 
+   <p begin="00:14:40.630" end="00:14:41.798" style="s1"><span style="s2">月は見えないのよ</span></p> 
+   <p begin="00:14:41.881" end="00:14:42.966" style="s1"><span style="s2">そんな…</span></p> 
+   <p begin="00:14:43.049" end="00:14:45.176" style="s1"><span style="s2">いったい どうすればいいの？</span></p> 
+   <p begin="00:14:45.260" end="00:14:48.013" style="s1"><span style="s2">町の先にある<br />バクーダの丘まで行ければ—</span></p> 
+   <p begin="00:14:48.096" end="00:14:49.472" style="s1"><span style="s2">なんとかなるんだけど…</span></p> 
+   <p begin="00:14:49.556" end="00:14:50.765" style="s1"><span style="s2">バクーダの丘？</span></p> 
+   <p begin="00:14:50.849" end="00:14:54.436" style="s1"><span style="s2">（ジョーイ）ええ　バクーダの<br />こぶみたいな２つの丘の向こうに—</span></p> 
+   <p begin="00:14:54.519" end="00:14:56.104" style="s1"><span style="s2">月を見られる場所があるの</span></p> 
+   <p begin="00:14:56.187" end="00:14:59.149" style="s1"><span style="s2">でも… もうルナトーンは<br />動けそうにないよ</span></p> 
+   <p begin="00:14:59.232" end="00:15:01.693" style="s1"><span style="s2">（ルナトーン）ル… ルナ… ルナ…</span></p> 
+   <p begin="00:15:01.943" end="00:15:03.862" style="s1"><span style="s2">タケシ<br />オレたちで ルナトーンを—</span></p> 
+   <p begin="00:15:03.945" end="00:15:06.239" style="s1"><span style="s2">バクーダの丘まで<br />連れてってやろうぜ</span></p> 
+   <p begin="00:15:06.323" end="00:15:09.701" style="s1"><span style="s2">う～ん　だが<br />それには 一工夫 必要だぞ</span></p> 
+   <p begin="00:15:09.784" end="00:15:10.827" style="s1"><span style="s2">え？ どうして？</span></p> 
+   <p begin="00:15:11.161" end="00:15:14.247" style="s1"><span style="s2">ＰＦＣが捜してる<br />宇宙から来たポケモンとは—</span></p> 
+   <p begin="00:15:14.331" end="00:15:15.957" style="s1"><span style="s2">きっと ルナトーンのことだ</span></p> 
+   <p begin="00:15:16.249" end="00:15:19.044" style="s1"><span style="s2">やつらが まだ ルナトーンを<br />捜してるはずだからな</span></p> 
+   <p begin="00:15:19.127" end="00:15:22.005" style="s1"><span style="s2">（虫の音）</span></p> 
+   <p begin="00:15:25.634" end="00:15:27.510" style="s1"><span style="s2">うまい考えね タケシくん</span></p> 
+   <p begin="00:15:27.761" end="00:15:30.555" style="s1"><span style="s2">まあ こうやって運べば<br />大丈夫でしょう</span></p> 
+   <p begin="00:15:30.847" end="00:15:33.683" style="s1"><span style="s2">ピカチュウ ルナトーン<br />乗り心地は どうだ？</span></p> 
+   <p begin="00:15:34.309" end="00:15:36.186" style="s1"><span style="s2">（ルナトーン）ルナ～ ルナ</span></p> 
+   <p begin="00:15:36.269" end="00:15:37.270" style="s1"><span style="s2">ピカピカ</span></p> 
+   <p begin="00:15:38.355" end="00:15:39.648" style="s1"><span style="s2">（ケン・メリー）待て！<br />（サトシたち）あっ！</span></p> 
+   <p begin="00:15:40.106" end="00:15:43.652" style="s1"><span style="s2">（ケン）お前たち 宇宙から来た<br />ポケモンを見なかったか？</span></p> 
+   <p begin="00:15:44.069" end="00:15:45.945" style="s1"><span style="s2">宇宙から来たポケモン？</span></p> 
+   <p begin="00:15:46.029" end="00:15:47.113" style="s1"><span style="s2">さあねえ…</span></p> 
+   <p begin="00:15:47.197" end="00:15:49.658" style="s1"><span style="s2">そんなの<br />見たこともないかも～</span></p> 
+   <p begin="00:15:49.741" end="00:15:50.825" style="s1"><span style="s2">（ケン）そうか…</span></p> 
+   <p begin="00:15:50.909" end="00:15:52.535" style="s1"><span style="s2">（メリー）その荷車は 何なの？</span></p> 
+   <p begin="00:15:52.619" end="00:15:54.996" style="s1"><span style="s2">今夜は満月だから お月見なんだよ</span></p> 
+   <p begin="00:15:55.080" end="00:15:56.206" style="s1"><span style="s2">（マサト・ハルカ）そうそう！</span></p> 
+   <p begin="00:15:56.289" end="00:15:58.333" style="s1"><span style="s2">（サトシ）さあ 行こうぜ！<br />（マサト・ハルカ）うん！</span></p> 
+   <p begin="00:15:59.000" end="00:16:01.503" style="s1"><span style="s2">（サトシ）えいっ　えっ</span></p> 
+   <p begin="00:16:03.296" end="00:16:05.965" style="s1"><span style="s2">お月見にしては<br />大げさな荷物だな</span></p> 
+   <p begin="00:16:06.216" end="00:16:07.801" style="s1"><span style="s2">なんだか不思議だわ</span></p> 
+   <p begin="00:16:07.884" end="00:16:08.968" style="s1"><span style="s2">不思議？</span></p> 
+   <p begin="00:16:09.052" end="00:16:10.970" style="s1"><span style="s2">不思議の陰にはポケモンあり</span></p> 
+   <p begin="00:16:11.054" end="00:16:13.264" style="s1"><span style="s2">メリー 不思議ポケモン回収メカを！</span></p> 
+   <p begin="00:16:13.682" end="00:16:14.766" style="s1"><span style="s2">イエッサー</span></p> 
+   <p begin="00:16:15.350" end="00:16:18.019" style="s1"><span style="s2">（メリー）えっ はっ<br />（ケン）サササッ　ちょ…</span></p> 
+   <p begin="00:16:25.151" end="00:16:26.653" style="s1"><span style="s2">あいつら 追ってこないよ</span></p> 
+   <p begin="00:16:26.736" end="00:16:28.530" style="s1"><span style="s2">なんとか うまく ごまかせたかも…</span></p> 
+   <p begin="00:16:29.239" end="00:16:30.240" style="s1"><span style="s2">ジョーイさん—</span></p> 
+   <p begin="00:16:30.323" end="00:16:33.284" style="s1"><span style="s2">バクーダの丘まで<br />あと どれくらいですか？</span></p> 
+   <p begin="00:16:33.368" end="00:16:34.661" style="s1"><span style="s2">あと少しよ</span></p> 
+   <p begin="00:16:34.744" end="00:16:36.538" style="s1"><span style="s2">この谷を抜けたら<br />見えてくるわ</span></p> 
+   <p begin="00:16:36.621" end="00:16:38.540" style="s1"><span style="s2">よーし もう ひとふんばりだぜ！</span></p> 
+   <p begin="00:16:42.919" end="00:16:44.337" style="s1"><span style="s2">あっ！ あれじゃないか？</span></p> 
+   <p begin="00:16:44.421" end="00:16:45.547" style="s1"><span style="s2">ほんとだ！</span></p> 
+   <p begin="00:16:45.630" end="00:16:48.299" style="s1"><span style="s2">確かにバクーダのこぶに<br />そっくりだね</span></p> 
+   <p begin="00:16:49.676" end="00:16:52.595" style="s1"><span style="s2">あと15分ぐらいで<br />満月が出るはずよ</span></p> 
+   <p begin="00:16:52.679" end="00:16:53.680" style="s1"><span style="s2">さあ 急ぎましょ</span></p> 
+   <p begin="00:16:59.686" end="00:17:02.313" style="s1"><span style="s2">ハア… なんとか<br />間に合ったようだな</span></p> 
+   <p begin="00:17:02.397" end="00:17:03.398" style="s1"><span style="s2">そうだね</span></p> 
+   <p begin="00:17:03.481" end="00:17:05.734" style="s1"><span style="s2">ピカチュウ ルナトーン<br />もう出てきて いいぞ</span></p> 
+   <p begin="00:17:07.026" end="00:17:08.278" style="s1"><span style="s2">（ピカチュウ）ピーカー！</span></p> 
+   <p begin="00:17:09.279" end="00:17:11.239" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:17:13.867" end="00:17:16.035" style="s1"><span style="s2">あと５分で 満月が出るわ</span></p> 
+   <p begin="00:17:16.119" end="00:17:17.746" style="s1"><span style="s2">よかったな ルナトーン</span></p> 
+   <p begin="00:17:17.829" end="00:17:19.330" style="s1"><span style="s2">これで もう大丈夫ね</span></p> 
+   <p begin="00:17:19.414" end="00:17:20.415" style="s1"><span style="s2">（ルナトーン）ルナ！</span></p> 
+   <p begin="00:17:20.498" end="00:17:21.624" style="s1"><span style="s2">（マサト）見て！<br />（サトシたち）ん？</span></p> 
+   <p begin="00:17:23.251" end="00:17:24.294" style="s1"><span style="s2">やった！</span></p> 
+   <p begin="00:17:24.377" end="00:17:25.378" style="s1"><span style="s2">満月だ！</span></p> 
+   <p begin="00:17:25.462" end="00:17:27.839" style="s1"><span style="s2">これでルナトーンの力が<br />戻るわ</span></p> 
+   <p begin="00:17:28.757" end="00:17:30.133" style="s1"><span style="s2">（ルナトーン）ルナ…<br />（ハルカ）あっ！</span></p> 
+   <p begin="00:17:30.216" end="00:17:31.801" style="s1"><span style="s2">どうしたんだ？ ルナトーン</span></p> 
+   <p begin="00:17:31.968" end="00:17:33.428" style="s1"><span style="s2">あれは 満月じゃない！</span></p> 
+   <p begin="00:17:33.511" end="00:17:34.596" style="s1"><span style="s2">（サトシたち）えっ！</span></p> 
+   <p begin="00:17:34.846" end="00:17:36.097" style="s1"><span style="s2">（ロケット団）ジャジャーン！</span></p> 
+   <p begin="00:17:36.181" end="00:17:37.348" style="s1"><span style="s2">ロケット団！</span></p> 
+   <p begin="00:17:37.432" end="00:17:39.350" style="s1"><span style="s2">なんで あなたたちが<br />出てくるのよ！</span></p> 
+   <p begin="00:17:39.642" end="00:17:41.436" style="s1"><span style="s2">決まってんでしょう！</span></p> 
+   <p begin="00:17:41.519" end="00:17:43.897" style="s1"><span style="s2">ルナトーンを頂きに<br />戻ってきたのだ！</span></p> 
+   <p begin="00:17:44.105" end="00:17:45.106" style="s1"><span style="s2">とニャー！</span></p> 
+   <p begin="00:17:45.690" end="00:17:46.691" style="s1"><span style="s2">させるか！</span></p> 
+   <p begin="00:17:48.902" end="00:17:49.944" style="s1"><span style="s2">（ロケット団）あ！<br />（サトシ）えっ！</span></p> 
+   <p begin="00:17:50.779" end="00:17:52.447" style="s1"><span style="s2">（ケン）<span style="s6">やっと思い出したぞ！</span></span></p> 
+   <p begin="00:17:52.781" end="00:17:55.492" style="s1"><span style="s2">我々が探していたのは<br />そのルナトーンだ</span></p> 
+   <p begin="00:17:55.575" end="00:17:58.453" style="s1"><span style="s2">宇宙から来たポケモンは<br />私たちが頂くわ</span></p> 
+   <p begin="00:17:58.536" end="00:18:00.455" style="s1"><span style="s2">（ジョーイたち）ああっ<br />（タケシ）あれはＰＦＣのメカ！</span></p> 
+   <p begin="00:18:00.789" end="00:18:02.081" style="s1"><span style="s2">コーラ コラコラコラ！</span></p> 
+   <p begin="00:18:02.165" end="00:18:04.167" style="s1"><span style="s2">いきなり出てきて邪魔をするな！</span></p> 
+   <p begin="00:18:04.250" end="00:18:06.294" style="s1"><span style="s2">おミャーらは 何者だニャ？</span></p> 
+   <p begin="00:18:06.628" end="00:18:08.797" style="s1"><span style="s2">お前たち ロケット団だな</span></p> 
+   <p begin="00:18:08.880" end="00:18:10.924" style="s1"><span style="s2">不思議あるところにポケモンあり</span></p> 
+   <p begin="00:18:11.007" end="00:18:13.968" style="s1"><span style="s2">不思議ポケモンは<br />すべて我々のものだ</span></p> 
+   <p begin="00:18:14.302" end="00:18:17.013" style="s1"><span style="s2">わあ　ピィのときの<br />怪しいやつらね</span></p> 
+   <p begin="00:18:17.263" end="00:18:20.266" style="s1"><span style="s2">ロケット団などに<br />怪しいなんて言われたくないな</span></p> 
+   <p begin="00:18:20.350" end="00:18:23.019" style="s1"><span style="s2">なによ！ あんたたちのほうが<br />怪しいじゃない！</span></p> 
+   <p begin="00:18:23.102" end="00:18:25.188" style="s1"><span style="s2">怪しいやつらに<br />怪しいと言われるほど—</span></p> 
+   <p begin="00:18:25.271" end="00:18:26.272" style="s1"><span style="s2">怪しくはない！</span></p> 
+   <p begin="00:18:26.356" end="00:18:28.858" style="s1"><span style="s2">怪しいやつらに<br />怪しいと言われてるやつらは—</span></p> 
+   <p begin="00:18:28.942" end="00:18:30.026" style="s1"><span style="s2">怪しいのよ！</span></p> 
+   <p begin="00:18:30.360" end="00:18:33.196" style="s1"><span style="s2">フン！ 自分たちが<br />怪しいやつらだと認めたな</span></p> 
+   <p begin="00:18:33.279" end="00:18:34.781" style="s1"><span style="s2">あれ？ そうだっけ？</span></p> 
+   <p begin="00:18:35.365" end="00:18:36.491" style="s1"><span style="s2">やれ メリー</span></p> 
+   <p begin="00:18:36.574" end="00:18:37.575" style="s1"><span style="s2">イエッサー ケン</span></p> 
+   <p begin="00:18:38.326" end="00:18:39.536" style="s1"><span style="s2">（コジロウ）おお～っ</span></p> 
+   <p begin="00:18:39.619" end="00:18:41.079" style="s1"><span style="s2">（ロケット団）わあーっ！</span></p> 
+   <p begin="00:18:41.162" end="00:18:43.581" style="s1"><span style="s2">（ニャース）いや～ 目が回る～</span></p> 
+   <p begin="00:18:43.915" end="00:18:45.083" style="s1"><span style="s2">では とどめです！</span></p> 
+   <p begin="00:18:47.418" end="00:18:49.921" style="s1"><span style="s2">（ロケット団）うわ～っ！</span></p> 
+   <p begin="00:18:50.004" end="00:18:51.047" style="s1"><span style="s2">（爆発音）</span></p> 
+   <p begin="00:18:51.464" end="00:18:53.132" style="s1"><span style="s2">ニャンで<br />こうなるのニャ～</span></p> 
+   <p begin="00:18:53.216" end="00:18:54.425" style="s1"><span style="s2">もうイヤ！</span></p> 
+   <p begin="00:18:54.509" end="00:18:57.470" style="s1"><span style="s2">もう こうなったら<br />チリーンに癒やしてもらうか</span></p> 
+   <p begin="00:18:57.554" end="00:18:58.888" style="s1"><span style="s2">（ムサシ・ニャース）賛成ー！</span></p> 
+   <p begin="00:18:58.972" end="00:19:00.306" style="s1"><span style="s2">（チリーン）チリーン</span></p> 
+   <p begin="00:19:00.390" end="00:19:01.975" style="s1"><span style="s2">（ロケット団）はあ～</span></p> 
+   <p begin="00:19:03.184" end="00:19:05.895" style="s1"><span style="s2">（ケン）<span style="s6">次は ルナトーンだ</span><br />（メリー）<span style="s6">ゲットです！</span></span></p> 
+   <p begin="00:19:05.979" end="00:19:08.106" style="s1"><span style="s2">（ハルカ）来たわよ！<br />（サトシ）させるもんか！</span></p> 
+   <p begin="00:19:08.398" end="00:19:09.732" style="s1"><span style="s2">ピカチュウ<br />アイアンテールだ！</span></p> 
+   <p begin="00:19:09.816" end="00:19:10.650" style="s1"><span style="s2">（ピカチュウ）チュウー！</span></p> 
+   <p begin="00:19:10.733" end="00:19:11.776" style="s1"><span style="s2">無駄です！</span></p> 
+   <p begin="00:19:13.361" end="00:19:14.404" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:19:14.988" end="00:19:16.281" style="s1"><span style="s2">（ピカチュウ）ピイ～<br />（サトシ）ピカチュウ！</span></p> 
+   <p begin="00:19:16.656" end="00:19:18.616" style="s1"><span style="s2">ミズゴロウ みずでっぽうだ！</span></p> 
+   <p begin="00:19:19.617" end="00:19:20.660" style="s1"><span style="s2">ゴロウ！</span></p> 
+   <p begin="00:19:21.035" end="00:19:22.412" style="s1"><span style="s2">（ケン・メリー）<span style="s6">うわーっ！</span></span></p> 
+   <p begin="00:19:22.745" end="00:19:23.746" style="s1"><span style="s2">（ケン）<span style="s6">なーんてね</span></span></p> 
+   <p begin="00:19:23.830" end="00:19:25.540" style="s1"><span style="s2">（メリー）<br /><span style="s6">そんな攻撃は効きません！</span></span></p> 
+   <p begin="00:19:26.040" end="00:19:28.001" style="s1"><span style="s2">（ミズゴロウ）ゴロウ！<br />（タケシ）ミズゴロウ！</span></p> 
+   <p begin="00:19:28.084" end="00:19:30.128" style="s1"><span style="s2">アゲハント ぎんいろのかぜ！</span></p> 
+   <p begin="00:19:30.837" end="00:19:31.921" style="s1"><span style="s2">（アゲハント）ア～</span></p> 
+   <p begin="00:19:32.005" end="00:19:34.090" style="s1"><span style="s2">（アゲハント）ハ～！</span></p> 
+   <p begin="00:19:34.173" end="00:19:35.800" style="s1"><span style="s2">（ケン・メリー）<span style="s6">うわ～！</span></span></p> 
+   <p begin="00:19:36.217" end="00:19:37.385" style="s1"><span style="s2">おのれ～</span></p> 
+   <p begin="00:19:37.468" end="00:19:39.053" style="s1"><span style="s2">風で前が見えないわ</span></p> 
+   <p begin="00:19:39.345" end="00:19:41.556" style="s1"><span style="s2">（ケン・メリー）<span style="s6">くう～っ</span></span></p> 
+   <p begin="00:19:41.890" end="00:19:44.350" style="s1"><span style="s2">ミズゴロウ もう一度<br />みずでっぽうだ！</span></p> 
+   <p begin="00:19:44.809" end="00:19:45.810" style="s1"><span style="s2">ゴローッ！</span></p> 
+   <p begin="00:19:46.644" end="00:19:47.729" style="s1"><span style="s2">（ケン・メリー）<span style="s6">わあーっ！</span></span></p> 
+   <p begin="00:19:47.812" end="00:19:49.772" style="s1"><span style="s2">今だ ピカチュウ<br />10まんボルト！</span></p> 
+   <p begin="00:19:50.064" end="00:19:52.233" style="s1"><span style="s2">ピーカ チューウ！</span></p> 
+   <p begin="00:19:52.317" end="00:19:54.527" style="s1"><span style="s2">（ケン・メリー）<span style="s6">ぐわあ～っ</span></span></p> 
+   <p begin="00:19:54.611" end="00:19:55.737" style="s1"><span style="s2">（電源が切れる音）</span></p> 
+   <p begin="00:19:56.112" end="00:19:57.280" style="s1"><span style="s2">やったぜ！</span></p> 
+   <p begin="00:19:57.363" end="00:19:58.573" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:19:58.656" end="00:19:59.991" style="s1"><span style="s2">あっ みんな見て！</span></p> 
+   <p begin="00:20:00.074" end="00:20:01.242" style="s1"><span style="s2">（タケシたち）あっ！<br />（ピカチュウ）ピカ！</span></p> 
+   <p begin="00:20:03.786" end="00:20:05.955" style="s1"><span style="s2">今度こそ 本物の満月だね</span></p> 
+   <p begin="00:20:06.039" end="00:20:07.665" style="s1"><span style="s2">ええ 間違いないわ</span></p> 
+   <p begin="00:20:07.749" end="00:20:09.000" style="s1"><span style="s2">きれい～</span></p> 
+   <p begin="00:20:16.925" end="00:20:17.967" style="s1"><span style="s2">（ルナトーン）ル…</span></p> 
+   <p begin="00:20:18.384" end="00:20:19.802" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:20:19.886" end="00:20:21.012" style="s1"><span style="s2">（ハルカたち）うわあ</span></p> 
+   <p begin="00:20:21.095" end="00:20:23.139" style="s1"><span style="s2">ルナトーンが元気になったぞ</span></p> 
+   <p begin="00:20:23.222" end="00:20:24.766" style="s1"><span style="s2">よかったわね ルナトーン</span></p> 
+   <p begin="00:20:24.849" end="00:20:25.850" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:20:25.934" end="00:20:27.894" style="s1"><span style="s2">（ケン）<span style="s6">まだまだ！</span><br />（サトシたち）え？</span></p> 
+   <p begin="00:20:27.977" end="00:20:29.646" style="s1"><span style="s2">（ケン）<br /><span style="s6">ＰＦＣは ロケット団のように—</span></span></p> 
+   <p begin="00:20:29.729" end="00:20:31.147" style="s7"><span style="s2">簡単には やられないぞ！</span></p> 
+   <p begin="00:20:31.439" end="00:20:33.608" style="s1"><span style="s2">さあ メリー<br />ルナトーンをゲットだ！</span></p> 
+   <p begin="00:20:33.691" end="00:20:34.692" style="s1"><span style="s2">イエッサー</span></p> 
+   <p begin="00:20:35.735" end="00:20:37.362" style="s1"><span style="s2">（サトシたち）うわー！<br />（ハルカ）また来た～！</span></p> 
+   <p begin="00:20:37.445" end="00:20:39.364" style="s1"><span style="s2">（ケン・メリー）<br /><span style="s6">不思議ポケモンは もらった！</span></span></p> 
+   <p begin="00:20:39.864" end="00:20:40.990" style="s1"><span style="s2">（ルナトーン）ルナ！</span></p> 
+   <p begin="00:20:41.199" end="00:20:42.659" style="s1"><span style="s2">（ルナトーン）ルルルルルル…</span></p> 
+   <p begin="00:20:42.742" end="00:20:43.743" style="s1"><span style="s2">あれは！</span></p> 
+   <p begin="00:20:43.826" end="00:20:45.536" style="s1"><span style="s2">ルナトーンの めざめるパワー！</span></p> 
+   <p begin="00:20:45.620" end="00:20:48.748" style="s1"><span style="s2">（ルナトーン）<br />ルルルルル ルーナー！</span></p> 
+   <p begin="00:20:48.831" end="00:20:49.791" style="s1"><span style="s2">（ケン・メリー）ええーっ！</span></p> 
+   <p begin="00:20:51.751" end="00:20:53.419" style="s1"><span style="s2">（ケン・メリー）<span style="s6">うわ～っ！</span></span></p> 
+   <p begin="00:20:54.963" end="00:20:56.547" style="s1"><span style="s2">目覚めるパワーで</span></p> 
+   <p begin="00:20:56.631" end="00:20:58.383" style="s1"><span style="s2">おやすみなさーい！</span></p> 
+   <p begin="00:20:58.633" end="00:21:01.928" style="s1"><span style="s2">（ケン・メリー）不思議バンザーイ！</span></p> 
+   <p begin="00:21:04.222" end="00:21:05.264" style="s1"><span style="s2">（ルナトーン）ルナ</span></p> 
+   <p begin="00:21:05.348" end="00:21:07.016" style="s1"><span style="s2">やるじゃないか ルナトーン</span></p> 
+   <p begin="00:21:07.100" end="00:21:08.559" style="s1"><span style="s2">ピカピカ！</span></p> 
+   <p begin="00:21:08.643" end="00:21:09.852" style="s1"><span style="s2">（ルナトーン）ルナ</span></p> 
+   <p begin="00:21:09.936" end="00:21:13.272" style="s1"><span style="s2">ルナトーンって ほんとに<br />宇宙から来たのかしら？</span></p> 
+   <p begin="00:21:13.356" end="00:21:14.357" style="s1"><span style="s2">分からないけど—</span></p> 
+   <p begin="00:21:14.440" end="00:21:16.943" style="s1"><span style="s2">不思議は 不思議のままで<br />いいんじゃないか</span></p> 
+   <p begin="00:21:17.026" end="00:21:18.069" style="s1"><span style="s2">そうだね</span></p> 
+   <p begin="00:21:18.152" end="00:21:20.154" style="s1"><span style="s2">（ルナトーン）ルナ ルナ</span></p> 
+   <p begin="00:21:20.446" end="00:21:21.739" style="s1"><span style="s2">（ルナトーン）ルナ～</span></p> 
+   <p begin="00:21:21.823" end="00:21:23.366" style="s1"><span style="s2">じゃあな ルナトーン</span></p> 
+   <p begin="00:21:23.449" end="00:21:24.450" style="s1"><span style="s2">元気でね</span></p> 
+   <p begin="00:21:24.534" end="00:21:25.702" style="s1"><span style="s2">（ハルカたち）さようなら～</span></p> 
+   <p begin="00:21:25.785" end="00:21:27.286" style="s1"><span style="s2">ピカピカ！</span></p> 
+   <p begin="00:21:27.745" end="00:21:31.207" style="s1"><span style="s2">（ナレーション）<br /><span style="s6">こうして ルナトーンを</span><br /><span style="s6">見事に守り抜いたサトシたちは—</span></span></p> 
+   <p begin="00:21:31.290" end="00:21:34.085" style="s7"><span style="s2">尽きることのない<br />ポケモンの不思議を実感しつつ—</span></p> 
+   <p begin="00:21:34.335" end="00:21:38.047" style="s7"><span style="s2">再び ミナモシティへ向けて<br />旅立つのであった</span></p> 
+   <p begin="00:21:38.715" end="00:21:40.174" style="s1"><span style="s2">（ナレーション）<span style="s6">つづく</span></span></p> 
+   <p begin="00:21:44.887" end="00:21:51.894" region="縦左">♪～</p> 
+   <p begin="00:22:58.127" end="00:23:05.134" region="縦左">～♪</p> 
+   <p begin="00:23:08.304" end="00:23:10.515" style="s1"><span style="s2">（サトシ）<span style="s6">ナマケロが いっぱいいる</span><br /><span style="s6">バナナナマケロ園(えん)</span></span></p> 
+   <p begin="00:23:10.890" end="00:23:13.518" style="s1"><span style="s2">（サトシ）<span style="s6">ところが そこに</span><br /><span style="s6">彼らの姿は なかった</span></span></p> 
+   <p begin="00:23:14.060" end="00:23:15.061" style="s1"><span style="s2">（サトシ）<span style="s6">えっ！</span></span></p> 
+   <p begin="00:23:15.144" end="00:23:17.063" style="s1"><span style="s2">（サトシ）<span style="s6">カビゴンが</span><br /><span style="s6">ナマケロたちの食べ物を—</span></span></p> 
+   <p begin="00:23:17.146" end="00:23:18.648" style="s7"><span style="s2">食べ尽くそうとしてる？</span></p> 
+   <p begin="00:23:18.940" end="00:23:20.858" style="s1"><span style="s2">（サトシ）<br /><span style="s6">それなら オレに任しとけ</span></span></p> 
+   <p begin="00:23:20.942" end="00:23:23.653" style="s1"><span style="s2">（サトシ）<span style="s6">ナマケロたちの平和は</span><br /><span style="s6">必ず守ってやるぜ！</span></span></p> 
+   <p begin="00:23:24.445" end="00:23:27.365" style="s1"><span style="s2">（サトシ）<span style="s6">次回「ポケットモンスター</span><br /><span style="s6">アドバンスジェネレーション」</span></span></p> 
+   <p begin="00:23:27.698" end="00:23:29.283" style="s1"><span style="s2">（サトシ）<br /><span style="s6">「バナナナマケロ園のカビゴン!!」</span></span></p> 
+   <p begin="00:23:30.118" end="00:23:32.328" style="s1"><span style="s2">（サトシ）<span style="s6">みんなも</span><br /><span style="s6">ポケモン ゲットだぜ！</span></span></p> 
+  </div> 
+ </body> </tt>
