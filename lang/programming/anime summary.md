@@ -131,3 +131,9 @@ For a proxy that only supports HTTP,
 
 - If proxy is configured via `HTTPS_PROXY` environment variable, `HTTPS_PROXY` should point to an `http://` URL.
 - On Windows, this can also be set in **Control Panel -> Internet Options -> Connections -> LAN settings -> Proxy server -> Advanced**, set **Secure** to an `http://` URL. (There is a UI bug that after reopening the dialogue, the protocol is lost.)
+
+
+
+# JP-Subtitles
+
+- https://github.com/Matchoo95/JP-Subtitles
