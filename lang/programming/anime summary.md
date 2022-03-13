@@ -153,9 +153,13 @@ For a proxy that only supports HTTP,
 
 
 - 俄语语音语调基础教程
+  
+  - https://www.bilibili.com/video/BV1Kv411W7FF/?spm_id_from=333.788.recommend_more_video.7
+    - 大舌
+  
   - https://www.wanmen.org/courses/5c19a5843f74d971c6cdef20/lectures/5c6143cd4a76e877c665e71d
   > 俄语的语音韵律感十足
-
+  
 - 万门大学 吴石磊
 
   
