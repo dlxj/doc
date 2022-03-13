@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:fontShear="16.78842%" xml:id="s1"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s2"></style> 
+   <style tts:textAlign="start" xml:id="s3"></style> 
+   <style tts:textAlign="center" xml:id="s4"></style> 
+   <style tts:ruby="container" xml:id="s5"></style> 
+   <style tts:ruby="base" xml:id="s6"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s7"></style> 
+   <style tts:ruby="text" tts:rubyPosition="after" xml:id="s8"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:03.170" end="00:00:04.463" region="縦左">（ナレーション）<br /><span style="s1">ポケットモンスター</span></p> 
+   <p begin="00:00:04.547" end="00:00:06.465" region="縦左" style="s1">縮めて“ポケモン”</p> 
+   <p begin="00:00:06.924" end="00:00:08.801" region="縦左" style="s1">ここ<br />シンオウ地方にも―</p> 
+   <p begin="00:00:08.884" end="00:00:11.095" region="縦左" style="s1">たくさんのポケモン<br />たちが生きている</p> 
+   <p begin="00:00:11.512" end="00:00:14.473" style="s2"><span style="s3">空を飛ぶもの 海をゆくもの—</span></p> 
+   <p begin="00:00:14.557" end="00:00:16.100" style="s2"><span style="s3">地を走るもの</span></p> 
+   <p begin="00:00:16.559" end="00:00:20.896" style="s2"><span style="s3">人びとはポケモンたちと共に<br />遊び 戦い—</span></p> 
+   <p begin="00:00:20.980" end="00:00:23.107" style="s2"><span style="s3">この大地に暮らしていた</span></p> 
+   <p begin="00:00:31.073" end="00:00:35.035" region="縦左">（目覚まし時計の<br />アラーム）</p> 
+   <p begin="00:00:42.543" end="00:00:43.544" region="縦左">（ヒカリ）ん…</p> 
+   <p begin="00:00:47.882" end="00:00:51.802" region="縦左">ん… う～ん</p> 
+   <p begin="00:00:52.344" end="00:00:55.222" style="s4"><span style="s3">（ナレーション）<span style="s1">この世界</span><br /><span style="s1">人は10歳(さい)になると—</span></span></p> 
+   <p begin="00:00:55.306" end="00:00:57.433" style="s2"><span style="s3">ポケモンを持つことを許される</span></p> 
+   <p begin="00:00:57.892" end="00:00:59.226" region="縦左" style="s1">その日から人は―</p> 
+   <p begin="00:00:59.310" end="00:01:00.853" region="縦左" style="s1">ポケモンを<br />パートナーに―</p> 
+   <p begin="00:01:00.936" end="00:01:02.563" region="縦左" style="s1">旅立つことが<br />できるのだ</p> 
+   <p begin="00:01:04.023" end="00:01:05.024" style="s4"><span style="s3">（ヒカリ）ハァ</span></p> 
+   <p begin="00:01:08.527" end="00:01:11.363" style="s4"><span style="s3">（ナレーション）<br /><span style="s1">この少女 ヒカリもその１人</span></span></p> 
+   <p begin="00:01:11.447" end="00:01:15.618" style="s2"><span style="s3">今日は初めてのパートナーとなる<br />ポケモンをもらえる日なのだ</span></p> 
+   <p begin="00:01:27.129" end="00:01:28.130" style="s4"><span style="s3">（ノック）</span></p> 
+   <p begin="00:01:28.214" end="00:01:30.424" style="s4"><span style="s3">（アヤコ）ヒカリ 起きてる？</span></p> 
+   <p begin="00:01:30.508" end="00:01:32.009" style="s4"><span style="s3">起きてまーす</span></p> 
+   <p begin="00:01:32.885" end="00:01:34.261" style="s4"><span style="s3">（アヤコ）おはよう</span></p> 
+   <p begin="00:01:34.345" end="00:01:35.721" style="s4"><span style="s3">おはよう ママ</span></p> 
+   <p begin="00:01:35.805" end="00:01:38.474" style="s4"><span style="s3">（アヤコ）ふーん<br />さすがに今日は早起きね</span></p> 
+   <p begin="00:01:38.557" end="00:01:40.309" style="s4"><span style="s3">今日も早起きです</span></p> 
+   <p begin="00:01:40.976" end="00:01:42.770" style="s4"><span style="s3">ニャルマー おはよう</span></p> 
+   <p begin="00:01:45.481" end="00:01:46.732" style="s4"><span style="s3">（ニャルマーの鳴き声）</span></p> 
+   <p begin="00:01:47.316" end="00:01:48.692" style="s4"><span style="s3">（アヤコ）荷造り できてるわね</span></p> 
+   <p begin="00:01:49.068" end="00:01:51.403" style="s4"><span style="s3">うん 昨日 全部やったよ</span></p> 
+   <p begin="00:01:51.487" end="00:01:53.322" style="s4"><span style="s3">それと一番大事なもの</span></p> 
+   <p begin="00:01:53.405" end="00:01:56.534" style="s4"><span style="s3">ナナカマド研究所から来たハガキ<br />ちゃんと持ってる？</span></p> 
+   <p begin="00:01:56.617" end="00:02:00.371" style="s4"><span style="s3">あれがないとポケモンも<br />ポケモンずかんも もらえないわよ</span></p> 
+   <p begin="00:02:00.454" end="00:02:01.872" style="s4"><span style="s3"><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span></span></p> 
+   <p begin="00:02:03.249" end="00:02:05.626" style="s4"><span style="s3">ほら ちゃーんと</span></p> 
+   <p begin="00:02:06.085" end="00:02:10.422" style="s4"><span style="s3">（アヤコ）で 最初の３<span style="s5"><span style="s6">匹</span><span style="s7">びき</span></span>の中から<br />どの子をもらうか決めたの？</span></p> 
+   <p begin="00:02:10.506" end="00:02:11.882" style="s4"><span style="s3">うーん…</span></p> 
+   <p begin="00:02:12.508" end="00:02:14.385" style="s4"><span style="s3">それがまだ</span></p> 
+   <p begin="00:02:14.760" end="00:02:19.181" style="s4"><span style="s3">でもね どのポケモンとも<br />いいパートナーになれる自信ある</span></p> 
+   <p begin="00:02:19.265" end="00:02:20.307" style="s4"><span style="s3">だってママみたいな—</span></p> 
+   <p begin="00:02:20.391" end="00:02:22.935" style="s4"><span style="s3">トップコーディネーターに<br />なるんだから</span></p> 
+   <p begin="00:02:24.144" end="00:02:28.148" style="s4"><span style="s3">だったら まずは立派な<br />ポケモントレーナーになりなさい</span></p> 
+   <p begin="00:02:28.232" end="00:02:31.402" style="s4"><span style="s3">ブリーダーもコーディネーターも<br />ウォッチャーも—</span></p> 
+   <p begin="00:02:31.485" end="00:02:34.405" style="s4"><span style="s3">みんな最初は<br />トレーナーから始まるんです</span></p> 
+   <p begin="00:02:35.614" end="00:02:38.242" style="s4"><span style="s3">分かってる<br />いつか あたしだって…</span></p> 
+   <p begin="00:02:38.325" end="00:02:40.953" style="s4"><span style="s3">（<span style="s5"><span style="s6">歓声</span><span style="s7">かんせい</span></span>）<br />（モモアン）<span style="s1">それでは次のエントリー</span></span></p> 
+   <p begin="00:02:41.036" end="00:02:43.831" style="s2"><span style="s3">フタバタウンから<br />さっそう登場のヒカリさん</span></p> 
+   <p begin="00:02:45.165" end="00:02:47.835" style="s4"><span style="s3">いくわよ ヒコザル！</span></p> 
+   <p begin="00:02:52.172" end="00:02:53.173" style="s4"><span style="s3">（ヒコザル）ウッキ～</span></p> 
+   <p begin="00:02:54.174" end="00:02:55.843" style="s4"><span style="s3">かえんぐるま</span></p> 
+   <p begin="00:02:56.844" end="00:02:58.345" style="s4"><span style="s3">ヒコ～ッ</span></p> 
+   <p begin="00:03:03.267" end="00:03:05.436" style="s4"><span style="s3">ウ～ッキ～</span></p> 
+   <p begin="00:03:05.519" end="00:03:08.022" style="s4"><span style="s3">（モモアン）<span style="s1">おっと ヒコザル</span><br /><span style="s1">かえんぐるま 決まった！</span></span></p> 
+   <p begin="00:03:10.399" end="00:03:12.526" style="s4"><span style="s3">ってこんな感じで見せてあげる</span></p> 
+   <p begin="00:03:13.193" end="00:03:15.487" style="s4"><span style="s3">ねえ ごはんの<span style="s5"><span style="s6">途中</span><span style="s7">とちゅう</span></span>なんだけど</span></p> 
+   <p begin="00:03:15.571" end="00:03:19.533" style="s4"><span style="s3">それからね<br />みずタイプのポッチャマならね…</span></p> 
+   <p begin="00:03:20.409" end="00:03:23.120" style="s4"><span style="s3">いっけ～ ポッチャマ！</span></p> 
+   <p begin="00:03:26.582" end="00:03:27.583" style="s4"><span style="s3">（ポッチャマ）ポチャポチャ～</span></p> 
+   <p begin="00:03:27.666" end="00:03:29.418" style="s4"><span style="s3">バブルこうせん</span></p> 
+   <p begin="00:03:29.501" end="00:03:31.462" style="s4"><span style="s3">ポチャ～</span></p> 
+   <p begin="00:03:36.175" end="00:03:38.093" style="s4"><span style="s3">（モモアン）<br /><span style="s1">おおっ バブルこうせん</span></span></p> 
+   <p begin="00:03:38.177" end="00:03:41.180" style="s2"><span style="s3">あざやかな乱反射で<br />美しく決まった！</span></p> 
+   <p begin="00:03:41.889" end="00:03:44.183" style="s4"><span style="s3">（アヤコ）<br />だから ごはんなんですけど</span></p> 
+   <p begin="00:03:44.266" end="00:03:46.894" style="s4"><span style="s3">ナエトルなら くさタイプだから…</span></p> 
+   <p begin="00:03:47.770" end="00:03:50.648" style="s4"><span style="s3">ゴー ナエトル！</span></p> 
+   <p begin="00:03:53.651" end="00:03:54.652" style="s4"><span style="s3">（ナエトル）ナエ～</span></p> 
+   <p begin="00:03:55.653" end="00:03:57.529" style="s4"><span style="s3">はっぱカッター</span></p> 
+   <p begin="00:03:58.322" end="00:03:59.823" style="s4"><span style="s3">ナエ ナエ</span></p> 
+   <p begin="00:04:06.080" end="00:04:09.500" style="s4"><span style="s3">こ～んな感じ フフッ</span></p> 
+   <p begin="00:04:10.292" end="00:04:12.544" style="s4"><span style="s3">はいはい もうずっと<span style="s5"><span style="s6">踊</span><span style="s7">おど</span></span>ってなさい</span></p> 
+   <p begin="00:04:12.628" end="00:04:14.505" style="s4"><span style="s3">ポケモンもらえなくってもいいのなら</span></p> 
+   <p begin="00:04:14.588" end="00:04:17.549" style="s4"><span style="s3">あっ おっと そうだった</span></p> 
+   <p begin="00:04:22.304" end="00:04:25.307" style="s4"><span style="s3">いい天気 絶好の旅立ち日和ね</span></p> 
+   <p begin="00:04:25.391" end="00:04:28.352" style="s4"><span style="s3">（アヤコ）ヒカリ 準備はいい？<br />（ヒカリ）はーい</span></p> 
+   <p begin="00:04:28.727" end="00:04:29.895" style="s4"><span style="s3">何これ？</span></p> 
+   <p begin="00:04:29.979" end="00:04:31.647" style="s4"><span style="s3">昨日 作った荷物</span></p> 
+   <p begin="00:04:31.730" end="00:04:33.983" style="s4"><span style="s3">いるものを<span style="s5"><span style="s6">詰</span><span style="s7">つ</span></span>めてったら<br />こうなったの</span></p> 
+   <p begin="00:04:36.193" end="00:04:37.695" style="s4"><span style="s3">全部 着がえ？</span></p> 
+   <p begin="00:04:37.778" end="00:04:40.864" style="s4"><span style="s3">（ヒカリ）あとアクセサリーとか<br />エクステとか いろいろ</span></p> 
+   <p begin="00:04:40.948" end="00:04:43.784" style="s4"><span style="s3">ハァ… 何しに行くか分かってる？</span></p> 
+   <p begin="00:04:44.243" end="00:04:46.120" style="s4"><span style="s3">（ヒカリ）<br />トレーナー修業の旅でしょ？</span></p> 
+   <p begin="00:04:46.203" end="00:04:47.246" style="s4"><span style="s3">だったら—</span></p> 
+   <p begin="00:04:48.038" end="00:04:49.206" style="s4"><span style="s3">これで十分です</span></p> 
+   <p begin="00:04:49.289" end="00:04:51.375" style="s4"><span style="s3">え～ それだけ？</span></p> 
+   <p begin="00:04:51.458" end="00:04:55.796" style="s4"><span style="s3">上手な旅人になりたいのなら<br /><span style="s5"><span style="s6">先輩</span><span style="s8">せんぱい</span></span>の言うことは聞くものです</span></p> 
+   <p begin="00:04:56.255" end="00:04:57.256" style="s4"><span style="s3">はーい</span></p> 
+   <p begin="00:04:58.007" end="00:04:59.008" style="s4"><span style="s3">（アヤコ）それから</span></p> 
+   <p begin="00:04:59.425" end="00:05:01.510" style="s4"><span style="s3">え？　これって…</span></p> 
+   <p begin="00:05:02.553" end="00:05:06.015" style="s4"><span style="s3">（アヤコ）ママがコンテストで<br />一番最初にもらった優勝リボンです</span></p> 
+   <p begin="00:05:06.932" end="00:05:10.185" style="s4"><span style="s3">いつも あたしの旅を支えてくれた<br />お守りだったの</span></p> 
+   <p begin="00:05:10.269" end="00:05:12.813" style="s4"><span style="s3">今度は<br />ヒカリを守ってくれますように</span></p> 
+   <p begin="00:05:12.896" end="00:05:15.399" style="s4"><span style="s3">（ヒカリ）いいの？<br />（アヤコ）ええ 持っていって</span></p> 
+   <p begin="00:05:15.482" end="00:05:18.444" style="s4"><span style="s3">ありがとう ママ！　いってきます</span></p> 
+   <p begin="00:05:20.404" end="00:05:23.407" style="s4"><span style="s3">アハッ ウフフ アハハ ハハハ</span></p> 
+   <p begin="00:05:24.366" end="00:05:27.077" style="s4"><span style="s3">（アヤコ）ナナカマド研究所は<br />マサゴタウンの外れよ</span></p> 
+   <p begin="00:05:27.161" end="00:05:28.495" style="s4"><span style="s3">場所 分かってるわね？</span></p> 
+   <p begin="00:05:28.579" end="00:05:30.622" style="s4"><span style="s3"><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span> 大丈夫</span></p> 
+   <p begin="00:05:31.206" end="00:05:33.542" style="s4"><span style="s3">これに地図ものってるし</span></p> 
+   <p begin="00:05:33.625" end="00:05:36.045" style="s4"><span style="s3">ヒカリ しゅっぱ～つ</span></p> 
+   <p begin="00:05:38.088" end="00:05:41.091" style="s4"><span style="s3">いってらっしゃい　がんばってね</span></p> 
+   <p begin="00:05:41.842" end="00:05:42.926" style="s4"><span style="s3">はーい</span></p> 
+   <p begin="00:05:43.677" end="00:05:45.763" style="s4"><span style="s3">うわっ あっ ああっ</span></p> 
+   <p begin="00:05:45.846" end="00:05:46.847" style="s4"><span style="s3">ヒカリ！</span></p> 
+   <p begin="00:05:46.930" end="00:05:49.308" style="s4"><span style="s3">（ヒカリ）あっ ううっ</span></p> 
+   <p begin="00:05:50.100" end="00:05:51.894" style="s4"><span style="s3"><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span> 大丈夫</span></p> 
+   <p begin="00:05:52.269" end="00:05:53.520" style="s4"><span style="s3">ハァ～</span></p> 
+   <p begin="00:05:53.604" end="00:05:56.857" style="s4"><span style="s3"><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span>って言う時が<br />一番危険なのよね あの子</span></p> 
+   <p begin="00:05:56.940" end="00:05:58.776" style="s4"><span style="s3">（ニャルマーの鳴き声）</span></p> 
+   <p begin="00:05:58.859" end="00:05:59.860" style="s4"><span style="s3">ウフ</span></p> 
+   <p begin="00:06:09.119" end="00:06:12.956" style="s4"><span style="s3">（ペラップの鳴き声）</span></p> 
+   <p begin="00:06:21.757" end="00:06:23.926" style="s4"><span style="s3">よーし 着いたわよ マサゴタウン</span></p> 
+   <p begin="00:06:27.679" end="00:06:28.931" style="s4"><span style="s3">とうちゃーく</span></p> 
+   <p begin="00:06:29.431" end="00:06:32.059" style="s4"><span style="s3">ここね ナナカマド研究所は</span></p> 
+   <p begin="00:06:35.521" end="00:06:37.856" style="s4"><span style="s3">こんにちは ポケモンくださーい</span></p> 
+   <p begin="00:06:37.940" end="00:06:40.651" style="s4"><span style="s3">（マスター）あいよ ポケモン一丁<br />（ヒカリ）え？</span></p> 
+   <p begin="00:06:42.569" end="00:06:44.655" style="s4"><span style="s3">（マスター）<br />って ポケモン一丁っすか？</span></p> 
+   <p begin="00:06:46.657" end="00:06:51.161" style="s4"><span style="s3">あれ～ どこでまちがえたんだろう</span></p> 
+   <p begin="00:06:52.204" end="00:06:53.705" style="s4"><span style="s3">どこ？</span></p> 
+   <p begin="00:06:54.164" end="00:06:55.791" style="s4"><span style="s3">ああ～</span></p> 
+   <p begin="00:06:56.416" end="00:06:58.127" style="s4"><span style="s3">うう～</span></p> 
+   <p begin="00:06:59.503" end="00:07:03.590" style="s4"><span style="s3">えっと ここが ここで…</span></p> 
+   <p begin="00:07:03.674" end="00:07:05.676" style="s4"><span style="s3">これが あそこで…</span></p> 
+   <p begin="00:07:08.220" end="00:07:10.430" style="s4"><span style="s3">えっと… あっ</span></p> 
+   <p begin="00:07:11.098" end="00:07:13.392" style="s4"><span style="s3">あっ す すみません</span></p> 
+   <p begin="00:07:14.434" end="00:07:16.854" style="s4"><span style="s3">（男性）ウム そこな<span style="s5"><span style="s6">娘</span><span style="s7">むすめ</span></span></span></p> 
+   <p begin="00:07:16.937" end="00:07:20.399" style="s4"><span style="s3">え？　そこな<span style="s5"><span style="s6">娘</span><span style="s7">むすめ</span></span>って あたし？</span></p> 
+   <p begin="00:07:20.482" end="00:07:23.777" style="s4"><span style="s3">ウム 察するに<br />道に迷ったと見たがどうだ？</span></p> 
+   <p begin="00:07:24.278" end="00:07:27.656" style="s4"><span style="s3">うっ… はい<br />ああ でも<span style="s5"><span style="s6">大丈夫</span><span style="s8">だいじょうぶ</span></span>です</span></p> 
+   <p begin="00:07:28.198" end="00:07:30.993" style="s4"><span style="s3">ウム<br />ちっとも<span style="s5"><span style="s6">大丈夫</span><span style="s8">だいじょうぶ</span></span>そうではないな</span></p> 
+   <p begin="00:07:31.076" end="00:07:33.537" style="s4"><span style="s3">はあ… すみません</span></p> 
+   <p begin="00:07:33.620" end="00:07:37.040" style="s4"><span style="s3">そのハガキを持っている者は<br />新人トレーナーだな</span></p> 
+   <p begin="00:07:37.124" end="00:07:40.919" style="s4"><span style="s3">わが研究所にポケモンを<br />もらいに行くというわけだ</span></p> 
+   <p begin="00:07:41.003" end="00:07:43.088" style="s4"><span style="s3">はい そうです… え？</span></p> 
+   <p begin="00:07:43.505" end="00:07:45.507" style="s4"><span style="s3">わが研究所って…</span></p> 
+   <p begin="00:07:45.591" end="00:07:49.595" style="s4"><span style="s3">（ナナカマド）ウム<br />私がナナカマドだ　ついてきたまえ</span></p> 
+   <p begin="00:07:50.053" end="00:07:51.054" style="s4"><span style="s3">え？</span></p> 
+   <p begin="00:07:52.931" end="00:07:55.309" style="s4"><span style="s3">どうした？<br />ポケモンが欲しくはないのか？</span></p> 
+   <p begin="00:07:55.809" end="00:07:58.353" style="s4"><span style="s3">え？　あ あっ はい</span></p> 
+   <p begin="00:08:01.356" end="00:08:04.568" style="s4"><span style="s3">（ユウゾウ）みんな<br />もうすぐ新人トレーナーが来るぞ</span></p> 
+   <p begin="00:08:04.651" end="00:08:06.945" style="s4"><span style="s3">選んでもらえるように<br />たくさん食べて—</span></p> 
+   <p begin="00:08:07.029" end="00:08:08.614" style="s4"><span style="s3">元気なところをアピールしような</span></p> 
+   <p begin="00:08:09.031" end="00:08:12.659" style="s4"><span style="s3">（ポケモンたちの鳴き声）</span></p> 
+   <p begin="00:08:13.243" end="00:08:15.120" style="s4"><span style="s3">（助手）みんな<br />早く旅に出たいんですね</span></p> 
+   <p begin="00:08:15.204" end="00:08:17.039" style="s4"><span style="s3">（ドアの開く音）</span></p> 
+   <p begin="00:08:17.915" end="00:08:19.875" style="s4"><span style="s3">（ユウゾウ）そのムックルと<br />ムクホークは？</span></p> 
+   <p begin="00:08:19.958" end="00:08:22.294" style="s4"><span style="s3">（助手）ナナカマド博士が<br />お帰りになる前に—</span></p> 
+   <p begin="00:08:22.377" end="00:08:24.922" style="s4"><span style="s3"><span style="s5"><span style="s6">診断</span><span style="s7">しんだん</span></span>だけでも<br />しておこうと思いまして</span></p> 
+   <p begin="00:08:25.005" end="00:08:26.423" style="s4"><span style="s3">なるほど</span></p> 
+   <p begin="00:08:26.506" end="00:08:29.009" style="s4"><span style="s3">ムックルには<br />思い入れがあるんだよな</span></p> 
+   <p begin="00:08:29.092" end="00:08:32.804" style="s4"><span style="s3">旅に出て最初にゲットしたのが<br />ムックルだったっけ</span></p> 
+   <p begin="00:08:32.888" end="00:08:34.348" style="s4"><span style="s3">（助手）<span style="s5"><span style="s6">僕</span><span style="s7">ぼく</span></span>はビッパでしたね</span></p> 
+   <p begin="00:08:34.431" end="00:08:38.435" style="s4"><span style="s3">（ユウゾウ）ビッパか<br /><span style="s5"><span style="s6">僕</span><span style="s8">ぼく</span></span>の弟も最初はビッパだったよ</span></p> 
+   <p begin="00:08:40.687" end="00:08:44.858" style="s4"><span style="s3">（ポッチャマの<span style="s5"><span style="s6">怒</span><span style="s7">おこ</span></span>る声）</span></p> 
+   <p begin="00:08:44.942" end="00:08:47.194" style="s4"><span style="s3">ベ～ ウッキ～</span></p> 
+   <p begin="00:08:47.277" end="00:08:48.487" style="s4"><span style="s3">チャマー！</span></p> 
+   <p begin="00:08:48.570" end="00:08:49.947" style="s4"><span style="s3">あっ どうした？</span></p> 
+   <p begin="00:08:50.530" end="00:08:51.990" style="s4"><span style="s3">ポッチャマ！</span></p> 
+   <p begin="00:08:55.702" end="00:08:57.412" style="s4"><span style="s3">ああっ</span></p> 
+   <p begin="00:08:57.496" end="00:08:59.164" style="s4"><span style="s3">やめないか ポッチャマ！</span></p> 
+   <p begin="00:08:59.248" end="00:09:01.166" style="s4"><span style="s3">ケンカなんかしちゃダメだ…<br />ああっ</span></p> 
+   <p begin="00:09:01.250" end="00:09:02.334" style="s4"><span style="s3">（助手）うわっ</span></p> 
+   <p begin="00:09:03.335" end="00:09:06.004" style="s4"><span style="s3">（ポッチャマ）<br />チャマー チャマー！</span></p> 
+   <p begin="00:09:07.965" end="00:09:09.967" style="s4"><span style="s3">うわっ こら ポッチャマ！</span></p> 
+   <p begin="00:09:10.884" end="00:09:12.094" style="s4"><span style="s3">（ムクホーク）ムク！</span></p> 
+   <p begin="00:09:12.552" end="00:09:15.180" style="s4"><span style="s3">（ムクホークの鳴き声）</span></p> 
+   <p begin="00:09:15.722" end="00:09:18.225" style="s4"><span style="s3">（ユウゾウ）やめろ ヒコザル！<br />ポッチャマ</span></p> 
+   <p begin="00:09:19.434" end="00:09:21.061" style="s4"><span style="s3">ムクホークたちも落ち着け</span></p> 
+   <p begin="00:09:21.144" end="00:09:24.982" style="s4"><span style="s3">（ムクホークの鳴き声）</span></p> 
+   <p begin="00:09:25.565" end="00:09:27.526" style="s4"><span style="s3">（ユウゾウ）ムクホーク<br />かぜおこしをやめろ！</span></p> 
+   <p begin="00:09:34.491" end="00:09:36.952" style="s4"><span style="s3">（ユウゾウ）ああっ！<br />（ポッチャマ）ポチャ ポチャ…</span></p> 
+   <p begin="00:09:37.035" end="00:09:38.787" style="s4"><span style="s3">（ユウゾウ）あっ ああっ</span></p> 
+   <p begin="00:09:42.207" end="00:09:43.709" style="s4"><span style="s3">ウッキー</span></p> 
+   <p begin="00:09:44.167" end="00:09:45.377" style="s4"><span style="s3">（ポッチャマ）ポチャー！</span></p> 
+   <p begin="00:09:45.794" end="00:09:47.212" style="s4"><span style="s3">なんてこった…</span></p> 
+   <p begin="00:09:47.296" end="00:09:51.091" style="s4"><span style="s3">新人トレーナーが来るうえに<br />博士もお帰りになる日なのに</span></p> 
+   <p begin="00:09:51.174" end="00:09:53.218" style="s4"><span style="s3">（ユウゾウ）追うんだ 急げ！<br />（助手たち）はい</span></p> 
+   <p begin="00:09:57.597" end="00:09:59.224" style="s4"><span style="s3">（２人）出たー！</span></p> 
+   <p begin="00:09:59.725" end="00:10:02.394" style="s4"><span style="s3">ウム 出たとは何だ 出たとは</span></p> 
+   <p begin="00:10:02.477" end="00:10:04.229" style="s4"><span style="s3">おかえりなさい 博士！</span></p> 
+   <p begin="00:10:04.313" end="00:10:05.314" style="s4"><span style="s3">うわ…</span></p> 
+   <p begin="00:10:05.397" end="00:10:07.357" style="s4"><span style="s3">（ユウゾウ）<br />まったくもって すみません！</span></p> 
+   <p begin="00:10:07.441" end="00:10:10.944" style="s4"><span style="s3">トラブルが発生し<br />新人に<span style="s5"><span style="s6">渡</span><span style="s8">わた</span></span>すヒコザルとポッチャマが—</span></p> 
+   <p begin="00:10:11.028" end="00:10:13.363" style="s4"><span style="s3">裏の森に<span style="s5"><span style="s6">逃</span><span style="s7">に</span></span>げ出してしまいました</span></p> 
+   <p begin="00:10:13.447" end="00:10:18.076" style="s4"><span style="s3">同時に進化の研究<span style="s5"><span style="s6">途中</span><span style="s7">とちゅう</span></span>だった<br />ムックルとムクホークも外に…</span></p> 
+   <p begin="00:10:18.160" end="00:10:21.288" style="s4"><span style="s3">あっ 幸いナエトルだけはここに</span></p> 
+   <p begin="00:10:21.913" end="00:10:23.040" style="s4"><span style="s3">ウム</span></p> 
+   <p begin="00:10:23.123" end="00:10:26.168" style="s4"><span style="s3">ナエ？　エウ…</span></p> 
+   <p begin="00:10:27.669" end="00:10:30.047" style="s4"><span style="s3">あの あたし <span style="s5"><span style="s6">捜</span><span style="s7">さが</span></span>しに行きます</span></p> 
+   <p begin="00:10:30.130" end="00:10:31.131" style="s4"><span style="s3">君が？</span></p> 
+   <p begin="00:10:31.214" end="00:10:33.717" style="s4"><span style="s3">はい あたしとパートナーに<br />なるかもしれない—</span></p> 
+   <p begin="00:10:33.800" end="00:10:35.761" style="s4"><span style="s3">ポケモンたちですから</span></p> 
+   <p begin="00:10:38.472" end="00:10:39.514" style="s4"><span style="s3">あ…</span></p> 
+   <p begin="00:10:40.474" end="00:10:45.270" style="s4"><span style="s3">ポケモンに出会ったら目の高さまで<br />かがんで話しかけてやるとよい</span></p> 
+   <p begin="00:10:45.354" end="00:10:47.898" style="s4"><span style="s3">さすれば安心するはずだ</span></p> 
+   <p begin="00:10:48.648" end="00:10:50.359" style="s4"><span style="s3">アドバイス ありがとうございます</span></p> 
+   <p begin="00:10:50.734" end="00:10:52.361" style="s4"><span style="s3">ウム がんばりたまえ</span></p> 
+   <p begin="00:10:52.819" end="00:10:54.112" style="s4"><span style="s3">はい！</span></p> 
+   <p begin="00:11:08.585" end="00:11:13.715" style="s4"><span style="s3">ふう 思ったより優しい人みたいね<br />ナナカマド博士って</span></p> 
+   <p begin="00:11:26.144" end="00:11:27.604" style="s4"><span style="s3">ウッキー</span></p> 
+   <p begin="00:11:27.687" end="00:11:29.189" style="s4"><span style="s3">あっ ヒコザル</span></p> 
+   <p begin="00:11:29.272" end="00:11:30.565" style="s4"><span style="s3">（ポッチャマ）ポチャ！<br />（ヒカリ）ポッチャマ</span></p> 
+   <p begin="00:11:30.649" end="00:11:32.609" style="s4"><span style="s3">（ポッチャマ）チャマ！<br />（ヒコザル）ウッキー</span></p> 
+   <p begin="00:11:34.152" end="00:11:36.488" style="s4"><span style="s3">ウキ ウッキー</span></p> 
+   <p begin="00:11:36.571" end="00:11:39.366" style="s4"><span style="s3">ポッチャマ やめなさい！　あ…</span></p> 
+   <p begin="00:11:39.449" end="00:11:41.410" style="s4"><span style="s3">ポッチャマ！</span></p> 
+   <p begin="00:11:41.493" end="00:11:42.702" style="s4"><span style="s3">（ヒカリ）あっ</span></p> 
+   <p begin="00:11:43.745" end="00:11:45.747" style="s4"><span style="s3">危ないじゃない！　あっ</span></p> 
+   <p begin="00:11:46.790" end="00:11:48.708" style="s4"><span style="s3">待ちなさい ２人とも！</span></p> 
+   <p begin="00:11:52.921" end="00:11:56.216" style="s4"><span style="s3">ヒコザル！　ポッチャマ！</span></p> 
+   <p begin="00:11:56.299" end="00:11:59.010" style="s4"><span style="s3">ハァ… どこ行ったのよ ２人とも</span></p> 
+   <p begin="00:11:59.094" end="00:12:01.221" style="s4"><span style="s3">（ポッチャマ）ポチャー<br />（ヒカリ）ポッチャマ？</span></p> 
+   <p begin="00:12:01.847" end="00:12:05.725" style="s4"><span style="s3">（ポッチャマ）ポチャー！<br />（ポケモンたちの鳴き声）</span></p> 
+   <p begin="00:12:05.809" end="00:12:07.811" style="s4"><span style="s3">（ヒカリ）ポッチャマ！<br />（ポッチャマ）ポチャー</span></p> 
+   <p begin="00:12:11.273" end="00:12:13.275" style="s4"><span style="s3">あっ… あっ！</span></p> 
+   <p begin="00:12:13.358" end="00:12:15.277" style="s4"><span style="s3">（アリアドス）アリ～</span></p> 
+   <p begin="00:12:15.360" end="00:12:17.446" style="s4"><span style="s3">アリアドス みんなを放して！</span></p> 
+   <p begin="00:12:17.529" end="00:12:19.239" style="s4"><span style="s3">（アリアドス）アリ～！<br />（ヒカリ）ひえっ</span></p> 
+   <p begin="00:12:21.324" end="00:12:23.285" style="s4"><span style="s3">（アリアドス）アリアリ～</span></p> 
+   <p begin="00:12:23.952" end="00:12:25.454" style="s4"><span style="s3">アリ！</span></p> 
+   <p begin="00:12:28.790" end="00:12:29.791" style="s4"><span style="s3">（ヒカリ）よーし</span></p> 
+   <p begin="00:12:29.875" end="00:12:32.586" style="s4"><span style="s3">アリアドス こっちこっち</span></p> 
+   <p begin="00:12:35.213" end="00:12:37.424" style="s4"><span style="s3">ほらほら ここまでおいで</span></p> 
+   <p begin="00:12:37.507" end="00:12:38.633" style="s4"><span style="s3">（アリアドス）アリ～</span></p> 
+   <p begin="00:12:40.594" end="00:12:41.887" style="s4"><span style="s3">ポチャー！</span></p> 
+   <p begin="00:12:41.970" end="00:12:44.431" style="s4"><span style="s3"><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span>よ ポッチャマ<br />すぐ助けるからね</span></p> 
+   <p begin="00:12:44.514" end="00:12:45.515" style="s4"><span style="s3">ポチャ？</span></p> 
+   <p begin="00:12:46.141" end="00:12:48.977" style="s4"><span style="s3">アリアリアリ… アリー！</span></p> 
+   <p begin="00:12:49.436" end="00:12:50.479" style="s4"><span style="s3">（ヒカリ）ふっ</span></p> 
+   <p begin="00:12:50.937" end="00:12:54.024" style="s4"><span style="s3">ポチャー！</span></p> 
+   <p begin="00:12:54.107" end="00:12:55.525" style="s4"><span style="s3">やったあ！</span></p> 
+   <p begin="00:12:55.609" end="00:12:57.861" style="s4"><span style="s3">ポチャ！　ポチャポチャポチャ！</span></p> 
+   <p begin="00:12:57.944" end="00:13:01.281" style="s4"><span style="s3">ごめんごめん<br />でも助かったんだから許してよ</span></p> 
+   <p begin="00:13:01.364" end="00:13:02.491" style="s4"><span style="s3">えっ あっ ええっ</span></p> 
+   <p begin="00:13:02.574" end="00:13:06.703" style="s4"><span style="s3">（２人の悲鳴）</span></p> 
+   <p begin="00:13:08.038" end="00:13:11.416" style="s4"><span style="s3">（ヒカリ）はっ ハァ びっくりした<br />（ポッチャマ）ポチャ…</span></p> 
+   <p begin="00:13:12.876" end="00:13:15.545" style="s4"><span style="s3">でも まあ ここまで来れば<span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span></span></p> 
+   <p begin="00:13:15.629" end="00:13:16.713" style="s4"><span style="s3">あたし ヒカリ</span></p> 
+   <p begin="00:13:16.796" end="00:13:19.341" style="s4"><span style="s3">今日トレーナーデビューなの<br />よろしくね</span></p> 
+   <p begin="00:13:19.424" end="00:13:22.093" style="s4"><span style="s3">（ポッチャマ）ポチャー！<br />（ヒカリ）いたっ いたたた…</span></p> 
+   <p begin="00:13:22.552" end="00:13:24.054" style="s4"><span style="s3">ポチャ！　ポチャポチャポチャ！</span></p> 
+   <p begin="00:13:24.137" end="00:13:28.391" style="s4"><span style="s3">な 何なの？　大体 あなた<br />ヒコザルを追いかけてたんでしょ</span></p> 
+   <p begin="00:13:28.475" end="00:13:30.310" style="s4"><span style="s3">なのに あなたのほうが<br /><span style="s5"><span style="s6">捕</span><span style="s8">つか</span></span>まっちゃうなんて—</span></p> 
+   <p begin="00:13:30.393" end="00:13:31.853" style="s4"><span style="s3">ちょっと かっこ悪いんじゃない？</span></p> 
+   <p begin="00:13:31.937" end="00:13:34.147" style="s4"><span style="s3">ポチャー！　ポチャポチャ…</span></p> 
+   <p begin="00:13:34.231" end="00:13:37.150" style="s4"><span style="s3">何 <span style="s5"><span style="s6">怒</span><span style="s7">おこ</span></span>ってんのよ<br />ホントのことでしょ</span></p> 
+   <p begin="00:13:37.234" end="00:13:39.528" style="s4"><span style="s3">（ポッチャマ）ポチャ<br />（おなかの鳴る音）</span></p> 
+   <p begin="00:13:40.570" end="00:13:43.698" style="s4"><span style="s3">はは～ん<br />あなた おなかすいてるんでしょ</span></p> 
+   <p begin="00:13:43.782" end="00:13:45.242" style="s4"><span style="s3">だから<span style="s5"><span style="s6">機嫌</span><span style="s7">きげん</span></span>悪いんだ</span></p> 
+   <p begin="00:13:45.325" end="00:13:46.409" style="s4"><span style="s3">ポチャポチャ</span></p> 
+   <p begin="00:13:46.493" end="00:13:48.578" style="s4"><span style="s3">ウフッ やっぱ図星？</span></p> 
+   <p begin="00:13:48.662" end="00:13:51.373" style="s4"><span style="s3">（ヒカリ）分かりやすいわね あなた<br />（ポッチャマ）ポチャ…</span></p> 
+   <p begin="00:13:52.707" end="00:13:55.168" style="s4"><span style="s3">（ヒカリ）はい ポケモンフーズ</span></p> 
+   <p begin="00:13:55.252" end="00:13:56.253" style="s4"><span style="s3">ポチャ</span></p> 
+   <p begin="00:13:56.336" end="00:13:58.797" style="s4"><span style="s3">何それ 態度悪い</span></p> 
+   <p begin="00:13:58.880" end="00:14:01.633" style="s4"><span style="s3">そんなんじゃ<br /><span style="s5"><span style="s6">誰</span><span style="s8">だれ</span></span>にも選んでもらえないわよ</span></p> 
+   <p begin="00:14:01.716" end="00:14:03.593" style="s4"><span style="s3">（ポッチャマ）ポチャ～<br />（ヒカリ）もう</span></p> 
+   <p begin="00:14:03.677" end="00:14:05.512" style="s4"><span style="s3">（物音）<br />（ヒカリ）あっ</span></p> 
+   <p begin="00:14:06.012" end="00:14:08.682" style="s4"><span style="s3">（アリアドス）アリ～<br />（２人の悲鳴）</span></p> 
+   <p begin="00:14:09.182" end="00:14:11.017" style="s4"><span style="s3">（アリアドス）アリ～<br />（ヒカリ）あっ</span></p> 
+   <p begin="00:14:11.560" end="00:14:13.311" style="s4"><span style="s3">（ヒカリ）キャッ<br />（ポッチャマ）ポチャッ</span></p> 
+   <p begin="00:14:13.395" end="00:14:16.439" style="s4"><span style="s3">ああ～ん… ああっ！</span></p> 
+   <p begin="00:14:16.523" end="00:14:18.400" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:14:18.775" end="00:14:20.819" style="s4"><span style="s3">（ヒカリ）ポッチャマ <span style="s5"><span style="s6">逃</span><span style="s7">に</span></span>げよう<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:14:21.486" end="00:14:22.946" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:14:24.406" end="00:14:26.116" style="s4"><span style="s3">（ヒカリ）あっ<br />（ポッチャマ）ポチャー！　ポチャ</span></p> 
+   <p begin="00:14:28.159" end="00:14:29.619" style="s4"><span style="s3">（ヒカリ）ああっ<br />（ポッチャマ）ポチャー！</span></p> 
+   <p begin="00:14:29.703" end="00:14:31.663" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:14:31.746" end="00:14:35.417" style="s4"><span style="s3">（ヒカリ）どうしよう <span style="s5"><span style="s6">怒</span><span style="s7">おこ</span></span>ってる<br />巣を<span style="s5"><span style="s6">壊</span><span style="s8">こわ</span></span>しちゃったからかな</span></p> 
+   <p begin="00:14:35.500" end="00:14:37.335" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:14:37.419" end="00:14:41.131" style="s4"><span style="s3">（２人のあわてる声）</span></p> 
+   <p begin="00:14:43.133" end="00:14:44.926" style="s4"><span style="s3">そうだ ポッチャマ</span></p> 
+   <p begin="00:14:45.010" end="00:14:47.470" style="s4"><span style="s3">ポケモンフーズで<br />アリアドスの気をそらすから—</span></p> 
+   <p begin="00:14:47.554" end="00:14:50.557" style="s4"><span style="s3">バブルこうせんで巣に穴を開けて<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:14:50.640" end="00:14:52.267" style="s4"><span style="s3">せーの それっ</span></p> 
+   <p begin="00:14:56.646" end="00:14:58.064" style="s4"><span style="s3">（ヒカリ）今よ！<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:14:58.148" end="00:14:59.566" style="s4"><span style="s3">ポッチャマ！</span></p> 
+   <p begin="00:15:04.404" end="00:15:05.739" style="s4"><span style="s3">やった！</span></p> 
+   <p begin="00:15:06.656" end="00:15:09.242" style="s4"><span style="s3">（ヒカリ）あっ<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:15:09.326" end="00:15:11.369" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:15:11.453" end="00:15:14.080" style="s4"><span style="s3">（ヒカリ）ポッチャマ <span style="s5"><span style="s6">逃</span><span style="s7">に</span></span>げて<br />あたしは<span style="s5"><span style="s6">大丈夫</span><span style="s8">だいじょうぶ</span></span>だから</span></p> 
+   <p begin="00:15:14.164" end="00:15:16.499" style="s4"><span style="s3">（ポッチャマ）ポチャー！<br />（ヒカリ）早く！</span></p> 
+   <p begin="00:15:16.583" end="00:15:17.792" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:15:18.418" end="00:15:19.419" style="s4"><span style="s3">ああっ</span></p> 
+   <p begin="00:15:19.502" end="00:15:21.630" style="s4"><span style="s3">ポチャー！</span></p> 
+   <p begin="00:15:26.885" end="00:15:28.637" style="s4"><span style="s3">あっ あ…</span></p> 
+   <p begin="00:15:28.720" end="00:15:31.181" style="s4"><span style="s3">（ポッチャマ）ポチャ～</span></p> 
+   <p begin="00:15:31.264" end="00:15:32.515" style="s4"><span style="s3">（アリアドスたちの鳴き声）</span></p> 
+   <p begin="00:15:33.016" end="00:15:34.809" style="s4"><span style="s3">（ポッチャマ）ポチャ～</span></p> 
+   <p begin="00:15:34.893" end="00:15:36.603" style="s4"><span style="s3">これは技？</span></p> 
+   <p begin="00:15:37.604" end="00:15:39.147" style="s4"><span style="s3">そうか “がまん”が使えるのね</span></p> 
+   <p begin="00:15:41.066" end="00:15:43.693" style="s4"><span style="s3">ポッチャマ！</span></p> 
+   <p begin="00:15:54.204" end="00:15:56.456" style="s4"><span style="s3">ポチャ ポチャ…</span></p> 
+   <p begin="00:15:56.915" end="00:16:00.168" style="s4"><span style="s3">受けたダメージを<br />ホントに倍にして<span style="s5"><span style="s6">撃</span><span style="s8">う</span></span>ち返した…</span></p> 
+   <p begin="00:16:00.960" end="00:16:03.421" style="s4"><span style="s3">“がまん”って<br />こんなにすごい技だったんだ</span></p> 
+   <p begin="00:16:05.048" end="00:16:06.299" style="s4"><span style="s3">フッ</span></p> 
+   <p begin="00:16:06.966" end="00:16:08.968" style="s4"><span style="s3">ありがとう ポッチャマ</span></p> 
+   <p begin="00:16:09.052" end="00:16:12.138" style="s4"><span style="s3">ポチャ ポチャ～</span></p> 
+   <p begin="00:16:14.766" end="00:16:16.351" style="s4"><span style="s3">（ヒカリ）ポッチャマ…</span></p> 
+   <p begin="00:16:23.692" end="00:16:24.693" style="s4"><span style="s3">（ヒカリ）ん？</span></p> 
+   <p begin="00:16:29.823" end="00:16:32.367" style="s4"><span style="s3">見て ポッチャマ シンジ湖よ</span></p> 
+   <p begin="00:16:32.450" end="00:16:34.035" style="s4"><span style="s3">（ポッチャマ）ポチャ<br />（おなかの鳴る音）</span></p> 
+   <p begin="00:16:34.119" end="00:16:36.246" style="s4"><span style="s3">（ポッチャマ）ポチャ<br />（ヒカリ）あ… フフッ</span></p> 
+   <p begin="00:16:36.329" end="00:16:39.165" style="s4"><span style="s3">あっ いけない<br />さっきまいちゃったんだ</span></p> 
+   <p begin="00:16:39.249" end="00:16:40.583" style="s4"><span style="s3">ごめんね これだけで</span></p> 
+   <p begin="00:16:43.420" end="00:16:45.004" style="s4"><span style="s3">ン～</span></p> 
+   <p begin="00:16:45.088" end="00:16:46.131" style="s4"><span style="s3">フフッ</span></p> 
+   <p begin="00:16:46.214" end="00:16:49.342" style="s4"><span style="s3">（ムクホークの鳴き声）<br />（ヒカリ）あっ</span></p> 
+   <p begin="00:16:52.429" end="00:16:53.430" style="s4"><span style="s3">キキ…</span></p> 
+   <p begin="00:16:54.764" end="00:16:57.475" style="s4"><span style="s3">（ヒカリ）さあ 研究所に<span style="s5"><span style="s6">戻</span><span style="s7">もど</span></span>ろう<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:16:57.559" end="00:16:58.560" style="s4"><span style="s3">（ヒカリ）うっ<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:17:00.186" end="00:17:02.897" style="s4"><span style="s3">（鳴き声）</span></p> 
+   <p begin="00:17:05.066" end="00:17:07.610" style="s4"><span style="s3">（鳴き声）</span></p> 
+   <p begin="00:17:07.694" end="00:17:08.903" style="s4"><span style="s3">（ヒカリ）あっ</span></p> 
+   <p begin="00:17:15.368" end="00:17:17.746" style="s4"><span style="s3">（鳴き声）</span></p> 
+   <p begin="00:17:24.919" end="00:17:27.922" style="s4"><span style="s3">（ヒカリ）今のってポケモン？<br />（ポッチャマ）ポチャ…</span></p> 
+   <p begin="00:17:33.178" end="00:17:35.680" style="s4"><span style="s3">（ナナカマド）ウム シンジ湖には—</span></p> 
+   <p begin="00:17:35.764" end="00:17:39.726" style="s4"><span style="s3">以前から伝説のポケモンが<br />いると言われていてな</span></p> 
+   <p begin="00:17:39.809" end="00:17:42.771" style="s4"><span style="s3">君が見たのも<br />そのポケモンかもしれん</span></p> 
+   <p begin="00:17:42.854" end="00:17:45.940" style="s4"><span style="s3">伝説のポケモン… あれが</span></p> 
+   <p begin="00:17:46.691" end="00:17:48.318" style="s4"><span style="s3">さて ヒカリくん</span></p> 
+   <p begin="00:17:48.401" end="00:17:51.613" style="s4"><span style="s3">思わぬこともあったが<br />今日は君の旅立ちの日</span></p> 
+   <p begin="00:17:51.696" end="00:17:54.032" style="s4"><span style="s3">まずはポケモンずかんと<br />モンスターボールを—</span></p> 
+   <p begin="00:17:54.115" end="00:17:55.575" style="s4"><span style="s3"><span style="s5"><span style="s6">渡</span><span style="s7">わた</span></span>さねばならんな</span></p> 
+   <p begin="00:17:55.658" end="00:17:56.910" style="s4"><span style="s3">（助手）はい</span></p> 
+   <p begin="00:17:57.327" end="00:17:58.912" style="s4"><span style="s3">（ヒカリ）わあ～<br />（ナナカマド）ウム</span></p> 
+   <p begin="00:17:58.995" end="00:18:01.831" style="s4"><span style="s3">ポケモンずかんは<br />君が出会うポケモンたちについて—</span></p> 
+   <p begin="00:18:01.915" end="00:18:04.292" style="s4"><span style="s3">さまざまなことを<br />教えてくれるだろう</span></p> 
+   <p begin="00:18:04.375" end="00:18:05.835" style="s4"><span style="s3">そしてモンスターボールは—</span></p> 
+   <p begin="00:18:05.919" end="00:18:09.923" style="s4"><span style="s3">ポケモンを入れて持ち運ぶための<br />便利なアイテムなのだ</span></p> 
+   <p begin="00:18:10.590" end="00:18:14.969" style="s4"><span style="s3">それではシンオウ地方の<br />初心者用ポケモン３<span style="s5"><span style="s6">匹</span><span style="s8">びき</span></span>のうちから—</span></p> 
+   <p begin="00:18:15.053" end="00:18:16.846" style="s4"><span style="s3">１<span style="s5"><span style="s6">匹</span><span style="s7">ぴき</span></span>を選びたまえ</span></p> 
+   <p begin="00:18:16.930" end="00:18:18.765" style="s4"><span style="s3">ほのおタイプのヒコザル</span></p> 
+   <p begin="00:18:18.848" end="00:18:20.642" style="s4"><span style="s3">ウッキー</span></p> 
+   <p begin="00:18:20.725" end="00:18:22.268" style="s4"><span style="s3">（ナナカマド）<br />みずタイプのポッチャマ</span></p> 
+   <p begin="00:18:22.352" end="00:18:23.478" style="s4"><span style="s3">ポチャ</span></p> 
+   <p begin="00:18:23.561" end="00:18:25.146" style="s4"><span style="s3">（ナナカマド）<br />くさタイプのナエトル</span></p> 
+   <p begin="00:18:25.230" end="00:18:26.439" style="s4"><span style="s3">ナエ～</span></p> 
+   <p begin="00:18:26.981" end="00:18:29.108" style="s4"><span style="s3">さて どのポケモンにするかね？</span></p> 
+   <p begin="00:18:29.192" end="00:18:30.568" style="s4"><span style="s3">もう決めてます</span></p> 
+   <p begin="00:18:30.652" end="00:18:32.237" style="s4"><span style="s3">（ヒカリ）ポッチャマ！<br />（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:18:32.320" end="00:18:34.113" style="s4"><span style="s3">アア～</span></p> 
+   <p begin="00:18:34.197" end="00:18:38.201" style="s4"><span style="s3">ウム ならば これがポッチャマの<br />モンスターボールだ</span></p> 
+   <p begin="00:18:38.284" end="00:18:42.539" style="s4"><span style="s3">はい！　ポッチャマ あたしたち<br />いいコンビになれそうよね</span></p> 
+   <p begin="00:18:42.622" end="00:18:44.916" style="s4"><span style="s3">（ヒカリ）これからもよろしくね<br />（ポッチャマ）ポチャ！</span></p> 
+   <p begin="00:18:44.999" end="00:18:46.292" style="s4"><span style="s3">それじゃ いくわよ</span></p> 
+   <p begin="00:18:50.129" end="00:18:51.297" style="s4"><span style="s3">ウフッ</span></p> 
+   <p begin="00:18:51.381" end="00:18:53.925" style="s4"><span style="s3">（ナナカマド）旅に出ると<br />いろいろなことが起こる</span></p> 
+   <p begin="00:18:54.008" end="00:18:56.553" style="s4"><span style="s3">何かあれば<br />いつでも<span style="s5"><span style="s6">連絡</span><span style="s8">れんらく</span></span>してくれたまえ</span></p> 
+   <p begin="00:18:56.636" end="00:18:59.722" style="s4"><span style="s3">（ヒカリ）ありがとうございます<br />それでは いってまいります</span></p> 
+   <p begin="00:18:59.806" end="00:19:02.767" style="s4"><span style="s3">（助手たちの<span style="s5"><span style="s6">声援</span><span style="s7">せいえん</span></span>）</span></p> 
+   <p begin="00:19:02.851" end="00:19:05.812" style="s4"><span style="s3">（ナレーション）<span style="s1">こうして旅立った</span><br /><span style="s1">ヒカリとポッチャマ</span></span></p> 
+   <p begin="00:19:05.895" end="00:19:11.234" style="s2"><span style="s3">この広大な世界で 果たして<br />どんな<span style="s5"><span style="s6">冒険</span><span style="s8">ぼうけん</span></span>が待ち受けているのか</span></p> 
+   <p begin="00:19:17.448" end="00:19:19.742" style="s4"><span style="s3">（サトシ）さあ 着いたぜ<br />シンオウ地方だ</span></p> 
+   <p begin="00:19:19.826" end="00:19:21.661" style="s4"><span style="s3">（ピカチュウ）ピカ～<br />（エイパム）オオッ</span></p> 
+   <p begin="00:19:21.744" end="00:19:23.913" style="s4"><span style="s3">どんなポケモンがいるんだろうな</span></p> 
+   <p begin="00:19:24.372" end="00:19:25.874" style="s4"><span style="s3">どんどん仲間をゲットして—</span></p> 
+   <p begin="00:19:25.957" end="00:19:28.334" style="s4"><span style="s3">シンオウリーグで<br />絶対 優勝してみせるぜ</span></p> 
+   <p begin="00:19:28.418" end="00:19:29.711" style="s4"><span style="s3">ピッカピカチュウ</span></p> 
+   <p begin="00:19:35.550" end="00:19:37.135" style="s4"><span style="s3">（オーキド）<br />おお エイパムは やはり—</span></p> 
+   <p begin="00:19:37.218" end="00:19:39.429" style="s4"><span style="s3">サトシについていっておったか</span></p> 
+   <p begin="00:19:39.512" end="00:19:42.056" style="s4"><span style="s3">見当たらんから<br />お前のあとを追っていったかと—</span></p> 
+   <p begin="00:19:42.140" end="00:19:44.350" style="s4"><span style="s3">ケンジともども話しておったんじゃ</span></p> 
+   <p begin="00:19:44.434" end="00:19:47.520" style="s2"><span style="s3">だからエイパムも<br />このまま連れていくことにしました</span></p> 
+   <p begin="00:19:47.604" end="00:19:48.605" style="s2"><span style="s3">ヒカッ</span></p> 
+   <p begin="00:19:48.688" end="00:19:51.190" style="s4"><span style="s3">（オーキド）<span style="s1">そうか</span><br /><span style="s1">ではナナカマド研究所に—</span></span></p> 
+   <p begin="00:19:51.274" end="00:19:53.735" style="s2"><span style="s3">エイパムのモンスターボールを<br />送っておいてやろう</span></p> 
+   <p begin="00:19:53.818" end="00:19:55.820" style="s4"><span style="s3">（サトシ）<br />ありがとうございます 博士</span></p> 
+   <p begin="00:19:57.363" end="00:19:59.908" style="s4"><span style="s3">（コジロウ）目標ピカチュウ 発射</span></p> 
+   <p begin="00:20:01.492" end="00:20:03.411" style="s4"><span style="s3">（ピカチュウ）ピカ～<br />（サトシ）あっ ピカチュウ！</span></p> 
+   <p begin="00:20:03.494" end="00:20:04.621" style="s4"><span style="s3">何をするんだ！</span></p> 
+   <p begin="00:20:04.704" end="00:20:05.705" style="s2"><span style="s3">おっ おおっ</span></p> 
+   <p begin="00:20:05.788" end="00:20:09.584" style="s4"><span style="s3">（ロケット団）ナ～ッハッハッハ<br />ピカチュウゲットだぜ！</span></p> 
+   <p begin="00:20:09.667" end="00:20:12.670" style="s4"><span style="s3">ピカ～！　ピカ…</span></p> 
+   <p begin="00:20:12.754" end="00:20:15.256" style="s4"><span style="s3">ロケット団！　こんな所まで</span></p> 
+   <p begin="00:20:15.340" end="00:20:18.051" style="s4"><span style="s3">（ムサシ）“ロケット団！<br />こんな所まで”と声がする</span></p> 
+   <p begin="00:20:18.134" end="00:20:19.844" style="s4"><span style="s3">（コジロウ）バトルフロンティアの<br />かなたから</span></p> 
+   <p begin="00:20:19.928" end="00:20:21.763" style="s4"><span style="s3">（ムサシ）逆巻く波を乗り<span style="s5"><span style="s6">越</span><span style="s7">こ</span></span>えて</span></p> 
+   <p begin="00:20:21.846" end="00:20:24.057" style="s4"><span style="s3">（コジロウ）<br />遠路はるばるやってきた</span></p> 
+   <p begin="00:20:24.140" end="00:20:26.684" style="s4"><span style="s3">（ニャース）ところで<br />ここは一体どこニャ？</span></p> 
+   <p begin="00:20:26.768" end="00:20:28.186" style="s4"><span style="s3">（サトシ）待て！</span></p> 
+   <p begin="00:20:28.269" end="00:20:30.229" style="s4"><span style="s3">（ムサシ）ここまでおいで～<br />（コジロウ）<span style="s5"><span style="s6">逃</span><span style="s8">に</span></span>げるが勝ちだ</span></p> 
+   <p begin="00:20:30.313" end="00:20:31.731" style="s4"><span style="s3">（ニャース）バイニャラ～</span></p> 
+   <p begin="00:20:31.814" end="00:20:34.192" style="s4"><span style="s3">（サトシ）ピカチュウ！<br />（エイパム）パム～</span></p> 
+   <p begin="00:20:34.275" end="00:20:36.027" style="s4"><span style="s3">（ロケット団）帰る！<br />（ソーナンス）ソーナンス</span></p> 
+   <p begin="00:20:36.110" end="00:20:39.280" style="s4"><span style="s3">ジャリボーイも<span style="s5"><span style="s6">振</span><span style="s7">ふ</span></span>り切ったし<br />ついにオレたちは勝ったぞ！</span></p> 
+   <p begin="00:20:39.364" end="00:20:41.199" style="s4"><span style="s3">（ムサシ）<br />でも どこなんだろうね？　ここ</span></p> 
+   <p begin="00:20:41.282" end="00:20:44.535" style="s4"><span style="s3">（ニャース）どうでもいいニャ<br />早くボスんとこ帰るのニャ</span></p> 
+   <p begin="00:20:44.619" end="00:20:48.206" style="s4"><span style="s3">ねえ せっかく来たんだから<br />ちょっと下 見ていきましょうよ</span></p> 
+   <p begin="00:20:48.289" end="00:20:51.417" style="s4"><span style="s3">ん～ニャ その“ちょっと”で<br />いつも失敗すんのニャ</span></p> 
+   <p begin="00:20:51.501" end="00:20:52.961" style="s4"><span style="s3">いいじゃない ちょっとぐらい</span></p> 
+   <p begin="00:20:53.044" end="00:20:54.754" style="s4"><span style="s3">ピカチュウだって<br />ゲットできたんだし</span></p> 
+   <p begin="00:20:54.837" end="00:20:57.757" style="s4"><span style="s3">ダメニャ！　たまには<br />ニャーの言うこと聞くニャ！</span></p> 
+   <p begin="00:20:58.174" end="00:21:01.219" style="s4"><span style="s3">もう うるさいわね<br />ソーナンス よろしく</span></p> 
+   <p begin="00:21:01.719" end="00:21:02.887" style="s4"><span style="s3">どくのニャー！</span></p> 
+   <p begin="00:21:02.971" end="00:21:05.848" style="s4"><span style="s3">（ソーナンス）ソ ソ ソ…</span></p> 
+   <p begin="00:21:05.932" end="00:21:08.393" style="s4"><span style="s3">ソーナンス！</span></p> 
+   <p begin="00:21:08.476" end="00:21:10.853" style="s4"><span style="s3">ピ～カ～</span></p> 
+   <p begin="00:21:11.562" end="00:21:13.606" style="s4"><span style="s3">（ムサシ）ああっ！<br />（ニャース）ニャッ ピカチュウが</span></p> 
+   <p begin="00:21:13.690" end="00:21:16.359" style="s4"><span style="s3">なんでこんな時に<br />カウンター使うんだよ</span></p> 
+   <p begin="00:21:16.442" end="00:21:18.027" style="s4"><span style="s3">ソーナンス</span></p> 
+   <p begin="00:21:18.111" end="00:21:20.697" style="s4"><span style="s3">あともうちょっとだったのにニャ～</span></p> 
+   <p begin="00:21:20.780" end="00:21:22.740" style="s4"><span style="s3">ソーナンス！</span></p> 
+   <p begin="00:21:22.824" end="00:21:26.703" style="s4"><span style="s3">（ロケット団）やな感じ～<br />（ソーナンス）ソ～</span></p> 
+   <p begin="00:21:28.997" end="00:21:30.707" style="s4"><span style="s3">（ナレーション）<span style="s1">かくして</span><br /><span style="s1">サトシとピカチュウの—</span></span></p> 
+   <p begin="00:21:30.790" end="00:21:34.419" style="s2"><span style="s3">シンオウ地方<span style="s5"><span style="s6">挑戦</span><span style="s7">ちょうせん</span></span>は<br />波乱の幕開けとなった</span></p> 
+   <p begin="00:21:34.502" end="00:21:37.296" style="s2"><span style="s3">そして希望に胸<span style="s5"><span style="s6">膨</span><span style="s7">ふく</span></span>らませ<br />旅立った—</span></p> 
+   <p begin="00:21:37.380" end="00:21:39.007" style="s2"><span style="s3">ヒカリとポッチャマ</span></p> 
+   <p begin="00:21:39.090" end="00:21:40.883" style="s2"><span style="s3">それぞれの夢に向かって—</span></p> 
+   <p begin="00:21:40.967" end="00:21:44.137" region="縦右" style="s1">新たな<span style="s5"><span style="s6">冒険</span><span style="s7">ぼうけん</span></span>が<br />今 始まる</p> 
+   <p begin="00:21:45.013" end="00:21:50.018" region="縦右">♪～</p> 
+   <p begin="00:23:00.963" end="00:23:05.968" region="縦右">～♪</p> 
+   <p begin="00:23:11.265" end="00:23:15.394" style="s4"><span style="s3">やあ 諸君 お待たせ<br />ポケモン大百科の時間じゃ</span></p> 
+   <p begin="00:23:15.478" end="00:23:17.480" style="s4"><span style="s3">本日のテーマは…</span></p> 
+   <p begin="00:23:17.897" end="00:23:19.482" style="s4"><span style="s3">ピカピッチュウ</span></p> 
+   <p begin="00:23:23.528" end="00:23:26.364" style="s4"><span style="s3">シンオウ地方の<br />初心者用ポケモンたちじゃ</span></p> 
+   <p begin="00:23:27.115" end="00:23:29.200" style="s4"><span style="s3">新人トレーナーは旅立つ前に—</span></p> 
+   <p begin="00:23:29.283" end="00:23:32.203" style="s4"><span style="s3">１体のポケモンを<br />選ぶことになっておる</span></p> 
+   <p begin="00:23:34.330" end="00:23:36.582" style="s4"><span style="s3">みずタイプのポッチャマ</span></p> 
+   <p begin="00:23:36.666" end="00:23:38.835" style="s4"><span style="s3">ほのおタイプのヒコザル</span></p> 
+   <p begin="00:23:38.918" end="00:23:42.088" style="s4"><span style="s3">くさタイプのナエトルの３体</span></p> 
+   <p begin="00:23:42.171" end="00:23:46.592" style="s4"><span style="s3">どのポケモンにも得意なタイプ<br />苦手なタイプがあるので—</span></p> 
+   <p begin="00:23:46.676" end="00:23:49.846" style="s4"><span style="s3">選ぶ時はくれぐれも<span style="s5"><span style="s6">慎重</span><span style="s7">しんちょう</span></span>にな</span></p> 
+   <p begin="00:23:49.929" end="00:23:54.308" style="s4"><span style="s3">さて 君が選んだのは<br />どのポケモンかな？</span></p> 
+   <p begin="00:23:56.060" end="00:23:57.562" style="s4"><span style="s3">では ここで一句</span></p> 
+   <p begin="00:24:02.567" end="00:24:05.278" style="s4"><span style="s3">みんなもポケモンゲットじゃぞ</span></p> 
+   <p begin="00:24:06.487" end="00:24:07.822" region="縦左">（ヒカリ）<br /><span style="s1">やったあ！</span></p> 
+   <p begin="00:24:07.905" end="00:24:10.241" style="s2"><span style="s3">これで ついにあたしも<br />ポケモントレーナー</span></p> 
+   <p begin="00:24:10.324" end="00:24:12.410" style="s4"><span style="s3">（ヒカリ）<span style="s1">よろしくね ポッチャマ</span><br />（ポッチャマ）<span style="s1">ポチャム</span></span></p> 
+   <p begin="00:24:12.493" end="00:24:15.037" style="s4"><span style="s3">（ヒカリ）<span style="s1">一緒(いっしょ)にトップコーディネーター</span><br /><span style="s1">目指してがんばろう</span></span></p> 
+   <p begin="00:24:15.121" end="00:24:16.873" style="s4"><span style="s3">（ポッチャマ）<br /><span style="s1">ポチャポチャ ポチャム～</span></span></p> 
+   <p begin="00:24:16.956" end="00:24:18.749" style="s4"><span style="s3">（ヒカリ）<span style="s1">何食べてんのよ…</span></span></p> 
+   <p begin="00:24:18.833" end="00:24:21.460" style="s2"><span style="s3">見て！　あそこにピカチュウがいる</span></p> 
+   <p begin="00:24:21.544" end="00:24:23.713" style="s2"><span style="s3">よーし ポッチャマ<br />ゲットしちゃおう！</span></p> 
+   <p begin="00:24:23.796" end="00:24:25.673" style="s4"><span style="s3">（ポッチャマ）<span style="s1">ポチャ ポチャ～</span></span></p> 
+   <p begin="00:24:25.756" end="00:24:28.634" style="s4"><span style="s3">（ヒカリ）<span style="s1">次回「ポケットモンスター</span><br /><span style="s1">ダイヤモンド＆パール」</span></span></p> 
+   <p begin="00:24:28.718" end="00:24:31.637" style="s2"><span style="s3">“ピカチュウをさがせ！<br />202番道路！”</span></p> 
+   <p begin="00:24:31.721" end="00:24:32.889" style="s2"><span style="s3">みんなもポケモンゲットで—</span></p> 
+   <p begin="00:24:33.306" end="00:24:34.515" region="縦右" style="s1"><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span>！</p> 
+   <p begin="00:24:34.599" end="00:24:35.683" region="縦右">（ポッチャマ）<br /><span style="s1">ポチャ！</span></p> 
+  </div> 
+ </body> </tt>
