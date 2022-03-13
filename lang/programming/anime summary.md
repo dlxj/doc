@@ -162,8 +162,13 @@ For a proxy that only supports HTTP,
 
 - 刘雯雯 蜗牛法语
 
+  - https://www.youtube.com/watch?v=05zr3qMciIQ
+    - 关于小舌音可能你90%的理解都是错的+零难度练习方法
+  
   - https://www.woniufr.vip/detail/v_59cdcdbe45e6a_88vMcwKF/3?from=p_5e267bda30490_PXgrZ3r8&type=5&parent_pro_id=
-
+  
   > 法语属拉丁系语言，所见即所读，每个字母或者字母组合有固定的读音，像汉语拼音一样，可以拼读出来
   >
   > 法语讲究连音联诵读，需要把一个节奏组中的所有可以连在一起读的发音串联起来读，这样有些原来不发音的字母，就需要发音
+
+​     
