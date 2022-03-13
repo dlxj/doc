@@ -137,3 +137,9 @@ For a proxy that only supports HTTP,
 # JP-Subtitles
 
 - https://github.com/Matchoo95/JP-Subtitles
+
+
+
+- 万门大学 吴石磊
+
+- 刘雯雯 蜗牛法语
