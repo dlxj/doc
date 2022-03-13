@@ -140,6 +140,18 @@ For a proxy that only supports HTTP,
 
 
 
+- 俄语语音语调基础教程
+  - https://www.wanmen.org/courses/5c19a5843f74d971c6cdef20/lectures/5c6143cd4a76e877c665e71d
+  > 俄语的语音韵律感十足
+
 - 万门大学 吴石磊
 
+  
+
 - 刘雯雯 蜗牛法语
+
+  - https://www.woniufr.vip/detail/v_59cdcdbe45e6a_88vMcwKF/3?from=p_5e267bda30490_PXgrZ3r8&type=5&parent_pro_id=
+
+  > 法语属拉丁系语言，所见即所读，每个字母或者字母组合有固定的读音，像汉语拼音一样，可以拼读出来
+  >
+  > 法语讲究连音联诵读，需要把一个节奏组中的所有可以连在一起读的发音串联起来读，这样有些原来不发音的字母，就需要发音
