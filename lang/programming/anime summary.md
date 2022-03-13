@@ -140,6 +140,18 @@ For a proxy that only supports HTTP,
 
 
 
+
+
+- 梵语
+
+  - https://www.bilibili.com/video/BV1Qi4y1V7fu?from=search&seid=8739930114286513927&spm_id_from=333.337.0.0
+    - 梵明院 - 梵语字母认读入门系列
+
+  - https://www.bilibili.com/video/BV1H4411R7Hf/?spm_id_from=333.788.recommend_more_video.5
+    - 阿含书斋梵文梵语天城体字母基础发音课程
+
+
+
 - 俄语语音语调基础教程
   - https://www.wanmen.org/courses/5c19a5843f74d971c6cdef20/lectures/5c6143cd4a76e877c665e71d
   > 俄语的语音韵律感十足
