@@ -5505,7 +5505,13 @@ one hot型的矩阵运算简化为了查表操作
 
       - 深入浅出GPU优化系列：GEMM优化（一）
 
-      
+## Deep learing with C++
+
+- https://github.com/arrayfire/arrayfire/issues/3219
+
+
+
+##       
 
 - https://able.bio/haixuanTao/deep-learning-in-rust-with-gpu--26c53a7f
 

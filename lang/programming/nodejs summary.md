@@ -1141,6 +1141,18 @@ global 是内置的全局对象，任意地方可用（可以把任意东西装�
 
 
 
+## 三目运算符
+
+
+
+```
+# 连续判断
+	const color = d.added ? 'green' :
+        d.removed ? 'red' : 'grey'
+```
+
+
+
 
 
 # Regex
@@ -1916,6 +1928,35 @@ npm i string-algorithms
     }
 
     console.log(longestCommonPrefix(["flower","flow","flight"]))
+```
+
+
+
+## diff
+
+
+
+```javascript
+require('colors')
+
+const Diff = require('diff');
+
+const one = 'beep boop'
+const other = 'beep boob blah'
+
+const diff = Diff.diffChars(one, other)
+
+for (let d of diff) {
+
+    // green for additions, red for deletions
+    // grey for common parts
+    const color = d.added ? 'green' :
+        d.removed ? 'red' : 'grey'
+    process.stderr.write(d.value[color])
+
+}
+
+console.log()
 ```
 
 
