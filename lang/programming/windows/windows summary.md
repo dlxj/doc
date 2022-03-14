@@ -74,3 +74,16 @@ netstat -aon | findstr "8080"
 
 
 
+# 多用户远程登录
+
+- https://www.exitthefastlane.com/2018/02/resource-sharing-in-server2016-rdsh.html?m=1
+
+
+
+# Docker
+
+- https://blog.yowko.com/windows-server-2016-hyper-v/
+  - 如何在 Windows Server 2016 上安裝 Hyper-V
+
+- https://blog.yowko.com/windows-server-2016-linux-container/
+  - 在 Windows Server 2016 上使用 Linux Container
