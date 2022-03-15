@@ -1791,7 +1791,11 @@ https://stackoverflow.com/questions/45680936/how-to-implement-full-text-search-o
 
 ### 查询优化
 
+- https://v2ex.com/t/840205#reply37
+  - PostgreSQL 真的没有完美的分页方法吗？
 
+- https://kaifeiji.cc/post/do-i-really-know-about-pagination/
+  - 我真的会分页吗
 
 - https://github.com/digoal/blog/blob/master/201801/20180119_03.md
 
