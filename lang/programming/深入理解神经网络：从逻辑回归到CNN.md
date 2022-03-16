@@ -5491,7 +5491,8 @@ one hot型的矩阵运算简化为了查表操作
   - https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js
     - onnxruntime-node
     - onnxruntime-react-native
-
+  - https://juejin.cn/post/7012637429807087652
+    - react 实例
 
 
 
