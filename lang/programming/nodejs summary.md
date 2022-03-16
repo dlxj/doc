@@ -2309,7 +2309,7 @@ function getContent(fileName) {
 
 # stream
 
-
+- http://nodejs.cn/api/stream/stream_pipeline_streams_callback.html
 
 ```
 var http = require('http'),
