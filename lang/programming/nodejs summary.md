@@ -2307,6 +2307,75 @@ function getContent(fileName) {
 
 
 
+# stream
+
+
+
+```
+var http = require('http'),
+    url = require('url'),
+    fs   = require('fs'),
+    filePath = '/home/risto/Downloads/oleg.mp3',
+    stat = fs.statSync(filePath);
+
+http.createServer(function(request, response) {
+    var queryData = url.parse(request.url, true).query;
+    const skip = typeof(queryData.skip) == 'undefined' ? 0 : queryData.skip;
+    const startByte = stat.size * skip;
+
+    response.writeHead(200, {
+        'Content-Type': 'audio/mpeg',
+        'Content-Length': stat.size - startByte
+    });
+
+    // We replaced all the event handlers with a simple call to util.pump()
+    fs.createReadStream(filePath, {start:startByte}).pipe(response);
+})
+.listen(2000);
+```
+
+```
+var http = require('http'),
+    url = require('url'),
+    fs   = require('fs'),
+    filePath = '/home/risto/Downloads/oleg.mp4',
+    stat = fs.statSync(filePath);
+
+http.createServer(function(request, response) {        
+    const fileSize = stat.size;
+    const range = request.headers.range;
+    if (range) {
+      const parts = range.replace(/bytes=/, "").split("-");
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] 
+        ? parseInt(parts[1], 10)
+        : fileSize - 1;
+      const chunksize = (end - start) + 1;
+      const readStream = fs.createReadStream(filePath, { start, end });
+      const head = {
+        'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length': chunksize,
+        'Content-Type': 'video/mp4',
+      };
+      response.writeHead(206, head);
+      readStream.pipe(response);
+    } else {
+      const head = {
+        'Content-Length': fileSize,
+        'Content-Type': 'video/mp4',
+      };
+      response.writeHead(200, head);
+      fs.createReadStream(filePath).pipe(response);
+    }
+})
+.listen(2000);
+```
+
+
+
+
+
 # process
 
 
