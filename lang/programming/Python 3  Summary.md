@@ -7812,6 +7812,13 @@ se.run()
 
 
 
+### 音频数字指纹
+
+- https://github.com/xitu/gold-miner/blob/master/TODO/fingerprinting-and-audio-recognition-with-python.md
+  - 用 Python 和 Numpy 实现音频数字指纹特征识别
+
+
+
 
 
 # PYQT

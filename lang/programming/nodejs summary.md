@@ -4646,11 +4646,12 @@ server{
 
 
 
-# sync
+# fileserver
 
 
 
 - https://github.com/psi-4ward/psitransfer
+  - https://lala.im/4722.html
 
 
 

@@ -5488,6 +5488,11 @@ one hot型的矩阵运算简化为了查表操作
 
 - https://www.npmjs.com/package/onnxruntime-web
   - 浏览器里的 deep learning
+  - https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js
+    - onnxruntime-node
+    - onnxruntime-react-native
+
+
 
 
 
