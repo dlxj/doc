@@ -82,11 +82,10 @@ export default {
 
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
-          let result = `${jp}<br>${zh}`; debugger
+          let result = `${jp}<img :src="/static/images/play.gif"><br>${zh}`; //debugger
           data.push( {result} )
         }
 
-        // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
 
         this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
 
@@ -129,6 +128,15 @@ name:danganronpa
 seasion:S01
 id:1
             @((MarkupString)@row.jp) <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"{row.id}"))" style=" cursor: pointer">
+
+<img :src="static/images/play.gif"
+
+
+<img :src="'/static/imgs/' + source + '.png'"
+
+
+
+  // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
 
 <template>
   <div>
