@@ -44,6 +44,10 @@
     if (req.method == 'GET') {
       let query = url.parse(req.url, true).query
       Object.assign(data, query)
+      if (req.url.indexOf('?') != -1) {
+        let url = req.url.split('?')
+        req.url = url[0]
+      }
     }
     //填充post数据到data里
     if (req.method == 'POST') {
@@ -94,6 +98,9 @@
       result = await result
     }
 
+    if (result.data.name == 'cb') {
+      return result.data(res)
+    }
 
     //
     // 奇怪的问题：这样进入 service, 在service 的handler 里面的 this 对象是有 services 的，

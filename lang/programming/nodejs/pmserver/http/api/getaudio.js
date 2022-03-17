@@ -28,12 +28,6 @@ module.exports = {
     },
     async handler({ type, name, seasion, id }) {
 
-
-
-        // return File(memory, "audio/mpeg", $"{id}.mp3");
-        // let audio_dir = path.join(global.animes.root_audio, name, seasion)
-        // let audio_path = path.join(audio_dir, `${tableID}.mp3`)
-
         async function cb(res) {
 
             let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
@@ -43,8 +37,8 @@ module.exports = {
                 throw `au not exist ${audio_path}`
             }
 
-            let readStream = fileSystem.createReadStream(audio_path)
-            let stat = fileSystem.statSync(audio_path)
+            let readStream = fs.createReadStream(audio_path)
+            let stat = fs.statSync(audio_path)
             let size = stat.size
 
             res.writeHead(200, {
@@ -55,9 +49,6 @@ module.exports = {
             readStream.pipe(res)
 
         }
-
-        //let re = await this.services.search( { keywd, type } )
-
         return this.msg(200, cb)
     }
 }

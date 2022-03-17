@@ -2127,14 +2127,8 @@ _.isEmpty(dic_ansers)
 
 
 ```javascript
-let url = require('url')
-let httpServer = http.createServer(async (req, res) => {
-	  let query = url.parse(req.url, true).query
-  	  //接收到的参数
-      let data = {}
-      //填充URL参数到data
-      Object.assign(data, query)
-}
+let data = {}
+Object.assign(data, query) // 赋值
 ```
 
 
