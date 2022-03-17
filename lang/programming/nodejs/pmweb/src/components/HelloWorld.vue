@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <img src="/src/assets/logo.png">
+    <img src="../assets/logo.png">
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>

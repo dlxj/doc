@@ -5323,7 +5323,13 @@ npm run build  # build for production
 - https://blog.csdn.net/Nalaluky/article/details/86590237
   - 绝对路径
 
+- https://blog.51cto.com/u_10624715/3235228
+  - 绝对路径
 
+- https://blog.51cto.com/u_15127512/4372903?b=totalstatistic
+  - vue-cli 中的静态资源处理
+- https://www.cnblogs.com/dreamstartplace/p/12922224.html
+  - vue-cli 如何配置assetsPublicPath； vue.config.js如何更改assetsPublicPath配置
 
 ## bent
 
