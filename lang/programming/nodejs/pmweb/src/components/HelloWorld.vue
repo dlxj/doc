@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img src="../assets/logo.png">
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
@@ -84,7 +85,7 @@ export default {
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
-          let result = `${jp}<img src="./assets/logo.png"><br>${zh}`; //debugger
+          let result = `${jp}<img src="../assets/logo.png"><br>${zh}`; //debugger
           data.push( {result} )
         }
 
