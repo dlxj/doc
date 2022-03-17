@@ -309,7 +309,7 @@ module.exports = async function () {
 
     let rootdir = global.config.rootDir[platform]
     root = require('path').join(rootdir, 'videos', 'anime')
-    let root_audio = require('path').join(rootdir, 'audios', 'anime')
+    let root_audio = require('path').join(rootdir, 'audios')
 
     let root_subtitles = require('path').join(rootdir, 'sutitles')
 

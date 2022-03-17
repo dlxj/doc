@@ -36,7 +36,13 @@ module.exports = {
 
         async function cb(res) {
 
-            let audio_path = path.join(global.animes.root_audio, type, name, seasion, id, '.m')
+            let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
+            let audio_path = path.join(audio_dir, `${id}.mp3`)
+
+            if ( ! fs.existsSync( audio_path ) ) {
+                throw `au not exist ${audio_path}`
+            }
+
             let readStream = fileSystem.createReadStream(audio_path)
             let stat = fileSystem.statSync(audio_path)
             let size = stat.size
@@ -52,7 +58,7 @@ module.exports = {
 
         //let re = await this.services.search( { keywd, type } )
 
-        return this.msg(200, audio_dir)
+        return this.msg(200, cb)
     }
 }
 

@@ -7,14 +7,15 @@ module.exports = {
     params: {
         passwd: {
             type: 'string',
-            remark: ''
+            remark: '',
+            default:'no'
         }
     },
     async handler({passwd}) {
 
         if (passwd != insertPasswd) {
             console.log('Warning: Passwd not correct!!! hit api http/anime/insert')
-            return this.msg(200, 'hi,,,')
+            return this.msg(200, '')
         }
 
         console.log('hit http/anime/insert')        

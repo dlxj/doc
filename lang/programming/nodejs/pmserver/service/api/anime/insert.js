@@ -36,7 +36,9 @@ module.exports = {
                 throw `error: name '${name}' not in config.subtitleSteams!`
             }
 
-            let audio_dir = path.join(global.animes.root_audio, name, seasion)
+            //let audio_dir = path.join(global.animes.root_audio, name, seasion)
+            let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
+
             if ( ! fs.existsSync( audio_dir ) ) {
                 fs.mkdirSync(audio_dir, { recursive: true })
             }
@@ -113,8 +115,8 @@ module.exports = {
                 
                 let { id } = re.rows[0]
 
+                //let audio_path = path.join(audio_dir, `${id}.mp3`)
                 let audio_path = path.join(audio_dir, `${id}.mp3`)
-
                 fs.writeFileSync(audio_path, audio )
 
                 console.log(`${i + 1}/${subtitles2.length} subs | ${j + 1} / ${mkvs.length} mkvs ${name}`)   
