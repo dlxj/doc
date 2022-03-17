@@ -4,6 +4,7 @@
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
     <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
+  
     <p></p>
 
     <div class="result_main" v-if="isResultShow">
@@ -83,7 +84,7 @@ export default {
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
-          let result = `${jp}<img :src="/images/play.gif"><br>${zh}`; //debugger
+          let result = `${jp}<img src="./assets/logo.png"><br>${zh}`; //debugger
           data.push( {result} )
         }
 
@@ -130,7 +131,12 @@ seasion:S01
 id:1
             @((MarkupString)@row.jp) <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"{row.id}"))" style=" cursor: pointer">
 
-<img :src="static/images/play.gif"
+
+
+<img v-bind:src="./assets/logo.png">
+
+
+<img :src="static/images/play.gif">
 
 
 <img :src="'/static/imgs/' + source + '.png'"

@@ -5285,6 +5285,40 @@ v14.1.0
 
 
 
+```
+npm uninstall --global vue-cli
+npm install -g vue-cli
+vue --version
+	# 2.9.6
+
+vue init webpack pmweb
+cd pmweb
+
+新建 vue.config.js // 根目录下，和package.json 同级
+module.exports = {
+  runtimeCompiler: true
+}
+
+package.json 加入依赖包
+"@vue/cli-service": "^4.5.0"
+npm i
+
+package.json 的scripts 改成这样
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  }
+
+npm run dev  # listening at localhost:8080
+
+npm run build  # build for production
+```
+
+
+
+
+
 ## bent
 
 - https://learnku.com/articles/33597
