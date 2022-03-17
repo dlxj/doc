@@ -82,7 +82,8 @@ export default {
 
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
-          let result = `${jp}<img :src="/static/images/play.gif"><br>${zh}`; //debugger
+          //let bs = process.env.BASE_URL; debugger
+          let result = `${jp}<img :src="/images/play.gif"><br>${zh}`; //debugger
           data.push( {result} )
         }
 
