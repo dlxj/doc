@@ -5299,7 +5299,7 @@ module.exports = {
   runtimeCompiler: true
 }
 
-package.json 加入依赖包
+package.json 下的devDependencies 加入开发依赖包(必须是这下面)
 "@vue/cli-service": "^4.5.0"
 npm i
 
