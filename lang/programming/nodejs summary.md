@@ -9,6 +9,8 @@ pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
 pm2 resurrect // 重启备份的所有项目
 
+pm2 delete processID  // 删除一项  
+
 # 关闭防火墙
 systemctl stop firewalld
 
@@ -4584,6 +4586,12 @@ const RGBAmat = new cv.Mat(nestedImageArray, cv.CV_8UC4);
 
 const BGRAmat = RGBAmat.cvtColor(cv.COLOR_RGBA2BGRA);
 ```
+
+
+
+### 图片相似度
+
+- https://juejin.cn/post/6844904016686628877
 
 
 

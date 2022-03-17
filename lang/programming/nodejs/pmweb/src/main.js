@@ -12,29 +12,30 @@ import router from './router'
   const getBuffer = bent('buffer')
   let buffer = await getBuffer('https://cn.vuejs.org/images/logo.svg')
 
-  let host = 'localhost:80'
-  let url = `http://${host}`
+  // npm run dev
+  // let host = 'localhost:80'
+  // let url = `http://${host}`
+  // // let json = {
+  // //   passwd: 'rn'
+  // // }
+  // // let formurlencoded_json = formurlencoded(json)
+
+  // // let post = bent(url, 'POST', 'json', 200)
+  // // let response = await post('/anime/insert', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
   // let json = {
-  //   passwd: 'rn'
+  //   keywd: 'ここ',
+  //   type: 'anime'
   // }
   // let formurlencoded_json = formurlencoded(json)
 
   // let post = bent(url, 'POST', 'json', 200)
-  // let response = await post('/anime/insert', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
-  let json = {
-    keywd: 'ここ',
-    type: 'anime'
-  }
-  let formurlencoded_json = formurlencoded(json)
+  // let response = await post('/search', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
 
-  let post = bent(url, 'POST', 'json', 200)
-  let response = await post('/search', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
-
-  if (response.status == 200) {
-    // return [response.data, '']
-  } else {
-    // return [null, response.msg]
-  }
+  // if (response.status == 200) {
+  //   // return [response.data, '']
+  // } else {
+  //   // return [null, response.msg]
+  // }
 
   // require('fs').writeFileSync('logo.svg', buffer)  // 浏览器不能写本地文件
 

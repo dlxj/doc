@@ -64,7 +64,7 @@ export default {
         return
       }
 
-      let host = 'localhost:80'
+      let host = 'localhost:81'
       let url = `http://${host}`
       let json = {
         keywd,
@@ -72,16 +72,10 @@ export default {
       }
       let formurlencoded_json = formurlencoded(json)
 
-      let post = bent(url, 'POST', 'json', 200)
+      let post = bent(url, 'POST', 'json', 200); //debugger
       let response = await post('/search', formurlencoded_json, { 'Content-Type': 'application/x-www-form-urlencoded' })
 
-      if (response.status == 200) {
-        // return [response.data, '']
-      } else {
-        // return [null, response.msg]
-      }
-
-      if (response.data.length > 0) {
+      if (response.status == 200 && response.data.length > 0) {
 
         //let { id, jp, name, seasion, time, zh } = response.data[0]
         //let result = `${jp}<br>${zh}`
@@ -91,6 +85,7 @@ export default {
           let result = `${jp}<br>${zh}`
           data.push( {result} )
         }
+
         // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
 
         this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
@@ -105,6 +100,8 @@ export default {
           //debugger
         })
 
+      } else {
+        console.log(`Waring: POST fail. ${url}/search`)
       }
 
 
@@ -126,6 +123,11 @@ export default {
 </script>
 
 <!--
+
+type:anime
+name:danganronpa
+seasion:S01
+id:1
 
 <template>
   <div>
@@ -204,4 +206,5 @@ a {
   color: #42b983;
 }
 </style>
+ここ
 -->
