@@ -5320,6 +5320,8 @@ npm run build  # build for production
 ## 静态资源
 
 - https://segmentfault.com/a/1190000018472635
+- https://blog.csdn.net/Nalaluky/article/details/86590237
+  - 绝对路径
 
 
 
