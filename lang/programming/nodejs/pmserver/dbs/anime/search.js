@@ -13,7 +13,7 @@ module.exports = {
     },
     remark: ``,
     sql: `
-        SELECT id, jp_ruby as jp, zh, p.begintime as time, name, seasion FROM $$(tablename) p  WHERE p.v_jp @@ to_tsquery($(keywd))  ORDER BY RANDOM()  LIMIT 3;
+        SELECT id, jp_ruby as jp, zh, p.begintime as time, type, name, seasion FROM $$(tablename) p  WHERE p.v_jp @@ to_tsquery($(keywd))  ORDER BY RANDOM()  LIMIT 3;
     `,
   }
 

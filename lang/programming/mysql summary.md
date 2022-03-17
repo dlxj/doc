@@ -703,6 +703,15 @@ alter table xxx AUTO_INCREMENT=0;
 
 
 
+## GROUP_CONCAT
+
+```
+# 所有行用逗号连接起来
+SELECT GROUP_CONCAT('\'',`md5`, '\'') FROM img_extinfo WHERE  bookID = 57500 GROUP BY bookID;
+```
+
+
+
 
 
 # PROCEDURE

@@ -81,8 +81,8 @@ export default {
         //let result = `${jp}<br>${zh}`
 
         const data = []
-        for (let { id, jp, name, seasion, time, zh } of response.data) {
-          let result = `${jp}<br>${zh}`
+        for (let { id, jp, type, name, seasion, time, zh } of response.data) {
+          let result = `${jp}<br>${zh}`; debugger
           data.push( {result} )
         }
 
@@ -128,6 +128,7 @@ type:anime
 name:danganronpa
 seasion:S01
 id:1
+            @((MarkupString)@row.jp) <img id="@($"img{row.id}")" src="images/play.gif" alt="play" @onclick="@(() => HandlePlayAudio($"{row.id}"))" style=" cursor: pointer">
 
 <template>
   <div>
