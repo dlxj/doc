@@ -5331,6 +5331,43 @@ npm run build  # build for production
 - https://www.cnblogs.com/dreamstartplace/p/12922224.html
   - vue-cli 如何配置assetsPublicPath； vue.config.js如何更改assetsPublicPath配置
 
+- https://cli.vuejs.org/zh/config/
+  - 官方文档
+
+- https://cn.vitejs.dev/guide/assets.html
+  - 静态资源处理
+
+```
+// 成功显示gif
+<template>
+  <div class="hello">
+    <!-- <img src="../assets/logo.png"> -->
+    <h1>{{ msg }}</h1>
+    <div v-for="item in resultsModel" :key="item.result">
+      <div v-html="item.result"></div>
+      <br>
+    </div>
+  </div>
+</template>
+
+<script>
+import imgUrl from '../assets/play.gif'
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      resultsModel: [{result:`<p>hi1</p> <img src="${imgUrl}">`},{result:`<p>hi2</p>`}],
+    }
+  }
+}
+</script>
+```
+
+
+
+
+
 ## bent
 
 - https://learnku.com/articles/33597
