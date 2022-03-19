@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <img src="../assets/logo.png">
+    <!-- <img src="../assets/play.gif"> -->
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
@@ -35,7 +35,12 @@
 
 <script>
 
-// import config from '@/config.js'
+import config from '@/config.js'
+let host = config.server.host
+
+import img_play from '../assets/play.gif'
+import img_play2 from '../assets/play2.gif'
+
 
 const formurlencoded = require('form-urlencoded')
 const bent = require('bent')
@@ -66,7 +71,7 @@ export default {
         return
       }
 
-      let host = 'localhost:81'
+      //let host = 'localhost:81'
       let url = `http://${host}`
       let json = {
         keywd,
@@ -85,7 +90,7 @@ export default {
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
-          let result = `${jp}<img src="../assets/logo.png"><br>${zh}`; //debugger
+          let result = `${jp}<img src="${img_play}"><br>${zh}`; //debugger
           data.push( {result} )
         }
 

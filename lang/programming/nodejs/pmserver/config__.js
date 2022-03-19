@@ -2,10 +2,10 @@
 module.exports = {
 
     debug: true,
-    insertPasswd:'rn',
+    insertPasswd:'RightNow',
     http:{
-        port:1001,
-        port_debug:80,
+        port:81,
+        port_debug:81,
         headers: {
             "Server": `pmserver`,
             "Access-Control-Allow-Origin": `*`,
@@ -17,17 +17,17 @@ module.exports = {
     dbs:{
         host_debug:'127.0.0.1',
         defaultDB: {
-            host: 'xxx.77',
+            host: 'xxx',
             user: 'postgres',
-            password: 'xxxx',
+            password: 'xxx',
             port: '5432',
             database: 'postgres',
             ssl: false
         },
         anime: {
-            host: 'xxx.77',
+            host: 'xxx',
             user: 'postgres',
-            password: 'xxxx',
+            password: 'xxx',
             port: '5432',
             database: 'anime',
             ssl: false

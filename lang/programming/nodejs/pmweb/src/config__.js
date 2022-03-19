@@ -1,6 +1,5 @@
 module.exports = {
-
   server: {
-    encrypt: 'no.'
+    host : 'localhost:81'
   }
 }
