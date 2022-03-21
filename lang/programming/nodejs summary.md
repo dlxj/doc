@@ -715,6 +715,37 @@ print("text字段Base64解码后=>" + finalResult)
 
 
 
+#### form-data
+
+- https://github.com/mikeal/bent/issues/121
+
+```
+let FormData = require('form-data')
+let bent = require('bent')
+
+     let postData = new FormData()
+      postData.append('OperateUserID', userID)
+      postData.append('OperateUserName', `${userID}`)
+      postData.append('bookID', bookID)
+      postData.append('type', 3)
+      postData.append('beginpath', `${bookID}/`)
+      postData.append('filepath', `小截图/basename`)
+      postData.append('fileName', basename)
+      postData.append('fileName', basename)
+      postData.append('file', fs.createReadStream(fullpath))
+      
+      let post = bent('http://xxxx:xxxx', 'POST', 'json', 200)
+      let response = await post('/api/xxxxx', postData, postData.getHeaders())
+
+      if (response.status == 200) {
+        let b = 1
+      } else {
+        return this.msg(301, `${fullpath} ${response.msg}`)
+      }
+```
+
+
+
 
 
 

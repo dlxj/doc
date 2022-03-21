@@ -87,3 +87,14 @@ netstat -aon | findstr "8080"
 
 - https://blog.yowko.com/windows-server-2016-linux-container/
   - 在 Windows Server 2016 上使用 Linux Container
+
+
+
+# NFS
+
+
+
+- https://blog.csdn.net/qq_34158598/article/details/81976063
+
+
+

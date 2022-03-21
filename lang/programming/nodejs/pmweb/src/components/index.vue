@@ -131,8 +131,25 @@ export default {
     }
   },
   mounted(){
-    window.openImg = function(elm_id){
-      console.log(`openImg clicked. ${elm_id}`); debugger
+    window.openImg = function(elm_id) {
+      let auid = `audio_${elm_id}`
+      var igid = `img_${elm_id}`
+
+      let au = document.getElementById(auid)
+      let ig = document.getElementById(igid); debugger
+      if (au.paused) {
+        au.play()
+        //ig.src = "images/play2.gif";
+        au.addEventListener("pause", function () {
+            //ig.src = "images/play.gif";
+            debugger
+        })
+        
+      }
+      // var au = <HTMLAudioElement>document.getElementById(auid);
+      // //var ig = <HTMLImageElement>document.getElementById("img"+id);
+
+      // console.log(`openImg clicked. ${elm_id}`); debugger
     }
   }
   // watch: {
