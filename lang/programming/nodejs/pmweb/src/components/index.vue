@@ -93,7 +93,8 @@ export default {
           let elm_id = `${type}_${name}_${seasion}_${id}`
           let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`; debugger
           
-          let result = `${jp}<img id="img_${elm_id}" src="${img_play}"  @click="play"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
+          //  
+          let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push( {result} )
         }
 
@@ -123,7 +124,7 @@ export default {
 
       console.log('hited.')
     },
-    async play (id) {
+    async play (e,value) {
       console.log('play hited.'); debugger
     }
   }
