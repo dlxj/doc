@@ -90,10 +90,10 @@ export default {
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
-          let au_id = `${type}_${name}_${seasion}_au${id}`
+          let elm_id = `${type}_${name}_${seasion}_${id}`
           let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`; debugger
           
-          let result = `${jp}<img src="${img_play}"><br>${zh}`; //debugger
+          let result = `${jp}<img id="img_${elm_id}" src="${img_play}"  @click="play"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push( {result} )
         }
 
@@ -122,8 +122,10 @@ export default {
 
 
       console.log('hited.')
+    },
+    async play (id) {
+      console.log('play hited.'); debugger
     }
-
   }
   // watch: {
 
@@ -237,5 +239,64 @@ a {
   color: #42b983;
 }
 </style>
+
+
+interface Window {
+    Music: any;
+}
+
+function Play(element, flag) {
+    var dom = document.querySelector(element);
+    if (flag) {
+        dom.play();
+    }
+    else {
+        dom.pause();
+    }
+}
+
+function GetMusicTime(element) {
+    var dom = document.querySelector(element);
+    let obj = {
+        currentTime: dom.currentTime,
+        duration: dom.duration
+    }
+    let json = JSON.stringify(obj);
+
+    return json
+}
+
+function SetMusicTime(element, time) {
+    var dom = document.querySelector(element);
+    dom.currentTime = time;
+}
+
+window.Music = {
+    //print: Print,
+    play: Play,
+    getMusicTime: GetMusicTime,
+    setMusicTime: SetMusicTime
+}
+
+function playaudio(id) {
+    var au = <HTMLAudioElement>document.getElementById("audio"+id);
+    var ig = <HTMLImageElement>document.getElementById("img"+id);
+
+    if (au.paused) {
+        au.play();
+        ig.src = "images/play2.gif";
+        au.addEventListener("pause", function () {
+            ig.src = "images/play.gif";
+        });
+    }
+
+    /*
+     
+     document.getElementById('img').setAttribute('src', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==');
+     
+     */
+}
+
+
 ここ
 -->
