@@ -94,7 +94,7 @@ export default {
           let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`
           
           //  
-          let result = `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="openImg()"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
+          let result = `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="openImg('${elm_id}')"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           //let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push( {result} )
         }
@@ -131,8 +131,8 @@ export default {
     }
   },
   mounted(){
-    window.openImg = function(){
-      console.log(`openImg clicked.`); debugger
+    window.openImg = function(elm_id){
+      console.log(`openImg clicked. ${elm_id}`); debugger
     }
   }
   // watch: {
