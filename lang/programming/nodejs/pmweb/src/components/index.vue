@@ -46,7 +46,7 @@ const formurlencoded = require('form-urlencoded')
 const bent = require('bent')
 
 export default {
-  name: 'HelloWorld',
+  name: 'index',
   data () {
     return {
       keywdModel:  { keywd: '' },
@@ -90,12 +90,21 @@ export default {
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
+          let au_id = `${type}_${name}_${seasion}_au${id}`
+          let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`; debugger
+          
           let result = `${jp}<img src="${img_play}"><br>${zh}`; //debugger
           data.push( {result} )
         }
 
+        
+        // let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
+        // let audio_path = path.join(audio_dir, `${id}.mp3`)
+        // http://127.0.0.1:80/getaudio?type=anime&name=danganronpa&seasion=S01&id=1
 
-        this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
+        // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
+
+        this.resultsModel = data
 
         //this.$set(this.resultModel, 'result', result)  // 强制重绘
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
