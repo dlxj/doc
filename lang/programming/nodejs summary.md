@@ -5371,6 +5371,9 @@ export default {
 - https://blog.csdn.net/qq_41337100/article/details/107103205
   - vue里dom节点和window对象
 
+- https://blog.csdn.net/weixin_40126227/article/details/88338487
+  - 绑定方法到WINDOW对象
+
 
 
 ## bent

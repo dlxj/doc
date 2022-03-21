@@ -41,10 +41,6 @@ let host = config.server.host
 import img_play from '../assets/play.gif'
 import img_play2 from '../assets/play2.gif'
 
-function openImg() {
-  console.log('play hited.'); debugger
-}
-
 
 const formurlencoded = require('form-urlencoded')
 const bent = require('bent')
@@ -132,6 +128,11 @@ export default {
     },
     async play (e,value) {
       console.log('play hited.'); debugger
+    }
+  },
+  mounted(){
+    window.openImg = function(){
+      console.log(`openImg clicked.`); debugger
     }
   }
   // watch: {
