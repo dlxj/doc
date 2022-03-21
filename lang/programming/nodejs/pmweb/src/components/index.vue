@@ -41,6 +41,10 @@ let host = config.server.host
 import img_play from '../assets/play.gif'
 import img_play2 from '../assets/play2.gif'
 
+function openImg() {
+  console.log('play hited.'); debugger
+}
+
 
 const formurlencoded = require('form-urlencoded')
 const bent = require('bent')
@@ -91,10 +95,11 @@ export default {
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
           let elm_id = `${type}_${name}_${seasion}_${id}`
-          let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`; debugger
+          let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`
           
           //  
-          let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
+          let result = `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="openImg()"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
+          //let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push( {result} )
         }
 
@@ -104,6 +109,7 @@ export default {
         // http://127.0.0.1:80/getaudio?type=anime&name=danganronpa&seasion=S01&id=1
 
         // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
+        // onclick="openImg()"
 
         this.resultsModel = data
 

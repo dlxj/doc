@@ -5366,6 +5366,11 @@ export default {
 
 
 
+## window对象
+
+- https://blog.csdn.net/qq_41337100/article/details/107103205
+  - vue里dom节点和window对象
+
 
 
 ## bent
