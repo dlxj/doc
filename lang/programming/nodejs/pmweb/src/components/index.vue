@@ -136,15 +136,18 @@ export default {
       var igid = `img_${elm_id}`
 
       let au = document.getElementById(auid)
-      let ig = document.getElementById(igid); debugger
+      let ig = document.getElementById(igid)
       if (au.paused) {
         au.play()
-        //ig.src = "images/play2.gif";
-        au.addEventListener("pause", function () {
-            //ig.src = "images/play.gif";
-            debugger
-        })
+        ig.src = img_play2
+        // this.$nextTick(() => {
+        //   // DOM 渲染完后回调
+        //   //debugger
+        // })
         
+        au.addEventListener("pause", function () {
+            ig.src = img_play
+        })
       }
       // var au = <HTMLAudioElement>document.getElementById(auid);
       // //var ig = <HTMLImageElement>document.getElementById("img"+id);
