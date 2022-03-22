@@ -5325,9 +5325,14 @@ vue --version
 vue init webpack pmweb
 cd pmweb
 
-新建 vue.config.js // 根目录下，和package.json 同级
+新建 vue.config.js // 根目录下，和package.json 同级 // public: 'http://xxx.77:80' 指定公址
 module.exports = {
-  runtimeCompiler: true
+    assetsDir: 'static',
+    runtimeCompiler: true,
+    devServer: {
+        disableHostCheck: true,
+        public: 'http://xxx.77:80'
+    }
 }
 
 package.json 下的devDependencies 加入开发依赖包(必须是这下面)
@@ -5344,6 +5349,14 @@ package.json 的scripts 改成这样
 npm run dev  # listening at localhost:8080
 
 npm run build  # build for production
+
+
+指定端口:
+在 node_modules@vue\cli-service\lib\commands\serve.js:  108行
+
+const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
+
+
 ```
 
 
@@ -5417,6 +5430,15 @@ export default {
 const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
+# /root/pmweb/vue.config.js
+module.exports = {
+    assetsDir: 'static',
+    runtimeCompiler: true,
+    devServer: {
+        disableHostCheck: true,
+        public: 'http://xxx.77:80'
+    }
+}
 ```
 
 
