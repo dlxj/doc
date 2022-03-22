@@ -5407,6 +5407,24 @@ export default {
 
 
 
+## 指定端口号 
+
+- https://forum.vuejs.org/t/topic/71983
+
+```
+在 node_modules@vue\cli-service\lib\commands\serve.js:  108行
+
+const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
+
+
+```
+
+
+
+
+
+
+
 ## bent
 
 - https://learnku.com/articles/33597
