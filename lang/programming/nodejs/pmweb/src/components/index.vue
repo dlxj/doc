@@ -37,6 +37,7 @@
 
 import config from '@/config.js'
 let host = config.server.host
+console.log( `api host: ${host}` )
 
 import img_play from '../assets/play.gif'
 import img_play2 from '../assets/play2.gif'
