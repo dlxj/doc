@@ -39,6 +39,10 @@ module.exports = {
 
 /*
 
+create extension rum;
+
+CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);
+
   sql: `
     CREATE TABLE $$(tablename) (
         id integer primary key generated always as identity, 
