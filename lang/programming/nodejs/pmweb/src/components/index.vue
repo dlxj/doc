@@ -49,7 +49,7 @@ export default {
   name: 'index',
   data () {
     return {
-      keywdModel:  { keywd: '' },
+      keywdModel:  { keywd: '', lang_type:'jp' },
       resultModel: { result: '' },
       resultsModel: [],
       isResultShow: false,
