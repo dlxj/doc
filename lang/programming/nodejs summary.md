@@ -5485,6 +5485,48 @@ https
 
 
 
+## 原生事件调非原生
+
+```
+# 自定义事件调用原生事件
+this.$emit('click', param)
+```
+
+```
+# 原生事件调用自定义事件
+mounted(){
+    window.play = function(elm_id) {
+      let auid = `audio_${elm_id}`
+      var igid = `img_${elm_id}`
+
+      let au = document.getElementById(auid)
+      let ig = document.getElementById(igid)
+      if (au.paused) {
+        au.play()
+        ig.src = img_play2
+        // this.$nextTick(() => {
+        //   // DOM 渲染完后回调
+        //   //debugger
+        // })
+        
+        au.addEventListener("pause", function () {
+            ig.src = img_play
+        })
+      }
+      // var au = <HTMLAudioElement>document.getElementById(auid);
+      // //var ig = <HTMLImageElement>document.getElementById("img"+id);
+
+      // console.log(`openImg clicked. ${elm_id}`); debugger
+    }
+    let search = this.search
+    window.next = async function() {
+      await search()
+    }
+  }
+```
+
+
+
 
 
 ## bent

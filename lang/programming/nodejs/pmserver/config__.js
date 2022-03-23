@@ -4,8 +4,8 @@ module.exports = {
     debug: true,
     insertPasswd:'RightNow',
     http:{
-        port:81,
-        port_debug:81,
+        port:8880,
+        port_debug:8880,
         headers: {
             "Server": `pmserver`,
             "Access-Control-Allow-Origin": `*`,

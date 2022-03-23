@@ -37,7 +37,6 @@
 
 import config from '@/config.js'
 let host = config.server.host
-console.log( `api host: ${host}` )
 
 import img_play from '../assets/play.gif'
 import img_play2 from '../assets/play2.gif'
@@ -99,6 +98,7 @@ export default {
           //let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push( {result} )
         }
+        data.push({result:`<br><button onclick="next()">next</button>`})
 
         
         // let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
@@ -151,6 +151,10 @@ export default {
       // //var ig = <HTMLImageElement>document.getElementById("img"+id);
 
       // console.log(`openImg clicked. ${elm_id}`); debugger
+    }
+    let search = this.search
+    window.next = async function() {
+      await search()
     }
   }
   // watch: {
