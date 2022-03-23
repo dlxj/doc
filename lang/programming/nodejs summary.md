@@ -5527,6 +5527,51 @@ mounted(){
 
 
 
+## component
+
+
+
+### select 
+
+- https://masteringjs.io/tutorials/vue/select
+
+```
+<script src="https://unpkg.com/vue@next"></script>
+<div style = "outline-style: solid" id="example">
+  <select v-model="selected">
+    <option disabled value="">Please Select</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span style="padding-left:5%">Your Choice is: {{selected}}</span>
+</div>
+<script>
+Vue.createApp({
+  data() {
+    return {
+      selected: ''
+    };
+  }
+}).mount('#example');
+</script>
+```
+
+
+
+```
+import Vue from 'vue';
+import vSelect from 'vue-select';
+
+vSelect.props.reduce.default = function (option) {
+    //  whatever you need to do
+}
+
+Vue.component('vSelect', vSelect);
+```
+
+
+
 
 
 ## bent

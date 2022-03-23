@@ -4,6 +4,11 @@
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
+    <p></p>
+    <select v-model="keywdModel.lang_type">
+      <option>jp</option>
+      <option>zh</option>
+    </select>
     <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
   
     <p></p>
@@ -66,6 +71,7 @@ export default {
     async search () {
 
       let keywd = this.keywdModel.keywd
+      let lang_type = this.keywdModel.lang_type
 
       if (keywd == '') {
         return
@@ -75,7 +81,8 @@ export default {
       let url = `http://${host}`
       let json = {
         keywd,
-        type: 'anime'
+        type: 'anime',
+        lang_type
       }
       let formurlencoded_json = formurlencoded(json)
 
