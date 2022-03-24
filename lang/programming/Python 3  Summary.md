@@ -798,6 +798,25 @@ print(result.hexdigest())
 
 
 
+### stream
+
+```
+'''
+    PIL 转 bytes
+'''
+img_bytes  = BytesIO() # 这就是内存流
+img = Image.open('test.jpg', mode='r')
+img.save(img_bytes, format='JPEG')
+img_bytes = img_bytes.getvalue()
+print(type(img_bytes))
+```
+
+
+
+
+
+
+
 ## OS
 
 
