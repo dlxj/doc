@@ -186,15 +186,15 @@ module.exports = async function () {
 
                 lastobj[name] = lib
 
-                for (let [key, value] of Object.entries(lib)) {  // lib 可以调用其他的lib 
-                    if (value['libs'] === undefined) {
-                        Object.defineProperty(value, "libs", {
-                            get() {
-                                return global.libs
-                            }
-                        })
-                    }
+                // for (let [key, value] of Object.entries(lib)) {  
+                if (lib['libs'] === undefined) { // lib 可以调用其他的lib 
+                    Object.defineProperty(lib, "libs", {
+                        get() {
+                            return global.libs
+                        }
+                    })
                 }
+                // }
 
                 //global.libCache[servicePath] = service
                 // if (lib['libs'] === undefined) {

@@ -11,14 +11,14 @@ module.exports = {
             type: 'string',
             remark: ''
         },
-        rootsrt: {
+        rootttml2: {
             type: 'string',
             remark: ''
         },
     },
-    async handler({rootvd, rootsrt}) {
+    async handler({rootvd, rootttml2}) {
 
-        let re = this.libs.renamevd.renamevd(rootvd, rootsrt)
+        let re = this.libs.renamevd.renamevd(rootvd, rootttml2)
 
         return this.msg(200, re)
     }

@@ -3,11 +3,12 @@ let fs = require('fs')
 
 module.exports = {
 
-    renamevd:function(rootvd, rootsrt) {
+    renamevd:function(rootvd, rootttml2) {
 
         let aa = this
 
-        //this.libs.files.allfiles()
+        let m4s = this.libs.files.allfiles(rootvd, 'mp4')
+        let ttml2s = this.libs.files.allfiles(rootttml2, 'ttml2')
 
         return 'ok.'
     }
