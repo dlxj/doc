@@ -1391,6 +1391,56 @@ int main()
 
 
 
+# 旋转图像
+
+```
+
+    /// 旋转图像(优化旋转后模糊的问题)
+    public static Mat matRotate2(Mat src, float angle)
+    {
+        //using (Mat src = Cv2.ImRead("D:\\rotate_src.jpg"))
+        Mat dst = new Mat();
+
+        var centreX = Math.Floor( (Double)(src.Cols / 2) );
+        var centreY = Math.Floor( (Double)(src.Rows / 2) );
+
+        Point2f center = new Point2f((float)centreX, (float)centreY);
+        Mat rotationMatrix = Cv2.GetRotationMatrix2D(center, angle, 1);  // 计算旋转矩阵
+        var cosofRotationMatrix = Math.Abs(rotationMatrix.At<double>(0, 0) );
+        var sinofRotationMatrix = Math.Abs(rotationMatrix.At<double>(0, 1) );
+
+        // 计算旋转后新图片的宽度
+        var newImageHeight = Math.Floor((src.Height * sinofRotationMatrix) +
+              (src.Width * cosofRotationMatrix));
+
+        var newImageWidth = Math.Floor((src.Height * cosofRotationMatrix) +
+              (src.Width * sinofRotationMatrix));
+
+        // 更新旋转矩阵
+        rotationMatrix.At<double>(0, 2) += (newImageWidth / 2) - centreX;
+        rotationMatrix.At<double>(1, 2) += (newImageHeight / 2) - centreY;
+
+        // 执行实际旋转
+        Cv2.WarpAffine(src, dst, rotationMatrix, new OpenCvSharp.Size(newImageWidth, newImageHeight));
+
+
+        // 重设新图片宽度，让它和源图片的宽度保持一至
+        Mat dst2 = new Mat();
+        Cv2.Resize(dst, dst2, new OpenCvSharp.Size(src.Width, src.Height), 0, 0, InterpolationFlags.Nearest);
+
+        //Cv2.ImWrite("D:\\rotate_dst.jpg", dst2);
+
+        rotationMatrix.Dispose();
+        dst.Dispose();
+
+        return dst2;
+    }
+```
+
+
+
+
+
 # 三维重建
 
 
