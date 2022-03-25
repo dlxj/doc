@@ -2240,6 +2240,12 @@ let { base,dir,ext,name,root} = path.parse(mlpath)
 
 
 
+## rename
+
+```
+fs.renameSync( oldPath, newPath )
+```
+
 
 
 ## 遍历目录读取word

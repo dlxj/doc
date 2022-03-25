@@ -42,6 +42,12 @@ GeneralUtilities`PrintDefinitions[BinLists]
 
 
 
+### 如何调用内部函数
+
+- https://mathematica.stackexchange.com/questions/805/what-are-some-useful-undocumented-mathematica-functions
+
+
+
 ## 每次启动MMA自动把编码设成UTF8
 
 
