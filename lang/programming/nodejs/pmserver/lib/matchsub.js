@@ -30,24 +30,34 @@ module.exports = {
             }
             let nth = match[1]
 
+            let season = ttml.match(/[\\\/](S\d+)[\\\/]/)
+
             for (let ssa of ssas) {
 
                 let match2 = ssa.match(/\](\d+)\.chs/)
-                if (match == null) {
-                    throw `name not correct. ${ssa}`
+                if (match2 == null) {
+                    continue  //throw `name not correct. ${ssa}`
                 }
                 let nth2 = match2[1]
 
-                if (Number(nth) == Number(nth2)) {
+                let season2 = ssa.match(/[\\\/](S\d+)[\\\/]/)
 
-                    let { base,dir,ext,name,root} = path.parse(ttml)
-                    let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(ssa)
+                if (season == season2) {
 
-                    let newname = `${name}.ssa`
-                    let newpath = path.join(dir2, newname)
+                    if (Number(nth) == Number(nth2)) {
 
-                    fs.renameSync( ssa, newpath )
+                        let { base,dir,ext,name,root} = path.parse(ttml)
+                        let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(ssa)
+    
+                        let newname = `${name}.ssa`
+                        let newpath = path.join(dir2, newname)
+    
+                        fs.renameSync( ssa, newpath )
+                    }
+
                 }
+
+
 
             }
 
