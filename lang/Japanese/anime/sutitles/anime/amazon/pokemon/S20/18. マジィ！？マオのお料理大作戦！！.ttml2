@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s3"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s4"></style> 
+   <style tts:ruby="container" xml:id="s5"></style> 
+   <style tts:ruby="base" xml:id="s6"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s7"></style> 
+   <style tts:fontSize="1.5em 1.0em" xml:id="s8"></style> 
+   <style tts:ruby="text" tts:rubyPosition="after" xml:id="s9"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:02.086" end="00:00:03.421" style="s1"><span style="s2">（マオ）アローラ～！</span></p> 
+   <p begin="00:00:03.629" end="00:00:07.925" style="s1"><span style="s2">今回のポケもんだいは<br />オドリドリについて あたしからの出題だよ</span></p> 
+   <p begin="00:00:08.634" end="00:00:13.097" style="s3"><span style="s2">オドリドリは“ヤマブキの蜜”を<br />吸うと どの姿に変わるでしょう？</span></p> 
+   <p begin="00:00:13.222" end="00:00:15.224" style="s3"><span style="s2">答えは番組の後半で！</span></p> 
+   <p begin="00:00:17.059" end="00:00:21.105" style="s1"><span style="s2">（ナレーター）<span style="s4">ここはアイナ食堂</span><br /><span style="s4">マオのお父さんが営むお店だ</span></span></p> 
+   <p begin="00:00:22.148" end="00:00:24.567" style="s3"><span style="s2">おや？　みんな勢ぞろい</span></p> 
+   <p begin="00:00:24.734" end="00:00:26.610" style="s3"><span style="s2">何かあるのかな？</span></p> 
+   <p begin="00:00:27.319" end="00:00:28.863" style="s1"><span style="s2">（サトシ）楽しみだなぁ</span></p> 
+   <p begin="00:00:29.029" end="00:00:30.698" style="s1"><span style="s2">どんなのが出てくるんだろう</span></p> 
+   <p begin="00:00:30.823" end="00:00:31.866" style="s1"><span style="s2">（ピカチュウ）ピーカチュウ</span></p> 
+   <p begin="00:00:31.991" end="00:00:32.700" style="s1"><span style="s2">みんな～</span></p> 
+   <p begin="00:00:33.743" end="00:00:37.246" style="s1"><span style="s2">今日は新メニューの試食会に<br />集まってくれてありがとう</span></p> 
+   <p begin="00:00:37.371" end="00:00:38.748" style="s1"><span style="s2">（カキ）わぁ いよいよか</span></p> 
+   <p begin="00:00:38.873" end="00:00:40.082" style="s1"><span style="s2">慌てない！</span></p> 
+   <p begin="00:00:40.374" end="00:00:43.002" style="s1"><span style="s2">もう少しで出来上がるから 待っててね</span></p> 
+   <p begin="00:00:43.252" end="00:00:44.211" style="s1"><span style="s2">（お腹の鳴る音）</span></p> 
+   <p begin="00:00:44.754" end="00:00:48.799" style="s1"><span style="s2">（マーマネ）お昼抜きで来たんだもん<br />待ちきれないよぉ～</span></p> 
+   <p begin="00:00:48.924" end="00:00:49.592" style="s1"><span style="s2">（笑い声）</span></p> 
+   <p begin="00:00:50.217" end="00:00:50.968" style="s1"><span style="s2">（アマカジ）ジッ…</span></p> 
+   <p begin="00:00:51.260" end="00:00:52.178" style="s1"><span style="s2">マッジッ…</span></p> 
+   <p begin="00:00:52.303" end="00:00:52.970" region="縦右">（ピカチュウ）<br />ピーカ～</p> 
+   <p begin="00:00:53.095" end="00:00:54.305" region="縦右">（サトシ）<br />サンキューアマカジ</p> 
+   <p begin="00:00:54.555" end="00:00:56.182" region="縦右">（リーリエ）<br />お お店のお手伝い</p> 
+   <p begin="00:00:56.307" end="00:00:57.099" region="縦右">偉いですねー</p> 
+   <p begin="00:00:57.224" end="00:00:57.892" region="縦右">（アマカジ）マジ…</p> 
+   <p begin="00:00:58.017" end="00:00:59.310" style="s1"><span style="s2">マッジ～</span></p> 
+   <p begin="00:00:59.435" end="00:01:00.644" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:01:00.811" end="00:01:02.438" style="s1"><span style="s2">（モクローの鳴き声）<br />（アマカジ）マジ～</span></p> 
+   <p begin="00:01:03.063" end="00:01:04.398" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:01:04.523" end="00:01:05.816" style="s1"><span style="s2">（アマカジ）マジカッ！<br />（モクローの悲鳴）</span></p> 
+   <p begin="00:01:06.609" end="00:01:07.651" style="s1"><span style="s2">マッジ～…</span></p> 
+   <p begin="00:01:09.236" end="00:01:11.697" style="s1"><span style="s2">手伝いのジャマしちゃダメだぞ モクロー</span></p> 
+   <p begin="00:01:11.947" end="00:01:12.865" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:01:13.574" end="00:01:14.283" style="s1"><span style="s2">（匂いを嗅ぐ音）</span></p> 
+   <p begin="00:01:14.492" end="00:01:16.994" style="s1"><span style="s2">おいしそうな匂い！　ジュルリ</span></p> 
+   <p begin="00:01:17.661" end="00:01:19.830" style="s1"><span style="s2">（スイレン）マーマネもアマカジに夢中…？</span></p> 
+   <p begin="00:01:20.623" end="00:01:22.875" style="s1"><span style="s2">違うよ！　アマカジじゃなくて～</span></p> 
+   <p begin="00:01:23.334" end="00:01:24.126" style="s1"><span style="s2">（イワンコ）キュゥ～</span></p> 
+   <p begin="00:01:24.627" end="00:01:26.253" style="s1"><span style="s2"><span style="s5"><span style="s6">厨房</span><span style="s7">ちゅうぼう</span></span>からだ</span></p> 
+   <p begin="00:01:26.670" end="00:01:27.338" style="s1"><span style="s2">ほんとだ…</span></p> 
+   <p begin="00:01:28.005" end="00:01:29.048" style="s1"><span style="s2">（匂いを嗅ぐ音）</span></p> 
+   <p begin="00:01:29.173" end="00:01:31.175" style="s1"><span style="s2">ピィカチュウ～</span></p> 
+   <p begin="00:01:31.342" end="00:01:32.009" style="s1"><span style="s2">ピカ？</span></p> 
+   <p begin="00:01:32.885" end="00:01:35.387" style="s1"><span style="s2">（マオ）ピカチュウ<br />ちょっと手伝ってくれる？</span></p> 
+   <p begin="00:01:35.513" end="00:01:36.388" style="s1"><span style="s2">ピーカ？</span></p> 
+   <p begin="00:01:37.765" end="00:01:39.141" style="s1"><span style="s2">（電撃の音）<br />（サトシ）えぇっ！？</span></p> 
+   <p begin="00:01:39.266" end="00:01:39.934" style="s1"><span style="s2">（一同）ああっ！？</span></p> 
+   <p begin="00:01:40.309" end="00:01:42.102" style="s1"><span style="s2">な 何だぁ！？</span></p> 
+   <p begin="00:01:42.937" end="00:01:44.939" region="縦右">♪～</p> 
+   <p begin="00:03:08.063" end="00:03:10.065" style="s1"><span style="s2">～♪</span></p> 
+   <p begin="00:03:23.037" end="00:03:24.663" style="s1"><span style="s2">（一同）あ… ええ…？</span></p> 
+   <p begin="00:03:28.375" end="00:03:29.293" style="s1"><span style="s2">ん…</span></p> 
+   <p begin="00:03:31.128" end="00:03:33.213" style="s1"><span style="s2">マオちゃん　その格好…？</span></p> 
+   <p begin="00:03:33.339" end="00:03:34.548" style="s1"><span style="s2">大丈夫ですか？</span></p> 
+   <p begin="00:03:35.090" end="00:03:37.468" style="s1"><span style="s2">えっへへ… 大丈夫大丈夫</span></p> 
+   <p begin="00:03:37.760" end="00:03:38.427" style="s1"><span style="s2">じゃーん！</span></p> 
+   <p begin="00:03:39.261" end="00:03:42.056" style="s1"><span style="s2">“幻のアローラシチュー”の完成だよ～！</span></p> 
+   <p begin="00:03:42.598" end="00:03:43.390" style="s1"><span style="s2">幻の？</span></p> 
+   <p begin="00:03:43.515" end="00:03:44.683" style="s1"><span style="s2">アローラシチュー？</span></p> 
+   <p begin="00:03:45.142" end="00:03:46.143" style="s1"><span style="s2">うわ～おっ！</span></p> 
+   <p begin="00:03:46.769" end="00:03:48.062" style="s1"><span style="s2">うまそ～！</span></p> 
+   <p begin="00:03:48.187" end="00:03:49.146" style="s1"><span style="s2">（カキ）ちょっと焦げてるぞ？</span></p> 
+   <p begin="00:03:49.980" end="00:03:51.357" style="s1"><span style="s2">（マオ）ピカチュウたちはこっち</span></p> 
+   <p begin="00:03:52.024" end="00:03:53.734" style="s1"><span style="s2">特製ポケモンフーズだよー</span></p> 
+   <p begin="00:03:53.984" end="00:03:56.487" style="s1"><span style="s2">（ポケモンたちの歓声）</span></p> 
+   <p begin="00:03:56.987" end="00:03:58.989" style="s1"><span style="s2">（一同）いっただきまーす！</span></p> 
+   <p begin="00:04:01.575" end="00:04:02.409" style="s1"><span style="s2">あむっ</span></p> 
+   <p begin="00:04:02.701" end="00:04:03.452" style="s1"><span style="s2">（一同）あむ…</span></p> 
+   <p begin="00:04:03.577" end="00:04:05.829" style="s1"><span style="s2">（電撃の音）<br />（悲鳴）</span></p> 
+   <p begin="00:04:09.333" end="00:04:10.209" style="s1"><span style="s2">（ロトム）何ごとロト！？</span></p> 
+   <p begin="00:04:10.584" end="00:04:12.836" style="s1"><span style="s2">どう？　びっくり？　おいしい？</span></p> 
+   <p begin="00:04:13.128" end="00:04:13.921" style="s1"><span style="s2">う うっ…</span></p> 
+   <p begin="00:04:14.505" end="00:04:16.715" style="s1"><span style="s2">マオ… この料理は一体…？</span></p> 
+   <p begin="00:04:17.174" end="00:04:19.927" style="s1"><span style="s2">ピリッとした後味がクセになるでしょ～？</span></p> 
+   <p begin="00:04:20.052" end="00:04:24.348" style="s1"><span style="s2">この後味こそが<br />幻のアローラシチューの特徴なんだって</span></p> 
+   <p begin="00:04:24.473" end="00:04:25.975" style="s1"><span style="s2">ピリッとどころか</span></p> 
+   <p begin="00:04:26.225" end="00:04:27.226" style="s1"><span style="s2">（スイレン）ビリビリ～</span></p> 
+   <p begin="00:04:27.393" end="00:04:30.938" style="s1"><span style="s2">まるで ピカチュウの電撃を<br />くらったみたいな…</span></p> 
+   <p begin="00:04:31.230" end="00:04:32.564" style="s1"><span style="s2">ピ？　ピカチュウ？</span></p> 
+   <p begin="00:04:32.982" end="00:04:33.816" style="s1"><span style="s2">まさか！</span></p> 
+   <p begin="00:04:33.941" end="00:04:38.070" style="s1"><span style="s2">うん！　シチューの仕上げに<br />10まんボルトを加えてみたんだ</span></p> 
+   <p begin="00:04:38.988" end="00:04:40.823" style="s1"><span style="s2">ピカチュウ　10まんボルトよ！</span></p> 
+   <p begin="00:04:40.948" end="00:04:43.701" style="s1"><span style="s2">ピーカチュ～ッ！</span></p> 
+   <p begin="00:04:44.702" end="00:04:46.954" style="s1"><span style="s2">ちょっと刺激が強すぎたかな</span></p> 
+   <p begin="00:04:47.413" end="00:04:50.708" style="s1"><span style="s2">そもそも<br />幻のアローラシチューとは一体…？</span></p> 
+   <p begin="00:04:50.833" end="00:04:52.793" style="s1"><span style="s2">（マオ）へへ… えっとぉ…<br />（ドアの開く音）</span></p> 
+   <p begin="00:04:52.918" end="00:04:53.711" style="s1"><span style="s2">（マオパパ）やあ！<br />（一同）ん？</span></p> 
+   <p begin="00:04:54.294" end="00:04:55.671" style="s1"><span style="s2">（マオパパ）いらっしゃい<br />（マオ）お父さん</span></p> 
+   <p begin="00:04:56.213" end="00:04:57.464" style="s1"><span style="s2">おじゃましています</span></p> 
+   <p begin="00:04:57.631" end="00:05:00.884" style="s1"><span style="s2">マオパパ　幻のアローラシチューって？</span></p> 
+   <p begin="00:05:01.093" end="00:05:02.428" style="s1"><span style="s2">何だい？　急に</span></p> 
+   <p begin="00:05:02.720" end="00:05:03.679" style="s1"><span style="s2">それはね…</span></p> 
+   <p begin="00:05:04.388" end="00:05:08.225" style="s1"><span style="s2">昔はお祭りや式典があるたびに<br />作られていたんだが<span style="s8">―</span></span></p> 
+   <p begin="00:05:08.475" end="00:05:12.938" style="s1"><span style="s2">時代の流れと共に<br />今ではすっかり忘れられてしまってね…</span></p> 
+   <p begin="00:05:13.313" end="00:05:14.773" style="s1"><span style="s2">それで幻…</span></p> 
+   <p begin="00:05:14.940" end="00:05:15.607" style="s1"><span style="s2">（スイレン）知ってた？</span></p> 
+   <p begin="00:05:15.733" end="00:05:17.651" style="s1"><span style="s2">いや 今初めて知ったよ</span></p> 
+   <p begin="00:05:17.776" end="00:05:21.196" style="s1"><span style="s2">それなら マオはどうやって<br />このシチューを作ったのですか？</span></p> 
+   <p begin="00:05:21.697" end="00:05:23.198" style="s1"><span style="s2">実はね～</span></p> 
+   <p begin="00:05:24.450" end="00:05:25.242" style="s1"><span style="s2">（サトシ）これは？</span></p> 
+   <p begin="00:05:25.576" end="00:05:27.703" style="s1"><span style="s2">（マオ）アローラシチューの作り方</span></p> 
+   <p begin="00:05:27.828" end="00:05:29.872" style="s1"><span style="s2">（マオ）お兄ちゃんが送ってくれたんだよ</span></p> 
+   <p begin="00:05:30.164" end="00:05:33.500" style="s1"><span style="s2">（スイレン）お兄ちゃんって<br />確か 料理修業に出たって…</span></p> 
+   <p begin="00:05:33.751" end="00:05:37.671" style="s1"><span style="s2">（マオ）<span style="s4">そう　でね</span><br /><span style="s4">偶然 旅先で見つけた古い文献に―</span></span></p> 
+   <p begin="00:05:37.796" end="00:05:40.507" style="s3"><span style="s2">アローラシチューの作り方が<br />載ってたんだって</span></p> 
+   <p begin="00:05:40.632" end="00:05:42.718" style="s1"><span style="s2">それを書き写してくれたんだ～</span></p> 
+   <p begin="00:05:42.843" end="00:05:44.261" style="s1"><span style="s2">そうだったのですね</span></p> 
+   <p begin="00:05:44.386" end="00:05:45.345" style="s1"><span style="s2">レシピによると<span style="s8">―</span></span></p> 
+   <p begin="00:05:45.846" end="00:05:49.767" style="s1"><span style="s2">シチューを完成させるには<br />“ヤマブキの蜜”が必要みたいなんだ</span></p> 
+   <p begin="00:05:49.975" end="00:05:54.229" style="s1"><span style="s2">それが ピリッとした後味を残す<br />大切な材料なんだって</span></p> 
+   <p begin="00:05:54.772" end="00:05:56.440" style="s1"><span style="s2">ヤマブキの蜜…</span></p> 
+   <p begin="00:05:56.774" end="00:05:59.735" style="s1"><span style="s2">でも 今は時期外れで 入手することは…</span></p> 
+   <p begin="00:05:59.985" end="00:06:03.989" style="s1"><span style="s2">うん　だから10まんボルトで<br />代用しようと思ったんだけど…</span></p> 
+   <p begin="00:06:04.114" end="00:06:05.074" style="s1"><span style="s2">（カキ）分からん！</span></p> 
+   <p begin="00:06:05.240" end="00:06:06.950" style="s1"><span style="s2">全く分からん ホワーイッ？</span></p> 
+   <p begin="00:06:07.076" end="00:06:09.828" style="s1"><span style="s2">なぜ10まんボルト？　理解に苦しむ</span></p> 
+   <p begin="00:06:09.953" end="00:06:10.621" style="s1"><span style="s2">（マオ）うん…</span></p> 
+   <p begin="00:06:11.371" end="00:06:13.832" style="s1"><span style="s2">あ～あ どうにか完成させて<span style="s8">―</span></span></p> 
+   <p begin="00:06:14.208" end="00:06:17.836" style="s1"><span style="s2">アイナ食堂の看板メニューに<br />したかったんだけどなぁ…</span></p> 
+   <p begin="00:06:19.338" end="00:06:20.923" style="s1"><span style="s2">マジマジ～</span></p> 
+   <p begin="00:06:21.048" end="00:06:22.049" style="s1"><span style="s2">うん だよね</span></p> 
+   <p begin="00:06:22.299" end="00:06:24.176" style="s1"><span style="s2">諦めずに頑張ろっ　アマカジ</span></p> 
+   <p begin="00:06:24.301" end="00:06:25.385" style="s1"><span style="s2">（アマカジ）マジッ<br />（マーマネが皿をなめる音）</span></p> 
+   <p begin="00:06:25.719" end="00:06:27.179" style="s1"><span style="s2">おかわり！</span></p> 
+   <p begin="00:06:27.304" end="00:06:29.098" style="s1"><span style="s2">（一同）えっ！？<br />（マーマネ）これ おいしいね！</span></p> 
+   <p begin="00:06:29.223" end="00:06:32.768" style="s1"><span style="s2">（マーマネ）ビリビリくる刺激が<br />スパイシーでたまらないよぉ</span></p> 
+   <p begin="00:06:32.935" end="00:06:33.727" style="s1"><span style="s2">（トゲデマルの鳴き声）</span></p> 
+   <p begin="00:06:34.186" end="00:06:35.437" style="s1"><span style="s2">（一同）うわぁ…</span></p> 
+   <p begin="00:06:35.813" end="00:06:37.231" style="s1"><span style="s2">さすが お昼抜き…</span></p> 
+   <p begin="00:06:37.898" end="00:06:40.651" style="s1"><span style="s2">よし　今から代わりの料理を作ろう</span></p> 
+   <p begin="00:06:40.776" end="00:06:42.027" style="s1"><span style="s2">ごちそうするよ</span></p> 
+   <p begin="00:06:42.236" end="00:06:42.986" style="s1"><span style="s2">あは…</span></p> 
+   <p begin="00:06:43.362" end="00:06:44.238" style="s1"><span style="s2">（スイレン）いいの？</span></p> 
+   <p begin="00:06:44.363" end="00:06:47.282" style="s1"><span style="s2">（マオパパ）ああ　うちの店の名誉<span style="s5"><span style="s6">挽回</span><span style="s7">ばんかい</span></span>だ</span></p> 
+   <p begin="00:06:47.574" end="00:06:48.826" style="s1"><span style="s2">（サトシ）やったー！<br />（歓声）</span></p> 
+   <p begin="00:06:48.992" end="00:06:50.536" style="s1"><span style="s2">（ロトム）まだ食べるロト！？</span></p> 
+   <p begin="00:06:51.620" end="00:06:53.664" style="s1"><span style="s2">（一同）いただきまーす！</span></p> 
+   <p begin="00:06:55.082" end="00:06:56.583" style="s1"><span style="s2">（一同）ごちそうさま～！</span></p> 
+   <p begin="00:06:57.167" end="00:06:58.377" style="s1"><span style="s2">今日はありがとう！</span></p> 
+   <p begin="00:06:58.502" end="00:07:00.045" style="s1"><span style="s2">（マーマネ）余は満足じゃ</span></p> 
+   <p begin="00:07:00.170" end="00:07:01.630" style="s1"><span style="s2">気を付けて帰るんだよ</span></p> 
+   <p begin="00:07:01.755" end="00:07:02.756" style="s1"><span style="s2">（４人）はい</span></p> 
+   <p begin="00:07:04.466" end="00:07:05.300" style="s1"><span style="s2">（カキ）じゃあな！</span></p> 
+   <p begin="00:07:05.425" end="00:07:06.677" style="s1"><span style="s2">（リーリエ）ポケモンスクールで</span></p> 
+   <p begin="00:07:06.844" end="00:07:07.511" style="s1"><span style="s2">（スイレン）バイバ～イ</span></p> 
+   <p begin="00:07:11.265" end="00:07:12.850" style="s1"><span style="s2">（サトシ）こら！　モクロー！</span></p> 
+   <p begin="00:07:12.975" end="00:07:14.017" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:07:14.143" end="00:07:14.935" style="s1"><span style="s2">（アマカジ）マジッ</span></p> 
+   <p begin="00:07:15.686" end="00:07:16.812" style="s1"><span style="s2">マージッカッ！</span></p> 
+   <p begin="00:07:17.396" end="00:07:18.814" style="s1"><span style="s2">（プロペラにぶつかる音）<br />（モクローの悲鳴）</span></p> 
+   <p begin="00:07:21.191" end="00:07:23.110" style="s1"><span style="s2">（モクローの鳴き声）<br />（ピカチュウ）ピカ</span></p> 
+   <p begin="00:07:23.235" end="00:07:24.194" style="s1"><span style="s2">（サトシ）全く…</span></p> 
+   <p begin="00:07:24.570" end="00:07:25.612" style="s1"><span style="s2">ほら 帰るぞー</span></p> 
+   <p begin="00:07:25.737" end="00:07:27.698" style="s1"><span style="s2">サトシ　今日はありがとね</span></p> 
+   <p begin="00:07:27.823" end="00:07:29.533" style="s1"><span style="s2">お礼を言うのはこっちだよ</span></p> 
+   <p begin="00:07:29.658" end="00:07:30.617" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:07:30.742" end="00:07:31.785" style="s1"><span style="s2">（サトシ）なぁ…<br />（マオ）ん？</span></p> 
+   <p begin="00:07:32.578" end="00:07:35.539" style="s1"><span style="s2">ヤマブキの蜜が時期外れって<br />どういう意味？</span></p> 
+   <p begin="00:07:35.956" end="00:07:38.250" style="s1"><span style="s2">えぇっと それはね～…</span></p> 
+   <p begin="00:07:38.375" end="00:07:41.211" style="s1"><span style="s2">（マオパパ）マオに代わって説明しよう<br />（マオ）え？</span></p> 
+   <p begin="00:07:41.336" end="00:07:45.382" style="s1"><span style="s2">ヤマブキの蜜は<br />ある限られた時期にしか採れない</span></p> 
+   <p begin="00:07:46.425" end="00:07:48.051" style="s3"><span style="s2">例外を除いては</span></p> 
+   <p begin="00:07:48.594" end="00:07:49.761" style="s1"><span style="s2">（マオ）えっ 例外？</span></p> 
+   <p begin="00:07:50.179" end="00:07:51.430" style="s1"><span style="s2">確かさ</span></p> 
+   <p begin="00:07:51.805" end="00:07:53.599" style="s1"><span style="s2">じいさんから聞いた話だけど</span></p> 
+   <p begin="00:07:53.807" end="00:07:55.058" style="s1"><span style="s2">超ざっくり…</span></p> 
+   <p begin="00:07:55.642" end="00:07:58.020" style="s1"><span style="s2">マオ！　明日探しに行こうぜ！</span></p> 
+   <p begin="00:07:58.228" end="00:07:59.396" style="s1"><span style="s2">俺 手伝うからさ</span></p> 
+   <p begin="00:07:59.521" end="00:08:00.189" style="s1"><span style="s2">ピカチュウ</span></p> 
+   <p begin="00:08:00.856" end="00:08:02.065" style="s1"><span style="s2">え？　でも…</span></p> 
+   <p begin="00:08:02.608" end="00:08:05.861" style="s1"><span style="s2">どうしても食べたいんだ<br />幻のアローラシチュー</span></p> 
+   <p begin="00:08:06.028" end="00:08:07.654" style="s1"><span style="s2">あぁ…　うん！</span></p> 
+   <p begin="00:08:08.614" end="00:08:12.910" style="s1"><span style="s2">（ロケット団）ふふふふふふふ…</span></p> 
+   <p begin="00:08:13.285" end="00:08:13.952" style="s1"><span style="s2">（ムサシ）ついに…</span></p> 
+   <p begin="00:08:15.370" end="00:08:16.079" style="s1"><span style="s2">（コジロウ）ついに…</span></p> 
+   <p begin="00:08:17.664" end="00:08:18.832" style="s1"><span style="s2">（ニャース）ついに！</span></p> 
+   <p begin="00:08:19.333" end="00:08:21.960" style="s1"><span style="s2">（ムサシ･コジロウ･ニャース）<br />ロケット団秘密基地の完成だー！</span></p> 
+   <p begin="00:08:22.085" end="00:08:23.337" style="s1"><span style="s2">（ニャース）ニャ！<br />（ソーナンス）ソ～ナンス！</span></p> 
+   <p begin="00:08:24.046" end="00:08:25.672" style="s1"><span style="s2">やったニャ～</span></p> 
+   <p begin="00:08:25.839" end="00:08:27.925" style="s1"><span style="s2">冬眠生活ウン週間</span></p> 
+   <p begin="00:08:28.133" end="00:08:31.553" style="s1"><span style="s2">ようやく 本来の任務に<br />集中できるってわけよ</span></p> 
+   <p begin="00:08:32.095" end="00:08:34.932" style="s1"><span style="s2">今度こそジャリボーイから<br />ピカチュウをゲットでチュ</span></p> 
+   <p begin="00:08:35.349" end="00:08:38.352" style="s1"><span style="s2">さらに アローラのポケモンも<br />ゲットだニャ！</span></p> 
+   <p begin="00:08:38.477" end="00:08:39.436" style="s1"><span style="s2">ソーナンスッ</span></p> 
+   <p begin="00:08:39.770" end="00:08:42.439" style="s1"><span style="s2">それじゃあ早速行くわよ！<br />ロケット団！</span></p> 
+   <p begin="00:08:42.773" end="00:08:43.815" style="s1"><span style="s2">出動ー！</span></p> 
+   <p begin="00:08:43.941" end="00:08:45.275" style="s1"><span style="s2">（コジロウ･ニャース）おー！<br />（ソーナンス）ソー！</span></p> 
+   <p begin="00:08:45.901" end="00:08:48.362" style="s1"><span style="s2">（ムサシ）って 疲れたから<br />明日にしましょう</span></p> 
+   <p begin="00:08:48.528" end="00:08:49.988" style="s1"><span style="s2">（コジロウ･ニャース）お～<br />（ソーナンス）ソ～</span></p> 
+   <p begin="00:08:53.200" end="00:08:55.577" style="s1"><span style="s2">（サトシ）よーし！　どっから探そうかな～</span></p> 
+   <p begin="00:08:55.911" end="00:08:57.496" style="s1"><span style="s2">サトシ　いいの？</span></p> 
+   <p begin="00:08:57.829" end="00:09:01.083" style="s1"><span style="s2">お父さんの話 かなりざっくりだったもん</span></p> 
+   <p begin="00:09:01.583" end="00:09:04.461" style="s1"><span style="s2">やみくもに探しても 見つかるかどうか</span></p> 
+   <p begin="00:09:04.795" end="00:09:06.296" style="s1"><span style="s2">（ロトム）フフフのフ</span></p> 
+   <p begin="00:09:06.421" end="00:09:08.715" style="s1"><span style="s2">こんな時こそ ボクにお任せロト</span></p> 
+   <p begin="00:09:09.299" end="00:09:11.718" style="s1"><span style="s2">“ヤマブキの蜜” 検索開始ロト</span></p> 
+   <p begin="00:09:13.053" end="00:09:15.180" style="s1"><span style="s2">オドリドリ･ぱちぱちスタイル</span></p> 
+   <p begin="00:09:15.764" end="00:09:17.307" style="s1"><span style="s2">オドリドリがどうして？</span></p> 
+   <p begin="00:09:17.432" end="00:09:21.311" style="s1"><span style="s2">（ロトム）データによると<br />オドリドリはヤマブキの蜜が好物ロト</span></p> 
+   <p begin="00:09:21.770" end="00:09:24.064" style="s1"><span style="s2">だからオドリドリを見つけ 追いかければ…</span></p> 
+   <p begin="00:09:24.523" end="00:09:27.776" style="s1"><span style="s2">ヤマブキの蜜のあるとこに<br />たどり着けるってわけか！</span></p> 
+   <p begin="00:09:27.901" end="00:09:29.152" style="s1"><span style="s2">（ロトム）そういうことロト！</span></p> 
+   <p begin="00:09:29.695" end="00:09:34.616" style="s1"><span style="s2">でも 今から探しても<br />見つかる確率は８パーセントロト</span></p> 
+   <p begin="00:09:35.325" end="00:09:37.828" style="s1"><span style="s2">８パーセントもあるってことじゃん</span></p> 
+   <p begin="00:09:37.953" end="00:09:40.539" style="s1"><span style="s2">まずは オドリドリを探すんだ！</span></p> 
+   <p begin="00:09:40.664" end="00:09:41.873" style="s1"><span style="s2">（マオ）おー！<br />（ピカチュウ）ピカー！</span></p> 
+   <p begin="00:09:44.626" end="00:09:45.752" style="s1"><span style="s2">（サトシ）いたかー？</span></p> 
+   <p begin="00:09:45.877" end="00:09:47.421" style="s1"><span style="s2">（マオ）いな～い</span></p> 
+   <p begin="00:09:48.588" end="00:09:50.757" style="s1"><span style="s2">（モクローの鳴き声）<br />（ドデカバシたちの鳴き声）</span></p> 
+   <p begin="00:09:51.425" end="00:09:52.259" style="s1"><span style="s2">（マオ）いた～？</span></p> 
+   <p begin="00:09:52.592" end="00:09:53.802" style="s1"><span style="s2">（サトシ）いないらしい</span></p> 
+   <p begin="00:09:55.971" end="00:09:57.139" style="s1"><span style="s2">（サトシ）いたか～？</span></p> 
+   <p begin="00:09:57.264" end="00:09:58.223" style="s1"><span style="s2">（マオ）いな～…</span></p> 
+   <p begin="00:09:58.515" end="00:09:59.308" style="s1"><span style="s2">ひっ！？</span></p> 
+   <p begin="00:09:59.558" end="00:10:02.686" style="s1"><span style="s2">（マオたちの悲鳴）<br />（ゴルバットの鳴き声）</span></p> 
+   <p begin="00:10:03.103" end="00:10:04.146" style="s1"><span style="s2">（一同）はぁ～</span></p> 
+   <p begin="00:10:04.271" end="00:10:05.981" style="s1"><span style="s2">全然見つかんないなぁ～</span></p> 
+   <p begin="00:10:06.606" end="00:10:09.401" style="s1"><span style="s2">（ロトム）探し始めてから５時間経過</span></p> 
+   <p begin="00:10:09.609" end="00:10:13.030" style="s1"><span style="s2">見つかる確率は<br />0.3パーセントに低下ロト…</span></p> 
+   <p begin="00:10:13.155" end="00:10:14.531" style="s1"><span style="s2">諦めないっ！</span></p> 
+   <p begin="00:10:14.698" end="00:10:18.118" style="s1"><span style="s2">絶対にヤマブキの蜜の採れる場所を<br />探し出す！</span></p> 
+   <p begin="00:10:18.243" end="00:10:22.331" style="s1"><span style="s2">幻の料理をアイナ食堂の<br />看板メニューにするために！</span></p> 
+   <p begin="00:10:22.456" end="00:10:23.457" style="s1"><span style="s2">燃えてるなぁ</span></p> 
+   <p begin="00:10:24.291" end="00:10:27.210" style="s1"><span style="s2">でも どうしてそんなに<br />看板メニューにこだわるんだ？</span></p> 
+   <p begin="00:10:27.669" end="00:10:28.337" style="s1"><span style="s2">えっ？</span></p> 
+   <p begin="00:10:28.587" end="00:10:31.465" style="s1"><span style="s2">（サトシ）今だって すっげー<br />おいしいメニューたくさんあるじゃん</span></p> 
+   <p begin="00:10:32.466" end="00:10:37.471" style="s1"><span style="s2">あたしの夢はね アイナ食堂を<br />アローラいちの食堂にすることなの</span></p> 
+   <p begin="00:10:38.138" end="00:10:39.473" style="s1"><span style="s2">アローラいち…</span></p> 
+   <p begin="00:10:39.890" end="00:10:43.018" style="s1"><span style="s2">（マオ）看板メニューで<br />うちの食堂を知ってもらって<span style="s8">―</span></span></p> 
+   <p begin="00:10:43.143" end="00:10:46.480" style="s1"><span style="s2">お父さんの料理を<br />たくさんの人に食べてもらいたいんだ！</span></p> 
+   <p begin="00:10:47.064" end="00:10:48.857" style="s1"><span style="s2">そっか　いいなぁ それ</span></p> 
+   <p begin="00:10:49.399" end="00:10:53.195" style="s1"><span style="s2">完成したら<br />まずはサトシに食べてもらうからね</span></p> 
+   <p begin="00:10:53.320" end="00:10:53.987" style="s1"><span style="s2">マジジ</span></p> 
+   <p begin="00:10:54.571" end="00:10:55.697" style="s1"><span style="s2">任せとけ！</span></p> 
+   <p begin="00:10:55.864" end="00:10:58.367" style="s1"><span style="s2">絶対 ヤマブキの蜜を見つけてやるぜ！</span></p> 
+   <p begin="00:10:58.492" end="00:10:59.201" style="s1"><span style="s2">（マオ）うん！</span></p> 
+   <p begin="00:11:01.119" end="00:11:02.329" style="s1"><span style="s2">（ムサシ）幻の料理？</span></p> 
+   <p begin="00:11:02.871" end="00:11:04.039" style="s1"><span style="s2">アローラいち？</span></p> 
+   <p begin="00:11:04.164" end="00:11:05.582" style="s1"><span style="s2">（ニャース）ヤマブキの蜜？</span></p> 
+   <p begin="00:11:06.124" end="00:11:08.460" style="s1"><span style="s2">お高く売れそうな予感だニャ！</span></p> 
+   <p begin="00:11:09.086" end="00:11:12.631" style="s1"><span style="s2">予定変更！<br />ヤマブキの蜜を横取りするわよ！</span></p> 
+   <p begin="00:11:13.048" end="00:11:14.383" style="s1"><span style="s2">（コジロウ･ニャース）おー！<br />（ソーナンス）ソー！</span></p> 
+   <p begin="00:11:16.093" end="00:11:17.302" style="s1"><span style="s2">（アマカジ）マジッ<br />（ピカチュウ）ピーカピーカッ</span></p> 
+   <p begin="00:11:17.427" end="00:11:18.929" style="s1"><span style="s2">（モクローの鳴き声）<br />（マオ）みんな出発するよ～！</span></p> 
+   <p begin="00:11:19.221" end="00:11:20.639" style="s1"><span style="s2">ピーカチュウ！</span></p> 
+   <p begin="00:11:21.264" end="00:11:23.392" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:11:24.351" end="00:11:25.143" style="s1"><span style="s2">（モクローの悲鳴）</span></p> 
+   <p begin="00:11:25.644" end="00:11:28.146" style="s1"><span style="s2">もう 仲がいいんだか悪いんだか…</span></p> 
+   <p begin="00:11:28.271" end="00:11:30.816" style="s1"><span style="s2">そうだ！　ピンときたぜ マオ！</span></p> 
+   <p begin="00:11:30.941" end="00:11:32.150" style="s1"><span style="s2">え？　ピンときたって？</span></p> 
+   <p begin="00:11:32.776" end="00:11:34.611" style="s1"><span style="s2">オドリドリを見つける方法だよ！</span></p> 
+   <p begin="00:11:34.903" end="00:11:35.695" style="s1"><span style="s2">マジ～</span></p> 
+   <p begin="00:11:35.821" end="00:11:37.656" style="s1"><span style="s2">（サトシ）オドリドリも鳥ポケモンだろ</span></p> 
+   <p begin="00:11:37.906" end="00:11:41.118" style="s1"><span style="s2">だから アマカジに甘い匂いを<br />たくさん出してもらったら<span style="s8">―</span></span></p> 
+   <p begin="00:11:41.451" end="00:11:43.453" style="s1"><span style="s2">モクローみたいに<br />飛んでくるんじゃないかな？</span></p> 
+   <p begin="00:11:44.538" end="00:11:46.206" style="s1"><span style="s2">それ いいかも！</span></p> 
+   <p begin="00:11:53.547" end="00:11:55.215" region="縦右">（サトシ）<span style="s4">ポケモン</span><br /><span style="s4">ゲットだぜ！</span></p> 
+   <p begin="00:11:55.340" end="00:11:56.383" region="縦右">（アマカジ）<span style="s4">マジ！</span></p> 
+   <p begin="00:12:03.014" end="00:12:04.433" style="s1"><span style="s2">アマカジ お願い！</span></p> 
+   <p begin="00:12:04.558" end="00:12:05.225" style="s1"><span style="s2">マジッ！</span></p> 
+   <p begin="00:12:05.642" end="00:12:08.979" style="s1"><span style="s2">マァジ マジマジマジ…</span></p> 
+   <p begin="00:12:09.479" end="00:12:10.313" style="s1"><span style="s2">すっげー！</span></p> 
+   <p begin="00:12:10.689" end="00:12:12.732" style="s1"><span style="s2">（ピカチュウ）ピカチュ～<br />（モクローの鳴き声）</span></p> 
+   <p begin="00:12:12.858" end="00:12:13.525" style="s1"><span style="s2">ピーカ…</span></p> 
+   <p begin="00:12:13.650" end="00:12:16.319" style="s1"><span style="s2">（モクローの鳴き声）<br />（ピカチュウ）ピカピカッ！　ピーカー…</span></p> 
+   <p begin="00:12:16.778" end="00:12:18.447" style="s1"><span style="s2">（マオ）アマカジ　頑張って！</span></p> 
+   <p begin="00:12:18.655" end="00:12:20.073" style="s1"><span style="s2">マジマジッ</span></p> 
+   <p begin="00:12:22.200" end="00:12:23.452" style="s1"><span style="s2">（サトシ･マオ）わぁ…</span></p> 
+   <p begin="00:12:23.743" end="00:12:26.705" style="s1"><span style="s2">（鳥ポケモンたちの羽音）<br />（ヤミカラス･ツツケラの鳴き声）</span></p> 
+   <p begin="00:12:26.830" end="00:12:28.206" style="s1"><span style="s2">（キャモメ･ペリッパーの鳴き声）</span></p> 
+   <p begin="00:12:28.331" end="00:12:29.708" style="s1"><span style="s2">（虫ポケモンたちの羽音）<br />（ピカチュウ）ピーカッ</span></p> 
+   <p begin="00:12:30.292" end="00:12:31.835" style="s1"><span style="s2">（サトシ）来た来た すっげー！</span></p> 
+   <p begin="00:12:32.377" end="00:12:34.337" style="s1"><span style="s2">マジカ　マジカ</span></p> 
+   <p begin="00:12:34.880" end="00:12:35.797" style="s1"><span style="s2">（マオ）いるー？</span></p> 
+   <p begin="00:12:36.173" end="00:12:37.340" style="s1"><span style="s2">いないな～</span></p> 
+   <p begin="00:12:37.716" end="00:12:39.634" style="s1"><span style="s2">ピ～カチュウ</span></p> 
+   <p begin="00:12:39.759" end="00:12:41.887" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:12:43.889" end="00:12:44.556" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:12:44.764" end="00:12:46.349" style="s1"><span style="s2">（ペリッパー）ア～ン<br />（モクローの暴れる声）</span></p> 
+   <p begin="00:12:46.475" end="00:12:47.559" style="s1"><span style="s2">（ペリッパー）ア… オッ</span></p> 
+   <p begin="00:12:47.684" end="00:12:48.351" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:12:48.643" end="00:12:51.855" style="s1"><span style="s2">（ロトム）<br />ピッピッピッピッピッピッピッピッ</span></p> 
+   <p begin="00:12:51.980" end="00:12:52.647" style="s1"><span style="s2">ピピピ</span></p> 
+   <p begin="00:12:53.190" end="00:12:54.733" style="s1"><span style="s2">２人とも あそこロト！</span></p> 
+   <p begin="00:12:54.858" end="00:12:55.525" style="s1"><span style="s2">（サトシ･マオ）えっ！</span></p> 
+   <p begin="00:12:55.859" end="00:12:57.027" style="s1"><span style="s2">（オドリドリ）ド～ルリッ</span></p> 
+   <p begin="00:12:57.611" end="00:12:59.154" style="s1"><span style="s2">（オドリドリ）ドリッドリッドリッ<br />（アマカジ）アマカッジィ…</span></p> 
+   <p begin="00:12:59.404" end="00:13:00.405" style="s1"><span style="s2">（サトシ）オドリドリだ！<br />（ピカチュウ）ピカーチュウ</span></p> 
+   <p begin="00:13:00.947" end="00:13:03.408" style="s1"><span style="s2">マジッ　マジジジィ？</span></p> 
+   <p begin="00:13:03.575" end="00:13:04.576" style="s1"><span style="s2">（オドリドリ）ドールル…</span></p> 
+   <p begin="00:13:05.285" end="00:13:06.286" style="s1"><span style="s2">（オドリドリの鳴き声）<br />（アマカジ）マジッ</span></p> 
+   <p begin="00:13:06.870" end="00:13:08.038" style="s1"><span style="s2">（マオ）あ！　行っちゃう！</span></p> 
+   <p begin="00:13:08.163" end="00:13:08.997" style="s1"><span style="s2">（サトシ）追いかけよう！</span></p> 
+   <p begin="00:13:09.122" end="00:13:09.956" style="s1"><span style="s2">アマカジ　行くよ！</span></p> 
+   <p begin="00:13:10.081" end="00:13:12.209" style="s1"><span style="s2">（アマカジ）マジ！<br />（モクローの鳴き声）</span></p> 
+   <p begin="00:13:12.542" end="00:13:13.919" style="s1"><span style="s2">（マオ）待ってー！</span></p> 
+   <p begin="00:13:14.044" end="00:13:16.087" style="s1"><span style="s2">（サトシ）待ってくれよー オドリドリー！</span></p> 
+   <p begin="00:13:16.213" end="00:13:18.173" style="s1"><span style="s2">（ピカチュウ）ピカピーカ！<br />（モクローの鳴き声）</span></p> 
+   <p begin="00:13:18.673" end="00:13:20.509" style="s1"><span style="s2">（オドリドリ）ドールルッ　ドールル～</span></p> 
+   <p begin="00:13:20.634" end="00:13:21.968" style="s1"><span style="s2">（マオ）あっ ダメ　行かないでー！</span></p> 
+   <p begin="00:13:22.302" end="00:13:23.220" style="s1"><span style="s2">マジッ！</span></p> 
+   <p begin="00:13:23.512" end="00:13:26.681" style="s1"><span style="s2">マァジィ～！</span></p> 
+   <p begin="00:13:26.932" end="00:13:27.807" style="s1"><span style="s2">ドーリッ？</span></p> 
+   <p begin="00:13:28.725" end="00:13:30.810" style="s1"><span style="s2">ド～リ～</span></p> 
+   <p begin="00:13:31.645" end="00:13:32.729" style="s1"><span style="s2">（サトシ）戻ってきた！</span></p> 
+   <p begin="00:13:32.854" end="00:13:33.813" style="s1"><span style="s2">マジ！</span></p> 
+   <p begin="00:13:34.731" end="00:13:35.398" style="s1"><span style="s2">ドリッ？</span></p> 
+   <p begin="00:13:36.316" end="00:13:37.025" style="s1"><span style="s2">ド～ルルル…</span></p> 
+   <p begin="00:13:37.651" end="00:13:38.318" style="s1"><span style="s2">（サトシ）ああっ！<br />（ピカチュウ）ピカッ！</span></p> 
+   <p begin="00:13:38.443" end="00:13:39.986" style="s1"><span style="s2">（マオ）そんな～！<br />（アマカジ）マジッ！</span></p> 
+   <p begin="00:13:40.237" end="00:13:42.489" style="s1"><span style="s2">マァジィ～！</span></p> 
+   <p begin="00:13:42.656" end="00:13:43.365" style="s1"><span style="s2">ドリッ？</span></p> 
+   <p begin="00:13:45.242" end="00:13:45.909" style="s1"><span style="s2">（サトシ･マオ）わあ！</span></p> 
+   <p begin="00:13:46.326" end="00:13:48.453" style="s1"><span style="s2">（アマカジ）マジ！<br />（オドリドリ）ドリッ？</span></p> 
+   <p begin="00:13:48.703" end="00:13:49.955" style="s1"><span style="s2">（オドリドリ）ドールル…<br />（サトシ･マオ）ああ！</span></p> 
+   <p begin="00:13:50.080" end="00:13:50.747" style="s1"><span style="s2">マジッ！</span></p> 
+   <p begin="00:13:50.872" end="00:13:52.958" style="s1"><span style="s2">（アマカジ）マジィ～ッ！<br />（オドリドリ）ドリッ？</span></p> 
+   <p begin="00:13:53.208" end="00:13:54.834" style="s1"><span style="s2">（オドリドリ）ド～リ～<br />（サトシ･マオ）わあ！</span></p> 
+   <p begin="00:13:54.960" end="00:13:56.253" style="s1"><span style="s2">（アマカジ）マジ！<br />（オドリドリ）ドリッ？</span></p> 
+   <p begin="00:13:56.461" end="00:13:57.712" style="s1"><span style="s2">（オドリドリ）ドールル…<br />（サトシ･マオ）ああ！</span></p> 
+   <p begin="00:13:58.088" end="00:13:59.631" style="s1"><span style="s2">（アマカジ）マジィ～ッ！<br />（オドリドリ）ドリッ？</span></p> 
+   <p begin="00:13:59.756" end="00:14:00.549" style="s1"><span style="s2">（オドリドリ）ド～リ～<br />（サトシ･マオ）わあ！</span></p> 
+   <p begin="00:14:00.674" end="00:14:01.716" style="s1"><span style="s2">（アマカジ）マジ！<br />（オドリドリ）ドリッ？</span></p> 
+   <p begin="00:14:01.841" end="00:14:02.676" style="s1"><span style="s2">（サトシ･マオ）ああ！<br />（アマカジ）マジィ～ッ！</span></p> 
+   <p begin="00:14:03.051" end="00:14:03.843" style="s1"><span style="s2">（オドリドリ）ド～リ～<br />（アマカジ）マジ！</span></p> 
+   <p begin="00:14:07.097" end="00:14:09.182" style="s1"><span style="s2">（サトシ･マオ）ハァ ハァ ハァ…<br />（ピカチュウ）ピーカ…</span></p> 
+   <p begin="00:14:09.307" end="00:14:10.308" style="s1"><span style="s2">（マオ）待って～…</span></p> 
+   <p begin="00:14:10.475" end="00:14:11.226" style="s1"><span style="s2">（ピカチュウ）ピカチュウ～</span></p> 
+   <p begin="00:14:11.518" end="00:14:13.228" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:14:15.814" end="00:14:16.690" style="s1"><span style="s2">（サトシ）ああ…</span></p> 
+   <p begin="00:14:16.815" end="00:14:19.484" style="s1"><span style="s2">（アマカジ）マ… ジカ～…</span></p> 
+   <p begin="00:14:19.818" end="00:14:23.780" style="s1"><span style="s2">アマカジ！？　こんなになるまで…<br />ありがとう</span></p> 
+   <p begin="00:14:24.114" end="00:14:25.657" style="s1"><span style="s2">後は俺たちに任せろ！</span></p> 
+   <p begin="00:14:25.865" end="00:14:27.659" style="s1"><span style="s2">（オドリドリ）ドーリドーリ～</span></p> 
+   <p begin="00:14:27.784" end="00:14:28.618" style="s1"><span style="s2">（ロトム）あっちロト！</span></p> 
+   <p begin="00:14:29.077" end="00:14:30.579" style="s1"><span style="s2">（オドリドリ）ドルルル～<br />（サトシ･マオ）あっ…</span></p> 
+   <p begin="00:14:30.829" end="00:14:31.830" style="s1"><span style="s2">（オドリドリ）ドーリッ</span></p> 
+   <p begin="00:14:32.539" end="00:14:33.957" style="s1"><span style="s2">（サトシ･マオ）ハァ ハァ ハァ…</span></p> 
+   <p begin="00:14:34.791" end="00:14:36.960" style="s1"><span style="s2">（オドリドリ）ドーリ～ルルル～</span></p> 
+   <p begin="00:14:38.628" end="00:14:40.213" style="s1"><span style="s2">（サトシ･マオ）ハァ… あっ…<br />（ピカチュウ）ピカ？</span></p> 
+   <p begin="00:14:41.298" end="00:14:42.090" style="s1"><span style="s2">（マオ）ここは？</span></p> 
+   <p begin="00:14:44.050" end="00:14:44.718" style="s1"><span style="s2">（オドリドリ）ドリッ</span></p> 
+   <p begin="00:14:45.385" end="00:14:46.052" style="s1"><span style="s2">（サトシ･マオ）あっ！<br />（ピカチュウ）ピカ！</span></p> 
+   <p begin="00:14:46.386" end="00:14:49.055" style="s1"><span style="s2">（オドリドリ）<br />ドリッドリッドリー ドリッドリッドリ～</span></p> 
+   <p begin="00:14:52.517" end="00:14:54.185" style="s1"><span style="s2">（サトシ）あれがヤマブキの蜜！</span></p> 
+   <p begin="00:14:54.311" end="00:14:56.521" style="s1"><span style="s2">すごーい！<br />ほんとに見つけられるなんて！</span></p> 
+   <p begin="00:14:56.646" end="00:14:57.480" style="s1"><span style="s2">奇跡ロト！</span></p> 
+   <p begin="00:14:57.606" end="00:14:59.357" style="s1"><span style="s2">（アマカジ）マジマジ！<br />（モクローの鳴き声）</span></p> 
+   <p begin="00:14:59.482" end="00:15:01.192" style="s1"><span style="s2">（ピカチュウ）ピーカ～！<br />（羽音）</span></p> 
+   <p begin="00:15:02.152" end="00:15:02.819" style="s1"><span style="s2">あっ…</span></p> 
+   <p begin="00:15:02.944" end="00:15:04.904" style="s1"><span style="s2">（ロトム）<br />オドリドリのめらめらスタイルロト</span></p> 
+   <p begin="00:15:05.030" end="00:15:09.576" style="s1"><span style="s2">（オドリドリたちの鳴き声）</span></p> 
+   <p begin="00:15:10.493" end="00:15:11.703" style="s1"><span style="s2">（オドリドリ･めらめらスタイルの鳴き声）</span></p> 
+   <p begin="00:15:13.455" end="00:15:15.332" style="s1"><span style="s2">（オドリドリ･めらめらスタイル）<br />ドルルルアー！</span></p> 
+   <p begin="00:15:23.423" end="00:15:25.675" style="s1"><span style="s2">（オドリドリ）ドルルルル～ッ！</span></p> 
+   <p begin="00:15:27.886" end="00:15:29.012" style="s1"><span style="s2">ドリ～！</span></p> 
+   <p begin="00:15:29.471" end="00:15:30.764" style="s1"><span style="s2">ロトム　あれは！？</span></p> 
+   <p begin="00:15:31.014" end="00:15:34.684" style="s1"><span style="s2">めらめらスタイルから<br />ぱちぱちスタイルに… えっと えっと…</span></p> 
+   <p begin="00:15:35.185" end="00:15:38.313" style="s1"><span style="s2">オドリドリは<br />アローラ特有の花の蜜を吸うことで<span style="s8">―</span></span></p> 
+   <p begin="00:15:38.438" end="00:15:40.565" style="s1"><span style="s2">タイプと姿が変わるロト</span></p> 
+   <p begin="00:15:41.441" end="00:15:42.567" style="s1"><span style="s2">（サトシ）行こう<br />（マオ）うん！</span></p> 
+   <p begin="00:15:43.151" end="00:15:44.653" style="s1"><span style="s2">（モクローの鳴き声）<br />（ピカチュウ）ピッピッピッ</span></p> 
+   <p begin="00:15:44.778" end="00:15:46.237" style="s1"><span style="s2">（モクローの鳴き声）<br />（ピカチュウ）ピーカチュウ～</span></p> 
+   <p begin="00:15:46.363" end="00:15:47.322" style="s1"><span style="s2">（サトシ）すっげ～</span></p> 
+   <p begin="00:15:47.781" end="00:15:49.032" style="s1"><span style="s2">（一同の悲鳴）</span></p> 
+   <p begin="00:15:49.407" end="00:15:50.533" style="s1"><span style="s2">（ピカチュウ）ピッ ピーカァー！<br />（モクローの鳴き声）</span></p> 
+   <p begin="00:15:50.659" end="00:15:51.368" style="s1"><span style="s2">（アマカジ）ジッ！</span></p> 
+   <p begin="00:15:51.910" end="00:15:52.827" style="s1"><span style="s2">マジッ マージ～ッ！</span></p> 
+   <p begin="00:15:53.244" end="00:15:54.537" style="s1"><span style="s2">（サトシ）何なんだこれ～！？</span></p> 
+   <p begin="00:15:56.498" end="00:15:59.084" style="s1"><span style="s2">（ムサシ）何なんだこれ と言われたら</span></p> 
+   <p begin="00:15:59.542" end="00:16:01.920" style="s1"><span style="s2">（コジロウ）<br />聞かせてあげよう 我らが名を！</span></p> 
+   <p begin="00:16:02.671" end="00:16:04.547" region="縦左">（ムサシ）<br /><span style="s5"><span style="s6">花顔柳腰</span><span style="s9">かがんりゅうよう</span></span> <span style="s5"><span style="s6">羞月閉花</span><span style="s9">しゅうげつへいか</span></span></p> 
+   <p begin="00:16:04.756" end="00:16:07.634" style="s1"><span style="s2">はかなきこの世に咲く一輪の悪の華<span style="s8">―</span></span></p> 
+   <p begin="00:16:07.884" end="00:16:09.052" style="s1"><span style="s2">ムサシ！</span></p> 
+   <p begin="00:16:09.969" end="00:16:12.222" region="縦右">（コジロウ）<br /><span style="s5"><span style="s6">飛竜乗雲</span><span style="s9">ひりゅうじょううん</span></span> <span style="s5"><span style="s6">英姿颯爽</span><span style="s9">えいしさっそう</span></span></p> 
+   <p begin="00:16:12.430" end="00:16:15.433" style="s1"><span style="s2">切なきこの世に一矢報いる悪の使徒</span></p> 
+   <p begin="00:16:15.850" end="00:16:16.685" style="s1"><span style="s2">コジロウ！</span></p> 
+   <p begin="00:16:17.644" end="00:16:19.688" style="s1"><span style="s2">（ニャース）<br /><span style="s5"><span style="s6">一蓮托生</span><span style="s9">いちれんたくしょう</span></span> 連帯責任</span></p> 
+   <p begin="00:16:19.813" end="00:16:22.982" style="s1"><span style="s2">親しき仲にも小判輝く悪の星</span></p> 
+   <p begin="00:16:23.108" end="00:16:24.859" style="s1"><span style="s2">ニャースでニャース！</span></p> 
+   <p begin="00:16:25.443" end="00:16:27.195" style="s1"><span style="s2">（ムサシ･コジロウ）ロケット団参上！</span></p> 
+   <p begin="00:16:27.320" end="00:16:28.113" style="s1"><span style="s2">なのニャ！</span></p> 
+   <p begin="00:16:28.238" end="00:16:30.198" style="s1"><span style="s2">ソォ～ナンス～！</span></p> 
+   <p begin="00:16:31.074" end="00:16:31.825" style="s1"><span style="s2">（サトシ）ロケット団！</span></p> 
+   <p begin="00:16:32.325" end="00:16:34.035" style="s1"><span style="s2">作戦成功だニャ！</span></p> 
+   <p begin="00:16:34.452" end="00:16:37.580" style="s1"><span style="s2">ヤマブキの蜜は<br />あたしたちが頂いていくわ！</span></p> 
+   <p begin="00:16:37.706" end="00:16:38.832" style="s1"><span style="s2">頼むぞ ニャース！</span></p> 
+   <p begin="00:16:39.249" end="00:16:40.208" style="s1"><span style="s2">はいニャ！</span></p> 
+   <p begin="00:16:40.625" end="00:16:43.420" style="s1"><span style="s2">万能お宝吸引マシーンだニャー！</span></p> 
+   <p begin="00:16:43.837" end="00:16:45.380" style="s1"><span style="s2">（コジロウ）かっこいいぞー ニャース！<br />（ソーナンス）ソー！　ソー！</span></p> 
+   <p begin="00:16:45.505" end="00:16:47.215" style="s1"><span style="s2">（ムサシ）いいからさっさとやる！</span></p> 
+   <p begin="00:16:47.340" end="00:16:49.884" style="s1"><span style="s2">ニャッ　分かってるのニャー！</span></p> 
+   <p begin="00:16:52.804" end="00:16:55.140" style="s1"><span style="s2">（マオ）ああっ ヤマブキの蜜が！<br />（サトシ）くっ！</span></p> 
+   <p begin="00:16:55.598" end="00:16:57.392" style="s1"><span style="s2">指をくわえて見てるんだな！</span></p> 
+   <p begin="00:16:57.809" end="00:16:59.894" style="s1"><span style="s2">（マオ）そんなぁ～！<br />（サトシ）やめろ～！</span></p> 
+   <p begin="00:17:00.520" end="00:17:03.022" style="s1"><span style="s2">マジッ！　マッジッジッ マジッ</span></p> 
+   <p begin="00:17:03.148" end="00:17:04.649" style="s1"><span style="s2">（コジロウ）何だぁ？　こいつ</span></p> 
+   <p begin="00:17:04.858" end="00:17:07.235" style="s1"><span style="s2">（ムサシ）要らな～い　アウトオブ眼中</span></p> 
+   <p begin="00:17:07.360" end="00:17:09.070" style="s1"><span style="s2">（コジロウ）ほ～い<br />（アマカジ）マァッ　ジッ…</span></p> 
+   <p begin="00:17:09.696" end="00:17:10.822" style="s1"><span style="s2">（アマカジ）ジィ…</span></p> 
+   <p begin="00:17:11.197" end="00:17:13.032" style="s1"><span style="s2">ブチィ～ッ！</span></p> 
+   <p begin="00:17:14.159" end="00:17:15.744" style="s1"><span style="s2">ニャハハ～</span></p> 
+   <p begin="00:17:16.453" end="00:17:18.371" style="s1"><span style="s2">（モクローの鳴き声）<br />（ピカチュウ）ピカチュー！</span></p> 
+   <p begin="00:17:18.955" end="00:17:22.167" style="s1"><span style="s2">ちょっと 顔！<br />シャキッとしなさい シャキッと！</span></p> 
+   <p begin="00:17:22.333" end="00:17:23.543" style="s1"><span style="s2">そうだぞ</span></p> 
+   <p begin="00:17:23.793" end="00:17:25.879" style="s1"><span style="s2">ペルシアンに負けてもいいのか？</span></p> 
+   <p begin="00:17:26.004" end="00:17:27.005" style="s1"><span style="s2">ニャニャニャニャニャッ</span></p> 
+   <p begin="00:17:27.130" end="00:17:29.591" style="s1"><span style="s2">ん～ニャンのこれしき　大したことないニャ</span></p> 
+   <p begin="00:17:30.091" end="00:17:32.510" style="s1"><span style="s2">マジ！　ブチブチブッチィ！</span></p> 
+   <p begin="00:17:32.677" end="00:17:34.429" style="s1"><span style="s2">マッジィ～ッ！</span></p> 
+   <p begin="00:17:37.849" end="00:17:39.601" style="s1"><span style="s2">（アマカジ）イイイ～ッ！</span></p> 
+   <p begin="00:17:39.726" end="00:17:40.560" style="s1"><span style="s2">マジッ</span></p> 
+   <p begin="00:17:41.895" end="00:17:44.355" style="s1"><span style="s2">イイイ～ッ！</span></p> 
+   <p begin="00:17:49.611" end="00:17:51.404" style="s1"><span style="s2">（アママイコ）アマ～イ！</span></p> 
+   <p begin="00:17:52.489" end="00:17:53.490" style="s1"><span style="s2">アマカジが！</span></p> 
+   <p begin="00:17:53.615" end="00:17:54.491" style="s1"><span style="s2">進化した！</span></p> 
+   <p begin="00:17:54.824" end="00:17:56.242" style="s1"><span style="s2">アウトオブ眼中が！？</span></p> 
+   <p begin="00:17:56.367" end="00:17:57.368" style="s1"><span style="s2">可愛い！？</span></p> 
+   <p begin="00:17:58.119" end="00:18:00.872" style="s1"><span style="s2">（ロトム）アママイコ<br />フルーツポケモン　くさタイプ</span></p> 
+   <p begin="00:18:01.456" end="00:18:03.374" style="s1"><span style="s2">身を守るため ヘタが発達</span></p> 
+   <p begin="00:18:03.625" end="00:18:07.378" style="s1"><span style="s2">硬いヘタから繰り出される<br />おうふくビンタはかなりの威力</span></p> 
+   <p begin="00:18:08.004" end="00:18:08.713" style="s1"><span style="s2">（アママイコの掛け声）</span></p> 
+   <p begin="00:18:08.963" end="00:18:11.216" style="s1"><span style="s2">ア～マイッ！</span></p> 
+   <p begin="00:18:12.175" end="00:18:14.219" style="s1"><span style="s2">（サトシ）やったー！<br />（ピカチュウ）ピカー！</span></p> 
+   <p begin="00:18:14.427" end="00:18:15.261" style="s1"><span style="s2">（ニャース）ニャッ！</span></p> 
+   <p begin="00:18:15.804" end="00:18:16.763" style="s1"><span style="s2">これって…</span></p> 
+   <p begin="00:18:17.347" end="00:18:20.016" style="s1"><span style="s2">ニャンのこれしき 大したことないニャ</span></p> 
+   <p begin="00:18:20.558" end="00:18:22.060" style="s1"><span style="s2">モクロー　“つつく”だっ！</span></p> 
+   <p begin="00:18:22.185" end="00:18:24.020" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:18:24.145" end="00:18:25.104" style="s1"><span style="s2">（ニャース）ンニャア～アア！？</span></p> 
+   <p begin="00:18:25.230" end="00:18:25.980" style="s1"><span style="s2">（つつく音）</span></p> 
+   <p begin="00:18:28.107" end="00:18:28.775" style="s1"><span style="s2">ニャッ</span></p> 
+   <p begin="00:18:29.234" end="00:18:31.903" style="s1"><span style="s2">アンニャアアア～ッ！</span></p> 
+   <p begin="00:18:32.028" end="00:18:32.695" style="s1"><span style="s2">（ムサシ･コジロウ）うわぁっ！</span></p> 
+   <p begin="00:18:32.987" end="00:18:35.281" style="s1"><span style="s2">アママイコ！　おうふくビンタ！</span></p> 
+   <p begin="00:18:35.406" end="00:18:36.282" style="s1"><span style="s2">（アママイコ）アマイッ</span></p> 
+   <p begin="00:18:36.741" end="00:18:37.700" style="s1"><span style="s2">ア～ッマ！</span></p> 
+   <p begin="00:18:37.992" end="00:18:38.952" style="s1"><span style="s2">（衝撃音）<br />（コジロウ）うぉうわっ！</span></p> 
+   <p begin="00:18:39.077" end="00:18:40.203" style="s1"><span style="s2">（衝撃音）<br />（ムサシ）どうあっ！</span></p> 
+   <p begin="00:18:40.328" end="00:18:41.704" style="s1"><span style="s2">（ニャース･ソーナンス）うわひぶぉ～！</span></p> 
+   <p begin="00:18:44.666" end="00:18:46.209" style="s1"><span style="s2">アンマイ！</span></p> 
+   <p begin="00:18:46.751" end="00:18:49.838" style="s1"><span style="s2">（ムサシ）ううっ 撤収　今すぐ撤収～っ</span></p> 
+   <p begin="00:18:50.672" end="00:18:52.632" style="s1"><span style="s2">ピカチュウ！　10まんボルト！</span></p> 
+   <p begin="00:18:52.757" end="00:18:53.424" style="s1"><span style="s2">ピカ！</span></p> 
+   <p begin="00:18:53.550" end="00:18:57.470" style="s1"><span style="s2">（ピカチュウ）ビィカァヂュ～ッ！<br />（ロケット団のパニック声）</span></p> 
+   <p begin="00:19:00.557" end="00:19:01.224" style="s1"><span style="s2">（サトシ･マオ）あっ？</span></p> 
+   <p begin="00:19:03.935" end="00:19:06.563" style="s1"><span style="s2">（ロケット団）な～に この感じ～？</span></p> 
+   <p begin="00:19:06.688" end="00:19:09.023" style="s1"><span style="s2">（ソーナンス）ソ～ナンスゥ～</span></p> 
+   <p begin="00:19:23.830" end="00:19:24.831" style="s1"><span style="s2">（マオ）わぁ…</span></p> 
+   <p begin="00:19:25.665" end="00:19:27.208" style="s1"><span style="s2">アマーイ</span></p> 
+   <p begin="00:19:28.001" end="00:19:29.210" style="s1"><span style="s2">ピーカァ</span></p> 
+   <p begin="00:19:29.669" end="00:19:30.920" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:19:32.881" end="00:19:34.716" style="s1"><span style="s2">（マオ）お待たせ～！</span></p> 
+   <p begin="00:19:34.841" end="00:19:40.013" style="s1"><span style="s2">今度こそ 本物の<br />幻のアローラシチューの完成だよ～！</span></p> 
+   <p begin="00:19:40.138" end="00:19:41.598" style="s1"><span style="s2">（一同）おお～！</span></p> 
+   <p begin="00:19:43.850" end="00:19:45.101" style="s1"><span style="s2">（アママイコの鳴き声）</span></p> 
+   <p begin="00:19:45.393" end="00:19:46.811" style="s1"><span style="s2">サンキュー アママイコ</span></p> 
+   <p begin="00:19:46.936" end="00:19:47.604" style="s1"><span style="s2">ありがとう</span></p> 
+   <p begin="00:19:48.146" end="00:19:51.482" style="s1"><span style="s2">進化して さらにお手伝いが<br />楽しくなったようですね</span></p> 
+   <p begin="00:19:51.608" end="00:19:52.400" style="s1"><span style="s2">（マオ）ふふ～</span></p> 
+   <p begin="00:19:53.067" end="00:19:54.027" style="s1"><span style="s2">（アママイコ）アマイ</span></p> 
+   <p begin="00:19:54.152" end="00:19:54.986" style="s1"><span style="s2">ピカチュ～</span></p> 
+   <p begin="00:19:55.111" end="00:19:56.362" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:19:56.654" end="00:19:58.114" style="s1"><span style="s2">さあ 召し上がれ！</span></p> 
+   <p begin="00:19:58.239" end="00:20:00.909" style="s1"><span style="s2">（一同）いっただきま～す！</span></p> 
+   <p begin="00:20:01.034" end="00:20:02.076" style="s1"><span style="s2">あむ…</span></p> 
+   <p begin="00:20:02.660" end="00:20:03.369" style="s1"><span style="s2">んっ！</span></p> 
+   <p begin="00:20:07.332" end="00:20:08.333" style="s1"><span style="s2">（息をのむ音）</span></p> 
+   <p begin="00:20:08.458" end="00:20:10.043" style="s1"><span style="s2">どっ どう？</span></p> 
+   <p begin="00:20:10.501" end="00:20:12.712" style="s1"><span style="s2">（一同）おいし～っ！</span></p> 
+   <p begin="00:20:12.837" end="00:20:15.465" style="s1"><span style="s2">（マオ）いぃよっしゃーっ！<br />（アママイコ）アマーイ！</span></p> 
+   <p begin="00:20:16.174" end="00:20:18.384" style="s1"><span style="s2">（リーリエ）<br />ピリッとした後味が効いています</span></p> 
+   <p begin="00:20:18.593" end="00:20:20.470" style="s1"><span style="s2">（スイレン）幻のおいしさ～</span></p> 
+   <p begin="00:20:21.012" end="00:20:21.971" style="s1"><span style="s2">（サトシ･カキ･マーマネ）おかわり！</span></p> 
+   <p begin="00:20:22.430" end="00:20:24.307" style="s1"><span style="s2">すっごくおいしいよ マオ！</span></p> 
+   <p begin="00:20:24.432" end="00:20:26.976" style="s1"><span style="s2">ああ この間のとは大違いだ！</span></p> 
+   <p begin="00:20:27.101" end="00:20:29.354" style="s1"><span style="s2">ボクはこの前のだっておいしかったよ</span></p> 
+   <p begin="00:20:29.729" end="00:20:31.397" style="s1"><span style="s2">ありがとう みんな</span></p> 
+   <p begin="00:20:31.731" end="00:20:33.149" style="s1"><span style="s2">それもこれも全部<span style="s8">―</span></span></p> 
+   <p begin="00:20:33.274" end="00:20:37.487" style="s1"><span style="s2">一緒にヤマブキの蜜を探してくれた<br />サトシとピカチュウと<span style="s8">―</span></span></p> 
+   <p begin="00:20:37.779" end="00:20:39.155" style="s1"><span style="s2">ロトムとモクロー</span></p> 
+   <p begin="00:20:39.322" end="00:20:42.075" style="s1"><span style="s2">それから アママイコのおかげだよ</span></p> 
+   <p begin="00:20:42.700" end="00:20:43.493" style="s1"><span style="s2">（アママイコの鳴き声）</span></p> 
+   <p begin="00:20:44.702" end="00:20:47.121" style="s1"><span style="s2">これからもよろしくね　アママイコ</span></p> 
+   <p begin="00:20:47.246" end="00:20:48.164" style="s1"><span style="s2">アマ～イ！</span></p> 
+   <p begin="00:20:48.581" end="00:20:51.167" style="s1"><span style="s2">（マーマネの腹が鳴る音）</span></p> 
+   <p begin="00:20:53.461" end="00:20:57.840" style="s1"><span style="s2">だってだって これ食べられるの<br />今日が最後だと思ったら…</span></p> 
+   <p begin="00:20:57.966" end="00:20:59.133" style="s1"><span style="s2">寂しくって…</span></p> 
+   <p begin="00:20:59.592" end="00:21:00.885" style="s1"><span style="s2">マーマネったら</span></p> 
+   <p begin="00:21:01.010" end="00:21:03.262" style="s1"><span style="s2">寂しくてお腹鳴る？　普通…</span></p> 
+   <p begin="00:21:03.721" end="00:21:08.101" style="s1"><span style="s2">やっぱり 時期外れに<br />ヤマブキの蜜を採るのは難しくて…</span></p> 
+   <p begin="00:21:08.226" end="00:21:09.435" style="s1"><span style="s2">でも 安心して！</span></p> 
+   <p begin="00:21:09.560" end="00:21:11.396" style="s1"><span style="s2">看板メニューにはならなかったけど…</span></p> 
+   <p begin="00:21:11.938" end="00:21:14.899" style="s1"><span style="s2">期間限定メニューとして<br />残すことにしたから！</span></p> 
+   <p begin="00:21:15.233" end="00:21:16.609" style="s1"><span style="s2">やったー！</span></p> 
+   <p begin="00:21:16.776" end="00:21:17.819" style="s1"><span style="s2">そうなのですね</span></p> 
+   <p begin="00:21:18.361" end="00:21:19.529" style="s1"><span style="s2">それから！</span></p> 
+   <p begin="00:21:19.696" end="00:21:23.950" style="s1"><span style="s2">このアイナ食堂の看板メニューを<br />作るっていう目標は変わってないよ</span></p> 
+   <p begin="00:21:24.575" end="00:21:27.996" style="s1"><span style="s2">これからも どんどん試食会を開くから<br />楽しみにしててね！</span></p> 
+   <p begin="00:21:28.454" end="00:21:30.206" style="s1"><span style="s2">おーっ 期待しちゃう！</span></p> 
+   <p begin="00:21:30.581" end="00:21:32.709" style="s1"><span style="s2">アマ～イ～</span></p> 
+   <p begin="00:21:33.126" end="00:21:34.877" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:21:35.003" end="00:21:37.005" style="s1"><span style="s2">（ピカチュウ）ピカピーカッ！<br />（モクローの鳴き声）</span></p> 
+   <p begin="00:21:37.130" end="00:21:38.006" style="s1"><span style="s2">（衝撃音）</span></p> 
+   <p begin="00:21:38.297" end="00:21:40.091" style="s1"><span style="s2">（アママイコの鳴き声）</span></p> 
+   <p begin="00:21:40.883" end="00:21:41.968" style="s1"><span style="s2">（モクローの鳴き声）</span></p> 
+   <p begin="00:21:42.093" end="00:21:43.469" style="s1"><span style="s2">ピーカチュウ…</span></p> 
+   <p begin="00:21:44.762" end="00:21:50.309" style="s1"><span style="s2">（ナレーター）<span style="s4">アマカジのマオを思う</span><br /><span style="s4">強い気持ちがアママイコへと進化させた</span></span></p> 
+   <p begin="00:21:51.144" end="00:21:55.481" style="s3"><span style="s2">マオの看板メニューへの<br />挑戦は パートナーのポケモンと共に<span style="s8">―</span></span></p> 
+   <p begin="00:21:55.773" end="00:21:57.817" region="縦右" style="s4">まだまだ続く</p> 
+   <p begin="00:21:59.986" end="00:22:01.988" style="s1"><span style="s2">♪～</span></p> 
+   <p begin="00:23:17.230" end="00:23:19.232" region="縦右">～♪</p> 
+   <p begin="00:23:21.067" end="00:23:22.693" style="s1"><span style="s2">（鐘の音）</span></p> 
+   <p begin="00:23:23.319" end="00:23:24.737" style="s1"><span style="s2">お待たせ～！</span></p> 
+   <p begin="00:23:25.154" end="00:23:28.491" style="s1"><span style="s2">ポケもんだいの答えは<br />“ぱちぱちスタイル”でした！</span></p> 
+   <p begin="00:23:29.158" end="00:23:32.578" style="s3"><span style="s2">オドリドリのぱちぱちスタイルは<br />でんき･ひこうタイプ</span></p> 
+   <p begin="00:23:32.829" end="00:23:37.542" style="s3"><span style="s2">好物の蜜によって姿やタイプを<br />変えるなんて すてきなポケモンよね！</span></p> 
+   <p begin="00:23:37.959" end="00:23:40.628" style="s3"><span style="s2">おかげでヤマブキの蜜 見つかったよ</span></p> 
+   <p begin="00:23:40.837" end="00:23:41.671" style="s3"><span style="s2">ありがとう！</span></p> 
+   <p begin="00:23:42.839" end="00:23:45.091" style="s1"><span style="s2">（マオパパ）マオ　そろそろ閉めようか</span></p> 
+   <p begin="00:23:45.299" end="00:23:46.509" style="s1"><span style="s2">あっ ハーイ！</span></p> 
+   <p begin="00:23:46.926" end="00:23:47.718" style="s1"><span style="s2">ふぅ…</span></p> 
+   <p begin="00:23:48.344" end="00:23:49.345" style="s1"><span style="s2">（アママイコの寝息）</span></p> 
+   <p begin="00:23:50.471" end="00:23:52.682" style="s1"><span style="s2">（マオ）お疲れ様　アママイコ</span></p> 
+   <p begin="00:23:52.807" end="00:23:54.058" style="s1"><span style="s2">ゆっくり休んでね</span></p> 
+   <p begin="00:23:54.183" end="00:23:55.977" style="s1"><span style="s2">アマイッ　アマーイ！</span></p> 
+   <p begin="00:23:56.227" end="00:23:58.521" style="s1"><span style="s2">（マオ）もう 甘えんぼなんだから</span></p> 
+   <p begin="00:23:58.646" end="00:23:59.480" style="s1"><span style="s2">（アママイコ）マーマッ</span></p> 
+   <p begin="00:24:01.399" end="00:24:02.984" style="s1"><span style="s2">（サトシ）<span style="s4">今日はマーマネんちで特訓だ～！</span></span></p> 
+   <p begin="00:24:03.359" end="00:24:05.153" style="s1"><span style="s2">（マーマネ）<span style="s4">はい！</span><br /><span style="s4">まずはアツアツのマラサダ！</span></span></p> 
+   <p begin="00:24:05.278" end="00:24:08.072" style="s1"><span style="s2">（サトシ）<br /><span style="s4">おっおおぉ～！　マラサダで特訓かぁ！</span></span></p> 
+   <p begin="00:24:08.197" end="00:24:10.741" style="s3"><span style="s2">もぐっ… うまっ…<br />熱っ… 熱いけどうまっ！</span></p> 
+   <p begin="00:24:11.075" end="00:24:12.577" style="s1"><span style="s2">（マーマネ）<span style="s4">次はアローラパンケーキ！</span></span></p> 
+   <p begin="00:24:12.702" end="00:24:15.788" style="s1"><span style="s2">（サトシ）<span style="s4">おっおおぉ～！</span><br /><span style="s4">アローラパンケーキで特訓だぁ～！</span></span></p> 
+   <p begin="00:24:15.913" end="00:24:17.331" style="s3"><span style="s2">もぐっ… うまっ…</span></p> 
+   <p begin="00:24:17.665" end="00:24:20.585" style="s1"><span style="s2">（ロトム）<span style="s4">これは特訓じゃなくて</span><br /><span style="s4">ただのおやつタイムロト！</span></span></p> 
+   <p begin="00:24:21.335" end="00:24:23.796" style="s1"><span style="s2">（サトシ）<br /><span style="s4">次回「ポケットモンスター サン＆ムーン」</span></span></p> 
+   <p begin="00:24:27.300" end="00:24:29.385" region="縦右">（ピカチュウ）<br /><span style="s4">ピカチュウ！</span></p> 
+  </div> 
+ </body> </tt>
