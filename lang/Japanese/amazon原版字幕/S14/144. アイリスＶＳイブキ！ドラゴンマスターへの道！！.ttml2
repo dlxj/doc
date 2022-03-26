@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:ruby="container" xml:id="s3"></style> 
+   <style tts:ruby="base" xml:id="s4"></style> 
+   <style tts:ruby="text" tts:rubyPosition="after" xml:id="s5"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s6"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s7"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s8"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:03.045" end="00:00:06.424" style="s1"><span style="s2">（アイリス）<br />へえ～ ここがフスベシティか～</span></p> 
+   <p begin="00:00:06.507" end="00:00:07.174" style="s1"><span style="s2">（キバゴ）キバ～</span></p> 
+   <p begin="00:00:07.258" end="00:00:09.468" style="s1"><span style="s2">（アイリス）もうすぐ<br />イブキさんのいるフスベジムよ</span></p> 
+   <p begin="00:00:09.552" end="00:00:10.469" style="s1"><span style="s2">キ～バ</span></p> 
+   <p begin="00:00:10.553" end="00:00:12.430" style="s1"><span style="s2">イブキさんとのバトル 楽しみ！</span></p> 
+   <p begin="00:00:12.513" end="00:00:13.264" style="s1"><span style="s2">キバキバ～</span></p> 
+   <p begin="00:00:13.347" end="00:00:14.682" style="s1"><span style="s2">（男）大変だ！<br />（アイリス）えっ？</span></p> 
+   <p begin="00:00:15.433" end="00:00:18.185" style="s1"><span style="s2">（男）わあ…<br />（男）一体 <span style="s3"><span style="s4">誰</span><span style="s5">だれ</span></span>が？</span></p> 
+   <p begin="00:00:18.269" end="00:00:19.520" style="s1"><span style="s2">（男）どうなってんだ？</span></p> 
+   <p begin="00:00:22.606" end="00:00:23.733" style="s1"><span style="s2">（キバゴ）キバ！<br />（アイリス）あっ</span></p> 
+   <p begin="00:00:23.816" end="00:00:25.651" style="s1"><span style="s2">一体 どうしたんですか？</span></p> 
+   <p begin="00:00:25.735" end="00:00:27.820" style="s1"><span style="s2">ポケモンが暴れたらしいんだ</span></p> 
+   <p begin="00:00:27.903" end="00:00:29.739" style="s1"><span style="s2">（アイリス）ポケモンが？<br />（キバゴ）キババ？</span></p> 
+   <p begin="00:00:30.239" end="00:00:31.449" style="s1"><span style="s2">（<span style="s3"><span style="s4">地響</span><span style="s6">じひび</span></span>き）<br />（街の人たち）えっ…</span></p> 
+   <p begin="00:00:31.532" end="00:00:33.242" style="s1"><span style="s2">（アイリス）えっ 何？</span></p> 
+   <p begin="00:00:33.325" end="00:00:34.034" style="s1"><span style="s2">（男）なんだ？</span></p> 
+   <p begin="00:00:35.202" end="00:00:36.203" style="s1"><span style="s2">（アイリス）うわ～！<br />（キバゴ）キ～！</span></p> 
+   <p begin="00:00:37.663" end="00:00:38.748" style="s1"><span style="s2">（フカマル）カフ～！</span></p> 
+   <p begin="00:00:38.831" end="00:00:41.000" style="s1"><span style="s2">（キバゴ）キバ！<br />（アイリス）あっ フカマルだ！</span></p> 
+   <p begin="00:00:41.083" end="00:00:42.001" style="s1"><span style="s2">キバ？</span></p> 
+   <p begin="00:00:42.501" end="00:00:43.127" style="s1"><span style="s2">え？</span></p> 
+   <p begin="00:00:43.210" end="00:00:44.628" style="s1"><span style="s2">（キバゴ）キ… キキ…<br />（アイリス）キバゴ？</span></p> 
+   <p begin="00:00:44.712" end="00:00:47.506" style="s1"><span style="s2">ちょ… ちょっと かじらないでよ！</span></p> 
+   <p begin="00:00:47.590" end="00:00:49.550" style="s1"><span style="s2">同じドラゴンタイプでしょ</span></p> 
+   <p begin="00:00:49.633" end="00:00:51.969" style="s1"><span style="s2">（アイリス）こら フカマル～！<br />（キバゴ）キババ～</span></p> 
+   <p begin="00:00:52.553" end="00:00:54.555" region="縦右">♪～</p> 
+   <p begin="00:02:17.930" end="00:02:19.932" region="縦右">～♪</p> 
+   <p begin="00:02:22.643" end="00:02:26.397" style="s1"><span style="s2">（アイリス）<br /><span style="s7">“アイリスＶＳイブキ！</span><br /><span style="s7">ドラゴンマスターへの道!!”</span></span></p> 
+   <p begin="00:02:29.650" end="00:02:31.902" style="s1"><span style="s2">（ナレーション）<br /><span style="s7">ドラゴンマスターを目指す</span><br /><span style="s7">アイリスは—</span></span></p> 
+   <p begin="00:02:31.986" end="00:02:33.779" style="s8"><span style="s2">ドラゴンタイプ専門のジム—</span></p> 
+   <p begin="00:02:33.863" end="00:02:36.240" style="s8"><span style="s2">フスベジムの<br />イブキに<span style="s3"><span style="s4">挑戦</span><span style="s5">ちょうせん</span></span>するため—</span></p> 
+   <p begin="00:02:36.323" end="00:02:38.576" style="s8"><span style="s2">フスベシティへと やって来た</span></p> 
+   <p begin="00:02:38.659" end="00:02:43.455" style="s1"><span style="s2">こら フカマル<br />キバゴをかじらないでよ！</span></p> 
+   <p begin="00:02:43.539" end="00:02:44.415" style="s1"><span style="s2">カフ？</span></p> 
+   <p begin="00:02:44.498" end="00:02:45.457" style="s1"><span style="s2">うわあ！</span></p> 
+   <p begin="00:02:46.250" end="00:02:47.001" style="s1"><span style="s2">カフッ</span></p> 
+   <p begin="00:02:48.043" end="00:02:51.171" style="s1"><span style="s2">（男）<br />あっ お前の仕業か　待て～！</span></p> 
+   <p begin="00:02:51.255" end="00:02:52.506" style="s1"><span style="s2">（男）待て！<br />（男）待て～！</span></p> 
+   <p begin="00:02:52.590" end="00:02:54.008" style="s1"><span style="s2">キ～バ…</span></p> 
+   <p begin="00:02:54.091" end="00:02:55.509" style="s1"><span style="s2">（アイリス）キバゴ <span style="s3"><span style="s4">大丈夫</span><span style="s6">だいじょうぶ</span></span>？</span></p> 
+   <p begin="00:02:55.593" end="00:02:56.176" style="s1"><span style="s2">キバ</span></p> 
+   <p begin="00:02:56.260" end="00:02:58.804" style="s1"><span style="s2">（フカマル）カフカフカフ…<br />（男たち）こら～ 待て！</span></p> 
+   <p begin="00:02:58.888" end="00:02:59.638" style="s1"><span style="s2">（フカマル）カフッ</span></p> 
+   <p begin="00:03:00.139" end="00:03:01.181" style="s1"><span style="s2">（男）追い<span style="s3"><span style="s4">詰</span><span style="s6">つ</span></span>めたぞ</span></p> 
+   <p begin="00:03:01.265" end="00:03:03.183" style="s1"><span style="s2">いいぞ <span style="s3"><span style="s4">逃</span><span style="s6">に</span></span>がすなよ</span></p> 
+   <p begin="00:03:03.267" end="00:03:05.603" style="s1"><span style="s2">（男）今度こそ <span style="s3"><span style="s4">捕</span><span style="s6">つか</span></span>まえてやる<br />（フカマル）カフ…</span></p> 
+   <p begin="00:03:05.686" end="00:03:07.521" style="s1"><span style="s2">（アイリス）<br />な… ちょっと待ってください！</span></p> 
+   <p begin="00:03:08.647" end="00:03:10.649" style="s1"><span style="s2">ドラゴンタイプに<br />悪い子はいません！</span></p> 
+   <p begin="00:03:10.733" end="00:03:12.526" style="s1"><span style="s2">きっと 何か訳があるんです！</span></p> 
+   <p begin="00:03:12.610" end="00:03:13.777" style="s1"><span style="s2">どきなさい！</span></p> 
+   <p begin="00:03:13.861" end="00:03:15.571" style="s1"><span style="s2">ジュンサーさんに<span style="s3"><span style="s4">突</span><span style="s6">つ</span></span>き出してやる</span></p> 
+   <p begin="00:03:15.654" end="00:03:18.908" style="s1"><span style="s2">でも こんな大勢で囲んだら<br /><span style="s3"><span style="s4">怖</span><span style="s5">こわ</span></span>がって なおさら…</span></p> 
+   <p begin="00:03:18.991" end="00:03:21.035" style="s1"><span style="s2">（男）あっ <span style="s3"><span style="s4">逃</span><span style="s6">に</span></span>げるぞ！<br />（アイリス）え？</span></p> 
+   <p begin="00:03:21.118" end="00:03:22.328" style="s1"><span style="s2">（男）<span style="s3"><span style="s4">逃</span><span style="s6">に</span></span>がすか～！</span></p> 
+   <p begin="00:03:23.537" end="00:03:24.038" style="s1"><span style="s2">（３人）えっ？</span></p> 
+   <p begin="00:03:24.663" end="00:03:26.123" style="s1"><span style="s2">カフッ カフ！</span></p> 
+   <p begin="00:03:26.206" end="00:03:27.958" style="s1"><span style="s2">（男）何？<br />（男）しまった</span></p> 
+   <p begin="00:03:28.042" end="00:03:29.710" style="s1"><span style="s2">（フカマル）カフ～！<br />（男）待て～！</span></p> 
+   <p begin="00:03:29.793" end="00:03:31.962" style="s1"><span style="s2">君のせいで<span style="s3"><span style="s4">逃</span><span style="s6">に</span></span>げちまったぞ</span></p> 
+   <p begin="00:03:32.046" end="00:03:34.173" style="s1"><span style="s2">どうしてくれるんだ おい！</span></p> 
+   <p begin="00:03:34.256" end="00:03:35.633" style="s1"><span style="s2">あ… その…</span></p> 
+   <p begin="00:03:36.842" end="00:03:37.843" style="s1"><span style="s2">キバキバ…</span></p> 
+   <p begin="00:03:38.344" end="00:03:39.386" style="s1"><span style="s2">分かりました</span></p> 
+   <p begin="00:03:39.470" end="00:03:42.097" style="s1"><span style="s2">あたしが<br />二度と悪さをしないようにさせます</span></p> 
+   <p begin="00:03:42.181" end="00:03:44.350" style="s1"><span style="s2">（男）君が？<br />（アイリス）はい！</span></p> 
+   <p begin="00:03:46.977" end="00:03:49.313" style="s1"><span style="s2">（男）<br />いいだろう　じゃあ <span style="s3"><span style="s4">頼</span><span style="s5">たの</span></span>んだよ</span></p> 
+   <p begin="00:03:53.192" end="00:03:54.401" style="s1"><span style="s2">（アイリス）ハア～</span></p> 
+   <p begin="00:03:54.985" end="00:03:56.779" style="s1"><span style="s2">って言っちゃったものの—</span></p> 
+   <p begin="00:03:56.862" end="00:03:59.198" style="s1"><span style="s2">なんか大変なことを<br />引き受けたような…</span></p> 
+   <p begin="00:03:59.281" end="00:04:00.324" style="s1"><span style="s2">キババ～</span></p> 
+   <p begin="00:04:00.407" end="00:04:01.909" style="s1"><span style="s2">（女）きゃ～！<br />（アイリス）あっ</span></p> 
+   <p begin="00:04:01.992" end="00:04:04.954" style="s1"><span style="s2">も… もしや また フカマルが…</span></p> 
+   <p begin="00:04:06.330" end="00:04:08.624" style="s1"><span style="s2">（女）お庭が… お庭が…</span></p> 
+   <p begin="00:04:08.707" end="00:04:09.416" style="s1"><span style="s2">（アイリス）ハア ハア…</span></p> 
+   <p begin="00:04:10.376" end="00:04:10.918" style="s1"><span style="s2">カフッ</span></p> 
+   <p begin="00:04:11.502" end="00:04:12.795" style="s1"><span style="s2">あ～っ やっぱり！</span></p> 
+   <p begin="00:04:13.420" end="00:04:15.965" style="s1"><span style="s2">こら フカマル<br />みんなが困ってるでしょ！</span></p> 
+   <p begin="00:04:16.048" end="00:04:19.259" style="s1"><span style="s2">むやみに 穴<span style="s3"><span style="s4">掘</span><span style="s6">ほ</span></span>ったり<br />かじったりしちゃダメなの！</span></p> 
+   <p begin="00:04:19.343" end="00:04:20.260" style="s1"><span style="s2">（フカマル）カ～フ</span></p> 
+   <p begin="00:04:20.344" end="00:04:21.095" style="s1"><span style="s2">（アイリス）分かった？</span></p> 
+   <p begin="00:04:21.178" end="00:04:22.638" style="s1"><span style="s2">（フカマル）カフ… カ～！</span></p> 
+   <p begin="00:04:22.721" end="00:04:23.764" style="s1"><span style="s2">いっ… ひい～！</span></p> 
+   <p begin="00:04:24.723" end="00:04:27.142" style="s1"><span style="s2">（アイリス）あ～ ダメだってば！<br />（キバゴ）キバ…</span></p> 
+   <p begin="00:04:27.226" end="00:04:30.604" style="s1"><span style="s2">や～め～て… うっ！</span></p> 
+   <p begin="00:04:32.898" end="00:04:35.109" style="s1"><span style="s2">フウ～<br />なんで こんなことするのよ？</span></p> 
+   <p begin="00:04:36.110" end="00:04:37.111" style="s1"><span style="s2">カ～フ？</span></p> 
+   <p begin="00:04:37.736" end="00:04:38.946" style="s1"><span style="s2">（アイリス）う～ん</span></p> 
+   <p begin="00:04:39.029" end="00:04:39.613" style="s1"><span style="s2">そうだ</span></p> 
+   <p begin="00:04:39.697" end="00:04:41.240" style="s8"><span style="s2">キバゴのときみたいに…</span></p> 
+   <p begin="00:04:47.246" end="00:04:47.788" style="s1"><span style="s2">カフ？</span></p> 
+   <p begin="00:04:48.539" end="00:04:52.042" style="s1"><span style="s2">意識を集中して… う～ん</span></p> 
+   <p begin="00:04:55.921" end="00:04:56.547" style="s1"><span style="s2">ん～</span></p> 
+   <p begin="00:05:01.093" end="00:05:02.428" style="s1"><span style="s2">ダメだ</span></p> 
+   <p begin="00:05:02.511" end="00:05:05.556" style="s1"><span style="s2">この間はキバゴの伝えたいことが<br />分かったけど</span></p> 
+   <p begin="00:05:05.639" end="00:05:06.849" style="s1"><span style="s2">（フカマル）カフ～</span></p> 
+   <p begin="00:05:06.932" end="00:05:08.142" style="s1"><span style="s2">（アイリス）<br />あっ 待って フカマル！</span></p> 
+   <p begin="00:05:13.689" end="00:05:16.442" style="s1"><span style="s2">フカマル～！<br />フカマルってば～！</span></p> 
+   <p begin="00:05:17.860" end="00:05:19.737" style="s1"><span style="s2">ハア ハア…</span></p> 
+   <p begin="00:05:19.820" end="00:05:22.364" style="s1"><span style="s2">あ～もう どこへ行っちゃったのよ</span></p> 
+   <p begin="00:05:22.448" end="00:05:23.032" style="s1"><span style="s2">（キバゴ）キバ～</span></p> 
+   <p begin="00:05:23.615" end="00:05:25.034" style="s1"><span style="s2">おい なんだ？　あれ</span></p> 
+   <p begin="00:05:25.117" end="00:05:26.535" style="s1"><span style="s2">ポケモンみたいだな</span></p> 
+   <p begin="00:05:26.618" end="00:05:28.120" style="s1"><span style="s2">（アイリス）え？<br />（キバゴ）キ？</span></p> 
+   <p begin="00:05:31.832" end="00:05:32.666" style="s1"><span style="s2">カフ…</span></p> 
+   <p begin="00:05:33.167" end="00:05:35.294" style="s1"><span style="s2">（アイリス）ハッ… フカマル<br />（キバゴ）キバ</span></p> 
+   <p begin="00:05:42.593" end="00:05:43.510" style="s1"><span style="s2">カフ？</span></p> 
+   <p begin="00:05:43.594" end="00:05:44.762" style="s1"><span style="s2">カフカフ… カフ～！</span></p> 
+   <p begin="00:05:44.845" end="00:05:46.555" style="s1"><span style="s2">（男）落ちたぞ！<br />（アイリス）フカマル！</span></p> 
+   <p begin="00:05:46.638" end="00:05:48.599" style="s1"><span style="s2">カフフ～！</span></p> 
+   <p begin="00:05:49.433" end="00:05:49.933" style="s1"><span style="s2">カ…</span></p> 
+   <p begin="00:05:50.517" end="00:05:51.643" style="s1"><span style="s2">カ… カフッ！</span></p> 
+   <p begin="00:05:53.270" end="00:05:54.605" style="s1"><span style="s2">今 行くからね！</span></p> 
+   <p begin="00:05:56.690" end="00:05:57.691" style="s1"><span style="s2">カフ…</span></p> 
+   <p begin="00:05:58.192" end="00:05:59.276" style="s1"><span style="s2">ハアハア ハアハア…</span></p> 
+   <p begin="00:05:59.359" end="00:06:00.235" style="s1"><span style="s2">（老人）なんだ？</span></p> 
+   <p begin="00:06:00.319" end="00:06:01.528" style="s1"><span style="s2">（女）フカマルが…<br />（少女）どうして？</span></p> 
+   <p begin="00:06:01.612" end="00:06:02.362" style="s1"><span style="s2">あれは…</span></p> 
+   <p begin="00:06:02.446" end="00:06:04.740" style="s1"><span style="s2">ハッ… さっきの女の子だ！</span></p> 
+   <p begin="00:06:05.282" end="00:06:06.450" style="s1"><span style="s2">この下ね</span></p> 
+   <p begin="00:06:06.533" end="00:06:07.201" style="s1"><span style="s2">キバ</span></p> 
+   <p begin="00:06:07.701" end="00:06:08.786" style="s1"><span style="s2">わ… わあっ！</span></p> 
+   <p begin="00:06:08.869" end="00:06:09.870" style="s1"><span style="s2">わあああ！</span></p> 
+   <p begin="00:06:09.953" end="00:06:10.954" style="s1"><span style="s2">（一同）ああっ！</span></p> 
+   <p begin="00:06:11.914" end="00:06:12.706" style="s1"><span style="s2">（アイリス）うっ！</span></p> 
+   <p begin="00:06:15.793" end="00:06:17.086" style="s1"><span style="s2">（一同）おお…</span></p> 
+   <p begin="00:06:17.169" end="00:06:19.546" style="s1"><span style="s2">あ… びっくりした～</span></p> 
+   <p begin="00:06:20.672" end="00:06:21.465" style="s1"><span style="s2">（キバゴ）キバ…</span></p> 
+   <p begin="00:06:21.965" end="00:06:23.467" style="s1"><span style="s2">（アイリス）<br />そのまま じっとしててね</span></p> 
+   <p begin="00:06:23.550" end="00:06:25.135" style="s1"><span style="s2">今 助けるから</span></p> 
+   <p begin="00:06:26.178" end="00:06:27.054" style="s1"><span style="s2">カ… カフ！</span></p> 
+   <p begin="00:06:27.888" end="00:06:30.808" style="s1"><span style="s2">あたしは敵じゃない<br />あなたの味方よ</span></p> 
+   <p begin="00:06:30.891" end="00:06:32.101" style="s1"><span style="s2">キバキバ</span></p> 
+   <p begin="00:06:32.184" end="00:06:32.976" style="s1"><span style="s2">カ～ッ！</span></p> 
+   <p begin="00:06:33.644" end="00:06:36.146" style="s1"><span style="s2">お願い あたしを信じて</span></p> 
+   <p begin="00:06:39.358" end="00:06:40.067" style="s1"><span style="s2">ね？</span></p> 
+   <p begin="00:06:42.444" end="00:06:43.654" style="s1"><span style="s2">カフ…</span></p> 
+   <p begin="00:06:47.407" end="00:06:48.242" style="s1"><span style="s2">あっ…</span></p> 
+   <p begin="00:06:49.201" end="00:06:50.119" style="s1"><span style="s2">（エアームド）エア～！</span></p> 
+   <p begin="00:06:52.538" end="00:06:53.038" style="s1"><span style="s2">これって…</span></p> 
+   <p begin="00:06:54.706" end="00:06:55.415" style="s1"><span style="s2">（アイリス）わっ！<br />（フカマル）フカ！</span></p> 
+   <p begin="00:06:55.499" end="00:06:56.458" style="s1"><span style="s2">（街の人たち）ああっ！</span></p> 
+   <p begin="00:06:56.542" end="00:06:58.919" style="s1"><span style="s2">（ざわめき）</span></p> 
+   <p begin="00:06:59.002" end="00:07:01.463" style="s1"><span style="s2">（アイリス）あっ… ああっ！</span></p> 
+   <p begin="00:07:01.547" end="00:07:02.673" style="s1"><span style="s2">キ～バ！</span></p> 
+   <p begin="00:07:03.423" end="00:07:05.008" style="s1"><span style="s2">ありがとう キバゴ</span></p> 
+   <p begin="00:07:05.509" end="00:07:06.635" style="s1"><span style="s2">カフ…</span></p> 
+   <p begin="00:07:06.718" end="00:07:09.555" style="s1"><span style="s2">（アイリス）くっ… ふ～ん！</span></p> 
+   <p begin="00:07:11.348" end="00:07:11.849" style="s1"><span style="s2">ふっ！</span></p> 
+   <p begin="00:07:12.432" end="00:07:15.144" style="s1"><span style="s2">よいしょ… ああ～！</span></p> 
+   <p begin="00:07:15.644" end="00:07:17.855" style="s1"><span style="s2">ハア ハア…</span></p> 
+   <p begin="00:07:17.938" end="00:07:20.107" style="s1"><span style="s2">（<span style="s3"><span style="s4">歓声</span><span style="s6">かんせい</span></span>と<span style="s3"><span style="s4">拍手</span><span style="s6">はくしゅ</span></span>）</span></p> 
+   <p begin="00:07:20.190" end="00:07:21.358" style="s1"><span style="s2">（男）いいぞ いいぞ！</span></p> 
+   <p begin="00:07:21.441" end="00:07:23.902" style="s1"><span style="s2">ハア～ よかった</span></p> 
+   <p begin="00:07:23.986" end="00:07:24.611" style="s1"><span style="s2">キババ</span></p> 
+   <p begin="00:07:24.695" end="00:07:27.614" style="s1"><span style="s2">（男）あ～よかった<br />（女）すご～い</span></p> 
+   <p begin="00:07:27.698" end="00:07:30.075" style="s1"><span style="s2">（イブキ）ん？　あれは…</span></p> 
+   <p begin="00:07:32.911" end="00:07:34.371" style="s1"><span style="s2">（アイリス）もう <span style="s3"><span style="s4">大丈夫</span><span style="s6">だいじょうぶ</span></span>よ</span></p> 
+   <p begin="00:07:34.454" end="00:07:35.122" style="s1"><span style="s2">（フカマル）カフ</span></p> 
+   <p begin="00:07:35.831" end="00:07:39.251" style="s1"><span style="s2">でも さっき <span style="s3"><span style="s4">浮</span><span style="s6">う</span></span>かんだ光景<br />なんだったんだろう？</span></p> 
+   <p begin="00:07:39.334" end="00:07:40.210" style="s1"><span style="s2">キバ～</span></p> 
+   <p begin="00:07:40.294" end="00:07:43.380" style="s1"><span style="s2">教えて フカマル<br />一体 何があったの？</span></p> 
+   <p begin="00:07:45.382" end="00:07:46.175" style="s1"><span style="s2">ん…</span></p> 
+   <p begin="00:07:52.514" end="00:07:56.059" style="s1"><span style="s2">（<span style="s3"><span style="s4">寝息</span><span style="s6">ねいき</span></span>）</span></p> 
+   <p begin="00:07:56.894" end="00:07:57.895" style="s1"><span style="s2">エアッ？</span></p> 
+   <p begin="00:07:57.978" end="00:07:59.688" style="s1"><span style="s2">エア～！</span></p> 
+   <p begin="00:08:00.856" end="00:08:03.066" style="s1"><span style="s2">（フカマル）カフ！<br />（エアームド）エア～！</span></p> 
+   <p begin="00:08:07.487" end="00:08:09.781" style="s1"><span style="s2">（フカマル）カフ～！</span></p> 
+   <p begin="00:08:11.992" end="00:08:13.160" style="s1"><span style="s2">（アイリス）<span style="s7">そっか</span></span></p> 
+   <p begin="00:08:13.243" end="00:08:16.830" style="s1"><span style="s2">エアームドに乗ったまま<br /><span style="s3"><span style="s4">突然</span><span style="s5">とつぜん</span></span> この街にやって来て…</span></p> 
+   <p begin="00:08:19.333" end="00:08:21.501" style="s8"><span style="s2">いろんなことに<span style="s3"><span style="s4">驚</span><span style="s6">おどろ</span></span>いて—</span></p> 
+   <p begin="00:08:22.502" end="00:08:26.465" style="s1"><span style="s2">不安になって つい かじったり<br />穴を<span style="s3"><span style="s4">掘</span><span style="s5">ほ</span></span>ったりしたのね</span></p> 
+   <p begin="00:08:26.548" end="00:08:27.132" style="s1"><span style="s2">（フカマル）カフ</span></p> 
+   <p begin="00:08:27.716" end="00:08:31.136" style="s1"><span style="s2">よし あたしが元のお花畑へ<br />連れてってあげるよ！</span></p> 
+   <p begin="00:08:31.220" end="00:08:32.346" style="s1"><span style="s2">カフ？</span></p> 
+   <p begin="00:08:36.391" end="00:08:38.268" style="s1"><span style="s2">（<span style="s3"><span style="s4">歓声</span><span style="s6">かんせい</span></span>と<span style="s3"><span style="s4">拍手</span><span style="s6">はくしゅ</span></span>）</span></p> 
+   <p begin="00:08:38.894" end="00:08:40.687" style="s1"><span style="s2">いや～ よく<span style="s3"><span style="s4">頑張</span><span style="s6">がんば</span></span>ったね</span></p> 
+   <p begin="00:08:40.771" end="00:08:43.106" style="s1"><span style="s2">でも<br />あんまり むちゃは ごめんだよ</span></p> 
+   <p begin="00:08:43.190" end="00:08:45.275" style="s1"><span style="s2">（アイリス）<br />ご心配かけて すみませんでした</span></p> 
+   <p begin="00:08:45.901" end="00:08:48.654" style="s1"><span style="s2">それで<br />この子のことなんですけど…</span></p> 
+   <p begin="00:08:50.530" end="00:08:51.198" style="s1"><span style="s2">（男）う～ん</span></p> 
+   <p begin="00:08:51.281" end="00:08:54.284" style="s1"><span style="s2">（アイリス）<br />だから お花畑へ帰してあげれば—</span></p> 
+   <p begin="00:08:54.368" end="00:08:56.495" style="s1"><span style="s2">もう 悪さはしないと思うんです</span></p> 
+   <p begin="00:08:56.578" end="00:09:00.707" style="s1"><span style="s2">（男）<br />でも 君の言う そのお花畑って<br />どこにあるんだい？</span></p> 
+   <p begin="00:09:00.791" end="00:09:02.251" style="s1"><span style="s2">それは その…</span></p> 
+   <p begin="00:09:02.751" end="00:09:04.211" style="s1"><span style="s2">（イブキ）私が知ってるわ</span></p> 
+   <p begin="00:09:04.294" end="00:09:05.963" style="s1"><span style="s2">え… イブキさん！</span></p> 
+   <p begin="00:09:06.046" end="00:09:08.757" style="s1"><span style="s2">そのフカマルは<br />私が責任を持って—</span></p> 
+   <p begin="00:09:08.840" end="00:09:10.717" style="s1"><span style="s2">元いた場所 お花畑へ帰します</span></p> 
+   <p begin="00:09:10.801" end="00:09:12.594" style="s1"><span style="s2">（男）<br />フスベジムのジムリーダー—</span></p> 
+   <p begin="00:09:12.678" end="00:09:14.930" style="s1"><span style="s2">イブキさんが<br />そう言ってくれるなら安心だ</span></p> 
+   <p begin="00:09:15.013" end="00:09:16.682" style="s1"><span style="s2">（男）ああ 本当だな</span></p> 
+   <p begin="00:09:17.182" end="00:09:18.725" style="s1"><span style="s2">（アイリス）<br />ありがとうございます！</span></p> 
+   <p begin="00:09:21.687" end="00:09:22.771" style="s1"><span style="s2">（イブキ）でも アイリス</span></p> 
+   <p begin="00:09:22.854" end="00:09:25.732" style="s1"><span style="s2">なんで その子が<br />お花畑に住んでたって分かったの？</span></p> 
+   <p begin="00:09:26.400" end="00:09:28.986" style="s1"><span style="s2">この子の心に<br />必死に<span style="s3"><span style="s4">訴</span><span style="s5">うった</span></span>えかけていたら—</span></p> 
+   <p begin="00:09:29.069" end="00:09:30.237" style="s1"><span style="s2">見えたんです</span></p> 
+   <p begin="00:09:30.320" end="00:09:32.823" style="s1"><span style="s2">（イブキ）へえ～<br />そんなことも できるように…</span></p> 
+   <p begin="00:09:32.906" end="00:09:34.741" style="s1"><span style="s2">まだ <span style="s3"><span style="s4">偶然</span><span style="s6">ぐうぜん</span></span>っぽいですけど</span></p> 
+   <p begin="00:09:35.575" end="00:09:37.953" style="s1"><span style="s2">（イブキ）<br />そうだ <span style="s3"><span style="s4">竜</span><span style="s5">りゅう</span></span>の里のオババ様と—</span></p> 
+   <p begin="00:09:38.036" end="00:09:40.330" style="s1"><span style="s2">ソウリュウジムのシャガさんに<br />会ってきたわよ</span></p> 
+   <p begin="00:09:40.414" end="00:09:41.248" style="s1"><span style="s2">（アイリス）ホントですか？</span></p> 
+   <p begin="00:09:41.832" end="00:09:45.752" style="s1"><span style="s2">じゃあ お花畑に行きながら<br />そのときのこと 話してあげるわね</span></p> 
+   <p begin="00:09:45.836" end="00:09:46.503" style="s1"><span style="s2">（アイリス）はい！</span></p> 
+   <p begin="00:09:54.344" end="00:09:55.512" style="s1"><span style="s2">（カイリュー）リュ～</span></p> 
+   <p begin="00:09:55.595" end="00:09:57.806" style="s1"><span style="s2">（アイリス）うわあ～！<br />（キバゴ）キバ～</span></p> 
+   <p begin="00:09:57.889" end="00:10:00.350" style="s1"><span style="s2">（イブキ）ここが<br /><span style="s3"><span style="s4">竜</span><span style="s5">りゅう</span></span>の聖域といわれてるお花畑よ</span></p> 
+   <p begin="00:10:00.434" end="00:10:02.686" style="s1"><span style="s2">すご～い きれい！</span></p> 
+   <p begin="00:10:02.769" end="00:10:03.520" style="s1"><span style="s2">キ～バ～</span></p> 
+   <p begin="00:10:04.146" end="00:10:06.523" style="s1"><span style="s2">リュウ～</span></p> 
+   <p begin="00:10:06.606" end="00:10:09.359" style="s1"><span style="s2">あっ イブキさんのカイリューだ！</span></p> 
+   <p begin="00:10:09.443" end="00:10:11.528" style="s1"><span style="s2">（アイリス）こんにちは～！<br />（キバゴ）キバキバ～</span></p> 
+   <p begin="00:10:11.611" end="00:10:13.030" style="s1"><span style="s2">（カイリュー）リュ～</span></p> 
+   <p begin="00:10:13.655" end="00:10:15.741" style="s1"><span style="s2">カイリューは 花が大好きでしょ</span></p> 
+   <p begin="00:10:15.824" end="00:10:17.826" style="s1"><span style="s2">だから よく ここで遊ばせてて</span></p> 
+   <p begin="00:10:17.909" end="00:10:20.162" style="s1"><span style="s2">そのとき フカマルを見かけるのよ</span></p> 
+   <p begin="00:10:20.245" end="00:10:21.538" style="s1"><span style="s2">そうだったんですか</span></p> 
+   <p begin="00:10:23.457" end="00:10:24.082" style="s1"><span style="s2">（アイリス）はい</span></p> 
+   <p begin="00:10:24.708" end="00:10:26.251" style="s1"><span style="s2"><span style="s3"><span style="s4">戻</span><span style="s6">もど</span></span>ってこられて よかったね</span></p> 
+   <p begin="00:10:26.335" end="00:10:28.962" style="s1"><span style="s2">カ～フ フカ～！</span></p> 
+   <p begin="00:10:29.046" end="00:10:33.383" style="s1"><span style="s2">カフカフ カフカフ…<br />カフ カフ～！</span></p> 
+   <p begin="00:10:33.467" end="00:10:36.011" style="s1"><span style="s2">フフッ フカマル うれしそう</span></p> 
+   <p begin="00:10:36.094" end="00:10:36.595" style="s1"><span style="s2">本当ね</span></p> 
+   <p begin="00:10:37.429" end="00:10:39.139" style="s1"><span style="s2">じゃあ<br />そろそろ ジムへ行きましょう</span></p> 
+   <p begin="00:10:39.848" end="00:10:40.515" style="s1"><span style="s2">（アイリス）はい！</span></p> 
+   <p begin="00:10:40.599" end="00:10:41.850" style="s1"><span style="s2">ぜひ バトルをお願いします</span></p> 
+   <p begin="00:10:41.933" end="00:10:43.810" style="s1"><span style="s2">（イブキ）カイリュー <span style="s3"><span style="s4">戻</span><span style="s6">もど</span></span>って</span></p> 
+   <p begin="00:10:45.479" end="00:10:48.065" style="s1"><span style="s2">（アイリス）<br />フカマル 元気でね～！</span></p> 
+   <p begin="00:10:48.148" end="00:10:49.816" style="s1"><span style="s2">（キバゴ）キバキバ～！</span></p> 
+   <p begin="00:10:51.151" end="00:10:51.985" style="s1"><span style="s2">カフ…</span></p> 
+   <p begin="00:10:54.780" end="00:10:56.531" style="s1"><span style="s2">（子供たち）<span style="s7">だ～れだ？</span></span></p> 
+   <p begin="00:11:00.035" end="00:11:01.119" style="s1"><span style="s2">（子供たち）<span style="s7">答えは？</span></span></p> 
+   <p begin="00:11:01.203" end="00:11:03.038" style="s1"><span style="s2">（フカマル）<br />カフカ～フ</span></p> 
+   <p begin="00:11:07.209" end="00:11:09.628" style="s1"><span style="s2">（カブラギ）<br />フスベジムで<span style="s3"><span style="s4">執事</span><span style="s5">しつじ</span></span>をしております—</span></p> 
+   <p begin="00:11:09.711" end="00:11:10.921" style="s1"><span style="s2">カブラギと申します</span></p> 
+   <p begin="00:11:11.797" end="00:11:14.508" style="s1"><span style="s2">本日は<span style="s3"><span style="s4">竜</span><span style="s6">りゅう</span></span>の里のアイリス様と—</span></p> 
+   <p begin="00:11:14.591" end="00:11:16.635" style="s1"><span style="s2">ジムリーダー イブキのバトルで—</span></p> 
+   <p begin="00:11:16.718" end="00:11:19.721" style="s1"><span style="s2"><span style="s3"><span style="s4">審判</span><span style="s6">しんぱん</span></span>を務めさせていただきます</span></p> 
+   <p begin="00:11:19.805" end="00:11:24.518" style="s1"><span style="s2">私が<span style="s3"><span style="s4">審判</span><span style="s6">しんぱん</span></span>では しんぱんでしょうが<br />しんぱんいりません</span></p> 
+   <p begin="00:11:24.601" end="00:11:27.145" style="s1"><span style="s2">ワ～ハッハ ハッハッハ…</span></p> 
+   <p begin="00:11:27.229" end="00:11:27.979" style="s1"><span style="s2">（アイリス）う…</span></p> 
+   <p begin="00:11:28.563" end="00:11:30.774" style="s1"><span style="s2">ダジャレが<span style="s3"><span style="s4">趣味</span><span style="s6">しゅみ</span></span>なの<br />気にしないでね</span></p> 
+   <p begin="00:11:30.857" end="00:11:32.734" style="s1"><span style="s2">オッホン</span></p> 
+   <p begin="00:11:32.818" end="00:11:37.489" style="s1"><span style="s2"><span style="s3"><span style="s4">宴</span><span style="s6">えん</span></span>もたけなわではございますが<br />使用ポケモンは １体</span></p> 
+   <p begin="00:11:37.572" end="00:11:40.700" style="s1"><span style="s2">どちらかのポケモンが<br /><span style="s3"><span style="s4">戦闘不能</span><span style="s5">せんとうふのう</span></span>になった時点で—</span></p> 
+   <p begin="00:11:40.784" end="00:11:42.411" style="s1"><span style="s2">バトルは<span style="s3"><span style="s4">終了</span><span style="s6">しゅうりょう</span></span></span></p> 
+   <p begin="00:11:42.494" end="00:11:44.121" style="s1"><span style="s2">よろしいですかな？</span></p> 
+   <p begin="00:11:44.204" end="00:11:44.788" style="s1"><span style="s2">はい！</span></p> 
+   <p begin="00:11:45.372" end="00:11:46.957" style="s1"><span style="s2">それでは バトル開始！</span></p> 
+   <p begin="00:11:47.582" end="00:11:48.792" style="s1"><span style="s2">クリムガン ゴー！</span></p> 
+   <p begin="00:11:50.961" end="00:11:52.421" style="s1"><span style="s2">（クリムガン）ムガ～！</span></p> 
+   <p begin="00:11:53.130" end="00:11:55.841" style="s1"><span style="s2">この間 ゲットした<br /><span style="s3"><span style="s4">色違</span><span style="s5">いろちが</span></span>いのクリムガンですね</span></p> 
+   <p begin="00:11:56.425" end="00:11:59.094" style="s1"><span style="s2">（イブキ）ええ アイリスは<br />どのポケモンで来るの？</span></p> 
+   <p begin="00:11:59.678" end="00:12:03.056" style="s1"><span style="s2">（アイリス）<br />ドラゴンタイプ専門のジムに<br /><span style="s3"><span style="s4">挑戦</span><span style="s5">ちょうせん</span></span>するからには…</span></p> 
+   <p begin="00:12:03.140" end="00:12:05.308" style="s1"><span style="s2">当然 ドラゴンタイプでいきます！</span></p> 
+   <p begin="00:12:06.268" end="00:12:08.562" style="s1"><span style="s2">さあ 出番よ<br />カイリュー出てきて！</span></p> 
+   <p begin="00:12:10.939" end="00:12:12.399" style="s1"><span style="s2">（カイリュー）リュ～！</span></p> 
+   <p begin="00:12:12.482" end="00:12:13.942" style="s1"><span style="s2">よし いくわよ！</span></p> 
+   <p begin="00:12:14.025" end="00:12:14.776" style="s1"><span style="s2">（フカマル）カフ～<br />（アイリス）ん？</span></p> 
+   <p begin="00:12:14.860" end="00:12:16.319" style="s1"><span style="s2">（キバゴ）キバ？<br />（アイリス）え？</span></p> 
+   <p begin="00:12:17.737" end="00:12:18.989" style="s1"><span style="s2">カフカフ～</span></p> 
+   <p begin="00:12:19.489" end="00:12:21.241" style="s1"><span style="s2">フカマル！　どうして ここに？</span></p> 
+   <p begin="00:12:21.324" end="00:12:21.992" style="s1"><span style="s2">（イブキ）もしかして—</span></p> 
+   <p begin="00:12:22.075" end="00:12:24.411" style="s1"><span style="s2">アイリスのバトルが見たくて<br />来たんじゃない？</span></p> 
+   <p begin="00:12:24.494" end="00:12:25.328" style="s1"><span style="s2">そっか</span></p> 
+   <p begin="00:12:25.412" end="00:12:27.706" style="s1"><span style="s2">よ～し フカマルにも<br />楽しんでもらえるような—</span></p> 
+   <p begin="00:12:27.789" end="00:12:28.915" style="s1"><span style="s2">バトルをしなくちゃね！</span></p> 
+   <p begin="00:12:29.833" end="00:12:31.918" style="s1"><span style="s2">（キバゴ）キバキバ！<br />（フカマル）カ～フ！</span></p> 
+   <p begin="00:12:32.002" end="00:12:34.171" style="s1"><span style="s2">アイリス そちらから どうぞ</span></p> 
+   <p begin="00:12:34.254" end="00:12:35.881" style="s1"><span style="s2">じゃあ <span style="s3"><span style="s4">遠慮</span><span style="s6">えんりょ</span></span>なく！</span></p> 
+   <p begin="00:12:36.590" end="00:12:38.300" style="s1"><span style="s2">カイリュー ドラゴンダイブよ！</span></p> 
+   <p begin="00:12:38.383" end="00:12:39.342" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:12:40.343" end="00:12:43.513" style="s1"><span style="s2">リュ～… リュウ！</span></p> 
+   <p begin="00:12:43.597" end="00:12:45.599" style="s1"><span style="s2">クリムガン ドラゴンテール！</span></p> 
+   <p begin="00:12:46.183" end="00:12:48.852" style="s1"><span style="s2">クリムガン！</span></p> 
+   <p begin="00:12:51.730" end="00:12:52.564" style="s1"><span style="s2">かみなりパンチ！</span></p> 
+   <p begin="00:12:52.647" end="00:12:54.941" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:12:55.025" end="00:12:56.234" style="s1"><span style="s2">かわして きりさく！</span></p> 
+   <p begin="00:12:56.318" end="00:12:57.235" style="s1"><span style="s2">リュ～</span></p> 
+   <p begin="00:12:57.986" end="00:12:59.696" style="s1"><span style="s2">（クリムガン）クリムガン！<br />（カイリュー）リュ～！</span></p> 
+   <p begin="00:13:01.781" end="00:13:02.949" style="s1"><span style="s2">（アイリス）カイリュー！<br />（キバゴ）キババ！</span></p> 
+   <p begin="00:13:03.575" end="00:13:05.076" style="s1"><span style="s2">（アイリス）立って カイリュー！</span></p> 
+   <p begin="00:13:05.577" end="00:13:07.204" style="s1"><span style="s2">リュ… リュ～</span></p> 
+   <p begin="00:13:07.913" end="00:13:09.122" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:13:09.206" end="00:13:10.540" style="s1"><span style="s2">（アイリス）よし その調子よ</span></p> 
+   <p begin="00:13:10.624" end="00:13:12.626" style="s1"><span style="s2">ここは得意の かえんほうしゃ！</span></p> 
+   <p begin="00:13:13.251" end="00:13:14.961" style="s1"><span style="s2">リューッ バウ！</span></p> 
+   <p begin="00:13:15.045" end="00:13:16.338" style="s1"><span style="s2">こっちも かえんほうしゃ！</span></p> 
+   <p begin="00:13:16.421" end="00:13:19.090" style="s1"><span style="s2">ム～ガ～！</span></p> 
+   <p begin="00:13:20.008" end="00:13:20.884" style="s1"><span style="s2"><span style="s3"><span style="s4">互角</span><span style="s6">ごかく</span></span>？</span></p> 
+   <p begin="00:13:20.967" end="00:13:22.385" style="s1"><span style="s2">いいえ よく見なさい</span></p> 
+   <p begin="00:13:24.262" end="00:13:25.555" style="s1"><span style="s2">カイリュー <span style="s3"><span style="s4">頑張</span><span style="s6">がんば</span></span>って！</span></p> 
+   <p begin="00:13:25.639" end="00:13:27.057" style="s1"><span style="s2">キバ！　キバ～！</span></p> 
+   <p begin="00:13:27.140" end="00:13:27.641" style="s1"><span style="s2">カフ～！</span></p> 
+   <p begin="00:13:27.724" end="00:13:30.685" style="s1"><span style="s2">リューッ！</span></p> 
+   <p begin="00:13:30.769" end="00:13:33.813" style="s1"><span style="s2">クリムガン ここが勝負どころよ<br />負けないで！</span></p> 
+   <p begin="00:13:38.068" end="00:13:40.612" style="s1"><span style="s2">リュ～！　リュウ…</span></p> 
+   <p begin="00:13:40.695" end="00:13:41.446" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:13:41.530" end="00:13:44.199" style="s1"><span style="s2">リュ… リュ～</span></p> 
+   <p begin="00:13:44.699" end="00:13:45.492" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:13:46.117" end="00:13:46.952" style="s1"><span style="s2">リュ～…</span></p> 
+   <p begin="00:13:47.452" end="00:13:49.246" style="s1"><span style="s2">あっ 勝手に技 出しちゃダメ！</span></p> 
+   <p begin="00:13:49.329" end="00:13:50.497" style="s1"><span style="s2">リュ～！</span></p> 
+   <p begin="00:13:50.580" end="00:13:52.457" style="s1"><span style="s2">かえんほうしゃで<span style="s3"><span style="s4">迎</span><span style="s6">むか</span></span>え<span style="s3"><span style="s4">撃</span><span style="s6">う</span></span>って</span></p> 
+   <p begin="00:13:52.541" end="00:13:53.625" style="s1"><span style="s2">ムガ～！</span></p> 
+   <p begin="00:13:56.920" end="00:13:58.797" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:13:59.506" end="00:14:00.382" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:14:01.424" end="00:14:03.552" style="s1"><span style="s2">カイリュー <span style="s3"><span style="s4">怒</span><span style="s6">いか</span></span>りを<span style="s3"><span style="s4">鎮</span><span style="s6">しず</span></span>めて</span></p> 
+   <p begin="00:14:03.635" end="00:14:05.345" style="s1"><span style="s2">冷静にならないと勝てないよ</span></p> 
+   <p begin="00:14:05.428" end="00:14:06.596" style="s1"><span style="s2">ドラゴンテール！</span></p> 
+   <p begin="00:14:06.680" end="00:14:08.056" style="s1"><span style="s2">クリ…</span></p> 
+   <p begin="00:14:08.139" end="00:14:09.349" style="s1"><span style="s2">来るよ かわして！</span></p> 
+   <p begin="00:14:09.432" end="00:14:10.267" style="s1"><span style="s2">（クリムガン）ムガン！</span></p> 
+   <p begin="00:14:10.350" end="00:14:11.017" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:14:11.101" end="00:14:12.310" style="s1"><span style="s2">よけない… また？</span></p> 
+   <p begin="00:14:13.061" end="00:14:15.355" style="s1"><span style="s2">リュウウウ！</span></p> 
+   <p begin="00:14:15.981" end="00:14:18.608" style="s1"><span style="s2">カイリュー それじゃ昔と同じよ！</span></p> 
+   <p begin="00:14:18.692" end="00:14:20.068" style="s1"><span style="s2">あたしの言うことを聞いて！</span></p> 
+   <p begin="00:14:20.151" end="00:14:21.403" style="s1"><span style="s2">キ～ババ！</span></p> 
+   <p begin="00:14:21.486" end="00:14:23.154" style="s1"><span style="s2">かわして ドラゴンテール！</span></p> 
+   <p begin="00:14:23.780" end="00:14:24.614" style="s1"><span style="s2">（クリムガン）クリムガン<br />（カイリュー）リュ～！</span></p> 
+   <p begin="00:14:24.698" end="00:14:25.615" style="s1"><span style="s2">（クリムガン）クリムガン！</span></p> 
+   <p begin="00:14:25.699" end="00:14:27.075" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:14:27.158" end="00:14:29.202" style="s1"><span style="s2">一気に<span style="s3"><span style="s4">畳</span><span style="s6">たた</span></span>みかけるわよ</span></p> 
+   <p begin="00:14:29.286" end="00:14:31.204" style="s1"><span style="s2">連続でドラゴンテール！</span></p> 
+   <p begin="00:14:31.288" end="00:14:32.330" style="s1"><span style="s2">クリムガン！</span></p> 
+   <p begin="00:14:32.414" end="00:14:33.790" style="s1"><span style="s2">リュ… リュ～</span></p> 
+   <p begin="00:14:35.083" end="00:14:35.959" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:14:39.170" end="00:14:39.754" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:14:39.838" end="00:14:41.089" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:14:41.172" end="00:14:41.840" style="s1"><span style="s2">（イブキ）アイリス</span></p> 
+   <p begin="00:14:42.549" end="00:14:45.552" style="s1"><span style="s2">こんなときこそ<br />トレーナーの<span style="s3"><span style="s4">腕</span><span style="s5">うで</span></span>の見せどころよ</span></p> 
+   <p begin="00:14:45.635" end="00:14:48.138" style="s1"><span style="s2">あなたは ドラゴンマスターを<br />目指してるんでしょ？</span></p> 
+   <p begin="00:14:48.221" end="00:14:49.180" style="s1"><span style="s2">は… はい</span></p> 
+   <p begin="00:14:50.515" end="00:14:52.225" style="s1"><span style="s2">（アイリス）<br /><span style="s7">でも 一体 どうすれば…</span></span></p> 
+   <p begin="00:14:52.309" end="00:14:54.686" style="s1"><span style="s2">（フカマル）カフ！<br />（キバゴ）キバキバ！</span></p> 
+   <p begin="00:14:55.812" end="00:14:57.314" style="s1"><span style="s2">（アイリス）キバゴ フカマル</span></p> 
+   <p begin="00:14:57.397" end="00:15:01.318" style="s1"><span style="s2">（アイリス）<span style="s7">そうだ</span><br /><span style="s7">さっきのフカマルのときみたいに…</span></span></p> 
+   <p begin="00:15:02.152" end="00:15:02.944" style="s1"><span style="s2">（アイリス）カイリュー！</span></p> 
+   <p begin="00:15:03.028" end="00:15:05.238" style="s1"><span style="s2">リュ… リュウ？</span></p> 
+   <p begin="00:15:06.531" end="00:15:09.326" style="s1"><span style="s2">あなたの思い あたしに伝えて！</span></p> 
+   <p begin="00:15:27.427" end="00:15:28.595" style="s1"><span style="s2">（アイリス）<span style="s7">そっか</span></span></p> 
+   <p begin="00:15:28.678" end="00:15:31.598" style="s8"><span style="s2">同じドラゴンタイプの<br />クリムガンに—</span></p> 
+   <p begin="00:15:31.681" end="00:15:34.351" style="s8"><span style="s2">自分の技が全く通用しなくて…</span></p> 
+   <p begin="00:15:34.434" end="00:15:36.436" style="s1"><span style="s2">すごく <span style="s3"><span style="s4">悔</span><span style="s6">くや</span></span>しかったんだね</span></p> 
+   <p begin="00:15:37.520" end="00:15:38.271" style="s1"><span style="s2">リュ～</span></p> 
+   <p begin="00:15:39.272" end="00:15:41.983" style="s1"><span style="s2">カイリュー<br />その<span style="s3"><span style="s4">悔</span><span style="s5">くや</span></span>しさは分かるけど—</span></p> 
+   <p begin="00:15:42.067" end="00:15:43.943" style="s1"><span style="s2">バトルは<br />１人で戦ってるんじゃないのよ</span></p> 
+   <p begin="00:15:44.027" end="00:15:45.070" style="s1"><span style="s2">リュウ？</span></p> 
+   <p begin="00:15:45.153" end="00:15:48.239" style="s1"><span style="s2">あたしは<br />あんたと思いをひとつにしたい</span></p> 
+   <p begin="00:15:48.782" end="00:15:51.117" style="s1"><span style="s2">あたしたちは<br />いつでも <span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>なんだよ</span></p> 
+   <p begin="00:15:54.371" end="00:15:55.080" style="s1"><span style="s2">フフッ</span></p> 
+   <p begin="00:15:58.124" end="00:15:58.667" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:16:00.543" end="00:16:02.629" style="s1"><span style="s2">つかんだみたいね アイリス</span></p> 
+   <p begin="00:16:03.129" end="00:16:04.422" style="s1"><span style="s2">いくわよ クリムガン</span></p> 
+   <p begin="00:16:04.506" end="00:16:05.256" style="s1"><span style="s2">ドラゴンテール！</span></p> 
+   <p begin="00:16:05.340" end="00:16:06.883" style="s1"><span style="s2">クリ…</span></p> 
+   <p begin="00:16:07.509" end="00:16:09.260" style="s1"><span style="s2">カイリュー<br />かわして かみなりパンチ！</span></p> 
+   <p begin="00:16:09.344" end="00:16:10.679" style="s1"><span style="s2">ムガン！</span></p> 
+   <p begin="00:16:10.762" end="00:16:12.597" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:16:13.139" end="00:16:14.808" style="s1"><span style="s2">（カイリュー）リュウ！<br />（クリムガン）ガ～ン！</span></p> 
+   <p begin="00:16:14.891" end="00:16:16.685" style="s1"><span style="s2">やった 初めて当たった！</span></p> 
+   <p begin="00:16:16.768" end="00:16:18.603" style="s1"><span style="s2">（キバゴ）キバ～！　キバ！<br />（フカマル）カフ～！</span></p> 
+   <p begin="00:16:20.647" end="00:16:21.564" style="s1"><span style="s2">ム… ムガ～</span></p> 
+   <p begin="00:16:21.648" end="00:16:23.858" style="s1"><span style="s2">続けてドラゴンダイブよ！</span></p> 
+   <p begin="00:16:23.942" end="00:16:24.943" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:16:25.026" end="00:16:28.029" style="s1"><span style="s2">リュ～… リュウ！</span></p> 
+   <p begin="00:16:28.113" end="00:16:29.823" style="s1"><span style="s2">かえんほうしゃで<span style="s3"><span style="s4">迎</span><span style="s6">むか</span></span>え<span style="s3"><span style="s4">撃</span><span style="s6">う</span></span>って！</span></p> 
+   <p begin="00:16:29.906" end="00:16:30.740" style="s1"><span style="s2">ムガ～！</span></p> 
+   <p begin="00:16:30.824" end="00:16:31.533" style="s1"><span style="s2">かわして！</span></p> 
+   <p begin="00:16:32.784" end="00:16:34.536" style="s1"><span style="s2">（カイリュー）リュウ～！<br />（クリムガン）ムガ！</span></p> 
+   <p begin="00:16:37.664" end="00:16:39.124" style="s1"><span style="s2">ム… ムガ…</span></p> 
+   <p begin="00:16:39.624" end="00:16:41.251" style="s1"><span style="s2">まだまだ いくわよ</span></p> 
+   <p begin="00:16:41.334" end="00:16:44.462" style="s1"><span style="s2">ドラゴンタイプに<span style="s3"><span style="s4">効果抜群</span><span style="s6">こうかばつぐん</span></span><br />れいとうビーム！</span></p> 
+   <p begin="00:16:44.546" end="00:16:45.714" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:16:46.464" end="00:16:48.258" style="s1"><span style="s2">（イブキ）かわして！<br />（クリムガン）ムガ！</span></p> 
+   <p begin="00:16:48.341" end="00:16:50.093" style="s1"><span style="s2">（アイリス）かわされた<br />（キバゴ）キバッ</span></p> 
+   <p begin="00:16:51.177" end="00:16:52.137" style="s1"><span style="s2">リュ リュウリュウ！</span></p> 
+   <p begin="00:16:52.220" end="00:16:53.847" style="s1"><span style="s2">（アイリス）えっ もう一度？</span></p> 
+   <p begin="00:16:53.930" end="00:16:54.639" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:16:54.723" end="00:16:55.932" style="s1"><span style="s2">れいとうビーム！</span></p> 
+   <p begin="00:16:56.015" end="00:16:56.808" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:16:56.891" end="00:16:57.809" style="s1"><span style="s2">ムガ…</span></p> 
+   <p begin="00:16:57.892" end="00:16:59.227" style="s1"><span style="s2">（<span style="s3"><span style="s4">爆発</span><span style="s6">ばくはつ</span></span>音）</span></p> 
+   <p begin="00:17:02.188" end="00:17:03.314" style="s1"><span style="s2">（イブキ）クリムガン！</span></p> 
+   <p begin="00:17:03.398" end="00:17:05.692" style="s1"><span style="s2">やった！<br />この調子なら勝てるわよ</span></p> 
+   <p begin="00:17:06.234" end="00:17:07.819" style="s1"><span style="s2">リュ… リュウ！</span></p> 
+   <p begin="00:17:07.902" end="00:17:09.362" style="s1"><span style="s2">クリムガン きりさく！</span></p> 
+   <p begin="00:17:11.114" end="00:17:11.906" style="s1"><span style="s2">ムガムガ！</span></p> 
+   <p begin="00:17:11.990" end="00:17:12.532" style="s1"><span style="s2">あっ！</span></p> 
+   <p begin="00:17:13.700" end="00:17:16.536" style="s1"><span style="s2">フッ 氷<span style="s3"><span style="s4">漬</span><span style="s6">づ</span></span>けにされた<br />お返しをしてあげるわ</span></p> 
+   <p begin="00:17:16.619" end="00:17:18.455" style="s1"><span style="s2">最大パワーで りゅうのいかり！</span></p> 
+   <p begin="00:17:18.538" end="00:17:20.206" style="s1"><span style="s2">クリ…</span></p> 
+   <p begin="00:17:20.290" end="00:17:21.958" style="s1"><span style="s2">こっちも最大パワーよ！</span></p> 
+   <p begin="00:17:22.041" end="00:17:23.042" style="s1"><span style="s2">れいとうビーム！</span></p> 
+   <p begin="00:17:23.126" end="00:17:24.627" style="s1"><span style="s2">リュウ～！</span></p> 
+   <p begin="00:17:24.711" end="00:17:26.880" style="s1"><span style="s2">ムガ～ン！</span></p> 
+   <p begin="00:17:26.963" end="00:17:28.757" style="s1"><span style="s2">リューッ！</span></p> 
+   <p begin="00:17:31.092" end="00:17:31.593" style="s1"><span style="s2">リュ～</span></p> 
+   <p begin="00:17:33.470" end="00:17:34.304" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:17:34.888" end="00:17:35.555" style="s1"><span style="s2">リュ…</span></p> 
+   <p begin="00:17:35.638" end="00:17:36.890" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:17:37.474" end="00:17:38.391" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:17:40.101" end="00:17:41.811" style="s1"><span style="s2">リュ… リュ～</span></p> 
+   <p begin="00:17:42.479" end="00:17:43.563" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:17:44.063" end="00:17:45.440" style="s1"><span style="s2">リュ～</span></p> 
+   <p begin="00:17:46.316" end="00:17:46.816" style="s1"><span style="s2">リュ…</span></p> 
+   <p begin="00:17:47.609" end="00:17:48.359" style="s1"><span style="s2">（アイリス）カイリュー</span></p> 
+   <p begin="00:17:48.443" end="00:17:49.402" style="s1"><span style="s2">リュウ！</span></p> 
+   <p begin="00:17:50.945" end="00:17:52.322" style="s1"><span style="s2">リュ… リュ～</span></p> 
+   <p begin="00:17:52.405" end="00:17:53.573" style="s1"><span style="s2">（アイリス）カイリュー！</span></p> 
+   <p begin="00:17:54.199" end="00:17:56.409" style="s1"><span style="s2">（カブラギ）カイリュー <span style="s3"><span style="s4">戦闘不能</span><span style="s6">せんとうふのう</span></span></span></p> 
+   <p begin="00:17:56.493" end="00:18:00.455" style="s1"><span style="s2">クリムガンの勝ち<br />よって 勝者 イブキ</span></p> 
+   <p begin="00:18:00.538" end="00:18:02.040" style="s1"><span style="s2">さすがクリムガン</span></p> 
+   <p begin="00:18:02.123" end="00:18:03.416" style="s1"><span style="s2">いいバトルだったわ</span></p> 
+   <p begin="00:18:03.500" end="00:18:04.584" style="s1"><span style="s2">ムガムガ</span></p> 
+   <p begin="00:18:07.003" end="00:18:08.129" style="s1"><span style="s2">（アイリス）カイリュー</span></p> 
+   <p begin="00:18:08.213" end="00:18:09.547" style="s1"><span style="s2">よく<span style="s3"><span style="s4">頑張</span><span style="s6">がんば</span></span>ってくれたね</span></p> 
+   <p begin="00:18:10.381" end="00:18:14.093" style="s1"><span style="s2">なんか これまで以上に あなたと<br />心がつながった気がするよ</span></p> 
+   <p begin="00:18:14.177" end="00:18:15.512" style="s1"><span style="s2">リュウ…</span></p> 
+   <p begin="00:18:16.137" end="00:18:17.514" style="s1"><span style="s2">ありがとう カイリュー</span></p> 
+   <p begin="00:18:17.597" end="00:18:19.390" style="s1"><span style="s2">キバキババ～</span></p> 
+   <p begin="00:18:19.474" end="00:18:21.893" style="s1"><span style="s2">フカマルも<br /><span style="s3"><span style="s4">応援</span><span style="s5">おうえん</span></span>してくれてたんだよ</span></p> 
+   <p begin="00:18:21.976" end="00:18:25.104" style="s1"><span style="s2">あれ？　どっか行っちゃった</span></p> 
+   <p begin="00:18:26.356" end="00:18:27.899" style="s1"><span style="s2">カイリュー お<span style="s3"><span style="s4">疲</span><span style="s6">つか</span></span>れさま！</span></p> 
+   <p begin="00:18:27.982" end="00:18:28.858" style="s1"><span style="s2">リュ～</span></p> 
+   <p begin="00:18:30.527" end="00:18:32.695" style="s1"><span style="s2">アイリス いいバトルだったわよ</span></p> 
+   <p begin="00:18:32.779" end="00:18:35.448" style="s1"><span style="s2">イブキさん<br />ありがとうございました</span></p> 
+   <p begin="00:18:35.532" end="00:18:38.117" style="s1"><span style="s2">あら <span style="s3"><span style="s4">随分</span><span style="s6">ずいぶん</span></span> すっきりした顔ね</span></p> 
+   <p begin="00:18:38.201" end="00:18:42.205" style="s1"><span style="s2">イブキさんとのバトルを通して<br />また勉強できましたから</span></p> 
+   <p begin="00:18:42.288" end="00:18:43.206" style="s1"><span style="s2">それそれ</span></p> 
+   <p begin="00:18:43.289" end="00:18:45.333" style="s1"><span style="s2">大切なのは その向上心よ</span></p> 
+   <p begin="00:18:45.416" end="00:18:48.294" style="s1"><span style="s2">また 一歩<br />ドラゴンマスターに近づいたわね</span></p> 
+   <p begin="00:18:49.170" end="00:18:50.713" style="s1"><span style="s2">ありがとうございます！</span></p> 
+   <p begin="00:18:53.591" end="00:18:55.218" style="s1"><span style="s2">（イブキ）<br />このあとは どうするの？</span></p> 
+   <p begin="00:18:55.301" end="00:18:57.846" style="s1"><span style="s2">（アイリス）<br />まだまだ 修行の旅を続けます</span></p> 
+   <p begin="00:18:57.929" end="00:19:00.682" style="s1"><span style="s2">修行の旅か <span style="s3"><span style="s4">頑張</span><span style="s6">がんば</span></span>ってね</span></p> 
+   <p begin="00:19:00.765" end="00:19:02.058" style="s1"><span style="s2">で どちらの方へ？</span></p> 
+   <p begin="00:19:02.767" end="00:19:05.728" style="s1"><span style="s2">う～ん…<br />それが まだ決めてなくて</span></p> 
+   <p begin="00:19:05.812" end="00:19:07.564" style="s1"><span style="s2">風任せかな～なんて…</span></p> 
+   <p begin="00:19:07.647" end="00:19:10.441" style="s1"><span style="s2">ほほう それもいいですな</span></p> 
+   <p begin="00:19:10.942" end="00:19:13.278" style="s1"><span style="s2">いろんなドラゴンタイプと<br />出会えるといいわね</span></p> 
+   <p begin="00:19:13.903" end="00:19:15.989" style="s1"><span style="s2">はい すごく楽しみです</span></p> 
+   <p begin="00:19:16.072" end="00:19:16.823" style="s1"><span style="s2">バゴゴ！</span></p> 
+   <p begin="00:19:16.906" end="00:19:18.533" style="s1"><span style="s2">（物音）<br />（アイリス）えっ？</span></p> 
+   <p begin="00:19:19.117" end="00:19:19.701" style="s1"><span style="s2">カフ～</span></p> 
+   <p begin="00:19:19.784" end="00:19:21.536" style="s1"><span style="s2">あっ フカマル！</span></p> 
+   <p begin="00:19:21.619" end="00:19:22.579" style="s1"><span style="s2">カフッ</span></p> 
+   <p begin="00:19:23.371" end="00:19:25.123" style="s1"><span style="s2">（フカマル）カフカフ～<br />（アイリス）え？</span></p> 
+   <p begin="00:19:25.707" end="00:19:27.417" style="s1"><span style="s2">カ～フ～</span></p> 
+   <p begin="00:19:28.710" end="00:19:32.130" style="s1"><span style="s2">あっ もしかして<br />あたしと<span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>に行きたいの？</span></p> 
+   <p begin="00:19:32.714" end="00:19:34.048" style="s1"><span style="s2">カフカフ！</span></p> 
+   <p begin="00:19:34.549" end="00:19:35.842" style="s1"><span style="s2">（イブキ）いいんじゃない？</span></p> 
+   <p begin="00:19:36.426" end="00:19:39.262" style="s1"><span style="s2">新しいドラゴンタイプの仲間が<br />加わるのは—</span></p> 
+   <p begin="00:19:39.345" end="00:19:41.848" style="s1"><span style="s2">ドラゴンマスターに<br />また 一歩 近づくことになるわ</span></p> 
+   <p begin="00:19:42.557" end="00:19:43.850" style="s1"><span style="s2">はい　じゃあ…</span></p> 
+   <p begin="00:19:44.601" end="00:19:47.270" style="s1"><span style="s2">いくわよ モンスターボール！</span></p> 
+   <p begin="00:19:59.324" end="00:20:02.452" style="s1"><span style="s2">フカマルゲットで<br />ドラゴンウイッシュ！</span></p> 
+   <p begin="00:20:02.535" end="00:20:04.370" style="s1"><span style="s2">キババッキ～</span></p> 
+   <p begin="00:20:04.454" end="00:20:06.664" style="s1"><span style="s2">（アイリス）<br />出ておいで フカマル！</span></p> 
+   <p begin="00:20:07.624" end="00:20:08.499" style="s1"><span style="s2">カフッ</span></p> 
+   <p begin="00:20:09.500" end="00:20:11.377" style="s1"><span style="s2">これからも よろしくね</span></p> 
+   <p begin="00:20:11.461" end="00:20:12.378" style="s1"><span style="s2">キバキバ！</span></p> 
+   <p begin="00:20:12.462" end="00:20:13.922" style="s1"><span style="s2">カフ～！</span></p> 
+   <p begin="00:20:17.759" end="00:20:19.260" style="s1"><span style="s2">（アイリス）必ず また来ま～す！</span></p> 
+   <p begin="00:20:19.344" end="00:20:21.012" style="s1"><span style="s2">お元気で～！</span></p> 
+   <p begin="00:20:21.095" end="00:20:22.305" style="s1"><span style="s2">キバキバ～！</span></p> 
+   <p begin="00:20:22.388" end="00:20:25.224" style="s1"><span style="s2">アイリス様も お気をつけて～</span></p> 
+   <p begin="00:20:25.308" end="00:20:27.268" style="s1"><span style="s2">ベストウイッシュ 良い旅を！</span></p> 
+   <p begin="00:20:30.438" end="00:20:32.315" style="s1"><span style="s2">（アイリス）きれいな夕焼けね</span></p> 
+   <p begin="00:20:32.398" end="00:20:35.276" style="s1"><span style="s2">こうやって<br />何度も夕焼けを見たっけ</span></p> 
+   <p begin="00:20:35.360" end="00:20:36.611" style="s1"><span style="s2">（キバゴ）キバ</span></p> 
+   <p begin="00:20:39.948" end="00:20:42.659" style="s1"><span style="s2">みんな <span style="s3"><span style="s4">今頃</span><span style="s6">いまごろ</span></span> どうしてるかな？</span></p> 
+   <p begin="00:20:42.742" end="00:20:44.077" style="s1"><span style="s2">（フカマル）カフッ カフッ</span></p> 
+   <p begin="00:20:44.160" end="00:20:44.744" style="s1"><span style="s2">（アイリス）え？</span></p> 
+   <p begin="00:20:45.745" end="00:20:48.665" style="s1"><span style="s2">（キバゴ）キバキバ キバキバ！<br />（アイリス）どうしたの？　あっ</span></p> 
+   <p begin="00:20:49.290" end="00:20:50.333" style="s1"><span style="s2">（アイリス）あれは！</span></p> 
+   <p begin="00:20:53.836" end="00:20:54.754" style="s1"><span style="s2">レックウザだ</span></p> 
+   <p begin="00:20:54.837" end="00:20:57.715" style="s1"><span style="s2">（レックウザ）グオ～！</span></p> 
+   <p begin="00:20:58.299" end="00:20:59.425" style="s1"><span style="s2">（アイリス）すごい…</span></p> 
+   <p begin="00:20:59.509" end="00:21:02.220" style="s1"><span style="s2">伝説のドラゴンタイプと<br />出会えるなんて</span></p> 
+   <p begin="00:21:14.774" end="00:21:15.942" style="s1"><span style="s2">そうだ！</span></p> 
+   <p begin="00:21:16.025" end="00:21:18.236" style="s1"><span style="s2">レックウザの飛んでいった方へ<br />行ってみよう</span></p> 
+   <p begin="00:21:18.319" end="00:21:19.237" style="s1"><span style="s2">キバ？</span></p> 
+   <p begin="00:21:19.320" end="00:21:19.862" style="s1"><span style="s2">だって…</span></p> 
+   <p begin="00:21:20.780" end="00:21:21.614" style="s1"><span style="s2">すてきな出会いが—</span></p> 
+   <p begin="00:21:21.698" end="00:21:23.116" style="s1"><span style="s2">ありそうじゃない？　ねっ！</span></p> 
+   <p begin="00:21:23.908" end="00:21:27.203" style="s1"><span style="s2">よ～し キバゴ フカマル<br />いくよ～！</span></p> 
+   <p begin="00:21:27.286" end="00:21:28.371" style="s1"><span style="s2">（キバゴ）キバ～<br />（フカマル）カ～フ～</span></p> 
+   <p begin="00:21:29.080" end="00:21:33.459" style="s1"><span style="s2">（ナレーション）<br /><span style="s7">ドラゴンマスターを目指し</span><br /><span style="s7">思いも新たに旅立ったアイリス</span></span></p> 
+   <p begin="00:21:33.960" end="00:21:39.382" style="s8"><span style="s2">出会いと別れを<span style="s3"><span style="s4">繰</span><span style="s6">く</span></span>り返し<br />アイリスの旅は まだまだつづく</span></p> 
+   <p begin="00:21:39.882" end="00:21:43.261" region="縦右" style="s7">ベストウイッシュ<br />良い旅を！</p> 
+   <p begin="00:21:48.474" end="00:21:50.476" region="縦左">♪～</p> 
+   <p begin="00:23:06.928" end="00:23:08.971" region="縦左">～♪</p> 
+   <p begin="00:23:09.055" end="00:23:12.475" style="s1"><span style="s2">（オーキド博士）ポケモン世界を<br />より深く知る最新情報—</span></p> 
+   <p begin="00:23:12.558" end="00:23:15.019" style="s1"><span style="s2">「ポケモンライブキャスター」の<br />時間じゃ</span></p> 
+   <p begin="00:23:15.103" end="00:23:18.481" style="s1"><span style="s2">今日のテーマは カイリューじゃ</span></p> 
+   <p begin="00:23:19.357" end="00:23:23.111" style="s1"><span style="s2">ドラゴンポケモンのカイリューは<br />ハクリューの進化形じゃ</span></p> 
+   <p begin="00:23:23.611" end="00:23:25.363" style="s1"><span style="s2">海の化身 あるいは—</span></p> 
+   <p begin="00:23:25.446" end="00:23:28.199" style="s1"><span style="s2"><span style="s3"><span style="s4">破壊</span><span style="s6">はかい</span></span>の神の化身とも<br />呼ばれることがあるが—</span></p> 
+   <p begin="00:23:28.783" end="00:23:31.744" style="s1"><span style="s2">その一方で 海で<span style="s3"><span style="s4">溺</span><span style="s6">おぼ</span></span>れている人や—</span></p> 
+   <p begin="00:23:31.828" end="00:23:34.539" style="s1"><span style="s2"><span style="s3"><span style="s4">難破</span><span style="s6">なんぱ</span></span>した船を<br />陸地まで<span style="s3"><span style="s4">誘導</span><span style="s5">ゆうどう</span></span>してくれる—</span></p> 
+   <p begin="00:23:34.622" end="00:23:36.749" style="s1"><span style="s2">心優しいポケモンともいわれておる</span></p> 
+   <p begin="00:23:37.458" end="00:23:38.918" style="s1"><span style="s2">広い海のどこかに—</span></p> 
+   <p begin="00:23:39.001" end="00:23:42.213" style="s1"><span style="s2">カイリューだけが集まって暮らす<br />島があるともいわれておるが—</span></p> 
+   <p begin="00:23:42.296" end="00:23:45.716" style="s1"><span style="s2">いまだに その島の発見には<br />至っていないんじゃ</span></p> 
+   <p begin="00:23:46.217" end="00:23:48.427" style="s1"><span style="s2">マッハ２で空を飛び—</span></p> 
+   <p begin="00:23:48.511" end="00:23:52.056" style="s1"><span style="s2">知能も人間に<span style="s3"><span style="s4">匹敵</span><span style="s6">ひってき</span></span>するとも<br />いわれておるんじゃよ</span></p> 
+   <p begin="00:23:52.640" end="00:23:55.268" style="s1"><span style="s2">最後はポケモン<span style="s3"><span style="s4">川柳</span><span style="s6">せんりゅう</span></span> いってみよう</span></p> 
+   <p begin="00:24:00.898" end="00:24:03.943" region="縦右">みんなもポケモン<br />ゲットじゃぞ</p> 
+  </div> 
+ </body> </tt>

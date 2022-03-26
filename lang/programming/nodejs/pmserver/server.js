@@ -98,7 +98,7 @@
       result = await result
     }
 
-    if (result.data.name == 'cb') {
+    if (result.data.name == 'cb') {  // 对方要求回调
       return result.data(res)
     }
 

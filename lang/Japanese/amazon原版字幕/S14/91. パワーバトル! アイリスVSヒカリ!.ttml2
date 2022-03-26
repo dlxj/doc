@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s3"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s4"></style> 
+   <style tts:ruby="container" xml:id="s5"></style> 
+   <style tts:ruby="base" xml:id="s6"></style> 
+   <style tts:ruby="text" tts:rubyPosition="after" xml:id="s7"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s8"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:03.462" end="00:00:04.714" style="s1"><span style="s2">（ナレーター）<span style="s3">ついに始まった</span>―</span></p> 
+   <p begin="00:00:04.839" end="00:00:07.633" style="s4"><span style="s2">ポケモンワールド<br />トーナメントジュニアカップ</span></p> 
+   <p begin="00:00:09.218" end="00:00:10.761" style="s1"><span style="s2"><span style="s3">１回戦を勝(か)ち抜(ぬ)いたのは</span>―</span></p> 
+   <p begin="00:00:10.928" end="00:00:15.808" style="s4"><span style="s2">シューティー デント サトシ<br />ヒカリ アイリス</span></p> 
+   <p begin="00:00:16.600" end="00:00:21.647" style="s4"><span style="s2">そして戦いの場は２回戦へと<br /><span style="s5"><span style="s6">駒</span><span style="s7">こま</span></span>を進めるのであった</span></p> 
+   <p begin="00:00:25.443" end="00:00:31.449" region="縦右">♪～</p> 
+   <p begin="00:01:47.024" end="00:01:53.030" region="縦右">～♪</p> 
+   <p begin="00:02:02.706" end="00:02:06.794" style="s1"><span style="s2">（タケミツ）<span style="s3">それではポケモン ワールド</span><br /><span style="s3">トーナメント ジュニアカップ２回戦</span></span></p> 
+   <p begin="00:02:06.919" end="00:02:10.047" style="s4"><span style="s2">ランダムシャッフルによる<br />組み合わせを発表いたします</span></p> 
+   <p begin="00:02:11.215" end="00:02:15.010" style="s4"><span style="s2">２回戦 第１試合は<br />シューティー選手対マルフジ選手</span></p> 
+   <p begin="00:02:16.303" end="00:02:19.765" style="s4"><span style="s2">第２試合は<br />アキヒロ選手対デント選手</span></p> 
+   <p begin="00:02:21.100" end="00:02:25.312" style="s4"><span style="s2">第３試合は<br />ヒロカズ選手対サトシ選手</span></p> 
+   <p begin="00:02:25.771" end="00:02:30.025" style="s4"><span style="s2">そして第４試合は<br />ヒカリ選手対アイリス選手です</span></p> 
+   <p begin="00:02:30.276" end="00:02:32.027" style="s1"><span style="s2">（アイリス）ヒカリとバトルか</span></p> 
+   <p begin="00:02:32.152" end="00:02:34.905" style="s1"><span style="s2">（ヒカリ）勝ち進めば<br />いずれ当たるもんね</span></p> 
+   <p begin="00:02:35.030" end="00:02:36.949" style="s1"><span style="s2">アイリス 思いっ切りバトルしよう</span></p> 
+   <p begin="00:02:37.074" end="00:02:37.825" style="s1"><span style="s2">（ポッチャマ）ポチャ</span></p> 
+   <p begin="00:02:37.950" end="00:02:40.536" style="s1"><span style="s2">（アイリス）うん 望むところよ<br />（キバゴ）キバ～～！</span></p> 
+   <p begin="00:02:40.786" end="00:02:41.912" style="s1"><span style="s2">（ラングレー）アイリスったら</span></p> 
+   <p begin="00:02:42.037" end="00:02:44.623" style="s1"><span style="s2">このドラゴンバスター<br />ラングレー様以外に負けたら―</span></p> 
+   <p begin="00:02:44.748" end="00:02:46.584" style="s1"><span style="s2">今度こそ承知しないんだから</span></p> 
+   <p begin="00:02:46.709" end="00:02:48.627" style="s1"><span style="s2">（カベルネ）<br />じゃ アイリスを<span style="s5"><span style="s6">応援</span><span style="s7">おうえん</span></span>するの？</span></p> 
+   <p begin="00:02:48.752" end="00:02:51.005" style="s1"><span style="s2">（ラングレー）それはない<br />（カベルネ）どっちのテイストなのよ</span></p> 
+   <p begin="00:02:51.672" end="00:02:53.424" style="s1"><span style="s2">（タケミツ）<br /><span style="s3">そして この大会の優勝者は</span>―</span></p> 
+   <p begin="00:02:53.549" end="00:02:56.176" style="s4"><span style="s2">アデクさんと<br />バトルすることができます</span></p> 
+   <p begin="00:02:56.302" end="00:03:00.055" style="s1"><span style="s2">（アデク）<span style="s3">どんな選手が</span><br /><span style="s3">勝ち上がってくるか楽しみにしておるぞ</span></span></p> 
+   <p begin="00:03:00.347" end="00:03:01.432" style="s1"><span style="s2">（タケミツ）<span style="s3">第１試合は</span>―</span></p> 
+   <p begin="00:03:01.557" end="00:03:05.769" style="s1"><span style="s2"><span style="s3">カノコタウンが生んだ瞬殺(しゅんさつ)の貴公子</span><br /><span style="s3">シューティー選手と</span>―</span></p> 
+   <p begin="00:03:05.895" end="00:03:09.982" style="s4"><span style="s2">ポケモンバトルの風雲児<br />マルフジ選手の対戦です</span></p> 
+   <p begin="00:03:10.608" end="00:03:12.276" style="s1"><span style="s2">（<span style="s5"><span style="s6">審判</span><span style="s8">しんぱん</span></span>）それではバトル開始</span></p> 
+   <p begin="00:03:12.568" end="00:03:14.153" style="s1"><span style="s2">（シューティー）行け ジャローダ</span></p> 
+   <p begin="00:03:16.322" end="00:03:17.156" style="s1"><span style="s2">（ジャローダ）ジャローダ！</span></p> 
+   <p begin="00:03:17.281" end="00:03:18.866" style="s1"><span style="s2">（マルフジ）<span style="s5"><span style="s6">頼</span><span style="s8">たの</span></span>むぞ クイタラン</span></p> 
+   <p begin="00:03:20.868" end="00:03:21.785" style="s1"><span style="s2">（クイタラン）クイタラン！</span></p> 
+   <p begin="00:03:25.372" end="00:03:27.249" style="s1"><span style="s2">（ＰＭ図鑑の音声）<br /><span style="s3">クイタラン アリクイポケモン</span></span></p> 
+   <p begin="00:03:27.374" end="00:03:30.586" style="s4"><span style="s2"><span style="s5"><span style="s6">尻尾</span><span style="s8">しっぽ</span></span>の穴から空気を吸って<br />体内で<span style="s5"><span style="s6">炎</span><span style="s7">ほのお</span></span>を燃やす</span></p> 
+   <p begin="00:03:30.711" end="00:03:32.504" style="s4"><span style="s2">アイアントの天敵</span></p> 
+   <p begin="00:03:33.255" end="00:03:35.466" style="s1"><span style="s2">（サトシ）<br />今度の相手も ほのおタイプか</span></p> 
+   <p begin="00:03:35.591" end="00:03:37.259" style="s1"><span style="s2">（デント）<br />くさタイプのジャローダにとっては―</span></p> 
+   <p begin="00:03:37.384" end="00:03:39.053" style="s1"><span style="s2">またしても不利なタイプ</span></p> 
+   <p begin="00:03:39.470" end="00:03:43.557" style="s1"><span style="s2">シューティーが どんなふうに<br />バトルを組み立てるのか楽しみだよ</span></p> 
+   <p begin="00:03:44.016" end="00:03:45.476" style="s1"><span style="s2">ん？　どうしたんだ？</span></p> 
+   <p begin="00:03:45.601" end="00:03:48.520" style="s1"><span style="s2">ああ ごめん<br />カイリューが気になって…</span></p> 
+   <p begin="00:03:48.646" end="00:03:52.483" style="s1"><span style="s2">１回戦じゃ ちっともアイリスの言うこと<br />聞いてくれなかったもんな</span></p> 
+   <p begin="00:03:52.608" end="00:03:53.609" style="s1"><span style="s2">（ピカチュウ）ピカチュウ</span></p> 
+   <p begin="00:03:55.819" end="00:03:57.905" style="s1"><span style="s2">どうしたの？<br />カイリュー よけて！</span></p> 
+   <p begin="00:03:59.406" end="00:04:01.659" style="s1"><span style="s2">いいかげん よけなさい カイリュー！</span></p> 
+   <p begin="00:04:04.912" end="00:04:06.705" style="s1"><span style="s2">どういうつもりなの？</span></p> 
+   <p begin="00:04:10.042" end="00:04:12.294" style="s1"><span style="s2">（アイリス）ちょっと出てくる<br />（サトシ）え？　どこ行くんだよ</span></p> 
+   <p begin="00:04:21.345" end="00:04:22.596" style="s1"><span style="s2">いい？　カイリュー</span></p> 
+   <p begin="00:04:22.721" end="00:04:26.350" style="s1"><span style="s2">１回戦みたいに意地を張って<br />相手の<span style="s5"><span style="s6">攻撃</span><span style="s7">こうげき</span></span>を受けてたら―</span></p> 
+   <p begin="00:04:26.475" end="00:04:28.644" style="s1"><span style="s2">いざってときに<span style="s5"><span style="s6">反撃</span><span style="s8">はんげき</span></span>できないよ</span></p> 
+   <p begin="00:04:28.769" end="00:04:29.603" style="s1"><span style="s2">フン！</span></p> 
+   <p begin="00:04:29.770" end="00:04:32.314" style="s1"><span style="s2">あなたのこと<br />心配して言ってるんだからね</span></p> 
+   <p begin="00:04:32.439" end="00:04:33.691" style="s1"><span style="s2">分かってるの？</span></p> 
+   <p begin="00:04:33.816" end="00:04:35.025" style="s1"><span style="s2">（カイリュー）フン！<br />（アイリス）あっ…</span></p> 
+   <p begin="00:04:35.317" end="00:04:36.777" style="s1"><span style="s2">次は技をよけてね</span></p> 
+   <p begin="00:04:37.319" end="00:04:38.404" style="s1"><span style="s2">カイカイカイ</span></p> 
+   <p begin="00:04:38.737" end="00:04:41.657" style="s1"><span style="s2">（アイリス）ホントに分かってんのかな？<br />（キバゴ）キバ～～</span></p> 
+   <p begin="00:04:42.241" end="00:04:44.326" style="s1"><span style="s2">（シロナ）だいぶ苦戦しているようね<br />（アイリス）あっ？</span></p> 
+   <p begin="00:04:44.994" end="00:04:46.245" style="s1"><span style="s2">（アイリス）シロナさん</span></p> 
+   <p begin="00:04:46.954" end="00:04:48.163" style="s1"><span style="s2">カイ？</span></p> 
+   <p begin="00:04:48.288" end="00:04:50.124" style="s1"><span style="s2">ソーラービーム</span></p> 
+   <p begin="00:04:50.290" end="00:04:52.084" style="s1"><span style="s2">ジャロー！</span></p> 
+   <p begin="00:04:52.209" end="00:04:53.961" style="s1"><span style="s2">（<span style="s5"><span style="s6">爆発</span><span style="s8">ばくはつ</span></span>音）</span></p> 
+   <p begin="00:04:55.421" end="00:04:57.840" style="s1"><span style="s2">（審判）クイタラン <span style="s5"><span style="s6">戦闘</span><span style="s8">せんとう</span></span>不能<br />ジャローダの勝ち</span></p> 
+   <p begin="00:04:58.257" end="00:05:00.634" style="s1"><span style="s2">よって勝者 シューティー選手</span></p> 
+   <p begin="00:05:01.635" end="00:05:03.178" style="s1"><span style="s2">１回戦と同じだ</span></p> 
+   <p begin="00:05:03.303" end="00:05:05.681" style="s1"><span style="s2">にらみつけるで<br />相手の<span style="s5"><span style="s6">防御力</span><span style="s7">ぼうぎょりょく</span></span>を下げて―</span></p> 
+   <p begin="00:05:05.806" end="00:05:07.808" style="s1"><span style="s2">ソーラービーム<span style="s5"><span style="s6">一撃</span><span style="s8">いちげき</span></span>でＫＯ</span></p> 
+   <p begin="00:05:16.984" end="00:05:20.821" style="s4"><span style="s2">シューティー選手<br />見事 準決勝進出を決めました</span></p> 
+   <p begin="00:05:20.946" end="00:05:23.866" style="s1"><span style="s2">（アデク）<span style="s3">実に計算されたバトルの</span><br /><span style="s3">組み立てだった</span></span></p> 
+   <p begin="00:05:24.658" end="00:05:27.661" style="s1"><span style="s2">（タケミツ）<span style="s3">さあ 続きまして</span><br /><span style="s3">２回戦 第２試合</span></span></p> 
+   <p begin="00:05:27.786" end="00:05:32.124" style="s4"><span style="s2">アキヒロ選手と<br />ポケモンソムリエ デント選手の対戦です</span></p> 
+   <p begin="00:05:32.249" end="00:05:34.793" style="s1"><span style="s2">カベルネはデントを<span style="s5"><span style="s6">応援</span><span style="s8">おうえん</span></span>するわけ？</span></p> 
+   <p begin="00:05:34.918" end="00:05:37.129" style="s1"><span style="s2">う～ん 微妙なテイスト</span></p> 
+   <p begin="00:05:37.254" end="00:05:38.464" style="s1"><span style="s2">あのさ…</span></p> 
+   <p begin="00:05:38.589" end="00:05:41.592" style="s1"><span style="s2">もうちょっとソムリエ言葉の<br />バリエーションを増やしたら？</span></p> 
+   <p begin="00:05:41.717" end="00:05:44.136" style="s1"><span style="s2">なな… 何ですって！</span></p> 
+   <p begin="00:05:44.636" end="00:05:46.472" style="s1"><span style="s2">それではバトル開始</span></p> 
+   <p begin="00:05:46.597" end="00:05:49.516" style="s1"><span style="s2">行け！　マイビンテージ マッギョ！</span></p> 
+   <p begin="00:05:51.351" end="00:05:52.186" style="s1"><span style="s2">（マッギョ）マギョ～！</span></p> 
+   <p begin="00:05:52.352" end="00:05:54.521" style="s1"><span style="s2">行くよ チラチーノ！</span></p> 
+   <p begin="00:05:55.898" end="00:05:56.732" style="s1"><span style="s2">（チラチーノ）チラチー！</span></p> 
+   <p begin="00:05:59.359" end="00:06:01.445" style="s1"><span style="s2">（ＰＭ図鑑の音声）<br /><span style="s3">チラチーノ スカーフポケモン</span></span></p> 
+   <p begin="00:06:01.570" end="00:06:02.905" style="s4"><span style="s2">チラーミィの進化形</span></p> 
+   <p begin="00:06:03.030" end="00:06:05.866" style="s1"><span style="s2"><span style="s3">白い体毛は</span><br /><span style="s3">特殊(とくしゅ)なコーティングがされていて</span>―</span></p> 
+   <p begin="00:06:05.991" end="00:06:08.619" style="s4"><span style="s2">敵の<span style="s5"><span style="s6">攻撃</span><span style="s8">こうげき</span></span>を受け流すこともできる</span></p> 
+   <p begin="00:06:14.041" end="00:06:15.167" style="s1"><span style="s2">カイ！</span></p> 
+   <p begin="00:06:15.751" end="00:06:17.002" style="s1"><span style="s2">カイリュー ダメよ</span></p> 
+   <p begin="00:06:17.127" end="00:06:18.337" style="s1"><span style="s2"><span style="s5"><span style="s6">大丈夫</span><span style="s8">だいじょうぶ</span></span></span></p> 
+   <p begin="00:06:18.754" end="00:06:20.297" style="s1"><span style="s2">あなたが あのカイリューね</span></p> 
+   <p begin="00:06:20.422" end="00:06:21.381" style="s1"><span style="s2">カイ！</span></p> 
+   <p begin="00:06:21.882" end="00:06:24.384" style="s1"><span style="s2">まだ人間を信じきれていないのね</span></p> 
+   <p begin="00:06:25.511" end="00:06:26.720" style="s1"><span style="s2">カイ～～</span></p> 
+   <p begin="00:06:27.262" end="00:06:31.642" style="s1"><span style="s2">でも だからって そこまで<br />人間を<span style="s5"><span style="s6">警戒</span><span style="s7">けいかい</span></span>しなくてもいのよ</span></p> 
+   <p begin="00:06:32.226" end="00:06:33.060" style="s1"><span style="s2">カイ？</span></p> 
+   <p begin="00:06:33.185" end="00:06:37.689" style="s1"><span style="s2">（シロナ）ポケモンと人間は<br />本来 助け合って生きていくべき存在</span></p> 
+   <p begin="00:06:37.815" end="00:06:39.983" style="s1"><span style="s2">ケンカしても お<span style="s5"><span style="s6">互</span><span style="s8">たが</span></span>い傷つくだけ</span></p> 
+   <p begin="00:06:40.109" end="00:06:42.402" style="s1"><span style="s2">（カイリュー）カイ！<br />（シロナ）不器用な子ね</span></p> 
+   <p begin="00:06:42.528" end="00:06:46.156" style="s1"><span style="s2">もう少し力を<span style="s5"><span style="s6">抜</span><span style="s8">ぬ</span></span>いたほうが<br />楽に生きられるのに</span></p> 
+   <p begin="00:06:49.243" end="00:06:50.661" style="s1"><span style="s2">カイリュー…</span></p> 
+   <p begin="00:06:51.578" end="00:06:54.206" style="s1"><span style="s2">（アイリス）<span style="s3">シロナさんって</span><br /><span style="s3">やっぱりすごい</span></span></p> 
+   <p begin="00:06:54.581" end="00:06:56.041" style="s1"><span style="s2">マッギョ　ヘドロばくだん</span></p> 
+   <p begin="00:06:56.500" end="00:06:58.544" style="s1"><span style="s2">マッギョ！</span></p> 
+   <p begin="00:06:58.669" end="00:07:00.087" style="s1"><span style="s2">チラ～！</span></p> 
+   <p begin="00:07:00.879" end="00:07:02.965" style="s1"><span style="s2">（チラチーノ）チラ～～<br />（<span style="s5"><span style="s6">審判</span><span style="s7">しんぱん</span></span>）チラチーノ<span style="s5"><span style="s6">戦闘</span><span style="s7">せんとう</span></span>不能</span></p> 
+   <p begin="00:07:03.090" end="00:07:04.258" style="s1"><span style="s2">マッギョの勝ち</span></p> 
+   <p begin="00:07:04.383" end="00:07:06.593" style="s1"><span style="s2">よって勝者 デント選手</span></p> 
+   <p begin="00:07:07.886" end="00:07:12.558" style="s1"><span style="s2">う～ん 春風を思わせるような<br />ライトで<span style="s5"><span style="s6">爽</span><span style="s7">さわ</span></span>やかなバトルだったよ</span></p> 
+   <p begin="00:07:12.683" end="00:07:13.767" style="s1"><span style="s2">マッギョ！</span></p> 
+   <p begin="00:07:13.976" end="00:07:18.105" style="s4"><span style="s2">デント選手 見事な勝利で<br />準決勝進出を決めました</span></p> 
+   <p begin="00:07:18.230" end="00:07:21.316" style="s4"><span style="s2">マッギョとのコンビネーション<br />なかなかのもんだったぞ</span></p> 
+   <p begin="00:07:21.567" end="00:07:24.027" style="s1"><span style="s2">デントのバトルなのに<br />コメントしないの？</span></p> 
+   <p begin="00:07:24.153" end="00:07:25.487" style="s1"><span style="s2">しない しない</span></p> 
+   <p begin="00:07:25.612" end="00:07:28.615" style="s1"><span style="s2">２回戦ごときを<br />テイスティングする必要はないわ</span></p> 
+   <p begin="00:07:28.740" end="00:07:29.992" style="s1"><span style="s2">あっそ</span></p> 
+   <p begin="00:07:30.117" end="00:07:32.161" style="s1"><span style="s2">でも本当は<br />つまらないソムリエ言葉を―</span></p> 
+   <p begin="00:07:32.286" end="00:07:35.455" style="s1"><span style="s2">私に あれこれ<br />言われたくないんじゃないの？</span></p> 
+   <p begin="00:07:35.581" end="00:07:38.208" style="s1"><span style="s2">さっきから<br />タンニンのきいた<span style="s5"><span style="s6">辛口</span><span style="s7">からくち</span></span>コメント</span></p> 
+   <p begin="00:07:38.333" end="00:07:40.377" style="s1"><span style="s2">マジでうるさいテイストよ</span></p> 
+   <p begin="00:07:40.502" end="00:07:43.755" style="s1"><span style="s2">ほらね 言葉のセレクトが<br />イマイチだもん</span></p> 
+   <p begin="00:07:43.881" end="00:07:45.340" style="s1"><span style="s2">あったま くるわね</span></p> 
+   <p begin="00:07:45.674" end="00:07:47.968" style="s1"><span style="s2">（サトシ）やったな デント<br />（デント）ありがとう</span></p> 
+   <p begin="00:07:48.093" end="00:07:49.970" style="s1"><span style="s2">デント 勝ったのね</span></p> 
+   <p begin="00:07:50.429" end="00:07:52.598" style="s1"><span style="s2">アイリス 遅かったわね</span></p> 
+   <p begin="00:07:52.723" end="00:07:55.017" style="s1"><span style="s2">エヘヘ いろいろあってね</span></p> 
+   <p begin="00:07:55.392" end="00:07:57.477" style="s1"><span style="s2">さあ 次はサトシの番だよ</span></p> 
+   <p begin="00:07:57.603" end="00:08:01.273" style="s1"><span style="s2">ああ <span style="s5"><span style="s6">俺</span><span style="s8">おれ</span></span>も勝って<br />準決勝進出を決めるぜ</span></p> 
+   <p begin="00:08:01.648" end="00:08:03.775" style="s1"><span style="s2">ピカピカー ピ？</span></p> 
+   <p begin="00:08:05.068" end="00:08:06.069" style="s1"><span style="s2">（メロエッタ）メロ～～</span></p> 
+   <p begin="00:08:06.695" end="00:08:08.947" style="s1"><span style="s2">（サトシ）メロエッタ<br />（メロエッタ）メロ～～</span></p> 
+   <p begin="00:08:09.072" end="00:08:11.033" style="s1"><span style="s2">お前も<span style="s5"><span style="s6">応援</span><span style="s8">おうえん</span></span>してくれよ</span></p> 
+   <p begin="00:08:11.158" end="00:08:12.284" style="s1"><span style="s2">メロ～</span></p> 
+   <p begin="00:08:14.620" end="00:08:16.622" style="s1"><span style="s2">ガントル 君に決めた！</span></p> 
+   <p begin="00:08:18.957" end="00:08:19.791" style="s1"><span style="s2">（ガントル）ガントル！</span></p> 
+   <p begin="00:08:19.917" end="00:08:21.376" style="s1"><span style="s2">ランクルス ゴー！</span></p> 
+   <p begin="00:08:22.377" end="00:08:23.962" style="s1"><span style="s2">（ランクルス）ランクルス！</span></p> 
+   <p begin="00:08:24.171" end="00:08:25.672" style="s1"><span style="s2">あのポケモンは？</span></p> 
+   <p begin="00:08:27.466" end="00:08:29.760" style="s1"><span style="s2">（ＰＭ図鑑の音声）<br /><span style="s3">ランクルス ぞうふくポケモン</span></span></p> 
+   <p begin="00:08:29.885" end="00:08:31.261" style="s4"><span style="s2">ダブランの進化形</span></p> 
+   <p begin="00:08:31.386" end="00:08:34.514" style="s1"><span style="s2"><span style="s3">ランクラス同士が握手(あくしゅ)すると</span><br /><span style="s3">ネットワークでつながり</span>―</span></p> 
+   <p begin="00:08:34.640" end="00:08:36.683" style="s4"><span style="s2">サイコパワーが<span style="s5"><span style="s6">増幅</span><span style="s8">ぞうふく</span></span>される</span></p> 
+   <p begin="00:08:36.808" end="00:08:38.268" style="s1"><span style="s2">ガントル ラスターカノン！</span></p> 
+   <p begin="00:08:38.560" end="00:08:40.103" style="s1"><span style="s2">（ガントル）ガントル！</span></p> 
+   <p begin="00:08:46.735" end="00:08:47.569" style="s1"><span style="s2">シロナさん</span></p> 
+   <p begin="00:08:49.363" end="00:08:53.951" style="s1"><span style="s2">あなたは確か 準決勝進出を決めた<br />シューティー君だったわね</span></p> 
+   <p begin="00:08:54.076" end="00:08:54.910" style="s1"><span style="s2">はい</span></p> 
+   <p begin="00:08:55.035" end="00:08:57.537" style="s1"><span style="s2">他の選手のバトルを見なくていいの？</span></p> 
+   <p begin="00:08:57.663" end="00:09:01.541" style="s1"><span style="s2">ええ <span style="s5"><span style="s6">誰</span><span style="s8">だれ</span></span>が出てこようと<br />全ての対策は打ってあります</span></p> 
+   <p begin="00:09:01.792" end="00:09:03.001" style="s1"><span style="s2">大したものね</span></p> 
+   <p begin="00:09:04.044" end="00:09:05.379" style="s1"><span style="s2">基本ですよ</span></p> 
+   <p begin="00:09:06.880" end="00:09:08.048" style="s1"><span style="s2">じゃ <span style="s5"><span style="s6">頑張</span><span style="s8">がんば</span></span>ってね</span></p> 
+   <p begin="00:09:10.968" end="00:09:14.388" style="s1"><span style="s2">（シューティー）<span style="s3">アデクさんの次は</span><br /><span style="s3">あなたを倒(たお)させてもらいます</span></span></p> 
+   <p begin="00:09:14.513" end="00:09:15.722" style="s4"><span style="s2">シロナさん</span></p> 
+   <p begin="00:09:16.598" end="00:09:18.016" style="s1"><span style="s2">ガントル ロックブラスト</span></p> 
+   <p begin="00:09:18.183" end="00:09:19.726" style="s1"><span style="s2">（ガントル）ガントル！<br />（ランクラス）クル～～</span></p> 
+   <p begin="00:09:20.560" end="00:09:23.230" style="s1"><span style="s2">（<span style="s5"><span style="s6">審判</span><span style="s8">しんぱん</span></span>）ランクルス<span style="s5"><span style="s6">戦闘</span><span style="s8">せんとう</span></span>不能<br />ガントルの勝ち</span></p> 
+   <p begin="00:09:23.480" end="00:09:25.774" style="s1"><span style="s2">よって勝者 サトシ選手</span></p> 
+   <p begin="00:09:27.025" end="00:09:29.319" style="s1"><span style="s2">（サトシ）いいぞ ガントル！<br />（ガントル）ガントル！</span></p> 
+   <p begin="00:09:29.444" end="00:09:31.154" style="s1"><span style="s2">やった！　さすがサトシ</span></p> 
+   <p begin="00:09:31.280" end="00:09:32.447" style="s1"><span style="s2">（ピカチュウ）ピカピカ<br />（キバゴ）キバキバー！</span></p> 
+   <p begin="00:09:32.823" end="00:09:37.452" style="s4"><span style="s2">サトシ選手 見事な勝利で<br />準決勝進出を決めました</span></p> 
+   <p begin="00:09:37.577" end="00:09:40.163" style="s1"><span style="s2">さあ いよいよ 私たちの出番ね</span></p> 
+   <p begin="00:09:40.289" end="00:09:42.291" style="s1"><span style="s2">ええ 燃えてきたわ</span></p> 
+   <p begin="00:09:42.582" end="00:09:45.460" style="s1"><span style="s2">（タケミツ）<br /><span style="s3">さあ ２回戦 最後の試合は</span>―</span></p> 
+   <p begin="00:09:45.585" end="00:09:48.297" style="s1"><span style="s2"><span style="s3">ポケモンコーディネーターの</span><br /><span style="s3">ヒカリ選手と</span>―</span></p> 
+   <p begin="00:09:48.755" end="00:09:52.509" style="s4"><span style="s2">ドラゴンマスターを目指す<br />アイリス選手の対戦です</span></p> 
+   <p begin="00:09:52.718" end="00:09:55.012" style="s1"><span style="s2">（アデク）<span style="s3">意外性のある</span><br /><span style="s3">いいバトルになりそうだ</span></span></p> 
+   <p begin="00:09:56.388" end="00:09:59.057" style="s1"><span style="s2">アイリス<br />ドラゴンマスターを目指してるなら―</span></p> 
+   <p begin="00:09:59.182" end="00:10:02.102" style="s1"><span style="s2">今度こそカイリューを<br />思いどおりに動かすことね</span></p> 
+   <p begin="00:10:02.227" end="00:10:05.772" style="s1"><span style="s2">でもカイリューで行くかどうかは<br /><span style="s5"><span style="s6">微妙</span><span style="s7">びみょう</span></span>なフレーバーよ</span></p> 
+   <p begin="00:10:05.897" end="00:10:09.943" style="s1"><span style="s2">ん～ ここは絶対<br />カイリューで行かなきゃダメなの！</span></p> 
+   <p begin="00:10:10.277" end="00:10:12.571" style="s1"><span style="s2">行くよ カイリュー！</span></p> 
+   <p begin="00:10:14.865" end="00:10:16.575" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:10:16.908" end="00:10:20.746" style="s1"><span style="s2">そうそう！　それでこそ<br />ドラゴンマスターを目指す者よ</span></p> 
+   <p begin="00:10:21.330" end="00:10:23.623" style="s1"><span style="s2">いくわよ マンムー！</span></p> 
+   <p begin="00:10:25.584" end="00:10:27.336" style="s1"><span style="s2">（マンムー）マンムー！</span></p> 
+   <p begin="00:10:27.461" end="00:10:28.879" style="s1"><span style="s2">あのポケモンは？</span></p> 
+   <p begin="00:10:30.756" end="00:10:32.966" style="s1"><span style="s2">（ＰＭ図鑑の音声）<br /><span style="s3">マンムー ２ほんキバポケモン</span></span></p> 
+   <p begin="00:10:33.091" end="00:10:35.552" style="s4"><span style="s2">氷でできた立派なキバを持っている</span></p> 
+   <p begin="00:10:35.677" end="00:10:39.931" style="s4"><span style="s2">氷河期が終わり 暖かくなったため<br />数が減ってしまった</span></p> 
+   <p begin="00:10:40.432" end="00:10:44.895" style="s1"><span style="s2">ふ～ん どうせ<span style="s5"><span style="s6">図体</span><span style="s8">ずうたい</span></span>がデカいだけの<br />でくの<span style="s5"><span style="s6">坊</span><span style="s7">ぼう</span></span>じゃないの？</span></p> 
+   <p begin="00:10:45.020" end="00:10:49.107" style="s1"><span style="s2">あんたね ポケモンソムリエなら<br />もっと上品な言葉を使いなさいよ</span></p> 
+   <p begin="00:10:49.232" end="00:10:50.442" style="s1"><span style="s2">うるさいわね！</span></p> 
+   <p begin="00:10:50.984" end="00:10:52.861" style="s1"><span style="s2">ヒカリはマンムーで来たか</span></p> 
+   <p begin="00:10:52.986" end="00:10:55.447" style="s1"><span style="s2">力と力の勝負になりそうだね</span></p> 
+   <p begin="00:10:55.781" end="00:10:56.615" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:10:56.740" end="00:10:58.950" style="s1"><span style="s2">ポケモンコーディネーターとして<br /><span style="s5"><span style="s6">培</span><span style="s7">つちか</span></span>った経験を―</span></p> 
+   <p begin="00:10:59.076" end="00:11:00.744" style="s1"><span style="s2">このバトルに生かすわよ</span></p> 
+   <p begin="00:11:00.869" end="00:11:02.913" style="s1"><span style="s2">（マンムー）マンムー！<br />（アイリス）どんとこいよ！</span></p> 
+   <p begin="00:11:03.038" end="00:11:06.500" style="s1"><span style="s2">ドラゴンマスターを目指す者として<br />真っ向から受けて立つわ</span></p> 
+   <p begin="00:11:06.625" end="00:11:07.459" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:11:07.584" end="00:11:09.961" style="s1"><span style="s2">（<span style="s5"><span style="s6">歓声</span><span style="s8">かんせい</span></span>）</span></p> 
+   <p begin="00:11:12.255" end="00:11:13.965" style="s1"><span style="s2">（子供たち）<span style="s3">誰(だれ)だ？</span></span></p> 
+   <p begin="00:11:17.219" end="00:11:18.762" style="s1"><span style="s2">（子供たち）<span style="s3">答えは？</span></span></p> 
+   <p begin="00:11:18.887" end="00:11:20.347" style="s1"><span style="s2">マンムー</span></p> 
+   <p begin="00:11:21.973" end="00:11:23.308" style="s1"><span style="s2">めざめるパワー！</span></p> 
+   <p begin="00:11:23.475" end="00:11:25.519" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:11:25.769" end="00:11:26.812" style="s1"><span style="s2">カイリュー かわして！</span></p> 
+   <p begin="00:11:27.396" end="00:11:28.397" style="s1"><span style="s2">フン！</span></p> 
+   <p begin="00:11:28.772" end="00:11:29.773" style="s1"><span style="s2">カイッ！</span></p> 
+   <p begin="00:11:30.232" end="00:11:32.401" style="s1"><span style="s2">おっ 今回は ちゃんとよけたぞ</span></p> 
+   <p begin="00:11:32.526" end="00:11:34.152" style="s1"><span style="s2">（ピカチュウ）ピカチュウ！<br />（キバゴ）キバ～！</span></p> 
+   <p begin="00:11:34.319" end="00:11:37.364" style="s1"><span style="s2">やった！　カイリューが<br />私の言うことを聞いてくれた</span></p> 
+   <p begin="00:11:37.489" end="00:11:38.573" style="s1"><span style="s2">こおりのつぶて！</span></p> 
+   <p begin="00:11:38.698" end="00:11:39.825" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:11:39.950" end="00:11:43.578" style="s1"><span style="s2">ドラゴンタイプに効果<span style="s5"><span style="s6">抜群</span><span style="s8">ばつぐん</span></span>の<br />こおりタイプの技？</span></p> 
+   <p begin="00:11:43.954" end="00:11:44.830" style="s1"><span style="s2">絶対かわして！</span></p> 
+   <p begin="00:11:45.831" end="00:11:46.706" style="s1"><span style="s2">カイ～～</span></p> 
+   <p begin="00:11:46.832" end="00:11:48.792" style="s1"><span style="s2">ムー！</span></p> 
+   <p begin="00:11:49.209" end="00:11:50.127" style="s1"><span style="s2">カイッ！</span></p> 
+   <p begin="00:11:51.378" end="00:11:52.295" style="s1"><span style="s2">ああっ！</span></p> 
+   <p begin="00:11:53.422" end="00:11:54.673" style="s1"><span style="s2">カイリュー</span></p> 
+   <p begin="00:11:54.965" end="00:11:56.967" style="s1"><span style="s2">あのカイリュー 何なの？</span></p> 
+   <p begin="00:11:57.259" end="00:11:59.177" style="s1"><span style="s2">意味分かんないフレーバー</span></p> 
+   <p begin="00:11:59.511" end="00:12:02.556" style="s1"><span style="s2">ちょっと！<br />なんで苦手な技は受けちゃうの？</span></p> 
+   <p begin="00:12:02.681" end="00:12:03.557" style="s1"><span style="s2">カイ</span></p> 
+   <p begin="00:12:03.890" end="00:12:06.226" style="s1"><span style="s2">あれじゃ １回戦のときと同じだぜ</span></p> 
+   <p begin="00:12:06.351" end="00:12:07.394" style="s1"><span style="s2">ピカチュウ</span></p> 
+   <p begin="00:12:07.519" end="00:12:09.396" style="s1"><span style="s2">よほど負けん気が強いんだね</span></p> 
+   <p begin="00:12:09.521" end="00:12:11.481" style="s1"><span style="s2">（キバゴ）キバー<br />（ポッチャマ）ポチャ～</span></p> 
+   <p begin="00:12:11.606" end="00:12:13.024" style="s1"><span style="s2">マンムー とっしん！</span></p> 
+   <p begin="00:12:13.150" end="00:12:14.734" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:12:16.403" end="00:12:17.362" style="s1"><span style="s2">カイリュー　かわして！</span></p> 
+   <p begin="00:12:17.487" end="00:12:18.572" style="s1"><span style="s2">カイ！</span></p> 
+   <p begin="00:12:21.283" end="00:12:24.202" style="s1"><span style="s2">こら！　それじゃ<br />まともに技を受けちゃうでしょ</span></p> 
+   <p begin="00:12:29.207" end="00:12:30.041" style="s1"><span style="s2">ほほう</span></p> 
+   <p begin="00:12:30.500" end="00:12:34.379" style="s1"><span style="s2">（タケミツ）<span style="s3">なんと とっしんで迫(せま)った</span><br /><span style="s3">マンムーのキバを受け止めました</span></span></p> 
+   <p begin="00:12:34.504" end="00:12:37.674" style="s1"><span style="s2">（カイリュー）カイ～～！<br />（マンムー）マンムー！</span></p> 
+   <p begin="00:12:37.966" end="00:12:39.384" style="s1"><span style="s2">そのまま こおりのつぶて！</span></p> 
+   <p begin="00:12:39.509" end="00:12:40.760" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:12:41.678" end="00:12:42.679" style="s1"><span style="s2"><span style="s5"><span style="s6">離</span><span style="s8">はな</span></span>れて カイリュー！</span></p> 
+   <p begin="00:12:42.804" end="00:12:44.723" style="s1"><span style="s2">イリュー！</span></p> 
+   <p begin="00:12:44.848" end="00:12:47.767" style="s1"><span style="s2">マンムーッ！</span></p> 
+   <p begin="00:12:49.728" end="00:12:52.481" style="s1"><span style="s2">（タケミツ）<span style="s3">カイリュー</span><br /><span style="s3">至近距離(しきんきょり)から こおりのつぶてを</span>―</span></p> 
+   <p begin="00:12:52.689" end="00:12:53.940" style="s4"><span style="s2">浴びまくっております</span></p> 
+   <p begin="00:12:54.065" end="00:12:56.610" style="s4"><span style="s2">これは かなりのダメージか</span></p> 
+   <p begin="00:13:00.280" end="00:13:04.743" style="s1"><span style="s2">カァイィリュ～～！</span></p> 
+   <p begin="00:13:05.702" end="00:13:06.912" style="s1"><span style="s2">（サトシ）すげえ！<br />（ピカチュウ）ピカァ！</span></p> 
+   <p begin="00:13:07.037" end="00:13:07.871" style="s1"><span style="s2">（ポッチャマ）ポッチャマ</span></p> 
+   <p begin="00:13:07.996" end="00:13:10.332" style="s1"><span style="s2">なんてパワーとテクニックの<br />マリアージュ</span></p> 
+   <p begin="00:13:10.457" end="00:13:13.084" style="s1"><span style="s2">あの巨体のマンムーを<br />投げ飛ばすなんて</span></p> 
+   <p begin="00:13:13.877" end="00:13:14.794" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:13:15.545" end="00:13:16.630" style="s1"><span style="s2">ちょっと！</span></p> 
+   <p begin="00:13:16.755" end="00:13:20.258" style="s1"><span style="s2">パワーを見せつけたいのは分かるけど<br />ちゃんと私の指示は聞いてよ！</span></p> 
+   <p begin="00:13:20.383" end="00:13:21.218" style="s1"><span style="s2">カイ</span></p> 
+   <p begin="00:13:22.928" end="00:13:24.304" style="s1"><span style="s2">（シロナ）<span style="s3">面白(おもしろ)い子ね</span></span></p> 
+   <p begin="00:13:24.846" end="00:13:27.307" style="s1"><span style="s2">マンムー <span style="s5"><span style="s6">大丈夫</span><span style="s8">だいじょうぶ</span></span>！　絶対勝てる</span></p> 
+   <p begin="00:13:27.432" end="00:13:28.600" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:13:28.808" end="00:13:30.227" style="s1"><span style="s2">ほら カイリュー 見て</span></p> 
+   <p begin="00:13:30.352" end="00:13:33.855" style="s1"><span style="s2">相手のマンムーはトレーナーと<br />固い<span style="s5"><span style="s6">絆</span><span style="s7">きずな</span></span>で結ばれてるじゃない</span></p> 
+   <p begin="00:13:33.980" end="00:13:34.814" style="s1"><span style="s2">カイ！</span></p> 
+   <p begin="00:13:35.398" end="00:13:39.069" style="s1"><span style="s2">もう！　私たちの気持ちを<br />合わせないと勝てないよ</span></p> 
+   <p begin="00:13:39.194" end="00:13:40.946" style="s1"><span style="s2">マンムー もう一度 とっしんよ</span></p> 
+   <p begin="00:13:41.071" end="00:13:42.614" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:13:42.864" end="00:13:44.407" style="s1"><span style="s2">カイリュー 今度こそ かわして！</span></p> 
+   <p begin="00:13:44.533" end="00:13:45.534" style="s1"><span style="s2">カイ！</span></p> 
+   <p begin="00:13:53.959" end="00:13:55.460" style="s1"><span style="s2">カイ～～！</span></p> 
+   <p begin="00:13:56.336" end="00:13:57.337" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:13:58.755" end="00:14:00.006" style="s1"><span style="s2">カイリュー しっかり！</span></p> 
+   <p begin="00:14:00.465" end="00:14:03.051" style="s1"><span style="s2">一気に<span style="s5"><span style="s6">畳</span><span style="s8">たた</span></span>みかけるわよ<br />こおりのつぶて</span></p> 
+   <p begin="00:14:03.176" end="00:14:04.594" style="s1"><span style="s2">マンムー！</span></p> 
+   <p begin="00:14:04.719" end="00:14:07.847" style="s1"><span style="s2">カイリュー<br />こおりタイプには ほのおタイプの技</span></p> 
+   <p begin="00:14:08.223" end="00:14:10.141" style="s1"><span style="s2">かえんほうしゃで<span style="s5"><span style="s6">迎</span><span style="s8">むか</span></span>え<span style="s5"><span style="s6">撃</span><span style="s8">う</span></span>って</span></p> 
+   <p begin="00:14:10.350" end="00:14:11.768" style="s1"><span style="s2">ムー！</span></p> 
+   <p begin="00:14:12.435" end="00:14:13.603" style="s1"><span style="s2">カイッ</span></p> 
+   <p begin="00:14:16.147" end="00:14:17.190" style="s1"><span style="s2">カイリュー</span></p> 
+   <p begin="00:14:17.440" end="00:14:19.943" style="s1"><span style="s2">もう～！　いいかげんにして！</span></p> 
+   <p begin="00:14:20.360" end="00:14:24.197" style="s1"><span style="s2">カイリューのヤツ アイリスの指示を<br />聞くようになったんじゃ…</span></p> 
+   <p begin="00:14:24.322" end="00:14:26.324" style="s1"><span style="s2">結局 最初だけだったね</span></p> 
+   <p begin="00:14:26.449" end="00:14:27.534" style="s1"><span style="s2">（ピカチュウ）ピカ～<br />（キバゴ）キバ～</span></p> 
+   <p begin="00:14:27.701" end="00:14:30.996" style="s1"><span style="s2">マンムー この技で決めるわよ<br />こおりのキバ</span></p> 
+   <p begin="00:14:31.121" end="00:14:34.249" style="s1"><span style="s2">マンムゥ～～！</span></p> 
+   <p begin="00:14:35.125" end="00:14:36.001" style="s1"><span style="s2">マァ～～ッ！</span></p> 
+   <p begin="00:14:36.126" end="00:14:38.003" style="s1"><span style="s2">（アイリス）<span style="s3">かえんほうしゃで</span><br /><span style="s3">迎(むか)え撃(う)ちたいけど―</span></span></p> 
+   <p begin="00:14:38.128" end="00:14:40.463" style="s4"><span style="s2">カイリューは言うことを聞いてくれない</span></p> 
+   <p begin="00:14:40.672" end="00:14:42.007" style="s4"><span style="s2">どうすればいいの？</span></p> 
+   <p begin="00:14:43.967" end="00:14:47.762" style="s1"><span style="s2">マンム～～</span></p> 
+   <p begin="00:14:55.770" end="00:14:57.522" style="s1"><span style="s2">（タケミツ）<br /><span style="s3">マンムーのこおりのキバを伝って―</span></span></p> 
+   <p begin="00:14:57.647" end="00:14:59.733" style="s4"><span style="s2">カイリューの<span style="s5"><span style="s6">腕</span><span style="s8">うで</span></span>が<span style="s5"><span style="s6">凍</span><span style="s8">こ</span></span>り<span style="s5"><span style="s6">付</span><span style="s8">つ</span></span>いていく</span></p> 
+   <p begin="00:14:59.858" end="00:15:01.526" style="s1"><span style="s2">（アデク）<br /><span style="s3">さて どうする？　カイリュー</span></span></p> 
+   <p begin="00:15:01.735" end="00:15:04.529" style="s1"><span style="s2">このままじゃ<br />また全身 <span style="s5"><span style="s6">凍</span><span style="s7">こ</span></span>り<span style="s5"><span style="s6">付</span><span style="s7">つ</span></span>いちゃう</span></p> 
+   <p begin="00:15:05.864" end="00:15:07.866" style="s1"><span style="s2">カイリューッ！</span></p> 
+   <p begin="00:15:07.991" end="00:15:09.075" style="s1"><span style="s2">マンム？</span></p> 
+   <p begin="00:15:12.203" end="00:15:13.663" style="s1"><span style="s2">（ヒカリ）ああっ<br />（アイリス）飛んだ？</span></p> 
+   <p begin="00:15:13.830" end="00:15:15.415" style="s1"><span style="s2">なんて速い飛行速度</span></p> 
+   <p begin="00:15:15.540" end="00:15:17.292" style="s1"><span style="s2">カイリュー どうするつもりだ？</span></p> 
+   <p begin="00:15:18.877" end="00:15:21.212" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:15:22.714" end="00:15:25.091" style="s1"><span style="s2">カイイィィイイィッ！</span></p> 
+   <p begin="00:15:25.216" end="00:15:27.218" style="s1"><span style="s2">（カベルネ）あの技は…<br />（ラングレー）ドラゴンダイブ？</span></p> 
+   <p begin="00:15:29.429" end="00:15:32.265" style="s1"><span style="s2">（タケミツ）<br /><span style="s3">カイリューのドラゴンダイブが炸裂(さくれつ)！</span></span></p> 
+   <p begin="00:15:33.475" end="00:15:36.019" style="s1"><span style="s2">（<span style="s5"><span style="s6">審判</span><span style="s8">しんぱん</span></span>）マンムー<span style="s5"><span style="s6">戦闘</span><span style="s8">せんとう</span></span>不能<br />カイリューの勝ち</span></p> 
+   <p begin="00:15:36.144" end="00:15:38.563" style="s1"><span style="s2">よって勝者 アイリス選手</span></p> 
+   <p begin="00:15:40.065" end="00:15:41.733" style="s1"><span style="s2">勝った…</span></p> 
+   <p begin="00:15:41.858" end="00:15:44.194" style="s1"><span style="s2">とりあえず勝つには勝ったわね</span></p> 
+   <p begin="00:15:44.611" end="00:15:46.655" style="s1"><span style="s2">アイリスが勝ったんじゃないわ</span></p> 
+   <p begin="00:15:46.780" end="00:15:49.074" style="s1"><span style="s2">今度もカイリューが勝手に勝っただけ</span></p> 
+   <p begin="00:15:49.199" end="00:15:50.659" style="s1"><span style="s2">ポチャ～</span></p> 
+   <p begin="00:15:51.326" end="00:15:53.828" style="s1"><span style="s2">バトルは いろいろと<br />問題ありだけど…</span></p> 
+   <p begin="00:15:53.953" end="00:15:55.872" style="s1"><span style="s2">カイリューのパワーって すごいな</span></p> 
+   <p begin="00:15:55.997" end="00:15:57.415" style="s1"><span style="s2">（ピカチュウ）ピカ！<br />（キバゴ）キバ～</span></p> 
+   <p begin="00:15:59.125" end="00:16:02.128" style="s1"><span style="s2">マンムー お疲れさま<br />ゆっくり休んでね</span></p> 
+   <p begin="00:16:02.253" end="00:16:05.423" style="s1"><span style="s2">カイリュー<br />何度 言ったら分かるの？</span></p> 
+   <p begin="00:16:06.007" end="00:16:08.218" style="s1"><span style="s2">アイリス おめでとう</span></p> 
+   <p begin="00:16:08.343" end="00:16:11.346" style="s1"><span style="s2">ううん どうにか勝てたって感じ</span></p> 
+   <p begin="00:16:11.471" end="00:16:13.306" style="s1"><span style="s2">準決勝も<span style="s5"><span style="s6">頑張</span><span style="s8">がんば</span></span>ってね</span></p> 
+   <p begin="00:16:13.431" end="00:16:15.350" style="s1"><span style="s2">アイリスなら きっと<span style="s5"><span style="s6">大丈夫</span><span style="s8">だいじょうぶ</span></span></span></p> 
+   <p begin="00:16:15.892" end="00:16:17.894" style="s1"><span style="s2">ありがとう 私 <span style="s5"><span style="s6">頑張</span><span style="s8">がんば</span></span>る</span></p> 
+   <p begin="00:16:18.269" end="00:16:20.313" style="s1"><span style="s2">（ヒカリ･アイリス）フフフ…<br />（カイリュー）カイ</span></p> 
+   <p begin="00:16:20.897" end="00:16:23.358" style="s1"><span style="s2">（アイリス）もう カイリュー！<br /><span style="s5"><span style="s6">誰</span><span style="s7">だれ</span></span>のせいで こんな…</span></p> 
+   <p begin="00:16:23.483" end="00:16:24.859" style="s1"><span style="s2">（シロナ）<span style="s3">まだまだね</span></span></p> 
+   <p begin="00:16:24.984" end="00:16:28.446" style="s4"><span style="s2">でも あのカイリューが<br />ホントに心を開いたとき―</span></p> 
+   <p begin="00:16:28.571" end="00:16:31.408" style="s4"><span style="s2">２人は強い<span style="s5"><span style="s6">絆</span><span style="s8">きずな</span></span>で結ばれるかも</span></p> 
+   <p begin="00:16:35.829" end="00:16:38.331" style="s1"><span style="s2">（タケミツ）<br /><span style="s3">準決勝の組み合わせが決まりました</span></span></p> 
+   <p begin="00:16:38.456" end="00:16:41.459" style="s4"><span style="s2">第１試合は<br />シューティー選手対デント選手</span></p> 
+   <p begin="00:16:41.584" end="00:16:45.422" style="s4"><span style="s2">第２試合は<br />アイリス選手対サトシ選手です</span></p> 
+   <p begin="00:16:47.924" end="00:16:48.967" style="s1"><span style="s2">アイリスとか</span></p> 
+   <p begin="00:16:49.092" end="00:16:53.263" style="s1"><span style="s2">サトシとの公式戦での対戦は<br />ドンバトルの決勝以来ね</span></p> 
+   <p begin="00:16:53.388" end="00:16:56.015" style="s1"><span style="s2">（サトシ）<br />ああ あのときは負けたけど…</span></p> 
+   <p begin="00:16:59.394" end="00:17:01.479" style="s1"><span style="s2">今度は絶対に<span style="s5"><span style="s6">俺</span><span style="s8">おれ</span></span>が勝つぜ</span></p> 
+   <p begin="00:17:01.604" end="00:17:02.605" style="s1"><span style="s2">ピカチュウ！</span></p> 
+   <p begin="00:17:02.981" end="00:17:05.066" style="s1"><span style="s2">私だって絶対に負けないわよ</span></p> 
+   <p begin="00:17:05.191" end="00:17:06.067" style="s1"><span style="s2">キバ～～！</span></p> 
+   <p begin="00:17:06.192" end="00:17:10.655" style="s4"><span style="s2">さあ それでは早速<br />準決勝 第１試合を行います</span></p> 
+   <p begin="00:17:10.905" end="00:17:14.784" style="s4"><span style="s2">最強にして最速勝利のクールガイ<br />シューティー選手</span></p> 
+   <p begin="00:17:15.034" end="00:17:17.328" style="s4"><span style="s2">ポケモンバトル界のファンタジスタ</span></p> 
+   <p begin="00:17:17.454" end="00:17:20.331" style="s4"><span style="s2">Ａクラスポケモンソムリエ<br />デント選手</span></p> 
+   <p begin="00:17:20.957" end="00:17:23.835" style="s1"><span style="s2"><span style="s3">両者はドンバトルで</span><br /><span style="s3">対戦したことがありますが</span>―</span></p> 
+   <p begin="00:17:23.960" end="00:17:26.671" style="s4"><span style="s2">そのときはデント選手が勝利しています</span></p> 
+   <p begin="00:17:27.046" end="00:17:30.216" style="s4"><span style="s2"><span style="s5"><span style="s6">所詮</span><span style="s8">しょせん</span></span> 過去は過去<br />大切なのは今だ</span></p> 
+   <p begin="00:17:30.341" end="00:17:34.179" style="s4"><span style="s2">この２人 なかなか見応えのある<br />バトルになりそうだぞ</span></p> 
+   <p begin="00:17:34.345" end="00:17:37.807" style="s1"><span style="s2">（シューティー）<span style="s3">いいえ 一方的な</span><br /><span style="s3">つまらない試合にしてみせますよ</span></span></p> 
+   <p begin="00:17:38.558" end="00:17:42.187" style="s4"><span style="s2">強さこそが全てだと<br />あなたに証明するために</span></p> 
+   <p begin="00:17:42.437" end="00:17:43.772" style="s1"><span style="s2">（デント）<span style="s3">シューティーは既(すで)に―</span></span></p> 
+   <p begin="00:17:43.897" end="00:17:47.317" style="s4"><span style="s2">優勝したあとの<br />アデクさんとのバトルしか考えていない</span></p> 
+   <p begin="00:17:47.650" end="00:17:51.196" style="s4"><span style="s2">でも<span style="s5"><span style="s6">僕</span><span style="s8">ぼく</span></span>だって そう簡単に<br />負けるわけにはいかないよ</span></p> 
+   <p begin="00:17:51.321" end="00:17:53.573" style="s4"><span style="s2">サンヨウジムのジムリーダーとしてね</span></p> 
+   <p begin="00:17:53.698" end="00:17:57.410" style="s1"><span style="s2">キーッ！ 私を負かしたシューティーに<br />ちゃんとリベンジするのよ</span></p> 
+   <p begin="00:17:57.535" end="00:18:00.705" style="s1"><span style="s2">ポケモンソムリエの実力を<br />たっぷりと見せつけてやって</span></p> 
+   <p begin="00:18:00.997" end="00:18:03.041" style="s1"><span style="s2">それではバトル開始</span></p> 
+   <p begin="00:18:03.792" end="00:18:05.877" style="s1"><span style="s2">行け ジャローダ！</span></p> 
+   <p begin="00:18:08.379" end="00:18:09.422" style="s1"><span style="s2">ジャローダ！</span></p> 
+   <p begin="00:18:09.547" end="00:18:12.717" style="s1"><span style="s2">行くよ マイビンテージ イワパレス！</span></p> 
+   <p begin="00:18:14.803" end="00:18:16.221" style="s1"><span style="s2">（イワパレス）イワパレス！</span></p> 
+   <p begin="00:18:16.471" end="00:18:19.390" style="s1"><span style="s2">そう！　君がジャローダで来ると<br />予想していたから―</span></p> 
+   <p begin="00:18:19.516" end="00:18:21.226" style="s1"><span style="s2">テイスティングはカット</span></p> 
+   <p begin="00:18:21.392" end="00:18:25.063" style="s1"><span style="s2">ここからはビロードのような<br />言葉のハーモニーをお楽しみあれ</span></p> 
+   <p begin="00:18:25.355" end="00:18:27.065" style="s1"><span style="s2">ジャローダ にらみつける</span></p> 
+   <p begin="00:18:27.190" end="00:18:28.525" style="s1"><span style="s2">イワパレス からでぼうぎょだ</span></p> 
+   <p begin="00:18:30.235" end="00:18:31.486" style="s1"><span style="s2">ソーラービーム</span></p> 
+   <p begin="00:18:31.820" end="00:18:33.321" style="s1"><span style="s2">ジャローダ！</span></p> 
+   <p begin="00:18:33.738" end="00:18:37.158" style="s1"><span style="s2">酸味の効いた<span style="s5"><span style="s6">刺激的</span><span style="s8">しげきてき</span></span>な<span style="s5"><span style="s6">攻撃</span><span style="s8">こうげき</span></span>も<br /><span style="s5"><span style="s6">殻</span><span style="s7">から</span></span>の中なら効かないよ</span></p> 
+   <p begin="00:18:37.367" end="00:18:39.285" style="s1"><span style="s2">ジャローダ！</span></p> 
+   <p begin="00:18:40.245" end="00:18:42.664" style="s1"><span style="s2">（イワパレス）イワ～～<br />（デント）あっ…</span></p> 
+   <p begin="00:18:42.789" end="00:18:44.707" style="s1"><span style="s2">（タケミツ）<span style="s3">ものすごいパワーです</span></span></p> 
+   <p begin="00:18:44.916" end="00:18:47.210" style="s1"><span style="s2">（サトシ）やるな シューティー<br />（ピカチュウ）ピカチュウ</span></p> 
+   <p begin="00:18:47.752" end="00:18:51.130" style="s1"><span style="s2">シンプルかつスパイシーな<span style="s5"><span style="s6">攻撃</span><span style="s8">こうげき</span></span>に<br />押されてしまったようだね</span></p> 
+   <p begin="00:18:51.256" end="00:18:53.716" style="s1"><span style="s2">ならば こっちは<br />ピュアな香りをストレートに</span></p> 
+   <p begin="00:18:53.925" end="00:18:55.426" style="s1"><span style="s2">イワパレス シザークロス！</span></p> 
+   <p begin="00:18:55.802" end="00:18:57.387" style="s1"><span style="s2">イワ！</span></p> 
+   <p begin="00:18:57.595" end="00:18:59.389" style="s1"><span style="s2">（シューティー）かわせ！<br />（ジャローダ）ジャローダ！</span></p> 
+   <p begin="00:19:00.682" end="00:19:02.392" style="s1"><span style="s2">（タケミツ）<span style="s3">ジャローダ 動きも速い</span></span></p> 
+   <p begin="00:19:02.517" end="00:19:03.893" style="s1"><span style="s2">（アデク）<span style="s3">実に いい育てだ</span></span></p> 
+   <p begin="00:19:04.269" end="00:19:06.020" style="s1"><span style="s2">確かに なめらかな口当たり</span></p> 
+   <p begin="00:19:06.145" end="00:19:08.857" style="s1"><span style="s2">では この熟成された技をご賞味あれ</span></p> 
+   <p begin="00:19:08.982" end="00:19:10.984" style="s1"><span style="s2">（デント）いわなだれ<br />（イワパレス）イワァアァーッ！</span></p> 
+   <p begin="00:19:13.152" end="00:19:14.821" style="s1"><span style="s2">かわしてハードプラント</span></p> 
+   <p begin="00:19:14.946" end="00:19:15.947" style="s1"><span style="s2">ジャロ！</span></p> 
+   <p begin="00:19:18.157" end="00:19:19.909" style="s1"><span style="s2">（デント）またかわされた？<br />（イワパレス）イワ！</span></p> 
+   <p begin="00:19:20.285" end="00:19:23.496" style="s1"><span style="s2">ジャローダ！</span></p> 
+   <p begin="00:19:24.664" end="00:19:26.624" style="s1"><span style="s2">イワーッ！</span></p> 
+   <p begin="00:19:26.749" end="00:19:28.877" style="s1"><span style="s2">（タケミツ）<span style="s3">おっと！</span><br /><span style="s3">ここで くさタイプの大技</span>―</span></p> 
+   <p begin="00:19:29.002" end="00:19:31.337" style="s4"><span style="s2">ハードプラントが<span style="s5"><span style="s6">炸裂</span><span style="s8">さくれつ</span></span>！</span></p> 
+   <p begin="00:19:32.881" end="00:19:35.383" style="s1"><span style="s2">（<span style="s5"><span style="s6">審判</span><span style="s8">しんぱん</span></span>）イワパレス<span style="s5"><span style="s6">戦闘</span><span style="s8">せんとう</span></span>不能<br />ジャローダの勝ち</span></p> 
+   <p begin="00:19:35.800" end="00:19:38.177" style="s1"><span style="s2">よって勝者 シューティー選手</span></p> 
+   <p begin="00:19:40.388" end="00:19:42.891" style="s1"><span style="s2">お疲れさま　ゆっくり休んでおくれ</span></p> 
+   <p begin="00:19:43.057" end="00:19:47.145" style="s1"><span style="s2">デントったら何やってんのよ！<br />それでもＡクラスソムリエ？</span></p> 
+   <p begin="00:19:47.437" end="00:19:48.396" style="s1"><span style="s2">ハァ…</span></p> 
+   <p begin="00:19:48.521" end="00:19:51.608" style="s1"><span style="s2">（タケミツ）<span style="s3">シューティー選手</span><br /><span style="s3">これまでの戦いと同様</span>―</span></p> 
+   <p begin="00:19:51.733" end="00:19:54.527" style="s4"><span style="s2"><span style="s5"><span style="s6">圧倒的</span><span style="s8">あっとうてき</span></span>な強さを見せての勝利です</span></p> 
+   <p begin="00:19:54.652" end="00:19:58.823" style="s4"><span style="s2"><span style="s5"><span style="s6">圧倒的</span><span style="s8">あっとうてき</span></span>な強さもいいが<br />それだけではな</span></p> 
+   <p begin="00:20:03.578" end="00:20:04.871" style="s1"><span style="s2">（シューティー）<span style="s3">まあいい</span></span></p> 
+   <p begin="00:20:05.121" end="00:20:10.126" style="s4"><span style="s2">この大会に優勝し あなたに勝てば<br /><span style="s5"><span style="s6">僕</span><span style="s7">ぼく</span></span>の正しさが証明できる</span></p> 
+   <p begin="00:20:10.668" end="00:20:13.838" style="s1"><span style="s2">（サトシ）デント 残念だったな<br />（デント）完敗だったよ</span></p> 
+   <p begin="00:20:14.005" end="00:20:17.133" style="s1"><span style="s2">シューティーは この大会に向けて<br />かなり<span style="s5"><span style="s6">鍛</span><span style="s7">きた</span></span>えてきてるね</span></p> 
+   <p begin="00:20:17.508" end="00:20:19.886" style="s1"><span style="s2">あのジャローダ 強敵だな</span></p> 
+   <p begin="00:20:20.011" end="00:20:21.888" style="s1"><span style="s2">ヘヘッ 燃えてきたぜ</span></p> 
+   <p begin="00:20:22.138" end="00:20:24.599" style="s1"><span style="s2"><span style="s5"><span style="s6">頼</span><span style="s8">たの</span></span>もしいね でも その前に…</span></p> 
+   <p begin="00:20:25.224" end="00:20:27.435" style="s1"><span style="s2">まずは次のバトルに勝たないとな</span></p> 
+   <p begin="00:20:28.102" end="00:20:29.145" style="s1"><span style="s2">（アイリス）カイリュー</span></p> 
+   <p begin="00:20:29.270" end="00:20:33.024" style="s1"><span style="s2">今度のサトシとの試合こそ<br />私の言うこと聞いてね</span></p> 
+   <p begin="00:20:33.149" end="00:20:35.193" style="s1"><span style="s2">（ヒカリ）<br />カイリューのこと心配なの？</span></p> 
+   <p begin="00:20:36.152" end="00:20:38.529" style="s1"><span style="s2">ヒカリ！　うん…</span></p> 
+   <p begin="00:20:38.696" end="00:20:42.367" style="s1"><span style="s2">実は私もマンムーと仲良くなれなくて<br />苦労したんだ</span></p> 
+   <p begin="00:20:42.492" end="00:20:44.702" style="s1"><span style="s2">えっ？　あんなに仲良しなのに？</span></p> 
+   <p begin="00:20:45.036" end="00:20:49.707" style="s1"><span style="s2">うん だから<br />アイリスとカイリューも<span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span></span></p> 
+   <p begin="00:20:50.583" end="00:20:54.003" style="s1"><span style="s2">うん ヒカリに言われたら<br /><span style="s5"><span style="s6">大丈夫</span><span style="s7">だいじょうぶ</span></span>な気がしてきた</span></p> 
+   <p begin="00:20:54.128" end="00:20:57.006" style="s1"><span style="s2">カイリューと<br />絶対 仲良しになってみせる</span></p> 
+   <p begin="00:20:57.465" end="00:21:01.594" style="s1"><span style="s2">（タケミツ）<span style="s3">それでは これより</span><br /><span style="s3">準決勝 第２試合を行います</span></span></p> 
+   <p begin="00:21:01.803" end="00:21:04.263" style="s4"><span style="s2">ポケモンバトル界の<br />キューティーガール</span></p> 
+   <p begin="00:21:04.389" end="00:21:07.183" style="s4"><span style="s2">未来のドラゴンマスター<br />アイリス選手</span></p> 
+   <p begin="00:21:07.517" end="00:21:10.061" style="s4"><span style="s2">まっすぐ進むよ どこまでも</span></p> 
+   <p begin="00:21:10.186" end="00:21:13.690" style="s4"><span style="s2">ど根性の新世紀トレーナー<br />サトシ選手</span></p> 
+   <p begin="00:21:13.898" end="00:21:15.942" style="s1"><span style="s2">それではバトル開始</span></p> 
+   <p begin="00:21:16.192" end="00:21:18.194" style="s1"><span style="s2">ワルビル 君に決めた！</span></p> 
+   <p begin="00:21:18.319" end="00:21:20.279" style="s1"><span style="s2">行くよ カイリュー！</span></p> 
+   <p begin="00:21:21.656" end="00:21:23.199" style="s1"><span style="s2">（ワルビル）ワルビル！</span></p> 
+   <p begin="00:21:23.616" end="00:21:25.493" style="s1"><span style="s2">ワルビル！</span></p> 
+   <p begin="00:21:27.203" end="00:21:28.913" style="s1"><span style="s2">カイリュー！</span></p> 
+   <p begin="00:21:29.038" end="00:21:30.915" style="s1"><span style="s2">（うなり声）</span></p> 
+   <p begin="00:21:31.624" end="00:21:35.253" style="s1"><span style="s2">（ナレーター）<span style="s3">ついに準決勝で</span><br /><span style="s3">サトシとアイリスの激突(げきとつ)となった</span></span></p> 
+   <p begin="00:21:35.378" end="00:21:38.506" style="s4"><span style="s2">ポケモンワールドトーナメント<br />ジュニアカップ</span></p> 
+   <p begin="00:21:38.840" end="00:21:40.633" region="縦右" style="s3">果たして<br />勝利の女神は―</p> 
+   <p begin="00:21:40.758" end="00:21:42.677" region="縦右" style="s3">どちらに<br />ほほ笑むのか？</p> 
+   <p begin="00:21:45.263" end="00:21:51.269" region="縦左">♪～</p> 
+   <p begin="00:22:59.754" end="00:23:05.760" region="縦左">～♪</p> 
+   <p begin="00:23:06.135" end="00:23:09.263" style="s1"><span style="s2">（オーキド博士）ポケモン世界を<br />より深く知る最新情報</span></p> 
+   <p begin="00:23:09.388" end="00:23:11.724" style="s1"><span style="s2">“ポケモンライブキャスター”の時間じゃ</span></p> 
+   <p begin="00:23:11.891" end="00:23:15.394" style="s1"><span style="s2">今日のテーマは キリキザンじゃ</span></p> 
+   <p begin="00:23:15.853" end="00:23:19.565" style="s1"><span style="s2">（オーキド博士）とうじんポケモンの<br />キリキザンはコマタナの進化形</span></p> 
+   <p begin="00:23:19.690" end="00:23:21.734" style="s1"><span style="s2">１体のキリキザンをボスとして―</span></p> 
+   <p begin="00:23:21.859" end="00:23:24.529" style="s1"><span style="s2">たくさんのコマタナを<br />従えたグループを作り―</span></p> 
+   <p begin="00:23:24.654" end="00:23:26.823" style="s1"><span style="s2">活動する習性があるぞ</span></p> 
+   <p begin="00:23:26.948" end="00:23:30.785" style="s1"><span style="s2"><span style="s5"><span style="s6">獲物</span><span style="s8">えもの</span></span>を<span style="s5"><span style="s6">捕</span><span style="s8">つか</span></span>まえるときは<br />コマタナが<span style="s5"><span style="s6">獲物</span><span style="s7">えもの</span></span>を<span style="s5"><span style="s6">追</span><span style="s7">お</span></span>い<span style="s5"><span style="s6">詰</span><span style="s7">つ</span></span>め―</span></p> 
+   <p begin="00:23:30.910" end="00:23:33.871" style="s1"><span style="s2">キリキザンが とどめを刺すという<br />ルールがある</span></p> 
+   <p begin="00:23:33.996" end="00:23:39.001" style="s1"><span style="s2">また１体がキリキザンに進化すると<br />前のボスとの戦いになり―</span></p> 
+   <p begin="00:23:39.127" end="00:23:42.380" style="s1"><span style="s2">負けたほうがグループを去るという<br />おきてがあるんじゃ</span></p> 
+   <p begin="00:23:42.964" end="00:23:45.716" style="s1"><span style="s2">こうして<br />１体だけになったキリキザンは―</span></p> 
+   <p begin="00:23:45.842" end="00:23:48.886" style="s1"><span style="s2">とても凶暴な性格になると<br />言われておる</span></p> 
+   <p begin="00:23:49.554" end="00:23:52.098" style="s1"><span style="s2">それでは ここでポケモン<span style="s5"><span style="s6">川柳</span><span style="s8">せんりゅう</span></span>じゃ</span></p> 
+   <p begin="00:23:57.603" end="00:24:00.606" region="縦左">みんなもポケモン<br />ゲットじゃぞ</p> 
+   <p begin="00:24:01.357" end="00:24:04.360" style="s1"><span style="s2">次の<span style="s5"><span style="s6">冒険</span><span style="s8">ぼうけん</span></span>は これだ！</span></p> 
+   <p begin="00:24:05.945" end="00:24:07.989" style="s1"><span style="s2">（サトシ）<br /><span style="s3">ジュニアカップも いよいよ大詰(おおづ)め</span></span></p> 
+   <p begin="00:24:08.531" end="00:24:12.034" style="s4"><span style="s2">あと２つ…<br />あと２つ勝てば優勝なんだ</span></p> 
+   <p begin="00:24:12.201" end="00:24:14.579" style="s4"><span style="s2">さあ 来い アイリス シューティー</span></p> 
+   <p begin="00:24:14.996" end="00:24:16.956" style="s4"><span style="s2"><span style="s5"><span style="s6">俺</span><span style="s8">おれ</span></span>は絶対に負けない</span></p> 
+   <p begin="00:24:17.081" end="00:24:19.167" style="s4"><span style="s2">優勝してアデクさんと<br />バトルするんだ！</span></p> 
+   <p begin="00:24:20.126" end="00:24:23.754" style="s4"><span style="s2">次回 ポケットモンスター<br />ベストウィッシュ シーズン２</span></p> 
+   <p begin="00:24:23.880" end="00:24:27.508" style="s4"><span style="s2">“サトシ、アイリス、シューティー！<br />最後のバトル！！”</span></p> 
+   <p begin="00:24:27.633" end="00:24:29.969" style="s4"><span style="s2">みんなもポケモン ゲットだぜ</span></p> 
+  </div> 
+ </body> </tt>
