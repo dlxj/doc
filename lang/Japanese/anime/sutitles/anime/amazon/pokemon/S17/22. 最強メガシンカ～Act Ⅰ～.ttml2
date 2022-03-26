@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:fontShear="16.78842%" xml:id="s1"></style> 
+   <style tts:textAlign="center" xml:id="s2"></style> 
+   <style tts:textAlign="start" xml:id="s3"></style> 
+   <style tts:ruby="container" xml:id="s4"></style> 
+   <style tts:ruby="base" xml:id="s5"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s6"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s7"></style> 
+  </styling> 
+  <layout> 
+   <region tts:extent="80vw 15vh" tts:position="center top 10vh" xml:id="横上" /> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:30.990" end="00:00:32.450" region="縦右">（ナレーション）<br /><span style="s1">メガシンカ</span></p> 
+   <p begin="00:00:32.950" end="00:00:34.994" region="縦右" style="s1">それは<br />カロス地方に伝わる</p> 
+   <p begin="00:00:35.077" end="00:00:37.747" region="縦右" style="s1">ポケモンの新たな<br />進化の形だ</p> 
+   <p begin="00:00:39.749" end="00:00:41.417" region="縦右" style="s1">人よ 問う</p> 
+   <p begin="00:00:41.500" end="00:00:42.585" region="縦右" style="s1">ポケモンと人は—</p> 
+   <p begin="00:00:42.668" end="00:00:43.919" region="縦右" style="s1">メガシンカに<br />よって—</p> 
+   <p begin="00:00:44.003" end="00:00:46.297" region="縦右" style="s1">試されているのでは<br />ないか</p> 
+   <p begin="00:00:46.797" end="00:00:48.549" region="縦右" style="s1">果たして<br />メガシンカとは—</p> 
+   <p begin="00:00:48.632" end="00:00:49.884" region="縦右" style="s1">すべての<br />ポケモンに—</p> 
+   <p begin="00:00:49.967" end="00:00:51.886" region="縦右" style="s1">起こりうる<br />ものなのか</p> 
+   <p begin="00:00:53.053" end="00:00:55.598" region="縦右" style="s1">秘めたる力を<br />解き放ち—</p> 
+   <p begin="00:00:55.681" end="00:00:56.891" region="縦右" style="s1">より強く—</p> 
+   <p begin="00:00:57.641" end="00:00:59.810" region="縦右" style="s1">より雄々しく<br />姿を変える—</p> 
+   <p begin="00:00:59.894" end="00:01:01.979" region="縦右" style="s1">ポケモンたちの<br />すべてを—</p> 
+   <p begin="00:01:02.605" end="00:01:04.982" region="縦右" style="s1">我々は<br />まだ知らない</p> 
+   <p begin="00:01:29.924" end="00:01:31.509" style="s2"><span style="s3">（リザードンの雄たけび）</span></p> 
+   <p begin="00:01:33.469" end="00:01:34.470" style="s2"><span style="s3">（アヤカ）メガストーン</span></p> 
+   <p begin="00:01:35.971" end="00:01:38.098" style="s2"><span style="s3">（アラン）君の最強 見せてくれ</span></p> 
+   <p begin="00:01:38.724" end="00:01:42.394" style="s2"><span style="s3">（アヤカ）大した自信ね<br />口先だけじゃないといいけど</span></p> 
+   <p begin="00:01:42.478" end="00:01:45.105" style="s2"><span style="s3">（アヤカ）君 名前は？<br />（アラン）アラン</span></p> 
+   <p begin="00:01:45.564" end="00:01:46.774" style="s2"><span style="s3">（アヤカ）私は アヤカ</span></p> 
+   <p begin="00:01:46.857" end="00:01:49.527" style="s2"><span style="s3">そして この子が<br />私の最強のパートナー</span></p> 
+   <p begin="00:01:49.610" end="00:01:51.821" style="s2"><span style="s3">出ておいで アブソル</span></p> 
+   <p begin="00:01:53.614" end="00:01:55.074" style="s2"><span style="s3">（アブソル）アブ</span></p> 
+   <p begin="00:01:56.033" end="00:01:57.117" style="s2"><span style="s3">（アラン）お出ましだ</span></p> 
+   <p begin="00:01:57.743" end="00:02:00.621" style="s2"><span style="s3"><span style="s4"><span style="s5">吠</span><span style="s6">ほ</span></span>えろ リザードン<br />かえんほうしゃ</span></p> 
+   <p begin="00:02:05.751" end="00:02:07.962" style="s2"><span style="s3">アブソル サイコカッター</span></p> 
+   <p begin="00:02:08.045" end="00:02:09.046" style="s2"><span style="s3">ソルッ</span></p> 
+   <p begin="00:02:12.800" end="00:02:13.801" style="s2"><span style="s3">メガホーン</span></p> 
+   <p begin="00:02:15.469" end="00:02:16.470" style="s2"><span style="s3">角をつかめ</span></p> 
+   <p begin="00:02:25.938" end="00:02:29.608" style="s2"><span style="s3">なかなかのパワーだ<br />だが これで終わりではないだろ</span></p> 
+   <p begin="00:02:30.568" end="00:02:32.111" style="s2"><span style="s3">お互い本気を出さないか</span></p> 
+   <p begin="00:02:32.528" end="00:02:35.322" style="s2"><span style="s3">（アヤカ）フンッ 見せてあげる</span></p> 
+   <p begin="00:02:43.956" end="00:02:46.458" style="s2"><span style="s3">アブソル メガシンカ</span></p> 
+   <p begin="00:02:58.220" end="00:03:00.764" style="s2"><span style="s3">いかが？　メガアブソル</span></p> 
+   <p begin="00:03:00.848" end="00:03:04.435" style="s2"><span style="s3">（アラン）初めてだな<br />アブソルのメガシンカを見たのは</span></p> 
+   <p begin="00:03:04.518" end="00:03:06.270" style="s2"><span style="s3">（アヤカ）<br />君の本気も見せてもらうわよ</span></p> 
+   <p begin="00:03:07.146" end="00:03:09.523" style="s2"><span style="s3">我が心に応えよ キーストーン</span></p> 
+   <p begin="00:03:09.857" end="00:03:14.111" style="s2"><span style="s3">進化を超えろ メガシンカ</span></p> 
+   <p begin="00:03:26.749" end="00:03:29.418" style="s2"><span style="s3">（リザードンの雄たけび）</span></p> 
+   <p begin="00:03:37.718" end="00:03:39.720" style="s2"><span style="s3">（雄たけび）</span></p> 
+   <p begin="00:03:45.726" end="00:03:48.187" style="s2"><span style="s3">（アラン）<br />俺の最強 メガリザードンだ</span></p> 
+   <p begin="00:03:48.979" end="00:03:50.981" style="s2"><span style="s3">カッコいいじゃない<br />黒いボディー</span></p> 
+   <p begin="00:03:51.857" end="00:03:53.901" style="s2"><span style="s3">お褒めにあずかり光栄だ</span></p> 
+   <p begin="00:03:53.984" end="00:03:56.528" style="s2"><span style="s3">いくぞ はかねのつばさ</span></p> 
+   <p begin="00:04:00.324" end="00:04:03.243" style="s2"><span style="s3">迎え撃つわよ メガホーン</span></p> 
+   <p begin="00:04:09.750" end="00:04:11.335" style="s2"><span style="s3">（マノン）ほっ…<br />（ハリマロン）リマリマ</span></p> 
+   <p begin="00:04:11.877" end="00:04:13.504" style="s2"><span style="s3">（衝撃音）<br />（マノン）うわあああっ</span></p> 
+   <p begin="00:04:13.587" end="00:04:15.339" style="s2"><span style="s3">（ハリマロン）リマ<br />（マノン）何だ？</span></p> 
+   <p begin="00:04:15.965" end="00:04:17.341" style="s2"><span style="s3">（衝撃音）<br />（マノン）うわあっ</span></p> 
+   <p begin="00:04:18.092" end="00:04:19.093" style="s2"><span style="s3">リマ</span></p> 
+   <p begin="00:04:20.052" end="00:04:21.595" style="s2"><span style="s3">（ハリマロン）リマ<br />（マノン）どうしたの？</span></p> 
+   <p begin="00:04:21.679" end="00:04:24.223" style="s2"><span style="s3">（ハリマロン）リマ リマリマ<br />（マノン）えっ 何？</span></p> 
+   <p begin="00:04:24.306" end="00:04:25.599" style="s2"><span style="s3">うわあっ</span></p> 
+   <p begin="00:04:26.934" end="00:04:30.646" style="s2"><span style="s3">（ハリマロン）リマ…<br />（マノン）ブブブブブ… ブハッ</span></p> 
+   <p begin="00:04:32.481" end="00:04:35.025" style="s2"><span style="s3">（アブソルのうなり声）</span></p> 
+   <p begin="00:04:46.245" end="00:04:48.038" style="s2"><span style="s3">（マノン）何 あのポケモン<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:04:48.664" end="00:04:50.416" style="s2"><span style="s3">（マノン）リザードンの色違い？</span></p> 
+   <p begin="00:04:50.499" end="00:04:52.918" style="s2"><span style="s3">でも 何か<br />普通のリザードンと違う…</span></p> 
+   <p begin="00:04:53.002" end="00:04:56.630" style="s2"><span style="s3">アブソルも翼がある？<br />訳 分かんない</span></p> 
+   <p begin="00:04:57.047" end="00:04:58.507" style="s2"><span style="s3">ドラゴンクロー</span></p> 
+   <p begin="00:04:58.590" end="00:05:01.260" style="s2"><span style="s3">（うなり声）</span></p> 
+   <p begin="00:05:05.389" end="00:05:07.558" style="s2"><span style="s3">（アヤカ）よけて<br />（アブソル）ウウ…</span></p> 
+   <p begin="00:05:13.731" end="00:05:14.732" style="s2"><span style="s3">なんて パワー…</span></p> 
+   <p begin="00:05:15.107" end="00:05:16.608" style="s2"><span style="s3">かえんほうしゃだ</span></p> 
+   <p begin="00:05:16.692" end="00:05:19.278" style="s2"><span style="s3">（リザードン）オオオオ…</span></p> 
+   <p begin="00:05:23.532" end="00:05:24.908" style="s2"><span style="s3">（アブソル）ウウ…</span></p> 
+   <p begin="00:05:27.119" end="00:05:28.996" style="s2"><span style="s3">（マノン）すごい…<br />（ハリマロン）マ…</span></p> 
+   <p begin="00:05:29.329" end="00:05:31.749" style="s2"><span style="s3">よく耐えたわ アブソル<br />あくのはどう</span></p> 
+   <p begin="00:05:31.832" end="00:05:33.208" style="s2"><span style="s3">アウ…</span></p> 
+   <p begin="00:05:37.629" end="00:05:39.590" style="s2"><span style="s3">（アブソル）アア…<br />（アラン）ブラストバーン</span></p> 
+   <p begin="00:05:40.632" end="00:05:44.595" style="s2"><span style="s3">（リザードンのうなり声）</span></p> 
+   <p begin="00:05:53.729" end="00:05:55.564" style="s2"><span style="s3">（アブソルのうめき声）</span></p> 
+   <p begin="00:06:03.822" end="00:06:06.158" style="s2"><span style="s3">（アヤカ）アブソル<br />（アブソル）ア…</span></p> 
+   <p begin="00:06:06.617" end="00:06:07.701" style="s2"><span style="s3">（アヤカ）アブソル</span></p> 
+   <p begin="00:06:07.910" end="00:06:08.911" style="s2"><span style="s3">えっ…</span></p> 
+   <p begin="00:06:10.621" end="00:06:12.331" style="s2"><span style="s3">見事だったぞ リザードン</span></p> 
+   <p begin="00:06:12.414" end="00:06:14.083" style="s2"><span style="s3">（リザードン）オオ</span></p> 
+   <p begin="00:06:14.166" end="00:06:16.418" style="s2"><span style="s3">リザードンとアブソルが変身？</span></p> 
+   <p begin="00:06:16.627" end="00:06:19.171" style="s2"><span style="s3">（アヤカ）<br />よく戦ってくれたわ アブソル</span></p> 
+   <p begin="00:06:20.631" end="00:06:22.424" style="s2"><span style="s3">いずれまた バトルを</span></p> 
+   <p begin="00:06:22.716" end="00:06:27.262" style="s2"><span style="s3">いつも こんな調子なの？<br />最強だけを求めてのバトル</span></p> 
+   <p begin="00:06:28.138" end="00:06:31.517" style="s2"><span style="s3">（アラン）<br />俺は このリザードンと一緒に<br />すべての メガシンカを倒して—</span></p> 
+   <p begin="00:06:31.934" end="00:06:34.019" style="s2"><span style="s3">その頂点に立つ</span></p> 
+   <p begin="00:06:38.440" end="00:06:41.401" style="s2"><span style="s3">メガアブソルは<br />なかなか手応えがあったな</span></p> 
+   <p begin="00:06:41.485" end="00:06:43.403" style="s2"><span style="s3">よく育てられていた</span></p> 
+   <p begin="00:06:48.784" end="00:06:51.662" style="s2"><span style="s3">隠れてないで<br />出てきたらどうだ？</span></p> 
+   <p begin="00:06:53.330" end="00:06:55.124" style="s2"><span style="s3">（マノン）どもです<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:06:55.749" end="00:06:57.417" style="s2"><span style="s3">（アラン）用か？<br />（リザードン）ワホ</span></p> 
+   <p begin="00:06:57.501" end="00:07:01.630" style="s2"><span style="s3">（マノン）え… えっと その…<br />さっきのバトル 見ちゃって—</span></p> 
+   <p begin="00:07:02.131" end="00:07:05.050" style="s2"><span style="s3">黒いリザードンに<br />びっくりしたっつうか…</span></p> 
+   <p begin="00:07:05.134" end="00:07:08.137" style="s2"><span style="s3">あれ 何？　新しい<br />ポケモンってわけじゃないよね</span></p> 
+   <p begin="00:07:08.929" end="00:07:10.889" style="s2"><span style="s3">（アラン）バトルしたいのか？<br />（リザードン）ウウ？</span></p> 
+   <p begin="00:07:11.181" end="00:07:13.934" style="s2"><span style="s3">ノンノン　無理無理 無理無理</span></p> 
+   <p begin="00:07:14.017" end="00:07:15.477" style="s2"><span style="s3">私たち旅立ったばかりで—</span></p> 
+   <p begin="00:07:15.561" end="00:07:18.438" style="s2"><span style="s3">さっきみたいなバトルは<br />絶対 無理</span></p> 
+   <p begin="00:07:18.522" end="00:07:20.399" style="s2"><span style="s3">新人だそうだ リザードン</span></p> 
+   <p begin="00:07:20.482" end="00:07:21.483" style="s2"><span style="s3">ウワ？</span></p> 
+   <p begin="00:07:21.567" end="00:07:22.901" style="s2"><span style="s3">私は マノン</span></p> 
+   <p begin="00:07:22.985" end="00:07:24.069" style="s2"><span style="s3">この子は ハリマロンの—</span></p> 
+   <p begin="00:07:24.153" end="00:07:25.612" style="s2"><span style="s3">（マノン）ハリさん<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:07:25.696" end="00:07:27.656" style="s2"><span style="s3">つい この間<br />プラターヌ博士のところで—</span></p> 
+   <p begin="00:07:27.739" end="00:07:28.740" style="s2"><span style="s3">もらった子なの</span></p> 
+   <p begin="00:07:29.950" end="00:07:32.536" style="s2"><span style="s3">そうだ　面白い話があるんだ</span></p> 
+   <p begin="00:07:32.619" end="00:07:34.621" style="s2"><span style="s3">プラターヌ博士が<br />教えてくれたんだけど—</span></p> 
+   <p begin="00:07:34.705" end="00:07:36.707" style="s2"><span style="s3">すっごいトレーナーがいるの</span></p> 
+   <p begin="00:07:36.790" end="00:07:37.833" style="s2"><span style="s3">ちょっと前にね</span></p> 
+   <p begin="00:07:37.916" end="00:07:41.378" style="s2"><span style="s3">研究所のガブリアスが<br />暴れたことがあったんだ</span></p> 
+   <p begin="00:07:41.461" end="00:07:44.006" style="s2"><span style="s3">（アラン）ガブリアス…<br />（マノン）知らない？</span></p> 
+   <p begin="00:07:44.089" end="00:07:46.049" style="s2"><span style="s3">大事件だったんだから</span></p> 
+   <p begin="00:07:46.133" end="00:07:49.428" style="s2"><span style="s3">でね ガブリアスを助けた<br />サトシっていうトレーナーが—</span></p> 
+   <p begin="00:07:49.511" end="00:07:51.638" style="s2"><span style="s3">ホントすごかったんだよ</span></p> 
+   <p begin="00:07:52.347" end="00:07:54.349" style="s2"><span style="s3">ミアレのプリズムタワーの<br />てっぺんから—</span></p> 
+   <p begin="00:07:54.433" end="00:07:58.437" style="s2"><span style="s3">ポケモンが落ちた時とか<br />自分も飛び出しちゃったんだよ</span></p> 
+   <p begin="00:07:58.520" end="00:08:02.482" style="s2"><span style="s3">あんなこと お互い<br />信頼し合ってないとできないよね</span></p> 
+   <p begin="00:08:05.277" end="00:08:07.112" style="s2"><span style="s3">（マノン）えっ？<br />（アラン）いや…</span></p> 
+   <p begin="00:08:07.487" end="00:08:10.616" style="s2"><span style="s3">（マノン）お兄さん 名前は？<br />（アラン）アランだ</span></p> 
+   <p begin="00:08:11.283" end="00:08:14.620" style="s2"><span style="s3">今は こいつと<br />メガシンカを極める旅をしている</span></p> 
+   <p begin="00:08:14.995" end="00:08:18.165" style="s2"><span style="s3">ねえねえ<br />メガシンカって進化のことなの？</span></p> 
+   <p begin="00:08:19.208" end="00:08:23.003" style="s2"><span style="s3">もしかしたら もしかして<br />さっきの黒いリザードンのこと？</span></p> 
+   <p begin="00:08:23.086" end="00:08:25.422" style="s2"><span style="s3">あっ… ああ　メガリザードンだ</span></p> 
+   <p begin="00:08:25.505" end="00:08:28.592" style="s2"><span style="s3">すっごいじゃん<br />あんな進化あるんだ</span></p> 
+   <p begin="00:08:28.675" end="00:08:31.345" style="s2"><span style="s3">（マノン）ハリさんも びっくりだね<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:08:31.428" end="00:08:33.347" style="s2"><span style="s3">ねえ ハリさんも ああなれる？</span></p> 
+   <p begin="00:08:33.430" end="00:08:34.890" style="s2"><span style="s3">さあな</span></p> 
+   <p begin="00:08:35.599" end="00:08:38.602" style="s2"><span style="s3">俺もメガシンカを<br />すべて知っているわけじゃない</span></p> 
+   <p begin="00:08:40.687" end="00:08:44.566" style="s2"><span style="s3">（プラターヌ）<br />メガシンカは ２つの石が<br />大きく関わっているようだ</span></p> 
+   <p begin="00:08:44.650" end="00:08:45.901" style="s2"><span style="s3">（アラン）石が２つ？</span></p> 
+   <p begin="00:08:46.318" end="00:08:49.238" style="s2"><span style="s3">トレーナーが持つ石と<br />ポケモンが持つ石</span></p> 
+   <p begin="00:08:49.905" end="00:08:52.074" style="s7"><span style="s3">２つの石が共鳴することで—</span></p> 
+   <p begin="00:08:52.157" end="00:08:55.244" style="s7"><span style="s3">ポケモンは<br />一時的に強大な力を得る</span></p> 
+   <p begin="00:08:56.662" end="00:08:58.872" style="s2"><span style="s3">（アラン）<br />でも あの力は どこから…</span></p> 
+   <p begin="00:08:59.539" end="00:09:01.375" style="s2"><span style="s3">人間が与えてるんでしょうか？</span></p> 
+   <p begin="00:09:01.458" end="00:09:04.169" style="s2"><span style="s3">（プラターヌ）<br />いや ポケモン自身の力だ</span></p> 
+   <p begin="00:09:04.253" end="00:09:07.589" style="s2"><span style="s3">人間は 石を使って<br />力を引き出すにすぎない</span></p> 
+   <p begin="00:09:07.881" end="00:09:10.968" style="s2"><span style="s3">人とポケモンとの間に<br />強い絆があればこそ—</span></p> 
+   <p begin="00:09:11.051" end="00:09:13.720" style="s2"><span style="s3">この現象が<br />起きるのではないかと思うんだ</span></p> 
+   <p begin="00:09:13.804" end="00:09:15.389" style="s2"><span style="s3">（アラン）絆ですか…</span></p> 
+   <p begin="00:09:16.181" end="00:09:20.936" style="s2"><span style="s3">では メガシンカとは 人間がいて<br />初めて成立するものと？</span></p> 
+   <p begin="00:09:21.478" end="00:09:25.691" style="s2"><span style="s3">（プラターヌ）うん<br />…とはいえ 謎は まだ多い</span></p> 
+   <p begin="00:09:26.233" end="00:09:30.445" style="s2"><span style="s3">ポケモンは 一度 進化したら<br />元には戻れないのが定説だった</span></p> 
+   <p begin="00:09:30.696" end="00:09:33.782" style="s2"><span style="s3">だが メガシンカは<br />この定説を覆す</span></p> 
+   <p begin="00:09:33.865" end="00:09:36.368" style="s2"><span style="s3">元の姿に戻ってしまうんだ</span></p> 
+   <p begin="00:09:36.451" end="00:09:40.872" style="s2"><span style="s3">さらに 疑問なのは<br />なぜ 戦う時だけなのか</span></p> 
+   <p begin="00:09:40.956" end="00:09:43.375" style="s2"><span style="s3">情報では メガシンカすると—</span></p> 
+   <p begin="00:09:43.458" end="00:09:45.877" style="s2"><span style="s3">タイプや特性が<br />変わるケースもあるらしい</span></p> 
+   <p begin="00:09:45.961" end="00:09:48.046" style="s2"><span style="s3">（ガブリアス）ガブー</span></p> 
+   <p begin="00:09:49.715" end="00:09:51.341" style="s2"><span style="s3">ガブ ガブ…</span></p> 
+   <p begin="00:09:51.425" end="00:09:53.343" style="s2"><span style="s3">（アラン）<br />タイプや特性が変わるなら—</span></p> 
+   <p begin="00:09:53.844" end="00:09:58.473" style="s2"><span style="s3">力の解放は ポケモン自身に<br />負担をかけるのかもしれませんね</span></p> 
+   <p begin="00:09:58.807" end="00:10:01.059" style="s2"><span style="s3">だから<br />バトルの時だけなのですか？</span></p> 
+   <p begin="00:10:01.310" end="00:10:03.020" style="s2"><span style="s3">その可能性もあるだろう</span></p> 
+   <p begin="00:10:03.895" end="00:10:06.481" style="s2"><span style="s3">いずれにせよ<br />サンプルが少なすぎるよ</span></p> 
+   <p begin="00:10:07.274" end="00:10:11.028" style="s2"><span style="s3">そうですね<br />他の地方では どうなんだろう？</span></p> 
+   <p begin="00:10:11.778" end="00:10:15.157" style="s2"><span style="s3">報告例は 今のところ<br />このカロス地方だけだ</span></p> 
+   <p begin="00:10:15.365" end="00:10:16.992" style="s2"><span style="s3">（ヒトカゲ）カゲ</span></p> 
+   <p begin="00:10:17.951" end="00:10:19.286" style="s2"><span style="s3">よしよし</span></p> 
+   <p begin="00:10:19.619" end="00:10:22.289" style="s2"><span style="s3">ポケモンは<br />メガシンカを通じて—</span></p> 
+   <p begin="00:10:22.372" end="00:10:24.374" style="s2"><span style="s3">俺たちに<br />何を伝えようとしてるのか…</span></p> 
+   <p begin="00:10:25.667" end="00:10:28.170" style="s2"><span style="s3">まさに それが僕のテーマだよ</span></p> 
+   <p begin="00:10:28.253" end="00:10:30.547" style="s2"><span style="s3">カロスで<br />ポケモン研究をする者として—</span></p> 
+   <p begin="00:10:30.630" end="00:10:33.258" style="s2"><span style="s3">避けては<br />通れないものだと思うんだ</span></p> 
+   <p begin="00:10:35.093" end="00:10:37.346" style="s2"><span style="s3">俺 石を探します</span></p> 
+   <p begin="00:10:37.596" end="00:10:38.764" style="s2"><span style="s3">旅に出るのかい？</span></p> 
+   <p begin="00:10:39.306" end="00:10:40.515" style="s2"><span style="s3">いいですよね 博士</span></p> 
+   <p begin="00:10:41.266" end="00:10:42.976" style="s2"><span style="s3">あ… ああ</span></p> 
+   <p begin="00:10:43.060" end="00:10:45.479" style="s2"><span style="s3">でも 定期的には報告してくれよ</span></p> 
+   <p begin="00:10:45.729" end="00:10:46.730" style="s2"><span style="s3">はい</span></p> 
+   <p begin="00:10:47.439" end="00:10:49.441" style="s2"><span style="s3">カゲ</span></p> 
+   <p begin="00:10:52.736" end="00:10:54.821" style="s2"><span style="s3">どうしたの？　ボーッとして</span></p> 
+   <p begin="00:10:55.030" end="00:10:57.449" style="s2"><span style="s3">（アラン）思い出していたんだ<br />（マノン）何を？</span></p> 
+   <p begin="00:10:58.158" end="00:11:00.535" style="s2"><span style="s3">（アラン）プラターヌ博士だ<br />（マノン）えっ？</span></p> 
+   <p begin="00:11:00.786" end="00:11:02.954" style="s2"><span style="s3">（アラン）<br />俺は 博士の助手だった</span></p> 
+   <p begin="00:11:03.038" end="00:11:06.249" style="s2"><span style="s3">（マノン）ホントに？<br />でも 博士の助手が なぜ旅を？</span></p> 
+   <p begin="00:11:06.333" end="00:11:07.334" style="s2"><span style="s3">（アラン）それは…</span></p> 
+   <p begin="00:11:07.417" end="00:11:09.169" style="s2"><span style="s3">（マノン）<br />ええっ なんで なんで？</span></p> 
+   <p begin="00:11:09.252" end="00:11:10.545" style="s2"><span style="s3">お前には関係ない</span></p> 
+   <p begin="00:11:10.629" end="00:11:15.092" style="s2"><span style="s3">（着信音）</span></p> 
+   <p begin="00:11:15.175" end="00:11:16.426" style="s2"><span style="s3">（アラン）アランです</span></p> 
+   <p begin="00:11:16.968" end="00:11:18.929" style="s2"><span style="s3">（男性）<span style="s1">次なる目的地だ</span></span></p> 
+   <p begin="00:11:23.809" end="00:11:26.103" style="s2"><span style="s3">（アラン）分かりました<br />（マノン）アラン？</span></p> 
+   <p begin="00:11:26.520" end="00:11:27.813" style="s2"><span style="s3">戻れ リザードン</span></p> 
+   <p begin="00:11:32.859" end="00:11:34.986" style="s2"><span style="s3">待って　まだ聞きたいことが…</span></p> 
+   <p begin="00:11:38.115" end="00:11:39.574" style="s2"><span style="s3">（ハリマロン）リマ</span></p> 
+   <p begin="00:11:40.158" end="00:11:42.744" style="s2"><span style="s3">（マノン）どうする？　ハリさん<br />（ハリマロン）リマリマ</span></p> 
+   <p begin="00:11:42.828" end="00:11:46.081" style="s2"><span style="s3">だよね 気になるもんね<br />さあ 行くよ</span></p> 
+   <p begin="00:11:46.164" end="00:11:47.999" style="s2"><span style="s3">（マノン）あっ あああ…<br />（ハリマロン）リマ？</span></p> 
+   <p begin="00:11:48.083" end="00:11:52.462" style="s2"><span style="s3">リマー　リマ リマ</span></p> 
+   <p begin="00:11:52.546" end="00:11:54.881" style="s2"><span style="s3">お世話かけます</span></p> 
+   <p begin="00:12:09.104" end="00:12:11.064" style="s2"><span style="s3">あれ？</span></p> 
+   <p begin="00:12:12.232" end="00:12:14.067" style="s2"><span style="s3">どこ行っちゃったんだろう？</span></p> 
+   <p begin="00:12:14.151" end="00:12:15.610" style="s2"><span style="s3">（ハリマロン）リマ…</span></p> 
+   <p begin="00:12:33.503" end="00:12:34.880" style="s2"><span style="s3">見つけた…</span></p> 
+   <p begin="00:12:38.341" end="00:12:39.926" style="s2"><span style="s3">間違いない</span></p> 
+   <p begin="00:12:40.927" end="00:12:43.638" style="s2"><span style="s3">（マノン）この中かな？<br />（ハリマロン）リマ…</span></p> 
+   <p begin="00:12:45.390" end="00:12:47.642" style="s2"><span style="s3">（マノン）あっ アラン 見っけ</span></p> 
+   <p begin="00:12:47.893" end="00:12:49.227" style="s2"><span style="s3">（アラン）まだいたのか？</span></p> 
+   <p begin="00:12:49.311" end="00:12:51.146" style="s2"><span style="s3">（マノン）何か探してたの？</span></p> 
+   <p begin="00:12:51.730" end="00:12:53.440" style="s2"><span style="s3">メガシンカに関わること？</span></p> 
+   <p begin="00:12:53.523" end="00:12:57.068" style="s2"><span style="s3">（アラン）お前 しつこいな<br />（ルイ）ちょっと待った</span></p> 
+   <p begin="00:12:59.154" end="00:13:01.865" style="s2"><span style="s3">それ メガストーンだろ？</span></p> 
+   <p begin="00:13:04.451" end="00:13:07.245" style="s2"><span style="s3">俺も それを<br />持ってこいって言われてんだ</span></p> 
+   <p begin="00:13:08.872" end="00:13:10.749" style="s2"><span style="s3">（アラン）あそこに隠れてろ<br />（マノン）うん</span></p> 
+   <p begin="00:13:10.957" end="00:13:14.336" style="s2"><span style="s3">（ルイ）そのメガストーン賭けて<br />俺と バトルしねえかい？</span></p> 
+   <p begin="00:13:14.419" end="00:13:16.046" style="s2"><span style="s3">（アラン）“やだ”と言ったら？</span></p> 
+   <p begin="00:13:16.129" end="00:13:20.217" style="s2"><span style="s3">そう つれないこと言うなよ<br />俺の相棒 ガブの字</span></p> 
+   <p begin="00:13:22.969" end="00:13:23.970" style="s2"><span style="s3">ガブ</span></p> 
+   <p begin="00:13:24.429" end="00:13:25.680" style="s2"><span style="s3">（アラン）ガブリアス…</span></p> 
+   <p begin="00:13:25.764" end="00:13:29.017" style="s2"><span style="s3">（ルイ）<br />メガシンカできるもん同士の<br />バトルだ</span></p> 
+   <p begin="00:13:30.352" end="00:13:33.480" style="s2"><span style="s3">俺も持ってんだ キーストーン</span></p> 
+   <p begin="00:13:34.648" end="00:13:37.108" style="s2"><span style="s3">ほおっ やる気になったようだな</span></p> 
+   <p begin="00:13:37.526" end="00:13:39.361" style="s2"><span style="s3">出てこい リザードン</span></p> 
+   <p begin="00:13:41.988" end="00:13:43.990" style="s2"><span style="s3">（リザードンの雄たけび）</span></p> 
+   <p begin="00:13:44.824" end="00:13:47.869" style="s2"><span style="s3">（アラン）じゃあ 初めっから<br />メガシンカでいこうぜ</span></p> 
+   <p begin="00:13:48.161" end="00:13:49.913" style="s2"><span style="s3">そう こなくっちゃ</span></p> 
+   <p begin="00:13:49.996" end="00:13:54.376" style="s2"><span style="s3">俺様は ドラゴン使いのルイ<br />うちのガブの字は 半端ねえぜ</span></p> 
+   <p begin="00:13:54.709" end="00:13:56.795" style="s2"><span style="s3">（アラン）俺のパートナーも<br />ドラゴンでな</span></p> 
+   <p begin="00:13:56.878" end="00:13:59.506" style="s2"><span style="s3">（ルイ）はあ？<br />何つうトーシローだよ</span></p> 
+   <p begin="00:13:59.589" end="00:14:01.383" style="s2"><span style="s3">リザードンは<br />ドラゴンじゃないぜ？</span></p> 
+   <p begin="00:14:01.967" end="00:14:04.135" style="s2"><span style="s3">どっちが素人だか…</span></p> 
+   <p begin="00:14:04.219" end="00:14:06.721" style="s2"><span style="s3">いいだろう<br />バトルだ リザードン</span></p> 
+   <p begin="00:14:06.805" end="00:14:09.015" style="s2"><span style="s3">解き放て メガシンカ</span></p> 
+   <p begin="00:14:10.475" end="00:14:12.727" style="s2"><span style="s3">（雄たけび）</span></p> 
+   <p begin="00:14:16.940" end="00:14:20.277" style="s2"><span style="s3">こっちも 遠慮なくいくぜ<br />目ん玉 ひんむいて よく見とけ</span></p> 
+   <p begin="00:14:20.360" end="00:14:22.487" style="s2"><span style="s3">ガブの字　メガシンカ</span></p> 
+   <p begin="00:14:24.155" end="00:14:28.118" style="s2"><span style="s3">（ガブリアス）ガーブー</span></p> 
+   <p begin="00:14:30.620" end="00:14:33.039" style="s2"><span style="s3">（マノン）パワー ビンビンに感じる<br />（ハリマロン）リマ…</span></p> 
+   <p begin="00:14:33.123" end="00:14:35.292" style="s2"><span style="s3">ドラゴンダイブ</span></p> 
+   <p begin="00:14:42.757" end="00:14:43.758" style="s2"><span style="s3">決まった</span></p> 
+   <p begin="00:14:48.179" end="00:14:49.180" style="s2"><span style="s3">何？</span></p> 
+   <p begin="00:14:49.431" end="00:14:50.640" style="s2"><span style="s3">かえんほうしゃ</span></p> 
+   <p begin="00:14:58.023" end="00:15:02.110" style="s2"><span style="s3">よっしゃあ<br />まだまだ　ダブルチョップ</span></p> 
+   <p begin="00:15:06.573" end="00:15:07.824" style="s2"><span style="s3">ドラゴンクロー</span></p> 
+   <p begin="00:15:30.889" end="00:15:34.643" style="s2"><span style="s3">（リザードンとガブリアスの<br />うめき声）</span></p> 
+   <p begin="00:15:38.647" end="00:15:39.648" style="s2"><span style="s3">（ルイ）ガブの字…</span></p> 
+   <p begin="00:15:41.024" end="00:15:43.693" style="s2"><span style="s3">（アラン）よくやった<br />（リザードン）ウオ</span></p> 
+   <p begin="00:15:43.777" end="00:15:44.778" style="s2"><span style="s3">覚えておけ</span></p> 
+   <p begin="00:15:45.945" end="00:15:49.699" style="s2"><span style="s3">こいつは メガシンカすると<br />ほのおとドラゴンタイプに変わる</span></p> 
+   <p begin="00:15:49.783" end="00:15:50.784" style="s2"><span style="s3">（ルイ）くっ…</span></p> 
+   <p begin="00:15:51.201" end="00:15:54.788" style="s2"><span style="s3">（マノン）すごい　また勝っちゃった<br />（ハリマロン）リマ…</span></p> 
+   <p begin="00:16:03.171" end="00:16:04.255" style="s2"><span style="s3">（マノン）わっ</span></p> 
+   <p begin="00:16:05.090" end="00:16:06.299" style="s2"><span style="s3">ついてくるな</span></p> 
+   <p begin="00:16:06.508" end="00:16:08.635" style="s2"><span style="s3">私の勝手でしょ</span></p> 
+   <p begin="00:16:11.179" end="00:16:12.263" style="s2"><span style="s3">（マノン）あっ…<br />（ハリマロン）リマ…</span></p> 
+   <p begin="00:16:12.972" end="00:16:15.767" style="s2"><span style="s3">（マノン）アランってさ<br />何か ちょっと怖い感じだけど—</span></p> 
+   <p begin="00:16:15.850" end="00:16:17.894" style="s2"><span style="s3">リザードンには<br />めちゃくちゃ優しいじゃん？</span></p> 
+   <p begin="00:16:17.977" end="00:16:20.230" style="s2"><span style="s3">やっぱ ポケモン<br />大好きなんだなって思うし</span></p> 
+   <p begin="00:16:20.313" end="00:16:21.606" style="s2"><span style="s3">悪い人じゃないし</span></p> 
+   <p begin="00:16:21.690" end="00:16:24.943" style="s2"><span style="s3">最強のメガシンカ使いみたいな<br />でっかい夢 持ってるし</span></p> 
+   <p begin="00:16:25.026" end="00:16:27.237" style="s2"><span style="s3">私の理想型なわけよ</span></p> 
+   <p begin="00:16:27.320" end="00:16:29.239" style="s2"><span style="s3">褒めるか 落とすか<br />どっちかにしてくれ</span></p> 
+   <p begin="00:16:29.864" end="00:16:32.283" style="s2"><span style="s3">それに 私 メガシンカしたい</span></p> 
+   <p begin="00:16:32.367" end="00:16:35.161" style="s2"><span style="s3">どんどん ポケモンゲットして<br />強く育てて—</span></p> 
+   <p begin="00:16:35.245" end="00:16:37.038" style="s2"><span style="s3">アランとリザードンに勝ちたい</span></p> 
+   <p begin="00:16:37.122" end="00:16:38.498" style="s2"><span style="s3">はい そうですか</span></p> 
+   <p begin="00:16:38.581" end="00:16:41.292" style="s2"><span style="s3">（マノン）何よ その言い方<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:16:41.584" end="00:16:42.627" style="s2"><span style="s3">あっ</span></p> 
+   <p begin="00:16:43.336" end="00:16:45.672" style="s2"><span style="s3">（フラベベ）ラベラベ ラベラベ</span></p> 
+   <p begin="00:16:46.089" end="00:16:48.675" style="s2"><span style="s3">フラベベだ　ハリさん ゲットよ</span></p> 
+   <p begin="00:16:49.509" end="00:16:51.594" style="s2"><span style="s3">いた　ミサイルばり</span></p> 
+   <p begin="00:16:51.678" end="00:16:54.639" style="s2"><span style="s3">（ハリマロン）リーマ</span></p> 
+   <p begin="00:16:59.644" end="00:17:02.188" style="s2"><span style="s3">（フラべべ）ラベー<br />（ハリマロン）リリリリリ…</span></p> 
+   <p begin="00:17:03.398" end="00:17:05.316" style="s2"><span style="s3">（ハリマロン）リマ リマ<br />（マノン）つるのムチ</span></p> 
+   <p begin="00:17:08.403" end="00:17:10.989" style="s2"><span style="s3">（フラベベ）ラベラベ ラベラベ<br />（マノン）もう すばしっこい</span></p> 
+   <p begin="00:17:11.072" end="00:17:14.242" style="s2"><span style="s3">（マノン）なんで当たんないの？<br />（アラン）苦戦してるな</span></p> 
+   <p begin="00:17:15.326" end="00:17:18.204" style="s2"><span style="s3">毒や混乱させるような技は<br />持ってないのか？</span></p> 
+   <p begin="00:17:18.288" end="00:17:19.330" style="s2"><span style="s3">あるけど…</span></p> 
+   <p begin="00:17:19.414" end="00:17:21.666" style="s2"><span style="s3">（アラン）使え<br />動きを鈍らせるぞ</span></p> 
+   <p begin="00:17:21.750" end="00:17:22.792" style="s2"><span style="s3">分かった</span></p> 
+   <p begin="00:17:22.876" end="00:17:25.587" style="s2"><span style="s3">（マノン）ハリさん どくどく<br />（ハリマロン）リーマ</span></p> 
+   <p begin="00:17:29.132" end="00:17:30.341" style="s2"><span style="s3">ラベラベ ラベラベ…</span></p> 
+   <p begin="00:17:30.633" end="00:17:32.635" style="s2"><span style="s3">すごい　効いてる</span></p> 
+   <p begin="00:17:32.719" end="00:17:34.637" style="s2"><span style="s3">よそ見するな　ボールを投げろ</span></p> 
+   <p begin="00:17:34.721" end="00:17:38.266" style="s2"><span style="s3">はい　お願い モンスターボール</span></p> 
+   <p begin="00:17:46.316" end="00:17:49.861" style="s2"><span style="s3">やった　野生のゲット 第１号</span></p> 
+   <p begin="00:17:49.944" end="00:17:52.280" style="s2"><span style="s3">（アラン）<br />いいから 早く 毒を消してやれ</span></p> 
+   <p begin="00:17:52.363" end="00:17:54.949" style="s2"><span style="s3">（マノン）あっ　そうだった</span></p> 
+   <p begin="00:17:57.786" end="00:18:00.705" style="s2"><span style="s3">（ジョーイ）はい フラベベは<br />すっかり元気になりましたよ</span></p> 
+   <p begin="00:18:00.789" end="00:18:02.248" style="s2"><span style="s3">（マノン）<br />ありがとう ジョーイさん</span></p> 
+   <p begin="00:18:02.332" end="00:18:03.541" style="s2"><span style="s3">（マノン）プクリン<br />（プクリン）プク</span></p> 
+   <p begin="00:18:04.042" end="00:18:05.960" style="s2"><span style="s3">フラちゃん これから よろしくね</span></p> 
+   <p begin="00:18:06.044" end="00:18:07.045" style="s2"><span style="s3">（フラべべ）ラベラベ</span></p> 
+   <p begin="00:18:07.670" end="00:18:11.883" style="s2"><span style="s3">あっ そうだ　私と一緒に来た<br />トレーナーは知りませんか？</span></p> 
+   <p begin="00:18:11.966" end="00:18:13.510" style="s2"><span style="s3">もう 出かけましたよ</span></p> 
+   <p begin="00:18:13.593" end="00:18:14.803" style="s2"><span style="s3">（マノン）えっ<br />（ジョーイ）この近くに—</span></p> 
+   <p begin="00:18:14.886" end="00:18:17.263" style="s2"><span style="s3">四天王 ズミさんの<br />お店があると言ったら…</span></p> 
+   <p begin="00:18:17.639" end="00:18:19.766" style="s2"><span style="s3">四天王のズミ様ですって？</span></p> 
+   <p begin="00:18:26.856" end="00:18:29.067" style="s2"><span style="s3">（マノン）急いで ハリさん<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:18:29.150" end="00:18:30.527" style="s2"><span style="s3">（マノン）うわっ</span></p> 
+   <p begin="00:18:37.784" end="00:18:39.661" style="s2"><span style="s3">（ズミ）いらっしゃいませ<br />ズミと申します</span></p> 
+   <p begin="00:18:40.286" end="00:18:42.664" style="s2"><span style="s3">あなたの裏メニューを試したい</span></p> 
+   <p begin="00:18:47.085" end="00:18:50.547" style="s2"><span style="s3">（ズミ）分かりました<br />ただし 決して甘くはないですよ</span></p> 
+   <p begin="00:18:50.630" end="00:18:52.048" style="s2"><span style="s3">そっちのほうが好みだ</span></p> 
+   <p begin="00:18:52.131" end="00:18:54.425" style="s2"><span style="s3">ちょっと ちょっと<br />置いてかないでよ</span></p> 
+   <p begin="00:18:54.509" end="00:18:57.136" style="s2"><span style="s3">（ハリマロン）リマリマ<br />（ズミ）こちらの方は？</span></p> 
+   <p begin="00:18:57.220" end="00:19:00.265" style="s2"><span style="s3">旅の仲間です …って 本物？</span></p> 
+   <p begin="00:19:01.307" end="00:19:03.726" style="s2"><span style="s3">では お嬢さんも ご一緒に</span></p> 
+   <p begin="00:19:11.734" end="00:19:15.488" style="s2"><span style="s3">ズミさんのポケモンも<br />メガシンカするのかな？</span></p> 
+   <p begin="00:19:16.072" end="00:19:19.242" style="s2"><span style="s3">（ズミ）失礼ながら 私が<br />みずタイプの使い手と知って—</span></p> 
+   <p begin="00:19:19.325" end="00:19:20.618" style="s2"><span style="s3">ほのおタイプを？</span></p> 
+   <p begin="00:19:20.702" end="00:19:22.120" style="s2"><span style="s3">（アラン）ああ 知ってる</span></p> 
+   <p begin="00:19:22.203" end="00:19:25.790" style="s2"><span style="s3">だが 俺は リザードンと一緒に<br />最強でありたい</span></p> 
+   <p begin="00:19:25.874" end="00:19:28.042" style="s2"><span style="s3">タイプや相性が どうあろうと—</span></p> 
+   <p begin="00:19:28.126" end="00:19:31.504" style="s2"><span style="s3">俺と こいつの絆は<br />そんな理屈を超えていける</span></p> 
+   <p begin="00:19:31.838" end="00:19:34.924" style="s2"><span style="s3">我が心に応えよ キーストーン</span></p> 
+   <p begin="00:19:35.717" end="00:19:38.303" style="s2"><span style="s3">進化を超えろ　メガシンカ！</span></p> 
+   <p begin="00:19:38.386" end="00:19:41.556" style="s2"><span style="s3">（雄たけび）</span></p> 
+   <p begin="00:19:44.183" end="00:19:45.351" style="s2"><span style="s3">頼もしい</span></p> 
+   <p begin="00:19:45.435" end="00:19:48.813" style="s2"><span style="s3">ポケモンバトルに<br />全身全霊を打ち込む その姿…</span></p> 
+   <p begin="00:19:48.897" end="00:19:50.565" style="s2"><span style="s3">まさに芸術です</span></p> 
+   <p begin="00:19:50.648" end="00:19:52.609" style="s2"><span style="s3">超えてみせてほしいものです</span></p> 
+   <p begin="00:19:52.859" end="00:19:55.612" style="s2"><span style="s3">（アラン）四天王の力<br />存分に見せてもらおう</span></p> 
+   <p begin="00:19:55.695" end="00:19:56.696" style="s2"><span style="s3">ドラゴンクロー</span></p> 
+   <p begin="00:19:57.739" end="00:19:59.449" style="s2"><span style="s3">（リザードン）ウオオオ…</span></p> 
+   <p begin="00:20:00.241" end="00:20:04.162" style="s2"><span style="s3">まずは 前菜といきましょう<br />ハイドロポンプ 連射</span></p> 
+   <p begin="00:20:05.580" end="00:20:07.332" style="s2"><span style="s3">（カメックス）ガメ<br />（リザードン）オオ…</span></p> 
+   <p begin="00:20:08.791" end="00:20:09.918" style="s2"><span style="s3">ロケットずつき</span></p> 
+   <p begin="00:20:10.793" end="00:20:12.837" style="s2"><span style="s3">ガメ</span></p> 
+   <p begin="00:20:18.676" end="00:20:21.137" style="s2"><span style="s3">うひょ〜 両方とも すごいパワー</span></p> 
+   <p begin="00:20:21.471" end="00:20:25.350" style="s2"><span style="s3">スピード パワー 申し分ない<br />すばらしい歯ごたえだよ</span></p> 
+   <p begin="00:20:25.767" end="00:20:27.810" style="s2"><span style="s3">（アラン）そろそろ<br />メインディッシュをいただこう</span></p> 
+   <p begin="00:20:28.144" end="00:20:31.814" style="s2"><span style="s3">そうですね<br />味わってもらいましょう</span></p> 
+   <p begin="00:20:31.898" end="00:20:34.108" style="s2"><span style="s3">芸術的な メインディッシュを</span></p> 
+   <p begin="00:20:34.567" end="00:20:37.236" style="s2"><span style="s3">カメックス メガシンカ</span></p> 
+   <p begin="00:20:37.612" end="00:20:41.199" style="s2"><span style="s3">（カメックス）ガメメ！</span></p> 
+   <p begin="00:20:42.867" end="00:20:44.577" style="s2"><span style="s3">やっぱり メガシンカした</span></p> 
+   <p begin="00:20:44.661" end="00:20:46.037" style="s2"><span style="s3">はがねのつばさ</span></p> 
+   <p begin="00:20:49.499" end="00:20:50.500" style="s2"><span style="s3">りゅうのはどう</span></p> 
+   <p begin="00:20:50.917" end="00:20:52.418" style="s2"><span style="s3">ガメ</span></p> 
+   <p begin="00:21:01.052" end="00:21:03.805" style="s2"><span style="s3">（ズミ）メガカメックスの特性<br />メガランチャー</span></p> 
+   <p begin="00:21:03.888" end="00:21:07.308" style="s2"><span style="s3">はどう技の威力が<br />カメックスの時より 高まります</span></p> 
+   <p begin="00:21:07.558" end="00:21:09.811" style="s2"><span style="s3">味わっていただけましたか？</span></p> 
+   <p begin="00:21:09.894" end="00:21:13.815" style="s2"><span style="s3">さらに メガシンカのみずの威力を<br />体感していただきます</span></p> 
+   <p begin="00:21:14.023" end="00:21:17.735" style="s2"><span style="s3">（ズミ）ハイドロポンプ<br />（カメックス）ガーメ</span></p> 
+   <p begin="00:21:20.905" end="00:21:21.906" style="s2"><span style="s3">突っ込め</span></p> 
+   <p begin="00:21:26.285" end="00:21:28.329" style="s2"><span style="s3">（ズミ）グロウパンチ<br />（アラン）かえんほうしゃ</span></p> 
+   <p begin="00:21:35.294" end="00:21:37.171" style="s2"><span style="s3">（カメックス）ガメ…</span></p> 
+   <p begin="00:21:38.006" end="00:21:39.841" style="s2"><span style="s3">ほのおは効かないわけじゃない</span></p> 
+   <p begin="00:21:40.675" end="00:21:41.676" style="s2"><span style="s3">ガメ</span></p> 
+   <p begin="00:21:41.759" end="00:21:42.802" style="s2"><span style="s3">（リザードン）オオ…</span></p> 
+   <p begin="00:21:44.804" end="00:21:46.055" style="s2"><span style="s3">ドラゴンクロー</span></p> 
+   <p begin="00:21:51.936" end="00:21:55.273" style="s2"><span style="s3">久々に<br />骨のある とってもいい素材だ</span></p> 
+   <p begin="00:21:55.356" end="00:21:58.317" style="s2"><span style="s3">だが これで終わりにしよう<br />りゅうのはどう</span></p> 
+   <p begin="00:22:06.492" end="00:22:07.577" style="s2"><span style="s3">（リザードンのうめき声）</span></p> 
+   <p begin="00:22:12.623" end="00:22:14.459" style="s2"><span style="s3">（ズミ）勝負ありましたね</span></p> 
+   <p begin="00:22:15.460" end="00:22:17.086" style="s2"><span style="s3">ズミさん 強すぎ…</span></p> 
+   <p begin="00:22:19.088" end="00:22:21.299" style="s2"><span style="s3">リザードン ご苦労さま</span></p> 
+   <p begin="00:22:21.382" end="00:22:23.009" style="s2"><span style="s3">（リザードン）オオ…</span></p> 
+   <p begin="00:22:23.092" end="00:22:25.053" style="s2"><span style="s3">四天王には 及ばないか</span></p> 
+   <p begin="00:22:25.511" end="00:22:28.056" style="s2"><span style="s3">（ズミ）不利な相性という<br />条件の中でも—</span></p> 
+   <p begin="00:22:28.139" end="00:22:32.643" style="s2"><span style="s3">私たちを追い詰める その力<br />見事でした</span></p> 
+   <p begin="00:22:43.237" end="00:22:44.822" style="s2"><span style="s3">（マノン）待ってよ アラン</span></p> 
+   <p begin="00:22:44.906" end="00:22:47.784" style="s2"><span style="s3">（マノン）うわっ<br />（ハリマロン）リーマ…</span></p> 
+   <p begin="00:22:48.159" end="00:22:50.411" style="s2"><span style="s3">（アラン）お前<br />いいかげんにしろよ</span></p> 
+   <p begin="00:22:50.495" end="00:22:53.456" style="s2"><span style="s3">ノンノン<br />私も 絶対 メガシンカする</span></p> 
+   <p begin="00:22:53.539" end="00:22:55.833" style="s2"><span style="s3">するのは お前じゃなくて<br />ポケモンだ</span></p> 
+   <p begin="00:22:55.917" end="00:22:59.170" style="s2"><span style="s3">分かってるって<br />あの石 私も探すの</span></p> 
+   <p begin="00:22:59.253" end="00:23:01.297" style="s2"><span style="s3">アランと一緒なら 見つかるよね</span></p> 
+   <p begin="00:23:01.380" end="00:23:02.840" style="s2"><span style="s3">（アラン）勝手にしろ</span></p> 
+   <p begin="00:23:03.424" end="00:23:04.842" style="s2"><span style="s3">あっ　あ… ちょっと…</span></p> 
+   <p begin="00:23:04.926" end="00:23:05.718" style="s2"><span style="s3">（ハリマロン）リ… リマ<br />（マノン）ああっ</span></p> 
+   <p begin="00:23:05.718" end="00:23:07.136" style="s2"><span style="s3">（ハリマロン）リ… リマ<br />（マノン）ああっ</span></p> 
+   <p begin="00:23:05.718" end="00:23:07.136" region="縦右">♪〜</p> 
+   <p begin="00:23:07.136" end="00:23:07.970" region="縦右">♪〜</p> 
+   <p begin="00:23:07.970" end="00:23:11.724" region="縦右">♪〜</p> 
+   <p begin="00:23:07.970" end="00:23:11.724" style="s2"><span style="s3">（ナレーション）<br /><span style="s1">メガシンカするポケモンたちは</span><br /><span style="s1">まだまだ増えていく</span></span></p> 
+   <p begin="00:23:11.724" end="00:23:12.683" style="s2"><span style="s3">（ナレーション）<br /><span style="s1">メガシンカするポケモンたちは</span><br /><span style="s1">まだまだ増えていく</span></span></p> 
+   <p begin="00:23:13.059" end="00:23:16.562" region="縦右" style="s1">未知のメガシンカよ<br />目覚めよ</p> 
+   <p begin="00:23:16.896" end="00:23:18.815" region="縦右" style="s1">そして<br />この世界を—</p> 
+   <p begin="00:23:18.898" end="00:23:22.318" style="s7"><span style="s3">強大な その力で<br />満たすのだ</span></p> 
+   <p begin="00:23:34.205" end="00:23:36.457" region="縦右">（プラターヌ）<br /><span style="s1">メガシンカという</span><br /><span style="s1">大きな力が—</span></p> 
+   <p begin="00:23:37.750" end="00:23:41.379" region="横上" style="s2"><span style="s3">人間とポケモンに<br />どんな影響を 与えていくのか</span></p> 
+   <p begin="00:23:41.462" end="00:23:44.298" region="横上" style="s2"><span style="s3">私たちは<br />変わりゆく時代にいるんだよ</span></p> 
+   <p begin="00:23:44.966" end="00:23:47.260" region="縦右" style="s1">アラン<br />解き明かそう</p> 
+   <p begin="00:23:47.593" end="00:23:48.928" region="縦右" style="s1">メガシンカを</p> 
+   <p begin="00:23:56.519" end="00:24:00.898" style="s2"><span style="s3">〜♪</span></p> 
+   <p begin="00:24:03.693" end="00:24:07.446" style="s2"><span style="s3">（サトシ）さあ みんな<br />一緒に行こうぜ　次の冒険へ</span></p> 
+   <p begin="00:24:07.864" end="00:24:09.949" style="s7"><span style="s3">海といえば<br />みずタイプのポケモン</span></p> 
+   <p begin="00:24:10.491" end="00:24:12.869" style="s2"><span style="s3">（セレナ）<br /><span style="s1">みずタイプのポケモンといったら</span><br /><span style="s1">水族館</span></span></p> 
+   <p begin="00:24:13.286" end="00:24:16.289" style="s2"><span style="s3">（ユリーカ）<span style="s1">えっ 水族館？</span><br /><span style="s1">行きた〜い！</span></span></p> 
+   <p begin="00:24:16.372" end="00:24:18.541" style="s2"><span style="s3">（セレナ）<span style="s1">ん？</span><br /><span style="s1">あれ 何だろう？</span></span></p> 
+   <p begin="00:24:18.624" end="00:24:22.086" style="s2"><span style="s3">（サトシ）<span style="s1">黄金の…</span><br />（ユリーカ）<span style="s1">コイキングの像？</span></span></p> 
+   <p begin="00:24:22.587" end="00:24:25.006" style="s2"><span style="s3">（サトシ）<br /><span style="s1">次回 「ポケットモンスター ＸＹ」</span></span></p> 
+   <p begin="00:24:25.089" end="00:24:27.717" style="s7"><span style="s3">“黄金のコイキングを<br />釣り上げろ！！”</span></p> 
+   <p begin="00:24:27.800" end="00:24:30.428" style="s7"><span style="s3">みんなもポケモン ゲットだぜ！</span></p> 
+  </div> 
+ </body> </tt>
