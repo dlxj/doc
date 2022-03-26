@@ -30,7 +30,12 @@ module.exports = {
             }
             let nth = match[1]
 
-            let season = ttml.match(/[\\\/](S\d+)[\\\/]/)
+            let match_season = ttml.match(/[\\\/](S\d+)[\\\/]/)
+            if (match_season == null) {
+                throw `match_season not correct. ${ttml}`
+            }
+
+            let season = match_season[1]
 
             for (let ssa of ssas) {
 
@@ -40,7 +45,11 @@ module.exports = {
                 }
                 let nth2 = match2[1]
 
-                let season2 = ssa.match(/[\\\/](S\d+)[\\\/]/)
+                let match_season2 = ssa.match(/[\\\/](S\d+)[\\\/]/)
+                if (match_season2 == null) {
+                    throw `match_season2 not correct. ${ssa}`
+                }
+                let season2 = match_season2[1]
 
                 if (season == season2) {
 
