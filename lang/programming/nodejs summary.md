@@ -715,6 +715,37 @@ print("text字段Base64解码后=>" + finalResult)
 
 
 
+#### form-data
+
+- https://github.com/mikeal/bent/issues/121
+
+```
+let FormData = require('form-data')
+let bent = require('bent')
+
+     let postData = new FormData()
+      postData.append('OperateUserID', userID)
+      postData.append('OperateUserName', `${userID}`)
+      postData.append('bookID', bookID)
+      postData.append('type', 3)
+      postData.append('beginpath', `${bookID}/`)
+      postData.append('filepath', `小截图/basename`)
+      postData.append('fileName', basename)
+      postData.append('fileName', basename)
+      postData.append('file', fs.createReadStream(fullpath))
+      
+      let post = bent('http://xxxx:xxxx', 'POST', 'json', 200)
+      let response = await post('/api/xxxxx', postData, postData.getHeaders())
+
+      if (response.status == 200) {
+        let b = 1
+      } else {
+        return this.msg(301, `${fullpath} ${response.msg}`)
+      }
+```
+
+
+
 
 
 
@@ -2208,6 +2239,12 @@ let { base,dir,ext,name,root} = path.parse(mlpath)
 ```
 
 
+
+## rename
+
+```
+fs.renameSync( oldPath, newPath )
+```
 
 
 
@@ -5294,9 +5331,14 @@ vue --version
 vue init webpack pmweb
 cd pmweb
 
-新建 vue.config.js // 根目录下，和package.json 同级
+新建 vue.config.js // 根目录下，和package.json 同级 // public: 'http://xxx.77:80' 指定公址
 module.exports = {
-  runtimeCompiler: true
+    assetsDir: 'static',
+    runtimeCompiler: true,
+    devServer: {
+        disableHostCheck: true,
+        public: 'http://xxx.77:80'
+    }
 }
 
 package.json 下的devDependencies 加入开发依赖包(必须是这下面)
@@ -5313,6 +5355,14 @@ package.json 的scripts 改成这样
 npm run dev  # listening at localhost:8080
 
 npm run build  # build for production
+
+
+指定端口:
+在 node_modules@vue\cli-service\lib\commands\serve.js:  108行
+
+const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
+
+
 ```
 
 
@@ -5362,6 +5412,168 @@ export default {
   }
 }
 </script>
+```
+
+
+
+## window对象
+
+- https://blog.csdn.net/qq_41337100/article/details/107103205
+  - vue里dom节点和window对象
+
+- https://blog.csdn.net/weixin_40126227/article/details/88338487
+  - 绑定方法到WINDOW对象
+
+
+
+## 指定端口号 
+
+- https://forum.vuejs.org/t/topic/71983
+
+```
+在 node_modules@vue\cli-service\lib\commands\serve.js:  108行
+
+const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
+
+
+# /root/pmweb/vue.config.js
+module.exports = {
+    assetsDir: 'static',
+    runtimeCompiler: true,
+    devServer: {
+        disableHostCheck: true,
+        public: 'http://xxx.77:80'
+    }
+}
+```
+
+
+
+## cloudflare
+
+- https://justo.cyou/posts/cloudflare%E4%BB%A3%E7%90%86%E5%85%BC%E5%AE%B9%E7%9A%84%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3/
+  - Cloudflare代理兼容的网络端口
+
+```
+http
+80
+8080
+8880
+2052
+2082
+2086
+2095
+```
+
+```
+https
+443
+2053
+2083
+2087
+2096
+8443
+```
+
+```
+# 无缓存的端口
+2052
+2053
+2082
+2083
+2086
+2087
+2095
+2096
+8880
+8443
+```
+
+
+
+## 原生事件调非原生
+
+```
+# 自定义事件调用原生事件
+this.$emit('click', param)
+```
+
+```
+# 原生事件调用自定义事件
+mounted(){
+    window.play = function(elm_id) {
+      let auid = `audio_${elm_id}`
+      var igid = `img_${elm_id}`
+
+      let au = document.getElementById(auid)
+      let ig = document.getElementById(igid)
+      if (au.paused) {
+        au.play()
+        ig.src = img_play2
+        // this.$nextTick(() => {
+        //   // DOM 渲染完后回调
+        //   //debugger
+        // })
+        
+        au.addEventListener("pause", function () {
+            ig.src = img_play
+        })
+      }
+      // var au = <HTMLAudioElement>document.getElementById(auid);
+      // //var ig = <HTMLImageElement>document.getElementById("img"+id);
+
+      // console.log(`openImg clicked. ${elm_id}`); debugger
+    }
+    let search = this.search
+    window.next = async function() {
+      await search()
+    }
+  }
+```
+
+
+
+## component
+
+
+
+### select 
+
+- https://masteringjs.io/tutorials/vue/select
+
+```
+<script src="https://unpkg.com/vue@next"></script>
+<div style = "outline-style: solid" id="example">
+  <select v-model="selected">
+    <option disabled value="">Please Select</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span style="padding-left:5%">Your Choice is: {{selected}}</span>
+</div>
+<script>
+Vue.createApp({
+  data() {
+    return {
+      selected: ''
+    };
+  }
+}).mount('#example');
+</script>
+```
+
+
+
+```
+import Vue from 'vue';
+import vSelect from 'vue-select';
+
+vSelect.props.reduce.default = function (option) {
+    //  whatever you need to do
+}
+
+Vue.component('vSelect', vSelect);
 ```
 
 

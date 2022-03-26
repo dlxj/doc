@@ -1,9 +1,14 @@
 <template>
   <div class="hello">
-    <img src="../assets/logo.png">
+    <!-- <img src="../assets/play.gif"> -->
     keywd
     <!-- <input type="text" v-for="(item,i) of items" v-model="items[i]" :key="i"> <button @click="search">search</button> -->
     <input v-model="keywdModel.keywd" placeholder="edit me" />  <button @click="search">search</button>
+    <p></p>
+    <select v-model="keywdModel.lang_type">
+      <option>jp</option>
+      <option>zh</option>
+    </select>
     <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
   
     <p></p>
@@ -35,16 +40,21 @@
 
 <script>
 
-// import config from '@/config.js'
+import config from '@/config.js'
+let host = config.server.host
+
+import img_play from '../assets/play.gif'
+import img_play2 from '../assets/play2.gif'
+
 
 const formurlencoded = require('form-urlencoded')
 const bent = require('bent')
 
 export default {
-  name: 'HelloWorld',
+  name: 'index',
   data () {
     return {
-      keywdModel:  { keywd: '' },
+      keywdModel:  { keywd: '', lang_type:'jp' },
       resultModel: { result: '' },
       resultsModel: [],
       isResultShow: false,
@@ -61,16 +71,18 @@ export default {
     async search () {
 
       let keywd = this.keywdModel.keywd
+      let lang_type = this.keywdModel.lang_type
 
       if (keywd == '') {
         return
       }
 
-      let host = 'localhost:81'
+      //let host = 'localhost:81'
       let url = `http://${host}`
       let json = {
         keywd,
-        type: 'anime'
+        type: 'anime',
+        lang_type
       }
       let formurlencoded_json = formurlencoded(json)
 
@@ -85,12 +97,25 @@ export default {
         const data = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
-          let result = `${jp}<img src="../assets/logo.png"><br>${zh}`; //debugger
+          let elm_id = `${type}_${name}_${seasion}_${id}`
+          let au_url = `${url}/getaudio?type=${type}&name=${name}&seasion=${seasion}&id=${id}`
+          
+          //  
+          let result = `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="play('${elm_id}')"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
+          //let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push( {result} )
         }
+        data.push({result:`<br><button onclick="next()">next</button>`})
 
+        
+        // let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
+        // let audio_path = path.join(audio_dir, `${id}.mp3`)
+        // http://127.0.0.1:80/getaudio?type=anime&name=danganronpa&seasion=S01&id=1
 
-        this.resultsModel = data //response.data //[{"result":'2'},{"result":'3'},{"result":'4'}] //response.data
+        // <audio id="@($"audio{row.id}")" src="@($"{url}")" type="audio/mpeg" preload="auto"></audio>
+        // onclick="openImg()"
+
+        this.resultsModel = data
 
         //this.$set(this.resultModel, 'result', result)  // 强制重绘
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
@@ -109,7 +134,35 @@ export default {
 
       console.log('hited.')
     }
+  },
+  mounted(){
+    window.play = function(elm_id) {
+      let auid = `audio_${elm_id}`
+      var igid = `img_${elm_id}`
 
+      let au = document.getElementById(auid)
+      let ig = document.getElementById(igid)
+      if (au.paused) {
+        au.play()
+        ig.src = img_play2
+        // this.$nextTick(() => {
+        //   // DOM 渲染完后回调
+        //   //debugger
+        // })
+        
+        au.addEventListener("pause", function () {
+            ig.src = img_play
+        })
+      }
+      // var au = <HTMLAudioElement>document.getElementById(auid);
+      // //var ig = <HTMLImageElement>document.getElementById("img"+id);
+
+      // console.log(`openImg clicked. ${elm_id}`); debugger
+    }
+    let search = this.search
+    window.next = async function() {
+      await search()
+    }
   }
   // watch: {
 
@@ -223,5 +276,64 @@ a {
   color: #42b983;
 }
 </style>
+
+
+interface Window {
+    Music: any;
+}
+
+function Play(element, flag) {
+    var dom = document.querySelector(element);
+    if (flag) {
+        dom.play();
+    }
+    else {
+        dom.pause();
+    }
+}
+
+function GetMusicTime(element) {
+    var dom = document.querySelector(element);
+    let obj = {
+        currentTime: dom.currentTime,
+        duration: dom.duration
+    }
+    let json = JSON.stringify(obj);
+
+    return json
+}
+
+function SetMusicTime(element, time) {
+    var dom = document.querySelector(element);
+    dom.currentTime = time;
+}
+
+window.Music = {
+    //print: Print,
+    play: Play,
+    getMusicTime: GetMusicTime,
+    setMusicTime: SetMusicTime
+}
+
+function playaudio(id) {
+    var au = <HTMLAudioElement>document.getElementById("audio"+id);
+    var ig = <HTMLImageElement>document.getElementById("img"+id);
+
+    if (au.paused) {
+        au.play();
+        ig.src = "images/play2.gif";
+        au.addEventListener("pause", function () {
+            ig.src = "images/play.gif";
+        });
+    }
+
+    /*
+     
+     document.getElementById('img').setAttribute('src', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==');
+     
+     */
+}
+
+
 ここ
 -->

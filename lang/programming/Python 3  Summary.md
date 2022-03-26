@@ -798,6 +798,25 @@ print(result.hexdigest())
 
 
 
+### stream
+
+```
+'''
+    PIL 转 bytes
+'''
+img_bytes  = BytesIO() # 这就是内存流
+img = Image.open('test.jpg', mode='r')
+img.save(img_bytes, format='JPEG')
+img_bytes = img_bytes.getvalue()
+print(type(img_bytes))
+```
+
+
+
+
+
+
+
 ## OS
 
 
@@ -8159,6 +8178,8 @@ if __name__ == '__main__':
 
     imgData = np.fromfile('./密密麻麻.bmp', dtype=np.uint8)
     img = cv2.imdecode(imgData, -1)
+    # image = cv2.imdecode(np.fromfile('./cleaned.jpg',dtype=np.uint8), -1)
+
 ```
 
 
@@ -8268,6 +8289,27 @@ cv2.imwrite('./ttttttttttttttttttt.jpg', rotated)  # 成功，opencv 保存 img 
 
 
 
+## 卷积
+
+```
+import cv2
+import numpy as np
+  
+
+image = cv2.imdecode(np.fromfile('./cleaned.jpg',dtype=np.uint8), -1)
+
+# 卷积, 只保留水平线
+kernel1 = np.array([ [1], [-1] ])
+img = cv2.filter2D(src=image, ddepth=-1, kernel=kernel1)
+  
+cv2.imshow('Original', image)
+cv2.imshow('conv', img)
+  
+cv2.waitKey()
+```
+
+
+
 
 
 ## PIL、cv2、bytes 图片格式互转换
@@ -8346,6 +8388,428 @@ img_numpy = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读
  _, img_encode = cv2.imencode('.jpg', img_numpy)
 img_bytes = img_encode.tobytes()
 ```
+
+
+
+## OpenCV 直线检测
+
+- https://gist.github.com/darkedges/a4f30eb1233ad17007a18dd7372b5b5c
+
+
+
+### 面对直线，你说霍夫线变换是万能的吗
+
+
+
+```
+
+"""
+https://mp.weixin.qq.com/s?__biz=MzA4ODgyMDg0MQ==&mid=100001057&idx=1&sn=ebfd3cf30ffb3a48909bd309fa59f82d&chksm=1025182727529131c5c63d02663bfc517b89c23f4884c4d49334fee27d12947b792e9b36643f#rd
+面对直线，你说霍夫线变换是万能的吗
+
+https://www.geeksforgeeks.org/line-detection-python-opencv-houghline-method/?ref=gcse
+
+doc\lang\programming\opencv summary.md
+
+"""
+
+import numpy as np
+import cv2
+
+"""
+虽然python 3 使用统一编码解决了中文字符串的问题，但在使用opencv中imread函数读取中文路径图像文件时仍会报错
+此时可借助于numpy 先将文件数据读取出来，然后使用opencv中imdecode函数将其解码成图像数据。此方法对python 2 和3均使用。
+"""
+
+if __name__ == '__main__':
+
+    imgData = np.fromfile('./填空题.png', dtype=np.uint8)
+    img_origin = cv2.imdecode(imgData, -1)
+    img_rgb = cv2.cvtColor(np.asarray(img_origin), cv2.COLOR_BGRA2RGB)
+
+    # 转灰度图
+    img_gray = cv2.cvtColor(np.asarray(img_origin), cv2.COLOR_BGR2GRAY)   #cv2.COLOR_RGB2BGR
+    print(type(img_gray))
+
+    w = img_gray.shape[0]
+    h = img_gray.shape[1]
+
+    # slice 子矩阵，既剪裁图像
+    img_crop = img_gray[0:w-30, 0:h-70]
+
+    # 二值化
+    ret, img_binary = cv2.threshold(img_crop, 92, 255, cv2.THRESH_BINARY_INV)
+    # imshow("1:二值操作", binaryImage)
+
+    # 开操作(将文字这些密集的“孔洞”给腐蚀掉，仅留下直线)
+    rect_kernel = cv2.getStructuringElement(
+        cv2.MORPH_RECT, (20, 2))  # 定义了20*2 大小的矩形核
+    img_opening = cv2.morphologyEx(img_binary, cv2.MORPH_OPEN, rect_kernel)
+
+    # 膨胀加粗
+    rect_kernel2 = cv2.getStructuringElement(
+        cv2.MORPH_RECT, (3, 3))  # 定义了20*2 大小的矩形核
+    img_dilate = cv2.dilate(img_opening, rect_kernel2)
+
+    #edges = cv2.Canny(img_dilate,50,150,apertureSize=3)
+
+
+    # Apply HoughLinesP method to
+    # to directly obtain line end points
+    lines = cv2.HoughLinesP(
+        img_dilate,  # Input edge image
+        1,  # Distance resolution in pixels
+        np.pi/180,  # Angle resolution in radians
+        threshold=30,  # Min number of votes for valid line
+        minLineLength=20,  # Min allowed length of line
+        maxLineGap=0  # Max allowed gap between line for joining them
+        )
+
+    #img_color = cv2.cvtColor(img_origin, cv2.COLOR_BGR2RGB)
+
+
+    for points in lines:
+      # Extracted points nested in the list
+      x1,y1,x2,y2=points[0]
+      # Draw the lines joing the points
+      # On the original image
+      #cv2.line(img_origin, (x1,y1),(x2,y2),(0,0,255, 255), 2)  # 原图是四通道的BGRA(蓝绿红 + alpha 透明度)
+      cv2.line(img_rgb, (x1,y1),(x2,y2),(0,0,255), 2)  # 看来无论原图怎么样，cv2 的三个通道顺序永远都是: BGR
+      
+
+    cv2.imshow("origin", img_origin)
+    cv2.imshow("croped", img_crop)
+    cv2.imshow("binary", img_binary)
+    cv2.imshow("opening", img_opening)
+    cv2.imshow("dilate", img_dilate)  
+    cv2.imshow("result", img_rgb)
+
+    cv2.waitKey(0)
+
+
+
+    """
+
+cpp origin
+
+
+# include <iostream>
+# include <opencv2/opencv.hpp>
+
+using namespace std;
+using namespace cv;
+
+int main()
+{
+  Mat srcImage, dstImage, binaryImage;
+  srcImage = imread("原图.png",0);  
+  imshow("原图", srcImage);
+  
+  waitKey(0);
+  return 0;
+}
+
+ //剪裁图片
+  Mat roiImage = srcImage(Rect(0, 0, srcImage.cols - 70, srcImage.rows - 30));
+  imshow("0:抠图操作", roiImage);
+
+    //对图像进行二值化
+  threshold(roiImage, binaryImage, 92, 255, THRESH_BINARY_INV );
+  imshow("1:二值操作", binaryImage);
+
+
+  Mat morhpImage;
+  Mat kernel = getStructuringElement(MORPH_RECT, Size(20, 2), Point(-1, -1));//自定义一个核
+  morphologyEx(binaryImage, morhpImage, MORPH_OPEN, kernel, Point(-1, -1));//开操作
+  imshow("2:开操作", morhpImage);
+
+
+  Mat dilateImage;
+  kernel = getStructuringElement(MORPH_RECT, Size(3, 3), Point(-1, -1));
+  dilate(morhpImage, dilateImage, kernel);
+  imshow("3:膨胀操作", dilateImage);
+
+  
+  vector<Vec4i> lines;
+  HoughLinesP(dilateImage, lines, 1, CV_PI / 180.0, 30, 20.0, 0);
+  dstImage = srcImage.clone();
+  cvtColor(dstImage, dstImage, COLOR_GRAY2BGR);
+  for (size_t t = 0; t < lines.size(); t++) {
+    Vec4i ln = lines[t];
+    line(dstImage, Point(ln[0], ln[1]), Point(ln[2], ln[3]), Scalar(0, 0, 255), 2, 8, 0);
+  }
+  imshow("4:绘制直线", dstImage);
+
+    """
+
+
+```
+
+
+
+### pokemon detector
+
+- https://gist.github.com/darkedges/a4f30eb1233ad17007a18dd7372b5b5c
+- https://wolframlanguagereviews.org/
+
+<img src="Python 3  Summary.assets/image-20220325085646084.png" alt="image-20220325085646084" style="zoom:25%;" />
+
+```
+# pokemondetector.py
+
+#!/usr/bin/env python
+
+# http://wolframlanguagereviews.org/2018/10/21/pokemon-card-detector/
+
+import numpy as np
+import cv2
+from collections import defaultdict
+import sys
+from matplotlib import pyplot as plt
+
+
+def order_points(pts):
+    # initialzie a list of coordinates that will be ordered
+    # such that the first entry in the list is the top-left,
+    # the second entry is the top-right, the third is the
+    # bottom-right, and the fourth is the bottom-left
+    rect = np.zeros((4, 2), dtype="float32")
+
+    # the top-left point will have the smallest sum, whereas
+    # the bottom-right point will have the largest sum
+    s = pts.sum(axis=1)
+    rect[0] = pts[np.argmin(s)]
+    rect[2] = pts[np.argmax(s)]
+
+    # now, compute the difference between the points, the
+    # top-right point will have the smallest difference,
+    # whereas the bottom-left will have the largest difference
+    diff = np.diff(pts, axis=1)
+    rect[1] = pts[np.argmin(diff)]
+    rect[3] = pts[np.argmax(diff)]
+
+    # return the ordered coordinates
+    return rect
+
+
+def four_point_transform(image, pts):
+    # obtain a consistent order of the points and unpack them
+    # individually
+    rect = order_points(pts)
+    (tl, tr, br, bl) = rect
+
+    # compute the width of the new image, which will be the
+    # maximum distance between bottom-right and bottom-left
+    # x-coordiates or the top-right and top-left x-coordinates
+    widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
+    widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+    maxWidth = max(int(widthA), int(widthB))
+
+    # compute the height of the new image, which will be the
+    # maximum distance between the top-right and bottom-right
+    # y-coordinates or the top-left and bottom-left y-coordinates
+    heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
+    heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+    maxHeight = max(int(heightA), int(heightB))
+
+    # now that we have the dimensions of the new image, construct
+    # the set of destination points to obtain a "birds eye view",
+    # (i.e. top-down view) of the image, again specifying points
+    # in the top-left, top-right, bottom-right, and bottom-left
+    # order
+    dst = np.array([
+        [0, 0],
+        [maxWidth - 1, 0],
+        [maxWidth - 1, maxHeight - 1],
+        [0, maxHeight - 1]], dtype="float32")
+
+    # compute the perspective transform matrix and then apply it
+    M = cv2.getPerspectiveTransform(rect, dst)
+    warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
+
+    # return the warped image
+    return warped
+
+
+def segment_by_angle_kmeans(lines, k=2, **kwargs):
+    """
+    Group lines by their angle using k-means clustering.
+
+    Code from here:
+    https://stackoverflow.com/a/46572063/1755401
+    """
+
+    # Define criteria = (type, max_iter, epsilon)
+    default_criteria_type = cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER
+    criteria = kwargs.get('criteria', (default_criteria_type, 10, 1.0))
+
+    flags = kwargs.get('flags', cv2.KMEANS_RANDOM_CENTERS)
+    attempts = kwargs.get('attempts', 10)
+
+    # Get angles in [0, pi] radians
+    angles = np.array([line[0][1] for line in lines])
+
+    # Multiply the angles by two and find coordinates of that angle on the Unit Circle
+    pts = np.array([[np.cos(2*angle), np.sin(2*angle)]
+                   for angle in angles], dtype=np.float32)
+
+    # Run k-means
+    if sys.version_info[0] == 2:
+        # python 2.x
+        ret, labels, centers = cv2.kmeans(pts, k, criteria, attempts, flags)
+    else:
+        # python 3.x, syntax has changed.
+        labels, centers = cv2.kmeans(
+            pts, k, None, criteria, attempts, flags)[1:]
+
+    labels = labels.reshape(-1)  # Transpose to row vector
+
+    # Segment lines based on their label of 0 or 1
+    segmented = defaultdict(list)
+    for i, line in zip(range(len(lines)), lines):
+        segmented[labels[i]].append(line)
+
+    segmented = list(segmented.values())
+
+    return segmented
+
+
+def intersection(line1, line2):
+    """
+    Find the intersection of two lines 
+    specified in Hesse normal form.
+
+    Returns closest integer pixel locations.
+
+    See here:
+    https://stackoverflow.com/a/383527/5087436
+    """
+
+    rho1, theta1 = line1[0]
+    rho2, theta2 = line2[0]
+    A = np.array([[np.cos(theta1), np.sin(theta1)],
+                  [np.cos(theta2), np.sin(theta2)]])
+    b = np.array([[rho1], [rho2]])
+    x0, y0 = np.linalg.solve(A, b)
+    x0, y0 = int(np.round(x0)), int(np.round(y0))
+
+    return [[x0, y0]]
+
+
+def segmented_intersections(lines):
+    """
+    Find the intersection between groups of lines.
+    """
+
+    intersections = []
+    for i, group in enumerate(lines[:-1]):
+        for next_group in lines[i+1:]:
+            for line1 in group:
+                for line2 in next_group:
+                    intersections.append(intersection(line1, line2))
+
+    return intersections
+
+
+def drawLines(img, lines, color=(255, 0, 0)):
+    """
+    Draw lines on an image
+    """
+    for line in lines:
+        for rho, theta in line:
+            a = np.cos(theta)
+            b = np.sin(theta)
+            x0 = a*rho
+            y0 = b*rho
+            x1 = int(x0 + 1000*(-b))
+            y1 = int(y0 + 1000*(a))
+            x2 = int(x0 - 1000*(-b))
+            y2 = int(y0 - 1000*(a))
+            cv2.line(img, (x1, y1), (x2, y2), color, 1)
+
+
+def detect_edge(img):
+    img_blurred = cv2.GaussianBlur(img, (5, 5), 0)
+    canny = cv2.Canny(img_blurred, 100, 200, None, 3)
+    return canny
+
+
+img = cv2.imread('pokemon.png')[:, :, ::-1]
+# cv2.imshow("original image", img)
+# cv2.waitKey()
+
+edged = detect_edge(img.copy())
+# cv2.imshow("edge detection", edged)
+# cv2.waitKey()
+
+contours, hierarchy = cv2.findContours(
+    edged, cv2.RETR_TREE,  cv2.CHAIN_APPROX_SIMPLE)
+sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
+
+img_w, img_h = np.shape(img)[:2]
+CARD_MIN_AREA = (img_w * img_h) * .35
+img2 = np.zeros((img_w, img_h, 3), dtype=np.uint8)
+img4 = np.zeros((img_w, img_h, 3), dtype=np.uint8)
+
+largest_item = sorted_contours[0]
+hull = cv2.convexHull(largest_item)
+size = cv2.contourArea(hull)
+epsilon = 0.1*cv2.arcLength(hull, True)
+peri = cv2.arcLength(hull, True)
+approx = cv2.approxPolyDP(hull, epsilon, True)
+if ((size > CARD_MIN_AREA) and (4 <= len(approx) <= 5)):
+    cv2.drawContours(img2, [hull], -1, (255, 255, 255), 1)
+
+grayimg = cv2.cvtColor(img2, cv2.COLOR_RGB2GRAY)
+# cv2.imshow("filtered edges", grayimg)
+# cv2.waitKey()
+
+lines = cv2.HoughLines(grayimg, 1, np.pi/83, 73)
+
+# Draw all Hough lines in red
+img_with_all_lines = np.copy(img)
+drawLines(img_with_all_lines, lines)
+# cv2.imshow("Hough lines", img_with_all_lines)
+# cv2.waitKey()
+
+# Cluster line angles into 2 groups (vertical and horizontal)
+segmented = segment_by_angle_kmeans(lines, 2)
+
+# Find the intersections of each vertical line with each horizontal line
+intersections = segmented_intersections(segmented)
+
+img_with_segmented_lines = np.copy(img)
+
+# https://pastiebin.com/5f36425b7ae3d
+# Draw intersection points in magenta
+for point in intersections:
+    pt = (point[0][0], point[0][1])
+    img_with_segmented_lines = cv2.circle(
+        img_with_segmented_lines, pt, 3, (255, 0, 0), -1)
+# cv2.imshow("Segmented lines", img_with_segmented_lines)
+# cv2.waitKey()
+
+src_pts = np.array([intersections[0], intersections[1],
+                   intersections[2], intersections[3]], dtype=np.int32)
+warped = four_point_transform(img, src_pts.reshape(4, 2))
+# cv2.imshow("Perpesctive transform", warped)
+# cv2.waitKey()
+
+titles = ['Original Image', 'Edge Detection', 'Filtered Edges',
+          'Hough Lines', 'Segmented Lines', 'Perspective Transform']
+images = [img, edged, grayimg, img_with_all_lines,
+          img_with_segmented_lines, warped]
+for i in range(len(titles)):
+    plt.subplot(2, 3, i+1)
+    plt.imshow(images[i], 'gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+plt.show()
+```
+
+
+
+
 
 
 

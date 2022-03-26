@@ -614,11 +614,28 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 ```c++
 
-// 对所有Components 着色
+// 对所有Components 着色  C++
+// doc\lang\programming\cpp\opencv\connectedComponentsWithStats
+
+/*
+
+环境: win10 + vs2019 + opencv3
+  
+    附加包含目录
+        E:\opencv3\opencv\build\include
+        E:\opencv3\opencv\build\include\opencv2
+
+    附加库目录
+        E:\opencv3\opencv\build\x64\vc15\lib
+
+*/
 
 #include <iostream>
 #include <opencv.hpp>
 #include <opencv2/imgproc.hpp>
+
+#pragma comment(lib, "opencv_world3414d.lib")  // for debug
+//#pragma comment(lib, "opencv_world3414.lib") // for release
 
 using namespace cv;
 using namespace std;
@@ -630,7 +647,7 @@ int main()
     cv::cvtColor(img, img, CV_BGR2GRAY);
 
     Mat src, src_color, g_src, labels, stats, centroids;
-    int num = connectedComponentsWithStats(img, labels, stats, centroids);
+    int num = cv::connectedComponentsWithStats(img, labels, stats, centroids);
     vector<Vec3b> color(num + 1);
     color[0] = Vec3b(0, 0, 0);  //背景色
     for (int m = 1; m <= num; m++) {
@@ -650,6 +667,7 @@ int main()
 
     std::cout << "Hello World!\n";
 }
+
 ```
 
 
@@ -1370,6 +1388,56 @@ int main()
             Cv2.WaitKey();
         }
 ```
+
+
+
+# 旋转图像
+
+```
+
+    /// 旋转图像(优化旋转后模糊的问题)
+    public static Mat matRotate2(Mat src, float angle)
+    {
+        //using (Mat src = Cv2.ImRead("D:\\rotate_src.jpg"))
+        Mat dst = new Mat();
+
+        var centreX = Math.Floor( (Double)(src.Cols / 2) );
+        var centreY = Math.Floor( (Double)(src.Rows / 2) );
+
+        Point2f center = new Point2f((float)centreX, (float)centreY);
+        Mat rotationMatrix = Cv2.GetRotationMatrix2D(center, angle, 1);  // 计算旋转矩阵
+        var cosofRotationMatrix = Math.Abs(rotationMatrix.At<double>(0, 0) );
+        var sinofRotationMatrix = Math.Abs(rotationMatrix.At<double>(0, 1) );
+
+        // 计算旋转后新图片的宽度
+        var newImageHeight = Math.Floor((src.Height * sinofRotationMatrix) +
+              (src.Width * cosofRotationMatrix));
+
+        var newImageWidth = Math.Floor((src.Height * cosofRotationMatrix) +
+              (src.Width * sinofRotationMatrix));
+
+        // 更新旋转矩阵
+        rotationMatrix.At<double>(0, 2) += (newImageWidth / 2) - centreX;
+        rotationMatrix.At<double>(1, 2) += (newImageHeight / 2) - centreY;
+
+        // 执行实际旋转
+        Cv2.WarpAffine(src, dst, rotationMatrix, new OpenCvSharp.Size(newImageWidth, newImageHeight));
+
+
+        // 重设新图片宽度，让它和源图片的宽度保持一至
+        Mat dst2 = new Mat();
+        Cv2.Resize(dst, dst2, new OpenCvSharp.Size(src.Width, src.Height), 0, 0, InterpolationFlags.Nearest);
+
+        //Cv2.ImWrite("D:\\rotate_dst.jpg", dst2);
+
+        rotationMatrix.Dispose();
+        dst.Dispose();
+
+        return dst2;
+    }
+```
+
+
 
 
 

@@ -151,4 +151,12 @@ SELECT p."id", p.jp_ruby, p.zh, p.v_jp, p.v_zh, p.seasion, p."name" FROM danganr
 ffmpeg -i "E:\videos\anime\pokemon\S14\Best_Wishes\1.mkv" -y -map 0:s:0 -f srt pipe:1
 ffmpeg -i "/mnt/videos/anime/pokemon/S14/Best_Wishes/1.mkv" -y -map 0:s:0 -f srt pipe:1
 
+
+re = await tempDB.query("create extension pgroonga;")
+re = await tempDB.query("create extension pg_jieba;")
+re = await tempDB.query("CREATE INDEX pgroonga_jp_index ON pokemon USING pgroonga (jp);")
+re = await tempDB.query("CREATE INDEX pgroonga_jpmecab_index ON pokemon USING pgroonga (jp_mecab);")
+re = await tempDB.query("CREATE INDEX animename_index ON pokemon (name);")
+re = await tempDB.query("CREATE INDEX episode_index ON pokemon (episode);")  // nth ji
+
 */

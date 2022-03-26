@@ -47,6 +47,13 @@ Object.defineProperty(global, 'serviceCache', {
     }
 })
 
+let libCache = {}  // lib 供api, service, lib 调用
+Object.defineProperty(global, 'libCache', {
+    get() {
+        return libCache
+    }
+})
+
 let services = {}  // 所有的service 存在这里，service 只能由api 调用
 Object.defineProperty(global, 'services', {
     get() {
@@ -179,6 +186,24 @@ module.exports = async function () {
 
                 lastobj[name] = lib
 
+                // for (let [key, value] of Object.entries(lib)) {  
+                if (lib['libs'] === undefined) { // lib 可以调用其他的lib 
+                    Object.defineProperty(lib, "libs", {
+                        get() {
+                            return global.libs
+                        }
+                    })
+                }
+                // }
+
+                //global.libCache[servicePath] = service
+                // if (lib['libs'] === undefined) {
+                //     Object.defineProperty(lib, "libs", {
+                //         get() {
+                //             return global.libs
+                //         }
+                //     })
+                // }
             } else {
 
                 if (!(name in lastobj)) {
@@ -361,6 +386,21 @@ module.exports = async function () {
         }
     }
     
+
+    // libs 注入 libs
+    // for (let libPath in global.libs) {
+
+    //     let a = 1
+    //     if (service['libs'] === undefined) {
+    //         Object.defineProperty(service, "libs", {
+    //             get() {
+    //                 return global.libs
+    //             }
+    //         })
+    //     }
+
+    // }
+
     // 务必只初始化一次
     await global.libs.mecab.init()
     
