@@ -8,12 +8,20 @@ module.exports = {
 
         let aa = this
 
-        let m4s = this.libs.files.allfiles(rootssa, 'ssa')
-
-
+        let ssas = this.libs.files.allfiles(rootssa, 'ssa')
 
         let ttml2s = this.libs.files.allfiles(rootttml2, 'ttml2')
+        // remove space
+        for (let ttml of ttml2s) {
+            let { base,dir,ext,name,root} = path.parse(ttml)
+            let withoutSpace = base.replace(/\s/g, '')
+            if (withoutSpace != base) {
+                let newname = path.join(dir, withoutSpace)
+                fs.renameSync( ttml, newname )
+            }
+        }
 
+        ttml2s = this.libs.files.allfiles(rootttml2, 'ttml2')
         for (let ttml of ttml2s) {
 
             let match= ttml.match(/(\d+)\./)
@@ -22,21 +30,26 @@ module.exports = {
             }
             let nth = match[1]
 
-            for (let m4 of m4s) {
+            for (let ssa of ssas) {
 
-                let match2 = m4.match(/E(\d+) - Amazon/)
+                let match2 = ssa.match(/\](\d+)\.chs/)
                 if (match == null) {
-                    throw `name not correct. ${m4}`
+                    throw `name not correct. ${ssa}`
                 }
                 let nth2 = match2[1]
 
                 if (Number(nth) == Number(nth2)) {
 
-                    //ttml
                     let { base,dir,ext,name,root} = path.parse(ttml)
-                    let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(m4)
+                    let withoutSpace = base.replace(/\s/g, '')
+                    if (withoutSpace != base) {
+                        //let newname = path.join(dir, withoutSpace)
+                        //fs.renameSync( ttml, newname )
+                    }
 
-                    let newname = `${name}.m4`
+                    let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(ssa)
+
+                    let newname = `${name}.ssa`
                     let newpath = path.join(dir2, newname)
 
                     fs.renameSync( m4, newpath )
