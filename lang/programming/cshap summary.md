@@ -8040,6 +8040,14 @@ private void btnSave_Click(object sender, EventArgs e)
 
 
 
+# UGUI
+
+
+
+- https://www.raywenderlich.com/6570-introduction-to-unity-ui-part-1
+
+
+
 # VS Code
 
 
