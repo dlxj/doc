@@ -41,18 +41,12 @@ module.exports = {
                 if (Number(nth) == Number(nth2)) {
 
                     let { base,dir,ext,name,root} = path.parse(ttml)
-                    let withoutSpace = base.replace(/\s/g, '')
-                    if (withoutSpace != base) {
-                        //let newname = path.join(dir, withoutSpace)
-                        //fs.renameSync( ttml, newname )
-                    }
-
                     let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(ssa)
 
                     let newname = `${name}.ssa`
                     let newpath = path.join(dir2, newname)
 
-                    fs.renameSync( m4, newpath )
+                    fs.renameSync( ssa, newpath )
                 }
 
             }
