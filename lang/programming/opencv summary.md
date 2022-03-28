@@ -678,9 +678,9 @@ int main()
 
 
 
-```
+```c#
 // 对所有Components 着色  CSharp
-// doc\lang\programming\cpp\opencv\connectedComponentsWithStats
+// doc\lang\programming\csharp\opencv\connectedComponentsWithStats
 
 
 // 对所有Components 着色  CSharp
