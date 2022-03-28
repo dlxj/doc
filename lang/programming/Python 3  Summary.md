@@ -3035,6 +3035,87 @@ sorted(trank_res, key=lambda x: x['index'], reverse=False)
 
 
 
+## 随机数
+
+
+
+```
+random.random()
+用来随机生成一个0到1之间的浮点数，包括零。
+
+In [1]: import random
+
+In [2]: random.random()
+Out[2]: 0.15790797219589303
+randint(a, b)
+用来生成[a,b]之间的随意整数，包括两个边界值。
+
+In [12]: import random
+
+In [13]: random.randint(1,6)
+Out[13]: 1
+random.uniform(a,b)
+用来生成[a,b]之间的随意浮点数，包括两个边界值。
+
+In [14]: import random
+
+In [15]: random.uniform(1,6)
+Out[15]: 5.497873150216069
+choice(seq)
+从一个非空序列选出随机一个元素。seq泛指list，tuple，字符串等
+
+In [16]: import random
+
+In [17]: List = [1,2,3,4,5,6]
+In [18]: random.choice(List)
+Out[18]: 1
+randrange(start, stop[, step = 1])
+这个就是random和range函数的合二为一了。但注意，range用法有变。
+
+In [27]: import random
+
+In [28]: random.randrange(1,6)
+Out[28]: 3
+random.shuffle(x[,random])
+正如函数名所表示的意思，shuffle，洗牌，将一个列表中的元素打乱。
+
+In [36]: import random
+
+In [37]: List = [1,2,3,4,5,6]
+In [38]: random.shuffle(List)
+In [39]: print(List)
+[2, 1, 6, 4, 5, 3]
+random.sample(sequence,k)
+sample，样品，从有序列表中选k个作为一个片段返回。
+
+In [41]: import random
+
+In [42]: List = [1,2,3,4,5,6]
+In [43]: random.sample(List,3)
+Out[43]: [4, 6, 3]
+random.seed ( [x] )
+x:改变随机数生成器的种子seed。如果你不了解其原理，你不必特别去设定seed，Python会帮你选择seed。使用同一个种子，每次生成的随机数序列都是相同的。
+
+In [48]: import random
+
+In [49]: random.seed(10)
+In [50]: print("Random number with seed 10: ", random.random())
+Random number with seed 10:  0.5714025946899135
+
+In [51]: random.seed(10)
+In [52]: print("Random number with seed 10: ", random.random())
+Random number with seed 10:  0.5714025946899135
+
+In [53]: random.seed(10)
+In [54]: print("Random number with seed 10: ", random.random())
+Random number with seed 10:  0.5714025946899135
+关于随机数种子，请参考：Python下探究随机数的产生原理和算法
+```
+
+
+
+
+
 ## Numpy
 
 

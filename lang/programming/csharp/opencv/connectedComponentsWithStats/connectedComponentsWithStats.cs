@@ -4,7 +4,7 @@ using OpenCvSharp;
 
 namespace connectedComponentsWithStats
 {
-    class Program
+    class connectedComponentsWithStats
     {
         static void Main(string[] args)
         {
