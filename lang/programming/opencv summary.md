@@ -604,13 +604,13 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 
 
-# 对所有Components 着色
+# 对所有Components 着色(三语)
 
 
 
 <img src="opencv summary.assets/small3.jpg" alt="image-20210602102807446" style="zoom: 33%;" />
 
-
+<img src="opencv summary.assets/image-20220328153908746.png" alt="image-20220328153908746" style="zoom:33%;" />
 
 ```c++
 
@@ -682,8 +682,10 @@ int main()
 // 对所有Components 着色  CSharp
 // doc\lang\programming\csharp\opencv\connectedComponentsWithStats
 
-
-// 对所有Components 着色  CSharp
+/*
+win10 + vs2019 + 
+OpenCvSharp4.Windows 4.5.5.20211231 (NuGet安装)
+*/
 using System;
 using System.Collections.Generic;
 using OpenCvSharp;
