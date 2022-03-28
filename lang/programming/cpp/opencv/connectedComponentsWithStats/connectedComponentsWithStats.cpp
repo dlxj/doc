@@ -35,7 +35,8 @@ int main()
     vector<Vec3b> color(num + 1);
     color[0] = Vec3b(0, 0, 0);  //背景色
     for (int m = 1; m <= num; m++) {
-        color[m] = Vec3b(rand() % 256, rand() % 256, rand() % 256);
+        color[m] = Vec3b(rand() % 256, rand() % 256, rand() % 256); // rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。
+            //RAND_MAX 是 <stdlib.h> 头文件中的一个宏，它用来指明 rand() 所能返回的随机数的最大值。C语言标准并没有规定 RAND_MAX 的具体数值，只是规定它的值至少为 32767。
         //if (stats.at<int>(m - 1, CC_STAT_AREA) < 30)
             //color[m] = Vec3b(0, 0, 0);
     }
@@ -43,13 +44,15 @@ int main()
     for (int x = 0; x < img.rows; x++)
         for (int y = 0; y < img.cols; y++)
         {
-            int label = labels.at<int>(x, y);//注意labels是int型，不是uchar.
+            int label = labels.at<int>(x, y); //注意labels是int型，不是uchar.
+                // 图像总共有 num 个连通块, labels 会告诉你每一个坐标属于哪一个连通块
             src_color.at<Vec3b>(x, y) = color[label];
+                // color 总共分配了 num + 1 种随机颜色, 每一个连通块都能分到一个随机色 
         }
     imshow("labelMap", src_color);
     cv::waitKey();
 
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
 }
 
 
