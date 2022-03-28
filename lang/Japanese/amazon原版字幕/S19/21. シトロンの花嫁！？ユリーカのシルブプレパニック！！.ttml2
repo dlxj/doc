@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:version="2" xml:lang="jp"> 
+ <head> 
+  <styling> 
+   <initial tts:fontSize="4vh" /> 
+   <initial tts:lineHeight="5vh" /> 
+   <initial tts:showBackground="whenActive" /> 
+   <style tts:textAlign="center" xml:id="s1"></style> 
+   <style tts:textAlign="start" xml:id="s2"></style> 
+   <style tts:ruby="container" xml:id="s3"></style> 
+   <style tts:ruby="base" xml:id="s4"></style> 
+   <style tts:ruby="text" tts:rubyPosition="after" xml:id="s5"></style> 
+   <style tts:ruby="text" tts:rubyPosition="before" xml:id="s6"></style> 
+   <style tts:fontShear="16.78842%" xml:id="s7"></style> 
+   <style tts:fontShear="16.78842%" tts:textAlign="center" xml:id="s8"></style> 
+  </styling> 
+  <layout> 
+   <region tts:displayAlign="after" tts:extent="80vw 15vh" tts:position="center bottom 10vh" xml:id="横下" /> 
+   <region tts:extent="15vw 80vh" tts:position="right 10vw center" tts:writingMode="tbrl" xml:id="縦右" /> 
+   <region tts:displayAlign="after" tts:extent="15vw 80vh" tts:position="left 10vw center" tts:writingMode="tbrl" xml:id="縦左" /> 
+  </layout> 
+ </head> 
+ <body region="横下" xml:space="preserve"> 
+  <div> 
+   <p begin="00:00:02.002" end="00:00:04.380" style="s1"><span style="s2">（寝息）</span></p> 
+   <p begin="00:00:04.505" end="00:00:05.923" style="s1"><span style="s2">（ノック）</span></p> 
+   <p begin="00:00:06.048" end="00:00:07.341" style="s1"><span style="s2">（シトロン）ユリーカ</span></p> 
+   <p begin="00:00:08.092" end="00:00:09.552" style="s1"><span style="s2">（ユリーカ）う～ん…</span></p> 
+   <p begin="00:00:09.885" end="00:00:11.470" style="s1"><span style="s2">（シトロン）<br />いつまで寝てるんだい？</span></p> 
+   <p begin="00:00:12.805" end="00:00:14.849" style="s1"><span style="s2">（シトロン）起きて ユリーカ<br />（ユリーカ）ああ…</span></p> 
+   <p begin="00:00:15.933" end="00:00:18.894" style="s1"><span style="s2">（ユリーカ）<br />お兄ちゃん なに？　その格好</span></p> 
+   <p begin="00:00:19.019" end="00:00:21.981" style="s1"><span style="s2">（シトロン）何って<br />今日 <span style="s3"><span style="s4">僕</span><span style="s5">ぼく</span></span>は<span style="s3"><span style="s4">結婚</span><span style="s5">けっこん</span></span>するんだよ</span></p> 
+   <p begin="00:00:22.523" end="00:00:24.608" style="s1"><span style="s2">け… <span style="s3"><span style="s4">結婚</span><span style="s6">けっこん</span></span>？</span></p> 
+   <p begin="00:00:24.734" end="00:00:28.487" style="s1"><span style="s2">そう ミアレジムのことは<br />ユリーカに任せるから</span></p> 
+   <p begin="00:00:28.612" end="00:00:29.447" style="s1"><span style="s2">よろしく<span style="s3"><span style="s4">頼</span><span style="s6">たの</span></span>むよ</span></p> 
+   <p begin="00:00:29.572" end="00:00:32.950" style="s1"><span style="s2">えーっ！<br />ちょっと待って お兄ちゃん</span></p> 
+   <p begin="00:00:33.075" end="00:00:35.119" style="s1"><span style="s2">さあ 早く<span style="s3"><span style="s4">着替</span><span style="s6">きが</span></span>えて</span></p> 
+   <p begin="00:00:35.786" end="00:00:38.038" style="s1"><span style="s2">うんと おめかししてくるんだよ</span></p> 
+   <p begin="00:00:38.164" end="00:00:41.208" style="s1"><span style="s2">えっ ええ… えーっ！</span></p> 
+   <p begin="00:00:42.084" end="00:00:47.381" style="s1"><span style="s2">（<span style="s3"><span style="s4">鐘</span><span style="s6">かね</span></span>の音）</span></p> 
+   <p begin="00:00:51.469" end="00:00:54.805" style="s1"><span style="s2">おおお… お兄ちゃん<br />ホントに<span style="s3"><span style="s4">結婚</span><span style="s5">けっこん</span></span>しちゃうの？</span></p> 
+   <p begin="00:00:54.930" end="00:00:56.724" style="s1"><span style="s2">お兄ちゃん</span></p> 
+   <p begin="00:00:58.476" end="00:01:01.520" style="s1"><span style="s2">お兄ちゃーん！</span></p> 
+   <p begin="00:01:01.937" end="00:01:02.855" style="s1"><span style="s2">あっ</span></p> 
+   <p begin="00:01:05.649" end="00:01:11.363" style="s1"><span style="s2">はぁ… まさか お兄ちゃんがね<br />ないない 絶対ない</span></p> 
+   <p begin="00:01:11.489" end="00:01:13.199" style="s1"><span style="s2">（あくび）</span></p> 
+   <p begin="00:01:13.657" end="00:01:14.742" style="s1"><span style="s2">はぁ…</span></p> 
+   <p begin="00:01:15.409" end="00:01:18.621" style="s1"><span style="s2">（寝言）</span></p> 
+   <p begin="00:01:19.455" end="00:01:25.461" region="縦右">♪～</p> 
+   <p begin="00:02:40.911" end="00:02:46.917" region="縦右">～♪</p> 
+   <p begin="00:02:57.011" end="00:02:58.762" style="s1"><span style="s2">（ナレーター）<br /><span style="s7">カロスリーグ出場を目指し―</span></span></p> 
+   <p begin="00:02:58.888" end="00:03:03.225" style="s8"><span style="s2">８個目のバッジをゲットするため<br />旅を続けるサトシたち</span></p> 
+   <p begin="00:03:03.601" end="00:03:04.768" style="s1"><span style="s2">（セレナ）変な夢？</span></p> 
+   <p begin="00:03:04.894" end="00:03:07.771" style="s1"><span style="s2">（ユリーカ）そう とっても変な夢<br />（セレナ）どんな？</span></p> 
+   <p begin="00:03:08.272" end="00:03:11.442" style="s1"><span style="s2">うん？　えーっとね ナイショ</span></p> 
+   <p begin="00:03:11.567" end="00:03:14.862" style="s1"><span style="s2">正夢ってこともあるから<br />気をつけたほうがいいよ</span></p> 
+   <p begin="00:03:15.404" end="00:03:16.530" style="s1"><span style="s2">正夢？</span></p> 
+   <p begin="00:03:16.655" end="00:03:19.700" style="s1"><span style="s2">（セレナ）そう 夢で見たことが<br />現実で起こるの</span></p> 
+   <p begin="00:03:19.825" end="00:03:20.826" style="s1"><span style="s2">へえ～</span></p> 
+   <p begin="00:03:20.951" end="00:03:23.829" style="s1"><span style="s2">（サトシ）おい シトロン<br />朝飯 食べちゃえよ</span></p> 
+   <p begin="00:03:23.954" end="00:03:25.414" style="s1"><span style="s2">（ピカチュウ）ピカピカ～？</span></p> 
+   <p begin="00:03:25.539" end="00:03:27.416" style="s1"><span style="s2"><br />もう少しで終わりますから</span></p> 
+   <p begin="00:03:28.083" end="00:03:28.834" style="s1"><span style="s2">あっ</span></p> 
+   <p begin="00:03:28.959" end="00:03:30.878" style="s1"><span style="s2">（<span style="s3"><span style="s4">爆発</span><span style="s6">ばくはつ</span></span>音）<br />（サトシたち）アッ…</span></p> 
+   <p begin="00:03:31.003" end="00:03:33.672" style="s1"><span style="s2">ケホッ… またやってしまいました</span></p> 
+   <p begin="00:03:33.797" end="00:03:35.633" style="s1"><span style="s2">（笑い声）</span></p> 
+   <p begin="00:03:35.758" end="00:03:38.010" style="s1"><span style="s2">（ユリーカ）ありえない 絶対<br />（セレナ）うん？</span></p> 
+   <p begin="00:03:38.886" end="00:03:44.016" style="s1"><span style="s2">（はしゃぎ声）</span></p> 
+   <p begin="00:03:44.141" end="00:03:49.897" style="s1"><span style="s2">（はしゃぎ声）</span></p> 
+   <p begin="00:03:50.481" end="00:03:52.066" style="s1"><span style="s2">（ホルビー）ホルホル</span></p> 
+   <p begin="00:03:53.943" end="00:03:55.402" style="s1"><span style="s2">ホルホル～</span></p> 
+   <p begin="00:03:55.527" end="00:03:57.363" style="s1"><span style="s2">（ミミロル）ミミロル～</span></p> 
+   <p begin="00:03:57.488" end="00:03:58.656" style="s1"><span style="s2">ホル ホルビー</span></p> 
+   <p begin="00:04:00.324" end="00:04:01.659" style="s1"><span style="s2">（ミミロル）ミロ～ン</span></p> 
+   <p begin="00:04:02.451" end="00:04:04.453" style="s1"><span style="s2">（ホルビー）ホビ ルビ～</span></p> 
+   <p begin="00:04:05.871" end="00:04:06.622" style="s1"><span style="s2">（ミミロル）ミロ</span></p> 
+   <p begin="00:04:08.540" end="00:04:09.792" style="s1"><span style="s2">ミミロ～ル</span></p> 
+   <p begin="00:04:09.917" end="00:04:11.126" style="s1"><span style="s2">（サトシ）ホルビー<br />（ホルビー）ホビ</span></p> 
+   <p begin="00:04:11.418" end="00:04:12.670" style="s1"><span style="s2">あったか？</span></p> 
+   <p begin="00:04:12.795" end="00:04:14.088" style="s1"><span style="s2">（ホルビー）ホル<br />（サトシ）うん？</span></p> 
+   <p begin="00:04:14.630" end="00:04:16.382" style="s1"><span style="s2">お兄ちゃん ほら 見て</span></p> 
+   <p begin="00:04:16.507" end="00:04:18.133" style="s1"><span style="s2">（シトロン）ミミロルです</span></p> 
+   <p begin="00:04:20.844" end="00:04:22.805" style="s1"><span style="s2">（ＰＭ<span style="s3"><span style="s4">図鑑</span><span style="s6">ずかん</span></span>）<br /><span style="s7">ミミロル うさぎポケモン</span></span></p> 
+   <p begin="00:04:22.930" end="00:04:26.225" style="s8"><span style="s2">危険を感じると<br />両耳を立てて警戒する</span></p> 
+   <p begin="00:04:26.350" end="00:04:29.144" style="s8"><span style="s2">寒い夜は<br />体の毛に顔をうずめて<span style="s3"><span style="s4">眠</span><span style="s5">ねむ</span></span>る</span></p> 
+   <p begin="00:04:29.603" end="00:04:32.231" style="s1"><span style="s2">（セレナ）かわいいわね<br />（ユリーカ）うん</span></p> 
+   <p begin="00:04:32.356" end="00:04:34.566" style="s1"><span style="s2">（リリア）ミミロル どこ？<br />（サトシたち）えっ？</span></p> 
+   <p begin="00:04:34.692" end="00:04:36.193" style="s1"><span style="s2">（ミミロル）ミーミー</span></p> 
+   <p begin="00:04:36.318" end="00:04:40.572" style="s1"><span style="s2">（リリア）ああ ここにいたのね<br />まあ お<span style="s3"><span style="s4">友達</span><span style="s5">ともだち</span></span>？</span></p> 
+   <p begin="00:04:41.240" end="00:04:42.116" style="s1"><span style="s2">（リリア）あら？</span></p> 
+   <p begin="00:04:42.241" end="00:04:44.284" style="s1"><span style="s2">そのミミロル<br />あなたのポケモンですか？</span></p> 
+   <p begin="00:04:44.827" end="00:04:47.579" style="s1"><span style="s2">そうよ　そちらのホルビーは<br />あなたの？</span></p> 
+   <p begin="00:04:48.122" end="00:04:48.956" style="s1"><span style="s2">はい</span></p> 
+   <p begin="00:04:49.081" end="00:04:51.291" style="s1"><span style="s2">キレイなお姉さん キープ</span></p> 
+   <p begin="00:04:51.959" end="00:04:54.712" style="s1"><span style="s2">お願い お兄ちゃんをシルブプレ</span></p> 
+   <p begin="00:04:55.796" end="00:04:56.505" style="s1"><span style="s2">えっ？</span></p> 
+   <p begin="00:04:57.006" end="00:04:59.591" style="s1"><span style="s2">お兄ちゃんのお<span style="s3"><span style="s4">嫁</span><span style="s6">よめ</span></span>さんに<br />なってほしいの</span></p> 
+   <p begin="00:04:59.717" end="00:05:02.845" style="s1"><span style="s2">お兄ちゃん メカばっかで<br />ちょっと抜けてるとこあるから―</span></p> 
+   <p begin="00:05:02.970" end="00:05:05.597" style="s1"><span style="s2">しっかりしたお<span style="s3"><span style="s4">嫁</span><span style="s6">よめ</span></span>さんが<br />いればいいかなって</span></p> 
+   <p begin="00:05:05.723" end="00:05:08.267" style="s1"><span style="s2">ユリーカ それはやめろって<br />言ってるだろう</span></p> 
+   <p begin="00:05:08.392" end="00:05:10.936" style="s1"><span style="s2">あっ えーっ なんで？</span></p> 
+   <p begin="00:05:11.520" end="00:05:16.233" style="s1"><span style="s2">あら ちょうどよかった<br />実は私もパートナーを探していたの</span></p> 
+   <p begin="00:05:16.358" end="00:05:17.943" style="s1"><span style="s2">リリアです　よろしく</span></p> 
+   <p begin="00:05:18.318" end="00:05:20.195" style="s1"><span style="s2">（シトロン･サトシ）えっ？</span></p> 
+   <p begin="00:05:20.320" end="00:05:21.947" style="s1"><span style="s2">ところで これは？</span></p> 
+   <p begin="00:05:22.072" end="00:05:24.616" style="s1"><span style="s2">（シトロン）エイパムアームです<br />（リリア）いいメカね</span></p> 
+   <p begin="00:05:24.742" end="00:05:27.161" style="s1"><span style="s2">（シトロン）<span style="s3"><span style="s4">僕</span><span style="s6">ぼく</span></span>が作りました<br />（リリア）すごーい！</span></p> 
+   <p begin="00:05:27.286" end="00:05:30.330" style="s1"><span style="s2">私 こういうメカに<span style="s3"><span style="s4">興味津々</span><span style="s6">きょうみしんしん</span></span>なの</span></p> 
+   <p begin="00:05:31.707" end="00:05:33.500" style="s1"><span style="s2">（シトロン）どうぞ<br />（リリア）ありがとう</span></p> 
+   <p begin="00:05:34.043" end="00:05:36.712" style="s1"><span style="s2">（シトロン）<br />へえ リリアさんのお父さんは―</span></p> 
+   <p begin="00:05:36.837" end="00:05:38.797" style="s1"><span style="s2">オレンジロゴの社長さんなんですか</span></p> 
+   <p begin="00:05:39.465" end="00:05:40.591" style="s1"><span style="s2">そうなの</span></p> 
+   <p begin="00:05:40.716" end="00:05:41.800" style="s1"><span style="s2">オレンジロゴっていえば―</span></p> 
+   <p begin="00:05:41.925" end="00:05:45.804" style="s1"><span style="s2">業界ナンバーワンの<br />ロボット製造会社ですよね</span></p> 
+   <p begin="00:05:45.929" end="00:05:49.308" style="s1"><span style="s2">（サトシ）へえ それはすごいな<br />（ピカチュウ）ピカチュウ</span></p> 
+   <p begin="00:05:49.433" end="00:05:50.601" style="s1"><span style="s2">すごすぎます</span></p> 
+   <p begin="00:05:50.726" end="00:05:54.521" style="s1"><span style="s2">それより さっきの<br />エイパムアームだったっけ</span></p> 
+   <p begin="00:05:54.646" end="00:05:55.856" style="s1"><span style="s2">あれもすごいわ</span></p> 
+   <p begin="00:05:55.981" end="00:05:59.401" style="s1"><span style="s2">シトロンは いろんなメカを<br />作るのが得意なんだよな</span></p> 
+   <p begin="00:05:59.526" end="00:06:03.322" style="s1"><span style="s2">いや～ それほどでも<br />ほんの遊び程度で</span></p> 
+   <p begin="00:06:03.781" end="00:06:05.991" style="s1"><span style="s2">シトロイドっていう<br />ロボットもいるんだぜ</span></p> 
+   <p begin="00:06:06.116" end="00:06:08.744" style="s8"><span style="s2">えっ… もう サトシ</span></p> 
+   <p begin="00:06:08.869" end="00:06:10.662" style="s1"><span style="s2">（デデンネ）デッテンネー</span></p> 
+   <p begin="00:06:13.290" end="00:06:15.667" style="s1"><span style="s2">（リリア）どれも興味深いわ</span></p> 
+   <p begin="00:06:16.001" end="00:06:19.713" style="s1"><span style="s2">このエイパムアームは<br />リュックと連動してるんですよ</span></p> 
+   <p begin="00:06:19.838" end="00:06:23.008" style="s1"><span style="s2">すごいわ<br />おもしろいアイデアね</span></p> 
+   <p begin="00:06:23.801" end="00:06:27.304" style="s1"><span style="s2">シトロンのおかげで <span style="s3"><span style="s4">俺</span><span style="s6">おれ</span></span>たち<br />何度もピンチを助けられたんだ</span></p> 
+   <p begin="00:06:27.429" end="00:06:29.848" style="s1"><span style="s2">（セレナ）うん うん<br />（リリア）へえ</span></p> 
+   <p begin="00:06:29.973" end="00:06:33.727" style="s1"><span style="s2">（セレナ）リリアさんはパートナーを<br />探してるって言ってましたけど</span></p> 
+   <p begin="00:06:33.852" end="00:06:37.272" style="s1"><span style="s2">私 いつか父の<span style="s3"><span style="s4">跡</span><span style="s6">あと</span></span>を<br /><span style="s3"><span style="s4">継</span><span style="s5">つ</span></span>がないといけないの</span></p> 
+   <p begin="00:06:37.815" end="00:06:39.942" style="s1"><span style="s2">リリアさんが社長になるんですか？</span></p> 
+   <p begin="00:06:40.484" end="00:06:44.446" style="s1"><span style="s2">いいえ 私のパートナーになる方が</span></p> 
+   <p begin="00:06:45.280" end="00:06:47.449" style="s1"><span style="s2">（シトロン）なるほど<br />（リリア）はい</span></p> 
+   <p begin="00:06:47.991" end="00:06:49.076" style="s1"><span style="s2">えーっ！</span></p> 
+   <p begin="00:06:49.952" end="00:06:52.162" style="s1"><span style="s2">（ユリーカ）お兄ちゃーん</span></p> 
+   <p begin="00:06:53.539" end="00:06:54.373" style="s1"><span style="s2">（シトロン）ユリーカ</span></p> 
+   <p begin="00:06:54.498" end="00:06:57.918" style="s1"><span style="s2">あっ そういえば<br />まだ<span style="s3"><span style="s4">紹介</span><span style="s5">しょうかい</span></span>してなかったね</span></p> 
+   <p begin="00:06:58.544" end="00:07:00.546" style="s1"><span style="s2"><span style="s3"><span style="s4">僕</span><span style="s6">ぼく</span></span>の<span style="s3"><span style="s4">花嫁</span><span style="s6">はなよめ</span></span>のリリアさん</span></p> 
+   <p begin="00:07:00.671" end="00:07:02.798" style="s1"><span style="s2">リリアです よろしく</span></p> 
+   <p begin="00:07:03.132" end="00:07:07.177" style="s1"><span style="s2"><span style="s3"><span style="s4">僕</span><span style="s6">ぼく</span></span>は リリアさんの会社<br />オレンジロゴの社長になったんだ</span></p> 
+   <p begin="00:07:07.302" end="00:07:10.722" style="s1"><span style="s2">だから ミアレジムのことは<br />ユリーカに任せたよ</span></p> 
+   <p begin="00:07:10.931" end="00:07:12.891" style="s1"><span style="s2">えーっ</span></p> 
+   <p begin="00:07:14.143" end="00:07:16.603" style="s1"><span style="s2">（リリア）<br />ダーリン 紅茶が入ったわよ</span></p> 
+   <p begin="00:07:17.312" end="00:07:19.690" style="s1"><span style="s2">（リリア）ひと休みしたら？<br />（シトロン）ありがとう</span></p> 
+   <p begin="00:07:20.315" end="00:07:22.151" style="s1"><span style="s2">（シトロン･リリア）ウフフッ…</span></p> 
+   <p begin="00:07:23.944" end="00:07:27.156" style="s1"><span style="s2">（ユリーカ）そんな…<br />（デデンネ）デンデネ～</span></p> 
+   <p begin="00:07:27.281" end="00:07:28.824" style="s1"><span style="s2">どうしたの？　ユリーカ</span></p> 
+   <p begin="00:07:28.949" end="00:07:31.660" style="s1"><span style="s2">ねえ セレナ… ほっぺ つねって</span></p> 
+   <p begin="00:07:31.785" end="00:07:33.162" style="s1"><span style="s2">（セレナ）なんで？<br />（ユリーカ）いいから</span></p> 
+   <p begin="00:07:33.745" end="00:07:34.830" style="s1"><span style="s2">（セレナ）ああ…</span></p> 
+   <p begin="00:07:34.955" end="00:07:38.125" style="s1"><span style="s2">イッ… 痛い</span></p> 
+   <p begin="00:07:38.458" end="00:07:40.794" style="s1"><span style="s2">やっぱり 夢じゃない</span></p> 
+   <p begin="00:07:40.919" end="00:07:42.379" style="s1"><span style="s2">（おなかの鳴るの音）</span></p> 
+   <p begin="00:07:42.504" end="00:07:43.839" style="s1"><span style="s2">あら？</span></p> 
+   <p begin="00:07:43.964" end="00:07:46.550" style="s1"><span style="s2">（サトシ）おなか すいてんのか？<br />（シトロン）何か作りましょうか？</span></p> 
+   <p begin="00:07:47.426" end="00:07:49.928" style="s1"><span style="s2">シトロンの作る料理は<br />とってもうまいんだぜ</span></p> 
+   <p begin="00:07:50.053" end="00:07:52.264" style="s1"><span style="s2">（リリア）<br />じゃ お願いしようかしら</span></p> 
+   <p begin="00:07:52.389" end="00:07:54.433" style="s8"><span style="s2">…たく サトシったら</span></p> 
+   <p begin="00:07:58.854" end="00:08:01.857" style="s1"><span style="s2">お料理までメカで？　すごい！</span></p> 
+   <p begin="00:08:01.982" end="00:08:04.443" style="s1"><span style="s2">お兄ちゃん ユリーカもおなかすいた</span></p> 
+   <p begin="00:08:04.902" end="00:08:07.404" style="s1"><span style="s2">ユリーカは<br />さっき食べたばかりじゃないか</span></p> 
+   <p begin="00:08:07.905" end="00:08:10.407" style="s1"><span style="s2">（ユリーカ）ウーッ…<br />（デデンネ）デデー</span></p> 
+   <p begin="00:08:11.116" end="00:08:13.952" style="s1"><span style="s2">ミミロル　ホルビーのことが<br />気に入ったみたい</span></p> 
+   <p begin="00:08:21.126" end="00:08:22.461" style="s1"><span style="s2">（ヤンチャム）チャム チャムチャム</span></p> 
+   <p begin="00:08:24.421" end="00:08:26.131" style="s1"><span style="s2">（ハリマロン）ハリハリー</span></p> 
+   <p begin="00:08:26.256" end="00:08:28.175" style="s1"><span style="s2">（ミミロル）ロル…<br />（ハリマロン）ハーリー？　ハリマ</span></p> 
+   <p begin="00:08:28.300" end="00:08:29.885" style="s1"><span style="s2">ハリマ！</span></p> 
+   <p begin="00:08:30.552" end="00:08:32.221" style="s1"><span style="s2">ヤン チャーム</span></p> 
+   <p begin="00:08:32.721" end="00:08:33.805" style="s1"><span style="s2">チャム…</span></p> 
+   <p begin="00:08:37.601" end="00:08:40.354" style="s1"><span style="s2">（ミミロル）ミミロル<br />（ヤンチャム）チャム</span></p> 
+   <p begin="00:08:40.812" end="00:08:42.856" style="s1"><span style="s2">（ニャース）<br />ほう ミミロルなのニャ</span></p> 
+   <p begin="00:08:42.981" end="00:08:44.858" style="s1"><span style="s2">（コジロウ）<br />キュートなポケモンだな</span></p> 
+   <p begin="00:08:44.983" end="00:08:47.527" style="s1"><span style="s2">（ムサシ）<br />あのミミロルと<span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>にいると―</span></p> 
+   <p begin="00:08:47.653" end="00:08:51.114" style="s1"><span style="s2">熟成された大人の色気に<br />あふれた私の<span style="s3"><span style="s4">美貌</span><span style="s5">びぼう</span></span>を―</span></p> 
+   <p begin="00:08:51.240" end="00:08:53.909" style="s1"><span style="s2">より一層 引き立ててくれそうね</span></p> 
+   <p begin="00:08:54.409" end="00:08:55.953" style="s1"><span style="s2">そうなのか？</span></p> 
+   <p begin="00:08:56.620" end="00:08:59.957" style="s1"><span style="s2">そうなのよ　世界は<br />そのようにできているのよ</span></p> 
+   <p begin="00:09:00.082" end="00:09:01.250" style="s1"><span style="s2">（ニャース）ニャるほど</span></p> 
+   <p begin="00:09:01.917" end="00:09:06.296" style="s1"><span style="s2">私の<span style="s3"><span style="s4">美貌</span><span style="s6">びぼう</span></span>を引き立てるために<br />あのミミロルをゲットするの</span></p> 
+   <p begin="00:09:06.421" end="00:09:07.214" style="s1"><span style="s2">はい はい</span></p> 
+   <p begin="00:09:07.839" end="00:09:09.633" style="s1"><span style="s2">（ニャース）<br />確かに あのミミロルは―</span></p> 
+   <p begin="00:09:09.758" end="00:09:13.095" style="s1"><span style="s2">ロケット団に<span style="s3"><span style="s4">潤</span><span style="s6">うるお</span></span>いを<br />もたらすかもしれないニャー</span></p> 
+   <p begin="00:09:13.220" end="00:09:14.179" style="s1"><span style="s2">潤い？</span></p> 
+   <p begin="00:09:14.304" end="00:09:18.016" style="s1"><span style="s2">今いるポケモンはマーイーカにしろ<br />パンプジンにしろ―</span></p> 
+   <p begin="00:09:18.141" end="00:09:19.977" style="s1"><span style="s2">キュートさが足りないのニャ</span></p> 
+   <p begin="00:09:20.102" end="00:09:21.895" style="s1"><span style="s2">マーイーカは<br />すごくキュートだろう</span></p> 
+   <p begin="00:09:22.271" end="00:09:24.648" style="s1"><span style="s2">（ニャース）とにかく <span style="s3"><span style="s4">潤</span><span style="s6">うるおい</span></span>いニャ</span></p> 
+   <p begin="00:09:24.773" end="00:09:27.317" style="s1"><span style="s2">（ムサシ）決まりね　ミミロルゲット</span></p> 
+   <p begin="00:09:30.112" end="00:09:31.989" style="s1"><span style="s2">うわーっ おいしい</span></p> 
+   <p begin="00:09:32.114" end="00:09:33.156" style="s1"><span style="s2">だろう だろう</span></p> 
+   <p begin="00:09:33.282" end="00:09:36.159" style="s1"><span style="s2">（リリア）お料理も<span style="s3"><span style="s4">上手</span><span style="s6">じょうず</span></span>なんて ステキ<br />（シトロン）いや～</span></p> 
+   <p begin="00:09:37.786" end="00:09:38.704" style="s1"><span style="s2">デネー</span></p> 
+   <p begin="00:09:39.955" end="00:09:44.459" style="s1"><span style="s2">あっ 待って<br />紅茶にはハニーミツを少々…</span></p> 
+   <p begin="00:09:45.627" end="00:09:46.712" style="s1"><span style="s2">どうぞ</span></p> 
+   <p begin="00:09:49.339" end="00:09:51.591" style="s1"><span style="s2">うーん <span style="s3"><span style="s4">甘</span><span style="s6">あま</span></span>～い</span></p> 
+   <p begin="00:09:52.426" end="00:09:53.593" style="s1"><span style="s2">はぁ</span></p> 
+   <p begin="00:09:53.927" end="00:09:55.846" style="s1"><span style="s2">はい あーん</span></p> 
+   <p begin="00:09:56.179" end="00:09:57.639" style="s1"><span style="s2">あーん</span></p> 
+   <p begin="00:09:59.474" end="00:10:01.143" style="s1"><span style="s2">おいしいです</span></p> 
+   <p begin="00:10:01.476" end="00:10:03.562" style="s1"><span style="s2">（ユリーカ）<br />そして お兄ちゃんは言うのよ</span></p> 
+   <p begin="00:10:03.687" end="00:10:06.315" style="s1"><span style="s2"><span style="s3"><span style="s4">僕</span><span style="s6">ぼく</span></span>は世界一の幸せ者です</span></p> 
+   <p begin="00:10:06.440" end="00:10:09.484" style="s1"><span style="s2">（ユリーカ）…て ギギギッ</span></p> 
+   <p begin="00:10:09.609" end="00:10:10.736" style="s1"><span style="s2">デンネ</span></p> 
+   <p begin="00:10:12.654" end="00:10:14.948" style="s1"><span style="s2">デデ～</span></p> 
+   <p begin="00:10:15.741" end="00:10:16.908" style="s1"><span style="s2">ウワーッ…</span></p> 
+   <p begin="00:10:18.285" end="00:10:22.497" style="s1"><span style="s2">デデンネ！　何てことするんですか<br /><span style="s3"><span style="s4">謝</span><span style="s5">あやま</span></span>ってください</span></p> 
+   <p begin="00:10:22.622" end="00:10:23.749" style="s1"><span style="s2">デンネッ</span></p> 
+   <p begin="00:10:24.624" end="00:10:26.501" style="s1"><span style="s2">だ… 大丈夫よ</span></p> 
+   <p begin="00:10:27.627" end="00:10:30.005" style="s1"><span style="s2">（ユリーカ）デデンネ ナイス<br />（デデンネ）デデンネ</span></p> 
+   <p begin="00:10:30.505" end="00:10:33.008" style="s1"><span style="s2">（ミミロル）ミミー<br />（ホルビー）ホル…</span></p> 
+   <p begin="00:10:33.133" end="00:10:36.428" style="s1"><span style="s2">お２人さん<br />お散歩でもしてきたら？</span></p> 
+   <p begin="00:10:37.387" end="00:10:38.638" style="s1"><span style="s2">（ミミロル）ミミー</span></p> 
+   <p begin="00:10:39.348" end="00:10:40.432" style="s1"><span style="s2">ホル？</span></p> 
+   <p begin="00:10:41.975" end="00:10:43.852" style="s1"><span style="s2">（リリア）<br />ホルビーくん よろしくね</span></p> 
+   <p begin="00:10:43.977" end="00:10:44.853" style="s1"><span style="s2">（ホルビー）ホール</span></p> 
+   <p begin="00:10:45.270" end="00:10:47.230" style="s1"><span style="s2">（ハリマロン）ハリハリー<br />（ヤンチャム）チャーム</span></p> 
+   <p begin="00:10:47.981" end="00:10:51.777" style="s1"><span style="s2">ホルビーは しっかり者ですから<br />任しておいて大丈夫ですよ</span></p> 
+   <p begin="00:10:51.902" end="00:10:56.698" style="s1"><span style="s2">ウフッ… 私たちも行きません？<br />シトロン <span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>にお散歩</span></p> 
+   <p begin="00:10:56.823" end="00:10:58.075" style="s1"><span style="s2">アハッ… いいですね</span></p> 
+   <p begin="00:10:58.617" end="00:11:01.870" style="s1"><span style="s2">何よ ミミロルとホルビーが<br />仲良くなったからって―</span></p> 
+   <p begin="00:11:01.995" end="00:11:03.997" style="s1"><span style="s2">お兄ちゃんたちまで<br />散歩に行かなくていいのに</span></p> 
+   <p begin="00:11:04.122" end="00:11:05.248" style="s1"><span style="s2">デンネッ</span></p> 
+   <p begin="00:11:05.374" end="00:11:07.000" style="s1"><span style="s2">よかったわね ユリーカ</span></p> 
+   <p begin="00:11:07.125" end="00:11:07.876" style="s1"><span style="s2">えっ？</span></p> 
+   <p begin="00:11:08.293" end="00:11:10.629" style="s1"><span style="s2">あの２人<br />うまくいくかもしれないわよ</span></p> 
+   <p begin="00:11:10.754" end="00:11:11.963" style="s1"><span style="s2">うっ…</span></p> 
+   <p begin="00:11:13.215" end="00:11:15.884" style="s8"><span style="s2">シルブプレなんか<br />するんじゃなかった</span></p> 
+   <p begin="00:11:17.052" end="00:11:18.220" style="s1"><span style="s2">（シトロン）それでですね</span></p> 
+   <p begin="00:11:18.345" end="00:11:21.098" style="s1"><span style="s2">１回 ジムを<br />追い出されちゃったんですよ</span></p> 
+   <p begin="00:11:21.223" end="00:11:23.308" style="s1"><span style="s2">（笑い声）</span></p> 
+   <p begin="00:11:23.934" end="00:11:24.976" style="s1"><span style="s2">ホビ</span></p> 
+   <p begin="00:11:26.353" end="00:11:27.979" style="s1"><span style="s2">（リリア）ウワーッ…</span></p> 
+   <p begin="00:11:28.397" end="00:11:30.732" style="s1"><span style="s2">あっ リリアさん 大丈夫ですか？</span></p> 
+   <p begin="00:11:30.857" end="00:11:31.775" style="s1"><span style="s2">（ミミロル）ミローン</span></p> 
+   <p begin="00:11:31.900" end="00:11:34.236" style="s1"><span style="s2">（リリア）痛い…<br />（ホルビー）ホール</span></p> 
+   <p begin="00:11:34.694" end="00:11:38.490" style="s1"><span style="s2">ありゃりゃ ミミロルじゃなくて<br />あのオタクガールが落ちちゃった</span></p> 
+   <p begin="00:11:38.615" end="00:11:41.201" style="s1"><span style="s2">（コジロウ）失敗だな<br />（ニャース）第２作戦ニャ</span></p> 
+   <p begin="00:11:42.494" end="00:11:44.037" style="s1"><span style="s2">（シトロン）<span style="s3"><span style="s4">捕</span><span style="s6">つか</span></span>まってください</span></p> 
+   <p begin="00:11:46.790" end="00:11:48.375" style="s1"><span style="s2">（リリア）どうもありがとう<br />（ミミロル）ミローン</span></p> 
+   <p begin="00:11:48.500" end="00:11:49.626" style="s1"><span style="s2">ホールビ</span></p> 
+   <p begin="00:11:51.336" end="00:11:52.796" style="s1"><span style="s2">（シトロン）これでよしっと…</span></p> 
+   <p begin="00:11:53.588" end="00:11:55.215" style="s1"><span style="s2">シトロンは<span style="s3"><span style="s4">優</span><span style="s6">やさ</span></span>しいのね</span></p> 
+   <p begin="00:11:55.340" end="00:11:58.427" style="s1"><span style="s2">これくらい当たり前ですよ<br />アハハッ…</span></p> 
+   <p begin="00:11:59.261" end="00:12:01.179" style="s1"><span style="s2">（ユリーカ）リリアさん<br />（リリア）うん？</span></p> 
+   <p begin="00:12:02.389" end="00:12:03.682" style="s1"><span style="s2">&#xa0;ちょっと今 いいかな</span></p> 
+   <p begin="00:12:04.307" end="00:12:05.392" style="s1"><span style="s2">ええ</span></p> 
+   <p begin="00:12:05.934" end="00:12:07.018" style="s1"><span style="s2">こっち</span></p> 
+   <p begin="00:12:09.646" end="00:12:11.523" style="s1"><span style="s2">うん？　どうしたんでしょう</span></p> 
+   <p begin="00:12:11.648" end="00:12:13.567" style="s1"><span style="s2">ユリーカは いい妹ね</span></p> 
+   <p begin="00:12:13.692" end="00:12:15.402" style="s1"><span style="s2">えっ？　まあ…</span></p> 
+   <p begin="00:12:17.237" end="00:12:19.948" style="s1"><span style="s2">（リリア）お兄さん<br />いろいろ発明品 作るでしょう</span></p> 
+   <p begin="00:12:20.282" end="00:12:23.326" style="s1"><span style="s2">どれもこれも<br />すごい発明品だよね</span></p> 
+   <p begin="00:12:23.452" end="00:12:27.205" style="s1"><span style="s2">どれもこれも 必ず<br /><span style="s3"><span style="s4">爆発</span><span style="s5">ばくはつ</span></span>しちゃう失敗作ばかり</span></p> 
+   <p begin="00:12:27.330" end="00:12:28.206" style="s1"><span style="s2">デネッ</span></p> 
+   <p begin="00:12:28.331" end="00:12:30.208" style="s1"><span style="s2">ドカーンで頭チリチリ</span></p> 
+   <p begin="00:12:30.333" end="00:12:31.460" style="s1"><span style="s2">デネッ</span></p> 
+   <p begin="00:12:31.585" end="00:12:35.881" style="s1"><span style="s2">失敗は成功の母<br />そうやって完成に近づいていくのよ</span></p> 
+   <p begin="00:12:36.006" end="00:12:37.507" style="s1"><span style="s2">ああ…</span></p> 
+   <p begin="00:12:38.049" end="00:12:42.137" style="s1"><span style="s2">お兄ちゃん ああ見えて<br />時々 オネショするのよ</span></p> 
+   <p begin="00:12:42.262" end="00:12:44.389" style="s1"><span style="s2">かわいい一面もあるのね</span></p> 
+   <p begin="00:12:44.514" end="00:12:45.849" style="s1"><span style="s2">デヘッ…</span></p> 
+   <p begin="00:12:45.974" end="00:12:49.269" style="s1"><span style="s2">あのね お兄ちゃん<br />パンツ一丁になって―</span></p> 
+   <p begin="00:12:49.769" end="00:12:52.939" style="s1"><span style="s2">アーボックを全身に<br />巻きつけるのが趣味なの</span></p> 
+   <p begin="00:12:53.064" end="00:12:53.940" style="s1"><span style="s2">（笑い声）</span></p> 
+   <p begin="00:12:54.316" end="00:12:58.612" style="s1"><span style="s2">それはステキ<br />アーボックの<span style="s3"><span style="s4">肌触</span><span style="s5">はだざわ</span></span>りは最高だもの</span></p> 
+   <p begin="00:12:58.737" end="00:13:00.739" style="s1"><span style="s2">ウエッ グハッ…</span></p> 
+   <p begin="00:13:01.281" end="00:13:03.950" style="s1"><span style="s2">（ユリーカ）ダメだ こりゃ<br />（デデンネ）デデ～</span></p> 
+   <p begin="00:13:04.075" end="00:13:05.368" style="s1"><span style="s2">ピカ</span></p> 
+   <p begin="00:13:05.702" end="00:13:08.288" style="s1"><span style="s2">（リリア）<br /><span style="s7">ポケモンクイズ 正解は？</span></span></p> 
+   <p begin="00:13:08.413" end="00:13:09.539" style="s1"><span style="s2">ピカピカ</span></p> 
+   <p begin="00:13:10.332" end="00:13:11.791" style="s1"><span style="s2">ピカピカチュウ</span></p> 
+   <p begin="00:13:12.292" end="00:13:13.752" style="s1"><span style="s2">（ミミロル）ミミロル</span></p> 
+   <p begin="00:13:14.753" end="00:13:15.795" style="s1"><span style="s2">ピカピカ</span></p> 
+   <p begin="00:13:18.715" end="00:13:20.800" style="s1"><span style="s2">（サトシ）さあ 行くか<br />（ピカチュウ）ピッカ</span></p> 
+   <p begin="00:13:21.301" end="00:13:24.513" style="s1"><span style="s2">私も次のポケモンセンターまで<br /><span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>にいい？</span></p> 
+   <p begin="00:13:24.638" end="00:13:25.764" style="s1"><span style="s2">ええ 行きましょう</span></p> 
+   <p begin="00:13:25.889" end="00:13:27.307" style="s1"><span style="s2">（シトロン）ぜひとも<br />（デデンネ）デデー</span></p> 
+   <p begin="00:13:27.432" end="00:13:28.892" style="s1"><span style="s2">ブー！</span></p> 
+   <p begin="00:13:29.643" end="00:13:30.894" style="s1"><span style="s2">（ミミロル）ミミーン<br />（ホルビー）ホルビ</span></p> 
+   <p begin="00:13:31.019" end="00:13:32.229" style="s1"><span style="s2">チャム</span></p> 
+   <p begin="00:13:33.313" end="00:13:34.898" style="s1"><span style="s2">（シトロン）足 大丈夫ですか？</span></p> 
+   <p begin="00:13:35.023" end="00:13:38.610" style="s1"><span style="s2">（リリア）ええ もう全然<br /><span style="s3"><span style="s4">疲</span><span style="s5">つか</span></span>れまで取れちゃった</span></p> 
+   <p begin="00:13:39.069" end="00:13:40.612" style="s1"><span style="s2">お兄ちゃん 手ぇつなごう</span></p> 
+   <p begin="00:13:40.737" end="00:13:43.740" style="s1"><span style="s2">（ユリーカ）ユリーカ<br />ちょっと どうしたんだい？　急に</span></p> 
+   <p begin="00:13:43.865" end="00:13:44.824" style="s1"><span style="s2">（ユリーカ）いいの</span></p> 
+   <p begin="00:13:46.243" end="00:13:46.993" style="s1"><span style="s2">ホル！</span></p> 
+   <p begin="00:13:47.118" end="00:13:49.788" style="s1"><span style="s2">（<span style="s3"><span style="s4">爆発</span><span style="s6">ばくはつ</span></span>音）</span></p> 
+   <p begin="00:13:49.913" end="00:13:50.830" style="s1"><span style="s2">（ピカチュウ）ピカー</span></p> 
+   <p begin="00:13:50.956" end="00:13:54.417" style="s1"><span style="s2">（サトシ）イテッ…<br />（シトロンたち）ウウッ…</span></p> 
+   <p begin="00:13:54.543" end="00:13:55.919" style="s1"><span style="s2">（ミミロル）ミミー<br />（ホルビー）ホール</span></p> 
+   <p begin="00:13:57.003" end="00:13:58.255" style="s1"><span style="s2">ホル</span></p> 
+   <p begin="00:13:58.755" end="00:14:00.924" style="s1"><span style="s2">（サトシ）何なんだ<br />（ピカチュウ）ピカ</span></p> 
+   <p begin="00:14:01.716" end="00:14:03.760" style="s1"><span style="s2">“何なんだ”“ピカ”と言われたら</span></p> 
+   <p begin="00:14:04.261" end="00:14:06.263" style="s1"><span style="s2">答えてあげるが世の情け</span></p> 
+   <p begin="00:14:06.846" end="00:14:08.723" style="s1"><span style="s2">世界の<span style="s3"><span style="s4">破壊</span><span style="s6">はかい</span></span>を防ぐため</span></p> 
+   <p begin="00:14:09.307" end="00:14:11.476" style="s1"><span style="s2">世界の平和を守るため</span></p> 
+   <p begin="00:14:11.851" end="00:14:14.521" style="s1"><span style="s2">愛と真実の悪を<span style="s3"><span style="s4">貫</span><span style="s6">つらぬく</span></span>く</span></p> 
+   <p begin="00:14:14.646" end="00:14:17.107" style="s1"><span style="s2">ラブリーチャーミーな<span style="s3"><span style="s4">敵</span><span style="s6">かたき</span></span>役</span></p> 
+   <p begin="00:14:18.108" end="00:14:19.859" style="s1"><span style="s2">（ムサシ）ムサシ<br />（コジロウ）コジロウ</span></p> 
+   <p begin="00:14:20.318" end="00:14:23.280" style="s1"><span style="s2">銀河を<span style="s3"><span style="s4">駆</span><span style="s6">か</span></span>けるロケット団の２人には</span></p> 
+   <p begin="00:14:23.405" end="00:14:26.324" style="s1"><span style="s2">ホワイトホール<br />白いあしたが待ってるぜ</span></p> 
+   <p begin="00:14:26.449" end="00:14:28.076" style="s1"><span style="s2">ニャーンってニャ</span></p> 
+   <p begin="00:14:30.287" end="00:14:31.913" style="s1"><span style="s2"><span style="s3"><span style="s4">潤</span><span style="s6">うるお</span></span>いニャー</span></p> 
+   <p begin="00:14:32.497" end="00:14:35.667" style="s1"><span style="s2">ロケット団！<br />ホルビーとミミロルを返せ</span></p> 
+   <p begin="00:14:35.792" end="00:14:36.543" style="s1"><span style="s2"><span style="s3"><span style="s4">誰</span><span style="s6">だれ</span></span>？</span></p> 
+   <p begin="00:14:36.668" end="00:14:39.546" style="s1"><span style="s2">人のポケモンを<span style="s3"><span style="s4">盗</span><span style="s6">ぬす</span></span>む悪いヤツらだ</span></p> 
+   <p begin="00:14:39.671" end="00:14:41.464" style="s1"><span style="s2">（ピカチュウ）ピカ<br />（リリア）えっ？</span></p> 
+   <p begin="00:14:41.590" end="00:14:42.340" style="s1"><span style="s2">ホルビー</span></p> 
+   <p begin="00:14:43.133" end="00:14:45.218" style="s1"><span style="s2">（ハリマロン）リマ<br />（ヤンチャム）チャム</span></p> 
+   <p begin="00:14:45.719" end="00:14:47.178" style="s1"><span style="s2">（<span style="s3"><span style="s4">叫</span><span style="s6">さけ</span></span>び声）</span></p> 
+   <p begin="00:14:47.304" end="00:14:51.099" style="s1"><span style="s2">このキュートでモッフモフのミミロルは<br />いただいていくわ～</span></p> 
+   <p begin="00:14:51.224" end="00:14:53.184" style="s1"><span style="s2">（ニャース）バイニャラー</span></p> 
+   <p begin="00:14:55.854" end="00:14:57.897" style="s1"><span style="s2">大丈夫？　ヤンチャム ハリマロン</span></p> 
+   <p begin="00:14:58.023" end="00:14:58.648" style="s1"><span style="s2">（ヤンチャム）チャム<br />（ハリマロン）リマ</span></p> 
+   <p begin="00:14:58.773" end="00:15:00.817" style="s1"><span style="s2">お兄ちゃん</span></p> 
+   <p begin="00:15:00.942" end="00:15:01.943" style="s1"><span style="s2">（シトロン）リリアさん</span></p> 
+   <p begin="00:15:02.110" end="00:15:05.864" style="s1"><span style="s2">あっ ああ… もう！</span></p> 
+   <p begin="00:15:06.615" end="00:15:07.699" style="s1"><span style="s2">ミミロルが…</span></p> 
+   <p begin="00:15:07.824" end="00:15:11.745" style="s1"><span style="s2">リリアさんのミミロルとホルビーは<br /><span style="s3"><span style="s4">僕</span><span style="s5">ぼく</span></span>が絶対に取り戻してみせます</span></p> 
+   <p begin="00:15:11.870" end="00:15:12.871" style="s1"><span style="s2">はい</span></p> 
+   <p begin="00:15:13.204" end="00:15:16.207" style="s1"><span style="s2">今こそ サイエンスが<br />未来を切り開くとき</span></p> 
+   <p begin="00:15:16.916" end="00:15:18.460" style="s1"><span style="s2">（シトロン）<br />シトロニックギア オン</span></p> 
+   <p begin="00:15:18.960" end="00:15:22.130" style="s1"><span style="s2">こんなときのために<br />準備しておいたナイスなマシン</span></p> 
+   <p begin="00:15:22.255" end="00:15:24.257" style="s1"><span style="s2">“保護経過 見るぞー”です</span></p> 
+   <p begin="00:15:24.382" end="00:15:25.550" style="s1"><span style="s2">（サトシたち）おお！</span></p> 
+   <p begin="00:15:25.675" end="00:15:28.720" style="s1"><span style="s2">（シトロン）さっき リリアさんと<br />ホルビーに<span style="s3"><span style="s4">貼</span><span style="s5">は</span></span>った ばんそうこうには―</span></p> 
+   <p begin="00:15:28.845" end="00:15:30.805" style="s1"><span style="s2">発信機が<span style="s3"><span style="s4">内蔵</span><span style="s6">ないぞう</span></span>してあって…</span></p> 
+   <p begin="00:15:31.264" end="00:15:33.183" style="s1"><span style="s2">ほら このマシンで</span></p> 
+   <p begin="00:15:33.808" end="00:15:35.226" style="s1"><span style="s2">（リリア）あっ 反応してる</span></p> 
+   <p begin="00:15:36.561" end="00:15:38.647" style="s1"><span style="s2">科学の力ってすげえ</span></p> 
+   <p begin="00:15:38.772" end="00:15:40.440" style="s1"><span style="s2">では 早速</span></p> 
+   <p begin="00:15:42.776" end="00:15:44.402" style="s1"><span style="s2">（探知音）</span></p> 
+   <p begin="00:15:44.527" end="00:15:45.737" style="s1"><span style="s2">（シトロン）発見しました</span></p> 
+   <p begin="00:15:45.862" end="00:15:48.031" style="s1"><span style="s2">よし 案内してくれ</span></p> 
+   <p begin="00:15:48.156" end="00:15:50.158" style="s1"><span style="s2">（シトロン）こっちです<br />（ヤンチャム）チャム</span></p> 
+   <p begin="00:15:54.496" end="00:15:57.248" style="s1"><span style="s2">（ミミロル）ミ～<br />（ホルビー）ホッビ ホビビ</span></p> 
+   <p begin="00:15:57.666" end="00:16:00.085" style="s1"><span style="s2">フフ～ン ミミロル ゲット</span></p> 
+   <p begin="00:16:00.210" end="00:16:02.087" style="s1"><span style="s2"><span style="s3"><span style="s4">潤</span><span style="s6">うるお</span></span>いゲットニャー</span></p> 
+   <p begin="00:16:02.879" end="00:16:04.756" style="s1"><span style="s2">（サトシ）ミミロル ホルビー<br />（ロケット団）ゲゲッ</span></p> 
+   <p begin="00:16:05.548" end="00:16:06.800" style="s1"><span style="s2">（コジロウ）どうしてここが…</span></p> 
+   <p begin="00:16:06.925" end="00:16:08.426" style="s1"><span style="s2">お兄ちゃんの発明よ</span></p> 
+   <p begin="00:16:09.094" end="00:16:10.762" style="s1"><span style="s2">出てきなさい パンプジン</span></p> 
+   <p begin="00:16:10.887" end="00:16:13.056" style="s1"><span style="s2">お前もだ マーイーカ</span></p> 
+   <p begin="00:16:13.181" end="00:16:14.265" style="s1"><span style="s2">（パンプジン）パーンプ<br />（マーイーカ）マイッカー</span></p> 
+   <p begin="00:16:14.683" end="00:16:15.600" style="s1"><span style="s2">シャドーボール</span></p> 
+   <p begin="00:16:15.725" end="00:16:17.894" style="s1"><span style="s2">パーンプ</span></p> 
+   <p begin="00:16:18.561" end="00:16:19.979" style="s1"><span style="s2">ハリマロン ミサイルばり</span></p> 
+   <p begin="00:16:20.397" end="00:16:22.440" style="s1"><span style="s2">ハリー</span></p> 
+   <p begin="00:16:24.025" end="00:16:26.111" style="s1"><span style="s2">ピカチュウ 10まんボルト</span></p> 
+   <p begin="00:16:26.236" end="00:16:28.238" style="s1"><span style="s2">ピカ ピカチュウ</span></p> 
+   <p begin="00:16:28.363" end="00:16:29.739" style="s1"><span style="s2">サイケこうせん</span></p> 
+   <p begin="00:16:29.864" end="00:16:31.616" style="s1"><span style="s2">マイーカー</span></p> 
+   <p begin="00:16:32.409" end="00:16:34.244" style="s1"><span style="s2">レントラー 出てきてください</span></p> 
+   <p begin="00:16:35.245" end="00:16:36.204" style="s1"><span style="s2">（レントラー）トラ</span></p> 
+   <p begin="00:16:36.329" end="00:16:37.497" style="s1"><span style="s2">かみなりのキバ</span></p> 
+   <p begin="00:16:42.085" end="00:16:43.712" style="s1"><span style="s2">もう一丁 サイケこうせん</span></p> 
+   <p begin="00:16:43.837" end="00:16:45.004" style="s1"><span style="s2">シャドーボール</span></p> 
+   <p begin="00:16:45.839" end="00:16:46.881" style="s1"><span style="s2">かわせ</span></p> 
+   <p begin="00:16:47.549" end="00:16:49.008" style="s1"><span style="s2">（ユリーカ）アアッ アッ…</span></p> 
+   <p begin="00:16:49.426" end="00:16:51.469" style="s1"><span style="s2">（ユリーカ）アーッ<br />（シトロンたち）あっ</span></p> 
+   <p begin="00:16:52.554" end="00:16:53.930" style="s1"><span style="s2">ユリーカ！</span></p> 
+   <p begin="00:16:55.098" end="00:16:57.934" style="s1"><span style="s2">えいっ ユリーカ</span></p> 
+   <p begin="00:16:59.060" end="00:17:02.063" style="s1"><span style="s2">（ユリーカ）<br />ウウッ… アッ お兄ちゃん</span></p> 
+   <p begin="00:17:02.188" end="00:17:04.190" style="s1"><span style="s2">（シトロン）大丈夫だから！<br />（ユリーカ）うん</span></p> 
+   <p begin="00:17:04.315" end="00:17:05.817" style="s1"><span style="s2">シャドーボール</span></p> 
+   <p begin="00:17:05.942" end="00:17:07.318" style="s1"><span style="s2">パーンプ</span></p> 
+   <p begin="00:17:07.444" end="00:17:09.154" style="s1"><span style="s2">（サトシ）かわせ<br />（ピカチュウ）ピカ</span></p> 
+   <p begin="00:17:09.279" end="00:17:12.657" style="s1"><span style="s2">ヤンチャム 私たちも行くわよ<br />ストーンエッジ</span></p> 
+   <p begin="00:17:12.782" end="00:17:14.284" style="s1"><span style="s2">チャームッ！</span></p> 
+   <p begin="00:17:16.286" end="00:17:17.704" style="s1"><span style="s2">タネばくだん</span></p> 
+   <p begin="00:17:19.289" end="00:17:20.206" style="s1"><span style="s2">ムチャチャ</span></p> 
+   <p begin="00:17:20.331" end="00:17:22.959" style="s1"><span style="s2">（シトロン）ユリーカ<br />動かないでください</span></p> 
+   <p begin="00:17:23.084" end="00:17:25.587" style="s1"><span style="s2">（シトロン）今 引っ張り上げますから<br />（リリア）大丈夫？</span></p> 
+   <p begin="00:17:25.712" end="00:17:27.255" style="s1"><span style="s2">（レントラー）トラ<br />（シトロン）大丈夫</span></p> 
+   <p begin="00:17:30.008" end="00:17:32.969" style="s1"><span style="s2">アッ アアッ… お兄ちゃん</span></p> 
+   <p begin="00:17:33.094" end="00:17:36.806" style="s1"><span style="s2">（シトロン）<br />大丈夫！　<span style="s3"><span style="s4">僕</span><span style="s5">ぼく</span></span>と<span style="s3"><span style="s4">僕</span><span style="s5">ぼく</span></span>のメカを信じろ</span></p> 
+   <p begin="00:17:38.141" end="00:17:39.142" style="s1"><span style="s2">うん</span></p> 
+   <p begin="00:17:40.894" end="00:17:42.020" style="s1"><span style="s2">クッ…</span></p> 
+   <p begin="00:17:48.193" end="00:17:49.486" style="s1"><span style="s2">（ユリーカ）アッ…<br />（シトロン）えいっ</span></p> 
+   <p begin="00:17:52.197" end="00:17:54.949" style="s1"><span style="s2">ほら もう大丈夫だ</span></p> 
+   <p begin="00:17:55.074" end="00:17:56.701" style="s1"><span style="s2">あっ お兄ちゃん</span></p> 
+   <p begin="00:17:56.826" end="00:17:58.745" style="s1"><span style="s2">（リリア）よかった<br />（レントラー）トラ</span></p> 
+   <p begin="00:17:59.412" end="00:18:00.371" style="s1"><span style="s2">あっ</span></p> 
+   <p begin="00:18:00.497" end="00:18:03.041" style="s1"><span style="s2">出番よ テールナー だいもんじ</span></p> 
+   <p begin="00:18:03.166" end="00:18:06.961" style="s1"><span style="s2">（テールナー）<br />テナ テールナーッ</span></p> 
+   <p begin="00:18:08.338" end="00:18:10.089" style="s1"><span style="s2">ピカチュウ エレキボール</span></p> 
+   <p begin="00:18:12.675" end="00:18:13.468" style="s1"><span style="s2">（ロケット団）グッ…</span></p> 
+   <p begin="00:18:14.135" end="00:18:15.345" style="s1"><span style="s2">ケガはないかい？</span></p> 
+   <p begin="00:18:15.470" end="00:18:19.891" style="s1"><span style="s2">うん 大丈夫<br />でもエイパムアームが…</span></p> 
+   <p begin="00:18:20.016" end="00:18:22.435" style="s1"><span style="s2">（シトロン）<br />なに こんなのは すぐに直せる</span></p> 
+   <p begin="00:18:23.645" end="00:18:27.148" style="s1"><span style="s2">ユリーカを守れたんなら<br />それが いちばんだよ</span></p> 
+   <p begin="00:18:28.233" end="00:18:29.192" style="s1"><span style="s2">お兄ちゃん</span></p> 
+   <p begin="00:18:29.609" end="00:18:32.362" style="s1"><span style="s2">（泣き声）</span></p> 
+   <p begin="00:18:36.241" end="00:18:37.158" style="s1"><span style="s2">エヘッ…</span></p> 
+   <p begin="00:18:39.577" end="00:18:42.497" style="s1"><span style="s2">この<span style="s3"><span style="s4">潤</span><span style="s6">うる</span></span>いは絶対 <span style="s3"><span style="s4">渡</span><span style="s6">わた</span></span>さないニャ</span></p> 
+   <p begin="00:18:42.622" end="00:18:43.915" style="s1"><span style="s2">（ミミロル）ミミー<br />（ホルビー）ホルホル</span></p> 
+   <p begin="00:18:44.624" end="00:18:47.210" style="s1"><span style="s2">ピカチュウ アイアンテールで<br />あのネットを切ってくれ</span></p> 
+   <p begin="00:18:47.335" end="00:18:50.672" style="s1"><span style="s2">ピカッ ピカピカピカ</span></p> 
+   <p begin="00:18:53.466" end="00:18:54.133" style="s1"><span style="s2">（ロケット団）ウワッ…</span></p> 
+   <p begin="00:18:54.259" end="00:18:56.845" style="s1"><span style="s2">（シトロン）みんな！<br />（セレナ）よかった ミミロル</span></p> 
+   <p begin="00:18:56.970" end="00:18:58.805" style="s1"><span style="s2">（ホルビー）ホルホル<br />（ミミロル）ミミー</span></p> 
+   <p begin="00:18:58.930" end="00:18:59.639" style="s1"><span style="s2">よし</span></p> 
+   <p begin="00:19:00.056" end="00:19:01.766" style="s1"><span style="s2">（ムサシ）あれ？<br />（コジロウ）嫌な予感</span></p> 
+   <p begin="00:19:01.891" end="00:19:03.518" style="s1"><span style="s2">ピカチュウ 10まんボルト</span></p> 
+   <p begin="00:19:03.643" end="00:19:06.104" style="s1"><span style="s2">ピカ ピカチュー</span></p> 
+   <p begin="00:19:06.229" end="00:19:07.730" style="s1"><span style="s2">（ロケット団）ウワーッ…</span></p> 
+   <p begin="00:19:07.856" end="00:19:09.065" style="s1"><span style="s2">（<span style="s3"><span style="s4">爆発</span><span style="s6">ばくはつ</span></span>音）</span></p> 
+   <p begin="00:19:11.442" end="00:19:14.654" style="s1"><span style="s2">私の熟成された色気を<br />引き立たせるためにも―</span></p> 
+   <p begin="00:19:14.779" end="00:19:18.199" style="s1"><span style="s2">あのキュートでかわいいミミロルは<br />欲しかったのにな</span></p> 
+   <p begin="00:19:18.449" end="00:19:21.661" style="s1"><span style="s2">ロケット団に<br /><span style="s3"><span style="s4">潤</span><span style="s5">うるお</span></span>いが欲しかったのニャー</span></p> 
+   <p begin="00:19:21.786" end="00:19:23.997" style="s1"><span style="s2"><span style="s3"><span style="s4">俺</span><span style="s6">おれ</span></span>にはマーイーカがいるからな</span></p> 
+   <p begin="00:19:24.122" end="00:19:24.873" style="s1"><span style="s2">マーイッカ</span></p> 
+   <p begin="00:19:24.998" end="00:19:27.417" style="s1"><span style="s2">（ロケット団）やな感じ～</span></p> 
+   <p begin="00:19:27.667" end="00:19:28.710" style="s1"><span style="s2">（マーイーカ）マーイッカ</span></p> 
+   <p begin="00:19:30.336" end="00:19:32.755" style="s1"><span style="s2">ミミロル 大丈夫だった？</span></p> 
+   <p begin="00:19:32.881" end="00:19:34.048" style="s1"><span style="s2">ミミロール</span></p> 
+   <p begin="00:19:34.173" end="00:19:36.217" style="s1"><span style="s2">とにかく無事でよかったです</span></p> 
+   <p begin="00:19:36.342" end="00:19:39.053" style="s1"><span style="s2">ありがとう！　シトロン みんな</span></p> 
+   <p begin="00:19:39.178" end="00:19:40.346" style="s1"><span style="s2">いいえ</span></p> 
+   <p begin="00:19:44.517" end="00:19:46.811" style="s1"><span style="s2">それじゃ 私はここで</span></p> 
+   <p begin="00:19:46.936" end="00:19:50.523" style="s1"><span style="s2">えっ 次のポケモンセンターまで<br /><span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>に行くって…</span></p> 
+   <p begin="00:19:50.648" end="00:19:55.028" style="s1"><span style="s2">ううん 私もパートナーを<br />探してる身として―</span></p> 
+   <p begin="00:19:55.153" end="00:19:58.114" style="s1"><span style="s2">もっともっと自分を<br /><span style="s3"><span style="s4">磨</span><span style="s5">みが</span></span>かなきゃって思って</span></p> 
+   <p begin="00:19:58.948" end="00:20:01.743" style="s1"><span style="s2">（リリア）まだまだ私の<span style="s3"><span style="s4">魅力</span><span style="s6">みりょく</span></span><br />足りないみたいだから</span></p> 
+   <p begin="00:20:01.868" end="00:20:03.536" style="s1"><span style="s2">（セレナ）ウフッ…<br />（サトシ）うん？</span></p> 
+   <p begin="00:20:03.661" end="00:20:05.663" style="s1"><span style="s2">（ピカチュウ）ピーカ<br />（シトロン）うん？</span></p> 
+   <p begin="00:20:06.164" end="00:20:07.498" style="s1"><span style="s2">イヒッ…</span></p> 
+   <p begin="00:20:10.001" end="00:20:12.337" style="s1"><span style="s2">ユリーカ お兄さんと仲良くね</span></p> 
+   <p begin="00:20:13.338" end="00:20:15.214" style="s1"><span style="s2">うん イヒッ…</span></p> 
+   <p begin="00:20:15.840" end="00:20:17.550" style="s1"><span style="s2">ミミロル 行くわよ</span></p> 
+   <p begin="00:20:17.926" end="00:20:19.260" style="s1"><span style="s2">ミミー</span></p> 
+   <p begin="00:20:19.385" end="00:20:21.262" style="s1"><span style="s2">ホール ホルビー</span></p> 
+   <p begin="00:20:23.306" end="00:20:25.266" style="s1"><span style="s2">リリアさん 元気で</span></p> 
+   <p begin="00:20:25.391" end="00:20:27.060" style="s1"><span style="s2">ピカピー</span></p> 
+   <p begin="00:20:27.185" end="00:20:28.686" style="s1"><span style="s2">また会いましょう</span></p> 
+   <p begin="00:20:28.811" end="00:20:30.396" style="s1"><span style="s2">バイバーイ</span></p> 
+   <p begin="00:20:30.521" end="00:20:32.065" style="s1"><span style="s2">（ミミロル）ミーミー</span></p> 
+   <p begin="00:20:32.190" end="00:20:33.733" style="s1"><span style="s2">ホールビー</span></p> 
+   <p begin="00:20:33.858" end="00:20:35.610" style="s1"><span style="s2">お気をつけて</span></p> 
+   <p begin="00:20:36.694" end="00:20:39.447" style="s1"><span style="s2">（ユリーカ）お兄ちゃんが<br />お兄ちゃんでよかった</span></p> 
+   <p begin="00:20:39.572" end="00:20:42.116" style="s1"><span style="s2">えっ なに？　どういうこと？</span></p> 
+   <p begin="00:20:42.241" end="00:20:45.244" style="s1"><span style="s2">（デデンネ）デンネー<br />（ユリーカ）ううん 何でもない</span></p> 
+   <p begin="00:20:45.703" end="00:20:46.955" style="s1"><span style="s2">（プ二ちゃん）ウウッ…</span></p> 
+   <p begin="00:20:47.830" end="00:20:50.208" style="s1"><span style="s2">（ナレーター）<br /><span style="s7">妹の危機を救ったシトロン</span></span></p> 
+   <p begin="00:20:50.541" end="00:20:54.087" style="s8"><span style="s2">兄との<span style="s3"><span style="s4">絆</span><span style="s6">きずな</span></span>を<br />改めて感じたユリーカだった</span></p> 
+   <p begin="00:20:54.837" end="00:20:59.342" style="s8"><span style="s2">こうして サトシたちの旅は<br />まだまだ続く</span></p> 
+   <p begin="00:21:05.431" end="00:21:07.850" style="s1"><span style="s2">さてと これでどうかな</span></p> 
+   <p begin="00:21:07.976" end="00:21:10.687" style="s1"><span style="s2">（ユリーカ）直ったの？<br />（シトロン）バッチリ</span></p> 
+   <p begin="00:21:11.104" end="00:21:13.773" style="s1"><span style="s2">あっ うん？</span></p> 
+   <p begin="00:21:14.691" end="00:21:16.526" style="s1"><span style="s2">（ユリーカ）<br />お兄ちゃん これは？</span></p> 
+   <p begin="00:21:16.651" end="00:21:19.112" style="s1"><span style="s2">うん？　ウワッ…</span></p> 
+   <p begin="00:21:19.237" end="00:21:20.363" style="s1"><span style="s2">えっ</span></p> 
+   <p begin="00:21:20.488" end="00:21:22.031" style="s1"><span style="s2">ウワーッ…</span></p> 
+   <p begin="00:21:25.076" end="00:21:26.077" style="s1"><span style="s2">ゲホッ</span></p> 
+   <p begin="00:21:27.203" end="00:21:31.499" style="s1"><span style="s2">やっぱり私が しっかりした<br />お<span style="s3"><span style="s4">嫁</span><span style="s5">よめ</span></span>さんを探さないとダメね</span></p> 
+   <p begin="00:21:31.958" end="00:21:34.168" style="s1"><span style="s2">あっ お姉さん キープ</span></p> 
+   <p begin="00:21:34.293" end="00:21:36.879" style="s1"><span style="s2">お願い お兄ちゃんをシルブプレ</span></p> 
+   <p begin="00:21:37.005" end="00:21:38.881" style="s1"><span style="s2">（女性）えっ？<br />（シトロン）ユリーカ</span></p> 
+   <p begin="00:21:39.007" end="00:21:44.137" region="縦右">それはやめろって<br />言ってるだろう！</p> 
+   <p begin="00:21:45.388" end="00:21:51.394" region="縦左">♪～</p> 
+   <p begin="00:22:59.420" end="00:23:05.426" region="縦左">～♪</p> 
+   <p begin="00:23:11.015" end="00:23:12.141" style="s1"><span style="s2">（ケン）<span style="s7">さあ 始まったぜ</span></span></p> 
+   <p begin="00:23:12.266" end="00:23:15.144" style="s8"><span style="s2">ポケモンの<span style="s3"><span style="s4">魅力</span><span style="s6">みりょく</span></span>を<br />世界にお届けする ポケラブＴＶ</span></p> 
+   <p begin="00:23:15.269" end="00:23:16.145" style="s8"><span style="s2">司会は<span style="s3"><span style="s4">俺</span><span style="s6">おれ</span></span> ケンと</span></p> 
+   <p begin="00:23:16.270" end="00:23:18.022" style="s1"><span style="s2">（ジェニー）<br /><span style="s7">ハーイ ジェニーよ よろしくね</span></span></p> 
+   <p begin="00:23:18.147" end="00:23:20.108" style="s1"><span style="s2">（ケン）<br /><span style="s7">今回は デデンネを紹介(しょうかい)するぜ</span></span></p> 
+   <p begin="00:23:20.233" end="00:23:22.735" style="s1"><span style="s2">（ジェニー）<br /><span style="s7">あら まん丸ほっぺでかわいい</span></span></p> 
+   <p begin="00:23:22.860" end="00:23:25.571" style="s1"><span style="s2">（ケン）<span style="s7">おっとっと</span><br /><span style="s7">かわいいほほには 電気ビリビリ</span></span></p> 
+   <p begin="00:23:25.696" end="00:23:27.990" style="s8"><span style="s2">デデンネは 見た目からは<br />想像できないくらいの電気を―</span></p> 
+   <p begin="00:23:28.116" end="00:23:29.742" style="s8"><span style="s2">ほほ袋に ため<span style="s3"><span style="s4">込</span><span style="s6">こ</span></span>んで―</span></p> 
+   <p begin="00:23:29.867" end="00:23:32.662" style="s8"><span style="s2">相手をしびれさせる<br />強力なポケモンなんだ</span></p> 
+   <p begin="00:23:32.787" end="00:23:36.082" style="s1"><span style="s2">（ジェニー）<span style="s7">えーっ デデンネ</span><br /><span style="s7">すごーい よーし 決めたわ</span></span></p> 
+   <p begin="00:23:36.207" end="00:23:37.125" style="s1"><span style="s2">（ケン）<span style="s7">何をだい？</span></span></p> 
+   <p begin="00:23:37.250" end="00:23:40.294" style="s1"><span style="s2">（ジェニー）<span style="s7">デデンネを大量に捕(つか)まえて</span><br /><span style="s7">電気代を浮(う)かせようかと思って</span></span></p> 
+   <p begin="00:23:40.419" end="00:23:42.880" style="s1"><span style="s2">（ケン）<br /><span style="s7">デデンネで節約しちゃ ダメダメ</span></span></p> 
+   <p begin="00:23:43.548" end="00:23:47.760" style="s1"><span style="s2">（デデンネたち）ネネネネネ…</span></p> 
+   <p begin="00:23:47.885" end="00:23:50.847" style="s1"><span style="s2">（ジェニー）<span style="s7">見て！　すごーい！</span></span></p> 
+   <p begin="00:23:55.017" end="00:23:58.104" style="s8"><span style="s2">ホワイ？　何だ 寝ちゃったのね</span></p> 
+   <p begin="00:23:58.229" end="00:24:00.565" style="s1"><span style="s2">（ケン）<br /><span style="s7">デデンネは すぐ寝ちゃうからな</span></span></p> 
+   <p begin="00:24:00.940" end="00:24:02.900" style="s1"><span style="s2">ピッ ピカ ピー！</span></p> 
+   <p begin="00:24:03.025" end="00:24:06.279" style="s1"><span style="s2">さあ みんな<br /><span style="s3"><span style="s4">一緒</span><span style="s5">いっしょ</span></span>に行こうぜ 次の<span style="s3"><span style="s4">冒険</span><span style="s5">ぼうけん</span></span>へ</span></p> 
+   <p begin="00:24:07.029" end="00:24:10.616" style="s1"><span style="s2">（ジミー）<span style="s7">ロックンロール</span><br /><span style="s7">俺(おれ)の名はピカチュウ使いのジミー</span></span></p> 
+   <p begin="00:24:10.741" end="00:24:13.578" style="s8"><span style="s2">めっちゃ強いと評判の<br />マサラタウンのサトシ</span></p> 
+   <p begin="00:24:13.703" end="00:24:15.663" style="s8"><span style="s2">お前のピカチュウと勝負だ</span></p> 
+   <p begin="00:24:15.788" end="00:24:18.374" style="s1"><span style="s2">（セレナ）<span style="s7">えーっと 今 サトシは</span><br /><span style="s7">バトルできないという…</span></span></p> 
+   <p begin="00:24:18.499" end="00:24:20.334" style="s1"><span style="s2">（ジミー）<span style="s7">ロックンロール！</span></span></p> 
+   <p begin="00:24:20.459" end="00:24:23.212" style="s1"><span style="s2">（セレナ）<br /><span style="s7">次回 ポケットモンスターＸＹ＆Ｚ</span></span></p> 
+   <p begin="00:24:23.337" end="00:24:27.008" style="s8"><span style="s2">“セレナ サトシになる！<br />最強ピカチュウ対決！！”</span></p> 
+   <p begin="00:24:27.383" end="00:24:29.802" style="s8"><span style="s2">みんなもポケモン ゲットだよ</span></p> 
+  </div> 
+ </body> </tt>
