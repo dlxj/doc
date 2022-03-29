@@ -1,6 +1,4 @@
 
-
-from tokenize import String
 import numpy as np
 import cv2
 
@@ -13,11 +11,29 @@ if __name__ == '__main__':
     # 前提假设：原图是纯白表示空白像素；反色后纯黑表示空白像素
     img = cv2.bitwise_not(img, mask = None)  # 反色
 
+    img_color = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+
     num, labels, stats, centroids = cv2.connectedComponentsWithStats(img)
+
+    rows, cols = img.shape
+
+    for x in range(cols):
+        for y in range(rows):
+            label = labels[y][x]
+            left, up, w, h, area = stats[label]
+            if (area < 20):
+                cv2.rectangle(img_color, pt1=(left, up), pt2=(left+w,up+h), color=(255,0,0), thickness=1)
+
+
+    cv2.imshow("img_color", img_color)
+    cv2.waitKey()
+
+
+
 
     Rows, Cols = img.shape
 
-    
+
 
     a = 1
 
