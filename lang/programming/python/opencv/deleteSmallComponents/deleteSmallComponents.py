@@ -25,6 +25,7 @@ if __name__ == '__main__':
                 cv2.rectangle(img_color, pt1=(left, up), pt2=(left+w,up+h), color=(255,0,0), thickness=1)
 
 
+    cv2.imshow("origin", img)
     cv2.imshow("img_color", img_color)
     cv2.waitKey()
 
