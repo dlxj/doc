@@ -1269,6 +1269,8 @@ int main()
 # DeleteSmallComponents
 
 ```
+# python
+
 import numpy as np
 import cv2
 
