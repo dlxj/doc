@@ -2077,6 +2077,25 @@ data = _.orderBy(data, [
 
 
 
+## group by
+
+
+
+```javascript
+const _ = require("lodash"); 
+       
+// Original array 
+var users = (['one', 'two', 'three', 'four']);
+var obj = ([ 3.1, 1.2, 3.3 ]);
+   
+// Using the _.groupBy() method
+// with the `_.property` iteratee shorthand 
+let grouped_data = _.groupBy(users, 'length')
+let grouped_data2 = _.groupBy(obj, Math.floor)
+```
+
+
+
 ## includes
 
 ```
