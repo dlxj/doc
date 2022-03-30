@@ -32,13 +32,3 @@ if __name__ == '__main__':
     cv2.imshow("img_removed", img_removed)
     cv2.waitKey()
 
-
-
-
-    Rows, Cols = img.shape
-
-
-
-    a = 1
-
-    # ret, thresh1 = cv2.threshold(img, 120, 255, cv2.THRESH_BINARY)
