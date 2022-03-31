@@ -41,7 +41,8 @@ module.exports = {
 
 // 后期再加索引吧，windows 装不了这个插件
 create extension rum;
-CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);
+CREATE INDEX rum_anime_v_jp ON anime USING rum (v_jp rum_tsvector_ops);
+CREATE INDEX rum_anime_v_zh ON anime USING rum (v_zh rum_tsvector_ops);
 
 
 CREATE INDEX fts_rum_$$(tablename) ON $$(tablename) USING rum (v_jp rum_tsvector_ops);
@@ -111,4 +112,19 @@ CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);
 
 */
 
+/*
 
+    CREATE TABLE $$(tablename)_srt_jp (
+        id integer primary key generated always as identity, 
+        name text, 
+        jp text, 
+        type text, 
+        begintime text,
+        endtime text,
+        v_jp  tsvector, 
+        seasion text DEFAULT '',
+        seasionname text DEFAULT '',
+        episode text DEFAULT '',
+        videoname text 
+      );
+*/
