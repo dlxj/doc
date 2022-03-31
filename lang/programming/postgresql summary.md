@@ -2356,6 +2356,20 @@ ClientAliveCountMax 3 #指服务端发出请求后客户端无响应则自动断
 
 
 
+```
+yum install systemtap-sdt-devel
+$ git clone https://github.com/postgrespro/rum
+$ cd rum
+$ make USE_PGXS=1
+$ make USE_PGXS=1 install
+$ make USE_PGXS=1 installcheck
+$ psql DB -c "CREATE EXTENSION rum;"
+```
+
+
+
+
+
 好文
 
 https://www.mengqingzhong.com/2020/10/01/postgresql-index-rum-8/

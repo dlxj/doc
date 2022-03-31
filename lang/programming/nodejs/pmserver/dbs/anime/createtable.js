@@ -39,7 +39,15 @@ module.exports = {
 
 /*
 
+// 后期再加索引吧，windows 装不了这个插件
 create extension rum;
+CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);
+
+
+CREATE INDEX fts_rum_$$(tablename) ON $$(tablename) USING rum (v_jp rum_tsvector_ops);
+
+cur.execute("CREATE INDEX fts_rum_$$(tablename) ON $$(tablename) USING rum (v_jp rum_tsvector_ops);")
+
 
 CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);
 
