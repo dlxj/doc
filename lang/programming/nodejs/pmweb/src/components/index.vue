@@ -9,6 +9,11 @@
       <option>jp</option>
       <option>zh</option>
     </select>
+    <select v-model="keywdModel.lang_type">
+      <option>jp</option>
+      <option>zh</option>
+    </select>
+    <multiselect v-model="value" :options="options"></multiselect>
     <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
   
     <p></p>
@@ -58,7 +63,9 @@ export default {
       resultModel: { result: '' },
       resultsModel: [],
       isResultShow: false,
-      items: []
+      items: [],
+      value: null,
+      options: ['list', 'of', 'options']
     }
   },
   computed: {
