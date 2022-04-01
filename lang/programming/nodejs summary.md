@@ -5340,7 +5340,20 @@ v14.1.0
 # Vue
 
 - https://github.com/PanJiaChen/vue-element-admin
+
   - https://www.jianshu.com/p/c77b5c4c026d
+
+  - https://element.eleme.cn/#/zh-CN/component/select
+
+    - https://element.eleme.io/#/en-US/component/quickstart
+
+    > npm install element-ui -S
+    >
+    > import { Select, Button} from 'element-ui'
+    >
+    > // Vue.component(Select.name, Select)
+    >
+    > // Vue.component(Button.name, Button)
 
 ```
 npm uninstall --global vue-cli
