@@ -99,6 +99,9 @@ module.exports = {
   let r2 = await db_tiku_material.query(sql, {list})
 
 
+  
+ON DUPLICATE KEY UPDATE sort=values(sort),updateUserID=values(updateUserID),\`enable\`=values(\`enable\`),updateTime=now();
+
 */
 
 
