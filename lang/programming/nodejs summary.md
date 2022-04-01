@@ -5341,6 +5341,31 @@ v14.1.0
 
 - https://github.com/PanJiaChen/vue-element-admin
 
+  > ```
+  > git clone https://github.com/PanJiaChen/vue-element-admin.git
+  > npm install --registry=https://registry.npm.taobao.org
+  > npm run dev
+  > http://localhost:9527
+  > 
+  > 
+  > 本失败原因是由于tui-editor（富文本编辑器插件）更名造成的，现在已经更名为toast-ui/editor（以下第一步）
+  > 并且该插件还进行了文件名的更名（以下第二步）以及方法名的更名（以下第三步）
+  > 
+  > 解决方案如下：
+  > 1.首先将package.json中的tui-editor那一行修改为"@toast-ui/editor": "^3.1.3",
+  > 
+  > 2.进入\src\components\MarkdownEditor\index.vue文件，将他的所有import删除换成下面四行
+  > import 'codemirror/lib/codemirror.css'
+  > import '@toast-ui/editor/dist/toastui-editor.css'
+  > import Editor from '@toast-ui/editor'
+  > import defaultOptions from './default-options'
+  > 
+  > 3.把该页面（还是第二条中的文件）的getValue和setValue分别换成getMarkdown和setMarkdown
+  > 把页面中的所有tui-editor全部替换为@toast-ui/editor
+  > 
+  > 4.保存文件，npm install 搞定
+  > ```
+
   - https://www.jianshu.com/p/c77b5c4c026d
 
   - https://element.eleme.cn/#/zh-CN/component/select
