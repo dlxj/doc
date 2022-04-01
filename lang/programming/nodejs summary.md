@@ -5307,7 +5307,7 @@ mklink /D "C:\Users\i\AppData\Local\Google\Chrome\User Data\Default\Cache" "Z:\C
 
 
 ```
-、下载
+下载
 
 wget https://npm.taobao.org/mirrors/node/v14.1.0/node-v14.1.0-linux-x64.tar.gz
 1.
