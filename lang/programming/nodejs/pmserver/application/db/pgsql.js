@@ -86,6 +86,21 @@ module.exports = {
   getDB
 }
 
+/*
+
+批量插入的方法 VALUES 后面的形参是一个 ?,  实参是二维数组 (Mysql 中是这样)
+
+  let list = []
+  for (let { AppID, BookID, ID, PID, Name, SortID, level, frequency } of knowledgemap ) {
+    list.push( [ AppID, BookID, ID, PID, Name, SortID, level ] )
+  }
+
+  let sql = `INSERT INTO knowledgemap(AppID, BookID, ID, PID, Name, SortID, level) VALUES $(list);`
+  let r2 = await db_tiku_material.query(sql, {list})
+
+
+*/
+
 
 // defaultDB
 // let sql = `
