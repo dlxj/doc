@@ -19,7 +19,8 @@ module.exports = {
 
             let match= ttml.match(/(\d+)\./)
             if (match == null) {
-                throw `name not correct. ${ttml}`
+                //throw `name not correct. ${ttml}`
+                continue
             }
             let nth = match[1]
 
@@ -27,7 +28,8 @@ module.exports = {
 
                 let match2 = m4.match(/E(\d+) - Amazon/)
                 if (match2 == null) {
-                    throw `name not correct. ${m4}`
+                    //throw `name not correct. ${m4}`
+                    continue
                 }
                 let nth2 = match2[1]
 
