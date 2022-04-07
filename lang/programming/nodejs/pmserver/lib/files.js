@@ -4,7 +4,7 @@ let path = require('path')
 
 module.exports = {
 
-    allfiles : function(dir, ext, filters=[]) {
+    allfiles : function(dir, ext, filters=[], filters2=[]) {  // filters AND  // filters2 OR
 
         let paths = []
 
@@ -24,7 +24,17 @@ module.exports = {
                     
                 }
 
-                if (allfitQ) {
+                let allfit2Q = false
+                for (let filter of filters2) {
+                    if ( fullpath.indexOf(filter) != -1 ) {
+                        allfitQ = true
+                        break
+                    }
+                    
+                }
+
+
+                if (allfitQ || allfit2Q) {
                     paths.push(fullpath)
                 }
 
