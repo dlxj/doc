@@ -16,12 +16,22 @@ module.exports = {
     async handler({type}) {
 
         let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
+        // remove space
+        for (let ttml of ttml2s) {
+            let { base,dir,ext,name,root} = path.parse(ttml)
+            let withoutSpace = base.replace(/\s/g, '')
+            if (withoutSpace != base) {
+                let newname = path.join(dir, withoutSpace)
+                fs.renameSync( ttml, newname )
+            }
+        }
+        ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
 
         let ssas = this.libs.files.allfiles(global.root_subtitles, 'ssa', ['amazon', 'pokemon', 'ssa', 'S01'])
 
-        //D:\GitHub\doc\lang\Japanese\anime\sutitles\anime\amazon\pokemon\ssa\S01
+        let asss = this.libs.files.allfiles(global.root_subtitles, 'ass', ['amazon', 'pokemon', 'ass', 'S01'])
 
-        let srts = []
+        let jps = []
 
         for (let mlpath of ttml2s) {
 
@@ -44,10 +54,10 @@ module.exports = {
             let srt = this.libs.ttml2.extractSrt({mlpath})
             require('fs').writeFileSync( srtpath, srt, {encoding:'utf8'})
 
-            srts.push(srt)
+            jps.push(srt)
 
         }
 
-        return this.msg(200, srts)
+        return this.msg(200, {jps})
     }
 }
