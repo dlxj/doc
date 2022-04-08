@@ -6038,7 +6038,7 @@ saveToWord() { debugger // 这样就会断在这一行
 ```
 src\router\modules\components.js
 
-加一项
+路由加一项
   children: [
     {
       path: 'multiselect',
@@ -6046,6 +6046,10 @@ src\router\modules\components.js
       name: 'multiselect',
       meta: { title: 'multiselect' }
     },
+    
+组件加一项
+\src\views\components-demo\multiselect.vue
+
 
 ```
 
