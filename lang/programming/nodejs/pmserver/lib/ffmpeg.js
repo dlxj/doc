@@ -28,10 +28,7 @@ module.exports = {
 
         } catch(err) {
            return { srt:null, msg : err }
-        }
-
-        let a = 1
-        
+        }        
     },
     extractAudio: async function (vdpath, type, begin_time, end_time) {
         
@@ -43,7 +40,6 @@ module.exports = {
             //let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} pipe:1`   // write stdout
 
             let cmd = `ffmpeg -i "${vdpath}" -y -vn -ss ${begin_time} -to ${end_time} -acodec mp3 -ar 44100 -ac 2 -b:a 192k -f ${type} tmp.mp3`   // write stdout
-
 
             let childProcess = execa(cmd, {shell:true})
             //childProcess.stdout.pipe(process.stdout) // don't print to screen
@@ -58,5 +54,24 @@ module.exports = {
         } catch(err) {
            return { au:null}
         }
+    },
+    injectSubtitle:async function(vdpath, subpath) {
+
+        // ffmpeg -i F:\video.mkv -vn -an -codec:s:0 srt F:\subtitle.srt
+        
+        let { execa } = await import('execa')
+
+        try {
+
+            let cmd = `ffmpeg -i "${vdpath}" -y -map 0:s:${nth} -f ${type} pipe:1`  // write stdout
+
+            let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
+            let { stdout } = await childProcess
+
+            return { srt:stdout, msg:'' }
+
+        } catch(err) {
+           return { srt:null, msg : err }
+        } 
     }
 }

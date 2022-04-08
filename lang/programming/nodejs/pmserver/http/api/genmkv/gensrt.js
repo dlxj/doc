@@ -47,9 +47,3 @@ module.exports = {
         return this.msg(200, srts)
     }
 }
-
-/*
-
-
-
-*/

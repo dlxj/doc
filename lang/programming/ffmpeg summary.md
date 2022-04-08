@@ -105,3 +105,22 @@ if __name__ == "__main__":
 
 ```
 
+
+
+# inject subtitle
+- https://www.dyxmq.cn/other/add-subtitles-by-ffmpeg.html
+
+```
+给视频添加字幕的操作非常简单，执行一行命令即可：
+
+ffmpeg -i video.mkv -i subtitle.ass -c copy output.mkv
+替换掉已有字幕：
+
+ffmpeg -i input.mkv -i input.ass -c copy -map 0 -map -0:s -map 1 output.mkv
+参数说明：
+
+-map 0：选择第一个输入文件的所有流
+-map -0:s：删除第一个输入文件中的subtitles流（即删除字幕）
+-map 1：选择第二个输入文件中的流
+```
+

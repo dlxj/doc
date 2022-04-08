@@ -43,6 +43,11 @@ module.exports = {
         "linux": `/mnt/`,
         "darwin": `/Users/olnymyself/Downloads/`
     },
+    root_vd:{
+        "win32": `E:\\videos\\anime`,
+        "linux": `/mnt/`,
+        "darwin": `/Users/olnymyself/Downloads/`
+    },
     subtitleSteams: {
         "danganronpa": [ 0 ],  // nth stream is srt 4 ffpmeg
         "pokemon": [ 0, 2 ], 

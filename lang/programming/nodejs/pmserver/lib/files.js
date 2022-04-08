@@ -65,5 +65,17 @@ module.exports = {
 
         return paths
 
+    },
+    season:function(path) {
+
+      let season = ''
+      let match = path.match(/[\\\/](S\d\d)[\\\/]/)
+      if (match == null) {
+        return null
+      }
+      season = match[1]
+      
+      return season
+
     }
 }
