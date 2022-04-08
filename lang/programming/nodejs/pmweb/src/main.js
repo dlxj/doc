@@ -3,6 +3,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import 'normalize.css/normalize.css' // a modern alternative to CSS resets
+import './styles/element-variables.scss'
+
+
 ( async () => {
 
   // const config = require('./config')
