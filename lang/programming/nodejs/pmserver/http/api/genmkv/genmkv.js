@@ -39,12 +39,25 @@ module.exports = {
                 if (rtseason == null) {
                     throw 'no season on vd'
                 }
+
+                if (kvseason != rtseason) {
+                    continue
+                }
                 
                 if ( kvname == rtname ) {
 
-                    
-                    break
+                    let outdir = path.join(kvdir, 'output')
+                    if (!fs.existsSync(outdir)) {
+                        fs.mkdirSync(outdir, { recursive: false })
+                    }
 
+                    let outpath = path.join(outdir, kvbase)
+                    let { msg } = await this.libs.ffmpeg.injectSubtitle(kvpath, rtpath, outpath)
+                    if (msg != '') {
+                        throw msg
+                    }
+
+                    break
                 }
     
             }

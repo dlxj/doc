@@ -55,23 +55,23 @@ module.exports = {
            return { au:null}
         }
     },
-    injectSubtitle:async function(vdpath, subpath) {
+    injectSubtitle:async function(vdpath, subpath, outpath) {
 
         // ffmpeg -i F:\video.mkv -vn -an -codec:s:0 srt F:\subtitle.srt
-        
+
         let { execa } = await import('execa')
 
         try {
 
-            let cmd = `ffmpeg -i "${vdpath}" -y -map 0:s:${nth} -f ${type} pipe:1`  // write stdout
+            let cmd = `ffmpeg -i "${vdpath}" -i "${subpath}" -c copy ${outpath}`  // ffmpeg -i video.mkv -i subtitle.ass -c copy output.mkv
 
             let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
             let { stdout } = await childProcess
 
-            return { srt:stdout, msg:'' }
+            return { msg:stdout }
 
         } catch(err) {
-           return { srt:null, msg : err }
+           return { msg : err }
         } 
     }
 }
