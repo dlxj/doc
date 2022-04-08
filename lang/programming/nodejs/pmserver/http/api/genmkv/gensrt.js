@@ -15,16 +15,23 @@ module.exports = {
     },
     async handler({type}) {
 
-        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon'])
+        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
 
         let srts = []
 
         for (let mlpath of ttml2s) {
 
             let { base, dir, ext, name, root } = path.parse(mlpath)
+
+            let season = ''
+            let match = mlpath.match(/[\\\/](S\d\d)[\\\/]/)
+            if (match == null) {
+                throw 'no season on subtitle path'
+            }
+            season = match[1]
     
-            let dir_up = require('path').resolve(dir, '..')
-            let dir_srt = path.join(dir_up, 'srt')
+            let dir_up = require('path').resolve(dir, '..', '..')
+            let dir_srt = path.join(dir_up, 'srt', season)
             if ( !fs.existsSync( dir_srt ) ) {
                 fs.mkdirSync(dir_srt, { recursive: true })
             }
