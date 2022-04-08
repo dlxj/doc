@@ -6031,6 +6031,28 @@ saveToWord() { debugger // 这样就会断在这一行
 
 
 
+# vue-element-admin
+
+
+
+```
+src\router\modules\components.js
+
+加一项
+  children: [
+    {
+      path: 'multiselect',
+      component: () => import('@/views/components-demo/multiselect'),
+      name: 'multiselect',
+      meta: { title: 'multiselect' }
+    },
+
+```
+
+
+
+
+
 # Excel
 
 
