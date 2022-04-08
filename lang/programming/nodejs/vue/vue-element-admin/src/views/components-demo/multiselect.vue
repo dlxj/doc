@@ -1,43 +1,51 @@
 <template>
-  <div class="components-container">
-    <el-drag-select v-model="value" style="width:500px;" multiple placeholder="请选择">
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-    </el-drag-select>
 
-    <div style="margin-top:30px;">
-      <el-tag v-for="item of value" :key="item" style="margin-right:15px;">
-        {{ item }}
-      </el-tag>
-    </div>
-  </div>
+  <el-select
+    v-model="value2"
+    multiple
+    collapse-tags
+    style="margin-left: 20px;"
+    placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+
 </template>
 
-<script>
-import ElDragSelect from '@/components/DragSelect' // base on element-ui
 
+<script>
 export default {
-  name: 'DragSelectDemo',
-  components: { ElDragSelect },
   data() {
     return {
-      value: ['Apple', 'Banana', 'Orange'],
-      options: [{
-        value: 'Apple',
-        label: 'Apple'
-      }, {
-        value: 'Banana',
-        label: 'Banana'
-      }, {
-        value: 'Orange',
-        label: 'Orange'
-      }, {
-        value: 'Pear',
-        label: 'Pear'
-      }, {
-        value: 'Strawberry',
-        label: 'Strawberry'
-      }]
-    }
-  }
-}
+      options: [
+        {
+          value: "选项1",
+          label: "黄金糕",
+        },
+        {
+          value: "选项2",
+          label: "双皮奶",
+        },
+        {
+          value: "选项3",
+          label: "蚵仔煎",
+        },
+        {
+          value: "选项4",
+          label: "龙须面",
+        },
+        {
+          value: "选项5",
+          label: "北京烤鸭",
+        },
+      ],
+      value1: [],
+      value2: [],
+    };
+  },
+};
 </script>
