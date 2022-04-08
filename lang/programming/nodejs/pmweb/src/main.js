@@ -6,6 +6,8 @@ import router from './router'
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import './styles/element-variables.scss'
 
+import Element from 'element-ui'
+
 
 ( async () => {
 
@@ -44,6 +46,8 @@ import './styles/element-variables.scss'
   // require('fs').writeFileSync('logo.svg', buffer)  // 浏览器不能写本地文件
 
   Vue.config.productionTip = false
+
+  Vue.use(Element, {})
 
   /* eslint-disable no-new */
   new Vue({
