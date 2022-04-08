@@ -17,6 +17,10 @@ module.exports = {
 
         let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
 
+        let ssas = this.libs.files.allfiles(global.root_subtitles, 'ssa', ['amazon', 'pokemon', 'ssa', 'S01'])
+
+        //D:\GitHub\doc\lang\Japanese\anime\sutitles\anime\amazon\pokemon\ssa\S01
+
         let srts = []
 
         for (let mlpath of ttml2s) {
@@ -31,7 +35,7 @@ module.exports = {
             season = match[1]
     
             let dir_up = require('path').resolve(dir, '..', '..')
-            let dir_srt = path.join(dir_up, 'srt', season)
+            let dir_srt = path.join(dir_up, 'srt', season, 'jp')
             if ( !fs.existsSync( dir_srt ) ) {
                 fs.mkdirSync(dir_srt, { recursive: true })
             }
