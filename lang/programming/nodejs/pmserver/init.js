@@ -336,8 +336,9 @@ module.exports = async function () {
     root = require('path').join(rootdir, 'videos', 'anime')
     let root_audio = require('path').join(rootdir, 'audios')
 
-    let root_subtitles = require('path').join(rootdir, 'sutitles')
+    //let root_subtitles = require('path').join(rootdir, 'sutitles')  // D:\GitHub\doc\lang\Japanese\anime\sutitles
 
+    let root_subtitles = global.config.root_subtitles[platform]
 
     global.animes.root = root
     global.animes.root_audio = root_audio

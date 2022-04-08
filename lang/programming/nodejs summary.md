@@ -2359,6 +2359,22 @@ function getContent(fileName) {
 
 
 
+## platform
+
+
+
+```javascript
+    let platform = process.platform
+    let platforms = [ 'win32', 'linux', 'darwin' ]
+    if ( ! platforms.includes( platform ) ) {
+        throw 'unknow os type.'
+    }
+```
+
+
+
+
+
 # stream
 
 - http://nodejs.cn/api/stream/stream_pipeline_streams_callback.html
