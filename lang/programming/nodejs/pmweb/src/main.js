@@ -47,7 +47,7 @@ import Element from 'element-ui'
 
   Vue.config.productionTip = false
 
-  Vue.use(Element, {})
+  Vue.use(Element, {size: 'mini'})  // 所有拥有 size 属性的组件默认尺寸全部设为 small
 
   /* eslint-disable no-new */
   new Vue({

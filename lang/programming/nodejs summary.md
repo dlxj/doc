@@ -5997,12 +5997,6 @@ this.$MuiPlayer()
 
 
 
-
-
-
-
-
-
 ## vscode 
 
 - 安装 Vetur 语法高亮
@@ -6022,12 +6016,20 @@ this.$MuiPlayer()
 saveToWord() { debugger // 这样就会断在这一行 
 ```
 
-
-
-
-
 - https://www.jianshu.com/p/c013027069ce
   - Vue前端部署
+
+
+
+## 自适应大小
+
+```
+在父级div加：
+
+overflow: auto;
+```
+
+
 
 
 
@@ -6058,6 +6060,8 @@ src\router\modules\components.js
 ```
 npm install --save normalize.css
 ```
+
+
 
 
 
