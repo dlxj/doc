@@ -2012,6 +2012,17 @@ console.log(arr.join(' '));
 
 
 
+## concat
+
+```
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// expected output: Array ["a", "b", "c", "d", "e", "f"]
+```
+
 
 
 
@@ -3444,7 +3455,7 @@ let re = await this.dbs.anime.insert.query({tablename:type, name, seasion, jp, z
 
 
 
-## Grup
+## Group
 
 
 

@@ -31,6 +31,8 @@ module.exports = {
 
         let asss = this.libs.files.allfiles(global.root_subtitles, 'ass', ['amazon', 'pokemon', 'ass', 'S01'])
 
+        ssas = ssas.concat(asss)
+
         let jps = []
 
         for (let mlpath of ttml2s) {
@@ -58,7 +60,7 @@ module.exports = {
 
         }
 
-
+        let chs = []
         for (let ttml of ttml2s) {
 
             let match= ttml.match(/(\d+)\./)
@@ -95,7 +97,21 @@ module.exports = {
                         let { base,dir,ext,name,root} = path.parse(ttml)
                         let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(sapath)
 
-                        let ssa = this.libs.ssa.extractSrt({sapath})
+                        let dir_up = require('path').resolve(dir, '..', '..')
+                        let dir_srt = path.join(dir_up, 'srt', season, 'chs')
+                        if ( !fs.existsSync( dir_srt ) ) {
+                            fs.mkdirSync(dir_srt, { recursive: true })
+                        }
+                        let srtpath = path.join(dir_srt, `${name}.srt`)
+
+                        let srt = this.libs.ssa.extractSrt({sapath})
+                        require('fs').writeFileSync(srtpath, srt, {encoding:'utf8'})
+
+                        if (srt == '') {
+                            let a = 1
+                        }
+
+                        chs.push(srt)
 
                         break
     
@@ -109,6 +125,6 @@ module.exports = {
 
 
 
-        return this.msg(200, {jps})
+        return this.msg(200, {jps, chs})
     }
 }
