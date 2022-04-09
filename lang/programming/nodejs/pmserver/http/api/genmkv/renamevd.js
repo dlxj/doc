@@ -9,11 +9,13 @@ module.exports = {
     params: {
         rootvd: {
             type: 'string',
-            remark: ''
+            remark: '',
+            default:''
         },
         rootttml2: {
             type: 'string',
-            remark: ''
+            remark: '',
+            default:''
         },
     },
     async handler({rootvd, rootttml2}) {
