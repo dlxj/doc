@@ -18,7 +18,10 @@ module.exports = {
     },
     async handler({rootssa, rootttml2}) {
 
-        let rts = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S01'])
+        let jpspaths = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S01', 'jp'])
+
+        let chspaths = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S01', 'chs'])
+
 
         let re = this.libs.matchsub.matchsub(rootssa, rootttml2)
 
