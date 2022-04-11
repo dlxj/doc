@@ -20,7 +20,9 @@ module.exports = {
 
         console.log('hit http/anime/insert')        
 
-        let re = await this.services.anime.insert({})
+        //let re = await this.services.anime.insert({})
+
+        let re = await this.services.anime.insertV2({})
 
         // let dbpaths = libfiles.allfiles(dbsDir, 'js')
 

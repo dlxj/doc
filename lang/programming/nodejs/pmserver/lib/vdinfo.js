@@ -3,7 +3,8 @@ let path = require('path')
 
 let regstrs = [
     String.raw`.+?Animation - (\d+) \[.+?`,  // 4 danggan
-    String.raw`第(\d+(?:~\d+)*)话`,          // 4 pokemon
+    String.raw`第(\d+(?:~\d+)*)话`,          // 4 pokemon c2club
+    String.raw`(^\d+)\.`,          // 4 pokemon amazon
     String.raw` - (\d+)(?:v\d+)* \[`,       // 4 hibike_euphonium
 ]
 
@@ -17,6 +18,7 @@ module.exports = {
         tmp = tmp.replace(/^[\\\/]/, '')
 
         let arr = tmp.split(/[\\\/]/)
+        //let source = arr[0]  // vd from where
         let name = arr[0]
         let seasion = arr[1]
         let seasionname = arr[2]
@@ -51,5 +53,4 @@ module.exports = {
 
         return { name, seasion, seasionname, episode, videoname }
     }
-
 }

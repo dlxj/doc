@@ -50,7 +50,9 @@ module.exports = {
     },
     subtitleSteams: {
         "danganronpa": [ 0 ],  // nth stream is srt 4 ffpmeg
-        "pokemon": [ 0, 2 ], 
+        //"pokemon": [ 0, 2 ], 
+        "pokemon_c2club": [ 0, 2 ], 
+        "pokemon_amazon": [ 0 ], 
         "hibike_euphonium": [ 2 ],  // 2 jp_chs
     }
 }

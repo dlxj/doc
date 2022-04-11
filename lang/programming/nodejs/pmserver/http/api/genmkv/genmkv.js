@@ -37,7 +37,7 @@ module.exports = {
     
                 let rtseason = this.libs.files.season(rtpath)
                 if (rtseason == null) {
-                    throw 'no season on vd'
+                    throw 'no season on rt'
                 }
 
                 if (kvseason != rtseason) {
