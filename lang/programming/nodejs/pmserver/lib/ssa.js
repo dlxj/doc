@@ -20,14 +20,14 @@ module.exports = {
         }
         
         sa = sa.replace(/\r\n/g, '\n')
-        let matchs = sa.matchAll(String.raw`\nDialogue:.+?(\d:\d\d:\d\d\.\d\d),(\d:\d\d:\d\d\.\d\d),Default,,.+?,,(.+)`)
+        let matchs = sa.matchAll(String.raw`\nDialogue:.+?(\d:\d\d:\d\d\.)(\d\d),(\d:\d\d:\d\d\.)(\d\d),Default,,.+?,,(.+)`)
         let arr = Array.from(matchs)
         for (let match of arr) {
 
             let origin = match[0]
-            let begin = '0' + match[1]
-            let end = '0' + match[2]
-            let text = match[3]
+            let begin = '0' + match[1] + '0' + match[2]
+            let end = '0' + match[3] + '0' + match[4]
+            let text = match[5]
 
             if (text.indexOf('WWW.C2CLUB.NET') != -1) {
                 continue
