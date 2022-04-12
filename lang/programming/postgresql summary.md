@@ -1840,6 +1840,18 @@ LIMIT page_sieze OFFSET page_size * 4;
 
 
 
+### 读写分离
+
+- https://lofter.me/2017/10/25/PostgreSQL%E9%9B%86%E7%BE%A4%E5%8F%8A%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%96%B9%E6%A1%88/
+
+```
+PostgreSQL集群及读写分离方案
+```
+
+
+
+
+
 
 
 ## Docker
