@@ -98,3 +98,9 @@ netstat -aon | findstr "8080"
 
 
 
+# wifi crack
+
+
+
+- https://lofter.me/2018/10/22/Kali-Linux-%E9%AB%98%E6%95%88%E7%A0%B4%E8%A7%A3Wifi%E5%AF%86%E7%A0%81/
+
