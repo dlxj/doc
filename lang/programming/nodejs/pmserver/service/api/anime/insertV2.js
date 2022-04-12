@@ -179,7 +179,7 @@ module.exports = {
             
 
 
-            let subtitles2 = this.libs.srt.merge(subsjp, subszh)
+            let subtitles2 = this.libs.srt.mergev2(subsjp, subszh)
 
             console.log(`# begin insert...`)
             for (let i = 0; i < subtitles2.length; i++) {  // 
@@ -212,6 +212,8 @@ module.exports = {
                 if (audio == null) {
                     throw `au is null. ${vdpath} ${begintime}`
                 }
+
+                //fs.writeFileSync(path.join(audio_dir, `${jp}.mp3`), audio )
             
                 //fs.writeFileSync('./tmp.mp3', audio )
         
