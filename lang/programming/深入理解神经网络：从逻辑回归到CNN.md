@@ -5479,6 +5479,27 @@ one hot型的矩阵运算简化为了查表操作
 
 > 哈佛大学机器翻译开源项目 OpenNMT的工作原理
 
+> ```
+> git clone -b 2.2.0 https://github.com/OpenNMT/OpenNMT-py.git
+> cd OpenNMT-py
+> python setup.py install
+> 
+> git config --global url."https://".insteadOf git://
+> pip install -r requirements.opt.txt
+> 
+> onmt_train -h  # 是否成功
+> 
+> 
+> OpenNMT-py/data/ 英译德数据:
+> For training:
+> 	src-train.txt
+> 	tgt-train.txt
+> For validation:
+> 	src-val.txt
+> 	tgt-val.txt
+> 
+> ```
+
 
 
 - https://arabelatso.github.io/2021/01/03/OpenNMT-Doc/
