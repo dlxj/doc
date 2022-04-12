@@ -5507,7 +5507,7 @@ one hot型的矩阵运算简化为了查表操作
 > wget https://s3.amazonaws.com/opennmt-trainingdata/toy-ende.tar.gz
 > tar xf toy-ende.tar.gz
 > 
-> 新建toy_en_de.yaml # 在OpenNMT-py 目录下 
+> 新建toy_en_de_data.yaml # 在OpenNMT-py 目录下 
 > ## Where the samples will be written
 > save_data: toy-ende/run/example
 > ## Where the vocab(s) will be written
@@ -5526,11 +5526,28 @@ one hot型的矩阵运算简化为了查表操作
 > 
 > 
 > # 生成字典
-> onmt_build_vocab -config toy_en_de.yaml -n_sample 10000
+> onmt_build_vocab -config toy_en_de_data.yaml -n_sample 10000
 > 
 > 
 > # 训练
-> onmt_train -data data/demo -save_model demo-model -gpu_ranks 0
+> 新建toy_en_de_train.yaml # 在OpenNMT-py 目录下
+> # Vocabulary files that were just created
+> src_vocab: toy-ende/run/example.vocab.src
+> tgt_vocab: toy-ende/run/example.vocab.tgt
+> 
+> # Train on a single GPU
+> world_size: 1
+> gpu_ranks: [0]
+> 
+> # Where to save the checkpoints
+> save_model: toy-ende/run/model
+> save_checkpoint_steps: 500
+> train_steps: 1000
+> valid_steps: 500
+> 
+> onmt_train -config toy_en_de_train.yaml
+> 
+> 
 > 
 > ```
 
