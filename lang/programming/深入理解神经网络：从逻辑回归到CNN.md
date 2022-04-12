@@ -5480,17 +5480,22 @@ one hot型的矩阵运算简化为了查表操作
 > 哈佛大学机器翻译开源项目 OpenNMT的工作原理
 
 > ```
+> # 安装虚拟环境
+> conda create -n nmt pip python=3.7 PyTorch=1.6.0
+> conda activate nmt # conda deactivate
+> 
+> # 删除虚拟环境 
+> conda deactivate
+> conda env remove -n nmt
+> 
+> # 安装OpenNMT-py
 > git clone -b 2.2.0 https://github.com/OpenNMT/OpenNMT-py.git
 > cd OpenNMT-py
-> python setup.py install
-> 
-> git config --global url."https://".insteadOf git://
+> git config --global url."https://".insteadOf git://  # fix github error
+> pip install -e .   #python setup.py install
 > pip install -r requirements.opt.txt
 > 
-> onmt_train -h  # 是否成功
-> 
-> 
-> OpenNMT-py/data/ 英译德数据:
+> OpenNMT-py/data/ 自带英译德数据:
 > For training:
 > 	src-train.txt
 > 	tgt-train.txt
@@ -5498,7 +5503,42 @@ one hot型的矩阵运算简化为了查表操作
 > 	src-val.txt
 > 	tgt-val.txt
 > 
+> # 准备数据
+> wget https://s3.amazonaws.com/opennmt-trainingdata/toy-ende.tar.gz
+> tar xf toy-ende.tar.gz
+> 
+> 新建toy_en_de.yaml # 在OpenNMT-py 目录下 
+> ## Where the samples will be written
+> save_data: toy-ende/run/example
+> ## Where the vocab(s) will be written
+> src_vocab: toy-ende/run/example.vocab.src
+> tgt_vocab: toy-ende/run/example.vocab.tgt
+> # Prevent overwriting existing files in the folder
+> overwrite: False
+> 
+> # Corpus opts:
+> data:
+>     corpus_1:
+>         path_src: toy-ende/src-train.txt
+>         path_tgt: toy-ende/tgt-train.txt
+>     valid:
+>         path_src: toy-ende/src-val.txt
+> 
+> 
+> # 生成字典
+> onmt_build_vocab -config toy_en_de.yaml -n_sample 10000
+> 
+> 
+> # 训练
+> onmt_train -data data/demo -save_model demo-model -gpu_ranks 0
+> 
 > ```
+
+
+
+- https://lofter.me/2020/03/22/%E4%BD%BF%E7%94%A8OpenNMT-py%E8%AE%AD%E7%BB%83%E7%BF%BB%E8%AF%91%E6%A8%A1%E5%9E%8B/
+
+  > 使用OpenNMT-py训练翻译模型
 
 
 
