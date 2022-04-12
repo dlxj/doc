@@ -5471,7 +5471,13 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+## 机器翻译
 
+
+
+- https://developer.aliyun.com/article/177761?spm=5176.24320532.content1.1.5cfd3eeawKBNHD
+
+> 哈佛大学机器翻译开源项目 OpenNMT的工作原理
 
 
 
