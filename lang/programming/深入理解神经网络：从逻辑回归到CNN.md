@@ -5481,6 +5481,12 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+- https://arabelatso.github.io/2021/01/03/OpenNMT-Doc/
+
+  > OpenNMT 2.0.0rc1 使用手册
+
+
+
 ## 语音识别系统
 
 
