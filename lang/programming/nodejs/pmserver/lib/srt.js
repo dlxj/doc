@@ -255,66 +255,107 @@ module.exports = {
 
             let duration_jp = end_seconds_jp - begin_seconds_jp
 
-            let matchQ = false
-            for (let j = 0; j < subszh.length; j++) {
-                
-                let begintime_zh = subszh[j].begintime
-                let endtime_zh = subszh[j].endtime
-                let subtitle_zh = subszh[j].subtitle
-                let begin_seconds_zh = parse_srt_time(begintime_zh)
-                let end_seconds_zh = parse_srt_time(endtime_zh)
+            let sub = { begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh:'', zhs: [] }
 
-                if (begin_seconds_jp == begin_seconds_zh) {
+            // find nearest time in zhs
 
-                    //if (j - i > 20) break
+            let bestIdex = -1
 
-                    subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
-                    matchQ = true
-                }
-            }
+            let thetacurr = 1.5
+            let thetaMax = 10.5
 
-            if (!matchQ) {
+            let deviationcurr = 1.5
+            let deviationMax = 2.5
+
+            do {
+
                 for (let j = 0; j < subszh.length; j++) {
 
                     let begintime_zh = subszh[j].begintime
                     let endtime_zh = subszh[j].endtime
                     let subtitle_zh = subszh[j].subtitle
-
+    
                     let begin_seconds_zh = parse_srt_time(begintime_zh)
                     let end_seconds_zh = parse_srt_time(endtime_zh)
-
+    
                     let duration_zh = end_seconds_zh - begin_seconds_zh
-
+    
                     let deviation = Math.abs(duration_zh - duration_jp)
                     let de_begin = Math.abs(begin_seconds_zh - begin_seconds_jp)
                     let de_end = Math.abs(end_seconds_zh - end_seconds_jp)
-
-                    if (deviation <= 1.5) {  // duration less than 1 second
-
-                        if (de_begin <= 1.5) {
-
-                            if (de_end <= 1.5) {
-
-                                subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
-                                matchQ = true
+    
+                    if (deviation <= deviationcurr) {  // duration less than 1 second
+    
+                        if (de_begin <= thetacurr) {
+    
+                            if (de_end <= thetacurr) {
+    
+                                bestIdex = j
+    
+                                // subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
                                 break
-
+    
                             }
-
                         }
                     }
-
-
+    
+    
                     if ((j - i > 15)) {
                         break
                     }
+    
+                }
+                
+                thetacurr += 1
+                deviationcurr += 0.1
+
+            } while( thetacurr <= thetaMax )
+
+
+            if (bestIdex != -1) {
+
+                let beginIdex = -1
+                let endIndex = -1
+
+                if ( bestIdex >= 2 ) {
+                    beginIdex = bestIdex - 2
+                } else if (bestIdex >= 1) {
+                    beginIdex = bestIdex - 1
+                } else if (bestIdex >= 0 ) {
+                    beginIdex = bestIdex
+                }
+
+                if ( bestIdex + 2 < subszh.length ) {
+                    endIndex = bestIdex + 2
+                } else if ( bestIdex + 1 < subszh.length ) {
+                    endIndex = bestIdex + 1
+                } else if ( bestIdex < subszh.length ) {
+                    endIndex = bestIdex
+                }
+
+                for (let k = beginIdex; k <= endIndex; k++) {
+
+                    let begintime_zh = subszh[k].begintime
+                    let endtime_zh = subszh[k].endtime
+                    let subtitle_zh = subszh[k].subtitle
+
+                    sub.zhs.push( subtitle_zh.trim() )
 
                 }
+
+            } else {
+
+                console.log(`Warning: zh match not found  index is: ${i} in subsjp ${subtitle_jp}`)
+                continue
+
             }
 
-            if (!matchQ) {
-                //subs.push( {begintime:begintime_jp, endtime:endtime_jp, jp:subtitle_jp, zh:'' } )
+            if (sub.zhs.length > 0) {
+                sub.zh = sub.zhs.join('|')
             }
+
+            subs.push( sub )
+
         }
 
         return subs
