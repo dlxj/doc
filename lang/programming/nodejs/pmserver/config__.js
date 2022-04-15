@@ -40,12 +40,12 @@ module.exports = {
     },
     root_subtitles:{
         "win32": `D:\\GitHub\\doc\\lang\\Japanese\\anime\\sutitles`,
-        "linux": `/mnt/`,
+        "linux": `/mnt/github/doc/lang/Japanese/anime/sutitles`,
         "darwin": `/Users/olnymyself/Downloads/`
     },
     root_vd:{
         "win32": `E:\\videos\\anime`,
-        "linux": `/mnt/`,
+        "linux": `/mnt/videos/anime`,
         "darwin": `/Users/olnymyself/Downloads/`
     },
     subtitleSteams: {

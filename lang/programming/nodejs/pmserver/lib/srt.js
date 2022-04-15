@@ -262,10 +262,10 @@ module.exports = {
             let bestIdex = -1
 
             let thetacurr = 1.5
-            let thetaMax = 10.5
+            let thetaMax = 1.85
 
             let deviationcurr = 1.5
-            let deviationMax = 2.5
+            let deviationMax = 1.85
 
             do {
 
@@ -284,20 +284,19 @@ module.exports = {
                     let de_begin = Math.abs(begin_seconds_zh - begin_seconds_jp)
                     let de_end = Math.abs(end_seconds_zh - end_seconds_jp)
     
-                    if (deviation <= deviationcurr) {  // duration less than 1 second
+                    // if (deviation <= deviationcurr) {  // duration less than 1 second
     
-                        if (de_begin <= thetacurr) {
+                    if (de_begin <= thetacurr) {
     
-                            if (de_end <= thetacurr) {
+                        if (de_end <= thetacurr) {
     
-                                bestIdex = j
+                            bestIdex = j
     
-                                // subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
-                                break
-    
-                            }
+                            // subs.push({ begintime: begintime_jp, endtime: endtime_jp, jp: subtitle_jp, zh: subtitle_zh })
+                            break
                         }
                     }
+                    // }
     
     
                     if ((j - i > 15)) {
@@ -306,8 +305,8 @@ module.exports = {
     
                 }
                 
-                thetacurr += 1
-                deviationcurr += 0.1
+                thetacurr += 0.01
+                //deviationcurr += 0.1
 
             } while( thetacurr <= thetaMax )
 

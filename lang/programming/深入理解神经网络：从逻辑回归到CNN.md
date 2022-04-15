@@ -3331,6 +3331,37 @@ $$
 
 
 
+### EM算法
+
+- https://blog.sciencenet.cn/blog-2970729-1191928.html
+
+  > EM算法(期望最大化算法)简介
+
+
+
+A、B 两枚硬币，假设它们抛出正面向上的真实概率分别为$\theta_A$ 和$\theta_B$ ，写成向量形式为：
+
+$$
+\theta = (\theta_A, \theta_B)
+$$
+
+总共进行五次实验，其中第$i$ 次实验过程为：以50% 的概率随机从硬币A、B中挑一个，挑选的结果记为$z_i$，$z_i \in \{A, B\}$然后用它抛10 次，出现正面的次数记为$x_i$ ，$x_i \in \{ 0,1,\cdots, 10\}$ 
+
+
+
+五次实验结果写成向量形式为：
+$$
+z = (z_1,z_2,z_3,z_4,z_5) \\
+$$
+
+
+
+
+
+
+
+
+
 ## 三角函数
 
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20210618114742424.png" alt="image-20210618114742424" style="zoom:50%;" />
@@ -5474,8 +5505,9 @@ one hot型的矩阵运算简化为了查表操作
 ## 机器翻译
 
 - https://colab.research.google.com/drive/1YzHT4av2SPXI_CzpX3mF9ImFv-V39n4D?usp=sharing
-
 - https://developer.aliyun.com/article/177761?spm=5176.24320532.content1.1.5cfd3eeawKBNHD
+- https://github.com/laubonghaudoi/ai_mt
+  - OpenNMT中英
 
 > 哈佛大学机器翻译开源项目 OpenNMT的工作原理
 

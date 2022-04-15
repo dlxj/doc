@@ -14,9 +14,9 @@ module.exports = {
 
         // drop and create db, then create table
         let type = 'anime'
-        // let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': type})
-        // re = await this.dbs.defaultDB.createdatabase.query({'dbname':type})
-        // re = await this.dbs.anime.createtable.query({'tablename': type})
+        let re = await this.dbs.defaultDB.dropdatabase.query({'dbname': type})
+        re = await this.dbs.defaultDB.createdatabase.query({'dbname':type})
+        re = await this.dbs.anime.createtable.query({'tablename': type})
 
         //let mkvs = this.libs.files.allmkv(global.animes.root, type)
 
