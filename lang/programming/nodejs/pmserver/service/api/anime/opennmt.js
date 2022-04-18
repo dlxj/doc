@@ -2,6 +2,7 @@
 let path = require('path')
 let fs = require('fs')
 let subtitleSteams = global.config.subtitleSteams
+let root_corpus = global.config.root_corpus
 
 module.exports = {
     name: 'opennmt',
@@ -11,7 +12,7 @@ module.exports = {
     async handler({}) {
 
         let mkvs = this.libs.files.allfiles(global.animes.root, 'mkv', ['pokemon_c2club', 'S14', 'Best_Wishes'])
-        
+
         let names = {}
         for (let vdpath of mkvs) {
             let { name, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
@@ -20,7 +21,10 @@ module.exports = {
             }
         }
 
-        for (let j = 0; j < mkvs.length; j++) {
+        let jps = []
+        let chss = []
+
+        for (let j = 0; j < 1; j++) {  // mkvs.length
 
             let vdpath = mkvs[j]
             let { name, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
@@ -82,7 +86,8 @@ module.exports = {
 
                 let { spaced:spacedzh } = await this.libs.jieba.spaced(zh)
 
-
+                jps.push(spacedjp)
+                chss.push(spacedzh)
 
                 console.log(`${i + 1}/${subtitles2.length} subs | ${j + 1} / ${mkvs.length} mkvs ${name}`)   
                 
@@ -90,12 +95,40 @@ module.exports = {
 
         }
 
+        require('fs').writeFileSync(path.join(root_corpus, 'src-train.txt'), jps.join('\n'), {encoding:'utf-8'} )
+        require('fs').writeFileSync(path.join(root_corpus, 'tgt-train.txt'), chss.join('\n'), {encoding:'utf-8'} )
+        
+        // require('fs').writeFileSync('src-val.txt', ens2, {encoding:'utf-8'} )
+        // require('fs').writeFileSync('tgt-val.txt', chts2, {encoding:'utf-8'} )
+    
+        // require('fs').writeFileSync('src-test.txt', ens3, {encoding:'utf-8'} )
+        // require('fs').writeFileSync('tgt-test.txt', chts3, {encoding:'utf-8'} )
+
         console.log('all taske done.')
 
         return 'all taske done.'
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 
