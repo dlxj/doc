@@ -31,7 +31,7 @@ module.exports = {
         let jps = []
         let chss = []
 
-        for (let j = 0; j < 1; j++) {  // mkvs.length
+        for (let j = 0; j < mkvs.length; j++) {  // mkvs.length
 
             let vdpath = mkvs[j]
             let { name, seasion, seasionname, episode, videoname } = this.libs.vdinfo.episode(vdpath)
@@ -110,14 +110,40 @@ module.exports = {
 
         arr = _.shuffle(arr)
 
-        // require('fs').writeFileSync(path.join(root_corpus, 'src-train.txt'), jps.join('\n'), {encoding:'utf-8'} )
-        // require('fs').writeFileSync(path.join(root_corpus, 'tgt-train.txt'), chss.join('\n'), {encoding:'utf-8'} )
+        let n1 = Math.ceil( arr.length * 0.6 )
+        let n2 = Math.ceil( arr.length * 0.8 )
+        let n3 = arr.length
+
+        let arr1 = _.slice(arr, 0, n1)
+        let arr2 =  _.slice(arr, n1, n2)
+        let arr3 =  _.slice(arr, n2, n3)
+
+        function copus(ar) {
+
+            let jpar = []
+            let chsar = []
+            for (let { jp, chs } of ar) {
+                jpar.push(jp)
+                chsar.push(chs)
+            }
+
+            return { jpar, chsar }
+        }
+
+        let { jpar:srctrain, chsar:tgttrain } = copus(arr1)
+
+        let { jpar:srcval, chsar:tgtval } = copus(arr2)
+
+        let { jpar:srctest, chsar:tgttest } = copus(arr3)
+
+        require('fs').writeFileSync(path.join(root_corpus, 'src-train.txt'), srctrain.join('\n'), {encoding:'utf-8'} )
+        require('fs').writeFileSync(path.join(root_corpus, 'tgt-train.txt'), tgttrain.join('\n'), {encoding:'utf-8'} )
         
-        // require('fs').writeFileSync('src-val.txt', ens2, {encoding:'utf-8'} )
-        // require('fs').writeFileSync('tgt-val.txt', chts2, {encoding:'utf-8'} )
+        require('fs').writeFileSync(path.join(root_corpus, 'src-val.txt'), srcval.join('\n'), {encoding:'utf-8'} )
+        require('fs').writeFileSync(path.join(root_corpus, 'tgt-val.txt'), tgtval.join('\n'), {encoding:'utf-8'} )
     
-        // require('fs').writeFileSync('src-test.txt', ens3, {encoding:'utf-8'} )
-        // require('fs').writeFileSync('tgt-test.txt', chts3, {encoding:'utf-8'} )
+        require('fs').writeFileSync(path.join(root_corpus, 'src-test.txt'), srctest.join('\n'), {encoding:'utf-8'} )
+        require('fs').writeFileSync(path.join(root_corpus, 'tgt-test.txt'), tgttest.join('\n'), {encoding:'utf-8'} )
 
         console.log('all taske done.')
 
