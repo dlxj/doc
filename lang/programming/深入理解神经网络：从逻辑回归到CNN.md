@@ -5521,26 +5521,14 @@ one hot型的矩阵运算简化为了查表操作
 > conda deactivate
 > conda env remove -n nmt
 > 
-> # 安装OpenNMT-py
-> git clone -b 2.2.0 https://github.com/OpenNMT/OpenNMT-py.git
-> cd OpenNMT-py
-> git config --global url."https://".insteadOf git://  # fix github error
-> pip install -e .   #python setup.py install
-> pip install -r requirements.opt.txt
+> # pip 安装
+> pip install OpenNMT-py
 > 
-> OpenNMT-py/data/ 自带英译德数据:
-> For training:
-> 	src-train.txt
-> 	tgt-train.txt
-> For validation:
-> 	src-val.txt
-> 	tgt-val.txt
+> # 下载英译德语料
+> https://s3.amazonaws.com/opennmt-trainingdata/toy-ende.tar.gz
 > 
-> # 准备数据
-> wget https://s3.amazonaws.com/opennmt-trainingdata/toy-ende.tar.gz
-> tar xf toy-ende.tar.gz
-> 
-> 新建toy_en_de_data.yaml # 在OpenNMT-py 目录下 
+> # 新建配置 toy_en_de.yaml
+> # toy_en_de.yaml
 > ## Where the samples will be written
 > save_data: toy-ende/run/example
 > ## Where the vocab(s) will be written
@@ -5556,14 +5544,13 @@ one hot型的矩阵运算简化为了查表操作
 >         path_tgt: toy-ende/tgt-train.txt
 >     valid:
 >         path_src: toy-ende/src-val.txt
+>         path_tgt: toy-ende/tgt-val.txt
+> 
+> # 生成词典
+> onmt_build_vocab -config toy_en_de.yaml -n_sample 10000
 > 
 > 
-> # 生成字典
-> onmt_build_vocab -config toy_en_de_data.yaml -n_sample 10000
-> 
-> 
-> # 训练
-> 新建toy_en_de_train.yaml # 在OpenNMT-py 目录下
+> # 在配置追加字典和训练参数 toy_en_de.yaml
 > # Vocabulary files that were just created
 > src_vocab: toy-ende/run/example.vocab.src
 > tgt_vocab: toy-ende/run/example.vocab.tgt
@@ -5578,9 +5565,24 @@ one hot型的矩阵运算简化为了查表操作
 > train_steps: 1000
 > valid_steps: 500
 > 
-> onmt_train -config toy_en_de_train.yaml
+> 
+> # 开始训练（cpu训练删除这这两行
+> world_size: 1
+> gpu_ranks: [0]
+> ）
+> onmt_train -config toy_en_de.yaml
+> 
+> # 翻译
+> onmt_translate -model toy-ende/run/model_step_1000.pt -src toy-ende/src-test.txt -output toy-ende/pred_1000.txt -gpu 0 -verbose
 > 
 > 
+> 
+> # 源码安装OpenNMT-py(跑不通demo)
+> git clone -b 2.2.0 https://github.com/OpenNMT/OpenNMT-py.git
+> cd OpenNMT-py
+> git config --global url."https://".insteadOf git://  # fix github error
+> pip install -e .   #python setup.py install
+> pip install -r requirements.opt.txt
 > 
 > ```
 
