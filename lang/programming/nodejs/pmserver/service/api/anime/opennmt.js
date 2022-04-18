@@ -16,7 +16,9 @@ module.exports = {
         // re = await this.dbs.defaultDB.createdatabase.query({'dbname':type})
         // re = await this.dbs.anime.createtable.query({'tablename': type})
 
-        let mkvs = this.libs.files.allmkv(global.animes.root, type)
+        //let mkvs = this.libs.files.allmkv(global.animes.root, type)
+
+        let mkvs = this.libs.files.allfiles(global.animes.root, 'mkv', ['pokemon_c2club', 'S14', 'Best_Wishes'])
 
         let names = {}
         for (let vdpath of mkvs) {
@@ -37,11 +39,11 @@ module.exports = {
             }
 
             //let audio_dir = path.join(global.animes.root_audio, name, seasion)
-            let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
+            // let audio_dir = path.join(global.animes.root_audio, type, name, seasion)
 
-            if ( ! fs.existsSync( audio_dir ) ) {
-                fs.mkdirSync(audio_dir, { recursive: true })
-            }
+            // if ( ! fs.existsSync( audio_dir ) ) {
+            //     fs.mkdirSync(audio_dir, { recursive: true })
+            // }
 
             let subsjp = []
             let subszh = []
@@ -85,39 +87,41 @@ module.exports = {
                 let jp = item.jp.trim()
                 let zh = item.zh.trim()
 
-                let { hiras, msg } = await this.libs.mecab.hiras(jp)
-                if (hiras == null) {
-                    throw `Error: segment fail. ${msg}`
-                }
-
-
-                let jp_ruby = hiras.ruby
-                let hiragana = hiras.hiragana
-
-                let hiragana_ng = this.libs.srt.NG(hiragana)
-                let jp_ng = this.libs.srt.NG(jp)
-                let zh_ng = this.libs.srt.NG(zh)
-
-                jp_ng = (jp_ng.concat(hiragana_ng)).join(' ')  // for fulltext search All in one
-                zh_ng = zh_ng.join(' ')
-                hiragana_ng = hiragana_ng.join(' ')
-
-                let { au: audio } = await this.libs.ffmpeg.extractAudio(vdpath, 'mp3', begintime, endtime)
-                if (audio == null) {
-                    throw `au is null. ${vdpath} ${begintime}`
-                }
-            
-                //fs.writeFileSync('./tmp.mp3', audio )
-        
-                let video = Buffer.from('')  // empty now
-
-                let re = await this.dbs.anime.insert.query({tablename:type, name, seasion, jp, zh, type, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
                 
-                let { id } = re.rows[0]
 
-                //let audio_path = path.join(audio_dir, `${id}.mp3`)
-                let audio_path = path.join(audio_dir, `${id}.mp3`)
-                fs.writeFileSync(audio_path, audio )
+                // let { hiras, msg } = await this.libs.mecab.hiras(jp)
+                // if (hiras == null) {
+                //     throw `Error: segment fail. ${msg}`
+                // }
+
+
+                // let jp_ruby = hiras.ruby
+                // let hiragana = hiras.hiragana
+
+                // let hiragana_ng = this.libs.srt.NG(hiragana)
+                // let jp_ng = this.libs.srt.NG(jp)
+                // let zh_ng = this.libs.srt.NG(zh)
+
+                // jp_ng = (jp_ng.concat(hiragana_ng)).join(' ')  // for fulltext search All in one
+                // zh_ng = zh_ng.join(' ')
+                // hiragana_ng = hiragana_ng.join(' ')
+
+                // let { au: audio } = await this.libs.ffmpeg.extractAudio(vdpath, 'mp3', begintime, endtime)
+                // if (audio == null) {
+                //     throw `au is null. ${vdpath} ${begintime}`
+                // }
+            
+                // //fs.writeFileSync('./tmp.mp3', audio )
+        
+                // let video = Buffer.from('')  // empty now
+
+                // let re = await this.dbs.anime.insert.query({tablename:type, name, seasion, jp, zh, type, begintime, jp_ruby, v_jp:jp_ng, v_zh:zh_ng, videoname, episode, seasionname, endtime, audio, video})
+                
+                // let { id } = re.rows[0]
+
+                // //let audio_path = path.join(audio_dir, `${id}.mp3`)
+                // // let audio_path = path.join(audio_dir, `${id}.mp3`)
+                // fs.writeFileSync(audio_path, audio )
 
                 console.log(`${i + 1}/${subtitles2.length} subs | ${j + 1} / ${mkvs.length} mkvs ${name}`)   
                 
