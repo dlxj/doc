@@ -7,13 +7,15 @@
     "lib": "lib"
   },
   "dependencies": {
-    "chardet": "^1.4.0",
+    "@zerxz/mecab-async": "~0.0.3",
+    "chardet": "~1.4.0",
     "execa": "~6.0.0",
     "form-urlencoded": "~6.0.5",
     "formidable": "~2.0.1",
     "kuroshiro": "~1.1.2",
     "kuroshiro-analyzer-kuromoji": "~1.1.0",
     "kuroshiro-analyzer-mecab": "~1.0.1",
+    "nodejieba": "~2.6.0",
     "pg": "~8.7.1",
     "pg-pool": "~3.4.1",
     "rd": "~2.0.1"

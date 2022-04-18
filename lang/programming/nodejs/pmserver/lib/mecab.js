@@ -6,8 +6,13 @@
 // https://www.npmjs.com/package/kuroshiro
 // https://github.com/Zerxz/kuroshiro-analyzer-mecab
 // https://github.com/hexenq/kuroshiro-analyzer-kuromoji
-// npm install kuroshiro@1.1.2
+// npm install kuroshiro@1.1.2 kuroshiro-analyzer-kuromoji@1.1.0 kuroshiro-analyzer-mecab@1.0.1
 // # 其他版本有Bug
+/*
+    "kuroshiro": "~1.1.2",
+    "kuroshiro-analyzer-kuromoji": "~1.1.0",
+    "kuroshiro-analyzer-mecab": "~1.0.1",
+*/
 
 
 let Kuroshiro = require("kuroshiro")
@@ -22,6 +27,13 @@ let mecabAnalyzer = new MecabAnalyzer({
 })
 let kuroshiro = new Kuroshiro()
 let kuroshiro2 = new Kuroshiro()
+
+let MeCab  = require("@zerxz/mecab-async")
+let mecab = new MeCab()
+// mecab.wakachi('いつもニコニコあなたの隣に這い寄る混沌ニャルラトホテプです！', function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+// });
 
 module.exports = {
 
@@ -47,18 +59,29 @@ module.exports = {
 
             let ruby = null
             let hiragana = null
+            let spaced = null
 
             try {
 
                 ruby = await kuroshiro.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
                 hiragana = await kuroshiro.convert(str, { to: "hiragana" })
+                //spaced = await kuroshiro.convert(str, {mode:"okurigana", to:"hiragana"})
+
+                spaced = await new Promise(async function (resolve, reject) {
+                    mecab.wakachi(str, function(err, result) {
+                        if (err) reject(err)
+                        resolve(result.join(' ').replace(/\s+/g, ' '))
+                    })
+                })
+
             } catch(e) {
                 console.log(`## error in haras funtion in mecab.mjs change kuroshiro2 to segment...`)
                 ruby = await kuroshiro2.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
                 hiragana = await kuroshiro2.convert(str, { to: "hiragana" })  
+                spaced = await kuroshiro2.convert(str, {mode:"okurigana", to:"hiragana"})
             }
 
-            resolve([{ ruby, hiragana, origin: str }, ''])
+            resolve([{ ruby, spaced, hiragana, origin: str }, ''])
 
         })
 
@@ -86,11 +109,20 @@ module.exports = {
 */
 
 
+// (async () => {
+
+// //let kuroshiro = new Kuroshiro()
+// // await kuroshiro.init(new KuromojiAnalyzer())  // for windows
+// // let a = await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", {mode:"okurigana", to:"hiragana"})
+
+
+// let b = 1
+
+// })()
 
 
 
-// let kuroshiro = new Kuroshiro()
-// await kuroshiro.init(new KuromojiAnalyzer())  // for windows
+
 
 
 
