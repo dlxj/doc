@@ -38,8 +38,6 @@
 
     let { ens:ens3, chts:chts3 } = convert('./testing.txt')
 
-    
-
 
     require('fs').writeFileSync('src-train.txt', ens1, {encoding:'utf-8'} )
     require('fs').writeFileSync('tgt-train.txt', chts1, {encoding:'utf-8'} )
@@ -50,7 +48,6 @@
     require('fs').writeFileSync('src-test.txt', ens3, {encoding:'utf-8'} )
     require('fs').writeFileSync('tgt-test.txt', chts3, {encoding:'utf-8'} )
 
-    let a = 1
 })()
 
 
