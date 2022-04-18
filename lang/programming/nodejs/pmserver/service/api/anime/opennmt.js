@@ -1,8 +1,15 @@
 
+/*
+
+对于小规模样本集（几万量级），常用的分配比例是60% 训练集、20% 验证集、20% 测试集。 对于大规模样本集（百万级以上），只要验证集和测试集的数量足够即可，例如有100w 条数据，那么留1w 验证集，1w 测试集即可。 1000w 的数据，同样留1w 验证集和1w 测试集。
+
+*/
+
 let path = require('path')
 let fs = require('fs')
+let _ = require("lodash")
 let subtitleSteams = global.config.subtitleSteams
-let root_corpus = global.config.root_corpus
+let root_corpus = global.config.root_corpus[process.platform]
 
 module.exports = {
     name: 'opennmt',
@@ -95,8 +102,16 @@ module.exports = {
 
         }
 
-        require('fs').writeFileSync(path.join(root_corpus, 'src-train.txt'), jps.join('\n'), {encoding:'utf-8'} )
-        require('fs').writeFileSync(path.join(root_corpus, 'tgt-train.txt'), chss.join('\n'), {encoding:'utf-8'} )
+        // pick 60% for train, 20% for valiate, 20% for test
+        let arr = []
+        for (let i = 0; i < jps.length; i++) {
+            arr.push( { jp:jps[i], chs:chss[i] } )
+        }
+
+        arr = _.shuffle(arr)
+
+        // require('fs').writeFileSync(path.join(root_corpus, 'src-train.txt'), jps.join('\n'), {encoding:'utf-8'} )
+        // require('fs').writeFileSync(path.join(root_corpus, 'tgt-train.txt'), chss.join('\n'), {encoding:'utf-8'} )
         
         // require('fs').writeFileSync('src-val.txt', ens2, {encoding:'utf-8'} )
         // require('fs').writeFileSync('tgt-val.txt', chts2, {encoding:'utf-8'} )

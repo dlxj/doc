@@ -2107,6 +2107,22 @@ let grouped_data2 = _.groupBy(obj, Math.floor)
 
 
 
+## chunk
+
+```
+_.chunk(array, [size=1])
+```
+
+
+
+## shuffle
+
+```
+arr = _.shuffle(arr)
+```
+
+
+
 ## includes
 
 ```
@@ -2565,8 +2581,6 @@ console.log(await pRetry(run, {retries: 5}));
 
 
 
-
-
 # args
 
 
@@ -2575,14 +2589,6 @@ console.log(await pRetry(run, {retries: 5}));
 var arguments = process.argv
 console.log( arguments )
 ```
-
-
-
-
-
-
-
-
 
 
 
@@ -2662,6 +2668,12 @@ _.cloneDeep
 ```
 
 
+
+## shuffle
+
+```
+arr = _.shuffle(arr)
+```
 
 
 
