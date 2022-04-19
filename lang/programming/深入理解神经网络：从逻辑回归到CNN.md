@@ -2711,7 +2711,29 @@ $$
 
 试验有一系列独立并且相同的小试验组成，称这种试验为独立试验序列。
 
-抛掷硬币的两个结果“**正面（H）**”，“**反面（T）**”
+
+
+单次抛掷硬币有两种可能结果：“**正面（H）**”，“**反面（T）**”
+
+
+
+多单次抛掷硬币：
+
+**结果**：抛$n$ 次硬币的结果（$2^n$ 种可能，长度为$n$ 的正反序列）
+
+**事件**： 结果里有$k$ 个正面
+
+**结果里有$k$ 个正面这个事件的概率为**：$p^k (1-p)^{n-k}$，$p$ = 正面的概率
+
+
+
+假设硬币正面向上的概率为$p$，抛掷$n=7$ 次后正面向上的个数为$3$ 这个事件的概率是 $P(X=3)$
+
+
+
+
+
+《程序员的数学2概率统计》平冈和幸 p.82
 
 
 
@@ -2725,10 +2747,11 @@ $$
 $$
 
 
-#### 在长度为$n$ 的独立伯努立试验序列中，任何实验结果为$k$ 个正面的概率为：$p^k (1-p)^{n-k}$
+#### 在长度为$n$ 的独立伯努立试验序列中，任意一个实验结果有$k$ 个正面这个事件的概率为：$p^k (1-p)^{n-k}$
 
 
 $$
+p^k (1-p)^{n-k} \\
 p(k) = \begin{pmatrix} n \\ k \end{pmatrix} p^k (1-p)^{n-k}
 $$
 
@@ -2736,6 +2759,21 @@ $$
 $\begin{pmatrix} n \\ k \end{pmatrix}$ 表示 $n$ 次试验中出现$k$ 次正面的结果数
 
 
+
+> **结果**：抛三次硬币的结果（8 个可能）
+>
+> **事件**： 结果里有两个正面" （3个可能）
+>
+>  [随机变量](https://www.shuxuele.com/data/random-variables.html) X = "结果里正面的个数"：
+>
+> - P(X = 3) = 1/8
+> - P(X = 2) = 3/8
+> - P(X = 1) = 3/8
+> - P(X = 0) = 1/8
+
+
+
+$P(X)$ 就是二项分布，它给出结果中所有可能的正面个数出现的概率  
 
 
 
@@ -3450,6 +3488,25 @@ $$
 $\begin{pmatrix} n \\ k \end{pmatrix}$ 表示 $n$ 次试验中出现$k$ 次正面的结果数
 
 
+
+结果A出现0次、1次、……、10次的概率各是多少呢？这样的概率分布呈现出什么特征呢？这就是二项分布所研究的内容
+
+
+
+> **结果**：抛三次硬币的结果（8 个可能）
+>
+> **事件**： 结果里有"两个正面" （3个可能）
+>
+>  [随机变量](https://www.shuxuele.com/data/random-variables.html) X = "结果里正面的个数"：
+>
+> - P(X = 3) = 1/8
+> - P(X = 2) = 3/8
+> - P(X = 1) = 3/8
+> - P(X = 0) = 1/8
+
+
+
+$P(X)$ 就是二项分布，它给出结果中所有可能的正面个数出现的概率  
 
 
 
@@ -5598,11 +5655,19 @@ one hot型的矩阵运算简化为了查表操作
 ## 机器翻译
 
 - https://github.com/argosopentech/argos-translate
+
   - OpenNMT离线翻译
+
+    > pip3 install argostranslategui
+
+- https://opus.nlpl.eu/ [2](https://github.com/brightmart/nlp_chinese_corpus)
+
+  - 平行语料
 
 - https://colab.research.google.com/drive/1YzHT4av2SPXI_CzpX3mF9ImFv-V39n4D?usp=sharing
 - https://developer.aliyun.com/article/177761?spm=5176.24320532.content1.1.5cfd3eeawKBNHD
 - https://github.com/laubonghaudoi/ai_mt
+  
   - OpenNMT中英
 
 > 哈佛大学机器翻译开源项目 OpenNMT的工作原理
