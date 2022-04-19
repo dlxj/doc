@@ -6086,7 +6086,9 @@ npm install --save normalize.css
 
 
 
+## SplitPane
 
+> https://panjiachen.github.io/vue-element-admin/#/components/split-pane
 
 
 
