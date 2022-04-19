@@ -5597,6 +5597,9 @@ one hot型的矩阵运算简化为了查表操作
 
 ## 机器翻译
 
+- https://github.com/argosopentech/argos-translate
+  - OpenNMT离线翻译
+
 - https://colab.research.google.com/drive/1YzHT4av2SPXI_CzpX3mF9ImFv-V39n4D?usp=sharing
 - https://developer.aliyun.com/article/177761?spm=5176.24320532.content1.1.5cfd3eeawKBNHD
 - https://github.com/laubonghaudoi/ai_mt
