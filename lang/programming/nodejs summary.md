@@ -6054,6 +6054,12 @@ overflow: auto;
 
 
 
+# vue-element
+
+- https://element.eleme.io/#/zh-CN/component/collapse
+
+  > 手风琴效果  每次只能展开一个面板
+
 
 
 # vue-element-admin
