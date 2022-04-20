@@ -62,9 +62,16 @@ module.exports = {
                             throw 'no season on m4'
                         }
 
+                        if (m4season != rtseason) {
+                            continue
+                        }
+
                         if ( m4name == rtname ) {
 
-                            
+                            // let { au: audio } = await this.libs.ffmpeg.extractAudio(kvpath, 'mp3', begintime, endtime)
+                            // if (audio == null) {
+                            //     throw `au is null. ${vdpath} ${begintime}`
+                            // }
 
                             break
 
