@@ -52,13 +52,13 @@
 
       <el-collapse v-model="activeName" accordion>
         <el-collapse-item title="一致性 Consistency" name="1">
-          <div>
+          <!-- <div>
             <el-image
               style="width: 100px; height: 100px"
               :src="url"
               :fit="fit"
             ></el-image>
-          </div>
+          </div> -->
           <div>
             在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。
           </div>
