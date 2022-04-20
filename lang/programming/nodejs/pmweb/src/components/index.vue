@@ -109,6 +109,7 @@ export default {
       keywdModel: { keywd: "", lang_type: "jp" },
       resultModel: { result: "" },
       resultsModel: [],
+      rawresultsModel:[],
       isResultShow: false,
       items: [],
       options: [
@@ -158,6 +159,7 @@ export default {
         //let result = `${jp}<br>${zh}`
 
         const data = [];
+        const rawdata = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
           let elm_id = `${type}_${name}_${seasion}_${id}`;
@@ -167,6 +169,8 @@ export default {
           let result = `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="play('${elm_id}')"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           //let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push({ result });
+
+          rawdata.push( {jp, elm_id, img_play, au_url, zh} )
         }
         data.push({ result: `<br><button onclick="next()">next</button>` });
 
@@ -178,6 +182,7 @@ export default {
         // onclick="openImg()"
 
         this.resultsModel = data;
+        this.rawresultsModel = rawdata
 
         //this.$set(this.resultModel, 'result', result)  // 强制重绘
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
