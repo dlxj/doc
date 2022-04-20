@@ -1592,6 +1592,25 @@ print(length)
 
 
 
+#### 组合
+
+```
+items = ['a', 'b', 'c', 'd']
+from itertools import permutations, combinations
+# for p in permutations(items, 3): # 4 选 3 的组合
+# 	print(p)
+
+for c in combinations(items, 3):
+    print(c)
+
+perm = combinations(items, 3)
+length = len(list(perm))
+
+print(length)
+```
+
+
+
 
 
 
