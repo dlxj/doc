@@ -75,9 +75,11 @@ module.exports = {
 
                             let m3outpath = path.join(outdir, 'tmp.mp3')
 
-                            let begintime = `00:00:03.879`
-                            let endtime = `00:00:04.879`
-                            //let endtime = ``
+                            let outpath = path.join(outdir, `${rtname}.mkv`)
+
+                            let begintime = `00:00:01.500`
+                            //let endtime = `00:00:04.879`
+                            let endtime = ``
                             let { au: audio } = await this.libs.ffmpeg.extractAudio(kvpath, 'mp3', begintime, endtime)  // 00:00:03.879  // https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg
                             if (audio == null) {
                                 throw `au is null. ${vdpath} ${begintime}`
@@ -85,7 +87,9 @@ module.exports = {
 
                             require('fs').writeFileSync(m3outpath, audio )
 
-                            // fs.unlinkSync(m3outpath)
+                            let { msg } = await this.libs.ffmpeg.injectSubtitleAudio(m4path, rtpath, m3outpath, outpath)
+
+                            fs.unlinkSync(m3outpath)
 
                             break
 

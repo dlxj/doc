@@ -1547,6 +1547,53 @@ m = X.shape[0] # 样本数
 
 
 
+### random
+
+
+
+```
+随机排列一个序列，返回一个排列的序列。
+>>> np.random.permutation(10)
+array([1, 7, 4, 3, 0, 9, 2, 5, 8, 6])
+>>> np.random.permutation([1, 4, 9, 12, 15])
+array([15,  1,  9,  4, 12])
+>>> arr = np.arange(9).reshape((3, 3))
+>>> np.random.permutation(arr)
+array([[6, 7, 8],
+       [0, 1, 2],
+       [3, 4, 5]])
+
+np.random.shuffle(arr) #在原数组上改变顺序,无返回值 同random.shuffle()
+arr = np.random.permutation([1, 4, 9, 12, 15]) #不在原数组上进行，返回新的数组，不改变自身数组
+```
+
+
+
+### 排列组合
+
+- https://python3-cookbook.readthedocs.io/zh_CN/latest/c04/p09_iterate_over_combination_or_permutation.html
+
+
+
+#### 排列
+
+```
+items = ['a', 'b', 'c', 'd']
+from itertools import permutations
+for p in permutations(items, 3): # 4 选 3 的排列
+	print(p)
+
+perm = permutations(items, 3)
+length = len(list(perm))  # 排列数
+
+print(length)
+
+```
+
+
+
+
+
 
 
 ### parallel
