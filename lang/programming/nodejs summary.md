@@ -2273,6 +2273,12 @@ require('fs').writeFileSync('menu.json', JSON.stringify(menujson) )
 require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
 ```
 
+```
+fs.createWriteStream(path).write(buffer)
+```
+
+
+
 
 
 ## 去掉扩展名

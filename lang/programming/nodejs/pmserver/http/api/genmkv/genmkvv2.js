@@ -68,10 +68,24 @@ module.exports = {
 
                         if ( m4name == rtname ) {
 
-                            // let { au: audio } = await this.libs.ffmpeg.extractAudio(kvpath, 'mp3', begintime, endtime)
-                            // if (audio == null) {
-                            //     throw `au is null. ${vdpath} ${begintime}`
-                            // }
+                            let outdir = path.join(m4dir, 'output')
+                            if (!fs.existsSync(outdir)) {
+                                fs.mkdirSync(outdir, { recursive: false })
+                            }
+
+                            let m3outpath = path.join(outdir, 'tmp.mp3')
+
+                            let begintime = `00:00:03.879`
+                            let endtime = `00:00:04.879`
+                            //let endtime = ``
+                            let { au: audio } = await this.libs.ffmpeg.extractAudio(kvpath, 'mp3', begintime, endtime)  // 00:00:03.879  // https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg
+                            if (audio == null) {
+                                throw `au is null. ${vdpath} ${begintime}`
+                            }
+
+                            require('fs').writeFileSync(m3outpath, audio )
+
+                            // fs.unlinkSync(m3outpath)
 
                             break
 
