@@ -1523,10 +1523,6 @@ fils = reduce(lambda ls1, ls2: ls1+ls2, fils)
 
 
 
-
-
-
-
 ### sublist
 
 ```
@@ -1549,9 +1545,7 @@ m = X.shape[0] # 样本数
 
 ### random
 
-
-
-```
+```python
 随机排列一个序列，返回一个排列的序列。
 >>> np.random.permutation(10)
 array([1, 7, 4, 3, 0, 9, 2, 5, 8, 6])
@@ -1577,7 +1571,7 @@ arr = np.random.permutation([1, 4, 9, 12, 15]) #不在原数组上进行，返�
 
 #### 排列
 
-```
+```python
 items = ['a', 'b', 'c', 'd']
 from itertools import permutations
 for p in permutations(items, 3): # 4 选 3 的排列
@@ -1606,6 +1600,41 @@ length = len(list(perm))
 
 print(length)
 ```
+
+
+
+#### 允许重复选择
+
+```
+items = ['a', 'b']
+from itertools import permutations, combinations, combinations_with_replacement
+
+for c in combinations_with_replacement(items, 3): # 二选三的组合
+    print(c)
+```
+
+
+
+```
+# 有奇怪的问题
+items = [0, 1]
+from itertools import permutations, combinations, combinations_with_replacement
+
+comb = combinations_with_replacement(items, 7)
+for c in combinations_with_replacement(items, 7):  # 体现在打印和转list上，打印完转list后是空
+    print(c)
+
+ls_comb = list(comb)
+
+length = len(ls_comb)
+
+print(length)
+
+for p in permutations([0,0,0,0,1,1,1]):
+    print(p)
+```
+
+
 
 
 
