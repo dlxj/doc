@@ -55,9 +55,19 @@ module.exports = {
 
                     for (let m4path of m4s) {
 
+                        let { base:m4base, dir:m4dir, ext:m4ext, name:m4name, root:m4root } = path.parse(m4path)
+
                         let m4season = this.libs.files.season(m4path)
                         if (m4season == null) {
                             throw 'no season on m4'
+                        }
+
+                        if ( m4name == rtname ) {
+
+                            
+
+                            break
+
                         }
 
                     }

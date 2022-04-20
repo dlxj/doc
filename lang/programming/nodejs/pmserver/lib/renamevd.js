@@ -17,6 +17,7 @@ module.exports = {
 
         let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon', 'amazon', 'S01'])  // E:\videos\anime\pokemon\amazon\S01
 
+        let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S01']) 
 
 
         let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
@@ -76,6 +77,38 @@ module.exports = {
                     fs.renameSync( kv, newpath )
 
                     continue
+                }
+
+            }
+
+            for (let m4 of m4s) {
+
+                let match3 = m4.match(/(\d+)\_/)
+                if (match3 == null) {
+                    //throw `name not correct. ${m4}`
+                    continue
+                }
+                let nth3 = match3[1]
+
+                let m4season = this.libs.files.season(m4)
+                if (m4season == null) {
+                    throw 'no season on kv'
+                }
+
+                if (mlseason != m4season) {
+                    continue
+                }
+
+                if (Number(nth) == Number(nth3)) {
+
+                    //ttml
+                    let { base,dir,ext,name,root} = path.parse(ttml)
+                    let { base:base3,dir:dir3,ext:ext3,name:name3,root:root3} = path.parse(m4)
+
+                    let newname = `${name}.mp4`
+                    let newpath = path.join(dir3, newname)
+
+                    fs.renameSync( m4, newpath )
                 }
 
             }
