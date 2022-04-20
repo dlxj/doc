@@ -20,9 +20,9 @@ module.exports = {
 
         let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon_amazon', 'S01'])  // E:\videos\anime\pokemon\amazon\S01
 
-        let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S01'])  // anime\pokemon_tw\S01
+        let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S01']) 
 
-        let srts = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S01'])  // amazon\pokemon
+        let srts = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S01'])
 
         for (let kvpath of kvs) {
 
@@ -42,11 +42,25 @@ module.exports = {
                     throw 'no season on rt'
                 }
 
+                // let rtseason = this.libs.files.season(rtpath)
+                // if (rtseason == null) {
+                //     throw 'no season on rt'
+                // }
+
                 if (kvseason != rtseason) {
                     continue
                 }
                 
                 if ( kvname == rtname ) {
+
+                    for (let m4path of m4s) {
+
+                        let m4season = this.libs.files.season(m4path)
+                        if (m4season == null) {
+                            throw 'no season on m4'
+                        }
+
+                    }
 
                     // let outdir = path.join(kvdir, 'output')
                     // if (!fs.existsSync(outdir)) {
