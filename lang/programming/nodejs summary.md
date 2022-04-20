@@ -6066,6 +6066,22 @@ overflow: auto;
 
   > 手风琴效果  每次只能展开一个面板
 
+- https://blog.csdn.net/u011332271/article/details/105226511
+
+  > 动态创建组件
+
+- https://cloud.tencent.com/developer/article/1467371
+
+  > 官方文档给了解决方案：如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代。
+  >
+
+```html
+v-html指令解析成了innerHTML。所以在节点元素上直接用innerHTML也是可以的，例如：
+document.getElementById('app').innerHTML = "xxxxx" # 纯html
+```
+
+
+
 
 
 # vue-element-admin
