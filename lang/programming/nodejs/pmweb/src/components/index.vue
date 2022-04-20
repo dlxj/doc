@@ -41,6 +41,15 @@
     </div>
 
     <div class="result_image">
+
+      <!-- <div v-for="item in rawresultsModel" :key="item.result">
+        <div v-html="item.result"></div>
+          <br />
+        </div>
+      </div> -->
+
+      
+
       <el-collapse v-model="activeName" accordion>
         <el-collapse-item title="一致性 Consistency" name="1">
           <div>
