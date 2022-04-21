@@ -34,7 +34,7 @@
         {{ item.elm_id }}
       </div>
 
-      <componentItemZh></componentItemZh>
+      <componentItemZh></componentItemZh>  <!-- step 3: use the component -->
 
     </div>
 
@@ -121,7 +121,7 @@ import img_play2 from "../assets/play2.gif";
 const formurlencoded = require("form-urlencoded");
 const bent = require("bent");
 
-import componentItemZh from '@/components/itemZh.vue'
+import componentItemZh from '@/components/itemZh.vue'  // step 1: import a compoment
 
 export default {
   name: "index",
@@ -260,7 +260,7 @@ export default {
   //   }
 
   // }
-  components: { componentItemZh },
+  components: { componentItemZh },  // step 2: register the component
 };
 </script>
 
