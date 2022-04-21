@@ -27,9 +27,16 @@
       </el-option>
     </el-select>
 
-    <!-- <p>keywd is: {{ keywdModel.keywd }}</p> -->
+    <p></p>
+
+    <div class="result_pic" v-if="isResultShow">
+      <div v-for="item in rawresultsModel" :key="item.elm_id">
+        {{ item.elm_id }}
+      </div>
+    </div>
 
     <p></p>
+
 
     <div class="result_main" v-if="isResultShow">
       <!-- <div v-html="resultModel.result"></div> -->
