@@ -46,6 +46,16 @@ rufus-3.17
 
 
 
+# 双网卡 Wi-Fi 中继（一收一发）
+
+
+
+- https://www.sailstars.one/post/L2cMH1XUC/
+
+  > 双网卡 Wi-Fi 中继（一收一发）
+
+
+
 # mkdir -p
 
 
