@@ -124,3 +124,13 @@ ffmpeg -i input.mkv -i input.ass -c copy -map 0 -map -0:s -map 1 output.mkv
 -map 1：选择第二个输入文件中的流
 ```
 
+
+
+# tutorial
+
+
+
+- https://blog.csdn.net/qq_31622015/article/details/109048766
+
+  > 全全全
+
