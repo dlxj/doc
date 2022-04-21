@@ -33,6 +33,9 @@
       <div v-for="item in rawresultsModel" :key="item.elm_id">
         {{ item.elm_id }}
       </div>
+
+      <componentItemZh></componentItemZh>
+
     </div>
 
     <p></p>
@@ -117,6 +120,8 @@ import img_play2 from "../assets/play2.gif";
 
 const formurlencoded = require("form-urlencoded");
 const bent = require("bent");
+
+import componentItemZh from '@/components/itemZh.vue'
 
 export default {
   name: "index",
@@ -255,6 +260,7 @@ export default {
   //   }
 
   // }
+  components: { componentItemZh },
 };
 </script>
 
