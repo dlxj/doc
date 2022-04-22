@@ -29,26 +29,27 @@
 
     <p></p>
 
-    <div class="result_pic" v-if="isResultShow">
-      <div v-for="item in rawresultsModel" :key="item.elm_id">
-        {{ item.elm_id }}
-      </div>
+    <!-- <div class="result_pic" v-if="isResultShow">
 
-      <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>  <!-- step 3: use the component -->  <!-- 子组的的属性直接只读的使用父组件的数据 -->
+      <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>  
 
-
-    </div>
-
-    <p></p>
-
+    </div> -->
 
     <div class="result_main" v-if="isResultShow">
-      <!-- <div v-html="resultModel.result"></div> -->
 
-      <div v-for="item in resultsModel" :key="item.result">
+      <!-- <div v-for="item in resultsModel" :key="item.result">
         <div v-html="item.result"></div>
         <br />
+      </div> -->
+
+      <!-- <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>   step 3: use the component -->  <!-- 子组的的属性直接只读的使用父组件的数据 -->
+
+      <div v-for="item in rawresultsModel" :key="item.elm_id">
+
+        <div v-html="`${item.jp}`"></div> <img :id="`img_${item.elm_id}`" :src="`${item.img_play}`" @onclick="`play('${item.elm_id}')`"><audio :id="`audio_${item.elm_id}`" :src="`${item.au_url}`" type="audio/mpeg" preload="auto"></audio><br>{{item.zh}}
+
       </div>
+
     </div>
 
     <div class="result_image">
@@ -225,7 +226,7 @@ export default {
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
 
         //this.resultModel.result = result
-        this.isResultShow = true; debugger
+        this.isResultShow = true
         this.$nextTick(() => {
           // DOM 渲染完后回调
           //debugger
