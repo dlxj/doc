@@ -881,6 +881,12 @@ node --inspect-brk=xxx.77:9229 insert.cjs # 指定IP端口
 
 
 
+## vue 在vscode 下断点
+
+- https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
+
+  > vue 在vscode 下断点
+
 
 
 # Syntax
@@ -6045,6 +6051,12 @@ this.$MuiPlayer()
 ## vscode 
 
 - 安装 Vetur 语法高亮
+
+### vue 在vscode 下断点
+
+- https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
+
+  > vue 在vscode 下断点
 
 
 

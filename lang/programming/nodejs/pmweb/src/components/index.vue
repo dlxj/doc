@@ -285,6 +285,8 @@ export default {
       console.log(`hit textChanged.`);debugger
     },
     async textFocus(sender, elm_id) {
+      // this.imgTWs[`${elm_id}`].push(img_play2)
+      this.$set(this.imgTWs, `${elm_id}`, [img_play2])
       console.log(`hit textFocus. ${sender} ${elm_id}`);debugger
     },
     async textLostFocus(elm_id) {
