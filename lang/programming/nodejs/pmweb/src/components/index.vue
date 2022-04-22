@@ -67,8 +67,8 @@
           :autosize="{ minRows: 1, maxRows: 10}"
           v-model="textareas[`${item.elm_id}`]"
           @input="textChanged"
-          @focus="textFocus"
-          @blur="textLostFocus"
+          @focus="((sender)=>{textFocus(sender,`${item.elm_id}`)})"
+          @blur="`textLostFocus('${item.elm_id}')`"
         >
         </el-input>
 
@@ -284,11 +284,11 @@ export default {
     async textChanged() {
       console.log(`hit textChanged.`);debugger
     },
-    async textFocus() {
-      console.log(`hit textFocus.`);debugger
+    async textFocus(sender, elm_id) {
+      console.log(`hit textFocus. ${sender} ${elm_id}`);debugger
     },
-    async textLostFocus() {
-      console.log(`hit textLostFocus.`);debugger
+    async textLostFocus(elm_id) {
+      console.log(`hit textLostFocus. ${elm_id}`);debugger
     },
   },
   mounted() {
@@ -318,9 +318,6 @@ export default {
     let search = this.search;
     window.next = async function () {
       await search();
-    };
-    window.showImgTW = function (elm_id) {
-      console.log(`hit showImgTW. ${elm_id}`);debugger
     }
   },
   // watch: {
