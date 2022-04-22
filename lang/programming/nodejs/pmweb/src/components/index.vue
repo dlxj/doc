@@ -29,6 +29,14 @@
 
     <p></p>
 
+    <el-input
+      type="textarea"
+      :autosize="{ minRows: 1, maxRows: 10}"
+      v-model="text"
+      @input="textChanged"
+    >
+    </el-input>
+
     <!-- <div class="result_pic" v-if="isResultShow">
 
       <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>  
@@ -50,13 +58,15 @@
         
         <el-input
           type="textarea"
-          :autosize="{ minRows: 2, maxRows: 4}"
-          :placeholder="`${item.zh}`"
-          v-model="textareas[`${item.elm_id}`]">
+          :autosize="{ minRows: 1, maxRows: 10}"
+          v-model="textareas[`${item.elm_id}`]"
+          @click.native="`showImgTW('${item.elm_id}')`"
+        >
         </el-input>
 
         <!-- <div @onclick="`showImgTW('${item.elm_id}')`">
-
+          :placeholder="`${item.zh}`"
+          @focus="`showImgTW('${item.elm_id}')`"
           {{item.zh}}
 
         </div> -->
@@ -166,7 +176,8 @@ export default {
           {id:5,ok:false},
           {id:6,ok:true},   
       ],
-      textareas:{}
+      textareas:{},
+      text:''
     }
   },
   computed: {
@@ -255,6 +266,9 @@ export default {
 
       console.log("hited.");
     },
+    async textChanged() {
+      console.log(`hit textChanged.`);debugger
+    }
   },
   mounted() {
     window.play = function (elm_id) {
@@ -285,7 +299,7 @@ export default {
       await search();
     };
     window.showImgTW = function (elm_id) {
-      let a = 1; debugger
+      console.log(`hit showImgTW. ${elm_id}`);debugger
     }
   },
   // watch: {
