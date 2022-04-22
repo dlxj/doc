@@ -31,11 +31,14 @@
 
     <el-input
       type="textarea"
-      :autosize="{ minRows: 1, maxRows: 10}"
+      :autosize="{ minRows: 1, maxRows: 10 }"
       v-model="text"
       @input="textChanged"
+      @focus="textFocus"
+      @blur="textLostFocus"
     >
     </el-input>
+    <!-- input 字符改变事件 没有这个事件则文本框不可编辑  select 选中事件 -->
 
     <!-- <div class="result_pic" v-if="isResultShow">
 
@@ -268,7 +271,13 @@ export default {
     },
     async textChanged() {
       console.log(`hit textChanged.`);debugger
-    }
+    },
+    async textFocus() {
+      console.log(`hit textFocus.`);debugger
+    },
+    async textLostFocus() {
+      console.log(`hit textLostFocus.`);debugger
+    },
   },
   mounted() {
     window.play = function (elm_id) {
