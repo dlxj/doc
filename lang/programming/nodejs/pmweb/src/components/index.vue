@@ -60,7 +60,7 @@
           type="textarea"
           :autosize="{ minRows: 1, maxRows: 10}"
           v-model="textareas[`${item.elm_id}`]"
-          @click.native="`showImgTW('${item.elm_id}')`"
+          @input="textChanged"
         >
         </el-input>
 
