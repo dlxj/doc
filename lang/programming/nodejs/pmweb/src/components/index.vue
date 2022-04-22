@@ -34,7 +34,7 @@
         {{ item.elm_id }}
       </div>
 
-      <componentItemZh :todo="todo"></componentItemZh>  <!-- step 3: use the component -->  <!-- 子组的的todo 属性直接只读的使用父组件的todo 数据 -->
+      <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>  <!-- step 3: use the component -->  <!-- 子组的的属性直接只读的使用父组件的数据 -->
 
 
     </div>

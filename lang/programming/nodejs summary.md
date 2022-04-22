@@ -4768,6 +4768,13 @@ systemctl status postgresql-13      # centos7
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
 pm2 resurrect // 重启备份的所有项目
+
+
+cd /yingedu/soft/redis-6.2.6/src/
+vi redis.conf
+./redis-server /xxx/yyyy/redis.conf
+pm2 --name redis start "./run.sh"
+
 ```
 
 
@@ -6099,7 +6106,18 @@ document.getElementById('app').innerHTML = "xxxxx" # 纯html
 
   > 跨组件通信
 
+- https://cn.vuejs.org/v2/guide/syntax.html#v-bind-%E7%BC%A9%E5%86%99
 
+  ```
+  v-bind 缩写
+  
+  <!-- `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="play('${elm_id}')"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger -->
+  
+  
+          {{ item.jp }} <img :id="`img_${elm_id}`" :src="`${img_play}`" :onclick="`play('${elm_id}')`">
+  ```
+
+  
 
 # vue-element-admin
 
