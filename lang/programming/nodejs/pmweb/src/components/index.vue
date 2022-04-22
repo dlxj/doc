@@ -34,7 +34,8 @@
         {{ item.elm_id }}
       </div>
 
-      <componentItemZh></componentItemZh>  <!-- step 3: use the component -->
+      <componentItemZh :todo="todo"></componentItemZh>  <!-- step 3: use the component -->  <!-- 子组的的todo 属性直接只读的使用父组件的todo 数据 -->
+
 
     </div>
 
@@ -145,7 +146,12 @@ export default {
       ],
       value1: [],
       activeName: "1",
-    };
+      todo: [
+          {id:4,ok:true},
+          {id:5,ok:false},
+          {id:6,ok:true},   
+      ]
+    }
   },
   computed: {
     itemNum: function () {
@@ -205,11 +211,21 @@ export default {
         this.resultsModel = data;
         this.rawresultsModel = rawdata
 
+        //let componentItemZh = this.$refs.componentItemZh; debugger
+
+        // let todo = [
+        //   {id:4,ok:true},
+        //   {id:5,ok:false},
+        //   {id:6,ok:true},   
+        // ]
+
+        // componentItemZh.$emit('fromFather', todo)
+
         //this.$set(this.resultModel, 'result', result)  // 强制重绘
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
 
         //this.resultModel.result = result
-        this.isResultShow = true;
+        this.isResultShow = true; debugger
         this.$nextTick(() => {
           // DOM 渲染完后回调
           //debugger

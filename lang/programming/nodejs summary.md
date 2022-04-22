@@ -6095,6 +6095,10 @@ document.getElementById('app').innerHTML = "xxxxx" # 纯html
 
   > v-for
 
+- https://segmentfault.com/a/1190000020053344
+
+  > 跨组件通信
+
 
 
 # vue-element-admin

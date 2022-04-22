@@ -11,16 +11,12 @@
 <script>
 
 export default {
+    name: 'itemZh',
     data() {
         return {
-            todo:[
-                {id:1,ok:true},
-                {id:2,ok:false},
-                {id:3,ok:true},   
-            ]  
         }
-    }
-
+    },
+    props: ['todo']
 }
 
 </script>
