@@ -46,7 +46,21 @@
 
       <div v-for="item in rawresultsModel" :key="item.elm_id">
 
-        <div v-html="`${item.jp}`"></div> <img :id="`img_${item.elm_id}`" :src="`${item.img_play}`" @onclick="`play('${item.elm_id}')`"><audio :id="`audio_${item.elm_id}`" :src="`${item.au_url}`" type="audio/mpeg" preload="auto"></audio><br>{{item.zh}}
+        <div v-html="`${item.jp}`"></div> <img :id="`img_${item.elm_id}`" :src="`${item.img_play}`" @onclick="`play('${item.elm_id}')`"><audio :id="`audio_${item.elm_id}`" :src="`${item.au_url}`" type="audio/mpeg" preload="auto"></audio><br>
+        
+        <el-input
+          type="textarea"
+          :autosize="{ minRows: 2, maxRows: 4}"
+          :placeholder="`${item.zh}`"
+          v-model="textareas[`${item.elm_id}`]">
+        </el-input>
+
+        <!-- <div @onclick="`showImgTW('${item.elm_id}')`">
+
+          {{item.zh}}
+
+        </div> -->
+
 
       </div>
 
@@ -151,7 +165,8 @@ export default {
           {id:4,ok:true},
           {id:5,ok:false},
           {id:6,ok:true},   
-      ]
+      ],
+      textareas:{}
     }
   },
   computed: {
@@ -199,6 +214,9 @@ export default {
           data.push({ result });
 
           rawdata.push( {jp, elm_id, img_play, au_url, zh} )
+
+          this.textareas[`${elm_id}`] = zh
+
         }
         data.push({ result: `<br><button onclick="next()">next</button>` });
 
@@ -266,6 +284,9 @@ export default {
     window.next = async function () {
       await search();
     };
+    window.showImgTW = function (elm_id) {
+      let a = 1; debugger
+    }
   },
   // watch: {
 
