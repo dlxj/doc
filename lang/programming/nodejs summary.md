@@ -6113,7 +6113,7 @@ document.getElementById('app').innerHTML = "xxxxx" # 纯html
   
   <!-- `${jp}<img id="img_${elm_id}" src="${img_play}" onclick="play('${elm_id}')"><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger -->
   
-  
+  # 
           {{ item.jp }} <img :id="`img_${elm_id}`" :src="`${img_play}`" :onclick="`play('${elm_id}')`">
   ```
 
@@ -6152,6 +6152,24 @@ npm install --save normalize.css
 ## SplitPane
 
 > https://panjiachen.github.io/vue-element-admin/#/components/split-pane
+
+
+
+# uView
+
+
+
+## vue和nvue
+
+```
+因为uni-app是逻辑和渲染分离的。渲染层，在app端提供了两套排版引擎：小程序方式的webview渲染，和weex方式的原生渲染。
+两种渲染引擎可以自己根据需要选。vue文件走的webview渲染，nvue走的原生渲染。组件和js写法是一样的，css不一样，原生排版的能用的css必须是flex布局，这是web的css的子集。当然什么界面都可以用flex布出来。
+
+区别和适用场景官方文档里写的很清楚：https://uniapp.dcloud.io/use-weex
+
+```
+
+
 
 
 
