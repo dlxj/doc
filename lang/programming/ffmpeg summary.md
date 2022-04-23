@@ -291,3 +291,38 @@ ffmpeg -i The.East[1080p][H264].mp4 -i English.eng.srt -i Dutch.dut.srt -map 0 -
 https://www.zhangwenbing.com/blog/ffmpeg/S1uzUUNc8Cf
 
 - ffmpeg音频合成命令全集
+
+
+
+```
+ffmpeg \
+    -i source.mkv \
+    -i Logo_White.ico \
+    -filter_complex \
+    "[0:v][1:v]overlay[logo];\
+    [logo]ass=source.ass[sub]" \
+    -map [sub] \
+    -map 0,0 \
+    output.final.mp4
+
+
+首先看到命令中有两个输入，一个是视频文件，为 input0，一个是 logo 图像，为 input1.
+filter_complex 滤镜的参数里面 [0:v]的0是 input0，v代表处理的是视频而不是音频，处理音频的待会儿再讲
+整体来看，[0:v][1:v]overlay[logo]是一个2输入1输出的管子，管子把 input1 的视频流（此处为一张图）叠加到 input0 的上面，出来的产品叫做[logo]
+然后下一句[logo]ass=source.ass[sub]中，可以把中间那个ass滤镜当做一个1输入1输出的管子，这个管子对每个视频流进行处理，在视频上打上字幕，出来的产品叫做[sub]
+最终把这个[sub] 映射到 output.final.mp4 上面
+
+```
+
+
+
+## 字幕调整时间
+
+```
+vf 烧录字幕时会把字幕文件和视频流时间轴零点对齐，可以先调字幕文件时间轴，然后烧录，比如下面这两行，只给第 2 分钟的视频烧录字幕，
+
+$ ffmpeg -itsoffset -00:01:00 -i rawsub.ass -map 0 -c ass sub.ass
+$ ffmpeg -ss 00:01:00 -to 00:02:00 -i rawvideo.mp4 -map 0 -filter:v ass=f=sub.ass -c:v h264 -c:a copy video.mp4
+
+```
+
