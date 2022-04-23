@@ -126,6 +126,27 @@ ffmpeg -i input.mkv -i input.ass -c copy -map 0 -map -0:s -map 1 output.mkv
 
 
 
+# make mkv
+
+```
+ffmpeg -y -i 1.mp4 -map 0:v -map 0:a:0 -ss 00:01.500 -c copy out.mp4
+	# -map 0:v 复制第0 个输入的视频(v)
+	# -map 0:a:0 复制第0 个输入的第 0个音频(a)
+	# -c copy 指定编码为与原编码一至，既不转换
+	
+ffmpeg -y -i out.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
+	# 复制第0 个输入的视频(v)
+	# 复制第1 个输入的第 0个音频(a) 作为第一条音轨
+	# 复制第0 个输入的第 0个音频(a) 作为第二条音轨
+	# 复制第2 个输入作为字幕，编码为 srt
+	
+cmd.exe
+```
+
+
+
+
+
 # tutorial
 
 
