@@ -324,5 +324,36 @@ vf 烧录字幕时会把字幕文件和视频流时间轴零点对齐，可以�
 $ ffmpeg -itsoffset -00:01:00 -i rawsub.ass -map 0 -c ass sub.ass
 $ ffmpeg -ss 00:01:00 -to 00:02:00 -i rawvideo.mp4 -map 0 -filter:v ass=f=sub.ass -c:v h264 -c:a copy video.mp4
 
+
+
 ```
 
+### -itsoffset
+
+The itsoffset option applies to all streams embedded within the input file. Therefore, adjusting timestamps only for a single stream requires to specify twice the same input file.
+
+```
+ffmpeg -i INPUT -itsoffset 5 -i INPUT -map 0:v -map 1:a OUTPUT
+```
+
+adjusts timestamps of the input audio stream(s) only.
+
+#### positive offset
+
+```
+ffmpeg -itsoffset 5 -i INPUT OUTPUT
+```
+
+delays all the input streams by 5 seconds.
+
+If the input file was 60 seconds long, the output file will be 65 seconds long. The first 5 seconds will be a still image (first frame).
+
+#### negative offset
+
+```
+ffmpeg -itsoffset -5 -i INPUT OUTPUT
+```
+
+advances all the input streams by 5 seconds.
+
+This discards the first five seconds of input. However, if the input file was 60 seconds long, the output file will also be 60 seconds long. The last 5 seconds will be a still image (last frame).
