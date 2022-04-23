@@ -1,3 +1,19 @@
+```bash
+
+# 提前2.2 秒，嵌入日文作为硬字幕  # 试转一小段看对不对，经实验 -2.2 比较好
+ffmpeg -y -itsoffset -2.2 -i 1.mp4 -ss 00:01:49.000 -to 00:05:00.000 -vf subtitles=1.srt advance2second.mp4
+
+# 先提前2.2 秒，再嵌入日文软字幕
+ffmpeg -y -itsoffset -2.2 -i 1.mp4 advance2second.mp4
+ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
+
+# 1 是pokemon台版中文硬字幕mp4，2 是日文软字幕mkv，中硬比日软要慢2.2 秒左右
+```
+
+
+
+
+
 ```
 ffmpeg -i "G:\棒球英豪国日双语1080p\[棒球英豪].[zhbconan][Touch][001][HDTVRip][1440x1080][AVC_AAC_AC3][CHS&JPN](ED2000.COM).mkv" -map 0:s:0 out.srt
 ```
@@ -323,9 +339,16 @@ pokemon 台版中文硬字幕比 amazon pokemon 版的字幕慢了两秒，
 所以要把它的整个所有流（包括视频和音频流）都提前两秒，-itsoffset -2  参数可以作到这一点，假设原视频是60 秒，调整后视频也还是60 秒，但是最后2 秒无了，变成最后一帧延长两秒的静止画面。
 
 ```
+# 提前2.2 秒，嵌入日文作为硬字幕
 ffmpeg -y -itsoffset -2.2 -i 1.mp4 -ss 00:01:49.000 -to 00:05:00.000 -vf subtitles=1.srt advance2second.mp4
  
  # 试转一小段看对不对，经实验 -2.2 比较好
+```
+
+```
+# 先提前2.2 秒，再嵌入日文软字幕
+ffmpeg -y -itsoffset -2.2 -i 1.mp4 advance2second.mp4
+ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
 ```
 
 
