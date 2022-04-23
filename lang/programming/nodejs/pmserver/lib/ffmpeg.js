@@ -127,9 +127,26 @@ module.exports = {
 
             let { base,dir,ext,name,root} = path.parse(outpath)
 
-            //let cmd = `ffmpeg -i "${vdpath}" -i "${subpath}" -i "${aupath}" -c copy ${outpath}`  // ffmpeg -i video.mkv -i subtitle.ass -c copy output.mkv
-            let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -vf subtitles="${subpath}" ${name}_hardjp.mp4`  // 生成硬字幕
+            /*
             
+            // 绝对路径的写法比较特别
+            ffmpeg -y -itsoffset -2.2 -i "E:\t\1.mp4" -vf  "subtitles='E\:\\t\\1.srt'"  advance2second_hardjp.mp4
+
+            
+            */
+
+            
+            let hardjpdir = path.join(dir, 'hardjp')
+            if (!fs.existsSync(hardjpdir)) {
+                fs.mkdirSync(hardjpdir, { recursive: false })
+            }
+
+            let hardjppath = path.join(hardjpdir, `${name}.mp4`)
+
+            //let cmd = `ffmpeg -i "${vdpath}" -i "${subpath}" -i "${aupath}" -c copy ${outpath}`  // ffmpeg -i video.mkv -i subtitle.ass -c copy output.mkv
+            //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -ss 00:01:49.000 -to 00:05:00.000 -vf "subtitles='E\\:\\\\t\\\\1.srt'" "${hardjppath}"`  // 生成硬字幕
+            let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:05:00.000 -vf "subtitles='E\\:\\\\t\\\\1.srt'" "${hardjppath}"`  // 生成硬字幕
+
             let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
             let { stdout } = await childProcess
 
