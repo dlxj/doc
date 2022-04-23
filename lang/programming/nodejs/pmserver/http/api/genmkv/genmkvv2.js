@@ -73,26 +73,30 @@ module.exports = {
                                 fs.mkdirSync(outdir, { recursive: false })
                             }
 
-                            let m3outpath = path.join(outdir, 'tmp.mp3')
+                            // let m3outpath = path.join(outdir, 'tmp.mp3')
 
-                            let outpath = path.join(outdir, `${rtname}.mkv`)
-                            let outpath2 = path.join(outdir, `${rtname}_add_audio.mkv`)
+                            // let outpath = path.join(outdir, `${rtname}.mkv`)
+                            // let outpath2 = path.join(outdir, `${rtname}_add_audio.mkv`)
 
-                            let begintime = `00:00:02.000`
-                            //let endtime = `00:00:04.879`
-                            let endtime = ``
-                            let { au: audio } = await this.libs.ffmpeg.extractAudio(kvpath, 'mp3', begintime, endtime)  // 00:00:03.879  // https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg
-                            if (audio == null) {
-                                throw `au is null. ${vdpath} ${begintime}`
-                            }
+                            // let begintime = `00:00:02.000`
+                            // //let endtime = `00:00:04.879`
+                            // let endtime = ``
+                            // let { au: audio } = await this.libs.ffmpeg.extractAudio(kvpath, 'mp3', begintime, endtime)  // 00:00:03.879  // https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg
+                            // if (audio == null) {
+                            //     throw `au is null. ${vdpath} ${begintime}`
+                            // }
 
-                            require('fs').writeFileSync(m3outpath, audio )
+                            // require('fs').writeFileSync(m3outpath, audio )
 
                             //let { msg } = await this.libs.ffmpeg.injectSubtitleAudio(m4path, rtpath, m3outpath, outpath)
-                            let { msg:m1 } = await this.libs.ffmpeg.injectSubtitle(m4path, rtpath, outpath)
-                            let { msg:m2 } = await this.libs.ffmpeg.injectSubtitle(outpath, m3outpath, outpath2)
+                            //let { msg:m1 } = await this.libs.ffmpeg.injectSubtitle(m4path, rtpath, outpath)
+                            //let { msg:m2 } = await this.libs.ffmpeg.injectSubtitle(outpath, m3outpath, outpath2)
 
-                            fs.unlinkSync(m3outpath)
+                            // fs.unlinkSync(m3outpath)
+
+                            let outpath = path.join(outdir, `${rtname}.mkv`)
+                            let { msg } = await this.libs.ffmpeg.merge_pokemonAmazon_pokemonTW(m4path, kvpath, rtpath, outpath)
+
 
                             break
 

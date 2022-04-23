@@ -12,6 +12,14 @@ ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:
 
 
 
+# subtitles 绝对路径的写法很特殊
+
+```
+ffmpeg -y -itsoffset -2.2 -i "E:\t\1.mp4" -vf  "subtitles='E\:\\t\\1.srt'"  advance2second_hardjp.mp4
+```
+
+
+
 
 
 ```
@@ -349,6 +357,14 @@ ffmpeg -y -itsoffset -2.2 -i 1.mp4 -ss 00:01:49.000 -to 00:05:00.000 -vf subtitl
 # 先提前2.2 秒，再嵌入日文软字幕
 ffmpeg -y -itsoffset -2.2 -i 1.mp4 advance2second.mp4
 ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
+```
+
+
+
+### subtitles 绝对路径的写法很特殊
+
+```
+ffmpeg -y -itsoffset -2.2 -i "E:\t\1.mp4" -vf  "subtitles='E\:\\t\\1.srt'"  advance2second_hardjp.mp4
 ```
 
 
