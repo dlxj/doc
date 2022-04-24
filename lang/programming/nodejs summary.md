@@ -2000,6 +2000,10 @@ console.log()
 
 
 
+## CJK Symbols
+
+- https://en.wiktionary.org/wiki/Category:CJK_Symbols_and_Punctuation_block
+
 
 
 # Array
@@ -6133,6 +6137,20 @@ document.getElementById('app').innerHTML = "xxxxx" # 纯html
 - https://blog.csdn.net/qq_29869111/article/details/100154941
 
   > 动态加载本地图片
+
+- https://juejin.cn/post/6844904130176090126
+
+  > 根据elementUI的Carousel+Image实现图片动态加载问题
+
+- 图片的骚操作
+
+  ```
+  <img :src="item.image ? require(`../../assets/image/${item.image}`) : ''" alt="image"/>
+  ```
+
+  
+
+
 
 # vue-element-admin
 
