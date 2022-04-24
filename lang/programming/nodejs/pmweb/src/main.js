@@ -7,6 +7,8 @@ import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import './styles/element-variables.scss'
 
 import Element from 'element-ui'
+import VueCarousel from 'vue-carousel'
+
 
 
 ( async () => {
@@ -48,6 +50,8 @@ import Element from 'element-ui'
   Vue.config.productionTip = false
 
   Vue.use(Element, {size: 'mini'})  // 所有拥有 size 属性的组件默认尺寸全部设为 small
+  Vue.use(VueCarousel, {size: 'mini'})
+
 
   /* eslint-disable no-new */
   new Vue({

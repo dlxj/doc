@@ -160,6 +160,7 @@ const formurlencoded = require("form-urlencoded");
 const bent = require("bent");
 
 import componentItemZh from '@/components/itemZh.vue'  // step 1: import a compoment
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: "index",
@@ -332,7 +333,7 @@ export default {
   //   }
 
   // }
-  components: { componentItemZh },  // step 2: register the component
+  components: { Carousel },  // componentItemZh step 2: register the component
 };
 </script>
 
