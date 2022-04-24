@@ -6129,7 +6129,10 @@ document.getElementById('app').innerHTML = "xxxxx" # 纯html
           {{ item.jp }} <img :id="`img_${elm_id}`" :src="`${img_play}`" :onclick="`play('${elm_id}')`">
   ```
 
-  
+
+- https://blog.csdn.net/qq_29869111/article/details/100154941
+
+  > 动态加载本地图片
 
 # vue-element-admin
 

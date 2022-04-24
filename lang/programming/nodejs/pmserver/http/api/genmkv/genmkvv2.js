@@ -121,6 +121,6 @@ module.exports = {
             }
         }
 
-        return this.msg(200, srts)
+        return this.msg(200, 'ok.')
     }
 }

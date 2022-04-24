@@ -1,5 +1,6 @@
 
 let fs = require('fs')
+const { platform } = require('os')
 let path = require('path')
 let dirname = path.dirname
 // global.__dirname = process.cwd()
@@ -143,14 +144,63 @@ module.exports = {
 
             let hardjppath = path.join(hardjpdir, `${name}.mp4`)
 
-            //let cmd = `ffmpeg -i "${vdpath}" -i "${subpath}" -i "${aupath}" -c copy ${outpath}`  // ffmpeg -i video.mkv -i subtitle.ass -c copy output.mkv
+            let softjpdir = path.join(dir, 'softjp')
+            if (!fs.existsSync(softjpdir)) {
+                fs.mkdirSync(softjpdir, { recursive: false })
+            }
+
+            let softjppath = path.join(softjpdir, `${name}.mkv`)
+
             //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -ss 00:01:49.000 -to 00:05:00.000 -vf "subtitles='E\\:\\\\t\\\\1.srt'" "${hardjppath}"`  // 生成硬字幕
-            let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:05:00.000 -vf "subtitles='E\\:\\\\t\\\\1.srt'" "${hardjppath}"`  // 生成硬字幕
+            
+            let ffmpegsubtitle = `E\\:\\\\t\\\\1.srt`
 
-            let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
-            let { stdout } = await childProcess
+            let platform = process.platform
+            if (platform == 'win32') {
+                ffmpegsubtitle = subpath.replace(/\\/g, '\\\\')
+                ffmpegsubtitle = ffmpegsubtitle.replace(/\:/, '\\:')
+            } else if (platform == 'linux') {
+                ffmpegsubtitle = subpath
+            } else if (platform == 'darwin') {
+                ffmpegsubtitle = subpath
+            } else {
+                throw `unkonw os type.`
+            }
 
-            return { msg:stdout }
+
+            //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:01:59.000 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+
+            let childProcess = execa(cmd, { shell:true, 'encoding': 'utf8' })
+            let { stdout:out1 } = await childProcess
+
+            cmd = `ffmpeg -y -i "${hardjppath}" -i "${vdAMPath}" -i "${subpath}" -map 0:v -map 1:a:0 -map 0:a:1 -c copy -map 2 -c:s srt "${softjppath}"`
+
+            let childProcess2 = execa(cmd, { shell:true, 'encoding': 'utf8' })
+            let { stdout:out2 } = await childProcess2
+
+            return { msg:out2 }
+
+
+            /*
+            
+            ffmpeg -y -itsoffset -2.2 -i 1.mp4 advance2second.mp4
+            ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
+            
+            */
+
+            // let tmpm4 = `advance2second.mp4`
+            // let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" ${tmpm4}`
+
+            // let childProcess2 = execa(cmd, { shell:true, 'encoding': 'utf8' })
+            // let { stdout:out2 } = await childProcess2
+
+            // cmd = `ffmpeg -y -i ${tmpm4} -i "${vdAMPath}" -i "${subpath}" -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt ${softjppath}`
+
+            // let childProcess3 = execa(cmd, { shell:true, 'encoding': 'utf8' })
+            // let { stdout:out3 } = await childProcess3
+
+            // fs.unlinkSync(tmpm4)
 
         } catch(err) {
            return { msg : err }
