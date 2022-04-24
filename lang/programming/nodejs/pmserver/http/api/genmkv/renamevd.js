@@ -7,20 +7,10 @@ module.exports = {
     name: 'renamevd',
     remark: '',
     params: {
-        rootvd: {
-            type: 'string',
-            remark: '',
-            default:''
-        },
-        rootttml2: {
-            type: 'string',
-            remark: '',
-            default:''
-        },
     },
     async handler({rootvd, rootttml2}) {
 
-        let re = this.libs.renamevd.renamevd(rootvd, rootttml2)
+        let re = this.libs.renamevd.renamevd()
 
         return this.msg(200, re)
     }

@@ -4,7 +4,7 @@ let path = require('path')
 
 module.exports = {
 
-    renamevd:function(rootvd, rootttml2) {
+    renamevd:function() {
 
         let aa = this
 
