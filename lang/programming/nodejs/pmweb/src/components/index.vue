@@ -29,6 +29,9 @@
 
     <p></p>
 
+    <!-- <imgList :urls="urls" :order="order"></imgList> -->
+    <p></p>
+
     <el-input
       type="textarea"
       :autosize="{ minRows: 1, maxRows: 10 }"
@@ -159,8 +162,7 @@ import img_play2 from "../assets/play2.gif";
 const formurlencoded = require("form-urlencoded");
 const bent = require("bent");
 
-import componentItemZh from '@/components/itemZh.vue'  // step 1: import a compoment
-import { Carousel, Slide } from 'vue-carousel'
+import imgList from '@/components/imgList.vue'  // step 1: import a compoment
 
 export default {
   name: "index",
@@ -191,7 +193,9 @@ export default {
       ],
       textareas:{},
       text:'',
-      imgTWs: {}
+      imgTWs: {},
+      urls:[ img_play ],
+      order:'asc',
     }
   },
   computed: {
@@ -333,7 +337,7 @@ export default {
   //   }
 
   // }
-  components: { Carousel },  // componentItemZh step 2: register the component
+  components: { imgList },  // step 2: register the component
 };
 </script>
 
