@@ -5088,6 +5088,10 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 - https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV
 
+- https://github.com/demuxin/OpenCV_project/blob/master/EAST_Text_Detection/text_detection.py
+
+  - 完整的文本检测代码
+
   > OpenCV EAST 文本检测
 
 - https://developer.aliyun.com/article/807683
