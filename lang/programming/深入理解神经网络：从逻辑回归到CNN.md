@@ -5117,6 +5117,8 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
     
 ```
 
+
+
 ### tesseract nodejs
 
 ```javascript
@@ -5128,6 +5130,15 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 # ./configure --prefix=/usr/local/leptonica-1.79.0
 # make
 # make install
+
+> export PKG_CONFIG_PATH=/usr/local/leptonica-1.79.0/lib/pkgconfig
+$ git clone https://github.com/tesseract-ocr/tesseract.git
+$ cd tesseract
+$ ./autogen.sh
+$ ./configure --prefix=/usr/local/tesseract-5.0 
+$ make
+$ make install
+
 
 // https://github.com/schwarzkopfb/tesseract-ocr/blob/master/docs.md
 // npm install tesseractocr
