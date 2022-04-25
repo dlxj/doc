@@ -5107,6 +5107,8 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 ```
 
+# https://fancyerii.github.io/2019/03/12/3_tesseract/
+	# tesseract 很深入
 # https://github.com/yizt/crnn.pytorch
 	# 很好
 # https://github.com/xiaofengShi/CHINESE-OCR
@@ -5809,9 +5811,21 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+## 聊天机器人
+
+> https://fancyerii.github.io/2019/02/14/chatbot/  大佬  李理的博客
+
+- 使用PyTorch实现Chatbot
+
+
+
 ## 语音识别系统
 
 
+
+- https://fancyerii.github.io/books/tf-keywords/  大佬
+
+  > 使用Tensorflow识别语音关键词
 
 - https://github.com/nl8590687/ASRT_SpeechRecognition
   - 中文语音识别系统

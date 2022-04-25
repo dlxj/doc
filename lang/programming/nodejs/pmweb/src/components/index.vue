@@ -221,9 +221,11 @@ export default {
       urls:[ img_play ],
       order:'asc',
       slides: [
-        {      
-          src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'
-        }
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
       ]
     }
   },
@@ -372,6 +374,42 @@ export default {
   components: { imgList },  // step 2: register the component
 };
 </script>
+
+<style lang="scss" scoped>
+.carousel-3d-container {
+  padding-top: 200px;
+  height: 650px !important;
+  // background-color: #fff;
+}
+.carousel-3d-slider {
+  width: 300px !important;
+  height: 378px !important;
+  background: unset;
+}
+.carousel-3d-slide {
+  width: 299px !important;
+  height: 378px !important;
+  background: unset;
+  border: none;
+}
+.poster-item {
+  // background: #fff;
+  height: 375px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 45px 23px 20px 23px;
+  transition: all 0.5s;
+  cursor: default;
+  -moz-transition: all 0.5s;
+  cursor: default;
+  -webkit-transition: all 0.5s;
+  cursor: default;
+  -o-transition: all 0.5s;
+  cursor: default;
+}
+ 
+</style>
+
 
 <!--
 
