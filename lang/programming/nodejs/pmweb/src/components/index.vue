@@ -30,6 +30,29 @@
     <p></p>
 
     <!-- <imgList :urls="urls" :order="order"></imgList> -->
+
+
+    <carousel-3d
+      :autoplay="true"
+      :autoplayTimeout="3000"
+      :perspective="35"
+      :display="5"
+      :animationSpeed="1000"
+      :width="300"
+      :height="270"
+      controlsVisible
+      :controlsHeight="60"
+    >
+      <slide v-for="(item, i) in slides" :index="i" :key="i">
+        
+        <!--通过插槽作用域可以拿到点击的图片的索引-->
+      <template slot-scope="obj">
+        <img @click="imgClick(obj)" :src="item.src" alt="">
+      </template>
+
+      </slide>
+    </carousel-3d>
+
     <p></p>
 
     <el-input
@@ -164,6 +187,7 @@ const bent = require("bent");
 
 import imgList from '@/components/imgList.vue'  // step 1: import a compoment
 
+
 export default {
   name: "index",
   data() {
@@ -196,6 +220,11 @@ export default {
       imgTWs: {},
       urls:[ img_play ],
       order:'asc',
+      slides: [
+        {      
+          src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'
+        }
+      ]
     }
   },
   computed: {
@@ -297,6 +326,9 @@ export default {
     async textLostFocus(elm_id) {
       console.log(`hit textLostFocus. ${elm_id}`);debugger
     },
+    async imgClick(obj){
+      console.log(`hit imgClick.`);debugger
+    }
   },
   mounted() {
     window.play = function (elm_id) {
