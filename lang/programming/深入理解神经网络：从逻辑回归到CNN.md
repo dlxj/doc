@@ -5086,6 +5086,10 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 ## OCR
 
+- https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV
+
+  > OpenCV EAST 文本检测
+
 
 
 ```
@@ -5103,12 +5107,50 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 
 
+```javascript
+https://github.com/schwarzkopfb/tesseract-ocr/blob/master/docs.md
+const recognize = tesseract.withOptions({
+    psm: 4,
+    language: [ 'fin', 'eng' ],
+    config: ['tessedit_do_invert=0']
+})
+
+recognize(`${__dirname}/image.png`, (err, text) => { /* ... */ })
+recognize(Buffer.from(/* ... */), (err, text) => { /* ... */ })
+recognize(fs.createReadStream(/* ... */), (err, text) => { /* ... */ })
+recognize('image.jpeg', (err, text) => { /* ... */ })
+recognize('image.tiff').then(console.log, console.error)
+```
+
+
+
+```
+const tesseract = require("tesseract.js")
+
+app.post("/api/v1/tesseract", function(req, res) {
+  const buffer = Buffer.from(req.body.imgBase64, "base64")
+  tesseract
+    .recognize(buffer, "eng")
+    .then(result => {
+      res.status(200).send(result.data.text)
+    })
+    .catch(error => {
+      res.status(500).send(error.message)
+    })
+})
+```
+
+
+
 
 
 ```
 
 # https://fancyerii.github.io/2019/03/12/3_tesseract/
 	# tesseract 很深入
+	> tesseract --version
+	> tesseract test.png test -l chi_sim
+	> tesseract t3.jpg stdout -l chi_sim # 标准输出
 # https://github.com/yizt/crnn.pytorch
 	# 很好
 # https://github.com/xiaofengShi/CHINESE-OCR
