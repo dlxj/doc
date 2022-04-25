@@ -5090,6 +5090,18 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > OpenCV EAST 文本检测
 
+- https://developer.aliyun.com/article/807683
+
+- https://cloud.tencent.com/developer/article/1542875
+
+  > OCR学习路径之文本检测（下）EAST算法简介
+
+- https://www.jianshu.com/p/34b73ca276fc
+
+- https://blog.csdn.net/u011046017/article/details/93392862
+
+  > EAST结构分析+pytorch源码实现
+
 
 
 ```
