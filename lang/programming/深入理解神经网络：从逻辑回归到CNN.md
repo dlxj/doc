@@ -5117,10 +5117,21 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
     
 ```
 
-
+### tesseract nodejs
 
 ```javascript
-https://github.com/schwarzkopfb/tesseract-ocr/blob/master/docs.md
+// https://thelinuxcluster.com/2020/02/04/compiling-tesseract-5-0-on-centos-7/
+> yum install autoconf automake libtool pkgconfig.x86_64 libpng12-devel.x86_64 libjpeg-devel libtiff-devel.x86_64 zlib-devel.x86_64
+# wget http://www.leptonica.org/source/leptonica-1.79.0.tar.gz .
+# tar -zxvf leptonica-1.79.0.tar.gz
+# cd leptonica-1.79.0
+# ./configure --prefix=/usr/local/leptonica-1.79.0
+# make
+# make install
+
+// https://github.com/schwarzkopfb/tesseract-ocr/blob/master/docs.md
+// npm install tesseractocr
+
 const recognize = tesseract.withOptions({
     psm: 4,
     language: [ 'fin', 'eng' ],
@@ -5882,6 +5893,7 @@ one hot型的矩阵运算简化为了查表操作
   > 使用Tensorflow识别语音关键词
 
 - https://github.com/nl8590687/ASRT_SpeechRecognition
+  
   - 中文语音识别系统
 
 
