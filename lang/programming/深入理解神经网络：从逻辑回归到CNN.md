@@ -5142,16 +5142,39 @@ $ ./autogen.sh
 $ ./configure --prefix=/usr/local/tesseract-5.0 
 $ make
 $ make install
+$ ln -s /usr/local/tesseract-5.0/bin/tesseract /usr/local/bin/
+$ tesseract  --version #  成功
 
 
 // https://github.com/schwarzkopfb/tesseract-ocr/blob/master/docs.md
 // npm install tesseractocr
+(async()=>{
 
-const recognize = tesseract.withOptions({
-    psm: 4,
-    language: [ 'fin', 'eng' ],
-    config: ['tessedit_do_invert=0']
-})
+    let tesseract = require('tesseractocr')
+    let recognize = tesseract.withOptions({
+        psm: 4,
+        language: [ 'chi_sim', 'eng' ],
+        config: ['tessedit_do_invert=0']
+    })
+
+    let recognize2 = tesseract.withOptions({
+        psm: 4,
+        language: [ 'eng' ],
+        config: ['tessedit_do_invert=0']
+    })
+
+    // const text = await recognize('t.jpg')
+    // console.log('Yay! Text recognized:', text)
+
+    const text = await recognize('7001.jpg')
+    console.log('Yay! Text recognized:', text)
+
+    // const text2 = await recognize2('t.jpg')
+    // console.log('Yay! Text recognized:', text2)
+
+    let a = 1
+
+})()
 
 recognize(`${__dirname}/image.png`, (err, text) => { /* ... */ })
 recognize(Buffer.from(/* ... */), (err, text) => { /* ... */ })
