@@ -5126,6 +5126,9 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 ### tesseract nodejs
 
 ```javascript
+# https://github.com/tesseract-ocr/tessdata/blob/main/chi_sim.traineddata 先下载语言文件
+# 自动安装的语言模型很小，不准确
+
 // https://thelinuxcluster.com/2020/02/04/compiling-tesseract-5-0-on-centos-7/
 > yum install autoconf automake libtool pkgconfig.x86_64 libpng12-devel.x86_64 libjpeg-devel libtiff-devel.x86_64 zlib-devel.x86_64
 # wget http://www.leptonica.org/source/leptonica-1.79.0.tar.gz .
@@ -5284,6 +5287,17 @@ recognize('image.tiff').then(console.log, console.error)
 
 - https://localcoder.org/getting-the-bounding-box-of-the-recognized-words-using-python-tesseract
 
+- https://github.com/tesseract-ocr/tesseract/issues/2879
+
+  > **Tesseract**'s recognizer just finds words, and **doesn't tell us anything about spaces**. 
+  
+- https://github.com/tesseract-ocr/tesseract/issues/3105
+  
+  > if you need **accurate bounding boxes** (on character level), you need **to use legacy engine**
+  > (e.g. `tesseract INPUT.jpg OUTPUT -l nor --oem 0 makebox`).
+  >
+  > \# ! tesseract --help-extra  # 查看额外参数
+
 ```
 # tesseract ocr 文字坐标
 import pytesseract
@@ -5300,6 +5314,186 @@ for i in range(n_boxes):
 cv2.imshow('img', img)
 cv2.waitKey(0)
 ```
+
+
+
+```
+import pytesseract
+import cv2
+from pytesseract import Output
+
+img = cv2.imread('7001.jpg')
+height = img.shape[0]
+width = img.shape[1]
+
+d = pytesseract.image_to_boxes(img, output_type=Output.DICT)
+n_boxes = len(d['char'])
+for i in range(n_boxes):
+    (text,x1,y2,x2,y1) = (d['char'][i],d['left'][i],d['top'][i],d['right'][i],d['bottom'][i])
+    cv2.rectangle(img, (x1,height-y1), (x2,height-y2) , (0,255,0), 2)
+cv2.imshow('img',img)
+cv2.waitKey(0)
+```
+
+
+
+```
+import pytesseract
+import cv2
+from pytesseract import Output
+
+img = cv2.imread('7001.jpg')
+d = pytesseract.image_to_data(img, output_type=Output.DICT)
+n_boxes = len(d['level'])
+for i in range(n_boxes):
+    (text,x,y,w,h) = (d['text'][i],d['left'][i],d['top'][i],d['width'][i],d['height'][i])
+    cv2.rectangle(img, (x,y), (x+w,y+h) , (0,255,0), 2)
+cv2.imshow('img',img)
+cv2.waitKey(0)
+```
+
+
+
+
+
+#### 命令行
+
+```
+# https://github.com/tesseract-ocr/tessdata/blob/main/chi_sim.traineddata 先下载语言文件
+
+tesseract .\billion.png out -l eng -c hocr_char_boxes=1 makebox hocr pdf
+```
+
+
+
+```
+tesseract t3.jpg stdout -l chi_sim 
+--oem 0 # Legacy engine only.  文字定位更准确
+```
+
+```
+四。命令行介绍 
+tesseract test.jpg test.txt -l chi_sim+eng -psm 7 --oem 1 
+
+-l chi_sim+eng 指定中文字库和英文字库
+
+-psm 7 表示告诉tesseract code.jpg图片是一行文本这个参数可以减少识别错误率. 默认为 3。自己测试好像是一样的
+
+             默认的tesseract将一个图片当成一个文档来看。如果只需要指定的区域可以使用不同的分割模式，使用psm参数
+
+            参考：https://blog.csdn.net/claroja/article/details/82992643
+
+--oem 1 --oem 后面的参数 1代表用lstm引擎识别, 0表示用传统引擎识别
+
+configfile 参数值为tessdata\configs 和 tessdata\tessconfigs 目录下的文件名.
+
+```
+
+
+
+
+
+
+
+
+
+### pytesseract
+
+```
+from PIL import Image
+import pytesseract
+import matplotlib.pyplot as plt  
+%matplotlib inline
+
+path="9450.jpg"
+
+"""
+🐬指明tesseract命令位置
+"""
+
+tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
+pytesseract.pytesseract.tesseract_cmd =tesseract_cmd
+
+"""
+ 👻基础的图片转换为文字
+"""
+
+# 显示
+image=Image.open(path)
+plt.figure(figsize=(2,2))
+plt.axis('off')
+plt.imshow(image)
+
+print(pytesseract.image_to_string(image))
+
+
+"""
+🤠当前支持的语言 osd On Screen Display 屏幕显示字符
+"""
+print(pytesseract.get_languages(config=''))
+
+"""
+🤓尝试修改语言参数
+"""
+print(pytesseract.image_to_string(image, lang='osd'))
+
+"""
+🐱‍👓识别超时就停止
+"""
+try:
+    print(pytesseract.image_to_string(image, timeout=2)) # Timeout after 2 seconds
+    print(pytesseract.image_to_string(image, timeout=0.5)) # Timeout after half a second
+except RuntimeError as timeout_error:
+    # Tesseract processing is terminated
+    pass
+
+"""
+🎅将识别结果导出成文字可选的pdf
+这个达成的效果，就是会把图片转成pdf，同时其中的文字会是可编辑/可选的
+"""
+pdf = pytesseract.image_to_pdf_or_hocr(Image.open("1.png"), extension='pdf')
+with open('test.pdf', 'w+b') as f:
+    f.write(pdf) # pdf type is bytes by default
+
+"""
+💌修改参数
+"""
+configdigit='--psm 6 --oem 1'
+print(pytesseract.image_to_string(img_cv,config=configdigit))
+
+configdigit='--psm 6 --oem 3  -c tessedit_char_whitelist=0123456789'
+print(pytesseract.image_to_string(img_cv,config=configdigit))
+
+"""
+🍳关于其中的psm参数和oem参数，可以查看帮助文档
+"""
+! tesseract --help-extra
+> Page segmentation modes:
+  0    Orientation and script detection (OSD) only.
+  1    Automatic page segmentation with OSD.
+  2    Automatic page segmentation, but no OSD, or OCR. (not implemented)
+  3    Fully automatic page segmentation, but no OSD. (Default)
+  4    Assume a single column of text of variable sizes.
+  5    Assume a single uniform block of vertically aligned text.
+  6    Assume a single uniform block of text.
+  7    Treat the image as a single text line.
+  8    Treat the image as a single word.
+  9    Treat the image as a single word in a circle.
+ 10    Treat the image as a single character.
+ 11    Sparse text. Find as much text as possible in no particular order.
+ 12    Sparse text with OSD.
+ 13    Raw line. Treat the image as a single text line,
+       bypassing hacks that are Tesseract-specific.
+
+OCR Engine modes:
+  0    Legacy engine only.
+  1    Neural nets LSTM engine only.
+  2    Legacy + LSTM engines.
+  3    Default, based on what is available.
+
+```
+
+
 
 
 
