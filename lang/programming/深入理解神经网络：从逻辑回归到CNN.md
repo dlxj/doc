@@ -5187,6 +5187,8 @@ recognize('image.tiff').then(console.log, console.error)
 
 ### tesseract 大佬
 
+- https://fancyerii.github.io/2019/03/12/3_tesseract/
+
 ```
 
 # https://fancyerii.github.io/2019/03/12/3_tesseract/
@@ -5236,12 +5238,68 @@ recognize('image.tiff').then(console.log, console.error)
 
 
 
-
-
-
-
 - 开运算：先腐蚀后膨胀，用于移除由图像噪音形成的斑点
 - 闭运算：先膨胀后腐蚀，用来连接被误分为许多小块的对象
+
+
+
+### tesseract 自已训练
+
+- https://zhuanlan.zhihu.com/p/58366201
+
+  > Tesseract 4.0 LSTM训练超详细教程
+
+
+
+- https://www.jianshu.com/p/a7bf361cd70a
+
+  ```
+  官方训练教程：https://github.com/tesseract-ocr/tessdoc/blob/master/TrainingTesseract-4.00.md
+  语言包地址：https://github.com/tesseract-ocr/tessdata_best
+  
+  4.0 LSTM的训练流程和3.0版本有点像，如下：
+  
+  准备培训文字（txt）。
+  将文本转换为 图像和box文件。
+  制作unicharset文件。
+  根据unicharset和可选的词典数据制作入门级训练数据。
+  运行tesseract以处理图像和 box文件以创建训练数据集。
+  对训练数据集进行训练。
+  合并数据文件。
+  其区别在于：
+  1、 3.0版本训练图像文字，需要知道每个要训练的字在其图像中的具体坐标，而4.0版本训练仅需要知道这个字所在行的坐标即可（即不需要逐个字去调试坐标）。
+  2、3.0版本训练过程中的 .tr文件在4.0版本的训练过程中被替换为.lstmf数据文件。（其他训练教程里面如果出现了.tr文件，那就可以肯定他的教程是3.0版本）
+  3、 字体可以并且应该自由混合而不是分开。（这段话我看不懂）
+  4、 3.0版本的聚类步骤（mftraining，cntraining，shapeclustering）在4.0中被替换为一个缓慢的lstmtraining步骤。（即3.0的多个合并步骤在4.0这里只需要一个步骤完成）
+  5、 4.0的训练需要一气呵成，如果训练中断，重启后很难自动结束。
+  6、 4.0使用的语言模型、unicharset和3.0版本所使用的语言模型和unicharset不一样（所以不要拿3.0的数据来4.0里面训练）。
+  
+  
+  
+  ```
+
+  
+
+### tesseract 文字坐标
+
+- https://localcoder.org/getting-the-bounding-box-of-the-recognized-words-using-python-tesseract
+
+```
+# tesseract ocr 文字坐标
+import pytesseract
+from pytesseract import Output
+import cv2
+img = cv2.imread('7001.jpg')
+
+d = pytesseract.image_to_data(img, output_type=Output.DICT)
+n_boxes = len(d['level'])
+for i in range(n_boxes):
+    (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
+    cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+cv2.imshow('img', img)
+cv2.waitKey(0)
+```
 
 
 
