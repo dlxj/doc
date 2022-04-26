@@ -5185,25 +5185,7 @@ recognize('image.tiff').then(console.log, console.error)
 
 
 
-```
-const tesseract = require("tesseract.js")
-
-app.post("/api/v1/tesseract", function(req, res) {
-  const buffer = Buffer.from(req.body.imgBase64, "base64")
-  tesseract
-    .recognize(buffer, "eng")
-    .then(result => {
-      res.status(200).send(result.data.text)
-    })
-    .catch(error => {
-      res.status(500).send(error.message)
-    })
-})
-```
-
-
-
-
+### tesseract 大佬
 
 ```
 
@@ -5924,7 +5906,9 @@ one hot型的矩阵运算简化为了查表操作
 
 ## 语音识别系统
 
+- https://fancyerii.github.io/2019/05/25/dev287x/
 
+  > 微软Edx语音识别课程 大佬
 
 - https://fancyerii.github.io/books/tf-keywords/  大佬
 
