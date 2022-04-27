@@ -78,6 +78,12 @@ cv2.waitKey(0)
 
   > Opencv4nodejs 安装
 
+- https://github.com/UrielCh/opencv4nodejs
+
+  >  Opencv4nodejs fork 版，易安装，功能多
+  >
+  > NW.js lets you call all Node.js modules directly from DOM 
+
 
 
 # 坐标系不要被坑了
