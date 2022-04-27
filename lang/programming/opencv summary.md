@@ -72,6 +72,12 @@ cv2.waitKey(0)
 
 
 
+# Opencv4nodejs
+
+- https://zhuanlan.zhihu.com/p/334814524
+
+  > Opencv4nodejs 安装
+
 
 
 # 坐标系不要被坑了
