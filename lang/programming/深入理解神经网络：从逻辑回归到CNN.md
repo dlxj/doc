@@ -5129,6 +5129,13 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 # https://github.com/tesseract-ocr/tessdata/blob/main/chi_sim.traineddata 先下载语言文件
 # 自动安装的语言模型很小，不准确
 
+先安装c++17
+yum install centos-release-scl
+yum install devtoolset-7-gcc-c++ --enablerepo='centos-sclo-rh'
+scl enable devtoolset-7 'bash' # 切换编译器
+which gcc
+
+
 // https://thelinuxcluster.com/2020/02/04/compiling-tesseract-5-0-on-centos-7/
 > yum install autoconf automake libtool pkgconfig.x86_64 libpng12-devel.x86_64 libjpeg-devel libtiff-devel.x86_64 zlib-devel.x86_64
 # wget http://www.leptonica.org/source/leptonica-1.79.0.tar.gz .
