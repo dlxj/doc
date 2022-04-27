@@ -5131,9 +5131,9 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 先安装c++17
 yum install centos-release-scl
-yum install devtoolset-7-gcc-c++ --enablerepo='centos-sclo-rh'
+yu install devtoolset-7-gcc-c++ --enablerepo='centos-sclo-rh'
 scl enable devtoolset-7 'bash' # 切换编译器
-which gcc
+which gccc
 
 
 // https://thelinuxcluster.com/2020/02/04/compiling-tesseract-5-0-on-centos-7/
