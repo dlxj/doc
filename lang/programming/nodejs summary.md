@@ -1824,6 +1824,143 @@ let r = strs.replace(new RegExp(String.raw`([^a-z^A-Z^\s])\s+([^a-z^A-Z^\s])`), 
 
 
 
+## 过滤汉字里的标点符号
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
+
+  > Unicode property escapes
+
+- https://www.jianshu.com/p/fcbc5cd06f39
+
+  > Unicode 编码 Emoji CJK 中文 汉字 过滤正则
+
+```
+a= '有效的。effctive“有效的，起作用的”；viual“视觉的，视力的”；crical“挑剔的”；ineviable“必然的，不可避免'
+a.replace(/\p{P}/gu, '')  # 成功云掉了中文标点
+> '有效的effctive有效的起作用的viual视觉的视力的crical挑剔的ineviable必然的不可避免'
+
+
+> a.replace(/[\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/g, '')
+'。effctive“，”；viual“，”；crical“”；ineviable“，'
+
+\pP 其中的小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。
+
+大写 P 表示 Unicode 字符集七个字符属性之一：标点字符。
+
+'A ticket to 大阪 costs ¥2000 👌.'.replace(/\p{Sc}|\p{P}/gu, '')
+
+
+
+
+```
+
+`定义范围`是Unicode指定的字符区间，`实际范围`是当前版本真正使用的区间，没使用的区间在后续版本更新会被使用，所以过滤规则已定义范围为准。
+ `〇` 虽然在符号区但属于汉字。
+ 易经六十四卦符号不属于汉字。
+
+包含兼容和扩展字符
+
+| 过滤内容       | 正则                                                         |
+| -------------- | ------------------------------------------------------------ |
+| CJK 汉字和符号 | [\u2E80-\uA4CF\uF900-\uFAFF\uFE10-\uFE1F\uFE30-\uFE4F\uFF00-\uFFEF] |
+| CJK 标点符号   | [\u3000-\u3006\u3008-\u303F\uFE10-\uFE1F\uFE30-\uFE4F\uFF00-\uFFEF] |
+| 中文汉字和符号 | [\u2E80-\u2FFF\u3000-\u303F\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\uFE10-\uFE1F\uFE30-\uFE4F\uFF00-\uFFEF] |
+| 仅中文汉字     | [\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF] |
+
+常用其它过滤判断
+
+
+
+```csharp
+CJK 常用汉字和符号(无全角内容)  
+[\u2E80-\uA4CF\uF900-\uFAFF\uFE10-\uFE1F\uFE30-\uFE4F]  
+
+CJK 汉字和符号(无竖排符号)  
+[\u2E80-\uA4CF\uF900-\uFAFF\uFF00-\uFFEF]  
+
+CJK 汉字和符号(无竖排符号和全角)  
+[\u2E80-\uA4CF\uF900-\uFAFF]  
+
+CJK 汉字(无符号和全角)  
+[\u3007\u2E80-\u2FFF\u3040-\uA4CF\uF900-\uFAFF]  
+
+中文汉字和符号(无全角内容)  
+[\u2E80-\u2FFF\u3000-\u303F\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\uFE10-\uFE1F\uFE30-\uFE4F]
+```
+
+不含兼容和扩展字符
+
+| 过滤内容       | 正则                                      |
+| -------------- | ----------------------------------------- |
+| CJK 标点符号   | [\u3000-\u3006\u3008-\u303F\uFF00-\uFFEF] |
+| 中文汉字和符号 | [\u3000-\u303F\u4E00-\u9FFF\uFF00-\uFFEF] |
+| 仅中文汉字     | [\u3007\u4E00-\u9FFF]                     |
+
+大于4字不同语言符处理方式不同，可根据需要决定是否添加
+
+
+
+```csharp
+#| 20000-2A6DF | CJK统一表意文字扩展B |
+#| 2A700-2EBE0 | CJK统一表意文字扩展C-F |
+#| 2F800-2FA1F | CJK兼容表意文字扩展 |
+#| 30000~3134A | CJK统一表意文字扩展G |
+
+#OC
+[\U00020000-\U0002A6DF\U000A700-\U0002EBE0\U0002F800-\U0002FA1F\U00030000-\U0003134A]
+
+#Java
+[\x{20000}-\x{2A6DF}\x{2A700}-\x{2EBE0}\x{2F800}-\x{2FA1F}\x{30000}-\x{3134A}]
+
+#JavaScript
+[\u{20000}-\u{2A6DF}\u{2A700}-\u{2EBE0}\u{2F800}-\u{2FA1F}\u{30000}-\u{3134A}]
+```
+
+emoji
+
+参考[emoji-regex](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Femoji-regex)的正则分为3种标准 [RGI标准](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmathiasbynens%2Femoji-regex%2Fblob%2F61%2Fes2015%2FRGI_Emoji.js)  、[旧标准](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmathiasbynens%2Femoji-regex%2Fblob%2F61%2Fes2015%2Findex.js)  、[旧标准+文字类型](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmathiasbynens%2Femoji-regex%2Fblob%2F61%2Fes2015%2Ftext.js)  。
+ 但是这里 `文字类型(无彩色Icon)`  的emoji 把 `#*0-9` 也算在内并不正确。
+ 修改后最终的规则可以参考这里[emoji_regex.dart](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwittyneko%2Femoji_regex%2Fblob%2Fmaster%2Flib%2Femoji_regex.dart)。
+
+[Full Emoji List](https://links.jianshu.com/go?to=https%3A%2F%2Funicode.org%2Femoji%2Fcharts%2Ffull-emoji-list.html)
+ [emoji history index](https://links.jianshu.com/go?to=https%3A%2F%2Funicode.org%2FPublic%2Femoji%2F)
+ [emoji-test.txt](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.unicode.org%2FPublic%2Femoji%2F13.0%2Femoji-test.txt)
+
+
+
+```
+# 好像只有java 可以
+str = str.replaceAll("\\pP", "")
+
+Unicode 编码并不只是为某个字符简单定义了一个编码，而且还将其进行了归类。
+
+\pP 其中的小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。
+
+大写 P 表示 Unicode 字符集七个字符属性之一：标点字符。
+
+其他六个是
+
+L：字母；
+M：标记符号（一般不会单独出现）；
+Z：分隔符（比如空格、换行等）；
+S：符号（比如数学符号、货币符号等）；
+N：数字（比如阿拉伯数字、罗马数字等）；
+C：其他字符
+
+上面这七个是属性，七个属性下还有若干个子属性，用于更进一步地进行细分。
+
+Unicode 正则表达式标准（可以找到所有的子属性）
+http://www.unicode.org/reports/tr18/
+
+各 Unicode 字符属性的定义，可以用一看看某个字符具有什么属性。
+http://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+
+这个文本文档一行是一个字符，第一列是 Unicode 编码，第二列是字符名，第三列是 Unicode 属性，
+以及其他一些字符信息。
+```
+
+
+
 
 
 # String
