@@ -2108,6 +2108,21 @@ npm i string-algorithms
 
 
 
+## 编辑距离
+
+- https://github.com/hiddentao/fast-levenshtein
+
+  > ``` 
+  > npm install fast-levenshtein --save
+  > 
+  > var levenshtein = require('fast-levenshtein');
+  > 
+  > var distance = levenshtein.get('back', 'book');   // 2
+  > var distance = levenshtein.get('我愛你', '我叫你');   // 1
+  > ```
+
+
+
 ## diff
 
 
