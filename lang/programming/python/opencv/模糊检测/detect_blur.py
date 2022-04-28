@@ -1,4 +1,5 @@
 # detect_blur.py
+# https://yanshilin.xyz/%e4%bd%bf%e7%94%a8opencv%e5%af%b9%e6%89%8b%e6%9c%ba%e4%b8%ad%e7%85%a7%e7%89%87%e8%bf%9b%e8%a1%8c%e6%a8%a1%e7%b3%8a%e6%a3%80%e6%b5%8b/
 # import the necessary packages
 from imutils import paths
 import argparse
