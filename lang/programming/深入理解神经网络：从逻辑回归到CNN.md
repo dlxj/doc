@@ -5535,6 +5535,14 @@ OCR Engine modes:
   >
   >   
 
+- https://blog.csdn.net/DU_YULIN/article/details/118460206
+  
+> DBnet源码解析
+  
+- https://zhuanlan.zhihu.com/p/368035566
+  
+> 手把手教你学DBNet
+  
 - https://zhuanlan.zhihu.com/p/88645033
 
   > CTC算法详解
