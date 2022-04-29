@@ -5514,6 +5514,14 @@ OCR Engine modes:
 
   > 文字检测算法：PSENet
 
+- https://blog.csdn.net/weixin_40437821/article/details/117194635
+
+  > DBNet
+  >
+  > - https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/123904386
+  >
+  >   > pytorch 完整训练
+
 
 
 ### pytorch 实现数字识别
