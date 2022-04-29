@@ -773,6 +773,19 @@ fnames2 = glob.glob(root + '/**/*.mkv', recursive=True)
 
 
 
+### list all image
+
+
+
+```python
+from imutils import paths
+
+for imagePath in paths.list_images(args["images"]):
+  image = cv2.imdecode(np.fromfile(imagePath, dtype=np.uint8), -1)
+```
+
+
+
 
 
 ### basename
@@ -800,7 +813,7 @@ print(result.hexdigest())
 
 ### stream
 
-```
+```python
 '''
     PIL 转 bytes
 '''
