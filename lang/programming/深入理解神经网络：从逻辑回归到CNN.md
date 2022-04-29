@@ -5521,7 +5521,12 @@ OCR Engine modes:
   > - https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/123904386
   >
   >   > pytorch 完整训练
-
+  >   
+  > - https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html
+  >
+  >   > DBNet 对每个像素点进行自适应二值化，二值化的阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
+  >
+  >   
 
 
 ### pytorch 实现数字识别
