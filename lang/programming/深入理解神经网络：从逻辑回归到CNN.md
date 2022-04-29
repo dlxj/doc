@@ -5522,11 +5522,23 @@ OCR Engine modes:
   >
   >   > pytorch 完整训练
   >   
-  > - https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html
+#### DBNet 可微分二值化
+- https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html
   >
   >   > DBNet 对每个像素点进行自适应二值化，二值化的阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
+  >   >
+  >   > DB(Differentiable Binarization) **可微分二值化**[u](https://zhuanlan.zhihu.com/p/365227183)
+  >   >
+  >   > ![image-20220429172656953](深入理解神经网络：从逻辑回归到CNN.assets/image-20220429172656953.png)
+  >   >
+  >   > 
   >
   >   
+
+- https://zhuanlan.zhihu.com/p/88645033
+
+  > CTC算法详解
+
 
 
 ### pytorch 实现数字识别
