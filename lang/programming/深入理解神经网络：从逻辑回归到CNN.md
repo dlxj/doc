@@ -5508,7 +5508,7 @@ OCR Engine modes:
 
 - https://github.com/demuxin/OpenCV_project/tree/master/EAST_Text_Detection
 
-  > 
+  > EAST 算法
 
 - https://zhuanlan.zhihu.com/p/339381734
 
