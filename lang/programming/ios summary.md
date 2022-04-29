@@ -127,3 +127,19 @@ Android 平台，个人可以 Google Play （国内用户少），华为（个�
 
 
 
+# MACOS
+
+
+
+## 镜像下载
+
+- https://www.applex.net/pages/macos/
+
+- https://github.com/balena-io/etcher/releases
+
+  > 烧录工具
+
+
+
+
+
