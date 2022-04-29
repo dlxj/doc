@@ -5506,9 +5506,13 @@ OCR Engine modes:
 
 ### 文本检测 
 
+- https://github.com/demuxin/OpenCV_project/tree/master/EAST_Text_Detection
 
+  > 
 
+- https://zhuanlan.zhihu.com/p/339381734
 
+  > 文字检测算法：PSENet
 
 
 
