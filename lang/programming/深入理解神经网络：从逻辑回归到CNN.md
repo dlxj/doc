@@ -5086,6 +5086,8 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 ## OCR
 
+- https://github.com/demuxin/pytorch_tricks
+
 - https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV
 
 - https://github.com/demuxin/OpenCV_project/blob/master/EAST_Text_Detection/text_detection.py
@@ -5502,6 +5504,12 @@ OCR Engine modes:
 
 
 
+### 文本检测 
+
+
+
+
+
 
 
 ### pytorch 实现数字识别
@@ -5879,6 +5887,16 @@ y2 --> e  查lable表得到标签。
 # https://zhuanlan.zhihu.com/p/43534801
 
 ```
+
+
+
+### Subtitle extract
+
+- https://github.com/YaoFANGUK/video-subtitle-extractor
+
+
+
+doc\lang\programming\Python 3  Summary.md  看在这里，Extract Video Subtitle 这一节
 
 
 

@@ -86,6 +86,12 @@ cv2.waitKey(0)
 
 
 
+# OpenCV_project
+
+- https://github.com/demuxin/OpenCV_project
+
+
+
 # 坐标系不要被坑了
 
 
@@ -1768,6 +1774,16 @@ for imagePath in paths.list_images(args["images"]):
 ```
 
 <img src="opencv summary.assets/image-20220428175501612.png" alt="image-20220428175501612" style="zoom: 25%;" /><img src="opencv summary.assets/image-20220428175532215.png" alt="image-20220428175532215" style="zoom:25%;" />
+
+
+
+# Subtitle extract
+
+- https://github.com/YaoFANGUK/video-subtitle-extractor
+
+
+
+doc\lang\programming\Python 3  Summary.md  看在这里，Extract Video Subtitle 这一节
 
 
 

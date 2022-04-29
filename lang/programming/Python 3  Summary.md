@@ -5395,6 +5395,10 @@ f"INSERT INTO trialexampointrelevanttest (examPointID, appID, testID, childTestI
 
 
 
+### pytorch tricks
+
+- https://github.com/demuxin/pytorch_tricks
+
 
 
 ## pymysql
