@@ -108,6 +108,14 @@ netstat -aon | findstr "8080"
 
 
 
+# 内网测速
+
+- https://zhuanlan.zhihu.com/p/137958252
+
+  > iPerf3 搭建局域网内部测速环境
+
+
+
 # wifi crack
 
 
