@@ -23,13 +23,21 @@
                   reader.nextLine(function(err, line) {
                     try {
                         if (err) return reject(err)
-                        console.log(line)
+                        if (line.trim() != '') {
+                            line = JSON.parse(line)
+                            let english = line.english
+                            english = english.replace(/(\,)/g, ' $1')  // OpenNMT 要通过空格分词，这里把标点和单词拆开
+                            english = english.replace(/(\.)/g, ' $1')
+                            english = english.replace(/(\?)/g, ' $1')
+                            english = english.replace(/(\!)/g, ' $1')
+                            console.log(line)
+                        }
                     } finally {
                       reader.close(function(err) {
                         if (err) return reject(err)
-                    });
+                    })
                     }
-                  });
+                  })
                 } else {
                   reader.close(function(err) {
                     if (err) return reject(err)
