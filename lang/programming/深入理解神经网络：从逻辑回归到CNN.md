@@ -5538,14 +5538,36 @@ OCR Engine modes:
 - https://blog.csdn.net/DU_YULIN/article/details/118460206
   
 > DBnet源码解析
-  
+>
+> ICDAR2015 数据集
+
 - https://zhuanlan.zhihu.com/p/368035566
   
 > 手把手教你学DBNet
-  
+
 - https://zhuanlan.zhihu.com/p/88645033
 
   > CTC算法详解
+
+
+
+#### mmocr
+
+- https://zhuanlan.zhihu.com/p/484637638
+
+  > 初尝mmocr，使用mmocr训练自定义数据集
+
+- https://mmocr.readthedocs.io/zh_CN/latest/demo.html#id2
+
+  > 官方文档
+
+- https://github.com/open-mmlab/mmocr/issues/152  ICDAR 2015
+
+- https://github.com/open-mmlab/mmocr/issues/17 ICDAR2015 数据集
+
+  > 训练DBNet
+  >
+  > ICDAR2015 数据集  可以试着跑这个数据集
 
 
 
