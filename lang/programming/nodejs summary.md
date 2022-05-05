@@ -2473,6 +2473,18 @@ npm install line-reader --save
 
 
 
+## write line by line
+
+```javascript
+            var fs = require('fs')
+            var src_train = fs.createWriteStream('src-train.txt', {flags: 'a' }) // 'a' means appending (old data will be preserved)
+            src_train.write('some data') // append string to your file
+            src_train.write('more data') // again
+            src_train.write('and more') // again
+```
+
+
+
 
 
 ## 去掉扩展名

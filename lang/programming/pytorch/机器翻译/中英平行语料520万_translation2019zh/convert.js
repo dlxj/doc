@@ -8,13 +8,21 @@
     // fs.readFileSync(fpath, { encoding: 'utf8', flag: 'r' })
 
     function clean(str) {
-       //return str.replace(/\r\n/g, '\n').replace(/\n{2,999}/g, '\n')
-       return str
+       return str.replace(/\r\n/g, '\n').replace(/\n{2,999}/g, '\n')
     }
 
     async function convert(fpath) {
 
         var data = await new Promise(function (resolve, reject) {
+
+            var fs = require('fs')
+            var src_train = fs.createWriteStream('en_chs/src-train.txt', {flags: 'a' }) // 'a' means appending (old data will be preserved)
+            var tgt_train = fs.createWriteStream('en_chs/tgt-train.txt', {flags: 'a' }) // 'a' means appending (old data will be preserved)
+
+            // src_train.write('some data') // append string to your file
+            // src_train.write('more data') // again
+            // src_train.write('and more') // again
+
 
             let lineReader = require('line-reader')
             lineReader.open(fpath, function(err, reader) {
@@ -25,22 +33,39 @@
                         if (err) return reject(err)
                         if (line.trim() != '') {
                             line = JSON.parse(line)
-                            let english = line.english
-                            english = english.replace(/(\,)/g, ' $1')  // OpenNMT 要通过空格分词，这里把标点和单词拆开
-                            english = english.replace(/(\.)/g, ' $1')
-                            english = english.replace(/(\?)/g, ' $1')
-                            english = english.replace(/(\!)/g, ' $1')
-                            console.log(line)
+                            let english = clean(line.english)
+                            english = english.replace(/(\,)/g, ' $1 ')  // OpenNMT 要通过空格分词，这里把标点和单词拆开
+                            english = english.replace(/(\.)/g, ' $1 ')
+                            english = english.replace(/(\?)/g, ' $1 ')
+                            english = english.replace(/(\!)/g, ' $1 ')
+                            english = english.replace(/([^\r\n\S]{2,999})/g, ' ')
+
+                            let chinese = clean(line.chinese)
+                            chinese = chinese.replace(/(\，)/g, ' $1 ')  // OpenNMT 要通过空格分词，这里把标点和单词拆开
+                            chinese = chinese.replace(/(\。)/g, ' $1 ')
+                            chinese = chinese.replace(/(\？)/g, ' $1 ')
+                            chinese = chinese.replace(/(\！)/g, ' $1 ')
+                            chinese = chinese.replace(/(\《)/g, ' $1 ')
+                            chinese = chinese.replace(/(\》)/g, ' $1 ')
+
+                            chinese = chinese.replace(/([^\r\n\S]{2,999})/g, ' ')
+                            // chinese = chinese.replace(/(\p{P})/gu, ' $1 ')  // 正则匹配所有中文标点
+
+                            src_train.write(english + '\n') // append string to your file
+                            tgt_train.write(chinese + '\n') // append string to your file
+
                         }
-                    } finally {
+                    } catch(err) {
                       reader.close(function(err) {
                         if (err) return reject(err)
-                    })
+                      })
                     }
                   })
                 } else {
                   reader.close(function(err) {
                     if (err) return reject(err)
+                    src_train.close()
+                    tgt_train.close()
                     return resolve(result)
                   })
                 }
