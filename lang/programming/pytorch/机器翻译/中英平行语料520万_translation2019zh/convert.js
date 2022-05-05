@@ -27,7 +27,7 @@
             let lineReader = require('line-reader')
             lineReader.open(fpath, function(err, reader) {
                 if (err) return reject(err)
-                if (reader.hasNextLine()) {
+                while (reader.hasNextLine()) {
                   reader.nextLine(function(err, line) {
                     try {
                         if (err) return reject(err)
@@ -61,14 +61,14 @@
                       })
                     }
                   })
-                } else {
-                  reader.close(function(err) {
+                }
+
+                reader.close(function(err) {
                     if (err) return reject(err)
                     src_train.close()
                     tgt_train.close()
                     return resolve(result)
-                  })
-                }
+                })
             })
         })
 
