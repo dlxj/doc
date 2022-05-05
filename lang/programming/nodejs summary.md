@@ -2444,7 +2444,8 @@ fs.createWriteStream(path).write(buffer)
 ## read line by line
 
 ```javascript
-        var data = await new Promise(function (resolve, reject) {
+npm install line-reader --save
+	var data = await new Promise(function (resolve, reject) {
 
             let lineReader = require('line-reader')
             lineReader.open(fpath, function(err, reader) {
