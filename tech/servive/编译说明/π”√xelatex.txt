@@ -1,0 +1,21 @@
+0.tex
+\documentclass{article}
+\usepackage{fontspec}
+\setmainfont{Nimbus Sans L}
+\begin{document}
+hi,hi
+\end{document}
+
+xelatex 0.tex
+
+
+fc-list -f "%{family}\n" :lang=en
+fc-list -f "%{family}\n" :lang=zh
+
+\documentclass{article}
+\usepackage{fontspec}
+\begin{document}
+\fontspec{Nimbus Sans L}This is some text in the default font, 
+but \fontspec{cwTeX Q Ming}江城子，單調三十五字，七句五平韻。
+\end{document}
+
