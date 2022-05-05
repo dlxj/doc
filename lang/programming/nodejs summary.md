@@ -2441,6 +2441,37 @@ fs.createWriteStream(path).write(buffer)
 
 
 
+## read line by line
+
+```javascript
+        var data = await new Promise(function (resolve, reject) {
+
+            let lineReader = require('line-reader')
+            lineReader.open(fpath, function(err, reader) {
+                if (err) return reject(err)
+                if (reader.hasNextLine()) {
+                  reader.nextLine(function(err, line) {
+                    try {
+                        if (err) return reject(err)
+                        console.log(line)
+                    } finally {
+                      reader.close(function(err) {
+                        if (err) return reject(err)
+                    });
+                    }
+                  });
+                } else {
+                  reader.close(function(err) {
+                    if (err) return reject(err)
+                    return resolve(result)
+                  })
+                }
+            })
+        })
+```
+
+
+
 
 
 ## 去掉扩展名
