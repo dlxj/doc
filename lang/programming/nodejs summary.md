@@ -2441,6 +2441,50 @@ fs.createWriteStream(path).write(buffer)
 
 
 
+## read line by line
+
+```javascript
+npm install line-reader --save
+	var data = await new Promise(function (resolve, reject) {
+
+            let lineReader = require('line-reader')
+            lineReader.open(fpath, function(err, reader) {
+                if (err) return reject(err)
+                if (reader.hasNextLine()) {
+                  reader.nextLine(function(err, line) {
+                    try {
+                        if (err) return reject(err)
+                        console.log(line)
+                    } finally {
+                      reader.close(function(err) {
+                        if (err) return reject(err)
+                    });
+                    }
+                  });
+                } else {
+                  reader.close(function(err) {
+                    if (err) return reject(err)
+                    return resolve(result)
+                  })
+                }
+            })
+        })
+```
+
+
+
+## write line by line
+
+```javascript
+            var fs = require('fs')
+            var src_train = fs.createWriteStream('src-train.txt', {flags: 'a' }) // 'a' means appending (old data will be preserved)
+            src_train.write('some data') // append string to your file
+            src_train.write('more data') // again
+            src_train.write('and more') // again
+```
+
+
+
 
 
 ## 去掉扩展名
