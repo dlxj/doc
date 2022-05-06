@@ -2123,6 +2123,63 @@ npm i string-algorithms
 
 
 
+## NGram
+
+```javascript
+    // NGram
+    NG: function (strs) {
+
+        strs = strs.replaceAll(String.raw`\s`, '')
+
+        function ng(s, n) {
+
+            var grs = []
+
+            for (let i = 0; i < s.length; i++) {
+
+                if (i + n > s.length) {
+                    break
+                }
+
+                var gr = s.substring(i, i + n)
+
+                grs.push(gr)
+
+
+            }
+
+            return grs
+
+        }
+
+        var gss = []
+        for (let i = 1; i <= 10; i++) {
+
+            let gs = ng(strs, i)
+
+            if (gs.length > 0) {
+
+                gss = gss.concat(gs)
+
+            } else {
+
+                break
+
+            }
+
+        }
+
+        return gss
+
+    }
+```
+
+
+
+
+
+
+
 ## diff
 
 
