@@ -5535,6 +5535,9 @@ OCR Engine modes:
   >
   >   
 
+- https://zhuanlan.zhihu.com/p/94677957
+> DBNet阅读笔记
+
 - https://blog.csdn.net/DU_YULIN/article/details/118460206
   
 > DBnet源码解析
