@@ -5535,6 +5535,9 @@ OCR Engine modes:
   >
   >   
 
+- https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md
+> 直接用的工具箱（文本检测、识别）
+
 - https://zhuanlan.zhihu.com/p/94677957
 > DBNet阅读笔记
 
