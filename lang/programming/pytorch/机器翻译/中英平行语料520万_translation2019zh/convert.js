@@ -24,8 +24,13 @@ npm install lodash --save
             let c1 = _.chunk([1, 2, 3, 4, 5], 3)
 
             let nodejieba = require("nodejieba")
-            let result = nodejieba.cut("南京市长江大桥");
-            console.log(result.join(' '))
+
+            function cut(str) {
+                return nodejieba.cut(str).join(' ')
+            }
+
+            //let result = nodejieba.cut("南京市长江大桥")
+            console.log(cut("南京市长江大桥"))
 
             fs.rmSync('en_chs', { recursive: true, force: true })
             fs.mkdirSync('en_chs', { recursive: true })
@@ -90,11 +95,11 @@ npm install lodash --save
                                 chinese = chinese.replace(/(\（)/g, ' $1 ')
                                 chinese = chinese.replace(/(\）)/g, ' $1 ')
 
-
-
+                                chinese = cut(chinese)
 
                                 chinese = chinese.replace(/([^\r\n\S]{2,999})/g, ' ')
                                 // chinese = chinese.replace(/(\p{P})/gu, ' $1 ')  // 正则匹配所有中文标点
+
 
                                 // src_train.write(english + '\n') 
                                 // tgt_train.write(chinese + '\n')
