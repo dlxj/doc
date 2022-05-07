@@ -1,6 +1,12 @@
 
 // 原始语料在 doc\lang\programming\pytorch\机器翻译\中英平行语料520万_translation2019zh  格式是：每行一个JSON 文本， 有两个字段 english 和 chinese 
 // 转换为 OpenNMT-py 格式，英文一个文件，中文一个文件
+/*
+
+npm install nodejieba --registry=https://registry.npm.taobao.org --nodejieba_binary_host_mirror=https://npm.taobao.org/mirrors/nodejieba --save
+npm install lodash --save
+
+*/
 
 (async () => {
 
@@ -16,6 +22,10 @@
             let _ = require('lodash')
 
             let c1 = _.chunk([1, 2, 3, 4, 5], 3)
+
+            let nodejieba = require("nodejieba")
+            let result = nodejieba.cut("南京市长江大桥");
+            console.log(result.join(' '))
 
             fs.rmSync('en_chs', { recursive: true, force: true })
             fs.mkdirSync('en_chs', { recursive: true })
