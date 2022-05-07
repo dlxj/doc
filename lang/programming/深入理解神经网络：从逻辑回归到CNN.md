@@ -5538,6 +5538,9 @@ OCR Engine modes:
 - https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md
 > 直接用的工具箱（文本检测、识别）
 
+- https://github.com/qdd1234/Source-code-for-terminal-representation
+> DBNet 车牌识别  大作业
+
 - https://zhuanlan.zhihu.com/p/94677957
 > DBNet阅读笔记
 
@@ -6745,11 +6748,41 @@ pip install grpcio==1.11.0
 
 
 
-## Colab
+# Colab
 
 
 
-### 中文
+## install conda
+
+```
+https://towardsdatascience.com/conda-google-colab-75f7c867a522
+```
+
+
+
+```
+!which python
+!python --version
+!echo $PYTHONPATH
+%env PYTHONPATH=   # 安装前让此环境变量失效
+
+%%bash
+MINICONDA_INSTALLER_SCRIPT=Miniconda3-4.5.4-Linux-x86_64.sh
+MINICONDA_PREFIX=/usr/local
+wget https://repo.continuum.io/miniconda/$MINICONDA_INSTALLER_SCRIPT
+chmod +x $MINICONDA_INSTALLER_SCRIPT
+./$MINICONDA_INSTALLER_SCRIPT -b -f -p $MINICONDA_PREFIX
+
+
+```
+
+
+
+
+
+
+
+## 中文
 
 
 
@@ -6778,7 +6811,7 @@ plt.show()
 
 
 
-### 聚类
+## 聚类
 
 
 
@@ -6835,7 +6868,7 @@ plt.show()
 
 
 
-### 多分类
+## 多分类
 
 
 

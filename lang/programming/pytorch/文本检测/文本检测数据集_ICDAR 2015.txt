@@ -1,0 +1,49 @@
+
+DBNet 训练与测试（pytorch）
+
+https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/123904386
+
+
+https://mmocr.readthedocs.io/zh_CN/latest/datasets/det.html
+若用户需要在 CTW1500, ICDAR 2015/2017 或 Totaltext 数据集上训练模型, 请注意这些数据集中有部分图片的 EXIF 信息里保存着方向信息。MMCV 采用的 OpenCV 后端会默认根据方向信息对图片进行旋转；而由于数据集的标注是在原图片上进行的，这种冲突会使得部分训练样本失效。因此，用户应该在配置 pipeline 时使用 dict(type='LoadImageFromFile', color_type='color_ignore_orientation') 以避免 MMCV 的这一行为。（配置文件可参考 DBNet 的 pipeline 配置）
+
+
+ICDAR 2015
+第一步：从下载地址下载 ch4_training_images.zip、ch4_test_images.zip、ch4_training_localization_transcription_gt.zip、Challenge4_Test_Task1_GT.zip 四个文件，分别对应训练集数据、测试集数据、训练集标注、测试集标注。
+
+第二步：运行以下命令，移动数据集到对应文件夹
+
+mkdir icdar2015 && cd icdar2015
+mkdir imgs && mkdir annotations
+# 移动数据到目录：
+mv ch4_training_images imgs/training
+mv ch4_test_images imgs/test
+# 移动标注到目录：
+mv ch4_training_localization_transcription_gt annotations/training
+mv Challenge4_Test_Task1_GT annotations/test
+第三步：下载 instances_training.json 和 instances_test.json，并放入 icdar2015 文件夹里。或者也可以用以下命令直接生成 instances_training.json 和 instances_test.json:
+
+python tools/data/textdet/icdar_converter.py /path/to/icdar2015 -o /path/to/icdar2015 -d icdar2015 --split-list training test
+
+
+
+
+
+https://rrc.cvc.uab.es/?ch=4&com=downloads
+
+Downloads - Incidental Scene Text
+Download below the training dataset and associated ground truth information for each of the Tasks.
+
+Task 4.1: Text Localization (2015 edition)
+Training Set
+Training Set Images (88.5MB).- 1000 images obtained with wearable cameras
+
+Training Set Localisation and Transcription Ground Truth (157KB).- 1000 text files with word level localisation and transcription ground truth
+
+Test Set
+Test Set Images (43.3MB).- 500 images obtained with wearable cameras. You can submit your results for this Task over the images of the test set through the My Methods section.
+
+Test Set Ground Truth (244Kb). - 500 text files with text localisation bounding boxes for the images of the test set.
+
+
+
