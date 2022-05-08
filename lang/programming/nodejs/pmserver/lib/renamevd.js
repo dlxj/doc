@@ -99,6 +99,10 @@ module.exports = {
                     continue
                 }
 
+                if (m4season == 'S01' && Number(nth3) >= 38) {
+                    nth3 = Number(nth3) + 1
+                }
+
                 if (Number(nth) == Number(nth3)) {
 
                     //ttml
