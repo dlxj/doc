@@ -887,6 +887,55 @@ if __name__ == '__main__':
 
 
 
+# CutImage
+
+```c#
+// C#
+using OpenCvSharp;
+using SixLabors.ImageSharp;
+using System;
+using System.IO;
+
+
+	public static string cutImage(string path, int x, int y, int w, int h, int rx, int ry, int rw, int rh)
+    {
+        using (Mat img = new Mat(path))
+        {
+
+            if (x < 0)
+            {
+                x = 0;
+            }
+            if (x + w >= img.Width)
+            {
+                w = img.Width - x - 1;
+            }
+            if (y < 0)
+            {
+                y = 0;
+            }
+            if (y + h >= img.Height)
+            {
+                h = img.Height - y - 1;
+            }
+            var rect = new Rect(x, y, w, h);
+            var minImg = img[rect];
+
+            using (var memoryStream = minImg.ToMemoryStream(".png"))
+            {
+                byte[] imageBytes = memoryStream.ToArray();
+                string imgData = Convert.ToBase64String(imageBytes);
+                memoryStream.Dispose();
+                img.Dispose();
+                minImg.Dispose();
+                return imgData;
+            }
+        }
+    }
+```
+
+
+
 # 卷积(只保留水平线)
 
 ```python

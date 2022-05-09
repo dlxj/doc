@@ -757,6 +757,21 @@ def unchinese_remove(s):
 
 
 
+```python
+def md5(path):
+    hash_md5 = hashlib.md5()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
+
+def read_string(path):
+    with open(path, "r", encoding='UTF-8') as f:
+        return f.read()
+```
+
+
+
 
 
 ### 递归遍历
@@ -807,6 +822,19 @@ inp = 'GeeksforGeeks'
 result = hashlib.md5( bytes(inp, encoding='utf-8') )
 print("The byte equivalent of hash is : ", end ="")
 print(result.hexdigest())
+```
+
+
+
+#### file md5
+
+```python
+def md5(fname):
+    hash_md5 = hashlib.md5()
+    with open(fname, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
 ```
 
 
@@ -7427,7 +7455,7 @@ config.media_width = "60%"
 %%manim -v WARNING -qm LinearTransformationSceneExample
 
 class LinearTransformationSceneExample(LinearTransformationScene):
-    def __init__(self, **kwargs):  # Colab 必须要多一个参籹：**kwargs
+    def __init__(self, **kwargs):  # Colab 必须要多一个参数：**kwargs
         LinearTransformationScene.__init__(
             self,
             show_coordinates=True,

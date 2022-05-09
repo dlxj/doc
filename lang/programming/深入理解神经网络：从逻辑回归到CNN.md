@@ -6141,10 +6141,20 @@ one hot型的矩阵运算简化为了查表操作
 
 ### 语料
 
+- https://www.linggle.com/
+  
+> 短语搜索  
+
+- 清华HCI Lab 易搜搭ESODA
+> http://www.esoda.org/
+
 - https://opus.nlpl.eu/
 
   > 多国语言
 
+- https://getyarn.io/
+
+  > 电影
 
 
 - https://xiaosheng.run/2022/03/24/transformers-note-7.html
