@@ -163,6 +163,149 @@ def paiban(ali_result, points = None): # p1 左上角x, y 坐标, p2 右下角 x
 
     return result
 
+
+def drawBoxs(ali_result, img_orig, points = None):
+
+    img = img_orig.copy()
+    img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+
+    # 图片的左上角坐标，右下角坐标
+
+    p1 = None
+    p2 = None
+
+    weight = int(ali_result["width"])
+    height = int(ali_result["height"])
+
+    if points == None:
+        p1 = { 'X': 0, 'Y': 0 }
+        p2 = { 'X': weight, 'Y': height }
+    else:
+        p1 = points.p1
+        p2 = points.p2
+
+
+    result = ""
+
+    lastY = 999999
+
+    firstX = 0
+
+    wordsInfo = ali_result['prism_wordsInfo']
+
+    leftest = 999999
+    #
+    # 先找出最左边的字符x 坐标
+    #
+    for j in range( len(wordsInfo) ):
+        jo = wordsInfo[j]
+        charInfo = jo["charInfo"]
+        for i in range( len(charInfo) ):
+            joc = charInfo[i]
+            c = joc["word"]
+            cx = int( joc["x"] )
+            cy = int( joc["y"] )
+            cw = int( joc["w"] )
+            if cx < leftest:
+                leftest = cx
+
+    for j in range( len(wordsInfo) ):
+        jo = wordsInfo[j]
+        word = jo["word"]
+        pos = jo["pos"] # 四个角的位置
+        x = int(pos[0]["x"]) # 左上
+        y = int(pos[0]["y"])
+        #
+        # 处理同一行的字符要不要加空格（一个字符一个字符的检查x 坐标，确定它们之间是不是有空格）
+        #
+        lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
+        prew = 0 # 上一个字符的宽度
+        words = ""
+        charInfo = jo["charInfo"]
+
+        for i in range( len(charInfo) ):
+            joc = charInfo[i]
+            c = joc["word"]
+            cx = int(joc["x"])
+            cy = int(joc["y"])
+            cw = int(joc["w"])
+            ch = int(joc["h"])
+
+            # 绘制矩形
+            start_point = (cx, cy) # 矩形的左上角
+  
+            end_point = (cx + cw, cy + ch) # 矩形的右下角
+  
+            color = (0, 0, 255) # BGR
+  
+            # Line thickness of 2 px
+            thickness = 2
+  
+
+            img = cv2.rectangle(img, start_point, end_point, color, thickness)
+
+            #cv2.imshow("box", img)
+            # cv2.waitKey(0)
+
+            #
+            # 只要指定矩形范围内的字符
+            #
+            if cx < p1['X'] or cx > p2['X']:
+                continue
+                    
+
+            if cy < p1['Y'] or cy > p2['Y']:
+                continue
+            
+            if j == 0:
+                # 记录第一个字符的x 坐标
+                firstX = cx
+
+            if i == 0:
+                #
+                # 首字符缩进
+                #
+                if y - lastY >= 50 or j == 0:  # Y 坐标相差太大的不是同一行
+                    ns = int( (cx - leftest) / 50.0 )
+                    for k in range(ns): 
+                        words += " "
+                    
+            if cx - lastx_mini < 40: # 如果这个字符的x 坐标和坐标下界的宽度相差不多，那么中间没有空格
+                words = words + c
+            else:
+                if i == 0:
+                    words = words + c
+                else:
+                    words = words + "  " + c
+
+            prew = cw
+            lastx_mini = cx + cw         
+
+
+        #
+        # 处理可能不是可一行的文本之间要不要加入换行
+        #
+        if y - lastY < 50: # Y 坐标相差不大的是同一行
+            if result == "":
+                result += words
+            else:
+                result += "  " + words
+            
+        else:
+            # 换行
+            result = result + "\n" + words
+        
+        lastY = y
+
+
+    cv2.imshow("box", img)
+    cv2.waitKey(0)
+
+    cv2.imwrite('ali_rectangles.jpg', img)
+
+    return result
+
+
 if __name__ == '__main__':
 
     path = './10101.jpg'
@@ -182,6 +325,8 @@ if __name__ == '__main__':
     img = cv2.imdecode(np.fromfile(path, dtype=np.uint8), -1)
 
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    drawBoxs(ali_result, img)
 
     cv2.imshow("orgin", img)
     cv2.waitKey()
