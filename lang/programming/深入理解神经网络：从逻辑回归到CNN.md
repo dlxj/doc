@@ -6131,9 +6131,16 @@ one hot型的矩阵运算简化为了查表操作
 
 ## 机器翻译
 
+- https://xiaosheng.run/2022/03/24/transformers-note-7.html
+
+  > Hugging Face 的 Transformers 库快速入门（七）：翻译任务
+  - https://xiaosheng.run/2021/12/08/transformers-note-1.html
+    
+    > Hugging Face 的 Transformers 库快速入门（一）：开箱即用的 pipelines
+
 - https://github.com/VictorZhang2014/free-google-translate
   
-- google 免费翻译
+  >  google 免费翻译
   
 - https://github.com/argosopentech/argos-translate
 
