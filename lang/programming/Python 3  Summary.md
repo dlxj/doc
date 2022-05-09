@@ -744,7 +744,7 @@ def unchinese_remove(s):
 
 
 
-### Read Line
+### read file
 
 
 
@@ -2324,7 +2324,7 @@ def menuTree(menus):
 
 def readCSV():
     currDir = os.path.dirname(os.path.abspath(__file__))
-    fname_csv = os.path.join(currDir, '护理学（中级）大纲.csv') # '护理学（中级）大纲.xls'
+    fname_csv = os.path.join(currDir, '大纲.csv') # '大纲.xls'
     ds = pd.read_csv(fname_csv, usecols= ['无'], encoding='gbk') # utf-8
     print(ds.shape, ds.size)
     for l in ds.values:
