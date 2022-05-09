@@ -12,6 +12,12 @@ What I cannot create I do not understand
 
 Things Happen for A Reason
 
+### 极好的
+
+https://xiaosheng.run/2022/03/24/transformers-note-7.html
+
+> Hugging Face 的 Transformers 库快速入门（七）：翻译任务
+
 
 
 ### NLLloss 损失函数
@@ -6130,6 +6136,16 @@ one hot型的矩阵运算简化为了查表操作
 
 
 ## 机器翻译
+
+
+
+### 语料
+
+- https://opus.nlpl.eu/
+
+  > 多国语言
+
+
 
 - https://xiaosheng.run/2022/03/24/transformers-note-7.html
 
