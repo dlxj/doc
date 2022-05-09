@@ -3677,6 +3677,18 @@ let tt = new Date(u).toLocaleString('chinese',{hour12:false})
 
 
 
+# Algo
+
+
+
+## TF-IDF
+
+- https://zhuanlan.zhihu.com/p/31197209
+
+  > 生动理解TF-IDF算法
+
+
+
 # PG
 
 
