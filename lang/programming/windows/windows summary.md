@@ -74,6 +74,31 @@ mkdir "E:\videos\anime\Danganronpa\S01\[Kamigami] Danganronpa Kibou no Gakuen to
 
 
 
+# which
+
+```
+> Get-Command node  # 显示node 的路径
+```
+
+
+
+# ln -s
+
+```
+cd C:/
+C:
+cd "Program Files"
+mklink /D nodejs nodejs_v14.18.1  # 创建软链接nodejs
+```
+
+
+
+
+
+
+
+
+
 # 查看端口点用
 
 
