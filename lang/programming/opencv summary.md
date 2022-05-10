@@ -1392,6 +1392,134 @@ if __name__ == '__main__':
 
 
 
+# Draw Rectangle
+
+
+
+```c#
+// C#
+	// https://qiita.com/kaiyu_tech/items/a37fc929ac0f3328fea1
+
+        Cv2.BitwiseNot(im, im);  // 反色
+
+        var labels = new Mat();
+        var stats = new Mat();
+        var centroids = new Mat();
+        var count = Cv2.ConnectedComponentsWithStats(im, labels, stats, centroids, PixelConnectivity.Connectivity8, MatType.CV_32SC1);
+
+        var indexes = stats.Col((int)ConnectedComponentsTypes.Area).SortIdx(SortFlags.EveryColumn);
+
+
+        var indexer = stats.GetGenericIndexer<int>();
+
+        var output = im.CvtColor(ColorConversionCodes.GRAY2BGR);
+
+
+        // 遍历每一个像素
+        for (int x = 0; x < im.Rows; x++)
+        {
+            for (int y = 0; y < im.Cols; y++)
+            {
+
+                int label = labels.At<int>(x, y);
+
+                if (label == 0)
+                {
+                    // 是背景对象，跳过
+                    continue;
+                }
+
+                var area = indexer[label, (int)ConnectedComponentsTypes.Area];
+
+                var rect = new Rect
+                {
+                    X = indexer[label, (int)ConnectedComponentsTypes.Left],
+                    Y = indexer[label, (int)ConnectedComponentsTypes.Top],
+                    Width = indexer[label, (int)ConnectedComponentsTypes.Width],
+                    Height = indexer[label, (int)ConnectedComponentsTypes.Height]
+                };
+
+                // 所处的连通块面积过小则删除（变成背景色）
+                if (area < 20)
+                {
+                    im.At<Byte>(x, y) = 0;
+                }
+            }
+        }
+
+        // 遍历每一个连通块
+        for (int i = 0; i < indexes.Rows - 1; i++)
+        {
+            var index = indexes.Get<int>(i);
+
+            var area = indexer[index, (int)ConnectedComponentsTypes.Area];
+
+            var rect = new Rect
+            {
+                X = indexer[index, (int)ConnectedComponentsTypes.Left],
+                Y = indexer[index, (int)ConnectedComponentsTypes.Top],
+                Width = indexer[index, (int)ConnectedComponentsTypes.Width],
+                Height = indexer[index, (int)ConnectedComponentsTypes.Height]
+            };
+
+            // 绘制矩形
+            if (area < 20)
+            {
+                output.Rectangle(rect, Scalar.Blue);
+            }
+
+        }
+
+        Cv2.BitwiseNot(im, im);
+
+        return im;
+```
+
+
+
+```python
+# python
+
+   for j in range( len(wordsInfo) ):
+        jo = wordsInfo[j]
+        word = jo["word"]
+        pos = jo["pos"] # 四个角的位置
+        x = int(pos[0]["x"]) # 左上
+        y = int(pos[0]["y"])
+        #
+        # 处理同一行的字符要不要加空格（一个字符一个字符的检查x 坐标，确定它们之间是不是有空格）
+        #
+        lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
+        prew = 0 # 上一个字符的宽度
+        words = ""
+        charInfo = jo["charInfo"]
+
+        for i in range( len(charInfo) ):
+            joc = charInfo[i]
+            c = joc["word"]
+            cx = int(joc["x"])
+            cy = int(joc["y"])
+            cw = int(joc["w"])
+            ch = int(joc["h"])
+
+            # 绘制矩形
+            start_point = (cx, cy) # 矩形的左上角
+  
+            end_point = (cx + cw, cy + ch) # 矩形的右下角
+  
+            color = (0, 0, 255) # BGR
+  
+            # Line thickness of 2 px
+            thickness = 2
+  
+
+            img = cv2.rectangle(img, start_point, end_point, color, thickness)
+
+            #cv2.imshow("box", img)
+            # cv2.waitKey(0)
+
+```
+
 
 
 
