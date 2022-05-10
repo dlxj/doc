@@ -5554,6 +5554,9 @@ OCR Engine modes:
   >   > pytorch 完整训练
   >   
 #### DBNet 可微分二值化
+
+
+
 - https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html
   >
   >  > DBNet 对每个像素点进行自适应二值化，二值化的阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
@@ -5565,7 +5568,7 @@ OCR Engine modes:
   >  > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220510103251330.png" alt="image-20220510103251330" style="zoom:25%;" />
   >  > $$
   >  > \text{人工标记的原图}
->  > $$
+  >  > $$
   >  > 
   >  >
   >  > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220510102129945.png" alt="image-20220510102129945" style="zoom: 25%;" />
@@ -5592,11 +5595,11 @@ OCR Engine modes:
   >  > \text{阈值图标签}
   >  > $$
   >  > 
-  >  >
-  >  > 
   >
-  >
-  
+
+- https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/
+> OCR-(DB+CRNN)-代码分析-实践环境配置及运行 **非常详细**
+
 - https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md
 > 直接用的工具箱（文本检测、识别）
 
