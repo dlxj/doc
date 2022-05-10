@@ -89,6 +89,9 @@ cd C:/
 C:
 cd "Program Files"
 mklink /D nodejs nodejs_v14.18.1  # 创建软链接nodejs
+	# 软链可以直接删除
+mklink /D nodejs D:\usr\node-v10.14.2-win-x64
+
 ```
 
 
