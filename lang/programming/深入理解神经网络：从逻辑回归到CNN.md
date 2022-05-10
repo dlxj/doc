@@ -5623,7 +5623,9 @@ OCR Engine modes:
 
   > CTC算法详解
 
+- https://github.com/MhLiao/DB/issues/223
 
+  > **Running the code on Google Colab**
 
 #### mmocr
 
