@@ -247,6 +247,36 @@ ENGINE=InnoDB
 
 
 
+## INSERT INTO 多条
+
+
+
+```
+INSERT INTO 
+items(name,city,price,number,picture) 
+VALUES
+('耐克运动鞋','广州',500,1000,'003.jpg'),
+('耐克运动鞋2','广州2',500,1000,'002.jpg');
+```
+
+```javascript
+  var { result: r1, msg: m1 } = await new Promise((resolve, reject) => {
+    mysql_temp.queryParam(`INSERT INTO smartmakeexam_selected(AppID,SrcID,Sort) VALUES ?;`, [ [ [1, 1, 1], [2, 2, 2] ]  ], (error, result) => {
+      if (error) {
+        return reject({ result: null, msg: error })
+      }
+      return resolve({ result, msg: '' })
+    })
+  })
+  	
+  # 注意括号套三层！！
+  
+```
+
+
+
+
+
 ## INSERT INTO ON DUPLICATE
 
 
