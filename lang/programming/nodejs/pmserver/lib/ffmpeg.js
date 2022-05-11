@@ -167,9 +167,21 @@ module.exports = {
                 throw `unkonw os type.`
             }
 
+            let match3 = vdTWPath.match(/[\\\/](\d+)\./)  // 必须是改过名的, 和amazon pm jp 名字一样
+            if (match3 == null) {
+                throw `name not correct. ${m4}`
+            }
+            let nth3 = match3[1]
 
             //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:01:59.000 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+
+            if ( Number(nth3) >= 83 ) {
+                // tw 对 am 的延迟时间变了
+                cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            }
+
+
 
             let childProcess = execa(cmd, { shell:true, 'encoding': 'utf8' })
             let { stdout:out1 } = await childProcess
