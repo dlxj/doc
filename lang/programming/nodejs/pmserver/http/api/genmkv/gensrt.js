@@ -15,7 +15,7 @@ module.exports = {
     },
     async handler({type}) {
 
-        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
+        let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])  // 第一季实际上是 01~02 共两季
         // remove space
         for (let ttml of ttml2s) {
             let { base,dir,ext,name,root} = path.parse(ttml)
@@ -124,7 +124,56 @@ module.exports = {
         }
 
 
+        //
+        // 处理第三季字幕
+        //
+        ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S03'])
+        // remove space
+        for (let ttml of ttml2s) {
+            let { base,dir,ext,name,root} = path.parse(ttml)
+            let withoutSpace = base.replace(/\s/g, '')
+            if (withoutSpace != base) {
+                let newname = path.join(dir, withoutSpace)
+                fs.renameSync( ttml, newname )
+            }
+        }
+        ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S03'])
+        jps = save_ttml2(ttml2s)
 
         return this.msg(200, {jps, chs})
     }
+}
+
+
+
+function save_ttml2(ttml2s) {
+
+    let jps = []
+
+    for (let mlpath of ttml2s) {
+
+        let { base, dir, ext, name, root } = path.parse(mlpath)
+
+        let season = ''
+        let match = mlpath.match(/[\\\/](S\d\d)[\\\/]/)
+        if (match == null) {
+            throw 'no season on subtitle path'
+        }
+        season = match[1]
+
+        let dir_up = require('path').resolve(dir, '..', '..')
+        let dir_srt = path.join(dir_up, 'srt', season, 'jp')
+        if ( !fs.existsSync( dir_srt ) ) {
+            fs.mkdirSync(dir_srt, { recursive: true })
+        }
+        let srtpath = path.join(dir_srt, `${name}.srt`)
+
+        let srt = this.libs.ttml2.extractSrt({mlpath})
+        require('fs').writeFileSync( srtpath, srt, {encoding:'utf8'})
+
+        jps.push(srt)
+
+    }
+
+    return jps
 }
