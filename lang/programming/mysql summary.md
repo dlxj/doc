@@ -261,14 +261,14 @@ VALUES
 
 ```javascript
   var { result: r1, msg: m1 } = await new Promise((resolve, reject) => {
-    mysql_temp.queryParam(`INSERT INTO smartmakeexam_selected(AppID,SrcID,Sort) VALUES ?;`, [ [ [1, 1, 1], [2, 2, 2] ]  ], (error, result) => {
+    mysql_temp.queryParam(`INSERT INTO smartmakeexam_selected(AppID,SrcID,Sort) VALUES ? ON DUPLICATE KEY UPDATE Sort=VALUES(Sort);`, [ [ [1, 1, 1], [2, 2, 2] ]  ], (error, result) => {
       if (error) {
         return reject({ result: null, msg: error })
       }
       return resolve({ result, msg: '' })
     })
   })
-  	
+  
   # 注意括号套三层！！
   
 ```
@@ -360,6 +360,23 @@ end
 
 
 ```
+
+
+
+## 自增ID 不连续
+
+```
+和 MySQL 的 innodb 数据库引擎相关，据说是 MyISAM 引擎 不会有这种问题
+
+innodb 自增列 锁机制简述
+
+解决方案
+换掉 innodb 数据库引擎
+用上提到的方案二SQL
+配置 innodb_autoinc_lock_mode 参数
+```
+
+
 
 
 
