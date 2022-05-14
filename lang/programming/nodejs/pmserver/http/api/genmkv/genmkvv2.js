@@ -1,6 +1,7 @@
 
 let path = require('path')
 let fs = require('fs')
+let _ = require('lodash')
 
 module.exports = {
     name: 'genmkv',
@@ -97,11 +98,38 @@ async function genkv_season3(type) {
     let platform = process.platform
     let root_vd = global.config.root_vd[platform]
 
+    function sort(ttml) {
+        let match= ttml.match(/(\d+)\./)
+        if (match == null) {
+            throw `name not correct. ${ttml}`
+        }
+        let nth = match[1]
+        return Number(nth)
+    }
+
     let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon_amazon', 'S03'])  // E:\videos\anime\pokemon\amazon\S01
 
     let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S03']) 
 
+    let lvs = this.libs.files.allfiles(root_vd, 'flv', ['pokemon_tw', 'S03']) 
+
     let srts = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S03', 'jp'])
+
+    kvs = _.orderBy(kvs, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    m4s = _.orderBy(m4s, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    lvs = _.orderBy(lvs, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    srts = _.orderBy(srts, [
+        function (item) { return sort(item); }
+    ], ["asc"])
 
     for (let kvpath of kvs) {
 
@@ -127,7 +155,7 @@ async function genkv_season3(type) {
             
             if ( kvname == rtname ) {
 
-                for (let m4path of m4s) {
+                for (let m4path of m4s) {  // S03 mp4 只到76 集，后面开始是是flv
 
                     let { base:m4base, dir:m4dir, ext:m4ext, name:m4name, root:m4root } = path.parse(m4path)
 
@@ -148,8 +176,7 @@ async function genkv_season3(type) {
                         }
 
                         let outpath = path.join(outdir, `${rtname}.mkv`)
-                        let { msg } = await this.libs.ffmpeg.merge_pokemonAmazon_pokemonTW(m4path, kvpath, rtpath, outpath)
-
+                        let { msg } = await this.libs.ffmpeg.merge_pokemonAmazon_pokemonTWS03(m4path, kvpath, rtpath, outpath)
 
                         break
 
@@ -157,7 +184,34 @@ async function genkv_season3(type) {
 
                 }
 
+                for (let lvpath of lvs) {  // S03 mp4 只到76 集，后面开始是是flv
 
+                    let { base:lvbase, dir:lvdir, ext:lvext, name:lvname, root:lvroot } = path.parse(lvpath)
+
+                    let lvseason = this.libs.files.season(lvpath)
+                    if (lvseason == null) {
+                        throw 'no season on lv'
+                    }
+
+                    if (lvseason != rtseason) {
+                        continue
+                    }
+
+                    if ( lvname == rtname ) {
+
+                        let outdir = path.join(lvdir, 'output')
+                        if (!fs.existsSync(outdir)) {
+                            fs.mkdirSync(outdir, { recursive: false })
+                        }
+
+                        let outpath = path.join(outdir, `${rtname}.mkv`)
+                        let { msg } = await this.libs.ffmpeg.merge_pokemonAmazon_pokemonTWS03(lvpath, kvpath, rtpath, outpath)
+
+                        break
+
+                    }
+
+                }
                 break
             }
 
