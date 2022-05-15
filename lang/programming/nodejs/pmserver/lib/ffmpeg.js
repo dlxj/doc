@@ -295,7 +295,7 @@ module.exports = {
 
             if ( Number(nth3) >= 95 ) {  // 95 开始tw 慢了1 秒
                 // tw 对 am 的延迟时间变了
-                cmd = `ffmpeg -y -i -itsoffset -1.0 "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+                cmd = `ffmpeg -y -itsoffset -1.0 -i  "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             }
 
 
