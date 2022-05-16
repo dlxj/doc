@@ -2394,6 +2394,26 @@ console.log(pets.includes('cat'))
 
 
 
+## intersection
+
+
+
+```
+let _ = require('lodash')
+let newArray = _.intersection( array1, array2)
+```
+
+
+
+## union
+
+```
+let _ = require('lodash')
+let newArray = _.union([20, 12], [8, 15, 6])
+```
+
+
+
 
 
 # json
