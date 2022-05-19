@@ -2493,6 +2493,19 @@ Object.assign(data, query) // 赋值
 
 
 
+## deep copy
+
+```
+let _ = require('lodash');
+var deepCopy = _.cloneDeep(obj)
+```
+
+
+
+
+
+
+
 ## 函数默认值
 
 - https://es6.ruanyifeng.com/#docs/function#

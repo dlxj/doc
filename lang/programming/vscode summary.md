@@ -4,7 +4,21 @@
 
 VSCode   Alt + <-     Alt +   ->   前跳  回跳
 
+F12 进入函数
+
 F11 切换全屏
+
+# bookmark
+
+- https://github.com/alefragnani/vscode-bookmarks
+
+CTRL + K + S 设置快捷键
+
+CTRL + K + K 设成加书签
+
+CTRL + K + P 设成跳到上一个
+
+CTRL + K + N 设成跳到下一个
 
 
 
