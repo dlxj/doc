@@ -746,6 +746,17 @@ let bent = require('bent')
 
 
 
+#### src
+
+```
+This is how the lib was designed. You should pass to bent all the statuses the server might respond:
+
+const client = bent(200,201,202,203,204,301,302...);
+This not an issue, but rather a design decision.
+```
+
+
+
 
 
 
