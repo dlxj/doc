@@ -6706,6 +6706,13 @@ npm install --save normalize.css
 
   > uniapp 项目引入 uView 并简单使用
 
+- https://github.com/panghujiajia/v2ex
+
+  > uniapp 写的 V2EX 小程序
+
+> 以上对比下来
+> Flutter == ReactNative >>>>>>> **UniApp(做 App 用这个你就是坑自己**)
+
 
 
 ## vue和nvue

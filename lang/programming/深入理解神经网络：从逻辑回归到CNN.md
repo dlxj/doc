@@ -5552,7 +5552,16 @@ OCR Engine modes:
   > - https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/123904386
   >
   >   > pytorch 完整训练
-  >   
+  > - https://blog.csdn.net/nihate/article/details/115504611?spm=1001.2014.3001.5501
+  >   > **DBNet车牌识别** 
+  >   >
+  >   > - https://github.com/hpc203/dbnet-opencv-cpp-python
+  >   > **OpenCV+DBNet成品**
+  >   > - https://blog.csdn.net/nihate/article/details/108754622
+  >   > **极简主义OCR**  
+
+
+
 #### DBNet 可微分二值化
 
 
