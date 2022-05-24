@@ -2900,6 +2900,21 @@ function getContent(fileName) {
 
 
 
+# 多线程
+
+- https://zhuanlan.zhihu.com/p/35353355
+
+  > Node黑魔法之无痛用上多线程
+
+- https://www.cnblogs.com/flydean/p/14310278.html
+  
+  > nodejs中使用worker_threads来创建新的线程 
+
+
+
+
+
+
 
 
 # stream
