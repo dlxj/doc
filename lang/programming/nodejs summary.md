@@ -6696,7 +6696,15 @@ npm install --save normalize.css
 
 
 
-# uView
+# uView UI
+
+```
+关于uView UIuView UI 是一个用于uni-app 多端开发的优质UI 组件库， ... 代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/ 
+```
+
+- https://blog.csdn.net/mrs_chens/article/details/108417919
+
+  > uniapp 项目引入 uView 并简单使用
 
 
 
