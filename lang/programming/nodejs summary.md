@@ -2912,6 +2912,193 @@ function getContent(fileName) {
 
 
 
+## napajs
+
+
+
+```
+const { Worker, isMainThread, workerData } = require('worker_threads');
+
+if (isMainThread) {
+  const worker = new Worker(__filename, { workerData: 'Hello, world!' });
+} else {
+  console.log(workerData);  // Prints 'Hello, world!'.
+}
+```
+
+
+
+```
+console.time('timeout test');
+zone.execute(() => { while (true) {} }, [], { timeout: 50})
+    .catch((error) => {
+        console.timeEnd('timeout test');
+    });
+```
+
+
+
+
+
+```
+const napa = require("napajs");
+const fs = require("fs");
+
+const myUTFString="éóíúã’“";
+
+const zone = napa.zone.create("zone", {workers: 1});
+const store = napa.store.create("store");
+store.set("string", myUTFString);
+
+zone.broadcast(`
+    function example () {
+        const str = global.napa.store.get("store").get("string");
+        console.log(str);
+        return str;
+    }
+`);
+
+zone.execute("", "example").then(result => {
+    console.log(result.value)
+});
+```
+
+```
+n your case, the code can be updated like this:
+
+myLib.prototype.deflate = async function (data, key, compress)  {
+    var buffer = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
+    var result = await this.zone.execute('','deflateFunc', [buffer, key, compress])
+    return result.value;
+};
+
+myLib.prototype.inflate = async function (data, key, compressed, type)  {
+    var buffer = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
+    var result = await this.zone.execute('','inflateFunc', [buffer, key, compressed, type])
+    return result.value;
+};
+EDIT: to explain why the stack happened.
+
+The type Buffer in Node.js is implemented Uint8Array after Node 4.x. Thus TypedArray.prototype.length is available on a Buffer object.
+
+The transported Buffer object in napa zone, however, as explained above, is treated as a plain object. It does not have a length property. There is some code similar to while (buf.length !== 0) { ... } in xxtea-node. It's always true (undefined !== 0 is always true) so the while loop will never break.
+```
+
+
+
+
+
+### global 
+
+- https://github.com/microsoft/napajs/issues/26
+
+```
+var napa = require('napajs');
+var zone = napa.zone.create('zone1');
+function test() {
+   console.log('hello world');
+}
+zone.broadcast(test.toString());
+zone.execute(() => { global.test(); }, []);
+```
+
+
+
+### timeout
+
+```javascript
+var napa = require("napajs")
+
+const NUMBER_OF_WORKERS = 1
+
+var zone = napa.zone.create('zone', { workers: NUMBER_OF_WORKERS })
+
+// var p1 = zone.execute("", "fibonacci", [n - 1])
+
+zone.execute(() => { while (true) {} }, [], { timeout: 3000})
+    .catch((error) => {
+        console.log(`end.`)
+    });
+
+console.log('hi,,,')
+```
+
+
+
+### calc fibonacci
+
+```
+//fibonacci.js
+var napa = require("napajs");
+
+// Change this value to control number of napa workers initialized.
+const NUMBER_OF_WORKERS = 4;
+
+// Create a napa zone with number_of_workers napa workers.
+var zone = napa.zone.create('zone', { workers: NUMBER_OF_WORKERS });
+
+/*
+Fibonacci sequence 
+n:              |   0   1   2   3   4   5   6   7   8   9   10  11  ...
+-------------------------------------------------------------------------
+NTH Fibonacci:  |   0   1   1   2   3   5   8   13  21  34  55  89  ...
+*/
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+
+    var p1 = zone.execute("", "fibonacci", [n - 1]);
+    var p2 = zone.execute("", "fibonacci", [n - 2]);
+
+    // Returning promise to avoid blocking each worker.
+    return Promise.all([p1, p2]).then(([result1, result2]) => {
+        return result1.value + result2.value;
+    });
+}
+
+function run(n) {
+    var start = Date.now();
+
+    return zone.execute('', "fibonacci", [n])
+        .then(result => {
+            printResult(n, result.value, Date.now() - start);
+            return result.value;
+        });
+}
+
+function printResult(nth, fibonacci, ms) {
+    console.log('\t' + nth
+          + '\t' + fibonacci
+          + '\t\t' + NUMBER_OF_WORKERS
+          + '\t\t' + ms);
+}
+
+console.log();
+console.log('\tNth\tFibonacci\t# of workers\tlatency in MS');
+console.log('\t-----------------------------------------------------------');
+
+// Broadcast declaration of 'napa' and 'zone' to napa workers.
+zone.broadcast(' \
+    var napa = require("napajs"); \
+    var zone = napa.zone.get("zone"); \
+');
+// Broadcast function declaration of 'fibonacci' to napa workers.
+zone.broadcast(fibonacci.toString());
+
+// Run fibonacci evaluation in sequence.
+run(10)
+.then(result => { run(11)
+.then(result => { run(12)
+.then(result => { run(13)
+.then(result => { run(14)
+.then(result => { run(15)
+.then(result => { run(16)
+}) }) }) }) }) })
+```
+
+
+
 
 
 
