@@ -5555,6 +5555,8 @@ OCR Engine modes:
   > - https://blog.csdn.net/nihate/article/details/115504611?spm=1001.2014.3001.5501
   >   > **DBNet车牌识别** 
   >   >
+  >   > 在TensorRT或者openvino或者opencv和onnxruntime部署时，pytorch模型转onnx这一步是必不可少的
+  >   >
   >   > - https://github.com/hpc203/dbnet-opencv-cpp-python
   >   > **OpenCV+DBNet成品**
   >   > - https://blog.csdn.net/nihate/article/details/108754622
