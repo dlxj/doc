@@ -5557,6 +5557,14 @@ OCR Engine modes:
   >   >
   >   > 在TensorRT或者openvino或者opencv和onnxruntime部署时，pytorch模型转onnx这一步是必不可少的
   >   >
+  >   > - https://github.com/hpc203/license-plate-detect-recoginition-opencv/issues/1
+  >   >
+  >   >   > **一些坑**
+  >   >   >
+  >   >   > 较一下out1 = torch.div(out1, f.item())和out1 = torch.div(out1, f)里的除数的区别
+  >   >   >
+  >   >   > f = torch.mean(f)得到的，在pytorch对一个4维张量求平均值后得到的是没有形状信息的张量，其实是一个标量数值，如果想要转化成标量数值，那就需要加.item()
+  >   >
   >   > - https://github.com/hpc203/dbnet-opencv-cpp-python
   >   > **OpenCV+DBNet成品**
   >   > - https://blog.csdn.net/nihate/article/details/108754622
