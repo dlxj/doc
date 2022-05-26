@@ -1,5 +1,28 @@
 
 
+## Install
+
+```
+pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
+```
+
+
+
+### spectify CUDA version
+
+- https://vitalitylearning.medium.com/running-cuda-in-google-colab-525a92efcf75
+
+CUDA 10.2 是Pytorch 官方默认版
+
+```
+!nvcc --version # check cuda version
+Cuda compilation tools, release 11.1, V11.1.105
+Build cuda_11.1.TC455_06.29190527_0
+# cuda 11.1 是colab 默认版 
+```
+
+
+
 
 
 **IRT 教科书代码实现 in github** [u](https://github.com/pluralsight/irt_parameter_estimation)
