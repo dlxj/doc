@@ -719,6 +719,33 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 
 
+# 转成RGB
+
+```python
+img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
+```
+
+
+
+# 调整宽高
+
+```python
+# DBNet 和 EAST 算法要求输入图片的宽高都必须为 32 的倍数
+        height, width, _ = img.shape
+        # 宽高调整为32的倍数
+        new_height = int(height / 32) * 32
+        scale_y = new_height / height
+        new_width = int(width / 32) * 32
+        scale_x = new_width / width
+        img = cv2.resize(img, (new_width, new_height))
+
+# doc\lang\programming\pytorch\文本检测\DBNET\DBNet的简单复现\DBnet_pytorch.py
+```
+
+
+
+
+
 # 对所有Components 着色(三语)
 
 

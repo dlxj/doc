@@ -1,4 +1,16 @@
 ```
+sudo apt install xfce4
+sudo apt install xrdp && \
+sudo echo xfce4-session >~/.xsession && \
+sudo service xrdp restart
+```
+
+
+
+
+
+
+```
 # https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/
 
 yum install tigervnc-server

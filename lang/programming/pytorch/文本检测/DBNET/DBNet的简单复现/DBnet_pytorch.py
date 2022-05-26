@@ -7,7 +7,13 @@
 
 ! pip3 install Polygon3 shapely pyclipper
 
+!pip3 install Polygon3
+import Polygon as plg
+!python --version
+# Python 3.7.13 这版本是OK 的, 但是3.9 好像不行  colab 默认环境可以, conda 环境就是不行 python3.8 可以
+
 pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
+
 
 
 """
@@ -17,7 +23,7 @@ import cv2
 import torch
 import pyclipper
 import numpy as np
-import polygon as plg
+import Polygon as plg
 import torch.nn as nn
 import torch.optim as optim
 from shapely.geometry import Polygon
@@ -149,12 +155,12 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         img_path, label_path = self.imgs_path[index], self.labels_path[index]
         img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
-        with open(label_path) as f:
+        with open(label_path, encoding='utf-8') as f:
             data = f.readlines()
         gt_boxes_all = []
         height, width, _ = img.shape
         # 宽高调整为32的倍数
-        new_height = int(height / 32) * 32
+        new_height = int(height / 32) * 32  # DBNet 和 EAST 算法要求输入图片的宽高都必须为 32 的倍数
         scale_y = new_height / height
         new_width = int(width / 32) * 32
         scale_x = new_width / width
@@ -445,17 +451,17 @@ def inference(model, test_loader):
 if __name__ == '__main__':
     # train
     # model = Model().to(torch.device('cuda'))
-    # optimizer = optim.Adam(model.parameters())
-    # train_data = MyDataset(base_path='./data/train_data')
-    # train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
-    # train(model, train_loader, optimizer, 10)
+    model = Model().to(torch.device('cpu'))
+    optimizer = optim.Adam(model.parameters())
+    train_data = MyDataset(base_path='./data/train_data')
+    train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
+    train(model, train_loader, optimizer, 10)
 
     # inference
-    model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
-    # model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))   
-    # model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))
+    # model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
+    # ## model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))   
 
-    test_data = MyDataset(base_path='./data/test_data')
-    test_loader = DataLoader(dataset=test_data, batch_size=1)
-    inference(model, test_loader)
+    # test_data = MyDataset(base_path='./data/test_data')
+    # test_loader = DataLoader(dataset=test_data, batch_size=1)
+    # inference(model, test_loader)
