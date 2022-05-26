@@ -1052,6 +1052,15 @@ class EAPIrt2PLModel(object):
 
 
 
+### isinstance
+
+```python
+            if not isinstance(dest_width, int):
+                dest_width = dest_width.item()
+                dest_height = dest_height.item() # 张量中加不加item()会有微妙的差别 
+            # doc\lang\programming\pytorch\文本检测\DBNET\main.py
+```
+
 
 
 
