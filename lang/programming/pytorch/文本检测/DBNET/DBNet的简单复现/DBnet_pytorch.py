@@ -380,7 +380,8 @@ def train(model, train_loader, optimizer, epoch):
     for i in range(epoch):
         for step, data in enumerate(train_loader):
             all_step = all_step + 1
-            img, shrink_label, threshold_label = data[0].to(torch.device('cuda')), data[1].to(torch.device('cuda')), data[2].to(torch.device('cuda'))
+            #img, shrink_label, threshold_label = data[0].to(torch.device('cuda')), data[1].to(torch.device('cuda')), data[2].to(torch.device('cuda'))
+            img, shrink_label, threshold_label = data[0].to(torch.device('cpu')), data[1].to(torch.device('cpu')), data[2].to(torch.device('cpu'))
             shrink_pre, threshold_pre, binary_pre = model(img)
             loss_shrink_map = nn.BCELoss()(shrink_pre, shrink_label)
             loss_threshold_map = nn.L1Loss()(threshold_pre, threshold_label)
