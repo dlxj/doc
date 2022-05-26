@@ -5,12 +5,13 @@
 """
 注意: 必须GPU 才可以
 
-! pip3 install Polygon3 shapely pyclipper
+! pip3 install Polygon3 shapely pyclipper numpy opencv-python
 
 !pip3 install Polygon3
 import Polygon as plg
 !python --version
-# Python 3.7.13 这版本是OK 的, 但是3.9 好像不行  colab 默认环境可以, conda 环境就是不行 python3.8 可以
+# Python 3.7.13 这版本是OK 的, 但是3.9 好像不行  colab 默认环境可以, conda 环境就是不行 python3.8 可以 
+    # python3.8 -c "import Polygon as plg;print(plg.Polygon)"
 
 pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
 

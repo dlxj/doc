@@ -6898,6 +6898,14 @@ npm install --save normalize.css
 
 
 
+# nodegui qt
+
+- https://github.com/nodegui/nodegui
+
+  > NodeGUI is powered by **Qt5** 
+
+
+
 # uView UI
 
 ```
