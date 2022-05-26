@@ -22,6 +22,23 @@ CTRL + K + N 设成跳到下一个
 
 
 
+# 彻底删除vscode配置
+
+- https://www.cnblogs.com/muou2125/p/10388440.html
+
+  > 彻底删除vscode及安装的插件和个人配置信息
+
+
+
+```
+删除 C:\Users\i\.vscode	
+删除 C:\Users\i\AppData\Roaming\Code  
+```
+
+
+
+
+
 # CPP
 
 
