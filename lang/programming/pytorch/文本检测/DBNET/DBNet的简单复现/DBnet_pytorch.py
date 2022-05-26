@@ -3,7 +3,12 @@
 # https://github.com/yts2020/DBnet_pytorch 
 
 """
+注意: 必须GPU 才可以
+
+! pip3 install Polygon3 shapely pyclipper
+
 pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
+
 
 """
 
@@ -396,7 +401,8 @@ def inference(model, test_loader):
             pre[pre > 0.5] = 1
             pre[pre < 1] = 0
             pre = (pre * 255).astype(np.uint8)
-            _, contours, _ = cv2.findContours(pre, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+            # _, contours, _ = cv2.findContours(pre, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+            contours, hierarchies = cv2.findContours(pre, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
             pre_boxes = []
             for i in range(len(contours)):
                 contour = contours[i].squeeze(1)
@@ -445,9 +451,9 @@ if __name__ == '__main__':
     # train(model, train_loader, optimizer, 10)
 
     # inference
-    # model = Model().to(torch.device('cuda'))
-    model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))   # 必须是GUP 才能行
+    model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
+    # model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))   
     # model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))
 
     test_data = MyDataset(base_path='./data/test_data')
