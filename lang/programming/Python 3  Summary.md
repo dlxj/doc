@@ -23,6 +23,39 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+## Python for colab
+
+```
+
+!apt-get install python3.8
+
+!curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+!python3.8 get-pip.py
+
+try these commands
+
+!update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+then
+
+!update-alternatives --list python
+this must display your downloaded python version
+
+after that
+
+!sudo update-alternatives --config python
+## !Set python3.8 as default.
+finally
+
+!sudo update-alternatives --set python /usr/bin/python3.8
+then check your default python version on colab
+
+!python3 --version
+```
+
+
+
+
+
 ## Python for win10
 
 ```bash

@@ -467,3 +467,51 @@ if __name__ == '__main__':
     # test_data = MyDataset(base_path='./data/test_data')
     # test_loader = DataLoader(dataset=test_data, batch_size=1)
     # inference(model, test_loader)
+
+
+
+"""
+# for colab
+
+# Uninstall python
+
+!which pip
+
+!which pip3
+
+! apt-get --purge autoremove python
+
+! apt-get --purge autoremove python3.7
+
+! rm -f /usr/local/bin/pip
+
+! rm -f /usr/local/bin/pip3
+
+
+! rm -f /usr/local/bin/python
+
+!python
+
+!pip
+
+
+# Install python3.8
+
+!apt-get install python3.8
+
+!curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+!python3.8 get-pip.py
+
+!which python3.8
+
+!which pip3
+
+!ln -s /usr/bin/python3.8 /usr/local/bin/python
+
+!python --version
+
+!pip install torch torchvision
+
+"""
+
+
