@@ -6903,6 +6903,31 @@ conda update --channel defaults --all --yes
 
 
 
+## 环境变量
+
+
+
+```
+%set_env CUDA_HOME=/usr/local/cuda
+%cd /content/DB
+!pip install -r requirement.txt
+%cd /content/DB/assets/ops/dcn/
+!python setup.py build_ext --inplace
+```
+
+
+
+## install pytorch
+
+```
+! python -m pip install torch==1.2.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+# 这是 DBNet 官方实现要求的版本
+```
+
+
+
+
 ## install conda
 
 ```
