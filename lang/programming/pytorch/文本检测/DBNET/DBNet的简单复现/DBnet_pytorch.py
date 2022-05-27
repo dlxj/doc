@@ -416,7 +416,8 @@ def inference(model, test_loader):
     model.eval()
     with torch.no_grad():
         for data in test_loader:
-            img = data[0].to(torch.device('cuda'))
+            # img = data[0].to(torch.device('cuda'))
+            img = data[0].to(torch.device('cpu'))
             shrink_pre, threshold_pre, binary_pre = model(img)
             img = img.cpu().numpy()[0]
             img = np.transpose(img, (1, 2, 0))
@@ -470,20 +471,21 @@ def inference(model, test_loader):
 if __name__ == '__main__':
     # train
     # model = Model().to(torch.device('cuda'))
-    model = Model().to(torch.device('cpu'))
-    optimizer = optim.Adam(model.parameters())
-    train_data = MyDataset(base_path='./data_icdar2015/train_data')
-    train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
-    train(model, train_loader, optimizer, 10)
+    # model = Model().to(torch.device('cpu'))
+    # optimizer = optim.Adam(model.parameters())
+    # train_data = MyDataset(base_path='./data_icdar2015/train_data')
+    # train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
+    # train(model, train_loader, optimizer, 10)
 
     # inference
-    # model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
-    # ## model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    # model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))   
+    #model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
+    model = Model().to(torch.device('cpu'))
+    ## model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model.load_state_dict(torch.load('./model/DBnet_pytorch.pth', map_location=torch.device('cpu')))   
 
-    # test_data = MyDataset(base_path='./data/test_data')
-    # test_loader = DataLoader(dataset=test_data, batch_size=1)
-    # inference(model, test_loader)
+    test_data = MyDataset(base_path='./data_icdar2015/test_data')
+    test_loader = DataLoader(dataset=test_data, batch_size=1)
+    inference(model, test_loader)
 
 
 
