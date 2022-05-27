@@ -6889,6 +6889,16 @@ pip install grpcio==1.11.0
 
 
 
+## run shell
+
+```
+%%bash
+conda install --channel defaults conda python=3.7 --yes
+conda update --channel defaults --all --yes
+```
+
+
+
 ## install conda
 
 ```
@@ -6915,13 +6925,7 @@ chmod +x $MINICONDA_INSTALLER_SCRIPT
 
 
 
-
-
-
-
 ## 中文
-
-
 
 ```
 # https://albertauyeung.github.io/2020/03/15/matplotlib-cjk-fonts.html/
