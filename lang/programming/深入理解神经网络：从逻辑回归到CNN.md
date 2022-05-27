@@ -5580,6 +5580,8 @@ OCR Engine modes:
   
 - https://zhuanlan.zhihu.com/p/382641896 **DBNet的简单复现**
   
+- https://blog.csdn.net/weixin_43705733/article/details/123347511  **官方实现配置过程**
+  
   >
   > > icdar2015 文本检测数据集
   > > 标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
