@@ -21,6 +21,14 @@ icdar2015 文本检测数据集
 
 其中, x1,y1为左上角坐标,x2,y2为右上角坐标,x3,y3为右下角坐标,x4,y4为左下角坐标。 ### 表示text难以辨认。
 
+icdar2015 重新整理版，可用于此代码
+https://drive.google.com/file/d/1UYBKY4fC9hT4_l9tsxBK3RiMXdNvEKUb/view?usp=sharing
+
+#from google.colab import drive
+#drive.mount('/content/gdrive')
+! gdown --id '1UYBKY4fC9hT4_l9tsxBK3RiMXdNvEKUb'
+! unzip ./data_icdar2015.zip
+#! unzip ./chinese_roberta_wwm_ext_L-12_H-768_A-12.zip -d ./chinese_roberta_wwm_ext_L-12_H-768_A-12
 
 """
 
@@ -399,7 +407,7 @@ def train(model, train_loader, optimizer, epoch):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            if (step + 1) % 100 == 0:
+            if (step + 1) % 1 == 0:
                 print('epoch:', i + 1, 'step:', step + 1, 'loss:', loss)
     torch.save(model.state_dict(), './model/DBnet_pytorch.pth')
 
