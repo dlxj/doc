@@ -5581,6 +5581,15 @@ OCR Engine modes:
 - https://zhuanlan.zhihu.com/p/382641896 **DBNet的简单复现**
   
   >
+  > > icdar2015 文本检测数据集
+  > > 标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
+  > >
+  > > 其中, x1,y1为左上角坐标,x2,y2为右上角坐标,x3,y3为右下角坐标,x4,y4为左下角坐标。 
+  > >
+  > > \#\#\# 表示text难以辨认。
+  > >
+  > > 
+  > >
   > > DBNet 对每个像素点进行自适应二值化，二值化的阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
   > >
   > > DB(Differentiable Binarization) **可微分二值化**[u](https://zhuanlan.zhihu.com/p/365227183)
