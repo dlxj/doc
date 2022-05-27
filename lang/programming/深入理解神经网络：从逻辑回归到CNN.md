@@ -5670,6 +5670,10 @@ OCR Engine modes:
 
   > **Running the code on Google Colab**
 
+- https://blog.csdn.net/weixin_43705733/article/details/123347511
+
+  > **DBNet训练过程笔记（超详细)** 实战级
+
 #### mmocr
 
 - https://zhuanlan.zhihu.com/p/484637638
