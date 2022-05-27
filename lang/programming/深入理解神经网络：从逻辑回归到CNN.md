@@ -6927,8 +6927,100 @@ conda update --channel defaults --all --yes
 
 
 
-
 ## install conda
+
+**注意：虚拟环境只在单个代码格里有效，跨代码格每次都要重新激活！**
+
+```
+# Install conda v2
+
+%%bash
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+bash Miniforge3-Linux-x86_64.sh -b
+
+%%bash
+~/miniforge3/bin/conda init
+
+! ln -s ~/miniforge3/bin/conda /usr/local/bin
+
+! ln -s ~/miniforge3/bin/activate /usr/local/bin
+
+! ln -s ~/miniforge3/bin/deactivate /usr/local/bin
+
+%%bash
+conda update -y conda -n base
+
+!source ~/miniforge3/etc/profile.d/conda.sh
+
+```
+
+
+
+
+
+```
+
+# Install coda
+
+- https://towardsdatascience.com/conda-google-colab-75f7c867a522
+- https://mmocr.readthedocs.io/zh_CN/latest/install.html
+
+
+!which python
+!python --version
+!echo $PYTHONPATH
+%env PYTHONPATH=
+
+%%bash
+MINICONDA_INSTALLER_SCRIPT=Miniconda3-4.5.4-Linux-x86_64.sh
+MINICONDA_PREFIX=/usr/local
+wget https://repo.continuum.io/miniconda/$MINICONDA_INSTALLER_SCRIPT
+chmod +x $MINICONDA_INSTALLER_SCRIPT
+./$MINICONDA_INSTALLER_SCRIPT -b -f -p $MINICONDA_PREFIX
+
+!which conda
+!conda --version
+
+%%bash
+conda install --channel defaults conda python=3.7 --yes
+conda update --channel defaults --all --yes
+
+!conda --version
+!python --version
+import sys
+sys.path
+```
+
+
+
+```
+# Install Pytorch
+
+!nvcc --version # check cuda version
+!which nvcc
+
+! pip3 uninstall torch --yes
+
+import torch
+
+
+! ls /usr/local/cuda
+
+! python -m pip install torch==1.2.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+%%bash
+git clone https://github.com/MhLiao/DB.git
+# python dependencies
+cd DB && pip install -r requirement.txt
+
+
+```
+
+
+
+
+
+
 
 ```
 https://towardsdatascience.com/conda-google-colab-75f7c867a522
