@@ -16,6 +16,11 @@ import Polygon as plg
 pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
 
 
+icdar2015 文本检测数据集
+标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
+
+其中, x1,y1为左上角坐标,x2,y2为右上角坐标,x3,y3为右下角坐标,x4,y4为左下角坐标。 ### 表示text难以辨认。
+
 
 """
 
@@ -171,7 +176,7 @@ class MyDataset(Dataset):
         scale_x = new_width / width
         img = cv2.resize(img, (new_width, new_height))
         for i in range(len(data)):
-            gt_data = data[i].strip().split()
+            gt_data = data[i].strip().split(',')
             x_list = []
             x_list.append(int(int(gt_data[0]) * scale_x))
             x_list.append(int(int(gt_data[2]) * scale_x))
