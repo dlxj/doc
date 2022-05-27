@@ -5580,6 +5580,8 @@ OCR Engine modes:
   
 - https://zhuanlan.zhihu.com/p/382641896 **DBNet的简单复现**
   
+- https://github.com/MhLiao/DB/issues/100  **官方配置问题**
+  
 - https://www.cnblogs.com/yanghailin/p/12337543.html 官方实现配置过程
   
   - https://www.cnblogs.com/yanghailin/p/12209685.html 两个都有
