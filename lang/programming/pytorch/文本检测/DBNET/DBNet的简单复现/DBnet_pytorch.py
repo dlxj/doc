@@ -29,6 +29,7 @@ import torch.nn as nn
 import torch.optim as optim
 from shapely.geometry import Polygon
 from torch.utils.data import Dataset, DataLoader
+from pathlib import Path
 
 
 # 计算两点距离
@@ -147,7 +148,10 @@ class MyDataset(Dataset):
         img_list = os.listdir(img_dir)
         for i in range(len(img_list)):
             img_path = os.path.join(img_dir, img_list[i])
-            label_path = os.path.join(label_dir, img_list[i].replace('png', 'txt'))
+            # basename = os.path.splitext(img_path)[0]
+            basename = Path(img_path).stem
+            # label_path = os.path.join(label_dir, img_list[i].replace('png', 'txt'))
+            label_path = os.path.join(label_dir, "gt_{}.txt".format(basename))
             imgs.append(img_path)
             labels.append(label_path)
         self.imgs_path = imgs
@@ -156,7 +160,7 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         img_path, label_path = self.imgs_path[index], self.labels_path[index]
         img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
-        with open(label_path, encoding='utf-8') as f:
+        with open(label_path, encoding='utf-8-sig') as f:
             data = f.readlines()
         gt_boxes_all = []
         height, width, _ = img.shape
@@ -455,7 +459,7 @@ if __name__ == '__main__':
     # model = Model().to(torch.device('cuda'))
     model = Model().to(torch.device('cpu'))
     optimizer = optim.Adam(model.parameters())
-    train_data = MyDataset(base_path='./data/train_data')
+    train_data = MyDataset(base_path='./data_icdar2015/train_data')
     train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
     train(model, train_loader, optimizer, 10)
 
