@@ -5582,6 +5582,8 @@ OCR Engine modes:
   
 - https://blog.csdn.net/weixin_43705733/article/details/123347511  **官方实现配置过程**
   
+- https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/  **DBNet.pytorch实现配置过程**
+  
   >
   > > icdar2015 文本检测数据集
   > > 标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
