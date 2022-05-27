@@ -23,6 +23,22 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+## 升级pip
+
+```
+删除目录 D:\usr\Python38\Lib\site-packages\pip-xx.x.x.dist-info
+python -m pip install --upgrade pip -i https://pypi.douban.com/simple
+```
+
+
+
+```
+jupyter notebook能用，但是无法连接服务器？？
+pip install --upgrade ipykernel -i https://pypi.douban.com/simple
+```
+
+
+
 ## Python for colab
 
 ```
