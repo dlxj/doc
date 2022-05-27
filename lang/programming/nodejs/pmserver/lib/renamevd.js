@@ -5,7 +5,7 @@ let _ = require('lodash')
 
 module.exports = {
 
-    renamevd:function() {
+    renamevd: function () {
 
         let aa = this
 
@@ -18,17 +18,17 @@ module.exports = {
 
         let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon', 'amazon', 'S01'])  // E:\videos\anime\pokemon\amazon\S01
 
-        let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S01']) 
+        let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S01'])
 
 
         let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
         // remove space
         for (let ttml of ttml2s) {
-            let { base,dir,ext,name,root} = path.parse(ttml)
+            let { base, dir, ext, name, root } = path.parse(ttml)
             let withoutSpace = base.replace(/\s/g, '')
             if (withoutSpace != base) {
                 let newname = path.join(dir, withoutSpace)
-                fs.renameSync( ttml, newname )
+                fs.renameSync(ttml, newname)
             }
         }
         ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S01'])
@@ -36,7 +36,7 @@ module.exports = {
 
         for (let ttml of ttml2s) {
 
-            let match= ttml.match(/(\d+)\./)
+            let match = ttml.match(/(\d+)\./)
             if (match == null) {
                 //throw `name not correct. ${ttml}`
                 continue
@@ -69,13 +69,13 @@ module.exports = {
                 if (Number(nth) == Number(nth2)) {
 
                     //ttml
-                    let { base,dir,ext,name,root} = path.parse(ttml)
-                    let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(kv)
+                    let { base, dir, ext, name, root } = path.parse(ttml)
+                    let { base: base2, dir: dir2, ext: ext2, name: name2, root: root2 } = path.parse(kv)
 
                     let newname = `${name}.mkv`
                     let newpath = path.join(dir2, newname)
 
-                    fs.renameSync( kv, newpath )
+                    fs.renameSync(kv, newpath)
 
                     continue
                 }
@@ -107,13 +107,13 @@ module.exports = {
                 if (Number(nth) == Number(nth3)) {
 
                     //ttml
-                    let { base,dir,ext,name,root} = path.parse(ttml)
-                    let { base:base3,dir:dir3,ext:ext3,name:name3,root:root3} = path.parse(m4)
+                    let { base, dir, ext, name, root } = path.parse(ttml)
+                    let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(m4)
 
                     let newname = `${name}.mp4`
                     let newpath = path.join(dir3, newname)
 
-                    fs.renameSync( m4, newpath )
+                    fs.renameSync(m4, newpath)
                 }
 
             }
@@ -121,6 +121,8 @@ module.exports = {
         }
 
         rename_season3()
+
+        rename_season6()
 
         return 'ok.'
     }
@@ -135,24 +137,24 @@ function rename_season3() {
 
     let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon', 'amazon', 'S03'])  // E:\videos\anime\pokemon\amazon\S01
 
-    let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S03']) 
+    let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S03'])
 
-    let lvs = this.libs.files.allfiles(root_vd, 'flv', ['pokemon_tw', 'S03']) 
+    let lvs = this.libs.files.allfiles(root_vd, 'flv', ['pokemon_tw', 'S03'])
 
     let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S03'])
     // remove space
     for (let ttml of ttml2s) {
-        let { base,dir,ext,name,root} = path.parse(ttml)
+        let { base, dir, ext, name, root } = path.parse(ttml)
         let withoutSpace = base.replace(/\s/g, '')
         if (withoutSpace != base) {
             let newname = path.join(dir, withoutSpace)
-            fs.renameSync( ttml, newname )
+            fs.renameSync(ttml, newname)
         }
     }
     ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S03'])
 
     function sort(ttml) {
-        let match= ttml.match(/(\d+)\./)
+        let match = ttml.match(/(\d+)\./)
         if (match == null) {
             throw `name not correct. ${ttml}`
         }
@@ -162,11 +164,11 @@ function rename_season3() {
 
     ttml2s = _.orderBy(ttml2s, [
         function (item) { return sort(item); }
-      ], ["asc"])
+    ], ["asc"])
 
     for (let ttml of ttml2s) {
 
-        let match= ttml.match(/(\d+)\./)
+        let match = ttml.match(/(\d+)\./)
         if (match == null) {
             //throw `name not correct. ${ttml}`
             continue
@@ -199,13 +201,13 @@ function rename_season3() {
             if (Number(nth) == Number(nth2)) {
 
                 //ttml
-                let { base,dir,ext,name,root} = path.parse(ttml)
-                let { base:base2,dir:dir2,ext:ext2,name:name2,root:root2} = path.parse(kv)
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base2, dir: dir2, ext: ext2, name: name2, root: root2 } = path.parse(kv)
 
                 let newname = `${name}.mkv`
                 let newpath = path.join(dir2, newname)
 
-                fs.renameSync( kv, newpath )
+                fs.renameSync(kv, newpath)
 
                 continue
             }
@@ -235,26 +237,26 @@ function rename_season3() {
             //     nth3 = Number(nth3) + 1
             // }
 
-            if (Number(nth) <= 62 && Number(nth) == Number(nth3) - 117) {  
+            if (Number(nth) <= 62 && Number(nth) == Number(nth3) - 117) {
 
                 //ttml
-                let { base,dir,ext,name,root} = path.parse(ttml)
-                let { base:base3,dir:dir3,ext:ext3,name:name3,root:root3} = path.parse(m4)
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(m4)
 
                 let newname = `${name}.mp4`
                 let newpath = path.join(dir3, newname)
 
-                fs.renameSync( m4, newpath )
-            } else if ( Number(nth) >= 66 &&  Number(nth) == Number(nth3) - 114) {  // 63.ミュウツー！我ハココニ在リ(1) 到 65  台版无
+                fs.renameSync(m4, newpath)
+            } else if (Number(nth) >= 66 && Number(nth) == Number(nth3) - 114) {  // 63.ミュウツー！我ハココニ在リ(1) 到 65  台版无
 
                 //ttml
-                let { base,dir,ext,name,root} = path.parse(ttml)
-                let { base:base3,dir:dir3,ext:ext3,name:name3,root:root3} = path.parse(m4)
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(m4)
 
                 let newname = `${name}.mp4`
                 let newpath = path.join(dir3, newname)
 
-                fs.renameSync( m4, newpath )
+                fs.renameSync(m4, newpath)
             }
 
         }
@@ -286,25 +288,25 @@ function rename_season3() {
             //     let a = 1
             // }
 
-            if ( Number(nth) <= 62 && Number(nth) == Number(nth3) - 117) {  // 63.ミュウツー！我ハココニ在リ(1) 到 65  台版无
+            if (Number(nth) <= 62 && Number(nth) == Number(nth3) - 117) {  // 63.ミュウツー！我ハココニ在リ(1) 到 65  台版无
 
                 //ttml
-                let { base,dir,ext,name,root} = path.parse(ttml)
-                let { base:base3,dir:dir3,ext:ext3,name:name3,root:root3} = path.parse(lv)
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(lv)
 
                 let newname = `${name}.flv`
                 let newpath = path.join(dir3, newname)
 
-                fs.renameSync( lv, newpath )
-            } else if ( Number(nth) >= 66 &&  Number(nth) == Number(nth3) - 114) {  // 63.ミュウツー！我ハココニ在リ(1) 到 65  台版无
+                fs.renameSync(lv, newpath)
+            } else if (Number(nth) >= 66 && Number(nth) == Number(nth3) - 114) {  // 63.ミュウツー！我ハココニ在リ(1) 到 65  台版无
                 //ttml
-                let { base,dir,ext,name,root} = path.parse(ttml)
-                let { base:base3,dir:dir3,ext:ext3,name:name3,root:root3} = path.parse(lv)
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(lv)
 
                 let newname = `${name}.flv`
                 let newpath = path.join(dir3, newname)
 
-                fs.renameSync( lv, newpath )
+                fs.renameSync(lv, newpath)
             }
 
         }
@@ -315,7 +317,128 @@ function rename_season3() {
 }
 
 
+function rename_season6() {
 
+    let platform = process.platform
+    let root_vd = global.config.root_vd[platform]
+
+    let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon', 'amazon', 'S06'])  // E:\videos\anime\pokemon\amazon\S01
+
+    let lvs = this.libs.files.allfiles(root_vd, 'flv', ['pokemon_tw', 'S06'])
+
+    let ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S06'])
+    // remove space
+    for (let ttml of ttml2s) {
+        let { base, dir, ext, name, root } = path.parse(ttml)
+        let withoutSpace = base.replace(/\s/g, '')
+        if (withoutSpace != base) {
+            let newname = path.join(dir, withoutSpace)
+            fs.renameSync(ttml, newname)
+        }
+    }
+    ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S06'])
+
+    function sort(ttml) {
+        let match = ttml.match(/(\d+)\./)
+        if (match == null) {
+            throw `name not correct. ${ttml}`
+        }
+        let nth = match[1]
+        return Number(nth)
+    }
+
+    ttml2s = _.orderBy(ttml2s, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    for (let ttml of ttml2s) {
+
+        let match = ttml.match(/(\d+)\./)
+        if (match == null) {
+            //throw `name not correct. ${ttml}`
+            continue
+        }
+        let nth = match[1]
+
+        let mlseason = this.libs.files.season(ttml)
+        if (mlseason == null) {
+            throw 'no season on ttml2'
+        }
+
+        for (let kv of kvs) {
+
+            let match2 = kv.match(/E(\d+) - Amazon/)
+            if (match2 == null) {
+                //throw `name not correct. ${m4}`
+                continue
+            }
+            let nth2 = match2[1]
+
+            let kvseason = this.libs.files.season(kv)
+            if (kvseason == null) {
+                throw 'no season on kv'
+            }
+
+            if (mlseason != kvseason) {
+                continue
+            }
+
+            if (Number(nth) == Number(nth2)) {
+
+                //ttml
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base2, dir: dir2, ext: ext2, name: name2, root: root2 } = path.parse(kv)
+
+                let newname = `${name}.mkv`
+                let newpath = path.join(dir2, newname)
+
+                fs.renameSync(kv, newpath)
+
+                continue
+            }
+
+        }
+
+        for (let lv of lvs) {
+
+            let match3 = lv.match(/(\d+)\./)
+            if (match3 == null) {
+                //throw `name not correct. ${m4}`
+                continue
+            }
+            let nth3 = match3[1]
+
+            let lvseason = this.libs.files.season(lv)
+            if (lvseason == null) {
+                throw 'no season on kv'
+            }
+
+            if (mlseason != lvseason) {
+                continue
+            }
+
+            if (Number(nth) == Number(nth3)) {
+
+                //ttml
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(lv)
+
+                let newname = `${name}.flv`
+                let newpath = path.join(dir3, newname)
+
+                fs.renameSync(lv, newpath)
+
+                break
+
+            }
+
+
+        }
+
+    }
+
+    return 'ok.'
+}
 
 
 
