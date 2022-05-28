@@ -417,7 +417,23 @@ function rename_season6() {
                 continue
             }
 
-            if (Number(nth) == Number(nth3)) {
+            if (Number(nth) <= 119 && Number(nth) == Number(nth3)) {  // 120 原版是总集编，台版没有。 台120 对应原121
+
+                //ttml
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(lv)
+
+                let newname = `${name}.flv`
+                let newpath = path.join(dir3, newname)
+
+                fs.renameSync(lv, newpath)
+
+                break
+
+            }
+
+            
+            if (Number(nth) >= 121 && Number(nth) == Number(nth3) +1 ) {  // 120 原版是总集编，台版没有。 台120 对应原121
 
                 //ttml
                 let { base, dir, ext, name, root } = path.parse(ttml)
