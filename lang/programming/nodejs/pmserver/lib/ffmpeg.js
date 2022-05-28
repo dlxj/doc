@@ -390,11 +390,18 @@ module.exports = {
             //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:01:59.000 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             let cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
 
+            if (Number(nth3) >= 90) {
+                cmd = `ffmpeg -y -itsoffset -11 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            }
 
             let childProcess = execa(cmd, { shell:true, 'encoding': 'utf8' })
             let { stdout:out1 } = await childProcess
 
             cmd = `ffmpeg -y -i "${hardjppath}" -i "${vdAMPath}" -i "${subpath}" -map 0:v -map 1:a:0 -map 0:a:1 -c copy -map 2 -c:s srt "${softjppath}"`
+
+            // if (Number(nth3) >= 90) {
+            //     cmd = `ffmpeg -y  -itsoffset -11 -i "${hardjppath}" -i "${vdAMPath}" -i "${subpath}" -map 0:v -map 1:a:0 -map 0:a:1 -c copy -map 2 -c:s srt "${softjppath}"`
+            // }
 
             let childProcess2 = execa(cmd, { shell:true, 'encoding': 'utf8' })
             let { stdout:out2 } = await childProcess2
