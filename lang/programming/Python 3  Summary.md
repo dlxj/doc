@@ -23,6 +23,22 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+## 升级pip
+
+```
+删除目录 D:\usr\Python38\Lib\site-packages\pip-xx.x.x.dist-info
+python -m pip install --upgrade pip -i https://pypi.douban.com/simple
+```
+
+
+
+```
+jupyter notebook能用，但是无法连接服务器？？
+pip install --upgrade ipykernel -i https://pypi.douban.com/simple
+```
+
+
+
 ## Python for colab
 
 ```
@@ -805,6 +821,21 @@ def read_string(path):
 
 
 
+### read lines
+
+```python
+		# 按行读取文本	
+		with open(label_path, encoding='utf-8') as f:
+            data = f.readlines()
+        # utf8 bom 带签名的utf8    
+        with open(label_path, encoding='utf-8-sig') as f:
+            data = f.readlines()
+```
+
+
+
+
+
 
 
 ### 递归遍历
@@ -834,13 +865,36 @@ for imagePath in paths.list_images(args["images"]):
 
 
 
-
-
 ### basename
 
 ```python
 os.path.basename
 ```
+
+
+
+```
+# without ext
+from pathlib import Path
+
+Path('/root/dir/sub/file.ext').stem
+will return
+
+'file'
+```
+
+
+
+
+
+```
+# base path
+import os
+print(os.path.splitext("/path/to/some/file.txt")[0])
+>/path/to/some/file
+```
+
+
 
 
 

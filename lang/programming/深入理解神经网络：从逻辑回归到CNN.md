@@ -5580,7 +5580,26 @@ OCR Engine modes:
   
 - https://zhuanlan.zhihu.com/p/382641896 **DBNet的简单复现**
   
+- https://github.com/MhLiao/DB/issues/100  **官方配置问题**
+  
+- https://www.cnblogs.com/yanghailin/p/12337543.html 官方实现配置过程
+  
+  - https://www.cnblogs.com/yanghailin/p/12209685.html 两个都有
+  
+- https://blog.csdn.net/weixin_43705733/article/details/123347511  **非？官方实现配置过程**
+  
+- https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/  **DBNet.pytorch实现配置过程**
+  
   >
+  > > icdar2015 文本检测数据集
+  > > 标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
+  > >
+  > > 其中, x1,y1为左上角坐标,x2,y2为右上角坐标,x3,y3为右下角坐标,x4,y4为左下角坐标。 
+  > >
+  > > \#\#\# 表示text难以辨认。
+  > >
+  > > 
+  > >
   > > DBNet 对每个像素点进行自适应二值化，二值化的阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
   > >
   > > DB(Differentiable Binarization) **可微分二值化**[u](https://zhuanlan.zhihu.com/p/365227183)
@@ -5617,11 +5636,20 @@ OCR Engine modes:
   > > $$
   > >
 > > 使用**概率图标签**$G_s$的计算过程中**得到的偏移量D**进行**多边形扩充**，然后计算$G_d$与$G_s$之间的**像素到原始框最近边的归一化距离**，最后将其中的值进行缩放，得到的就是最终的**阈值图标签**$G_d$。 
-  > >
-  > > backbone of **ResNet-18**, 核心是ResNet网络，后接**FPN**，再对不同尺寸的特征图进行concat，最终由两个不同的输出头给出结果。
-  > >
-  > > 
-  
+> >
+> > backbone of **ResNet-18**, 主干网络是ResNet网络，后接**FPN**，再对不同尺寸的特征图进行concat，最终由两个不同的输出头给出结果。
+> >
+> > 整个流程如下
+> >
+> > 图像经过FPN网络结构，得到四个特征图，分别为1/4,1/8,1/16,1/32大小；
+> > 将四个特征图分别上采样为1/4大小，再concat，得到特征图F
+> > 由F得到 probability map (P) 和 threshold map (T)
+> > 通过P、T计算（通过可微分二值化DB，下文介绍） approximate binary map（ 近似binary map [公式] ）
+> > 对于每个网络，一定要区分训练和推理阶段的不同：
+> >
+> > 训练阶段：对P、T、B进行监督训练，P和B是用的相同的监督信号（label）；
+> > 推理阶段：通过P或B就可以得到文本框。
+
 - https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/
 > OCR-(DB+CRNN)-代码分析-实践环境配置及运行 **非常详细**
 
@@ -5642,7 +5670,7 @@ OCR Engine modes:
 
 - https://zhuanlan.zhihu.com/p/368035566
   
-> 手把手教你学DBNet
+> **手把手教你学DBNet**
 
 - https://zhuanlan.zhihu.com/p/88645033
 
@@ -5651,6 +5679,10 @@ OCR Engine modes:
 - https://github.com/MhLiao/DB/issues/223
 
   > **Running the code on Google Colab**
+
+- https://blog.csdn.net/weixin_43705733/article/details/123347511
+
+  > **DBNet训练过程笔记（超详细)** 实战级
 
 #### mmocr
 
@@ -6871,7 +6903,134 @@ pip install grpcio==1.11.0
 
 
 
+## run shell
+
+```
+%%bash
+conda install --channel defaults conda python=3.7 --yes
+conda update --channel defaults --all --yes
+```
+
+
+
+## 环境变量
+
+
+
+```
+%set_env CUDA_HOME=/usr/local/cuda
+%cd /content/DB
+!pip install -r requirement.txt
+%cd /content/DB/assets/ops/dcn/
+!python setup.py build_ext --inplace
+```
+
+
+
+## install pytorch
+
+```
+! python -m pip install torch==1.2.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+# 这是 DBNet 官方实现要求的版本
+```
+
+
+
 ## install conda
+
+**注意：虚拟环境只在单个代码格里有效，跨代码格每次都要重新激活！**
+
+```
+# Install conda v2
+
+%%bash
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+bash Miniforge3-Linux-x86_64.sh -b
+
+%%bash
+~/miniforge3/bin/conda init
+
+! ln -s ~/miniforge3/bin/conda /usr/local/bin
+
+! ln -s ~/miniforge3/bin/activate /usr/local/bin
+
+! ln -s ~/miniforge3/bin/deactivate /usr/local/bin
+
+%%bash
+conda update -y conda -n base
+
+!source ~/miniforge3/etc/profile.d/conda.sh
+
+```
+
+
+
+
+
+```
+
+# Install coda
+
+- https://towardsdatascience.com/conda-google-colab-75f7c867a522
+- https://mmocr.readthedocs.io/zh_CN/latest/install.html
+
+
+!which python
+!python --version
+!echo $PYTHONPATH
+%env PYTHONPATH=
+
+%%bash
+MINICONDA_INSTALLER_SCRIPT=Miniconda3-4.5.4-Linux-x86_64.sh
+MINICONDA_PREFIX=/usr/local
+wget https://repo.continuum.io/miniconda/$MINICONDA_INSTALLER_SCRIPT
+chmod +x $MINICONDA_INSTALLER_SCRIPT
+./$MINICONDA_INSTALLER_SCRIPT -b -f -p $MINICONDA_PREFIX
+
+!which conda
+!conda --version
+
+%%bash
+conda install --channel defaults conda python=3.7 --yes
+conda update --channel defaults --all --yes
+
+!conda --version
+!python --version
+import sys
+sys.path
+```
+
+
+
+```
+# Install Pytorch
+
+!nvcc --version # check cuda version
+!which nvcc
+
+! pip3 uninstall torch --yes
+
+import torch
+
+
+! ls /usr/local/cuda
+
+! python -m pip install torch==1.2.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+%%bash
+git clone https://github.com/MhLiao/DB.git
+# python dependencies
+cd DB && pip install -r requirement.txt
+
+
+```
+
+
+
+
+
+
 
 ```
 https://towardsdatascience.com/conda-google-colab-75f7c867a522
@@ -6897,13 +7056,7 @@ chmod +x $MINICONDA_INSTALLER_SCRIPT
 
 
 
-
-
-
-
 ## 中文
-
-
 
 ```
 # https://albertauyeung.github.io/2020/03/15/matplotlib-cjk-fonts.html/

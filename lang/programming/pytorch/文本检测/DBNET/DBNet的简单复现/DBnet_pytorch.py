@@ -16,6 +16,19 @@ import Polygon as plg
 pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
 
 
+icdar2015 文本检测数据集
+标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
+
+其中, x1,y1为左上角坐标,x2,y2为右上角坐标,x3,y3为右下角坐标,x4,y4为左下角坐标。 ### 表示text难以辨认。
+
+icdar2015 重新整理版，可用于此代码
+https://drive.google.com/file/d/1UYBKY4fC9hT4_l9tsxBK3RiMXdNvEKUb/view?usp=sharing
+
+#from google.colab import drive
+#drive.mount('/content/gdrive')
+! gdown --id '1UYBKY4fC9hT4_l9tsxBK3RiMXdNvEKUb'
+! unzip ./data_icdar2015.zip
+#! unzip ./chinese_roberta_wwm_ext_L-12_H-768_A-12.zip -d ./chinese_roberta_wwm_ext_L-12_H-768_A-12
 
 """
 
@@ -29,6 +42,7 @@ import torch.nn as nn
 import torch.optim as optim
 from shapely.geometry import Polygon
 from torch.utils.data import Dataset, DataLoader
+from pathlib import Path
 
 
 # 计算两点距离
@@ -147,7 +161,10 @@ class MyDataset(Dataset):
         img_list = os.listdir(img_dir)
         for i in range(len(img_list)):
             img_path = os.path.join(img_dir, img_list[i])
-            label_path = os.path.join(label_dir, img_list[i].replace('png', 'txt'))
+            # basename = os.path.splitext(img_path)[0]
+            basename = Path(img_path).stem
+            # label_path = os.path.join(label_dir, img_list[i].replace('png', 'txt'))
+            label_path = os.path.join(label_dir, "gt_{}.txt".format(basename))
             imgs.append(img_path)
             labels.append(label_path)
         self.imgs_path = imgs
@@ -156,7 +173,7 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         img_path, label_path = self.imgs_path[index], self.labels_path[index]
         img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
-        with open(label_path, encoding='utf-8') as f:
+        with open(label_path, encoding='utf-8-sig') as f:
             data = f.readlines()
         gt_boxes_all = []
         height, width, _ = img.shape
@@ -167,7 +184,7 @@ class MyDataset(Dataset):
         scale_x = new_width / width
         img = cv2.resize(img, (new_width, new_height))
         for i in range(len(data)):
-            gt_data = data[i].strip().split()
+            gt_data = data[i].strip().split(',')
             x_list = []
             x_list.append(int(int(gt_data[0]) * scale_x))
             x_list.append(int(int(gt_data[2]) * scale_x))
@@ -390,7 +407,7 @@ def train(model, train_loader, optimizer, epoch):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            if (step + 1) % 100 == 0:
+            if (step + 1) % 1 == 0:
                 print('epoch:', i + 1, 'step:', step + 1, 'loss:', loss)
     torch.save(model.state_dict(), './model/DBnet_pytorch.pth')
 
@@ -399,7 +416,8 @@ def inference(model, test_loader):
     model.eval()
     with torch.no_grad():
         for data in test_loader:
-            img = data[0].to(torch.device('cuda'))
+            # img = data[0].to(torch.device('cuda'))
+            img = data[0].to(torch.device('cpu'))
             shrink_pre, threshold_pre, binary_pre = model(img)
             img = img.cpu().numpy()[0]
             img = np.transpose(img, (1, 2, 0))
@@ -453,20 +471,21 @@ def inference(model, test_loader):
 if __name__ == '__main__':
     # train
     # model = Model().to(torch.device('cuda'))
-    model = Model().to(torch.device('cpu'))
-    optimizer = optim.Adam(model.parameters())
-    train_data = MyDataset(base_path='./data/train_data')
-    train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
-    train(model, train_loader, optimizer, 10)
+    # model = Model().to(torch.device('cpu'))
+    # optimizer = optim.Adam(model.parameters())
+    # train_data = MyDataset(base_path='./data_icdar2015/train_data')
+    # train_loader = DataLoader(dataset=train_data, batch_size=1, shuffle=True)
+    # train(model, train_loader, optimizer, 10)
 
     # inference
-    # model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
-    # ## model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    # model.load_state_dict(torch.load('./model/DBnet_pytorch.pth'))   
+    #model = Model().to(torch.device('cuda')) # 必须是GUP 才能行
+    model = Model().to(torch.device('cpu'))
+    ## model = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model.load_state_dict(torch.load('./model/DBnet_pytorch.pth', map_location=torch.device('cpu')))   
 
-    # test_data = MyDataset(base_path='./data/test_data')
-    # test_loader = DataLoader(dataset=test_data, batch_size=1)
-    # inference(model, test_loader)
+    test_data = MyDataset(base_path='./data_icdar2015/test_data')
+    test_loader = DataLoader(dataset=test_data, batch_size=1)
+    inference(model, test_loader)
 
 
 
