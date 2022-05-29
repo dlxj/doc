@@ -6895,7 +6895,15 @@ pip install grpcio==1.11.0
 
 
 
+# 装机
 
+- https://www.zhihu.com/question/345502563
+
+- https://www.jianshu.com/p/a6734bb55098
+
+  > 115 aria2
+
+- https://github.com/acgotaku/115
 
 
 
@@ -6924,6 +6932,151 @@ conda update --channel defaults --all --yes
 %cd /content/DB/assets/ops/dcn/
 !python setup.py build_ext --inplace
 ```
+
+
+
+## 卸载CUDA
+
+- https://stackoverflow.com/questions/56431461/how-to-remove-cuda-completely-from-ubuntu
+- https://zhuanlan.zhihu.com/p/279401802
+  - https://mirror.sjtu.edu.cn/pytorch-wheels/cu101/?mirror_intel_list
+  - https://github.com/CharlesShang/DCNv2   torch实现卷积
+- https://zhuanlan.zhihu.com/p/82521884
+
+```
+nvidia-smi 
+注意：通过nvidia-smi命令查看到的CUDA版本只是驱动支持的最高cuda版本参数，不代表实例中安装的是该版本CUDA。
+```
+
+
+
+
+
+## CUDA/cuDNN
+
+- https://www.autodl.com/docs/cuda/
+- https://zhuanlan.zhihu.com/p/279401802
+
+```
+export CUDA_HOME=/usr/local/cuda
+source ~/.bashrc
+
+unset TORCH_CUDA_ARCH_LIST
+export TORCH_CUDA_ARCH_LIST="8.0"
+
+apt-get update
+sudo apt install software-properties-common
+```
+
+```
+from pathlib import Path
+
+PATH = r'<path to datasets\icdar2015\train_gts>'
+
+p = Path(PATH)
+
+for bom_file in p.glob('*.txt'):
+    s = open(bom_file, mode='r', encoding='utf-8-sig').read()
+    open(bom_file, mode='w', encoding='utf-8').write(s)
+```
+
+
+
+### 查询默认CUDA/cuDNN版本
+
+> 注意：通过nvidia-smi命令查看到的CUDA版本只是驱动支持的最高cuda版本参数，不代表实例中安装的是该版本CUDA。
+
+终端中执行查看默认镜像自带的CUDA版本（安装目录为/usr/local/）：
+
+```
+查询平台内置镜像中的cuda版本
+$ ldconfig -p | grep cuda
+        libnvrtc.so.11.0 (libc6,x86-64) => /usr/local/cuda-11.0/targets/x86_64-linux/lib/libnvrtc.so.11.0
+        libnvrtc.so (libc6,x86-64) => /usr/local/cuda-11.0/targets/x86_64-linux/lib/libnvrtc.so
+        libnvrtc-builtins.so.11.0 (libc6,x86-64) => /usr/local/cuda-11.0/targets/x86_64-linux/lib/libnvrtc-builtins.so.11.0
+
+查询平台内置镜像中的cudnn版本
+$ ldconfig -p | grep cudnn
+        libcudnn_ops_train.so.8 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so.8
+        libcudnn_ops_train.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so
+        libcudnn_ops_infer.so.8 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so.8
+        libcudnn_ops_infer.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so
+```
+
+上边的输出日志`.so`后的数字即为版本号。如果你通过conda安装了cuda那么可以通过以下命令查看：
+
+```
+$ conda list | grep cudatoolkit
+cudatoolkit               10.1.243             h6bb024c_0    defaults
+$ conda list | grep cudnn
+cudnn                     7.6.5                cuda10.1_0    defaults
+```
+
+### 安装其他版本的CUDA/cuDNN
+
+#### 方法一：使用conda进行安装
+
+优点：简单
+
+缺点：一般不会带头文件，如果需要做编译，则需要照方法二安装
+
+方法：
+
+```
+$ conda install cudatoolkit==xx.xx
+$ conda install cudnn==xx.xx
+```
+
+如果你不知道版本号是什么那么可以搜索：
+
+```
+$ conda search cudatoolkit
+Loading channels: done
+# Name                       Version           Build  Channel             
+cudatoolkit                      9.0      h13b8566_0  anaconda/pkgs/main  
+cudatoolkit                      9.2               0  anaconda/pkgs/main  
+cudatoolkit                 10.0.130               0  anaconda/pkgs/main  
+cudatoolkit                 10.1.168               0  anaconda/pkgs/main  
+cudatoolkit                 10.1.243      h6bb024c_0  anaconda/pkgs/main  
+cudatoolkit                  10.2.89      hfd86e86_0  anaconda/pkgs/main  
+cudatoolkit                  10.2.89      hfd86e86_1  anaconda/pkgs/main  
+cudatoolkit                 11.0.221      h6bb024c_0  anaconda/pkgs/main  
+cudatoolkit                   11.3.1      h2bc3f7f_2  anaconda/pkgs/main
+```
+
+#### 方法二：下载安装包安装
+
+CUDA下载地址：https://developer.nvidia.com/cuda-toolkit-archive
+
+安装方法：
+
+```
+下载.run格式的安装包后：
+$ chmod +x xxx.run   # 增加执行权限
+$ ./xxx.run          # 运行安装包
+```
+
+cuDNN下载地址：https://developer.nvidia.com/cudnn
+
+安装方法：
+
+先解压， 后将动态链接库和头文件放入相应目录
+
+```
+ $ mv cuda/include/* /usr/local/cuda/include/
+ $ chmod +x cuda/lib64/* && mv cuda/lib64/* /usr/local/cuda/lib64/
+```
+
+安装完成以后，增加环境变量：
+
+```
+$ echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:${LD_LIBRARY_PATH} \n" >> ~/.bashrc
+$ source ~/.bashrc && ldconfig
+```
+
+提示：
+
+默认镜像都内置了最原生的CUDA和cuDNN，如果您自己安装了cudatoolkits等，那么一般会默认优先使用conda中安装的cudatoolkits，
 
 
 
