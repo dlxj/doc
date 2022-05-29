@@ -6952,6 +6952,7 @@ CPU 3× Xeon E5-2678 v3 + tesla k80
 
 - https://zhuanlan.zhihu.com/p/279401802
 - https://github.com/MhLiao/DB
+  - https://github.com/cs-chan/Total-Text-Dataset 数据集
 
 ```
 wget https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux.run
@@ -6966,9 +6967,15 @@ conda deactivate && \
 conda update -y conda -n base && \
 conda install ipython pip && \
 conda create -n DB python=3.7 --yes && \
-source activate DB
-
+source activate DB && \
 conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+
+conda deactivate && \
+conda info -e && \
+conda env remove -n DB && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+python -m pip install torch==1.2.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 cp /mnt/DB.zip /mnt/TD_TR.zip . && \
 unzip DB.zip && \
@@ -6980,9 +6987,35 @@ cd ~/DB/assets/ops/dcn/ && \
 python setup.py build_ext --inplace
 
 cd ~/DB && \
-pip3 install -r requirement.txt && \
-pip3 install --upgrade protobuf==3.20.0 && \
+pip install -r requirement.txt && \
+pip install --upgrade protobuf==3.20.0 && \
 CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
+```
+
+
+
+```
+cuda10需要驱动418
+现在装的是pytorch 1.3.1 py3.7_cuda10.0.130_cudnn7.6.3_0 pytorch
+
+https://github.com/facebookresearch/maskrcnn-benchmark/issues/685
+http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/
+https://gist.github.com/bogdan-kulynych/f64eb148eeef9696c70d485a76e42c3a
+
+https://colab.research.google.com/github/andrepereira/cuda-c--google-colab/blob/master/GPU.ipynb
+
+https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
+
+https://blog.csdn.net/qq_46521210/article/details/122211173
+
+apt install cuda=10.0.130-1
+
+conda deactivate && \
+conda info -e && \
+conda env remove -n DB && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 ```
 
 
