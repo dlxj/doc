@@ -6905,6 +6905,38 @@ pip install grpcio==1.11.0
 
 - https://github.com/acgotaku/115
 
+- https://www.hiroom2.com/2018/05/05/ubuntu-1804-davfs2-en/
+
+- https://wiki.archlinux.org/title/Davfs2#Installing_davfs2
+
+  > ```
+  > for centos7
+  > $ cat <<EOF | sudo debconf-set-selections
+  > davfs2 davfs2/suid_file boolean false
+  > EOF
+  > $ sudo apt install -y davfs2
+  > 
+  > sudo mount -t davfs https://dav.jianguoyun.com/dav /mnt
+  > 
+  > https://dav.jianguoyun.com/dav/
+  > 
+  > 账户：cdef6xx35@qq.com
+  > azf3ec5k8rqdf5wi
+  > 
+  > 
+  > for ubuntu
+  > sudo apt update
+  > sudo apt install davfs2
+  > 
+  > mkdir /mntt
+  > sudo mount -t davfs https://dav.exxxt.com/dav /mntt
+  > 
+  > ```
+
+- https://www.jianshu.com/p/fe776caafbdd
+
+  > https://exxxt.com/webdav
+
 
 
 # Colab
