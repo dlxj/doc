@@ -6909,6 +6909,8 @@ pip install grpcio==1.11.0
 
 - https://wiki.archlinux.org/title/Davfs2#Installing_davfs2
 
+- https://memorydump.eu/how-to/mount-a-webdav-resource-in-a-linux-container/
+
   > ```
   > for centos7
   > $ cat <<EOF | sudo debconf-set-selections
@@ -6928,14 +6930,52 @@ pip install grpcio==1.11.0
   > sudo apt update
   > sudo apt install davfs2
   > 
+  > apt-get install kmod
+  > 
   > mkdir /mntt
-  > sudo mount -t davfs https://dav.exxxt.com/dav /mntt
+  > sudo mount -t davfs https://exxxt.com/webdav /mntt
   > 
   > ```
 
 - https://www.jianshu.com/p/fe776caafbdd
 
   > https://exxxt.com/webdav
+
+
+
+# K80 矩池云
+
+CPU 3× Xeon E5-2678 v3 + tesla k80
+
+- https://matpool.com
+
+- https://zhuanlan.zhihu.com/p/279401802
+- https://github.com/MhLiao/DB
+
+```
+sudo apt install build-essential
+gcc -v #查看gcc版本
+
+
+conda deactivate && \
+conda update -y conda -n base && \
+conda install ipython pip && \
+conda create -n DB python=3.7 --yes && \
+source activate DB
+
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+
+cp /mnt/* . && \
+unzip DB.zip && \
+unzip TD_TR.zip -d DB/datasets
+
+export CUDA_HOME=/usr/local/cuda && \
+echo $CUDA_HOME && \
+cd DB/assets/ops/dcn/ && \
+python setup.py build_ext --inplace
+```
+
+
 
 
 
