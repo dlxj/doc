@@ -6948,11 +6948,16 @@ pip install grpcio==1.11.0
 CPU 3× Xeon E5-2678 v3 + tesla k80
 
 - https://matpool.com
+  - https://zhuanlan.zhihu.com/p/338507526
 
 - https://zhuanlan.zhihu.com/p/279401802
 - https://github.com/MhLiao/DB
 
 ```
+wget https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux.run
+
+sh cuda_10.1.105_418.39_linux.run
+
 sudo apt install build-essential
 gcc -v #查看gcc版本
 
@@ -6965,14 +6970,19 @@ source activate DB
 
 conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
-cp /mnt/* . && \
+cp /mnt/DB.zip /mnt/TD_TR.zip . && \
 unzip DB.zip && \
 unzip TD_TR.zip -d DB/datasets
 
 export CUDA_HOME=/usr/local/cuda && \
 echo $CUDA_HOME && \
-cd DB/assets/ops/dcn/ && \
+cd ~/DB/assets/ops/dcn/ && \
 python setup.py build_ext --inplace
+
+cd ~/DB && \
+pip3 install -r requirement.txt && \
+pip3 install --upgrade protobuf==3.20.0 && \
+CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
 ```
 
 
