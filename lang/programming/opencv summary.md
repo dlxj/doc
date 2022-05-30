@@ -727,6 +727,17 @@ img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
 
 
 
+# 转float32 格式
+
+```
+img = cv2.imread(image_path, cv2.IMREAD_COLOR).astype('float32')
+img = img[:, :, ::-1]
+```
+
+
+
+
+
 # 调整宽高
 
 ```python

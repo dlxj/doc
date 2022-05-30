@@ -16,8 +16,10 @@ from training.model_saver import ModelSaver
 from training.optimizer_scheduler import OptimizerScheduler
 from concern.config import Configurable, Config
 
+import sys
 
 def main():
+    # sys.argv = sys.argv.push()
     parser = argparse.ArgumentParser(description='Text Recognition Training')
     parser.add_argument('exp', type=str)
     parser.add_argument('--name', type=str)

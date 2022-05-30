@@ -7068,6 +7068,31 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 
 
+```
+# 可视化
+
+		fuse = torch.cat((p5, p4, p3, p2), 1)
+        # this is the pred module, not binarization module; 
+        # We do not correct the name due to the trained model.
+        binary = self.binarize(fuse)
+
+        # 可视化--------
+        binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+        thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+        binary_img = binary_img.astype(np.uint8)
+        thresh_img = thresh_img.astype(np.uint8)
+        cv2.imwrite('bin.bmp', binary_img)
+        binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+        cv2.imwrite('cm.bmp', binary_color_map)
+
+        cv2.imwrite('thresh.bmp',thresh_img)
+        thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+        cv2.imwrite('color_thresh.bmp',thresh_color_map)
+        # ------------------
+```
+
+
+
 
 
 # Colab
