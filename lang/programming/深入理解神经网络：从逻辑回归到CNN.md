@@ -6948,11 +6948,21 @@ pip install grpcio==1.11.0
 CPU 3× Xeon E5-2678 v3 + tesla k80
 
 - https://matpool.com
-  - https://zhuanlan.zhihu.com/p/338507526
-
+  
+- https://zhuanlan.zhihu.com/p/338507526
+  
 - https://zhuanlan.zhihu.com/p/279401802
 - https://github.com/MhLiao/DB
+  
   - https://github.com/cs-chan/Total-Text-Dataset 数据集
+- https://univeryinli.github.io/2019/05/27/Ubuntu-k80%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+  
+  > Ubuntu k80深度学习环境搭建
+- https://www.guoyaohua.com/deeplearning-workstation.html
+  
+  > 深度学习工作站攒机指南
+
+
 
 ```
 wget https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux.run
@@ -7007,6 +7017,16 @@ https://colab.research.google.com/github/andrepereira/cuda-c--google-colab/blob/
 https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
 
 https://blog.csdn.net/qq_46521210/article/details/122211173
+https://developer.nvidia.com/rdp/cudnn-archive
+login: cdefx9x5@qq.com
+vC4
+选这个：Download cuDNN v7.5.0 (Feb 21, 2019), for CUDA 10.0
+
+%%bash
+sudo dpkg -i libcudnn7_7.5.0.56-1+cuda10.0_amd64.deb
+sudo dpkg -i libcudnn7-dev_7.5.0.56-1+cuda10.0_amd64.deb
+sudo dpkg -i libcudnn7-doc_7.5.0.56-1+cuda10.0_amd64.deb
+
 
 apt install cuda=10.0.130-1
 
