@@ -6964,12 +6964,40 @@ CPU 3× Xeon E5-2678 v3 + tesla k80
 
 
 
+```python
+https://github.com/MhLiao/DB 验证可运行的环境：
+
+tesla K80 + Ubuntu18.04 +
+	+ Python 3.7 + CUDA 10.0 + cuDNN 7.6.5 + NVCC 10.0 
+
+nvcc --version
+	Cuda compilation tools, release 10.0, V10.0.130
+
+ldconfig -p | grep cuda
+	libnvrtc.so.10.0 (libc6,x86-64) => /usr/local/cuda-10.0/targets/x86_64-linux/lib/libnvrtc.so.10.0
+
+
+    
+    
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+```
+
+
+
+
+
+
+
 ```
 wget https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux.run
 
 sh cuda_10.1.105_418.39_linux.run
 
-sudo apt install build-essential
+apt install build-essential
 gcc -v #查看gcc版本
 
 
