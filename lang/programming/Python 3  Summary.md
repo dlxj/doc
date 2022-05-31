@@ -688,6 +688,62 @@ load_all(arg1=1, arg2=2, arg3=3)
 
 
 
+### isinstance 多个
+
+```python
+isinstance(args, (int, float, str)) # 是否是其中任意一个
+```
+
+
+
+### 动态设置类的属性
+
+
+
+```python
+# 动态设置
+    def load(self, state_name, **kwargs):
+        # FIXME: kwargs should be filtered
+        # Args passed from command line
+        cmd = kwargs.pop('cmd', dict())
+        if state_name in kwargs:
+            setattr(self, state_name, self.create_member_from_config(
+                (kwargs[state_name], cmd)))
+        else:
+            setattr(self, state_name, self.states[state_name].default)
+
+
+# 静态定义
+class EAPIrt2PLModel(object):
+
+    def __init__(self, score, slop, threshold): # 得分，区分度，阀值
+        self.x_nodes, self.x_weights = get_gh_point(21)
+        z = Z(slop, threshold, self.x_nodes)
+        p = P(z)
+        self.lik_values = np.prod(p**score*(1.0 - p)**(1-score), axis=1) 
+        """
+        计算所有元素的乘积，按行连乘(维度变成n*1)。
+        如果不指定轴，则不管是几维都展平成一维然后连乘
+        """
+
+    @property
+    def g(self):
+        x = self.x_nodes[:, 0]
+        weight = self.x_weights[:, 0]
+        return np.sum(x * weight * self.lik_values)
+
+    @property
+    def h(self):
+        weight = self.x_weights[:, 0]
+        return np.sum(weight * self.lik_values)
+
+    @property
+    def res(self):
+        return round(self.g / self.h, 3)
+```
+
+
+
 
 
 ## Path
