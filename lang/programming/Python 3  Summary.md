@@ -657,6 +657,23 @@ print("hi,,,")
 
 
 
+### 类的动态构建
+
+```
+# doc\lang\programming\pytorch\文本检测\DBNET\DBNet官方实现\DB\train.py
+import importlib
+
+    @staticmethod
+    def extract_class_from_args(args):
+        cls = args.copy().pop('class')  # args 是字典
+        package, cls = cls.rsplit('.', 1) # 是字符串 xxx.xxx
+        module = importlib.import_module(package)
+        cls = getattr(module, cls)
+        return cls
+```
+
+
+
 
 
 ## Path
@@ -2307,6 +2324,26 @@ tmp = sorted(tmp, key=lambda d: list(d.values())[0], reverse=True) # 按词频�
 # doc\lang\programming\pytorch\李宏毅2020机器翻译\iAttention.py
 word2int_en.get(word, UNK)  # key 不存在，则返回默认值UNK
 ```
+
+
+
+### pop value
+
+```python
+# doc\lang\programming\pytorch\文本检测\DBNET\DBNet官方实现\DB\train.py
+# 取值，然后从字典里面删除那个key
+import importlib
+
+    @staticmethod
+    def extract_class_from_args(args):
+        cls = args.copy().pop('class')  # args 是字典
+        package, cls = cls.rsplit('.', 1) # 是字符串 xxx.xxx
+        module = importlib.import_module(package)
+        cls = getattr(module, cls)
+        return cls
+```
+
+
 
 
 
