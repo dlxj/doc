@@ -674,6 +674,20 @@ import importlib
 
 
 
+### 不定长参数字典**kwargs
+
+```python
+
+# 定义
+def load_all(self, **kwargs):
+
+# 调用
+load_all(arg1=1, arg2=2, arg3=3)
+
+```
+
+
+
 
 
 ## Path
