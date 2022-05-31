@@ -7035,6 +7035,15 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 https://matpool.com/supports/doc-vscode-connect-matpool/
     VS Code 远程连接矩池云机器教程
 # train.py 添加命令行参数，并用vscode 远程调试K80 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，然后F5 调试远行
+
+C:\Users\i\.ssh\config
+Host hz-t3.matpool.com
+  HostName hz-t3.matpool.com
+  Port 26517
+  User root
+
+
+
 def main():
 
     import sys

@@ -865,6 +865,41 @@ class EAPIrt2PLModel(object):
 
 
 
+### setter
+
+```python
+class Quad:
+    def __init__(self, points, format='NP2'):
+        self._rect = None
+        self.tensorized = False
+        self._points = None
+        self.set_points(points, format)
+
+    @property
+    def points(self):
+        return self._points
+
+    def set_points(self, new_points, format='NP2'):
+        order = (format.index('N'), format.index('P'), format.index('2'))
+
+        if isinstance(new_points, torch.Tensor):
+            self._points = new_points.permute(*order)
+            self.tensorized = True
+        else:
+            points = np.array(new_points, dtype=np.float32)
+            self._points = points.transpose(*order)
+
+            if self.tensorized:
+                self.tensorized = False
+                self.tensor
+
+    @points.setter
+    def points(self, new_points):
+        self.set_points(new_points)
+```
+
+
+
 
 
 ## Path
@@ -1745,6 +1780,14 @@ You can omit any parameter. These are all valid: array[start:], array[:stop], ar
 x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
 # (11,1) -> (11,)
 ```
+
+
+
+```python
+self.std[:, None, None]  # 这是不要另外两维？
+```
+
+
 
 
 
