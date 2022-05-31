@@ -445,6 +445,102 @@ time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 
 
+## 远程调试
+
+- https://zhuanlan.zhihu.com/p/43656542
+
+  > VS Code的Python远程调试环境
+
+
+
+```
+# db\t.py
+import sys
+
+if __name__ == "__main__":
+    argv = sys.argv
+    a = 1
+    print('hi,,')
+```
+
+
+
+```
+# db\.vscode\launch.json
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python: Attach",
+			"type": "python",
+			"request": "attach",
+			"connect": {
+				"host": "localhost",
+				"port": 5678
+			}
+		}
+	]
+}
+```
+
+
+
+```
+# 终端运行(可以是远程主机)：
+python -m debugpy --listen 5678 --wait-for-client t.py -arg1 ARG1 -arg2 ARG2
+
+# vscode 打开db 文件夹, 下断点，F5 (这里是本地主机)
+
+    argv = sys.argv  # 断下来后可以看到传进来的参数：ARG1 ARG2
+
+前提是，本地主机和远程主机运行的代码是同一分代码，目录结构也一致
+```
+
+
+
+
+
+
+
+
+
+```
+pip3 install debugpy
+import debugpy
+debugpy.listen(5678)
+debugpy.wait_for_client()
+```
+
+
+
+```
+{
+
+   "name": "Python: Attach",
+"type": "python",
+"request": "attach",
+"connect": {
+
+   "host": "localhost",
+"port": 5678
+}
+}
+```
+
+
+
+```
+
+cd /workspaces/pyt ; /usr/bin/env /usr/local/bin/python /home/vscode/.vscode-server/extensions/ms-python.python-2022.7.11332232/pythonFiles/lib/python/debugpy/launcher 41587 -- /workspaces/pyt/test.py \< input.txt
+
+I've seen the above problem only in Python's debug config (launch.json).
+
+The same approach in Python's build config (tasks.json) does work without any issues:
+"args": ["${file}", "<", "${fileDirname}/input.txt"],
+```
+
+
+
 
 
 
