@@ -2359,6 +2359,20 @@ import importlib
 
 
 
+```python
+    def load(self, state_name, **kwargs):
+        # FIXME: kwargs should be filtered
+        # Args passed from command line
+        cmd = kwargs.pop('cmd', dict())  # 第二参的 dict() 是什么？
+        if state_name in kwargs:
+            setattr(self, state_name, self.create_member_from_config(
+                (kwargs[state_name], cmd)))
+        else:
+            setattr(self, state_name, self.states[state_name].default)
+```
+
+
+
 
 
 
