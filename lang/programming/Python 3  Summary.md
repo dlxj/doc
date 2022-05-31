@@ -626,6 +626,37 @@ print("hi,,,")
 
 
 
+## Syntax
+
+
+
+### 添加命令行参数
+
+```python
+ 	import argparse
+ 	
+ 	"""
+    CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
+    """
+    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( '--num_gpus' )
+    sys.argv.append( '1' )
+    
+    parser = argparse.ArgumentParser(description='Text Recognition Training')
+    parser.add_argument('exp', type=str)
+    parser.add_argument('--name', type=str)
+    parser.add_argument('--batch_size', type=int, help='Batch size for training')
+    
+    parser.set_defaults(debug=False)
+    parser.set_defaults(benchmark=True)
+
+    args = parser.parse_args()
+    args = vars(args)
+    args = {k: v for k, v in args.items() if v is not None}
+```
+
+
+
 
 
 ## Path
