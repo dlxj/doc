@@ -7030,6 +7030,19 @@ conda install ipython pip --yes && \
 conda create -n DB python=3.7 --yes && \
 source activate DB && \
 conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+
+
+https://matpool.com/supports/doc-vscode-connect-matpool/
+    VS Code 远程连接矩池云机器教程
+# train.py 添加命令行参数，并用vscode 远程调试K80 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，然后F5 调试远行
+def main():
+
+    import sys
+    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( '--num_gpus' )
+    sys.argv.append( '1' )
+
+
 ```
 
 
