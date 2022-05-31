@@ -856,6 +856,11 @@ dataPath: `${__dirname}/data`  # __dirname是全局对象
     if ( os.path.exists(tmpmkv) ):
       os.unlink("tmp.mkv")
     os.symlink(videopath, "tmp.mkv")
+    
+    
+    
+    os.symlink('./outputs/workspace\\DB', 'workspace') # 建出来的软链打开会出错？？ 
+    
 ```
 
 
