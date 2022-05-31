@@ -23,6 +23,15 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+## Install pip
+
+```
+apt update
+apt install python3-pip
+```
+
+
+
 ## 升级pip
 
 ```
@@ -498,6 +507,12 @@ python -m debugpy --listen 5678 --wait-for-client t.py -arg1 ARG1 -arg2 ARG2
 
 
 
+```
+CUDA_VISIBLE_DEVICES=0 python -m debugpy --listen 5678 --wait-for-client train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
+```
+
+
+
 
 
 
@@ -540,6 +555,16 @@ The same approach in Python's build config (tasks.json) does work without any is
 ```
 
 
+
+### vscode 远程调试
+
+- https://matpool.com/supports/doc-vscode-connect-matpool/
+
+
+
+#### 使用 conda 虚拟环境
+
+ctrl + shift + p -> 选择 conda 虚拟环境DB 中的 python 解释器既可
 
 
 
