@@ -5725,6 +5725,18 @@ OCR Engine modes:
 
   > **DBNet训练过程笔记（超详细)** 实战级
 
+
+
+##### Vatti's clipping algorithm 算法
+
+- https://github.com/fonttools/pyclipper
+
+  > 缩放多边形的库
+
+  - http://www.angusj.com/delphi/clipper.php
+
+
+
 #### mmocr
 
 - https://zhuanlan.zhihu.com/p/484637638
