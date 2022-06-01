@@ -5667,6 +5667,47 @@ OCR Engine modes:
 > DBnet源码解析
 >
 > ICDAR2015 数据集
+>
+> <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220601082231209.png" alt="image-20220601082231209" style="zoom:50%;" />
+>
+> ![image-20220601082133262](深入理解神经网络：从逻辑回归到CNN.assets/image-20220601082133262.png)
+>
+> 其中A为红色实线区域面积，L为红色实线区域周长，r表示收缩率， 一般r=0.4。
+>
+> ```python
+> 		# 生成概率图的类 data\processes\make_seg_detection_data.py
+> 		class MakeSegDetectionData(DataProcess):
+> 			...
+> 			def process(self, data):
+> 				...
+> 				# polygon为红色实线区域，由n个顶点组成，每个顶点有x,y两个坐标值
+> 				# 这里应用shapely.geometry.Polygon统计任意形状四边形面积和周长
+> 				polygon_shape = Polygon(polygon)
+> 
+> 				# distance 即为上述公式（6）中 D的计算过程
+>                 distance = polygon_shape.area * \
+>                     (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
+>                 subject = [tuple(l) for l in polygons[i]]
+> 
+> 				# 应用pyclipper.PyclipperOffset进行红色实线区域收缩
+>                 padding = pyclipper.PyclipperOffset()
+>                 padding.AddPath(subject, pyclipper.JT_ROUND,
+>                                 pyclipper.ET_CLOSEDPOLYGON)
+>                 shrinked = padding.Execute(-distance)
+>                 if shrinked == []:
+>                     cv2.fillPoly(mask, polygon.astype(
+>                         np.int32)[np.newaxis, :, :], 0)
+>                     ignore_tags[i] = True
+>                     continue
+> 
+> 				# shrinded即为收缩后的蓝色虚线区域
+>                 shrinked = np.array(shrinked[0]).reshape(-1, 2)
+>                 # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
+>                 cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
+> 
+> ```
+>
+> 
 
 - https://zhuanlan.zhihu.com/p/368035566
   
