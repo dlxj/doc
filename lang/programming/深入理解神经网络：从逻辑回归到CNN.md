@@ -6990,15 +6990,22 @@ CPU 3× Xeon E5-2678 v3 + tesla k80
 
 - https://matpool.com
   
+- https://github.com/WassimBenzarti/colab-ssh
+  
+  > 看看能不能用vscode远程连接colab
+  
 - https://zhuanlan.zhihu.com/p/338507526
   
 - https://zhuanlan.zhihu.com/p/279401802
+
 - https://github.com/MhLiao/DB
   
   - https://github.com/cs-chan/Total-Text-Dataset 数据集
+  
 - https://univeryinli.github.io/2019/05/27/Ubuntu-k80%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
   
   > Ubuntu k80深度学习环境搭建
+  
 - https://www.guoyaohua.com/deeplearning-workstation.html
   
   > 深度学习工作站攒机指南
