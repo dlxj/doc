@@ -7064,18 +7064,53 @@ ldconfig -p | grep cuda
 	libnvrtc.so.10.0 (libc6,x86-64) => /usr/local/cuda-10.0/targets/x86_64-linux/lib/libnvrtc.so.10.0
 
 
-    
-    
+ 
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
 conda create -n DB python=3.7 --yes && \
 source activate DB && \
-conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch --yes
+
+
+cp /mnt/DB.zip /mnt/TD_TR.zip . && \
+unzip DB.zip && \
+unzip TD_TR.zip -d DB/datasets
+
+
+export CUDA_HOME=/usr/local/cuda && \
+echo $CUDA_HOME && \
+cd ~/DB/assets/ops/dcn/ && \
+python setup.py build_ext --inplace
+
+cd ~/DB && \
+pip install -r requirement.txt && \
+pip install --upgrade protobuf==3.20.0
 
 
 https://matpool.com/supports/doc-vscode-connect-matpool/
     VS Code 远程连接矩池云机器教程
-# train.py 添加命令行参数，并用vscode 远程调试K80 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，然后F5 调试远行
+# train.py 添加命令行参数，并用vscode 远程调试K80 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，vscode 中修改train.py 在main 函数下加入：
+
+def main():
+
+    import sys
+    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( '--num_gpus' )
+    sys.argv.append( '1' )
+
+修改：/root/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml    
+        train: 
+        class: TrainSettings
+        data_loader: 
+            class: DataLoader
+            dataset: ^train_data
+            batch_size: 16
+            num_workers: 16
+           
+把batch_size 和 num_workers 调小一点，否则K80 顶不住会出错，这里改成12
+
+ 
+vscode 中然后F5 调试远行train.py
 
 C:\Users\i\.ssh\config
 Host hz-t3.matpool.com
@@ -7085,12 +7120,6 @@ Host hz-t3.matpool.com
 
 
 
-def main():
-
-    import sys
-    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
-    sys.argv.append( '--num_gpus' )
-    sys.argv.append( '1' )
 
 
 ```
