@@ -7250,6 +7250,16 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 
 
+# 2080TI
+
+- https://blog.csdn.net/cskywit/article/details/97239371
+
+  > Ubuntu18.04下深度学习环境搭建及问题解决（双系统+2080Ti显卡）
+
+- https://developer.nvidia.com/cuda-gpus
+
+  > cuda gpu 支持列表
+
 
 
 # Colab
