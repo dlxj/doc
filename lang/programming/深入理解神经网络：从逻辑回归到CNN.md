@@ -7375,6 +7375,14 @@ Host hz-t3.matpool.com
 
 
 
+```
+D:\usr\cloudflared-windows-amd64.exe
+```
+
+
+
+
+
 ## 卸载CUDA
 
 - https://stackoverflow.com/questions/56431461/how-to-remove-cuda-completely-from-ubuntu
