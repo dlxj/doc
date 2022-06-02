@@ -190,6 +190,12 @@ hook.beforeEach(function(content) {
 > [李宣](https://lixuan.xyz/blog) [GIF MMA编码](https://lixuan.xyz/blog/2019-10-29/2276.html)
 > [苹果](http://chenminqi.github.io/)
 
+#  语音识别大佬
+
+> [语音声学特征提取：用于ASRT的语谱图特征的算法原理与实现](https://blog.ailemon.net/2021/03/08/speech-acoustic-feature-extraction-the-principle-and-implement-of-the-spectrogram-algorithm-for-asrt/)
+
+
+
 # Github大佬
 
 > [为什么我从vue转到了react?](https://github.com/coppyC/blog/issues/9)  [git issue blog很nice]()
