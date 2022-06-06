@@ -5663,7 +5663,9 @@ OCR Engine modes:
 > >
 > > backbone of **ResNet-18**, 主干网络是ResNet网络，后接**FPN**，再对不同尺寸的特征图进行concat，最终由两个不同的输出头给出结果。
 > >
-> > 整个流程如下
+> > 整个流程如下 https://zhuanlan.zhihu.com/p/368035566
+> >
+> > DB\decoders\seg_detector.py  上采样的代码在这里
 > >
 > > 图像经过FPN网络结构，得到四个特征图，分别为1/4,1/8,1/16,1/32大小；
 > > 将四个特征图分别上采样为1/4大小，再concat，得到特征图F
@@ -5673,6 +5675,15 @@ OCR Engine modes:
 > >
 > > 训练阶段：对P、T、B进行监督训练，P和B是用的相同的监督信号（label）；
 > > 推理阶段：通过P或B就可以得到文本框。
+> >
+> > ```
+> > # log.py 修改
+> > 	if not os.path.exists(self.log_dir):
+> >             # os.symlink(storage_dir, self.log_dir)
+> >             os.symlink(r'D:\pytorch\DB\outputs\workspace\DB', r'D:\pytorch\DB\workspace')
+> > ```
+> >
+> > 
 
 - https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/
 > OCR-(DB+CRNN)-代码分析-实践环境配置及运行 **非常详细**
@@ -7171,6 +7182,24 @@ Host hz-t3.matpool.com
 
 
 
+```python
+    args = {
+        'exp': 'experiments/seg_detector/td500_resnet18_deform_thre.yaml',
+        'verbose': False,
+        'visualize': False,
+        'force_reload': False,
+        'validate': False,
+        'print_config_only': False,
+        'debug': False,
+        'benchmark': True,
+        'distributed': False,
+        'local_rank': 0,
+        'num_gpus': 1,
+    }
+```
+
+
+
 
 
 
@@ -7287,6 +7316,26 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 - https://developer.nvidia.com/cuda-gpus
 
   > cuda gpu 支持列表
+
+
+
+# 3090
+
+- https://zhuanlan.zhihu.com/p/279401802
+
+```
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0 -c pytorch --yes
+
+
+
+
+```
+
+
 
 
 
