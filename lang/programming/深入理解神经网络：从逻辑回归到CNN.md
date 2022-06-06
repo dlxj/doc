@@ -5720,26 +5720,59 @@ OCR Engine modes:
 > 				polygon_shape = Polygon(polygon)
 > 
 > 				# distance 即为上述公式（6）中 D的计算过程
->                 distance = polygon_shape.area * \
->                     (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
->                 subject = [tuple(l) for l in polygons[i]]
+>              distance = polygon_shape.area * \
+>                  (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
+>              subject = [tuple(l) for l in polygons[i]]
 > 
 > 				# 应用pyclipper.PyclipperOffset进行红色实线区域收缩
->                 padding = pyclipper.PyclipperOffset()
->                 padding.AddPath(subject, pyclipper.JT_ROUND,
->                                 pyclipper.ET_CLOSEDPOLYGON)
->                 shrinked = padding.Execute(-distance)
->                 if shrinked == []:
->                     cv2.fillPoly(mask, polygon.astype(
->                         np.int32)[np.newaxis, :, :], 0)
->                     ignore_tags[i] = True
->                     continue
+>              padding = pyclipper.PyclipperOffset()
+>              padding.AddPath(subject, pyclipper.JT_ROUND,
+>                              pyclipper.ET_CLOSEDPOLYGON)
+>              shrinked = padding.Execute(-distance)
+>              if shrinked == []:
+>                  cv2.fillPoly(mask, polygon.astype(
+>                      np.int32)[np.newaxis, :, :], 0)
+>                  ignore_tags[i] = True
+>                  continue
 > 
 > 				# shrinded即为收缩后的蓝色虚线区域
->                 shrinked = np.array(shrinked[0]).reshape(-1, 2)
->                 # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
->                 cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
+>              shrinked = np.array(shrinked[0]).reshape(-1, 2)
+>              # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
+>              cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
 > 
+>             
+>             
+> Syntax: cv2.fillpoly(Image,End_Points,Color)
+> Parameter:
+> Image: This is image on which we want draw filled polygon
+> End_Points: Points of polygon(for triangle 3 end points, for rectangle 4 end points will be there)
+> Color: It specifies the color of polygon   
+>     
+> cv2.fillPoly(img, pts=[points], color=(255, 0, 0))
+>             
+> ```
+>
+> ```
+> # 可视化
+> 
+> 		fuse = torch.cat((p5, p4, p3, p2), 1)
+>         # this is the pred module, not binarization module; 
+>         # We do not correct the name due to the trained model.
+>         binary = self.binarize(fuse)
+> 
+>         # 可视化--------
+>         binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+>         thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+>         binary_img = binary_img.astype(np.uint8)
+>         thresh_img = thresh_img.astype(np.uint8)
+>         cv2.imwrite('bin.bmp', binary_img)
+>         binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+>         cv2.imwrite('cm.bmp', binary_color_map)
+> 
+>         cv2.imwrite('thresh.bmp',thresh_img)
+>         thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+>         cv2.imwrite('color_thresh.bmp',thresh_color_map)
+>         # ------------------
 > ```
 >
 > 
@@ -7305,6 +7338,23 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 
 
+# 1080TI
+
+- https://www.jianshu.com/p/f3a3d8dc9ba6
+
+```
+
+sed -i 's/batch_size\:\ 16/batch_size\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
+sed -i 's/num_workers\:\ 16/num_workers\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
+
+
+cd ~/DB && \
+CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
+
+```
+
+
+
 
 
 # 2080TI
@@ -7323,6 +7373,54 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 - https://zhuanlan.zhihu.com/p/279401802
 
+
+
+```
+不过新的问题又出现了：七彩虹Neptune（水神）需要3×8pin供电，而海盗船VS550仅能提供2个8pin PCIE电源接口。
+
+没办法不得不连电源一起换。最后CPU一直采用原厂小风扇，噪声较大。干脆一不做二不休换了水冷散热器。
+```
+
+
+
+```
+
+https://pytorch.org/get-started/previous-versions/
+
+ldconfig -p | grep cuda
+
+cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
+unzip DB.zip && \
+unzip TD_TR.zip -d DB/datasets
+
+
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+
+
+
+
+
+
+
+export CUDA_HOME=/usr/local/cuda && \
+echo $CUDA_HOME && \
+cd ~/DB/assets/ops/dcn/ && \
+python setup.py build_ext --inplace
+
+cd ~/DB && \
+pip install -r requirement.txt && \
+pip install --upgrade protobuf==3.20.0
+```
+
+
+
+
+
+
 ```
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
@@ -7333,6 +7431,41 @@ conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11
 
 
 
+```
+
+
+
+```
+apt-get --purge remove cuda nvidia* libnvidia-* && \
+dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+apt-get remove cuda-* && \
+apt autoremove && \
+apt-get update
+```
+
+
+
+```
+# 可视化
+
+		fuse = torch.cat((p5, p4, p3, p2), 1)
+        # this is the pred module, not binarization module; 
+        # We do not correct the name due to the trained model.
+        binary = self.binarize(fuse)
+
+        # 可视化--------
+        binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+        thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+        binary_img = binary_img.astype(np.uint8)
+        thresh_img = thresh_img.astype(np.uint8)
+        cv2.imwrite('bin.bmp', binary_img)
+        binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+        cv2.imwrite('cm.bmp', binary_color_map)
+
+        cv2.imwrite('thresh.bmp',thresh_img)
+        thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+        cv2.imwrite('color_thresh.bmp',thresh_color_map)
+        # ------------------
 ```
 
 
