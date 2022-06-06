@@ -9558,6 +9558,23 @@ Pyqtdeploy
 
 
 
+# 控制鼠标
+
+- https://pyautogui.readthedocs.io/en/latest/mouse.html
+
+```
+python3 -m pip install pyautogui
+pip install keyboard
+
+
+```
+
+
+
+
+
+
+
 # 爬虫
 
 

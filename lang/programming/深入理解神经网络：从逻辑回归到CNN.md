@@ -5584,6 +5584,30 @@ OCR Engine modes:
   
 - https://www.cnblogs.com/yanghailin/p/12337543.html 官方实现配置过程
   
+  > make_border_map.py这个是为了做threshold的标签的
+  >
+  > ```
+  > # DB/structure/model.py 改一下
+  > class BasicModel(nn.Module):
+  >     def __init__(self, args):
+  >         nn.Module.__init__(self)
+  > 
+  >         backboneName = 'deformable_resnet18' # args['backbone']
+  >         backboneFunc = getattr(backbones, backboneName)
+  >         backboneInstance = backboneFunc(**args.get('backbone_args', {}))
+  >         self.backbone = backboneInstance
+  > 
+  >         decoderName = 'SegDetector' # args['decoder']
+  >         decoderFunc = getattr(decoders, decoderName)
+  >         decoderInstance = decoderFunc(**args.get('decoder_args', {}))
+  >         self.decoder = decoderInstance
+  > 
+  >         # self.backbone = getattr(backbones, args['backbone'])(**args.get('backbone_args', {}))
+  >         # self.decoder = getattr(decoders, args['decoder'])(**args.get('decoder_args', {}))
+  > ```
+  >
+  > 
+  
   - https://www.cnblogs.com/yanghailin/p/12209685.html 两个都有
   
 - https://blog.csdn.net/weixin_43705733/article/details/123347511  **非？官方实现配置过程**
