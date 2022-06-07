@@ -34,8 +34,15 @@ if __name__ == "__main__":
         items.append( item )
 
     img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
+
+    poly = items[0]['poly']
+    poly = np.array(poly)
+    # poly2 = poly.astype(np.int32)
+
+    cv2.fillPoly(img, pts=poly, color=(255, 0, 0))
+
     cv2.imshow("origin", img)
     cv2.waitKey()
     

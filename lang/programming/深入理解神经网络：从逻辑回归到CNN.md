@@ -5806,6 +5806,7 @@ OCR Engine modes:
 > End_Points: Points of polygon(for triangle 3 end points, for rectangle 4 end points will be there)
 > Color: It specifies the color of polygon   
 > 
+> points = np.array([[160, 130], [350, 130], [250, 300]])
 > cv2.fillPoly(img, pts=[points], color=(255, 0, 0))
 > 
 > ```
