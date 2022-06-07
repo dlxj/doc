@@ -5720,59 +5720,64 @@ OCR Engine modes:
 > 				polygon_shape = Polygon(polygon)
 > 
 > 				# distance 即为上述公式（6）中 D的计算过程
->              distance = polygon_shape.area * \
->                  (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
->              subject = [tuple(l) for l in polygons[i]]
+>           distance = polygon_shape.area * \
+>               (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
+>           subject = [tuple(l) for l in polygons[i]]
 > 
 > 				# 应用pyclipper.PyclipperOffset进行红色实线区域收缩
->              padding = pyclipper.PyclipperOffset()
->              padding.AddPath(subject, pyclipper.JT_ROUND,
->                              pyclipper.ET_CLOSEDPOLYGON)
->              shrinked = padding.Execute(-distance)
->              if shrinked == []:
->                  cv2.fillPoly(mask, polygon.astype(
->                      np.int32)[np.newaxis, :, :], 0)
->                  ignore_tags[i] = True
->                  continue
+>           padding = pyclipper.PyclipperOffset()
+>           padding.AddPath(subject, pyclipper.JT_ROUND,
+>                           pyclipper.ET_CLOSEDPOLYGON)
+>           shrinked = padding.Execute(-distance)
+>           if shrinked == []:
+>               cv2.fillPoly(mask, polygon.astype(
+>                   np.int32)[np.newaxis, :, :], 0)
+>               ignore_tags[i] = True
+>               continue
 > 
 > 				# shrinded即为收缩后的蓝色虚线区域
->              shrinked = np.array(shrinked[0]).reshape(-1, 2)
->              # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
->              cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
+>           shrinked = np.array(shrinked[0]).reshape(-1, 2)
+>           # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
+>           cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
 > 
->             
->             
+> 
+>         
+> 
+> 第一张图：
+> './datasets/TD_TR/TR400//train_images/IMG_0117.jpg'
+>   
+> 
 > Syntax: cv2.fillpoly(Image,End_Points,Color)
 > Parameter:
 > Image: This is image on which we want draw filled polygon
 > End_Points: Points of polygon(for triangle 3 end points, for rectangle 4 end points will be there)
 > Color: It specifies the color of polygon   
->     
+> 
 > cv2.fillPoly(img, pts=[points], color=(255, 0, 0))
->             
+> 
 > ```
 >
 > ```
 > # 可视化
 > 
 > 		fuse = torch.cat((p5, p4, p3, p2), 1)
->         # this is the pred module, not binarization module; 
->         # We do not correct the name due to the trained model.
->         binary = self.binarize(fuse)
+>      # this is the pred module, not binarization module; 
+>      # We do not correct the name due to the trained model.
+>      binary = self.binarize(fuse)
 > 
->         # 可视化--------
->         binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
->         thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
->         binary_img = binary_img.astype(np.uint8)
->         thresh_img = thresh_img.astype(np.uint8)
->         cv2.imwrite('bin.bmp', binary_img)
->         binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
->         cv2.imwrite('cm.bmp', binary_color_map)
+>      # 可视化--------
+>      binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+>      thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+>      binary_img = binary_img.astype(np.uint8)
+>      thresh_img = thresh_img.astype(np.uint8)
+>      cv2.imwrite('bin.bmp', binary_img)
+>      binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+>      cv2.imwrite('cm.bmp', binary_color_map)
 > 
->         cv2.imwrite('thresh.bmp',thresh_img)
->         thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
->         cv2.imwrite('color_thresh.bmp',thresh_color_map)
->         # ------------------
+>      cv2.imwrite('thresh.bmp',thresh_img)
+>      thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+>      cv2.imwrite('color_thresh.bmp',thresh_color_map)
+>      # ------------------
 > ```
 >
 > 
