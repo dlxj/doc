@@ -6,11 +6,12 @@
 
 import numpy as np
 import math
+import cv2
 
 if __name__ == "__main__":
+    
     im = './TD_TR/TD500/train_images/IMG_0855.JPG'
     gt = './TD_TR/TD500/train_gts/IMG_0855.JPG.txt'
-    
     
     items = []
     reader = open(gt, 'r').readlines()
@@ -32,3 +33,10 @@ if __name__ == "__main__":
         item['text'] = label
         items.append( item )
 
+    img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    cv2.imshow("origin", img)
+    cv2.waitKey()
+    
+    a = 1
