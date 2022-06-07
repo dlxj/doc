@@ -35,13 +35,21 @@ if __name__ == "__main__":
 
     img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+
+    # img = cv2.imread("image.png")
+  
+    # points = np.array([[160, 130], [350, 130], [250, 300]])
+
+    # cv2.fillPoly(img, pts=[points], color=(255, 0, 0))
     
 
     poly = items[0]['poly']
     poly = np.array(poly)
     # poly2 = poly.astype(np.int32)
 
-    cv2.fillPoly(img, pts=poly, color=(255, 0, 0))
+    # poly = np.array( [ [5,5], [10,10], [20,20] ] )
+    cv2.fillPoly(img, pts=[ poly ], color=(255, 0, 0))
 
     cv2.imshow("origin", img)
     cv2.waitKey()
