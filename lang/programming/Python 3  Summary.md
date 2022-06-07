@@ -1434,11 +1434,7 @@ class EAPIrt2PLModel(object):
 ```
     def __init__(self, data_dir=None, data_list=None, cmd={}, **kwargs):
 		self.debug = cmd.get('debug', False)
-
-
 ```
-
-
 
 
 
