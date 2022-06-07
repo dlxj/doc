@@ -812,7 +812,7 @@ load_all(arg1=1, arg2=2, arg3=3)
 ### isinstance 多个
 
 ```python
-isinstance(args, (int, float, str)) # 是否是其中任意一个
+isinstance(args, (int, float, str)) # 是否是其中任意一个？还是说是这个只读列表？
 ```
 
 
@@ -1435,6 +1435,19 @@ class EAPIrt2PLModel(object):
     def __init__(self, data_dir=None, data_list=None, cmd={}, **kwargs):
 		self.debug = cmd.get('debug', False)
 ```
+
+
+
+### hasattr
+
+```
+# DB\data\processes\augment_data.py
+# 是否有这个属性
+if hasattr(base, 'states'):
+	states.update(base.states)
+```
+
+
 
 
 
@@ -2841,6 +2854,13 @@ print(u'输出路径：%s.npy' % data_extract_npy)
 ```
 
 
+
+### in 是否包含
+
+```
+        if 'train' in self.data_list[0]:
+            self.is_training = True
+```
 
 
 

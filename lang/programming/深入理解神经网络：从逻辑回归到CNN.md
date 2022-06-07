@@ -5741,13 +5741,62 @@ OCR Engine modes:
 >           cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
 > 
 > 
+> 数据加载
+> /root/DB/data/image_dataset.py
+> class ImageDataset(data.Dataset, Configurable):
+> 	self.data_dir = ['./datasets/TD_TR/TD500/', './datasets/TD_TR/TR400/']
+> 	self.data_list = ['./datasets/TD_TR/TD500/train_list.txt', './datasets/TD_TR/TR400/train_list.txt']
 > 
+>     
+>     
+> 
+> 
+> 读人工标记(图片文本区域的多边形)
+> /root/DB/data/image_dataset.py
+> gt_paths=['./datasets/TD_TR/TD500//train_gts/IMG_0855.JPG.txt',
+> './datasets/TD_TR/TD500//train_gts/IMG_1835.JPG.txt',
+> './datasets/TD_TR/TD500//train_gts/IMG_2113.JPG.txt']
+> 
+>     def load_ann(self):
+>         res = []
+>         for gt in self.gt_paths:
+>             lines = []
+>             reader = open(gt, 'r').readlines()
+>             for line in reader:
+>                 item = {}
+>                 parts = line.strip().split(',')
+>                 label = parts[-1]
+>                 if 'TD' in self.data_dir[0] and label == '1':
+>                     label = '###'
+>                 line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
+>                 if 'icdar' in self.data_dir[0]:
+>                     poly = np.array(list(map(float, line[:8]))).reshape((-1, 2)).tolist()
+>                 else:
+>                     num_points = math.floor((len(line) - 1) / 2) * 2
+>                     poly = np.array(list(map(float, line[:num_points]))).reshape((-1, 2)).tolist()
+>                 item['poly'] = poly
+>                 item['text'] = label
+>                 lines.append(item)
+>             res.append(lines)
+>         return res
+> 
+> 
+>         
 > # 可视化
 > basename = os.path.basename(filename)
 > cv2.imwrite(f'/root/{basename}_shrinked.jpg', gt[0] * 255) # 数值是 0~1.0 转灰度图
 >         
 > 
 > 第一张图： 是随机的，没用
+> DB\data\data_loader.py  这里控制是否随机加载数据 改 shuffle=False 不随机
+> 	            torch.utils.data.DataLoader.__init__(
+>                 self, self.dataset,
+>                 batch_size=self.batch_size, num_workers=self.num_workers,
+>                 drop_last=self.drop_last, shuffle=self.shuffle,
+>                 pin_memory=True, collate_fn=self.collect_fn,
+>                 worker_init_fn=default_worker_init_fn)
+>    
+>    
 > './datasets/TD_TR/TR400//train_images/IMG_0117.jpg'
 >   
 > 
