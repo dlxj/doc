@@ -1429,6 +1429,17 @@ class EAPIrt2PLModel(object):
 
 
 
+### 默认参数
+
+```
+    def __init__(self, data_dir=None, data_list=None, cmd={}, **kwargs):
+		self.debug = cmd.get('debug', False)
+
+
+```
+
+
+
 
 
 ## OP
@@ -2652,6 +2663,20 @@ max_keys = [k for k, v in dic.items() if v == max_value] # getting all keys cont
 
 print(max_value, max_keys)
 ```
+
+
+
+### update
+
+```
+# 批量修改 key, value
+/root/DB/data/processes/make_seg_detection_data.py
+		data.update(image=image,
+                    polygons=polygons,
+                    gt=gt, mask=mask, filename=filename)
+```
+
+
 
 
 

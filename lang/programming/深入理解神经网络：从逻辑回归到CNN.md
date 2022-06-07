@@ -5741,9 +5741,13 @@ OCR Engine modes:
 >           cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
 > 
 > 
+> 
+> # 可视化
+> basename = os.path.basename(filename)
+> cv2.imwrite(f'/root/{basename}_shrinked.jpg', gt[0] * 255) # 数值是 0~1.0 转灰度图
 >         
 > 
-> 第一张图：
+> 第一张图： 是随机的，没用
 > './datasets/TD_TR/TR400//train_images/IMG_0117.jpg'
 >   
 > 
@@ -5759,6 +5763,11 @@ OCR Engine modes:
 >
 > ```
 > # 可视化
+> 
+> 
+> 
+>         
+> 
 > 
 > 		fuse = torch.cat((p5, p4, p3, p2), 1)
 >      # this is the pred module, not binarization module; 
