@@ -7340,11 +7340,13 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 # 1080TI
 
+- https://www.autodl.com/console/instance/list
+
 - https://www.jianshu.com/p/f3a3d8dc9ba6
 
 ```
 
-sed -i 's/batch_size\:\ 16/batch_size\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
+sed -i 's/batch_size\:\ 16/batch_size\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
 sed -i 's/num_workers\:\ 16/num_workers\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
 
 
