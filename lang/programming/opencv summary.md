@@ -1560,6 +1560,34 @@ if __name__ == '__main__':
 
 
 
+# Draw poly
+
+```python
+    img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    poly = np.array( [ [323, 621], [1186,652], [1178, 864], [315, 833] ] )
+    cv2.fillPoly(img, pts=[ poly ], color=(0, 0, 255))  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
+    cv2.imwrite("poly.jpg", img)
+    cv2.imshow("origin", img)
+    cv2.waitKey()
+```
+
+
+
+```python
+# 只画线，不填充
+	cv2.polylines(img, 
+              [ poly ], 
+              isClosed = True,
+              color = (0, 0, 255),
+              thickness = 1)
+```
+
+
+
+
+
 
 
 # 卷积(只保留水平线)
