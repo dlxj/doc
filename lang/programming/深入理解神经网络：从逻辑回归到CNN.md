@@ -7266,6 +7266,38 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 
 
+```
+部件	型号	价格	链接	备注
+CPU	英特尔（Intel）酷睿六核i7-6850K 盒装CPU处理器 	4599	http://item.jd.com/11814000696.html	
+散热器	美商海盗船 H55 水冷	449	https://item.jd.com/10850633518.html	
+主板	华硕（ASUS）华硕 X99-E WS/USB 3.1工作站主板	4759	
+内存	美商海盗船(USCORSAIR) 复仇者LPX DDR4 3000 32GB(16Gx4条)  	2799 * 2	https://item.jd.com/1990572.html	
+SSD	三星(SAMSUNG) 960 EVO 250G M.2 NVMe 固态硬盘	599	https://item.jd.com/3739097.html		
+硬盘	希捷(SEAGATE)酷鱼系列 4TB 5900转 台式机机械硬盘 * 2 	629 * 2	https://item.jd.com/4220257.html	
+电源	美商海盗船 AX1500i 全模组电源 80Plus金牌	3699	https://item.jd.com/10783917878.html
+机箱	美商海盗船 AIR540 USB3.0 	949	http://item.jd.com/12173900062.html
+显卡	技嘉（GIGABYTE） GTX1080Ti 11GB 非公版高端游戏显卡深度学习涡轮 * 4 7400 * 4    https://item.jd.com/10583752777.html
+
+yao 8:35:32
+CPU：I9 9820X 4600元
+主板：华硕WX X299 SAGE 4200元
+内存：金士顿骇客神条16G 3000 X4 2200元
+机箱：联立 包豪斯O11 800元
+散热：海盗船H150i pro 1300元
+显卡：技嘉2080ti 涡轮X4 40000元
+配件：不需要NVLINK了
+固态：三星 970pro 512G 1200元
+机械硬盘：西数紫盘3T 480元
+电源：振华leadex 2000W 3300元
+机箱风扇：利民TL-C12 X5 400元
+总计 58480
+
+```
+
+
+
+
+
 # Colab
 
 
