@@ -39,10 +39,19 @@ if __name__ == "__main__":
     img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
+    # 对图片进行一系列的变换(凭空制造更多的数据，用于训练)
     sequence = iaa.Sequential([
         iaa.Fliplr(0.5), # 0.5 is the probability, horizontally flip 50% of the images
-        #iaa.geometric.Affine(rotate= [-10, 10]) # blur images with a sigma of 0 to 3.0
+        iaa.geometric.Affine(rotate= [-10, 10]), # 透视变换
+        iaa.Resize( [0.5, 3.0] )
     ])
+
+    img = sequence.augment_image(img)
+
+
+    # 图片变换以后，相应的人工标记（文本的多边形定位），也要进行变换
+
+
 
     # sequence = [self.build(value, root=False) for value in args]
     #return iaa.Sequential(sequence)
@@ -56,6 +65,9 @@ if __name__ == "__main__":
 	# {'cls': 'Affine', 'rotate': [-10, 10]}
 	# ['Resize', [0.5, 3.0]]
 
+    # aug = self.augmenter.to_deterministic()
+
+	# data['image'] = aug.augment_image(image)
 
 
     for i in range( len(items) ):
