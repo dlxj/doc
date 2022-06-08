@@ -1,12 +1,15 @@
 
+"""
+数据增强
+"""
 
-"""
-显示人工标记的区域
-"""
 
 import numpy as np
 import math
 import cv2
+#import imgaug
+import imgaug.augmenters as iaa
+
 
 if __name__ == "__main__":
     
@@ -35,6 +38,25 @@ if __name__ == "__main__":
 
     img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    sequence = iaa.Sequential([
+        iaa.Fliplr(0.5), # 0.5 is the probability, horizontally flip 50% of the images
+        #iaa.geometric.Affine(rotate= [-10, 10]) # blur images with a sigma of 0 to 3.0
+    ])
+
+    # sequence = [self.build(value, root=False) for value in args]
+    #return iaa.Sequential(sequence)
+
+
+    # iaa.Fliplr(0.5)
+    
+    # imgaug.augmenters.geometric.Affine  'rotate':[-10, 10]
+
+	# ['Fliplr', 0.5]
+	# {'cls': 'Affine', 'rotate': [-10, 10]}
+	# ['Resize', [0.5, 3.0]]
+
+
 
     for i in range( len(items) ):
         poly = items[i]['poly']

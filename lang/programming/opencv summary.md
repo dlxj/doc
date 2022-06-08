@@ -1563,7 +1563,9 @@ if __name__ == '__main__':
 # Draw poly
 
 ```python
-    img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
+# lang\programming\pytorch\文本检测\DBNET\DBNet官方实现\poly.py
+# lang\programming\pytorch\文本检测\DBNET\DBNet官方实现\DB\data\image_dataset.py
+	img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     poly = np.array( [ [323, 621], [1186,652], [1178, 864], [315, 833] ] )
