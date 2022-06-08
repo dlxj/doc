@@ -865,6 +865,26 @@ class EAPIrt2PLModel(object):
 
 
 
+### 动态定义类的静态方法
+
+```python
+    def draw_polygons(self, image, polygons, ignore_tags):
+        for i in range(len(polygons)):
+            polygon = polygons[i].reshape(-1, 2).astype(np.int32)
+            ignore = ignore_tags[i]
+            if ignore:
+                color = (255, 0, 0)  # depict ignorable polygons in blue
+            else:
+                color = (0, 0, 255)  # depict polygons in red
+
+            cv2.polylines(image, [polygon], True, color, 1)
+    polylines = staticmethod(draw_polygons)
+```
+
+
+
+
+
 ### setter
 
 ```python
