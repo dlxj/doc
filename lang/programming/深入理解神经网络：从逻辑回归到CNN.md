@@ -5584,6 +5584,30 @@ OCR Engine modes:
   
 - https://www.cnblogs.com/yanghailin/p/12337543.html 官方实现配置过程
   
+  > make_border_map.py这个是为了做threshold的标签的
+  >
+  > ```
+  > # DB/structure/model.py 改一下
+  > class BasicModel(nn.Module):
+  >     def __init__(self, args):
+  >         nn.Module.__init__(self)
+  > 
+  >         backboneName = 'deformable_resnet18' # args['backbone']
+  >         backboneFunc = getattr(backbones, backboneName)
+  >         backboneInstance = backboneFunc(**args.get('backbone_args', {}))
+  >         self.backbone = backboneInstance
+  > 
+  >         decoderName = 'SegDetector' # args['decoder']
+  >         decoderFunc = getattr(decoders, decoderName)
+  >         decoderInstance = decoderFunc(**args.get('decoder_args', {}))
+  >         self.decoder = decoderInstance
+  > 
+  >         # self.backbone = getattr(backbones, args['backbone'])(**args.get('backbone_args', {}))
+  >         # self.decoder = getattr(decoders, args['decoder'])(**args.get('decoder_args', {}))
+  > ```
+  >
+  > 
+  
   - https://www.cnblogs.com/yanghailin/p/12209685.html 两个都有
   
 - https://blog.csdn.net/weixin_43705733/article/details/123347511  **非？官方实现配置过程**
@@ -5639,7 +5663,9 @@ OCR Engine modes:
 > >
 > > backbone of **ResNet-18**, 主干网络是ResNet网络，后接**FPN**，再对不同尺寸的特征图进行concat，最终由两个不同的输出头给出结果。
 > >
-> > 整个流程如下
+> > 整个流程如下 https://zhuanlan.zhihu.com/p/368035566
+> >
+> > DB\decoders\seg_detector.py  上采样的代码在这里
 > >
 > > 图像经过FPN网络结构，得到四个特征图，分别为1/4,1/8,1/16,1/32大小；
 > > 将四个特征图分别上采样为1/4大小，再concat，得到特征图F
@@ -5649,6 +5675,15 @@ OCR Engine modes:
 > >
 > > 训练阶段：对P、T、B进行监督训练，P和B是用的相同的监督信号（label）；
 > > 推理阶段：通过P或B就可以得到文本框。
+> >
+> > ```
+> > # log.py 修改
+> > 	if not os.path.exists(self.log_dir):
+> >             # os.symlink(storage_dir, self.log_dir)
+> >             os.symlink(r'D:\pytorch\DB\outputs\workspace\DB', r'D:\pytorch\DB\workspace')
+> > ```
+> >
+> > 
 
 - https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/
 > OCR-(DB+CRNN)-代码分析-实践环境配置及运行 **非常详细**
@@ -5685,26 +5720,141 @@ OCR Engine modes:
 > 				polygon_shape = Polygon(polygon)
 > 
 > 				# distance 即为上述公式（6）中 D的计算过程
->                 distance = polygon_shape.area * \
->                     (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
->                 subject = [tuple(l) for l in polygons[i]]
+>        distance = polygon_shape.area * \
+>            (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
+>        subject = [tuple(l) for l in polygons[i]]
 > 
 > 				# 应用pyclipper.PyclipperOffset进行红色实线区域收缩
->                 padding = pyclipper.PyclipperOffset()
->                 padding.AddPath(subject, pyclipper.JT_ROUND,
->                                 pyclipper.ET_CLOSEDPOLYGON)
->                 shrinked = padding.Execute(-distance)
->                 if shrinked == []:
->                     cv2.fillPoly(mask, polygon.astype(
->                         np.int32)[np.newaxis, :, :], 0)
->                     ignore_tags[i] = True
->                     continue
+>        padding = pyclipper.PyclipperOffset()
+>        padding.AddPath(subject, pyclipper.JT_ROUND,
+>                        pyclipper.ET_CLOSEDPOLYGON)
+>        shrinked = padding.Execute(-distance)
+>        if shrinked == []:
+>            cv2.fillPoly(mask, polygon.astype(
+>                np.int32)[np.newaxis, :, :], 0)
+>            ignore_tags[i] = True
+>            continue
 > 
 > 				# shrinded即为收缩后的蓝色虚线区域
->                 shrinked = np.array(shrinked[0]).reshape(-1, 2)
->                 # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
->                 cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
+>        shrinked = np.array(shrinked[0]).reshape(-1, 2)
+>        # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
+>        cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
 > 
+> 
+> 数据加载
+> /root/DB/data/image_dataset.py
+> class ImageDataset(data.Dataset, Configurable):
+> 	self.data_dir = ['./datasets/TD_TR/TD500/', './datasets/TD_TR/TR400/']
+> 	self.data_list = ['./datasets/TD_TR/TD500/train_list.txt', './datasets/TD_TR/TR400/train_list.txt']
+> 
+> 
+> 
+> 
+> 
+> 读人工标记(图片文本区域的多边形)
+> /root/DB/data/image_dataset.py
+> gt_paths=['./datasets/TD_TR/TD500//train_gts/IMG_0855.JPG.txt',
+> './datasets/TD_TR/TD500//train_gts/IMG_1835.JPG.txt',
+> './datasets/TD_TR/TD500//train_gts/IMG_2113.JPG.txt']
+> 
+>  def load_ann(self):
+>      res = []
+>      for gt in self.gt_paths:
+>          lines = []
+>          reader = open(gt, 'r').readlines()
+>          for line in reader:
+>              item = {}
+>              parts = line.strip().split(',')
+>              label = parts[-1]
+>              if 'TD' in self.data_dir[0] and label == '1':
+>                  label = '###'
+>              line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
+>              if 'icdar' in self.data_dir[0]:
+>                  poly = np.array(list(map(float, line[:8]))).reshape((-1, 2)).tolist()
+>              else:
+>                  num_points = math.floor((len(line) - 1) / 2) * 2
+>                  poly = np.array(list(map(float, line[:num_points]))).reshape((-1, 2)).tolist()
+>              item['poly'] = poly
+>              item['text'] = label
+>              lines.append(item)
+>          res.append(lines)
+>      return res
+> 
+> 
+> 
+> # 经过了数据增强
+> # /root/DB/data/processes/augment_data.py
+> 	
+>     aug = self.augmenter.to_deterministic()
+> 
+> 	data['image'] = aug.augment_image(image)
+> 
+>     import imgaug.augmenters as iaa
+>     
+> 	iaa.Fliplr(0.5)
+>     
+>     imgaug.augmenters.geometric.Affine  'rotate':[-10, 10]
+> 
+> 	['Fliplr', 0.5]
+> 	{'cls': 'Affine', 'rotate': [-10, 10]}
+> 	['Resize', [0.5, 3.0]]
+>     
+>         
+> # 可视化
+> basename = os.path.basename(filename)
+> cv2.imwrite(f'/root/{basename}_shrinked.jpg', gt[0] * 255) # 数值是 0~1.0 转灰度图
+> 
+> 
+> 第一张图： 是随机的，没用
+> DB\data\data_loader.py  这里控制是否随机加载数据 改 shuffle=False 不随机
+> 	            torch.utils.data.DataLoader.__init__(
+>              self, self.dataset,
+>              batch_size=self.batch_size, num_workers=self.num_workers,
+>              drop_last=self.drop_last, shuffle=self.shuffle,
+>              pin_memory=True, collate_fn=self.collect_fn,
+>              worker_init_fn=default_worker_init_fn)
+> 
+> 
+> './datasets/TD_TR/TR400//train_images/IMG_0117.jpg'
+> 
+> 
+> Syntax: cv2.fillpoly(Image,End_Points,Color)
+> Parameter:
+> Image: This is image on which we want draw filled polygon
+> End_Points: Points of polygon(for triangle 3 end points, for rectangle 4 end points will be there)
+> Color: It specifies the color of polygon   
+> 
+> points = np.array([[160, 130], [350, 130], [250, 300]])
+> cv2.fillPoly(img, pts=[points], color=(255, 0, 0))
+> 
+> ```
+>
+> ```
+> # 可视化
+> 
+> 
+> 
+> 
+> 
+> 
+> 		fuse = torch.cat((p5, p4, p3, p2), 1)
+>   # this is the pred module, not binarization module; 
+>   # We do not correct the name due to the trained model.
+>   binary = self.binarize(fuse)
+> 
+>   # 可视化--------
+>   binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+>   thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+>   binary_img = binary_img.astype(np.uint8)
+>   thresh_img = thresh_img.astype(np.uint8)
+>   cv2.imwrite('bin.bmp', binary_img)
+>   binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+>   cv2.imwrite('cm.bmp', binary_color_map)
+> 
+>   cv2.imwrite('thresh.bmp',thresh_img)
+>   thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+>   cv2.imwrite('color_thresh.bmp',thresh_color_map)
+>   # ------------------
 > ```
 >
 > 
@@ -7147,6 +7297,24 @@ Host hz-t3.matpool.com
 
 
 
+```python
+    args = {
+        'exp': 'experiments/seg_detector/td500_resnet18_deform_thre.yaml',
+        'verbose': False,
+        'visualize': False,
+        'force_reload': False,
+        'validate': False,
+        'print_config_only': False,
+        'debug': False,
+        'benchmark': True,
+        'distributed': False,
+        'local_rank': 0,
+        'num_gpus': 1,
+    }
+```
+
+
+
 
 
 
@@ -7252,6 +7420,25 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 
 
+# 1080TI
+
+- https://www.autodl.com/console/instance/list
+
+- https://www.jianshu.com/p/f3a3d8dc9ba6
+
+```
+
+sed -i 's/batch_size\:\ 16/batch_size\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/num_workers\:\ 16/num_workers\:\ 12/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
+
+
+cd ~/DB && \
+CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
+
+```
+
+
+
 
 
 # 2080TI
@@ -7292,6 +7479,103 @@ CPU：I9 9820X 4600元
 机箱风扇：利民TL-C12 X5 400元
 总计 58480
 
+# 3090
+
+- https://zhuanlan.zhihu.com/p/279401802
+
+
+
+```
+不过新的问题又出现了：七彩虹Neptune（水神）需要3×8pin供电，而海盗船VS550仅能提供2个8pin PCIE电源接口。
+
+没办法不得不连电源一起换。最后CPU一直采用原厂小风扇，噪声较大。干脆一不做二不休换了水冷散热器。
+```
+
+
+
+```
+
+https://pytorch.org/get-started/previous-versions/
+
+ldconfig -p | grep cuda
+
+cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
+unzip DB.zip && \
+unzip TD_TR.zip -d DB/datasets
+
+
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+
+
+
+
+
+
+
+export CUDA_HOME=/usr/local/cuda && \
+echo $CUDA_HOME && \
+cd ~/DB/assets/ops/dcn/ && \
+python setup.py build_ext --inplace
+
+cd ~/DB && \
+pip install -r requirement.txt && \
+pip install --upgrade protobuf==3.20.0
+```
+
+
+
+
+
+
+```
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0 -c pytorch --yes
+
+
+
+
+```
+
+
+
+```
+apt-get --purge remove cuda nvidia* libnvidia-* && \
+dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+apt-get remove cuda-* && \
+apt autoremove && \
+apt-get update
+```
+
+
+
+```
+# 可视化
+
+		fuse = torch.cat((p5, p4, p3, p2), 1)
+        # this is the pred module, not binarization module; 
+        # We do not correct the name due to the trained model.
+        binary = self.binarize(fuse)
+
+        # 可视化--------
+        binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+        thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+        binary_img = binary_img.astype(np.uint8)
+        thresh_img = thresh_img.astype(np.uint8)
+        cv2.imwrite('bin.bmp', binary_img)
+        binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+        cv2.imwrite('cm.bmp', binary_color_map)
+
+        cv2.imwrite('thresh.bmp',thresh_img)
+        thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+        cv2.imwrite('color_thresh.bmp',thresh_color_map)
+        # ------------------
 ```
 
 

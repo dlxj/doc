@@ -812,7 +812,7 @@ load_all(arg1=1, arg2=2, arg3=3)
 ### isinstance 多个
 
 ```python
-isinstance(args, (int, float, str)) # 是否是其中任意一个
+isinstance(args, (int, float, str)) # 是否是其中任意一个？还是说是这个只读列表？
 ```
 
 
@@ -862,6 +862,26 @@ class EAPIrt2PLModel(object):
     def res(self):
         return round(self.g / self.h, 3)
 ```
+
+
+
+### 动态定义类的静态方法
+
+```python
+    def draw_polygons(self, image, polygons, ignore_tags):
+        for i in range(len(polygons)):
+            polygon = polygons[i].reshape(-1, 2).astype(np.int32)
+            ignore = ignore_tags[i]
+            if ignore:
+                color = (255, 0, 0)  # depict ignorable polygons in blue
+            else:
+                color = (0, 0, 255)  # depict polygons in red
+
+            cv2.polylines(image, [polygon], True, color, 1)
+    polylines = staticmethod(draw_polygons)
+```
+
+
 
 
 
@@ -1425,6 +1445,26 @@ class EAPIrt2PLModel(object):
                 dest_width = dest_width.item()
                 dest_height = dest_height.item() # 张量中加不加item()会有微妙的差别 
             # doc\lang\programming\pytorch\文本检测\DBNET\main.py
+```
+
+
+
+### 默认参数
+
+```
+    def __init__(self, data_dir=None, data_list=None, cmd={}, **kwargs):
+		self.debug = cmd.get('debug', False)
+```
+
+
+
+### hasattr
+
+```
+# DB\data\processes\augment_data.py
+# 是否有这个属性
+if hasattr(base, 'states'):
+	states.update(base.states)
 ```
 
 
@@ -2655,6 +2695,20 @@ print(max_value, max_keys)
 
 
 
+### update
+
+```
+# 批量修改 key, value
+/root/DB/data/processes/make_seg_detection_data.py
+		data.update(image=image,
+                    polygons=polygons,
+                    gt=gt, mask=mask, filename=filename)
+```
+
+
+
+
+
 ### 递归生成知识点目录
 
 ```python
@@ -2820,6 +2874,13 @@ print(u'输出路径：%s.npy' % data_extract_npy)
 ```
 
 
+
+### in 是否包含
+
+```
+        if 'train' in self.data_list[0]:
+            self.is_training = True
+```
 
 
 
@@ -9555,6 +9616,50 @@ Pyqtdeploy
 ## pyside2 可视化文档纠错
 
 - https://github.com/fiyen/PaddlePaddle-DocCRT
+
+
+
+# 控制鼠标
+
+- https://pyautogui.readthedocs.io/en/latest/mouse.html
+
+```
+python3 -m pip install pyautogui
+pip install keyboard
+
+#! python3
+from time import sleep
+import pyautogui, sys
+#import keyboard
+
+print('Press Ctrl-C to quit.')
+try:
+    while True:
+        x, y = pyautogui.position()
+        positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
+        print(positionStr, end='')
+        print('\b' * len(positionStr), end='', flush=True)
+
+        pyautogui.moveTo(184, 941, 3)
+        pyautogui.moveTo(1685, 121, 3)
+        #if keyboard.is_pressed('b'):
+            #break
+
+
+except KeyboardInterrupt:
+    print('\n')
+
+
+"""
+python3 -m pip install pyautogui
+pip install keyboard
+"""
+
+```
+
+
+
+
 
 
 

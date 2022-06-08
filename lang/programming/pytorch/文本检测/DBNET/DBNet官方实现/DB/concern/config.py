@@ -10,7 +10,6 @@ class Config(object):
         pass
 
     def load(self, conf):
-        print(conf)
         conf = anyconfig.load(conf)
         return munch.munchify(conf)
 
@@ -127,7 +126,6 @@ class Configurable(metaclass=StateMeta):
 
     @staticmethod
     def construct_class_from_config(args):
-        print(args)
         cls = Configurable.extract_class_from_args(args)
         return cls(**args)
 

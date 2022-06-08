@@ -1685,6 +1685,9 @@ show grants for username; # 现在权限
 GRANT ALL PRIVILEGES ON `dbname`.* TO 'username'@'%' WITH GRANT OPTION;  
 	# 给他某库的所有权限
 
+
+GRANT SELECT ON ocr.*, origintest_master.*, test_cooperate_master.* TO 'backup'@'%' IDENTIFIED BY "2022_backup"
+
 ```
 
 

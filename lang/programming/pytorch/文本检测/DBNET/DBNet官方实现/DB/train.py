@@ -16,16 +16,8 @@ from training.model_saver import ModelSaver
 from training.optimizer_scheduler import OptimizerScheduler
 from concern.config import Configurable, Config
 
-import sys
 
 def main():
-    """
-    CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
-    """
-    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
-    sys.argv.append( '--num_gpus' )
-    sys.argv.append( '1' )
-
     parser = argparse.ArgumentParser(description='Text Recognition Training')
     parser.add_argument('exp', type=str)
     parser.add_argument('--name', type=str)
@@ -77,10 +69,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-
-"""
-
-CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
-
-"""
