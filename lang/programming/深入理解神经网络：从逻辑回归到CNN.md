@@ -7153,6 +7153,34 @@ pip install grpcio==1.11.0
 
 
 
+# CUDA版本
+
+
+
+CUDA8.0：
+
+- 费米（Fermi，GTX580）
+- 开普勒（Kepler，GTX680，GTX780Ti，GTX Titan，Titan Z，Tesla K80）
+- 麦克斯韦（Maxwell，GTX980Ti，Titan X，Tesla M40）
+- [帕斯卡](https://www.zhihu.com/search?q=帕斯卡&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1166786819})（Pascal，GTX1080Ti，Titan Xp，Tesla P100）
+
+CUDA9.x：
+
+- 开普勒（Kepler，GTX680，GTX780Ti，GTX Titan，Titan Z，Tesla K80）
+- 麦克斯韦（Maxwell，GTX980Ti，Titan X，Tesla M40）
+- 帕斯卡（Pascal，GTX1080Ti，Titan Xp，Tesla P100）
+- 伏特（Volta，Titan V，Tesla V100）
+
+CUDA10.x：
+
+- 开普勒（Kepler，GTX680，GTX780Ti，GTX Titan，Titan Z，Tesla K80）
+- 麦克斯韦（Maxwell，GTX980Ti，Titan X，Tesla M40）
+- 帕斯卡（Pascal，GTX1080Ti，Titan Xp，Tesla P100）
+- 伏特（Volta，Titan V，Tesla V100）
+- 图灵（Turing，RTX2080Ti，Titan RTX，Tesla T4）
+
+
+
 # K80 矩池云
 
 CPU 3× Xeon E5-2678 v3 + tesla k80
@@ -7566,23 +7594,23 @@ apt-get update
 # 可视化
 
 		fuse = torch.cat((p5, p4, p3, p2), 1)
-        # this is the pred module, not binarization module; 
-        # We do not correct the name due to the trained model.
-        binary = self.binarize(fuse)
-
-        # 可视化--------
-        binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
-        thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
-        binary_img = binary_img.astype(np.uint8)
-        thresh_img = thresh_img.astype(np.uint8)
-        cv2.imwrite('bin.bmp', binary_img)
-        binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
-        cv2.imwrite('cm.bmp', binary_color_map)
-
-        cv2.imwrite('thresh.bmp',thresh_img)
-        thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
-        cv2.imwrite('color_thresh.bmp',thresh_color_map)
-        # ------------------
+	    # this is the pred module, not binarization module; 
+	    # We do not correct the name due to the trained model.
+	    binary = self.binarize(fuse)
+	
+	    # 可视化--------
+	    binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+	    thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+	    binary_img = binary_img.astype(np.uint8)
+	    thresh_img = thresh_img.astype(np.uint8)
+	    cv2.imwrite('bin.bmp', binary_img)
+	    binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+	    cv2.imwrite('cm.bmp', binary_color_map)
+	
+	    cv2.imwrite('thresh.bmp',thresh_img)
+	    thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+	    cv2.imwrite('color_thresh.bmp',thresh_color_map)
+	    # ------------------
 ```
 
 
@@ -7619,7 +7647,7 @@ conda update --channel defaults --all --yes
 
 ## vscode 远程调试
 
-```python
+​```python
 https://github.com/MhLiao/DB 验证可运行的环境：
 
 tesla K80 + Ubuntu18.04 +
