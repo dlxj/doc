@@ -1925,12 +1925,22 @@ print(",".join(l))
 
 
 
-### convert list to dict
+### convert 
+
+#### convert list to dict
 
 ```
 def listToDict(lst):
     op = { i: lst[i] for i in range(0, len(lst), 1)}
     return op
+```
+
+
+
+#### convert bool to int 
+
+```
+ignore_tags = np.array(ignore_tags, dtype=np.uint8) # ignore_tags 原来是 bool list
 ```
 
 
@@ -2914,6 +2924,13 @@ print(u'输出路径：%s.npy' % data_extract_npy)
 ```
         if 'train' in self.data_list[0]:
             self.is_training = True
+```
+
+
+
+```
+if gpu_info.find('failed') >= 0:
+  print('Not connected to a GPU')
 ```
 
 

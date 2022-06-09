@@ -5580,6 +5580,8 @@ OCR Engine modes:
   
 - https://zhuanlan.zhihu.com/p/382641896 **DBNet的简单复现**
   
+- https://blog.csdn.net/u010901792/article/details/112791647  **宝藏解读**
+  
 - https://github.com/MhLiao/DB/issues/100  **官方配置问题**
   
   - https://github.com/open-mmlab/mmocr/tree/main/configs/textdet/dbnet **直接可用**
