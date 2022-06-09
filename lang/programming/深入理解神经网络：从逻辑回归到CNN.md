@@ -5582,6 +5582,8 @@ OCR Engine modes:
   
 - https://github.com/MhLiao/DB/issues/100  **官方配置问题**
   
+  - https://github.com/open-mmlab/mmocr/tree/main/configs/textdet/dbnet **直接可用**
+  
 - https://www.cnblogs.com/yanghailin/p/12337543.html 官方实现配置过程
   
   > make_border_map.py这个是为了做threshold的标签的
@@ -5720,25 +5722,25 @@ OCR Engine modes:
 > 				polygon_shape = Polygon(polygon)
 > 
 > 				# distance 即为上述公式（6）中 D的计算过程
->        distance = polygon_shape.area * \
->            (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
->        subject = [tuple(l) for l in polygons[i]]
+>     distance = polygon_shape.area * \
+>         (1 - np.power(self.shrink_ratio, 2)) / polygon_shape.length
+>     subject = [tuple(l) for l in polygons[i]]
 > 
 > 				# 应用pyclipper.PyclipperOffset进行红色实线区域收缩
->        padding = pyclipper.PyclipperOffset()
->        padding.AddPath(subject, pyclipper.JT_ROUND,
->                        pyclipper.ET_CLOSEDPOLYGON)
->        shrinked = padding.Execute(-distance)
->        if shrinked == []:
->            cv2.fillPoly(mask, polygon.astype(
->                np.int32)[np.newaxis, :, :], 0)
->            ignore_tags[i] = True
->            continue
+>     padding = pyclipper.PyclipperOffset()
+>     padding.AddPath(subject, pyclipper.JT_ROUND,
+>                     pyclipper.ET_CLOSEDPOLYGON)
+>     shrinked = padding.Execute(-distance)
+>     if shrinked == []:
+>         cv2.fillPoly(mask, polygon.astype(
+>             np.int32)[np.newaxis, :, :], 0)
+>         ignore_tags[i] = True
+>         continue
 > 
 > 				# shrinded即为收缩后的蓝色虚线区域
->        shrinked = np.array(shrinked[0]).reshape(-1, 2)
->        # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
->        cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
+>     shrinked = np.array(shrinked[0]).reshape(-1, 2)
+>     # 将概率图像中蓝色实线区域值设置为1，其它区域默认值为0
+>     cv2.fillPoly(gt[0], [shrinked.astype(np.int32)], 1)
 > 
 > 
 > 数据加载
@@ -5747,9 +5749,14 @@ OCR Engine modes:
 > 	self.data_dir = ['./datasets/TD_TR/TD500/', './datasets/TD_TR/TR400/']
 > 	self.data_list = ['./datasets/TD_TR/TD500/train_list.txt', './datasets/TD_TR/TR400/train_list.txt']
 > 
-> 
-> 
-> 
+>     # 所有的数据处理都在这里
+>     def __getitem__(self, index, retry=0):
+>         if self.processes is not None:
+>             for data_process in self.processes:
+>                 data = data_process(data)
+> 				# 第一步做数据增强，随机透视变换、改变大小、什么的
+>                 # 
+>                 
 > 
 > 读人工标记(图片文本区域的多边形)
 > /root/DB/data/image_dataset.py
@@ -5757,49 +5764,49 @@ OCR Engine modes:
 > './datasets/TD_TR/TD500//train_gts/IMG_1835.JPG.txt',
 > './datasets/TD_TR/TD500//train_gts/IMG_2113.JPG.txt']
 > 
->  def load_ann(self):
->      res = []
->      for gt in self.gt_paths:
->          lines = []
->          reader = open(gt, 'r').readlines()
->          for line in reader:
->              item = {}
->              parts = line.strip().split(',')
->              label = parts[-1]
->              if 'TD' in self.data_dir[0] and label == '1':
->                  label = '###'
->              line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
->              if 'icdar' in self.data_dir[0]:
->                  poly = np.array(list(map(float, line[:8]))).reshape((-1, 2)).tolist()
->              else:
->                  num_points = math.floor((len(line) - 1) / 2) * 2
->                  poly = np.array(list(map(float, line[:num_points]))).reshape((-1, 2)).tolist()
->              item['poly'] = poly
->              item['text'] = label
->              lines.append(item)
->          res.append(lines)
->      return res
+> def load_ann(self):
+>   res = []
+>   for gt in self.gt_paths:
+>       lines = []
+>       reader = open(gt, 'r').readlines()
+>       for line in reader:
+>           item = {}
+>           parts = line.strip().split(',')
+>           label = parts[-1]
+>           if 'TD' in self.data_dir[0] and label == '1':
+>               label = '###'
+>           line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
+>           if 'icdar' in self.data_dir[0]:
+>               poly = np.array(list(map(float, line[:8]))).reshape((-1, 2)).tolist()
+>           else:
+>               num_points = math.floor((len(line) - 1) / 2) * 2
+>               poly = np.array(list(map(float, line[:num_points]))).reshape((-1, 2)).tolist()
+>           item['poly'] = poly
+>           item['text'] = label
+>           lines.append(item)
+>       res.append(lines)
+>   return res
 > 
 > 
 > 
 > # 经过了数据增强
 > # /root/DB/data/processes/augment_data.py
-> 	
->     aug = self.augmenter.to_deterministic()
+> 
+>  aug = self.augmenter.to_deterministic()
 > 
 > 	data['image'] = aug.augment_image(image)
 > 
->     import imgaug.augmenters as iaa
->     
+>  import imgaug.augmenters as iaa
+> 
 > 	iaa.Fliplr(0.5)
->     
->     imgaug.augmenters.geometric.Affine  'rotate':[-10, 10]
+> 
+>  imgaug.augmenters.geometric.Affine  'rotate':[-10, 10]
 > 
 > 	['Fliplr', 0.5]
 > 	{'cls': 'Affine', 'rotate': [-10, 10]}
 > 	['Resize', [0.5, 3.0]]
->     
->         
+> 
+> 
 > # 可视化
 > basename = os.path.basename(filename)
 > cv2.imwrite(f'/root/{basename}_shrinked.jpg', gt[0] * 255) # 数值是 0~1.0 转灰度图
@@ -5808,11 +5815,11 @@ OCR Engine modes:
 > 第一张图： 是随机的，没用
 > DB\data\data_loader.py  这里控制是否随机加载数据 改 shuffle=False 不随机
 > 	            torch.utils.data.DataLoader.__init__(
->              self, self.dataset,
->              batch_size=self.batch_size, num_workers=self.num_workers,
->              drop_last=self.drop_last, shuffle=self.shuffle,
->              pin_memory=True, collate_fn=self.collect_fn,
->              worker_init_fn=default_worker_init_fn)
+>           self, self.dataset,
+>           batch_size=self.batch_size, num_workers=self.num_workers,
+>           drop_last=self.drop_last, shuffle=self.shuffle,
+>           pin_memory=True, collate_fn=self.collect_fn,
+>           worker_init_fn=default_worker_init_fn)
 > 
 > 
 > './datasets/TD_TR/TR400//train_images/IMG_0117.jpg'
@@ -5838,23 +5845,23 @@ OCR Engine modes:
 > 
 > 
 > 		fuse = torch.cat((p5, p4, p3, p2), 1)
->   # this is the pred module, not binarization module; 
->   # We do not correct the name due to the trained model.
->   binary = self.binarize(fuse)
+> # this is the pred module, not binarization module; 
+> # We do not correct the name due to the trained model.
+> binary = self.binarize(fuse)
 > 
->   # 可视化--------
->   binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
->   thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
->   binary_img = binary_img.astype(np.uint8)
->   thresh_img = thresh_img.astype(np.uint8)
->   cv2.imwrite('bin.bmp', binary_img)
->   binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
->   cv2.imwrite('cm.bmp', binary_color_map)
+> # 可视化--------
+> binary_img = binary[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+> thresh_img = self.thresh(fuse)[0].permute((1, 2, 0)).cpu().data.numpy() * 255
+> binary_img = binary_img.astype(np.uint8)
+> thresh_img = thresh_img.astype(np.uint8)
+> cv2.imwrite('bin.bmp', binary_img)
+> binary_color_map = cv2.applyColorMap(binary_img, cv2.COLORMAP_JET)
+> cv2.imwrite('cm.bmp', binary_color_map)
 > 
->   cv2.imwrite('thresh.bmp',thresh_img)
->   thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
->   cv2.imwrite('color_thresh.bmp',thresh_color_map)
->   # ------------------
+> cv2.imwrite('thresh.bmp',thresh_img)
+> thresh_color_map=cv2.applyColorMap(thresh_img, cv2.COLORMAP_JET)
+> cv2.imwrite('color_thresh.bmp',thresh_color_map)
+> # ------------------
 > ```
 >
 > 

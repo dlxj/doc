@@ -1997,6 +1997,15 @@ list(itertools.chain(*abs(E)))
 
 
 
+### 批量四舍五入
+
+```python
+# points 的shape 是(4,2) 的二维数组，浮点型 
+points = np.round(points, decimals=0).astype(np.int32)
+```
+
+
+
 ### reduce
 
 ```python
@@ -2606,6 +2615,20 @@ word2int_en.get(word, UNK)  # key 不存在，则返回默认值UNK
 
 
 
+### 灵活更新key,value
+
+```
+
+line = {'points':[[323.0, 621.0], [1186.0, 652.0], [1178.0, 864.0], [315.0, 833.0]]
+'text':'0'
+'ignore':False}
+
+lines = []
+lines.append({**line, 'points': poly}) # poly 是新的 points ，意思是更新points，其他该有的还有，保持不变？
+```
+
+
+
 ### pop value
 
 ```python
@@ -2637,6 +2660,17 @@ import importlib
 ```
 
 
+
+### OrderedDict
+
+```python
+        return OrderedDict(image=data['image'],
+                           polygons=polygons,
+                           ignore_tags=ignore_tags,
+                           shape=shape,
+                           filename=filename,
+                           is_training=data['is_training'])
+```
 
 
 
