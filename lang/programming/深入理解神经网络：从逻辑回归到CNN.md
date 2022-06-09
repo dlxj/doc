@@ -7734,6 +7734,12 @@ D:\usr\cloudflared-windows-amd64.exe
 
 
 
+```
+Colab 还有很多更有意思的功能。比如说用个魔术符号「%」调用 TensorBoard、黑暗系代码主题、文件浏览和操作系统，以及最近才更新的 Pandas DataFrame 可视化操作。
+```
+
+
+
 
 
 ## 卸载CUDA
