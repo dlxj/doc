@@ -1937,7 +1937,7 @@ def listToDict(lst):
 
 
 
-#### convert bool to int 
+#### convert bool to int
 
 ```
 ignore_tags = np.array(ignore_tags, dtype=np.uint8) # ignore_tags 原来是 bool list

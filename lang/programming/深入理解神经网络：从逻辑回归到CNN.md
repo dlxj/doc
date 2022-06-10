@@ -5584,6 +5584,17 @@ OCR Engine modes:
   
 - https://github.com/MhLiao/DB/issues/100  **官方配置问题**
   
+  - https://github.com/MhLiao/DB/issues/49 **训练时间问题**
+  
+    > ```
+    > ear author, Could you give me the information about your training time and your computing resource?
+    > I found it cost about 50min with 4 Titian Xp GPUs to train one epoch. Is it normal ?
+    > ```
+    >
+    > ```
+    > The training time of one epoch is highly related to the number of training images. If the number of your training images is much larger than 1000, you should shorten the training epochs. Take Total-Text (about 1200 images) as an example, It takes about 1~2 minutes for one epoch (78 iters) with Titan Xp GPUs. Thus, the training speed is about 1~2 seconds/iter.
+    > ```
+  
   - https://github.com/open-mmlab/mmocr/tree/main/configs/textdet/dbnet **直接可用**
   
 - https://www.cnblogs.com/yanghailin/p/12337543.html 官方实现配置过程
@@ -5615,6 +5626,10 @@ OCR Engine modes:
   - https://www.cnblogs.com/yanghailin/p/12209685.html 两个都有
   
 - https://blog.csdn.net/weixin_43705733/article/details/123347511  **非？官方实现配置过程**
+  
+- https://github.com/WenmuZhou/DBNet.pytorch
+  
+  - https://bbs.huaweicloud.com/blogs/345205  **非官方的训练，详细！**
   
 - https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/  **DBNet.pytorch实现配置过程**
   
