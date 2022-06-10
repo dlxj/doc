@@ -7517,7 +7517,7 @@ SSD	三星(SAMSUNG) 960 EVO 250G M.2 NVMe 固态硬盘	599	https://item.jd.com/3
 机箱	美商海盗船 AIR540 USB3.0 	949	http://item.jd.com/12173900062.html
 显卡	技嘉（GIGABYTE） GTX1080Ti 11GB 非公版高端游戏显卡深度学习涡轮 * 4 7400 * 4    https://item.jd.com/10583752777.html
 
-yao 8:35:32
+
 CPU：I9 9820X 4600元
 主板：华硕WX X299 SAGE 4200元
 内存：金士顿骇客神条16G 3000 X4 2200元

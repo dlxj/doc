@@ -2435,6 +2435,14 @@ let newArray = _.union([20, 12], [8, 15, 6])
 
 
 
+## Float32Array.from
+
+```
+const dataA = Float32Array.from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+```
+
+
+
 
 
 # json
@@ -6957,7 +6965,11 @@ npm install --save normalize.css
   >
   > link to 123xxxx5&qx.com
 
+- https://www.cnblogs.com/zzsdream/p/13410224.html  **很详细**
 
+  - https://github.com/ivan-94/video-push/blob/master/jsmpeg/server.js
+
+  
 
 # nodegui qt
 
