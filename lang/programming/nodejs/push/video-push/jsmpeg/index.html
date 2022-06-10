@@ -18,7 +18,7 @@
       const start = document.getElementById('start');
       start.onclick = () => {
         const canvas = document.getElementById('video-canvas');
-        const url = 'ws://localhost:9999/pull/test';
+        const url = 'ws://127.0.0.1:9999/pull/test';
         var player = new JSMpeg.Player(url, {
           canvas: canvas,
           audio: false,
