@@ -6968,6 +6968,8 @@ npm install --save normalize.css
 - https://www.cnblogs.com/zzsdream/p/13410224.html  **很详细**
 
   - https://github.com/ivan-94/video-push/blob/master/jsmpeg/server.js
+  - https://github.com/phoboslab/jsmpeg/issues/338  websockect + jsmpeg
+    - https://github.com/phoboslab/jsmpeg/issues/391
 
   
 
