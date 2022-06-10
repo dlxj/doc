@@ -1203,6 +1203,16 @@ global 是内置的全局对象，任意地方可用（可以把任意东西装�
 
 
 
+## !!
+
+```javascript
+const scale = !!options.full ? "scale=1280:720,setsar=1:1":"scale=640:360,setsar=1:1";
+
+!!是一个逻辑操作，不论它的后面接的是什么数值，它的结果会被强制转换成bool类型，之所以用两个感叹号，主要是为了让结果不会逻辑反过来
+```
+
+
+
 
 
 # Regex
@@ -6939,7 +6949,13 @@ npm install --save normalize.css
 
 - https://blog.csdn.net/qq_41619796/article/details/121161232
 
+- https://gitee.com/zhairuihao/jsmpeg-ws-web
 
+  > cegbdfa
+  >
+  > cegfdb link to github
+  >
+  > link to 123xxxx5&qx.com
 
 
 
