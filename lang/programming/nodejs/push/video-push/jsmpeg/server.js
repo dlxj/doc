@@ -1,6 +1,5 @@
 
-// http://127.0.0.1:9999/push/111
-// ffmpeg -re -i out.h264 -q 0 -f mpegts -codec:v mpeg1video -s 1000x600 -r 30 http://localhost:9999/push/test
+// ffmpeg -re -i 1.mkv -q 0 -f mpegts -codec:v mpeg1video -s 1000x600 -r 30 http://localhost:9999/push/test   // 持续推流
 
 const http = require('http');
 const ws = require('ws');
