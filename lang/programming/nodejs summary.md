@@ -13,6 +13,8 @@ pm2 delete processID  // 删除一项
 
 # 关闭防火墙
 systemctl stop firewalld
+# 关闭 apache 
+service httpd stop
 
 # atuto run when reboot
 chmod +x /etc/rc.d/rc.local

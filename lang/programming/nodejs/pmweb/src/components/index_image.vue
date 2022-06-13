@@ -29,13 +29,8 @@
 
     <p></p>
 
-    <canvas id="video-canvas"></canvas>
-    <p></p>
-
-    <button id="start">play</button>
-    <p></p>
-
     <!-- <imgList :urls="urls" :order="order"></imgList> -->
+
 
     <carousel-3d
       :autoplay="true"
@@ -49,10 +44,12 @@
       :controlsHeight="60"
     >
       <slide v-for="(item, i) in slides" :index="i" :key="i">
+        
         <!--通过插槽作用域可以拿到点击的图片的索引-->
-        <template slot-scope="obj">
-          <img @click="imgClick(obj)" :src="item.src" alt="" />
-        </template>
+      <template slot-scope="obj">
+        <img @click="imgClick(obj)" :src="item.src" alt="">
+      </template>
+
       </slide>
     </carousel-3d>
 
@@ -79,48 +76,30 @@
     </div> -->
 
     <div class="result_main" v-if="isResultShow">
+
       <!-- <div v-for="item in resultsModel" :key="item.result">
         <div v-html="item.result"></div>
         <br />
       </div> -->
 
-      <!-- <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>   step 3: use the component -->
-      <!-- 子组的的属性直接只读的使用父组件的数据 -->
+      <!-- <componentItemZh :rawresultsModel="rawresultsModel"></componentItemZh>   step 3: use the component -->  <!-- 子组的的属性直接只读的使用父组件的数据 -->
 
       <div v-for="item in rawresultsModel" :key="item.elm_id">
-        <div v-html="`${item.jp}`"></div>
-        <img
-          :id="`img_${item.elm_id}`"
-          :src="`${item.img_play}`"
-          @onclick="`play('${item.elm_id}')`"
-        /><audio
-          :id="`audio_${item.elm_id}`"
-          :src="`${item.au_url}`"
-          type="audio/mpeg"
-          preload="auto"
-        ></audio
-        ><br />
 
+        <div v-html="`${item.jp}`"></div> <img :id="`img_${item.elm_id}`" :src="`${item.img_play}`" @onclick="`play('${item.elm_id}')`"><audio :id="`audio_${item.elm_id}`" :src="`${item.au_url}`" type="audio/mpeg" preload="auto"></audio><br>
+        
         <el-input
           type="textarea"
-          :autosize="{ minRows: 1, maxRows: 10 }"
+          :autosize="{ minRows: 1, maxRows: 10}"
           v-model="textareas[`${item.elm_id}`]"
           @input="textChanged"
-          @focus="
-            (sender) => {
-              textFocus(sender, `${item.elm_id}`);
-            }
-          "
+          @focus="((sender)=>{textFocus(sender,`${item.elm_id}`)})"
           @blur="`textLostFocus('${item.elm_id}')`"
         >
         </el-input>
 
         <div class="imgTW">
-          <el-image
-            v-for="url in imgTWs[`${item.elm_id}`]"
-            :key="url"
-            :src="`${url}`"
-          ></el-image>
+          <el-image v-for="url in imgTWs[`${item.elm_id}`]" :key="url" :src="`${url}`"></el-image>
         </div>
 
         <!-- <div @onclick="`showImgTW('${item.elm_id}')`">
@@ -129,15 +108,21 @@
           {{item.zh}}
 
         </div> -->
+
+
       </div>
+
     </div>
 
     <div class="result_image">
+
       <!-- <div v-for="item in rawresultsModel" :key="item.result">
         <div v-html="item.result"></div>
           <br />
         </div>
       </div> -->
+
+      
 
       <el-collapse v-model="activeName" accordion>
         <el-collapse-item title="一致性 Consistency" name="1">
@@ -200,9 +185,8 @@ import img_play2 from "../assets/play2.gif";
 const formurlencoded = require("form-urlencoded");
 const bent = require("bent");
 
-import imgList from "@/components/imgList.vue"; // step 1: import a compoment
+import imgList from '@/components/imgList.vue'  // step 1: import a compoment
 
-// import JSMpeg from '@/util/jsmpeg.js' 
 
 export default {
   name: "index",
@@ -211,7 +195,7 @@ export default {
       keywdModel: { keywd: "", lang_type: "jp" },
       resultModel: { result: "" },
       resultsModel: [],
-      rawresultsModel: [],
+      rawresultsModel:[],
       isResultShow: false,
       items: [],
       options: [
@@ -227,33 +211,23 @@ export default {
       value1: [],
       activeName: "1",
       todo: [
-        { id: 4, ok: true },
-        { id: 5, ok: false },
-        { id: 6, ok: true },
+          {id:4,ok:true},
+          {id:5,ok:false},
+          {id:6,ok:true},   
       ],
-      textareas: {},
-      text: "",
+      textareas:{},
+      text:'',
       imgTWs: {},
-      urls: [img_play],
-      order: "asc",
+      urls:[ img_play ],
+      order:'asc',
       slides: [
-        {
-          src: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg",
-        },
-        {
-          src: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg",
-        },
-        {
-          src: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg",
-        },
-        {
-          src: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg",
-        },
-        {
-          src: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg",
-        },
-      ],
-    };
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+        { src: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg'},
+      ]
+    }
   },
   computed: {
     itemNum: function () {
@@ -288,7 +262,7 @@ export default {
         //let result = `${jp}<br>${zh}`
 
         const data = [];
-        const rawdata = [];
+        const rawdata = []
         for (let { id, jp, type, name, seasion, time, zh } of response.data) {
           //let bs = process.env.BASE_URL; debugger
           let elm_id = `${type}_${name}_${seasion}_${id}`;
@@ -299,11 +273,12 @@ export default {
           //let result = `${jp}<div @click="play"><img id="img_${elm_id}" src="${img_play}"></div><audio id="audio_${elm_id}" src="${au_url}" type="audio/mpeg" preload="auto"></audio><br>${zh}`; //debugger
           data.push({ result });
 
-          rawdata.push({ jp, elm_id, img_play, au_url, zh });
+          rawdata.push( {jp, elm_id, img_play, au_url, zh} )
 
-          this.textareas[`${elm_id}`] = zh;
+          this.textareas[`${elm_id}`] = zh
 
-          this.imgTWs[`${elm_id}`] = []; // 默认为空，点击编辑框的时侯在动态请求图片
+          this.imgTWs[`${elm_id}`] = []  // 默认为空，点击编辑框的时侯在动态请求图片
+
         }
         data.push({ result: `<br><button onclick="next()">next</button>` });
 
@@ -315,14 +290,14 @@ export default {
         // onclick="openImg()"
 
         this.resultsModel = data;
-        this.rawresultsModel = rawdata;
+        this.rawresultsModel = rawdata
 
         //let componentItemZh = this.$refs.componentItemZh; debugger
 
         // let todo = [
         //   {id:4,ok:true},
         //   {id:5,ok:false},
-        //   {id:6,ok:true},
+        //   {id:6,ok:true},   
         // ]
 
         // componentItemZh.$emit('fromFather', todo)
@@ -331,7 +306,7 @@ export default {
         // this.$set(this.keywdModel, 'keywd', 'aaaa')
 
         //this.resultModel.result = result
-        this.isResultShow = true;
+        this.isResultShow = true
         this.$nextTick(() => {
           // DOM 渲染完后回调
           //debugger
@@ -343,23 +318,19 @@ export default {
       console.log("hited.");
     },
     async textChanged() {
-      console.log(`hit textChanged.`);
-      debugger;
+      console.log(`hit textChanged.`);debugger
     },
     async textFocus(sender, elm_id) {
       // this.imgTWs[`${elm_id}`].push(img_play2)
-      this.$set(this.imgTWs, `${elm_id}`, [img_play2]);
-      console.log(`hit textFocus. ${sender} ${elm_id}`);
-      debugger;
+      this.$set(this.imgTWs, `${elm_id}`, [img_play2])
+      console.log(`hit textFocus. ${sender} ${elm_id}`);debugger
     },
     async textLostFocus(elm_id) {
-      console.log(`hit textLostFocus. ${elm_id}`);
-      debugger;
+      console.log(`hit textLostFocus. ${elm_id}`);debugger
     },
-    async imgClick(obj) {
-      console.log(`hit imgClick.`);
-      debugger;
-    },
+    async imgClick(obj){
+      console.log(`hit imgClick.`);debugger
+    }
   },
   mounted() {
     window.play = function (elm_id) {
@@ -388,20 +359,7 @@ export default {
     let search = this.search;
     window.next = async function () {
       await search();
-    };
-
-    const start = document.getElementById("start")
-    start.onclick = () => {
-      const canvas = document.getElementById("video-canvas")
-      const url = "ws://127.0.0.1:9999/pull/test"
-      var player = new JSMpeg.Player(url, {
-        canvas: canvas,
-        audio: false,
-        pauseWhenHidden: false,
-        videoBufferSize: 8 * 1024 * 1024,
-      })
     }
-  
   },
   // watch: {
 
@@ -413,7 +371,7 @@ export default {
   //   }
 
   // }
-  components: { imgList }, // step 2: register the component
+  components: { imgList },  // step 2: register the component
 };
 </script>
 
@@ -449,6 +407,7 @@ export default {
   -o-transition: all 0.5s;
   cursor: default;
 }
+ 
 </style>
 
 

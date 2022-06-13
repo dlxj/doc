@@ -7777,6 +7777,10 @@ Colab 还有很多更有意思的功能。比如说用个魔术符号「%」调�
 
 
 
+## colab Web Server
+
+- https://stackoverflow.com/questions/59741453/is-there-a-general-way-to-run-web-applications-on-google-colab
+
 
 
 ## 卸载CUDA
