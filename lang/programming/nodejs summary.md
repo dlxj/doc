@@ -2085,6 +2085,16 @@ const splits = myString.split(' ', 3)
 
 
 
+## slice
+
+```
+url = '/pull/test'
+const id = url.slice(6)  
+> 'test'
+```
+
+
+
 ## includes
 
 
