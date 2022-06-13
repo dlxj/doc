@@ -16,7 +16,7 @@ module.exports = {
 
         let { execa } = await import('execa')
 
-        let cmd = `ffmpeg -re -i "E:\\1.mkv" -ss 00:00:00.000 -to 00:00:03.000 -q 0 -f mpegts -codec:v mpeg1video -s 1000x600 -r 30 http://localhost:9999/push/test`
+        let cmd = `ffmpeg -re -i "E:\\1.mkv" -ss 00:00:00.000 -to 00:00:03.000 -q 0 -f mpegts -codec:v mpeg1video -s 1000x600 -r 30 http://localhost:9999/push/${id}`
         
         let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
         //childProcess.stdout.pipe(process.stdout)  // don't print to screen
