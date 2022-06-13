@@ -6967,6 +6967,8 @@ npm install --save normalize.css
 
 - https://github.com/phoboslab/jsmpeg
 
+- https://blog.csdn.net/a843334549/article/details/120697574  海康推流
+
 - https://blog.csdn.net/qq_41619796/article/details/121161232
 
 - https://gitee.com/zhairuihao/jsmpeg-ws-web
