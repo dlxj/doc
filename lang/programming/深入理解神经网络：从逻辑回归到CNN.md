@@ -6735,6 +6735,28 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+### JAX
+
+
+
+#### windows 必须手动编译
+
+- https://jax.readthedocs.io/en/latest/developer.html#additional-notes-for-building-jaxlib-from-source-on-windows
+
+#### jaxlib 非官方安装
+
+- https://github.com/cloudhan/jax-windows-builder
+
+
+
+
+
+```
+https://jax.readthedocs.io/en/latest/developer.html#additional-notes-for-building-jaxlib-from-source-on-windows
+```
+
+
+
 
 
 ```python
@@ -6998,7 +7020,7 @@ for n in itertools.count():
 
 ### 初试JAX - AutoGrad与JIT
 
-
+- https://zhuanlan.zhihu.com/p/111254887
 
 ```
 # https://zhuanlan.zhihu.com/p/111254887
