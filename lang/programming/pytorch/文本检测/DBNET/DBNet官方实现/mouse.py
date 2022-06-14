@@ -10,8 +10,8 @@ try:
         print(positionStr, end='')
         print('\b' * len(positionStr), end='', flush=True)
 
-        pyautogui.moveTo(184, 941, 3)
-        pyautogui.moveTo(1685, 121, 3)
+        pyautogui.moveTo(184, 941, 30)
+        pyautogui.moveTo(1685, 121, 30)
         #if keyboard.is_pressed('b'):
             #break
 
