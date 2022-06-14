@@ -5582,6 +5582,31 @@ OCR Engine modes:
   
 - https://blog.csdn.net/u010901792/article/details/112791647  **宝藏解读**
   
+  > **网络输出：**
+  >
+  > 1.probability map, w\*h\*1 , 代表像素点是文本的概率
+  >
+  > 2.threshhold map, w\*h\*1, 每个像素点的阈值
+  >
+  > 3.binary map, w\*h\*1, 由1,2 计算得到，计算公式为DB公式
+  >
+  > ```python
+  > thresh_binary = self.step_function(binary, thresh)
+  > 	# binary和thresh分别为P和T
+  > 	# thresh_binary 就是approximate binary map
+  > 
+  > def step_function(self, x, y):
+  > 	return torch.reciprocal(1 + torch.exp(-self.k * (x - y)))
+  > 
+  > 
+  > ```
+  >
+  > $$
+  > \hat{a}_{i,j} = \frac{1}{1+e^{-k (P_{i,j} - T_{i,j})}}
+  > $$
+  >
+  > 
+  
 - https://github.com/MhLiao/DB/issues/100  **官方配置问题**
   
   - https://github.com/MhLiao/DB/issues/49 **训练时间问题**
@@ -5772,7 +5797,7 @@ OCR Engine modes:
 >             for data_process in self.processes:
 >                 data = data_process(data)
 > 				# 第一步做数据增强，随机透视变换、改变大小、什么的
->                 # 
+>                 	 
 >                 
 > 
 > 读人工标记(图片文本区域的多边形)
