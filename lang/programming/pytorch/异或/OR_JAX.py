@@ -1,11 +1,14 @@
-import numpy as np
+import numpy as onp
+
+import jax
+import jax.numpy as np
 import itertools
 
 """
-异或问题, JAX 自动微分实现 
+异或问题, JAX 自动微分实现
 """
 
-import numpy as np
+# import numpy as np
 
 # 此激活函数设计为可以接受列向量
 # 返回结果也是列向量
@@ -23,7 +26,7 @@ X = np.array([
                 [1, 0, 1],
                 [1, 1, 0],
                 [1, 1, 1]
-             ], np.float)
+             ], onp.float)
 
 # 输入矩阵，维度4*3。注意偏置作为列向量添加进来了
 
@@ -32,10 +35,10 @@ Y = np.array([
                 [1],
                 [1],
                 [1]
-             ], np.float)
+             ], onp.float)
 # 4*1 输出
 
-W = np.random.uniform(size=(3, 1))   # 3*1 权重
+W = onp.random.uniform(size=(3, 1))   # 3*1 权重
 #W = W * 0.1 # 据说对于sigmoid 激活函数，更小的权重更容易收敛
 """
 观察输入输出的维度，可以看出需要对X 的列进行压缩，既把列从维度3 降维到1
@@ -44,7 +47,29 @@ W = np.random.uniform(size=(3, 1))   # 3*1 权重
         (4*3).(3*1) = 4*1
 """
 
+
+# 求前向传播的均方误差
+def loss(X, W, m):
+    A = np.dot(X, W)  # 前向传播
+    H = sigmoid(A)    # 预测结果
+    E = H - Y         # 误差值
+    E2 = E ** 2
+    
+    totalErrs = np.sum( E2, axis=0 )[0] # 按列求和
+
+    lss = 1 / (2 * m) * totalErrs  # 均方误差值
+
+    return lss
+
+
+loss_grad = jax.grad(loss)  # 自动求梯度
+
+
 for k in range(maxIter): 
+
+    lss = loss(X, W, m)
+
+    grads = loss_grad(X, W, m)
 
     A = np.dot(X, W)  # 前向传播
     H = sigmoid(A)    # 预测结果
