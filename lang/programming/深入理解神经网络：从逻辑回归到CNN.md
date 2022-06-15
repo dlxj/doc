@@ -6739,6 +6739,10 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+- https://zhuanlan.zhihu.com/p/475234869  **极好的**
+
+  
+
 #### windows 必须手动编译
 
 - https://jax.readthedocs.io/en/latest/developer.html#additional-notes-for-building-jaxlib-from-source-on-windows
@@ -7170,6 +7174,16 @@ pip install grpcio==1.11.0
 
 
 # 装机
+
+- https://ark.intel.com/content/www/us/en/ark/products/199331/intel-core-i910900kf-processor-20m-cache-up-to-5-30-ghz.html  10900k 是有核显的
+
+> 对于单路 CPU 的主板，能够同时支持四张显卡卡的神板，毫无疑问就只有 X99/X299 系列的主板了
+>
+> 华硕的 Prime X299-A II ，这款主板支持的CPU 包括 10900X/10920X/10940X （Intel X299/LGA 2066）
+>
+> 由于我选的X299 主板，CPU的插槽类型为LGA 2066，我就要选与此匹配的CPU。我选的是 i9 10900X 10核20线程，价格 3199
+>
+>  “海盗船 复仇者” 系列单条 16GB 最便宜的内存 3200 MHz，一共上了 4 条，总共 64GB。主板有 8 个内存插槽，先插四条构成四通道，剩余的留作扩展，不过此处一定注意， 在安装内存条的时候需要阅读主板说明书，基本每个主板都会给出推荐的插法，看好个插槽所在的通道，一定不要插错了。
 
 - https://www.zhihu.com/question/345502563
 
