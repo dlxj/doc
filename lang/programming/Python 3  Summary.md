@@ -1911,13 +1911,77 @@ tests_segsNew = copy.deepcopy(tests_segs)
 sorted(results, key=lambda l: l[3], reverse=True) # 按相似度高到低排序
 
 math.log(len(arr[6])) # 可以近似认为后一项的值域是 [0, 10]
-
 ```
 
 
 
 ```python
 index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
+```
+
+
+
+### Shuffle two array
+
+
+
+```python
+# OR_JAX_vmap.py
+# 以同样的顺序随机排序两个数组
+import numpy as onp
+import jax
+import jax.numpy as np
+
+X = np.array([
+                [1, 0, 0],
+                [1, 0, 1],
+                [1, 1, 0],
+                [1, 1, 1]
+             ], onp.float)
+
+Y = np.array([
+                [0],
+                [1],
+                [1],
+                [1]
+             ], onp.float)
+
+
+randomize = onp.arange(len(X))
+onp.random.shuffle(randomize)
+
+X = X[ randomize ]
+Y = Y[ randomize ]
+
+print( X )
+print( Y )
+```
+
+
+
+```
+# 以同样的顺序随机排序两个数组
+import random
+ 
+# initializing lists
+test_list1 = [6, 4, 8, 9, 10]
+test_list2 = [1, 2, 3, 4, 5]
+ 
+# printing lists
+print(f"The original list 1 : {test_list1}")
+print(f"The original list 2 : {test_list2}")
+ 
+# Shuffle two lists with same order
+# Using zip() + * operator + shuffle()
+temp = list(zip(test_list1, test_list2))
+random.shuffle(temp)
+res1, res2 = zip(*temp)
+# res1 and res2 come out as tuples, and so must be converted to lists.
+res1, res2 = list(res1), list(res2)
+ 
+# Printing result
+print(f"List 1 after shuffle :  {res1}")
+print(f"List 2 after shuffle :  {res2}")
 ```
 
 

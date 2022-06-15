@@ -6737,6 +6737,8 @@ one hot型的矩阵运算简化为了查表操作
 
 ### JAX
 
+- https://github.com/google/jax/issues/2697 **均方误差**
+
 - https://zhuanlan.zhihu.com/p/475234869  **极好的**
 
   > 
@@ -6777,6 +6779,36 @@ one hot型的矩阵运算简化为了查表操作
   > ```
   >
   > 
+  >
+  > **vmap**是向量化/矢量化的操作神器。**将N个具有相同维度的样本X进行堆叠(stack)后，并一次性传递给神经网络，直接得到所有或该batched样本的预测值**。
+  >
+  > 
+  >
+  > 无需再考虑batch的这个维度（batch维度在最外层即可），只需要按照无batch的输入形式去编写神经网络
+  >
+  > 
+  >
+  > ```python
+  > x = jax.random.normal(jax.random.PRNGKey(55), (3, 2)) # 3*2 的随机数
+  > ```
+  >
+  > 
+  >
+  > vmap有3个最重要的参数：
+  >
+  > - fun: 代表你需要进行向量化操作的具体函数
+  > - in_axes：输入格式为元组，代表fun中每个输入参数中，使用哪一个维度进行向量化
+  > - out_axes: 经过fun计算后，每组输出在哪个维度输出
+  >
+  > 
+  >
+  > **所以在矩阵运算的时候，其实最后都可以转成我们常见的二维矩阵运算，遵循的原则是：在多维矩阵相乘中，需最后两维满足shape匹配原则，最后两维才是有数据的矩阵，前面的维度只是矩阵的排列而已！**
+  >
+  > 
+  >
+  > a
+  >
+  > a
   >
   > a
   >
@@ -7329,7 +7361,7 @@ pip install grpcio==1.11.0
 
 # 装机
 
-- https://ark.intel.com/content/www/us/en/ark/products/199331/intel-core-i910900kf-processor-20m-cache-up-to-5-30-ghz.html  10900k 是有核显的
+- https://ark.intel.com/content/www/us/en/ark/products/199331/intel-core-i910900kf-processor-20m-cache-up-to-5-30-ghz.html  10900k 是有核显的  X99平台的U都没有核显
 
 > 对于单路 CPU 的主板，能够同时支持四张显卡卡的神板，毫无疑问就只有 X99/X299 系列的主板了
 >
@@ -7718,7 +7750,9 @@ CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_d
 
   > cuda gpu 支持列表
 
+- https://blog.csdn.net/liaoningxinmin/article/details/121501720
 
+  > **2080TI + 3080TI 配置**
 
 ```
 部件	型号	价格	链接	备注
@@ -7824,8 +7858,26 @@ apt-get update
 
 ```
 
-
 # 3080 TI
+
+- https://zhuanlan.zhihu.com/p/291332801
+
+  > 2个3080理论上和4个2080ti性能差不多，现在再加2080ti就非常不理智了。所以拆了2080ti，买了两个技嘉GeForce RTX™ 3080 GAMING OC 10G
+  >
+  > a
+  >
+  > - 操作系统：Ubuntu18.04
+  > - Nvidia Driver：455
+  > - Python：3.7
+  > - Pytorch：>= 1.7.0
+  > - cuda： 11.1.1
+  > - cudnn： 8.0.5
+  >
+  > > 版本号很重要，一定要看清楚，选不对小版本就是在瞎折腾。
+  >
+  > 找到原因了，是因为cudnn的问题，**训练的时候cudnn设为false**就好了
+  >
+  > a
 
 ```
 肯定是选两张RTX3080TI低预算的情况下深度学习主要的瓶颈还是在于训练速度而不是显存容量，同样的模型训练时batch size增大一倍可能最终性能会有很小的提升，但是训练速度增加一倍意味着同样的时间可以试更多的模型/超参数虽然RTX3080TI的12GB显存可能会出现batch size不够大导致GPU没有被“喂饱”的问题，但是可以通过混合精度训练减少显存的占用，正好Ampere增加了BF16的支持。对于具体的硬件选购时要注意的问题：非服务器/HEDT平台主板（这个预算也不够买）会受制于MSDT平台的PCI-E通道数量只能给每张显卡提供8个通道，要注意买PCI-E拆分成X8 + X8的主板，别买成X16 + X4的了非OTES散热的显卡都很厚而且散热容易互相干涉，建议选择两条可用的插槽间距在4槽及以上的主板电源功率得管够，至少1200W往上走，每张显卡的每个供电接口都要和电源单独连线，不要偷懒用一条线分出多个插口另外还可以考虑下性能差距不大的RTX3080 12GB
