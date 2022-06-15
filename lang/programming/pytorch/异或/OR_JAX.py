@@ -1,14 +1,12 @@
-import numpy as onp
 
+# OR_JAX.py
+import numpy as onp
 import jax
 import jax.numpy as np
-import itertools
 
 """
-异或问题, JAX 自动微分实现
+OR 运算, JAX 自动微分实现
 """
-
-# import numpy as np
 
 # 此激活函数设计为可以接受列向量
 # 返回结果也是列向量
@@ -55,9 +53,9 @@ def loss(X, W, m):
     E = H - Y         # 误差值
     E2 = E ** 2
     
-    totalErrs = np.sum( E2, axis=0 )[0] # 按列求和
+    errs = np.sum( E2, axis=0 )[0] # 按列求和
 
-    lss = 1 / (2 * m) * totalErrs  # 均方误差值
+    lss = 1 / (2 * m) * errs  # 均方误差值
 
     return lss
 
@@ -67,35 +65,25 @@ loss_grad = jax.grad(loss)  # 自动求梯度
 
 for k in range(maxIter): 
 
-    lss = loss(X, W, m)
+    # grads = jax.grad(loss, argnums=(1,))(X, W, m)
+    
+    [ lss, grads ] = jax.value_and_grad(loss, argnums=(1,))(X, W, m)  # 表示对 第1 个参数进行求导 (索引从0 开始，这里的第一个参数是 W)
 
-    grads = jax.grad(loss, argnums=(1,))(X, W, m)  # 表示对 第1 个参数进行求导 (索引从0 开始，这里的第一个参数是 W)
+    lss = float(lss)  # lss 是 0 维数组，不能用下标去索引
 
-    grads = loss_grad(X, W, m)
+    W = W - alpha * grads[0]
 
-    A = np.dot(X, W)  # 前向传播
-    H = sigmoid(A)    # 预测结果
-    E = H - Y         # 误差值
 
-    errs = sum( list(itertools.chain(*abs(E))) )  # 误差总和
-    """
-    注意这里算的不是均方误差，但是下面的权重更新是用了均方误差函数的导数来算的
-    这里的errs 只是用来衡量预测结果有多接近期望结果，以便提前结速迭代
-    """
-    if errs < 0.05:
-        print(f'stop at {k}')
-        print("Weight: ")
-        print(W)
+    if lss < 0.001: 
+
+        A = np.dot(X, W)  # 前向传播
+        H = sigmoid(A)    # 预测结果
+        E = H - Y         # 误差值
+
+        print(f"loss is: {lss}, curr iter num: {k}")
+        print(H) 
+        
         break
 
-    """
-    权重更新
-    """
-    for j in range(n):
-        s = 0
-        for i in range(m):
-            s += E[i] * H[i] * (1 - H[i]) * X[i][j]  # W_{j} 的梯度
-            W[j] = W[j] - alpha * 1/m * s # 更新权重
-
-    print(f"err sum is: {errs}, curr iter num: {k}")
-    print(H)
+    if k % 100 == 0:
+        print(f"loss is: {lss}, curr iter num: {k}")

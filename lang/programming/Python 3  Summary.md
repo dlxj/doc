@@ -1469,6 +1469,22 @@ if hasattr(base, 'states'):
 
 
 
+### 0 维数组
+
+```
+What you create with
+
+a = np.array(1)
+is a zero-dimensional array, and these cannot be indexed. You also don't need to index it -- you can use a directly as if it were a scalar value. If you really need the value in a different type, say float, you can explicitly convert it with float(a). If you need it in the base type of the array, you can use a.item() or a[()].
+
+Note that the zero-dimensional array is mutable. If you change the value of the single entry in the array, this will be visible via all references to the array you stored. Use a.item() if you want to store an immutable value.
+
+If you want a one-dimensional array with a single element instead, use
+
+a = np.array([1])
+You can access the single element with a[0] now.
+```
+
 
 
 ## OP
