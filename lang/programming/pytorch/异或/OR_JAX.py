@@ -69,6 +69,8 @@ for k in range(maxIter):
 
     lss = loss(X, W, m)
 
+    grads = jax.grad(loss, argnums=(1,))(X, W, m)  # 表示对 第1 个参数进行求导 (索引从0 开始，这里的第一个参数是 W)
+
     grads = loss_grad(X, W, m)
 
     A = np.dot(X, W)  # 前向传播
