@@ -56,8 +56,8 @@ def batch_data(X, Y):
             X_batch.append( X[j].copy().reshape(1, 3) )
             Y_batch.append( Y[j].copy().reshape(1, 1) )
 
-    X_batch = np.array( X_batch, onp.float )  # (16*1*3)  # 批量输入 16 个 X，同时进行训练，输出 16 个结果
-    Y_batch = np.array( Y_batch, onp.float )
+    X_batch = np.array( X_batch, np.float32 )  # (16*1*3)  # 批量输入 16 个 X，同时进行训练，输出 16 个结果
+    Y_batch = np.array( Y_batch, np.float32 )
 
     return X_batch, Y_batch
 
@@ -69,7 +69,7 @@ def batch_data(X, Y):
 
 
 # batch_size = len(X_batch)
-epoch = 1200
+epoch = 12000
 alpha = 0.5 # 学习率
 
 # m = batch_size # 样本数
@@ -133,19 +133,21 @@ def loss(W, X, Y, m):
 
     lss = 1 / (2 * m) * errs  # 均方误差值
 
-    return lss
+    return lss[0]
 
 
 for k in range(epoch): 
 
     X_batch, Y_batch = batch_data(X, Y)
 
-    
-    print( X_batch[0:5, :] )
-    print( Y_batch[0:5, :] )
+    if (k == 0):
+        print( X_batch[0:5, :] )
+        print( Y_batch[0:5, :] )
 
 
     batch_size = len(X_batch)
+
+    lss = loss(W, X_batch, Y_batch, batch_size) 
 
     # grads = jax.grad(loss, argnums=(1,))(X, W, m)
     
@@ -167,5 +169,5 @@ for k in range(epoch):
         
         break
 
-    if k % 5 == 0:
+    if k % 10 == 0:
         print(f"loss is: {lss}, curr iter num: {k}")

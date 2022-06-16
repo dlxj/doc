@@ -5582,6 +5582,8 @@ OCR Engine modes:
   
 - https://blog.csdn.net/u010901792/article/details/112791647  **宝藏解读**
   
+- https://github.com/christianversloot/machine-learning-articles/blob/main/upsampling2d-how-to-use-upsampling-with-keras.md  **上采样很详细**
+  
   > **网络输出：**
   >
   > 1.probability map, w\*h\*1 , 代表像素点是文本的概率
