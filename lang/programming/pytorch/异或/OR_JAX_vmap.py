@@ -70,7 +70,7 @@ def batch_data(X, Y):
 
 # batch_size = len(X_batch)
 epoch = 12000
-alpha = 0.5 # 学习率
+alpha = 0.1 # 学习率
 
 # m = batch_size # 样本数
 # n = 3 # 列数

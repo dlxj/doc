@@ -3129,7 +3129,9 @@ run(10)
 
 
 
+### 并行快排
 
+- https://github.com/microsoft/napajs/blob/master/examples/tutorial/parallel-quick-sort/parallel-quick-sort.js
 
 
 
