@@ -16,6 +16,10 @@ systemctl stop firewalld
 # 关闭 apache 
 service httpd stop
 
+yum install nginx
+nginx -t # 显示主配置文件路径，并检查语法错误
+systemctl start nginx
+
 # atuto run when reboot
 chmod +x /etc/rc.d/rc.local
 vi /etc/rc.d/rc.local
@@ -2894,6 +2898,16 @@ function getContent(fileName) {
 
 
 
+## 文件时间
+
+- https://www.geeksforgeeks.org/node-js-fs-utimessync-method/
+
+
+
+
+
+
+
 ## 图片
 
 
@@ -3952,6 +3966,43 @@ SELECT convert_tz(now(),@@session.time_zone,'+08:00')
 let u = re[0].updateTime
 let tt = new Date(u).toLocaleString('chinese',{hour12:false})
 ```
+
+
+
+### 时间比较
+
+
+
+```
+普通日期时间比较
+
+泛指格式相同的日期时间
+
+var date1 = new Date("2020-3-15");
+var date2 = new Date("2020-2-29");
+var result = date1 > date2;        
+console.log(result);                //true
+特殊日期时间比较
+
+因格式不同，比较前，我们需要将日期时间格式化
+
+var date1 = new Date("2020-3-15");
+var date2 = new Date("2020/2/29");
+var result = Date.parse(date1) > Date.parse(date2);
+console.log(result);                                //true
+字符串类型日期时间比较 
+
+用于不同格式之间的字符串日期时间比较，统一格式化后再比较
+
+var date1 = "2020-3-15";
+var date2 = "2020/2/29";
+var result = date1.replace(/\-/g,'/') > date2.replace(/\-/g,'/');
+console.log(result);                                                //true
+```
+
+
+
+
 
 
 
@@ -7024,6 +7075,31 @@ npm install --save normalize.css
 
 区别和适用场景官方文档里写的很清楚：https://uniapp.dcloud.io/use-weex
 
+```
+
+
+
+# NFS
+
+
+
+```
+nfs 成功
+
+	https://qizhanming.com/blog/2018/08/08/how-to-install-nfs-on-centos-7
+
+	vi /etc/exports      # .124
+		/home/data/users/xxx/data_backup/    192.168.2.0/24(rw,sync,no_root_squash,no_all_squash)
+	
+	客户端
+		yum -y install nfs-utils
+
+		mkdir /yingedu/shared
+		chmod 755 /xxx/shared
+
+		showmount -e 192.168.1.xxx     # 显示 .124 的共享文件
+
+		mount -t nfs 192.168.1.xxx:/home/data/users/xxx/data_backup  /yingedu/shared    # 挂载远程目录
 ```
 
 

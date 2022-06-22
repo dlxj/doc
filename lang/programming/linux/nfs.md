@@ -2,6 +2,31 @@
 
 
 
+## 成功
+
+- ​	https://qizhanming.com/blog/2018/08/08/how-to-install-nfs-on-centos-7
+
+````
+nfs 成功
+
+	vi /etc/exports      # .124
+		/home/data/users/xxx/data_backup/    192.168.2.0/24(rw,sync,no_root_squash,no_all_squash)
+	
+	客户端
+		yum -y install nfs-utils
+
+		mkdir /yingedu/shared
+		chmod 755 /xxx/shared
+
+		showmount -e 192.168.1.xxx     # 显示 .124 的共享文件
+
+		mount -t nfs 192.168.1.xxx:/home/data/users/xxx/data_backup  /yingedu/shared    # 挂载远程目录
+````
+
+
+
+
+
 ## 前言
 
 NFS 是 Network File System 的缩写，即网络文件系统。功能是让客户端通过网络访问不同主机上磁盘里的数据，主要用在类Unix系统上实现文件共享的一种方法。 本例演示 CentOS 7 下安装和配置 NFS 的基本步骤。
