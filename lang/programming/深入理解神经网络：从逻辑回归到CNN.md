@@ -7721,6 +7721,36 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 
 
+# autodl
+
+- https://www.autodl.com/
+- https://pytorch.org/get-started/previous-versions/
+
+```
+# 3090 + Python3.8 + Cuda 11.1
+
+cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
+unzip DB.zip && \
+unzip TD_TR.zip -d DB/datasets
+
+
+conda deactivate && \
+conda update -y conda -n base && \
+conda install ipython pip && \
+conda create -n DB python=3.8 --yes && \
+source activate DB && \
+pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+
+
+```
+
+
+
+
+
+
+
 # 1080TI
 
 - https://www.autodl.com/console/instance/list
