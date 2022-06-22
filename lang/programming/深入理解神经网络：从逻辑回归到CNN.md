@@ -7724,10 +7724,18 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 # autodl
 
 - https://www.autodl.com/
+
 - https://pytorch.org/get-started/previous-versions/
 
+- https://github.com/MhLiao/DB
+
+  > ```
+  > src/deform_conv_cuda.cpp:65:3: error: ‘AT_CHECK’ was not declared in this scope
+  >    AT_CHECK(weight.ndimension() == 4
+  > ```
+
 ```
-# 3090 + Python3.8 + Cuda 11.1
+# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1
 
 cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
 unzip DB.zip && \
@@ -7740,6 +7748,27 @@ conda install ipython pip && \
 conda create -n DB python=3.8 --yes && \
 source activate DB && \
 pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+
+
+
+apt install build-essential  && \
+export CUDA_HOME=/usr/local/cuda && \
+echo $CUDA_HOME && \
+nvcc --version && \
+ldconfig -p | grep cuda && \
+cd ~/DB/assets/ops/dcn/ && \
+sed -i 's/AT_CHECK/TORCH_CHECK/1' /root/DB/assets/ops/dcn/src/deform_conv_cuda.cpp && \
+sed -i 's/AT_CHECK/TORCH_CHECK/1' /root/DB/assets/ops/dcn/src/deform_pool_cuda.cpp && \
+python setup.py build_ext --inplace
+
+
+
+
+
+# 禁用 cudnn
+torch.backends.cudnn.enabled = False
+
 
 
 
