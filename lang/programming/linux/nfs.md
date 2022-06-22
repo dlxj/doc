@@ -8,6 +8,7 @@
 
 ````
 nfs 成功
+	umount -f -l  /home/data/users/xxx/mnt     # 取消挂载
 
 	vi /etc/exports      # .124
 		/home/data/users/xxx/data_backup/    192.168.2.0/24(rw,sync,no_root_squash,no_all_squash)

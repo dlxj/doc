@@ -7085,6 +7085,7 @@ npm install --save normalize.css
 
 ```
 nfs 成功
+	umount -f -l  /home/data/users/xxx/mnt     # 取消挂载
 
 	https://qizhanming.com/blog/2018/08/08/how-to-install-nfs-on-centos-7
 
