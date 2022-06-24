@@ -7075,7 +7075,7 @@ print(jac_b)
 
 
 
-```
+```python
 import numpy as np
 import torch
 
@@ -7116,16 +7116,56 @@ print(result)
 
 
 
+#### linspace
+
+```python
+# 0 到 2pi 均匀的分成 16 份
+jnp.linspace(0, 2 * math.pi, 16)  # shape:(16,) 16 个数的一维数组
+```
+
+
+
+#### 维度不同的加法
+
+- doc\lang\programming\pytorch\jax\jax_train_rnn.py
+
+```python
+tmp = t + offset  # (16, ) + (10000, 1) = (10000, 16)
+tmp2 = jnp.sin(tmp)  # (10000, 16)
+```
+
+
+
+#### 分块操作 sousa
+
+```python
+x1 = x1.at[:half_dataset_size].multiply(-1)
+y = y.at[:half_dataset_size].set(0)
+x = jnp.stack([x1, x2], axis=-1)  # 堆叠在一起
+```
+
+
+
+#### stack 堆叠
+
+```python
+x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,1)  = 10000, 16, 2  
+	# stack 会增加一个新的维度, 如果 axis=0 新维度在 第 1 维, 如果 axis=-1 新维度在最后一维
+```
+
+
+
 
 
 #### 随机数
 
-```
+```python
 import jax.random as jrandom
 
 data_key, loader_key, model_key = jrandom.split(jrandom.PRNGKey(5678), 3)
 
-
+# 均匀分布 (10000, 1) 一万个数的二维数组
+offset = jrandom.uniform(data_key, (dataset_size, 1), minval=0, maxval=2 * math.pi)
 ```
 
 
@@ -7152,6 +7192,36 @@ data_key, loader_key, model_key = jrandom.split(jrandom.PRNGKey(5678), 3)
 
   - https://colab.research.google.com/github/patrick-kidger/equinox/blob/main/examples/train_rnn.ipynb 
   - https://colab.research.google.com/drive/17q5CGC3ZT2JNzj0v-jH8UcuhXb2kBTbC?usp=sharing
+
+
+
+#### make_functional
+
+- https://github.com/patrick-kidger/equinox/issues/112
+
+```python
+# pytorch
+
+net = NetworkClass(*args, **kwargs)
+fnet, params = functorch.make_functional(net)
+y = fnet(params, x) 
+```
+
+```python
+# equinox
+@eqx.filter_jit
+@eqx.filter_vmap(args=(None, 0, 0))
+@eqx.filter_grad
+def loss(model, x, y):
+    return (model(x) - y) ** 2
+
+model = eqx.nn.MLP(...)
+per_sample_grads = loss(model, ...)
+```
+
+
+
+
 
 ### Solving Optimization Problems with JAX
 

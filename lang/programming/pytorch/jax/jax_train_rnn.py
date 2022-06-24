@@ -24,24 +24,6 @@ import optax  # https://github.com/deepmind/optax
 import equinox as eqx
 
 
-"""
-jax.lax.reduce
-Parameters
-    operands (Any) –  操作数
-
-    init_values (Any) –  初值
-
-    computation (Callable[[Any, Any], Any]) –  函数: 二进一出
-
-    dimensions (Sequence[int]) –  维度 (0, ) 表示 0 维
-
-Return type
-    Any
-"""
-from jax import lax
-import jax.numpy as jnp
-result = lax.reduce(jnp.arange(6, dtype='uint8'), jnp.uint8(0), lax.bitwise_xor, (0,))
-print(result)
 
 """We begin by importing the usual libraries, setting up a very simple dataloader, and generating a toy dataset of spirals."""
 
@@ -62,8 +44,10 @@ def dataloader(arrays, batch_size, *, key):
 
 
 def get_data(dataset_size, *, key):
-    t = jnp.linspace(0, 2 * math.pi, 16)
-    offset = jrandom.uniform(key, (dataset_size, 1), minval=0, maxval=2 * math.pi)
+    t = jnp.linspace(0, 2 * math.pi, 16) # 16 个数的一维数组  (16, )
+    offset = jrandom.uniform(key, (dataset_size, 1), minval=0, maxval=2 * math.pi)  #  均匀分布, 一万个数的二维数组  (10000, 1)
+    tmp = t + offset  # (16, ) + (10000, 1) = (10000, 16)
+    tmp2 = jnp.sin(tmp)  # (10000, 16)
     x1 = jnp.sin(t + offset) / (1 + t)
     x2 = jnp.cos(t + offset) / (1 + t)
     y = jnp.ones((dataset_size, 1))
@@ -71,7 +55,8 @@ def get_data(dataset_size, *, key):
     half_dataset_size = dataset_size // 2
     x1 = x1.at[:half_dataset_size].multiply(-1)
     y = y.at[:half_dataset_size].set(0)
-    x = jnp.stack([x1, x2], axis=-1)
+    x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,1)  = 10000, 16, 2  
+        # stack 会增加一个新的维度, 如果 axis=0 新维度在 第 1 维, 如果 axis=-1 新维度在最后一维
 
     return x, y
 
