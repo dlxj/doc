@@ -7099,8 +7099,6 @@ jacobian(exp_reducer, inputs)
 
 
 
-
-
 ### equinox
 
 - https://github.com/patrick-kidger/equinox
@@ -7109,7 +7107,10 @@ jacobian(exp_reducer, inputs)
 
 - https://colab.research.google.com/drive/1xoGwp40otsZfnyAfbBtFkUrteGICJppp?usp=sharing
 
-  
+- https://github.com/patrick-kidger/equinox/blob/main/examples/train_rnn.ipynb
+
+  - https://colab.research.google.com/github/patrick-kidger/equinox/blob/main/examples/train_rnn.ipynb 
+  - https://colab.research.google.com/drive/17q5CGC3ZT2JNzj0v-jH8UcuhXb2kBTbC?usp=sharing
 
 ### Solving Optimization Problems with JAX
 
