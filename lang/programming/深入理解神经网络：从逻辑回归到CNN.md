@@ -7155,6 +7155,17 @@ x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,16)  = 10000, 16,
 
 
 
+#### assert
+
+```python
+dataset_size = arrays[0].shape[0]
+assert all(array.shape[0] == dataset_size for array in arrays)
+```
+
+
+
+
+
 
 
 #### 随机数
@@ -7166,6 +7177,25 @@ data_key, loader_key, model_key = jrandom.split(jrandom.PRNGKey(5678), 3)
 
 # 均匀分布 (10000, 1) 一万个数的二维数组
 offset = jrandom.uniform(data_key, (dataset_size, 1), minval=0, maxval=2 * math.pi)
+```
+
+
+
+```python
+def dataloader(arrays, batch_size, *, key):
+    dataset_size = arrays[0].shape[0]
+    assert all(array.shape[0] == dataset_size for array in arrays)
+    indices = jnp.arange(dataset_size)
+    while True:
+        perm = jrandom.permutation(key, indices) # 随机重排，类似shuffle
+        (key,) = jrandom.split(key, 1)
+        start = 0
+        end = batch_size
+        while end < dataset_size:
+            batch_perm = perm[start:end]
+            yield tuple(array[batch_perm] for array in arrays)
+            start = end
+            end = start + batch_size
 ```
 
 
