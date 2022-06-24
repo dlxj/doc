@@ -6743,6 +6743,8 @@ one hot型的矩阵运算简化为了查表操作
 
 - https://zhuanlan.zhihu.com/p/475234869  **极好的**
 
+- https://www.blogsaays.com/jax-neural-network-example/  XOR 例子
+
   > 
   >
   > 自动微分的模式有两种：
@@ -7088,6 +7090,16 @@ jacobian(exp_reducer, inputs)
 ```
 
 
+
+### equinox
+
+- https://github.com/patrick-kidger/equinox
+
+  > top of jax 简单易用
+
+- https://colab.research.google.com/drive/1xoGwp40otsZfnyAfbBtFkUrteGICJppp?usp=sharing
+
+  
 
 ### Solving Optimization Problems with JAX
 

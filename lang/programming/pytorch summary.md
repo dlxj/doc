@@ -408,6 +408,31 @@ plt.show()
 
 
 
+## Variable
+
+- https://blog.csdn.net/weixin_42782150/article/details/106854349
+
+  
+
+Variable 是可以自动微分的 Tensor，Varibale 默认不求梯度
+
+```
+import torch
+from torch.autograd import Variable
+
+x_tensor = torch.randn(2,3)  # 创建2*3的张量矩阵
+x = Variable(x_tensor) 
+print(x.requires_grad) 
+>>>
+False
+
+x = Variable(x_tensor,requires_grad=True)  # x 要求自动求梯度
+```
+
+
+
+
+
 
 
 ## 损失函数

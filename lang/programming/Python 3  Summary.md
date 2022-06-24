@@ -883,6 +883,36 @@ class EAPIrt2PLModel(object):
 
 
 
+### 声明成员类型
+
+- https://colab.research.google.com/drive/1xoGwp40otsZfnyAfbBtFkUrteGICJppp#scrollTo=LvSpLCEmYsKE
+
+```python
+!pip install --quiet equinox
+
+import jax
+import jax.random as jr
+import jax.numpy as jnp
+import equinox as eqx
+
+from typing import Callable
+
+class Model(eqx.Module):
+    linear: eqx.Module
+    non_jax: Callable
+    
+    def __init__(self, key):
+        self.linear = eqx.nn.Linear(3, 3, key=key)
+        self.non_jax = lambda: 'this breaks pmap/vmap with out=None'
+
+devices = jax.local_devices()
+n_dev = len(devices)
+
+model = Model(jr.PRNGKey(42))
+```
+
+
+
 
 
 ### setter
@@ -1816,6 +1846,46 @@ us_dic = { w:i for i, w in enumerate(us) }
     pred_label = probab.index(max(probab))  # 这一句特别精髓
     	# 先求list 里的最大值，再求最大值在list 里的索引，索引既是手写数字的以预测值
 ```
+
+
+
+### array[None, ...]
+
+```python
+# ... 表示全部要？  array[None, ...] 表示最外面添加一个维度 (1, 后面不变) ，后面维度不变
+def v_replicate(maybe_array):
+    if eqx.is_array(maybe_array):
+        return jnp.repeat(maybe_array[None, ...], n_dev, 0)
+    return maybe_array
+
+v_model = jax.tree_map(
+    v_replicate,
+    model,
+)
+```
+
+
+
+```python
+# None 意思是添加一个维度？
+
+import numpy as np
+
+a = np.random.rand(3,2)
+
+
+print(a[None,:].shape) # output: (1, 3, 2)
+print(a[:,None].shape) # output: (3, 1, 2)
+print(a[:,None,:,None].shape) # output: (3, 1, 2, 1)
+print(a[:,None,None, :].shape) # output: (3, 1, 1, 2)
+
+print(a[:,None,:,:]) # IndexError: too many indices for array: array is 2-dimensional, but 3 were indexed
+
+it practically acts as np.expand_dims function to add a dummy axis where I want
+
+```
+
+
 
 
 
