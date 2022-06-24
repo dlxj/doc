@@ -7170,6 +7170,12 @@ assert all(array.shape[0] == dataset_size for array in arrays)
 
 #### 随机数
 
+```
+(key,) = jrandom.split(key, 1)  # 逗号可能不能省略，有它才是 tuples
+```
+
+
+
 ```python
 import jax.random as jrandom
 

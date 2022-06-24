@@ -8,6 +8,7 @@
 import jax
 import jax.numpy as np
 import numpy as onp
+import jax.random as jrandom
 
 
 # 此激活函数设计为可以接受列向量
@@ -30,14 +31,16 @@ Y = np.array([
                 [[0]]
              ], onp.float)
 
-W1 = onp.random.uniform(size=(2, 3))   # (2*1) 权重
+key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
 
-W2 = onp.random.uniform(size=(3, 1))   # (3*1) 权重
+W1 = jax.random.normal(key1, shape=(2, 3), dtype=np.float32)   # (2*1) 权重
+
+W2 = jax.random.normal(key2, shape=(3, 1), dtype=np.float32)   # (3*1) 权重
 
 
-b1 = onp.random.uniform(size=(1, 3))   # (1*3) 偏置
+b1 = jax.random.normal(key3, shape=(1, 3), dtype=np.float32)   # (1*3) 偏置
 
-b2 = onp.random.uniform(size=(1, 1))   # (1*1) 偏置
+b2 = jax.random.normal(key4, shape=(1, 1), dtype=np.float32)   # (1*1) 偏置
 
 
 alpha = 0.5 # 学习率
