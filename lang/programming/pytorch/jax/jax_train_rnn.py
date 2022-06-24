@@ -23,6 +23,26 @@ import optax  # https://github.com/deepmind/optax
 
 import equinox as eqx
 
+
+"""
+jax.lax.reduce
+Parameters
+    operands (Any) –  操作数
+
+    init_values (Any) –  初值
+
+    computation (Callable[[Any, Any], Any]) –  函数: 二进一出
+
+    dimensions (Sequence[int]) –  维度 (0, ) 表示 0 维
+
+Return type
+    Any
+"""
+from jax import lax
+import jax.numpy as jnp
+result = lax.reduce(jnp.arange(6, dtype='uint8'), jnp.uint8(0), lax.bitwise_xor, (0,))
+print(result)
+
 """We begin by importing the usual libraries, setting up a very simple dataloader, and generating a toy dataset of spirals."""
 
 def dataloader(arrays, batch_size, *, key):

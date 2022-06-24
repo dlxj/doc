@@ -7091,6 +7091,47 @@ jacobian(exp_reducer, inputs)
 
 
 
+#### reduce
+
+```python
+"""
+jax.lax.reduce
+Parameters
+    operands (Any) –  操作数
+
+    init_values (Any) –  初值
+
+    computation (Callable[[Any, Any], Any]) –  函数: 二进一出
+
+    dimensions (Sequence[int]) –  维度 (0, ) 表示 0 维
+
+Return type
+    Any
+"""
+from jax import lax
+import jax.numpy as jnp
+result = lax.reduce(jnp.arange(6, dtype='uint8'), jnp.uint8(0), lax.bitwise_xor, (0,))
+print(result)
+```
+
+
+
+
+
+#### 随机数
+
+```
+import jax.random as jrandom
+
+data_key, loader_key, model_key = jrandom.split(jrandom.PRNGKey(5678), 3)
+
+
+```
+
+
+
+
+
 #### pytree
 
 - https://jax.readthedocs.io/en/latest/pytrees.html
