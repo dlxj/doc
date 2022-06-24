@@ -55,7 +55,7 @@ def get_data(dataset_size, *, key):
     half_dataset_size = dataset_size // 2
     x1 = x1.at[:half_dataset_size].multiply(-1)
     y = y.at[:half_dataset_size].set(0)
-    x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,1)  = 10000, 16, 2  
+    x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,16)  = 10000, 16, 2  
         # stack 会增加一个新的维度, 如果 axis=0 新维度在 第 1 维, 如果 axis=-1 新维度在最后一维
 
     return x, y

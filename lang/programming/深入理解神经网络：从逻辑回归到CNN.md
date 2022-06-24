@@ -7149,7 +7149,7 @@ x = jnp.stack([x1, x2], axis=-1)  # 堆叠在一起
 #### stack 堆叠
 
 ```python
-x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,1)  = 10000, 16, 2  
+x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,16)  = 10000, 16, 2  
 	# stack 会增加一个新的维度, 如果 axis=0 新维度在 第 1 维, 如果 axis=-1 新维度在最后一维
 ```
 
