@@ -7091,6 +7091,16 @@ jacobian(exp_reducer, inputs)
 
 
 
+#### pytree
+
+- https://jax.readthedocs.io/en/latest/pytrees.html
+
+  > 是 jax 内置的数据结构
+
+
+
+
+
 ### equinox
 
 - https://github.com/patrick-kidger/equinox
