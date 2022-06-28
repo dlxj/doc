@@ -7091,6 +7091,32 @@ jacobian(exp_reducer, inputs)
 
 
 
+#### 检查cudnn版本
+
+```
+apt-cache policy libcudnn8
+```
+
+
+
+```
+# Check libcudnn8 version
+!apt-cache policy libcudnn8
+
+# Install latest version
+!apt install --allow-change-held-packages libcudnn8=8.0.5.39-1+cuda11.1
+
+# Export env variables
+!export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
+!export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
+!export LD_LIBRARY_PATH=/usr/local/cuda-11.1/include:$LD_LIBRARY_PATH
+!export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+```
+
+
+
+
+
 #### reduce
 
 ```python
@@ -7244,6 +7270,14 @@ selu_jit(x).block_until_ready()
 
 
 
+```python
+pytree (nested Python tuple/list/dict) 
+```
+
+
+
+
+
 ### equinox
 
 - https://github.com/patrick-kidger/equinox
@@ -7256,6 +7290,12 @@ selu_jit(x).block_until_ready()
 
   - https://colab.research.google.com/github/patrick-kidger/equinox/blob/main/examples/train_rnn.ipynb 
   - https://colab.research.google.com/drive/17q5CGC3ZT2JNzj0v-jH8UcuhXb2kBTbC?usp=sharing
+
+- https://colab.research.google.com/github/patrick-kidger/equinox/blob/main/examples/score_based_diffusion.ipynb
+
+  > 数字识别
+
+  
 
 
 
@@ -7281,6 +7321,34 @@ def loss(model, x, y):
 
 model = eqx.nn.MLP(...)
 per_sample_grads = loss(model, ...)
+```
+
+
+
+#### a
+
+```
+
+import equinox as eqx
+import equinox.experimental as eqxe
+import jax
+import jax.nn as jnn
+import jax.numpy as jnp
+import jax.random as jrandom
+seed = 0
+
+key = jrandom.PRNGKey(seed)
+key, key_linear, key_input = jrandom.split(key, 3)
+#print("key=", key)
+d_in = 3
+d_out = 4
+x = jrandom.normal(key_input, shape=(d_in, 5))
+linear = eqx.nn.Linear(d_in, d_out, use_bias=True, key=key_linear)
+# fails with ValueError due to impossibility of broadcasting
+res = linear(x)
+
+# 正确做法
+jax.vmap(linear, in_axes=(1,), out_axes=(1,))(x)
 ```
 
 
@@ -7932,7 +8000,7 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
   >    AT_CHECK(weight.ndimension() == 4
   > ```
 
-```
+```python
 # 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1
 
 cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
@@ -8049,11 +8117,8 @@ CPU：I9 9820X 4600元
 不过新的问题又出现了：七彩虹Neptune（水神）需要3×8pin供电，而海盗船VS550仅能提供2个8pin PCIE电源接口。
 
 没办法不得不连电源一起换。最后CPU一直采用原厂小风扇，噪声较大。干脆一不做二不休换了水冷散热器。
-```
 
 
-
-```
 
 https://pytorch.org/get-started/previous-versions/
 
@@ -8062,7 +8127,6 @@ ldconfig -p | grep cuda
 cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
 unzip DB.zip && \
 unzip TD_TR.zip -d DB/datasets
-
 
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
@@ -8119,11 +8183,11 @@ apt-get update
 
 # 3080 TI
 
+- https://willylan.medium.com/how-to-install-cuda-11-1-and-cudnn-v8-05-on-ubuntu-20-1-with-rtx3090-8e0b768faaa2
+
 - https://zhuanlan.zhihu.com/p/291332801
 
   > 2个3080理论上和4个2080ti性能差不多，现在再加2080ti就非常不理智了。所以拆了2080ti，买了两个技嘉GeForce RTX™ 3080 GAMING OC 10G
-  >
-  > a
   >
   > - 操作系统：Ubuntu18.04
   > - Nvidia Driver：455
@@ -8137,6 +8201,10 @@ apt-get update
   > 找到原因了，是因为cudnn的问题，**训练的时候cudnn设为false**就好了
   >
   > a
+  >
+  > https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/libcudnn8_8.0.5.39-1+cuda11.1_amd64.deb
+  >
+  > a
 
 ```
 肯定是选两张RTX3080TI低预算的情况下深度学习主要的瓶颈还是在于训练速度而不是显存容量，同样的模型训练时batch size增大一倍可能最终性能会有很小的提升，但是训练速度增加一倍意味着同样的时间可以试更多的模型/超参数虽然RTX3080TI的12GB显存可能会出现batch size不够大导致GPU没有被“喂饱”的问题，但是可以通过混合精度训练减少显存的占用，正好Ampere增加了BF16的支持。对于具体的硬件选购时要注意的问题：非服务器/HEDT平台主板（这个预算也不够买）会受制于MSDT平台的PCI-E通道数量只能给每张显卡提供8个通道，要注意买PCI-E拆分成X8 + X8的主板，别买成X16 + X4的了非OTES散热的显卡都很厚而且散热容易互相干涉，建议选择两条可用的插槽间距在4槽及以上的主板电源功率得管够，至少1200W往上走，每张显卡的每个供电接口都要和电源单独连线，不要偷懒用一条线分出多个插口另外还可以考虑下性能差距不大的RTX3080 12GB
@@ -8148,8 +8216,122 @@ apt-get update
 
 # 3090
 
+- https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1
+  
+  > 超详细
+- https://github.com/google/jax/issues/8506
+  
+  > **Failed to determine best cudnn convolution algorithm**
+  >
+  > ```
+  > pip install --upgrade pip && \
+  > pip install --upgrade "jax[cuda]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html && \
+  > pip install flax
+  > ```
+  >
+  > ```
+  > echo 'import jax
+  > import jax.numpy as jnp
+  > import flax.linen as nn
+  > 
+  > class CNN(nn.Module):
+  >     @nn.compact
+  >     def __call__(self, x):
+  >         x = nn.Conv(features=32, kernel_size=(3, 3))(x)
+  >         x = nn.relu(x)
+  >         x = nn.avg_pool(x, window_shape=(2, 2), strides=(2, 2))
+  >         x = nn.Conv(features=64, kernel_size=(3, 3))(x)
+  >         x = nn.relu(x)
+  >         x = nn.avg_pool(x, window_shape=(2, 2), strides=(2, 2))
+  >         x = x.reshape((x.shape[0], -1))  # flatten
+  >         x = nn.Dense(features=256)(x)
+  >         x = nn.relu(x)
+  >         x = nn.Dense(features=10)(x)
+  >         x = nn.log_softmax(x)
+  >         return x
+  > 
+  > model = CNN()
+  > batch = jnp.ones((32, 64, 64, 10))  # (N, H, W, C) format
+  > variables = model.init(jax.random.PRNGKey(0), batch)
+  > # output = model.apply(variables, batch)' > cudnn.py && \
+  > pip install --upgrade pip && \
+  > pip install "jax[cuda11_cudnn805]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html && \
+  > pip install flax && \
+  > apt-cache policy libcudnn8 && \
+  > export TF_FORCE_GPU_ALLOW_GROWTH=true && \
+  > export XLA_PYTHON_CLIENT_MEM_FRACTION=0.87 && \
+  > python cudnn.py
+  > ```
+  >
+  > ```
+  > %%bash
+  > pip install --upgrade pip && \
+  > pip install --upgrade "jax[cuda]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html && \
+  > pip install flax && \
+  > apt-cache policy libcudnn8 && \
+  > export XLA_PYTHON_CLIENT_MEM_FRACTION=0.87 && \
+  > python cudnn.py
+  > ```
+  >
+  > 
+- https://willylan.medium.com/how-to-install-cuda-11-1-and-cudnn-v8-05-on-ubuntu-20-1-with-rtx3090-8e0b768faaa2
+- https://zhuanlan.zhihu.com/p/339062791
+
 ```
 RTX 3090 是 30 系列中唯一能够通过 NVLink 桥接器进行扩展的 GPU 型号。当与 NVLink 网桥配对使用时，可以将显存扩充为 48 GB 来训练大型模型。
+```
+
+
+
+```python
+# 重装cuda 驱动
+apt update && \
+apt-get install kmod && \
+lsmod | grep -i nvidia && \
+rmmod nvidia-uvm && \
+modprobe -r nvidia_uvm
+```
+
+
+
+
+
+```
+apt-get --purge remove cuda nvidia* libnvidia-* && \
+dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+apt-get remove cuda-* && \
+apt autoremove && \
+apt-get update
+```
+
+
+
+```
+apt-get --purge -y remove 'cuda*' && \
+apt-get --purge -y remove 'nvidia*' && \
+apt autoremove -y && \
+apt-get clean && \
+apt update -qq;
+```
+
+
+
+```
+rm -f /var/lib/dpkg/lock-frontend && \
+rm -f /var/lib/dpkg/lock && \
+rm -f /var/cache/apt/archives/lock && \
+apt-get --purge remove "*cublas*" "cuda*" "nsight*" -y && \
+apt-get --purge remove "*nvidia*"
+rm -rf /usr/local/cuda*
+```
+
+
+
+```
+# To uninstall cuda
+sudo /usr/local/cuda-11.4/bin/cuda-uninstaller 
+# To uninstall nvidia
+sudo /usr/bin/nvidia-uninstall
 ```
 
 

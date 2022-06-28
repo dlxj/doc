@@ -36,7 +36,7 @@ def dataloader(arrays, batch_size, *, key):
         (key,) = jrandom.split(key, 1)
         start = 0
         end = batch_size
-        while end < dataset_size:
+        while end <= dataset_size:
             batch_perm = perm[start:end]
             yield tuple(array[batch_perm] for array in arrays)
             start = end
@@ -90,7 +90,7 @@ class RNN(eqx.Module):
         ckey, lkey = jrandom.split(key)
         self.hidden_size = hidden_size
         self.cell = eqx.nn.GRUCell(in_size, hidden_size, key=ckey)
-        self.linear = eqx.nn.Linear(hidden_size, out_size, use_bias=False, key=lkey)
+        self.linear = eqx.nn.Linear(hidden_size, out_size, use_bias=True, key=lkey)
         self.bias = jnp.zeros(out_size)
 
     def __call__(self, input):
@@ -106,13 +106,13 @@ class RNN(eqx.Module):
 """And finally the training loop."""
 
 def main(
-    dataset_size=10000,
+    dataset_size=4,
     batch_size=4,
-    learning_rate=3e-3,
-    steps=200,
-    hidden_size=16,
+    learning_rate=5e-2,
+    steps=2000,
+    hidden_size=2,
     depth=1,
-    seed=5678,
+    seed=1999,
 ):
     data_key, loader_key, model_key = jrandom.split(jrandom.PRNGKey(seed), 3)
     xs, ys = get_data(dataset_size, key=data_key)
@@ -124,7 +124,8 @@ def main(
     def compute_loss(model, x, y):
         pred_y = jax.vmap(model)(x)
         # Trains with respect to binary cross-entropy
-        return -jnp.mean(y * jnp.log(pred_y) + (1 - y) * jnp.log(1 - pred_y))
+        # return -jnp.mean(y * jnp.log(pred_y) + (1 - y) * jnp.log(1 - pred_y))
+        a = 1
 
     # Important for efficiency whenever you use JAX: wrap everything into a single JIT
     # region.
