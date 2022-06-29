@@ -5545,6 +5545,18 @@ OCR Engine modes:
 
 
 
+### OCR 大佬
+
+- https://zhuanlan.zhihu.com/p/448407149
+
+  > CV预训练MAE（Masked AutoEncoder）
+  >
+  > 继2017年Transformer[2]被提出之后，预训练成为了NLP领域主流的研究方向，经典算法有GPT，BERT[3]等。GPT是经典的自回归（Auto-Regressive）预训练模型，而BERT是经典的掩码模型，或者说是去噪自编码（Denosing AutoEncoder）语言模型。DeepMind的image GPT（iGPT）将预训练任务迁移到了计算机视觉方向，它的预训练任务借鉴了GPT系列，即通过自回归（Auto-Regressive）的方式根据保留的图像上半部分逐像素的预测图像的下半部分的方式，并且通过微调和线性探测两个方法验证了iGPT在图像分类任务上可以起到明显的效果提升的作用。iGPT表明自回归训练任务是可以迁移计算机视觉方向的，那么自编码语言模型是否也能迁移到计算机视觉上呢？这里要介绍的Masked AutoEncoder（MAE）给出了肯定的答案。MAE的最核心的思想是通过对图片中的patch进行随机掩码，然后通过未被掩码的区域预测被掩码掉的区域，进行使得模型学习图像的语义特征。
+
+
+
+
+
 ### 文本检测 
 
 - https://github.com/demuxin/OpenCV_project/tree/master/EAST_Text_Detection
@@ -6690,6 +6702,14 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+#### 语音识别大佬
+
+- https://xiaodu.io/ctc-explained
+
+  > CTC算法详解之训练篇
+
+
+
 ## Deep leaning with js
 
 - https://www.npmjs.com/package/onnxruntime-web
@@ -7288,6 +7308,10 @@ pytree (nested Python tuple/list/dict)
 
 ### flax
 
+- https://github.com/gordicaleksa/get-started-with-JAX
+
+  > **Machine Learning with JAX  From Zero to Hero**
+
 #### @compact
 
 - https://flax.readthedocs.io/en/latest/flax.linen.html#compact-methods
@@ -7336,7 +7360,62 @@ model=SimpleMLP(2)
 
 
 
+#### 共享参数
 
+````python
+class A(nn.Module):
+  shared_param: Any
+
+  def setup(self, is_shared=False):
+     if self.shared_param is not None:
+       self.param = self.shared_param
+     else:
+      self.param = self.variable(
+        'database', 'key_db', functools.partial(jnp.zeros, dtype=jnp.float32), (4))
+     
+  def __call__(self, x):
+    return x*self.param
+````
+
+
+
+#### torch to flax
+
+- https://zhuanlan.zhihu.com/p/54530247
+
+```python
+import flax
+import torch
+import jax.numpy as jnp
+import numpy as np
+
+torch.manual_seed(0)
+
+torch_layernorm = torch.nn.LayerNorm(12)
+flax_layernorm = flax.linen.LayerNorm()
+torch_state_dict = torch_layernorm.state_dict()
+torch_state_dict["scale"] = jnp.array(np.array(torch_state_dict.pop("weight")))
+torch_state_dict["bias"] = jnp.array(np.array(torch_state_dict.pop("bias")))
+
+x = torch.randn((8, 12))
+x_flax = jnp.array(np.array(x))
+
+torch_out = torch_layernorm(x)
+flax_out = flax_layernorm.apply(variables={"params": torch_state_dict}, x=x_flax)
+np.testing.assert_allclose(torch_out.detach().numpy(), flax_out, rtol=1e-5)
+```
+
+
+
+#### a
+
+```
+SELU 激活函数
+$$
+f\left(x\right) = \lambda{x} \text{ if } x \geq{0} \\
+f\left(x\right) = \lambda{\alpha\left(\exp\left(x\right) -1 \right)} \text{ if } x < 0 
+$$
+```
 
 
 
