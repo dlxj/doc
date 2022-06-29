@@ -3853,6 +3853,14 @@ ffmpeg -i output.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 0 -h
 
 
 
+# graphql
+
+- https://github.com/graphile/postgraphile
+
+  > nodejs
+
+
+
 # nginx
 
 
