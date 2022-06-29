@@ -421,6 +421,26 @@ img = cv2.bitwise_not(img)
 
 
 
+# 缩放图片
+
+```
+# doc\lang\programming\pytorch\jax\jax.minist.py
+	img = data[0][0].__array__()  # jax 数组转 numpy 数组
+
+    # plt.imshow(img)
+    # plt.show()
+
+    img2 = cv2.resize(img, (800, 800), cv2.INTER_NEAREST)  # 放大一百倍，原来的图太小了
+    cv2.imshow("result", img2)
+    cv2.waitKey(0)
+
+    cv2.imwrite('img.jpg', img)
+```
+
+
+
+
+
 # 压缩图片
 
 ```c#

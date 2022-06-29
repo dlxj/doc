@@ -9878,7 +9878,11 @@ pip install keyboard
 
 
 
+# 算数编码
 
+- https://github.com/ahmedfgad/ArithmeticEncodingPython
+
+  
 
 
 

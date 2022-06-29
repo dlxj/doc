@@ -1,14 +1,19 @@
 
 # https://docs.python.org/3/library/array.html
 
+import imp
 import jax
 import jax.numpy as jnp
 import jax.random as jr
+import numpy as onp
 
 import gzip
 import struct
 
 import array
+
+import matplotlib.pyplot as plt
+import cv2
 
 def mnist(fname):
     with gzip.open(fname, "rb") as fh:
@@ -25,8 +30,19 @@ def main():
     data_max = jnp.max(data)
     data_min = jnp.min(data)
     data_shape = data.shape[1:]
-    data = (data - data_mean) / data_std
+    # data = (data - data_mean) / data_std
 
+    img = data[0][0].__array__()  # jax 数组转 numpy 数组
+
+    # plt.imshow(img)
+    # plt.show()
+
+    img2 = cv2.resize(img, (800, 800), cv2.INTER_NEAREST)  # 放大一百倍，原来的图太小了
+    cv2.imshow("result", img2)
+    cv2.waitKey(0)
+
+    cv2.imwrite('img.jpg', img)
+    
     print('hi,,')
 
 main()
