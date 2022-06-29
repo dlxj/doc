@@ -7211,6 +7211,16 @@ x = jnp.stack([x1, x2], axis=-1)   # statck (10000,16)  (10000,16)  = 10000, 16,
 
 
 
+#### 增加一个维度
+
+```python
+y = x[:,None] # 增加一个维度
+```
+
+
+
+
+
 #### assert
 
 ```python
@@ -7407,15 +7417,36 @@ np.testing.assert_allclose(torch_out.detach().numpy(), flax_out, rtol=1e-5)
 
 
 
-#### a
+#### SELU 激活函数
 
-```
-SELU 激活函数
+
 $$
 f\left(x\right) = \lambda{x} \text{ if } x \geq{0} \\
-f\left(x\right) = \lambda{\alpha\left(\exp\left(x\right) -1 \right)} \text{ if } x < 0 
+f\left(x\right) = \lambda{\alpha\left(\exp\left(x\right) -1 \right)} \text{ if } x < 0
 $$
+
+```python
+# doc\lang\programming\pytorch\jax\JAX_From_Zero_to_Hero_1.ipynb
+# Define a function
+
+def selu(x, alpha=1.67, lmbda=1.05):  # note: SELU is an activation function
+    return lmbda * jnp.where(x > 0, x, alpha * jnp.exp(x) - alpha)  # 条件为true 返回第一参，否则返回第二参
+
+selu_jit = jit(selu)  # let's jit it
+
+# Visualize SELU (just for your understanding, it's always a good idea to visualize stuff)
+visualize_fn(selu)
+
+# Benchmark non-jit vs jit version
+data = random.normal(key, (1000000,))
+
+print('non-jit version:')
+%timeit selu(data).block_until_ready()
+print('jit version:')
+%timeit selu_jit(data).block_until_ready()
 ```
+
+
 
 
 
