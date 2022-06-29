@@ -439,6 +439,14 @@ img = cv2.bitwise_not(img)
 
 
 
+```
+        Mat dst2 = new Mat();
+        Cv2.Resize(dst, dst2, new OpenCvSharp.Size(src.Width, src.Height), 0, 0, InterpolationFlags.Nearest);
+        //Cv2.ImWrite("D:\\rotate_dst.jpg", dst2)
+```
+
+
+
 
 
 # 压缩图片
