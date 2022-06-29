@@ -4578,6 +4578,16 @@ Whole Word Masking (wwm)，暂翻译为全词Mask或整词Mask，是谷歌在201
 
 
 
+## 生成模型
+
+- https://blog.csdn.net/g11d111/article/details/118026427
+
+  > doc\lang\programming\pytorch\jax\jax_MNIST.ipynb
+  >
+  > **score-based generative models** 
+  >
+  > 在图像生成，音频合成(WaveGrad, DiffWave)，形状生成，音乐生成都有着良好表现，甚至音频合成领域的效果优于GAN
+
 
 
 ## BERT
@@ -7273,6 +7283,58 @@ selu_jit(x).block_until_ready()
 ```python
 pytree (nested Python tuple/list/dict) 
 ```
+
+
+
+### flax
+
+#### @compact
+
+- https://flax.readthedocs.io/en/latest/flax.linen.html#compact-methods
+
+```
+Without compact:
+
+class Net(nn.Module):
+
+  def setup(self):
+    self.dense = nn.Dense(features=10)
+  
+  def __call__(self, x):
+    x = self.dense(x)
+    return x
+With compact:
+
+class Net(nn.Module):
+
+  @nn.compact
+  def __call__(self, x):
+    x = nn.Dense(features=10)(x)
+    return x
+```
+
+
+
+#### flax.linen.Dense
+
+```python
+import flax.linen as nn
+
+class SimpleMLP(nn.Module):
+    units: int
+    
+    @nn.compact
+    def __call__(self, x: jnp.ndarray) -> jnp.ndarray:
+        x = nn.Dense(self.units)(x)  # 线性变换
+        x = nn.relu(x)
+        x = nn.Dense(1)(x)
+        return x
+    
+model=SimpleMLP(2) 
+
+```
+
+
 
 
 

@@ -795,6 +795,14 @@ import importlib
 
 
 
+### 命名参数 *args
+
+```
+*args – Named arguments passed to the init function.
+```
+
+
+
 ### 不定长参数字典**kwargs
 
 ```python
