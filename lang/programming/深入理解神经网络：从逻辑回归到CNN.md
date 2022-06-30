@@ -7333,6 +7333,16 @@ offset = jrandom.uniform(data_key, (dataset_size, 1), minval=0, maxval=2 * math.
 
 
 ```python
+# 正态分布
+key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+W1 = jrandom.normal(key1, (4, 1) )  # 第一层权重
+```
+
+
+
+
+
+```python
 def dataloader(arrays, batch_size, *, key):
     dataset_size = arrays[0].shape[0]
     assert all(array.shape[0] == dataset_size for array in arrays)
