@@ -6883,6 +6883,50 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+```
+# torch
+X = torch.tensor([3., 7.], requires_grad=True)
+f = lambda x: x[0]**2 + x[1]**2 
+jacobian = torch.autograd.functional.jacobian(f, X)
+print( jacobian )
+
+# jax
+X = jnp.array([3., 7.], dtype=jnp.float32)
+f = lambda x: x[0]**2 + x[1]**2 
+jacobian = jacrev(f, argnums=(0, ))(X)
+print(jacobian)
+```
+
+
+
+
+
+```python
+# doc\lang\programming\pytorch\jax\JAX_From_Zero_to_Hero_1.ipynb
+
+from jax import jacfwd, jacrev
+
+f = lambda x, y: x**2 + y**2
+
+# df/dx = 2x
+# df/dy = 2y
+# J = [df/dx, df/dy]
+
+# d2f/dx = 2
+# d2f/dy = 2
+# d2f/dxdy = 0
+# d2f/dydx = 0
+# H = [[d2f/dx, d2f/dxdy], [d2f/dydx, d2f/dy]]
+
+def hessian(f):
+    return jit(jacfwd(jacrev(f, argnums=(0, 1)), argnums =(0, 1)))
+
+print(f'Jacobian = {jacrev(f, argnums=(0, 1))(1., 1.)}')
+print(f'Full Hessian = {hessian(f)(1., 1.)}')
+```
+
+
+
 
 
 
