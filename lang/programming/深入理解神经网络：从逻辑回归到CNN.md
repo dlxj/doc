@@ -6879,6 +6879,12 @@ one hot型的矩阵运算简化为了查表操作
 
 - https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html
 
+- https://github.com/google/jax/issues/2109
+
+  > ```python
+  > value, jacobian = value_and_jacfwd(my_func, 0)(x, y)
+  > ```
+
 它们功能是一样的，只是效率上有差别，如果生成的 Jacobian 是比较 “高” 的， jacfwd 前向模式比较有优势，如果生成的 Jacobian 是比较 “宽” 的，jacrev 反向模式比较有优势。如果是比较接近方阵，jacfwd 比 jacrev  更优些。
 
 
