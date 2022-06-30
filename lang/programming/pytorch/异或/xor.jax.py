@@ -206,11 +206,22 @@ from jax._src.api import *
 
 # [ A1, grads1 ] = value_and_jacfwd (jnp.dot, argnums=0)(W1, X) # 同时返回函数值和梯度
 
-f1 = lambda W1, X, b1 : jnp.dot(W1, X) + b1
+f1 = lambda W1, b1, X : jax.nn.sigmoid( jnp.dot(W1, X) + b1 )  # 前向传播
 
-A1 =f1(W1, X, b1)
-grads10, grads11 = jax.jacfwd(f1, argnums=(0,1))(W1, X, b1) # 梯度
+A1 =f1(W1, b1, X)
+grads10, grads11 = jax.jacfwd(f1, argnums=(0,1))(W1, b1, X) # 梯度
 
+
+f2 = lambda W2, b2, A1 : jax.nn.sigmoid( jnp.dot(A1, W2) + b2 )  # 前向传播
+
+A2 =f2(W2, b2, A1)
+grads20, grads21 = jax.jacfwd(f2, argnums=(0, 1))(W2, b2, A1)# 梯度
+
+
+loss = lambda A2, Y : jnp.sum( jnp.abs( A2 - Y ) ** 2, axis=0 )[0]
+
+lss = loss(  A2, Y )
+grad_lss = jax.jacfwd(loss, argnums=(0, ))(A2, Y )
 
 
 # f11 = lambda A1, b1 : A1 + b1
