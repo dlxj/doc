@@ -10,11 +10,17 @@ Original file is located at
 First, we'll start by creating the classic XOR dataset.
 """
 
+import typing as tp
+import optax
+from flax.core.frozen_dict import FrozenDict
+from flax import struct
+import flax.linen as nn
+import matplotlib.pyplot as plt
 import jax.numpy as jnp
 import jax
 
 X = jnp.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-Y = jnp.array([0, 1, 1, 0]).reshape( (4, 1) )  #[:, None]
+Y = jnp.array([0, 1, 1, 0]).reshape((4, 1))  # [:, None]
 
 """Note: its very important to add the "features" column to `Y` (done via `[:, None]`) as code will not complain but the model will not train without it 😅.
 
@@ -23,19 +29,17 @@ Y = jnp.array([0, 1, 1, 0]).reshape( (4, 1) )  #[:, None]
 Now we will visualize the dataset simply using `matplotlib` for a sanity check.
 """
 
-import matplotlib.pyplot as plt
 
-plt.scatter(X[:, 0], X[:, 1], c=Y, s=100);
+plt.scatter(X[:, 0], X[:, 1], c=Y, s=100)
 
 """### Define an MLP module
 The model will be a simple MLP with two layers, as history can remind you the XOR cannot be solved by a single layer. To do this we will just use a `linen.Module` and leverage `nn.compact` to make code simpler.
 """
 
-import flax.linen as nn
 
 class SimpleMLP(nn.Module):
     units: int
-    
+
     @nn.compact
     def __call__(self, x: jnp.ndarray) -> jnp.ndarray:
         x = nn.Dense(self.units)(x)
@@ -43,15 +47,11 @@ class SimpleMLP(nn.Module):
         x = nn.Dense(1)(x)
         return x
 
+
 """### Create an XOR pytree module
 
 Although its not stricly necesary we will create our own `pytree` module to make the code more readable. This module is somewhat similar to Flax's `TrainState`, we will recreate it for pedagogical purposes. 
 """
-
-from flax import struct
-from flax.core.frozen_dict import FrozenDict
-import optax
-import typing as tp
 
 
 @struct.dataclass
@@ -60,7 +60,7 @@ class XORModule:
     variables: tp.Optional[FrozenDict]
     opt_state: tp.Optional[optax.OptState]
 
-    # static 
+    # static
     init_fn: tp.Callable[..., FrozenDict] = struct.field(pytree_node=False)
     apply_fn: tp.Callable[..., jnp.ndarray] = struct.field(pytree_node=False)
     optimizer: optax.GradientTransformation = struct.field(pytree_node=False)
@@ -79,6 +79,7 @@ class XORModule:
     def replace(self, **kwargs) -> "XORModule":
         ...
 
+
 """Note the following: 
 
 * We have two sets of fields: node fields and statics fields. Static fields are marked by `field(pytree_node=False)`.
@@ -93,6 +94,7 @@ We will define a couple of function that will be used in the training loop. Idea
 The first one will be the loss function which we will define using Optax's `sigmoid_binary_cross_entropy`.
 """
 
+
 def loss_fn(params: FrozenDict, module: XORModule, inputs: jnp.ndarray, labels: jnp.ndarray) -> jnp.ndarray:
     assert module.variables is not None
     variables = module.variables.copy({"params": params})
@@ -100,11 +102,13 @@ def loss_fn(params: FrozenDict, module: XORModule, inputs: jnp.ndarray, labels: 
     logits = module.apply_fn(variables, inputs)
     return jnp.mean(optax.sigmoid_binary_cross_entropy(logits, labels))
 
+
 """Note that even though `module` has the `variables` field which already grants access to all the parameters, `loss_fn` receives a separate `params` argument that contains only the parameters that are optimized which we later merge back in via `.copy()`.
 
 #### init_step
 Now to initialize the model's parameters we will create an `init_step` function.
 """
+
 
 @jax.jit
 def init_step(key: jnp.ndarray, module: XORModule, x: jnp.ndarray) -> XORModule:
@@ -113,9 +117,11 @@ def init_step(key: jnp.ndarray, module: XORModule, x: jnp.ndarray) -> XORModule:
 
     return module.replace(variables=variables, opt_state=opt_state)
 
+
 """#### train_step
 Next, the `train_step` function will just `jax.grad` over `loss_fn` to get the gradients and update the `params` and `opt_state`.
 """
+
 
 @jax.jit
 def train_step(module: XORModule, inputs: jnp.ndarray, labels: jnp.ndarray) -> XORModule:
@@ -125,36 +131,42 @@ def train_step(module: XORModule, inputs: jnp.ndarray, labels: jnp.ndarray) -> X
     params = module.variables["params"]
     grads = jax.grad(loss_fn)(params, module, inputs, labels)
 
-    updates, opt_state = module.optimizer.update(grads, module.opt_state, params)
+    updates, opt_state = module.optimizer.update(
+        grads, module.opt_state, params)
     params = optax.apply_updates(params, updates)
     variables = module.variables.copy({"params": params})
 
     return module.replace(variables=variables, opt_state=opt_state)
 
+
 """#### test_step
 The `test_step` fun will simplfy calculate the loss.
 """
+
 
 @jax.jit
 def test_step(module: XORModule, inputs: jnp.ndarray, labels: jnp.ndarray) -> jnp.ndarray:
     assert module.variables is not None
     return loss_fn(module.variables["params"], module, inputs, labels)
 
+
 """#### pred_step
 And finally `pred_step` will perform the forward pass and return the predictions.
 """
+
 
 @jax.jit
 def pred_step(module: XORModule, inputs: jnp.ndarray) -> jnp.ndarray:
     assert module.variables is not None
     return module.apply_fn(module.variables, inputs)
 
+
 """### Training loop
 Now we will instantiate the `XORModule` and define the training loop by calling `train_step` and `test_step`. Will will capture the loss every once in a while and plot the learning curve at the end.
 """
 
 module = XORModule.new(
-    model=SimpleMLP(2), 
+    model=SimpleMLP(2),
     optimizer=optax.adamw(4e-3),
 )
 
@@ -176,7 +188,7 @@ for epoch in range(epochs):
         history.append(loss)
 
 plt.title("Loss")
-plt.plot(history);
+plt.plot(history)
 
 """### Visualize results
 
@@ -194,7 +206,6 @@ preds = pred_step(module, X01)
 preds = preds[..., 0] > 0
 
 # plot data
-plt.scatter(X[:, 0], X[:, 1], c=Y, s=100, edgecolors='black');
+plt.scatter(X[:, 0], X[:, 1], c=Y, s=100, edgecolors='black')
 # plot decision boundary
-plt.contourf(X0, X1, preds, alpha=0.7);
-
+plt.contourf(X0, X1, preds, alpha=0.7)
