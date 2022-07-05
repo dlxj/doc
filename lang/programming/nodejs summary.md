@@ -7016,6 +7016,20 @@ npm install --save normalize.css
 
 
 
+
+
+# VUE+Electron+Edge
+
+- https://blog.csdn.net/kyq0417/article/details/111310539
+
+  > VUE+Electron+Edge开发中遇到的坑
+
+- https://github.com/agracio/electron-edge-js
+
+
+
+
+
 # push stream
 
 - https://github.com/phoboslab/jsmpeg
