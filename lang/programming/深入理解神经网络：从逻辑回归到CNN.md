@@ -6802,6 +6802,8 @@ one hot型的矩阵运算简化为了查表操作
 
 - https://www.blogsaays.com/jax-neural-network-example/  XOR 例子
 
+- https://www.radx.in/jax.htm Understanding Autodiff with JAX **计算雅可比**
+
   > 
   >
   > 自动微分的模式有两种：

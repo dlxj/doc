@@ -40,53 +40,45 @@ b1 = jax.random.normal(key3, shape=(4, 2), dtype=jnp.float32)   # (1*3) 偏置
 b2 = jax.random.normal(key4, shape=(4, 1), dtype=jnp.float32)   # (1*1) 偏置
 
 
-x = jnp.array([[3]], dtype=jnp.float32) 
-sq = lambda x : x ** 2
+# t1 = jax.random.normal(key1, shape=(1, 1, 1, 1), dtype=jnp.float32)
+# t2 = t1[0][0]
 
-r1 = sq(x)
-jac1 = jax.jacrev(sq, argnums=(0, ))( x )
+# x = jnp.array([[3]], dtype=jnp.float32)
+# sq = lambda x : x ** 2
 
-""""
+# r1 = sq(x)
+# (jac1, ) = jax.jacrev(sq, argnums=(0, ))( x )
+# # jac1 = jnp.array( jac1, jnp.float32 )
 
-d sq / d x = 2x
+# jac00 = jac1[0][0]
+# x = x - 0.01 * jac00
 
-2 ** 2 = 4
+# """"
 
-(2*2) ** 2 = 16
-
-dx = 4 - 2 = 2
-dq = 16 - 4 = 12
+# d sq / d x = 2x
 
 
-
-2.1 / 2 * 2 * 4
-
-"""
+# """
 
 f1 = lambda X, W1, b1 : jnp.dot( X, W1 ) + b1
 
 
-
 A1 = f1( X, W1, b1  )
 
-L = lambda A1 : jnp.sum( A1 )
 
-
-jacobian10, jacobian11 = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1  )
+(jacobian10, jacobian11) = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1  )
 print(jacobian10)
 
-l = L(A1)
-jac = jax.jacrev(L, argnums=(0, ))(A1)
 
 f2 = lambda A1, W2, b2 : jnp.dot( A1, W2 ) + b2
 A2 = f2( A1, W2, b2  )
-jacobian20, jacobian21, jacobian22 = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
+(jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
 print(jacobian20)
 
 loss = lambda A2: jnp.sum( A2, axis=0 )[0] # 按列求和
 
 lss = loss(A2)
-jacobian30 = jax.jacrev(loss, argnums=(0, ))( A2 )
+(jacobian30, ) = jax.jacrev(loss, argnums=(0, ))( A2 )
 
 """
 
@@ -98,7 +90,9 @@ d loss / d W1 =   d loss / d A2 *    d A2 / d A1  *    d A1 / d W1
               (4*1) . (4*1*4*2) . (4*2*2*2)
 """
 
-t1 = jnp.dot( jnp.array( jacobian30, jnp.float32), jnp.array( jacobian20, jnp.float32) )
+t1 = jnp.dot( jacobian30, jacobian20 )
+
+# t1 = jnp.dot( jnp.array( jacobian30, jnp.float32), jnp.array( c, jnp.float32) )
 
 alpha = 0.5 # 学习率
 maxIter = 50000 # 最大迭代次数
