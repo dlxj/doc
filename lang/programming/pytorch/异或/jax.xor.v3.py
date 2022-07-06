@@ -46,6 +46,27 @@ A1 = f1( X, W1, b1  )
 jacobian10, jacobian11 = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1  )
 print(jacobian10)
 
+
+f2 = lambda A1, W2, b2 : jnp.dot( A1, W2 ) + b2
+A2 = f2( A1, W2, b2  )
+jacobian20, jacobian21, jacobian22 = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
+print(jacobian20)
+
+loss = lambda A2: jnp.sum( A2, axis=0 )[0] # 按列求和
+
+lss = loss(A2)
+jacobian30 = jax.jacrev(loss, argnums=(0, ))( A2 )
+
+"""
+
+链式法则求损失函数对网络参数 W1 的偏导
+
+d loss / d W1 =   d loss / d A2 *    d A2 / d A1  *    d A1 / d W1
+
+              =  jacobian30  . jacobian20 . jacobian10
+              (4*1) . (4*1*4*2) . (4*2*2*2)
+"""
+
 alpha = 0.5 # 学习率
 maxIter = 50000 # 最大迭代次数
 

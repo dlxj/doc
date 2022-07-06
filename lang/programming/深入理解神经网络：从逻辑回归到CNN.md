@@ -418,7 +418,7 @@ $$
 
 
 
-<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200927083845923.png" alt="image-20200927083845923" style="zoom: 33%;" />
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20200927083845923.png" alt="image-20200927083845923" style="zoom: 50%;" />
 
 由 $x$计算 $y$ 是一个多重复合映射。如果$x$ 是 $n$ 维向量， $y$是$m$ 维向量，则该计算图表示的计算是一个$\mathbb{R}^n \rightarrow \mathbb{R}^m$ 的映射。这个映射的“导数”是一个 $m \times n$的矩阵，即雅可比矩阵。根据链式法则， $y$对$x$的雅可比矩阵是：
 $$
