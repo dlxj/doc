@@ -18,7 +18,7 @@ f3 = lambda x : f2( f1(x) )
 
 x = 2.
 
-X = jnp.array( [2 , 2], jnp.float32 )
+X = jnp.array( [ [2 , 2] ], jnp.float32 )
 
 ( A1, (grad, ) ) = jax.value_and_grad(f1, argnums=(0,))( x )
 
