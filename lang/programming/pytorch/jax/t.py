@@ -32,9 +32,19 @@ chain = grad2 * grad  # 复合函数求导的链式法则
 assert ( chain == grad3 )
 
 
-
+A11 = f1(X) # X 是 (1,2)   f1 的输出是 (1,2)  d f1 / d X 是 (1,2,1,2) 
 ( grad11, ) = jax.jacfwd(f1, argnums=(0,))( X )
 
+A22 = f2(A11)
+( grad22, ) = jax.jacfwd(f2, argnums=(0,))( A11 )
+
+A33 = f3(X)
+( grad33, ) = jax.jacfwd(f3, argnums=(0,))( X )
+
+
+chain2 = grad22 * grad11 # 雅克比的乘积，注意不！是！矩阵乘法！ 
+
+assert ( chain2 == grad33 )
 
 a = 1
 

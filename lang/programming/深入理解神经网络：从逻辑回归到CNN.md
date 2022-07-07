@@ -6826,6 +6826,8 @@ one hot型的矩阵运算简化为了查表操作
 
 - https://www.radx.in/jax.htm Understanding Autodiff with JAX **计算雅可比**
 
+- https://rogerluo.dev/Brochure.jl/dev/automatic-differentiation/ 实现你自己的自动微分  **julia**
+
   > 
   >
   > 自动微分的模式有两种：
