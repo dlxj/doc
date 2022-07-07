@@ -51,17 +51,24 @@ def loss( X, W1, b1, W2, b2 ):
     
     A1 = f1( X, W1, b1  )
 
-    (jacobian10, jacobian11) = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1 )
+    (jacobian10, jacobian11) = jax.jacfwd(f1, argnums=(1, 2))( X, W1, b1 )
     # print(jacobian10)
 
     # (4, 2, 2, 2)  (4, 1, 4, 2)
 
     A2 = f2( A1, W2, b2  )
-    (jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2 )
+    (jacobian20, jacobian21, jacobian22) = jax.jacfwd(f2, argnums=(0, 1, 2))( A1, W2, b2 )
     # print(jacobian20)
 
+    """
+    
+    d f2 / d W1 = d f2 / d A1 * d A1 / d W1 
+    
+    """
+
+    # (4, 1, 2, 2)
     A3 = f3( X, W1, b1, W2, b2 )
-    (jacobian30, jacobian31, jacobian32, jacobian33) = jax.jacrev(f3, argnums=(1, 2, 3, 4))(  X, W1, b1, W2, b2  )
+    (jacobian30, jacobian31, jacobian32, jacobian33) = jax.jacfwd(f3, argnums=(1, 2, 3, 4))(  X, W1, b1, W2, b2  )
 
     chain = jacobian20 * jacobian10
 
