@@ -57,7 +57,9 @@ def loss( X, W1, b1, W2, b2 ):
     # (jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
     # print(jacobian20)
 
-    lss = jnp.sum( A2 ** 2 )
+    E = A2 - Y
+
+    lss = jnp.sum( E ** 2 )
 
     return lss
 
@@ -84,7 +86,7 @@ t = 1
 
 # # t1 = jnp.dot( jnp.array( jacobian30, jnp.float32), jnp.array( c, jnp.float32) )
 
-alpha = 0.05 # 学习率
+alpha = 0.3 # 学习率
 maxIter = 50000 # 最大迭代次数
 
 for k in range(maxIter): 
@@ -102,14 +104,15 @@ for k in range(maxIter):
 
         print('final results: ')
 
-        for input, target in zip(X, Y):
-            A1 = f1( X, W1, b1  )  
-            A2 = f2( A1, W2, b2  )
+        A1 = f1( X, W1, b1  )
+ 
+        A2 = f2( A1, W2, b2  )
+        
+        E = A2 - Y
 
+        lss = jnp.sum( E ** 2 )
 
-            print("Input:[{}] Target:[{}] Predicted:[{}]".format(
-                input, target, A2
-            ))
+        print( A2 )
        
         break
 
