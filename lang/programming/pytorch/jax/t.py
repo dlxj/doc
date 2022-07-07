@@ -33,8 +33,10 @@ assert ( chain == grad3 )
 
 
 
+(grad11, ) = jax.jacfwd(f1, argnums=(0,))( X )
 
 
+a = 1
 
 """
 
