@@ -4,6 +4,8 @@
 # import torch.nn.functional as F
 # import torch.optim as optim
 
+# https://math.stackexchange.com/questions/2888293/multidimensional-chain-rule-example
+# chain rule in multiple dimensions
 
 import jax
 import jax.numpy as jnp
@@ -51,6 +53,14 @@ def loss( X, W1, b1, W2, b2 ):
     
     A1 = f1( X, W1, b1  )
 
+    """
+    
+    d A1 / d W1 = ?
+
+    d A1 / d b1
+    
+    """
+
     (jacobian10, jacobian11) = jax.jacfwd(f1, argnums=(1, 2))( X, W1, b1 )
     # print(jacobian10)
 
@@ -62,7 +72,14 @@ def loss( X, W1, b1, W2, b2 ):
 
     """
     
-    d f2 / d W1 = d f2 / d A1 * d A1 / d W1 
+    d A2 / d W1 = ?
+
+    d A1 / d W1
+
+    d A2 / d A1
+
+
+
     
     """
 
