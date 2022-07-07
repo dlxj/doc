@@ -20,6 +20,28 @@ https://xiaosheng.run/2022/03/24/transformers-note-7.html
 
 
 
+### 多维矩阵乘法
+
+- https://pytorch.org/docs/stable/notes/broadcasting.html
+
+```
+
+前面的维度要满足broadcast才行，就是要么有一个维度为1，要么维度相等
+最后的两个维度要满足矩阵乘法
+
+
+结果：前面的维度保留最大的，后面的维度由矩阵乘法给出
+
+
+a和b除了最后两个维度可以不一致，其他维度要相同(比如上面代码第一维和第二维分别都是1,2)
+a和b最后两维的维度要符合矩阵乘法的要求（比如a的(3,4)能和b的(4,6)进行矩阵乘法）
+
+(1,2) . (1,2,2,2) => (1,1,2,2)
+
+```
+
+
+
 ### NLLloss 损失函数
 
 > **NLLLoss**的全称是Negative Log Likelihood Loss,中文名称是最大似然或者log似然代价函数
@@ -7816,7 +7838,7 @@ Pytorch中的vector-Jacobian product
 
 ### 多维矩阵乘法
 
-
+- https://pytorch.org/docs/stable/notes/broadcasting.html
 
 ```
 
