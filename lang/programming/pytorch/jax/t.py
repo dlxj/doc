@@ -18,6 +18,8 @@ f3 = lambda x : f2( f1(x) )
 
 x = 2.
 
+X = jnp.array( [2 , 2], jnp.float32 )
+
 ( A1, (grad, ) ) = jax.value_and_grad(f1, argnums=(0,))( x )
 
 ( A2, (grad2, ) ) = jax.value_and_grad(f2, argnums=(0,))( A1 )
@@ -26,6 +28,10 @@ x = 2.
 
 
 chain = grad2 * grad  # 复合函数求导的链式法则
+
+assert ( chain == grad3 )
+
+
 
 
 
