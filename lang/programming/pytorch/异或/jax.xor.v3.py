@@ -9,6 +9,7 @@ import jax
 import jax.numpy as jnp
 import numpy as onp
 import jax.random as jrandom
+from optax import chain
 
 
 X = jnp.array([
@@ -40,24 +41,29 @@ b1 = jax.random.normal(key3, shape=(4, 2), dtype=jnp.float32)   # (1*3) 偏置
 b2 = jax.random.normal(key4, shape=(4, 1), dtype=jnp.float32)   # (1*1) 偏置
 
 
-
 f1 = lambda X, W1, b1 : jax.nn.sigmoid( jnp.dot( X, W1 ) + b1 )
 
 f2 = lambda A1, W2, b2 : jax.nn.sigmoid( jnp.dot( A1, W2 ) + b2 )
 
+f3 = lambda X, W1, b1, W2, b2 : f2( f1(X, W1, b1), W2, b2 )
 
 def loss( X, W1, b1, W2, b2 ):
     
     A1 = f1( X, W1, b1  )
 
-    # (jacobian10, jacobian11) = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1  )
+    (jacobian10, jacobian11) = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1  )
     # print(jacobian10)
 
     # (4, 2, 2, 2)  (4, 1, 4, 2)
 
     A2 = f2( A1, W2, b2  )
-    # (jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
+    (jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
     # print(jacobian20)
+
+    A3 = f3( X, W1, b1, W2, b2 )
+    (jacobian30, jacobian31, jacobian32, jacobian33) = jax.jacrev(f3, argnums=(1, 2, 3, 4))(  X, W1, b1, W2, b2  )
+
+    chain = jacobian20 * jacobian10
 
     E = A2 - Y
 
