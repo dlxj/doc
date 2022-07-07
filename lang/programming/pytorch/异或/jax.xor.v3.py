@@ -51,13 +51,13 @@ def loss( X, W1, b1, W2, b2 ):
     
     A1 = f1( X, W1, b1  )
 
-    (jacobian10, jacobian11) = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1  )
+    (jacobian10, jacobian11) = jax.jacrev(f1, argnums=(1, 2))( X, W1, b1 )
     # print(jacobian10)
 
     # (4, 2, 2, 2)  (4, 1, 4, 2)
 
     A2 = f2( A1, W2, b2  )
-    (jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2  )
+    (jacobian20, jacobian21, jacobian22) = jax.jacrev(f2, argnums=(0, 1, 2))( A1, W2, b2 )
     # print(jacobian20)
 
     A3 = f3( X, W1, b1, W2, b2 )
