@@ -9846,6 +9846,12 @@ Pyqtdeploy
 
 
 
+# python+C#
+
+- https://github.com/pythonnet/pythonnet
+
+
+
 # 控制鼠标
 
 - https://pyautogui.readthedocs.io/en/latest/mouse.html
