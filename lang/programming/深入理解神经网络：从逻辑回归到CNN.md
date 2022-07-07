@@ -7906,6 +7906,16 @@ pip install grpcio==1.11.0
 
 
 
+# C++ 并发编程
+
+- https://github.com/parallel101/course
+
+  > c++ 并行计算
+
+
+
+
+
 # 装机
 
 - https://ark.intel.com/content/www/us/en/ark/products/199331/intel-core-i910900kf-processor-20m-cache-up-to-5-30-ghz.html  10900k 是有核显的  X99平台的U都没有核显
