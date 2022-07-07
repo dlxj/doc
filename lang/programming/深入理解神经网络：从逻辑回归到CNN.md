@@ -112,6 +112,14 @@ d f3 = d f2 ( f1(x)  ) * d f1 ( x )
 
 
 
+### chain rule in multiple dimensions
+
+- https://math.stackexchange.com/questions/2888293/multidimensional-chain-rule-example
+
+  > multidimensional chain rule, example
+
+
+
 ### NLLloss 损失函数
 
 > **NLLLoss**的全称是Negative Log Likelihood Loss,中文名称是最大似然或者log似然代价函数
@@ -1064,8 +1072,30 @@ $f(W+h, X)$ 可被**$f(W, X) + A h$** 近似，近似误差随$h$ 趋于零向�
 
 
 
-
 #### 神经网络雅可比
+
+
+$$
+a=\left(
+\begin{array}{c}
+ x_1^3+2x_2^2 \\
+ 3x_1^4+7x_2
+\end{array}
+\right);b=\left(
+\begin{array}{c}
+ x_1 \\
+ x_2
+\end{array}
+\right);J=\left(
+\begin{array}{cc}
+ \frac{\partial \left(x_1^3+2x_2^2\right)}{\partial x_1} & \frac{\partial \left(x_1^3+2x_2^2\right)}{\partial x_2} \\
+ \frac{\partial \left(3x_1^4+7x_2\right)}{\partial x_1} & \frac{\partial \left(3x_1^4+7x_2\right)}{\partial x_2}
+\end{array}
+\right);
+$$
+
+
+
 
 $f(x+h) = f(x) + A h$
 
