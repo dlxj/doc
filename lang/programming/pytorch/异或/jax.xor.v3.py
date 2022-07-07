@@ -72,13 +72,12 @@ def loss( X, W1, b1, W2, b2 ):
 
     """
     
-    d A2 / d W1 = ?
-
-    d A1 / d W1
-
-    d A2 / d A1
+    d A2 / d W1 = d A2 / d A1 * d A1 / d W1 
 
 
+    f2( f1(X, W1, b1), W2, b2 )
+
+    d f2 / d W1 = d f2 / d f1  * d f1 / d W1
 
     
     """
