@@ -18,18 +18,18 @@ const plugs = require.context('@/plugs/', false, /.js$/i).keys()
 const plugDict = {}
 for (let p of plugs) {
   const name = p.replace(/\.\/([\S]+?)\.js/g, '$1')
-  let plug = require(`@/plugs/${name}.js`).default
+  let Plug = require(`@/plugs/${name}.js`).default
   if (typeof (plug) === 'function') {
-    plug = new plug()
+    Plug = new Plug()
   }
-  plugDict[`$${name}`] = plug
+  plugDict[`$${name}`] = Plug
   // 安装
   Vue.use({
     install (v) {
-      v.prototype[`$${name}`] = new Proxy(plug, {
+      v.prototype[`$${name}`] = new Proxy(Plug, {
         get (target, key) {
-          if (plug[key] !== undefined) {
-            return plug[key]
+          if (Plug[key] !== undefined) {
+            return Plug[key]
           } else {
             console.log(key)
             return v.prototype[key]

@@ -6880,11 +6880,17 @@ this.$MuiPlayer()
 
 - 安装 Vetur 语法高亮
 
+- 安装Eslint
+
+  > 设置为用 Eslint 格式化代码
+
 ### vue 在vscode 下断点
 
 - https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
 
   > vue 在vscode 下断点
+  >
+  > file --> preferences --> setting 找到eslint ，找到几个  check box 勾上
 
 
 
