@@ -2,7 +2,6 @@
   <div>
     <h1>{{ msg }}</h1>
     <button @click="showMsg">showMsg</button>
-    <!-- this.$ElementUI.message_success('ok') -->
   </div>
 </template>
 

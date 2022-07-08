@@ -7112,12 +7112,14 @@ npm install --save normalize.css
 # QT+Vue
 
 - https://blog.csdn.net/yyt593891927/article/details/108546503
+- https://zhuanlan.zhihu.com/p/88620573
 
 
 
 # Vue+ios
 
 - https://github.com/nativescript-vue/nativescript-vue
+- https://docs.nativescript.org/environment-setup.html#macos-ios
 
 
 

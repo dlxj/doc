@@ -42,6 +42,28 @@ a和b最后两维的维度要符合矩阵乘法的要求（比如a的(3,4)能和
 
 
 
+- https://itewqq.cn/%E6%95%B0%E5%AD%A6-%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E9%9B%85%E5%8F%AF%E6%AF%94%E7%9F%A9%E9%98%B5%E4%B8%8E%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99/
+
+
+
+多元数量函数$f:\mathbb{R}^{n}\rightarrow \mathbb{R}^{1}$，我们可以把他的输入当作一个向量 $\bf{x}\in \mathbb{R}^{n}$，输出 $y=f(\bf{x})\in \mathbb{R}^{1}$ 是一个数字。那么 $f$ 的梯度定义为：
+$$
+\nabla f_{\boldsymbol{x}} \overset{\underset{\mathrm{def}}{}}{=} \left[ \frac{\partial f }{\partial x_1}, \frac{\partial f }{\partial x_2},\cdots,\frac{\partial f }{\partial x_n} \right]=\frac{\partial f }{\partial \boldsymbol{x}}
+$$
+全微分的向量化表示为：
+$$
+\begin{aligned} 
+df &= \frac{\partial f}{\partial x_1}dx_1+\frac{\partial f}{\partial x_2}dx_2+\cdots+\frac{\partial f}{\partial x_n}dx_n \\ 
+   &=\left[ \frac{\partial f }{\partial x_1}, \frac{\partial f }{\partial x_2},\cdots,\frac{\partial f }{\partial x_n} \right] \left[dx_1, dx_2,\cdots,dx_n \right]^T \\ 
+   &=\frac{\partial f }{\partial \boldsymbol{x}} d\boldsymbol{x} 
+\end{aligned}
+$$
+
+
+
+
+
+
 ### 雅克比的乘积注意不！是！矩阵乘法！ 
 
 ```python
