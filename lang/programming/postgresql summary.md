@@ -3859,7 +3859,27 @@ ffmpeg -i output.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 0 -h
 
   > nodejs
 
+- https://ruby-china.org/topics/40334
 
+  > PostGraphile：将 Postgres 数据库变成全功能 GraphQL 后端
+  >
+  > 这个工具可以直接把一个 postgres 数据库生成为一个 graphql 后端，内置了对每个表格的 crud query 及 mutation。
+  >
+  > 为什么说是全功能的呢？因为仅仅通过 graphile 和 pg 可以做到传统后端需要的任何事，而且所有需要写的代码和配置都在 postgres 里，迁移的时候直接导出 postgres 数据库，就能备份整个后端。
+  >
+  > 除了生成的 crud，用户可以用 pl/sql 写业务逻辑的函数，一个有副作用（cud）的函数会直接挂载为 graphql 的 mutation，无副作用的则会挂载为 query。
+  >
+  > graphile 对数据库的更新鉴权是使用 pg 内置的 role 和 row level security 实现的。一般应用需要两个 role：登陆前的 anonymous 和登陆后的 user。我们可以通过 grant 来对不同 role 配置他们能对表进行的操作，而 row level security 则允许我们配置一个 session 对行的权限，在 cud 行的时候，可以执行一些 check，例如检查当前用户 id 是不是和要修改的数据一样。
+  >
+  > 和 hasura 对比的好处：
+  >
+  > - graphile 以 postgres 为中心，没有自己的 metadata。hasura 把关联的配置保存为一份自己的配置，这样在迁移的时候除了导出数据库，还需要导出 hasura 的配置。而 graphile 的关联信息是完全通过 pg 内的外键关联推导出来的。
+  > - hasura 实现登陆鉴权功能的时候需要一个外部服务器。graphile 不需要一个额外的服务器，凭借自身就可以实现登陆注册，签署 jwt。
+  > - graphile 使用 pg 内置的 row level security 来处理权限，而 hasura 是用一套自己的鉴权机制来处理的。
+
+- https://www.jianshu.com/p/a300a964c797
+
+  
 
 # nginx
 
