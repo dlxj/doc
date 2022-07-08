@@ -46,7 +46,7 @@ a和b最后两维的维度要符合矩阵乘法的要求（比如a的(3,4)能和
 
 
 
-多元数量函数$f:\mathbb{R}^{n}\rightarrow \mathbb{R}^{1}$，我们可以把他的输入当作一个向量 $\bf{x}\in \mathbb{R}^{n}$，输出 $y=f(\bf{x})\in \mathbb{R}^{1}$ 是一个数字。那么 $f$ 的梯度定义为：
+多元函数$f:\mathbb{R}^{n}\rightarrow \mathbb{R}^{1}$，我们可以把他的输入当作一个向量 $\bf{x}\in \mathbb{R}^{n}$，输出 $y=f(\bf{x})\in \mathbb{R}^{1}$ 是一个数字。那么 $f$ 的梯度定义为：
 $$
 \nabla f_{\boldsymbol{x}} \overset{\underset{\mathrm{def}}{}}{=} \left[ \frac{\partial f }{\partial x_1}, \frac{\partial f }{\partial x_2},\cdots,\frac{\partial f }{\partial x_n} \right]=\frac{\partial f }{\partial \boldsymbol{x}}
 $$
@@ -57,6 +57,26 @@ df &= \frac{\partial f}{\partial x_1}dx_1+\frac{\partial f}{\partial x_2}dx_2+\c
    &=\left[ \frac{\partial f }{\partial x_1}, \frac{\partial f }{\partial x_2},\cdots,\frac{\partial f }{\partial x_n} \right] \left[dx_1, dx_2,\cdots,dx_n \right]^T \\ 
    &=\frac{\partial f }{\partial \boldsymbol{x}} d\boldsymbol{x} 
 \end{aligned}
+$$
+
+
+映射 $f:\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$ 的输入是向量 $\bf{x}\in \mathbb{R}^{n}$，输出是向量 $\bf{y}=f(\bf{x})\in \mathbb{R}^{m}$
+
+如果我们将输出向量 $y$ 的每个分量 $y_i$ 看作一个独立的多元函数，那么我们可以写出每个 $y_i$ 对每个 $x_i$  的偏导数（也就是梯度）
+$$
+\left[ \frac{\partial y_i }{\partial x_1}, \frac{\partial y_i }{\partial x_2},\cdots,\frac{\partial y_i }{\partial x_n} \right]
+$$
+将每个 $y_i$ 的梯度组合起来就得到了雅可比矩阵
+$$
+\begin{aligned}J=\left(\begin{array}{ccc} 
+   \frac{\partial y_{1}}{\partial x_{1}} & \cdots & \frac{\partial y_{1}}{\partial x_{n}}\\ 
+   \vdots & \ddots & \vdots\\ 
+   \frac{\partial y_{m}}{\partial x_{1}} & \cdots & \frac{\partial y_{m}}{\partial x_{n}} 
+   \end{array}\right)\end{aligned}
+$$
+也常写作
+$$
+J=\frac{\partial(y_1,…,y_m)}{\partial(x_1,…,x_n)}
 $$
 
 
