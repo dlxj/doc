@@ -7099,6 +7099,16 @@ npm install --save normalize.css
 
 
 
+# QT+Vue
+
+- https://blog.csdn.net/yyt593891927/article/details/108546503
+
+
+
+# Vue+ios
+
+- https://github.com/nativescript-vue/nativescript-vue
+
 
 
 # RustDesk
