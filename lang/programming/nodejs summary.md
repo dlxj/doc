@@ -7133,6 +7133,15 @@ npm install --save normalize.css
 
 # tesseract-ocr
 
+- https://github.com/peirick/Tesseract-OCR_for_Windows
+
+  > ```
+  > git clone --recursive https://github.com/peirick/Tesseract-OCR_for_Windows.git
+  > 
+  > vs2019 编译，编码报错的文件改 gb2312 编码
+  > 
+  > ```
+
 
 
 ```javascript
