@@ -37,6 +37,10 @@ namespace MathpixCsharp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Clipboard.SetDataObject("set by C#.");
+            string t = Clipboard.GetText(TextDataFormat.Text);
+            
+
             ScreenShot sf = new ScreenShot();
             sf.Owner = this;
             this.Opacity = 0.0;
