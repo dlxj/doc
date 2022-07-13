@@ -19,6 +19,7 @@ service httpd stop
 yum install nginx
 nginx -t # 显示主配置文件路径，并检查语法错误
 systemctl start nginx
+nginx -s reload
 
 # atuto run when reboot
 chmod +x /etc/rc.d/rc.local
