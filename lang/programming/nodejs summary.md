@@ -6223,9 +6223,21 @@ v14.1.0
 
 
 
+# html
+
+
+
+## pre
+
+> 被包围在 pre 元素中的文本通常会**保留空格和换行**符。而文本也会呈现为等宽字体。
+
+
+
 
 
 # Vue
+
+- https://codepen.io/sdras/pen/dRqZOy  **codepen** 网络请求
 
 - https://github.com/PanJiaChen/vue-element-admin
 
