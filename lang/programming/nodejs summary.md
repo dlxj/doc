@@ -8,6 +8,7 @@ systemctl enable postgresql-13 # 自启动
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
 pm2 resurrect // 重启备份的所有项目
+pm2 update    // 清空重启次数等（疑难杂症可以试试）
 
 pm2 delete processID  // 删除一项  
 
@@ -7050,6 +7051,18 @@ npm install --save normalize.css
 # vxe-table
 
 - https://github.com/x-extends/vxe-table
+
+
+
+
+
+# React Native
+
+- https://github.com/alantoa/react-native-awesome-slider/tree/main/example
+
+- https://www.v2ex.com/t/843175
+
+  > u2 player
 
 
 
