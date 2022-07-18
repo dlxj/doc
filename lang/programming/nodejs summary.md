@@ -6329,6 +6329,30 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
 
+## Syntax 
+
+
+
+### v-if v-else v-else-if
+
+```
+    // 这几个是成对的，而且每一个都放在完整的 <div></div> 之内 ocr\src\components\column\buttonChooseBook.vue
+    
+    <div class="d-flex flex-center-y" v-if="$store.state.buttonChooseBook.BookName">
+      <b>书籍名称：</b><p class="m-r-2">{{$store.state.buttonChooseBook.BookName }}</p>
+      <el-link type="primary" @click="onClick({key:'更换书籍'})">更换</el-link>
+    </div>
+    <el-button v-else style="width: 200px;" size="small" @click="onClick({key:'选择书籍'})">请选择书籍</el-button>
+```
+
+
+
+
+
+
+
+
+
 ## Vue.js 快速入门
 
 - https://xiaosheng.run/2019/01/02/introduction-to-vue.html
