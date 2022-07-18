@@ -7163,6 +7163,113 @@ npm install --save normalize.css
   > <input v-reset-page v-model="searchKey" type="number" placeholder="搜索作品编号">
   > ```
 
+- https://blog.csdn.net/zgh0711/article/details/100013303 背景音乐
+
+  > ```
+  > <audio ref="audio" src="https://img.youpenglai.com/penglai/1.mp3" loop preload="auto"></audio>
+  > 
+  > ```
+  >
+  > a
+  >
+  > ```javascript
+  > <template>
+  >   <div class="page-promotion flex-col">
+  >     <div class="con-play flex" @click="audioPlayOrPause()">
+  >       <img v-show="playFlag" class="audio-on" src="../assets/img/promotion/ic_sound_on.svg" alt="">
+  >       <img v-show="!playFlag" class="audio-off" src="../assets/img/promotion/ic_sound_off.svg" alt="">
+  >     </div>
+  >     
+  >     <audio ref="audio" src="https://img.youpenglai.com/penglai/1.mp3" autoplay loop preload="auto"></audio>
+  >   </div>
+  > </template>
+  > 
+  > <script>
+  >   export default {
+  >     name: 'Promotion',
+  >     data () {
+  >       return {
+  >         playFlag: true,
+  >         clickMusicBtn: false,
+  >       }
+  >     },
+  >     
+  >     async mounted () {
+  >       this.audioAutoPlay()
+  >       document.addEventListener("visibilitychange", (e) => { // 兼容ios微信手Q
+  >         if (this.clickMusicBtn) { // 点击了关闭音乐按钮
+  >           if (this.playFlag) {
+  >             this.audioAutoPlay();
+  >             this.playFlag = true;
+  >           } else {
+  >             this.audioPause();
+  >             this.playFlag = false;
+  >           }
+  >       
+  >           text.innerHTML = e.hidden;
+  >           if (e.hidden) {  // 网页被挂起
+  >             this.audioAutoPlay();
+  >             this.playFlag = true;
+  >           } else { // 网页被呼起
+  >             this.audioPause();
+  >             this.playFlag = false;
+  >           }
+  >         } else { // 未点击关闭音乐按钮
+  >           if (this.playFlag) {
+  >             this.audioPause();
+  >             this.playFlag = false;
+  >           } else {
+  >             this.audioAutoPlay();
+  >             this.playFlag = true;
+  >           }
+  >       
+  >           text.innerHTML = e.hidden;
+  >           if (e.hidden) {  // 网页被挂起
+  >             this.audioPause();
+  >             this.playFlag = false;
+  >           } else { // 网页被呼起
+  >             this.audioAutoPlay();
+  >             this.playFlag = true;
+  >           }
+  >         }
+  >       });
+  >     },
+  >     
+  >     methods: {
+  >       audioPlayOrPause() {
+  >         this.clickMusicBtn = !this.clickMusicBtn;
+  >         if (this.playFlag) {
+  >           this.audioPause();
+  >           this.playFlag = false;
+  >         } else {
+  >           this.audioAutoPlay();
+  >           this.playFlag = true;
+  >         }
+  >       },
+  >       audioPause() {
+  >         let audio = this.$refs.audio
+  >         audio.pause();
+  >         document.addEventListener("WeixinJSBridgeReady", function () {
+  >           audio.pause();
+  >         }, false);
+  >       },
+  >       audioAutoPlay() {
+  >         let audio = this.$refs.audio
+  >         audio.play();
+  >         document.addEventListener("WeixinJSBridgeReady", function () {
+  >           audio.play();
+  >         }, false);
+  >       },
+  >     },
+  >   }
+  > </script>
+  > 
+  > ```
+  >
+  > vue-cli3 项目，如果通过相对路径引用资源则会经过 webpack 打包，相反，如果通过绝对路径引用则不会经过 webpack 处理，注意这里资源的绝对路径不是 /public/xxx 而是直接填 public 里的路径，官方文档没有例子说这件事。
+
+
+
 # React Native
 
 - https://github.com/alantoa/react-native-awesome-slider/tree/main/example
