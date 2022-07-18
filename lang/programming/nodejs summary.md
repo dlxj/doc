@@ -6287,6 +6287,9 @@ npm install -g vue-cli
 vue --version
 	# 2.9.6
 
+npm install -g @vue/cli-service  ?? 
+    # 解决 vue-cli-service 不是内部或外部命令, 也不是可运行的程序
+
 vue init webpack pmweb
 cd pmweb
 
