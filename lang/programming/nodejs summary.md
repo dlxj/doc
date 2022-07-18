@@ -7054,6 +7054,63 @@ npm install --save normalize.css
 
 
 
+# CSS
+
+- https://blog.csdn.net/zgh0711/article/details/78270555  flex布局保持内容不超出
+
+- https://blog.csdn.net/zgh0711/article/details/86541139  多行显示，溢出时显示省略号
+
+- https://blog.csdn.net/zgh0711/article/details/81536355 display 的 block，inline，inline-block
+
+- https://blog.csdn.net/zgh0711/article/details/80167224  class 动态绑定
+
+- https://blog.csdn.net/zgh0711/article/details/80172174   路由缓存 keep-alive
+
+  > 保存某个组件的状态或避免重新渲染
+  >
+  >  App.vue
+  >
+  > a
+  >
+  > ```javascript
+  >         <keep-alive>
+  >             <router-view v-if="$route.meta.keepAlive"></router-view>
+  >         </keep-alive>
+  >         <router-view v-if="!$route.meta.keepAlive"></router-view>
+  > ```
+  >
+  > 
+  >
+  > 每个路由都可以给它定义 meta 属性，我们可以给想要缓存功能的路由定义一个 meta 对象，在里面定义一个 keepAlive 属性，值为 true，这个 meta 对象里面还可以定义其他的属性，比如 title。
+  >
+  > ```javascript
+  >         {
+  >             path: '/guideList',
+  >             name: 'GuideList',
+  >             meta: {keepAlive: true, title: 'title'},
+  >             component: GuideList
+  >         },
+  > ```
+  >
+  > 
+  >
+  > a
+
+- https://blog.csdn.net/zgh0711/article/details/80171138  给 v-html 渲染出的内容添加样式
+
+  >```javascript
+  ><div class="content" v-html="agreement.content"></div>
+  >
+  >.content >>> span{
+  >        width: 100%;
+  >        ...
+  >    }
+  >```
+  >
+  >通过在需要设置样式的元素前面加三个箭头就可以实现
+
+
+
 
 
 # React Native
@@ -7067,6 +7124,8 @@ npm install --save normalize.css
 - https://www.cnblogs.com/skychx/p/react-native-tweet.html  2 年 React Native 开发经验
 - https://www.cnblogs.com/skychx/p/react-native-flatlist.html FlatList 原理解析与性能优化
 - https://www.cnblogs.com/penghuwan/p/11633547.html  从React-Native坑中爬出
+- https://www.cnblogs.com/penghuwan/p/11775900.html React-Native 转小程序
+- https://github.com/alitajs/alita  umi.js ?
 
 
 
