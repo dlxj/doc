@@ -6303,6 +6303,18 @@ module.exports = {
     }
 }
 
+// publicPath vue 支持用浏览器直接打开index.html
+module.exports = {
+    assetsDir: 'static',
+    runtimeCompiler: true,
+    publicPath: './',
+    devServer: {
+        disableHostCheck: true,
+        public: 'http://0.0.0.0:8081'
+    }
+}
+
+
 package.json 下的devDependencies 加入开发依赖包(必须是这下面)
 "@vue/cli-service": "^4.5.0",
 "mini-css-extract-plugin": "^2.6.1"
