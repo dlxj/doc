@@ -7063,6 +7063,13 @@ npm install --save normalize.css
 
 
 
+# VUE+CefSharp
+
+- https://blog.csdn.net/lweiyue/article/details/120484812  CefSharp和Vue交互开发
+- http://www.lizhenghao.site/blog/2022/01/08/136  Winform/WPF利用CefSharp集成vue开发
+
+
+
 
 
 # VUE+Electron+Edge
@@ -7072,6 +7079,33 @@ npm install --save normalize.css
   > VUE+Electron+Edge开发中遇到的坑
 
 - https://github.com/agracio/electron-edge-js
+
+
+
+# UGUI
+
+- https://blog.csdn.net/Wrinkle2017/article/details/117257104  息屏开屏后，屏幕自动旋转刷新
+
+  > ```c#
+  >  private void OnApplicationPause(bool pauseStatus)
+  >     {
+  >         if (pauseStatus)
+  >         {
+  >             SaveDataToLocal.Instance.SaveAccountData(UserData.Instance.ifFirstJoin, UserData.Instance.CurrentBigClassLeve, MainUIModel.Instance.ifOpenAudio, UserData.Instance.ifFinishGuide1, UserData.Instance.ifFinishGuide2, UserData.Instance.isFirstInNewLevel);
+  >             //Screen.orientation = ScreenOrientation.PortraitUpsideDown;
+  >             //息屏开屏后，屏幕自动旋转刷新
+  >             if (Input.deviceOrientation == DeviceOrientation.LandscapeLeft)
+  >                 Screen.orientation = ScreenOrientation.LandscapeRight;
+  >             else 
+  >                 Screen.orientation = ScreenOrientation.LandscapeLeft;
+  >         }
+  >         else
+  >         {
+  >             Screen.orientation = ScreenOrientation.AutoRotation;
+  >         }
+  >     }
+  > 
+  > ```
 
 
 
