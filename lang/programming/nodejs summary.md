@@ -6304,7 +6304,8 @@ module.exports = {
 }
 
 package.json 下的devDependencies 加入开发依赖包(必须是这下面)
-"@vue/cli-service": "^4.5.0"
+"@vue/cli-service": "^4.5.0",
+"mini-css-extract-plugin": "^2.6.1"
 npm i
 
 package.json 的scripts 改成这样
@@ -6317,6 +6318,8 @@ package.json 的scripts 改成这样
 npm run dev  # listening at localhost:8080
 
 npm run build  # build for production
+    # 解决打包出错
+	# npm install --save-dev mini-css-extract-plugin  
 
 
 指定端口:
