@@ -7609,6 +7609,28 @@ var ext = Path.GetExtension(filePath).ToLowerInvariant();
 
 
 
+## 打开新窗体
+
+
+
+```c#
+new imgBoardForm("").Show();
+```
+
+
+
+## 拖盘菜单
+
+- https://www.cnblogs.com/huashanqingzhu/p/6899383.html
+
+
+
+## 截图
+
+> doc\lang\programming\csharp\cut
+
+
+
 
 
 ## 显示图片

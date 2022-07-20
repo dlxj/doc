@@ -7094,6 +7094,36 @@ npm install --save normalize.css
 
 - https://blog.csdn.net/lweiyue/article/details/120484812  CefSharp和Vue交互开发
 - http://www.lizhenghao.site/blog/2022/01/08/136  Winform/WPF利用CefSharp集成vue开发
+- https://blog.csdn.net/wuyuander/article/details/107359120  手把手教你使用CefSharp开发Winform
+- https://blog.csdn.net/yh0503/article/details/86648682  WinForm CefSharp 笔记一（入门篇）
+
+
+
+```c#
+
+// NuGet 安装 CefSharp.WinForms
+
+// 成功显示vue页面, 工程设置成 x64, any cpu 是不行的
+using CefSharp.WinForms;
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            //string path = AppDomain.CurrentDomain.BaseDirectory + @"dist/index.html";
+            String path = string.Format(@"{0}\dist\index.html", Application.StartupPath);
+
+            //String path = "http://baidu.com";
+
+            browser = new ChromiumWebBrowser(path);
+            browser.JavascriptObjectRepository.Settings.LegacyBindingEnabled = true;
+
+            this.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
+        }
+```
+
+
 
 
 
@@ -7110,6 +7140,8 @@ npm install --save normalize.css
 
 
 # UGUI
+
+- https://www.raywenderlich.com/6570-introduction-to-unity-ui-part-1
 
 - https://blog.csdn.net/Wrinkle2017/article/details/117257104  息屏开屏后，屏幕自动旋转刷新
 
