@@ -45,6 +45,14 @@ CTRL + K + N 设成跳到下一个
 
 
 
+# 回退到指定版本
+
+
+
+先切换到要回退的分支  -> git log （或着用 Github Destop 查看更清晰） -> copy md5 -> git reset --hard  md5
+
+
+
 
 
 # CPP
