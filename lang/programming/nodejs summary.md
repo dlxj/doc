@@ -1108,7 +1108,7 @@ let mkvs = libdir.allmkv(root, 'Pokemon')
 
 
 
-```
+```javascript
 // es.mjs
 let foo = {name: 'foo'};
 export default foo;
@@ -1158,7 +1158,7 @@ import path from 'path'
 
 ### export default 用this互引用
 
-```
+```javascript
 export default {
 
 	funtion a {
@@ -1203,7 +1203,7 @@ global 是内置的全局对象，任意地方可用（可以把任意东西装�
 
 
 
-```
+```javascript
 # 连续判断
 	const color = d.added ? 'green' :
         d.removed ? 'red' : 'grey'
@@ -1218,6 +1218,22 @@ const scale = !!options.full ? "scale=1280:720,setsar=1:1":"scale=640:360,setsar
 
 !!是一个逻辑操作，不论它的后面接的是什么数值，它的结果会被强制转换成bool类型，之所以用两个感叹号，主要是为了让结果不会逻辑反过来
 ```
+
+
+
+## ...
+
+
+
+array, json 展开
+
+```javascript
+function f(v,w,x,y,z){ }
+var args = [2,3]
+f(1,...args,4,...[5]) # args 展开成 2, 3
+```
+
+
 
 
 
@@ -6361,6 +6377,14 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 ```
 
 
+
+### click.stop
+
+
+
+```
+// click.stop 父容器的 点击事件 被无效化
+```
 
 
 
