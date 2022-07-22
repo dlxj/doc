@@ -7149,6 +7149,72 @@ using CefSharp.WinForms;
 
 
 
+## 无边框全透明窗体
+
+
+
+```
+// 设置窗体属性
+BackColor  -> 点系统 -> (白色)window
+
+FormBorderStyle -> None
+
+ShowlnTaskbar -> False
+
+Size -> 0,0
+
+TransparencyKey -> (白色)window
+
+
+
+```
+
+
+
+## 双击托盘图标
+
+```
+
+            if (WindowState == FormWindowState.Minimized)
+            {
+                //还原窗体显示    
+                WindowState = FormWindowState.Normal;
+                //激活窗体并给予它焦点
+                this.Activate();
+                //任务栏区显示图标
+                this.ShowInTaskbar = true;
+                //托盘区图标隐藏
+                notifyIcon1.Visible = false;
+            }
+
+```
+
+
+
+
+
+## 退出程序
+
+
+
+```c#
+Application.ExitThread();
+
+this.Dispose();
+this.Close();
+
+```
+
+
+
+## 跨线程更新UI
+
+- https://blog.csdn.net/l198738655/article/details/120126970
+
+
+
+
+
 ## 复制文件到目标目录
 
 
