@@ -7149,6 +7149,23 @@ using CefSharp.WinForms;
 
 
 
+## 复制文件到目标目录
+
+
+
+```
+vs2019 
+复制页面到目标目录
+方式1
+项目->属性->生成事件->生成前事件命令行
+
+添加如下
+
+xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
+```
+
+
+
 
 
 
