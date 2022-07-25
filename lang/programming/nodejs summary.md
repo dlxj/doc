@@ -3524,6 +3524,8 @@ arr = _.shuffle(arr)
       setTimeout(resolve, ms)
     })
   }
+
+await sleep(2000) 
 ```
 
 
