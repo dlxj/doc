@@ -38,7 +38,7 @@
 <div class="headerBox d-flex flex-between w-100 p-x-2">
 
     <div class="d-flex flex-center-y">
-        <b>书籍名称：</b><p class="m-r-2">石油石化职业技能鉴定试题集:轻烃装置操作工</p>
+        <b>书籍名称：</b><p class="m-r-2">石油石化职业技能鉴定试题集:轻烃装置操作工</p> <a href="javascript:void(0);" style="text-decoration:none "><span style="color: #409EFF;">更换</span></a>
     </div>
 
 </div>
@@ -90,8 +90,12 @@ display: flex;
 align-items: center;
 align-self: center;
 }
-</style>
 
+a:hover{
+	color:blue;
+}
+
+</style>
 ```
 
 
