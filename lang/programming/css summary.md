@@ -24,9 +24,79 @@
 
 
 
+[border](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border) 和 outline 很类似，但有如下区别：
+
+- **outline 不占据空间，绘制于元素内容周围。**
+- 根据规范，outline 通常是矩形，但也可以是非矩形的。
 
 
 
+# display: flex
+
+```
+
+<div class="headerBox d-flex flex-between w-100 p-x-2">
+
+    <div class="d-flex flex-center-y">
+        <b>书籍名称：</b><p class="m-r-2">石油石化职业技能鉴定试题集:轻烃装置操作工</p>
+    </div>
+
+</div>
+
+<style>
+
+body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #515a6e;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.headerBox{    
+  position: fixed;
+  top: 45px;
+  left: 0px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.flex-between{
+  -webkit-box-pack: justify;
+  -ms-flex-pack   : justify;
+  justify-content : space-between;
+}
+
+.w-100{width: 100%;}
+.h-100{height: 100%;}
+
+.p-x-2{padding-left:0.5rem;padding-right:0.5rem;}
+
+
+.m-r-2{margin-right:0.5rem;}
+
+/*水平布局*/
+.d-flex {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
+
+.flex-center-y{
+align-items: center;
+align-self: center;
+}
+</style>
+
+```
+
+
+
+**margin-right** 右外边距
 
 
 
