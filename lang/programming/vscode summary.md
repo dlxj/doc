@@ -22,6 +22,19 @@ CTRL + K + N 设成跳到下一个
 
 
 
+# 代码放大缩小
+
+
+
+```
+ctrl + + 
+ctrl + -
+```
+
+
+
+
+
 # 彻底删除vscode配置
 
 - https://www.cnblogs.com/muou2125/p/10388440.html
