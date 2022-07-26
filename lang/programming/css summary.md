@@ -20,7 +20,7 @@
 
 **content-box** 所指定的宽度**仅表示内容的宽高**，实际显示的宽高还要加上：边框（border），内边距（padding），外边距（margin）
 
-**border-box**  
+**border-box**  所指定的宽度 = 内容 + 内边距 + 边框 的宽高，但不包括外边距
 
 
 
