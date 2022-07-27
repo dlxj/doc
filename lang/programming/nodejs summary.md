@@ -931,6 +931,7 @@ node --inspect-brk=xxx.77:9229 insert.cjs # 指定IP端口
   > vue.config.js # 注意配了这个 F5 后断点才真的断了下来
   > 
   > module.exports = {
+  >   	runtimeCompiler: true,
   >     configureWebpack: {
   >         devtool: 'source-map'
   >     }
@@ -7050,46 +7051,53 @@ this.$MuiPlayer()
   > 新建 launch.json， 弹出的选项选择 chrome
   > 重点是：先在终端 npm run dev，看它的端口是什么，下面的url 端口就填什么，然后在vscode F5，会打开浏览器, 就可以在vscode 下断了
   > {
-  >     "version": "0.2.0",
-  >     "configurations": [
-  >         {
-  >             "type": "chrome",
-  >             "request": "launch",
-  >             "name": "vuejs: chrome",
-  >             "url": "http://localhost:8082",
-  >             "webRoot": "${workspaceFolder}/src",
-  >             "sourceMapPathOverrides": {
-  >                 "webpack:///src/*": "${webRoot}/*"
-  >             }
-  >         }
-  >     ]
+  >  "version": "0.2.0",
+  >  "configurations": [
+  >      {
+  >          "type": "chrome",
+  >          "request": "launch",
+  >          "name": "vuejs: chrome",
+  >          "url": "http://localhost:8082",
+  >          "webRoot": "${workspaceFolder}/src",
+  >          "sourceMapPathOverrides": {
+  >              "webpack:///src/*": "${webRoot}/*"
+  >          }
+  >      }
+  >  ]
   > }
   > ```
   >
   > ```
   > vue.config.js # 注意配了这个 F5 后断点才真的断了下来
   > 
+  > module.exports = {
+  >     runtimeCompiler: true,
+  >     configureWebpack: {
+  >         devtool: 'source-map'
+  >     }
+  > }
+  > 
   > var titme = Date.now();
   > var d = {
-  >   //可在浏览器中调试 说明： https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
-  >   configureWebpack: {
-  >     devtool: 'source-map',
-  >     output: { // 输出重构  打包编译后的 文件名称  【模块名称.版本号.时间戳】
-  >       filename: `js/[name].${titme}.js`,
-  >       chunkFilename: `js/[name].${titme}.js`
-  >     },
-  >   },
-  >   // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
-  >   productionSourceMap: false,
-  >   // // 设置生成的 HTML 中 <link rel="stylesheet"> 和 <script> 标签的 crossorigin 属性（注：仅影响构建时注入的标签）
-  >   publicPath: './', // 设置打包文件相对路径
-  >   // 输出文件目录
-  >   outputDir: "webv2",
+  > //可在浏览器中调试 说明： https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
+  > configureWebpack: {
+  >  devtool: 'source-map',
+  >  output: { // 输出重构  打包编译后的 文件名称  【模块名称.版本号.时间戳】
+  >    filename: `js/[name].${titme}.js`,
+  >    chunkFilename: `js/[name].${titme}.js`
+  >  },
+  > },
+  > // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
+  > productionSourceMap: false,
+  > // // 设置生成的 HTML 中 <link rel="stylesheet"> 和 <script> 标签的 crossorigin 属性（注：仅影响构建时注入的标签）
+  > publicPath: './', // 设置打包文件相对路径
+  > // 输出文件目录
+  > outputDir: "webv2",
   > }
   > console.log(`${process.env.NODE_ENV}`)
   > if( process.env.NODE_ENV.match(/build/g) ){ 
-  >   delete d.configureWebpack.devtool
-  >   d.productionSourceMap = false;
+  > delete d.configureWebpack.devtool
+  > d.productionSourceMap = false;
   > }
   > module.exports = d
   > ```
