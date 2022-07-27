@@ -6465,6 +6465,36 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
 
+### slot
+
+```
+<template>
+  <div class="d-flex d-flex-column w-100 h-100">
+    <slot name="header"></slot>
+    <div
+      class="flex-1 scroll-y"
+      style="position: relative"
+      ref="mainBar"
+      @scroll="onScroll"
+    >
+      <slot></slot> // 子组件有一个匿名slot，引用实例定义的其它内容都会被塞进这里来，它就有滚动属性了
+    </div>
+    <slot name="footer"></slot>
+  </div>
+</template>
+
+
+
+      <columnFlex class="p-2" style="height: 500px;" @onScroll="onScroll ref="columnFlex">
+      
+      这样引用
+
+```
+
+
+
+
+
 
 
 
