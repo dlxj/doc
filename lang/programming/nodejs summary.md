@@ -6347,7 +6347,17 @@ flex: flex-grow flex-shrink flex-basis
 > flex: 1; // 设置了 flex-basis
 > ```
 >
-> 
+> 元素在flex-basis 的基础上增加、缩小 占用的空间（空间有多，空间不够才会生效）
+
+
+
+## align-items: center;
+
+> 元素沿交叉轴局中
+
+
+
+
 
 
 
