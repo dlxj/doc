@@ -6798,6 +6798,27 @@ mounted(){
 
 
 
+## 延迟
+
+```
+  async function sleep(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+  }
+  await sleep(200)
+  
+          // this.$nextTick(() => {
+        //   // DOM 渲染完后回调
+        //   //debugger
+        // })
+  
+```
+
+
+
+
+
 ## component
 
 
