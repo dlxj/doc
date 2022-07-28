@@ -6385,6 +6385,48 @@ flex: flex-grow flex-shrink flex-basis
 
 
 
+## color
+
+```
+.probErr {
+  color: rgb(51, 31, 233) !important;
+  font-weight: bold;
+}
+.wrongChar {
+  color: red !important;
+  font-weight: bold;
+}
+```
+
+
+
+
+
+## animation
+
+```
+.fileItem {
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  /* border-radius: 6px; */
+  animation: 0.5s fileItemKF;
+}
+@keyframes fileItemKF {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+
+
+
+
 ## 分割线
 
 ```

@@ -111,3 +111,20 @@ a:hover {
 
 
 
+# color
+
+```
+.probErr {
+  color: rgb(51, 31, 233) !important;
+  font-weight: bold;
+}
+.wrongChar {
+  color: red !important;
+  font-weight: bold;
+}
+```
+
+
+
+
+
