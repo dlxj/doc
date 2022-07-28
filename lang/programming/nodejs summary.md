@@ -6351,13 +6351,35 @@ flex: flex-grow flex-shrink flex-basis
 
 
 
-## align-items: center;
+## align-items: center
 
 > 元素沿交叉轴局中
+>
+> 用在容器上，作用于所有元素
 
 
 
+## align-self: center
 
+> 只有自已沿交叉轴局中
+>
+> 用在元素上，作用于单个元素
+>
+> 1. auto 表示继承容器的 align-items 属性。（默认值）
+> 2. flex-start 沿着交叉轴方向 起点 对齐（默认值）。
+> 3. flex-end 沿着交叉轴方向 结尾 对齐。
+> 4. center 沿着交叉轴方向 居中 对齐。
+> 5. baseline 沿着交叉轴方向，按照项目内的文字对齐。
+> 6. stretch 沿着交叉轴方向自动进行拉升到最大。
+>
+
+
+
+## overflow-y
+
+> y 轴内容溢出了怎么办
+>
+> 隐藏溢出内容（hidden），或者显示滚动条（scroll），或者直接显示溢出内容（visible），或者让浏览器来处理（auto）。
 
 
 
