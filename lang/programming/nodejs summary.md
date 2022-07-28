@@ -6425,6 +6425,46 @@ flex: flex-grow flex-shrink flex-basis
 
 
 
+## ttf font
+
+```
+<html>
+
+<head>
+	<style>
+		@font-face {
+			font-family: iviewFont;
+			src: url('ionicons.ttf');
+		}
+	</style>
+</head>
+
+<body>
+	<div style="
+		font-family: 'iviewFont';
+		display: inline-block;
+    	font-style: normal;
+    	font-weight: normal;
+    	font-variant: normal;
+    	text-transform: none;
+    	text-rendering: auto;
+    	line-height: 1;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    	vertical-align: middle;
+		
+		">
+		&#xf1d0
+	</div>
+</body>
+
+</html>
+```
+
+
+
+
+
 
 
 ## 分割线
