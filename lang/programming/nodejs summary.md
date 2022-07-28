@@ -6333,6 +6333,8 @@ v14.1.0
 
 ## display: flex
 
+- https://juejin.cn/post/6844904016439148551
+
 > 弹性布局
 
 flex-direction:row  元素排列为一行，主轴是水平方向，交叉轴是它的垂直线，起始线从左到右
@@ -6344,7 +6346,7 @@ flex-direction:row-reverse  起始线从右到左
 flex: flex-grow flex-shrink flex-basis
 
 > ```
-> flex: 1; // 设置了 flex-basis
+> flex: 1; // 设置了 1 1 0
 > ```
 >
 > 元素在flex-basis 的基础上增加、缩小 占用的空间（空间有多，空间不够才会生效）
@@ -6380,6 +6382,69 @@ flex: flex-grow flex-shrink flex-basis
 > y 轴内容溢出了怎么办
 >
 > 隐藏溢出内容（hidden），或者显示滚动条（scroll），或者直接显示溢出内容（visible），或者让浏览器来处理（auto）。
+
+
+
+## 分割线
+
+```
+<!-- 分割线 -->
+<div id="splitLine" @mousedown="splitLineMouseDownEvent" ref="splitLine"></div>
+
+#splitLine {
+  width: 5px;
+  left: calc(212px + ((100vw - 206px) / 2));
+  height: calc(100vh - 10px);
+  top: 5px;
+  position: fixed;
+  cursor: w-resize;
+  z-index: 110;
+}
+
+    //分割线点击事件
+    async splitLineMouseDownEvent(evt) {
+      this.splitLineMouseDown = true;
+      this.moveStartPos.x = evt.x;
+      this.moveStartPos.y = evt.y;
+      this.moveStartPos.spX = this.$refs["splitLine"].getBoundingClientRect().x;
+      this.moveStartPos.textPanelWidth =
+        this.$refs["textPanel"].getBoundingClientRect().width;
+      let imgPanelRect = this.$refs["imgPanel"].getBoundingClientRect();
+      this.moveStartPos.imgPanelWidth = imgPanelRect.width;
+      this.moveStartPos.imgPanelX = imgPanelRect.x - 5;
+    }
+
+    //全局鼠标移动事件
+    async globalMouseMove(evt) {
+      if (!this.splitLineMouseDown) {
+        return;
+      }
+      let x = evt.x;
+      if (x < 380) {
+        x = 380;
+      }
+      //鼠标移动后的距离差
+      let spacing = x - this.moveStartPos.x;
+      //分隔符距离左边的距离
+      let left = this.moveStartPos.spX + spacing;
+      this.$refs["splitLine"].style.left = `${left}px`;
+
+      //内容框的宽度
+      let newTextPanelWidth = this.moveStartPos.textPanelWidth + spacing;
+      this.$refs["textPanel"].style.width = `${newTextPanelWidth}px`;
+
+      //图片框的宽度
+      let newImgPanelWidth = this.moveStartPos.imgPanelWidth + spacing * -1;
+      this.$refs["imgPanel"].style.width = `${newImgPanelWidth}px`;
+      //图片框左边距离
+      let imgLeft = this.moveStartPos.imgPanelX + spacing;
+      this.$refs["imgPanel"].style.left = `${imgLeft}px`;
+    }
+
+
+```
+
+
 
 
 
