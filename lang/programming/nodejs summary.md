@@ -6321,6 +6321,34 @@ v14.1.0
 
 
 
+## 相对单位
+
+| rem  | 根元素的字体大小   |
+| ---- | ------------------ |
+| `lh` | 元素的 line-height |
+| `vw` | 视窗宽度的 1%      |
+| `vh` | 视窗高度的 1%      |
+
+
+
+## display: flex
+
+> 弹性布局
+
+flex-direction:row  元素排列为一行，主轴是水平方向，交叉轴是它的垂直线，起始线从左到右
+
+flex-direction:column 元素排列为一列，主轴是方向垂直方向，交叉轴是它的垂直线，起始线从左到右
+
+flex-direction:row-reverse  起始线从右到左
+
+flex: flex-grow flex-shrink flex-basis
+
+> ```
+> flex: 1; // 设置了 flex-basis
+> ```
+>
+> 
+
 
 
 # Vue
