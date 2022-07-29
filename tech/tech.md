@@ -20,15 +20,35 @@ Termux + Github
 
 git config --global user.name “dlxi”    
 
-git config --global user.email  "123468935@qq.com"  
+git config --global user.email  "12345@qq.com"  
 
 git config --global push.default matching  
 
-ssh-keygen -t rsa -C "123468935@qq.com"  
+ssh-keygen -t rsa -C "12345@qq.com"  
 
 
 
 -f output_keyfile  
+
+
+
+config 配置有system级别 global（用户级别） 和local（当前仓库）三个 设置先从system-》global-》local  底层配置会覆盖顶层配置 分别使用--system/global/local 可以定位到配置文件
+
+查看系统config
+
+git config --system --list
+　　
+
+查看当前用户（global）配置
+
+1it config --global  --list
+
+
+查看当前仓库配置信息
+git config --local  --list
+
+git config --local   user.name "g"
+git config --local   user.email  "1@qq.com"
 
 
 

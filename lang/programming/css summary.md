@@ -128,3 +128,64 @@ a:hover {
 
 
 
+# ttf font
+
+```
+<html>
+
+<body>
+	<div id="expandMenu">
+		<i id="expandMenuIcon" style="
+		font-family: 'iviewFont';
+		display: inline-block;
+    	font-style: normal;
+    	font-weight: normal;
+    	font-variant: normal;
+    	text-transform: none;
+    	text-rendering: auto;
+    	line-height: 1;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    	vertical-align: middle;
+		
+		">
+			&#xf11f;
+		</i>
+
+		<!-- import ViewUI from 'view-design';
+			 import 'view-design/dist/styles/iview.css';
+			 Vue.use(ViewUI); -->
+		<!-- ios-arrow-forward &#xf11f; -->
+		<!-- ios-folder-open-outline &#xf1d0  font-size: 100px; -->
+	</div>
+</body>
+<style>
+	@font-face {
+		font-family: iviewFont;
+		src: url('ionicons.ttf');
+	}
+
+	#expandMenu {
+		float: left;
+		cursor: pointer;
+		text-align: center;
+		margin-left: -8px;
+	}
+
+	#expandMenu:hover {
+		color: #09f;
+	}
+
+	#expandMenuIcon {
+		font-size: 20px;
+		margin-top: calc(50vh - 10px);
+	}
+</style>
+
+</html>
+```
+
+
+
+
+

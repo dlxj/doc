@@ -6430,17 +6430,9 @@ flex: flex-grow flex-shrink flex-basis
 ```
 <html>
 
-<head>
-	<style>
-		@font-face {
-			font-family: iviewFont;
-			src: url('ionicons.ttf');
-		}
-	</style>
-</head>
-
 <body>
-	<div style="
+	<div id="expandMenu">
+		<i id="expandMenuIcon" style="
 		font-family: 'iviewFont';
 		display: inline-block;
     	font-style: normal;
@@ -6454,11 +6446,44 @@ flex: flex-grow flex-shrink flex-basis
     	vertical-align: middle;
 		
 		">
-		&#xf1d0
+			&#xf11f;
+		</i>
+
+		<!-- import ViewUI from 'view-design';
+			 import 'view-design/dist/styles/iview.css';
+			 Vue.use(ViewUI); -->
+		<!-- ios-arrow-forward &#xf11f; -->
+		<!-- ios-folder-open-outline &#xf1d0  font-size: 100px; -->
 	</div>
 </body>
+<style>
+	@font-face {
+		font-family: iviewFont;
+		src: url('ionicons.ttf');
+	}
+
+	#expandMenu {
+		float: left;
+		cursor: pointer;
+		text-align: center;
+		margin-left: -8px;
+	}
+
+	#expandMenu:hover {
+		color: #09f;
+	}
+
+	#expandMenuIcon {
+		font-size: 20px;
+		margin-top: calc(50vh - 10px);
+	}
+</style>
 
 </html>
+
+
+50vh 视窗高度的 50%
+
 ```
 
 
