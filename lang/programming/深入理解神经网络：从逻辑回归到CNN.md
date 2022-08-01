@@ -8393,6 +8393,7 @@ pip install --upgrade protobuf==3.20.0
 
 
 https://matpool.com/supports/doc-vscode-connect-matpool/
+    Remote Development 安装插件
     VS Code 远程连接矩池云机器教程
 # train.py 添加命令行参数，并用vscode 远程调试K80 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，vscode 中修改train.py 在main 函数下加入：
 

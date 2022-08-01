@@ -134,6 +134,63 @@ a:hover {
 <html>
 
 <body>
+
+	<div id="leftPanel" style="width: 200px;
+			  box-shadow: 0 0 5px #ccc;
+			  overflow: hidden;
+			  position: fixed;
+			  left: 5px;
+			  top: 80px;
+			  bottom: 5px;
+			">
+		<div style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;margin:auto;
+		  margin:0rem;
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -ms-flex-direction: column;
+		  flex-direction: column;
+		">
+			<header>
+				<div id="ocrMenuPanel" style="padding: 6px 0px;
+			  border-bottom: 1px solid rgb(235, 233, 233);
+			  overflow: hidden;">
+
+					<div>
+						<i style="
+				font-family: 'iviewFont';
+				display: inline-block;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				font-size: calc(5vh - 15px);
+				text-transform: none;
+				text-rendering: auto;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				vertical-align: middle;
+				
+				"
+				title="选择图片"
+				>
+							&#xf1d0;
+						</i>
+
+					</div>
+			</header>
+			<main style="-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			overflow-y: auto;
+			">
+
+			</main>
+
+		</div>
+	</div>
+
+
 	<div id="expandMenu">
 		<i id="expandMenuIcon" style="
 		font-family: 'iviewFont';
@@ -159,6 +216,16 @@ a:hover {
 		<!-- ios-folder-open-outline &#xf1d0  font-size: 100px; -->
 	</div>
 </body>
+
+<script>
+	let expandMenuIcon = document.querySelector('#expandMenuIcon')
+	expandMenuIcon.addEventListener('click', () => {
+		console.log(`clicked.`)
+		expandMenuIcon.style.display = 'none'  // 隐藏
+		// expandMenuIcon.style.display = "inline-block"  // 显示  
+	}, true)
+</script>
+
 <style>
 	@font-face {
 		font-family: iviewFont;

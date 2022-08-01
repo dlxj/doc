@@ -2514,6 +2514,19 @@ console.log(pets.includes('cat'))
 
 
 
+## remove
+
+```
+    delImg (f) {
+      console.log('删除图片')
+      this.files = this.files.filter(item => item !== f)  // ture 留, false 去
+    }
+```
+
+
+
+
+
 ## intersection
 
 
@@ -6425,12 +6438,96 @@ flex: flex-grow flex-shrink flex-basis
 
 
 
+## float: left
+
+```
+    <div id="expandMenu" v-show="!showMenu" @click="showMenu=true">
+      <Icon id="expandMenuIcon" type="ios-arrow-forward" />
+    </div>
+    
+    
+    #expandMenu {
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  margin-top: calc(50vh - 10px);
+  margin-left: -3px;
+}
+#expandMenu:hover {
+  color: #09f;
+}
+#expandMenuIcon {
+  font-size: 20px;
+}
+```
+
+
+
+
+
 ## ttf font
 
 ```
 <html>
 
 <body>
+
+	<div id="leftPanel" style="width: 200px;
+			  box-shadow: 0 0 5px #ccc;
+			  overflow: hidden;
+			  position: fixed;
+			  left: 5px;
+			  top: 80px;
+			  bottom: 5px;
+			">
+		<div style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;margin:auto;
+		  margin:0rem;
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -ms-flex-direction: column;
+		  flex-direction: column;
+		">
+			<header>
+				<div id="ocrMenuPanel" style="padding: 6px 0px;
+			  border-bottom: 1px solid rgb(235, 233, 233);
+			  overflow: hidden;">
+
+					<div>
+						<i style="
+				font-family: 'iviewFont';
+				display: inline-block;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				font-size: calc(5vh - 15px);
+				text-transform: none;
+				text-rendering: auto;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				vertical-align: middle;
+				
+				"
+				title="选择图片"
+				>
+							&#xf1d0;
+						</i>
+
+					</div>
+			</header>
+			<main style="-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			overflow-y: auto;
+			">
+
+			</main>
+
+		</div>
+	</div>
+
+
 	<div id="expandMenu">
 		<i id="expandMenuIcon" style="
 		font-family: 'iviewFont';
@@ -6456,6 +6553,16 @@ flex: flex-grow flex-shrink flex-basis
 		<!-- ios-folder-open-outline &#xf1d0  font-size: 100px; -->
 	</div>
 </body>
+
+<script>
+	let expandMenuIcon = document.querySelector('#expandMenuIcon')
+	expandMenuIcon.addEventListener('click', () => {
+		console.log(`clicked.`)
+		expandMenuIcon.style.display = 'none'  // 隐藏
+		// expandMenuIcon.style.display = "inline-block"  // 显示  
+	}, true)
+</script>
+
 <style>
 	@font-face {
 		font-family: iviewFont;
@@ -6480,13 +6587,34 @@ flex: flex-grow flex-shrink flex-basis
 </style>
 
 </html>
-
-
-50vh 视窗高度的 50%
-
 ```
 
 
+
+## addEventListener
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+
+  > 引用元素时 id 用 #    class 用 .
+
+```
+事件冒泡或事件捕获？
+事件传递有两种方式：冒泡与捕获。
+
+事件传递定义了元素事件触发的顺序。 如果你将 <p> 元素插入到 <div> 元素中，用户点击 <p> 元素, 哪个元素的 "click" 事件先被触发呢？
+
+在 冒泡 中，内部元素的事件会先被触发，然后再触发外部元素，即： <p> 元素的点击事件先触发，然后会触发 <div> 元素的点击事件。
+
+在 捕获 中，外部元素的事件会先被触发，然后才会触发内部元素的事件，即： <div> 元素的点击事件先触发 ，然后再触发 <p> 元素的点击事件。
+
+addEventListener() 方法可以指定 "useCapture" 参数来设置传递类型：
+
+addEventListener(event, function, useCapture);
+默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递。
+
+实例
+document.getElementById("myDiv").addEventListener("click", myFunction, true);
+```
 
 
 
@@ -6724,6 +6852,75 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 ```
 
 
+
+### v-model
+
+```
+// 双向绑定
+<label @click.stop=""><Checkbox v-model="file.selected"></Checkbox></label>
+```
+
+
+
+### z-index
+
+```
+ocr\src\pages\index.vue  systemMenu branch
+.menuPanel {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  transition: transform 0.5s ease-out;
+  position: fixed;
+  right: -1px;
+  top: 0;
+  z-index: 98;
+  width: 470px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #2c3e50;
+  color: white;
+  box-shadow: 0 0 10px #2c3e50;
+}
+
+.menuBtn {
+  position: fixed;
+  right: 10px;
+  top: 7px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 99;
+  color: #09f;
+}
+.menuBtn:hover {
+  opacity: 0.8;
+}
+```
+
+
+
+### watch
+
+```
+  watch: {
+    selectItem: {
+      handler: function (val) {
+        this.$nextTick(() => {
+          try {
+            let ni = this.$refs["nav" + val][0];
+            this.$refs["linkBar"].style.width = ni.offsetWidth + "px";
+            this.$refs[
+              "linkBar"
+            ].style.transform = `translate3d(${ni.offsetLeft}px,0px,0px)`;
+          } catch (e) {
+
+          }
+        });
+      },
+    },
+  }
+```
 
 
 

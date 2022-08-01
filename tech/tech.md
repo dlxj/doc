@@ -52,6 +52,40 @@ git config --local   user.email  "1@qq.com"
 
 
 
+```
+人多应该在主干上禁止 merge, 有个专门的策略叫线性历史(Linear History)
+
+你可以在 Github 上看到这个选项, 可以禁止不小心 merge 到主干.
+
+
+线性历史并不禁止 merge, 只是禁止 merge 到主干.
+
+线性历史有两个主要分支, 一个叫 main, 一个叫 dev
+
+所有其他的分支都从 main 分裂出去, 然后合并(merge/rebase/squash)到 dev
+
+然后 dev 有专门的人 rebase 去掉所有的 merge 节点
+
+(你实在不懂 rebase 那你直接 squash)
+
+当 dev 稳定后, 打一个 tag
+
+然后 main 分支执行 fast-forward 抵达这一稳定节点.
+
+线性历史解决了 merge 盘丝洞的问题, log 清晰, 容易 revert
+
+你说有个feature 需要长期游离在 main 和 dev 之外?
+
+那这种情况你应该用 fork, 将当前的 repo 变成上游, 然后顺便改个名
+
+建议 20 人以上的团队都试着开启 linear history, 你们会感谢这个风格的
+
+```
+
+
+
+
+
 # 黑科技
 
 

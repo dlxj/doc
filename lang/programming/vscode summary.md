@@ -122,6 +122,18 @@ ctrl + -
 
 
 
+# 远程调试
+
+- Remote Development 安装插件
+
+https://matpool.com/supports/doc-vscode-connect-matpool/
+
+​    VS Code 远程连接矩池云机器教程
+
+
+
+
+
 
 # CPP
 
