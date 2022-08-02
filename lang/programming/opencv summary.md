@@ -747,6 +747,21 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 
 
+# 彩图转灰度图
+
+```
+    img = cv2.imdecode(np.fromfile('./0093.bmp', dtype=np.uint8), -1)
+
+    if len(img.shape) == 3:  # 是彩图
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    img = cv2.bitwise_not(img)
+```
+
+
+
+
+
 # 转成RGB
 
 ```python
