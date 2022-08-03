@@ -4719,6 +4719,140 @@ async Task ReadError(ProcessStreamReader reader, CancellationToken token) {
 
 
 ```
+        //声明委托
+        private delegate Mat calcHandler(string img_path, bool autoCut, bool binarize = false, bool autoSize = false, string scale = null);
+
+        //代理方法
+        public Mat calc(string img_path, bool autoCut, bool binarize = false, bool autoSize = false, string scale = null)
+        
+        
+                //异步调用
+        public async void calc_all(List<string> img_paths, bool autoCut, bool binarize = false, bool autoSize = false, string scale = null)
+        {
+
+            if (img_paths.Count <= 0)
+            {
+                return;
+            }
+
+            calcHandler handler = new calcHandler(calc);
+
+            imgBoardForm.g_total = img_paths.Count;
+            imgBoardForm.g_curr = 0;
+
+            string path = img_paths[imgBoardForm.g_curr];
+            IAsyncResult result = handler.BeginInvoke(path, this.radioButton1.Checked, this.checkBox1.Checked, this.radioButton3.Checked, (string)this.listBox1.SelectedItem, new AsyncCallback(CallBack), "one task done.");
+
+        }
+
+        //异步回调方法
+        public void CallBack(IAsyncResult result)
+        {
+            //AsyncResult 是IAsyncResult接口的一个实现类，空间：System.Runtime.Remoting.Messaging
+            //AsyncDelegate 属性可以强制转换为用户定义的委托的实际类。
+            calcHandler handler = (calcHandler)((AsyncResult)result).AsyncDelegate;
+
+            var img_paths = imgBoardForm.g_img_paths;
+
+            string path = img_paths[imgBoardForm.g_curr];
+
+            string basename = Path.GetFileName(path);
+
+            string msg = $"处理进度：{imgBoardForm.g_curr+1} /{imgBoardForm.g_img_paths.Count}";
+
+            _syncContext.Post(SetButtonText, msg);//子线程中通过UI线程上下文更新UI
+
+            //等待函数执行完毕
+            var image = handler.EndInvoke(result);
+
+            var state = result.AsyncState;
+
+            if (imgBoardForm.g_dic_images.ContainsKey(basename))
+            {
+
+                //var img = imgBoardForm.g_dic_images[basename];
+                //img.Dispose();
+
+            }
+            //imgBoardForm.g_dic_images[basename] = image;
+
+
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(path)}";
+
+            //保存到临时目录
+            image.SaveImage(dist);
+
+            image.Dispose();
+
+            Thread.Sleep(100);
+            File.Delete(path);
+            Thread.Sleep(100);
+            File.Move(dist, path);
+
+            Thread.Sleep(100);
+            File.Delete(dist);
+            Thread.Sleep(100);
+
+            // 一个图片处理异步任务完成
+            imgBoardForm.g_curr += 1;
+
+
+
+            if (imgBoardForm.g_curr < imgBoardForm.g_img_paths.Count)
+            {
+                // 开始下一个任务
+                path = img_paths[imgBoardForm.g_curr];
+
+                IAsyncResult result2 = handler.BeginInvoke(path, this.radioButton1.Checked, this.checkBox1.Checked, this.radioButton3.Checked, (string)this.listBox1.SelectedItem, new AsyncCallback(CallBack), "one task done.");
+
+            }
+            else
+            {
+                _syncContext.Post(SetButtonText, "一键处理全部图片");//子线程中通过UI线程上下文更新UI
+                MessageBox.Show("全部图片处理完成.");
+            }
+
+        }
+```
+
+
+
+
+
+```
+private void button4_Click(object sender, EventArgs e)
+        {
+            using (BackgroundWorker bw = new BackgroundWorker())
+            {
+                bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+                bw.DoWork += new DoWorkEventHandler(bw_DoWork);
+                bw.RunWorkerAsync("Tank");
+            }         
+        }
+
+        void bw_DoWork(object sender, DoWorkEventArgs e)
+        {       
+            // 这里是后台线程， 是在另一个线程上完成的
+            // 这里是真正做事的工作线程
+            // 可以在这里做一些费时的，复杂的操作
+            Thread.Sleep(5000);
+            e.Result = e.Argument + "工作线程完成";
+        }
+
+        void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //这时后台线程已经完成，并返回了主线程，所以可以直接使用UI控件了 
+            this.label4.Text = e.Result.ToString(); 
+        }
+```
+
+
+
+
+
+
+
+```
 The much easier way would be to do just use cmd as your process.
 
 Process test = new Process();

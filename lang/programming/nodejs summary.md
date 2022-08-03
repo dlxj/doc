@@ -6476,6 +6476,40 @@ margin: 50px auto;
 
 
 
+## cursor
+
+```
+cursor: w-resize; // 悬停会出现调整大小的光标样式
+ 
+#splitLine {
+  width: 5px;
+  left: calc(212px + ((100vw - 206px) / 2));
+  height: calc(100vh - 10px);
+  top: 5px;
+  position: fixed;
+  cursor: w-resize;
+  background: rgb(245, 245, 245);
+  z-index: 110;
+}
+```
+
+
+
+## condition
+
+```
+span[data-null="1"] {
+  background: #ffff00;
+}
+
+                                  <span
+                                    :data-charid="c.id"
+                                    v-show="line.type == 'p'"
+                                    :data-null="c.word==' '?'1':'0'"
+```
+
+
+
 
 
 ## ttf font
