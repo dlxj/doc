@@ -7117,6 +7117,50 @@ ocr\src\pages\index.vue  systemMenu branch
 
 
 
+### router
+
+```
+import router from './router'  // src/router/index.js 需要是这样的结构
+
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
+
+
+// router/index.js
+    const index = {
+      path: '/',
+      // name: 'index',
+      component: require('@/pages/index.vue').default,
+      children: [],
+      redirect: 'index'
+    };
+    const pageTab = {
+      path: '/index',
+      name: 'indexRoot',
+      components: {}
+    };
+    index.children.push(pageTab);
+
+    const routers = [index, {
+      path: '/login',
+      name: 'login',
+      components: require('@/pages/login.vue')
+    }]
+
+
+// 其他页面跳转
+	signOut() {
+      localStorage.removeItem("__guid__");
+      this.$router.replace({ path: "/login" });
+    }
+```
+
+
+
 
 
 
@@ -8079,6 +8123,16 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
   >     }
   > 
   > ```
+
+
+
+# cudf
+
+- https://github.com/rapidsai/node
+
+  > nodejs python cuda 加速
+
+
 
 
 
