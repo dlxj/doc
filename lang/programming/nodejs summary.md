@@ -6510,6 +6510,152 @@ span[data-null="1"] {
 
 
 
+## box-shadow
+
+```
+    <!-- 中间内容显示 -->
+    <div class="contentPanel" id="contentPanel" ref="textPanel">
+        <div class="css-auto m-0 d-flex d-flex-column">
+
+        </div>
+    </div>
+    
+    .contentPanel {
+  max-height: 100vh;
+  overflow: auto;
+  margin: 0px 0px 5px 5px;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 1 !important;
+}
+#contentPanel {
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-align: left;
+  position: fixed;
+  background: white;
+  left: 206px;
+  width: calc((100vw - 206px) / 2);
+  z-index: 4 !important;
+  caret-color: red;
+
+  top: 80px;
+  height: calc(100vh - 85px);
+}
+```
+
+
+
+## \# \.
+
+```
+. 是class 共用的, # 是 id ，单用的
+
+    <!-- 中间内容显示 -->
+    <div class="contentPanel" id="textPanel" ref="textPanel">
+        <div class="css-auto m-0 d-flex d-flex-column">
+
+        </div>
+    </div>
+
+    <!-- 分割线 -->
+    <div id="splitLine" @mousedown="splitLineMouseDownEvent" ref="splitLine"></div>
+
+    <!-- 右边图片 -->
+    <div
+      class="contentPanel"
+      id="imgPanel"
+      ref="imgPanel"
+    >
+    </div>
+
+.contentPanel {
+  max-height: 100vh;
+  overflow: auto;
+  margin: 0px 0px 5px 5px;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 1 !important;
+}
+#textPanel {
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-align: left;
+  position: fixed;
+  background: white;
+  left: 206px;
+  width: calc((100vw - 206px) / 2);
+  z-index: 4 !important;
+  caret-color: red;
+
+  top: 80px;
+  height: calc(100vh - 85px);
+}
+#imgPanel {
+  position: fixed;
+  /* height: calc(100vh - 50px); */
+  width: calc((100vw - 206px) / 2 - 18px);
+  left: calc(212px + ((100vw - 206px) / 2));
+  background: white;
+  margin-right: 5px;
+
+  top: 80px;
+  height: calc(100vh - 85px);
+}
+
+    //分割线点击事件
+    async splitLineMouseDownEvent(evt) {
+      this.splitLineMouseDown = true;
+      this.moveStartPos.x = evt.x;
+      this.moveStartPos.y = evt.y;
+      this.moveStartPos.spX = this.$refs["splitLine"].getBoundingClientRect().x;
+
+      this.moveStartPos.textPanelWidth = this.$refs["textPanel"].getBoundingClientRect().width
+
+      let imgPanelRect = this.$refs["imgPanel"].getBoundingClientRect();
+      this.moveStartPos.imgPanelWidth = imgPanelRect.width;
+      this.moveStartPos.imgPanelX = imgPanelRect.x - 5;
+
+    },
+    //全局鼠标移动事件
+    async globalMouseMove(evt) {
+      if (!this.splitLineMouseDown) {
+        return;
+      }
+      let x = evt.x;
+      if (x < 380) {
+        x = 380;
+      }
+      //鼠标移动后的距离差
+      let spacing = x - this.moveStartPos.x;
+      //分隔符距离左边的距离
+      let left = this.moveStartPos.spX + spacing;
+      this.$refs["splitLine"].style.left = `${left}px`;
+
+      //内容框的宽度
+      let textPanelWith = this.moveStartPos.textPanelWidth + spacing;
+      this.$refs["textPanel"].style.width = `${textPanelWith}px`;
+
+      //图片框的宽度
+      let newImgPanelWidth = this.moveStartPos.imgPanelWidth + spacing * -1;
+      this.$refs["imgPanel"].style.width = `${newImgPanelWidth}px`;
+      //图片框左边距离
+      let imgLeft = this.moveStartPos.imgPanelX + spacing;
+      this.$refs["imgPanel"].style.left = `${imgLeft}px`;
+
+    },
+    //全局鼠标抬起事件
+    globalMouseUPEvent() {
+      if (this.splitLineMouseDown) {
+        this.splitLineMouseDown = false;
+      }
+    }
+```
+
+
+
 
 
 ## ttf font
