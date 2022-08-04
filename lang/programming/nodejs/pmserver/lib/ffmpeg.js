@@ -407,6 +407,10 @@ module.exports = {
                 cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             }
 
+            if (Number(nth3) >= 152) {
+                cmd = `ffmpeg -y -itsoffset -6 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            }
+
             let childProcess = execa(cmd, { shell:true, 'encoding': 'utf8' })
             let { stdout:out1 } = await childProcess
 
