@@ -8,7 +8,7 @@
   let formurlencoded = require('form-urlencoded')
   let formidable = require('formidable')
   let rd = require('rd')
-  let ws = require('ws')
+  //let ws = require('ws')
 
 
   //let re = await pg.defaultDB.query('select $1::text as name', ['brianc'])
