@@ -6882,6 +6882,8 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 
 - https://github.com/PanJiaChen/vue-element-admin
 
+- https://github.com/miaolz123/vue-markdown  vue markdown
+
   > ```
   > git clone https://github.com/PanJiaChen/vue-element-admin.git
   > npm install --registry=https://registry.npm.taobao.org

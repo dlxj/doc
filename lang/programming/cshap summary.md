@@ -5040,6 +5040,56 @@ int dwCreationFlags = NORMAL_PRIORITY_CLASS | CREATE_NEW_CONSOLE;
 
 
 
+```
+Process proc = new Process();
+proc.StartInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + @"test.bat";
+proc.StartInfo.CreateNoWindow = true;
+proc.StartInfo.UseShellExecute = false;
+proc.Start();
+```
+
+
+
+```
+
+#include "stdafx.h"
+#include <windows.h>
+#include "string.h"
+ 
+#include <iostream>
+using namespace std;
+ 
+string GetExePath();
+ 
+int main(int argc, _TCHAR* argv[])
+{
+	if(argc != 2){
+		return 0;
+	}
+	//Sleep(10*1000);
+ 
+	string exePath = GetExePath();
+	string parameter(argv[1]);
+	string cmd;
+	cmd.append(exePath);
+	cmd.append("node.exe ");
+	cmd.append(exePath);
+	cmd.append("myApplication.js \"");
+	cmd.append(parameter);
+	cmd.append("\"");
+ 
+	STARTUPINFO StartInfo ={sizeof(StartInfo)}; 
+	PROCESS_INFORMATION ProcInfo;
+	StartInfo.dwFlags = STARTF_USESHOWWINDOW;
+	StartInfo.wShowWindow = false;
+	CreateProcess(NULL,(LPSTR)cmd.c_str(), NULL, NULL, NULL, NULL, NULL, NULL, &StartInfo, &ProcInfo);
+ 
+	return 0;
+}
+```
+
+
+
 
 
 # OS 兼容
