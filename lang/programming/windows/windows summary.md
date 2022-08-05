@@ -125,6 +125,16 @@ netstat -aon | findstr "8080"
 
 
 
+# 杀进程
+
+```
+taskkill -PID 进程号 -F
+```
+
+
+
+
+
 # 多用户远程登录
 
 - https://www.exitthefastlane.com/2018/02/resource-sharing-in-server2016-rdsh.html?m=1

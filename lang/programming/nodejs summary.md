@@ -931,10 +931,10 @@ node --inspect-brk=xxx.77:9229 insert.cjs # 指定IP端口
   > vue.config.js # 注意配了这个 F5 后断点才真的断了下来
   > 
   > module.exports = {
-  >   	runtimeCompiler: true,
-  >     configureWebpack: {
-  >         devtool: 'source-map'
-  >     }
+  >       runtimeCompiler: true,
+  >        configureWebpack: {
+  >            devtool: 'source-map'
+  >        }
   > }
   > 
   > 
@@ -6334,6 +6334,24 @@ v14.1.0
 
 
 
+## span
+
+```
+span 行内(inline)，div 块
+
+默认情况下，行内元素不会以新行开始，而块级元素会新起一行。
+
+div：指定渲染HTML的容器
+span：指定内嵌文本容器
+通俗地讲就是如果里面还有其他标签的时候就用div，如果里面只有文本就应该用span
+
+同时满足以下条件的内容你可以使用span标签：1、行内元素（inline）2、无语义3、你需要给他添加特定样式或做js钩子的时候如：这是一段话，段落里有一些特殊的需要标记的内容，如<span class="red">红色</span>。这是一个箭头：<span class="narrow">.</span>。可以通过定义该class使其显示为一个箭头。你还可以输入<span id="J_zishu">140</span> 个字。J_zishu用作js钩子
+```
+
+
+
+
+
 ## 相对单位
 
 | rem  | 根元素的字体大小   |
@@ -6547,6 +6565,64 @@ span[data-null="1"] {
 
 
 
+## border-box
+
+```
+<img ref="img" id="img" :src="imageData" />
+#img {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-user-drag: none;
+  border-left: 1px solid #09f;
+  border-right: 1px solid #09f;
+  box-sizing: border-box;
+}
+
+border-box
+一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减去 (border + padding) 的值。
+```
+
+
+
+## z-index
+
+```
+ocr\src\pages\index.vue  systemMenu branch
+.menuPanel {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  transition: transform 0.5s ease-out;
+  position: fixed;
+  right: -1px;
+  top: 0;
+  z-index: 98;
+  width: 470px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #2c3e50;
+  color: white;
+  box-shadow: 0 0 10px #2c3e50;
+}
+
+.menuBtn {
+  position: fixed;
+  right: 10px;
+  top: 7px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 99;
+  color: #09f;
+}
+.menuBtn:hover {
+  opacity: 0.8;
+}
+```
+
+
+
 ## \# \.
 
 ```
@@ -6653,6 +6729,8 @@ span[data-null="1"] {
       }
     }
 ```
+
+
 
 
 
@@ -7020,6 +7098,13 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
 
+### mousedown
+
+- 若在同一个元素上**按下并松开鼠标左键**，会依次触发`mousedown`、`mouseup`、`click`，前一个事件执行完毕才会执行下一个事件
+- 若在同一个元素上**按下并松开鼠标右键**，会依次触发`mousedown`、`mouseup`，前一个事件执行完毕才会执行下一个事件，不会触发`click`事件
+
+
+
 ### slot
 
 ```
@@ -7057,41 +7142,31 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
 
-### z-index
+### $event
 
 ```
-ocr\src\pages\index.vue  systemMenu branch
-.menuPanel {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  transition: transform 0.5s ease-out;
-  position: fixed;
-  right: -1px;
-  top: 0;
-  z-index: 98;
-  width: 470px;
-  height: 100vh;
-  overflow-y: auto;
-  background: #2c3e50;
-  color: white;
-  box-shadow: 0 0 10px #2c3e50;
-}
+        <img
+          ref="img"
+          id="img"
+          @mousedown.stop="imgMouseDownEvent"
+          @mouseup="imgMouseUPEvent"
+          @mousemove="imgMouseMoveEvent($event)"
+          @contextmenu="imgContextmenu"
+          :src="imageData"
+        />
+    imgMouseMoveEvent(evt) {
+        let xSpacing = evt.clientX - this.blockMouseX;
+        let ySpacing = evt.clientY - this.blockMouseY;        
+        
 
-.menuBtn {
-  position: fixed;
-  right: 10px;
-  top: 7px;
-  font-size: 25px;
-  cursor: pointer;
-  z-index: 99;
-  color: #09f;
-}
-.menuBtn:hover {
-  opacity: 0.8;
-}
+自定义控件的事件传参，或原生 DOM 的事件传参, 两者内容不太一样
 ```
+
+
+
+
+
+
 
 
 
