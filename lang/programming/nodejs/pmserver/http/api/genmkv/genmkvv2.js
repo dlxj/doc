@@ -90,6 +90,8 @@ module.exports = {
 
         await genkv_season6(type)
 
+        await genkv_season10(type)
+
         return this.msg(200, 'ok.')
     }
 }
@@ -300,6 +302,99 @@ async function genkv_season6(type) {
 
                         let outpath = path.join(outdir, `${rtname}.mkv`)
                         let { msg } = await this.libs.ffmpeg.merge_pokemonAmazon_pokemonTWS06(lvpath, kvpath, rtpath, outpath)
+
+                        break
+
+                    }
+
+                }
+                break
+            }
+
+        }
+    }
+
+
+}
+
+async function genkv_season10(type) {
+
+    let platform = process.platform
+    let root_vd = global.config.root_vd[platform]
+
+    function sort(ttml) {
+        let match= ttml.match(/(\d+)\./)
+        if (match == null) {
+            throw `name not correct. ${ttml}`
+        }
+        let nth = match[1]
+        return Number(nth)
+    }
+
+    let kvs = this.libs.files.allfiles(root_vd, 'mkv', ['pokemon_amazon', 'S10'])  // E:\videos\anime\pokemon\amazon\S01
+
+    let m4s = this.libs.files.allfiles(root_vd, 'mp4', ['pokemon_tw', 'S10']) 
+
+    let srts = this.libs.files.allfiles(global.root_subtitles, 'srt', ['amazon', 'pokemon', 'srt', 'S10', 'jp'])
+
+    kvs = _.orderBy(kvs, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    m4s = _.orderBy(m4s, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    srts = _.orderBy(srts, [
+        function (item) { return sort(item); }
+    ], ["asc"])
+
+    for (let kvpath of kvs) {
+
+        let { base:kvbase, dir:kvdir, ext:kvext, name:kvname, root:kvroot } = path.parse(kvpath)
+
+        let kvseason = this.libs.files.season(kvpath)
+        if (kvseason == null) {
+            throw 'no season on vd'
+        }
+
+        for (let rtpath of srts) {
+
+            let { base:rtbase, dir:rtdir, ext:rtext, name:rtname, root:rtroot } = path.parse(rtpath)
+
+            let rtseason = this.libs.files.season(rtpath)
+            if (rtseason == null) {
+                throw 'no season on rt'
+            }
+
+            if (kvseason != rtseason) {
+                continue
+            }
+            
+            if ( kvname == rtname ) {
+
+                for (let m4path of m4s) {
+
+                    let { base:lvbase, dir:m4dir, ext:lvext, name:m4name, root:lvroot } = path.parse(m4path)
+
+                    let m4season = this.libs.files.season(m4path)
+                    if (m4season == null) {
+                        throw 'no season on lv'
+                    }
+
+                    if (m4season != rtseason) {
+                        continue
+                    }
+
+                    if ( m4name == rtname ) {
+
+                        let outdir = path.join(m4dir, 'output')
+                        if (!fs.existsSync(outdir)) {
+                            fs.mkdirSync(outdir, { recursive: false })
+                        }
+
+                        let outpath = path.join(outdir, `${rtname}.mkv`)
+                        let { msg } = await this.libs.ffmpeg.merge_pokemonAmazon_pokemonTWS10(m4path, kvpath, rtpath, outpath)
 
                         break
 

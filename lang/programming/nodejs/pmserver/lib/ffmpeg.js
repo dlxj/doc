@@ -429,5 +429,120 @@ module.exports = {
         } catch(err) {
            return { msg : err }
         } 
+    },
+    merge_pokemonAmazon_pokemonTWS10:async function(vdTWPath, vdAMPath, subpath, outpath) {
+        /*
+           # 提前2.2 秒，嵌入日文作为硬字幕  # 试转一小段看对不对，经实验 -2.2 比较好
+           ffmpeg -y -itsoffset -2.2 -i 1.mp4 -ss 00:01:49.000 -to 00:05:00.000 -vf subtitles=1.srt advance2second.mp4
+
+           # 先提前2.2 秒，再嵌入日文软字幕
+           ffmpeg -y -itsoffset -2.2 -i 1.mp4 advance2second.mp4
+           ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
+
+           # 1 是pokemon台版中文硬字幕mp4，2 是日文软字幕mkv，中硬比日软要慢2.2 秒左右
+        */
+
+        // hard subtitle
+        // ffmpeg -y -itsoffset -2.2 -i 1.mp4 -vf subtitles=1.srt advance2second_hardjp.mp4
+
+        /*
+         * soft subtitle
+         * ffmpeg -y -itsoffset -2.2 -i 1.mp4 advance2second.mp4
+         * ffmpeg -y -i advance2second.mp4 -i 2.mkv -i 1.srt -map 0:v -map 1:a:0  -map 0:a:0  -c copy  -map 2 -c:s srt out.mkv
+         */
+
+        let { execa } = await import('execa')
+
+        try {
+
+            let { base,dir,ext,name,root} = path.parse(outpath)
+
+            /*
+            
+            // 绝对路径的写法比较特别
+            ffmpeg -y -itsoffset -2.2 -i "E:\t\1.mp4" -vf  "subtitles='E\:\\t\\1.srt'"  advance2second_hardjp.mp4
+
+            
+            */
+
+            
+            let hardjpdir = path.join(dir, 'hardjp')
+            if (!fs.existsSync(hardjpdir)) {
+                fs.mkdirSync(hardjpdir, { recursive: false })
+            }
+
+            let hardjppath = path.join(hardjpdir, `${name}.mp4`)
+
+            let softjpdir = path.join(dir, 'softjp')
+            if (!fs.existsSync(softjpdir)) {
+                fs.mkdirSync(softjpdir, { recursive: false })
+            }
+
+            let softjppath = path.join(softjpdir, `${name}.mkv`)
+
+            //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -ss 00:01:49.000 -to 00:05:00.000 -vf "subtitles='E\\:\\\\t\\\\1.srt'" "${hardjppath}"`  // 生成硬字幕
+            
+            let ffmpegsubtitle = `E\\:\\\\t\\\\1.srt`
+
+            let platform = process.platform
+            if (platform == 'win32') {
+                ffmpegsubtitle = subpath.replace(/\\/g, '\\\\')
+                ffmpegsubtitle = ffmpegsubtitle.replace(/\:/, '\\:')
+            } else if (platform == 'linux') {
+                ffmpegsubtitle = subpath
+            } else if (platform == 'darwin') {
+                ffmpegsubtitle = subpath
+            } else {
+                throw `unkonw os type.`
+            }
+
+            let match3 = vdTWPath.match(/[\\\/](\d+)\./)  // 必须是改过名的, 和amazon pm jp 名字一样
+            if (match3 == null) {
+                throw `name not correct. ${m4}`
+            }
+            let nth3 = match3[1]
+
+            //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:01:59.000 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            let cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+
+            // if (Number(nth3) >= 90 && Number(nth3) <= 91) {
+            //     cmd = `ffmpeg -y -itsoffset -11 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            // }
+
+            // if (Number(nth3) >= 92) {
+            //     cmd = `ffmpeg -y -itsoffset -14 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            // }
+
+            // if (Number(nth3) >= 93) {
+            //     cmd = `ffmpeg -y -itsoffset -13 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            // }
+
+            
+            // if (Number(nth3) >= 106) {
+            //     cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            // }
+
+            // if (Number(nth3) >= 152) {
+            //     cmd = `ffmpeg -y -itsoffset -6 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
+            // }
+
+            let childProcess = execa(cmd, { shell:true, 'encoding': 'utf8' })
+            let { stdout:out1 } = await childProcess
+
+            cmd = `ffmpeg -y -i "${hardjppath}" -i "${vdAMPath}" -i "${subpath}" -map 0:v -map 1:a:0 -map 0:a:1 -c copy -map 2 -c:s srt "${softjppath}"`
+
+            // if (Number(nth3) >= 90) {
+            //     cmd = `ffmpeg -y  -itsoffset -11 -i "${hardjppath}" -i "${vdAMPath}" -i "${subpath}" -map 0:v -map 1:a:0 -map 0:a:1 -c copy -map 2 -c:s srt "${softjppath}"`
+            // }
+
+            let childProcess2 = execa(cmd, { shell:true, 'encoding': 'utf8' })
+            let { stdout:out2 } = await childProcess2
+
+            return { msg:out2 }
+
+
+        } catch(err) {
+           return { msg : err }
+        } 
     }
 }
