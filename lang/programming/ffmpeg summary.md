@@ -410,3 +410,19 @@ ffmpeg -itsoffset -5 -i INPUT OUTPUT
 advances all the input streams by 5 seconds.
 
 This discards the first five seconds of input. However, if the input file was 60 seconds long, the output file will also be 60 seconds long. The last 5 seconds will be a still image (last frame).
+
+
+
+# 精准剪切
+
+```
+造成这些问题的原因是ffmpeg无法seek到非关键帧上
+ffmepg升级最新版
+加上参数-accurate_seek -avoid_negative_ts 1
+-- 自己例子
+ffmpeg -ss 00:00:00 -to 00:00:01 -accurate_seek -i out.mp4 -vcodec copy -acodec copy -avoid_negative_ts 1 -y out-1.mp4
+ffmpeg -ss 00:00:30 -to 00:00:52 -accurate_seek -i out.mp4 -vcodec copy -acodec copy -avoid_negative_ts 1 -y out-2.mp4
+echo -e "file 'out-1.mp4' \nfile 'out-2.mp4'" >> list.txt
+ffmpeg -safe 0 -f concat -i list.txt -vcodec copy -acodec copy -strict -2 -y concat.mp4
+```
+
