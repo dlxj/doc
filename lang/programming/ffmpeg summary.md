@@ -416,6 +416,19 @@ This discards the first five seconds of input. However, if the input file was 60
 # 精准剪切
 
 ```
+ffmpeg -ss 00:00:01.500 -to 00:11:36.000 -accurate_seek -i 5.mp4 -vcodec copy -acodec copy -avoid_negative_ts 1 -y tmp.mp4
+ffmpeg -ss 00:11:49.500 -to 00:15:49.500 -accurate_seek -i 5.mp4 -vcodec copy -acodec copy -avoid_negative_ts 1 -y tmp2.mp4
+
+ffmpeg -safe 0 -f concat -i tmp.mp4 tmp2.mp4 -vcodec copy -acodec copy -strict -2 -y concat.mp4
+
+list.txt
+file 'tmp.mp4'
+file 'tmp2.mp4'
+```
+
+
+
+```
 造成这些问题的原因是ffmpeg无法seek到非关键帧上
 ffmepg升级最新版
 加上参数-accurate_seek -avoid_negative_ts 1
