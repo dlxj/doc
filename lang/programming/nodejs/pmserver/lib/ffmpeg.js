@@ -63,6 +63,67 @@ module.exports = {
            return { au:null}
         }
     },
+    cutVideo: async function (vdpath, times) {
+
+        let { base, dir, ext, name, root } = path.parse(vdpath)
+        
+        let { execa } = await import('execa')
+
+        try {
+
+            let list_txt = ``
+            let tmpNames = []
+            for (let [ k, v ] of Object.entries(times) ) { // 00:00:01.500
+
+                let { ss, to } = v
+                let cmd = ``
+                let tmpName = `tmp${k}${ext}`
+                if (to != '') {
+                    cmd = `ffmpeg -ss ${ss} -to ${to} -accurate_seek -i "${vdpath}" -vcodec copy -acodec copy -avoid_negative_ts 1 -y ${tmpName}`
+                } else {
+                    cmd = `ffmpeg -ss ${ss} -accurate_seek -i "${vdpath}" -vcodec copy -acodec copy -avoid_negative_ts 1 -y ${tmpName}`
+                }
+
+                list_txt += `file '${tmpName}'\n`
+                tmpNames.push(tmpName)
+                
+                let childProcess = execa(cmd, {shell:true})
+                //childProcess.stdout.pipe(process.stdout) // don't print to screen
+                let { stdout } = await childProcess
+
+                let a = 1
+
+            }
+            
+            require('fs').writeFileSync('list.txt', list_txt, {encoding:'utf8'})
+
+            let des = `concat${ext}`
+
+            let cmd = `ffmpeg -safe 0 -f concat -i list.txt -vcodec copy -acodec copy -strict -2 -y ${des}`
+
+            let childProcess = execa(cmd, {shell:true})
+            let { stdout } = await childProcess
+
+            let a = 1
+
+            for (let tmpName of tmpNames) {
+
+                fs.unlinkSync(tmpName)
+
+            }
+
+            fs.unlinkSync(vdpath)
+
+            fs.unlinkSync('list.txt')
+
+            require('fs-extra').moveSync( des, vdpath )
+
+            return { result:'', msg: 'ok' }
+
+        } catch(err) {
+           return { result:null, msg:err }
+        }
+    },
     injectSubtitle:async function(vdpath, subpath, outpath) {
 
         // ffmpeg -i F:\video.mkv -vn -an -codec:s:0 srt F:\subtitle.srt
@@ -505,9 +566,17 @@ module.exports = {
             //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:01:59.000 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             let cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
 
-            // if (Number(nth3) >= 90 && Number(nth3) <= 91) {
-            //     cmd = `ffmpeg -y -itsoffset -11 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
-            // }
+            if (Number(nth3) >= 5) {  // 台版从第五集开始有多余的东西需要剪掉
+
+                let times = [
+                    {ss:`00:00:01.500`, to:`00:11:36.000`},
+                    {ss:`00:11:49.500`, to:``} // 00:15:49.500
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+                let a = 1
+            }
 
             // if (Number(nth3) >= 92) {
             //     cmd = `ffmpeg -y -itsoffset -14 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
