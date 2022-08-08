@@ -156,6 +156,23 @@ module.exports = {
         ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S06'])
         jps = save_ttml2(ttml2s)
 
+        
+        // 
+        // 处理第十季字幕
+        //
+        ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S10'])
+        // remove space
+        for (let ttml of ttml2s) {
+            let { base,dir,ext,name,root} = path.parse(ttml)
+            let withoutSpace = base.replace(/\s/g, '')
+            if (withoutSpace != base) {
+                let newname = path.join(dir, withoutSpace)
+                fs.renameSync( ttml, newname )
+            }
+        }
+        ttml2s = this.libs.files.allfiles(global.root_subtitles, 'ttml2', ['amazon', 'pokemon', 'S10'])
+        jps = save_ttml2(ttml2s)
+
         return this.msg(200, {jps, chs})
     }
 }
