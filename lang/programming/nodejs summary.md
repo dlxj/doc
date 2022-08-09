@@ -1824,6 +1824,16 @@ if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).
 
 - < 前面必须匹配，但不吃掉它(consume)
 
+  ```
+  a = `1\n2\n3\n`
+  a.replace(/(?<=\n)\d(?=\n)/g, 'OO')  # \d 的前面和后面必须是回车，但是不吃掉回车
+  --> '1\nOO\nOO\n'
+  ```
+
+  
+
+
+
 
 
 ## ^| 整个串必须在开头的位置或前面有\n接除\n外的其他空白
@@ -2521,6 +2531,12 @@ console.log(pets.includes('cat'))
       console.log('删除图片')
       this.files = this.files.filter(item => item !== f)  // ture 留, false 去
     }
+    
+    // 带 index 参数
+    this.usingBlocks = this.usingBlocks.filter((item, index) => { return index !== i }) // ture 留, false 去
+    
+    this.usingBlocks = this.usingBlocks.splice(i, 1)  // 不知道为什么删不掉
+    
 ```
 
 
@@ -6732,7 +6748,24 @@ ocr\src\pages\index.vue  systemMenu branch
 
 
 
+## 覆盖
 
+将一个div覆盖在另一个div上有两种手段：一是设置margin为负值，二是设置绝对定位。
+
+```
+            <span v-html="1" style="
+              position:absolute;
+              left:0;
+              top:0;
+              color: white;
+              font-size: 0.5em;
+              background: red;
+              padding: 0.1em;
+              z-index: 99 !important;
+              "
+              >
+            </span>
+```
 
 
 
