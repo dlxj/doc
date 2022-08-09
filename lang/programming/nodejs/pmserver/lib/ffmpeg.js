@@ -65,6 +65,17 @@ module.exports = {
     },
     cutVideo: async function (vdpath, times) {
 
+        /*
+        ffmpeg -ss 00:00:01.500 -to 00:11:36.000 -accurate_seek -i 5.mp4 -vcodec copy -acodec copy -avoid_negative_ts 1 -y tmp.mp4
+ffmpeg -ss 00:11:49.500 -to 00:15:49.500 -accurate_seek -i 5.mp4 -vcodec copy -acodec copy -avoid_negative_ts 1 -y tmp2.mp4
+
+ffmpeg -safe 0 -f concat -i tmp.mp4 tmp2.mp4 -vcodec copy -acodec copy -strict -2 -y concat.mp4
+
+list.txt
+file 'tmp.mp4'
+file 'tmp2.mp4'
+         */
+
         let { base, dir, ext, name, root } = path.parse(vdpath)
         
         let { execa } = await import('execa')
