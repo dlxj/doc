@@ -7168,6 +7168,20 @@ const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
 
+### template
+
+template 可以包裹元素，可以 v-for v-if，但不会被渲染到页面上
+
+```
+v-for="(line, lineIndex) in lines" 
+                  <template v-if="false">
+                  </template>
+```
+
+
+
+
+
 ### click.stop
 
 
