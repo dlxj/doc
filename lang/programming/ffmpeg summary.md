@@ -439,3 +439,19 @@ echo -e "file 'out-1.mp4' \nfile 'out-2.mp4'" >> list.txt
 ffmpeg -safe 0 -f concat -i list.txt -vcodec copy -acodec copy -strict -2 -y concat.mp4
 ```
 
+
+
+# GPU 加速
+
+- https://blog.csdn.net/qq_22633333/article/details/107701301
+
+```
+// cuvid 解码, nvenc 编码
+ffmpeg -hwaccel cuvid -c:v h264_cuvid -i input -c:v h264_nvenc -preset slow output.mkv
+
+ffmpeg -y -i "1.mp4" -i "1.mkv" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='1.srt'" "out.mkv"
+
+-c:v h264_cuvid
+
+```
+
