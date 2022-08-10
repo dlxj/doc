@@ -8142,6 +8142,7 @@ npm install --save normalize.css
 - http://www.lizhenghao.site/blog/2022/01/08/136  Winform/WPF利用CefSharp集成vue开发
 - https://blog.csdn.net/wuyuander/article/details/107359120  手把手教你使用CefSharp开发Winform
 - https://blog.csdn.net/yh0503/article/details/86648682  WinForm CefSharp 笔记一（入门篇）
+- https://www.cnblogs.com/TianFang/p/9906786.html  调试窗口
 
 
 
@@ -8186,8 +8187,6 @@ ShowlnTaskbar -> False
 Size -> 0,0
 
 TransparencyKey -> (白色)window
-
-
 
 ```
 
@@ -8737,6 +8736,10 @@ nfs 成功
 
 
 
+
+# v2ray
+
+- https://shadowzenhk.medium.com/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8cloudflare-cdn%E9%AB%98%E9%80%9Fip%E5%8A%A0%E9%80%9Fv2ray%E8%AE%BF%E9%97%AE-f1abcc76369c
 
 
 
