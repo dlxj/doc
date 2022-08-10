@@ -6769,6 +6769,53 @@ ocr\src\pages\index.vue  systemMenu branch
 
 
 
+## 触发事件的对象
+
+```
+    blockMouseMoveEvent (evt) {
+      if (this.resetBlockSize === true) {
+        return
+      }
+      let x = evt.clientX
+      let y = evt.clientY
+      let r = evt.target.getBoundingClientRect()
+      if (x <= r.x + 5) {
+        this.resetBlockMode = 'l'
+        evt.target.style.cursor = 'w-resize'
+      } else if (x >= r.x + r.width - 5) {
+        this.resetBlockMode = 'r'
+        evt.target.style.cursor = 'w-resize'
+      } else if (y <= r.y + 5) {
+        this.resetBlockMode = 't'
+        evt.target.style.cursor = 'n-resize'
+      } else if (y >= r.y + r.height - 5) {
+        this.resetBlockMode = 'b'
+        evt.target.style.cursor = 'n-resize'
+      } else {
+        this.resetBlockMode = 'n'
+        evt.target.style.cursor = 'default'
+      }
+    }
+```
+
+
+
+## 图片的缩放比例
+
+```
+    let img = new Image()
+    img.onload = () => {
+      this.imgSrcInfo.width = img.width
+      this.imgSrcInfo.height = img.height
+      this.scan = this.$refs["img"].offsetWidth / img.width  // 缩放比例
+    }
+    img.src = this.imageData  // 图片的 base64 串
+```
+
+
+
+
+
 ## ttf font
 
 ```
