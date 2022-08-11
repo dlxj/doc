@@ -8641,6 +8641,30 @@ Usage: python convert_to_onnx.py /path/to/exp/yaml /path/to/pretrained/weight /p
 
 
 
+```python
+# 调试方法
+/root/DB/data/data_loader.py 
+        if self.shuffle is None:
+            self.shuffle = self.is_train
+            self.shuffle = False  # 加载图片改成不随机，这样好调试
+     
+
+# 数据加载全在这里
+/root/DB/data/image_dataset.py
+	'./datasets/TD_TR/TD500//train_images/IMG_0855.JPG'  # 第一张图是这个
+    './datasets/TD_TR/TD500//train_gts/IMG_0855.JPG.txt' # 相应的标记
+    
+    
+    data = data_process(data) # 这里是数据增强
+
+# 开始增强图片
+/root/DB/data/processes/augment_data.py    
+	data['image'] = aug.augment_image(image)    
+    
+```
+
+
+
 
 
 
