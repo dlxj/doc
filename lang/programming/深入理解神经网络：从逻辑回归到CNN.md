@@ -8577,6 +8577,16 @@ Host region-11.autodl.com
 
 # 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
 
+
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
+bash Miniforge3-Linux-x86_64.sh -b && \
+~/miniforge3/bin/conda init && \
+ln -s ~/miniforge3/bin/conda /usr/local/bin && \
+ln -s ~/miniforge3/bin/activate /usr/local/bin && \
+ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
+source ~/miniforge3/etc/profile.d/conda.sh
+
+
 cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
 unzip DB.zip && \
 unzip TD_TR.zip -d DB/datasets
