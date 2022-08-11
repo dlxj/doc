@@ -8607,10 +8607,10 @@ cd ~/DB && \
 pip install -r requirement.txt && \
 pip install --upgrade protobuf==3.20.0
 
-sed -i 's/batch_size\:\ 16/batch_size\:\ 10/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
-sed -i 's/num_workers\:\ 16/num_workers\:\ 10/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
-sed -i 's/save_interval\:\ 18000/save_interval\:\ 450/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
-sed -i 's/epochs\:\ 1200/epochs\:\ 30/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
+sed -i 's/batch_size\:\ 16/batch_size\:\ 10/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/num_workers\:\ 16/num_workers\:\ 10/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/save_interval\:\ 18000/save_interval\:\ 450/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/epochs\:\ 1200/epochs\:\ 30/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
 
 # 禁用 cudnn
 torch.backends.cudnn.enabled = False
@@ -8619,7 +8619,8 @@ torch.backends.cudnn.enabled = False
 https://matpool.com/supports/doc-vscode-connect-matpool/
     Remote Development 安装插件
     VS Code 远程连接矩池云机器教程
-# train.py 添加命令行参数，并用vscode 远程调试autodl 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，vscode 中修改train.py 在main 函数下加入：
+
+# vscode 打开远程文件夹 DB, ctrl + x 安装 python 扩展, ctrl+shift+p 输入 Python，选择选conda的python ，vscode 中修改train.py 在main 函数下加入命令行参数：
 
 def main():
 
@@ -8627,9 +8628,12 @@ def main():
     sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
     sys.argv.append( '--num_gpus' )
     sys.argv.append( '1' )
+    torch.backends.cudnn.enabled = False
 
 vscode 中然后F5 调试运行train.py 
 
+
+# CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
     
 ```
 
