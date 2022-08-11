@@ -8569,7 +8569,13 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
   > ```
 
 ```python
-# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1
+C:\Users\Administrator\.ssh\config
+Host region-11.autodl.com
+  HostName region-11.autodl.com
+  Port 16116
+  User root
+
+# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
 
 cp autodl-nas/DB.zip autodl-nas/TD_TR.zip . && \
 unzip DB.zip && \
@@ -8597,15 +8603,34 @@ sed -i 's/AT_CHECK/TORCH_CHECK/1' /root/DB/assets/ops/dcn/src/deform_pool_cuda.c
 python setup.py build_ext --inplace
 
 
+cd ~/DB && \
+pip install -r requirement.txt && \
+pip install --upgrade protobuf==3.20.0
 
-
+sed -i 's/batch_size\:\ 16/batch_size\:\ 10/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/num_workers\:\ 16/num_workers\:\ 10/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/save_interval\:\ 18000/save_interval\:\ 450/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/epochs\:\ 1200/epochs\:\ 30/1' DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
 
 # 禁用 cudnn
 torch.backends.cudnn.enabled = False
 
 
+https://matpool.com/supports/doc-vscode-connect-matpool/
+    Remote Development 安装插件
+    VS Code 远程连接矩池云机器教程
+# train.py 添加命令行参数，并用vscode 远程调试autodl 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，vscode 中修改train.py 在main 函数下加入：
 
+def main():
 
+    import sys
+    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( '--num_gpus' )
+    sys.argv.append( '1' )
+
+vscode 中然后F5 调试运行train.py 
+
+    
 ```
 
 
