@@ -1533,6 +1533,55 @@ You can access the single element with a[0] now.
 
 
 
+### 元类
+
+拦截类的构造函数，调用元类的 \__new\__ 方法来给类加料（新增修改函数属性什么的）
+
+```
+class State:
+    def __init__(self, autoload=True, default=None):
+        self.autoload = autoload
+        self.default = default
+
+
+class StateMeta(type):
+    def __new__(mcs, name, bases, attrs):
+        current_states = []
+        for key, value in attrs.items():
+            if isinstance(value, State):
+                current_states.append((key, value))
+
+        current_states.sort(key=lambda x: x[0])
+        attrs['states'] = OrderedDict(current_states)
+        new_class = super(StateMeta, mcs).__new__(mcs, name, bases, attrs)
+
+        # Walk through the MRO
+        states = OrderedDict()
+        for base in reversed(new_class.__mro__):
+            if hasattr(base, 'states'):
+                states.update(base.states)
+        new_class.states = states
+
+        for key, value in states.items():
+            setattr(new_class, key, value.default)
+
+        return new_class
+
+
+class Configurable(metaclass=StateMeta):
+    def __init__(self, *args, cmd={}, **kwargs):
+        self.load_all(cmd=cmd, **kwargs)
+
+    @staticmethod
+    def construct_class_from_config(args):
+        cls = Configurable.extract_class_from_args(args)
+        return cls(**args)
+```
+
+
+
+
+
 ## OP
 
 

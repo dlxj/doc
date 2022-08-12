@@ -7217,6 +7217,92 @@ print(f'Full Hessian = {hessian(f)(1., 1.)}')
 
 
 
+#### value_and_grad
+
+```
+( A1, (grad, ) ) = jax.value_and_grad(f1, argnums=(0,))( x ) # 对第 0 参求导
+```
+
+
+
+```
+# jacfwd 没有相应的 value_and_grad
+A11 = f1(X)
+( grad11, ) = jax.jacfwd(f1, argnums=(0,))( X )
+```
+
+
+
+#### vjp
+
+- https://github.com/google/jax/discussions/10271
+
+```
+import jax.numpy as jnp
+from jax import random, jacrev, vjp
+
+key = random.PRNGKey(0)
+
+
+def sigmoid(x):
+    return 0.5 * (jnp.tanh(x / 2) + 1)
+
+
+def predict(W, b, inputs):
+    return sigmoid(jnp.dot(inputs, W) + b)
+
+
+key, W_key, b_key = random.split(key, 3)
+W = random.normal(W_key, (3,))
+b = random.normal(b_key, ())
+
+inputs = jnp.array([[0.52, 1.12,  0.77],
+                    [0.88, -1.08, 0.15],
+                    [0.52, 0.06, -1.30],
+                    [0.74, -2.49, 1.39]])
+
+# (4,3) . (3,) + () = (4,) 
+
+t1 = sigmoid(jnp.dot(inputs, W) + b)
+
+def f(W):
+    return predict(W, b, inputs)
+
+
+def basis(size, index):
+    a = [0.0] * size
+    a[index] = 1.0
+    return jnp.array(a)
+
+
+M = [basis(4, i) for i in range(0, 4)]
+
+# computing by stacking VJPs of basis vectors
+y, vjp_fun = vjp(f, W)
+
+print('Jacobian using vjp and stacking:')
+print(jnp.vstack([vjp_fun(mi) for mi in M]))
+
+# computing directly using jacrev function
+print('Jacobian using jacrev directly:')
+print(jacrev(f)(W))
+
+
+'''
+Output:
+Jacobian using vjp and stacking:
+[[ 0.05981752  0.12883773  0.08857594]
+ [ 0.04015911 -0.04928619  0.0068453 ]
+ [ 0.12188289  0.01406341 -0.3047072 ]
+ [ 0.00140426 -0.00472514  0.00263773]]
+Jacobian using jacrev directly:
+[[ 0.05981752  0.12883773  0.08857594]
+ [ 0.04015911 -0.04928619  0.0068453 ]
+ [ 0.12188289  0.01406341 -0.3047072 ]
+ [ 0.00140426 -0.00472514  0.00263773]]
+ ''';
+```
+
 
 
 
