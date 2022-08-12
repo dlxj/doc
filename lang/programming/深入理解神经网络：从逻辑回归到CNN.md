@@ -7235,7 +7235,24 @@ A11 = f1(X)
 
 #### vjp
 
+- https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html
+
+- https://zhuanlan.zhihu.com/p/501451509 深度学习框架中的自动微分及高阶导数
+
+  - https://docs.oneflow.org/master/basics/05_autograd.html 看扩展的部分，有说 vjp
+
+    > **只需提供一个与 $y$ 大小一致的向量 $v$，即可计算 VJP**
+    >
+    > **若向量$v$ 是反向传播中上一层的梯度，VJP 的结果刚好是当前层要求的梯度。**
+
+- https://blog.csdn.net/huangbx_tx/article/details/104801975
+
 - https://github.com/google/jax/discussions/10271
+
+- https://juejin.cn/post/6844904009841524750
+
+
+
 
 ```
 import jax.numpy as jnp
