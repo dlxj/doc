@@ -1,4 +1,15 @@
 
+import jax.numpy as jnp
+import jax
+
+X = jnp.array([[2],[3]], jnp.float16)
+
+f = lambda X: X * 3 + 1
+
+Y = f(X)
+
+a = 1
+
 import torch
 
 def j3():
