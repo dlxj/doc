@@ -7251,10 +7251,59 @@ A11 = f1(X)
 
 - https://juejin.cn/post/6844904009841524750
 
+- https://j-towns.github.io/2017/06/12/A-new-trick.html
+
+- https://imrchen.wordpress.com/2021/11/15/%E5%BE%9E-jax-%E5%9B%9E%E7%9C%8B-jacobian-matrix/
+
+  > 若一個可微分函數 𝑓 是從定義域 ℝ𝑛 映射到 值域ℝ𝑚（𝑓: ℝ𝑛 → ℝ𝑚 ）， ℝ𝑛 空間中的向量 v 的梯度，可以用 vector Jacobian product J^Tv 算出來。
+  >
+  > ```
+  > import jax.numpy as jnp
+  > from jax import vjp, jvp, grad
+  > from jax import jacrev, jacfwd
+  >                    
+  > def f(x):
+  >     return 3 * x * x    # y = 3x^2
+  >  
+  >  
+  > def vgrad(f, x): # 输出 x 的梯度
+  >   y, vjp_fn = vjp(f, x)
+  >   return vjp_fn(jnp.ones(y.shape))[0] # jax.vjp = v^T @ J
+  >  
+  >  
+  > seed = 10
+  > key = random.PRNGKey(seed)
+  >  
+  > x = random.normal(key, (3,), float)
+  >  
+  > v = jnp.array([[0.1, 1.0, 0.0001]]).T
+  >  
+  > # x, y, x^t @ J, dy/dx, v^t @ J,
+  > x, f(x), vgrad(f, x), 6 * x, vgrad(f, v)  
+  > ```
 
 
 
 ```
+import jax
+>>>
+def f(x, y):
+  return jax.numpy.sin(x), jax.numpy.cos(y)
+
+primals, f_vjp = jax.vjp(f, 0.5, 1.0)
+xbar, ybar = f_vjp((-0.7, 0.3))
+print(xbar)
+-0.61430776
+print(ybar)
+-0.2524413
+```
+
+
+
+
+
+
+```python
 import jax.numpy as jnp
 from jax import random, jacrev, vjp
 
@@ -7318,6 +7367,26 @@ Jacobian using jacrev directly:
  [ 0.12188289  0.01406341 -0.3047072 ]
  [ 0.00140426 -0.00472514  0.00263773]]
  ''';
+```
+
+
+
+```python
+ x = torch.ones(3, requires_grad=True)
+
+ y = torch.stack((x[0]**2+x[1], x[1]**2+x[2], x[2]**2))
+
+ v = torch.tensor([3, 5, 7])
+
+ y.backward(v)
+ print(x.grad)
+ """
+ The Jacobian seems correct and if it multiplies on vector (3, 5, 7) I would expect result to be (11, 17, 14).
+ Got it! We should transpose Jacobian before multiplication. Then everything matches.
+ """
+
+ print( torch.matmul(  torch.tensor([ [2, 0, 0], [1, 2 , 0], [0, 1, 2] ]),  torch.tensor([ [3], [5], [7] ]) ) )       # J.t() @ v  结果是列向量
+ print( torch.matmul(  torch.tensor([ [3], [5], [7] ]).t(), torch.tensor([ [2, 1, 0], [0, 2 , 1], [0, 0, 2] ])  ) )   # v.t() @ J  结果是行向量
 ```
 
 
