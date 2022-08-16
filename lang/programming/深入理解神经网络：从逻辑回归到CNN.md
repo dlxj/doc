@@ -7255,29 +7255,36 @@ A11 = f1(X)
 
 - https://imrchen.wordpress.com/2021/11/15/%E5%BE%9E-jax-%E5%9B%9E%E7%9C%8B-jacobian-matrix/
 
+  > Note: we **never explicitly construct the Jacobian**. It's usually simpler
+  > and more efficient to **compute the VJP directly**.(CSC321 Lecture 10: Automatic Differentiation)
+  >
+  > <img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816091436676.png" alt="image-20220816091436676" style="zoom: 80%;" />
+  >
+  > ![image-20220816091749759](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816091749759.png)
+  >
   > 若一個可微分函數 𝑓 是從定義域 ℝ𝑛 映射到 值域ℝ𝑚（𝑓: ℝ𝑛 → ℝ𝑚 ）， ℝ𝑛 空間中的向量 v 的梯度，可以用 vector Jacobian product J^Tv 算出來。
   >
   > ```
   > import jax.numpy as jnp
   > from jax import vjp, jvp, grad
   > from jax import jacrev, jacfwd
-  >                    
+  >                 
   > def f(x):
-  >     return 3 * x * x    # y = 3x^2
-  >  
-  >  
+  >  return 3 * x * x    # y = 3x^2
+  > 
+  > 
   > def vgrad(f, x): # 输出 x 的梯度
-  >   y, vjp_fn = vjp(f, x)
-  >   return vjp_fn(jnp.ones(y.shape))[0] # jax.vjp = v^T @ J
-  >  
-  >  
+  > y, vjp_fn = vjp(f, x)
+  > return vjp_fn(jnp.ones(y.shape))[0] # jax.vjp = v^T @ J
+  > 
+  > 
   > seed = 10
   > key = random.PRNGKey(seed)
-  >  
+  > 
   > x = random.normal(key, (3,), float)
-  >  
+  > 
   > v = jnp.array([[0.1, 1.0, 0.0001]]).T
-  >  
+  > 
   > # x, y, x^t @ J, dy/dx, v^t @ J,
   > x, f(x), vgrad(f, x), 6 * x, vgrad(f, v)  
   > ```
