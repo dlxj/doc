@@ -10,8 +10,14 @@ $$
 \mathcal{L} = \frac{1}{2} (y - t) ^ 2
 $$
 
+令：$z = y - t$
+
 $$
-\frac{\partial \mathcal{L}}{\partial y} = \frac{1}{2} * 2 * (y-t)
+\frac{\partial \mathcal{L}}{\partial z} = \frac{1}{2} * 2 * z = z
+$$
+
+$$
+\frac{\partial \mathcal{z}}{\partial y} =  
 $$
 
 
