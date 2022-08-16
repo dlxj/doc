@@ -99,7 +99,7 @@ jax.numpy.kron(a, b)
 
 
 
-
+- https://www.bilibili.com/video/av541440845/ 【手推机器学习】矩阵求导3--向量函数与矩阵求导初印象
 
 
 
