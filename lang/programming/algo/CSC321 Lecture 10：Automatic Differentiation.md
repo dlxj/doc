@@ -44,3 +44,34 @@ $$
 
 
 
+
+
+
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816091436676.png" alt="image-20220816091436676" style="zoom: 80%;" />
+
+注：符号 $\overline{z}$  表示 $\frac{\partial \mathcal{L}}{\partial z}$ 
+$$
+\mathcal{L} = \frac{1}{2} (y - t) ^ 2 \\
+y = \sigma(z)
+$$
+
+$$
+\frac{\partial \mathcal{L}}{\partial y} = y - t = \overline{y} \\
+
+\frac{\partial \mathcal{y}}{\partial z} = \frac{\partial \mathcal{\sigma}}{\partial z} = \mathcal{\sigma}'(z) \\
+
+\frac{\partial \mathcal{z}}{\partial w} = x
+$$
+
+
+所以有：
+$$
+\overline{z} = \frac{\partial \mathcal{L}}{\partial y} \frac{\partial \mathcal{y}}{\partial z} = \overline{y} \ \mathcal{\sigma}'(z)
+$$
+
+$$
+\overline{w} = \frac{\partial \mathcal{L}}{\partial y} \frac{\partial \mathcal{y}}{\partial z} \ \frac{\partial \mathcal{z}}{\partial w} \\
+= \overline{z} x
+$$
+
+
