@@ -105,19 +105,17 @@ jax.numpy.kron(a, b)
 
 - https://www.zhihu.com/question/58312854
 
+![image-20220816174003980](CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816174003980.png)
+
+![image-20220816173752603](CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816173752603.png)
 
 
 
+![image-20220816173817825](CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816173817825.png)
 
 
 
-
-
-
-
-
-
-
+![image-20220816173906691](CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816173906691.png)
 
 
 
