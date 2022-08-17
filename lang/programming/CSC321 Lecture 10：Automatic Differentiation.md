@@ -120,10 +120,12 @@ a_{1,} . x_{,1} & a_{1,} . x_{,2} & \cdots & a_{1,} . x_{,m}  \\
 a_{2,} . x_{,1} & a_{2,} . x_{,2} & \cdots & a_{2,} . x_{,m} \\
 \vdots & \vdots & \ddots & \vdots & \\
 a_{n,} . x_{,1} & a_{n,} . x_{,2} & \cdots & a_{n,} . x_{,m} \\
-\end{bmatrix}
+\end{bmatrix}
 $$
 
-
+$$
+\frac{\partial a_{1,} . x_{,1}}{\partial a^{1}_{1,1}} = x^{0}_{1,1}
+$$
 
 
 
