@@ -16,6 +16,7 @@ import torch
 # dF / dX = I 克罗内克积符号 A^T    dX 形状是 (4*2) ，所以 I 是 (2*2)。单位阵必是方阵
 
 # G = FV # (1*2) . (2*1) => (1*1)
+    # 
 
 A = jnp.array( [[1,2]] , jnp.float32 )
 
@@ -29,17 +30,23 @@ def f(A, X):
 F = f( A, X )
 G = f( F, V )
 
+l = lambda A, X, V: f( f(A, X), V )
+L = l(A, X, V)
+( grad_X, grad_V) = jax.jacfwd(l, argnums=(1,2))( A, X, V )  # dG / dX 和  dG / dV
+    # 为了和后面分步计算的雅克比乘积结果对比 (链式法则求各层的梯度)
 
 I = jnp.eye( 2 )
 
 A_T = jnp.transpose(A)
 
-kr = jax.numpy.kron(I, A_T) # (4*2) 
+kr = jax.numpy.kron(I, A_T) # (4*2)  # 求 dF / dX
     # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
         # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
         # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
 
-kr2 = jnp.transpose(F) # (2*1)
+kr2 = jnp.transpose(F) # (2*1)  # 求 dG / dV
+
+
 
 a = 1
 

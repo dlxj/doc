@@ -93,6 +93,12 @@ $$
 
 
 
+$例1：F=AX, A 是m \times n 的矩阵，求 \frac{\partial F}{\partial A}。$
+
+这样么求？
+
+
+
 ```
 jax.numpy.kron(a, b)
 ```
