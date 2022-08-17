@@ -5,10 +5,6 @@ import jax
 import jax.numpy as jnp
 from jax import random, jacrev, vjp
 
-import numpy as np
-
-import torch
-
 # F= AX   # 求 df / dX   # (1*2) . (2*2) => (1*2)
 
 # dF = AdX = AdXI # 注意在 dX 的右边添加了一个单位阵 I
@@ -30,7 +26,6 @@ A_T = jnp.transpose(A)
 kr = jax.numpy.kron(I, A_T) # (4*2) 
     # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
         # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
-        # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
 
 a = 1
 
@@ -40,25 +35,6 @@ a = 1
     # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
 
 a = 1
-
-
-y, vjp_fn = jax.vjp(f, A, X) # 返回函数的计算结果，还有用于计算 vjp 的函数 vjp_fn，它需要一个向量作为参数
-    # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
-
-
-AA = torch.tensor(A.__array__())
-XX = x = torch.tensor(X.__array__())
-
-def ff(AA, XX):
-    return torch.mm(AA, XX) # 数学里的矩阵乘法，要求两个Tensor的维度满足矩阵乘法的要求
-
-FF = ff(AA, XX)
-
-jacobian = torch.autograd.functional.jacobian(ff, (AA, XX))
-
-a = 1
-
-
 
 
 
