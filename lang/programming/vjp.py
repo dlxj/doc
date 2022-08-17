@@ -15,13 +15,20 @@ import torch
 
 # dF / dX = I 克罗内克积符号 A^T    dX 形状是 (4*2) ，所以 I 是 (2*2)。单位阵必是方阵
 
-A = jnp.array( [[2,3]] , jnp.float32 )
+# G = FV # (1*2) . (2*1) => (1*1)
 
-X = jnp.array( [[1,2],[3,4]] , jnp.float32 )
+A = jnp.array( [[1,2]] , jnp.float32 )
+
+X = jnp.array( [[3,4],[5,6]] , jnp.float32 )
+
+V = jnp.array( [[7],[8]] , jnp.float32 )
 
 def f(A, X):
     return jnp.dot( A, X )
+
 F = f( A, X )
+G = f( F, V )
+
 
 I = jnp.eye( 2 )
 
@@ -32,6 +39,8 @@ kr = jax.numpy.kron(I, A_T) # (4*2)
         # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
         # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
 
+kr2 = jnp.transpose(F) # (2*1)
+
 a = 1
 
 # 下面用 jax 自动微分验证
@@ -40,6 +49,11 @@ a = 1
     # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
 
 grad_42 = jnp.reshape(grad, (4, 2)) # 和前面 kr 一样了
+
+
+( grad2, ) = jax.jacfwd(f, argnums=(1,))( F, V )
+
+grad2_21 = jnp.reshape(grad2, (2, 1))
 
 a = 1
 
@@ -61,10 +75,15 @@ jacobian_XX = jacobians[1]  # (1, 2, 2, 2)  和 jax 算出来的 grad 是一样�
 
 jacobian_XX_42 = torch.reshape(jacobian_XX, (4, 2)) # 和前面 kr 一样了
 
-
 a = 1
 
+# def g(F):
+#     return jnp.sum(F)
+#     # return jax.nn.sigmoid(F)
 
+
+
+a = 1
 
 
 

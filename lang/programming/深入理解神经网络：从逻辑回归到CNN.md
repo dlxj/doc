@@ -7596,7 +7596,7 @@ Jacobian using jacrev directly:
 
 
 
-#### 转 ndarray
+#### \_\_array\_\_
 
 ```
 x_jnp = jnp.arange(10)
@@ -7605,6 +7605,16 @@ x_np = x_jnp.__array__()
 print(type(x_np))
 # <class 'numpy.ndarray'>
 ```
+
+
+
+#### sigmoid
+
+```
+jax.nn.sigmoid(F)
+```
+
+
 
 
 
