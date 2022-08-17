@@ -7383,6 +7383,12 @@ a = 1
 
 
 
+##### 矩阵求导术笔记
+
+- https://hzhu212.github.io/posts/20d9a268/
+
+
+
 
 
 #### vjp
