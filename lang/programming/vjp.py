@@ -39,6 +39,8 @@ a = 1
 ( grad, ) = jax.jacfwd(f, argnums=(1,))( A, X ) # (1, 2, 2, 2)
     # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
 
+grad_42 = jnp.reshape(grad, (4, 2)) # 和前面 kr 一样了
+
 a = 1
 
 
@@ -54,7 +56,11 @@ def ff(AA, XX):
 
 FF = ff(AA, XX)
 
-jacobian = torch.autograd.functional.jacobian(ff, (AA, XX))
+jacobians = torch.autograd.functional.jacobian(ff, (AA, XX))
+jacobian_XX = jacobians[1]  # (1, 2, 2, 2)  和 jax 算出来的 grad 是一样的
+
+jacobian_XX_42 = torch.reshape(jacobian_XX, (4, 2)) # 和前面 kr 一样了
+
 
 a = 1
 
