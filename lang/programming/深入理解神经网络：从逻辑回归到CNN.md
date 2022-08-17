@@ -7389,6 +7389,40 @@ a = 1
 
 
 
+小写字母如 $x$ 表示标量，粗体小写字母 $\mathbf{x}$ 表示向量，大写字母$A$表示矩阵。向量均为列向量，行向量通转置来表示，如 $\mathbf{a}^T$
+
+
+
+导数与微分的联系
+$$
+\mathrm{d}y = f’(x)\mathrm{d}x = \frac{\mathrm{d}y}{\mathrm{d}x}\mathrm{d}x
+$$
+即：全微分 $dy$ 是导数 $\frac{\mathrm{d}y}{\mathrm{d}x}$  与微分变量 $dx$ 的积。（**推论1**）
+
+
+
+全微分的定义
+$$
+ \mathrm{d}f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}\mathrm{d}x_i 
+$$
+令 $\boldsymbol{x}^T=[x_1, x_2, x_3, \dots, x_n]$ ，有：
+$$
+\mathrm{d}f = \frac{\partial f}{\partial \boldsymbol{x}} \cdot \mathrm{d}\boldsymbol{x}
+$$
+多元函数的全微分 $\mathrm{d}f$ 是导数向量  $\frac{\partial f}{\partial \boldsymbol{x}}$ 与微分变量 $\mathrm{d}\boldsymbol{x}$  的内积。（**推论2**）
+
+> 标量的积完全可以看作向量内积的一种特殊情况，也就是说，推论2可以涵盖推论1。
+
+
+$$
+\mathrm{d}f = \frac{\partial f}{\partial X}\cdot \mathrm{d}X \tag{1}
+$$
+即：关于矩阵的函数的全微分 $\mathrm{d}f$ 是导数矩阵 $\frac{\partial f}{\partial X}$ 与微分变量 $\mathrm{d}X$ 的内积。（**推论3**）
+
+> 标量和向量都可以看作是矩阵的特殊情况，因此推论3涵盖了推论 1、2。至此，我们得到了通用表达式
+
+
+
 
 
 #### vjp
