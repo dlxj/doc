@@ -93,9 +93,44 @@ $$
 
 
 
-$例1：F=AX, A 是m \times n 的矩阵，求 \frac{\partial F}{\partial A}。$
+$例1：F=AX, A 是n \times p 的矩阵，求 \frac{\partial F}{\partial A}。$
 
 这样怎么求？
+$$
+\begin{bmatrix}
+a^{1}_{1,1} & a^{1}_{1,2} & \cdots & a^{1}_{1,p}  \\
+a^{1}_{2,1} & a^{1}_{2,2} & \cdots & a^{1}_{2,p} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a^{1}_{n,1} & a^{1}_{n,2} & \cdots & a^{1}_{n,p} \\
+\end{bmatrix}
+
+\cdot 
+
+\begin{bmatrix}
+x^{0}_{1,1} & x^{0}_{1,2} & \cdots & x^{0}_{1,m}  \\
+x^{0}_{2,1} & x^{0}_{2,2} & \cdots & x^{0}_{2,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+x^{0}_{p,1} & x^{0}_{p,2} & \cdots & x^{0}_{p,m} \\
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+a_{1,} . x_{,1} & a_{1,} . x_{,2} & \cdots & a_{1,} . x_{,m}  \\
+a_{2,} . x_{,1} & a_{2,} . x_{,2} & \cdots & a_{2,} . x_{,m} \\
+\vdots & \vdots & \ddots & \vdots & \\
+a_{n,} . x_{,1} & a_{n,} . x_{,2} & \cdots & a_{n,} . x_{,m} \\
+\end{bmatrix}
+$$
+
+
+
+
+
+
+
+
+
 
 
 
