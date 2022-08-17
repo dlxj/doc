@@ -56,6 +56,11 @@ a = 1
 ( grad, ) = jax.jacfwd(f, argnums=(1,))( A, X ) # (1, 2, 2, 2)
     # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
 
+y, vjp_fn = jax.vjp(f, A, X) # 返回函数的计算结果，还有用于计算 vjp 的函数 vjp_fn，它需要一个向量作为参数
+    # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
+    # 如果我传一个单位阵进去，出来的就是 雅可比
+
+
 grad_42 = jnp.reshape(grad, (4, 2)) # 和前面 kr 一样了
 
 
@@ -66,8 +71,7 @@ grad2_21 = jnp.reshape(grad2, (2, 1))
 a = 1
 
 
-y, vjp_fn = jax.vjp(f, A, X) # 返回函数的计算结果，还有用于计算 vjp 的函数 vjp_fn，它需要一个向量作为参数
-    # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
+
 
 
 AA = torch.tensor(A.__array__())
