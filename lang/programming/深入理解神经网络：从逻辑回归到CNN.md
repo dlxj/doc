@@ -9560,7 +9560,11 @@ if __name__ == '__main__':
 
 
 
+# 1660TI
 
+- https://blog.csdn.net/sinat_36721621/article/details/115326307
+
+  > 可以安装 cuda11.1
 
 # 1080TI
 
