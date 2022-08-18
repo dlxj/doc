@@ -755,6 +755,92 @@ def calc(x):
 jacobian = torch.autograd.functional.jacobian(calc, x)
 ```
 
+```python
+# doc\lang\programming\CSC321 Lecture 10：Automatic Differentiation.md
+
+import jax
+import jax.numpy as jnp
+from jax import random, jacrev, vjp
+
+import numpy as np
+
+import torch
+
+# F= AX   # 求 df / dX   # (1*2) . (2*2) => (1*2)
+
+# dF = AdX = AdXI # 注意在 dX 的右边添加了一个单位阵 I
+
+# dF / dX = I 克罗内克积符号 A^T    dX 形状是 (4*2) ，所以 I 是 (2*2)。单位阵必是方阵
+
+# G = FV # (1*2) . (2*1) => (1*1)
+    # [ [f00, f01]  ] . [ [v00], [v10]  ]
+    # 
+
+A = jnp.array( [[1,2]] , jnp.float32 )
+
+X = jnp.array( [[3,4],[5,6]] , jnp.float32 )
+
+V = jnp.array( [[7],[8]] , jnp.float32 )
+
+def f(A, X):
+    return jnp.dot( A, X )
+
+F = f( A, X )
+G = f( F, V )
+
+l = lambda A, X, V: f( f(A, X), V )
+L = l(A, X, V)
+( grad_X, grad_V) = jax.jacfwd(l, argnums=(1,2))( A, X, V )  # dG / dX 和  dG / dV
+    # 为了和后面分步计算的雅克比乘积结果对比 (链式法则求各层的梯度)
+
+I = jnp.eye( 2 )
+
+A_T = jnp.transpose(A)
+
+kr = jax.numpy.kron(I, A_T) # (4*2)  # 求 dF / dX
+    # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
+        # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
+        # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
+
+kr2 = jnp.transpose(F) # (2*1)  # 求 dG / dV
+
+
+
+a = 1
+
+# 下面用 jax 自动微分验证
+
+( grad, ) = jax.jacfwd(f, argnums=(1,))( A, X ) # (1, 2, 2, 2)
+    # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
+
+grad_42 = jnp.reshape(grad, (4, 2)) # 和前面 kr 一样了
+
+
+( grad2, ) = jax.jacfwd(f, argnums=(1,))( F, V )
+
+grad2_21 = jnp.reshape(grad2, (2, 1))
+
+a = 1
+
+
+y, vjp_fn = jax.vjp(f, A, X) # 返回函数的计算结果，还有用于计算 vjp 的函数 vjp_fn，它需要一个向量作为参数
+    # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
+
+
+AA = torch.tensor(A.__array__())
+XX = x = torch.tensor(X.__array__())
+
+def ff(AA, XX):
+    return torch.mm(AA, XX) # 数学里的矩阵乘法，要求两个Tensor的维度满足矩阵乘法的要求
+
+FF = ff(AA, XX)
+
+jacobians = torch.autograd.functional.jacobian(ff, (AA, XX))
+jacobian_XX = jacobians[1]  # (1, 2, 2, 2)  和 jax 算出来的 grad 是一样的
+
+jacobian_XX_42 = torch.reshape(jacobian_XX, (4, 2)) # 和前面 kr 一样了
+```
+
 
 
 ##### vector-Jacobian product 
@@ -5355,6 +5441,23 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > EAST结构分析+pytorch源码实现
 
+- https://blog.csdn.net/haeasringnar/article/details/122936537
+
+  > 飞桨OCR打标、训练、预测、部署全流程
+
+- https://github.com/microsoft/unilm/tree/master/trocr
+  
+  - https://www.jianshu.com/p/3a054054f6f1
+  
+  > TrOCR
+
+- https://github.com/chineseocr/trocr-chinese
+  
+> trocr-chinese 
+  
+- https://github.com/chineseocr/chineseocr/tree/master
+  
+  > chineseocr
 
 
 ```
@@ -5826,6 +5929,8 @@ OCR Engine modes:
 
 
 #### DBNet 可微分二值化
+
+- https://github.com/DayBreak-u/chineseocr_lite OCR**成品**
 
 - https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html
   
@@ -7233,6 +7338,112 @@ A11 = f1(X)
 
 
 
+#### 矩阵求导术
+
+- 克罗内克积
+
+  - https://baike.baidu.com/item/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%E7%A7%AF/6282573
+
+    > vec(X)表示矩阵X的向量化，它是把X的所有列堆起来所形成的列向量。
+
+
+
+- **矩阵求导术(下)** 
+
+  - doc\lang\programming\矩阵求导术（下） - 知乎.pdf
+
+  
+
+![image-20220816162311376](深入理解神经网络：从逻辑回归到CNN.assets/image-20220816162311376.png)
+
+![image-20220816162431342](深入理解神经网络：从逻辑回归到CNN.assets/image-20220816162431342.png)
+
+
+
+```
+# 
+# doc\lang\programming\CSC321 Lecture 10：Automatic Differentiation.md
+
+import jax
+import jax.numpy as jnp
+from jax import random, jacrev, vjp
+
+# F= AX   # 求 df / dX   # (1*2) . (2*2) => (1*2)
+
+# dF = AdX = AdXI # 注意在 dX 的右边添加了一个单位阵 I
+
+# dF / dX = I 克罗内克积符号 A^T    dX 形状是 (4*2) ，所以 I 是 (2*2)。单位阵必是方阵
+
+A = jnp.array( [[2,3]] , jnp.float32 )
+
+X = jnp.array( [[1,2],[3,4]] , jnp.float32 )
+
+def f(A, X):
+    return jnp.dot( A, X )
+F = f( A, X )
+
+I = jnp.eye( 2 )
+
+A_T = jnp.transpose(A)
+
+kr = jax.numpy.kron(I, A_T) # (4*2) 
+    # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
+        # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
+
+a = 1
+
+# 下面用 jax 自动微分验证
+
+( grad, ) = jax.jacfwd(f, argnums=(1,))( A, X ) # (1, 2, 2, 2)
+    # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
+
+a = 1
+```
+
+
+
+##### 矩阵求导术笔记
+
+- https://hzhu212.github.io/posts/20d9a268/
+
+
+
+小写字母如 $x$ 表示标量，粗体小写字母 $\mathbf{x}$ 表示向量，大写字母$A$表示矩阵。向量均为列向量，行向量通转置来表示，如 $\mathbf{a}^T$
+
+
+
+导数与微分的联系
+$$
+\mathrm{d}y = f’(x)\mathrm{d}x = \frac{\mathrm{d}y}{\mathrm{d}x}\mathrm{d}x
+$$
+即：全微分 $dy$ 是导数 $\frac{\mathrm{d}y}{\mathrm{d}x}$  与微分变量 $dx$ 的积。（**推论1**）
+
+
+
+全微分的定义
+$$
+ \mathrm{d}f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}\mathrm{d}x_i 
+$$
+令 $\boldsymbol{x}^T=[x_1, x_2, x_3, \dots, x_n]$ ，有：
+$$
+\mathrm{d}f = \frac{\partial f}{\partial \boldsymbol{x}} \cdot \mathrm{d}\boldsymbol{x}
+$$
+多元函数的全微分 $\mathrm{d}f$ 是导数向量  $\frac{\partial f}{\partial \boldsymbol{x}}$ 与微分变量 $\mathrm{d}\boldsymbol{x}$  的内积。（**推论2**）
+
+> 标量的积完全可以看作向量内积的一种特殊情况，也就是说，推论2可以涵盖推论1。
+
+
+$$
+\mathrm{d}f = \frac{\partial f}{\partial X}\cdot \mathrm{d}X \tag{1}
+$$
+即：关于矩阵的函数的全微分 $\mathrm{d}f$ 是导数矩阵 $\frac{\partial f}{\partial X}$ 与微分变量 $\mathrm{d}X$ 的内积。（**推论3**）
+
+> 标量和向量都可以看作是矩阵的特殊情况，因此推论3涵盖了推论 1、2。至此，我们得到了通用表达式
+
+
+
+
+
 #### vjp
 
 - https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html
@@ -7255,6 +7466,94 @@ A11 = f1(X)
 
 - https://imrchen.wordpress.com/2021/11/15/%E5%BE%9E-jax-%E5%9B%9E%E7%9C%8B-jacobian-matrix/
 
+  > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220817101358913.png" alt="image-20220817101358913" style="zoom:50%;" />
+  >
+  > ```python
+  > # doc\lang\programming\CSC321 Lecture 10：Automatic Differentiation.md
+  > 
+  > import jax
+  > import jax.numpy as jnp
+  > from jax import random, jacrev, vjp
+  > 
+  > import numpy as np
+  > 
+  > import torch
+  > 
+  > # F= AX   # 求 df / dX   # (1*2) . (2*2) => (1*2)
+  > 
+  > # dF = AdX = AdXI # 注意在 dX 的右边添加了一个单位阵 I
+  > 
+  > # dF / dX = I 克罗内克积符号 A^T    dX 形状是 (4*2) ，所以 I 是 (2*2)。单位阵必是方阵
+  > 
+  > # G = FV # (1*2) . (2*1) => (1*1)
+  >     # [ [f00, f01]  ] . [ [v00], [v10]  ]
+  >     # 
+  > 
+  > A = jnp.array( [[1,2]] , jnp.float32 )
+  > 
+  > X = jnp.array( [[3,4],[5,6]] , jnp.float32 )
+  > 
+  > V = jnp.array( [[7],[8]] , jnp.float32 )
+  > 
+  > def f(A, X):
+  >     return jnp.dot( A, X )
+  > 
+  > F = f( A, X )
+  > G = f( F, V )
+  > 
+  > l = lambda A, X, V: f( f(A, X), V )
+  > L = l(A, X, V)
+  > ( grad_X, grad_V) = jax.jacfwd(l, argnums=(1,2))( A, X, V )  # dG / dX 和  dG / dV
+  >     # 为了和后面分步计算的雅克比乘积结果对比 (链式法则求各层的梯度)
+  > 
+  > I = jnp.eye( 2 )
+  > 
+  > A_T = jnp.transpose(A)
+  > 
+  > kr = jax.numpy.kron(I, A_T) # (4*2)  # 求 dF / dX
+  >     # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
+  >         # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
+  >         # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
+  > 
+  > kr2 = jnp.transpose(F) # (2*1)  # 求 dG / dV
+  > 
+  > 
+  > 
+  > a = 1
+  > 
+  > # 下面用 jax 自动微分验证
+  > 
+  > ( grad, ) = jax.jacfwd(f, argnums=(1,))( A, X ) # (1, 2, 2, 2)
+  >     # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
+  > 
+  > grad_42 = jnp.reshape(grad, (4, 2)) # 和前面 kr 一样了
+  > 
+  > 
+  > ( grad2, ) = jax.jacfwd(f, argnums=(1,))( F, V )
+  > 
+  > grad2_21 = jnp.reshape(grad2, (2, 1))
+  > 
+  > a = 1
+  > 
+  > 
+  > y, vjp_fn = jax.vjp(f, A, X) # 返回函数的计算结果，还有用于计算 vjp 的函数 vjp_fn，它需要一个向量作为参数
+  >     # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
+  > 
+  > 
+  > AA = torch.tensor(A.__array__())
+  > XX = x = torch.tensor(X.__array__())
+  > 
+  > def ff(AA, XX):
+  >     return torch.mm(AA, XX) # 数学里的矩阵乘法，要求两个Tensor的维度满足矩阵乘法的要求
+  > 
+  > FF = ff(AA, XX)
+  > 
+  > jacobians = torch.autograd.functional.jacobian(ff, (AA, XX))
+  > jacobian_XX = jacobians[1]  # (1, 2, 2, 2)  和 jax 算出来的 grad 是一样的
+  > 
+  > jacobian_XX_42 = torch.reshape(jacobian_XX, (4, 2)) # 和前面 kr 一样了
+  > ```
+  
   > Note: we **never explicitly construct the Jacobian**. It's usually simpler
   > and more efficient to **compute the VJP directly**.(CSC321 Lecture 10: Automatic Differentiation)
   >
@@ -7400,7 +7699,7 @@ Jacobian using jacrev directly:
 
 
 
-#### 转 ndarray
+#### \_\_array\_\_
 
 ```
 x_jnp = jnp.arange(10)
@@ -7409,6 +7708,16 @@ x_np = x_jnp.__array__()
 print(type(x_np))
 # <class 'numpy.ndarray'>
 ```
+
+
+
+#### sigmoid
+
+```
+jax.nn.sigmoid(F)
+```
+
+
 
 
 
@@ -8756,6 +9065,18 @@ Host region-11.autodl.com
 
 # 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
 
+- https://developer.nvidia.com/zh-cn/blog/updating-the-cuda-linux-gpg-repository-key/
+    >更新 CUDA Linux GPG 存储库密钥
+
+cat /etc/os-release    
+cat /proc/version
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
+
+dpkg -i cuda-keyring_1.0-1_all.deb
+
+apt-get update
+apt-get -y install cuda-11-1
 
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
 bash Miniforge3-Linux-x86_64.sh -b && \
@@ -9270,7 +9591,11 @@ if __name__ == '__main__':
 
 
 
+# 1660TI
 
+- https://blog.csdn.net/sinat_36721621/article/details/115326307
+
+  > 可以安装 cuda11.1
 
 # 1080TI
 

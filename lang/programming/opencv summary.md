@@ -1,9 +1,11 @@
 # opencv-python
 
 ```
+
 // 对所有Components 着色  python
 // 其它语言看后面的：对所有Components 着色(三语)
-# pip install opencv-python
+# pip uninstall opencv-python
+# pip install opencv-python==4.6.0.66
 # https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html#ga107a78bf7cd25dec05fb4dfc5c9e765f
 # https://www.programcreek.com/python/example/89340/cv2.connectedComponentsWithStats
 # https://learnopencv.com/color-spaces-in-opencv-cpp-python/
