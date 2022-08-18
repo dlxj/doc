@@ -1,3 +1,5 @@
+# pip uninstall opencv-python
+# pip install opencv-python==4.6.0.66
 import onnxruntime as ort
 import numpy as np
 import argparse
