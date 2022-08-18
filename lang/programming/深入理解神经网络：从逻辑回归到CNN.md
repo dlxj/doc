@@ -5913,6 +5913,8 @@ OCR Engine modes:
 
 #### DBNet 可微分二值化
 
+- https://github.com/DayBreak-u/chineseocr_lite OCR**成品**
+
 - https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html
   
 - https://blog.csdn.net/michaelshare/article/details/108811236
