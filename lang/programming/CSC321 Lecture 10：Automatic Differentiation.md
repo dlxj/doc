@@ -101,6 +101,18 @@ jax.numpy.kron(a, b)
 
 - https://www.bilibili.com/video/av541440845/ 【手推机器学习】矩阵求导3--向量函数与矩阵求导初印象
 
+<img src="CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816212154795.png" alt="image-20220816212154795" style="zoom: 67%;" />
+
+<img src="CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816212539712.png" alt="image-20220816212539712" style="zoom:67%;" />
+
+<img src="CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816213303687.png" alt="image-20220816213303687" style="zoom: 50%;" />
+
+求导结果的布局是：$f(x)$的分量横向排列，$x$ 的分量纵向排列
+
+<img src="CSC321 Lecture 10：Automatic Differentiation.assets/image-20220816214522850.png" alt="image-20220816214522850" style="zoom: 33%;" />
+
+
+
 
 
 - https://www.zhihu.com/question/58312854
