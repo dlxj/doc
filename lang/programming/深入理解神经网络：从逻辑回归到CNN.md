@@ -9046,6 +9046,18 @@ Host region-11.autodl.com
 
 # 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
 
+- https://developer.nvidia.com/zh-cn/blog/updating-the-cuda-linux-gpg-repository-key/
+    >更新 CUDA Linux GPG 存储库密钥
+
+cat /etc/os-release    
+cat /proc/version
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
+
+dpkg -i cuda-keyring_1.0-1_all.deb
+
+apt-get update
+apt-get -y install cuda-11-1
 
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
 bash Miniforge3-Linux-x86_64.sh -b && \
