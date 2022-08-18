@@ -5441,6 +5441,23 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > EAST结构分析+pytorch源码实现
 
+- https://blog.csdn.net/haeasringnar/article/details/122936537
+
+  > 飞桨OCR打标、训练、预测、部署全流程
+
+- https://github.com/microsoft/unilm/tree/master/trocr
+  
+  - https://www.jianshu.com/p/3a054054f6f1
+  
+  > TrOCR
+
+- https://github.com/chineseocr/trocr-chinese
+  
+> trocr-chinese 
+  
+- https://github.com/chineseocr/chineseocr/tree/master
+  
+  > chineseocr
 
 
 ```
