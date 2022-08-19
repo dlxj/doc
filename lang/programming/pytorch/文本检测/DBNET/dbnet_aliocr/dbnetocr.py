@@ -109,6 +109,7 @@ dir_img = './img' # '/yingedu/www/ocr_server/data/img'
 
 num_img = 0
 train_list = []
+train_list_txt_path = os.path.join( 'GD500', 'train_list.txt' )
 
 json_paths = glob.glob('{}/*.json'.format(dir_json), recursive=True)
 for json_path in json_paths:
@@ -137,10 +138,19 @@ for json_path in json_paths:
         img_color = img.copy()
 
     img_name = "IMG_{:04d}.JPG".format(num_img)
+    gt_txt_name = "{}.txt".format(img_name)
+    gt_name = "IMG_{:04d}.gt".format(num_img)
+
+    gt_txt_list = []
+
     train_list.append( img_name )
     num_img += 1
 
     img_path = os.path.join( 'GD500', 'train_images', img_name )
+    img_gt_txt_path = os.path.join( 'GD500', 'train_gts', gt_txt_name )
+    img_gt_path = os.path.join( 'GD500', 'train_gts', gt_name )
+
+
     cv2.imwrite(img_path, img)
 
     wordsInfo = jsn['prism_wordsInfo']
@@ -153,7 +163,15 @@ for json_path in json_paths:
 
         x2 = int(pos[2]["x"]) # 右下
         y2 = int(pos[2]["y"])
-        
+
+    
+        lu = ( pos[0]['x'], pos[0]['y'] ) # left up  四个角顺时针方向数
+        ru = ( pos[1]['x'], pos[1]['y'] )
+        rd = ( pos[2]['x'], pos[2]['y'] )
+        ld = ( pos[3]['x'], pos[3]['y'] )
+
+        gt_txt_list.append( "{},{},{},{},{},{},{},{},{}".format(lu[0], lu[1], ru[0], ru[1], rd[0], rd[1], ld[0], ld[1], 0) )  # TD500 的 1 代表文本不可辨认, 0 是正常文本
+
         # 绘制矩形
         start_point = (x, y) # 矩形的左上角
   
@@ -204,5 +222,18 @@ for json_path in json_paths:
             # cv2.imshow("box", img_color)
             # cv2.waitKey(0)
 
-    a = 1
+    gt_txt = '\n'.join(gt_txt_list)
+
+    with open(img_gt_txt_path, "w") as fp:
+        fp.write(gt_txt)
+    
+    with open(img_gt_path, "w") as fp:
+        fp.write(gt_txt)
+
+
+train_list_txt = '\n'.join( train_list )
+with open(train_list_txt_path, "w") as fp:
+    fp.write(train_list_txt)
+
+a = 1
 
