@@ -1,4 +1,62 @@
 
+"""
+icdar2015 文本检测数据集
+标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
+
+其中, x1,y1为左上角坐标,x2,y2为右上角坐标,x3,y3为右下角坐标,x4,y4为左下角坐标。 
+
+### 表示text难以辨认。
+"""
+
+import math
+import numpy as np
+import cv2
+
+
+if __name__ == "__main__":
+    
+    im = './train_images/IMG_0855.JPG'
+    gt = './train_gts/IMG_0855.JPG.txt'
+    
+    items = []
+    reader = open(gt, 'r').readlines()
+    for line in reader:
+        item = {}
+        parts = line.strip().split(',')
+        label = parts[-1]
+        if 'TD' in gt and label == '1':
+            label = '###'
+        line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
+        if 'icdar' in gt:
+            poly = np.array(list(map(float, line[:8]))).reshape(
+                (-1, 2)).tolist()
+        else:
+            num_points = math.floor((len(line) - 1) / 2) * 2
+            poly = np.array(list(map(float, line[:num_points]))).reshape(
+                (-1, 2)).tolist()
+        item['poly'] = poly
+        item['text'] = label
+        item['points'] = poly  # 多边形是用一个个的点表示的，起点连接第二个点，第二个连接第三个 ... 最后一点连接起点，构成一个闭合的区域
+        item['ignore'] = True if label == '###' else False  # 此标记表示文字模糊不可辨认，文本框的标记是不可靠的
+        items.append( item )
+
+    img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    for i in range( len(items) ):
+        poly = items[i]['poly']
+        poly = np.array(poly)
+        poly = poly.astype(np.int32)
+
+        #cv2.fillPoly(img, pts=[ poly ], color=(0, 0, 255))  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
+        cv2.polylines(img, [ poly ], isClosed = True, color = (0, 0, 255), thickness = 1) # 只画线，不填充
+
+    #cv2.imwrite("poly.jpg", img)
+
+    cv2.imshow("poly", img)
+    cv2.waitKey()
+
+
 import json
 import decimal
 import datetime
@@ -36,13 +94,11 @@ import base64
 import numpy as np
 import cv2
 
-# message = "Python is fun"
-# message_bytes = message.encode('ascii')
-# base64_bytes = base64.b64encode(message_bytes)
-# base64_message = base64_bytes.decode('ascii')
-# msg = base64.b64decode(base64_message).decode('ascii')
 
-# print(base64_message)
+
+
+
+
 
 import glob
 import os
