@@ -53,8 +53,8 @@ if __name__ == "__main__":
 
     #cv2.imwrite("poly.jpg", img)
 
-    cv2.imshow("poly", img)
-    cv2.waitKey()
+    # cv2.imshow("poly", img)
+    # cv2.waitKey()
 
 
 import json
@@ -107,6 +107,9 @@ from pathlib import Path
 dir_json = './json' # '/yingedu/www/ocr_server/data/json'
 dir_img = './img' # '/yingedu/www/ocr_server/data/img'
 
+num_img = 0
+train_list = []
+
 json_paths = glob.glob('{}/*.json'.format(dir_json), recursive=True)
 for json_path in json_paths:
 
@@ -129,7 +132,16 @@ for json_path in json_paths:
     # cv2.waitKey(0)
 
     if len(img.shape) != 3:  # 转彩图
-        img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+        img_color = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+    else:
+        img_color = img.copy()
+
+    img_name = "IMG_{:04d}.JPG".format(num_img)
+    train_list.append( img_name )
+    num_img += 1
+
+    img_path = os.path.join( 'GD500', 'train_images', img_name )
+    cv2.imwrite(img_path, img)
 
     wordsInfo = jsn['prism_wordsInfo']
     for j in range( len(wordsInfo) ):
@@ -141,7 +153,6 @@ for json_path in json_paths:
 
         x2 = int(pos[2]["x"]) # 右下
         y2 = int(pos[2]["y"])
-
         
         # 绘制矩形
         start_point = (x, y) # 矩形的左上角
@@ -152,11 +163,17 @@ for json_path in json_paths:
   
         thickness = 2
   
-        img = cv2.rectangle(img, start_point, end_point, color, thickness)
+        img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
 
         # 逐行画框
-        cv2.imshow("box", img)
-        cv2.waitKey(0)
+        # cv2.imshow("box", img_color)
+        # cv2.waitKey(0)
+
+        # 生成 TD500 格式的人工标记训练数据（用于训练DBNet）
+
+
+
+        # "{:02d}".format(number)
 
 
         lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
@@ -181,11 +198,11 @@ for json_path in json_paths:
   
             thickness = 2
   
-            img = cv2.rectangle(img, start_point, end_point, color, thickness)
+            img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
             
             # 逐字画框
-            cv2.imshow("box", img)
-            cv2.waitKey(0)
+            # cv2.imshow("box", img_color)
+            # cv2.waitKey(0)
 
     a = 1
 

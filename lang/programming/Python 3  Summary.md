@@ -3111,6 +3111,24 @@ r''
 
 ### format
 
+For Python 3.+, the same behavior can also be achieved with [`format`](https://docs.python.org/3/library/stdtypes.html#str.format):
+
+```py
+number = 1
+print("{:02d}".format(number))
+```
+
+------
+
+For Python 3.6+ the same behavior can be achieved with [f-strings](https://docs.python.org/3/reference/lexical_analysis.html#f-strings):
+
+```py
+number = 1
+print(f"{number:02d}")
+```
+
+
+
 irt [u](https://github.com/17zuoye/pyirt/blob/master/tests/test_model_wrapper.py)
 
 ```python
