@@ -5463,6 +5463,12 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > **dbnet 检测， 识别 都有**
 
+- https://github.com/tommyMessi/crnn_ctc-centerloss
+
+  > **ctcloss + centerloss crnn 解决形近字**
+
+
+
 
 
 
