@@ -5942,6 +5942,46 @@ OCR Engine modes:
 
 #### DBNet 可微分二值化
 
+> DBNet.pytorch: 训练灰度图时需要在配置里移除`dataset.args.transforms.Normalize`
+
+- a
+
+  > ## 实验
+  >
+  > **数据集**
+  >
+  > **SynthText**
+  >
+  > 人工合成的数据集，包含800k张图片，8k张背景图，作者仅仅用来预训练。
+  >
+  > **MLT-2017 dataset**
+  >
+  > 多语言的数据集，9种语言展示6种脚本。7200张训练数据，1800张验证数据，9000张测试数据。我们使用训练数据和验证数据来finetune。
+  >
+  > **ICDAR 2015 dataset**
+  >
+  > 由google glassees采集，分辨率720*1280，1000张训练数据，500张测试数据。标注是单词级别的。
+  >
+  > **MSRA-TD500 dataset**
+  >
+  > 中英文双语的数据集。300张训练数据，200张测试数据。标注是文字行级别的。跟之前的方法一样，我们把HUST-TR400中的400张训练数据也加进来了。
+  >
+  > **CTW1500 dataset**
+  >
+  > 卷曲文字数据集，1000张训练数据，500张测试数据。标注是文字行级别的。
+  >
+  > **Total-Text dataset**
+  >
+  > 包括各种形状的文字，水平的、多方向的和卷曲的。1255张训练数据和300张测试数据。标注是单词级别的。
+  >
+  > **实现细节**
+  >
+  > **先使用SynthText预训练100k次迭代，继续在真实数据上 finetune 1200个epochs。**训练batch size为16。使用poly lr，当前学习率为初始学习率乘上 (1−itermax_iter)power ，初始学习率为0.007，power为0.9。
+  >
+  > 数据增广用到三种方法：(1)随机在 (−10∘,10∘) 之间旋转；(2)随机裁剪；(3)随机翻转；所有图片最终都转到640*640。
+  >
+  > 在测试阶段，我们保持原图的比例，针对不同的数据设置一个固定的图像高度。batch size为1，单张1080ti GPU，单线程。总耗时包括模型前向和后处理，后处理耗时占总体的30%。
+
 - https://github.com/DayBreak-u/chineseocr_lite OCR**成品**
 
 - https://paddlepedia.readthedocs.io/en/latest/tutorials/computer_vision/OCR/OCR_Detection/DBNet.html

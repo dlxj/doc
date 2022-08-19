@@ -1,5 +1,8 @@
 
 """
+
+! unzip ./GD500.zip -d DB/datasets
+
 icdar2015 文本检测数据集
 标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
 
@@ -234,6 +237,8 @@ for json_path in json_paths:
     with open(img_gt_path, "w") as fp:
         fp.write(gt_txt)
 
+
+    #GD500/test_gts/gt_IMG_0000.txt
 
 train_list_txt = '\n'.join( train_list )
 with open(train_list_txt_path, "w") as fp:
