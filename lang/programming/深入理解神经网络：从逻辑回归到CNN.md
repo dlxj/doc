@@ -5454,10 +5454,16 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 - https://github.com/chineseocr/trocr-chinese
   
 > trocr-chinese 
-  
+
 - https://github.com/chineseocr/chineseocr/tree/master
   
   > chineseocr
+
+- https://github.com/BADBADBADBOY/pytorchOCR
+
+  > **dbnet 检测， 识别 都有**
+
+
 
 
 ```
