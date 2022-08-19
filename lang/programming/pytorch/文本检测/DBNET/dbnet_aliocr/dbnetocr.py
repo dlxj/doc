@@ -61,7 +61,7 @@ for json_path in json_paths:
     if not os.path.exists(img_path): # 没有相应的图片，可能被删除了
         continue
 
-    json = load_json(json_path)
+    jsn = load_json(json_path)
 
     with open(img_path, "r", encoding="utf-8") as fp:
         imgdata = fp.read()
@@ -69,8 +69,67 @@ for json_path in json_paths:
         imgdata = np.frombuffer(imgdata, np.uint8)
         img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
 
-    cv2.imshow('img', img)
-    cv2.waitKey(0)
+    # cv2.imshow('img', img)
+    # cv2.waitKey(0)
+
+    if len(img.shape) != 3:  # 转彩图
+        img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+
+    wordsInfo = jsn['prism_wordsInfo']
+    for j in range( len(wordsInfo) ):
+        jo = wordsInfo[j]
+        word = jo["word"]
+        pos = jo["pos"] # 四个角的位置 # 左上、右上、右下、左下，当NeedRotate为true时，如果最外层的angle不为0，需要按照angle矫正图片后，坐标才准确
+        x = int(pos[0]["x"]) # 左上
+        y = int(pos[0]["y"])
+
+        x2 = int(pos[2]["x"]) # 右下
+        y2 = int(pos[2]["y"])
+
+        
+        # 绘制矩形
+        start_point = (x, y) # 矩形的左上角
+  
+        end_point = (x2, y2) # 矩形的右下角
+  
+        color = (0, 0, 255) # BGR
+  
+        thickness = 2
+  
+        img = cv2.rectangle(img, start_point, end_point, color, thickness)
+
+        # 逐行画框
+        cv2.imshow("box", img)
+        cv2.waitKey(0)
+
+
+        lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
+        prew = 0 # 上一个字符的宽度
+        words = ""
+        charInfo = jo["charInfo"]
+
+        for i in range( len(charInfo) ):
+            joc = charInfo[i]
+            c = joc["word"]
+            cx = int(joc["x"])
+            cy = int(joc["y"])
+            cw = int(joc["w"])
+            ch = int(joc["h"])
+
+            # 绘制矩形
+            start_point = (cx, cy) # 矩形的左上角
+  
+            end_point = (cx + cw, cy + ch) # 矩形的右下角
+  
+            color = (0, 0, 255) # BGR
+  
+            thickness = 2
+  
+            img = cv2.rectangle(img, start_point, end_point, color, thickness)
+            
+            # 逐字画框
+            cv2.imshow("box", img)
+            cv2.waitKey(0)
 
     a = 1
 

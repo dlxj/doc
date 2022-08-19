@@ -817,6 +817,21 @@ load_all(arg1=1, arg2=2, arg3=3)
 
 
 
+```
+** 可以表示展开
+
+line = {'points':[[323.0, 621.0], [1186.0, 652.0], [1178.0, 864.0], [315.0, 833.0]]
+'text':'0'
+'ignore':False}
+
+lines = []
+lines.append({**line, 'points': poly}) # poly 是新的 points ，意思是更新points，其他该有的还有，保持不变？
+```
+
+
+
+
+
 ### isinstance 多个
 
 ```python
