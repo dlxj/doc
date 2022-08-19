@@ -17,6 +17,10 @@ if __name__ == "__main__":
     
     im = './train_images/IMG_0855.JPG'
     gt = './train_gts/IMG_0855.JPG.txt'
+
+    
+    im = './GD500/train_images/IMG_0000.JPG'
+    gt = './GD500/train_gts/IMG_0000.JPG.txt'
     
     items = []
     reader = open(gt, 'r').readlines()
@@ -53,8 +57,8 @@ if __name__ == "__main__":
 
     #cv2.imwrite("poly.jpg", img)
 
-    # cv2.imshow("poly", img)
-    # cv2.waitKey()
+    #cv2.imshow("poly", img)
+    #cv2.waitKey()
 
 
 import json
