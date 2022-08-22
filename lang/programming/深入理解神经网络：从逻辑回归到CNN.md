@@ -5467,7 +5467,13 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > **ctcloss + centerloss crnn 解决形近字**
 
+- https://github.com/open-mmlab/mmocr
 
+  > **mmocr**
+
+  - https://github.com/open-mmlab/mmocr/issues/992
+
+    > 中文识别
 
 
 
