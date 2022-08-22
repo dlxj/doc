@@ -5952,6 +5952,8 @@ OCR Engine modes:
   >
   > **SynthText**
   >
+  > - https://github.com/ankush-me/SynthText  生成代码
+  >
   > 人工合成的数据集，包含800k张图片，8k张背景图，作者仅仅用来预训练。
   >
   > **MLT-2017 dataset**
@@ -9223,6 +9225,53 @@ Usage: python convert_to_onnx.py /path/to/exp/yaml /path/to/pretrained/weight /p
 /root/DB/data/processes/augment_data.py    
 	data['image'] = aug.augment_image(image)    
     
+```
+
+
+
+```
+# 导出增强后的图片（准备用同一张图生成很多很多的图用于训练，看看可不可行）
+# https://blog.csdn.net/xinjieyuan/article/details/105205326
+
+		if self.processes is not None:
+            for data_process in self.processes:
+                data = data_process(data)
+        im = data['image']
+        shape = im.shape  # (3, 640, 640)
+        im = torch.stack( (im[0], im[1], im[2]), 2 )  # (640, 640, 3)
+        return data
+
+
+
+
+
+        iprocesses = []
+        iprocesses.append( iprocesses[0] )
+        iprocesses.append( iprocesses[2] )
+        iprocesses.append( iprocesses[3] )
+        # for data_process in iprocesses:
+        #     data = data_process(data)
+        
+        # im = data['image']
+        # shape = im.shape
+        # im = torch.stack( (im[0], im[1], im[2]), 2 )
+
+        im = im.astype(np.uint8)
+
+        # cv2.imwrite("/root/aug.jpg", im)
+
+
+```
+
+
+
+
+
+```
+%%bash
+source activate DB && \
+cd ~/DB && \
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --image_path ~/DB/datasets/TD_TR/TD500/train_images/IMG_0855.JPG --resume ~/td500_resnet18 --polygon --box_thresh 0.7 --visualize
 ```
 
 

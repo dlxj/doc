@@ -741,7 +741,15 @@ int main()
 
 
 
+```python
+# python
+img = cv2.imread(image_path, cv2.IMREAD_COLOR).astype('float32')
+```
+
+
+
 ```c++
+// cpp
 Mat img = cv::imread("small3.jpg", CV_LOAD_IMAGE_COLOR);
 Mat dst;
 cv::cvtColor(img, dst, CV_BGR2GRAY);

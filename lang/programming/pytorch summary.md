@@ -338,6 +338,20 @@ b = torch.sum(a, 1)
 >
 > > 就像把桌面上的书堆起来一样
 
+```
+# https://blog.csdn.net/xinjieyuan/article/details/105205326
+
+		if self.processes is not None:
+            for data_process in self.processes:
+                data = data_process(data)
+        im = data['image']
+        shape = im.shape  # (3, 640, 640)
+        im = torch.stack( (im[0], im[1], im[2]), 2 )  # (640, 640, 3)
+        return data
+```
+
+
+
 
 
 ### 柱状图
