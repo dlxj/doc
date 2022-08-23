@@ -9711,6 +9711,94 @@ if __name__ == '__main__':
 
 
 
+## mmocr
+
+```
+C:\Users\Administrator\.ssh\config
+Host region-11.autodl.com
+  HostName region-11.autodl.com
+  Port 16116
+  User root
+
+# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
+
+- https://developer.nvidia.com/zh-cn/blog/updating-the-cuda-linux-gpg-repository-key/
+    >更新 CUDA Linux GPG 存储库密钥
+
+cat /etc/os-release    
+cat /proc/version
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
+
+dpkg -i cuda-keyring_1.0-1_all.deb
+
+apt-get update
+apt-get -y install cuda-11-3
+
+```
+
+
+
+### tensorboard可视化训练过程
+
+```
+if self.every_n_inner_iters(runner, self._print_interval_iter):
+# loss
+loss = runner.batch_iter_output['batch_loss']
+prob_dice_loss = runner.batch_iter_output['prob_dice_loss']
+thres_dice_loss = runner.batch_iter_output['thres_dice_loss']
+thres_l1_loss = runner.batch_iter_output['thres_l1_loss']
+ 
+summary_fun.add_scalar('batch_loss', loss, iters)
+summary_fun.add_scalar('prob_dice_loss', prob_dice_loss, iters)
+summary_fun.add_scalar('thres_dice_loss', thres_dice_loss, iters)
+summary_fun.add_scalar('thres_l1_loss', thres_l1_loss, iters)
+ 
+# orig image and label
+target = runner.data_batch[1]  # list
+input_tensor = runner.data_batch[0]  # torch.Size([8, 3, 512, 512])
+ 
+input_tensor = input_tensor.detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+gt_shrink = target[0].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+gt_shrink_mask = target[1].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+gt_thr = target[2].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+gt_thr_mask = target[3].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+ 
+# loss and predict
+output = runner.batch_iter_output['prediction']
+pred_prob = output[0].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+pred_db = output[1].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+pred_thr = output[2].detach().cpu().permute(0, 2, 3, 1).numpy() * 255
+ 
+ 
+all_img = []
+for i in range(input_tensor.shape[0]):
+    one_img = input_tensor[i, :, :, :]
+    one_gt_shrink = cv2.cvtColor(gt_shrink[i, :, :, :], cv2.COLOR_GRAY2BGR)
+    one_gt_shrink_mask = cv2.cvtColor(gt_shrink_mask[i, :, :, :], cv2.COLOR_GRAY2BGR)
+    one_gt_thr = cv2.cvtColor(gt_thr[i, :, :, :], cv2.COLOR_GRAY2BGR)
+    one_gt_thr_mask = cv2.cvtColor(gt_thr_mask[i, :, :, :], cv2.COLOR_GRAY2BGR)
+ 
+    one_pred_prob = cv2.cvtColor(pred_prob[i, :, :, :], cv2.COLOR_GRAY2BGR)
+    one_pred_db = cv2.cvtColor(pred_db[i, :, :, :], cv2.COLOR_GRAY2BGR)
+    one_pred_thr = cv2.cvtColor(pred_thr[i, :, :, :], cv2.COLOR_GRAY2BGR)
+ 
+    one_row_img = np.hstack((one_img, one_pred_prob, one_pred_db, one_gt_shrink, one_gt_shrink_mask, one_pred_thr, one_gt_thr, one_gt_thr_mask))
+    # cv2.namedWindow("img", cv2.WINDOW_NORMAL), cv2.imshow("img", np.uint8(one_row_img)), cv2.waitKey()
+    all_img.append(one_row_img)
+ 
+all_img_numpy = np.vstack(all_img)
+all_input_tensor = torch.from_numpy(all_img_numpy / 255.).unsqueeze(0).permute(0, 3, 1, 2)
+# train_image = vutils.make_grid(all_input_tensor, normalize=True, scale_each=False)
+# summary_fun.add_image('{}_image'.format(mode), train_image, iters)
+train_predict = vutils.make_grid(all_input_tensor, normalize=True, scale_each=False, padding=0)
+summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), train_predict, iters)
+```
+
+
+
+
+
 # 1660TI
 
 - https://blog.csdn.net/sinat_36721621/article/details/115326307
