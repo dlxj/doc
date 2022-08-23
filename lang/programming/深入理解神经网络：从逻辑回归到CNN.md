@@ -7418,11 +7418,22 @@ A11 = f1(X)
 
   - doc\lang\programming\矩阵求导术（下） - 知乎.pdf
 
-  
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220823145345647.png" alt="image-20220823145345647" style="zoom:80%;" />
+
+
 
 ![image-20220816162311376](深入理解神经网络：从逻辑回归到CNN.assets/image-20220816162311376.png)
 
 ![image-20220816162431342](深入理解神经网络：从逻辑回归到CNN.assets/image-20220816162431342.png)
+
+
+
+ F=AX, A 是m * n 的矩阵，求 F对A的导数。
+
+$dF=dAX$
+
+$vec(dF)=vec(dAX)$ = 
 
 
 
@@ -9770,8 +9781,8 @@ mim install mmcv-full && \
 mim install mmdet
 
 cp autodl-nas/mmocr.zip . && \
-unzip mmocr.zip
-cd mmocr
+unzip mmocr.zip && \
+cd mmocr && \
 pip3 install -e .
 
 python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --print-result --imshow
