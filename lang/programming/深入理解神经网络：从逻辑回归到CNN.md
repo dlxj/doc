@@ -6082,6 +6082,8 @@ OCR Engine modes:
   
 - https://lwd3-byt.github.io/2021/07/28/DBNet-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%BF%90%E8%A1%8C/  **DBNet.pytorch实现配置过程**
   
+- https://blog.csdn.net/jizhidexiaoming/article/details/124342274  **网络结构大图 损失函数详细**
+  
   >
   > > icdar2015 文本检测数据集
   > > 标注格式: x1,y1,x2,y2,x3,y3,x4,y4,text
@@ -8750,6 +8752,10 @@ pip install grpcio==1.11.0
 
 - https://ark.intel.com/content/www/us/en/ark/products/199331/intel-core-i910900kf-processor-20m-cache-up-to-5-30-ghz.html  10900k 是有核显的  X99平台的U都没有核显
 
+- https://blog.csdn.net/jizhidexiaoming/article/details/114694147?spm=1001.2014.3001.5502
+
+  > **10900k 装机**
+
 > 对于单路 CPU 的主板，能够同时支持四张显卡卡的神板，毫无疑问就只有 X99/X299 系列的主板了
 >
 > 华硕的 Prime X299-A II ，这款主板支持的CPU 包括 10900X/10920X/10940X （Intel X299/LGA 2066）
@@ -9211,7 +9217,7 @@ vscode 中然后F5 调试运行train.py
 
 权重转换：
 Usage: python convert_to_onnx.py /path/to/exp/yaml /path/to/pretrained/weight /path/to/save/onnx.  
-    
+
 // 验证    
 CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --image_path datasets/GD500/test_images/IMG_0000.JPG --resume /root/final --polygon --box_thresh 0.7 --visualize  
 ```
