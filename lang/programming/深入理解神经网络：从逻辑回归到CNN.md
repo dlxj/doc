@@ -7487,6 +7487,9 @@ $$
 
 
 全微分的定义
+
+- https://math.fandom.com/zh/wiki/%E5%85%A8%E5%BE%AE%E5%88%86?variant=zh
+
 $$
  \mathrm{d}f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}\mathrm{d}x_i 
 $$
@@ -9720,7 +9723,7 @@ Host region-11.autodl.com
   Port 16116
   User root
 
-# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
+# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.3 # 这环境 1080ti ~ 3090 都适用
 
 - https://developer.nvidia.com/zh-cn/blog/updating-the-cuda-linux-gpg-repository-key/
     >更新 CUDA Linux GPG 存储库密钥
@@ -9735,11 +9738,50 @@ dpkg -i cuda-keyring_1.0-1_all.deb
 apt-get update
 apt-get -y install cuda-11-3
 
+
+
+
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
+bash Miniforge3-Linux-x86_64.sh -b
+
+
+~/miniforge3/bin/conda init && \
+ln -s ~/miniforge3/bin/conda /usr/local/bin && \
+ln -s ~/miniforge3/bin/activate /usr/local/bin && \
+ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
+source ~/miniforge3/etc/profile.d/conda.sh
+
+
+conda deactivate && \
+conda env remove -n DB
+
+tmux 
+
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.8 --yes && \
+source activate DB && \
+conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch --yes
+
+
+source activate DB && \
+pip3 install openmim && \
+mim install mmcv-full && \
+mim install mmdet
+
+cp autodl-nas/mmocr.zip . && \
+unzip mmocr.zip
+cd mmocr
+pip3 install -e .
+
+python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --print-result --imshow
+
+
 ```
 
 
 
-### tensorboard可视化训练过程
+### tensorboard可视化训练
 
 ```
 if self.every_n_inner_iters(runner, self._print_interval_iter):
