@@ -7433,7 +7433,7 @@ A11 = f1(X)
 
 $F=AX=IAX$
 
-$dF=IdAX = (X^T \otimes I) vec(dA)$
+$vec(dF)=vec(IdAX) = (X^T \otimes I) vec(dA)$
 
 
 
@@ -7442,6 +7442,10 @@ $$
 vec(dF) = \frac{\partial F^T}{\partial X}  vec(dX)
 $$
 
+
+$(X^T \otimes I) = \frac{\partial F^T}{\partial X}$ 
+
+$\frac{\partial F}{\partial X} = (X^T \otimes I^T)$
 
 
 
