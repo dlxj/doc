@@ -5475,6 +5475,10 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
     > 中文识别
 
+  - https://github.com/open-mmlab/mmocr/issues/1161
+
+    > 中文训练集
+
 
 
 
@@ -9206,7 +9210,10 @@ vscode 中然后F5 调试运行train.py
 # CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
 
 权重转换：
-Usage: python convert_to_onnx.py /path/to/exp/yaml /path/to/pretrained/weight /path/to/save/onnx.    
+Usage: python convert_to_onnx.py /path/to/exp/yaml /path/to/pretrained/weight /path/to/save/onnx.  
+    
+// 验证    
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --image_path datasets/GD500/test_images/IMG_0000.JPG --resume /root/final --polygon --box_thresh 0.7 --visualize  
 ```
 
 
