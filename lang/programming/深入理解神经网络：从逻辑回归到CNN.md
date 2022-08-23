@@ -7433,7 +7433,15 @@ A11 = f1(X)
 
 $F=AX=IAX$
 
-$vec(dF)=vec(dAX)$ = 
+$dF=IdAX = (X^T \otimes I) vec(dA)$
+
+
+
+微分与导数的联系
+$$
+vec(dF) = \frac{\partial F^T}{\partial X}  vec(dX)
+$$
+
 
 
 
