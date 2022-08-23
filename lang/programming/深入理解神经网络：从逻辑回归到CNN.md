@@ -7429,9 +7429,9 @@ A11 = f1(X)
 
 
 
- F=AX, A 是m * n 的矩阵，求 F对A的导数。
+ F=AX, A 是m * n 的矩阵，求 F对A的导数。 X是 n\*p,  F 是 m\*p, dF / dA 是 m\*p\*m\*n
 
-$F=AX=IAX$
+$F=AX=IAX$   I 是 m\*m
 
 $vec(dF)=vec(IdAX) = (X^T \otimes I) vec(dA)$
 
@@ -7443,9 +7443,17 @@ vec(dF) = \frac{\partial F^T}{\partial X}  vec(dX)
 $$
 
 
-$(X^T \otimes I) = \frac{\partial F^T}{\partial X}$ 
+$(X^T \otimes I) = \frac{\partial F^T}{\partial A}$ 
 
-$\frac{\partial F}{\partial X} = (X^T \otimes I^T)$
+$\frac{\partial F}{\partial A} = (X^T \otimes I^T)$   n\*p  x   m\*m ->  n\*m ,  p*m
+
+
+
+ 如果A是一个m×n的矩阵，而B是一个p×q的矩阵，克罗内克积则是 mp×nq
+
+
+
+
 
 
 

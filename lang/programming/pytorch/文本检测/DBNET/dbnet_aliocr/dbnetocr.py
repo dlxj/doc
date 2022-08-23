@@ -61,8 +61,8 @@ if __name__ == "__main__":
 
     #cv2.imwrite("poly.jpg", img)
 
-    cv2.imshow("poly", img)
-    cv2.waitKey()
+    # cv2.imshow("poly", img)
+    # cv2.waitKey()
 
 
 import json
@@ -196,11 +196,11 @@ for i in range(500):
   
             thickness = 2
   
-            img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
 
             # 逐行画框
-            # cv2.imshow("box", img_color)
-            # cv2.waitKey(0)
+            img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
+            cv2.imshow("box", img_color)
+            cv2.waitKey(0)
 
             # 生成 TD500 格式的人工标记训练数据（用于训练DBNet）
 
@@ -231,9 +231,9 @@ for i in range(500):
   
                 thickness = 2
   
-                img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
             
                 # 逐字画框
+                # img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
                 # cv2.imshow("box", img_color)
                 # cv2.waitKey(0)
 
