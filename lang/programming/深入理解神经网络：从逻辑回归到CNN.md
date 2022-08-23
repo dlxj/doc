@@ -7431,7 +7431,7 @@ A11 = f1(X)
 
  F=AX, A 是m * n 的矩阵，求 F对A的导数。
 
-$dF=dAX$
+$F=AX=IAX$
 
 $vec(dF)=vec(dAX)$ = 
 
