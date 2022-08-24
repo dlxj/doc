@@ -8622,7 +8622,7 @@ per_sample_grads = loss(model, ...)
 
 
 
-#### a
+#### jax.vmap
 
 ```
 
@@ -9964,6 +9964,22 @@ cd mmocr && \
 pip3 install -e .
 
 python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --print-result --imshow
+
+
+# 中文识别
+wget "https://download.openmmlab.com/mmocr/textrecog/sar/dict_printed_chinese_english_digits.txt"
+
+put it to folder data/chineseocr/labels/
+
+python mmocr/utils/ocr.py t.jpg --det None --recog SAR_CN --output out.jpg
+	# 单行中文，不需要检测，否则它会调用英文的文本检测
+
+python mmocr/utils/ocr.py t2.jpg --det DB_r50 --recog SAR_CN --output out2.jpg
+	# 多行中文，检测看看结果怎么样
+		# 运行OK，但是只检测到几个字符，漏掉了大部分
+
+Yes, since your input is a cropped image, it is unnecessary to use a detection model; if the det model is not specified to None here, it will use PANet_IC15 as the detector by default.
+MMOCR currently does not provide a Chinese-specific pre-trained model for the detector, however, you may try the model pre-trained on ICDAR2017 (such as MaskRCNN_IC17), since this is a multilingual dataset containing Chinese training samples.
 
 
 ```
