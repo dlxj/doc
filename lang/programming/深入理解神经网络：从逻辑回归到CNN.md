@@ -6495,6 +6495,19 @@ OCR Engine modes:
 
   > **DBNet训练过程笔记（超详细)** 实战级
 
+- https://blog.csdn.net/fxwfxw7037681/article/details/112943956
+
+  > 在实际使用中，可能存在的问题及调整
+  >
+  > 在config/det_DB_resnet50.yaml的postprocess中有三个参数是要根据实际来调整的，**thresh，box_thresh和unclip_ratio**。
+  >
+  > **发现框太大或太小，调整unclip_ratio**。
+  > 发现漏检，可能是由于你的阈值设定的太高了，调整thresh和box_thresh，比如thresh=0.2，box_thresh=0.3，但是thresh变小后，unclip_ratio也要相应变小，因为thresh变小，必然导致probability map变大，所以向外扩的比例要调下，不然框就太大了。
+
+- https://blog.csdn.net/qq_41131535/article/details/120174542
+
+  > 数据生成很详细
+
 
 
 ##### Vatti's clipping algorithm 算法
