@@ -218,6 +218,99 @@ d f3 = d f2 ( f1(x)  ) * d f1 ( x )
 
 
 
+### 常用Loss总结
+
+#### 1. BCELoss
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824091538443.png" alt="image-20220824091538443" style="zoom: 67%;" />
+
+#### 2. CELoss
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824091656783.png" alt="image-20220824091656783" style="zoom:67%;" />
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824091725867.png" alt="image-20220824091725867" style="zoom:67%;" />
+
+#### 3. MSELoss
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824091824389.png" alt="image-20220824091824389" style="zoom:67%;" />
+
+#### 4. FocalLoss
+
+类别极度不均衡情况
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824092112912.png" alt="image-20220824092112912" style="zoom:67%;" />
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824092214029.png" alt="image-20220824092214029" style="zoom:67%;" />
+
+画图所用到的代码：
+
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 1)
+y1, y2, y3, y4, y5 = (1-x)**0, (1-x)**0.5, (1-x)**1, (1-x)**2, (1-x)**5
+plt.plot(x, y1, 'red')
+plt.plot(x, y2, 'green')
+plt.plot(x, y3, 'blue')
+plt.plot(x, y4, 'yellow')
+plt.plot(x, y5, 'purple')
+# plt.title('line chart')
+plt.xlabel('probability of ground truth class')
+plt.ylabel('Weight Value') 
+plt.show()
+```
+
+注意：用权重函数，加权BCELoss，则生成论文中的函数图像。由上图可知，其中gamma=2时，权重函数是个单调下降函数，预测的概率值较小时（即为难样本），Focal Loss所加的权重较大，使得整体loss变大，突出难样本；预测值概率值较大时（即为易样本），Focal Loss所加的权重较小，使得整体loss变小，这不要紧，因为预测值概率值较大（注意，此时y=1），我们就是希望loss较小。
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 1)
+y1, y2, y3, y4, y5 = (1-x)**0 * (-np.log(x)), (1-x)**0.5 * (-np.log(x)), (1-x)**1 * (-np.log(x)), (1-x)**2 * (-np.log(x)), (1-x)**5 * (-np.log(x))
+plt.plot(x, y1, 'red')
+plt.plot(x, y2, 'green')
+plt.plot(x, y3, 'blue')
+plt.plot(x, y4, 'yellow')
+plt.plot(x, y5, 'purple')
+# plt.title('line chart')
+plt.xlabel('probability of ground truth class')
+plt.ylabel('Focal loss') 
+plt.show()
+```
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220824092414759.png" alt="image-20220824092414759" style="zoom:67%;" />
+
+```
+# focal实现，引自：Focal Loss 分类问题 pytorch实现代码（简单实现）_镜中隐
+
+import torch
+import torch.nn as nn
+ 
+#二分类
+class FocalLoss(nn.Module):
+ 
+    def __init__(self, gamma=2,alpha=0.25):
+        super(FocalLoss, self).__init__()
+        self.gamma = gamma
+        self.alpha=alpha
+    def forward(self, input, target):
+        # input:size is M*2. M　is the batch　number
+        # target:size is M.
+        pt=torch.softmax(input,dim=1)
+        p=pt[:,1]
+        loss = -self.alpha*(1-p)**self.gamma*(target*torch.log(p))-\
+               (1-self.alpha)*p**self.gamma*((1-target)*torch.log(1-p))
+        return loss.mean()
+```
+
+
+
+### 分量是高维点在低维的投影
+
+
+
 **向量的分量 = 高维空间的点（向量），在低维空间中的投影（分量，坐标轴上的坐标）**
 
 **（向量内积，一行和一列的内积）影子（投影）是凸透镜和凹透镜，把低维向是量（点）放大或缩小，透镜的倍分是影子的长度**
@@ -9813,6 +9906,8 @@ python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --print-result --imshow
 
 
 ### 完整识别代码
+
+- https://blog.csdn.net/jizhidexiaoming/article/details/124273621
 
 ```python
 
