@@ -10277,6 +10277,24 @@ if __name__ == '__main__':
 
 
 
+### 训练ICDAR 2015
+
+- https://mmocr.readthedocs.io/en/latest/datasets/det.html
+
+  > 数据转换
+  >
+  > python tools/data/textdet/icdar_converter.py data/icdar2015 -o data/icdar2015 -d data/icdar2015 --split-list training test
+  >
+  > 开始训练
+  >
+  > ```
+  > python tools/train.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py --work-dir dbnet
+  > ```
+
+ 
+
+
+
 ### tensorboard可视化训练
 
 ```
