@@ -9929,6 +9929,349 @@ Pyqtdeploy
 
 
 
+# python+C++
+
+1.完整报错信息
+
+```
+Could not find platform independent libraries <prefix>
+Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+ 
+Current thread 0x00007f5ab301f6c0 (most recent call first):
+```
+
+2.报错原因
+场景是C++调用python时，找不到python解释器。
+
+3.解决办法
+在init之前添加解释器位置说明。
+
+```
+Py_SetPythonHome(L"/home/zxq/anaconda3/envs/onnx");
+ 
+# 再去初始化
+Py_Initialize();
+ 
+printf("Python init \n");
+ 
+ 
+Py_Finalize();
+```
+
+
+
+1.总结
+C++传递参数给Python，需要转换成PyObject *类型。比如，C++的 int 是一个整数，该值占用4个字节的存储空间，而一个 python 的 int 实际是一个 PyObject* 指向 12字节。
+前 4个字节是整数，代表引用次数；中间4个字节是指向 int 类型定义的指针，最后 4个字节是才是这个 int 的值。
+所以 C++ 和 Python 之间参数互相传递都需要 Python提供的 api。
+
+```
+PyObject* arg1 = Py_BuildValue("i",220);  //整数参数
+PyObject* arg2 = Py_BuildValue("f", 3.14);  //浮点数参数
+PyObject* arg3 = Py_BuildValue("s", "hello"); //字符串参数
+```
+
+
+
+## C++部署onnx模型（C++和Python3混合编程）
+
+1. 纯python部署（onnx模型）
+
+```
+import os
+import time
+ 
+import numpy as np
+import onnxruntime
+import json
+import cv2
+ 
+ 
+def imnormalize(img, mean, std, to_rgb=True):
+    """Normalize an image with mean and std.
+    Args:
+        img (ndarray): Image to be normalized.
+        mean (ndarray): The mean to be used for normalize.
+        std (ndarray): The std to be used for normalize.
+        to_rgb (bool): Whether to convert to rgb.
+    Returns:
+        ndarray: The normalized image.
+    """
+    img = img.copy().astype(np.float32)
+ 
+    # cv2 inplace normalization does not accept uint8
+    mean = np.float64(mean.reshape(1, -1))
+    stdinv = 1 / np.float64(std.reshape(1, -1))
+    if to_rgb:
+        cv2.cvtColor(img, cv2.COLOR_BGR2RGB, img)  # inplace
+    cv2.subtract(img, mean, img)  # inplace
+    cv2.multiply(img, stdinv, img)  # inplace
+    return img
+ 
+ 
+def letterbox_image(img, input_dim, fill_value):
+    """
+    resize image with unchanged aspect ratio using padding
+    让原图的高宽乘以同一个数，这样就不会改变比例，而这个数就是min( 高缩放的比例，宽缩放的比例)，然后padding周围区域使得缩放到指定大小。
+    缩小： (2000, 4000) -> (200,200), min(200/4000, 200/2000) = 1/20, 2000 * 1/20 = 100， 4000 * 1/20 = 200
+    新的尺度(100, 200)，再padding
+    放大： (50, 100) -> (200, 200), min(4, 2) = 2, 50 * 2 = 100, 100 * 2 = 200
+    新的尺度(100, 200)，再padding
+    :param fill_value: int. Padding value
+    :param img: original image.
+    :param input_dim: (w, h). 缩放后的尺度
+    :return:
+    """
+    orig_w, orig_h = img.shape[1], img.shape[0]
+    input_w, input_h = input_dim  # 缩放(orig_w, orig_h) -> (input_w, input_h)
+ 
+    # 1，根据缩放前后的尺度，获取有效的新的尺度(new_w, new_h)
+    min_ratio = min(input_w / orig_w, input_h / orig_h)
+    new_w = int(orig_w * min_ratio)  # （new_w, new_h）是高宽比不变的新的尺度
+    new_h = int(orig_h * min_ratio)
+    resized_image = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_CUBIC)
+ 
+    # 定义画布canvas，然后把有效区域resized_image填充进去
+    canvas = np.full((input_dim[1], input_dim[0], 3), fill_value=fill_value, dtype=np.uint8)  # 定义画布，大小是（200,200）
+ 
+    # 画布_h - 高宽不变_new_h
+    start_h = (input_h - new_h) // 2  # 开始插入的高度位置, 也是上下需要padding的大小
+    start_w = (input_w - new_w) // 2  # 开始插入的宽度位置
+    canvas[start_h:start_h + new_h, start_w:start_w + new_w, :] = resized_image
+ 
+    return canvas
+ 
+ 
+def load_labels(path):
+    with open(path) as f:
+        data = json.load(f)
+    return np.asarray(data)
+ 
+ 
+def preprocess(input_data, mean_list, std_list):
+    input_data = imnormalize(input_data, np.array(mean_list), np.array(std_list))
+ 
+    input_data = input_data.transpose(2, 0, 1)  # [hwc] -> [chw]
+ 
+    # add batch channel
+    norm_img_data = np.expand_dims(input_data, 0).astype('float32')  # [1chw]
+    return norm_img_data
+ 
+ 
+def softmax(x):
+    x = x.reshape(-1)
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+ 
+ 
+def postprocess(result):
+    return softmax(np.array(result)).tolist()
+ 
+ 
+class Model(object):
+    def __init__(self
+                 ):
+        img_shape = [256, 256]
+        mean_list = [123.675, 116.28, 103.53]
+        std_list = [58.395, 57.12, 57.375]
+        model_path = "/home/zxq/CLionProjects/test_my_inference_onnx/models/resnet18_mint.onnx"
+        class_names = ['contamination', 'crack', 'good']
+        self.img_shape = img_shape
+        self.mean_list = mean_list
+        self.std_list = std_list
+        self.model_path = model_path
+ 
+        self.class_names = np.array(class_names)
+        self.ort_session = None  # 在构造函数里面实例化session会报错，估计是session数据结构复杂。
+        self.input_name = None
+        self.init_session()
+ 
+    def init_session(self):
+        self.ort_session = onnxruntime.InferenceSession(self.model_path)
+        self.input_name = self.ort_session.get_inputs()[0].name
+ 
+    def model_infer(self, img_path):
+        image = cv2.imread(img_path, cv2.IMREAD_COLOR)
+        image = letterbox_image(image, self.img_shape, fill_value=0)
+        input_data = preprocess(image, self.mean_list, self.std_list)  # [1chw] numpy.ndarray
+ 
+        start_time = time.time()
+        raw_output = self.ort_session.run([], {self.input_name: input_data})[0]
+        pred_idx = np.argmax(raw_output)
+        print(time.time() - start_time)
+        pred_name = self.class_names[pred_idx]
+        print('Final prediction is: {}, score: {}'.format(self.class_names[pred_idx], raw_output[0, pred_idx]))
+        return pred_idx, pred_name, raw_output
+ 
+ 
+if __name__ == '__main__':
+    model = Model()
+    # get the name of the first input of the model
+ 
+    test_data_path = '/home/zxq/PycharmProjects/data/pill/mint/test'
+    for root_, dir_, file_name_list in os.walk(test_data_path):
+        for file_name in file_name_list:
+            full_path = os.path.join(root_, file_name)
+            print(full_path)
+            model.model_infer(full_path)
+```
+
+
+
+```
+// detecor.h 
+// Created by zxq on 2021/5/9.
+//
+ 
+#ifndef TEST_MY_INFERENCE_ONNX_DETECTOR_H
+#define TEST_MY_INFERENCE_ONNX_DETECTOR_H
+ 
+#include <iostream>
+#include <string>
+#include "Python.h"
+using namespace std;
+class Detector {
+public:
+    Detector(const wchar_t *envs_path);
+    ~Detector();
+    size_t run(PyObject * img_path);
+ 
+private:
+    const wchar_t *envs_path;
+    PyObject * pModule;
+    PyObject* pDict;
+    PyObject* pClassCalc;
+    PyObject* pConstruct;
+    PyObject* pInstance;
+public:
+    size_t flag;
+    size_t c_result;
+};
+ 
+#endif //TEST_MY_INFERENCE_ONNX_DETECTOR_H
+ 
+ 
+```
+
+
+
+```
+// detector.cpp
+// Created by zxq on 2021/5/9.
+//
+ 
+#include "detector.h"
+#include <Python.h>
+#include <iostream>
+using namespace std;
+ 
+Detector::Detector(const wchar_t * envs_path_) {
+    // set python interpret path
+    envs_path = envs_path_;
+    Py_SetPythonHome(envs_path);
+ 
+    // init python
+    Py_Initialize();
+    assert(Py_IsInitialized());
+ 
+    // find python script
+    PyRun_SimpleString("import os, sys");
+    PyRun_SimpleString("sys.path.append('../')");
+ 
+    // import module
+    pModule = PyImport_ImportModule("TestOnnxResnet_mint");
+    assert(pModule);
+ 
+    // import dict of module
+    pDict = PyModule_GetDict(pModule);
+    assert(pDict);
+ 
+    // import class
+    pClassCalc = PyDict_GetItemString(pDict, "Model");
+    assert(pClassCalc);
+ 
+    //get constructor
+    pConstruct = PyInstanceMethod_New(pClassCalc);
+    assert(pConstruct);
+ 
+    // using constructor to construct instance.
+    pInstance = PyObject_CallObject(pConstruct,nullptr);
+    assert(pInstance);
+}
+ 
+Detector::~Detector() {
+    Py_DECREF(pModule);
+    Py_DECREF(pDict);
+    Py_DECREF(pClassCalc);
+    Py_DECREF(pConstruct);
+    Py_DECREF(pInstance);
+    Py_Finalize();
+}
+ 
+size_t Detector::run(PyObject * img_path){
+    /*
+     * PyObject *img_path=Py_BuildValue("(s)", "/home/zxq/CLionProjects/test_my_inference_onnx/
+     * test_data/cls/mint/pill_mint_contamination_181.png");
+     */
+    //判断初始化是否成功
+    size_t CResult;
+    PyObject *PyResult = PyObject_Call(PyObject_GetAttrString(pInstance, "model_infer"), img_path, nullptr);
+}
+```
+
+
+
+```
+// main.cpp
+#include "detector.h"
+#include <Python.h>
+ 
+using namespace std;
+ 
+ 
+int main(int argc, char *argv[]) {
+    const wchar_t * envs_path = L"/home/zxq/anaconda3/envs/onnx";
+    Detector det(envs_path);
+ 
+    while (true){
+        PyObject *img_path=Py_BuildValue("(s)", "/home/zxq/CLionProjects/test_my_inference_onnx/test_data/cls/mint/pill_mint_contamination_181.png");
+        det.run(img_path);
+    }
+ 
+    return 0;
+}
+```
+
+
+
+```
+// cmakelists.txt
+
+cmake_minimum_required(VERSION 3.16)
+project(test_my_inference_onnx)
+ 
+set(CMAKE_CXX_STANDARD 14)
+ 
+# 包含detect.h路径
+SET(INC_DIR  include)
+include_directories(${INC_DIR})
+ 
+include_directories(
+        /home/zxq/anaconda3/envs/onnx/include/python3.7m
+)
+add_executable(test_my_inference_onnx
+        tmp.cpp include/detector.cpp include/detector.h)
+target_link_libraries(test_my_inference_onnx
+        /home/zxq/anaconda3/envs/onnx/lib/libpython3.7m.so
+        )
+```
+
+
+
+
+
 # python+C#
 
 - https://github.com/pythonnet/pythonnet
