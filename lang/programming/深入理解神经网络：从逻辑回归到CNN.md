@@ -5597,10 +5597,32 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
   - https://github.com/open-mmlab/mmocr/issues/992
 
     > 中文识别
-
+  >
+    > ```
+  > python mmocr/utils/ocr.py t.jpg --det None --recog SAR_CN --output out.jpg
+    > 
+    >  wget "https://download.openmmlab.com/mmocr/textrecog/sar/dict_printed_chinese_english_digits.txt"   put it to folder /data/chineseocr/labels/
+    > 
+    > Yes, since your input is a cropped image, it is unnecessary to use a detection model; if the det model is not specified to None here, it will use PANet_IC15 as the detector by default.
+    > MMOCR currently does not provide a Chinese-specific pre-trained model for the detector, however, you may try the model pre-trained on ICDAR2017 (such as MaskRCNN_IC17), since this is a multilingual dataset containing Chinese training samples.
+    > 
+    > 
+    > python demo/ocr_image_demo.py t.jpg out.jpg --recog-config configs/textrecog/sar/sar_r31_parallel_decoder_chinese.py --recog-ckpt https://download.openmmlab.com/mmocr/textrecog/sar/sar_r31_parallel_decoder_chineseocr_20210507-b4be8214.pth
+    > 
+    > wget "https://download.openmmlab.com/mmocr/textrecog/sar/dict_printed_chinese_english_digits.txt"
+    > 
+    > put it to folder data/chineseocr/labels/
+    > ```
+    >
+    > 
+  
   - https://github.com/open-mmlab/mmocr/issues/1161
-
+  
     > 中文训练集
+
+- https://blog.csdn.net/jizhidexiaoming/article/details/80345832
+
+  > 论文复现，很多 **matlab 代码**
 
 
 
