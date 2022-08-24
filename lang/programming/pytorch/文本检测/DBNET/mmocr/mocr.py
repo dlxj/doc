@@ -244,19 +244,20 @@ def det_recog_pp(arrays, result, outputs=[None], imshow=True):
 if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
  
-    img_dir = r"E:\data\ocr\text_detection\ctw1500\imgs\training"
+    img_dir = r"./demo"
     img_name_list = os.listdir(img_dir)
+    img_name_list = [ 'demo_text_ocr.jpg' ]
     for img_name in img_name_list:
         # img
         img_path = os.path.join(img_dir, img_name)
         img = cv2.imread(img_path)
         img = cv2.resize(img, (640, 640))
         # detection
-        config_dir = r'D:\\code\\python\\mmocr\\configs'
+        config_dir = r'./configs'
         td = "DB_r50"
-        det_ckpt = r"D:\code\python\mmocr\tools\work_dirs\dbnet_r50_0415\epoch_80.pth"
+        #det_ckpt = r"D:\code\python\mmocr\tools\work_dirs\dbnet_r50_0415\epoch_80.pth"
         det_config = os.path.join(config_dir, "textdet/", textdet_models[td]['config'])
-        if not det_ckpt:
+        if True or (not det_ckpt):
             det_ckpt = 'https://download.openmmlab.com/mmocr/textdet/' + textdet_models[td]['ckpt']
         detect_model = init_detector(det_config, det_ckpt, device=device)
         detect_model = revert_sync_batchnorm(detect_model)
@@ -265,7 +266,7 @@ if __name__ == '__main__':
         tr = "SEG"
         recog_ckpt = None
         recog_config = os.path.join(config_dir, "textrecog/", textrecog_models[tr]['config'])
-        if not recog_ckpt:
+        if True or (not recog_ckpt):
             recog_ckpt = 'https://download.openmmlab.com/mmocr/' + 'textrecog/' + textrecog_models[tr]['ckpt']
         recog_model = init_detector(recog_config, recog_ckpt, device=device)
         recog_model = revert_sync_batchnorm(recog_model)
@@ -277,5 +278,5 @@ if __name__ == '__main__':
  
         det_recog_result = det_recog_kie_inference(
             detect_model, recog_model, kie_model=None, imgs=[img], batch_mode=False)
-        det_recog_pp([img], det_recog_result, outputs=[None], imshow=True)
+        det_recog_pp([img], det_recog_result, outputs=['./result.jpg'], imshow=False)
  
