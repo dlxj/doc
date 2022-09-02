@@ -217,8 +217,8 @@ if __name__ == "__main__":
 
                 # 逐行画框
                 img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
-                # cv2.imshow("box", img_color)
-                # cv2.waitKey(0)
+                cv2.imshow("box", img_color)
+                cv2.waitKey(0)
 
 
                 lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
@@ -263,13 +263,16 @@ if __name__ == "__main__":
             
                     # 逐字画框
                     img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
-                    # cv2.imshow("box", img_color)
-                    # cv2.waitKey(0)
+                    cv2.imshow("box", img_color)
+                    cv2.waitKey(0)
 
                 # 这个框更准一些
                 img_color = cv2.rectangle(img_color, (min_cx, min_cy), (max_cxcw, max_cych), (0, 255, 0), thickness)
-                # cv2.imshow("box", img_color)
-                # cv2.waitKey(0)
+                cv2.imshow("box", img_color)
+                cv2.waitKey(0)
+
+                # fix me: 如果上面的行框的左边要比这里更左，那就以行框的左边为准
+                    # 因为发现单个字的框会有漏字的现想
 
                 gt_txt_list.append( "{},{},{},{},{},{},{},{},{}".format(min_cx, min_cy, max_cxcw, min_cy, max_cxcw, max_cych, min_cx, max_cych, word) )
 
