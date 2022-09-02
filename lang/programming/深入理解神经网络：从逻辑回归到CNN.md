@@ -10013,7 +10013,11 @@ cp -r configs/ configs_ali  # 复制原配置
 	# 然后修改相应配置
 
 cd data/GD500 && \
-mkdir imgs && mkdir annotations
+mkdir imgs && mkdir annotations && \
+mv train_images imgs/training && \
+mv test_images imgs/test && \
+mv train_gts annotations/training && \
+mv test_gts annotations/test
 
 python tools/data/textdet/icdar_converter.py data/GD500 -o data/GD500 -d data/GD500 --split-list training test
 
