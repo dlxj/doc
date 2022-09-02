@@ -6540,6 +6540,14 @@ OCR Engine modes:
 
 
 
+
+
+### 目标检测
+
+tood detector 算法
+
+
+
 ### pytorch 实现数字识别
 
 
@@ -9978,7 +9986,7 @@ python mmocr/utils/ocr.py t2.jpg --det DB_r50 --recog SAR_CN --output out2.jpg
 	# 多行中文，检测看看结果怎么样
 		# 运行OK，但是只检测到几个字符，漏掉了大部分
 
-python mmocr/utils/ocr.py t2.jpg --det DB_r18 --recog SAR_CN --output out2.jpg --device gpu
+python mmocr/utils/ocr.py t3.jpg --det DB_r18 --recog SAR --output out3.jpg --device cuda
 	# mmocr 训练、测试、推断 都可以用 cpu
 
 Yes, since your input is a cropped image, it is unnecessary to use a detection model; if the det model is not specified to None here, it will use PANet_IC15 as the detector by default.
@@ -9986,6 +9994,45 @@ MMOCR currently does not provide a Chinese-specific pre-trained model for the de
 
 
 ```
+
+
+
+### aliocr 训练
+
+用阿里的识别结果训练 dbnet 和 SAR
+
+```
+# 图片生成 (把图书图片和识别结果转换成icdar2015 数据集 一模一样的格式)
+	# doc\lang\programming\pytorch\文本检测\DBNET\dbnet_aliocr
+
+# 数据转换
+	- https://mmocr.readthedocs.io/en/latest/datasets/det.html#icdar-2015
+	
+unzip ~/autodl-nas/GD500.zip -d data
+cp -r configs/ configs_ali  # 复制原配置
+	# 然后修改相应配置
+
+cd data/GD500 && \
+mkdir imgs && mkdir annotations
+
+python tools/data/textdet/icdar_converter.py data/GD500 -o data/GD500 -d data/GD500 --split-list training test
+
+
+
+# 训练
+python tools/train.py configs_ali/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py --work-dir dbnet_ali
+
+
+# 检测
+python tools/test.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py final_60_epoch.pth --eval hmean-iou --show-dir dbnet_result
+
+
+
+```
+
+
+
+
 
 
 
