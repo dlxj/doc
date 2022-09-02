@@ -9978,6 +9978,9 @@ python mmocr/utils/ocr.py t2.jpg --det DB_r50 --recog SAR_CN --output out2.jpg
 	# 多行中文，检测看看结果怎么样
 		# 运行OK，但是只检测到几个字符，漏掉了大部分
 
+python mmocr/utils/ocr.py t2.jpg --det DB_r18 --recog SAR_CN --output out2.jpg --device gpu
+	# mmocr 训练、测试、推断 都可以用 cpu
+
 Yes, since your input is a cropped image, it is unnecessary to use a detection model; if the det model is not specified to None here, it will use PANet_IC15 as the detector by default.
 MMOCR currently does not provide a Chinese-specific pre-trained model for the detector, however, you may try the model pre-trained on ICDAR2017 (such as MaskRCNN_IC17), since this is a multilingual dataset containing Chinese training samples.
 
@@ -10291,10 +10294,10 @@ if __name__ == '__main__':
   > python tools/train.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py --work-dir dbnet
   > ```
   >
-  > 识别
+  > 检测
   >
   > ```
-  > python tools/test.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py dbnet_r18_fpnc_sbn_1200e_icdar2015_20210329-ba3ab597.pth --eval hmean-iou
+  > python tools/test.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py dbnet_r18_fpnc_sbn_1200e_icdar2015_20210329-ba3ab597.pth --eval hmean-iou --show-dir dbnet_result
   > ```
   >
   > 
