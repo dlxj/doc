@@ -10290,6 +10290,14 @@ if __name__ == '__main__':
   > ```
   > python tools/train.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py --work-dir dbnet
   > ```
+  >
+  > 识别
+  >
+  > ```
+  > python tools/test.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py dbnet_r18_fpnc_sbn_1200e_icdar2015_20210329-ba3ab597.pth --eval hmean-iou
+  > ```
+  >
+  > 
 
  
 
