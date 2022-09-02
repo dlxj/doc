@@ -66,18 +66,18 @@ import glob
 import os
 from pathlib import Path
 
-
+import random
 
 
 if __name__ == "__main__":
     
     # 验证原版的文本标记框
-    im = './train_images/img_1.jpg'
-    gt = './train_gts/gt_img_1.txt'
+    # im = './train_images/img_1.jpg'
+    # gt = './train_gts/gt_img_1.txt'
 
     # 验证自已生成的标记框
-    # im = './GD500/train_images/IMG_0456.JPG'
-    # gt = './GD500/train_gts/IMG_0456.JPG.txt'
+    im = './icdar2015_aliocr/imgs/training/img_1.jpg'
+    gt = './icdar2015_aliocr/annotations/training/gt_img_1.txt'
 
     items = []
     reader = open(gt, 'r', encoding='utf-8-sig').readlines()
@@ -111,7 +111,12 @@ if __name__ == "__main__":
         poly = poly.astype(np.int32)
 
         #cv2.fillPoly(img, pts=[ poly ], color=(0, 0, 255))  
-        #cv2.polylines(img, [ poly ], isClosed = True, color = (0, 0, 255), thickness = 1) # 只画线，不填充  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
+
+        b = random.randint(0, 255) # 用来生成[a,b]之间的随意整数，包括两个边界值。
+        g = random.randint(0, 255)
+        r = random.randint(0, 255)
+
+        cv2.polylines(img, [ poly ], isClosed = True, color = (b, g, r), thickness = 1) # 只画线，不填充  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
 
     #cv2.imwrite("poly.jpg", img)
 
@@ -198,7 +203,7 @@ if __name__ == "__main__":
                 ld = ( pos[3]['x'], pos[3]['y'] )
 
                 # 生成 icdar2015 格式的人工标记训练数据（用于训练 mmocr）
-                gt_txt_list.append( "{},{},{},{},{},{},{},{},{}".format(lu[0], lu[1], ru[0], ru[1], rd[0], rd[1], ld[0], ld[1], word) )
+                #gt_txt_list.append( "{},{},{},{},{},{},{},{},{}".format(lu[0], lu[1], ru[0], ru[1], rd[0], rd[1], ld[0], ld[1], word) )
 
                 # 绘制矩形
                 start_point = (x, y) # 矩形的左上角
@@ -212,14 +217,20 @@ if __name__ == "__main__":
 
                 # 逐行画框
                 img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
-                cv2.imshow("box", img_color)
-                cv2.waitKey(0)
+                # cv2.imshow("box", img_color)
+                # cv2.waitKey(0)
 
 
                 lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
                 prew = 0 # 上一个字符的宽度
                 words = ""
                 charInfo = jo["charInfo"]
+
+                min_cx = 9999   # 最小左上角
+                min_cy = 9999
+
+                max_cxcw = -1   # 最大右下角
+                max_cych = -1
 
                 for i in range( len(charInfo) ):
                     joc = charInfo[i]
@@ -228,6 +239,17 @@ if __name__ == "__main__":
                     cy = int(joc["y"])
                     cw = int(joc["w"])
                     ch = int(joc["h"])
+
+                    if cx < min_cx:
+                        min_cx = cx
+                    if cy < min_cy:
+                        min_cy = cy
+
+                    if cx + cw > max_cxcw:
+                        max_cxcw = cx + cw
+
+                    if cy + ch > max_cych:
+                        max_cych = cy + ch
 
                     # 绘制矩形
                     start_point = (cx, cy) # 矩形的左上角
@@ -241,10 +263,18 @@ if __name__ == "__main__":
             
                     # 逐字画框
                     img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
-                    cv2.imshow("box", img_color)
-                    cv2.waitKey(0)
+                    # cv2.imshow("box", img_color)
+                    # cv2.waitKey(0)
+
+                # 这个框更准一些
+                img_color = cv2.rectangle(img_color, (min_cx, min_cy), (max_cxcw, max_cych), (0, 255, 0), thickness)
+                # cv2.imshow("box", img_color)
+                # cv2.waitKey(0)
+
+                gt_txt_list.append( "{},{},{},{},{},{},{},{},{}".format(min_cx, min_cy, max_cxcw, min_cy, max_cxcw, max_cych, min_cx, max_cych, word) )
+
 
             gt_txt = '\n'.join(gt_txt_list)
 
-            with open(img_gt_path, "w") as fp:
+            with open(img_gt_path, "w", encoding='utf-8-sig') as fp:
                 fp.write(gt_txt)
