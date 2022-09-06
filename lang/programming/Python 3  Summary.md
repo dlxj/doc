@@ -2804,6 +2804,13 @@ if __name__ == "__main__":
 
 
 
+```python
+out_json = dict()
+out_json['images'] = []
+```
+
+
+
 
 
 ### trick
