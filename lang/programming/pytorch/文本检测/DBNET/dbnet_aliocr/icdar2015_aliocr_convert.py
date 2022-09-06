@@ -20,6 +20,7 @@ icdar2015 文本检测数据集
 ### 表示text难以辨认。
 """
 
+from importlib.resources import path
 import math
 import numpy as np
 import cv2
@@ -79,49 +80,50 @@ if __name__ == "__main__":
     im = './icdar2015_aliocr/imgs/training/img_1.jpg'
     gt = './icdar2015_aliocr/annotations/training/gt_img_1.txt'
 
-    items = []
-    reader = open(gt, 'r', encoding='utf-8-sig').readlines()
-    for line in reader:
-        item = {}
-        parts = line.strip().split(',')
-        label = parts[-1]
-        if 'TD' in gt and label == '1':
-            label = '###'
-        line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
-        if 'icdar' in gt:
-            poly = np.array(list(map(float, line[:8]))).reshape(
-                (-1, 2)).tolist()
-        else:
-            num_points = math.floor((len(line) - 1) / 2) * 2
-            poly = np.array(list(map(float, line[:num_points]))).reshape(
-                (-1, 2)).tolist()
-        item['poly'] = poly
-        item['text'] = label
-        item['points'] = poly  # 多边形是用一个个的点表示的，起点连接第二个点，第二个连接第三个 ... 最后一点连接起点，构成一个闭合的区域
-        item['ignore'] = True if label == '###' else False  # 此标记表示文字模糊不可辨认，文本框的标记是不可靠的
-        items.append( item )
+    if os.path.exists( gt ):
 
+        items = []
+        reader = open(gt, 'r', encoding='utf-8-sig').readlines()
+        for line in reader:
+            item = {}
+            parts = line.strip().split(',')
+            label = parts[-1]
+            if 'TD' in gt and label == '1':
+                label = '###'
+            line = [i.strip('\ufeff').strip('\xef\xbb\xbf') for i in parts]
+            if 'icdar' in gt:
+                poly = np.array(list(map(float, line[:8]))).reshape(
+                    (-1, 2)).tolist()
+            else:
+                num_points = math.floor((len(line) - 1) / 2) * 2
+                poly = np.array(list(map(float, line[:num_points]))).reshape(
+                    (-1, 2)).tolist()
+            item['poly'] = poly
+            item['text'] = label
+            item['points'] = poly  # 多边形是用一个个的点表示的，起点连接第二个点，第二个连接第三个 ... 最后一点连接起点，构成一个闭合的区域
+            item['ignore'] = True if label == '###' else False  # 此标记表示文字模糊不可辨认，文本框的标记是不可靠的
+            items.append( item )
 
-    img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # DBNet 原版代码只能处理彩图，所以统一处理成彩图
+        img = cv2.imdecode(np.fromfile(im, dtype=np.uint8), -1)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # DBNet 原版代码只能处理彩图，所以统一处理成彩图
     
-    for i in range( len(items) ):
-        poly = items[i]['poly']
-        poly = np.array(poly)
-        poly = poly.astype(np.int32)
+        for i in range( len(items) ):
+            poly = items[i]['poly']
+            poly = np.array(poly)
+            poly = poly.astype(np.int32)
 
-        #cv2.fillPoly(img, pts=[ poly ], color=(0, 0, 255))  
+            #cv2.fillPoly(img, pts=[ poly ], color=(0, 0, 255))  
 
-        b = random.randint(0, 255) # 用来生成[a,b]之间的随意整数，包括两个边界值。
-        g = random.randint(0, 255)
-        r = random.randint(0, 255)
+            b = random.randint(0, 255) # 用来生成[a,b]之间的随意整数，包括两个边界值。
+            g = random.randint(0, 255)
+            r = random.randint(0, 255)
 
-        cv2.polylines(img, [ poly ], isClosed = True, color = (b, g, r), thickness = 1) # 只画线，不填充  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
+            cv2.polylines(img, [ poly ], isClosed = True, color = (b, g, r), thickness = 1) # 只画线，不填充  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
 
-    #cv2.imwrite("poly.jpg", img)
+        #cv2.imwrite("poly.jpg", img)
 
-    # cv2.imshow("poly", img)
-    # cv2.waitKey()
+        # cv2.imshow("poly", img)
+        # cv2.waitKey()
 
 
     # 开始转换
@@ -217,8 +219,8 @@ if __name__ == "__main__":
 
                 # 逐行画框
                 img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
-                cv2.imshow("box", img_color)
-                cv2.waitKey(0)
+                # cv2.imshow("box", img_color)
+                # cv2.waitKey(0)
 
 
                 lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
@@ -263,13 +265,13 @@ if __name__ == "__main__":
             
                     # 逐字画框
                     img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
-                    cv2.imshow("box", img_color)
-                    cv2.waitKey(0)
+                    # cv2.imshow("box", img_color)
+                    # cv2.waitKey(0)
 
                 # 这个框更准一些
                 img_color = cv2.rectangle(img_color, (min_cx, min_cy), (max_cxcw, max_cych), (0, 255, 0), thickness)
-                cv2.imshow("box", img_color)
-                cv2.waitKey(0)
+                # cv2.imshow("box", img_color)
+                # cv2.waitKey(0)
 
                 # fix me: 如果上面的行框的左边要比这里更左，那就以行框的左边为准
                     # 因为发现单个字的框会有漏字的现想

@@ -10337,6 +10337,20 @@ if __name__ == '__main__':
 
   > 数据转换
   >
+  > ```
+  > cd ~ && \
+  > cp autodl-nas/icdar2015_aliocr.zip . && \
+  > unzip icdar2015_aliocr.zip -d mmocr/data
+  > 
+  > cd ~/mmocr && \
+  > source activate DB && \
+  > mv data/icdar2015_aliocr data/icdar2015 && \
+  > python tools/data/textdet/icdar_converter.py data/icdar2015 -o data/icdar2015 -d icdar2015 --split-list training test
+  > 
+  > ```
+  >
+  > 
+  >
   > python tools/data/textdet/icdar_converter.py data/icdar2015 -o data/icdar2015 -d data/icdar2015 --split-list training test
   >
   > 开始训练
