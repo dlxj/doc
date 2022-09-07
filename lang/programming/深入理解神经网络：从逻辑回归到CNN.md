@@ -9911,6 +9911,49 @@ if __name__ == '__main__':
 
 
 
+## DB
+
+原版代码，成功训练aliocr 结果，只用一张图 格式 TD500，图片500 张，都是同一张图复制500 次
+
+```
+7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on DBNet_aliocr_GD500.zip ./DB
+```
+
+```
+
+# 修改配置 
+sed -i 's/batch_size\:\ 16/batch_size\:\ 10/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/num_workers\:\ 16/num_workers\:\ 10/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/save_interval\:\ 18000/save_interval\:\ 450/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
+sed -i 's/epochs\:\ 1200/epochs\:\ 30/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml
+
+# 训练
+CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
+
+# 测试
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --image_path datasets/GD500/test_images/IMG_0000.JPG --resume /root/final --polygon --box_thresh 0.7 --visualize 
+
+
+# vscode 中运行这样改
+
+# /root/DB/train.py
+
+def main():
+
+    import sys
+    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( '--num_gpus' )
+    sys.argv.append( '1' )
+    torch.backends.cudnn.enabled = False
+    
+```
+
+
+
+
+
+
+
 ## mmocr
 
 ```
@@ -10367,6 +10410,10 @@ if __name__ == '__main__':
   >
   > ```
   > python tools/test.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py dbnet_r18_fpnc_sbn_1200e_icdar2015_20210329-ba3ab597.pth --eval hmean-iou --show-dir dbnet_result
+  > 
+  > 
+  > python tools/test.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py /root/mmocr/dbnet/epoch_150.pth --eval hmean-iou --show-dir dbnet_result
+  > 
   > ```
   >
   > 
