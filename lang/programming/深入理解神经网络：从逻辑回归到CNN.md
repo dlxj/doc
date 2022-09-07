@@ -8952,7 +8952,7 @@ pip install grpcio==1.11.0
 
 - https://ark.intel.com/content/www/us/en/ark/products/199331/intel-core-i910900kf-processor-20m-cache-up-to-5-30-ghz.html  10900k 是有核显的  X99平台的U都没有核显
 
-- https://blog.csdn.net/jizhidexiaoming/article/details/114694147?spm=1001.2014.3001.5502
+- https://blog.csdn.net/jizhidexiaoming/article/details/114694147
 
   > **10900k 装机**
 
@@ -10434,6 +10434,12 @@ if __name__ == '__main__':
 
 
 ### mmocr DBLoss
+
+- https://blog.csdn.net/jizhidexiaoming/article/details/124342274
+
+  > 详细网络结构，有大图
+
+![](深入理解神经网络：从逻辑回归到CNN.assets/dbnet网络结构.jpg)
 
 DBLoss由三种loss组成。
 
