@@ -503,6 +503,20 @@ ffmpeg  -i xxx.ts -itsoffset -0.5 -i xxx.ts -filter_complex "movie=logo.png[logo
 
 实践发现`iphone`设备上`AAC 5.1`声道是不支持的，也就是6声道。所以在压制时一般只能选择双声道，也就是`AAC stereo`，编码参数为：`-ac 2`
 
+
+
+# 压制内嵌 sub+idx 硬字幕
+
+> ffmpeg -i 1.mp4 -i 1.sub -i 1.idx -filter_complex “[0:v][2:s]overlay=0:H-h” -c:v libx264 out.mp4
+
+这条命令是加载1.mp4,1.sub,1.idx文件，然后通过滤镜将字幕烧录进视频文件，[0:v]指的第一个加载的视频文件1.MP4，[2:s]指的是加载的1.idx文件，因为索引是2，然后通过overlay=0:H-h将字幕显示在视频下方。
+
+加水印：
+
+```
+ffmpeg -i Waiting.for.the.Barbarians.2019.1080p.AMZN.WEB-DL.DDP5.1.H.264-iKA.mkv -i test.sub -i test.idx -filter_complex "movie=logo.png[logo],[0:v][logo]overlay=main_w-overlay_w-5:main_h-overlay_h-5:enable='lt(mod(t,1800),30)',pad=1920:1080:(1920-iw)/2:(1080-ih)/2:black[vvv],[vvv][2:s]overlay=0:H-h" out.mp4
+```
+
 # 精准剪切
 
 ```
