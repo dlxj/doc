@@ -9442,7 +9442,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/td500_resnet18_de
 
 # 开始增强图片
 /root/DB/data/processes/augment_data.py    
-	data['image'] = aug.augment_image(image)    
+	data['image'] = aug.augment_image(image)  
     
 ```
 
@@ -9973,6 +9973,7 @@ pip3 install -e .
 
 python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --print-result --imshow
 
+python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --output out.jpg
 
 # 中文识别
 wget "https://download.openmmlab.com/mmocr/textrecog/sar/dict_printed_chinese_english_digits.txt"
@@ -10346,17 +10347,20 @@ if __name__ == '__main__':
   > source activate DB && \
   > mv data/icdar2015_aliocr data/icdar2015 && \
   > python tools/data/textdet/icdar_converter.py data/icdar2015 -o data/icdar2015 -d icdar2015 --split-list training test
-  > 
   > ```
   >
   > 
   >
-  > python tools/data/textdet/icdar_converter.py data/icdar2015 -o data/icdar2015 -d data/icdar2015 --split-list training test
+  > python tools/data/textdet/icdar_converter.py data/icdar2015 -o data/icdar2015 -d icdar2015 --split-list training test
   >
   > 开始训练
   >
   > ```
+  > tmux && \
+  > source activate DB && \
   > python tools/train.py configs/textdet/dbnet/dbnet_r18_fpnc_1200e_icdar2015.py --work-dir dbnet
+  > 
+  > tmux attach
   > ```
   >
   > 检测
@@ -10368,6 +10372,10 @@ if __name__ == '__main__':
   > 
 
  
+
+#### 多卡训练
+
+- https://mmsegmentation.readthedocs.io/zh_CN/latest/train.html
 
 
 
