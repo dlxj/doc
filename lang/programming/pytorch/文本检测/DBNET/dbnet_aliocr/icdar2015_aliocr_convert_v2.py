@@ -132,7 +132,7 @@ if __name__ == "__main__":
 
     # https://help.aliyun.com/document_detail/294540.html 阿里云ocr结果字段定义
         # prism-wordsInfo 里的 angle 文字块的角度，这个角度只影响width和height，当角度为-90、90、-270、270，width和height的值需要自行互换
-    
+
     dir_json = './data/json' # '/yingedu/www/ocr_server/data/json'
     dir_img = './data/img' # '/yingedu/www/ocr_server/data/img'
 
@@ -194,11 +194,19 @@ if __name__ == "__main__":
             for j in range( len(wordsInfo) ):
                 jo = wordsInfo[j]
                 word = jo["word"]
-                angle = jo['angle'] # 
+                angle = jo['angle'] # prism-wordsInfo 里的 angle 文字块的角度，这个角度只影响width和height，当角度为-90、90、-270、270，width和height的值需要自行互换
                 word_x = jo['x']
                 word_y = jo['y']
                 word_width = jo['width']
                 word_height = jo['height']
+
+                if abs(angle) == 90 or abs(angle) == 270:
+                    word_width = jo['height']
+                    word_height = jo['width']
+
+                img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
+                cv2.imshow("box", img_color)
+                cv2.waitKey(0)
 
                 pos = jo["pos"] # 四个角的位置 # 左上、右上、右下、左下，当NeedRotate为true时，如果最外层的angle不为0，需要按照angle矫正图片后，坐标才准确
                 x = int(pos[0]["x"]) # 左上
@@ -227,7 +235,7 @@ if __name__ == "__main__":
   
 
                 # 逐行画框
-                img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
+                # img_color = cv2.rectangle(img_color, start_point, end_point, color, thickness)
                 # cv2.imshow("box", img_color)
                 # cv2.waitKey(0)
 

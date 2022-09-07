@@ -413,6 +413,12 @@ This discards the first five seconds of input. However, if the input file was 60
 
 
 
+# libass 字幕显示问题修复
+
+- https://0o0.me/java/libass-fix-171-issue.html
+
+  > libass 字幕显示问题修复：384×288分辨率字幕无法在其他分辨率的视频上正确显示
+
 # 精准剪切
 
 ```
