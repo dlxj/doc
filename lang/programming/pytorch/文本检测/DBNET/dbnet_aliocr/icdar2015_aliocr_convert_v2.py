@@ -219,7 +219,29 @@ if __name__ == "__main__":
                         # https://stackoverflow.com/questions/30327659/how-can-i-remap-a-point-after-an-image-rotation # How can I remap a point after an image rotation?
                             # 如何得到移动后的坐标点
 
+                            # inverse matrix of simple rotation is reversed rotation.
+                    #M_inv = cv2.getRotationMatrix2D((cX, cY), angle, 1.0)
+
+
+                    # points
+                    points = np.array([[word_x,  word_y],
+                        [175., 0.],
+                        [105., 200.],
+                        [105., 215.],
+                    ])
+                    # add ones
+                    ones = np.ones(shape=(len(points), 1))
+
+                    points_ones = np.hstack([points, ones])
+
+                    # transform points
+                    transformed_points = M.dot(points_ones.T).T
+
+                    word_x, word_y = transformed_points[0]
+                    word_x, word_y = np.round([word_x, word_y], decimals=0).astype(np.int32)
+
                     img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
+                    # img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
                     cv2.imshow("box", img_color)
                     cv2.waitKey(0)
 
