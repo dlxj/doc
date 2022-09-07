@@ -2,7 +2,7 @@
 
 import argparse
 import cv2
-import imutils
+# import imutils # pip install imutils
 import numpy as np
 import base64
 
@@ -22,7 +22,7 @@ rotated = cv2.warpAffine(image, M, (w, h))
 # 顺时针旋转33度，并保证图像旋转后完整~,确保整个图都在视野范围
 # 使用imutils.rotata 一行代码实现旋转
 # rotated = imutils.rotate_bound(image, 180)
-cv2.imshow("Rotated by 180 Degrees", rotated)
+cv2.imshow(f"Rotated by {-0.0190033 * (180 / 3.1415926)} Degrees", rotated)
 cv2.waitKey(0)
 
 

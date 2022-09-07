@@ -203,10 +203,25 @@ if __name__ == "__main__":
                 if abs(angle) == 90 or abs(angle) == 270:
                     word_width = jo['height']
                     word_height = jo['width']
+                elif angle != 0:
 
-                img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
-                cv2.imshow("box", img_color)
-                cv2.waitKey(0)
+                    # 获取图像的维度，并计算中心
+                    (h, w) = img_color.shape[:2]
+                    (cX, cY) = (w // 2, h // 2)
+
+                    # - (cX,cY): 旋转的中心点坐标
+                    # - 180: 旋转的度数，正度数表示逆时针旋转，而负度数表示顺时针旋转。
+                    # - 1.0：旋转后图像的大小，1.0原图，2.0变成原来的2倍，0.5变成原来的0.5倍
+                    M = cv2.getRotationMatrix2D((cX, cY), angle, 1.0)  # 1° = π/180弧度   1 弧度 =  180 / 3.1415926   // 0.0190033 是Mathematica 算出来的弧度，先转换成角度  // -0.0190033 * (180 / 3.1415926)
+                    img_color = cv2.warpAffine(img_color, M, (w, h))
+
+                    # https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html  # 原理
+                        # https://stackoverflow.com/questions/30327659/how-can-i-remap-a-point-after-an-image-rotation # How can I remap a point after an image rotation?
+                            # 如何得到移动后的坐标点
+
+                    img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
+                    cv2.imshow("box", img_color)
+                    cv2.waitKey(0)
 
                 pos = jo["pos"] # 四个角的位置 # 左上、右上、右下、左下，当NeedRotate为true时，如果最外层的angle不为0，需要按照angle矫正图片后，坐标才准确
                 x = int(pos[0]["x"]) # 左上
