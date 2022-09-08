@@ -382,8 +382,8 @@ if __name__ == "__main__":
                     thickness = 2
 
                     # 逐字画框
-                    img_color = cv2.rectangle(
-                        img_color, start_point, end_point, color, thickness)
+                    # img_color = cv2.rectangle(
+                    #     img_color, start_point, end_point, color, thickness)
                     # cv2.imshow("box", img_color)
                     # cv2.waitKey(0)
 
