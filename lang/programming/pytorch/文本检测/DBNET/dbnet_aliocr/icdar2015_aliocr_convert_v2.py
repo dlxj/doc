@@ -91,6 +91,39 @@ def transform(points, M):
     return transformed_points_int
 
 
+def cutPoly(img, pts):
+    # img = cv2.imdecode(np.fromfile('./t.png', dtype=np.uint8), -1)
+    # pts = np.array([[10,150],[150,100],[300,150],[350,100],[310,20],[35,10]])
+
+    ## (1) Crop the bounding rect
+    rect = cv2.boundingRect(pts)
+    x,y,w,h = rect
+    croped = img[y:y+h, x:x+w].copy()
+
+    ## (2) make mask
+    pts = pts - pts.min(axis=0)
+
+    mask = np.zeros(croped.shape[:2], np.uint8)
+    cv2.drawContours(mask, [pts], -1, (255, 255, 255), -1, cv2.LINE_AA)
+
+    ## (3) do bit-op
+    dst = cv2.bitwise_and(croped, croped, mask=mask)
+
+    ## (4) add the white background
+    bg = np.ones_like(croped, np.uint8)*255
+    cv2.bitwise_not(bg,bg, mask=mask)
+    dst2 = bg+ dst
+
+
+    cv2.imwrite("croped.png", croped)
+    cv2.imwrite("mask.png", mask)
+    cv2.imwrite("dst.png", dst)
+    cv2.imwrite("dst2.png", dst2)
+
+    return dst2
+
+
+
 if __name__ == "__main__":
 
     # 验证原版的文本标记框
@@ -163,6 +196,8 @@ if __name__ == "__main__":
 
     train_list = []
     train_list_txt_path = os.path.join(out_dir, 'train_list.txt')
+
+    g_count = 1
 
     json_paths = glob.glob('{}/*.json'.format(dir_json), recursive=True)
 
@@ -265,6 +300,7 @@ if __name__ == "__main__":
                     # 1° = π/180弧度   1 弧度 =  180 / 3.1415926   // 0.0190033 是Mathematica 算出来的弧度，先转换成角度  // -0.0190033 * (180 / 3.1415926)
                     M = cv2.getRotationMatrix2D((cX, cY), angle, 1.0)
                     img_color = cv2.warpAffine(img_color, M, (w, h))
+                    img_color_transform = img_color.copy()
 
                     # cv2.imshow("after trans", img_color)
                     # cv2.waitKey(0)
@@ -338,6 +374,9 @@ if __name__ == "__main__":
                    points = transform( points, M )
                 else:
                    points = np.array(points)
+                   img_cuted = cutPoly(img_color, points)
+                   cv2.imwrite(f'./tmp/{g_count}.jpg', img_cuted)
+                   g_count += 1
 
                 cv2.polylines(img_color, [points], isClosed=True, color=(   # 多边形，框得比较全
                         100, 0, 255), thickness=2)  # 只画线，不填充
@@ -356,7 +395,7 @@ if __name__ == "__main__":
 
                 if not (abs(angle) == 90 or abs(angle) == 270) and angle != 0:
 
-                    
+                    t = word
                     ps = np.array(                        
                         [
                             [min( transformed_points_int[0][0], points[0][0] ), min( transformed_points_int[0][1], points[0][1] )], # 左上(取最两者中最小的)
@@ -368,6 +407,10 @@ if __name__ == "__main__":
                             [min( transformed_points_int[3][0], points[3][0] ), max( transformed_points_int[3][1], points[3][1] )] # 左下
                         ]
                     )
+
+                    img_cuted = cutPoly(img_color_transform, ps)
+                    cv2.imwrite(f'./tmp/{g_count}.jpg', img_cuted)
+                    g_count += 1
 
                     cv2.polylines(img_color, [ ps ], isClosed=True, color=(
                         255, 0, 0), thickness=2)  # 只画线，不填充
