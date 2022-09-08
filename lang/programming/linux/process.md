@@ -41,7 +41,12 @@ yum install tmux
 
 ```
 tmux
-tmux attach
+tmux attach # default 0
+
+tmux attach -t 0
+ctrl + D # 退出当前 session
+tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
+
 ```
 
 
