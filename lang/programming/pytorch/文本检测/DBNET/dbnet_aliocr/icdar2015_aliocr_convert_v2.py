@@ -292,11 +292,14 @@ if __name__ == "__main__":
                     transformed_points_int = np.round(
                         transformed_points, decimals=0).astype(np.int32)  # 批量四舍五入
 
-                    # cv2.polylines(img_color, [transformed_points_int], isClosed=True, color=(
-                    #     0, 0, 255), thickness=1)  # 只画线，不填充
+                    cv2.polylines(img_color, [transformed_points_int], isClosed=True, color=(
+                        0, 0, 255), thickness=2)  # 只画线，不填充
 
                     # cv2.imshow("box", img_color)
                     # cv2.waitKey(0)
+
+
+
 
                 # 四个角的位置 # 左上、右上、右下、左下，当NeedRotate为true时，如果最外层的angle不为0，需要按照angle矫正图片后，坐标才准确
                 pos = jo["pos"]
@@ -347,6 +350,31 @@ if __name__ == "__main__":
 
                 # cv2.waitKey(0)
 
+
+
+
+
+                if not (abs(angle) == 90 or abs(angle) == 270) and angle != 0:
+
+                    
+                    ps = np.array(                        
+                        [
+                            [min( transformed_points_int[0][0], points[0][0] ), min( transformed_points_int[0][1], points[0][1] )], # 左上(取最两者中最小的)
+
+                            [max( transformed_points_int[1][0], points[1][0] ), min( transformed_points_int[1][1], points[1][1] )], # 右上
+
+                            [max( transformed_points_int[2][0], points[2][0] ), max( transformed_points_int[2][1], points[2][1] )], # 右下
+
+                            [min( transformed_points_int[3][0], points[3][0] ), max( transformed_points_int[3][1], points[3][1] )] # 左下
+                        ]
+                    )
+
+                    cv2.polylines(img_color, [ ps ], isClosed=True, color=(
+                        255, 0, 0), thickness=2)  # 只画线，不填充
+
+                    cv2.imshow("box", img_color)
+
+                    cv2.waitKey(0)
 
                 lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
                 prew = 0  # 上一个字符的宽度
