@@ -205,6 +205,10 @@ if __name__ == "__main__":
                     word_height = jo['width']
                 elif angle != 0:
 
+                    # 变换前画出绿框，方便追踪点的前后变化
+                    img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
+
+
                     # 获取图像的维度，并计算中心
                     (h, w) = img_color.shape[:2]
                     (cX, cY) = (w // 2, h // 2)
@@ -215,12 +219,13 @@ if __name__ == "__main__":
                     M = cv2.getRotationMatrix2D((cX, cY), angle, 1.0)  # 1° = π/180弧度   1 弧度 =  180 / 3.1415926   // 0.0190033 是Mathematica 算出来的弧度，先转换成角度  // -0.0190033 * (180 / 3.1415926)
                     img_color = cv2.warpAffine(img_color, M, (w, h))
 
+                    cv2.imshow("after trans", img_color)
+                    cv2.waitKey(0)
+
                     # https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html  # 原理
                         # https://stackoverflow.com/questions/30327659/how-can-i-remap-a-point-after-an-image-rotation # How can I remap a point after an image rotation?
                             # 如何得到移动后的坐标点
 
-                            # inverse matrix of simple rotation is reversed rotation.
-                    #M_inv = cv2.getRotationMatrix2D((cX, cY), angle, 1.0)
 
 
                     # points
