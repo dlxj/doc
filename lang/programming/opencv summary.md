@@ -412,7 +412,7 @@ img = cv2.bitwise_not(img)
 
 
 
-```
+```python
                     # 变换前画出绿框，方便追踪点的前后变化
                     img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
 
@@ -430,6 +430,20 @@ img = cv2.bitwise_not(img)
                     cv2.imshow("after trans", img_color)
                     cv2.waitKey(0)
 ```
+
+
+
+# 绘制多边形
+
+```
+points = np.array([[160, 130], [350, 130], [250, 300]]) # 一个个点连起来，最后一点连起点
+cv2.fillPoly(img, pts=[points], color=(255, 0, 0))
+
+        #cv2.fillPoly(img, pts=[ poly ], color=(0, 0, 255))  # 就是画线，从起点连到第二个点 ... 最后一个点连到第一个点
+        cv2.polylines(img, [ poly ], isClosed = True, color = (0, 0, 255), thickness = 1) # 只画线，不填充
+```
+
+
 
 
 

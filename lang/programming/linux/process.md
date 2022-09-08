@@ -28,3 +28,21 @@ jobs 查看后台运行程序
 PID为1521，ls -al /proc/1521  , CWD 就是进程所在路径
 ```
 
+
+
+
+
+# tmux
+
+```
+yum install epel-release
+yum install tmux
+```
+
+```
+tmux
+tmux attach
+```
+
+
+

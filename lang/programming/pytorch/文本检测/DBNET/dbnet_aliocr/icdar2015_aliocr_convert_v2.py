@@ -208,6 +208,23 @@ if __name__ == "__main__":
                     # 变换前画出绿框，方便追踪点的前后变化
                     img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
 
+                    # cv2.imshow("green", img_color)
+                    # cv2.waitKey(0)
+                    
+                    # 变换前的多边形蓝框
+                    points = np.array([
+                        [word_x,  word_y],                             # 左上
+                        [word_x + word_width, word_y],                 # 右上
+                        [word_x + word_width, word_y + word_height ],  # 右下
+                        [word_x, word_y + word_height],                # 左下
+                    ])
+
+                    # cv2.fillPoly(img_color, pts=[points], color=(255, 0, 0)) # 填充
+                    cv2.polylines(img_color, [ points ], isClosed = True, color = (255, 0, 0), thickness = 1) # 只画线，不填充
+
+                    # cv2.imshow("polys", img_color)
+                    # cv2.waitKey(0)
+
 
                     # 获取图像的维度，并计算中心
                     (h, w) = img_color.shape[:2]
@@ -228,11 +245,11 @@ if __name__ == "__main__":
 
 
 
-                    # points
-                    points = np.array([[word_x,  word_y],
-                        [175., 0.],
-                        [105., 200.],
-                        [105., 215.],
+                    # points 算出四个点变换后移动到哪里了
+                    points = np.array([[word_x,  word_y],              # 左上
+                        [word_x + word_width, word_y],                 # 右上
+                        [word_x + word_width, word_y + word_height ],  # 右下
+                        [word_x, word_y + word_height],  # 左下
                     ])
                     # add ones
                     ones = np.ones(shape=(len(points), 1))
@@ -242,11 +259,15 @@ if __name__ == "__main__":
                     # transform points
                     transformed_points = M.dot(points_ones.T).T
 
-                    word_x, word_y = transformed_points[0]
-                    word_x, word_y = np.round([word_x, word_y], decimals=0).astype(np.int32)
+                    # word_x, word_y = transformed_points[0]
+                    # word_x, word_y = np.round([word_x, word_y], decimals=0).astype(np.int32)
 
-                    img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
                     # img_color = cv2.rectangle(img_color, (word_x, word_y), (word_x + word_width, word_y + word_height), (0, 0, 255), 2)  # 矩形的左上角, 矩形的右下角
+
+                    transformed_points_int = np.round(transformed_points, decimals=0).astype(np.int32)
+
+                    cv2.polylines(img_color, [ transformed_points_int ], isClosed = True, color = (0, 0, 255), thickness = 1) # 只画线，不填充
+
                     cv2.imshow("box", img_color)
                     cv2.waitKey(0)
 
