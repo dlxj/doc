@@ -220,6 +220,9 @@ if __name__ == "__main__":
                 word = jo["word"]
                 # prism-wordsInfo 里的 angle 文字块的角度，这个角度只影响width和height，当角度为-90、90、-270、270，width和height的值需要自行互换
                 angle = jo['angle']
+                
+                img_color = img_color_origin.copy()
+
                 word_x = jo['x']
                 word_y = jo['y']
                 word_width = jo['width']
@@ -229,8 +232,6 @@ if __name__ == "__main__":
                     word_width = jo['height']
                     word_height = jo['width']
                 elif angle != 0:
-
-                    img_color = img_color_origin.copy()
 
                     # 变换前画出绿框，方便追踪点的前后变化
                     img_color = cv2.rectangle(img_color, (word_x, word_y), (
@@ -330,7 +331,7 @@ if __name__ == "__main__":
 
                 points = [ lu, ru, rd, ld ]
 
-                if angle != 0:
+                if not (abs(angle) == 90 or abs(angle) == 270) and angle != 0:
                    points = transform( points, M )
                 else:
                    points = np.array(points)
