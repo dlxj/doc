@@ -234,8 +234,8 @@ if __name__ == "__main__":
                 elif angle != 0:
 
                     # 变换前画出绿框，方便追踪点的前后变化
-                    img_color = cv2.rectangle(img_color, (word_x, word_y), (
-                        word_x + word_width, word_y + word_height), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
+                    # img_color = cv2.rectangle(img_color, (word_x, word_y), (
+                    #     word_x + word_width, word_y + word_height), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
 
                     # cv2.imshow("green", img_color)
                     # cv2.waitKey(0)
@@ -248,9 +248,9 @@ if __name__ == "__main__":
                         [word_x, word_y + word_height],                # 左下
                     ])
 
-                    # cv2.fillPoly(img_color, pts=[points], color=(255, 0, 0)) # 填充
-                    cv2.polylines(img_color, [points], isClosed=True, color=(
-                        255, 0, 0), thickness=1)  # 只画线，不填充
+                    # # cv2.fillPoly(img_color, pts=[points], color=(255, 0, 0)) # 填充
+                    # cv2.polylines(img_color, [points], isClosed=True, color=(
+                    #     255, 0, 0), thickness=1)  # 只画线，不填充
 
                     # cv2.imshow("polys", img_color)
                     # cv2.waitKey(0)
@@ -292,11 +292,11 @@ if __name__ == "__main__":
                     transformed_points_int = np.round(
                         transformed_points, decimals=0).astype(np.int32)  # 批量四舍五入
 
-                    cv2.polylines(img_color, [transformed_points_int], isClosed=True, color=(
-                        0, 0, 255), thickness=1)  # 只画线，不填充
+                    # cv2.polylines(img_color, [transformed_points_int], isClosed=True, color=(
+                    #     0, 0, 255), thickness=1)  # 只画线，不填充
 
-                    cv2.imshow("box", img_color)
-                    cv2.waitKey(0)
+                    # cv2.imshow("box", img_color)
+                    # cv2.waitKey(0)
 
                 # 四个角的位置 # 左上、右上、右下、左下，当NeedRotate为true时，如果最外层的angle不为0，需要按照angle矫正图片后，坐标才准确
                 pos = jo["pos"]
@@ -336,11 +336,16 @@ if __name__ == "__main__":
                 else:
                    points = np.array(points)
 
-                cv2.polylines(img_color, [points], isClosed=True, color=(
+                cv2.polylines(img_color, [points], isClosed=True, color=(   # 多边形，框得比较全
                         100, 0, 255), thickness=2)  # 只画线，不填充
 
                 cv2.imshow("box", img_color)
                 cv2.waitKey(0)
+
+                # img_color = cv2.rectangle(img_color, points[0], points[2], color, thickness)  # 正常矩形，框不完全
+                # cv2.imshow("box", img_color)
+
+                # cv2.waitKey(0)
 
 
                 lastx_mini = 0  # 下一个字符x 坐标的下界（肯定不小于这个值）
