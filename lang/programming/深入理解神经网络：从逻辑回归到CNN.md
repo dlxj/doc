@@ -10668,6 +10668,13 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 
 ```
+
+https://matpool.com/supports/doc-vscode-connect-matpool/
+    Remote Development 安装插件
+    VS Code 远程连接矩池云机器教程
+
+# vscode 打开远程文件夹 DB, ctrl + x 安装 python 扩展, ctrl+shift+p 输入 Python，选择选conda的python ，vscode 中修改train.py 在main 函数下加入命令行参数：
+
 # 推荐使用CUDA11.2
 python -m pip install paddlepaddle-gpu==2.3.2.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
@@ -10716,14 +10723,18 @@ conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.2 -c https://mirrors.tuna.t
 cp autodl-tmp/PaddleOCR.zip . && \
 unzip PaddleOCR.zip && \
 mv PaddleOCR-release-2.6 PaddleOCR && \
-cd PaddleOCR
+cd PaddleOCR && \
+pip install -r requirements.txt
 
 
 ```
 
 
 
-```
+```python
+# pip uninstall opencv-python
+# pip install opencv-python==4.6.0.66
+
 # 简单Demo：检测+识别
  
 from paddleocr import PaddleOCR, draw_ocr  # 导入第三方库
@@ -10731,35 +10742,43 @@ import numpy as np
  
 # Paddleocr目前支持的多语言语种可以通过修改lang参数进行切换
 # 例如`ch`, `en`, `fr`, `german`, `korean`, `japan`
- 
+
 ocr = PaddleOCR(use_angle_cls=True, lang="ch")  # lang表示语言的选择
- 
-img_path = './ppocr_img/imgs/11.jpg' # 测试图片的路径
+
+img_path = './640.jpg' # 测试图片的路径
 result = ocr.ocr(img_path, cls=True) # 结果
  
 # 打印结果，为一个list，即包含文本框的坐标，识别的文字及其置信度大小
 print('shpae:', np.array(result).shape) # 维度大小
 for line in result:
     print(line)
- 
- 
-# 可视化结果
-from PIL import Image
- 
-image = Image.open(img_path).convert('RGB') # 读取图像并转换为RGB格式
-boxes = [line[0] for line in result] # 存储文本框的坐标
-txts = [line[1][0] for line in result] # 存储识别得到的文字
-scores = [line[1][1] for line in result] # 存储文字的置信度分数
-#im_show = draw_ocr(image, boxes, txts, scores, font_path='./doc/fonts/simfang.ttf')
-im_show = draw_ocr(image, boxes, txts, scores, font_path='/root/Downloads/PaddleOCR-release-2.4/doc/fonts/simfang.ttf') # 使用指定字体绘图
-im_show = Image.fromarray(im_show) # 实现Array到image的转换
- 
-im_show.save('./Result/11.jpg') # 保存结果
 ```
 
 
 
+#### PPOCRLabel
 
+- https://github.com/PaddlePaddle/PaddleOCR/blob/dygraph/PPOCRLabel/README_ch.md
+
+```
+
+D:\usr\Python38\python.exe -m pip install --upgrade pip
+
+
+# gpu
+python -m pip install paddlepaddle-gpu -i https://mirror.baidu.com/pypi/simple
+
+# cpu
+python -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
+
+Windows
+pip install PPOCRLabel -i https://mirror.baidu.com/pypi/simple # 安装
+
+# 选择标签模式来启动
+PPOCRLabel --lang ch  # 启动【普通模式】，用于打【检测+识别】场景的标签
+PPOCRLabel --lang ch --kie True  # 启动 【KIE 模式】，用于打【检测+识别+关键字提取】场景的标签
+
+```
 
 
 
