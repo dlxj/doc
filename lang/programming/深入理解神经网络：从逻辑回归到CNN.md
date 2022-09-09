@@ -10025,6 +10025,9 @@ put it to folder data/chineseocr/labels/
 
 python mmocr/utils/ocr.py t.jpg --det None --recog SAR_CN --output out.jpg
 	# 单行中文，不需要检测，否则它会调用英文的文本检测
+	# https://github.com/open-mmlab/mmocr/issues/865 中文训练
+	# https://github.com/open-mmlab/mmocr/issues/723 中文训练
+	# https://github.com/open-mmlab/mmocr/issues/1291 细节满满
 
 python mmocr/utils/ocr.py t2.jpg --det DB_r50 --recog SAR_CN --output out2.jpg
 	# 多行中文，检测看看结果怎么样
@@ -10645,6 +10648,16 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 ```
 
 
+
+## PaddleOCR
+
+- https://juejin.cn/post/6956430529952481310  PaddleOCR二次全流程——5.FAQ记录
+
+- https://blog.csdn.net/wss794/article/details/122451815  
+
+  > paddleocr：使用自己的数据集微调文字识别模型
+
+- https://www.jianshu.com/p/07623c6bc899  Python PaddleOCR 识别图片中的中文
 
 
 

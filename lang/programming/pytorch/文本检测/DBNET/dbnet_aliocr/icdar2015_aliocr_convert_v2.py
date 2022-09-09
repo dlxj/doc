@@ -376,6 +376,8 @@ if __name__ == "__main__":
                    points = np.array(points)
                    img_cuted = cutPoly(img_color, points)
                    cv2.imwrite(f'./tmp/{g_count}.jpg', img_cuted)
+                   with open(f'./tmp/{g_count}.txt', 'w', encoding='utf-8') as f:
+	                    f.write(word)
                    g_count += 1
 
                 cv2.polylines(img_color, [points], isClosed=True, color=(   # 多边形，框得比较全
@@ -410,6 +412,10 @@ if __name__ == "__main__":
 
                     img_cuted = cutPoly(img_color_transform, ps)
                     cv2.imwrite(f'./tmp/{g_count}.jpg', img_cuted)
+
+                    with open(f'./tmp/{g_count}.txt', 'w', encoding='utf-8') as f:
+	                    f.write(word)
+                    
                     g_count += 1
 
                     cv2.polylines(img_color, [ ps ], isClosed=True, color=(
