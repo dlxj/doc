@@ -10665,6 +10665,8 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 - https://blog.csdn.net/YY007H/article/details/124973777 单行文本识别
 
+- https://zhuanlan.zhihu.com/p/523972865 PPv3-OCR自定义数据从训练到部署
+
 
 
 ```
@@ -10777,6 +10779,60 @@ pip install PPOCRLabel -i https://mirror.baidu.com/pypi/simple # 安装
 # 选择标签模式来启动
 PPOCRLabel --lang ch  # 启动【普通模式】，用于打【检测+识别】场景的标签
 PPOCRLabel --lang ch --kie True  # 启动 【KIE 模式】，用于打【检测+识别+关键字提取】场景的标签
+
+```
+
+
+
+##### 切分数据
+
+```
+
+将 PPOCRLabel 标记得到的数据文件夹命名为：train_data，放在 PaddleOCR 源码根目录
+
+cd PPOCRLabel && \
+python gen_ocr_train_val_test.py
+
+```
+
+
+
+##### 训练
+
+最后需要提供一个字典（{word_dict_name}.txt），使模型在训练时，可以将所有出现的字符映射为字典的索引。
+
+因此字典需要包含所有希望被正确识别的字符，{word_dict_name}.txt需要写成如下格式，并以 `utf-8` 编码格式保存：
+
+```
+l
+d
+a
+d
+r
+n
+```
+
+word_dict.txt 每行有一个单字，将字符与数字索引映射在一起，“and” 将被映射成 [2 5 1]
+
+- 内置字典
+
+PaddleOCR内置了一部分字典，可以按需使用。
+
+`ppocr/utils/ppocr_keys_v1.txt` 是一个包含6623个字符的中文字典
+
+
+
+训练中文数据，推荐使用 configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml，
+
+
+
+```
+python tools/train.py -c configs/rec/ch_ppocr_v2.0/rec_chinese_common_train_v2.0.yml 
+
+# 微调
+python tools/train.py -c configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy
+
+
 
 ```
 
