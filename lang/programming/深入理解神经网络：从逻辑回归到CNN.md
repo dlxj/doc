@@ -10651,6 +10651,10 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 ## PaddleOCR
 
+- https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/recognition.md
+
+  > 训练文档
+
 - https://juejin.cn/post/6956430529952481310  PaddleOCR二次全流程——5.FAQ记录
 
 - https://blog.csdn.net/wss794/article/details/122451815  
@@ -10658,6 +10662,106 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
   > paddleocr：使用自己的数据集微调文字识别模型
 
 - https://www.jianshu.com/p/07623c6bc899  Python PaddleOCR 识别图片中的中文
+
+- https://blog.csdn.net/YY007H/article/details/124973777 单行文本识别
+
+
+
+```
+# 推荐使用CUDA11.2
+python -m pip install paddlepaddle-gpu==2.3.2.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+
+C:\Users\Administrator\.ssh\config
+Host region-11.autodl.com
+  HostName region-11.autodl.com
+  Port 16116
+  User root
+
+# 3090 + Python3.8 + torch 1.10.1 + Cuda 11.1 # 这环境 1080ti ~ 3090 都适用
+
+- https://developer.nvidia.com/zh-cn/blog/updating-the-cuda-linux-gpg-repository-key/
+    >更新 CUDA Linux GPG 存储库密钥
+
+cat /etc/os-release    
+cat /proc/version
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
+
+
+
+dpkg -i cuda-keyring_1.0-1_all.deb
+
+apt-get update
+apt-get -y install cuda-11-2
+
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
+bash Miniforge3-Linux-x86_64.sh -b && \
+~/miniforge3/bin/conda init && \
+ln -s ~/miniforge3/bin/conda /usr/local/bin && \
+ln -s ~/miniforge3/bin/activate /usr/local/bin && \
+ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
+source ~/miniforge3/etc/profile.d/conda.sh
+
+
+conda deactivate && \
+conda env remove -n PP
+
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n PP python=3.8 --yes && \
+source activate PP && \
+conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge 
+
+
+cp autodl-tmp/PaddleOCR.zip . && \
+unzip PaddleOCR.zip && \
+mv PaddleOCR-release-2.6 PaddleOCR && \
+cd PaddleOCR
+
+
+```
+
+
+
+```
+# 简单Demo：检测+识别
+ 
+from paddleocr import PaddleOCR, draw_ocr  # 导入第三方库
+import numpy as np
+ 
+# Paddleocr目前支持的多语言语种可以通过修改lang参数进行切换
+# 例如`ch`, `en`, `fr`, `german`, `korean`, `japan`
+ 
+ocr = PaddleOCR(use_angle_cls=True, lang="ch")  # lang表示语言的选择
+ 
+img_path = './ppocr_img/imgs/11.jpg' # 测试图片的路径
+result = ocr.ocr(img_path, cls=True) # 结果
+ 
+# 打印结果，为一个list，即包含文本框的坐标，识别的文字及其置信度大小
+print('shpae:', np.array(result).shape) # 维度大小
+for line in result:
+    print(line)
+ 
+ 
+# 可视化结果
+from PIL import Image
+ 
+image = Image.open(img_path).convert('RGB') # 读取图像并转换为RGB格式
+boxes = [line[0] for line in result] # 存储文本框的坐标
+txts = [line[1][0] for line in result] # 存储识别得到的文字
+scores = [line[1][1] for line in result] # 存储文字的置信度分数
+#im_show = draw_ocr(image, boxes, txts, scores, font_path='./doc/fonts/simfang.ttf')
+im_show = draw_ocr(image, boxes, txts, scores, font_path='/root/Downloads/PaddleOCR-release-2.4/doc/fonts/simfang.ttf') # 使用指定字体绘图
+im_show = Image.fromarray(im_show) # 实现Array到image的转换
+ 
+im_show.save('./Result/11.jpg') # 保存结果
+```
+
+
+
+
+
+
 
 
 
