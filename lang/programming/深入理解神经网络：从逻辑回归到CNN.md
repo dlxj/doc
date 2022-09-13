@@ -10827,7 +10827,7 @@ PaddleOCR内置了一部分字典，可以按需使用。
 
 
 ```
-python tools/train.py -c configs/rec/ch_ppocr_v2.0/rec_chinese_common_train_v2.0.yml 
+python tools/train.py -c D:\pytorch\PaddleOCR\configs\rec\PP-OCRv3\ch_PP-OCRv3_rec_distillation.yml  
 
 # 微调
 python tools/train.py -c configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy
