@@ -1218,6 +1218,13 @@ file1.close()
 
 
 
+### 遍历
+
+```
+    for root, dirs, files in os.walk(args.datasetRootPath):
+        for dir in dirs:
+```
+
 
 
 ### 递归遍历

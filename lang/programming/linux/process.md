@@ -44,7 +44,8 @@ tmux
 tmux attach # default 0
 
 tmux attach -t 0
-ctrl + D # 退出当前 session
+Contol + b  后按 d 可以离开环境并不影响当前程序的执行（离开后可以断开 ssh 连接）
+ctrl + D # 退出当前 session，中断程序执行
 tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 ```
