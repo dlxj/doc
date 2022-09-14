@@ -10995,6 +10995,35 @@ PaddleOCR内置了一部分字典，可以按需使用。
 
 
 ```
+# pip uninstall opencv-python
+# pip install opencv-python==4.6.0.66
+# pip install pyyaml
+
+# 训练
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+# 继续上一次训练(epoch 接着上一次的断点开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 微调 (epoch 从一开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.pretrained_model=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 导出模型
+python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
+
+# 推断
+python tools/infer/predict_rec.py --image_dir=/root/PaddleOCR/train_data/rec/test/0093_crop_10.jpg --rec_model_dir=output/model/Student
+
+```
+
+
+
+
+
+```
 python tools/train.py -c D:\pytorch\PaddleOCR\configs\rec\PP-OCRv3\ch_PP-OCRv3_rec_distillation.yml  
 
 # 微调
