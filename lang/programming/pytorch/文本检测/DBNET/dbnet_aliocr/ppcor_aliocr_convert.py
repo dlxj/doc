@@ -275,11 +275,11 @@ if __name__ == "__main__":
                 transformed_points_int = np.round(
                     transformed_points, decimals=0).astype(np.int32)  # 批量四舍五入
 
-                cv2.polylines(img_color, [transformed_points_int], isClosed=True, color=(
-                    0, 0, 255), thickness=2)  # 画转换后的点
+                # cv2.polylines(img_color, [transformed_points_int], isClosed=True, color=(
+                #     0, 0, 255), thickness=2)  # 画转换后的点
 
-                cv2.polylines(img_color_origin, [points], isClosed=True, color=(
-                    random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), thickness=2)  # 画转换前的点
+                # cv2.polylines(img_color_origin, [points], isClosed=True, color=(
+                #     random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), thickness=2)  # 画转换前的点
 
                 # cv2.imshow("orgin", img_color_origin)
                 # cv2.waitKey(0)
@@ -347,20 +347,21 @@ if __name__ == "__main__":
                 ]
             )
 
-            img_cuted = cutPoly(img, ps3)
+            img_cuted = cutPoly(img, points1)
             cv2.imwrite(f'./tmp/{g_count2}.jpg', img_cuted)
             with open(f'./tmp/{g_count2}.txt', 'w', encoding='utf-8') as f:
                 f.write(word)
             g_count2 += 1
 
-            cv2.polylines(img_color, [points], isClosed=True, color=(   # 多边形，框得比较全
-                100, 0, 255), thickness=2)  # 只画线，不填充
+            # cv2.polylines(img_color_origin, [points], isClosed=True, color=(   # 多边形，框得比较全
+            #     100, 0, 255), thickness=2)  # 只画线，不填充
+
+
 
             cv2.polylines(img_color_origin, [points1], isClosed=True, color=(
                 random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), thickness=2)  # 画转换前的点
 
-
-            cv2.polylines(img_color_origin, [ps3], isClosed=True, color=(255, 0, 0), thickness=2)
+            # cv2.polylines(img_color_origin, [ps3], isClosed=True, color=(255, 0, 0), thickness=2)
 
             cv2.imshow("orgin", img_color_origin)
             cv2.waitKey(0)
