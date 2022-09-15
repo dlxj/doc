@@ -10669,6 +10669,10 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 - https://zhuanlan.zhihu.com/p/523972865 PPv3-OCR自定义数据从训练到部署
 
+- https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.4/doc/doc_ch/knowledge_distillation.md
+
+  > 中文识别推荐用的是知识蒸馏 
+
 
 
 ```
@@ -11043,7 +11047,17 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -
 python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
 
 # 推断
-python tools/infer/predict_rec.py --image_dir=/root/PaddleOCR/train_data/rec/test/0093_crop_10.jpg --rec_model_dir=output/model/Student
+python tools/infer/predict_rec.py --image_dir=/root/PaddleOCR/train_data/rec/test/0093_crop_10.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
+	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
+
+
+
+# 评估
+python3 tools/eval.py -c ./configs/rec/rec_chinese_lite_train_v2.0.yml  -o Global.checkpoints=./output/rec_chinese_lite_v2.0/latest
+
+# 预测
+python3 tools/infer_rec.py -c ./configs/rec/rec_chinese_common_train_v2.0.yml  -o Global.checkpoints=./output/rec_chinese_common_v2.0/best_accuracy Global.infer_img=doc/13_crop_4.jpg
+
 
 ```
 

@@ -146,6 +146,7 @@ def cutPoly(img, pts):
 if __name__ == "__main__":
 
     root = 'train_data'
+    tmp = 'tmp'
     label_path = os.path.join(root, 'Label.txt')
     
     key_path = os.path.join(root, 'keys.txt')
@@ -155,9 +156,14 @@ if __name__ == "__main__":
     if os.path.exists(root):
         shutil.rmtree(root)
         # os.rmdir(root)
+    if os.path.exists(tmp):
+        shutil.rmtree(tmp)
 
     if not os.path.exists(root):
         os.makedirs(root)
+
+    if not os.path.exists(tmp):
+        os.makedirs(tmp)
 
     label = ''
     keys = ''
@@ -196,6 +202,10 @@ if __name__ == "__main__":
             continue
 
         jsn = load_json(json_path)
+
+        if not ('prism_wordsInfo' in jsn):
+            print(f'Warning: no charater in {img_path}')
+            continue
 
         with open(img_path, "r", encoding="utf-8") as fp:
             imgdata = fp.read()
@@ -407,6 +417,8 @@ if __name__ == "__main__":
         line = f'{dst_img_path}\t{arr_str}\n'
         label += line
 
+        print( f'{g_count - 1} / {len(json_paths)} task done.' )
+
     ks = list( dic_words.keys() )
 
     keys = '\n'.join(ks)
@@ -419,3 +431,5 @@ if __name__ == "__main__":
 
     with open(fileState_path, "w", encoding='utf-8') as fp:
         fp.write(states)
+
+    print('all task done.')

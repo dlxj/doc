@@ -15,6 +15,13 @@ F11 切换全屏
 
 
 ```
+# 加 -u 才能看到打印的输出
+nohup python3.8 -u anime_Danganronpa_version1.py >outlog &
+```
+
+
+
+```
 # 不安装依赖
 On some systems (like Termux), it is not possible to install pycryptodomex. In that case, install without dependancies:
 
