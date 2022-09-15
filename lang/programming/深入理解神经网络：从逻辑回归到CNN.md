@@ -10760,6 +10760,32 @@ for line in result:
 
 
 
+#### 英文推断
+
+```
+git clone git@github.com:PaddlePaddle/PaddleOCR.git
+
+cd PaddleOCR
+
+mkdir inference && cd inference
+# 下载英文端到端模型并解压
+wget https://paddleocr.bj.bcebos.com/dygraph_v2.0/pgnet/e2e_server_pgnetA_infer.tar && tar xf e2e_server_pgnetA_infer.tar
+
+inference.pdmodel以及inference.pdiparams，前者储存了整个神经网络模型的结构，而后者储存了各层训练完后的权重参数。如果你想可视化地浏览整个文件，可以使用Netron这个工具打开这两个文件，整个模型的结构就一览无余了。
+
+# 批量识别
+python3 tools/infer/predict_e2e.py --e2e_algorithm="PGNet" --image_dir="./doc/imgs_en/" --e2e_model_dir="./inference/e2e_server_pgnetA_infer/" --e2e_pgnet_valid_set="totaltext"
+
+nvidia-smi，就能看到一个python任务正在占用GPU
+
+
+打开保存结果的目录inference_results就能看到识别的结果了
+```
+
+
+
+
+
 #### PPOCRLabel
 
 - https://github.com/PaddlePaddle/PaddleOCR/blob/dygraph/PPOCRLabel/README_ch.md
