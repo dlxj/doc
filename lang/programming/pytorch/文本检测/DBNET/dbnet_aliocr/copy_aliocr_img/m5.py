@@ -16,12 +16,12 @@ if not os.path.exists('data'):
     os.makedirs('data/img')
     os.makedirs('data/json')
 
-root_img1 = '/home/data/users/weiqibang/data_backup/88_yingedu_20220908/www/ocr_server/data/img'
-root_json1 = '/home/data/users/weiqibang/data_backup/88_yingedu_20220908/www/ocr_server/data/json'
+root_img1 = 'xx/www/ocr_server/data/img'
+root_json1 = 'xx/www/ocr_server/data/json'
 
 
-root_img2 = '/home/data/users/weiqibang/data_backup/88_yingedu_20220617/www/ocr_server/data/img'
-root_json2 = '/home/data/users/weiqibang/data_backup/88_yingedu_20220617/www/ocr_server/data/json'
+root_img2 = 'yy/www/ocr_server/data/img'
+root_json2 = 'yy/www/ocr_server/data/json'
 
 
 for root, dirs, files in os.walk( img_dir ):
@@ -55,7 +55,9 @@ for root, dirs, files in os.walk( img_dir ):
             print(f'json {name} not exists ###')
             continue
 
-        shutil.copyfile(img_path, 'data/img')
-        shutil.copyfile(json_path, 'data/json')
+        
 
-        print( img_path )
+        shutil.copyfile(img_path, f'data/img/{os.path.basename(img_path)}')
+        shutil.copyfile(json_path, f'data/json/{os.path.basename(json_path)}')
+
+print('done.')
