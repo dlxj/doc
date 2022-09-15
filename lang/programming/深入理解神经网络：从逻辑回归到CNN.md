@@ -10673,6 +10673,22 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
   > 中文识别推荐用的是知识蒸馏 
 
+- https://github.com/PaddlePaddle/PaddleOCR/issues/7482、
+
+  > SynthText/MJsynth/Synthetic-Chinese-String-Dataset   中文数据集
+
+- https://github.com/PaddlePaddle/PaddleOCR/issues/5921 超大分辨率
+
+  > ```
+  > 关于RecAug，源代码实现在ppocr/data/imaug/rec_img_aug.py文件中，参数主要包含不同方法的概率，默认参数是我们调整后比较好的参数了，可以在这里debug看下
+  > 关于RecConAug，源代码也在ppocr/data/imaug/rec_img_aug.py文件中，参数主要包含概率，图像shape，ext_data_num参数，这个ext_data_num指的是最多concat的图像数量，默认1的话效果已经很好了，训练数据都是短文本的话，可以设置为2试下。
+  > ```
+
+  > ```
+  > 1.如你所说，最长边小于该参数时，不做resize操作。
+  > 2.有的网络是固定尺寸输入的，所以需要你把图片resize成相同大小，这一情况取决于网络的设定，通常来说分类和目标检测网络使用这一设置。当前paddleocr主推的dbnet文本检测，使用基于语义分割的文本检测，并不需要固定尺寸。裁剪为边长=del_limit_side_len（默认值为960）
+  > ```
+
 
 
 ```
@@ -10784,6 +10800,38 @@ nvidia-smi，就能看到一个python任务正在占用GPU
 
 
 打开保存结果的目录inference_results就能看到识别的结果了
+```
+
+
+
+#### 中文推断
+
+```
+!python3 tools/infer/predict_system.py \
+    --image_dir="../../test" \
+    --det_model_dir="./inference/det_db" \
+    --rec_model_dir="./inference/rec_rare" \
+    --rec_image_shape="3, 32, 320" \
+    --rec_char_type="ch" \
+    --rec_algorithm="RARE" \
+    --use_space_char False \
+    --max_text_length 7 \
+    --rec_char_dict_path="../word_dict.txt" \
+    --use_gpu False 
+```
+
+
+
+```
+PaddleOCR(use_angle_cls=True, lang="ch", det_limit_type='min', det_limit_side_len=64)
+
+设定短边的最小分辨率，用你的image图片，det_limit_side_len=64，文字全能检测出来。
+
+默认参数是det_limit_type='max', det_limit_side_len=960，也就是长边最大960.
+
+改为det_limit_type='min', det_limit_side_len=64，也就是短边最小64.
+
+算法本身挺好用的，注意里面参数设置
 ```
 
 
@@ -11030,6 +11078,15 @@ PaddleOCR内置了一部分字典，可以按需使用。
 # pip uninstall opencv-python
 # pip install opencv-python==4.6.0.66
 # pip install pyyaml
+
+cp autodl-tmp/train_data.zip . && \
+unzip train_data.zip -d PaddleOCR
+
+# 空间不够用软链接
+ln -s /root/autodl-tmp/train_data /root/PaddleOCR/train_data
+
+cd PPOCRLabel && \
+python gen_ocr_train_val_test.py
 
 # 训练
 source activate PP && \
