@@ -10653,6 +10653,8 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 - https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/recognition.md
 
+  - https://github.com/PaddlePaddle/PaddleOCR/blob/static/doc/doc_ch/FAQ.md
+
   > 训练文档
 
 - https://juejin.cn/post/6956430529952481310  PaddleOCR二次全流程——5.FAQ记录
@@ -11034,6 +11036,12 @@ python tools/train.py -c configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml -o G
 ```
 
 
+
+##### 模型转换
+
+- https://www.jianshu.com/p/3c8a14bf2a91
+
+  > 安卓端部署PPOCR的ncnn模型——模型转换
 
 
 

@@ -3,6 +3,11 @@
 
 PPOCRLabel --lang ch  # 启动标注工具
 
+cp autodl-tmp/train_data.zip . && \
+unzip train_data.zip -d PaddleOCR
+
+# https://github.com/PaddlePaddle/PaddleOCR/blob/static/doc/doc_ch/FAQ.md
+
 新建文件夹 train_data, 要标注的图片全部放在里面
 
 新建 train_data/Label.txt 内容如下
