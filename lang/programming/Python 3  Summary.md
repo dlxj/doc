@@ -1153,6 +1153,19 @@ def unchinese_remove(s):
 
 
 
+### 删除目录
+
+```
+import shutil
+shutil.rmtree(root)
+
+os.rmdir(root) # 只能删除空目录
+```
+
+
+
+
+
 ### read file
 
 
