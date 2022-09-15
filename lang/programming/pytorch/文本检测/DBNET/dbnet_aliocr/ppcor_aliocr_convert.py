@@ -8,6 +8,8 @@ unzip train_data.zip -d PaddleOCR
 
 # https://github.com/PaddlePaddle/PaddleOCR/blob/static/doc/doc_ch/FAQ.md
 
+# 7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on data.7z data/
+
 新建文件夹 train_data, 要标注的图片全部放在里面
 
 新建 train_data/Label.txt 内容如下
