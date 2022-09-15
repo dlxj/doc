@@ -140,6 +140,10 @@ if __name__ == "__main__":
 
     root = 'train_data'
     label_path = os.path.join(root, 'Label.txt')
+    
+    key_path = os.path.join(root, 'keys.txt')
+
+    fileState_path = os.path.join(root, 'fileState.txt')
 
     if os.path.exists(root):
         shutil.rmtree(root)
@@ -149,6 +153,9 @@ if __name__ == "__main__":
         os.makedirs(root)
 
     label = ''
+    keys = ''
+    states = ''
+
 
     dic_words = {}  # 所有词
 
@@ -204,6 +211,7 @@ if __name__ == "__main__":
 
         name = f'{g_count}.jpg'
         dst_img_path = f'{root}/{name}'
+        states += f'G:\\train_data\\{name}\t1\n'
         g_count += 1
 
         cv2.imwrite(dst_img_path, img)
@@ -392,6 +400,15 @@ if __name__ == "__main__":
         line = f'{dst_img_path}\t{arr_str}\n'
         label += line
 
+    ks = list( dic_words.keys() )
+
+    keys = '\n'.join(ks)
+
     with open(label_path, "w", encoding='utf-8') as fp:
         fp.write(label)
 
+    with open(key_path, "w", encoding='utf-8') as fp:
+        fp.write(keys)
+
+    with open(fileState_path, "w", encoding='utf-8') as fp:
+        fp.write(states)
