@@ -46,7 +46,7 @@ icdar2015 文本检测数据集
 
 训练命令 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 
-训练图片的宽度最长的是： 1666 x 40  ,  是不是要调整什么配置参数才可以？
+训练图片的宽度最长的是： 1666 x 40  ,  是不是要调整相应配置参数比较好？
 
 图片是扫描书籍得到的, 总共1000 多页，然后用 PPOCRLabel 生成了标注数据 
 
