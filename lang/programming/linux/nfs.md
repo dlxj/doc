@@ -22,7 +22,124 @@ nfs 成功
 		showmount -e 192.168.1.xxx     # 显示 .124 的共享文件
 
 		mount -t nfs 192.168.1.xxx:/home/data/users/xxx/data_backup  /yingedu/shared    # 挂载远程目录
+		
+
+
+# windwos 客户端
+
+【Win+R】运行，复制输入以下命令：
+
+OptionalFeatures
+
+将 NFS相关的这三项，全部打上勾，确定。安装完成。
+
+
+
+		
 ````
+
+
+
+# 三、Win10客户端访问NFS服务
+
+## 1. Win10安装NFS客户端
+
+打开 控制面板 —> 程序 —> 启用或关闭Windows功能
+
+也可以用【Win+R】运行，复制输入以下命令：
+
+```
+OptionalFeatures
+```
+
+![Win10客户端访问NFS服务1](nfs.assets/win10-nfs-1.png)
+
+如上图，将 NFS相关的这三项，全部打上勾，确定。安装完成。
+
+## 2. 访问NFS目录
+
+安装好后就能在Windows的命令行，使用 showmount 和 mount 命令访问NFS服务器了。
+
+```PowerShell
+C:\Users\OdinXu> showmount -e 192.168.1.32
+Exports list on 192.168.1.32:
+/data                              192.168.1.27
+/public                            192.168.1.0/24
+/var/www/html                      *
+
+C:\Users\OdinXu> mount \\192.168.1.32\public  X:
+X: is now successfully connected to \\192.168.1.32\public
+
+The command completed successfully.
+```
+
+showmount命令参数和Linux的一样。 mount命令有些不同，不是使用一个目录作为挂载点，而是使用一个未使用的盘符。比如命令行最后一个 X: 表示将远程NFS目录，映射为Windows本地的一个磁盘X盘。也可以使用其它英文字母 A–Z
+
+映射成功后如下图：
+
+![Win10客户端访问NFS服务2](nfs.assets/win10-nfs-2.png)
+
+使用完后，可以用umount命令卸载磁盘映射。
+
+```PowerShell
+C:\Users\OdinXu> umount X:
+```
+
+单独输入 `mount` 不带任何参数，可以列出当前所有已经加载(映射)的NFS目录。
+
+## 3. 只读问题
+
+访问NFS正常，但是只能读，不能写，不能创建目录。
+
+先确认`/etc/exports`配置文件内容，是否为 `rw` 再确认目录权限，试试777：
+
+```bash
+chmod 777 /public/
+```
+
+## 4. Win10访问NFS存在中文乱码问题
+
+原因是Linux通常是UTF-8编码，而Windows自带的NFS客户端工具，一直不升级支持UTF-8，从而导致中文显示乱码。这绝对是Windows的锅。
+
+详见`mount --help`说明：
+
+```
+-o lang=euc-jp|euc-tw|euc-kr|shift-jis|big5|ksc5601|gb2312-80|ansi
+```
+
+### 解决方法1
+
+使用第三方开源工具 https://github.com/cbodley/ms-nfs41-client
+
+64位Windows下载安装这个： [ms-nfs41-client-setup-x64.exe](https://github.com/cbodley/ms-nfs41-client/releases/download/v1.0.0/ms-nfs41-client-setup-x64.exe)
+
+32位Windows下载安装这个： [ms-nfs41-client-setup-x86.exe](https://github.com/cbodley/ms-nfs41-client/releases/download/v1.0.0/ms-nfs41-client-setup-x86.exe)
+
+安装好后，这样用：
+
+```PowerShell
+nfs_mount X: 192.168.1.32:/public
+```
+
+### 解决方法2 【不推荐使用】
+
+```
+2020/5/5 修改为不推荐使用
+因为用了这个设置后，我用招商银行专业版，出现乱码。改回来就恢复正常。
+还是使用上面的解决方法1吧。
+```
+
+用【Win+R】运行，复制输入以下命令：
+
+```
+intl.cpl
+```
+
+![Win10客户端访问NFS服务–解决中文乱码问题](nfs.assets/win10-nfs-3.png)
+
+如上图，在打开的“区域”功能界面，选择“管理”标签 —> 更改系统区域设置 —> 勾选中“Beta版：使用Unicode UTF-8提供全球语言支持” —> 确定 —> 重启Windows系统。
+
+这样操作之后，中文显示就一切正常了。
 
 
 

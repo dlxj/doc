@@ -10722,7 +10722,7 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/
 
 dpkg -i cuda-keyring_1.0-1_all.deb
 
-apt-get update
+apt-get update && \
 apt-get -y install cuda-11-2
 
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
@@ -10832,6 +10832,31 @@ PaddleOCR(use_angle_cls=True, lang="ch", det_limit_type='min', det_limit_side_le
 改为det_limit_type='min', det_limit_side_len=64，也就是短边最小64.
 
 算法本身挺好用的，注意里面参数设置
+```
+
+
+
+#### 删除原环境
+
+```
+
+apt-get --purge remove cuda nvidia* libnvidia-* && \
+dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+apt-get remove cuda-* && \
+apt autoremove && \
+apt-get update
+
+
+apt-get --purge -y remove 'cuda*'  && \
+apt-get --purge -y remove 'nvidia*' && \
+apt autoremove -y && \
+apt-get clean && \
+apt update -qq;
+
+/usr/local/cuda/bin/nvcc --version
+
+ldconfig -p | grep cuda
+
 ```
 
 
@@ -11131,6 +11156,224 @@ python tools/train.py -c configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml -o G
 
 
 ```
+
+
+
+```
+# 配置
+/root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+Global:
+  debug: false
+  use_gpu: true
+  epoch_num: 1200
+  log_smooth_window: 20
+  print_batch_step: 10
+  save_model_dir: ./output/rec_ppocr_v3_distillation
+  save_epoch_step: 400
+  eval_batch_step: [0, 2000]
+  cal_metric_during_train: true
+  pretrained_model:
+  checkpoints:
+  save_inference_dir:
+  use_visualdl: false
+  infer_img: doc/imgs_words/ch/word_1.jpg
+  character_dict_path: train_data/keys.txt
+  max_text_length: &max_text_length 45
+  infer_mode: false
+  use_space_char: true
+  distributed: true
+  save_res_path: ./output/rec/predicts_ppocrv3_distillation.txt
+
+
+Optimizer:
+  name: Adam
+  beta1: 0.9
+  beta2: 0.999
+  lr:
+    name: Piecewise
+    decay_epochs : [700, 800]
+    values : [0.0005, 0.00005]
+    warmup_epoch: 5
+  regularizer:
+    name: L2
+    factor: 3.0e-05
+
+
+Architecture:
+  model_type: &model_type "rec"
+  name: DistillationModel
+  algorithm: Distillation
+  Models:
+    Teacher:
+      pretrained:
+      freeze_params: false
+      return_all_feats: true
+      model_type: *model_type
+      algorithm: SVTR
+      Transform:
+      Backbone:
+        name: MobileNetV1Enhance
+        scale: 0.5
+        last_conv_stride: [1, 2]
+        last_pool_type: avg
+      Head:
+        name: MultiHead
+        head_list:
+          - CTCHead:
+              Neck:
+                name: svtr
+                dims: 64
+                depth: 2
+                hidden_dims: 120
+                use_guide: True
+              Head:
+                fc_decay: 0.00001
+          - SARHead:
+              enc_dim: 512
+              max_text_length: *max_text_length
+    Student:
+      pretrained:
+      freeze_params: false
+      return_all_feats: true
+      model_type: *model_type
+      algorithm: SVTR
+      Transform:
+      Backbone:
+        name: MobileNetV1Enhance
+        scale: 0.5
+        last_conv_stride: [1, 2]
+        last_pool_type: avg
+      Head:
+        name: MultiHead
+        head_list:
+          - CTCHead:
+              Neck:
+                name: svtr
+                dims: 64
+                depth: 2
+                hidden_dims: 120
+                use_guide: True
+              Head:
+                fc_decay: 0.00001
+          - SARHead:
+              enc_dim: 512
+              max_text_length: *max_text_length
+Loss:
+  name: CombinedLoss
+  loss_config_list:
+  - DistillationDMLLoss:
+      weight: 1.0
+      act: "softmax"
+      use_log: true
+      model_name_pairs:
+      - ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+      dis_head: ctc
+      name: dml_ctc
+  - DistillationDMLLoss:
+      weight: 0.5
+      act: "softmax"
+      use_log: true
+      model_name_pairs:
+      - ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+      dis_head: sar
+      name: dml_sar
+  - DistillationDistanceLoss:
+      weight: 1.0
+      mode: "l2"
+      model_name_pairs:
+      - ["Student", "Teacher"]
+      key: backbone_out
+  - DistillationCTCLoss:
+      weight: 1.0
+      model_name_list: ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+  - DistillationSARLoss:
+      weight: 1.0
+      model_name_list: ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+
+PostProcess:
+  name: DistillationCTCLabelDecode
+  model_name: ["Student", "Teacher"]
+  key: head_out
+  multi_head: True
+
+Metric:
+  name: DistillationMetric
+  base_metric_name: RecMetric
+  main_indicator: acc
+  key: "Student"
+  ignore_space: False
+
+Train:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./train_data/
+    ext_op_transform_idx: 1
+    label_file_list:
+    - ./train_data/rec/train.txt
+    transforms:
+    - DecodeImage:
+        img_mode: BGR
+        channel_first: false
+    - RecConAug:
+        prob: 0.5
+        ext_data_num: 2
+        image_shape: [48, 320, 3]
+    - RecAug:
+    - MultiLabelEncode:
+    - RecResizeImg:
+        image_shape: [3, 48, 320]
+    - KeepKeys:
+        keep_keys:
+        - image
+        - label_ctc
+        - label_sar
+        - length
+        - valid_ratio
+  loader:
+    shuffle: true
+    batch_size_per_card: 64
+    drop_last: true
+    num_workers: 4
+Eval:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./train_data
+    label_file_list:
+    - ./train_data/rec/val.txt
+    transforms:
+    - DecodeImage:
+        img_mode: BGR
+        channel_first: false
+    - MultiLabelEncode:
+    - RecResizeImg:
+        image_shape: [3, 48, 320]
+    - KeepKeys:
+        keep_keys:
+        - image
+        - label_ctc
+        - label_sar
+        - length
+        - valid_ratio
+  loader:
+    shuffle: false
+    drop_last: false
+    batch_size_per_card: 64
+    num_workers: 4
+
+
+
+```
+
+
 
 
 
