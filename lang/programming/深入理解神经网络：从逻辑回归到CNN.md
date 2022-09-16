@@ -10691,6 +10691,12 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 
 
+use_shared_memory: False
+
+character_type: CN
+
+
+
 ```
 
 https://matpool.com/supports/doc-vscode-connect-matpool/
