@@ -10891,15 +10891,6 @@ PPOCRLabel --lang ch --kie True  # 启动 【KIE 模式】，用于打【检测+
 
 ##### 切分数据
 
-```
-
-将 PPOCRLabel 标记得到的数据文件夹命名为：train_data，放在 PaddleOCR 源码根目录
-
-cd PPOCRLabel && \
-python gen_ocr_train_val_test.py
-
-```
-
 
 
 ```python
@@ -11100,9 +11091,10 @@ PaddleOCR内置了一部分字典，可以按需使用。
 
 
 ```
-# pip uninstall opencv-python
-# pip install opencv-python==4.6.0.66
-# pip install pyyaml
+source activate PP && \
+pip uninstall opencv-python && \
+pip install opencv-python==4.6.0.66 && \
+pip install pyyaml
 
 cp autodl-tmp/train_data.zip . && \
 unzip train_data.zip -d PaddleOCR
