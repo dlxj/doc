@@ -10653,6 +10653,8 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 - https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/recognition.md
 
+  - https://github.com/PaddlePaddle/PaddleOCR/blob/static/doc/doc_ch/FAQ.md
+
   > 训练文档
 
 - https://juejin.cn/post/6956430529952481310  PaddleOCR二次全流程——5.FAQ记录
@@ -10666,6 +10668,32 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 - https://blog.csdn.net/YY007H/article/details/124973777 单行文本识别
 
 - https://zhuanlan.zhihu.com/p/523972865 PPv3-OCR自定义数据从训练到部署
+
+- https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.4/doc/doc_ch/knowledge_distillation.md
+
+  > 中文识别推荐用的是知识蒸馏 
+
+- https://github.com/PaddlePaddle/PaddleOCR/issues/7482、
+
+  > SynthText/MJsynth/Synthetic-Chinese-String-Dataset   中文数据集
+
+- https://github.com/PaddlePaddle/PaddleOCR/issues/5921 超大分辨率
+
+  > ```
+  > 关于RecAug，源代码实现在ppocr/data/imaug/rec_img_aug.py文件中，参数主要包含不同方法的概率，默认参数是我们调整后比较好的参数了，可以在这里debug看下
+  > 关于RecConAug，源代码也在ppocr/data/imaug/rec_img_aug.py文件中，参数主要包含概率，图像shape，ext_data_num参数，这个ext_data_num指的是最多concat的图像数量，默认1的话效果已经很好了，训练数据都是短文本的话，可以设置为2试下。
+  > ```
+
+  > ```
+  > 1.如你所说，最长边小于该参数时，不做resize操作。
+  > 2.有的网络是固定尺寸输入的，所以需要你把图片resize成相同大小，这一情况取决于网络的设定，通常来说分类和目标检测网络使用这一设置。当前paddleocr主推的dbnet文本检测，使用基于语义分割的文本检测，并不需要固定尺寸。裁剪为边长=del_limit_side_len（默认值为960）
+  > ```
+
+
+
+use_shared_memory: False
+
+character_type: CN
 
 
 
@@ -10700,7 +10728,7 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/
 
 dpkg -i cuda-keyring_1.0-1_all.deb
 
-apt-get update
+apt-get update && \
 apt-get -y install cuda-11-2
 
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
@@ -10758,6 +10786,89 @@ for line in result:
 
 
 
+#### 英文推断
+
+```
+git clone git@github.com:PaddlePaddle/PaddleOCR.git
+
+cd PaddleOCR
+
+mkdir inference && cd inference
+# 下载英文端到端模型并解压
+wget https://paddleocr.bj.bcebos.com/dygraph_v2.0/pgnet/e2e_server_pgnetA_infer.tar && tar xf e2e_server_pgnetA_infer.tar
+
+inference.pdmodel以及inference.pdiparams，前者储存了整个神经网络模型的结构，而后者储存了各层训练完后的权重参数。如果你想可视化地浏览整个文件，可以使用Netron这个工具打开这两个文件，整个模型的结构就一览无余了。
+
+# 批量识别
+python3 tools/infer/predict_e2e.py --e2e_algorithm="PGNet" --image_dir="./doc/imgs_en/" --e2e_model_dir="./inference/e2e_server_pgnetA_infer/" --e2e_pgnet_valid_set="totaltext"
+
+nvidia-smi，就能看到一个python任务正在占用GPU
+
+
+打开保存结果的目录inference_results就能看到识别的结果了
+```
+
+
+
+#### 中文推断
+
+```
+!python3 tools/infer/predict_system.py \
+    --image_dir="../../test" \
+    --det_model_dir="./inference/det_db" \
+    --rec_model_dir="./inference/rec_rare" \
+    --rec_image_shape="3, 32, 320" \
+    --rec_char_type="ch" \
+    --rec_algorithm="RARE" \
+    --use_space_char False \
+    --max_text_length 7 \
+    --rec_char_dict_path="../word_dict.txt" \
+    --use_gpu False 
+```
+
+
+
+```
+PaddleOCR(use_angle_cls=True, lang="ch", det_limit_type='min', det_limit_side_len=64)
+
+设定短边的最小分辨率，用你的image图片，det_limit_side_len=64，文字全能检测出来。
+
+默认参数是det_limit_type='max', det_limit_side_len=960，也就是长边最大960.
+
+改为det_limit_type='min', det_limit_side_len=64，也就是短边最小64.
+
+算法本身挺好用的，注意里面参数设置
+```
+
+
+
+#### 删除原环境
+
+```
+
+apt-get --purge remove cuda nvidia* libnvidia-* && \
+dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+apt-get remove cuda-* && \
+apt autoremove && \
+apt-get update
+
+
+apt-get --purge -y remove 'cuda*'  && \
+apt-get --purge -y remove 'nvidia*' && \
+apt autoremove -y && \
+apt-get clean && \
+apt update -qq;
+
+/usr/local/cuda/bin/nvcc --version
+
+ldconfig -p | grep cuda
+
+```
+
+
+
+
+
 #### PPOCRLabel
 
 - https://github.com/PaddlePaddle/PaddleOCR/blob/dygraph/PPOCRLabel/README_ch.md
@@ -10786,14 +10897,173 @@ PPOCRLabel --lang ch --kie True  # 启动 【KIE 模式】，用于打【检测+
 
 ##### 切分数据
 
+
+
+```python
+/root/PaddleOCR/PPOCRLabel/gen_ocr_train_val_test.py # 修改，直接F5 运行
+
+# coding:utf8
+import os
+import shutil
+import random
+import argparse
+
+
+# 删除划分的训练集、验证集、测试集文件夹，重新创建一个空的文件夹
+def isCreateOrDeleteFolder(path, flag):
+    flagPath = os.path.join(path, flag)
+
+    if os.path.exists(flagPath):
+        shutil.rmtree(flagPath)
+
+    os.makedirs(flagPath)
+    flagAbsPath = os.path.abspath(flagPath)
+    return flagAbsPath
+
+
+def splitTrainVal(root, absTrainRootPath, absValRootPath, absTestRootPath, trainTxt, valTxt, testTxt, flag):
+    # 按照指定的比例划分训练集、验证集、测试集
+    # dataAbsPath = os.path.abspath(root)
+    
+    dataAbsPath = os.path.dirname( os.path.dirname(os.path.abspath(__file__)) )
+    dataAbsPath = os.path.join(dataAbsPath, 'train_data')
+
+    if flag == "det":
+        labelFilePath = os.path.join(dataAbsPath, args.detLabelFileName)
+    elif flag == "rec":
+        labelFilePath = os.path.join(dataAbsPath, args.recLabelFileName)
+
+    labelFileRead = open(labelFilePath, "r", encoding="UTF-8")
+    labelFileContent = labelFileRead.readlines()
+    random.shuffle(labelFileContent)
+    labelRecordLen = len(labelFileContent)
+
+    for index, labelRecordInfo in enumerate(labelFileContent):
+        imageRelativePath = labelRecordInfo.split('\t')[0]
+        imageLabel = labelRecordInfo.split('\t')[1]
+        imageName = os.path.basename(imageRelativePath)
+
+        if flag == "det":
+            imagePath = os.path.join(dataAbsPath, imageName)
+        elif flag == "rec":
+            imagePath = os.path.join(dataAbsPath, args.recImageDirName, imageName)
+
+        # 按预设的比例划分训练集、验证集、测试集
+        trainValTestRatio = args.trainValTestRatio.split(":")
+        trainRatio = eval(trainValTestRatio[0]) / 10
+        valRatio = trainRatio + eval(trainValTestRatio[1]) / 10
+        curRatio = index / labelRecordLen
+
+        if curRatio < trainRatio:
+            imageCopyPath = os.path.join(absTrainRootPath, imageName)
+            shutil.copy(imagePath, imageCopyPath)
+            trainTxt.write("{}\t{}".format(imageCopyPath, imageLabel))
+        elif curRatio >= trainRatio and curRatio < valRatio:
+            imageCopyPath = os.path.join(absValRootPath, imageName)
+            shutil.copy(imagePath, imageCopyPath)
+            valTxt.write("{}\t{}".format(imageCopyPath, imageLabel))
+        else:
+            imageCopyPath = os.path.join(absTestRootPath, imageName)
+            shutil.copy(imagePath, imageCopyPath)
+            testTxt.write("{}\t{}".format(imageCopyPath, imageLabel))
+
+
+# 删掉存在的文件
+def removeFile(path):
+    if os.path.exists(path):
+        os.remove(path)
+
+
+def genDetRecTrainVal(args):
+    detAbsTrainRootPath = isCreateOrDeleteFolder(args.detRootPath, "train")
+    detAbsValRootPath = isCreateOrDeleteFolder(args.detRootPath, "val")
+    detAbsTestRootPath = isCreateOrDeleteFolder(args.detRootPath, "test")
+    recAbsTrainRootPath = isCreateOrDeleteFolder(args.recRootPath, "train")
+    recAbsValRootPath = isCreateOrDeleteFolder(args.recRootPath, "val")
+    recAbsTestRootPath = isCreateOrDeleteFolder(args.recRootPath, "test")
+
+    removeFile(os.path.join(args.detRootPath, "train.txt"))
+    removeFile(os.path.join(args.detRootPath, "val.txt"))
+    removeFile(os.path.join(args.detRootPath, "test.txt"))
+    removeFile(os.path.join(args.recRootPath, "train.txt"))
+    removeFile(os.path.join(args.recRootPath, "val.txt"))
+    removeFile(os.path.join(args.recRootPath, "test.txt"))
+
+    detTrainTxt = open(os.path.join(args.detRootPath, "train.txt"), "a", encoding="UTF-8")
+    detValTxt = open(os.path.join(args.detRootPath, "val.txt"), "a", encoding="UTF-8")
+    detTestTxt = open(os.path.join(args.detRootPath, "test.txt"), "a", encoding="UTF-8")
+    recTrainTxt = open(os.path.join(args.recRootPath, "train.txt"), "a", encoding="UTF-8")
+    recValTxt = open(os.path.join(args.recRootPath, "val.txt"), "a", encoding="UTF-8")
+    recTestTxt = open(os.path.join(args.recRootPath, "test.txt"), "a", encoding="UTF-8")
+
+    splitTrainVal(args.datasetRootPath, detAbsTrainRootPath, detAbsValRootPath, detAbsTestRootPath, detTrainTxt, detValTxt,
+                  detTestTxt, "det")
+
+    for root, dirs, files in os.walk(args.datasetRootPath):
+        for dir in dirs:
+            if dir == 'crop_img':
+                splitTrainVal(root, recAbsTrainRootPath, recAbsValRootPath, recAbsTestRootPath, recTrainTxt, recValTxt,
+                              recTestTxt, "rec")
+            else:
+                continue
+        break
+
+
+
+if __name__ == "__main__":
+
+
+    datasetRootPath = os.path.dirname( os.path.dirname(os.path.abspath(__file__)) )
+    datasetRootPath = os.path.join(datasetRootPath, 'train_data')
+
+    # 功能描述：分别划分检测和识别的训练集、验证集、测试集
+    # 说明：可以根据自己的路径和需求调整参数，图像数据往往多人合作分批标注，每一批图像数据放在一个文件夹内用PPOCRLabel进行标注，
+    # 如此会有多个标注好的图像文件夹汇总并划分训练集、验证集、测试集的需求
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--trainValTestRatio",
+        type=str,
+        default="6:2:2",
+        help="ratio of trainset:valset:testset")
+    parser.add_argument(
+        "--datasetRootPath",
+        type=str,
+        default=f"{datasetRootPath}",
+        help="path to the dataset marked by ppocrlabel, E.g, dataset folder named 1,2,3..."
+    )
+    parser.add_argument(
+        "--detRootPath",
+        type=str,
+        default=f"{datasetRootPath}/det",
+        help="the path where the divided detection dataset is placed")
+    parser.add_argument(
+        "--recRootPath",
+        type=str,
+        default=f"{datasetRootPath}/rec",
+        help="the path where the divided recognition dataset is placed"
+    )
+    parser.add_argument(
+        "--detLabelFileName",
+        type=str,
+        default="Label.txt",
+        help="the name of the detection annotation file")
+    parser.add_argument(
+        "--recLabelFileName",
+        type=str,
+        default="rec_gt.txt",
+        help="the name of the recognition annotation file"
+    )
+    parser.add_argument(
+        "--recImageDirName",
+        type=str,
+        default="crop_img",
+        help="the name of the folder where the cropped recognition dataset is located"
+    )
+    args = parser.parse_args()
+    genDetRecTrainVal(args)
 ```
 
-将 PPOCRLabel 标记得到的数据文件夹命名为：train_data，放在 PaddleOCR 源码根目录
 
-cd PPOCRLabel && \
-python gen_ocr_train_val_test.py
-
-```
 
 
 
@@ -10827,6 +11097,55 @@ PaddleOCR内置了一部分字典，可以按需使用。
 
 
 ```
+source activate PP && \
+pip uninstall opencv-python && \
+pip install opencv-python==4.6.0.66 && \
+pip install pyyaml
+
+cp autodl-tmp/train_data.zip . && \
+unzip train_data.zip -d PaddleOCR
+
+# 空间不够用软链接
+ln -s /root/autodl-tmp/train_data /root/PaddleOCR/train_data
+
+cd PPOCRLabel && \
+python gen_ocr_train_val_test.py
+
+# 训练
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+# 继续上一次训练(epoch 接着上一次的断点开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 微调 (epoch 从一开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.pretrained_model=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 导出模型
+python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
+
+# 推断
+python tools/infer/predict_rec.py --image_dir=/root/PaddleOCR/train_data/rec/test/0093_crop_10.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
+	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
+
+
+
+# 评估
+python3 tools/eval.py -c ./configs/rec/rec_chinese_lite_train_v2.0.yml  -o Global.checkpoints=./output/rec_chinese_lite_v2.0/latest
+
+# 预测
+python3 tools/infer_rec.py -c ./configs/rec/rec_chinese_common_train_v2.0.yml  -o Global.checkpoints=./output/rec_chinese_common_v2.0/best_accuracy Global.infer_img=doc/13_crop_4.jpg
+
+
+```
+
+
+
+
+
+```
 python tools/train.py -c D:\pytorch\PaddleOCR\configs\rec\PP-OCRv3\ch_PP-OCRv3_rec_distillation.yml  
 
 # 微调
@@ -10837,6 +11156,230 @@ python tools/train.py -c configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml -o G
 ```
 
 
+
+```
+# 配置
+/root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+Global:
+  debug: false
+  use_gpu: true
+  epoch_num: 1200
+  log_smooth_window: 20
+  print_batch_step: 10
+  save_model_dir: ./output/rec_ppocr_v3_distillation
+  save_epoch_step: 400
+  eval_batch_step: [0, 2000]
+  cal_metric_during_train: true
+  pretrained_model:
+  checkpoints:
+  save_inference_dir:
+  use_visualdl: false
+  infer_img: doc/imgs_words/ch/word_1.jpg
+  character_dict_path: train_data/keys.txt
+  max_text_length: &max_text_length 45
+  infer_mode: false
+  use_space_char: true
+  distributed: true
+  save_res_path: ./output/rec/predicts_ppocrv3_distillation.txt
+
+
+Optimizer:
+  name: Adam
+  beta1: 0.9
+  beta2: 0.999
+  lr:
+    name: Piecewise
+    decay_epochs : [700, 800]
+    values : [0.0005, 0.00005]
+    warmup_epoch: 5
+  regularizer:
+    name: L2
+    factor: 3.0e-05
+
+
+Architecture:
+  model_type: &model_type "rec"
+  name: DistillationModel
+  algorithm: Distillation
+  Models:
+    Teacher:
+      pretrained:
+      freeze_params: false
+      return_all_feats: true
+      model_type: *model_type
+      algorithm: SVTR
+      Transform:
+      Backbone:
+        name: MobileNetV1Enhance
+        scale: 0.5
+        last_conv_stride: [1, 2]
+        last_pool_type: avg
+      Head:
+        name: MultiHead
+        head_list:
+          - CTCHead:
+              Neck:
+                name: svtr
+                dims: 64
+                depth: 2
+                hidden_dims: 120
+                use_guide: True
+              Head:
+                fc_decay: 0.00001
+          - SARHead:
+              enc_dim: 512
+              max_text_length: *max_text_length
+    Student:
+      pretrained:
+      freeze_params: false
+      return_all_feats: true
+      model_type: *model_type
+      algorithm: SVTR
+      Transform:
+      Backbone:
+        name: MobileNetV1Enhance
+        scale: 0.5
+        last_conv_stride: [1, 2]
+        last_pool_type: avg
+      Head:
+        name: MultiHead
+        head_list:
+          - CTCHead:
+              Neck:
+                name: svtr
+                dims: 64
+                depth: 2
+                hidden_dims: 120
+                use_guide: True
+              Head:
+                fc_decay: 0.00001
+          - SARHead:
+              enc_dim: 512
+              max_text_length: *max_text_length
+Loss:
+  name: CombinedLoss
+  loss_config_list:
+  - DistillationDMLLoss:
+      weight: 1.0
+      act: "softmax"
+      use_log: true
+      model_name_pairs:
+      - ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+      dis_head: ctc
+      name: dml_ctc
+  - DistillationDMLLoss:
+      weight: 0.5
+      act: "softmax"
+      use_log: true
+      model_name_pairs:
+      - ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+      dis_head: sar
+      name: dml_sar
+  - DistillationDistanceLoss:
+      weight: 1.0
+      mode: "l2"
+      model_name_pairs:
+      - ["Student", "Teacher"]
+      key: backbone_out
+  - DistillationCTCLoss:
+      weight: 1.0
+      model_name_list: ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+  - DistillationSARLoss:
+      weight: 1.0
+      model_name_list: ["Student", "Teacher"]
+      key: head_out
+      multi_head: True
+
+PostProcess:
+  name: DistillationCTCLabelDecode
+  model_name: ["Student", "Teacher"]
+  key: head_out
+  multi_head: True
+
+Metric:
+  name: DistillationMetric
+  base_metric_name: RecMetric
+  main_indicator: acc
+  key: "Student"
+  ignore_space: False
+
+Train:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./train_data/
+    ext_op_transform_idx: 1
+    label_file_list:
+    - ./train_data/rec/train.txt
+    transforms:
+    - DecodeImage:
+        img_mode: BGR
+        channel_first: false
+    - RecConAug:
+        prob: 0.5
+        ext_data_num: 2
+        image_shape: [48, 320, 3]
+    - RecAug:
+    - MultiLabelEncode:
+    - RecResizeImg:
+        image_shape: [3, 48, 320]
+    - KeepKeys:
+        keep_keys:
+        - image
+        - label_ctc
+        - label_sar
+        - length
+        - valid_ratio
+  loader:
+    shuffle: true
+    batch_size_per_card: 64
+    drop_last: true
+    num_workers: 4
+Eval:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./train_data
+    label_file_list:
+    - ./train_data/rec/val.txt
+    transforms:
+    - DecodeImage:
+        img_mode: BGR
+        channel_first: false
+    - MultiLabelEncode:
+    - RecResizeImg:
+        image_shape: [3, 48, 320]
+    - KeepKeys:
+        keep_keys:
+        - image
+        - label_ctc
+        - label_sar
+        - length
+        - valid_ratio
+  loader:
+    shuffle: false
+    drop_last: false
+    batch_size_per_card: 64
+    num_workers: 4
+
+
+
+```
+
+
+
+
+
+##### 模型转换
+
+- https://www.jianshu.com/p/3c8a14bf2a91
+
+  > 安卓端部署PPOCR的ncnn模型——模型转换
 
 
 
