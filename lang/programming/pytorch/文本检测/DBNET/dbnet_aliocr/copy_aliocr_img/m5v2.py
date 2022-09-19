@@ -16,9 +16,7 @@ def md5(path):
     return hash_md5.hexdigest()
 
 
-# m = md5('0861.jpg')
-
-img_dir = '黑白'
+img_root = 'all_data'
 
 if not os.path.exists('data'):
     os.makedirs('data/img')
@@ -31,6 +29,7 @@ root_json1 = './data/json' # 'xx/www/ocr_server/data/json'
 root_img2 = './data/img' # 'yy/www/ocr_server/data/img'
 root_json2 = './data/json' # 'yy/www/ocr_server/data/json'
 
+dic_shape = {}
 
 for root, dirs, files in os.walk( root_json2 ):
     for name in files:
@@ -58,40 +57,31 @@ for root, dirs, files in os.walk( root_json2 ):
             imgdata = np.frombuffer(imgdata, np.uint8)
             img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
 
-            cv2.imshow('img', img)
-            cv2.waitKey(0)
+            # cv2.imshow('img', img)
+            # cv2.waitKey(0)
 
         if len(img.shape) != 3:  # 转彩图
             img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)  # DBNet 原版只能处理彩图，这里转一下
 
 
-
-
-        json_path1 = os.path.join(root_json1, f'{m}.json')
-        json_path2 = os.path.join(root_json2, f'{m}.json')
-
-        img_path = ''
-        json_path = ''
-
-        if os.path.exists(img_path1):
-            img_path = img_path1
-        elif os.path.exists(img_path2):
-            img_path = img_path2
-        else:
-            print(f'image {name} not exists!!!')
-            continue
+        # 把相同分辨率的图全部放一起
         
-        if os.path.exists(json_path1):
-            json_path = json_path1
-        elif os.path.exists(json_path2):
-            json_path = json_path2
-        else:
-            print(f'json {name} not exists ###')
-            continue
+        h, w = img.shape[0:2]
+        sp = f'{w}x{h}'
 
-        
+        p1 = os.path.join(img_root, sp, 'data/img')
+        p2 = os.path.join(img_root, sp, 'data/json')
 
-        shutil.copyfile(img_path, f'data/img/{os.path.basename(img_path)}')
-        shutil.copyfile(json_path, f'data/json/{os.path.basename(json_path)}')
+        if not os.path.exists(p1):
+            os.makedirs(p1)
+
+        if not os.path.exists(p2):
+            os.makedirs(p2)
+
+        dst1 =  os.path.join(p1, os.path.basename(img_path))
+        dst2 =  os.path.join(p2, os.path.basename(json_path))
+
+        shutil.copyfile(img_path, dst1)
+        shutil.copyfile(json_path, dst2)
 
 print('done.')
