@@ -11127,7 +11127,7 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -
 python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
 
 # 推断
-python tools/infer/predict_rec.py --image_dir=/root/PaddleOCR/train_data/rec/test/0093_crop_10.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
+python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
 	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
 
 

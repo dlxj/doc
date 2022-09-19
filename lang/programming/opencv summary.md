@@ -1167,6 +1167,32 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 
 
+# 加载裸数据
+
+没有文件文的图片数据
+
+```
+import numpy as np
+import cv2
+import base64
+
+		with open(img_path, "r", encoding="utf-8") as fp:
+            imgdata = fp.read()
+            imgdata = base64.b64decode(imgdata)
+            imgdata = np.frombuffer(imgdata, np.uint8)
+            img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
+
+            cv2.imshow('img', img)
+            cv2.waitKey(0)
+
+        if len(img.shape) != 3:  # 转彩图
+            img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)  # DBNet 原版只能处理彩图，这里转一下
+```
+
+
+
+
+
 # 彩图转灰度图
 
 ```

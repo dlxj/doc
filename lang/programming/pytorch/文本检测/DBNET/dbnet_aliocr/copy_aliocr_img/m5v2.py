@@ -2,6 +2,11 @@
 # 7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on data.7z data/
 
 import os, hashlib, shutil
+from pathlib import Path
+import numpy as np
+import cv2
+import base64
+
 
 def md5(path):
     hash_md5 = hashlib.md5()
@@ -32,11 +37,34 @@ for root, dirs, files in os.walk( root_json2 ):
 
         json_path = os.path.join( root_json2, name )
 
-        img_path = os.path.join( img_dir, name )
-        m = md5(img_path)
-        
+        m = Path(json_path).stem
+
         img_path1 = os.path.join(root_img1, f'{m}.txt')
         img_path2 = os.path.join(root_img2, f'{m}.txt')
+
+        img_path = ''
+
+        if os.path.exists(img_path1):
+            img_path = img_path1
+        elif os.path.exists(img_path2):
+            img_path = img_path2
+        else:
+            print(f'image {name} not exists!!!')
+            continue
+        
+        with open(img_path, "r", encoding="utf-8") as fp:
+            imgdata = fp.read()
+            imgdata = base64.b64decode(imgdata)
+            imgdata = np.frombuffer(imgdata, np.uint8)
+            img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
+
+            cv2.imshow('img', img)
+            cv2.waitKey(0)
+
+        if len(img.shape) != 3:  # 转彩图
+            img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)  # DBNet 原版只能处理彩图，这里转一下
+
+
 
 
         json_path1 = os.path.join(root_json1, f'{m}.json')
