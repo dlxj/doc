@@ -5628,6 +5628,10 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > 论文复现 ABINet
 
+- https://itcn.blog/p/1400806914.html
+
+  > MMOCR之多模态融合ABINET文字识别  **宝藏解读**
+
 
 
 
