@@ -1171,6 +1171,16 @@ os.rmdir(root) # 只能删除空目录
 
 
 
+### 移动文件
+
+```
+dest = shutil.move(source, destination) 
+
+dest = shutil.move(source, destination, copy_function = shutil.copytree) 
+```
+
+
+
 
 
 ### read file

@@ -5624,6 +5624,10 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
   > 论文复现，很多 **matlab 代码**
 
+- https://github.com/Huntersdeng/abinet-paddle
+
+  > 论文复现 ABINet
+
 
 
 
