@@ -61,5 +61,7 @@ $ ls -lR | grep "^d" | wc -l
 
 
 
+## 磁盘扩容
 
+- https://itcn.blog/p/19501309720.html home多余磁盘扩容给root
 
