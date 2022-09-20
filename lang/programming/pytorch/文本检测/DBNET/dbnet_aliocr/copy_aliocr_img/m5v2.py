@@ -1,6 +1,12 @@
 
 # 7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on data.7z data/
 
+"""
+
+conda install numpy opencv-python==4.6.0.66 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+
+"""
+
 import os, hashlib, shutil
 from pathlib import Path
 import numpy as np
@@ -31,7 +37,13 @@ root_json2 = './data/json' # 'yy/www/ocr_server/data/json'
 
 dic_shape = {}
 
+g_count = 0
+
 for root, dirs, files in os.walk( root_json2 ):
+    
+    if g_count >= 5000:
+        break
+    
     for name in files:
 
         json_path = os.path.join( root_json2, name )
@@ -69,6 +81,9 @@ for root, dirs, files in os.walk( root_json2 ):
         h, w = img.shape[0:2]
         sp = f'{w}x{h}'
 
+        if sp != '2115x3046':
+            continue
+
         p1 = os.path.join(img_root, sp, 'data/img')
         p2 = os.path.join(img_root, sp, 'data/json')
 
@@ -83,5 +98,10 @@ for root, dirs, files in os.walk( root_json2 ):
 
         shutil.copyfile(img_path, dst1)
         shutil.copyfile(json_path, dst2)
+
+        g_count += 1
+
+        if g_count >= 5000:
+            break
 
 print('done.')

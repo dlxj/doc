@@ -11102,6 +11102,9 @@ pip uninstall opencv-python && \
 pip install opencv-python==4.6.0.66 && \
 pip install pyyaml
 
+pip install opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
 cp autodl-tmp/train_data.zip . && \
 unzip train_data.zip -d PaddleOCR
 
