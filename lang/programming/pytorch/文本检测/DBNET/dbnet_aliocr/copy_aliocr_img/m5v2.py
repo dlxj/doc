@@ -86,8 +86,11 @@ for root, dirs, files in os.walk( root_json1 ):
         # if sp != '2115x3046':
         #     continue
 
-        p1 = os.path.join(img_root, sp, 'data/img')
-        p2 = os.path.join(img_root, sp, 'data/json')
+        # p1 = os.path.join(img_root, sp, 'data/img')
+        # p2 = os.path.join(img_root, sp, 'data/json')
+
+        p1 = os.path.join(img_root, 'data/img')
+        p2 = os.path.join(img_root, 'data/json')
 
         if not os.path.exists(p1):
             os.makedirs(p1)
