@@ -1,11 +1,6 @@
 
 # 7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on data.7z data/
 
-"""
-
-conda install numpy opencv-python==4.6.0.66 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-
-"""
 
 import os, hashlib, shutil
 from pathlib import Path
@@ -24,29 +19,29 @@ def md5(path):
 
 img_root = 'all_data'
 
-if not os.path.exists('data'):
-    os.makedirs('data/img')
-    os.makedirs('data/json')
+# if not os.path.exists('data'):
+#     os.makedirs('data/img')
+#     os.makedirs('data/json')
 
-root_img1 = './data/img' # 'xx/www/ocr_server/data/img'
-root_json1 = './data/json' # 'xx/www/ocr_server/data/json'
+root_img1 = '20220908/www/ocr_server/data/img'
+root_json1 = '20220908/www/ocr_server/data/json'
 
 
-root_img2 = './data/img' # 'yy/www/ocr_server/data/img'
-root_json2 = './data/json' # 'yy/www/ocr_server/data/json'
+root_img2 = '20220617/www/ocr_server/data/img'
+root_json2 = '20220617/www/ocr_server/data/json'
 
 dic_shape = {}
 
 g_count = 0
 
-for root, dirs, files in os.walk( root_json2 ):
+for root, dirs, files in os.walk( root_json1 ):
     
-    if g_count >= 5000:
+    if g_count >= 20000:
         break
     
     for name in files:
 
-        json_path = os.path.join( root_json2, name )
+        json_path = os.path.join( root_json1, name )
 
         m = Path(json_path).stem
 
@@ -60,14 +55,18 @@ for root, dirs, files in os.walk( root_json2 ):
         elif os.path.exists(img_path2):
             img_path = img_path2
         else:
-            print(f'image {name} not exists!!!')
+            print(f'image {m}.txt not exists!!!')
             continue
         
         with open(img_path, "r", encoding="utf-8") as fp:
             imgdata = fp.read()
             imgdata = base64.b64decode(imgdata)
             imgdata = np.frombuffer(imgdata, np.uint8)
-            img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
+            try:
+                img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
+            except Exception as e:
+                print(f'image {img_path} cannot decode###')
+                continue
 
             # cv2.imshow('img', img)
             # cv2.waitKey(0)
@@ -81,8 +80,11 @@ for root, dirs, files in os.walk( root_json2 ):
         h, w = img.shape[0:2]
         sp = f'{w}x{h}'
 
-        if sp != '2115x3046':
+        if w < 1500 or h < 1500:
             continue
+
+        # if sp != '2115x3046':
+        #     continue
 
         p1 = os.path.join(img_root, sp, 'data/img')
         p2 = os.path.join(img_root, sp, 'data/json')
@@ -101,7 +103,9 @@ for root, dirs, files in os.walk( root_json2 ):
 
         g_count += 1
 
-        if g_count >= 5000:
+        if g_count >= 20000:
             break
+
+        print(f'one task done {g_count} / {20000}')
 
 print('done.')
