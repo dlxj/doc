@@ -207,6 +207,8 @@ if __name__ == "__main__":
 
     json_paths = glob.glob('{}/*.json'.format(dir_json), recursive=False)
 
+    json_paths = json_paths[:2000]
+
     for json_path in json_paths:
 
         arr = []
@@ -232,7 +234,12 @@ if __name__ == "__main__":
             imgdata = fp.read()
             imgdata = base64.b64decode(imgdata)
             imgdata = np.frombuffer(imgdata, np.uint8)
-            img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
+            
+            try:
+                img = cv2.imdecode(imgdata, cv2.IMREAD_UNCHANGED)
+            except Exception as e:
+                print(f'Warning: image cannot decode: {img_path}')
+                continue
 
             # cv2.imshow('img', img)
             # cv2.waitKey(0)
@@ -411,10 +418,10 @@ if __name__ == "__main__":
                 ]
             )
 
-            img_cuted = cutPoly(img, points1)
-            cv2.imwrite(f'./tmp/{g_count2}.jpg', img_cuted)
-            with open(f'./tmp/{g_count2}.txt', 'w', encoding='utf-8') as f:
-                f.write(word)
+            # img_cuted = cutPoly(img, points1)
+            # cv2.imwrite(f'./tmp/{g_count2}.jpg', img_cuted)
+            # with open(f'./tmp/{g_count2}.txt', 'w', encoding='utf-8') as f:
+            #     f.write(word)
             g_count2 += 1
 
             # cv2.polylines(img_color_origin, [points], isClosed=True, color=(   # 多边形，框得比较全

@@ -9958,6 +9958,29 @@ def main():
 
 
 
+### 训练 icdar2015_dbnet
+
+```
+7za DBNet_aliocr_GD500.zip && \
+mv DB /root
+
+unzip icdar2015_dbnet.zip && \
+mv icdar2015_dbnet icdar2015 && \
+ln -s /root/autodl-tmp/icdar2015 /root/DB/datasets/icdar2015
+
+
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n DB python=3.7 --yes && \
+source activate DB && \
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch --yes -c conda-forge
+
+
+
+
+
+```
+
 
 
 
@@ -10060,7 +10083,7 @@ MMOCR currently does not provide a Chinese-specific pre-trained model for the de
 # 图片生成 (把图书图片和识别结果转换成icdar2015 数据集 一模一样的格式)
 	# doc\lang\programming\pytorch\文本检测\DBNET\dbnet_aliocr
 
-# 数据转换
+# 数据转换 
 	- https://mmocr.readthedocs.io/en/latest/datasets/det.html#icdar-2015
 	
 unzip ~/autodl-nas/GD500.zip -d data
