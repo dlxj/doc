@@ -13,7 +13,7 @@ icdar2015/annotations/test/gt_img_3.txt
 注意：标注文件是 utf8-bom 格式
     必须以 icdar2015 命名文件夹，因为 DBNet 代码是以名字来判断文件格式的
 
-    格式是 icdar2015 的格式，文件夹的组织方式是按照 DBnet 的要求创建的
+    给 DBNet 以及 mmocr 训练用。格式是 icdar2015 的格式，文件夹的组织方式是按照 DBnet 或 mmocr 的要求创建的
 
 PPOCRLabel --lang ch  # 启动标注工具
 
@@ -159,13 +159,11 @@ def cutPoly(img, pts):
 
 if __name__ == "__main__":
 
-    root = 'icdar2015_dbnet'
+    root = 'icdar2015_mmocr'
     tmp = 'tmp'
     label_path = os.path.join(root, 'Label.txt')
     
     key_path = os.path.join(root, 'keys.txt')
-
-    fileState_path = os.path.join(root, 'fileState.txt')
 
     if os.path.exists(root):
         shutil.rmtree(root)
@@ -174,17 +172,17 @@ if __name__ == "__main__":
         shutil.rmtree(tmp)
 
     if not os.path.exists(root):
-        os.makedirs(f'{root}/train_images')
-        os.makedirs(f'{root}/test_images')
+        os.makedirs(f'{root}/imgs/training')
+        os.makedirs(f'{root}/imgs/test')
 
-        os.makedirs(f'{root}/train_gts')
-        os.makedirs(f'{root}/test_gts')
+        os.makedirs(f'{root}/annotations/training')
+        os.makedirs(f'{root}/annotations/test')
 
     if not os.path.exists(tmp):
         os.makedirs(tmp)
 
     with open(f'{root}/readme.txt', "w", encoding='utf-8') as fp:
-        fp.write('给 DBNet 官方代码 训练用。格式是 icdar2015 的格式，文件夹的组织方式是按照 DBnet 的要求创建的')
+        fp.write('给 DBNet 以及 mmocr 训练用。格式是 icdar2015 的格式，文件夹的组织方式是按照 DBnet 或 mmocr 的要求创建的')
 
     label = ''
     keys = ''
@@ -248,8 +246,8 @@ if __name__ == "__main__":
         img_color_origin2 = img_color.copy()
 
         name = f'img_{g_count}.jpg'
-        dst_img_path = f'{root}/train_images/{name}'
-        dst_gt_path = f'{root}/train_gts/gt_img_{g_count}.txt'
+        dst_img_path = f'{root}/imgs/training/{name}'
+        dst_gt_path = f'{root}/annotations/training/gt_img_{g_count}.txt'
 
         g_count += 1
 
@@ -461,7 +459,7 @@ if __name__ == "__main__":
     if testCount == 0:
         testCount = 1
 
-    img_paths = glob.glob(f'{root}/train_images/*.jpg', recursive=False)
+    img_paths = glob.glob(f'{root}/imgs/training/*.jpg', recursive=False)
 
     random.seed(1999)
 
@@ -469,10 +467,10 @@ if __name__ == "__main__":
 
     for img_path in choices:
        basename = Path(img_path).stem
-       gt_path = f'{root}/train_gts/gt_{basename}.txt'
+       gt_path = f'{root}/annotations/training/gt_{basename}.txt'
 
-       dst_img_path = img_path.replace('train_images', 'test_images')
-       dst_gt_path = gt_path.replace('train_gts', 'test_gts')
+       dst_img_path = img_path.replace('training', 'test')
+       dst_gt_path = gt_path.replace('training', 'test')
 
        shutil.move(img_path, dst_img_path)
        shutil.move(gt_path, dst_gt_path)
