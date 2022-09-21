@@ -477,4 +477,30 @@ if __name__ == "__main__":
        shutil.move(img_path, dst_img_path)
        shutil.move(gt_path, dst_gt_path)
 
+
+    train_list_path = f'{root}/train_list.txt'
+    test_list_path = f'{root}/test_list.txt' 
+
+    train_image_paths = glob.glob(f'{root}/train_images/*.jpg', recursive=False)
+    test_image_paths = glob.glob(f'{root}/test_images/*.jpg', recursive=False)
+
+    train_images = []
+    test_images = []
+
+    for train_image_path in train_image_paths:
+        basename = os.path.basename(train_image_path)
+        train_images.append( basename )
+
+    for test_image_path in test_image_paths:
+        basename = os.path.basename(test_image_path)
+        test_images.append( basename )
+
+    with open(train_list_path, "w", encoding='utf-8-sig') as fp:
+        txt = '\n'.join(train_images)
+        fp.write(txt)
+
+    with open(test_list_path, "w", encoding='utf-8-sig') as fp:
+        txt = '\n'.join(test_images)
+        fp.write(txt)
+
     print('all task done.')
