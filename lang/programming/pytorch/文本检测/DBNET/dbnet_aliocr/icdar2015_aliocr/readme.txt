@@ -1,1 +1,0 @@
-给 DBNet 以及 mmocr 训练用。格式是 icdar2015 的格式，文件夹的组织方式是按照 DBnet 或 mmocr 的要求创建的

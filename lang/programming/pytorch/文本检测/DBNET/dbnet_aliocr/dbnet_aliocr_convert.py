@@ -447,6 +447,7 @@ if __name__ == "__main__":
         print( f'{g_count - 1} / {len(json_paths)} task done.' )
 
     ks = list( dic_words.keys() )
+    ks = sorted(ks, key=lambda w: w, reverse=False)
 
     keys = '\n'.join(ks)
 
