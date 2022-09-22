@@ -9961,7 +9961,14 @@ def main():
 ### 训练 icdar2015_dbnet
 
 ```
-7za DBNet_aliocr_GD500.zip && \
+
+wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
+tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
+cd p7zip_16.02 && \
+make && \
+make install
+
+7za x DBNet_aliocr_GD500.zip && \
 mv DB /root
 
 unzip icdar2015_dbnet.zip && \
@@ -9976,8 +9983,12 @@ source activate DB && \
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch --yes -c conda-forge
 
 
+cd /root/DB && \
+source activate DB && \
+pip install -r requirement.txt
 
-
+pip uninstall opencv-python && \
+pip install opencv-python==4.6.0.66
 
 ```
 

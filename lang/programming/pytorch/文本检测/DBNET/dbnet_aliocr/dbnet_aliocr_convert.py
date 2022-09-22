@@ -448,7 +448,7 @@ if __name__ == "__main__":
 
         gt = '\n'.join(arr) + '\n'
         
-        with open(dst_gt_path, "w", encoding='utf-8-sig') as fp:
+        with open(dst_gt_path, "w", encoding='utf-8') as fp:
             fp.write(gt)
 
         print( f'{g_count - 1} / {len(json_paths)} task done.' )
@@ -503,11 +503,11 @@ if __name__ == "__main__":
         basename = os.path.basename(test_image_path)
         test_images.append( basename )
 
-    with open(train_list_path, "w", encoding='utf-8-sig') as fp:
+    with open(train_list_path, "w", encoding='utf-8') as fp:
         txt = '\n'.join(train_images)
         fp.write(txt)
 
-    with open(test_list_path, "w", encoding='utf-8-sig') as fp:
+    with open(test_list_path, "w", encoding='utf-8') as fp:
         txt = '\n'.join(test_images)
         fp.write(txt)
 

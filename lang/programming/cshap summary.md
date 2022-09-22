@@ -5090,6 +5090,53 @@ int main(int argc, _TCHAR* argv[])
 
 
 
+## 异步下载
+
+- https://github.com/bezzad/Downloader/blob/master/src/Samples/Downloader.Sample/Program.cs
+
+```
+
+	private static void OnDownloadStarted(object sender, DownloadStartedEventArgs e)
+        {
+            var fname = $"Downloading {Path.GetFileName(e.FileName)}";
+        }
+
+        private static void OnDownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+            }
+            else if (e.Error != null)
+            {
+
+            }
+            else
+            {
+                var a = "DONE";
+            }
+
+        }
+
+        public static async Task Main(string[] args)
+        {
+            var downloadOpt = new DownloadConfiguration()
+            {
+                ChunkCount = 1, // file parts to download, default value is 1
+                OnTheFlyDownload = true, // caching in-memory or not? default values is true
+                ParallelDownload = false // download parts of file as parallel or not. Default value is false
+            };
+            var downloader = new DownloadService(downloadOpt);
+            downloader.DownloadStarted += OnDownloadStarted;
+            downloader.DownloadFileCompleted += OnDownloadFileCompleted;
+
+            await downloader.DownloadFileTaskAsync("https://yingedu-ad3.oss-cn-hangzhou.aliyuncs.com/tk_ppt/27222/56647/第一节泌尿系统的解剖生理.pptx", @"G:\a.pptx");
+
+```
+
+
+
+
+
 
 
 # OS 兼容
