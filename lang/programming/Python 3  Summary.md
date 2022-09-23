@@ -2130,6 +2130,21 @@ index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
 
 
 
+```
+In [36]: import random
+
+In [37]: List = [1,2,3,4,5,6]
+In [38]: random.shuffle(List)
+In [39]: print(List)
+[2, 1, 6, 4, 5, 3]
+random.sample(sequence,k)
+sample，样品，从有序列表中选k个作为一个片段返回。
+```
+
+
+
+
+
 ### Shuffle two array
 
 
