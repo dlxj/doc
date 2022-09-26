@@ -6160,7 +6160,7 @@ OCR Engine modes:
   整个流程如下
   
   1. 图像经过FPN网络结构，得到四个特征图，分别为1/4,1/8,1/16,1/32大小；
-  2. 将四个特征图分别上采样为1/4大小，再concat，得到特征图F
+  2. 将四个特征图分别上采样为1/4大小，再concat，得到特征图F（**特征金字塔**上采样到相同的尺寸，并进行**特征级联**得到特征F）
   3. 由F得到 probability map (P) 和 threshold map (T)
   4. 通过P、T计算（通过可微分二值化DB，下文介绍） approximate binary map（ 近似binary map  B-hat ）
   
@@ -9988,13 +9988,40 @@ cd p7zip_16.02 && \
 make && \
 make install
 
-7za x DBNet_aliocr_GD500.zip && \
+7za x DBNet_aliocr_GD500.zip && \  # 500 张是成功了的（一张图复制成500张）
 mv DB /root
 
-unzip icdar2015_dbnet.zip && \
+# 数据生成代码在这里
+# doc\lang\programming\pytorch\文本检测\DBNET\dbnet_aliocr\dbnet_aliocr_convert.py
+
+unzip icdar2015_dbnet.zip && \	   # 2000 张阿里云的识别结果，导出成 icdar2015 格式 
 mv icdar2015_dbnet icdar2015 && \
 ln -s /root/autodl-tmp/icdar2015 /root/DB/datasets/icdar2015
+	
+	
+	# 修改数据加载
+	/root/DB/data/image_dataset.py
+		第41 行，改成下面这样。icdar2015 原版gt 标注就是这样的，不懂DB 为什么改成那样
+                gt_path=[self.data_dir[i]+'/train_gts/'+'gt_'+timg.strip().split('.')[0]+'.txt' for timg in image_list]
 
+tmux
+	source activate DB
+	
+	/root/DB/train.py 加入：
+	import sys
+    #sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( 'experiments/seg_detector/ic15_resnet18_deform_thre.yaml' )
+    sys.argv.append( '--num_gpus' )
+    sys.argv.append( '1' )
+    torch.backends.cudnn.enabled = False
+    
+    python train.py
+    
+	
+tmux attach -t 0
+	Contol + b  后按 d 可以离开环境并不影响当前程序的执行（离开后可以断开 ssh 连接）
+	ctrl + D # 退出当前 session，中断程序执行
+tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
@@ -10009,6 +10036,10 @@ pip install -r requirement.txt
 
 pip uninstall opencv-python && \
 pip install opencv-python==4.6.0.66
+
+
+
+
 
 ```
 
@@ -11704,6 +11735,16 @@ apt-get update
 
 ```
 RTX 3090 是 30 系列中唯一能够通过 NVLink 桥接器进行扩展的 GPU 型号。当与 NVLink 网桥配对使用时，可以将显存扩充为 48 GB 来训练大型模型。
+
+
+Platinum 8358P
+	FCLGA 4189
+	PCI Express 通道数的最大值 64
+	内核数 32
+	线程数 64
+	最大睿频频率 3.40 GHz
+	处理器基本频率 2.60 GHz
+	
 ```
 
 
