@@ -6157,6 +6157,24 @@ OCR Engine modes:
   
 - https://blog.csdn.net/u010901792/article/details/112791647  **宝藏解读**
   
+  整个流程如下
+  
+  1. 图像经过FPN网络结构，得到四个特征图，分别为1/4,1/8,1/16,1/32大小；
+  2. 将四个特征图分别上采样为1/4大小，再concat，得到特征图F
+  3. 由F得到 probability map (P) 和 threshold map (T)
+  4. 通过P、T计算（通过可微分二值化DB，下文介绍） approximate binary map（ 近似binary map  B-hat ）
+  
+  对于每个网络，一定要区分训练和推理阶段的不同：
+  
+  - 训练阶段：对P、T、B进行监督训练，P和B是用的相同的监督信号（label）；
+  - 推理阶段：通过P或B就可以得到文本框。
+  
+- https://blog.csdn.net/u010901792/article/details/112791647
+
+  > **对每一个像素点进行自适应二值化**，二值化阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练
+  >
+  > 和常规基于语义分割算法的**区别是多了一条threshold map分支**，该分支的主要目的是和分割图联合得到更接近二值化的二值图，属于辅助分支。**其余操作就没啥了**。整个核心知识就这些了。
+
 - https://github.com/christianversloot/machine-learning-articles/blob/main/upsampling2d-how-to-use-upsampling-with-keras.md  **上采样很详细**
   
   > **网络输出：**
@@ -10733,6 +10751,15 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
   > 2.有的网络是固定尺寸输入的，所以需要你把图片resize成相同大小，这一情况取决于网络的设定，通常来说分类和目标检测网络使用这一设置。当前paddleocr主推的dbnet文本检测，使用基于语义分割的文本检测，并不需要固定尺寸。裁剪为边长=del_limit_side_len（默认值为960）
   > ```
 
+- https://github.com/PaddlePaddle/PaddleOCR/issues/5021  图片尺寸不规则导致无法识别
+
+  > PaddleOCR(use_angle_cls=True, lang="ch", det_limit_type='min', det_limit_side_len=64)
+  > 设定短边的最小分辨率，用你的image图片，det_limit_side_len=64，文字全能检测出来。
+  >
+  > 默认参数是det_limit_type='max', det_limit_side_len=960，也就是长边最大960.
+  >
+  > 改为det_limit_type='min', det_limit_side_len=64，也就是短边最小64.
+
 
 
 use_shared_memory: False
@@ -11427,6 +11454,14 @@ Eval:
 - https://www.jianshu.com/p/3c8a14bf2a91
 
   > 安卓端部署PPOCR的ncnn模型——模型转换
+
+
+
+#### 知识蒸馏
+
+> 思路：采用resnet50(teacher)先训练，在利用训练好的resnet50(teacher)对resnet18(student)小模型进行联合训练，实验证明f1score比单独训练resnet18涨一个点。
+
+
 
 
 
