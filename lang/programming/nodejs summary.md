@@ -33,6 +33,15 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 
+```
+# cnpm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+
+
+
+
 ## Get
 
 
@@ -1312,6 +1321,21 @@ f(1,...args,4,...[5]) # args 展开成 2, 3
 
 
 
+## 高级选项
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
+
+| 标志 | 描述                                                        |
+| :--- | :---------------------------------------------------------- |
+| `g`  | 全局搜索。                                                  |
+| `i`  | 不区分大小写搜索。                                          |
+| `m`  | 多行搜索。                                                  |
+| `s`  | 允许 `.` 匹配换行符。                                       |
+| `u`  | 使用 unicode 码的模式进行匹配。                             |
+| `y`  | 执行“粘性 (`sticky`)”搜索，匹配从目标字符串的当前位置开始。 |
+
+
+
 ## test
 
 
@@ -1820,6 +1844,25 @@ if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).
 
 
 
+#### 否定式向前查找
+
+ ```
+a ='这是中文\nabc'
+a.replace(/(?<!\n)([a-z])/g, 'O')
+	
+--> '这是中文\naOO'
+ ```
+
+
+
+
+
+(?!...) 
+
+
+
+
+
 ### <= 向后查找
 
 - < 前面必须匹配，但不吃掉它(consume)
@@ -1830,7 +1873,7 @@ if ((new RegExp(String.raw`\nA\..+?\s+B\..+?\s+C\..+?\s+D\..+?\s*(?:E\..+?)*`)).
   --> '1\nOO\nOO\n'
   ```
 
-  
+   (?<!...) 否定式向后查找
 
 
 

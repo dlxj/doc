@@ -6160,8 +6160,13 @@ OCR Engine modes:
   整个流程如下
   
   1. 图像经过FPN网络结构，得到四个特征图，分别为1/4,1/8,1/16,1/32大小；
+  
   2. 将四个特征图分别上采样为1/4大小，再concat，得到特征图F（**特征金字塔**上采样到相同的尺寸，并进行**特征级联**得到特征F）
+  
+     > concat：系列**特征融合**，直接将两个特征进行连接。两个输入特征x和y的维数若为p和q，输出特征z的**维数为p+q**；
+  
   3. 由F得到 probability map (P) 和 threshold map (T)
+  
   4. 通过P、T计算（通过可微分二值化DB，下文介绍） approximate binary map（ 近似binary map  B-hat ）
   
   对于每个网络，一定要区分训练和推理阶段的不同：
@@ -9994,15 +9999,28 @@ mv DB /root
 # 数据生成代码在这里
 # doc\lang\programming\pytorch\文本检测\DBNET\dbnet_aliocr\dbnet_aliocr_convert.py
 
-unzip icdar2015_dbnet.zip && \	   # 2000 张阿里云的识别结果，导出成 icdar2015 格式 
+	# 2000 张阿里云的识别结果，导出成 icdar2015 格式
+unzip icdar2015_dbnet.zip && \
 mv icdar2015_dbnet icdar2015 && \
 ln -s /root/autodl-tmp/icdar2015 /root/DB/datasets/icdar2015
+
 	
 	
 	# 修改数据加载
 	/root/DB/data/image_dataset.py
 		第41 行，改成下面这样。icdar2015 原版gt 标注就是这样的，不懂DB 为什么改成那样
                 gt_path=[self.data_dir[i]+'/train_gts/'+'gt_'+timg.strip().split('.')[0]+'.txt' for timg in image_list]
+
+
+export CUDA_HOME=/usr/local/cuda && \
+echo $CUDA_HOME && \
+cd ~/DB/assets/ops/dcn/ && \
+python setup.py build_ext --inplace
+
+cd ~/DB && \
+pip install -r requirement.txt && \
+pip install --upgrade protobuf==3.20.0
+
 
 tmux
 	source activate DB
