@@ -1,0 +1,39 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:WindowManager.Controls"
+    xmlns:Forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    xmlns:Converters="clr-namespace:WindowManager.Converters"
+    xmlns:MarkupExtensions="clr-namespace:WindowManager.MarkupExtensions">
+
+    <Converters:MultiValueEnumConverter x:Key="multiValueEnumConverter"/>
+
+    <Style TargetType="{x:Type Controls:HotKeyControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:HotKeyControl}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Grid.Column="0" Content="Ctrl" IsChecked="{Binding HotKey.ModifierKeys, Converter={StaticResource multiValueEnumConverter}, ConverterParameter={x:Static ModifierKeys.Control}, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ToggleButton Grid.Column="1" Content="Shift" IsChecked="{Binding HotKey.ModifierKeys, Converter={StaticResource multiValueEnumConverter}, ConverterParameter={x:Static ModifierKeys.Shift}, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ToggleButton Grid.Column="2" Content="Alt" IsChecked="{Binding HotKey.ModifierKeys, Converter={StaticResource multiValueEnumConverter}, ConverterParameter={x:Static ModifierKeys.Alt}, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <ToggleButton Grid.Column="3" Content="Win" IsChecked="{Binding HotKey.ModifierKeys, Converter={StaticResource multiValueEnumConverter}, ConverterParameter={x:Static ModifierKeys.Windows}, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ComboBox Grid.Column="4" ItemsSource="{MarkupExtensions:EnumValuesExtension EnumType=Forms:Keys, SortByName=True}" SelectedItem="{Binding HotKey.Key, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                        </Grid>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

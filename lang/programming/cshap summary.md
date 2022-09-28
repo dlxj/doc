@@ -8386,6 +8386,18 @@ private void btnSave_Click(object sender, EventArgs e)
 
 ## 系统热键
 
+- https://www.cnblogs.com/rosesmall/archive/2012/09/19/2693707.html
+
+  ```
+  HotKeyId   :=   GlobalAddAtom(‘MyHotKey’)   -   $C000;
+  注：   HotKeyId的合法取之范围是0x0000到0xBFFF之间，   GlobalAddAtom函数得到的值
+  在0xC000到0xFFFF之间，所以减掉0xC000来满足调用要求。
+  ```
+
+- https://blog.csdn.net/u011555996/article/details/78923743 获取窗口句柄
+
+- https://www.cnblogs.com/daxingxing/archive/2012/05/31/2528381.html  遍历已注册的热键
+
 ```C#
 using System;
 using System.Text;

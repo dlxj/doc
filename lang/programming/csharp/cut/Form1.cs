@@ -18,8 +18,8 @@ namespace MathpixCsharp
     public partial class Form1 : Form
     {
         //GetCode gg = new GetCode();
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+        //[System.Runtime.InteropServices.DllImport("user32.dll")]
+        //private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
         Bitmap bit;
         public bool success;
         public bool cancelled;
@@ -33,7 +33,10 @@ namespace MathpixCsharp
         {
             InitializeComponent();
             this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+
+
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -63,6 +66,12 @@ namespace MathpixCsharp
             Bit.Save("xxxxxxxxxxx.bmp");
             //ScreenShotToCode(Bit);
             this.Opacity = 1.0;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            SystemHotKey.RegHotKey(this.Handle, 701, SystemHotKey.KeyModifiers.Alt | SystemHotKey.KeyModifiers.Ctrl | SystemHotKey.KeyModifiers.Shift, System.Windows.Forms.Keys.Back);
         }
     }
 }

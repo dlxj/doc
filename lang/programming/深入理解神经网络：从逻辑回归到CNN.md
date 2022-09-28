@@ -10056,7 +10056,8 @@ pip uninstall opencv-python && \
 pip install opencv-python==4.6.0.66
 
 
-
+// 验证    
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_97.jpg --resume /root/final --polygon --box_thresh 0.7 --visualize 
 
 
 ```

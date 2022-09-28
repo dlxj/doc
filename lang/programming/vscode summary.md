@@ -50,6 +50,22 @@ ctrl + -
 
 
 
+
+
+# Host key verification failed
+
+```
+ssh -T root@region-11.autodl.com
+
+把这个文件删掉
+/c/Users/Administrator/.ssh/known_hosts
+
+```
+
+
+
+
+
 # 合并分支
 
 
