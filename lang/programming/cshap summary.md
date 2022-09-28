@@ -8407,23 +8407,62 @@ private void btnSave_Click(object sender, EventArgs e)
 
 
 ```c#
-# 注册 win + 小键盘7 热键
+# 注册 win + 小键盘7 热键 WPF窗体工程
 
+using System;
+using System.Windows;
+using System.Windows.Input;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Threading;
 using System.Windows.Interop;
 
+namespace hotkey1
+{
+    /// <summary>
+    /// MainWindow.xaml 的交互逻辑
+    /// </summary>
+    public partial class MainWindow : Window
+    {
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, ModifierKeys fsModifiers, Keys vk);
+
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
         private static int _lastHotKeyId = 0;
         private readonly int _id;
         public bool IsRegistered { get; private set; }
-        
-        	# 放Form_load 事件
+
+        public delegate void HotKeyPressedEventHandler(object sender, EventArgs e);
+
+        public event HotKeyPressedEventHandler HotKeyPressed;
+
+        public const int WmHotKey = 786;
+
+        public void SendToLeft()
+        {
+
+        }
+
+        private void SendToLeft(object sender, EventArgs eventArgs) => SendToLeft();
+
+        private void ThreadPreprocessMessageMethod(ref MSG msg, ref bool handled)
+        {
+            if (handled || msg.message != WmHotKey || (int)msg.wParam != _id)
+                return;
+
+            // hot key pressed
+            int a = 1;
+
+            //OnHotKeyPressed();
+            //handled = true;
+        }
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            
             ModifierKeys fsModifiers = ModifierKeys.Windows;
             Keys vk = Keys.NumPad7;
             _id = Interlocked.Increment(ref _lastHotKeyId);
@@ -8431,7 +8470,16 @@ using System.Windows.Interop;
        
             IsRegistered = RegisterHotKey(hWnd, _id, fsModifiers, vk);
 
-			IsRegistered = !UnregisterHotKey(hWnd, _id);
+            HotKeyPressed += SendToLeft;
+
+            ComponentDispatcher.ThreadPreprocessMessage += ThreadPreprocessMessageMethod;
+
+            //IsRegistered = !UnregisterHotKey(hWnd, _id);
+
+        }
+    }
+}
+
 
 ```
 
