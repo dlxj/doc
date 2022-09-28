@@ -8416,6 +8416,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Threading;
 using System.Windows.Interop;
+using System.Collections.Generic;
 
 namespace hotkey1
 {
@@ -8429,10 +8430,16 @@ namespace hotkey1
 
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        
+        [DllImport("user32")]
+        internal static extern int GetKeyboardState(byte[] pbKeyState);
 
         private static int _lastHotKeyId = 0;
         private readonly int _id;
-        public bool IsRegistered { get; private set; }
+
+        public bool IsRegistered;
+
+        private  byte[] _keyboardStateNative;
 
         public delegate void HotKeyPressedEventHandler(object sender, EventArgs e);
 
@@ -8447,12 +8454,75 @@ namespace hotkey1
 
         private void SendToLeft(object sender, EventArgs eventArgs) => SendToLeft();
 
+        private byte GetKeyState(Keys key)
+        {
+            var virtualKeyCode = (int)key;
+            if (virtualKeyCode < 0 || virtualKeyCode > 255)
+            {
+                throw new ArgumentOutOfRangeException(nameof(key), key, "The value must be between 0 and 255.");
+            }
+            return _keyboardStateNative[virtualKeyCode];
+        }
+
+        private static bool GetHighBit(byte value)
+        {
+            return (value >> 7) != 0;
+        }
+
+        private static bool GetLowBit(byte value)
+        {
+            return (value & 1) != 0;
+        }
+
+        public bool IsDown(Keys key)
+        {
+            var keyState = GetKeyState(key);
+            var isDown = GetHighBit(keyState);
+            return isDown;
+        }
+
         private void ThreadPreprocessMessageMethod(ref MSG msg, ref bool handled)
         {
             if (handled || msg.message != WmHotKey || (int)msg.wParam != _id)
                 return;
 
             // hot key pressed
+
+            // List pressed keys
+            var keys = new List<Keys>();
+            var keyboardStateNative = new byte[256];
+            GetKeyboardState(keyboardStateNative);
+            _keyboardStateNative = keyboardStateNative;
+
+            for (var i = 0; i < 256; i++)
+            {
+                if (IsDown((Keys)i))
+                {
+                    keys.Add((Keys)i);
+                }
+            }
+
+            /*
+
+            if (!keys.Contains(e.KeyData))
+            {
+                keys.Add(e.KeyData);
+            }
+
+            // Find hotkey
+            foreach (HotKey hotKey in _hotKeys)
+            {
+                if (hotKey.Equals(keys))
+                {
+                    if (hotKey.Action != null)
+                    {
+                        hotKey.Action(sender, EventArgs.Empty);
+                        e.Handled = true;
+                    }
+                }
+            }
+            */
+
             int a = 1;
 
             //OnHotKeyPressed();
@@ -8470,7 +8540,7 @@ namespace hotkey1
        
             IsRegistered = RegisterHotKey(hWnd, _id, fsModifiers, vk);
 
-            HotKeyPressed += SendToLeft;
+            //HotKeyPressed += SendToLeft;
 
             ComponentDispatcher.ThreadPreprocessMessage += ThreadPreprocessMessageMethod;
 
@@ -8479,6 +8549,7 @@ namespace hotkey1
         }
     }
 }
+
 
 
 ```
