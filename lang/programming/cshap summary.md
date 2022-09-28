@@ -8597,6 +8597,16 @@ namespace hotkey1
                 {
                     var keyData = (Keys)myKeyboardHookStruct.vkCode;
                     var e = new System.Windows.Forms.KeyEventArgs(keyData);
+
+                    //ctrl+alt+上下调整水平线
+                    if (e.Shift && e.Alt && (e.KeyValue == 38 || e.KeyValue == 40))
+                    {
+                        //lineY = e.KeyValue == 38 ? lineY - 2 : lineY + 2;
+                        //this.line1.Top = lineY + 10;
+
+                        int a = 0;
+                    }
+
                     //KeyDown(this, e);
                     handled = handled || e.Handled;
                 }
@@ -8666,6 +8676,7 @@ namespace hotkey1
         }
     }
 }
+
 
 
 
