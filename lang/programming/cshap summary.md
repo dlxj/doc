@@ -8386,6 +8386,12 @@ private void btnSave_Click(object sender, EventArgs e)
 
 ## 系统热键
 
+- https://www.meziantou.net/hotkey-global-shortcuts.htm windows 大佬
+
+- https://github.com/meziantou/Window-Manager
+
+  > 直接能用 WPF
+
 - https://www.cnblogs.com/rosesmall/archive/2012/09/19/2693707.html
 
   ```
@@ -8397,6 +8403,41 @@ private void btnSave_Click(object sender, EventArgs e)
 - https://blog.csdn.net/u011555996/article/details/78923743 获取窗口句柄
 
 - https://www.cnblogs.com/daxingxing/archive/2012/05/31/2528381.html  遍历已注册的热键
+
+
+
+```c#
+# 注册 win + 小键盘7 热键
+
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using System.Threading;
+using System.Windows.Interop;
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, ModifierKeys fsModifiers, Keys vk);
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+        private static int _lastHotKeyId = 0;
+        private readonly int _id;
+        public bool IsRegistered { get; private set; }
+        
+        	# 放Form_load 事件
+            ModifierKeys fsModifiers = ModifierKeys.Windows;
+            Keys vk = Keys.NumPad7;
+            _id = Interlocked.Increment(ref _lastHotKeyId);
+            IntPtr hWnd = new WindowInteropHelper(System.Windows.Application.Current.MainWindow).Handle;
+       
+            IsRegistered = RegisterHotKey(hWnd, _id, fsModifiers, vk);
+
+			IsRegistered = !UnregisterHotKey(hWnd, _id);
+
+```
+
+
+
+
 
 ```C#
 using System;
