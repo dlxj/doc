@@ -8761,6 +8761,49 @@ public class SystemHotKey
 
 
 
+# WPF
+
+
+
+## 指定最新语言版本
+
+- https://blog.csdn.net/liangyely/article/details/106163660
+
+在工程文件   xxx.csproj 里修改，
+
+LangVersion 修改为：preview
+
+  <PropertyGroup>
+	<LangVersion>preview</LangVersion>
+  </PropertyGroup>
+或者改为：8.0
+
+  <PropertyGroup>
+	<LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+
+
+## 添加源码目录
+
+- https://blog.csdn.net/yangdashi888/article/details/73323419
+
+1.把源码目录拷贝到工程目录下
+
+2.这时在vs的目录列表里是看不到这个目录的，在如下图工具栏中点击图标【显示所有文件】，就可以看到新增的目录了
+
+
+
+3.这时实际上还没有真正地加入到工程中来，可见.h文件的图标是红色的，
+
+要在工程目录上右键选择【包括在项目中】即可：
+
+
+
+4.添加完毕，.h文件前面的图标正常了。
+
+
+
 
 
 # Avalonia
