@@ -8452,7 +8452,8 @@ LangVersion 修改为：preview
 
 
 ```c#
-# 注册 win + 小键盘7 热键 WPF窗体工程
+# 注册 win + 小键盘7 热键 WPF窗体工程 
+    # winform 好像不行
     # doc\lang\programming\csharp\Window-Manager WPF 工业级代码
 
 using System;
@@ -8811,7 +8812,11 @@ public class SystemHotKey
 
 
 
+#### C# 动态调试器
 
+- https://bbs.pediy.com/thread-270368.htm
+
+  
 
 # Avalonia
 
