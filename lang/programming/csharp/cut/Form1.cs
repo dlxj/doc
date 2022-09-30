@@ -71,7 +71,21 @@ namespace MathpixCsharp
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            GlobalHotKey.RegisterHotKey("Alt + Shift + S", () => {
+                var a = 1;
+            });
+
             //SystemHotKey.RegHotKey(this.Handle, 701, SystemHotKey.KeyModifiers.Alt | SystemHotKey.KeyModifiers.Ctrl | SystemHotKey.KeyModifiers.Shift, System.Windows.Forms.Keys.Back);
         }
+
+        //protected override void WndProc(ref Message m)
+        //{
+        //    if ( m.Msg == WmHotKey)
+        //    {
+        //        var a = 1;
+        //    }
+
+        //    base.WndProc(ref m);
+        //}
     }
 }
