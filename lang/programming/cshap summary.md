@@ -8384,6 +8384,51 @@ private void btnSave_Click(object sender, EventArgs e)
 
 
 
+
+
+# WPF
+
+
+
+## 指定最新语言版本
+
+- https://blog.csdn.net/liangyely/article/details/106163660
+
+在工程文件   xxx.csproj 里修改，
+
+LangVersion 修改为：preview
+
+  <PropertyGroup>
+	<LangVersion>preview</LangVersion>
+  </PropertyGroup>
+或者改为：8.0
+
+  <PropertyGroup>
+	<LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+
+
+## 添加源码目录
+
+- https://blog.csdn.net/yangdashi888/article/details/73323419
+
+1.把源码目录拷贝到工程目录下
+
+2.这时在vs的目录列表里是看不到这个目录的，在如下图工具栏中点击图标【显示所有文件】，就可以看到新增的目录了
+
+
+
+3.这时实际上还没有真正地加入到工程中来，可见.h文件的图标是红色的，
+
+要在工程目录上右键选择【包括在项目中】即可：
+
+
+
+4.添加完毕，.h文件前面的图标正常了。
+
+
+
 ## 系统热键
 
 - https://www.meziantou.net/hotkey-global-shortcuts.htm windows 大佬
@@ -8408,16 +8453,16 @@ private void btnSave_Click(object sender, EventArgs e)
 
 ```c#
 # 注册 win + 小键盘7 热键 WPF窗体工程
+    # doc\lang\programming\csharp\Window-Manager WPF 工业级代码
 
 using System;
-using System.Windows;
-using System.Windows.Input;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using System.Threading;
-using System.Windows.Interop;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Input;
+using System.Windows.Interop;
 
 namespace hotkey1
 {
@@ -8453,7 +8498,7 @@ namespace hotkey1
 
         public bool IsRegistered;
 
-        private  byte[] _keyboardStateNative;
+        private byte[] _keyboardStateNative;
 
         public delegate void HotKeyPressedEventHandler(object sender, EventArgs e);
 
@@ -8547,18 +8592,18 @@ namespace hotkey1
             // hot key pressed
 
             // List pressed keys
-            var keys = new List<Keys>();
-            var keyboardStateNative = new byte[256];
-            GetKeyboardState(keyboardStateNative);
-            _keyboardStateNative = keyboardStateNative;
+            //var keys = new List<Keys>();
+            //var keyboardStateNative = new byte[256];
+            //GetKeyboardState(keyboardStateNative);
+            //_keyboardStateNative = keyboardStateNative;
 
-            for (var i = 0; i < 256; i++)
-            {
-                if (IsDown((Keys)i))
-                {
-                    keys.Add((Keys)i);
-                }
-            }
+            //for (var i = 0; i < 256; i++)
+            //{
+            //    if (IsDown((Keys)i))
+            //    {
+            //        keys.Add((Keys)i);
+            //    }
+            //}
 
             /*
 
@@ -8590,7 +8635,7 @@ namespace hotkey1
         private IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
         {
             var handled = false;
-            if (nCode >= 0 )
+            if (nCode >= 0)
             {
                 var myKeyboardHookStruct = (KeyboardHookStruct)Marshal.PtrToStructure(lParam, typeof(KeyboardHookStruct));
                 if ((wParam.ToInt32() == WM_KEYDOWN || wParam.ToInt32() == WM_SYSKEYDOWN))
@@ -8650,18 +8695,23 @@ namespace hotkey1
         public MainWindow()
         {
             InitializeComponent();
-            
+
             ModifierKeys fsModifiers = ModifierKeys.Windows;
             Keys vk = Keys.NumPad7;
             _id = Interlocked.Increment(ref _lastHotKeyId);
             IntPtr hWnd = new WindowInteropHelper(System.Windows.Application.Current.MainWindow).Handle;
-       
+
+            ComponentDispatcher.ThreadPreprocessMessage += ThreadPreprocessMessageMethod;
+            // ThreadPreprocessMessageMethod 
+            // 内部维护一个 _id ，win32 函数 RegisterHotKey 注册热键时把这个 _id 传进去。只要有热键触发就会回调 ThreadPreprocessMessageMethod，参数 msg.wParam 如果等于 _id 就表明你注删的热键触发了
+
+
             IsRegistered = RegisterHotKey(hWnd, _id, fsModifiers, vk);
 
-            _proc = HookCallback;
-            var curProcess = Process.GetCurrentProcess();
-            ProcessModule curModule = curProcess.MainModule;
-            _hookId = SetWindowsHookEx(WH_KEYBOARD_LL, _proc, GetModuleHandle(curModule.ModuleName), 0);
+            //_proc = HookCallback;
+            //var curProcess = Process.GetCurrentProcess();
+            //ProcessModule curModule = curProcess.MainModule;
+            //_hookId = SetWindowsHookEx(WH_KEYBOARD_LL, _proc, GetModuleHandle(curModule.ModuleName), 0);
 
 
 
@@ -8669,7 +8719,7 @@ namespace hotkey1
 
             //HotKeyPressed += SendToLeft;
 
-            ComponentDispatcher.ThreadPreprocessMessage += ThreadPreprocessMessageMethod;
+            //ComponentDispatcher.ThreadPreprocessMessage += ThreadPreprocessMessageMethod;
 
             //IsRegistered = !UnregisterHotKey(hWnd, _id);
 
@@ -8758,49 +8808,6 @@ public class SystemHotKey
 
 }
 ```
-
-
-
-# WPF
-
-
-
-## 指定最新语言版本
-
-- https://blog.csdn.net/liangyely/article/details/106163660
-
-在工程文件   xxx.csproj 里修改，
-
-LangVersion 修改为：preview
-
-  <PropertyGroup>
-	<LangVersion>preview</LangVersion>
-  </PropertyGroup>
-或者改为：8.0
-
-  <PropertyGroup>
-	<LangVersion>8.0</LangVersion>
-  </PropertyGroup>
-
-
-
-## 添加源码目录
-
-- https://blog.csdn.net/yangdashi888/article/details/73323419
-
-1.把源码目录拷贝到工程目录下
-
-2.这时在vs的目录列表里是看不到这个目录的，在如下图工具栏中点击图标【显示所有文件】，就可以看到新增的目录了
-
-
-
-3.这时实际上还没有真正地加入到工程中来，可见.h文件的图标是红色的，
-
-要在工程目录上右键选择【包括在项目中】即可：
-
-
-
-4.添加完毕，.h文件前面的图标正常了。
 
 
 
