@@ -8045,6 +8045,22 @@ this.$MuiPlayer()
 
 
 
+### 如果babel 出错
+
+```
+# babel.config.js 改成这样
+
+module.exports = {
+    presets: [
+        [ "@vue/app", { useBuiltIns: "entry" } ]
+    ]
+}
+```
+
+
+
+
+
 ## 运行前端
 
 - npm  run serve 
