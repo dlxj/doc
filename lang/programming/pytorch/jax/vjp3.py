@@ -10,7 +10,7 @@ import numpy as np
 
 import torch
 
-# F= AX   # 求 df / dA   # (3*2) . (2*2) => (3*2)
+# F= AX   # 求 df / dA   # (2*2) . (2*2) => (2*2)
 
 # F = AX = IAX # 注意在 A 的左边添加了一个单位阵 I (3*3)
 
@@ -26,16 +26,16 @@ pi = jnp.pi
 e = jnp.e
 
 
-A = jnp.array( [[1,2], [3, 4], [5, 6]] , jnp.float32 )
+A = jnp.array( [[1,2], [3, 4]] , jnp.float32 )
 
-X = jnp.array( [[7, 8],[9, 10]] , jnp.float32 )
+X = jnp.array( [[5, 6],[7, 8]] , jnp.float32 )
 
 def f(A, X):
  return jnp.dot( A, X )
 
 F = f( A, X )
 
-( grad_A, ) = jax.jacfwd(f, argnums=(0,))( A, X)  # jax 自动微分求出的梯度 dF / dA   (3, 2, 3, 2)
+( grad_A, ) = jax.jacfwd(f, argnums=(0,))( A, X )  # jax 自动微分求出的梯度 dF / dA   (3, 2, 3, 2)
 
 
 I = jnp.eye( 3 ) # I 的转置还是 I，这里就省掉了

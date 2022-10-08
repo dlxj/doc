@@ -10109,22 +10109,15 @@ conda env remove -n DB
 
 tmux 
 
-conda update -y conda -n base && \
-conda install ipython pip --yes && \
-conda create -n DB python=3.8 --yes && \
-source activate DB && \
-conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch --yes
-
-
-source activate DB && \
+conda create -n MM python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y && \
+source activate MM && \
 pip3 install openmim && \
 mim install mmcv-full && \
-mim install mmdet
-
-cp autodl-nas/mmocr.zip . && \
-unzip mmocr.zip && \
+mim install mmdet && \
+git clone https://github.com/open-mmlab/mmocr.git && \
 cd mmocr && \
 pip3 install -e .
+
 
 python mmocr/utils/ocr.py demo/demo_text_ocr.jpg --print-result --imshow
 
@@ -10810,6 +10803,8 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
   >
   > 改为det_limit_type='min', det_limit_side_len=64，也就是短边最小64.
 
+- https://blog.csdn.net/m0_63642362/article/details/122755254  PPOCR文本检测+识别：电表读数和编号识别
+
 
 
 use_shared_memory: False
@@ -11238,6 +11233,7 @@ python gen_ocr_train_val_test.py
 # 训练
 source activate PP && \
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+	python tools/train.py -c configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml
 
 # 继续上一次训练(epoch 接着上一次的断点开始)
 source activate PP && \
@@ -11254,6 +11250,12 @@ python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillatio
 python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
 	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
 
+
+https://github.com/PaddlePaddle/PaddleOCR/issues/6652
+paddleocr 检测的训练模型预测结果很好，但转inference后预测，基本检测不到文本
+问题目前解决方法：
+执行：python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="./output/det_db_inference_3/student/" --image_dir="./test_data/" --use_gpu=True --det_limit_side_len=736或960 --det_limit_type=min
+检测率终于正常了，736的检测率比960高些，因为默认是--det_limit_side_len=960 --det_limit_type=max，当预测样本宽度为300左右时并没有被扩大到960，但训练时是扩大到960后训练的， 配置文件中有默认设置 - EastRandomCropData: size: [960, 960]，所以，训练和预测的参数必须保持一致，才能检测正常。
 
 
 # 评估
