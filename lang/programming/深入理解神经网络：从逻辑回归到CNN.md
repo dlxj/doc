@@ -8348,6 +8348,18 @@ tmp2 = jnp.sin(tmp)  # (10000, 16)
 
 
 
+#### slice
+
+
+
+```
+A[:,:1] # 行全要，列只要第0 列 
+```
+
+
+
+
+
 #### 分块操作 sousa
 
 ```python
@@ -11235,6 +11247,10 @@ source activate PP && \
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 	python tools/train.py -c configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml # 不收敛
 	python tools/train.py -c configs/det/det_res18_db_v2.0.yml
+	python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/det_model" --image_dir="train_data/det/test/6.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
+	# --det_db_unclip_ratio 影响检测框的高度
+	# https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/124767835
+		# 关于Paddle OCR检测器检测框偏小的解决方法
 
 # 继续上一次训练(epoch 接着上一次的断点开始)
 source activate PP && \
@@ -11246,6 +11262,8 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -
 
 # 导出模型
 python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
+
+python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/model
 
 # 推断
 python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt

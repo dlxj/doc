@@ -37,6 +37,17 @@ F = f( A, X )
 
 ( grad_A, ) = jax.jacfwd(f, argnums=(0,))( A, X )  # jax 自动微分求出的梯度 dF / dA   (3, 2, 3, 2)
 
+def y(A, X):
+    y00 = jnp.dot( A[:1, :],  X[:,:1]).__array__()[0][0]
+    y01 = jnp.dot( A[:1, :],  X[:, 1:2]).__array__()[0][0]
+    y10 = jnp.dot( A[1:2, :],  X[:,:1]).__array__()[0][0]
+    y11 = jnp.dot( A[1:2, :],  X[:,1:2]).__array__()[0][0]
+
+    Y = jnp
+
+    return y00
+
+y(A, X)
 
 I = jnp.eye( 3 ) # I 的转置还是 I，这里就省掉了
 
