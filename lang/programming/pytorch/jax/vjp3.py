@@ -26,9 +26,9 @@ pi = jnp.pi
 e = jnp.e
 
 
-A = jnp.array( [[1,2], [3, 4]] , jnp.float32 )
+A = jnp.array( [[1,3], [2, 4]] , jnp.float32 )
 
-X = jnp.array( [[5, 6],[7, 8]] , jnp.float32 )
+X = jnp.array( [[5, 7],[6, 8]] , jnp.float32 )
 
 def f(A, X):
  return jnp.dot( A, X )

@@ -11233,7 +11233,8 @@ python gen_ocr_train_val_test.py
 # 训练
 source activate PP && \
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
-	python tools/train.py -c configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml
+	python tools/train.py -c configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml # 不收敛
+	python tools/train.py -c configs/det/det_res18_db_v2.0.yml
 
 # 继续上一次训练(epoch 接着上一次的断点开始)
 source activate PP && \
