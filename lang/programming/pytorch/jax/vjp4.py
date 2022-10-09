@@ -1,5 +1,4 @@
 
-
 # doc\lang\programming\CSC321 Lecture 10：Automatic Differentiation.md
 # https://zhuanlan.zhihu.com/p/144756543 让向量、矩阵和张量的求导更简洁些吧
 # https://www.cnblogs.com/pinard/p/10825264.html
@@ -9,6 +8,9 @@
 
 # https://rogerluo.dev/Brochure.jl/dev/automatic-differentiation/
     # julia 实现自动微分
+
+# https://segmentfault.com/a/1190000042199820 
+    # OneFlow源码阅读6：自动微分机制
 
 import jax
 import jax.numpy as jnp
