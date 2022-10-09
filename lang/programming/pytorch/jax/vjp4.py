@@ -24,9 +24,17 @@ def c(A, X, B):
 
 ax = f(A, X)
 
+axb = f(ax, B)
+
 C = c(A, X, B)
 
 ( grad_C, ) = jax.jacfwd(c, argnums=(0,))( A, X, B )
+
+( grad_axb_ax, ) = jax.jacfwd(f, argnums=(0,))( ax, B )  # (A.X).B 对 A.X 求导
+
+( grad_ax_a, ) = jax.jacfwd(f, argnums=(0,))( A, X )  # A.X 对 A 求导
+
+g_axb_a = jnp.matmul( grad_axb_ax, grad_ax_a )
 
 
 """
@@ -36,7 +44,7 @@ C = c(A, X, B)
 ( (2*2) . (2*2) ) . (2*1) = (2*1)
 
 d c / d A = d c / d A.X  *  d A.X / d A
-2*1*2*2   = 2*1*2*2 * 2*2*2*2
+2*1*2*2 = 2*1*2*2 * 2*2*2*2
 
 
 梯度 grad_C 的维度是 (2, 1, 2, 2)
@@ -70,7 +78,8 @@ gc10 = jnp.array(
         ], 
         jnp.float32 )
 
-# b00 x10+b10 x11
+
+gc = jnp.stack([gc00, gc10 ], axis=0).reshape((2, 1, 2, 2))
 
 
 # F= AX   # 求 df / dA   # (2*2) . (2*2) => (2*2)
