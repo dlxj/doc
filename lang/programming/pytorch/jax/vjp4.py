@@ -7,6 +7,9 @@
 # https://www.zhihu.com/question/52399883
     # 矩阵求导不能直接使用链式法则，即将中间导数矩阵乘起来。使用链式法则归根结底还是要考虑矩阵元素对元素的求导，即标量对标量求导。
 
+# https://rogerluo.dev/Brochure.jl/dev/automatic-differentiation/
+    # julia 实现自动微分
+
 import jax
 import jax.numpy as jnp
 from jax import random, jacrev, vjp
