@@ -8715,6 +8715,25 @@ jax.vmap(linear, in_axes=(1,), out_axes=(1,))(x)
 
 
 
+### mac m1
+
+- https://github.com/google/jax/issues/12505 eig bug in M1 mac
+
+  > ```
+  > import jax.numpy as np
+  > 
+  > mat = np.array([
+  >                     [1+1j, 3+2j, 4.0+1.1j, 11-0.00001j, 44+100j],
+  >                     [22+0j, 23+2j, 0.5+0.93j, 33+12j, 0.0001+0.000001j],
+  >                     [-11-1j, 23+87j, 11-0.002j, 32-0.03423j, 32+9j],
+  >                     [0.0002+23j, 10+0.324j, 0.003+0.999j, 10.434+2j, 33+0j],
+  >                     [3+0.9j, 12+12j, 3.22+98j, 0.024+99.123j, 0+123j]
+  >                 ])
+  > 
+  > print(np.linalg.eig(mat[:-1, :-1]))
+  > print(np.linalg.eig(mat))
+  > ```
+
 
 
 ### Solving Optimization Problems with JAX
