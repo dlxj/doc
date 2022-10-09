@@ -1,6 +1,11 @@
 
 
 # doc\lang\programming\CSC321 Lecture 10：Automatic Differentiation.md
+# https://zhuanlan.zhihu.com/p/144756543 让向量、矩阵和张量的求导更简洁些吧
+# https://www.cnblogs.com/pinard/p/10825264.html
+    # 矩阵对矩阵的求导是比较复杂的定义
+# https://www.zhihu.com/question/52399883
+    # 矩阵求导不能直接使用链式法则，即将中间导数矩阵乘起来。使用链式法则归根结底还是要考虑矩阵元素对元素的求导，即标量对标量求导。
 
 import jax
 import jax.numpy as jnp
