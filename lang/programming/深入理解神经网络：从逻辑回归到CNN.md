@@ -7767,6 +7767,18 @@ $$
 
   > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220817101358913.png" alt="image-20220817101358913" style="zoom:50%;" />
   >
+  > ```
+  > A={{a00,a01},{a10,a11}};A//MatrixForm
+  > X={{5,7},{6,8}};X//MatrixForm
+  > f[a_]:=a.X
+  > f[A]//MatrixForm
+  > D[f[A],{A}]//MatrixForm
+  > 
+  > # 注意看结果的维度，2*2 的结果对 A 求导，每个元素都都得一个 2*2 的导数矩阵，妙极
+  > ```
+  >
+  > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20221009081304009.png" alt="image-20221009081304009" style="zoom:50%;" />
+  >
   > ```python
   > # doc\lang\programming\CSC321 Lecture 10：Automatic Differentiation.md
   > 
@@ -7785,8 +7797,8 @@ $$
   > # dF / dX = I 克罗内克积符号 A^T    dX 形状是 (4*2) ，所以 I 是 (2*2)。单位阵必是方阵
   > 
   > # G = FV # (1*2) . (2*1) => (1*1)
-  >     # [ [f00, f01]  ] . [ [v00], [v10]  ]
-  >     # 
+  >  # [ [f00, f01]  ] . [ [v00], [v10]  ]
+  >  # 
   > 
   > A = jnp.array( [[1,2]] , jnp.float32 )
   > 
@@ -7795,7 +7807,7 @@ $$
   > V = jnp.array( [[7],[8]] , jnp.float32 )
   > 
   > def f(A, X):
-  >     return jnp.dot( A, X )
+  >  return jnp.dot( A, X )
   > 
   > F = f( A, X )
   > G = f( F, V )
@@ -7803,16 +7815,16 @@ $$
   > l = lambda A, X, V: f( f(A, X), V )
   > L = l(A, X, V)
   > ( grad_X, grad_V) = jax.jacfwd(l, argnums=(1,2))( A, X, V )  # dG / dX 和  dG / dV
-  >     # 为了和后面分步计算的雅克比乘积结果对比 (链式法则求各层的梯度)
+  >  # 为了和后面分步计算的雅克比乘积结果对比 (链式法则求各层的梯度)
   > 
   > I = jnp.eye( 2 )
   > 
   > A_T = jnp.transpose(A)
   > 
   > kr = jax.numpy.kron(I, A_T) # (4*2)  # 求 dF / dX
-  >     # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
-  >         # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
-  >         # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
+  >  # 矩阵微分本质就是结果向量与参数向量逐元素求导, 结果总共 2 个元素，参数总共 4 个元素，求导结果总共应该是 8 个元素
+  >      # df_1(x) .. df_n(x) 横向展开， dx 纵向展开
+  >      # kr 的转置应该就是雅可比，它是 dx 横向展开, df(x) 纵向展开
   > 
   > kr2 = jnp.transpose(F) # (2*1)  # 求 dG / dV
   > 
@@ -7823,7 +7835,7 @@ $$
   > # 下面用 jax 自动微分验证
   > 
   > ( grad, ) = jax.jacfwd(f, argnums=(1,))( A, X ) # (1, 2, 2, 2)
-  >     # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
+  >  # 验证结果和 kr 是相同的，只是矩阵的 shape 不一样
   > 
   > grad_42 = jnp.reshape(grad, (4, 2)) # 和前面 kr 一样了
   > 
@@ -7836,14 +7848,14 @@ $$
   > 
   > 
   > y, vjp_fn = jax.vjp(f, A, X) # 返回函数的计算结果，还有用于计算 vjp 的函数 vjp_fn，它需要一个向量作为参数
-  >     # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
+  >  # 你传一个向量进去，vjp_fn 就会给你一个 v * 雅可比 的结果
   > 
   > 
   > AA = torch.tensor(A.__array__())
   > XX = x = torch.tensor(X.__array__())
   > 
   > def ff(AA, XX):
-  >     return torch.mm(AA, XX) # 数学里的矩阵乘法，要求两个Tensor的维度满足矩阵乘法的要求
+  >  return torch.mm(AA, XX) # 数学里的矩阵乘法，要求两个Tensor的维度满足矩阵乘法的要求
   > 
   > FF = ff(AA, XX)
   > 
