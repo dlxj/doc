@@ -135,6 +135,65 @@ app.listen(port, function() {
 
 
 ```
+
+// 数据库备份时卡了，就会不响应
+// ps aux |grep mysql  
+// insert into imgs(`md5`,api,ip,userID)VALUES('2ef5f105b39f12a67749a55fd321b671','aliyun','127.0.0.1',0) on duplicate key update ip='127.0.0.1'
+
+(async () => {
+
+    let fs = require('fs')
+    let md5 = require('md5')
+
+    let bytes = fs.readFileSync("1032.jpg")  // 'binary'
+    let buf = Buffer.from(bytes)
+    let m5 = md5(buf)
+    let b64 = buf.toString('base64')
+
+
+    let json = {
+        md5: m5,
+        imgData: b64,
+        guid: '1049a596-fea6-4f0f-863f-62d0b0a2ea55',
+        userID:11,
+        bookNO: 'lrx333',
+        imgName: '1032.jpg',
+        originImgData: b64
+    }
+
+    // json = {
+    //     md5: '7468efae7d7ab7333d0197a8ca1bf32c',
+    //     imgData: 'hasTest',
+    //     guid: 'abc346eb-aeb1-4759-b885-68052ec34810',
+    //     bookNO: 'lrx333',
+    //     imgName: '1032.jpg'
+    // }
+
+    let bent = require('bent')
+    let formurlencoded = require('form-urlencoded')
+
+    let formurlencoded_body = formurlencoded(json)
+
+    //let post = bent('http://xxx:11112', 'POST', 'json', 200)
+    let post = bent('http://127.0.0.1:11112', 'POST', 'json', 200)
+    let response = await post('/aliyun/ocr', json)
+
+
+
+    data = JSON.parse(response).data.test
+
+    let s = JSON.stringify(response)
+
+    console.log(response)
+
+})()
+```
+
+
+
+
+
+```
 const post = bent('http://localhost:666', 'POST', 'json', 200) # 返回类型是 json
 const response = await post('/gettest', { appename: 'ZC_ZXYJHNKX_YTMJ' })
 ```
