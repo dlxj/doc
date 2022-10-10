@@ -7614,8 +7614,7 @@ A11 = f1(X)
 
 
 - **矩阵求导术(下)** 
-
-  - doc\lang\programming\矩阵求导术（下） - 知乎.pdf
+- doc\lang\programming\矩阵求导术（下） - 知乎.pdf
 
 
 <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20220823145345647.png" alt="image-20220823145345647" style="zoom:80%;" />
@@ -7778,6 +7777,8 @@ $$
   > ```
   >
   > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20221009081304009.png" alt="image-20221009081304009" style="zoom:50%;" />
+  >
+  > <img src="深入理解神经网络：从逻辑回归到CNN.assets/image-20221010110648236.png" alt="image-20221010110648236" style="zoom: 50%;" />
   >
   > ```
   > 
