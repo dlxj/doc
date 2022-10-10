@@ -12,6 +12,10 @@
 # https://segmentfault.com/a/1190000042199820 
     # OneFlow源码阅读6：自动微分机制
 
+# https://zhuanlan.zhihu.com/p/25063314 机器学习中的矩阵/向量求导
+    
+
+
 import jax
 import jax.numpy as jnp
 from jax import random, jacrev, vjp
