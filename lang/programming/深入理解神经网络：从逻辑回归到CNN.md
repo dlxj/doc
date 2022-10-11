@@ -7311,6 +7311,14 @@ one hot型的矩阵运算简化为了查表操作
 
 
 
+## katago
+
+- https://github.com/kinfkong/katago-colab
+
+
+
+
+
 ## Deep leaning with js
 
 - https://www.npmjs.com/package/onnxruntime-web
