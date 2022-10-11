@@ -11540,6 +11540,8 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 	# https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/124767835
 		# 关于Paddle OCR检测器检测框偏小的解决方法
 
+	python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/model_tmp" --image_dir="train_data/det/test/6.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
+
 # 继续上一次训练(epoch 接着上一次的断点开始)
 source activate PP && \
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy
@@ -11552,6 +11554,8 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -
 python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
 
 python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/model
+
+python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/latest Global.save_inference_dir=output/model_tmp
 
 # 推断
 python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
