@@ -11576,6 +11576,19 @@ python3 tools/eval.py -c ./configs/rec/rec_chinese_lite_train_v2.0.yml  -o Globa
 python3 tools/infer_rec.py -c ./configs/rec/rec_chinese_common_train_v2.0.yml  -o Global.checkpoints=./output/rec_chinese_common_v2.0/best_accuracy Global.infer_img=doc/13_crop_4.jpg
 
 
+
+训练的输入尺寸在：
+
+EastRandomCropData:
+size: [640, 640]
+测试的时候使用的是[736, 1280]，
+
+DetResizeForTest:
+image_shape: [736, 1280]
+训练的时候输入尺寸小是为了加快训练速度，并减小显存占用，预测的时候设置大一些是为了提升检测精度
+
+预训练模型不对，CML训练需要加载训练好的教师模型，关于PPOCRv3的训练方法参考这个文档：https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/PPOCRv3_det_train.md
+
 ```
 
 
