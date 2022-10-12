@@ -11105,7 +11105,7 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 - https://blog.csdn.net/m0_63642362/article/details/122755254  PPOCR文本检测+识别：电表读数和编号识别
 
-
+- https://aistudio.baidu.com/aistudio/projectdetail/4330587  **实战  讲解详细**
 
 use_shared_memory: False
 
@@ -11278,6 +11278,30 @@ apt update -qq;
 /usr/local/cuda/bin/nvcc --version
 
 ldconfig -p | grep cuda
+
+```
+
+
+
+#### 训练 ali1k
+
+```
+
+wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
+
+tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
+cd p7zip_16.02 && \
+make && \
+make install
+
+7za x PaddleOCR_ali300epoch.zip
+
+ln -s /root/autodl-tmp/PaddleOCR /root/PaddleOCR
+
+PPOCRLabel --lang ch
+
+
+
 
 ```
 
@@ -11553,7 +11577,7 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -
 # 导出模型
 python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
 
-python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/model
+python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/det_model
 
 python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/latest Global.save_inference_dir=output/model_tmp
 
@@ -11577,6 +11601,23 @@ python3 tools/infer_rec.py -c ./configs/rec/rec_chinese_common_train_v2.0.yml  -
 
 
 
+# 检测识别二合一
+
+!python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/6.jpg" \
+    --det_model_dir="output/det_model" \
+    --rec_model_dir="./inference/rec_rare" \
+    --rec_image_shape="3, 32, 320" \
+    --rec_char_type="ch" \
+    --rec_algorithm="RARE" \
+    --use_space_char False \
+    --max_text_length 7 \
+    --rec_char_dict_path="../word_dict.txt" \
+    --use_gpu False
+
+
+
+
 训练的输入尺寸在：
 
 EastRandomCropData:
@@ -11588,6 +11629,13 @@ image_shape: [736, 1280]
 训练的时候输入尺寸小是为了加快训练速度，并减小显存占用，预测的时候设置大一些是为了提升检测精度
 
 预训练模型不对，CML训练需要加载训练好的教师模型，关于PPOCRv3的训练方法参考这个文档：https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/PPOCRv3_det_train.md
+
+
+由于数据集大多是长文本，因此需要注释掉下面的数据增广策略，以便训练出更好的模型。
+- RecConAug:
+    prob: 0.5
+    ext_data_num: 2
+    image_shape: [48, 320, 3]
 
 ```
 
