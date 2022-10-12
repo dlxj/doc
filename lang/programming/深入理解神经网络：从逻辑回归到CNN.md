@@ -11285,6 +11285,10 @@ ldconfig -p | grep cuda
 
 #### 训练 ali1k
 
+- https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.5/doc/doc_ch/models_list.md#1.1
+
+  > 预训练模型
+
 ```
 
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
@@ -11300,8 +11304,11 @@ ln -s /root/autodl-tmp/PaddleOCR /root/PaddleOCR
 
 PPOCRLabel --lang ch
 
+python PPOCRLabel/gen_ocr_train_val_test.py
 
+pip install pyyaml
 
+python tools/train.py -c configs/det/det_res18_db_v2.0.yml
 
 ```
 
