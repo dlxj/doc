@@ -11289,6 +11289,10 @@ ldconfig -p | grep cuda
 
   > 预训练模型
 
+##### 显卡性能测试
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 25%;" />
+
 ```
 
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
@@ -11309,6 +11313,25 @@ python PPOCRLabel/gen_ocr_train_val_test.py
 pip install pyyaml
 
 python tools/train.py -c configs/det/det_res18_db_v2.0.yml
+
+# 模型评估
+python tools/eval.py -c configs/det/det_res18_db_v2.0.yml -o Global.pretrained_model="output/ch_db_res18/best_accuracy"
+[2022/10/13 09:42:16] ppocr INFO: metric eval ***************
+[2022/10/13 09:42:16] ppocr INFO: precision:0.5296811494647662
+[2022/10/13 09:42:16] ppocr INFO: recall:0.9175922253074177
+[2022/10/13 09:42:16] ppocr INFO: hmean:0.6716509998911189
+[2022/10/13 09:42:16] ppocr INFO: fps:8.796411382643813
+
+# 模型推断
+python tools/infer_det.py -c configs/det/det_res18_db_v2.0.yml  -o Global.checkpoints="output/ch_db_res18/best_accuracy" image_dir="train_data/det/test/12.jpg"
+
+# 模型导出后推断
+python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/det_model" --image_dir="train_data/det/test/6.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
+
+
+
+# 识别训练
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 
 ```
 
