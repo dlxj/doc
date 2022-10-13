@@ -11314,7 +11314,7 @@ pip install pyyaml
 
 python tools/train.py -c configs/det/det_res18_db_v2.0.yml
 
-# 模型评估
+# 检测模型评估
 python tools/eval.py -c configs/det/det_res18_db_v2.0.yml -o Global.pretrained_model="output/ch_db_res18/best_accuracy"
 [2022/10/13 09:42:16] ppocr INFO: metric eval ***************
 [2022/10/13 09:42:16] ppocr INFO: precision:0.5296811494647662
@@ -11322,16 +11322,38 @@ python tools/eval.py -c configs/det/det_res18_db_v2.0.yml -o Global.pretrained_m
 [2022/10/13 09:42:16] ppocr INFO: hmean:0.6716509998911189
 [2022/10/13 09:42:16] ppocr INFO: fps:8.796411382643813
 
-# 模型推断
+# 检测模型推断
 python tools/infer_det.py -c configs/det/det_res18_db_v2.0.yml  -o Global.checkpoints="output/ch_db_res18/best_accuracy" image_dir="train_data/det/test/12.jpg"
 
-# 模型导出后推断
-python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/det_model" --image_dir="train_data/det/test/6.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
+
+# 检测模型导出后推断
+python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/det_model
+
+python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/det_model" --image_dir="train_data/det/test/12.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
 
 
 
 # 识别训练
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+# 识别模型导出后推断
+python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/rec_model
+
+python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_18.jpg --rec_model_dir=output/rec_model/Student --rec_char_dict_path=train_data/keys.txt
+	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
+
+
+# 检测识别二合一
+
+python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/12.jpg" \
+    --det_algorithm="DB" \
+    --det_model_dir="output/det_model" \
+    --det_limit_side_len=960 \
+    --det_db_unclip_ratio=3.5 \
+    --rec_model_dir="output/rec_model/Student" \
+    --rec_char_dict_path="train_data/keys.txt" \
+    --use_gpu True
 
 ```
 
