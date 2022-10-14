@@ -11401,6 +11401,13 @@ python3 tools/infer/predict_system.py \
 
 在CPU上加速，可以开启mkldnn，设置参数 --enable_mkldnn=True，并设置合适的线程数
 
+https://github.com/PaddlePaddle/PaddleOCR/issues/6247
+	PP-OCRv3识别推理的时候--rec_algorithm是SVTR_LCNet，注意和原始SVTR的区别哈
+https://github.com/PaddlePaddle/PaddleOCR/issues/2554
+	单个字符坐标
+		https://blog.csdn.net/u013403054/article/details/107346165
+		https://zhuanlan.zhihu.com/p/76528329
+
 paddle_ch = PaddleOCR(
             show_log=False,
             lang="ch",
