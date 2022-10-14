@@ -11393,9 +11393,53 @@ python3 tools/infer/predict_system.py \
     --det_db_unclip_ratio=3.5 \
     --rec_model_dir="output/rec_model/Student" \
     --rec_char_dict_path="train_data/keys.txt" \
-    --use_gpu FALSE \
+    --use_gpu False \
     --enable_mkldnn=True
 
+
+
+# vscode 运行
+
+tools/infer/predict_system.py # 修改后 F5
+if __name__ == "__main__":
+
+    """
+
+    python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/25.jpg" \
+    --det_algorithm="DB" \
+    --det_model_dir="output/det_model" \
+    --det_limit_side_len=960 \
+    --det_db_unclip_ratio=3.5 \
+    --rec_model_dir="output/rec_model/Student" \
+    --rec_char_dict_path="train_data/keys.txt" \
+    --use_gpu False \
+    --enable_mkldnn=True
+    
+    """
+
+	# tools/infer/predict_system.py 加入：
+    import sys
+    sys.argv.append( '--image_dir' )
+    # sys.argv.append( 'train_data/det/test/12.jpg' )
+    sys.argv.append( 'train_data/det/train/3.jpg' )
+    sys.argv.append( '--det_algorithm' )
+    sys.argv.append( 'DB' )
+    sys.argv.append( '--det_model_dir' )
+    sys.argv.append( 'output/det_model' )
+    sys.argv.append( '--det_limit_side_len' )
+    sys.argv.append( '960' )
+    sys.argv.append( '--det_db_unclip_ratio' )
+    sys.argv.append( '3.5' )
+    sys.argv.append( '--rec_model_dir' )
+    sys.argv.append( 'output/rec_model/Student' )
+    sys.argv.append( '--rec_char_dict_path' )
+    sys.argv.append( 'train_data/keys.txt' )
+    sys.argv.append( '--use_gpu' )
+    sys.argv.append( 'False' )
+    sys.argv.append( '--enable_mkldnn' )
+    sys.argv.append( 'True' )
+    
 
 针对这种情况，去生成或者标注一批容易错的数据，一般精度可以再提升一波
 
@@ -11748,7 +11792,6 @@ python3 tools/infer_rec.py -c ./configs/rec/rec_chinese_common_train_v2.0.yml  -
 
 
 
-
 训练的输入尺寸在：
 
 EastRandomCropData:
@@ -12017,6 +12060,18 @@ Eval:
 > 思路：采用resnet50(teacher)先训练，在利用训练好的resnet50(teacher)对resnet18(student)小模型进行联合训练，实验证明f1score比单独训练resnet18涨一个点。
 
 
+
+
+
+## PaddleSpeech
+
+- https://github.com/PaddlePaddle/PaddleSpeech
+
+
+
+### 训练一个自己的TTS
+
+- https://github.com/PaddlePaddle/PaddleSpeech/discussions/1842
 
 
 
