@@ -9270,6 +9270,12 @@ pip install opencv-python  # import cv2  # win10要编译很久的
 
 
 
+## 图像处理宝藏
+
+- https://pyimagesearch.com/2021/01/25/detecting-low-contrast-images-with-opencv-scikit-image-and-python/
+
+
+
 ## 中文文件名错误
 
 ```python

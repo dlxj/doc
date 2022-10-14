@@ -11449,6 +11449,8 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/6247
 	PP-OCRv3识别推理的时候--rec_algorithm是SVTR_LCNet，注意和原始SVTR的区别哈
 https://github.com/PaddlePaddle/PaddleOCR/issues/2554
 	单个字符坐标
+		https://github.com/clovaai/CRAFT-pytorch/issues/3 
+			Gaussian heatmap 的完整实现
 		https://aistudio.baidu.com/aistudio/projectdetail/1927739 CRAFT论文复现
 		https://www.jianshu.com/p/c3799417796a
 			CRAFT-Reimplementation 半监督学习样本GT生成存在的问题
@@ -11457,6 +11459,10 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/2554
 		https://blog.csdn.net/u013403054/article/details/107346165
 		https://zhuanlan.zhihu.com/p/76528329
 		
+方法一：如果是检测+识别的端到端系统，可以试试基于识别结果倒推一下单字位置（之前有开发者这么搞过，但没分享出来，可以探索下。。）
+方法二：整理一批单字符标注的数据重新训练检测模型
+
+
 
 Q1.1.1：基于深度学习的文字检测方法有哪几种？各有什么优缺点？
 A：常用的基于深度学习的文字检测方法一般可以分为基于回归的、基于分割的两大类，当然还有一些将两者进行结合的方法。
