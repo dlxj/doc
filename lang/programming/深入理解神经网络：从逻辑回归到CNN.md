@@ -11386,7 +11386,7 @@ pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/
 
 
 python3 tools/infer/predict_system.py \
-    --image_dir="train_data/det/test/12.jpg" \
+    --image_dir="train_data/det/test/25.jpg" \
     --det_algorithm="DB" \
     --det_model_dir="output/det_model" \
     --det_limit_side_len=960 \
