@@ -11449,8 +11449,21 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/6247
 	PP-OCRv3识别推理的时候--rec_algorithm是SVTR_LCNet，注意和原始SVTR的区别哈
 https://github.com/PaddlePaddle/PaddleOCR/issues/2554
 	单个字符坐标
+		https://aistudio.baidu.com/aistudio/projectdetail/1927739 CRAFT论文复现
+		https://www.jianshu.com/p/c3799417796a
+			CRAFT-Reimplementation 半监督学习样本GT生成存在的问题
+		https://github.com/faustomorales/keras-ocr/issues/40
+			CRAFT 完整实现，但是Keras
 		https://blog.csdn.net/u013403054/article/details/107346165
 		https://zhuanlan.zhihu.com/p/76528329
+		
+
+Q1.1.1：基于深度学习的文字检测方法有哪几种？各有什么优缺点？
+A：常用的基于深度学习的文字检测方法一般可以分为基于回归的、基于分割的两大类，当然还有一些将两者进行结合的方法。
+（1）基于回归的方法分为box回归和像素值回归。a. 采用box回归的方法主要有CTPN、Textbox系列和EAST，这类算法对规则形状文本检测效果较好，但无法准确检测不规则形状文本。 b. 像素值回归的方法主要有CRAFT和SA-Text，这类算法能够检测弯曲文本且对小文本效果优秀但是实时性能不够。
+（2）基于分割的算法，如PSENet，这类算法不受文本形状的限制，对各种形状的文本都能取得较好的效果，但是往往后处理比较复杂，导致耗时严重。目前也有一些算法专门针对这个问题进行改进，如DB，将二值化进行近似，使其可导，融入训练，从而获取更准确的边界，大大降低了后处理的耗时。
+
+
 
 paddle_ch = PaddleOCR(
             show_log=False,
