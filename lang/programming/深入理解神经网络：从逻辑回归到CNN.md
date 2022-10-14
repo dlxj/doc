@@ -11295,6 +11295,17 @@ ldconfig -p | grep cuda
 
 ```
 
+conda deactivate && \
+conda env remove -n PP && \
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n PP python=3.8 --yes && \
+source activate PP && \
+conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge && \
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+pip uninstall opencv-python && \
+pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
 
 tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
@@ -11354,6 +11365,67 @@ python3 tools/infer/predict_system.py \
     --rec_model_dir="output/rec_model/Student" \
     --rec_char_dict_path="train_data/keys.txt" \
     --use_gpu True
+
+
+# 压缩打包
+7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on PaddleOCR_ali1k_det_rec_300epoch.7z PaddleOCR
+
+# CPU部署
+
+conda deactivate && \
+conda env remove -n PP && \
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n PP python=3.8 --yes && \
+source activate PP && \
+conda install paddlepaddle==2.3.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge && \
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+pip uninstall opencv-python && \
+pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+
+python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/12.jpg" \
+    --det_algorithm="DB" \
+    --det_model_dir="output/det_model" \
+    --det_limit_side_len=960 \
+    --det_db_unclip_ratio=3.5 \
+    --rec_model_dir="output/rec_model/Student" \
+    --rec_char_dict_path="train_data/keys.txt" \
+    --use_gpu FALSE \
+    --enable_mkldnn=True
+
+
+针对这种情况，去生成或者标注一批容易错的数据，一般精度可以再提升一波
+
+在CPU上加速，可以开启mkldnn，设置参数 --enable_mkldnn=True，并设置合适的线程数
+
+paddle_ch = PaddleOCR(
+            show_log=False,
+            lang="ch",
+            cpu_threads=1,
+            det_db_thresh=0.1,
+            det_db_box_thresh=0.1,
+            use_mp=True,
+            enable_mkldnn=True,
+            total_process_num=os.cpu_count() * 2 - 1,
+            use_angle_cls=True,
+            cls_model_dir="whl/cls/ch_ppocr_mobile_v2.0_cls_infer",
+            det_model_dir="whl/det/ch/ch_PP-OCRv3_det_infer",
+            rec_model_dir="whl/rec/ch/ch_PP-OCRv3_rec_infer"
+    )
+
+ocr = PaddleOCR(use_angle_cls=True,
+lang="ch",
+enable_mkldnn=True,
+use_gpu=False)
+ocr.ocr("image_path")
+
+测试环境：CPU型号为Intel Gold 6148，CPU预测时开启MKLDNN加速。
+
+python3 -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
+
 
 ```
 

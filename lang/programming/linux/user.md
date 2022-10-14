@@ -5,6 +5,21 @@ https://blog.csdn.net/dengbin_40/article/details/87997128
 
 
 
+```
+为添加的用户指定相应的用户组
+
+# useradd -g root -r -d /home/pp pp
+
+groups pp
+userdel pp
+useradd pp -o -u 0 -g root -G root -s /bin/bash -d /home/pp
+
+
+
+```
+
+
+
 
 
 ```
@@ -24,7 +39,8 @@ chown -R qinjing:qinjing .
 1.
 groupadd web
 useradd -d xxxxxxx -m qin -g web
-
+	-d 用户的 home 目录
+	
 
 2.
 
