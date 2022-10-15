@@ -11289,7 +11289,22 @@ ldconfig -p | grep cuda
 
   > 预训练模型
 
+##### 显卡性能测试
+
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 25%;" />
+
 ```
+
+conda deactivate && \
+conda env remove -n PP && \
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n PP python=3.8 --yes && \
+source activate PP && \
+conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge && \
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+pip uninstall opencv-python && \
+pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
 
@@ -11309,6 +11324,178 @@ python PPOCRLabel/gen_ocr_train_val_test.py
 pip install pyyaml
 
 python tools/train.py -c configs/det/det_res18_db_v2.0.yml
+
+# 检测模型评估
+python tools/eval.py -c configs/det/det_res18_db_v2.0.yml -o Global.pretrained_model="output/ch_db_res18/best_accuracy"
+[2022/10/13 09:42:16] ppocr INFO: metric eval ***************
+[2022/10/13 09:42:16] ppocr INFO: precision:0.5296811494647662
+[2022/10/13 09:42:16] ppocr INFO: recall:0.9175922253074177
+[2022/10/13 09:42:16] ppocr INFO: hmean:0.6716509998911189
+[2022/10/13 09:42:16] ppocr INFO: fps:8.796411382643813
+
+# 检测模型推断
+python tools/infer_det.py -c configs/det/det_res18_db_v2.0.yml  -o Global.checkpoints="output/ch_db_res18/best_accuracy" image_dir="train_data/det/test/12.jpg"
+
+
+# 检测模型导出后推断
+python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/det_model
+
+python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/det_model" --image_dir="train_data/det/test/12.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
+
+
+
+# 识别训练
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+# 识别模型导出后推断
+python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/rec_model
+
+python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_18.jpg --rec_model_dir=output/rec_model/Student --rec_char_dict_path=train_data/keys.txt
+	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
+
+
+# 检测识别二合一
+
+python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/12.jpg" \
+    --det_algorithm="DB" \
+    --det_model_dir="output/det_model" \
+    --det_limit_side_len=960 \
+    --det_db_unclip_ratio=3.5 \
+    --rec_model_dir="output/rec_model/Student" \
+    --rec_char_dict_path="train_data/keys.txt" \
+    --use_gpu True
+
+
+# 压缩打包
+7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on PaddleOCR_ali1k_det_rec_300epoch.7z PaddleOCR
+
+# CPU部署
+
+conda deactivate && \
+conda env remove -n PP && \
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n PP python=3.8 --yes && \
+source activate PP && \
+conda install paddlepaddle==2.3.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge && \
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+pip uninstall opencv-python && \
+pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+
+python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/25.jpg" \
+    --det_algorithm="DB" \
+    --det_model_dir="output/det_model" \
+    --det_limit_side_len=960 \
+    --det_db_unclip_ratio=3.5 \
+    --rec_model_dir="output/rec_model/Student" \
+    --rec_char_dict_path="train_data/keys.txt" \
+    --use_gpu False \
+    --enable_mkldnn=True
+
+
+
+# vscode 运行
+
+tools/infer/predict_system.py # 修改后 F5
+if __name__ == "__main__":
+
+    """
+
+    python3 tools/infer/predict_system.py \
+    --image_dir="train_data/det/test/25.jpg" \
+    --det_algorithm="DB" \
+    --det_model_dir="output/det_model" \
+    --det_limit_side_len=960 \
+    --det_db_unclip_ratio=3.5 \
+    --rec_model_dir="output/rec_model/Student" \
+    --rec_char_dict_path="train_data/keys.txt" \
+    --use_gpu False \
+    --enable_mkldnn=True
+    
+    """
+
+	# tools/infer/predict_system.py 加入：
+    import sys
+    sys.argv.append( '--image_dir' )
+    # sys.argv.append( 'train_data/det/test/12.jpg' )
+    sys.argv.append( 'train_data/det/train/3.jpg' )
+    sys.argv.append( '--det_algorithm' )
+    sys.argv.append( 'DB' )
+    sys.argv.append( '--det_model_dir' )
+    sys.argv.append( 'output/det_model' )
+    sys.argv.append( '--det_limit_side_len' )
+    sys.argv.append( '960' )
+    sys.argv.append( '--det_db_unclip_ratio' )
+    sys.argv.append( '3.5' )
+    sys.argv.append( '--rec_model_dir' )
+    sys.argv.append( 'output/rec_model/Student' )
+    sys.argv.append( '--rec_char_dict_path' )
+    sys.argv.append( 'train_data/keys.txt' )
+    sys.argv.append( '--use_gpu' )
+    sys.argv.append( 'False' )
+    sys.argv.append( '--enable_mkldnn' )
+    sys.argv.append( 'True' )
+    
+
+针对这种情况，去生成或者标注一批容易错的数据，一般精度可以再提升一波
+
+在CPU上加速，可以开启mkldnn，设置参数 --enable_mkldnn=True，并设置合适的线程数
+
+https://github.com/PaddlePaddle/PaddleOCR/issues/6247
+	PP-OCRv3识别推理的时候--rec_algorithm是SVTR_LCNet，注意和原始SVTR的区别哈
+https://github.com/PaddlePaddle/PaddleOCR/issues/2554
+	单个字符坐标
+		https://github.com/clovaai/CRAFT-pytorch/issues/3 
+			Gaussian heatmap 的完整实现
+		https://aistudio.baidu.com/aistudio/projectdetail/1927739 CRAFT论文复现
+		https://www.jianshu.com/p/c3799417796a
+			CRAFT-Reimplementation 半监督学习样本GT生成存在的问题
+		https://github.com/faustomorales/keras-ocr/issues/40
+			CRAFT 完整实现，但是Keras
+		https://blog.csdn.net/u013403054/article/details/107346165
+		https://zhuanlan.zhihu.com/p/76528329
+		
+方法一：如果是检测+识别的端到端系统，可以试试基于识别结果倒推一下单字位置（之前有开发者这么搞过，但没分享出来，可以探索下。。）
+方法二：整理一批单字符标注的数据重新训练检测模型
+
+
+
+Q1.1.1：基于深度学习的文字检测方法有哪几种？各有什么优缺点？
+A：常用的基于深度学习的文字检测方法一般可以分为基于回归的、基于分割的两大类，当然还有一些将两者进行结合的方法。
+（1）基于回归的方法分为box回归和像素值回归。a. 采用box回归的方法主要有CTPN、Textbox系列和EAST，这类算法对规则形状文本检测效果较好，但无法准确检测不规则形状文本。 b. 像素值回归的方法主要有CRAFT和SA-Text，这类算法能够检测弯曲文本且对小文本效果优秀但是实时性能不够。
+（2）基于分割的算法，如PSENet，这类算法不受文本形状的限制，对各种形状的文本都能取得较好的效果，但是往往后处理比较复杂，导致耗时严重。目前也有一些算法专门针对这个问题进行改进，如DB，将二值化进行近似，使其可导，融入训练，从而获取更准确的边界，大大降低了后处理的耗时。
+
+
+
+paddle_ch = PaddleOCR(
+            show_log=False,
+            lang="ch",
+            cpu_threads=1,
+            det_db_thresh=0.1,
+            det_db_box_thresh=0.1,
+            use_mp=True,
+            enable_mkldnn=True,
+            total_process_num=os.cpu_count() * 2 - 1,
+            use_angle_cls=True,
+            cls_model_dir="whl/cls/ch_ppocr_mobile_v2.0_cls_infer",
+            det_model_dir="whl/det/ch/ch_PP-OCRv3_det_infer",
+            rec_model_dir="whl/rec/ch/ch_PP-OCRv3_rec_infer"
+    )
+
+ocr = PaddleOCR(use_angle_cls=True,
+lang="ch",
+enable_mkldnn=True,
+use_gpu=False)
+ocr.ocr("image_path")
+
+测试环境：CPU型号为Intel Gold 6148，CPU预测时开启MKLDNN加速。
+
+python3 -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
+
 
 ```
 
@@ -11624,7 +11811,6 @@ python3 tools/infer_rec.py -c ./configs/rec/rec_chinese_common_train_v2.0.yml  -
 
 
 
-
 训练的输入尺寸在：
 
 EastRandomCropData:
@@ -11893,6 +12079,18 @@ Eval:
 > 思路：采用resnet50(teacher)先训练，在利用训练好的resnet50(teacher)对resnet18(student)小模型进行联合训练，实验证明f1score比单独训练resnet18涨一个点。
 
 
+
+
+
+## PaddleSpeech
+
+- https://github.com/PaddlePaddle/PaddleSpeech
+
+
+
+### 训练一个自己的TTS
+
+- https://github.com/PaddlePaddle/PaddleSpeech/discussions/1842
 
 
 

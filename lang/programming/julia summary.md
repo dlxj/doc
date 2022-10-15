@@ -115,3 +115,21 @@ julia> w'f.(x)
 
 collect(**eachindex**(x))
 
+
+
+# julia cuda
+
+- https://github.com/JuliaGPU/CUDA.jl
+
+
+
+
+
+# call python
+
+- https://github.com/JuliaPy/PyCall.jl
+
+
+
+
+
