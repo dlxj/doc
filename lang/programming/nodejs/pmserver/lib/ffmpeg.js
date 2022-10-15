@@ -90,9 +90,9 @@ file 'tmp2.mp4'
                 let cmd = ``
                 let tmpName = `tmp${k}${ext}`
                 if (to != '') {
-                    cmd = `ffmpeg -ss ${ss} -to ${to} -accurate_seek -i "${vdpath}" -vcodec copy -acodec copy -avoid_negative_ts 1 -y ${tmpName}`
+                    cmd = `ffmpeg -ss ${ss} -to ${to} -accurate_seek -i "${vdpath}" -vcodec copy -acodec copy -y ${tmpName}`
                 } else {
-                    cmd = `ffmpeg -ss ${ss} -accurate_seek -i "${vdpath}" -vcodec copy -acodec copy -avoid_negative_ts 1 -y ${tmpName}`
+                    cmd = `ffmpeg -ss ${ss} -accurate_seek -i "${vdpath}" -vcodec copy -acodec copy -y ${tmpName}`
                 }
 
                 list_txt += `file '${tmpName}'\n`
@@ -577,16 +577,29 @@ file 'tmp2.mp4'
             //let cmd = `ffmpeg -y -itsoffset -2.2 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -ss 00:01:49.000 -to 00:01:59.000 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             let cmd = `ffmpeg -y -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
 
-            if (Number(nth3) >= 5) {  // 台版从第五集开始有多余的东西需要剪掉
+            if (Number(nth3) >= 5 && Number(nth3) <= 47) {  // 台版从第五集开始有多余的东西需要剪掉 48 是总集编台版没有 
 
                 let times = [
                     {ss:`00:00:01.500`, to:`00:11:36.000`},
-                    {ss:`00:11:49.500`, to:``} // 00:15:49.500
+                    {ss:`00:11:49.500`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            
+            if (Number(nth3) >= 49 && Number(nth3) <= 999) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:12:14.500`},
+                    {ss:`00:12:28.000`, to:``}
                 ]
 
                 await this.libs.ffmpeg.cutVideo(vdTWPath, times)
 
                 let a = 1
+
             }
 
             // if (Number(nth3) >= 92) {
