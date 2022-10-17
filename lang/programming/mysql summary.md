@@ -148,6 +148,15 @@ rm -rf (all folders listed in find)
 
 
 
+```
+let AddTime = moment(nowDate).format('YYYY-MM-DD HH:mm:ss')
+
+```
+
+
+
+
+
 ### 时间差
 
 
@@ -285,7 +294,7 @@ VALUES
 INSERT INTO searchkeywods (AppEName, KeyWord, Count) VALUES ('a', 'b', 1) ON DUPLICATE KEY UPDATE Count=Count+1;  # 用表中原来的值
 
 
-INSERT INTO searchkeywods (AppEName, KeyWord, Count) VALUES ('a', 'b', 1) ON DUPLICATE KEY UPDATE Count=value(Count); # 用语句提供的值
+INSERT INTO searchkeywods (AppEName, KeyWord, Count) VALUES ('a', 'b', 1) ON DUPLICATE KEY UPDATE Count=values(Count); # 用语句提供的值
 
 ```
 
@@ -1690,6 +1699,9 @@ GRANT ALL PRIVILEGES ON `dbname`.* TO 'username'@'%' WITH GRANT OPTION;
 
 
 GRANT SELECT ON ocr.*, origintest_master.*, test_cooperate_master.* TO 'backup'@'%' IDENTIFIED BY "2022_backup"
+
+
+GRANT ALL PRIVILEGES ON `temp`.* TO 'temp'@'%' IDENTIFIED BY "Pwd@2022"
 
 ```
 
