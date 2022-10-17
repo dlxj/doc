@@ -386,11 +386,11 @@ if __name__ == "__main__":
                 ]
             )
 
-            img_cuted = cutPoly(img, points1)
-            cv2.imwrite(f'./tmp/{g_count2}.jpg', img_cuted)
-            with open(f'./tmp/{g_count2}.txt', 'w', encoding='utf-8') as f:
-                f.write(word)
-            g_count2 += 1
+            # img_cuted = cutPoly(img, points1)
+            # cv2.imwrite(f'./tmp/{g_count2}.jpg', img_cuted)
+            # with open(f'./tmp/{g_count2}.txt', 'w', encoding='utf-8') as f:
+            #     f.write(word)
+            # g_count2 += 1
 
             # cv2.polylines(img_color_origin, [points], isClosed=True, color=(   # 多边形，框得比较全
             #     100, 0, 255), thickness=2)  # 只画线，不填充
