@@ -559,7 +559,22 @@ function rename_season10() {
                 continue
             }
 
-            if (Number(nth) <= 999 && Number(nth) == Number(nth3)) {  // 120 原版是总集编，台版没有。 台120 对应原121
+            if (Number(nth) <= 47 && Number(nth) == Number(nth3)) {
+
+                //ttml
+                let { base, dir, ext, name, root } = path.parse(ttml)
+                let { base: base3, dir: dir3, ext: ext3, name: name3, root: root3 } = path.parse(m4)
+
+                let newname = `${name}.mp4`
+                let newpath = path.join(dir3, newname)
+
+                fs.renameSync(m4, newpath)
+
+                break
+
+            }
+
+            if (Number(nth) >= 49 && Number(nth) == Number(nth3) + 1 ) {  // 48 原版是总集编，台版没有。 台48 对应原49
 
                 //ttml
                 let { base, dir, ext, name, root } = path.parse(ttml)
