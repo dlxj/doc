@@ -589,7 +589,7 @@ file 'tmp2.mp4'
             }
 
             
-            if (Number(nth3) >= 49 && Number(nth3) <= 999) {  //  
+            if (Number(nth3) >= 49 && Number(nth3) <= 49) {  //  
 
                 let times = [
                     {ss:`00:00:00.000`, to:`00:12:14.500`},
@@ -598,7 +598,61 @@ file 'tmp2.mp4'
 
                 await this.libs.ffmpeg.cutVideo(vdTWPath, times)
 
-                let a = 1
+            }
+
+            if (Number(nth3) >= 50 && Number(nth3) <= 50) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:08:59.500`},
+                    {ss:`00:09:13.000`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            
+            if (Number(nth3) >= 51 && Number(nth3) <= 51) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:12:53.000`},
+                    {ss:`00:13:04.000`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 52 && Number(nth3) <= 52) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:12:28.000`},
+                    {ss:`00:12:39.000`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 53 && Number(nth3) <= 53) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:13:58.000`},
+                    {ss:`00:14:09.000`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 54 && Number(nth3) <= 54) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:11:54.449`},
+                    {ss:`00:12:05.529`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
 
             }
 
