@@ -656,6 +656,84 @@ file 'tmp2.mp4'
 
             }
 
+            if (Number(nth3) >= 55 && Number(nth3) <= 55) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:11:50.676`},
+                    {ss:`00:12:01.520`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 56 && Number(nth3) <= 56) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:10:45.578`},
+                    {ss:`00:10:56.255`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            
+            if (Number(nth3) >= 57 && Number(nth3) <= 57) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:12:06.528`},
+                    {ss:`00:12:17.421`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 58 && Number(nth3) <= 58) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:11:55.516`},
+                    {ss:`00:12:08.428`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 59 && Number(nth3) <= 59) {  //  
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:11:59.519`},
+                    {ss:`00:12:12.465`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 60 && Number(nth3) <= 60) {
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:11:01.495`},
+                    {ss:`00:11:12.306`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            if (Number(nth3) >= 61 && Number(nth3) <= 61) {
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:12:23.561`},
+                    {ss:`00:12:33.738`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
             // if (Number(nth3) >= 92) {
             //     cmd = `ffmpeg -y -itsoffset -14 -i "${vdTWPath}" -i "${vdAMPath}" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='${ffmpegsubtitle}'" "${hardjppath}"`  // 生成硬字幕
             // }
