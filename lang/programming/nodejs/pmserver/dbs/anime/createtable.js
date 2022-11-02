@@ -11,7 +11,7 @@ module.exports = {
   remark: ``,
   sql: `
     CREATE TABLE $$(tablename) (
-        id integer primary key generated always as identity, 
+        id BIGSERIAL PRIMARY KEY,
         name text, 
         jp text, 
         zh text DEFAULT '', 
@@ -38,6 +38,8 @@ module.exports = {
 }
 
 /*
+
+id integer primary key generated always as identity, 
 
 // 后期再加索引吧，windows 装不了这个插件
 create extension rum;

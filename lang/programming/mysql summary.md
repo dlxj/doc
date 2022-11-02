@@ -1703,6 +1703,14 @@ GRANT SELECT ON ocr.*, origintest_master.*, test_cooperate_master.* TO 'backup'@
 
 GRANT ALL PRIVILEGES ON `temp`.* TO 'temp'@'%' IDENTIFIED BY "Pwd@2022"
 
+      port: 3306,
+      multipleStatements: true,
+      connectTimeout: 60 * 1000,
+      connectionLimit: 100,
+      acquireTimeout: 15000, // 连接超时时间
+      queueLimit: 0, // 排队最大数量(0 代表不做限制)
+      waitForConnections: true, // 超过最大连接时排队
+
 ```
 
 

@@ -2489,6 +2489,29 @@ console.log()
 
 
 
+## time
+
+```
+const moment = require('moment')
+let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
+```
+
+
+
+## guid
+
+```
+const uuid = require('uuid')
+let guid = uuid.v4()
+
+```
+
+
+
+
+
+
+
 # Array
 
 
@@ -2586,11 +2609,11 @@ data = _.orderBy(data, [
 
 
 ```javascript
-const _ = require("lodash"); 
+const _ = require("lodash")
        
 // Original array 
-var users = (['one', 'two', 'three', 'four']);
-var obj = ([ 3.1, 1.2, 3.3 ]);
+var users = (['one', 'two', 'three', 'four'])
+var obj = ([ 3.1, 1.2, 3.3 ])
    
 // Using the _.groupBy() method
 // with the `_.property` iteratee shorthand 
@@ -2779,6 +2802,16 @@ function foo({x, y = 5} = {}) {
 foo() // undefined 5
 // 如果没有提供参数，函数foo的参数默认为一个空对象
 ```
+
+
+
+## _.valuesIn
+
+```
+_.valuesIn(obj)
+```
+
+
 
 
 
@@ -3521,6 +3554,18 @@ s.on('open', () => {
 
 
 
+##  全局错误
+
+```
+//捕获全局未捕捉的错误
+process.on('uncaughtException', function (erro) {
+    console.error('##### 全局错误:');
+    console.error(erro);
+})
+```
+
+
+
 
 
 ## 失败重试
@@ -4157,6 +4202,10 @@ END WHILE;
 
 
 ## Time
+
+```
+const now = moment().format('YYYY-MM-DD HH:mm:ss');
+```
 
 ### 时区转换
 

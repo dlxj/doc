@@ -363,6 +363,37 @@ Don't forget to create extension CREATE EXTENSION IF NOT EXISTS dblink;
 
 
 
+## BIGSERIAL PRIMARY KEY
+
+```
+id BIGSERIAL PRIMARY KEY, 
+
+    CREATE TABLE $$(tablename) (
+        id integer primary key generated always as identity, 
+        name text, 
+        jp text, 
+        zh text DEFAULT '', 
+        en text DEFAULT '', 
+        type text, 
+        begintime text,
+        endtime text,
+        jp_ruby text,
+        jp_mecab text, 
+        v_jp  tsvector, 
+        v_zh  tsvector, 
+        v_en  tsvector, 
+        seasion text DEFAULT '',
+        seasionname text DEFAULT '',
+        episode text DEFAULT '',
+        audio bytea, 
+        video bytea,
+        videoname text 
+      );
+
+```
+
+
+
 
 
 # 重设自增ID
