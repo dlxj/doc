@@ -391,6 +391,48 @@ PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07
   	
   SELECT * FROM remote_danganronpa2 LIMIT 1;
   
+  
+  
+  INSERT INTO anime ("name",
+  jp,
+  zh,
+  en,
+  "type",
+  begintime,
+  endtime,
+  jp_ruby,
+  jp_mecab,
+  v_jp,
+  v_zh,
+  v_en,
+  seasion,
+  seasionname,
+  episode,
+  audio,
+  video,
+  videoname)
+  
+  SELECT 
+  "name",
+  jp,
+  zh,
+  en,
+  "type",
+  begintime,
+  endtime,
+  jp_ruby,
+  jp_mecab,
+  v_jp,
+  v_zh,
+  v_en,
+  seasion,
+  seasionname,
+  episode,
+  audio,
+  video,
+  videoname
+  FROM remote_danganronpa2;
+  
   ```
 
   
