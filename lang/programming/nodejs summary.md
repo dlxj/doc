@@ -886,6 +886,35 @@ module.exports = {
 
 
 
+## vscode 远程调试
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/server.js",
+            "runtimeExecutable": "/usr/local/bin/node14"
+        }
+    ]
+}
+
+https://matpool.com/supports/doc-vscode-connect-matpool/
+    Remote Development 安装插件
+    VS Code 远程连接矩池云机器教程
+# train.py 添加命令行参数，并用vscode 远程调试K80 服务器上的 conda 环境(ctrl+shift+p 选conda的python)，vscode 中修改train.py 在main 函数下加入：
+```
+
+
+
+
+
 ```
 # https://medium.com/the-node-js-collection/live-debugging-node-js-apps-at-the-command-line-cd5b58f883e1
 
