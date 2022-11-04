@@ -197,6 +197,20 @@ service mysql.server status
 
 
 
+## windows
+
+- https://www.cnblogs.com/kendoziyu/p/MySQL.html
+
+```
+新增系统变量 MYSQL_HOME=D:\usr\mysql-5.7.40-winx64
+在系统变量Path后面追加;%MYSQL_HOME%\bin
+
+mysqld -install
+
+```
+
+
+
 
 
 # Gram
