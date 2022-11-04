@@ -82,7 +82,7 @@ mysql -uroot # 直接进，并不需要密码
 	# GRANT ALL PRIVILEGES ON *.* TO rootsuper@'%' IDENTIFIED BY 'rootsuper4321' WITH GRANT OPTION;
 	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
 
-UPDATE mysql.user SET Password=PASSWORD('AIDev@2020') WHERE User='root';
+UPDATE mysql.user SET Password=PASSWORD('Axxev@2020') WHERE User='root';
 
 GRANT ALL PRIVILEGES ON *.* TO 'unamehere'@'%' IDENTIFIED BY 'passwdhere' WITH GRANT OPTION;
 
@@ -136,7 +136,66 @@ yum remove and run yum install mysql-devel
 find / -name mysql
 
 rm -rf (all folders listed in find)
+
 ```
+
+
+
+## install 5.7
+
+
+
+```
+bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
+
+
+cat /root/.mysql_secret
+	# 初始密码
+
+
+
+vi /etc/my.cnf
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8
+[mysqld]
+collation-server = utf8_general_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+# binding IPv4 and 3306 port
+bind-address = 0.0.0.0
+port = 3306
+basedir  = /usr/local/mysql
+datadir  = /usr/local/mysql/data
+lc-messages-dir = /usr/local/mysql/share
+innodb_use_native_aio = 0
+skip-grant-tables
+
+
+service mysql.server restart
+
+update mysql.user set authentication_string=PASSWORD('xxxx') where User='root';
+
+接下来把  skip-grant-tables  注释掉！然后  service mysql.server restart
+
+./mysql -uroot -p
+	# 重新用密码登录
+
+
+./mysql -uroot # 直接进，并不需要密码
+	# GRANT ALL PRIVILEGES ON *.* TO rootsuper@'%' IDENTIFIED BY 'rootsuper4321' WITH GRANT OPTION;
+	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
+
+UPDATE mysql.user SET Password=PASSWORD('Axxev@2020') WHERE User='root';
+
+GRANT ALL PRIVILEGES ON *.* TO 'unamehere'@'%' IDENTIFIED BY 'passwdhere' WITH GRANT OPTION;
+
+service mysql.server status
+
+```
+
+
 
 
 
