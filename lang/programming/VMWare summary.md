@@ -6,10 +6,6 @@
 
 
 
-![image-20200525170251271](C:\Users\i\AppData\Roaming\Typora\typora-user-images\image-20200525170251271.png)
-
-
-
 mount /dev/cdrom /mnt
 
 cd /mnt
