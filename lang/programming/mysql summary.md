@@ -147,7 +147,7 @@ rm -rf (all folders listed in find)
 
 ```
 bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
-
+	# 失败就删除 /etc/my.cnf ，不知道为什么新装系统就有
 
 cat /root/.mysql_secret
 	# 初始密码
@@ -175,7 +175,17 @@ skip-grant-tables
 
 service mysql.server restart
 
-update mysql.user set authentication_string=PASSWORD('xxxx') where User='root';
+./mysql -uroot # 直接进，并不需要密码
+
+update mysql.user set authentication_string=PASSWORD('root') where User='root';
+
+GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
+
+alter user 'root'@'%' identified by 'root';
+
+\q 退出
+
 
 接下来把  skip-grant-tables  注释掉！然后  service mysql.server restart
 
@@ -183,17 +193,25 @@ update mysql.user set authentication_string=PASSWORD('xxxx') where User='root';
 	# 重新用密码登录
 
 
-./mysql -uroot # 直接进，并不需要密码
-	# GRANT ALL PRIVILEGES ON *.* TO rootsuper@'%' IDENTIFIED BY 'rootsuper4321' WITH GRANT OPTION;
-	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
-
-UPDATE mysql.user SET Password=PASSWORD('Axxev@2020') WHERE User='root';
-
-GRANT ALL PRIVILEGES ON *.* TO 'unamehere'@'%' IDENTIFIED BY 'passwdhere' WITH GRANT OPTION;
-
 service mysql.server status
 
 ```
+
+
+
+### crontab
+
+```
+crontab -e # 定时任务
+00   00    26      01   *   echo 'hi from crontab.' > /root/sayhi.txt
+分	时	  日	     月	 年
+
+@reboot  service mysql.server restart # 重启自动执行
+crontab -l
+
+```
+
+
 
 
 

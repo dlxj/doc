@@ -1,3 +1,118 @@
+```
+babel.config.js
+module.exports = {
+    presets: [
+        //'@vue/cli-plugin-babel/preset'
+        ["@vue/app",{useBuiltIns:"entry"}]
+    ]
+}
+```
+
+
+
+```
+# node 默认 1.5G 内存上限，超出会报错 
+luanch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\boom_memory.js",
+            "runtimeArgs": ["--max-old-space-size=8192"]
+        }
+    ]
+}
+
+{
+            "args":["a"],
+            "runtimeArgs": [
+                "run-script",
+                "app",
+                "b"
+            ],
+        }
+打印参数可以发现 args 、runtimeArgs都会传给程序，但是runtimeArgs参数会紧跟可执行文件
+
+
+```
+
+
+
+
+
+```
+多线程爆内存 ERR_WORKER_OUT_OF_MEMORY
+
+https://zhuanlan.zhihu.com/p/167920353    worker threads 
+
+https://juejin.cn/post/6844903937355563022
+注意这3句：每个线程都拥有独立的事件循环
+每个线程都拥有一个 JS 引擎实例
+每个线程都拥有一个 Node.js 实例
+
+https://juejin.cn/post/6844903953759469581
+	干货
+const { Worker, isMainThread, parentPort, MessageChannel, threadId } = require('worker_threads');
+
+if (isMainThread) {
+    const worker1 = new Worker(__filename);
+    const worker2 = new Worker(__filename);
+    
+    const { port1, port2 } = new MessageChannel();
+    const sharedUint8Array = new Uint8Array(new SharedArrayBuffer(4));
+	// 输出一下sharedUint8Array
+    console.log(sharedUint8Array);
+    worker1.postMessage({ uPort: port1, data: sharedUint8Array }, [ port1 ]);
+    worker2.postMessage({ uPort: port2, data: sharedUint8Array }, [ port2 ]);
+
+    worker2.once('message', (message) => {
+        console.log(`${message}, 查看共享内存:${sharedUint8Array}`);
+    });
+} else {
+    parentPort.once('message', ({ uPort, data }) => {
+        uPort.postMessage(`我是${threadId}号线程`);
+        uPort.on('message', (msg) => {
+            console.log(`${threadId}号收到:${msg}`);
+            if (threadId === 2) {
+                data[1] = 2;
+                parentPort.postMessage('2号线程修改了共享内存!!!');
+            }
+            console.log(`${threadId}号查看共享内存:${data}`);
+        })
+    })
+}
+
+=>
+Uint8Array [ 0, 0, 0, 0 ]
+2号收到:我是1号线程
+2号线程修改了共享内存!!!, 查看共享内存:0,2,0,0
+1号收到:我是2号线程
+2号查看共享内存:0,2,0,0
+1号查看共享内存:0,2,0,0
+
+
+I check settings which relates vm.max_map_count
+
+# sysctl vm.max_map_count
+vm.max_map_count = 65530
+# sysctl kernel.threads-max
+kernel.threads-max = 2060362
+# sysctl kernel.pid_max
+kernel.pid_max = 4194304
+I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set as follows.
+
+# sysctl -w vm.max_map_count=4120724
+
+```
+
+
+
 
 
 ```
@@ -9,6 +124,9 @@ pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
 pm2 resurrect // 重启备份的所有项目
 pm2 update    // 清空重启次数等（疑难杂症可以试试）
+
+
+pm2 reload explainteam_server_7114 --name my_new_name --max-old-space-size 4096
 
 pm2 delete processID  // 删除一项  
 
@@ -2527,6 +2645,18 @@ let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
 
 
 
+```
+OperateTime:new Date()
+
+OperateTime = new Date(OperateTime)
+let lasttime = dic_test[key].OperateTime
+if (lasttime > OperateTime) {
+```
+
+
+
+
+
 ## guid
 
 ```
@@ -2630,6 +2760,17 @@ data = _.orderBy(data, [
   function (item) { return item.sortData.b; }
 ], ["asc", "desc"]);
 ```
+
+
+
+## reverse
+
+```
+const _ = require("lodash")
+array = _.reverse( array )
+```
+
+
 
 
 
@@ -2871,6 +3012,7 @@ require('path').join(__dirname, 'temp.json')
 ## create dir
 
 ```
+fs.existsSync( path )
 fs.mkdirSync(targetDir, { recursive: true })
 ```
 
@@ -3615,6 +3757,98 @@ console.log(await pRetry(run, {retries: 5}));
 
 
 
+## 改变进程当前路径
+
+```
+// https://github.com/rapidsai/node/blob/main/modules/demo/client-server/index.js
+const Path = require('path');
+
+// Change cwd to the example dir so relative file paths are resolved
+process.chdir(__dirname);
+
+const next = require.resolve('next/dist/bin/next');
+
+require('fs').stat(Path.join(__dirname, '.next'), (err, stats) => {
+  const {spawnSync} = require('child_process');
+
+  const env = {
+    NEXT_TELEMETRY_DISABLED: 1,  // disable https://nextjs.org/telemetry
+    ...process.env,
+  };
+
+  if (err || !stats || !stats.isDirectory()) {
+    spawnSync(process.execPath, [next, 'build'], {env, cwd: __dirname, stdio: 'inherit'});
+  }
+
+  spawnSync(process.execPath, [next, 'start'], {env, cwd: __dirname, stdio: 'inherit'});
+});
+```
+
+
+
+# websocket
+
+```javascript
+// 客户端
+ws_app_inner_diff.js
+
+const WebSocket = require('ws')
+
+//webSocket服务端地址
+let wsBaseURL = 'ws://xxx:7004'
+
+let wsClient = null
+
+init: {
+
+    wsClient = new WebSocket(wsBaseURL);
+
+    wsClient.onopen = () => {
+
+        console.log(wsBaseURL + '连接成功')
+
+        // 开始题库内去重
+        start_diff: {
+
+            try {
+                wsClient.send(JSON.stringify(
+                    { "api": "/xxx/xxx", "params": { "AppID": xxx, "BookID": -1, "userID": "1", "refresh": 0 } })
+                )
+            } catch (error) {
+                console.log(error.msg)
+            }
+
+        }
+
+    }
+    wsClient.onerror = (error) => {
+        setTimeout(() => {
+            newClient = new WebSocket(wsBaseURL);
+            newClient.onopen = wsClient.onopen;
+            newClient.onerror = wsClient.onerror;
+            newClient.onmessage = wsClient.onmessage;
+            wsClient = newClient;
+        }, 1000);
+    }
+    wsClient.onmessage = (msg) => {
+        let data = JSON.parse(msg.data);
+    }
+}
+```
+
+
+
+```
+WebSocket.close() # 如果连接已经关闭，则此方法不执行任何操作。
+
+    wsClient.onclose = (event) => {
+    	let { code, reason, wasClean } = event
+        console.log('The connection has been closed successfully.');
+    }
+```
+
+
+
 
 
 # args
@@ -4299,6 +4533,13 @@ console.log(result);                                                //true
 ```
 
 
+
+## escape
+
+```
+const mysql = require('mysql')
+mysql.escape(s) 
+```
 
 
 
@@ -8500,9 +8741,34 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # cudf
 
+- https://github.com/rapidsai/node/tree/main/modules/demo/client-server
+
+  > 地图移动GPU 加速示例
+
 - https://github.com/rapidsai/node
 
   > nodejs python cuda 加速
+
+# gpu.js
+
+```
+// 并行生成一万个随机数
+const { GPU } = require('gpu.js');
+const gpu = new GPU({ mode: 'gpu' });
+const nobs=10000;
+
+const kernel = gpu.createKernel(function() {
+const y=Math.random();
+return y;
+}, { output: [nobs] });
+const data = kernel();
+```
+
+
+
+# node-sdl
+
+- https://github.com/kmamal/node-sdl
 
 
 

@@ -112,3 +112,12 @@ tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 
 
+# 最大文件数
+
+```
+ulimit -a
+
+```
+
+
+

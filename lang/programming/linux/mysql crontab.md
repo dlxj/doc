@@ -28,3 +28,20 @@ else
 echo "`date` mysql running" >> /mntt/ksbao/mysql_listen.log
 
 fi
+
+
+
+# crontab
+
+```
+crontab -e # 定时任务
+00   00    26      01   *   echo 'hi from crontab.' > /root/sayhi.txt
+分	时	  日	     月	 年
+
+@reboot  /root/auto_mount.sh # 重启自动执行
+crontab -l
+
+```
+
+
+
