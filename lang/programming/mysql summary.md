@@ -82,7 +82,7 @@ mysql -uroot # 直接进，并不需要密码
 	# GRANT ALL PRIVILEGES ON *.* TO rootsuper@'%' IDENTIFIED BY 'rootsuper4321' WITH GRANT OPTION;
 	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
 
-UPDATE mysql.user SET Password=PASSWORD('AIDev@2020') WHERE User='root';
+UPDATE mysql.user SET Password=PASSWORD('Axxev@2020') WHERE User='root';
 
 GRANT ALL PRIVILEGES ON *.* TO 'unamehere'@'%' IDENTIFIED BY 'passwdhere' WITH GRANT OPTION;
 
@@ -136,7 +136,98 @@ yum remove and run yum install mysql-devel
 find / -name mysql
 
 rm -rf (all folders listed in find)
+
 ```
+
+
+
+## install 5.7
+
+
+
+```
+bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
+	# 失败就删除 /etc/my.cnf ，不知道为什么新装系统就有
+
+cat /root/.mysql_secret
+	# 初始密码
+
+
+
+vi /etc/my.cnf
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8
+[mysqld]
+collation-server = utf8_general_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+# binding IPv4 and 3306 port
+bind-address = 0.0.0.0
+port = 3306
+basedir  = /usr/local/mysql
+datadir  = /usr/local/mysql/data
+lc-messages-dir = /usr/local/mysql/share
+innodb_use_native_aio = 0
+skip-grant-tables
+
+
+service mysql.server restart
+
+./mysql -uroot # 直接进，并不需要密码
+
+update mysql.user set authentication_string=PASSWORD('root') where User='root';
+
+GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+	# % 换成 IP 地址，就是只允许这个IP 登录，% 表示任意IP
+
+alter user 'root'@'%' identified by 'root';
+
+\q 退出
+
+
+接下来把  skip-grant-tables  注释掉！然后  service mysql.server restart
+
+./mysql -uroot -p
+	# 重新用密码登录
+
+
+service mysql.server status
+
+```
+
+
+
+### crontab
+
+```
+crontab -e # 定时任务
+00   00    26      01   *   echo 'hi from crontab.' > /root/sayhi.txt
+分	时	  日	     月	 年
+
+@reboot  service mysql.server restart # 重启自动执行
+crontab -l
+
+```
+
+
+
+
+
+## windows
+
+- https://www.cnblogs.com/kendoziyu/p/MySQL.html
+
+```
+新增系统变量 MYSQL_HOME=D:\usr\mysql-5.7.40-winx64
+在系统变量Path后面追加;%MYSQL_HOME%\bin
+
+mysqld -install
+
+```
+
+
 
 
 
@@ -1702,6 +1793,14 @@ GRANT SELECT ON ocr.*, origintest_master.*, test_cooperate_master.* TO 'backup'@
 
 
 GRANT ALL PRIVILEGES ON `temp`.* TO 'temp'@'%' IDENTIFIED BY "Pwd@2022"
+
+      port: 3306,
+      multipleStatements: true,
+      connectTimeout: 60 * 1000,
+      connectionLimit: 100,
+      acquireTimeout: 15000, // 连接超时时间
+      queueLimit: 0, // 排队最大数量(0 代表不做限制)
+      waitForConnections: true, // 超过最大连接时排队
 
 ```
 
