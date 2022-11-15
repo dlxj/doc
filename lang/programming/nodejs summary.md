@@ -8741,6 +8741,12 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # cudf
 
+- https://github.com/rapidsai/cudf
+
+  > - https://blog.csdn.net/sinat_26917383/article/details/104504600
+  >
+  > 用于处理数据，包括加载、连接、聚合和过滤数据。向GPU的转移允许大规模的加速，因为GPU比CPU拥有更多的内核。**一个比较好的使用场景是，代替并行**，在pandas处理比较慢的时候，**切换到cuDF，就不用写繁琐的并行了**。
+
 - https://github.com/rapidsai/node/tree/main/modules/demo/client-server
 
   > 地图移动GPU 加速示例
