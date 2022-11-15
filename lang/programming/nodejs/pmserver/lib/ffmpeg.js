@@ -726,8 +726,20 @@ file 'tmp2.mp4'
             if (Number(nth3) >= 61 && Number(nth3) <= 61) {
 
                 let times = [
-                    {ss:`00:00:00.000`, to:`00:12:23.561`},
+                    {ss:`00:00:00.000`, to:`00:12:50.561`},
                     {ss:`00:12:33.738`, to:``}
+                ]
+
+                await this.libs.ffmpeg.cutVideo(vdTWPath, times)
+
+            }
+
+            
+            if (Number(nth3) >= 62 && Number(nth3) <= 62) {
+
+                let times = [
+                    {ss:`00:00:00.000`, to:`00:12:50.486`},
+                    {ss:`00:13:01.532`, to:``}
                 ]
 
                 await this.libs.ffmpeg.cutVideo(vdTWPath, times)
