@@ -153,7 +153,21 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 ```
 # cnpm
+ 原因：cnpm版本太高了，npm全局安装的cnpm是最新版的，所以卸载原来的cnpm再装一个指定版本即可
+
+卸载cnpm:
+
+npm uninstall -g cnpm
+
+安装指定版本：7.1.0
+
+npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org
+	# 配套 node14 ok
+
+
+
 npm install -g cnpm --registry=https://registry.npm.taobao.org
+	# 安装的是最新版 会有兼容问题
 ```
 
 
@@ -8741,11 +8755,17 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # cudf
 
-- https://github.com/rapidsai/cudf
+- https://github.com/rapidsai/node/tree/main/modules/cudf
 
   > - https://blog.csdn.net/sinat_26917383/article/details/104504600
   >
   > 用于处理数据，包括加载、连接、聚合和过滤数据。向GPU的转移允许大规模的加速，因为GPU比CPU拥有更多的内核。**一个比较好的使用场景是，代替并行**，在pandas处理比较慢的时候，**切换到cuDF，就不用写繁琐的并行了**。
+  >
+  > ```
+  > docker pull ghcr.io/rapidsai/node:22.8.2-runtime-node16.15.1-cuda11-ubuntu20.04-cudf
+  > ```
+  >
+  > 
 
 - https://github.com/rapidsai/node/tree/main/modules/demo/client-server
 
