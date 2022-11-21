@@ -6250,6 +6250,92 @@ server{
 
 
 
+## 转发websocket
+
+```
+# 同时转发http 和 websocket 
+# /etc/nginx_conf.d/testDiff.conf
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream diffServer {
+  server localhost:10000;
+  server localhost:10001;
+  server localhost:10002;
+  server localhost:10003;
+  server localhost:10004;
+  server localhost:10005;
+  server localhost:10006;
+  server localhost:10007;
+  server localhost:10008;
+  server localhost:10009;
+}
+
+server {
+  listen 7116;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://diffServer;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+```
+
+```
+# /etc/nginx/nginx.conf
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+
+
+}
+```
+
+
+
+
+
+
+
 # fileserver
 
 
