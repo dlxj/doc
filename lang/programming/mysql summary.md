@@ -242,6 +242,9 @@ mysqld -install
 ```
 let AddTime = moment(nowDate).format('YYYY-MM-DD HH:mm:ss')
 
+
+date_format(StartTime, "%Y-%c-%d %H:%i:%s") as StartTime
+
 ```
 
 
