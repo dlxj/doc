@@ -1532,6 +1532,18 @@ f(1,...args,4,...[5]) # args 展开成 2, 3
 
 
 
+## sign
+
+```
+	# 标签可以像for 一样 break
+	getAuthorize:
+    {
+      const dict = await xxx
+      if (dict['0'] !== undefined) {
+        break getAuthorize;
+      }
+```
+
 
 
 

@@ -4,6 +4,14 @@
 
 # install mysql
 
+```
+𬌗   去掉这个字就不出错
+由中國的四川大学华西口腔医院教授鄒海帆於1920/1930年代造出。
+	# 插入这个字会让mysql 出错，试不同的utf8 编码看
+		INSERT INTO t(TEXT) VALUE ('𬌗');
+			utf8mb4_general_ci 实测不会出错
+```
+
 
 
 ```
