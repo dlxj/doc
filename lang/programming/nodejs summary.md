@@ -6361,6 +6361,14 @@ http {
 
 # docker
 
+- https://juejin.cn/post/6857283423380504584
+
+  > 如何查看Docker容器环境变量，如何向容器传递环境变量
+
+  
+
+  
+
 ```
 docker run --name running-blog-www\
  -p 4000:8080\
