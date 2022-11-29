@@ -9276,6 +9276,13 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
+# Godot
+
+- https://github.com/Orama-Interactive/Pixelorama
+- https://github.com/RodZill4/material-maker
+
+
+
 # UGUI
 
 - https://www.raywenderlich.com/6570-introduction-to-unity-ui-part-1
