@@ -1546,6 +1546,21 @@ f(1,...args,4,...[5]) # args 展开成 2, 3
 
 
 
+## 函数偷梁换柱
+
+```
+// 解决重复点击路由报错的BUG
+import router from './router'
+const originalPush = router.prototype.push
+router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => {
+   console.log(err)
+  })
+}
+```
+
+
+
 
 
 # Regex
@@ -3086,7 +3101,7 @@ fs.mkdirSync(targetDir, { recursive: true })
 
 
 ```
-require('fs').writeFileSync('menu.json', JSON.stringify(menujson) )
+require('fs').writeFileSync('menu.json', JSON.stringify(menujson), {encoding:'utf8', flag:'w'} )
 ```
 
 ```
@@ -6344,6 +6359,63 @@ http {
 
 
 
+# docker
+
+```
+docker run --name running-blog-www\
+ -p 4000:8080\
+ -e "CONFIG_ENV=$(</path/to/config.json)"\
+ -e BUILD_ENV=prod\
+ -d blog-www:1.0.0
+  
+var app = new express();
+switch ((process.env.ENV_TYP).toUpperCase()) {
+    case 'DEV':
+        ProxyConfig = require('./proxy/dev-proxy');
+        break;
+    case 'ST':
+        ProxyConfig = require('./proxy/st-proxy');
+        break;
+    case 'PRD':
+        ProxyConfig = require('./proxy/prd-proxy');
+        break;
+    default:
+        ProxyConfig = require('./proxy/dev-proxy');
+        break;
+}
+new ProxyConfig().setProxy(app);
+
+
+export NODE_ENV=dev
+
+
+
+```
+
+
+
+```
+
+var stdin = process.stdin,
+    stdout = process.stdout,
+    inputChunks = [];
+
+stdin.resume();
+stdin.setEncoding('utf8');
+
+stdin.on('data', function (chunk) {
+    inputChunks.push(chunk);
+});
+
+stdin.on('end', function () {
+    var inputJSON = inputChunks.join(),
+        parsedData = JSON.parse(inputJSON),
+        outputJSON = JSON.stringify(parsedData, null, '    ');
+    stdout.write(outputJSON);
+    stdout.write('\n');
+});
+```
+
 
 
 
@@ -7716,7 +7788,20 @@ npm run build  # build for production
 const port = 80 //await portfinder.getPortPromise()  // portfinder 有BUG
 
 
+# 如果用了babel ，这样配
+babel.config.js
+module.exports = {
+    presets: [ [ "@vue/app", { useBuiltIns: "entry" } ] ]
+}
+
+
 ```
+
+
+
+
+
+
 
 
 

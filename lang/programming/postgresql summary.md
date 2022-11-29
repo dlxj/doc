@@ -2319,6 +2319,9 @@ service ssh restart
 
 ```
 
+yum whatprovides ifconfig
+yum install net-tools
+
 # https://blog.csdn.net/u010046887/article/details/90406725
 
 步骤一：配置centos:7 容器SSH服务
