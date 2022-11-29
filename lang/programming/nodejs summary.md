@@ -6366,8 +6366,10 @@ http {
   > 如何查看Docker容器环境变量，如何向容器传递环境变量
 
   
+> curl https://xxxx.com/getData | jq
+>
+> jq 命令去除转义，最后输出的是格式化的json字符串，既去掉了转义字符
 
-  
 
 ```
 docker run --name running-blog-www\
@@ -6422,6 +6424,328 @@ stdin.on('end', function () {
     stdout.write(outputJSON);
     stdout.write('\n');
 });
+```
+
+
+
+```
+
+yum whatprovides ifconfig
+yum whatprovides crontab
+yum install net-tools cronie -y
+
+docker run -tid --name centos7_server_6006 -p 222:22 --privileged=true centos:7 /sbin/init
+	# 此命令会自动下载镜像
+	# -p 222:22 表示将宿主的222端口映射容器的22端口
+
+
+docker exec -it centos7_server_6006 /bin/bash
+	# 运行docker 的shell
+
+
+docker ps
+docker stop centos7_server_6006
+docker start centos7_server_6006
+	# 关闭和重启
+
+yum install openssh-server -y
+	# 安装ssh
+
+vi /etc/ssh/sshd_config
+	# 修改配置
+	PermitRootLogin yes # 改成这个
+	UsePAM no # 改成这个
+
+
+systemctl start sshd
+	# 启动ssh
+
+eixt
+	# 退出容器
+
+
+
+docker inspect centos7_server_6006 | grep IPAddress
+	# 查看IP
+	--> "IPAddress": "10.88.0.2"
+	
+passwd root
+	# 修改密码，容器名就是密码
+	centos7_server_6006
+
+systemctl stop firewalld
+	# 关闭防火墙
+
+ssh root@10.88.0.2 -p 22
+	# 登录看看
+	--> 成功
+
+
+yum install nmap
+	# 扫描指定端口是否开放	
+	nmap 118.178.137.176 -p222
+		PORT    STATE  SERVICE
+		222/tcp closed rsh-spx	
+			# 端口并没有开放
+
+	netstat -aptn | grep -i 222
+		tcp        0      0 0.0.0.0:222             0.0.0.0:*               LISTEN      45594/conmon
+			# 好像本地 222 端口是开放了的
+
+	lsof -i:222
+		conmon  45594 root    5u  IPv4 446985      0t0  TCP *:rsh-spx (LISTEN)
+			# 也是显示开放了
+
+
+	https://blog.csdn.net/qq_39176597/article/details/111939051
+		# linux关闭防火墙了，但端口还是访问不了
+
+		systemctl  start  firewalld
+			# 启动防火墙
+			systemctl  status  firewalld
+
+		firewall-cmd --zone=public --add-port=222/tcp --permanent
+		firewall-cmd --zone=public --add-port=222/tcp --permanent
+		firewall-cmd --zone=public --add-port=6006/tcp --permanent
+			# 开放端口
+	
+		firewall-cmd --reload
+			# 重新加载配置文件
+		
+		firewall-cmd --list-ports
+			# 查看已经开放的端口
+
+		systemctl status polkit
+		/usr/lib/polkit-1/polkitd --no-debug &
+
+		docker ps
+		docker stop centos7_server_6006
+
+nginx 80 转 6006
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server localhost:6006;
+}
+
+
+#####            测试          #####
+server {
+  listen 80;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+
+nginx -s reload
+
+
+npm i -g pm2@4.5.1
+
+
+/usr/local/node-v14.17.0-linux-x64/bin/pm2-dev -> /usr/local/node-v14.17.0-linux-x64/lib/node_modules/pm2/bin/pm2-dev
+/usr/local/node-v14.17.0-linux-x64/bin/pm2 -> /usr/local/node-v14.17.0-linux-x64/lib/node_modules/pm2/bin/pm2
+/usr/local/node-v14.17.0-linux-x64/bin/pm2-docker -> /usr/local/node-v14.17.0-linux-x64/lib/node_modules/pm2/bin/pm2-docker
+/usr/local/node-v14.17.0-linux-x64/bin/pm2-runtime -> /usr/local/node-v14.17.0-linux-x64/lib/node_modules/pm2/bin/pm2-runtime
+
+
+ln -s /usr/local/node-v14.17.0-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
+
+
+
+
+传文件
+
+docker ps
+	# 显示容器 ID
+	6f7dcc6f9fa3  quay.io/centos/centos:7  /sbin/init  8 hours ago  Up 8 hours ago  0.0.0.0:222->22/tcp  centos7_server_6006
+
+
+docker cp /yingedu/project/aicbyserver_v2 centos7_server_6006:/project
+	# 复制代码
+docker cp /usr/local/node-v14.17.0-linux-x64 centos7_server_6006:/usr/local
+	# 复制node
+
+
+进 docker 启动服务
+
+	docker exec -it centos7_server_6006 /bin/bash
+	cd /usr/local
+	ln -s /usr/local/node-v14.17.0-linux-x64/bin/node /usr/local/bin/node && \
+	ln -s /usr/local/node-v14.17.0-linux-x64/bin/npm /usr/local/bin/npm && \
+	ln -s /usr/local/node-v14.17.0-linux-x64/bin/npx /usr/local/bin/npx && \
+	ln -s /usr/local/node-v14.17.0-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+	ln -s /usr/local/node-v14.17.0-linux-x64/bin/pm2 /usr/local/bin/pm2
+	
+	systemctl stop firewalld
+
+	cd /project/aicbyserver_v2
+	pm2 --name aicbyserver_v2_6006 start "node server.js"
+	
+	docker There are stopped jobs.
+	kill -9 $(jobs -p)
+		# 可以正常 exit 容器了
+	exit
+
+
+退出docker, 在宿主机 访问 docker 服务
+
+	docker inspect centos7_server_6006 | grep IPAddress
+	ping 10.88.0.2
+		# docker ip
+
+	
+固定容器 IP   https://cloud.tencent.com/developer/article/1418033
+
+
+	docker network create --subnet=172.18.0.0/16 custom
+	docker network create --subnet 10.10.10.10/16 custom
+		docker run -d --name target-service --net static --ip 10.10.10.10 py:test
+		docker run -tid --name centos7_server_6006 --net=custom --ip=172.18.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
+		# 创建自定义网络				
+
+	docker network ls
+
+
+	--net=es-network --ip=172.18.0.1
+
+	# 删除容器
+	docker stop centos7_server_6006
+	docker rm centos7_server_6006
+	docker network rm custom
+		# 删除网络
+
+	# 创建容器
+	docker run -tid --name centos7_server_6006 --net=bridge --ip=10.88.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
+	docker run -tid --name centos7_server_6006_ENV --net=bridge --ip=10.88.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
+		# 使用默认网络，并固定 IP
+		
+	docker run -tid --name centos7_server_6006 --net=custom --ip=172.18.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
+
+		# 此命令会自动下载镜像
+		# -p 222:22 表示将宿主的222端口映射容器的22端口
+
+
+
+
+环境变量
+
+let j = require('./config.js')
+require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
+
+
+
+--env-file path_to_env_file 选项将其传递到用于启动容器代理的 docker run 命令。
+
+
+docker run --name running-blog-www\
+ -p 4000:8080\
+ -e "CONFIG_ENV=$(</path/to/config.json)"\
+
+
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=这里填双引号转义后的json字符串" --net=bridge --ip=10.88.0.3  --privileged=true centos:7 /sbin/init
+
+
+docker cp /usr/local/node-v14.17.0-linux-x64 centos7_server_6006_ENV:/usr/local
+
+
+docker exec -it centos7_server_6006_ENV /bin/bash
+	# 运行docker 的shell
+
+	kill -9 $(jobs -p) && exit
+		# 可以正常 exit 容器了
+
+	docker stop centos7_server_6006_ENV
+	docker start centos7_server_6006_ENV
+
+	pm2 --name aicbyserver_v2_6006 start "node server.js"
+
+	pm2 save
+	pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
+	pm2 resurrect // 重启备份的所有项目
+
+	vi auto_run.ssh
+		pm2 resurrect 
+	
+	chmod +x auto_run.sh
+
+	设置开机启动
+	vi /etc/rc.d/rc.local
+		/project/auto_run.sh 
+	chmod +x /etc/rc.d/rc.local
+	
+	 crontab -e
+		@reboot  /project/auto_run.sh
+
+
+	docker exec -it centos7_server_6006_ENV  pm2 resurrect;/bin/bash
+		# 在容器内执行命令
+	docker exec -it centos7_server_6006_ENV /bin/bash
+		# 进入容器
+
+
+( async ()=> {
+
+  let bent = require('bent')
+
+  let appEName = 'xxx'
+  let idArray = 'xxx'
+
+  let json = {
+    SessionKey: "xxx",
+    appEName: appEName,
+    idArray: idArray
+  }
+
+
+  let post = bent('http://118.178.137.176:80', 'POST', 'json', 200)
+  let response = await post('/test', json)
+
+  // data = JSON.parse(response).data.test
+
+  // let s = JSON.stringify(response)
+
+  console.log( response )
+
+}) ()
+
+
+JSON.parse( process.env.CONFIG_ENV )
+
+
+CONFIG_ENV
+
+
+阿里云镜像库的通过git自动打包功能
+
+https://blog.csdn.net/YL3126/article/details/122184386
+
+使用私有镜像仓库创建应用
+
+https://help.aliyun.com/document_detail/86307.html
+
+
+通过docker和gitlab实现项目自动打包部署
+
+https://blog.csdn.net/qq_44845473/article/details/126045368
+
 ```
 
 
