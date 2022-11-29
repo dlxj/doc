@@ -6,6 +6,11 @@
 
 
 
+```
+yum whatprovides ifconfig
+yum install net-tools
+```
+
 
 
 ```
