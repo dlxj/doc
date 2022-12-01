@@ -6432,6 +6432,7 @@ stdin.on('end', function () {
 
 yum whatprovides ifconfig
 yum whatprovides crontab
+yum whatprovides git
 yum install net-tools cronie -y
 
 docker run -tid --name centos7_server_6006 -p 222:22 --privileged=true centos:7 /sbin/init
@@ -6521,40 +6522,7 @@ yum install nmap
 		docker ps
 		docker stop centos7_server_6006
 
-nginx 80 转 6006
 
-map $http_upgrade $connection_upgrade {
-    default upgrade;
-    '' close;
-}
-
-upstream centos7_server_6006 {
-  server localhost:6006;
-}
-
-
-#####            测试          #####
-server {
-  listen 80;
-  server_name localhost;
-
-  location / {
-    location / {
-      proxy_pass http://centos7_server_6006;
-    }
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection $connection_upgrade;
-    proxy_read_timeout 9999999;
-    proxy_connect_timeout 9999999;
-    proxy_send_timeout 9999999;
-  }
-}
-
-
-nginx -s reload
 
 
 npm i -g pm2@4.5.1
@@ -6660,7 +6628,7 @@ docker run --name running-blog-www\
  -e "CONFIG_ENV=$(</path/to/config.json)"\
 
 
-docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=这里填双引号转义后的json字符串" --net=bridge --ip=10.88.0.3  --privileged=true centos:7 /sbin/init
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV={\"updatePassword\":\"\"}" --net=bridge --ip=10.88.0.3  --privileged=true centos:7 /sbin/init
 
 
 docker cp /usr/local/node-v14.17.0-linux-x64 centos7_server_6006_ENV:/usr/local
@@ -6704,24 +6672,13 @@ docker exec -it centos7_server_6006_ENV /bin/bash
 ( async ()=> {
 
   let bent = require('bent')
-
-  let appEName = 'xxx'
-  let idArray = 'xxx'
-
+  
   let json = {
-    SessionKey: "xxx",
-    appEName: appEName,
-    idArray: idArray
+    userID: 0
   }
-
-
-  let post = bent('http://118.178.137.176:80', 'POST', 'json', 200)
+  
+  let post = bent('http://127.0.0.1:6006', 'POST', 'json', 200)
   let response = await post('/test', json)
-
-  // data = JSON.parse(response).data.test
-
-  // let s = JSON.stringify(response)
-
   console.log( response )
 
 }) ()
@@ -6731,6 +6688,20 @@ JSON.parse( process.env.CONFIG_ENV )
 
 
 CONFIG_ENV
+
+
+
+执行多条命令使用分号隔开
+docker exec web-blog /bin/sh -c "mkdir /www/default/runtime; \
+                                 chmod +x /www/default/ank; \
+                                 /www/default/ank clearcache; \
+                                 /www/default/ank optimize:config; \
+                                 /www/default/ank optimize:preload; \
+                                 chown -R www-data:www-data /www/default; \
+                                 chmod 544 -R /www/default; \
+                                 chmod 754 -R /www/default/runtime;"
+
+docker run 5800 sh -c "ls && echo '-------' &&  ls"
 
 
 阿里云镜像库的通过git自动打包功能
@@ -6745,6 +6716,401 @@ https://help.aliyun.com/document_detail/86307.html
 通过docker和gitlab实现项目自动打包部署
 
 https://blog.csdn.net/qq_44845473/article/details/126045368
+
+
+Docker-compose编排微服务顺序启动
+
+https://cloud.tencent.com/developer/article/1620658?from=15425
+
+
+
+Docker一从入门到实践  ENTRYPOINT 入口点
+
+https://yeasy.gitbook.io/docker_practice/image/dockerfile/entrypoint
+	# docker 可以被当作命令行来运行，还可以加参数
+
+FROM ubuntu:18.04
+RUN apt-get update \
+    && apt-get install -y curl \
+    && rm -rf /var/lib/apt/lists/*
+ENTRYPOINT [ "curl", "-s", "http://myip.ipip.net" ]
+这次我们再来尝试直接使用 docker run myip -i：
+$ docker run myip
+	当前 IP：61.148.226.66 来自：北京市 联通
+
+
+在构建镜像的时候，需要额外小心，每一层尽量只包含该层需要添加的东西，任何额外的东西应该在该层构建结束前清理掉。
+分层存储的特征还使得镜像的复用、定制变的更为容易。甚至可以用之前构建好的镜像作为基础层，然后进一步添加新的层，以定制自己所需的内容，构建新的镜像。
+
+按照 Docker 最佳实践的要求，容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者 绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主（或网络存储）发生读写，其性能和稳定性更高。
+数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡。因此，使用数据卷后，容器删除或者重新运行之后，数据却不会丢失。
+
+
+仓库名经常以 两段式路径 形式出现，比如 jwilder/nginx-proxy，前者往往意味着 Docker Registry 多用户环境下的用户名，后者则往往是对应的软件名。
+
+
+列出已经下载下来的镜像
+	docker image ls
+
+yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-selinux \
+                  docker-engine-selinux \
+                  docker-engine
+
+	# 卸载 docker
+
+
+yum install -y yum-utils
+
+yum-config-manager \
+    --add-repo \
+    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+	# 官方源 https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo sed -i 's/download.docker.com/mirrors.aliyun.com\/docker-ce/g' /etc/yum.repos.d/docker-ce.repo
+	# 切换为阿里源
+
+vi /etc/yum/pluginconf.d/fastestmirror.conf
+	enabled=0;  # 改成这个
+
+vi /etc/yum.conf
+	plugins=0; # 改成这个
+
+
+yum install docker-ce docker-ce-cli containerd.io -y
+	# 安装 docker
+
+docker run --rm hello-world
+	# 测试是否安装正确
+		# --rm 表示运行后既删除
+
+
+systemctl enable docker && \
+systemctl start docker
+
+
+docker pull nginx
+docker run --name webserver -d -p 80:80 nginx
+	# 运行 docker 镜像，80 映射 80
+
+curl http://localhost
+	# 成功访问网页
+
+docker exec -it webserver bash -c "echo $PATH"
+	# 这里的 $PATH 会被解析成本机的值 
+
+docker exec -it webserver bash -c "echo '<h1>Hello, Docker\!</h1>' > /usr/share/nginx/html/index.html"
+	# 修改主页，注意：感叹号需要转义
+	curl http://localhost
+
+docker diff webserver
+	# 我们修改了容器的文件，也就是改动了容器的存储层。
+	# 比较相对基础镜像修改了哪
+
+
+慎用docker commit
+
+使用 docker commit 意味着所有对镜像的操作都是黑箱操作，生成的镜像也被称为 黑箱镜像，换句话说，就是除了制作镜像的人知道执行过什么命令、怎么生成的镜像，别人根本无从得知。而且，即使是这个制作镜像的人，过一段时间后也无法记清具体的操作。这种黑箱镜像的维护工作是非常痛苦的。
+
+
+使用 Dockerfile 定制镜像
+	Dockerfile 是一个文本文件，其内包含了一条条的 指令(Instruction)，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建
+
+定制 mynjginx 镜像
+
+mkdir mynginx && \
+cd mynginx && \
+touch Dockerfile && \
+echo "FROM nginx 
+RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html" > Dockerfile
+
+
+docker build -t nginx:v2 .
+	构建镜像
+
+docker run --name webserver -d -p 80:80 nginx:v2 && \
+curl http://localhost && \
+docker stop webserver && \
+docker rm webserver
+	# 运行 docker 镜像，80 映射 80
+
+
+https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz
+
+
+yum install net-tools cronie -y
+
+docker run -tid --name centos7_server_6006 -p 222:22 --privileged=true centos:7 /sbin/init
+	# 此命令会自动下载镜像
+	# -p 222:22 表示将宿主的222端口映射容器的22端口
+
+
+
+
+构建实际项目
+
+docker network ls
+docker network create --subnet=172.20.0.0/16 customnetwork
+	# 创建自定义网络
+
+
+docker system prune --volumes
+	# 删除所有未使用镜像及缓存，自义定网络
+
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+	# 自定义网络不存在则创建
+
+docker run -tid --name centos7_server_6006 -p 222:22 --privileged=true centos:7 /sbin/init
+
+docker pull centos:7
+	# 拉镜像只需要一次
+	# docker image ls
+	# docker image rm centos:7
+	# docker image rm centos7_server_6006
+
+docker system prune --volumes -y 
+docker image ls | grep centos:7
+if [ $? -ne 0 ] ;then
+    echo 'image centos:7 not found, pull'
+    docker pull centos:7
+    echo 'image centos:7 pull success'
+fi
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+mkdir centos7_server_6006 && \
+cd centos7_server_6006 && \
+touch Dockerfile && \
+echo "FROM centos:7 
+RUN set -x; buildDeps='curl net-tools cronie lsof git' && \\
+    yum install -y \$buildDeps && \\
+    git clone http://用户名:这里是AccessTokens@gitlab.xxx.git && \\
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \\
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \\
+    cd /aicbyserver_v2 && \\
+    cnpm i " > Dockerfile && \
+docker build -t centos7_server_6006 . && \
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=双引号转义了的json配置串" --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos7_server_6006 /sbin/init && \
+docker exec -it centos7_server_6006_ENV bash -c "cd /aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' " -c "cd /aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' " && \
+docker stop centos7_server_6006_ENV && \
+docker rm centos7_server_6006_ENV  && \
+docker image rm centos7_server_6006
+
+
+
+	kill -9 $(jobs -p)
+		# 可以正常 exit 容器了
+
+
+配置 nginx 80 转 6006
+
+
+vi /etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+
+
+}
+
+
+
+vi /etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+server {
+  listen 80;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+
+nginx -s reload
+
+
+
+
+
+
+
+
+
+
+
+nmap 172.20.0.2 -p6006
+	# 扫描指定端口是否开放
+
+git config --global user.name "gada" && \
+git config --global user.email "x50@qq.com" && \
+git config --global push.default matching  
+
+
+git config --system --list
+	# 查看系统config
+　　
+git config --global  --list
+	# 查看当前用户（global）配置
+
+git config --local  --list
+	# 查看当前仓库配置信息
+
+
+ssh-keygen -t rsa -C "162350@qq.com"
+
+ssh -i ~/.ssh/id_rsa -T git@xxx.com
+	--> Welcome to GitLab
+
+yum install \
+https://repo.ius.io/ius-release-el7.rpm \
+https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
+yum remove git && \
+yum install git236 -y
+	# need Git version 2.3.0
+
+git clone http://用户名:这里是AccessTokens@gitlab.xxxx.git
+
+
+
+解决方式是创建一个access token，然后在拉取代码时带上自己的username和token,就不用再输入用户名密码
+
+具体操作如下：
+
+1、登录 gitlab，点击右上角自己头像选择 settings
+
+2、左边导航栏选择 Access Tokens
+
+3、name 输入框给自己要创建的token起个名字
+
+4、点击create personal access token 创建token （下面还有到期时间、权限可以根据自己需要选择具体如下图）
+
+5、在docker容器中可以通过如下方式使用
+
+git clone https://用户名:token@仓库地址
+
+
+
+mkdir /root/.ssh/ && \
+cat /root/keyksb > /root/.ssh/id_rsa && \
+chmod 600 /root/.ssh/id_rsa && \
+touch /root/.ssh/known_hosts && \
+ssh-keyscan gitlab.ksbao.com >> /root/.ssh/known_hosts
+	# https://github.com/jmrf/private-repo-clone-docker-build-example/blob/master/test.Dockerfile
+
+
+
+
+export GIT_SSH_COMMAND="ssh -i /root/keyksb" && git clone http://xxxx.git
+
+GIT_SSH_COMMAND='ssh -o IdentitiesOnly=yes -i /root/keyksb -F /dev/null' git clone http://xx.git
+
+git clone 私有仓的例子
+https://github.com/jmrf/private-repo-clone-docker-build-example
+
+
+
+
+
+
+自定义IP  Docker Compose
+https://www.howtogeek.com/devops/how-to-assign-a-static-ip-to-a-docker-container/
+
+
+How to set static ip when using default network
+
+docker-compose will create a network named after your project name (usually your folder, unless you specified COMPOSE_PROJECT_NAME) suffixed with _default. So if the project name is foo, the default network name will be foo_default. It will always be this unless you specify otherwise.
+
+Once this network has been created, docker-compose will never remove it. This means you need to remove it yourself using docker.
+
+$ docker network rm foo_default
+Once you've done this, docker-compose will attempt to recreate your network. If you've specified some network options in your docker-compose.yml file, it will create the network with your new options.
+
+version: '3.4'
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+
+
+FROM centos:7
+
+RUN set -x; buildDeps='curl' \
+    && apt-get update \
+    && apt-get install -y $buildDeps \
+    && curl -O "https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz" \
+    && tar -xzvf node-v14.21.1-linux-x64.tar.gz -C /usr/local  \
+    && apt-get purge -y --auto-remove $buildDeps
+
+镜像是多层存储，每一层的东西并不会在下一层被删除，会一直跟随着镜像。因此镜像构建时，一定要确保每一层只添加真正需要添加的东西，任何无关的东西都应该清理掉
 
 ```
 
