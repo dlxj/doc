@@ -2224,6 +2224,40 @@ PostgreSQL集群及读写分离方案
 
 
 
+# 图式搜索
+
+- https://developer.aliyun.com/article/689151
+
+  > 德哥PG系列：PostgreSQL 图式关系数据应用实践
+
+- https://www.bilibili.com/video/BV1ff4y1b73U
+
+  > 重新发现PostgreSQL之美 - 19 困扰古惑仔和海盗的数学难题 森林图式分佣
+
+- https://developer.aliyun.com/article/328141
+
+- https://www.bilibili.com/video/BV1Vv4115723
+
+  > FTS 距离
+
+- https://developer.aliyun.com/article/72699
+
+  > PostgreSQL 递归查询 - 树型数据按路径分组输出
+
+- https://www.cnblogs.com/ricklz/p/12590618.html
+
+  > 通过使用RECURSIVE，一个**WITH查询可以引用它自己的输出**。
+  >
+  > - https://blog.csdn.net/u010251897/article/details/118515107
+
+```
+图式搜索是PostgreSQL在（包括流计算、全文检索、图式搜索、K-V存储、图像搜索、指纹搜索、空间数据、时序数据、推荐等）诸多特性中的一个。
+
+采用CTE语法，可以很方便的实现图式搜索（N度搜索、最短路径、点、边属性等）。
+
+其中图式搜索中的：层级深度，是否循环，路径，都是可表述的。
+```
+
 
 
 
