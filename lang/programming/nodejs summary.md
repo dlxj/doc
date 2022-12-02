@@ -4146,6 +4146,10 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 # redist
 
+- https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
+
+  > redis-cli -h 127.0.0.1  -p 6379
+
 
 
 ```
@@ -4273,7 +4277,9 @@ flushdb 清空当前数据库
 
 
 
-# docker + nginx
+# nginx
+
+- https://linuxize.com/post/how-to-install-nginx-on-centos-7/
 
 - https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
 
@@ -7112,6 +7118,62 @@ RUN set -x; buildDeps='curl' \
 
 镜像是多层存储，每一层的东西并不会在下一层被删除，会一直跟随着镜像。因此镜像构建时，一定要确保每一层只添加真正需要添加的东西，任何无关的东西都应该清理掉
 
+```
+
+
+
+```
+docker system prune --volumes -y 
+docker image ls | grep centos:7
+if [ $? -ne 0 ] ;then
+    echo 'image centos:7 not found, pull'
+    docker pull centos:7
+    echo 'image centos:7 pull success'
+fi
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+mkdir centos7_server_6006 && \
+cd centos7_server_6006 && \
+touch Dockerfile && \
+echo "FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
+    yum install -y \$buildDeps && \\
+    yum install -y nginx redis && \\
+    git clone https://用户名:token@仓库地址 && \\
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \\
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \\
+    cd /aicbyserver_v2 && \\
+    cnpm i " > Dockerfile && \
+docker build -t centos7_server_6006 . && \
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=冒号转义后的json" --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos7_server_6006 /sbin/init && \
+docker exec -it centos7_server_6006_ENV bash -c "cd /aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' " -c "cd /aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' " && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" && \
+docker stop centos7_server_6006_ENV && \
+docker rm centos7_server_6006_ENV  && \
+docker image rm centos7_server_6006
+```
+
+
+
+
+
+```
+b64.js 转义配置
+let j = require('./config.js')
+require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
+console.log(JSON.stringify(j).replace(/"/g, `\\"`))
+require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
 ```
 
 
