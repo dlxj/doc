@@ -52,6 +52,16 @@ tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 
 
+# 显示进程参数
+
+```
+ps -ef | grep redis
+```
+
+
+
+
+
 # 关闭 stopped 进程
 
 ```
