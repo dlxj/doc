@@ -9709,6 +9709,20 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 - https://github.com/Orama-Interactive/Pixelorama
 - https://github.com/RodZill4/material-maker
 
+- https://github.com/touilleMan/godot-python  **godot + python**
+
+### 拷贝大量数据
+
+```
+# https://github.com/touilleMan/godot-python/issues/329
+I was suggesting to create the bytes array through godot.pool_arrays.PoolByteArray, then accessing it underlying buffer with godot.pool_arrays.PoolByteArray.raw_access. numpy.frombuffer can then wrap this underlying buffer without copying it.
+You then end up with a Numpy array that can be used for your Image.create_from_data, the only gotcha is you should be careful about this numpy array object lifetime given it shares the same buffer with the PoolByteArray.
+
+The easy way to avoid lifetime issues would be to create a PoolByteArray singleton with a fixed size when initializing your application (hence the underlying buffer is never freed)
+```
+
+
+
 
 
 # UGUI
