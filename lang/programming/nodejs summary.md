@@ -128,7 +128,9 @@ pm2 update    // 清空重启次数等（疑难杂症可以试试）
 
 pm2 reload explainteam_server_7114 --name my_new_name --max-old-space-size 4096
 
-pm2 delete processID  // 删除一项  
+pm2 delete processID  // 删除一项
+
+pm2 flush 进程ID | 进程名  // 清空日志
 
 # 关闭防火墙
 systemctl stop firewalld
@@ -4148,7 +4150,19 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 - https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
 
+  > redis-cli -h host -p port -a password
+  >
+  > ```
+  > select 0    # 选择0号数据库
+  > keys *name* # 查询key
+  > get "defaultDB.user.guid.33"
+  > ```
+  >
+  > 
+  >
   > redis-cli -h 127.0.0.1  -p 6379
+  >
+  > redis-cli -h 192.168.80.4 -p 6390 PING
 
 
 
