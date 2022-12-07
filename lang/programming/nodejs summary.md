@@ -9796,6 +9796,7 @@ const data = kernel();
 # node-sdl
 
 - https://github.com/kmamal/node-sdl
+- https://github.com/fosterseth/sdl2_video_player  **视频播放**
 
 
 
