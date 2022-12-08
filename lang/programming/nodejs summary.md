@@ -7196,6 +7196,167 @@ docker image rm centos7_server_6006
 
 
 
+```
+docker system prune --volumes -y 
+docker image ls | grep centos:7
+if [ $? -ne 0 ] ;then
+    echo 'image centos:7 not found, pull'
+    docker pull centos:7
+    echo 'image centos:7 pull success'
+fi
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+mkdir centos7_server_6006 && \
+cd centos7_server_6006 && \
+touch Dockerfile && \
+echo "FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
+    yum install -y \$buildDeps && \\
+    yum install -y nginx redis nfs-utils crontabs && \\
+    mkdir -p /project/shared && \\
+    mkdir -p /project/script && \\
+    chmod 755 /project/shared && \\
+    cd /project && \\
+    git clone http://用户名:AccessToten@gitlab.ksbao.com/weiqibang/aicbyserver_v2.git && \\
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \\
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \\
+    cd /project/aicbyserver_v2 && \\
+    cnpm i " > Dockerfile && \
+docker build -t centos7_server_6006 . && \
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=这里放冒号转义后的json" --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos7_server_6006 /sbin/init && \
+docker exec -it centos7_server_6006_ENV bash -c "cd /project/aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' "  && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable rpcbind && systemctl start rpcbind" && \
+docker exec -it centos7_server_6006_ENV bash -c "mkdir -p /project/shared/test_cooperate_img && chmod 755 /project/shared/test_cooperate_img && \\
+    ls -al /project/shared/test_cooperate_img" && \
+docker exec -it centos7_server_6006_ENV bash -c "showmount -e 172.16.15.13" && \
+docker exec -it centos7_server_6006_ENV bash -c "mount -t nfs 172.16.15.13:/yingedu/web/aicby_v2/test_cooperate_img  /project/shared/test_cooperate_img" && \
+docker exec -it centos7_server_6006_ENV bash -c "echo 'hello from docker' > /project/shared/test_cooperate_img/hi.txt" && \
+cat /yingedu/web/aicby_v2/test_cooperate_img/hi.txt && \
+docker exec -it centos7_server_6006_ENV bash -c "echo 'umount /project/shared/test_cooperate_img 
+mount -t nfs 172.16.15.13:/yingedu/web/aicby_v2/test_cooperate_img  /project/shared/test_cooperate_img  
+if [ \$? -ne 0 ]; then 
+    echo mount failed  
+    sleep 30s; echo try agin 
+    umount /project/shared/test_cooperate_img 
+    mount -t nfs 172.16.15.13:/yingedu/web/aicby_v2/test_cooperate_img  /project/shared/test_cooperate_img 
+else 
+    echo mount nfs succeed
+fi
+' > /project/script/auto_mount.sh" && \
+docker exec -it centos7_server_6006_ENV bash -c "echo '@reboot  /project/script/auto_mount.sh' > /var/spool/cron/root" && \
+docker exec -it centos7_server_6006_ENV bash -c "chmod +x /project/script/auto_mount.sh" && \
+docker exec -it centos7_server_6006_ENV bash -c "crontab -l" && \
+docker exec -it centos7_server_6006_ENV bash -c "cat /project/script/auto_mount.sh" && \
+docker stop centos7_server_6006_ENV && \
+docker rm centos7_server_6006_ENV  && \
+docker image rm centos7_server_6006
+
+
+
+
+	kill -9 $(jobs -p)
+		# 可以正常 exit 容器了
+
+
+配置 nginx 80 转 6006
+
+
+vi /etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+
+
+}
+
+
+
+vi /etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+server {
+  listen 80;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+
+nginx -s reload
+
+
+nmap 172.20.0.2 -p6006
+	# 扫描指定端口是否开放
+
+
+
+
+
+
+```
+
+
+
 
 
 ```
@@ -7205,6 +7366,8 @@ require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`
 console.log(JSON.stringify(j).replace(/"/g, `\\"`))
 require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
 ```
+
+
 
 
 
