@@ -7358,53 +7358,61 @@ nmap 172.20.0.2 -p6006
 
 
 ```powershell
+# centos7_server_6006.ps1
 
-rm -r E:/project/centos7_server_6006
+$dir="E:\docker"
+$profileDir="$dir\centos7_server_6006"
+Write-Host $profileDir
+if (Test-Path -Path $profileDir) {
+    Remove-Item -Path $profileDir -Force -Recurse
+}
 
-cd E:/project
+New-Item -ItemType Directory -Path $profileDir -Force
+#New-Item -ItemType File -Path "$profileDir\Dockerfile"
 
-New-Item -ItemType Directory -Path "centos7_server_6006" -Force
+Set-Location $profileDir
 
-Set-Location -Path "centos7_server_6006"
+# Write-Output "FROM centos:7 
+# RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+# yum install -y `$buildDeps && \
+# yum install -y nginx redis nfs-utils crontabs && \
+# mkdir -p /project/shared && \
+# mkdir -p /project/script && \
+# chmod 755 /project/shared && \
+# cd /project && \
+# git clone https://guandong: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@github.com/dlxj/server_template.git && \
+# curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
+# tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+# ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+# ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+# ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+# npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+# ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+# ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+# cd /project/server_template && \
+# cnpm i " > Dockerfile
 
-New-Item -ItemType File -Path ".\Dockerfile"
+[System.Text.Encoding]::UTF8.GetBytes("FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+yum install -y `$buildDeps && \
+yum install -y nginx redis nfs-utils crontabs && \
+mkdir -p /project/shared && \
+mkdir -p /project/script && \
+chmod 755 /project/shared && \
+cd /project && \
+git clone https://guandong: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@github.com/dlxj/server_template.git && \
+curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
+tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+cd /project/server_template && \
+npm i ") | Set-Content Dockerfile -Encoding Byte
 
-echo "FROM centos:7 
-RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git'
-
-yum install -y `$buildDeps
-
-yum install -y nginx redis nfs-utils crontabs
-
-mkdir -p /project/shared
-
-mkdir -p /project/script
-
-chmod 755 /project/shared
-
-cd /project
-
-git clone http://用户名:AccessToten@xxx/xxx.git
-
-curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'
-
-tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local
-
-ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node
-
-ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm
-
-ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx
-
-npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org
-
-ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm
-
-ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2
-
-cd /project/aicbyserver_v2
-
-cnpm i " > Dockerfile
+docker build -t centos7_server_6006 .
 
 
 
