@@ -7360,12 +7360,50 @@ nmap 172.20.0.2 -p6006
 ```powershell
 # centos7_server_6006.ps1
 
+$t = docker ps -a
+if ($t -like "*centos7_server_6006_ENV*")
+{
+    docker stop centos7_server_6006_ENV
+    docker rm centos7_server_6006_ENV
+    Write-Host "object centos7_server_6006_ENV deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos7_server_6006*")
+{
+    docker image rm centos7_server_6006
+    Write-Host "image centos7_server_6006 deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos*")
+{
+    docker image rm centos:7
+    Write-Host "image centos:7 deleted"
+}
+
+$t = docker network ls
+if ($t -like "*customnetwork*")
+{
+    docker network rm customnetwork
+    Write-Output 'customnetwork deleted'
+}
+
+docker system prune --volumes
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+Write-Output 'customnetwork created'
+
+docker pull centos:7
+Write-Output 'image centos:7 created'
+
 $dir="E:\docker"
 $profileDir="$dir\centos7_server_6006"
 Write-Host $profileDir
 if (Test-Path -Path $profileDir) {
     Remove-Item -Path $profileDir -Force -Recurse
 }
+
 
 New-Item -ItemType Directory -Path $profileDir -Force
 #New-Item -ItemType File -Path "$profileDir\Dockerfile"
@@ -7380,7 +7418,7 @@ Set-Location $profileDir
 # mkdir -p /project/script && \
 # chmod 755 /project/shared && \
 # cd /project && \
-# git clone https://guandong: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@github.com/dlxj/server_template.git && \
+# git clone https://用户名:AccessToken@git.xxx.git && \
 # curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
 # tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
 # ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
@@ -7400,19 +7438,24 @@ mkdir -p /project/shared && \
 mkdir -p /project/script && \
 chmod 755 /project/shared && \
 cd /project && \
-git clone https://guandong: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@github.com/dlxj/server_template.git && \
+git clone https://guandong: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@github.com/dlxj/server_template.git && \
 curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
 tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
 ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
 ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
 ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
-npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+npm install cnpm@7.1.0  pm2@4.5.1 -g && \
 ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
 ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
 cd /project/server_template && \
 npm i ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t centos7_server_6006 .
+
+docker run -tid --name centos7_server_6006_ENV -e 'CONFIG_ENV={"updatePassword":"","debugPassword":"","dev":true,"http":{"port":6006,"headers":{"Server":"Server","Access-Control-Allow-Origin":"*","Content-Type":"text/json","Access-Control-Allow-Headers":"content-type","Access-Control-Request-Method":"GET,POST"},"encrypt":false,"privateKey":"","publicKey":""},"service":{"privateKey":"","publicKey":"","require":{}},"dbs":{"localDB":{"host":"127.0.0.1","user":"root","password":"root","database":"ocr","port":3306,"multipleStatements":true,"connectTimeout":60000,"connectionLimit":4096},"defaultDB":{"host":"127.0.0.1","user":"root","password":"root","database":"tmp","port":3306,"multipleStatements":true,"connectTimeout":60000,"connectionLimit":50},"baseDB":{"host":"127.0.0.1","user":"root","password":"root","database":"tmp","port":3306,"multipleStatements":true,"connectTimeout":60000,"connectionLimit":50},"tiku_bookDB":{"host":"127.0.0.1","user":"root","password":"root","database":"tmp","port":3306,"multipleStatements":true,"connectTimeout":60000,"connectionLimit":50},"tiku_material":{"host":"127.0.0.1","user":"root","password":"root","database":"tmp","port":3306,"multipleStatements":true,"connectTimeout":60000,"connectionLimit":50},"ocrDB":{"host":"127.0.0.1","user":"root","password":"root","database":"temp","port":3306,"multipleStatements":true,"connectTimeout":60000,"connectionLimit":50}},"redis":{"defaultDB":{"host":"127.0.0.1","port":6379,"prefix":null,"db":0}},"dataSet":{}}' --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos7_server_6006 /sbin/init 
+docker exec -it centos7_server_6006_ENV bash -c "cd /project/aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' "  
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" 
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" 
 
 
 
