@@ -7424,6 +7424,50 @@ docker build -t centos7_server_6006 .
 
 
 ```
+# 删除和重建镜像和网络
+$t = docker ps -a
+if ($t -like "*centos7_server_6006_ENV*")
+{
+    docker stop centos7_server_6006_ENV
+    docker rm centos7_server_6006_ENV
+    Write-Host "object centos7_server_6006_ENV deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos7_server_6006*")
+{
+    docker image rm centos7_server_6006
+    Write-Host "image centos7_server_6006 deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos*")
+{
+    docker image rm centos:7
+    Write-Host "image centos:7 deleted"
+}
+
+$t = docker network ls
+if ($t -like "*customnetwork*")
+{
+    docker network rm customnetwork
+    Write-Output 'customnetwork deleted'
+}
+
+docker system prune --volumes
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+Write-Output 'customnetwork created'
+
+docker pull centos:7
+Write-Output 'image centos:7 created'
+```
+
+
+
+
+
+```
 b64.js 转义配置
 let j = require('./config.js')
 require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
