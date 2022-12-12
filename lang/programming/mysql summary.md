@@ -149,6 +149,21 @@ rm -rf (all folders listed in find)
 
 
 
+## 特殊字符报错
+
+```
+查数据库各种字符符设置
+SHOW VARIABLES WHERE Variable_name LIKE 'character_set_%' OR Variable_name LIKE 'collation%';
+
+ALTER DATABASE db_name(你的数据库) CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
+
+```
+
+
+
+
+
 ## install 5.7
 
 
@@ -515,6 +530,16 @@ end
 
 
 ```
+
+
+
+## 取自增字段的值
+
+```
+ SELECT @@IDENTITY 插入完了以后可以通过它执行获取上一条插入语句中生成的自增长字段的值。
+```
+
+
 
 
 

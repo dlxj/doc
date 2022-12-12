@@ -6401,7 +6401,24 @@ http {
 
   > 如何查看Docker容器环境变量，如何向容器传递环境变量
 
-  
+- https://xiaorui.cc/archives/1158
+
+  - https://www.cnblogs.com/yinzhengjie/p/12239341.html
+
+  > lscpu 
+  >
+  > ```
+  > -m 128M # 内存限制 128M
+  > --cpus 2 --cpuset-cpus 1,4 # 限制CPU 核心数为2，只分配第1核和第4核
+  > 
+  > 
+  > # https://www.cnblogs.com/mingyueyy/p/15475150.html
+  > Docker-Compose 是用来管理容器的，类似用户容器管家，我们有N多台容器或者应用需要启动的时候，如果手动去操作，是非常耗费时间的，如果有了 Docker-Compose 只需要一个配置文件就可以帮我们搞定，但是 Docker-Compose 只能管理当前主机上的 Docker，不能去管理其他服务器上的服务。意思就是单机环境。
+  > 
+  > Docker Swarm 是由Docker 公司研发的一款用来管理集群上的Docker容器工具，弥补了 Docker-Compose 单节点的缺陷，Docker Swarm 可以帮助我们启动容器，监控容器的状态，如果容器服务挂掉会重新启动一个新的容器，保证正常的对外提供服务，也支持服务之间的负载均衡。而且这些东西 Docker-Compose是不支持的，
+  > 
+  > 
+  > ```
 > curl https://xxxx.com/getData | jq
 >
 > jq 命令去除转义，最后输出的是格式化的json字符串，既去掉了转义字符
@@ -7221,7 +7238,7 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
     mkdir -p /project/script && \\
     chmod 755 /project/shared && \\
     cd /project && \\
-    git clone http://用户名:AccessToten@gitlab.ksbao.com/weiqibang/aicbyserver_v2.git && \\
+    git clone http://用户名:AccessToten@gitlab.xxxx.git && \\
     curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
     tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
     ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
@@ -7365,6 +7382,68 @@ let j = require('./config.js')
 require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
 console.log(JSON.stringify(j).replace(/"/g, `\\"`))
 require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
+```
+
+
+
+## Docker Desktop for Windows
+
+```
+控制面板 -> 程序和功能 -> 启用“适用于Linux的Windows子系统”
+
+wsl --install
+	# 新版 win10支持
+
+https://learn.microsoft.com/en-us/windows/wsl/install-manual
+	# 旧版 win10 安装方法
+```
+
+
+
+```
+docker system prune --volumes -y 
+
+$imageExists = docker image ls | Select-String -Pattern 'centos:7'
+if ($imageExists -eq $null) {
+    Write-Host 'image centos:7 not found, pull'
+    docker pull centos:7
+    Write-Host 'image centos:7 pull success'
+}
+
+$networks = docker network ls
+if ($networks -notmatch 'customnetwork') {
+    Write-Host 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    Write-Host 'customnetwork create success'
+}
+
+New-Item -ItemType Directory -Path centos7_server_6006
+cd centos7_server_6006
+New-Item -ItemType File -Path Dockerfile
+
+Write-Output "FROM centos:7
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+    yum install -y `$buildDeps && \
+    yum install -y nginx redis nfs-utils crontabs && \
+    mkdir -p /project/shared && \
+    mkdir -p /project/script && \
+    chmod 755 /project/shared && \
+    cd /project && \
+    git clone http://用户名:AccessToten@gitlab.xxxx.git && \
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+    cd /project/aicbyserver_v2 && \
+    cnpm i" > Dockerfile
+    
+   
+ 
+
 ```
 
 
