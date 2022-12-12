@@ -175,17 +175,22 @@ bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/loca
 cat /root/.mysql_secret
 	# 初始密码
 
+yum install libaio numactl
 
+yum install -y cmake bison bison-devel libaio libaio-devel gcc gcc-c++ ncurses ncurses-devel
+
+yum -y install initscripts && yum clean all
+	# service: command not found
 
 vi /etc/my.cnf
 [client]
-default-character-set=utf8
+default-character-set=utf8mb4
 [mysql]
-default-character-set=utf8
+default-character-set=utf8mb4
 [mysqld]
-collation-server = utf8_general_ci
-init-connect='SET NAMES utf8'
-character-set-server = utf8
+collation-server = utf8mb4_general_ci
+init-connect='SET NAMES utf8mb4'
+character-set-server = utf8mb4
 # binding IPv4 and 3306 port
 bind-address = 0.0.0.0
 port = 3306

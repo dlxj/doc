@@ -7238,7 +7238,7 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
     mkdir -p /project/script && \\
     chmod 755 /project/shared && \\
     cd /project && \\
-    git clone http://用户名:AccessToten@gitlab.xxxx.git && \\
+    git clone http://用户名:AccessToten@gitlab.xxxxx.git && \\
     curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
     tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
     ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
@@ -7374,6 +7374,145 @@ nmap 172.20.0.2 -p6006
 
 
 
+```powershell
+
+
+$t = docker ps -a
+if ($t -like "*centos7_server_6006_ENV*")
+{
+    docker stop centos7_server_6006_ENV
+    docker rm centos7_server_6006_ENV
+    Write-Host "object centos7_server_6006_ENV deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos7_server_6006*")
+{
+    docker image rm centos7_server_6006
+    Write-Host "image centos7_server_6006 deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos*")
+{
+    docker image rm centos:7
+    Write-Host "image centos:7 deleted"
+}
+
+$t = docker network ls
+if ($t -like "*customnetwork*")
+{
+    docker network rm customnetwork
+    Write-Output 'customnetwork deleted'
+}
+
+docker system prune --volumes
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+Write-Output 'customnetwork created'
+
+docker pull centos:7
+Write-Output 'image centos:7 created'
+
+$dir="E:\docker"
+$profileDir="$dir\centos7_server_6006"
+Write-Host $profileDir
+if (Test-Path -Path $profileDir) {
+    Remove-Item -Path $profileDir -Force -Recurse
+}
+
+
+New-Item -ItemType Directory -Path $profileDir -Force
+#New-Item -ItemType File -Path "$profileDir\Dockerfile"
+
+Set-Location $profileDir
+
+
+[System.Text.Encoding]::UTF8.GetBytes("FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+yum install -y `$buildDeps && \
+yum install -y nginx redis nfs-utils crontabs libaio numactl && \
+mkdir -p /project/shared && \
+mkdir -p /project/script && \
+chmod 755 /project/shared && \
+cd /project && \
+git clone https://guandong:xx@github.com/dlxj/server_template.git && \
+curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
+curl -O 'https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.39-linux-glibc2.12-x86_64.tar.gz' && \
+tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+tar zxvf mysql-5.7.39-linux-glibc2.12-x86_64.tar.gz -C /usr/local && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+npm install cnpm@7.1.0  pm2@4.5.1 -g && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+cd /project/server_template && \
+npm i && \
+ln -s /usr/local/mysql-5.7.39-linux-glibc2.12-x86_64 /usr/local/mysql && \
+cd /usr/local/mysql && \
+groupadd mysql && \
+useradd -r -g mysql mysql && \
+cd /usr/local/mysql && \
+chown -R mysql . && \
+chgrp -R mysql . && \
+bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data") | Set-Content Dockerfile -Encoding Byte
+
+docker build -t centos7_server_6006 .
+
+docker run -tid --name centos7_server_6006_ENV -e 'CONFIG_ENV={\"updatePassword\":\"\",\"debugPassword\":\"\",\"dev\":true,\"http\":{\"port\":6006,\"headers\":{\"Server\":\"Server\",\"Access-Control-Allow-Origin\":\"*\",\"Content-Type\":\"text/json\",\"Access-Control-Allow-Headers\":\"content-type\",\"Access-Control-Request-Method\":\"GET,POST\"},\"encrypt\":false,\"privateKey\":\"\",\"publicKey\":\"\"},\"service\":{\"privateKey\":\"\",\"publicKey\":\"\",\"require\":{}},\"dbs\":{\"localDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"ocr\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":4096},\"defaultDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"baseDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"tiku_bookDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"tmp\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"ocrDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"temp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50}},\"redis\":{\"defaultDB\":{\"host\":\"127.0.0.1\",\"port\":6379,\"prefix\":null,\"db\":0}},\"dataSet\":{}}' --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 3306:3306 -p 6379:6379 -p 543:543  --privileged=true centos7_server_6006 /sbin/init 
+docker exec -it centos7_server_6006_ENV bash -c "cd /project/server_template && pm2 --name centos7_server_6006 start 'node server.js' "  
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" 
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" 
+docker exec -it centos7_server_6006_ENV bash -c "pm2 logs centos7_server_6006"
+```
+
+
+
+
+
+```
+# 删除和重建镜像和网络
+$t = docker ps -a
+if ($t -like "*centos7_server_6006_ENV*")
+{
+    docker stop centos7_server_6006_ENV
+    docker rm centos7_server_6006_ENV
+    Write-Host "object centos7_server_6006_ENV deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos7_server_6006*")
+{
+    docker image rm centos7_server_6006
+    Write-Host "image centos7_server_6006 deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos*")
+{
+    docker image rm centos:7
+    Write-Host "image centos:7 deleted"
+}
+
+$t = docker network ls
+if ($t -like "*customnetwork*")
+{
+    docker network rm customnetwork
+    Write-Output 'customnetwork deleted'
+}
+
+docker system prune --volumes
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+Write-Output 'customnetwork created'
+
+docker pull centos:7
+Write-Output 'image centos:7 created'
+```
+
+
+
 
 
 ```
@@ -7391,8 +7530,14 @@ require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`
 ```
 控制面板 -> 程序和功能 -> 启用“适用于Linux的Windows子系统”
 
+### docker 中使用显卡
 wsl --install
 	# 新版 win10支持
+
+- https://blog.csdn.net/ltochange/article/details/121339718
+
+
+
 
 https://learn.microsoft.com/en-us/windows/wsl/install-manual
 	# 旧版 win10 安装方法
