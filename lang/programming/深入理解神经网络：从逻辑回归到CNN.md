@@ -12103,6 +12103,10 @@ Eval:
 
 ## PaddleSpeech
 
+- https://cloud.tencent.com/developer/article/2135237 极好的
+
+  > paddlespeech的开源语音识别模型测试
+
 - https://github.com/PaddlePaddle/PaddleSpeech
 
 

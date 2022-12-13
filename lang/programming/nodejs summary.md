@@ -2899,10 +2899,20 @@ console.log(pets.includes('cat'))
 
 
 
-## remove
+## filter
 
 ```
-    delImg (f) {
+                    Data2 = Data2.filter( item => {
+                    
+                        if ( len_rate <= 0.35 ) {
+                            return false
+                        }
+
+                        return true
+                    })
+                    
+
+delImg (f) {
       console.log('删除图片')
       this.files = this.files.filter(item => item !== f)  // ture 留, false 去
     }
@@ -7262,12 +7272,12 @@ docker exec -it centos7_server_6006_ENV bash -c "mount -t nfs 172.16.15.13:/ying
 docker exec -it centos7_server_6006_ENV bash -c "echo 'hello from docker' > /project/shared/test_cooperate_img/hi.txt" && \
 cat /yingedu/web/aicby_v2/test_cooperate_img/hi.txt && \
 docker exec -it centos7_server_6006_ENV bash -c "echo 'umount /project/shared/test_cooperate_img 
-mount -t nfs 172.16.15.13:/yingedu/web/aicby_v2/test_cooperate_img  /project/shared/test_cooperate_img  
+mount -t nfs 172.16.15.13:/xx/xxx  /project/xxxxx_img  
 if [ \$? -ne 0 ]; then 
     echo mount failed  
     sleep 30s; echo try agin 
     umount /project/shared/test_cooperate_img 
-    mount -t nfs 172.16.15.13:/yingedu/web/aicby_v2/test_cooperate_img  /project/shared/test_cooperate_img 
+    mount -t nfs 172.16.15.13:/xxx_img  /project/shared/test_cooperate_img 
 else 
     echo mount nfs succeed
 fi
@@ -7431,12 +7441,12 @@ Set-Location $profileDir
 [System.Text.Encoding]::UTF8.GetBytes("FROM centos:7 
 RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 yum install -y `$buildDeps && \
-yum install -y nginx redis nfs-utils crontabs libaio numactl && \
+yum install -y nginx redis nfs-utils crontabs libaio numactl initscripts && \
 mkdir -p /project/shared && \
 mkdir -p /project/script && \
 chmod 755 /project/shared && \
 cd /project && \
-git clone https://guandong:xx@github.com/dlxj/server_template.git && \
+git clone https://账号:xx@github.com/dlxj/server_template.git && \
 curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
 curl -O 'https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.39-linux-glibc2.12-x86_64.tar.gz' && \
 tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
@@ -7456,7 +7466,11 @@ useradd -r -g mysql mysql && \
 cd /usr/local/mysql && \
 chown -R mysql . && \
 chgrp -R mysql . && \
-bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data") | Set-Content Dockerfile -Encoding Byte
+bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data && \
+cp support-files/mysql.server /etc/init.d/mysql.server && \
+service mysql.server start && \
+service mysql.server status && \
+cat /root/.mysql_secret") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t centos7_server_6006 .
 
@@ -7522,6 +7536,35 @@ require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`
 console.log(JSON.stringify(j).replace(/"/g, `\\"`))
 require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
 ```
+
+
+
+## wsl2
+
+- https://learn.microsoft.com/en-us/windows/wsl/install-manual
+
+  > ```
+  > Turn Windows features on or off # 搜索框输入
+  > 	# 打开选项和功能
+  > 把 linux 子系统 什么虚拟 全都打开
+  > ```
+
+```
+wsl_update_x64.msi 安装出错 2503
+
+For WSL2 you will need 2 Windows components so make sure they are already enabled:
+Microsoft-Windows-Subsystem-Linux
+VirtualMachinePlatform
+
+Also it seems some people have problems with the installer extracting the kernel.
+You can always extract it manually with:
+msiexec /a "wsl_update_x64.msi" /qb TARGETDIR="C:\temp"
+and then copy the kernel file from C:\temp to C:\Windows\System32\lxss\tools
+
+Final version shouldn't have this problem since the install comes from Windows Update.
+```
+
+
 
 
 
