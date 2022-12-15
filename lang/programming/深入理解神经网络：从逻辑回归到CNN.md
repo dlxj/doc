@@ -11310,7 +11310,7 @@ ldconfig -p | grep cuda
 
 ##### 显卡性能测试
 
-<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 25%;" />
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 50%;" />
 
 ```
 
