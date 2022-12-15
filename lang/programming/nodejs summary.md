@@ -4320,8 +4320,8 @@ flushdb 清空当前数据库
 # nginx
 
 - https://linuxize.com/post/how-to-install-nginx-on-centos-7/
-
 - https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
+- https://blog.csdn.net/yeguxin/article/details/94020476
 
 
 
