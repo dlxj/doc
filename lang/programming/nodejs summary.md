@@ -4172,7 +4172,7 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
   >
   > redis-cli -h 127.0.0.1  -p 6379
   >
-  > redis-cli -h 192.168.80.4 -p 6390 PING
+  > redis-cli -h 127.0.0.1 -p 6379 PING
 
 
 
@@ -4322,6 +4322,95 @@ flushdb 清空当前数据库
 - https://linuxize.com/post/how-to-install-nginx-on-centos-7/
 
 - https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
+
+
+
+```
+/etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+
+
+
+
+```
+# 不同域名实现转后端接口和前端
+
+/etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+
+server {
+  listen 80;
+  server_name xxapi.yy.cn;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+server {
+  listen 80;
+  server_name xx.yy.cn;
+
+  location / {
+     root   /home/data;
+     index  index.html index.htm;
+  }
+}
+```
+
+
 
 
 
