@@ -6,6 +6,15 @@ https://blog.csdn.net/dengbin_40/article/details/87997128
 
 
 ```
+# 修改密码
+echo 'root' | passwd --stdin root
+```
+
+
+
+
+
+```
 为添加的用户指定相应的用户组
 
 # useradd -g root -r -d /home/pp pp
