@@ -12109,6 +12109,21 @@ Eval:
 
 - https://github.com/PaddlePaddle/PaddleSpeech
 
+- https://github.com/PaddlePaddle/PaddleSpeech/wiki/PaddleSpeech-CLI---Batch-Process
+
+  > 同时识别多个音频
+
+
+
+```
+# 显存占用问题
+请问如何检查显存释放呢？ -> 训练结束后 nvidia-smi 查看显存是否还被占用
+调小了batch_size还是会显存突然增高 -> 看看是不是个别数据长度明显比其他的长
+可以尝试加一些 FLAGS https://www.paddlepaddle.org.cn/documentation/docs/zh/guides/flags/memory_cn.html#flags-allocator-strategy
+```
+
+
+
 
 
 ### 训练一个自己的TTS
