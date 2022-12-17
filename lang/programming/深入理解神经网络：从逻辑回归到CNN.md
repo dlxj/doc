@@ -5650,6 +5650,25 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 
 
+### lmdb
+
+```
+LMDB全称Lightning Memory-Mapped Database,是内存映射型数据库，这意味着它返回指向键和值的内存地址的指针，而不需要像大多数其他数据库那样复制内存中的任何内容，使用内存映射文件，可以提供更好的输入/输出性能，对于神经网络的的大型数据集可以将其存储到LMDB中
+
+LMDB属于key-value数据库，而不是关系型数据库( 比如 MySQL )，LMDB提供 key-value 存储，其中每个键值对都是我们数据集中的一个样本。LMDB的主要作用是提供数据管理，可以将各种各样的原始数据转换为统一的key-value存储。
+
+LMDB不仅可以用来存放训练和测试用的数据集，还可以存放神经网络提取出的特征数据。如果数据的结构很简单，就是大量的矩阵和向量，而且数据之间没有什么关联，数据内没有复杂的对象结构，那么就可以选择LMDB这个简单的数据库来存放数据。
+
+用LMDB数据库来存放图像数据，而不是直接读取原始图像数据的原因：
+
+数据类型多种多样，比如：二进制文件、文本文件、编码后的图像文件jpeg、png等，不可能用一套代码实现所有类型的输入数据读取，因此通过LMDB数据库，转换为统一数据格式可以简化数据读取层的实现。
+lmdb具有极高的存取速度，大大减少了系统访问大量小文件时的磁盘IO的时间开销。LMDB将整个数据集都放在一个文件里，避免了文件系统寻址的开销，你的存储介质有多快，就能访问多快，不会因为文件多而导致时间长。LMDB使用了内存映射的方式访问文件，这使得文件内寻址的开销大幅度降低。
+```
+
+
+
+
+
 ### tesseract nodejs
 
 ```javascript
@@ -11291,7 +11310,7 @@ ldconfig -p | grep cuda
 
 ##### 显卡性能测试
 
-<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 25%;" />
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 50%;" />
 
 ```
 
@@ -12084,7 +12103,26 @@ Eval:
 
 ## PaddleSpeech
 
+- https://cloud.tencent.com/developer/article/2135237 极好的
+
+  > paddlespeech的开源语音识别模型测试
+
 - https://github.com/PaddlePaddle/PaddleSpeech
+
+- https://github.com/PaddlePaddle/PaddleSpeech/wiki/PaddleSpeech-CLI---Batch-Process
+
+  > 同时识别多个音频
+
+
+
+```
+# 显存占用问题
+请问如何检查显存释放呢？ -> 训练结束后 nvidia-smi 查看显存是否还被占用
+调小了batch_size还是会显存突然增高 -> 看看是不是个别数据长度明显比其他的长
+可以尝试加一些 FLAGS https://www.paddlepaddle.org.cn/documentation/docs/zh/guides/flags/memory_cn.html#flags-allocator-strategy
+```
+
+
 
 
 

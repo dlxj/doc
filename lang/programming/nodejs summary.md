@@ -128,7 +128,9 @@ pm2 update    // 清空重启次数等（疑难杂症可以试试）
 
 pm2 reload explainteam_server_7114 --name my_new_name --max-old-space-size 4096
 
-pm2 delete processID  // 删除一项  
+pm2 delete processID  // 删除一项
+
+pm2 flush 进程ID | 进程名  // 清空日志
 
 # 关闭防火墙
 systemctl stop firewalld
@@ -2897,10 +2899,20 @@ console.log(pets.includes('cat'))
 
 
 
-## remove
+## filter
 
 ```
-    delImg (f) {
+                    Data2 = Data2.filter( item => {
+                    
+                        if ( len_rate <= 0.35 ) {
+                            return false
+                        }
+
+                        return true
+                    })
+                    
+
+delImg (f) {
       console.log('删除图片')
       this.files = this.files.filter(item => item !== f)  // ture 留, false 去
     }
@@ -4146,6 +4158,22 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 # redist
 
+- https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
+
+  > redis-cli -h host -p port -a password
+  >
+  > ```
+  > select 0    # 选择0号数据库
+  > keys *name* # 查询key
+  > get "defaultDB.user.guid.33"
+  > ```
+  >
+  > 
+  >
+  > redis-cli -h 127.0.0.1  -p 6379
+  >
+  > redis-cli -h 127.0.0.1 -p 6379 PING
+
 
 
 ```
@@ -4273,9 +4301,116 @@ flushdb 清空当前数据库
 
 
 
-# docker + nginx
+## bit 位操作
 
+- https://xie.infoq.cn/article/0ad770293fb9de05c4f766a94
+
+```
+应用场景
+实际项目开发中有很多业务都适合采用 redis 的 bit 来实现。
+
+用户签到场景
+每天的日期字符串作为一个 key，用户 Id 作为 offset，统计每天用户的签到情况，总的用户签到数
+```
+
+
+
+
+
+# nginx
+
+- https://linuxize.com/post/how-to-install-nginx-on-centos-7/
 - https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
+- https://blog.csdn.net/yeguxin/article/details/94020476
+
+
+
+```
+/etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+
+
+
+
+```
+# 不同域名实现转后端接口和前端
+
+/etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+
+server {
+  listen 80;
+  server_name xxapi.yy.cn;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+server {
+  listen 80;
+  server_name xx.yy.cn;
+
+  location / {
+     root   /home/data;
+     index  index.html index.htm;
+  }
+}
+```
+
+
 
 
 
@@ -6365,7 +6500,24 @@ http {
 
   > 如何查看Docker容器环境变量，如何向容器传递环境变量
 
-  
+- https://xiaorui.cc/archives/1158
+
+  - https://www.cnblogs.com/yinzhengjie/p/12239341.html
+
+  > lscpu 
+  >
+  > ```
+  > -m 128M # 内存限制 128M
+  > --cpus 2 --cpuset-cpus 1,4 # 限制CPU 核心数为2，只分配第1核和第4核
+  > 
+  > 
+  > # https://www.cnblogs.com/mingyueyy/p/15475150.html
+  > Docker-Compose 是用来管理容器的，类似用户容器管家，我们有N多台容器或者应用需要启动的时候，如果手动去操作，是非常耗费时间的，如果有了 Docker-Compose 只需要一个配置文件就可以帮我们搞定，但是 Docker-Compose 只能管理当前主机上的 Docker，不能去管理其他服务器上的服务。意思就是单机环境。
+  > 
+  > Docker Swarm 是由Docker 公司研发的一款用来管理集群上的Docker容器工具，弥补了 Docker-Compose 单节点的缺陷，Docker Swarm 可以帮助我们启动容器，监控容器的状态，如果容器服务挂掉会重新启动一个新的容器，保证正常的对外提供服务，也支持服务之间的负载均衡。而且这些东西 Docker-Compose是不支持的，
+  > 
+  > 
+  > ```
 > curl https://xxxx.com/getData | jq
 >
 > jq 命令去除转义，最后输出的是格式化的json字符串，既去掉了转义字符
@@ -7113,6 +7265,465 @@ RUN set -x; buildDeps='curl' \
 镜像是多层存储，每一层的东西并不会在下一层被删除，会一直跟随着镜像。因此镜像构建时，一定要确保每一层只添加真正需要添加的东西，任何无关的东西都应该清理掉
 
 ```
+
+
+
+```
+docker system prune --volumes -y 
+docker image ls | grep centos:7
+if [ $? -ne 0 ] ;then
+    echo 'image centos:7 not found, pull'
+    docker pull centos:7
+    echo 'image centos:7 pull success'
+fi
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+mkdir centos7_server_6006 && \
+cd centos7_server_6006 && \
+touch Dockerfile && \
+echo "FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
+    yum install -y \$buildDeps && \\
+    yum install -y nginx redis && \\
+    git clone https://用户名:token@仓库地址 && \\
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \\
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \\
+    cd /aicbyserver_v2 && \\
+    cnpm i " > Dockerfile && \
+docker build -t centos7_server_6006 . && \
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=冒号转义后的json" --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos7_server_6006 /sbin/init && \
+docker exec -it centos7_server_6006_ENV bash -c "cd /aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' " -c "cd /aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' " && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" && \
+docker stop centos7_server_6006_ENV && \
+docker rm centos7_server_6006_ENV  && \
+docker image rm centos7_server_6006
+```
+
+
+
+```
+docker system prune --volumes -y 
+docker image ls | grep centos:7
+if [ $? -ne 0 ] ;then
+    echo 'image centos:7 not found, pull'
+    docker pull centos:7
+    echo 'image centos:7 pull success'
+fi
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+mkdir centos7_server_6006 && \
+cd centos7_server_6006 && \
+touch Dockerfile && \
+echo "FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
+    yum install -y \$buildDeps && \\
+    yum install -y nginx redis nfs-utils crontabs && \\
+    mkdir -p /project/shared && \\
+    mkdir -p /project/script && \\
+    chmod 755 /project/shared && \\
+    cd /project && \\
+    git clone http://用户名:AccessToten@gitlab.xxxxx.git && \\
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \\
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \\
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \\
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \\
+    cd /project/aicbyserver_v2 && \\
+    cnpm i " > Dockerfile && \
+docker build -t centos7_server_6006 . && \
+docker run -tid --name centos7_server_6006_ENV -e "CONFIG_ENV=这里放冒号转义后的json" --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos7_server_6006 /sbin/init && \
+docker exec -it centos7_server_6006_ENV bash -c "cd /project/aicbyserver_v2 && pm2 --name aicbyserver_v2_6006 start 'node server.js' "  && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" && \
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable rpcbind && systemctl start rpcbind" && \
+docker exec -it centos7_server_6006_ENV bash -c "mkdir -p /project/shared/test_cooperate_img && chmod 755 /project/shared/test_cooperate_img && \\
+    ls -al /project/shared/test_cooperate_img" && \
+docker exec -it centos7_server_6006_ENV bash -c "showmount -e 172.16.15.13" && \
+docker exec -it centos7_server_6006_ENV bash -c "mount -t nfs 172.16.15.13:/yingedu/web/aicby_v2/test_cooperate_img  /project/shared/test_cooperate_img" && \
+docker exec -it centos7_server_6006_ENV bash -c "echo 'hello from docker' > /project/shared/test_cooperate_img/hi.txt" && \
+cat /yingedu/web/aicby_v2/test_cooperate_img/hi.txt && \
+docker exec -it centos7_server_6006_ENV bash -c "echo 'umount /project/shared/test_cooperate_img 
+mount -t nfs 172.16.15.13:/xx/xxx  /project/xxxxx_img  
+if [ \$? -ne 0 ]; then 
+    echo mount failed  
+    sleep 30s; echo try agin 
+    umount /project/shared/test_cooperate_img 
+    mount -t nfs 172.16.15.13:/xxx_img  /project/shared/test_cooperate_img 
+else 
+    echo mount nfs succeed
+fi
+' > /project/script/auto_mount.sh" && \
+docker exec -it centos7_server_6006_ENV bash -c "echo '@reboot  /project/script/auto_mount.sh' > /var/spool/cron/root" && \
+docker exec -it centos7_server_6006_ENV bash -c "chmod +x /project/script/auto_mount.sh" && \
+docker exec -it centos7_server_6006_ENV bash -c "crontab -l" && \
+docker exec -it centos7_server_6006_ENV bash -c "cat /project/script/auto_mount.sh" && \
+docker stop centos7_server_6006_ENV && \
+docker rm centos7_server_6006_ENV  && \
+docker image rm centos7_server_6006
+
+
+
+
+	kill -9 $(jobs -p)
+		# 可以正常 exit 容器了
+
+
+配置 nginx 80 转 6006
+
+
+vi /etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+
+
+}
+
+
+
+vi /etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+server {
+  listen 80;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+
+nginx -s reload
+
+
+nmap 172.20.0.2 -p6006
+	# 扫描指定端口是否开放
+
+
+
+
+
+
+```
+
+
+
+```powershell
+
+
+$t = docker ps -a
+if ($t -like "*centos7_server_6006_ENV*")
+{
+    docker stop centos7_server_6006_ENV
+    docker rm centos7_server_6006_ENV
+    Write-Host "object centos7_server_6006_ENV deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos7_server_6006*")
+{
+    docker image rm centos7_server_6006
+    Write-Host "image centos7_server_6006 deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos*")
+{
+    docker image rm centos:7
+    Write-Host "image centos:7 deleted"
+}
+
+$t = docker network ls
+if ($t -like "*customnetwork*")
+{
+    docker network rm customnetwork
+    Write-Output 'customnetwork deleted'
+}
+
+docker system prune --volumes
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+Write-Output 'customnetwork created'
+
+docker pull centos:7
+Write-Output 'image centos:7 created'
+
+$dir="E:\docker"
+$profileDir="$dir\centos7_server_6006"
+Write-Host $profileDir
+if (Test-Path -Path $profileDir) {
+    Remove-Item -Path $profileDir -Force -Recurse
+}
+
+
+New-Item -ItemType Directory -Path $profileDir -Force
+#New-Item -ItemType File -Path "$profileDir\Dockerfile"
+
+Set-Location $profileDir
+
+
+[System.Text.Encoding]::UTF8.GetBytes("FROM centos:7 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+yum install -y `$buildDeps && \
+yum install -y nginx redis nfs-utils crontabs libaio numactl initscripts && \
+mkdir -p /project/shared && \
+mkdir -p /project/script && \
+chmod 755 /project/shared && \
+cd /project && \
+git clone https://账号:xx@github.com/dlxj/server_template.git && \
+curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz' && \
+curl -O 'https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.39-linux-glibc2.12-x86_64.tar.gz' && \
+tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+tar zxvf mysql-5.7.39-linux-glibc2.12-x86_64.tar.gz -C /usr/local && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+npm install cnpm@7.1.0  pm2@4.5.1 -g && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+cd /project/server_template && \
+npm i && \
+ln -s /usr/local/mysql-5.7.39-linux-glibc2.12-x86_64 /usr/local/mysql && \
+cd /usr/local/mysql && \
+groupadd mysql && \
+useradd -r -g mysql mysql && \
+cd /usr/local/mysql && \
+chown -R mysql . && \
+chgrp -R mysql . && \
+bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data && \
+cp support-files/mysql.server /etc/init.d/mysql.server && \
+service mysql.server start && \
+service mysql.server status && \
+cat /root/.mysql_secret") | Set-Content Dockerfile -Encoding Byte
+
+docker build -t centos7_server_6006 .
+
+docker run -tid --name centos7_server_6006_ENV -e 'CONFIG_ENV={\"updatePassword\":\"\",\"debugPassword\":\"\",\"dev\":true,\"http\":{\"port\":6006,\"headers\":{\"Server\":\"Server\",\"Access-Control-Allow-Origin\":\"*\",\"Content-Type\":\"text/json\",\"Access-Control-Allow-Headers\":\"content-type\",\"Access-Control-Request-Method\":\"GET,POST\"},\"encrypt\":false,\"privateKey\":\"\",\"publicKey\":\"\"},\"service\":{\"privateKey\":\"\",\"publicKey\":\"\",\"require\":{}},\"dbs\":{\"localDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"ocr\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":4096},\"defaultDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"baseDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"tiku_bookDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"tmp\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"tmp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50},\"ocrDB\":{\"host\":\"127.0.0.1\",\"user\":\"root\",\"password\":\"root\",\"database\":\"temp\",\"port\":3306,\"multipleStatements\":true,\"connectTimeout\":60000,\"connectionLimit\":50}},\"redis\":{\"defaultDB\":{\"host\":\"127.0.0.1\",\"port\":6379,\"prefix\":null,\"db\":0}},\"dataSet\":{}}' --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 3306:3306 -p 6379:6379 -p 543:543  --privileged=true centos7_server_6006 /sbin/init 
+docker exec -it centos7_server_6006_ENV bash -c "cd /project/server_template && pm2 --name centos7_server_6006 start 'node server.js' "  
+docker exec -it centos7_server_6006_ENV bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" 
+docker exec -it centos7_server_6006_ENV bash -c "systemctl start redis.service && systemctl enable redis && systemctl status redis.service && redis-cli ping" 
+docker exec -it centos7_server_6006_ENV bash -c "pm2 logs centos7_server_6006"
+```
+
+
+
+
+
+```
+# 删除和重建镜像和网络
+$t = docker ps -a
+if ($t -like "*centos7_server_6006_ENV*")
+{
+    docker stop centos7_server_6006_ENV
+    docker rm centos7_server_6006_ENV
+    Write-Host "object centos7_server_6006_ENV deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos7_server_6006*")
+{
+    docker image rm centos7_server_6006
+    Write-Host "image centos7_server_6006 deleted"
+}
+
+$t = docker image ls
+if ($t -like "*centos*")
+{
+    docker image rm centos:7
+    Write-Host "image centos:7 deleted"
+}
+
+$t = docker network ls
+if ($t -like "*customnetwork*")
+{
+    docker network rm customnetwork
+    Write-Output 'customnetwork deleted'
+}
+
+docker system prune --volumes
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+Write-Output 'customnetwork created'
+
+docker pull centos:7
+Write-Output 'image centos:7 created'
+```
+
+
+
+
+
+```
+b64.js 转义配置
+let j = require('./config.js')
+require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
+console.log(JSON.stringify(j).replace(/"/g, `\\"`))
+require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`), {encoding:'utf8', flag:'w'} )
+```
+
+
+
+## wsl2
+
+- https://learn.microsoft.com/en-us/windows/wsl/install-manual
+
+  > ```
+  > Turn Windows features on or off # 搜索框输入
+  > 	# 打开选项和功能
+  > 把 linux 子系统 什么虚拟 全都打开
+  > ```
+
+```
+wsl_update_x64.msi 安装出错 2503
+
+For WSL2 you will need 2 Windows components so make sure they are already enabled:
+Microsoft-Windows-Subsystem-Linux
+VirtualMachinePlatform
+
+Also it seems some people have problems with the installer extracting the kernel.
+You can always extract it manually with:
+msiexec /a "wsl_update_x64.msi" /qb TARGETDIR="C:\temp"
+and then copy the kernel file from C:\temp to C:\Windows\System32\lxss\tools
+
+Final version shouldn't have this problem since the install comes from Windows Update.
+```
+
+
+
+
+
+## Docker Desktop for Windows
+
+```
+控制面板 -> 程序和功能 -> 启用“适用于Linux的Windows子系统”
+
+### docker 中使用显卡
+wsl --install
+	# 新版 win10支持
+
+- https://blog.csdn.net/ltochange/article/details/121339718
+
+
+
+
+https://learn.microsoft.com/en-us/windows/wsl/install-manual
+	# 旧版 win10 安装方法
+```
+
+
+
+```
+docker system prune --volumes -y 
+
+$imageExists = docker image ls | Select-String -Pattern 'centos:7'
+if ($imageExists -eq $null) {
+    Write-Host 'image centos:7 not found, pull'
+    docker pull centos:7
+    Write-Host 'image centos:7 pull success'
+}
+
+$networks = docker network ls
+if ($networks -notmatch 'customnetwork') {
+    Write-Host 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    Write-Host 'customnetwork create success'
+}
+
+New-Item -ItemType Directory -Path centos7_server_6006
+cd centos7_server_6006
+New-Item -ItemType File -Path Dockerfile
+
+Write-Output "FROM centos:7
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+    yum install -y `$buildDeps && \
+    yum install -y nginx redis nfs-utils crontabs && \
+    mkdir -p /project/shared && \
+    mkdir -p /project/script && \
+    chmod 755 /project/shared && \
+    cd /project && \
+    git clone http://用户名:AccessToten@gitlab.xxxx.git && \
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+    cd /project/aicbyserver_v2 && \
+    cnpm i" > Dockerfile
+    
+   
+ 
+
+```
+
+
 
 
 
@@ -9647,6 +10258,47 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 - https://github.com/Orama-Interactive/Pixelorama
 - https://github.com/RodZill4/material-maker
 
+- https://github.com/touilleMan/godot-python  **godot + python**
+
+### 拷贝大量数据
+
+```
+# https://github.com/touilleMan/godot-python/issues/329
+I was suggesting to create the bytes array through godot.pool_arrays.PoolByteArray, then accessing it underlying buffer with godot.pool_arrays.PoolByteArray.raw_access. numpy.frombuffer can then wrap this underlying buffer without copying it.
+You then end up with a Numpy array that can be used for your Image.create_from_data, the only gotcha is you should be careful about this numpy array object lifetime given it shares the same buffer with the PoolByteArray.
+
+The easy way to avoid lifetime issues would be to create a PoolByteArray singleton with a fixed size when initializing your application (hence the underlying buffer is never freed)
+```
+
+
+
+### lmdb
+
+```
+整个数据集都在磁盘上。它的一些部分在内存中。当需要不在内存中的部分时--操作系统从磁盘中获取它，并通过把它放在进程的内存中交给应用程序。
+
+后台的mongodb，但不仅如此，我还想到了postgresql，它们强烈建议拥有与工作数据集同样多的内存。
+```
+
+
+
+
+
+```
+LMDB全称Lightning Memory-Mapped Database,是内存映射型数据库，这意味着它返回指向键和值的内存地址的指针，而不需要像大多数其他数据库那样复制内存中的任何内容，使用内存映射文件，可以提供更好的输入/输出性能，对于神经网络的的大型数据集可以将其存储到LMDB中
+
+LMDB属于key-value数据库，而不是关系型数据库( 比如 MySQL )，LMDB提供 key-value 存储，其中每个键值对都是我们数据集中的一个样本。LMDB的主要作用是提供数据管理，可以将各种各样的原始数据转换为统一的key-value存储。
+
+LMDB不仅可以用来存放训练和测试用的数据集，还可以存放神经网络提取出的特征数据。如果数据的结构很简单，就是大量的矩阵和向量，而且数据之间没有什么关联，数据内没有复杂的对象结构，那么就可以选择LMDB这个简单的数据库来存放数据。
+
+用LMDB数据库来存放图像数据，而不是直接读取原始图像数据的原因：
+
+数据类型多种多样，比如：二进制文件、文本文件、编码后的图像文件jpeg、png等，不可能用一套代码实现所有类型的输入数据读取，因此通过LMDB数据库，转换为统一数据格式可以简化数据读取层的实现。
+lmdb具有极高的存取速度，大大减少了系统访问大量小文件时的磁盘IO的时间开销。LMDB将整个数据集都放在一个文件里，避免了文件系统寻址的开销，你的存储介质有多快，就能访问多快，不会因为文件多而导致时间长。LMDB使用了内存映射的方式访问文件，这使得文件内寻址的开销大幅度降低。
+```
+
+
+
 
 
 # UGUI
@@ -9720,6 +10372,7 @@ const data = kernel();
 # node-sdl
 
 - https://github.com/kmamal/node-sdl
+- https://github.com/fosterseth/sdl2_video_player  **视频播放**
 
 
 

@@ -52,6 +52,16 @@ tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 
 
+# 显示进程参数
+
+```
+ps -ef | grep redis
+```
+
+
+
+
+
 # 关闭 stopped 进程
 
 ```
@@ -133,6 +143,14 @@ tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 ```
 ulimit -a
 
+```
+
+
+
+# echo 计算器
+
+```
+echo "256*1024*1024" | bc
 ```
 
 
