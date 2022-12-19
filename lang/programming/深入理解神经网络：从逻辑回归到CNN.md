@@ -12267,11 +12267,8 @@ dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
 apt-get remove cuda-* && \
 apt autoremove && \
 apt-get update
-```
 
 
-
-```
 
 # 3080 TI
 

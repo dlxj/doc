@@ -273,6 +273,8 @@ let AddTime = moment(nowDate).format('YYYY-MM-DD HH:mm:ss')
 
 date_format(StartTime, "%Y-%c-%d %H:%i:%s") as StartTime
 
+date_format(user_behaviors.endtime,"%Y-%c-%d %H:%i:%s") as endtime
+
 ```
 
 
