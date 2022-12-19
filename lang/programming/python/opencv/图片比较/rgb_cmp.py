@@ -9,6 +9,7 @@ opencv的直方图比较函数我们可以巧妙的利用，其有若干比较�
 #import cv2.cv as cv
 
 import cv2 as cv
+import cv2
 
  
 def createHist(img):
@@ -38,12 +39,11 @@ def createHist(img):
     return hist
  
 def imgcompare(image1,image2):
-    img1 = cv.LoadImage(image1)
+    img1 = cv2.imread(image1, cv2.IMREAD_COLOR)
     hist1 = createHist(img1)
     img2 = cv.LoadImage(image2)
     hist2 = createHist(img2)
     return cv.CompareHist(hist1,hist2,cv.CV_COMP_CORREL)
     
-imgcompare("/Users/michael/Pictures/355.jpg","/Users/michael/Pictures/356.jpg")
-imgcompare("/Users/michael/Pictures/img_0379.jpg","/Users/michael/Pictures/img_0377.jpg")
+print( imgcompare("1.jpg","2.jpg") )
 

@@ -1169,7 +1169,7 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 # 加载裸数据
 
-没有文件文的图片数据
+没有文件头的图片数据
 
 ```
 import numpy as np
