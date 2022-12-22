@@ -126,6 +126,9 @@ pm2 resurrect // 重启备份的所有项目
 pm2 update    // 清空重启次数等（疑难杂症可以试试）
 
 
+pm2 monit
+	# 实时监视进程
+
 pm2 reload explainteam_server_7114 --name my_new_name --max-old-space-size 4096
 
 pm2 delete processID  // 删除一项

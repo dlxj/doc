@@ -937,6 +937,28 @@ alter table xxx AUTO_INCREMENT=0;
 
 
 
+## JSON 查询
+
+```
+SELECT JSON_EXTRACT(t.TestJson, '$.Type') AS tType
+```
+
+
+
+
+
+## 正则提取
+
+```
+MySQL 8.0+才引入regexp_replace，regexp_like，regexp_instr，regexp_substr四个函数，在低于此版本的MySQL客户端执行这四个函数，报错：FUNCTION regexp_xxx does not exist
+```
+
+
+
+
+
+
+
 ## GROUP_CONCAT
 
 ```
