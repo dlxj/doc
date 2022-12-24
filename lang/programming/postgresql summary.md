@@ -1959,11 +1959,17 @@ RUM索引
 
 - 安装 https://github.com/postgrespro/rum
 
+  > ```
+  > yum install -y systemtap-sdt-devel
+  > ```
+
 短语搜索
 
 
 
 > create extension rum;
+>
+> CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);
 >
 > CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);
 

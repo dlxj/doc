@@ -7730,6 +7730,23 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 
 
+## 导出镜像
+
+- https://www.hangge.com/blog/cache/detail_2411.html
+
+
+
+```
+docker save centos7_server_6006 > centos7_server_6006.tar
+
+docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding Byte
+
+```
+
+
+
+
+
 
 
 # fileserver
