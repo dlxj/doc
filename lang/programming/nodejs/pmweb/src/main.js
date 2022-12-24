@@ -23,7 +23,7 @@ import '@/util/jsmpeg.js' // 要点：修改 jsmpeg.js ,  将 JSMpeg 赋值给 w
   let formurlencoded = require('form-urlencoded')
   const bent = require('bent')
   const getBuffer = bent('buffer')
-  let buffer = await getBuffer('https://cn.vuejs.org/images/logo.svg')
+  // let buffer = await getBuffer('https://cn.vuejs.org/images/logo.svg')
 
   // npm run dev
   // let host = 'localhost:80'
