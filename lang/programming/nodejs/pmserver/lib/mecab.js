@@ -65,14 +65,14 @@ module.exports = {
 
                 ruby = await kuroshiro.convert(str, { mode: "furigana", to: "hiragana" })  // jia ming biao zhu
                 hiragana = await kuroshiro.convert(str, { to: "hiragana" })
-                //spaced = await kuroshiro.convert(str, {mode:"okurigana", to:"hiragana"})
+                spaced = await kuroshiro.convert(str, {mode:"okurigana", to:"hiragana"})
 
-                spaced = await new Promise(async function (resolve, reject) {
-                    mecab.wakachi(str, function(err, result) {
-                        if (err) reject(err)
-                        resolve(result.join(' ').replace(/\s+/g, ' '))
-                    })
-                })
+                // spaced = await new Promise(async function (resolve, reject) {
+                //     mecab.wakachi(str, function(err, result) {
+                //         if (err) reject(err)
+                //         resolve(result.join(' ').replace(/\s+/g, ' '))
+                //     })
+                // })
 
             } catch(e) {
                 console.log(`## error in haras funtion in mecab.mjs change kuroshiro2 to segment...`)

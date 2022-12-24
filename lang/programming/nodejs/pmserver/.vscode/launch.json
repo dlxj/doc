@@ -11,7 +11,9 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\server.js"
+            "program": "${workspaceFolder}/server.js"
+            // "program": "${workspaceFolder}/lib/mecab.js"
+
         }
     ]
 }
