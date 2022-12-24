@@ -1169,7 +1169,7 @@ cv::cvtColor(img, dst, CV_BGR2GRAY);
 
 # 加载裸数据
 
-没有文件文的图片数据
+没有文件头的图片数据
 
 ```
 import numpy as np
@@ -2968,6 +2968,137 @@ for imagePath in paths.list_images(args["images"]):
 ```
 
 <img src="opencv summary.assets/image-20220428175501612.png" alt="image-20220428175501612" style="zoom: 25%;" /><img src="opencv summary.assets/image-20220428175532215.png" alt="image-20220428175532215" style="zoom:25%;" />
+
+
+
+# 图片相似度
+
+- https://blog.csdn.net/sinat_26917383/article/details/70287521
+- https://blog.csdn.net/haluoluo211/article/details/52769325
+
+- https://zhuanlan.zhihu.com/p/68215900
+- https://github.com/nivance/image-similarity
+
+
+
+```
+# https://github.com/yejianquan/DHashAnalysis
+
+import cv2
+import numpy as np
+
+
+class HashTracker:
+    def __init__(self, path):
+        # 初始化图像
+        self.img = cv2.imread(path)
+        self.gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+
+    def cal_hash_code(self, cur_gray):
+        s_img = cv2.resize(cur_gray, dsize=(8, 8))
+        img_mean = cv2.mean(s_img)
+        return s_img > img_mean[0]
+
+    def cal_phash_code(self, cur_gray):
+        # 缩小至32*32
+        m_img = cv2.resize(cur_gray, dsize=(32, 32))
+        # 浮点型用于计算
+        m_img = np.float32(m_img)
+        # 离散余弦变换，得到dct系数矩阵
+        img_dct = cv2.dct(m_img)
+        img_mean = cv2.mean(img_dct[0:8, 0:8])
+        # 返回一个8*8bool矩阵
+        return img_dct[0:8, 0:8] > img_mean[0]
+
+    def cal_dhash_code(self):
+        cur_gray = self.gray
+        # dsize=(width, height)
+        m_img = cv2.resize(cur_gray, dsize=(9, 8))
+        m_img = np.int8(m_img)
+        # 得到8*8差值矩阵
+        m_img_diff = m_img[:, :-1] - m_img[:, 1:]
+        return np.piecewise(m_img_diff, [m_img_diff > 0, m_img_diff <= 0], [1, 0])
+
+    def cal_hamming_distance(self, model_hash_code, search_hash_code):
+        # 返回不相同的个数
+        diff = np.uint8(model_hash_code - search_hash_code)
+        return cv2.countNonZero(diff)
+
+
+def main():
+    #读入图片
+    h1 = HashTracker('111.jpg')
+    h2 = HashTracker('222.jpg')
+    #计算汉明距离
+    diff = h1.cal_dhash_code() - h2.cal_dhash_code()
+    print(np.sum(np.abs(diff)))
+
+
+
+if __name__ == '__main__':
+    main()
+```
+
+
+
+
+
+```
+# rgb_cmp.py
+
+'''
+对于图片相似度比较有很多方法，我们这以RGB直方图为例。
+我们以一种规则，使得每个图片生成一组描述的特征向量。
+opencv的直方图比较函数我们可以巧妙的利用，其有若干比较规则，但只支持直方图的数据结构，我们可以将特征向量拟合成直方图的数据结构，然后使用其的相似度比较函数。
+具体的数学计算方法有兴趣的可以看opencv的官方教程，这里我们期望生成百分比形式的相似度参数，所以使用CV_COMP_CORREL
+ 
+以下是代码，以python编写
+'''
+#import cv2.cv as cv
+
+import cv2 as cv
+
+ 
+def createHist(img):
+    #cv.CvtColor(img,img,cv.CV_BGR2HSV)
+    b_plane = cv.CreateImage((img.width,img.height), 8, 1)
+    g_plane = cv.CreateImage((img.width,img.height), 8, 1)
+    r_plane = cv.CreateImage((img.width,img.height), 8, 1)
+ 
+ 
+    cv.Split(img,b_plane,g_plane,r_plane,None)
+    planes = [b_plane, g_plane, r_plane]
+    
+    bins = 4
+    b_bins = bins
+    g_bins = bins
+    r_bins = bins
+ 
+    hist_size = [b_bins,g_bins,r_bins]
+    b_range = [0,255]
+    g_range = [0,255]
+    r_range = [0,255]
+ 
+    ranges = [b_range,g_range,r_range]
+    hist = cv.CreateHist(hist_size, cv.CV_HIST_ARRAY, ranges, 1)
+    cv.CalcHist([cv.GetImage(i) for i in planes], hist)
+    cv.NormalizeHist(hist,1)
+    return hist
+ 
+def imgcompare(image1,image2):
+    img1 = cv.LoadImage(image1)
+    hist1 = createHist(img1)
+    img2 = cv.LoadImage(image2)
+    hist2 = createHist(img2)
+    return cv.CompareHist(hist1,hist2,cv.CV_COMP_CORREL)
+    
+imgcompare("/Users/michael/Pictures/355.jpg","/Users/michael/Pictures/356.jpg")
+imgcompare("/Users/michael/Pictures/img_0379.jpg","/Users/michael/Pictures/img_0377.jpg")
+
+
+```
+
+
 
 
 

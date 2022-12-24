@@ -126,6 +126,9 @@ pm2 resurrect // 重启备份的所有项目
 pm2 update    // 清空重启次数等（疑难杂症可以试试）
 
 
+pm2 monit
+	# 实时监视进程
+
 pm2 reload explainteam_server_7114 --name my_new_name --max-old-space-size 4096
 
 pm2 delete processID  // 删除一项
@@ -4172,7 +4175,7 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
   >
   > redis-cli -h 127.0.0.1  -p 6379
   >
-  > redis-cli -h 192.168.80.4 -p 6390 PING
+  > redis-cli -h 127.0.0.1 -p 6379 PING
 
 
 
@@ -4320,8 +4323,97 @@ flushdb 清空当前数据库
 # nginx
 
 - https://linuxize.com/post/how-to-install-nginx-on-centos-7/
-
 - https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
+- https://blog.csdn.net/yeguxin/article/details/94020476
+
+
+
+```
+/etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+
+
+
+
+```
+# 不同域名实现转后端接口和前端
+
+/etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+
+server {
+  listen 80;
+  server_name xxapi.yy.cn;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+server {
+  listen 80;
+  server_name xx.yy.cn;
+
+  location / {
+     root   /home/data;
+     index  index.html index.htm;
+  }
+}
+```
+
+
 
 
 
@@ -9820,19 +9912,23 @@ this.$MuiPlayer()
   > 新建 launch.json， 弹出的选项选择 chrome
   > 重点是：先在终端 npm run dev，看它的端口是什么，下面的url 端口就填什么，然后在vscode F5，会打开浏览器, 就可以在vscode 下断了
   > {
-  >  "version": "0.2.0",
-  >  "configurations": [
-  >      {
-  >          "type": "chrome",
-  >          "request": "launch",
-  >          "name": "vuejs: chrome",
-  >          "url": "http://localhost:8082",
-  >          "webRoot": "${workspaceFolder}/src",
-  >          "sourceMapPathOverrides": {
-  >              "webpack:///src/*": "${webRoot}/*"
-  >          }
-  >      }
-  >  ]
+  > "version": "0.2.0",
+  > "configurations": [
+  >   {
+  >       "type": "chrome",
+  >       "request": "launch",
+  >       "name": "vuejs: chrome",
+  >       "url": "http://localhost:8082",
+  >       "webRoot": "${workspaceFolder}/src",
+  >       "sourceMapPathOverrides": {
+  >           "webpack:///src/*": "${webRoot}/*"
+  >       },
+  >       "resolveSourceMapLocations": [
+  >         "${workspaceFolder}/**",
+  >         "!**/node_modules/**"
+  >       ]
+  >   }
+  > ]
   > }
   > ```
   >
@@ -9840,21 +9936,21 @@ this.$MuiPlayer()
   > vue.config.js # 注意配了这个 F5 后断点才真的断了下来
   > 
   > module.exports = {
-  >     runtimeCompiler: true,
-  >     configureWebpack: {
-  >         devtool: 'source-map'
-  >     }
+  >  runtimeCompiler: true,
+  >  configureWebpack: {
+  >      devtool: 'source-map'
+  >  }
   > }
   > 
   > var titme = Date.now();
   > var d = {
   > //可在浏览器中调试 说明： https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
   > configureWebpack: {
-  >  devtool: 'source-map',
-  >  output: { // 输出重构  打包编译后的 文件名称  【模块名称.版本号.时间戳】
-  >    filename: `js/[name].${titme}.js`,
-  >    chunkFilename: `js/[name].${titme}.js`
-  >  },
+  > devtool: 'source-map',
+  > output: { // 输出重构  打包编译后的 文件名称  【模块名称.版本号.时间戳】
+  > filename: `js/[name].${titme}.js`,
+  > chunkFilename: `js/[name].${titme}.js`
+  > },
   > },
   > // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
   > productionSourceMap: false,

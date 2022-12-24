@@ -11310,7 +11310,7 @@ ldconfig -p | grep cuda
 
 ##### 显卡性能测试
 
-<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 25%;" />
+<img src="深入理解神经网络：从逻辑回归到CNN.assets/BGJYVSDTH7{DOS8T{3BZ878.png" alt="img" style="zoom: 50%;" />
 
 ```
 
@@ -12109,6 +12109,21 @@ Eval:
 
 - https://github.com/PaddlePaddle/PaddleSpeech
 
+- https://github.com/PaddlePaddle/PaddleSpeech/wiki/PaddleSpeech-CLI---Batch-Process
+
+  > 同时识别多个音频
+
+
+
+```
+# 显存占用问题
+请问如何检查显存释放呢？ -> 训练结束后 nvidia-smi 查看显存是否还被占用
+调小了batch_size还是会显存突然增高 -> 看看是不是个别数据长度明显比其他的长
+可以尝试加一些 FLAGS https://www.paddlepaddle.org.cn/documentation/docs/zh/guides/flags/memory_cn.html#flags-allocator-strategy
+```
+
+
+
 
 
 ### 训练一个自己的TTS
@@ -12252,11 +12267,8 @@ dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
 apt-get remove cuda-* && \
 apt autoremove && \
 apt-get update
-```
 
 
-
-```
 
 # 3080 TI
 

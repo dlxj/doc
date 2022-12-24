@@ -273,6 +273,8 @@ let AddTime = moment(nowDate).format('YYYY-MM-DD HH:mm:ss')
 
 date_format(StartTime, "%Y-%c-%d %H:%i:%s") as StartTime
 
+date_format(user_behaviors.endtime,"%Y-%c-%d %H:%i:%s") as endtime
+
 ```
 
 
@@ -932,6 +934,28 @@ rows:32Extra: Using WHERE; Using index; Using temporary; Usingfilesort
 ```
 alter table xxx AUTO_INCREMENT=0;
 ```
+
+
+
+## JSON 查询
+
+```
+SELECT JSON_EXTRACT(t.TestJson, '$.Type') AS tType
+```
+
+
+
+
+
+## 正则提取
+
+```
+MySQL 8.0+才引入regexp_replace，regexp_like，regexp_instr，regexp_substr四个函数，在低于此版本的MySQL客户端执行这四个函数，报错：FUNCTION regexp_xxx does not exist
+```
+
+
+
+
 
 
 
