@@ -7751,6 +7751,382 @@ docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding 
 
 
 
+# DNS 解锁
+
+
+
+## 非V2ray相关协议简单方法-直接修改VPS的系统DNS
+
+- SS SSR Trojan等
+
+由于这些协议本身无法进行DNS分流，请使用如下命令配置DNS：
+
+- Debian/centos系统
+
+```shell
+  echo -e "nameserver 4.4.4.4（以实际为准）" > /etc/resolv.conf
+       
+  chattr +i /etc/resolv.conf
+```
+
+第一行命令是将解锁DNS添加为系统DNS
+
+第二行命令是将DNS文件属性修改为只读(避免被系统复写修改）
+
+- 移除操作
+
+```shell
+   chattr -i /etc/resolv.conf
+   echo -e "nameserver 8.8.8.8" > /etc/resolv.conf
+```
+
+- ubuntu系统
+
+```shell
+修改DNS
+vi /etc/systemd/resolved.conf
+输入
+DNS=4.4.4.4（以实际为准）
+
+:wq保存后
+
+systemctl daemon-reload
+systemctl restart systemd-resolved.service
+mv /etc/resolv.conf /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+
+- 移除操作
+
+```shell
+修改DNS
+vi /etc/systemd/resolved.conf
+输入
+DNS=8.8.8.8
+DNS=1.1.1.1
+
+:wq保存后
+
+systemctl daemon-reload
+systemctl restart systemd-resolved.service
+mv /etc/resolv.conf /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+
+- 注意 部分香港CMI屏蔽了UDP 53的查询，我的落地已经开启了TCP53.请在/etc/resolv.conf文件中第一行添加
+
+```shell
+options use-vc
+```
+
+- Shadowsocks-libev 版本
+
+```shell
+打开配置文件 默认 /etc/shadowsocks-libev/config.json
+修改"nameserver":"4.4.4.4（以实际为准）"
+```
+
+- SS docker 版本
+
+添加参数 `-d "4.4.4.4（以实际为准）"`
+
+## 非V2ray相关协议复杂方法-VPS安装dnsmasq实现DNS解锁分流
+
+需要有一定使用基础，此处以debian系统为例
+
+一.安装dnsmasq
+
+```shell
+apt-get -y install dnsmasq
+```
+
+二.配置dnsmasq
+
+1.配置文件/etc/dnsmasq.conf
+
+```shell
+vi /etc/dnsmasq.conf
+
+server=/netflix.com/4.4.4.4
+server=/disneyplus.com/4.4.4.4
+...
+...
+resolv-file=/etc/resolv.dnsmasq.conf
+
+具体需要添加的域名请在TG群发送“域名规则”获取。4.4.4.4以实际DNS为准。
+```
+
+2.配置文件/etc/resolv.dnsmasq.conf
+
+```shell
+vi /etc/resolv.dnsmasq.conf
+
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+```
+
+3.设置VPS系统DNS，将本机dnsmasq作为系统DNS服务器。参考上面的操作
+
+```shell
+ chattr -i /etc/resolv.conf
+ echo -e "nameserver 127.0.0.1" > /etc/resolv.conf
+ chattr +i /etc/resolv.conf      
+```
+
+4.重启dnsmasq
+
+```shell
+/etc/init.d/dnsmasq restart
+```
+
+四.卸载
+
+```shell
+apt-get remove dnsmasq
+chattr -i /etc/resolv.conf
+chmod 777 /etc/resolv.conf
+echo -e "nameserver 8.8.8.8" > /etc/resolv.conf
+```
+
+## V2ray相关协议，DNS分流
+
+标准配置文件修改要素：
+
+1.开启流量识别
+
+```json
+  "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+```
+
+2.修改出口流量域名分类方式
+
+```json
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy":"UseIP"
+      }
+    }
+  ]
+```
+
+3.添加DNS分流
+
+```json
+   "dns": {
+    "servers": [
+      "1.1.1.1","8.8.8.8", 
+      {
+        "address": "4.4.4.4（以实际为准）", 
+        "port": 53,
+        "domains": [
+           "geosite:netflix"
+        ]
+      }
+    ]
+  }
+```
+
+一般默认配置文件地址
+
+V2ray
+
+```shell
+/usr/local/etc/v2ray/config.json
+
+修改完成后重启 systemctl restart v2ray
+```
+
+Xray
+
+```shell
+/usr/local/etc/xray/config.json
+
+修改完成后重启 systemctl restart xray
+```
+
+完整配置文件示例（wulabing-Xray脚本）：
+
+```json
+{
+ "log": {
+   "access": "/var/log/xray/access.log",
+   "error": "/var/log/xray/error.log",
+   "loglevel": "warning"
+ },
+ "inbounds": [
+   {
+     "port": 443,
+     "protocol": "vless",
+     "settings": {
+       "clients": [
+         {
+           "id": "123456-789-123456-45678-12345678",
+           "flow": "xtls-rprx-direct"
+         }
+       ],
+       "decryption": "none",
+       "fallbacks": [
+         {
+           "dest": 60000,
+           "alpn": "",
+           "xver": 1
+         },
+         {
+           "dest": 60001,
+           "alpn": "h2",
+           "xver": 1
+         }
+       ]
+     },
+     "streamSettings": {
+       "network": "tcp",
+       "security": "xtls",
+       "xtlsSettings": {
+         "minVersion": "1.2",
+         "certificates": [
+           {
+             "certificateFile": "/usr/local/etc/xray/self_signed_cert.pem",
+             "keyFile": "/usr/local/etc/xray/self_signed_key.pem"
+           },
+           {
+             "certificateFile": "/ssl/xray.crt",
+             "keyFile": "/ssl/xray.key"
+           }
+         ]
+       }
+     },
+     "sniffing": {
+       "enabled": true,
+       "destOverride": [
+         "http",
+         "tls"
+       ]
+     }
+   }
+ ],
+ "outbounds": [
+   {
+     "protocol": "freedom",
+     "settings": {
+       "domainStrategy": "UseIP"  
+     }
+   }
+ ],
+ "dns": {
+   "servers": [
+     "1.1.1.1","8.8.8.8", 
+     {
+       "address": "4.4.4.4", 
+       "port": 53,
+       "domains": [
+          "geosite:netflix" ,"geosite:disney"
+       ]
+     }
+   ]
+ }
+}
+```
+
+
+
+## 其他脚本示例
+
+## x-ui
+
+```shell
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+```
+
+进入【面板设置】——【Xray相关设置】替换文件
+
+```json
+{
+  "api": {
+    "services": [
+      "HandlerService",
+      "LoggerService",
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 62789,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {"domainStrategy": "UseIP"}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "policy": {
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true
+    }
+  },
+  "routing": {
+    "rules": [
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked",
+        "type": "field"
+      },
+      {
+        "outboundTag": "blocked",
+        "protocol": [
+          "bittorrent"
+        ],
+        "type": "field"
+      }
+    ]
+  },    "dns": {
+    "servers": [
+      "1.1.1.1","8.8.8.8", 
+      {
+        "address": "4.4.4.4（以实际为准）", 
+        "port": 53,
+        "domains": [
+           "geosite:netflix"
+        ]
+      }
+    ]
+  },
+  "stats": {}
+}
+```
+
+
+
 
 
 # fileserver
