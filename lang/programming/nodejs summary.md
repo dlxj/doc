@@ -7753,9 +7753,13 @@ docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding 
 
 # DNS 解锁
 
+- https://aws.amazon.com/cn/wavelength
+
 - https://vlike.work/tech/all-dns-unlock-netflix.html
 
+  
 
+日本流媒体解锁专用机 日本原生IP
 
 ## 解锁测试
 
