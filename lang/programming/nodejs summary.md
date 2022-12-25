@@ -7755,6 +7755,16 @@ docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding 
 
 
 
+## 解锁测试
+
+```
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
+```
+
+
+
+
+
 ## 非V2ray相关协议简单方法-直接修改VPS的系统DNS
 
 - SS SSR Trojan等
