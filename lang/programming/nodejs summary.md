@@ -7753,6 +7753,8 @@ docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding 
 
 # DNS 解锁
 
+- https://vlike.work/tech/all-dns-unlock-netflix.html
+
 
 
 ## 解锁测试
