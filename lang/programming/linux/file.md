@@ -65,3 +65,15 @@ $ ls -lR | grep "^d" | wc -l
 
 - https://itcn.blog/p/19501309720.html home多余磁盘扩容给root
 
+
+
+
+
+# cp 参数过长
+
+```
+find img_origin/ -name "*.txt" | xargs -i cp {} img
+```
+
+
+
