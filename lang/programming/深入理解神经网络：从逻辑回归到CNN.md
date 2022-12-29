@@ -10351,6 +10351,8 @@ tmux attach -t 0
 	ctrl + D # 退出当前 session，中断程序执行
 tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
+conda=4.6
+
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
 conda create -n DB python=3.7 --yes && \
