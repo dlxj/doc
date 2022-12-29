@@ -9654,7 +9654,7 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
         # ------------------
 ```
 
-
+- https://blog.csdn.net/w12567878/article/details/121196107  docker cuda
 
 # autodl
 
@@ -10351,7 +10351,11 @@ tmux attach -t 0
 	ctrl + D # 退出当前 session，中断程序执行
 tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
-conda=4.6
+
+
+conda config --add channels conda-forge && \
+conda config --set channel_priority flexible
+
 
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
@@ -11306,8 +11310,13 @@ ldconfig -p | grep cuda
 
 ```
 
+conda config --add channels conda-forge && \
+conda config --set channel_priority flexible
+
 conda deactivate && \
 conda env remove -n PP && \
+conda config --add channels conda-forge && \
+conda config --set channel_priority flexible && \
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
 conda create -n PP python=3.8 --yes && \
@@ -11317,8 +11326,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
 pip uninstall opencv-python && \
 pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
-
+wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
 tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
 cd p7zip_16.02 && \
 make && \

@@ -232,7 +232,14 @@ if __name__ == "__main__":
 
         with open(img_path, "r", encoding="utf-8") as fp:
             imgdata = fp.read()
-            imgdata = base64.b64decode(imgdata)
+            
+            try:
+                imgdata = base64.b64decode(imgdata)
+            except Exception as e:
+                print(f'Warning: b64decode fail: {img_path}')
+                continue
+
+
             imgdata = np.frombuffer(imgdata, np.uint8)
             
             try:
@@ -243,6 +250,9 @@ if __name__ == "__main__":
 
             # cv2.imshow('img', img)
             # cv2.waitKey(0)
+
+        if img is None:
+            continue
 
         if len(img.shape) != 3:  # 转彩图
             img_color = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
