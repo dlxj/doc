@@ -10372,6 +10372,9 @@ pip uninstall opencv-python && \
 pip install opencv-python==4.6.0.66
 
 
+
+CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --num_gpus 1
+
 // 验证    
 CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_97.jpg --resume /root/final --polygon --box_thresh 0.7 --visualize 
 
@@ -11325,6 +11328,10 @@ conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.2 -c https://mirrors.tuna.t
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
 pip uninstall opencv-python && \
 pip install pyyaml opencv-python==4.6.0.66 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+pip uninstall numpy && \
+pip install numpy==1.23
 
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
 tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
