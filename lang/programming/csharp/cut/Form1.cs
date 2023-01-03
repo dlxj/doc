@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 using MaterialSkin;
 using MaterialSkin.Controls;
-
+using Tesseract;
 
 namespace MathpixCsharp
 {
@@ -43,7 +43,7 @@ namespace MathpixCsharp
         {
             Clipboard.SetDataObject("set by C#.");
             string t = Clipboard.GetText(TextDataFormat.Text);
-            
+
 
             ScreenShot sf = new ScreenShot();
             sf.Owner = this;
@@ -72,7 +72,8 @@ namespace MathpixCsharp
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            GlobalHotKey.RegisterHotKey("Alt + Shift + S", () => {
+            GlobalHotKey.RegisterHotKey("Alt + Shift + S", () =>
+            {
 
                 Clipboard.SetDataObject("set by C#.");
                 string t = Clipboard.GetText(TextDataFormat.Text);
@@ -101,6 +102,21 @@ namespace MathpixCsharp
                 //ScreenShotToCode(Bit);
                 this.Opacity = 1.0;
 
+                // https://github.com/charlesw/tesseract-samples
+                // https://github.com/tesseract-ocr/tessdata/blob/main/chi_sim.traineddata 先下载语言文件 自动安装的语言模型很小，不准确
+                using (var engine = new TesseractEngine(@"./tessdata", "chi_sim", EngineMode.Default))
+                {
+
+                    using (var img = Pix.LoadFromFile("xxxxxxxxxxx.bmp"))
+                    {
+                        using (var page = engine.Process(img))
+                        {
+                            var text = page.GetText();
+
+
+                        }
+                    }
+                }
             });
 
             //SystemHotKey.RegHotKey(this.Handle, 701, SystemHotKey.KeyModifiers.Alt | SystemHotKey.KeyModifiers.Ctrl | SystemHotKey.KeyModifiers.Shift, System.Windows.Forms.Keys.Back);
