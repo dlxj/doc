@@ -10352,6 +10352,7 @@ tmux attach -t 0
 tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 
+conda update --all
 
 conda config --add channels conda-forge && \
 conda config --set channel_priority flexible

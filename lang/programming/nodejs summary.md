@@ -939,25 +939,36 @@ print("text字段Base64解码后=>" + finalResult)
 let FormData = require('form-data')
 let bent = require('bent')
 
-let postData = new FormData()
+     let postData = new FormData()
       postData.append('OperateUserID', userID)
       postData.append('OperateUserName', `${userID}`)
       postData.append('bookID', bookID)
       postData.append('type', 3)
       postData.append('beginpath', `${bookID}/`)
-      postData.append('filepath', `整理/${basename}`)
+      postData.append('filepath', `小截图/basename`)
+      postData.append('fileName', basename)
       postData.append('fileName', basename)
       postData.append('file', fs.createReadStream(fullpath))
-
-      //let post = bent('http://192.168.x.x:9014', 'POST', 'json', 200)
-      let post = bent(host_29_img, 'POST', 'json', 200)
-      let response = await post('/api/FileManager/upfilesnew', postData, postData.getHeaders())
       
+      let post = bent('http://xxxx:xxxx', 'POST', 'json', 200)
+      let response = await post('/api/xxxxx', postData, postData.getHeaders())
+
       if (response.status == 200) {
         let b = 1
       } else {
         return this.msg(301, `${fullpath} ${response.msg}`)
       }
+```
+
+
+
+#### a
+
+```
+let FormData = require('form-data')
+let bent = require('bent')
+
+
 ```
 
 

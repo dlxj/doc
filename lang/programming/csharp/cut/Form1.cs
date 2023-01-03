@@ -72,7 +72,34 @@ namespace MathpixCsharp
         {
 
             GlobalHotKey.RegisterHotKey("Alt + Shift + S", () => {
-                var a = 1;
+
+                Clipboard.SetDataObject("set by C#.");
+                string t = Clipboard.GetText(TextDataFormat.Text);
+
+
+                ScreenShot sf = new ScreenShot();
+                sf.Owner = this;
+                this.Opacity = 0.0;
+                this.success = false;
+                this.cancelled = false;
+                sf.ShowDialog();//make sure it's done
+                if (this.cancelled)
+                {
+                    this.Opacity = 1.0;
+                    return;
+                }
+                if (!this.success)
+                {
+                    this.Opacity = 1.0;
+                    MessageBox.Show("错误，请重试");
+                    return;
+                }
+
+                this.pictureBox1.Image = Bit;
+                Bit.Save("xxxxxxxxxxx.bmp");
+                //ScreenShotToCode(Bit);
+                this.Opacity = 1.0;
+
             });
 
             //SystemHotKey.RegHotKey(this.Handle, 701, SystemHotKey.KeyModifiers.Alt | SystemHotKey.KeyModifiers.Ctrl | SystemHotKey.KeyModifiers.Shift, System.Windows.Forms.Keys.Back);
