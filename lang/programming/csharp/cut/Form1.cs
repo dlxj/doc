@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using Tesseract;
+using System.IO;
 
 namespace MathpixCsharp
 {
@@ -106,7 +107,7 @@ namespace MathpixCsharp
                 // https://github.com/tesseract-ocr/tessdata/blob/main/chi_sim.traineddata 先下载语言文件 自动安装的语言模型很小，不准确
                 // paddleocr --image_dir ./xxxxxxxxxxx.bmp --lang=ch
                     // 换 powershell 它才不乱码
-                using (var engine = new TesseractEngine(@"./tessdata", "chi_sim", EngineMode.Default))
+                using (var engine = new TesseractEngine(@"./tessdata", "chi_sim", EngineMode.LstmOnly))
                 {
 
                     using (var img = Pix.LoadFromFile("xxxxxxxxxxx.bmp"))
@@ -115,7 +116,7 @@ namespace MathpixCsharp
                         {
                             var text = page.GetText();
 
-
+                            File.WriteAllText(@"./xxxxxxxxxxxx.txt", text, new System.Text.UTF8Encoding(false));
                         }
                     }
                 }
