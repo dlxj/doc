@@ -34,6 +34,7 @@ namespace MathpixCsharp
             InitializeComponent();
             this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
 
+            this.退出_toolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
 
         }
 
@@ -114,5 +115,10 @@ namespace MathpixCsharp
 
         //    base.WndProc(ref m);
         //}
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
+        }
     }
 }
