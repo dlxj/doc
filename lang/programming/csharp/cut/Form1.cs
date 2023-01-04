@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +13,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using Tesseract;
 using System.IO;
+using PaddleOCRSharp;
 
 namespace MathpixCsharp
 {
@@ -28,6 +29,8 @@ namespace MathpixCsharp
         string app_id = "";
         string app_key = "";
 
+        public PaddleOCREngine engine = null;
+
         public Bitmap Bit { get => bit; set => bit = value; }
 
         public Form1()
@@ -36,6 +39,14 @@ namespace MathpixCsharp
             this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
 
             this.退出_toolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+
+            //使用默认中英文V3模型
+            OCRModelConfig config = null;
+            //使用默认参数
+            OCRParameter oCRParameter = new OCRParameter();
+
+            //建议程序全局初始化一次即可，不必每次识别都初始化，容易报错。     
+            engine = new PaddleOCREngine(config, oCRParameter);
 
         }
 
@@ -106,20 +117,37 @@ namespace MathpixCsharp
                 // https://github.com/charlesw/tesseract-samples
                 // https://github.com/tesseract-ocr/tessdata/blob/main/chi_sim.traineddata 先下载语言文件 自动安装的语言模型很小，不准确
                 // paddleocr --image_dir ./xxxxxxxxxxx.bmp --lang=ch
-                    // 换 powershell 它才不乱码
-                using (var engine = new TesseractEngine(@"./tessdata", "chi_sim", EngineMode.LstmOnly))
+                // 换 powershell 它才不乱码
+
+                // https://github.com/raoyutian/PaddleOCRSharp/blob/main/doc/UseInCsharp.md 
+                // PPOCR C# 版
+
+                // engine.SetVariable("tessedit_char_whitelist", "一些中文");
+
+                //识别结果对象
+                OCRResult ocrResult = null;
                 {
-
-                    using (var img = Pix.LoadFromFile("xxxxxxxxxxx.bmp"))
-                    {
-                        using (var page = engine.Process(img))
-                        {
-                            var text = page.GetText();
-
-                            File.WriteAllText(@"./xxxxxxxxxxxx.txt", text, new System.Text.UTF8Encoding(false));
-                        }
-                    }
+                    ocrResult = engine.DetectText("xxxxxxxxxxx.bmp");
                 }
+                
+                if (ocrResult != null) {
+                    string text = ocrResult.Text;
+                    MessageBox.Show(text, "识别结果");
+                } 
+
+                //using (var engine = new TesseractEngine(@"./tessdata", "chi_sim", EngineMode.LstmOnly))
+                //{
+
+                //    using (var img = Pix.LoadFromFile("xxxxxxxxxxx.bmp"))
+                //    {
+                //        using (var page = engine.Process(img))
+                //        {
+                //            var text = page.GetText();
+
+                //            File.WriteAllText(@"./xxxxxxxxxxxx.txt", text, new System.Text.UTF8Encoding(false));
+                //        }
+                //    }
+                //}
             });
 
             //SystemHotKey.RegHotKey(this.Handle, 701, SystemHotKey.KeyModifiers.Alt | SystemHotKey.KeyModifiers.Ctrl | SystemHotKey.KeyModifiers.Shift, System.Windows.Forms.Keys.Back);
