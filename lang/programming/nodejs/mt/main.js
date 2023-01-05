@@ -204,9 +204,9 @@ function getExtName(name) {
 
       // let simir_data1 = await creat('./m.js', paramsData)
 
-      let worker = require('./lib/worker.js')
-      let simir_data1 = await worker.create('../m.js', paramsData) // 相对路径是相对 worker.js 所在目录说的
-      
+      // let worker = require('./lib/worker.js')
+      // let simir_data1 = await worker.create('../m.js', paramsData) // 相对路径是相对 worker.js 所在目录说的
+
 
 
     });
@@ -229,11 +229,11 @@ function getExtName(name) {
   httpServer.listen(port)
   console.log(`lisen at ${port}`)
 
-  let conn = null
+  // let conn = null
 
   // let simir_data1 = await creat('./m.js', { conn })
 
-  let a = 1
+  // let a = 1
 
 })()
 

@@ -66,12 +66,12 @@ module.exports = {
 
         let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
 
+        let worker = require('../../../lib/worker.js')
+        let simir_data1 = await worker.create('../m.js', params) // 相对路径是相对 worker.js 所在目录说的
 
-        // let simir_data1 = await creat('../../m.js', params )
+        let a = 1
 
-        
-
-        __ws__.send({msg:'ok'})
+        // __ws__.send({msg:'ok'})
 
     }
 }
