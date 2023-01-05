@@ -6,14 +6,8 @@
 
     //webSocket服务端地址
     let wsBaseURL = 'ws://127.0.0.1:321' // 我的电脑
-    // let wsBaseURL = 'ws://192.168.1.124:7116'  // 124 tmux 独立进程
-    //let wsBaseURL = 'ws://192.168.1.124:7115'  // 正式 题库内去重
 
-    // let wsBaseURL = 'ws://172.16.4.184:10000'    // 本机负载均衡
-    //let wsBaseURL = 'ws://172.16.4.184:10001'
-
-    // let wsBaseURL = 'ws://192.168.1.124:10000'        // 正式负载均衡 它会转发
-    //let wsBaseURL = 'ws://192.168.1.124:7115'        // 正式负载均衡 它会转发
+    // let wsBaseURL = 'ws://192.168.1.xx:10000'        // 正式负载均衡 它会转发
 
     let wsClient = null
 

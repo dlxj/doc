@@ -15,7 +15,7 @@ module.exports = {
           Pool.push(wk1)
           wk1.ref()
           //wk1.postMessage(params);
-          wk1.postMessage('');
+          wk1.postMessage(JSON.stringify({ AppID, UserID, refresh, testCptIDs }));
           const onWorkerMsg = async (res) => {
 
             if (typeof(res) == 'string') {

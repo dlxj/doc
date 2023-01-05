@@ -7,7 +7,7 @@ const {
 
 parentPort.onmessage = function (event) {
 
-    // parentPort.postMessage([ false, { 'msg':'not done yet' } ])
+    // 这里只适合做单纯的 CPU 计算，复杂对象参数传不进来，只能是 string 而已
 
     parentPort.postMessage(JSON.stringify([ false, { 'msg':'not done yet' } ]))
 

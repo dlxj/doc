@@ -1,44 +1,4 @@
 
-// const {
-//     Worker,
-//     workerData
-//   } = require('worker_threads');
-//   const path = require('path');
-
-// async function creat(_path, params) {
-//     return new Promise(function (resolve, reject) {
-//       // const port = param.port
-//       let Pool = []
-//       let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
-  
-//       const wk1 = new Worker(path.resolve(__dirname, _path));
-//       Pool.push(wk1)
-//       wk1.ref()
-//     //   wk1.postMessage(params);
-  
-//       const onWorkerMsg = async (res) => {
-  
-//         let data = res
-//         if (data[0] == true) {
-//           wk1.terminate()
-//           Pool = []
-//           resolve(data[1])
-//         } else {
-  
-//           // 任务未完成，给前端报告进度
-//           let msg = {
-            
-//           }
-//           __ws__.send(msg)
-//         }
-  
-//       }
-  
-//       wk1.on('message', onWorkerMsg)
-//     });
-
-// }
-
 module.exports = {
     name: '智能计算试题标签',
     params: {
@@ -61,7 +21,7 @@ module.exports = {
         }
     },
     remark: '',
-    author: 'gd',
+    author: '',
     handler: async function (params) {  // conn, params, 
 
         let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
