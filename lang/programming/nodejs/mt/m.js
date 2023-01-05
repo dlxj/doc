@@ -7,7 +7,10 @@ const {
 
 parentPort.onmessage = function (event) {
 
-    parentPort.postMessage([ false, { 'msg':'not done yet' } ])
+    // parentPort.postMessage([ false, { 'msg':'not done yet' } ])
+
+    parentPort.postMessage('')
+
 
     //parentPort.postMessage([ true, { 'msg':'done.' } ])
 }

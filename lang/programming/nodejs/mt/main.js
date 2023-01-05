@@ -1,45 +1,45 @@
 
-const {
-  Worker,
-  workerData
-} = require('worker_threads');
+// const {
+//   Worker,
+//   workerData
+// } = require('worker_threads');
 const path = require('path');
 
-async function creat(_path, params) {
-  return new Promise(function (resolve, reject) {
-    // const port = param.port
-    let Pool = []
-    let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
-    //let conn = param.conn
+// async function creat(_path, params) {
+//   return new Promise(function (resolve, reject) {
+//     // const port = param.port
+//     let Pool = []
+//     let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
+//     //let conn = param.conn
 
-    const wk1 = new Worker(path.resolve(__dirname, _path));
-    Pool.push(wk1)
-    wk1.ref()
-    wk1.postMessage(params);
+//     const wk1 = new Worker(path.resolve(__dirname, _path));
+//     Pool.push(wk1)
+//     wk1.ref()
+//     wk1.postMessage(params);
 
-    const onWorkerMsg = async (res) => {
+//     const onWorkerMsg = async (res) => {
 
-      let data = res
-      if (data[0] == true) {
-        wk1.terminate()
-        Pool = []
-        resolve(data[1])
-      } else {
+//       let data = res
+//       if (data[0] == true) {
+//         wk1.terminate()
+//         Pool = []
+//         resolve(data[1])
+//       } else {
 
-        // 任务未完成，给前端报告进度
-        let msg = {
+//         // 任务未完成，给前端报告进度
+//         let msg = {
 
-        }
-        // __ws__.send(msg)
-      }
+//         }
+//         // __ws__.send(msg)
+//       }
 
-    }
+//     }
 
-    wk1.on('message', onWorkerMsg)
-  });
+//     wk1.on('message', onWorkerMsg)
+//   });
 
 
-}
+// }
 
 function getExtName(name) {
   return path.extname(name).toLowerCase();
@@ -158,7 +158,50 @@ function getExtName(name) {
           result = await result;
       }
 
-      // let simir_data1 = await creat('./m.js', paramsData)
+
+      const {
+        Worker,
+        workerData
+      } = require('worker_threads');
+      const path = require('path');
+      
+      async function creat(_path, params) {
+        return new Promise(function (resolve, reject) {
+          // const port = param.port
+          let Pool = []
+          let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
+          //let conn = param.conn
+      
+          const wk1 = new Worker(path.resolve(__dirname, _path));
+          Pool.push(wk1)
+          wk1.ref()
+          //wk1.postMessage(params);
+          wk1.postMessage('');
+          const onWorkerMsg = async (res) => {
+      
+            let data = res
+            if (data[0] == true) {
+              wk1.terminate()
+              Pool = []
+              resolve(data[1])
+            } else {
+      
+              // 任务未完成，给前端报告进度
+              let msg = {
+      
+              }
+              // __ws__.send(msg)
+            }
+      
+          }
+      
+          wk1.on('message', onWorkerMsg)
+        });
+      
+      
+      }
+
+      let simir_data1 = await creat('./m.js', paramsData)
 
 
     });
@@ -183,7 +226,7 @@ function getExtName(name) {
 
   let conn = null
 
-  let simir_data1 = await creat('./m.js', { conn })
+  // let simir_data1 = await creat('./m.js', { conn })
 
   let a = 1
 
