@@ -4703,8 +4703,11 @@ END WHILE;
 
 ```
 const now = moment().format('YYYY-MM-DD HH:mm:ss');
+var time = moment().format('MMMM Do YYYY, h:mm:ss a')
 let t1 = new Date().getTime();
 ```
+
+
 
 ### 时区转换
 
@@ -4767,6 +4770,34 @@ var date2 = "2020/2/29";
 var result = date1.replace(/\-/g,'/') > date2.replace(/\-/g,'/');
 console.log(result);                                                //true
 ```
+
+
+
+## 定时任务
+
+```
+        async function loopcheck() {
+            return new Promise(function (resolve, reject) {
+                const timer = setInterval(async function () {
+                    let checktype = await pushrdis()
+                    if (checktype) {
+                        resolve(ID)
+                        clearInterval(timer)
+                    } else if (conn) {
+                        conn.__ws__.send(msg)
+                    }
+                }, 10000);
+            });
+        }
+
+
+clearTimeout(checkTask);
+checkTask = setTimeout(() => {
+	// 一秒后执行
+}, 1000);
+```
+
+
 
 
 

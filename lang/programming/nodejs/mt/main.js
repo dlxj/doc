@@ -5,16 +5,17 @@ const {
 } = require('worker_threads');
 const path = require('path');
 
-async function creat(_path, param) {
+async function creat(_path, params) {
   return new Promise(function (resolve, reject) {
     // const port = param.port
     let Pool = []
-    let conn = param.conn
+    let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
+    //let conn = param.conn
 
     const wk1 = new Worker(path.resolve(__dirname, _path));
     Pool.push(wk1)
     wk1.ref()
-    wk1.postMessage(param);
+    wk1.postMessage(params);
 
     const onWorkerMsg = async (res) => {
 
@@ -29,7 +30,7 @@ async function creat(_path, param) {
         let msg = {
 
         }
-        conn.__ws__.send(msg)
+        // __ws__.send(msg)
       }
 
     }
@@ -43,8 +44,6 @@ async function creat(_path, param) {
 function getExtName(name) {
   return path.extname(name).toLowerCase();
 }
-
-
 
 
 (async () => {
@@ -85,7 +84,7 @@ function getExtName(name) {
     server: httpServer
   })
 
-  wsServer.on('connection', (ws, req) => {
+  wsServer.on('connection', async (ws, req) => {
     ws.ip = req.socket.remoteAddress;
     if (req.headers['x-forwarded-for'] != null) {
       ws.ip = req.headers['x-forwarded-for'].split(/\s*,\s*/)[0];
@@ -138,8 +137,6 @@ function getExtName(name) {
       requestID = data.requestID;
       paramsData = data.params;
 
-      paramsData['__ip__'] = ws.ip;
-      paramsData['__ws__'] = ws;
       const apiStat = fs.statSync(apiPath);
       const apiExists = apiStat.isFile() && getExtName(apiPath) === '.js';
       //判断请求API是否存在
@@ -152,8 +149,17 @@ function getExtName(name) {
 
       //参数验证
       paramsData = require('./lib/paramVerify')(api.params, paramsData);
+      paramsData['__ip__'] = ws.ip;
+      paramsData['__ws__'] = ws;
 
-      let a = 1
+      //进入API
+      let result = api.handler(paramsData);
+      if (result instanceof Promise) {
+          result = await result;
+      }
+
+      // let simir_data1 = await creat('./m.js', paramsData)
+
 
     });
 
@@ -166,6 +172,8 @@ function getExtName(name) {
       }
     });
 
+
+
   });
 
 
@@ -175,7 +183,7 @@ function getExtName(name) {
 
   let conn = null
 
-  // let simir_data1 = await creat('./m.js', { conn })
+  let simir_data1 = await creat('./m.js', { conn })
 
   let a = 1
 
