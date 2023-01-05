@@ -33,7 +33,7 @@
         // app = { "AppID": 6042, "BookID": -1, "userID": "1", "refresh": 0 }
         // app = { "AppID": 4285, "BookID": -1, "userID": "1", "refresh": 0 }
         // app = { "AppID": 17387, "BookID": -1, "userID": "1", "refresh": 0 }  // 很长
-        app = { "AppID": 18744, "BookID": -1, "userID": "1", "refresh": 0 }    // 很短
+        app = { "AppID": 18744, "BookID": -1, "UserID": 1, "refresh": false }    // 很短
 
         if (app.refresh == 1) {
 
