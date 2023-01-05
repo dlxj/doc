@@ -4703,6 +4703,7 @@ END WHILE;
 
 ```
 const now = moment().format('YYYY-MM-DD HH:mm:ss');
+let t1 = new Date().getTime();
 ```
 
 ### 时区转换

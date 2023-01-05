@@ -40,6 +40,9 @@ async function creat(_path, param) {
 
 }
 
+function getExtName(name) {
+  return path.extname(name).toLowerCase();
+}
 
 (async () => {
 
@@ -49,6 +52,7 @@ async function creat(_path, param) {
     const path = require('path');
     const webSocket = require('ws');
     const uuid = require('uuid');
+    const fs = require('fs');
 
 
     //程序启动目录
@@ -93,6 +97,11 @@ async function creat(_path, param) {
 
         ws.on("message", async (data) => {
           let t1 = new Date().getTime();
+
+          if (data instanceof Buffer) {
+            data = data.toString()
+          }
+
           try {
             if (typeof (data) !== 'object') {
               data = JSON.parse(data);
