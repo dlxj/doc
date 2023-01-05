@@ -159,49 +159,54 @@ function getExtName(name) {
       }
 
 
-      const {
-        Worker,
-        workerData
-      } = require('worker_threads');
-      const path = require('path');
+      // const {
+      //   Worker,
+      //   workerData
+      // } = require('worker_threads');
+      // const path = require('path');
       
-      async function creat(_path, params) {
-        return new Promise(function (resolve, reject) {
-          // const port = param.port
-          let Pool = []
-          let { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
-          //let conn = param.conn
+      // async function creat(_path, params) {
+      //   return new Promise(function (resolve, reject) {
+      //     // const port = param.port
+      //     let Pool = []
+      //     var { AppID, UserID, refresh, testCptIDs, __ip__, __ws__ } = params
+      //     //let conn = param.conn
       
-          const wk1 = new Worker(path.resolve(__dirname, _path));
-          Pool.push(wk1)
-          wk1.ref()
-          //wk1.postMessage(params);
-          wk1.postMessage('');
-          const onWorkerMsg = async (res) => {
-      
-            let data = res
-            if (data[0] == true) {
-              wk1.terminate()
-              Pool = []
-              resolve(data[1])
-            } else {
-      
-              // 任务未完成，给前端报告进度
-              let msg = {
-      
-              }
-              // __ws__.send(msg)
-            }
-      
-          }
-      
-          wk1.on('message', onWorkerMsg)
-        });
-      
-      
-      }
+      //     const wk1 = new Worker(path.resolve(__dirname, _path));
+      //     Pool.push(wk1)
+      //     wk1.ref()
+      //     //wk1.postMessage(params);
+      //     wk1.postMessage('');
+      //     const onWorkerMsg = async (res) => {
 
-      let simir_data1 = await creat('./m.js', paramsData)
+      //       if (typeof(res) == 'string') {
+      //         res = JSON.parse(res)
+      //       }
+      
+      //       let data = res
+      //       if (data[0] == true) {
+      //         wk1.terminate()
+      //         Pool = []
+      //         resolve(data[1])
+      //       } else {
+      
+      //         // 任务未完成，给前端报告进度
+      //         params.__ws__.send({ msg:'not done yet' })
+      //       }
+      
+      //     }
+      
+      //     wk1.on('message', onWorkerMsg)
+      //   });
+      
+      
+      // }
+
+      // let simir_data1 = await creat('./m.js', paramsData)
+
+      let worker = require('./lib/worker.js')
+      let simir_data1 = await worker.create('../m.js', paramsData) // 相对路径是相对 worker.js 所在目录说的
+      
 
 
     });

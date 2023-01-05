@@ -9,7 +9,7 @@ parentPort.onmessage = function (event) {
 
     // parentPort.postMessage([ false, { 'msg':'not done yet' } ])
 
-    parentPort.postMessage('')
+    parentPort.postMessage(JSON.stringify([ false, { 'msg':'not done yet' } ]))
 
 
     //parentPort.postMessage([ true, { 'msg':'done.' } ])
