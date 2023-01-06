@@ -19,6 +19,30 @@ namespace MathpixCsharp
         {
             InitializeComponent();
 
+            MainAsync();
+
+            ////string path = AppDomain.CurrentDomain.BaseDirectory + @"dist/index.html";
+            //String path = string.Format(@"{0}\dist\index.html", Application.StartupPath);
+
+            ////String path = "http://baidu.com";
+
+            //browser = new ChromiumWebBrowser(path);
+            //browser.JavascriptObjectRepository.Settings.LegacyBindingEnabled = true;
+
+            //this.Controls.Add(browser);
+            //browser.Dock = DockStyle.Fill;
+
+            ////browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync("document.dispatchEvent(new CustomEvent('event_name', { detail: { para: 'para' } }));");
+
+            //var setting = new CefSettings { RemoteDebuggingPort = 33229 };
+            ////CefSharp.Cef.Initialize(setting);
+
+            //await browser.WaitForInitialLoadAsync();
+
+        }
+
+        private async void MainAsync()
+        {
             //string path = AppDomain.CurrentDomain.BaseDirectory + @"dist/index.html";
             String path = string.Format(@"{0}\dist\index.html", Application.StartupPath);
 
@@ -30,9 +54,14 @@ namespace MathpixCsharp
             this.Controls.Add(browser);
             browser.Dock = DockStyle.Fill;
 
-            var setting = new CefSettings { RemoteDebuggingPort = 33229 };
-            //browser.Initialize(setting);
+            //browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync("document.dispatchEvent(new CustomEvent('event_name', { detail: { para: 'para' } }));");
 
+            var setting = new CefSettings { RemoteDebuggingPort = 33229 };
+            //CefSharp.Cef.Initialize(setting);
+
+            await browser.WaitForInitialLoadAsync();
+
+            browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync("document.dispatchEvent(new CustomEvent('event_name', { detail: { para: 'para' } }));");
         }
     }
 }
