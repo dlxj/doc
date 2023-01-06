@@ -29,6 +29,10 @@ namespace MathpixCsharp
 
             this.Controls.Add(browser);
             browser.Dock = DockStyle.Fill;
+
+            var setting = new CefSettings { RemoteDebuggingPort = 33229 };
+            //browser.Initialize(setting);
+
         }
     }
 }
