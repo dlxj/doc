@@ -7924,6 +7924,32 @@ new imgBoardForm("").Show();
 
 
 
+## 鼠标穿透窗体
+
+```
+# https://blog.csdn.net/u012372584/article/details/113916322
+	# QT 实现
+引入user32.dll
+
+ [DllImport("user32.dll")]
+ public static extern uint SetWindowLong(IntPtr h, int n, uint x);
+ 
+使指定窗体穿透，this.Handle为将要设为穿透效果的窗体句柄
+
+SetWindowLong(this.Handle, -20, 0x20 | 0x80000);
+ 
+恢复
+  this.FormBorderStyle =  this.FormBorderStyle;
+```
+
+
+
+## 最小化到托盘+双击托盘恢复
+
+- https://blog.csdn.net/cxu123321/article/details/93380478
+
+
+
 ## 拖盘菜单
 
 - https://www.cnblogs.com/huashanqingzhu/p/6899383.html

@@ -133,6 +133,10 @@ namespace MathpixCsharp
                 if (ocrResult != null) {
                     string text = ocrResult.Text;
                     MessageBox.Show(text, "识别结果");
+
+                    //new Form3(text).Show();
+                    new Form4().Show();
+
                 } 
 
                 //using (var engine = new TesseractEngine(@"./tessdata", "chi_sim", EngineMode.LstmOnly))
