@@ -179,3 +179,10 @@ For a proxy that only supports HTTP,
   > 法语讲究连音联诵读，需要把一个节奏组中的所有可以连在一起读的发音串联起来读，这样有些原来不发音的字母，就需要发音
 
 ​     
+
+# AKB48
+
+- http://wiki.akbfun48.com/index.php/%E3%83%8D%E7%94%B3%E3%83%86%E3%83%AC%E3%83%93_%E3%82%B7%E3%83%BC%E3%82%BA%E3%83%B3#.E7.AC.AC.E4.B8.80.E5.AD.A3_.28.E5.90.AB.E7.89.B9.E5.85.B8.29
+
+
+
