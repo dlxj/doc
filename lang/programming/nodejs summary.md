@@ -3898,6 +3898,14 @@ require('fs').stat(Path.join(__dirname, '.next'), (err, stats) => {
 
 
 
+# interop
+
+## python
+
+- https://github.com/extrabacon/python-shell
+
+
+
 # websocket
 
 ```javascript
