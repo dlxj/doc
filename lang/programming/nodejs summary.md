@@ -10760,6 +10760,14 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 - https://github.com/touilleMan/godot-python  **godot + python**
 
+
+
+### 可调窗体
+
+- https://github.com/gilzoide/godot-dockable-container
+
+
+
 ### 拷贝大量数据
 
 ```
@@ -11341,6 +11349,12 @@ nfs 成功
     data.push([1, 'second'])
     writeExcel(data, fname)
 ```
+
+
+
+## excel 正则
+
+- https://github.com/liuyi91/Excel
 
 
 
