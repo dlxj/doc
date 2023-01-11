@@ -2,6 +2,33 @@
 
 
 
+## nuget
+
+```
+https://www.nuget.org/downloads 
+	# 先下载一个最新的 nuget.exe 放 D:\usr\nuget 目录，环境变量加一下
+
+nuget install -OutputDirectory packages # 它默认会安装在当前目录，这里指定安装在packages 目录
+
+
+packages.config
+	# D:\GitHub\echodict\cut
+
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="cef.redist.x64" version="108.4.13" targetFramework="net461" />
+  <package id="cef.redist.x86" version="108.4.13" targetFramework="net461" />
+  <package id="CefSharp.Common" version="108.4.130" targetFramework="net461" />
+  <package id="CefSharp.WinForms" version="108.4.130" targetFramework="net461" />
+  <package id="EdgeJs" version="9.3.4" targetFramework="net461" />
+  <package id="MaterialSkin.2" version="2.3.1" targetFramework="net461" />
+  <package id="Newtonsoft.Json" version="13.0.2" targetFramework="net461" />
+  <package id="PaddleOCRSharp" version="2.2.0" targetFramework="net461" />
+  <package id="System.Reflection.Emit" version="4.7.0" targetFramework="net461" />
+  <package id="Tesseract" version="5.2.0" targetFramework="net461" />
+</packages>
+```
+
 
 
 ## .net core
@@ -5134,6 +5161,111 @@ int main(int argc, _TCHAR* argv[])
 ```
 
 
+
+## 调用外部程序
+
+- https://gist.github.com/elerch/5628117
+
+```
+// NodeFromCSharp.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var proc = new System.Diagnostics.Process();
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.RedirectStandardInput = true;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.RedirectStandardError = true;
+            proc.StartInfo.FileName = "node.exe";
+            proc.StartInfo.Arguments = "-i";
+            proc.Start();
+            proc.BeginOutputReadLine();
+
+            proc.StandardInput.WriteLine("2 + 2;");
+            proc.StandardInput.WriteLine("setTimeout(function(){ process.exit();}, 10000).suppressOut;");
+            proc.OutputDataReceived += proc_OutputDataReceived;
+            proc.WaitForExit();
+        }
+
+        static void proc_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
+        {
+            Console.WriteLine(e.Data);
+        }
+    }
+}
+```
+
+
+
+## interop rust 
+
+- https://github.com/lmtr0/rust-chsarp-interop
+
+
+
+
+
+# 调用nodejs
+
+- https://github.com/agracio/edge-js
+- https://www.nuget.org/packages/EdgeJs
+
+```
+How to: use external Node.js modules
+You can use external Node.js modules, for example modules installed from NPM.
+
+Note: Most Node.js modules are written in JavaScript and will execute in Edge as-is. However, some Node.js external modules are native binary modules, rebuilt by NPM on module installation to suit your local execution environment. Native binary modules will not run in Edge unless they are rebuilt to link against the NodeJS dll that Edge uses.
+
+To install modules from NPM, you must first install Node.js on your machine and use the npm package manager that comes with the Node.js installation. NPM modules must be installed in the directory where your build system places the Edge.js NuGet package (most likely the same location as the rest of your application binaries), or any ancestor directory. Alternatively, you can install NPM modules globally on the machine using npm install -g:
+
+C:\projects\websockets> npm install ws
+...
+ws@0.4.31 node_modules\ws
+├── tinycolor@0.0.1
+├── options@0.0.5
+├── nan@0.3.2
+└── commander@0.6.1
+You can then use the installed ws module to create a WebSocket server inside of a .NET application:
+
+class Program
+{
+    public static async void Start()
+    {
+        var createWebSocketServer = Edge.Func(@"
+            var WebSocketServer = require('ws').Server;
+
+            return function (port, cb) {
+                var wss = new WebSocketServer({ port: port });
+                wss.on('connection', function (ws) {
+                    ws.on('message', function (message) {
+                        ws.send(message.toUpperCase());
+                    });
+                    ws.send('Hello!');
+                });
+                cb();
+            };
+        ");
+
+        await createWebSocketServer(8080);
+    }
+
+    static void Main(string[] args)
+    {
+        Task.Run((Action)Start);
+        new ManualResetEvent(false).WaitOne();
+    }
+}
+```
 
 
 

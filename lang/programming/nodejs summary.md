@@ -10908,32 +10908,29 @@ const data = kernel();
   >
   >  App.vue
   >
-  > a
-  >
   > ```javascript
-  >         <keep-alive>
-  >             <router-view v-if="$route.meta.keepAlive"></router-view>
+  >     <keep-alive>
+  >          <router-view v-if="$route.meta.keepAlive"></router-view>
   >         </keep-alive>
   >         <router-view v-if="!$route.meta.keepAlive"></router-view>
-  > ```
-  >
+  >    ```
+  >    
   > 
   >
   > 每个路由都可以给它定义 meta 属性，我们可以给想要缓存功能的路由定义一个 meta 对象，在里面定义一个 keepAlive 属性，值为 true，这个 meta 对象里面还可以定义其他的属性，比如 title。
   >
   > ```javascript
-  >         {
-  >             path: '/guideList',
+  >     {
+  >          path: '/guideList',
   >             name: 'GuideList',
   >             meta: {keepAlive: true, title: 'title'},
   >             component: GuideList
   >         },
-  > ```
-  >
+  >    ```
+  >    
   > 
   >
-  > a
-
+  
 - https://blog.csdn.net/zgh0711/article/details/80171138  给 v-html 渲染出的内容添加样式
 
   >```javascript
@@ -11355,6 +11352,17 @@ nfs 成功
 ## excel 正则
 
 - https://github.com/liuyi91/Excel
+
+
+
+## C#读写excel
+
+```
+# https://blog.csdn.net/weixin_42176639/article/details/101648803
+	# NOPI读写Excel，并插入图片
+```
+
+
 
 
 
