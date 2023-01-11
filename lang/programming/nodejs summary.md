@@ -2738,6 +2738,23 @@ console.log()
 
 
 
+## 检测字符编码
+
+```
+// doc\lang\programming\nodejs\pmserver\lib\ssa.js
+let chardet = require('chardet')
+let encode = chardet.detect(Buffer.from( require('fs').readFileSync(sapath) 
+sa = fs.readFileSync(sapath, { encoding:encode})  // encode
+```
+
+
+
+## 语言检测
+
+- https://github.com/wooorm/franc
+
+
+
 ## time
 
 ```
