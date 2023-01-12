@@ -1602,6 +1602,14 @@ package.json
 
 
 
+#### 生成包
+
+- https://cloud.tencent.com/developer/article/1485591
+
+
+
+
+
 ### 异步转同步
 
 - https://blog.kaciras.com/article/22/convert-async-to-sync-in-node
