@@ -1682,6 +1682,32 @@ console.log('end')
 
 
 
+### vm替代eval
+
+- https://zhuanlan.zhihu.com/p/128090873
+
+- https://nodejs.org/api/vm.html#modulelinklinker
+- https://github.com/pierrec/node-eval
+
+```
+var code = `
+var fn = () => {}
+I = 100; while(I--) { fn(); }
+`;
+
+const vm = require('vm');
+const context = vm.createContext();
+const script = new vm.Script(code);
+
+console.time('vm');
+script.runInContext(context);
+console.timeEnd('vm');
+```
+
+
+
+
+
 ## typeof
 
 
