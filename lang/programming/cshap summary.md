@@ -5270,6 +5270,10 @@ class Program
 
 
 
+## eval 中使用await
+
+- https://stackoverflow.com/questions/63030198/how-to-use-async-await-with-eval-function-in-javascript
+
 
 
 # OS 兼容
