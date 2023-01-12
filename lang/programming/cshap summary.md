@@ -11,6 +11,7 @@ https://www.nuget.org/downloads
 nuget install -OutputDirectory packages # 它默认会安装在当前目录，这里指定安装在packages 目录
 
 	# edgejs 高版本会出错，安装 9.3.4 版，如果编译出现复制文件出错，那就先卸载，再安装一次
+	# 缺少的dll从这里复制 C:\Users\i\.nuget\packages\paddleocrsharp\2.2.0\build\PaddleOCRLib
 
 packages.config
 	# D:\GitHub\echodict\cut
