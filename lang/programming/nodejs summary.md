@@ -1493,6 +1493,126 @@ export default {
 
 
 
+### 自定义包
+
+```
+npm i ws # 安装这个包来观察包的组织结构
+
+目录结构
+- ws
+	- lib        # 这里放所有 js 实现文件
+    index.js     # 导出符号，cjs 方式 
+	wrapper.mjs  # 导出符号，mjs 方式
+    package.json # 指定导出文件：index.js 和 wrapper.mjs
+    
+```
+
+
+
+```
+index.js
+'use strict';
+
+const WebSocket = require('./lib/websocket');
+
+WebSocket.createWebSocketStream = require('./lib/stream');
+WebSocket.Server = require('./lib/websocket-server');
+WebSocket.Receiver = require('./lib/receiver');
+WebSocket.Sender = require('./lib/sender');
+
+WebSocket.WebSocket = WebSocket;
+WebSocket.WebSocketServer = WebSocket.Server;
+
+module.exports = WebSocket;
+```
+
+
+
+```
+wrapper.mjs
+import createWebSocketStream from './lib/stream.js';
+import Receiver from './lib/receiver.js';
+import Sender from './lib/sender.js';
+import WebSocket from './lib/websocket.js';
+import WebSocketServer from './lib/websocket-server.js';
+
+export { createWebSocketStream, Receiver, Sender, WebSocket, WebSocketServer };
+export default WebSocket;
+```
+
+
+
+```
+package.json
+{
+  "name": "ws",
+  "version": "8.12.0",
+  "description": "Simple to use, blazing fast and thoroughly tested websocket client and server for Node.js",
+  "keywords": [
+    "HyBi",
+    "Push",
+    "RFC-6455",
+    "WebSocket",
+    "WebSockets",
+    "real-time"
+  ],
+  "homepage": "https://github.com/websockets/ws",
+  "bugs": "https://github.com/websockets/ws/issues",
+  "repository": "websockets/ws",
+  "author": "Einar Otto Stangvik <einaros@gmail.com> (http://2x.io)",
+  "license": "MIT",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./wrapper.mjs",
+      "require": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "browser": "browser.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "browser.js",
+    "index.js",
+    "lib/*.js",
+    "wrapper.mjs"
+  ],
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text mocha --throw-deprecation test/*.test.js",
+    "integration": "mocha --throw-deprecation test/*.integration.js",
+    "lint": "eslint --ignore-path .gitignore . && prettier --check --ignore-path .gitignore \"**/*.{json,md,yaml,yml}\""
+  },
+  "peerDependencies": {
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": ">=5.0.2"
+  },
+  "peerDependenciesMeta": {
+    "bufferutil": {
+      "optional": true
+    },
+    "utf-8-validate": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "bufferutil": "^4.0.1",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^8.4.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.5",
+    "utf-8-validate": "^6.0.0"
+  },
+  "__npminstall_done": true,
+  "_from": "ws@8.12.0",
+  "_resolved": "https://registry.npmmirror.com/ws/-/ws-8.12.0.tgz"
+}
+```
+
 
 
 
