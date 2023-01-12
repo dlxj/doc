@@ -1602,6 +1602,76 @@ package.json
 
 
 
+### 异步转同步
+
+- https://blog.kaciras.com/article/22/convert-async-to-sync-in-node
+- https://github.com/Kaciras/deasync
+
+
+
+```
+const { deasync } = require("@kaciras/deasync");
+const { performance } = require('perf_hooks')
+
+const sleep = deasync((timeout, done) => {
+    (async ()=>{
+        let { default:wrapper } = await import('./wrapper.mjs')  # 成功执行
+        let { name } = wrapper
+        done(null, "wake up!")
+    })()
+});
+
+console.log("Timestamp before: " + performance.now());
+let re = sleep(1000)
+console.log("Timestamp after: " + performance.now());
+```
+
+
+
+
+
+```
+cnpm install @kaciras/deasync
+
+const { deasync } = require("@kaciras/deasync");
+const { performance } = require('perf_hooks')
+
+const sleep = deasync((timeout, done) => {
+	setTimeout(() => done(null, "wake up!"), timeout);
+});
+
+console.log("Timestamp before: " + performance.now());
+console.log(sleep(1000));
+console.log("Timestamp after: " + performance.now());
+```
+
+
+
+
+
+
+
+```
+// 些方法是开启另一个进程，并等待它结束，不好用
+
+const { execSync } = require('child_process')
+
+const code = `
+const { stdout } = require('process')
+const dns = require('dns')
+dns.lookup('www.baidu.com', (err, address, family) => {
+  stdout.write(address)
+})
+`
+
+console.log('start')
+
+const lookupResult = execSync('node', { input: code })
+console.log(lookupResult.toString()) // 结果
+
+console.log('end')
+```
+
 
 
 ## typeof
@@ -9712,6 +9782,12 @@ module.exports = {
 
 
 
+
+## vue blog
+
+- https://blog.kaciras.com/article/22/convert-async-to-sync-in-node 大神 vue blog
+
+- https://github.com/kaciras-blog/website  blog 源码
 
 
 
