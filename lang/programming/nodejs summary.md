@@ -1766,6 +1766,38 @@ console.timeEnd('vm');
 
 
 
+```
+// https://stackoverflow.com/questions/34160216/how-to-retrieve-async-results-from-a-node-js-vm-script-using-es7-syntax
+
+
+(async()=>{
+
+const vm = require('vm')
+
+async function runScript(code, context = {}, options = {}) {
+    return new Promise((resolve, reject) => {
+      const { timeout = 120 * 1000, breakOnSigint = true } = options;
+      const script = new vm.Script(`(async()=>{${code}})()`);
+      script.runInContext(vm.createContext({
+        ...context,
+        resolve,
+        reject,
+      }), {
+        timeout,
+        breakOnSigint,
+      });
+    });
+}
+
+let re = await runScript('result = 1; resolve();')
+
+let a = 1
+
+})()
+```
+
+
+
 
 
 ## typeof
@@ -1852,6 +1884,14 @@ router.prototype.push = function push(location) {
    console.log(err)
   })
 }
+```
+
+
+
+## 还可以样这定义变量
+
+```
+const { timeout = 120 * 1000, breakOnSigint = true } = {}
 ```
 
 
