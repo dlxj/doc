@@ -5230,6 +5230,77 @@ namespace ConsoleApplication1
 
 ```
 
+// edgejs 改造完成的成品
+
+	private async Task<string>  Start()
+        {
+            // edgejs 原版的调用方法
+            var func = Edge.Func(@"
+            return function (data, callback) {
+                //import {franc, francAll} from 'franc'
+                let path = require('path')
+                //let t = require(`${path.join(__dirname, 't.js')}`)
+                //let d = t.path()
+                //callback(null, 'Node.js welcomes ' + data + `${path.join(__dirname, 'temp.json')}`);
+                //let ws = require('ws')
+                //let langDetect = require('langdetect')
+                let d = ( ()=>{
+                    return 'paaaaa ' //+ ws.msg
+                })()
+                callback(null, 'Node.js welcomes ' + data + d);
+            }
+            ");
+            //string ret = (string)await func(".NET");
+
+            
+            // 改造后的 edgejs 调用方法
+            var func2 = Edge.Func(@"
+                result = 'hi from double_edge.js ' + data   // data 是 C# 传进来的参数数据
+                    // 约定 js 代码最后一句一定是 result = xxx , 这是代码运行最后得到的结果，它会自动赋值到沙盒里
+            ");
+
+            string ret = (string)await func2(".NET");
+
+
+            /*
+             
+            D:\GitHub\echodict\cut\bin\x64\Debug\edge\double_edge.js
+
+            compileFunc 函数改成这样
+
+                var compileFunc = function (code, callback) {  // code 是 C# 传进来要执行的 js 代码
+
+        var func = function (data, callback) {  // data 是 C# 传进来的参数数据
+
+            var sandbox = { data }  // 把传进来的参数放在沙盒里面，因为要运行的 js 代码只能访问沙盒里面字段值
+            const vm = require('vm')
+            const script = new vm.Script(code)
+            let ctx = vm.createContext(sandbox)
+            script.runInContext(ctx)
+
+            callback(null, sandbox.result)  // 约定 js 代码最后一句一定是 result = xxx , 这是代码运行最后得到的结果，它会自动赋值到沙盒里
+        }
+
+        if (typeof func !== 'function') {
+            throw new Error('Node.js code must return an instance of a JavaScript function. '
+                + 'Please use `return` statement to return a function.');
+        }
+
+        callback(null, func);
+    };
+             
+             */
+
+            return ret;
+        }
+```
+
+
+
+
+
+```
+
 // 成功改造运行目录下 edge 文件夹内的 compileFunc 函数
 	// GitHub\echodict\cut\bin\x64\Debug\edge\double_edge.js
 
