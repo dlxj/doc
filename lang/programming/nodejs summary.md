@@ -1216,6 +1216,27 @@ node --inspect-brk=xxx.77:9229 insert.cjs # 指定IP端口
 
 
 
+## v8 profiler
+
+- https://fed.taobao.org/blog/taofed/do71ct/nodejs-memory-leak-analyze/
+
+```
+v8 prof
+使用 V8 自带的 profiler 功能，分析 JavaScript 各个函数的消耗和 GC 部分。
+
+npm install profiler
+node --prof xxx.js
+会生成 xxxx-v8.log，之后使用工具转换成可读的。
+
+npm install tick
+node-tick-processor xxxx-v8.log
+就可以查看相关的数据了。
+```
+
+
+
+
+
 # Syntax
 
 
@@ -1685,9 +1706,41 @@ console.log('end')
 ### vm替代eval
 
 - https://zhuanlan.zhihu.com/p/128090873
-
 - https://nodejs.org/api/vm.html#modulelinklinker
 - https://github.com/pierrec/node-eval
+- https://blog.csdn.net/qq_42709514/article/details/121925095 vm2 jsdom
+- https://github.com/semlinker/node-deep/blob/master/module/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%20Node.js%20Module.md#nodejs-vm
+- https://fed.taobao.org/blog/taofed/do71ct/nodejs-memory-leak-analyze/
+
+
+
+```
+const vm = require('vm')  # 如果这里要 import 可以用异步转同步
+
+async function add(n) {
+    
+    return n + 1
+}
+
+let sandbox = {
+  add: add,
+  number: 10
+};
+
+const code = `
+    (async ()=>{
+        await import('fs')
+        result = await add(number)
+    })()
+`
+const script = new vm.Script(code)
+let ctx = vm.createContext(sandbox)
+script.runInContext(ctx)
+```
+
+
+
+
 
 ```
 var code = `

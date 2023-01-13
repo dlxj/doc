@@ -5222,6 +5222,120 @@ namespace ConsoleApplication1
 - https://github.com/agracio/edge-js
 - https://www.nuget.org/packages/EdgeJs
 
+
+
+```
+
+// 成功改造运行目录下 edge 文件夹内的 compileFunc 函数
+	// GitHub\echodict\cut\bin\x64\Debug\edge\double_edge.js
+
+// 如需异步转同步，参见 GitHub\doc\lang\programming\nodejs summary.md 
+
+
+double_edge.js
+
+	var compileFunc = function (d, callback) {
+
+        var func = function (data, callback) {
+
+            let code = `
+                result = 'hi from double_edge.js ' + data
+            `
+
+            var sandbox = {d, data}
+            const vm = require('vm')
+            const script = new vm.Script(code)
+            let ctx = vm.createContext(sandbox)
+            script.runInContext(ctx)
+
+            callback(null, sandbox.result);
+        }
+
+        if (typeof func !== 'function') {
+            throw new Error('Node.js code must return an instance of a JavaScript function. '
+                + 'Please use `return` statement to return a function.');
+        }
+
+        callback(null, func);
+    };
+    
+    
+    
+    
+
+Form4.cs
+
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CefSharp.WinForms;
+using EdgeJs;
+
+        private async Task<string>  Start()
+        {
+            var func = Edge.Func(@"
+            return function (data, callback) {
+                //import {franc, francAll} from 'franc'
+                let path = require('path')
+                //let t = require(`${path.join(__dirname, 't.js')}`)
+                //let d = t.path()
+                //callback(null, 'Node.js welcomes ' + data + `${path.join(__dirname, 'temp.json')}`);
+                //let ws = require('ws')
+                //let langDetect = require('langdetect')
+                let d = ( ()=>{
+                    return 'paaaaa ' //+ ws.msg
+                })()
+                callback(null, 'Node.js welcomes ' + data + d);
+            }
+        ");
+
+            string ret = (string)await func(".NET");
+            return ret;
+        }
+
+
+public Form4(string text)
+        {
+            InitializeComponent();
+
+            MainAsync(text);
+        }
+        
+        
+        
+                private async void MainAsync(string text)
+        {
+            string str = await Start();
+
+            //string path = AppDomain.CurrentDomain.BaseDirectory + @"dist/index.html";
+            String path = string.Format(@"{0}\dist\index.html", Application.StartupPath);
+
+            //String path = "http://baidu.com";
+
+            browser = new ChromiumWebBrowser(path);
+            browser.JavascriptObjectRepository.Settings.LegacyBindingEnabled = true;
+
+            this.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
+
+            //browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync("document.dispatchEvent(new CustomEvent('event_name', { detail: { para: 'para' } }));");
+
+            var setting = new CefSettings { RemoteDebuggingPort = 33229 };
+            //CefSharp.Cef.Initialize(setting);
+
+            await browser.WaitForInitialLoadAsync();
+
+            //browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync("document.dispatchEvent(new CustomEvent('event_name', { detail: { para: 'para' } }));");
+            browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync($"document.dispatchEvent(new CustomEvent('event_name', {{ detail: {{ para: '{text}' }} }}));");
+            // // $ 里面的 { 要双写进行转义
+            // {} 里面的会进行动态计算
+        }
+
+```
+
+
+
+
+
 ```
 How to: use external Node.js modules
 You can use external Node.js modules, for example modules installed from NPM.
