@@ -4221,6 +4221,8 @@ require('fs').stat(Path.join(__dirname, '.next'), (err, stats) => {
 
 ## python
 
+- https://github.com/hmenyus/node-calls-python
+
 - https://github.com/extrabacon/python-shell
 
 
