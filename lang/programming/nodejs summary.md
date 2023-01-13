@@ -1634,9 +1634,16 @@ package.json
 ### 异步转同步
 
 - https://blog.kaciras.com/article/22/convert-async-to-sync-in-node
+
 - https://github.com/Kaciras/deasync
 
+- https://github.com/nodejs/node/issues/40898
 
+  ```
+  vm.runInThisContext runs a script and therefore does not support top level await. if you want to use that you'll need to use the experimental vm.Module api. the repl is just transpiling code with top level await into async functions.
+  ```
+
+  
 
 ```
 const { deasync } = require("@kaciras/deasync");
