@@ -32,6 +32,16 @@
 
   
 
+# anime
+
+- https://nyaa.si/?f=0&c=0_0&q=pokemon
+
+- https://anidex.info/?q=pokemon&id=1,2,3
+
+- https://rutracker.org/forum/tracker.php?nm=pokemon
+
+  
+
 # Project Euler
 
 
