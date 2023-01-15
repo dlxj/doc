@@ -35,9 +35,14 @@
 # anime
 
 - https://nyaa.si/?f=0&c=0_0&q=pokemon
+
 - https://anidex.info/?q=pokemon&id=1,2,3
+
 - https://rutracker.org/forum/tracker.php?nm=pokemon
 
+- https://www.youtube.com/watch?v=-MlX_2wgTAY  XY粤语官方
+
+  
 
 
 
