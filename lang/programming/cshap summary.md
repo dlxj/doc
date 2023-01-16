@@ -5227,7 +5227,13 @@ namespace ConsoleApplication1
   - https://github.com/Elringus/DotNetJS  可能的替换品 但它必须用 blazor
 - https://www.nuget.org/packages/EdgeJs
 
+- https://zhuanlan.zhihu.com/p/554452304  编译Node.js
 
+- https://zhuanlan.zhihu.com/p/569304401  CEF与Node集成【0】架构简介
+
+  > 收费咨询
+
+  
 
 ```
 
