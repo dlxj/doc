@@ -5239,6 +5239,8 @@ namespace ConsoleApplication1
 
 - https://github.com/zyyc5/NodeSharp  low一点但兼容性好的方案
 
+  - http://blog.qicheen.com/2022/04/14/nodesharp%E5%8E%9F%E7%90%86%E5%AE%9E%E7%8E%B0/
+
 
 
 ```
