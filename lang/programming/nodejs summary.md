@@ -1731,15 +1731,39 @@ console.log('end')
 
 ```
 
-# 这个好 
-# npm config set python D:\usr\Python38\python.exe
-
+# 这个好 好像完全解决问题了
 (async()=>{
 
-  // npm install @kaciras/deasync
+  // npm config set python D:\usr\Python38\python.exe
+  // npm install @kaciras/deasync  // 依赖 node-gyp https://github.com/nodejs/node-gyp
   // npm install franc
 
+  const { deasync } = require("@kaciras/deasync")
+
+  const syncify = deasync((code, params, done) => {
+    (async ()=>{
+      const vm = require('vm')
+      const { timeout = 120 * 1000, breakOnSigint = true } = {}
+      const script = new vm.Script(`(async()=>{${code}})()`)
+      script.runInContext(vm.createContext({
+        ...params,
+        done,
+      }), {
+        timeout,
+        breakOnSigint,
+      })
+
+    })()
+  })
   
+  let c = syncify(`
+    result = 1
+    console.log(msg)
+    fs.writeFileSync('hi.txt', 'hi, from vm!', {encoding:'utf8', flag:'w'} )
+    lang = francAll('Alle menslike wesens word vry', { only: ['jpn', 'cmn', 'eng'] })
+    done(null, {result, lang})
+  `, { msg:'hi, from vm!', fs : await import ('fs'), ... await import('franc') })
+
   async function runScript(code, context = {}, options = {}) {
       return new Promise((resolve, reject) => {
         const vm = require('vm')
@@ -1771,7 +1795,6 @@ console.log('end')
   let a = 1
 
   })()
-  
   
 ```
 
