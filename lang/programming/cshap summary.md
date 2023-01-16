@@ -5233,7 +5233,13 @@ namespace ConsoleApplication1
 
   > 收费咨询
 
-  
+- https://github.com/ElectronNET/Electron.NET/issues/211
+
+  > electron 解决方案
+
+- https://github.com/zyyc5/NodeSharp  low一点但兼容性好的方案
+
+
 
 ```
 
