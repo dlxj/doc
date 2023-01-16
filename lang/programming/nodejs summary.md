@@ -1245,6 +1245,16 @@ node-tick-processor xxxx-v8.log
 
 # Syntax
 
+- https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html
+
+
+
+```
+node --input-type=module
+```
+
+
+
 
 
 ## commonjs
@@ -1726,6 +1736,7 @@ console.log('end')
 - https://blog.csdn.net/qq_42709514/article/details/121925095 vm2 jsdom
 - https://github.com/semlinker/node-deep/blob/master/module/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%20Node.js%20Module.md#nodejs-vm
 - https://fed.taobao.org/blog/taofed/do71ct/nodejs-memory-leak-analyze/
+- https://github.com/agracio/edge-js/issues/163  edge-js 如何使用高版本的 node
 
 
 

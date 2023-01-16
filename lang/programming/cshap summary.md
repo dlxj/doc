@@ -5224,6 +5224,7 @@ namespace ConsoleApplication1
 ## nodejs
 
 - https://github.com/agracio/edge-js
+  - https://github.com/Elringus/DotNetJS  可能的替换品 但它必须用 blazor
 - https://www.nuget.org/packages/EdgeJs
 
 
