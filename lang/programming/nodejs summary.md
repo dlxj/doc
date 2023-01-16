@@ -1718,6 +1718,8 @@ console.log('end')
 
 ### vm替代eval
 
+- https://stackoverflow.com/questions/34160216/how-to-retrieve-async-results-from-a-node-js-vm-script-using-es7-syntax
+
 - https://zhuanlan.zhihu.com/p/128090873
 - https://nodejs.org/api/vm.html#modulelinklinker
 - https://github.com/pierrec/node-eval
@@ -1729,15 +1731,18 @@ console.log('end')
 
 ```
 
-# 这个好
+# 这个好 
+# npm config set python D:\usr\Python38\python.exe
 
 (async()=>{
 
-  const vm = require('vm')
+  // npm install @kaciras/deasync
+  // npm install franc
+
   
   async function runScript(code, context = {}, options = {}) {
       return new Promise((resolve, reject) => {
-        
+        const vm = require('vm')
         const { timeout = 120 * 1000, breakOnSigint = true } = options;
         const script = new vm.Script(`(async()=>{${code}})()`);
         script.runInContext(vm.createContext({
@@ -1751,9 +1756,18 @@ console.log('end')
       });
   }
   
+  //let { franc, francAll } = await import('franc')
   
-  let re = await runScript('result = 1; console.log(msg); console.log( fs); resolve({result});', { msg:'hi, from vm!', fs : await import ('fs') })  // 利用 context 传参
-  
+  let re = await runScript(`
+    result = 1
+    console.log(msg)
+    fs.writeFileSync('hi.txt', 'hi, from vm!', {encoding:'utf8', flag:'w'} )
+    lang = francAll('Alle menslike wesens word vry', { only: ['jpn', 'cmn', 'eng'] })
+    resolve({result, lang})
+    `, 
+    { msg:'hi, from vm!', fs : await import ('fs'), ... await import('franc') })  // 利用 context 传参
+
+
   let a = 1
 
   })()
