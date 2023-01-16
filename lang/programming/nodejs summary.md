@@ -1235,6 +1235,12 @@ node-tick-processor xxxx-v8.log
 
 
 
+## v8 source map
+
+- https://github.com/evanw/node-source-map-support
+
+
+
 
 
 # Syntax
@@ -1718,6 +1724,75 @@ console.log('end')
 - https://blog.csdn.net/qq_42709514/article/details/121925095 vm2 jsdom
 - https://github.com/semlinker/node-deep/blob/master/module/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%20Node.js%20Module.md#nodejs-vm
 - https://fed.taobao.org/blog/taofed/do71ct/nodejs-memory-leak-analyze/
+
+
+
+```
+
+# 这个好
+
+(async()=>{
+
+  const vm = require('vm')
+  
+  async function runScript(code, context = {}, options = {}) {
+      return new Promise((resolve, reject) => {
+        
+        const { timeout = 120 * 1000, breakOnSigint = true } = options;
+        const script = new vm.Script(`(async()=>{${code}})()`);
+        script.runInContext(vm.createContext({
+          ...context,
+          resolve,
+          reject,
+        }), {
+          timeout,
+          breakOnSigint,
+        });
+      });
+  }
+  
+  
+  let re = await runScript('result = 1; console.log(msg); console.log( fs); resolve({result});', { msg:'hi, from vm!', fs : await import ('fs') })  // 利用 context 传参
+  
+  let a = 1
+
+  })()
+  
+  
+```
+
+
+
+
+
+```
+
+# vm 内部成功 hook vm 外部的 promise 执行
+
+const vm = require('vm')
+
+const context = vm.createContext({
+  require,
+  console
+})
+
+vm.runInContext(`
+  const ah = require('async_hooks')
+
+  ah.createHook({
+    init (asyncId, type, triggerAsyncId, resource) {
+      if (type === 'PROMISE') {
+        console.log('I stole a promise from outside my context!', resource)
+      }
+    }
+  }).enable()
+`, context)
+
+Promise.resolve()
+
+```
+
+
 
 
 
