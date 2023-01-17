@@ -5236,12 +5236,15 @@ namespace ConsoleApplication1
 - https://zhuanlan.zhihu.com/p/359598262 Puerts 让 nodejs 兼容 C# 和 Unity 
 
   - https://www.cnblogs.com/1eon/p/16851750.html  使用VsCode调试UE5的PuerTs
+  - https://github.com/passiony/puerts-framework  一键安装运行
 
   > 好像是个好东西
 
-  
+- https://bbs.kanxue.com/thread-68730.htm  exe当作dll 来调用
 
   
+
+
 
   ```
   
@@ -5266,8 +5269,9 @@ namespace ConsoleApplication1
   
 
   - https://xiaoiver.github.io/coding/2018/05/14/%E7%BC%96%E8%AF%91-Node.js-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.html  nexe 支持打包node为单一exe
-    - https://github.com/MadLittleMods/node-usb-detection/  U盘插拔检测
-
+    
+- https://github.com/MadLittleMods/node-usb-detection/  U盘插拔检测
+    
 - https://zhuanlan.zhihu.com/p/569304401  CEF与Node集成【0】架构简介
 
   > 收费咨询
