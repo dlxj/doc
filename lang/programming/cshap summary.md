@@ -5235,6 +5235,8 @@ namespace ConsoleApplication1
 
 - https://zhuanlan.zhihu.com/p/359598262 Puerts 让 nodejs 兼容 C# 和 Unity 
 
+  - https://www.cnblogs.com/1eon/p/16851750.html  使用VsCode调试UE5的PuerTs
+
   > 好像是个好东西
 
   
