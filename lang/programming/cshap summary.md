@@ -5224,10 +5224,27 @@ namespace ConsoleApplication1
 ## nodejs
 
 - https://github.com/agracio/edge-js
+  
   - https://github.com/Elringus/DotNetJS  可能的替换品 但它必须用 blazor
+  
 - https://www.nuget.org/packages/EdgeJs
 
 - https://zhuanlan.zhihu.com/p/554452304  编译Node.js
+
+  ```
+  .\vcbuild debug vs2019 dll x64
+  .\vcbuild debug vs2019 dll x64 noprojgen # 不要再生成sln 工程文件
+  
+  无法解析的外部符号 __imp__timeGetTime@0
+  	#pragma comment(lib, "winmm.lib ")
+  
+  
+  ```
+
+  
+
+  - https://xiaoiver.github.io/coding/2018/05/14/%E7%BC%96%E8%AF%91-Node.js-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.html  nexe 支持打包node为单一exe
+    - https://github.com/MadLittleMods/node-usb-detection/  U盘插拔检测
 
 - https://zhuanlan.zhihu.com/p/569304401  CEF与Node集成【0】架构简介
 
@@ -5241,7 +5258,9 @@ namespace ConsoleApplication1
 
   - http://blog.qicheen.com/2022/04/14/nodesharp%E5%8E%9F%E7%90%86%E5%AE%9E%E7%8E%B0/
 
-
+- https://juejin.cn/post/6982133816001462285  pkg 打包 node
+  - https://segmentfault.com/a/1190000041958374
+  - https://jingsam.github.io/2018/03/02/pkg.html
 
 ```
 
