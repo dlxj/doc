@@ -5231,13 +5231,33 @@ namespace ConsoleApplication1
 
 - https://zhuanlan.zhihu.com/p/554452304  编译Node.js
 
+  - https://github.com/nodejs/node/issues/34539  解决问题
+
+- https://zhuanlan.zhihu.com/p/359598262 Puerts 让 nodejs 兼容 C# 和 Unity 
+
+  > 好像是个好东西
+
+  
+
+  
+
   ```
+  
+  https://github.com/nodejs/node/tags?after=v16.18.1
+  	# 下载 v14.21.1 源码 
+  
   .\vcbuild debug vs2019 dll x64
   .\vcbuild debug vs2019 dll x64 noprojgen # 不要再生成sln 工程文件
   
   无法解析的外部符号 __imp__timeGetTime@0
-  	#pragma comment(lib, "winmm.lib ")
+  	#pragma comment(lib, "winmm.lib")
   
+  v8_base_without_compiler.lib(basic-block-profiler.obj) : error LNK2005
+  	Oh, and manually removing v8_base_without_compiler from node References in VS solves this.
+  	# 加入 winmm.lib 会引起的错误
+  	
+  	
+  	
   
   ```
 
