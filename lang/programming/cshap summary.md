@@ -5225,6 +5225,55 @@ namespace ConsoleApplication1
 
 - https://github.com/agracio/edge-js
   
+  - https://github.com/agracio/edge-js/issues/163  编译方法
+  
+  ```
+  
+  # https://github.com/agracio/edge-js/issues/163
+  
+  https://nodejs.org/dist/v18.9.0/
+  	# 先安装 node 18.9.0
+  
+  git clone -q --branch=master https://github.com/agracio/edge-js.git C:\projects\edge-js
+  
+  cd C:\projects\edge-js\
+  
+  git checkout -qf c1cfba1f063cf9c8fb983809eb08d114719cc6dc
+  
+  npm install -g node-gyp
+  
+  edge-js/package.json
+  	# 修改成这个版本 "nan": "2.16.0"
+  
+  edge-js/src/common/edge.cpp
+  		NAN_MODULE_WORKER_ENABLED(edge_coreclr, init)
+  	#else
+  		NAN_MODULE_WORKER_ENABLED(edge_nativeclr, init)
+  
+  	# 最后两行改成这样
+  	
+  edge-js/lib/edge.js
+  	var versionMap = [
+      	[ /^14\./, '14.19.3' ],
+      	[ /^16\./, '16.15.1' ],
+      	[ /^18\./, '18.9.0' ],
+  	];
+  
+  	# versionMap 改成这样
+  	
+  	
+  
+  npm install
+  
+  ./build.bat release 18.9.0
+  
+  
+  14.21.1 build
+  
+  
+  
+  ```
+  
   - https://github.com/Elringus/DotNetJS  可能的替换品 但它必须用 blazor
   
 - https://www.nuget.org/packages/EdgeJs
@@ -5271,7 +5320,7 @@ namespace ConsoleApplication1
   - https://xiaoiver.github.io/coding/2018/05/14/%E7%BC%96%E8%AF%91-Node.js-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.html  nexe 支持打包node为单一exe
     
 - https://github.com/MadLittleMods/node-usb-detection/  U盘插拔检测
-    
+  
 - https://zhuanlan.zhihu.com/p/569304401  CEF与Node集成【0】架构简介
 
   > 收费咨询
