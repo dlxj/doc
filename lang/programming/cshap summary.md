@@ -5229,6 +5229,16 @@ namespace ConsoleApplication1
   
   - https://github.com/agracio/edge-js/issues/163  编译方法
   
+  - https://github.com/agracio/edge-js/issues/93
+  
+    ```
+    Script CLR from Node.js - this part requires to recompile new versions of Node.js and the binaries are stored under lib/native/win32. When you working with Node.js to CLR interaction you do need to have Node installed and the version you have is the one that is used by your application.
+    
+    Script Node.js from CLR - this is the one you are trying to use. It requires to fully recompile Node.js from source as dll rather than exe and is added to nuget package. Unlike option 1 it has no dependency on Node.js installation on machine and works as a standalone dll with no other dependencies, similar to any other dll that you install from nuget.
+    ```
+  
+    
+  
   ```
   
   # https://github.com/agracio/edge-js/issues/163
@@ -5323,9 +5333,14 @@ namespace ConsoleApplication1
   }
   
   
+  # 上面编译出来的东西，是给 nodejs 用的，是让 nodejs 调 C#，没有 node.dll 生成，
+  	所以控制台项目提示缺少 node.dll 
+  	
   14.21.1 build
   
   
+  
+  # 下面编译 NuGet 包，给 C# 用，让 C# 调用 nodejs
   
   
   
