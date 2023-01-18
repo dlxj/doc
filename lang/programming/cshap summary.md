@@ -5264,8 +5264,24 @@ namespace ConsoleApplication1
   	
   
   npm install
+  	# 出错，没关系，下面先编译，完了以后再来执行一次
   
+  cd tools
   ./build.bat release 18.9.0
+  
+  	# 成功编译
+  
+  npm install
+  	# 编译成功后再执行一次 
+  
+  
+  打开 C:\projects\edge-js\EdgeJs.sln 工程，启动test 项目，提示缺少运行时
+  
+  https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-1.1.2-windows-x64-binaries
+  	下载后，放在 C:\Program Files\dotnet\shared\Microsoft.NETCore.App\1.1.2
+  
+  再次运行，成功！
+  
   
   
   14.21.1 build
