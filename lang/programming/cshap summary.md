@@ -5288,7 +5288,45 @@ namespace ConsoleApplication1
   
   
   
+  # 建一个控制台新项目，添加引用项目 edgejs ，只需要加这一个
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+  
+  using EdgeJs;
+  
+  namespace ConsoleApp1
+  {
+      class Program
+      {
+          public static async Task Start()
+          {
+              var func = Edge.Func(@"
+              return function (data, callback) {
+                  callback(null, 'Node.js welcomes ' + data);
+              }
+          ");
+  
+              Console.WriteLine(await func(".NET"));
+          }
+  
+  
+          static void Main(string[] args)
+          {
+              Start().Wait();
+  
+              var a = 1;
+          }
+      }
+  }
+  
+  
   14.21.1 build
+  
+  
+  
   
   
   
@@ -5586,6 +5624,16 @@ class Program
     }
 }
 ```
+
+
+
+```
+# 命令行编译 sln
+test>"C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.com" build\1.sln /Build
+
+```
+
+
 
 
 
