@@ -5229,7 +5229,11 @@ namespace ConsoleApplication1
   
   - https://github.com/agracio/edge-js/issues/163  编译方法
   
+    - https://github.com/agracio/edge-js#building-edgejs-nuget-package 编译 Nuget 包的方法
+  
   - https://github.com/agracio/edge-js/issues/93
+  
+  - https://github.com/atom/node  node编译为 dll 的方法
   
     ```
     Script CLR from Node.js - this part requires to recompile new versions of Node.js and the binaries are stored under lib/native/win32. When you working with Node.js to CLR interaction you do need to have Node installed and the version you have is the one that is used by your application.
@@ -5342,7 +5346,10 @@ namespace ConsoleApplication1
   
   # 下面编译 NuGet 包，给 C# 用，让 C# 调用 nodejs
   
+  打开vs2019 开发者命令行窗口 Developer Command Prompt for VS 2019
   
+  cd C:\projects\edge-js\tools
+  build_double_new.bat 18.9.0
   
   
   ```
