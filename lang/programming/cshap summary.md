@@ -5350,6 +5350,9 @@ namespace ConsoleApplication1
   
   cd C:\projects\edge-js\tools
   build_double_new.bat 18.9.0
+  	# 命令行里编译失败，但是值接打开 node.sln 什么都不改，可以编译成功
+  	# C:\projects\edge-js\tools\build\node-18.9.0\out\Debug\libnode.dll
+  
   
   
   ```
