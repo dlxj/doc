@@ -5223,6 +5223,8 @@ namespace ConsoleApplication1
 
 ## nodejs
 
+### C# 调 nodejs
+
 - https://github.com/agracio/edge-js
   
   - https://github.com/agracio/edge-js/issues/163  编译方法
@@ -5268,6 +5270,8 @@ namespace ConsoleApplication1
   
   cd tools
   ./build.bat release 18.9.0
+  	./build.bat debug 18.9.0
+  		# 这样方便以后断点调试
   
   	# 成功编译
   
@@ -5585,7 +5589,13 @@ class Program
 
 
 
-## eval 中使用await
+### nodejs 调 C# dll
+
+- https://github.com/dealenx/edge-js-example-dll
+
+  
+
+### eval 中使用await
 
 - https://stackoverflow.com/questions/63030198/how-to-use-async-await-with-eval-function-in-javascript
 
