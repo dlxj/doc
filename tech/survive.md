@@ -83,6 +83,13 @@ https://pe.metaquant.org/
 
 
 
+# mdx 词典制作
+
+- https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=44885&extra=page%3D1%26filter%3Dtypeid%26typeid%3D71
+- https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=36415
+
+
+
 # mac mdx 词典
 
 
