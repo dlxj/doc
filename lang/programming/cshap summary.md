@@ -5805,6 +5805,12 @@ int WinMain(HINSTANCE hInstance,
 
 
 
+#### 日语翻译器
+
+- https://github.com/hanmin0822/MisakaTranslator  翻译器
+
+
+
 ### nodejs 调 C# dll
 
 - https://github.com/dealenx/edge-js-example-dll
