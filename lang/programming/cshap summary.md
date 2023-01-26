@@ -5380,6 +5380,9 @@ namespace ConsoleApplication1
   
   > ```
   > I was able to compile my Windows dll using @davidhouweling 's updated node.gyp from #30695
+  > 
+  > Run nuget pack to generate the .nupkg file
+  > nuget pack <project-name>.nuspec
   > ```
   
   ```
