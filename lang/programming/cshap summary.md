@@ -5763,7 +5763,8 @@ int WinMain(HINSTANCE hInstance,
 
   wchar_t* wargv[] = {
     L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\node2.exe",
-    L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\pmserver\\server.js",
+    (wchar_t*)lpCmdLine,
+    //L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\pmserver\\server.js",
     nullptr
   };
 
