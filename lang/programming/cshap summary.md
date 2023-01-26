@@ -5752,15 +5752,48 @@ $(TargetDir)pmserver\\server.js
 node 工程 -> 链接 -> 子系统  改成： 窗口 (/SUBSYSTEM:WINDOWS)
 
 node_main.cc 加入
-int WinMain(HINSTANCE hInstance,
-  HINSTANCE hPrevInstance,
-  LPSTR lpCmdLine,
-  int nShowCmd) {
 
-	// 里面再调原来的 wmain
+#include <string>
+int WinMain(HINSTANCE hInstance,
+            HINSTANCE hPrevInstance,
+            LPSTR lpCmdLine,
+            int nShowCmd) {
+
+  int argc = 2;
+
+  wchar_t* wargv[] = {
+    L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\node2.exe",
+    L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\pmserver\\server.js",
+    nullptr
+  };
+
+  //char** argv = new char*[argc + 1];
+
+  //wchar_t *v1 =  // 这参数是没有用到的
+
+  //wchar_t *v2 = L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\pmserver\\server.js";  // 脚本路径
+
+
+  //// 先算大小
+  //DWORD size = WideCharToMultiByte(
+  //    CP_UTF8, 0, v1, -1, nullptr, 0, nullptr, nullptr);
+  //DWORD size2 = WideCharToMultiByte(
+  //    CP_UTF8, 0, v2, -1, nullptr, 0, nullptr, nullptr);
+
+  //// 再转 utf8
+  //argv[0] = new char[size];
+  //DWORD result = WideCharToMultiByte(
+  //    CP_UTF8, 0, v1, -1, argv[0], size, nullptr, nullptr);
+  //argv[1] = new char[size2];
+  //DWORD result = WideCharToMultiByte(
+  //    CP_UTF8, 0, v2, -1, argv[1], size2, nullptr, nullptr);
+
+
+  wmain(argc, wargv);
 
   return 0;
 }
+
 ```
 
 
