@@ -5738,6 +5738,33 @@ test>"C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\I
 
 
 
+#### 去掉node 的黑窗
+
+- https://zhuanlan.zhihu.com/p/573089992
+
+
+
+```
+
+node 工程 -> 调试 -> 命令行参数：
+$(TargetDir)pmserver\\server.js
+
+node 工程 -> 链接 -> 子系统  改成： 窗口 (/SUBSYSTEM:WINDOWS)
+
+node_main.cc 加入
+int WinMain(HINSTANCE hInstance,
+  HINSTANCE hPrevInstance,
+  LPSTR lpCmdLine,
+  int nShowCmd) {
+
+	// 里面再调原来的 wmain
+
+  return 0;
+}
+```
+
+
+
 
 
 ### nodejs 调 C# dll
