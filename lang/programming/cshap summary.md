@@ -5799,6 +5799,10 @@ int WinMain(HINSTANCE hInstance,
 
 
 
+#### mpv.net
+
+- https://github.com/mpvnet-player/mpv.net
+
 
 
 ### nodejs 调 C# dll
