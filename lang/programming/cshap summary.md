@@ -5383,6 +5383,42 @@ namespace ConsoleApplication1
   > 
   > Run nuget pack to generate the .nupkg file
   > nuget pack <project-name>.nuspec
+  > 
+  > 一切正常，但是 edgejs 调用时 内存错误了，尝试直接调用 node.dll
+  > 
+  > dll.cpp
+  > #include <stdint.h>
+  > extern "C" __declspec(dllexport) uint64_t factorial(int max) {
+  >     int i = max;
+  >     uint64_t result = 1;
+  >     while (i >= 2) {
+  >         result *= i--;
+  >     }
+  >     return result;
+  > }
+  > 
+  > 
+  > call.c
+  > 
+  > #include "stdio.h"
+  > #include "windows.h"
+  > 
+  > #pragma comment(lib, "C:\\Users\\i\\source\\repos\\ConsoleApplication1\\x64\\Debug\\Dll1.lib")
+  > 
+  > extern int factorial(int max);
+  > 
+  > int main()
+  > {
+  > 
+  >     int cc = factorial(3);
+  > 
+  >     HMODULE    ghDLL = NULL;
+  >     //ghDLL = LoadLibrary("C:\\Users\\i\\source\\repos\\ConsoleApplication1\\x64\\Debug\\Dll1.dll");
+  >     ghDLL = LoadLibrary("C:\\Users\\i\\source\\repos\\ConsoleApplication1\\x64\\Debug\\node.dll");
+  >     
+  >     int a = 1;
+  > 
+  > }
   > ```
   
   ```

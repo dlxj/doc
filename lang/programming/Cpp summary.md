@@ -42,6 +42,12 @@
 
 
 
+Unicode 字符集会调用失败
+
+ **注意：常规 -> 高级 ->  使用多字节字符集**
+
+
+
 ### stdcall
 
 ```
@@ -451,6 +457,10 @@ https://github.com/xanatos/CSharpCPlusPlusInteropSamples
 
 
 
+
+## dll 注入进程
+
+- https://github.com/AYIDouble/Simple-DLL-Injection
 
 
 
