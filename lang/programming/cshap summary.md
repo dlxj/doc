@@ -5374,6 +5374,45 @@ namespace ConsoleApplication1
 
 - https://bbs.kanxue.com/thread-68730.htm  exe当作dll 来调用
 
+- https://github.com/nodejs/node/issues/28845  成功编译dll
+
+  - https://github.com/nodejs/node/pull/30695/commits
+  
+  > ```
+  > I was able to compile my Windows dll using @davidhouweling 's updated node.gyp from #30695
+  > ```
+  
+  ```
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+  using EdgeJs;
+  
+  namespace ConsoleApp1
+  {
+      class Program
+      {
+          public static async Task Start()
+          {
+              var func = Edge.Func(@"
+              return function (data, callback) {
+                  callback(null, 'Node.js welcomes ' + data + process.version);
+              }
+          ");
+  
+              Console.WriteLine(await func(".NET"));
+          }
+  
+          static void Main(string[] args)
+          {
+              Start().Wait();
+          }
+      }
+  }
+  ```
+  
   
 
 
