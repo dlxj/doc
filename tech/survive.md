@@ -30,6 +30,8 @@
 
 - https://ja.annas-archive.org/
 
+- 三省堂全訳漢辞海 ios有
+
   
 
 # anime
@@ -72,7 +74,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 
 
