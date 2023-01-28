@@ -5829,6 +5829,35 @@ int WinMain(HINSTANCE hInstance,
 
 
 
+
+
+## cpp
+
+### C# 调用 c++
+
+```
+
+ [DllImport(@"COM_DLL.dll", EntryPoint = "TOEC_ComRun", CharSet = CharSet.Ansi, ExactSpelling = false, CallingConvention = CallingConvention.Winapi)]
+ public static extern int CPP_Run(CallBack cb);
+ public delegate void CallBack(tagOutInfo data);
+ private CallBack cb_f;
+ CPP_Run(handle_sx, par, cb_f );
+ public void Init(){
+   cb_f=CallBack_Function;
+ }
+ public void CallBack_Function(tagOutInfo data)
+ {   
+ //.....回调函数体
+ }
+
+```
+
+
+
+
+
+
+
 # OS 兼容
 
 
