@@ -5966,6 +5966,75 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 
 #### 传指针
 
+- https://gist.github.com/esskar/3779066
+
+  ```
+  // cpp
+  #include <stdio.h>
+  #include <Windows.h>
+  
+  struct Name
+  {	
+  	char FirstName[100];
+  	char LastName[100];
+  	char *Array[3];
+  };
+  
+  extern "C" __declspec(dllexport) void __cdecl GetName(struct Name *name)
+  {
+  	strncpy_s(name->FirstName, "FirstName", sizeof(name->FirstName));
+  	name->Array[0] = "Foo 0";
+  	name->Array[1] = "Foo 1";
+  	name->Array[2] = "Foo 2";
+  }
+  
+  extern "C" __declspec(dllexport) void __cdecl Hello()
+  {
+  	printf("Hello\n");
+  }
+  
+  
+  // cs
+  using System;
+  using System.Runtime.InteropServices;
+  
+  namespace TestApp
+  {
+      class Program
+      {
+          [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+          public struct Name
+          {
+              [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 100)]
+              public string FirstName;
+              [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 100)]
+              public string LastName;
+              [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
+              public string[] Array;
+          };
+  
+          [DllImport("TestDll.dll")]
+          public static extern void GetName(ref Name name);
+  
+          [DllImport("TestDll.dll")]
+          public static extern void Hello();
+  
+          static void Main(string[] args)
+          {
+              Hello();
+              var name = new Name();
+              GetName(ref name);
+              Console.WriteLine(name.FirstName);
+              foreach (var s in name.Array)
+                  Console.WriteLine(s);
+          }
+      }
+  }
+  
+  ```
+
+  
+
 - https://blog.csdn.net/youqingyike/article/details/39253045
 
 
