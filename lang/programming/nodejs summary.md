@@ -1742,6 +1742,57 @@ console.log('end')
 
 ```
 
+# 真的完全解决问题了
+
+// npm config set python D:\usr\Python38\python.exe
+// npm install @kaciras/deasync  // 依赖 node-gyp https://github.com/nodejs/node-gyp
+// npm install franc
+
+const { deasync } = require("@kaciras/deasync")
+
+async function vmrun(code, params, callback) {
+
+    let imports = params.imports
+    for (let model of imports) {
+        params[model] = await import(model)
+    }
+
+    const vm = require('vm')
+    const options = {}
+    const { timeout = 120 * 1000, breakOnSigint = true } = options
+    const script = new vm.Script(`(async()=>{${code}})()`);
+    script.runInContext(vm.createContext({
+        ...params,
+        callback
+    }), {
+        timeout,
+        breakOnSigint,
+    })
+}
+
+// 同步运行，在 vm 里跑传入的 nodejs 代码, 约定代码里调用 callback(null, { msg:'hi,,,' }) 来返回结果
+const vmrunSync = deasync((code, params, callback) => {
+    vmrun(code, params, callback)
+})
+
+
+let code = `
+    console.log(fs)  // fs 是事先 import 好的模块，这里可以直接用  所有可用参数都在这里展开了：  ...params
+    console.log('hello, from vm')
+    return callback(null, { msg:'hi,,,' })
+`
+
+let re = vmrunSync( code, { imports: ['fs'] } ) // deasync 的作用是去掉了最最外层的 await
+```
+
+
+
+
+
+
+
+```
+
 # 这个好 好像完全解决问题了
 (async()=>{
 
