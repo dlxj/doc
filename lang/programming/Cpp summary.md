@@ -48,6 +48,96 @@ Unicode 字符集会调用失败
 
 
 
+### C++ 调用 node.dll
+
+
+
+```
+
+// C++ 调用 node.dll
+
+#include <iostream>
+
+#include "windows.h"
+
+int main()
+{
+    HINSTANCE   ghDLL = NULL;
+    ghDLL = LoadLibrary("D:\\GitHub\\node-14.21.1\\out\\Debug\\node.dll");
+
+    typedef int (_cdecl* FunctionPtr) (int argc, wchar_t* wargv[]);
+
+    FunctionPtr wmain;
+
+    wmain = (FunctionPtr)GetProcAddress(ghDLL, "wmain");
+
+    int argc = 2;
+
+    wchar_t* wargv[] = {
+      (wchar_t*)L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\node2.exe",
+      (wchar_t*)L"C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\pmserver\\server.js",
+      nullptr
+    };
+
+    wmain(argc, wargv);
+
+    std::cout << "Hello World!\n";
+}
+```
+
+
+
+### C# 调用 node.dll
+
+
+
+````
+
+// C# 调用 node.dll
+
+using System.Runtime.InteropServices;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        [DllImport("user32.dll", EntryPoint = "MessageBoxA")]
+        public static extern int MsgBox(int hWnd, string msg, string caption, int type);
+
+        // 定义给 C# 的传参，全部参数都定义在这个结构数组里
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct wmain_params
+        {
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
+            public string[] wargv;  // 大小固定为 3 个元素，最后一个元素设置为空指针，表示结束
+        }
+        [DllImport("D:\\GitHub\\node-14.21.1\\out\\Debug\\node.dll", EntryPoint = "wmain", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        public static extern int wmain(int argc,  ref wmain_params wargv);
+
+
+        static void Main(string[] args)
+        {
+
+            wmain_params pms = new wmain_params();
+            pms.wargv = new string[] {
+                "C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\node2.exe",
+                "C:\\projects\\edge-js\\tools\\build\\node-14.21.1\\out\\Debug\\pmserver\\server.js",
+                null
+            };
+
+            wmain(2, ref pms);
+
+
+            MsgBox(0, "C#调用DLL文件", "这是标题", 0x30);
+        }
+    }
+}
+````
+
+
+
+
+
 ### stdcall
 
 ```
