@@ -5931,7 +5931,42 @@ AddManyItems(string name, string[] items)
 
 
 
+```
+static Encoding _encoding = RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? Encoding.UTF32 : Encoding.Default;
 
+Using that, you can get the string length for marshalling back to managed code as such:
+
+public static unsafe int WStringLength(byte* bytes, Encoding encoding)
+        {
+            byte[] zero = encoding.GetBytes(new char[] { '\0' });
+            int sizeof_Char = zero.Length;
+            int i = 0;
+            while(true)
+            {
+                for(int j=0; j < zero.Length; j++) 
+                {
+                    if(bytes[i * sizeof_Char + j] != 0) 
+                    {
+                        break;
+                    }
+                    return i;
+                }
+                i++;
+            }
+        }
+
+[...]
+public unsafe string MarshalNativeToManaged(IntPtr input)
+{
+  return new string((sbyte*)input, 0, WStringHelper.WStringLength((byte*)input, _encoding) * sizeof_Char, _encoding);
+}
+```
+
+
+
+#### 传指针
+
+- https://blog.csdn.net/youqingyike/article/details/39253045
 
 
 
