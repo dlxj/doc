@@ -5970,6 +5970,18 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 
 
 
+#### 传指针数组
+
+- https://wurang.net/csharp_calling_c_dll_conversion_of_char/
+
+
+
+#### 传结构体
+
+- https://blog.51cto.com/u_15067227/4125021
+
+
+
 
 
 # OS 兼容
