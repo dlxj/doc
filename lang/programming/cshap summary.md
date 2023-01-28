@@ -5835,6 +5835,28 @@ int WinMain(HINSTANCE hInstance,
 
 ### C# 调用 c++
 
+
+
+```
+using System.Runtime.InteropServices;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        [DllImport("user32.dll", EntryPoint = "MessageBoxA")]
+        public static extern int MsgBox(int hWnd, string msg, string caption, int type);
+
+        static void Main(string[] args)
+        {
+            MsgBox(0, "C#调用DLL文件", "这是标题", 0x30);
+        }
+    }
+}
+```
+
+
+
 ```
 
  [DllImport(@"COM_DLL.dll", EntryPoint = "TOEC_ComRun", CharSet = CharSet.Ansi, ExactSpelling = false, CallingConvention = CallingConvention.Winapi)]
@@ -5851,6 +5873,63 @@ int WinMain(HINSTANCE hInstance,
  }
 
 ```
+
+
+
+```
+// header
+extern "C" __declspec(dllexport) wchar_t* SysGetLibInfo(void);
+
+// implementation
+extern "C" __declspec(dllexport) wchar_t* SysGetLibInfo(void)
+{
+    return TEXT("Hello from unmanaged world!");
+}
+
+
+  [DllImport("NativeLibrary.dll", CallingConvention = CallingConvention.Cdecl)]
+    [return: MarshalAs(UnmanagedType.LPTStr)]
+    static extern string SysGetLibInfo();
+    
+    
+    
+    extern "C" __declspec(dllexport) wchar_t* SysGetLibInfo(void)
+{
+    wchar_t* pStr = (wchar_t*)CoTaskMemAlloc(100);
+
+    ZeroMemory(pStr, 100);
+
+    wcscpy(pStr, TEXT("Hello from unmanaged world!"));
+
+    return pStr;
+}
+
+then [return: MarshalAs(UnmanagedType.LPWStr)] will work too.
+
+```
+
+
+
+```
+AddManyItems(string name, string[] items)
+{
+ unsafe 
+ {
+    // Iterate through the array items and marshal the strings to a IntPtr[]
+    // Use Marshal.StringToHGlobalUni or similar here. 
+    // Check https://github.com/mono/CppSharp/blob/main/src/Generator/Types/Std/Stdlib.CSharp.cs#L118
+    IntPtr[] strings = items.Select((s) => Marshal.StringToHGlobalUni(s)).ToArray();
+    char*[] ptrs = strings.Select((s) => (char*)s.ToPointer());
+    fixed (char** arr = &ptrs)
+    {
+      __Internal.AddManyItems(name, arr);
+    }
+    // Call Marshal.FreeHGlobal on ptrs items
+  }
+}
+```
+
+
 
 
 
