@@ -2874,6 +2874,32 @@ where en @@ to_tsquery('rebell')
 
 
 
+# KV存储
+
+- https://blog.csdn.net/neweastsun/article/details/92849375
+
+  > ```
+  > CREATE EXTENSION hstore;
+  > 	# 启用内置扩展，
+  > 	
+  > CREATE TABLE books (
+  >    id serial primary key,
+  >    title VARCHAR (255),
+  >    attr hstore
+  > );
+  > 
+  > INSERT INTO books (title, attr)
+  > VALUES
+  >    (
+  >       'PostgreSQL Tutorial',
+  >       '"paperback" => "243",
+  >       "publisher" => "postgresqltutorial.com",
+  >       "language"  => "English",
+  >       "ISBN-13"   => "978-1449370000",
+  >        "weight"   => "11.2 ounces"'
+  >    );
+  > ```
+
 
 
 # pool
