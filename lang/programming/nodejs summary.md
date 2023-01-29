@@ -5091,6 +5091,16 @@ flushdb 清空当前数据库
 
 
 
+## RedisGraph  图数据库
+
+- https://zhuanlan.zhihu.com/p/102679312
+
+
+
+## RedisInsight 管理工具
+
+- https://zhuanlan.zhihu.com/p/476056075 
+
 
 
 # nginx
