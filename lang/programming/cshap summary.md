@@ -5894,6 +5894,15 @@ int WinMain(HINSTANCE hInstance,
 
 ##### nodejs 源码分析
 
+> ```
+> Welcome to Node.js
+>   # 源码里面搜这个，就可以找到交互式执行代码的地方
+>   D:\GitHub\node-14.21.1\lib\internal\main\repl.js
+>   
+> ```
+>
+> 
+
 - https://github.com/nodejs/help/issues/3048  
 
   ```
@@ -5999,6 +6008,7 @@ int WinMain(HINSTANCE hInstance,
   
   ```
 
+- https://juejin.cn/post/7065989551080570917  Node.js 源码分析 - 从 main 函数开始
 - https://github.com/DavidCai1111/my-blog/issues/28
 
 - https://github.com/yjhjstz/deep-into-node/blob/master/chapter2/chapter2-2.md
