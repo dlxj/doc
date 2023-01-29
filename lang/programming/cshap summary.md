@@ -5931,6 +5931,15 @@ int WinMain(HINSTANCE hInstance,
 >                print);
 > 	});
 > 
+> 
+> eval_stdin
+> 	# 源码里面搜这个，可以找到命令行交互最开始的地方
+> 
+> 	D:\GitHub\node-14.21.1\src\node.cc
+> 		StartExecution(Environment* env, StartExecutionCallback cb) {
+> 			
+> 			return StartExecution(env, "internal/main/eval_stdin");
+> 			
 > ```
 >
 > 
