@@ -5899,6 +5899,38 @@ int WinMain(HINSTANCE hInstance,
 >   # 源码里面搜这个，就可以找到交互式执行代码的地方
 >   D:\GitHub\node-14.21.1\lib\internal\main\repl.js
 >   
+> readStdin
+>   # 源码里面搜这个，可以找到命令行输入代码回车并回调的过程
+>   D:\GitHub\node-14.21.1\lib\internal\process\execution.js
+>   	function readStdin(callback) {
+>   		process.stdin.setEncoding('utf8');
+> 
+>   		let code = '';
+>  		process.stdin.on('data', (d) => {
+>     		code += d;
+>   		});
+> 
+>   		process.stdin.on('end', () => {
+>     		callback(code);
+>   		});
+> 	}
+> 
+> 	D:\GitHub\node-14.21.1\lib\internal\main\eval_stdin.js
+> 	
+> 	readStdin((code) => {
+> 
+>   		process._eval = code;
+> 
+>   		const print = getOptionValue('--print');
+>   		if (getOptionValue('--input-type') === 'module')
+>     		evalModule(code, print);
+>   		else
+>     		evalScript('[stdin]',
+>                code,
+>                getOptionValue('--inspect-brk'),
+>                print);
+> 	});
+> 
 > ```
 >
 > 
