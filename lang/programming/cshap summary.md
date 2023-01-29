@@ -5892,7 +5892,118 @@ int WinMain(HINSTANCE hInstance,
 
 
 
+##### nodejs 源码分析
 
+- https://github.com/nodejs/help/issues/3048  
+
+  ```
+  Can node::Environment (or NodeJS instances) run more than one script at a time
+  
+  #include <assert.h>
+  #include <stdio.h>
+  #include <execinfo.h>
+  #include <signal.h>
+  #include <stdlib.h>
+  #include <unistd.h>
+  #include <node.h>
+  #include <uv.h>
+  
+  void segfault_handler(int sig) {
+    void *array[10];
+    size_t size;
+    // get void*'s for all entries on the stack
+    size = backtrace(array, 10);
+    // print out all the frames to stderr
+    fprintf(stderr, "Error: signal %d:\n", sig);
+    backtrace_symbols_fd(array, size, STDERR_FILENO);
+    exit(1);
+  }
+  
+  std::unique_ptr<node::MultiIsolatePlatform> platform;
+  std::unique_ptr<node::CommonEnvironmentSetup> setup;
+  v8::Global<v8::Function> require;
+  
+  void run_javascript(node::MultiIsolatePlatform *platform, node::CommonEnvironmentSetup *setup, const char *code) {
+    // obtain + lock isolate
+    v8::Isolate* isolate= setup->isolate();
+    node::Environment* node_env = setup->env();
+    v8::Local<v8::Context> context = isolate->GetCurrentContext();
+    v8::Locker locker(isolate);
+    v8::Isolate::Scope isolateScope(isolate);
+    v8::HandleScope handle_scope(isolate);
+    v8::Context::Scope context_scope(setup->context());
+    // require('vm').runInThisContext(code)
+    v8::Local<v8::String> vm_string = v8::String::NewFromUtf8Literal(isolate, "vm");
+    v8::Local<v8::Value> function_args[1];
+    function_args[0] = vm_string;
+    v8::Local<v8::Value> vm_value = require.Get(isolate)->Call(setup->context(), v8::Null(isolate), 1, function_args).ToLocalChecked();
+    v8::Local<v8::Object> vm_object = vm_value.As<v8::Object>();
+    v8::Local<v8::String> run_in_this_context_string = v8::String::NewFromUtf8Literal(isolate, "runInThisContext");
+    v8::Local<v8::Function> run_in_this_context = vm_object->Get(setup->context(), run_in_this_context_string).ToLocalChecked().As<v8::Function>();
+    v8::Local<v8::String> script_string = v8::String::NewFromUtf8(isolate, code, v8::NewStringType::kNormal).ToLocalChecked();
+    function_args[0] = script_string;
+    run_in_this_context->Call(setup->context(), v8::Null(isolate), 1, function_args);
+  }
+  
+  int main(int argc, char *argv[]) {
+    // segfault
+    signal(SIGSEGV, segfault_handler);
+    // args
+    argv = uv_setup_args(argc, argv);
+    std::vector<std::string> args(argv, argv + argc);
+    std::vector<std::string> exec_args;
+    std::vector<std::string> errors;
+    // InitializeNodeWithArgs
+    int ret_val = node::InitializeNodeWithArgs(&args, &exec_args, &errors);
+    assert(ret_val == 0);
+    // MultiIsolatePlatform::Create
+    int thread_pool_size = 4;
+    platform = node::MultiIsolatePlatform::Create(thread_pool_size);
+    // InitializePlatform
+    v8::V8::InitializePlatform(platform.get());
+    v8::V8::Initialize();
+    // CommonEnvironmentSetup::Create
+    setup = node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args);
+    assert(setup);
+    // set global require
+    {
+      // obtain + lock iolsate
+      v8::Isolate* isolate= setup->isolate();
+      node::Environment* node_env = setup->env();
+      v8::Local<v8::Context> context = isolate->GetCurrentContext();
+      v8::Locker locker(isolate);
+      v8::Isolate::Scope isolateScope(isolate);
+      v8::HandleScope handle_scope(isolate);
+      v8::Context::Scope context_scope(setup->context());
+      // node::LoadEnvironment
+      v8::MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(
+        node_env,
+        [&](const node::StartExecutionCallbackInfo& info) -> v8::MaybeLocal<v8::Value> {
+          require.Reset(isolate, info.native_require);
+        }
+      );
+    }
+    // run code
+    {
+      run_javascript(platform.get(), setup.get(), "console.log('hello world')");
+      run_javascript(platform.get(), setup.get(), "console.log('hello world')");
+    }
+    // cleanup
+    {
+      node::Environment* node_env = setup->env();
+      node::Stop(node_env);
+    }
+    // exit
+    return 0;
+  }
+  
+  ```
+
+- https://github.com/DavidCai1111/my-blog/issues/28
+
+- https://github.com/yjhjstz/deep-into-node/blob/master/chapter2/chapter2-2.md
+
+- https://developer.aliyun.com/article/592873
 
 
 
