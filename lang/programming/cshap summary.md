@@ -5918,6 +5918,13 @@ int WinMain(HINSTANCE hInstance,
 >                               const char* event,
 >                               Local<Value> message) {
 > 
+> 
+> d:\github\node-14.21.1\lib\internal\bootstrap\node.js
+> 	# 在 js 进程对象里面定义发送特定消息的方法 
+> 	const { emitWarning } = require('internal/process/warning');
+> 	process.emitWarning = emitWarning;
+> 
+> 
 > Welcome to Node.js
 > # 源码里面搜这个，就可以找到交互式执行代码的地方
 > D:\GitHub\node-14.21.1\lib\internal\main\repl.js
@@ -6092,7 +6099,11 @@ int WinMain(HINSTANCE hInstance,
   >
   > - https://github.com/gatewayapps/kamino   clone github issue
 
-  
+- https://cloud.tencent.com/developer/article/1929213  在 Node.js 和 C++ 之间**使用 Buffer 共享数据**
+
+
+
+
 
 #### mpv.net
 
