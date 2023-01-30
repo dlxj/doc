@@ -5985,6 +5985,10 @@ int WinMain(HINSTANCE hInstance,
 
 - https://github.com/nodejs/help/issues/3048  
 
+  - https://github.com/nodejs/node/blob/v18.12.1/test/embedding/embedtest.cc  
+
+    > 编译18.12.1 应该就可以运行下面的代码了
+
   ```
   Can node::Environment (or NodeJS instances) run more than one script at a time
   
