@@ -2072,6 +2072,48 @@ const { timeout = 120 * 1000, breakOnSigint = true } = {}
 
 
 
+## 定义属性
+
+```
+#　D:\GitHub\node-14.21.1\lib\repl.js
+
+function REPLServer(prompt,
+                    stream,
+                    eval_,
+                    useGlobal,
+                    ignoreUndefined,
+                    replMode) {
+  if (!(this instanceof REPLServer)) {
+    return new REPLServer(prompt,
+                          stream,
+                          eval_,
+                          useGlobal,
+                          ignoreUndefined,
+                          replMode);
+  }
+
+  ObjectDefineProperty(this, 'inputStream', {
+    get: pendingDeprecation ?
+      deprecate(() => this.input,
+                'repl.inputStream and repl.outputStream are deprecated. ' +
+                  'Use repl.input and repl.output instead',
+                'DEP0141') :
+      () => this.input,　　// 当作函数直接执行
+    set: pendingDeprecation ?
+      deprecate((val) => this.input = val,
+                'repl.inputStream and repl.outputStream are deprecated. ' +
+                  'Use repl.input and repl.output instead',
+                'DEP0141') :
+      (val) => this.input = val,  // 代参数的函数执行
+    enumerable: false,
+    configurable: true
+  });
+```
+
+
+
+
+
 # Regex
 
 
