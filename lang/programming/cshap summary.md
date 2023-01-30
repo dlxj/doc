@@ -6101,7 +6101,24 @@ int WinMain(HINSTANCE hInstance,
 
 - https://cloud.tencent.com/developer/article/1929213  在 Node.js 和 C++ 之间**使用 Buffer 共享数据**
 
+- https://cnodejs.org/topic/60aff08e1de2d96635d5a9bc  Node.js的底层原理
 
+  > ```
+  > 首先Node.js会调用registerBuiltinModules函数注册C++模块，这个函数会调用一系列registerxxx的函数，我们发现在Node.js源码里找不到这些函数，因为这些函数会在各个C++模块中，通过宏定义实现的。宏展开后就是上图黄色框的内容，每个registerxxx函数的作用就是往C++模块的链表了插入一个节点，最后会形成一个链表。
+  > 
+  > 那么Node.js里是如何访问这些C++模块的呢？在Node.js中，是通过internalBinding访问C++模块的，internalBinding的逻辑很简单，就是根据模块名从模块队列中找到对应模块。但是这个函数只能在Node.js内部使用，不能在用户js模块使用。用户可以通过process.binding访问C++模块。
+  > 
+  > 注册完C++模块后就开始创建Environment对象，Environment是Node.js执行时的环境对象，类似一个全局变量的作用，他记录了Node.js在运行时的一些公共数据。创建完Environment后，Node.js会把该对象绑定到V8的Context中，为什么要这样做呢？主要是为了在V8的执行上下文里拿到env对象，因为V8中只有Isolate、Context这些对象。如果我们想在V8的执行环境中获取Environment对象的内容，就可以通过Context获取Environment对象。
+  > 
+  > ```
+
+- https://blog.csdn.net/theanarkh/article/details/113870194 **nodejs的js调用c++以及c++调用libuv过程**
+
+  > ```
+  > 
+  > ```
+  >
+  > 
 
 
 
