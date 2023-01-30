@@ -6063,7 +6063,11 @@ int WinMain(HINSTANCE hInstance,
 
   > **Nodejs进程间通信**  必看
 
+- https://github.com/xtx1130/blog/issues/10 
 
+  > **node_js2c的前世今生** 必看
+
+  
 
 #### mpv.net
 
