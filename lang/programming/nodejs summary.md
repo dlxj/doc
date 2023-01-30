@@ -3052,6 +3052,27 @@ The index of the first occurrence of searchString found, or -1 if not found
 
 
 
+### replace函数还可以有回调
+
+```
+// Escape a string for use as text in an HTML document
+String.prototype.$escape = function() {
+  return this.replace(/[&<>"']/g, function(m) {
+    switch (m) {
+      case '&': return '&amp;';
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '"': return '&quot;';
+      case '\'': return '&#039;';
+      default: assert.fail(`Should escape character ${m}`);
+    }
+  });
+ 
+}
+```
+
+
+
 
 
 ## split
