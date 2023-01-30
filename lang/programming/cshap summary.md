@@ -6050,11 +6050,18 @@ int WinMain(HINSTANCE hInstance,
   ```
 
 - https://juejin.cn/post/7065989551080570917  Node.js 源码分析 - 从 main 函数开始
+
 - https://github.com/DavidCai1111/my-blog/issues/28
 
 - https://github.com/yjhjstz/deep-into-node/blob/master/chapter2/chapter2-2.md
 
 - https://developer.aliyun.com/article/592873
+
+- https://juejin.cn/post/7068480351697371149  为Node.js创建一个自定义的REPL
+
+- http://www.ayqy.net/blog/nodejs%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/
+
+  > **Nodejs进程间通信**  必看
 
 
 

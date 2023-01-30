@@ -3763,6 +3763,24 @@ _.isEmpty(dic_ansers)
 
 
 
+## 加料
+
+```
+  opts = {
+    [kStandaloneREPL]: true,  // [] 是因为名字已存在吧？
+    ignoreUndefined: false,
+    useGlobal: true,
+    breakEvalOnSigint: true,
+    ...opts	// 原先的值在这里展开
+  }
+```
+
+
+
+
+
+
+
 ## Object.assign
 
 
@@ -3809,6 +3827,35 @@ foo() // undefined 5
 ```
 _.valuesIn(obj)
 ```
+
+
+
+## 后面参数全部从第一参展开得到
+
+```
+function REPLServer(prompt,
+                    stream,
+                    eval_,
+                    useGlobal,
+                    ignoreUndefined,
+                    replMode) {
+  let options;
+  if (prompt !== null && typeof prompt === 'object') {
+    // An options object was given.
+    options = { ...prompt };
+    stream = options.stream || options.socket;
+    eval_ = options.eval;
+    useGlobal = options.useGlobal;
+    ignoreUndefined = options.ignoreUndefined;
+    prompt = options.prompt;
+    replMode = options.replMode;
+  } else {
+    options = {};
+  }                    
+                
+```
+
+
 
 
 
