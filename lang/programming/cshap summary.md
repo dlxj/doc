@@ -6389,6 +6389,60 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 
 # 网络请求
 
+
+
+## Downloader
+
+- https://github.com/bezzad/Downloader
+
+```
+                void OnDownloadStarted(object sender, DownloadStartedEventArgs e)
+                {
+                    var fname = $"Downloading {Path.GetFileName(e.FileName)}";
+                }
+
+                void OnDownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+                {
+                    if (e.Cancelled)
+                    {
+                    }
+                    else if (e.Error != null)
+                    {
+
+                    }
+                    else
+                    {
+                        // 下载完成
+                    }
+
+                }
+
+
+                //
+                // 开始下载文件
+                //
+                var downloadOpt = new DownloadConfiguration()
+                {
+                    ChunkCount = 1, // file parts to download, default value is 1
+                    OnTheFlyDownload = false, // caching in-memory or not? default values is true
+                    ParallelDownload = false // download parts of file as parallel or not. Default value is false
+                };
+                var downloader = new DownloadService(downloadOpt);
+                downloader.DownloadStarted += OnDownloadStarted;
+                downloader.DownloadFileCompleted += OnDownloadFileCompleted;
+                
+                
+                
+                    await downloader.DownloadFileTaskAsync(fileURL, dst); 
+                    
+                    // await downloader.DownloadFileTaskAsync("https://xxx.oss-cn-hangzhou.aliyuncs.com/tk_ppt/487937/73234/123.pptx", @"G:\123.pptx");
+
+```
+
+
+
+
+
 ## RestSharp
 
 ```
