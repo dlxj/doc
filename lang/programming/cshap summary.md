@@ -5895,40 +5895,57 @@ int WinMain(HINSTANCE hInstance,
 ##### nodejs 源码分析
 
 > ```
+> # D:\GitHub\node-14.21.1\lib\repl.js
+> 	# 执行代码并回调在这里
+>     const evalCmd = self[kBufferedCommandSymbol] + cmd + '\n';
+> 		# evalCmd 是要执行的代码
+>     console.log(`evalCmd is: ${evalCmd}`)
+> 
+>     debug('eval %j', evalCmd);console.log(`here is: self.eval(evalCmd, self.context, getREPLResourceName(), finish)`);
+>     self.eval(evalCmd, self.context, getREPLResourceName(), finish);
+> 
+>     function finish(e, ret) {
+>     	# ret 是代码执行返回的结果
+> 
+> 
+> self.emit('line', self._line_buffer);
+> 	# 发送消息，可以执行一行代码
+> 
+> 
 > Welcome to Node.js
->   # 源码里面搜这个，就可以找到交互式执行代码的地方
->   D:\GitHub\node-14.21.1\lib\internal\main\repl.js
->   
+> # 源码里面搜这个，就可以找到交互式执行代码的地方
+> D:\GitHub\node-14.21.1\lib\internal\main\repl.js
+> 
 > readStdin
->   # 源码里面搜这个，可以找到命令行输入代码回车并回调的过程
->   D:\GitHub\node-14.21.1\lib\internal\process\execution.js
->   	function readStdin(callback) {
->   		process.stdin.setEncoding('utf8');
+> # 源码里面搜这个，可以找到命令行输入代码回车并回调的过程
+> D:\GitHub\node-14.21.1\lib\internal\process\execution.js
+> 	function readStdin(callback) {
+> 		process.stdin.setEncoding('utf8');
 > 
->   		let code = '';
->  		process.stdin.on('data', (d) => {
->     		code += d;
->   		});
+> 		let code = '';
+> 		process.stdin.on('data', (d) => {
+>  		code += d;
+> 		});
 > 
->   		process.stdin.on('end', () => {
->     		callback(code);
->   		});
+> 		process.stdin.on('end', () => {
+>  		callback(code);
+> 		});
 > 	}
 > 
 > 	D:\GitHub\node-14.21.1\lib\internal\main\eval_stdin.js
 > 	
 > 	readStdin((code) => {
 > 
->   		process._eval = code;
+> 		process._eval = code;
 > 
->   		const print = getOptionValue('--print');
->   		if (getOptionValue('--input-type') === 'module')
->     		evalModule(code, print);
->   		else
->     		evalScript('[stdin]',
->                code,
->                getOptionValue('--inspect-brk'),
->                print);
+> 		const print = getOptionValue('--print');
+> 		if (getOptionValue('--input-type') === 'module')
+>  		evalModule(code, print);
+> 		else
+>  		evalScript('[stdin]',
+>             code,
+>             getOptionValue('--inspect-brk'),
+>             print);
 > 	});
 > 
 > 
