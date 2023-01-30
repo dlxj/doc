@@ -5912,6 +5912,12 @@ int WinMain(HINSTANCE hInstance,
 > 	# 发送消息，可以执行一行代码
 > 
 > 
+> D:\GitHub\node-14.21.1\src\node_process_events.cc
+> 	# C++ 如可给 js 发消息？
+> 	MaybeLocal<Value> ProcessEmit(Environment* env,
+>                               const char* event,
+>                               Local<Value> message) {
+> 
 > Welcome to Node.js
 > # 源码里面搜这个，就可以找到交互式执行代码的地方
 > D:\GitHub\node-14.21.1\lib\internal\main\repl.js
