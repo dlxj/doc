@@ -6387,6 +6387,64 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 
 
 
+# 网络请求
+
+## RestSharp
+
+```
+/// <summary>
+        /// Post提交
+        /// </summary>
+        /// <param name="url">提交地址</param>
+        /// <param name="content">提交的Post信息</param>
+        /// <param name="contentType">提交信息格式类型</param>
+        /// <returns></returns>
+        public static string HttpPost(string url, string content, string contentType)
+        {
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest();
+                request.Method = Method.Post;
+                request.Timeout = 5000;
+                request.AddParameter(contentType, content, ParameterType.RequestBody);
+                var response = client.Execute(request);
+                return response.Content;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+        
+        
+         /// <summary>
+        /// Get提交
+        /// </summary>
+        /// <param name="url">提交地址</param>
+        /// <returns></returns>
+        public static string HttpGet(string url)
+        {
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest();
+                request.Method = Method.Get;
+                request.Timeout = 5000;
+                request.AddHeader("content-type", "text/html; charset=utf-8");
+                request.AddHeader("content-encoding", "gzip");
+                var response = client.Execute(request);
+                return response.Content;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+```
+
+
+
 
 
 # OS 兼容
