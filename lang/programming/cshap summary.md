@@ -5896,6 +5896,15 @@ int WinMain(HINSTANCE hInstance,
 
 > ```
 > # D:\GitHub\node-14.21.1\lib\repl.js
+> 	# REPLServer 内部可以直接执行代码
+> 	function REPLServer
+> 		  # 加在最后面执行成功
+> 		  console.log(`here is self.eval(111)`)
+>   			self.eval(`111`, self.context, getREPLResourceName(), function(e, ret) {
+>     			console.log(e)
+>     			console.log(ret)
+>   			})
+> 
 > 	# 执行代码并回调在这里
 >     const evalCmd = self[kBufferedCommandSymbol] + cmd + '\n';
 > 		# evalCmd 是要执行的代码
