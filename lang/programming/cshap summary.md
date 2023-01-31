@@ -119,6 +119,90 @@ Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时�
 
 ## Json
 
+- https://www.cnblogs.com/xtxk110/archive/2019/10/11/11654486.html  转DataTable 有行和列
+- https://blog.csdn.net/q__y__L/article/details/103566693  真 高级用法
+
+
+
+## 扩展
+
+```
+
+https://stackoverflow.com/questions/14886800/convert-jobject-into-dictionarystring-object-is-it-possible
+
+	using Newtonsoft.Json;
+	using Newtonsoft.Json.Linq;
+
+    public static class JObjectExtensions
+    {
+        public static IDictionary<string, object> ToDictionary(this JObject @object)
+        {
+            var result = @object.ToObject<Dictionary<string, object>>();
+
+            var JObjectKeys = (from r in result
+                               let key = r.Key
+                               let value = r.Value
+                               where value.GetType() == typeof(JObject)
+                               select key).ToList();
+
+            var JArrayKeys = (from r in result
+                              let key = r.Key
+                              let value = r.Value
+                              where value.GetType() == typeof(JArray)
+                              select key).ToList();
+
+            JArrayKeys.ForEach(key => result[key] = ((JArray)result[key]).Values().Select(x => ((JValue)x).Value).ToArray());
+            JObjectKeys.ForEach(key => result[key] = ToDictionary(result[key] as JObject));
+
+            return result;
+        }
+    }
+    
+    
+    string code = @"
+                console.log(fs)  // fs 是事先 import 好的模块，这里可以直接用  所有可用参数都在这里展开了：  ...params
+                console.log('hello, from vm')
+                return callback({ msg:'hi,,,' }) // 约定最后以 callback 返回值
+            ";
+
+            string imports = @"
+                [""fs""]
+            ";
+
+            try
+            {
+                var url = "http://127.0.0.1:8880/vm/vmrun";
+                var client = new RestClient(url);
+                var request = new RestRequest();
+                request.Method = Method.Post;
+                request.Timeout = 5000;
+                request.AddHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8");
+                request.AddParameter("application/x-www-form-urlencoded", $"code={WebUtility.UrlEncode(code)}&imports={WebUtility.UrlEncode(imports)}", ParameterType.RequestBody);
+
+                var response = client.Execute(request);
+                string jsonstr = response.Content;
+
+
+                JObject obj = JObject.Parse(jsonstr);
+                int status = obj.Value<int>("status");
+                if (status != 200)
+                {
+                    throw new Exception($"接口请求失败: {url}");
+                }
+
+                var d = obj.ToDictionary();
+
+                int a = 1;
+            }
+            catch (Exception ex)
+            {
+                int b = 1;
+            }
+    
+```
+
+
+
 
 
 ```
