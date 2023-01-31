@@ -6455,7 +6455,7 @@ using RestSharp;
                 request.Method = Method.Post;
                 request.Timeout = 5000;
                 request.AddHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8");
-                request.AddParameter("application/x-www-form-urlencoded", "code=callback(1)", ParameterType.RequestBody);
+                request.AddParameter("application/x-www-form-urlencoded", $"code={WebUtility.UrlEncode(code)}&imports={WebUtility.UrlEncode(imports)}", ParameterType.RequestBody);
 
                 var response = client.Execute(request);
                 string data = response.Content;
