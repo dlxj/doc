@@ -6446,6 +6446,31 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 ## RestSharp
 
 ```
+using RestSharp;
+
+            try
+            {
+                var client = new RestClient("http://127.0.0.1:8880/vm/vmrun");
+                var request = new RestRequest();
+                request.Method = Method.Post;
+                request.Timeout = 5000;
+                request.AddHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8");
+                request.AddParameter("application/x-www-form-urlencoded", "code=callback(1)", ParameterType.RequestBody);
+
+                var response = client.Execute(request);
+                string data = response.Content;
+                int a = 1;
+            }
+            catch (Exception ex)
+            {
+                int b = 1;
+            }
+
+```
+
+
+
+```
 /// <summary>
         /// Post提交
         /// </summary>
