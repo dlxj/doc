@@ -6448,6 +6448,16 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 ```
 using RestSharp;
 
+            string code = @"
+                console.log(fs)  // fs 是事先 import 好的模块，这里可以直接用  所有可用参数都在这里展开了：  ...params
+                console.log('hello, from vm')
+                return callback({ msg:'hi,,,' }) // 约定最后以 callback 返回值
+            ";
+
+            string imports = @"
+                [""fs""]
+            ";
+
             try
             {
                 var client = new RestClient("http://127.0.0.1:8880/vm/vmrun");
