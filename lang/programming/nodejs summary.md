@@ -3476,7 +3476,38 @@ module.exports = NodeSharp;
 
 ## 语言检测
 
-- https://github.com/wooorm/franc
+- https://github.com/wooorm/franc 中英混合检测不准确，只有一种语言还可以
+- https://github.com/dachev/node-cld
+
+
+
+```
+(async()=>{
+
+  const cld = require('cld');
+
+
+  //let text = `string code = $"let lang = francAll({text}", [@"{ only:['jpn','cmn','eng'」}"})ln"+ @"//console.log(fs）//fs 是事先 import 好的模块，这里可以直接用所有可用参数都在这里展开了：，.·params//console.log(franc)//console. log(' hello, from vm)returncallback（【msg：'hi，，，，lang）//约定最后以callback返回值`
+  
+  //let text = `aabbccxxxxxxxxxxxxxxxxxxxxxxxxxxxxaaaaaaaabbbbvcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+
+  let text = `中文`
+
+  let { franc, francAll } = await import('franc')
+
+  let lang = francAll(text, { only: ['jpn','cmn', 'eng'], minLength: 1 })
+
+  //const result = await cld.detect(text);
+  //console.log(result);
+
+  let a = 1
+
+})()
+```
+
+
+
+
 
 ```
 github 

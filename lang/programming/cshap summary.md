@@ -189,6 +189,8 @@ https://stackoverflow.com/questions/14886800/convert-jobject-into-dictionarystri
                 {
                     throw new Exception($"接口请求失败: {url}");
                 }
+                
+                var m = obj["data"]["msg"].ToString();
 
                 var d = obj.ToDictionary();
 
@@ -6249,8 +6251,6 @@ int WinMain(HINSTANCE hInstance,
 
 
 
-
-
 ## cpp
 
 ### C# 调用 c++
@@ -6468,6 +6468,18 @@ public unsafe string MarshalNativeToManaged(IntPtr input)
 #### 传结构体
 
 - https://blog.51cto.com/u_15067227/4125021
+
+
+
+## python
+
+
+
+### C# 调用 python dll
+
+- https://blog.51cto.com/u_15221047/2807071
+
+
 
 
 
