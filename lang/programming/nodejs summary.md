@@ -4764,6 +4764,32 @@ require('fs').stat(Path.join(__dirname, '.next'), (err, stats) => {
 
 - https://github.com/extrabacon/python-shell
 
+### 源码编译
+
+- https://blog.51cto.com/u_15069442/4117615
+
+
+
+```
+
+编译环境 win10 + vs2019
+
+cd Python-3.8.16\PCbuild
+./get_externals.bat
+	# 安装 
+
+Python-3.8.16\PCbuild\pcbuild.sln
+	# 打开解决方案
+	
+选择python 项目，编译类型为 x64，开始编译
+
+
+
+	
+```
+
+
+
 
 
 # network
