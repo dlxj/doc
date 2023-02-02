@@ -8,6 +8,12 @@
 
 
 
+# 处理路径
+
+- https://blog.csdn.net/zeqi1991/article/details/110531406
+
+
+
 # 无法在分区上安装windows
 
 ```
