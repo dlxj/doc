@@ -156,6 +156,10 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 
+## cnpm
+
+
+
 ```
 管理员身份运行 powershell
 	set-executionpolicy remotesigned
@@ -175,8 +179,37 @@ npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org
 
 
 npm install -g cnpm --registry=https://registry.npm.taobao.org
-	# 安装的是最新版 会有兼容问题
+	# 安装是最新版 会有兼容问题
+	
+	
 ```
+
+
+
+### Rprimordials is not defined
+
+- https://blog.csdn.net/qiqi_zhangzz/article/details/106599233
+
+```
+
+先把 node_models 全删了
+
+package.json 同级目录新建 npm-shrinkwrap.json
+
+{
+  "dependencies": {
+    "graceful-fs": {
+      "version": "4.2.3"
+    }
+  }
+}
+
+npm i
+	# 注意只有这一次有效果，再 npm i 就没效果了
+
+```
+
+
 
 
 
