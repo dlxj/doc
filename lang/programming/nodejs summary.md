@@ -192,7 +192,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 ```
 
-先把 node_models 全删了
+先把 node_modules 全删了
 
 package.json 同级目录新建 npm-shrinkwrap.json
 
