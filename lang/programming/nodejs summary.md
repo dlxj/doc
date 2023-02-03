@@ -4788,6 +4788,22 @@ Python-3.8.16\PCbuild\pcbuild.sln
 	Lib 或者和可执行文件同级目录，或着在它的上级，会一直往上找，找不到就报错了
 	
 
+dll 入口, python.c重命名为 python.cc，代码改成下面这样
+#include "Python.h"
+#include "pycore_pylifecycle.h"
+
+extern "C" __declspec(dllexport) int wmain(int argc, wchar_t* wargv[]) {
+    return Py_Main(argc, wargv);
+}
+
+#ifdef MS_WINDOWS
+int mmain(int argc, wchar_t **argv)
+{
+    return wmain(argc, argv);
+}
+
+
+exe 入口，test_python_dll.cc
 #include <iostream>
 
 #include "windows.h"
