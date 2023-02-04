@@ -79,13 +79,14 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 
 
 # 俄语
 
 - http://www.simplecd.cc/page-ZbZPxeYm.html
+
 - https://www.wanmen.org/courses/586d23485f07127674135d2a/lectures/586d23535f07127674158989
   - 俄语初级（上）_吴石磊
 
@@ -94,6 +95,12 @@ https://pe.metaquant.org/
   - https://kotobank.jp/rujaword/%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE
 
 - [FRT Sora] Pocket Monsters   搜这个，俄语字幕 XY
+
+- https://rutracker.org/forum/viewtopic.php?t=5049106 **海贼 俄日英字幕**
+
+- https://zh.m.wikibooks.org/zh-hans/%E4%BF%84%E8%AF%AD/%E4%BB%A3%E8%AF%8D
+
+  > этот 阳性第一格
 
 
 
