@@ -32,6 +32,9 @@
 
 - https://zhuanlan.zhihu.com/p/587849884  **IPFS 图书**
 
+  - https://www.yeeach.com/post/2291
+    - https://github.com/book-searcher-org/book-searcher
+
 - 三省堂全訳漢辞海 ios有
 
   

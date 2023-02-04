@@ -39,6 +39,12 @@ apt install python3-pip
 
 
 
+### pip 一开代理就出错
+
+- https://note.bobo.moe/2021/02/clash-for-windows-pip-proxyerror.html
+
+
+
 ## 升级pip
 
 ```
