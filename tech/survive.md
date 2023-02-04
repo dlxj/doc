@@ -98,7 +98,9 @@ https://pe.metaquant.org/
 
 - https://rutracker.org/forum/viewtopic.php?t=5049106 **海贼 俄日英字幕**
 
-- https://zh.m.wikibooks.org/zh-hans/%E4%BF%84%E8%AF%AD/%E4%BB%A3%E8%AF%8D
+- http://cblle.tufs.ac.jp/dic/ru/v_search_list.php?serchTxt=этот
+
+  - https://zh.m.wikibooks.org/zh-hans/%E4%BF%84%E8%AF%AD/%E4%BB%A3%E8%AF%8D
 
   > этот 阳性第一格
 
