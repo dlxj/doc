@@ -149,6 +149,59 @@
 
 
 
+
+
+# 对比韩语
+
+- https://www.bilibili.com/video/BV1w4411e7Bz
+
+- 日语用训读汉字书写的和语词，韩语借入时按对应汉字直接音读了，例如
+
+> 소포-小包-小包み（包裹）
+>  수입-手入-手入れ（保养） 
+> 매상-賣上-売り上げ（营业额）
+
+- 日语用对音借字书写的[外来词](https://www.zhihu.com/search?q=外来词&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1285427117})，韩语借入时按对应汉字直接音读了，例如
+
+> 독일-獨逸-独逸-ドイツ-Deutsch（[德意志](https://www.zhihu.com/search?q=德意志&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1285427117})-德国）借自德语（原义为“德国的”）
+
+- 韩语通过日语借入葡、法、英、德语等西方语言的音译词，例如
+
+> 빵-パン（面包）对应葡语pão、西语pan、法语pain
+> 아르바이트-アルバイト（兼职）借自德语Arbeit（原义为“工作”）
+
+- 韩语从日语借入，但来源不确定的词，例如「가방-かばん-鞄-手包」
+
+> 有说法称，日语かばん来源于「夹板」，未经证实
+
+- 疑似来源相关的词，例如「곰-くま-熊-熊」
+
+
+
+錢大昕《古無輕唇音》:"凡輕脣之音，古讀皆爲重脣。"。證之韓國至今也無輕脣音  [f ], [v]。韓音與古漢語的音又一相連證據。
+
+例如：
+
+- ＂方＂，＂房＂，＂發＂，＂犯＂，＂法＂等，普通話聲母是＂f＂，韓音都讀重脣音＂ㅂ＂。
+-  西方小提琴 violin，韓音바이올린，聲母都是"ㅂ"。
+
+～～～
+
+又例如韩语跟中国南方好些方言一样，都保留了p、t、k三个入声。普通话则没有入声。
+
+韩语的对应规律是[ t〕一律改为[ l ]。
+
+例如“一”， 粵语 [ jat ]7， 韩语是 일 [ il ]。
+链接：https://www.zhihu.com/question/47919082/answer/108264719
+
+## 读法 从左到右 从上到下
+
+
+
+
+
+
+
 # 输入法
 
 ![image-20230130222350371](japanese summary.assets/image-20230130222350371.png)

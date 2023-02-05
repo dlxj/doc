@@ -83,6 +83,12 @@ https://pe.metaquant.org/
 
 
 
+# 韩语
+
+- https://zh.dict.naver.com/#/search?query=박수   可以查各国语言
+
+
+
 # 俄语
 
 - http://www.simplecd.cc/page-ZbZPxeYm.html
