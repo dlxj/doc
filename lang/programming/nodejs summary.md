@@ -11811,10 +11811,16 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
   
   git clone -b 3.5.1-stable https://github.com/godotengine/godot.git
   
+  启动"x64 Native Tools Command Prompt for VS"
+  
+  cd cd /d E:
   cd E:\t\godot
   
   scons platform=windows
-  
+  	scons p=windows tools=no target=release use_lto=no deprecated=no vsproj=no debug_symbols=no
+  	# 编译发布版本
+  	scons p=windows tools=yes target=release_debug use_lto=no deprecated=no vsproj=yes debug_symbols=yes
+  	# 编译Debug版本
   
   
   ```
