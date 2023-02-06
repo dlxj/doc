@@ -43,6 +43,16 @@ apt install python3-pip
 
 - https://note.bobo.moe/2021/02/clash-for-windows-pip-proxyerror.html
 
+```
+powershell 执行：
+	(get-command pip).Path
+		# D:\usr\Python38\Scripts\pip.exe
+	
+	
+```
+
+
+
 
 
 ## 升级pip
