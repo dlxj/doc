@@ -11798,7 +11798,29 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # Godot
 
+## 源码编译
+
 - https://github.com/Orama-Interactive/Pixelorama
+
+  - https://docs.godotengine.org/en/latest/contributing/development/compiling/compiling_for_windows.html
+
+  ```
+  安装 Godot 3.5
+  
+  python -m pip install scons
+  
+  git clone -b 3.5.1-stable https://github.com/godotengine/godot.git
+  
+  cd E:\t\godot
+  
+  scons platform=windows
+  
+  
+  
+  ```
+
+- https://blog.csdn.net/my_business/article/details/7816736  **scons** 是类 cmake 工作，用python语法
+
 - https://github.com/RodZill4/material-maker
 
 - https://github.com/touilleMan/godot-python  **godot + python**
