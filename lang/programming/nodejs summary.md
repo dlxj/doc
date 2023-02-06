@@ -11810,6 +11810,8 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
   
   python -m pip install scons
   
+  python -m pip install --upgrade pywin32
+  
   git clone -b 3.5.1-stable https://github.com/godotengine/godot.git
   
   启动"x64 Native Tools Command Prompt for VS"
