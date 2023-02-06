@@ -41,7 +41,19 @@ apt install python3-pip
 
 ### pip 一开代理就出错
 
+- https://myblog.quantumcloud.top/2022/07/08/833fc93abede/  **必看**
+
 - https://note.bobo.moe/2021/02/clash-for-windows-pip-proxyerror.html
+
+```
+powershell 执行：
+	(get-command pip).Path
+		# D:\usr\Python38\Scripts\pip.exe
+	
+	
+```
+
+
 
 
 
