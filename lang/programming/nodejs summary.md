@@ -11837,13 +11837,13 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
-### 可调窗体
+## 可调窗体
 
 - https://github.com/gilzoide/godot-dockable-container
 
 
 
-### 拷贝大量数据
+## 拷贝大量数据
 
 ```
 # https://github.com/touilleMan/godot-python/issues/329
@@ -11879,6 +11879,24 @@ LMDB不仅可以用来存放训练和测试用的数据集，还可以存放神�
 数据类型多种多样，比如：二进制文件、文本文件、编码后的图像文件jpeg、png等，不可能用一套代码实现所有类型的输入数据读取，因此通过LMDB数据库，转换为统一数据格式可以简化数据读取层的实现。
 lmdb具有极高的存取速度，大大减少了系统访问大量小文件时的磁盘IO的时间开销。LMDB将整个数据集都放在一个文件里，避免了文件系统寻址的开销，你的存储介质有多快，就能访问多快，不会因为文件多而导致时间长。LMDB使用了内存映射的方式访问文件，这使得文件内寻址的开销大幅度降低。
 ```
+
+
+
+## 显示网页 
+
+- https://github.com/stigmee/gdnative-cef  嵌入cef
+
+```
+OS.shell_open("url")
+	# 调用系统功能
+
+if OS.has_feature('JavaScript'):
+    JavaScript.eval("""
+        window.open('https://google.com', '_blank').focus();
+    """)
+```
+
+
 
 
 
