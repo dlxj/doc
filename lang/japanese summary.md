@@ -153,6 +153,10 @@
 
 # 对比韩语
 
+## 查多语词典
+
+- https://zh.dict.naver.com/#/search?query=박수   可以查各国语言
+
 - https://www.bilibili.com/video/BV1w4411e7Bz
 
 - 日语用训读汉字书写的和语词，韩语借入时按对应汉字直接音读了，例如
@@ -195,6 +199,10 @@
 链接：https://www.zhihu.com/question/47919082/answer/108264719
 
 ## 读法 从左到右 从上到下
+
+
+
+### 韩语连浊
 
 
 
