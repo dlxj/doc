@@ -11803,6 +11803,7 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 - https://github.com/Orama-Interactive/Pixelorama
 
   - https://docs.godotengine.org/en/latest/contributing/development/compiling/compiling_for_windows.html
+  - https://blog.csdn.net/feiyunw/article/details/121861944  必看
 
   ```
   安装 Godot 3.5
