@@ -8938,6 +8938,12 @@ vi /etc/ssh/sshd_config
 
 systemctl start sshd
 	# 启动ssh
+	# 发现不成功
+		systemctl start polkit
+			--> polkit.service not found
+			yum install polkit
+				systemctl start polkit
+					--> unsupported run type 'dbus'  # 算了，不用 ssh 了
 
 eixt
 	# 退出容器
@@ -9016,6 +9022,18 @@ yum install nmap
 ## 如果需要更多的端口映射
 
 - https://www.cnblogs.com/miracle-luna/p/13714709.html  找不到 iptables
+
+  ```
+  systemctl stop firewalld && \
+  systemctl mask firewalld && \
+  yum install -y iptables iptables-services && \
+  systemctl start iptables && \
+  systemctl status iptables && \
+  systemctl enable iptables
+  
+  ```
+
+  
 
 ```
 # https://blog.opensvc.net/yun-xing-zhong-de-dockerrong-qi/
