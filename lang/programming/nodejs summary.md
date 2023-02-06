@@ -8874,8 +8874,47 @@ systemctl
 
 ```
 
+cd D:\GitHub\echodict\docker\centos7_server_8880
+
+docker cp systemctl.py centos77:/root
+
+docker exec -it centos77 /bin/bash
+
+cd /root
+
+mv /usr/bin/systemctl /usr/bin/systemctl.old
+
+cp systemctl.py /usr/bin/systemctl
+
+chmod +X /usr/bin/systemctl
+	# 后面用它运行 ssd 服务确实成功了 
 
 
+```
+
+
+
+## 传文件 
+
+```
+传文件
+
+cd D:\GitHub\echodict\docker\centos7_server_8880
+
+docker cp systemctl.py centos77:/root
+
+
+
+
+docker ps
+	# 显示容器 ID
+	6f7dcc6f9fa3  quay.io/centos/centos:7  /sbin/init  8 hours ago  Up 8 hours ago  0.0.0.0:222->22/tcp  centos7_server_6006
+
+
+docker cp /xxx/project/aicbyserver_v2 centos7_server_6006:/project
+	# 复制代码
+docker cp /usr/local/node-v14.17.0-linux-x64 centos7_server_6006:/usr/local
+	# 复制node
 ```
 
 
@@ -8905,9 +8944,10 @@ eixt
 
 
 
-docker inspect centos7_server_6006 | grep IPAddress
+docker inspect centos77 | grep IPAddress
 	# 查看IP
 	--> "IPAddress": "10.88.0.2"
+	--> 172.17.0.2 Docker for windows 是这个
 	
 passwd root
 	# 修改密码，容器名就是密码
