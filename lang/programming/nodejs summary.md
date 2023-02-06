@@ -11814,10 +11814,11 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
   
   启动"x64 Native Tools Command Prompt for VS"
   
-  cd cd /d E:
-  cd E:\t\godot
   
-  scons platform=windows
+  cd /d E:\t\godot
+  
+  scons platform=windows vsproj=yes
+  	# 成功生成解决方案 godot\godot.sln
   	scons p=windows tools=no target=release use_lto=no deprecated=no vsproj=no debug_symbols=no
   	# 编译发布版本
   	scons p=windows tools=yes target=release_debug use_lto=no deprecated=no vsproj=yes debug_symbols=yes
