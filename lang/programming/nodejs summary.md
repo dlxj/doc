@@ -7612,6 +7612,13 @@ http {
 
 # docker
 
+> ```
+> doc\lang\programming\postgresql summary.md  看这里
+> ### Xshell如何连接Docker容器中的Linux
+> ```
+
+
+
 - https://juejin.cn/post/6857283423380504584
 
   > 如何查看Docker容器环境变量，如何向容器传递环境变量
@@ -8810,8 +8817,8 @@ if ($networks -notmatch 'customnetwork') {
     Write-Host 'customnetwork create success'
 }
 
-New-Item -ItemType Directory -Path centos7_server_6006
-cd centos7_server_6006
+New-Item -ItemType Directory -Path centos7_server_8880
+cd centos7_server_8880
 New-Item -ItemType File -Path Dockerfile
 
 Write-Output "FROM centos:7
@@ -8836,6 +8843,156 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
     
    
  
+
+```
+
+
+
+## 解决 Failed to get D-Bus connection
+
+```
+
+docker run -d --name centos77 --privileged=true centos:7 /usr/sbin/init
+	# 特权模式运行
+
+docker ps -a
+
+docker run --name centos77 -tdi --privileged centos:7 init 
+
+docker exec -it centos77 /bin/bash
+
+systemctl
+	# 实测 win10 的 docker desktop 出错
+
+
+```
+
+
+
+- https://www.jianshu.com/p/e670ae82e97a 替换 systemctl 法
+  - https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl.py  下载
+
+```
+
+
+
+```
+
+
+
+
+
+## ssh 进 docker
+
+
+
+```
+
+yum install openssh-server -y
+	# 安装ssh
+
+vi /etc/ssh/sshd_config
+	# 修改配置
+	PermitRootLogin yes # 改成这个
+	UsePAM no # 改成这个
+
+
+systemctl start sshd
+	# 启动ssh
+
+eixt
+	# 退出容器
+
+
+
+docker inspect centos7_server_6006 | grep IPAddress
+	# 查看IP
+	--> "IPAddress": "10.88.0.2"
+	
+passwd root
+	# 修改密码，容器名就是密码
+	centos7_server_6006
+
+systemctl stop firewalld
+	# 关闭防火墙
+
+ssh root@10.88.0.2 -p 22
+	# 登录看看
+	--> 成功
+```
+
+
+
+
+
+## 指定端口是否开放
+
+```
+yum install nmap
+	# 扫描指定端口是否开放	
+	nmap 118.178.137.176 -p222
+		PORT    STATE  SERVICE
+		222/tcp closed rsh-spx	
+			# 端口并没有开放
+
+	netstat -aptn | grep -i 222
+		tcp        0      0 0.0.0.0:222             0.0.0.0:*               LISTEN      45594/conmon
+			# 好像本地 222 端口是开放了的
+
+	lsof -i:222
+		conmon  45594 root    5u  IPv4 446985      0t0  TCP *:rsh-spx (LISTEN)
+			# 也是显示开放了
+
+
+	https://blog.csdn.net/qq_39176597/article/details/111939051
+		# linux关闭防火墙了，但端口还是访问不了
+
+		systemctl  start  firewalld
+			# 启动防火墙
+			systemctl  status  firewalld
+
+		firewall-cmd --zone=public --add-port=222/tcp --permanent
+		firewall-cmd --zone=public --add-port=222/tcp --permanent
+		firewall-cmd --zone=public --add-port=6006/tcp --permanent
+			# 开放端口
+	
+		firewall-cmd --reload
+			# 重新加载配置文件
+		
+		firewall-cmd --list-ports
+			# 查看已经开放的端口
+
+		systemctl status polkit
+		/usr/lib/polkit-1/polkitd --no-debug &
+
+		docker ps
+		docker stop centos7_server_6006
+```
+
+
+
+
+
+## 如果需要更多的端口映射
+
+- https://www.cnblogs.com/miracle-luna/p/13714709.html  找不到 iptables
+
+```
+# https://blog.opensvc.net/yun-xing-zhong-de-dockerrong-qi/
+
+# 已有端口映射
+iptables -t nat -vnL DOCKER
+  --> tcp dpt:8083 to:172.18.0.2:8083
+  --> tcp dpt:54322 to:172.18.0.3:5432
+
+# 这种方法每次docker 重启会失效
+iptables -t nat -A DOCKER -p tcp --dport 222 -j DNAT --to-destination 172.18.0.3:22
+
+# 获取规则编号
+iptables -t nat -nL --line-number
+
+# 删除某条规则
+iptables -t nat -D DOCKER 编号
 
 ```
 
