@@ -9122,14 +9122,17 @@ docker pull postgres:13
 docker run --name postgres13 -p 222:22 -p 543:5432 --privileged=true -e POSTGRES_PASSWORD=postgres -d postgres:13
 	# 运行后成功连上数据库，但它是基于 ubuntu 的
 
-
-
-
 docker ps -a
 
 docker exec -it postgres13 /bin/bash
 
 systemctl
+	# 没有这个命令
+
+su postgres
+pg_ctl status
+	--> pg_ctl: server is running (PID: 1)
+	# 成功
 
 ```
 
