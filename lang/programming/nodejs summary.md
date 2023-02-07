@@ -8782,6 +8782,14 @@ Final version shouldn't have this problem since the install comes from Windows U
 
 ## Docker Desktop for Windows
 
+### win10 ping 不通 docker
+
+```
+the ip address you see via docker inspect command, is used by docker for internal networking and communication. It's not accessible from outside. 
+```
+
+
+
 ```
 控制面板 -> 程序和功能 -> 启用“适用于Linux的Windows子系统”
 
@@ -8852,12 +8860,10 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 ```
 
-docker run -d --name centos77 --privileged=true centos:7 /usr/sbin/init
+docker run -tid --name centos77 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
 	# 特权模式运行
 
 docker ps -a
-
-docker run --name centos77 -tdi --privileged centos:7 init 
 
 docker exec -it centos77 /bin/bash
 
