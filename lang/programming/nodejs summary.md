@@ -8896,6 +8896,8 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
   - https://github.com/docker-library/docs/tree/master/centos#systemd-integration  详细内容
 
+    > 实测 Docker for windows 一直有问题，可能是 hype-v 的锅，试试看家里的电脑好不好
+
   ```
   docker run -v /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos77 /usr/sbin/init
   
