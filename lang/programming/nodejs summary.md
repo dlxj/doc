@@ -8892,6 +8892,21 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 ## 解决 Failed to get D-Bus connection
 
+- https://serverfault.com/questions/824975/failed-to-get-d-bus-connection-operation-not-permitted 必看
+
+  - https://github.com/docker-library/docs/tree/master/centos#systemd-integration  详细内容
+
+  ```
+  docker run -v /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos77 /usr/sbin/init
+  
+  
+  
+  docker exec -it centos77_postgre /bin/bash
+  
+  ```
+
+  
+
 ```
 
 docker run -tid --name centos77 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
@@ -9133,6 +9148,12 @@ su postgres
 pg_ctl status
 	--> pg_ctl: server is running (PID: 1)
 	# 成功
+
+
+下面安装 rum 插件
+(sleep 1; echo "Y";) | apt-get install build-essential
+
+
 
 ```
 
