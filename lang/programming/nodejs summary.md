@@ -8784,6 +8784,10 @@ Final version shouldn't have this problem since the install comes from Windows U
 
 ### win10 ping 不通 docker
 
+- https://blog.csdn.net/ruibin_cao/article/details/92083243
+
+- https://stackoverflow.com/questions/65426891/networking-problems-with-wsl2-and-docker-desktop-for-windows  
+
 ```
 the ip address you see via docker inspect command, is used by docker for internal networking and communication. It's not accessible from outside. 
 ```
