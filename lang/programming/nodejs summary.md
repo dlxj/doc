@@ -8782,6 +8782,48 @@ Final version shouldn't have this problem since the install comes from Windows U
 
 ## Docker Desktop for Windows
 
+### win10 ping 不通 docker
+
+```
+nmap 172.16.4.195 -p222
+	PORT    STATE SERVICE
+	222/tcp open  rsh-spx
+	# 实测，可能网桥模式必段通过宿主既win10 的端口映射来访问 docker
+```
+
+
+
+- https://blog.csdn.net/ruibin_cao/article/details/92083243
+
+  ```
+  1.1bridge模式
+  Docker网络的默认模式，在docker run启动容器的时候，如果不加--net参数，就默认采用这种网络模式。其特点如下：
+  
+  使用一个 linux bridge，默认为 docker0
+  
+  使用 veth 对，一头在容器的网络 namespace 中，一头在 docker0 上
+  
+  该模式下Docker Container不具有一个公有IP，因为宿主机的IP地址与veth pair的 IP地址不在同一个网段内
+  
+  Docker采用 NAT 方式，将容器内部的服务监听的端口与宿主机的某一个端口port 进行“绑定”，使得宿主机以外的世界可以主动将网络报文发送至容器内部
+  
+  外界访问容器内的服务时，需要访问宿主机的 IP 以及宿主机的端口 port
+  
+  NAT 模式由于是在三层网络上的实现手段，故肯定会影响网络的传输效率。
+  
+  容器拥有独立、隔离的网络栈；让容器和宿主机以外的世界通过NAT建立通信
+  ```
+
+  
+
+- https://stackoverflow.com/questions/65426891/networking-problems-with-wsl2-and-docker-desktop-for-windows  
+
+```
+the ip address you see via docker inspect command, is used by docker for internal networking and communication. It's not accessible from outside. 
+```
+
+
+
 ```
 控制面板 -> 程序和功能 -> 启用“适用于Linux的Windows子系统”
 
@@ -8850,14 +8892,29 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 ## 解决 Failed to get D-Bus connection
 
+- https://serverfault.com/questions/824975/failed-to-get-d-bus-connection-operation-not-permitted 必看
+
+  - https://github.com/docker-library/docs/tree/master/centos#systemd-integration  详细内容
+
+    > 实测 Docker for windows 一直有问题，可能是 hype-v 的锅，试试看家里的电脑好不好
+
+  ```
+  docker run -v /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos77 /usr/sbin/init
+  
+  
+  
+  docker exec -it centos77_postgre /bin/bash
+  
+  ```
+
+  
+
 ```
 
-docker run -d --name centos77 --privileged=true centos:7 /usr/sbin/init
+docker run -tid --name centos77 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true centos:7 /sbin/init
 	# 特权模式运行
 
 docker ps -a
-
-docker run --name centos77 -tdi --privileged centos:7 init 
 
 docker exec -it centos77 /bin/bash
 
@@ -9070,6 +9127,39 @@ docker save centos7_server_6006 > centos7_server_6006.tar
 docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding Byte
 
 ```
+
+
+
+## postgres13
+
+```
+docker pull postgres:13
+	# 直接拉 pg13
+
+docker run --name postgres13 -p 222:22 -p 543:5432 --privileged=true -e POSTGRES_PASSWORD=postgres -d postgres:13
+	# 运行后成功连上数据库，但它是基于 ubuntu 的
+
+docker ps -a
+
+docker exec -it postgres13 /bin/bash
+
+systemctl
+	# 没有这个命令
+
+su postgres
+pg_ctl status
+	--> pg_ctl: server is running (PID: 1)
+	# 成功
+
+
+下面安装 rum 插件
+(sleep 1; echo "Y";) | apt-get install build-essential
+
+
+
+```
+
+
 
 
 
