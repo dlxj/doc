@@ -12443,6 +12443,10 @@ sudo /usr/bin/nvidia-uninstall
 
 
 
+# 显卡直通
+
+- https://blog.csdn.net/weixin_45409343/article/details/122478397
+
 
 
 # 可视化

@@ -13,6 +13,9 @@ nfs 成功
 	vi /etc/exports      # .124
 		/home/data/users/xxx/data_backup/    192.168.2.0/24(rw,sync,no_root_squash,no_all_squash)
 	
+	systemctl restart nfs
+	# 找不到命令改成这个  service nfs-server restart
+	
 	客户端
 		yum -y install nfs-utils
 
