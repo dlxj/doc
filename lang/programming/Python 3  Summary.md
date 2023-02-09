@@ -30,6 +30,12 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+## chatgpt api
+
+- https://github.com/acheong08/ChatGPT
+
+
+
 ## Install pip
 
 ```

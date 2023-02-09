@@ -2000,9 +2000,9 @@ Fast Search Using PostgreSQL Trigram Indexes
     >
     > yum install postgresql13-contrib
     >
-    > create extension tsm_system_rows;
+    > create extension IF NOT EXISTS tsm_system_rows;
     >
-    > create extension tsm_system_time ; 
+    > create extension IF NOT EXISTS tsm_system_time;
     >
     > ```
     > 最多采样10毫秒, 返回符合play_count>=2000的10条. (如果很快就有10条符合条件, 那么不会继续扫描, 所以很快很快)
