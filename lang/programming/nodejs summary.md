@@ -1274,6 +1274,10 @@ node-tick-processor xxxx-v8.log
 
 
 
+# gpt api
+
+- https://github.com/waylaidwanderer/node-chatgpt-api
+
 
 
 # Syntax
