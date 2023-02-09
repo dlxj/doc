@@ -1771,10 +1771,18 @@ sudo yum install ffmpeg ffmpeg-devel
 
 
 ```
+yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+yum -y update && \
+yum search postgresql13 && \
+yum -y install postgresql13 postgresql13-server && \
+/usr/pgsql-13/bin/postgresql-13-setup initdb
+	# 更多内容文档后面：Docker 中的postgreql
+
 yum groupinstall "Development Tools" && \
 yum install centos-release-scl-rh && \
 yum install llvm-toolset-7-clang && \
 yum install postgresql13-devel && \
+yum install postgresql13-contrib && \
 yum install systemtap-sdt-devel
 
 git clone https://github.com/postgrespro/rum && \
@@ -1975,6 +1983,48 @@ Fast Search Using PostgreSQL Trigram Indexes
   
 德哥的PostgreSQL私房菜 - 史上最屌PG资料合集  
 ```
+
+
+
+## 随机查询 && 安装插件
+
+- https://github.com/digoal/blog/blob/master/202105/20210527_01.md  
+
+  - PostgreSQL 随机查询采样 - 既要真随机、又要高性能
+
+  - https://github.com/digoal/blog/blob/master/202005/20200509_01.md 
+
+  -  PostgreSQL 随机采样应用 - table sample, tsm_system_rows, tsm_system_time
+
+    > select name from pg_available_extensions;  # 查询可用扩展
+    >
+    > yum install postgresql13-contrib
+    >
+    > create extension tsm_system_rows;
+    >
+    > create extension tsm_system_time ; 
+    >
+    > ```
+    > 最多采样10毫秒, 返回符合play_count>=2000的10条. (如果很快就有10条符合条件, 那么不会继续扫描, 所以很快很快)
+    > 
+    > explain (analyze,verbose,timing,costs,buffers) select id,play_count from video as v1 TABLESAMPLE system_time(10)  where play_count>=2000 limit 10;  
+    > 
+    > 
+    > 最多采样100条, 返回符合play_count>=2000的10条. (如果很快就有10条符合条件, 那么不会继续扫描, 所以很快很快)
+    > 
+    > explain (analyze,verbose,timing,costs,buffers) select id,play_count from video as v1 TABLESAMPLE  system_rows (100) where play_count>=2000 limit 10;
+    > 
+    > SELECT id, jp_ruby as jp, zh, p.begintime as time, type, name, seasion FROM anime p  TABLESAMPLE  system_rows (10000) WHERE p.v_jp @@ to_tsquery('ここ')  ORDER BY RANDOM()  LIMIT 3;
+    > 
+    > 在时间可控,代价可控的情况下(防止采样雪崩),保证采样随机性.
+    > 如果where条件的记录占比很少很少, 可能达到采样上限后无法返回limit的条数. 这种情况下, 可以选择几种方法:
+    > 1、调大采样上限, 注意防止雪崩
+    > 2、修改where条件, 使得覆盖率变大.
+    > 3、垃圾回收, 使得每个block的空洞变少.
+    > 4、分区, 提高目标采样表中 where 条件符合条件记录的占比.                             
+    > ```
+
+
 
 
 
@@ -2918,6 +2968,14 @@ where en @@ to_tsquery('rebell')
   >        "weight"   => "11.2 ounces"'
   >    );
   > ```
+
+
+
+# 分布式集群
+
+- https://www.xmmup.com/pggaokeyongzhicitusfenbushijiqundajianjishiyong.html  **小麦苗DBA宝典**
+
+- https://github.com/citusdata/citus
 
 
 
