@@ -12207,6 +12207,12 @@ print(result.text)
 
 
 
+### autoCut
+
+- https://github.com/mli/autocut  必看
+
+
+
 # 1660TI
 
 - https://blog.csdn.net/sinat_36721621/article/details/115326307
