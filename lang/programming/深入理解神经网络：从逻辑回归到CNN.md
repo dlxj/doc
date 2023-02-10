@@ -12150,6 +12150,8 @@ Eval:
 
   - https://github.com/openai/whisper/discussions/759 Fine-tuning
 
+    - https://github.com/openai/whisper/discussions/64#discussioncomment-3765117 **细**
+
   - https://github.com/openai/whisper/discussions/908 内存音频
 
   - https://blog.deepgram.com/exploring-whisper/ **必看 很细节**
@@ -12157,6 +12159,8 @@ Eval:
   - https://github.com/openai/whisper/discussions/63 模型下载
 
   - https://github.com/openai/whisper/discussions/360 多 GPU 训练
+
+  - 
 
     > Download links are in [**init**.py](https://github.com/openai/whisper/blob/f296bcd3fac41525f1c5ab467062776f8e13e4d0/whisper/__init__.py) @ lines 17-27
     >
@@ -12298,6 +12302,8 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 ```
 
 
+
+VAD静音检测
 
 
 
