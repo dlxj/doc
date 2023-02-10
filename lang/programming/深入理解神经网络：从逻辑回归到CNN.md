@@ -12140,6 +12140,73 @@ Eval:
 
 
 
+
+
+## whisper
+
+- https://github.com/openai/whisper
+
+- https://zhuanlan.zhihu.com/p/595691785
+
+  ```
+  whisper -> chatgpt -> dalle2 一条龙
+  ```
+
+  
+
+```
+pip install git+https://github.com/openai/whisper.git && \
+apt update && sudo apt install ffmpeg && \
+pip install setuptools-rust
+
+
+whisper 1.wav --language Japanese --model medium
+whisper 1.wav --language Japanese --model medium --task translate
+
+```
+
+
+
+Transcription can also be performed within Python:
+
+```
+import whisper
+
+model = whisper.load_model("base")
+result = model.transcribe("audio.mp3")
+print(result["text"])
+```
+
+Internally, the `transcribe()` method reads the entire file and processes the audio with a sliding 30-second window, performing autoregressive sequence-to-sequence predictions on each window.
+
+Below is an example usage of `whisper.detect_language()` and `whisper.decode()` which provide lower-level access to the model.
+
+```
+import whisper
+
+model = whisper.load_model("base")
+
+# load audio and pad/trim it to fit 30 seconds
+audio = whisper.load_audio("audio.mp3")
+audio = whisper.pad_or_trim(audio)
+
+# make log-Mel spectrogram and move to the same device as the model
+mel = whisper.log_mel_spectrogram(audio).to(model.device)
+
+# detect the spoken language
+_, probs = model.detect_language(mel)
+print(f"Detected language: {max(probs, key=probs.get)}")
+
+# decode the audio
+options = whisper.DecodingOptions()
+result = whisper.decode(model, mel, options)
+
+# print the recognized text
+print(result.text)
+```
+
+
+
 # 1660TI
 
 - https://blog.csdn.net/sinat_36721621/article/details/115326307
