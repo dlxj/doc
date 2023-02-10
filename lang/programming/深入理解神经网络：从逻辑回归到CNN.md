@@ -12307,6 +12307,12 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 
 
 
+### deepfacelab中文论坛
+
+- https://dfldata.xyz/forum.php?mod=viewthread&tid=12403&extra=page%3D1
+
+
+
 # 1660TI
 
 - https://blog.csdn.net/sinat_36721621/article/details/115326307
