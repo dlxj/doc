@@ -1026,7 +1026,7 @@ os.path.dirname(os.path.abspath(__name__))  # ?? directory
 
 ```python
 # 递归创建目录
-currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )   
+currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str(appid) )
 
     if not os.path.exists( currDir ):
         os.makedirs( currDir )

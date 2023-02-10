@@ -12146,6 +12146,63 @@ Eval:
 
 - https://github.com/openai/whisper
 
+  - https://github.com/openai/whisper/discussions/277 中文参数
+
+  - https://github.com/openai/whisper/discussions/759 Fine-tuning
+
+  - https://github.com/openai/whisper/discussions/908 内存音频
+
+  - https://blog.deepgram.com/exploring-whisper/ **必看 很细节**
+
+  - https://github.com/openai/whisper/discussions/63 模型下载
+
+  - https://github.com/openai/whisper/discussions/360 多 GPU 训练
+
+    > Download links are in [**init**.py](https://github.com/openai/whisper/blob/f296bcd3fac41525f1c5ab467062776f8e13e4d0/whisper/__init__.py) @ lines 17-27
+    >
+    > For windows location to download see the above comment, on WSL/Linux they go in
+    > `\\wsl$\Ubuntu\home\[username]\.cache\whisper`
+    >
+    > Note if you are experimenting with both WSL and Windows Native versions you need to put the models in BOTH locations.
+    >
+    > As of today those links are:
+    >
+    > - [tiny.en](https://openaipublic.azureedge.net/main/whisper/models/d3dd57d32accea0b295c96e26691aa14d8822fac7d9d27d5dc00b4ca2826dd03/tiny.en.pt)
+    > - [tiny](https://openaipublic.azureedge.net/main/whisper/models/65147644a518d12f04e32d6f3b26facc3f8dd46e5390956a9424a650c0ce22b9/tiny.pt)
+    > - [base.en](https://openaipublic.azureedge.net/main/whisper/models/25a8566e1d0c1e2231d1c762132cd20e0f96a85d16145c3a00adf5d1ac670ead/base.en.pt)
+    > - [base](https://openaipublic.azureedge.net/main/whisper/models/ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e/base.pt)
+    > - [small.en](https://openaipublic.azureedge.net/main/whisper/models/f953ad0fd29cacd07d5a9eda5624af0f6bcf2258be67c92b79389873d91e0872/small.en.pt)
+    > - [small](https://openaipublic.azureedge.net/main/whisper/models/9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794/small.pt)
+    > - [medium.en](https://openaipublic.azureedge.net/main/whisper/models/d7440d1dc186f76616474e0ff0b3b6b879abc9d1a4926b7adfa41db2d497ab4f/medium.en.pt)
+    > - [medium](https://openaipublic.azureedge.net/main/whisper/models/345ae4da62f9b3d59415adc60127b97c714f32e89e936602e85993674d08dcb1/medium.pt)
+    > - [large](https://openaipublic.azureedge.net/main/whisper/models/e4b87e7e0bf463eb8e6956e646f1e277e901512310def2c24bf0e11bd3c28e9a/large.pt)
+
+    ```
+    beam_size=5
+    best_of=None
+    temperature=0.0
+    
+    decode_options = dict(language="en", best_of=best_of, beam_size=beam_size, temperature=temperature)
+    transcribe_options = dict(task="transcribe", **decode_options)
+    
+    transcription = model.transcribe("kittens_30secs.mp3", **transcribe_options)
+    print(transcription["text"])
+    ```
+
+    
+
+    ```
+    It appears that audio is in int16 dtype, whereas Whisper expects float32 or float16. You may try converting it to a float32 array and dividing it by 32768, similar to what's done in audio.py:
+    
+    whisper/whisper/audio.py
+    
+    Line 49 in 5c1a8c1
+    
+    return np.frombuffer(out, np.int16).flatten().astype(np.float32) / 32768.0 
+    ```
+
+    
+
 - https://zhuanlan.zhihu.com/p/595691785
 
   ```
@@ -12160,8 +12217,14 @@ apt update && sudo apt install ffmpeg && \
 pip install setuptools-rust
 
 
+/root/miniconda3/lib/python3.8/site-packages/whisper/__init__.py
+	# 模型的地址在这
+
 whisper 1.wav --language Japanese --model medium
 whisper 1.wav --language Japanese --model medium --task translate
+
+cp /root/autodl-tmp/large.pt /root/.cache/whisper/large-v2.
+whisper 0a2bfdbf-ef8c-49a7-82a6-dd01891b2478.mp3 --language Japanese --model large
 
 ```
 
@@ -12204,6 +12267,37 @@ result = whisper.decode(model, mel, options)
 # print the recognized text
 print(result.text)
 ```
+
+
+
+```
+task
+--task 分为 transcribe（语音转录）和 translate。Whisper 默认使用 --task transcribe 模式，将语音转录为对应的语言字幕。--task translate 是所有语言翻译为英文，目前尚未支持翻译为其他语言。
+
+language
+--language 是设置语音转录的语种，支持语种范围查看 tokenizer.py，比如指定日语 --language japanese。如果你没指定语种，Whisper 会截取音频的前 30 秒来判断语种。
+
+如果指定语种与文件中的语种并不相同，Whisper 会强制翻译，但 10 分钟以上的音视频会出现大量的重复无意义字幕。2假设你把日语视频的转录语言设为汉语，前 8 分钟 Whisper 会正确转录到中文，但 8 分钟后的转录字幕会一直重复，并与实际片段无关。
+
+model
+--model 指 Whisper 的转录模型，转录效果为 tiny < base < small < medium < large，默认使用 small。添加参数 --model medium 或 --model large 可以切换到更大的模型，但转录时间也会变长。如果你是对英文视频进行转录，则在模型参数上添加后缀 .en，能提升转录速度。
+
+幻听参数
+非英语视频的转录有时会出现幻听，即静默片段被识别出语音，或是转录结果与该片段无关。这些问题是由语气停顿参数引起的。幻听的解决方案是引入 VAD，但 VAD 对动手能力要求较高。如果你的视频转录出现了严重幻听，建议先尝试调节参数阈值。
+
+--no_speech_threshold 无声识别的阈值，默认为 0.6。当 no_speech_threshold 高于阈值且 logprob_threshold 低于预设时，该片段将被标记为静默。对于非英语长视频来说，建议将其调低，否则经常出现大段的重复识别。
+--logprob_threshold 转录频次的阈值，默认为 -1.0。当 logprob_threshold 低于预设时，将不对该片段进行转录。建议修改为 None 或更低的值。
+--compression_ratio_threshold 压缩比的阈值，默认为 2.4。当 compression_ratio_threshold 高于预设时，将不对该片段进行转录。
+--no_speech_threshold 0.5 --logprob_threshold None --compression_ratio_threshold 2.2 是我常用的参数，你可以按视频情况来调节。
+
+--device cpu 或 --device cuda
+
+prompt='以下是普通话的句子'
+result = model.transcribe(audioFile, task='translate',language='zh',verbose=True,initial_prompt=prompt)
+
+```
+
+
 
 
 
