@@ -12311,7 +12311,11 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 
 
 
-### parselmouth
+### uvr5 人声分离
+
+- https://github.com/Anjok07/ultimatevocalremovergui  **这个好像更准些**
+
+### parselmouth 音准分析
 
 - https://github.com/YannickJadoul/Parselmouth
 
