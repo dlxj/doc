@@ -12146,6 +12146,8 @@ Eval:
 
 - https://github.com/openai/whisper
 
+  - https://colab.research.google.com/drive/1LjfD-euRBnbXyCcL6eC5Ekfhviba-HAX **直接能用**
+
   - https://github.com/openai/whisper/discussions/277 中文参数
 
   - https://github.com/openai/whisper/discussions/759 Fine-tuning
@@ -12159,8 +12161,6 @@ Eval:
   - https://github.com/openai/whisper/discussions/63 模型下载
 
   - https://github.com/openai/whisper/discussions/360 多 GPU 训练
-
-  - 
 
     > Download links are in [**init**.py](https://github.com/openai/whisper/blob/f296bcd3fac41525f1c5ab467062776f8e13e4d0/whisper/__init__.py) @ lines 17-27
     >
