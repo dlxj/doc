@@ -12323,6 +12323,12 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 
 
 
+https://github.com/openai/whisper/discussions/397   **whisper webui**
+
+https://github.com/snakers4/silero-vad
+
+
+
 VAD静音检测
 
 
