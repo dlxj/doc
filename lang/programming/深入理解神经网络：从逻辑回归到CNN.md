@@ -12303,6 +12303,22 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 
 
 
+
+
+### spleeter 人声分离
+
+- https://github.com/deezer/spleeter
+
+
+
+### parselmouth
+
+- https://github.com/YannickJadoul/Parselmouth
+
+
+
+
+
 VAD静音检测
 
 
@@ -12310,6 +12326,12 @@ VAD静音检测
 ### autoCut
 
 - https://github.com/mli/autocut  必看
+
+
+
+### PVE显卡直通
+
+- https://www.labradors.work/2022/05/07/PVE%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/
 
 
 
