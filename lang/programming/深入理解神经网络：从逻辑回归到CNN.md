@@ -12303,6 +12303,10 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 
 
 
+### 从零训练
+
+- https://github.com/openai/whisper/discussions/64
+
 
 
 ### spleeter 人声分离
