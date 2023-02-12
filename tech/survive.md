@@ -83,7 +83,7 @@ https://pe.metaquant.org/
 > 　　  - siluplsy 
 > 　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
-
+T.K.M.N字幕组
 
 # 韩语
 
