@@ -30,6 +30,8 @@
 
 - https://ja.annas-archive.org/
 
+  - https://ericlamtf.medium.com/%E5%BA%B7%E5%BE%B7%E8%BE%AD%E5%85%B8-%E6%AF%94%E8%BC%83-ca854390a32b  《**康德辭典**》比較
+
 - https://zhuanlan.zhihu.com/p/587849884  **IPFS 图书**
 
   - https://www.yeeach.com/post/2291
@@ -79,7 +81,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 
 
