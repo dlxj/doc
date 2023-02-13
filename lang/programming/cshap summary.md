@@ -9910,6 +9910,78 @@ private void btnSave_Click(object sender, EventArgs e)
   1. SelectionChange事件——控件中选中的文本发生改变时，触发该事件。 
   2. TextChanged事件——控件中的文本内容发生改变时，触发该事件。
 
+- ##### winform中单个RichTextBox实现鼠标右键(剪切，复制，粘贴)功能  [u](https://blog.csdn.net/Pei_hua100/article/details/123402342)
+
+
+
+```
+private static void InitRichTextBoxContextMenu(RichTextBox textBox)
+        {
+            //创建剪切子菜单
+ 
+            var cutMenuItem = new System.Windows.Forms.MenuItem("剪切");
+ 
+            cutMenuItem.Click += (sender, eventArgs) => textBox.Cut();
+ 
+            //创建复制子菜单
+ 
+            var copyMenuItem = new System.Windows.Forms.MenuItem("复制");
+ 
+            copyMenuItem.Click += (sender, eventArgs) => textBox.Copy();
+ 
+            //创建粘贴子菜单
+ 
+            var pasteMenuItem = new System.Windows.Forms.MenuItem("粘贴");
+ 
+            pasteMenuItem.Click += (sender, eventArgs) => textBox.Paste();
+ 
+            //创建右键菜单并将子菜单加入到右键菜单中
+ 
+            var contextMenu = new ContextMenu();
+ 
+            contextMenu.MenuItems.Add(cutMenuItem);
+ 
+            contextMenu.MenuItems.Add(copyMenuItem);
+ 
+            contextMenu.MenuItems.Add(pasteMenuItem);
+ 
+            textBox.ContextMenu = contextMenu;
+ 
+        }
+
+```
+
+
+
+
+
+```
+// SelectionChange 事件没找到，用这个替代方法也能达到目的
+
+        private string selectText = "";
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            this.richTextBox1.HideSelection = false; // Keep the selection highlighted, even after textbox loses focus.
+        }
+
+        private void richTextBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            
+            if (e.Button == MouseButtons.Right)
+            {
+                if (this.selectText != this.richTextBox1.SelectedText)
+                {
+                    this.selectText = this.richTextBox1.SelectedText;
+                }
+            }
+
+        }
+
+```
+
 
 
 ```
@@ -10009,6 +10081,10 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
 
 # WPF
+
+
+
+## WPF编程宝典
 
 
 
