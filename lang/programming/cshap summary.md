@@ -9903,6 +9903,109 @@ private void btnSave_Click(object sender, EventArgs e)
 
 
 
+## RichTextBox
+
+- ### **RichTextBox控件的常用事件** [u](https://www.cnblogs.com/yeshenmeng/p/9435398.html)
+
+  1. SelectionChange事件——控件中选中的文本发生改变时，触发该事件。 
+  2. TextChanged事件——控件中的文本内容发生改变时，触发该事件。
+
+
+
+```
+private void richTextBox1_SelectionChanged(object sender, EventArgs e)
+{
+  textBox1.Text = richTextBox1.SelectedText;
+}
+```
+
+
+
+```
+// 右键菜单
+	public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            richTextBox1.Text = "清音俗世留 纷争几时休\n" + "若能破名利 太虚任遨游";
+        }
+
+        private void copy_Click(object sender, EventArgs e)//复制
+        {
+            richTextBox1.Copy();
+        }
+
+        private void undo_Click(object sender, EventArgs e)//取消
+        {
+            if (richTextBox1.CanUndo)
+            {
+                richTextBox1.Undo();
+            }
+        }
+
+        private void selectall_Click(object sender, EventArgs e)//全选
+        {
+            richTextBox1.SelectAll();
+        }
+
+        private void delete_Click(object sender, EventArgs e)//清除
+        {
+            richTextBox1.Clear();
+        }
+
+        private void paste_Click(object sender, EventArgs e)//粘贴
+        {       
+           if ( (richTextBox1.SelectionLength>0)&&(MessageBox.Show("是否覆盖选中的文本?", "覆盖", MessageBoxButtons.YesNo) == DialogResult.No))
+                richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
+            richTextBox1.Paste();
+        }
+
+        private void clip_Click(object sender, EventArgs e)//剪切
+        {
+            richTextBox1.Cut();
+        }
+
+        private void redo_Click(object sender, EventArgs e)//重做
+        {
+            if (richTextBox1.CanRedo)
+                richTextBox1.Redo();
+        }
+
+        private void richTextBox1_MouseUp(object sender, MouseEventArgs e)//控制右键菜单的显示
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (richTextBox1.CanRedo)//redo
+                    redo.Enabled = true;
+                else
+                    redo.Enabled = false;
+                if (richTextBox1.CanUndo)//undo
+                    undo.Enabled = true;
+                else
+                    undo.Enabled = false;
+                if (richTextBox1.SelectionLength > 0)
+                {
+                    copy.Enabled = true;
+                    clip.Enabled = true;
+                }
+                else
+                {
+                    copy.Enabled = false;
+                    clip.Enabled = false;
+                }
+                if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
+                    paste.Enabled = true;
+                else
+                    paste.Enabled = false;
+                contextMenuStrip1.Show(richTextBox1, new Point(e.X, e.Y));
+            }
+        }
+    }
+```
+
+
+
 
 
 # WPF
