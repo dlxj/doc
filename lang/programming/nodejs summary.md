@@ -3769,6 +3769,43 @@ console.log(pets.includes('cat'))
 
 
 
+## slice
+
+```
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// Expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// Expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+```
+
+
+
+## splitAt
+
+```
+// 从指定位置分成两半
+let splitAt = (xs, index) => [xs.slice(0, index), xs.slice(index)]
+```
+
+
+
+
+
 ## filter
 
 ```
@@ -7275,8 +7312,6 @@ ffmepgFunction(2000, 5);
   })
 })().catch(e => console.error(e.message, e.stack))
 ```
-
-
 
 
 
