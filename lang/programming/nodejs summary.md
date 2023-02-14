@@ -3910,6 +3910,19 @@ Both Object.keys() and Object.entries() iterate properties in the same order as 
 
 
 
+## pickBy
+
+```
+let _ = require('lodash')
+let result = _.pickBy(word2, function(v, k) {
+	return v[`real_p/theory_p`] >= 1.0 && v[`min_entropy`] >= 0.25
+})
+```
+
+
+
+
+
 ## exist
 
 
