@@ -3584,6 +3584,10 @@ console.log("Timestamp after: " + performance.now());
 
 
 
+## 分词 HanLP
+
+- https://github.com/hankcs/HanLP  好像比结巴强
+
 
 
 ## time
@@ -12311,6 +12315,20 @@ if OS.has_feature('JavaScript'):
   > nodejs python cuda 加速
 
 # gpu.js
+
+```
+    // npm i gup.js --save
+    const { GPU } = require('gpu.js');
+    const gpu = new GPU({ mode: 'gpu' });
+
+    let arr = [ [1, 2, 3], [4, 5, 6] ]
+    const kernel = gpu.createKernel(function ( arr ) {
+        return arr[this.thread.y][this.thread.x]  // 获取当前线程的参数 // y 是行索引  x 是列索行
+    }, { output: [3, 2] })  // 三列  两行
+    const data = kernel(arr)  // 传参
+```
+
+
 
 ```
 // 并行生成一万个随机数
