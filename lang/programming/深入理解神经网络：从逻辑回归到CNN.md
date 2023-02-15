@@ -10262,6 +10262,18 @@ if __name__ == '__main__':
 
 
 
+## cuda 多版本共存
+
+- https://www.nemotos.net/?p=5067
+
+```
+https://www.nemotos.net/?p=5067
+```
+
+
+
+
+
 ## DB
 
 原版代码，成功训练aliocr 结果，只用一张图 格式 TD500，图片500 张，都是同一张图复制500 次

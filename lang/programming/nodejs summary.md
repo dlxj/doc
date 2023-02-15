@@ -12294,6 +12294,111 @@ if OS.has_feature('JavaScript'):
 
 # cudf
 
+- https://blog.csdn.net/ltochange/article/details/121339718  在docker容器中使用显卡
+
+- https://github.com/rapidsai/node/issues/451
+
+  ```
+  
+  https://github.com/TyrantLucifer/ssr-command-client
+  
+  yum install epel-release -y && \
+  yum update && \
+  yum install libsodium -y
+  	# yum 是依赖 python2.7 的，不要替换系统的默认python
+  
+  apt-get update -y && \
+  apt-get install -y libsodium-dev
+  
+  
+  pip install shadowsocksr-cli
+  
+  shadowsocksr-cli --add-url https://www.ftwnet.net/sub/xxxxx?sub=1
+  	# ftwc.cc 找 ssr订阅地址
+  
+  shadowsocksr-cli -u
+  	# 更新订阅
+  
+  shadowsocksr-cli -l
+  	# 列出所有可用代理地址
+  	
+  shadowsocksr-cli -s 1
+  	# 开启代理， 1 是前面打印出来的 编号
+  	
+  shadowsocksr-cli -S 1
+  	# 停止代理
+  
+  shadowsocksr-cli --test-speed 15
+  	# 测速
+  	# ldconfig -p | grep libcrypto
+  		# 出错的话，看一下这个
+  
+  shadowsocksr-cli --list-address
+  	# 打印监听地址
+  	# 默认监听端口是 1080
+  	
+  vi /etc/resolv.conf  # 临时修改 DNS，配置会实时生效，重启后失效
+  nameserver 1.1.1.1
+  nameserver 8.8.8.8
+  	# 改成这样
+  	
+  	nameserver 172.16.7.1
+  	nameserver 114.114.114.114
+  		# 原来的值
+  		
+  
+  proxychains4 curl https://www.youtube.com
+  	# 成功
+  
+  
+  # P40 titan XP 最高支持到 11.5
+  
+  #Uninstall the current CUDA version 
+  apt-get --purge remove cuda nvidia* libnvidia-* && \
+  dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+  apt-get remove cuda-* && \
+  apt autoremove && \
+  apt-get update
+  
+  apt-get --purge -y remove 'cuda*' && \
+  apt-get --purge -y remove 'nvidia*' && \
+  apt autoremove -y && \
+  apt-get clean && \
+  apt update -qq;
+  
+  sudo apt-get install software-properties-common -y && \
+  sudo apt-get update
+  
+  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin && \
+  sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600 && \
+  sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub && \
+  sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" && \
+  sudo apt-get update && \
+  sudo apt-get -y install cuda
+  
+  
+  
+  conda install -c rapidsai -c conda-forge -c nvidia \
+      cudf=23.04 python=3.8 cudatoolkit=11.2
+  
+  
+  curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \
+      tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+      npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2
+  
+  RAPIDSAI_CUDA_VERSION=11 && \
+  npm install @rapidsai/cudf
+  
+  
+  ```
+
+  
+
 - https://github.com/rapidsai/node/tree/main/modules/cudf
 
   > - https://blog.csdn.net/sinat_26917383/article/details/104504600
@@ -12315,6 +12420,10 @@ if OS.has_feature('JavaScript'):
   > nodejs python cuda 加速
 
 # gpu.js
+
+- https://gist.github.com/jonathanlurie/04fa6343e64f750d03072ac92584b5df
+
+  > gpu 没有高级数据结构，比如 nodejs 的 json，只有数组
 
 ```
     // npm i gup.js --save
