@@ -12298,20 +12298,51 @@ if OS.has_feature('JavaScript'):
 
 - https://github.com/rapidsai/node/issues/451
 
+  
+
+  [cudf](https://github.com/rapidsai/cudf)
+
+  - https://blog.csdn.net/qq_35916006/article/details/125718801
+
+  [proxychains-ng](https://github.com/rofl0r/proxychains-ng)
+
+  [ssr-command-clien](https://github.com/TyrantLucifer/ssr-command-client)
+
+  [How to setup CUDA 10.2, 11.0, and 11.5 in order to use eddy_cuda10.2](https://www.nemotos.net/?p=5067)
+
   ```
   
-  https://github.com/TyrantLucifer/ssr-command-client
+  conda install cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+  
+  !pip install cudf-cu11 --extra-index-url=https://pypi.nvidia.com/
+  	# colab 这样装
+  
+  pip install cudf-cu11 --extra-index-url=https://pypi.nvidia.com/
+  	# autodl 这样装
+  
+  
+  git clone https://github.com/rofl0r/proxychains-ng && \
+  cd proxychains-ng && \
+  ./configure --prefix=/usr --sysconfdir=/etc && \
+  make && \
+  make install && \
+  make install-config
+  
+  vi /etc/proxychains.conf
+  	socks5  127.0.0.1 1080
+  	# 改成这样
+  
   
   yum install epel-release -y && \
   yum update && \
-  yum install libsodium -y
+  yum install libsodium -y && \
+  pip install shadowsocksr-cli
   	# yum 是依赖 python2.7 的，不要替换系统的默认python
   
   apt-get update -y && \
-  apt-get install -y libsodium-dev
+  apt-get install -y libsodium-dev && \
+  pip install shadowsocksr-cli 
   
-  
-  pip install shadowsocksr-cli
   
   shadowsocksr-cli --add-url https://www.ftwnet.net/sub/xxxxx?sub=1
   	# ftwc.cc 找 ssr订阅地址
@@ -12341,6 +12372,8 @@ if OS.has_feature('JavaScript'):
   nameserver 1.1.1.1
   nameserver 8.8.8.8
   	# 改成这样
+  	vi /etc/sysconfig/network-scripts/ifcfg-eth0
+  		# 这个是永久的
   	
   	nameserver 172.16.7.1
   	nameserver 114.114.114.114
@@ -12349,6 +12382,30 @@ if OS.has_feature('JavaScript'):
   
   proxychains4 curl https://www.youtube.com
   	# 成功
+  
+  
+  /root/miniconda3/bin/conda init && \
+  ln -s /root/miniconda3/bin/conda /usr/local/bin && \
+  ln -s /root/miniconda3/bin/activate /usr/local/bin && \
+  ln -s /root/miniconda3/bin/deactivate /usr/local/bin
+  
+  conda create -n nodecudf pip python=3.8 -y && \
+  source activate nodecudf && \
+  
+  
+  conda install -c https://conda.anaconda.org/rapidsai -c numba -c https://conda.anaconda.org/nvidia -c conda-forge cudf=23.02
+  
+  
+  conda install -c nvidia cudatoolkit=11.2 && \
+  conda install -c rapidsai-nightly cudf=23.04
+  
+  
+  conda deactivate
+  conda info -e
+  conda env remove -n nodecudf
+  
+  
+  
   
   
   # P40 titan XP 最高支持到 11.5
@@ -12418,6 +12475,38 @@ if OS.has_feature('JavaScript'):
 - https://github.com/rapidsai/node
 
   > nodejs python cuda 加速
+
+
+
+### 修改DNS
+
+**方法一 静态ip永久修改dns**
+
+服务器如果是静态ip地址的，那么修改很简单
+
+vi /etc/resolv.conf
+
+```javascript
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+```
+
+复制
+
+这样修改即可，重启仍然有效
+
+**方法二 DHCP永久修改dns**
+
+如果服务器是dhcp的，则需要修改另一个文件
+
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+```javascript
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+```
+
+这样修改了此文件，重启之后/etc/resolv.conf也会生效
 
 # gpu.js
 
