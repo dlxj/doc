@@ -12320,6 +12320,21 @@ if OS.has_feature('JavaScript'):
   pip install cudf-cu11 --extra-index-url=https://pypi.nvidia.com/
   	# autodl 这样装
   
+  # downloads a CSV, then uses the GPU to parse it into rows and columns and run calculations
+  
+  import cudf, requests
+  from io import StringIO
+  
+  url = "https://github.com/plotly/datasets/raw/master/tips.csv"
+  content = requests.get(url).content.decode('utf-8')
+  
+  tips_df = cudf.read_csv(StringIO(content))
+  tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
+  
+  # display average tip by dining party size
+  print(tips_df.groupby('size').tip_percentage.mean())
+  	# 成功运行！
+  
   
   git clone https://github.com/rofl0r/proxychains-ng && \
   cd proxychains-ng && \
@@ -12507,6 +12522,15 @@ DNS2=8.8.4.4
 ```
 
 这样修改了此文件，重启之后/etc/resolv.conf也会生效
+
+
+
+## docker 
+
+- https://www.simplilearn.com/tutorials/docker-tutorial/how-to-install-docker-on-ubuntu
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
+
 
 # gpu.js
 
