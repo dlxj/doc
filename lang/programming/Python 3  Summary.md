@@ -1270,6 +1270,15 @@ file1.close()
 
 
 
+### size
+
+```
+import os
+ 
+file_size = os.stat('d:/file.jpg')
+print("Size of file :", file_size.st_size, "bytes")
+```
+
 ### 遍历
 
 ```
@@ -2855,6 +2864,16 @@ t.symmetric_difference(s) # 对称差集
 
 
 - map 一个字典会得到key
+
+
+
+### keys
+
+```
+mydict = {1: 'Geeks', 2: 'for', 3: 'geeks'}
+keysList = list(mydict.keys())
+print(keysList)
+```
 
 
 
@@ -4863,6 +4882,15 @@ return Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(f)(ts, i) for i in ra
 ```
 
 
+
+## 分布式共享内存
+
+- https://xijiz.github.io/post/naive-python-2-berkeley-ray.html
+- Python + Memcached：分布式应用中的高效缓存
+
+```
+Berkeley Ray（以下简称Ray）是一个以大规模机器学习为目标的高性能分布式计算框架。Ray通过抽象系统状态到一个全局控制存储区和保持其它所有的组件无状态来实现可扩展性和容错能力。在数据调度方面，Ray使用了分布式共享内存存储来高效地处理大规模数据，它也使用了一个从下到上的层次化调度架构去实现低延迟和高吞吐。Ray也有着基于动态任务图的轻量级接口，可以灵活地应用到各种应用上。
+```
 
 
 
