@@ -4625,6 +4625,8 @@ print(q)
 
 
 
+
+
 ### Pytrees数据结构
 
 [Pytrees数据结构](https://zhuanlan.zhihu.com/p/477870275)
@@ -4684,15 +4686,15 @@ jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
 
 
 
-
-
-
-
-
-
 ### pmap轻松实现数据并行
 
 [通过pmap轻松实现数据并行](https://basicv8vc.github.io/posts/jax-tutorials-for-pytorchers-3/#pmapjaxlaxp-%e5%9c%a8%e5%8d%95%e6%9c%ba%e5%a4%9a%e5%8d%a1%e4%b8%8a%e8%bd%bb%e6%9d%be%e5%ae%9e%e7%8e%b0%e6%95%b0%e6%8d%ae%e5%b9%b6%e8%a1%8c)
+
+
+
+### Apply pmap to a list of pytrees
+
+[Apply pmap to a list of pytrees](https://github.com/google/jax/issues/2540)
 
 
 
@@ -4705,6 +4707,45 @@ jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
 ### Hamming Distance计算
 
 [Hamming Distance计算](https://www.cnblogs.com/dechinphy/p/jax-numpy.html)
+
+
+
+### 计时器
+
+```
+# timer 被构造的时侯计时一次，被释放的时侯计时一次
+
+# pip install git+https://github.com/deepmind/dm-haiku
+import contextlib
+import time
+from typing import NamedTuple
+
+import chex
+import haiku as hk
+import jax
+import jax.numpy as jnp
+import numpy as np
+from absl import app, logging
+
+@contextlib.contextmanager
+def timer(name: str):
+    begin = time.time_ns()
+    try:
+        yield begin
+    finally:
+        logging.info(f'Timer {name}[ms] {(time.time_ns() - begin) / int(1e6)}')
+        
+        
+    with timer('pmap()'):
+        v, p = p_update(params, Input(x + 0.1, a, b), lr)
+        new_x = select(v, p).block_until_ready()
+
+    with timer('jit(vmap())'):
+        v, p = jv_update(params, Input(x + 0.1, a, b), lr)
+        new_x = select(v, p).block_until_ready()
+```
+
+
 
 
 
