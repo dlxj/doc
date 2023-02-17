@@ -10621,6 +10621,26 @@ pip install keyboard
 
 
 
+```
+win32api.ShellExecute(0, 'open', r'D:\Program Files\xx.exe', '', '', 1)
+    hwnd = win32gui.FindWindow(None, 'xx')
+    shell = win32com.client.Dispatch("WScript.Shell")
+    shell.SendKeys('%')
+    res = win32gui.SetForegroundWindow(hwnd)
+
+    pyautogui.hotkey('ctrl','l')
+
+    pyperclip.copy('hello')
+    pyautogui.hotkey('Ctrl', 'v')
+    pyautogui.hotkey('enter')
+```
+
+
+
+
+
+
+
 # 算数编码
 
 - https://github.com/ahmedfgad/ArithmeticEncodingPython
