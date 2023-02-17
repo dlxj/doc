@@ -4610,6 +4610,22 @@ print(q)
 
 
 
+### Pytrees数据结构
+
+[Pytrees数据结构](https://zhuanlan.zhihu.com/p/477870275)
+
+
+
+### pmap轻松实现数据并行
+
+[通过pmap轻松实现数据并行](https://basicv8vc.github.io/posts/jax-tutorials-for-pytorchers-3/#pmapjaxlaxp-%e5%9c%a8%e5%8d%95%e6%9c%ba%e5%a4%9a%e5%8d%a1%e4%b8%8a%e8%bd%bb%e6%9d%be%e5%ae%9e%e7%8e%b0%e6%95%b0%e6%8d%ae%e5%b9%b6%e8%a1%8c)
+
+
+
+### JAX-MD近邻表计算
+
+[JAX-MD近邻表计算](https://www.cnblogs.com/dechinphy/p/jaxnb1.html)
+
 
 
 ## CuPy

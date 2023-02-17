@@ -12292,6 +12292,14 @@ if OS.has_feature('JavaScript'):
 
 
 
+# CXX原生GPU编程
+
+- https://github.com/stotko/stdgpu  gpu可用的字典数据结构
+
+
+
+
+
 # cudf
 
   [用法教程](https://docs.rapids.ai/api/cudf/stable/user_guide/10min.html)
@@ -12566,6 +12574,10 @@ return y;
 }, { output: [nobs] });
 const data = kernel();
 ```
+
+
+
+
 
 
 
