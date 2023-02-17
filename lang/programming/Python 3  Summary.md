@@ -2861,9 +2861,24 @@ t.symmetric_difference(s) # 对称差集
 
 ## Dictionary
 
-
-
 - map 一个字典会得到key
+
+
+
+### **kwargs 展开合并字典
+
+```
+class ParamsDict:
+    def __init__(self, dic_1, **kwargs):
+        # kwargs 是一个字典，形参里面 k=2,j=3 这样传
+        self.params = {**dic_1, **kwargs}
+        	# **作用是展开字典，{**dic1, **dic2} 作用是合并两个字典
+
+e = ParamsDict({'a':0, 'b':1}, k=2,j=3)
+e.params['a'] = 0.0
+```
+
+
 
 
 
@@ -4616,6 +4631,65 @@ print(q)
 
 
 
+Examples
+
+```
+>>> import jax.tree_util
+>>> jax.tree_util.tree_map(lambda x: x + 1, {"x": 7, "y": 42})
+{'x': 8, 'y': 43}
+```
+
+
+
+If multiple inputs are passed, the structure of the tree is taken from the first input; subsequent inputs need only have `tree` as a prefix:
+
+```
+>>> jax.tree_util.tree_map(lambda x, y: [x] + y, [5, 6], [[7, 9], [1, 2]])
+[[5, 7, 9], [6, 1, 2]]
+```
+
+
+
+#### 自定义pytrees
+
+[自定义pytrees](https://github.com/google/jax/issues/12319)
+
+```python
+from jax.tree_util import register_pytree_node_class
+import jax.numpy as jnp
+from jax.experimental import checkify
+import jax
+
+@register_pytree_node_class
+class Boxes:
+  def __init__(self, arr: jnp.ndarray):
+    self.arr = arr
+    assert arr.ndim > 1 and arr.shape[-1] == 4
+  
+  def area(self) -> jnp.ndarray:
+    return (self.arr[..., 2] - self.arr[..., 0]) * (self.arr[..., 3] - self.arr[..., 1])
+
+  def tree_flatten(self):
+    return ((self.arr,), None)
+  
+  @classmethod
+  def tree_unflatten(cls, _, children):
+    return cls(children[0])
+
+def func(x: Boxes):
+  return x.area() + 3
+
+jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
+```
+
+
+
+
+
+
+
+
+
 ### pmap轻松实现数据并行
 
 [通过pmap轻松实现数据并行](https://basicv8vc.github.io/posts/jax-tutorials-for-pytorchers-3/#pmapjaxlaxp-%e5%9c%a8%e5%8d%95%e6%9c%ba%e5%a4%9a%e5%8d%a1%e4%b8%8a%e8%bd%bb%e6%9d%be%e5%ae%9e%e7%8e%b0%e6%95%b0%e6%8d%ae%e5%b9%b6%e8%a1%8c)
@@ -4625,6 +4699,12 @@ print(q)
 ### JAX-MD近邻表计算
 
 [JAX-MD近邻表计算](https://www.cnblogs.com/dechinphy/p/jaxnb1.html)
+
+
+
+### Hamming Distance计算
+
+[Hamming Distance计算](https://www.cnblogs.com/dechinphy/p/jax-numpy.html)
 
 
 
