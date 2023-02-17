@@ -12294,6 +12294,8 @@ if OS.has_feature('JavaScript'):
 
 # cudf
 
+  [用法教程](https://docs.rapids.ai/api/cudf/stable/user_guide/10min.html)
+
 - https://blog.csdn.net/ltochange/article/details/121339718  在docker容器中使用显卡
 
 - https://github.com/rapidsai/node/issues/451
