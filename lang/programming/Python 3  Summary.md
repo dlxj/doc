@@ -1908,6 +1908,13 @@ lambda 返回true 的保留
 
 
 
+### 可变参数列表
+
+```
+in_axes = ['inputs', 'hidden', ...] # ... 意思是后面可以有其它东西，没有也行
+print( in_axes )
+```
+
 
 
 ### Select
@@ -4686,7 +4693,25 @@ jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
 
 
 
-### pmap轻松实现数据并行
+### jax大规模并行计算
+
+[Tensor Model Parallelism - xmap vs pjit](https://github.com/google/jax/discussions/11444)
+
+[colab demo](https://colab.research.google.com/github/kingoflolz/mesh-transformer-jax/blob/master/colab_demo.ipynb#scrollTo=8CMw_dSQKfhT)
+
+
+
+### xmap 单机并行 map
+
+[Named axes and easy-to-revise parallelism with xmap](https://jax.readthedocs.io/en/latest/notebooks/xmap_tutorial.html)
+
+```\
+jax.xmap is a function from the JAX library that applies a given function to each element of an iterable object in parallel. You should use it if you are using JAX and have computations that can be done in parallel, such as training a model on multiple GPUs.
+```
+
+
+
+### pmap 多机并行map
 
 [通过pmap轻松实现数据并行](https://basicv8vc.github.io/posts/jax-tutorials-for-pytorchers-3/#pmapjaxlaxp-%e5%9c%a8%e5%8d%95%e6%9c%ba%e5%a4%9a%e5%8d%a1%e4%b8%8a%e8%bd%bb%e6%9d%be%e5%ae%9e%e7%8e%b0%e6%95%b0%e6%8d%ae%e5%b9%b6%e8%a1%8c)
 
@@ -4694,7 +4719,11 @@ jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
 
 ### Apply pmap to a list of pytrees
 
+[官方文档](https://jax.readthedocs.io/en/latest/_autosummary/jax.pmap.html)
+
 [Apply pmap to a list of pytrees](https://github.com/google/jax/issues/2540)
+
+[pmap on pytree (namedtuple) with various dimensions](https://github.com/google/jax/issues/3102)
 
 
 
