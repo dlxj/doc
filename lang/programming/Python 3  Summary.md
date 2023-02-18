@@ -1270,6 +1270,15 @@ file1.close()
 
 
 
+### size
+
+```
+import os
+ 
+file_size = os.stat('d:/file.jpg')
+print("Size of file :", file_size.st_size, "bytes")
+```
+
 ### 遍历
 
 ```
@@ -1898,6 +1907,13 @@ lambda 返回true 的保留
 ## List
 
 
+
+### 可变参数列表
+
+```
+in_axes = ['inputs', 'hidden', ...] # ... 意思是后面可以有其它东西，没有也行
+print( in_axes )
+```
 
 
 
@@ -2852,9 +2868,34 @@ t.symmetric_difference(s) # 对称差集
 
 ## Dictionary
 
-
-
 - map 一个字典会得到key
+
+
+
+### **kwargs 展开合并字典
+
+```
+class ParamsDict:
+    def __init__(self, dic_1, **kwargs):
+        # kwargs 是一个字典，形参里面 k=2,j=3 这样传
+        self.params = {**dic_1, **kwargs}
+        	# **作用是展开字典，{**dic1, **dic2} 作用是合并两个字典
+
+e = ParamsDict({'a':0, 'b':1}, k=2,j=3)
+e.params['a'] = 0.0
+```
+
+
+
+
+
+### keys
+
+```
+mydict = {1: 'Geeks', 2: 'for', 3: 'geeks'}
+keysList = list(mydict.keys())
+print(keysList)
+```
 
 
 
@@ -4593,6 +4634,150 @@ print(q)
 
 
 
+### Pytrees数据结构
+
+[Pytrees数据结构](https://zhuanlan.zhihu.com/p/477870275)
+
+
+
+Examples
+
+```
+>>> import jax.tree_util
+>>> jax.tree_util.tree_map(lambda x: x + 1, {"x": 7, "y": 42})
+{'x': 8, 'y': 43}
+```
+
+
+
+If multiple inputs are passed, the structure of the tree is taken from the first input; subsequent inputs need only have `tree` as a prefix:
+
+```
+>>> jax.tree_util.tree_map(lambda x, y: [x] + y, [5, 6], [[7, 9], [1, 2]])
+[[5, 7, 9], [6, 1, 2]]
+```
+
+
+
+#### 自定义pytrees
+
+[自定义pytrees](https://github.com/google/jax/issues/12319)
+
+```python
+from jax.tree_util import register_pytree_node_class
+import jax.numpy as jnp
+from jax.experimental import checkify
+import jax
+
+@register_pytree_node_class
+class Boxes:
+  def __init__(self, arr: jnp.ndarray):
+    self.arr = arr
+    assert arr.ndim > 1 and arr.shape[-1] == 4
+  
+  def area(self) -> jnp.ndarray:
+    return (self.arr[..., 2] - self.arr[..., 0]) * (self.arr[..., 3] - self.arr[..., 1])
+
+  def tree_flatten(self):
+    return ((self.arr,), None)
+  
+  @classmethod
+  def tree_unflatten(cls, _, children):
+    return cls(children[0])
+
+def func(x: Boxes):
+  return x.area() + 3
+
+jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
+```
+
+
+
+### jax大规模并行计算
+
+[Tensor Model Parallelism - xmap vs pjit](https://github.com/google/jax/discussions/11444)
+
+[colab demo](https://colab.research.google.com/github/kingoflolz/mesh-transformer-jax/blob/master/colab_demo.ipynb#scrollTo=8CMw_dSQKfhT)
+
+
+
+### xmap 单机并行 map
+
+[Named axes and easy-to-revise parallelism with xmap](https://jax.readthedocs.io/en/latest/notebooks/xmap_tutorial.html)
+
+```\
+jax.xmap is a function from the JAX library that applies a given function to each element of an iterable object in parallel. You should use it if you are using JAX and have computations that can be done in parallel, such as training a model on multiple GPUs.
+```
+
+
+
+### pmap 多机并行map
+
+[通过pmap轻松实现数据并行](https://basicv8vc.github.io/posts/jax-tutorials-for-pytorchers-3/#pmapjaxlaxp-%e5%9c%a8%e5%8d%95%e6%9c%ba%e5%a4%9a%e5%8d%a1%e4%b8%8a%e8%bd%bb%e6%9d%be%e5%ae%9e%e7%8e%b0%e6%95%b0%e6%8d%ae%e5%b9%b6%e8%a1%8c)
+
+
+
+### Apply pmap to a list of pytrees
+
+[官方文档](https://jax.readthedocs.io/en/latest/_autosummary/jax.pmap.html)
+
+[Apply pmap to a list of pytrees](https://github.com/google/jax/issues/2540)
+
+[pmap on pytree (namedtuple) with various dimensions](https://github.com/google/jax/issues/3102)
+
+
+
+### JAX-MD近邻表计算
+
+[JAX-MD近邻表计算](https://www.cnblogs.com/dechinphy/p/jaxnb1.html)
+
+
+
+### Hamming Distance计算
+
+[Hamming Distance计算](https://www.cnblogs.com/dechinphy/p/jax-numpy.html)
+
+
+
+### 计时器
+
+```
+# timer 被构造的时侯计时一次，被释放的时侯计时一次
+
+# pip install git+https://github.com/deepmind/dm-haiku
+import contextlib
+import time
+from typing import NamedTuple
+
+import chex
+import haiku as hk
+import jax
+import jax.numpy as jnp
+import numpy as np
+from absl import app, logging
+
+@contextlib.contextmanager
+def timer(name: str):
+    begin = time.time_ns()
+    try:
+        yield begin
+    finally:
+        logging.info(f'Timer {name}[ms] {(time.time_ns() - begin) / int(1e6)}')
+        
+        
+    with timer('pmap()'):
+        v, p = p_update(params, Input(x + 0.1, a, b), lr)
+        new_x = select(v, p).block_until_ready()
+
+    with timer('jit(vmap())'):
+        v, p = jv_update(params, Input(x + 0.1, a, b), lr)
+        new_x = select(v, p).block_until_ready()
+```
+
+
+
+
+
 ## CuPy
 
 
@@ -4863,6 +5048,15 @@ return Parallel(n_jobs=os.cpu_count(), verbose=10)(delayed(f)(ts, i) for i in ra
 ```
 
 
+
+## 分布式共享内存
+
+- https://xijiz.github.io/post/naive-python-2-berkeley-ray.html
+- Python + Memcached：分布式应用中的高效缓存
+
+```
+Berkeley Ray（以下简称Ray）是一个以大规模机器学习为目标的高性能分布式计算框架。Ray通过抽象系统状态到一个全局控制存储区和保持其它所有的组件无状态来实现可扩展性和容错能力。在数据调度方面，Ray使用了分布式共享内存存储来高效地处理大规模数据，它也使用了一个从下到上的层次化调度架构去实现低延迟和高吞吐。Ray也有着基于动态任务图的轻量级接口，可以灵活地应用到各种应用上。
+```
 
 
 
@@ -10424,6 +10618,26 @@ pip install keyboard
 """
 
 ```
+
+
+
+```
+win32api.ShellExecute(0, 'open', r'D:\Program Files\xx.exe', '', '', 1)
+    hwnd = win32gui.FindWindow(None, 'xx')
+    shell = win32com.client.Dispatch("WScript.Shell")
+    shell.SendKeys('%')
+    res = win32gui.SetForegroundWindow(hwnd)
+
+    pyautogui.hotkey('ctrl','l')
+
+    pyperclip.copy('hello')
+    pyautogui.hotkey('Ctrl', 'v')
+    pyautogui.hotkey('enter')
+```
+
+
+
+
 
 
 

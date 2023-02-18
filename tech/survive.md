@@ -30,6 +30,8 @@
 
 - https://ja.annas-archive.org/
 
+  - https://ericlamtf.medium.com/%E5%BA%B7%E5%BE%B7%E8%BE%AD%E5%85%B8-%E6%AF%94%E8%BC%83-ca854390a32b  《**康德辭典**》比較
+
 - https://zhuanlan.zhihu.com/p/587849884  **IPFS 图书**
 
   - https://www.yeeach.com/post/2291
@@ -79,7 +81,23 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+
+T.K.M.N字幕组
+
+
+
+## 分词
+
+最小熵原理（二）：“当机立断”之词库构建 [u](https://www.spaces.ac.cn/archives/5476)
+
+> 互联网时代的社会语言学：基于SNS的文本数据挖掘 [u](http://www.matrix67.com/blog/archives/5044)
+>
+> 16 年后重谈 P 和 NP [u](http://www.matrix67.com/blog/archives/7084)
+>
+> > python3实现 [u](https://github.com/yanghanxy/New-Word-Detection)
+
+
 
 
 
@@ -94,8 +112,9 @@ https://pe.metaquant.org/
 - http://www.simplecd.cc/page-ZbZPxeYm.html
 
 - https://www.wanmen.org/courses/586d23485f07127674135d2a/lectures/586d23535f07127674158989
-  - 俄语初级（上）_吴石磊
-
+  
+- 俄语初级（上）_吴石磊
+  
 - # プログレッシブ ロシア語辞典
 
   - https://kotobank.jp/rujaword/%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE

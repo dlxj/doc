@@ -3584,6 +3584,10 @@ console.log("Timestamp after: " + performance.now());
 
 
 
+## 分词 HanLP
+
+- https://github.com/hankcs/HanLP  好像比结巴强
+
 
 
 ## time
@@ -3769,6 +3773,43 @@ console.log(pets.includes('cat'))
 
 
 
+## slice
+
+```
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// Expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// Expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+```
+
+
+
+## splitAt
+
+```
+// 从指定位置分成两半
+let splitAt = (xs, index) => [xs.slice(0, index), xs.slice(index)]
+```
+
+
+
+
+
 ## filter
 
 ```
@@ -3870,6 +3911,19 @@ for (let [key, value] of Object.entries(obj)) {
 }
 Both Object.keys() and Object.entries() iterate properties in the same order as a for...in loop but ignore the prototype chain. Only the object's own enumerable properties are iterated.
 ```
+
+
+
+## pickBy
+
+```
+let _ = require('lodash')
+let result = _.pickBy(word2, function(v, k) {
+	return v[`real_p/theory_p`] >= 1.0 && v[`min_entropy`] >= 0.25
+})
+```
+
+
 
 
 
@@ -7275,8 +7329,6 @@ ffmepgFunction(2000, 5);
   })
 })().catch(e => console.error(e.message, e.stack))
 ```
-
-
 
 
 
@@ -12240,7 +12292,194 @@ if OS.has_feature('JavaScript'):
 
 
 
+# CXX原生GPU编程
+
+- https://github.com/stotko/stdgpu  gpu可用的字典数据结构
+
+
+
+
+
 # cudf
+
+  [用法教程](https://docs.rapids.ai/api/cudf/stable/user_guide/10min.html)
+
+- https://blog.csdn.net/ltochange/article/details/121339718  在docker容器中使用显卡
+
+- https://github.com/rapidsai/node/issues/451
+
+  
+
+  [cudf](https://github.com/rapidsai/cudf)
+
+  - https://blog.csdn.net/qq_35916006/article/details/125718801
+
+  [proxychains-ng](https://github.com/rofl0r/proxychains-ng)
+
+  [ssr-command-clien](https://github.com/TyrantLucifer/ssr-command-client)
+
+  [How to setup CUDA 10.2, 11.0, and 11.5 in order to use eddy_cuda10.2](https://www.nemotos.net/?p=5067)
+
+  ```
+  
+  conda install cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+  
+  !pip install cudf-cu11 --extra-index-url=https://pypi.nvidia.com/
+  	# colab 这样装
+  
+  pip install cudf-cu11 --extra-index-url=https://pypi.nvidia.com/
+  	# autodl 这样装
+  
+  # downloads a CSV, then uses the GPU to parse it into rows and columns and run calculations
+  
+  import cudf, requests
+  from io import StringIO
+  
+  url = "https://github.com/plotly/datasets/raw/master/tips.csv"
+  content = requests.get(url).content.decode('utf-8')
+  
+  tips_df = cudf.read_csv(StringIO(content))
+  tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
+  
+  # display average tip by dining party size
+  print(tips_df.groupby('size').tip_percentage.mean())
+  	# 成功运行！
+  
+  
+  git clone https://github.com/rofl0r/proxychains-ng && \
+  cd proxychains-ng && \
+  ./configure --prefix=/usr --sysconfdir=/etc && \
+  make && \
+  make install && \
+  make install-config
+  
+  vi /etc/proxychains.conf
+  	socks5  127.0.0.1 1080
+  	# 改成这样
+  
+  
+  yum install epel-release -y && \
+  yum update && \
+  yum install libsodium -y && \
+  pip install shadowsocksr-cli
+  	# yum 是依赖 python2.7 的，不要替换系统的默认python
+  
+  apt-get update -y && \
+  apt-get install -y libsodium-dev && \
+  pip install shadowsocksr-cli 
+  
+  
+  shadowsocksr-cli --add-url https://www.ftwnet.net/sub/xxxxx?sub=1
+  	# ftwc.cc 找 ssr订阅地址
+  
+  shadowsocksr-cli -u
+  	# 更新订阅
+  
+  shadowsocksr-cli -l
+  	# 列出所有可用代理地址
+  	
+  shadowsocksr-cli -s 1
+  	# 开启代理， 1 是前面打印出来的 编号
+  	
+  shadowsocksr-cli -S 1
+  	# 停止代理
+  
+  shadowsocksr-cli --test-speed 15
+  	# 测速
+  	# ldconfig -p | grep libcrypto
+  		# 出错的话，看一下这个
+  
+  shadowsocksr-cli --list-address
+  	# 打印监听地址
+  	# 默认监听端口是 1080
+  	
+  vi /etc/resolv.conf  # 临时修改 DNS，配置会实时生效，重启后失效
+  nameserver 1.1.1.1
+  nameserver 8.8.8.8
+  	# 改成这样
+  	vi /etc/sysconfig/network-scripts/ifcfg-eth0
+  		# 这个是永久的
+  	
+  	nameserver 172.16.7.1
+  	nameserver 114.114.114.114
+  		# 原来的值
+  		
+  
+  proxychains4 curl https://www.youtube.com
+  	# 成功
+  
+  
+  /root/miniconda3/bin/conda init && \
+  ln -s /root/miniconda3/bin/conda /usr/local/bin && \
+  ln -s /root/miniconda3/bin/activate /usr/local/bin && \
+  ln -s /root/miniconda3/bin/deactivate /usr/local/bin
+  
+  conda create -n nodecudf pip python=3.8 -y && \
+  source activate nodecudf && \
+  
+  
+  conda install -c https://conda.anaconda.org/rapidsai -c numba -c https://conda.anaconda.org/nvidia -c conda-forge cudf=23.02
+  
+  
+  conda install -c nvidia cudatoolkit=11.2 && \
+  conda install -c rapidsai-nightly cudf=23.04
+  
+  
+  conda deactivate
+  conda info -e
+  conda env remove -n nodecudf
+  
+  
+  
+  
+  
+  # P40 titan XP 最高支持到 11.5
+  
+  #Uninstall the current CUDA version 
+  apt-get --purge remove cuda nvidia* libnvidia-* && \
+  dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge && \
+  apt-get remove cuda-* && \
+  apt autoremove && \
+  apt-get update
+  
+  apt-get --purge -y remove 'cuda*' && \
+  apt-get --purge -y remove 'nvidia*' && \
+  apt autoremove -y && \
+  apt-get clean && \
+  apt update -qq;
+  
+  sudo apt-get install software-properties-common -y && \
+  sudo apt-get update
+  
+  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin && \
+  sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600 && \
+  sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub && \
+  sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" && \
+  sudo apt-get update && \
+  sudo apt-get -y install cuda
+  
+  
+  
+  conda install -c rapidsai -c conda-forge -c nvidia \
+      cudf=23.04 python=3.8 cudatoolkit=11.2
+  
+  
+  curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \
+      tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+      npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+      ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2
+  
+  RAPIDSAI_CUDA_VERSION=11 && \
+  npm install @rapidsai/cudf
+  
+  
+  ```
+
+  
 
 - https://github.com/rapidsai/node/tree/main/modules/cudf
 
@@ -12262,7 +12501,66 @@ if OS.has_feature('JavaScript'):
 
   > nodejs python cuda 加速
 
+
+
+### 修改DNS
+
+**方法一 静态ip永久修改dns**
+
+服务器如果是静态ip地址的，那么修改很简单
+
+vi /etc/resolv.conf
+
+```javascript
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+```
+
+复制
+
+这样修改即可，重启仍然有效
+
+**方法二 DHCP永久修改dns**
+
+如果服务器是dhcp的，则需要修改另一个文件
+
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+```javascript
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+```
+
+这样修改了此文件，重启之后/etc/resolv.conf也会生效
+
+
+
+## docker 
+
+- https://www.simplilearn.com/tutorials/docker-tutorial/how-to-install-docker-on-ubuntu
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
+
+
 # gpu.js
+
+- https://gist.github.com/jonathanlurie/04fa6343e64f750d03072ac92584b5df
+
+  > gpu 没有高级数据结构，比如 nodejs 的 json，只有数组
+
+```
+    // npm i gup.js --save
+    const { GPU } = require('gpu.js');
+    const gpu = new GPU({ mode: 'gpu' });
+
+    let arr = [ [1, 2, 3], [4, 5, 6] ]
+    const kernel = gpu.createKernel(function ( arr ) {
+        return arr[this.thread.y][this.thread.x]  // 获取当前线程的参数 // y 是行索引  x 是列索行
+    }, { output: [3, 2] })  // 三列  两行
+    const data = kernel(arr)  // 传参
+```
+
+
 
 ```
 // 并行生成一万个随机数
@@ -12276,6 +12574,10 @@ return y;
 }, { output: [nobs] });
 const data = kernel();
 ```
+
+
+
+
 
 
 
