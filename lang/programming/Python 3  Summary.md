@@ -10583,6 +10583,8 @@ target_link_libraries(test_my_inference_onnx
 
 # 控制鼠标
 
+- http://www.dszhp.com/pyautogui.html
+
 - https://pyautogui.readthedocs.io/en/latest/mouse.html
 
 ```
@@ -10636,6 +10638,115 @@ win32api.ShellExecute(0, 'open', r'D:\Program Files\xx.exe', '', '', 1)
 ```
 
 
+
+
+
+```
+import pyautogui
+import pydirectinput
+import time
+import random
+import sys
+import keyboard
+from PIL import ImageGrab
+import ctypes
+
+SendInput = ctypes.windll.user32.SendInput
+# C struct redefinitions
+PUL = ctypes.POINTER(ctypes.c_ulong)
+
+
+class KeyBdInput(ctypes.Structure):
+    _fields_ = [("wVk", ctypes.c_ushort),
+                ("wScan", ctypes.c_ushort),
+                ("dwFlags", ctypes.c_ulong),
+                ("time", ctypes.c_ulong),
+                ("dwExtraInfo", PUL)]
+
+
+class HardwareInput(ctypes.Structure):
+    _fields_ = [("uMsg", ctypes.c_ulong),
+                ("wParamL", ctypes.c_short),
+                ("wParamH", ctypes.c_ushort)]
+
+
+class MouseInput(ctypes.Structure):
+    _fields_ = [("dx", ctypes.c_long),
+                ("dy", ctypes.c_long),
+                ("mouseData", ctypes.c_ulong),
+                ("dwFlags", ctypes.c_ulong),
+                ("time", ctypes.c_ulong),
+                ("dwExtraInfo", PUL)]
+
+
+class Input_I(ctypes.Union):
+    _fields_ = [("ki", KeyBdInput),
+                ("mi", MouseInput),
+                ("hi", HardwareInput)]
+
+
+class Input(ctypes.Structure):
+    _fields_ = [("type", ctypes.c_ulong),
+                ("ii", Input_I)]
+
+# Actuals Functions
+
+
+def PressKey(hexKeyCode):
+    extra = ctypes.c_ulong(0)
+    ii_ = Input_I()
+    ii_.ki = KeyBdInput(0, hexKeyCode, 0x0008, 0, ctypes.pointer(extra))
+    x = Input(ctypes.c_ulong(1), ii_)
+    ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
+
+
+def ReleaseKey(hexKeyCode):
+    extra = ctypes.c_ulong(0)
+    ii_ = Input_I()
+    ii_.ki = KeyBdInput(0, hexKeyCode, 0x0008 | 0x0002,
+                        0, ctypes.pointer(extra))
+    x = Input(ctypes.c_ulong(1), ii_)
+    ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
+
+CONTROL = 0x1D
+ALT = 0x38
+C = 0x1F #0x2E
+A = 0x1E
+
+
+time.sleep(2)
+pydirectinput.moveTo(x=917, y=880, duration=0.4)
+pydirectinput.click()
+PressKey(CONTROL)
+time.sleep(0.02)
+PressKey(ALT)
+time.sleep(0.02)
+PressKey(A)
+
+time.sleep(0.02)
+ReleaseKey(A)
+time.sleep(0.02)
+ReleaseKey(ALT)
+time.sleep(0.02)
+ReleaseKey(CONTROL)
+
+pydirectinput.mouseDown()
+time.sleep(0.02)
+pydirectinput.moveTo(x=1488, y=1025, duration=2.7)
+time.sleep(0.02)
+pydirectinput.mouseUp()
+time.sleep(0.02)
+PressKey(CONTROL)
+time.sleep(0.02)
+PressKey(C)
+time.sleep(0.02)
+ReleaseKey(C)
+time.sleep(0.02)
+ReleaseKey(CONTROL)
+time.sleep(0.2)
+image = ImageGrab.grabclipboard()
+image.save(r'./test.png')
+```
 
 
 
