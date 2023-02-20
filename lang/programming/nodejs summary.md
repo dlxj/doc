@@ -12542,6 +12542,66 @@ DNS2=8.8.4.4
 
 
 
+# jax
+
+```
+# pip install jax==0.4.4
+	# windows这样装
+# github/segment/jax_pytrees.py
+# https://jax.readthedocs.io/en/latest/notebooks/xmap_tutorial.html  需要仔细看的文档
+# https://github.com/google/jax/issues/196  打印 ShapedArray
+import jax
+import jax.numpy as np
+import jax.numpy as jnp
+from typing import Any, Callable
+from typing import Dict
+from jax.experimental.maps import xmap
+from jax import vmap, vjp, jvp
+from jax.tree_util import Partial as partial
+from jax.experimental.host_callback import call
+
+"""
+a={{1},{2}};a//MatrixForm
+b= { {1, 2} }; b // MatrixForm
+a.b // MatrixForm
+c = { {1,3},{2,4} }; c//MatrixForm
+c\[Transpose] // MatrixForm
+c.c\[Transpose]//MatrixForm
+"""
+
+@jax.jit
+def selu(x, alpha=1.67, lmbda=1.05):
+  call(lambda x: print(f"x: {x}"), x)
+  jax.debug.print("{x}", x=x)
+  return lmbda * jnp.where(x > 0, x, alpha * jnp.exp(x) - alpha)
+
+key = jax.random.PRNGKey(0)
+x = jax.random.normal(key, (1000000,))
+selu(x)
+
+
+
+apt-get update && \
+apt-get install software-properties-common -y && \
+apt-get update
+
+wget https://developer.download.nvidia.com/compute/cuda/11.4.4/local_installers/cuda_11.4.4_470.82.01_linux.run
+
+https://developer.nvidia.com/downloads/c118-cudnn-local-repo-ubuntu1804-88012110-1amd64deb
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
+sudo apt-get update
+sudo apt-get -y install cuda
+
+```
+
+
+
+
+
 # gpu.js
 
 - https://gist.github.com/jonathanlurie/04fa6343e64f750d03072ac92584b5df
