@@ -37,6 +37,10 @@
   - https://www.yeeach.com/post/2291
     - https://github.com/book-searcher-org/book-searcher
 
+- piratebayo3klnzokct3wt5yyxb2vpebbuyjl7m623iaxmqhsd52coid.onion
+
+  - **tor 浏览器输入上面网址**
+  
 - 三省堂全訳漢辞海 ios有
 
   
@@ -81,7 +85,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 T.K.M.N字幕组
 
