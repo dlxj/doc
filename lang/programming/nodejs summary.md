@@ -12298,6 +12298,75 @@ if OS.has_feature('JavaScript'):
 
 
 
+# 多进程计算
+
+```
+
+# main.js
+	var Comcluster = new computecluster({
+        module: './calc.js',
+        max_processes: 3
+    })
+    let SegmentRun = 3
+    for (var i = 0; i < SegmentRun; i++) {
+        console.log(`新进程开始 ${i}======================`)
+        Comcluster.enqueue({
+            "th_proccess":i
+        }, function (err, r) {
+            r = JSON.parse(r)
+            if (err) {
+                throw err
+            }
+            console.log(`进程结束 ${r.th_proccess}======================`)
+            if (--SegmentRun === 0) {
+                Comcluster.exit()
+                console.log(`all task done.`)
+            }
+        })
+    }
+    
+# calc.js
+process.on('message', function (data) {
+
+    return process.send(JSON.stringify({msg:"计算成功", "th_proccess":data.th_proccess}))
+
+})
+
+
+  
+```
+
+
+
+
+
+# 多线程计算
+
+```
+// main.js
+    const { Worker,workerData, parentPort } = require('worker_threads')
+    let re = await new Promise(function (resolve, reject) {
+        const wk1 = new Worker(path.resolve(__dirname, './calc.js'))
+        wk1.ref()
+        wk1.postMessage({"th_thread":1})
+        wk1.on('message', async (re)=>{
+            resolve('ok')
+        })
+    })
+    
+// calc.js
+const { parentPort } = require('worker_threads')
+parentPort.onmessage = function (event) {
+    const startTime = new Date().getTime()
+    let th_thread = event.data.th_thread
+    parentPort.postMessage([true, th_thread])
+}
+
+    
+```
+
+
+
 
 
 # cudf
