@@ -4703,6 +4703,27 @@ jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
 
 [一文彻底搞懂jax.vmap的使用](https://zhuanlan.zhihu.com/p/476098317)
 
+
+
+```
+
+in_axes=({0: 'left'}, {1: 'right'}) 做的事情类似这样：
+	# 对第一个输入 每次取一行元素，对第二个输入 每次取一列元素，
+	# 然后传函数给函数的形参
+
+对矩阵第0轴索引，切出n个“行向量”，由于矩阵是3x2的，共计有3个行向量，切片shape为(2, )
+# 对axes=0 索引：
+for i in range(x.shape[0]):
+    print(x[i,:])
+    
+    
+  
+```
+
+
+
+
+
 ```
 # pip install jax==0.4.4
 	# windows这样装
@@ -4727,16 +4748,22 @@ c = { {1,3},{2,4} }; c//MatrixForm
 c\[Transpose] // MatrixForm
 c.c\[Transpose]//MatrixForm
 """
+def dot(a, b):
+  jax.debug.print("a={x} b={y}", x=a, y=b)  # require jax > 0.3.16
+  return jnp.vdot(a, b)
 
-@jax.jit
-def selu(x, alpha=1.67, lmbda=1.05):
-  call(lambda x: print(f"x: {x}"), x)
-  jax.debug.print("{x}", x=x)
-  return lmbda * jnp.where(x > 0, x, alpha * jnp.exp(x) - alpha)
+# 向量内积实现矩阵乘
+# x = jnp.arange(10).reshape((2, 5))
+x = jnp.array( [ [1, 3], 
+                 [2, 4]] )
 
-key = jax.random.PRNGKey(0)
-x = jax.random.normal(key, (1000000,))
-selu(x)
+x_T = jnp.array( [ [1, 2], 
+                   [3, 4]] )
+
+r = xmap(dot,
+  in_axes=({0: 'left'}, {1: 'right'}),
+  out_axes=['left', 'right', ...])(x, x_T) # x.T
+
 ```
 
 
