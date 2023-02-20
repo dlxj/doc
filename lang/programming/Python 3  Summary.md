@@ -4703,6 +4703,20 @@ jax.vmap(func)(Boxes(jnp.ones((2, 2, 4))))
 
 [一文彻底搞懂jax.vmap的使用](https://zhuanlan.zhihu.com/p/476098317)
 
+[How to vmap over a batch of trees or dictionaries](https://github.com/google/jax/issues/7430)
+
+```
+import jax.numpy as jnp 
+from jax import vmap
+
+def f(x, params):
+  return params['a']*x + params['b']
+
+vmap(f, in_axes=(0, 0))(jnp.array([2, 2]), {'a': jnp.array([3, 3]), 'b': jnp.array([4, 4])})
+```
+
+
+
 
 
 ```
