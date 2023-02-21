@@ -113,6 +113,8 @@ I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set
 
 
 
+## pm2
+
 
 
 ```
@@ -153,6 +155,37 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 ```
+
+
+
+### 每五秒检查一次接口，不好就重启
+
+```
+check.sh
+http_code=$(curl -m 5 -s -o /dev/null -w %{http_code} https://evaluaing.ksxxx.com/gettest?appename=ZC_ZXYJHNKX_YTMJ)
+if [ "$http_code" -eq 200 ]; then
+  echo "Success" > /dev/null
+else
+  echo "$(date +%Y%m%d-%H:%M:%S) gettest api test fail, restart ksbaiexam_8005 right now!!!" >/root/ksbao_logs.txt
+  pm2 restart ksbaiexam_8005
+fi
+
+crontab -e
+00   00    *      *   *   pm2 restart ksbaiexam_8005
+*   *    *      *   *   sleep 5;sh /root/check.sh
+*   *    *      *   *   sleep 10;sh /root/check.sh
+*   *    *      *   *   sleep 15;sh /root/check.sh
+*   *    *      *   *   sleep 20;sh /root/check.sh
+*   *    *      *   *   sleep 25;sh /root/check.sh
+*   *    *      *   *   sleep 30;sh /root/check.sh
+*   *    *      *   *   sleep 35;sh /root/check.sh
+*   *    *      *   *   sleep 40;sh /root/check.sh
+*   *    *      *   *   sleep 45;sh /root/check.sh
+*   *    *      *   *   sleep 50;sh /root/check.sh
+*   *    *      *   *   sleep 55;sh /root/check.sh
+```
+
+
 
 
 
