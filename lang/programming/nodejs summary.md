@@ -4468,6 +4468,44 @@ function getContent(fileName) {
 
 
 
+## worker
+
+```
+    // 所有词的理论概率
+    calc_theory_p:{
+        // 开多线程，计算真实概率 是 理论概率的多少倍
+        let re = await new Promise(async (resolve, reject) => {
+            let start = 2
+            let numThread = NGram - start + 1
+            let threadDone = 0
+            for (let n = start; n <= NGram; n++) {
+                const { Worker, workerData, parentPort } = require('worker_threads')
+                const wk1 = new Worker(require('path').resolve(__dirname, './threads/theory_p.js'))
+                wk1.ref()
+                wk1.postMessage({ "thread_id": n, dic_NGrams, n })
+                wk1.on('message', async (re) => {
+                    threadDone++
+                    console.log(`calc theory_p curr/numThread: ${threadDone} / ${numThread}`)
+                    if (threadDone >= numThread) {
+                        resolve('ok')
+                    }
+                })
+            }
+        })
+    }
+    
+    
+    
+# theory_p.js    
+const { parentPort } = require('worker_threads')
+parentPort.onmessage = function (event) {
+    let { thread_id, dic_NGrams, n } = event.data
+    parentPort.postMessage([true, { thread_id, dic_NGrams, n }])
+}
+```
+
+
+
 ## napajs
 
 
@@ -4733,7 +4771,9 @@ http.createServer(function(request, response) {
 
 # process
 
+## 多线程下载
 
+[多线程下载](https://github.com/develon2015/Youtube-dl-REST)
 
 ```
 The argument to execa is a command followed by an array of arguments, unless the shell: true option is used. So this should be either execa('npm', ['run', 'start']) or execa('npm run start', { shell: true }).
