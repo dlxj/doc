@@ -6,7 +6,17 @@
 
 
 
-10个单元音，11个复合元音
+
+
+
+
+# 10个单元音，11个复合元音
+
+[难以区分、难以发音的母音](https://www.bilibili.com/video/BV1VW411u72c/?spm_id_from=333.999.0.0&vd_source=1f4569489a622719e5c3b00101194ac3)
+
+![image-20230221235012134](./korean summary.assets/image-20230221235012134.png)
+
+![image-20230222010434806](./korean summary.assets/image-20230222010434806.png)
 
 
 
