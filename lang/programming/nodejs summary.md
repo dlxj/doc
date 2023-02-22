@@ -4128,6 +4128,63 @@ require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
 fs.createWriteStream(path).write(buffer)
 ```
 
+### 大文件读写
+
+- https://juejin.cn/post/7148051371060068389
+
+```javascript
+const { rejects } = require('assert');
+const fs = require('fs');
+const path = require('path');
+
+let srcPath = path.join('D:','big.zip');
+let destPath = path.join('E:','zip','tt.zip');
+console.log('执行开始...');
+
+handleStream().then(res => {
+    console.log(res);
+    if (res && res.code === 200) {
+        console.log('执行完毕');
+    }
+
+});
+
+function handleStream() {
+    return new Promise(resolve => {
+        //大文件处理,执行过程会阻塞等待
+        let rs = fs.createReadStream(srcPath, { encoding: 'binary' });
+        let ws = fs.createWriteStream(destPath, { encoding: 'binary' });
+
+        rs.on('data', (chunk) => {
+            console.log('传输中');
+            if (!ws.write(chunk)) { //如果还没写就先暂停
+                console.log('读取暂停');
+                rs.pause();
+            }
+        });
+        ws.on('drain', () => {
+            console.log('读取继续');
+            rs.resume();
+
+        });
+        rs.on('err', (err) => {
+            rejects({ code: -1, msg: '读取错误' });
+        });
+
+        rs.on('end', () => {
+            console.log('end');
+            ws.end();
+            resolve({ code: 200, data: 'ok' });
+        });
+    });
+
+}
+```
+
+
+
+
+
 
 
 ## read line by line
@@ -5511,6 +5568,12 @@ flushdb 清空当前数据库
 用户签到场景
 每天的日期字符串作为一个 key，用户 Id 作为 offset，统计每天用户的签到情况，总的用户签到数
 ```
+
+
+
+## 全文搜索
+
+- https://github.com/RediSearch/RediSearch
 
 
 
@@ -13223,6 +13286,16 @@ nfs 成功
 # v2ray
 
 - https://shadowzenhk.medium.com/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8cloudflare-cdn%E9%AB%98%E9%80%9Fip%E5%8A%A0%E9%80%9Fv2ray%E8%AE%BF%E9%97%AE-f1abcc76369c
+
+
+
+# djvu
+
+```
+DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方法：对同一个DjVu文件，用MODI和ABBYY各OCR一遍，导出纯文本，然后用文本比较工具进行比较，能够较快地发现OCR的错误。按他的说法，至少对于德语来说，MODI和ABBYY各有千秋，所以他用这个方法屡试不爽。有兴趣的不妨也试试。
+```
+
+
 
 
 

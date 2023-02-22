@@ -6580,6 +6580,12 @@ OCR Engine modes:
 
 
 
+#### FCENet
+
+[FCENet](https://zhuanlan.zhihu.com/p/375231118)
+
+
+
 #### mmocr
 
 - https://zhuanlan.zhihu.com/p/484637638
