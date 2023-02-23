@@ -366,13 +366,11 @@
 ## 查多语词典
 
 - https://zh.dict.naver.com/#/search?query=박수   可以查各国语言
+  - https://stdict.korean.go.kr/main/main.do 标准国语大词典
 - https://ja.dict.naver.com/#/search?query=ぼんやり&range=all
 - https://korean.dict.naver.com/kozhdict/#/main  韩中
-
 - https://www.bilibili.com/video/BV1w4411e7Bz
-
 - https://bulbapedia.bulbagarden.net/wiki/List_of_Korean_Pok%C3%A9mon_names  **宝可梦韩名**
-
 - 日语用训读汉字书写的和语词，韩语借入时按对应汉字直接音读了，例如
 
 > 소포-小包-小包み（包裹）
