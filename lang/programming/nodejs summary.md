@@ -12340,6 +12340,18 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
+### tool 关键字
+
+[tool 关键字](https://docs.godotengine.org/zh_CN/latest/tutorials/plugins/running_code_in_the_editor.html)
+
+```
+tool是一个强大的关键字，当添加到脚本的顶部时，它会在编辑器中执行。您还可以决定脚本的哪些部分在编辑器中执行，哪部分在游戏中执行，以及哪部分在两者中均执行。
+```
+
+
+
+
+
 ## 拷贝大量数据
 
 ```
