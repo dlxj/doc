@@ -12348,7 +12348,18 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 tool是一个强大的关键字，当添加到脚本的顶部时，它会在编辑器中执行。您还可以决定脚本的哪些部分在编辑器中执行，哪部分在游戏中执行，以及哪部分在两者中均执行。
 ```
 
+### 水平拆分容器
 
+[splitcontainer](https://docs.godotengine.org/en/stable/classes/class_splitcontainer.html)
+
+[HSplitContainer with two sidebars](https://www.reddit.com/r/godot/comments/on5vun/how_can_i_use_hsplitcontainer_to_create_a_ui_with/)
+
+[Best way to split screen evenly](https://www.reddit.com/r/godot/comments/ruelz9/best_way_to_split_screen_evenly_for_ui/)
+
+> ```
+> # HSplitContainer 用这个就可以实现水平拆分了
+> Use an HBoxContainer with full rect. Add 2 Controls as children with horizontal size flags set to fill and expand.
+> ```
 
 
 
