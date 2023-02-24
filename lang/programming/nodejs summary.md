@@ -12345,6 +12345,14 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
+### 更改编辑器主题
+
+[更改编辑器主题](https://github.com/godotengine/godot-syntax-themes)
+
+
+
+
+
 ## 可调窗体
 
 - https://github.com/gilzoide/godot-dockable-container
@@ -12380,7 +12388,7 @@ tool是一个强大的关键字，当添加到脚本的顶部时，它会在编�
 
 [video to learn about the stretch mode](https://youtu.be/gkY6X-bziHQ)
 
-
+ In Project Settings/General/Display/Window set Size: Resizeable=true and Stretch: Mode=viewport, Aspect=keep and start the exported HTML5 game with Firefox.
 
 ```
 # 关键在于：顶层的 Control 和 下面的 HSplitContainer 都要设置自动调大小
@@ -12413,6 +12421,26 @@ func _process(delta) -> void:
 ```
 
 
+
+#### 更改背景色
+
+```
+use a StyleBoxFlat in the Normal Stylebox and set the "Bg Color" and Border properties of that in the properties list that appears immediately below its preview in the Inspector. 
+```
+
+```
+In the inspector, under TextEdit, check the "Syntax Highlighting" option. Then you can modify the background color under the "Custom Colors" heading by checking it's box and selecting a color.
+```
+
+```
+The easiest way I have been able to do was to open the Custom Styles Section of the Text Edit and then add a new style to the Normal style, then edit that added style to the background color you want.
+```
+
+
+
+#### wrap textEdit
+
+[wrap textEdit](https://github.com/godotengine/godot/issues/3985) [u](https://github.com/godotengine/godot/files/2952478/wrap_test.zip)
 
 
 
