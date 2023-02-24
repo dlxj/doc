@@ -12403,6 +12403,10 @@ func on_size_changed():
 	print("Resizing: ", get_viewport_rect().size, OS.get_window_size())
 	self.set_size( OS.get_window_size() )
 
+
+# godot 4.0
+	set_size(DisplayServer.window_get_size())
+
 ```
 
 
@@ -12443,6 +12447,12 @@ The easiest way I have been able to do was to open the Custom Styles Section of 
 [wrap textEdit](https://github.com/godotengine/godot/issues/3985) [u](https://github.com/godotengine/godot/files/2952478/wrap_test.zip)
 
 
+
+
+
+### GDScript
+
+[tutorial](https://gdscript.com/tutorials/)
 
 
 
