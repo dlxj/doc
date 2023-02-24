@@ -12372,11 +12372,12 @@ tool是一个强大的关键字，当添加到脚本的顶部时，它会在编�
 
 
 ```
-rect_size =  get_tree().root.size  # get_node("/root")
-print(rect_size)
-get_tree().root.connect("size_changed", self, "myfunc")
+# 关键在于：顶层的 Control 和 下面的 HSplitContainer 都要设置自动调大小
+	# HSplitContainer 里面放两控件，全部自动拉伸占用所有空间
+func _ready():
+	get_tree().root.connect("size_changed", self, "on_size_changed")
 
-func myfunc():
+func on_size_changed():
 	print("Resizing: ", get_viewport_rect().size, OS.get_window_size())
 	self.set_size( OS.get_window_size() )
 
