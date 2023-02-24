@@ -12454,6 +12454,8 @@ The easiest way I have been able to do was to open the Custom Styles Section of 
 
 [tutorial](https://gdscript.com/tutorials/)
 
+[QA](https://godotengine.org/qa/tag/gdscript)
+
 
 
 ## 拷贝大量数据
