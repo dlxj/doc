@@ -13324,12 +13324,22 @@ nfs 成功
 
 [u](https://www.bilibili.com/video/BV1L5411g7fs/?vd_source=1f4569489a622719e5c3b00101194ac3)
 
+[oldmanemu](https://www.oldmanemu.net/)
+
 ```
 刚刚亲自测试了一下，在cirta android上玩的方法如下：
 1、下载https://github.com/evandixon/DotNet3dsToolkit ，将dump出来的CXI文件extract
 2、将luma补丁里的romfs文件夹下内容覆盖extract出来的RomFS文件夹，code.bin覆盖到ExeFS下
 3、在DotNet3dsToolkit里rebuild成0-key encrypted 3ds文件
 4、在cirta Android上安装3ds文件即为中文版
+
+/storage/emulated/0/citra-emu/sdmc/ 默认位置应该是这里吧  sdmc就是储存卡的意思
+没错的话 长按游戏可以设置
+
+有些朋友反映直接安装cia会出现错误，但是用FBI远程安装cia就可以安装
+有同样问题的可以试试
+
+
 ```
 
 
