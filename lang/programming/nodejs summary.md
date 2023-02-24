@@ -12361,6 +12361,46 @@ tool是一个强大的关键字，当添加到脚本的顶部时，它会在编�
 > Use an HBoxContainer with full rect. Add 2 Controls as children with horizontal size flags set to fill and expand.
 > ```
 
+[size and anchors](https://docs.godotengine.org/en/3.1/tutorials/gui/size_and_anchors.html)
+
+[multiple_resolutions](https://docs.godotengine.org/en/3.1/tutorials/viewports/multiple_resolutions.html)
+
+[Control node resize in the editor when animation player plays an animation](https://github.com/godotengine/godot/issues/65530)
+
+[video to learn about the stretch mode](https://youtu.be/gkY6X-bziHQ)
+
+
+
+```
+rect_size =  get_tree().root.size  # get_node("/root")
+print(rect_size)
+get_tree().root.connect("size_changed", self, "myfunc")
+
+func myfunc():
+	print("Resizing: ", get_viewport_rect().size, OS.get_window_size())
+	self.set_size( OS.get_window_size() )
+
+```
+
+
+
+```
+# auto resize when screen resize
+var screen_size : Vector2 = Vector2()
+
+func _ready():
+screen_size = OS.get_screen_size()# Gets the screen size to test in futur if its change since their
+
+func _process(delta) -> void:
+    if OS.get_screen_size() != screen_size: #Tests if your screen changed in size, e.g a different monitor
+        screen_size = OS.get_screen_size()
+        OS.set_window_size(screen_size)# Sets your window to your screen size
+```
+
+
+
+
+
 
 
 ## 拷贝大量数据
