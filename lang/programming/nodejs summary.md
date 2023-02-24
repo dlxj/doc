@@ -5598,6 +5598,17 @@ flushdb 清空当前数据库
 
 
 ```
+# 关闭防火墙
+systemctl stop firewalld
+# 关闭 apache 
+service httpd stop
+
+yum install nginx  && \
+nginx -t && \
+systemctl restart nginx && \
+nginx -s reload
+
+
 /etc/nginx/nginx.conf
 
 user  root;
@@ -12334,6 +12345,14 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
+### 更改编辑器主题
+
+[更改编辑器主题](https://github.com/godotengine/godot-syntax-themes)
+
+
+
+
+
 ## 可调窗体
 
 - https://github.com/gilzoide/godot-dockable-container
@@ -12360,6 +12379,82 @@ tool是一个强大的关键字，当添加到脚本的顶部时，它会在编�
 > # HSplitContainer 用这个就可以实现水平拆分了
 > Use an HBoxContainer with full rect. Add 2 Controls as children with horizontal size flags set to fill and expand.
 > ```
+
+[size and anchors](https://docs.godotengine.org/en/3.1/tutorials/gui/size_and_anchors.html)
+
+[multiple_resolutions](https://docs.godotengine.org/en/3.1/tutorials/viewports/multiple_resolutions.html)
+
+[Control node resize in the editor when animation player plays an animation](https://github.com/godotengine/godot/issues/65530)
+
+[video to learn about the stretch mode](https://youtu.be/gkY6X-bziHQ)
+
+ In Project Settings/General/Display/Window set Size: Resizeable=true and Stretch: Mode=viewport, Aspect=keep and start the exported HTML5 game with Firefox.
+
+```
+# 关键在于：顶层的 Control 和 下面的 HSplitContainer 都要设置自动调大小
+	# HSplitContainer 里面放两控件，全部自动拉伸占用所有空间
+func _ready():
+	#if OS.get_name()=="HTML5":
+	#self.set_size( OS.get_window_size() )
+	get_tree().root.connect("size_changed", self, "on_size_changed")
+	OS.set_window_maximized(true)
+	
+func on_size_changed():
+	print("Resizing: ", get_viewport_rect().size, OS.get_window_size())
+	self.set_size( OS.get_window_size() )
+
+
+# godot 4.0
+	set_size(DisplayServer.window_get_size())
+
+```
+
+
+
+```
+# auto resize when screen resize
+var screen_size : Vector2 = Vector2()
+
+func _ready():
+screen_size = OS.get_screen_size()# Gets the screen size to test in futur if its change since their
+
+func _process(delta) -> void:
+    if OS.get_screen_size() != screen_size: #Tests if your screen changed in size, e.g a different monitor
+        screen_size = OS.get_screen_size()
+        OS.set_window_size(screen_size)# Sets your window to your screen size
+```
+
+
+
+#### 更改背景色
+
+```
+use a StyleBoxFlat in the Normal Stylebox and set the "Bg Color" and Border properties of that in the properties list that appears immediately below its preview in the Inspector. 
+```
+
+```
+In the inspector, under TextEdit, check the "Syntax Highlighting" option. Then you can modify the background color under the "Custom Colors" heading by checking it's box and selecting a color.
+```
+
+```
+The easiest way I have been able to do was to open the Custom Styles Section of the Text Edit and then add a new style to the Normal style, then edit that added style to the background color you want.
+```
+
+
+
+#### wrap textEdit
+
+[wrap textEdit](https://github.com/godotengine/godot/issues/3985) [u](https://github.com/godotengine/godot/files/2952478/wrap_test.zip)
+
+
+
+
+
+### GDScript
+
+[tutorial](https://gdscript.com/tutorials/)
+
+[QA](https://godotengine.org/qa/tag/gdscript)
 
 
 
