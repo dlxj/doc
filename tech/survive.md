@@ -47,6 +47,8 @@
 
 # anime
 
+- https://y2mate.ch/  dmmTV下载
+
 - https://nyaa.si/?f=0&c=0_0&q=pokemon
 
 - https://anidex.info/?q=pokemon&id=1,2,3

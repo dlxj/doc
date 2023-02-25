@@ -13421,6 +13421,8 @@ nfs 成功
 
 [oldmanemu](https://www.oldmanemu.net/)
 
+[e](https://e-hentai.org/)
+
 ```
 刚刚亲自测试了一下，在cirta android上玩的方法如下：
 1、下载https://github.com/evandixon/DotNet3dsToolkit ，将dump出来的CXI文件extract
