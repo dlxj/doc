@@ -438,17 +438,35 @@ https://forum.freemdict.com/t/topic/8231/12
 
 > とわ ：【永久】之意的雅语表达形式。永久。永远。
 >
+> > 永久(えいきゅう)
+>
 > 영구, 영원. (=永遠, 永久)
+>
+> > ㅕ= yo ; ㅇ= n ;
+> >
+> > 
 
 ここがとわの市か……。
 
-> 市(し)：城市
+> 市(し)：城市ㅇ
 >
 > 시 市 ; 도시 都市 ; shi  sh->s  i->i
 >
 > > ㅅ 这个辅音为什么对应 s ? 因为女人是 S 形曲线 
 
 
+
+[客家话](https://www.youtube.com/watch?v=AP7dYqPqXzA) 耳公，鼻公，在外面，看得见，属阳，看不见的在口里面的舌嫲属阴，所以客家话里有阴阳来分别。客家话很有文化的哦
+
+[客家话](https://www.youtube.com/watch?v=NtXO54vCydw)
+
+[禾苗最怕寒露风，人生最怕老来穷](https://www.youtube.com/watch?v=T1y_IJbc1uM&list=PLqv-rlESeSaDbOGHZVb07Yzr0QQnNrogM&index=1)  客家谚语
+
+[逢人要讲七分话，三分留来打天下](https://www.youtube.com/watch?v=gwurBUhfsvo)
+
+[患难之时能有几，人敬富来狗咬贫](https://www.youtube.com/watch?v=gwurBUhfsvo)
+
+[不信且看宴中酒，怀怀先敬有钱人]()
 
 
 
@@ -460,7 +478,31 @@ https://forum.freemdict.com/t/topic/8231/12
 
 
 
+## 韓语
+
 ![image-20230219231856209](./japanese summary.assets/image-20230219231856209.png)
+
+> 要打出紧音只需要按住shift在按相应的松音键就可以了，比如按Q键显示ㅂ，按住shift再按Q就会打出ㅃ。
+
+
+
+![image-20230226145825832](./japanese summary.assets/image-20230226145825832.png)
+
+![image-20230226145957697](./japanese summary.assets/image-20230226145957697.png)
+
+
+
+粗體部分顯示了修正案與馬-賴系統相異的轉寫法
+
+「ㄱ」和「ㅋ」做韻尾的時候，轉寫為「K」。例如　곡 GOK
+
+「ㄷ」、「ㅌ」、「ㅅ」和「ㅈ」做韻尾的時候，轉寫為「T」。例如 꽃 KKOT
+
+「ㅂ」和「ㅍ」做韻尾的時候，轉寫為「P」。例如 탑 TAP
+
+![image-20230226150057962](./japanese summary.assets/image-20230226150057962.png)
+
+前字韻尾同後字聲母相遇的時候寫法有一定的變化
 
 
 
