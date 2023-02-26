@@ -430,6 +430,24 @@ https://forum.freemdict.com/t/topic/8231/12
 
 
 
+# NLP+
+
+
+
+新とわの駅
+
+> とわ ：【永久】之意的雅语表达形式。永久。永远。
+>
+> 영구, 영원. (=永遠, 永久)
+
+ここがとわの市か……。
+
+> 市(し)：城市
+>
+> 시 市 ; 도시 都市 ; shi  sh->s  i->i
+>
+> > ㅅ 这个辅音为什么对应 s ? 因为女人是 S 形曲线 
+
 
 
 
@@ -441,6 +459,8 @@ https://forum.freemdict.com/t/topic/8231/12
 ![image-20230130222443891](japanese summary.assets/image-20230130222443891.png)
 
 
+
+![image-20230219231856209](./japanese summary.assets/image-20230219231856209.png)
 
 
 
