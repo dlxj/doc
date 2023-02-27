@@ -12345,6 +12345,12 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
+### awesome-godot
+
+[awesome-godot](https://github.com/godotengine/awesome-godot#projects)
+
+
+
 ### 更改编辑器主题
 
 [更改编辑器主题](https://github.com/godotengine/godot-syntax-themes)
@@ -12368,6 +12374,10 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 [自定义绘图](https://docs.godotengine.org/zh_CN/stable/tutorials/2d/custom_drawing_in_2d.html?highlight=update)
 
 
+
+### Desktop Application Dev in Godot
+
+[app dev](https://www.google.com/search?q=Desktop+Application+Development+in+Godot&sourceid=chrome&ie=UTF-8)
 
 ### demos
 
