@@ -12351,6 +12351,28 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 
 
+### 入门问题汇总
+
+[入门问题汇总](https://blog.csdn.net/u012863565/article/details/125018469)
+
+
+
+### 自定义 GUI 控件
+
+[自定义 GUI 控件](https://docs.godotengine.org/zh_CN/stable/tutorials/ui/custom_gui_controls.html?highlight=update)
+
+
+
+### 自定义绘图
+
+[自定义绘图](https://docs.godotengine.org/zh_CN/stable/tutorials/2d/custom_drawing_in_2d.html?highlight=update)
+
+
+
+### demos
+
+[demos](https://github.com/GDQuest/godot-demos)
+
 
 
 ## 可调窗体
