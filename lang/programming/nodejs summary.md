@@ -12306,6 +12306,30 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # Godot
 
+
+
+## 文档
+
+### [SizeFlags](https://docs.godotengine.org/zh_CN/stable/classes/class_control.html?highlight=SizeFlags#id8)
+
+```
+enum SizeFlags:
+
+SIZE_FILL = 1 --- 告诉父Container扩展此节点的边界，以在不推其他节点的情况下填充所有可用空间。使用size_flags_horizontal和size_flags_vertical。
+
+SIZE_EXPAND = 2 --- 告诉父级Container让该节点占用您标记的轴上的所有可用空间。如果将多个相邻节点设置为扩展，它们将根据其拉伸比共享空间。参阅size_flags_stretch_ratio。与size_flags_horizontal和size_flags_vertical一起使用。
+
+SIZE_EXPAND_FILL = 3 --- 将节点的大小标志设置为同时填充和扩展。有关更多信息，请参阅上面的2个常量。
+
+SIZE_SHRINK_CENTER = 4 --- 告诉父级 Container 使节点本身居中。它基于控件的包围框居中，因此它不适用于 fill 或 expand 尺寸标志。与 size_flags_horizontal 和 size_flags_vertical 一起使用。
+
+SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或右侧）对齐。它不适用于fill或expand size标志。与size_flags_horizontal和size_flags_vertical一起使用。
+```
+
+
+
+
+
 ## 源码编译
 
 - https://github.com/Orama-Interactive/Pixelorama
@@ -12504,13 +12528,23 @@ The easy way to avoid lifetime issues would be to create a PoolByteArray singlet
 
 ### lmdb
 
+[LMDB-基础结构与Mmap思想](https://www.jianshu.com/p/6378082987ec)
+
+[构建高可用分布式Key-Value存储服务](https://github.com/siddontang/blog/blob/master/before-2016/build-ha-distributed-kv-service.md)
+
+文件最大支持4G
+
+```
+LMDB（Lighting Memory DB）是在BerkeleyDB的基础上进行改编具有高效、紧凑、健壮性的数据库。它文件结构简单，一个文件夹，里面一个数据文件，一个锁文件。数据随意复制，随意传输。它的访问简单，不需要运行单独的数据库管理进程，只要在访问数据的代码里引用LMDB库，访问时给文件路径即可。
+```
+
+
+
 ```
 整个数据集都在磁盘上。它的一些部分在内存中。当需要不在内存中的部分时--操作系统从磁盘中获取它，并通过把它放在进程的内存中交给应用程序。
 
 后台的mongodb，但不仅如此，我还想到了postgresql，它们强烈建议拥有与工作数据集同样多的内存。
 ```
-
-
 
 
 
