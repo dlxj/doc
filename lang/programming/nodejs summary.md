@@ -12409,6 +12409,43 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+## godot4.0
+
+
+
+### 动态设置窗体大小
+
+```
+# 静态设置在：项目设置 ->显示 ->窗口
+DisplayServer.window_set_size(Vector2i(1024, 600))
+```
+
+
+
+### @onready
+
+```
+# v3 是 onready
+@onready var content_container := $ContentContainer
+```
+
+
+
+### switch 语句
+
+```
+func _get_scene_for_route(next_route : int) -> PackedScene:
+	match next_route:
+		SceneUtils.Routes.BOARD:
+			return BoardScene
+		_:
+			return BoardsScene
+```
+
+
+
+
+
 ## 可调窗体
 
 - https://github.com/gilzoide/godot-dockable-container
@@ -12479,6 +12516,10 @@ func _process(delta) -> void:
         screen_size = OS.get_screen_size()
         OS.set_window_size(screen_size)# Sets your window to your screen size
 ```
+
+
+
+
 
 
 
@@ -12563,7 +12604,15 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 
 
 
-## 显示网页 
+### nodejjs不解压读取文件
+
+[nodejjs不解压读取文件](https://www.jianshu.com/p/74fc8e90eab0)
+
+
+
+
+
+## 显示网页
 
 - https://github.com/stigmee/gdnative-cef  嵌入cef
 
