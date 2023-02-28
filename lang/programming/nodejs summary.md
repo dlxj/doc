@@ -12654,6 +12654,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 [mod](https://www.loverslab.com/topic/165186-doaxvv-mods-by-teddy-steam-centered/)
 
+[干货](https://home.gamer.com.tw/creationDetail.php?sn=4354202)
+
 
 
 # UGUI
