@@ -12648,6 +12648,14 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 
 
+### Doaxvv
+
+[show model](https://github.com/alloystorm/dvvr/issues/151)
+
+[mod](https://www.loverslab.com/topic/165186-doaxvv-mods-by-teddy-steam-centered/)
+
+
+
 # UGUI
 
 - https://www.raywenderlich.com/6570-introduction-to-unity-ui-part-1
