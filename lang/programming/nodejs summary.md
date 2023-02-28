@@ -12632,6 +12632,14 @@ if OS.has_feature('JavaScript'):
 
 [godot_moho_importer](https://github.com/jpdurigan/godot_moho_importer)
 
+### fbx export
+
+```
+I think you are talking about Moho's fbx export option right? I haven't tried that, I export png image sequences because I like to use all the animation features, not only the fbx compatible ones.
+```
+
+
+
 
 
 ### demo cat-a-combs
