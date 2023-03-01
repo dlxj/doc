@@ -334,6 +334,10 @@ taskkill -PID 进程号 -F
 
 
 
+# 遍历进程
+
+[遍历进程](https://github.com/dbshch/DOAXVV-script)
+
 
 
 # 多用户远程登录

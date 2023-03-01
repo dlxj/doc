@@ -12453,6 +12453,14 @@ SceneUtils.connect("change_route_requested", self, "_on_change_scene_requested")
 
 
 
+### 动态实例化场景
+
+```
+boards = load("res://scenes/boards.tscn").instantiate()
+```
+
+
+
 
 
 ### @onready
@@ -12757,6 +12765,12 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 [mod](https://www.loverslab.com/topic/165186-doaxvv-mods-by-teddy-steam-centered/)
 
 [干货](https://home.gamer.com.tw/creationDetail.php?sn=4354202)
+
+[遍历进程](https://github.com/dbshch/DOAXVV-script)
+
+
+
+
 
 
 
