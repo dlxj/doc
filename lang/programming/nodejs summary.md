@@ -12422,11 +12422,71 @@ DisplayServer.window_set_size(Vector2i(1024, 600))
 
 
 
+### 默认背景色
+
+```
+VisualServer.set_default_clear_color(Color(0.4,0.4,0.4,1.0))
+```
+
+
+
+### 皮肤和主题
+
+[gui_skinning](https://docs.godotengine.org/en/stable/tutorials/ui/gui_skinning.html)
+
+
+
+### button的flat
+
+效果是透明背景，会显示出窗体的底色
+
+
+
+### 自动加载脚本
+
+```
+# 项目设置 ->自动加载 ->选择脚本
+定义好结点名称，相当于自动帮你实际化了一个全局变量
+
+SceneUtils.connect("change_route_requested", self, "_on_change_scene_requested")
+```
+
+
+
+
+
 ### @onready
 
 ```
 # v3 是 onready
 @onready var content_container := $ContentContainer
+```
+
+
+
+### 鼠标
+
+```
+extends Control
+
+func _gui_input(event):
+   if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+       print("Left mouse button was pressed!")
+```
+
+
+
+
+
+### await
+
+```
+# popup 是窗口类，点关闭按钮时会触发信号 close_requested
+await popup.close_requested
+	# 只有信号触发后 await 才会返回
+
+# Where "timeout" is the signal you are waiting for.
+await get_tree().create_timer(1000).timeout
 ```
 
 
@@ -12440,6 +12500,48 @@ func _get_scene_for_route(next_route : int) -> PackedScene:
 			return BoardScene
 		_:
 			return BoardsScene
+```
+
+
+
+### 骚操作
+
+```
+func _is_function_state(script_result):
+	return script_result != null and \
+		   typeof(script_result) == TYPE_OBJECT and \
+		   script_result is GDScriptFunctionState and \
+		   script_result.is_valid()
+
+var call_this = Callable(script_inst, test_name)
+call_this.call()
+while(call_this.is_awaiting):
+  await get_tree().idle_frame
+  
+
+3.x
+script_result = script_inst.call(test_name)
+if(_is_function_state(script_result)):
+  yield(script_result, 'completed')
+
+3.x
+func create_single_error_popup(message : String, focus_after_close : Control, parent : Node):
+	if popup:
+		popup.queue_free()
+
+	popup = load("res://scenes/single_button_popup.tscn").instance()
+	popup.get_node("Label").set_text(message)
+	parent.add_child(popup)
+	popup.popup_centered()
+	popup.get_close_button().grab_focus()
+
+	yield(popup, "tree_exited")
+	
+	if popup:
+		popup.queue_free()
+	popup = null
+	focus_after_close.grab_focus()
+
 ```
 
 
