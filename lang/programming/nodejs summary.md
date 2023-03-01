@@ -12482,6 +12482,53 @@ func _gui_input(event):
        print("Left mouse button was pressed!")
 ```
 
+### 坐标系
+
+[Godot疑难杂症01——触屏点击位置与全局位置之谜](https://zhuanlan.zhihu.com/p/414920112)
+
+猜测**event.position实际是视窗内的坐标，不是全局坐标，需要根据camera位置进行转换**
+
+<img src="nodejs summary.assets/image-20230301115309515.png" alt="image-20230301115309515" style="zoom:50%;" />
+
+
+
+由于我的camera使用了zoom缩放1.5倍，多半是缩放导致的，实验结果也是离中心距离越远，和实际位置偏移越大，中心点几乎无偏移
+
+但是缩放的坐标怎么转换呢，zoom是由视窗中心出发缩放周围，所以其实只需要按如下图求出z向量即可
+
+
+
+<img src="nodejs summary.assets/image-20230301115404783.png" alt="image-20230301115404783" style="zoom:50%;" />
+
+```
+var relative_center_pos = -(node.get_viewport().get_visible_rect().size/2 - event.position
+    relative_center_pos.x = relative_center_pos.x * current_camera.zoom.x
+    relative_center_pos.y = relative_center_pos.y * current_camera.zoom.y
+    return current_camera.get_camera_screen_center() + relative_center_pos
+```
+
+```
+# 获取当前视窗的矩形位置
+var canvas = get_canvas_transform()
+var top_left = -canvas.origin / canvas.get_scale()
+var size = get_viewport_rect().size / canvas.get_scale()
+```
+
+```
+所有视口坐标-》世界坐标转换（可以适配相机的位移、旋转、缩放zoom），具体原理参见链接：
+https://github.com/godotengine/godot/issues/44358
+
+func actual_position(var camera,var pos):
+	var inv_canv_tfm: Transform2D = camera.get_canvas_transform().affine_inverse()
+	var half_screen: Transform2D = Transform2D().translated(pos)
+	var actual_screen_center_pos: Vector2 = inv_canv_tfm * half_screen * Vector2(0, 0)
+	return actual_screen_center_pos
+```
+
+
+
+
+
 
 
 
