@@ -12461,6 +12461,14 @@ boards = load("res://scenes/boards.tscn").instantiate()
 
 
 
+### 嵌套Container
+
+Container 直接套 Container ，第二个没法指定大小。必须先嵌入一个 ColorRect(例如)，再在它里面加Containner
+
+
+
+如果想要 spacer, 可以加 SplitContainer 然后指定最小大小
+
 
 
 ### @onready
