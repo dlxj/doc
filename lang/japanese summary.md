@@ -434,11 +434,15 @@ https://forum.freemdict.com/t/topic/8231/12
 
 [粤语审音配字库](https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/)
 
+[粵語國際音標查詢](https://open-dict-data.github.io/ipa-lookup/yue/?#)
+
 [【粤词音韵】粤语填词基础：五度标记法和调值](https://www.bilibili.com/video/BV17U4y1P7Ud)
 
 ![image-20230226181610805](./japanese summary.assets/image-20230226181610805.png)
 
 ![image-20230226181139024](./japanese summary.assets/image-20230226181139024.png)
+
+**永** /wɪŋ˩˧/ 实际发音23，这里像是标13
 
 
 
@@ -502,17 +506,18 @@ https://forum.freemdict.com/t/topic/8231/12
 >
 > 영구, 영원. (=永遠, 永久)
 >
-> > ㅕ= yo ; ㅇ= n ; ㄱ = g 
+> > ㅕ= yo ; ㅇ= n ; ㄱ = g   (注：**ㅇ通常作为零声母，但作为韵尾时读作n**)
 > >
 > > 영구 音同"拥古"
 > >
 > > ㄴ = n ; 
 > >
-> > 
-> >
 > > 영원 音同"拥吻"
 > >
-> > 
+>
+>  粤语
+>
+> > 永 /wɪŋ˩˧/ 实际发音23，这里像是标13
 
 ここがとわの市か……。
 
@@ -522,7 +527,9 @@ https://forum.freemdict.com/t/topic/8231/12
 >
 > > ㅅ 这个辅音为什么对应 s ? 因为女人是 S 形曲线
 > >
-> > ㄷ 对应辅音 d，因为这是一只嗷嗷待哺的口
+> > ㄷ 对应辅音 d，因为这是一只嗷嗷**待**哺的口
+> >
+> > 도시 : 音同"都喜"
 
 
 

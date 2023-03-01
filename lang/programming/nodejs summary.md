@@ -12734,11 +12734,29 @@ if OS.has_feature('JavaScript'):
 
 [godot_moho_importer](https://github.com/jpdurigan/godot_moho_importer)
 
+### fbx export
+
+```
+I think you are talking about Moho's fbx export option right? I haven't tried that, I export png image sequences because I like to use all the animation features, not only the fbx compatible ones.
+```
+
+
+
 
 
 ### demo cat-a-combs
 
 [cat-a-combs](https://github.com/jpdurigan/cat-a-combs)
+
+
+
+### Doaxvv
+
+[show model](https://github.com/alloystorm/dvvr/issues/151)
+
+[mod](https://www.loverslab.com/topic/165186-doaxvv-mods-by-teddy-steam-centered/)
+
+[干货](https://home.gamer.com.tw/creationDetail.php?sn=4354202)
 
 
 
