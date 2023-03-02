@@ -12882,6 +12882,8 @@ Coinbase Card （欧洲版）可绑定
 
 
 
+https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
+
 
 
 # UGUI
