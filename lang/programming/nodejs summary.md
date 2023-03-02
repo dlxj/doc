@@ -12442,6 +12442,13 @@ VisualServer.set_default_clear_color(Color(0.4,0.4,0.4,1.0))
 
 
 
+### label的字体颜色
+
+1. Theme -> Theme Overrides -> Font Color
+2. Visibility -> Self Modulate 
+
+
+
 ### 自动加载脚本
 
 ```
@@ -12737,6 +12744,8 @@ The easy way to avoid lifetime issues would be to create a PoolByteArray singlet
 [LMDB-基础结构与Mmap思想](https://www.jianshu.com/p/6378082987ec)
 
 [构建高可用分布式Key-Value存储服务](https://github.com/siddontang/blog/blob/master/before-2016/build-ha-distributed-kv-service.md)
+
+[meilisearch](https://docs.meilisearch.com/learn/advanced/storage.html#database-location) 构建在lmdb之上?
 
 文件最大支持4G
 
