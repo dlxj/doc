@@ -12854,7 +12854,16 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 
 
+# chatGPT
 
+[api](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)
+
+[提问案例 ](https://github.com/howl-anderson/unlocking-the-power-of-llms)
+
+[wechat](https://github.com/zhayujie/chatgpt-on-wechat)
+
+Velo 可绑定
+Coinbase Card （欧洲版）可绑定
 
 
 
