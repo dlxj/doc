@@ -12373,6 +12373,10 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [awesome-godot](https://github.com/godotengine/awesome-godot#projects)
 
+[book reader](https://github.com/miskatonicstudio/interactive-book-godot) 优秀
+
+[intrepid](https://github.com/miskatonicstudio/intrepid/tree/godot-4-rc-migration) steam上架游戏
+
 
 
 ### 更改编辑器主题
@@ -12465,6 +12469,22 @@ SceneUtils.connect("change_route_requested", self, "_on_change_scene_requested")
 ```
 boards = load("res://scenes/boards.tscn").instantiate()
 ```
+
+
+
+### 动态 clone 控件
+
+```
+@onready var personal_boards_container := $ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer
+@onready var create_Button := $ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer/Button
+
+func _ready():
+	var btn_clone = create_Button.duplicate()
+	personal_boards_container.add_child(btn_clone)
+
+```
+
+
 
 
 
