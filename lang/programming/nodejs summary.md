@@ -12911,7 +12911,17 @@ Coinbase Card （欧洲版）可绑定
 
 https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
-61
+
+
+
+
+# LLaMA
+
+[Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
+
+[PaddlePaddle implementation of LLaMA](https://github.com/facebookresearch/llama/issues/90)
+
+
 
 # UGUI
 
