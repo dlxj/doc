@@ -72,6 +72,16 @@ ps -ef | grep redis
 
 
 
+# 关闭 crontab 运行的进程
+
+```
+ps aux | grep xx_batch.sh
+但如果此shell里又调用了其他子shell时，
+则你需要去查到子shell的进程号，再kill掉，这样才能彻底将此定时停止掉。
+```
+
+
+
 
 
 # 关闭后台进程
