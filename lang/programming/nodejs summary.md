@@ -12864,6 +12864,19 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 
 
+# ffmpeg
+
+[查看媒体文件头信息工具ffprobe ](https://www.cnblogs.com/renhui/p/9209664.html)
+
+```
+# 以 json 格式输出每个流的信息
+ffprobe -print_format json  -show_streams pm.mp4 
+```
+
+
+
+
+
 # chatGPT
 
 [api](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)
