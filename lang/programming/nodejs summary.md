@@ -12877,6 +12877,39 @@ ffprobe -print_format json  -show_streams pm.mp4
 
 
 
+```
+
+# ffmpeg extract the second stream to nodejs buffer stream
+
+const { spawn } = require('child_process');
+
+const cmd = spawn('ffmpeg', [
+  '-i', 'input_video.mp4',
+  '-map', '0:1',
+  '-c', 'copy',
+  '-f', 'mp4',
+  'pipe:1'
+]);
+
+let output = Buffer.from('');
+
+cmd.stdout.on('data', (chunk) => {
+  output = Buffer.concat([output, chunk]);
+});
+
+cmd.on('close', (code) => {
+  if (code === 0) {
+    console.log('Extraction succeeded.');
+    // do something with the output buffer stream
+  } else {
+    console.error(`Extraction failed with code ${code}.`);
+  }
+});
+
+```
+
+
+
 ## ffmpeg named pipe with a buffer
 
 ```
@@ -12979,6 +13012,10 @@ namespace NamedPipeTest
 ```
 
 
+
+## ffmpeg.wasm
+
+[ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm)
 
 
 
