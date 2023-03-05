@@ -12923,6 +12923,12 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 
+# chatllama
+
+[chatllama](https://github.com/nebuly-ai/nebullvm/tree/main/apps/accelerate/chatllama)
+
+
+
 # UGUI
 
 - https://www.raywenderlich.com/6570-introduction-to-unity-ui-part-1
