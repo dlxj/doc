@@ -12868,9 +12868,114 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 [查看媒体文件头信息工具ffprobe ](https://www.cnblogs.com/renhui/p/9209664.html)
 
+[C# Named Pipe FFmpeg x265](https://gist.github.com/Anime4000/9dffab62e31b9d8dd815f0803eb5cbd3)
+
 ```
 # 以 json 格式输出每个流的信息
 ffprobe -print_format json  -show_streams pm.mp4 
+```
+
+
+
+## ffmpeg named pipe with a buffer
+
+```
+
+
+ffmpeg -hide_banner -v error -i  -strict -1 -map 0:0 -f rawvideo -pix_fmt yuv420p -y \\.\pipe\some_pipe_in
+
+x265-08 \\.\pipe\some_pipe --preset fast --tune psnr --crf 23.5 --input-res 1920x1080 --fps 24 --output-depth 8 -o test.mp4
+
+ffplay -f rawvideo -pixel_format bgr24 -video_size 1280x720 -vf "transpose=2,transpose=2" -i \\.\pipe\VirtualVideoPipe | ffplay -f s32le -channels 1 -sample_rate 44100 -i \\.\pipe\VirtualAudioPipe
+
+
+Program_PipeInOut.cs
+using System;
+using System.IO;
+using System.IO.Pipes;
+using System.Diagnostics;
+
+namespace NamedPipeTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                using (var server_tx = new NamedPipeServerStream("some_pipe", PipeDirection.Out, 1, PipeTransmissionMode.Byte))
+                {
+                    Console.Error.WriteLine("TX Pipe is Waiting...");
+                    server_tx.WaitForConnection();
+                    Console.Error.WriteLine("TX Pipe Started!");
+
+                    using (var server_rx = new NamedPipeServerStream("some_pipe_in", PipeDirection.In, 1, PipeTransmissionMode.Byte))
+                    {
+                        Console.Error.WriteLine("RX Pipe is Waiting...");
+                        server_rx.WaitForConnection();
+                        Console.Error.WriteLine("RX Pipe Started!");
+
+                        CopyStream(server_rx, server_tx);
+                    }
+                }
+            }
+        }
+
+        public static void CopyStream(Stream input, Stream output)
+        {
+            int read;
+            byte[] buffer = new byte[0x1000];
+            while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
+            {
+                output.Write(buffer, 0, read);
+            }
+        }
+    }
+}
+
+using System;
+using System.IO;
+using System.IO.Pipes;
+using System.Diagnostics;
+
+namespace NamedPipeTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                using (var server = new NamedPipeServerStream("some_pipe", PipeDirection.InOut, 1, PipeTransmissionMode.Byte))
+                {
+                    Console.Error.WriteLine("Waiting...");
+                    server.WaitForConnection();
+                    Console.Error.WriteLine("Started!");
+
+                    var psi = new ProcessStartInfo()
+                    {
+                        FileName = "ffmpeg",
+                        Arguments = "-hide_banner -v error -i \"D:\\Users\\Anime4000\\Videos\\Unboxing.mp4\" -strict -1 -map 0:0 -f rawvideo -pix_fmt yuv420p -y -",
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                    };
+
+                    using (var process = new Process { StartInfo = psi })
+                    {
+                        process.Start();
+                        process.StandardOutput.BaseStream.CopyTo(server);
+                        //process.StandardError.BaseStream.CopyTo(server);
+                        process.WaitForExit();
+                    }
+
+                }
+            }
+        }
+    }
+}
+
 ```
 
 
