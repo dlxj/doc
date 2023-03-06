@@ -13013,6 +13013,274 @@ namespace NamedPipeTest
 
 
 
+### 内存流
+
+[node-memorystream](https://github.com/JSBizon/node-memorystream)
+
+
+
+```nodejs
+(async () => {
+    let { execa } = await import('execa')
+    let MemoryStream = require('memorystream')
+    let memStream = new MemoryStream(null, {
+        readable : false
+    })
+    //console.log(memStream.toString())
+    let vdpath = `E:\\1.mkv`
+    let nth = 1
+    let type = 'mp3'
+    try {
+
+        let cmd = `ffmpeg -i "${vdpath}" -y -map 0:${nth} -ss 00:01:00 -to 00:02:00 -f ${type} pipe:1`  // write stdout
+
+        let childProcess = execa(cmd, { shell: true, 'encoding': 'utf8' })
+        childProcess.stdout.pipe(memStream)
+        //childProcess.stdout.pipe(process.stdout)  // don't print to screen
+        let { stdout } = await childProcess
+        let buffer = Buffer.concat(memStream['queue'])  // array of buffer, to one buffer
+
+        require('fs').writeFileSync(__dirname + '/1.mp3', buffer, 'binary')
+
+        memStream.destroy()
+
+        return { srt: stdout, msg: '' }
+
+    } catch (err) {
+        return { srt: null, msg: err }
+    }
+})()
+```
+
+
+
+```
+(async () => {
+    let { execa } = await import('execa')
+    let MemoryStream = require('memorystream')
+    let memStream = new MemoryStream(null, {
+        readable : false
+    })
+    //console.log(memStream.toString())
+    let vdpath = `E:\\1.mkv`
+    let nth = 1
+    let type = 'mp3'
+    try {
+
+        let cmd = `ffmpeg -i "${vdpath}" -y -map 0:${nth} -ss 00:01:00 -to 00:02:00 -f ${type} pipe:1`  // write stdout
+
+        let childProcess = execa(cmd, { shell: true, 'encoding': 'utf8' })
+        childProcess.stdout.pipe(memStream)
+        //childProcess.stdout.pipe(process.stdout)  // don't print to screen
+        let { stdout } = await childProcess
+        let buffer = Buffer.concat(memStream['queue'])  // array of buffer, to one buffer
+
+        require('fs').writeFileSync(__dirname + '/1.mp3', buffer, 'binary')
+
+        memStream.destroy()
+
+        return { srt: stdout, msg: '' }
+
+    } catch (err) {
+        return { srt: null, msg: err }
+    }
+})()(async () => {
+    let { execa } = await import('execa')
+    let MemoryStream = require('memorystream')
+    let memStream = new MemoryStream(null, {
+        readable : false
+    })
+    //console.log(memStream.toString())
+    let vdpath = `E:\\1.mkv`
+    let nth = 1
+    let type = 'mp3'
+    try {
+
+        let cmd = `ffmpeg -i "${vdpath}" -y -map 0:${nth} -ss 00:01:00 -to 00:02:00 -f ${type} pipe:1`  // write stdout
+
+        let childProcess = execa(cmd, { shell: true, 'encoding': 'utf8' })
+        childProcess.stdout.pipe(memStream)
+        //childProcess.stdout.pipe(process.stdout)  // don't print to screen
+        let { stdout } = await childProcess
+        let buffer = Buffer.concat(memStream['queue'])  // array of buffer, to one buffer
+
+        require('fs').writeFileSync(__dirname + '/1.mp3', buffer, 'binary')
+
+        memStream.destroy()
+
+        return { srt: stdout, msg: '' }
+
+    } catch (err) {
+        return { srt: null, msg: err }
+    }
+})()
+```
+
+
+
+```
+var http = require('http'),
+	MemoryStream = require('memorystream');
+
+var options = {
+	host: 'google.com'
+};
+var memStream = new MemoryStream(null, {
+	readable : false
+});
+
+var req = http.get(options, function(res) {
+	res.pipe(memStream);
+	res.on('end', function() {
+		console.log(memStream.toString());
+	});
+});
+```
+
+
+
+
+
+### create zip
+
+[node-archiver](https://github.com/archiverjs/node-archiver)
+
+```
+npm install archiver --save
+
+// require modules
+const fs = require('fs');
+const archiver = require('archiver');
+
+// create a file to stream archive data to.
+const output = fs.createWriteStream(__dirname + '/example.zip');
+const archive = archiver('zip', {
+  zlib: { level: 9 } // Sets the compression level.
+});
+
+// listen for all archive data to be written
+// 'close' event is fired only when a file descriptor is involved
+output.on('close', function() {
+  console.log(archive.pointer() + ' total bytes');
+  console.log('archiver has been finalized and the output file descriptor has closed.');
+});
+
+// This event is fired when the data source is drained no matter what was the data source.
+// It is not part of this library but rather from the NodeJS Stream API.
+// @see: https://nodejs.org/api/stream.html#stream_event_end
+output.on('end', function() {
+  console.log('Data has been drained');
+});
+
+// good practice to catch warnings (ie stat failures and other non-blocking errors)
+archive.on('warning', function(err) {
+  if (err.code === 'ENOENT') {
+    // log warning
+  } else {
+    // throw error
+    throw err;
+  }
+});
+
+// good practice to catch this error explicitly
+archive.on('error', function(err) {
+  throw err;
+});
+
+// pipe archive data to the file
+archive.pipe(output);
+
+// append a file from stream
+const file1 = __dirname + '/file1.txt';
+archive.append(fs.createReadStream(file1), { name: 'file1.txt' });
+
+// append a file from string
+archive.append('string cheese!', { name: 'file2.txt' });
+
+// append a file from buffer
+const buffer3 = Buffer.from('buff it!');
+archive.append(buffer3, { name: 'file3.txt' });
+
+// append a file
+archive.file('file1.txt', { name: 'file4.txt' });
+
+// append files from a sub-directory and naming it `new-subdir` within the archive
+archive.directory('subdir/', 'new-subdir');
+
+// append files from a sub-directory, putting its contents at the root of archive
+archive.directory('subdir/', false);
+
+// append files from a glob pattern
+archive.glob('file*.txt', {cwd:__dirname});
+
+// finalize the archive (ie we are done appending files but streams have to finish yet)
+// 'close', 'end' or 'finish' may be fired right after calling this method so register to them beforehand
+archive.finalize();
+```
+
+
+
+### download zip
+
+```
+var app = require('express')();
+var archiver = require('archiver');
+var p = require('path');
+
+app.get('/', function(req, res) {
+
+  var archive = archiver('zip');
+
+  archive.on('error', function(err) {
+    res.status(500).send({error: err.message});
+  });
+
+  //on stream closed we can end the request
+  archive.on('end', function() {
+    console.log('Archive wrote %d bytes', archive.pointer());
+  });
+
+  //set the archive name
+  res.attachment('archive-name.zip');
+
+  //this is the streaming magic
+  archive.pipe(res);
+
+  var files = [__dirname + '/fixtures/file1.txt', __dirname + '/fixtures/file2.txt'];
+
+  for(var i in files) {
+    archive.file(files[i], { name: p.basename(files[i]) });
+  }
+
+  var directories = [__dirname + '/fixtures/somedir']
+
+  for(var i in directories) {
+    archive.directory(directories[i], directories[i].replace(__dirname + '/fixtures', ''));
+  }
+
+  archive.finalize();
+
+});
+
+app.listen(3000);
+```
+
+
+
+### 高端 json 流
+
+[stream-json](https://github.com/uhop/stream-json)
+
+
+
+### nodejs不解压读取文件
+
+[nodejjs不解压读取文件](https://www.jianshu.com/p/74fc8e90eab0)
+
+
+
+
+
 ## ffmpeg.wasm
 
 [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm)
@@ -13074,6 +13342,29 @@ Coinbase Card （欧洲版）可绑定
 
 
 https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
+
+
+
+```
+你好，下面我将给你提供一个词汇表，其中包含一些一些动词或名词，你需要理解并记住这些词，当我请你将一段话改写为互联网黑话的时候，你要尽可能多地在从下面词汇表中选择词汇对语句进行重写、扩写或缩写，从而让整段话显得更加专业凝练，注意，不要将下面词汇表的名词部分连续使用，不要改变句子原有的意思，但可以进行适当的扩展。
+
+下面是我要提供的词汇表：
+
+二字动词:
+
+复盘，赋能，沉淀，倒逼，落地，串联，协同，反晡，兼容，包装，重组，履约，晌应，量化,发力，布局，联动，细分，梳理，输出，加速，共建，支撑，融合,聚合，集成，对齐，对标，对焦，抓手，拆解，拉通，抽象，摸索，提炼,打通，打透，吃透，迁移，分发，分层，分装，穿梭,辐射，围绕，复用，渗透，扩展，开拓。
+
+
+二字名词:
+
+漏斗，中台，闭环，打法，拉通，纽带，矩阵，刺激，规模，场景，聚焦，维度，格局，形态,生态，话术，体系,认知，玩法，体感，感知，调性，心智，战役，合力，心力。
+
+
+三字名词:
+
+颗粒度，感知度，方法论，组合拳，引爆点，点线面，精细化，差异化，平台化，结构化，影响力，耦合性，易用性，-致性,端到端，短平快。
+
+```
 
 
 
@@ -14029,6 +14320,78 @@ nfs 成功
 
 ```
 DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方法：对同一个DjVu文件，用MODI和ABBYY各OCR一遍，导出纯文本，然后用文本比较工具进行比较，能够较快地发现OCR的错误。按他的说法，至少对于德语来说，MODI和ABBYY各有千秋，所以他用这个方法屡试不爽。有兴趣的不妨也试试。
+```
+
+
+
+# video download
+
+[写了一个无限制视频下载脚本](https://www.v2ex.com/t/856510)
+
+```
+很多视频网站的video标签的src指向了 Blob: http(s)://xxx.xxx.xxx/xxx,直接进这个链接的话会显示链接已禁用。 想法：既然能播放视频，就证明视频到最后一定是被 video 拿到了的.
+
+谷歌一圈后发现了: 1.window.URL.createObjectURL(object)方法会返回该链接
+
+A File, Blob, or MediaSource object to create an object URL for.（ https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL ）
+
+2.window.URL.revokeObjectURL(objectURL),禁用上面返回的链接
+
+A string representing a object URL that was previously created by calling createObjectURL().( https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL)
+
+尝试：
+1.hook 了window.URL.revokeObjectURL(objectURL)来忽略禁用请求，结果没用，依旧被禁用。
+
+2.换个方法，直接 hook 二进制流，你缓存多少，我给你复制多少。查了下MediaSource, 他结合上面的createObjectURL(object)可以分片的方式加载视频，大概就是看多少，就加多少。 其中的音频和视频分别放在两个 sourceBuffer 中，直接 hook 住SourceBuffer.appendBuffer()就能实现视频流的截取了。再将每个分片以数组的方式保存下来，最后等视频缓存完后 new Blob(video/audio bufferArray)这样就实现了视频和音频的保存。
+
+3.由于播放的时候，视频和音频分在两个 SourceBuffer 中，所以最后会得到两个文件。又是一番谷歌，有如下命令：
+
+ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a aac -strict experimental output.mp4
+可以将其合并为一个视频。
+
+4.想过用 ffmpeg 的 wasm 库来在线合并，最后输出的，发现 ffmpeg-core 初始化时所需要的文件在国内下载不下来导致报错，从而导致适用的用户可能有点少，所以就没加，可能是我使用方法不对，以后有时间可以改改。
+
+5.发现有些网站的视频是在iframe标签下的，并且加了sandbox属性，而有该属性的话就会导致最后的下载被拦截，于是，我使用了如下代码来将页面中的所有frame替换成无sandbox属性的：
+
+ (function (that) {
+          let removeSandboxInterval = setInterval(() => {
+             if (that.document.querySelectorAll('iframe')[0] !== undefined) {
+                that.document.querySelectorAll('iframe').forEach((v, i, a) => {
+                   let ifr = v;
+                   ifr.removeAttribute('sandbox');
+                   const parentElem = that.document.querySelectorAll('iframe')[i].parentElement;
+                   a[i].remove();
+                   parentElem.appendChild(ifr);
+                });
+                clearInterval(removeSandboxInterval);
+             }
+          }, 1000);
+       })(window);
+于是有了如下油猴脚本：
+
+英文名：Unlimited_downloader
+
+https://greasyfork.org/en/scripts/445751-unlimited-downloader
+
+Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不同地方的人看起来可能要方便点。
+
+简短说明：
+原理：直接 hook 媒体二进制流，换句话说就是你能看到，你就能下载，你能缓存多快，你就能下载多快。
+
+使用方法：安装后，打开任意有视频或音频的网站，等视频缓存条加载完后会自动下载下来。
+
+也可以自己手动开 16 倍速加速缓存，控制台输入：document.querySelector('video').playbackRate = x
+
+最后，免责声明：请在合法范围内使用脚本，请勿用作任何非法用途，后果与作者无关。
+第 1 条附言  ·  278 天前
+感谢分享功能类似插件，大家可以自己挑个来用，互为补充：
+
+@linglin0924 最近有一些不能下载的视频，我都是用这个插件，看他的运行方式，应该也是读流合并的 https://chrome.google.com/webstore/detail/video-downloader-cococut/gddbgllpilhpnjpkdbopahnpealaklle
+
+@hbtech 很有意思，功能跟这个扩展也有点像： https://chrome.google.com/webstore/detail/stream-recorder-download/iogidnfllpdhagebkblkgbfijkbkjdmm
+
+
+@tammy 我都是调用 you-get 下载的（Firefox 添加“鼠标中键点击下载按钮条用 you-get.exe 下载视频” 的功能 - Ryan 快快跑），对于支持的网站不用说，一流，默认最高画质，在配合你这个搞不支持的网站，那就更舒服了
 ```
 
 
