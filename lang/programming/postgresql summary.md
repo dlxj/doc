@@ -292,6 +292,8 @@ npm install pg
 
 ```
 # http://blog.itpub.net/28833846/viewspace-2742419/
+PGPASSWORD="postgres" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d touch -t public.anime --inserts | gzip -9 > ./touch_$(date +%Y-%m-%d).psql.gz
+
 	# PGPASSWORD="xxx" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d anime -t public.anime --inserts | gzip -9 > ./anime_$(date +%Y-%m-%d).psql.gz
 
 	# sudo -u postgres psql

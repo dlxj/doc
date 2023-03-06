@@ -13027,6 +13027,28 @@ namespace NamedPipeTest
 
 [wechat](https://github.com/zhayujie/chatgpt-on-wechat)
 
+[ChatGPT Telegram 机器人](https://v2ex.com/t/920842#reply96)
+
+| ***\*#\** LLaMA** |      |                                                              |
+| ----------------- | ---- | ------------------------------------------------------------ |
+|                   |      |                                                              |
+|                   |      | This repository is intended as a minimal, hackable and readable example to load [LLaMA](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) ([arXiv](https://arxiv.org/abs/2302.13971v1)) models and run inference. |
+|                   |      | In order to download the checkpoints and tokenizer, fill this [google form](https://forms.gle/jk851eBVbX1m5TAv5) |
+|                   |      | In order to download the checkpoints and tokenizer, fill this [google form](https://forms.gle/jk851eBVbX1m5TAv5) or if you want to save our bandwidth use this BitTorrent link: "[magnet:?xt=urn:btih:ZXXDAUWYLRUXXBHUYEMS6Q5CE5WA3LVA&dn=LLaMA](magnet:?xt=urn:btih:ZXXDAUWYLRUXXBHUYEMS6Q5CE5WA3LVA&dn=LLaMA)". |
+|                   |      |                                                              |
+|                   |      | ***\*###\** Setup**                                          |
+|                   |      | In a conda env with pytorch / cuda available, run            |
+
+30b 参数，四张卡就能跑。。
+
+65b 八卡能耍咯。不嫌慢可以 CPU 跑。
+
+
+
+分析日语词汇和语法：あのピカチュウのせいよね
+
+
+
 Velo 可绑定
 Coinbase Card （欧洲版）可绑定
 
@@ -13062,6 +13084,20 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
 [PaddlePaddle implementation of LLaMA](https://github.com/facebookresearch/llama/issues/90)
+
+```
+conda install paddlepaddle-gpu==2.4.2 cudatoolkit=11.6 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+```
+
+所以本质上来说，ChatLLaMA并不是一个开源ChatGPT项目，而只是一种基于LLaMA的训练方法，其库内集成的几个项目原本也都是开源的。
+
+实际上，ChatLLaMA也并非由Meta打造，而是来自一个叫做Nebuly AI的初创AI企业。
+
+Nebuly AI做了一个叫做Nebullvm的开源库，里面集成了一系列即插即用的优化模块，用于提升AI系统性能。
+
+例如这是Nebullvm目前包含的一些模块，包括基于DeepMind开源的AlphaTensor算法打造的OpenAlphaTensor、自动感知硬件并对其进行加速的优化模块
+
+
 
 
 
