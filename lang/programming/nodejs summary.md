@@ -13013,6 +13013,99 @@ namespace NamedPipeTest
 
 
 
+### 内存流
+
+[node-memorystream](https://github.com/JSBizon/node-memorystream)
+
+
+
+```
+(async () => {
+    let { execa } = await import('execa')
+    let MemoryStream = require('memorystream')
+    let memStream = new MemoryStream(null, {
+        readable : false
+    })
+    //console.log(memStream.toString())
+    let vdpath = `E:\\1.mkv`
+    let nth = 1
+    let type = 'mp3'
+    try {
+
+        let cmd = `ffmpeg -i "${vdpath}" -y -map 0:${nth} -ss 00:01:00 -to 00:02:00 -f ${type} pipe:1`  // write stdout
+
+        let childProcess = execa(cmd, { shell: true, 'encoding': 'utf8' })
+        childProcess.stdout.pipe(memStream)
+        //childProcess.stdout.pipe(process.stdout)  // don't print to screen
+        let { stdout } = await childProcess
+        let buffer = Buffer.concat(memStream['queue'])  // array of buffer, to one buffer
+
+        require('fs').writeFileSync(__dirname + '/1.mp3', buffer, 'binary')
+
+        memStream.destroy()
+
+        return { srt: stdout, msg: '' }
+
+    } catch (err) {
+        return { srt: null, msg: err }
+    }
+})()(async () => {
+    let { execa } = await import('execa')
+    let MemoryStream = require('memorystream')
+    let memStream = new MemoryStream(null, {
+        readable : false
+    })
+    //console.log(memStream.toString())
+    let vdpath = `E:\\1.mkv`
+    let nth = 1
+    let type = 'mp3'
+    try {
+
+        let cmd = `ffmpeg -i "${vdpath}" -y -map 0:${nth} -ss 00:01:00 -to 00:02:00 -f ${type} pipe:1`  // write stdout
+
+        let childProcess = execa(cmd, { shell: true, 'encoding': 'utf8' })
+        childProcess.stdout.pipe(memStream)
+        //childProcess.stdout.pipe(process.stdout)  // don't print to screen
+        let { stdout } = await childProcess
+        let buffer = Buffer.concat(memStream['queue'])  // array of buffer, to one buffer
+
+        require('fs').writeFileSync(__dirname + '/1.mp3', buffer, 'binary')
+
+        memStream.destroy()
+
+        return { srt: stdout, msg: '' }
+
+    } catch (err) {
+        return { srt: null, msg: err }
+    }
+})()
+```
+
+
+
+```
+var http = require('http'),
+	MemoryStream = require('memorystream');
+
+var options = {
+	host: 'google.com'
+};
+var memStream = new MemoryStream(null, {
+	readable : false
+});
+
+var req = http.get(options, function(res) {
+	res.pipe(memStream);
+	res.on('end', function() {
+		console.log(memStream.toString());
+	});
+});
+```
+
+
+
+
+
 ### create zip
 
 [node-archiver](https://github.com/archiverjs/node-archiver)
