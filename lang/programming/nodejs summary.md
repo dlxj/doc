@@ -12437,6 +12437,12 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+### 必看教程 
+[GODOT RECIPES](http://kidscancode.org/godot_recipes/4.x/)
+
+
+
+
 ### 动态设置窗体大小
 
 ```
