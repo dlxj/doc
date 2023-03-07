@@ -341,6 +341,28 @@ app.listen(port, function() {
 
 
 ```
+  
+  let bent = require('bent')
+  let formurlencoded = require('form-urlencoded')
+   
+  let tests = [] 
+ 
+  let json = {
+    tests:JSON.stringify(tests)
+  }
+
+  let formurlencoded_body = formurlencoded(json)
+
+  let post = bent('http://127.0.0.1:9007', 'POST', 'json', 200)
+  let response = await post('/api/verify/verifyTestJson', formurlencoded_body, { 'Content-Type': 'application/x-www-form-urlencoded'})
+  
+```
+
+
+
+
+
+```
 
 // 数据库备份时卡了，就会不响应
 // ps aux |grep mysql  
@@ -10358,8 +10380,6 @@ span：指定内嵌文本容器
 
 
 
-
-
 ## 相对单位
 
 | rem  | 根元素的字体大小   |
@@ -12417,6 +12437,12 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+### 必看教程 
+[GODOT RECIPES](http://kidscancode.org/godot_recipes/4.x/)
+
+
+
+
 ### 动态设置窗体大小
 
 ```
@@ -12517,6 +12543,88 @@ Layout -> Layout Mode -> Position
 
 
 
+### @export
+
+[Grouping Exports](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html)
+
+```
+# 该指令声明的变量可以在 editor 里面可见，并且可编辑
+@export
+var stream_paths : Array[String]
+var streams : Array[VideoStream]
+	# 这种写法只有第一行被导出，并且它的初始值是在配置里面赋值的
+```
+
+
+
+### @tool
+
+```
+@tool
+	# 该指定需放在文件第一行，用来判断代码需要在 editor 中运行，还是在应用中运行
+
+func _process(delta):
+    if Engine.is_editor_hint():
+        # Code to execute in editor.
+
+    if not Engine.is_editor_hint():
+        # Code to execute in game.
+```
+
+
+
+### signal
+
+[node communication](http://kidscancode.org/godot_recipes/4.x/basics/node_communication/)
+
+```
+await DataRepository.board_created
+	# 信息可以等待, 直到信号触发后才会继续执行下面的代码
+
+signal board_created()
+	# 信号这样定义
+	
+func create_board():
+	emit_signal("board_created")
+		# 发送信号
+```
+
+
+
+
+
+### EditorPlugin
+
+```
+@tool
+extends EditorPlugin
+
+const AUTOLOAD_NAME = "YtDlp"
+
+func _enter_tree():
+	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/godot-yt-dlp/src/yt_dlp.gd")
+
+func _exit_tree():
+	remove_autoload_singleton(AUTOLOAD_NAME)
+```
+
+
+
+### size_changed
+
+```
+@onready var scroll_container = $ScrollContainer
+
+func _ready():
+	get_tree().root.connect("size_changed", on_size_changed)
+
+func on_size_changed():
+	print("Resizing: ", get_viewport_rect().size, DisplayServer.window_get_size())
+	scroll_container.set_size(DisplayServer.window_get_size())
+```
+
+
+
 ### 鼠标
 
 ```
@@ -12526,6 +12634,19 @@ func _gui_input(event):
    if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
        print("Left mouse button was pressed!")
 ```
+
+
+
+### 键盘事件
+
+```
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_accept"): // 按回车会触发
+```
+
+
+
+
 
 ### 坐标系
 
@@ -12569,12 +12690,6 @@ func actual_position(var camera,var pos):
 	var actual_screen_center_pos: Vector2 = inv_canv_tfm * half_screen * Vector2(0, 0)
 	return actual_screen_center_pos
 ```
-
-
-
-
-
-
 
 
 
@@ -12700,7 +12815,14 @@ func on_size_changed():
 
 
 # godot 4.0
-	set_size(DisplayServer.window_get_size())
+@onready var scroll_container = $ScrollContainer
+
+func _ready():
+	get_tree().root.connect("size_changed", on_size_changed)
+
+func on_size_changed():
+	print("Resizing: ", get_viewport_rect().size, DisplayServer.window_get_size())
+	scroll_container.set_size(DisplayServer.window_get_size())
 
 ```
 
@@ -12852,6 +12974,10 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 
 
+### day r survival
+
+
+
 ### Doaxvv
 
 [show model](https://github.com/alloystorm/dvvr/issues/151)
@@ -12861,6 +12987,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 [干货](https://home.gamer.com.tw/creationDetail.php?sn=4354202)
 
 [遍历进程](https://github.com/dbshch/DOAXVV-script)
+
+
 
 
 
@@ -13284,6 +13412,77 @@ app.listen(3000);
 ## ffmpeg.wasm
 
 [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm)
+
+
+
+## godot video stream
+
+[godot ogv](https://github.com/godotengine/godot/issues/72976)
+
+[AnimationPlayer](https://github.com/godotengine/godot/issues/72588)
+
+> ```
+> AnimationPlayer
+> AudioStreamPlayer
+> ```
+
+[Godot 4: How to play a video from YouTube](https://www.reddit.com/r/godot/comments/117h6jg/godot_4_how_to_play_a_video_from_youtube/)
+
+[godot-yt-dlp](https://github.com/Nolkaloid/godot-yt-dlp) 下载 yt video
+
+```
+if not YtDlp.is_setup():
+    YtDlp.setup()
+await YtDlp.setup_completed
+
+var download := YtDlp.download("https://youtu.be/Ya5Fv6VTLYM") \
+        .set_destination("user://audio/") \
+        .set_file_name("ok_computer") \
+        .convert_to_audio(YtDlp.Audio.MP3) \
+        .start()
+
+await download.download_completed
+
+var stream = AudioStreamMP3.new()
+var audio_file = FileAccess.open("user://audio/ok_computer.mp3", FileAccess.READ)
+
+stream.data = audio_file.get_buffer(audio_file.get_length())
+audio_file.close()
+
+$AudioStreamPlayer.stream = stream
+$AudioStreamPlayer.play()
+```
+
+
+
+[FFMpeg streaming frames to Godot Textures through GDNative](https://www.reddit.com/r/godot/comments/siwxhg/ffmpeg_streaming_frames_to_godot_textures_through/) [gist](https://gist.github.com/netshade/867cef0c749ebb5624d9e0a0d1ff59f6)
+
+[ogv.js让iPhone支持webM视频解析播放](https://www.zhangxinxu.com/wordpress/2021/07/ogv-js-android-webm-video/comment-page-1/)
+
+[以20像素为基准的CSS网页布局实践分享](https://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/)
+
+[GDQuest](https://github.com/GDQuest)
+
+[cozodb图数据库](https://docs.cozodb.org/zh_CN/latest/index.html)
+
+
+
+```
+resizes a video to be 720 pixels tall (720p), while preserving its existing aspect ratio. This helps decrease the file size significantly if the source is recorded at a higher resolution than 720p:
+
+ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
+
+```
+
+
+
+
+
+# gitlab
+
+[Git 管理实战（五）：二进制大文件的版本控制](http://www.uml.org.cn/pzgl/201901233.asp)
+
+
 
 
 
