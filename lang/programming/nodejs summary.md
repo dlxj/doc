@@ -12928,6 +12928,10 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 
 
+### day r survival
+
+
+
 ### Doaxvv
 
 [show model](https://github.com/alloystorm/dvvr/issues/151)
@@ -12937,6 +12941,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 [干货](https://home.gamer.com.tw/creationDetail.php?sn=4354202)
 
 [遍历进程](https://github.com/dbshch/DOAXVV-script)
+
+
 
 
 
@@ -13368,6 +13374,11 @@ app.listen(3000);
 [godot ogv](https://github.com/godotengine/godot/issues/72976)
 
 [AnimationPlayer](https://github.com/godotengine/godot/issues/72588)
+
+> ```
+> AnimationPlayer
+> AudioStreamPlayer
+> ```
 
 [Godot 4: How to play a video from YouTube](https://www.reddit.com/r/godot/comments/117h6jg/godot_4_how_to_play_a_video_from_youtube/)
 
