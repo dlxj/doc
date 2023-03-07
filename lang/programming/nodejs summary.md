@@ -13654,6 +13654,109 @@ PP-LLaMA  至少 V100 32G
 
 
 
+I was able to run the 13B and 30B (batch size 1) models on a single A100-80GB. I used a script [1] to reshard the models and torchrun with --nproc_per_node 1. [u](https://github.com/facebookresearch/llama/issues/101)
+
+[1] https://gist.github.com/benob/4850a0210b01672175942203aa36d300
+
+```
+reshard.py
+
+# script to decompose/recompose llama model in different number of shards
+# note that it loads the full model * 2 in cpu memory
+
+import os
+import json
+import sys
+import torch
+import glob
+
+if len(sys.argv) != 4:
+    print('usage: %s <new-shards> <input-model-path> <output-model-path>' % sys.argv[0], file=sys.stderr)
+    sys.exit(1)
+
+num_shards = int(sys.argv[1])
+input_model_dir = sys.argv[2]
+output_model_dir = sys.argv[3]
+
+with open(os.path.join(input_model_dir, 'params.json'), 'r') as fp:
+    params = json.loads(fp.read())
+
+assert params['dim'] % num_shards == 0, "number of shards need to divide parameter dimension %d" % params['dim']
+
+print('loading...')
+checkpoints = [torch.load(path, map_location=torch.device('cpu')) for path in glob.glob(os.path.join(input_model_dir, '*.pth'))]
+
+layer_kind = {
+    'tok_embeddings': 'ParallelEmbedding',
+    'output': 'ColumnParallelLinear',
+    'attention.wq': 'ColumnParallelLinear',
+    'attention.wk': 'ColumnParallelLinear',
+    'attention.wv': 'ColumnParallelLinear',
+    'attention.wo': 'RowParallelLinear',
+    'feed_forward.w1': 'ColumnParallelLinear',
+    'feed_forward.w2': 'RowParallelLinear',
+    'feed_forward.w3': 'ColumnParallelLinear',
+    'attention_norm': None,
+    'ffn_norm': None,
+    'norm': None,
+    'rope.freqs': None,
+}
+
+output = [dict() for x in range(num_shards)]
+
+print('converting...')
+for key in checkpoints[0].keys():
+    tensors = [m[key] for m in checkpoints]
+    print(key)
+    print('  in shapes=', [p.shape for p in tensors])
+    for pattern, kind in layer_kind.items():
+        if key.replace('.weight', '').endswith(pattern):
+            print('  kind=', kind)
+            if kind == 'ColumnParallelLinear':
+                with torch.no_grad():
+                    merged = torch.cat(tensors, 0)
+                    slice_size = merged.shape[0] // num_shards
+                    for rank in range(num_shards):
+                        output[rank][key] = merged[slice_size * rank: slice_size * (rank + 1),:].clone().detach()
+            elif kind in ('ParallelEmbedding', 'RowParallelLinear'):
+                with torch.no_grad():
+                    merged = torch.cat(tensors, 1)
+                    slice_size = merged.shape[1] // num_shards
+                    for rank in range(num_shards):
+                        output[rank][key] = merged[:,slice_size * rank: slice_size * (rank + 1)].clone().detach()
+            else:
+                for rank in range(num_shards):
+                    output[rank][key] = tensors[0]
+            print('  out shapes=', [output[rank][key].shape for rank in range(num_shards)])
+            print()
+            break
+    else:
+        raise Exception('parameter name not recognized')
+
+print('saving...')
+os.makedirs(output_model_dir, exist_ok=True)
+with open(os.path.join(output_model_dir, 'params.json'), 'w') as fp:
+    fp.write(json.dumps(params))
+
+for rank in range(num_shards):
+    print(' ', rank)
+    torch.save(output[rank], os.path.join(output_model_dir, 'consolidated.%02d.pth' % rank))
+
+print('done.')
+```
+
+
+
+## 1x A100 80GB 成功运行LLaMA-65B
+
+结果和 davinci 一样好
+
+133GB in fp16, 66.5GB in int8. Your estimate is 70.2GB. I guess the small diff should be rounding error. 66.5GB VRAM is within the range of 1x A100 80GB. So, should fit ~~but can't confirm though.~~ It's true now. More people got it working. One example is [this](https://github.com/shawwn/llama-dl).
+
+> I'm running LLaMA-65B on a single A100 80GB with 8bit quantization. ... The output is at least as good as davinci.
+
+
+
 # chatllama
 
 [chatllama](https://github.com/nebuly-ai/nebullvm/tree/main/apps/accelerate/chatllama)
