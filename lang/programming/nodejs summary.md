@@ -12584,6 +12584,19 @@ func _exit_tree():
 
 
 
+### size_changed
+
+```
+@onready var scroll_container = $ScrollContainer
+
+func _ready():
+	get_tree().root.connect("size_changed", on_size_changed)
+
+func on_size_changed():
+	print("Resizing: ", get_viewport_rect().size, DisplayServer.window_get_size())
+	scroll_container.set_size(DisplayServer.window_get_size())
+```
+
 
 
 ### 鼠标
@@ -12776,7 +12789,14 @@ func on_size_changed():
 
 
 # godot 4.0
-	set_size(DisplayServer.window_get_size())
+@onready var scroll_container = $ScrollContainer
+
+func _ready():
+	get_tree().root.connect("size_changed", on_size_changed)
+
+func on_size_changed():
+	print("Resizing: ", get_viewport_rect().size, DisplayServer.window_get_size())
+	scroll_container.set_size(DisplayServer.window_get_size())
 
 ```
 
@@ -13416,6 +13436,8 @@ $AudioStreamPlayer.play()
 [以20像素为基准的CSS网页布局实践分享](https://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/)
 
 [GDQuest](https://github.com/GDQuest)
+
+[cozodb图数据库](https://docs.cozodb.org/zh_CN/latest/index.html)
 
 
 
