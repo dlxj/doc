@@ -13644,6 +13644,12 @@ Nebuly AI做了一个叫做Nebullvm的开源库，里面集成了一系列即插
 
 
 
+官方 7B 30GB GPUs
+
+int8  13B  24GB GPUs   66B A100-40GB
+
+PP-LLaMA  至少 V100 32G
+
 
 
 # chatllama
