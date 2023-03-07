@@ -13747,6 +13747,14 @@ print('done.')
 
 
 
+## 模型下载
+
+[原始下载地](https://github.com/facebookresearch/llama/pull/73)
+
+[磁力不只有一个，还有IPFS](https://github.com/facebookresearch/llama/issues/103)
+
+
+
 ## 1x A100 80GB 成功运行LLaMA-65B
 
 结果和 davinci 一样好
