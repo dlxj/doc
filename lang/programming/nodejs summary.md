@@ -12563,6 +12563,19 @@ func _gui_input(event):
        print("Left mouse button was pressed!")
 ```
 
+
+
+### 键盘事件
+
+```
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_accept"): // 按回车会触发
+```
+
+
+
+
+
 ### 坐标系
 
 [Godot疑难杂症01——触屏点击位置与全局位置之谜](https://zhuanlan.zhihu.com/p/414920112)
@@ -12605,12 +12618,6 @@ func actual_position(var camera,var pos):
 	var actual_screen_center_pos: Vector2 = inv_canv_tfm * half_screen * Vector2(0, 0)
 	return actual_screen_center_pos
 ```
-
-
-
-
-
-
 
 
 
@@ -13330,6 +13337,31 @@ app.listen(3000);
 [Godot 4: How to play a video from YouTube](https://www.reddit.com/r/godot/comments/117h6jg/godot_4_how_to_play_a_video_from_youtube/)
 
 [godot-yt-dlp](https://github.com/Nolkaloid/godot-yt-dlp) 下载 yt video
+
+```
+if not YtDlp.is_setup():
+    YtDlp.setup()
+await YtDlp.setup_completed
+
+var download := YtDlp.download("https://youtu.be/Ya5Fv6VTLYM") \
+        .set_destination("user://audio/") \
+        .set_file_name("ok_computer") \
+        .convert_to_audio(YtDlp.Audio.MP3) \
+        .start()
+
+await download.download_completed
+
+var stream = AudioStreamMP3.new()
+var audio_file = FileAccess.open("user://audio/ok_computer.mp3", FileAccess.READ)
+
+stream.data = audio_file.get_buffer(audio_file.get_length())
+audio_file.close()
+
+$AudioStreamPlayer.stream = stream
+$AudioStreamPlayer.play()
+```
+
+
 
 [FFMpeg streaming frames to Godot Textures through GDNative](https://www.reddit.com/r/godot/comments/siwxhg/ffmpeg_streaming_frames_to_godot_textures_through/) [gist](https://gist.github.com/netshade/867cef0c749ebb5624d9e0a0d1ff59f6)
 
