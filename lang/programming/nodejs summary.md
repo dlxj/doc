@@ -12551,6 +12551,39 @@ var streams : Array[VideoStream]
 
 
 
+### @tool
+
+```
+@tool
+	# 该指定需放在文件第一行，用来判断代码需要在 editor 中运行，还是在应用中运行
+
+func _process(delta):
+    if Engine.is_editor_hint():
+        # Code to execute in editor.
+
+    if not Engine.is_editor_hint():
+        # Code to execute in game.
+```
+
+
+
+### EditorPlugin
+
+```
+@tool
+extends EditorPlugin
+
+const AUTOLOAD_NAME = "YtDlp"
+
+func _enter_tree():
+	add_autoload_singleton(AUTOLOAD_NAME, "res://addons/godot-yt-dlp/src/yt_dlp.gd")
+
+func _exit_tree():
+	remove_autoload_singleton(AUTOLOAD_NAME)
+```
+
+
+
 
 
 ### 鼠标
@@ -13333,6 +13366,8 @@ app.listen(3000);
 ## godot video stream
 
 [godot ogv](https://github.com/godotengine/godot/issues/72976)
+
+[AnimationPlayer](https://github.com/godotengine/godot/issues/72588)
 
 [Godot 4: How to play a video from YouTube](https://www.reddit.com/r/godot/comments/117h6jg/godot_4_how_to_play_a_video_from_youtube/)
 
