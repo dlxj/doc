@@ -13287,6 +13287,22 @@ app.listen(3000);
 
 
 
+## godot video stream
+
+[godot ogv](https://github.com/godotengine/godot/issues/72976)
+
+[ogv.js让iPhone支持webM视频解析播放](https://www.zhangxinxu.com/wordpress/2021/07/ogv-js-android-webm-video/comment-page-1/)
+
+
+
+# gitlab
+
+[Git 管理实战（五）：二进制大文件的版本控制](http://www.uml.org.cn/pzgl/201901233.asp)
+
+
+
+
+
 # chatGPT
 
 [api](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)
