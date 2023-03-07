@@ -13626,6 +13626,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
+[pyllama - Run LLM in A Single GPU](https://github.com/juncongmoo/pyllama)
+
 [PaddlePaddle implementation of LLaMA](https://github.com/facebookresearch/llama/issues/90)
 
 - [paddle 能否部分加载fp16权重](https://github.com/PaddlePaddle/Paddle/issues/51181)
