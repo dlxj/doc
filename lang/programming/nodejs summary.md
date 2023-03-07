@@ -341,6 +341,28 @@ app.listen(port, function() {
 
 
 ```
+  
+  let bent = require('bent')
+  let formurlencoded = require('form-urlencoded')
+   
+  let tests = [] 
+ 
+  let json = {
+    tests:JSON.stringify(tests)
+  }
+
+  let formurlencoded_body = formurlencoded(json)
+
+  let post = bent('http://127.0.0.1:9007', 'POST', 'json', 200)
+  let response = await post('/api/verify/verifyTestJson', formurlencoded_body, { 'Content-Type': 'application/x-www-form-urlencoded'})
+  
+```
+
+
+
+
+
+```
 
 // 数据库备份时卡了，就会不响应
 // ps aux |grep mysql  
