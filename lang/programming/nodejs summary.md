@@ -13429,6 +13429,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [PaddlePaddle implementation of LLaMA](https://github.com/facebookresearch/llama/issues/90)
 
+- [paddle 能否部分加载fp16权重](https://github.com/PaddlePaddle/Paddle/issues/51181)
+
 ```
 conda install paddlepaddle-gpu==2.4.2 cudatoolkit=11.6 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
 ```
