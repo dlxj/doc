@@ -13751,6 +13751,8 @@ print('done.')
 
 [原始下载地](https://github.com/facebookresearch/llama/pull/73)
 
+[优化下载](https://github.com/shawwn/llama-dl)
+
 [磁力不只有一个，还有IPFS](https://github.com/facebookresearch/llama/issues/103)
 
 
