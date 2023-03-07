@@ -10380,8 +10380,6 @@ span：指定内嵌文本容器
 
 
 
-
-
 ## 相对单位
 
 | rem  | 根元素的字体大小   |
@@ -12539,6 +12537,22 @@ Layout -> Layout Mode -> Position
 
 
 
+### @export
+
+[Grouping Exports](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html)
+
+```
+# 该指令声明的变量可以在 editor 里面可见，并且可编辑
+@export
+var stream_paths : Array[String]
+var streams : Array[VideoStream]
+	# 这种写法只有第一行被导出，并且它的初始值是在配置里面赋值的
+```
+
+
+
+
+
 ### 鼠标
 
 ```
@@ -13313,11 +13327,24 @@ app.listen(3000);
 
 [godot ogv](https://github.com/godotengine/godot/issues/72976)
 
+[Godot 4: How to play a video from YouTube](https://www.reddit.com/r/godot/comments/117h6jg/godot_4_how_to_play_a_video_from_youtube/)
+
 [FFMpeg streaming frames to Godot Textures through GDNative](https://www.reddit.com/r/godot/comments/siwxhg/ffmpeg_streaming_frames_to_godot_textures_through/) [gist](https://gist.github.com/netshade/867cef0c749ebb5624d9e0a0d1ff59f6)
 
 [ogv.js让iPhone支持webM视频解析播放](https://www.zhangxinxu.com/wordpress/2021/07/ogv-js-android-webm-video/comment-page-1/)
 
 [以20像素为基准的CSS网页布局实践分享](https://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/)
+
+
+
+```
+resizes a video to be 720 pixels tall (720p), while preserving its existing aspect ratio. This helps decrease the file size significantly if the source is recorded at a higher resolution than 720p:
+
+ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
+
+```
+
+
 
 
 
