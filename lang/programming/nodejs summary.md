@@ -13757,11 +13757,15 @@ print('done.')
 
 
 
-## colab LLaMA
+## colab LLaMA + chattyllama
 
 [硬件资源估算方法](https://github.com/cedrickchee/llama/blob/main/chattyllama/hardware.md#guide-on-gpu-requirements)
 
 [colab LLaMA](https://github.com/cedrickchee/llama/blob/main/notebooks/vi_LLaMA_alpha.ipynb)
+
+[chattyllama](https://github.com/cedrickchee/llama/tree/main/chattyllama)
+
+
 
 
 
