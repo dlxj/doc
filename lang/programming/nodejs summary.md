@@ -12567,6 +12567,26 @@ func _process(delta):
 
 
 
+### signal
+
+[node communication](http://kidscancode.org/godot_recipes/4.x/basics/node_communication/)
+
+```
+await DataRepository.board_created
+	# 信息可以等待, 直到信号触发后才会继续执行下面的代码
+
+signal board_created()
+	# 信号这样定义
+	
+func create_board():
+	emit_signal("board_created")
+		# 发送信号
+```
+
+
+
+
+
 ### EditorPlugin
 
 ```
