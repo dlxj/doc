@@ -12150,6 +12150,16 @@ Eval:
 
 
 ```
+paddlespeech tts --am fastspeech2_male --voc pwgan_male --input "你好，欢迎使用百度飞桨深度学习框架！"
+
+from paddlespeech.cli.tts.infer import TTSExecutor
+tts = TTSExecutor()
+tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。", output="output.wav")
+```
+
+
+
+```
 # 显存占用问题
 请问如何检查显存释放呢？ -> 训练结束后 nvidia-smi 查看显存是否还被占用
 调小了batch_size还是会显存突然增高 -> 看看是不是个别数据长度明显比其他的长
