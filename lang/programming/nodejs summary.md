@@ -4589,6 +4589,16 @@ parentPort.onmessage = function (event) {
 
 
 
+## 进程间通信
+
+[comlink 进程间通信](https://github.com/GoogleChromeLabs/comlink)
+
+
+
+
+
+
+
 ## napajs
 
 
@@ -5419,8 +5429,6 @@ await sleep(2000)
     result = await result
   }
 ```
-
-
 
 
 
