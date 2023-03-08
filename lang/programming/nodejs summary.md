@@ -13626,6 +13626,44 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
+> 成功加载模型
+>
+> ```
+> 65B 据说可以正常跑，需要内存 96G+50G (swap), 需要显存 70G
+> ```
+>
+> ```
+> python example.py --ckpt_dir /root/LLaMA_model/7B --tokenizer_path /root/LLaMA_model/tokenizer.model --max_batch_size=1
+> 
+>  """
+>  I think Japanese worth to learn, because
+>  I think penicillin can cure
+>  I think Shanghai is not the capital of China, because
+>  """
+> 
+> 
+>  prompts = [
+>      """
+>      I think penicillin can cure
+>      """,
+>  ]
+> 
+> ```
+> ```
+> but is ECC enabled on your card? Try disabling it with nvidia-smi -e 0, re-enable with nvidia-smi -e 1.
+> 
+> 4090 do not have ecc... the first checkpoint take 13G, the rest is not enough.
+> 
+> 
+> change max_seq_len to 256, which is able to run 13B on 4090.
+> ```
+>
+> ```
+> When loading 65B, the memory needs about 96G+50G (swap), while the video memory needs about 70G
+> ```
+>
+> 
+
 [pyllama - Run LLM in A Single GPU](https://github.com/juncongmoo/pyllama)
 
 [PaddlePaddle implementation of LLaMA](https://github.com/facebookresearch/llama/issues/90)
