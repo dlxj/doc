@@ -13777,6 +13777,32 @@ print('done.')
 
 
 
+```
+
+infer.py 推断代码要改:
+
+#checkpoints = sorted(Path(ckpt_dir).glob("*.pth"))
+checkpoints = sorted( glob.glob('/root/LLaMA_model/7B/*.pth', recursive=False) )
+	# 改成这样
+	
+if __name__ == "__main__":
+    # fire.Fire(main)
+    
+    # hard-coded params for easier testing.
+    main(
+        ckpt_dir="/root/LLaMA_model/7B",
+        tokenizer_path="/root/LLaMA_model/tokenizer.model",
+        temperature=0.8,
+        top_p=0.95,
+        max_seq_len=1024,
+        max_batch_size=1
+    )
+```
+
+
+
+
+
 ## LLaMA 前端
 
 [text-generation-webui](https://github.com/oobabooga/text-generation-webui/issues/147)

@@ -1291,6 +1291,7 @@ print("Size of file :", file_size.st_size, "bytes")
 ### 递归遍历
 
 ```python
+import glob
 xmls = glob.glob('./db/economist/**/article.xml', recursive=True)
 for xml in xmls:
 	with open(xml, "r", encoding="utf-8") as fp:
