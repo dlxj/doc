@@ -12168,13 +12168,15 @@ tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。",
 
 
 
-
-
 ### 训练一个自己的TTS
 
 - https://github.com/PaddlePaddle/PaddleSpeech/discussions/1842
 
 
+
+### 流式语音识别
+
+[流式语音识别](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/streaming_asr_server/README_cn.md)  甚至还在时间
 
 
 
