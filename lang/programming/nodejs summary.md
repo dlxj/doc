@@ -13779,7 +13779,9 @@ print('done.')
 
 ```
 
-infer.py 推断代码要改:
+cd /root/chattyllama/chattyllama
+
+inference.py 推断代码要改:
 
 #checkpoints = sorted(Path(ckpt_dir).glob("*.pth"))
 checkpoints = sorted( glob.glob('/root/LLaMA_model/7B/*.pth', recursive=False) )
