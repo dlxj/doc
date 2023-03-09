@@ -13912,6 +13912,12 @@ if __name__ == "__main__":
 
 
 
+## Docker GPU
+
+[docker gpu](https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/)
+
+
+
 # chatllama
 
 [chatllama](https://github.com/nebuly-ai/nebullvm/tree/main/apps/accelerate/chatllama)
