@@ -11099,6 +11099,32 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 
 
+## 单机多卡负载均衡
+
+[pytorch 单机多卡负载均衡](https://blog.csdn.net/weixin_43922901/article/details/106117774)
+
+
+
+### 数据分片
+
+**模型并行（Model Parallel）**在**分布式训练技术**中被广泛使用。先前的文章已经解释了如何使用 [DataParallel](https://zhuanlan.zhihu.com/p/87652320) 在多个GPU上训练神经网络。其中，DataParallel的优缺点如下：
+
+**优点：将相同的模型复制到所有GPU，其中每个GPU消耗输入数据的不同分区，可以极大地加快训练过程。**
+
+**缺点：不适用于某些模型太大而无法容纳单个GPU的用例**。 
+
+
+
+### 模型分片
+
+该模型**将单个模型拆分到不同的GPU上，而不是在每个GPU上复制整个模型**（具体来说，模型 `m`包含10层：使用时 `DataParallel`，则每个GPU都具有这10层中每个层的副本，而在两个GPU上使用模型并行时，每个GPU可以托管5层）。
+
+模型并行的高级思想是**将模型的不同子网放置到不同的设备上，并相应地实现该 `forward`方法以在设备之间移动中间输出。由于模型的一部分只能在任何单个设备上运行，因此一组设备可以共同为更大的模型服务**。在本文中，我们不会尝试构建庞大的模型并将其压缩到有限数量的GPU中。取而代之的是，本文着重展示模型并行的思想。读者可以将这些想法应用到实际应用中。
+
+
+
+
+
 ## PaddleOCR
 
 - https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/recognition.md
