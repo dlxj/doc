@@ -12150,6 +12150,9 @@ Eval:
 
 
 ```
+
+python -m pip install paddlepaddle-gpu==2.4.2.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+
 paddlespeech tts --am fastspeech2_male --voc pwgan_male --input "你好，欢迎使用百度飞桨深度学习框架！"
 
 from paddlespeech.cli.tts.infer import TTSExecutor
@@ -12176,7 +12179,7 @@ tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。",
 
 ### 流式语音识别
 
-[流式语音识别](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/streaming_asr_server/README_cn.md)  甚至还在时间
+[流式语音识别](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/streaming_asr_server/README_cn.md)  **支持时间戳功能**
 
 
 

@@ -2945,6 +2945,58 @@ where en @@ to_tsquery('rebell')
 
 
 
+# JSON
+
+```
+    select t.id, array_agg(t._name) as _board
+    from (
+        select 
+            d.id,
+            jsonb_extract_path_text(jsonb_array_elements(
+                case jsonb_extract_path(d.data, 'board_members') 
+                    when 'null' then '[{}]'::jsonb 
+                    else jsonb_extract_path(d.data, 'board_members') 
+                end
+            ), 'first_name') || ' ' || jsonb_extract_path_text(jsonb_array_elements(
+                case jsonb_extract_path(d.data, 'board_members') 
+                    when 'null' then '[{}]'::jsonb 
+                    else jsonb_extract_path(d.data, 'board_members') 
+                end
+            ), 'last_name') as _name
+        from my_table d
+        group by d.id
+    ) t
+    group by t.id
+    
+
+1
+
+
+You can use jsonb_path_query_array to get all matching array elements:
+
+jsonb_path_query_array(data, '$.board_members[*] ? (@.ind == true)')
+The above returns
+
+[
+  {"ind": true, "last_name": "Grant", "first_name": "Hugo"}, 
+  {"ind": true, "last_name": "Flair", "first_name": "Rick"}
+]
+for your sample data.
+
+To get the concatenated first/lastname you need to unnest the array and aggregate the names back.
+
+select id, 
+       (select jsonb_agg(concat_ws(' ', p.item ->> 'first_name', p.item ->> 'last_name'))
+        from jsonb_array_elements(jsonb_path_query_array(data, '$.board_members[*] ? (@.ind == true)')) as p(item)) as names
+from my_table
+The above returns ["Hugo Grant", "Rick Flair"] in the names column
+
+```
+
+
+
+
+
 # KV存储
 
 - https://blog.csdn.net/neweastsun/article/details/92849375
