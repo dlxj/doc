@@ -12755,6 +12755,8 @@ sudo /usr/bin/nvidia-uninstall
 
 # 显卡直通
 
+- https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/
+
 - https://blog.csdn.net/weixin_45409343/article/details/122478397
 
 
