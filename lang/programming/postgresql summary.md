@@ -747,7 +747,8 @@ INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE key_values (
     key uuid DEFAULT uuid_generate_v4(),
-    value jsonb
+    value jsonb,
+    EXCLUDE using hash (key with =)
 );
 CREATE INDEX idx_key_values ON key_values USING hash (key);
 postgres=# do $$
@@ -2963,6 +2964,17 @@ where en @@ to_tsquery('rebell')
 # AgensGraph 图数据库
 
 - https://blog.csdn.net/qq_21090437/article/details/120292081
+
+
+
+# ltree
+
+```
+CREATE TABLE test (
+  path ltree,
+  EXCLUDE USING HASH ((path::text) WITH =)
+);
+```
 
 
 
