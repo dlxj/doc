@@ -739,6 +739,28 @@ id BIGSERIAL PRIMARY KEY,
 
 
 
+### 插入后返回 ID
+
+```
+INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE key_values (
+    key uuid DEFAULT uuid_generate_v4(),
+    value jsonb,
+    EXCLUDE using hash (key with =)
+);
+CREATE INDEX idx_key_values ON key_values USING hash (key);
+postgres=# do $$
+begin
+for r in 1..1000 loop
+INSERT INTO key_values (value)
+VALUES ('{"somelarge_json": "bla"}');
+end loop;
+end;
+$$;
+```
+
 
 
 ## 重设自增ID
@@ -2942,6 +2964,124 @@ where en @@ to_tsquery('rebell')
 # AgensGraph 图数据库
 
 - https://blog.csdn.net/qq_21090437/article/details/120292081
+
+
+
+# ltree
+
+```
+CREATE TABLE test (
+  path ltree,
+  EXCLUDE USING HASH ((path::text) WITH =)
+);
+```
+
+
+
+# JSON
+
+```
+    select t.id, array_agg(t._name) as _board
+    from (
+        select 
+            d.id,
+            jsonb_extract_path_text(jsonb_array_elements(
+                case jsonb_extract_path(d.data, 'board_members') 
+                    when 'null' then '[{}]'::jsonb 
+                    else jsonb_extract_path(d.data, 'board_members') 
+                end
+            ), 'first_name') || ' ' || jsonb_extract_path_text(jsonb_array_elements(
+                case jsonb_extract_path(d.data, 'board_members') 
+                    when 'null' then '[{}]'::jsonb 
+                    else jsonb_extract_path(d.data, 'board_members') 
+                end
+            ), 'last_name') as _name
+        from my_table d
+        group by d.id
+    ) t
+    group by t.id
+    
+
+1
+
+
+You can use jsonb_path_query_array to get all matching array elements:
+
+jsonb_path_query_array(data, '$.board_members[*] ? (@.ind == true)')
+The above returns
+
+[
+  {"ind": true, "last_name": "Grant", "first_name": "Hugo"}, 
+  {"ind": true, "last_name": "Flair", "first_name": "Rick"}
+]
+for your sample data.
+
+To get the concatenated first/lastname you need to unnest the array and aggregate the names back.
+
+select id, 
+       (select jsonb_agg(concat_ws(' ', p.item ->> 'first_name', p.item ->> 'last_name'))
+        from jsonb_array_elements(jsonb_path_query_array(data, '$.board_members[*] ? (@.ind == true)')) as p(item)) as names
+from my_table
+The above returns ["Hugo Grant", "Rick Flair"] in the names column
+
+```
+
+## 带有唯一key 的JSON
+
+```
+Another option is to use JSON or JSONB with a unique hash index on the key.
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE key_values (
+    key uuid DEFAULT uuid_generate_v4(),
+    value jsonb
+);
+CREATE INDEX idx_key_values ON key_values USING hash (key);
+postgres=# do $$
+begin
+for r in 1..1000 loop
+INSERT INTO key_values (value)
+VALUES ('{"somelarge_json": "bla"}');
+end loop;
+end;
+$$;
+DO
+
+Some queries
+
+SELECT * FROM key_values WHERE key = '1cfc4dbf-a1b9-46b3-8c15-a03f51dde891';
+Time: 0.514 ms
+postgres=# SELECT * FROM key_values WHERE key = '1cfc4dbf-a1b9-46b3-8c15-a03f51dde890';
+Time: 1.747 ms
+
+
+Time: 58.327 ms
+```
+
+
+
+## 插入后返回 ID
+
+```
+INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;
+```
+
+
+
+## 普通查询返回json
+
+```
+select jsonb_agg(u) as user_data
+from users u
+where u.id = '1';
+
+或着：
+select jsonb_agg(jsonb_build_object('id', u.id, 'name', u.name)) as user_data
+from users u
+where u.id = '1';
+```
+
+
 
 
 

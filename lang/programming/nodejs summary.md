@@ -13632,6 +13632,12 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 
+## chatgpt-3.5-turbo api
+
+[chatgpt-3.5-turbo](https://github.com/kydycode/chatgpt-3.5-turbo.git)
+
+
+
 
 
 # LLaMA
@@ -13647,18 +13653,34 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 > ```
 > python example.py --ckpt_dir /root/LLaMA_model/7B --tokenizer_path /root/LLaMA_model/tokenizer.model --max_batch_size=1
 > 
->  """
->  I think Japanese worth to learn, because
->  I think penicillin can cure
->  I think Shanghai is not the capital of China, because
->  """
+> """
+> I think Japanese worth to learn, because
+> I think penicillin can cure
+> 我认为上海不是中国的首都，因为
+> I think Shanghai is not the capital of China, because
+> 试卷中的一道题，它是考察青霉素的用法的试题，这道题的原文是
+> A question in the test paper, it is a test question to investigate the usage of penicillin, the original text of this question is
+> """
 > 
+> """
+> 65B
+>   I think Shanghai is not the capital of China, because
+>         1. it's bigger than any other city in China; and
+>         2. its GDP per capita and living standard are higher than those in Beijing.
+> """
 > 
->  prompts = [
->      """
->      I think penicillin can cure
->      """,
->  ]
+> """
+> 65B
+> I think Japanese worth to learn, because
+>         1. Japan is a developed and advanced country in terms of economics, science and technology. It’s ranked the third largest economy (according to World Bank data) and it has lots of manufacturing industries such as cars and electronic products. Therefore its language could be useful for communication with these countries that have some relationship with Japan in both business or trade.
+>         2. According to Chinese census data, about 96% people are Han ethnicity, but rest 4% accounting population include Zhuang, Hui, Manchu, Uygur etc., which means there are lots of different languages in China. If you go travel around China, knowing only Mandarin would not help you communicate with other minorities very much. Also if we look at US, there are several major spoken languages in this country such as English, Spanish and French. Similarly Canada also has two official languages - English and French. With all these evidences, it can be concluded that learning one more language cannot do harm, moreover it might create opportunity to us.
+> """
+> 
+> prompts = [
+>   """
+>   I think penicillin can cure
+>   """,
+> ]
 > 
 > ```
 > ```
@@ -13672,6 +13694,32 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 >
 > ```
 > When loading 65B, the memory needs about 96G+50G (swap), while the video memory needs about 70G
+> ```
+>
+> ```
+> chatgpt
+> You: 试卷中的一道题，它是考察青霉素的用法的试题，这道题的原文是
+> AI assistant: 很好，您可以给我看一下这道试题的原文和选项吗？我会尽力帮助您理解和解答这道题。
+> You: 给我一道考察青霉素的相关试题
+> AI assistant: 好的，这里是一道考察青霉素用法的试题：
+> 
+> 以下哪个情况不适合使用青霉素？
+> 
+> A. 感染性心内膜炎
+> 
+> B. 肺炎链球菌感染
+> 
+> C. 葡萄球菌感染
+> 
+> D. 贴身性皮肤病
+> 
+> 请您选择一个答案并简单说明一下您的理由。
+> You: 答案是什么？理由是什么？
+> AI assistant: 答案是D，贴身性皮肤病不适合使用青霉素。
+> 
+> 青霉素是一种广谱抗生素，通常用于治疗细菌感染，如肺炎链球菌和葡萄球菌感染。对于感染性心内膜炎等严重的感染，青霉素也是一种常用的治疗药物。
+> 
+> 然而，对于贴身性皮肤病，青霉素并不是最佳治疗选择。因为贴身性皮肤病通常是由病毒或真菌引起的，而青霉素只对细菌感染有效。在治疗贴身性皮肤病时，应该选择适当的药物，如抗病毒药或抗真菌药等。
 > ```
 >
 > 
@@ -14022,7 +14070,7 @@ parentPort.onmessage = function (event) {
   	# 成功运行！
   
   
-  git clone https://github.com/rofl0r/proxychains-ng && \
+  git clone https://github.com/rofl0r/proxychains-ng.git && \
   cd proxychains-ng && \
   ./configure --prefix=/usr --sysconfdir=/etc && \
   make && \
