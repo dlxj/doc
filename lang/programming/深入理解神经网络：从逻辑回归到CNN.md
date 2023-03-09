@@ -12180,11 +12180,39 @@ Eval:
 python -m pip install paddlepaddle-gpu==2.4.2.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 paddlespeech tts --am fastspeech2_male --voc pwgan_male --input "你好，欢迎使用百度飞桨深度学习框架！"
+	# 命令行识别
+
+from paddlespeech.cli.entry import _execute
+if __name__ == '__main__':
+    sys.argv.append( 'tts' )
+    sys.argv.append( '--am' )
+    sys.argv.append( 'fastspeech2_male' )
+    sys.argv.append( '--voc' )
+    sys.argv.append( 'pwgan_male' )
+    sys.argv.append( '--input' )
+    sys.argv.append( '你好，欢迎使用百度飞桨深度学习框架！' )
+    _execute()
+	# 实际是这样运行的
+
+
 
 from paddlespeech.cli.tts.infer import TTSExecutor
 tts = TTSExecutor()
 tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。", output="output.wav")
 ```
+
+
+
+```
+import re
+import sys
+from paddlespeech.cli.entry import _execute
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(_execute())
+```
+
+
 
 
 
