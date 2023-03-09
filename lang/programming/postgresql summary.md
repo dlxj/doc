@@ -739,6 +739,27 @@ id BIGSERIAL PRIMARY KEY,
 
 
 
+### 插入后返回 ID
+
+```
+INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE key_values (
+    key uuid DEFAULT uuid_generate_v4(),
+    value jsonb
+);
+CREATE INDEX idx_key_values ON key_values USING hash (key);
+postgres=# do $$
+begin
+for r in 1..1000 loop
+INSERT INTO key_values (value)
+VALUES ('{"somelarge_json": "bla"}');
+end loop;
+end;
+$$;
+```
+
 
 
 ## 重设自增ID
@@ -2991,6 +3012,46 @@ select id,
 from my_table
 The above returns ["Hugo Grant", "Rick Flair"] in the names column
 
+```
+
+## 带有唯一key 的JSON
+
+```
+Another option is to use JSON or JSONB with a unique hash index on the key.
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE key_values (
+    key uuid DEFAULT uuid_generate_v4(),
+    value jsonb
+);
+CREATE INDEX idx_key_values ON key_values USING hash (key);
+postgres=# do $$
+begin
+for r in 1..1000 loop
+INSERT INTO key_values (value)
+VALUES ('{"somelarge_json": "bla"}');
+end loop;
+end;
+$$;
+DO
+
+Some queries
+
+SELECT * FROM key_values WHERE key = '1cfc4dbf-a1b9-46b3-8c15-a03f51dde891';
+Time: 0.514 ms
+postgres=# SELECT * FROM key_values WHERE key = '1cfc4dbf-a1b9-46b3-8c15-a03f51dde890';
+Time: 1.747 ms
+
+
+Time: 58.327 ms
+```
+
+
+
+## 插入后返回 ID
+
+```
+INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;
 ```
 
 
