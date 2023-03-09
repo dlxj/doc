@@ -3068,6 +3068,21 @@ INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;
 
 
 
+## 普通查询返回json
+
+```
+select jsonb_agg(u) as user_data
+from users u
+where u.id = '1';
+
+或着：
+select jsonb_agg(jsonb_build_object('id', u.id, 'name', u.name)) as user_data
+from users u
+where u.id = '1';
+```
+
+
+
 
 
 # KV存储
