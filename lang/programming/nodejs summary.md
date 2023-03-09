@@ -13829,8 +13829,8 @@ print('done.')
 
 ```
 
-试卷中的一道题，它是考察青霉素的用法的试题，这道题的原文是
-A question in the test paper, it is a test question to investigate the usage of penicillin, the original text of this question is
+试卷中的一道题，它是考察青霉素的用法的单项选择题，这道试题的原文是
+A question in the test paper, it is a single-choice question to investigate the usage of penicillin, the original text of this question is
 
 cd /root/chattyllama/chattyllama
 
