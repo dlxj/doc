@@ -13632,6 +13632,12 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 
+## chatgpt-3.5-turbo api
+
+[chatgpt-3.5-turbo](https://github.com/kydycode/chatgpt-3.5-turbo.git)
+
+
+
 
 
 # LLaMA
@@ -13688,6 +13694,32 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 >
 > ```
 > When loading 65B, the memory needs about 96G+50G (swap), while the video memory needs about 70G
+> ```
+>
+> ```
+> chatgpt
+> You: 试卷中的一道题，它是考察青霉素的用法的试题，这道题的原文是
+> AI assistant: 很好，您可以给我看一下这道试题的原文和选项吗？我会尽力帮助您理解和解答这道题。
+> You: 给我一道考察青霉素的相关试题
+> AI assistant: 好的，这里是一道考察青霉素用法的试题：
+> 
+> 以下哪个情况不适合使用青霉素？
+> 
+> A. 感染性心内膜炎
+> 
+> B. 肺炎链球菌感染
+> 
+> C. 葡萄球菌感染
+> 
+> D. 贴身性皮肤病
+> 
+> 请您选择一个答案并简单说明一下您的理由。
+> You: 答案是什么？理由是什么？
+> AI assistant: 答案是D，贴身性皮肤病不适合使用青霉素。
+> 
+> 青霉素是一种广谱抗生素，通常用于治疗细菌感染，如肺炎链球菌和葡萄球菌感染。对于感染性心内膜炎等严重的感染，青霉素也是一种常用的治疗药物。
+> 
+> 然而，对于贴身性皮肤病，青霉素并不是最佳治疗选择。因为贴身性皮肤病通常是由病毒或真菌引起的，而青霉素只对细菌感染有效。在治疗贴身性皮肤病时，应该选择适当的药物，如抗病毒药或抗真菌药等。
 > ```
 >
 > 

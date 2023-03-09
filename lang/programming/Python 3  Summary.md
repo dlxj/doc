@@ -1010,6 +1010,27 @@ num_steps=1_000_000,
 
 
 
+## 全局变量
+
+```
+global message_log
+message_log = [
+    {"role": "system", "content": "You are a helpful assistant."}
+]
+
+# Set a flag to keep track of whether this is the first request in the conversation
+global first_request
+first_request = True
+
+def init_gpt():
+    global message_log
+    message_log = [
+        {"role": "system", "content": "You are a helpful assistant."}
+    ]
+    global first_request
+    first_request = True
+```
+
 
 
 ## Path
