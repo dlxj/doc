@@ -13914,6 +13914,10 @@ if __name__ == "__main__":
 
 ## Docker GPU
 
+[官方镜像](https://hub.docker.com/r/nvidia/cuda/tags?page=1&ordering=last_updated&name=11.2)
+
+[gist安装脚本](https://gist.github.com/RodrigoCMoraes/c559954926f70df43ee9c396ef82668c)
+
 [docker gpu](https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/)
 
 
