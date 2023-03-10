@@ -7002,6 +7002,12 @@ doc\lang\programming\Python 3  Summary.md  看在这里，Extract Video Subtitle
 
 
 
+### 别人是怎么扫书的
+
+[别人是怎么扫书的](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=48701&extra=)
+
+
+
 ## 词嵌入
 
 
