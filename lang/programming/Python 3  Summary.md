@@ -170,6 +170,18 @@ __pycache__/
 
 ## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
+```
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
+bash Miniforge3-Linux-x86_64.sh -b && \
+~/miniforge3/bin/conda init && \
+ln -s ~/miniforge3/bin/conda /usr/local/bin && \
+ln -s ~/miniforge3/bin/activate /usr/local/bin && \
+ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
+source ~/miniforge3/etc/profile.d/conda.sh
+```
+
+
+
 ```bash
 conda config --set auto_activate_base true # 开启或关闭自动激活
 conda env list

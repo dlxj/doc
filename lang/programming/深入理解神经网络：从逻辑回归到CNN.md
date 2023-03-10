@@ -12183,12 +12183,45 @@ Eval:
 
 ```
 
+yum groupinstall "Development Tools" "Development Libraries"
+	# rm -f /var/run/yum.pid
+
+python -m pip install paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
+	# CPU 用这个
+
 python -m pip install paddlepaddle-gpu==2.4.2.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+	# GPU 用这个
 
 paddlespeech tts --am fastspeech2_male --voc pwgan_male --input "你好，欢迎使用百度飞桨深度学习框架！"
 	# 命令行识别
 
+global runtts
+exec('from paddlespeech.cli.tts import TTSExecutor')  # 不知道为什么一定要这样导入
+TTSExecutor = locals()['TTSExecutor']   # 需要的符号已经在当前局部变量里面了，取出来用
+runtts = TTSExecutor()
+status = runtts.execute([ '--am', 'fastspeech2_male', '--voc', 'pwgan_male', '--input', '你好，欢迎使用百度飞桨深度学习框架！' ])
+	# 成功生成音频文件
+
+
+if __name__ == '__main__':
+    import sys
+    sys.argv.append( 'tts' )
+    sys.argv.append( '--am' )
+    sys.argv.append( 'fastspeech2_male' )
+    sys.argv.append( '--voc' )
+    sys.argv.append( 'pwgan_male' )
+    sys.argv.append( '--input' )
+    sys.argv.append( '你好，欢迎使用百度飞桨深度学习框架！' )
+    
+    exec('from paddlespeech.cli.tts import TTSExecutor')
+    lcls = locals()
+    _entry = lcls['TTSExecutor']
+    status = _entry().execute(sys.argv[2:])
+    	# 成功生成音频文件
+
+
 from paddlespeech.cli.entry import _execute
+import sys
 if __name__ == '__main__':
     sys.argv.append( 'tts' )
     sys.argv.append( '--am' )
