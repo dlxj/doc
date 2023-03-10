@@ -13922,6 +13922,14 @@ if __name__ == "__main__":
 
 
 
+## 聊天机器人
+
+> https://fancyerii.github.io/2019/02/14/chatbot/  大佬  李理的博客
+
+- 使用PyTorch实现Chatbot
+
+
+
 # chatllama
 
 [chatllama](https://github.com/nebuly-ai/nebullvm/tree/main/apps/accelerate/chatllama)
