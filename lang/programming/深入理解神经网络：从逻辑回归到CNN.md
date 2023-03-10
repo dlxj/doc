@@ -12280,6 +12280,9 @@ if __name__ == '__main__':
 
 - https://github.com/openai/whisper
 
+  - https://github.com/ahmetoner/whisper-asr-webservice
+  - https://github.com/hackingthemarkets/chatgpt-api-whisper-api-voice-assistant
+
   - https://huggingface.co/openai/whisper-large
 
   - https://blog.deepgram.com/exploring-whisper/

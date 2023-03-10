@@ -12992,6 +12992,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 ### Doaxvv
 
+[图鉴](https://github.com/doaxcc/doaxvv_bromide)
+
 [show model](https://github.com/alloystorm/dvvr/issues/151)
 
 [mod](https://www.loverslab.com/topic/165186-doaxvv-mods-by-teddy-steam-centered/)
@@ -13001,6 +13003,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 [遍历进程](https://github.com/dbshch/DOAXVV-script)
 
 
+
+新情爱味汉化组的，目前专门汉化nlp+
 
 
 
