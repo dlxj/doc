@@ -13638,6 +13638,10 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 
+## visual-chatgpt
+
+[visual-chatgpt](https://github.com/microsoft/visual-chatgpt)
+
 
 
 # LLaMA

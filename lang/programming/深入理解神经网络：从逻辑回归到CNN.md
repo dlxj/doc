@@ -12280,6 +12280,10 @@ if __name__ == '__main__':
 
 - https://github.com/openai/whisper
 
+  - https://huggingface.co/openai/whisper-large
+
+  - https://blog.deepgram.com/exploring-whisper/
+
   - https://colab.research.google.com/drive/1LjfD-euRBnbXyCcL6eC5Ekfhviba-HAX **直接能用**
 
   - https://github.com/openai/whisper/discussions/277 中文参数
