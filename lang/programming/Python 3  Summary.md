@@ -1022,6 +1022,18 @@ num_steps=1_000_000,
 
 
 
+### :=
+
+```
+	# 先赋值后判断？
+	if (threads := args.pop("threads")) > 0:
+        torch.set_num_threads(threads)
+```
+
+
+
+
+
 ## 全局变量
 
 ```
