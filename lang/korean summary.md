@@ -44,6 +44,13 @@ G:\bilidown\【韩语学习】零基础入门\2-[韩语发音] 第2课  单母�
 
 
 
+치킨
+
+チキン
+
+Жареную курицу
+
+Green Mothers_ Club_S01E08_Your Downright Lie.mp4   05:05
 
 
 

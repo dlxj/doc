@@ -87,7 +87,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 T.K.M.N字幕组
 
@@ -463,7 +463,23 @@ mac mount Android as drive
 
   [全站HTTPS已启用](https://www.spiritdemon.com/tag/cloudflare/)
 
+- echoplay.org
+
+  > Namesilo 域名已注册
+
+- echoplayer.com
+
+  > name.com
+  >
+  > echoplayer 用户名  slplsy gmail
+  >
+  > 在Namesilo上 已支付订购，处理中
+
+  
+
 - voicetube.com
+
+
 
 ## 腾讯云
 
