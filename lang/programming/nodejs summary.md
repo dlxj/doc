@@ -113,6 +113,32 @@ I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set
 
 
 
+## install nodejs
+
+```
+wget https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz && \
+tar xvf node-v14.21.1-linux-x64.tar.gz && \
+cd node-v14.21.1-linux-x64/bin && \
+chmod +x node npm npx && \
+cd ../.. && \
+mv node-v14.21.1-linux-x64 /usr/local && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx
+
+npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org && \
+npm install pm2@5.1.2 -g --registry=https://registry.npm.taobao.org 
+
+ln -s /usr/local/node-v14.21.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
+
+```
+
+
+
+
+
+
+
 ## pm2
 
 
@@ -121,6 +147,8 @@ I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set
 systemctl start postgresql.service  # ubuntu 18.04 
 systemctl status postgresql-13      # centos7
 systemctl enable postgresql-13 # 自启动
+
+npm i -g pm2@5.1.2
 
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
