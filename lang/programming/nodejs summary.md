@@ -13020,6 +13020,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 ### Doaxvv
 
+[图鉴](https://github.com/doaxcc/doaxvv_bromide)
+
 [show model](https://github.com/alloystorm/dvvr/issues/151)
 
 [mod](https://www.loverslab.com/topic/165186-doaxvv-mods-by-teddy-steam-centered/)
@@ -13029,6 +13031,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 [遍历进程](https://github.com/dbshch/DOAXVV-script)
 
 
+
+新情爱味汉化组的，目前专门汉化nlp+
 
 
 
@@ -13657,6 +13661,26 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 颗粒度，感知度，方法论，组合拳，引爆点，点线面，精细化，差异化，平台化，结构化，影响力，耦合性，易用性，-致性,端到端，短平快。
 
 ```
+
+
+
+
+
+```
+如果一个人已经赚了一辈子都花不完的钱，为什么他还想要赚得更多？
+
+你好，这是必应。这是一个很有意思的问题，可能没有一个确定的答案。不同的人可能有不同的动机和目标。根据一些网上的文章，有些可能的原因是：
+
+社会比较：有钱人的朋友都是有钱人，他们可能会担心自己在圈子里不够优秀或者被落后12。他们可能会追求更高的社会地位或者更多的影响力3。
+乐趣：有钱人可能享受赚钱的过程，比如投资、收购、创业等23。他们可能会把赚钱当作一种娱乐或者挑战，而不是一种负担2。
+安全感：有钱人可能担心自己的财富会受到威胁，比如通货膨胀、税收、竞争等4。他们可能会想要储备更多的钱以防万一4。
+慈善：有钱人可能想要用自己的钱来帮助别人，比如捐赠、慈善基金、公益项目等5。他们可能会认为自己有责任和义务来改善世界5。
+当然，这些原因并不是互斥的，有钱人可能同时有多种动机。也有可能有些有钱人并不想要赚更多的钱，而是想要享受自己的生活。这可能取决于每个人的价值观和个性。
+```
+
+![image-20230311170337928](./nodejs summary.assets/image-20230311170337928.png)
+
+
 
 
 
