@@ -2232,6 +2232,16 @@ function REPLServer(prompt,
 
 
 
+## 看情况是否 await
+
+```
+//进入API
+let result = api.handler(paramsData)
+if (result instanceof Promise) {
+	result = await result
+}
+```
+
 
 
 # Regex
@@ -4143,7 +4153,22 @@ function REPLServer(prompt,
 
 ```
 fs.existsSync( path )
+
+const apiStat = fs.statSync(apiPath)
+const apiExists = apiStat.isFile() && path.extname(apiPath).toLowerCase() === '.js'
+
 ```
+
+
+
+## resolve
+
+```
+# 规范化 path ? D:\xxx windows 风格, /d/xxx linux 风格 ？
+require.resolve(path)
+```
+
+
 
 
 
@@ -13697,6 +13722,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 # LLaMA
+
+[hk轻量](https://swas.console.aliyun.com/#/servers)
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
