@@ -14032,6 +14032,10 @@ if __name__ == "__main__":
 
 
 
+## llama.cpp
+
+[llama.cpp on windows](https://github.com/ggerganov/llama.cpp/issues/103)
+
 
 
 ## LLaMA 前端
