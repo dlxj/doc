@@ -22,6 +22,12 @@ CTRL + K + N 设成跳到下一个
 
 
 
+# vscode post
+
+[REST Client 替代 postman](https://zhuanlan.zhihu.com/p/54266685)
+
+
+
 # 代码放大缩小
 
 
