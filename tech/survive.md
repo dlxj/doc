@@ -87,7 +87,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 T.K.M.N字幕组
 
@@ -1141,6 +1141,16 @@ http://zhangqijun.com/%E5%AE%89%E8%A3%85win10%E5%92%8Ccentos7%E5%8F%8C%E7%B3%BB%
 
 
 ios的shadowrocket可以连接vmess协议
+
+
+
+## 办公
+
+```
+但是建设工程完成后具体到房屋的用途，要么属于商业房屋，要么属于住宅，并不存在“商住两用房”的法律概念。
+```
+
+
 
 
 
