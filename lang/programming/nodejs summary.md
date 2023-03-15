@@ -273,7 +273,197 @@ npm i
 
 
 
+## nginx
 
+- https://linuxize.com/post/how-to-install-nginx-on-centos-7/
+- https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
+- https://blog.csdn.net/yeguxin/article/details/94020476
+
+
+
+```
+# 关闭防火墙
+systemctl stop firewalld
+# 关闭 apache 
+service httpd stop
+
+yum install nginx  && \
+nginx -t && \
+systemctl restart nginx && \
+nginx -s reload
+
+
+# ubuntu 这样启动 /etc/init.d/nginx start
+
+
+
+/etc/nginx/nginx.conf
+
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+
+
+### 根据域名转发
+
+```
+# 不同域名实现转后端接口和前端
+
+/etc/nginx/conf.d/docker_6006.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream centos7_server_6006 {
+  server 172.20.0.2:6006;
+}
+
+
+server {
+  listen 80;
+  server_name xxapi.yy.cn;
+
+  location / {
+    location / {
+      proxy_pass http://centos7_server_6006;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+server {
+  listen 80;
+  server_name xx.yy.cn;
+
+  location / {
+     root   /home/data;
+     index  index.html index.htm;
+  }
+}
+```
+
+
+
+###　转发websokect
+
+```
+# websokect 消息的转发也是和上面一样的写法
+# server_name xxx.176; 
+ # 这里 server_name 直接指定指定，表示如果不用域名而是直接用 IP 访问，就转发到 127.0.0.1:8880
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream llama_server_8880 {
+  server 127.0.0.1:8880;
+}
+
+
+server {
+  listen 80;
+  server_name xxx.176;
+
+  location / {
+    location / {
+      proxy_pass http://llama_server_8880;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+```
+
+
+
+### 负载均衡
+
+```
+# 同时转发http 和 websocket 
+# /etc/nginx_conf.d/testDiff.conf
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream diffServer {
+  server localhost:10000;
+  server localhost:10001;
+  server localhost:10002;
+  server localhost:10003;
+  server localhost:10004;
+  server localhost:10005;
+  server localhost:10006;
+  server localhost:10007;
+  server localhost:10008;
+  server localhost:10009;
+}
+
+server {
+  listen 7116;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://diffServer;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+```
 
 
 
@@ -5716,118 +5906,6 @@ flushdb 清空当前数据库
 ## RedisInsight 管理工具
 
 - https://zhuanlan.zhihu.com/p/476056075 
-
-
-
-# nginx
-
-- https://linuxize.com/post/how-to-install-nginx-on-centos-7/
-- https://www.bbwho.com/dockerrong-qi-hua-nginx-node-js-and-redis/  基于Nginx, Node.js 和 Redis的Docker容器化工作流
-- https://blog.csdn.net/yeguxin/article/details/94020476
-
-
-
-```
-# 关闭防火墙
-systemctl stop firewalld
-# 关闭 apache 
-service httpd stop
-
-yum install nginx  && \
-nginx -t && \
-systemctl restart nginx && \
-nginx -s reload
-
-
-# ubuntu 这样启动 /etc/init.d/nginx start
-
-
-
-/etc/nginx/nginx.conf
-
-user  root;
-worker_processes  1;
-
-error_log  /var/log/nginx/error.log warn;
-pid        /var/run/nginx.pid;
-
-
-events {
-    worker_connections  1024;
-}
-
-
-http {
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
-
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
-
-    access_log  /var/log/nginx/access.log  main;
-
-    sendfile        on;
-    #tcp_nopush     on;
-
-    keepalive_timeout  65;
-
-    #gzip  on;
-
-    include /etc/nginx/conf.d/*.conf;
-}
-```
-
-
-
-
-
-```
-# 不同域名实现转后端接口和前端
-
-/etc/nginx/conf.d/docker_6006.conf
-
-map $http_upgrade $connection_upgrade {
-    default upgrade;
-    '' close;
-}
-
-upstream centos7_server_6006 {
-  server 172.20.0.2:6006;
-}
-
-
-server {
-  listen 80;
-  server_name xxapi.yy.cn;
-
-  location / {
-    location / {
-      proxy_pass http://centos7_server_6006;
-    }
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection $connection_upgrade;
-    proxy_read_timeout 9999999;
-    proxy_connect_timeout 9999999;
-    proxy_send_timeout 9999999;
-  }
-}
-
-server {
-  listen 80;
-  server_name xx.yy.cn;
-
-  location / {
-     root   /home/data;
-     index  index.html index.htm;
-  }
-}
-```
-
-
 
 
 
