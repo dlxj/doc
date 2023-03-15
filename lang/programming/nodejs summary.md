@@ -467,6 +467,124 @@ server {
 
 
 
+## 安装代理
+
+```
+git clone https://github.com/rofl0r/proxychains-ng.git && \
+cd proxychains-ng && \
+./configure --prefix=/usr --sysconfdir=/etc && \
+make && \
+make install && \
+make install-config
+
+vi /etc/proxychains.conf
+	socks5  127.0.0.1 1080
+	# 改成这样
+
+
+yum install epel-release -y && \
+yum update && \
+yum install libsodium -y && \
+pip install shadowsocksr-cli
+	# yum 是依赖 python2.7 的，不要替换系统的默认python
+
+apt-get update -y && \
+apt-get install -y libsodium-dev && \
+pip install shadowsocksr-cli 
+
+
+shadowsocksr-cli --add-url https://www.ftwnet.net/sub/xxxxx?sub=1
+	# ftwc.cc 找 ssr订阅地址
+
+shadowsocksr-cli -u
+	# 更新订阅
+
+shadowsocksr-cli -l
+	# 列出所有可用代理地址
+	
+shadowsocksr-cli -s 1
+	# 开启代理， 1 是前面打印出来的 编号
+	
+shadowsocksr-cli -S 1
+	# 停止代理
+
+shadowsocksr-cli --test-speed 15
+	# 测速
+	# ldconfig -p | grep libcrypto
+		# 出错的话，看一下这个
+
+shadowsocksr-cli --list-address
+	# 打印监听地址
+	# 默认监听端口是 1080
+	
+vi /etc/resolv.conf  # 临时修改 DNS，配置会实时生效，重启后失效
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+	# 改成这样
+	vi /etc/sysconfig/network-scripts/ifcfg-eth0
+		# 这个是永久的
+	
+	nameserver 172.16.7.1
+	nameserver 114.114.114.114
+		# 原来的值
+		
+
+proxychains4 curl https://www.youtube.com
+	# 成功
+```
+
+
+
+## nmap测试端口
+
+```
+yum install nmap
+	# 扫描指定端口是否开放	
+	nmap 118.178.137.176 -p222
+		PORT    STATE  SERVICE
+		222/tcp closed rsh-spx	
+			# 端口并没有开放
+
+	netstat -aptn | grep -i 222
+		tcp        0      0 0.0.0.0:222             0.0.0.0:*               LISTEN      45594/conmon
+			# 好像本地 222 端口是开放了的
+
+	lsof -i:222
+		conmon  45594 root    5u  IPv4 446985      0t0  TCP *:rsh-spx (LISTEN)
+			# 也是显示开放了
+
+
+	https://blog.csdn.net/qq_39176597/article/details/111939051
+		# linux关闭防火墙了，但端口还是访问不了
+
+		systemctl  start  firewalld
+			# 启动防火墙
+			systemctl  status  firewalld
+
+		firewall-cmd --zone=public --add-port=222/tcp --permanent
+		firewall-cmd --zone=public --add-port=222/tcp --permanent
+		firewall-cmd --zone=public --add-port=6006/tcp --permanent
+			# 开放端口
+	
+		firewall-cmd --reload
+			# 重新加载配置文件
+		
+		firewall-cmd --list-ports
+			# 查看已经开放的端口
+
+		systemctl status polkit
+		/usr/lib/polkit-1/polkitd --no-debug &
+
+		docker ps
+		docker stop centos7_server_6006
+```
+
+
+
+
+
+
+
 ## Get
 
 
@@ -1278,52 +1396,6 @@ This is how the lib was designed. You should pass to bent all the statuses the s
 
 const client = bent(200,201,202,203,204,301,302...);
 This not an issue, but rather a design decision.
-```
-
-
-
-## nmap
-
-```
-yum install nmap
-	# 扫描指定端口是否开放	
-	nmap 118.178.137.176 -p222
-		PORT    STATE  SERVICE
-		222/tcp closed rsh-spx	
-			# 端口并没有开放
-
-	netstat -aptn | grep -i 222
-		tcp        0      0 0.0.0.0:222             0.0.0.0:*               LISTEN      45594/conmon
-			# 好像本地 222 端口是开放了的
-
-	lsof -i:222
-		conmon  45594 root    5u  IPv4 446985      0t0  TCP *:rsh-spx (LISTEN)
-			# 也是显示开放了
-
-
-	https://blog.csdn.net/qq_39176597/article/details/111939051
-		# linux关闭防火墙了，但端口还是访问不了
-
-		systemctl  start  firewalld
-			# 启动防火墙
-			systemctl  status  firewalld
-
-		firewall-cmd --zone=public --add-port=222/tcp --permanent
-		firewall-cmd --zone=public --add-port=222/tcp --permanent
-		firewall-cmd --zone=public --add-port=6006/tcp --permanent
-			# 开放端口
-	
-		firewall-cmd --reload
-			# 重新加载配置文件
-		
-		firewall-cmd --list-ports
-			# 查看已经开放的端口
-
-		systemctl status polkit
-		/usr/lib/polkit-1/polkitd --no-debug &
-
-		docker ps
-		docker stop centos7_server_6006
 ```
 
 
