@@ -3435,6 +3435,16 @@ The index of the first occurrence of searchString found, or -1 if not found
 
 
 
+### 去空白
+
+```
+function removeSpace(str) {
+    return str.replace(/\s+/g, '').replace(/(&ensp;|&emsp;|&zwnj;|&zwj;|&nbsp;|&thinsp;)/g, '')
+}
+```
+
+
+
 ### 全角转半角
 
 ```javascript
@@ -3488,6 +3498,34 @@ The index of the first occurrence of searchString found, or -1 if not found
 ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω
 
 ```
+
+
+
+```
+function removeSpecialCharacter(str) {
+    return str.replace(/[`\-℃:_.~!@#$%^&*() \+ =<>?"{}|, \/ ;' \\ [ \] ·~！@#￥%……&*（）—— \+ ={}|《》？：“”【】、；‘’，。、]/g, '')
+}
+```
+
+
+
+```
+let arr_litteChar_digit = Array.from(Explain.matchAll(/[a-z0-9A-Z₀₁₂₃₄₅₆₇₈₉₊₋ₐₑₒₓₔₕₖₗₘₙₚₛₜ⁰°¹²³⁴⁵⁶⁷⁸⁹⁺⁻ⁿ·～%μ△+=ÓóÒòŎŏÔôỐốỒồỖỗỔổǑǒÖöȪȫŐőÕõṌṍṎṏȬȭȮȯȰȱØøǾǿǪǫǬǭŌōṒṓṐṑỎỏȌȍŐőȎȏƠơỚớỜờỠỡỞởỢợỌọỘộỎỏO̍o̍O̊o̊ƟɵⅠⅡⅢⅣⅤⅥⅦⅧⅨⅬⅭ\/\<\>\-]+/g))
+
+                    if (tmp.match(/[A-Z]/)) { // 含有大写字母
+                        if (tmp.match(/[0-9]/) || tmp.match(/[a-z]/) || tmp.match(/[F-Z]/) ||
+                            tmp.match(/[₀₁₂₃₄₅₆₇₈₉₊₋ₐₑₒₓₔₕₖₗₘₙₚₛₜ]/) || // 常用下标      
+                            tmp.match(/[⁰°¹²³⁴⁵⁶⁷⁸⁹⁺⁻ⁿ]/) || // 常用上标 
+                            tmp.match(/[ÓóÒòŎŏÔôỐốỒồỖỗỔổǑǒÖöȪȫŐőÕõṌṍṎṏȬȭȮȯȰȱØøǾǿǪǫǬǭŌōṒṓṐṑỎỏȌȍŐőȎȏƠơỚớỜờỠỡỞởỢợỌọỘộỎỏO̍o̍O̊o̊Ɵɵ]/) || // 希腊字母
+                            tmp.match(/[ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅬⅭ]/) || // 罗马数字
+                            tmp.match(/[·～%μ△+=\/\<\>\-]/) 
+                        ) {  // 同时含有数字或小写字母或超出 E 的大写字母
+
+
+
+```
+
+
 
 
 
