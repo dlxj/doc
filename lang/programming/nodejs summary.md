@@ -14226,6 +14226,12 @@ if __name__ == "__main__":
 
 
 
+## ChatGLM-6B
+
+[ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
+
+
+
 ## LLaMA 前端
 
 [text-generation-webui](https://github.com/oobabooga/text-generation-webui/issues/147)

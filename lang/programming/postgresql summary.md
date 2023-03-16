@@ -699,6 +699,20 @@ Don't forget to create extension CREATE EXTENSION IF NOT EXISTS dblink;
 
 
 
+## 查所有数据库名
+
+```
+SELECT datname FROM pg_database;
+postgres
+template1
+template0
+	# 排除这三个系统库，剩下的就是要找的
+```
+
+
+
+
+
 ## BIGSERIAL PRIMARY KEY
 
 ```
