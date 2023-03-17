@@ -12740,6 +12740,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 ### 必看教程 
 [GODOT RECIPES](http://kidscancode.org/godot_recipes/4.x/)
 
+[官方示例](https://github.com/godotengine/godot-demo-projects)
+
 
 
 
@@ -13058,6 +13060,28 @@ func create_single_error_popup(message : String, focus_after_close : Control, pa
 	focus_after_close.grab_focus()
 
 ```
+
+
+
+### 重写父方法
+
+```
+func do_something():
+      .do_something() # 这里调用父控件的同名方法
+      #additional code
+```
+
+
+
+
+
+### WebSocket
+
+[目前用的唯一上架的ws插件](https://github.com/AndreaTerenz/WebSocket)
+
+[godot-websocket-nodes](https://github.com/Faless/gd-websocket-nodes/tree/main/addons/godot-websocket-nodes) 必看
+
+[WebSocket](https://github.com/godotengine/godot/issues/73810)
 
 
 
@@ -13956,6 +13980,12 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 
+## vue 前端
+
+[chatgpt-vue](https://github.com/cyio/chatgpt-vue)
+
+
+
 # LLaMA
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
@@ -13964,6 +13994,9 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 >
 > ```
 > 65B 据说可以正常跑，需要内存 96G+50G (swap), 需要显存 70G
+> 
+> python example.py --ckpt_dir /root/autodl-tmp/LLaMA_7B/7B --tokenizer_path /root/autodl-tmp/LLaMA_7B/tokenizer.model --max_batch_size=1
+> 
 > ```
 >
 > ```
@@ -13980,7 +14013,7 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 > 
 > """
 > 65B
->   I think Shanghai is not the capital of China, because
+> I think Shanghai is not the capital of China, because
 >         1. it's bigger than any other city in China; and
 >         2. its GDP per capita and living standard are higher than those in Beijing.
 > """
