@@ -14259,6 +14259,14 @@ if __name__ == "__main__":
 
 
 
+## ChatGpt 微调方案
+
+[llama_index](https://github.com/jerryjliu/llama_index/issues/712)
+
+[paul-graham-gpt](https://github.com/mckaywrigley/paul-graham-gpt)
+
+
+
 ## ChatGLM-6B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
