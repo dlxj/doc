@@ -14287,6 +14287,14 @@ if __name__ == "__main__":
 
 
 
+## GLM-130B
+
+[GLM-130B](https://github.com/THUDM/GLM-130B)
+
+[GLM-130B 开源的双语千亿预训练模型](https://www.bilibili.com/video/BV1L8411E7N8)
+
+
+
 ## LLaMA 前端
 
 [text-generation-webui](https://github.com/oobabooga/text-generation-webui/issues/147)
