@@ -13820,6 +13820,20 @@ ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
 
 [提问案例 ](https://github.com/howl-anderson/unlocking-the-power-of-llms)
 
+```
+在上一次对话中我问了你这样一个问题:
+xxx
+你的回答是:
+xxx
+于是我又追问道:
+xxx
+而你给出的回答是:
+xxx
+···
+```
+
+
+
 [wechat](https://github.com/zhayujie/chatgpt-on-wechat)
 
 [ChatGPT Telegram 机器人](https://v2ex.com/t/920842#reply96)
