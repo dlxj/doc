@@ -14293,6 +14293,8 @@ if __name__ == "__main__":
 
 [GLM-130B 开源的双语千亿预训练模型](https://www.bilibili.com/video/BV1L8411E7N8)
 
+[训练细节](https://chatglm.cn/blog)
+
 
 
 ## LLaMA 前端
