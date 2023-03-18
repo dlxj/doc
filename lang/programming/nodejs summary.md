@@ -14295,6 +14295,8 @@ if __name__ == "__main__":
 
 [训练细节](https://chatglm.cn/blog)
 
+[微调](https://huggingface.co/THUDM/chatglm-6b/discussions/1) [FinetuneGLMWithPeft](https://github.com/thaumstrial/FinetuneGLMWithPeft)
+
 
 
 ## LLaMA 前端
