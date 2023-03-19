@@ -4504,6 +4504,18 @@ const apiExists = apiStat.isFile() && path.extname(apiPath).toLowerCase() === '.
 
 
 
+## remove dir
+
+```
+            // if (fs.existsSync(audio_dir)) {
+            //     fs.rmSync(audio_dir, { recursive: true, force: true });
+            // }
+```
+
+ 
+
+
+
 ## resolve
 
 ```

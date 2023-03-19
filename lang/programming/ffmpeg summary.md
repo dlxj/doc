@@ -545,6 +545,19 @@ ffmpeg -safe 0 -f concat -i list.txt -vcodec copy -acodec copy -strict -2 -y con
 
 
 
+# 精准截图
+
+```
+ffmpeg -accurate_seek -avoid_negative_ts 1 -i 1.mkv -ss 5 -vframes 1 xxxxxxxxxx.jpg
+
+-accurate_seek -avoid_negative_ts 1
+
+```
+
+
+
+
+
 # GPU 加速
 
 - https://blog.csdn.net/qq_22633333/article/details/107701301
