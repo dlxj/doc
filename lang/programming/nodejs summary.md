@@ -4504,6 +4504,18 @@ const apiExists = apiStat.isFile() && path.extname(apiPath).toLowerCase() === '.
 
 
 
+## remove dir
+
+```
+            // if (fs.existsSync(audio_dir)) {
+            //     fs.rmSync(audio_dir, { recursive: true, force: true });
+            // }
+```
+
+ 
+
+
+
 ## resolve
 
 ```
@@ -13873,6 +13885,20 @@ ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
 
 [提问案例 ](https://github.com/howl-anderson/unlocking-the-power-of-llms)
 
+```
+在上一次对话中我问了你这样一个问题:
+xxx
+你的回答是:
+xxx
+于是我又追问道:
+xxx
+而你给出的回答是:
+xxx
+···
+```
+
+
+
 [wechat](https://github.com/zhayujie/chatgpt-on-wechat)
 
 [ChatGPT Telegram 机器人](https://v2ex.com/t/920842#reply96)
@@ -14315,9 +14341,29 @@ if __name__ == "__main__":
 
 
 
+## ChatGpt 微调方案
+
+[llama_index](https://github.com/jerryjliu/llama_index/issues/712)
+
+[paul-graham-gpt](https://github.com/mckaywrigley/paul-graham-gpt)
+
+
+
 ## ChatGLM-6B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
+
+
+
+## GLM-130B
+
+[GLM-130B](https://github.com/THUDM/GLM-130B)
+
+[GLM-130B 开源的双语千亿预训练模型](https://www.bilibili.com/video/BV1L8411E7N8)
+
+[训练细节](https://chatglm.cn/blog)
+
+[微调](https://huggingface.co/THUDM/chatglm-6b/discussions/1) [FinetuneGLMWithPeft](https://github.com/thaumstrial/FinetuneGLMWithPeft)
 
 
 
