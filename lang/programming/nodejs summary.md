@@ -12744,6 +12744,59 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+#### delta 的单位是秒
+
+[delta 的单位是秒](https://docs.godotengine.org/ja/stable/tutorials/scripting/idle_and_physics_processing.html?highlight=delta)
+
+
+
+### utf8
+
+
+
+```
+
+data = Buffer.from(data, 'utf-8').toString()
+	# node
+```
+
+
+
+
+
+```
+func _unhandled_input(event):
+    if event is InputEventKey:
+        print(char(event.unicode))
+
+print(char(358),char(358).to_utf8().size())
+
+RawArray([unicode]).get_string_from_utf8()
+
+```
+
+
+
+```
+extends MainLoop
+
+func _idle(_delta):
+	var string := "aaaa\u0000bbbb"
+	print("%d: '%s'" % [len(string), string])
+	var buffer := StreamPeerBuffer.new()
+	buffer.put_utf8_string(string)
+	# Expecting 13 because 32 bit integer + 9 characters
+	print("%d: %s" % [len(buffer.data_array), var2str(buffer.data_array)])
+	buffer.seek(0)
+	string = buffer.get_utf8_string()
+	print("%d: '%s'" % [len(string), string])
+	return true
+```
+
+
+
+
+
 
 ### 动态设置窗体大小
 
@@ -13995,8 +14048,11 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 > ```
 > 65B 据说可以正常跑，需要内存 96G+50G (swap), 需要显存 70G
 > 
-> python example.py --ckpt_dir /root/autodl-tmp/LLaMA_7B/7B --tokenizer_path /root/autodl-tmp/LLaMA_7B/tokenizer.model --max_batch_size=1
-> 
+> 模型准备：
+> /root/LLaMA_model
+> 	# 7B放这里面
+> 	# 65B 放 /root/autodl-tmp/LLaMA_65B/65B/ 的软件链
+> 	
 > ```
 >
 > ```
@@ -14286,6 +14342,631 @@ if __name__ == "__main__":
 > https://fancyerii.github.io/2019/02/14/chatbot/  大佬  李理的博客
 
 - 使用PyTorch实现Chatbot
+
+
+
+## tts chatgpt Whisper 代码备份
+
+```
+
+# """
+# chatgpt
+# """
+# import openai
+# from flask import Flask, Response, stream_with_context
+# from flask import request
+# import std.iJson as iJson
+# app = Flask(__name__)
+# # Set up OpenAI API key
+# api_key = "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"
+# openai.api_key = api_key
+
+# def send_message(message_log):
+#     response = openai.ChatCompletion.create(
+#         model="gpt-3.5-turbo",  # The name of the OpenAI chatbot model to use
+#         # The conversation history up to this point, as a list of dictionaries
+#         messages=message_log,
+#         # The maximum number of tokens (words or subwords) in the generated response
+#         max_tokens=3800,
+#         # The stopping sequence for the generated response, if any (not used here)
+#         stop=None,
+#         # The "creativity" of the generated response (higher temperature = more creative)
+#         temperature=0.7,
+#     )
+
+#     # Find the first response from the chatbot that has text in it (some responses may not have text)
+#     for choice in response.choices:
+#         if "text" in choice:
+#             return choice.text
+
+#     # If no response with text is found, return the first response's content (which may be empty)
+#     return response.choices[0].message.content
+
+# global first_request, message_log
+# message_log = []
+# first_request = True
+
+# def init_gpt():
+#     global first_request, message_log
+#     message_log = [{"role": "system", "content": "You are a helpful assistant."}]
+#     first_request = True
+
+# # http://127.0.0.1:5000/ask/chatgpt  # postman 这样传参 [{"a": 1}]
+# @app.route("/ai/chatgpt", methods=['POST'])
+# def chatgpt(user_input='hi'):
+
+#     global first_request, message_log
+
+#     if __name__ != "__main__":
+#         user_input = request.form['text']
+
+#     if user_input.lower() == "quit":
+#         init_gpt()
+#         print("Goodbye!")
+#         return f"AI assistant: Goodbye!"
+
+#     if len(message_log) + 1 > 10:
+#         init_gpt()
+
+#     if first_request:
+#         init_gpt()
+#         message_log.append({"role": "user", "content": user_input})
+#         response = send_message(message_log)
+#         message_log.append({"role": "assistant", "content": response})
+#         print(f"You: {user_input}")
+#         print(f"AI assistant: {response}")
+#         first_request = False
+#     else:
+#         message_log.append({"role": "user", "content": user_input})
+#         response = send_message(message_log)
+#         message_log.append({"role": "assistant", "content": response})
+#         print(f"You: {user_input}")
+#         print(f"AI assistant: {response}")
+
+#     return { "msg":f"AI assistant: {response}", "raw":response, "status":200 }
+
+# # ret = chatgpt(user_input='把下面这句翻译成英语：豆浆应该加糖还是加盐') # 豆浆应该加糖还是加盐
+# # print(f"raw msg: {ret['raw']}")
+# # #chatgpt(user_input='不对，没有人会在豆浆里加糖')
+
+
+# """
+# tts
+# """
+# global runtts
+# runtts = None
+# from PaddleSpeechLLaMA.paddlespeech.cli.asr.infer import ASRExecutor
+# from typing import Optional
+# import os,time
+# import paddle
+# print('initialize tts engin...')
+# begin = time.time_ns()
+# exec('from paddlespeech.cli.tts import TTSExecutor')  # 不知道为什么一定要这样导入 # 必须在全局范围执行，放函数里执行是不行的
+# TTSExecutor = locals()['TTSExecutor']   # 需要的符号已经在当前局部变量里面了，取出来用
+# runtts = TTSExecutor()
+# print(f'initialize tts done. use time in [s]: {(time.time_ns() - begin) / int(1e6) / 1000}')
+
+# @app.route("/ai/chineseText2Audio", methods=['POST'])
+# def chineseText2Audio(text='你好，欢迎使用百度飞桨深度学习框架！' ):
+#     global runtts
+#     status = runtts.execute([ '--am', 'fastspeech2_male', '--voc', 'pwgan_male', '--input', text])
+#     return status
+
+
+# """
+# whisper output.wav --language Chinese --task translate --model medium
+#     # 中转英成功
+# """
+# global whisperModel
+# whisperModel = None
+# @app.route("/ai/audio2EnghlishText", methods=['POST'])
+# def audio2EnghlishText(task="translate", language='Chinese'):
+#     global whisperModel
+#     import sys, time
+#     # sys.argv = [ sys.argv[0] ]
+#     # sys.argv.append( 'output.wav' )
+#     # sys.argv.append( '--language' )
+#     # sys.argv.append( 'Chinese' )
+#     # sys.argv.append( '--task' )
+#     # # sys.argv.append( 'translate' )  # 这是识别原语言，输出源语言；translate 这是固定输出英语
+#     # sys.argv.append( 'translate' )
+#     # sys.argv.append( '--model' )
+#     # sys.argv.append( 'large-v2' )
+#     # sys.argv.append( '--output_format' )
+#     # sys.argv.append( 'srt' )
+
+#     import argparse
+#     import os
+#     import warnings
+#     from typing import TYPE_CHECKING, Optional, Tuple, Union
+
+#     import numpy as np
+#     import torch
+#     import tqdm
+
+#     from WhisperLLaMa.whisper.audio import (
+#         FRAMES_PER_SECOND,
+#         HOP_LENGTH,
+#         N_FRAMES,
+#         N_SAMPLES,
+#         SAMPLE_RATE,
+#         log_mel_spectrogram,
+#         pad_or_trim,
+#     )
+#     from WhisperLLaMa.whisper.decoding import DecodingOptions, DecodingResult
+#     from WhisperLLaMa.whisper.timing import add_word_timestamps
+#     from WhisperLLaMa.whisper.tokenizer import LANGUAGES, TO_LANGUAGE_CODE, get_tokenizer
+#     from WhisperLLaMa.whisper.utils import (
+#         exact_div,
+#         format_timestamp,
+#         get_writer,
+#         make_safe,
+#         optional_float,
+#         optional_int,
+#         str2bool,
+#     )
+
+#     if TYPE_CHECKING:
+#         from WhisperLLaMa.whisper.model import Whisper
+
+
+#     from WhisperLLaMa.whisper import available_models
+
+#     # fmt: off
+#     # parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+#     # parser.add_argument("audio", nargs="+", type=str, help="audio file(s) to transcribe")
+#     # parser.add_argument("--model", default="small", choices=available_models(), help="name of the Whisper model to use")
+#     # parser.add_argument("--model_dir", type=str, default=None, help="the path to save model files; uses ~/.cache/whisper by default")
+#     # parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu", help="device to use for PyTorch inference")
+#     # parser.add_argument("--output_dir", "-o", type=str, default=".", help="directory to save the outputs")
+#     # parser.add_argument("--output_format", "-f", type=str, default="all", choices=["txt", "vtt", "srt", "tsv", "json", "all"], help="format of the output file; if not specified, all available formats will be produced")
+#     # parser.add_argument("--verbose", type=str2bool, default=True, help="whether to print out the progress and debug messages")
+
+#     # parser.add_argument("--task", type=str, default="transcribe", choices=["transcribe", "translate"], help="whether to perform X->X speech recognition ('transcribe') or X->English translation ('translate')")
+#     # parser.add_argument("--language", type=str, default=None, choices=sorted(LANGUAGES.keys()) + sorted([k.title() for k in TO_LANGUAGE_CODE.keys()]), help="language spoken in the audio, specify None to perform language detection")
+
+#     # parser.add_argument("--temperature", type=float, default=0, help="temperature to use for sampling")
+#     # parser.add_argument("--best_of", type=optional_int, default=5, help="number of candidates when sampling with non-zero temperature")
+#     # parser.add_argument("--beam_size", type=optional_int, default=5, help="number of beams in beam search, only applicable when temperature is zero")
+#     # parser.add_argument("--patience", type=float, default=None, help="optional patience value to use in beam decoding, as in https://arxiv.org/abs/2204.05424, the default (1.0) is equivalent to conventional beam search")
+#     # parser.add_argument("--length_penalty", type=float, default=None, help="optional token length penalty coefficient (alpha) as in https://arxiv.org/abs/1609.08144, uses simple length normalization by default")
+
+#     # parser.add_argument("--suppress_tokens", type=str, default="-1", help="comma-separated list of token ids to suppress during sampling; '-1' will suppress most special characters except common punctuations")
+#     # parser.add_argument("--initial_prompt", type=str, default=None, help="optional text to provide as a prompt for the first window.")
+#     # parser.add_argument("--condition_on_previous_text", type=str2bool, default=True, help="if True, provide the previous output of the model as a prompt for the next window; disabling may make the text inconsistent across windows, but the model becomes less prone to getting stuck in a failure loop")
+#     # parser.add_argument("--fp16", type=str2bool, default=True, help="whether to perform inference in fp16; True by default")
+
+#     # parser.add_argument("--temperature_increment_on_fallback", type=optional_float, default=0.2, help="temperature to increase when falling back when the decoding fails to meet either of the thresholds below")
+#     # parser.add_argument("--compression_ratio_threshold", type=optional_float, default=2.4, help="if the gzip compression ratio is higher than this value, treat the decoding as failed")
+#     # parser.add_argument("--logprob_threshold", type=optional_float, default=-1.0, help="if the average log probability is lower than this value, treat the decoding as failed")
+#     # parser.add_argument("--no_speech_threshold", type=optional_float, default=0.6, help="if the probability of the <|nospeech|> token is higher than this value AND the decoding has failed due to `logprob_threshold`, consider the segment as silence")
+#     # parser.add_argument("--word_timestamps", type=str2bool, default=False, help="(experimental) extract word-level timestamps and refine the results based on them")
+#     # parser.add_argument("--prepend_punctuations", type=str, default="\"\'“¿([{-", help="if word_timestamps is True, merge these punctuation symbols with the next word")
+#     # parser.add_argument("--append_punctuations", type=str, default="\"\'.。,，!！?？:：”)]}、", help="if word_timestamps is True, merge these punctuation symbols with the previous word")
+#     # parser.add_argument("--threads", type=optional_int, default=0, help="number of threads used by torch for CPU inference; supercedes MKL_NUM_THREADS/OMP_NUM_THREADS")
+#     # # fmt: on
+
+#     # args = parser.parse_args().__dict__
+#     from std.iJson import string, parse
+#     # ags = string(args)
+#     args = parse('{"audio": ["output.wav"], "model": "large-v2", "model_dir": null, "device": "cuda", "output_dir": ".", "output_format": "srt", "verbose": true, "task": "translate", "language": "Chinese", "temperature": 0, "best_of": 5, "beam_size": 5, "patience": null, "length_penalty": null, "suppress_tokens": "-1", "initial_prompt": null, "condition_on_previous_text": true, "fp16": true, "temperature_increment_on_fallback": 0.2, "compression_ratio_threshold": 2.4, "logprob_threshold": -1.0, "no_speech_threshold": 0.6, "word_timestamps": false, "prepend_punctuations": "\\"\'“¿([{-", "append_punctuations": "\\"\'.。,，!！?？:：”)]}、", "threads": 0}')
+#     args['task'] = task
+#     args['language'] = language
+#     model_name: str = args.pop("model")
+#     model_dir: str = args.pop("model_dir")
+#     output_dir: str = args.pop("output_dir")
+#     output_format: str = args.pop("output_format")
+#     device: str = args.pop("device")
+#     os.makedirs(output_dir, exist_ok=True)
+
+#     # args = parser.parse_args().__dict__
+#     # model_name: str = args.pop("model")
+#     # model_dir: str = args.pop("model_dir")
+#     # output_dir: str = args.pop("output_dir")
+#     # output_format: str = args.pop("output_format")
+#     # device: str = args.pop("device")
+#     # os.makedirs(output_dir, exist_ok=True)
+
+#     if model_name.endswith(".en") and args["language"] not in {"en", "English"}:
+#         if args["language"] is not None:
+#             warnings.warn(
+#                 f"{model_name} is an English-only model but receipted '{args['language']}'; using English instead."
+#             )
+#         args["language"] = "en"
+
+#     temperature = args.pop("temperature")
+#     if (increment := args.pop("temperature_increment_on_fallback")) is not None:
+#         temperature = tuple(np.arange(temperature, 1.0 + 1e-6, increment))
+#     else:
+#         temperature = [temperature]
+
+#     if (threads := args.pop("threads")) > 0:
+#         torch.set_num_threads(threads)
+    
+#     from WhisperLLaMa.whisper import load_model
+
+#     if not whisperModel:
+#         print('loading whisper model...')
+#         begin = time.time_ns()
+#         whisperModel = load_model(model_name, device=device, download_root=model_dir)
+#         print(f'loading whisper model done. use time in [s]: {(time.time_ns() - begin) / int(1e6) / 1000}')
+
+#     from WhisperLLaMa.whisper.transcribe import transcribe
+#     writer = get_writer(output_format, output_dir)
+#     for audio_path in args.pop("audio"):
+#         begin = time.time_ns()
+#         result = transcribe(whisperModel, audio_path, temperature=temperature, **args)
+#         print(f'loading whisper model done. use time in [s]: {(time.time_ns() - begin) / int(1e6) / 1000}')
+#         # writer(result, audio_path)
+#         text_en = result['text']
+#         return text_en
+
+#     return None
+
+
+# if __name__ == '__main__':
+#     re = chatgpt(user_input='中文语音合成真好用！')
+#     success = chineseText2Audio(text='中文语音合成真好用！')
+#     text = audio2EnghlishText(task="transcribe", language='Chinese')
+#         # ["transcribe", "translate"]
+#     print(text)
+#     print('done.')
+
+# """
+# TTS的主要代码在这: /root/github/echodict/LLaMA_int8/PaddleSpeech/paddlespeech/cli/tts/infer.py
+# 调用方法:
+#     from paddlespeech.cli.tts.infer import TTSExecutor
+#     tts = TTSExecutor()
+#     tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。", output="output.wav")
+# """
+
+
+# """
+# # https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/docs/source/tts/quick_start_cn.md
+#     # TTS 从训练到生成音频
+
+# # https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/docs/tutorial/tts/tts_tutorial.ipynb
+#     # TTS 进阶
+
+
+
+# pip install opencv-python  # import cv2
+#     # 不知道为什么，不装会出错。它自动装的依赖又没有
+
+# git clone https://github.com/PaddlePaddle/PaddleSpeech.git
+# cd PaddleSpeech
+# pip install pytest-runner
+# pip install .
+
+# paddlespeech tts --am fastspeech2_male --voc pwgan_male --input "你好，欢迎使用百度飞桨深度学习框架！"
+#     # 生成 output.wav
+
+#     # https://github.com/PaddlePaddle/PaddleSpeech/pull/2660
+    
+#     from paddlespeech.cli.tts.infer import TTSExecutor
+#     tts = TTSExecutor()
+#     tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。", output="output.wav")
+
+# """
+
+
+
+# """
+# flask --app server run --debug --host 0.0.0.0 --port 5000
+
+# curl -d "text=hi"  "http://127.0.0.1:5000/ai/chatgpt"
+# curl -d "text=quit"  "http://127.0.0.1:5000/ai/chatgpt"
+# curl -d "text=hi"  "http://209.141.34.77:5000/ai/chatgpt"
+# curl -d "text=quit"  "http://209.141.34.77:5000/ai/chatgpt"
+
+# curl -d "text=这是一段中文语音合成的高品质男声"  "http://127.0.0.1:5000/ai/tts" --output out.wav
+# curl -d "text=这是一段中文语音合成的高品质男声"  "http://209.141.34.77:5000/ai/tts" --output out.wav
+
+# """
+# import time
+# import WhisperLLaMa
+
+# _whisper_mode = "base" # 好像只有小模型可以中翻英
+# # _whisper_mode = "medium"
+# #_whisper_mode = "large-v2" # 好像不能中翻英
+# print('loading whisper model...')
+# begin = time.time_ns()
+# whisperModel = WhisperLLaMa.load_model(_whisper_mode, device="cuda") # large-v2
+#     # /root/.cache/whisper/base.pt
+# print(f'loading whisper model done. use time in [s]: {(time.time_ns() - begin) / int(1e6) / 1000}')
+
+# from PaddleSpeechLLaMA.paddlespeech.cli.asr.infer import ASRExecutor
+# from typing import Optional
+# import os,time
+# import paddle
+# print('initialize tts engin...')
+# begin = time.time_ns()
+# exec('from paddlespeech.cli.tts import TTSExecutor')  # 不知道为什么一定要这样导入
+# TTSExecutor = locals()['TTSExecutor']   # 需要的符号已经在当前局部变量里面了，取出来用
+# runtts = TTSExecutor()
+# print(f'initialize tts done. use time in [s]: {(time.time_ns() - begin) / int(1e6) / 1000}')
+# #status = runtts.execute([ '--am', 'fastspeech2_male', '--voc', 'pwgan_male', '--input', '你好，欢迎使用百度飞桨深度学习框架！' ])
+
+
+
+# # http://127.0.0.1:5000/ai/tts
+# # curl -d "text=这是一段中文语音合成的高品质男声"  "http://127.0.0.1:5000/ai/tts" --output out.wav
+# @app.route("/ai/tts", methods=['POST'])  # 输入中文，输出音频流
+# def tts():
+#     if __name__ != "__main__":
+#         user_input = request.form['text']
+#     else:
+#         user_input = '你好，欢迎使用百度飞桨深度学习框架！'
+
+#     def generate(pth):
+#         with open(pth, 'rb') as f:
+#             data = f.read(1024)
+#             while data:
+#                 yield data
+#                 data = f.read(1024)
+    
+#     pth = './output.wav'
+#     status = runtts.execute([ '--am', 'fastspeech2_male', '--voc', 'pwgan_male', '--input', user_input ])
+#     if (status):
+#         if __name__ != "__main__": 
+#             return Response(stream_with_context(generate(pth)), content_type='audio/mp3')
+#         else:
+#             with open(pth, 'rb') as f:
+#                 data = f.read()
+#                 return data
+#     else:
+#         return 'unknow error'
+
+# @app.route("/ai/audio2text", methods=['POST'])  # 输入中文音频的 base64 串，返回 英文文本
+# def audio2text():
+#     import WhisperLLaMa
+#     global whisperModel
+#     pth = './output.wav'
+#     if __name__ != "__main__":
+#         user_input = request.form['audio']
+#     else:
+#         with open(pth, 'rb') as f:
+#             audio = f.read()
+#         user_input = '你好，欢迎使用百度飞桨深度学习框架！'
+
+#     # load audio and pad/trim it to fit 30 seconds
+#     audio = WhisperLLaMa.load_audio(pth)
+#     audio = WhisperLLaMa.pad_or_trim(audio)
+
+#     # make log-Mel spectrogram and move to the same device as the model
+#     mel = WhisperLLaMa.log_mel_spectrogram(audio).to(whisperModel.device)
+
+#     # detect the spoken language
+#     _, probs = whisperModel.detect_language(mel)
+#     print(f"Detected language: {max(probs, key=probs.get)}")
+
+#     # decode the audio
+#     # options = whisper.DecodingOptions()
+#     # result_origin = whisper.decode(whisperModel, mel, options)  
+
+#     beam_size=5
+#     best_of=None
+#     temperature=0.0
+#     decode_options = dict(language="en", best_of=best_of, beam_size=beam_size, temperature=temperature) # --task translate 是所有语言翻译为英文，目前尚未支持翻译为其他语言
+#     transcribe_options = dict(task="transcribe", **decode_options)
+#     transcription = whisperModel.transcribe(pth, **transcribe_options)
+    
+#     # audio_text = result_origin.text
+#     audio_text_en = transcription["text"]
+
+#     # # print the recognized text
+#     # print(f'audio text is: {audio_text}')
+#     # print(f'transcription is: {audio_text_en}')
+
+#     # return { "audio_text":audio_text, "audio_text_en":audio_text_en }
+
+# if __name__ == "__main__":
+#     rec_text = audio2text()
+#     wav = tts()
+#     result = chatgpt()
+#     msg = result["msg"]
+    # print( msg )
+
+
+
+# if __name__ == '__main__':
+#     import sys
+#     sys.argv.append( 'tts' )
+#     sys.argv.append( '--am' )
+#     sys.argv.append( 'fastspeech2_male' )
+#     sys.argv.append( '--voc' )
+#     sys.argv.append( 'pwgan_male' )
+#     sys.argv.append( '--input' )
+#     sys.argv.append( '你好，欢迎使用百度飞桨深度学习框架！' )
+    
+#     exec('from paddlespeech.cli.tts import TTSExecutor')
+#     lcls = locals()
+#     _entry = lcls['TTSExecutor']
+#     status = _entry().execute(sys.argv[2:])
+
+# from PaddleSpeechLLaMA.paddlespeech.cli.entry import _execute
+# from PaddleSpeechLLaMA.paddlespeech.cli.entry import _executeTTS
+# _executeTTS()
+
+# import sys
+# if __name__ == '__main__':
+#     sys.argv.append( 'tts' )
+#     sys.argv.append( '--am' )
+#     sys.argv.append( 'fastspeech2_male' )
+#     sys.argv.append( '--voc' )
+#     sys.argv.append( 'pwgan_male' )
+#     sys.argv.append( '--input' )
+#     sys.argv.append( '你好，欢迎使用百度飞桨深度学习框架！' )
+#     # _execute()
+#     _executeTTS()
+# 	# 实际是这样运行的
+
+# from PaddleSpeechLLaMA.paddlespeech.cli.asr.infer import ASRExecutor
+# from typing import Optional
+# import os
+# import paddle
+
+# # import re
+# # import sys
+# # from paddlespeech.cli.entry import _execute
+# # _execute()
+
+# """
+# /root/miniconda3/lib/python3.8/site-packages/paddlespeech vscode 打开，调试 cli/entry.py 里的 _execute
+# """
+
+# # from PaddleSpeechLLaMA.paddlespeech.cli.executor import BaseExecutor
+# # class TTSExecutor(BaseExecutor):
+# #     def __init__(self):
+# #         super().__init__('tts')
+
+# # tts = TTSExecutor()
+
+# # # from PaddleSpeech.paddlespeech.cli.tts.infer import TTSExecutor
+
+# # # from PaddleSpeech.paddlespeech.resource import CommonTaskResource
+
+# # def tts(text: str,
+# #     am: str='fastspeech2_csmsc',
+# #     am_config: Optional[os.PathLike]=None,
+# #     am_ckpt: Optional[os.PathLike]=None,
+# #     am_stat: Optional[os.PathLike]=None,
+# #     spk_id: int=0,
+# #     phones_dict: Optional[os.PathLike]=None,
+# #     tones_dict: Optional[os.PathLike]=None,
+# #     speaker_dict: Optional[os.PathLike]=None,
+# #     voc: str='hifigan_csmsc',
+# #     voc_config: Optional[os.PathLike]=None,
+# #     voc_ckpt: Optional[os.PathLike]=None,
+# #     voc_stat: Optional[os.PathLike]=None,
+# #     lang: str='zh',
+# #     device: str=paddle.get_device(),
+# #     output: str='output.wav',
+# #     use_onnx: bool=False,
+# #     cpu_threads: int=2,
+# #     fs: int=24000):
+# #     paddle.set_device(device)
+# #     pass
+
+# # tts(am="fastspeech2_male", voc="pwgan_male", text="今天天气十分不错。", output="output.wav")
+
+# global ars
+# asr = ASRExecutor()
+# #tts = TTSExecutor()
+# # task_choices = ['asr', 'tts', 'cls', 'text', 'vector']
+# # model_name_format = {
+# #    'asr': 'Model-Size-Code Switch-Multilingual-Language-Sample Rate',
+# #    'tts': 'Model-Language',
+# #    'cls': 'Model-Sample Rate',
+# #    'text': 'Model-Task-Language',
+# #    'vector': 'Model-Sample Rate'
+# # }
+
+# # http://127.0.0.1:5000/ask/chatgpt  # postman 这样传参 [{"a": 1}]
+# @app.route("/ask/llama", methods=['POST'])
+# def llama():
+#     return 'ok.'
+
+# if __name__ == "__main__":
+#     result = asr(audio_file="/root/github/echodict/LLaMA_int8/PaddleSpeechLLaMA/zh.wav")  # 识别
+
+#     print(result)
+
+# """
+# flask --app server run --debug --host 0.0.0.0 --port 5000
+# """
+
+# import openai
+# from flask import Flask
+# from flask import request
+# import std.iJson as iJson
+# app = Flask(__name__)
+
+
+# # Set up OpenAI API key
+# api_key = "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"
+# openai.api_key = api_key
+
+# # Function to send a message to the OpenAI chatbot model and return its response
+
+
+# def send_message(message_log):
+#     # Use OpenAI's ChatCompletion API to get the chatbot's response
+#     response = openai.ChatCompletion.create(
+#         model="gpt-3.5-turbo",  # The name of the OpenAI chatbot model to use
+#         # The conversation history up to this point, as a list of dictionaries
+#         messages=message_log,
+#         # The maximum number of tokens (words or subwords) in the generated response
+#         max_tokens=3800,
+#         # The stopping sequence for the generated response, if any (not used here)
+#         stop=None,
+#         # The "creativity" of the generated response (higher temperature = more creative)
+#         temperature=0.7,
+#     )
+
+#     # Find the first response from the chatbot that has text in it (some responses may not have text)
+#     for choice in response.choices:
+#         if "text" in choice:
+#             return choice.text
+
+#     # If no response with text is found, return the first response's content (which may be empty)
+#     return response.choices[0].message.content
+
+
+# # Initialize the conversation history with a message from the chatbot
+# global first_request, message_log
+# message_log = []
+# first_request = True
+
+# def init_gpt():
+#     global first_request, message_log
+#     message_log = [{"role": "system", "content": "You are a helpful assistant."}]
+#     first_request = True
+
+# # http://127.0.0.1:5000/ask/chatgpt  # postman 这样传参 [{"a": 1}]
+# @app.route("/ask/chatgpt", methods=['POST'])
+# def chatgpt():
+
+#     global first_request, message_log
+
+#     if __name__ != "__main__":
+#         user_input = request.form['text']
+#     else:
+#         user_input = 'hi'
+
+#     if user_input.lower() == "quit":
+#         init_gpt()
+#         print("Goodbye!")
+#         return f"AI assistant: Goodbye!"
+
+#     if len(message_log) + 1 > 10:
+#         init_gpt()
+
+#     if first_request:
+
+#         init_gpt()
+
+#         response = send_message(message_log)
+#         message_log.append({"role": "assistant", "content": response})
+#         print(f"You: {user_input}")
+#         print(f"AI assistant: {response}")
+#         first_request = False
+#     else:
+#         message_log.append({"role": "user", "content": user_input})
+#         response = send_message(message_log)
+#         message_log.append({"role": "assistant", "content": response})
+#         print(f"AI assistant: {response}")
+
+#     return f"AI assistant: {response}"
+
+# if __name__ == "__main__":
+#     chatgpt()
+
+```
+
+
+
+ 
 
 
 
