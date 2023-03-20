@@ -425,7 +425,12 @@ server {
 ### 转发ssh
 
 ```
+yum install nginx-mod-stream.x86_64
+ll /usr/lib64/nginx/modules
+	--> -rwxr-xr-x 1 root root 179856 Nov 11 00:58 ngx_stream_module.so
+
 /etc/nginx/nginx.conf
+load_module /usr/lib64/nginx/modules/ngx_stream_module.so;
 user  root;
 worker_processes  1;
 
@@ -460,9 +465,6 @@ http {
 
 }
 
-
-
-/etc/nginx/conf.d/222.conf
 stream {
    upstream ssh_server {
      server 127.0.0.1:22;
@@ -472,9 +474,15 @@ stream {
      proxy_pass ssh_server;
    }
 }
+
+	# cf 过来的 请求，ssh连接不上，还必须用 ip 连
 ```
 
 
+
+### cloudflare ssh反代
+
+[cloudflare ssh反代](https://github.com/tsl0922/ttyd)
 
 
 
