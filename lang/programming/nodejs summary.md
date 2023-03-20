@@ -422,6 +422,62 @@ server {
 
 
 
+### 转发ssh
+
+```
+/etc/nginx/nginx.conf
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+
+
+}
+
+
+
+/etc/nginx/conf.d/222.conf
+stream {
+   upstream ssh_server {
+     server 127.0.0.1:22;
+   }
+   server {
+     listen 222;
+     proxy_pass ssh_server;
+   }
+}
+```
+
+
+
+
+
 ### 负载均衡
 
 ```
