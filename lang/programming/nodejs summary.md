@@ -14151,7 +14151,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 > """
 > I think Japanese worth to learn, because
 > I think penicillin can cure
-> 我认为上海不是中国的首都，因为
+> 上海不是中国的首都，因为
+> 青霉素能治疗以下这些疾病
 > I think Shanghai is not the capital of China, because
 > 试卷中的一道题，它是考察青霉素的用法的试题，这道题的原文是
 > A question in the test paper, it is a test question to investigate the usage of penicillin, the original text of this question is
@@ -14416,6 +14417,8 @@ if __name__ == "__main__":
 ## ChatGLM-6B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
+
+### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning)
 
 
 
