@@ -711,6 +711,22 @@ template0
 
 
 
+## create datebase if not exist
+
+```
+CREATE EXTENSION IF NOT EXISTS dblink;
+DO $$
+BEGIN
+PERFORM dblink_exec('', 'CREATE DATABASE tt WITH OWNER = postgres ENCODING = ''UTF8'' TABLESPACE = pg_default CONNECTION LIMIT = -1 TEMPLATE template0');
+EXCEPTION WHEN duplicate_database THEN RAISE NOTICE '%, skipping', SQLERRM USING ERRCODE = SQLSTATE;
+END
+$$;
+```
+
+
+
+
+
 
 
 ## BIGSERIAL PRIMARY KEY
