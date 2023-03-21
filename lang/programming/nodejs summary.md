@@ -14410,6 +14410,8 @@ if __name__ == "__main__":
 
 [llama-chat](https://github.com/randaller/llama-chat)
 
+[多卡运行](https://github.com/randaller/llama-chat/issues/15)
+
 
 
 ## ChatGpt 微调方案
