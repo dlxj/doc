@@ -14406,6 +14406,12 @@ if __name__ == "__main__":
 
 
 
+## llama-chat
+
+[llama-chat](https://github.com/randaller/llama-chat)
+
+
+
 ## ChatGpt 微调方案
 
 [llama_index](https://github.com/jerryjliu/llama_index/issues/712)
