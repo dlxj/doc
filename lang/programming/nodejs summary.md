@@ -14420,6 +14420,8 @@ if __name__ == "__main__":
 
 ### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning)
 
+- [中文微调数据集](https://github.com/carbonz0/alpaca-chinese-dataset/issues/3)
+
 
 
 ## GLM-130B
