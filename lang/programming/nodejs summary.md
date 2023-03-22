@@ -15091,7 +15091,9 @@ if __name__ == "__main__":
 
 
 
- 
+# Midjourney V5
+
+ [Midjourney V5](https://www.36kr.com/p/2179360611185160)
 
 
 
