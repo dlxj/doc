@@ -12814,6 +12814,9 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 ### 必看教程 
+
+[Godello绝佳示例](https://github.com/alfredbaudisch/Godello)
+
 [GODOT RECIPES](http://kidscancode.org/godot_recipes/4.x/)
 
 [官方示例](https://github.com/godotengine/godot-demo-projects)
@@ -14413,6 +14416,22 @@ if __name__ == "__main__":
 [多卡运行](https://github.com/randaller/llama-chat/issues/15)
 
 [最佳提示](https://github.com/randaller/llama-chat/issues/7)
+
+
+
+```
+git clone https://github.com/randaller/llama-chat.git &&
+cd llama-chat &&
+pip install -r requirements.txt && \
+pip install -e .
+
+python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
+
+
+
+```
+
+
 
 
 
