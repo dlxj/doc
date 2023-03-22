@@ -9099,6 +9099,43 @@ CONFIG SET protected-mode no
 
 [ffmpeg.wasm render video in canvas](https://www.mysourcebook.com/2023/01/decode-big-video-using-ffmpeg-wasm-to-render-use-canvas.html)
 
+[How to enable HTTPS protocol in ffmpeg.wasm?](https://www.mysourcebook.com/2023/01/how-to-enable-https-protocol-in-ffmpeg.wasm.html)
+
+
+
+```
+  await ffmpeg.load();
+  ffmpeg.FS('writeFile', 'test.avi', await fetchFile('./test.avi'));
+  await ffmpeg.run('-i', 'test.avi', 'test.mp4');
+  await fs.promises.writeFile('./test.mp4', ffmpeg.FS('readFile', 'test.mp4'));
+  process.exit(0);
+```
+
+
+
+```
+ var Module = {};
+
+   fetch('https://example.com/ffmpeg.wasm')
+      .then(response => response.arrayBuffer())
+      .then(bytes => WebAssembly.instantiate(bytes, Module))
+      .then(results => {
+         Module.instance = results.instance;
+         // FFmpeg.wasm is now loaded and ready to use
+      });
+```
+
+
+
+
+
+```
+getting error message RuntimeError: indirect call to null when using libx265 but libx264 works with same settings
+await ffmpeg.run( '-ss', '30', '-t', '3', '-i', 'input.bin', '-movflags',  '+faststart', '-vf', "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse,format=yuv420p", '-c:v', 'libx265', '-crf', '28', '-an', 'output.mp4'  );
+```
+
+
+
 
 
 # Extract Video Subtitle
