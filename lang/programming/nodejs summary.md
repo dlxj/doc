@@ -14446,6 +14446,18 @@ if __name__ == "__main__":
 
 
 
+## BMInf 显存/内存换入换出
+
+[BMInf](https://github.com/OpenBMB/BMInf)
+
+```
+BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
+```
+
+
+
+
+
 ## LLaMA 前端
 
 [text-generation-webui](https://github.com/oobabooga/text-generation-webui/issues/147)
