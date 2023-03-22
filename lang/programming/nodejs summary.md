@@ -12811,6 +12811,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 ## godot4.0
 
+[llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
+
 
 
 ### 必看教程 
@@ -13205,6 +13207,15 @@ func do_something():
 
 
 
+### 定时器
+
+```
+yield(get_tree().create_timer(0.05), "timeout")
+input_field.grab_focus()
+```
+
+
+
 
 
 ### WebSocket
@@ -13214,6 +13225,8 @@ func do_something():
 [godot-websocket-nodes](https://github.com/Faless/gd-websocket-nodes/tree/main/addons/godot-websocket-nodes) 必看
 
 [WebSocket](https://github.com/godotengine/godot/issues/73810)
+
+
 
 
 
