@@ -5629,6 +5629,251 @@ int main(int argc, char* argv[])
 
 
 
+# ffmpeg.wasm
+
+[ffmpeg.wasm render video in canvas](https://www.mysourcebook.com/2023/01/decode-big-video-using-ffmpeg-wasm-to-render-use-canvas.html)
+
+[How to enable HTTPS protocol in ffmpeg.wasm?](https://www.mysourcebook.com/2023/01/how-to-enable-https-protocol-in-ffmpeg.wasm.html)
+
+
+
+```
+(async () => {
+    let { writeFile } = await import('fs/promises')
+    let { createFFmpeg, fetchFile } = await import('@ffmpeg/ffmpeg')
+    let ffmpeg = createFFmpeg({ log: true })
+    await ffmpeg.load()
+
+    ffmpeg.FS('writeFile', '1.mkv', await fetchFile('./1.mkv'))
+    await ffmpeg.run('-i', '1.mkv', "-ss", "00:00:03", "-to", "00:00:04", '1.mp4')
+    await require('fs').writeFileSync('./1.mp4', ffmpeg.FS('readFile', '1.mp4'))
+    process.exit(0)
+})()
+```
+
+
+
+```
+ var Module = {};
+
+   fetch('https://example.com/ffmpeg.wasm')
+      .then(response => response.arrayBuffer())
+      .then(bytes => WebAssembly.instantiate(bytes, Module))
+      .then(results => {
+         Module.instance = results.instance;
+         // FFmpeg.wasm is now loaded and ready to use
+      });
+```
+
+
+
+
+
+```
+getting error message RuntimeError: indirect call to null when using libx265 but libx264 works with same settings
+await ffmpeg.run( '-ss', '30', '-t', '3', '-i', 'input.bin', '-movflags',  '+faststart', '-vf', "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse,format=yuv420p", '-c:v', 'libx265', '-crf', '28', '-an', 'output.mp4'  );
+```
+
+
+
+## Extract Video Subtitle
+
+
+
+- https://github.com/YaoFANGUK/video-subtitle-extractor
+
+
+
+```python
+"""
+git clone https://github.com/YaoFANGUK/video-subtitle-extractor.git
+
+pip install -r requirements.txt  # for backend
+
+opencv-python==4.5.4.60
+python-Levenshtein-wheels==0.13.2
+paddlepaddle==2.1.3
+filesplit==3.0.2
+pysrt==1.1.2
+wordsegment==1.3.1
+imgaug==0.4.0
+pyclipper==1.3.0.post2
+lmdb==1.2.1
+"""
+
+subtitle_area = (self.ymin, self.ymax, self.xmin, self.xmax)
+from backend.main import SubtitleExtractor
+self.se = SubtitleExtractor(self.video_path, subtitle_area) 
+# 'D:/Downloads/火影忍者天空树双语/火影忍者001天空树双语.mp4'
+#  (834, 897, 0, 1280)
+
+
+    def _compare_ocr_result(self, img1, img2):
+        """
+        比较两张图片预测出的字幕区域文本是否相同
+        """
+        area_text1 = "".join(self.__get_area_text(self.ocr.predict(img1)))
+        area_text2 = "".join(self.__get_area_text(self.ocr.predict(img2)))
+        if ratio(area_text1, area_text2) > config.THRESHOLD_TEXT_SIMILARITY:
+            return True
+        else:
+            return False
+        
+        
+        
+        
+        
+         # 删除缓存
+        if os.path.exists(self.raw_subtitle_path):
+            os.remove(self.raw_subtitle_path)
+        # 新建文件
+        f = open(self.raw_subtitle_path, mode='w+', encoding='utf-8')
+
+        for i, frame in enumerate(frame_list):
+            # 读取视频帧
+            img = cv2.imread(os.path.join(self.frame_output_dir, frame))
+            # 获取检测结果
+            dt_box, rec_res = text_recogniser.predict(img)
+            # 获取文本坐标
+            coordinates = self.__get_coordinates(dt_box)
+            # 将结果写入txt文本中
+            text_res = [(res[0], res[1]) for res in rec_res]
+            # 进度条
+            self.progress = i / len(frame_list) * 100
+            for content, coordinate in zip(text_res, coordinates):
+                if self.sub_area is not None:
+                    s_ymin = self.sub_area[0]
+                    s_ymax = self.sub_area[1]
+                    s_xmin = self.sub_area[2]
+                    s_xmax = self.sub_area[3]
+                    xmin = coordinate[0]
+                    xmax = coordinate[1]
+                    ymin = coordinate[2]
+                    ymax = coordinate[3]
+                    if s_xmin <= xmin and xmax <= s_xmax and s_ymin <= ymin and ymax <= s_ymax:
+                        print(content[0])
+                        if content[1] > config.DROP_SCORE:
+                            f.write(f'{os.path.splitext(frame)[0]}\t'
+                                    f'{coordinate}\t'
+                                    f'{content[0]}\n')
+                else:
+                    f.write(f'{os.path.splitext(frame)[0]}\t'
+                            f'{coordinate}\t'
+                            f'{content[0]}\n')
+        # 关闭文件
+        f.close()
+        
+```
+
+
+
+
+
+```
+from tools.infer import utility
+from tools.infer.predict_system import TextSystem
+
+import config
+from config import interface_config
+
+import cv2
+
+
+if __name__ == '__main__':
+
+    args = utility.parse_args()
+
+    args.use_gpu = False
+    
+    # 加载快速模型
+    args.det_model_dir = config.DET_MODEL_FAST_PATH
+    # 加载快速模型
+    args.rec_model_dir = config.REC_MODEL_FAST_PATH
+
+    # 设置字典路径
+    args.rec_char_dict_path = config.DICT_PATH
+    # 设置识别文本的类型
+    args.rec_char_type = config.REC_CHAR_TYPE
+
+    recogniser = TextSystem(args)
+
+    img = cv2.imread('1.png')
+
+    detection_box, recognise_result = recogniser(img)
+
+    a = 1
+```
+
+
+
+
+
+
+
+#### 提取关键帧图片带时间
+
+```
+"""
+ffmpeg -skip_frame nokey -i 1.mp4 -r 1000 -vsync 0 -frame_pts true tmp/out%d.png
+	# 只要关键帧，数字代表的时间是毫秒数（1/1000秒）
+skip_frame tells the decoder to process only keyframes. -vsync 0 (in this command) preserves timestamps. -frame_pts sets the numeral portion of the output image filename to represent the timestamp. The interpretation of the number requires you to know the framerate e.g. if the framerate is 30 then an image name of out75 corresponds to a timestamp of 75/30 = 2.50 seconds. You can add -r 1000 if you want numbers to represent milliseconds.
+"""
+```
+
+
+
+#### 剪视频
+
+
+
+```
+ffmpeg -ss 00:01:00 -i input.mp4 -to 00:02:00 -c copy output.mp4
+
+# 需重新编码，含非关键帧
+ffmpeg -i movie.mp4 -ss 00:00:03 -t 00:00:08 -async 1 cut.mp4
+
+//			.outputOptions(["-movflags", "frag_keyframe+empty_moov"]) //without these options ffmpeg errors with `muxer does not support non seekable output`
+
+```
+
+
+
+
+
+#### 分离人声伴奏
+
+```
+# https://github.com/deezer/spleeter
+```
+
+
+
+
+
+
+
+```
+# https://github.com/YaoFANGUK/video-subtitle-extractor
+
+from backend.main import SubtitleExtractor
+# 输入视频路径
+# 新建字幕提取对象
+se = SubtitleExtractor(video_path, subtitle_area)
+# 开始提取字幕
+se.run()
+```
+
+
+
+#### 音频数字指纹
+
+- https://github.com/xitu/gold-miner/blob/master/TODO/fingerprinting-and-audio-recognition-with-python.md
+  - 用 Python 和 Numpy 实现音频数字指纹特征识别
+
+
+
+
+
 
 
 # network

@@ -9104,11 +9104,17 @@ CONFIG SET protected-mode no
 
 
 ```
-  await ffmpeg.load();
-  ffmpeg.FS('writeFile', 'test.avi', await fetchFile('./test.avi'));
-  await ffmpeg.run('-i', 'test.avi', 'test.mp4');
-  await fs.promises.writeFile('./test.mp4', ffmpeg.FS('readFile', 'test.mp4'));
-  process.exit(0);
+(async () => {
+    let { writeFile } = await import('fs/promises')
+    let { createFFmpeg, fetchFile } = await import('@ffmpeg/ffmpeg')
+    let ffmpeg = createFFmpeg({ log: true })
+    await ffmpeg.load()
+
+    ffmpeg.FS('writeFile', '1.mkv', await fetchFile('./1.mkv'))
+    await ffmpeg.run('-i', '1.mkv', "-ss", "00:00:03", "-to", "00:00:04", '1.mp4')
+    await require('fs').writeFileSync('./1.mp4', ffmpeg.FS('readFile', '1.mp4'))
+    process.exit(0)
+})()
 ```
 
 
