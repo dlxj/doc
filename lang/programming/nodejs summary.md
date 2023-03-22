@@ -135,7 +135,25 @@ ln -s /usr/local/node-v14.21.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local
 
 
 
+## vscode 附加参数
 
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            //"program": "${workspaceFolder}\\t.js",
+            "args": ["--experimental-wasm-threads", "${file}"]
+        }
+    ]
+}
+```
 
 
 
