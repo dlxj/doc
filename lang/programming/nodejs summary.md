@@ -13178,6 +13178,28 @@ VisualServer.set_default_clear_color(Color(0.4,0.4,0.4,1.0))
 1. Theme -> Theme Overrides -> Font Color
 2. Visibility -> Self Modulate 
 
+#### 动态设置label 字体大小
+
+```
+const BoardCard := preload("res://scenes/board_card.tscn")
+
+func _ready():
+	var board_card = BoardCard.instantiate()
+	var label =  board_card.get_node("Label")
+	label.add_theme_font_size_override("font_size", 32)
+	label.text = "111111"
+```
+
+
+
+#### 自动获取焦点
+
+```
+line.grab_focus()
+```
+
+
+
 
 
 ### 自动加载脚本
@@ -13477,6 +13499,17 @@ func do_something():
 ```
 yield(get_tree().create_timer(0.05), "timeout")
 input_field.grab_focus()
+```
+
+
+
+### add_child prepend
+
+```
+		var btn_clone = create_Button.duplicate()
+		btn_clone.set_text(str(i))
+		personal_boards_container.add_child(btn_clone)
+		personal_boards_container.move_child(btn_clone, 0)
 ```
 
 
@@ -14685,6 +14718,16 @@ if __name__ == "__main__":
 
 [llama.cpp on windows](https://github.com/ggerganov/llama.cpp/issues/103)
 
+[Improve the Chat Mode with some tricks](https://github.com/ggerganov/llama.cpp/issues/353)
+
+[LLaMA 30B 试用](https://zhuanlan.zhihu.com/p/615199206)
+
+```
+对于想在本地折腾 LLM 的爱好者来说，性价比最高的显卡还是 RTX 4090。RTX 3090 以下的消费级显卡已经没啥存在价值了，因为它的显存和算力都不太够用。折腾专业卡的需要注意，很多 Tesla 计算卡不支持 FP16 和 INT4 推理，显存和算力要打折。
+```
+
+
+
 
 
 ## llama-chat
@@ -14695,9 +14738,14 @@ if __name__ == "__main__":
 
 [最佳提示](https://github.com/randaller/llama-chat/issues/7)
 
-
+[清理系统盘](https://www.autodl.com/docs/qa1/)
 
 ```
+
+conda create -n llama python=3.10 && \
+conda activate llama && \
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+
 git clone https://github.com/randaller/llama-chat.git &&
 cd llama-chat &&
 pip install -r requirements.txt && \
@@ -14740,6 +14788,14 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [训练细节](https://chatglm.cn/blog)
 
 [微调](https://huggingface.co/THUDM/chatglm-6b/discussions/1) [FinetuneGLMWithPeft](https://github.com/thaumstrial/FinetuneGLMWithPeft)
+
+
+
+## ChatRWKV
+
+[ChatRWKV](https://zhuanlan.zhihu.com/p/603840957)
+
+
 
 
 
@@ -15397,6 +15453,12 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 #     chatgpt()
 
 ```
+
+
+
+# katago
+
+[colab](https://colab.research.google.com/drive/1w69zA4bxRwzph5vG2dr4UeE4Xw2I0hE9)
 
 
 
