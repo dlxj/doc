@@ -14801,6 +14801,7 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 ### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning)
 
 - [中文微调数据集](https://github.com/carbonz0/alpaca-chinese-dataset/issues/3)
+- [中文小数据集上finetune后效果怎么样](https://github.com/mymusise/ChatGLM-Tuning/issues/64)
 
 [ChatGLM-chinese-insturct](https://github.com/27182812/ChatGLM-chinese-insturct) 中文训练成品
 
