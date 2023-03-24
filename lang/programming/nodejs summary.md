@@ -14759,7 +14759,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 	dd if=/dev/zero of=swapfile bs=1M count=160k
 		# 总共 160G
 		# 分区的大小就= bs * count
-		
+	mkswap swapfile
+	
 		
 	
 
