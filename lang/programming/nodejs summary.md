@@ -14447,7 +14447,7 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
-> 成功加载模型
+> 成功加载模型  (8 台 8 卡 A100 外加 **IB 组网**,全 nvme-ssd 存储集群也用 IB 网络)
 >
 > ```
 > 65B 据说可以正常跑，需要内存 96G+50G (swap), 需要显存 70G
@@ -14752,8 +14752,16 @@ pip install -r requirements.txt && \
 pip install -e .
 
 python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
-
-
+	# 合并 30B 至少需要 130G 内存，不够的部分用 swap 空间来补
+	
+	mkdir -p /root/autodl-tmp/swap # 新建交换目录
+	cd /root/autodl-tmp/swap
+	dd if=/dev/zero of=swapfile bs=1M count=160k
+		# 总共 160G
+		# 分区的大小就= bs * count
+		
+		
+	
 
 ```
 
