@@ -14768,6 +14768,22 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 
+## alpaca-lora
+
+[alpaca-lora](https://github.com/tloen/alpaca-lora)
+
+[alpaca.cpp](https://github.com/antimatter15/alpaca.cpp)
+
+[Tune-A-Video](https://github.com/showlab/Tune-A-Video)
+
+
+
+## Chinese-alpaca-lora
+
+[Chinese-alpaca-lora](https://zhuanlan.zhihu.com/p/615968438)
+
+
+
 
 
 ## ChatGpt 微调方案
@@ -14785,6 +14801,10 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 ### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning)
 
 - [中文微调数据集](https://github.com/carbonz0/alpaca-chinese-dataset/issues/3)
+
+[ChatGLM-chinese-insturct](https://github.com/27182812/ChatGLM-chinese-insturct) 中文训练成品
+
+
 
 
 
