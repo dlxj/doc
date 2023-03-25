@@ -14781,6 +14781,12 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 
+## ColossalAI
+
+[colossalAI](https://github.com/hpcaitech/ColossalAI)
+
+
+
 ## alpaca-lora
 
 [alpaca-lora](https://github.com/tloen/alpaca-lora)
