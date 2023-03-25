@@ -5640,6 +5640,8 @@ int main(int argc, char* argv[])
 
 
 ```
+npm install @ffmpeg/ffmpeg @ffmpeg/core --save
+
 (async () => {
     let { writeFile } = await import('fs/promises')
     let { createFFmpeg, fetchFile } = await import('@ffmpeg/ffmpeg')
@@ -7604,6 +7606,9 @@ ffmpeg -rtsp_transport tcp -i rtsp://userxx:xxx@192.168.101.108:554/0:0 -y http:
 - https://github.com/ffmpegwasm/ffmpeg.wasm
 
 ```
+
+npm install @ffmpeg/ffmpeg @ffmpeg/core
+
 const trim = async ({ target: { files } }) => {
         videoInput.addEventListener('loadedmetadata', async function () {
                 let duration =  Math.floor(videoInput.duration)-5; 
@@ -14739,6 +14744,14 @@ if __name__ == "__main__":
 [最佳提示](https://github.com/randaller/llama-chat/issues/7)
 
 [清理系统盘](https://www.autodl.com/docs/qa1/)
+
+
+
+```
+按下 Windows + R  执行 systempropertiesadvanced 命令 — 在性能中点击设置 — 选择高级选项卡 — 虚拟内存中进行更改。
+```
+
+
 
 ```
 
