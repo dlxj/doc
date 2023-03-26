@@ -6689,6 +6689,10 @@ print(mat)
 
 
 
+### 图片相似
+
+[image_similarity](https://github.com/oke-aditya/image_similarity)
+
 
 
 ### 完全解析RNN, Seq2Seq, Attention注意力机制

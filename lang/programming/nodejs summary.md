@@ -14846,6 +14846,10 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 
+## ZeRO-Infinity: 利用NVMe打破GPU显存墙
+
+[ZeRO-Infinity](https://zhuanlan.zhihu.com/p/513571706)
+
 
 
 ## BMInf 显存/内存换入换出
