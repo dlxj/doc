@@ -14844,6 +14844,10 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [ChatRWKV](https://zhuanlan.zhihu.com/p/603840957)
 
+[Making this library more like Hugging Face ](https://github.com/BlinkDL/ChatRWKV/issues/25)
+
+[Add RWKV2 (fast)](https://github.com/huggingface/transformers/issues/17230)
+
 
 
 ## ZeRO-Infinity: 利用NVMe打破GPU显存墙
