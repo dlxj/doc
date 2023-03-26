@@ -14848,6 +14848,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [Add RWKV2 (fast)](https://github.com/huggingface/transformers/issues/17230)
 
+[Can't determine model type from model name](https://github.com/oobabooga/text-generation-webui/issues/581)
+
 
 
 ## ZeRO-Infinity: 利用NVMe打破GPU显存墙
