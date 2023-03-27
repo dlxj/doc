@@ -13315,6 +13315,9 @@ signal board_created()
 func create_board():
 	emit_signal("board_created")
 		# 发送信号
+		
+
+
 ```
 
 
