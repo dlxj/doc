@@ -13338,6 +13338,33 @@ var board_card = BoardCard.instantiate()
 
 
 
+#### 内置信号传额外参数
+
+[add extra arguments to connect built-in signals](https://github.com/godotengine/godot/issues/74769)
+
+```
+extends Node2D
+@onready var button = $Button
+@onready var button2 = $Button2
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var callable = Callable(self, "_button_down").bind("button1")
+	button.connect("button_down", callable)
+	var callable2 = Callable(self, "_button_down").bind("button2")
+	button2.connect("button_down", callable2)
+	pass # Replace with function body.
+
+func _button_down(button_name):
+	print("pressed button", button_name)
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+```
+
+
+
+
+
 #### 自定义信号传额外参数
 
 ```
