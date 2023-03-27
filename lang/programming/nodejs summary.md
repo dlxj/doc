@@ -13319,6 +13319,37 @@ func create_board():
 
 
 
+#### 动态绑定事件
+
+
+
+```
+var board_card = BoardCard.instantiate()
+	var label =  board_card.get_node("Label")
+	label.add_theme_font_size_override("font_size", 32)
+	label.add_theme_color_override("font_color", Color(100, 100, 100, 0.5))
+	label.text = name_card
+	
+	board_card.pressed.connect(on_buttn_click)
+		# pressed 是按钮的点击事件
+		# on_buttn_click 是自定义函数
+		
+```
+
+
+
+#### 自定义信号传额外参数
+
+```
+signal health_changed(old_value, new_value)
+health_changed.emit(old_health, health)
+
+```
+
+
+
+
+
 
 
 ### EditorPlugin
