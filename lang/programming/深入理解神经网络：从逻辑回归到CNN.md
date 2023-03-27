@@ -18,6 +18,8 @@ https://xiaosheng.run/2022/03/24/transformers-note-7.html
 
 > Hugging Face 的 Transformers 库快速入门（七）：翻译任务
 
+[MicroTokenizer](https://github.com/howl-anderson/MicroTokenizer) 面向教育的中文分词
+
 
 
 ### 多维矩阵乘法
@@ -7170,6 +7172,12 @@ one hot型的矩阵运算简化为了查表操作
 
 - https://zhuanlan.zhihu.com/p/475086668?utm_source=qzone&utm_medium=social&utm_oi=937649545946140672
   - 线性代数及其应用——嵌入向量
+
+
+
+## 中文分词
+
+[MicroTokenizer](https://github.com/howl-anderson/MicroTokenizer) 极好的
 
 
 

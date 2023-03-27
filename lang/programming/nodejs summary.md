@@ -14824,6 +14824,14 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [ChatGLM-chinese-insturct](https://github.com/27182812/ChatGLM-chinese-insturct) 中文训练成品
 
+```
+7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on ChatGLM-chinese-insturct_dot_cache.7z .cache/
+	# 模型下载好以后打包模型，上传 阿里云盘
+
+```
+
+
+
 
 
 
