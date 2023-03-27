@@ -13342,6 +13342,21 @@ var board_card = BoardCard.instantiate()
 
 [add extra arguments to connect built-in signals](https://github.com/godotengine/godot/issues/74769)
 
+
+
+```
+var callable = Callable(self, "on_buttn_click").bind(board_card)
+board_card.connect("pressed", callable)
+
+func on_buttn_click(sender):
+	var t = sender.get_node("Label").text
+
+```
+
+
+
+
+
 ```
 extends Node2D
 @onready var button = $Button
