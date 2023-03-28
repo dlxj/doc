@@ -13091,6 +13091,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Godello绝佳示例](https://github.com/alfredbaudisch/Godello)
 
+[游戏背包](https://github.com/alfredbaudisch/GodotDynamicInventorySystem)
+
 [4.0源码3d工具](https://github.com/protongraph/protongraph)
 
 [4.0源码完整游戏](https://github.com/zfoo-project/godot-bird)
@@ -13375,6 +13377,23 @@ func _ready() -> void:
 var data: Dictionary = proton_node.external_data
 
 ```
+
+
+
+### setter getter
+
+[setters and getters](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#doc-gdscript-basics-setters-getters)
+
+```
+var milliseconds: int = 0
+var seconds: int:
+    get:
+        return milliseconds / 1000
+    set(value):
+        milliseconds = value * 1000
+```
+
+
 
 
 
