@@ -13303,6 +13303,78 @@ func _process(delta):
 
 
 
+### % 
+
+在控件右边空白处(脚本小图标的位置) 右键 -> 点一下 "作为唯一名称访问"
+
+```
+@onready var _view_container: ViewContainer = $%ViewContainer
+	# 这样就不用写长长的路径了
+```
+
+
+
+### :=
+
+```
+func initialize(label_name: String, type: int, opts := SlotOptions.new()):
+	super(label_name, type, opts)
+	# 参数默认值
+```
+
+
+
+### {}
+
+```
+var _targets := {}
+func _ready() -> void:
+	var parent = get_parent()
+
+	if targets == 0:
+		if parent is Control:
+			_targets[parent] = SizingData.new()
+	else:
+		for c in parent.get_children():
+			if c is Control:
+				_targets[c] = SizingData.new()
+
+	for target in _targets.keys():
+		var data: SizingData = _targets[target]
+		data.size = target.custom_minimum_size
+		data.font_size = target.get_theme_constant("font_size")
+		
+var data: Dictionary = proton_node.external_data
+
+```
+
+
+
+### match
+
+```
+	match _count:
+		2:
+			res = Vector2.ZERO
+		3:
+			res = Vector3.ZERO
+```
+
+
+
+### substr
+
+```
+if value is String: # TODO: Check is this is still used
+		value = value.substr(1, value.length() - 2)
+		vector = value.split(',')
+		valid_value = (vector.size() == _count)
+```
+
+
+
+
+
 ### signal
 
 [node communication](http://kidscancode.org/godot_recipes/4.x/basics/node_communication/)
@@ -13318,8 +13390,6 @@ func create_board():
 	emit_signal("board_created")
 		# 发送信号
 		
-
-
 ```
 
 
@@ -14935,6 +15005,12 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [Add RWKV2 (fast)](https://github.com/huggingface/transformers/issues/17230)
 
 [Can't determine model type from model name](https://github.com/oobabooga/text-generation-webui/issues/581)
+
+
+
+### Alpaca-CoT
+
+[Alpaca-CoT](https://github.com/PhoebusSi/Alpaca-CoT/blob/main/CN_README.md) 术语解释详细
 
 
 
