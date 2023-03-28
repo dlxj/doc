@@ -13170,6 +13170,16 @@ VisualServer.set_default_clear_color(Color(0.4,0.4,0.4,1.0))
 
 
 
+### margin 去哪了
+
+```
+Under Layout > Layout Mode select Anchors.
+If you select Custom as the Anchor Preset, you can manually change the anchor points and the anchor offsets.
+I believe these offsets are what were knows as margins.
+```
+
+
+
 ### 皮肤和主题
 
 [gui_skinning](https://docs.godotengine.org/en/stable/tutorials/ui/gui_skinning.html)
@@ -13227,6 +13237,20 @@ SceneUtils.connect("change_route_requested", self, "_on_change_scene_requested")
 ```
 boards = load("res://scenes/boards.tscn").instantiate()
 ```
+
+
+
+### 自动缩放
+
+```
+var Board:PackedScene  = preload("res://board.tscn")
+	var board = Board.instantiate()
+	board.layout_mode = 2
+	board.size_flags_horizontal = 3
+	board.size_flags_vertical = 3
+```
+
+
 
 
 
