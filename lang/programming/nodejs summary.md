@@ -13472,7 +13472,7 @@ static func v4():
 ### queue_free
 
 ```
-dialog.queue_free()
+dialog.queue_free() # 释放对象
 ```
 
 
