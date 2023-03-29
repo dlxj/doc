@@ -13380,6 +13380,31 @@ var data: Dictionary = proton_node.external_data
 
 
 
+```
+var boards_by_id : Dictionary = {}
+
+if !boards_by_id.erase(board.id):
+
+```
+
+
+
+
+
+### JSON
+
+```
+func _to_string():
+	return JSON.stringify({
+		"id": id,
+		"title": title
+	})
+```
+
+
+
+
+
 ### setter getter
 
 [setters and getters](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#doc-gdscript-basics-setters-getters)
@@ -13469,6 +13494,28 @@ static func v4():
 
 
 
+### move_child
+
+```
+func _make_button_last_item(container : Node, button : Node):
+	var amount = container.get_child_count()
+	if amount > 1:
+		container.move_child(button, amount - 1)
+```
+
+
+
+### clear_children
+
+```
+static func clear_children(node : Node, ignore := []) -> void:
+	for child in node.get_children():
+		if not child in ignore:
+			child.queue_free()
+```
+
+
+
 ### queue_free
 
 ```
@@ -13495,6 +13542,10 @@ func create_board():
 		# 发送信号
 		
 ```
+
+
+
+
 
 
 
@@ -13614,6 +13665,23 @@ func _gui_input(event):
    if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
        print("Left mouse button was pressed!")
 ```
+
+
+
+#### 跟随鼠标
+
+```
+# from google bard
+extends KinematicBody2D
+
+func _physics_process(delta):
+  var cursor = get_input("mouse_pos")
+  $Sprite.translation = cursor - get_position()
+```
+
+
+
+
 
 
 
@@ -15123,6 +15191,12 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 ### Alpaca-CoT
 
 [Alpaca-CoT](https://github.com/PhoebusSi/Alpaca-CoT/blob/main/CN_README.md) 术语解释详细
+
+
+
+### gpt4all
+
+[gpt4all GPT4数据很多](https://github.com/nomic-ai/gpt4all)
 
 
 
