@@ -13469,6 +13469,14 @@ static func v4():
 
 
 
+### queue_free
+
+```
+dialog.queue_free()
+```
+
+
+
 
 
 ### signal
@@ -15058,6 +15066,10 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [paul-graham-gpt](https://github.com/mckaywrigley/paul-graham-gpt)
 
 [微调好文必看](https://cloud.tencent.com/developer/article/2245743)
+
+[new bing api 接口](https://rapidapi.com/stefano-pochet-stefano-pochet-default/api/chatgpt-4-bing-ai-chat-api/details)
+
+[new bing api 逆向](https://github.com/acheong08/EdgeGPT)
 
 
 
