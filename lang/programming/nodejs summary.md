@@ -14461,6 +14461,8 @@ ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
 
 [api](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)
 
+[完整的语音助手带录音](https://github.com/IanDublew/Virtual-Voice-Assisant/blob/main/gpt3%2Bwhisper%2Bgtts.py)
+
 [提问案例 ](https://github.com/howl-anderson/unlocking-the-power-of-llms)
 
 ```
@@ -15005,6 +15007,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [llama_index](https://github.com/jerryjliu/llama_index/issues/712)
 
 [paul-graham-gpt](https://github.com/mckaywrigley/paul-graham-gpt)
+
+[微调好文必看](https://cloud.tencent.com/developer/article/2245743)
 
 
 
