@@ -15777,6 +15777,16 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 
 
+
+
+# whisper
+
+[Whisper WebUI with a VAD for more accurate non-English transcripts (Japanese) #397](https://github.com/openai/whisper/discussions/397)
+
+- JP 前端
+
+
+
 # SSH端口转发
 
 [彻底搞懂SSH端口转发](https://zhuanlan.zhihu.com/p/148825449)
