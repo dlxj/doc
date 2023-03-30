@@ -13612,10 +13612,6 @@ func create_board():
 
 
 
-
-
-
-
 #### 动态绑定事件
 
 
@@ -13697,6 +13693,14 @@ dialog.canceled.connect(
 ```
 
 
+
+#### lambda
+
+[lambda Currying](https://gdscript.com/articles/godot-4-gdscript/)
+
+
+
+ 
 
 
 
