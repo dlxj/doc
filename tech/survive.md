@@ -458,6 +458,8 @@ mac mount Android as drive
   > Namesilo 域名注册
   >
   > cloudflare 域名解析
+  >
+  > echodict@outlook.com
 
     - DNS、CDN 配置
 
@@ -466,6 +468,8 @@ mac mount Android as drive
 - echoplay.org
 
   > Namesilo 域名已注册
+  >
+  > echoplayorg@outlook.com
 
 - echoplayer.com
 
@@ -473,10 +477,9 @@ mac mount Android as drive
   >
   > echoplayer 用户名  slplsy gmail
   >
-  > 在Namesilo上 已支付订购，处理中
-
   
 
+  
 - voicetube.com
 
 
