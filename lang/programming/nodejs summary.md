@@ -13403,6 +13403,34 @@ func _to_string():
 
 
 
+### new
+
+```
+# model.gd
+class_name Model extends Object
+enum ModelTypes {BOARD, LIST, CARD, TASK, USER}
+var model_type : int
+var id : String
+func _init(_model_type : int,_id : String):
+	model_type = _model_type
+	id = _id
+
+# usermodel.gd
+class_name UserModel extends Model
+var first_name : String
+var last_name : String
+var email : String
+func _init(_id : String,_first_name : String,_last_name : String,_email : String):
+	super(ModelTypes.USER,_id)
+		# 基类初始化
+	first_name = _first_name
+	last_name = _last_name
+	email = _email
+
+```
+
+
+
 
 
 ### setter getter
@@ -14989,6 +15017,8 @@ print('done.')
 [优化下载](https://github.com/shawwn/llama-dl)
 
 [磁力不只有一个，还有IPFS](https://github.com/facebookresearch/llama/issues/103)
+
+[利民FC140](https://nga.178.com/read.php?tid=35507397&rand=985)
 
 
 
