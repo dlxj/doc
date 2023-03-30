@@ -13571,9 +13571,25 @@ func create_input_field_dialog(mode, board, list = null):
 	
 	#dialog.position = Vector2i(x, y)
 	
+	var freedialog = func ():
+		if dialog:
+			dialog.queue_free()
+		if overlay:
+			overlay.queue_free()
+#
 	dialog.canceled.connect(
 		func ():
-			var a = 1 
+			freedialog.call()
+	)
+
+	dialog.confirmed.connect(
+		func ():
+			freedialog.call()
+	)
+
+	dialog.hided.connect(
+		func ():
+			freedialog.call()
 	)
 
 	overlay.add_child(dialog)
@@ -13581,14 +13597,8 @@ func create_input_field_dialog(mode, board, list = null):
 	dialog.set_mode(mode)
 
 	if list: dialog.set_list(list)
-#	dialog.popup()
 	dialog.popup_centered()
 
-	await dialog.confirmed
-	if dialog:
-		dialog.queue_free()
-	if overlay:
-		overlay.queue_free()
 ```
 
 
