@@ -13109,6 +13109,12 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+### FQA
+
+[FQA](https://godotengine.org/qa/tag/godot4)
+
+
+
 ### utf8
 
 
@@ -13600,6 +13606,24 @@ func create_input_field_dialog(mode, board, list = null):
 	dialog.popup_centered()
 
 ```
+
+
+
+### get_node_or_null
+
+```
+func shoot():
+if not get_parent().get_node("Laser"): 
+    var laser = laser_scn.instantiate()
+    laser.position.x = position.x
+    laser.position.y = position.y - 16
+    add_sibling(laser)
+
+Or even better for this case, is has_node() since you aren't using the return value
+
+```
+
+
 
 
 
@@ -15965,11 +15989,17 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 
 
+# DALLE2
+
+[DALLE2](https://github.com/lucidrains/DALLE2-pytorch)
+
+
+
 # SSH端口转发
 
 [彻底搞懂SSH端口转发](https://zhuanlan.zhihu.com/p/148825449)
 
-
+[Windows下，让不同程序使用不同网卡](https://blog.csdn.net/cantjie/article/details/104907455)
 
 
 
