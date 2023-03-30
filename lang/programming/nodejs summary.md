@@ -14870,6 +14870,10 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [chatgpt-3.5-turbo](https://github.com/kydycode/chatgpt-3.5-turbo.git)
 
+[官方微调方法](https://betterprogramming.pub/how-to-finetune-gpt-3-finetuning-our-virtual-mental-health-assistant-641c1f3b1ef3)
+
+[微调价格](https://www.cnblogs.com/taoshihan/p/17108345.html)
+
 
 
 ## visual-chatgpt
