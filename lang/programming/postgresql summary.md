@@ -284,6 +284,97 @@ npm install pg
 
 
 
+## navicat 备份数据库
+
+```
+Navicat for PostgreSQL版本链接工具，专门为PostgreSQL定制使用，功能十分强大！
+步骤：
+1、工具-数据传输
+2、源， 选择连接/数据库/模式 ，目标中可以选择直接连接的库，或者文件选择文件
+3、下一步
+4、数据库对象选择 全部 表/视图/函数/序列/类型
+5、点击选项，配置详细参数
+6、导出即可！
+```
+
+
+
+## 重建数据库和表结构
+
+```
+
+-- 在 postgres 数据库里运行
+CREATE DATABASE anime
+    WITH OWNER = postgres 
+    ENCODING = 'UTF8' 
+    TABLESPACE = pg_default 
+    CONNECTION LIMIT = -1 
+    TEMPLATE template0;
+
+
+-- 在 anime 数据库里运行
+create extension IF NOT EXISTS tsm_system_rows;
+create extension IF NOT EXISTS tsm_system_time;
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE TABLE IF NOT EXISTS japanese (
+        id integer primary key generated always as identity,
+        gid text NOT NULL,
+        pid text DEFAULT '' NOT NULL,
+        name text,  
+        jp text DEFAULT '' NOT NULL, 
+        ch text DEFAULT '' NOT NULL, 
+        en text DEFAULT '' NOT NULL, 
+        kr text DEFAULT '' NOT NULL,
+        ru text DEFAULT '' NOT NULL,
+        fr text DEFAULT '' NOT NULL,
+        de text DEFAULT '' NOT NULL,
+        sp text DEFAULT '' NOT NULL,
+        hi text DEFAULT '' NOT NULL,
+        origin text CHECK (origin IN ('jp', 'ch', 'en', 'kr', 'ru', 'fr', 'de', 'sp', 'hi')),
+        langs text DEFAULT '' NOT NULL,
+        type text,
+        begintime text,
+        endtime text,
+        jp_ruby text,
+        jp_mecab text, 
+        v_jp  tsvector,
+        v_ch  tsvector, 
+        v_en  tsvector,
+        v_kr  tsvector,
+        v_ru  tsvector,
+        v_fr  tsvector,
+        v_de  tsvector,
+        v_sp  tsvector,
+        v_hi  tsvector,
+        seasion text DEFAULT '',
+        seasionname text DEFAULT '',
+        episode integer NOT NULL,
+        audio bytea DEFAULT NULL, 
+        image bytea DEFAULT NULL, 
+        video bytea DEFAULT NULL,
+        videoname text,
+        CONSTRAINT unique_index_gid unique (gid)
+      );
+
+      CREATE INDEX IF NOT EXISTS index_rum_jp ON japanese USING rum (v_jp rum_tsvector_ops);
+      CREATE INDEX IF NOT EXISTS index_rum_kr ON japanese USING rum (v_kr rum_tsvector_ops);
+      CREATE INDEX IF NOT EXISTS index_rum_ch ON japanese USING rum (v_ch rum_tsvector_ops);
+      CREATE INDEX IF NOT EXISTS index_rum_en ON japanese USING rum (v_en rum_tsvector_ops);
+      
+
+      CREATE INDEX IF NOT EXISTS japanese_gid_index ON japanese (gid);
+      CREATE INDEX IF NOT EXISTS japanese_pid_index ON japanese (pid);
+      CREATE INDEX IF NOT EXISTS japanese_name_index ON japanese (name);
+      CREATE INDEX IF NOT EXISTS japanese_episode_index ON japanese (episode);
+      CREATE INDEX IF NOT EXISTS japanese_origin_index ON japanese (origin);
+      CREATE INDEX IF NOT EXISTS japanese_langs_index ON japanese (langs);
+
+```
+
+
+
+
+
 
 
 ## 备份表
