@@ -16005,6 +16005,33 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 [Windows下，让不同程序使用不同网卡](https://blog.csdn.net/cantjie/article/details/104907455)
 
+```
+在这个vps上装一个sniproxy，设置一下代理全部80和443 端口访问（也可以设置只代理openai的网址），然后在发起访问的这一端把openai的地址解析到新加坡这个vps的ip上就行了，这一步我是用dnsmasq实现的
+```
+
+
+
+[ssh windows vscode](https://gist.github.com/john-auld/a55ffe44e9965623f530cb487e33cebd)
+
+```
+# Make sure you're running as an Administrator
+Set-Service ssh-agent -StartupType Automatic
+Start-Service ssh-agent
+Get-Service ssh-agent
+
+ssh-add -l
+Add a ssh key
+
+ssh-add
+
+If you add the line $env:GIT_SSH="C:\Windows\System32\OpenSSH\ssh.exe" to your Powershell profile the environment variable will always be used.
+
+notepad $profile
+
+```
+
+
+
 
 
 # katago
