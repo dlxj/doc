@@ -13552,6 +13552,45 @@ dialog.queue_free() # 释放对象
 
 
 
+### popup_centered
+
+```
+# 是 Window 的方法
+func create_input_field_dialog(mode, board, list = null):
+	var overlay = ColorRect.new()
+	overlay.color = Color(0, 0, 0, 0.5)
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_KEEP_SIZE)
+	get_parent().add_child(overlay)
+
+	var dialog = InputFieldDialog.instantiate()
+	#dialog.popup_window = true
+
+#	var size = DisplayServer.window_get_size() 
+#	var x = size.x / 2
+#	var y = size.y / 2
+	
+	#dialog.position = Vector2i(x, y)
+	
+	dialog.canceled.connect(
+		func ():
+			var a = 1 
+	)
+
+	overlay.add_child(dialog)
+	dialog.set_board(board)
+	dialog.set_mode(mode)
+
+	if list: dialog.set_list(list)
+#	dialog.popup()
+	dialog.popup_centered()
+
+	await dialog.confirmed
+	if dialog:
+		dialog.queue_free()
+	if overlay:
+		overlay.queue_free()
+```
+
 
 
 ### signal
@@ -13647,6 +13686,15 @@ health_changed.emit(old_health, health)
 ```
 
 
+
+#### 闭包
+
+```
+dialog.canceled.connect(
+	func ():
+		var a = 1 
+)
+```
 
 
 
