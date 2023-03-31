@@ -13190,6 +13190,18 @@ DisplayServer.window_set_size(Vector2i(1024, 600))
 
 ### 默认背景色
 
+项目 -> 项目设置 -> 渲染 -> 环境 -> 默认清屏颜色
+
+```
+#4d4d4d
+	# 灰色
+
+```
+
+
+
+ 
+
 ```
 VisualServer.set_default_clear_color(Color(0.4,0.4,0.4,1.0))
 ```
