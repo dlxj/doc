@@ -13101,6 +13101,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [官方示例](https://github.com/godotengine/godot-demo-projects)
 
+[Godot 4.1 Issues Roadmap](https://github.com/orgs/godotengine/projects/28/views/1)
+
 
 
 #### delta 的单位是秒
@@ -13112,6 +13114,18 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 ### FQA
 
 [FQA](https://godotengine.org/qa/tag/godot4)
+
+
+
+#### Godot 4.1 Issues Roadmap
+
+[Godot 4.1 Issues Roadmap](https://github.com/orgs/godotengine/projects/28/views/1)
+
+
+
+### 符号跳转
+
+按住 ctrl -> 鼠标移到符号上 -> 点击
 
 
 
@@ -13247,6 +13261,36 @@ SceneUtils.connect("change_route_requested", self, "_on_change_scene_requested")
 ```
 boards = load("res://scenes/boards.tscn").instantiate()
 ```
+
+
+
+### 场景切换
+
+```
+func go_to_main_route():
+	var err = get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+	if err != OK:
+		print("[scene_utils.go_to_main_route] could not change scene error code: ", err)
+```
+
+
+
+### 显示隐藏控件
+
+```
+func _on_edit_check_item_requested(_node):
+	if checkitem_edit_container.get_parent() == checklist_content:
+		checklist_content.remove_child(checkitem_edit_container)
+
+	task = _node.model
+	checkitem_edit.set_text(_node.model.title)
+	checkitem_edit_container.set_visible(true)
+	checkitem_create_container.set_visible(false)
+	checklist_items_container.add_child_below_node(_node, checkitem_edit_container)
+	checklist_items_container.move_child(_node, checkitem_edit_container.get_index() - 1)
+```
+
+
 
 
 
@@ -13609,6 +13653,15 @@ func create_input_field_dialog(mode, board, list = null):
 
 
 
+```
+	await dialog.popup_hide
+	dialog.queue_free()
+```
+
+
+
+
+
 ### get_node_or_null
 
 ```
@@ -13782,6 +13835,17 @@ func _gui_input(event):
 
 
 
+```
+# 右键
+func _on_CheckItem_gui_input(event):
+	if event is InputEventMouseButton and not event.is_pressed() and event.get_button_index() == MOUSE_BUTTON_RIGHT:
+		emit_signal("edit_check_item_requested", self)
+```
+
+
+
+
+
 #### 跟随鼠标
 
 ```
@@ -13805,6 +13869,14 @@ func _physics_process(delta):
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"): // 按回车会触发
 ```
+
+
+
+### 手势
+
+[GodotTouchInputManager](https://github.com/Federico-Ciuffardi/GodotTouchInputManager)
+
+
 
 
 
@@ -13952,6 +14024,12 @@ input_field.grab_focus()
 ```
 
 
+
+### videoStreamPlayer
+
+[creating_movies](https://docs.godotengine.org/en/latest/tutorials/animation/creating_movies.html) 录制视频
+
+[VideoStreamPlayer](https://docs.godotengine.org/en/stable/classes/class_videostreamplayer.html)
 
 
 
