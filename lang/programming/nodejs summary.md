@@ -13278,10 +13278,11 @@ func go_to_main_route():
 ### 显示隐藏控件
 
 ```
+# 一个编辑框，保存以后显示结果框，隐藏编辑框。右击结果框再反过来
 func _on_edit_check_item_requested(_node):
 	if checkitem_edit_container.get_parent() == checklist_content:
 		checklist_content.remove_child(checkitem_edit_container)
-
+	
 	task = _node.model
 	checkitem_edit.set_text(_node.model.title)
 	checkitem_edit_container.set_visible(true)
@@ -13289,8 +13290,6 @@ func _on_edit_check_item_requested(_node):
 	checklist_items_container.add_child_below_node(_node, checkitem_edit_container)
 	checklist_items_container.move_child(_node, checkitem_edit_container.get_index() - 1)
 ```
-
-
 
 
 
@@ -13338,6 +13337,19 @@ Container 直接套 Container ，第二个没法指定大小。必须先嵌入�
 
 ```
 Layout -> Layout Mode -> Position
+```
+
+
+
+### GraphEdit
+
+GraphEdit is a control responsible for displaying and manipulating graph-like data using GraphNodes. It provides access to creation, removal, connection, and disconnection of nodes.
+
+```
+var graph_edit:GraphEdit = $"../Panel/VBoxContainer/GraphEdit"
+for connection in graph_edit.get_connection_list():
+    var graph_node = graph_edit.get_node(connection.from) # <<< ERROR
+The solution is to modify graph_edit.get_node(String(connection.from)) which converts from:StringName to from:String allowing it to be automatically coerced to from:NodePath. I would hope that in future StringName would automatically coerce to NodePath as expected, or else graph_edit.get_connection_list() should return {from:NodePath,...}[]
 ```
 
 
