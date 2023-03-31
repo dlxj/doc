@@ -13210,6 +13210,18 @@ I believe these offsets are what were knows as margins.
 
 
 
+#### 动态设置 Style
+
+```
+const StyleDragged := preload("res://assets/style_panel_list_dragged.tres")
+set("custom_styles/panel", StyleDragged)
+	# 这里 node 的方法，直接设置属性值
+```
+
+
+
+
+
 ### button的flat
 
 效果是透明背景，会显示出窗体的底色
@@ -13279,6 +13291,7 @@ func go_to_main_route():
 
 ```
 # 一个编辑框，保存以后显示结果框，隐藏编辑框。右击结果框再反过来
+# 上面是编辑框，下面是添加框。同一时间只能显示它们的其中一个
 func _on_edit_check_item_requested(_node):
 	if checkitem_edit_container.get_parent() == checklist_content:
 		checklist_content.remove_child(checkitem_edit_container)
