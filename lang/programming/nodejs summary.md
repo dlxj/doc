@@ -13093,6 +13093,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [游戏背包](https://github.com/alfredbaudisch/GodotDynamicInventorySystem)
 
+[Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
+
 [4.0源码3d工具](https://github.com/protongraph/protongraph)
 
 [4.0源码完整游戏](https://github.com/zfoo-project/godot-bird)
@@ -13506,6 +13508,28 @@ func _init(_id : String,_first_name : String,_last_name : String,_email : String
 
 
 
+#### RefCounted
+
+```
+# 带引用计数的对象，计数减到0时自动释放内存
+var directory_module: RefCounted
+directory_module = XDGDataPaths.new()
+```
+
+
+
+### Variant
+
+```
+var foo:Variant = 2 # 泛型
+	# 不带类型修饰默认为泛型
+	
+var bar: int = 2 # 静态类型，后面不能给它赋值期他的类型 
+
+```
+
+
+
 
 
 ### setter getter
@@ -13812,8 +13836,6 @@ dialog.canceled.connect(
 
 
 
- 
-
 
 
 ### EditorPlugin
@@ -13868,6 +13890,22 @@ func _on_CheckItem_gui_input(event):
 ```
 
 
+
+#### 获取鼠标位置
+
+[Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
+
+```
+func _input(event: InputEvent) -> void:
+	left_cursor.position = get_global_mouse_position() + Vector2(-32, 32)
+	right_cursor.position = get_global_mouse_position() + Vector2(32, 32)
+		# 它是在当前鼠标位置显示一左一右显示两个工具小图标，按住左键操作左工具，右键操作右工具
+	
+	if event is InputEventKey and (event.scancode == KEY_ENTER or event.scancode == KEY_KP_ENTER):
+		if get_focus_owner() is LineEdit:
+			get_focus_owner().release_focus()
+				# 获得当前拥有焦点的控件
+```
 
 
 
