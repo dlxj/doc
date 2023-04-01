@@ -15328,6 +15328,48 @@ if __name__ == "__main__":
 
 
 
+## Chinese-LLaMA-Alpaca
+
+[Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
+
+```
+只需要用llama的hf+你huggingface上的ziqingyang/chinese-alpaca-lora-7b进行merge就可以了
+```
+
+
+
+```
+python transformers/src/transformers/models/llama/convert_llama_weights_to_hf.py  --input_dir E:\ai\LLaMA_7B --model_size 7B --output_dir E:\ai\LLaMA_7B_HF
+	# 原始llama模型转换为HF模型
+
+python Chinese-LLaMA-Alpaca/scripts/merge_llama_with_chinese_lora.py  --base_model  LLaMA_7B_HF  --lora_model chinese-alpaca-lora-7b  --output_dir Merge_7B
+	# 对HF模型扩充词表，并用训练好的中文权重模型与它合并
+
+
+
+编译 llama.cpp
+	https://cmake.org/download/ 
+		# 安装 CMake
+cmake -S . -B build/ -D CMAKE_BUILD_TYPE=Release
+cmake --build build/ --config Release
+
+复制文件
+lama.cpp/zh-models/
+   - 7B/
+     - consolidated.00.pth
+     - params.json
+	# 这两个合并得到的文件
+   - tokenizer.model
+	# 这个是训练好的中文模型文件夹内的文件
+
+16位量化
+python llama.cpp/convert-pth-to-ggml.py  llama.cpp/zh-models/7B/  1
+	# 将上述.pth模型权重转换为ggml的FP16格式，生成文件路径为zh-models/7B/ggml-model-f16.bin
+
+4位量化
+llama.cpp/build/bin/Release/quantize.exe  llama.cpp/zh-models/7B/ggml-model-f16.bin  llama.cpp/zh-models/7B/ggml-model-q4_0.bin  2
+```
+
 
 
 ## llama-chat
@@ -15430,48 +15472,6 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 	# 模型下载好以后打包模型，上传 阿里云盘
 
 ```
-
-### [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
-
-```
-只需要用llama的hf+你huggingface上的ziqingyang/chinese-alpaca-lora-7b进行merge就可以了
-```
-
-
-
-```
-python transformers/src/transformers/models/llama/convert_llama_weights_to_hf.py  --input_dir E:\ai\LLaMA_7B --model_size 7B --output_dir E:\ai\LLaMA_7B_HF
-	# 原始llama模型转换为HF模型
-
-python Chinese-LLaMA-Alpaca/scripts/merge_llama_with_chinese_lora.py  --base_model  LLaMA_7B_HF  --lora_model chinese-alpaca-lora-7b  --output_dir Merge_7B
-	# 对HF模型扩充词表，并用训练好的中文权重模型与它合并
-
-
-
-编译 llama.cpp
-	https://cmake.org/download/ 
-		# 安装 CMake
-cmake -S . -B build/ -D CMAKE_BUILD_TYPE=Release
-cmake --build build/ --config Release
-
-复制文件
-lama.cpp/zh-models/
-   - 7B/
-     - consolidated.00.pth
-     - params.json
-	# 这两个合并得到的文件
-   - tokenizer.model
-	# 这个是训练好的中文模型文件夹内的文件
-
-16位量化
-python llama.cpp/convert-pth-to-ggml.py  llama.cpp/zh-models/7B/  1
-	# 将上述.pth模型权重转换为ggml的FP16格式，生成文件路径为zh-models/7B/ggml-model-f16.bin
-
-4位量化
-llama.cpp/build/bin/Release/quantize.exe  llama.cpp/zh-models/7B/ggml-model-f16.bin  llama.cpp/zh-models/7B/ggml-model-q4_0.bin  2
-```
-
-
 
 
 
