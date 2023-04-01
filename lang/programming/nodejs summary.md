@@ -15368,6 +15368,40 @@ python llama.cpp/convert-pth-to-ggml.py  llama.cpp/zh-models/7B/  1
 
 4位量化
 llama.cpp/build/bin/Release/quantize.exe  llama.cpp/zh-models/7B/ggml-model-f16.bin  llama.cpp/zh-models/7B/ggml-model-q4_0.bin  2
+
+运行4位量化
+	# 注意在 git bash 内执行, powershell 会回答不正常
+llama.cpp/build/bin/Release/main -m  llama.cpp/zh-models/7B/ggml-model-q4_0.bin --color -f llama.cpp/prompts/alpaca.txt -ins -c 2048 --temp 0.2 -n 256 --repeat_penalty 1.3
+
+
+在提示符 > 之后输入你的prompt，command+c中断输出，多行信息以\作为行尾。如需查看帮助和参数说明，请执行./main -h命令。
+
+简要介绍几个重要参数：
+
+-c 控制上下文的长度，值越大越能参考更长的对话历史
+-ins 启动类ChatGPT的对话交流模式
+-n 控制回复生成的最大长度
+--repeat_penalty 控制生成回复中对重复文本的惩罚力度
+--temp 温度系数，值越低回复的随机性越小，反之越大
+--top_p, top_k 控制采样的相关参数
+
+
+> 你能不能详细介绍一下怎么做披萨？
+制作披萨的步骤如下所示：首先，准备面饼皮。将面粉、盐和水混合成柔软的面团；然后用擀板将其压平并烤制至金黄色；最后在上面饼皮上涂上番茄酱或奶酪等配料。接着，把切好的蔬菜放在披萨中，再撒上一些香草或其他调味品即可享用了美味的披萨！
+> 如果是海鲜披萨呢？
+制作海鲜披萨时要做以下步骤：首先将面饼皮擀平并烤至金黄色；然后在上面上一层奶油或番茄酱，再加入切好的虾、鱼片和蔬菜。最后撒上一些香草或其他调味品即可享用了美味的海鲜披萨！
+> 我想吃菠萝披萨
+制作菠萝披萨时要做以下步骤：首先将面饼皮擀平并烤至金黄色；然后在上面上一层奶油或番茄酱，再加入切好的菠萝片和蔬菜。最后撒上一些香草或其他调味品即可享用了美味的菠萝披萨！
+
+
+我能用lightning数据线给安卓手机充电吗？
+
+为什么天空是蓝色的？
+
+我得了流感，请帮我写一封假条。
+
+你是一个作文生成器，请以《绿水青山就是金山银山》为题写一篇议论文。
+
 ```
 
 
