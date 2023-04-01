@@ -9651,6 +9651,12 @@ Final version shouldn't have this problem since the install comes from Windows U
 
 
 
+## GPU for docker
+
+[docker-desktop-on-nvidia-gpus](https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/)
+
+
+
 ## Docker Desktop for Windows
 
 ### win10 ping 不通 docker
