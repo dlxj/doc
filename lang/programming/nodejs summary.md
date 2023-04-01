@@ -16144,6 +16144,8 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 - JP 前端
 
+doc\lang\programming\whisper-webui.pdf 详细文档
+
 
 
 # DALLE2
