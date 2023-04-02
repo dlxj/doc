@@ -652,6 +652,10 @@ https://forum.freemdict.com/t/topic/8231/12
 
 # pokemon
 
+[switch rom](https://www.zake.store/swindex.html)
+
+集合啦！动物森友会本体＋2.0.5升补＋3DLC
+
 ```
 ポケットモンスターspecial 宝可梦特别篇
 
