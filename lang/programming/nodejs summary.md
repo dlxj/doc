@@ -15049,6 +15049,10 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 # LLaMA
 
+## WSL2 GPU
+
+- https://learn.microsoft.com/en-us/windows/ai/directml/gpu-cuda-in-wsl
+
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
 > 成功加载模型  (8 台 8 卡 A100 外加 **IB 组网**,全 nvme-ssd 存储集群也用 IB 网络)
