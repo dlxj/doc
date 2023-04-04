@@ -13944,6 +13944,18 @@ func _physics_process(delta):
 
 ```
 _get_drag_data # 系统函数
+
+入口点在这里：GitHub\gdscript\Godello-4.0\scenes\board.tscn
+func _on_add_card_clicked(list):  // 添加卡片
+	card_details = CardDetailsScene.instantiate()
+	full_screen_overlay.add_child(card_details)
+	
+	var draft_card = DataRepository.get_draft_card(list)
+	card_details.set_card(draft_card)
+	full_screen_overlay.set_visible(true)
+
+	await card_details.tree_exited
+	full_screen_overlay.set_visible(false)
 ```
 
 
@@ -15060,6 +15072,7 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 ## WSL2 GPU
 
 - https://learn.microsoft.com/en-us/windows/ai/directml/gpu-cuda-in-wsl
+- [FurMark GPU 显卡测试](https://www.jianshu.com/p/0d328979dd55)
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
