@@ -15054,6 +15054,19 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 - https://learn.microsoft.com/en-us/windows/ai/directml/gpu-cuda-in-wsl
 - [Windows安装WSL2并配置nVidia GPU 必看](https://zhuanlan.zhihu.com/p/515621724))
 
+
+
+### WSL2 设置root密码
+
+````
+更新了WSL2，安装完 Ubuntu 只要求新建账号和密码，不知道root密码，各种不方便
+Ubuntu 的默认 root 密码是随机的，即每次开机都有一个新的 root 密码
+在终端输入命令 sudo passwd，然后输入当前用户的密码，终端会提示我们输入新的密码并确认，此时的密码就是 root 新密码
+修改成功后，输入命令 su root，输入新的密码就 ok 了
+````
+
+
+
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
 > 成功加载模型  (8 台 8 卡 A100 外加 **IB 组网**,全 nvme-ssd 存储集群也用 IB 网络)
@@ -15342,6 +15355,20 @@ if __name__ == "__main__":
 ## Chinese-LLaMA-Alpaca
 
 [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
+
+```
+nodejs执行避开wsl中文输入bug：
+child_process = require('child_process')
+child = child_process.spawn('D:\proj\llama.cpp-master\bin\main', [
+'-m', 'D:\proj\llama.cpp-master\models\zh-models\7B\ggml-model-q4_0.bin',
+'--color', '-f', 'D:\proj\llama.cpp-master\prompts\alpaca.txt', '-ins',
+'-c', '2048', '--temp', '0.2', '-n', '256', '--repeat_penalty', '1.3'])
+child.stdout.pipe(process.stdout)
+child.stdin.setEncoding('utf-8')
+process.stdin.pipe(child.stdin)
+```
+
+
 
 ```
 只需要用llama的hf+你huggingface上的ziqingyang/chinese-alpaca-lora-7b进行merge就可以了
