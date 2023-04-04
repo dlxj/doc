@@ -13940,6 +13940,12 @@ func _physics_process(delta):
 
 
 
+#### 拖拽
+
+```
+_get_drag_data # 系统函数
+```
+
 
 
 
@@ -15032,6 +15038,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 [官方微调方法](https://betterprogramming.pub/how-to-finetune-gpt-3-finetuning-our-virtual-mental-health-assistant-641c1f3b1ef3)
 
 [微调价格](https://www.cnblogs.com/taoshihan/p/17108345.html)
+
+目前我自身测试下来，使用问答数据集对GPT模型进行Fine-tune后，问答准确性会大幅提高。你可以理解为GPT通过大量的专业领域数据的学习后成为了该领域专家，然后配合调小接口中temperature参数，可以得到更准确的结果。
 
 
 
