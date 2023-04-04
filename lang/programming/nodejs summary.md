@@ -9657,6 +9657,148 @@ Final version shouldn't have this problem since the install comes from Windows U
 
 
 
+```undefined
+# win10 powershell 执行
+# 特权模式创建容器
+docker run -tid --name centos7GPU --gpus all --privileged=true centos:7 /sbin/init 
+		# 此命令会自动下载镜像
+		# -p 222:22 表示将宿主的222端口映射容器的22端口
+
+# 运行docker 的shell
+docker exec -it centos7PG10 /bin/bash
+
+docker run -it --rm --gpus all centos:7 nvidia-smi
+
+
+```
+
+
+
+### CentOs7+nvidia-container-runtime
+
+参考：[docker19使用GPU](https://www.jianshu.com/p/84357d5a116a)
+ [centos 7 安装nvidia-container-runtime](https://nvidia.github.io/nvidia-container-runtime/)
+
+下载GPU的驱动
+ 在NVIDIA驱动程序页面下载对应的驱动。
+
+安装NVIDIA-CONTAINER-RUNTIME
+ 在[https://nvidia.github.io/nvidia-container-runtime/](https://links.jianshu.com/go?to=https%3A%2F%2Fnvidia.github.io%2Fnvidia-container-runtime%2F)查看支持的操作系统和版本，并根据对应选项，添加源，因为我是centos7，所以添加方式为：
+
+
+
+```ruby
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.repo | \
+sudo tee /etc/yum.repos.d/nvidia-container-runtime.repo
+```
+
+然后直接yum install 就可以了
+
+
+
+```undefined
+sudo yum install nvidia-container-runtime
+```
+
+进行测试，如果出现显卡信息就可以了
+
+
+
+```undefined
+docker run -it --rm --gpus all centos nvidia-smi
+```
+
+### 解决服务器无法联网的问题
+
+1.磨刀砍柴
+
+严格模式：两台同样配置，同样环境的服务器、例如：gcc cuda cmake版本等都完全相同
+ 简单模式：两台安装了相同版本系统的服务器，例如我的两台都是centos 7
+
+这里我使用了简单模式，因为复杂模式太过复杂
+
+我的一台为实验室服务器 （目标机）一台为租用的腾讯云（借用机）
+
+2.借鸡生蛋
+
+以下操作在腾讯云（借用机）中执行：
+ 添加源 repo
+
+
+
+```ruby
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.repo | \
+sudo tee /etc/yum.repos.d/nvidia-container-runtime.repo
+```
+
+接下来需要从源去下载rpm包，但不进行安装
+ 参考：[yum 下载全量依赖 rpm 包及离线安装（终极解决方案）](https://links.jianshu.com/go?to=https%3A%2F%2Fblog.csdn.net%2Fjlh21%2Farticle%2Fdetails%2F104775084)
+
+所以下载nvidia软件包全部依赖
+
+
+
+```bash
+#yum deplist 包名
+yum deplist nvidia-container-runtime
+#展示包的全部依赖
+
+sudo yum -y install yum-utils
+#安装 yum-utils
+mkdir ~/software_packages
+cd ~/software_packages
+repotrack nvidia-container-runtime
+#此时会将软件的所有依赖包下载到 ~/software_packages
+```
+
+这时候将 ~/software_packages 下的文件打包下载
+
+
+
+```bash
+cd ~
+tar -zcvf software_packages.tar.gz ~/software_packages
+```
+
+3.斗转星移
+
+此时，登录实验室服务器（目标机），上传刚刚打包的文件，进行解压
+
+
+
+```undefined
+rz
+tar -zxvf software_packages.tar.gz ~/software_packages
+```
+
+进入解压的目录离线安装，一定要选择 采用 *.rpm的方式，会自动解决依赖
+
+
+
+```bash
+cd ~/software_packages
+# 离线安装
+$ rpm -Uvh --force --nodeps *.rpm
+```
+
+# 4. 启动docker 容器
+
+
+
+```ruby
+docker run -v $(pwd):/workspace/data --gpus all \
+-it voidful/wav2vec-u:1.0.0 bash
+#成功启动container
+#进入container后输入，nvidia-smi
+nvidia-smi
+#成功显示显卡信息
+```
+
+
+
+
 ## Docker Desktop for Windows
 
 ### win10 ping 不通 docker
