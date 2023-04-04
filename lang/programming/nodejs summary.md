@@ -13940,24 +13940,6 @@ func _physics_process(delta):
 
 
 
-#### 拖拽
-
-```
-_get_drag_data # 系统函数
-
-入口点在这里：GitHub\gdscript\Godello-4.0\scenes\board.tscn
-func _on_add_card_clicked(list):  // 添加卡片
-	card_details = CardDetailsScene.instantiate()
-	full_screen_overlay.add_child(card_details)
-	
-	var draft_card = DataRepository.get_draft_card(list)
-	card_details.set_card(draft_card)
-	full_screen_overlay.set_visible(true)
-
-	await card_details.tree_exited
-	full_screen_overlay.set_visible(false)
-```
-
 
 
 
@@ -15051,8 +15033,6 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [微调价格](https://www.cnblogs.com/taoshihan/p/17108345.html)
 
-目前我自身测试下来，使用问答数据集对GPT模型进行Fine-tune后，问答准确性会大幅提高。你可以理解为GPT通过大量的专业领域数据的学习后成为了该领域专家，然后配合调小接口中temperature参数，可以得到更准确的结果。
-
 
 
 ## visual-chatgpt
@@ -15072,7 +15052,7 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 ## WSL2 GPU
 
 - https://learn.microsoft.com/en-us/windows/ai/directml/gpu-cuda-in-wsl
-- [FurMark GPU 显卡测试](https://www.jianshu.com/p/0d328979dd55)
+- [Windows安装WSL2并配置nVidia GPU 必看](https://zhuanlan.zhihu.com/p/515621724))
 
 [Running model in Int8 on a single GPU (24GB)](https://github.com/facebookresearch/llama/issues/111)
 
