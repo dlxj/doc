@@ -15598,6 +15598,9 @@ llama.cpp/main -m  llama.cpp/zh-models/7B/ggml-model-q4_0.bin --color -f llama.c
 vocab_size = len(tokenizer.get_vocab())
 print("Tokenizer的词表数量为：", vocab_size)
 model.resize_token_embeddings(vocab_size)
+
+可能要注意的是config.json中的词表大小是否与模型的embedding大小一致。如果不一致（比如config.json中仍然是32000，而模型embedding大小是49953），可以手动修改config.json中的相关配置参数。
+
 ```
 
 
