@@ -15554,6 +15554,9 @@ llama.cpp/build/bin/Release/quantize.exe  llama.cpp/zh-models/7B/ggml-model-f16.
 llama.cpp/build/bin/Release/main -m  llama.cpp/zh-models/7B/ggml-model-q4_0.bin --color -f llama.cpp/prompts/alpaca.txt -ins -c 2048 --temp 0.2 -n 256 --repeat_penalty 1.3
 
 
+llama.cpp/main -m  llama.cpp/zh-models/7B/ggml-model-q4_0.bin --color -f llama.cpp/prompts/alpaca.txt -ins -c 2048 --temp 0.2 -n 256 --repeat_penalty 1.3
+	# wls 内执行这个
+
 在提示符 > 之后输入你的prompt，command+c中断输出，多行信息以\作为行尾。如需查看帮助和参数说明，请执行./main -h命令。
 
 简要介绍几个重要参数：
@@ -15583,6 +15586,21 @@ llama.cpp/build/bin/Release/main -m  llama.cpp/zh-models/7B/ggml-model-q4_0.bin 
 你是一个作文生成器，请以《绿水青山就是金山银山》为题写一篇议论文。
 
 ```
+
+
+
+### 微调
+
+```
+在 prepare for traning 前 resize_token_embeddings 就可以训练了
+如果有其它方式 大佬们多交流说说
+
+vocab_size = len(tokenizer.get_vocab())
+print("Tokenizer的词表数量为：", vocab_size)
+model.resize_token_embeddings(vocab_size)
+```
+
+
 
 
 
