@@ -14999,6 +14999,42 @@ ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
 
 # chatGPT
 
+## finetune api
+
+[fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)
+
+[详细过程](https://juejin.cn/post/7218001191703068729)
+
+1. Prepare and upload training data
+2. Train a new fine-tuned model
+3. Use your fine-tuned model
+
+```
+pip install openai && \
+pip install openai[datalib] && \
+pip install --upgrade openai
+
+export OPENAI_API_KEY="<OPENAI_API_KEY>"
+openai api fine_tunes.create -t 'QA.jsonl' -m davinci
+{"prompt": "xxx "completion": "xxx"}
+{"prompt": "xxx "completion": "xxx"}
+
+测试微调好的模型：
+openai api completions.create -m davinci:ft-personal-2023-04-06-08-48-39 -p  "为什么药物需要制成适合医疗或预防应用的形式？"
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
 [api](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)
 
 [完整的语音助手带录音](https://github.com/IanDublew/Virtual-Voice-Assisant/blob/main/gpt3%2Bwhisper%2Bgtts.py)
@@ -15494,6 +15530,14 @@ if __name__ == "__main__":
 
 
 
+## Chinese-ChatLLaMA
+
+[Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
+
+
+
+
+
 ## Chinese-LLaMA-Alpaca
 
 [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
@@ -15683,11 +15727,13 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 
-
-
 ## ChatGpt 微调方案
 
 [llama_index](https://github.com/jerryjliu/llama_index/issues/712)
+
+> [中文使用案例](https://www.cnblogs.com/v3ucn/p/17285124.html)
+>
+> [llama_index使用踩坑](https://zhuanlan.zhihu.com/p/617229222)
 
 [paul-graham-gpt](https://github.com/mckaywrigley/paul-graham-gpt)
 
@@ -15733,6 +15779,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 ## ChatRWKV
+
+[RWKV将对GPT实施降维打击](https://zhuanlan.zhihu.com/p/619721229)
 
 [ChatRWKV](https://zhuanlan.zhihu.com/p/603840957)
 
