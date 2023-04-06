@@ -15732,6 +15732,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [llama_index](https://github.com/jerryjliu/llama_index/issues/712)
 
 > [中文使用案例](https://www.cnblogs.com/v3ucn/p/17285124.html)
+>
+> [llama_index使用踩坑](https://zhuanlan.zhihu.com/p/617229222)
 
 [paul-graham-gpt](https://github.com/mckaywrigley/paul-graham-gpt)
 
