@@ -353,6 +353,12 @@
 
   > ​	比如说先看上字清浊；若浊，看下字平仄定上字送气与否，再依下字变添介音、定声调。
 
+- 麻介话 融柳平话 土拐话  [《活力新故鄉》EP12：美國 X 邱福生、宋美珍《Home, sweet home》](https://www.youtube.com/watch?v=_gKKNacMHhc&t=1185s)
+
+  > **诶话**（或**欸话**）是[中华人民共和国](https://zh.wikipedia.org/wiki/中华人民共和国)[广西壮族自治区](https://zh.wikipedia.org/wiki/广西壮族自治区)[融水苗族自治县](https://zh.wikipedia.org/wiki/融水苗族自治县)[永乐乡](https://zh.wikipedia.org/wiki/永乐乡_(融水县))几个村的自称为“诶”（/ɛ55/）的[族群](https://zh.wikipedia.org/wiki/族群)使用的一种作为[母语](https://zh.wikipedia.org/wiki/母语)的[语言](https://zh.wikipedia.org/wiki/语言)。其性质可能是一种由[汉语](https://zh.wikipedia.org/wiki/漢語)[平话](https://zh.wikipedia.org/wiki/廣西平話)与[壮侗语言](https://zh.wikipedia.org/wiki/壯侗語族)形成的[混合语](https://zh.wikipedia.org/wiki/混合語)，或是一门受到汉语平话深刻影响的壮侗语言。诶话又被周边其他族群称作**五色话**，但诶人自己较不认同该称呼。
+  >
+  > 有研究者认为，诶人族群是[明代](https://zh.wikipedia.org/wiki/明代)征调屯驻于此的[狼兵](https://zh.wikipedia.org/wiki/狼兵)的后裔。[[4\]](https://zh.wikipedia.org/wiki/誒話#cite_note-WW-4):2其父系主体为[壮族](https://zh.wikipedia.org/wiki/壮族)，母系主体为其他壮侗民族、特别是持[侗水语支](https://zh.wikipedia.org/wiki/侗水语支)语言的族群，在与[军官](https://zh.wikipedia.org/wiki/军官)的交流中又使用[汉语](https://zh.wikipedia.org/wiki/汉语)，由此逐渐形成了诶话。
+
 
 
 ## 基于《切韵》的中古拼音方案
