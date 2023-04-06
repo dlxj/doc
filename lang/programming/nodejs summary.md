@@ -15494,6 +15494,14 @@ if __name__ == "__main__":
 
 
 
+## Chinese-ChatLLaMA
+
+[Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
+
+
+
+
+
 ## Chinese-LLaMA-Alpaca
 
 [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
@@ -15733,6 +15741,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 ## ChatRWKV
+
+[RWKV将对GPT实施降维打击](https://zhuanlan.zhihu.com/p/619721229)
 
 [ChatRWKV](https://zhuanlan.zhihu.com/p/603840957)
 
