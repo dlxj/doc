@@ -15538,6 +15538,7 @@ if __name__ == "__main__":
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 apt-get install git-lfs
 
+./main -m ../ChatLLaMA-zh-7B-int4/chatllama-ggml-q4_0.bin -p "北京有什么好玩的地方？\n" -n 256
 
 ```
 
@@ -16483,6 +16484,14 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 - JP 前端
 
 doc\lang\programming\whisper-webui.pdf 详细文档
+
+
+
+# OpenNMT
+
+[OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py)
+
+[finetune NLLB-200](https://forum.opennmt.net/t/finetuning-and-curating-nllb-200-with-opennmt-py/5238)
 
 
 
