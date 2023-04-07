@@ -15534,6 +15534,13 @@ if __name__ == "__main__":
 
 [Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
 
+```
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+apt-get install git-lfs
+
+
+```
+
 
 
 
