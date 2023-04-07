@@ -14082,6 +14082,15 @@ func _physics_process(delta):
 
 
 
+### 控件拖拽
+
+```
+set_drag_preview(card)
+	# 是 Control 的函数，实例化一个场景传进去，就会显示一个预览图跟随鼠标，
+	# 结束时会自动释放对象
+	
+```
+
 
 
 
@@ -14999,6 +15008,22 @@ ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
 
 # chatGPT
 
+```
+1.新账号有并发量限制
+如果你是新账号，你会发现你有 18 刀的免费余额，但是如果你没有绑定信用卡，那么 chatgpt api 的并发量控制在每分钟 20 次请求，所以一分钟内调用 chatgpt api 超过 20 次，你问它问题只会回答你 rate limit 、要你绑定信用卡之类的消息了。
+
+如何解除 rate limit 限制？？？只能绑定信用卡，在绑定了信用卡的 48 小时内并发量会提升到每分钟 60 次，绑定了信用卡 48 小时后候则是每分钟 3500 次。
+
+2.他收费是把上下文的 token 都算上去的
+chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，你开发 chatgpt ai 的时候，如果请求参数没加上 parentMessageId 的参数，那他就不会有上下文功能，相当于是一问一答，那收费的确便宜。
+
+如果你想实现上下文，请求的时候就必须把 parentMessageId 的参数加上去，然后你每次提问问题的时候，他都会把之前的上下文纪录都一起累积提交过去，这些也是要算钱的，导致你每一次问问题，越往后消耗的 token 量越恐怖，特别是喜欢让 chatgpt 生成 1000 字论文的那种。
+
+而且上下文容量是有限制的，如果你聊天纪录过长，总 token 超过大概几万个的时候，open ai 只会回复你 token 太长的错误，要你清空 token 。
+```
+
+
+
 ## finetune api
 
 [fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)
@@ -15021,7 +15046,6 @@ openai api fine_tunes.create -t 'QA.jsonl' -m davinci
 
 测试微调好的模型：
 openai api completions.create -m davinci:ft-personal-2023-04-06-08-48-39 -p  "为什么药物需要制成适合医疗或预防应用的形式？"
-
 
 ```
 
