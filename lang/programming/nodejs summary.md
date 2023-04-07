@@ -15251,6 +15251,10 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 # LLaMA
 
+[Meta最新模型LLaMA细节与代码详解](https://blog.csdn.net/weixin_44826203/article/details/129255185)
+
+
+
 ## WSL2 GPU
 
 - https://learn.microsoft.com/en-us/windows/ai/directml/gpu-cuda-in-wsl
@@ -15568,6 +15572,10 @@ apt-get install git-lfs
 
 
 
+## BELLE
+
+[BELLE](https://github.com/LianjiaTech/BELLE) **训练友好**
+
 
 
 ## Chinese-LLaMA-Alpaca
@@ -15821,6 +15829,18 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [Add RWKV2 (fast)](https://github.com/huggingface/transformers/issues/17230)
 
 [Can't determine model type from model name](https://github.com/oobabooga/text-generation-webui/issues/581)
+
+
+
+### RWKV-LM
+
+[RWKV-LM](https://github.com/BlinkDL/RWKV-LM) 训练方法
+
+
+
+#### SpikeGPT
+
+[SpikeGPT](https://github.com/ridgerchu/SpikeGPT) 轻量级实现
 
 
 
