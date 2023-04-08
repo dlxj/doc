@@ -16531,6 +16531,16 @@ doc\lang\programming\whisper-webui.pdf 详细文档
 
 
 
+# NLP
+
+[【SimCSE】没有标注数据也能训练文本匹配模型（附源码）](https://zhuanlan.zhihu.com/p/599230890)
+
+[【P-Tuning】 一种自动学习 prompt pattern 的方法（附源码）](https://zhuanlan.zhihu.com/p/583022692)
+
+[mlflow](https://github.com/mlflow/mlflow) 港科大
+
+
+
 # OpenNMT
 
 [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py)
