@@ -14085,6 +14085,11 @@ func _physics_process(delta):
 ### 控件拖拽
 
 ```
+_get_drag_data(pos: Vector2)
+	# 是 Control 的函数，控件被鼠标拖动的时侯由系统回调
+	# 通常在这里 set_drag_preview 生成被拖控件的预览图
+	# 函数最后返回一个数据，用于传给被拖放到的另一个控件
+
 set_drag_preview(card)
 	# 是 Control 的函数，实例化一个场景传进去，就会显示一个预览图跟随鼠标，
 	# 结束时会自动释放对象
