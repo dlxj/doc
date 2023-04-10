@@ -13638,6 +13638,15 @@ func _to_string():
 	})
 ```
 
+#### Dictionary 和 JSON 是同一个东西
+
+```
+typeof(data) == TYPE_DICTIONARY and data.has("expected")
+
+```
+
+
+
 
 
 ### new
@@ -14092,7 +14101,14 @@ _get_drag_data(pos: Vector2)
 	接收拖放数据的控件要实现两个函数：
 		_can_drop_data() 和 _drop_data()
 			# 这里面应该能获取 _get_drag_data 的返回值
-		
+	
+    func _can_drop_data(pos, data):
+		# 返回ture 表示可以
+    func _drop_data(pos, data)
+    	# pos, data 是 _get_drag_data 传过来的
+    	# 此方法只是通知你，有控件和数据被拖到这里了
+    	# 你自已处理后续的逻辑
+    	
 set_drag_preview(card)
 	# 是 Control 的函数，实例化一个场景传进去，就会显示一个预览图跟随鼠标，
 	# 结束时会自动释放对象
