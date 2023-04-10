@@ -13372,6 +13372,20 @@ I believe these offsets are what were knows as margins.
 
 
 
+#### 全局theme
+
+```
+# 只能手动加在工程文件上面
+project.godot
+[gui]
+theme/custom="res://assets/theme_trello_default.tres"
+	# 设置的控件的清屏颜色等
+```
+
+
+
+
+
 #### 动态设置 Style
 
 ```
