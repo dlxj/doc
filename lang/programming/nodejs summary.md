@@ -15062,6 +15062,93 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 
 
+## api
+
+```
+(async () => {
+    // npm install openai
+    // https://github.com/openai/openai-node
+    // https://github.com/openai/openai-node/issues/18#issuecomment-1369996933  // 流式输出
+
+    let userMsg =  "翻译成英语：豆浆应该加糖还是加盐"
+    
+    let api_key = ""
+
+    const { Configuration, OpenAIApi } = require("openai")
+
+    const configuration = new Configuration({
+        apiKey: api_key,
+    })
+    const openai = new OpenAIApi(configuration)
+    try {
+        const completion = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: [{role: "user", content: userMsg}],
+        })
+        console.log(completion.data.choices[0].message.content)
+    } catch (error) {
+        if (error.response) {
+            console.log(error.response.status);
+            console.log(error.response.data);
+        } else {
+            console.log(error.message);
+        }
+    }
+})()
+```
+
+
+
+```
+
+"""
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "text=翻译成英语：豆浆应该加糖还是加盐" http://127.0.0.1:505/ai/chatgpt
+"""
+import openai
+# Set up OpenAI API key
+api_key = ""
+openai.api_key = api_key
+
+def send_message(message_log):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",  # The name of the OpenAI chatbot model to use
+        # The conversation history up to this point, as a list of dictionaries
+        messages=message_log,
+        # The maximum number of tokens (words or subwords) in the generated response
+        max_tokens=3800,
+        # The stopping sequence for the generated response, if any (not used here)
+        stop=None,
+        # The "creativity" of the generated response (higher temperature = more creative)
+        temperature=0.7,
+    )
+
+    # Find the first response from the chatbot that has text in it (some responses may not have text)
+    for choice in response.choices:
+        if "text" in choice:
+            return choice.text
+
+    # If no response with text is found, return the first response's content (which may be empty)
+    return response.choices[0].message.content
+
+
+if __name__ == "__main__":
+
+    user_input = '翻译成英语：豆浆应该加糖还是加盐'
+
+    message_log = [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": user_input[0:1024]}
+    ]
+    
+    response = send_message(message_log)
+    print(f"You: {user_input}")
+    print(f"AI assistant: {response}")
+```
+
+
+
+
+
 ## finetune api
 
 [fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)
