@@ -619,14 +619,23 @@ proxychains4 curl https://www.youtube.com
 
 ### centos8 没有软件源
 
+
+
 ```
 docker 退出方法
 	# kill -9  $(jobs -p)
 	# exit
 
 # centos8 没有软件源
-sed -i -e "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*
-sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+
+sed -i -e"s|mirrors.cloud.aliyuncs.com|mirrors.aliyun.com|g " /etc/yum.repos.d/CentOS-*
+
+sed -i -e "s|releasever|releasever-stream|g" /etc/yum.repos.d/CentOS-*
+
+yum clean all && yum makecache
+
+yum update
 ```
 
 
