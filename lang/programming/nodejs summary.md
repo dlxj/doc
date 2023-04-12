@@ -4913,6 +4913,15 @@ function handleStream() {
 
 
 
+## appendFileSync
+
+```
+const fileName = 'file-sync.txt'
+fs.appendFileSync(fileName, 'First line added!', 'utf-8')
+```
+
+
+
 
 
 ## 去掉扩展名
@@ -13468,6 +13477,12 @@ SceneUtils.connect("change_route_requested", self, "_on_change_scene_requested")
 ### 动态实例化场景
 
 ```
+# 场景用 preload ，控件用 @onready
+const CardScene := preload("res://scenes/card.tscn")
+const cardPreview := preload("res://scenes/card_mouse_preview.tscn")
+
+@onready var card_container := $MarginContainer/VerticalContent/CardContainerScroll/CardContainer
+
 boards = load("res://scenes/boards.tscn").instantiate()
 ```
 
@@ -14129,6 +14144,11 @@ func _physics_process(delta):
 ### 控件拖拽
 
 ```
+# 任何定义了 _get_drag_data 的控件，被鼠标拖动的时侯此函数就会被回调
+func _get_drag_data(pos):
+	return { "cardID":"001" }
+
+
 _get_drag_data(pos: Vector2)
 	# 是 Control 的函数，控件被鼠标拖动的时侯由系统回调
 	# 通常在这里 set_drag_preview 生成被拖控件的预览图
