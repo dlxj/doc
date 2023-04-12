@@ -15083,6 +15083,12 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 
 
+## prompts
+
+[日语提示66的](https://github.com/f/awesome-chatgpt-prompts)
+
+
+
 ## api
 
 ```
@@ -15935,7 +15941,7 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
 
-### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning)
+### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning) 24G可训练
 
 - [中文微调数据集](https://github.com/carbonz0/alpaca-chinese-dataset/issues/3)
 - [中文小数据集上finetune后效果怎么样](https://github.com/mymusise/ChatGLM-Tuning/issues/64)
@@ -15947,6 +15953,10 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 	# 模型下载好以后打包模型，上传 阿里云盘
 
 ```
+
+
+
+### [ChatGLM-Finetuning](https://github.com/liucongg/ChatGLM-Finetuning) 参数冻结
 
 
 
