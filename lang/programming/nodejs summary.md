@@ -15730,6 +15730,14 @@ if __name__ == "__main__":
 
 
 
+## zero_nlp
+
+[zero_nlp](https://github.com/yuanzhoulvpi2017/zero_nlp)
+
+[我用我的 10 万条微信聊天记录和 280 篇博客文章，做了我自己的数字克隆 AI](https://v2ex.com/t/931521)
+
+
+
 ## Chinese-ChatLLaMA
 
 [Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
