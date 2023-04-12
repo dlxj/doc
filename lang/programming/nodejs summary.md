@@ -199,8 +199,6 @@ chmod +x /etc/rc.d/rc.local
 vi /etc/rc.d/rc.local
 mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
-
-
 ```
 
 
@@ -4251,15 +4249,13 @@ arr.forEach(element => {
 
 ## sort
 
-
-
 ```javascript
 // 双排序，类似C# 的 order by then by
 // Lodash 4.x:
 data = _.orderBy(data, [
-  function (item) { return item.sortData.a; },
-  function (item) { return item.sortData.b; }
-], ["asc", "desc"]);
+  function (item) { return item.sortData.a },
+  function (item) { return item.sortData.b }
+], ["asc", "desc"])
 ```
 
 

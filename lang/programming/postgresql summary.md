@@ -7,8 +7,43 @@ systemctl status postgresql-13      # centos7
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
 pm2 resurrect // 重启备份的所有项目
+```
+
+
+
+### 免安装配置
 
 ```
+Postgresql免安装配置方法
+一、下载
+https://www.enterprisedb.com/download-postgresql-binaries
+进入网址，选择适合自己系统的版本
+
+二、下载好的zip包解压，并创建一个data文件用来存放数据
+
+三、初始化数据库
+命令行进入bin目录，执行以下代码：
+
+initdb.exe -D D:\tools\postgres\pgsql\data -E UTF-8 --locale=chs -U postgres -W
+
+注：
+-D ：指定数据库簇的存储目录D:\tools\postgres\pgsql\data
+-E ：指定DB的超级用户的用户名postgres
+–locale：关于区域设置（chinese-simplified-china）
+-U ：默认编码格式chs
+-W ：为超级用户指定密码的提示
+注：命令上的地址如果输入错误，再次执行可能提示不能给data文件夹权限，删除data重新创建即可
+
+四、启动数据库
+
+pg_ctl -D D:\tools\postgres\pgsql\data -l logfile start
+
+五、注册成系统服务
+
+pg_ctl register -N PostgreSQL -D D:\tools\postgres\pgsql\data
+```
+
+
 
 ## nohup
 
