@@ -15724,6 +15724,14 @@ apt-get install git-lfs
 
 
 
+## gpt-neox-japanese
+
+[gpt-neox-japanese-2.7b](https://huggingface.co/abeja/gpt-neox-japanese-2.7b) 抱抱脸日语gpt **直接可用**
+
+[huggingface 官方finetune](https://huggingface.co/docs/transformers/model_doc/funnel)
+
+
+
 ## BELLE
 
 [BELLE](https://github.com/LianjiaTech/BELLE) **训练友好**
