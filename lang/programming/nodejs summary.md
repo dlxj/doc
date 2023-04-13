@@ -15736,6 +15736,8 @@ if __name__ == "__main__":
 
 #### [NonJishoKei 日语所有单词变形](https://github.com/NoHeartPen/NonJishoKei)
 
+- [真·哪里不会点哪里_日本語非辞書形辞典_v2](https://forum.freemdict.com/t/topic/14048)
+
 #### [MisakaTranslator 屏幕取词](https://github.com/hanmin0822/MisakaTranslator)
 
 
