@@ -13486,6 +13486,18 @@ boards = load("res://scenes/boards.tscn").instantiate()
 
 
 
+#### 场景要进入场景树才会发生初始化
+
+```
+		var card_element = CardScene.instantiate()
+		card_container.add_child(card_element) # 加入了场景树
+		card_element.setTitle(str(i)) # 不能和上一句互换，否则内部控件还没有初始化
+```
+
+
+
+
+
 ### 场景切换
 
 ```
