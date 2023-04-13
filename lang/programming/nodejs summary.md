@@ -13283,6 +13283,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [godot-sqlite](https://github.com/2shady4u/godot-sqlite)
 
+[redit讨论区](https://www.reddit.com/r/godot/)
+
 [Godot 4.1 Issues Roadmap](https://github.com/orgs/godotengine/projects/28/views/1)
 
 
