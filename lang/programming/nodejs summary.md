@@ -15734,6 +15734,10 @@ if __name__ == "__main__":
 
 [我用我的 10 万条微信聊天记录和 280 篇博客文章，做了我自己的数字克隆 AI](https://v2ex.com/t/931521)
 
+#### [NonJishoKei 日语所有单词变形](https://github.com/NoHeartPen/NonJishoKei)
+
+#### [MisakaTranslator 屏幕取词](https://github.com/hanmin0822/MisakaTranslator)
+
 
 
 ## Chinese-ChatLLaMA
