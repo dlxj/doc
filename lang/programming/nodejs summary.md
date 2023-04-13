@@ -14182,6 +14182,59 @@ set_drag_preview(card)
 
 
 
+#### 实现列表元素拖拽
+
+```
+extends MarginContainer
+
+@onready var title_label := $CardContent/InnerPadding/VBoxContainer/TitleContainer/Title
+
+signal card_hover_changed(card_hover)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func setTitle(title):
+	title_label.set_text(title)
+
+func getTitle():
+	return title_label.get_text()
+
+func _on_mouse_entered(): # 鼠标第一次移到控件上
+	mouse_default_cursor_shape = 1
+	card_hover_changed.emit(self)
+
+func _on_mouse_exited():  # 鼠标离开控件
+	card_hover_changed.emit(null)
+
+```
+
+
+
+#### 算离当前坐标最近的子控件
+
+```
+	var closest_child
+	var last_distance : float = -1
+	var is_before := true
+
+	var scrolled_mouse_pos := Vector2(pos.x, pos.y + card_container_scroll.get_v_scroll())
+
+	for child in card_container.get_children():
+		var distance : float = child.get_position().distance_to(scrolled_mouse_pos)
+
+		if last_distance == -1 or (distance < last_distance):
+			last_distance = distance
+			closest_child = child
+
+	var title = closest_child.getTitle()
+	print("closest_child: " + title)
+	return closest_child
+```
+
+
+
 
 
 ### 键盘事件
