@@ -4468,8 +4468,6 @@ let result = _.pickBy(word2, function(v, k) {
 
 
 
-
-
 ## exist
 
 
@@ -14144,10 +14142,10 @@ func _physics_process(delta):
 ### 控件拖拽
 
 ```
-# 任何定义了 _get_drag_data 的控件，被鼠标拖动的时侯此函数就会被回调
+# 任何定义了 _get_drag_data 的控件，按住鼠标并拖动的时侯此函数就会被回调
 func _get_drag_data(pos):
+	# 在这里生成被拖子控件的预览图
 	return { "cardID":"001" }
-
 
 _get_drag_data(pos: Vector2)
 	# 是 Control 的函数，控件被鼠标拖动的时侯由系统回调
