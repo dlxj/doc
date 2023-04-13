@@ -13271,6 +13271,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
 
+[material-maker才质编辑](https://github.com/RodZill4/material-maker)
+
 [4.0源码3d工具](https://github.com/protongraph/protongraph)
 
 [4.0源码完整游戏](https://github.com/zfoo-project/godot-bird)
@@ -13278,6 +13280,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 [GODOT RECIPES](http://kidscancode.org/godot_recipes/4.x/)
 
 [官方示例](https://github.com/godotengine/godot-demo-projects)
+
+[godot-sqlite](https://github.com/2shady4u/godot-sqlite)
 
 [Godot 4.1 Issues Roadmap](https://github.com/orgs/godotengine/projects/28/views/1)
 
