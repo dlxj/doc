@@ -15835,6 +15835,20 @@ if __name__ == "__main__":
 [Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
 
 ```
+7B用int8就占用了7G显存，梯度必须16bit甚至要32bit
+
+24G训练7B估计勉勉强强，用int8，PEFT+LoRA
+```
+
+
+
+#### PEFT 低碳微调
+
+[PEFT: 在低资源硬件上对十亿规模模型进行参数高效微调](https://zhuanlan.zhihu.com/p/610503561)
+
+[SpeechT5 语音文本全都要](https://zhuanlan.zhihu.com/p/613644440)
+
+```
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 apt-get install git-lfs
 
