@@ -9811,7 +9811,7 @@ cd ~/software_packages
 $ rpm -Uvh --force --nodeps *.rpm
 ```
 
-# 4. 启动docker 容器
+## 启动docker 容器
 
 
 
@@ -15200,6 +15200,18 @@ if __name__ == "__main__":
 
 [详细过程](https://juejin.cn/post/7218001191703068729)
 
+[如何使用OpenAI fine-tuning(微调)训练属于自己的专有模型？](https://www.zhihu.com/question/591066880/answer/2961747033)
+
+[Prompt Tuning 相比于 Fine Tuning 在哪些场景下表现更好？](https://www.zhihu.com/question/504324484/answer/2962134008)
+
+```
+Prompt: 模仿以下示例的风格，写一篇关于中考是否会取消英语的分析
+示例1：……
+示例2：……
+```
+
+
+
 1. Prepare and upload training data
 2. Train a new fine-tuned model
 3. Use your fine-tuned model
@@ -15210,6 +15222,11 @@ pip install openai[datalib] && \
 pip install --upgrade openai
 
 export OPENAI_API_KEY="<OPENAI_API_KEY>"
+
+openai tools fine_tunes.prepare_data -f QA.jsonl
+	# 格式化数据
+	# 生成 QA_prepared.jsonl
+	
 openai api fine_tunes.create -t 'QA.jsonl' -m davinci
 {"prompt": "xxx "completion": "xxx"}
 {"prompt": "xxx "completion": "xxx"}
