@@ -15830,9 +15830,11 @@ if __name__ == "__main__":
 
 
 
-# DeepSpeed Chat
+## DeepSpeed Chat
 
 [DeepSpeed Chat](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-chat/chinese/README.md)
+
+[DeepSpeed-Chat：最强ChatGPT训练框架，一键完成RLHF训练！](https://zhuanlan.zhihu.com/p/621780753)
 
 
 
