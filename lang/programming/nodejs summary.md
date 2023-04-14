@@ -15850,6 +15850,8 @@ if __name__ == "__main__":
 
 > BPE 一般适用在欧美语言拉丁语系中，因为欧美语言大多是字符形式，涉及前缀、后缀的单词比较多。而中文的汉字一般不用 BPE 进行编码，因为中文是字无法进行拆分。对中文的处理通常只有分词和分字两种。理论上分词效果更好，更好的区别语义。
 
+[从embedding讲起](https://mp.weixin.qq.com/s?__biz=MzkzMzQ3Mzk1Nw==&mid=2247483663&idx=1&sn=f1641f28e6fb18bdb84ebf3ce882bd0a&chksm=c24abac5f53d33d3f2d1bec3995053c4ff242217bb92d918625777fc380148fe8fba54d17a20&token=164424461&lang=zh_CN#rd)
+
 
 
 ## Chinese-ChatLLaMA
