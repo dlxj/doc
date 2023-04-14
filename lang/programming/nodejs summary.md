@@ -15830,6 +15830,12 @@ if __name__ == "__main__":
 
 
 
+# DeepSpeed Chat
+
+[DeepSpeed Chat](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-chat/chinese/README.md)
+
+
+
 ## Chinese-ChatLLaMA
 
 [Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
@@ -16891,6 +16897,12 @@ notepad $profile
 # katago
 
 [colab](https://colab.research.google.com/drive/1w69zA4bxRwzph5vG2dr4UeE4Xw2I0hE9)
+
+
+
+# disco diffusion
+
+[最近disco diffusion大火，这个模型是如何训练的？如何训练自己的diffusion模型？](https://www.zhihu.com/question/566475839/answer/2950417560)
 
 
 
