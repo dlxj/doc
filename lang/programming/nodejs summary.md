@@ -15836,6 +15836,10 @@ if __name__ == "__main__":
 
 [DeepSpeed-Chat：最强ChatGPT训练框架，一键完成RLHF训练！](https://zhuanlan.zhihu.com/p/621780753)
 
+[opt-1.3b](https://huggingface.co/facebook/opt-1.3b)
+
+[tiktokenizer](https://github.com/dqbd/tiktokenizer)
+
 
 
 ## Chinese-ChatLLaMA
