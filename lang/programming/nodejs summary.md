@@ -15840,6 +15840,12 @@ if __name__ == "__main__":
 
 [tiktokenizer](https://github.com/dqbd/tiktokenizer)
 
+[How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
+
+[tiktoken官方](https://github.com/openai/tiktoken)
+
+[Byte Pair Encoder，BPE 字节对编码](https://zhuanlan.zhihu.com/p/592399697)
+
 
 
 ## Chinese-ChatLLaMA
