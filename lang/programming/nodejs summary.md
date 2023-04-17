@@ -15352,6 +15352,27 @@ python 命令行
 
 
 
+```
+import os
+import openai
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+response = openai.Completion.create(
+  model="davinci:ft-personal-2023-04-17-01-29-32",
+  prompt="一、呼吸系统的结构与功能/（一）呼吸道 ->\n",
+  temperature=0.7,
+  max_tokens=256,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0,
+  stop=["END"]
+)
+
+# 好像只有 Completion 可选， chat 那里不可以选 finetune 好的模型
+
+```
+
 
 
 
