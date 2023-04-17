@@ -15600,6 +15600,8 @@ driver.quit()
 
 ### chrome + centos7
 
+[看这里应该能解决问题](https://github.com/ultrafunkamsterdam/undetected-chromedriver/issues/743)
+
 ```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 
@@ -15609,6 +15611,12 @@ yum upgrade google-chrome-stable
 	# update 
 
 google-chrome &
+
+google-chrome --no-sandbox  &
+	# root 下运行要加参数
+	# 报错：Missing X server or $DISPLAY
+
+
 
 ```
 

@@ -338,6 +338,12 @@ yum groupinstall -y 'Development Tools' && \
 yum install -y gcc libffi-devel bzip2-devel expat-devel gdbm-devel ncurses-devel openssl-devel readline-devel sqlite-devel tk-devel xz-devel zlib-devel wget
 ```
 
+```
+apt-get update && \
+apt-get install -y build-essential checkinstall && \
+apt -y install gdb lcov libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+```
+
 ```python
 VERSION=3.8.3 && \
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
