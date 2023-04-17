@@ -15622,6 +15622,63 @@ google-chrome --no-sandbox  &
 
 
 
+### chome + ubuntu
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+dpkg -i google-chrome-stable_current_amd64.deb
+
+
+```
+
+
+
+### Ubuntu22.04远程桌面
+
+```
+apt install xfce4 xfce4-goodies -y && \
+apt install xrdp -y && \
+systemctl status xrdp
+ 
+ufw disable
+	# 禁用防火墙
+
+cd ~ && \
+echo "xfce4-session" | tee .xsession && \
+systemctl restart xrdp 
+
+lsof -i:3389
+	# 成功
+
+
+win10 上执行：
+	win + r -> mstsc -> 输入vps ip, 用户名 root 
+		# 成功显示远程桌面
+
+```
+
+
+
+[add user](https://blog.51cto.com/wljs/5346114)
+
+```
+adduser i
+	# 添加用户
+adduser i sudo
+	# usermod -aG sudo i 
+		# 等价命令
+	# 增加 sudo 权限
+
+sudo -l -U i
+	# 验证新增用户的权限
+
+```
+
+
+
+
+
 ### WSL2 Ubuntu远程桌面
 
 [WSL2 Ubuntu图形界面安装与远程桌面](https://blog.csdn.net/qq_43878324/article/details/113616883)
