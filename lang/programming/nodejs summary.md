@@ -14218,6 +14218,30 @@ func _on_mouse_exited():  # 鼠标离开控件
 
 
 
+#### 小技巧 _can_drop_data 就可以移了
+
+```
+ _can_drop_data 里面实现移动就很丝滑，但是只要你没有移回去它就在那了
+```
+
+
+
+#### 拖list中的card _can_drop_data 都触发 
+
+```
+先触发 card 的 _can_drop_data，再触发 list 的，这是不对的，
+应该 让 card 可以拖，让 list 可以放，看下面的要点，
+既 card 只定义 _get_drag_data 就好了
+```
+
+
+
+##### 要点： _can_drop_data _drop_data
+
+只在card 中定义 _get_drag_data，然后 list 中定义 _can_drop_data 和 _drop_data
+
+
+
 #### 算离当前坐标最近的子控件
 
 ```
@@ -15271,6 +15295,8 @@ if __name__ == "__main__":
 
 [详细过程](https://juejin.cn/post/7218001191703068729)
 
+[GPT-3: Fine-Tuning for Superhero Descriptions 结果更清晰](https://towardsdatascience.com/unleashing-the-power-of-gpt-how-to-fine-tune-your-model-da35c90766c4)
+
 [如何使用OpenAI fine-tuning(微调)训练属于自己的专有模型？](https://www.zhihu.com/question/591066880/answer/2961747033)
 
 [Prompt Tuning 相比于 Fine Tuning 在哪些场景下表现更好？](https://www.zhihu.com/question/504324484/answer/2962134008)
@@ -15308,6 +15334,21 @@ openai api completions.create -m davinci:ft-personal-2023-04-06-08-48-39 -p  "�
 ```
 
 
+
+```
+python 命令行
+>>import openai
+>>openai.FineTune.retrieve(id="ft-P32aMbdXrINtOPxsMa5XewOL")
+	# 反复运行这一句就能取到最新的训练状态
+```
+
+
+
+```
+600 * 1024 / 750 * 0.03 * 2 = 49.152 $
+	# 600K 的文件大概是这么多钱
+
+```
 
 
 
