@@ -15892,6 +15892,30 @@ if __name__ == "__main__":
 
 
 
+## DeepSpeed Chat
+
+[DeepSpeed Chat](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-chat/chinese/README.md)
+
+[DeepSpeed-Chat：最强ChatGPT训练框架，一键完成RLHF训练！](https://zhuanlan.zhihu.com/p/621780753)
+
+[opt-1.3b](https://huggingface.co/facebook/opt-1.3b)
+
+[tiktokenizer](https://github.com/dqbd/tiktokenizer)
+
+[How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
+
+[tiktoken官方](https://github.com/openai/tiktoken)
+
+[Byte Pair Encoder，BPE 字节对编码](https://zhuanlan.zhihu.com/p/592399697)
+
+[BPE 算法原理及使用指南【深入浅出】](https://juejin.cn/post/7088322473640329230)
+
+> BPE 一般适用在欧美语言拉丁语系中，因为欧美语言大多是字符形式，涉及前缀、后缀的单词比较多。而中文的汉字一般不用 BPE 进行编码，因为中文是字无法进行拆分。对中文的处理通常只有分词和分字两种。理论上分词效果更好，更好的区别语义。
+
+[从embedding讲起](https://mp.weixin.qq.com/s?__biz=MzkzMzQ3Mzk1Nw==&mid=2247483663&idx=1&sn=f1641f28e6fb18bdb84ebf3ce882bd0a&chksm=c24abac5f53d33d3f2d1bec3995053c4ff242217bb92d918625777fc380148fe8fba54d17a20&token=164424461&lang=zh_CN#rd)
+
+
+
 ## Chinese-ChatLLaMA
 
 [Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
@@ -16953,6 +16977,12 @@ notepad $profile
 # katago
 
 [colab](https://colab.research.google.com/drive/1w69zA4bxRwzph5vG2dr4UeE4Xw2I0hE9)
+
+
+
+# disco diffusion
+
+[最近disco diffusion大火，这个模型是如何训练的？如何训练自己的diffusion模型？](https://www.zhihu.com/question/566475839/answer/2950417560)
 
 
 

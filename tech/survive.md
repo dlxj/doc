@@ -81,6 +81,10 @@ https://pe.metaquant.org/
 
 # 日语
 
+> [愛知大学 中国語語彙](http://hcs.aichi-u.ac.jp/php/search.php)
+>
+> - [【爱知大学】中日大辞典第三版](https://forum.freemdict.com/t/topic/9289)
+>
 > [NonJishoKei Japanese所有单词变形](https://github.com/NoHeartPen/NonJishoKei)　　
 >
 > - [真·哪里不会点哪里_日本語非辞書形辞典_v2](https://forum.freemdict.com/t/topic/14048)
@@ -91,7 +95,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 T.K.M.N字幕组
 
@@ -482,7 +486,7 @@ mac mount Android as drive
   > echoplayer 用户名  slplsy gmail
   >
   
-
+  
   
 - voicetube.com
 
