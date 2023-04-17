@@ -15371,6 +15371,14 @@ response = openai.Completion.create(
 
 # 好像只有 Completion 可选， chat 那里不可以选 finetune 好的模型
 
+
+curl https://api.openai.com/v1/completions \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": YOUR_PROMPT, "model": FINE_TUNED_MODEL}'
+
+
+
 ```
 
 
@@ -15544,6 +15552,71 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 ![image-20230311170337928](./nodejs summary.assets/image-20230311170337928.png)
 
 
+
+## auto chat
+
+[GPT-1984  selenium+chatgpt](https://github.com/0ut0flin3/GPT-1984)
+
+[Automating-ChatGPT-with-Python-and-Selenium](https://github.com/Zeeshanahmad4/Automating-ChatGPT-with-Python-and-Selenium)
+
+[undetected-chromedriver 过检测](https://github.com/ultrafunkamsterdam/undetected-chromedriver)
+
+
+
+```
+document.querySelector(`textarea`).value="aaa"
+document.querySelectorAll(`button`)[3].click()
+	# 页面总共有 3 个按钮
+```
+
+
+
+```
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+# Start a webdriver instance and open ChatGPT
+driver = webdriver.Chrome()
+driver.get('https://chatgpt.openai.com/')
+
+# Find the input field and send a question
+input_field = driver.find_element_by_class_name('c-text-input')
+input_field.send_keys('What is the capital of China?')
+input_field.send_keys(Keys.RETURN)
+
+# Wait for ChatGPT to respond
+driver.implicitly_wait(10)
+
+# Find the response and save it to a file
+response = driver.find_element_by_class_name('c-message__body').text
+with open('response.txt', 'w') as f:
+    f.write(response)
+
+# Close the webdriver instance
+driver.quit()
+```
+
+
+
+### chrome + centos7
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+
+yum localinstall google-chrome-stable_current_x86_64.rpm -y
+
+yum upgrade google-chrome-stable
+	# update 
+
+google-chrome &
+
+```
+
+
+
+### WSL2 Ubuntu远程桌面
+
+[WSL2 Ubuntu图形界面安装与远程桌面](https://blog.csdn.net/qq_43878324/article/details/113616883)
 
 
 

@@ -11277,3 +11277,11 @@ if __name__  ==  "__main__":
 
 
 
+```
+# 新版api 改动：
+input_usernanme = wd.find_element('xpath', '//*[@id="ls_username"]')
+
+```
+
+
+
