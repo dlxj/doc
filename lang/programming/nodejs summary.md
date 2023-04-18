@@ -1505,6 +1505,26 @@ This not an issue, but rather a design decision.
 
 
 
+#### pipe stream
+
+```
+const fs = require('fs')
+const { promisify } = require('util')
+const stream = require('stream')
+const pipeline = promisify(stream.pipeline)
+const bent = require('bent')
+
+const main = async () => {
+  const readable = await bent('https://images.unsplash.com/photo-1595132938692-83ad2c098e47')()
+  const writable = fs.createWriteStream('./image.jpg')
+  await pipeline(readable, writable)
+}
+
+main()
+```
+
+
+
 
 
 ## 两条sql 语句写一起
@@ -5336,6 +5356,27 @@ run(10)
 # stream
 
 - http://nodejs.cn/api/stream/stream_pipeline_streams_callback.html
+
+
+
+```
+
+const fs = require('fs')
+const { promisify } = require('util')
+const stream = require('stream')
+const pipeline = promisify(stream.pipeline)
+const bent = require('bent')
+
+const main = async () => {
+  const readable = await bent('https://images.unsplash.com/photo-1595132938692-83ad2c098e47')()
+  const writable = fs.createWriteStream('./image.jpg')
+  await pipeline(readable, writable)
+}
+
+main()
+```
+
+
 
 ```
 var http = require('http'),
