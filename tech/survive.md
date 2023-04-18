@@ -59,6 +59,13 @@
 
   
 
+# game
+
+psp 老男人游戏
+
+switch
+https://www.zake.store/swindex.html
+
 
 
 # drama
@@ -95,7 +102,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 
 T.K.M.N字幕组
 
