@@ -16131,7 +16131,7 @@ if __name__ == "__main__":
 
 ## MiniGPT-4
 
-[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4/issues/20)
+[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4/issues/4)
 
 ```
 We are currently working on an official solution to make it run in a 24G memory GPU. Will return to you once it is finished
