@@ -2654,6 +2654,28 @@ if (result instanceof Promise) {
 
 
 
+## 定时器
+
+```
+    //一秒一次心跳包
+    let task = setInterval(() => {
+      try {
+        __ws__.send("{}")
+      } catch (ex) {
+        clearInterval(task)
+      }
+
+    }, 1000)
+
+    __ws__.on("close", () => {
+      clearInterval(task)
+    })
+```
+
+
+
+
+
 # Regex
 
 
