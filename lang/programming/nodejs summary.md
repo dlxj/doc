@@ -16129,6 +16129,16 @@ if __name__ == "__main__":
 
 
 
+## MiniGPT-4
+
+[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4/issues/20)
+
+```
+We are currently working on an official solution to make it run in a 24G memory GPU. Will return to you once it is finished
+```
+
+
+
 #### PEFT 低碳微调
 
 [PEFT: 在低资源硬件上对十亿规模模型进行参数高效微调](https://zhuanlan.zhihu.com/p/610503561)
