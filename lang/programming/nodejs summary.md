@@ -15639,6 +15639,14 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [必看 问答实例](https://github.com/ruoccofabrizio/azure-open-ai-embeddings-qna)
 
+> 书籍文本（目录+正文，多条） -> 文本向量
+>
+> 用户问题 -> 问题向量
+>
+> 比较向量相似度（语义级的相似度对比），找到最相关的书籍文本
+>
+> creating embeddings vectors from documents. For answering the question of a user, it retrieves the most relevant document and then uses GPT-3, GPT-3.5 or GPT-4 to extract the matching answer for the question.
+
 [weaviate 图像向量搜索](https://weaviate.io/blog/how-to-build-an-image-search-application-with-weaviate)
 
 
