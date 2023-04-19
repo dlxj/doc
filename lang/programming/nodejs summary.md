@@ -15637,6 +15637,10 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [问答和语义搜索](https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/pinecone)
 
+[必看 问答实例](https://github.com/ruoccofabrizio/azure-open-ai-embeddings-qna)
+
+[weaviate 图像向量搜索](https://weaviate.io/blog/how-to-build-an-image-search-application-with-weaviate)
+
 
 
 ## NLP QA
