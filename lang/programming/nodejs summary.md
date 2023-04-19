@@ -15645,7 +15645,7 @@ SOTA结果是什么
 >
 > ## aHash
 >
-> ：平均哈希算法（average Hash）
+> 平均哈希算法（average Hash）
 >
 > - 原理：
 >   1. 将图片缩小到 8×8 分辨率。（这样就只需考虑 64 个像素点）
@@ -15683,9 +15683,11 @@ SOTA结果是什么
 >
 > ## wHash
 >
-> 小波哈希算法（wavelet Hash）
+> 小波哈希算法（wavelet Hash）[u](https://blog.csdn.net/ERKELIU/article/details/111056167)
 >
 > - 基于离散小波变换（DWT）。
+
+
 
 
 
