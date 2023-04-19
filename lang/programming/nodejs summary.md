@@ -15649,6 +15649,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [weaviate 图像向量搜索](https://weaviate.io/blog/how-to-build-an-image-search-application-with-weaviate)
 
+[LangChain+ChatGLM-6B实现本地知识库自动问答](https://www.bilibili.com/video/BV1So4y1L7Hb/)
+
 
 
 ## NLP QA
