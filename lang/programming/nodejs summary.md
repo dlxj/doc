@@ -16536,6 +16536,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [kanchil](https://github.com/vxfla/kanchil)
 
+[gpt_neox_japanese 这个好](https://huggingface.co/docs/transformers/model_doc/gpt_neox_japanese)
+
 [google mt5支持101种语言](https://huggingface.co/google/mt5-base)
 
 ```
