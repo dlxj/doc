@@ -106,6 +106,8 @@ https://pe.metaquant.org/
 > 　　  - siluplsy 
 > 　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 > 　　　　　　　　　　　　　　　　　　　　　　　　
+> 　　　　　　　　　　　　　　　　　　　　　　　　    [Translate PSP text from Japanese to English with VNR!](https://scan-vn.blogspot.com/2014/09/translate-psp-games-vn-from-japanese-to.html)
+> 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 
 T.K.M.N字幕组
