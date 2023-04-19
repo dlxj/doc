@@ -6693,7 +6693,21 @@ print(mat)
 
 ### 图片相似
 
+[video-subtitle-extractor](https://github.com/YaoFANGUK/video-subtitle-extractor)
+
+[imagehash 各种算法都有](https://github.com/JohannesBuchner/imagehash)
+
+[ImageHash C#实现](https://github.com/coenm/ImageHash)
+
 [image_similarity](https://github.com/oke-aditya/image_similarity)
+
+
+
+#### 图片搜索
+
+[必看 openai embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
+
+[weaviate 图像向量搜索](https://weaviate.io/blog/how-to-build-an-image-search-application-with-weaviate)
 
 
 
