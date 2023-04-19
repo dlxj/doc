@@ -15616,6 +15616,87 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 
 
+## NLP QA
+
+
+
+SOTA结果是什么
+
+> "SOTA" 是 "State Of The Art" 的缩写，指的是在某一领域（尤其是科研和技术）中取得的最好成果或者最先进的技术。
+
+比较图片的相似度效果最好的方法有哪些
+
+> 1. 深度学习方法：
+>    - 使用卷积神经网络（CNN）：预训练的CNN模型，如VGG, ResNet, Inception等，可以用于提取图像特征。通过计算这些特征的相似度（如余弦相似度或欧氏距离），可以比较图像的相似性。
+>    - Siamese Networks：这类网络结构训练时采用成对的图像作为输入，并学习将相似的图像映射到相近的特征空间。这种方法在许多相似度任务中取得了很好的效果。
+>    - Triplet Networks：与Siamese Networks类似，Triplet Networks同时考虑三个图像输入：锚点图像、正例图像（与锚点相似的图像）和负例图像（与锚点不相似的图像）。这种网络结构学习将正例图像靠近锚点图像，而将负例图像远离锚点图像。
+> 2. 特征描述子方法：
+>    - SIFT（Scale-Invariant Feature Transform）：这是一种提取局部特征的经典方法，通过比较SIFT描述子可以评估图像的相似度。
+>    - SURF（Speeded-Up Robust Features）：SURF是SIFT的改进版本，具有更快的计算速度和类似的性能表现。
+>    - ORB（Oriented FAST and Rotated BRIEF）：这是另一种提取局部特征的方法，结合了FAST关键点检测和BRIEF描述子。相比SIFT和SURF，ORB具有更快的计算速度和较低的内存需求。
+
+
+
+> ## 颜色分布法
+>
+> - 原理：
+>   1. 生成图片的颜色分布的直方图（color histogram）。比如 RGB 三色分别生成直方图，再合并成一个直方图。
+>   2. 如果两张图片的直方图相似，则认为它们的内容也相似。
+>
+> ## aHash
+>
+> ：平均哈希算法（average Hash）
+>
+> - 原理：
+>   1. 将图片缩小到 8×8 分辨率。（这样就只需考虑 64 个像素点）
+>   2. 将图片转换成灰度图。（这样就只需考虑一个颜色通道）
+>   3. 计算 64 个像素点的灰度平均值。
+>   4. 将每个像素点的灰度值与平均值作比较，如果大于或等于平均值则计 1 ，否则计 0 。最后得到一个 64 位的哈希值。
+> - 特点：
+>   - 不考虑图片细节的差异，适合计算缩略图的哈希值。
+>   - 不能适应图片分辨率的变化。将同一张图片放大、缩小，aHash 值会变化很大。
+>
+> ## dHash
+>
+> 梯度哈希算法（difference Hash）
+>
+> - 原理：
+>   1. 将图片缩小到 9×8 辨率。
+>   2. 转换成灰度图。
+>   3. 比较每对相邻像素点的灰度值，如果前一个像素点的灰度值大于等于后一个像素点则记 1 。否则计 0 。最后得到一个 64 位的哈希值。
+>      - 比如[254, 254, 255, 253]的计算结果为[1, 0, 1]。
+>
+> ## pHash
+>
+> 感知哈希算法（perception Hash）
+>
+> - 基于离散余弦变换（DCT）。
+> - 原理：
+>   1. 将图片缩小到指定分辨率。
+>   2. 转换成灰度图。
+>   3. 计算灰度图的 DCT 变换，得到一个 32×32 的 DCT 矩阵。可以只取矩阵左上角的 8×8 部分，计算其平均值。
+>   4. 将每个像素点的灰度值与平均值作比较，如果大于或等于平均值则计 1 ，否则计 0 。最后得到一个 64 位的哈希值。
+> - 特点：
+>   - 能考虑到图片细节的差异。
+>   - 计算比较慢。
+>   - 还能计算音频，视频文件的哈希值。
+>
+> ## wHash
+>
+> 小波哈希算法（wavelet Hash）
+>
+> - 基于离散小波变换（DWT）。
+
+
+
+## pdfchat
+
+[PDFChat](https://github.com/dotvignesh/PDFChat)
+
+[chatpdf 在线使用](https://www.chatpdf.com/)
+
+
+
 ## auto chat
 
 [GPT-1984  selenium+chatgpt](https://github.com/0ut0flin3/GPT-1984)
@@ -16424,6 +16505,17 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 [Add RWKV2 (fast)](https://github.com/huggingface/transformers/issues/17230)
 
 [Can't determine model type from model name](https://github.com/oobabooga/text-generation-webui/issues/581)
+
+
+
+```
+24g显存用offload全量微调6b
+
+内存占用100g左右
+
+```
+
+
 
 
 

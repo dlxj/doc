@@ -6693,6 +6693,12 @@ print(mat)
 
 ### 图片相似
 
+[video-subtitle-extractor](https://github.com/YaoFANGUK/video-subtitle-extractor)
+
+[imagehash 各种算法都有](https://github.com/JohannesBuchner/imagehash)
+
+[ImageHash C#实现](https://github.com/coenm/ImageHash)
+
 [image_similarity](https://github.com/oke-aditya/image_similarity)
 
 
