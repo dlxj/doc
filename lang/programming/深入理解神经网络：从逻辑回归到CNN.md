@@ -6703,6 +6703,14 @@ print(mat)
 
 
 
+#### 图片搜索
+
+[必看 openai embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
+
+[weaviate 图像向量搜索](https://weaviate.io/blog/how-to-build-an-image-search-application-with-weaviate)
+
+
+
 ### 完全解析RNN, Seq2Seq, Attention注意力机制
 
 

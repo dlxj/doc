@@ -15629,9 +15629,13 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 ## embeddings
 
-[embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
+[openai embeddings 各种宝藏](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
 
 
+
+### 问答和语义搜索
+
+[问答和语义搜索](https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/pinecone)
 
 
 
