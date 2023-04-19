@@ -16532,6 +16532,28 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 
 
+#### kanchil
+
+[kanchil](https://github.com/vxfla/kanchil)
+
+```
+conda create -n kan pip python=3.9 && \
+conda activate kan && \
+proxychains4 pip install -r requirements.txt
+	# 装不上 1.10.0+cu111
+
+wget https://download.pytorch.org/whl/cu111/torch-1.10.0%2Bcu111-cp39-cp39-linux_x86_64.whl
+
+conda deactivate && \
+conda env remove -n kan
+
+
+```
+
+
+
+
+
 ### [ChatGLM-Finetuning](https://github.com/liucongg/ChatGLM-Finetuning) 参数冻结
 
 
