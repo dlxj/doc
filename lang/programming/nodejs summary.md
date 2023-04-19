@@ -16536,6 +16536,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [kanchil](https://github.com/vxfla/kanchil)
 
+[google mt5支持101种语言](https://huggingface.co/google/mt5-base)
+
 ```
 conda create -n kan pip python=3.9 && \
 conda activate kan && \
