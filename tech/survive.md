@@ -106,7 +106,12 @@ https://pe.metaquant.org/
 > 　　  - siluplsy 
 > 　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 > 　　　　　　　　　　　　　　　　　　　　　　　　
+> 　　　　　　　　　　　　　　　　　　　　　　　　    [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
+> 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [Textractor 必看](https://github.com/Artikash/Textractor/issues/215)
+> 　　　　　　　　　　　　　　　　　　　　　　　　
+> 　　　　　　　　　　　　　　　　　　　　　　　　    > HSN65001#16400000+-1C:-18*-8@1726B094 => られるなんて
+> 　　　　　　　　　　　　　　　　　　　　　　　　    > 結構貴重な体験かも……。）
 > 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [Translate PSP text from Japanese to English with VNR!](https://scan-vn.blogspot.com/2014/09/translate-psp-games-vn-from-japanese-to.html)
 > 　　　　　　　　　　　　　　　　　　　　　　　　
