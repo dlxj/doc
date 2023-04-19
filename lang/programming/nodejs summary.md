@@ -15268,6 +15268,8 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 ```
     prompt = f"请为以下内容生成一个简短的摘要：\n{text}\n摘要："
     response = openai.Completion.create(
+    
+    prompt = f"请用五个关键词描述以下文本：\n{text}\n关键词："
 ```
 
 
@@ -15622,6 +15624,14 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 ```
 
 ![image-20230311170337928](./nodejs summary.assets/image-20230311170337928.png)
+
+
+
+## embeddings
+
+[embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
+
+
 
 
 
