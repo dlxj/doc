@@ -15265,6 +15265,13 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 <img src="nodejs summary.assets/image-20230419113115514.png" alt="image-20230419113115514" style="zoom: 50%;" />
 
+```
+    prompt = f"请为以下内容生成一个简短的摘要：\n{text}\n摘要："
+    response = openai.Completion.create(
+```
+
+
+
 
 
 ## api
