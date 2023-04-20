@@ -1036,7 +1036,7 @@ async function f() {
   let post = bent(url, 'POST', 'json', 200)
   try {
 
-    // let response = await post('/v1/completions', formurlencoded_json, { 'Content-Type': 'application/json', 'Authorization': 'Bearer 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'} )
+    // let response = await post('/v1/completions', formurlencoded_json, { 'Content-Type': 'application/json', 'Authorization': '里填openai key'} )
     let response = await post('/v1/completions', json, { 'Content-Type': 'application/json', 'Authorization': 'Bearer 这里填openai key'} )
 
     let a = 1
