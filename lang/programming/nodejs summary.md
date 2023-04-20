@@ -135,6 +135,23 @@ ln -s /usr/local/node-v14.21.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local
 
 
 
+```
+version=v18.9.1 && \
+wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && \
+tar xvf node-$version-linux-x64.tar.gz && \
+cd node-$version-linux-x64/bin && \
+chmod +x node npm npx && \
+cd ../.. && \
+mv node-$version-linux-x64 /usr/local && \
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+```
+
+
+
+
+
 ## vscode 附加参数
 
 ```
@@ -15788,6 +15805,88 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 - [测试论文](https://arxiv.org/pdf/2304.01089.pdf)
 
 [chatpdf 在线使用](https://www.chatpdf.com/)
+
+
+
+#### langchainjs
+
+[langchainjs](https://github.com/hwchase17/langchainjs)
+
+- [openai chat](https://js.langchain.com/docs/getting-started/guide-chat)
+- [QA Embeddings](https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa)
+
+```
+npm i langchain
+
+
+(async()=>{
+  
+    // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
+    // https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+
+    /*
+    
+    curl https://api.openai.com/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "input": "Your text string goes here",
+    "model": "text-embedding-ada-002"
+  }'
+    
+    */
+    let { ChatOpenAI } = await import('langchain/chat_models/openai')
+    let { HumanChatMessage, SystemChatMessage } = await import('langchain/schema')
+    let { RetrievalQAChain, loadQARefineChain } = await import('langchain/chains')
+
+    let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+    let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+    let { RecursiveCharacterTextSplitter } = await import('langchain/text_splitter')
+    let fs = require('fs')
+
+    let openAIApiKey = ""
+
+    const chat = new ChatOpenAI({ 
+        temperature: 0,
+        openAIApiKey // In Node.js defaults to process.env.OPENAI_API_KEY
+    })
+
+    let response = await chat.call([
+        new SystemChatMessage(
+          "You are a helpful assistant that translates English to French."
+        ),
+        new HumanChatMessage("Translate: I love programming."),
+    ])
+      
+    console.log(response)
+
+    const text = fs.readFileSync("text.txt", "utf8").replace(/\r\n/g, '\n')
+    const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 })
+    const docs = await textSplitter.createDocuments([text])
+    //const docs = await textSplitter.createDocuments(["Translate: I love programming."])
+
+    const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({
+      openAIApiKey, 
+      modelName:'text-embedding-ada-002',
+      maxConcurrency: 1, timeout: 30000
+    }))
+
+    // Create a chain that uses the OpenAI LLM and HNSWLib vector store.
+    const chain = RetrievalQAChain.fromLLM(chat, vectorStore.asRetriever())
+    const res = await chain.call({
+      //query: "呼吸道的主要生理功能是什么",
+      query: "总结一下这编文章",
+
+    })
+    console.log( res.text )
+    
+})()
+
+```
+
+
+
+
 
 
 
