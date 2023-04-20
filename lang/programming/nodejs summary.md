@@ -1019,6 +1019,38 @@ export const run = async () => {
 
 
 
+```
+async function f() {
+  let bent = require('bent')
+  let formurlencoded = require('form-urlencoded')
+  
+  let url = `https://api.openai.com`
+  
+  let json = {
+    "model": "text-davinci-003",
+    "prompt": "What is the meaning of life?"
+  }
+  
+  let formurlencoded_json = formurlencoded(json)
+  
+  let post = bent(url, 'POST', 'json', 200)
+  try {
+
+    // let response = await post('/v1/completions', formurlencoded_json, { 'Content-Type': 'application/json', 'Authorization': 'Bearer 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'} )
+    let response = await post('/v1/completions', json, { 'Content-Type': 'application/json', 'Authorization': 'Bearer 这里填openai key'} )
+
+    let a = 1
+
+  } catch (e) {
+    console.log(e)
+  }
+
+  let a = 1
+}
+
+f()
+```
+
 
 
 
@@ -1528,6 +1560,52 @@ const main = async () => {
 
 main()
 ```
+
+
+
+### axios
+
+
+
+#### 通过代理发送请求
+
+```
+const axios = require('axios')
+const { SocksProxyAgent } = require('socks-proxy-agent')
+
+async function sendPostRequestThroughSocks5Proxy() {
+  try {
+    const data = {
+        "model": "text-davinci-003",
+        "prompt": "What is the meaning of life?"
+    };
+
+    const proxyUrl = 'socks5://127.0.0.1:57882'
+    const proxyAgent = new SocksProxyAgent(proxyUrl)
+
+    const config = {
+      method: 'post',
+      url: 'https://api.openai.com/v1/completions',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 这里填openai key'
+      },
+      data: data,
+      httpAgent: proxyAgent,
+      httpsAgent: proxyAgent,
+    };
+
+    const response = await axios(config)
+    console.log(response.data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+sendPostRequestThroughSocks5Proxy()
+```
+
+
 
 
 
@@ -15315,6 +15393,8 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 ## api
 
+[详细文档](https://platform.openai.com/docs/api-reference/introduction)
+
 ```
 (async () => {
     // npm install openai
@@ -15704,6 +15784,8 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 #### chatPDF
 
 [PDFChat](https://github.com/dotvignesh/PDFChat)
+
+- [测试论文](https://arxiv.org/pdf/2304.01089.pdf)
 
 [chatpdf 在线使用](https://www.chatpdf.com/)
 
