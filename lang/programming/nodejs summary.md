@@ -547,6 +547,12 @@ server {
 
 
 
+### 网络压力测试
+
+[dperf 网络压测](https://github.com/baidu/dperf)
+
+
+
 ## 安装代理
 
 ```
@@ -8261,6 +8267,37 @@ You can insert Buffer (https://nodejs.org/dist/latest-v14.x/docs/api/buffer.html
 ### HLS  mpv 推流
 
 HLS  mpv 推流
+
+
+
+### 关键帧间隔
+
+1. 大家在使用ffmpeg进行视频编码时，使用-b命令，想控制比特率，却发现结果并没有如我们设置所愿，通过码流分析器观察视频码流，码率的波动还是很大的，ffmpeg控制的并不好，这时候，我们可以通过以下命令解决：
+
+```bash
+-maxrate biterate -minrate biterate -bf 1 -b_strategy 0
+1
+```
+
+其中 -maxrate、-minrate为设置最小最大比特率，-bf为设置B帧数目，其实就是设置编码是B、P、I帧的结构，我这里设置的为IPBPBP结构，-b_strategy这个命令是为了自适应的添加B帧数目，ffmpeg编码器会根据视频的应用场景，自适应的添加B帧，通过设置-b_strategy
+0，，将这个功能关闭，那么就会根据你的设置要求进行编码。除此之外，还可以使用-pass，进行2次码率控制，编出来的视频效果更好；下面我介绍-pass的使用方法：
+（1）`-pass 1 -passlogfile ffmpeg2pass` 第一步先编一次，生成 ffmpeg2pass 文件
+（2）`-pass 2 -passlogfile ffmpeg2pass` 第二次会根据第一次生成的ffmpeg2pass 文件，再进行码率控制。
+
+2. 如何设置视频关键帧I帧间隔问题
+
+刚开始我只使用-g命令，设置GOP长度，编码后，发现I帧间隔长度并不是我想要的，后来我通过以下命令问题解决了：
+
+```bash
+-keyint_min 60 -g 60 -sc_threshold 0
+1
+```
+
+其中-keyint_min为最小关键帧间隔，我这里设置为60帧；-sc_threshold这个命令会根据视频的运动场景，自动为你添加额外的I帧，所以会导致你编出来的视频关键帧间隔不是你设置的长度，这是只要将它设为0，问题就得到解决了！！
+
+
+
+
 
 
 
