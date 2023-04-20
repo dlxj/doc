@@ -70,6 +70,32 @@ https://www.zake.store/swindex.html
 
 
 
+## 3ds破解
+
+[NLP+所有文本](https://github.com/Makein/NLPPGit)
+
+[游戏字库解析教程](https://www.bilibili.com/video/BV1CB4y1M7xx/)
+
+[NLP+英化项目主页](https://www.gamebrew.org/wiki/NEW_LOVE_PLUS_PLUS_3DS)
+
+[3ds 宝可梦rom编辑](https://github.com/kwsch/pk3DS)
+
+[Switch宝可梦rom编辑](https://github.com/kwsch/pkNX)
+
+[3ds模型导出](https://projectpokemon.org/home/forums/topic/33764-ohana3ds-bch-tool-deprecated/)
+
+[细致深入](https://firefox2100.github.io/3ds/2020/04/16/3DS_Mods/)
+
+[Luma 汉化用补丁制作](https://tieba.baidu.com/p/7177655542?red_tag=2535992359)
+
+https://github.com/SaitamaHung/Luma3DS-3GX-zh-cn
+
+https://tieba.baidu.com/p/5490510814 动森
+
+[SIFT学习笔记(三)](https://firefox2100.github.io/p.e.m.p.w.s2020/02/14/SIFT(3)/)
+
+
+
 # drama
 
 - https://dubdb.fandom.com/wiki/The_Big_Bang_Theory
@@ -104,7 +130,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 > 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > 　　　　　　　　　　　　　　　　　　　　　　　　
