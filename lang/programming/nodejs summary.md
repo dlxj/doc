@@ -5186,6 +5186,20 @@ function getContent(fileName) {
 
 
 
+## 对象序列化
+
+```
+npm install protobufjs --save --save-prefix=~
+	# https://zhuanlan.zhihu.com/p/31755487
+
+
+
+```
+
+
+
+
+
 ## platform
 
 
@@ -5197,6 +5211,8 @@ function getContent(fileName) {
         throw 'unknow os type.'
     }
 ```
+
+
 
 
 
@@ -15816,8 +15832,10 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 - [QA Embeddings](https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa)
 
 ```
-npm i langchain
-
+npm i langchain && \
+npm install -S hnswlib-node && \
+npm install protobufjs --save --save-prefix=~
+	# https://zhuanlan.zhihu.com/p/31755487
 
 (async()=>{
   
@@ -15886,7 +15904,9 @@ npm i langchain
 
 
 
+##### 向量存储
 
+[hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
 
 
 
