@@ -15701,6 +15701,20 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 
 
+#### chatPDF
+
+[PDFChat](https://github.com/dotvignesh/PDFChat)
+
+[chatpdf 在线使用](https://www.chatpdf.com/)
+
+
+
+### Streamlit数据大屏
+
+[Streamlit构建你的第一个数据大屏](https://zhuanlan.zhihu.com/p/390699256)
+
+
+
 ## NLP QA
 
 
