@@ -96,6 +96,15 @@ https://tieba.baidu.com/p/5490510814 动森
 
 
 
+> Bulbasaur（妙蛙种子）是一种草/毒属性的神奇宝贝。这个名字是由两个英文词组成的，分别是 "bulb" 和 "dinosaur"。
+>
+> 1. "bulb"（球茎）：Bulbasaur 身上的植物像是一个球茎，它会随着神奇宝贝的成长而发展。Bulbasaur 的特点就是这个球茎，它可以从中汲取能量和发动特殊攻击。
+> 2. "dinosaur"（恐龙）：Bulbasaur 的外形和生活习性都有些类似于恐龙。它有四条腿，外形像是一个小恐龙。这个名字正是强调了它与恐龙之间的相似性。
+>
+> 将 "bulb" 和 "dinosaur" 结合起来就得到了 "Bulbasaur" 这个名字，强调了它是一种具有植物特征且类似恐龙的神奇宝贝。在日本原版中，它的名字是 "Fushigidane"（フシギダネ），意为“神奇的种子”，也突显了它的草属性特点。
+
+
+
 # drama
 
 - https://dubdb.fandom.com/wiki/The_Big_Bang_Theory
