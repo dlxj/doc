@@ -74,6 +74,8 @@ https://www.zake.store/swindex.html
 
 [NLP+所有文本](https://github.com/Makein/NLPPGit)
 
+- [最初的大本营](https://github.com/LovePlusProject/NLPPATCH)
+
 - [3DS|CIA|CXI解包](https://gbatemp.net/threads/tutorial-how-to-decrypt-extract-rebuild-3ds-cia-cxi-files.383055/)
   - [HackingToolkit9DS](https://github.com/Asia81/HackingToolkit9DS)
   - [3DS自制主题从入门到精通](https://www.bilibili.com/read/cv14735254)
