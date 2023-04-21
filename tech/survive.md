@@ -78,6 +78,13 @@ https://www.zake.store/swindex.html
 
 [NLP+英化项目主页](https://www.gamebrew.org/wiki/NEW_LOVE_PLUS_PLUS_3DS)
 
+- [汉化](https://github.com/wq1247/NLPP_CHN)
+  - [bilibili](https://www.bilibili.com/video/BV1aU4y1p7iw)
+
+[unity for 3ds自制游戏](https://www.youtube.com/watch?v=0q5cpwoPz9U)
+
+- [Unity For 3 DS本体](https://archive.org/details/unity-for-3-ds)
+
 [3ds 宝可梦rom编辑](https://github.com/kwsch/pk3DS)
 
 [Switch宝可梦rom编辑](https://github.com/kwsch/pkNX)
