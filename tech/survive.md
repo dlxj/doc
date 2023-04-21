@@ -74,6 +74,15 @@ https://www.zake.store/swindex.html
 
 [NLP+所有文本](https://github.com/Makein/NLPPGit)
 
+- [3DS|CIA|CXI解包](https://gbatemp.net/threads/tutorial-how-to-decrypt-extract-rebuild-3ds-cia-cxi-files.383055/)
+  - [HackingToolkit9DS](https://github.com/Asia81/HackingToolkit9DS)
+  - [3DS自制主题从入门到精通](https://www.bilibili.com/read/cv14735254)
+
+- [ROM解包](https://github.com/gdkchan/NLPUnpacker)
+- [文本解包](https://github.com/gdkchan/NLPTextTool)
+
+- [图片等的解包工具](https://github.com/LovePlusProject/nlpp-tools)
+
 [游戏字库解析教程](https://www.bilibili.com/video/BV1CB4y1M7xx/)
 
 [NLP+英化项目主页](https://www.gamebrew.org/wiki/NEW_LOVE_PLUS_PLUS_3DS)
@@ -149,7 +158,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
