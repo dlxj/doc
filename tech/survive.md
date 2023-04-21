@@ -84,6 +84,9 @@ https://www.zake.store/swindex.html
 [unity for 3ds自制游戏](https://www.youtube.com/watch?v=0q5cpwoPz9U)
 
 - [Unity For 3 DS本体](https://archive.org/details/unity-for-3-ds)
+  - [sdk](https://archive.org/details/3ds-sdk)
+- [教程](https://gbatemp.net/threads/how-to-make-3ds-games-with-unity.441193/)
+- [评论区](https://www.reddit.com/r/3dspiracy/comments/xs74yb/unity_3ds_adventures_part_2_still_no_n3ds_sdk/)
 
 [3ds 宝可梦rom编辑](https://github.com/kwsch/pk3DS)
 
