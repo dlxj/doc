@@ -338,6 +338,16 @@ Navicat for PostgreSQL版本链接工具，专门为PostgreSQL定制使用，功
 
 ```
 
+navicat 备份数据库，然后再重建数据库和表结构（注意：id 字段不要导出）
+
+还原数据库
+  su postgres
+  cd ~
+    # /var/lib/pgsql 它的主目录是这里，先把备份好的数据库传到这里来  
+    # F:\数据库备份\anime\japanese\Touch\Touch.sql
+  
+  psql -d anime -U postgres -f Touch.sql
+
 -- 在 postgres 数据库里运行
 CREATE DATABASE anime
     WITH OWNER = postgres 
