@@ -1443,6 +1443,23 @@ print(type(img_bytes))
 
 
 
+## pickle 序列化存储
+
+支持任何类型
+
+```
+import pickle
+
+	with open(filename + ".pkl", "wb") as f:
+ 		pickle.dump(vectors, f)
+ 		
+	with open(filename + ".pkl", "rb") as f:
+    	global vectores
+        vectors = pickle.load(f)
+	
+
+```
+
 
 
 

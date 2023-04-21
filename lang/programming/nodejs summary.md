@@ -135,6 +135,23 @@ ln -s /usr/local/node-v14.21.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local
 
 
 
+```
+version=v18.9.1 && \
+wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && \
+tar xvf node-$version-linux-x64.tar.gz && \
+cd node-$version-linux-x64/bin && \
+chmod +x node npm npx && \
+cd ../.. && \
+mv node-$version-linux-x64 /usr/local && \
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+```
+
+
+
+
+
 ## vscode 附加参数
 
 ```
@@ -544,6 +561,12 @@ server {
   }
 }
 ```
+
+
+
+### 网络压力测试
+
+[dperf 网络压测](https://github.com/baidu/dperf)
 
 
 
@@ -1012,6 +1035,38 @@ export const run = async () => {
 ```
 
 
+
+```
+async function f() {
+  let bent = require('bent')
+  let formurlencoded = require('form-urlencoded')
+  
+  let url = `https://api.openai.com`
+  
+  let json = {
+    "model": "text-davinci-003",
+    "prompt": "What is the meaning of life?"
+  }
+  
+  let formurlencoded_json = formurlencoded(json)
+  
+  let post = bent(url, 'POST', 'json', 200)
+  try {
+
+    // let response = await post('/v1/completions', formurlencoded_json, { 'Content-Type': 'application/json', 'Authorization': '里填openai key'} )
+    let response = await post('/v1/completions', json, { 'Content-Type': 'application/json', 'Authorization': 'Bearer 这里填openai key'} )
+
+    let a = 1
+
+  } catch (e) {
+    console.log(e)
+  }
+
+  let a = 1
+}
+
+f()
+```
 
 
 
@@ -1522,6 +1577,52 @@ const main = async () => {
 
 main()
 ```
+
+
+
+### axios
+
+
+
+#### 通过代理发送请求
+
+```
+const axios = require('axios')
+const { SocksProxyAgent } = require('socks-proxy-agent')
+
+async function sendPostRequestThroughSocks5Proxy() {
+  try {
+    const data = {
+        "model": "text-davinci-003",
+        "prompt": "What is the meaning of life?"
+    };
+
+    const proxyUrl = 'socks5://127.0.0.1:57882'
+    const proxyAgent = new SocksProxyAgent(proxyUrl)
+
+    const config = {
+      method: 'post',
+      url: 'https://api.openai.com/v1/completions',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 这里填openai key'
+      },
+      data: data,
+      httpAgent: proxyAgent,
+      httpsAgent: proxyAgent,
+    };
+
+    const response = await axios(config)
+    console.log(response.data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+sendPostRequestThroughSocks5Proxy()
+```
+
+
 
 
 
@@ -5085,6 +5186,20 @@ function getContent(fileName) {
 
 
 
+## 对象序列化
+
+```
+npm install protobufjs --save --save-prefix=~
+	# https://zhuanlan.zhihu.com/p/31755487
+
+
+
+```
+
+
+
+
+
 ## platform
 
 
@@ -5096,6 +5211,8 @@ function getContent(fileName) {
         throw 'unknow os type.'
     }
 ```
+
+
 
 
 
@@ -8261,6 +8378,37 @@ You can insert Buffer (https://nodejs.org/dist/latest-v14.x/docs/api/buffer.html
 ### HLS  mpv 推流
 
 HLS  mpv 推流
+
+
+
+### 关键帧间隔
+
+1. 大家在使用ffmpeg进行视频编码时，使用-b命令，想控制比特率，却发现结果并没有如我们设置所愿，通过码流分析器观察视频码流，码率的波动还是很大的，ffmpeg控制的并不好，这时候，我们可以通过以下命令解决：
+
+```bash
+-maxrate biterate -minrate biterate -bf 1 -b_strategy 0
+1
+```
+
+其中 -maxrate、-minrate为设置最小最大比特率，-bf为设置B帧数目，其实就是设置编码是B、P、I帧的结构，我这里设置的为IPBPBP结构，-b_strategy这个命令是为了自适应的添加B帧数目，ffmpeg编码器会根据视频的应用场景，自适应的添加B帧，通过设置-b_strategy
+0，，将这个功能关闭，那么就会根据你的设置要求进行编码。除此之外，还可以使用-pass，进行2次码率控制，编出来的视频效果更好；下面我介绍-pass的使用方法：
+（1）`-pass 1 -passlogfile ffmpeg2pass` 第一步先编一次，生成 ffmpeg2pass 文件
+（2）`-pass 2 -passlogfile ffmpeg2pass` 第二次会根据第一次生成的ffmpeg2pass 文件，再进行码率控制。
+
+2. 如何设置视频关键帧I帧间隔问题
+
+刚开始我只使用-g命令，设置GOP长度，编码后，发现I帧间隔长度并不是我想要的，后来我通过以下命令问题解决了：
+
+```bash
+-keyint_min 60 -g 60 -sc_threshold 0
+1
+```
+
+其中-keyint_min为最小关键帧间隔，我这里设置为60帧；-sc_threshold这个命令会根据视频的运动场景，自动为你添加额外的I帧，所以会导致你编出来的视频关键帧间隔不是你设置的长度，这是只要将它设为0，问题就得到解决了！！
+
+
+
+
 
 
 
@@ -15278,6 +15426,8 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 ## api
 
+[详细文档](https://platform.openai.com/docs/api-reference/introduction)
+
 ```
 (async () => {
     // npm install openai
@@ -15661,6 +15811,108 @@ https://modelscope.cn/studios/AI-ModelScope/LangChain-ChatLLM/summary
 OpenI地址：
 https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 ```
+
+
+
+#### chatPDF
+
+[PDFChat](https://github.com/dotvignesh/PDFChat)
+
+- [测试论文](https://arxiv.org/pdf/2304.01089.pdf)
+
+[chatpdf 在线使用](https://www.chatpdf.com/)
+
+
+
+#### langchainjs
+
+[langchainjs](https://github.com/hwchase17/langchainjs)
+
+- [openai chat](https://js.langchain.com/docs/getting-started/guide-chat)
+- [QA Embeddings](https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa)
+
+```
+npm i langchain && \
+npm install -S hnswlib-node && \
+npm install protobufjs --save --save-prefix=~
+	# https://zhuanlan.zhihu.com/p/31755487
+
+(async()=>{
+  
+    // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
+    // https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+
+    /*
+    
+    curl https://api.openai.com/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "input": "Your text string goes here",
+    "model": "text-embedding-ada-002"
+  }'
+    
+    */
+    let { ChatOpenAI } = await import('langchain/chat_models/openai')
+    let { HumanChatMessage, SystemChatMessage } = await import('langchain/schema')
+    let { RetrievalQAChain, loadQARefineChain } = await import('langchain/chains')
+
+    let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+    let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+    let { RecursiveCharacterTextSplitter } = await import('langchain/text_splitter')
+    let fs = require('fs')
+
+    let openAIApiKey = ""
+
+    const chat = new ChatOpenAI({ 
+        temperature: 0,
+        openAIApiKey // In Node.js defaults to process.env.OPENAI_API_KEY
+    })
+
+    let response = await chat.call([
+        new SystemChatMessage(
+          "You are a helpful assistant that translates English to French."
+        ),
+        new HumanChatMessage("Translate: I love programming."),
+    ])
+      
+    console.log(response)
+
+    const text = fs.readFileSync("text.txt", "utf8").replace(/\r\n/g, '\n')
+    const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 })
+    const docs = await textSplitter.createDocuments([text])
+    //const docs = await textSplitter.createDocuments(["Translate: I love programming."])
+
+    const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({
+      openAIApiKey, 
+      modelName:'text-embedding-ada-002',
+      maxConcurrency: 1, timeout: 30000
+    }))
+
+    // Create a chain that uses the OpenAI LLM and HNSWLib vector store.
+    const chain = RetrievalQAChain.fromLLM(chat, vectorStore.asRetriever())
+    const res = await chain.call({
+      //query: "呼吸道的主要生理功能是什么",
+      query: "总结一下这编文章",
+
+    })
+    console.log( res.text )
+    
+})()
+
+```
+
+
+
+##### 向量存储
+
+[hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
+
+
+
+### Streamlit数据大屏
+
+[Streamlit构建你的第一个数据大屏](https://zhuanlan.zhihu.com/p/390699256)
 
 
 
