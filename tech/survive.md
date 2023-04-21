@@ -104,18 +104,27 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
-> 　　　　　　　　　　　　　　　　　　　　　　　　
-> 　　　　　　　　　　　　　　　　　　　　　　　　    [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
-> 　　　　　　　　　　　　　　　　　　　　　　　　
-> 　　　　　　　　　　　　　　　　　　　　　　　　    [Textractor 必看](https://github.com/Artikash/Textractor/issues/215)
-> 　　　　　　　　　　　　　　　　　　　　　　　　
-> 　　　　　　　　　　　　　　　　　　　　　　　　    > HSN65001#16400000+-1C:-18*-8@1726B094 => られるなんて
-> 　　　　　　　　　　　　　　　　　　　　　　　　    > 結構貴重な体験かも……。）
-> 　　　　　　　　　　　　　　　　　　　　　　　　
-> 　　　　　　　　　　　　　　　　　　　　　　　　    [Translate PSP text from Japanese to English with VNR!](https://scan-vn.blogspot.com/2014/09/translate-psp-games-vn-from-japanese-to.html)
-> 　　　　　　　　　　　　　　　　　　　　　　　　
-> 　　　　　　　　　　　　　　　　　　　　　　　　    [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+>
+> > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
+> >
+> > ```
+> > 6:4EF4:1726AD09:0:89D74E8:UserHook3:HSN65001#16400000+-8:-18*-8@1726AD09
+> > 最终正确的特殊码
+> > 
+> > HSN65001#16400000+-8:-18*-8@1726AD09   
+> > ホントですか！？
+> > ありがとうございます！
+> > ```
+>
+> [Textractor 必看](https://github.com/Artikash/Textractor/issues/215)
+>
+> > HSN65001#16400000+-1C:-18*-8@1726B094 => られるなんて
+> > 結構貴重な体験かも……。）
+>
+> [Translate PSP text from Japanese to English with VNR!](https://scan-vn.blogspot.com/2014/09/translate-psp-games-vn-from-japanese-to.html)
+>
+> [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 
 T.K.M.N字幕组
 
