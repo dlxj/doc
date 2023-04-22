@@ -345,7 +345,7 @@ navicat 备份数据库，然后再重建数据库和表结构（注意：id 字
   cd ~
     # /var/lib/pgsql 它的主目录是这里，先把备份好的数据库传到这里来  
     # F:\数据库备份\anime\japanese\Touch\Touch.sql
-  
+  cd /mnt/数据库备份/anime/japanese/Touch
   psql -d anime -U postgres -f Touch.sql
 
 -- 在 postgres 数据库里运行
