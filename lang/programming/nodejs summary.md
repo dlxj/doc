@@ -18652,6 +18652,10 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 
 
+# 范畴论
+
+[范畴论完全装逼手册](https://blog.oyanglul.us/grokking-monad/part1)
+
 
 
 # Excel
