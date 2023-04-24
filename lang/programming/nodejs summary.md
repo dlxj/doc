@@ -15860,10 +15860,12 @@ npm install protobufjs --save --save-prefix=~
 
 (async()=>{
   
-    // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
+        // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
     // https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
 
     /*
+
+    ConversationChain
     
     curl https://api.openai.com/v1/embeddings \
   -H "Content-Type: application/json" \
@@ -15876,16 +15878,51 @@ npm install protobufjs --save --save-prefix=~
     */
     let { ChatOpenAI } = await import('langchain/chat_models/openai')
     let { HumanChatMessage, SystemChatMessage } = await import('langchain/schema')
-    let { RetrievalQAChain, loadQARefineChain } = await import('langchain/chains')
+    let { RetrievalQAChain, loadQARefineChain, ConversationalRetrievalQAChain } = await import('langchain/chains')
 
     let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
     let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
     let { RecursiveCharacterTextSplitter } = await import('langchain/text_splitter')
+
+    // let { ConversationalRetrievalChain } = await import('langchain/chains')
+
+    let { FAISS } = await import('langchain/vectorstores')
+
+
+    test: {
+      let vectorStore = await HNSWLib.fromTexts(
+        ["Hello world", "Bye bye", "hello nice world"],
+        [{ id: 2 }, { id: 1 }, { id: 3 }],
+        new OpenAIEmbeddings({
+          openAIApiKey, 
+          modelName:'text-embedding-ada-002',
+          maxConcurrency: 1, timeout: 30000
+        })
+      )
+
+      const dir = "data";
+      await vectorStore.save(dir)
+
+      let loadedVectorStore = await HNSWLib.load(
+        dir,
+        new OpenAIEmbeddings({
+          openAIApiKey, 
+          modelName:'text-embedding-ada-002',
+          maxConcurrency: 1, timeout: 30000
+        })      
+      )
+
+      const result = await loadedVectorStore.similaritySearch("hello", 1)
+      console.log(result)
+
+    }
+
+
     let fs = require('fs')
+    let protobuf = require("protobufjs")
 
-    let openAIApiKey = ""
 
-    const chat = new ChatOpenAI({ 
+    const chat = new ChatOpenAI({
         temperature: 0,
         openAIApiKey // In Node.js defaults to process.env.OPENAI_API_KEY
     })
@@ -15912,11 +15949,14 @@ npm install protobufjs --save --save-prefix=~
 
     // Create a chain that uses the OpenAI LLM and HNSWLib vector store.
     const chain = RetrievalQAChain.fromLLM(chat, vectorStore.asRetriever())
-    const res = await chain.call({
-      //query: "呼吸道的主要生理功能是什么",
-      query: "总结一下这编文章",
+    // const res = await chain.call({
+    //   //query: "呼吸道的主要生理功能是什么",
+    //   query: "总结一下这编文章",
 
-    })
+    // })
+    const res = await chain.call([
+      new HumanChatMessage("总结一下这编文章")
+    ])
     console.log( res.text )
     
 })()
