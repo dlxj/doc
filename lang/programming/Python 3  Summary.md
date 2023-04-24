@@ -30,6 +30,15 @@ python3 -m pip install --no-deps -U yt-dlp "
 
 
 
+```
+# 这样装就好好的，普通装就不对？
+D:\usr\Python311\python.exe -m pip install -r .\requirements.txt
+```
+
+
+
+
+
 ## chatgpt api
 
 - https://github.com/acheong08/ChatGPT

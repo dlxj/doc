@@ -15845,6 +15845,287 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 
 
+```
+# app.py
+api_key = ""
+
+# streamlit run app.py
+
+from PyPDF2 import PdfReader
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.vectorstores import FAISS
+from langchain.chains.question_answering import load_qa_chain
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import ConversationalRetrievalChain
+import pickle
+from pathlib import Path
+from dotenv import load_dotenv
+import os
+import streamlit as st
+from streamlit_chat import message
+import io
+import asyncio
+
+load_dotenv()
+#api_key = os.getenv('OPENAI_API_KEY')
+
+
+# vectors = getDocEmbeds("gpt4.pdf")
+# qa = ChatVectorDBChain.from_llm(ChatOpenAI(model_name="gpt-3.5-turbo"), vectors, return_source_documents=True)
+
+async def main():
+
+    async def storeDocEmbeds(file, filename):
+    
+        reader = PdfReader(file)
+        corpus = ''.join([p.extract_text() for p in reader.pages if p.extract_text()])
+        
+        splitter =  RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200,)
+        chunks = splitter.split_text(corpus)
+        
+        embeddings = OpenAIEmbeddings(openai_api_key = api_key)
+        vectors = FAISS.from_texts(chunks, embeddings)
+        
+        with open(filename + ".pkl", "wb") as f:
+            pickle.dump(vectors, f)
+
+        
+    async def getDocEmbeds(file, filename):
+        
+        if not os.path.isfile(filename + ".pkl"):
+            await storeDocEmbeds(file, filename)
+        
+        with open(filename + ".pkl", "rb") as f:
+            global vectores
+            vectors = pickle.load(f)
+            
+        return vectors
+    
+
+    async def conversational_chat(query):
+        result = qa({"question": query, "chat_history": st.session_state['history']})
+        st.session_state['history'].append((query, result["answer"]))
+        # print("Log: ")
+        # print(st.session_state['history'])
+        return result["answer"]
+
+
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=api_key)
+    chain = load_qa_chain(llm, chain_type="stuff")
+
+    if 'history' not in st.session_state:
+        st.session_state['history'] = []
+
+
+    #Creating the chatbot interface
+    st.title("PDFChat :")
+
+    if 'ready' not in st.session_state:
+        st.session_state['ready'] = False
+
+    uploaded_file = st.file_uploader("Choose a file", type="pdf")
+
+    if uploaded_file is not None:
+
+        with st.spinner("Processing..."):
+        # Add your code here that needs to be executed
+            uploaded_file.seek(0)
+            file = uploaded_file.read()
+            # pdf = PyPDF2.PdfFileReader()
+            vectors = await getDocEmbeds(io.BytesIO(file), uploaded_file.name)
+            qa = ConversationalRetrievalChain.from_llm(ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=api_key), retriever=vectors.as_retriever(), return_source_documents=True)
+
+        st.session_state['ready'] = True
+
+    st.divider()
+
+    if st.session_state['ready']:
+
+        if 'generated' not in st.session_state:
+            st.session_state['generated'] = ["Welcome! You can now ask any questions regarding " + uploaded_file.name]
+
+        if 'past' not in st.session_state:
+            st.session_state['past'] = ["Hey!"]
+
+        # container for chat history
+        response_container = st.container()
+
+        # container for text box
+        container = st.container()
+
+        with container:
+            with st.form(key='my_form', clear_on_submit=True):
+                user_input = st.text_input("Query:", placeholder="e.g: Summarize the paper in a few sentences", key='input')
+                submit_button = st.form_submit_button(label='Send')
+
+            if submit_button and user_input:
+                output = await conversational_chat(user_input)
+                st.session_state['past'].append(user_input)
+                st.session_state['generated'].append(output)
+
+        if st.session_state['generated']:
+            with response_container:
+                for i in range(len(st.session_state['generated'])):
+                    message(st.session_state["past"][i], is_user=True, key=str(i) + '_user', avatar_style="thumbs")
+                    message(st.session_state["generated"][i], key=str(i), avatar_style="fun-emoji")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+
+
+```
+# 这样装就好好的，普通装就不对？
+D:\usr\Python311\python.exe -m pip install -r .\requirements.txt
+
+# requirements.txt
+aiohttp==3.8.4
+aiosignal==1.3.1
+altair==4.2.2
+anyio==3.6.2
+appnope==0.1.3
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
+arrow==1.2.3
+asttokens==2.2.1
+async-timeout==4.0.2
+attrs==22.2.0
+backcall==0.2.0
+beautifulsoup4==4.12.1
+bleach==6.0.0
+blinker==1.6
+cachetools==5.3.0
+certifi==2022.12.7
+cffi==1.15.1
+charset-normalizer==3.1.0
+click==8.1.3
+comm==0.1.3
+dataclasses-json==0.5.7
+debugpy==1.6.7
+decorator==5.1.1
+defusedxml==0.7.1
+entrypoints==0.4
+executing==1.2.0
+faiss-cpu==1.7.3
+fastjsonschema==2.16.3
+fqdn==1.5.1
+frozenlist==1.3.3
+gitdb==4.0.10
+GitPython==3.1.31
+greenlet==2.0.2
+idna==3.4
+importlib-metadata==6.1.0
+ipykernel==6.22.0
+ipython==8.12.0
+ipython-genutils==0.2.0
+isoduration==20.11.0
+jedi==0.18.2
+Jinja2==3.1.2
+jsonpointer==2.3
+jsonschema==4.17.3
+jupyter_client==8.1.0
+jupyter_core==5.3.0
+jupyter-events==0.6.3
+jupyter_server==2.5.0
+jupyter_server_terminals==0.4.4
+jupyterlab-pygments==0.2.2
+langchain==0.0.133
+markdown-it-py==2.2.0
+MarkupSafe==2.1.2
+marshmallow==3.19.0
+marshmallow-enum==1.5.1
+matplotlib-inline==0.1.6
+mdurl==0.1.2
+mistune==2.0.5
+multidict==6.0.4
+mypy-extensions==1.0.0
+nbclassic==0.5.5
+nbclient==0.7.3
+nbconvert==7.3.0
+nbformat==5.8.0
+nest-asyncio==1.5.6
+notebook==6.5.4
+notebook_shim==0.2.2
+numpy==1.24.2
+openai==0.27.4
+openapi-schema-pydantic==1.2.4
+packaging==23.0
+pandas==1.5.3
+pandocfilters==1.5.0
+parso==0.8.3
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow==9.5.0
+pip==23.0.1
+platformdirs==3.2.0
+prometheus-client==0.16.0
+prompt-toolkit==3.0.38
+protobuf==3.20.3
+psutil==5.9.4
+ptyprocess==0.7.0
+pure-eval==0.2.2
+pyarrow==11.0.0
+pycparser==2.21
+pydantic==1.10.7
+pydeck==0.8.0
+Pygments==2.14.0
+Pympler==1.0.1
+PyPDF2==3.0.1
+pyrsistent==0.19.3
+python-dateutil==2.8.2
+python-dotenv==1.0.0
+python-json-logger==2.0.7
+pytz==2023.3
+pytz-deprecation-shim==0.1.0.post0
+PyYAML==6.0
+pyzmq==25.0.2
+requests==2.28.2
+rfc3339-validator==0.1.4
+rfc3986-validator==0.1.1
+rich==13.3.3
+Send2Trash==1.8.0
+setuptools==65.6.3
+six==1.16.0
+smmap==5.0.0
+sniffio==1.3.0
+soupsieve==2.4
+SQLAlchemy==1.4.47
+stack-data==0.6.2
+streamlit==1.21.0
+streamlit-chat==0.0.2.2
+tenacity==8.2.2
+terminado==0.17.1
+tinycss2==1.2.1
+toml==0.10.2
+toolz==0.12.0
+tornado==6.2
+tqdm==4.65.0
+traitlets==5.9.0
+typing_extensions==4.5.0
+typing-inspect==0.8.0
+tzdata==2023.3
+tzlocal==4.3
+uri-template==1.2.0
+urllib3==1.26.15
+validators==0.20.0
+wcwidth==0.2.6
+webcolors==1.13
+webencodings==0.5.1
+websocket-client==1.5.1
+wheel==0.38.4
+yarl==1.8.2
+zipp==3.15.0
+```
+
+
+
+
+
+
+
 #### langchainjs
 
 [langchainjs](https://github.com/hwchase17/langchainjs)
