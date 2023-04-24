@@ -70,6 +70,62 @@ https://www.zake.store/swindex.html
 
 
 
+## 3ds破解
+
+[NLP+所有文本](https://github.com/Makein/NLPPGit)
+
+- [最初的大本营](https://github.com/LovePlusProject/NLPPATCH)
+
+- [3DS|CIA|CXI解包](https://gbatemp.net/threads/tutorial-how-to-decrypt-extract-rebuild-3ds-cia-cxi-files.383055/)
+  - [HackingToolkit9DS](https://github.com/Asia81/HackingToolkit9DS)
+  - [3DS自制主题从入门到精通](https://www.bilibili.com/read/cv14735254)
+
+- [ROM解包](https://github.com/gdkchan/NLPUnpacker)
+- [文本解包](https://github.com/gdkchan/NLPTextTool)
+
+- [图片等的解包工具](https://github.com/LovePlusProject/nlpp-tools)
+
+[游戏字库解析教程](https://www.bilibili.com/video/BV1CB4y1M7xx/)
+
+[NLP+英化项目主页](https://www.gamebrew.org/wiki/NEW_LOVE_PLUS_PLUS_3DS)
+
+- [汉化](https://github.com/wq1247/NLPP_CHN)
+  - [bilibili](https://www.bilibili.com/video/BV1aU4y1p7iw)
+
+[unity for 3ds自制游戏](https://www.youtube.com/watch?v=0q5cpwoPz9U)
+
+- [Unity For 3 DS本体](https://archive.org/details/unity-for-3-ds)
+  - [sdk](https://archive.org/details/3ds-sdk)
+- [教程](https://gbatemp.net/threads/how-to-make-3ds-games-with-unity.441193/)
+- [评论区](https://www.reddit.com/r/3dspiracy/comments/xs74yb/unity_3ds_adventures_part_2_still_no_n3ds_sdk/)
+
+[3ds 宝可梦rom编辑](https://github.com/kwsch/pk3DS)
+
+[Switch宝可梦rom编辑](https://github.com/kwsch/pkNX)
+
+[3ds模型导出](https://projectpokemon.org/home/forums/topic/33764-ohana3ds-bch-tool-deprecated/)
+
+[细致深入](https://firefox2100.github.io/3ds/2020/04/16/3DS_Mods/)
+
+[Luma 汉化用补丁制作](https://tieba.baidu.com/p/7177655542?red_tag=2535992359)
+
+https://github.com/SaitamaHung/Luma3DS-3GX-zh-cn
+
+https://tieba.baidu.com/p/5490510814 动森
+
+[SIFT学习笔记(三)](https://firefox2100.github.io/p.e.m.p.w.s2020/02/14/SIFT(3)/)
+
+
+
+> Bulbasaur（妙蛙种子）是一种草/毒属性的神奇宝贝。这个名字是由两个英文词组成的，分别是 "bulb" 和 "dinosaur"。
+>
+> 1. "bulb"（球茎）：Bulbasaur 身上的植物像是一个球茎，它会随着神奇宝贝的成长而发展。Bulbasaur 的特点就是这个球茎，它可以从中汲取能量和发动特殊攻击。
+> 2. "dinosaur"（恐龙）：Bulbasaur 的外形和生活习性都有些类似于恐龙。它有四条腿，外形像是一个小恐龙。这个名字正是强调了它与恐龙之间的相似性。
+>
+> 将 "bulb" 和 "dinosaur" 结合起来就得到了 "Bulbasaur" 这个名字，强调了它是一种具有植物特征且类似恐龙的神奇宝贝。在日本原版中，它的名字是 "Fushigidane"（フシギダネ），意为“神奇的种子”，也突显了它的草属性特点。
+
+
+
 # drama
 
 - https://dubdb.fandom.com/wiki/The_Big_Bang_Theory
@@ -104,7 +160,28 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+>
+> > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
+> >
+> > ```
+> > 6:4EF4:1726AD09:0:89D74E8:UserHook3:HSN65001#16400000+-8:-18*-8@1726AD09
+> > 最终正确的特殊码
+> > 
+> > HSN65001#16400000+-8:-18*-8@1726AD09   
+> > ホントですか！？
+> > ありがとうございます！
+> > ```
+>
+> [Textractor 必看](https://github.com/Artikash/Textractor/issues/215)
+>
+> > HSN65001#16400000+-1C:-18*-8@1726B094 => られるなんて
+> > 結構貴重な体験かも……。）
+>
+> [Translate PSP text from Japanese to English with VNR!](https://scan-vn.blogspot.com/2014/09/translate-psp-games-vn-from-japanese-to.html)
+>
+> [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 > 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > 　　　　　　　　　　　　　　　　　　　　　　　　
