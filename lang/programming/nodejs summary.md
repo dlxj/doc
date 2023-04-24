@@ -15843,6 +15843,8 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 [gpt4-pdf-chatbot-langchain nodejs版](https://github.com/mayooear/gpt4-pdf-chatbot-langchain)
 
+> set the vector dimensions to 1536
+
 [chatpdf 在线使用](https://www.chatpdf.com/)
 
 
@@ -19141,9 +19143,21 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 [范畴论完全装逼手册](https://blog.oyanglul.us/grokking-monad/part1)
 
-
+[Haskell中的范畴之函子和自然变换](https://zhuanlan.zhihu.com/p/25565309)
 
 dependent type
+
+
+
+态射（Morphism）是两个对象间的箭头，集合的箭头是函数，群论是群同态，拓朴是连续函数，泛代数是同态。
+
+范畴里面有对象和态射
+
+范畴的范畴（它里面的对象是范畴，它里面的箭头称为**函子**）
+
+函子（Functor）是范畴间的态射，也叫为自然变换。
+
+
 
 
 
