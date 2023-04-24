@@ -174,7 +174,7 @@ ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
 
 
 
-## vscode 仅限错误
+## vscode 权限错误
 
 Bad owner or permissions on C:\\Users\\i/.ssh/config 
 
