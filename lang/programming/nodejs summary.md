@@ -15841,7 +15841,109 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 - [测试论文](https://arxiv.org/pdf/2304.01089.pdf)
 
+[gpt4-pdf-chatbot-langchain nodejs版](https://github.com/mayooear/gpt4-pdf-chatbot-langchain)
+
 [chatpdf 在线使用](https://www.chatpdf.com/)
+
+
+
+```
+ // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
+  // https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+
+  /*
+
+  ConversationChain
+  
+  curl https://api.openai.com/v1/embeddings \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $OPENAI_API_KEY" \
+-d '{
+  "input": "Your text string goes here",
+  "model": "text-embedding-ada-002"
+}'
+  
+  */
+  let { ChatOpenAI } = await import('langchain/chat_models/openai')
+  let { HumanChatMessage, SystemChatMessage } = await import('langchain/schema')
+  let { RetrievalQAChain, loadQAChain, loadQARefineChain, ConversationalRetrievalQAChain } = await import('langchain/chains')
+  let { ChatMessageHistory } = await import('langchain/memory')
+
+  let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+  let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+  let { RecursiveCharacterTextSplitter } = await import('langchain/text_splitter')
+
+  // let { ConversationalRetrievalChain } = await import('langchain/chains')
+
+  // let { FAISS } = await import('langchain/vectorstores')
+
+
+  test: {
+    // let vectorStore = await HNSWLib.fromTexts(
+    //   ["Hello world", "Bye bye", "hello nice world"],
+    //   [{ id: 2 }, { id: 1 }, { id: 3 }],
+    //   new OpenAIEmbeddings({
+    //     openAIApiKey, 
+    //     modelName:'text-embedding-ada-002',
+    //     maxConcurrency: 1, timeout: 30000
+    //   })
+    // )
+
+    // const dir = "data";
+    // await vectorStore.save(dir)
+
+    // let loadedVectorStore = await HNSWLib.load(
+    //   dir,
+    //   new OpenAIEmbeddings({
+    //     openAIApiKey, 
+    //     modelName:'text-embedding-ada-002',
+    //     maxConcurrency: 1, timeout: 30000
+    //   })      
+    // )
+
+    // const result = await loadedVectorStore.similaritySearch("hello", 1)
+    // console.log(result)
+
+  }
+
+
+  let fs = require('fs')
+  let protobuf = require("protobufjs")
+
+
+  const chat = new ChatOpenAI({
+    temperature: 0,
+    openAIApiKey // In Node.js defaults to process.env.OPENAI_API_KEY
+  })
+
+  let qachain = loadQAChain(chat, { type: "stuff" })
+
+  const text = fs.readFileSync("text.txt", "utf8").replace(/\r\n/g, '\n')
+  const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 })
+  const docs = await textSplitter.createDocuments([text])
+
+  const vectors = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({
+    openAIApiKey,
+    modelName: 'text-embedding-ada-002',
+    maxConcurrency: 1, timeout: 30000
+  }))
+
+  let qa = ConversationalRetrievalQAChain.fromLLM(chat, vectors.asRetriever(), { returnSourceDocuments: true })
+
+  let query = '继续补充'
+
+  let chatHistory = new ChatMessageHistory([])
+  await chatHistory.addUserMessage('用中文总结一下材料内容')
+  await chatHistory.addAIChatMessage('这篇文章介绍了呼吸系统的结构和功能，包括呼吸道、下呼吸道、肺和肺泡。肺泡上皮细胞有两型，分别构成气血屏障和分泌表面活性物质。肺内气体交换主要在肺泡进行。')
+  // await chatHistory.clear()
+
+  let result = await qa._call({ "question": query, "chat_history": chatHistory })
+  
+# 虽然没出错，但是历史消息没有效果
+
+```
+
+
 
 
 
@@ -15874,6 +15976,7 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 
 ```
+# node18 above
 # app.py
 api_key = ""
 
@@ -16006,6 +16109,7 @@ if __name__ == "__main__":
 
 
 ```
+# node18 above
 # 这样装就好好的，普通装就不对？
 D:\usr\Python311\python.exe -m pip install -r .\requirements.txt
 
@@ -19036,6 +19140,10 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 # 范畴论
 
 [范畴论完全装逼手册](https://blog.oyanglul.us/grokking-monad/part1)
+
+
+
+dependent type
 
 
 
