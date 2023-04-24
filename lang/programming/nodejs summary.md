@@ -15846,6 +15846,34 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 
 ```
+    const chat = new ChatOpenAI({
+        temperature: 0,
+        openAIApiKey // In Node.js defaults to process.env.OPENAI_API_KEY
+    })
+
+    let qachain = loadQAChain(chat, { type:"stuff" })
+
+    const text = fs.readFileSync("text.txt", "utf8").replace(/\r\n/g, '\n')
+    const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 })
+    const docs = await textSplitter.createDocuments([text])
+
+    const vectors = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({
+      openAIApiKey, 
+      modelName:'text-embedding-ada-002',
+      maxConcurrency: 1, timeout: 30000
+    }))
+
+    let qa = ConversationalRetrievalQAChain.fromLLM(chat, vectors.asRetriever(), { returnSourceDocuments:true })
+
+    let query = '总结一下这编论文'
+
+    let result = await qa._call({"question": query, "chat_history": []})
+
+```
+
+
+
+```
 # app.py
 api_key = ""
 
@@ -16364,6 +16392,8 @@ SOTA结果是什么
 ## pdfchat
 
 [PDFChat](https://github.com/dotvignesh/PDFChat)
+
+[gpt4-pdf-chatbot-langchain nodejs版的](https://github.com/mayooear/gpt4-pdf-chatbot-langchain)
 
 [chatpdf 在线使用](https://www.chatpdf.com/)
 
