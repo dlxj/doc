@@ -15781,6 +15781,8 @@ https://www.v2ex.com/t/920673#reply1 Chatgpt api 的 Siri shortcut
 
 [openai embeddings 各种宝藏](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
 
+[语义文本搜索](https://github.com/openai/openai-cookbook/blob/main/examples/Semantic_text_search_using_embeddings.ipynb)
+
 
 
 ### 问答和语义搜索
@@ -15907,6 +15909,34 @@ npm install protobufjs --save --save-prefix=~
 ##### 向量存储
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
+
+
+
+###### pinecone
+
+[pinecone-ts-client](https://github.com/pinecone-io/pinecone-ts-client)
+
+```
+import { axios } from "@pipedream/platform"
+export default defineComponent({
+  props: {
+    pinecone: {
+      type: "app",
+      app: "pinecone",
+    }
+  },
+  async run({steps, $}) {
+    return await axios($, {
+      url: `https://controller.${this.pinecone.$auth.environment}.pinecone.io/collections`,
+      headers: {
+        "Api-Key": `${this.pinecone.$auth.api_key}`,
+      },
+    })
+  },
+})
+```
+
+
 
 
 
