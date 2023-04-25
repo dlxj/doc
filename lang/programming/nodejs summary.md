@@ -15850,7 +15850,9 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
 
 
 ```
- // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
+# 正常输出了历史聊天记录后的内容
+
+  // https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa
   // https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
 
   /*
@@ -15913,6 +15915,22 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
   let protobuf = require("protobufjs")
 
 
+  const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
+
+  Chat History:
+  {chat_history}
+  Follow Up Input: {question}
+  Standalone question:`;
+  
+  const QA_PROMPT = `You are a helpful AI assistant. Use the following pieces of context to answer the question at the end.
+  If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
+  If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
+  
+  {context}
+  
+  Question: {question}
+  Helpful answer in markdown:`;
+
   const chat = new ChatOpenAI({
     temperature: 0,
     openAIApiKey // In Node.js defaults to process.env.OPENAI_API_KEY
@@ -15930,18 +15948,39 @@ https://openi.pcl.ac.cn/Learning-Develop-Union/LangChain-ChatGLM-Webui
     maxConcurrency: 1, timeout: 30000
   }))
 
-  let qa = ConversationalRetrievalQAChain.fromLLM(chat, vectors.asRetriever(), { returnSourceDocuments: true })
+  let qa = ConversationalRetrievalQAChain.fromLLM(
+    new ChatOpenAI({ openAIApiKey }), 
+    vectors.asRetriever(), 
+    {
+      qaTemplate: QA_PROMPT,
+      questionGeneratorTemplate: CONDENSE_PROMPT,
+      returnSourceDocuments: true, //The number of source documents returned is 4 by default
+    }
+  )
 
-  let query = '继续补充'
+  let query = `  Chat History:用中文总结一下材料内容\n这篇文章介绍了呼吸系统的结构和功能，包括呼吸道、下呼吸道、肺和肺泡。肺泡上皮细胞有两型，分别构成气血屏障和分泌表面活性物质。肺内气体交换主要在肺泡进行。\n\nQuestion:继续补充`
 
   let chatHistory = new ChatMessageHistory([])
   await chatHistory.addUserMessage('用中文总结一下材料内容')
   await chatHistory.addAIChatMessage('这篇文章介绍了呼吸系统的结构和功能，包括呼吸道、下呼吸道、肺和肺泡。肺泡上皮细胞有两型，分别构成气血屏障和分泌表面活性物质。肺内气体交换主要在肺泡进行。')
   // await chatHistory.clear()
 
-  let result = await qa._call({ "question": query, "chat_history": chatHistory })
+  let result = await qa._call({ "question": query, "chat_history": new ChatMessageHistory([
+    '用中文总结一下材料内容',
+    '这篇文章介绍了呼吸系统的结构和功能，包括呼吸道、下呼吸道、肺和肺泡。肺泡上皮细胞有两型，分别构成气血屏障和分泌表面活性物质。肺内气体交换主要在肺泡进行。'
+  ])})
+
+  // async saveContext(inputValues, outputValues) {
+  //   // this is purposefully done in sequence so they're saved in order
+  //   await this.chatHistory.addUserMessage(getInputValue(inputValues, this.inputKey));
+  //   await this.chatHistory.addAIChatMessage(getInputValue(outputValues, this.outputKey));
+  // }
+  // async clear() {
+  //   await this.chatHistory.clear();
+  // }
+
+  console.log('hi,,,')
   
-# 虽然没出错，但是历史消息没有效果
 
 ```
 
@@ -16387,6 +16426,8 @@ npm install protobufjs --save --save-prefix=~
 
 
 ###### pinecone
+
+[examples](https://docs.pinecone.io/docs/examples)
 
 [pinecone-ts-client](https://github.com/pinecone-io/pinecone-ts-client)
 
