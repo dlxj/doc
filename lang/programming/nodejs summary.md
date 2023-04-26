@@ -10057,6 +10057,29 @@ nvidia-smi
 
 
 
+
+## Docker for CentOS7
+
+[How to Install Docker on CentOS 7](https://phoenixnap.com/kb/how-to-install-docker-centos-7)
+
+[How To Install and Use Docker on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7)
+
+```
+yum install -y yum-utils device-mapper-persistent-data lvm2 && \
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
+yum install -y docker
+
+systemctl start docker && \
+systemctl enable docker && \
+systemctl status docker 
+
+```
+
+
+
+
+
+
 ## Docker Desktop for Windows
 
 ### win10 ping 不通 docker
