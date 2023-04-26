@@ -355,6 +355,7 @@ apt -y install gdb lcov libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev lib
 
 ```python
 VERSION=3.8.3 && \
+VERSION=3.11.3 && \
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
 tar -xf Python-${VERSION}.tgz && \
 cd Python-${VERSION} && \
