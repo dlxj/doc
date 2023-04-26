@@ -610,6 +610,17 @@ yum install libsodium -y && \
 pip install shadowsocksr-cli
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
+	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
+	dnf install perl-core zlib-devel -y
+		# centos8
+    wget https://www.openssl.org/source/openssl-1.1.1i.tar.gz && \
+    tar -xzvf openssl-1.1.1i.tar.gz && \
+    cd openssl-1.1.1i && \
+    ./config && \
+    make && \
+    make install
+  
+
 apt-get update -y && \
 apt-get install -y libsodium-dev && \
 pip install shadowsocksr-cli 
