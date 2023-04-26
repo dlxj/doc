@@ -8741,6 +8741,10 @@ http {
 
 # docker
 
+[官方镜像](https://hub.docker.com/_/centos/tags)
+
+
+
 > ```
 > doc\lang\programming\postgresql summary.md  看这里
 > ### Xshell如何连接Docker容器中的Linux
