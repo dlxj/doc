@@ -10130,6 +10130,10 @@ yum update --allowerasing
 
 yum isntall wget -y
 
+dnf group install "Development Tools"
+
+
+
 
 
 docker run -tid --name ubuntu_ChatGPT_507 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5077:507 --privileged=true centos:centos7 /sbin/init
