@@ -675,7 +675,8 @@ sed -i -e "s|releasever|releasever-stream|g" /etc/yum.repos.d/CentOS-*
 
 yum clean all && yum makecache
 
-yum update
+yum update --allowerasing
+
 ```
 
 
@@ -10084,10 +10085,100 @@ systemctl status docker
 ### ChatGPT
 
 ```
-docker run -tid --name centos7_ChatGPT_507 -p 222:22 -p 5077:507 --privileged=true centos:centos7 /sbin/init
+vi  /etc/docker/daemon.json
+改成这样：
+{
+    "registry-mirrors": [
+        "http://hub-mirror.c.163.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://registry.docker-cn.com"
+    ]
+}
+
+systemctl daemon-reload && \
+service docker restart && \
+docker info
+
+
+docker pull centos:centos7
+	# docker pull centos:centos8  
+		# 看看这个行不行
+	# docker pull ubuntu:20.04 # 出错
+	# docker pull almalinux
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+	# docker network rm customnetwork
+
+docker run -tid --name centos8_ChatGPT_507 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5077:507 --privileged=true centos:centos8 /sbin/init
+
+docker exec -it centos8_ChatGPT_507 bash
+
+docker 退出方法
+	# kill -9  $(jobs -p)
+	# exit
+
+# centos8 没有软件源
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+
+sed -i -e"s|mirrors.cloud.aliyuncs.com|mirrors.aliyun.com|g " /etc/yum.repos.d/CentOS-*
+
+sed -i -e "s|releasever|releasever-stream|g" /etc/yum.repos.d/CentOS-*
+
+yum clean all && yum makecache
+
+yum update --allowerasing
+
+
+
+docker run -tid --name ubuntu_ChatGPT_507 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5077:507 --privileged=true centos:centos7 /sbin/init
+
+
+
+
+
+
+docker run -tid --name centos7_ChatGPT_507 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5077:507 --privileged=true centos:centos7 /sbin/init
+
+docker stop centos7_ChatGPT_507 && \
+docker rm centos7_ChatGPT_507  && \
+docker image rm centos:centos7 
+
+docker stop ubuntu_ChatGPT_507 && \
+docker rm ubuntu_ChatGPT_507
+
+
+docker exec -it centos7_ChatGPT_507 bash
+
+yum update -y && \
+yum groupinstall -y "Development Tools" "Development Libraries"
+	# rm -f /var/run/yum.pid
+
+
+version=v18.9.1 && \
+wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && \
+tar xvf node-$version-linux-x64.tar.gz && \
+cd node-$version-linux-x64/bin && \
+chmod +x node npm npx && \
+cd ../.. && \
+mv node-$version-linux-x64 /usr/local && \
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+	# `GLIBC_2.27' not found 
+
+kill -9 $(jobs -p)
+	# 可以正常 exit 容器了
+		
+
+docker exec -it centos7_ChatGPT_507 bash -c "systemctl enable nginx && systemctl start nginx && systemctl status nginx" 
+
 
 
 ```
+
+
+
+## Docker for ubuntu20.04
 
 
 
