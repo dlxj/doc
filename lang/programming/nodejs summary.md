@@ -16461,6 +16461,12 @@ export default defineComponent({
 
 
 
+### gpt4-playground
+
+[gpt4-playground](https://github.com/Nashex/gpt4-playground)
+
+
+
 ## NLP QA
 
 
@@ -19108,7 +19114,19 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 
 
 
-# video download
+# Tampermonkey  + chrome script
+
+
+
+## chatgpt delete answer
+
+[[GPT-4] 后端程序员的第一个纯前端 chrome 插件](https://www.v2ex.com/t/935426) 
+
+- [u](https://github.com/qcrao/bulk-delete-chatGPT)
+
+
+
+## video download
 
 [写了一个无限制视频下载脚本](https://www.v2ex.com/t/856510)
 
