@@ -619,7 +619,13 @@ pip install shadowsocksr-cli
     ./config && \
     make && \
     make install
-  
+  	cd /etc/ld.so.conf.d/
+  	vi openssl-1.1.1i.conf
+  	/usr/local/lib64
+  		# 改成这个
+  		# 后面装好shadowsocksr-cli以后各种错误，那就再删掉这配置
+  	ldconfig -v
+  		# 重新加载动态链接
 
 apt-get update -y && \
 apt-get install -y libsodium-dev && \
