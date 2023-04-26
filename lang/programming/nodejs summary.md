@@ -10132,7 +10132,7 @@ yum isntall wget -y
 
 dnf group install "Development Tools"
 
-
+docker cp node-v18.9.1-linux-x64.tar.gz centos8_ChatGPT_507:/project
 
 
 
@@ -19339,6 +19339,8 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 [范畴论完全装逼手册](https://blog.oyanglul.us/grokking-monad/part1)
 
 [Haskell中的范畴之函子和自然变换](https://zhuanlan.zhihu.com/p/25565309)
+
+[函数式编程中的functor和monad](http://notes.jimliang.com/2019/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84functor%E5%92%8Cmonad/)
 
 dependent type
 
