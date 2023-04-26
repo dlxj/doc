@@ -483,6 +483,27 @@ set HTTPS_PROXY=https://127.0.0.1:4780
 
 
 
+## Source install on Almalinux
+
+[How to Install Python 3.10 on AlmaLinux 9](https://wiki.crowncloud.net/?How_to_Install_Python_3_10_on_AlmaLinux_9)
+
+```
+version=3.10.5 && \
+dnf update && \
+dnf install -y wget yum-utils make gcc openssl-devel bzip2-devel libffi-devel zlib-devel && \
+wget https://www.python.org/ftp/python/$version/Python-$version.tgz && \
+tar xzf Python-$version.tgz && \
+cd Python-$version && \
+./configure --with-system-ffi --with-computed-gotos --enable-loadable-sqlite-extensions && \
+make -j 4 && \
+make altinstall 
+
+```
+
+
+
+
+
 
 
 ## nohup
