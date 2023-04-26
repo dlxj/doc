@@ -344,6 +344,8 @@ nginx -t && \
 systemctl restart nginx && \
 nginx -s reload
 
+systemctl restart  postgresql-13 && systemctl status postgresql-13 && systemctl stop firewalld && pm2 resurrect && systemctl restart nginx && nginx -s reload
+
 
 # ubuntu 这样启动 /etc/init.d/nginx start
 
