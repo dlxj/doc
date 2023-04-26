@@ -10077,6 +10077,18 @@ systemctl status docker
 
 
 
+### ChatGPT
+
+```
+docker run -tid --name centos7_ChatGPT_507 -p 222:22 -p 5077:507 --privileged=true centos:centos7 /sbin/init
+
+
+```
+
+
+
+
+
 
 
 
