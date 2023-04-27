@@ -2220,6 +2220,8 @@ Fast Search Using PostgreSQL Trigram Indexes
   
     - [postgres in查询优化](https://www.cnblogs.com/yb38156/p/11195727.html)
   
+      > regexp_split_to_table 和 regexp_split_to_array 都是字符串分隔函数，可通过指定的表达式进行分隔。区别是 regexp_split_to_table 将分割出的数据转成行，regexp_split_to_array 是将分隔的数据转成数组。
+  
     > 
   
     

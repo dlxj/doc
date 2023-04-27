@@ -6602,6 +6602,8 @@ flushdb 清空当前数据库
 
 ## 全文搜索
 
+- [RedisJson](https://juejin.cn/post/7046972253803642911)
+
 - https://github.com/RediSearch/RediSearch
 
 
