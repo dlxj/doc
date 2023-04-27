@@ -143,9 +143,9 @@ cd node-$version-linux-x64/bin && \
 chmod +x node npm npx && \
 cd ../.. && \
 mv node-$version-linux-x64 /usr/local && \
-ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 ```
 
 
@@ -202,7 +202,16 @@ systemctl start postgresql.service  # ubuntu 18.04
 systemctl status postgresql-13      # centos7
 systemctl enable postgresql-13 # 自启动
 
+npm i -g pm2
+	# node18 用这个
+	
+ln -s /usr/local/node-v18.9.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2	
+
+pm2 --name chatgpt_server_506 start "proxychains4 node server.js"
+
+
 npm i -g pm2@5.1.2
+	# node14 用这个
 
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
@@ -609,7 +618,7 @@ vi /etc/proxychains.conf
 yum install epel-release -y && \
 yum update && \
 yum install libsodium -y && \
-pip install shadowsocksr-cli
+pip install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
@@ -6593,6 +6602,8 @@ flushdb 清空当前数据库
 
 ## 全文搜索
 
+- [RedisJson](https://juejin.cn/post/7046972253803642911)
+
 - https://github.com/RediSearch/RediSearch
 
 
@@ -10118,6 +10129,10 @@ systemctl daemon-reload && \
 service docker restart && \
 docker info
 
+# AlmaLinux 开发环境
+dnf update -y && \
+dnf install -y tar libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel
+
 
 docker pull centos:centos7
 	# docker pull centos:centos8  
@@ -10186,9 +10201,9 @@ cd node-$version-linux-x64/bin && \
 chmod +x node npm npx && \
 cd ../.. && \
 mv node-$version-linux-x64 /usr/local && \
-ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 	# `GLIBC_2.27' not found 
 
 kill -9 $(jobs -p)
@@ -19361,6 +19376,33 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 [函数式编程中的functor和monad](http://notes.jimliang.com/2019/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84functor%E5%92%8Cmonad/)
 
+```
+const a = Promise.resolve(2)
+	# Promise 可以看成是一个范畴，then 返回一个新的值
+const b = a.then((i)=> i + 3)
+
+函数式编程里面的运算，都是通过函子完成，它的运算不直接针对值，而是针对这个值的盒子。我们甚至可以通过多种运算，衍生出多种函子，通过这些函子来解决实际问题。
+
+
+class Container {
+  constructor(x) {
+    this._value = x
+  }
+  map(f) {  // 态射接口，具体实现要你传一个变换函数
+    return Container.of(f(this._value))
+  }
+  static of(x) { // 装箱
+    return new Container(x)
+  }
+}
+
+let v = Container.of(2).map(two => two + 2)
+console.log(v[`_value`])
+
+```
+
+
+
 dependent type
 
 
@@ -19376,6 +19418,51 @@ dependent type
 > 若我们将范畴看成是更高层的范畴的对象，则两个范畴之间的态射就是函子
 
 
+
+## Python Monads 
+
+[Expression](https://github.com/cognitedata/Expression)
+
+```
+from expression import pipe
+
+v = 1
+fn = lambda x: x + 1
+gn = lambda x: x * 2
+
+assert pipe(v, fn, gn) == gn(fn(v))
+```
+
+```
+from expression import Some
+
+v = Some(1)
+fn = lambda x: x.map(lambda y: y + 1)
+	# 范畴里机有对象 value ，有态射的接口 map ，态射的具体实现需要你自已传一个函数
+gn = lambda x: x.map(lambda y: y * 2)
+
+assert v.pipe(fn, gn) == gn(fn(v))
+```
+
+
+
+
+
+## Nodejs Monads
+
+[monads](https://github.com/sniptt-official/monads)
+
+
+
+## Rust Monads
+
+[Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
+
+[Rust bindings for Godot 4](https://github.com/godot-rust/gdext)
+
+[Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
+
+[rust-script](https://github.com/fornwall/rust-script)
 
 
 
