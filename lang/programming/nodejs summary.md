@@ -10118,6 +10118,10 @@ systemctl daemon-reload && \
 service docker restart && \
 docker info
 
+# AlmaLinux 开发环境
+dnf update -y && \
+dnf install -y tar libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel
+
 
 docker pull centos:centos7
 	# docker pull centos:centos8  
