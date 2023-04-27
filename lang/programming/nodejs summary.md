@@ -202,7 +202,16 @@ systemctl start postgresql.service  # ubuntu 18.04
 systemctl status postgresql-13      # centos7
 systemctl enable postgresql-13 # 自启动
 
+npm i -g pm2
+	# node18 用这个
+	
+ln -s /usr/local/node-v18.9.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2	
+
+pm2 --name chatgpt_server_506 start "proxychains4 node server.js"
+
+
 npm i -g pm2@5.1.2
+	# node14 用这个
 
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
@@ -19391,6 +19400,16 @@ dependent type
 > 若我们将范畴看成是更高层的范畴的对象，则两个范畴之间的态射就是函子
 
 
+
+## Python Monads 
+
+[Expression](https://github.com/cognitedata/Expression)
+
+
+
+## Nodejs Monads
+
+[monads](https://github.com/sniptt-official/monads)
 
 
 
