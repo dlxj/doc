@@ -19460,6 +19460,8 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
+[rust-script](https://github.com/fornwall/rust-script)
+
 
 
 # Excel
