@@ -1,3 +1,25 @@
+
+
+# 允许 root ssh
+
+```
+vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
+	# PermitRootLogin yes
+	# 改成这个
+
+/etc/ssh/sshd_config
+	# 这文件定义了一句 Include /etc/ssh/sshd_config.d/*.conf
+	# 所以可以在 /etc/ssh/sshd_config.d/ 里面自定义 xxx.conf 文件
+	# PermitRootLogin yes
+		# 弄成这样试试
+```
+
+
+
+
+
+# 安装开发环境
+
 ```
 dnf update -y && \
 dnf install -y tar libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel 
