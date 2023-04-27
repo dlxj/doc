@@ -490,7 +490,7 @@ set HTTPS_PROXY=https://127.0.0.1:4780
 ```
 version=3.10.5 && \
 dnf update && \
-dnf install -y wget yum-utils make gcc openssl-devel bzip2-devel libffi-devel zlib-devel && \
+dnf install -y tar wget yum-utils make gcc openssl-devel bzip2-devel libffi-devel zlib-devel && \
 wget https://www.python.org/ftp/python/$version/Python-$version.tgz && \
 tar xzf Python-$version.tgz && \
 cd Python-$version && \

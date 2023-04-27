@@ -10186,9 +10186,9 @@ cd node-$version-linux-x64/bin && \
 chmod +x node npm npx && \
 cd ../.. && \
 mv node-$version-linux-x64 /usr/local && \
-ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 	# `GLIBC_2.27' not found 
 
 kill -9 $(jobs -p)
@@ -19360,6 +19360,15 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 [Haskell中的范畴之函子和自然变换](https://zhuanlan.zhihu.com/p/25565309)
 
 [函数式编程中的functor和monad](http://notes.jimliang.com/2019/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84functor%E5%92%8Cmonad/)
+
+```
+const a = Promise.resolve(2)
+	# Promise 可以看成是一个范畴，then 返回一个新的值
+const b = a.then((i)=> i + 3)
+
+```
+
+
 
 dependent type
 
