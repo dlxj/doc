@@ -22,6 +22,8 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 
 ```
 dnf update -y && \
+dnf install -y epel-release && \
+dnf update -y && \
 dnf install -y tar libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel 
 
 ```

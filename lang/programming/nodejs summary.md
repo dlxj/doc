@@ -143,9 +143,9 @@ cd node-$version-linux-x64/bin && \
 chmod +x node npm npx && \
 cd ../.. && \
 mv node-$version-linux-x64 /usr/local && \
-ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 ```
 
 
@@ -609,7 +609,7 @@ vi /etc/proxychains.conf
 yum install epel-release -y && \
 yum update && \
 yum install libsodium -y && \
-pip install shadowsocksr-cli
+pip install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
