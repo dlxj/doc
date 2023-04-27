@@ -2213,7 +2213,20 @@ Fast Search Using PostgreSQL Trigram Indexes
     > 3、垃圾回收, 使得每个block的空洞变少.
     > 4、分区, 提高目标采样表中 where 条件符合条件记录的占比.                             
     > ```
-
+    
+  - [PostgreSQL 百亿级数据范围查询, 分组排序窗口取值 极致优化 case](https://developer.aliyun.com/article/39680)
+  
+  - [PostgreSQL IN里面传入1w+值如何优化到极致？](https://zhuanlan.zhihu.com/p/342722338)
+  
+    - [postgres in查询优化](https://www.cnblogs.com/yb38156/p/11195727.html)
+  
+    > 
+  
+    
+  
+    
+  
+    
 
 
 
