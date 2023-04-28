@@ -6602,7 +6602,24 @@ flushdb 清空当前数据库
 
 ## 全文搜索
 
-- [RedisJson](https://juejin.cn/post/7046972253803642911)
+- [RedisJson](https://redis.io/docs/stack/json/)
+
+  - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
+
+  > ```
+  > dnf clean all && \
+  > dnf install epel-release && \
+  > dnf update && \
+  > dnf install redis && \
+  > systemctl enable redis && \
+  > systemctl start redis && \
+  > systemctl status redis && \
+  > redis-cli -h 127.0.0.1 -p 6379  PING
+  > 
+  > 
+  > 
+  > 
+  > ```
 
 - https://github.com/RediSearch/RediSearch
 
@@ -6671,7 +6688,9 @@ docker info
 docker pull redis/redis-stack-server && \
 docker run -p 6379:6379 --name redis-stack redis/redis-stack:latest
 
-redis-server --loadmodule ./target/release/librejson.so
+nmap 127.0.0.1 -p6379
+
+
 
 
 
