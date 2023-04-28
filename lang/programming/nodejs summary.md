@@ -6624,8 +6624,8 @@ flushdb 清空当前数据库
   > docker run -d --name=aliyundrive-webdav --restart=unless-stopped -p 8080:8080 \
   >   -v /etc/aliyundrive-webdav/:/etc/aliyundrive-webdav/ \
   >   -e REFRESH_TOKEN='your refresh token' \
-  >   -e WEBDAV_AUTH_USER=admin \
-  >   -e WEBDAV_AUTH_PASSWORD=admin \
+  >   -e WEBDAV_AUTH_USER=root \
+  >   -e WEBDAV_AUTH_PASSWORD= \
   >   messense/aliyundrive-webdav
   > 
   > dnf update -y && \
@@ -6637,6 +6637,9 @@ flushdb 清空当前数据库
   > dnf install ./davfs2-1.5.6-1.el8.x86_64.rpm
   > 
   > 
+  > mkdir /alipan
+  > mount -t davfs http://xxx.com:8080 /alipan
+  > 	# 输入账号密码
   > 
   > ```
 
