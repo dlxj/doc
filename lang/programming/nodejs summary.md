@@ -6612,6 +6612,8 @@ flushdb 清空当前数据库
 
 - [阿里云webdav](https://github.com/messense/aliyundrive-webdav)
 
+  - [解放Linux空间，薅羊毛新方式](https://blog.lincloud.pro/archives/36.html)
+
   > ```
   > pip install aliyundrive-webdav
   > 
@@ -6625,6 +6627,15 @@ flushdb 清空当前数据库
   >   -e WEBDAV_AUTH_USER=admin \
   >   -e WEBDAV_AUTH_PASSWORD=admin \
   >   messense/aliyundrive-webdav
+  > 
+  > dnf update -y && \
+  > dnf install -y epel-release && \
+  > dnf update -y && \
+  > dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel 
+  > 
+  > wget https://rpmfind.net/linux/epel/8/Everything/x86_64/Packages/d/davfs2-1.5.6-1.el8.x86_64.rpm && \
+  > dnf install ./davfs2-1.5.6-1.el8.x86_64.rpm
+  > 
   > 
   > 
   > ```
