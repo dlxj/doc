@@ -6615,6 +6615,18 @@ flushdb 清空当前数据库
   > ```
   > pip install aliyundrive-webdav
   > 
+  > aliyundrive-webdav qr login
+  > 	# 扫描授权登录
+  > 	# 会输出一个 refresh_token
+  > 	
+  > docker run -d --name=aliyundrive-webdav --restart=unless-stopped -p 8080:8080 \
+  >   -v /etc/aliyundrive-webdav/:/etc/aliyundrive-webdav/ \
+  >   -e REFRESH_TOKEN='your refresh token' \
+  >   -e WEBDAV_AUTH_USER=admin \
+  >   -e WEBDAV_AUTH_PASSWORD=admin \
+  >   messense/aliyundrive-webdav
+  > 
+  > 
   > ```
 
 
