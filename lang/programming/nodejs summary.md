@@ -6641,6 +6641,8 @@ flushdb 清空当前数据库
   > mount -t davfs http://xxx.com:8080 /alipan
   > 	# 输入账号密码
   > 
+  > Streaming Optimized IP
+  > 
   > ```
 
 
