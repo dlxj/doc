@@ -6669,6 +6669,9 @@ docker info
 
 
 docker pull redis/redis-stack-server && \
+docker run -p 6379:6379 --name redis-stack redis/redis-stack:latest
+
+redis-server --loadmodule ./target/release/librejson.so
 
 
 
