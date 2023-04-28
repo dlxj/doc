@@ -6606,6 +6606,51 @@ flushdb 清空当前数据库
 
 - https://github.com/RediSearch/RediSearch
 
+- [RedisJSON + RediSearch](http://16384.net/20220813212856/index.html)
+
+- [docker安装](https://hub.docker.com/r/redis/redis-stack-server)
+
+- [阿里云webdav](https://github.com/messense/aliyundrive-webdav)
+
+  > ```
+  > pip install aliyundrive-webdav
+  > 
+  > ```
+
+
+
+```
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo && \
+dnf update && \
+dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin && \
+systemctl enable --now docker && \
+systemctl status docker
+
+vi /etc/docker/daemon.json
+{
+"registry-mirrors": [
+"https://ustc-edu-cn.mirror.aliyuncs.com/",
+"https://hub-mirror.c.163.com",
+"https://mirror.baidubce.com"
+]
+}
+
+systemctl daemon-reload && \
+systemctl restart docker && \
+docker info
+
+
+docker pull redis/redis-stack-server && \
+
+
+
+
+```
+
+
+
+
+
 
 
 ## RedisGraph  图数据库
@@ -10218,7 +10263,18 @@ docker exec -it centos7_ChatGPT_507 bash -c "systemctl enable nginx && systemctl
 
 
 
-## Docker for ubuntu20.04
+## Docker for AlmaLinux9
+
+[How to install Docker on AlmaLinux 9 Linux?](https://linux.how2shout.com/how-to-install-docker-on-almalinux-9-linux/)
+
+```
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo && \
+dnf update && \
+dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin && \
+systemctl enable --now docker && \
+systemctl status docker
+
+```
 
 
 
@@ -14844,6 +14900,16 @@ input_field.grab_focus()
 [godot-websocket-nodes](https://github.com/Faless/gd-websocket-nodes/tree/main/addons/godot-websocket-nodes) 必看
 
 [WebSocket](https://github.com/godotengine/godot/issues/73810)
+
+[websocket html5](https://godotengine.org/qa/95051/problems-with-websockets-and-html5-export)
+
+> Hi, if the website you use as environment for the Godot-export-HTML (in your case itch.io) uses http**s** you cannot use your IP address with "ws://...". However, the browser makes an exception for localhost - that's why it worked this way.
+> You need to connect to your server with "ws**s**://**:"
+> This, consequentially, requires SSL encryption. You can generate self-signed keys and certificates [within Godot using the Crypto-Reference](https://godotengine.org/article/websocket-ssl-testing-html5-export). Yet, it would be better to use an official SSL certificate website instead. The link also shows how to use key and certificate on the server after creation.
+> HOWEVER, all this being said, I figured there is a [Godot intern bug that disconnects the client from the server immediately when trying to connect to the server](https://github.com/godotengine/godot/issues/27560). There is no sign of an error, but the engine emits the "disconnect"-signal.
+> The easiest solution was to start an Apache server which runs the Godot-export-HTML unencrypted via "ws://..." - thus, this way, you wouldn't have your project running on itch.io.
+>
+> You can find a better explanation of the solution [here](https://www.reddit.com/r/godot/comments/et52fp/how_to_integrate_web_sockets_secure_wss_in_godot/).
 
 
 
