@@ -19570,6 +19570,12 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 
 
+## F\# Monads
+
+[category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
+
+
+
 ## Rust Monads
 
 [Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
