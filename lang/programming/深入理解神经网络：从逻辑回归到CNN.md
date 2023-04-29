@@ -12322,6 +12322,8 @@ if __name__ == '__main__':
 
 [流式语音识别](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/streaming_asr_server/README_cn.md)  **支持时间戳功能**
 
+[python音乐播放器](https://github.com/feeluown/FeelUOwn)
+
 
 
 ## whisper
