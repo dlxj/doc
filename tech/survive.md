@@ -87,7 +87,8 @@ https://www.zake.store/swindex.html
 
 [3ds通用资源提取(很先进)](https://www.vg-resource.com/thread-40039.html)
 
-
+- [0834 – Gyakuten Saiban 1 2 3 – Naruhodou Selection (JP) 逆转裁判123 成步堂选集(日)AVG(文字类)](https://www.oldmanemu.net/%e6%8e%8c%e6%9c%ba%e6%b8%b8%e6%88%8f/3ds/3ds%e5%ae%98%e6%96%b9%e6%b8%b8%e6%88%8f%e5%85%a8%e9%9b%86)
+- [尝试从游戏中提取文本](https://xzonn.top/posts/Try-to-Extract-Messages-from-Games.html)
 
 [游戏字库解析教程](https://www.bilibili.com/video/BV1CB4y1M7xx/)
 
