@@ -85,6 +85,10 @@ https://www.zake.store/swindex.html
 
 - [图片等的解包工具](https://github.com/LovePlusProject/nlpp-tools)
 
+[3ds通用资源提取(很先进)](https://www.vg-resource.com/thread-40039.html)
+
+
+
 [游戏字库解析教程](https://www.bilibili.com/video/BV1CB4y1M7xx/)
 
 [NLP+英化项目主页](https://www.gamebrew.org/wiki/NEW_LOVE_PLUS_PLUS_3DS)
@@ -160,7 +164,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
