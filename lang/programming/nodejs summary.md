@@ -19412,6 +19412,56 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 
 
 
+## Always GPT-4
+
+
+
+```
+脚本可以自动模拟点击那个菜单，保证每次都是 GPT4 ，需要搭配 Tampermonkey 使用。
+
+请新建一个脚本，把下面的代码贴进去启用即可。
+
+// ==UserScript==
+// @name Always GPT-4
+// @namespace http://tampermonkey.net/
+// @version 0.1
+// @description try to take over the world!
+// @author You
+// @match https://chat.openai.com/*
+// @icon data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant none
+// ==/UserScript==
+
+(function() {
+'use strict';
+function clickElementWhenAvailable() {
+var element = document.querySelector('[class^="relative flex w-full cursor-default"]');
+if (element) {
+element.click();
+observer.disconnect(); // Stop observing once the element is clicked
+}
+setTimeout(function() {
+var ul = document.querySelector('ul');
+var secondItem = ul.getElementsByTagName('li')[1];
+secondItem.click();
+}, 100);
+}
+
+var observer = new MutationObserver(clickElementWhenAvailable);
+
+observer.observe(document.body, {
+childList: true,
+subtree: true,
+});
+
+clickElementWhenAvailable(); // Check if the element is available when the script runs
+})();
+```
+
+
+
+
+
 ## video download
 
 [写了一个无限制视频下载脚本](https://www.v2ex.com/t/856510)
@@ -19481,6 +19531,12 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 @tammy 我都是调用 you-get 下载的（Firefox 添加“鼠标中键点击下载按钮条用 you-get.exe 下载视频” 的功能 - Ryan 快快跑），对于支持的网站不用说，一流，默认最高画质，在配合你这个搞不支持的网站，那就更舒服了
 ```
+
+
+
+## CF 流式输出
+
+[cf-openai-with-sub-account-proxy](https://github.com/yinm0591/cf-openai-with-sub-account-proxy)
 
 
 
