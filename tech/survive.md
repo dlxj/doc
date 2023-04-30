@@ -169,7 +169,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
@@ -631,6 +631,14 @@ Recurring Amount: $48.00 USD
 Billing Cycle: Biennially
 Next Due Date: 04/01/2023
 ```
+
+
+
+## 加密币
+
+[法币转法币](https://wise.com/) slpy@gmail.com same qq passw
+
+
 
 
 
