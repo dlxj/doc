@@ -6625,6 +6625,7 @@ flushdb 清空当前数据库
   - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
   - [源码安装出错](https://linux.how2shout.com/enable-crb-code-ready-builder-powertools-in-almalinux-9/)
   - [全流程](https://www.cnblogs.com/zx-admin/p/13772193.html)
+  - [使用方法](https://blog.csdn.net/u013421629/article/details/125796393)
 
   > ```
   > # 版本过旧
@@ -6682,6 +6683,16 @@ flushdb 清空当前数据库
   > 	loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
   > 	loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so
   > 		# 配置文件试加这两行
+  > 
+  > JSON.SET product:1 $ '{"id":1,"productSn":"7437788","name":"小米8","subTitle":"全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待","brandName":"小米","price":2699,"count":1}'
+  > 
+  > JSON.SET product:2 $ '{"id":2,"productSn":"7437789","name":"红米5A","subTitle":"全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待","brandName":"小米","price":649,"count":5}'
+  > 
+  > JSON.SET product:3 $ '{"id":3,"productSn":"7437799","name":"Apple iPhone 8 Plus","subTitle":"64GB 红色特别版 移动联通电信4G手机","brandName":"苹果","price":5499,"count":10}'
+  > 
+  > JSON.GET product:1
+  > 
+  > 
   > 
   > ```
   >
