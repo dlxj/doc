@@ -6669,7 +6669,11 @@ flushdb 清空当前数据库
   >
   > /root/RediSearch/bin/linux-x64-release/search/redisearch.so
   >
-  > a
+  > https://redis.io/docs/stack/json/
+  >
+  > /root/RedisJSON/bin/linux-x64-release/rejson.so
+  >
+  > 
   >
   > 
 
