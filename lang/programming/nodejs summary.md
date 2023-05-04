@@ -6653,7 +6653,37 @@ flushdb 清空当前数据库
   >
   > source /etc/environment
   >
+  > a
+  >
+  > whereis redis-server
+  >
+  >   \# /usr/local/bin/redis-server
+  >
+  > vi redis.conf 
+  >
+  > bind 0.0.0.0
+  >
+  > daemonize yes
+  >
+  > enable-module-command yes
+  >
+  >   \# 改几两项
+  >
+  > redis-server /root/redis/redis.conf
+  >
+  >   \# 运行
+  >
+  > /usr/local/bin/redis-cli
+  >
+  > ```
+  > MODULE LOAD /root/RedisJSON/bin/linux-x64-release/rejson.so
+  > MODULE LOAD /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+  > 	# 成功加载两个模块
+  > 	loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+  > 	loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+  > 		# 配置文件试加这两行
   > 
+  > ```
   >
   > 需要 redis 6 以上
   >
