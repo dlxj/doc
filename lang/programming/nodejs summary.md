@@ -6605,6 +6605,7 @@ flushdb 清空当前数据库
 - [RedisJson](https://redis.io/docs/stack/json/)
 
   - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
+  - [源码安装出错](https://linux.how2shout.com/enable-crb-code-ready-builder-powertools-in-almalinux-9/)
 
   > ```
   > dnf clean all && \
@@ -6615,8 +6616,6 @@ flushdb 清空当前数据库
   > systemctl start redis && \
   > systemctl status redis && \
   > redis-cli -h 127.0.0.1 -p 6379  PING
-  > 
-  > 
   > 
   > 
   > ```
@@ -16708,6 +16707,30 @@ npm install protobufjs --save --save-prefix=~
 ##### 向量存储
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
+
+```
+// 'Chat History:\n\n\n\n\nQuestion:用中文回答\n过敏因素是什么'
+let docs = await vectors.asRetriever().getRelevantDocuments(q)
+
+const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
+  
+Chat History:
+{chat_history}
+Follow Up Input: {question}
+Standalone question:`
+
+const QA_PROMPT = `You are a helpful AI assistant. Use the following pieces of context to answer the question at the end.
+If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
+If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
+
+{context}
+
+Question: {question}
+Helpful answer in markdown:`
+
+```
+
+
 
 
 
