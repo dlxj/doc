@@ -72,6 +72,10 @@ https://www.zake.store/swindex.html
 
 ## 3ds破解
 
+[switch所有游戏文本无敌了](https://github.com/Xzonn/NintendoOfficialChineseGames)
+
+- [尝试从游戏中提取文本](https://xzonn.top/posts/Try-to-Extract-Messages-from-Games.html)
+
 [NLP+所有文本](https://github.com/Makein/NLPPGit)
 
 - [最初的大本营](https://github.com/LovePlusProject/NLPPATCH)
@@ -84,6 +88,11 @@ https://www.zake.store/swindex.html
 - [文本解包](https://github.com/gdkchan/NLPTextTool)
 
 - [图片等的解包工具](https://github.com/LovePlusProject/nlpp-tools)
+
+[3ds通用资源提取(很先进)](https://www.vg-resource.com/thread-40039.html)
+
+- [0834 – Gyakuten Saiban 1 2 3 – Naruhodou Selection (JP) 逆转裁判123 成步堂选集(日)AVG(文字类)](https://www.oldmanemu.net/%e6%8e%8c%e6%9c%ba%e6%b8%b8%e6%88%8f/3ds/3ds%e5%ae%98%e6%96%b9%e6%b8%b8%e6%88%8f%e5%85%a8%e9%9b%86)
+- [尝试从游戏中提取文本 大佬](https://xzonn.top/posts/Try-to-Extract-Messages-from-Games.html)
 
 [游戏字库解析教程](https://www.bilibili.com/video/BV1CB4y1M7xx/)
 
@@ -160,7 +169,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
@@ -622,6 +631,16 @@ Recurring Amount: $48.00 USD
 Billing Cycle: Biennially
 Next Due Date: 04/01/2023
 ```
+
+
+
+## 加密币
+
+[法币转法币](https://wise.com/) slpy@gmail.com same qq passw
+
+[okx](www.okx.com) c2c 充 USDT  
+
+[depay](depay.com) sipy@gmail.com
 
 
 
