@@ -6664,6 +6664,14 @@ flushdb 清空当前数据库
   > make BUILD_TLS=yes USE_SYSTEMD=yes
   >
   > make install
+  >
+  > 
+  >
+  > /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+  >
+  > a
+  >
+  > 
 
 - [RedisJSON + RediSearch](http://16384.net/20220813212856/index.html)
 
