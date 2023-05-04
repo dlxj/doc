@@ -4680,6 +4680,24 @@ _.isEmpty(dic_ansers)
 
 
 
+## 展开
+
+```
+        let options = {
+            qaTemplate: QA_PROMPT,
+            questionGeneratorTemplate: CONDENSE_PROMPT,
+            returnSourceDocuments: true, //The number of source documents returned is 4 by default
+        }
+        const { questionGeneratorTemplate, qaTemplate, ...rest } = options
+        
+     
+   rest 的值是：  { returnSourceDocuments: true }
+```
+
+
+
+
+
 ## 加料
 
 ```
