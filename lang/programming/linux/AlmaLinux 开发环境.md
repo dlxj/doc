@@ -21,10 +21,27 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 # 安装开发环境
 
 ```
+vi /etc/environment
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+	# 添加这两项 
+
+source /etc/environment
+
+
+# almalinux 9
 dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
-dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel
+dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel 
+
+
+# almalinux 8
+dnf update -y && \
+dnf install -y epel-release && \
+dnf update -y && \
+dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel 
+
 
 ```
 

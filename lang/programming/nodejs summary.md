@@ -6624,12 +6624,14 @@ flushdb 清空当前数据库
 
   - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
   - [源码安装出错](https://linux.how2shout.com/enable-crb-code-ready-builder-powertools-in-almalinux-9/)
+  - [全流程](https://www.cnblogs.com/zx-admin/p/13772193.html)
 
   > ```
+  > # 版本过旧
   > dnf clean all && \
-  > dnf install epel-release && \
+  > dnf install -y epel-release && \
   > dnf update && \
-  > dnf install redis && \
+  > dnf install -y redis && \
   > systemctl enable redis && \
   > systemctl start redis && \
   > systemctl status redis && \
@@ -6639,6 +6641,29 @@ flushdb 清空当前数据库
   > ```
 
 - https://github.com/RediSearch/RediSearch
+
+- [RediSearch源码安装方法](https://redis.io/docs/stack/search/development/)
+
+  > vi /etc/environment
+  >
+  > LANG=en_US.utf-8
+  > LC_ALL=en_US.utf-8
+  >
+  >    \# 添加这两项 
+  >
+  > source /etc/environment
+  >
+  > 
+  >
+  > 需要 redis 6 以上
+  >
+  > https://github.com/redis/redis
+  >
+  > git clone https://github.com/redis/redis.git
+  >
+  > make BUILD_TLS=yes USE_SYSTEMD=yes
+  >
+  > make install
 
 - [RedisJSON + RediSearch](http://16384.net/20220813212856/index.html)
 
@@ -16727,8 +16752,10 @@ npm install protobufjs --save --save-prefix=~
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
 
 ```
-// 'Chat History:\n\n\n\n\nQuestion:用中文回答\n过敏因素是什么'
-let docs = await vectors.asRetriever().getRelevantDocuments(q)
+        // 'Chat History:\n\n\n\n\nQuestion:用中文回答\n过敏因素是什么'
+        let docs = await vectors.asRetriever().getRelevantDocuments(q)
+        const texts = docs.map(({ pageContent }) => pageContent)
+        const tt = texts.join("\n\n")
 
 const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
   
