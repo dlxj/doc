@@ -6644,6 +6644,10 @@ flushdb 清空当前数据库
     > ./autogen.sh
     > make install
     > friso -init /usr/local/etc/friso/friso.ini
+    > 歧义和同义词:研究生命起源，混合词: 做B超检查身体
+    > 
+    > "-lm" linux vscode 的 gcc 配置要加一个 -lm 参数
+    > 
     > ```
 
   > ```
