@@ -6648,6 +6648,9 @@ flushdb 清空当前数据库
     > 
     > "-lm" linux vscode 的 gcc 配置要加一个 -lm 参数
     > 
+    > next_mmseg_token
+    > next_complex_cjk
+    > 
     > ```
 
   > ```
