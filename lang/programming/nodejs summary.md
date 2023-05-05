@@ -6623,11 +6623,28 @@ flushdb 清空当前数据库
 - [RedisJson](https://redis.io/docs/stack/json/)
 
   - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
+
   - [源码安装出错](https://linux.how2shout.com/enable-crb-code-ready-builder-powertools-in-almalinux-9/)
+
   - [全流程](https://www.cnblogs.com/zx-admin/p/13772193.html)
+
   - [使用方法](https://blog.csdn.net/u013421629/article/details/125796393)
+
   - [备份](https://www.cnblogs.com/weihanli/p/14532388.html)
+
     - [实战](https://blog.51cto.com/u_15862829/5828039)
+
+  - [所有支持的语言](https://redis.io/docs/stack/search/reference/stemming/)
+
+  - [分词](https://github.com/lionsoul2014/friso)
+
+    - [mmseg分词算法及实现](https://blog.csdn.net/daniel_ustc/article/details/50488040)
+
+    > ```
+    > ./autogen.sh
+    > make install
+    > friso -init /usr/local/etc/friso/friso.ini
+    > ```
 
   > ```
   > # 版本过旧
@@ -6691,6 +6708,8 @@ flushdb 清空当前数据库
   > 
   > JSON.SET product:3 $ '{"id":3,"productSn":"7437799","name":"Apple iPhone 8 Plus","subTitle":"64GB 红色特别版 移动联通电信4G手机","brandName":"苹果","price":5499,"count":10}'
   > 
+  > JSON.SET product:4 $ '{"id":4,"productSn":"7437801","name":"小米8","subTitle":"他の全文検索シリーズでも同じデータを使うので、他の記事も試す場合は wiki.json.bz2 を捨てずに残しておくことをおすすめします。","brandName":"小米","price":2699,"count":1}'
+  > 
   > JSON.GET product:1
   > 
   > JSON.GET product:1 name subTitle
@@ -6698,6 +6717,10 @@ flushdb 清空当前数据库
   > FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
   > 
   > ft.search productIdx "香槟金" language "chinese"
+  > 
+  > ft.search productIdx "捨てずに" language "chinese"
+  > 
+  > ft.search productIdx "てずに" language "english"
   > 
   > ```
   >
