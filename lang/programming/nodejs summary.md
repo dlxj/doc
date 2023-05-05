@@ -6459,7 +6459,7 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 
 
-# redist
+# redis
 
 - https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
 
@@ -6650,7 +6650,7 @@ flushdb 清空当前数据库
   > LANG=en_US.utf-8
   > LC_ALL=en_US.utf-8
   >
-  >    \# 添加这两项 
+  > \# 添加这两项 
   >
   > source /etc/environment
   >
@@ -6658,7 +6658,7 @@ flushdb 清空当前数据库
   >
   > whereis redis-server
   >
-  >   \# /usr/local/bin/redis-server
+  > \# /usr/local/bin/redis-server
   >
   > vi redis.conf 
   >
@@ -6668,13 +6668,13 @@ flushdb 清空当前数据库
   >
   > enable-module-command yes
   >
-  >   \# 改几两项
+  > \# 改几两项
   >
   > redis-server /root/redis/redis.conf
   >
-  >   \# 运行
+  > \# 运行
   >
-  > /usr/local/bin/redis-cli
+  > /usr/local/bin/redis-cli  --raw
   >
   > ```
   > MODULE LOAD /root/RedisJSON/bin/linux-x64-release/rejson.so
@@ -6692,7 +6692,11 @@ flushdb 清空当前数据库
   > 
   > JSON.GET product:1
   > 
+  > JSON.GET product:1 name subTitle
   > 
+  > FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
+  > 
+  > ft.search productIdx "香槟金" language "chinese"
   > 
   > ```
   >
