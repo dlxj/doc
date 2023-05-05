@@ -6626,6 +6626,7 @@ flushdb 清空当前数据库
   - [源码安装出错](https://linux.how2shout.com/enable-crb-code-ready-builder-powertools-in-almalinux-9/)
   - [全流程](https://www.cnblogs.com/zx-admin/p/13772193.html)
   - [使用方法](https://blog.csdn.net/u013421629/article/details/125796393)
+  - [备份](https://www.cnblogs.com/weihanli/p/14532388.html)
 
   > ```
   > # 版本过旧
@@ -6637,7 +6638,6 @@ flushdb 清空当前数据库
   > systemctl start redis && \
   > systemctl status redis && \
   > redis-cli -h 127.0.0.1 -p 6379  PING
-  > 
   > 
   > ```
 
