@@ -4818,7 +4818,7 @@ const apiExists = apiStat.isFile() && path.extname(apiPath).toLowerCase() === '.
 
 ```
             // if (fs.existsSync(audio_dir)) {
-            //     fs.rmSync(audio_dir, { recursive: true, force: true });
+            //     fs.rmSync(audio_dir, { recursive: true, force: true })
             // }
 ```
 
@@ -6627,6 +6627,7 @@ flushdb 清空当前数据库
   - [全流程](https://www.cnblogs.com/zx-admin/p/13772193.html)
   - [使用方法](https://blog.csdn.net/u013421629/article/details/125796393)
   - [备份](https://www.cnblogs.com/weihanli/p/14532388.html)
+    - [实战](https://blog.51cto.com/u_15862829/5828039)
 
   > ```
   > # 版本过旧
@@ -16807,6 +16808,58 @@ npm install protobufjs --save --save-prefix=~
 ##### 向量存储
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
+
+```
+  let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+  let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+  class Document {
+    constructor(fields) {
+      Object.defineProperty(this, "pageContent", {
+        enumerable: true,
+        configurable: true,
+        writable: true,
+        value: void 0
+      });
+      Object.defineProperty(this, "metadata", {
+        enumerable: true,
+        configurable: true,
+        writable: true,
+        value: void 0
+      });
+      this.pageContent = fields.pageContent
+        ? fields.pageContent.toString()
+        : this.pageContent;
+      this.metadata = fields.metadata ?? {};
+    }
+  }
+
+  let docs = new Array()
+  docs.push(new Document(
+    {
+      pageContent: '细菌、病毒、真菌和原虫等均可引起医院感染',
+      metadata: {}
+    }
+  ))
+
+  let vectors = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({
+    openAIApiKey: api_key,
+    modelName: 'text-embedding-ada-002',
+    maxConcurrency: 5, timeout: 3600 * 1000
+  }))
+
+
+  let docs2 = new Array()
+  docs2.push(new Document(
+    {
+      pageContent: '耐药性基因可传递给医院环境里及人体表面的某些腐生菌',
+      metadata: {}
+    }
+  ))
+   
+  await vectors.addDocuments(docs2)
+```
+
+
 
 ```
         // 'Chat History:\n\n\n\n\nQuestion:用中文回答\n过敏因素是什么'
