@@ -6656,6 +6656,28 @@ flushdb 清空当前数据库
     > 	# 必须已安装 redis-server
     > 	# 可以用 GDB 下断点
     > 
+    > vi /etc/environment
+    > LANG=en_US.utf-8
+    > LC_ALL=en_US.utf-8
+    > 	# 添加这两项
+    > 
+    > source /etc/environment
+    > 
+    > gdb -ex r --args redis-server --loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so --loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+    > 	# https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html
+    > 	# 成功跑起来以后 ctrl + Z 回到 gdb
+    > 	
+    > /root/RediSearch/src/tokenize.c
+    > 	GetTokenizer
+    > 
+    > (gdb) break GetTokenizer
+    > (gdb) info b
+    > (gdb) r
+    > 	# 重新运行
+    > 
+    > redis-cli
+    > 	# 这里执行中文搜索，可以成功触发断点
+    > 
     > ./autogen.sh
     > make install
     > friso -init /usr/local/etc/friso/friso.ini
@@ -17594,6 +17616,8 @@ We are currently working on an official solution to make it run in a 24G memory 
 
 [PEFT: 在低资源硬件上对十亿规模模型进行参数高效微调](https://zhuanlan.zhihu.com/p/610503561)
 
+[zero3+offload](https://zhuanlan.zhihu.com/p/513571706)
+
 [SpeechT5 语音文本全都要](https://zhuanlan.zhihu.com/p/613644440)
 
 ```
@@ -17936,6 +17960,12 @@ conda env remove -n kan
 ### gpt4all
 
 [gpt4all GPT4数据很多](https://github.com/nomic-ai/gpt4all)
+
+
+
+## Chatterbox
+
+[Chatterbox](https://github.com/enze5088/Chatterbox)
 
 
 
