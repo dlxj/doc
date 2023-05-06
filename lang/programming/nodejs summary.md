@@ -6638,8 +6638,15 @@ flushdb 清空当前数据库
 
   - [分词](https://github.com/lionsoul2014/friso)
 
-    - [mmseg分词算法及实现](https://blog.csdn.net/daniel_ustc/article/details/50488040)
+    - [Chinese Tokenization RediSearch 中文分词的提交记录](https://github.com/RediSearch/RediSearch/pull/219/files)
 
+      > ```
+      > RediSearch/tests/ctests/test_cntokenize.c
+      > 	# 分词器的测试代码在这里
+      > ```
+    
+    - [mmseg分词算法及实现](https://blog.csdn.net/daniel_ustc/article/details/50488040)
+    
     - [hanlp]()
     
       > ```
