@@ -6640,6 +6640,12 @@ flushdb 清空当前数据库
 
     - [mmseg分词算法及实现](https://blog.csdn.net/daniel_ustc/article/details/50488040)
 
+    - [hanlp]()
+    
+      > ```
+      > pip install hanlp
+      > ```
+    
     > ```
     > ./autogen.sh
     > make install
