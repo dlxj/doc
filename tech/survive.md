@@ -191,7 +191,7 @@ https://pe.metaquant.org/
 >
 > [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 > 　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
-> 　　　　　　　　　　　　　　　　　　　　　　　　
+> 
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [Textractor 必看](https://github.com/Artikash/Textractor/issues/215)
@@ -2387,7 +2387,9 @@ ssh -i ~/gitee/GFW/keye -T git@gitee.com
 
 ## 3. Upload the key to the host
 
-
+```sh
+git clone --recursive https://github.com/RediSearch/RediSearch.git
+```
 
 ```
 echo 'EOF

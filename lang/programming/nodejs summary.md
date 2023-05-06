@@ -6647,6 +6647,15 @@ flushdb 清空当前数据库
       > ```
     
     > ```
+    > 
+    > git clone --recursive https://github.com/RediSearch/RediSearch.git
+    > make build SLOW=1 VERBOSE=1
+    > 	https://redis.io/docs/stack/search/development/
+    > 	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
+    > make run DEBUG=1
+    > 	# 必须已安装 redis-server
+    > 	# 可以用 GDB 下断点
+    > 
     > ./autogen.sh
     > make install
     > friso -init /usr/local/etc/friso/friso.ini
