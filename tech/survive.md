@@ -49,6 +49,8 @@
 
 - https://y2mate.ch/  dmmTV下载
 
+- https://iproyal.cn/  美国家宽代理
+
 - https://nyaa.si/?f=0&c=0_0&q=pokemon
 
 - https://anidex.info/?q=pokemon&id=1,2,3
@@ -183,7 +185,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
