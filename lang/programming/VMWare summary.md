@@ -40,6 +40,25 @@ VA510-23F57-M85PY-7FN7C-MCRG0
 
 
 
+
+
+## AlmaLinux 9
+
+```
+cd /etc
+mkdir init.d
+for i in {0,1,2,3,4,5,6}; do mkdir rc$i.d; done
+
+then run the vmware install and DON'T choose to configure it yet. Exit and run it manually like this
+
+cd /usr/local/bin/
+./vmware-config.pl --compile
+```
+
+
+
+
+
 NAT 可以理解为虚拟机集群里的虚拟的局域网
 
 NAT模式，这种模式下，虚拟机与所在的物理机单独组成了一个新的局域网，他们共享接入物理机的IP段

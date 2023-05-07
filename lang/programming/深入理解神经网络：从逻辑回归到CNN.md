@@ -2001,6 +2001,8 @@ $$
 
 #### 内积就是线性变换
 
+[一个向量点乘它的微分量等于什么?](https://www.zhihu.com/question/567982061)
+
 ##### 变换后的向量等于它在各数轴上（或者说各基向量）的投影向量之和
 
 ##### 所有投影向量的和等于本体
@@ -12319,6 +12321,8 @@ if __name__ == '__main__':
 ### 流式语音识别
 
 [流式语音识别](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/streaming_asr_server/README_cn.md)  **支持时间戳功能**
+
+[python音乐播放器](https://github.com/feeluown/FeelUOwn)
 
 
 

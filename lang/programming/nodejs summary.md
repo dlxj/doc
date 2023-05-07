@@ -143,9 +143,9 @@ cd node-$version-linux-x64/bin && \
 chmod +x node npm npx && \
 cd ../.. && \
 mv node-$version-linux-x64 /usr/local && \
-ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 ```
 
 
@@ -202,7 +202,16 @@ systemctl start postgresql.service  # ubuntu 18.04
 systemctl status postgresql-13      # centos7
 systemctl enable postgresql-13 # 自启动
 
+npm i -g pm2
+	# node18 用这个
+	
+ln -s /usr/local/node-v18.9.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2	
+
+pm2 --name chatgpt_server_506 start "proxychains4 node server.js"
+
+
 npm i -g pm2@5.1.2
+	# node14 用这个
 
 pm2 save
 pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
@@ -343,6 +352,8 @@ yum install nginx  && \
 nginx -t && \
 systemctl restart nginx && \
 nginx -s reload
+
+systemctl restart  postgresql-13 && systemctl status postgresql-13 && systemctl stop firewalld && pm2 resurrect && systemctl restart nginx && nginx -s reload
 
 
 # ubuntu 这样启动 /etc/init.d/nginx start
@@ -607,7 +618,7 @@ vi /etc/proxychains.conf
 yum install epel-release -y && \
 yum update && \
 yum install libsodium -y && \
-pip install shadowsocksr-cli
+pip install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
@@ -4669,6 +4680,24 @@ _.isEmpty(dic_ansers)
 
 
 
+## 展开
+
+```
+        let options = {
+            qaTemplate: QA_PROMPT,
+            questionGeneratorTemplate: CONDENSE_PROMPT,
+            returnSourceDocuments: true, //The number of source documents returned is 4 by default
+        }
+        const { questionGeneratorTemplate, qaTemplate, ...rest } = options
+        
+     
+   rest 的值是：  { returnSourceDocuments: true }
+```
+
+
+
+
+
 ## 加料
 
 ```
@@ -4789,7 +4818,7 @@ const apiExists = apiStat.isFile() && path.extname(apiPath).toLowerCase() === '.
 
 ```
             // if (fs.existsSync(audio_dir)) {
-            //     fs.rmSync(audio_dir, { recursive: true, force: true });
+            //     fs.rmSync(audio_dir, { recursive: true, force: true })
             // }
 ```
 
@@ -6430,7 +6459,7 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 
 
-# redist
+# redis
 
 - https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
 
@@ -6591,7 +6620,260 @@ flushdb 清空当前数据库
 
 ## 全文搜索
 
+- [RedisJson](https://redis.io/docs/stack/json/)
+
+  - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
+
+  - [源码安装出错](https://linux.how2shout.com/enable-crb-code-ready-builder-powertools-in-almalinux-9/)
+
+  - [全流程](https://www.cnblogs.com/zx-admin/p/13772193.html)
+
+  - [使用方法](https://blog.csdn.net/u013421629/article/details/125796393)
+
+  - [备份](https://www.cnblogs.com/weihanli/p/14532388.html)
+
+    - [实战](https://blog.51cto.com/u_15862829/5828039)
+
+  - [所有支持的语言](https://redis.io/docs/stack/search/reference/stemming/)
+
+  - [分词](https://github.com/lionsoul2014/friso)
+
+    - [Chinese Tokenization RediSearch 中文分词的提交记录](https://github.com/RediSearch/RediSearch/pull/219/files)
+
+      > ```
+      > RediSearch/tests/ctests/test_cntokenize.c
+      > 	# 分词器的测试代码在这里
+      > ```
+    
+    - [mmseg分词算法及实现](https://blog.csdn.net/daniel_ustc/article/details/50488040)
+    
+    - [hanlp]()
+    
+      > ```
+      > pip install hanlp
+      > ```
+    
+    > ```
+    > 
+    > git clone --recursive https://github.com/RediSearch/RediSearch.git
+    > make build SLOW=1 VERBOSE=1
+    > 	https://redis.io/docs/stack/search/development/
+    > 	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
+    > make run DEBUG=1
+    > 	# 必须已安装 redis-server
+    > 	# 可以用 GDB 下断点
+    > 
+    > vi /etc/environment
+    > LANG=en_US.utf-8
+    > LC_ALL=en_US.utf-8
+    > 	# 添加这两项
+    > 
+    > source /etc/environment
+    > 
+    > gdb -ex r --args redis-server --loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so --loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+    > 	# https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html
+    > 	# 成功跑起来以后 ctrl + Z 回到 gdb
+    > 	
+    > /root/RediSearch/src/tokenize.c
+    > 	GetTokenizer
+    > 
+    > (gdb) break GetTokenizer
+    > (gdb) info b
+    > (gdb) r
+    > 	# 重新运行
+    > 
+    > redis-cli
+    > 	# 这里执行中文搜索，可以成功触发断点
+    > 
+    > ./autogen.sh
+    > make install
+    > friso -init /usr/local/etc/friso/friso.ini
+    > 歧义和同义词:研究生命起源，混合词: 做B超检查身体
+    > 
+    > "-lm" linux vscode 的 gcc 配置要加一个 -lm 参数
+    > 
+    > next_mmseg_token
+    > next_complex_cjk
+    > 
+    > ```
+
+  > ```
+  > # 版本过旧
+  > dnf clean all && \
+  > dnf install -y epel-release && \
+  > dnf update && \
+  > dnf install -y redis && \
+  > systemctl enable redis && \
+  > systemctl start redis && \
+  > systemctl status redis && \
+  > redis-cli -h 127.0.0.1 -p 6379  PING
+  > 
+  > ```
+
 - https://github.com/RediSearch/RediSearch
+
+- [RediSearch源码安装方法](https://redis.io/docs/stack/search/development/)
+
+  > vi /etc/environment
+  >
+  > LANG=en_US.utf-8
+  > LC_ALL=en_US.utf-8
+  >
+  > \# 添加这两项 
+  >
+  > source /etc/environment
+  >
+  > a
+  >
+  > whereis redis-server
+  >
+  > \# /usr/local/bin/redis-server
+  >
+  > vi redis.conf 
+  >
+  > bind 0.0.0.0
+  >
+  > daemonize yes
+  >
+  > enable-module-command yes
+  >
+  > \# 改几两项
+  >
+  > redis-server /root/redis/redis.conf
+  >
+  > \# 运行
+  >
+  > /usr/local/bin/redis-cli  --raw
+  >
+  > ```
+  > MODULE LOAD /root/RedisJSON/bin/linux-x64-release/rejson.so
+  > MODULE LOAD /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+  > 	# 成功加载两个模块
+  > 	loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+  > 	loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+  > 		# 配置文件试加这两行
+  > 
+  > JSON.SET product:1 $ '{"id":1,"productSn":"7437788","name":"小米8","subTitle":"全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待","brandName":"小米","price":2699,"count":1}'
+  > 
+  > JSON.SET product:2 $ '{"id":2,"productSn":"7437789","name":"红米5A","subTitle":"全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待","brandName":"小米","price":649,"count":5}'
+  > 
+  > JSON.SET product:3 $ '{"id":3,"productSn":"7437799","name":"Apple iPhone 8 Plus","subTitle":"64GB 红色特别版 移动联通电信4G手机","brandName":"苹果","price":5499,"count":10}'
+  > 
+  > JSON.SET product:4 $ '{"id":4,"productSn":"7437801","name":"小米8","subTitle":"他の全文検索シリーズでも同じデータを使うので、他の記事も試す場合は wiki.json.bz2 を捨てずに残しておくことをおすすめします。","brandName":"小米","price":2699,"count":1}'
+  > 
+  > JSON.GET product:1
+  > 
+  > JSON.GET product:1 name subTitle
+  > 
+  > FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
+  > 
+  > ft.search productIdx "香槟金" language "chinese"
+  > 
+  > ft.search productIdx "捨てずに" language "chinese"
+  > 
+  > ft.search productIdx "てずに" language "english"
+  > 
+  > ```
+  >
+  > 需要 redis 6 以上
+  >
+  > https://github.com/redis/redis
+  >
+  > git clone https://github.com/redis/redis.git
+  >
+  > make BUILD_TLS=yes USE_SYSTEMD=yes
+  >
+  > make install
+  >
+  > 
+  >
+  > /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+  >
+  > https://redis.io/docs/stack/json/
+  >
+  > /root/RedisJSON/bin/linux-x64-release/rejson.so
+  >
+  > 
+  >
+  > 
+
+- [RedisJSON + RediSearch](http://16384.net/20220813212856/index.html)
+
+- [docker安装](https://hub.docker.com/r/redis/redis-stack-server)
+
+- [阿里云webdav](https://github.com/messense/aliyundrive-webdav)
+
+  - [解放Linux空间，薅羊毛新方式](https://blog.lincloud.pro/archives/36.html)
+
+  > ```
+  > pip install aliyundrive-webdav
+  > 
+  > aliyundrive-webdav qr login
+  > 	# 扫描授权登录
+  > 	# 会输出一个 refresh_token
+  > 	
+  > docker run -d --name=aliyundrive-webdav --restart=unless-stopped -p 8080:8080 \
+  >   -v /etc/aliyundrive-webdav/:/etc/aliyundrive-webdav/ \
+  >   -e REFRESH_TOKEN='your refresh token' \
+  >   -e WEBDAV_AUTH_USER=root \
+  >   -e WEBDAV_AUTH_PASSWORD= \
+  >   messense/aliyundrive-webdav
+  > 
+  > dnf update -y && \
+  > dnf install -y epel-release && \
+  > dnf update -y && \
+  > dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel 
+  > 
+  > wget https://rpmfind.net/linux/epel/8/Everything/x86_64/Packages/d/davfs2-1.5.6-1.el8.x86_64.rpm && \
+  > dnf install ./davfs2-1.5.6-1.el8.x86_64.rpm
+  > 
+  > 
+  > mkdir /alipan
+  > mount -t davfs http://xxx.com:8080 /alipan
+  > 	# 输入账号密码
+  > 
+  > Streaming Optimized IP
+  > 
+  > ```
+
+
+
+```
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo && \
+dnf update && \
+dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin && \
+systemctl enable --now docker && \
+systemctl status docker
+
+vi /etc/docker/daemon.json
+{
+"registry-mirrors": [
+"https://ustc-edu-cn.mirror.aliyuncs.com/",
+"https://hub-mirror.c.163.com",
+"https://mirror.baidubce.com"
+]
+}
+
+systemctl daemon-reload && \
+systemctl restart docker && \
+docker info
+
+
+docker pull redis/redis-stack-server && \
+docker run -p 6379:6379 --name redis-stack redis/redis-stack:latest
+
+nmap 127.0.0.1 -p6379
+
+
+
+
+
+
+```
+
+
+
+
 
 
 
@@ -10116,6 +10398,10 @@ systemctl daemon-reload && \
 service docker restart && \
 docker info
 
+# AlmaLinux 开发环境
+dnf update -y && \
+dnf install -y tar libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel
+
 
 docker pull centos:centos7
 	# docker pull centos:centos8  
@@ -10184,9 +10470,9 @@ cd node-$version-linux-x64/bin && \
 chmod +x node npm npx && \
 cd ../.. && \
 mv node-$version-linux-x64 /usr/local && \
-ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm$version && \
-ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx$version
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 	# `GLIBC_2.27' not found 
 
 kill -9 $(jobs -p)
@@ -10201,7 +10487,18 @@ docker exec -it centos7_ChatGPT_507 bash -c "systemctl enable nginx && systemctl
 
 
 
-## Docker for ubuntu20.04
+## Docker for AlmaLinux9
+
+[How to install Docker on AlmaLinux 9 Linux?](https://linux.how2shout.com/how-to-install-docker-on-almalinux-9-linux/)
+
+```
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo && \
+dnf update && \
+dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin && \
+systemctl enable --now docker && \
+systemctl status docker
+
+```
 
 
 
@@ -14828,6 +15125,16 @@ input_field.grab_focus()
 
 [WebSocket](https://github.com/godotengine/godot/issues/73810)
 
+[websocket html5](https://godotengine.org/qa/95051/problems-with-websockets-and-html5-export)
+
+> Hi, if the website you use as environment for the Godot-export-HTML (in your case itch.io) uses http**s** you cannot use your IP address with "ws://...". However, the browser makes an exception for localhost - that's why it worked this way.
+> You need to connect to your server with "ws**s**://**:"
+> This, consequentially, requires SSL encryption. You can generate self-signed keys and certificates [within Godot using the Crypto-Reference](https://godotengine.org/article/websocket-ssl-testing-html5-export). Yet, it would be better to use an official SSL certificate website instead. The link also shows how to use key and certificate on the server after creation.
+> HOWEVER, all this being said, I figured there is a [Godot intern bug that disconnects the client from the server immediately when trying to connect to the server](https://github.com/godotengine/godot/issues/27560). There is no sign of an error, but the engine emits the "disconnect"-signal.
+> The easiest solution was to start an Apache server which runs the Godot-export-HTML unencrypted via "ws://..." - thus, this way, you wouldn't have your project running on itch.io.
+>
+> You can find a better explanation of the solution [here](https://www.reddit.com/r/godot/comments/et52fp/how_to_integrate_web_sockets_secure_wss_in_godot/).
+
 
 
 
@@ -16576,6 +16883,84 @@ npm install protobufjs --save --save-prefix=~
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
 
+```
+  let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+  let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+  class Document {
+    constructor(fields) {
+      Object.defineProperty(this, "pageContent", {
+        enumerable: true,
+        configurable: true,
+        writable: true,
+        value: void 0
+      });
+      Object.defineProperty(this, "metadata", {
+        enumerable: true,
+        configurable: true,
+        writable: true,
+        value: void 0
+      });
+      this.pageContent = fields.pageContent
+        ? fields.pageContent.toString()
+        : this.pageContent;
+      this.metadata = fields.metadata ?? {};
+    }
+  }
+
+  let docs = new Array()
+  docs.push(new Document(
+    {
+      pageContent: '细菌、病毒、真菌和原虫等均可引起医院感染',
+      metadata: {}
+    }
+  ))
+
+  let vectors = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({
+    openAIApiKey: api_key,
+    modelName: 'text-embedding-ada-002',
+    maxConcurrency: 5, timeout: 3600 * 1000
+  }))
+
+
+  let docs2 = new Array()
+  docs2.push(new Document(
+    {
+      pageContent: '耐药性基因可传递给医院环境里及人体表面的某些腐生菌',
+      metadata: {}
+    }
+  ))
+   
+  await vectors.addDocuments(docs2)
+```
+
+
+
+```
+        // 'Chat History:\n\n\n\n\nQuestion:用中文回答\n过敏因素是什么'
+        let docs = await vectors.asRetriever().getRelevantDocuments(q)
+        const texts = docs.map(({ pageContent }) => pageContent)
+        const tt = texts.join("\n\n")
+
+const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
+  
+Chat History:
+{chat_history}
+Follow Up Input: {question}
+Standalone question:`
+
+const QA_PROMPT = `You are a helpful AI assistant. Use the following pieces of context to answer the question at the end.
+If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
+If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
+
+{context}
+
+Question: {question}
+Helpful answer in markdown:`
+
+```
+
+
+
 
 
 ###### pinecone
@@ -17238,6 +17623,8 @@ We are currently working on an official solution to make it run in a 24G memory 
 
 [PEFT: 在低资源硬件上对十亿规模模型进行参数高效微调](https://zhuanlan.zhihu.com/p/610503561)
 
+[zero3+offload](https://zhuanlan.zhihu.com/p/513571706)
+
 [SpeechT5 语音文本全都要](https://zhuanlan.zhihu.com/p/613644440)
 
 ```
@@ -17580,6 +17967,12 @@ conda env remove -n kan
 ### gpt4all
 
 [gpt4all GPT4数据很多](https://github.com/nomic-ai/gpt4all)
+
+
+
+## Chatterbox
+
+[Chatterbox](https://github.com/enze5088/Chatterbox)
 
 
 
@@ -19279,6 +19672,56 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 
 
 
+## Always GPT-4
+
+
+
+```
+脚本可以自动模拟点击那个菜单，保证每次都是 GPT4 ，需要搭配 Tampermonkey 使用。
+
+请新建一个脚本，把下面的代码贴进去启用即可。
+
+// ==UserScript==
+// @name Always GPT-4
+// @namespace http://tampermonkey.net/
+// @version 0.1
+// @description try to take over the world!
+// @author You
+// @match https://chat.openai.com/*
+// @icon data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant none
+// ==/UserScript==
+
+(function() {
+'use strict';
+function clickElementWhenAvailable() {
+var element = document.querySelector('[class^="relative flex w-full cursor-default"]');
+if (element) {
+element.click();
+observer.disconnect(); // Stop observing once the element is clicked
+}
+setTimeout(function() {
+var ul = document.querySelector('ul');
+var secondItem = ul.getElementsByTagName('li')[1];
+secondItem.click();
+}, 100);
+}
+
+var observer = new MutationObserver(clickElementWhenAvailable);
+
+observer.observe(document.body, {
+childList: true,
+subtree: true,
+});
+
+clickElementWhenAvailable(); // Check if the element is available when the script runs
+})();
+```
+
+
+
+
+
 ## video download
 
 [写了一个无限制视频下载脚本](https://www.v2ex.com/t/856510)
@@ -19351,6 +19794,12 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 
 
+## CF 流式输出
+
+[cf-openai-with-sub-account-proxy](https://github.com/yinm0591/cf-openai-with-sub-account-proxy)
+
+
+
 # 范畴论
 
 [范畴论完全装逼手册](https://blog.oyanglul.us/grokking-monad/part1)
@@ -19358,6 +19807,35 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 [Haskell中的范畴之函子和自然变换](https://zhuanlan.zhihu.com/p/25565309)
 
 [函数式编程中的functor和monad](http://notes.jimliang.com/2019/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84functor%E5%92%8Cmonad/)
+
+[FPC1：F#函数式编程与范畴论](https://zhuanlan.zhihu.com/p/50122691)  相当的直观
+
+```
+const a = Promise.resolve(2)
+	# Promise 可以看成是一个范畴，then 返回一个新的值
+const b = a.then((i)=> i + 3)
+
+函数式编程里面的运算，都是通过函子完成，它的运算不直接针对值，而是针对这个值的盒子。我们甚至可以通过多种运算，衍生出多种函子，通过这些函子来解决实际问题。
+
+
+class Container {
+  constructor(x) {
+    this._value = x
+  }
+  map(f) {  // 态射接口，具体实现要你传一个变换函数
+    return Container.of(f(this._value))
+  }
+  static of(x) { // 装箱
+    return new Container(x)
+  }
+}
+
+let v = Container.of(2).map(two => two + 2)
+console.log(v[`_value`])
+
+```
+
+
 
 dependent type
 
@@ -19374,6 +19852,57 @@ dependent type
 > 若我们将范畴看成是更高层的范畴的对象，则两个范畴之间的态射就是函子
 
 
+
+## Python Monads 
+
+[Expression](https://github.com/cognitedata/Expression)
+
+```
+from expression import pipe
+
+v = 1
+fn = lambda x: x + 1
+gn = lambda x: x * 2
+
+assert pipe(v, fn, gn) == gn(fn(v))
+```
+
+```
+from expression import Some
+
+v = Some(1)
+fn = lambda x: x.map(lambda y: y + 1)
+	# 范畴里机有对象 value ，有态射的接口 map ，态射的具体实现需要你自已传一个函数
+gn = lambda x: x.map(lambda y: y * 2)
+
+assert v.pipe(fn, gn) == gn(fn(v))
+```
+
+
+
+
+
+## Nodejs Monads
+
+[monads](https://github.com/sniptt-official/monads)
+
+
+
+## F\# Monads
+
+[category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
+
+
+
+## Rust Monads
+
+[Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
+
+[Rust bindings for Godot 4](https://github.com/godot-rust/gdext)
+
+[Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
+
+[rust-script](https://github.com/fornwall/rust-script)
 
 
 
