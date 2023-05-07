@@ -10,6 +10,40 @@ F12 跳转到定义，Ctrl + "-"  返回
 
 
 
+# C++
+
+
+
+## 中文出错
+
+```
+项目属性 -> C/C++ -> 命令行 ->其它 
+/utf-8 
+	# 加这一句
+	
+chcp 65001
+	# 临时改控件台的当前代码页
+
+Win + R -> regedit
+
+计算机\HKEY_CURRENT_USER\Software\Microsoft\Command Processor
+
+AutoRun 改成 chcp 65001
+	# 改完 vs2019 就能成功打印中文了 
+
+	
+#pragma warning(disable:4996)
+strcpy(line, "歧义和同义词:研究生命起源，混合词: 做B超检查身体");
+
+errno_t err;
+if ( ( err = fopen_s( &__stream, __ifile, "rb" ) ) == 0 ) {
+
+```
+
+
+
+
+
 # C#
 
 
