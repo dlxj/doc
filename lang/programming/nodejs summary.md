@@ -369,12 +369,23 @@ launch.json
 
 
 
-## 调试 redis 模块
+### 调试 redis 模块
 
 ```
 /root/redis/src/module.c
     onload = (int (*)(void *, void **, int))(unsigned long) dlsym(handle,"RedisModule_OnLoad");
 	# 加载模块的代码在这里
+
+RedisModuleCmdFunc cmdfunc
+	# 模块代码的执行可能和这个有关
+
+执行命令 ft.search productIdx "全网通" language "chinese"
+void RedisModuleCommandDispatcher(client *c) {
+	# 会在这里断下来
+	/root/redis/src/server.c
+		c->cmd->proc(c);
+			# 上层调用在这里
+
 
 ```
 
