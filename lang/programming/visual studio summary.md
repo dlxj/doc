@@ -69,8 +69,44 @@ make distclean && \
 make USE_SYSTEMD=yes V=1
 
 ./redis-server
-	
-	
+	# 正常运行，记下它的 PID
+
+vscode 先安装 C++ 插件
+
+launch.json	
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "attach",
+      "processId": "771184",
+      "program": "/root/redis/src/redis-server",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "text": "-gdb-set follow-fork-mode child",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}	
+
+# 正常附加调试
+
+
+
+
+# 不知道为什么，运行到一半 redis-server 自已就退出了
+# 只能附加调试现在
 tasks.json
 {
     "version": "2.0.0",
