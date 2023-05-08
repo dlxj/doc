@@ -29,7 +29,8 @@ Win + R -> regedit
 计算机\HKEY_CURRENT_USER\Software\Microsoft\Command Processor
 
 AutoRun 改成 chcp 65001
-	# 改完 vs2019 就能成功打印中文了 
+	# 改完 vs2019 就能成功打印中文了
+    # 改完以后任意程序只要用到控制台，都会先执行一下 chcp 65001
 
 	
 #pragma warning(disable:4996)
