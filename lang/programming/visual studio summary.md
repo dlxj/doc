@@ -42,6 +42,18 @@ if ( ( err = fopen_s( &__stream, __ifile, "rb" ) ) == 0 ) {
 
 
 
+## 调试Makefile工程
+
+[Building in Visual Studio Code with a Makefile](https://earthly.dev/blog/vscode-make/)
+
+[VS Code搭建ARM Linux Makefile工程IDE（C/C++）](https://jackeyt.cn/[%E5%8F%B2%E4%B8%8A%E6%9C%80%E8%AF%A6%E7%BB%86]VSCode%E6%90%AD%E5%BB%BAARMLinuxMakefile%E5%B7%A5%E7%A8%8BIDE%EF%BC%88C-C++%EF%BC%89/)
+
+[linux下使用vscode+makefile调试大型程序](https://blog.csdn.net/baidu_22429139/article/details/105125095)
+
+[redis 目标是调试这个工程](https://github.com/redis/redis)
+
+
+
 
 
 # C#
