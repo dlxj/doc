@@ -369,6 +369,21 @@ launch.json
 
 
 
+## 调试 redis 模块
+
+```
+/root/redis/src/module.c
+    onload = (int (*)(void *, void **, int))(unsigned long) dlsym(handle,"RedisModule_OnLoad");
+	# 加载模块的代码在这里
+
+```
+
+
+
+
+
+
+
 ## vscode 权限错误
 
 Bad owner or permissions on C:\\Users\\i/.ssh/config 
