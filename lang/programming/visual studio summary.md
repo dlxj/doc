@@ -68,8 +68,54 @@ vi Makefile
 make distclean && \
 make USE_SYSTEMD=yes V=1
 
+./redis-server
+	
+	
+tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "shell",
+            "type": "shell",
+            "command": "/usr/bin/make"
+        }
+    ]
+}
 
+launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [
+        "redis.conf"
+      ],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/src/redis-server",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "environment": [],
+      "preLaunchTask": "shell"
+    }
+  ]
+}
 
+"preLaunchTask": "shell"
+	# 这一句是在调试时先执行 tasks.json 里面的命令
+	
 ```
 
 
