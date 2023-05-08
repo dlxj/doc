@@ -49,6 +49,8 @@
 
 - https://y2mate.ch/  dmmTV下载
 
+- https://iproyal.cn/  美国家宽代理
+
 - https://nyaa.si/?f=0&c=0_0&q=pokemon
 
 - https://anidex.info/?q=pokemon&id=1,2,3
@@ -56,6 +58,8 @@
 - https://rutracker.org/forum/tracker.php?nm=pokemon
 
 - https://www.youtube.com/watch?v=-MlX_2wgTAY  XY粤语官方
+
+- [DP双语动画](https://weibo.com/u/1001770703?tabtype=newVideo)
 
   
 
@@ -67,6 +71,18 @@ switch
 https://www.zake.store/swindex.html
 
 [必看教程](https://www.bilibili.com/video/BV1ju411m7EQ)
+
+
+
+## forum
+
+[pmfansub level-plus](https://www.level-plus.net/) cdef68935
+
+[秒传脚本](https://greasyfork.org/zh-CN/scripts/424574-%E7%A7%92%E4%BC%A0%E9%93%BE%E6%8E%A5%E6%8F%90%E5%8F%96)
+
+- [度盘秒传页面](https://pan.baidu.com/disk/main)
+
+
 
 
 
@@ -169,7 +185,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
