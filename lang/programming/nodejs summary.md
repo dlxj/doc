@@ -639,9 +639,12 @@ make install && \
 make install-config
 
 vi /etc/proxychains.conf
-	socks5  127.0.0.1 1080
+localnet 127.0.0.0/255.0.0.0
+localnet 172.16.0.0/255.240.0.0
+localnet 192.168.0.0/255.255.0.0
+[ProxyList]
+socks5  127.0.0.1 1080
 	# 改成这样
-
 
 yum install epel-release -y && \
 yum update && \
