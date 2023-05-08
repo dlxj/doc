@@ -363,6 +363,10 @@ launch.json
 
 
 
+### 写一个redis模块
+
+[date module](https://github.com/diegopacheco/redis_date_module/blob/master/src/date.c)
+
 
 
 ## vscode 权限错误
