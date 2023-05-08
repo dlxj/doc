@@ -202,6 +202,114 @@ ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 
 
 
+## vscode C++ 附加调试
+
+```
+git clone --recursive  https://github.com/redis/redis.git && \
+cd redis/src && \
+vi Makefile
+	# OPTIMIZATION?=-O3
+	# OPTIMIZATION?=-O0  
+		# 改成这个
+
+make distclean && \
+make USE_SYSTEMD=yes V=1
+
+
+vi /root/redis/redis.conf
+bind 0.0.0.0
+daemonize yes
+enable-module-command yes
+	# 改成这样 
+
+./redis-server /root/redis/redis.conf
+	# 正常运行，记下它的 PID
+	# 它有可能会直接后台运行，如果 lsof 6379 有输出说明正常
+	
+
+vscode 先安装 C++ 插件
+	# "processId": "771184" 
+		# 改成前面记下来的 PID
+
+launch.json	
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "attach",
+      "processId": "771184",
+      "program": "/root/redis/src/redis-server",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "text": "-gdb-set follow-fork-mode child",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}	
+
+# 正常附加调试
+
+vscode 在这里下一个断点，redis-cli 一连上就会成功断下
+	/root/redis/src/networking.c
+	client *createClient(connection *conn) {
+		    if (conn) {
+
+
+vscode 上开另外一个 bash
+
+cd /src
+./redis-cli --raw
+keys *
+MODULE LOAD /root/RedisJSON/bin/linux-x64-release/rejson.so
+MODULE LOAD /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+	# 成功加载两个模块
+MODULE LIST
+	# 列出已加载模块
+	# 奇怪的是，vscode 附加调试后，再加载模块就会出错，所以只能写入配置后再运行
+	loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+	loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+		# 配置文件试入这两行，再 MODULE LIST 就可以看到正常加载了
+		# 然事，这时再用 vscode 附加调试就 OK 了
+		
+JSON.SET product:1 $ '{"id":1,"productSn":"7437788","name":"小米8","subTitle":"全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待","brandName":"小米","price":2699,"count":1}'
+
+JSON.SET product:2 $ '{"id":2,"productSn":"7437789","name":"红米5A","subTitle":"全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待","brandName":"小米","price":649,"count":5}'
+
+JSON.SET product:3 $ '{"id":3,"productSn":"7437799","name":"Apple iPhone 8 Plus","subTitle":"64GB 红色特别版 移动联通电信4G手机","brandName":"苹果","price":5499,"count":10}'
+
+JSON.SET product:4 $ '{"id":4,"productSn":"7437801","name":"小米8","subTitle":"他の全文検索シリーズでも同じデータを使うので、他の記事も試す場合は wiki.json.bz2 を捨てずに残しておくことをおすすめします。","brandName":"小米","price":2699,"count":1}'
+
+JSON.GET product:1
+
+JSON.GET product:1 name subTitle
+
+FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
+
+ft.search productIdx "全网通" language "chinese"
+
+ft.search productIdx "捨てずに" language "chinese"
+
+ft.search productIdx "てずに" language "english"
+
+exit
+
+```
+
+
+
+
+
 ## vscode 权限错误
 
 Bad owner or permissions on C:\\Users\\i/.ssh/config 
