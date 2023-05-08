@@ -52,9 +52,30 @@ if ( ( err = fopen_s( &__stream, __ifile, "rb" ) ) == 0 ) {
 
 [redis 目标是调试这个工程](https://github.com/redis/redis)
 
+- [现成的](https://github.com/wenfh2020/youtobe/blob/master/redis-debug.md)
 
 
 
+```
+git clone --recursive  https://github.com/redis/redis.git && \
+cd redis/src && \
+vi Makefile
+	# OPTIMIZATION?=-O3
+	# OPTIMIZATION?=-O0  
+		# 改成这个
+
+make distclean && \
+make USE_SYSTEMD=yes V=1
+
+
+
+```
+
+
+
+```
+	# git submodule update --init --recursive
+```
 
 # C#
 
