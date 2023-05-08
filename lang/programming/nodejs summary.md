@@ -308,6 +308,61 @@ exit
 
 
 
+```
+
+# 不知道为什么，运行到一半 redis-server 自已就退出了
+# 只能附加调试现在
+tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "shell",
+            "type": "shell",
+            "command": "/usr/bin/make"
+        }
+    ]
+}
+
+launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [
+        "redis.conf"
+      ],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/src/redis-server",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "environment": [],
+      "preLaunchTask": "shell"
+    }
+  ]
+}
+
+"preLaunchTask": "shell"
+	# 这一句是在调试时先执行 tasks.json 里面的命令
+	
+	
+	# git submodule update --init --recursive
+```
+
+
+
 
 
 ## vscode 权限错误
