@@ -387,6 +387,15 @@ void RedisModuleCommandDispatcher(client *c) {
 			# 上层调用在这里
 
 
+
+RediSearch\src\module-init\module-init.c
+	int RedisModule_OnLoad(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {
+
+E:\t\RediSearch\src\aggregate\aggregate_exec.c
+	int RSSearchCommand(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {
+		# 实际执行搜索可能是这里
+
+
 ```
 
 
