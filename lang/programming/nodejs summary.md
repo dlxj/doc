@@ -204,6 +204,8 @@ ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 
 ## vscode C++ 附加调试
 
+[Debugging a Shared Library](https://nilrt-docs.ni.com/cross_compile/call_shared_library.html)
+
 ```
 git clone --recursive  https://github.com/redis/redis.git && \
 cd redis/src && \
@@ -227,7 +229,7 @@ enable-module-command yes
 	# 它有可能会直接后台运行，如果 lsof 6379 有输出说明正常
 	
 
-vscode 先安装 C++ 插件
+vscode 先安装 C++ 插件, 再装 makefile tool
 	# "processId": "771184" 
 		# 改成前面记下来的 PID
 
@@ -270,7 +272,10 @@ launch.json
           "text": "-gdb-set follow-fork-mode child",
           "ignoreFailures": true
         },
-        "preLaunchTask": "shell"
+        "preLaunchTask": "shell",
+        "sourceFileMap": {
+        "/root/RediSearch/bin/linux-x64-release/search/redisearch.so": "/root/RediSearch/src"
+      }
       ]
     }
   ]
