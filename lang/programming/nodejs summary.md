@@ -206,6 +206,8 @@ ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 
 [Debugging a Shared Library](https://nilrt-docs.ni.com/cross_compile/call_shared_library.html)
 
+[gdb 笔记](https://blog.csdn.net/wohu1104/article/details/125067910)
+
 ```
 git clone --recursive  https://github.com/redis/redis.git && \
 cd redis/src && \
@@ -227,6 +229,28 @@ enable-module-command yes
 ./redis-server /root/redis/redis.conf
 	# 正常运行，记下它的 PID
 	# 它有可能会直接后台运行，如果 lsof 6379 有输出说明正常
+
+# 这里只用 gdb ，不用 vscode ，因为 vscode 附加调试不能断下共享库的函数
+cd /root/redis/src
+gdb -ex r --args ./redis-server --loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so --loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+	# https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html
+	# 成功跑起来以后 ctrl + Z 回到 gdb
+	
+/root/RediSearch/src/tokenize.c
+	GetTokenizer
+
+(gdb) break GetTokenizer
+(gdb) info b
+(gdb) r
+	# 重新运行
+delete
+	# 删除所有断点
+c
+	# 继续运行
+
+redis-cli
+	# 这里执行中文搜索，可以成功触发断点
+	
 	
 
 vscode 先安装 C++ 插件, 再装 makefile tool
