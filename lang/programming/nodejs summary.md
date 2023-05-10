@@ -231,6 +231,23 @@ vscode 先安装 C++ 插件
 	# "processId": "771184" 
 		# 改成前面记下来的 PID
 
+vi /etc/environment
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+
+/root/redis/.vscode/tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "shell",
+            "type": "shell",
+            "command": "source /etc/environment"
+        }
+    ]
+}
+	# lanuch 之前会自动执行task 里定义的命令
+
 launch.json	
 {
   "version": "0.2.0",
@@ -252,7 +269,8 @@ launch.json
         {
           "text": "-gdb-set follow-fork-mode child",
           "ignoreFailures": true
-        }
+        },
+        "preLaunchTask": "shell"
       ]
     }
   ]
