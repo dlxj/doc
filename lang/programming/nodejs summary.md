@@ -250,8 +250,11 @@ c
 
 redis-cli
 	# 这里执行中文搜索，可以成功触发断点
-	
-	
+
+# 试着修改中文分词模块，每次都只返回中中中中中
+cd /root/RediSearch
+make build SLOW=1 VERBOSE=1
+
 
 vscode 先安装 C++ 插件, 再装 makefile tool
 	# "processId": "771184" 
@@ -432,8 +435,6 @@ void RedisModuleCommandDispatcher(client *c) {
 	/root/redis/src/server.c
 		c->cmd->proc(c);
 			# 上层调用在这里
-
-
 
 RediSearch\src\module-init\module-init.c
 	int RedisModule_OnLoad(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {
