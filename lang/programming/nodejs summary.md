@@ -422,6 +422,31 @@ launch.json
 ### 调试 redis 模块
 
 ```
+
+config->next_token = next_mmseg_token;
+config->next_cjk = next_complex_cjk;
+	# next_token 每次返回一个词，返回 NULL 表示结束
+	
+
+RediSearch\src\tokenize_cn.c
+static uint32_t cnTokenizer_Next(RSTokenizer *base, Token *t) {
+	friso_token_t tok = config_g->next_token(friso_g, config_g, self->fTask);
+		# RediSearch 对 next_token 封装了一下
+
+
+redis\src\config.c
+if (!strcasecmp(argv[0],"loadmodule") && argc >= 2) {
+	# 这是从服务端读取配置文件，然后添加进待加载列表
+	
+redis\src\module.c
+	void moduleCommand(client *c) {
+		if (!strcasecmp(subcmd,"load") && c->argc >= 3) {
+			# 这是从客户端加载模块
+redis\src\module.c
+int moduleLoad(const char *path, void **module_argv, int module_argc, int is_loadex) {
+	# 实际加载模块在这里
+
+
 /root/redis/src/module.c
     onload = (int (*)(void *, void **, int))(unsigned long) dlsym(handle,"RedisModule_OnLoad");
 	# 加载模块的代码在这里
@@ -448,7 +473,9 @@ E:\t\RediSearch\src\aggregate\aggregate_exec.c
 
 
 
+## vs studio WSL Linux 开发
 
+[使用VS 2017进行Linux C/C++远程GDB调试](https://zhuanlan.zhihu.com/p/30950892)
 
 
 
