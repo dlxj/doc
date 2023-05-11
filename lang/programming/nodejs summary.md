@@ -423,6 +423,11 @@ launch.json
 
 ```
 
+RediSearch\src\document.c
+	aCtx->tokenizer->Start
+	# 这里应该就是分词最开始的地方
+
+friso
 config->next_token = next_mmseg_token;
 config->next_cjk = next_complex_cjk;
 	# next_token 每次返回一个词，返回 NULL 表示结束
