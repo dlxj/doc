@@ -17,6 +17,13 @@ F12 跳转到定义，Ctrl + "-"  返回
 ## 中文出错
 
 ```
+如果是在windows平台的 C 代码里面，执行这一句 
+#pragma execution_character_set("utf-8")  // "string 以utf-8 编码"
+int main() {
+	system("chcp 65001");
+		# 它在windows 的sdk 里定义 
+
+
 项目属性 -> C/C++ -> 命令行 ->其它 
 /utf-8 
 	# 加这一句
