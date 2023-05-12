@@ -20511,6 +20511,10 @@ typedef struct EitherInt {
 
 
 
+## C++ Monads
+
+[FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
+
 
 
 # Excel
