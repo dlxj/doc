@@ -175,6 +175,8 @@ https://pe.metaquant.org/
 >
 > - [【爱知大学】中日大辞典第三版](https://forum.freemdict.com/t/topic/9289)
 >
+> [物书堂](https://forum.freemdict.com/t/topic/12025)
+>
 > [NonJishoKei Japanese所有单词变形](https://github.com/NoHeartPen/NonJishoKei)　　
 >
 > - [真·哪里不会点哪里_日本語非辞書形辞典_v2](https://forum.freemdict.com/t/topic/14048)
@@ -207,7 +209,7 @@ https://pe.metaquant.org/
 >
 > [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 > 　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
-> 
+>
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > 　　　　　　　　　　　　　　　　　　　　　　　　
 > 　　　　　　　　　　　　　　　　　　　　　　　　    [Textractor 必看](https://github.com/Artikash/Textractor/issues/215)
