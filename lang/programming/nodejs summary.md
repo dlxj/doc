@@ -20392,7 +20392,7 @@ from expression import Some
 
 v = Some(1)
 fn = lambda x: x.map(lambda y: y + 1)
-	# 范畴里机有对象 value ，有态射的接口 map ，态射的具体实现需要你自已传一个函数
+	# 范畴里有对象 value ，有态射的接口 map ，态射的具体实现需要你自已传一个函数
 gn = lambda x: x.map(lambda y: y * 2)
 
 assert v.pipe(fn, gn) == gn(fn(v))
@@ -20514,6 +20514,16 @@ typedef struct EitherInt {
 ## C++ Monads
 
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
+
+
+
+## MMSEG 分词算法
+
+[mmseg](http://technology.chtsai.org/mmseg/)
+
+[python3实现](https://gist.github.com/hailiang-wang/d14c48740d18e701cf470311d75c7ba0)
+
+[dict.txt](https://github.com/hailiang-wang/jieba/blob/master/jieba/dict.txt)
 
 
 
