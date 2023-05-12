@@ -20426,6 +20426,93 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 
 
+## C Monads
+
+[C Monads](https://gist.github.com/lukechampine/c460fb2754ef0a7f7652874d9f9ed678)
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+// Maybe
+
+typedef struct MaybeInt {
+    int  just;
+    bool nothing;
+} MaybeInt;
+
+const MaybeInt Nothing = (MaybeInt) { .nothing = true };
+
+MaybeInt returnMaybe(int x) { return (MaybeInt) { .just = x, .nothing = false }; }
+
+MaybeInt bindMaybe(MaybeInt (*fn)(int), MaybeInt m) {
+    return m.nothing ? Nothing : fn(m.just);
+}
+
+void printMaybe(MaybeInt m) {
+    if (m.nothing) printf("Nothing\n");
+    else           printf("%d\n", m.just);
+}
+
+MaybeInt maybeFoo(int x) { return (x < 1)  ? Nothing : returnMaybe(x - 3); }
+MaybeInt maybeBar(int x) { return (x > 0)  ? Nothing : returnMaybe(x + 3); }
+MaybeInt maybeBaz(int x) { return (x != 2) ? Nothing : returnMaybe(x); }
+
+
+// Either
+
+typedef struct EitherInt {
+    int   i;
+    char* error;
+} EitherInt;
+
+EitherInt returnInt(int i)     { return (EitherInt) { .i = i, .error = NULL }; }
+EitherInt returnError(char* e) { return (EitherInt) { .i = 0, .error = e };    }
+
+EitherInt bindEither(EitherInt (*fn)(int), EitherInt m) {
+    return (m.error != NULL) ? m : fn(m.i);
+}
+
+void printEither(EitherInt m) {
+    if (m.error != NULL) printf("%s\n", m.error);
+    else                 printf("%d\n", m.i);
+}
+
+EitherInt eitherFoo(int x) { return (x < 2)  ? returnError("too small")    : returnInt(x - 3); }
+EitherInt eitherBar(int x) { return (x > 0)  ? returnError("not negative") : returnInt(x + 3); }
+EitherInt eitherBaz(int x) { return (x != 2) ? returnError("must be 2")    : returnInt(x);     }
+
+int main() {
+    MaybeInt m = bindMaybe(maybeBaz, bindMaybe(maybeBar, maybeFoo(7)));
+    printMaybe(m); // "Nothing"
+
+    m = bindMaybe(maybeBaz, bindMaybe(maybeBar, maybeFoo(2)));
+    printMaybe(m); // "2"
+
+
+    EitherInt e = bindEither(eitherBaz, bindEither(eitherBar, eitherFoo(7)));
+    printEither(e); // "not negative"
+
+    e = bindEither(eitherBaz, bindEither(eitherBar, eitherFoo(2)));
+    printEither(e); // "2"
+    return 0;
+}
+
+
+typedef struct EitherInt {
+    union {
+        int   i;
+        char* error;
+    };
+    bool is_error;
+} EitherInt;
+
+```
+
+
+
+
+
 # Excel
 
 
