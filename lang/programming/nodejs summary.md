@@ -421,6 +421,89 @@ launch.json
 
 ### 调试 redis 模块
 
+
+
+```
+# 成功生成 NGram
+FRISO_API friso_token_t next_mmseg_token( 
+        friso_t friso, 
+        friso_config_t config, 
+        friso_task_t task ) 
+{
+
+    if (task->idx == 0) { // 首次分词，生成 NGram
+        memset(task->NGram, 0, 8192);
+        memset(task->text2, 0, 8192);
+        sprintf(task->NGram, "");
+        sprintf(task->text2, task->text);
+
+        assert(utf8eq(task->text, task->text2) == 1);
+
+        char tmp[8192] = { 0 };
+        char ngram[8192] = { 0 };
+        //memcpy( tmp, at(task->text2, 0), at(task->text2, 1) - at(task->text2, 0));
+        //printf("第一个字符：%s", tmp);
+
+        int curPos = 0;
+
+        int len = utf8strlen(task->text2);      // 整个utf8 字符串长度
+
+        for (int i = 0; i < len; i++) {       // 编历字符串，第 0 个字符 到 第 len - 1 个字符
+            for (int j = 0; j < 6; j++) {      // NGram 长度从 1 到 6
+                if (i + j < len) {
+                    char * starti = at(task->text2, i);
+                    char * startj = at(task->text2, i+j);
+                    int lenj = utf8len(startj);
+                    char* end = startj + lenj;
+                    int bytes = end - starti;
+                    memcpy(tmp, starti, bytes);
+
+                    sprintf(ngram + curPos, "%s", tmp);
+                    printf("%s ", ngram + curPos);
+                    
+                    curPos = curPos + bytes + 1;
+                    memset(tmp, 0, 8192);
+
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        int findNext = 0;
+        for (int k = 0; k < 8192 - 1; k++) {
+            
+            if (ngram[k] == '\0' && ngram[k + 1] == '\0') {
+                break;
+            }
+
+            if (findNext) {
+                if (ngram[k] == '\0' && ngram[k + 1] != '\0') {
+                    findNext = 0;
+                    continue;
+                }
+                else {
+                    continue;
+                }
+                
+            }
+            
+            if (ngram[k] != '\0') {
+                printf("\n->%s ", & ngram[k]);
+                findNext = 1;
+            }
+        }
+        
+        printf(":");
+
+    }
+```
+
+
+
+
+
 ```
 
 RediSearch\src\document.c
