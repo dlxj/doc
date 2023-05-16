@@ -1299,6 +1299,7 @@ ft.search productIdx "香槟金" language "chinese"
 ft.search productIdx "て" language "chinese"
 	# 开启 JP 字符检测后 搜 JP 字符看
 		# 不行
+		# 改完 NGram 编译后，成功！
 
 ft.search productIdx "全文" language "chinese"
 	# 成功
