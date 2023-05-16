@@ -18,6 +18,8 @@ dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_6
 dnf -qy module disable postgresql && \
 dnf -y install postgresql13 postgresql13-server
 
+systemctl restart postgresql-13
+
 vi /etc/environment
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
@@ -2037,6 +2039,16 @@ make USE_PGXS=1 install
 
 make USE_PGXS=1 installcheck && \
 $ psql DB -c "CREATE EXTENSION rum;"
+```
+
+
+
+
+
+```
+dnf install epel-release -y && \
+dnf --enablerepo=powertools install perl-IPC-Run -y && \
+
 ```
 
 
