@@ -13,6 +13,7 @@ pm2 resurrect // 重启备份的所有项目
 
 ```
 # alma linux 8
+# https://www.postgresql.org/download/linux/redhat/
 cat /etc/os-release && \
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
 dnf -qy module disable postgresql && \
@@ -2047,7 +2048,7 @@ $ psql DB -c "CREATE EXTENSION rum;"
 
 ```
 dnf install epel-release -y && \
-dnf --enablerepo=powertools install perl-IPC-Run -y && \
+dnf --enablerepo=powertools install perl-IPC-Run -y
 
 ```
 
