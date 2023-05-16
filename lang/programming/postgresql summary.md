@@ -2039,7 +2039,7 @@ make USE_PGXS=1 && \
 make USE_PGXS=1 install
 
 make USE_PGXS=1 installcheck && \
-$ psql DB -c "CREATE EXTENSION rum;"
+psql DB -c "CREATE EXTENSION rum;"
 ```
 
 
