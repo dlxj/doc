@@ -21,6 +21,9 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 # 安装开发环境
 
 ```
+
+cat /etc/os-release
+
 vi /etc/environment
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
@@ -28,6 +31,7 @@ LC_ALL=en_US.utf-8
 
 source /etc/environment
 
+cat /var/lib/pgsql/13/initdb.log
 
 # almalinux 9
 dnf makecache --refresh && \
