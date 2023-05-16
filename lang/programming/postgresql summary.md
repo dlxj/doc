@@ -40,6 +40,15 @@ locale-gen en_US.UTF-8
 
 dnf install glibc-all-langpacks
 localectl set-locale LANG=en_US.utf-8
+	localectl set-locale LANG=en_US.utf8@ampm
+		# 成功
+		
+en_US.utf8
+en_US.utf8@ampm
+
+echo "export LC_ALL=en_US.utf8@ampm" >> /etc/profile
+
+source /etc/profile
 
 locale -a
 
