@@ -8099,6 +8099,16 @@ flushdb 清空当前数据库
       > ```
     
     > ```
+    > git clone --recursive https://github.com/RedisJSON/RedisJSON.git && \
+    > cd RedisJSON && \
+    > ./sbin/setup
+    > 
+    > 	/etc/profile.d/utf8.sh
+    > 		# 好像是这个把 utf8 环境搞坏的 
+    > 
+    > curl https://sh.rustup.rs -sSf | sh && \
+    > source "$HOME/.cargo/env"
+    > 
     > 
     > git clone --recursive https://github.com/RediSearch/RediSearch.git
     > make build SLOW=1 VERBOSE=1
@@ -8118,7 +8128,7 @@ flushdb 清空当前数据库
     > gdb -ex r --args redis-server --loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so --loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
     > 	# https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html
     > 	# 成功跑起来以后 ctrl + Z 回到 gdb
-    > 	
+    > 
     > /root/RediSearch/src/tokenize.c
     > 	GetTokenizer
     > 
