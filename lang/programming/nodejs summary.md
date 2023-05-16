@@ -2019,6 +2019,14 @@ server {
 
 
 
+### openresty nginx+luajit
+
+[openresty](https://github.com/openresty/openresty)
+
+[vimspector](https://github.com/puremourning/vimspector) neovim
+
+
+
 ## 安装代理
 
 ```
