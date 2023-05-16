@@ -424,16 +424,38 @@ launch.json
 
 
 ```
+echodict\friso_vs2019\src\friso_UTF8.c
+#define FRISO_CJK_CHK_C
+#define FRISO_CJK_CHK_J
+	# 开启 JP 字符检测
+	
+	
+```
+
+
+
+
+
+```
 # 成功生成 NGram
+typedef struct {
+    ...
+    ...
+    char buffer[7];         //word buffer. (1-6 bytes for an utf-8 word in C).
+    char text2[8192];
+    char NGram[8192];       // NGram分词结果
+    uint_t currPos;
+} friso_task_entry;
 FRISO_API friso_token_t next_mmseg_token( 
         friso_t friso, 
         friso_config_t config, 
         friso_task_t task ) 
 {
-
+    /**/
     if (task->idx == 0) { // 首次分词，生成 NGram
         memset(task->NGram, 0, 8192);
         memset(task->text2, 0, 8192);
+        task->currPos = 0;
         sprintf(task->NGram, "");
         sprintf(task->text2, task->text);
 
@@ -459,7 +481,7 @@ FRISO_API friso_token_t next_mmseg_token(
                     memcpy(tmp, starti, bytes);
 
                     sprintf(ngram + curPos, "%s", tmp);
-                    printf("%s ", ngram + curPos);
+                    //printf("%s ", ngram + curPos);
                     
                     curPos = curPos + bytes + 1;
                     memset(tmp, 0, 8192);
@@ -470,6 +492,8 @@ FRISO_API friso_token_t next_mmseg_token(
                 }
             }
         }
+
+        memcpy(task->NGram, ngram, 8192);
 
         int findNext = 0;
         for (int k = 0; k < 8192 - 1; k++) {
@@ -490,14 +514,83 @@ FRISO_API friso_token_t next_mmseg_token(
             }
             
             if (ngram[k] != '\0') {
-                printf("\n->%s ", & ngram[k]);
+                //printf("\n->%s ", & ngram[k]);
                 findNext = 1;
+                
+                int len2 = strlen(&task->NGram[k]);
+                memcpy(task->token->word, &task->NGram[k], len2);
+                //task->token->type = lex->type;
+                task->token->length = len2;
+                task->token->rlen = len2;
+                task->token->word[len2] = '\0';
+
+                task->currPos = k;
+
+                task->idx = 1;
+
+                return task->token;
+
             }
         }
         
-        printf(":");
+        //printf(":");
+
+        //int len2 = strlen(&task->NGram[0]);
+        //memcpy(task->token->word, &task->NGram[0], len2);
+        ////task->token->type = lex->type;
+        //task->token->length = len2;
+        //task->token->rlen = len2;
+        //task->token->word[len2] = '\0';
+
+        //task->currPos = 0 + len2 + 1;
+
+        //task->idx = 1;
+
+        //return task->token;
 
     }
+    else {
+
+        int findNext = 1;
+        for (int k = task->currPos; k < 8192 - 1; k++) {
+
+            if (task->NGram[k] == '\0' && task->NGram[k + 1] == '\0') {
+                return NULL;
+                //break;
+            }
+
+            if (findNext) {
+                if (task->NGram[k] == '\0' && task->NGram[k + 1] != '\0') {
+                    findNext = 0;
+                    continue;
+                }
+                else {
+                    continue;
+                }
+
+            }
+
+            if (task->NGram[k] != '\0') {
+                //printf("\n->%s ", &task->NGram[k]);
+                findNext = 1;
+
+                int len2 = strlen(&task->NGram[k]);
+                memcpy(task->token->word, &task->NGram[k], len2);
+                //task->token->type = lex->type;
+                task->token->length = len2;
+                task->token->rlen = len2;
+                task->token->word[len2] = '\0';
+
+                task->currPos = k;
+
+                task->idx = 1;
+
+                return task->token;
+
+            }
+        }
+    }
+
 ```
 
 
@@ -558,6 +651,88 @@ E:\t\RediSearch\src\aggregate\aggregate_exec.c
 
 
 ```
+
+
+
+```
+
+# gdb -ex r --args redis-server --loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so --loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+
+# redis-cli --raw
+
+MODULE LOAD /root/RedisJSON/bin/linux-x64-release/rejson.so
+MODULE LOAD /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+	# 成功加载两个模块
+	loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+	loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+		# 配置文件试加这两行
+
+JSON.SET product:1 $ '{"id":1,"productSn":"7437788","name":"小米8","subTitle":"全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待","brandName":"小米","price":2699,"count":1}'
+
+JSON.SET product:2 $ '{"id":2,"productSn":"7437789","name":"红米5A","subTitle":"全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待","brandName":"小米","price":649,"count":5}'
+
+JSON.SET product:3 $ '{"id":3,"productSn":"7437799","name":"Apple iPhone 8 Plus","subTitle":"64GB 红色特别版 移动联通电信4G手机","brandName":"苹果","price":5499,"count":10}'
+
+JSON.SET product:4 $ '{"id":4,"productSn":"7437801","name":"小米8","subTitle":"他の全文検索シリーズでも同じデータを使うので、他の記事も試す場合は wiki.json.bz2 を捨てずに残しておくことをおすすめします。","brandName":"小米","price":2699,"count":1}'
+
+JSON.GET product:1
+
+JSON.GET product:1 name subTitle
+
+FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
+
+ft.search productIdx "香槟金" language "chinese"
+	# 中文 OK
+ft.search productIdx "て" language "chinese"
+	# 开启 JP 字符检测后 搜 JP 字符看
+
+ft.search productIdx "捨てずに" language "chinese"
+
+ft.search productIdx "てずに" language "english"
+
+
+/root/RediSearch/src/tokenize.c
+	GetTokenizer
+
+(gdb) break next_mmseg_token  # GetTokenizer
+(gdb) info b
+(gdb) r
+	# 重新运行
+
+redis-cli
+	# 这里执行中文搜索，可以成功触发断点
+
+
+# 下载改写 redisearch 的 friso，先开启JP字符识别，再让中文分词变成 NGram 分词
+
+git clone --recursive https://github.com/RediSearch/RediSearch.git
+make build SLOW=1 VERBOSE=1
+	https://redis.io/docs/stack/search/development/
+	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
+
+/root/RediSearch/deps/friso/friso_UTF8.c
+#define FRISO_CJK_CHK_J
+	# 206 行 前面的注释取消
+
+
+
+./autogen.sh
+make install
+friso -init /usr/local/etc/friso/friso.ini
+歧义和同义词:研究生命起源，混合词: 做B超检查身体
+
+"-lm" linux vscode 的 gcc 配置要加一个 -lm 参数
+
+next_mmseg_token
+next_complex_cjk
+
+```
+
+
+
+### gdb 调试利器
+
+[gdb 调试利器](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html)
 
 
 
