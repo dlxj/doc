@@ -2023,6 +2023,9 @@ server {
 
 [openresty](https://github.com/openresty/openresty)
 
+- [ltui](https://github.com/tboox/ltui) 字符UI库
+- [xmake](https://github.com/xmake-io/xmake-vscode)
+
 [vimspector](https://github.com/puremourning/vimspector) neovim
 
 
