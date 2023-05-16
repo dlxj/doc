@@ -96,6 +96,8 @@ https://www.zake.store/swindex.html
 
 - [尝试从游戏中提取文本](https://xzonn.top/posts/Try-to-Extract-Messages-from-Games.html)
 
+[AKB48所有文本](https://github.com/kurdtkobain/AKB148Guam_psp_trans)
+
 [NLP+所有文本](https://github.com/Makein/NLPPGit)
 
 - [最初的大本营](https://github.com/LovePlusProject/NLPPATCH)

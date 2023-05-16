@@ -421,6 +421,795 @@ launch.json
 
 ### 调试 redis 模块
 
+
+
+```
+echodict\friso_vs2019\src\friso_UTF8.c
+
+/root/RediSearch/deps/friso/friso_UTF8.c
+#define FRISO_CJK_CHK_C
+#define FRISO_CJK_CHK_J
+	# 开启 JP 字符检测
+	
+/root/RediSearch/deps/friso/friso.h
+	# 147 行  } friso_task_entry;
+	
+	char text2[8192];
+    char NGram[8192];
+    uint_t currPos;
+		# 结构体后面加这三行 
+
+/root/RediSearch/deps/friso/friso.c
+	next_mmseg_token(
+		# 这个函数整个替换成下面这样
+
+// http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=%E4%B8%A5
+// https://www.sqlite.org/c3ref/create_function.html
+// https://github.com/schuyler/levenshtein
+
+# define min(x, y) ((x) < (y) ? (x) : (y))
+# define max(x, y) ((x) > (y) ? (x) : (y))
+
+
+static int utf8len(char* c) {
+    unsigned char c1 = c[0];
+    int len = -1;
+    if ((c1 & 0x80) == 0) {  // 0b10000000
+        len = 1;
+    }
+    else if ((c1 & 0xF0) == 0xF0) {  // 0b11110000
+        len = 4;
+    }
+    else if ((c1 & 0xE0) == 0xE0) {  // 0b11100000
+        len = 3;
+    }
+    else if ((c1 & 0xC0) == 0xC0) {  // 0b11000000 
+        len = 2;
+    }
+    else {
+        return -1;
+    }
+    return len;
+}
+
+/*
+** Assuming z points to the first byte of a UTF-8 character,
+** advance z to point to the first byte of the next UTF-8 character.
+*/
+static int utf8strlen(char* str) {
+    int len;
+    const unsigned char* z = str;
+    if (z == 0) {
+        return -1;
+    }
+    len = 0;
+    while (*z) {
+        len++;
+        //SQLITE_SKIP_UTF8(z);
+        if ((*(z++)) >= 0xc0) {
+            while ((*z & 0xc0) == 0x80) { z++; }
+        }
+    }
+    return len;
+}
+
+// 
+/*
+1 0xxxxxxx
+2 110xxxxx 10xxxxxx 0xC0 0x80
+3 1110xxxx 10xxxxxx 10xxxxxx
+4 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+5 111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
+6 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
+*/
+// 
+static char* nextc(char* z) {
+    if (z == 0) { return 0; }
+    if (*z == 0) {
+        return 0;
+    }
+    ++z;
+    while ((*z & 0xC0) == 0x80) { ++z; }  // 
+    return z;
+}
+
+static char* at(char* z, int pos) {
+    char* t = z;
+    int i;
+    for (i = 0; i < pos; i++) {
+        t = nextc(t);
+    }
+    return t;
+}
+
+static int utf8eq(char* c1, char* c2) {
+    int i;
+    if (c1 == 0 || c2 == 0 || *c1 == 0 || *c2 == 0) {
+        return -1;
+    }
+    int len1 = utf8len(c1);
+    int len2 = utf8len(c2);
+    if (len1 != len2) {
+        return 0;
+    }
+    else {
+        for (i = 0; i < len1; i++) {
+            if (c1[i] != c2[i]) {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+
+
+/* {{{ get the next segmentation.
+ *     and also this is the friso enterface function.
+ *
+ * @param     friso.
+ * @param    config.
+ * @return    task.
+ */
+FRISO_API friso_token_t next_mmseg_token( 
+        friso_t friso, 
+        friso_config_t config, 
+        friso_task_t task ) 
+{
+
+    /**/
+    if (task->idx == 0) { // 
+        memset(task->NGram, 0, 8192);
+        memset(task->text2, 0, 8192);
+        task->currPos = 0;
+        sprintf(task->NGram, "");
+        sprintf(task->text2, task->text);
+
+        //assert(utf8eq(task->text, task->text2) == 1);
+
+        char tmp[8192] = { 0 };
+        char ngram[8192] = { 0 };
+        //memcpy( tmp, at(task->text2, 0), at(task->text2, 1) - at(task->text2, 0));
+        //printf("%s", tmp);
+
+        int curPos = 0;
+
+        int len = utf8strlen(task->text2);      // 
+
+        for (int i = 0; i < len; i++) {       // 
+            for (int j = 0; j < 6; j++) {      // 
+                if (i + j < len) {
+                    char * starti = at(task->text2, i);
+                    char * startj = at(task->text2, i+j);
+                    int lenj = utf8len(startj);
+                    char* end = startj + lenj;
+                    int bytes = end - starti;
+                    memcpy(tmp, starti, bytes);
+
+                    sprintf(ngram + curPos, "%s", tmp);
+                    //printf("%s ", ngram + curPos);
+                    
+                    curPos = curPos + bytes + 1;
+                    memset(tmp, 0, 8192);
+
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        memcpy(task->NGram, ngram, 8192);
+
+        int findNext = 0;
+        for (int k = 0; k < 8192 - 1; k++) {
+            
+            if (ngram[k] == '\0' && ngram[k + 1] == '\0') {
+                break;
+            }
+
+            if (findNext) {
+                if (ngram[k] == '\0' && ngram[k + 1] != '\0') {
+                    findNext = 0;
+                    continue;
+                }
+                else {
+                    continue;
+                }
+                
+            }
+            
+            if (ngram[k] != '\0') {
+                //printf("\n->%s ", & ngram[k]);
+                findNext = 1;
+                
+                int len2 = strlen(&task->NGram[k]);
+                memcpy(task->token->word, &task->NGram[k], len2);
+                //task->token->type = lex->type;
+                task->token->length = len2;
+                task->token->rlen = len2;
+                task->token->word[len2] = '\0';
+
+                task->currPos = k;
+
+                task->idx = 1;
+
+                return task->token;
+
+            }
+        }
+        
+        //printf(":");
+
+        //int len2 = strlen(&task->NGram[0]);
+        //memcpy(task->token->word, &task->NGram[0], len2);
+        ////task->token->type = lex->type;
+        //task->token->length = len2;
+        //task->token->rlen = len2;
+        //task->token->word[len2] = '\0';
+
+        //task->currPos = 0 + len2 + 1;
+
+        //task->idx = 1;
+
+        //return task->token;
+
+    }
+    else {
+
+        int findNext = 1;
+        for (int k = task->currPos; k < 8192 - 1; k++) {
+
+            if (task->NGram[k] == '\0' && task->NGram[k + 1] == '\0') {
+                return NULL;
+                //break;
+            }
+
+            if (findNext) {
+                if (task->NGram[k] == '\0' && task->NGram[k + 1] != '\0') {
+                    findNext = 0;
+                    continue;
+                }
+                else {
+                    continue;
+                }
+
+            }
+
+            if (task->NGram[k] != '\0') {
+                //printf("\n->%s ", &task->NGram[k]);
+                findNext = 1;
+
+                int len2 = strlen(&task->NGram[k]);
+                memcpy(task->token->word, &task->NGram[k], len2);
+                //task->token->type = lex->type;
+                task->token->length = len2;
+                task->token->rlen = len2;
+                task->token->word[len2] = '\0';
+
+                task->currPos = k;
+
+                task->idx = 1;
+
+                return task->token;
+
+            }
+        }
+    }
+
+
+
+    uint_t j, len = 0;
+    string_buffer_t sb = NULL;
+    lex_entry_t lex = NULL, tmp = NULL, sword = NULL;
+
+    /* {{{ task word pool check */
+    if ( ! link_list_empty( task->pool ) ) {
+        /*
+         * load word from the word pool if it is not empty.
+         *  this will make the next word more convenient and efficient.
+         *     often synonyms, newly created word will be stored in the pool.
+         */
+        lex = ( lex_entry_t ) link_list_remove_first( task->pool );
+
+        //lex->word = "中";
+        //lex->length = strlen(lex->word);
+        //lex->rlen = lex->length;
+
+        memcpy(task->token->word, lex->word, lex->length);
+        task->token->type = lex->type;
+        task->token->length = lex->length;
+        task->token->rlen = lex->rlen;
+        task->token->offset = lex->offset;
+        task->token->word[lex->length] = '\0';
+
+        //printf(" %s:", task->token->word);
+
+        /* check and handle the english synonyms words append mask.
+         *     Also we have to close the mask after finish the operation.
+         *
+         * 1. we've check the config->add_syn before open the 
+         *         _LEX_APPENSYN_MASK mask.
+         * 2. we should add the synonyms words of the curren 
+         *         lex_entry_t from the head.
+         *
+         * @since: 1.6.0
+         * */
+        if ( lex_appensyn_check(lex) ) {
+            lex_appensyn_close(lex);
+            append_en_syn(lex, tmp, 1);
+        }
+
+        /*
+         * __LEX_NCSYN_WORDS__:
+         *  these lex_entry_t was created to store the the synonyums words.
+         *     and its word pointed to the lex_entry_t's synonyms word of
+         *         friso->dic, so :
+         *     free the lex_entry_t but not its word here.
+         *
+         * __LEX_OTHER_WORDS__:
+         *  newly created lexicon entry, like the chinese and english mixed word.
+         *     during the invoke of function next_basic_latin.
+         *
+         * other type:
+         *  they must exist in the dictionary, so just pass them.
+         */
+        switch ( lex->type ) {
+        case __LEX_OTHER_WORDS__: 
+            FRISO_FREE( lex->word );
+            free_lex_entry( lex );
+            break;
+        case __LEX_NCSYN_WORDS__:
+            free_lex_entry( lex );
+            break;
+        }
+
+        return task->token;
+    }
+    /* }}} */
+
+    while ( task->idx < task->length ) {
+        //read the next word from the current position.
+        task->bytes = readNextWord( friso, task, &task->idx, task->buffer );
+        if ( task->bytes == 0 ) break;
+
+        //clear up the whitespace.
+        if ( friso_whitespace( friso->charset, task ) ) continue;
+
+        /* {{{ CJK words recongnize block. */
+        if ( friso_cn_string( friso->charset, task ) ) {
+            /* check the dictionary.
+             * and return the unrecognized CJK char as a single word.
+             * */
+            if ( ! friso_dic_match( friso->dic, 
+                        __LEX_CJK_WORDS__, task->buffer) ) {
+                
+                //memcpy(task->buffer, "中", strlen("中") );
+                //task->bytes = strlen("中");
+
+                memcpy(task->token->word, task->buffer, task->bytes );
+                task->token->type = __LEX_PUNC_WORDS__;
+                task->token->length = task->bytes;
+                task->token->rlen = task->bytes;
+                task->token->offset = task->idx - task->bytes;
+                task->token->word[(int)task->bytes] = '\0';
+                return task->token;
+            }
+
+            //specifield mode split.
+            //if ( config->mode == __FRISO_COMPLEX_MODE__ ) 
+            //    lex = next_complex_cjk( friso, config, task );
+            //else lex = next_simple_cjk( friso, config, task );
+            lex = config->next_cjk(friso, config, task);
+
+            if ( lex == NULL ) continue;    //find a stopwrod.
+            lex->offset = task->idx - lex->rlen;
+
+            /*
+             * try to find a chinese and english mixed words, like 'xxok'
+             *     keep in mind that is not english and chinese mixed words
+             *         like 'xxx'.
+             *     
+             * @reader:
+             * 1. only if the char after the current word is an english char.
+             * 2. if the first point meet, friso will call next_basic_latin() to
+             *         get the next basic latin. (yeah, you have to handle it).
+             * 3. if match a CE word, set lex to the newly match CE word.
+             * 4. if no match a CE word, we will have to append the basic latin
+             *         to the pool, and it should after the append of synonyms words.
+             * 5. do not use the task->buffer and task->unicode as the check 
+             *         condition for the CE word identify.
+             * 6. Add friso_numeric_letter check so can get work like '高3'
+             *
+             * @date 2013-09-02
+             */
+            if ( ( task->idx < task->length ) 
+                    && ((int)task->text[task->idx]) > 0 
+                    && ( friso_en_letter( friso->charset, task ) 
+                        || friso_numeric_letter(friso->charset, task) ) ) {
+                //create a string buffer
+                sb = new_string_buffer_with_string(lex->word);
+
+                //find the next basic latin.
+                task->buffer[0] = task->text[task->idx++];
+                task->buffer[1] = '\0';
+                tmp = next_basic_latin(friso, config, task);
+                tmp->offset = task->idx - tmp->length;
+                string_buffer_append( sb, tmp->word );
+
+                //check the CE dictionary.
+                if ( friso_dic_match( friso->dic, 
+                            __LEX_CEM_WORDS__, sb->buffer ) ) {
+                    j = lex->offset; //bakup the offset.
+                    lex = friso_dic_get( friso->dic, 
+                            __LEX_CEM_WORDS__, sb->buffer );
+                    lex->offset = j;
+                    check_free_otlex_entry(tmp);
+                    free_string_buffer(sb);
+                    tmp = NULL; sb = NULL;
+                }
+            }
+
+            /*
+             * copy the lex_entry to the result token
+             *
+             * @reader: (boodly lession, added 2013-08-31):
+             *     don't bother to handle the task->token->offset problem.
+             *         is has been sovled perfectly above. 
+             */
+            len = (int) lex->length;
+            memcpy(task->token->word, lex->word, lex->length);
+            task->token->type = lex->type;
+            task->token->length = lex->length;
+            task->token->rlen = lex->rlen;
+            task->token->offset = lex->offset;
+            task->token->word[len] = '\0';
+
+            //check and append the synonyms words
+            if ( config->add_syn && lex->syn != NULL ) {
+                if ( config->spx_out == 1 ) {
+                    token_sphinx_output(task, lex);
+                } else {
+                    token_normal_output(task, lex, 0);
+                }
+            }
+
+            /* {{{ here: handle the newly found basic latin created when 
+             * we try to find a CE word.
+             *
+             * @reader:
+             * when tmp is not NULL and sb will not be NULL too
+             *     except a CE word is found.
+             *
+             * @TODO: finished append the synonyms words on 2013-12-19.
+             */
+            if ( tmp != NULL && sb != NULL ) {
+                //check the secondary split.
+                if ( config->en_sseg == 1 
+                        && task_ssseg_check(task) ) {
+                    en_second_seg(friso, config, task, tmp, 0);
+                }
+
+                free_string_buffer( sb );
+                link_list_add( task->pool, tmp );
+
+                //check if append synoyums words.
+                if ( config->add_syn == 1 ) {
+                    lex_appensyn_open(tmp);
+                }
+
+            }
+            /* }}} */
+
+            return task->token;
+        } 
+        /* }}} */
+
+        /* {{{ basic english/latin recongnize block. */
+        else if ( friso_halfwidth_en_char( friso->charset, task ) 
+                || friso_fullwidth_en_char( friso->charset, task ) ) {
+            /*
+             * handle the english punctuation.
+             *
+             * @todo:
+             * 1. commen all the code of the following if 
+             *     and uncomment the continue to clear up the punctuation directly.
+             *
+             * @reader: 
+             * 2. keep in mind that ALL the english punctuation will be handled here,
+             *  (when a english punctuation is found during the other process, we will
+             *      reset the task->idx back to it and then back here)
+             *     except the keep punctuation(define in file friso_string.c) 
+             *     that will make up a word with the english chars around it.
+             */
+            if ( friso_en_punctuation( friso->charset, task ) ) {
+                if ( config->clr_stw 
+                        && friso_dic_match(friso->dic, 
+                            __LEX_STOPWORDS__, task->buffer) ) {
+                    continue;
+                }
+
+                //count the punctuation in.
+                task->token->word[0] = task->buffer[0];
+                task->token->type    = __LEX_PUNC_WORDS__;
+                task->token->length  = task->bytes;
+                task->token->rlen    = task->bytes;
+                task->token->offset  = task->idx - task->bytes;
+                task->token->word[1] = '\0';
+                return task->token;
+
+                //continue
+            }    
+
+            //get the next basic latin word.
+            lex = next_basic_latin( friso, config, task );
+            lex->offset = task->idx - lex->rlen;
+
+            /* @added: 2013-12-22
+             * check and do the secondary segmentation work.
+             * this will split 'qq2013' to 'qq, 2013'
+             * */
+            sword = NULL;
+            if ( config->en_sseg == 1 
+                    && task_ssseg_check(task) ) {
+                sword = en_second_seg(friso, config, task, lex, 1);
+            }
+
+            //check if it is a stopword.
+            if ( config->clr_stw 
+                    && friso_dic_match( friso->dic, 
+                        __LEX_STOPWORDS__, lex->word ) ) {
+                //free the newly created lexicon entry.
+                check_free_otlex_entry( lex );
+                if ( sword == NULL ) continue;
+                lex = sword;
+            } else if ( sword != NULL ) {
+                if ( config->add_syn == 1 ) lex_appensyn_open(lex);
+                link_list_add(task->pool, lex);
+
+                /* If the sub token is not NULL:
+                 * add the lex to the task->pool if it is not NULL 
+                 * and return the sub token istead of lex so
+                 *     the sub tokens will be output ahead of lex.
+                 * */
+                lex = sword;
+            }
+
+            //if the token is longer than __HITS_WORD_LENGTH__, drop it 
+            //copy the word to the task token buffer.
+            //if ( lex->length >= __HITS_WORD_LENGTH__ ) continue;
+            memcpy(task->token->word, lex->word, lex->length);
+            task->token->type   = lex->type;
+            task->token->length = lex->length;
+            task->token->rlen   = lex->rlen;
+            task->token->offset = lex->offset;
+            task->token->word[lex->length] = '\0';
+
+            /* If sword is NULL, continue to check and append 
+             * tye synoyums words for the current lex_entry_t.
+             * */
+            if ( sword == NULL 
+                    && config->add_syn == 1 ) {
+                append_en_syn(lex, tmp, 0);
+            }
+
+            //free the newly create lex_entry_t
+            check_free_otlex_entry( lex );
+
+            return task->token;
+        } 
+        /* }}} */
+
+        /* {{{ Keep the chinese punctuation.
+         * @added 2013-08-31) */
+        else if ( friso_cn_punctuation( friso->charset, task ) ) {
+            if ( config->clr_stw 
+                    && friso_dic_match(friso->dic, 
+                        __LEX_STOPWORDS__, task->buffer) ) {
+                continue;
+            }
+
+            //count the punctuation in.
+            memcpy(task->token->word, task->buffer, task->bytes);
+            task->token->type   = __LEX_PUNC_WORDS__;
+            task->token->length = task->bytes;
+            task->token->offset = task->idx - task->bytes;
+            task->token->word[task->bytes] = '\0';
+            return task->token;
+        }
+        /* }}} */
+        //else if ( friso_letter_number( friso->charset, task ) ) 
+        //{
+        //} 
+        //else if ( friso_other_number( friso->charset, task ) ) 
+        //{
+        //}
+
+        /* {{{ keep the unrecognized words?
+        //@date 2013-10-14 */
+        else if ( config->keep_urec ) {
+            memcpy(task->token->word, task->buffer, task->bytes);
+            task->token->type = __LEX_UNKNOW_WORDS__;
+            task->token->length = task->bytes;
+            task->token->offset = task->idx - task->bytes;
+            task->token->word[task->bytes] = '\0';
+            return task->token;
+        }
+        /* }}} */
+    }
+
+    return NULL;
+}
+
+
+
+```
+
+
+
+
+
+```
+# 成功生成 NGram
+typedef struct {
+    ...
+    ...
+    char buffer[7];         //word buffer. (1-6 bytes for an utf-8 word in C).
+    char text2[8192];
+    char NGram[8192];       // NGram分词结果
+    uint_t currPos;
+} friso_task_entry;
+FRISO_API friso_token_t next_mmseg_token( 
+        friso_t friso, 
+        friso_config_t config, 
+        friso_task_t task ) 
+{
+    /**/
+    if (task->idx == 0) { // 首次分词，生成 NGram
+        memset(task->NGram, 0, 8192);
+        memset(task->text2, 0, 8192);
+        task->currPos = 0;
+        sprintf(task->NGram, "");
+        sprintf(task->text2, task->text);
+
+        assert(utf8eq(task->text, task->text2) == 1);
+
+        char tmp[8192] = { 0 };
+        char ngram[8192] = { 0 };
+        //memcpy( tmp, at(task->text2, 0), at(task->text2, 1) - at(task->text2, 0));
+        //printf("第一个字符：%s", tmp);
+
+        int curPos = 0;
+
+        int len = utf8strlen(task->text2);      // 整个utf8 字符串长度
+
+        for (int i = 0; i < len; i++) {       // 编历字符串，第 0 个字符 到 第 len - 1 个字符
+            for (int j = 0; j < 6; j++) {      // NGram 长度从 1 到 6
+                if (i + j < len) {
+                    char * starti = at(task->text2, i);
+                    char * startj = at(task->text2, i+j);
+                    int lenj = utf8len(startj);
+                    char* end = startj + lenj;
+                    int bytes = end - starti;
+                    memcpy(tmp, starti, bytes);
+
+                    sprintf(ngram + curPos, "%s", tmp);
+                    //printf("%s ", ngram + curPos);
+                    
+                    curPos = curPos + bytes + 1;
+                    memset(tmp, 0, 8192);
+
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        memcpy(task->NGram, ngram, 8192);
+
+        int findNext = 0;
+        for (int k = 0; k < 8192 - 1; k++) {
+            
+            if (ngram[k] == '\0' && ngram[k + 1] == '\0') {
+                break;
+            }
+
+            if (findNext) {
+                if (ngram[k] == '\0' && ngram[k + 1] != '\0') {
+                    findNext = 0;
+                    continue;
+                }
+                else {
+                    continue;
+                }
+                
+            }
+            
+            if (ngram[k] != '\0') {
+                //printf("\n->%s ", & ngram[k]);
+                findNext = 1;
+                
+                int len2 = strlen(&task->NGram[k]);
+                memcpy(task->token->word, &task->NGram[k], len2);
+                //task->token->type = lex->type;
+                task->token->length = len2;
+                task->token->rlen = len2;
+                task->token->word[len2] = '\0';
+
+                task->currPos = k;
+
+                task->idx = 1;
+
+                return task->token;
+
+            }
+        }
+        
+        //printf(":");
+
+        //int len2 = strlen(&task->NGram[0]);
+        //memcpy(task->token->word, &task->NGram[0], len2);
+        ////task->token->type = lex->type;
+        //task->token->length = len2;
+        //task->token->rlen = len2;
+        //task->token->word[len2] = '\0';
+
+        //task->currPos = 0 + len2 + 1;
+
+        //task->idx = 1;
+
+        //return task->token;
+
+    }
+    else {
+
+        int findNext = 1;
+        for (int k = task->currPos; k < 8192 - 1; k++) {
+
+            if (task->NGram[k] == '\0' && task->NGram[k + 1] == '\0') {
+                return NULL;
+                //break;
+            }
+
+            if (findNext) {
+                if (task->NGram[k] == '\0' && task->NGram[k + 1] != '\0') {
+                    findNext = 0;
+                    continue;
+                }
+                else {
+                    continue;
+                }
+
+            }
+
+            if (task->NGram[k] != '\0') {
+                //printf("\n->%s ", &task->NGram[k]);
+                findNext = 1;
+
+                int len2 = strlen(&task->NGram[k]);
+                memcpy(task->token->word, &task->NGram[k], len2);
+                //task->token->type = lex->type;
+                task->token->length = len2;
+                task->token->rlen = len2;
+                task->token->word[len2] = '\0';
+
+                task->currPos = k;
+
+                task->idx = 1;
+
+                return task->token;
+
+            }
+        }
+    }
+
+```
+
+
+
+
+
 ```
 
 RediSearch\src\document.c
@@ -475,6 +1264,131 @@ E:\t\RediSearch\src\aggregate\aggregate_exec.c
 
 
 ```
+
+
+
+```
+
+# gdb -ex r --args redis-server --loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so --loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+
+# redis-cli --raw
+
+MODULE LOAD /root/RedisJSON/bin/linux-x64-release/rejson.so
+MODULE LOAD /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+	# 成功加载两个模块
+	loadmodule /root/RedisJSON/bin/linux-x64-release/rejson.so
+	loadmodule /root/RediSearch/bin/linux-x64-release/search/redisearch.so
+		# 配置文件试加这两行
+
+JSON.SET product:1 $ '{"id":1,"productSn":"7437788","name":"小米8","subTitle":"全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待","brandName":"小米","price":2699,"count":1}'
+
+JSON.SET product:2 $ '{"id":2,"productSn":"7437789","name":"红米5A","subTitle":"全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待","brandName":"小米","price":649,"count":5}'
+
+JSON.SET product:3 $ '{"id":3,"productSn":"7437799","name":"Apple iPhone 8 Plus","subTitle":"64GB 红色特别版 移动联通电信4G手机","brandName":"苹果","price":5499,"count":10}'
+
+JSON.SET product:4 $ '{"id":4,"productSn":"7437801","name":"小米8","subTitle":"他の全文検索シリーズでも同じデータを使うので、他の記事も試す場合は wiki.json.bz2 を捨てずに残しておくことをおすすめします。","brandName":"小米","price":2699,"count":1}'
+
+JSON.GET product:1
+
+JSON.GET product:1 name subTitle
+
+FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
+
+ft.search productIdx "香槟金" language "chinese"
+	# 中文 OK
+ft.search productIdx "て" language "chinese"
+	# 开启 JP 字符检测后 搜 JP 字符看
+		# 不行
+		# 改完 NGram 编译后，成功！
+
+ft.search productIdx "全文" language "chinese"
+	# 成功
+	
+ft.search productIdx "他の" language "chinese"
+	# 可以 是因为 JP 字符被忽略了，没用
+		# 还得是上 NGram
+        
+ft.search productIdx "じデータ" language "chinese"
+	# 不行
+	# 改完 NGram 编译后，成功！
+
+
+/root/RediSearch/src/tokenize.c
+	GetTokenizer
+
+(gdb) break next_mmseg_token  # GetTokenizer
+(gdb) info b
+(gdb) r
+	# 重新运行
+
+redis-cli
+	# 这里执行中文搜索，可以成功触发断点
+
+
+# 下载改写 redisearch 的 friso，先开启JP字符识别，再让中文分词变成 NGram 分词
+
+git clone --recursive https://github.com/RediSearch/RediSearch.git
+make build SLOW=1 VERBOSE=1
+	https://redis.io/docs/stack/search/development/
+	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
+
+/root/RediSearch/deps/friso/friso_UTF8.c
+#define FRISO_CJK_CHK_J
+	# 206 行 前面的注释取消
+
+
+
+./autogen.sh
+make install
+friso -init /usr/local/etc/friso/friso.ini
+歧义和同义词:研究生命起源，混合词: 做B超检查身体
+
+"-lm" linux vscode 的 gcc 配置要加一个 -lm 参数
+
+next_mmseg_token
+next_complex_cjk
+
+```
+
+
+
+### gdb 调试利器
+
+[gdb 调试利器](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html)
+
+[vimspector](https://github.com/puremourning/vimspector)
+
+> - run：简记为 r ，其作用是运行程序，当遇到断点后，程序会在断点处停止运行，等待用户输入下一步的命令。
+> - continue （简写c ）：继续执行，到下一个断点处（或运行结束）
+> - next：（简写 n），单步跟踪程序，当遇到函数调用时，也不进入此函数体；此命令同 step 的主要区别是，step 遇到用户自定义的函数，将步进到函数中去运行，而 next 则直接调用函数，不会进入到函数体内。
+> - step （简写s）：单步调试如果有函数调用，则进入函数；与命令n不同，n是不进入调用的函数的
+> - until：当你厌倦了在一个循环体内单步跟踪时，这个命令可以运行程序直到退出循环体。
+> - until+行号： 运行至某行，不仅仅用来跳出循环
+> - finish： 运行程序，直到当前函数完成返回，并打印函数返回时的堆栈地址和返回值及参数值等信息。
+> - call 函数(参数)：调用程序中可见的函数，并传递“参数”，如：call gdb_test(55)
+> - quit：简记为 q ，退出gdb
+
+#### 断点
+
+> - break n （简写b n）:在第n行处设置断点
+>
+>   （可以带上代码路径和代码名称： b OAGUPDATE.cpp:578）
+>
+> - b fn1 if a＞b：条件断点设置
+>
+> - break func（break缩写为b）：在函数func()的入口处设置断点，如：break cb_button
+>
+> - delete 断点号n：删除第n个断点
+>
+> - disable 断点号n：暂停第n个断点
+>
+> - enable 断点号n：开启第n个断点
+>
+> - clear 行号n：清除第n行的断点
+>
+> - info b （info breakpoints） ：显示当前程序的断点设置情况
+>
+> - delete breakpoints：清除所有断点：
 
 
 
@@ -1102,6 +2016,17 @@ server {
 ### 网络压力测试
 
 [dperf 网络压测](https://github.com/baidu/dperf)
+
+
+
+### openresty nginx+luajit
+
+[openresty](https://github.com/openresty/openresty)
+
+- [ltui](https://github.com/tboox/ltui) 字符UI库
+- [xmake](https://github.com/xmake-io/xmake-vscode)
+
+[vimspector](https://github.com/puremourning/vimspector) neovim
 
 
 

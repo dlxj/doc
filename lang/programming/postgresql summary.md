@@ -11,6 +11,60 @@ pm2 resurrect // 重启备份的所有项目
 
 
 
+```
+# alma linux 8
+cat /etc/os-release && \
+dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+dnf -qy module disable postgresql && \
+dnf -y install postgresql13 postgresql13-server
+
+vi /etc/environment
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+
+vi /etc/environment
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+	# 添加这两项 
+
+source /etc/environment
+
+export LANG="en_US.utf-8" && \
+export LC_ALL="en_US.utf-8"
+
+echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen en_US.UTF-8
+	# ubuntu only
+
+dnf install glibc-all-langpacks
+localectl set-locale LANG=en_US.utf-8
+	localectl set-locale LANG=en_US.utf8@ampm
+		# 成功
+		
+en_US.utf8
+en_US.utf8@ampm
+
+echo "export LC_ALL=en_US.utf8@ampm" >> /etc/profile
+
+source /etc/profile
+
+locale -a
+
+/usr/pgsql-13/bin/postgresql-13-setup initdb && \
+cat /var/lib/pgsql/13/initdb.log && \
+cat /var/lib/pgsql/13/data/postgresql.conf
+
+
+
+
+```
+
+
+
+
+
 ### 免安装配置
 
 ```
