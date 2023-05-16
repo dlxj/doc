@@ -47,6 +47,8 @@
 
 # anime
 
+- [pmfansub](https://www.weibo.com/u/1001770703?tabtype=newVideo) 珍珠钻石双语
+
 - https://y2mate.ch/  dmmTV下载
 
 - https://iproyal.cn/  美国家宽代理
@@ -75,6 +77,8 @@ https://www.zake.store/swindex.html
 
 
 ## forum
+
+[pmfansub](https://www.weibo.com/u/1001770703?tabtype=newVideo) 珍珠钻石双语
 
 [pmfansub level-plus](https://www.level-plus.net/) cdef68935
 
@@ -187,7 +191,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
