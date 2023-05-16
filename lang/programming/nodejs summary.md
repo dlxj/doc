@@ -8116,7 +8116,9 @@ flushdb 清空当前数据库
     > 
     > make build
     > 
-    > git clone --recursive https://github.com/RediSearch/RediSearch.git
+    > git clone --recursive https://github.com/RediSearch/RediSearch.git && \
+    > cd RediSearch && \
+    > pip3 install conan && \
     > make build SLOW=1 VERBOSE=1
     > 	https://redis.io/docs/stack/search/development/
     > 	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
