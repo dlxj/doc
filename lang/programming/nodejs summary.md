@@ -8105,10 +8105,16 @@ flushdb 清空当前数据库
     > 
     > 	/etc/profile.d/utf8.sh
     > 		# 好像是这个把 utf8 环境搞坏的 
+    > 		export LANG="en_US.utf-8"
+    > 		export LC_ALL="en_US.utf-8"
+    > 
+    > 		export LANGUAGE="en_US"
+    > 			# 内容改成这样
     > 
     > curl https://sh.rustup.rs -sSf | sh && \
     > source "$HOME/.cargo/env"
     > 
+    > make build
     > 
     > git clone --recursive https://github.com/RediSearch/RediSearch.git
     > make build SLOW=1 VERBOSE=1
