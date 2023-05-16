@@ -439,7 +439,9 @@ echodict\friso_vs2019\src\friso_UTF8.c
     uint_t currPos;
 		# 结构体后面加这三行 
 
-
+/root/RediSearch/deps/friso/friso.c
+	next_mmseg_token(
+		# 这个函数整个替换成下面这样
 
 // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=%E4%B8%A5
 // https://www.sqlite.org/c3ref/create_function.html
@@ -1307,6 +1309,7 @@ ft.search productIdx "他の" language "chinese"
         
 ft.search productIdx "じデータ" language "chinese"
 	# 不行
+	# 改完 NGram 编译后，成功！
 
 
 /root/RediSearch/src/tokenize.c
