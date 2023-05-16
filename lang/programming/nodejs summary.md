@@ -8103,7 +8103,7 @@ flushdb 清空当前数据库
     > cd RedisJSON && \
     > ./sbin/setup
     > 
-    > 	/etc/profile.d/utf8.sh
+    > 	vi /etc/profile.d/utf8.sh
     > 		# 好像是这个把 utf8 环境搞坏的 
     > 		export LANG="en_US.utf-8"
     > 		export LC_ALL="en_US.utf-8"
@@ -8119,6 +8119,8 @@ flushdb 清空当前数据库
     > git clone --recursive https://github.com/RediSearch/RediSearch.git && \
     > cd RediSearch && \
     > pip3 install conan && \
+    > ./sbin/setup && \
+    > make setup && \
     > make build SLOW=1 VERBOSE=1
     > 	https://redis.io/docs/stack/search/development/
     > 	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
