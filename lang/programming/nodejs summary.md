@@ -2156,6 +2156,12 @@ yum update --allowerasing
 
 
 
+### VPN 企业专线
+
+[连天通](https://www.zhuoyuehd.com/)
+
+
+
 ## nmap测试端口
 
 ```
@@ -8231,6 +8237,12 @@ flushdb 清空当前数据库
   > JSON.GET product:1 name subTitle
   > 
   > FT.CREATE productIdx ON JSON PREFIX 1 "product:" LANGUAGE chinese SCHEMA $.id AS id NUMERIC $.name AS name TEXT $.subTitle AS subTitle TEXT $.price AS price NUMERIC SORTABLE $.brandName AS brandName TAG
+  > 
+  > ft.search productIdx "小米8" language "chinese"
+  > 	# 中文OK
+  > 
+  > ft.search productIdx "データ" language "chinese"
+  > 	# JP 需要改源码，friso 为 NGram
   > 
   > ft.search productIdx "香槟金" language "chinese"
   > 
