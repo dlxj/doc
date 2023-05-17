@@ -8108,7 +8108,7 @@ flushdb 清空当前数据库
     > export LANG="en_US.utf-8"
     > export LC_ALL="en_US.utf-8"
     > export LANGUAGE="en_US"
-    > 			# 内容改成这样
+    > 			# 内容一定要先改成这样
     > 
     > curl https://sh.rustup.rs -sSf | sh && \
     > source "$HOME/.cargo/env"
@@ -8120,6 +8120,7 @@ flushdb 清空当前数据库
     > pip3 install conan && \
     > ./sbin/setup && \
     > make setup && \
+    > make clean ALL=1 && \ 
     > make build SLOW=1 VERBOSE=1
     > 	https://redis.io/docs/stack/search/development/
     > 	/root/RediSearch/bin/linux-x64-release/search/redisearch.so
