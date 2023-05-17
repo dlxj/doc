@@ -8232,6 +8232,8 @@ flushdb 清空当前数据库
   > 
   > JSON.SET product:4 $ '{"id":4,"productSn":"7437801","name":"小米8","subTitle":"他の全文検索シリーズでも同じデータを使うので、他の記事も試す場合は wiki.json.bz2 を捨てずに残しておくことをおすすめします。","brandName":"小米","price":2699,"count":1}'
   > 
+  > JSON.SET product:5 $ '{"id":5,"productSn":"7437801","name":"小米9","subTitle":"シリーズでも同じデータをはなる","brandName":"小米","price":2699,"count":1}'
+  > 
   > JSON.GET product:1
   > 
   > JSON.GET product:1 name subTitle
@@ -8243,6 +8245,9 @@ flushdb 清空当前数据库
   > 
   > ft.search productIdx "データ" language "chinese"
   > 	# JP 需要改源码，friso 为 NGram
+  > 	
+  > ft.search productIdx "データをはな" language "chinese"
+  > 	# OK, 确认 NGram 搜索一切正常
   > 
   > ft.search productIdx "香槟金" language "chinese"
   > 
