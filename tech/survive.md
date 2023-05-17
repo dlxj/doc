@@ -1381,6 +1381,10 @@ ios的shadowrocket可以连接vmess协议
 
 [buyvm](buyvm) 8\$ /month 贵，或许质量好？
 
+[cloudcone](cloudcone.com) 1.8$ /month
+
+- [垃圾 VPS 线路的救星 - Hysteria ](https://www.hicairo.com/post/60.html)
+
 ## Namesilo 域名注册
 
 ### DNS 解析
