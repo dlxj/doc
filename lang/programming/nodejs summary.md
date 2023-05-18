@@ -12101,6 +12101,58 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 
 
+### AlmaLinux8
+
+```
+docker system prune --volumes -y 
+
+$imageExists = docker image ls | Select-String -Pattern '8.7-minimal'
+if ($imageExists -eq $null) {
+    Write-Host 'almalinux:8.7-minimal not found, pull'
+    docker pull almalinux:8.7-minimal
+    Write-Host 'almalinux:8.7-minimal pull success'
+}
+
+$networks = docker network ls
+if ($networks -notmatch 'customnetwork') {
+    Write-Host 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    Write-Host 'customnetwork create success'
+}
+
+New-Item -ItemType Directory -Path AlmaLinux8_server_8880
+cd AlmaLinux8_server_8880
+New-Item -ItemType File -Path Dockerfile
+
+
+Write-Output "FROM centos:7
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
+    yum install -y `$buildDeps && \
+    yum install -y nginx redis nfs-utils crontabs && \
+    mkdir -p /project/shared && \
+    mkdir -p /project/script && \
+    chmod 755 /project/shared && \
+    cd /project && \
+    git clone http://用户名:AccessToten@gitlab.xxxx.git && \
+    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \
+    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
+    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
+    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
+    cd /project/aicbyserver_v2 && \
+    cnpm i" > Dockerfile
+
+```
+
+
+
+
+
+
+
 ## 解决 Failed to get D-Bus connection
 
 - https://serverfault.com/questions/824975/failed-to-get-d-bus-connection-operation-not-permitted 必看

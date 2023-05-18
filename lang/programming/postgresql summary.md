@@ -81,7 +81,10 @@ https://www.enterprisedb.com/download-postgresql-binaries
 三、初始化数据库
 命令行进入bin目录，执行以下代码：
 
-initdb.exe -D D:\tools\postgres\pgsql\data -E UTF-8 --locale=chs -U postgres -W
+cd D:\usr\postgresql-13\pgsql\bin
+./initdb.exe -D E:\pgsqldata -E UTF-8 --locale=chs -U postgres -W
+
+./pg_ctl -D E:\pgsqldata -l logfile start
 
 注：
 -D ：指定数据库簇的存储目录D:\tools\postgres\pgsql\data
