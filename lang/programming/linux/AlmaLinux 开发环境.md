@@ -47,7 +47,7 @@ dnf install -y epel-release && \
 dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 pip3 install conan && \
-dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g
+dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie
 
 curl https://sh.rustup.rs -sSf | sh && \
 source "$HOME/.cargo/env"
