@@ -12127,11 +12127,11 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 docker system prune --volumes -y 
 
-$imageExists = docker image ls | Select-String -Pattern '8.7-minimal'
+$imageExists = docker image ls | Select-String -Pattern '8.7'
 if ($imageExists -eq $null) {
-    Write-Host 'almalinux:8.7-minimal not found, pull'
-    docker pull almalinux:8.7-minimal
-    Write-Host 'almalinux:8.7-minimal pull success'
+    Write-Host 'almalinux:8.7 not found, pull'
+    docker pull almalinux:8.7
+    Write-Host 'almalinux:8.7 pull success'
 }
 
 $networks = docker network ls
@@ -12146,18 +12146,40 @@ cd AlmaLinux8_server_8880
 New-Item -ItemType File -Path Dockerfile
 
 
-Write-Output "FROM almalinux:8.7-minimal
+Write-Output "FROM almalinux:8.7
 RUN set -x; dnf makecache --refresh && \
 dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 pip3 install conan && \
-dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie " > Dockerfile
+dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie " > Dockerfile
+
+
+[System.Text.Encoding]::UTF8.GetBytes("FROM almalinux:8.7
+RUN set -x; dnf makecache --refresh && \
+dnf update -y && \
+dnf install -y epel-release && \
+dnf update -y && \
+dnf --enablerepo=powertools install perl-IPC-Run -y && \
+pip3 install conan && \
+dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 . && \
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux:8.7-minimal /bin/bash && \
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux:8.7 /sbin/init && \
 docker exec -it centos7_server_6006_ENV bash -c "cd /aicbyserver_v2
+
+
+
+docker stop almalinux8_server_8880
+docker rm almalinux8_server_8880
+docker image rm almalinux:8.7
+docker network rm customnetwork
+	# 一次性删除所有东西，要小心
+
+
+
+
 
 ```
 
