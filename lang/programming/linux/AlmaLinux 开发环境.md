@@ -46,6 +46,7 @@ dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
+dnf install -y python39 && \
 pip3 install conan && \
 dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie
 

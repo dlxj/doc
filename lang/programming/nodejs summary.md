@@ -12146,29 +12146,49 @@ cd AlmaLinux8_server_8880
 New-Item -ItemType File -Path Dockerfile
 
 
-Write-Output "FROM almalinux:8.7
-RUN set -x; dnf makecache --refresh && \
-dnf update -y && \
-dnf install -y epel-release && \
-dnf update -y && \
-dnf --enablerepo=powertools install perl-IPC-Run -y && \
-pip3 install conan && \
-dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie " > Dockerfile
-
-
 [System.Text.Encoding]::UTF8.GetBytes("FROM almalinux:8.7
 RUN set -x; dnf makecache --refresh && \
 dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
+dnf install -y python39 && \
 pip3 install conan && \
-dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie ") | Set-Content Dockerfile -Encoding Byte
+dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+dnf -qy module disable postgresql && \
+dnf -y install postgresql13 postgresql13-server && \
+/usr/pgsql-13/bin/postgresql-13-setup initdb && \
+cat /var/lib/pgsql/13/initdb.log && \
+ls /var/lib/pgsql/13/data/postgresql.conf && \
+pwd ") | Set-Content Dockerfile -Encoding Byte
+
 
 docker build -t almalinux8_server_8880 . && \
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux:8.7 /sbin/init && \
-docker exec -it centos7_server_6006_ENV bash -c "cd /aicbyserver_v2
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux8_server_8880 /sbin/init && \
+docker exec -it almalinux8_server_8880 bash -c "dnf"
 
+
+
+sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf
+
+echo "hostnossl    all          all            0.0.0.0/0  md5"  >/var/lib/pgsql/13/data/pg_hba.conf
+
+
+systemctl enable postgresql-13 && \
+systemctl start postgresql-13 && \
+systemctl status postgresql-13
+
+	# vi /var/lib/pgsql/13/data/postgresql.conf
+		listen_addresses = '*' # 改成这个
+	# vi /mnt/psqldata/pg_hba.conf
+		hostnossl    all          all            0.0.0.0/0  md5
+		# 加在最后面，接受所有远程IP
+	# psql -c "show config_file"
+	# ps aux | grep /postgres
+	# select name, setting from pg_Settings where name ='data_directory';
+
+/usr/pgsql-13/bin/pg_ctl -D /var/lib/pgsql/13/data/ -l logfile start
 
 
 docker stop almalinux8_server_8880
