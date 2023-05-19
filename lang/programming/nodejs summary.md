@@ -12155,7 +12155,10 @@ dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
-dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+systemctl start sshd && \
+systemctl enable sshd && \
+systemctl status sshd && \
 pwd ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 .
@@ -12191,15 +12194,13 @@ su - postgres
 
 
 
-	# vi /var/lib/pgsql/13/data/postgresql.conf
-		listen_addresses = '*' # 改成这个
-	# vi /mnt/psqldata/pg_hba.conf
-		hostnossl    all          all            0.0.0.0/0  md5
-		# 加在最后面，接受所有远程IP
-	# psql -c "show config_file"
-	# ps aux | grep /postgres
-	# select name, setting from pg_Settings where name ='data_directory';
 
+
+vi /etc/ssh/sshd_config
+	# 修改配置
+	PermitRootLogin yes # 改成这个
+	UsePAM no # 改成这个
+	
 /usr/pgsql-13/bin/pg_ctl -D /var/lib/pgsql/13/data/ -l logfile start
 
 
