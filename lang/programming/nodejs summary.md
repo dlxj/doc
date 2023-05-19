@@ -12124,8 +12124,14 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 
 ```
+New-Item -ItemType Directory -Path AlmaLinux8_server_8880
+cd AlmaLinux8_server_8880
+New-Item -ItemType File -Path Dockerfile
 
-docker system prune --volumes -y 
+docker stop almalinux8_server_8880
+docker rm almalinux8_server_8880
+docker image rm almalinux:8.7
+docker network rm customnetwork
 
 $imageExists = docker image ls | Select-String -Pattern '8.7'
 if ($imageExists -eq $null) {
@@ -12141,11 +12147,6 @@ if ($networks -notmatch 'customnetwork') {
     Write-Host 'customnetwork create success'
 }
 
-New-Item -ItemType Directory -Path AlmaLinux8_server_8880
-cd AlmaLinux8_server_8880
-New-Item -ItemType File -Path Dockerfile
-
-
 [System.Text.Encoding]::UTF8.GetBytes("FROM almalinux:8.7
 RUN set -x; dnf makecache --refresh && \
 dnf update -y && \
@@ -12155,29 +12156,40 @@ dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
 dnf install -y passwd tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+pwd ") | Set-Content Dockerfile -Encoding Byte
+
+docker build -t almalinux8_server_8880 .
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux8_server_8880 /sbin/init
+
+docker exec -it almalinux8_server_8880 bash -c "dnf"
+
+
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
 dnf -qy module disable postgresql && \
 dnf -y install postgresql13 postgresql13-server && \
 /usr/pgsql-13/bin/postgresql-13-setup initdb && \
 cat /var/lib/pgsql/13/initdb.log && \
 ls /var/lib/pgsql/13/data/postgresql.conf && \
-pwd ") | Set-Content Dockerfile -Encoding Byte
-
-
-docker build -t almalinux8_server_8880 . && \
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux8_server_8880 /sbin/init && \
-docker exec -it almalinux8_server_8880 bash -c "dnf"
-
-
 
 sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf
 
-echo "hostnossl    all          all            0.0.0.0/0  md5"  >/var/lib/pgsql/13/data/pg_hba.conf
+cp /var/lib/pgsql/13/data/pg_hba.conf /var/lib/pgsql/13/data/pg_hba.conf_backup
 
+echo "hostnossl    all          all            0.0.0.0/0  md5"  >>/var/lib/pgsql/13/data/pg_hba.conf
 
 systemctl enable postgresql-13 && \
 systemctl start postgresql-13 && \
 systemctl status postgresql-13
+
+
+# 改强密码
+su - postgres
+	psql
+	\password postgres
+	然后输入密码
+	\q
+
+
 
 	# vi /var/lib/pgsql/13/data/postgresql.conf
 		listen_addresses = '*' # 改成这个
@@ -12197,7 +12209,8 @@ docker image rm almalinux:8.7
 docker network rm customnetwork
 	# 一次性删除所有东西，要小心
 
-
+docker system prune --volumes -y
+	# 危险！
 
 
 
