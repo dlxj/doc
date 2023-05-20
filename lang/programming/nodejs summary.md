@@ -12160,7 +12160,7 @@ dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools firewall
 pwd ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 .
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux8_server_8880 /sbin/init
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432  -p 8880:8880 --privileged=true almalinux8_server_8880 /sbin/init
 
 docker exec -it almalinux8_server_8880 bash -c "systemctl start sshd &&
 systemctl enable sshd &&
@@ -12170,10 +12170,6 @@ docker exec -it almalinux8_server_8880 bash -c '
 chpasswd <<<"root:root"
 '
 
-
-
-
- 
 
 docker exec -it almalinux8_server_8880 bash -c "
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && 
@@ -12185,6 +12181,29 @@ ls /var/lib/pgsql/13/data/postgresql.conf
 "
 
 
+sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf  && \
+cp /var/lib/pgsql/13/data/pg_hba.conf /var/lib/pgsql/13/data/pg_hba.conf_backup && \
+echo "hostnossl    all          all            0.0.0.0/0  md5"  >>/var/lib/pgsql/13/data/pg_hba.conf
+
+systemctl enable postgresql-13 && \
+systemctl start postgresql-13 && \
+systemctl status postgresql-13
+
+
+
+# 改强密码
+su - postgres
+	psql
+	\password postgres
+	然后输入密码
+	\q
+
+
+psql -h 127.0.0.1 -p 5432 -U postgres
+	# docker 内运行成功
+	
+psql -h 172.20.0.2 -p 5432 -U postgres
+	# docker 内运行成功
 
 
 
