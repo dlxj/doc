@@ -23,6 +23,14 @@ if ($imageExists -eq $null) {
     docker pull almalinux:8.7
     Write-Host 'almalinux:8.7 pull success'
 }
+
+$networks = docker network ls
+if ($networks -notmatch 'customnetwork') {
+    Write-Host 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    Write-Host 'customnetwork create success'
+}
+
 ```
 
 
