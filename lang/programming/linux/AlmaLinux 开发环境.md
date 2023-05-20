@@ -99,3 +99,38 @@ yum install nmap
 			# 查看已经开放的端口
 ```
 
+
+
+
+
+# 远程桌面
+
+
+
+```
+dnf install epel-release && \
+rpm -qi epel-release && \
+dnf --enablerepo=epel group && \
+dnf group list | grep -i xfce && \
+dnf groupinstall "Xfce" "base-x"
+
+
+echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc && \
+systemctl set-default graphical && \
+systemctl get-default
+
+
+dnf install xrdp && \
+systemctl start xrdp && \
+systemctl enable xrdp && \
+systemctl status xrdp
+
+
+
+reboot
+
+
+
+
+```
+
