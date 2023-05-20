@@ -12156,7 +12156,7 @@ dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
-dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools firewalld cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
 pwd ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 .
@@ -12170,6 +12170,11 @@ docker exec -it almalinux8_server_8880 bash -c '
 chpasswd <<<"root:root"
 '
 
+
+
+
+ 
+
 docker exec -it almalinux8_server_8880 bash -c "
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && 
 dnf -qy module disable postgresql && 
@@ -12178,6 +12183,9 @@ dnf -y install postgresql13 postgresql13-server &&
 cat /var/lib/pgsql/13/initdb.log && 
 ls /var/lib/pgsql/13/data/postgresql.conf
 "
+
+
+
 
 
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
@@ -12206,6 +12214,16 @@ su - postgres
 	\q
 
 
+psql -h 127.0.0.1 -p 5432 -U postgres
+	# docker 内运行成功
+	
+psql -h 172.20.0.2 -p 5432 -U postgres
+	# docker 内运行成功
+
+
+netstat -aptn
+	# 显示当前正在监听的所有端口，已建立的外部链接也会显示
+	
 
 
 
@@ -12231,6 +12249,16 @@ docker system prune --volumes -y
 ```
 
 
+
+
+
+```
+# no need
+systemctl unmask firewalld && \
+systemctl start firewalld && \
+systemctl disable firewalld && \
+systemctl stop firewalld
+```
 
 
 
