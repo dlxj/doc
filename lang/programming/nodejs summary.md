@@ -2164,6 +2164,23 @@ yum update --allowerasing
 
 
 
+## Cloudflare
+
+### [Cloudflare Tunnel内网穿透](https://bra.live/setup-home-server-with-cloudflare-tunnel/)
+
+[Cloudflare Pro SSH加速](https://hostloc.com/thread-674147-1-1.html)
+
+- ```
+  Spectrum是CloudFlare最近推出的新业务，官方的宣传标语是“SPECTRUM — 比常规的Cloudflare多了65,533个端口，为所有应用提供 DDoS保护！”
+  Cloudflare Spectrum为全协议反代加速服务，可以为任意 TCP/UDP 应用提供安全防护与加速。普通付费用户仅支持常见应用协议（SSH 、Minecraft，5G免费流量），企业版支持全协议（SSH 、Minecraft、RDP，10G免费流量）。
+  
+  ucloud的gloabssh不好用吗，还是全免费的，也不用实名，就是要7天跑2M流量，不然就要删除重建
+  ```
+
+  
+
+
+
 ## nmap测试端口
 
 ```
@@ -11673,6 +11690,7 @@ require('fs').writeFileSync('config.json', JSON.stringify(j).replace(/"/g, `\\"`
 - https://learn.microsoft.com/en-us/windows/wsl/install-manual
 
   > ```
+  > wsl --install
   > Turn Windows features on or off # 搜索框输入
   > 	# 打开选项和功能
   > 把 linux 子系统 什么虚拟 全都打开
@@ -12103,14 +12121,23 @@ RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
 
 ### AlmaLinux8
 
-```
-docker system prune --volumes -y 
 
-$imageExists = docker image ls | Select-String -Pattern '8.7-minimal'
+
+```
+New-Item -ItemType Directory -Path AlmaLinux8_server_8880
+cd AlmaLinux8_server_8880
+New-Item -ItemType File -Path Dockerfile
+
+docker stop almalinux8_server_8880
+docker rm almalinux8_server_8880
+docker image rm almalinux:8.7
+docker network rm customnetwork
+
+$imageExists = docker image ls | Select-String -Pattern '8.7'
 if ($imageExists -eq $null) {
-    Write-Host 'almalinux:8.7-minimal not found, pull'
-    docker pull almalinux:8.7-minimal
-    Write-Host 'almalinux:8.7-minimal pull success'
+    Write-Host 'almalinux:8.7 not found, pull'
+    docker pull almalinux:8.7
+    Write-Host 'almalinux:8.7 pull success'
 }
 
 $networks = docker network ls
@@ -12120,30 +12147,73 @@ if ($networks -notmatch 'customnetwork') {
     Write-Host 'customnetwork create success'
 }
 
-New-Item -ItemType Directory -Path AlmaLinux8_server_8880
-cd AlmaLinux8_server_8880
-New-Item -ItemType File -Path Dockerfile
+[System.Text.Encoding]::UTF8.GetBytes("FROM almalinux:8.7
+RUN set -x; dnf makecache --refresh && \
+dnf update -y && \
+dnf install -y epel-release && \
+dnf update -y && \
+dnf --enablerepo=powertools install perl-IPC-Run -y && \
+dnf install -y python39 && \
+pip3 install conan && \
+dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+systemctl start sshd && \
+systemctl enable sshd && \
+systemctl status sshd && \
+pwd ") | Set-Content Dockerfile -Encoding Byte
+
+docker build -t almalinux8_server_8880 .
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true almalinux8_server_8880 /sbin/init
+
+docker exec -it almalinux8_server_8880 bash -c "dnf"
 
 
-Write-Output "FROM centos:7
-RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \
-    yum install -y `$buildDeps && \
-    yum install -y nginx redis nfs-utils crontabs && \
-    mkdir -p /project/shared && \
-    mkdir -p /project/script && \
-    chmod 755 /project/shared && \
-    cd /project && \
-    git clone http://用户名:AccessToten@gitlab.xxxx.git && \
-    curl -O 'https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz'  && \
-    tar zxvf node-v14.21.1-linux-x64.tar.gz -C /usr/local && \
-    ln -s /usr/local/node-v14.21.1-linux-x64/bin/node /usr/local/bin/node && \
-    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npm /usr/local/bin/npm && \
-    ln -s /usr/local/node-v14.21.1-linux-x64/bin/npx /usr/local/bin/npx && \
-    npm install cnpm@7.1.0  pm2@4.5.1 -g --registry=https://registry.npm.taobao.org && \
-    ln -s /usr/local/node-v14.21.1-linux-x64/bin/cnpm /usr/local/bin/cnpm && \
-    ln -s /usr/local/node-v14.21.1-linux-x64/bin/pm2 /usr/local/bin/pm2 && \
-    cd /project/aicbyserver_v2 && \
-    cnpm i" > Dockerfile
+dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+dnf -qy module disable postgresql && \
+dnf -y install postgresql13 postgresql13-server && \
+/usr/pgsql-13/bin/postgresql-13-setup initdb && \
+cat /var/lib/pgsql/13/initdb.log && \
+ls /var/lib/pgsql/13/data/postgresql.conf && \
+
+sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf
+
+cp /var/lib/pgsql/13/data/pg_hba.conf /var/lib/pgsql/13/data/pg_hba.conf_backup
+
+echo "hostnossl    all          all            0.0.0.0/0  md5"  >>/var/lib/pgsql/13/data/pg_hba.conf
+
+systemctl enable postgresql-13 && \
+systemctl start postgresql-13 && \
+systemctl status postgresql-13
+
+
+# 改强密码
+su - postgres
+	psql
+	\password postgres
+	然后输入密码
+	\q
+
+
+
+
+
+vi /etc/ssh/sshd_config
+	# 修改配置
+	PermitRootLogin yes # 改成这个
+	UsePAM no # 改成这个
+	
+/usr/pgsql-13/bin/pg_ctl -D /var/lib/pgsql/13/data/ -l logfile start
+
+
+docker stop almalinux8_server_8880
+docker rm almalinux8_server_8880
+docker image rm almalinux:8.7
+docker network rm customnetwork
+	# 一次性删除所有东西，要小心
+
+docker system prune --volumes -y
+	# 危险！
+
+
 
 ```
 
