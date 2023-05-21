@@ -12160,15 +12160,13 @@ dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools firewall
 pwd ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 .
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432  -p 8880:8880 --privileged=true almalinux8_server_8880 /sbin/init
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
 
 docker exec -it almalinux8_server_8880 bash -c "systemctl start sshd &&
 systemctl enable sshd &&
 systemctl status sshd"
 
-docker exec -it almalinux8_server_8880 bash -c '
-chpasswd <<<"root:root"
-'
+docker exec -it almalinux8_server_8880 bash -c 'chpasswd <<<"root:root"'
 
 
 docker exec -it almalinux8_server_8880 bash -c "
