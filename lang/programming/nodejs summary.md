@@ -19655,6 +19655,8 @@ conda env remove -n kan
 
 [RWKV-Runner](https://github.com/josStorer/RWKV-Runner) 立等可取
 
+[训练部署](https://zhuanlan.zhihu.com/p/616351661)
+
 [RWKV语言模型从入门到放弃，保姆级Training、Fine-tuning、Lora入坑教程](https://zhuanlan.zhihu.com/p/629809101?utm_id=0)
 
 [langchain+rwkv](https://python.langchain.com/en/latest/integrations/rwkv.html)
