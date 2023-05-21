@@ -17550,6 +17550,33 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 
 
+```
+可以看看 Wise 官网 ( https://wise.com/invite/u/cheng140)，链接带推广，虽然也没啥鸟用。wise 是英国上市公司，正规的银行。但是有一定的注册门槛。
+
+新手注册 Wise 图文教程
+所需材料：
+本人有效护照（身份证不行）
+国外手机号（+86 也可以，不建议）
+1 个护照仅能注册 1 个 wise ，多开必 ban
+
+1 、Wise 官网 ( https://wise.com/invite/u/cheng140) 点击注册、不限制 IP
+2 、输入邮箱，不建议 QQ 邮箱
+3 、创建个人账户
+4 、选择居住国，（建议英、加拿大、新加坡、马来西亚）
+5 、绑定电话号码（不建议+86 ，可 GV ）
+6 、创建强密码
+7 、开设账户，已完成 50%
+8 、输入护照信息和居住地址信息（居住地址决定哪个地区的 wise ）
+9 、首次入金激活 wise
+
+
+入金激活有一定的门槛，切记要同名入金激活。怕麻烦可以小黄鱼找代激活的。
+```
+
+
+
+
+
 ## prompts
 
 [日语提示66的](https://github.com/f/awesome-chatgpt-prompts)
@@ -17653,6 +17680,10 @@ if __name__ == "__main__":
 ```
 
 
+
+### fake api
+
+[fake api](https://github.com/xqdoo00o/ChatGPT-to-API)
 
 
 
