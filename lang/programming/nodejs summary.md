@@ -17581,6 +17581,14 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 
 
 
+```
+快捷指令，直接填入 api 即可
+快捷指令传送门： https://www.icloud.com/shortcuts/345252df9bc14dfbb1f63577375470e7
+整个过程 30s 不到 hh
+```
+
+
+
 ## prompts
 
 [日语提示66的](https://github.com/f/awesome-chatgpt-prompts)
