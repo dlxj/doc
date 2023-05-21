@@ -1,3 +1,19 @@
+# 找回休眠功能
+
+
+
+```
+# 管理员运行 powershell
+powercfg -h on
+
+电源和睡眠 ->其他电源设置 -> 更改当前不可用设置 -> 选择电源按钮的功能
+
+```
+
+
+
+
+
 # windows Long path
 
 1. Open the Start menu and type “regedit.” Launch the application.
