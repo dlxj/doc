@@ -19659,6 +19659,8 @@ conda env remove -n kan
 
 [langchain+rwkv](https://python.langchain.com/en/latest/integrations/rwkv.html)
 
+[wenda](https://github.com/wenda-LLM/wenda)
+
 
 
 ### RWKV-LM
