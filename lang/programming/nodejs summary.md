@@ -1865,6 +1865,54 @@ server {
 
 
 
+#### gpt4_browser_8080
+
+```
+
+# vi /etc/nginx/conf.d/gp4_browser_8080.conf
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream gpt4_browser_8080 {
+  server 127.0.0.1:8080;
+}
+
+
+server {
+  listen 8880;
+  server_name echodict.com;
+
+  location / {
+    location / {
+      proxy_pass http://gpt4_browser_8080;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+
+
+vi /etc/nginx/nginx.conf
+	# 保持安装时的默认值就行
+
+
+
+```
+
+
+
+
+
 ###　转发websokect
 
 ```
@@ -17839,8 +17887,19 @@ vi access_tokens.json
     "prompt": "hi",
     "max_tokens": 7,
     "temperature": 0
-  }'
+}'
 
+
+# nginx 转发，远程访问成功
+curl exxxt.com:8880/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer no need key" \
+  -d '{
+    "model": "gpt-4",
+    "prompt": "hi",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
 
 ```
 
