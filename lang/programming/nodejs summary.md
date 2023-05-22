@@ -2030,6 +2030,12 @@ server {
 
 
 
+#### skynet
+
+[skynet](https://github.com/cloudwu/skynet)
+
+
+
 ## 安装代理
 
 ```
@@ -17698,15 +17704,49 @@ if __name__ == "__main__":
 [fake api](https://github.com/xqdoo00o/ChatGPT-to-API)
 
 ```
-go.dev  # install go
+go.dev  # install go on windows
 
-git clone https://github.com/xqdoo00o/ChatGPT-to-API
-cd ChatGPT-to-API
+
+dnf makecache --refresh && \
+dnf -y install golang
+	# dnf remove golang
+
+git clone https://github.com/acheong08/ChatGPT-to-API.git && \
+cd ChatGPT-to-API && \
 go build
+
+touch access_tokens.txt authenticated_accounts.txt
+vi access_tokens.txt
+	# email:password
+
 ./freechatgpt
 ```
 
 
+
+```
+curl https://api.openai.com/v1/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "model": "text-davinci-003",
+    "prompt": "Say this is a test",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
+  
+  
+  curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer no need key" \
+  -d '{
+    "model": "text-davinci-003",
+    "prompt": "Say this is a test",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
+  
+```
 
 
 
