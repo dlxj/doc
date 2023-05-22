@@ -17597,6 +17597,9 @@ chatgpt api 的收费标准0.002 美刀 /1000token，看起来很便宜是吧，
 如果你想实现上下文，请求的时候就必须把 parentMessageId 的参数加上去，然后你每次提问问题的时候，他都会把之前的上下文纪录都一起累积提交过去，这些也是要算钱的，导致你每一次问问题，越往后消耗的 token 量越恐怖，特别是喜欢让 chatgpt 生成 1000 字论文的那种。
 
 而且上下文容量是有限制的，如果你聊天纪录过长，总 token 超过大概几万个的时候，open ai 只会回复你 token 太长的错误，要你清空 token 。
+
+道德标准都这么高吗?起码我知道之前还有 3.5api 刚开放的时候,有些大厂拿 18 美金的账号在做蒸馏训练,这就不承认啦?
+
 ```
 
 
@@ -17747,6 +17750,46 @@ if __name__ == "__main__":
 ### fake api
 
 [fake api](https://github.com/xqdoo00o/ChatGPT-to-API)
+
+
+
+```
+
+git clone -b gpt4-enabled https://github.com/acheong08/ChatGPT-to-API.git
+	# 支持 gpt4 的分支
+
+dnf makecache --refresh && \
+dnf -y install golang
+	# dnf remove golang
+
+cd /root/ChatGPT-to-API/tools/authenticator && \
+touch access_tokens.txt authenticated_accounts.txt
+
+vi access_tokens.txt
+	# email:password
+		# 填 openai 的账号和密码
+
+vscode 直接运行 main.go
+	# 生成 access_tokens.txt
+	
+cat access_tokens.txt
+	# 输出一串长长的 tokens
+	
+cd /root/ChatGPT-to-API
+vi access_tokens.json
+	[ "这里填刚才输出的长长tokens" ]
+
+./freechatgpt
+	# 启动服务
+
+gpt-4
+```
+
+
+
+
+
+
 
 ```
 
