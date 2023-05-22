@@ -48,7 +48,7 @@ dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
-dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie
+dnf install -y passwd openssh-server tar p7zip libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie
 
 curl https://sh.rustup.rs -sSf | sh && \
 source "$HOME/.cargo/env"
@@ -105,10 +105,44 @@ yum install nmap
 
 # 远程桌面
 
+[Xrdp with GNOME_GUI on AlmaLinux_8](https://wiki.crowncloud.net/?How_to_Install_Xrdp_with_GNOME_GUI_on_AlmaLinux_8)
+
+```
+yum groupinstall -y "Server with GUI" && \ 
+systemctl set-default graphical && \
+dnf install epel-release && \
+rpm -qi epel-release && \
+dnf --enablerepo=epel group
+
+wget https://rpmfind.net/linux/epel/testing/8/Everything/x86_64/Packages/x/xrdp-0.9.22-5.el8.x86_64.rpm
+
+dnf install ./xrdp-0.9.22-5.el8.x86_64.rpm
+	# 装完就可以成功用 windows 远程登录了
+
+dnf install -y xrdp && \
+systemctl start xrdp && \
+systemctl enable xrdp
+
+nmap 127.0.0.1  -p 3389
+	# 3389/tcp open  ms-wbt-server  端口是开着的 
+	# 再用外网地址测一次
+
+firewall-cmd --permanent --add-port=3389/tcp && \
+firewall-cmd --reload
+
+reboot
+
+```
+
+
+
 
 
 ```
-dnf install epel-release && \
+
+# fail
+
+dnf install -y epel-release && \
 rpm -qi epel-release && \
 dnf --enablerepo=epel group && \
 dnf group list | grep -i xfce && \
