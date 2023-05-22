@@ -168,3 +168,17 @@ reboot
 
 ```
 
+
+
+# Install Chrome
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
+wget https://dl.google.com/linux/linux_signing_key.pub && \
+rpm --import linux_signing_key.pub && \
+dnf install -y google-chrome-stable_current_x86_64.rpm
+
+```
+
+
+
