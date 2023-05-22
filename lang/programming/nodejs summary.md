@@ -17704,7 +17704,12 @@ if __name__ == "__main__":
 [fake api](https://github.com/xqdoo00o/ChatGPT-to-API)
 
 ```
+
+vscode 安装 go 插件，断点调试 go 很方便
+
+
 go.dev  # install go on windows
+
 
 
 dnf makecache --refresh && \
@@ -17715,11 +17720,20 @@ git clone https://github.com/acheong08/ChatGPT-to-API.git && \
 cd ChatGPT-to-API && \
 go build
 
+
+
+cd /root/ChatGPT-to-API/tools/authenticator && \
 touch access_tokens.txt authenticated_accounts.txt
+
 vi access_tokens.txt
 	# email:password
+		# 填 openai 的账号和密码
+
+
 
 ./freechatgpt
+
+
 ```
 
 
