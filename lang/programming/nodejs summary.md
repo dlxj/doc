@@ -17791,8 +17791,6 @@ vi access_tokens.json
 ./freechatgpt
 	# 启动服务
 
-./freechatgpt
-	# 启动服务
 
 
 # 访问接口
@@ -17806,7 +17804,18 @@ vi access_tokens.json
     "temperature": 0
   }'
 
-gpt-4
+# GPT4 接口
+  curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer no need key" \
+  -d '{
+    "model": "gpt-4",
+    "prompt": "hi",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
+
+
 ```
 
 
