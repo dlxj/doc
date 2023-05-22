@@ -17697,6 +17697,19 @@ if __name__ == "__main__":
 
 [fake api](https://github.com/xqdoo00o/ChatGPT-to-API)
 
+```
+go.dev  # install go
+
+git clone https://github.com/xqdoo00o/ChatGPT-to-API
+cd ChatGPT-to-API
+go build
+./freechatgpt
+```
+
+
+
+
+
 
 
 ## finetune api
@@ -21604,6 +21617,16 @@ assert v.pipe(fn, gn) == gn(fn(v))
 ## Nodejs Monads
 
 [monads](https://github.com/sniptt-official/monads)
+
+
+
+## Go Monads
+
+[Go Monads](https://github.com/samber/mo)
+
+[lo](https://github.com/samber/lo) Lodash-style Go library
+
+[fake api](https://github.com/acheong08/ChatGPT-to-API/tree/master) chat gpt api BY Go
 
 
 
