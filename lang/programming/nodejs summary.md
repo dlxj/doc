@@ -17779,8 +17779,32 @@ cd /root/ChatGPT-to-API
 vi access_tokens.json
 	[ "这里填刚才输出的长长tokens" ]
 
+
+注意：google 账号登录的话，没办法用 openai 账号密码登录
+1. 先正常登录 chat.openai.com
+2. 能聊天以后访问这个地址： https://chat.openai.com/api/auth/session
+3. 把 accessToken 复制出来，
+4. cd /root/ChatGPT-to-API
+	vi access_tokens.json
+		[ "这里填刚才的 accessToken" ]
+
 ./freechatgpt
 	# 启动服务
+
+./freechatgpt
+	# 启动服务
+
+
+# 访问接口
+  curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer no need key" \
+  -d '{
+    "model": "text-davinci-003",
+    "prompt": "Say this is a test",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
 
 gpt-4
 ```
