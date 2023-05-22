@@ -17756,7 +17756,6 @@ vscode 安装 go 插件，断点调试 go 很方便
 go.dev  # install go on windows
 
 
-
 dnf makecache --refresh && \
 dnf -y install golang
 	# dnf remove golang
@@ -17777,12 +17776,28 @@ vi access_tokens.txt
 vscode 直接运行 main.go
 	# 生成 access_tokens.txt
 	
-$(cat access_tokens.txt)
-
-ACCESS_TOKENS=$(cat access_tokens.txt)
-	# 定义环境变量
+cat access_tokens.txt
+	# 输出一串长长的 tokens
+	
+cd /root/ChatGPT-to-API
+vi access_tokens.json
+	[ "这里填刚才输出的长长tokens" ]
 
 ./freechatgpt
+	# 启动服务
+
+
+# 访问接口
+  curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer no need key" \
+  -d '{
+    "model": "text-davinci-003",
+    "prompt": "Say this is a test",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
+
 
 
 ```
