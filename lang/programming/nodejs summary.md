@@ -19943,6 +19943,10 @@ conda env remove -n kan
 
 ## ChatRWKV
 
+[论文本体](https://arxiv.org/abs/2305.13048)
+
+[论文思维树ToT](https://arxiv.org/abs/2305.10601)
+
 [RWKV将对GPT实施降维打击](https://zhuanlan.zhihu.com/p/619721229)
 
 [ChatRWKV](https://zhuanlan.zhihu.com/p/603840957)
