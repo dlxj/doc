@@ -146,6 +146,23 @@ mv node-$version-linux-x64 /usr/local && \
 ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && \
 ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
 ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
+
+npm i -g pm2 && \
+ln -s /usr/local/node-v18.9.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
+
+
+
+pm2 --name chatgpt_server_506 start "proxychains4 node server.js"
+
+pm2 save
+pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
+pm2 resurrect // 重启备份的所有项目
+pm2 update    // 清空重启次数等（疑难杂症可以试试）
+
+
+pm2 monit
+	# 实时监视进程
+
 ```
 
 
@@ -17891,7 +17908,7 @@ vi access_tokens.json
 
 
 # nginx 转发，远程访问成功
-curl exxxt.com:8880/v1/chat/completions \
+curl et.com:8880/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer no need key" \
   -d '{
@@ -17900,6 +17917,8 @@ curl exxxt.com:8880/v1/chat/completions \
     "max_tokens": 7,
     "temperature": 0
   }'
+
+pm2 --name "chatgpt4_browser_8080" start "./freechatgpt"
 
 ```
 
