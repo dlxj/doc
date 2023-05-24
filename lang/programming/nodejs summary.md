@@ -3255,10 +3255,11 @@ try {
 ##### 后端
 
 ```
+
 // npm install node-fetch
 // npm i express body-parser cors --save
 
-// curl -H Accept:text/event-stream http://localhost:3000/t
+// curl -H Accept:text/event-stream http://localhost:2052/t
 
 import fetch from 'node-fetch'
 import { createWriteStream } from 'node:fs'
@@ -3289,7 +3290,7 @@ app.get('/t', async (req, res) => {
         method: "post",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer api_key"
+            "Authorization": "Bearer api_here"
         },
         body: JSON.stringify({
             "model": "gpt-3.5-turbo",
@@ -3299,13 +3300,61 @@ app.get('/t', async (req, res) => {
     })
 
     streamPipeline(response.body, res)
-    // localhost:3000/t   浏览器访问，成功接收到流
+    // curl -H Accept:text/event-stream http://et.com:2052/t  成功接收到流
 })
 
-let port = 3000
+app.get('/t2', async (req, res) => {
+    const headers = {
+        'Content-Type': 'text/event-stream',
+        'Connection': 'keep-alive',
+        'Cache-Control': 'no-cache'
+    }
+    res.writeHead(200, headers)
+
+    const response = await fetch('http://et.com:8880/v1/chat/completions', {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer api_key"
+        },
+        body: JSON.stringify({
+            "model": "gpt-4",
+            "messages": [{ "role": "user", "content": "你会说中文吗" }],
+            "stream": true
+        })
+    })
+
+    // try {
+    //     for await (const chunk of response.body) {
+    //         let str = Buffer.from(chunk).toString('utf8')
+    //         let matches = str.matchAll(/(\{\"id\"\:.+?\})\n\n/g)
+    //         let arr = Array.from(matches)
+    //         if (arr.length > 0) {
+    //             for (let ar of arr) {
+    //                 let jstr = ar[1]
+    //                 let j = JSON.parse(jstr)
+    //                 let { delta, finish_reason } = j.choices[0]
+    //                 if (delta.content) {
+    //                     console.log(`${delta.content} `)
+    //                 }
+    //             }
+    //         }
+    //         //fs.writeFileSync('./lines', str, {encoding:'utf8', flag:'w'} )
+    //     }
+    //     console.log(`\n`)
+    // } catch (err) {
+    //     console.error(err.stack)
+    // }
+
+    streamPipeline(response.body, res)
+    // curl -H Accept:text/event-stream http://et.com:2052/t2  成功收到流
+})
+
+let port = 2052
 app.listen(port, () => {
     console.log(`service listening at http://localhost:${port}`)
 })
+
 ```
 
 
@@ -3319,7 +3368,7 @@ app.listen(port, () => {
 import fetch from 'node-fetch'
 import fs from 'fs'
 
-const response = await fetch(`http://127.0.0.1:3000/t`, { method:"get"})
+const response = await fetch(`http://127.0.0.1:2052/t`, { method:"get"})
 
 try {
 	for await (const chunk of response.body) {
