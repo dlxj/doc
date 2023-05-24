@@ -3436,6 +3436,62 @@ mimetype='text/event-stream'
 
 
 
+### 浏览器中的 fetch
+
+#### 流式输出
+
+```
+const response = await fetch('http://ect.com:8880/v1/chat/completions', {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer api_key"
+      },
+      body: JSON.stringify({
+        "model": "gpt-4",
+        "messages": [{ "role": "user", "content": "你会说中文吗" }],
+        "stream": true
+      })
+    })
+
+    const reader = response.body.getReader()
+    	// 这里和 nodejs 的 node-fetch 不同
+
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+
+      chunk = new TextDecoder().decode(value);
+
+      if (
+        chunk.includes(
+          `<form id="challenge-form" action="/backend-api/v2/conversation?`
+        )
+      ) {
+        chunk = `cloudflare token expired, please refresh the page.`;
+      }
+
+      let matches = chunk.matchAll(/(\{\"id\"\:.+?\})\n\n/g)
+      let arr = Array.from(matches)
+      if (arr.length > 0) {
+        for (let ar of arr) {
+          let jstr = ar[1]
+          let j = JSON.parse(jstr)
+          let { delta, finish_reason } = j.choices[0]
+          if (delta.content) {
+            text += delta.content
+            console.log(`${delta.content} `)
+          }
+        }
+      }
+```
+
+
+
+
+
+
+
 ## 两条sql 语句写一起
 
 
