@@ -3213,6 +3213,176 @@ sendPostRequestThroughSocks5Proxy()
 
 
 
+### node-fetch
+
+[node-fetch](https://www.npmjs.com/package/node-fetch)
+
+
+
+```
+npm install node-fetch
+
+import fetch from 'node-fetch'
+
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:"post", 
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer api key here"
+    },
+    body: JSON.stringify({
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "你会说中文吗"}]
+    })
+})
+
+try {
+	for await (const chunk of response.body) {
+		console.dir(JSON.parse(chunk.toString()))
+	}
+} catch (err) {
+	console.error(err.stack)
+}
+
+```
+
+
+
+#### 流式输出
+
+
+
+##### 后端
+
+```
+// npm install node-fetch
+// npm i express body-parser cors --save
+
+// curl -H Accept:text/event-stream http://localhost:3000/t
+
+import fetch from 'node-fetch'
+import { createWriteStream } from 'node:fs'
+import { pipeline } from 'node:stream'
+import { promisify } from 'node:util'
+
+const streamPipeline = promisify(pipeline)
+
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+
+const app = express()
+
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.get('/t', async (req, res) => {
+    const headers = {
+        'Content-Type': 'text/event-stream',
+        'Connection': 'keep-alive',
+        'Cache-Control': 'no-cache'
+    }
+    res.writeHead(200, headers)
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer api_key"
+        },
+        body: JSON.stringify({
+            "model": "gpt-3.5-turbo",
+            "messages": [{ "role": "user", "content": "你会说中文吗" }],
+            "stream": true
+        })
+    })
+
+    streamPipeline(response.body, res)
+    // localhost:3000/t   浏览器访问，成功接收到流
+})
+
+let port = 3000
+app.listen(port, () => {
+    console.log(`service listening at http://localhost:${port}`)
+})
+```
+
+
+
+
+
+##### 前端
+
+```
+// c.mjs
+import fetch from 'node-fetch'
+import fs from 'fs'
+
+const response = await fetch(`http://127.0.0.1:3000/t`, { method:"get"})
+
+try {
+	for await (const chunk of response.body) {
+        let str = Buffer.from(chunk).toString('utf8')
+        let matches = str.matchAll(/(\{\"id\"\:.+?\})\n\n/g)
+        let arr = Array.from(matches)
+        if (arr.length > 0) {
+            for (let ar of arr) {
+                let jstr = ar[1]
+                let j = JSON.parse(jstr)
+                let { delta, finish_reason } = j.choices[0]
+                if (delta.content) {
+                    console.log(`${delta.content} `)
+                }
+            }
+        }
+        //fs.writeFileSync('./lines', str, {encoding:'utf8', flag:'w'} )
+	}
+    console.log(`\n`)
+} catch (err) {
+	console.error(err.stack)
+}
+```
+
+
+
+
+
+```
+import fetch from 'node-fetch'
+import {createWriteStream} from 'node:fs'
+import {pipeline} from 'node:stream'
+import {promisify} from 'node:util'
+
+const streamPipeline = promisify(pipeline)
+
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:"post", 
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer api_key here"
+    },
+    body: JSON.stringify({
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "你会说中文吗"}],
+        "stream":true
+    })
+})
+
+await streamPipeline(response.body, createWriteStream('./out.txt'))
+
+```
+
+
+
+[Server-Sent Events in Node.js to Build a Realtime App](https://www.digitalocean.com/community/tutorials/nodejs-server-sent-events-build-realtime-app)
+
+```
+
+
+mimetype='text/event-stream'
+```
+
 
 
 
@@ -18005,6 +18175,10 @@ curl https://api.openai.com/v1/completions \
 ```
 
 
+
+### chatgpt-clone
+
+[chatgpt-clone](https://github.com/xtekky/chatgpt-clone)
 
 
 
