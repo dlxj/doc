@@ -3441,35 +3441,28 @@ mimetype='text/event-stream'
 #### 流式输出
 
 ```
-const response = await fetch('http://ect.com:8880/v1/chat/completions', {
+// 不知道为什么，流式输出并没有成功
+const response = await fetch('http://et.com:8880/v1/chat/completions', {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        "accept": `text/event-stream`,
         "Authorization": "Bearer api_key"
       },
       body: JSON.stringify({
         "model": "gpt-4",
-        "messages": [{ "role": "user", "content": "你会说中文吗" }],
+        "messages": [{ "role": "user", "content": message }],
         "stream": true
       })
     })
-
-    const reader = response.body.getReader()
-    	// 这里和 nodejs 的 node-fetch 不同
+    //"你会说中文吗"
+    const reader = response.body.getReader();
 
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
 
       chunk = new TextDecoder().decode(value);
-
-      if (
-        chunk.includes(
-          `<form id="challenge-form" action="/backend-api/v2/conversation?`
-        )
-      ) {
-        chunk = `cloudflare token expired, please refresh the page.`;
-      }
 
       let matches = chunk.matchAll(/(\{\"id\"\:.+?\})\n\n/g)
       let arr = Array.from(matches)
