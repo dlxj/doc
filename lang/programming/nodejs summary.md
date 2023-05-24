@@ -3213,6 +3213,78 @@ sendPostRequestThroughSocks5Proxy()
 
 
 
+### node-fetch
+
+[node-fetch](https://www.npmjs.com/package/node-fetch)
+
+
+
+```
+npm install node-fetch
+
+import fetch from 'node-fetch'
+
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:"post", 
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer api key here"
+    },
+    body: JSON.stringify({
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "你会说中文吗"}]
+    })
+})
+
+try {
+	for await (const chunk of response.body) {
+		console.dir(JSON.parse(chunk.toString()))
+	}
+} catch (err) {
+	console.error(err.stack)
+}
+
+```
+
+
+
+#### 流式输出
+
+```
+import fetch from 'node-fetch'
+import {createWriteStream} from 'node:fs'
+import {pipeline} from 'node:stream'
+import {promisify} from 'node:util'
+
+const streamPipeline = promisify(pipeline)
+
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:"post", 
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer api_key here"
+    },
+    body: JSON.stringify({
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "你会说中文吗"}],
+        "stream":true
+    })
+})
+
+await streamPipeline(response.body, createWriteStream('./out.txt'))
+
+```
+
+
+
+[Server-Sent Events in Node.js to Build a Realtime App](https://www.digitalocean.com/community/tutorials/nodejs-server-sent-events-build-realtime-app)
+
+```
+
+
+mimetype='text/event-stream'
+```
+
 
 
 
