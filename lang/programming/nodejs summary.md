@@ -18010,6 +18010,10 @@ curl https://api.openai.com/v1/completions \
 
 
 
+### chatgpt-clone
+
+[chatgpt-clone](https://github.com/xtekky/chatgpt-clone)
+
 
 
 ## finetune api
