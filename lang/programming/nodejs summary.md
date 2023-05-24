@@ -17898,24 +17898,20 @@ vi access_tokens.json
 # GPT4 接口
   curl 127.0.0.1:8080/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer no need key" \
+  -H "Authorization: Bearer " \
   -d '{
-    "model": "gpt-4",
-    "prompt": "hi",
-    "max_tokens": 7,
-    "temperature": 0
-}'
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user", "content": "你会说中文吗"}]
+  }'
 
 
 # nginx 转发，远程访问成功
 curl et.com:8880/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer no need key" \
+  -H "Authorization: Bearer " \
   -d '{
-    "model": "gpt-4",
-    "prompt": "hi",
-    "max_tokens": 7,
-    "temperature": 0
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
 
 pm2 --name "chatgpt4_browser_8080" start "./freechatgpt"
