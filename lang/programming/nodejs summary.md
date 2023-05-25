@@ -22351,9 +22351,9 @@ abcdefg
 
 ```
 
-# https://gist.github.com/dlxj/98d6655739a96cd02937dfb37a6a242a
+echodict\friso_vs2019\mmseg_example.py
+	# 看这里
 
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #===============================================================================
 #
@@ -22382,11 +22382,14 @@ abcdefg
     A Word Identification System for Mandarin Chinese Text Based on Two
     Variants of the Maximum Matching Algorithm
     http://technology.chtsai.org/mmseg/
+
     Other references:
     http://blog.csdn.net/nciaebupt/article/details/8114460
     http://www.codes51.com/itwd/1802849.html
+
     Dict:
     https://github.com/Samurais/jieba/blob/master/jieba/dict.txt
+
     Deps:
     Python3
 """
@@ -22455,9 +22458,11 @@ class Vocabulary():
         self.__load()
 
     def __load(self):
-        with open(self.dict_path) as f:
+        with open(self.dict_path, encoding='UTF-8') as f:
             for x in f.readlines():
-                text, freq, tag = x.split()
+                # text, freq, tag = x.split()
+                # self.dict[text] = (len(text), int(freq), tag)
+                text, freq, tag = (x.split()[0], 0, '0')
                 self.dict[text] = (len(text), int(freq), tag)
                 self.max_word_length = max([self.max_word_length, len(text)])
 
@@ -22476,16 +22481,23 @@ class Tokenizer():
     def cut(self, sentence):
         sentence_length = len(sentence)
         cursor = 0
-
+        arr = []
         while cursor < sentence_length:
             if self.is_chinese_char(sentence[cursor]):
                 chunks = self.__get_chunks(sentence, cursor) # Matching Algorithm
-                words, length = self.__ambiguity_resolution(chunks) # Ambiguity Resolution Rules
+                try:
+                    words, length = self.__ambiguity_resolution(chunks) # Ambiguity Resolution Rules
+                except Exception as e:
+                    cursor += 1
+                    continue
                 cursor += length
-                for term in list(filter(None, words)): yield term
+                for term in list(filter(None, words)): #yield term
+                    arr.append( term )
             else: # 处理非中文单词(英文单词, etc.)
                 word, cursor = self.__match_none_chinese_words(sentence, cursor)
-                yield word
+                arr.append( word )
+                #yield word
+        return arr
 
     def __ambiguity_resolution(self, chunks):
         '''
@@ -22715,6 +22727,8 @@ def test_token():
 
 if __name__ == '__main__':
     test_token()
+
+
 ```
 
 
