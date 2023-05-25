@@ -8444,6 +8444,73 @@ flushdb 清空当前数据库
 
 ## 全文搜索
 
+[OpenAI Embeddings](https://redis-py.readthedocs.io/en/stable/examples/search_vector_similarity_examples.html)
+
+```
+# delete index
+r.ft(INDEX_NAME).dropindex(delete_documents=True)
+
+# make a new one
+create_index(vector_dimensions=VECTOR_DIMENSIONS)
+%pip install openai
+import openai
+
+# set your OpenAI API key - get one at https://platform.openai.com
+openai.api_key = "YOUR OPENAI API KEY"
+# Create Embeddings with OpenAI text-embedding-ada-002
+# https://openai.com/blog/new-and-improved-embedding-model
+response = openai.Embedding.create(input=texts, engine="text-embedding-ada-002")
+embeddings = np.array([r["embedding"] for r in response["data"]], dtype=np.float32)
+
+# Write to Redis
+pipe = r.pipeline()
+for i, embedding in enumerate(embeddings):
+    pipe.hset(f"doc:{i}", mapping = {
+        "vector": embedding.tobytes(),
+        "content": texts[i],
+        "tag": "openai"
+    })
+res = pipe.execute()
+embeddings
+array([[ 0.00509819,  0.0010873 , -0.00228475, ..., -0.00457579,
+         0.01329307, -0.03167175],
+       [-0.00357223, -0.00550784, -0.01314328, ..., -0.02915693,
+         0.01470436, -0.01367203],
+       [-0.01284631,  0.0034875 , -0.01719686, ..., -0.01537451,
+         0.01953256, -0.05048691],
+       [-0.01145045, -0.00785481,  0.00206323, ..., -0.02070181,
+        -0.01629098, -0.00300795]], dtype=float32)
+```
+
+search
+
+```
+text = "animals"
+
+# create query embedding
+response = openai.Embedding.create(input=[text], engine="text-embedding-ada-002")
+query_embedding = np.array([r["embedding"] for r in response["data"]], dtype=np.float32)[0]
+
+query_embedding
+array([ 0.00062901, -0.0070723 , -0.00148926, ..., -0.01904645,
+       -0.00436092, -0.01117944], dtype=float32)
+# query for similar documents that have the openai tag
+query = (
+    Query("(@tag:{ openai })=>[KNN 2 @vector $vec as score]")
+     .sort_by("score")
+     .return_fields("content", "tag", "score")
+     .paging(0, 2)
+     .dialect(2)
+)
+
+query_params = {"vec": query_embedding.tobytes()}
+r.ft(INDEX_NAME).search(query, query_params).docs
+```
+
+
+
+
+
 - [RedisJson](https://redis.io/docs/stack/json/)
 
   - [最大内存、监听地址什么的](https://idroot.us/install-redis-almalinux-9/)
