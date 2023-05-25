@@ -7959,6 +7959,21 @@ se.run()
 
 
 
+# libsixel 有意思的图片格式
+
+[libsixel](https://github.com/saitoha/libsixel)
+
+```
+在 iTerm2 里要展示一个图像文件，可以用脚本 imgcat 。下载之后，在 iTerm2 里运行下述命令即可。
+
+./imgcat a.png
+这个命令干了什么呢？仔细读一读源码，发现它向标准输出打印了如下内容
+
+\033]1337;File=name=图像文件名;size=图像大小;inline=0:图像内容（Sixel编码）;\a
+我以前没有用过 Sixel 图像格式，所以查了一下 Wikipedia，原来是一种把图像编码成 ASCII 序列的编码方式。
+
+```
+
 
 
 
