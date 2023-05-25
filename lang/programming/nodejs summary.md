@@ -18196,7 +18196,11 @@ curl et.com:8880/v1/chat/completions \
     "model": "gpt-3.5-turbo",
     "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
-
+  
+  
+http://et.com:2082/
+	# 前端	
+	
 pm2 --name "chatgpt4_browser_8080" start "./freechatgpt"
 
 ```
