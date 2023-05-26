@@ -18366,6 +18366,34 @@ curl https://api.openai.com/v1/completions \
 
 
 
+### pandora 必看
+
+[pandora](https://github.com/pengzhile/pandora/blob/master/doc/wiki.md)
+
+```
+ 
+git clone https://github.com/pengzhile/pandora.git && \
+cd pandora && \
+pip3.9 install . && \
+pip3.9 install '.[api]' && \
+pip3.9 install '.[cloud]'
+
+pandora-cloud
+	# 运行
+
+pandora.cloud_launcher:run
+/root/pandora/src/pandora/cloud_launcher.py
+	# 入口点是这个
+
+
+
+pip3.9 install pandora-chatgpt && \
+
+
+```
+
+
+
 ## finetune api
 
 [fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)
