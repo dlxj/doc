@@ -18373,7 +18373,7 @@ curl https://api.openai.com/v1/completions \
 ```
 
 et.com:2086
-	# 输入 token 能正常访问
+	# 输入 token 能正常访问 
 
 pandora --tokens_file "C:/Users/Administrator/tokens.json"
 
@@ -18407,8 +18407,8 @@ pandora\build\lib\pandora\bots\server.py
 import src.pandora.cloud_launcher as cloud_launcher
 
 if __name__ == "__main__":
-	sys.argv.append( '--tokens_file' )
-    sys.argv.append( '1' )
+	#sys.argv.append( '--tokens_file' )
+    #sys.argv.append( '1' )
     cloud_launcher.run()
 
 ```
@@ -22863,6 +22863,18 @@ if __name__ == '__main__':
     test_token()
 
 
+```
+
+
+
+# PDF
+
+[pdf-lib](https://github.com/Hopding/pdf-lib/issues/83) extract images from pdf
+
+[extract-images.zip](https://github.com/Hopding/pdf-lib/files/3125076/extract-images.zip)
+
+```
+You just need to unzip the file and run yarn install (or npm install) and then run node index.js existing1.pdf or node index.js existing2.pdf. The script will extract as many embedded images as it can from the PDF into the images/ directory.
 ```
 
 
