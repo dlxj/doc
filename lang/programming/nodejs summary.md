@@ -18386,9 +18386,12 @@ pandora.cloud_launcher:run
 	# 入口点是这个
 
 
+新建一个入口点, vscode 运行
+# pandora\main.py
+import src.pandora.cloud_launcher as cloud_launcher
 
-pip3.9 install pandora-chatgpt && \
-
+if __name__ == "__main__":
+    cloud_launcher.run()
 
 ```
 
