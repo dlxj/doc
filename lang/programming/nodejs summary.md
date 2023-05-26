@@ -18371,14 +18371,19 @@ curl https://api.openai.com/v1/completions \
 [pandora](https://github.com/pengzhile/pandora/blob/master/doc/wiki.md)
 
 ```
- 
+
+et.com:2086
+	# 输入 token 能正常访问
+
+pandora --tokens_file "C:/Users/Administrator/tokens.json"
+
 git clone https://github.com/pengzhile/pandora.git && \
 cd pandora && \
 pip3.9 install . && \
 pip3.9 install '.[api]' && \
 pip3.9 install '.[cloud]'
 
-pandora-cloud
+pandora-cloud 
 	# 运行
 
 pandora.cloud_launcher:run
@@ -18386,14 +18391,41 @@ pandora.cloud_launcher:run
 	# 入口点是这个
 
 
+改默认端口和监听 ip
+/root/pandora/src/pandora/cloud_launcher.py
+	default='127.0.0.1:8018'
+	default='0.0.0.0:2086'
+		# 改成这个
+
+
+pandora\build\lib\pandora\bots\server.py
+    __default_ip = '0.0.0.0'
+    __default_port = 2086
+
 新建一个入口点, vscode 运行
 # pandora\main.py
 import src.pandora.cloud_launcher as cloud_launcher
 
 if __name__ == "__main__":
+	sys.argv.append( '--tokens_file' )
+    sys.argv.append( '1' )
     cloud_launcher.run()
 
 ```
+
+可通过 pandora --help 查看。
+-p 或 --proxy 指定代理，格式：protocol://user:pass@ip:port。
+-t 或 --token_file 指定一个存放Access Token的文件，使用Access Token登录。
+-s 或 --server 以http服务方式启动，格式：ip:port。
+-a 或 --api 使用gpt-3.5-turboAPI请求，你可能需要向OpenAI支付费用。
+--tokens_file 指定一个存放多Access Token的文件，内容为{"key": "token"}的形式。
+--threads 指定服务启动的线程数，默认为 8，Cloud模式为 4。
+--sentry 启用sentry框架来发送错误报告供作者查错，敏感信息不会被发送。
+-v 或 --verbose 显示调试信息，且出错时打印异常堆栈信息，供查错使用。
+
+
+
+- 也可以官方登录，然后访问 [这里](http://chat.openai.com/api/auth/session) 拿 `Access Token`
 
 
 
