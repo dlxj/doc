@@ -18431,6 +18431,12 @@ if __name__ == "__main__":
 
 
 
+### whisperX 
+
+[whisperX 字级的时间戳](https://github.com/m-bain/whisperX)
+
+
+
 ## finetune api
 
 [fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)
