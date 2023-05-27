@@ -18370,6 +18370,8 @@ curl https://api.openai.com/v1/completions \
 
 [pandora](https://github.com/pengzhile/pandora/blob/master/doc/wiki.md)
 
+[api 接口定义](https://github.com/pengzhile/pandora/blob/master/doc/HTTP-API.md)
+
 ```
 
 et.com:2086
