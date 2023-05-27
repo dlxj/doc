@@ -18250,20 +18250,22 @@ vi access_tokens.json
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer " \
   -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4",
     "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
 
 
 # nginx 转发，远程访问成功
-curl et.com:8880/v1/chat/completions \
+curl echodict.com:8880/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer " \
   -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4",
     "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
   
+  gpt-3.5-turbo
+  gpt-4
   
 http://et.com:2082/
 	# 前端	
