@@ -18453,7 +18453,22 @@ pandora\src\pandora_cloud\server.py
 	chat(self, conversation_id=None):
 		# 入口点在这
 		__get_userinfo():
-			# 拿历史聊天记录列表等
+			# 通过 accessToken 拿到用户ID和email
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+# 拿历史聊天记录列表等
 			
 ```
 
