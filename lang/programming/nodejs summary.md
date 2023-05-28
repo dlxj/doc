@@ -18437,6 +18437,32 @@ if __name__ == "__main__":
 
 
 
+#### 代码结构
+
+```
+# 对源有代码作了移动，不再依赖外部包
+pandora\main.py
+from src.pandora_cloud.server import ChatBot as CloudServer
+if __name__ == "__main__":
+    #sys.argv.append( '--tokens_file' )
+    #sys.argv.append( 'D:/Github/echodict/pandora/tokens.json' )
+    CloudServer(proxy=None, debug=False, sentry=False, login_local=True, CHATGPT_API_PREFIX="https://ai.fakeopen.com").run(bind_str="0.0.0.0:80", threads=8)
+  
+
+pandora\src\pandora_cloud\server.py
+	chat(self, conversation_id=None):
+		# 入口点在这
+		__get_userinfo():
+			# 拿历史聊天记录列表等
+			
+```
+
+
+
+
+
+
+
 ### whisperX 
 
 [whisperX 字级的时间戳](https://github.com/m-bain/whisperX)
