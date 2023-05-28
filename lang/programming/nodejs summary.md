@@ -18374,6 +18374,10 @@ curl https://api.openai.com/v1/completions \
 
 [api 接口定义](https://github.com/pengzhile/pandora/blob/master/doc/HTTP-API.md)
 
+[另一个GO API](https://github.com/linweiyuan/go-chatgpt-api)
+
+[nodejs前后端备用](https://github.com/zhpd/chatgpt-plus)
+
 ```
 
 et.com:2086
