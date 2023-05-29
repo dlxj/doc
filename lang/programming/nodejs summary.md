@@ -22349,6 +22349,31 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 [fake api](https://github.com/acheong08/ChatGPT-to-API/tree/master) chat gpt api BY Go
 
+[gocv ](https://github.com/hybridgroup/gocv) 支持 **go + opencv + cuda**
+
+- ```
+  // main.go
+  package main
+  
+  import (
+          "fmt"
+          "gocv.io/x/gocv"
+  )
+  
+  func main() {
+          fmt.Printf("connecting...\n")
+  
+          webcam, err := gocv.OpenVideoCapture("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4")
+          if err != nil {
+                  fmt.Printf("connect fail: %s\n", err)
+          }
+  
+          fmt.Printf("connected successfully!\n")
+  }
+  ```
+
+  
+
 
 
 ## F\# Monads
