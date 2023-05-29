@@ -101,6 +101,114 @@ yum install nmap
 
 
 
+# 配置静态 IP
+
+
+
+```
+二、设置IP地址、网关、DNS
+
+说明：AlmaLinux-9.x默认安装好之后启用DHCP自动获取ip地址，我们修改为静态ip
+
+#AlmaLinux-9.x放弃了之前的网络配置目录/etc/sysconfig/network-scripts/，采用新的存储目录
+
+#进入网络配置文件目录
+
+cd /etc/NetworkManager/system-connections
+
+vi /etc/NetworkManager/system-connections/ens160.nmconnection
+
+[connection]
+
+id=ens160
+
+uuid=cbc0db63-c2bb-339e-86d8-46bd89c7ad59
+
+type=ethernet
+
+autoconnect-priority=-999
+
+interface-name=ens160
+
+timestamp=1654435924
+
+[ethernet]
+
+[ipv4]
+
+address1=192.168.21.91/24,192.168.21.2
+
+dns=8.8.8.8;8.8.4.4;
+
+method=manual
+
+[ipv6]
+
+addr-gen-mode=eui64
+
+method=auto
+
+[proxy]
+
+:wq! #保存退出
+
+nmcli n off && nmcli n on #重启网络
+
+ip addr #用修改后的ip登录系统，查看ip地址
+
+相关网络命令
+
+ip link 显示网络设备的运行状态
+
+ip -s link 显示更详细的设备信息
+
+ip link show dev ens160 仅显示ens160的信息
+
+ip link show up 仅显示处于激活状态的设备
+
+ip link set ens160 down down掉ens160
+
+ip link set ens160 up 激活ens160
+
+nmcli device status 显示设备状态
+
+nmcli device show 显示全部网络接口属性
+
+nmcli device show ens160 显示ens160网络接口属性
+
+nmcli device connect ens160 激活网卡
+
+nmcli device disconnect ens160 停用网卡
+
+nmcli connection down ens160 down掉ens33设备
+
+nmcli connection up ens160 启用ens33设备
+
+nmcli con reload 重新加载网卡
+
+nmcli con add help 可以查看帮助
+
+三、设置主机名为www
+
+hostnamectl set-hostname www #设置主机名为www
+
+vi /etc/hostname #编辑配置文件
+
+www #修改localhost.localdomain为www
+
+:wq! #保存退出
+
+vi /etc/hosts #编辑配置文件
+
+127.0.0.1 localhost www #修改localhost.localdomain为www
+
+:wq! #保存退出
+```
+
+
+
+
+
 
 
 # 远程桌面
