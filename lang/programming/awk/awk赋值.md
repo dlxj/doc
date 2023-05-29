@@ -1,4 +1,4 @@
-
+```
 shell里面的赋值方法有两种，格式为
     1) arg=`(命令)`
     2) arg=$(命令)
@@ -6,6 +6,6 @@ shell里面的赋值方法有两种，格式为
     1) nlines=`(awk 'END{print NR}' filename)`
 或者
     2) nlines=$(awk 'END{print NR}' filename)  
-
+```
 
 
