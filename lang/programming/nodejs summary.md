@@ -22406,6 +22406,36 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 [gocv ](https://github.com/hybridgroup/gocv) 支持 **go + opencv + cuda**
 
+- [Stream for thread-safe concurrency](https://github.com/hybridgroup/gocv/pull/878)
+
+  ```
+  cimg, mimg, dimg := NewGpuMat(), NewGpuMat(), NewGpuMat()
+  	defer cimg.Close()
+  	defer mimg.Close()
+  	defer dimg.Close()
+  
+  	stream := NewStream()
+  	defer stream.Close()
+  
+  	canny := NewCannyEdgeDetector(50, 100)
+  	defer canny.Close()
+  
+  	detector := NewHoughSegmentDetector(1, math.Pi/180, 150, 50)
+  	defer detector.Close()
+  
+  	dest := gocv.NewMat()
+  	defer dest.Close()
+  
+  	cimg.UploadWithStream(src, stream)
+  	canny.DetectWithStream(cimg, &mimg, stream)
+  	detector.DetectWithStream(mimg, &dimg, stream)
+  	dimg.DownloadWithStream(&dest, stream)
+  
+  	stream.WaitForCompletion()
+  ```
+
+  
+
 - ```
   // main.go
   package main
@@ -22428,8 +22458,6 @@ assert v.pipe(fn, gn) == gn(fn(v))
   ```
 
   
-
-
 
 ## F\# Monads
 
