@@ -105,6 +105,85 @@ yum install nmap
 
 
 
+## IPv4
+
+```
+# インストール時にホスト名を設定していない場合は設定
+[root@localhost ~]# hostnamectl set-hostname dlp.srv.world
+# デバイス確認
+[root@localhost ~]# nmcli device
+DEVICE  TYPE      STATE      CONNECTION
+enp1s0  ethernet  connected  enp1s0
+lo      loopback  unmanaged  --
+
+# 固定 IPv4 アドレス設定
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.addresses 10.0.0.30/24
+# ゲートウェイ設定
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.gateway 10.0.0.1
+# 参照する DNS 設定
+# 複数設定する場合はスペース区切り ⇒ ipv4.dns "10.0.0.10 10.0.0.11 10.0.0.12"
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.dns 10.0.0.10
+# DNS サーチベース 設定 (自身のドメイン名 - 複数設定する場合はスペース区切り)
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.dns-search srv.world
+# IP アドレス固定割り当てに設定 (DHCP は [auto])
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.method manual
+# インターフェースを再起動して設定を反映
+[root@localhost ~]# nmcli connection down enp1s0; nmcli connection up enp1s0
+Connection 'enp1s0' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/2)
+
+# 設定確認
+[root@localhost ~]# nmcli device show enp1s0
+GENERAL.DEVICE:                         enp1s0
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         52:54:00:DF:87:AD
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     enp1s0
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveC>
+WIRED-PROPERTIES.CARRIER:               on
+IP4.ADDRESS[1]:                         10.0.0.30/24
+IP4.GATEWAY:                            10.0.0.1
+IP4.ROUTE[1]:                           dst = 10.0.0.0/24, nh = 0.0.0.0, mt = 1>
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 10.0.0.1, mt = 100
+IP4.DNS[1]:                             10.0.0.10
+IP4.SEARCHES[1]:                        srv.world
+IP6.ADDRESS[1]:                         fe80::5054:ff:fedf:87ad/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 100
+```
+
+
+
+## IPV6
+
+```
+# IPv6 無効化
+[root@localhost ~]# grubby --update-kernel ALL --args ipv6.disable=1
+# 確認
+[root@localhost ~]# grubby --info DEFAULT
+index=0 kernel="/boot/vmlinuz-5.14.0-17.el9.x86_64" args="ro crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/cs-swap rd.lvm.lv=cs/root rd.lvm.lv=cs/swap console=ttyS0,115200n8 selinux=0 ipv6.disable=1" root="/dev/mapper/cs-root" initrd="/boot/initramfs-5.14.0-17.el9.x86_64.img" title="CentOS Stream (5.14.0-17.el9.x86_64) 9" id="ab414d4792d04b9dbc1e2361f936e849-5.14.0-17.el9.x86_64"
+[root@localhost ~]# reboot
+[root@localhost ~]# ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: enp1s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:df:87:ad brd ff:ff:ff:ff:ff:ff
+    inet 10.0.0.30/24 brd 10.0.0.255 scope global noprefixroute enp1s0
+       valid_lft forever preferred_lft forever
+
+# IPv6 有効に戻す場合は以下 (変更後は要再起動)
+[root@localhost ~]# grubby --update-kernel ALL --remove-args ipv6.disable
+```
+
+
+
+
+
+
+
 ```
 二、设置IP地址、网关、DNS
 
