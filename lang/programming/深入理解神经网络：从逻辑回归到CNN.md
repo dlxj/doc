@@ -12326,9 +12326,11 @@ if __name__ == '__main__':
 
 
 
-## whisper
+## whisperX 
 
 - https://github.com/openai/whisper
+
+  [whisperX 字级的时间戳](https://github.com/m-bain/whisperX)
 
   - https://github.com/ahmetoner/whisper-asr-webservice
   - https://github.com/hackingthemarkets/chatgpt-api-whisper-api-voice-assistant

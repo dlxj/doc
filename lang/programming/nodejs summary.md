@@ -18250,20 +18250,22 @@ vi access_tokens.json
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer " \
   -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4",
     "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
 
 
 # nginx 转发，远程访问成功
-curl et.com:8880/v1/chat/completions \
+curl echodict.com:8880/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer " \
   -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4",
     "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
   
+  gpt-3.5-turbo
+  gpt-4
   
 http://et.com:2082/
 	# 前端	
@@ -18370,6 +18372,12 @@ curl https://api.openai.com/v1/completions \
 
 [pandora](https://github.com/pengzhile/pandora/blob/master/doc/wiki.md)
 
+[api 接口定义](https://github.com/pengzhile/pandora/blob/master/doc/HTTP-API.md)
+
+[另一个GO API](https://github.com/linweiyuan/go-chatgpt-api)
+
+[nodejs前后端备用](https://github.com/zhpd/chatgpt-plus)
+
 ```
 
 et.com:2086
@@ -18426,6 +18434,53 @@ if __name__ == "__main__":
 
 
 - 也可以官方登录，然后访问 [这里](http://chat.openai.com/api/auth/session) 拿 `Access Token`
+
+
+
+#### 代码结构
+
+```
+# 对源有代码作了移动，不再依赖外部包
+pandora\main.py
+from src.pandora_cloud.server import ChatBot as CloudServer
+if __name__ == "__main__":
+    #sys.argv.append( '--tokens_file' )
+    #sys.argv.append( 'D:/Github/echodict/pandora/tokens.json' )
+    CloudServer(proxy=None, debug=False, sentry=False, login_local=True, CHATGPT_API_PREFIX="https://ai.fakeopen.com").run(bind_str="0.0.0.0:80", threads=8)
+  
+
+pandora\src\pandora_cloud\server.py
+	chat(self, conversation_id=None):
+		# 入口点在这
+		__get_userinfo():
+			# 通过 accessToken 拿到用户ID和email
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+# 拿历史聊天记录列表等
+			
+```
+
+
+
+
+
+
+
+### whisperX 
+
+[whisperX 字级的时间戳](https://github.com/m-bain/whisperX)
 
 
 
