@@ -19485,6 +19485,74 @@ await newVect.addVectors( [ point ], [ doc ] )
 
 
 
+###### HNSWLib 搜索多组向量
+
+```
+    let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+    let { InMemoryDocstore } = await import('langchain/docstore')
+
+    let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+    let embeddings = new OpenAIEmbeddings({
+        openAIApiKey: api_key,
+        modelName: 'text-embedding-ada-002',
+        maxConcurrency: 5, timeout: 3600 * 1000
+    })
+
+    let embedding = await embeddings.embedQuery(sentence)
+
+    const args = { "space": "cosine", "numDimensions": 1536 }
+    const index = await HNSWLib.getHierarchicalNSW(args)
+    args.docstore = new InMemoryDocstore()
+    args.index = index
+    let newVect = new HNSWLib(embeddings, args)
+
+    let all_embedding = []
+    let all_doc = []
+    for (let role of roles_) {
+        if (!dic_vectors[role]) {
+            let vec_dir = path.resolve('.', 'vectors', role)
+            let vecs = await HNSWLib.load(
+                vec_dir,
+                embeddings
+            )
+            dic_vectors[role] = vecs
+        }
+        let vecs = dic_vectors[role]
+        // let docs = await vecs.asRetriever(3).getRelevantDocuments(sentence)
+
+        //let embedding = await vecs.embeddings.embedQuery(sentence)
+        const t = vecs.index.searchKnn(embedding, 3)  // top 3 results
+        let results = t.neighbors.map((docIndex, resultIndex) => {
+            return {
+                "embed":vecs._index.getPoint(docIndex),
+                "docIndex":docIndex,
+                "doc": vecs.docstore.search(String(docIndex)),
+                "distance":t.distances[resultIndex]
+            };
+        })
+
+        for (let { embed, docIndex, doc, distance  } of results ) {
+            all_embedding.push( embed )
+            all_doc.push( doc )
+        }
+    }
+
+    await  newVect.addVectors( all_embedding, all_doc )
+
+    let t = newVect.index.searchKnn(embedding, 3)
+    let results = t.neighbors.map((docIndex, resultIndex) => {
+        return {
+            "docIndex":docIndex,
+            "doc": newVect.docstore.search(String(docIndex)),
+            "distance":t.distances[resultIndex]
+        };
+    })
+```
+
+
+
+
+
 ###### HNSWLib 合并两个向量
 
 ```
