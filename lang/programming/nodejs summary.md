@@ -19477,56 +19477,50 @@ Helpful answer in markdown:`
 
 
 
+###### HNSWLib 添加向量
+
+```
+await newVect.addVectors( [ point ], [ doc ] )
+```
+
+
+
 ###### HNSWLib 合并两个向量
 
 ```
 # echodict\xml\t.js
-(async () => {
 
+(async () => {
     let fs = require('fs'),
         path = require('path')
-    
     let config = require('./config.js')
     let roles = config.roles
     let roles_ = config.roles_
     let api_key = config.api_key
 
     let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+    let { InMemoryDocstore } = await import('langchain/docstore')
+    
     let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
-    class Document {
-        constructor(fields) {
-            Object.defineProperty(this, "pageContent", {
-                enumerable: true,
-                configurable: true,
-                writable: true,
-                value: void 0
-            });
-            Object.defineProperty(this, "metadata", {
-                enumerable: true,
-                configurable: true,
-                writable: true,
-                value: void 0
-            });
-            this.pageContent = fields.pageContent
-                ? fields.pageContent.toString()
-                : this.pageContent;
-            this.metadata = fields.metadata ?? {};
-        }
-    }
-
-    let embedding = new OpenAIEmbeddings({
+    let embeddings = new OpenAIEmbeddings({
         openAIApiKey: api_key,
         modelName: 'text-embedding-ada-002',
         maxConcurrency: 5, timeout: 3600 * 1000
     })
 
-    
+    const args = {"space":"cosine","numDimensions":1536}
+    const index = await HNSWLib.getHierarchicalNSW(args)
+    args.docstore = new InMemoryDocstore()
+    args.index = index
+    let newVect= new HNSWLib(embeddings, args)
+
+
     let vectors = null
     for (let role of roles_) {
         let vec_dir = path.resolve('.', 'vectors', role)
         let vecs = await HNSWLib.load(
             vec_dir,
-            embedding
+            embeddings
         )
         if (!vectors) {
             vectors = vecs
@@ -19540,6 +19534,9 @@ Helpful answer in markdown:`
                 let point = vecs._index.getPoint(idx)
                 
                 // add doc
+
+                await newVect.addVectors( [ point ], [ doc ] )
+
                 let label = originMaxElements + Number(k)
                 let key = `${label}`
                 vectors.docstore._docs.set(key, doc)
@@ -19550,12 +19547,10 @@ Helpful answer in markdown:`
             }
         }
     }
-	
-    let embed = await embedding.embedDocuments(["hello, how are you"])
+
+    let embed = await embeddings.embedDocuments(["hello, how are you"])
 })()
 ```
-
-
 
 
 
