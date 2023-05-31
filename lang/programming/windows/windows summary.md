@@ -12,6 +12,12 @@ powercfg -h on
 
 
 
+# 磁盘管理工具
+
+```
+diskmgmt.msc
+```
+
 
 
 # windows Long path

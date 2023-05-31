@@ -60,6 +60,16 @@ ps -ef | grep redis
 
 
 
+# 显示进程的完整目录
+
+```
+ll /proc/PID
+```
+
+
+
+
+
 
 
 # 关闭 stopped 进程

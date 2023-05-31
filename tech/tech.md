@@ -1,5 +1,24 @@
 
 
+# git-lfs
+
+[免费用户上传超过1G账号会被冻结](https://zhuanlan.zhihu.com/p/630784945)
+
+[查看已用空间](https://github.com/settings/billingusage)
+
+1. [git-lfs windows installter](https://github.com/git-lfs/git-lfs/releases) 下载安装
+2. 运行  git lfs install​
+
+### 使用
+
+1. 执行 `git lfs install` 开启lfs功能
+2. 使用 `git lfs track` 命令进行大文件追踪 例如`git lfs track "*.png"` 追踪所有后缀为png的文件
+3. 使用 `git lfs track` 查看现有的文件追踪模式
+4. 提交代码需要将`gitattributes`文件提交至仓库. 它保存了文件的追踪记录
+5. 提交后运行`git lfs ls-files` 可以显示当前跟踪的文件列表
+6. 将代码 push 到远程仓库后，LFS 跟踪的文件会以『Git LFS』的形式显示:
+7. clone 时 使用'git clone' 或 `git lfs clone`均可
+
 
 
 解决github 错误
