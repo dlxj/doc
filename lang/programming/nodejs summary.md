@@ -19455,6 +19455,28 @@ Helpful answer in markdown:`
 
 
 
+###### HNSWLib 新建空向量
+
+```
+    let { HNSWLib } = await import('langchain/vectorstores/hnswlib')
+    let { InMemoryDocstore } = await import('langchain/docstore')
+    
+    let { OpenAIEmbeddings } = await import('langchain/embeddings/openai')
+    let embeddings = new OpenAIEmbeddings({
+        openAIApiKey: api_key,
+        modelName: 'text-embedding-ada-002',
+        maxConcurrency: 5, timeout: 3600 * 1000
+    })
+	
+    const args = {"space":"cosine","numDimensions":1536}
+    const index = await HNSWLib.getHierarchicalNSW(args)
+    args.docstore = new InMemoryDocstore()
+    args.index = index
+    let newVect= new HNSWLib(embeddings, args)
+```
+
+
+
 ###### HNSWLib 合并两个向量
 
 ```
