@@ -30,6 +30,30 @@ diskmgmt.msc
 
 
 
+# App Installer
+
+[installing App Installer (winget) on Windows Server 2022](https://gist.github.com/carey/62070ee199099c4233f572a17315366d)
+
+```
+
+wsl --install
+
+winget search alma
+-->AlmaLinux 9  9P5RWLM70SN9  Unknown  msstore
+   AlmaLinux 8 WSL  9NMD96XJJ19F  Unknown  msstore
+
+winget install 9NMD96XJJ19F
+
+```
+
+
+
+
+
+
+
+
+
 # windows Long path
 
 1. Open the Start menu and type “regedit.” Launch the application.
