@@ -34,6 +34,10 @@ diskmgmt.msc
 
 [installing App Installer (winget) on Windows Server 2022](https://gist.github.com/carey/62070ee199099c4233f572a17315366d)
 
+[winget-and-appinstaller](https://www.andreasnick.com/112-install-winget-and-appinstaller-on-windows-server-2022.html)
+
+[Windows Server安装Microsoft Store的应用 ](https://www.cnblogs.com/cqpanda/p/16650721.html)
+
 ```
 
 wsl --install
@@ -43,10 +47,50 @@ winget search alma
    AlmaLinux 8 WSL  9NMD96XJJ19F  Unknown  msstore
 
 winget install 9NMD96XJJ19F
+	# 没有成功，闪退了
 
 ```
 
 
+
+```
+Windows Server 2022 无法正常使用 Microsoft Store 下载应用程序。
+
+您可以尝试以下方案进行操作，看看是否可行：
+
+设置>>应用>>应用和功能>>找到应用商店>>高级选项>>重置。
+
+ 
+
+另外，您还可以尝试清理应用商店的缓存，看看是否可以恢复正常：
+
+ 
+
+按“Win+R”键，在运行窗口中，键入 WSReset.exe并点击“ 运行 ”。
+
+ 
+
+如果问题依旧，建议您尝试以下方案重新部署您的应用商店：
+
+ 
+
+在打开的“管理员：Windows Powershell”窗口中输入以下命令：
+
+ 
+
+get-appxpackage *store* | remove-Appxpackage
+
+ 
+
+再次安装：
+
+ 
+
+add-appxpackage -register "C:\Program Files\WindowsApps\*Store*\AppxManifest.xml" -disabledevelopmentmode
+
+
+完成后重启您的 Microsoft Store ，看看是否可以正常下载安装应用程序。
+```
 
 
 

@@ -12174,6 +12174,21 @@ CMD [ "./ChatGPT-To-API" ]
 
 
 
+### 共享目录
+
+```
+VOLUME ["C:/myapp"]
+```
+
+
+
+```
+# 要共享的是 windows 的 D:/shared 目录，这样docker 的所有文件是不是都放 这里了？？
+run命令加"-v"参数 -v D:/shared:/data
+```
+
+
+
 
 
 ## wsl2
