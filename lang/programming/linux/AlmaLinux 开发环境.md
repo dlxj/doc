@@ -48,7 +48,7 @@ dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
-dnf install -y passwd openssh-server tar p7zip libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie
+dnf install -y passwd openssh-server tar p7zip libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie postgresql13 postgresql13-server postgresql13-contrib postgresql13-devel systemtap-sdt-devel redhat-rpm-config
 
 curl https://sh.rustup.rs -sSf | sh && \
 source "$HOME/.cargo/env"
@@ -56,6 +56,90 @@ source "$HOME/.cargo/env"
 
 
 ```
+
+
+
+```
+dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && 
+dnf -qy module disable postgresql && 
+dnf -y install postgresql13 postgresql13-server postgresql13-contrib && 
+/usr/pgsql-13/bin/postgresql-13-setup initdb && 
+cat /var/lib/pgsql/13/initdb.log && 
+ls /var/lib/pgsql/13/data/postgresql.conf
+
+sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf  && \
+cp /var/lib/pgsql/13/data/pg_hba.conf /var/lib/pgsql/13/data/pg_hba.conf_backup && \
+echo "hostnossl    all          all            0.0.0.0/0  md5"  >>/var/lib/pgsql/13/data/pg_hba.conf
+
+systemctl enable postgresql-13 && \
+systemctl start postgresql-13 && \
+systemctl status postgresql-13
+
+
+
+# 改强密码
+su - postgres
+	psql
+	\password postgres
+	然后输入密码
+	\q
+
+
+chown -R postgres /data
+	# 改拥有者
+
+chgrp -R postgres /data
+	# 改用户组
+
+chmod -R 700 /data
+	# 改文件夹权限
+	# 只有自已有完全权限，其他人完全没有任何权限
+
+
+psql -h 127.0.0.1 -p 5432 -U postgres
+	# docker 内运行成功
+	
+psql -h 172.20.0.2 -p 5432 -U postgres
+	# docker 内运行成功
+
+
+
+
+偷梁换柱，改数据文件夹
+	su - 
+		# 切到 root
+	
+	systemctl stop postgresql-13 && \
+	mkdir /data/psqldata && \
+	cp -R /var/lib/pgsql/13/data /data/psqldata && \
+	chown -R postgres /data && \
+	chgrp -R postgres /data && \
+	chmod -R 700 /data && \
+	mv /var/lib/pgsql/13/data /var/lib/pgsql/13/data__link__to_data_psqldata && \
+	ln -s /data/psqldata /var/lib/pgsql/13/data
+		# unlink 取消软链用这个
+	
+	systemctl start postgresql-13
+		# 成功启动 
+		
+
+
+
+恢得已备份的数据库（已弃用）
+    CREATE EXTENSION IF NOT EXISTS dblink;
+    DO $$
+    BEGIN
+    PERFORM dblink_exec('', 'CREATE DATABASE Touch WITH OWNER = postgres ENCODING = ''UTF8'' TABLESPACE = pg_default CONNECTION LIMIT = -1 TEMPLATE template0');
+    EXCEPTION WHEN duplicate_database THEN RAISE NOTICE '%, skipping', SQLERRM USING ERRCODE = SQLSTATE;
+    END
+    $$;
+
+		# 好像数据库名只能是小写
+
+
+```
+
+
 
 
 
