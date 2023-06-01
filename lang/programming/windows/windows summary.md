@@ -24,6 +24,8 @@ diskmgmt.msc
 
 [window server 2022 搭建FTP服务器](https://zhuanlan.zhihu.com/p/622408091)
 
+[开启服务设置端口防火墙](https://www.vdtutorials.com/install-and-configure-ftp-server-on-windows-server-2022/)
+
 
 
 # windows Long path
