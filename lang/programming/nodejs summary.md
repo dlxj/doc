@@ -12726,6 +12726,25 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 
 
 
+
+偷梁换柱，改数据文件夹
+	su - 
+		# 切到 root
+	
+	systemctl stop postgresql-13 && \
+	mkdir /data/psqldata && \
+	cp -R /var/lib/pgsql/13/data /data/psqldata && \
+	chown -R postgres /data && \
+	chgrp -R postgres /data && \
+	chmod -R 700 /data && \
+	mv /var/lib/pgsql/13/data /var/lib/pgsql/13/data__link__to_data_psqldata && \
+	ln -s /data/psqldata /var/lib/pgsql/13/data
+		# unlink 取消软链用这个
+	
+	systemctl start postgresql-13
+		# 成功启动 
+		
+
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
 dnf -qy module disable postgresql && \
 dnf -y install postgresql13 postgresql13-server && \
