@@ -12682,12 +12682,11 @@ docker exec -it almalinux8_server_8880 bash -c 'chpasswd <<<"root:root"'
 docker exec -it almalinux8_server_8880 bash -c "
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && 
 dnf -qy module disable postgresql && 
-dnf -y install postgresql13 postgresql13-server && 
+dnf -y install postgresql13 postgresql13-server postgresql13-contrib && 
 /usr/pgsql-13/bin/postgresql-13-setup initdb && 
 cat /var/lib/pgsql/13/initdb.log && 
 ls /var/lib/pgsql/13/data/postgresql.conf
 "
-
 
 sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf  && \
 cp /var/lib/pgsql/13/data/pg_hba.conf /var/lib/pgsql/13/data/pg_hba.conf_backup && \
@@ -12744,6 +12743,21 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 	systemctl start postgresql-13
 		# 成功启动 
 		
+
+恢得已备份的数据库
+    CREATE EXTENSION IF NOT EXISTS dblink;
+    DO $$
+    BEGIN
+    PERFORM dblink_exec('', 'CREATE DATABASE Touch WITH OWNER = postgres ENCODING = ''UTF8'' TABLESPACE = pg_default CONNECTION LIMIT = -1 TEMPLATE template0');
+    EXCEPTION WHEN duplicate_database THEN RAISE NOTICE '%, skipping', SQLERRM USING ERRCODE = SQLSTATE;
+    END
+    $$;
+
+		# 好像数据库名只能是小写
+
+
+
+
 
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
 dnf -qy module disable postgresql && \
