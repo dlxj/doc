@@ -26,6 +26,8 @@ diskmgmt.msc
 
 [开启服务设置端口防火墙](https://www.vdtutorials.com/install-and-configure-ftp-server-on-windows-server-2022/)
 
+[用户名_FTP站点](https://cloudinfrastructureservices.co.uk/how-to-setup-ftp-server-using-iis-on-windows-server-2022/)
+
 
 
 # windows Long path
