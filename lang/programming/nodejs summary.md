@@ -12668,7 +12668,7 @@ pwd ") | Set-Content Dockerfile -Encoding Byte
 docker build -t almalinux8_server_8880 .
 docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
 
-docker run -tid --name almalinux8_server_8880 -v D:/shared:/data --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
+docker run -tid --name almalinux8_server_8880 -v D:/shared:/data -v E:/shared:/data2 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
 	# 成功将 windows 的 D:/shared 目录映射到 linux 的 /data
 
 	
@@ -12832,6 +12832,10 @@ systemctl stop firewalld
 ```
 
 
+
+#### Docker 更改已存在的端口和共享目录
+
+[更改已存在的端口和共享目录](https://blog.csdn.net/bf96163/article/details/108405502)
 
 
 
