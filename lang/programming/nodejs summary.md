@@ -4634,6 +4634,31 @@ if (result instanceof Promise) {
 
 ## 定时器
 
+
+
+```
+            // 正在计算, 给前端发消息报告进度
+            let t = setInterval(async () => {
+
+            try {
+                let p = await this.redis.defaultDB.xxx.state.get(`${ID}_`)
+                let msg = JSON.parse(p)
+                __ws__.send(msg)
+                if (msg && msg.msg == '计算已完成') {
+                    clearInterval(t)
+                } else if (!msg) {
+                    clearInterval(t)
+                }
+            } catch (e) {
+                console.log(e)
+                clearInterval(t)
+            }
+
+            }, 2000)
+```
+
+
+
 ```
     //一秒一次心跳包
     let task = setInterval(() => {
