@@ -20,6 +20,12 @@ diskmgmt.msc
 
 
 
+# 安装 FTP 
+
+[window server 2022 搭建FTP服务器](https://zhuanlan.zhihu.com/p/622408091)
+
+
+
 # windows Long path
 
 1. Open the Start menu and type “regedit.” Launch the application.
