@@ -12670,7 +12670,7 @@ docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.
 
 docker run -tid --name almalinux8_server_8880 -v D:/shared:/data --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
 	# 成功将 windows 的 D:/shared 目录映射到 linux 的 /data
-	
+
 	
 docker exec -it almalinux8_server_8880 bash -c "systemctl start sshd &&
 systemctl enable sshd &&
@@ -12705,6 +12705,17 @@ su - postgres
 	\password postgres
 	然后输入密码
 	\q
+
+
+chown -R postgres /data
+	# 改拥有者
+
+chgrp -R postgres /data
+	# 改用户组
+
+chmod -R 700 /data
+	# 改文件夹权限
+	# 只有自已有完全权限，其他人完全没有任何权限
 
 
 psql -h 127.0.0.1 -p 5432 -U postgres
