@@ -187,6 +187,14 @@ ln -s ~/miniforge3/bin/conda /usr/local/bin && \
 ln -s ~/miniforge3/bin/activate /usr/local/bin && \
 ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
 source ~/miniforge3/etc/profile.d/conda.sh
+
+# autodl
+~/miniconda3/bin/conda init && \
+ln -s ~/miniconda3/bin/conda /usr/local/bin && \
+ln -s ~/miniconda3/bin/activate /usr/local/bin && \
+ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
+source ~/miniconda3/etc/profile.d/conda.sh
+
 ```
 
 

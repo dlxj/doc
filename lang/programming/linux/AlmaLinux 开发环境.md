@@ -386,10 +386,17 @@ rpm -qi epel-release && \
 dnf --enablerepo=epel group
 
 wget https://rpmfind.net/linux/epel/testing/8/Everything/x86_64/Packages/x/xrdp-0.9.22-5.el8.x86_64.rpm
+	# 失效了
+
+wget https://rpmfind.net/linux/epel/8/Everything/x86_64/Packages/x/xrdp-0.9.22.1-2.el8.x86_64.rpm
 
 dnf install ./xrdp-0.9.22-5.el8.x86_64.rpm
 	# 装完就可以成功用 windows 远程登录了
-
+	# 失效了
+	
+dnf install ./xrdp-0.9.22.1-2.el8.x86_64.rpm
+	
+	
 dnf install -y xrdp && \
 systemctl start xrdp && \
 systemctl enable xrdp

@@ -21408,13 +21408,37 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 
 
-# whisper
+# whisperX
 
 [Whisper WebUI with a VAD for more accurate non-English transcripts (Japanese) #397](https://github.com/openai/whisper/discussions/397)
 
 - JP 前端
 
 doc\lang\programming\whisper-webui.pdf 详细文档
+
+
+
+```
+
+# autodl
+~/miniconda3/bin/conda init && \
+ln -s ~/miniconda3/bin/conda /usr/local/bin && \
+ln -s ~/miniconda3/bin/activate /usr/local/bin && \
+ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
+source ~/miniconda3/etc/profile.d/conda.sh
+
+
+conda create --name whisperx python=3.10 && \
+conda activate whisperx
+	# conda remove -n whisperx  --all
+
+
+pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
+
+
+```
+
+
 
 
 
