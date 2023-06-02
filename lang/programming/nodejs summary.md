@@ -21467,6 +21467,10 @@ cd whisperX && \
 pip install numba numpy tqdm more-itertools tiktoken==0.3.3 && \
 pip install faster-whisper transformers ffmpeg-python==0.2.0 pandas setuptools==65.6.3 nltk
 
+proxychains4 pip install -e .
+
+whisperx examples/sample01.wav
+
 ```
 
 
