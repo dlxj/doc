@@ -21471,9 +21471,11 @@ proxychains4 pip install -e .
 
 apt install ffmpeg
 
+whisperx /root/1.mp3
+
 whisperx --model large --language fr examples/sample_fr_01.wav
 
-whisperx examples/sample01.wav
+
 
 ```
 
