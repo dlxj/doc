@@ -21410,6 +21410,8 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 # whisperX
 
+[whisperX](https://github.com/m-bain/whisperX)
+
 [Whisper WebUI with a VAD for more accurate non-English transcripts (Japanese) #397](https://github.com/openai/whisper/discussions/397)
 
 - JP 前端
@@ -21435,6 +21437,29 @@ conda activate whisperx
 
 pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
 
+
+apt-get update -y && \
+apt-get install -y libsodium-dev && \
+pip install shadowsocksr-cli 
+
+
+git clone https://github.com/rofl0r/proxychains-ng.git && \
+cd proxychains-ng && \
+./configure --prefix=/usr --sysconfdir=/etc && \
+make && \
+make install && \
+make install-config
+
+vi /etc/proxychains.conf
+localnet 127.0.0.0/255.0.0.0
+localnet 172.16.0.0/255.240.0.0
+localnet 192.168.0.0/255.255.0.0
+[ProxyList]
+socks5  127.0.0.1 1080
+	# 改成这样
+
+
+pip install git+https://github.com/m-bain/whisperx.git
 
 ```
 
