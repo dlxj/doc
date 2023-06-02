@@ -21423,6 +21423,7 @@ doc\lang\programming\whisper-webui.pdf 详细文档
 ```
 
 # autodl
+	# 重要：把所有源都弄成 default 去
 ~/miniconda3/bin/conda init && \
 ln -s ~/miniconda3/bin/conda /usr/local/bin && \
 ln -s ~/miniconda3/bin/activate /usr/local/bin && \
@@ -21459,7 +21460,12 @@ socks5  127.0.0.1 1080
 	# 改成这样
 
 
-pip install git+https://github.com/m-bain/whisperx.git
+# proxychains4 pip install git+https://github.com/m-bain/whisperx.git
+
+proxychains4 git clone https://github.com/m-bain/whisperX.git && \
+cd whisperX && \
+pip install numba numpy tqdm more-itertools tiktoken==0.3.3 && \
+pip install faster-whisper transformers ffmpeg-python==0.2.0 pandas setuptools==65.6.3 nltk
 
 ```
 
