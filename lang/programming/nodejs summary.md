@@ -21469,6 +21469,10 @@ pip install faster-whisper transformers ffmpeg-python==0.2.0 pandas setuptools==
 
 proxychains4 pip install -e .
 
+apt install ffmpeg
+
+whisperx --model large --language fr examples/sample_fr_01.wav
+
 whisperx examples/sample01.wav
 
 ```
