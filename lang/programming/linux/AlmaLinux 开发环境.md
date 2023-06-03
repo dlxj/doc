@@ -141,6 +141,34 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 
 
 
+# 替换成国内源
+
+```
+
+cp -r /etc/yum.repos.d/ /etc/yum.repos.d_bak
+
+sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+      -e 's|^# baseurl=https://repo.almalinux.org|baseurl=https://mirrors.aliyun.com|g' \
+      -i.bak \
+      /etc/yum.repos.d/almalinux*.repo
+      
+      
+阿里云AlmaLinux镜像：https://mirrors.aliyun.com/almalinux/
+腾讯云AlmaLinux镜像：https://mirrors.cloud.tencent.com/almalinux/
+华为云AlmaLinux镜像：https://repo.huaweicloud.com/almalinux/
+上海交大AlmaLinux镜像：https://mirror.sjtu.edu.cn/almalinux/
+西安交大AlmaLinux镜像：https://mirrors.xjtu.edu.cn/archlinux/
+浙江大学AlmaLinux镜像：https://mirrors.zju.edu.cn/almalinux/
+南京大学大AlmaLinux镜像：https://mirrors.nju.edu.cn/almalinux/
+兰州大学almalinux镜像：https://mirror.lzu.edu.cn/almalinux/
+大连东软almalinux镜像：https://mirrors.neusoft.edu.cn/almalinux/
+
+```
+
+
+
+
+
 
 
 # 关闭防火墙
