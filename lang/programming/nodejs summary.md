@@ -4677,6 +4677,14 @@ if (result instanceof Promise) {
 
 
 
+```
+setTimeout(function () {
+	console.log('boo')
+}, 1000 * 3)
+```
+
+
+
 
 
 # Regex
@@ -16162,6 +16170,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
 
 [Pokemon Generator](https://github.com/nerdydrew/Random-Pokemon-Generator)
+
+[开发者频道](https://chat.godotengine.org/channel/general)
 
 
 
