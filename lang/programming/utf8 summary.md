@@ -1,3 +1,26 @@
+```
+a= '有效的。effctive“有效的，起作用的”；viual“视觉的，视力的”；crical“挑剔的”；ineviable“必然的，不可避免'
+a.replace(/\p{P}/gu, '')  # 成功去掉了中文标点
+> '有效的effctive有效的起作用的viual视觉的视力的crical挑剔的ineviable必然的不可避免'
+
+
+> a.replace(/[\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/g, '')
+'。effctive“，”；viual“，”；crical“”；ineviable“，'
+
+
+'A ticket to 大阪 costs ¥2000 👌.'.replace(/\p{Sc}|\p{P}/gu, '')
+
+\pP 其中的小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。
+
+大写 P 表示 Unicode 字符集七个字符属性之一：标点字符。
+
+
+```
+
+[更多例子](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
+
+
+
 ### Unicode [u](https://www.jianshu.com/p/fcbc5cd06f39)
 
 - 平面0 (0000–FFFF): 基本多文种平面（Basic Multilingual Plane, BMP）
