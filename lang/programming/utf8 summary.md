@@ -19,6 +19,10 @@ a.replace(/\p{P}/gu, '')  # 成功去掉了中文标点
 
 [更多例子](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
 
+friso_vs2019\mmseg.js
+
+​	# C 语言 utf8 处理代码 (redis中文分词)
+
 
 
 ### Unicode [u](https://www.jianshu.com/p/fcbc5cd06f39)
