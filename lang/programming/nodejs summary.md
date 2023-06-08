@@ -22931,6 +22931,8 @@ typedef struct EitherInt {
 
 [dict.txt](https://github.com/hailiang-wang/jieba/blob/master/jieba/dict.txt)
 
+[量子计算](https://quantumctek-cloud.com/)
+
 
 
 ```

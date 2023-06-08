@@ -10,6 +10,8 @@ wikibook [u](https://zh.m.wikibooks.org/zh-hans/Introducing_Julia/Arrays_and_tup
 
 [u](https://docs.julialang.org/en/v1/base/math/#Base.:\-Tuple{Any,Any}) 所有算符文档
 
+[超算](https://www.zhihu.com/people/xzqsir/posts)
+
 
 
 **高斯求积简介** [u](https://discourse.juliacn.com/t/topic/1024) [u2](GitHub\doc\lang\programming\高斯求积简介.pdf)
