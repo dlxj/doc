@@ -16173,6 +16173,12 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [开发者频道](https://chat.godotengine.org/channel/general)
 
+[server go](https://github.com/topfreegames/pitaya)
+
+[server go2](https://github.com/east-eden/server/blob/dev/docs/manual.md)
+
+[skynet](https://github.com/cloudwu/skynet/wiki)
+
 
 
 ### 必看教程 
