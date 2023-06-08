@@ -14,7 +14,6 @@ a.replace(/\p{P}/gu, '')  # 成功去掉了中文标点
 
 大写 P 表示 Unicode 字符集七个字符属性之一：标点字符。
 
-
 ```
 
 [更多例子](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
