@@ -22943,6 +22943,27 @@ fplus provides CMake targets:
 
 
 
+```c++
+#include <fplus/fplus.hpp>
+#include <iostream>
+using namespace std;
+
+bool is_odd_int(int x) { return x % 2 != 0; }
+
+int main(){
+    typedef vector<int> Ints;
+    Ints values = { 24, 11, 65, 44, 80, 18, 73, 90, 69, 18 };
+    auto odds = fplus::keep_if(is_odd_int, values);
+    std::cout << "done." << std::endl;
+}
+```
+
+
+
+
+
+
+
 ## MMSEG 分词算法
 
 [mmseg](http://technology.chtsai.org/mmseg/)
