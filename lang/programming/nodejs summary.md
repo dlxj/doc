@@ -22929,6 +22929,7 @@ New-Item -ItemType Directory -Path C:\src -Force
 cd C:\src
 git clone https://github.com/microsoft/vcpkg
 .\vcpkg\bootstrap-vcpkg.bat
+.\vcpkg\vcpkg.exe integrate install
 .\vcpkg\vcpkg install fplus:x64-windows
 
 --> C:/src/vcpkg/packages/fplus_x64-windows/share/fplus/copyright
