@@ -22921,6 +22921,15 @@ typedef struct EitherInt {
 
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
 
+- [install](https://github.com/Dobiasd/FunctionalPlus/blob/master/INSTALL.md)
+- [vcpkg 包管理](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-windows)
+
+```
+
+```
+
+
+
 
 
 ## MMSEG 分词算法
