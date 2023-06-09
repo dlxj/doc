@@ -22924,11 +22924,21 @@ typedef struct EitherInt {
 - [install](https://github.com/Dobiasd/FunctionalPlus/blob/master/INSTALL.md)
 - [vcpkg 包管理](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-windows)
 
-```
+```powershell
+New-Item -ItemType Directory -Path C:\src -Force
+cd C:\src
+git clone https://github.com/microsoft/vcpkg
+.\vcpkg\bootstrap-vcpkg.bat
+.\vcpkg\vcpkg install fplus:x64-windows
+
+--> C:/src/vcpkg/packages/fplus_x64-windows/share/fplus/copyright
+fplus provides CMake targets:
+
+    # this is heuristically generated, and may not be correct
+    find_package(FunctionalPlus CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE FunctionalPlus::fplus)
 
 ```
-
-
 
 
 
