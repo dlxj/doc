@@ -22751,6 +22751,117 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 
 
+## Julia Monads
+
+[Monads.jl](https://github.com/ulysses4ever/Monads.jl)
+
+[用于双目重建中的GPU编程：julia-cuda](https://zhuanlan.zhihu.com/p/609702329)
+
+```
+function bench_match_smem(cfg, phaL, phaR, w, h, winSize, pha_dif)
+    texarr2D = CuTextureArray(phaR)
+    tex2D = CuTexture(texarr2D; interpolation = CUDA.LinearInterpolation())
+    cp, minv, maxv = cfg.cpdiff, cfg.minv, cfg.maxv
+    colstart, colend = cfg.colstart, cfg.colend
+    rowstart, rowend = cfg.rowstart, cfg.rowend
+    mindis, maxdis = cfg.mindis, cfg.maxdis
+    col_ = cld((colend - colstart), 32) * 32
+    row_ = cld(rowend - rowstart, 32) * 32 
+    stride = Int(cld((maxv - minv + 1), 512))
+    threadsPerBlock = round(Int32, cld((maxv - minv + 1) / stride, 32) * 32)
+    blocksPerGrid = row_
+    println("blocks = $blocksPerGrid threads = $threadsPerBlock left  $(col_) right $(maxv - minv) h=$(row_)")
+    @cuda  blocks = blocksPerGrid threads = threadsPerBlock shmem =
+        (threadsPerBlock * sizeof(Float32))  phaseMatch_smem!(cp, mindis, maxdis, minv, maxv, colstart, colend, rowstart, rowend, phaL, tex2D, threadsPerBlock,blocksPerGrid,stride, w, h, winSize, pha_dif)
+    CUDA.synchronize()
+    return
+end
+ 
+#进行立体相位匹配
+function phaseMatch_smem!(cp, mindis, maxdis, minv, maxv, colstart, colend, rowstart, rowend, phaL, phaR, threadsPerBlock, blocksPerGrid, stride, w, h, winSize, pha_dif)
+    #---------------------------------------------------
+    # cp: diparity map
+    # mindis, maxdis 最近最远视差
+    #minv, maxv 仿射变换计算得到的R图中有效横向范围
+    # colstart, colend, rowstart, rowend仿射变换计算得到的左图中有效横向、竖向范围
+    #phaL, phaR 左右图像
+    #w, h图像大小
+    #winSize, pha_dif 3*3的框； 阈值：约等于20个像素的平均相位距离和
+    # Set up shared memory cache for this current block.
+    #--------------------------------------------------- 
+    wh = fld(winSize, 2)
+    cache = @cuDynamicSharedMem(Float32, threadsPerBlock)
+    left_stride = 64 
+    minv = max(1,minv)#必须是有效值，且是julia下的下标计数方式
+    colstart= max(1,wh*stride)
+    # 数据读入共享内存
+    j = blockIdx().x + rowstart  # 共用的行序号
+    i = threadIdx().x + colstart# 左图的列序号
+
+    while(j <= min(rowend,h - wh)) 
+        #数据拷贝到共享内存中去，并将由threadsPerBlock共享
+        ri = (threadIdx().x - 1) * stride + minv
+        tid = threadIdx().x
+        while(tid <= threadsPerBlock && ri <= maxv)
+            cache[tid] = phaR[j, ri] 
+            tid+=threadsPerBlock
+            ri+=threadsPerBlock
+        end
+        # synchronise threads
+        sync_threads()
+        maxv = min(fld(maxv - minv,stride) * stride + minv,maxv)
+        # 计算最小匹配项 
+        while(i <= min(colend,w - (wh*stride))) 
+            min_v = 10000
+            XR = -1
+            VV = phaL[j, i]
+            if(VV > 0.001f0)
+                kStart = max(minv, i - maxdis) + 1
+                kEnd = min(maxv, i - mindis) - 1
+                for k = kStart:kEnd  #遍历一整行
+                    RK = cache[cld(k - minv + 1,stride)]#从0开始计数
+                    if RK <= 0.001f0
+                        continue
+                    end
+                    dif = abs(VV - RK)
+                    if dif < pha_dif
+                        sum = 0.0f0
+                        sn = 1 
+                        for ki in 0:(winSize - 1) 
+                            R_local = cache[cld(k - minv + 1 - wh + ki,stride)]
+                            (R_local < 1e-5) && continue
+                            #phaL[j + kj - wh, i + ki - wh*stride]
+                            VR = VV - R_local
+                            sum = sum + abs(VR)# * VR
+                            sn += 1
+                        end 
+                        v = sum / sn
+                        if v < min_v
+                            min_v = v
+                            XR = k
+                        end
+                    end
+                end 
+                #需要作插值
+                #https://discourse.julialang.org/t/base-function-in-cuda-kernels/21866
+                if XR > 0
+                    XR_new = bisection(VV, phaR, Float32(j), Float32(XR - 3), Float32(XR + 3))
+                    # 注意，这里直接做了视差处理了
+                    state = (i - XR_new) > 0
+                    @inbounds cp[j, i] = state ? (i - XR_new) : 0.0f0
+                end
+            end 
+            i+=threadsPerBlock
+        end
+        j+=blocksPerGrid
+    end
+    sync_threads()
+    return
+end
+```
+
+
+
 ## Go Monads
 
 [Go Monads](https://github.com/samber/mo)
@@ -22959,6 +23070,12 @@ int main(){
 ```
 
 
+
+### stdgpu
+
+[stdgpu](https://github.com/stotko/stdgpu)
+
+[nvidia thrust](https://github.com/NVIDIA/thrust)
 
 
 
