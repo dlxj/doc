@@ -22757,11 +22757,25 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 - ```
   using Pkg;Pkg.add("Monads")
+  	# using Pkg;Pkg.update();Pkg.add("Monads");
   ```
 
   ```
-  wget https://julialang-s3.julialang.org/bin/linux/x64/1.9/julia-1.9.1-linux-x86_64.tar.gz
-  tar zxvfjulia-1.9.1-linux-x86_64.tar.gz
+  wget https://julialang-s3.julialang.org/bin/linux/x64/1.9/julia-1.9.1-linux-x86_64.tar.gz && \
+  tar zxvf julia-1.9.1-linux-x86_64.tar.gz && \
+  mv /root/julia-1.9.1 /usr/local && \
+  ln -s /usr/local/julia-1.9.1/bin/julia /usr/local/bin/julia
+  
+  ```
+
+  ```
+  using Monads
+  @mdo MList begin
+           a <- MList(1:3)
+           b <- MList(1:3)
+           guard(a!=b)
+           return (a,b)
+         end
   ```
 
   
