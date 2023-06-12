@@ -22755,6 +22755,19 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 [Monads.jl](https://github.com/ulysses4ever/Monads.jl)
 
+- ```
+  using Pkg;Pkg.add("Monads")
+  ```
+
+  ```
+  wget https://julialang-s3.julialang.org/bin/linux/x64/1.9/julia-1.9.1-linux-x86_64.tar.gz
+  tar zxvfjulia-1.9.1-linux-x86_64.tar.gz
+  ```
+
+  
+
+[如果写出高性能的Julia代码](https://zhuanlan.zhihu.com/p/66289979)
+
 [用于双目重建中的GPU编程：julia-cuda](https://zhuanlan.zhihu.com/p/609702329)
 
 ```
@@ -23068,6 +23081,12 @@ int main(){
     std::cout << "done." << std::endl;
 }
 ```
+
+
+
+### cuCollections map代表字典
+
+[cuCollections](https://github.com/NVIDIA/cuCollections)
 
 
 
