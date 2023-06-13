@@ -12829,6 +12829,32 @@ docker system prune --volumes -y
 
 
 
+```
+# Install RUM for pg
+dnf makecache --refresh && \
+dnf update -y && \
+dnf install -y epel-release && \
+dnf update -y && \
+dnf --enablerepo=powertools install perl-IPC-Run -y && \
+dnf install -y python39 && \
+pip3 install conan && \
+dnf install -y passwd openssh-server tar p7zip libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie postgresql13 postgresql13-server postgresql13-contrib postgresql13-devel systemtap-sdt-devel redhat-rpm-config 
+
+curl https://sh.rustup.rs -sSf | sh && \
+source "$HOME/.cargo/env"
+
+git clone https://github.com/postgrespro/rum && \
+cd rum && \
+export PATH=$PATH:/usr/pgsql-13/bin/ && \
+make USE_PGXS=1 && \
+make USE_PGXS=1 install
+
+
+
+```
+
+
+
 
 
 ```
@@ -12838,6 +12864,10 @@ systemctl start firewalld && \
 systemctl disable firewalld && \
 systemctl stop firewalld
 ```
+
+
+
+
 
 
 
