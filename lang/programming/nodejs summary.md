@@ -22927,6 +22927,8 @@ end
 
 [fake api](https://github.com/acheong08/ChatGPT-to-API/tree/master) chat gpt api BY Go
 
+[Github_Hunter安全扫描](https://github.com/Hell0W0rld0/Github_Hunter_By_Golang)
+
 [gocv ](https://github.com/hybridgroup/gocv) 支持 **go + opencv + cuda**
 
 - [Stream for thread-safe concurrency](https://github.com/hybridgroup/gocv/pull/878)
