@@ -12736,7 +12736,7 @@ docker exec -it almalinux8_server_8880 bash -c 'chpasswd <<<"root:root"'
 docker exec -it almalinux8_server_8880 bash -c "
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && 
 dnf -qy module disable postgresql && 
-dnf -y install postgresql13 postgresql13-server postgresql13-contrib && 
+dnf -y install postgresql13 postgresql13-server postgresql13-contrib postgresql13-devel && 
 /usr/pgsql-13/bin/postgresql-13-setup initdb && 
 cat /var/lib/pgsql/13/initdb.log && 
 ls /var/lib/pgsql/13/data/postgresql.conf
@@ -12745,6 +12745,16 @@ ls /var/lib/pgsql/13/data/postgresql.conf
 sed -i -e s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/ -i /var/lib/pgsql/13/data/postgresql.conf  && \
 cp /var/lib/pgsql/13/data/pg_hba.conf /var/lib/pgsql/13/data/pg_hba.conf_backup && \
 echo "hostnossl    all          all            0.0.0.0/0  md5"  >>/var/lib/pgsql/13/data/pg_hba.conf
+
+git clone https://github.com/postgrespro/rum && \
+cd rum && \
+export PATH=$PATH:/usr/pgsql-13/bin/ && \
+make USE_PGXS=1 && \
+make USE_PGXS=1 install
+	# 安装 RUM
+make USE_PGXS=1 installcheck && \
+psql DB -c "CREATE EXTENSION rum;"
+
 
 systemctl enable postgresql-13 && \
 systemctl start postgresql-13 && \
@@ -12794,6 +12804,11 @@ mount
 
 echo '/dev/sda1 /mnt ntfs-3g defaults,noatime,uid=26,gid=26,dmask=077,fmask=077 0 0' | sudo tee -a /etc/fstab
 	# 成功开机自动挂载
+
+
+
+
+
 
 
 偷梁换柱，改数据文件夹
