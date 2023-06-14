@@ -499,7 +499,7 @@ ls /etc/grub.d/40_custom
 
 vi  /etc/grub.d/40_custom # 加在最后
 menuentry "Windows Server 2022" {
-	set root=(hd0,2)
+	set root=(hd0,1)
 	chainloader +1
 }
 
@@ -510,8 +510,6 @@ grub2-mkconfig --output=/boot/grub2/grub.cfg
 reboot
 
 重启就看到win7 了
-
-
 
 ```
 
