@@ -32,13 +32,31 @@ chkdsk /f E:
 
 
 
-# 关闭Hyper-V
+# WSL安装出错
 
-[Disable Hyper-V to run other virtualization software](https://www.ubackup.com/enterprise-backup/disable-hyper-v.html)
+[关闭Hyper-V](https://www.ubackup.com/enterprise-backup/disable-hyper-v.html) 并没有开
 
 
 
 windows server 2022 安装 wsl --install 出错
+
+- Press **‘Win + R’** keys on the keyboard together to open the Run dialog box and type the following into the run box: **REGEDIT**
+
+- Navigate to the following registry key:
+
+  **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LxssManager**
+
+- On the right pane, locate **Start** and set the **Value Data** to **2.**
+
+- Exit **REGEDIT**, and reboot the machine to see if it works.
+
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+wsl --install -d Ubuntu
+```
+
+
 
 
 
