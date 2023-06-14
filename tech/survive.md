@@ -662,9 +662,7 @@ Next Due Date: 04/01/2023
 
 [法币转法币](https://wise.com/) slpy@gmail.com same qq passw
 
-[okx](www.okx.com) c2c 充 USDT  
-
-[depay](depay.com) sipy@gmail.com
+[okx](www.okx.com) c2c 充 USDT
 
 
 
@@ -1292,6 +1290,24 @@ http://zhangqijun.com/%E5%AE%89%E8%A3%85win10%E5%92%8Ccentos7%E5%8F%8C%E7%B3%BB%
 
 
 ios的shadowrocket可以连接vmess协议
+
+
+
+### BuyVM可以把系统装到存储块里
+
+
+
+1.挂iso装系统
+2.安装winpe到系统盘，根目录找到winpe.wim，用WimTool把virtio驱动打进去
+3.重启进pe (VNC)，打上硬盘驱动，分区助手克隆系统盘到存储块，重启
+4.bootice->选中原系统盘(不是存储块)->主引导记录->wee->
+
+timeout 0
+default 0
+title 1. Windows
+find --set-root --active command +1
+find --set-root (hd0,0)/bootmgr /bootmgr
+find --set-root (hd0,0)/ntldr /ntldr
 
 
 

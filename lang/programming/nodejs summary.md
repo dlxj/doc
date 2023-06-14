@@ -4632,6 +4632,27 @@ if (result instanceof Promise) {
 
 
 
+## 保留两位小数
+
+```
+一、四舍五入相关
+1、toFixed()方法
+需注意，保留两位小数，将数值类型的数据改变成了字符串类型
+
+var num =2.446242342;
+num = num.toFixed(2);
+console.log(num); //2.45
+console.log(typeof num); // string
+
+2、Math.floor()，不四舍五入 ，向下取整
+注意，不改变数据类型
+num = Math.floor(num * 100) / 100;
+console.log(num); //2.44
+console.log(typeof num); // number
+```
+
+
+
 ## 定时器
 
 
@@ -12676,7 +12697,7 @@ pwd ") | Set-Content Dockerfile -Encoding Byte
 docker build -t almalinux8_server_8880 .
 docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
 
-docker run -tid --name almalinux8_server_8880 -v D:/shared:/data -v E:/shared:/data2 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
+docker run -tid --name almalinux8_server_8880 -v D:/shared:/data -v E:/shared:/data2 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 3306:3306 --privileged=true almalinux8_server_8880 /sbin/init
 	# 成功将 windows 的 D:/shared 目录映射到 linux 的 /data
 
 	
@@ -20367,6 +20388,8 @@ if __name__ == "__main__":
 ## DeepSpeed Chat
 
 [DeepSpeed Chat](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-chat/chinese/README.md)
+
+[deepSpeed （DeepSpeed-Chat）体验 实战](https://zhuanlan.zhihu.com/p/624413021)
 
 [DeepSpeed-Chat：最强ChatGPT训练框架，一键完成RLHF训练！](https://zhuanlan.zhihu.com/p/621780753)
 
