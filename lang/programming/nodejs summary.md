@@ -7108,6 +7108,18 @@ function getContent(fileName) {
 
 
 
+## 遍历目录下的所有目录名
+
+```
+    // get all episodes
+    let dir_name = path.resolve('.', 'vectors', type, lang, name)
+    const episodes = fs.readdirSync(dir_name, { withFileTypes: true })
+        .filter((item) => item.isDirectory())
+        .map((item) => item.name)
+```
+
+
+
 ## 文件时间
 
 - https://www.geeksforgeeks.org/node-js-fs-utimessync-method/
