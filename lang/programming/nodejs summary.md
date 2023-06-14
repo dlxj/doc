@@ -1713,6 +1713,31 @@ crontab -e
 
 
 
+### node-gpy 下载出错
+
+```
+
+npm config set tarball /root/node-v18.9.1-headers.tar.gz 
+	# 让它使用本地文件，不要下载
+	#　node-v18.9.1-headers.tar.xz　下载这个，tar zxvf 解压，再 tar czvf 压缩成 .tar.gz 
+npm i
+	# 成功安装
+
+# download for private repo, probably you're behind firewall
+curl -k -o node-v8.9.4-headers.tar.gz -L https://nexus.com/repository/binaries/node/v8.9.4/node-v8.9.4-headers.tar.gz
+
+# capture the absolute path
+TARBALL_PATH=$(pwd)
+
+# configure tarball in npm config
+npm config set tarball ${TARBALL_PATH}/node-v8.9.4-headers.tar.gz
+
+# The below command should pass without gyp error
+npm install
+```
+
+
+
 
 
 ## cnpm

@@ -64,7 +64,7 @@ source "$HOME/.cargo/env"
 ```
 dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && 
 dnf -qy module disable postgresql && 
-dnf -y install postgresql13 postgresql13-server postgresql13-contrib && 
+dnf -y install postgresql13 postgresql13-server postgresql13-contrib postgresql13-devel && 
 /usr/pgsql-13/bin/postgresql-13-setup initdb && 
 cat /var/lib/pgsql/13/initdb.log && 
 ls /var/lib/pgsql/13/data/postgresql.conf
