@@ -485,7 +485,7 @@ reboot
 ```
 dnf install ntfs-3g
 	# 以下操作必须要能识别 ntfs 分区才行
-	
+
 fdisk -l
 Device     Boot     Start       End   Sectors  Size Id Type
 /dev/vda1  *         2048    718847    716800  350M  7 HPFS/NTFS/exFAT
@@ -506,31 +506,18 @@ menuentry "Windows Server 2022" {
 grub2-mkconfig --output=/boot/grub2/grub.cfg
 	--> Found Windows Recovery Environment on /dev/vda1
 	# 成功识别	
-		
+
 reboot
 
-重启就看到win7 了
+重启就看到Windows Server 2022 了
 
 ```
 
 
 
- You:
- grub>set root=(hd0,1) 这个命令 hd0,1 代表什么，怎样查到它
-
-ChatGPT:
-在 GRUB（Grand Unified Bootloader）中，`set root=(hd0,1)` 是一条用于设置根文件系统的命令。在这里，`(hd0,1)` 指的是第一个硬盘（hd0）的第二个分区（1）。值得注意的是
-，GRUB 的分区编号是从1开始的，而不是从0开始。
-
-这种编号规则反映了系统中硬盘和分区的顺序。具体来说：
-
 - `hd0` 表示系统中的第一块硬盘。如果你有多块硬盘，第二块硬盘会被编号为 `hd1`，第三块硬盘会被编号为 `hd2`，以此类推。
 
 - `,1` 表示硬盘上的第一个分区。如果一个硬盘上有多个分区，第二个分区会被编号为 `,2`，第三个分区会被编号为 `,3`，以此类推。
-
-如果你想要在 GRUB 命令行中查看你的硬盘和分区信息，你可以使用 `ls` 命令。这会列出所有可用的硬盘和分区，以及它们的编号。例如，你可能会看到类似 `(hd0) (hd0,msdos2) (hd0,msdos1)` 这样的输出，这表示你有一块硬盘（`hd0`），并且它上面有两个分区（`msdos2` 和 `msdos1`）。
-
-
 
 
 

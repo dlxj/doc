@@ -20,6 +20,28 @@ diskmgmt.msc
 
 
 
+## linux 挂载磁盘权限错误
+
+
+
+```
+# 磁盘在 linux 挂载下有权限错误, windows 调整分区大小出错
+chkdsk /f E:
+	# windows 下执行
+```
+
+
+
+# 关闭Hyper-V
+
+[Disable Hyper-V to run other virtualization software](https://www.ubackup.com/enterprise-backup/disable-hyper-v.html)
+
+
+
+windows server 2022 安装 wsl --install 出错
+
+
+
 # 安装 FTP 
 
 [window server 2022 搭建FTP服务器](https://zhuanlan.zhihu.com/p/622408091)
