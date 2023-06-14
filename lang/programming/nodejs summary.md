@@ -12752,7 +12752,23 @@ psql -h 127.0.0.1 -p 5432 -U postgres
 psql -h 172.20.0.2 -p 5432 -U postgres
 	# docker 内运行成功
 
+# 关闭防火墙
+systemctl stop firewalld
+# 关闭 apache 
+service httpd stop
 
+fdisk -l
+	# 查看要挂载的硬盘
+
+mount -o uid=26,gid=26,dmask=077,fmask=077 -t ntfs-3g /dev/sda1 /mnt
+	# 成功挂载，而且权限是对的
+
+mount
+	-->/dev/sda1 on /mnt type fuseblk (rw,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096)
+	# 是读写仅限
+
+echo '/dev/sda1 /mnt ntfs-3g defaults,noatime,uid=26,gid=26,dmask=077,fmask=077 0 0' | sudo tee -a /etc/fstab
+	# 成功开机自动挂载
 
 
 偷梁换柱，改数据文件夹
