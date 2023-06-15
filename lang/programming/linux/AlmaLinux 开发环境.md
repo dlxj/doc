@@ -495,7 +495,7 @@ reboot
 
 systemctl stop firewalld
 	# 关掉防火墙以后成功用 windows 远程桌面登录
-firewalld disable firewalld
+systemctl disable firewalld
 	# 永久关闭防火墙
 
 
