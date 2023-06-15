@@ -20453,6 +20453,14 @@ if __name__ == "__main__":
 
 
 
+## LLaVA-Med
+
+[LLaVA-Med](https://github.com/microsoft/LLaVA-Med) 视觉模型
+
+[在线使用](https://llava.hliu.cc/)
+
+
+
 ## DeepSpeed Chat
 
 [DeepSpeed Chat](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-chat/chinese/README.md)
