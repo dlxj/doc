@@ -18605,6 +18605,10 @@ curl https://api.openai.com/v1/completions \
 
 [nginx 反代替换 pandora api调用到 go-chatgpt-api](https://www.v2ex.com/t/947707)
 
+- [go-chatgpt](https://github.com/linweiyuan/go-chatgpt)
+
+- [纯js实现](https://github.com/PawanOsman/ChatGPT)
+
 [nodejs前后端备用](https://github.com/zhpd/chatgpt-plus)
 
 ```
@@ -23088,6 +23092,8 @@ end
 ### tview UI
 
 [gpt反代](https://www.v2ex.com/t/947707)
+
+- [纯js实现](https://github.com/PawanOsman/ChatGPT)
 
 [go-chatgpt](https://github.com/linweiyuan/go-chatgpt)
 
