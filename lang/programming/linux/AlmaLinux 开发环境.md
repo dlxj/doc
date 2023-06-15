@@ -420,12 +420,9 @@ wget https://rpmfind.net/linux/epel/testing/8/Everything/x86_64/Packages/x/xrdp-
 
 wget https://rpmfind.net/linux/epel/8/Everything/x86_64/Packages/x/xrdp-0.9.22.1-2.el8.x86_64.rpm
 
-dnf install ./xrdp-0.9.22-5.el8.x86_64.rpm
+dnf install -y ./xrdp-0.9.22.1-2.el8.x86_64.rpm
 	# 装完就可以成功用 windows 远程登录了
-	# 失效了
-	
-dnf install ./xrdp-0.9.22.1-2.el8.x86_64.rpm
-	
+
 	
 dnf install -y xrdp && \
 systemctl start xrdp && \
@@ -475,6 +472,38 @@ reboot
 
 
 ```
+
+
+
+## xfce4
+
+```
+dnf install epel-release && \
+rpm -qi epel-release && \
+dnf --enablerepo=epel group && \
+dnf group list | grep -i xfce && \
+dnf groupinstall -y "Xfce" "base-x" && \
+echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc && \
+systemctl set-default graphical && \
+dnf install xrdp && \
+systemctl start xrdp && \
+systemctl enable xrdp && \
+systemctl status xrdp && \
+systemctl disable firewalld
+
+reboot
+
+systemctl stop firewalld
+	# 关掉防火墙以后成功用 windows 远程桌面登录
+firewalld disable firewalld
+	# 永久关闭防火墙
+
+
+```
+
+
+
+
 
 
 
@@ -528,6 +557,12 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm 
 wget https://dl.google.com/linux/linux_signing_key.pub && \
 rpm --import linux_signing_key.pub && \
 dnf install -y google-chrome-stable_current_x86_64.rpm
+
+google-chrome &
+	# 注意：chrome 需要非 root 账号运行
+	useradd i
+	passwd i
+		# 密码设置成和 root 一样
 
 ```
 
