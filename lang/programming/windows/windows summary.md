@@ -389,12 +389,19 @@ rufus-3.17
 
 # 安装程序 2503 错误
 
-
+[fix-2502-2503](https://www.boxaid.com/blog/how-to-fix-2502-2503-errors/)
 
 ```
 cmd # 以管理员远行
 msiexec /package 7z1900-x64.msi
+
+c:\windows\temp
+	# 把只读属性去掉
+	# 安全里 Administrator 有完全控制权限
+
 ```
+
+
 
 
 

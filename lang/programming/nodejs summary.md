@@ -6459,6 +6459,12 @@ delImg (f) {
 
 
 
+## set
+
+```
+episodes = Array.from(new Set(episodes)) # 去重
+```
+
 
 
 ## intersection
@@ -23025,6 +23031,12 @@ end
 
 
 ## Go Monads
+
+```
+dnf install golang
+```
+
+
 
 [Go Monads](https://github.com/samber/mo)
 

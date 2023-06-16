@@ -1,3 +1,29 @@
+
+
+# gpt api
+
+[gtp api](https://github.com/PawanOsman/ChatGPT)
+
+```
+curl --location 'https://api.pawan.krd/v1/completions' \
+--header 'Authorization: Bearer pk-***[OUR_API_KEY]***' \
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "text-davinci-003",
+    "prompt": "Human: Hello\\nAI:",
+    "temperature": 0.7,
+    "max_tokens": 256,
+    "stop": [
+        "Human:",
+        "AI:"
+    ]
+}'
+```
+
+
+
+
+
 [curl](wiz://open_document?guid=5682270a-00a8-40d6-99fc-4d0afc764a1a&kbguid=04b1d254-29e5-4fcb-afb4-9c13e2df48af)
 
 post 数据
