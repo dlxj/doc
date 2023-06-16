@@ -23033,7 +23033,7 @@ end
 ## Go Monads
 
 ```
-dnf install golang
+dnf install -y golang
 ```
 
 
