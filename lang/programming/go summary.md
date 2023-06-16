@@ -57,3 +57,13 @@ VsCode Go插件的那些常用快捷
 
 ```
 
+
+
+# go-chatgpt-api
+
+```
+git clone https://github.com/linweiyuan/go-chatgpt-api.git
+	# 成功断下 main.go
+	
+```
+
