@@ -7,6 +7,8 @@
 
 
 ```
+dnf install -y golang
+
 ctrl + X, 装 go 插件
 
 ctrl + shift + p ->go install tools ->Go: Install/Update Tools

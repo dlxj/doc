@@ -20473,6 +20473,34 @@ if __name__ == "__main__":
 
 
 
+## GPTQ 代碳微调
+
+[GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa)
+
+[rwkv-raven-qlora-4bit-instruct](https://github.com/iantbutler01/rwkv-raven-qlora-4bit-instruct)
+
+[VisualGLM-6B qlora](https://github.com/THUDM/VisualGLM-6B/issues/103)
+
+```
+https://github.com/iantbutler01/rwkv-raven-qlora-4bit-instruct
+https://github.com/howard-hou/VisualRWKV
+https://github.com/jiamingkong/rwkv_reward
+```
+
+
+
+```
+太厉害了,这GPU的的成本大大缩减。EleutherAI/pythia-12b推理只需12G, finetune也只需23G. 单个3090就能搞定了。
+
+新技术：今天刚看到的新的优化器Sophia.作者之一发文说可以让模型训练教adma提速2倍。应用在GPT, OPT, llama这样的大模型预训练能够把200wd道陈本降到100w刀。( sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training)。性能验证：52AI：ML优化器Sophia vs Adam 性能验证
+
+QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍训练速度。两个一结合感觉咱训练大模型指日可待了，技术前进了一大步。但训练大模型所需的数据还是一个难题。
+```
+
+
+
+
+
 ## DeepSpeed Chat
 
 [DeepSpeed Chat](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-chat/chinese/README.md)
