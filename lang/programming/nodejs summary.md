@@ -23129,7 +23129,7 @@ dnf install -y golang
 
   
 
-### tview UI
+### go-chatgpt + tview UI
 
 [gpt反代](https://www.v2ex.com/t/947707)
 
@@ -23138,6 +23138,21 @@ dnf install -y golang
 [go-chatgpt](https://github.com/linweiyuan/go-chatgpt)
 
 [tview](https://github.com/rivo/tview)
+
+
+
+```
+// see D:/GitHub/echodict/README.md
+curl --location 'http://127.0.0.1:8080/chatgpt/login' \
+--header 'Authorization: Bearer NO_Need_API_KEY_HERE' \
+--header 'Content-Type: application/json' \
+--data '{
+  "username": "",
+  "password": ""
+}'
+```
+
+
 
 
 
