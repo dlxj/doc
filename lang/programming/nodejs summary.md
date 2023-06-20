@@ -16316,6 +16316,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
+[markdonw 编辑器](https://github.com/teebarjunk/Godot-TextEditor)
+
 [4.0源码3d工具](https://github.com/protongraph/protongraph)
 
 [4.0源码完整游戏](https://github.com/zfoo-project/godot-bird)
