@@ -20898,6 +20898,18 @@ conda env remove -n kan
 
 
 
+### RWKV-Classification 24G显卡微调
+
+[RWKV-Classification 24G显卡微调](https://github.com/yynil/RWKV-Classification)
+
+```
+在transformers的官方RWKV上，给RWKV model增加了sequence classifier，在peft上面，3B的world模型下面做训练，deepspeed stage 2 offload，2048句子长度，可以顺利在单卡24G显存下面跑起来。后续我会找更大的显存机器看看在超长文本下分类情况如何。以及超过训练context情况下预测准确度如何
+```
+
+
+
+
+
 ### RWKV-LM
 
 [RWKV-LM](https://github.com/BlinkDL/RWKV-LM) 训练方法
@@ -23150,6 +23162,9 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
   "username": "",
   "password": ""
 }'
+
+
+
 ```
 
 
