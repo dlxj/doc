@@ -3194,6 +3194,27 @@ main()
 
 
 
+#### 文心
+
+```
+(async () => {
+    let bent = require('bent')
+    let post = bent("https://xxx.co", 'POST', 'json', 200)
+    
+    let response = await post('/teach/getAnswer', JSON.stringify({"userid":123,"question":"你是谁"}), { 'Content-Type': "application/json;chart-set:utf-8" })
+
+    if (response.status == 0) {
+        return [response.data, '']
+    } else {
+        return [null, response.msg]
+    }
+})()
+```
+
+
+
+
+
 ### axios
 
 
@@ -3459,6 +3480,29 @@ mimetype='text/event-stream'
 
 
 
+#### 文心
+
+```
+// 必须是 .mjs
+import fetch from 'node-fetch'
+
+const response = await fetch('https://xxx.co/teach/getAnswer', {
+    method:"post", 
+    headers: {
+        "Content-Type": "application/json;chart-set:utf-8",
+    },
+    body: JSON.stringify({"userid":123,"question":"你是谁"})
+})
+
+try {
+	for await (const chunk of response.body) {
+		console.dir(JSON.parse(chunk.toString()))
+	}
+} catch (err) {
+	console.error(err.stack)
+}
+```
+
 
 
 ### 浏览器中的 fetch
@@ -3506,7 +3550,32 @@ const response = await fetch('http://et.com:8880/v1/chat/completions', {
 
 
 
+#### 文心
 
+```
+curl --location --request POST 'https://xxx.co/teach/getAnswer' \
+--header 'Content-Type: application/json;chart-set:utf-8' \
+--data-raw '{"userid":123,"question":"你是谁"}'
+
+
+// fetch in browser
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json;chart-set:utf-8");
+
+var raw = "{\"userid\":123,\"question\":\"你是谁\"}";
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://xxx.co/teach/getAnswer", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
 
 
 
@@ -23322,6 +23391,12 @@ int main(){
 ### cuCollections map代表字典
 
 [cuCollections](https://github.com/NVIDIA/cuCollections)
+
+[在 GPU 上使用大规模并行哈希图实现性能最大化](https://developer.nvidia.com/zh-cn/blog/maximizing-performance-with-massively-parallel-hash-maps-on-gpus/)
+
+```
+能够做到动态扩容的只有cuCollections的实现。我们在cuCollections的GPU HashTable基础上实现了特殊接口（find_or_insert），对大规模读写性能进行了优化
+```
 
 
 
