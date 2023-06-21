@@ -43,3 +43,32 @@ sudo make altinstall
 
 ```
 
+
+
+# network
+
+## dns
+
+```
+apt install -y net-tools && \
+ifconfig && \
+apt-get install -y iproute2 && \
+ip a && \
+apt install -y network-manager && \
+nmcli connection show
+
+mkdir /etc/systemd/resolved.conf.d/ && \
+vi/etc/systemd/resolved.conf.d/dns_servers.conf
+
+[Resolve]
+DNS=1.1.1.1 8.8.8.8
+
+systemctl restart systemd-resolved
+	# 有可能要 reboot 才生效
+
+```
+
+
+
+
+

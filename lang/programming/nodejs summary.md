@@ -2147,7 +2147,7 @@ socks5  127.0.0.1 1080
 yum install epel-release -y && \
 yum update && \
 yum install libsodium -y && \
-pip install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
