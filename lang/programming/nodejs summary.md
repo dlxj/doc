@@ -148,7 +148,7 @@ ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && \
 ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
 
 npm i -g pm2 && \
-ln -s /usr/local/node-v18.9.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
+ln -s /usr/local/node-$version-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
 
 
 
@@ -4644,7 +4644,7 @@ f(1,...args,4,...[5]) # args 展开成 2, 3
       const dict = await xxx
       if (dict['0'] !== undefined) {
         break getAuthorize;
-      }
+    }
 ```
 
 
@@ -4743,6 +4743,25 @@ console.log(typeof num); // string
 num = Math.floor(num * 100) / 100;
 console.log(num); //2.44
 console.log(typeof num); // number
+```
+
+
+
+## 时间
+
+```
+
+let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
+
+// chatgpt_server/script/sparkApi.js
+    let dateFormat = 'ddd, DD MMM YYYY HH:mm:ss',
+        dateString = new Date().toUTCString(),          // 'Tue, 13 Jun 2023 01:20:45 GMT'
+        date = moment.utc(dateString, dateFormat)._i
+
+    let signature_origin = "host: " + host + "\n"
+    signature_origin += "date: " + date + "\n"
+    signature_origin += "GET " + path + " HTTP/1.1"
+
 ```
 
 
@@ -5616,6 +5635,17 @@ http://www.unicode.org/Public/UNIDATA/UnicodeData.txt
 ### unicode 错字可视化
 
 [unicode 错字可视化](https://www.v2ex.com/t/915530#reply7)
+
+
+
+## 匹配中文字符
+
+```
+let chinese_sequence = Array.from(s.matchAll(/[\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]+/g))
+
+let not_chinese_sequence = Array.from(s.matchAll(/[^\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]+/g))
+
+```
 
 
 
@@ -8490,7 +8520,7 @@ map 的每个 key 对应一个人 value 就是他的数据(数据量肯定不大
 
 
 ```
- 安装  npm install redis --save
+安装  npm install redis --save
 
 demo
 
@@ -8504,8 +8534,6 @@ client.expire('hello',10) //设置过期时间
 client.exists('key') //判断键是否存在
 client.del('key1')
 client.get('hello');
-
- 
 
 //stirng
 命令 行为 返回值 使用示例(略去回调函数)
@@ -8577,6 +8605,28 @@ persist 移除key的过期时间 1/0 persist('key')
 sort 对队列、集合、有序集合排序 排序完成的队列等 sort('key'[, pattern, limit offset count])
 flushdb 清空当前数据库
 ```
+
+
+
+## node18
+
+```
+        # 旧写法已经连不上了
+        let { createClient }  = require('redis')
+
+        const client = createClient({ url: 'redis://127.0.0.1:6379' })
+        
+        client.on('error', (err) => { 
+            console.log('Redis Client Error', err) 
+        })
+        
+        await client.connect()
+
+        await client.set('hello','This is a value')
+        let re = await client.get('hello')
+```
+
+
 
 
 
@@ -8958,8 +9008,6 @@ nmap 127.0.0.1 -p6379
 
 
 ```
-
-
 
 
 
@@ -23419,6 +23467,8 @@ int main(){
 [dict.txt](https://github.com/hailiang-wang/jieba/blob/master/jieba/dict.txt)
 
 [量子计算](https://quantumctek-cloud.com/)
+
+[Mmseg算法](https://www.jianshu.com/p/e4ae8d194487) 讲得好  
 
 
 

@@ -154,6 +154,34 @@ https://matpool.com/supports/doc-vscode-connect-matpool/
 
 
 
+# 代理运行 node
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/server.js",
+            "runtimeExecutable": "proxychains4",
+            "runtimeArgs": [
+                "node"
+            ]
+        }
+    ],
+}
+
+# 实际运行命令是这样：/usr/bin/proxychains4 node ./server.js
+
+```
+
+
+
 
 
 
