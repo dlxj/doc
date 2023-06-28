@@ -13089,6 +13089,63 @@ systemctl stop firewalld
 
 
 
+#### redis
+
+```
+wget https://download.redis.io/redis-stable.tar.gz && \
+tar -xzvf redis-stable.tar.gz && \
+cd redis-stable && \
+make && \
+make install
+
+nohup redis-server >outlog &
+
+redis-cli
+	# exit
+
+127.0.0.1:6379> config set protected-mode yes/no
+	# config get protected*
+
+
+npm uninstall redis
+npm install redis
+	# 装最新版的 redis 有 connect 函数
+
+
+"redis": "^3.1.2",
+	# 装这个旧版的可能可以兼容旧版写法
+	"redis": "^4.6.7",
+		# 新版不好用
+		
+		
+		
+npm install redis@3.1.2 --save
+
+```
+
+
+
+
+
+```
+        await this.redis.defaultDB.smartsign.state.set(`tt`, "just for test")
+
+        let redis_prefix = `smartsign.state`
+        let { createClient } = require('redis')
+        const redis_client = createClient({ url: 'redis://127.0.0.1:6379' })
+        redis_client.on('error', (err) => { 
+            console.log('********* Error: Redis Client Error', err) 
+        })
+        await redis_client.connect()
+
+# 新旧写法对比
+
+```
+
+
+
+
+
 ## 解决 Failed to get D-Bus connection
 
 - https://serverfault.com/questions/824975/failed-to-get-d-bus-connection-operation-not-permitted 必看
