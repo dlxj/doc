@@ -12855,7 +12855,7 @@ dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools firewall
 pwd ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 .
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 --privileged=true almalinux8_server_8880 /sbin/init
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 6379:6379 --privileged=true almalinux8_server_8880 /sbin/init
 
 docker run -tid --name almalinux8_server_8880 -v D:/shared:/data -v E:/shared:/data2 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 3306:3306 --privileged=true almalinux8_server_8880 /sbin/init
 	# 成功将 windows 的 D:/shared 目录映射到 linux 的 /data
@@ -23509,6 +23509,15 @@ abcdefg
 　语块2的方差 = ((3-2)^2+(1-2)^2+(2-2)^2)/3 = 2/3
 则语块1为最佳候选，因此该语块的第一个词“研究”为最佳的分词形式。
 
+
+
+
+四、最大单字词语语素自由度之和（Largest sum of degree of morphemic freedom of one-character words）：
+　　如下所示，例子中的两个“三词语块”拥有同样的长度、平均词长及方差，因此上述三个规则都无法解决其歧义消解问题：
+1. _C1_ _C2_ _C3C4_
+2. _C1_ _C2C3_ _C4_
+
+　　这两个语块都包括了两个单字（one-character）词语和一个两字（two-character）词语，规则四主要关注其中的单字词语。直观来看，有些汉字很少作为词语出现，而另一些汉字则常常作为词语出现，从统计角度来看，在语料库中出现频率高的汉字就很可能是一个单字词语，反之可能性就小。计算单词词语语素自由度之和的公式是对“三词语块”中的单字词语频率取对数并求和（The formula used to calculate the sum of degree of morphemic freedom is to sum log(frequency) of all one-character word(s) in a chunk.）规则四则选取其中和最大的语块，并将该语块的第一词语作为最佳的词语切分形式。
 
 ```
 
