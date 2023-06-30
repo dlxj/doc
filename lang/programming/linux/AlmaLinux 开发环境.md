@@ -48,7 +48,7 @@ dnf update -y && \
 dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
-dnf install -y passwd openssh-server tar p7zip libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie systemtap-sdt-devel redhat-rpm-config ntfsprogs ntfs-3g
+dnf install -y passwd openssh-server tar p7zip tmux libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie systemtap-sdt-devel redhat-rpm-config ntfsprogs ntfs-3g
 
 curl https://sh.rustup.rs -sSf | sh && \
 source "$HOME/.cargo/env"

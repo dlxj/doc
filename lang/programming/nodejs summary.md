@@ -2183,6 +2183,12 @@ shadowsocksr-cli -l
 	
 shadowsocksr-cli -s 1
 	# 开启代理， 1 是前面打印出来的 编号
+
+shadowsocksr-cli --setting-address 0.0.0.0
+	# 修改监听地址
+	
+shadowsocksr-cli --list-address && \
+
 	
 shadowsocksr-cli -S 1
 	# 停止代理
@@ -4087,6 +4093,18 @@ module.exports = {
 
 // insert.mjs
 let { default:config }  = await import('./config.js')
+
+
+// 跨平台写法， resolve 里的 . 代表 程序运行的目录
+import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url';
+let { default:config }  = await import(pathToFileURL(resolve('.', 'config.js')))
+
+
+import { pathToFileURL } from 'node:url';
+let { default:config }  = await import(pathToFileURL(`D:\\GitHub\\echodict\\chatgpt_server\\config.js`))
+	// windows 导入需要特殊处理
+
 ```
 
 
@@ -4100,6 +4118,45 @@ let { Pool, Client } = pg
 
 import path from 'path'
 ```
+
+
+
+
+
+### mjs 导入 json
+
+```
+// 真 json 可以，原来的 module.exports = { 还要另相办法
+let a = resolve('.', 'config.js')
+import { pathToFileURL } from 'node:url';
+let d = pathToFileURL(a)
+let c = await import(d, {
+    assert: { type: "json" },
+})
+
+
+import { pathToFileURL } from 'node:url';
+let { default:config }  = await import(pathToFileURL(`D:\\GitHub\\echodict\\chatgpt_server\\config.js`))
+	// 这样可以
+
+```
+
+
+
+
+
+### mjs 使用 require
+
+```
+// 需要 node 20
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+
+// sibling-module.js is a CommonJS module.
+const siblingModule = require('./sibling-module'); 
+```
+
+
 
 
 
@@ -12870,7 +12927,7 @@ dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools firewall
 pwd ") | Set-Content Dockerfile -Encoding Byte
 
 docker build -t almalinux8_server_8880 .
-docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 6379:6379 --privileged=true almalinux8_server_8880 /sbin/init
+docker run -tid --name almalinux8_server_8880 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 6379:6379 -p 8880:8880 --privileged=true almalinux8_server_8880 /sbin/init
 
 docker run -tid --name almalinux8_server_8880 -v D:/shared:/data -v E:/shared:/data2 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 3306:3306 --privileged=true almalinux8_server_8880 /sbin/init
 	# 成功将 windows 的 D:/shared 目录映射到 linux 的 /data
@@ -20664,7 +20721,9 @@ if __name__ == "__main__":
 
 
 
-## GPTQ 代碳微调
+## GPTQ 低碳微调
+
+[qlora](https://github.com/artidoro/qlora)
 
 [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa)
 
@@ -23344,6 +23403,10 @@ dnf install -y golang
 
 
 
+
+
+
+
 ```
 // see D:/GitHub/echodict/README.md
 curl --location 'http://127.0.0.1:8080/chatgpt/login' \
@@ -23557,7 +23620,7 @@ abcdefg
 
 长度一样，需要应用下一条规则
 
-二、每串的平均长度越大载好
+二、每串的平均长度越大越好
 南京市_长江大桥 —— 平均词长度为7/2=3.5 （既每串的平均长度是3.5）
 南京市_长江_大桥 —— 平均词长度为7/3=2.3
 总字符数 / 串数量 = 平均词长

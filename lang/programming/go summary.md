@@ -16,7 +16,6 @@ ctrl + shift + p ->go install tools ->Go: Install/Update Tools
 
 ctrl + , ->go.lang ->勾选 Use Language Server 
 
-
 ```
 
 
