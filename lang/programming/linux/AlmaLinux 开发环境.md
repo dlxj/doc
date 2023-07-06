@@ -24,6 +24,10 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 
 cat /etc/os-release
 
+dnf install langpacks-en glibc-all-langpacks -y && \
+localectl set-locale LANG=en_US.UTF-8 && \
+localectl
+
 vi /etc/environment
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
@@ -49,6 +53,20 @@ dnf --enablerepo=powertools install perl-IPC-Run -y && \
 dnf install -y python39 && \
 pip3 install conan && \
 dnf install -y passwd openssh-server tar p7zip tmux libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie systemtap-sdt-devel redhat-rpm-config ntfsprogs ntfs-3g
+
+
+wget https://github.com/Kitware/CMake/releases/download/v3.23.4/cmake-3.23.4.tar.gz && \
+tar xvf cmake-3.23.4.tar.gz && \
+cd cmake-3.23.4 && \
+mkdir build && \
+cd build && \
+../configure --prefix=/usr/local/cmake/3.23.4 && \
+make -j 4 && \
+make install && \
+ln -s /usr/local/cmake/3.23.4/bin/cmake /usr/bin/cmake && \
+ln -s /usr/local/cmake/3.23.4/bin/cpack /usr/bin/cpack && \
+ln -s /usr/local/cmake/3.23.4/bin/ctest /usr/bin/ctest
+
 
 curl https://sh.rustup.rs -sSf | sh && \
 source "$HOME/.cargo/env"
@@ -178,6 +196,9 @@ sed -e 's|^mirrorlist=|#mirrorlist=|g' \
 
 
 ```
+systemctl disable firewalld
+	# 永久关闭
+
 yum install nmap
 	# 扫描指定端口是否开放	
 	nmap 118.178.137.176 -p222
@@ -527,7 +548,7 @@ ls /etc/grub.d/40_custom
 	# 存在
 
 vi  /etc/grub.d/40_custom # 加在最后
-menuentry "Windows Server 2022" {
+menuentry "Windows Server 2016" {
 	set root=(hd0,1)
 	chainloader +1
 }
