@@ -22482,6 +22482,22 @@ const data = kernel();
 
 
 
+```
+https://www.msys2.org/
+	# install and open it
+
+pacman -S mingw-w64-x86_64-ffmpeg
+	# C:\msys64\mingw64\include\libavutil
+pacman -S mingw-w64-x86_64-SDL2
+	# C:\msys64\mingw64\include\SDL2
+
+
+
+
+```
+
+
+
 
 
 # vxe-table
@@ -23610,6 +23626,7 @@ target_link_libraries(main fmt::fmt nlohmann_json::nlohmann_json Catch2::Catch2W
 
 
 cmake .
+	#  Failed to find nvcc.
 
 
 ```
