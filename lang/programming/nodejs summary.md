@@ -22478,21 +22478,55 @@ const data = kernel();
 # node-sdl
 
 - https://github.com/kmamal/node-sdl
+
 - https://github.com/fosterseth/sdl2_video_player  **视频播放**
 
+- https://github.com/raullalves/player-cpp-ffmpeg-sdl 比较新
 
+- https://github.com/kingslay/KSPlayer swiftui
+
+  
+
+msys2 packages:
+
+- mingw-w64-x86_64-ffmpeg 3.3-1
+- mingw-w64-x86_64-SDL2 2.0.5-1
 
 ```
 https://www.msys2.org/
 	# install and open it
 
-pacman -S mingw-w64-x86_64-ffmpeg
+pacman -S mingw-w64-x86_64-ffmpeg=3.3-1
 	# C:\msys64\mingw64\include\libavutil
-pacman -S mingw-w64-x86_64-SDL2
+pacman -S mingw-w64-x86_64-SDL2=2.0.5-1
 	# C:\msys64\mingw64\include\SDL2
 
+git clone https://github.com/fosterseth/sdl2_video_player.git
 
 
+#include <libavcodec/avcodec.h>
+	# 需要加一句
+
+https://blog.csdn.net/jacke121/article/details/79312064
+	# codec参数在58版本及之后就不会支持了，需要由codecpar参数所替代
+	
+	
+        /* find decoder for the stream */
+        //dec_ctx = st->codec;
+        //dec = avcodec_find_decoder(dec_ctx->codec_id);
+        //if (!dec) {
+        //    fprintf(stderr, "Failed to find %s codec\n",
+        //            av_get_media_type_string(type));
+        //    return AVERROR(EINVAL);
+        //}
+			# 注释上面，添加下面
+
+        //找到视频解码器，比如H264
+        AVCodec* dec = avcodec_find_decoder(st->codecpar->codec_id);
+        //独立的解码上下文
+        AVCodecContext* dec_ctx = avcodec_alloc_context3(dec);
+        avcodec_parameters_to_context(dec_ctx, st->codecpar);	
+	
 
 ```
 
