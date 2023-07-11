@@ -22528,6 +22528,16 @@ https://blog.csdn.net/jacke121/article/details/79312064
         avcodec_parameters_to_context(dec_ctx, st->codecpar);	
 	
 
+打开ps命令行
+gcc -o ccc -IC:\msys64\mingw64\include -LC:\msys64\mingw64\bin -LE:\t\sdl_vide\sdl2_video_player\bin -lSDL2 -lavcodec-57 vidserv.c 
+
+gcc -o ccc -IC:\msys64\mingw64\include sd.c
+
+gcc -o ccc -IC:\msys64\mingw64\include  -municode sd.c
+
+
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
+
 ```
 
 
