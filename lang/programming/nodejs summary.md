@@ -22481,7 +22481,7 @@ const data = kernel();
 
 - https://github.com/fosterseth/sdl2_video_player  **视频播放**
 
-  - [必看](https://gist.github.com/thales17/fb2e4cff60890a51d9dddd4c6e832ad2) [2](https://hustlei.github.io/2018/11/msys2-for-win.html)
+  - [必看](https://gist.github.com/thales17/fb2e4cff60890a51d9dddd4c6e832ad2) [2](https://hustlei.github.io/2018/11/msys2-for-win.html) [3](https://www.v2ex.com/t/823471)
 
     ```
     打开 C:\msys64\msys2.exe
