@@ -22481,6 +22481,8 @@ const data = kernel();
 
 - https://github.com/fosterseth/sdl2_video_player  **视频播放**
 
+  - [必看](https://gist.github.com/thales17/fb2e4cff60890a51d9dddd4c6e832ad2)
+
 - https://github.com/raullalves/player-cpp-ffmpeg-sdl 比较新
 
 - https://github.com/kingslay/KSPlayer swiftui
@@ -22535,12 +22537,67 @@ gcc -o ccc -IC:\msys64\mingw64\include sd.c
 
 gcc -o ccc -IC:\msys64\mingw64\include  -municode sd.c
 
+x86_64-w64-mingw32-g++
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
 
 ```
 
 
+
+1. Install MSYS2 from [https://www.msys2.org 2](https://www.msys2.org/)
+2. Open “MSYS2 MinGW 64-bit” terminal then install needed software and libraries:
+   `pacman -Syu` to update repositories and upgrade outdated packages
+   `pacman -S --needed mingw-w64-x86_64-toolchain mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_image mingw-w64-x86_64-SDL2_mixer mingw-w64-x86_64-SDL2_ttf mingw-w64-x86_64-cmake`
+   You can install other needed packages, if you need.
+3. Add “MSYS2 MinGW 64-bit” terminal to your VSCode by editing `settings.json`:
+   Open command palette by `CTRL + SHIFT + P`
+   Choose “Open user settings (JSON)”
+   Add a new subobject to `terminal.integrated.profiles.windows` object:
+
+```swift
+"MSYS2 MinGW 64-bit": {
+	"path": "C:\\msys64\\msys2_shell.cmd",
+	"args": [
+		"-defterm",
+		"-here",
+		"-no-start",
+		"-mingw64"
+	]
+}
+```
+
+Adjust paths if needed.
+Your config will look like this:
+
+```swift
+{
+	// many other options
+	"terminal.integrated.profiles.windows": {
+		"MSYS2 MinGW 64-bit": {
+			"path": "C:\\msys64\\msys2_shell.cmd",
+			"args": [
+				"-defterm",
+				"-here",
+				"-no-start",
+				"-mingw64"
+			]
+		},
+		// many other terminals
+	}
+}
+```
+
+1. Install and Microsoft C++ extension via extension marketplace, and you may need to install “CMake” and “CMake Tools” extensions, if you want to use CMake.
+   Optional: You can also use clangd as code model, you need to install clangd extension and package ( `mingw-w64-clang-x86_64-clang-tools-extra`) then provide path to clangd executable in VSCode:
+   `C:\msys64\mingw64\bin\clangd.exe`
+2. In VSCode settings find “Cmake: Cmake Path” setting and enter path to your MinGW CMake:
+   `C:\msys64\mingw64\bin\cmake.exe`
+3. Create/open your CMake project and start exploring it by yourself.
+
+Maybe I missed something, so feel free to ask about it.
+
+You also can just use Makefiles but it’s not simple for beginner, and you will face some code model issues in VSCode.
 
 
 
