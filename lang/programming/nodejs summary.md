@@ -21138,7 +21138,9 @@ conda env remove -n kan
 
 [RWKV-Runner](https://github.com/josStorer/RWKV-Runner) 立等可取
 
-[训练部署](https://zhuanlan.zhihu.com/p/616351661)
+[训练部署](https://zhuanlan.zhihu.com/p/616351661) [2](https://github.com/josStorer/RWKV-Runner/issues/122)
+
+[扩充词表](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/model_modify)
 
 [RWKV语言模型从入门到放弃，保姆级Training、Fine-tuning、Lora入坑教程](https://zhuanlan.zhihu.com/p/629809101?utm_id=0)
 
