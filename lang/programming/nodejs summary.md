@@ -22481,26 +22481,38 @@ const data = kernel();
 
 - https://github.com/fosterseth/sdl2_video_player  **视频播放**
 
-  - [必看](https://gist.github.com/thales17/fb2e4cff60890a51d9dddd4c6e832ad2)
+  - [必看](https://gist.github.com/thales17/fb2e4cff60890a51d9dddd4c6e832ad2) [2](https://hustlei.github.io/2018/11/msys2-for-win.html)
 
     ```
     打开 C:\msys64\msys2.exe
+    	# 从开始菜单进去 MSYS2 MINGW64
+    		才找得到 gcc !!!
+    	C:\msys64\home\Administrator
+    		# 代码放这里
     
+    pacman -Rs mingw-w64-x86_64-ffmpeg
+    pacman -Rs mingw-w64-x86_64-SDL2
+    	# 删除
+    	
     pacman -Syu
+    	# update all
     
     pacman -S git mingw-w64-x86_64-toolchain mingw64/mingw-w64-x86_64-SDL2 mingw64/mingw-w64-x86_64-SDL2_mixer mingw64/mingw-w64-x86_64-SDL2_image mingw64/mingw-w64-x86_64-SDL2_ttf mingw64/mingw-w64-x86_64-SDL2_net mingw64/mingw-w64-x86_64-cmake make
     
     
     
-    cd /c/msys64/mingw64/bin
-    ./sdl2-config --cflags --libs
+    sdl2-config --cflags --libs
     --> -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main
+    -LC:/msys64/mingw64/lib -lmingw32 -mwindows -lSDL2main -lSDL2
     
-    pacman -Rs mingw-w64-x86_64-ffmpeg
-    pacman -Rs mingw-w64-x86_64-SDL2
+    // sd.c
+    #include <SDL.h>
+    int main(int argc, char *argv[]) {
+    	return 0;
+    }
     
-    
-    gcc -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main sd.c
+    gcc -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main -LC:/msys64/mingw64/lib -lmingw32 -mwindows -lSDL2main -lSDL2 sd.c
+    	# 成功编译
     
     ```
 
