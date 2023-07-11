@@ -22485,11 +22485,22 @@ const data = kernel();
 
     ```
     打开 C:\msys64\msys2.exe
+    
+    pacman -Syu
+    
+    pacman -S git mingw-w64-x86_64-toolchain mingw64/mingw-w64-x86_64-SDL2 mingw64/mingw-w64-x86_64-SDL2_mixer mingw64/mingw-w64-x86_64-SDL2_image mingw64/mingw-w64-x86_64-SDL2_ttf mingw64/mingw-w64-x86_64-SDL2_net mingw64/mingw-w64-x86_64-cmake make
+    
+    
+    
     cd /c/msys64/mingw64/bin
     ./sdl2-config --cflags --libs
     --> -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main
     
+    pacman -Rs mingw-w64-x86_64-ffmpeg
+    pacman -Rs mingw-w64-x86_64-SDL2
     
+    
+    gcc -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main sd.c
     
     ```
 
