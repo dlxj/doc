@@ -22483,6 +22483,18 @@ const data = kernel();
 
   - [必看](https://gist.github.com/thales17/fb2e4cff60890a51d9dddd4c6e832ad2)
 
+    ```
+    打开 C:\msys64\msys2.exe
+    cd /c/msys64/mingw64/bin
+    ./sdl2-config --cflags --libs
+    --> -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main
+    
+    
+    
+    ```
+
+    
+
 - https://github.com/raullalves/player-cpp-ffmpeg-sdl 比较新
 
 - https://github.com/kingslay/KSPlayer swiftui
@@ -22498,10 +22510,19 @@ msys2 packages:
 https://www.msys2.org/
 	# install and open it
 
-pacman -S mingw-w64-x86_64-ffmpeg=3.3-1
+pacman -S mingw-w64-x86_64-ffmpeg
 	# C:\msys64\mingw64\include\libavutil
-pacman -S mingw-w64-x86_64-SDL2=2.0.5-1
+pacman -S mingw-w64-x86_64-SDL2
 	# C:\msys64\mingw64\include\SDL2
+
+gcc -IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main
+-LC:/msys64/mingw64/lib -lmingw32 -mwindows -lSDL2main -lSDL2 sd.c
+
+
+#include <SDL.h>
+int main(int argc, char *argv[]) {
+	return 0;
+}
 
 git clone https://github.com/fosterseth/sdl2_video_player.git
 
@@ -22533,11 +22554,15 @@ https://blog.csdn.net/jacke121/article/details/79312064
 打开ps命令行
 gcc -o ccc -IC:\msys64\mingw64\include -LC:\msys64\mingw64\bin -LE:\t\sdl_vide\sdl2_video_player\bin -lSDL2 -lavcodec-57 vidserv.c 
 
-gcc -o ccc -IC:\msys64\mingw64\include sd.c
+gcc -o ccc -IC:\msys64\mingw64\include -Dmain=SDL_main sd.c
 
 gcc -o ccc -IC:\msys64\mingw64\include  -municode sd.c
 
 x86_64-w64-mingw32-g++
+
+
+-IC:/msys64/mingw64/include/SDL2 -Dmain=SDL_main
+
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
 
