@@ -373,13 +373,16 @@ yum install openssl-devel
 	# checking for openssl/ssl.h in /usr... yes
     # 这样就能找到 ssl 了
 
+    --enable-optimizations
+    
 VERSION=3.8.3 && \
 VERSION=3.11.3 && \
 VERSION=3.10.9 && \
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
 tar -xf Python-${VERSION}.tgz && \
 cd Python-${VERSION} && \
-./configure --with-openssl="/usr" --enable-optimizations && \
+./configure --with-openssl="/usr" && \
+make clean && \
 make -j 4 && \
 sudo make altinstall 
 # Please do not use the standard make install as it-
