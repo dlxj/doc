@@ -362,12 +362,24 @@ apt -y install gdb lcov libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev lib
 ```
 
 ```python
+
+https://github.com/actions/setup-python/issues/93
+    # ssl 可能要 username 安装
+
+yum install openssl-devel
+/usr/bin/openssl version
+
+./configure --with-openssl="/usr"
+	# checking for openssl/ssl.h in /usr... yes
+    # 这样就能找到 ssl 了
+
 VERSION=3.8.3 && \
 VERSION=3.11.3 && \
+VERSION=3.10.9 && \
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
 tar -xf Python-${VERSION}.tgz && \
 cd Python-${VERSION} && \
-./configure && \
+./configure --with-openssl="/usr" --enable-optimizations && \
 make -j 4 && \
 sudo make altinstall 
 # Please do not use the standard make install as it-
