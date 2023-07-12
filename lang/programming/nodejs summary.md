@@ -20721,6 +20721,12 @@ if __name__ == "__main__":
 
 
 
+## QLoRA 低碳微调
+
+[chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA)
+
+
+
 ## GPTQ 低碳微调
 
 [qlora](https://github.com/artidoro/qlora)
