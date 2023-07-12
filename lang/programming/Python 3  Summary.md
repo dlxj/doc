@@ -364,16 +364,22 @@ apt -y install gdb lcov libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev lib
 ```python
 
 https://github.com/actions/setup-python/issues/93
+    https://help.dreamhost.com/hc/en-us/articles/360001435926-Installing-OpenSSL-locally-under-your-username
     # ssl 可能要 username 安装
 
+./configure --with-openssl=/home/username/openssl
+python3 -m ssl and nothing outputs, it's ok.    
+    
 yum install openssl-devel
 /usr/bin/openssl version
 
 ./configure --with-openssl="/usr"
 	# checking for openssl/ssl.h in /usr... yes
     # 这样就能找到 ssl 了
-
-    --enable-optimizations
+	
+    Python requires a OpenSSL 1.1.1 or newer
+Custom linker flags may require --with-openssl-rpath=auto
+	# 还是出错了
     
 VERSION=3.8.3 && \
 VERSION=3.11.3 && \
