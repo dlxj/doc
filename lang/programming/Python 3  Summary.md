@@ -382,14 +382,14 @@ Custom linker flags may require --with-openssl-rpath=auto
 	# 还是出错了
     
 VERSION=3.8.3 && \
-VERSION=3.11.3 && \
 VERSION=3.10.9 && \
+VERSION=3.11.3 && \
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
 tar -xf Python-${VERSION}.tgz && \
 cd Python-${VERSION} && \
 ./configure --with-openssl="/usr" && \
 make clean && \
-make -j 4 && \
+make -j 8 && \
 sudo make altinstall 
 # Please do not use the standard make install as it-
 # will overwrite the default system python binary.
