@@ -20747,6 +20747,8 @@ QLoRA 使用一种低精度的存储数据类型（NF4）来压缩预训练的�
 
 [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa)
 
+- [GPTQ for llama.cpp](https://github.com/qwopqwop200/GPTQ-for-LLaMa/issues/240)
+
 [rwkv-raven-qlora-4bit-instruct](https://github.com/iantbutler01/rwkv-raven-qlora-4bit-instruct)
 
 [VisualGLM-6B qlora](https://github.com/THUDM/VisualGLM-6B/issues/103)
@@ -24446,6 +24448,17 @@ You just need to unzip the file and run yarn install (or npm install) and then r
     data.push([1, 'second'])
     writeExcel(data, fname)
 ```
+
+
+
+```
+// Parse a buffer
+const workSheetsFromBuffer = xlsx.parse(fs.readFileSync(`${__dirname}/myFile.xlsx`));
+// Parse a file
+const workSheetsFromFile = xlsx.parse(`${__dirname}/myFile.xlsx`);
+```
+
+
 
 
 
