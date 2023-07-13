@@ -18851,6 +18851,16 @@ curl https://api.openai.com/v1/completions \
 
 ### pandora 必看
 
+[账号登录方法](https://gist.github.com/pengzhile/448bfcfd548b3ae4e665a84cc86c4694)
+
+```
+  代码在 pandora\src\pandora\openai\auth.py
+  if __name__ == '__main__':
+    tokon = Auth0('echoplayorg@gmail.com', '1q2w!Q@W', None).auth(True)
+      # 这样用 Your version of the ChatGPT app is out of date
+      # 出错了，等他解决问题再看
+```
+
 [pandora](https://github.com/pengzhile/pandora/blob/master/doc/wiki.md)
 
 [api 接口定义](https://github.com/pengzhile/pandora/blob/master/doc/HTTP-API.md)
