@@ -20733,7 +20733,7 @@ if __name__ == "__main__":
 
 ## QLoRA 低碳微调
 
-[chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA) [2](https://zhuanlan.zhihu.com/p/634516004)
+[chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA) [2](https://zhuanlan.zhihu.com/p/634516004) [3](https://zhuanlan.zhihu.com/p/636215898)
 
 
 
@@ -21162,7 +21162,12 @@ conda env remove -n kan
 
 [训练部署](https://zhuanlan.zhihu.com/p/616351661) [2](https://github.com/josStorer/RWKV-Runner/issues/122)
 
-[扩充词表](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/model_modify) [2](https://github.com/LianjiaTech/BELLE)
+[openai 官方 tokenizer](https://github.com/openai/tiktoken)
+
+[扩充词表](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/model_modify) [2](https://github.com/LianjiaTech/BELLE) [3](https://github.com/liguodongiot/llm-action)
+
+- [词表扩充必备工具SentencePiece](https://zhuanlan.zhihu.com/p/630696264)
+- [词表扩充+预训练+指令精调](https://zhuanlan.zhihu.com/p/631360711)
 
 [book txt](https://github.com/shjwudp/shu/tree/master/books)
 
