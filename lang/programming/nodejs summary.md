@@ -21164,6 +21164,8 @@ conda env remove -n kan
 
 [扩充词表](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/model_modify) [2](https://github.com/LianjiaTech/BELLE)
 
+[book txt](https://github.com/shjwudp/shu/tree/master/books)
+
 [RWKV语言模型从入门到放弃，保姆级Training、Fine-tuning、Lora入坑教程](https://zhuanlan.zhihu.com/p/629809101?utm_id=0)
 
 [langchain+rwkv](https://python.langchain.com/en/latest/integrations/rwkv.html)
