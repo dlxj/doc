@@ -20733,7 +20733,11 @@ if __name__ == "__main__":
 
 ## QLoRA 低碳微调
 
-[chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA)
+[chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA) [2](https://zhuanlan.zhihu.com/p/634516004)
+
+
+
+QLoRA 使用一种低精度的存储数据类型（NF4）来压缩预训练的语言模型。通过冻结 LM 参数，将相对少量的可训练参数以 Low-Rank Adapters 的形式添加到模型中，LoRA 层是在训练期间更新的唯一参数，使得模型体量大幅压缩同时推理效果几乎没有受到影响。从QLoRA的名字可以看出，QLoRA实际上是Quantize+LoRA技术。
 
 
 
