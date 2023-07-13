@@ -506,7 +506,7 @@ dnf group list | grep -i xfce && \
 dnf groupinstall -y "Xfce" "base-x" && \
 echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc && \
 systemctl set-default graphical && \
-dnf install xrdp && \
+dnf install -y xrdp && \
 systemctl start xrdp && \
 systemctl enable xrdp && \
 systemctl status xrdp && \
