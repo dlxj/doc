@@ -24425,6 +24425,21 @@ if __name__ == '__main__':
 
 
 
+### kuromoji-rs
+
+[kuromoji-rs](https://github.com/fulmicoton/kuromoji-rs/tree/master)
+
+```
+git clone https://github.com/fulmicoton/kuromoji-rs.git && \
+cd kuromoji-rs && \
+cargo build
+
+```
+
+
+
+
+
 # PDF
 
 [pdf-lib](https://github.com/Hopding/pdf-lib/issues/83) extract images from pdf

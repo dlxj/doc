@@ -42,7 +42,7 @@ dnf makecache --refresh && \
 dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
-dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel 
+dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel 
 
 # almalinux 8
 dnf makecache --refresh && \
@@ -584,6 +584,45 @@ google-chrome &
 	useradd i
 	passwd i
 		# 密码设置成和 root 一样
+
+```
+
+
+
+# 乱码
+
+```
+dnf install langpacks-en glibc-all-langpacks -y && \
+localectl set-locale LANG=en_US.UTF-8 && \
+localectl
+
+vi /etc/environment
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+	# 添加这两项 
+
+source /etc/environment
+
+vi /etc/profile.d/utf8.sh 
+export LANG="en_US.utf-8"
+export LC_ALL="en_US.utf-8"
+export LANGUAGE="en_US"
+
+
+
+
+see dlxj's RedisAll github
+
+git clone --recursive https://github.com/RedisJSON/RedisJSON.git && \
+cd RedisJSON && \
+./sbin/setup
+
+	vi /etc/profile.d/utf8.sh
+		# 好像是这个把 utf8 环境搞坏的 
+export LANG="en_US.utf-8"
+export LC_ALL="en_US.utf-8"
+export LANGUAGE="en_US"
+			# 内容一定要先改成这样
 
 ```
 
