@@ -9097,6 +9097,16 @@ nmap 127.0.0.1 -p6379
 
 
 
+
+
+# Sqlite
+
+[中文和拼音的 SQLite fts5](https://github.com/wangfenjin/simple)
+
+[SQLiteSwiftDemo](https://github.com/pipi32167/SQLiteSwiftDemo)
+
+
+
 # mysql 
 
 
