@@ -6810,688 +6810,6 @@ if __name__ == '__main__':
 
 
 
-## Excel
-
-
-
-找不开xlsx，用engine=‘openpyxl’  替代
-
-```bash
-原因是最近xlrd更新到了2.0.1版本，只支持.xls文件。所以pandas.read_excel(‘xxx.xlsx’)会报错。
-
-可以安装旧版xlrd，在cmd中运行：
-
-pip uninstall xlrd
-pip install xlrd==1.2.0
-
-也可以用openpyxl代替xlrd打开.xlsx文件：
-
-df=pandas.read_excel(‘data.xlsx’,engine=‘openpyxl’)
-```
-
-
-
-
-
-```python
-import pandas as pd
-seg = pd.DataFrame(wordlist,columns=['word','length','fre','pmi','entropy'])
-seg.to_csv(fname_results, index=False ,encoding="utf-8")
-```
-
-
-
-### xlsx
-
-
-
-```
-pip install openpyxl
-pip install xlrd
-```
-
-
-
-扩展名 xlsx 才是真excel，csv 不是
-
-```python
-    csv = pd.DataFrame(data,columns=['知识点ID', '考频', '考频分类', '考试大纲', '关联真题数', '关联非真题数', '知识点内容'])
-    csv.to_excel(fname_csv, index=False ,encoding="utf-8")
-```
-
-
-
-```
-pd.read_excel('tmp.xlsx', index_col=None, header=None) 
-```
-
-
-
-
-
-
-
-
-### read csv
-
-
-
-#### encoding
-
-```python
-ds = pd.read_csv(fname_csv, usecols= ['列名'], encoding='gbk') # utf-8
-```
-
-
-
-
-
-
-
-```python
-    csvs = ['药学专业知识一-考频.csv', '药学专业知识二-考频.csv', '药事管理与法规-考频.csv', '药学综合知识与技能-考频.csv']
-    currDir = os.path.dirname(os.path.abspath(__file__))
-    
-    dic_pl = {}  # Point Level
-
-    for fname in csvs:
-        fname_csv = os.path.join(currDir, DIRNAME, fname)
-        print(fname_csv)
-        ds = pd.read_csv(fname_csv, usecols= ['知识点ID', '考频分类']) # header=None
-        print(ds.shape, ds.size)
-        for l in ds.values:
-            examPoinID = str(l[0])
-            level = l[1]
-            if examPoinID not in dic_pl:                
-                dic_pl[examPoinID] = level
-                #print(examPoinID, level)
-            else:
-                raise RuntimeError('something wrong.')  # 不同科目不应该有相同的知识点ID
-```
-
-
-
-
-
-If you only want to read the first 999,999 (non-header) rows:
-
-```py
-read_csv(..., nrows=999999)
-```
-
-If you only want to read rows 1,000,000 ... 1,999,999
-
-```py
-read_csv(..., skiprows=1000000, nrows=999999)
-```
-
-***nrows\*** : int, default None Number of rows of file to read. Useful for reading pieces of large files*
-
-***skiprows\*** : list-like or integer Row numbers to skip (0-indexed) or number of rows to skip (int) at the start of the file
-
-and for large files, you'll probably also want to use chunksize:
-
-***chunksize\*** : int, default None Return TextFileReader object for iteration
-
-
-
-### write xlsx
-
-
-
-```
-import json
-import decimal
-import datetime
-
-class DecimalEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, decimal.Decimal):
-            return float(o)
-        elif isinstance(o, datetime.datetime):
-            return str(o)
-        super(DecimalEncoder, self).default(o)
-
-def save_json(filename, dics):
-    with open(filename, 'w', encoding='utf-8') as fp:
-        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
-        fp.close()
-
-def load_json(filename):
-    with open(filename, encoding='utf-8') as fp:
-        js = json.load(fp)
-        fp.close()
-        return js
-
-# convert string to json 
-def parse(s):
-    return json.loads(s, strict=False )
-
-# convert dict to string
-def string(d):
-    return json.dumps(d, cls=DecimalEncoder, ensure_ascii=False)
-
-
-
-import pandas as pd
-
-
-if __name__ == "__main__":
-
-    dic_domains = {}
-
-    sheet_names = [ 'xx', 'xx', 'xx' ]
-
-    for sheet in sheet_names:
-
-        ds = pd.read_excel("xxx.xlsx", sheet_name = sheet, usecols= ['xxx','xxx'])
-
-        print(ds.shape, ds.size)
-        for l in ds.values:
-            AppCName = str(l[0])
-            AppEName = str(l[1])
-
-            if (AppEName in dic_domains):
-                raise Exception(xx + " already exist.")
-            
-        
-            dic_domains[xx] = { "xx":AppEName, "xx":xx, "Domain":sheet }
-
-        a = 1
-
-    save_json('./domains.json', dic_domains)
-```
-
-
-
-
-
-
-
-
-
-### multiple dataframes
-
-
-
-```python
-import pandas as pd
-
-# Create some Pandas dataframes from some data.
-df1 = pd.DataFrame({'Data': [11, 12, 13, 14]})
-df2 = pd.DataFrame({'Data': [21, 22, 23, 24]})
-df3 = pd.DataFrame({'Data': [31, 32, 33, 34]})
-
-# Create a Pandas Excel writer using XlsxWriter as the engine.
-writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')
-
-# Write each dataframe to a different worksheet.
-df1.to_excel(writer, sheet_name='Sheet1')
-df2.to_excel(writer, sheet_name='Sheet2')
-df3.to_excel(writer, sheet_name='Sheet3')
-
-# Close the Pandas Excel writer and output the Excel file.
-writer.save()
-```
-
-
-
-```python
-writer = pd.ExcelWriter(filepath)
-companydf.to_excel(excel_writer=writer,sheet_name='公司维度表')
-goodsdf.to_excel(excel_writer=writer, sheet_name='货物维度表')
-writer.save()
-writer.close()
-```
-
-
-
-
-
-[geeks4geeks](https://www.geeksforgeeks.org/python-read-csv-using-pandas-read_csv/)
-
-[read csv](https://towardsdatascience.com/how-to-read-csv-file-using-pandas-ab1f5e7e7b58)
-
-[使用 Python 读写 CSV 文件（三）](https://zhuanlan.zhihu.com/p/40946024)
-
-
-
-## Word
-
-
-
-[Python读取word文本](https://blog.csdn.net/woshisangsang/article/details/75221723)
-
-[用python-docx模块读写word文档](https://www.jianshu.com/p/94ac13f6633e)
-
-
-
-```python
-# coding:utf-8
-# 写word文档文件
-import sys
-
-from docx import Document
-from docx.shared import Inches
-
-def main():
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
-    
-    # 创建文档对象
-    document = Document()
-    
-    # 设置文档标题，中文要用unicode字符串
-    document.add_heading(u'我的一个新文档',0)
-    
-    # 往文档中添加段落
-    p = document.add_paragraph('This is a paragraph having some ')
-    p.add_run('bold ').bold = True
-    p.add_run('and some ')
-    p.add_run('italic.').italic = True
-    
-    # 添加一级标题
-    document.add_heading(u'一级标题, level = 1',level = 1)
-    document.add_paragraph('Intense quote',style = 'IntenseQuote')
-    
-    # 添加无序列表
-    document.add_paragraph('first item in unordered list',style = 'ListBullet')
-    
-    # 添加有序列表
-    document.add_paragraph('first item in ordered list',style = 'ListNumber')
-    document.add_paragraph('second item in ordered list',style = 'ListNumber')
-    document.add_paragraph('third item in ordered list',style = 'ListNumber')
-    
-    # 添加图片，并指定宽度
-    document.add_picture('e:/docs/pic.png',width = Inches(1.25))
-    
-    # 添加表格: 1行3列
-    table = document.add_table(rows = 1,cols = 3)
-    # 获取第一行的单元格列表对象
-    hdr_cells = table.rows[0].cells
-    # 为每一个单元格赋值
-    # 注：值都要为字符串类型
-    hdr_cells[0].text = 'Name'
-    hdr_cells[1].text = 'Age'
-    hdr_cells[2].text = 'Tel'
-    # 为表格添加一行
-    new_cells = table.add_row().cells
-    new_cells[0].text = 'Tom'
-    new_cells[1].text = '19'
-    new_cells[2].text = '12345678'
-    
-    # 添加分页符
-    document.add_page_break()
-    
-    # 往新的一页中添加段落
-    p = document.add_paragraph('This is a paragraph in new page.')
-    
-    # 保存文档
-    document.save('e:/docs/demo1.docx')
-    
-if __name__ == '__main__':
-    main()
-
-```
-
-
-
-## Panda
-
-
-
-### 分组、聚合
-
-```python
-# https://zhuanlan.zhihu.com/p/101284491
-# 不同公司薪水按中位数显示，年龄按平均数显示
-data.groupby('company').agg({'salary':'median','age':'mean'})
-```
-
-
-
-
-
-
-
-### DataFrame
-
-> "dict-like" Series **container** for **Series objects**
->
-> - **是序列对象的容器，能够以字典方式存取数据**
-
-
-
-```python
-    for N in range(2, MAX_N+1): # MAX_N+1
-        print(f'正在进行{N}-Gram词的最大熵筛选({len(rt[N-2])})...')
-        pp = []
-        for i in range(0,len(s)):
-            if i+N+2 <= len(s):  # +2 是因为一个左邻字，一个右邻字
-                pp.append( [ s[i:i+1], s[i+1:N+i+1], s[N+i+1:N+i+2] ] )
-        pp2 = pd.DataFrame(pp).set_index(1).sort_index() # 排序，可以加快检索速度
-        """
-        现在输入N-Gram 词，可以得到它的左邻右邻字
-        """
-
-        index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
-        
-        left = pp2[0][word]                            # word 的所有左邻字
-        right = pp2[2][word]                           # word 的所有右邻字
-```
-
-
-
-#### copy
-
-```python
-dataframe1 = dataframe.copy(deep=True)
-```
-
-
-
-
-
-#### 前几列前几行
-
-```python
-full['Cabin'].head() # 前5列
-full.head(10) # 前10行
-```
-
-
-
-#### 行数和列数
-
-```python
-len(dataframe.index)
-len(dataframe.columns)
-dataframe.shape
-```
-
-
-
-##### 所有列名
-
-```python
-train.columns.values.tolist()
-```
-
-
-
-
-
-#### 筛选数据
-
-```python
-# https://medium.com/jovianml/https-jovian-ml-undefined-none-titanic-logistic-regression-v-105-cellid-55-bb7b2b1b5de1
-len(dataframe[(dataframe["Survived"]==1) & (dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index)
-```
-
-```python
-# 头等舱女性的存活率
-len(dataframe[(dataframe["Survived"]==1) & (dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index) / \
-    len(dataframe[(dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index)
---> 0.968
-```
-
-
-
-#### loc
-
-```python
-#原始数据集有891行
-sourceRow=891
-'''
-sourceRow是我们在最开始合并数据前知道的，原始数据集有总共有891条数据
-从特征集合full_X中提取原始数据集提取前891行数据时，我们要减去1，因为行号是从0开始的。
-'''
-#原始数据集：特征
-source_X = full_X.loc[0:sourceRow-1,:]
-#原始数据集：标签
-source_y = full.loc[0:sourceRow-1,'Survived']   
-
-#预测数据集：特征
-pred_X = full_X.loc[sourceRow:,:]
-```
-
-
-
-
-
-#### 最大最小值均值
-
-```python
-print("Average age of all passengers -->  {0:.1f}".format(dataframe.Age.mean()))
-print("Age of oldest passenger -->  {:.1f}".format(dataframe.Age.max()))
-print("Age of youngest passenger -->  {:.1f}".format(dataframe.Age.min()))
-```
-
-
-
-
-
-#### 合并数据帧
-
-```python
-full = pd.DataFrame()
-full = pd.concat([train,test],ignore_index=True)  # 列数不一至的数据帧合并，缺失列的一方会添加空列(所有数据为空白)
-print(full.columns)
-```
-
-
-
-#### 填充缺失值
-
-```python
-from pandas import DataFrame
-full['Age']  = full['Age'].fillna(full['Age'].mean())
-#年龄因为不可从其他途径得知，采用平均年龄填充，此步骤对最终预测结果有影响。
-full.info()
-```
-
-```python
-# 缺失值计数
-df['Age'].isnull().sum()
-```
-
-
-
-##### apply
-
-```python
-def fill_in_age(x):
-    if x['Pclass_1']==1:
-        return 37
-    elif x['Pclass_2']==1:
-        return 29
-    else:
-        return 25
-df['Age']=df.apply(fill_in_age, axis=1)
-sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
-```
-
-
-
-#### 数据标准化
-
-z-score标准化
-
-- 经过处理后的数据符合标准正态分布，即均值为0，标准差为1
-
-```python
-to_normalize=['Age','Fare']
-for each in to_normalize:
-    mean, std= df[each].mean(), df[each].std()
-    df.loc[:, each]=(df[each]-mean)/std
-```
-
-标准化后的变量值围绕0上下波动，**大于0说明高于平均水平，小于0说明低于平均水平**。
-
-
-
-
-
-#### One hot encode
-
-[u](https://blog.csdn.net/maymay_/article/details/80198468)
-
-get_dummies 是利用pandas实现one hot encode的方式
-
-<img src="Python 3  Summary.assets/image-20210203095930108.png" alt="image-20210203095930108" style="zoom:50%;" />
-
-
-
-```python
-# 直观上是把一列变成了很多列，值不是0就是1
-embarkedDf = pd.get_dummies(full['Embarked'],prefix='Embarked')#predix参数用于指定类别标签
-full = pd.concat([full,embarkedDf],axis=1)
-full.drop('Embarked',axis=1,inplace=True)#删除‘Embarked’列
-full.head()
-```
-
-![image-20210203101608443](Python 3  Summary.assets/image-20210203101608443.png)
-
-
-
-#### Map
-
-```python
-def get_title(name):#定义称谓提取函数
-    str1=name.split(',')[1]#提取，后边的字符串
-    str2=str1.split('.')[0]#提取.前面的字符串
-    str3=str2.strip()#用于去除空格
-    return str3
-titleDf = pd.DataFrame()
-titleDf['Title'] = full['Name'].map(get_title)
-titleDf['Title'].value_counts()
-```
-
-
-
-#### 柱状图
-
-
-
-##### 三种舱生存情况
-
-```python
-sns.countplot(x="Survived", hue="Pclass", data=dataframe)
-plt.title("No. of people survived from different classes")
-```
-
-<img src="Python 3  Summary.assets/image-20210203150631837.png" alt="image-20210203150631837" style="zoom:50%;" />
-
-#### 分布图
-
-```python
-# 票价分布
-sns.distplot(dataframe.Fare)
-```
-
-<img src="Python 3  Summary.assets/image-20210203151255163.png" alt="image-20210203151255163" style="zoom:50%;" />
-
-
-
-#### 热力图
-
-```python
-# 缺失值高亮
-sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
-```
-
-<img src="Python 3  Summary.assets/image-20210203165600556.png" alt="image-20210203165600556" style="zoom:50%;" />
-
-
-
-#### 箱形图
-
-```python
-plt.figure(figsize=(12, 7))
-sns.boxplot(x='Pclass',y='Age',data=titanic,palette='winter')
-```
-
-
-
-
-
-
-
-## Series [u](https://towardsdatascience.com/gaining-a-solid-understanding-of-pandas-series-893fb8f785aa)
-
->  Series 可以是**数据集**的行，也可以是数据集的列 
-
-
-
-bigdataEntropy.py
-
-```python
-tt = tt.drop(labels=will_drops)  # 第二次筛选：凝合程度
-rt.append( tt.index )
-```
-
-
-
-
-
-### 转有转字典
-
-```python
-from collections import OrderedDict, defaultdict
-cs = pd.Series(list(s)).value_counts().to_dict(OrderedDict)
-```
-
-
-
-```python
-dic_tosave = {
-        'total_alphabets':0,
-        't':[],
-        'tt':[]
-    }
-
-    cs = pd.Series(list(s)).value_counts()              # 所有字的出现次数 
-    dic_tosave['total_alphabets'] = int( cs.sum() )     # 总共有多少个字
-    dic_tosave['t'].append( cs.to_dict(OrderedDict) )   # Series 转成有序字典才能保存JSON
-```
-
-
-
-
-
-### 统计每个字出现次数
-
-```python
-counts = pd.Series(list(s)).value_counts() # 每个字出现多少次
-totol = counts.sum()  # 总共有多少个字
-```
-
-```python
-    ls = list(s)
-    for N in range(2, MAX_N+1):
-        print(f'正在生成{N}-Gram词...')
-        t.append([])
-        for i in range(0,len(ls)):
-            if i+N <= len(ls):
-                t[N-1].append( "".join(ls[i:N+i]) )  # array[start:stop:step]
-            
-        t[N-1] = pd.Series(t[N-1]).value_counts()  # 所有N-Gram 词出现次数
-        t[N-1] = t[N-1][t[N-1] > min_count]        # 最小次数筛选
-        tt = t[N-1][:]
-```
-
-
-
-
-
-```python
-revenue = pd.Series([1000, 1200, 1500, 800, 900], index=['2014', '2015', '2016', '2017', '2018'])
-```
-
-```python
-revenue.sort_values(ascending=False).index[0]
-```
-
 
 
 
@@ -11094,6 +10412,714 @@ image.save(r'./test.png')
 - https://github.com/ahmedfgad/ArithmeticEncodingPython
 
   
+
+
+
+# Excel
+
+
+
+找不开xlsx，用engine=‘openpyxl’  替代
+
+```bash
+原因是最近xlrd更新到了2.0.1版本，只支持.xls文件。所以pandas.read_excel(‘xxx.xlsx’)会报错。
+
+可以安装旧版xlrd，在cmd中运行：
+
+pip uninstall xlrd
+pip install xlrd==1.2.0
+
+也可以用openpyxl代替xlrd打开.xlsx文件：
+
+df=pandas.read_excel('data.xlsx',engine='openpyxl')
+```
+
+
+
+
+
+```python
+import pandas as pd
+seg = pd.DataFrame(wordlist,columns=['word','length','fre','pmi','entropy'])
+seg.to_csv(fname_results, index=False ,encoding="utf-8")
+```
+
+
+
+## xlsx
+
+
+
+```
+pip install openpyxl
+pip install xlrd
+```
+
+
+
+扩展名 xlsx 才是真excel，csv 不是
+
+```python
+    csv = pd.DataFrame(data,columns=['知识点ID', '考频', '考频分类', '考试大纲', '关联真题数', '关联非真题数', '知识点内容'])
+    csv.to_excel(fname_csv, index=False ,encoding="utf-8")
+```
+
+
+
+```
+pd.read_excel('tmp.xlsx', index_col=None, header=None) 
+```
+
+
+
+
+
+
+
+
+## read csv
+
+
+
+### encoding
+
+```python
+ds = pd.read_csv(fname_csv, usecols= ['列名'], encoding='gbk') # utf-8
+```
+
+
+
+
+
+
+
+```python
+    csvs = ['药学专业知识一-考频.csv', '药学专业知识二-考频.csv', '药事管理与法规-考频.csv', '药学综合知识与技能-考频.csv']
+    currDir = os.path.dirname(os.path.abspath(__file__))
+    
+    dic_pl = {}  # Point Level
+
+    for fname in csvs:
+        fname_csv = os.path.join(currDir, DIRNAME, fname)
+        print(fname_csv)
+        ds = pd.read_csv(fname_csv, usecols= ['知识点ID', '考频分类']) # header=None
+        print(ds.shape, ds.size)
+        for l in ds.values:
+            examPoinID = str(l[0])
+            level = l[1]
+            if examPoinID not in dic_pl:                
+                dic_pl[examPoinID] = level
+                #print(examPoinID, level)
+            else:
+                raise RuntimeError('something wrong.')  # 不同科目不应该有相同的知识点ID
+```
+
+
+
+
+
+If you only want to read the first 999,999 (non-header) rows:
+
+```py
+read_csv(..., nrows=999999)
+```
+
+If you only want to read rows 1,000,000 ... 1,999,999
+
+```py
+read_csv(..., skiprows=1000000, nrows=999999)
+```
+
+***nrows\*** : int, default None Number of rows of file to read. Useful for reading pieces of large files*
+
+***skiprows\*** : list-like or integer Row numbers to skip (0-indexed) or number of rows to skip (int) at the start of the file
+
+and for large files, you'll probably also want to use chunksize:
+
+***chunksize\*** : int, default None Return TextFileReader object for iteration
+
+
+
+## write xlsx
+
+
+
+```
+import json
+import decimal
+import datetime
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return float(o)
+        elif isinstance(o, datetime.datetime):
+            return str(o)
+        super(DecimalEncoder, self).default(o)
+
+def save_json(filename, dics):
+    with open(filename, 'w', encoding='utf-8') as fp:
+        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
+        fp.close()
+
+def load_json(filename):
+    with open(filename, encoding='utf-8') as fp:
+        js = json.load(fp)
+        fp.close()
+        return js
+
+# convert string to json 
+def parse(s):
+    return json.loads(s, strict=False )
+
+# convert dict to string
+def string(d):
+    return json.dumps(d, cls=DecimalEncoder, ensure_ascii=False)
+
+
+
+import pandas as pd
+
+
+if __name__ == "__main__":
+
+    dic_domains = {}
+
+    sheet_names = [ 'xx', 'xx', 'xx' ]
+
+    for sheet in sheet_names:
+
+        ds = pd.read_excel("xxx.xlsx", sheet_name = sheet, usecols= ['xxx','xxx'])
+
+        print(ds.shape, ds.size)
+        for l in ds.values:
+            AppCName = str(l[0])
+            AppEName = str(l[1])
+
+            if (AppEName in dic_domains):
+                raise Exception(xx + " already exist.")
+            
+        
+            dic_domains[xx] = { "xx":AppEName, "xx":xx, "Domain":sheet }
+
+        a = 1
+
+    save_json('./domains.json', dic_domains)
+```
+
+
+
+
+
+
+
+
+
+## multiple dataframes
+
+
+
+```python
+import pandas as pd
+
+# Create some Pandas dataframes from some data.
+df1 = pd.DataFrame({'Data': [11, 12, 13, 14]})
+df2 = pd.DataFrame({'Data': [21, 22, 23, 24]})
+df3 = pd.DataFrame({'Data': [31, 32, 33, 34]})
+
+# Create a Pandas Excel writer using XlsxWriter as the engine.
+writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')
+
+# Write each dataframe to a different worksheet.
+df1.to_excel(writer, sheet_name='Sheet1')
+df2.to_excel(writer, sheet_name='Sheet2')
+df3.to_excel(writer, sheet_name='Sheet3')
+
+# Close the Pandas Excel writer and output the Excel file.
+writer.save()
+```
+
+
+
+```python
+writer = pd.ExcelWriter(filepath)
+companydf.to_excel(excel_writer=writer,sheet_name='公司维度表')
+goodsdf.to_excel(excel_writer=writer, sheet_name='货物维度表')
+writer.save()
+writer.close()
+```
+
+
+
+
+
+[geeks4geeks](https://www.geeksforgeeks.org/python-read-csv-using-pandas-read_csv/)
+
+[read csv](https://towardsdatascience.com/how-to-read-csv-file-using-pandas-ab1f5e7e7b58)
+
+[使用 Python 读写 CSV 文件（三）](https://zhuanlan.zhihu.com/p/40946024)
+
+
+
+# Word
+
+
+
+[Python读取word文本](https://blog.csdn.net/woshisangsang/article/details/75221723)
+
+[用python-docx模块读写word文档](https://www.jianshu.com/p/94ac13f6633e)
+
+
+
+```python
+# coding:utf-8
+# 写word文档文件
+import sys
+
+from docx import Document
+from docx.shared import Inches
+
+def main():
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    
+    # 创建文档对象
+    document = Document()
+    
+    # 设置文档标题，中文要用unicode字符串
+    document.add_heading(u'我的一个新文档',0)
+    
+    # 往文档中添加段落
+    p = document.add_paragraph('This is a paragraph having some ')
+    p.add_run('bold ').bold = True
+    p.add_run('and some ')
+    p.add_run('italic.').italic = True
+    
+    # 添加一级标题
+    document.add_heading(u'一级标题, level = 1',level = 1)
+    document.add_paragraph('Intense quote',style = 'IntenseQuote')
+    
+    # 添加无序列表
+    document.add_paragraph('first item in unordered list',style = 'ListBullet')
+    
+    # 添加有序列表
+    document.add_paragraph('first item in ordered list',style = 'ListNumber')
+    document.add_paragraph('second item in ordered list',style = 'ListNumber')
+    document.add_paragraph('third item in ordered list',style = 'ListNumber')
+    
+    # 添加图片，并指定宽度
+    document.add_picture('e:/docs/pic.png',width = Inches(1.25))
+    
+    # 添加表格: 1行3列
+    table = document.add_table(rows = 1,cols = 3)
+    # 获取第一行的单元格列表对象
+    hdr_cells = table.rows[0].cells
+    # 为每一个单元格赋值
+    # 注：值都要为字符串类型
+    hdr_cells[0].text = 'Name'
+    hdr_cells[1].text = 'Age'
+    hdr_cells[2].text = 'Tel'
+    # 为表格添加一行
+    new_cells = table.add_row().cells
+    new_cells[0].text = 'Tom'
+    new_cells[1].text = '19'
+    new_cells[2].text = '12345678'
+    
+    # 添加分页符
+    document.add_page_break()
+    
+    # 往新的一页中添加段落
+    p = document.add_paragraph('This is a paragraph in new page.')
+    
+    # 保存文档
+    document.save('e:/docs/demo1.docx')
+    
+if __name__ == '__main__':
+    main()
+
+```
+
+
+
+# Panda
+
+
+
+## 修改
+
+```
+# cli 的入口点在这 pandora\src\pandora_cloud\pandora\bots\legacy.py  run, 自已建一个 run_ak148 用来生成解析
+# pip install openpyxl pandas
+
+import pandas as pd
+df = pd.read_excel('ak148.xlsx',engine='openpyxl')
+print(df.shape, df.size)
+
+for idx_row in range(len(df)):
+    gpt = df.loc[idx_row, "gpt"]
+    if pd.isnull(gpt):
+        gpt = 'get expalin from pandora'
+        df.loc[idx_row, "gpt"] = gpt
+    print(df.loc[idx_row, "name"], df.loc[idx_row, "dlg"], df.loc[idx_row, "gpt"])
+```
+
+
+
+## 分组、聚合
+
+```python
+# https://zhuanlan.zhihu.com/p/101284491
+# 不同公司薪水按中位数显示，年龄按平均数显示
+data.groupby('company').agg({'salary':'median','age':'mean'})
+```
+
+
+
+
+
+
+
+## DataFrame
+
+> "dict-like" Series **container** for **Series objects**
+>
+> - **是序列对象的容器，能够以字典方式存取数据**
+
+
+
+```python
+    for N in range(2, MAX_N+1): # MAX_N+1
+        print(f'正在进行{N}-Gram词的最大熵筛选({len(rt[N-2])})...')
+        pp = []
+        for i in range(0,len(s)):
+            if i+N+2 <= len(s):  # +2 是因为一个左邻字，一个右邻字
+                pp.append( [ s[i:i+1], s[i+1:N+i+1], s[N+i+1:N+i+2] ] )
+        pp2 = pd.DataFrame(pp).set_index(1).sort_index() # 排序，可以加快检索速度
+        """
+        现在输入N-Gram 词，可以得到它的左邻右邻字
+        """
+
+        index = np.sort(np.intersect1d(rt[N-2], pp2.index)) # 作交集
+        
+        left = pp2[0][word]                            # word 的所有左邻字
+        right = pp2[2][word]                           # word 的所有右邻字
+```
+
+
+
+### copy
+
+```python
+dataframe1 = dataframe.copy(deep=True)
+```
+
+
+
+
+
+### 前几列前几行
+
+```python
+full['Cabin'].head() # 前5列
+full.head(10) # 前10行
+```
+
+
+
+### 行数和列数
+
+```python
+len(dataframe.index)
+len(dataframe.columns)
+dataframe.shape
+```
+
+
+
+#### 所有列名
+
+```python
+train.columns.values.tolist()
+```
+
+
+
+
+
+### 筛选数据
+
+```python
+# https://medium.com/jovianml/https-jovian-ml-undefined-none-titanic-logistic-regression-v-105-cellid-55-bb7b2b1b5de1
+len(dataframe[(dataframe["Survived"]==1) & (dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index)
+```
+
+```python
+# 头等舱女性的存活率
+len(dataframe[(dataframe["Survived"]==1) & (dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index) / \
+    len(dataframe[(dataframe["Sex"]=="female") & (dataframe["Pclass"]==1)].index)
+--> 0.968
+```
+
+
+
+### loc
+
+```python
+#原始数据集有891行
+sourceRow=891
+'''
+sourceRow是我们在最开始合并数据前知道的，原始数据集有总共有891条数据
+从特征集合full_X中提取原始数据集提取前891行数据时，我们要减去1，因为行号是从0开始的。
+'''
+#原始数据集：特征
+source_X = full_X.loc[0:sourceRow-1,:]
+#原始数据集：标签
+source_y = full.loc[0:sourceRow-1,'Survived']   
+
+#预测数据集：特征
+pred_X = full_X.loc[sourceRow:,:]
+```
+
+
+
+
+
+### 最大最小值均值
+
+```python
+print("Average age of all passengers -->  {0:.1f}".format(dataframe.Age.mean()))
+print("Age of oldest passenger -->  {:.1f}".format(dataframe.Age.max()))
+print("Age of youngest passenger -->  {:.1f}".format(dataframe.Age.min()))
+```
+
+
+
+
+
+### 合并数据帧
+
+```python
+full = pd.DataFrame()
+full = pd.concat([train,test],ignore_index=True)  # 列数不一至的数据帧合并，缺失列的一方会添加空列(所有数据为空白)
+print(full.columns)
+```
+
+
+
+### 填充缺失值
+
+```python
+from pandas import DataFrame
+full['Age']  = full['Age'].fillna(full['Age'].mean())
+#年龄因为不可从其他途径得知，采用平均年龄填充，此步骤对最终预测结果有影响。
+full.info()
+```
+
+```python
+# 缺失值计数
+df['Age'].isnull().sum()
+```
+
+
+
+#### apply
+
+```python
+def fill_in_age(x):
+    if x['Pclass_1']==1:
+        return 37
+    elif x['Pclass_2']==1:
+        return 29
+    else:
+        return 25
+df['Age']=df.apply(fill_in_age, axis=1)
+sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+```
+
+
+
+### 数据标准化
+
+z-score标准化
+
+- 经过处理后的数据符合标准正态分布，即均值为0，标准差为1
+
+```python
+to_normalize=['Age','Fare']
+for each in to_normalize:
+    mean, std= df[each].mean(), df[each].std()
+    df.loc[:, each]=(df[each]-mean)/std
+```
+
+标准化后的变量值围绕0上下波动，**大于0说明高于平均水平，小于0说明低于平均水平**。
+
+
+
+
+
+### One hot encode
+
+[u](https://blog.csdn.net/maymay_/article/details/80198468)
+
+get_dummies 是利用pandas实现one hot encode的方式
+
+<img src="Python 3  Summary.assets/image-20210203095930108.png" alt="image-20210203095930108" style="zoom:50%;" />
+
+
+
+```python
+# 直观上是把一列变成了很多列，值不是0就是1
+embarkedDf = pd.get_dummies(full['Embarked'],prefix='Embarked')#predix参数用于指定类别标签
+full = pd.concat([full,embarkedDf],axis=1)
+full.drop('Embarked',axis=1,inplace=True)#删除‘Embarked’列
+full.head()
+```
+
+![image-20210203101608443](Python 3  Summary.assets/image-20210203101608443.png)
+
+
+
+### Map
+
+```python
+def get_title(name):#定义称谓提取函数
+    str1=name.split(',')[1]#提取，后边的字符串
+    str2=str1.split('.')[0]#提取.前面的字符串
+    str3=str2.strip()#用于去除空格
+    return str3
+titleDf = pd.DataFrame()
+titleDf['Title'] = full['Name'].map(get_title)
+titleDf['Title'].value_counts()
+```
+
+
+
+### 柱状图
+
+
+
+#### 三种舱生存情况
+
+```python
+sns.countplot(x="Survived", hue="Pclass", data=dataframe)
+plt.title("No. of people survived from different classes")
+```
+
+<img src="Python 3  Summary.assets/image-20210203150631837.png" alt="image-20210203150631837" style="zoom:50%;" />
+
+### 分布图
+
+```python
+# 票价分布
+sns.distplot(dataframe.Fare)
+```
+
+<img src="Python 3  Summary.assets/image-20210203151255163.png" alt="image-20210203151255163" style="zoom:50%;" />
+
+
+
+### 热力图
+
+```python
+# 缺失值高亮
+sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+```
+
+<img src="Python 3  Summary.assets/image-20210203165600556.png" alt="image-20210203165600556" style="zoom:50%;" />
+
+
+
+### 箱形图
+
+```python
+plt.figure(figsize=(12, 7))
+sns.boxplot(x='Pclass',y='Age',data=titanic,palette='winter')
+```
+
+
+
+
+
+
+
+## Series [u](https://towardsdatascience.com/gaining-a-solid-understanding-of-pandas-series-893fb8f785aa)
+
+>  Series 可以是**数据集**的行，也可以是数据集的列 
+
+
+
+bigdataEntropy.py
+
+```python
+tt = tt.drop(labels=will_drops)  # 第二次筛选：凝合程度
+rt.append( tt.index )
+```
+
+
+
+
+
+### 转有转字典
+
+```python
+from collections import OrderedDict, defaultdict
+cs = pd.Series(list(s)).value_counts().to_dict(OrderedDict)
+```
+
+
+
+```python
+dic_tosave = {
+        'total_alphabets':0,
+        't':[],
+        'tt':[]
+    }
+
+    cs = pd.Series(list(s)).value_counts()              # 所有字的出现次数 
+    dic_tosave['total_alphabets'] = int( cs.sum() )     # 总共有多少个字
+    dic_tosave['t'].append( cs.to_dict(OrderedDict) )   # Series 转成有序字典才能保存JSON
+```
+
+
+
+
+
+### 统计每个字出现次数
+
+```python
+counts = pd.Series(list(s)).value_counts() # 每个字出现多少次
+totol = counts.sum()  # 总共有多少个字
+```
+
+```python
+    ls = list(s)
+    for N in range(2, MAX_N+1):
+        print(f'正在生成{N}-Gram词...')
+        t.append([])
+        for i in range(0,len(ls)):
+            if i+N <= len(ls):
+                t[N-1].append( "".join(ls[i:N+i]) )  # array[start:stop:step]
+            
+        t[N-1] = pd.Series(t[N-1]).value_counts()  # 所有N-Gram 词出现次数
+        t[N-1] = t[N-1][t[N-1] > min_count]        # 最小次数筛选
+        tt = t[N-1][:]
+```
+
+
+
+
+
+```python
+revenue = pd.Series([1000, 1200, 1500, 800, 900], index=['2014', '2015', '2016', '2017', '2018'])
+```
+
+```python
+revenue.sort_values(ascending=False).index[0]
+```
+
+
+
+
 
 
 
