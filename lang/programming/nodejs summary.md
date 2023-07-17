@@ -7854,6 +7854,52 @@ require('fs').stat(Path.join(__dirname, '.next'), (err, stats) => {
 
 
 
+## childProcess
+
+[Windows: execa leaving processes around when running npm scripts in a sh shell](https://github.com/sindresorhus/execa/issues/433)
+
+```
+const childProcess = require('child_process')
+const spawned = childProcess.spawn('npm', ['run', 'tsc'], { stdio: 'inherit', shell: true, windowsHide: true })
+process.on('exit', () => { spawned.kill() })
+
+```
+
+
+
+````
+const { spawn } = require('child_process');
+
+// 创建一个新的 Python 子进程
+const python = spawn('python');
+
+// 当收到子进程的输出时，将其打印到控制台
+python.stdout.on('data', (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+// 当子进程发生错误时，将错误打印到控制台
+python.stderr.on('data', (data) => {
+  console.error(`stderr: ${data}`);
+});
+
+// 当子进程退出时，打印退出码
+python.on('close', (code) => {
+  console.log(`child process exited with code ${code}`);
+});
+
+// 向 Python 子进程发送命令
+python.stdin.write('print("Hello, World!")\n');
+python.stdin.write('for i in range(5): print(i)\n');
+
+// 告诉 Python 我们不会再发送更多的命令了
+python.stdin.end();
+````
+
+
+
+
+
 # interop
 
 ## python
