@@ -6126,6 +6126,13 @@ this.childprocess.stdin.write(senddata);
 
 
 ```
+let iconvLite = require('iconv-lite')
+iconvLite.decode(buffer, 'cp936')}
+```
+
+
+
+```
 'use strict';
 const child_process = require("child_process")
 const iconv = require('iconv-lite');
@@ -7922,6 +7929,72 @@ try {
   console.error("error while changing directory");
 }
 ```
+
+
+
+
+
+### 乱码
+
+```
+# echodict\chatgpt_server\lib\fakeopen_cli_chatgpt.mjs
+import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
+import { spawn } from 'child_process'
+
+// const  iconvLite = require('iconv-lite')
+
+const spawned = spawn('python', ['main.py'], { 
+    //stdio: 'inherit', // 子进程和父进程的 stdin stdout 连接起来
+    stdio: 'pipe', 
+    shell: true, 
+    windowsHide: true,
+    cwd: 'D:/GitHub/echodict/pandora'
+})
+
+spawned.stdin.write('1\n')
+// spawned.stdin.end()
+
+// 当收到子进程的输出时，将其打印到控制台
+let ts = ``
+spawned.stdout.on('data', (data) => {
+  ts += data.toString()
+  console.log(`stdout: ${data}`);
+})
+
+process.on('exit', () => { 
+    spawned.kill() 
+})
+```
+
+
+
+
+
+```
+# 乱
+var child_process = require('child_process') 
+child_process.exec('ipconfig', { encoding:“utf-8”}, function(err, stdout, stderr){
+    console.log(stdout, stderr)
+})
+
+```
+
+
+
+```
+# ok?
+var child_process = require('child_process');
+var iconv = require('iconv-lite');
+var encoding = 'cp936';
+var binaryEncoding = 'binary';
+ 
+child_process.exec('ipconfig', { encoding: binaryEncoding }, function(err, stdout, stderr){
+    console.log(iconv.decode(new Buffer(stdout, binaryEncoding), encoding), iconv.decode(new Buffer(stderr, binaryEncoding), encoding));
+})
+```
+
+
 
 
 
