@@ -7898,6 +7898,33 @@ python.stdin.end();
 
 
 
+### process.cwd
+
+```
+__dirname and __filename process.cwd()
+```
+
+
+
+### process.chdir
+
+```
+const process = require('process');
+ 
+try {
+ 
+  // Change the directory
+  process.chdir('../os');
+  console.log("directory has successfully been changed");
+} catch (err) {
+     
+  // Printing error if occurs
+  console.error("error while changing directory");
+}
+```
+
+
+
 ##  execa
 
 ```
