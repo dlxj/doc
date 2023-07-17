@@ -10752,7 +10752,8 @@ if __name__ == '__main__':
 # pip install openpyxl pandas
 
 import pandas as pd
-df = pd.read_excel('ak148.xlsx',engine='openpyxl')
+path_ak148 = 'ak148.xlsx'
+df = pd.read_excel(path_ak148,engine='openpyxl')
 print(df.shape, df.size)
 
 for idx_row in range(len(df)):
@@ -10760,6 +10761,7 @@ for idx_row in range(len(df)):
     if pd.isnull(gpt):
         gpt = 'get expalin from pandora'
         df.loc[idx_row, "gpt"] = gpt
+    df.to_excel(path_ak148, index=False ,encoding="utf-8")
     print(df.loc[idx_row, "name"], df.loc[idx_row, "dlg"], df.loc[idx_row, "gpt"])
 ```
 
