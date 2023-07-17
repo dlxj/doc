@@ -7898,6 +7898,62 @@ python.stdin.end();
 
 
 
+##  execa
+
+```
+# echodict\pmserver\lib\ffmpeg.js
+
+	extractImage: async function(vdpath, begin_time) {
+        let { execa } = await import('execa')
+        let MemoryStream = require('memorystream')
+        let memStream = new MemoryStream(null, {readable : false})
+        try {
+
+            // 精准截图
+            // ffmpeg -accurate_seek -avoid_negative_ts 1 -i 1.mkv -ss 5 -vframes 1 xxxxxxxxxx.jpg
+
+            let cmd = `ffmpeg -accurate_seek -avoid_negative_ts 1 -i "${vdpath}" -ss ${begin_time} -vframes 1 -f mjpeg -y pipe:1`   //-f ${type} pipe:1 write stdout
+
+            let childProcess = execa(cmd, {shell:true})
+            childProcess.stdout.pipe(memStream)
+            let { stdout } = await childProcess
+
+            let buffer = Buffer.concat(memStream['queue'])  // array of buffer, to one buffer
+            // require('fs').writeFileSync(__dirname + '/1.jpg', buffer, 'binary')
+            memStream.destroy()
+
+            return { im: buffer }
+
+        } catch(err) {
+           return { au:null}
+        }
+    }
+```
+
+
+
+```
+    convert2srt:async function(subpath) {
+
+        // ffmpeg -i F:\video.mkv -vn -an -codec:s:0 srt F:\subtitle.srt
+
+        let { execa } = await import('execa')
+
+        try {
+
+            let cmd = `ffmpeg -i "${subpath}" -f srt pipe:1`  // write stdout
+
+            let childProcess = execa(cmd, {shell:true, 'encoding': 'utf8'})
+            let { stdout } = await childProcess
+
+            return { srt:stdout, msg:''}
+
+        } catch(err) {
+           return { msg : err }
+        } 
+    }
+```
+
 
 
 # interop
