@@ -16798,6 +16798,14 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+### 插件
+
+[llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
+
+[目前用的唯一上架的ws插件](https://github.com/AndreaTerenz/WebSocket)
+
+
+
 ### FQA
 
 [FQA](https://godotengine.org/qa/tag/godot4)
@@ -18202,6 +18210,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 [查看媒体文件头信息工具ffprobe ](https://www.cnblogs.com/renhui/p/9209664.html)
 
 [C# Named Pipe FFmpeg x265](https://gist.github.com/Anime4000/9dffab62e31b9d8dd815f0803eb5cbd3)
+
+[OBS Studio + GitAction](https://github.com/hydrotho/OBSFX/blob/main/README_zh.md)
 
 ```
 # 以 json 格式输出每个流的信息

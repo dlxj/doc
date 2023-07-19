@@ -10767,6 +10767,114 @@ for idx_row in range(len(df)):
 
 
 
+## 行名列名
+
+```python
+df = pd.DataFrame([[1,2],[3,4]], index=["one", "two"], columns=["A", "B"])
+df.to_excel("file.xlsx")
+```
+
+<img src="Python 3  Summary.assets/image-20230718083252045.png" alt="image-20230718083252045" style="zoom:50%;" />
+
+
+
+## 插入图片
+
+```
+
+import io
+from openpyxl_image_loader import SheetImageLoader
+import openpyxl
+import pandas as pd
+import time
+ 
+def __insert_photo_mmc(excel_file_name):
+    
+    #读取图片来源表
+    photoExcel = openpyxl.load_workbook(filename)
+ 
+    # 读取所有图片
+    dic_style_image = dict()
+ 
+    for sheet_name in photoExcel.sheetnames:
+        sheet = photoExcel[sheet_name]  # 打开sheet
+        image_loader = SheetImageLoader(sheet)
+        for i in range(2, sheet.max_row+1):  # 从第2行开始，总行数要+1
+            try:
+                style = sheet['I'+str(i)].value  # style 在 A列
+                style = style.upper()
+ 
+                image = image_loader.get('A'+str(i))  # 图片在 C列
+                dic_style_image[style] = image
+ 
+            except ValueError:  # 没有图片，或图片超出单元格的情况
+                logger.info("idx={} 没有图片".format(i))
+ 
+    # print(len(dic_style_image))
+    # dic_style_image['ARJL100798-BK3'].show()
+ 
+    #######输出excel#################
+    output_file = time.strftime("%d%H%M%S", time.localtime()) + '.xlsx' #输出的表
+    writer = pd.ExcelWriter(output_file, engine='xlsxwriter')
+    workbook = writer.book
+ 
+    data_excel = pd.ExcelFile(excel_file_name) #读取要被插入图片的excel表
+ 
+    for sheet_name in data_excel.sheet_names:
+        df = data_excel.parse(sheet_name=sheet_name)
+        df.to_excel(writer, sheet_name=sheet_name, index=False)
+        sheet = writer.sheets[sheet_name]
+        # 设置图片大小
+        image_size = (81, 54)
+ 
+        for idx, row in df.iterrows():
+            style = row['款号']
+            style = style.upper()
+            img = dic_style_image.get(style, None)
+ 
+            anchor = 'H'+str(idx+2)  # 图片输出在H列
+ 
+            if img is None:
+                sheet.write_string(anchor, 'no photho')
+            else:
+                img_file_name = img.filename
+ 
+                # 设置行高
+                height = math.ceil(image_size[1]*0.85)
+                sheet.set_row(idx+1, height)
+ 
+                #resize图片
+                img = img.resize(image_size)
+ 
+                #转成byteio格式
+                buf = io.BytesIO()
+                img.save(buf, format='JPEG')
+                sheet.insert_image(anchor, img_file_name, 
+                                {'image_data': buf, 'x_offset': 1, 'y_offset': 3})
+ 
+    workbook.close()
+    data_excel.close()
+ 
+    return output_file
+
+```
+
+
+
+```
+writer = pd.ExcelWriter('filename.xlsx', engine='xlsxwriter')
+df.to_excel(writer) # 将DataFrame数据导入writer
+workbook  = writer.book # 提取workbook对象
+worksheet = workbook.add_worksheet()  # 添加工作表Sheet
+worksheet.insert_image('D4',filename.jpg')  # 插入图片 到D4位置
+writer.save() # 保存表格文件
+
+```
+
+
+
+
+
 ## 分组、聚合
 
 ```python
