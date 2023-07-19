@@ -16806,6 +16806,37 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+#### 加载
+
+1. copy to project's addons directory 
+2. 项目 -> 项目设置 -> 插件 -> 启用上打勾
+
+
+
+#### 入口点
+
+websocket_plugin.gd
+
+```
+@tool
+extends EditorPlugin
+
+func _enter_tree():
+	# Add the new type with a name, a parent type, a script and an icon.
+	add_custom_type("WebSocket", "Node",
+		preload("res://addons/websocket/WebSocket.gd"),
+		preload("res://addons/websocket/WebSocket.svg"))
+	# Godot 控件库会多出一个 WebSocket ，在 Node 下面
+	
+func _exit_tree():
+	# Always remember to remove it from the engine when deactivated.
+	remove_custom_type("WebSocket")
+```
+
+
+
+
+
 ### FQA
 
 [FQA](https://godotengine.org/qa/tag/godot4)
