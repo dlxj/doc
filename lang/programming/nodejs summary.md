@@ -16835,6 +16835,23 @@ func _exit_tree():
 
 
 
+WebSocket.gd
+
+```
+# 导出符号后，可以在 Godot 编缉器里面修改，就像原生控件一样
+@export_range(0, 128) var receive_limit : int = 0
+@export_range(0, 300) var connection_timeout : int = 10
+@export_group("Routing")
+@export var host := "127.0.0.1"
+@export var route := "/"
+@export var use_WSS := true
+@export_group("Autoconnect")
+@export var autoconnect_mode := AUTOCONNECT_MODE.NONE
+@export var autoconnect_reference : Node = null
+```
+
+
+
 
 
 ### FQA
