@@ -16815,6 +16815,19 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 #### 入口点
 
+plugin.cfg 入口点由这个配置文件指定，配置文件必须是这个名字
+
+```
+[plugin]
+name="WebSocket"
+description="Wrapper node for WebSocketPeer"
+author="AndreaTerenz"
+version="1.0"
+script="websocket_plugin.gd"
+```
+
+
+
 websocket_plugin.gd
 
 ```
