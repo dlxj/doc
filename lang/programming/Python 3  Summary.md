@@ -3382,6 +3382,27 @@ if __name__ == "__main__":
 r''
 ```
 
+
+
+### byte string
+
+```
+echodict\pandora\src\pandora\exts\token.py
+__public_key = b'-----BEGIN PUBLIC KEY-----\n' \
+               b'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA27rOErDOPvPc3mOADYtQ\n' \
+               b'BeenQm5NS5VHVaoO/Zmgsf1M0Wa/2WgLm9jX65Ru/K8Az2f4MOdpBxxLL686ZS+K\n' \
+               b'7eJC/oOnrxCRzFYBqQbYo+JMeqNkrCn34yed4XkX4ttoHi7MwCEpVfb05Qf/ZAmN\n' \
+               b'I1XjecFYTyZQFrd9LjkX6lr05zY6aM/+MCBNeBWp35pLLKhiq9AieB1wbDPcGnqx\n' \
+               b'lXuU/bLgIyqUltqLkr9JHsf/2T4VrXXNyNeQyBq5wjYlRkpBQDDDNOcdGpx1buRr\n' \
+               b'Z2hFyYuXDRrMcR6BQGC0ur9hI5obRYlchDFhlb0ElsJ2bshDDGRk5k3doHqbhj2I\n' \
+               b'gQIDAQAB\n' \
+               b'-----END PUBLIC KEY-----'
+```
+
+
+
+
+
 ### format
 
 For Python 3.+, the same behavior can also be achieved with [`format`](https://docs.python.org/3/library/stdtypes.html#str.format):
