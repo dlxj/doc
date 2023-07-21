@@ -607,9 +607,20 @@ cd mecab-ipadic-neologd && \
 ./bin/install-mecab-ipadic-neologd -n -a
 	# 其间要输入一个 "yes"	
 	# dic is here: /usr/lib64/mecab/dic/mecab-ipadic-neologd
+	# https://phoenixnap.dl.sourceforge.net/project/mecab/mecab-ipadic/2.7.0-20070801/mecab-ipadic-2.7.0-20070801.tar.gz
+	# 下载 csv 词典原始数据，它的编码是 EUC-JP
 
 mecab -d /usr/lib64/mecab/dic/mecab-ipadic-neologd
 
+
+import MeCab
+import subprocess
+
+cmd='echo `mecab-config --dicdir`"/mecab-ipadic-neologd"'
+path = (subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                           shell=True).communicate()[0]).decode('utf-8')
+m=MeCab.Tagger("-d {0}".format(path))
+print(m.parse("彼女はペンパイナッポーアッポーペンと恋ダンスを踊った。"))
 
 
 ```
