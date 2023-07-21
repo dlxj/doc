@@ -589,6 +589,33 @@ google-chrome &
 
 
 
+# mecab
+
+[MeCab+NEologd](https://qiita.com/heimaru1231/items/1f4f03088bc0f6bdefc6)
+
+- [groonga fulltext search](https://github.com/groonga/groonga/issues/1521)
+
+```
+cat /etc/redhat-release && \
+dnf -y install --nogpgcheck https://packages.groonga.org/almalinux/8/x86_64/Packages/groonga-release-2021.10.30-1.noarch.rpm && \
+dnf -y makecache && \
+dnf -y install mecab mecab-ipadic mecab-devel patch --nogpgcheck && \
+mecab -v 
+
+git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
+cd mecab-ipadic-neologd && \
+./bin/install-mecab-ipadic-neologd -n -a
+	
+	# dic is here: /usr/lib64/mecab/dic/mecab-ipadic-neologd
+	# 并没有,可以手动下载安装 mecab-ipadic-2.7.0-20070801.tar.gz
+
+
+```
+
+
+
+
+
 # 乱码
 
 ```
