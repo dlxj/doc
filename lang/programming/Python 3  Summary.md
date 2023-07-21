@@ -1184,6 +1184,7 @@ __all__ = ['Sampler', 'SequentialSampler', ... xxx ...]
 ### exists
 
 ```
+import os,shutil
 if os.path.exists(path):
 ```
 

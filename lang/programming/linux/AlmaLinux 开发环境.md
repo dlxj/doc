@@ -608,6 +608,7 @@ cd mecab-ipadic-neologd && \
 	
 	# dic is here: /usr/lib64/mecab/dic/mecab-ipadic-neologd
 	# 并没有,可以手动下载安装 mecab-ipadic-2.7.0-20070801.tar.gz
+	# wget https://phoenixnap.dl.sourceforge.net/project/mecab/mecab-ipadic/2.7.0-20070801/mecab-ipadic-2.7.0-20070801.tar.gz
 
 
 ```
