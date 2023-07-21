@@ -1877,6 +1877,22 @@ GraphQL with iOS and SwiftUI: The Complete Developers Guide
 >
 > [qolibri 比Goldendict清清晰， 技持声音](https://github.com/ludios/qolibri)
 >
+> ```
+> qolibri already runs on unmodified SteamOS with some mild tinkering:
+> 
+> Grab qolibri .deb file from Releases
+> Grab libeb16 .deb file from Debian
+> Extract the following files from the .deb packages:
+> qolibri
+> libeb.so.16 (just a symlink)
+> libeb.so.16.0.0
+> With all 3 files in the current directory, start like this:
+> 
+> $ LD_LIBRARY_PATH=. ./qolibri
+> ```
+>
+> 
+>
 > [bob Mac开源取词翻译](https://github.com/ripperhe/Bob)
 >
 > [textshot开源文字识别](https://github.com/ianzhao05/textshot)
