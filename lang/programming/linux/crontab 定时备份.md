@@ -3,6 +3,23 @@
 
 
 ```
+backup.sh
+dir="/root/ak148_backup/$(date +'%Y-%m-%d')"
+mkdir -p $dir
+cp /root/echodict/pandora/ak148_script.xlsx $dir
+cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
+
+crontab -e
+00   00    *      *   *  sh /root/backup.sh
+```
+
+
+
+
+
+
+
+```
 crontab -e # edit
 crontab -l # list all task
 
@@ -152,6 +169,37 @@ crontab -r //删除所有任务调度工作
 
 直接编辑 vim /etc/crontab ,默认的文件形式如下：
 ```
+
+
+
+# 检查接口不好就重启
+
+```
+check.sh
+http_code=$(curl -m 5 -s -o /dev/null -w %{http_code} http://127.0.0.1:8005/gettest?appename=ZC_ZXYJHNKX_YTMJ)
+if [ "$http_code" -eq 200 ]; then
+  echo "Success" > /dev/null
+else
+  echo "$(date +%Y%m%d-%H:%M:%S) gettest api test fail, restart ksbaiexam_8005 right now!!!" >/root/ksbao_logs.txt
+  pm2 restart ksbaiexam_8005
+fi
+
+crontab -e
+*   *    *      *   *   sleep 5;sh /root/check.sh
+*   *    *      *   *   sleep 10;sh /root/check.sh
+*   *    *      *   *   sleep 15;sh /root/check.sh
+*   *    *      *   *   sleep 20;sh /root/check.sh
+*   *    *      *   *   sleep 25;sh /root/check.sh
+*   *    *      *   *   sleep 30;sh /root/check.sh
+*   *    *      *   *   sleep 35;sh /root/check.sh
+*   *    *      *   *   sleep 40;sh /root/check.sh
+*   *    *      *   *   sleep 45;sh /root/check.sh
+*   *    *      *   *   sleep 50;sh /root/check.sh
+*   *    *      *   *   sleep 55;sh /root/check.sh
+
+```
+
+
 
 
 
