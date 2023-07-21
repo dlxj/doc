@@ -605,10 +605,11 @@ mecab -v
 git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
 cd mecab-ipadic-neologd && \
 ./bin/install-mecab-ipadic-neologd -n -a
-	
+	# 其间要输入一个 "yes"	
 	# dic is here: /usr/lib64/mecab/dic/mecab-ipadic-neologd
-	# 并没有,可以手动下载安装 mecab-ipadic-2.7.0-20070801.tar.gz
-	# wget https://phoenixnap.dl.sourceforge.net/project/mecab/mecab-ipadic/2.7.0-20070801/mecab-ipadic-2.7.0-20070801.tar.gz
+
+mecab -d /usr/lib64/mecab/dic/mecab-ipadic-neologd
+
 
 
 ```
