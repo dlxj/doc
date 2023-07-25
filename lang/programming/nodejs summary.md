@@ -1421,7 +1421,8 @@ Ctrl+Shift+X -> search "C++" ->安装C/C++扩展
 按 win 键 -> 找到 MSYS2 UCRT64 图标 -> 运行
 
 pacman -S mingw-w64-ucrt-x86_64-gcc \
-	mingw-w64-ucrt-x86_64-gdb
+	mingw-w64-ucrt-x86_64-gdb \
+	mingw-w64-ucrt-x86_64-boost
 
 加入 path 环境变量 C:\msys64\ucrt64\bin
 
