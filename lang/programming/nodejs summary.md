@@ -1409,6 +1409,14 @@ next_complex_cjk
 
 
 
+## vscode + MSYS2 +  Mingw-w64 
+
+[vscode 在windows下使用gcc+mingw调试 c/c++程序](https://www.jianshu.com/p/ebc74e2d09f1)
+
+
+
+
+
 ## vs studio WSL Linux 开发
 
 [使用VS 2017进行Linux C/C++远程GDB调试](https://zhuanlan.zhihu.com/p/30950892)
@@ -16776,6 +16784,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [markdonw 编辑器](https://github.com/teebarjunk/Godot-TextEditor)
 
+[godot-copilot Gpt4 插件](https://github.com/minosvasilias/godot-copilot)
+
 [4.0源码3d工具](https://github.com/protongraph/protongraph)
 
 [4.0源码完整游戏](https://github.com/zfoo-project/godot-bird)
@@ -23915,6 +23925,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 
 ## Rust Monads
+
+[Rust语言圣经](https://course.rs/about-book.html)
 
 [Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
 

@@ -194,3 +194,10 @@ CJK 汉字(无符号和全角)
  [中文在unicode中的编码范围](https://links.jianshu.com/go?to=https%3A%2F%2Ficc.one%2F2016%2F06%2F16%2F%E4%B8%AD%E6%96%87%E5%9C%A8unicode%E4%B8%AD%E7%9A%84%E7%BC%96%E7%A0%81%E8%8C%83%E5%9B%B4%2F)
  [Unicode 编码范围和中文编码范围](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.huaweicloud.com%2Farticles%2F806d9ad4069138fcb99fe926d6afdbcc.html)
  [Regular Expressions Unicode](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.regular-expressions.info%2Funicode.html)
+
+
+
+## JapaneseRegex
+
+[JapaneseRegex.js](https://gist.github.com/ryanmcgrath/982242)
+
