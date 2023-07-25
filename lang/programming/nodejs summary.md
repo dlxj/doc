@@ -1413,6 +1413,25 @@ next_complex_cjk
 
 [vscode 在windows下使用gcc+mingw调试 c/c++程序](https://www.jianshu.com/p/ebc74e2d09f1)
 
+```
+Ctrl+Shift+X -> search "C++" ->安装C/C++扩展
+
+安装 msys2 from https://www.msys2.org/
+
+按 win 键 -> 找到 MSYS2 UCRT64 图标 -> 运行
+
+pacman -S mingw-w64-ucrt-x86_64-gcc \
+	mingw-w64-ucrt-x86_64-gdb
+
+加入 path 环境变量 C:\msys64\ucrt64\bin
+
+gcc --version
+gdb --version
+
+
+
+```
+
 
 
 
