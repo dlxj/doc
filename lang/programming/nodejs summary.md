@@ -13239,6 +13239,18 @@ docker exec -it almalinux8_server_8880 bash -c 'chpasswd <<<"root:root"'
 
 docker cp /root/proxychains-ng-master.zip almalinux8_server_8880:/root
 
+./configure --prefix=/usr --sysconfdir=/etc && \
+make && \
+make install && \
+make install-config
+
+vi /etc/proxychains.conf
+localnet 127.0.0.0/255.0.0.0
+localnet 172.16.0.0/255.240.0.0
+localnet 192.168.0.0/255.255.0.0
+[ProxyList]
+socks5  127.0.0.1 1080
+	# 改成这样
 
 dnf search python39* && \
 dnf install -y python39.x86_64 python39-devel.x86_64 p7zip && \
