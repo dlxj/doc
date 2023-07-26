@@ -13277,6 +13277,12 @@ python3.10 get-pip.py
 	# python3.10 的pip 需要另外安装
 
 
+https://linuxhint.com/install_yarn_ubuntu/
+	# 安装 yarn
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee && \
+apt install yarn
+
 
 
 
@@ -13285,7 +13291,14 @@ dnf install -y python39.x86_64 python39-devel.x86_64 p7zip && \
 mkdir RWKV-Next-Web && \
 cd RWKV-Next-Web && \
 proxychains4 git clone https://github.com/josStorer/RWKV-Runner --depth=1 && \
-proxychains4 python3.10 -m pip install torch torchvision torchaudio
+proxychains4 python3.10 -m pip install torch torchvision torchaudio && \
+apt install -f --reinstall python3-minimal && \
+apt install -f --reinstall python3-pip && \
+apt install --reinstall libglib2.0-0/focal && \
+apt install libpython3.10-dev && \
+pip3.10 install pycairo && \
+python3.10 -m pip install -r RWKV-Runner/backend-python/requirements.txt
+
 
 
 kill  -9 $(jobs -p)
