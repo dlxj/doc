@@ -13292,8 +13292,9 @@ mkdir RWKV-Next-Web && \
 cd RWKV-Next-Web && \
 proxychains4 git clone https://github.com/josStorer/RWKV-Runner --depth=1 && \
 proxychains4 python3.10 -m pip install torch torchvision torchaudio && \
-apt install -f --reinstall python3-minimal && \
-apt install -f --reinstall python3-pip && \
+pip3.10 install cyac && \
+	# 这个出错
+apt install -f --reinstall python3.10-minimal && \
 apt install --reinstall libglib2.0-0/focal && \
 apt install libpython3.10-dev && \
 pip3.10 install pycairo && \
