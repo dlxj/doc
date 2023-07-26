@@ -13264,7 +13264,20 @@ apt-get update && \
 apt-get install p7zip-full vim curl lsof git wget 
 
 https://blog.csdn.net/qq_20466211/article/details/128731196
+apt-get install dialog apt-utils && \
 apt install -y wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov
+
+apt update && apt upgrade -y && \
+apt install software-properties-common -y && \
+add-apt-repository ppa:deadsnakes/ppa && \
+apt install python3.10 && \
+apt install python3.10-distutils && \
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3.10 get-pip.py
+	# python3.10 的pip 需要另外安装
+
+
+
 
 
 dnf search python39* && \
@@ -13272,7 +13285,7 @@ dnf install -y python39.x86_64 python39-devel.x86_64 p7zip && \
 mkdir RWKV-Next-Web && \
 cd RWKV-Next-Web && \
 proxychains4 git clone https://github.com/josStorer/RWKV-Runner --depth=1 && \
-proxychains4 python3 -m pip install torch torchvision torchaudio
+proxychains4 python3.10 -m pip install torch torchvision torchaudio
 
 
 kill  -9 $(jobs -p)

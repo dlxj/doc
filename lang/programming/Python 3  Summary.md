@@ -88,6 +88,32 @@ pip install --upgrade ipykernel -i https://pypi.douban.com/simple
 
 
 
+## Python for ubuntu20.04
+
+```
+apt update && apt upgrade -y && \
+(sleep 1; echo "Y";) | apt-get install build-essential
+apt-get install p7zip-full vim curl lsof git wget 
+
+https://blog.csdn.net/qq_20466211/article/details/128731196
+apt-get install dialog apt-utils && \
+apt install -y wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov
+
+
+apt update && apt upgrade -y && \
+apt install software-properties-common -y && \
+add-apt-repository ppa:deadsnakes/ppa && \
+apt install python3.10 && \
+apt install python3.10-distutils && \
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3.10 get-pip.py
+
+```
+
+
+
+
+
 ## Python for colab
 
 ```
