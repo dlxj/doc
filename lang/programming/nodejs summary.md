@@ -13191,7 +13191,7 @@ New-Item -ItemType Directory -Path AlmaLinux8_server_8880
 cd AlmaLinux8_server_8880
 New-Item -ItemType File -Path Dockerfile
 
-docker stop almalinux8_server_8880
+docker stop almalinux8_server_8880 && \
 docker rm almalinux8_server_8880
 docker image rm almalinux:8.7
 docker network rm customnetwork
@@ -13252,10 +13252,24 @@ localnet 192.168.0.0/255.255.0.0
 socks5  127.0.0.1 1080
 	# 改成这样
 
+
+docker pull ubuntu:20.04
+	# almalinux安装rwkv 包出错
+docker run -tid --name almalinux8_server_8880 -p 1417:1417 --privileged=true ubuntu:20.04 /bin/bash
+
+docker exec -it almalinux8_server_8880 bash
+
+apt-get update && \
+(sleep 1; echo "Y";) | apt-get install build-essential
+
+
 dnf search python39* && \
 dnf install -y python39.x86_64 python39-devel.x86_64 p7zip && \
 mkdir RWKV-Next-Web && \
 cd RWKV-Next-Web && \
+proxychains4 git clone https://github.com/josStorer/RWKV-Runner --depth=1 && \
+proxychains4 python3 -m pip install torch torchvision torchaudio
+
 
 kill  -9 $(jobs -p)
 
