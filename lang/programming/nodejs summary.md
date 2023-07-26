@@ -8965,7 +8965,7 @@ flushdb 清空当前数据库
 ## node18
 
 ```
-        # 旧写法已经连不上了
+        # 旧写法已经连不上了 这个版本可以 "redis": "^3.1.2",
         let { createClient }  = require('redis')
 
         const client = createClient({ url: 'redis://127.0.0.1:6379' })
@@ -9364,6 +9364,10 @@ nmap 127.0.0.1 -p6379
 ```
 
 
+
+## redisson 全局ID等
+
+[redisson 全局ID等](https://www.jianshu.com/p/033d0d73f53a)
 
 
 
@@ -13230,6 +13234,18 @@ systemctl enable sshd &&
 systemctl status sshd"
 
 docker exec -it almalinux8_server_8880 bash -c 'chpasswd <<<"root:root"'
+
+# rwkv runner
+
+docker cp /root/proxychains-ng-master.zip almalinux8_server_8880:/root
+
+
+dnf search python39* && \
+dnf install -y python39.x86_64 python39-devel.x86_64 p7zip && \
+mkdir RWKV-Next-Web && \
+cd RWKV-Next-Web && \
+
+kill  -9 $(jobs -p)
 
 
 docker exec -it almalinux8_server_8880 bash -c "
