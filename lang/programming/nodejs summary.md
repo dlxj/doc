@@ -13261,6 +13261,10 @@ docker exec -it almalinux8_server_8880 bash
 
 apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential
+apt-get install p7zip-full vim curl lsof git wget 
+
+https://blog.csdn.net/qq_20466211/article/details/128731196
+apt install -y wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov
 
 
 dnf search python39* && \
