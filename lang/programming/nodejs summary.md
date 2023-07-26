@@ -13300,6 +13300,9 @@ apt install libpython3.10-dev && \
 pip3.10 install pycairo && \
 python3.10 -m pip install -r RWKV-Runner/backend-python/requirements.txt
 
+python3.10 -m pip install -r RWKV-Runner/backend-python/requirements_without_cyac.txt --ignore-installed PyYAML
+	# 成功!
+
 
 
 kill  -9 $(jobs -p)
