@@ -24925,6 +24925,25 @@ const workSheetsFromFile = xlsx.parse(`${__dirname}/myFile.xlsx`);
 
 
 
+## Data
+
+### ak48
+
+```
+echodict\chatgpt_server\lib\ak148_extradata.js
+	# 提取 excel ，给 pandora 生成解析
+```
+
+
+
+### nlpp
+
+````
+echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
+````
+
+
+
 
 
 ## excel 正则
