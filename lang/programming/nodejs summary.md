@@ -1497,6 +1497,8 @@ vscode 中点找 t.cpp 文件 -> Ctrl + Shift + P
 
 ### utf8 处理
 
+[C语言utf8判断中文](https://blog.csdn.net/liu0808/article/details/81743462)
+
 
 
 ```
@@ -2502,6 +2504,41 @@ app.listen(port, function() {
 
 
  request 已弃用，用这个  https://github.com/mikeal/bent
+
+
+
+```
+express 端
+
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import bent from 'bent'
+import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
+
+const app = express()
+
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
+
+
+app.post('/wenxin/chat_post', async (req, res) => {
+
+    if ( !req.body || !req.body.text ){
+        res.writeHead(300, {"Content-Type": "text/plain"})
+        res.write("params err\n")
+        res.end()
+        return
+    }
+
+    let text = req.body['text']
+})
+```
+
+
 
 
 
@@ -6458,6 +6495,28 @@ console.log("Timestamp after: " + performance.now());
 
 
 ## time
+
+```
+let moment = require('moment')
+let expires_days = expires_in / (3600 * 24)  // 还有多少天过期
+let expires_time = moment().add(expires_days, 'days') // 过期时间
+
+let diff = moment().diff(expires_time)
+if (diff >= 0) {
+   // access_token 过期了
+   reset_access_token()
+}
+
+server_wenxin\lib\xfembedding.js
+let dateFormat = 'ddd, DD MMM YYYY HH:mm:ss',
+        dateString = new Date().toUTCString(),          // 'Tue, 13 Jun 2023 01:20:45 GMT'
+        date = moment.utc(dateString, dateFormat)._i
+        
+```
+
+
+
+
 
 ```
 const moment = require('moment')
@@ -18164,6 +18223,25 @@ input_field.grab_focus()
 [creating_movies](https://docs.godotengine.org/en/latest/tutorials/animation/creating_movies.html) 录制视频
 
 [VideoStreamPlayer](https://docs.godotengine.org/en/stable/classes/class_videostreamplayer.html)
+
+
+
+### Post
+
+```
+场景的root结点 加一个 HTTPRequest 作为子结点
+
+func _ready():
+	$HTTPRequest.request_completed.connect(_on_request_completed)
+	$HTTPRequest.request("https://api.github.com/repos/godotengine/godot/releases/latest")
+
+func _on_request_completed(result, response_code, headers, body):
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json["name"])
+		# 请求成功 --> 4.1.1-stable
+```
+
+
 
 
 
