@@ -10529,6 +10529,20 @@ pd.read_excel('tmp.xlsx', index_col=None, header=None)
 
 
 
+```python
+import os,glob
+import pandas as pd
+
+currDir = os.path.dirname(os.path.abspath(__file__))
+
+csv_dir = os.path.join(currDir, 'data/mecab-ipadic')
+jp_dic_paths = []
+paths = glob.glob(f"{csv_dir}/*.csv", recursive=True)
+df = pd.read_csv(paths[0])
+```
+
+
+
 ### encoding
 
 ```python
