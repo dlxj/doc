@@ -24185,6 +24185,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [Rust bindings for Godot 4](https://github.com/godot-rust/gdext)
 
+[iced GUI对标elm](https://github.com/iced-rs/iced)
+
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
 [rust-script](https://github.com/fornwall/rust-script)
