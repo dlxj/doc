@@ -16991,6 +16991,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [markdonw 编辑器](https://github.com/teebarjunk/Godot-TextEditor)
 
+- [vscode in godot](https://github.com/RedMser/godot-embed-external-editor)
+
 [godot-copilot Gpt4 插件](https://github.com/minosvasilias/godot-copilot)
 
 [4.0源码3d工具](https://github.com/protongraph/protongraph)
