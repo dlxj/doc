@@ -18243,6 +18243,31 @@ func _on_request_completed(result, response_code, headers, body):
 
 
 
+#### x-www-form-urlencoded
+
+```
+// echodict/pmserver/http/api/searchAk48.js
+
+func _ready():
+	$HTTPRequest.request_completed.connect(_on_request_completed)
+#	$HTTPRequest.request("https://api.github.com/repos/godotengine/godot/releases/latest")
+	var url = "http://127.0.0.1:8880/searchAk48"
+#	var json = JSON.stringify({"keywd":"ここ", "lang_type":"jp"})
+	var http = HTTPClient.new()
+	var queryString = http.query_string_from_dict({"keywd":"ここ", "lang_type":"jp"})
+
+
+	var headers = ["Content-Type: application/x-www-form-urlencoded"]
+	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, queryString)
+
+
+func _on_request_completed(result, response_code, headers, body):
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json["name"])
+```
+
+
+
 
 
 ### WebSocket
