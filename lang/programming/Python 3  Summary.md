@@ -11016,6 +11016,30 @@ train.columns.values.tolist()
 
 
 
+### 读取没有列名的csv
+
+```python
+import os,glob
+import pandas as pd
+
+currDir = os.path.dirname(os.path.abspath(__file__))
+
+csv_dir = os.path.join(currDir, 'data/mecab-ipadic')
+jp_dic_paths = glob.glob(f"{csv_dir}/*.csv", recursive=True)
+
+dic = {}
+for pth in jp_dic_paths:
+    # csv本身没有列名(有的话通常是第一行), 手动定义列名
+    df = pd.read_csv(pth, header=None, names=['word','feq','3','4', '5', '6', '7', '8', '9', '10', '11', '12', '13'])
+    for idx_row in range(len(df)):
+        word = df.loc[idx_row, 'word']
+        feq = df.loc[idx_row, 'feq']
+        if pd.isnull(word):
+            a = 1
+```
+
+
+
 
 
 ### 筛选数据
