@@ -16991,6 +16991,12 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
 
+[godot-resources-as-sheets-plugin csv编辑器](https://github.com/don-tnowe/godot-resources-as-sheets-plugin_)
+
+- [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
+
+[Add a Spreadsheet resource for handling tabular data](https://github.com/don-tnowe/godot-sprite-painter)
+
 [markdonw 编辑器](https://github.com/teebarjunk/Godot-TextEditor)
 
 - [vscode in godot](https://github.com/RedMser/godot-embed-external-editor)
@@ -25134,6 +25140,8 @@ echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
 ## godot excel
 
 [godot-resources-as-sheets-plugin](https://github.com/don-tnowe/godot-resources-as-sheets-plugin_)
+
+- [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
 
 [Add a Spreadsheet resource for handling tabular data](https://github.com/godotengine/godot-proposals/issues/13)
 
