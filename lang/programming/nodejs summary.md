@@ -16989,6 +16989,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
+[Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
+
 [markdonw 编辑器](https://github.com/teebarjunk/Godot-TextEditor)
 
 - [vscode in godot](https://github.com/RedMser/godot-embed-external-editor)
@@ -17479,6 +17481,40 @@ var boards_by_id : Dictionary = {}
 
 if !boards_by_id.erase(board.id):
 
+```
+
+
+
+### for
+
+```
+for x in [5, 7, 11]:
+    statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
+
+var dict = {"a": 0, "b": 1, "c": 2}
+for i in dict:
+    print(dict[i]) # Prints 0, then 1, then 2.
+
+for i in range(3):
+    statement # Similar to [0, 1, 2] but does not allocate an array.
+
+for i in range(1, 3):
+    statement # Similar to [1, 2] but does not allocate an array.
+
+for i in range(2, 8, 2):
+    statement # Similar to [2, 4, 6] but does not allocate an array.
+
+for i in range(8, 2, -2):
+    statement # Similar to [8, 6, 4] but does not allocate an array.
+
+for c in "Hello":
+    print(c) # Iterate through all characters in a String, print every letter on new line.
+
+for i in 3:
+    statement # Similar to range(3).
+
+for i in 2.2:
+    statement # Similar to range(ceil(2.2)).
 ```
 
 
@@ -18248,24 +18284,43 @@ func _on_request_completed(result, response_code, headers, body):
 #### x-www-form-urlencoded
 
 ```
-// echodict/pmserver/http/api/searchAk48.js
+extends HTTPRequest
 
-func _ready():
-	$HTTPRequest.request_completed.connect(_on_request_completed)
-#	$HTTPRequest.request("https://api.github.com/repos/godotengine/godot/releases/latest")
+signal searchAk48_completed(result)
+signal completed_(result)
+
+func searchAk48(keywd):
 	var url = "http://127.0.0.1:8880/searchAk48"
-#	var json = JSON.stringify({"keywd":"ここ", "lang_type":"jp"})
+	
+	self.request_completed.connect(
+		func (result, response_code, headers, body):
+			completed_.emit({"result":result, "response_code":response_code, "headers":headers, "body":body})
+			#var json = JSON.parse_string(body.get_string_from_utf8())
+			#print(json["name"])
+	)
+	
 	var http = HTTPClient.new()
-	var queryString = http.query_string_from_dict({"keywd":"ここ", "lang_type":"jp"})
-
-
+	var queryString = http.query_string_from_dict({"keywd":keywd, "lang_type":"jp"})
 	var headers = ["Content-Type: application/x-www-form-urlencoded"]
-	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, queryString)
-
-
-func _on_request_completed(result, response_code, headers, body):
-	var json = JSON.parse_string(body.get_string_from_utf8())
-	print(json["name"])
+	self.request(url, headers, HTTPClient.METHOD_POST, queryString)
+	
+	var re = await completed_
+	if re.result == HTTPRequest.RESULT_SUCCESS:
+		var s = re.body.get_string_from_utf8()
+		var j = JSON.parse_string(s)
+		if j.status == 200:
+			var data = j.data
+			searchAk48_completed.emit([data, ''])
+			return
+		else:	
+			searchAk48_completed.emit([null, s])
+			return
+	elif re.result == HTTPRequest.RESULT_TIMEOUT:
+		pass
+	else:
+		pass
+		
+	searchAk48_completed.emit([null, 'post fail.'])
 ```
 
 
@@ -24457,6 +24512,29 @@ int main(void)
 
 
 
+### ImPlay
+
+[ImPlay IMGUI+MPV](https://github.com/tsl0922/ImPlay/issues/57)
+
+- [mpv lazy](https://github.com/hooke007/MPV_lazy/discussions/120)
+
+
+
+```
+安装 msys2 -> win键 -> 打开 MSYS2 MINGW64
+
+pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype
+git clone https://github.com/tsl0922/ImPlay.git && \
+cd ImPlay && \
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON ..
+cmake --build . --target package
+  # This will build a MSI installer and a portable ZIP.
+  
+```
+
+
+
 
 
 ## MMSEG 分词算法
@@ -25050,6 +25128,14 @@ echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
 ````
 
 
+
+
+
+## godot excel
+
+[godot-resources-as-sheets-plugin](https://github.com/don-tnowe/godot-resources-as-sheets-plugin_)
+
+[Add a Spreadsheet resource for handling tabular data](https://github.com/godotengine/godot-proposals/issues/13)
 
 
 

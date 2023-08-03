@@ -1241,16 +1241,6 @@ print("Directory '%s' created" %directory)
 
 
 
-### __dirname
-
-```
-dataPath: `${__dirname}/data`  # __dirname是全局对象
-```
-
-
-
-
-
 ### soft link
 
 
@@ -3489,6 +3479,82 @@ print("Total probability of survival for all passengers --> {:.4f}".format(dataf
 ```python
 print(u'输出路径：%s.npy' % data_extract_npy)
 ```
+
+
+
+### moment
+
+```
+# pip install moment
+
+moment.now().add(seconds=3600)
+	# 加一小时
+	
+# pip install -U arrow
+
+arrow.now().__eq__(arrow.now())
+	# 两个时间是否相等
+
+arrow.now().shift(seconds=3600).__ge__(arrow.now())
+	# lt 是小于
+
+arrow.now().shift(seconds=1).timestamp() - arrow.now().timestamp()
+	# 相差多少秒
+
+arw.shift(weeks=+3)
+	# hours minutes
+
+https://arrow.readthedocs.io/en/latest/guide.html
+
+
+https://github.com/arrow-py/arrow/blob/master/arrow/arrow.py#L1762-L1767
+ # comparisons
+
+    def __eq__(self, other: Any) -> bool:
+
+        if not isinstance(other, (Arrow, dt_datetime)):
+            return False
+
+        return self._datetime == self._get_datetime(other)
+
+    def __ne__(self, other: Any) -> bool:
+
+        if not isinstance(other, (Arrow, dt_datetime)):
+            return True
+
+        return not self.__eq__(other)
+
+    def __gt__(self, other: Any) -> bool:
+
+        if not isinstance(other, (Arrow, dt_datetime)):
+            return NotImplemented
+
+        return self._datetime > self._get_datetime(other)
+
+    def __ge__(self, other: Any) -> bool:
+
+        if not isinstance(other, (Arrow, dt_datetime)):
+            return NotImplemented
+
+        return self._datetime >= self._get_datetime(other)
+
+    def __lt__(self, other: Any) -> bool:
+
+        if not isinstance(other, (Arrow, dt_datetime)):
+            return NotImplemented
+
+        return self._datetime < self._get_datetime(other)
+
+    def __le__(self, other: Any) -> bool:
+
+        if not isinstance(other, (Arrow, dt_datetime)):
+            return NotImplemented
+
+        return self._datetime <= self._get_datetime(other)
+
+```
+
+
 
 
 
