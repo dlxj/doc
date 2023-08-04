@@ -3484,6 +3484,74 @@ print(u'输出路径：%s.npy' % data_extract_npy)
 
 ### moment
 
+
+
+```
+if 'You have sent too many messages to the model' in err:
+                match = re.search(r"clears_in':\s*([\d]+)", err)
+                if match:
+                    seconds = int(match.group(1))
+                    clears_time = str( arrow.now('+08:00').shift(seconds=seconds) )
+
+                    choice = int(sys.argv[-1])
+                    account = accounts[choice-1]
+                    account["clears_in"] = seconds
+                    account["clears_time"] = clears_time
+                    
+                    # choice the account that has lessest clears_time
+                    choice_new = -1
+                    seconds_new = -1
+                    min_time = arrow.get(clears_time)
+
+                    for i in range(1, len(accounts)+1):
+                        if i == choice:
+                            continue
+                        account = accounts[i-1]
+                        t = account['clears_time']  # 未来时间, 过了这个时间就可用
+                        if t:
+                           t1 = arrow.get(t)
+                           diff = t1.timestamp() - arrow.now('+08:00').timestamp() # 和现在相差多少秒
+                           diff = int(diff+0.5)
+                           if t1.__lt__(min_time):
+                                min_time = t1
+                                choice_new = i
+                                if diff >= 0:
+                                    seconds_new = diff
+                                elif diff < 0:
+                                    seconds_new = 0
+                        else:
+                           choice_new = i
+                           seconds_new = 0
+                           break
+
+                    if choice_new == -1 and seconds_new == -1:
+                        print(f'##### Attention: sleepping {math.ceil(seconds / 60)} minute now...')
+                        time.sleep(seconds)
+                    elif choice_new != -1 and seconds_new == 0:
+                        # switch account, and go on
+                        print(f'##### Attention: switch account: { accounts[choice_new-1]["username"] }, and go on...')
+                        sys.argv[-1] = str(choice_new)
+                    elif choice_new != -1 and seconds_new > 0:
+                        sys.argv[-1] = str(choice_new)
+                        print(f'##### Attention: switch account: { accounts[choice_new-1]["username"] }, and sleepping {math.ceil(seconds_new / 60)} minute now...')
+                        time.sleep(seconds_new)
+                    else:
+                        raise Exception('unkonw err1.')
+
+                else:
+                    raise Exception('unkonw err2.')
+            elif 'list models failed: internal server error' in err:
+                print(f'##### Error: {err} sleeping 15 minute and try again...')
+                time.sleep(15*60)
+            else:
+                print(f'##### Waring: sleeping 3.5 hour now.')
+                time.sleep(3600*3.5)
+```
+
+
+
+
+
 ```
 # pip install moment
 

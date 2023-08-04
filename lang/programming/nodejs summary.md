@@ -16991,7 +16991,7 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
 
-[godot-resources-as-sheets-plugin csv编辑器](https://github.com/don-tnowe/godot-resources-as-sheets-plugin_)
+[godot-resources-as-sheets-plugin csv编辑器](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
 
@@ -17088,6 +17088,20 @@ WebSocket.gd
 @export_group("Autoconnect")
 @export var autoconnect_mode := AUTOCONNECT_MODE.NONE
 @export var autoconnect_reference : Node = null
+```
+
+
+
+#### debug
+
+[How do you debug editor plugins and tool scripts](https://www.reddit.com/r/godot/comments/11w5nxh/how_do_you_debug_editor_plugins_and_tool_scripts/?rdt=47499)
+
+```
+ProjectSettings
+
+bool debug/gdscript/warnings/exclude_addons = true
+
+If true, scripts in the res://addons folder will not generate warnings.
 ```
 
 
@@ -25139,7 +25153,7 @@ echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
 
 ## godot excel
 
-[godot-resources-as-sheets-plugin](https://github.com/don-tnowe/godot-resources-as-sheets-plugin_)
+[godot-resources-as-sheets-plugin](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
 
