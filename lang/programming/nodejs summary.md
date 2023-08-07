@@ -17612,6 +17612,67 @@ var bar: int = 2 # 静态类型，后面不能给它赋值期他的类型
 
 
 
+#### 判断类型
+
+```
+func try_edit_value(value, type, property_hint) -> bool:
+	if (
+		type != TYPE_ARRAY and type != TYPE_PACKED_STRING_ARRAY
+		and type != TYPE_PACKED_INT32_ARRAY and type != TYPE_PACKED_FLOAT32_ARRAY
+		and type != TYPE_PACKED_INT64_ARRAY and type != TYPE_PACKED_FLOAT64_ARRAY
+	):
+		return false
+
+	if sheet.column_hint_strings[sheet.get_selected_column()][0].begins_with("2/2:"):
+		# For enums, prefer the specialized dock.
+		return false
+
+	_stored_type = type
+	_stored_value = value.duplicate()  # Generic arrays are passed by reference
+	contents_label.text = str(value)
+	
+	var is_generic_array = _stored_type == TYPE_ARRAY and !value.is_typed()
+	button_box.get_child(1).visible = (
+		is_generic_array or value.get_typed_builtin() == TYPE_STRING
+		or _stored_type == TYPE_PACKED_STRING_ARRAY
+	)
+	button_box.get_child(2).visible = (
+		is_generic_array or value.get_typed_builtin() == TYPE_INT
+		or _stored_type == TYPE_PACKED_INT32_ARRAY or _stored_type == TYPE_PACKED_INT64_ARRAY
+	)
+	button_box.get_child(3).visible = (
+		is_generic_array or value.get_typed_builtin() == TYPE_FLOAT
+		or _stored_type == TYPE_PACKED_FLOAT32_ARRAY or _stored_type == TYPE_PACKED_FLOAT64_ARRAY
+	)
+	button_box.get_child(5).visible = (
+		is_generic_array or value.get_typed_builtin() == TYPE_OBJECT
+	)
+
+	if value.get_typed_builtin() == TYPE_OBJECT:
+		if !value_input is EditorResourcePicker:
+			var new_input := EditorResourcePicker.new()
+			new_input.size_flags_horizontal = SIZE_EXPAND_FILL
+			new_input.base_type = value.get_typed_class_name()
+
+			value_input.replace_by(new_input)
+			value_input.free()
+			value_input = new_input
+
+	else:
+		if !value_input is LineEdit:
+			var new_input := LineEdit.new()
+			new_input.size_flags_horizontal = SIZE_EXPAND_FILL
+
+			value_input.replace_by(new_input)
+			value_input.free()
+			value_input = new_input
+
+	return true
+
+```
+
+
+
 
 
 ### setter getter
@@ -18538,9 +18599,9 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 
 
 
-### nodejjs不解压读取文件
+### nodejs不解压读取文件
 
-[nodejjs不解压读取文件](https://www.jianshu.com/p/74fc8e90eab0)
+[nodejs不解压读取文件](https://www.jianshu.com/p/74fc8e90eab0)
 
 
 
@@ -24554,6 +24615,12 @@ cmake --build . --target package
 ```
 
 
+
+### windows内核
+
+[Windows-Kernel-Explorer](https://github.com/AxtMueller/Windows-Kernel-Explorer)
+
+[WKTools](https://github.com/AngleHony/WKTools)
 
 
 
