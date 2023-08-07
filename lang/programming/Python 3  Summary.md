@@ -1742,6 +1742,12 @@ class EAPIrt2PLModel(object):
                 dest_width = dest_width.item()
                 dest_height = dest_height.item() # 张量中加不加item()会有微妙的差别 
             # doc\lang\programming\pytorch\文本检测\DBNET\main.py
+            
+            
+            elif isinstance(e, json.JSONDecodeError):
+                print(f'##### Error: JSON parse fail. sleeping 15 minute and try again...')
+                time.sleep(15*60)            
+
 ```
 
 
