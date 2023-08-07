@@ -25153,7 +25153,9 @@ echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
 
 ## godot excel
 
-[godot-resources-as-sheets-plugin](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
+[godot-excel-reader 真正的excel](https://github.com/LaoDie1/godot-excel-reader)
+
+[godot-resources-as-sheets-plugin 编辑资源](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
 
