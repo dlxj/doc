@@ -24311,6 +24311,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
 
+### WPF
+
+[WPF 实现裁剪图像](https://v2ex.com/t/950084#)
+
 
 
 ## Rust Monads
