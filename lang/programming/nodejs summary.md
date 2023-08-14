@@ -24660,6 +24660,22 @@ meson install -C build
 
 
 
+##### mpv-winbuild-cmake
+
+[mpv-winbuild-cmake](https://github.com/shinchiro/mpv-winbuild-cmake)
+
+```
+win键点一下 -> MSYS2 MSYS
+	# MSYS2 MSYS 只能是这个，不要什么 32 64
+  
+pacman -S base-devel cmake gcc yasm nasm git mercurial subversion gyp tar gmp-devel mpc-devel mpfr-devel python zlib-devel unzip zip p7zip meson libunistring5
+	
+```
+
+
+
+
+
 
 
 ### windows内核
