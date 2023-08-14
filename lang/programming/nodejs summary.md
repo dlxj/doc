@@ -24605,6 +24605,24 @@ int main(void)
 
 - [mpv lazy](https://github.com/hooke007/MPV_lazy/discussions/120)
 
+```
+# ubuntu22.04
+sudo apt-get install -y build-essential cmake git pkg-config \
+    libgtk-3-dev libglfw3-dev libfreetype6-dev libmpv-dev
+    
+git clone https://github.com/tsl0922/ImPlay.git && \
+cd ImPlay && mkdir build && cd build && \
+cmake -DCMAKE_BUILD_TYPE=RELEASE ..  && \
+cmake --build .  && \
+cmake --install .
+	# 成功运行
+
+```
+
+
+
+
+
 #### uosc lua ui
 
 [uosc lua UI for mpv](https://github.com/tomasklaen/uosc)
