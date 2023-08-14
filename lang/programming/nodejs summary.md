@@ -24605,6 +24605,16 @@ int main(void)
 
 - [mpv lazy](https://github.com/hooke007/MPV_lazy/discussions/120)
 
+#### uosc lua ui
+
+[uosc lua UI for mpv](https://github.com/tomasklaen/uosc)
+
+
+
+#### Memento
+
+[mpv for studying Japanese](https://github.com/ripose-jp/Memento)
+
 
 
 ```
@@ -24619,6 +24629,36 @@ cmake --build . --target package
   # This will build a MSI installer and a portable ZIP.
   
 ```
+
+
+
+#### mpv
+
+[问问题](https://github.com/mpv-player/mpv/issues/12158)
+
+```
+# 打开 minw64 命令行
+echo $MINGW_PACKAGE_PREFIX
+	--> mingw-w64-x86_64
+	# 它是已经预定义的
+
+pacman -Syu && \
+pacman -Su
+
+pacman -S git $MINGW_PACKAGE_PREFIX-{python,pkgconf,gcc,meson} && \
+pacman -S $MINGW_PACKAGE_PREFIX-{ffmpeg,libjpeg-turbo,luajit}
+
+
+git clone https://github.com/mpv-player/mpv.git && \
+cd mpv && \ 
+meson setup build -Dlibmpv=true --prefix=$MSYSTEM_PREFIX
+
+meson compile -C build
+meson install -C build
+
+```
+
+
 
 
 
