@@ -24671,10 +24671,43 @@ pacman -S $MINGW_PACKAGE_PREFIX-{ffmpeg,libjpeg-turbo,luajit}
 
 git clone https://github.com/mpv-player/mpv.git && \
 cd mpv && \ 
-meson setup build -Dlibmpv=true --prefix=$MSYSTEM_PREFIX
-
-meson compile -C build
+meson setup build -Dlibmpv=true --prefix=$MSYSTEM_PREFIX && \
+meson compile -C build && \
 meson install -C build
+
+
+Installing player/mpv.com to C:/msys64/mingw64/bin
+Installing libmpv-2.dll to C:/msys64/mingw64/bin
+Installing libmpv.dll.a to C:/msys64/mingw64/lib
+Installing mpv.exe to C:/msys64/mingw64/bin
+Installing C:/msys64/home/i/mpv/libmpv/client.h to C:/msys64/mingw64/include/mpv/
+Installing C:/msys64/home/i/mpv/libmpv/render.h to C:/msys64/mingw64/include/mpv/
+Installing C:/msys64/home/i/mpv/libmpv/render_gl.h to C:/msys64/mingw64/include/mpv/
+Installing C:/msys64/home/i/mpv/libmpv/stream_cb.h to C:/msys64/mingw64/include/mpv/
+Installing C:/msys64/home/i/mpv/build/meson-private/mpv.pc to C:/msys64/mingw64/lib/pkgconfig
+Installing C:/msys64/home/i/mpv/etc/mpv.conf to C:/msys64/mingw64/share/doc/mpv
+Installing C:/msys64/home/i/mpv/etc/input.conf to C:/msys64/mingw64/share/doc/mpv
+Installing C:/msys64/home/i/mpv/etc/mplayer-input.conf to C:/msys64/mingw64/share/doc/mpv
+Installing C:/msys64/home/i/mpv/etc/restore-old-bindings.conf to C:/msys64/mingw64/share/doc/mpv
+Installing C:/msys64/home/i/mpv/etc/mpv.bash-completion to C:/msys64/mingw64/share/bash-completion/c
+ompletions
+Installing C:/msys64/home/i/mpv/etc/_mpv.zsh to C:/msys64/mingw64/share/zsh/site-functions
+Installing C:/msys64/home/i/mpv/etc/mpv.desktop to C:/msys64/mingw64/share/applications
+Installing C:/msys64/home/i/mpv/etc/mpv.metainfo.xml to C:/msys64/mingw64/share/metainfo
+Installing C:/msys64/home/i/mpv/etc/encoding-profiles.conf to C:/msys64/mingw64/etc/mpv
+Installing C:/msys64/home/i/mpv/etc/mpv-icon-8bit-16x16.png to C:/msys64/mingw64/share/icons/hicolor
+/16x16/apps
+Installing C:/msys64/home/i/mpv/etc/mpv-icon-8bit-32x32.png to C:/msys64/mingw64/share/icons/hicolor
+/32x32/apps
+Installing C:/msys64/home/i/mpv/etc/mpv-icon-8bit-64x64.png to C:/msys64/mingw64/share/icons/hicolor
+/64x64/apps
+Installing C:/msys64/home/i/mpv/etc/mpv-icon-8bit-128x128.png to C:/msys64/mingw64/share/icons/hicol
+or/128x128/apps
+Installing C:/msys64/home/i/mpv/etc/mpv-gradient.svg to C:/msys64/mingw64/share/icons/hicolor/scalab
+le/apps
+Installing C:/msys64/home/i/mpv/etc/mpv-symbolic.svg to C:/msys64/mingw64/share/icons/hicolor/symbol
+ic/apps
+
 
 ```
 
