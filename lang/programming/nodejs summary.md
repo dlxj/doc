@@ -24636,6 +24636,8 @@ cmake --build . --target package
 
 [问问题](https://github.com/mpv-player/mpv/issues/12158)
 
+[build on ubuntu](https://github.com/mpv-player/mpv-build/issues/131)
+
 ```
 # 打开 minw64 命令行
 echo $MINGW_PACKAGE_PREFIX
