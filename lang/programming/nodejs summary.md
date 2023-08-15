@@ -21504,6 +21504,18 @@ git clone https://huggingface.co/Linly-AI/Chinese-LLaMA-2-13B-hf
 
 
 ```
+# VMWare 中的 win10 用　NAT 模式，在里面开 Proxifier 连宿主机的 shocks5 代理，实测可行。
+　 # 但是反过来实测不可行
+
+
+```
+
+
+
+
+
+```
+# 行不通
 # MSYS2 安装代理，然后用 Proxifier 连这个代理，全局上网就很稳
 pacman -S python3-pip
 
