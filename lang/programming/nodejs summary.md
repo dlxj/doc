@@ -24621,6 +24621,18 @@ cmake --install .
 
 
 
+```
+# win10 + MSYS2 MINGW64
+pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype && \
+git clone https://github.com/tsl0922/ImPlay.git && \
+cd ImPlay && mkdir build && cd build && \
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON ..  && \
+cmake --build . --target package
+
+```
+
+
+
 
 
 #### uosc lua ui
