@@ -24649,6 +24649,14 @@ git clone https://github.com/tsl0922/ImPlay.git && \
 cd ImPlay && mkdir build && cd build && \
 cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON .. && \
 cmake --build . --target package
+	# C:/msys64/home/Administrator/ImPlay/build/ImPlay-1.4.0-win64.msi generated.
+	# 成功生成安装包 
+	
+
+编译好以后直接把 C:\msys64\mingw64\bin 这里面的所有 dll 复制到 C:\msys64\home\Administrator\ImPlay\build 双击 ImPlay.exe 就可以正常运行
+
+
+	
 ```
 
 
