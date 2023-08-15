@@ -24626,7 +24626,23 @@ cmake --install .
 [Packaging Requirements](https://github.com/keepassxreboot/keepassxc/wiki/Set-up-Build-Environment-on-Windows)
 
 ```
+To turn on Microsoft .NET Framework 3.5.1 on Windows 7:
+Select Start > Control Panel > Programs > Programs and Features.
+Select Turn Windows features on or off.
+If not already installed, select Microsoft .NET Framework 3.5.1 and click OK.
+Restart the machine when prompted.
+```
+
+
+
+```
 # win10
+# 打包需要先安装 https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311.exe
+	# 它需要打开 .NET Framework 3.5.1 这个可选项(看上面一节) 
+
+export PATH="${PATH}:/C/Program Files (x86)/WiX Toolset v3.11/bin"
+	# wix311 安装在这里
+
 pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype
 
 git clone https://github.com/tsl0922/ImPlay.git && \
