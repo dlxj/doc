@@ -21487,9 +21487,41 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 
 
-## Chinese-ChatLLaMA
+## Linly-Chinese-LLaMA-2
 
-[Chinese-ChatLLaMA](https://github.com/ydli-ai/Chinese-ChatLLaMA)  中英日三语，包话训练代码？
+[Linly-Chinese-LLaMA-2](https://github.com/CVI-SZU/Linly)  中英日三语，包话训练代码？
+
+```
+mount -t ntfs-3g /dev/sda1 /mnt
+	# .77 挂载 512G 硬盘
+
+dnf install git-lfs
+
+git lfs install
+git clone https://huggingface.co/Linly-AI/Chinese-LLaMA-2-13B-hf
+```
+
+
+
+```
+# MSYS2 安装代理，然后用 Proxifier 连这个代理，全局上网就很稳
+pacman -S python3-pip
+
+pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+shadowsocksr-cli --remove-url https://tyrantlucifer.com/ssr/ssr.txt
+
+shadowsocksr-cli --add-url https://sub.ftwssr.win/sub/?sub=1
+	# GepPNKAFVOYAcaqf
+
+外面访问不到 它的端口？改用win10 虚拟机算了
+
+
+```
+
+
+
+
 
 ```
 7B用int8就占用了7G显存，梯度必须16bit甚至要32bit
@@ -24317,6 +24349,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [WPF UI](https://github.com/lepoco/wpfui)
 
+[HandyControl](https://github.com/HandyOrg/HandyControl)
+
 
 
 ## Rust Monads
@@ -24621,13 +24655,38 @@ cmake --install .
 
 
 
+[Packaging Requirements](https://github.com/keepassxreboot/keepassxc/wiki/Set-up-Build-Environment-on-Windows)
+
 ```
-# win10 + MSYS2 MINGW64
-pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype && \
+To turn on Microsoft .NET Framework 3.5.1 on Windows 7:
+Select Start > Control Panel > Programs > Programs and Features.
+Select Turn Windows features on or off.
+If not already installed, select Microsoft .NET Framework 3.5.1 and click OK.
+Restart the machine when prompted.
+```
+
+
+
+```
+# win10
+# 打包需要先安装 https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311.exe
+	# 它需要打开 .NET Framework 3.5.1 这个可选项(看上面一节) 
+
+export PATH="${PATH}:/C/Program Files (x86)/WiX Toolset v3.11/bin"
+	# wix311 安装在这里
+
+pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype
+
 git clone https://github.com/tsl0922/ImPlay.git && \
 cd ImPlay && mkdir build && cd build && \
-cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON ..  && \
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON .. && \
 cmake --build . --target package
+	# C:/msys64/home/Administrator/ImPlay/build/ImPlay-1.4.0-win64.msi generated.
+	# 成功生成安装包 
+	
+
+编译好以后直接把 C:\msys64\mingw64\bin 这里面的所有 dll 复制到 C:\msys64\home\Administrator\ImPlay\build 双击 ImPlay.exe 就可以正常运行
+
 
 ```
 
@@ -24638,6 +24697,14 @@ cmake --build . --target package
 #### uosc lua ui
 
 [uosc lua UI for mpv](https://github.com/tomasklaen/uosc)
+
+- [mpv 配置文件在哪](https://mpv.io/manual/master/#files)
+
+  ```
+  C:\users\USERNAME\AppData\Roaming\mpv\mpv.conf
+  ```
+
+  
 
 
 
@@ -24722,6 +24789,12 @@ ic/apps
 
 
 ```
+
+
+
+##### vscode task.json 编译
+
+[VScode tasks.json和launch.json的设置](https://zhuanlan.zhihu.com/p/92175757)
 
 
 
