@@ -21492,6 +21492,20 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 [Linly-Chinese-LLaMA-2](https://github.com/CVI-SZU/Linly)  中英日三语，包话训练代码？
 
 ```
+mount -t ntfs-3g /dev/sda1 /mnt
+	# .77 挂载 512G 硬盘
+
+dnf install git-lfs
+
+git lfs install
+git clone https://huggingface.co/Linly-AI/Chinese-LLaMA-2-13B-hf
+```
+
+
+
+
+
+```
 7B用int8就占用了7G显存，梯度必须16bit甚至要32bit
 
 24G训练7B估计勉勉强强，用int8，PEFT+LoRA
