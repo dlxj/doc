@@ -21502,6 +21502,10 @@ git clone https://huggingface.co/Linly-AI/Chinese-LLaMA-2-13B-hf
 
 git restore --source=HEAD :/
 	# retry
+	
+https://zhuanlan.zhihu.com/p/37332255
+	# 调大虚拟内存就没错了	
+	
 
 git config --global pack.windowMemory 50m
 git config --global http.postbuffer 524288000
