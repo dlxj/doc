@@ -21499,6 +21499,15 @@ dnf install git-lfs
 
 git lfs install
 git clone https://huggingface.co/Linly-AI/Chinese-LLaMA-2-13B-hf
+
+git restore --source=HEAD :/
+	# retry
+
+git config --global pack.windowMemory 50m
+git config --global http.postbuffer 524288000
+
+https://www.moguf.com/post/gitoutofmemory
+
 ```
 
 
