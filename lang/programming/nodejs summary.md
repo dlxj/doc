@@ -24656,7 +24656,6 @@ cmake --build . --target package
 编译好以后直接把 C:\msys64\mingw64\bin 这里面的所有 dll 复制到 C:\msys64\home\Administrator\ImPlay\build 双击 ImPlay.exe 就可以正常运行
 
 
-	
 ```
 
 
