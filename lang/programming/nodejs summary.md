@@ -24623,6 +24623,8 @@ cmake --install .
 
 
 
+[Packaging Requirements](https://github.com/keepassxreboot/keepassxc/wiki/Set-up-Build-Environment-on-Windows)
+
 ```
 # win10
 pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype
