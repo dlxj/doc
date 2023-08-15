@@ -21503,6 +21503,24 @@ git clone https://huggingface.co/Linly-AI/Chinese-LLaMA-2-13B-hf
 
 
 
+```
+# MSYS2 安装代理，然后用 Proxifier 连这个代理，全局上网就很稳
+pacman -S python3-pip
+
+pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+shadowsocksr-cli --remove-url https://tyrantlucifer.com/ssr/ssr.txt
+
+shadowsocksr-cli --add-url https://sub.ftwssr.win/sub/?sub=1
+	# GepPNKAFVOYAcaqf
+
+外面访问不到 它的端口？改用win10 虚拟机算了
+
+
+```
+
+
+
 
 
 ```
