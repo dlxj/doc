@@ -24623,11 +24623,31 @@ cmake --install .
 
 
 
+```
+# win10
+pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype
+
+git clone https://github.com/tsl0922/ImPlay.git && \
+cd ImPlay && mkdir build && cd build && \
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON .. && \
+cmake --build . --target package
+```
+
+
+
 
 
 #### uosc lua ui
 
 [uosc lua UI for mpv](https://github.com/tomasklaen/uosc)
+
+- [mpv 配置文件在哪](https://mpv.io/manual/master/#files)
+
+  ```
+  C:\users\USERNAME\AppData\Roaming\mpv\mpv.conf
+  ```
+
+  
 
 
 
@@ -24712,6 +24732,12 @@ ic/apps
 
 
 ```
+
+
+
+##### vscode task.json 编译
+
+[VScode tasks.json和launch.json的设置](https://zhuanlan.zhihu.com/p/92175757)
 
 
 
