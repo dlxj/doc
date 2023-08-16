@@ -21570,6 +21570,13 @@ pip3.9 download -r requirements.txt -d /mnt/ChatGLM2-6B/whl
 	# 成功下载离线安装包
 		# pip3.9 uninstall -r requirements.txt -y
 
+
+autodl 实战：
+
+pip3 freeze >i.txt && \
+pip3 uninstall -r i.txt -y
+	# 卸载所有已安装的包
+
 pip3 download -r requirements.txt -d /root/ChatGLM2-6B/whl -i https://pypi.tuna.tsinghua.edu.cn/simple 
 	# autodl 实战
 	# 成功下载
@@ -21577,7 +21584,33 @@ pip3 download -r requirements.txt -d /root/ChatGLM2-6B/whl -i https://pypi.tuna.
 pip3 install --no-index --find-links=/root/ChatGLM2-6B/whl -r /root/ChatGLM2-6B/requirements.txt
 
 
+pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+	# 普通安装
+	# 选mini conda python10 ubantu 22.04 cuda 11.8 成功安装
+	
+
 pip3 install --no-index --find-links=/root/whl -r /root/whl/requirments.txt
+
+
+# 阿里云 webdav 上传
+https://github.com/tickstep/aliyunpan/blob/main/docs/manual.md#1-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96RefreshToken
+
+sudo curl -fsSL http://file.tickstep.com/rpm/aliyunpan/aliyunpan.repo | sudo tee /etc/yum.repos.d/tickstep-aliyunpan.repo > /dev/null && sudo yum install aliyunpan -y
+	# 这样安装
+
+从网页端获取 refresh_token
+
+login
+	# 输入刚才的 token
+ls
+	# 列出目录
+
+mkdir chatglm2-6b-32k
+	# 创建目录
+
+upload /mnt/chatglm2-6b-32k /
+	# 上传整个文件夹到阿里盘的根目录
+
 
 
 pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
