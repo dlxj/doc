@@ -21574,6 +21574,28 @@ shadowsocksr-cli --add-url https://sub.ftwssr.win/sub/?sub=1
 
 [增加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
 
+```
+dd if=/dev/zero of=/mnt/swapfile bs=1M count=20480
+	# 20G 空文件
+
+mkswap /mnt/swapfile
+	# 格式化交换文件
+
+swapon /mnt/swapfile
+	# 挂载交换文件
+
+vi /etc/fstab
+/mnt/swapfile swap swap defaults 0 0
+	# 加在后面，开机自动加载
+	
+free -h
+	# 查看内存大小
+
+
+```
+
+
+
 
 
 
