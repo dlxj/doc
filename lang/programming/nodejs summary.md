@@ -21589,6 +21589,24 @@ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# 选mini conda python10 ubantu 22.04 cuda 11.8 成功安装
 	
 
+pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
+	# 32K 需要的
+
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/chatglm2-6b-32k", trust_remote_code=True)
+model = AutoModel.from_pretrained("/root/autodl-tmp/chatglm2-6b-32k", trust_remote_code=True).half().cuda()
+model = model.eval()
+response, history = model.chat(tokenizer, "你好", history=[])
+print(response)
+response, history = model.chat(tokenizer, "晚上睡不着应该怎么办", history=history)
+print(response)
+
+
+
+# https://github.com/fatedier/frp
+
+
+
 pip3 install --no-index --find-links=/root/whl -r /root/whl/requirments.txt
 
 
