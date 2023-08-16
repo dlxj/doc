@@ -21539,6 +21539,29 @@ AutoGPTQ 好像还不支持 LLaMA2
 
 [chatglm2-6b-32k](https://huggingface.co/THUDM/chatglm2-6b-32k)
 
+模型可以在约20G显存的情况下处理32K长度的上下文（FP/BF16格式）
+
+```
+git lfs install
+git clone https://huggingface.co/THUDM/chatglm2-6b-32k
+	# GIT_LFS_SKIP_SMUDGE=1 不要下载大文件
+	
+git restore --source=HEAD :/
+	# 恢复下载
+
+
+pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
+pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
+	# 只下载不安装
+
+
+```
+
+
+
+
+
 
 
 #### 微调
