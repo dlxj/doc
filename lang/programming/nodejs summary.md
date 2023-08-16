@@ -21566,10 +21566,16 @@ pip3.9 config set global.cache-dir "/mnt/tmp"
 	--> Writing to /root/.config/pip/pip.conf
 	
 
-
 pip3.9 download -r requirements.txt -d /mnt/ChatGLM2-6B/whl 
-	# pip3.9 uninstall -r requirements.txt -y
+	# 成功下载离线安装包
+		# pip3.9 uninstall -r requirements.txt -y
+
+pip3 download -r requirements.txt -d /root/ChatGLM2-6B/whl -i https://pypi.tuna.tsinghua.edu.cn/simple 
+	# autodl 实战
+	# 成功下载
 	
+
+pip3 install --no-index --find-links=/root/whl -r /root/whl/requirments.txt
 
 
 pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
