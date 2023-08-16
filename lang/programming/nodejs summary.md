@@ -21541,6 +21541,12 @@ AutoGPTQ 好像还不支持 LLaMA2
 
 
 
+#### 微调
+
+[微调](https://zhuanlan.zhihu.com/p/643531454)
+
+
+
 ```
 # 行不通
 # MSYS2 安装代理，然后用 Proxifier 连这个代理，全局上网就很稳
