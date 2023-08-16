@@ -21552,10 +21552,37 @@ git restore --source=HEAD :/
 
 pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
+
+pip3 install --download /mnt/ChatGLM2-6B/whl -r requirements.txt
+
+
 pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
 	# 只下载不安装
 
 
+```
+
+
+
+```
+1、临时使用
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+2、永久更改pip源
+升级 pip 到最新的版本 (>=10.0.0) 后进行配置：
+pip install pip -U pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+如果您到 pip 默认源的网络连接较差，临时使用镜像站来升级 pip：
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
+3、离线安装python3及依赖包
+将pip3 list的信息生成文档
+pip3 freeze >requirements.txt
+将requirement.txt文档中列出的模块信息下载到指定目录
+pip3 download -r requirements.txt -d /tmp/packages/ #推荐使用 或 pip3 install --download /tmp/packages -r requirements.txt
+将下载好的模块copy到离线服务器
+pip3 install xxx.tar.gz pip3 install xxx.whl pip3 install xxx.xx #是什么格式就安装什么格式的文件即可。
+如果有要安装的包和依赖包有多个，且不知道先装哪个，那么就把这些文件放在一个目录中，然后进入该目录使用下面命令一起安装
+pip3 install ./*
+批量离线安装requirments.txt中的模块，需要将下载好的模块和requirments.txt都copy到一个目录，然后执行下面的命令
+pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 ```
 
 
