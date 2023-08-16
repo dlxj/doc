@@ -21525,6 +21525,20 @@ https://www.moguf.com/post/gitoutofmemory
 
 
 
+### AutoGPTQ 量化
+
+[AutoGPTQ 量化](https://github.com/PanQiWei/AutoGPTQ/blob/main/README_zh.md) [1](https://github.com/PanQiWei/AutoGPTQ/issues/252)
+
+看模型的配置文件，只要它是 "model_type": "llama" 就可以支持。Linly 应该也可以
+
+AutoGPTQ 好像还不支持 LLaMA2
+
+
+
+### chatglm2-6b-32k
+
+[chatglm2-6b-32k](https://huggingface.co/THUDM/chatglm2-6b-32k)
+
 
 
 ```
@@ -21553,6 +21567,14 @@ shadowsocksr-cli --add-url https://sub.ftwssr.win/sub/?sub=1
 
 24G训练7B估计勉勉强强，用int8，PEFT+LoRA
 ```
+
+
+
+### 增加虚拟内存
+
+[增加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
+
+
 
 
 
