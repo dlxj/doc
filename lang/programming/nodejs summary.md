@@ -21574,6 +21574,8 @@ pip3 download -r requirements.txt -d /root/ChatGLM2-6B/whl -i https://pypi.tuna.
 	# autodl 实战
 	# 成功下载
 	
+pip3 install --no-index --find-links=/root/ChatGLM2-6B/whl -r /root/ChatGLM2-6B/requirements.txt
+
 
 pip3 install --no-index --find-links=/root/whl -r /root/whl/requirments.txt
 
