@@ -21553,7 +21553,12 @@ git restore --source=HEAD :/
 pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 
-pip3 install --download /mnt/ChatGLM2-6B/whl -r requirements.txt
+pip3.9 cache purge
+	# 删除所有缓存文件
+
+pip3.9 download -r requirements.txt -d /mnt/ChatGLM2-6B/whl 
+	# pip3.9 uninstall -r requirements.txt -y
+	
 
 
 pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
