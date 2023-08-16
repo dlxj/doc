@@ -21556,6 +21556,17 @@ pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2ht
 pip3.9 cache purge
 	# 删除所有缓存文件
 
+/root/.cache/pip/
+	# 缓存目录在这
+	pip3.9 config list
+		# 没有输出
+
+pip3.9 config set global.cache-dir "/mnt/tmp"
+	# 成功设置缓存目录
+	--> Writing to /root/.config/pip/pip.conf
+	
+
+
 pip3.9 download -r requirements.txt -d /mnt/ChatGLM2-6B/whl 
 	# pip3.9 uninstall -r requirements.txt -y
 	

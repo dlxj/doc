@@ -88,6 +88,48 @@ pip install --upgrade ipykernel -i https://pypi.douban.com/simple
 
 
 
+## pip只下载不安装
+
+```
+# 看这里 nodejs summary.md chatglm2-6b-32k 这一节
+git lfs install
+git clone https://huggingface.co/THUDM/chatglm2-6b-32k
+	# GIT_LFS_SKIP_SMUDGE=1 不要下载大文件
+	
+git restore --source=HEAD :/
+	# 恢复下载
+
+
+pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
+
+pip3.9 cache purge
+	# 删除所有缓存文件
+
+/root/.cache/pip/
+	# 缓存目录在这
+	pip3.9 config list
+		# 没有输出
+
+pip3.9 config set global.cache-dir "/mnt/tmp"
+	# 成功设置缓存目录
+	--> Writing to /root/.config/pip/pip.conf
+	
+
+
+pip3.9 download -r requirements.txt -d /mnt/ChatGLM2-6B/whl 
+	# pip3.9 uninstall -r requirements.txt -y
+	
+
+
+pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
+	# 只下载不安装
+```
+
+
+
+
+
 ## Python for ubuntu20.04
 
 ```
