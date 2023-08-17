@@ -21642,7 +21642,8 @@ mkdir chatglm2-6b-32k
 upload /mnt/chatglm2-6b-32k /
 	# 上传整个文件夹到阿里盘的根目录
 
-
+upload /mnt/text2vec-large-chinese /
+	# 上传 embeding 模型
 
 pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
 	# 只下载不安装
