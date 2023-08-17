@@ -21588,6 +21588,9 @@ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# 普通安装
 	# 选mini conda python10 ubantu 22.04 cuda 11.8 成功安装
 	
+pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+	# win10 这样装，成功运行
+
 
 pip install protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gradio mdtex2html sentencepiece accelerate
 	# 32K 需要的
@@ -21600,6 +21603,16 @@ response, history = model.chat(tokenizer, "你好", history=[])
 print(response)
 response, history = model.chat(tokenizer, "晚上睡不着应该怎么办", history=history)
 print(response)
+
+API 调用
+pip3.10 install fastapi uvicorn
+
+直接运行 api.py
+
+curl -X POST "http://127.0.0.1:8000" \
+     -H 'Content-Type: application/json' \
+     -d '{"prompt": "你好", "history": []}'
+成功
 
 
 
