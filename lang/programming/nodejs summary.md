@@ -21675,6 +21675,72 @@ pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 
 
 
+#### embeding
+
+```
+
+https://huggingface.co/GanymedeNil/text2vec-large-chinese
+
+用text2vec-large-chinese模型，使用langchain的HuggingFaceEmbeddings加载调用
+
+
+我尝试了直接使用ChatGLM的transformer部分输出文本的embedding，输出4096位embedding，使用相似度算法，实测效果不及chatyuan-v2和chinese_roberta_wwm_ext_large
+
+
+embedding 一般需要使用专门的模型，用生成模型的 embedding 结果不会太好。
+
+transformers 库加载的模型 model 应该也继承了 self.transformer.word_embeddings(input_ids) 这个方法吧？可以试试先把输入的字符串句子通过 tokenizer.decode() 方法转换成 token 的索引，再把这个索引输入到 model.transformer.word_embeddings() 里，应该就可以得到每个 token 的向量了。如果只想要句向量，可以看看 glm 论文里有没有什么特殊 token 能够包含句子信息的，或者对每个 token 的词向量再做一些注意力机制的操作，类似于 bert 的 [CLS] 这个特殊 token 就一般当作句向量。
+```
+
+
+
+```
+
+from langchain.embeddings.huggingface import HuggingFaceEmbeddings
+
+# patch HuggingFaceEmbeddings to make it hashable
+def _embeddings_hash(self):
+    return hash(self.model_name)
+
+HuggingFaceEmbeddings.__hash__ = _embeddings_hash
+
+embedding_device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+
+    self.embeddings = HuggingFaceEmbeddings(model_name=embedding_model_dict[embedding_model],
+                                                model_kwargs={'device': embedding_device})
+
+
+# 抱抱脸的嵌入模型应该都是这样用的
+import os
+import torch
+from transformers import AutoTokenizer, AutoModel
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+
+# Mean Pooling - Take attention mask into account for correct averaging
+def mean_pooling(model_output, attention_mask):
+    token_embeddings = model_output[0]  # First element of model_output contains all token embeddings
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+    return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+
+
+# Load model from HuggingFace Hub
+tokenizer = AutoTokenizer.from_pretrained('shibing624/text2vec-base-chinese')
+model = AutoModel.from_pretrained('shibing624/text2vec-base-chinese')
+sentences = ['如何更换花呗绑定银行卡', '花呗更改绑定银行卡']
+# Tokenize sentences
+encoded_input = tokenizer(sentences, padding=True, truncation=True, return_tensors='pt')
+
+# Compute token embeddings
+with torch.no_grad():
+    model_output = model(**encoded_input)
+# Perform pooling. In this case, max pooling.
+sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
+print("Sentence embeddings:")
+print(sentence_embeddings)
+```
+
 
 
 
