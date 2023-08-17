@@ -6333,7 +6333,8 @@ app = Flask(__name__)
 def frequencyStatistics():
     print(request.json, type(request.json))
     return jsonify(iJson.parse("[1,2,3]"))
-https://blog.csdn.net/weixin_36380516/java/article/details/80008496
+
+
 ```
 
 

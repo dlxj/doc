@@ -21763,6 +21763,8 @@ openAI 的Embedding模型数据更多是基于普遍性数据训练，如果你�
 
 [自已训练embeding](https://github.com/shibing624/text2vec)
 
+[文本匹配模型实验报告-text2vec  必看](https://github.com/shibing624/text2vec/blob/master/docs/model_report.md)
+
 
 
 #### 微调
