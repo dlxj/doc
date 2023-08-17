@@ -21743,6 +21743,25 @@ print(sentence_embeddings)
 
 
 
+```
+基于自训练的Embedding模型
+openAI 的Embedding模型数据更多是基于普遍性数据训练，如果你要做问答的领域太过于专业有可能就会出现查询数据不准确的情况。
+
+解决方案是自训练 Embedding 模型，在这里我推荐一个项目 text2vec ，shibing624 已经给出了一个模型基于 CoSENT + MacBERT +STS-B，shibing624/text2vec-base-chinese。
+
+我也在前些日子训练了基于 CoSENT + LERT + STS-B的两个模型一个隐层大小是1024的text2vec-large-chinese
+
+
+基于 Fine-tune
+目前我自身测试下来，使用问答数据集对GPT模型进行Fine-tune后，对于该类问题的准确性大幅提高。你可以理解为GPT通过大量的专业领域数据的训练后，当你对它提问的时候会更像在和这个领域的专家对话，然后配合调小接口中temperature参数，可以得到更确定的结果。
+```
+
+
+
+##### 自已训练embeding
+
+[自已训练embeding](https://github.com/shibing624/text2vec)
+
 
 
 #### 微调
