@@ -18623,6 +18623,14 @@ if OS.has_feature('JavaScript'):
 
 
 
+## subtitle
+
+[godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles)
+
+[godot-subtitles](https://github.com/FEDE0D/godot-subtitles/)
+
+
+
 ## moho导入
 
 [godot_moho_importer](https://github.com/jpdurigan/godot_moho_importer)
