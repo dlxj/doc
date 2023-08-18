@@ -21865,6 +21865,13 @@ local_ip = 127.0.0.1
 local_port = 3389  # 远程桌面端口
 remote_port = 7004 #这个是远程桌面连接主机的时候输入的ip后加上的端口
 
+# 或者这样
+[RDP]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389
+remote_port = 7004
+
 # 启动服务端
 ./frps -c ./frps.ini
 
@@ -21884,6 +21891,11 @@ cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"
 +mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit
 +:begin
 cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"
+
+
+Windows 10/11 系统是可以开启 openssh server 的。
+
+
 
 ```
 
