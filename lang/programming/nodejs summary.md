@@ -18633,6 +18633,8 @@ if OS.has_feature('JavaScript'):
 
 - Godot_v3.2 正常运行
 
+[Icon-Animations](https://github.com/univeous/Icon-Animations)
+
 
 
 ## moho导入
