@@ -72,6 +72,88 @@ RAID卡不支持同时对两个RAID组进行重新配置（即“Reconfigure Vir
 
 
 
+# frp
+
+[使用frp实现windows远程桌面连接](https://blog.ligengxin.me/posts/frp-windows-remote/) [s](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_linux_amd64.tar.gz) [c](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_windows_amd64.zip)
+
+[Frp-notes](https://github.com/onekb/Frp-notes)
+
+
+
+```
+# 服务端配置
+frps.ini
+[common]
+bind_port = 7000 # 服务器端口 客户端必须配置一样的端口
+vhost_http_port = 8880
+	# 8880 是客户端 api 接口
+
+# 客户端配置
+frpc.ini 
+[common]
+server_addr = 服务器ip
+server_port = 7000
+[web]
+type = http
+local_port = 8880
+custom_domains = 127.0.0.1
+	# 没有域名就先这样
+	
+	
+	
+
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389  # 远程桌面端口
+remote_port = 7004 #这个是远程桌面连接主机的时候输入的ip后加上的端口
+
+# 或者这样
+[RDP]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389
+remote_port = 7004
+
+# 或着开放 http 端口
+[web]
+type = http
+local_port = 8880
+custom_domains = 127.0.0.1
+	# 没有域名就先这样
+
+
+
+# 启动服务端
+./frps -c ./frps.ini
+
+# 启动客户端
+./frpc -c frpc.ini
+
+
+# 客户端开机自启 frp 
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 目录下写一个bat文件
+
+cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"  
+
+
+# 静默后台运行
++@echo off
++if "%1" == "h" goto begin
++mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit
++:begin
+cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"
+
+
+Windows 10/11 系统是可以开启 openssh server 的。
+
+
+
+```
+
+
+
 
 
 

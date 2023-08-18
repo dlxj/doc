@@ -21842,7 +21842,9 @@ free -h
 
 ### frp windows远程桌面
 
-[使用frp实现windows远程桌面连接](https://blog.ligengxin.me/posts/frp-windows-remote/) [s](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_linux_amd64.tar.gz) 
+[使用frp实现windows远程桌面连接](https://blog.ligengxin.me/posts/frp-windows-remote/) [s](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_linux_amd64.tar.gz) [c](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_windows_amd64.zip)
+
+[Frp-notes](https://github.com/onekb/Frp-notes)
 
 
 
@@ -21851,14 +21853,23 @@ free -h
 frps.ini
 [common]
 bind_port = 7000 # 服务器端口 客户端必须配置一样的端口
-dashboard_user = username #这个frp控制面板用户名  一般用不到
-dashboard_port = 7500 #这个frp控制面板的端口 一般用不到
+vhost_http_port = 8880
+	# 8880 是客户端 api 接口
 
 # 客户端配置
 frpc.ini 
 [common]
 server_addr = 服务器ip
-server_port = 7000 # 确保服务器该端口是可用的
+server_port = 7000
+[web]
+type = http
+local_port = 8880
+custom_domains = 127.0.0.1
+	# 没有域名就先这样
+
+
+
+
 [ssh]
 type = tcp
 local_ip = 127.0.0.1
@@ -21875,8 +21886,9 @@ remote_port = 7004
 # 或着开放 http 端口
 [web]
 type = http
-local_port = 80
-custom_domains = www.example.com
+local_port = 8880
+custom_domains = 127.0.0.1
+	# 没有域名就先这样
 
 
 
