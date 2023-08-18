@@ -21872,6 +21872,14 @@ local_ip = 127.0.0.1
 local_port = 3389
 remote_port = 7004
 
+# 或着开放 http 端口
+[web]
+type = http
+local_port = 80
+custom_domains = www.example.com
+
+
+
 # 启动服务端
 ./frps -c ./frps.ini
 
