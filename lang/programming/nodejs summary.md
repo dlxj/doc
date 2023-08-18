@@ -18625,7 +18625,9 @@ if OS.has_feature('JavaScript'):
 
 ## subtitle
 
-[godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles)
+[godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles) 
+
+- Godot4 看这里: github/gdscript/animation_subtitle
 
 [godot-subtitles](https://github.com/FEDE0D/godot-subtitles/) 必看
 
@@ -21833,6 +21835,55 @@ vi /etc/fstab
 free -h
 	# 查看内存大小
 
+
+```
+
+
+
+### frp windows远程桌面
+
+[使用frp实现windows远程桌面连接](https://blog.ligengxin.me/posts/frp-windows-remote/) [s](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_linux_amd64.tar.gz) 
+
+
+
+```
+# 服务端配置
+frps.ini
+[common]
+bind_port = 7000 # 服务器端口 客户端必须配置一样的端口
+dashboard_user = username #这个frp控制面板用户名  一般用不到
+dashboard_port = 7500 #这个frp控制面板的端口 一般用不到
+
+# 客户端配置
+frpc.ini 
+[common]
+server_addr = 服务器ip
+server_port = 7000 # 确保服务器该端口是可用的
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389  # 远程桌面端口
+remote_port = 7004 #这个是远程桌面连接主机的时候输入的ip后加上的端口
+
+# 启动服务端
+./frps -c ./frps.ini
+
+# 启动客户端
+./frpc -c frpc.ini
+
+
+# 客户端开机自启 frp 
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 目录下写一个bat文件
+
+cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"  
+
+
+# 静默后台运行
++@echo off
++if "%1" == "h" goto begin
++mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit
++:begin
+cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"
 
 ```
 
