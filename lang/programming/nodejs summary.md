@@ -21864,10 +21864,11 @@ server_port = 7000
 [web]
 type = http
 local_port = 8880
-custom_domains = 127.0.0.1
-	# 没有域名就先这样
+custom_domains = 服务器ip
+	# 没有域名这里就填服务器ip
 
-
+实测 http://xxx.77:8880/searchExcel 能正常访问到内网的服务
+	
 
 
 [ssh]
