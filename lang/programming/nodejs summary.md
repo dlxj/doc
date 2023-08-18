@@ -18627,7 +18627,9 @@ if OS.has_feature('JavaScript'):
 
 [godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles)
 
-[godot-subtitles](https://github.com/FEDE0D/godot-subtitles/)
+[godot-subtitles](https://github.com/FEDE0D/godot-subtitles/) 必看
+
+- Godot_v3.2 正常运行
 
 
 
