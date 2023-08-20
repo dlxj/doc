@@ -1,3 +1,22 @@
+
+
+# ISO下载
+
+[请选择你的 Windows 10 企业版下载](https://www.microsoft.com/zh-cn/evalcenter/download-windows-10-enterprise)
+
+
+
+# 激活
+
+```
+slmgr /skms kms.03k.org
+slmgr /ato
+```
+
+
+
+
+
 # 禁止火绒自启
 
 [禁止火绒自启](https://www.bilibili.com/read/cv23414303)
