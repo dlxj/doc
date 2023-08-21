@@ -17015,6 +17015,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
 
+[Godot-Pluggable-AI 游戏AI](https://github.com/spkingr/Godot-Pluggable-AI)
+
 [godot-resources-as-sheets-plugin csv编辑器](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
