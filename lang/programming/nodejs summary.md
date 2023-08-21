@@ -18623,6 +18623,19 @@ if OS.has_feature('JavaScript'):
 
 
 
+## video
+
+[godot-video-rendering-demo](https://github.com/Calinou/godot-video-rendering-demo) need  Godot 3.1 beta 8
+
+```
+Make sure to run the project from the command line using 
+the --fixed-fps 60 command line argument.
+```
+
+
+
+
+
 ## subtitle
 
 [godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles) 
@@ -18634,6 +18647,41 @@ if OS.has_feature('JavaScript'):
 - Godot_v3.2 正常运行
 
 [Icon-Animations](https://github.com/univeous/Icon-Animations)
+
+[interactive-book-godot 动态书籍翻页](https://github.com/miskatonicstudio/interactive-book-godot)
+
+
+
+## animation
+
+```
+# 成功播放动画
+extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	var animation_player = AnimationPlayer.new()
+	
+	self.add_child(animation_player)
+	
+	var lib = AnimationLibrary.new()
+	
+
+	var label = Label.new() # This should be either a Label or a RichTextLabel node in your scene.
+	self.add_child(label)
+	
+	# var character_speech_player = AudiostreamPlayer.new()
+
+	var data = { "TextPath" : "res://text_file_format_example.txt", "Label": label}
+	var animation = Captions.create(data)
+	
+	animation_player.add_animation_library("", lib)
+	
+	animation_player.get_animation_library("").add_animation("animation_name_here", animation)
+	
+	animation_player.play("animation_name_here") # Play the subtitles animation.
+```
 
 
 
