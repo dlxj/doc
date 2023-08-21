@@ -2348,6 +2348,30 @@ yum update --allowerasing
 
 
 
+
+
+## 抱抱脸 
+
+[Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
+
+```
+dlxjj pwd email same as github's dlxj
+
+huggingface-cli lfs-enable-largefiles ./path/to/your/repo
+	# 大于5G 文件 需要这样设置
+
+安装好 git-lfs 后：
+
+git lfs install
+git lfs clone https://huggingface.co/datasets/dlxjj/pdf
+
+
+```
+
+
+
+
+
 ## Cloudflare
 
 ### [Cloudflare Tunnel内网穿透](https://bra.live/setup-home-server-with-cloudflare-tunnel/)

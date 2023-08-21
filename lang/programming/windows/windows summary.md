@@ -1,3 +1,22 @@
+
+
+# ISO下载
+
+[请选择你的 Windows 10 企业版下载](https://www.microsoft.com/zh-cn/evalcenter/download-windows-10-enterprise)
+
+
+
+# 激活
+
+```
+slmgr /skms kms.03k.org
+slmgr /ato
+```
+
+
+
+
+
 # 禁止火绒自启
 
 [禁止火绒自启](https://www.bilibili.com/read/cv23414303)
@@ -7,6 +26,10 @@
 1. 火绒剑关闭火绒自启
 
 2. 进安全模式，按win键 -> 输入ser 找到"服务" -> 找到火绒把所有服务改成 "手动" 
+
+
+
+或者：开始-电源按钮，按住Shift同时点击“重启”，然后Win10会自动进入高级启动菜单，再点击疑难解答-高级选项-启动设置-重启。
 
 
 
