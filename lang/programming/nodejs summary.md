@@ -17053,6 +17053,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
 
+[另一个自制插件看这里](github/gdscript/animation_subtitle/addons/subtitle)
+
 [目前用的唯一上架的ws插件](https://github.com/AndreaTerenz/WebSocket)
 
 
