@@ -743,6 +743,15 @@ ctrl + shift + p -> 选择 conda 虚拟环境DB 中的 python 解释器既可
 
 
 
+## 异常堆栈跟踪
+
+```
+python -X faulthandler program.py
+
+```
+
+
+
 
 
 ## Julia
