@@ -17785,6 +17785,22 @@ new_caption = new_caption.replace(m.get_string(0), '[%s%s]' % [m.get_string(1), 
 
 
 
+```
+func get_label_animation_path() -> String:
+	var path: String = str(get_node(animation_player_node).get_path_to(get_node(label_node))) + ':bbcode_text'
+	if path.begins_with("../"):
+		path = path.trim_prefix("../")
+	print("path_bbcode_text: %s" % path)
+
+get_path_to
+	# 可以是在找相对路径
+
+```
+
+
+
+
+
 ### substr
 
 ```
@@ -17793,6 +17809,17 @@ if value is String: # TODO: Check is this is still used
 		vector = value.split(',')
 		valid_value = (vector.size() == _count)
 ```
+
+
+
+### split
+
+```
+var split = time.replace(",", ".").split_floats(":")
+ # "1,2.5,3" will return [1,2.5,3] if split by ","
+```
+
+
 
 
 
