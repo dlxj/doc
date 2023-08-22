@@ -1,3 +1,22 @@
+
+
+# ISO下载
+
+不要从官网下iso，评估版隔段时间自动关机
+
+
+
+# 激活
+
+```
+slmgr /skms kms.03k.org
+slmgr /ato
+```
+
+
+
+
+
 # 禁止火绒自启
 
 [禁止火绒自启](https://www.bilibili.com/read/cv23414303)

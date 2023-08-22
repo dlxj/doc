@@ -1820,6 +1820,32 @@ npm install
 
 
 
+### primordials 奇奇怪怪的错误
+
+[primordials is not defined](https://bobbyhadz.com/blog/referenceerror-primordials-is-not-defined)
+
+```
+package.json if node >= 16.14
+{
+  "overrides": {
+    "graceful-fs": "^4.2.11"
+  }
+}
+
+package.json if node < 16.14
+{
+  "resolutions": {
+    "graceful-fs": "^4.2.11"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  }
+}
+
+```
+
+
+
 
 
 ## cnpm
@@ -17015,6 +17041,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
 
+[Godot-Pluggable-AI 游戏AI](https://github.com/spkingr/Godot-Pluggable-AI)
+
 [godot-resources-as-sheets-plugin csv编辑器](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
@@ -17052,6 +17080,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 ### 插件
 
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
+
+[另一个自制插件看这里](github/gdscript/animation_subtitle/addons/subtitle)
 
 [目前用的唯一上架的ws插件](https://github.com/AndreaTerenz/WebSocket)
 
@@ -17723,6 +17753,42 @@ var my_prop:
 
 
 
+### File
+
+```
+var data = {"number": 1, "string": "test" }   
+
+func save(content):
+    var file = FileAccess.open(path,FileAccess.WRITE)
+    file.store_string(content)
+    file = null
+
+func load_game():
+    var file = FileAccess.open(path,FileAccess.READ)
+    var content = file.get_as_text()
+    return content
+
+func _ready():
+    save(data)
+    print(load_game())
+    
+# OR
+func save(content):
+    var file = FileAccess.open(path,FileAccess.WRITE)
+    file.store_var(content)
+    file = null
+
+func load_game():
+    var file = FileAccess.open(path,FileAccess.READ)
+    var content = file.get_var()
+    return content
+    
+```
+
+
+
+
+
 
 
 ### match
@@ -17737,6 +17803,34 @@ var my_prop:
 
 
 
+### format
+
+```
+new_caption = new_caption.replace(m.get_string(0), '[%s%s]' % [m.get_string(1), m.get_string(2)])
+```
+
+
+
+```
+func get_label_animation_path() -> String:
+	var path: String = str(get_node(animation_player_node).get_path_to(get_node(label_node))) + ':bbcode_text'
+	if path.begins_with("../"):
+		path = path.trim_prefix("../")
+	print("path_bbcode_text: %s" % path)
+
+get_path_to
+	# 可以是在找相对路径
+
+```
+
+
+
+```
+print_debug("TTS not available!")
+```
+
+
+
 ### substr
 
 ```
@@ -17745,6 +17839,17 @@ if value is String: # TODO: Check is this is still used
 		vector = value.split(',')
 		valid_value = (vector.size() == _count)
 ```
+
+
+
+### split
+
+```
+var split = time.replace(",", ".").split_floats(":")
+ # "1,2.5,3" will return [1,2.5,3] if split by ","
+```
+
+
 
 
 
@@ -18647,6 +18752,21 @@ if OS.has_feature('JavaScript'):
 
 
 
+## video
+
+[godot-video-rendering-demo](https://github.com/Calinou/godot-video-rendering-demo) need  Godot 3.1 beta 8
+
+[audio 频率播放动效](https://github.com/xiangyuecn/Recorder/blob/master/assets/runtime-codes/dsp.lib.fft_exact.js)
+
+```
+Make sure to run the project from the command line using 
+the --fixed-fps 60 command line argument.
+```
+
+
+
+
+
 ## subtitle
 
 [godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles) 
@@ -18658,6 +18778,41 @@ if OS.has_feature('JavaScript'):
 - Godot_v3.2 正常运行
 
 [Icon-Animations](https://github.com/univeous/Icon-Animations)
+
+[interactive-book-godot 动态书籍翻页](https://github.com/miskatonicstudio/interactive-book-godot)
+
+
+
+## animation
+
+```
+# 成功播放动画
+extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	var animation_player = AnimationPlayer.new()
+	
+	self.add_child(animation_player)
+	
+	var lib = AnimationLibrary.new()
+	
+
+	var label = Label.new() # This should be either a Label or a RichTextLabel node in your scene.
+	self.add_child(label)
+	
+	# var character_speech_player = AudiostreamPlayer.new()
+
+	var data = { "TextPath" : "res://text_file_format_example.txt", "Label": label}
+	var animation = Captions.create(data)
+	
+	animation_player.add_animation_library("", lib)
+	
+	animation_player.get_animation_library("").add_animation("animation_name_here", animation)
+	
+	animation_player.play("animation_name_here") # Play the subtitles animation.
+```
 
 
 
