@@ -1820,6 +1820,32 @@ npm install
 
 
 
+### primordials 奇奇怪怪的错误
+
+[primordials is not defined](https://bobbyhadz.com/blog/referenceerror-primordials-is-not-defined)
+
+```
+package.json if node >= 16.14
+{
+  "overrides": {
+    "graceful-fs": "^4.2.11"
+  }
+}
+
+package.json if node < 16.14
+{
+  "resolutions": {
+    "graceful-fs": "^4.2.11"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  }
+}
+
+```
+
+
+
 
 
 ## cnpm
