@@ -17777,6 +17777,14 @@ func load_game():
 
 
 
+### format
+
+```
+new_caption = new_caption.replace(m.get_string(0), '[%s%s]' % [m.get_string(1), m.get_string(2)])
+```
+
+
+
 ### substr
 
 ```
