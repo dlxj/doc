@@ -17727,6 +17727,42 @@ var my_prop:
 
 
 
+### File
+
+```
+var data = {"number": 1, "string": "test" }   
+
+func save(content):
+    var file = FileAccess.open(path,FileAccess.WRITE)
+    file.store_string(content)
+    file = null
+
+func load_game():
+    var file = FileAccess.open(path,FileAccess.READ)
+    var content = file.get_as_text()
+    return content
+
+func _ready():
+    save(data)
+    print(load_game())
+    
+# OR
+func save(content):
+    var file = FileAccess.open(path,FileAccess.WRITE)
+    file.store_var(content)
+    file = null
+
+func load_game():
+    var file = FileAccess.open(path,FileAccess.READ)
+    var content = file.get_var()
+    return content
+    
+```
+
+
+
+
+
 
 
 ### match
@@ -18654,6 +18690,8 @@ if OS.has_feature('JavaScript'):
 ## video
 
 [godot-video-rendering-demo](https://github.com/Calinou/godot-video-rendering-demo) need  Godot 3.1 beta 8
+
+[audio 频率播放动效](https://github.com/xiangyuecn/Recorder/blob/master/assets/runtime-codes/dsp.lib.fft_exact.js)
 
 ```
 Make sure to run the project from the command line using 
