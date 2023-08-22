@@ -17799,6 +17799,10 @@ get_path_to
 
 
 
+```
+print_debug("TTS not available!")
+```
+
 
 
 ### substr
