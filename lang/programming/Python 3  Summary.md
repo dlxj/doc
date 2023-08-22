@@ -745,6 +745,8 @@ ctrl + shift + p -> 选择 conda 虚拟环境DB 中的 python 解释器既可
 
 ## 异常堆栈跟踪
 
+[捕获不到网络异常导至程序意外终止](https://www.v2ex.com/t/967308)
+
 ```
 python -X faulthandler program.py
 
