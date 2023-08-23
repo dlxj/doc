@@ -17514,6 +17514,19 @@ func _process(delta):
 
 
 
+#### node_path
+
+```
+# 绝对路径这样写
+/root/main/LiveCaption:bbcode_text
+	# main 是场景
+	# LiveCaption 是里面的一个richLabel 控件
+	# bbcode_text 是控件的属性, Animation 会绑定 bbcode_text 实现动画字幕
+	
+```
+
+
+
 ### :=
 
 ```
@@ -17756,8 +17769,7 @@ var my_prop:
 ### File
 
 ```
-var data = {"number": 1, "string": "test" }   
-
+# see: gdscript/godot-subtitles-4.0_clone/scripts/Ulity.gd
 func save(content):
     var file = FileAccess.open(path,FileAccess.WRITE)
     file.store_string(content)
@@ -17787,7 +17799,29 @@ func load_game():
 
 
 
+```
+func read_counter(file: FileAccess) -> int:
+	var line = file.get_line()
+	while line.is_empty() and !file.eof_reached():
+		line = file.get_line()
+	return int(line)
 
+func read_times(file: FileAccess) -> Dictionary:
+	var split = file.get_line().split(" --> ")
+	return {
+		"from": time_to_float(split[0]),
+		"to": time_to_float(split[1])
+	}
+
+func read_caption(file: FileAccess) -> String:
+	var caption = ""
+	var line = file.get_line()
+	while !line.is_empty():
+		caption += line + "\n"
+		line = file.get_line()
+	return bb_format(caption)
+
+```
 
 
 
@@ -18812,6 +18846,41 @@ func _ready():
 	animation_player.get_animation_library("").add_animation("animation_name_here", animation)
 	
 	animation_player.play("animation_name_here") # Play the subtitles animation.
+```
+
+
+
+```
+func map_to_animation(file_content: Array) -> Animation:
+	var animation = Animation.new()
+	var track_idx = animation.add_track(Animation.TYPE_VALUE, 0)
+	var animation_length = file_content[file_content.size() - 1].times.to
+#	var track_path = "LiveCaption:bbcode_text" #get_label_animation_path()
+	var track_path = "LiveCaption:bbcode_text"
+	
+	animation.track_set_path(track_idx, track_path)
+	animation.value_track_set_update_mode(track_idx, Animation.UPDATE_DISCRETE)
+	animation.step = animation_step
+	animation.length = animation_length
+	
+	animation.track_insert_key(track_idx, 0.0, "", 0)
+	for line in file_content:
+		animation.track_insert_key(track_idx, line.times.from, line.caption, 0)
+		animation.track_insert_key(track_idx, line.times.to, "", 0)
+	
+	return animation
+```
+
+
+
+### switch animation
+
+```
+func _on_OptionButton_item_selected(index):
+	var animation_name = "subtitles-eng" if index == 0 else "subtitles-es"
+	var position = $AnimationPlayer.current_animation_position
+	$AnimationPlayer.play(animation_name)
+	$AnimationPlayer.seek(position, true)
 ```
 
 
