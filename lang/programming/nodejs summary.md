@@ -19020,6 +19020,28 @@ func _process(delta):
 
 
 
+## spine
+
+[does-spine-work-with-godot](https://zh.esotericsoftware.com/forum/d/17065-does-spine-work-with-godot)
+
+[spine-godot 官方插件](https://github.com/EsotericSoftware/spine-runtimes/tree/4.2-beta/spine-godot)
+
+```
+Note: This is about 2d rigged animations
+
+I can say that I went crazy with this very question last week. Let me share with you the ideas that I have come to as a result of my research.
+
+The result I got is this:
+
+-If you want quality, fast, useful artistic features like Mesh deform, I couldn't find a better alternative than Spine. The price is expensive, but there is also a linux version. (They promised official support for Godot in the next release) Spine is worth using as an external tool if you really need it.
+
+Other than that, I couldn't find any reason to use external tools like dragonebones (by the way dragonebones is not open source, just free), spriter, blender COA tools.
+
+Godot's built-in animation system isn't bad for simple cut-out animations. Tween animations are great in my opinion. Mesh deform features are limited and insufficient. I will stick to Godot. I don't like putting different software in my workflow unnecessarily.
+```
+
+
+
 
 
 ## moho导入
