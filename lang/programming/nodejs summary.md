@@ -17249,8 +17249,6 @@ DisplayServer.window_set_size(Vector2i(1024, 600))
 
 
 
- 
-
 ```
 VisualServer.set_default_clear_color(Color(0.4,0.4,0.4,1.0))
 ```
@@ -17285,8 +17283,6 @@ theme/custom="res://assets/theme_trello_default.tres"
 
 
 
-
-
 #### 动态设置 Style
 
 ```
@@ -17294,6 +17290,14 @@ const StyleDragged := preload("res://assets/style_panel_list_dragged.tres")
 set("custom_styles/panel", StyleDragged)
 	# 这里 node 的方法，直接设置属性值
 ```
+
+
+
+#### StyleBoxEmpty
+
+Styles -> Focus -> StyleBoxEmpty 
+
+实现 RichTextLabel 选中文字时也不显示窗体边框
 
 
 
