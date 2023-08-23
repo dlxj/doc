@@ -18994,6 +18994,32 @@ func generate_animation_WORDS(data, caption_fields):
 
 
 
+### RichTextLabel 选中文本
+
+```
+# 先把 Text Selection -> selection enabled 开启
+# Styles -> Focus -> StyleBoxEmpty 
+    实现 RichTextLabel 选中文字时也不显示窗体边框
+
+extends RichTextLabel
+
+var sel_from = -1
+var sel_to = -1
+
+func _process(delta):
+	var from = get_selection_from()
+	var to = get_selection_to()
+	
+	if (from != sel_from || to != sel_to):
+		sel_from = from
+		sel_to = to
+		
+		var sel = get_selected_text()
+		print("SELECTION CHANGED: (%d):(%d) '%s'" % [from, to, sel])
+```
+
+
+
 
 
 ## moho导入
