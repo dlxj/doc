@@ -19026,6 +19026,8 @@ func _process(delta):
 
 [spine-godot 官方插件](https://github.com/EsotericSoftware/spine-runtimes/tree/4.2-beta/spine-godot)
 
+[通过SPINE命令行简化工作](https://zhuanlan.zhihu.com/p/420705994)
+
 ```
 Note: This is about 2d rigged animations
 
