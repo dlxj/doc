@@ -18832,12 +18832,18 @@ if OS.has_feature('JavaScript'):
 
 [audio 频率播放动效](https://github.com/xiangyuecn/Recorder/blob/master/assets/runtime-codes/dsp.lib.fft_exact.js)
 
+[seek 插件](https://github.com/godotengine/godot/issues/32200)
+
 ```
 Make sure to run the project from the command line using 
 the --fixed-fps 60 command line argument.
 ```
 
 
+
+### EIRTeam.FFmpeg
+
+[EIRTeam.FFmpeg 插件足够新](https://github.com/EIRTeam/EIRTeam.FFmpeg/issues/2)
 
 
 
@@ -19027,6 +19033,8 @@ func _process(delta):
 [spine-godot 官方插件](https://github.com/EsotericSoftware/spine-runtimes/tree/4.2-beta/spine-godot)
 
 [通过SPINE命令行简化工作](https://zhuanlan.zhihu.com/p/420705994)
+
+[基于Spine动画的AVATAR换装系统优化](https://zhuanlan.zhihu.com/p/445125141)
 
 ```
 Note: This is about 2d rigged animations
