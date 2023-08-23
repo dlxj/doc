@@ -17527,6 +17527,23 @@ func _process(delta):
 
 
 
+```
+	# 
+	var label = data["Label"]
+	var parent = label.get_parent()
+	var nodePath = parent.get_path_to(label)
+	#var nodePath = null # NodePath(.owner.get_path_to(data["Label"]))
+	var full_script = ""
+	animation.value_track_set_update_mode(track_index, Animation.UPDATE_CONTINUOUS)
+	animation.track_set_path(track_index, nodePath.get_concatenated_names() + ":text")
+```
+
+
+
+
+
+
+
 ### :=
 
 ```
@@ -17837,7 +17854,13 @@ func read_caption(file: FileAccess) -> String:
 
 
 
-### format
+
+
+### String
+
+
+
+#### format
 
 ```
 new_caption = new_caption.replace(m.get_string(0), '[%s%s]' % [m.get_string(1), m.get_string(2)])
@@ -17865,7 +17888,7 @@ print_debug("TTS not available!")
 
 
 
-### substr
+#### substr
 
 ```
 if value is String: # TODO: Check is this is still used
@@ -17876,11 +17899,24 @@ if value is String: # TODO: Check is this is still used
 
 
 
-### split
+#### split
 
 ```
 var split = time.replace(",", ".").split_floats(":")
  # "1,2.5,3" will return [1,2.5,3] if split by ","
+```
+
+
+
+#### get_concatenated_subnames第一个冒号的右侧部分  
+
+```
+# 第一个冒号的右侧部分
+get_concatenated_subnames()
+
+var nodepath = NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path")
+print(nodepath.get_concatenated_subnames()) # texture:load_path
+
 ```
 
 
@@ -18882,6 +18918,77 @@ func _on_OptionButton_item_selected(index):
 	$AnimationPlayer.play(animation_name)
 	$AnimationPlayer.seek(position, true)
 ```
+
+
+
+### 打字机效果是计算每个字的时间
+
+```
+func generate_animation_WORDS(data, caption_fields):
+	var animation = Animation.new()
+	var track_index = animation.add_track(Animation.TYPE_VALUE)
+	var nodePath = NodePath(data["Label"].owner.get_path_to(data["Label"]))
+	animation.value_track_set_update_mode(track_index, Animation.UPDATE_DISCRETE)
+	animation.track_set_path(track_index, nodePath.get_concatenated_names() + ":text")
+	var last_field = caption_fields[caption_fields.size() - 1]
+	caption_fields.remove_at(caption_fields.size() - 1)
+	var written = ""
+	for caption in caption_fields:
+		var text = caption["text"] # The text being displayed.
+		var start = caption["start"] # The starting keyframe in seconds.
+		var end = caption["end"] # The ending keyframe in seconds.
+		if text.find(" ") != -1: # Check for whitespaces.
+			var words = text.split(" ") # Get every word.
+			var midpoint = end - start
+			var WPS = midpoint / words.size()
+			var wordFrequency = WPS
+			var currentTime = start
+			for word in words:
+				currentTime += wordFrequency
+				written += word + " "
+				animation.track_insert_key(track_index, currentTime, written)
+		else: # Return the single word.
+			written += text + " "
+			animation.track_insert_key(track_index, end, written)
+
+	var text = last_field["text"]
+	written += " "
+	
+	var duration
+	
+	if "Duration" in data: # Check whether a custom duration was provided.
+		duration = data["Duration"]
+	else:
+		duration = last_field["end"]
+
+	if text.find(" ") != -1:
+		var start = last_field["start"]
+		var end = duration
+		var words = text.split(" ") # Get every word.
+		var midpoint = end - start
+		var WPS = midpoint / words.size()
+		var wordFrequency = WPS
+		var currentTime = start
+		for word in words:
+			currentTime += wordFrequency
+			written += word + " "
+			animation.track_insert_key(track_index, currentTime, written)
+	else:
+		animation.track_insert_key(track_index, duration, written)
+	
+	animation.length = duration
+	
+	var animPlayer
+	
+	if "AnimationPlayer" in data and "Name" in data: # Adds the named animation to the provded animation player.
+		animPlayer = data["AnimationPlayer"]
+		animPlayer.get_animation_library("").add_animation(data["Name"], animation)
+		return true
+	else: # Returns the animation.
+		return animation
+```
+
+
 
 
 
