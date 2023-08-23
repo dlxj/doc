@@ -11662,6 +11662,17 @@ PPOCRLabel --lang ch --kie True  # 启动 【KIE 模式】，用于打【检测+
 
 
 
+```
+
+python -m pip install paddlepaddle-gpu==2.5.1 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+```
+
+
+
+
+
 ##### 切分数据
 
 
