@@ -18621,6 +18621,18 @@ func searchAk48(keywd):
 
 
 
+```
+另见 uri_decode()。
+
+var prefix = "https://docs.godotengine.org/en/4.1/?highlight="
+var url = prefix + "Godot Engine:docs".uri_encode()
+
+print(url) # 输出 "https://docs.godotengine.org/en/4.1/?highlight=Godot%20Engine%3%docs"
+
+```
+
+
+
 
 
 ### WebSocket
@@ -18822,9 +18834,9 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 
 
 
-## 显示网页
+## cef chrome
 
-- https://github.com/stigmee/gdnative-cef  嵌入cef
+- https://github.com/Lecrapouille/gdcef/issues/30  嵌入cef
 
 ```
 OS.shell_open("url")
