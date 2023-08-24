@@ -18268,6 +18268,18 @@ func _physics_process(delta):
 
 
 
+### 键盘
+
+```
+func _input(ev):
+	if Input.is_key_pressed(KEY_K):
+		pass
+```
+
+
+
+
+
 ### 控件拖拽
 
 ```
@@ -18845,6 +18857,8 @@ the --fixed-fps 60 command line argument.
 
 [EIRTeam.FFmpeg 插件足够新](https://github.com/EIRTeam/EIRTeam.FFmpeg/issues/2)
 
+[godot-video-reference 好像功能齐全](https://github.com/kidrigger/godot-video-reference)
+
 
 
 ## subtitle
@@ -18857,6 +18871,8 @@ the --fixed-fps 60 command line argument.
 
 - Godot_v3.2 正常运行
 
+[New Animation Editor](https://github.com/godotengine/godot-proposals/issues/3950)
+
 [Icon-Animations](https://github.com/univeous/Icon-Animations)
 
 [interactive-book-godot 动态书籍翻页](https://github.com/miskatonicstudio/interactive-book-godot)
@@ -18864,6 +18880,8 @@ the --fixed-fps 60 command line argument.
 
 
 ## animation
+
+动画就是按指定的很多时间点去修改 node 的属性
 
 ```
 # 成功播放动画
@@ -19022,6 +19040,17 @@ func _process(delta):
 		
 		var sel = get_selected_text()
 		print("SELECTION CHANGED: (%d):(%d) '%s'" % [from, to, sel])
+```
+
+
+
+### 修改指定帧的动画
+
+```
+	animation.track_insert_key(track_idx, 0.0, "a", 0)
+	var k = animation.track_find_key(track_idx, 0.0, Animation.FIND_MODE_NEAREST)
+	var v = animation.track_get_key_value(track_idx, k)
+	animation.track_set_key_value(track_idx, k, "[center]All Begin here[/center]")
 ```
 
 
