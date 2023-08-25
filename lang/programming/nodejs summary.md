@@ -18834,6 +18834,12 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 
 
 
+## sqlite
+
+[node-sqlite3](https://github.com/TryGhost/node-sqlite3)
+
+
+
 ## cef chrome
 
 - https://github.com/Lecrapouille/gdcef/issues/30  嵌入cef
