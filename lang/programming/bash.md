@@ -1,5 +1,7 @@
 
 
+
+
 # grep
 
 
@@ -20,3 +22,10 @@ done
 
 
 
+```
+if tail -10 /root/.pm2/logs/pandora-ak148-explain-error.log | grep -q  'json.decoder.JSONDecodeError';
+then
+    echo "###found pm2 logs: JSONDecodeError restart pandora_ak148_explain now..."
+    rm -f /root/.pm2/logs/pandora-ak148-explain-error.log
+    pm2 restart pandora_ak148_explain
+fi
