@@ -18380,6 +18380,10 @@ func _on_mouse_exited():  # 鼠标离开控件
 
 ### 键盘事件
 
+[inputevent](https://docs.godotengine.org/en/stable/tutorials/inputs/inputevent.html)
+
+
+
 ```
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"): // 按回车会触发
