@@ -5719,6 +5719,19 @@ let r = strs.replace(new RegExp(String.raw`([^a-z^A-Z^\s])\s+([^a-z^A-Z^\s])`), 
 
 
 
+```
+# split at first
+const str = 'bobby-hadz-com'
+const [first, ...rest] = str.split('-')
+
+console.log(first) // bobby
+console.log(rest) // ['hadz', 'com']
+```
+
+
+
+
+
 ## 过滤汉字里的标点符号
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
@@ -7084,6 +7097,12 @@ const apiExists = apiStat.isFile() && path.extname(apiPath).toLowerCase() === '.
 ```
 
  
+
+```
+fs.unlinkSync('file.txt')
+```
+
+
 
 
 
@@ -18837,6 +18856,8 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 ## sqlite
 
 [node-sqlite3](https://github.com/TryGhost/node-sqlite3)
+
+npm install sqlite3
 
 
 
