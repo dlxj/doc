@@ -29,3 +29,9 @@ then
     rm -f /root/.pm2/logs/pandora-ak148-explain-error.log
     pm2 restart pandora_ak148_explain
 fi
+
+
+crontab -e
+*   *    *      *   *  sh /root/restart.sh
+	# 每分钟执行一次
+
