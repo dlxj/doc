@@ -18863,6 +18863,31 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 
 npm install sqlite3
 
+```
+const sqlite3 = require('sqlite3').verbose()
+if (fs.existsSync(db_file)) {
+    fs.unlinkSync(db_file)
+}
+const db = new sqlite3.Database(db_file)
+
+            db.serialize(() => {
+                db.run("CREATE TABLE ak48(kanji TEXT, hana TEXT, explain TEXT, sent TEXT, zh TEXT, en TEXT, row_idx INTEGER);")
+                db.run("BEGIN TRANSACTION;")
+                const stmt = db.prepare("INSERT INTO ak48 VALUES (?,?,?,?,?,?,?);")
+                for (let [w1, w2, explain, sentence, translation, en, i] of will_insert) {
+                    stmt.run(w1, w2, explain, sentence, translation, en, i)
+                }
+                db.run("COMMIT;", function(){
+                    stmt.finalize()
+                    db.close()
+                })
+            })
+```
+
+
+
+
+
 
 
 ## cef chrome
