@@ -18861,27 +18861,37 @@ lmdb具有极高的存取速度，大大减少了系统访问大量小文件时�
 
 [node-sqlite3](https://github.com/TryGhost/node-sqlite3)
 
+[sqlite-gui c + winapi](https://github.com/little-brother/sqlite-gui)
+
 npm install sqlite3
 
 ```
-const sqlite3 = require('sqlite3').verbose()
-if (fs.existsSync(db_file)) {
-    fs.unlinkSync(db_file)
-}
-const db = new sqlite3.Database(db_file)
+async function search_sq_ak48(jp) {
 
-            db.serialize(() => {
-                db.run("CREATE TABLE ak48(kanji TEXT, hana TEXT, explain TEXT, sent TEXT, zh TEXT, en TEXT, row_idx INTEGER);")
-                db.run("BEGIN TRANSACTION;")
-                const stmt = db.prepare("INSERT INTO ak48 VALUES (?,?,?,?,?,?,?);")
-                for (let [w1, w2, explain, sentence, translation, en, i] of will_insert) {
-                    stmt.run(w1, w2, explain, sentence, translation, en, i)
+    return new Promise((resolve, reject) => {
+        let _ = require('lodash')
+        const sqlite3 = require('sqlite3').verbose()
+        //const db = new sqlite3.Database(':memory:')
+        const db = new sqlite3.Database(db_file)
+
+        db.serialize(() => {
+            let sq = `SELECT * FROM ak48 where kanji = '${jp}' or hana = '${jp}'`
+            //let sq = "SELECT 1"
+            db.all(sq, (err, rows) => {
+                let choice = []
+                if (rows.length > 3) {
+                    choice = _.sampleSize(rows, 3)
+                } else {
+                    choice = rows
                 }
-                db.run("COMMIT;", function(){
-                    stmt.finalize()
-                    db.close()
+        
+                db.close(function() {
+                    return resolve(choice)
                 })
             })
+        })
+    })
+}
 ```
 
 
