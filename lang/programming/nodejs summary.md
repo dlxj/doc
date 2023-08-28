@@ -1736,6 +1736,8 @@ pm2 dump // 此时会备份 pm2 list 中的所有项目启动方式
 pm2 resurrect // 重启备份的所有项目
 pm2 update    // 清空重启次数等（疑难杂症可以试试）
 
+pm2 restart id --name newName
+	# 改名
 
 pm2 monit
 	# 实时监视进程
