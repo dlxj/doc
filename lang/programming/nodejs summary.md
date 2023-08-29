@@ -2402,6 +2402,14 @@ git lfs clone https://huggingface.co/datasets/dlxjj/pdf
 
 ## Cloudflare
 
+### Warp
+
+[Warp+ Plus 24PB流量及Zero trust无限流量](https://mailberry.com.cn/2023/07/free-use-warp-plus-24pb-and-zero-trust-unlimitl/)
+
+[Warp 彻底解决 Google IP 定位中国的问题](https://www.v2ex.com/t/800581)
+
+
+
 ### [Cloudflare Tunnel内网穿透](https://bra.live/setup-home-server-with-cloudflare-tunnel/)
 
 [Cloudflare Pro SSH加速](https://hostloc.com/thread-674147-1-1.html)
@@ -22707,6 +22715,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
 
+[ChatGLM2-6B 微调(初体验) 语料多](https://zhuanlan.zhihu.com/p/643856746) 
+
 ### [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning) 24G可训练
 
 - [中文微调数据集](https://github.com/carbonz0/alpaca-chinese-dataset/issues/3)
@@ -22717,7 +22727,6 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 ```
 7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on ChatGLM-chinese-insturct_dot_cache.7z .cache/
 	# 模型下载好以后打包模型，上传 阿里云盘
-
 ```
 
 
