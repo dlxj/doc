@@ -19149,6 +19149,8 @@ func _process(delta):
 
 [spine-godot 官方插件](https://github.com/EsotericSoftware/spine-runtimes/tree/4.2-beta/spine-godot)
 
+[melonjs for spine 官方插件 页游](https://github.com/melonjs/spine-plugin)
+
 [通过SPINE命令行简化工作](https://zhuanlan.zhihu.com/p/420705994)
 
 [基于Spine动画的AVATAR换装系统优化](https://zhuanlan.zhihu.com/p/445125141)
