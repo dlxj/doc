@@ -17064,8 +17064,6 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [游戏背包](https://github.com/alfredbaudisch/GodotDynamicInventorySystem)
 
-[godot-engine.file-editor  Markdonw 转 bbcode](https://github.com/fenix-hub/godot-engine.file-editor)
-
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
 
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
@@ -17077,6 +17075,7 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 [godot-resources-as-sheets-plugin csv编辑器](https://github.com/don-tnowe/godot-resources-as-sheets-plugin)
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
+- [godot-engine.file-editor  Markdonw 转 bbcode](https://github.com/fenix-hub/godot-engine.file-editor)
 
 [Add a Spreadsheet resource for handling tabular data](https://github.com/don-tnowe/godot-sprite-painter)
 
