@@ -18952,6 +18952,8 @@ the --fixed-fps 60 command line argument.
 
 ### 视频转GIF
 
+[record video](https://docs.godotengine.org/en/stable/tutorials/animation/creating_movies.html)
+
 ```
 播放器 potplayer 自带的 GIF 功能，分辨率帧率质量都能调
 
@@ -18968,6 +18970,8 @@ ffmpeg -ss 1 -i <INPUT> -vf fps=1,scale='min(320,iw)':-1,scale=-1:'min(240,ih)' 
 
 从视频第 1 秒开始，按比例缩小尺寸，并且取前 15 帧
 ```
+
+
 
 
 
