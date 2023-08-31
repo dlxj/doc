@@ -17112,6 +17112,10 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Add a Spreadsheet resource for handling tabular data](https://github.com/don-tnowe/godot-sprite-painter)
 
+[Markdown to Richtext ](https://github.com/fahrstuhl/godot_markdown/tree/godot_4)
+
+- [RichText 控件显示图片](https://github.com/nekofleet/rich-text-label-ex)
+
 [markdonw 编辑器 Godot-TextEditor](https://github.com/teebarjunk/Godot-TextEditor)
 
 - [vscode in godot](https://github.com/RedMser/godot-embed-external-editor)
