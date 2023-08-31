@@ -2376,6 +2376,39 @@ yum update --allowerasing
 
 
 
+## pandora
+
+```
+# restart.sh
+if tail -10 /root/.pm2/logs/pandora-ak148-explain-error.log | grep -q  'json.decoder.JSONDecodeError';
+then
+    echo "###found pm2 logs: JSONDecodeError restart pandora_ak148_explain now..."
+    rm -f /root/.pm2/logs/pandora-ak148-explain-error.log
+    pm2 restart pandora_ak148_explain
+fi
+if tail -10 /root/.pm2/logs/pandora-ak148-explain-error.log | grep -q  'httpx.RemoteProtocolError';
+then
+    echo "###found pm2 logs: httpx.RemoteProtocolError restart pandora_ak148_explain now..."
+    rm -f /root/.pm2/logs/pandora-ak148-explain-error.log
+    pm2 restart pandora_ak148_explain
+fi
+
+# backup.sh
+dir="/root/ak148_backup/$(date +'%Y-%m-%d')"
+mkdir -p $dir
+cp /root/echodict/pandora/ak148_script.xlsx $dir
+cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
+
+
+# crontab -e
+00   00    *      *   *  sh /root/backup.sh
+*   *    *      *   *  sh /root/restart.sh
+@reboot  mount /dev/sda1 /mnt
+@reboot  pm2 resurrect
+```
+
+
+
 
 
 ## 抱抱脸 
