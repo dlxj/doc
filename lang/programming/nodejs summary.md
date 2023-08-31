@@ -17079,7 +17079,7 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Add a Spreadsheet resource for handling tabular data](https://github.com/don-tnowe/godot-sprite-painter)
 
-[markdonw 编辑器](https://github.com/teebarjunk/Godot-TextEditor)
+[markdonw 编辑器 Godot-TextEditor](https://github.com/teebarjunk/Godot-TextEditor)
 
 - [vscode in godot](https://github.com/RedMser/godot-embed-external-editor)
 
@@ -18947,6 +18947,19 @@ the --fixed-fps 60 command line argument.
 [EIRTeam.FFmpeg 插件足够新](https://github.com/EIRTeam/EIRTeam.FFmpeg/issues/2)
 
 [godot-video-reference 好像功能齐全](https://github.com/kidrigger/godot-video-reference)
+
+
+
+### 视频转GIF
+
+```
+播放器 potplayer 自带的 GIF 功能，分辨率帧率质量都能调
+
+mac : gifski
+window : screentogif
+
+两个都可以调整帧率 gif 质量
+```
 
 
 
