@@ -18963,6 +18963,16 @@ window : screentogif
 
 
 
+```
+ffmpeg -ss 1 -i <INPUT> -vf fps=1,scale='min(320,iw)':-1,scale=-1:'min(240,ih)' -gifflags -transdiff -frames:v 15 -vsync vfr -f gif <OUTPUT.GIF>
+
+从视频第 1 秒开始，按比例缩小尺寸，并且取前 15 帧
+```
+
+
+
+
+
 ## subtitle
 
 [godot-speech-to-subtitles](https://github.com/1Othello/godot-speech-to-subtitles) 
