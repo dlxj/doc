@@ -17114,6 +17114,10 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Markdown to Richtext ](https://github.com/fahrstuhl/godot_markdown/tree/godot_4) godot 3.3.4 正常
 
+- ```
+  [font=res://fonts/libmarkdown/heading_1.tres]title111111111111111111111[/font]
+  ```
+
 - [RichText 控件显示图片](https://github.com/nekofleet/rich-text-label-ex)
 
 [markdonw 编辑器 Godot-TextEditor](https://github.com/teebarjunk/Godot-TextEditor) godot 3.3.4 正常
