@@ -2410,6 +2410,7 @@ cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
 
 
 ```
+# restart2.sh use tmux to run
 while true;
 do
     last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
@@ -2419,7 +2420,7 @@ do
         last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
     else
         echo "last1 sleep 30s"
-        sleep 30
+        sleep 30	
     fi
 
     last2="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
@@ -2429,24 +2430,26 @@ do
         last2="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
     else
         echo "last2 sleep 30s"
-        sleep 30
+        sleep 30	
     fi
 
-    if [ "$last1" = "$last2" ]; then
+    if [[ $last1 = $last2  ]]; then
         if grep -q "saving excel" <<<"$last2"; then
             echo "@@@@@@@@@restart2.sh NOTHING TO DO"
-        elif grep -q "switch account:" <<<"$last2"; then
+        elif grep -q "switch account:" <<<"$last2"; then 
             echo "@@@@@@@@@restart2.sh NOTHING TO DO2"
         else
             filename="/root/echodict/pandora/ak148_script.xlsx"
             echo "@@@@@@@@@checking excel size if 3 minutes not change........."
-            size1="$(wc -c <"$filename")"
-            sleep 180
-            size2="$(wc -c <"$filename")"
-            if [ "$size2" -eq "$size" ]; then
+            size1=$(wc -c <"$filename")
+            sleep 180  
+            size2=$(wc -c <"$filename")
+            if [[ $size2 -eq $size1 ]]; then
                 echo "#####Waring: pandora stuning, restart now..."
                 pm2 restart 0
-            fi
+                echo "#####sleep 3 minute"
+                sleep 180 
+            fi        
         fi
     fi
 done
