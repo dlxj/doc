@@ -23653,6 +23653,8 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 [whisperX](https://github.com/m-bain/whisperX)
 
+[FunASR 阿里的](https://github.com/alibaba-damo-academy/FunASR/blob/main/docs/model_zoo/modelscope_models.md)
+
 [Whisper WebUI with a VAD for more accurate non-English transcripts (Japanese) #397](https://github.com/openai/whisper/discussions/397)
 
 - JP 前端
