@@ -23660,6 +23660,8 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 - [可检测长语音片段中有效语音的起止时间点](https://modelscope.cn/models/damo/speech_UniASR_asr_2pass-ja-16k-common-vocab93-tensorflow1-online/summary)
 
+[讯飞语音唤醒](https://www.xfyun.cn/doc/asr/awaken/Android-SDK.html#_1%E3%80%81%E7%AE%80%E4%BB%8B)
+
 [Whisper WebUI with a VAD for more accurate non-English transcripts (Japanese) #397](https://github.com/openai/whisper/discussions/397)
 
 - JP 前端
