@@ -2410,7 +2410,6 @@ cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
 
 
 ```
-# restart2.sh  use tmux to run
 while true;
 do
     last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
@@ -2440,10 +2439,11 @@ do
             echo "@@@@@@@@@restart2.sh NOTHING TO DO2"
         else
             filename="/root/echodict/pandora/ak148_script.xlsx"
-            size="$(wc -c <"$filename")"
-            min=5242880
-            echo "@@@@@@@@@checking excel size if large then 5M........."
-            if [ "$min" -lt "$size" ]; then
+            echo "@@@@@@@@@checking excel size if 3 minutes not change........."
+            size1="$(wc -c <"$filename")"
+            sleep 180
+            size2="$(wc -c <"$filename")"
+            if [ "$size2" -eq "$size" ]; then
                 echo "#####Waring: pandora stuning, restart now..."
                 pm2 restart 0
             fi
