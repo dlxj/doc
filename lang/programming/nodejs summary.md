@@ -2409,6 +2409,44 @@ cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
 
 
 
+```
+# restart2.sh
+# use tmux to run
+while true;
+do
+    last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    if grep -q "saving excel" <<<"$last1"; then
+        echo "last1 saving, so sleep 60s"
+        sleep 60
+        last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    else
+        echo "last1 sleep 30s"
+        sleep 30
+    fi
+
+    last2="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    if grep -q "saving excel" <<<"$last2"; then
+        echo "last2 saving, so sleep 60s"
+        sleep 60
+        last2="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    else
+        echo "last2 sleep 30s"
+        sleep 30
+    fi
+
+    if [ "$last1" = "$last2" ]; then
+        if grep -q "saving excel" <<<"$last2"; then
+            echo "@@@@@@@@@restart.sh NOTHING TO DO"
+        else
+            echo "#####Waring: pandora stuning, restart now..."
+            pm2 restart 0
+        fi
+    fi
+done
+```
+
+
+
 
 
 ## 抱抱脸 
