@@ -2410,8 +2410,7 @@ cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
 
 
 ```
-# restart2.sh
-# use tmux to run
+# restart2.sh  use tmux to run
 while true;
 do
     last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
@@ -2436,13 +2435,22 @@ do
 
     if [ "$last1" = "$last2" ]; then
         if grep -q "saving excel" <<<"$last2"; then
-            echo "@@@@@@@@@restart.sh NOTHING TO DO"
+            echo "@@@@@@@@@restart2.sh NOTHING TO DO"
+        elif grep -q "switch account:" <<<"$last2"; then
+            echo "@@@@@@@@@restart2.sh NOTHING TO DO2"
         else
-            echo "#####Waring: pandora stuning, restart now..."
-            pm2 restart 0
+            filename="/root/echodict/pandora/ak148_script.xlsx"
+            size="$(wc -c <"$filename")"
+            min=5242880
+            echo "@@@@@@@@@checking excel size if large then 5M........."
+            if [ "$min" -lt "$size" ]; then
+                echo "#####Waring: pandora stuning, restart now..."
+                pm2 restart 0
+            fi
         fi
     fi
 done
+
 ```
 
 
