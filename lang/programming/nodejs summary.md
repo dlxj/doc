@@ -2409,6 +2409,55 @@ cp /root/echodict/pandora/pre_ak148_script.xlsx $dir
 
 
 
+```
+# restart2.sh use tmux to run
+while true;
+do
+    last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    if grep -q "saving excel" <<<"$last1"; then
+        echo "last1 saving, so sleep 60s"
+        sleep 60
+        last1="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    else
+        echo "last1 sleep 30s"
+        sleep 30	
+    fi
+
+    last2="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    if grep -q "saving excel" <<<"$last2"; then
+        echo "last2 saving, so sleep 60s"
+        sleep 60
+        last2="$(tail -1 /root/.pm2/logs/pandora-ak148-explain-out.log)"
+    else
+        echo "last2 sleep 30s"
+        sleep 30	
+    fi
+
+    if [[ $last1 = $last2  ]]; then
+        if grep -q "saving excel" <<<"$last2"; then
+            echo "@@@@@@@@@restart2.sh NOTHING TO DO"
+        elif grep -q "switch account:" <<<"$last2"; then 
+            echo "@@@@@@@@@restart2.sh NOTHING TO DO2"
+        else
+            filename="/root/echodict/pandora/ak148_script.xlsx"
+            echo "@@@@@@@@@checking excel size if 3 minutes not change........."
+            size1=$(wc -c <"$filename")
+            sleep 180  
+            size2=$(wc -c <"$filename")
+            if [[ $size2 -eq $size1 ]]; then
+                echo "#####Waring: pandora stuning, restart now..."
+                pm2 restart 0
+                echo "#####sleep 3 minute"
+                sleep 180 
+            fi        
+        fi
+    fi
+done
+
+```
+
+
+
 
 
 ## 抱抱脸 
@@ -23620,6 +23669,12 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 # whisperX
 
 [whisperX](https://github.com/m-bain/whisperX)
+
+[FunASR 阿里的](https://github.com/alibaba-damo-academy/FunASR/blob/main/docs/model_zoo/modelscope_models.md)
+
+- [可检测长语音片段中有效语音的起止时间点](https://modelscope.cn/models/damo/speech_UniASR_asr_2pass-ja-16k-common-vocab93-tensorflow1-online/summary)
+
+[讯飞语音唤醒](https://www.xfyun.cn/doc/asr/awaken/Android-SDK.html#_1%E3%80%81%E7%AE%80%E4%BB%8B)
 
 [Whisper WebUI with a VAD for more accurate non-English transcripts (Japanese) #397](https://github.com/openai/whisper/discussions/397)
 
