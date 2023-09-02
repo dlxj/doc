@@ -17996,6 +17996,20 @@ print(nodepath.get_concatenated_subnames()) # texture:load_path
 
 
 
+### bbcode
+
+#### font_size
+
+```
+
+func _ready():
+	var rich = $RichTextLabel
+	rich.set_text("[center][font=res://NotoSans-Bold.tres][font_size=30]hihhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh[/font_size][/font][/center]")
+
+```
+
+
+
 
 
 ### uuid
