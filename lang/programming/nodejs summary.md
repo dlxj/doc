@@ -25000,6 +25000,109 @@ clickElementWhenAvailable(); // Check if the element is available when the scrip
 
 
 
+## 捕获 ChatGPT 发送前的内容
+
+[Tampermonkey 捕获 ChatGPT 发送前的内容](https://v2ex.com/t/970390#reply4)
+
+```
+网页端 ChatGPT 在发送消息时候，回车或者点击发送按钮后，对话框会被清空发送，如果遇到网络状况不佳，消息发送失败，则这条编辑的消息也消失了。
+
+所以想使用 Tampermonkey 来捕获这个发送行为:
+
+// ==UserScript==
+// @name         ChatGPT 回车捕获
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://chat.openai.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=openai.com
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    function run() {
+        const inputElement = document.querySelector('#prompt-textarea');
+        if (inputElement) {
+            console.log("[ChatGPT 回车捕获]: Hacked!");
+            inputElement.addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) {
+                    console.log("[ChatGPT 回车捕获]: 即将发送的内容=> ", inputElement.value);
+                }
+            });
+        } else {
+            console.log("[ChatGPT 回车捕获]: No inputElement found!")
+        }
+    }
+    setTimeout(() => {
+        run();
+    }, 3000);
+    let oldPushState = history.pushState;
+    history.pushState = function pushState() {
+        let ret = oldPushState.apply(this, arguments);
+        window.dispatchEvent(new Event('pushstate'));
+        window.dispatchEvent(new Event('locationchange'));
+        return ret;
+    };
+    let oldReplaceState = history.replaceState;
+    history.replaceState = function replaceState() {
+        let ret = oldReplaceState.apply(this, arguments);
+        window.dispatchEvent(new Event('replacestate'));
+        window.dispatchEvent(new Event('locationchange'));
+        return ret;
+    };
+    window.addEventListener('popstate', () => {
+        window.dispatchEvent(new Event('locationchange'));
+    });
+    window.addEventListener('locationchange', function () {
+        setTimeout(() => {
+            run();
+        }, 3000);
+    });
+})();
+
+上面代码虽然能完成这项工作:
+
+监听 #prompt-textarea 这个输入框
+当按下回车键时候将输入框内的消息输出到控制台
+为了确保页面加载完成再捕获，延迟 3 秒执行
+为了解决切换不同的对话导致输入框改变，监听路由改变并重新 hack
+但这样的实现也有一些其他问题，比如页面在第 3 秒后才完全加载出来。并且只是监听了回车按键，发送按钮也是一样的逻辑（重复代码，没有写）。
+
+所以这样做有点丑，大佬们有什么其他方法来优化一下？
+
+比如 hack 一些内部方法:
+
+let msg = null;
+const OldTextDecoder = TextDecoder;
+TextDecoder = class {
+    constructor() {
+        this.old = new OldTextDecoder(...arguments);
+    }
+    decode() {
+        const res = this.old.decode(...arguments);
+        try {
+            msg = JSON.parse(res).message.content.parts[0];
+        } catch (e) {
+        }
+        if (msg != null && res == "[DONE]") {
+            if (window.ongpt) {
+                window.ongpt(msg);
+            }
+            msg = null;
+        }
+        return res;
+    }
+};
+但这只是 hack 了 TextDecoder ，输入框发送前的消息应该如何 hack ？
+
+
+```
+
+
+
 
 
 ## video download
