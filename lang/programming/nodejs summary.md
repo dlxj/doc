@@ -18622,6 +18622,31 @@ func actual_position(var camera,var pos):
 
 ### await
 
+
+
+```
+# 这样是正常的
+extends Control
+
+func asyn_fun():
+	for s in ['a a', 'b b', 'c c']:
+		var post = Post.new()
+		self.add_child(post) # 注意必须加到场景post才正常
+		post.mmesg(s)
+		var arr = await post.mmesg_completed
+		print("x".join(arr))
+		self.remove_child(post)
+
+func _ready():
+	await asyn_fun()
+	print('ready')
+	
+```
+
+
+
+
+
 ```
 # popup 是窗口类，点关闭按钮时会触发信号 close_requested
 await popup.close_requested
