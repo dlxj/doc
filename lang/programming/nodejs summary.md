@@ -17966,6 +17966,22 @@ func read_caption(file: FileAccess) -> String:
 
 
 
+#### path
+
+```
+如果该字符串是有效的文件路径，则返回基础目录名称。
+
+var dir_path = "/path/to/file.txt".get_base_dir() # dir_path 为 "/path/to"
+
+get_tree().edited_scene_root.filename.get_base_dir()
+
+
+```
+
+
+
+
+
 ### match
 
 ```
