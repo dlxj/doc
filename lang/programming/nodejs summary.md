@@ -18061,6 +18061,18 @@ print(nodepath.get_concatenated_subnames()) # texture:load_path
 
 
 
+### Array
+
+#### join
+
+```
+var string_array = PackedStringArray(["hello", "world"])
+var string = " ".join(string_array)
+print(string) # "hello world"
+```
+
+
+
 ### bbcode
 
 #### font_size
