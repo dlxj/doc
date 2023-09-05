@@ -18071,6 +18071,41 @@ print(nodepath.get_concatenated_subnames()) # texture:load_path
 
 
 
+### Regex
+
+```
+var txt = "abc xyz abcdefg"
+var regex = RegEx.new()
+regex.compile("abc")
+
+var result = regex.search(txt)
+if result:
+    print(result.get_string()) # prints abc
+
+result = regex.search_all(txt)
+if result:
+    print(result) # prints an array of the search matches
+```
+
+
+
+```
+var subject := "ab"
+var pattern := "(.)"
+
+var regex = RegEx.new()
+regex.compile(pattern)
+
+subject = regex.sub(subject, "$1&", true) # true to replace all match
+
+prints(subject)
+--> a&b&
+```
+
+
+
+
+
 ### Array
 
 #### join
