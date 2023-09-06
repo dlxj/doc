@@ -25347,6 +25347,27 @@ dependent type
 
 - [cpp dejavu](https://github.com/salsowelim/dejavu_cpp_port)
 
+[audiomatch 立等可用](https://github.com/unmade/audiomatch)
+
+- ```
+  pip3.10 install audiomatch
+  ```
+
+[pyacoustid 自带指纹相似度](https://github.com/beetbox/pyacoustid)
+
+```
+You will need a C++ compiler and CMake to build the library. FFmpeg is required to build the fpcalc tool.
+
+$ git clone https://github.com/acoustid/chromaprint.git
+$ cd chromaprint
+$ cmake .
+$ make
+```
+
+
+
+
+
 ```
 from expression import pipe
 
