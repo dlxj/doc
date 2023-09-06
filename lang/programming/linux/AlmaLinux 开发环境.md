@@ -44,6 +44,16 @@ dnf install -y epel-release && \
 dnf update -y && \
 dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel 
 
+	# ffmpeg
+dnf install epel-release -y && \
+dnf config-manager --set-enabled crb && \
+dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y && \
+dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y
+
+dnf install ffmpeg ffmpeg-devel && \
+rpm -qi ffmpeg
+
+
 # almalinux 8
 dnf makecache --refresh && \
 dnf update -y && \
@@ -54,6 +64,8 @@ dnf install -y python39 && \
 pip3 install conan && \
 dnf install -y passwd openssh-server tar p7zip tmux libsodium nmap curl net-tools cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie systemtap-sdt-devel redhat-rpm-config ntfsprogs ntfs-3g
 
+	# ffmpeg
+	[How to install RPM fusion on AlmaLinux 8](https://linux.how2shout.com/how-to-install-rpm-fusion-on-almalinux-8-rocky-linux-8/)
 
 wget https://github.com/Kitware/CMake/releases/download/v3.23.4/cmake-3.23.4.tar.gz && \
 tar xvf cmake-3.23.4.tar.gz && \
