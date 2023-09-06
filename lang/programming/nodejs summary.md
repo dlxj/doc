@@ -25338,6 +25338,8 @@ dependent type
 
 [Expression](https://github.com/cognitedata/Expression)
 
+[dejavu audio match](https://github.com/worldveil/dejavu)
+
 ```
 from expression import pipe
 
