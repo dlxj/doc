@@ -25355,7 +25355,18 @@ dependent type
 
 [pyacoustid 自带指纹相似度](https://github.com/beetbox/pyacoustid)
 
+- [How to install RPM fusion on AlmaLinux 8](https://linux.how2shout.com/how-to-install-rpm-fusion-on-almalinux-8-rocky-linux-8/)
+
 ```
+# almalinx9
+dnf install epel-release -y && \
+dnf config-manager --set-enabled crb && \
+dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y && \
+dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y
+
+dnf install ffmpeg ffmpeg-devel && \
+rpm -qi ffmpeg
+
 You will need a C++ compiler and CMake to build the library. FFmpeg is required to build the fpcalc tool.
 
 $ git clone https://github.com/acoustid/chromaprint.git
