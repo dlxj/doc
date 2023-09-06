@@ -25369,10 +25369,16 @@ rpm -qi ffmpeg
 
 You will need a C++ compiler and CMake to build the library. FFmpeg is required to build the fpcalc tool.
 
-$ git clone https://github.com/acoustid/chromaprint.git
-$ cd chromaprint
-$ cmake .
-$ make
+git clone https://github.com/acoustid/chromaprint.git && \
+cd chromaprint && \
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TOOLS=ON . && \
+make && \
+make install
+
+pip3.10 install pyacoustid
+
+
+
 ```
 
 
