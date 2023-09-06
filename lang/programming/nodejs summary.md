@@ -25340,6 +25340,11 @@ dependent type
 
 [dejavu audio match](https://github.com/worldveil/dejavu)
 
+- ```
+  proxychains4 docker-compose build
+  
+  ```
+
 - [cpp dejavu](https://github.com/salsowelim/dejavu_cpp_port)
 
 ```
