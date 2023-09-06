@@ -25340,6 +25340,8 @@ dependent type
 
 [dejavu audio match](https://github.com/worldveil/dejavu)
 
+- [cpp dejavu](https://github.com/salsowelim/dejavu_cpp_port)
+
 ```
 from expression import pipe
 
