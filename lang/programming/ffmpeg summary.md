@@ -169,6 +169,14 @@ cmd.exe
 
 
 
+# MKV to MP4
+
+```
+ ffmpeg -i 1.mkv -ss 00:01:49.000 -to 00:05:00.000 -map 0:v -map 0:a:0  -c copy out.mp4
+```
+
+
+
 
 
 # tutorial
