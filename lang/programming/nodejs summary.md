@@ -2475,6 +2475,19 @@ huggingface-cli lfs-enable-largefiles ./path/to/your/repo
 git lfs install
 git lfs clone https://huggingface.co/datasets/dlxjj/pdf
 
+git lfs clone https://huggingface.co/datasets/dlxjj/echodict
+
+
+
+pip3.9 install huggingface_hub
+https://huggingface.co/settings/tokens
+	# copy token 
+	
+huggingface-cli login
+
+
+
+huggingface-cli lfs-enable-largefiles /root/hugface/echodict
 
 ```
 
@@ -25353,7 +25366,7 @@ dependent type
   pip3.10 install audiomatch
   ```
 
-[pyacoustid 自带指纹相似度](https://github.com/beetbox/pyacoustid)
+[pyacoustid 自带指纹相似度](https://github.com/beetbox/pyacoustid) [C# audio video](https://github.com/AddictedCS/soundfingerprinting)
 
 - [How to install RPM fusion on AlmaLinux 8](https://linux.how2shout.com/how-to-install-rpm-fusion-on-almalinux-8-rocky-linux-8/)
 
@@ -25376,7 +25389,6 @@ make && \
 make install
 
 pip3.10 install pyacoustid
-
 
 
 ```
