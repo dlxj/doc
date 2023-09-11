@@ -175,6 +175,14 @@ cmd.exe
  ffmpeg -i 1.mkv -ss 00:01:49.000 -to 00:05:00.000 -map 0:v -map 0:a:0  -c copy out.mp4
 ```
 
+## -ss -to
+
+```
+.xxx 是微秒，最大 999
+ffmpeg -i a.ogg -ss 00:01:02.500 -t 00:01:03.250 -c copy x2.ogg
+
+```
+
 
 
 
