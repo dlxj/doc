@@ -25903,8 +25903,24 @@ typedef struct EitherInt {
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
 
 - [install](https://github.com/Dobiasd/FunctionalPlus/blob/master/INSTALL.md)
+
 - [vcpkg 包管理](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-windows)
+
 - [utfcpp utf8 std::u8string](https://github.com/nemtrif/utfcpp)
+
+  > ```
+  > // 成功逐字符输出中文
+  >     std::string str("中文");
+  >     for (auto it = str.begin(), it2 = str.begin(); it2 != str.end(); ) {
+  >         utf8::next(it2, str.end());
+  >         while (it < it2) {
+  >             cout << *it;
+  >             ++it;
+  >         }
+  >         cout << endl;
+  >     }
+  >     
+  > ```
 
 ```powershell
 New-Item -ItemType Directory -Path C:\src -Force
