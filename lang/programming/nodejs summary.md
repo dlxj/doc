@@ -25909,6 +25909,16 @@ typedef struct EitherInt {
 - [utfcpp utf8 std::u8string](https://github.com/nemtrif/utfcpp)
 
   > ```
+  > // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=中
+  > 
+  >     /*
+  >       中
+  >       Decimal	UTF-8	    UTF-16	UTF-32
+  >       20013	    E4 B8 AD 	4E2D	00004E2D
+  >       文
+  >       Decimal	UTF-8	    UTF-16	UTF-32
+  >       25991	    E6 96 87 	6587	00006587
+  >     */
   > // 成功逐字符输出中文
   >     std::string str("中文");
   >     for (auto it = str.begin(), it2 = str.begin(); it2 != str.end(); ) {
@@ -25919,6 +25929,11 @@ typedef struct EitherInt {
   >         }
   >         cout << endl;
   >     }
+  >   
+  >     // 先转成 std::u32string 再用正则
+  >     std::vector<unsigned long> utf32result;
+  > 	utf8::utf8to16(str.begin(), str.end(), std::back_inserter(utf32result));
+  > 	size_t size1 = utf32result.size();
   >     
   > ```
 
