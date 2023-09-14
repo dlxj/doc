@@ -25906,7 +25906,7 @@ typedef struct EitherInt {
 
 - [vcpkg 包管理](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-windows)
 
-- [utfcpp utf8 std::u8string](https://github.com/nemtrif/utfcpp)
+### [utfcpp utf8 std::u8string](https://github.com/nemtrif/utfcpp)
 
   > ```
   > // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=中
@@ -25983,8 +25983,9 @@ typedef struct EitherInt {
   > ```
   >
   > 
+
   
-  
+
 
 
 
@@ -26038,6 +26039,47 @@ int main(){
     std::cout << "done." << std::endl;
 }
 ```
+
+
+
+#### regex
+
+```
+
+// // Include the Boost regex header 
+// #include <boost/regex.hpp> // Include other headers as needed 
+// #include <iostream> 
+// #include <string>
+
+// int main() {
+
+//     boost::regex reg("[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]+"); 
+
+//     //boost::regex reg("(A.*)");
+
+//     // Create a string that contains some Japanese characters 
+//     std::string s = "This is a string with 日本語 characters."; 
+//     // Create a regex object with the syntax option for ICU regex 
+//     // boost::regex reg("/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]+/", boost::regex::icu); 
+//     // // Use regex_search to check if the string contains any Japanese characters 
+//     // if (boost::regex_search(s, re)) {
+//     //     std::cout << "The string contains Japanese characters.\n"; 
+//     //     // Use regex_iterator to iterate over all the matches of the regex in the string 
+//     //     boost::sregex_iterator it(s.begin(), s.end(), re); 
+//     //     boost::sregex_iterator end; 
+//     //     while (it != end) { 
+//     //         // Print each match and its position in the string 
+//     //         std::cout << "Match: " << it->str() << "\n"; 
+//     //         std::cout << "Position: " << it->position() << "\n"; ++it; } 
+//     //     } 
+//     // else {
+//     //     std::cout << "The string does not contain Japanese characters.\n"; 
+//     // } 
+//     return 0; 
+// }
+```
+
+
 
 
 
