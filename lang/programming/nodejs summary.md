@@ -25906,7 +25906,7 @@ typedef struct EitherInt {
 
 - [vcpkg 包管理](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-windows)
 
-### [utfcpp utf8 std::u8string](https://github.com/nemtrif/utfcpp)
+### [utfcpp std::u8string](https://github.com/nemtrif/utfcpp)
 
   > ```
   > // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=中
@@ -26044,7 +26044,11 @@ int main(){
 
 #### regex
 
+[ICU support](https://github.com/microsoft/vcpkg/issues/3537) [1](https://www.boost.org/doc/libs/1_33_1/libs/regex/doc/install.html#unicode)
+
 ```
+
+vcpkg install boost-regex[icu]:x64-windows
 
 // // Include the Boost regex header 
 // #include <boost/regex.hpp> // Include other headers as needed 

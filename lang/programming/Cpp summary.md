@@ -2,25 +2,27 @@
 
 # C++ Monads
 
+see nodejs summary.md -> C++ Monads
+
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
 
 - [install](https://github.com/Dobiasd/FunctionalPlus/blob/master/INSTALL.md)
 
 - [vcpkg 包管理](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-windows)
 
-## [utfcpp std::u8string](https://github.com/nemtrif/utfcpp)
+## [utfcpp u8string](https://github.com/nemtrif/utfcpp)
 
   > ```
   > // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=中
   > 
-  >  /*
-  >    中
-  >    Decimal	UTF-8	    UTF-16	UTF-32
-  >    20013	    E4 B8 AD 	4E2D	00004E2D
-  >    文
-  >    Decimal	UTF-8	    UTF-16	UTF-32
-  >    25991	    E6 96 87 	6587	00006587
-  >  */
+  > /*
+  > 中
+  > Decimal	UTF-8	    UTF-16	UTF-32
+  > 20013	    E4 B8 AD 	4E2D	00004E2D
+  > 文
+  > Decimal	UTF-8	    UTF-16	UTF-32
+  > 25991	    E6 96 87 	6587	00006587
+  > */
   > // 成功逐字符输出中文
   > // see nodejs sumarry.md -> C++ Monads
   > #include <fplus/fplus.hpp>
@@ -31,75 +33,66 @@
   > #include <string>
   > #include <fstream>
   > #include <vector>
-  > #include <regex>
   > using namespace std;
   > 
-  > bool is_odd_int(int x) { return x % 2 != 0; }
-  > 
-  > bool valid_utf8_file(const char* file_name)
-  > {
-  > 	std::ifstream ifs(file_name);
-  > 	if (!ifs)
-  > 		return false; // even better, throw here
-  > 
-  > 	std::istreambuf_iterator<char> it(ifs.rdbuf());
-  > 	std::istreambuf_iterator<char> eos;
-  > 
-  > 	return utf8::is_valid(it, eos);
+  > std::string str("中文");
+  > for (auto it = str.begin(), it2 = str.begin(); it2 != str.end(); ) {
+  > utf8::next(it2, str.end());
+  > while (it < it2) {
+  > cout << *it;
+  > ++it;
+  > }
+  > cout << endl;
   > }
   > 
+  > // 先转成 std::u32string 再用正则
+  > std::string str2("中文");
+  > std::vector<unsigned long> utf32result;
+  > 	utf8::utf8to32(str2.begin(), str2.end(), std::back_inserter(utf32result));
+  > 	size_t size1 = utf32result.size();
+  > std::u32string strr(utf32result.begin(), utf32result.end());
+  > cout << "all task done." << endl;
+  > 
+  > ```
+  >
+  > ```
   > inline std::wstring from_utf8(const std::string& utf8) {
-  >     std::vector<unsigned long> utf32result;
+  >  std::vector<unsigned long> utf32result;
   > 	utf8::utf8to32(utf8.begin(), utf8.end(), std::back_inserter(utf32result));
   > 	size_t size1 = utf32result.size();
-  >     std::wstring wstr(utf32result.begin(), utf32result.end());
-  >     return wstr;
+  >  std::wstring wstr(utf32result.begin(), utf32result.end());
+  >  return wstr;
   > }
   > 
   > inline std::string to_utf8(const std::wstring& ws) {
-  >     std::string utf8;
+  >  std::string utf8;
   > 	utf8::utf16to8(ws.begin(), ws.end(), std::back_inserter(utf8));
   > 	return utf8;
   > }
   > 
+  > int main()
+  > {
+  >  std::string test = "john.doe@神谕.com"; // utf8
+  >  std::string expr = "[\\u0080-\\uDB7F]+"; // utf8
   > 
-  > int main() {
+  >  std::wstring wtest = from_utf8(test);
+  >  std::wstring wexpr = from_utf8(expr);
   > 
-  >     std::string test = "john.doe@神谕.com"; // utf8
-  >     std::string expr = "[\\u0080-\\uDB7F]+"; // utf8
-  > 
-  >     std::wstring wtest = from_utf8(test);
-  >     std::wstring wexpr = from_utf8(expr);
-  > 
-  >     std::wregex we(wexpr);
-  >     std::wsmatch wm;
-  >     if(std::regex_search(wtest, wm, we))
-  >     {
-  >         std::cout << to_utf8(wm.str(0)) << '\n';
-  >     }
-  > 
-  >     std::string str("中文");
-  >     for (auto it = str.begin(), it2 = str.begin(); it2 != str.end(); ) {
-  >         utf8::next(it2, str.end());
-  >         while (it < it2) {
-  >             cout << *it;
-  >             ++it;
-  >         }
-  >         cout << endl;
-  >     }
-  > 
-  >     // 先转成 std::u32string 再用正则
-  >     std::string str2("中文");
-  >     std::vector<unsigned long> utf32result;
-  > 	utf8::utf8to32(str2.begin(), str2.end(), std::back_inserter(utf32result));
-  > 	size_t size1 = utf32result.size();
-  >     std::u32string strr(utf32result.begin(), utf32result.end());
-  >     std:wstring wstr = from_utf8(str2);
-  >     std::string str8 = to_utf8(wstr);
-  >     cout << "all task done." << endl;
+  >  std::wregex we(wexpr);
+  >  std::wsmatch wm;
+  >  if(std::regex_search(wtest, wm, we))
+  >  {
+  >      std::cout << to_utf8(wm.str(0)) << '\n';
+  >  }
   > }
-  >  
   > ```
+  >
+  > 
+
+  
+
+
+
 
 ```powershell
 New-Item -ItemType Directory -Path C:\src -Force
@@ -150,6 +143,47 @@ int main(){
     auto odds = fplus::keep_if(is_odd_int, values);
     std::cout << "done." << std::endl;
 }
+```
+
+
+
+### regex
+
+```
+
+vcpkg install boost-regex[icu]:x64-windows
+
+// // Include the Boost regex header 
+// #include <boost/regex.hpp> // Include other headers as needed 
+// #include <iostream> 
+// #include <string>
+
+// int main() {
+
+//     boost::regex reg("[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]+"); 
+
+//     //boost::regex reg("(A.*)");
+
+//     // Create a string that contains some Japanese characters 
+//     std::string s = "This is a string with 日本語 characters."; 
+//     // Create a regex object with the syntax option for ICU regex 
+//     // boost::regex reg("/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]+/", boost::regex::icu); 
+//     // // Use regex_search to check if the string contains any Japanese characters 
+//     // if (boost::regex_search(s, re)) {
+//     //     std::cout << "The string contains Japanese characters.\n"; 
+//     //     // Use regex_iterator to iterate over all the matches of the regex in the string 
+//     //     boost::sregex_iterator it(s.begin(), s.end(), re); 
+//     //     boost::sregex_iterator end; 
+//     //     while (it != end) { 
+//     //         // Print each match and its position in the string 
+//     //         std::cout << "Match: " << it->str() << "\n"; 
+//     //         std::cout << "Position: " << it->position() << "\n"; ++it; } 
+//     //     } 
+//     // else {
+//     //     std::cout << "The string does not contain Japanese characters.\n"; 
+//     // } 
+//     return 0; 
+// }
 ```
 
 
