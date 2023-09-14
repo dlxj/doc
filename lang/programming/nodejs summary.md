@@ -25911,31 +25911,82 @@ typedef struct EitherInt {
   > ```
   > // http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=中
   > 
-  >     /*
-  >       中
-  >       Decimal	UTF-8	    UTF-16	UTF-32
-  >       20013	    E4 B8 AD 	4E2D	00004E2D
-  >       文
-  >       Decimal	UTF-8	    UTF-16	UTF-32
-  >       25991	    E6 96 87 	6587	00006587
-  >     */
+  > /*
+  > 中
+  > Decimal	UTF-8	    UTF-16	UTF-32
+  > 20013	    E4 B8 AD 	4E2D	00004E2D
+  > 文
+  > Decimal	UTF-8	    UTF-16	UTF-32
+  > 25991	    E6 96 87 	6587	00006587
+  > */
   > // 成功逐字符输出中文
-  >     std::string str("中文");
-  >     for (auto it = str.begin(), it2 = str.begin(); it2 != str.end(); ) {
-  >         utf8::next(it2, str.end());
-  >         while (it < it2) {
-  >             cout << *it;
-  >             ++it;
-  >         }
-  >         cout << endl;
-  >     }
-  >   
-  >     // 先转成 std::u32string 再用正则
-  >     std::vector<unsigned long> utf32result;
-  > 	utf8::utf8to16(str.begin(), str.end(), std::back_inserter(utf32result));
+  > // see nodejs sumarry.md -> C++ Monads
+  > #include <fplus/fplus.hpp>
+  > #include <iostream>
+  > #include "src/utf8.h"
+  > #include <string.h>
+  > #include <iostream>
+  > #include <string>
+  > #include <fstream>
+  > #include <vector>
+  > using namespace std;
+  > 
+  > std::string str("中文");
+  > for (auto it = str.begin(), it2 = str.begin(); it2 != str.end(); ) {
+  > utf8::next(it2, str.end());
+  > while (it < it2) {
+  >    cout << *it;
+  >    ++it;
+  > }
+  > cout << endl;
+  > }
+  > 
+  > // 先转成 std::u32string 再用正则
+  > std::string str2("中文");
+  > std::vector<unsigned long> utf32result;
+  > 	utf8::utf8to32(str2.begin(), str2.end(), std::back_inserter(utf32result));
   > 	size_t size1 = utf32result.size();
-  >     
+  > std::u32string strr(utf32result.begin(), utf32result.end());
+  > cout << "all task done." << endl;
+  > 
   > ```
+  > ```
+  > inline std::wstring from_utf8(const std::string& utf8) {
+  >     std::vector<unsigned long> utf32result;
+  > 	utf8::utf8to32(utf8.begin(), utf8.end(), std::back_inserter(utf32result));
+  > 	size_t size1 = utf32result.size();
+  >     std::wstring wstr(utf32result.begin(), utf32result.end());
+  >     return wstr;
+  > }
+  > 
+  > inline std::string to_utf8(const std::wstring& ws) {
+  >     std::string utf8;
+  > 	utf8::utf16to8(ws.begin(), ws.end(), std::back_inserter(utf8));
+  > 	return utf8;
+  > }
+  > 
+  > int main()
+  > {
+  >     std::string test = "john.doe@神谕.com"; // utf8
+  >     std::string expr = "[\\u0080-\\uDB7F]+"; // utf8
+  > 
+  >     std::wstring wtest = from_utf8(test);
+  >     std::wstring wexpr = from_utf8(expr);
+  > 
+  >     std::wregex we(wexpr);
+  >     std::wsmatch wm;
+  >     if(std::regex_search(wtest, wm, we))
+  >     {
+  >         std::cout << to_utf8(wm.str(0)) << '\n';
+  >     }
+  > }
+  > ```
+  >
+  > 
+  
+  
+
+
 
 ```powershell
 New-Item -ItemType Directory -Path C:\src -Force
