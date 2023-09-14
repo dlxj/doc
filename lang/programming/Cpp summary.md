@@ -149,9 +149,18 @@ int main(){
 
 ### regex
 
+see nodejs summary.md C++ Monads
+
 ```
 
 vcpkg install boost-regex[icu]:x64-windows
+	# C:/src/vcpkg/packages/boost-regex_x64-windows
+	# 成功安装
+	#include "boost/regex.hpp"
+	#include "boost/regex/icu.hpp"
+	https://github.com/unicode-org/icu/releases 下载
+		icu-cldr\icu4c\source\allinone
+			# 有 vc 工程
 
 // // Include the Boost regex header 
 // #include <boost/regex.hpp> // Include other headers as needed 

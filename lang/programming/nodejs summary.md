@@ -26050,7 +26050,35 @@ int main(){
 
 vcpkg install boost-regex[icu]:x64-windows
 	# C:/src/vcpkg/packages/boost-regex_x64-windows
+	# C:\src\vcpkg\packages\icu_x64-windows\include
 	# 成功安装
+	#include "boost/regex.hpp"
+	#include "boost/regex/icu.hpp"
+	# 以下不需要了 用 icu_x64-windows\include
+	https://github.com/unicode-org/icu/releases 下载
+		icu-cldr\icu4c\source\allinone
+			# 有 vc 工程
+			icu-cldr-2023-09-13\icu4c\source\common\unicode
+				# unicode/utypes.h 在这里
+
+# build.bat
+@echo off
+if exist "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" (
+    call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
+) else (
+    if exist "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" (
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
+    ) else (
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+    )
+)
+set compilerflags=/Od /Zi /EHsc /std:c++latest /I include /I C:\src\vcpkg\packages\fplus_x64-windows\include /I D:\GitHub\echodict\friso_vs2019 /I C:\src\vcpkg\packages\boost-regex_x64-windows\include
+set linkerflags=/OUT:bin\main.exe
+cl.exe %compilerflags% mmseg_jp.cpp /link %linkerflags%
+rem cl.exe %compilerflags% src\*.cpp /link %linkerflags%
+del bin\*.ilk *.obj *.pdb
+
+
 
 // // Include the Boost regex header 
 // #include <boost/regex.hpp> // Include other headers as needed 
