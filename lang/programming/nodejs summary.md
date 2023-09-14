@@ -26049,6 +26049,8 @@ int main(){
 ```
 
 vcpkg install boost-regex[icu]:x64-windows
+	# C:/src/vcpkg/packages/boost-regex_x64-windows
+	# 成功安装
 
 // // Include the Boost regex header 
 // #include <boost/regex.hpp> // Include other headers as needed 
