@@ -26061,6 +26061,11 @@ vcpkg install boost-regex[icu]:x64-windows
 			icu-cldr-2023-09-13\icu4c\source\common\unicode
 				# unicode/utypes.h 在这里
 
+visual studio 配置 utf8:
+main.cpp 另存为 utf8 编码格式，然后： 
+工程属性 -> C++ -> 命令行 其他选项: /utf-8 
+
+	
 # build.bat
 @echo off
 if exist "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" (
