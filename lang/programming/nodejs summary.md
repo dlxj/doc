@@ -26047,8 +26047,8 @@ int main(){
 [ICU support](https://github.com/microsoft/vcpkg/issues/3537) [1](https://www.boost.org/doc/libs/1_33_1/libs/regex/doc/install.html#unicode)
 
 ```
-
-vcpkg install boost-regex[icu]:x64-windows
+cd C:\src\vcpkg
+./vcpkg.exe install boost-regex[icu]:x64-windows
 	# C:/src/vcpkg/packages/boost-regex_x64-windows
 	# C:\src\vcpkg\packages\icu_x64-windows\include
 	# 成功安装
