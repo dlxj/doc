@@ -210,6 +210,36 @@ int main() {
     std::wsregex_iterator it(str.begin(), str.end(), pattern);
     std::wsregex_iterator end;
 
+    std::vector<std::pair<std::wstring, std::size_t>> chinese_substrings;
+    while (it != end) {
+        std::wstring substr = it->str();
+        std::size_t pos = it->position();
+        chinese_substrings.push_back(std::make_pair(substr, pos));
+        ++it;
+    }
+
+    for (const auto& pair : chinese_substrings) {
+        std::wcout << "中文子串: " << pair.first << ", 位置: " << pair.second << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+
+
+```
+#include <iostream>
+#include <vector>
+#include <regex>
+
+int main() {
+    std::wstring str = L"aa中bb文";
+    std::wregex pattern(L"[\\u4E00-\\u9FAF]+");
+    std::wsregex_iterator it(str.begin(), str.end(), pattern);
+    std::wsregex_iterator end;
+
     std::vector<std::wstring> chinese_substrings;
     while (it != end) {
         chinese_substrings.push_back(it->str());
