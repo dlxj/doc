@@ -197,9 +197,47 @@ vcpkg install boost-regex[icu]:x64-windows
 
 
 
+#### 成功提取中文
+
+```
+#include <iostream>
+#include <vector>
+#include <regex>
+
+int main() {
+    std::wstring str = L"aa中bb文";
+    std::wregex pattern(L"[\\u4E00-\\u9FAF]+");
+    std::wsregex_iterator it(str.begin(), str.end(), pattern);
+    std::wsregex_iterator end;
+
+    std::vector<std::wstring> chinese_substrings;
+    while (it != end) {
+        chinese_substrings.push_back(it->str());
+        ++it;
+    }
+
+    for (const auto& substr : chinese_substrings) {
+        std::wcout << substr << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+
+
 
 
 # string
+
+
+
+C++11 标准中增加了一些表示字符串常量的标识，如下有：
+
+L"您好！"： wstring 字符串常量，使用文件保存编码方式字符集
+R"(您 好 \n)": 原始字符串常量（字节数组），保留所有的字符
+u8"您好！"： string 字符串常量（字节数组），使用 UTF8 进行编码保存
 
 
 
@@ -229,9 +267,39 @@ vcpkg install boost-regex[icu]:x64-windows
 
 
 
+# dict
+
+```
+#include <iostream>
+#include <map>
+#include <string>
+
+int main() {
+    std::map<std::string, int> my_dict = {{"apple", 1}, {"banana", 2}, {"orange", 3}};
+
+    // 输出字典中的元素
+    for (const auto &pair : my_dict) {
+        std::cout << pair.first << ": " << pair.second << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+
+
+
+
 # JSON
 
 [json](https://github.com/nlohmann/json)
+
+```
+vcpkg install nlohmann-json
+```
+
+
 
 
 
