@@ -271,6 +271,16 @@ u8"您好！"： string 字符串常量（字节数组），使用 UTF8 进行�
 
 
 
+```
+json j = json::parse(u8"JSON string with Chinese characters");
+// or
+json j = json::parse(u8 R"(JSON string with Chinese characters)");
+```
+
+
+
+
+
 ## 不转义
 
 
@@ -324,6 +334,8 @@ int main() {
 # JSON
 
 [json](https://github.com/nlohmann/json)
+
+[Chinese character ](https://github.com/nlohmann/json/issues/2325)
 
 ```
 vcpkg install nlohmann-json
