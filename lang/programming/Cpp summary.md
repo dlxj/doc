@@ -402,6 +402,23 @@ int main(){
 
 
 
+## vcpkg
+
+```
+vcpkg install boost-regex[icu]:x64-windows
+    # C:/src/vcpkg/packages/boost-regex_x64-windows
+    # C:\src\vcpkg\packages\icu_x64-windows\include
+    # C:\src\vcpkg\installed\x64-windows\bin
+        # dll 在这，复制到 exe 同目录下成功运行，否则会出错
+    # 成功安装
+vcpkg install nlohmann-json
+// see nodejs sumarry.md -> C++ Monads
+// vcpkg.exe search boost
+// vcpkg.exe install boost-regex
+```
+
+
+
 # vscode genie
 
 [chatgpt-vscode](https://github.com/ai-genie/chatgpt-vscode)
@@ -410,9 +427,9 @@ int main(){
 
 
 
-
-
 # string
+
+[utfcpp](https://github.com/nemtrif/utfcpp)
 
 
 
@@ -466,11 +483,13 @@ json j = json::parse(u8 R"(JSON string with Chinese characters)");
 
 
 
+## wsring 转 utf8 string 
 
-
-
-
-
+```
+#include <codecvt>
+std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+std::string first_ = converter.to_bytes(first);
+```
 
 
 
@@ -549,6 +568,37 @@ int main() {
 }
 
 ```
+
+
+
+# tuple
+
+```
+std::vector<std::tuple<std::wstring, std::wstring, std::wstring>> three_part;
+
+                                three_part.push_back(std::tuple<std::wstring, std::wstring, std::wstring>(first, second, third));
+
+
+    std::vector<std::tuple<std::wstring, std::wstring, std::wstring>> three_part2 = _::filter<std::vector<std::tuple<std::wstring, std::wstring, std::wstring>>>(three_part, [&](const std::tuple<std::wstring, std::wstring, std::wstring>& value) {
+        std::wstring first = std::get<0>(value);
+        std::wstring second = std::get<1>(value);
+        std::wstring third = std::get<2>(value);
+
+        if (first != L"") {
+            int a = 1;
+        }
+
+        return true;
+    });
+```
+
+
+
+
+
+# Lambda
+
+- `[&]`是一个捕获列表（capture list），表示以引用方式捕获所有外层作用域中的变量。
 
 
 
