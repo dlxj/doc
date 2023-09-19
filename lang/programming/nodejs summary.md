@@ -1494,6 +1494,12 @@ vscode 中点找 t.cpp 文件 -> Ctrl + Shift + P
 [VS Code for Microsoft C++](https://code.visualstudio.com/docs/cpp/config-msvc)
 
 ```
+解决 vscode 调试窗口 utf8 显示乱码
+win键 -> 设置 -> 时间和语言 -> 最右边"日期、时间和区域格式设置" 
+  ->其他日期、时间和区域设置 ->区域 更改日期、时间或数字格式
+  -> 管理 ->更改系统区域设置 ->Beta版:使用Unicode UTF-8提供全球语言支持
+
+
 打开 Developer Command Prompt for VS 2019 命令行
 在这个命令行运行 code ，会打开 vscode
 打开目录 -> 打开文件t.cpp -> ctrl + shift + P -> 输入C++ 
