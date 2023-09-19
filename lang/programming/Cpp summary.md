@@ -315,6 +315,10 @@ json j = json::parse(u8 R"(JSON string with Chinese characters)");
 
 ## vscode debug 中文
 
+[关于VSCode的C++原生断点调试debug和运行的配置和中文乱码的问题](https://blog.csdn.net/MYMarcoreus/article/details/113845647)
+
+- 全
+
 [VS Code输出窗口显示中文乱码的解决办法](https://blog.csdn.net/didi_ya/article/details/107883798)
 
 - 整个 windows 改成 utf-8 编码
