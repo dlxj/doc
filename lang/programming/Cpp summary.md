@@ -402,6 +402,16 @@ int main(){
 
 
 
+# vscode genie
+
+[chatgpt-vscode](https://github.com/ai-genie/chatgpt-vscode)
+
+[CopilotForXcode](https://github.com/intitni/CopilotForXcode)
+
+
+
+
+
 # string
 
 
@@ -483,6 +493,64 @@ int main() {
 }
 
 ```
+
+
+
+```
+#include <iostream>
+#include <map>
+#include <string>
+#include <tuple>
+
+int main() {
+    std::map<std::string, std::tuple<int, std::string>> dict;
+
+    // Adding values to the dictionary
+    dict["key1"] = std::make_tuple(42, "value1");
+    dict["key2"] = std::make_tuple(99, "value2");
+
+    // Accessing values from the dictionary
+    std::tuple<int, std::string> value1 = dict["key1"];
+    std::cout << "Value for key1: " << std::get<0>(value1) << ", " << std::get<1>(value1) << std::endl;
+
+    std::tuple<int, std::string> value2 = dict["key2"];
+    std::cout << "Value for key2: " << std::get<0>(value2) << ", " << std::get<1>(value2) << std::endl;
+
+    return 0;
+}
+
+```
+
+
+
+```
+#include <iostream>
+#include <map>
+
+int main() {
+    std::map<int, std::string> myMap = {{1, "one"}, {2, "two"}, {3, "three"}};
+
+    // 使用count()函数
+    if (myMap.count(2) > 0) {
+        std::cout << "Key exists!" << std::endl;
+    } else {
+        std::cout << "Key does not exist!" << std::endl;
+    }
+
+    // 使用find()函数
+    auto it = myMap.find(4);
+    if (it != myMap.end()) {
+        std::cout << "Key exists!" << std::endl;
+    } else {
+        std::cout << "Key does not exist!" << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+
 
 
 
