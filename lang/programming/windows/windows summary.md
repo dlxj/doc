@@ -15,6 +15,15 @@ slmgr /ato
 
 
 
+# 禁止自动更新
+
+```
+更新暂停 3000 天
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v FlightSettingsMaxPauseDays /t reg_dword /d 3000 /f
+```
+
+
+
 
 
 # 禁止火绒自启
