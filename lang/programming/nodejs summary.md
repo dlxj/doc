@@ -25423,6 +25423,10 @@ TextDecoder = class {
 
 [写了一个无限制视频下载脚本](https://www.v2ex.com/t/856510)
 
+[无差别视频提取工具](https://github.com/Momo707577045/media-source-extract)
+
+[通过 Tampermonkey 快速查找 JavaScript 加密入口](https://cloud.tencent.com/developer/article/1563548)
+
 ```
 很多视频网站的video标签的src指向了 Blob: http(s)://xxx.xxx.xxx/xxx,直接进这个链接的话会显示链接已禁用。 想法：既然能播放视频，就证明视频到最后一定是被 video 拿到了的.
 
