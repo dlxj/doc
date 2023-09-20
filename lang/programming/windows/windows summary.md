@@ -167,6 +167,12 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v Fli
 
 
 
+```
+修改系统时间到 2050 年，然后在更新界面，点击推迟 2 周更新，完事，下次更新就变成 2050 年了，
+```
+
+
+
 
 
 # 禁止火绒自启

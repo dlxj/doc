@@ -128,6 +128,15 @@ pip download -d /mnt/whl protobuf transformers==4.30.2 cpm_kernels torch>=2.0 gr
 
 
 
+### conda 仅下载
+
+```
+conda install --download-only pytorch==2.0.0 
+
+```
+
+
+
 
 
 ## Python for ubuntu20.04

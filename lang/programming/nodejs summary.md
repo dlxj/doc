@@ -24042,6 +24042,38 @@ usage: whisperx [-h] [--model MODEL] [--model_dir MODEL_DIR] [--device DEVICE] [
 
 
 
+## 只下载不安装
+
+```
+# see python3 summary.md -> pip只下载不安装
+dnf install python310 && \
+pip3.10 config list
+	-> global.cache-dir='/mnt/tmp'
+
+pip3.10 install conan && \
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
+bash Miniforge3-Linux-x86_64.sh -b && \
+mv ~/miniforge3 /mnt && \
+ln -s /mnt/miniforge3 ~/miniforge3 && \
+~/miniforge3/bin/conda init && \
+ln -s ~/miniforge3/bin/conda /usr/local/bin && \
+ln -s ~/miniforge3/bin/activate /usr/local/bin && \
+ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
+source ~/miniforge3/etc/profile.d/conda.sh
+	# 关掉 shell 重新打开
+
+conda install --download-only pytorch==2.0.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+	# 仅下载不安装
+
+
+
+
+```
+
+
+
+
+
 
 
 # NLP
