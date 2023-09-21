@@ -7058,6 +7058,15 @@ console.log(animals.slice());
 
 
 
+## splice
+
+```
+menus_chapter_not_clone.splice(j, 1)
+	# 从索引 j 开始，删除一个元素
+```
+
+
+
 ## splitAt
 
 ```
@@ -25417,13 +25426,15 @@ TextDecoder = class {
 
 
 
-
-
 ## video download
 
 [写了一个无限制视频下载脚本](https://www.v2ex.com/t/856510)
 
 [无差别视频提取工具](https://github.com/Momo707577045/media-source-extract)
+
+- ```
+  在给变量命名时使用 $ 符号通常表示该变量是一个引用到 DOM 元素的对象或者是一个用于操作 DOM 的函数。这种约定经常出现在像 jQuery 这样的库中，它使用 $ 作为选择器和操作函数的前缀。
+  ```
 
 [通过 Tampermonkey 快速查找 JavaScript 加密入口](https://cloud.tencent.com/developer/article/1563548)
 
