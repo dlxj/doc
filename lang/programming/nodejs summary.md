@@ -2492,6 +2492,15 @@ proxychains4 curl https://www.youtube.com
 [利用SSH搭建隧道-流量伪装](https://zhuanlan.zhihu.com/p/561589204)
 
 ```
+grep AllowTcpForwarding /etc/ssh/sshd_config
+
+```
+
+
+
+
+
+```
 0x02 动态端口转发
 动态端口转发允许你在本地（ssh客户端）机器扮演一个socks代理客户端。当客户端连接到该端口，流量会被转发到远程（ssh服务器）机器上，然后转发到目标机器的动态端口上。
 
