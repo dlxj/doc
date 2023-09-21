@@ -2493,10 +2493,28 @@ proxychains4 curl https://www.youtube.com
 
 ```
 grep AllowTcpForwarding /etc/ssh/sshd_config
-
+sed -i 's/#\?AllowTcpForwarding.*/AllowTcpForwarding yes/' /etc/ssh/sshd_config
+	# ssh 服务端 修改AllowTcpForwarding 为 YES
+	
 ```
 
+http://httpbin.org/ip
 
+​	# 不配置代理，本地访问显示 IP: 13.229.84.151
+
+
+
+putyy，在session 中配置 ssh 服务端地址
+
+Connection -> SSH -> Tunnels
+
+Destination 填 123.150.76.218:80 这是qq.com 的IP
+
+Souce port 填 9090
+
+点 Open 登录服务端
+
+这样在客户端只要访问  127.0.0.1:9090 就相当于访问了 123.150.76.218:80
 
 
 
