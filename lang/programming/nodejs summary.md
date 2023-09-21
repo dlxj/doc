@@ -24151,7 +24151,9 @@ conda install --download-only pytorch==2.0.0 torchaudio==2.0.0 pytorch-cuda=11.8
 ## aac
 
 ```
-whisperx ./audio/song-64k.aac --model large-v2 --batch_size 4 --language ja --output_dir ./audio/Siren14Voice_39606320.s14.aac
+conda activate whisperx
+
+whisperx ./audio/Siren14Voice_39606320.s14.aac --model large-v2 --batch_size 4 --language ja --output_dir ./audio
 
 
 ```
