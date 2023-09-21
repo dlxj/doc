@@ -2485,6 +2485,30 @@ proxychains4 curl https://www.youtube.com
 
 
 
+
+
+### SSH隧道代理
+
+[利用SSH搭建隧道-流量伪装](https://zhuanlan.zhihu.com/p/561589204)
+
+```
+0x02 动态端口转发
+动态端口转发允许你在本地（ssh客户端）机器扮演一个socks代理客户端。当客户端连接到该端口，流量会被转发到远程（ssh服务器）机器上，然后转发到目标机器的动态端口上。
+
+这种方法中，所有使用socks代理的客户端程序将连接到ssh服务器，然后服务器将流量转发到真实的目的机器上。
+
+在Linux、macOS和其他Unix系统中，使用ssh客户端的 -D 选项来建立动态端口转发命令如下：
+
+$ ssh -D [LOCAL_IP:]LOCAL_PORT [USER@]SSH_SERVER
+[LOCAL_IP:]LOCAL_PORT - 本地机器IP地址和端口号。当LOCAL_IP被省略，ssh客户端绑定在localhost上。
+[USER@]SERVER_IP - 远程ssh用户和服务器IP地址。
+动态端口转发可用于代理上网的需求中。
+```
+
+
+
+
+
 ### centos8 没有软件源
 
 
@@ -22460,6 +22484,16 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 
 
+
+
+## InternLM
+
+[InternLM](https://github.com/InternLM/InternLM)
+
+
+
+
+
 ## Linly-Chinese-LLaMA-2
 
 [Linly-Chinese-LLaMA-2](https://github.com/CVI-SZU/Linly)  中英日三语，包话训练代码？
@@ -24015,6 +24049,12 @@ socks5  127.0.0.1 1080
 	# 改成这样
 
 
+source /etc/network_turbo
+	# autodl 自带学术加速
+	# unset http_proxy && unset https_proxy
+		# 取消
+
+
 # proxychains4 pip install git+https://github.com/m-bain/whisperx.git
 
 proxychains4 git clone https://github.com/m-bain/whisperX.git && \
@@ -24080,6 +24120,14 @@ conda install --download-only pytorch==2.0.0 torchaudio==2.0.0 pytorch-cuda=11.8
 ```
 
 
+
+## aac
+
+```
+whisperx ./audio/song-64k.aac --model large-v2 --batch_size 4 --language ja --output_dir ./audio/Siren14Voice_39606320.s14.aac
+
+
+```
 
 
 
