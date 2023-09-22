@@ -8733,6 +8733,55 @@ int main(int argc, char* argv[])
 
 
 ```
+`
+https://github.com/FFmpeg-wasm/FFmpeg.wasm
+	# 这个 fork 支持 nodejs
+	npm install "@ffmpeg.wasm/main" "@ffmpeg.wasm/core-mt"
+`
+import { readFile, writeFile } from "fs/promises";
+import { FFmpeg } from "@ffmpeg.wasm/main";
+
+const ffmpeg = await FFmpeg.create({ core: "@ffmpeg.wasm/core-mt" });
+
+ffmpeg.fs.writeFile("1.mp3", await readFile("./1.mp3"));
+await ffmpeg.run("-i", "1.mp3", "2.aac");
+await writeFile("./2.aac", ffmpeg.fs.readFile("2.aac"));
+process.exit(0);
+```
+
+
+
+```
+
+npm install @ffmpeg/ffmpeg@0.8.0
+	# 0.8.0 + node14 可以正常加载
+
+npm install @ffmpeg/ffmpeg@0.11.6
+	# 从 0.12.0 版本开始它不再支持 nodejs
+
+https://github.com/FFmpeg-wasm/FFmpeg.wasm
+	# 这个 fork 支持 nodejs
+	npm install "@ffmpeg.wasm/main" "@ffmpeg.wasm/core-mt"
+
+launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            //"program": "${workspaceFolder}\\m.mjs",
+            "args": ["--experimental-wasm-threads", "${workspaceFolder}/m.mjs"]
+        }
+    ]
+}
+
+
+# need newest node18 version
 npm install @ffmpeg/ffmpeg @ffmpeg/core --save
 
 (async () => {
@@ -20580,6 +20629,8 @@ curl https://api.openai.com/v1/completions \
 - [纯js实现](https://github.com/PawanOsman/ChatGPT)
 
 [nodejs前后端备用](https://github.com/zhpd/chatgpt-plus)
+
+[chatbox 前端仿得像](https://github.com/Bin-Huang/chatbox)
 
 ```
 
