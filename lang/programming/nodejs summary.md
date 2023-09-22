@@ -6423,6 +6423,20 @@ if (text.includes(word)) {}
 
 
 
+## intersection & union
+
+```
+    let set1 = new Set('abc')
+    let set2 = new Set('bde')
+
+    let intersection = new Set([...set1].filter(x => set2.has(x)));
+    let union = new Set([...set1, ...set2]);
+```
+
+
+
+
+
 
 
 ## 最长公共前缀
