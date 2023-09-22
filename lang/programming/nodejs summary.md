@@ -24241,6 +24241,45 @@ print(result["segments"]) # after alignment
 
 
 
+### librosa
+
+[How to get the duration of audio in Python?](https://www.tutorialspoint.com/how-to-get-the-duration-of-audio-in-python)
+
+- librosa 必看
+
+```
+import librosa
+def get_duration_librosa(file_path):
+   audio_data, sample_rate = librosa.load(file_path)
+   duration = librosa.get_duration(y=audio_data, sr=sample_rate)
+   return duration
+file_path = filename
+duration = get_duration_librosa(file_path)
+print(f"Duration: {duration:.2f} seconds")
+```
+
+
+
+
+
+```
+
+filename =r"E:/NLPP_aac/Siren14Voice_39606320.s14.aac"
+
+from pydub import AudioSegment
+def get_duration_pydub(file_path):
+   audio_file = AudioSegment.from_file(file_path)
+   duration = audio_file.duration_seconds
+   return duration
+file_path = filename
+duration = get_duration_pydub(file_path)
+print(f"Duration: {duration:.2f} seconds")
+```
+
+
+
+
+
 ### ffmpeg-python
 
 [ffmpeg-python](https://github.com/kkroening/ffmpeg-python)
