@@ -185,6 +185,15 @@ ffmpeg -i a.ogg -ss 00:01:02.500 -t 00:01:03.250 -c copy x2.ogg
 
 
 
+# no output err
+
+```
+ffmpeg -i "E:/NLPP_aac/Siren14Voice_39606320.s14.aac" -f null -
+	# 忽略输出文件就不报错了
+```
+
+
+
 
 
 # tutorial

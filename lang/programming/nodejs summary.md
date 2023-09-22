@@ -24211,6 +24211,60 @@ whisperx ./audio/Siren14Voice_39606320.s14.aac --model large-v2 --batch_size 4 -
 
 
 
+```
+import whisperx
+import gc
+
+device = "cuda" 
+audio_file = "./audio/Siren14Voice_39606320.s14.aac"
+batch_size = 16 # reduce if low on GPU mem
+compute_type = "float16" # change to "int8" if low on GPU mem (may reduce accuracy)
+
+# 1. Transcribe with original whisper (batched)
+model = whisperx.load_model("large-v2", device, compute_type=compute_type)
+
+audio = whisperx.load_audio(audio_file)
+result = model.transcribe(audio, batch_size=batch_size)
+print(result["segments"]) # before alignment
+
+# delete model if low on GPU resources
+# import gc; gc.collect(); torch.cuda.empty_cache(); del model
+
+# 2. Align whisper output
+model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
+result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
+
+print(result["segments"]) # after alignment
+
+
+```
+
+
+
+### ffmpeg-python
+
+[ffmpeg-python](https://github.com/kkroening/ffmpeg-python)
+
+```
+# install from source will slove "no probe" err
+import ffmpeg
+
+filename =r"E:/NLPP_aac/Siren14Voice_39606320.s14.aac"
+
+metadata = ffmpeg.probe(filename)
+video_stream = next((stream for stream in metadata['streams'] if stream['codec_type'] == 'video'), None)
+
+fps = metadata['streams'][0]['avg_frame_rate'].split('/')[0]
+duration = metadata['streams'][0]['duration']
+
+width = int(video_stream['width'])
+height = int(video_stream['height'])
+
+print(f'Width: {width}, Height: {height}, FPS: {fps}, Duration: {duration}')
+```
+
+
+
 
 
 # NLP
