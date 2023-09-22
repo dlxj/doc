@@ -2364,7 +2364,20 @@ tests_segsNew = copy.deepcopy(tests_segs)
 
 
 
-### ordering
+### sorted
+
+
+
+```python
+    pths = sorted(pths, key=lambda p:(
+        match := re.findall(r'.+?Siren14Voice_(.+?)\.(.+?)\.aac', p),
+        number := int(match[0][0]),
+        seasion := match[0][1],
+        (seasion, number) # 如果第一项相等就会比较第二项
+    ))
+```
+
+
 
 
 
