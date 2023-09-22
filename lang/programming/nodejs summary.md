@@ -24247,7 +24247,35 @@ print(result["segments"]) # after alignment
 
 - librosa 必看
 
+
+
 ```
+import glob
+import librosa
+
+def get_duration_librosa(file_path):
+   audio_data, sample_rate = librosa.load(file_path)
+   duration = librosa.get_duration(y=audio_data, sr=sample_rate)
+   return duration
+
+pths = glob.glob("E:/NLPP_aac" + '/*.aac', recursive=False)
+
+for pth in pths:
+    if  not ("Siren14Voice_39606320.s14.aac" in pth):
+        continue
+    duration = get_duration_librosa(pth)
+    # print(f"Duration: {duration:.2f} seconds")
+    if duration < 0.5:
+        continue
+```
+
+
+
+
+
+
+```
+#　pip install librosa
 import librosa
 def get_duration_librosa(file_path):
    audio_data, sample_rate = librosa.load(file_path)
