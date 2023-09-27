@@ -1,4 +1,54 @@
 
+# lambda
+
+
+
+`&|x: i32| x < 3` 是 Rust 中的 lambda 函数语法，也被称为闭包（closure）。闭包是一种可以捕获外部变量并在需要时执行的匿名函数。
+
+- `&` 表示这是一个引用（reference），表示闭包将借用（borrow）外部变量而不获取所有权。
+- `|x: i32|` 指定了闭包的参数列表。在这里，闭包有一个参数 `x`，它的类型是 `i32`。
+- `x < 3` 是闭包的主体部分，它表示比较 `x` 是否小于 3，并返回结果。
+
+
+
+f: &dyn Fn(T) -> bool
+
+`&dyn` 表示 f 是一个动态函数的引用, 在编译时未知，直到调用才确定
+
+
+
+```rust
+// cargo new mmsgrs
+
+pub fn filter<T: Copy>(array: Vec<T>, f: &dyn Fn(T) -> bool) -> Vec<T> {
+    let mut result: Vec<T> = Vec::new();
+
+    for index in 0..array.len() {
+        let value = array[index];
+        if f(value) {
+            result.push(value);
+        }
+    }
+
+    return result;
+}
+
+fn main() {
+    let _tmp = filter([1, 2, 3, 4,5].to_vec(), &|x| x < 3);
+    println!("Hello, world!");
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,6 +72,71 @@ match (year % 4, year % 100, year % 400) {
 
 Exercism 上一个印象很深的求闰年的写法
 ```
+
+
+
+# string
+
+r#"您好！"#：原始字符串常量（字节数组），保留所有的字符
+b"您好！"：字节字符串常量，使用默认编码进行保存
+"您好！"：字符串常量，使用UTF-8进行编码保存
+
+需要注意的是，在Rust中，默认字符串常量的编码方式是UTF-8。如果需要使用其他编码方式保存字符串常量，可以使用相应的字节字符串常量或指定编码格式。
+
+
+
+# json
+
+```
+[dependencies]
+csv = "1.2.2"
+regex = "1.9.5"
+serde_json = "1.0.107"
+
+    let data = r#"
+    {
+        "name": "John Doe",
+        "age": 43,
+        "phones": [
+            "+44 1234567",
+            "+44 2345678"
+        ]
+    }"#;
+    let v: serde_json::Value = serde_json::from_str(data).unwrap();
+    println!("Please call {} at the number {}", v["name"], v["phones"][0]);
+
+
+
+    let john = json!({
+        "name": "John Doe",
+        "age": 43,
+        "phones": [
+            "+44 1234567",
+            "+44 2345678"
+        ]
+    });
+    println!("first phone number: {}", john["phones"][0]);
+    println!("{}", john.to_string());
+
+```
+
+
+
+
+
+# vector
+
+```
+# see echodict\mmsgrs\src\main.rs
+	let jp_sequence: Vec<(String, usize)> = get_jp_sequence(&str);
+    let not_jp_sequence: Vec<(String, usize)> = get_not_jp_sequence(&str);
+
+    for (string, number) in &not_jp_sequence {
+        println!("String: {}, Number: {}", string, number);
+    }
+```
+
+
 
 
 

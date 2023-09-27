@@ -2489,12 +2489,21 @@ proxychains4 curl https://www.youtube.com
 
 ### SSH隧道代理
 
+[SSH隧道:访问翻墙服务器的临时性手段](https://www.codewoody.com/posts/11710/)
+
 [利用SSH搭建隧道-流量伪装](https://zhuanlan.zhihu.com/p/561589204)
+
+[SSH -D 也是最基本的翻墙手段之一](https://github.com/st286/SSH-port-forwarding)
 
 ```
 grep AllowTcpForwarding /etc/ssh/sshd_config
 sed -i 's/#\?AllowTcpForwarding.*/AllowTcpForwarding yes/' /etc/ssh/sshd_config
 	# ssh 服务端 修改AllowTcpForwarding 为 YES
+	
+
+ssh -D 8080 root@connect.southb.gpuhub.com
+
+	
 	
 ```
 
@@ -5298,6 +5307,10 @@ console.log(typeof num); // number
 
 ```
 
+let time = new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })
+	# 本地时间
+
+
 let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
 
 // chatgpt_server/script/sparkApi.js
@@ -5308,6 +5321,10 @@ let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
     let signature_origin = "host: " + host + "\n"
     signature_origin += "date: " + date + "\n"
     signature_origin += "GET " + path + " HTTP/1.1"
+
+
+
+
 
 ```
 
@@ -26265,6 +26282,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 
 ## Rust Monads
+
+[lodash-rust](https://github.com/charleslukes/lodash-rust)
 
 [Rust语言圣经](https://course.rs/about-book.html)
 
