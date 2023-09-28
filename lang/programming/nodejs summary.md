@@ -26293,6 +26293,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [iced GUI对标elm](https://github.com/iced-rs/iced)
 
+[rust-in-flutter 另一个GUI 示例必看](https://github.com/cunarist/rust-in-flutter)
+
+[flutter v2 客户端](https://github.com/guozhigq/flutter_v2ex)
+
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
 [rust-script](https://github.com/fornwall/rust-script)

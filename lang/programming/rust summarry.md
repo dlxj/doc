@@ -1,3 +1,10 @@
+在 Rust 中，不能在 `main` 之外定义全局变量。Rust 是一门强调安全性和内存管理的语言，它不允许隐式的全局状态。相反，Rust 鼓励将数据的所有权明确地传递给函数，并使用参数和返回值来处理数据。
+
+为了在多个函数之间共享数据，可以使用诸如结构体、枚举或其他数据结构来封装数据，并将其作为参数传递给函数。如果需要可变状态，则可以使用 `mut` 关键字来表示可变引用。
+
+这种设计选择有助于消除全局变量可能带来的复杂性和竞争条件，并使代码更容易理解、测试和维护。虽然在某些情况下使用全局变量可能会方便，但在大多数情况下，通过显式地传递参数来共享数据是更好的做法。
+
+
 
 # lambda
 
@@ -17,6 +24,27 @@ f: &dyn Fn(T) -> bool
 
 
 
+```
+// 多行 Lambda（或闭包）通过大括号 {} 来实现
+fn main() {
+    let sum = |x: i32, y: i32| {
+        let result = x + y;
+        println!("Sum is: {}", result);
+        result  // 返回结果
+    };
+
+    let result = sum(5, 10);
+    println!("Result is: {}", result);
+}
+
+```
+
+
+
+
+
+
+
 ```rust
 // cargo new mmsgrs
 
@@ -30,6 +58,18 @@ pub fn filter<T: Copy>(array: Vec<T>, f: &dyn Fn(T) -> bool) -> Vec<T> {
         }
     }
 
+    return result;
+}
+
+// copy 和 clone 有微妙的差别 
+pub fn filter<T: Clone>(array: Vec<T>, f: &dyn Fn(T) -> bool) -> Vec<T> {
+    let mut result: Vec<T> = Vec::new();
+    for index in 0..array.len() {
+        let value = array[index].clone();
+        if f(value.clone()) {
+            result.push(value);
+        }
+    }
     return result;
 }
 
@@ -120,6 +160,12 @@ assert!(!v.is_empty());
 ```
 
 
+
+## Copy 和 Clone
+
+```
+实现了 Copy 的类型在赋值或传递时会进行隐式复制，而实现了 Clone 的类型则需要显式调用 clone 方法来进行克隆操作。通常来说，对于简单的基本类型使用 Copy，而对于复杂类型或需要自定义克隆逻辑的情况使用 Clone。
+```
 
 
 
