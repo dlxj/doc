@@ -134,6 +134,13 @@ serde_json = "1.0.107"
     for (string, number) in &not_jp_sequence {
         println!("String: {}, Number: {}", string, number);
     }
+    
+    for v in &sequence {
+        let seq = &v["seq"];
+        let index = &v["index"];
+        let typee = &v["type"];
+        println!("{} {} {}", seq, index, typee);
+    }
 ```
 
 
