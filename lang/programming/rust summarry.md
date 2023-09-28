@@ -85,6 +85,44 @@ b"您好！"：字节字符串常量，使用默认编码进行保存
 
 
 
+在 Rust 中，有 `str` 和 `String` 两种类型，主要是因为它们具有不同的特性和用途。
+
+1. **`str`**：
+   - `str` 是一种字符串切片类型（string slice），它是一个不可变的字符串引用。
+   - `str` 类型通常用于表示字符串的视图，在编程中经常用来访问、查找和操作字符串数据，而不需要拥有独立所有权。
+   - `str` 数据通常以字面值（literal）或者通过 `&str` 借用得到。
+2. **`String`**：
+   - `String` 是一种拥有所有权的动态字符串类型，它是可变的，可以修改和扩展。
+   - `String` 类型通常用于创建、修改和拥有自己的字符串数据。
+   - `String` 对象可以通过 `String::from` 方法从其他类型（如`&str` 或字面值）转换而来，也支持使用 `+` 和 `+=` 运算符进行字符串连接。
+
+所以，当你需要处理字符串数据时，如果仅需要对其进行查看或者临时引用，可以使用 `str` 类型。而当你需要对字符串进行修改、扩展或拥有单独的所有权时，应该使用 `String` 类型。
+
+
+
+```rust
+let mut v = String::new();
+assert!(v.is_empty());
+
+v.push('a');
+assert!(!v.is_empty());
+```
+
+
+
+
+
+## utf32  转 utf8
+
+```
+    let hello = widestring::utfstring::Utf32String::from(widestring::utf32str!("一世皆尚同"));
+    let tmp = hello.to_string();
+```
+
+
+
+
+
 # json
 
 ```

@@ -26297,6 +26297,14 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [rust-script](https://github.com/fornwall/rust-script)
 
+- ```
+  cargo install rust-script
+  	# ftw 开全局也不行,要Proxifier连另一台机子(开了1080端口代理)
+  
+  ```
+
+  
+
 
 
 ## C Monads
