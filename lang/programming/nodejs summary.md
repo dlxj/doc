@@ -23370,6 +23370,11 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
 
+- ```
+  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA
+  	# 需要设置环境变量，用 cuda toolkit 11.8 (whisperx 用的是这个 + pytorch2.0)
+  ```
+
 - [BaiYang-chatGLM2-6B 旋转位置编码](https://github.com/lilongxian/BaiYang-chatGLM2-6B)
 
 [ChatGLM2-6B 微调(初体验) 语料多](https://zhuanlan.zhihu.com/p/643856746) 
