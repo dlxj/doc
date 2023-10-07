@@ -2489,21 +2489,12 @@ proxychains4 curl https://www.youtube.com
 
 ### SSH隧道代理
 
-[SSH隧道:访问翻墙服务器的临时性手段](https://www.codewoody.com/posts/11710/)
-
 [利用SSH搭建隧道-流量伪装](https://zhuanlan.zhihu.com/p/561589204)
-
-[SSH -D 也是最基本的翻墙手段之一](https://github.com/st286/SSH-port-forwarding)
 
 ```
 grep AllowTcpForwarding /etc/ssh/sshd_config
 sed -i 's/#\?AllowTcpForwarding.*/AllowTcpForwarding yes/' /etc/ssh/sshd_config
 	# ssh 服务端 修改AllowTcpForwarding 为 YES
-	
-
-ssh -D 8080 root@connect.southb.gpuhub.com
-
-	
 	
 ```
 
@@ -5307,10 +5298,6 @@ console.log(typeof num); // number
 
 ```
 
-let time = new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })
-	# 本地时间
-
-
 let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
 
 // chatgpt_server/script/sparkApi.js
@@ -5321,10 +5308,6 @@ let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
     let signature_origin = "host: " + host + "\n"
     signature_origin += "date: " + date + "\n"
     signature_origin += "GET " + path + " HTTP/1.1"
-
-
-
-
 
 ```
 
@@ -22599,8 +22582,6 @@ if __name__ == "__main__":
 
 [zero_nlp](https://github.com/yuanzhoulvpi2017/zero_nlp)
 
-- [chatglm_v2_6b_lora](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/chatglm_v2_6b_lora)
-
 [我用我的 10 万条微信聊天记录和 280 篇博客文章，做了我自己的数字克隆 AI](https://v2ex.com/t/931521)
 
 #### [NonJishoKei 日语所有单词变形](https://github.com/NoHeartPen/NonJishoKei)
@@ -22698,187 +22679,6 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 ## InternLM
 
 [InternLM](https://github.com/InternLM/InternLM)
-
-
-
-### 微调
-
-[说明](https://github.com/InternLM/InternLM/blob/main/doc/usage.md)
-
-[示例数据](https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json)
-
-[扩充词表](https://github.com/InternLM/InternLM/issues/209)
-
-[BytePiece：更纯粹、更高压缩率的Tokenizer](https://spaces.ac.cn/archives/9752) [s1](https://github.com/bojone/bytepiece) [s2](https://github.com/SunDoge/bytepiece-rs)
-
-- ```
-  # main.py 实测可用。训练+推理
-  """
-  https://github.com/bojone/bytepiece
-  
-  AHOCORASICK_BYTES=1 && \
-  pip3.10 uninstall pyahocorasick && \
-  proxychains4 pip3.10 install git+https://github.com/WojciechMula/pyahocorasick.git && \
-  proxychains4 pip3.10 install bytepiece==0.4.1
-  """
-  from bytepiece import Tokenizer, Trainer
-  
-  import json
-  
-  class corpus:
-      def __iter__(self):
-          f = 'data_sample.json'
-          with open(f) as f:
-              for l in f:
-                  yield json.loads(l)['text']  # 每次返回一个Unicode
-  
-  trainer = Trainer(order=6, max_vocab_size=100000, min_count=32)
-  trainer.train(corpus(), workers=1, batch_size=1000)
-  trainer.save('ibytepiece.model')
-  
-  
-  tokenizer = Tokenizer('bytepiece.plus.80k.model')
-  text = '今天天气不错'
-  
-  tokens = tokenizer.tokenize(text)  # 返回bytes的list
-  print(b' '.join(tokens).decode(errors='ignore'))  # 可视化分词结果
-  
-  ids = tokenizer.encode(text)  # 返回tokens对应的ids
-  print(tokenizer.decode(ids))  # 重新将ids解码为unicode文本
-  
-  tokens = tokenizer.tokenize(text, alpha=0.2)  # 随机tokenize
-  print(b' '.join(tokens).decode(errors='ignore'))  # 可视化分词结果
-  
-  
-  
-  
-  pip uninstall pyahocorasick
-  
-  # 打开 Developer Command Prompt for VS 2019
-  set AHOCORASICK_BYTES=1 && pip install git+https://github.com/WojciechMula/pyahocorasick.git
-  ```
-
-  
-
-[从头训练一个自己的Tokenizer](https://zhuanlan.zhihu.com/p/625715830)  [1](https://github.com/yanqiangmiffy/how-to-train-tokenizer)
-
-[多轮会话](https://github.com/InternLM/InternLM/issues/113)
-
-
-
-```
-You should not only expand your tokenizer's vocab, but also the embedding and the output head of the model.
-For example, if your vocab size is 200,000, you should also expand the embedding, so that its size is [200,000, hidden_size] instead of [103168, hidden_size].
-
-Your can use the following code to expand the embedding and head, the logic is very simple, if the token of your new tokenizer is in the old tokenizer(for example, internlm's), then we directly use the weight of the old embedding, otherwise, we can random initialize its weight.
-
-import torch
-from pathlib import Path
-from sentencepiece import SentencePieceProcessor
-
-
-def find_matched_vocab(old_vocab, new_vocab):
-    reversed_old_vocab = dict((v, k) for k, v in old_vocab.items())
-    matched_vocab = {}
-    num_matched = 0
-    num_mismatched = 0
-    for new_idx, token in new_vocab.items():
-        if token in reversed_old_vocab:
-            old_idx = reversed_old_vocab[token]
-            matched_vocab[token] = old_idx
-            num_matched += 1
-        else:
-            num_mismatched += 1
-            matched_vocab[token] = None
-
-    print(f"num_matched: {num_matched}, num_mismatched: {num_mismatched}")
-    return matched_vocab
-
-
-def init_embedding_and_weight(matched_vocab, old_embeddings, old_heads):
-    new_embeddings = []
-    new_heads = []
-
-    hidden_size = old_embeddings.shape[1]
-    dtype = old_embeddings.dtype
-    for _, (token, old_idx) in enumerate(matched_vocab.items()):
-        if old_idx is None:
-            new_embedding = torch.normal(mean=0, std=0.02, size=(1, hidden_size), dtype=dtype)
-            new_head = torch.normal(mean=0, std=0.02, size=(1, hidden_size), dtype=dtype)
-        else:
-            new_embedding = old_embeddings[old_idx].view(1, -1).to(dtype)
-            new_head = old_heads[old_idx].view(1, -1).to(dtype)
-        new_embeddings.append(new_embedding)
-        new_heads.append(new_head)
-
-    new_embeddings = torch.cat(new_embeddings, dim=0).cpu()
-    new_heads = torch.cat(new_heads, dim=0).cpu()
-    return new_embeddings, new_heads
-
-
-def expand_vocab(old_tokenizer_path, new_tokenizer_path, pretrained_model_cache_dir, save_dir):
-
-    old_tokenizer: SentencePieceProcessor = SentencePieceProcessor(old_tokenizer_path)
-    new_tokenizer: SentencePieceProcessor = SentencePieceProcessor(new_tokenizer_path)
-    old_vocab = dict((i, old_tokenizer.id_to_piece(i)) for i in range(old_tokenizer.vocab_size()))
-    new_vocab = dict((i, new_tokenizer.id_to_piece(i)) for i in range(new_tokenizer.vocab_size()))
-    matched_vocab = find_matched_vocab(old_vocab, new_vocab)
-
-    pretrained_model_cache_dir = Path(pretrained_model_cache_dir)
-
-    embedding_split_weights = None
-    head_split_weights = None
-
-    for file_path in pretrained_model_cache_dir.iterdir():
-        if file_path.name.endswith(".bin"):
-            cur_split_weights = torch.load(file_path, map_location="cpu")
-            if "model.embed_tokens.weight" in cur_split_weights:
-                embedding_split_weights = (file_path.name, cur_split_weights)
-            if "lm_head.weight" in cur_split_weights:
-                head_split_weights = (file_path.name, cur_split_weights)
-            if embedding_split_weights is not None and head_split_weights is not None:
-                break
-
-    new_embeddings, new_heads = init_embedding_and_weight(matched_vocab, embedding_split_weights[1]["model.embed_tokens.weight"], head_split_weights[1]["lm_head.weight"])
-
-    save_dir = Path(save_dir)
-    save_dir.mkdir(exist_ok=True, parents=True)
-    embedding_split_weights[1]["model.embed_tokens.weight"] = new_embeddings
-    head_split_weights[1]["lm_head.weight"] = new_heads
-
-    torch.save(embedding_split_weights[1], save_dir.joinpath(embedding_split_weights[0]))
-    torch.save(head_split_weights[1], save_dir.joinpath(head_split_weights[0]))
-    
-
-```
-
-
-
-
-
-
-
-```
-# InternLM\tools\alpaca_tokenizer.py
-# https://github.com/yanqiangmiffy/how-to-train-tokenizer/blob/main/step3_tokenzier_segment.py
-
-# 改成这样
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset_path", type=str,  help="path of dataset json file")
-    parser.add_argument("--output_path", type=str, help="path of processed dataset")
-    parser.add_argument("--tokenizer_path", type=str, help="path of tokenizer")
-    parser.add_argument("--split_ratio", type=float, default=0.1, help="ratio for validation dataset splitting")
-    import sys
-    sys.argv.append( '--dataset_path' )
-    sys.argv.append( 'E:/t/InternLM/alpaca_data.json' )
-    sys.argv.append( '--output_path' )
-    sys.argv.append( 'E:/t/InternLM' )
-    sys.argv.append( '--tokenizer_path' )
-    sys.argv.append( 'E:/t/InternLM/tools/V7_sft.model' )
-
-
-```
 
 
 
@@ -23563,6 +23363,8 @@ python merge-weights.py --input_dir /root/autodl-tmp/LLaMA_30B --model_size 30B
 ## ChatGLM-6B
 
 [ChatGLM-6B 清华GPT](https://github.com/THUDM/ChatGLM-6B)
+
+- [BaiYang-chatGLM2-6B 旋转位置编码](https://github.com/lilongxian/BaiYang-chatGLM2-6B)
 
 [ChatGLM2-6B 微调(初体验) 语料多](https://zhuanlan.zhihu.com/p/643856746) 
 
@@ -24640,6 +24442,29 @@ width = int(video_stream['width'])
 height = int(video_stream['height'])
 
 print(f'Width: {width}, Height: {height}, FPS: {fps}, Duration: {duration}')
+```
+
+
+
+### test gpu
+
+```
+>>> import torch
+
+>>> torch.cuda.is_available()
+True
+
+>>> torch.cuda.device_count()
+1
+
+>>> torch.cuda.current_device()
+0
+
+>>> torch.cuda.device(0)
+<torch.cuda.device at 0x7efce0b03be0>
+
+>>> torch.cuda.get_device_name(0)
+'GeForce GTX 950M'
 ```
 
 
@@ -26466,8 +26291,6 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ## Rust Monads
 
-[lodash-rust](https://github.com/charleslukes/lodash-rust)
-
 [Rust语言圣经](https://course.rs/about-book.html)
 
 [Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
@@ -26476,21 +26299,9 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [iced GUI对标elm](https://github.com/iced-rs/iced)
 
-[rust-in-flutter 另一个GUI 示例必看](https://github.com/cunarist/rust-in-flutter)
-
-[flutter v2 客户端](https://github.com/guozhigq/flutter_v2ex)
-
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
 [rust-script](https://github.com/fornwall/rust-script)
-
-- ```
-  cargo install rust-script
-  	# ftw 开全局也不行,要Proxifier连另一台机子(开了1080端口代理)
-  
-  ```
-
-  
 
 
 
