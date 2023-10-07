@@ -6,6 +6,10 @@
 
 
 
+Ctrl+Shift+M 看看。可能是因为 Cargo 解析参数配置不对导致 check 依赖的时候直接在依赖里报错中断。如果确认参数没问题可以 cargo clean 再 restart analyzer 试试。
+
+
+
 # lambda
 
 
