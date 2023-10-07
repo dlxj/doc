@@ -22599,6 +22599,8 @@ if __name__ == "__main__":
 
 [zero_nlp](https://github.com/yuanzhoulvpi2017/zero_nlp)
 
+- [chatglm_v2_6b_lora](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/chatglm_v2_6b_lora)
+
 [我用我的 10 万条微信聊天记录和 280 篇博客文章，做了我自己的数字克隆 AI](https://v2ex.com/t/931521)
 
 #### [NonJishoKei 日语所有单词变形](https://github.com/NoHeartPen/NonJishoKei)
@@ -22706,6 +22708,57 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 [示例数据](https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json)
 
 [扩充词表](https://github.com/InternLM/InternLM/issues/209)
+
+[BytePiece：更纯粹、更高压缩率的Tokenizer](https://spaces.ac.cn/archives/9752) [s1](https://github.com/bojone/bytepiece) [s2](https://github.com/SunDoge/bytepiece-rs)
+
+- ```
+  # main.py 实测可用。训练+推理
+  """
+  https://github.com/bojone/bytepiece
+  
+  AHOCORASICK_BYTES=1 && \
+  pip3.10 uninstall pyahocorasick && \
+  proxychains4 pip3.10 install git+https://github.com/WojciechMula/pyahocorasick.git && \
+  proxychains4 pip3.10 install bytepiece==0.4.1
+  """
+  from bytepiece import Tokenizer, Trainer
+  
+  import json
+  
+  class corpus:
+      def __iter__(self):
+          f = 'data_sample.json'
+          with open(f) as f:
+              for l in f:
+                  yield json.loads(l)['text']  # 每次返回一个Unicode
+  
+  trainer = Trainer(order=6, max_vocab_size=100000, min_count=32)
+  trainer.train(corpus(), workers=1, batch_size=1000)
+  trainer.save('ibytepiece.model')
+  
+  
+  tokenizer = Tokenizer('bytepiece.plus.80k.model')
+  text = '今天天气不错'
+  
+  tokens = tokenizer.tokenize(text)  # 返回bytes的list
+  print(b' '.join(tokens).decode(errors='ignore'))  # 可视化分词结果
+  
+  ids = tokenizer.encode(text)  # 返回tokens对应的ids
+  print(tokenizer.decode(ids))  # 重新将ids解码为unicode文本
+  
+  tokens = tokenizer.tokenize(text, alpha=0.2)  # 随机tokenize
+  print(b' '.join(tokens).decode(errors='ignore'))  # 可视化分词结果
+  
+  
+  
+  
+  pip uninstall pyahocorasick
+  
+  # 打开 Developer Command Prompt for VS 2019
+  set AHOCORASICK_BYTES=1 && pip install git+https://github.com/WojciechMula/pyahocorasick.git
+  ```
+
+  
 
 [从头训练一个自己的Tokenizer](https://zhuanlan.zhihu.com/p/625715830)  [1](https://github.com/yanqiangmiffy/how-to-train-tokenizer)
 
