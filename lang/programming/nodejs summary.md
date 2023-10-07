@@ -22699,6 +22699,117 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 
 
+### 微调
+
+[说明](https://github.com/InternLM/InternLM/blob/main/doc/usage.md)
+
+[示例数据](https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json)
+
+[扩充词表](https://github.com/InternLM/InternLM/issues/209)
+
+[多轮会话](https://github.com/InternLM/InternLM/issues/113)
+
+
+
+```
+You should not only expand your tokenizer's vocab, but also the embedding and the output head of the model.
+For example, if your vocab size is 200,000, you should also expand the embedding, so that its size is [200,000, hidden_size] instead of [103168, hidden_size].
+
+Your can use the following code to expand the embedding and head, the logic is very simple, if the token of your new tokenizer is in the old tokenizer(for example, internlm's), then we directly use the weight of the old embedding, otherwise, we can random initialize its weight.
+
+import torch
+from pathlib import Path
+from sentencepiece import SentencePieceProcessor
+
+
+def find_matched_vocab(old_vocab, new_vocab):
+    reversed_old_vocab = dict((v, k) for k, v in old_vocab.items())
+    matched_vocab = {}
+    num_matched = 0
+    num_mismatched = 0
+    for new_idx, token in new_vocab.items():
+        if token in reversed_old_vocab:
+            old_idx = reversed_old_vocab[token]
+            matched_vocab[token] = old_idx
+            num_matched += 1
+        else:
+            num_mismatched += 1
+            matched_vocab[token] = None
+
+    print(f"num_matched: {num_matched}, num_mismatched: {num_mismatched}")
+    return matched_vocab
+
+
+def init_embedding_and_weight(matched_vocab, old_embeddings, old_heads):
+    new_embeddings = []
+    new_heads = []
+
+    hidden_size = old_embeddings.shape[1]
+    dtype = old_embeddings.dtype
+    for _, (token, old_idx) in enumerate(matched_vocab.items()):
+        if old_idx is None:
+            new_embedding = torch.normal(mean=0, std=0.02, size=(1, hidden_size), dtype=dtype)
+            new_head = torch.normal(mean=0, std=0.02, size=(1, hidden_size), dtype=dtype)
+        else:
+            new_embedding = old_embeddings[old_idx].view(1, -1).to(dtype)
+            new_head = old_heads[old_idx].view(1, -1).to(dtype)
+        new_embeddings.append(new_embedding)
+        new_heads.append(new_head)
+
+    new_embeddings = torch.cat(new_embeddings, dim=0).cpu()
+    new_heads = torch.cat(new_heads, dim=0).cpu()
+    return new_embeddings, new_heads
+
+
+def expand_vocab(old_tokenizer_path, new_tokenizer_path, pretrained_model_cache_dir, save_dir):
+
+    old_tokenizer: SentencePieceProcessor = SentencePieceProcessor(old_tokenizer_path)
+    new_tokenizer: SentencePieceProcessor = SentencePieceProcessor(new_tokenizer_path)
+    old_vocab = dict((i, old_tokenizer.id_to_piece(i)) for i in range(old_tokenizer.vocab_size()))
+    new_vocab = dict((i, new_tokenizer.id_to_piece(i)) for i in range(new_tokenizer.vocab_size()))
+    matched_vocab = find_matched_vocab(old_vocab, new_vocab)
+
+    pretrained_model_cache_dir = Path(pretrained_model_cache_dir)
+
+    embedding_split_weights = None
+    head_split_weights = None
+
+    for file_path in pretrained_model_cache_dir.iterdir():
+        if file_path.name.endswith(".bin"):
+            cur_split_weights = torch.load(file_path, map_location="cpu")
+            if "model.embed_tokens.weight" in cur_split_weights:
+                embedding_split_weights = (file_path.name, cur_split_weights)
+            if "lm_head.weight" in cur_split_weights:
+                head_split_weights = (file_path.name, cur_split_weights)
+            if embedding_split_weights is not None and head_split_weights is not None:
+                break
+
+    new_embeddings, new_heads = init_embedding_and_weight(matched_vocab, embedding_split_weights[1]["model.embed_tokens.weight"], head_split_weights[1]["lm_head.weight"])
+
+    save_dir = Path(save_dir)
+    save_dir.mkdir(exist_ok=True, parents=True)
+    embedding_split_weights[1]["model.embed_tokens.weight"] = new_embeddings
+    head_split_weights[1]["lm_head.weight"] = new_heads
+
+    torch.save(embedding_split_weights[1], save_dir.joinpath(embedding_split_weights[0]))
+    torch.save(head_split_weights[1], save_dir.joinpath(head_split_weights[0]))
+    
+
+```
+
+
+
+
+
+
+
+```
+# InternLM\tools\tokenizer.py
+
+```
+
+
+
 
 
 ## Linly-Chinese-LLaMA-2
