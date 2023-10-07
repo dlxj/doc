@@ -22707,6 +22707,8 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 [扩充词表](https://github.com/InternLM/InternLM/issues/209)
 
+[从头训练一个自己的Tokenizer](https://zhuanlan.zhihu.com/p/625715830)  [1](https://github.com/yanqiangmiffy/how-to-train-tokenizer)
+
 [多轮会话](https://github.com/InternLM/InternLM/issues/113)
 
 
@@ -22804,7 +22806,24 @@ def expand_vocab(old_tokenizer_path, new_tokenizer_path, pretrained_model_cache_
 
 
 ```
-# InternLM\tools\tokenizer.py
+# InternLM\tools\alpaca_tokenizer.py
+# https://github.com/yanqiangmiffy/how-to-train-tokenizer/blob/main/step3_tokenzier_segment.py
+
+# 改成这样
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset_path", type=str,  help="path of dataset json file")
+    parser.add_argument("--output_path", type=str, help="path of processed dataset")
+    parser.add_argument("--tokenizer_path", type=str, help="path of tokenizer")
+    parser.add_argument("--split_ratio", type=float, default=0.1, help="ratio for validation dataset splitting")
+    import sys
+    sys.argv.append( '--dataset_path' )
+    sys.argv.append( 'E:/t/InternLM/alpaca_data.json' )
+    sys.argv.append( '--output_path' )
+    sys.argv.append( 'E:/t/InternLM' )
+    sys.argv.append( '--tokenizer_path' )
+    sys.argv.append( 'E:/t/InternLM/tools/V7_sft.model' )
+
 
 ```
 
