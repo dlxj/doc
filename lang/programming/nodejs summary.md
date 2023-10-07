@@ -2715,6 +2715,10 @@ sudo curl -fsSL http://file.tickstep.com/rpm/aliyunpan/aliyunpan.repo | sudo tee
 
 
 
+aliyunpan
+
+
+
 login
 
  \# 输入刚才的 token
