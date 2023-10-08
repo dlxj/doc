@@ -22636,6 +22636,14 @@ if __name__ == "__main__":
 
 ## Tokenizer
 
+[How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
+
+- [openai tokenizer 在线试用](https://platform.openai.com/tokenizer)
+
+
+
+[浅谈ChatGPT的Tokenizer](https://zhuanlan.zhihu.com/p/626621158)
+
 [tokenizer 分词器词汇表添加新词](https://blog.csdn.net/weixin_43290383/article/details/128874925)
 
 ```
@@ -22653,6 +22661,12 @@ https://github.com/openai/tiktoken
     # openai 的分词器
 
 ```
+
+
+
+### 高考题
+
+[高考题](https://github.com/OpenLMLab/GAOKAO-Bench)
 
 
 
