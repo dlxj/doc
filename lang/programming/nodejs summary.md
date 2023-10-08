@@ -2485,6 +2485,34 @@ proxychains4 curl https://www.youtube.com
 
 
 
+### 学术加速
+
+```
+
+cat /etc/network_turbo
+
+export no_proxy=localhost,127.0.0.1
+export http_proxy=http://172.16.70.52:12798 && export https_proxy=http://172.16.70.52:12798
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+echo 设置成功
+
+# see echodict\chatglm_v2_6b_lora\readme.txt
+https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/chatglm_v2_6b_lora
+
+source /etc/network_turbo
+    # 学术加速
+    # unset http_proxy && unset https_proxy
+        # 取消
+
+cd chatglm_v2_6b_lora && \
+pip install -r requirements.txt && \
+pip install jieba rouge_chinese nltk peft
+
+```
+
+
+
 
 
 ### SSH隧道代理
@@ -22588,6 +22616,8 @@ if __name__ == "__main__":
 
 [zero_nlp](https://github.com/yuanzhoulvpi2017/zero_nlp)
 
+- [gpt2 从零开始](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/chinese_gpt2)
+
 [我用我的 10 万条微信聊天记录和 280 篇博客文章，做了我自己的数字克隆 AI](https://v2ex.com/t/931521)
 
 #### [NonJishoKei 日语所有单词变形](https://github.com/NoHeartPen/NonJishoKei)
@@ -22595,6 +22625,14 @@ if __name__ == "__main__":
 - [真·哪里不会点哪里_日本語非辞書形辞典_v2](https://forum.freemdict.com/t/topic/14048)
 
 #### [MisakaTranslator 屏幕取词](https://github.com/hanmin0822/MisakaTranslator)
+
+
+
+## DeepSpeed-Chat
+
+[DeepSpeed-Chat 完整三步曲](https://github.com/microsoft/DeepSpeedExamples/blob/master/applications/DeepSpeed-Chat/README.md)
+
+[ChatGPT复现三步走](https://juejin.cn/post/7251860291234889787)
 
 
 
@@ -22606,9 +22644,70 @@ if __name__ == "__main__":
 
 
 
+## Tokenizer
+
+[How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
+
+- [openai tokenizer 在线试用](https://platform.openai.com/tokenizer)
+- [gpt-tokenizer nodejs实现(有词表)](https://github.com/niieani/gpt-tokenizer)
+- [词表扩充实战](https://zhuanlan.zhihu.com/p/631360711)
+  - [合并词表的代码](https://github.com/ymcui/Chinese-LLaMA-Alpaca/blob/main/scripts/merge_tokenizer/merge_tokenizers.py)
+- [C# 版移值 SharpToken](https://github.com/dmitry-brazhenko/SharpToken)
+- [高效Tokenizer: tictoken](https://zhuanlan.zhihu.com/p/631840697)
+- [高效中文BPE实现](https://lyk-ai.com/post/2)
+
+| Encoding name           | OpenAI models                                        |
+| ----------------------- | ---------------------------------------------------- |
+| `cl100k_base`           | `gpt-4`, `gpt-3.5-turbo`, `text-embedding-ada-002`   |
+| `p50k_base`             | Codex models, `text-davinci-002`, `text-davinci-003` |
+| `r50k_base` (or `gpt2`) | GPT-3 models like `davinci`                          |
+
+[浅谈ChatGPT的Tokenizer](https://zhuanlan.zhihu.com/p/626621158)
+
+[tokenizer 分词器词汇表添加新词](https://blog.csdn.net/weixin_43290383/article/details/128874925)
+
+
+
+```
+pip3.11 install --upgrade tiktoken
+pip3.11 install --upgrade openai
+
+
+```
+
+
+
+```
+# see echodict\bytepiece\main.py
+
+https://github.com/bojone/bytepiece
+
+AHOCORASICK_BYTES=1 && \
+pip3.10 uninstall pyahocorasick && \
+proxychains4 pip3.10 install git+https://github.com/WojciechMula/pyahocorasick.git && \
+proxychains4 pip3.10 install bytepiece==0.4.1
+
+
+https://github.com/openai/tiktoken
+    # openai 的分词器
+
+```
+
+
+
+### 高考题
+
+[高考题](https://github.com/OpenLMLab/GAOKAO-Bench)
+
+
+
+
+
 ## QLoRA 低碳微调
 
 [chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA) [2](https://zhuanlan.zhihu.com/p/634516004) [3](https://zhuanlan.zhihu.com/p/636215898)
+
+[issues 必看](https://github.com/shuxueslpi/chatGLM-6B-QLoRA/issues/29)
 
 
 
