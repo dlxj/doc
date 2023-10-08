@@ -2485,6 +2485,34 @@ proxychains4 curl https://www.youtube.com
 
 
 
+### 学术加速
+
+```
+
+cat /etc/network_turbo
+
+export no_proxy=localhost,127.0.0.1
+export http_proxy=http://172.16.70.52:12798 && export https_proxy=http://172.16.70.52:12798
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+echo 设置成功
+
+# see echodict\chatglm_v2_6b_lora\readme.txt
+https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/chatglm_v2_6b_lora
+
+source /etc/network_turbo
+    # 学术加速
+    # unset http_proxy && unset https_proxy
+        # 取消
+
+cd chatglm_v2_6b_lora && \
+pip install -r requirements.txt && \
+pip install jieba rouge_chinese nltk peft
+
+```
+
+
+
 
 
 ### SSH隧道代理
@@ -22606,9 +22634,35 @@ if __name__ == "__main__":
 
 
 
+## Tokenizer
+
+[tokenizer 分词器词汇表添加新词](https://blog.csdn.net/weixin_43290383/article/details/128874925)
+
+```
+# see echodict\bytepiece\main.py
+
+https://github.com/bojone/bytepiece
+
+AHOCORASICK_BYTES=1 && \
+pip3.10 uninstall pyahocorasick && \
+proxychains4 pip3.10 install git+https://github.com/WojciechMula/pyahocorasick.git && \
+proxychains4 pip3.10 install bytepiece==0.4.1
+
+
+https://github.com/openai/tiktoken
+    # openai 的分词器
+
+```
+
+
+
+
+
 ## QLoRA 低碳微调
 
 [chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA) [2](https://zhuanlan.zhihu.com/p/634516004) [3](https://zhuanlan.zhihu.com/p/636215898)
+
+[issues 必看](https://github.com/shuxueslpi/chatGLM-6B-QLoRA/issues/29)
 
 
 
