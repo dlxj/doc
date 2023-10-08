@@ -22639,12 +22639,28 @@ if __name__ == "__main__":
 [How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
 
 - [openai tokenizer 在线试用](https://platform.openai.com/tokenizer)
+- [C# 版移值 SharpToken](https://github.com/dmitry-brazhenko/SharpToken)
 
-
+| Encoding name           | OpenAI models                                        |
+| ----------------------- | ---------------------------------------------------- |
+| `cl100k_base`           | `gpt-4`, `gpt-3.5-turbo`, `text-embedding-ada-002`   |
+| `p50k_base`             | Codex models, `text-davinci-002`, `text-davinci-003` |
+| `r50k_base` (or `gpt2`) | GPT-3 models like `davinci`                          |
 
 [浅谈ChatGPT的Tokenizer](https://zhuanlan.zhihu.com/p/626621158)
 
 [tokenizer 分词器词汇表添加新词](https://blog.csdn.net/weixin_43290383/article/details/128874925)
+
+
+
+```
+pip3.11 install --upgrade tiktoken
+pip3.11 install --upgrade openai
+
+
+```
+
+
 
 ```
 # see echodict\bytepiece\main.py
