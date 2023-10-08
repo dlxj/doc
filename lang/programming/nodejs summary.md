@@ -22616,6 +22616,8 @@ if __name__ == "__main__":
 
 [zero_nlp](https://github.com/yuanzhoulvpi2017/zero_nlp)
 
+- [gpt2 从零开始](https://github.com/yuanzhoulvpi2017/zero_nlp/tree/main/chinese_gpt2)
+
 [我用我的 10 万条微信聊天记录和 280 篇博客文章，做了我自己的数字克隆 AI](https://v2ex.com/t/931521)
 
 #### [NonJishoKei 日语所有单词变形](https://github.com/NoHeartPen/NonJishoKei)
@@ -22623,6 +22625,14 @@ if __name__ == "__main__":
 - [真·哪里不会点哪里_日本語非辞書形辞典_v2](https://forum.freemdict.com/t/topic/14048)
 
 #### [MisakaTranslator 屏幕取词](https://github.com/hanmin0822/MisakaTranslator)
+
+
+
+## DeepSpeed-Chat
+
+[DeepSpeed-Chat 完整三步曲](https://github.com/microsoft/DeepSpeedExamples/blob/master/applications/DeepSpeed-Chat/README.md)
+
+[ChatGPT复现三步走](https://juejin.cn/post/7251860291234889787)
 
 
 
@@ -22639,7 +22649,12 @@ if __name__ == "__main__":
 [How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
 
 - [openai tokenizer 在线试用](https://platform.openai.com/tokenizer)
+- [gpt-tokenizer nodejs实现(有词表)](https://github.com/niieani/gpt-tokenizer)
+- [词表扩充实战](https://zhuanlan.zhihu.com/p/631360711)
+  - [合并词表的代码](https://github.com/ymcui/Chinese-LLaMA-Alpaca/blob/main/scripts/merge_tokenizer/merge_tokenizers.py)
 - [C# 版移值 SharpToken](https://github.com/dmitry-brazhenko/SharpToken)
+- [高效Tokenizer: tictoken](https://zhuanlan.zhihu.com/p/631840697)
+- [高效中文BPE实现](https://lyk-ai.com/post/2)
 
 | Encoding name           | OpenAI models                                        |
 | ----------------------- | ---------------------------------------------------- |
