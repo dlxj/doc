@@ -3482,6 +3482,19 @@ r''
 
 
 
+### utf-8
+
+```
+>>> text = "お誕生日おめでとう"
+>>> text.encode("utf-8")
+b'\xe3\x81\x8a\xe8\xaa\x95\xe7\x94\x9f\xe6\x97\xa5\xe3\x81\x8a\xe3\x82\x81\xe3\x81\xa7\xe3\x81\xa8\xe3\x81\x86'
+>>> text.encode("utf-8").decode("utf-8")
+```
+
+
+
+
+
 ### byte string
 
 ```
