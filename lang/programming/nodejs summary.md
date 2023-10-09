@@ -22634,13 +22634,22 @@ if __name__ == "__main__":
 
 [ChatGPT复现三步走](https://juejin.cn/post/7251860291234889787)
 
+[集大成资料 必看](https://wqw547243068.github.io/chatgpt_mimic)
 
 
-## LLaVA-Med
 
-[LLaVA-Med](https://github.com/microsoft/LLaVA-Med) 视觉模型
+```
+vLLM – 伯克利推理
+	# 支持众多现有模弄，利用 PagedAttention 降低资源需求
+```
 
-[在线使用](https://llava.hliu.cc/)
+
+
+## Open-Assistant
+
+[Open-Assistant 完整三步曲](https://github.com/LAION-AI/Open-Assistant)
+
+
 
 
 
@@ -22708,6 +22717,12 @@ https://github.com/openai/tiktoken
 [chatGLM-6B-QLoRA](https://github.com/shuxueslpi/chatGLM-6B-QLoRA) [2](https://zhuanlan.zhihu.com/p/634516004) [3](https://zhuanlan.zhihu.com/p/636215898)
 
 [issues 必看](https://github.com/shuxueslpi/chatGLM-6B-QLoRA/issues/29)
+
+
+
+```
+QLoRA本身讲的是模型本身用4bit加载，训练时把数值反量化到bf16后进行训练，利用 LoRA 可以锁定原模型参数不参与训练，只训练少量LoRA参数的特性使得训练所需的显存大大减少。例如33B的LLaMA模型经过这种方式可以在24 GB的显卡上训练，
+```
 
 
 
