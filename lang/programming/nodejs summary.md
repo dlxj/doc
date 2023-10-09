@@ -22654,9 +22654,13 @@ vLLM – 伯克利推理
 
 
 
-## nanoGPT
+## Open-Assistant
 
-[LLaVA-Med](https://github.com/microsoft/LLaVA-Med) 视觉模型
+[Open-Assistant 完整三步曲](https://github.com/LAION-AI/Open-Assistant)
+
+
+
+## nanoGPT
 
 [在线使用](https://llava.hliu.cc/)
 
@@ -22664,7 +22668,6 @@ vLLM – 伯克利推理
 [nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
 
 
-[nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
 
 
 
