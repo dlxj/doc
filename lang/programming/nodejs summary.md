@@ -22664,10 +22664,22 @@ vLLM – 伯克利推理
 
 [在线使用](https://llava.hliu.cc/)
 
-
 [nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
 
 
+
+### Open-GPT
+
+[colab 实战](https://github.com/ShenDezhou/Open-GPT/blob/main/colab%2Fgpt_pretraining_on_gpt-tiny.ipynb)
+
+
+
+```
+只需将“http:// github.com/”替换为“https://colab.research.google.com/github/”，就会直接加载到Colab中 
+
+https://colab.research.google.com/github/ShenDezhou/Open-GPT/blob/main/colab%2Fgpt_pretraining_on_gpt-tiny.ipynb
+
+```
 
 
 
