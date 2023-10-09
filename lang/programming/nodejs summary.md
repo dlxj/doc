@@ -22643,13 +22643,28 @@ vLLM – 伯克利推理
 	# 支持众多现有模弄，利用 PagedAttention 降低资源需求
 ```
 
+[集大成资料 必看](https://wqw547243068.github.io/chatgpt_mimic)
 
 
-## Open-Assistant
 
-[Open-Assistant 完整三步曲](https://github.com/LAION-AI/Open-Assistant)
+```
+vLLM – 伯克利推理
+	# 支持众多现有模弄，利用 PagedAttention 降低资源需求
+```
 
 
+
+## nanoGPT
+
+[LLaVA-Med](https://github.com/microsoft/LLaVA-Med) 视觉模型
+
+[在线使用](https://llava.hliu.cc/)
+
+
+[nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
+
+
+[nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
 
 
 
@@ -22658,6 +22673,7 @@ vLLM – 伯克利推理
 [How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
 
 - [openai tokenizer 在线试用](https://platform.openai.com/tokenizer)
+- [tiktoken 训练自已的 tokenizer](https://github.com/ShenDezhou/Open-GPT/blob/main/tokenizer%2Ftrain_tiktoken.py)
 - [gpt-tokenizer nodejs实现(有词表)](https://github.com/niieani/gpt-tokenizer)
 - [词表扩充实战](https://zhuanlan.zhihu.com/p/631360711)
   - [合并词表的代码](https://github.com/ymcui/Chinese-LLaMA-Alpaca/blob/main/scripts/merge_tokenizer/merge_tokenizers.py)
@@ -22674,6 +22690,24 @@ vLLM – 伯克利推理
 [浅谈ChatGPT的Tokenizer](https://zhuanlan.zhihu.com/p/626621158)
 
 [tokenizer 分词器词汇表添加新词](https://blog.csdn.net/weixin_43290383/article/details/128874925)
+
+
+
+```
+预训练部分又分为两个阶段：
+
+第一阶段：冻结transformer参数，仅训练embedding，在尽量不干扰原模型的情况下适配新增的中文词向量。
+第二阶段：使用 LoRA 技术，为模型添加LoRA权重（adapter），训练embedding的同时也更新LoRA参数。
+
+第一步：在训练之前，将除了Embedding之外的层设置为param.requires_grad = False，如下所示：
+for name, param in model.named_parameters():
+    if "model.embed_tokens" not in name:
+        param.requires_grad = False
+第二步：在训练的时候，在优化器中添加过滤器filter把requires_grad = False的参数过滤掉，这样在训练的时候，不会更新这些参数，如下所示：
+optimizer = AdamW(filter(lambda p: p.requires_grad, model.parameters()))
+```
+
+
 
 
 
@@ -22757,6 +22791,18 @@ https://github.com/jiamingkong/rwkv_reward
 
 QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍训练速度。两个一结合感觉咱训练大模型指日可待了，技术前进了一大步。但训练大模型所需的数据还是一个难题。
 ```
+
+
+
+
+
+
+
+## LLaVA-Med
+
+[LLaVA-Med](https://github.com/microsoft/LLaVA-Med) 视觉模型
+
+[在线使用](https://llava.hliu.cc/)
 
 
 
