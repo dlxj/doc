@@ -22676,6 +22676,31 @@ vLLM – 伯克利推理
 
 [nanoT5](https://github.com/PiotrNawrot/nanoT5)
 
+[pythia-12b 微调](https://huggingface.co/OpenAssistant/oasst-sft-1-pythia-12b) 
+
+
+
+```
+git clone https://github.com/VatsaDev/nanoChatGPT.git
+	# source /etc/network_turbo
+pip install torch numpy transformers datasets tiktoken wandb tqdm
+
+python data/Chat/prepComm.py 
+	# makes train and val
+
+python train.py config/finetune-gpt2.py 
+	# finetune
+
+# chatting with the bot
+!python chat.py \
+    --init_from="huggingface" --context="<human>Hello I like memes<endOfText><bot>I like memes, especially pepe the frog<endOfText>"
+
+
+https://colab.research.google.com/drive/1a2aW5eClKjHVQJp-qtHDz4m6ai4yh49Z?usp=sharing
+```
+
+
+
 
 
 ### Open-GPT
