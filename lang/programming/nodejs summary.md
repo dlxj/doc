@@ -22683,6 +22683,12 @@ https://colab.research.google.com/github/ShenDezhou/Open-GPT/blob/main/colab%2Fg
 
 
 
+### gpt2xl
+
+[finetune-gpt2xl  单GPU训练1.5亿参数](https://github.com/Xirider/finetune-gpt2xl)
+
+
+
 ## Tokenizer
 
 see echodict\bytepiece\IToken\train_tiktoken.py
