@@ -22685,6 +22685,10 @@ https://colab.research.google.com/github/ShenDezhou/Open-GPT/blob/main/colab%2Fg
 
 ## Tokenizer
 
+see echodict\bytepiece\IToken\train_tiktoken.py
+
+​	# 完整训练和使用过程
+
 [How to count tokens with tiktoken](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb)
 
 - [openai tokenizer 在线试用](https://platform.openai.com/tokenizer)
