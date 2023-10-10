@@ -2734,6 +2734,21 @@ https://github.com/tickstep/aliyunpan/blob/main/docs/manual.md#1-%E5%A6%82%E4%BD
 
 
 
+```
+# ubuntu install
+curl -fsSL http://file.tickstep.com/apt/pgp | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/tickstep-packages-archive-keyring.gpg > /dev/null && echo "deb [signed-by=/etc/apt/trusted.gpg.d/tickstep-packages-archive-keyring.gpg arch=amd64,arm64] http://file.tickstep.com/apt aliyunpan main" | sudo tee /etc/apt/sources.list.d/tickstep-aliyunpan.list > /dev/null && sudo apt-get update && sudo apt-get install -y aliyunpan
+
+aliyunpan
+login
+
+upload /mnt/chatglm2-6b-32k /
+
+```
+
+
+
+- almalinux
+
 sudo curl -fsSL http://file.tickstep.com/rpm/aliyunpan/aliyunpan.repo | sudo tee /etc/yum.repos.d/tickstep-aliyunpan.repo > /dev/null && sudo yum install aliyunpan -y
 
  \# 这样安装
