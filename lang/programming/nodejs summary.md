@@ -22687,6 +22687,9 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 
 ```
+apt update && \
+apt install tmux && \
+tmux && \
 source /etc/network_turbo && \
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
 apt-get install git-lfs && \
