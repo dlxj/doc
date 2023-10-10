@@ -1253,6 +1253,14 @@ __all__ = ['Sampler', 'SequentialSampler', ... xxx ...]
 
 
 
+### \_\_file\_\_
+
+
+
+```
+current_dir = os.path.dirname(os.path.abspath(__file__))
+```
+
 
 
 ## File
@@ -1456,6 +1464,19 @@ file1.writelines(L)
   
 # Closing file
 file1.close()
+```
+
+
+
+#### 追加写
+
+```
+# see InternLM\tools\tokenizer.py
+with open(text_input_path, "r") as text_file, open(bin_output_path, "ab") as bin_file:
+            for line in text_file:
+                # Strip any leading/trailing whitespace
+                stripped_line = line.strip()
+                bin_file.write(saved_bin) # b'something'
 ```
 
 
