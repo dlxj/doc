@@ -22670,6 +22670,67 @@ vLLM – 伯克利推理
 
 
 
+## InternLM
+
+[InternLM](https://github.com/InternLM/InternLM)
+
+[InternLM-20B 在线使用](https://zhuanlan.zhihu.com/p/658368644)
+
+[分词器](https://github.com/InternLM/InternLM/issues/340)
+
+
+
+see echodict\bytepiece\InternLM\tools\tokenizer.py
+
+它的分词器是有 jp 词表的
+
+
+
+```
+source /etc/network_turbo && \
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
+apt-get install git-lfs && \
+git lfs install && \
+git clone https://huggingface.co/internlm/internlm-20b
+
+```
+
+
+
+
+
+
+
+```
+https://www.codewithgpu.com/i/InternLM/lmdeploy/internlm-chat-20b-lmdeploy
+
+-> AutoDL创建实例 -> 运行中, JupyterLab -> 找开 "终端" ->
+bash /root/get_started.sh
+
+server is gonna mount on: http://0.0.0.0:6006
+Running on local URL:  http://0.0.0.0:6006
+	# 出现这个
+	
+容器面板 ->自定义服务 -> 应该就可以玩耍了
+
+
+# 本地安装方法
+pip3.10 install codewithgpu && \
+cg down InternLM/turbomind-internlm-chat-20b-w4/model.zip
+
+
+wget -O cg-client https://codewithgpu.ks3-cn-beijing.ksyuncs.com/cg-client && \
+chmod +x cg-client && \
+./cg-client
+
+```
+
+
+
+
+
+
+
 ## nanoGPT
 
 [在线使用](https://llava.hliu.cc/)
@@ -22926,64 +22987,6 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 [FasterTransformer NVIDIA官方](https://github.com/NVIDIA/FasterTransformer)
 
 
-
-
-
-## InternLM
-
-[InternLM](https://github.com/InternLM/InternLM)
-
-[InternLM-20B 在线使用](https://zhuanlan.zhihu.com/p/658368644)
-
-[分词器](https://github.com/InternLM/InternLM/issues/340)
-
-
-
-see echodict\bytepiece\InternLM\tools\tokenizer.py
-
-它的分词器是有 jp 词表的
-
-
-
-```
-source /etc/network_turbo && \
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
-apt-get install git-lfs && \
-git lfs install && \
-git clone https://huggingface.co/internlm/internlm-20b
-
-```
-
-
-
-
-
-
-
-```
-
-https://www.codewithgpu.com/i/InternLM/lmdeploy/internlm-chat-20b-lmdeploy
-
--> AutoDL创建实例 -> 运行中, JupyterLab -> 找开 "终端" ->
-bash /root/get_started.sh
-
-server is gonna mount on: http://0.0.0.0:6006
-Running on local URL:  http://0.0.0.0:6006
-	# 出现这个
-	
-容器面板 ->自定义服务 -> 应该就可以玩耍了
-
-
-# 本地安装方法
-pip3.10 install codewithgpu && \
-cg down InternLM/turbomind-internlm-chat-20b-w4/model.zip
-
-
-wget -O cg-client https://codewithgpu.ks3-cn-beijing.ksyuncs.com/cg-client && \
-chmod +x cg-client && \
-./cg-client
-
-```
 
 
 
