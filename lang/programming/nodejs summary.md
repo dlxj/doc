@@ -22933,6 +22933,8 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 [InternLM](https://github.com/InternLM/InternLM)
 
+[InternLM-20B 在线使用](https://zhuanlan.zhihu.com/p/658368644)
+
 
 
 
