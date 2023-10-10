@@ -22645,6 +22645,8 @@ vLLM – 伯克利推理
 
 [集大成资料 必看](https://wqw547243068.github.io/chatgpt_mimic)
 
+[attention_mask 实现细节](https://github.com/THUDM/ChatGLM2-6B/issues/535)
+
 
 
 ```
@@ -22657,6 +22659,14 @@ vLLM – 伯克利推理
 ## Open-Assistant
 
 [Open-Assistant 完整三步曲](https://github.com/LAION-AI/Open-Assistant)
+
+
+
+### pythia
+
+[pythia 6.9B](https://huggingface.co/EleutherAI/pythia-6.9b)
+
+[OpenAssistant 12B(pythia-based)本地部署](https://zhuanlan.zhihu.com/p/622358878)
 
 
 
@@ -22735,6 +22745,9 @@ https://colab.research.google.com/github/ShenDezhou/Open-GPT/blob/main/colab/gpt
 ### gpt2xl
 
 [finetune-gpt2xl  单GPU训练1.5亿参数](https://github.com/Xirider/finetune-gpt2xl)
+
+
+
 
 
 
