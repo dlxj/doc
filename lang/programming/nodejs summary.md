@@ -22937,6 +22937,35 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 
 
+```
+
+https://www.codewithgpu.com/i/InternLM/lmdeploy/internlm-chat-20b-lmdeploy
+
+-> AutoDL创建实例 -> 运行中, JupyterLab -> 找开 "终端" ->
+bash /root/get_started.sh
+
+server is gonna mount on: http://0.0.0.0:6006
+Running on local URL:  http://0.0.0.0:6006
+	# 出现这个
+	
+容器面板 ->自定义服务 -> 应该就可以玩耍了
+
+
+# 本地安装方法
+pip3.10 install codewithgpu && \
+cg down InternLM/turbomind-internlm-chat-20b-w4/model.zip
+
+
+wget -O cg-client https://codewithgpu.ks3-cn-beijing.ksyuncs.com/cg-client && \
+chmod +x cg-client && \
+./cg-client
+
+```
+
+
+
+
+
 
 
 ## Linly-Chinese-LLaMA-2
