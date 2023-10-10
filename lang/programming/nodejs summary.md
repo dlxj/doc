@@ -22690,13 +22690,15 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 ```
 apt update && \
 apt install tmux && \
-tmux && \
+tmux
+
 source /etc/network_turbo && \
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
 apt-get install git-lfs && \
 git lfs install && \
 cd /root/autodl-tmp && \
-git clone https://huggingface.co/internlm/internlm-20b
+git clone https://huggingface.co/internlm/internlm-chat-7b-v1_1
+
 
 
 git restore --source=HEAD :/
