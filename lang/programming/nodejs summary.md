@@ -22946,6 +22946,21 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 
 ```
+source /etc/network_turbo && \
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
+apt-get install git-lfs && \
+git lfs install && \
+git clone https://huggingface.co/internlm/internlm-20b
+
+```
+
+
+
+
+
+
+
+```
 
 https://www.codewithgpu.com/i/InternLM/lmdeploy/internlm-chat-20b-lmdeploy
 
