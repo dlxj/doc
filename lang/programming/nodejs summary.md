@@ -22939,6 +22939,12 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 
 
+see echodict\bytepiece\InternLM\tools\tokenizer.py
+
+它的分词器是有 jp 词表的
+
+
+
 ```
 
 https://www.codewithgpu.com/i/InternLM/lmdeploy/internlm-chat-20b-lmdeploy
