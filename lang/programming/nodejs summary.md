@@ -2711,7 +2711,8 @@ git lfs clone https://huggingface.co/datasets/dlxjj/pdf
 
 git lfs clone https://huggingface.co/datasets/dlxjj/echodict
 
-
+git restore --source=HEAD :/
+	# retry
 
 pip3.9 install huggingface_hub
 https://huggingface.co/settings/tokens
@@ -22696,6 +22697,10 @@ apt-get install git-lfs && \
 git lfs install && \
 cd /root/autodl-tmp && \
 git clone https://huggingface.co/internlm/internlm-20b
+
+
+git restore --source=HEAD :/
+	# retry
 
 ```
 
