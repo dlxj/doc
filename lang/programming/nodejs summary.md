@@ -22716,9 +22716,9 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 ```
 
-docker run -tid --name nvidia20.04 -p 222:22 --privileged=true 95d242fe9108
+docker run -tid --name nvidia -p 222:22 --privileged=true 95d242fe9108
 
-docker exec -it nvidia20.04 /bin/bash
+docker exec -it nvidia /bin/bash
 
 
 docker run --rm --gpus=all nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04 nvidia-smi
@@ -22799,6 +22799,62 @@ cg down InternLM/turbomind-internlm-chat-20b-w4/model.zip
 wget -O cg-client https://codewithgpu.ks3-cn-beijing.ksyuncs.com/cg-client && \
 chmod +x cg-client && \
 ./cg-client
+
+```
+
+
+
+### trainning
+
+```
+see InternLM/doc/install.md
+
+# autodl
+~/miniconda3/bin/conda init && \
+ln -s ~/miniconda3/bin/conda /usr/local/bin && \
+ln -s ~/miniconda3/bin/activate /usr/local/bin && \
+ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
+source ~/miniconda3/etc/profile.d/conda.sh
+
+
+apt update && \
+apt install tmux && \
+tmux
+
+
+source /etc/network_turbo && \
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
+apt-get install git-lfs && \
+git lfs install
+
+
+git clone https://github.com/InternLM/InternLM.git --recurse-submodules && \
+cd InternLM && \
+conda create --name internlm-env python=3.10 -y && \
+conda activate internlm-env
+
+pip install -r requirements/torch.txt && \
+pip install -r requirements/runtime.txt
+
+
+cd ./third_party/flash-attention && \
+cd ./csrc && \
+cd fused_dense_lib && pip install -v . &&\
+cd ../xentropy && pip install -v . && \
+cd ../rotary && pip install -v . && \
+cd ../layer_norm && pip install -v . && \
+cd ../../../../
+
+
+cd ./third_party/apex && \
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+ && \
+cd ../../ 
+
+
+
+
+
 
 ```
 
