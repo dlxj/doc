@@ -22718,6 +22718,10 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 
 
+wsl 里不需要装显卡驱动，中需要在 ubuntu 里装 cuda toolkit
+
+
+
 ```
 
 docker run -tid --name nvidia -p 222:22 --privileged=true 95d242fe9108
@@ -22810,6 +22814,16 @@ chmod +x cg-client && \
 ./cg-client
 
 ```
+
+
+
+
+
+### wsl 装 cuda toolkit
+
+[WSL2 和 Ubuntu 配置 GPU 机器学习环境](https://leovan.me/cn/2023/03/gpu-machine-learning-environment-configuration-under-windows-with-wsl2-and-ubuntu/)
+
+
 
 
 
