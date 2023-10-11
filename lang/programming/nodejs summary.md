@@ -22716,6 +22716,11 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 ```
 
+docker run -tid --name nvidia20.04 -p 222:22 --privileged=true 95d242fe9108
+
+docker exec -it nvidia20.04 /bin/bash
+
+
 docker run --rm --gpus=all nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04 nvidia-smi
 
 
