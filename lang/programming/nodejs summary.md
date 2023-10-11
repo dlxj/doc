@@ -22744,6 +22744,11 @@ sudo service docker start
 sudo ./cg-client
 
 
+jupylab -> 打开终端
+bash /root/get_started.sh
+	# 从 autodl 下载 9.9 G 模型，启动成功后 -> 容器 -> web 服务 就可以玩要了
+
+
 netsh winsock reset
 wsl --unregister Ubuntu
 
