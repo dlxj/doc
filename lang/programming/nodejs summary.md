@@ -22714,6 +22714,10 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 
 
+\\wsl$   win10 在 地址栏输入这个，直接定位到 wsl ubuntu 根目录
+
+
+
 ```
 
 docker run -tid --name nvidia -p 222:22 --privileged=true 95d242fe9108

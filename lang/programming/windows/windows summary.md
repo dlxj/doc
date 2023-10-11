@@ -153,6 +153,17 @@ netsh winsock reset
 
 
 
+# WSL
+
+```
+\\wsl$   win10 在 地址栏输入这个，直接定位到 wsl ubuntu 根目录
+
+see nodejs summary.md -> InternLM
+
+```
+
+
+
 
 
 # ISO下载
