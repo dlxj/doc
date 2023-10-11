@@ -22860,7 +22860,8 @@ git restore --source=HEAD :/
 
 
 
-wget https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json
+echodict/bytepiece/InternLM/alpaca_data.json
+	# 复制到项目根目录
 
 mkdir traindata_alpaca && \
 python tools/alpaca_tokenizer.py alpaca_data.json traindata_alpaca /root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model --split_ratio 0.1
