@@ -22707,6 +22707,10 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 
 ```
+
+docker run --rm --gpus=all nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04 nvidia-smi
+
+
 wsl --install
 
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
