@@ -22839,6 +22839,13 @@ Please make sure that
 
 To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.8/bin
 
+
+vi ~/.bashrc # 加在文件尾
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+
+
+
 	
 ```
 
@@ -22875,7 +22882,10 @@ cd InternLM && \
 conda create --name internlm-env python=3.10 -y && \
 conda activate internlm-env
 
-pip install -r requirements/torch.txt && \
+pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
+
+
+# pip install -r requirements/torch.txt && \
 pip install -r requirements/runtime.txt
 
 
