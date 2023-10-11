@@ -22703,6 +22703,14 @@ see echodict\bytepiece\InternLM\tools\tokenizer.py
 
 
 ```
+wsl --install -d Ubuntu-22.04
+```
+
+
+
+
+
+```
 apt update && \
 apt install tmux && \
 tmux
