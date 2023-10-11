@@ -22863,7 +22863,24 @@ git restore --source=HEAD :/
 wget https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json
 
 mkdir traindata_alpaca && \
-python tools/alpaca_tokenizer.py alpaca_data.json traindata_alpaca internlm-chat-7b-v1_1/tokenizer.model --split_ratio 0.1
+python tools/alpaca_tokenizer.py alpaca_data.json traindata_alpaca /root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model --split_ratio 0.1
+
+InternLM/tools/alpaca_tokenizer.py 改成这样：
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset_path", type=str, help="path of dataset json file")
+    parser.add_argument("--output_path", type=str, help="path of processed dataset")
+    parser.add_argument("--tokenizer_path", type=str, help="path of tokenizer")
+    parser.add_argument("--split_ratio", type=float, default=0.1, help="ratio for validation dataset splitting")
+
+    import sys
+    sys.argv.append( '--dataset_path' )
+    sys.argv.append( 'alpaca_data.json' )
+    sys.argv.append( '--output_path' )
+    sys.argv.append( 'traindata_alpaca' )
+    sys.argv.append( '--tokenizer_path' )
+    sys.argv.append( '/root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model' )
+
 
 
 torchrun --nnodes=1 --nproc_per_node=8 train.py --config ./configs/i7B_sft.py --launcher "torch"
