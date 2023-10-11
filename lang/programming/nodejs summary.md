@@ -22823,6 +22823,25 @@ chmod +x cg-client && \
 
 [WSL2 和 Ubuntu 配置 GPU 机器学习环境](https://leovan.me/cn/2023/03/gpu-machine-learning-environment-configuration-under-windows-with-wsl2-and-ubuntu/)
 
+[cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
+
+
+
+```
+wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+	# 这是专门 for wsl 版的 cuda toolkit
+	
+sudo sh cuda_11.8.0_520.61.05_linux.run
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-11.8/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.8/lib64, or, add /usr/local/cuda-11.8/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.8/bin
+
+	
+```
+
 
 
 
