@@ -22852,13 +22852,38 @@ pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation -
 cd ../../ 
 
 
+cd /root/autodl-tmp && \
+git clone https://huggingface.co/internlm/internlm-chat-7b-v1_1
+
+git restore --source=HEAD :/
+	# retry
 
 
+
+torchrun --nnodes=1 --nproc_per_node=8 train.py --config ./configs/i7B_sft.py --launcher "torch"
+	# 启动训练
 
 
 ```
 
 
+
+```
+# 配置含义
+MODEL_ONLY_FOLDER
+	# Path to initialize with given model weights.
+	# 官方模型目录
+	
+LOAD_CKPT_FOLDER
+	# Ckpt path to resume training(load weights and scheduler/context states).
+	# 微调中间存档目录 应该同 SAVE_CKPT_FOLDER ?
+	
+SAVE_CKPT_FOLDER
+	# 微调结果保存目录
+	
+
+
+```
 
 
 
