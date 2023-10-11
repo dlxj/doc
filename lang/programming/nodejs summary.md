@@ -2513,6 +2513,14 @@ pip install jieba rouge_chinese nltk peft
 
 
 
+## win10 重置网络
+
+```
+netsh winsock reset
+```
+
+
+
 
 
 ### SSH隧道代理

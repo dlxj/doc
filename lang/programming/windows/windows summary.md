@@ -143,6 +143,18 @@ int main(){
 
 
 
+
+
+# win10 重置网络
+
+```
+netsh winsock reset
+```
+
+
+
+
+
 # ISO下载
 
 不要从官网下iso，评估版隔段时间自动关机
