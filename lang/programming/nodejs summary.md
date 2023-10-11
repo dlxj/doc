@@ -22870,6 +22870,10 @@ torchrun --nnodes=1 --nproc_per_node=8 train.py --config ./configs/i7B_sft.py --
 
 ```
 # 配置含义
+
+TRAIN_FOLDER = "traindata_alpaca"
+
+
 MODEL_ONLY_FOLDER
 	# Path to initialize with given model weights.
 	# 官方模型目录
