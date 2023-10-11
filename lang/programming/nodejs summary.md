@@ -22860,6 +22860,12 @@ git restore --source=HEAD :/
 
 
 
+wget https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json
+
+mkdir traindata_alpaca && \
+python tools/alpaca_tokenizer.py alpaca_data.json traindata_alpaca internlm-chat-7b-v1_1/tokenizer.model --split_ratio 0.1
+
+
 torchrun --nnodes=1 --nproc_per_node=8 train.py --config ./configs/i7B_sft.py --launcher "torch"
 	# 启动训练
 
