@@ -2709,13 +2709,39 @@ done
 ```
 dlxjj pwd email same as github's dlxj
 
-huggingface-cli lfs-enable-largefiles ./path/to/your/repo
+pip install huggingface_hub && \
+git config --global credential.helper store && \
+huggingface-cli login
+	# 用 token 登录
+	# Your token has been saved to 
+		/root/.cache/huggingface/token
+
+huggingface-cli repo create pandora --type dataset
+	# --type {model, dataset, space}
+	# 创建创库 完了以后在官网把它设为 私有
+	
+git clone https://huggingface.co/datasets/dlxjj/pandora
+
+
+git lfs install && \
+git add . && \
+git commit -m 'm' && \
+git lfs migrate import --everything && \
+git push
+	# 成功提交大文件
+
+
+
+huggingface-cli lfs-enable-largefiles /mnt/hubggingface/pandora
 	# 大于5G 文件 需要这样设置
+	
+	
+	
 
 安装好 git-lfs 后：
 
 git lfs install
-git lfs clone https://huggingface.co/datasets/dlxjj/pdf
+git lfs clone https://huggingface.co/datasets/dlxjj/pandora
 
 git lfs clone https://huggingface.co/datasets/dlxjj/echodict
 
@@ -23183,6 +23209,8 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 ##  ACG2vec 二次方
 
 [ACG2vec](https://github.com/OysterQAQ/ACG2vec)
+
+[YuzuMarker.FontDetection 字体识别](https://github.com/JeffersonQin/YuzuMarker.FontDetection)
 
 
 
