@@ -2719,8 +2719,9 @@ huggingface-cli login
 huggingface-cli repo create pandora --type dataset
 	# --type {model, dataset, space}
 	# 创建创库 完了以后在官网把它设为 私有
-	
-git clone https://huggingface.co/datasets/dlxjj/pandora
+	# huggingface-cli repo create InternLM-SFT --type dataset
+
+
 
 
 git lfs install && \
@@ -22733,6 +22734,17 @@ vLLM – 伯克利推理
 [nvidia-docker 先装这个](https://www.codewithgpu.com/docs/nvidia-docker/)
 
 [InternLM-SFT Lora微调 必看](https://github.com/yongzhuo/InternLM-SFT)
+
+- ```
+  git clone https://github.com/yongzhuo/InternLM-SFT.git && \
+  cd InternLM-SFT
+  
+  
+  
+  
+  ```
+
+  
 
 
 
