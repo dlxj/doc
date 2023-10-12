@@ -22724,6 +22724,8 @@ vLLM – 伯克利推理
 
 [InternLM](https://github.com/InternLM/InternLM)
 
+- [xtuner 官方 lora 微调](https://github.com/InternLM/xtuner)
+
 [InternLM-20B 在线使用](https://zhuanlan.zhihu.com/p/658368644)
 
 [分词器](https://github.com/InternLM/InternLM/issues/340)
