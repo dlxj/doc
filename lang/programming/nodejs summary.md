@@ -23180,7 +23180,9 @@ QLoRA技术让650B参数训练从780G降到48G, Sophia优化器再提升两倍�
 
 
 
+##  ACG2vec 二次方
 
+[ACG2vec](https://github.com/OysterQAQ/ACG2vec)
 
 
 
