@@ -22730,7 +22730,7 @@ vLLM – 伯克利推理
 
 [nvidia-docker 先装这个](https://www.codewithgpu.com/docs/nvidia-docker/)
 
-
+[InternLM-SFT Lora微调 必看](https://github.com/yongzhuo/InternLM-SFT)
 
 
 
@@ -22910,9 +22910,8 @@ conda activate internlm-env
 
 pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
 
-
-# pip install -r requirements/torch.txt && \
-pip install -r requirements/runtime.txt
+pip install -r requirements/runtime.txt && 
+pip install tensorboard
 
 
 cd ./third_party/flash-attention && \
