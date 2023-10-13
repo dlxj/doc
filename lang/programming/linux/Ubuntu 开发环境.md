@@ -1,8 +1,21 @@
 
 
+
+
+
+
+
+
 # 允许 root ssh
 
 ```
+https://zhuanlan.zhihu.com/p/355748937
+
+
+
+
+
+
 vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 	# PermitRootLogin yes
 	# 改成这个
@@ -31,7 +44,7 @@ apt-get install p7zip-full vim curl lsof git wget
 
 https://blog.csdn.net/qq_20466211/article/details/128731196
 apt-get install dialog apt-utils && \
-apt install -y wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov
 
 apt update && apt upgrade -y && \
 apt install software-properties-common -y && \
