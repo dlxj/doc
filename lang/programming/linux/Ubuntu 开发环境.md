@@ -8,6 +8,15 @@
 
 
 
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+关闭安全启动 nvidia 驱动就正常加载了。
+
+nvidia-smi
+
+
+
 # 允许 root ssh
 
 ```
@@ -53,6 +62,13 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 # 安装开发环境
 
 ```
+
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+关闭安全启动 nvidia 驱动就正常加载了。
+
+nvidia-smi
 
 apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential && \

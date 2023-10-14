@@ -22882,10 +22882,20 @@ chmod +x cg-client && \
 
 ```
 
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+关闭安全启动 nvidia 驱动就正常加载了。
+
+nvidia-smi
+
 disable secure boot
 
 The target kernel has CONFIG_MODULE_SIG set
 UEFI Secure Boot enabled
+
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
 
 
 wget https://us.download.nvidia.com/XFree86/Linux-x86_64/535.113.01/NVIDIA-Linux-x86_64-535.113.01.run
@@ -22920,19 +22930,18 @@ uname -a
 	
 ll /usr/src
 
-	
+
 
 wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
 	# 下载 cuda toolkit
 
 
-
 sh cuda_11.8.0_520.61.05_linux.run
-	# sh cuda_11.8.0_520.61.05_linux.run --silent --driver
-	# 这东西自带驱动
-	
+	# /usr/local/cuda-11.8/bin
+	# /usr/local/cuda-11.8/lib64
 
-	
+
+
 ```
 
 
