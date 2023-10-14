@@ -23039,6 +23039,10 @@ git clone https://huggingface.co/internlm/internlm-chat-7b-v1_1
 git restore --source=HEAD :/
 	# retry
 
+aliyunpan
+login
+d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
+
 
 
 echodict/bytepiece/InternLM/alpaca_data.json
