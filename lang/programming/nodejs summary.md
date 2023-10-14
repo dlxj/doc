@@ -22940,7 +22940,13 @@ sh cuda_11.8.0_520.61.05_linux.run
 	# /usr/local/cuda-11.8/bin
 	# /usr/local/cuda-11.8/lib64
 
+echo 'export PATH=/usr/local/cuda-11.8/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+sudo ldconfig
 
+nvcc
+nvidia-smi
 
 ```
 
@@ -23043,6 +23049,9 @@ aliyunpan
 login
 d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
 
+
+
+pip install tensorboardX datasets bitsandbytes peft scipy
 
 
 echodict/bytepiece/InternLM/alpaca_data.json
