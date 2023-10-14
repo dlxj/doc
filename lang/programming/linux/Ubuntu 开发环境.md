@@ -2,7 +2,9 @@
 
 
 
+# 安装时ACPI错误
 
+[安装时ACPI错误](https://blog.csdn.net/huohongpeng/article/details/120508304)
 
 
 
@@ -222,6 +224,34 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 
 
 ```
+
+
+
+# Ubuntu22.04远程桌面
+
+```
+apt install xfce4 xfce4-goodies -y && \
+apt install xrdp -y && \
+systemctl status xrdp
+ 
+ufw disable
+	# 禁用防火墙
+
+cd ~ && \
+echo "xfce4-session" | tee .xsession && \
+systemctl restart xrdp 
+
+lsof -i:3389
+	# 成功
+
+
+win10 上执行：
+	win + r -> mstsc -> 输入vps ip, 用户名 root 
+		# 成功显示远程桌面
+
+```
+
+
 
 
 
