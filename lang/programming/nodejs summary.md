@@ -2415,6 +2415,15 @@ yum install libsodium -y && \
 pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
+
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+
+source ~/.bashrc
+
+
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
 	dnf install perl-core zlib-devel -y
 		# centos8
