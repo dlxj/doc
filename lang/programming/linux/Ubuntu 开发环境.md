@@ -18,11 +18,13 @@ apt install openssh-server -y && \
 systemctl enable --now ssh && \
 systemctl status ssh
 
+vi /etc/ssh/sshd_config
 
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
+systemctl restart ssh
 
-
-
+ufw allow ssh
 
 
 
