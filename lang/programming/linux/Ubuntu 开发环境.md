@@ -9,6 +9,21 @@
 # 允许 root ssh
 
 ```
+
+
+ufw disable && \
+apt install openssh-server -y && \
+systemctl enable --now ssh && \
+systemctl status ssh
+
+
+
+
+
+
+
+
+
 https://zhuanlan.zhihu.com/p/355748937
 
 
@@ -245,6 +260,15 @@ sed -e 's|^mirrorlist=|#mirrorlist=|g' \
 
 
 ```
+
+ufw disable && \
+apt install openssh-server -y && \
+systemctl enable --now ssh && \
+systemctl status ssh
+
+
+
+
 systemctl disable firewalld
 	# 永久关闭
 
