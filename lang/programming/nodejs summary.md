@@ -2423,6 +2423,17 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 source ~/.bashrc
 
+curl --socks5 192.168.1.3:57882 google.com
+
+In curl >= 7.21.7, you can use
+
+curl -x socks5h://localhost:8001 http://www.google.com/
+
+In curl >= 7.18.0, you can use
+
+curl --socks5-hostname 192.168.1.3:57882 google.com
+	# 实测成功
+
 
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
 	dnf install perl-core zlib-devel -y
