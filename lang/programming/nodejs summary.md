@@ -2417,9 +2417,10 @@ pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 vi ~/.bashrc
-alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+alias setproxy="export ALL_PROXY=socks5://192.168.1.3:57882"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+
 
 source ~/.bashrc
 
@@ -22874,6 +22875,29 @@ chmod +x cg-client && \
 ./cg-client
 
 ```
+
+
+
+### ubuntu 22.04
+
+```
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/535.113.01/NVIDIA-Linux-x86_64-535.113.01.run
+	# 下载驱动
+	
+wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+	# 下载 cuda toolkit
+
+sh cuda_11.8.0_520.61.05_linux.run
+	# sh cuda_11.8.0_520.61.05_linux.run --silent --driver
+	# 这东西自带驱动
+	
+sh cuda_11.8.0_520.61.05_linux.run
+
+
+	
+```
+
+
 
 
 
