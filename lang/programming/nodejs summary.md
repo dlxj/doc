@@ -2418,11 +2418,17 @@ pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 vi ~/.bashrc
 alias setproxy="export ALL_PROXY=socks5://192.168.1.3:57882"
+alias setproxy="export ALL_PROXY=socks5://192.168.1.6:2801"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 
 source ~/.bashrc
+
+
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+
 
 curl --socks5 192.168.1.3:57882 google.com
 
@@ -2531,6 +2537,17 @@ pip install -r requirements.txt && \
 pip install jieba rouge_chinese nltk peft
 
 ```
+
+
+
+### WSL 使用 win10 代理
+
+```
+ip 端口 都指向 win10
+
+```
+
+
 
 
 
@@ -23051,7 +23068,7 @@ d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
 
 
 
-pip install tensorboardX datasets bitsandbytes peft scipy
+pip install tensorboardX datasets bitsandbytes peft scipy nltk pydantic rouge
 
 
 echodict/bytepiece/InternLM/alpaca_data.json
