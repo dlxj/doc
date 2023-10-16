@@ -2772,6 +2772,7 @@ huggingface-cli repo create pandora --type dataset
 	# 创建创库 完了以后在官网把它设为 私有
 	# huggingface-cli repo create InternLM-SFT --type dataset
 	# huggingface-cli repo create chatglm_v2_6b_lora --type dataset
+	# huggingface-cli repo create InternLM-SFT --type dataset
 
 
 
@@ -2830,6 +2831,14 @@ huggingface-cli login
 huggingface-cli lfs-enable-largefiles /root/hugface/echodict
 
 ```
+
+
+
+### 自制GIT LFS服务
+
+[自行构建GIT LFS服务](https://zhuanlan.zhihu.com/p/511750788)
+
+
 
 
 
