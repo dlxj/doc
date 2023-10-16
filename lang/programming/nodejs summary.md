@@ -23330,6 +23330,12 @@ https://github.com/openai/tiktoken
 
 
 
+## LoRA 微调原理
+
+[梯度视角下的LoRA：简介、分析、猜测及推广](https://kexue.fm/archives/9590)
+
+[ChatGLM-6B模型结构组件源码阅读](https://blog.csdn.net/yjh_SE007/article/details/130728164)
+
 
 
 ## QLoRA 低碳微调
