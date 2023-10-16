@@ -2782,11 +2782,29 @@ git lfs migrate import --everything && \
 git push
 	# 成功提交大文件
 
+vi sync_hubggingface.sh
+cd /mnt/hubggingface/pandora && \
+/usr/bin/cp -rf /root/echodict/pandora/* . && \
+git add . && \
+git commit -m 'm' && \
+git lfs migrate import --everything && \
+git push
+	# 备份 pandora 到 hubggingface
+
+crontab -e
+00   00    *      *   *  sh /root/backup.sh
+00   *    *      *   *  sh /root/sync_hubggingface.sh
+15   *    *      *   *  sh /root/sync_hubggingface.sh
+30   *    *      *   *  sh /root/sync_hubggingface.sh
+45   *    *      *   *  sh /root/sync_hubggingface.sh
+@reboot  mount /dev/sda1 /mnt
+@reboot  pm2 resurrect
+	# 每半 15 分钟自动备份一次
+
 
 
 huggingface-cli lfs-enable-largefiles /mnt/hubggingface/pandora
 	# 大于5G 文件 需要这样设置
-	
 	
 	
 

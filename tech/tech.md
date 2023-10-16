@@ -37,7 +37,7 @@
 
 Termux + Github
 
-git config --global user.name “dlxi”    
+git config --global user.name “dlxj”    
 
 git config --global user.email  "12345@qq.com"  
 
@@ -98,6 +98,85 @@ git config --local   user.email  "1@qq.com"
 那这种情况你应该用 fork, 将当前的 repo 变成上游, 然后顺便改个名
 
 建议 20 人以上的团队都试着开启 linear history, 你们会感谢这个风格的
+
+```
+
+
+
+# 抱抱脸账号 
+
+[Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
+
+see nodejs summary.md -> 抱抱脸
+
+```
+dlxjj pwd email same as github's dlxj
+
+pip install huggingface_hub && \
+git config --global credential.helper store && \
+huggingface-cli login
+	# 用 token 登录
+	# Your token has been saved to 
+		/root/.cache/huggingface/token
+
+huggingface-cli repo create pandora --type dataset
+	# --type {model, dataset, space}
+	# 创建创库 完了以后在官网把它设为 私有
+	# huggingface-cli repo create InternLM-SFT --type dataset
+
+
+
+
+git lfs install && \
+git add . && \
+git commit -m 'm' && \
+git lfs migrate import --everything && \
+git push
+	# 成功提交大文件
+
+vi sync_hubggingface.sh
+cd /mnt/hubggingface/pandora && \
+/usr/bin/cp -rf /root/echodict/pandora/* . && \
+git add . && \
+git commit -m 'm' && \
+git lfs migrate import --everything && \
+git push
+	# 备份 pandora 到 hubggingface
+
+crontab -e
+00   00    *      *   *  sh /root/backup.sh
+00   *    *      *   *  sh /root/sync_hubggingface.sh
+30   *    *      *   *  sh /root/sync_hubggingface.sh
+@reboot  mount /dev/sda1 /mnt
+@reboot  pm2 resurrect
+	# 每半小时自动备份一次
+
+
+
+huggingface-cli lfs-enable-largefiles /mnt/hubggingface/pandora
+	# 大于5G 文件 需要这样设置
+	
+	
+
+安装好 git-lfs 后：
+
+git lfs install
+git lfs clone https://huggingface.co/datasets/dlxjj/pandora
+
+git lfs clone https://huggingface.co/datasets/dlxjj/echodict
+
+git restore --source=HEAD :/
+	# retry
+
+pip3.9 install huggingface_hub
+https://huggingface.co/settings/tokens
+	# copy token 
+	
+huggingface-cli login
+
+
+
+huggingface-cli lfs-enable-largefiles /root/hugface/echodict
 
 ```
 
