@@ -2415,6 +2415,33 @@ yum install libsodium -y && \
 pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 	# yum 是依赖 python2.7 的，不要替换系统的默认python
 
+
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=socks5://192.168.1.3:57882"
+alias setproxy="export ALL_PROXY=socks5://192.168.1.6:2801"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+
+
+source ~/.bashrc
+
+
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+
+
+curl --socks5 192.168.1.3:57882 google.com
+
+In curl >= 7.21.7, you can use
+
+curl -x socks5h://localhost:8001 http://www.google.com/
+
+In curl >= 7.18.0, you can use
+
+curl --socks5-hostname 192.168.1.3:57882 google.com
+	# 实测成功
+
+
 	# https://www.hostnextra.com/kb/how-to-install-openssl-1-1-1i-in-centos-8/
 	dnf install perl-core zlib-devel -y
 		# centos8
@@ -2510,6 +2537,17 @@ pip install -r requirements.txt && \
 pip install jieba rouge_chinese nltk peft
 
 ```
+
+
+
+### WSL 使用 win10 代理
+
+```
+ip 端口 都指向 win10
+
+```
+
+
 
 
 
@@ -22870,6 +22908,82 @@ chmod +x cg-client && \
 
 
 
+### ubuntu 22.04
+
+```
+
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+关闭安全启动 nvidia 驱动就正常加载了。
+
+nvidia-smi
+
+disable secure boot
+
+The target kernel has CONFIG_MODULE_SIG set
+UEFI Secure Boot enabled
+
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/535.113.01/NVIDIA-Linux-x86_64-535.113.01.run
+	# 下载驱动
+
+ # sh ./NVIDIA-Linux-x86_64-535.113.01.run -s \
+--module-signing-secret-key=/usr/share/nvidia/nvidia-modsign-key-C4BF4B44.key \
+--module-signing-public-key=/usr/share/nvidia/nvidia-modsign-crt-C4BF4B44.der
+
+Unable to determine the path to install the libglvnd EGL vendor library    
+           config files. Check that you have pkg-config and the libglvnd development  
+           libraries installed, or specify a path with --glvnd-egl-config-path.
+
+nvidia-smi
+
+NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+
+ls /usr/src | grep nvidia
+	nvidia-535.113.01
+
+apt install dkms
+dkms install -m nvidia -v 535.113.01
+	# 安全启动密码是: rootroot
+	
+dpkg --get-selections | grep linux-image
+	linux-image-5.15.0-86-generic                   install
+	linux-image-generic                             install
+	# 查看已安装内核
+	
+uname -a
+	# 查看正在使用的内核
+	
+ll /usr/src
+
+
+
+wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+	# 下载 cuda toolkit
+
+
+sh cuda_11.8.0_520.61.05_linux.run
+	# /usr/local/cuda-11.8/bin
+	# /usr/local/cuda-11.8/lib64
+
+echo 'export PATH=/usr/local/cuda-11.8/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+sudo ldconfig
+
+nvcc
+nvidia-smi
+
+```
+
+
+
+
+
 
 
 ### wsl 装 cuda toolkit
@@ -22951,8 +23065,7 @@ cd ../../../../
 
 
 cd ./third_party/apex && \
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
- && \
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./ && \
 cd ../../ 
 
 
@@ -22962,6 +23075,13 @@ git clone https://huggingface.co/internlm/internlm-chat-7b-v1_1
 git restore --source=HEAD :/
 	# retry
 
+aliyunpan
+login
+d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
+
+
+
+pip install tensorboardX datasets bitsandbytes peft scipy nltk pydantic rouge
 
 
 echodict/bytepiece/InternLM/alpaca_data.json
@@ -26895,6 +27015,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [WPF UI](https://github.com/lepoco/wpfui)
 
 [HandyControl](https://github.com/HandyOrg/HandyControl)
+
+[Flyleaf wpf player 必看](https://github.com/SuRGeoNix/Flyleaf)
+
+[netch 代理 18.0版不内退](https://github.com/netchx/netch)
 
 
 

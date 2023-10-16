@@ -156,7 +156,7 @@ apt install software-properties-common -y && \
 add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 && \
 apt install python3.10-distutils && \
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 python3.10 get-pip.py
 
 ```

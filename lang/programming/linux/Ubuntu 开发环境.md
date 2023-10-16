@@ -2,13 +2,41 @@
 
 
 
+# 安装时ACPI错误
 
+[安装时ACPI错误](https://blog.csdn.net/huohongpeng/article/details/120508304)
+
+
+
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+关闭安全启动 nvidia 驱动就正常加载了。
+
+nvidia-smi
 
 
 
 # 允许 root ssh
 
 ```
+
+
+ufw disable && \
+apt install openssh-server -y && \
+systemctl enable --now ssh && \
+systemctl status ssh
+
+vi /etc/ssh/sshd_config
+
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+systemctl restart ssh
+
+ufw allow ssh
+
+
+
 https://zhuanlan.zhihu.com/p/355748937
 
 
@@ -34,6 +62,13 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 # 安装开发环境
 
 ```
+
+disable secure boot in bios
+apt install --reinstall linux-headers-$(uname -r)
+
+关闭安全启动 nvidia 驱动就正常加载了。
+
+nvidia-smi
 
 apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential && \
@@ -210,6 +245,34 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 
 
 
+# Ubuntu22.04远程桌面
+
+```
+apt install xfce4 xfce4-goodies -y && \
+apt install xrdp -y && \
+systemctl status xrdp
+ 
+ufw disable
+	# 禁用防火墙
+
+cd ~ && \
+echo "xfce4-session" | tee .xsession && \
+systemctl restart xrdp 
+
+lsof -i:3389
+	# 成功
+
+
+win10 上执行：
+	win + r -> mstsc -> 输入vps ip, 用户名 root 
+		# 成功显示远程桌面
+
+```
+
+
+
+
+
 # 替换成国内源
 
 ```
@@ -245,6 +308,15 @@ sed -e 's|^mirrorlist=|#mirrorlist=|g' \
 
 
 ```
+
+ufw disable && \
+apt install openssh-server -y && \
+systemctl enable --now ssh && \
+systemctl status ssh
+
+
+
+
 systemctl disable firewalld
 	# 永久关闭
 
