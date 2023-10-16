@@ -23336,6 +23336,12 @@ https://github.com/openai/tiktoken
 
 [ChatGLM-6B模型结构组件源码阅读](https://blog.csdn.net/yjh_SE007/article/details/130728164)
 
+[ChatGLM2-6B流程解析与TPU-MLIR部署](https://zhuanlan.zhihu.com/p/641975976)
+
+[源码解析ChatGLM2多轮对话训练方法的不足](https://zhuanlan.zhihu.com/p/647733151)
+
+
+
 
 
 ## QLoRA 低碳微调
