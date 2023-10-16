@@ -2513,10 +2513,23 @@ pip install jieba rouge_chinese nltk peft
 
 
 
-## win10 重置网络
+### win10 重置网络
 
 ```
 netsh winsock reset
+```
+
+
+
+### 透明代理
+
+[透明代理](https://xtls.github.io/document/level-2/transparent_proxy/transparent_proxy.html#%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86)
+
+[netch](https://github.com/netchx/netch)
+
+```
+netch 模式选 Bypass LAN 就是全局模式
+
 ```
 
 
@@ -27357,6 +27370,19 @@ int main(void)
 - [mpv lazy](https://github.com/hooke007/MPV_lazy/discussions/120)
 
 ```
+
+# windows
+打开 MSYS2 MINGW64:
+pacman -S base-devel git p7zip mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-freetype
+
+
+git clone https://github.com/tsl0922/ImPlay.git && \
+cd ImPlay && \
+mkdir build && cd build && \
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DUSE_PATCHED_GLFW=ON -DUSE_OPENGL_ES3=ON -DCREATE_PACKAGE=ON .. && \
+cmake --build . --target package
+
+
 # ubuntu22.04
 sudo apt-get install -y build-essential cmake git pkg-config \
     libgtk-3-dev libglfw3-dev libfreetype6-dev libmpv-dev
