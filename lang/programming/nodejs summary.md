@@ -23342,6 +23342,20 @@ https://github.com/openai/tiktoken
 
 
 
+```
+对话：{"text": "User: 内容1\n内容1\n\nAssistant: 回答1\n回答1\n\nUser: 内容2\n内容2\n\nAssistant: 回答2\n回答2\n\nUser: 内容3\n内容3\n\nAssistant: 回答3\n回答3\n\n"}
+
+注意上述格式：
+
+冒号是半角。后面还有是半角空格，然后是问答、对话。
+
+对于特别长的多段落的问题/回答，问题内部可以有换行\n，但是不能出现 \n\n。
+
+换行必须用 \n，不能用 \r\n。 作者：czhko https://www.bilibili.com/read/cv22445881/ 出处：bilibili
+```
+
+
+
 
 
 ## QLoRA 低碳微调
