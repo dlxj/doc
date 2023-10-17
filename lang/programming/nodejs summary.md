@@ -2967,7 +2967,33 @@ pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 
 [mega linux 命令行工具](https://github.com/meganz/MEGAcmd)
 
+- [示例](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md#login-logout-whoami-mkdir-cd-get-put-du-mount-example)
+
 [mega linux GUI](https://github.com/meganz/MEGAsync)
+
+
+
+```
+wget https://mega.nz/linux/repo/CentOS_7/x86_64/megacmd-CentOS_7.x86_64.rpm && \
+yum localinstall "$PWD/megacmd-CentOS_7.x86_64.rpm"
+
+mega-cmd
+login 1234xxxxx@qq.com
+
+mount
+ROOT on /                                                         
+INBOX on //in
+
+put /mnt/huggingface/pythia-1.4b-deduped
+	# 上传本地文件夹到网盘
+
+get 
+	# 从网盘下载
+
+
+```
+
+
 
 
 
