@@ -2977,6 +2977,11 @@ pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 wget https://mega.nz/linux/repo/CentOS_7/x86_64/megacmd-CentOS_7.x86_64.rpm && \
 yum localinstall "$PWD/megacmd-CentOS_7.x86_64.rpm"
 
+wget https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megacmd-xUbuntu_22.04_amd64.deb && \
+sudo apt install "$PWD/megacmd-xUbuntu_22.04_amd64.deb"
+
+
+
 mega-cmd
 login 1234xxxxx@qq.com
 
