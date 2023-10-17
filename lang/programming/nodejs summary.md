@@ -2419,8 +2419,10 @@ pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 vi ~/.bashrc
 alias setproxy="export ALL_PROXY=socks5://192.168.1.3:57882"
 alias setproxy="export ALL_PROXY=socks5://192.168.1.6:2801"
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+
 
 
 source ~/.bashrc
@@ -22798,6 +22800,8 @@ vLLM – 伯克利推理
 
 [OpenAssistant 12B(pythia-based)本地部署](https://zhuanlan.zhihu.com/p/622358878)
 
+[Polyglot-Ko-12.8B](https://huggingface.co/EleutherAI/polyglot-ko-12.8b) 韩语
+
 
 
 ## InternLM
@@ -23353,6 +23357,15 @@ https://github.com/openai/tiktoken
 
 换行必须用 \n，不能用 \r\n。 作者：czhko https://www.bilibili.com/read/cv22445881/ 出处：bilibili
 ```
+
+
+
+## LongLoRA
+
+[LongLoRA](https://github.com/dvlab-research/LongLoRA)
+
+- [LongAlpaca-7B](https://huggingface.co/Yukang/LongAlpaca-7B) 
+  - [LongAlpaca-12k 数据集](https://huggingface.co/datasets/Yukang/LongAlpaca-12k)
 
 
 
