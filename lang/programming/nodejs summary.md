@@ -2963,6 +2963,12 @@ pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 
 
 
+## mega
+
+[mega linux 命令行工具](https://github.com/meganz/MEGAcmd)
+
+[mega linux GUI](https://github.com/meganz/MEGAsync)
+
 
 
 ## Cloudflare
