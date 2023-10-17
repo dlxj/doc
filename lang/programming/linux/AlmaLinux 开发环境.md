@@ -583,6 +583,19 @@ reboot
 
 
 
+# clean
+
+```
+yum autoremove && \
+yum clean all
+
+rpm -qa | grep boost
+```
+
+
+
+
+
 # Install Chrome
 
 ```
