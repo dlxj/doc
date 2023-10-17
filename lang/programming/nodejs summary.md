@@ -23371,6 +23371,20 @@ https://github.com/openai/tiktoken
 
 
 
+## ChatGLM2-6B 全参数微调
+
+[ChatGLM2-6B 全参数微调](https://github.com/SpongebBob/Finetune-ChatGLM2-6B/issues/1)
+
+4 * 3090 就可以?
+
+```
+用dp zero 2， 长度拉小点一般256-512就够了，我用2个40g，4个3090 都测试过，可以跑，如果跑一半不可以，就可能是长度问题。
+```
+
+
+
+
+
 ## LoRA 微调原理
 
 [梯度视角下的LoRA：简介、分析、猜测及推广](https://kexue.fm/archives/9590)
