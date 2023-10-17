@@ -23367,7 +23367,7 @@ https://github.com/openai/tiktoken
 - [LongAlpaca-7B](https://huggingface.co/Yukang/LongAlpaca-7B) 
   - [LongAlpaca-12k 数据集](https://huggingface.co/datasets/Yukang/LongAlpaca-12k)
 
-
+- [EleutherAI/pythia-1.4b-deduped 微调](https://github.com/dvlab-research/LongLoRA/pull/32)
 
 
 
