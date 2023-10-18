@@ -23379,6 +23379,59 @@ https://github.com/openai/tiktoken
 
 - [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)
 
+  ```
+  ds_zero2_no_offload.json
+  --ds_file ds_zero2_no_offload.json
+  	# 加这个
+  {
+    "train_batch_size": 32,
+    "train_micro_batch_size_per_gpu": 4,
+    "steps_per_print": 1,
+    "zero_optimization": {
+      "stage": 2,
+      "offload_param": {
+        "device": "auto"
+      },
+      "offload_optimizer": {
+        "device": "auto"
+      }
+    },
+    "bf16": {
+      "enabled": false
+    },
+    "fp16": {
+      "enabled": true,
+      "loss_scale": 0,
+      "loss_scale_window": 100
+    },
+    "gradient_clipping": 1.0,
+    "prescale_gradients": false,
+    "wall_clock_breakdown": false,
+    "scheduler": {
+          "type": "WarmupDecayLR",
+          "params": {
+              "last_batch_iteration": -1,
+              "total_num_steps": "auto",
+              "warmup_min_lr": "auto",
+              "warmup_max_lr": "auto",
+              "warmup_num_steps": "auto",
+              "warmup_type": "cosine"
+          }
+      },
+    "optimizer": {
+          "type": "AdamW",
+          "params": {
+              "lr": "auto",
+              "betas": "auto",
+              "eps": "auto",
+              "weight_decay": "auto"
+          }
+      }
+  }
+  ```
+
+  
+
 4 * 3090 就可以?
 
 ```
@@ -23453,8 +23506,7 @@ DATE=0704
 
 MASTER_PORT=7777
 
-deepspeed --num_gpus=1 --master_port $MASTER_PORT main.py \
-    --deepspeed deepspeed.json \
+deepspeed --num_gpus=4 --master_port $MASTER_PORT main.py \
     --do_train \
     --do_eval \
     --train_file belleMath.json \
@@ -23464,7 +23516,8 @@ deepspeed --num_gpus=1 --master_port $MASTER_PORT main.py \
     --model_name_or_path /root/autodl-tmp/chatglm2-6b \
     --output_dir ./output/adgen-chatglm-6b-ft-$LR-$DATE \
     --overwrite_output_dir \
-    --max_length 762 \
+    --max_length 256 \
+    --deepspeed ds_zero2_no_offload.json \
     --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 12 \
@@ -23476,7 +23529,6 @@ deepspeed --num_gpus=1 --master_port $MASTER_PORT main.py \
     --do_eval False \
     --fp16 True \
     --save_total_limit 5 \
-
 
 ```
 
