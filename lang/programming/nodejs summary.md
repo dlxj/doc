@@ -23377,12 +23377,24 @@ https://github.com/openai/tiktoken
 
 [ChatGLM-Finetuning](https://github.com/liucongg/ChatGLM-Finetuning)
 
-- [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)
+- [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)  [zero-offload](https://www.deepspeed.ai/tutorials/zero-offload/)
 
   ```
   ds_zero2_no_offload.json
   --ds_file ds_zero2_no_offload.json
   	# 加这个
+  {
+      "zero_optimization": {
+          "stage": 2,
+          "offload_optimizer": {
+              "device": "cpu",
+          }
+          "contiguous_gradients": true,
+          "overlap_comm": true
+      }
+  }	
+  	
+  	
   {
     "train_batch_size": 32,
     "train_micro_batch_size_per_gpu": 4,
