@@ -23375,6 +23375,8 @@ https://github.com/openai/tiktoken
 
 [ChatGLM2-6B 全参数微调](https://github.com/SpongebBob/Finetune-ChatGLM2-6B/issues/1)
 
+- [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)
+
 4 * 3090 就可以?
 
 ```
@@ -23415,10 +23417,11 @@ pip install rouge_chinese nltk jieba datasets
 
 Finetune-ChatGLM2-6B/ds_train_finetune.sh
 	MASTER_PORT=7777
-	--num_gpus=1
+	--num_gpus=4
+	--max_length 512
 	--model_name_or_path /root/autodl-tmp/chatglm2-6b
-	# 改这里
-
+	# 改这里, max_length 512 调下点显存占用就会大大降低
+	
 pip install deepspeed && \
 ds_report
 
@@ -23428,7 +23431,7 @@ bash ds_train_finetune.sh
 	# 开始全量微调
 
 
-
+--deepspeed ds_config.json
 
 
 注意：如果打开自定义服务提示使用ssh隧道，请参考这个视频操作：https://www.bilibili.com/video/BV1Pk4y1w7Pk
