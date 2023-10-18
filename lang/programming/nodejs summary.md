@@ -23379,7 +23379,103 @@ https://github.com/openai/tiktoken
 
 ```
 用dp zero 2， 长度拉小点一般256-512就够了，我用2个40g，4个3090 都测试过，可以跑，如果跑一半不可以，就可能是长度问题。
+
+我的deepspeed用的是zero3，把优化器和模型参数都offload到内存，以便减少GPU显存的使用
+
+不过在较小的batch size、较短的长度、启用deepspeed zero-3、有充足的内存的情况下，8张32GB的V100也可以运行
+
+
+如果显存不足，可采用stage 3，该模式下模型参数将分布在多张显卡上，可显著减小显存占用，对应的配置文件是configs/deepspeed_config_stage3.json
+	# https://blog.csdn.net/sinat_37574187/article/details/132088723
+	# https://github.com/LianjiaTech/BELLE/blob/main/train/configs/deepspeed_config_stage3.json
+	
+
 ```
+
+
+
+```
+git clone https://github.com/SpongebBob/Finetune-ChatGLM2-6B.git && \
+cd Finetune-ChatGLM2-6B
+
+wget https://huggingface.co/datasets/BelleGroup/school_math_0.25M/resolve/main/school_math_0.25M.json
+
+python convert_to_conv_data.py --orig_data school_math_0.25M.json --write_data school_math_0.25M_conv.json --dataset_name bellemath && \
+head -n 1000 school_math_0.25M_conv.json > belleMath-dev1K.json && \
+tail -n +1001 school_math_0.25M_conv.json > belleMath.json
+
+取前1000条作为验证集，其余数据作为训练集
+
+
+# 先装好 chatglm2-6B 的依赖包，再装：
+pip uninstall transformers && \
+pip install transformers==4.28.1 && \
+pip install rouge_chinese nltk jieba datasets
+
+
+Finetune-ChatGLM2-6B/ds_train_finetune.sh
+	MASTER_PORT=7777
+	--num_gpus=1
+	--model_name_or_path /root/autodl-tmp/chatglm2-6b
+	# 改这里
+
+pip install deepspeed && \
+ds_report
+
+
+
+bash ds_train_finetune.sh
+	# 开始全量微调
+
+
+
+
+
+注意：如果打开自定义服务提示使用ssh隧道，请参考这个视频操作：https://www.bilibili.com/video/BV1Pk4y1w7Pk
+
+
+```
+
+
+
+```
+Finetune-ChatGLM2-6B/ds_train_finetune.sh
+
+#!/bin/bash
+
+LR=6e-6
+DATE=0704
+
+MASTER_PORT=7777
+
+deepspeed --num_gpus=1 --master_port $MASTER_PORT main.py \
+    --deepspeed deepspeed.json \
+    --do_train \
+    --do_eval \
+    --train_file belleMath.json \
+    --validation_file belleMath-dev1K.json \
+    --prompt_column conversations \
+    --overwrite_cache \
+    --model_name_or_path /root/autodl-tmp/chatglm2-6b \
+    --output_dir ./output/adgen-chatglm-6b-ft-$LR-$DATE \
+    --overwrite_output_dir \
+    --max_length 762 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 12 \
+    --predict_with_generate \
+    --num_train_epochs 3 \
+    --logging_steps 20 \
+    --save_steps 1000 \
+    --learning_rate $LR \
+    --do_eval False \
+    --fp16 True \
+    --save_total_limit 5 \
+
+
+```
+
+
 
 
 
