@@ -23373,7 +23373,9 @@ https://github.com/openai/tiktoken
 
 ## ChatGLM2-6B 全参数微调
 
-[ChatGLM2-6B 全参数微调](https://github.com/SpongebBob/Finetune-ChatGLM2-6B/issues/1)
+[Finetune-ChatGLM2-6B](https://github.com/SpongebBob/Finetune-ChatGLM2-6B/issues/1)
+
+[ChatGLM-Finetuning](https://github.com/liucongg/ChatGLM-Finetuning)
 
 - [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)
 
