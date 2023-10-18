@@ -23649,6 +23649,10 @@ def run_model(device, df, weights_loader):
 
 
 
+### LLaMA-Factory 必看
+
+[LLaMA-Factory 必看](https://github.com/hiyouga/LLaMA-Factory)
+
 
 
 
