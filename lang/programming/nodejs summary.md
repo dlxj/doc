@@ -23280,6 +23280,8 @@ SAVE_CKPT_FOLDER
 
 ## nanoGPT
 
+[nanoGPT](https://github.com/karpathy/nanoGPT)
+
 [在线使用](https://llava.hliu.cc/)
 
 [nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
@@ -23354,7 +23356,9 @@ https://colab.research.google.com/github/ShenDezhou/Open-GPT/blob/main/colab/gpt
 
 [finetune-gpt2xl  单GPU训练1.5亿参数](https://github.com/Xirider/finetune-gpt2xl)
 
-
+```
+DialoGPT2 是微软在 GPT2 基础上使用对话数据微调过的模型，同样在 Hugging Face 上已经开源，模型已具备对话性能，因此在对话任务上表现会更好，关于 DialoGPT 的文章已发表在 DIALOGPT : Large-Scale Generative Pre-training for Conversational Response Generation 上。
+```
 
 
 
@@ -23445,8 +23449,31 @@ https://github.com/openai/tiktoken
 
 [ChatGLM-Finetuning](https://github.com/liucongg/ChatGLM-Finetuning)
 
-- [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)  [zero-offload](https://www.deepspeed.ai/tutorials/zero-offload/)
+- [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)  [zero-offload](https://www.deepspeed.ai/tutorials/zero-offload/) [zero详细说明](https://zhuanlan.zhihu.com/p/646712303) 
 
+  - ```
+    ZeRO-1 优化了optimizer state的内存；
+    ZeRO-2 优化了optimizer state + gradient的内存；
+    ZeRO-3 优化了optimizer state + gradient + weight的内存；
+    offload 把一部分GPU内存移到CPU上，进一步节省内存，说是可以让13B的模型在单卡上训练。
+        # fp16精度训练，如果你用的是带Tensor Cores的nvidia v100或A100，开这个可以把计算加速8倍。
+        # 存的模型参数也会是fp16
+        "fp16": {
+            "enabled": True  
+        },
+        # 可以减少GPU的内存消耗
+        "zero_optimization": {
+            "stage": 3,
+            # GPU内存不够，CPU来凑（会降低速度）
+            "offload_optimizer": {
+                "device": "cpu"
+            }
+        }
+    }
+    ```
+  
+    
+  
   ```
   source /etc/network_turbo && \
   conda env list && \
@@ -23486,7 +23513,7 @@ https://github.com/openai/tiktoken
                   "--output_dir",
                   "./output/adgen-chatglm-6b-ft-6e-6-0704",
                   "--overwrite_output_dir",
-                  "True",
+                "True",
                   "--max_length",
                   "762",
                   "--per_device_eval_batch_size",
@@ -23509,7 +23536,7 @@ https://github.com/openai/tiktoken
                   "True",
                   "--save_total_limit",
                   "5"
-            ]
+              ]
           }
       ]
   }
