@@ -23544,6 +23544,70 @@ https://github.com/openai/tiktoken
   
   /root/miniconda3/envs/internlm-env/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=7777 --enable_each_rank_log=None main.py --deepspeed zero2.json --do_train True --train_file belleMath.json --validation_file belleMath-dev1K.json --prompt_column conversations --overwrite_cache True --model_name_or_path /root/autodl-tmp/chatglm2-6b --output_dir ./output/adgen-chatglm-6b-ft-6e-6-0704 --overwrite_output_dir True --max_length 512 --per_device_eval_batch_size 1 --per_device_train_batch_size 1 --gradient_accumulation_steps 12 --predict_with_generate True --num_train_epochs 3 --logging_steps 20 --save_steps 1000 --learning_rate 6e-6 --fp16 True --save_total_limit 5
   
+  https://github.com/THUDM/ChatGLM-6B/issues/530
+  在使用 DeepSpeed 进行分布式训练时，DeepSpeed 会将模型分割成多个分块并分配给不同的 GPU 进行训练。在这个过程中，DeepSpeed 会使用 PyTorch 的 DistributedDataParallel 包装器来实现分布式训练，而 DistributedDataParallel 需要对模型进行初始化。
+  当您使用 AutoModel.from_pretrained() 方法加载预训练模型时，模型权重会被存储在 PyTorch 的 nn.Parameter 对象中。在没有指定 empty_init=False 参数时，nn.Parameter 对象的值将被初始化为全零的张量。但是，由于 nn.Parameter 对象不是真正的张量，而是具有元数据的张量包装器，因此无法将这些对象直接复制到 DeepSpeed 使用的元数据张量中。
+  在指定 empty_init=False 参数后，nn.Parameter 对象将被初始化为包含预训练权重的张量，这使得 DeepSpeed 能够正常地将权重复制到元数据张量中，从而避免了 NotImplementedError: Cannot copy out of meta tensor; no data! 错误的出现。
+  综上所述，您遇到的问题是因为在使用 DeepSpeed 进行分布式训练时，模型权重的初始化方式与普通的训练方式不同，因此需要通过指定 empty_init=False 参数来解决。
+  
+  NotImplementedError: Cannot copy out of meta tensor; no data! 这个错误通常是由于Deepspeed在使用自定义权重初始化时出现问题，而这些初始化可能需要从先前的训练中加载权重。如果在使用Deepspeed进行分布式训练时出现此错误，则需要在初始化模型时指定empty_init=False，以便在加载权重之前，权重矩阵不会被初始化为空。
+  AutoModel.from_pretrained是Hugging Face Transformers库中的一个方法，用于从预训练模型中加载权重。在Deepspeed分布式训练中，模型的初始化和权重加载可能需要特殊处理，因此需要使用empty_init=False参数来指定在加载权重之前不要将权重矩阵初始化为空。
+  在其他模型中，可能不需要这个参数是因为它们的初始化和权重加载不需要特殊处理，或者因为它们的代码已经进行了相应的修改以适应Deepspeed的分布式训练流程。
+  
+  2*V100-32G成功跑起来了，我建议的步骤是：
+  
+  拉取最新的chatglm代码和模型，最新的transformers，最新的deepspeed，分别安装好。我的transformers版本为4.28.1，deepspeed版本为0.9.0
+  main.py文件，修改模型读取参数，model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, empty_init=False, trust_remote_code=True)
+  ds_train_finetune.sh，删除quantization_bit参数，per_device_train_batch_size、max_source_length、max_target_length调低
+  修改deepspeed.json文件，我的配置如下：
+  {
+    "train_micro_batch_size_per_gpu": "auto",
+    "zero_allow_untested_optimizer": true,
+    "fp16": {
+      "enabled": "auto",
+      "loss_scale": 0,
+      "initial_scale_power": 16,
+      "loss_scale_window": 1000,
+      "hysteresis": 2,
+      "min_loss_scale": 1
+    },
+    "bf16": {
+      "enabled": "auto"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "params": {
+        "lr": "auto",
+        "betas": "auto",
+        "eps": "auto",
+        "weight_decay": "auto"
+    }
+  },
+    "zero_optimization": {
+      "stage": 3,
+      "offload_optimizer": {
+        "device": "cpu",
+        "pin_memory": true
+    },
+    "offload_param": {
+        "device": "cpu",
+        "pin_memory": true
+    },
+      "allgather_partitions": true,
+      "allgather_bucket_size": 5e8,
+      "reduce_scatter": true,
+      "contiguous_gradients" : true,
+      "overlap_comm": true,
+      "sub_group_size": 1e9,
+      "reduce_bucket_size": "auto",
+      "stage3_prefetch_bucket_size": "auto",
+      "stage3_param_persistence_threshold": "auto",
+      "stage3_max_live_parameters": 1e9,
+      "stage3_max_reuse_distance": 1e9,
+      "stage3_gather_16bit_weights_on_model_save": true
+    }
+  }
+  
   ```
   
 
