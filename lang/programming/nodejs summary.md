@@ -222,6 +222,7 @@ pm2 monit
 ### deepspped vcode 调试
 
 ```
+# see 
 {
     "version": "0.2.0",
     "configurations": [
@@ -2842,7 +2843,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create InternLM-SFT --type dataset
 	# huggingface-cli repo create chatglm_v2_6b_lora --type dataset
 	# huggingface-cli repo create InternLM-SFT --type dataset
-
+	# huggingface-cli repo create Finetune-ChatGLM2-6B --type dataset
 
 
 
@@ -2853,14 +2854,14 @@ git lfs migrate import --everything && \
 git push
 	# 成功提交大文件
 
-vi sync_hubggingface.sh
-cd /mnt/hubggingface/pandora && \
+vi sync_huggingface.sh
+cd /mnt/huggingface/pandora && \
 /usr/bin/cp -rf /root/echodict/pandora/* . && \
 git add . && \
 git commit -m 'm' && \
 git lfs migrate import --everything && \
 git push
-	# 备份 pandora 到 hubggingface
+	# 备份 pandora 到 huggingface
 
 crontab -e
 00   00    *      *   *  sh /root/backup.sh
@@ -23447,6 +23448,74 @@ https://github.com/openai/tiktoken
 - [zero2](https://blog.csdn.net/weixin_43301333/article/details/127237122)  [zero-offload](https://www.deepspeed.ai/tutorials/zero-offload/)
 
   ```
+  source /etc/network_turbo && \
+  conda env list && \
+  conda activate internlm-env
+  
+  # vscode launch.json
+  {
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "name": "Python: Current File",
+              "type": "python",
+              "request": "launch",
+              "program": "/root/miniconda3/envs/internlm-env/bin/deepspeed",
+              "console": "integratedTerminal",
+              "justMyCode": true,
+              "args": [
+                  "--num_gpus=4",
+                  "--master_port=7777",
+                  "main.py",
+                  "--deepspeed",
+                  "deepspeed.json",
+                  "--do_train",
+                  "True",
+                  "--do_eval",
+                  "False",
+                  "--train_file",
+                  "belleMath.json",
+                  "--validation_file",
+                  "belleMath-dev1K.json",
+                  "--prompt_column",
+                  "conversations",
+                  "--overwrite_cache",
+                  "True",
+                  "--model_name_or_path",
+                  "/root/autodl-tmp/chatglm2-6b",
+                  "--output_dir",
+                  "./output/adgen-chatglm-6b-ft-6e-6-0704",
+                  "--overwrite_output_dir",
+                  "True",
+                  "--max_length",
+                  "762",
+                  "--per_device_eval_batch_size",
+                  "1",
+                  "--per_device_train_batch_size",
+                  "1",
+                  "--gradient_accumulation_steps",
+                  "12",
+                  "--predict_with_generate",
+                  "True",
+                  "--num_train_epochs",
+                  "3",
+                  "--logging_steps",
+                  "20",
+                  "--save_steps",
+                  "1000",
+                  "--learning_rate",
+                  "6e-6",
+                  "--fp16",
+                  "True",
+                  "--save_total_limit",
+                  "5"
+            ]
+          }
+      ]
+  }
+  
+  
+  
   ds_zero2_no_offload.json
   --ds_file ds_zero2_no_offload.json
   	# 加这个
@@ -23508,7 +23577,7 @@ https://github.com/openai/tiktoken
       }
   }
   ```
-
+  
   
 
 4 * 3090 就可以?
