@@ -182,6 +182,75 @@ https://matpool.com/supports/doc-vscode-connect-matpool/
 
 
 
+# deespeed vscode debug
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "/root/miniconda3/envs/internlm-env/bin/deepspeed",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--num_gpus=1",
+                "--master_port=7777",
+                "main.py",
+                "--deepspeed",
+                "zero2_config.json",
+                "--do_train",
+                "True",
+                "--do_eval",
+                "True",
+                "--train_file",
+                "belleMath.json",
+                "--validation_file",
+                "belleMath-dev1K.json",
+                "--prompt_column",
+                "conversations",
+                "--overwrite_cache",
+                "True",
+                "--model_name_or_path",
+                "/root/autodl-tmp/chatglm2-6b",
+                "--output_dir",
+                "./output/adgen-chatglm-6b-ft-6e-6-0704",
+                "--overwrite_output_dir",
+                "True",
+                "--max_length",
+                "16",
+                "--per_device_eval_batch_size",
+                "1",
+                "--gradient_accumulation_steps",
+                "4",
+                "--predict_with_generate",
+                "True",
+                "--num_train_epochs",
+                "3",
+                "--logging_steps",
+                "20",
+                "--save_steps",
+                "1000",
+                "--learning_rate",
+                "6e-6",
+                "--fp16",
+                "True",
+                "--save_total_limit",
+                "5"
+            ]
+        }
+    ]
+}
+```
+
+
+
+
+
+
+
 # vscode + MSYS2 +  Mingw-w64 
 
 [vscode 在windows下使用gcc+mingw调试 c/c++程序](https://www.jianshu.com/p/ebc74e2d09f1)
