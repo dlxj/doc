@@ -8,6 +8,17 @@
 
 
 
+## OSError: Missing dependencies for SOCKS support.
+
+```
+unset all_proxy && unset ALL_PROXY && \
+pip install pysocks
+```
+
+
+
+
+
 VSCode   Alt + <-     Alt +   ->   前跳  回跳
 
 F11 切换全屏
