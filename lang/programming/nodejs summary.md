@@ -23888,6 +23888,42 @@ def run_model(device, df, weights_loader):
 
 [LLaMA-Factory 必看](https://github.com/hiyouga/LLaMA-Factory)
 
+```
+
+影响模型训练效果的参数主要有下面几个
+lora_rank(int,optional): LoRA 微调中的秩大小。这里并不是越大越好，对于小型数据集如果r=1就可以达到很不错的效果，即便增加r得到的结果也没有太大差别。
+
+lora_alpha(float,optional): LoRA 微调中的缩放系数。
+
+lora_dropout(float,optional): LoRA 微调中的 Dropout 系数。
+
+learning_rate(float,optional): AdamW 优化器的初始学习率。如果设置过大会出现loss值无法收敛或过拟合现象即过度适应训练集而丧失泛化能力，对非训练集中的数据失去原本的计算能力。
+
+num_train_epochs(float,optional): 训练轮数，如果loss值没有收敛到理想值可以增加训练轮数或适当降低学习率。
+
+
+CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path /root/autodl-tmp/chatglm2-6b \
+    --do_train \
+    --dataset /root/LLaMA-Factory/data/alpaca_data_zh_51k.json \
+    --template default \
+    --finetuning_type lora \
+    --lora_target q_proj,v_proj \
+    --output_dir output_sft \
+    --overwrite_cache \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --logging_steps 10 \
+    --save_steps 1000 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 3.0 \
+    --plot_loss \
+    --fp16
+
+```
+
 
 
 
