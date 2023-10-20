@@ -23940,6 +23940,16 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 
 
+### JAX 
+
+```
+https://github.com/vpj/jax_transformer
+```
+
+
+
+
+
 ```
 对话：{"text": "User: 内容1\n内容1\n\nAssistant: 回答1\n回答1\n\nUser: 内容2\n内容2\n\nAssistant: 回答2\n回答2\n\nUser: 内容3\n内容3\n\nAssistant: 回答3\n回答3\n\n"}
 
