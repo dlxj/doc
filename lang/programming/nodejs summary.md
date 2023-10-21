@@ -23944,7 +23944,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [从零起步的 Transformer 与代码拆解](https://leonis.cc/sui-sui-nian/2023-04-21-transformer-from-scratch.html)
 
-
+[Transformer 模型的 PyTorch 实现](https://www.jianshu.com/p/3b550e903e78)
 
 
 
