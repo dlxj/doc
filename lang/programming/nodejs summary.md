@@ -5811,6 +5811,20 @@ new RegExp(String.raw`^(?!.*E\.).*$`, 'gs')  // 参数g 全局匹配，参数s �
 
 
 
+## escapeRegExp
+
+```
+      let escape = _.escapeRegExp(k)
+      if (escape != k) {
+        console.log(`Waring: 题型含有正则字符`)
+        continue
+      }
+```
+
+
+
+
+
 ## 匹配以特殊字符开头的字符
 
 - 比如说 ( ，会出错， 所以需要转义
