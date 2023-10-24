@@ -23982,6 +23982,8 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [Transformer 是如何工作的：600 行](https://arthurchiao.art/blog/transformers-from-scratch-zh/)
 
+[Transformer 修炼之道（一）、Input Embedding](https://zhuanlan.zhihu.com/p/372279569)
+
 
 
 ```
