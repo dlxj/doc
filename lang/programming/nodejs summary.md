@@ -23966,6 +23966,20 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [通俗讲解pytorch中nn.Embedding原理及使用](https://www.jianshu.com/p/63e7acc5e890)
 
+[图解 Transformer](https://zhuanlan.zhihu.com/p/196642078)
+
+[Transformer 是如何工作的：600 行](https://arthurchiao.art/blog/transformers-from-scratch-zh/)
+
+
+
+```
+词嵌入算法（embedding algorithm），将每个词转换为一个词向量。实际中向量一般是 256 或者 512 维。那么整个输入的句子是一个向量列表
+```
+
+
+
+
+
 
 
 ### JAX 
