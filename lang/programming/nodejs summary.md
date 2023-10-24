@@ -23966,6 +23966,27 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 
 
+
+
+```
+
+conda create -n pico pip python=3.9.10
+conda activate pico
+	# conda deactivate
+
+
+```
+
+
+
+#### TinyGPT C++实现
+
+[手写一个 GPT (TinyGPT)](https://zhuanlan.zhihu.com/p/650022129)
+
+
+
+
+
 ### 从零起步的 Transformer 与代码拆解
 
 [从零起步的 Transformer 与代码拆解](https://leonis.cc/sui-sui-nian/2023-04-21-transformer-from-scratch.html)
