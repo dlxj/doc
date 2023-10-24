@@ -23966,6 +23966,17 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [picoGPT 中文训练 必看](https://github.com/bigeagle/picoGPT) [blog](https://bigeagle.me/2023/03/pico-gpt-1/)
 
+- ```
+  git clone https://github.com/bigeagle/picoGPT.git && \
+  cd picoGPT && \
+  conda activate internlm-env && \ 
+  pip3 install rich loguru
+  
+  python3 train.py --lr=1e-3 --batch-size=32 --block-size=128 --embed-size=512 --depth=4 --num-heads=4 --dropout=0.1
+  ```
+
+  
+
 
 
 ```
