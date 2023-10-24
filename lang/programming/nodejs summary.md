@@ -23964,7 +23964,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [picoGPT Numpy 实现 必看](https://github.com/jaymody/picoGPT)
 
-
+[picoGPT 中文训练](https://github.com/bigeagle/picoGPT)
 
 
 
