@@ -23960,6 +23960,12 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [Transformer 模型的 PyTorch 实现](https://www.jianshu.com/p/3b550e903e78)
 
+[flash attention 的python和triton实现](https://zhuanlan.zhihu.com/p/662759306)
+
+[一文搞懂PyTorch Hook](https://zhuanlan.zhihu.com/p/662760483)
+
+[通俗讲解pytorch中nn.Embedding原理及使用](https://www.jianshu.com/p/63e7acc5e890)
+
 
 
 ### JAX 
