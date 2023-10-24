@@ -23954,6 +23954,12 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 
 
+### minGPT 两位数加法
+
+[minGPT 两位数加法 必看](https://github.com/karpathy/minGPT/blob/master/projects/adder/adder.py)
+
+
+
 ### 从零起步的 Transformer 与代码拆解
 
 [从零起步的 Transformer 与代码拆解](https://leonis.cc/sui-sui-nian/2023-04-21-transformer-from-scratch.html)
