@@ -23971,6 +23971,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 [picoGPT 中文训练 必看](https://github.com/bigeagle/picoGPT) [blog](https://bigeagle.me/2023/03/pico-gpt-1/)
 
 - [numpy实现embedding层的前向传播和反向传播 必看](https://zhuanlan.zhihu.com/p/642997702)
+- [numpy 古诗 必看](https://github.com/ZouJiu1/numpy_transformer/blob/master/gpt/gpt_train_potry3000.py)
 
 - [nn.Embedding的基本使用](https://blog.csdn.net/zhaohongfei_358/article/details/122809709)
 - [各种归一化层及其Pytorch实现](https://blog.csdn.net/qq_23981335/article/details/106572171)
