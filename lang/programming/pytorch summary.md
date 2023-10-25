@@ -248,6 +248,43 @@ loss_fn = F.cross_entropy
 
 
 
+### shape
+
+```
+import torch
+t0 = torch.tensor(0)   # shape:torch.Size([])
+t1 = t0.reshape(1,)    # shape:torch.Size([1])
+t2 = t0.reshape(1,-1)  # shape:torch.Size([1, 1]) #一行,列数自动安排
+t3 = t2.to('cpu')
+print(t0)
+```
+
+
+
+```
+import numpy as np
+a = np.array([ 
+    [ 
+        [1, 2],  # 相当于删掉这一行
+        [3, 4]
+    ], 
+    [
+        [5, 6],  # 相当于删掉这一行
+        [7, 8]
+    ] 
+])
+b = a[:, -1, :] 
+    # 第一维全部都要
+    # 第二维要最后一个元素
+    # 第三维全部都要 
+print(a)
+    # 注意原本应该是 (2, 1, 2) 的，第二维直接被合并了，结果变成 (2, 2)
+```
+
+
+
+
+
 ### 转浮点数
 
 
