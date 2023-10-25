@@ -23971,6 +23971,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 [picoGPT 中文训练 必看](https://github.com/bigeagle/picoGPT) [blog](https://bigeagle.me/2023/03/pico-gpt-1/)
 
 - [nn.Embedding的基本使用](https://blog.csdn.net/zhaohongfei_358/article/details/122809709)
+- [各种归一化层及其Pytorch实现](https://blog.csdn.net/qq_23981335/article/details/106572171)
 
 - ```
   git clone https://github.com/bigeagle/picoGPT.git && \
@@ -24036,8 +24037,12 @@ conda activate pico
 
 ### JAX 
 
+[jax_transformer](https://github.com/vpj/jax_transformer)
+
 ```
-https://github.com/vpj/jax_transformer
+
+pip3 install jax jaxlib labml
+
 ```
 
 
@@ -24055,6 +24060,12 @@ https://github.com/vpj/jax_transformer
 
 换行必须用 \n，不能用 \r\n。 作者：czhko https://www.bilibili.com/read/cv22445881/ 出处：bilibili
 ```
+
+
+
+#### 各种论文实现 必看
+
+[annotated_deep_learning_paper_implementations](https://github.com/labmlai/annotated_deep_learning_paper_implementations)
 
 
 
