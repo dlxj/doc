@@ -23966,6 +23966,8 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [picoGPT 中文训练 必看](https://github.com/bigeagle/picoGPT) [blog](https://bigeagle.me/2023/03/pico-gpt-1/)
 
+- [nn.Embedding的基本使用](https://blog.csdn.net/zhaohongfei_358/article/details/122809709)
+
 - ```
   git clone https://github.com/bigeagle/picoGPT.git && \
   cd picoGPT && \
