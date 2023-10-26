@@ -161,6 +161,46 @@ source "$HOME/.cargo/env"
 
 
 
+## gcc 多版本共存
+
+[how-to-install-latest-gcc-on-ubuntu-lts.txt](https://gist.github.com/application2000/73fd6f4bf1be6600a2cf9f56315a2d91)
+
+```
+These commands are based on a askubuntu answer http://askubuntu.com/a/581497
+To install gcc-6 (gcc-6.1.1), I had to do more stuff as shown below.
+USE THOSE COMMANDS AT YOUR OWN RISK. I SHALL NOT BE RESPONSIBLE FOR ANYTHING.
+ABSOLUTELY NO WARRANTY.
+
+If you are still reading let's carry on with the code.
+
+sudo apt-get update && \
+sudo apt-get install build-essential software-properties-common -y && \
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-snapshot -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-6 g++-6 -y && \
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6 && \
+sudo apt-get install gcc-4.8 g++-4.8 -y && \
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8;
+
+When completed, you must change to the gcc you want to work with by default. Type in your terminal:
+sudo update-alternatives --config gcc
+
+To verify if it worked. Just type in your terminal
+gcc -v
+
+If everything went fine you should see gcc 6.1.1  by the time I am writing this gist
+
+Happy coding!
+
+See my blog post at https://www.application2000.com
+```
+
+
+
+
+
 ## 安装 postgresql
 
 ```
