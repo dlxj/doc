@@ -2741,6 +2741,10 @@ yum update --allowerasing
 
 ## pandora
 
+[新地址](https://github.com/zhile-io/pandora)
+
+[另一个开源替代](https://github.com/flyingpot/chatgpt-proxy)
+
 ```
 # restart.sh
 if tail -10 /root/.pm2/logs/pandora-ak148-explain-error.log | grep -q  'json.decoder.JSONDecodeError';
@@ -2821,6 +2825,10 @@ done
 
 
 
+### gngpp/ninja
+
+[gngpp/ninja](https://github.com/gngpp/ninja) 试试这个登录能不能用
+
 
 
 ## 抱抱脸 
@@ -2844,6 +2852,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create chatglm_v2_6b_lora --type dataset
 	# huggingface-cli repo create InternLM-SFT --type dataset
 	# huggingface-cli repo create Finetune-ChatGLM2-6B --type dataset
+	# huggingface-cli repo create transformer --type dataset 
 
 
 
@@ -23964,7 +23973,53 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [picoGPT Numpy 实现 必看](https://github.com/jaymody/picoGPT)
 
+- ```
+  python gpt2.py \
+      "Alan Turing theorized that computers would one day become" \
+      --n_tokens_to_generate 40 \
+      --model_size "124M" \
+      --models_dir "models"
+  
+  tensorflow==2.11.0
+  
+  ```
+
+[gpt2 原版 必看](https://github.com/openai/gpt-2/blob/master/DEVELOPERS.md)
+
+- [安装指南](https://github.com/openai/gpt-2/pull/186/files) [tf+cuda](https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible) [gcc4.8](https://gist.github.com/application2000/73fd6f4bf1be6600a2cf9f56315a2d91)
+
+- ```
+  RTX 2080 Ti(11GB) + 
+  Python3.8 + ubuntu18.04 + Cuda10.0 
+  
+  git clone https://huggingface.co/datasets/dlxjj/transformer
+  	# 以后的代码在抱抱脸更新
+  
+  git clone https://github.com/openai/gpt-2.git && cd gpt-2
+  
+  conda create -n gpt2 pip python=3.7 && \
+  conda activate gpt2
+  
+  pip install protobuf==3.20 && \
+  pip install tensorflow-gpu==1.15.0 && \
+  pip install -r requirements.txt
+  
+  export PYTHONIOENCODING=UTF-8 && \
+  python3 src/interactive_conditional_samples.py --top_k 40
+  
+  
+  117M model with fp16, per_gpu_train_batch_size=1 and block_size=256 on gpu 6gb
+  ```
+
+[Transformer代码复现 必看](http://www.egbenz.com/#/my_article/49)
+
 [picoGPT 中文训练 必看](https://github.com/bigeagle/picoGPT) [blog](https://bigeagle.me/2023/03/pico-gpt-1/)
+
+- [numpy实现embedding层的前向传播和反向传播 必看](https://zhuanlan.zhihu.com/p/642997702)
+- [numpy 古诗 必看](https://github.com/ZouJiu1/numpy_transformer/blob/master/gpt/gpt_train_potry3000.py)
+
+- [nn.Embedding的基本使用](https://blog.csdn.net/zhaohongfei_358/article/details/122809709)
+- [各种归一化层及其Pytorch实现](https://blog.csdn.net/qq_23981335/article/details/106572171)
 
 - ```
   git clone https://github.com/bigeagle/picoGPT.git && \
@@ -23984,6 +24039,8 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 conda create -n pico pip python=3.9.10
 conda activate pico
 	# conda deactivate
+
+pip3 install -r requirements.txt
 
 
 ```
@@ -24030,8 +24087,16 @@ conda activate pico
 
 ### JAX 
 
+[jax_transformer](https://github.com/vpj/jax_transformer)
+
 ```
-https://github.com/vpj/jax_transformer
+
+pip3 install jax jaxlib labml
+
+pip install --upgrade "jax[cuda11_local]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+
+
 ```
 
 
@@ -24049,6 +24114,14 @@ https://github.com/vpj/jax_transformer
 
 换行必须用 \n，不能用 \r\n。 作者：czhko https://www.bilibili.com/read/cv22445881/ 出处：bilibili
 ```
+
+
+
+#### 各种论文实现 必看
+
+[annotated_deep_learning_paper_implementations](https://github.com/labmlai/annotated_deep_learning_paper_implementations)
+
+[ChatGPT使用指南——文本推理 必看](https://github.com/datawhalechina/hugging-llm/blob/main/content/ChatGPT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%E2%80%94%E2%80%94%E6%96%87%E6%9C%AC%E6%8E%A8%E7%90%86.ipynb)
 
 
 
