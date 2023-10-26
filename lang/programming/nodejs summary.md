@@ -24004,6 +24004,8 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   117M model with fp16, per_gpu_train_batch_size=1 and block_size=256 on gpu 6gb
   ```
 
+[Transformer代码复现 必看](http://www.egbenz.com/#/my_article/49)
+
 [picoGPT 中文训练 必看](https://github.com/bigeagle/picoGPT) [blog](https://bigeagle.me/2023/03/pico-gpt-1/)
 
 - [numpy实现embedding层的前向传播和反向传播 必看](https://zhuanlan.zhihu.com/p/642997702)
