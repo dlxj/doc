@@ -24005,30 +24005,6 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   python3 src/interactive_conditional_samples.py --top_k 40
   
   
-  
-  
-  RTX 2080 Ti(11GB) + 
-  ubuntu16.04 + Python3.7+ Cuda9.0 + gcc4.8
-  
-  git clone https://github.com/openai/gpt-2.git && cd gpt-2
-  
-  conda create -n gpt2 pip python=3.6 && \
-  conda activate gpt2
-  	# conda env remove -n gpt2
-  	# rm -rf /usr/local/bin/deactivate && rm -rf /usr/local/bin/activate && rm -rf /usr/local/bin/conda
-  	# TensorFlow 1.12 requires Python 3.3 - 3.6
-  
-  pip install protobuf==3.6.1 grpcio==1.8.6 && \
-  pip install tensorflow-gpu==1.12.0 && \
-  pip install -r requirements.txt
-  
-  python3 download_model.py 124M
-  
-  export PYTHONIOENCODING=UTF-8 && \
-  python3 src/interactive_conditional_samples.py --top_k 40
-  
-  
-  
   117M model with fp16, per_gpu_train_batch_size=1 and block_size=256 on gpu 6gb
   ```
 
