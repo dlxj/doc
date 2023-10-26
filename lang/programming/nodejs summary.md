@@ -23986,6 +23986,8 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [gpt2 原版 必看](https://github.com/openai/gpt-2/blob/master/DEVELOPERS.md)
 
+- [安装指南](https://github.com/openai/gpt-2/pull/186/files)
+
 - ```
   git clone https://github.com/openai/gpt-2.git && cd gpt-2
   
@@ -24000,6 +24002,10 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   pip install -r requirements.txt
   
   python3 download_model.py 124M
+  
+  export PYTHONIOENCODING=UTF-8
+  
+  
   
   117M model with fp16, per_gpu_train_batch_size=1 and block_size=256 on gpu 6gb
   ```
