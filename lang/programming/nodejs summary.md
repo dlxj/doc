@@ -23997,7 +23997,12 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   conda create -n gpt2 pip python=3.7 && \
   conda activate gpt2
   
-  pip install tensorflow-gpu==1.15.0
+  pip install tensorflow-gpu==1.15.0 && \
+  pip install -r requirements.txt
+  
+  export PYTHONIOENCODING=UTF-8 && \
+  python3 src/interactive_conditional_samples.py --top_k 40
+  
   
   
   
