@@ -23992,6 +23992,9 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   RTX 2080 Ti(11GB) + 
   Python3.8 + ubuntu18.04 + Cuda10.0 
   
+  git clone https://huggingface.co/datasets/dlxjj/transformer
+  	# 以后的代码在抱抱脸更新
+  
   git clone https://github.com/openai/gpt-2.git && cd gpt-2
   
   conda create -n gpt2 pip python=3.7 && \

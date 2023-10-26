@@ -52,6 +52,25 @@ tmux kill-session -t 0 # 在没有进入 session 的情况下 kill 它
 
 
 
+# kill 不掉进程
+
+```
+cd /proc/171473
+	# pid
+cat status
+	# 看到到一个 ppid, 这是父进程ID
+kill -9 ppid
+kill -9 pid
+	# 应该就可以了
+
+```
+
+
+
+
+
+
+
 # 显示进程参数
 
 ```
