@@ -23989,6 +23989,9 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 - [安装指南](https://github.com/openai/gpt-2/pull/186/files) [tf+cuda](https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible) [gcc4.8](https://gist.github.com/application2000/73fd6f4bf1be6600a2cf9f56315a2d91)
 
 - ```
+  RTX 2080 Ti(11GB) + 
+  ubuntu16.04 + Python3.7+ Cuda9.0 + gcc4.8
+  
   git clone https://github.com/openai/gpt-2.git && cd gpt-2
   
   conda create -n gpt2 pip python=3.6 && \
