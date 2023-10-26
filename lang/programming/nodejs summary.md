@@ -23990,6 +23990,18 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 - ```
   RTX 2080 Ti(11GB) + 
+  Python3.8 + ubuntu18.04 + Cuda10.0 
+  
+  git clone https://github.com/openai/gpt-2.git && cd gpt-2
+  
+  conda create -n gpt2 pip python=3.7 && \
+  conda activate gpt2
+  
+  pip install tensorflow-gpu==1.15.0
+  
+  
+  
+  RTX 2080 Ti(11GB) + 
   ubuntu16.04 + Python3.7+ Cuda9.0 + gcc4.8
   
   git clone https://github.com/openai/gpt-2.git && cd gpt-2
@@ -24006,7 +24018,8 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   
   python3 download_model.py 124M
   
-  export PYTHONIOENCODING=UTF-8
+  export PYTHONIOENCODING=UTF-8 && \
+  python3 src/interactive_conditional_samples.py --top_k 40
   
   
   
