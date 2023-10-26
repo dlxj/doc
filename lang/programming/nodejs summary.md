@@ -23986,7 +23986,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 [gpt2 原版 必看](https://github.com/openai/gpt-2/blob/master/DEVELOPERS.md)
 
-- [安装指南](https://github.com/openai/gpt-2/pull/186/files) [tf+cuda](https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible)
+- [安装指南](https://github.com/openai/gpt-2/pull/186/files) [tf+cuda](https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible) [gcc4.8](https://gist.github.com/application2000/73fd6f4bf1be6600a2cf9f56315a2d91)
 
 - ```
   git clone https://github.com/openai/gpt-2.git && cd gpt-2
