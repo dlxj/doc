@@ -23997,7 +23997,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
   	# rm -rf /usr/local/bin/deactivate && rm -rf /usr/local/bin/activate && rm -rf /usr/local/bin/conda
   	# TensorFlow 1.12 requires Python 3.3 - 3.6
   
-  pip install protobuf==3.6.1 && \
+  pip install protobuf==3.6.1 grpcio==1.8.6 && \
   pip install tensorflow-gpu==1.12.0 && \
   pip install -r requirements.txt
   
