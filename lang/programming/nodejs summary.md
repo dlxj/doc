@@ -2836,6 +2836,10 @@ done
 [Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
 
 ```
+
+git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datasets/dlxjj/transformer
+	# 能行
+
 dlxjj pwd email same as github's dlxj
 
 pip install huggingface_hub && \
@@ -2908,6 +2912,17 @@ huggingface-cli login
 
 
 huggingface-cli lfs-enable-largefiles /root/hugface/echodict
+
+
+git clone -c http.proxy="socks5h://127.0.0.1:1080" https://github.com/
+
+如果只想对 GitHub 进行代理，则可以这么做：
+
+# 以代理端口 7890 为例
+git config --global http.https://github.com.proxy socks5h://127.0.0.1:7890
+
+# 取消代理
+git config --global --unset http.https://github.com.proxy
 
 ```
 
