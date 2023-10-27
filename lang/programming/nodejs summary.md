@@ -2846,6 +2846,12 @@ git config --global http.https://huggingface.co.proxy socks5h://127.0.0.1:1080
 git config --global --unset http.https://huggingface.co.proxy
 	# 取消代理
 
+git clone -c http.proxy="socks5h://192.168.1.8:57882"  https://huggingface.co/datasets/dlxjj/transformer
+
+
+.git/config
+	# 实际代理配置在这里，有问题打开直接编缉它 
+	
 
 dlxjj pwd email same as github's dlxj
 
