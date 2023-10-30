@@ -27898,6 +27898,15 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 
 
+```
+vscode 安装：rust-analyzer + CodeLLDB
+
+```
+
+
+
+
+
 ## C Monads
 
 [C Monads](https://gist.github.com/lukechampine/c460fb2754ef0a7f7652874d9f9ed678)
