@@ -2870,6 +2870,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create InternLM-SFT --type dataset
 	# huggingface-cli repo create Finetune-ChatGLM2-6B --type dataset
 	# huggingface-cli repo create transformer --type dataset 
+	# huggingface-cli repo create ninja --type dataset 
 
 
 
