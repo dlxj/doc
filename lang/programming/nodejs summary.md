@@ -27841,7 +27841,7 @@ dnf install -y golang
 
 - [纯js实现](https://github.com/PawanOsman/ChatGPT)
 
-[go-chatgpt](https://github.com/linweiyuan/go-chatgpt)
+[go-chatgpt](https://github.com/linweiyuan/go-chatgpt) [fork 可用，原版已弃坑](https://github.com/xqdoo00o/ChatGPT-to-API)
 
 [tview](https://github.com/rivo/tview)
 
