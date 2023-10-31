@@ -27923,6 +27923,15 @@ http://127.0.0.1:7999/backend-api/
 	# 后端接口地址，后接 openai 的标准接口地址
 
 
+# GPT4 接口
+  curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer " \
+  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "你会说中文吗"}]
+  }'
+
 ```
 
 
