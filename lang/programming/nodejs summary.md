@@ -27835,13 +27835,13 @@ dnf install -y golang
 
   
 
-### go-chatgpt + tview UI
+### go-chatgpt + tview UI 必看
 
 [gpt反代](https://www.v2ex.com/t/947707)
 
 - [纯js实现](https://github.com/PawanOsman/ChatGPT)
 
-[go-chatgpt](https://github.com/linweiyuan/go-chatgpt) [fork 可用，原版已弃坑](https://github.com/xqdoo00o/ChatGPT-to-API)
+[go-chatgpt](https://github.com/linweiyuan/go-chatgpt) [fork 可用，原版已弃坑 必看](https://github.com/xqdoo00o/ChatGPT-to-API)
 
 [tview](https://github.com/rivo/tview)
 
@@ -27874,6 +27874,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
 
 ### WPF
+
+[VPet 虚拟桌宠 必看](https://github.com/LorisYounger/VPet)
 
 [WPF 实现裁剪图像](https://v2ex.com/t/950084#)
 
@@ -27909,6 +27911,12 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 
 
+### ninja pandora开源替代 必看
+
+[ninja](https://github.com/gngpp/ninja)
+
+
+
 ```
 vscode 安装：rust-analyzer + CodeLLDB
 
@@ -27923,6 +27931,13 @@ http://127.0.0.1:7999/backend-api/
 	# 后端接口地址，后接 openai 的标准接口地址
 
 
+chat.openai.com 正常聊天后 -> F12 
+https://tcr9i.chat.openai.com/fc/gt2/public_key/35536E1E-65B4-4D96-9D97-6ADB7EFF8147
+右键这个接口，选保存 HAR
+
+cp chat.openai.com.har /root/.chat4.openai.com.har
+
+
 # GPT4 接口
   curl 127.0.0.1:7999/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -27931,6 +27946,8 @@ http://127.0.0.1:7999/backend-api/
     "model": "gpt-4",
     "messages": [{"role": "user", "content": "你会说中文吗"}]
   }'
+
+examples/chatgpt.rs
 
 ```
 
@@ -28281,7 +28298,7 @@ ninja/src/main.rs 成功单步调式
 }
 ```
 
-
+har跟账号没有任何关系，只是一个浏览器的特征
 
 
 
