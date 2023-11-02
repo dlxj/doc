@@ -27847,6 +27847,33 @@ dnf install -y golang
 
 
 
+### [HAR文件池](https://github.com/xqdoo00o/ChatGPT-to-API/blob/master/README_ZH.md#har文件池)
+
+当前登录账号，使用GPT-4模型以及大部分GPT-3.5模型，均需要配置HAR文件（.har后缀名的文件）以完成captcha验证。
+
+1. 使用基于chromium的浏览器（Chrome，Edge）打开浏览器开发者工具（F12），并切换到网络标签页，**勾选保留日志选项**。
+2. 登录`https://chat.openai.com/`，新建聊天并选择GPT-4模型，随意输入下文字，切换到GPT-3.5模型，随意输入下文字。
+3. 点击网络标签页下的导出HAR按钮，导出文件`chat.openai.com.har`，放置到本程序同级的`harPool`文件夹里。
+
+
+
+```
+git clone https://github.com/xqdoo00o/ChatGPT-to-API && \
+cd ChatGPT-to-API && \
+go build && \
+./freechatgpt
+
+
+curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer NONEED" \
+  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "你会说中文吗"}]
+  }'
+
+```
+
 
 
 
