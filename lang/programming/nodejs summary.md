@@ -2610,6 +2610,54 @@ pip install jieba rouge_chinese nltk peft
 
 
 
+#### pytorch镜像 
+
+[pytorch安装-国内镜像源](https://blog.csdn.net/gg864461719/article/details/112259806)
+
+
+
+```
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/
+
+
+conda install pytorch==2.0.0 torchvision==0.15.1 cudatoolkit=11.8 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/
+	# 实测可以
+
+pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url
+https://download.pytorch.org/whl/cu118
+
+
+```
+
+
+
+
+
+#### 改DNS
+
+[完美解决绝大部分域外名的学术网站访问缓慢问题](https://blog.csdn.net/Xiao_Bai_hh/article/details/125983176)
+
+
+
+```
+
+cat /etc/hosts
+
+https://sites.ipaddress.com/github.com/
+
+140.82.112.3 github.com
+185.199.108.153 pytorch.org
+	# 实测有用
+	# ban ip 应该就没用了
+
+
+
+```
+
+
+
+
+
 ### WSL 使用 win10 代理
 
 ```
@@ -23254,7 +23302,7 @@ cd InternLM && \
 conda create --name internlm-env python=3.10 -y && \
 conda activate internlm-env
 
-pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url 
+pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url
 https://download.pytorch.org/whl/cu118
 
 conda install -c conda-forge pytorch-gpu
