@@ -23339,6 +23339,17 @@ d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
 
 pip install tensorboardX datasets bitsandbytes peft scipy nltk pydantic rouge
 
+pip install flash_attn==1.0.5
+
+Python == 3.10
+GCC == 10.2.0
+MPFR == 4.1.0
+CUDA >= 11.7
+Pytorch >= 1.13.1
+Transformers >= 4.28.0
+Flash-Attention >= v1.0.5
+Apex == 23.05
+
 
 echodict/bytepiece/InternLM/alpaca_data.json
 	# 复制到项目根目录
