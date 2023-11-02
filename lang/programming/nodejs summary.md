@@ -23228,6 +23228,16 @@ ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
 source ~/miniconda3/etc/profile.d/conda.sh
 
 
+/root/miniconda3/lib/python3.8/site-packages
+	# autodl 只有 python3.8 + torch2.0，但需要 python3.10，
+    # 打算从这里拷需要的包
+    >>> from distutils.sysconfig import get_python_lib
+	>>> print(get_python_lib())
+/root/miniconda3/envs/internlm-env/lib/python3.10/site-packages
+	# /usr/bin/cp -rf /root/miniconda3/lib/python3.8/site-packages /root/miniconda3/envs/internlm-env/lib/python3.10
+		# 行不通，弃用
+
+
 apt update && \
 apt install tmux && \
 tmux
