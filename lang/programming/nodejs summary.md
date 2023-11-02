@@ -22969,6 +22969,8 @@ vLLM – 伯克利推理
 
 [InternLM](https://github.com/InternLM/InternLM)
 
+- [高考题](https://github.com/OpenLMLab/GAOKAO-Bench)  [开源语料](https://opendatalab.org.cn/OpenDataLab/WanJuan1_dot_0)
+
 - [xtuner 官方 lora 微调](https://github.com/InternLM/xtuner)
 
 [InternLM-20B 在线使用](https://zhuanlan.zhihu.com/p/658368644)
@@ -23242,7 +23244,10 @@ cd InternLM && \
 conda create --name internlm-env python=3.10 -y && \
 conda activate internlm-env
 
-pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
+pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url 
+https://download.pytorch.org/whl/cu118
+
+conda install -c conda-forge pytorch-gpu
 
 pip install -r requirements/runtime.txt && 
 pip install tensorboard
@@ -23328,6 +23333,15 @@ SAVE_CKPT_FOLDER
 	
 
 
+```
+
+
+
+### sft nlpp
+
+```
+mkdir traindata_alpaca_nlpp && \
+python tools/alpaca_tokenizer.py traindata_alpaca_nlpp.json traindata_alpaca_nlp /root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model --split_ratio 0.1
 ```
 
 
@@ -27919,6 +27933,12 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 ### winUI3
 
 [Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot)
+
+- [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
+
+```
+webrtc-stream 组件，https://github.com/mpromonet/webrtc-streamer 直接 RTSP 拉流,这个是直接 RTP 流到 webrtc 转换的，所以低延迟，消耗最少；如果你借助 ffmpeg 将 rtsp 转到 flv 或者 hls 流畅度上来说 HLS 要好点，但是 flv 会出现限制，也就是缓冲加载，所以建议 webrtc ；不想用 webrtc-stream ，那就剩下的 GB28181 推流到 ZLM 或者 SRS ，然后 webrtc 再从服务端拉流，目的还是低延迟但是中间还是 监控将流通过 RTP 的方式推流到 ZLM 或者 SRS 了，你提到的 GB+wvp 就是这个原理，通过 GB 协商 监控推流到 RTP 服务器，而 RTP 服务器就是 ZLM ； zlm 和 SRS 内部再将原始流转成 WebRTC 、RTMP 、RTSP 、HLS 、Flv 等格式
+```
 
 
 
