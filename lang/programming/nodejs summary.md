@@ -2622,7 +2622,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 设为默认
 升级 pip 到最新的版本 (>=10.0.0) 后进行配置：
 
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip && \
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 如果您到 pip 默认源的网络连接较差，临时使用本镜像站来升级 pip：
 
@@ -23299,12 +23299,18 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 see InternLM/doc/install.md
 
 # autodl
+source /etc/network_turbo && \
 ~/miniconda3/bin/conda init && \
 ln -s ~/miniconda3/bin/conda /usr/local/bin && \
 ln -s ~/miniconda3/bin/activate /usr/local/bin && \
 ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
 source ~/miniconda3/etc/profile.d/conda.sh
 
+
+python -m pip install --upgrade pip && \
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+	# pip 换清华源
+	
 
 /root/miniconda3/lib/python3.8/site-packages
 	# autodl 只有 python3.8 + torch2.0，但需要 python3.10，
@@ -23331,6 +23337,8 @@ git clone https://github.com/InternLM/InternLM.git --recurse-submodules && \
 cd InternLM && \
 conda create --name internlm-env python=3.10 -y && \
 conda activate internlm-env
+
+conda install pytorch==2.0.0 torchvision==0.15.1 cudatoolkit=11.8 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/
 
 pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url
 https://download.pytorch.org/whl/cu118
@@ -23369,6 +23377,7 @@ d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
 
 pip install tensorboardX datasets bitsandbytes peft scipy nltk pydantic rouge
 
+pip install packaging ninja && \
 pip install flash_attn==1.0.5 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 Python == 3.10
