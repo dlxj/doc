@@ -23417,6 +23417,27 @@ cd ../../../../
 cd ./third_party/apex && \
 pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./ && \
 cd ../../ 
+	# 用官网的安装方法，因为 cuda 版本变成　１１．７　
+
+/root/InternLM/configs/i7B_sft.py
+SEQ_LEN = 128
+HIDDEN_SIZE = 512
+NUM_ATTENTION_HEAD = 8
+MLP_RATIO = 8 / 3
+NUM_LAYER = 4
+VOCAB_SIZE = 103168
+
+TRAIN_FOLDER = "/root/InternLM/traindata_alpaca_nlpp/train"
+VALID_FOLDER = "/root/InternLM/traindata_alpaca_nlpp/valid"
+
+parallel = dict(
+    zero1=0,　＃改成０
+    
+
+torchrun --nnodes=1 --nproc_per_node=1 train.py --config ./configs/i7B_sft.py --launcher "torch"
+	＃ 成功运行
+
+
 
 
 cd /root/autodl-tmp && \
