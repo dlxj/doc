@@ -23043,6 +23043,16 @@ vLLM – 伯克利推理
 
 
 
+[training](https://github.com/EleutherAI/pythia#reproducing-training)
+
+```
+
+```
+
+
+
+
+
 ## InternLM
 
 [InternLM](https://github.com/InternLM/InternLM)
@@ -23310,7 +23320,6 @@ Please make sure that
  -   LD_LIBRARY_PATH includes /usr/local/cuda-11.7/lib64, or, add /usr/local/cuda-11.7/lib64 to /etc/ld.so.conf and run ldconfig as root
 
 
-
 vi ~/.bashrc # 加在文件尾
 export PATH=/usr/local/cuda-11.7/bin:$PATH && \
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
@@ -23422,7 +23431,7 @@ d --saveto /root/autodl-tmp internlm-chat-7b-v1_1/
 
 
 
-pip install tensorboardX datasets bitsandbytes peft scipy nltk pydantic rouge
+pip install tensorboard tensorboardX datasets bitsandbytes peft scipy nltk pydantic rouge
 
 pip install packaging ninja && \
 pip install flash_attn==1.0.5 -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -23439,6 +23448,8 @@ Apex == 23.05
 
 echodict/bytepiece/InternLM/alpaca_data.json
 	# 复制到项目根目录
+	# echodict/InternLM-SFT/internlm_sft/dataset/traindata_alpaca_nlpp.json
+		# 用这个 nlpp
 
 mkdir traindata_alpaca && \
 python tools/alpaca_tokenizer.py alpaca_data.json traindata_alpaca /root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model --split_ratio 0.1
