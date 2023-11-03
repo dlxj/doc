@@ -23295,6 +23295,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 
 ### trainning
 
+[install 按官方安装指南不出错？](https://github.com/InternLM/InternLM/blob/main/doc/en/install.md)
+
 ```
 see InternLM/doc/install.md
 
@@ -23305,6 +23307,34 @@ ln -s ~/miniconda3/bin/conda /usr/local/bin && \
 ln -s ~/miniconda3/bin/activate /usr/local/bin && \
 ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
 source ~/miniconda3/etc/profile.d/conda.sh
+
+vi /etc/hosts
+140.82.112.3 github.com
+185.199.108.153 pytorch.org
+
+
+conda create --name internlm-env python=3.10 -y && \
+conda activate internlm-env
+
+conda install -y pytorch==2.0.0 cudatoolkit=11.8 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/
+
+
+export CUDA_HOME=/usr/local/cuda-11.8 && \
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 && \
+PATH=${CUDA_HOME}/bin:${PATH} && \
+export PATH
+
+
+git clone https://github.com/Dao-AILab/flash-attention.git &&＼
+cd flash-attention && \
+python setup.py install
+
+pip install packaging ninja && \
+pip install flash-attn==1.0.5 --no-build-isolation -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+
+
 
 
 python -m pip install --upgrade pip && \
@@ -23334,11 +23364,8 @@ git lfs install
 
 
 git clone https://github.com/InternLM/InternLM.git --recurse-submodules && \
-cd InternLM && \
-conda create --name internlm-env python=3.10 -y && \
-conda activate internlm-env
+cd InternLM
 
-conda install pytorch==2.0.0 torchvision==0.15.1 cudatoolkit=11.8 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/
 
 pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url
 https://download.pytorch.org/whl/cu118
