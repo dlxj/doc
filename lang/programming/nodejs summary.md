@@ -23439,6 +23439,12 @@ VOCAB_SIZE = 103168
 	# 4090 + 80G RAM 正常训练
 
 
+SAVE_CKPT_FOLDER = "local:/root/saved"
+	# 保存目录
+
+ckpt = dict(
+    enable_save_ckpt=True,  # 允许保存
+
 TRAIN_FOLDER = "/root/InternLM/traindata_alpaca_nlpp/train"
 VALID_FOLDER = "/root/InternLM/traindata_alpaca_nlpp/valid"
 
@@ -23450,6 +23456,8 @@ torchrun --nnodes=1 --nproc_per_node=1 train.py --config ./configs/i7B_sft.py --
 	＃ 成功运行
 
 
+python tools/transformers/convert2hf.py --src_folder /root/saved/100 --tgt_folder hf_ckpt/ --tokenizer ./tools/V7_sft.model
+	# 转成 hf 格式
 
 
 cd /root/autodl-tmp && \
