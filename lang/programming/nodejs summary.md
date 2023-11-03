@@ -23306,15 +23306,14 @@ wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/
 sudo sh cuda_11.7.0_515.43.04_linux.run
 
 Please make sure that
- -   PATH includes /usr/local/cuda-11.8/bin
- -   LD_LIBRARY_PATH includes /usr/local/cuda-11.8/lib64, or, add /usr/local/cuda-11.8/lib64 to /etc/ld.so.conf and run ldconfig as root
+ -   PATH includes /usr/local/cuda-11.7/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.7/lib64, or, add /usr/local/cuda-11.7/lib64 to /etc/ld.so.conf and run ldconfig as root
 
-To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.8/bin
 
 
 vi ~/.bashrc # 加在文件尾
-export PATH=/usr/local/cuda-11.8/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-11.7/bin:$PATH && \
+export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 
 
 
