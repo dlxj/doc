@@ -23309,6 +23309,8 @@ sudo sh cuda_11.7.0_515.43.04_linux.run
 
 [install 按官方安装指南不出错？](https://github.com/InternLM/InternLM/blob/main/doc/en/install.md)
 
+[FSDP 节省显存？](https://github.com/InternLM/InternLM/pull/273)
+
 ```
 
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
@@ -23426,6 +23428,16 @@ NUM_ATTENTION_HEAD = 8
 MLP_RATIO = 8 / 3
 NUM_LAYER = 4
 VOCAB_SIZE = 103168
+	# 2080ti 可以
+	
+SEQ_LEN = 1024
+HIDDEN_SIZE = 1024
+NUM_ATTENTION_HEAD = 32
+MLP_RATIO = 8 / 3
+NUM_LAYER = 32
+VOCAB_SIZE = 103168
+	# 4090 + 80G RAM 正常训练
+
 
 TRAIN_FOLDER = "/root/InternLM/traindata_alpaca_nlpp/train"
 VALID_FOLDER = "/root/InternLM/traindata_alpaca_nlpp/valid"
