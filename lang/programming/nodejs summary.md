@@ -28222,7 +28222,9 @@ webrtc-stream 组件，https://github.com/mpromonet/webrtc-streamer 直接 RTSP 
 
 [ninja](https://github.com/gngpp/ninja)
 
+- [api 文档](https://github.com/gngpp/ninja/blob/main/doc/rest.http)
 
+  
 
 ```
 vscode 安装：rust-analyzer + CodeLLDB
