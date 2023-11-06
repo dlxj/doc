@@ -23521,6 +23521,19 @@ torchrun --nnodes=1 --nproc_per_node=8 train.py --config ./configs/i7B_sft.py --
 	# 启动训练
 
 
+/root/InternLM/tools/transformers/evl.py 新建文件
+from modeling_internlm import InternLMConfig, InternLMForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
+tokenizer = AutoTokenizer.from_pretrained("/root/hf", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("/root/hf", trust_remote_code=True).cuda()
+model = model.eval()
+response, history = model.chat(tokenizer, "hello", history=[])
+print(response)
+	# 实测正常
+	# ~/InternLM# export PYTHONPATH=$PWD:$PYTHONPATH
+	# 在 InternLM 根目录执行这一句它才不错
+
+
 ```
 
 

@@ -525,6 +525,14 @@ pm2 resurrect // 重启备份的所有项目
 ```python
 export PYTHONPATH=/root/flask_server/server_venv/lib/python3.8/site-packages
 export PYTHONPATH=/root/anaconda3/lib/python3.8/site-packages
+
+# see nodejs summary.md -> internlm
+python tools/transformers/convert2hf.py --src_folder /root/saved/100 --tgt_folder hf_ckpt/ --tokenizer ./tools/V7_sft.model
+	# 转成 hf 格式
+	# https://github.com/InternLM/InternLM/issues/107
+		# ~/InternLM# export PYTHONPATH=$PWD:$PYTHONPATH
+		# 在 InternLM 根目录执行这一句它才不错
+
 ```
 
 #### 打印 site-packages 路径
