@@ -28111,6 +28111,9 @@ cd ChatGPT-to-API && \
 go build && \
 ./freechatgpt
 
+export SERVER_HOST="0.0.0.0"
+	# 改监听地址
+
 {"echoplayorgg@gmail.com":{"token":"xxx","puid":"user-xxx"}}
 	# har + access_tokens.json 整好
 	# 正常启动后会生成 access_tokens.json
@@ -28120,9 +28123,13 @@ curl 127.0.0.1:8080/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer NONEED" \
   -d '{
-    "model": "gpt-4",
-    "messages": [{"role": "user", "content": "你会说中文吗"}]
-  }'
+     "model": "gpt-4",
+     "messages": [{"role": "user", "content": "你会说中文吗"}],
+     "temperature": 0.7
+   }'
+	# 成功请求
+
+
 
 ```
 
