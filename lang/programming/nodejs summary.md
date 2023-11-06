@@ -28239,9 +28239,44 @@ Visual Studio 2022
   /mnt/huggingface/ninja/HAR/chat.openai.com.har
   	# vscode 单步调试 main.rs 见后面的 vscode launch.json
   
+  http://xxx.77:7999/har/upload
+  	# 上传 HAR 接口
+  
   xxx.xxx.xxx.77:7999
   	# 直接打开前端使用
   	
+  http://chat.openai.com/api/auth/session
+      # 这里拿 access_token	
+  
+  
+  curl --location --request POST 'http://209.141.34.77:7999/backend-api/conversation' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: text/event-stream' \
+  --header 'Authorization: Bearer 这里填access_token' \
+  --data-raw '{
+    "action": "next",
+    "messages": [
+      {
+        "id": "02cb22be-4839-455a-9a39-f23968219cef",
+        "author": {
+          "role": "user"
+        },
+        "content": {
+          "content_type": "text",
+          "parts": [
+            "new conversation"
+          ]
+        },
+        "metadata": {}
+      }
+    ],
+    "model": "gpt-4",
+    "parent_message_id": "02cb22be-4839-455a-9a39-f23968219cef",
+    "timezone_offset_min": -480,
+    "history_and_training_disabled": false
+  }'
+  
+  	# 成功请求
   
   ```
 
