@@ -28278,12 +28278,22 @@ Visual Studio 2022
   }'
   
   	# 流式请求有回应，但是有问题。请研究它自带的网页版，它是能正常回答的，还需要构造额外的参数
+  
+  vi /etc/nginx/conf.d/gp4_browser_8080.conf
+  	# 做了 nginx 反代，8880 -> 7999
   	
+  http://echoxxxx.com:8880
+  	# 套了 cf ，免魔法访问 
+  	
+  
   换 IP 。把不能用的 token 放到 https://chat1.zhile.io/ 试试，看看能否正常使用。
   高危 IP+高危帐号 =》禁止
   高危 IP+低危帐号 =》允许
   低危 IP+高危帐号 =》允许	
   	
+  	
+  	
+  
   
   ```
 
