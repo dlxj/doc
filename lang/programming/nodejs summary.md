@@ -28140,7 +28140,8 @@ curl 127.0.0.1:8080/v1/chat/completions \
   -d '{
      "model": "gpt-4",
      "messages": [{"role": "user", "content": "你会说中文吗"}],
-     "temperature": 0.7
+     "temperature": 0.7,
+     "stream": true
    }'
    	# 流式输出好像不太行
 
