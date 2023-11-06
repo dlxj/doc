@@ -28228,6 +28228,23 @@ Visual Studio 2022
 
 - [api 文档](https://github.com/gngpp/ninja/blob/main/doc/rest.http)
 
+  ```
+  f12 ->网络标签 ->下面一行点"保留日志" ->登录 -> 选中这个接口
+  https://tcr9i.chat.openai.com/fc/gt2/public_key/35536E1E-65B4-4D96-9D97-6ADB7EFF8147
+  
+  -> 点上面的 "导出HAR" 按钮 -> 得到 chat.openai.com.har
+  
+  使用这个参数启动 ninja
+  ninja run --arkose-chat4-har-file 
+  /mnt/huggingface/ninja/HAR/chat.openai.com.har
+  	# vscode 单步调试 main.rs 见后面的 vscode launch.json
+  
+  xxx.xxx.xxx.77:7999
+  	# 直接打开前端使用
+  	
+  
+  ```
+
   
 
 ```
@@ -28290,7 +28307,9 @@ ninja/src/main.rs 成功单步调式
                 }
             },
             "args": [
-                "run"
+                "run",
+                "--arkose-chat4-har-file",
+                "/mnt/huggingface/ninja/HAR/chat.openai.com.har"
             ],
             "cwd": "${workspaceFolder}"
         },
