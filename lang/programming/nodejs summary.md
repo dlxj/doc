@@ -23460,7 +23460,9 @@ torchrun --nnodes=1 --nproc_per_node=1 train.py --config ./configs/i7B_sft.py --
 
 python tools/transformers/convert2hf.py --src_folder /root/saved/100 --tgt_folder hf_ckpt/ --tokenizer ./tools/V7_sft.model
 	# 转成 hf 格式
-
+	# https://github.com/InternLM/InternLM/issues/107
+		# ~/InternLM# export PYTHONPATH=$PWD:$PYTHONPATH
+		# 在 InternLM 根目录执行这一句它才不错
 
 cd /root/autodl-tmp && \
 git clone https://huggingface.co/internlm/internlm-chat-7b-v1_1
