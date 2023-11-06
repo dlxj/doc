@@ -28249,6 +28249,7 @@ Visual Studio 2022
       # 这里拿 access_token	
   
   
+  see postman -> rust_ninja_chatgpt 
   curl --location --request POST 'http://209.141.34.77:7999/backend-api/conversation' \
   --header 'Content-Type: application/json' \
   --header 'Accept: text/event-stream' \
@@ -28276,7 +28277,7 @@ Visual Studio 2022
     "history_and_training_disabled": false
   }'
   
-  	# 成功请求
+  	# 流式请求有回应，但是有问题。请研究它自带的网页版，它是能正常回答的，还需要构造额外的参数
   
   ```
 
