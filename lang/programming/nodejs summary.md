@@ -28202,6 +28202,10 @@ webrtc-stream 组件，https://github.com/mpromonet/webrtc-streamer 直接 RTSP 
 
 
 
+Visual Studio 2022
+
+
+
 ## Rust Monads
 
 [Rust语言圣经](https://course.rs/about-book.html)
@@ -28232,6 +28236,8 @@ vscode 安装：rust-analyzer + CodeLLDB
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 	# 安装 rust 环境
 cargo --version
+
+cd /mnt/huggingface
 
 git clone https://huggingface.co/datasets/dlxjj/ninja
 	# pandora 的开源替代品
