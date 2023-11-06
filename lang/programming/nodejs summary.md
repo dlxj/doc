@@ -28129,7 +28129,20 @@ curl 127.0.0.1:8080/v1/chat/completions \
    }'
 	# 成功请求
 
+
+
 {"id":"chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK","object":"chat.completion","created":0,"model":"gpt-3.5-turbo-0301","usage":{"prompt_tokens":0,"completion_tokens":0,"total_tokens":0},"choices":[{"index":0,"message":{"role":"assistant","content":"会的，我可以用中文回答问题。请随时告诉我您的问题或需求。"},"finish_reason":null}]}
+
+curl 127.0.0.1:8080/v1/chat/completions \
+  -H "Content-Type: text/event-stream" \
+  -H "Connection: keep-alive" \
+  -H "Authorization: Bearer NONEED" \
+  -d '{
+     "model": "gpt-4",
+     "messages": [{"role": "user", "content": "你会说中文吗"}],
+     "temperature": 0.7
+   }'
+   	# 流式输出好像不太行
 
 
 ```
