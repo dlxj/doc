@@ -28070,7 +28070,7 @@ dnf install -y golang
 
 
 
-### [HAR文件池](https://github.com/xqdoo00o/ChatGPT-to-API/blob/master/README_ZH.md#har文件池)
+- [HAR文件池](https://github.com/xqdoo00o/ChatGPT-to-API/blob/master/README_ZH.md#har文件池) 必须
 
 当前登录账号，使用GPT-4模型以及大部分GPT-3.5模型，均需要配置HAR文件（.har后缀名的文件）以完成captcha验证。
 
@@ -28080,12 +28080,41 @@ dnf install -y golang
 
 
 
+- access_tokens.json 必须
+
+  ```
+  {
+      "echoxxxgg@gmail.com": [
+          {
+              "Name": "__Secure-next-auth.session-token",
+              "Value": "这里填 token",
+              "Path": "/",
+              "Domain": "",
+              "Expires": "0001-01-01T00:00:00Z",
+              "MaxAge": 0,
+              "Secure": true,
+              "HttpOnly": true,
+              "SameSite": 2,
+              "Unparsed": null
+          }
+      ]
+  }
+  ```
+
+  
+
+
+
 ```
 git clone https://github.com/xqdoo00o/ChatGPT-to-API && \
 cd ChatGPT-to-API && \
 go build && \
 ./freechatgpt
 
+{"echoplayorgg@gmail.com":{"token":"xxx","puid":"user-xxx"}}
+	# har + access_tokens.json 整好
+	# 正常启动后会生成 access_tokens.json
+	
 
 curl 127.0.0.1:8080/v1/chat/completions \
   -H "Content-Type: application/json" \
