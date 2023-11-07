@@ -2930,6 +2930,12 @@ http://127.0.0.1:7999/backend-api/
   C:\Users\Administrator\.gitconfig
   	# 代理在这 
   	
+  [http]
+  	proxy = http://127.0.0.1:57882
+  [https]
+  	proxy = https://127.0.0.1:57882
+  	# 实测有效，必须不能指定 huggingface，全部走代理才行 	
+  	
   ```
 
   
@@ -2941,8 +2947,22 @@ git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datas
 	
 	git clone -c http.proxy="socks5h://127.0.0.1:57882" https://huggingface.co/datasets/dlxjj/InternLM-SFT
 	
-git config --global http.https://huggingface.co.proxy socks5h://127.0.0.1:1080
-	# 针对 huggingface 设置全局代理
+git config --global http.https://huggingface.co.proxy socks5://127.0.0.1:57882
+git config --global https.https://huggingface.co.proxy socks5://127.0.0.1:57882
+	# 实测不可行，必须不能指定 huggingface，全部走代理才行
+
+
+git config --global http.proxy socks5://127.0.0.1:57882
+git config --global https.proxy socks5://127.0.0.1:57882
+	# windows 针对 huggingface 设置全局代理
+
+	C:\Users\Administrator\.gitconfig
+[http]
+	proxy = http://127.0.0.1:57882
+[https]
+	proxy = https://127.0.0.1:57882
+	# 实测有效，必须不能指定 huggingface，全部走代理才行 	
+	
 
 git config --global http.https://huggingface.co.proxy socks5h://127.0.0.1:57882
 
