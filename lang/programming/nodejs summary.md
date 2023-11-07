@@ -2676,6 +2676,7 @@ cat /etc/hosts
 https://sites.ipaddress.com/github.com/
 
 140.82.112.3 github.com
+18.172.134.4 huggingface.co
 185.199.108.153 pytorch.org
 	# 实测有用
 	# ban ip 应该就没用了
@@ -2922,8 +2923,12 @@ http://127.0.0.1:7999/backend-api/
 git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datasets/dlxjj/transformer
 	# 能行
 	
+	git clone -c http.proxy="socks5h://127.0.0.1:57882" https://huggingface.co/datasets/dlxjj/InternLM-SFT
+	
 git config --global http.https://huggingface.co.proxy socks5h://127.0.0.1:1080
 	# 针对 huggingface 设置全局代理
+
+git config --global http.https://huggingface.co.proxy socks5h://127.0.0.1:57882
 
 git config --global --unset http.https://huggingface.co.proxy
 	# 取消代理
@@ -3179,9 +3184,19 @@ INBOX on //in
 
 put /mnt/huggingface/pythia-1.4b-deduped
 	# 上传本地文件夹到网盘
+	# put /mnt/huggingface/InternLM-SFT
 
 get 
 	# 从网盘下载
+
+
+sync --help
+	# 同步文件夹
+
+sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
+	# 成功添加同步，原理：.77 同步到 mega,  mega 同步到 windows ，
+	# 或着反向
+	# sync localpath remotepath 
 
 
 ```
@@ -23063,7 +23078,7 @@ vLLM – 伯克利推理
 
 [InternLM-20B 在线使用](https://zhuanlan.zhihu.com/p/658368644)
 
-[分词器](https://github.com/InternLM/InternLM/issues/340)
+[分词器](https://github.com/InternLM/InternLM/issues/340) [bug](https://github.com/InternLM/InternLM/pull/342)
 
 [nvidia-docker 先装这个](https://www.codewithgpu.com/docs/nvidia-docker/)
 
@@ -23079,6 +23094,8 @@ vLLM – 伯克利推理
   ```
 
   
+
+response.decode('utf-8')
 
 
 
