@@ -2924,6 +2924,12 @@ http://127.0.0.1:7999/backend-api/
 
 - ```
   win图标旁搜索 Credential Manager -> 删掉 huggingface
+  
+  C:\Users\Administrator\.git-credentials
+  	# 密码在这
+  C:\Users\Administrator\.gitconfig
+  	# 代理在这 
+  	
   ```
 
   
