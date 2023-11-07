@@ -28760,6 +28760,10 @@ har跟账号没有任何关系，只是一个浏览器的特征
 
 [Windows下Clang的简单使用](https://zhuanlan.zhihu.com/p/380290758)
 
+[如何优雅的在 Windows 上使用 LLVM Pass 插件进行代码混淆](https://bbs.kanxue.com/thread-272346.htm) clang.dll
+
+[Building-Zig-on-Windows](https://github.com/ziglang/zig/wiki/Building-Zig-on-Windows)  它有 clang.dll ?
+
 ```
 https://github.com/llvm/llvm-project/releases
 	# LLVM-17.0.4-win64.exe
