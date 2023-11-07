@@ -28758,6 +28758,8 @@ har跟账号没有任何关系，只是一个浏览器的特征
 
 #### for windows
 
+[Windows下Clang的简单使用](https://zhuanlan.zhihu.com/p/380290758)
+
 ```
 https://github.com/llvm/llvm-project/releases
 	# LLVM-17.0.4-win64.exe
