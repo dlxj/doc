@@ -28756,6 +28756,18 @@ har跟账号没有任何关系，只是一个浏览器的特征
 
 
 
+#### for windows
+
+```
+https://github.com/llvm/llvm-project/releases
+	# LLVM-17.0.4-win64.exe
+
+```
+
+
+
+
+
 ## C Monads
 
 [C Monads](https://gist.github.com/lukechampine/c460fb2754ef0a7f7652874d9f9ed678)
