@@ -28767,6 +28767,15 @@ har跟账号没有任何关系，只是一个浏览器的特征
 ```
 https://github.com/llvm/llvm-project/releases
 	# LLVM-17.0.4-win64.exe
+	# 它没有 clang.dll
+
+visual studio installer -> 修改 -> 单个组件 -> 搜索 clang 
+	-> 两个都装上
+	
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\Llvm\x64\bin\libclang.dll
+	# 在这里
+
+
 
 ```
 
