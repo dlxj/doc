@@ -2918,6 +2918,10 @@ http://127.0.0.1:7999/backend-api/
 
 [Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
 
+[cli doc](https://huggingface.co/docs/huggingface_hub/main/guides/cli) 
+
+[remove-credentials-from-git-windows](https://linuxhint.com/remove-credentials-from-git-windows/)
+
 ```
 
 git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datasets/dlxjj/transformer
