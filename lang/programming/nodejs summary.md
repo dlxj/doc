@@ -2922,6 +2922,12 @@ http://127.0.0.1:7999/backend-api/
 
 [remove-credentials-from-git-windows](https://linuxhint.com/remove-credentials-from-git-windows/)
 
+- ```
+  win图标旁搜索 Credential Manager -> 删掉 huggingface
+  ```
+
+  
+
 ```
 
 git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datasets/dlxjj/transformer
