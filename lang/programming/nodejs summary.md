@@ -28354,6 +28354,10 @@ Visual Studio 2022
   	# 套了 cf ，免魔法访问 
   	
   
+  huggingface\ninja\openai\src\serve\mod.rs
+  	# 入口点可能在这里 
+  	
+  
   换 IP 。把不能用的 token 放到 https://chat1.zhile.io/ 试试，看看能否正常使用。
   高危 IP+高危帐号 =》禁止
   高危 IP+低危帐号 =》允许
@@ -28773,7 +28777,7 @@ visual studio installer -> 修改 -> 单个组件 -> 搜索 clang
 	-> 两个都装上
 	
 C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\Llvm\x64\bin\libclang.dll
-	# 在这里
+	# 在这里，装完以后 ninja 在 win10 正常跑起来了
 
 
 
