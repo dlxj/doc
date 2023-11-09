@@ -293,16 +293,25 @@ git reset --hard  451880c
 2018 年 4 月期间，Junio Hamano 提交的但未合并的测试文件  
 > $ git log --pretty="%h - %s" --author=gitster --since="2018-04-01" --before="2018-05-01" --no-merges -- t/  
 
+**解决冲突**  [u](https://juejin.cn/post/6873035040758956046)
 
-**解决冲突**  
 > 冲突标记  
-<<<<<<<与=======之间是我的修改  
-=======与>>>>>>>之间是别人的修改    
-**强制提交**  
-git push origin master -f     
-**完全覆盖本地**    
-git checkout .  
-git pull  
+> <<<<<<<与=======之间是我的修改  
+> =======与>>>>>>>之间是别人的修改    
+> **强制提交**  
+> git push origin master -f     
+> **完全覆盖本地**    
+> git checkout .  
+> git pull  
+>
+> ```
+> # 不行就用这个
+> git checkout -f && \
+> git clean -df && \
+> git pull
+> ```
+>
+> 
 
 p
 > git pull && \
