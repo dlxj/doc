@@ -23120,7 +23120,7 @@ vLLM – 伯克利推理
 
 [InternLM](https://github.com/InternLM/InternLM)
 
-- [高考题](https://github.com/OpenLMLab/GAOKAO-Bench)  [开源语料](https://opendatalab.org.cn/OpenDataLab/WanJuan1_dot_0)
+- [高考题](https://github.com/OpenLMLab/GAOKAO-Bench)  [开源语料](https://opendatalab.org.cn/OpenDataLab/WanJuan1_dot_0) [Label Studio 数据打标](https://zhuanlan.zhihu.com/p/661655147)
 
 - [xtuner 官方 lora 微调](https://github.com/InternLM/xtuner)
 
