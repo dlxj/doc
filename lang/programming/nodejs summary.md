@@ -23120,7 +23120,7 @@ vLLM – 伯克利推理
 
 [InternLM](https://github.com/InternLM/InternLM)
 
-- [高考题](https://github.com/OpenLMLab/GAOKAO-Bench)  [开源语料](https://opendatalab.org.cn/OpenDataLab/WanJuan1_dot_0) [Label Studio 数据打标](https://zhuanlan.zhihu.com/p/661655147)
+- [高考题](https://github.com/OpenLMLab/GAOKAO-Bench)  [开源语料](https://opendatalab.org.cn/OpenDataLab/WanJuan1_dot_0) [Label Studio 数据打标](https://zhuanlan.zhihu.com/p/661655147) [2](https://zhuanlan.zhihu.com/p/619033550)
 
 - [xtuner 官方 lora 微调](https://github.com/InternLM/xtuner)
 
@@ -23521,6 +23521,27 @@ parallel = dict(
 
 torchrun --nnodes=1 --nproc_per_node=1 train.py --config ./configs/i7B_sft.py --launcher "torch"
 	＃ 成功运行
+
+
+internlm/core/scheduler/no_pipeline_scheduler.py
+	batch_data, batch_size = engine.load_batch(data_iter)
+		# 不知道为什么 batch_size 是 4
+	
+
+InternLM/train.py
+            output, label, loss = trainer.execute_schedule(
+                batch, forward_only=False, return_loss=True, return_output_label=True
+            )
+            """
+                output:
+                    len():4
+                output[0]:
+                    shape:torch.Size([2048, 103168])
+            """
+            import sentencepiece as spm
+            sp_model = spm.SentencePieceProcessor(model_file='/root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model')
+
+            # output2 = sp_model.decode(output[0].tolist())
 
 
 python tools/transformers/convert2hf.py --src_folder /root/saved/100 --tgt_folder hf_ckpt/ --tokenizer ./tools/V7_sft.model
