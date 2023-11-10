@@ -23626,6 +23626,39 @@ SAVE_CKPT_FOLDER
 
 
 
+#### vscode + torchrun
+
+```
+lanch.json
+{
+    // torchrun --nnodes=1 --nproc_per_node=1 train.py --config ./configs/i7B_sft.py --launcher torch
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "/root/miniconda3/envs/internlm-env/bin/torchrun",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--nnodes=1",
+                "--nproc_per_node=1",
+                "train.py",
+                "--config",
+                "./configs/i7B_sft.py",
+                "--launcher",
+                "torch"
+            ]
+        }
+    ]
+}
+```
+
+
+
+
+
 ### sft nlpp
 
 ```
