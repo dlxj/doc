@@ -2994,8 +2994,16 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create Finetune-ChatGLM2-6B --type dataset
 	# huggingface-cli repo create transformer --type dataset 
 	# huggingface-cli repo create ninja --type dataset 
+	# huggingface-cli repo create InternLM --type dataset 
 
 
+git config --global core.safecrlf true
+	# 拒绝提交包含混合换行符的文件
+
+git config --global core.autocrlf input
+	# 提交时转换为LF，签出时不转换
+git config --global core.autocrlf false
+	# 提交签出均不转换
 
 git lfs install && \
 git add . && \
@@ -6477,11 +6485,15 @@ a.replace(/(?<!\n)([a-z])/g, 'O')
 - < 前面必须匹配，但不吃掉它(consume)
 
   ```
-  a = `1\n2\n3\n`
+  a = 'aa\nbb\ncc'
+  a.match(/(?<=\n|^)([a-z]+)(?=\n|$)/g)
+  --> [ 'aa', 'bb', 'cc' ]
+  
+a = `1\n2\n3\n`
   a.replace(/(?<=\n)\d(?=\n)/g, 'OO')  # \d 的前面和后面必须是回车，但是不吃掉回车
   --> '1\nOO\nOO\n'
   ```
-
+  
    x(?!y)  否定式向后查找 x 后面不能是y
 
 
