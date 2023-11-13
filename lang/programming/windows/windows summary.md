@@ -170,6 +170,30 @@ see nodejs summary.md -> InternLM
 
 
 
+## windows10 限制 wsl2 内存占用
+
+```
+Windows + R -> 输入 %UserProfile% 运行进入用户文件夹 -> 新建文件 .wslconfig，加入以下内容：
+
+[wsl2]
+memory=1G # 限制最大使用内存
+swap=1G # 限制最大使用虚拟内存
+processors=1 # 限制最大使用cpu个数
+localhostForwarding=true
+
+cmd中运行命令关闭当前的子系统
+wsl --shutdown
+
+右击左下角"win" 按钮 -> 任务管理器 -> 可以看到 Vmmem 进程的内存点用
+	# 这就是 wsl2 的当前内存占用，它不是一下就占满的，会自动增长
+
+
+```
+
+
+
+
+
 
 
 # ISO下载
