@@ -2952,8 +2952,8 @@ git config --global https.https://huggingface.co.proxy socks5://127.0.0.1:57882
 	# 实测不可行，必须不能指定 huggingface，全部走代理才行
 
 
-git config --global http.proxy socks5://127.0.0.1:57882
-git config --global https.proxy socks5://127.0.0.1:57882
+git config --global http.proxy http://127.0.0.1:57882
+git config --global https.proxy https://127.0.0.1:57882
 	# windows 针对 huggingface 设置全局代理
 
 	C:\Users\Administrator\.gitconfig
@@ -6489,6 +6489,7 @@ a.replace(/(?<!\n)([a-z])/g, 'O')
   a.match(/(?<=\n|^)([a-z]+)(?=\n|$)/g)
   --> [ 'aa', 'bb', 'cc' ]
   
+
 a = `1\n2\n3\n`
   a.replace(/(?<=\n)\d(?=\n)/g, 'OO')  # \d 的前面和后面必须是回车，但是不吃掉回车
   --> '1\nOO\nOO\n'
@@ -6504,7 +6505,7 @@ a = `1\n2\n3\n`
 
 
 
-```
+  ```
 # 整个串必须在开头的位置或前面有\n接除\n外的其他空白
 # ^ 符号表示整个串的位置是出现在开头，它的前面没有任何其他的东西
 let s = `#abc #def
