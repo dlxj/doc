@@ -2822,9 +2822,7 @@ yum update --allowerasing
 
 [lightsocks-nodejs ](https://github.com/chrisyer/lightsocks-nodejs) [你也能写个 Shadowsocks](https://github.com/gwuhaolin/blog/issues/12)
 
-```
-https://github.com/chrisyer/lightsocks-nodejs
-```
+
 
 
 
