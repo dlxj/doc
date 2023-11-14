@@ -2721,6 +2721,10 @@ netch 模式选 Bypass LAN 就是全局模式
 
 
 
+### 调试利器 SSH隧道
+
+[调试利器-SSH隧道](https://github.com/gwuhaolin/blog/issues/11)
+
 
 
 ### SSH隧道代理
@@ -6788,6 +6792,15 @@ let not_chinese_sequence = Array.from(s.matchAll(/[^\u3007\u2E80-\u2FFF\u3100-\u
 
 
 # String
+
+
+
+## encode
+
+```
+# 二进制数据
+line = str.encode(json.dumps({"tokens": token_ids}) + "\n")
+```
 
 
 
