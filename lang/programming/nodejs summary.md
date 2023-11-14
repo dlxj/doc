@@ -2818,6 +2818,18 @@ yum update --allowerasing
 
 
 
+### lightsocks-nodejs 
+
+[lightsocks-nodejs ](https://github.com/chrisyer/lightsocks-nodejs) [你也能写个 Shadowsocks](https://github.com/gwuhaolin/blog/issues/12)
+
+```
+https://github.com/chrisyer/lightsocks-nodejs
+```
+
+
+
+
+
 ## pandora
 
 [新地址](https://github.com/zhile-io/pandora)
@@ -6489,6 +6501,7 @@ a.replace(/(?<!\n)([a-z])/g, 'O')
   a.match(/(?<=\n|^)([a-z]+)(?=\n|$)/g)
   --> [ 'aa', 'bb', 'cc' ]
   
+  ```
 
 a = `1\n2\n3\n`
   a.replace(/(?<=\n)\d(?=\n)/g, 'OO')  # \d 的前面和后面必须是回车，但是不吃掉回车
@@ -6560,7 +6573,7 @@ arr.forEach((match)=>{
 
 
 
-```javascript
+​```javascript
 var strs = fs.readFileSync(fdoc, "utf8")
 
 strs = strs.replace(/\*\*\*\*\*\*\*\*\*\*/g, '').replace(/\r\n/g, '\n').replace(/\t/g, '  ').trim()
