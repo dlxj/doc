@@ -23405,6 +23405,33 @@ sudo sh cuda_11.7.0_515.43.04_linux.run
 
 [How to display output results during the training process](https://github.com/InternLM/InternLM/issues/501)
 
+- ```
+              output, label, loss = trainer.execute_schedule(
+                  batch, forward_only=False, return_loss=True, return_output_label=True
+              )
+              """
+                  output:
+                      len():4
+                  output[1]:
+                      shape:torch.Size([2048, 103168])
+              """
+  
+              from tools.transformers.tokenization_internlm import InternLMTokenizer as InternLMTokenizer
+              tokenizer = InternLMTokenizer(vocab_file='/root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model')
+              
+              tokens = []
+              for i in range(2048):
+              	probs = output[0][i].tolist()
+              	max_val = max(probs)
+              	idx = probs.index(max_val)
+              	tokens += tokenizer.convert_ids_to_tokens([idx])
+  
+              result = "".join(tokens)
+              print(result)
+  ```
+
+  
+
 ```
 
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
