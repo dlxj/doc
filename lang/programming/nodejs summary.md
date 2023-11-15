@@ -3009,6 +3009,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create transformer --type dataset 
 	# huggingface-cli repo create ninja --type dataset 
 	# huggingface-cli repo create InternLM --type dataset 
+	# huggingface-cli repo create chatglm-tiny --type dataset	
+	
 
 
 git config --global core.safecrlf true
@@ -23598,11 +23600,14 @@ InternLM/train.py
             # output2 = sp_model.decode(output[0].tolist())
 
 
-python tools/transformers/convert2hf.py --src_folder /root/saved/100 --tgt_folder hf_ckpt/ --tokenizer ./tools/V7_sft.model
+InternLM 目录执行:
+export PYTHONPATH=$PWD:$PYTHONPATH && \
+python tools/transformers/convert2hf.py --src_folder /root/autodl-tmp/saved/1000 --tgt_folder  /root/autodl-tmp/hf_1000 --tokenizer  /root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model
 	# 转成 hf 格式
 	# https://github.com/InternLM/InternLM/issues/107
 		# ~/InternLM# export PYTHONPATH=$PWD:$PYTHONPATH
 		# 在 InternLM 根目录执行这一句它才不错
+
 
 cd /root/autodl-tmp && \
 git clone https://huggingface.co/internlm/internlm-chat-7b-v1_1
@@ -25413,7 +25418,19 @@ conda env remove -n kan
 
 #### chatglm-tiny
 
-[chatglm-tiny 从头开始训练一个chatglm小模型](https://zhuanlan.zhihu.com/p/642355086)
+[chatglm-tiny 从头开始训练一个chatglm小模型](https://zhuanlan.zhihu.com/p/642355086) [code](https://github.com/xinsblog/chatglm-tiny)
+
+
+
+```
+
+git clone https://github.com/xinsblog/chatglm-tiny.git && \
+cd chatglm-tiny
+	# 实测 3090 正常训练和推理
+
+```
+
+
 
 
 
