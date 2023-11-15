@@ -23415,7 +23415,7 @@ sudo sh cuda_11.7.0_515.43.04_linux.run
                   output[1]:
                       shape:torch.Size([2048, 103168])
               """
-  
+                
               from tools.transformers.tokenization_internlm import InternLMTokenizer as InternLMTokenizer
               tokenizer = InternLMTokenizer(vocab_file='/root/autodl-tmp/internlm-chat-7b-v1_1/tokenizer.model')
               
@@ -23425,7 +23425,7 @@ sudo sh cuda_11.7.0_515.43.04_linux.run
               	max_val = max(probs)
               	idx = probs.index(max_val)
               	tokens += tokenizer.convert_ids_to_tokens([idx])
-  
+                
               result = "".join(tokens)
               print(result)
   ```
@@ -25410,6 +25410,10 @@ conda env remove -n kan
 ```
 
 
+
+#### chatglm-tiny
+
+[chatglm-tiny 从头开始训练一个chatglm小模型](https://zhuanlan.zhihu.com/p/642355086)
 
 
 
