@@ -25487,9 +25487,14 @@ cd chatglm-tiny
 
 ### RWKV 4 
 
+- [instruction-following version](https://github.com/BlinkDL/RWKV-LM/issues/55)
+
 ```
 conda create -n rwkv pip python=3.10
 conda activate rwkv
+
+
+pip install pytorch-lightning==1.9.5 
 
 
 ```
@@ -26513,6 +26518,10 @@ True
 ```
 
 
+
+# TTS
+
+[tts-vue](https://github.com/LokerL/tts-vue)
 
 
 
