@@ -25488,15 +25488,17 @@ cd chatglm-tiny
 ### RWKV 4 
 
 - [instruction-following version](https://github.com/BlinkDL/RWKV-LM/issues/55)
+- [RWKV-infctx-trainer 任意长度](https://github.com/RWKV/RWKV-infctx-trainer)
 
 ```
 conda create -n rwkv pip python=3.10
 conda activate rwkv
 
+pip install ninja
 
 pip install pytorch-lightning==1.9.5 
 
-
+apt-get install ninja-build
 ```
 
 
