@@ -533,6 +533,13 @@ python tools/transformers/convert2hf.py --src_folder /root/saved/100 --tgt_folde
 		# ~/InternLM# export PYTHONPATH=$PWD:$PYTHONPATH
 		# 在 InternLM 根目录执行这一句它才不错
 
+        
+        
+# exec('from paddlespeech.cli.tts import TTSExecutor')  # 不知道为什么一定要这样导入 # 必须在全局范围执行，放函数里执行是不行的
+# TTSExecutor = locals()['TTSExecutor']   # 需要的符号已经在当前局部变量里面了，取出来用
+# runtts = TTSExecutor()
+
+        
 ```
 
 #### 打印 site-packages 路径
