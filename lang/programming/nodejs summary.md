@@ -3275,6 +3275,12 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 
 
+### [Cloudflare tunnel 实现内网穿透SSH,SMB](https://www.nanguoyu.com/cloudflare-tunnel-ssh-smb-web)
+
+
+
+
+
 ### [Cloudflare Tunnel内网穿透](https://bra.live/setup-home-server-with-cloudflare-tunnel/)
 
 [Cloudflare Pro SSH加速](https://hostloc.com/thread-674147-1-1.html)
@@ -25476,6 +25482,19 @@ cd chatglm-tiny
 内存占用100g左右
 
 ```
+
+
+
+### RWKV 4 
+
+```
+conda create -n rwkv pip python=3.10
+conda activate rwkv
+
+
+```
+
+
 
 
 
