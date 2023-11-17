@@ -194,6 +194,175 @@ wsl --shutdown
 
 
 
+# 内网穿透
+
+### frp windows远程桌面
+
+[使用frp实现windows远程桌面连接](https://blog.ligengxin.me/posts/frp-windows-remote/) [s](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_linux_amd64.tar.gz) [c](https://github.com/fatedier/frp/releases/download/v0.51.3/frp_0.51.3_windows_amd64.zip)
+
+[Frp-notes](https://github.com/onekb/Frp-notes)
+
+
+
+```
+# 服务端配置
+frps.ini
+[common]
+bind_port = 7000 # 服务器端口 客户端必须配置一样的端口
+vhost_http_port = 8880
+	# 8880 是客户端 api 接口
+
+# 客户端配置
+frpc.ini 
+[common]
+server_addr = 服务器ip
+server_port = 7000
+[web]
+type = http
+local_port = 8880
+custom_domains = 服务器ip
+	# 没有域名这里就填服务器ip
+
+实测 http://xxx.77:8880/searchExcel 能正常访问到内网的服务
+	
+
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389  # 远程桌面端口
+remote_port = 7004 #这个是远程桌面连接主机的时候输入的ip后加上的端口
+
+# 或者这样
+[RDP]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389
+remote_port = 7004
+
+# 或着开放 http 端口
+[web]
+type = http
+local_port = 8880
+custom_domains = 127.0.0.1
+	# 没有域名就先这样
+
+
+
+# 启动服务端
+./frps -c ./frps.ini
+
+# 启动客户端
+./frpc -c frpc.ini
+
+
+# 客户端开机自启 frp 
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 目录下写一个bat文件
+
+cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"  
+
+
+# 静默后台运行
++@echo off
++if "%1" == "h" goto begin
++mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit
++:begin
+cmd /k "cd /d D:\Downloads\frp_0.33.0_windows_amd64 && frpc -c frpc.ini"
+
+
+Windows 10/11 系统是可以开启 openssh server 的。
+
+
+
+```
+
+
+
+
+
+
+
+## 
+
+
+
+
+
+### frp linux ssh
+
+[safe](https://juejin.cn/post/7130640908298485768)
+
+```
+wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_amd64.tar.gz && \
+tar xvf frp_0.52.3_linux_amd64.tar.gz && \
+cd frp_0.52.3_linux_amd64
+
+# 服务端配置
+vi frps.ini
+[common]
+bind_port = 7000 # 服务器端口 客户端必须配置一样的端口
+
+./frps -c frps.ini
+
+
+# 客户端配置
+vi frpc.ini 
+[common]
+server_addr = 服务器ip
+server_port = 7000
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 222 #这个是远程 ssh 连接主机的时候输入的ip后加上的端口
+
+./frpc -c frpc.ini
+
+ssh root@服务器ip:222
+	# 这样连内网机器
+
+
+# 防断，服客两端都要设置
+修改 /etc/ssh/sshd_config ，ClientAliveInterval 30 ，ClientAliveCountMax 3.
+重启 sshd 服务，systemctl restart sshd
+退出重新登录 ssh
+
+
+我也一直用 frp 来连公司电脑，我真心劝你用 stcp 方式吧，不要嫌麻烦，安全比较重要，配置参考：
+​```
+[common]
+server_addr = xxx.com
+server_port = 8888
+token = xxxxxxxx
+
+## 被访问端
+[secret_rdp]
+type = stcp
+# 只有 sk 一致的用户才能访问到此服务
+sk = xxxxxxx
+local_ip = 127.0.0.1
+local_port = 3389
+
+## 访问端
+[secret_rdp_visitor]
+type = stcp
+# stcp 的访问者
+role = visitor
+# 要访问的 stcp 代理的名字
+server_name = secret_rdp
+sk = xxxxxxx
+# 绑定本地端口用于访问 SSH 服务
+bind_addr = 127.0.0.1
+bind_port = 13389
+​```
+
+
+```
+
+
+
+
+
 
 
 # ISO下载
