@@ -25531,6 +25531,22 @@ apt-get install ninja-build
 
 
 
+#### RWKV5
+
+```
+
+cd /root/RWKV-infctx-trainer/RWKV-v5
+
+python3 init_model.py --n_layer 6 --n_embd 512 --vocab_size 50277 --skip-if-exists ../model/L6-D512-neox-init.pth
+	# 初始化空权重
+
+
+
+
+```
+
+
+
 
 
 ### RWKV-Runner

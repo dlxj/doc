@@ -1298,6 +1298,9 @@ __all__ = ['Sampler', 'SequentialSampler', ... xxx ...]
 
 ```
 current_dir = os.path.dirname(os.path.abspath(__file__))
+
+SRC_DIR = os.path.dirname(os.path.realpath(__file__))
+
 ```
 
 

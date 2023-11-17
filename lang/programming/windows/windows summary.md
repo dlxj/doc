@@ -290,7 +290,7 @@ Windows 10/11 系统是可以开启 openssh server 的。
 
 ### frp linux ssh
 
-[safe](https://juejin.cn/post/7130640908298485768)
+[safe](https://juejin.cn/post/7130640908298485768) [2](https://scarletf.github.io/2021/02/01/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-FRP%E4%BB%A3%E7%90%86%E9%93%BE/)
 
 ```
 wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_amd64.tar.gz && \
