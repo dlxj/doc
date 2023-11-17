@@ -25489,7 +25489,7 @@ cd chatglm-tiny
 
 - [instruction-following version](https://github.com/BlinkDL/RWKV-LM/issues/55)
 - [RWKV-infctx-trainer 任意长度](https://github.com/RWKV/RWKV-infctx-trainer)
-- [干货训练多轮对话系统](https://github.com/BlinkDL/ChatRWKV/issues/118)
+- [干货训练多轮对话系统](https://github.com/BlinkDL/ChatRWKV/issues/118) [细](https://zhuanlan.zhihu.com/p/639629050)
 
 ```
 conda create -n rwkv pip python=3.10
