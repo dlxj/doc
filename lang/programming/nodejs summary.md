@@ -1907,6 +1907,10 @@ int main() {
 
 
 
+## vscode+colab
+
+[vscode+colab](https://github.com/amitness/colab-connect)
+
 
 
 ## vscode 权限错误
@@ -3009,7 +3013,9 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create transformer --type dataset 
 	# huggingface-cli repo create ninja --type dataset 
 	# huggingface-cli repo create InternLM --type dataset 
-	# huggingface-cli repo create chatglm-tiny --type dataset	
+	# huggingface-cli repo create chatglm-tiny --type dataset
+    # huggingface-cli repo create RWKV-v4 --type dataset
+    
 	
 
 
@@ -3092,6 +3098,27 @@ git config --global --unset http.https://github.com.proxy
 ### 自制GIT LFS服务
 
 [自行构建GIT LFS服务](https://zhuanlan.zhihu.com/p/511750788)
+
+
+
+### git lfs pull
+
+```
+
+version https://git-lfs.github.com/spec/v1
+oid sha256:bdd225c8380928ccaab2b677269066db80e06807fe0911d362df4d85d5c08afd
+size 1601
+	# 文件指针，需要替换为实际文件
+
+
+git lfs install && \
+git pull && \
+git lfs pull
+	# 这样拉一次，本地文件就正确了
+
+
+
+```
 
 
 
