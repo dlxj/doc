@@ -25534,17 +25534,17 @@ apt-get install ninja-build
 #### RWKV5
 
 ```
-
-cd /root/RWKV-infctx-trainer/RWKV-v5
+git clone https://github.com/RWKV/RWKV-infctx-trainer.git && \
+cd RWKV-infctx-trainer/RWKV-v5
 
 python3 init_model.py --n_layer 6 --n_embd 512 --vocab_size 50277 --skip-if-exists ../model/L6-D512-neox-init.pth
 	# 初始化空权重
 	
-conda create -n rwkv python=3.10 pip && \
-conda activate rwkv-infctx
+conda create -n rwkv python=3.10 pip -y && \
+conda activate rwkv
 
-conda install -y pytorch-cuda=11.8 -c pytorch -c nvidia && \
-conda install -y pytorch -c pytorch -c nvidia
+conda install -y pytorch-cuda=11.8 -c pytorch -c nvidia -y && \
+conda install -y pytorch==2.1.1 -c pytorch -c nvidia -y
 
 
 
