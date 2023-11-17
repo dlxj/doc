@@ -25539,7 +25539,12 @@ cd /root/RWKV-infctx-trainer/RWKV-v5
 
 python3 init_model.py --n_layer 6 --n_embd 512 --vocab_size 50277 --skip-if-exists ../model/L6-D512-neox-init.pth
 	# 初始化空权重
+	
+conda create -n rwkv python=3.10 pip && \
+conda activate rwkv-infctx
 
+conda install -y pytorch-cuda=11.8 -c pytorch -c nvidia && \
+conda install -y pytorch -c pytorch -c nvidia
 
 
 
