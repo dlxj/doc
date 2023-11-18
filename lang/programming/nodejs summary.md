@@ -25536,19 +25536,56 @@ apt-get install ninja-build
 ```
 git clone https://github.com/RWKV/RWKV-infctx-trainer.git && \
 cd RWKV-infctx-trainer/RWKV-v5
-
-python3 init_model.py --n_layer 6 --n_embd 512 --vocab_size 50277 --skip-if-exists ../model/L6-D512-neox-init.pth
-	# 初始化空权重
 	
 conda create -n rwkv python=3.10 pip -y && \
 conda activate rwkv
 
 conda install -y pytorch-cuda=11.8 -c pytorch -c nvidia -y && \
-conda install -y pytorch==2.1.1 -c pytorch -c nvidia -y
+conda install -y pytorch==2.1.1 -c pytorch -c nvidia -y && \
+python -m pip install lightning==2.0.5 deepspeed==0.10.0 && \
+python -c "import torch; print(torch.__version__)"
+
+
+python -m pip install datasets transformers && \
+python -m pip install ninja numexpr jsonargparse 'jsonargparse[signatures]' && \
+python -m pip install lm-dataformat ftfy sentencepiece tokenizers wandb & \
+python -m pip install papermill
+
+
+python3 init_model.py --n_layer 6 --n_embd 512 --vocab_size 50277 --skip-if-exists ./model/L6-D512-neox-init.pth
+	# 初始化空权重
+	# 成功
+
+python3 preload_datapath.py text.yaml
+
+
+```
 
 
 
 ```
+vi text.yaml
+trainer:
+  max_steps: 10
+  target_batch_size: 32
+model:
+  load_model: ./model/L6-D512-neox-init.pth
+  ctx_len: 1024
+  lr_init: 3e-4
+  bptt_learning: true
+  bptt_learning_range: -1
+data:
+  data_path: "./train_data"
+  source: "text"
+  source_data_dir: "./data"
+  tokenizer: neox
+  text_rechunk_size: 1024
+  test_split: 0.01
+  test_split_shuffle: false
+
+```
+
+
 
 
 
