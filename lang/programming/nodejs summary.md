@@ -2731,6 +2731,21 @@ netch 模式选 Bypass LAN 就是全局模式
 
 
 
+#### autodl 6006 端口服务
+
+```
+ssh -CNg -L 6006:127.0.0.1:6006 root@connect.beijinga.seetacloud.com -p 33243
+	# 输入密码回车后无任何其他输出既为正常
+
+打开 http://localhost:6006 访问自定义服务
+	
+
+```
+
+
+
+
+
 ### SSH隧道代理
 
 [利用SSH搭建隧道-流量伪装](https://zhuanlan.zhihu.com/p/561589204)
@@ -3014,8 +3029,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create ninja --type dataset 
 	# huggingface-cli repo create InternLM --type dataset 
 	# huggingface-cli repo create chatglm-tiny --type dataset
-    # huggingface-cli repo create RWKV-v4 --type dataset
-    
+    # huggingface-cli repo create RWKV-LM --type dataset
+    	# RWKV-v4 暂时只看这个，调通先
 	
 
 
@@ -3033,6 +3048,11 @@ git commit -m 'm' && \
 git lfs migrate import --everything && \
 git push
 	# 成功提交大文件
+
+
+git pull && git LFS pull
+	# 本地是文件指针时，可以这样恢复成实际文件
+	
 
 vi sync_huggingface.sh
 cd /mnt/huggingface/pandora && \
@@ -28532,6 +28552,8 @@ webrtc-stream 组件，https://github.com/mpromonet/webrtc-streamer 直接 RTSP 
 
 
 Visual Studio 2022
+
+
 
 
 
