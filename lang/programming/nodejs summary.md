@@ -25553,11 +25553,16 @@ python -m pip install papermill
 
 
 python3 init_model.py --n_layer 6 --n_embd 512 --vocab_size 50277 --skip-if-exists ./model/L6-D512-neox-init.pth
+
+python3 init_model.py --n_layer 3 --n_embd 512 --vocab_size 50277 --skip-if-exists ./model/L3-D512-neox-init.pth
 	# 初始化空权重
 	# 成功
 
 python3 preload_datapath.py text.yaml
-
+	# 成功生成训练数据
+	
+python3 lightning_trainer.py fit -c text.yaml
+	
 
 ```
 
