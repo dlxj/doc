@@ -25535,8 +25535,18 @@ cd chatglm-tiny
 ### RWKV 4 
 
 - [instruction-following version](https://github.com/BlinkDL/RWKV-LM/issues/55)
+
 - [RWKV-infctx-trainer 任意长度](https://github.com/RWKV/RWKV-infctx-trainer)
+
 - [干货训练多轮对话系统](https://github.com/BlinkDL/ChatRWKV/issues/118) [细](https://zhuanlan.zhihu.com/p/639629050)
+
+- [on windows](https://github.com/BlinkDL/RWKV-LM/issues/158)
+
+  - ```
+    Install VS2022 build tools (https://aka.ms/vs/17/release/vs_BuildTools.exe select Desktop C++). Reinstall CUDA 11.7 (install VC++ extensions). Run train.py in "x64 native tools command prompt".
+    ```
+
+    
 
 ```
 conda create -n rwkv pip python=3.10
@@ -25569,9 +25579,10 @@ apt-get install ninja-build
     sys.argv.append( 'deepspeed_stage_2' )
    		# 能正常运行
    	
+因为你的tokenizer是自己训练的。用 RWKV-v4/run.py 运行
+是的，只能在 ./RWKV-v4/run.py 中运行，但不能在 RWKV-v4neo/run.py中运行 ~~ ,自己训练的还要如果想要chat.py效果的话，估计有点棘手~~
+   	
 ```
-
-
 
 
 
