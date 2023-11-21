@@ -25629,7 +25629,8 @@ apt-get install ninja-build
             	# shape:torch.Size([12, 1024, 4447])
             
             loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
-            
+           # input 是概率值   target 是真实类别的 index
+           # 这个函数就是这样定义的
     
 ```
 
