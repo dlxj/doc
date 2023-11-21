@@ -1733,6 +1733,12 @@ args = vars(ap.parse_args())
 
 
 
+### 设置环境变量
+
+```
+os.environ['RWKV_FLOAT_MODE'] = 'fp32'
+```
+
 
 
 

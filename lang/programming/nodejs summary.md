@@ -25551,6 +25551,30 @@ apt-get install ninja-build
 
 
 
+#### RWKV-v4neo
+
+```
+	import sys
+    sys.argv.append( '--data_file' )
+    sys.argv.append( '/root/RWKV-LM/RWKV-v4neo/hongloumeng.txt' )
+    sys.argv.append( '--warmup_steps' )
+    sys.argv.append( '0' )
+    sys.argv.append( '--accelerator' )
+    sys.argv.append( 'gpu' )
+    sys.argv.append( '--devices' )
+    sys.argv.append( '1' )
+    sys.argv.append( '--precision' )
+    sys.argv.append( 'fp16' )
+    sys.argv.append( '--strategy' )
+    sys.argv.append( 'deepspeed_stage_2' )
+   		# 能正常运行
+   	
+```
+
+
+
+
+
 #### RWKV5
 
 ```
