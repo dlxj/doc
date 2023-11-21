@@ -2947,6 +2947,22 @@ http://127.0.0.1:7999/backend-api/
 
 
 
+####  PandoraNext
+
+[PandoraNext](https://github.com/pandora-next/deploy)
+
+
+
+```
+https://dash.pandoranext.com/
+	# 获取授权
+	
+```
+
+
+
+
+
 ## 抱抱脸 
 
 [Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
