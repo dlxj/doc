@@ -2954,9 +2954,20 @@ http://127.0.0.1:7999/backend-api/
 
 
 ```
+
+wget https://github.com/pandora-next/deploy/releases/download/v0.2.0/PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
+tar xvf PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
+cd PandoraNext-v0.2.0-linux-amd64-f1585a2
+
+
+
 https://dash.pandoranext.com/
 	# 获取授权
 	
+	
+curl -fLO "https://dash.pandoranext.com/data/xxxx/license.jwt"
+	
+
 ```
 
 
