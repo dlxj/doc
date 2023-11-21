@@ -25611,6 +25611,26 @@ apt-get install ninja-build
     	# 正常运行
     
     
+    
+    /root/RWKV-LM/RWKV-v5/src/model.py
+    	# from torch.nn import functional as F
+    	# 483 行
+            idx, targets = batch
+            	# tensor
+            	# device:device(type='cuda', index=0)
+            	# dtype:torch.int64
+            	# shape:torch.Size([12, 1024])
+            	# 两向量的维度一样的
+            	
+            logits = self(idx)
+            	# tensor
+            	# device:device(type='cuda', index=0) 
+            	# dtype:torch.bfloat16
+            	# shape:torch.Size([12, 1024, 4447])
+            
+            loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
+            
+    
 ```
 
 
