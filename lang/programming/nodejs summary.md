@@ -25582,13 +25582,45 @@ apt-get install ninja-build
 因为你的tokenizer是自己训练的。用 RWKV-v4/run.py 运行
 是的，只能在 ./RWKV-v4/run.py 中运行，但不能在 RWKV-v4neo/run.py中运行 ~~ ,自己训练的还要如果想要chat.py效果的话，估计有点棘手~~
    	
+   	
+/root/RWKV-LM/RWKV-v4neo/out/rwkv-15.pth
+	# 生成的输出用 kv4 运行试试
+	
 ```
 
 
 
 #### RWKV5
 
+
+
 ```
+    import sys
+    sys.argv.append( '--data_file' )
+    sys.argv.append( '/root/RWKV-LM/RWKV-v4neo/hongloumeng.txt' )
+    sys.argv.append( '--warmup_steps' )
+    sys.argv.append( '0' )
+    sys.argv.append( '--accelerator' )
+    sys.argv.append( 'gpu' )
+    sys.argv.append( '--devices' )
+    sys.argv.append( '1' )
+    sys.argv.append( '--precision' )
+    sys.argv.append( 'bf16' )
+    sys.argv.append( '--strategy' )
+    sys.argv.append( 'deepspeed_stage_2' )
+    	# 正常运行
+    
+    
+```
+
+
+
+
+
+
+
+```
+# 无限版本会爆显存
 git clone https://github.com/RWKV/RWKV-infctx-trainer.git && \
 cd RWKV-infctx-trainer/RWKV-v5
 	
