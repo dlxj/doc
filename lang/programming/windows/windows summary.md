@@ -447,6 +447,16 @@ chkdsk /f E:
 
 
 
+
+
+# ext4 驱动 for windows
+
+[Ext4Fsd](https://github.com/bobranten/Ext4Fsd)
+
+[linuxfs-windows 收费](https://www.paragon-software.com/home/linuxfs-windows/)
+
+
+
 # WSL安装出错
 
 [关闭Hyper-V](https://www.ubackup.com/enterprise-backup/disable-hyper-v.html) 并没有开
