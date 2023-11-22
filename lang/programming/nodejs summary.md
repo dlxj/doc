@@ -2943,6 +2943,354 @@ done
 
 ```
 http://127.0.0.1:7999/backend-api/
+
+./target/debug/ninja run --arkose-chat4-har-file /mnt/huggingface/ninja/HAR/chat.openai.com.har
+
+
+launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'ninja'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=ninja",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "ninja",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "run",
+                "--arkose-chat4-har-file",
+                "E:/huggingface/ninja/HAR/chat.openai.com.har"
+                //"/mnt/huggingface/ninja/HAR/chat.openai.com.har"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'ninja'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=ninja",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "ninja",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'chatgpt'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=chatgpt",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "chatgpt",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'chatgpt'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=chatgpt",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "chatgpt",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'auth'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=auth",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "auth",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'auth'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=auth",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "auth",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'crypto'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=crypto",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "crypto",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'crypto'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=crypto",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "crypto",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'funcaptcha'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=funcaptcha",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "funcaptcha",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'funcaptcha'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=funcaptcha",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "funcaptcha",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'har'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=har",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "har",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'har'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=har",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "har",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'pow'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=pow",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "pow",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'pow'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=pow",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "pow",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'print_image'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=print_image",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "print_image",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'print_image'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=print_image",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "print_image",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'upgrade'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=upgrade",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "upgrade",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'upgrade'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=upgrade",
+                    "--package=ninja"
+                ],
+                "filter": {
+                    "name": "upgrade",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
 ```
 
 
