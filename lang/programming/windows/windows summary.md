@@ -455,6 +455,16 @@ chkdsk /f E:
 
 [linuxfs-windows 收费](https://www.paragon-software.com/home/linuxfs-windows/)
 
+```
+
+Linux File Systems for Windows by Paragon Software
+
+key: see echodict/README.md 
+
+```
+
+
+
 
 
 # WSL安装出错
