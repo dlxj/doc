@@ -3306,7 +3306,10 @@ launch.json
 wget https://github.com/pandora-next/deploy/releases/download/v0.2.0/PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 tar xvf PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 cd PandoraNext-v0.2.0-linux-amd64-f1585a2
+	# linux
 
+https://github.com/pandora-next/deploy/releases/download/v0.2.2/PandoraNext-v0.2.2-windows-amd64-8718383.zip
+	# win10
 
 
 https://dash.pandoranext.com/
@@ -3314,7 +3317,40 @@ https://dash.pandoranext.com/
 	
 	
 curl -fLO "https://dash.pandoranext.com/data/xxxx/license.jwt"
-	
+	# 放 netx 根目录
+
+vi tokens.json
+{
+  "xxx@gmail.com": {
+    "token": "",
+    "password": "12345",
+    "show_user_info": true,
+    "plus": true
+  }
+}
+
+vi config.json
+{
+  "bind": "0.0.0.0:8181",
+  "timeout": 600,
+  "proxy_url": "",
+  "public_share": false,
+  "site_password": "",
+  "setup_password": "",
+  "whitelist": null
+}
+
+./PandoraNext
+	# 成功运行
+
+xx.xx.xx.77:8181
+	# 成功显示前端
+
+https://ai.fakeopen.com/auth1
+	# 这里直接用　gpt4 账号密码登录, 得到 token 填到　tokens.json　账号下面
+
+xxx@gmail.com
+	# 用账号，密码 12345 成功登录前端，选 GPT4 能正常聊天　
 
 ```
 
@@ -3406,6 +3442,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create chatglm-tiny --type dataset
     # huggingface-cli repo create RWKV-LM --type dataset
     	# RWKV-v4 暂时只看这个，调通先
+    # huggingface-cli repo create chat_with_chatgpt --type dataset
+    
 	
 
 
@@ -23196,6 +23234,8 @@ sudo -l -U i
 
 [Meta最新模型LLaMA细节与代码详解](https://blog.csdn.net/weixin_44826203/article/details/129255185)
 
+[baby-llama2-chinese](https://github.com/DLLXW/baby-llama2-chinese)
+
 
 
 ## WSL2 GPU
@@ -26083,7 +26123,7 @@ data:
 
 ### RWKV-Runner
 
-[RWKV-Runner](https://github.com/josStorer/RWKV-Runner) 立等可取
+[RWKV-Runner](https://github.com/josStorer/RWKV-Runner) 立等可取 [rust 推理](https://github.com/cgisky1980/ai00_rwkv_server_)
 
 [训练部署](https://zhuanlan.zhihu.com/p/616351661) [2](https://github.com/josStorer/RWKV-Runner/issues/122)
 
@@ -28285,6 +28325,10 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 
 
 
+## ChatGPT-AutoChat
+
+
+
 see echodict\pandora\chat_with_chatgpt.py
 
 ```
@@ -28377,6 +28421,22 @@ for element in inputElements:
 print(results)
 i+=1
 sleep(5)
+```
+
+
+
+## gptauto
+
+```
+git clone https://github.com/st1vms/gptauto.git
+ 
+pip install selenium undetected-chromedriver screeninfo
+
+https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-win64.zip
+
+
+
+ 
 ```
 
 
