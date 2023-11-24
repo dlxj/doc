@@ -3381,6 +3381,12 @@ cd PandoraNext-v0.2.0-linux-amd64-f1585a2
 https://github.com/pandora-next/deploy/releases/download/v0.2.3/PandoraNext-v0.2.3-windows-amd64-ba29c70.zip
 	# win10
 
+run.ps1
+# 修改工作目录
+Set-Location "E:\usr\PandoraNext"
+# 执行程序
+Start-Process ".\PandoraNext.exe"
+
 
 https://dash.pandoranext.com/
 	# 获取授权
