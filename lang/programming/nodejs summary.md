@@ -26115,6 +26115,49 @@ data:
 
 
 
+##### 边训练边输出
+
+```
+RWKV-LM/RWKV-v5/train.py
+    from src.model import RWKV
+    model = RWKV(args, train_data)
+    	# 额外加一个参数，里面有分词器
+
+RWKV-LM/RWKV-v5/src/model.py
+class RWKV(pl.LightningModule):
+    def __init__(self, args, train_data):
+        self.train_data = train_data
+        	# 赋值
+ 
+# 这函数是 Lightning 框架的约定，在这里输出 ai 回答  
+     def training_step(self, batch, batch_idx):
+        args = self.args
+        if args.my_qa_mask != 1:
+            idx, targets = batch
+            i1 = idx[0].tolist()
+            iS = [ self.train_data.itos[i] for i in i1 ]
+            t1 = targets[0].tolist()
+            tS = [ self.train_data.itos[i] for i in t1 ]
+            logits = self(idx)
+
+            tokens = []
+            for i in range(1024):
+                probs = logits[0][i].tolist()
+                max_val = max(probs)
+                idx = probs.index(max_val)
+                tokens += self.train_data.itos[idx]
+      
+            result = "".join(tokens)
+            print(result)
+ 
+
+
+```
+
+
+
+
+
 #### lit-llama deepspeed zero-3-offload
 
 [How to use deepspeed zero-3-offload](https://github.com/Lightning-AI/lit-llama/issues/84)
