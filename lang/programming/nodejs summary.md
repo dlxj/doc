@@ -2949,6 +2949,13 @@ http://127.0.0.1:7999/backend-api/
 .\ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR
 	# 新版改成这样了 （新版已闭源）
 
+run.ps1
+# 修改工作目录
+Set-Location "E:\usr\Ninja"
+# 执行程序
+Start-Process ".\ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR"
+
+
 # 成功 post 会话
 curl --location --request POST 'http://209.141.34.77:7999/backend-api/conversation' \
 --header 'Content-Type: application/json' \
