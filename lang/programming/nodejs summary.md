@@ -3308,7 +3308,7 @@ tar xvf PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 cd PandoraNext-v0.2.0-linux-amd64-f1585a2
 	# linux
 
-https://github.com/pandora-next/deploy/releases/download/v0.2.2/PandoraNext-v0.2.2-windows-amd64-8718383.zip
+https://github.com/pandora-next/deploy/releases/download/v0.2.3/PandoraNext-v0.2.3-windows-amd64-ba29c70.zip
 	# win10
 
 
@@ -23234,7 +23234,7 @@ sudo -l -U i
 
 [Meta最新模型LLaMA细节与代码详解](https://blog.csdn.net/weixin_44826203/article/details/129255185)
 
-[baby-llama2-chinese](https://github.com/DLLXW/baby-llama2-chinese)
+## [baby-llama2-chinese](https://github.com/DLLXW/baby-llama2-chinese)
 
 
 
