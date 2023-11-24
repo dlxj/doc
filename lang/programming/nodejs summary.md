@@ -2946,6 +2946,76 @@ http://127.0.0.1:7999/backend-api/
 
 ./target/debug/ninja run --arkose-chat4-har-file /mnt/huggingface/ninja/HAR/chat.openai.com.har
 
+.\ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR
+	# 新版改成这样了 （新版已闭源）
+
+# 成功 post 会话
+curl --location --request POST 'http://209.141.34.77:7999/backend-api/conversation' \
+--header 'Content-Type: application/json' \
+--header 'Accept: text/event-stream' \
+--header 'Authorization: Bearer 要填真实 token' \
+--data-raw '{
+  "action": "next",
+  "messages": [
+    {
+      "id": "aaa29866-4aa0-488d-81d1-88c54319b9f4",
+      "author": {
+        "role": "user"
+      },
+      "content": {
+        "content_type": "text",
+        "parts": [
+          "你会几种语言"
+        ]
+      },
+      "metadata": {}
+    }
+  ],
+  "conversation_id": "06b17fd4-1dc3-47f6-a5f9-9ac71fc78631",
+  "parent_message_id": "aaa29866-4aa0-477d-81d1-88c54319b9f4",
+  "model": "gpt-4",
+  "timezone_offset_min": -480,
+  "suggestions": [],
+  "history_and_training_disabled": false,
+  "arkose_token": "从 ninja 前端调接口找",
+  "conversation_mode": {
+    "kind": "primary_assistant"
+  },
+  "force_paragen": false,
+  "force_rate_limit": false
+}'
+
+首次消息这样传
+{
+  "action": "next",
+  "messages": [
+    {
+      "id": "aaa2e633-7363-466c-98b3-4f3a7e282fcf",
+      "author": {
+        "role": "user"
+      },
+      "content": {
+        "content_type": "text",
+        "parts": [
+          "how are you"
+        ]
+      },
+      "metadata": {}
+    }
+  ],
+  "parent_message_id": "aaa2e633-7363-466c-98b3-4f3a7e282fcf",
+  "model": "gpt-4",
+  "timezone_offset_min": -480,
+  "suggestions": [],
+  "history_and_training_disabled": false,
+  "arkose_token": "",
+  "conversation_mode": {
+    "kind": "primary_assistant"
+  },
+  "force_paragen": false,
+  "force_rate_limit": false
+}
+
 
 launch.json
 {
