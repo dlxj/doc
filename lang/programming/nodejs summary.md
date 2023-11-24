@@ -2956,6 +2956,17 @@ Set-Location "E:\usr\Ninja"
 Start-Process ".\ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR"
 
 
+# 它支持官方 openai 官方 api 接口的格式
+curl --location --request POST 'http://xxx:7999/v1/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 真tokeon' \
+--data-raw '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "请记住我的名字叫小芳"}],
+    "temperature": 0.7
+}'
+
+
 # 成功 post 会话
 curl --location --request POST 'http://209.141.34.77:7999/backend-api/conversation' \
 --header 'Content-Type: application/json' \
