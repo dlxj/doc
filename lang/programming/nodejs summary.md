@@ -28427,6 +28427,8 @@ sleep(5)
 
 ## gptauto
 
+[gptauto](https://github.com/st1vms/gptauto)
+
 ```
 git clone https://github.com/st1vms/gptauto.git
  
