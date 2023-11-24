@@ -413,6 +413,21 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v Fli
 
 
 
+# server 2016 关闭自动防护
+
+```
+gpedit.msc -> 计算机配置 -> 管理模板 -> Windows组件 -> Windows Defender -> 关闭Windows Defender 双击打开 
+
+有两个选项 关闭防护、关闭实时防护 都设为 enable
+
+```
+
+
+
+
+
+
+
 # 找回休眠功能
 
 
