@@ -3385,7 +3385,9 @@ launch.json
 
 ####  PandoraNext
 
-[PandoraNext](https://github.com/pandora-next/deploy)
+[PandoraNext](https://github.com/pandora-next/deploy) 
+
+- [gpt3.5 api 能正常调用](https://github.com/pandora-next/deploy/issues/142)
 
 
 
