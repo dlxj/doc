@@ -6614,6 +6614,8 @@ new RegExp(String.raw`^(?!.*E\.).*$`, 'gs')  // 参数g 全局匹配，参数s �
 
 
 
+
+
 ```
 # 更方便的方法,match 有index（注意：str, re 要在while 的外面定义，否则死循环）
 let str = 'axxaxxa'
@@ -6628,6 +6630,22 @@ while( ( match = re.exec(str)) != null ) {
 
 
 ## matchAll
+
+
+
+```
+    let chinese_sequence = Array.from(s.matchAll(/[\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]+/g))
+
+    let not_chinese_sequence = Array.from(s.matchAll(/[^\u3007\u2E80-\u2FFF\u3100-\u312F\u31A0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]+/g))
+        
+        let jp_sequence = Array.from(s.matchAll(/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]+/g))
+
+
+```
+
+
+
+
 
 - 相当于python 的 finditer
 
