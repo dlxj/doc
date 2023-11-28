@@ -8744,6 +8744,20 @@ require('fs').readFileSync('./input.txt',{encoding:'utf8', flag:'r'})
 fs.createWriteStream(path).write(buffer)
 ```
 
+
+
+### 读任意行
+
+```
+import linecache
+line = linecache.getline('traindata_nlpp.jsonl', 2)
+
+```
+
+
+
+
+
 ### 大文件读写
 
 - https://juejin.cn/post/7148051371060068389
