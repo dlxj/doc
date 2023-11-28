@@ -3389,6 +3389,65 @@ launch.json
 
 - [gpt3.5 api 能正常调用](https://github.com/pandora-next/deploy/issues/142)
 
+  - ```
+    echodict/pandora/ninja_chatgpt_nlpp
+    	# gpt4 也是可以成功调用的，正确传参也可以见这里
+    
+    # 必须以 proxy 模式启动，但是这样就没有前端了
+    # arkose_token 从 pandoraNext（必须改用ninja） 前端用gpt4聊一次接口找出来
+    PandoraNext/config.json
+    {
+      "bind": "0.0.0.0:8181",
+      "timeout": 600,
+      "proxy_url": "",
+      "public_share": false,
+      "site_password": "",
+      "setup_password": "",
+      "whitelist": null,
+      "server_mode": "proxy",
+      "server_tokens": true
+    }
+    
+    # 
+    {
+      "action": "next",
+      "messages": [
+        {
+          "id": "随机生成",
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "你会几种语言"
+            ]
+          },
+          "metadata": {}
+        }
+      ],
+      "parent_message_id": "既使是第一次聊天也可以随机生成",
+      "model": "gpt-4",
+      "timezone_offset_min": -480,
+      "suggestions": [
+        "Show me a code snippet of a website's sticky header in CSS and JavaScript.",
+        "Can you explain the concept of \"nostalgia\" to a kindergartener?",
+        "Give me 3 ideas about how to plan good New Years resolutions. Give me some that are personal, family, and professionally-oriented.",
+        "Create a charter to start a film club that hosts weekly screenings and discussions"
+      ],
+      "history_and_training_disabled": false,
+      "arkose_token": "从pandoraNext前端用gpt4聊天从接口找出来",
+      "conversation_mode": {
+        "kind": "primary_assistant"
+      },
+      "force_paragen": false,
+      "force_rate_limit": false
+    }
+    
+    ```
+
+    
+
 
 
 ```
@@ -6488,6 +6547,14 @@ let timestamp = moment().format('YYYY-MM-DD HH:mm:ss')
 setTimeout(function () {
 	console.log('boo')
 }, 1000 * 3)
+```
+
+
+
+## throw
+
+```
+throw new Error(errMsg)
 ```
 
 
