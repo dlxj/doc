@@ -3598,7 +3598,7 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create RWKV-LM --type dataset
     	# RWKV-v4 暂时只看这个，调通先
     # huggingface-cli repo create chat_with_chatgpt --type dataset
-    
+    # huggingface-cli repo create pandoraNext --type dataset
 	
 
 
@@ -3616,6 +3616,12 @@ git commit -m 'm' && \
 git lfs migrate import --everything && \
 git push
 	# 成功提交大文件
+	
+git lfs install
+git add .
+git commit -m 'm'
+git lfs migrate import --everything
+git push
 
 
 git pull && git LFS pull
