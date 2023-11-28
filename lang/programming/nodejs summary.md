@@ -8749,8 +8749,7 @@ fs.createWriteStream(path).write(buffer)
 ### 读任意行
 
 ```
-import linecache
-line = linecache.getline('traindata_nlpp.jsonl', 2)
+# see python3 summary.md
 
 ```
 

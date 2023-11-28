@@ -1486,6 +1486,19 @@ def read_string(path):
 
 
 
+#### 读任意行
+
+```
+# huggingface/RWKV-LM/RWKV-v5_nlpp/load_jsonl.py
+import linecache
+line = linecache.getline('traindata_nlpp.jsonl', 2)
+
+```
+
+
+
+
+
 ### write file
 
 ```
