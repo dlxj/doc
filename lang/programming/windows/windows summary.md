@@ -907,7 +907,70 @@ mklink /D nodejs D:\usr\node-v10.14.2-win-x64
 
 
 
+# cp -rf
 
+```
+cd E:\huggingface\pandoraNext
+Copy-Item -Path "E:\usr\PandoraNext\*" -Destination "." -Recurse -Force
+	# 没有作用
+	
+	
+function Copy-FileSafer {
+
+ [CmdletBinding()]
+
+ param (
+
+   [string]$path,
+
+   [string]$destinationfolder
+
+ )
+
+ if (-not (Test-Path -Path $path)) {
+
+   throw "File not found: $path" 
+
+ }
+
+ $sourcefile = Split-Path -Path $path -Leaf
+
+ $destinationfile = Join-Path -Path $destinationfolder -ChildPath $sourcefile
+
+ $b4hash = Get-FileHash -Path $path
+
+ try {
+
+    Copy-Item -Path $path -Destination $destinationfolder -ErrorAction Stop
+
+ }
+
+ catch {
+
+   throw "File copy failed"
+
+ }
+
+ finally {
+
+   $afhash = Get-FileHash -Path $destinationfile
+
+   if ($afhash.Hash -ne $b4hash.Hash) {
+
+      throw "File corrupted during copy"
+
+   }
+
+   else {
+
+     Write-Information -MessageData "File copied successfully" -InformationAction Continue
+
+   }
+
+ }
+
+}
+```
 
 
 
