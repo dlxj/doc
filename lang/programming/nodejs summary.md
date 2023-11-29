@@ -3617,11 +3617,17 @@ git lfs migrate import --everything && \
 git push
 	# 成功提交大文件
 	
+xcopy E:\usr\PandoraNext\* E:\huggingface\pandoraNext /k /e /d /Y
+cd E:\huggingface\pandoraNext
 git lfs install
 git add .
 git commit -m 'm'
 git lfs migrate import --everything
 git push
+	# 成功
+	
+schtasks /Create /SC MINUTE /MO 10 /TN "MyTask" /TR "powershell.exe -ExecutionPolicy Bypass -File E:\huggingface\push.ps1"
+	# 每隔十分钟执行一次脚本
 
 
 git pull && git LFS pull
