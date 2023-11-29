@@ -108,6 +108,41 @@ MatrixSlow 手写框架
 
 
 
+## DataLoader
+
+
+
+```
+import json
+import torch
+from torch.utils.data import Dataset, DataLoader
+import linecache
+
+class LargeJSONLDataset(Dataset):
+    def __init__(self, file_path):
+        self.file_path = file_path
+        # 计算文件中的数据行数，该步骤需要时间，因为要遍历整个文件
+        self.num_entries = sum(1 for line in open(file_path))
+    
+    def __getitem__(self, index):
+        line = linecache.getline(self.file_path, index+1)
+        data = json.loads(line)
+        return data
+    
+    def __len__(self):
+        return self.num_entries
+
+dataset = LargeJSONLDataset('traindata_nlpp.jsonl')
+data_loader = DataLoader(dataset, batch_size=4, shuffle=True)
+
+for data in data_loader:
+    pass
+```
+
+
+
+
+
 ## Kaggle 练习
 
 
