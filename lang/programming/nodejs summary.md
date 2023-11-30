@@ -17398,6 +17398,8 @@ export default defineConfig({
 src/main.js
 	# 成功断下
 
+Vue Language Features
+	# 安装 vscode 插件后 .vue 里的脚本可以成功断下
 
 ```
 
