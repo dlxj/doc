@@ -3607,7 +3607,7 @@ huggingface-cli repo create pandora --type dataset
     	# RWKV-v4 暂时只看这个，调通先
     # huggingface-cli repo create chat_with_chatgpt --type dataset
     # huggingface-cli repo create pandoraNext --type dataset
-	
+    # huggingface-cli repo create ninja_web --type dataset	
 
 
 git config --global core.safecrlf true
@@ -17354,6 +17354,10 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 [vscode直接通过打断点方式调试vite项目](https://juejin.cn/post/7281554762942988307)
 
 [VS Code 调试 Vue.js](https://mdnice.com/writing/4707a411d4c343cfa0bfb65125731432)
+
+[VS Code 调试 HTML 文件](https://zhuanlan.zhihu.com/p/415750996)
+
+[chrome动态替换js](https://blog.51cto.com/u_15274085/2918220)
 
 ```
 npm create vue@latest
