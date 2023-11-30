@@ -28623,12 +28623,14 @@ see .77 E:\usr\PandoraNext\pandoraNext_chatgpt_nlpp.mjs
 ```
 xxx.77:7999/c/33f40974-eee5-4fa2-bfbf-09b468edd862
 	# 从前端网页 js 代码找 post 参数
+	# vscode 折叠所有 Ctrl + K，Ctrl + 0
 	
 window.webpackChunk_N_E
 	# 能取到
  
 Y.publicApiCompletionStream = function(Y, et, en) {
 	# 可以断下来
+	# 它应该是在这个变量里面 86646
 
 Y.post = function(Y, et) {  统一在这里拦截？
 	# 聊天接口不过这里
