@@ -17353,6 +17353,54 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 
 [vscode直接通过打断点方式调试vite项目](https://juejin.cn/post/7281554762942988307)
 
+[VS Code 调试 Vue.js](https://mdnice.com/writing/4707a411d4c343cfa0bfb65125731432)
+
+```
+npm create vue@latest
+	# 一路输入 n 回车
+ 
+cd ninja_wb && \
+npm i && \
+npm run dev
+
+# vscode launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "vuejs: chrome",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+
+# vite.config.js
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+export default defineConfig({
+  build: {
+    sourcemap: true,
+  },
+  plugins: [
+    vue(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
+})
+
+src/main.js
+	# 成功断下
+
+
+```
+
 
 
 
