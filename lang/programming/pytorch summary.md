@@ -141,6 +141,21 @@ for data in data_loader:
 
 
 
+## 概率输出
+
+```
+# see huggingface\RWKV-LM\RWKV-v4\src\utils.py
+probs = F.softmax(torch.tensor(out), dim=-1)
+sorted_probs, s_index = torch.sort(probs, descending=True)
+
+```
+
+
+
+
+
+
+
 
 
 ## Kaggle 练习

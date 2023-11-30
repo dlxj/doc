@@ -2941,6 +2941,14 @@ done
 
 [gngpp/ninja](https://github.com/gngpp/ninja) 试试这个登录能不能用
 
+[/to/v1/chat/completions](https://github.com/gngpp/ninja/issues/171) [1](https://github.com/openai/openai-node)
+
+- ```
+  npm install --save openai
+  ```
+
+  
+
 ```
 http://127.0.0.1:7999/backend-api/
 
@@ -4980,6 +4988,34 @@ try {
 
 
 ##### 后端
+
+
+
+```
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+    apiKey:"",
+    baseURL:"http://xxx.77:7999/to/v1"
+});
+
+async function main() {
+  const stream = await openai.chat.completions.create({
+    model: 'gpt-4',
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    stream: true,
+  });
+  for await (const chunk of stream) {
+    process.stdout.write(chunk.choices[0]?.delta?.content || '');
+  }
+}
+
+main();
+```
+
+
+
+
 
 ```
 
@@ -28576,9 +28612,31 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 
 ## ChatGPT-AutoChat
 
+[注入JavaScript](https://m.tongfu.net/home/35/blog/513275.html)
 
+[等待元素出现](https://github.com/jackfrued/Python-100-Days/blob/master/Day61-65/64.%E4%BD%BF%E7%94%A8Selenium%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9.md)
 
 see echodict\pandora\chat_with_chatgpt.py
+
+see .77 E:\usr\PandoraNext\pandoraNext_chatgpt_nlpp.mjs
+
+```
+xxx.77:7999/c/33f40974-eee5-4fa2-bfbf-09b468edd862
+	# 从前端网页 js 代码找 post 参数
+	
+window.webpackChunk_N_E
+	# 能取到
+ 
+Y.publicApiCompletionStream = function(Y, et, en) {
+	# 可以断下来
+
+Y.post = function(Y, et) {  统一在这里拦截？
+	# 聊天接口不过这里
+
+
+```
+
+
 
 ```
 
