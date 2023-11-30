@@ -17349,6 +17349,12 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 
 
 
+# vue3
+
+[vscode直接通过打断点方式调试vite项目](https://juejin.cn/post/7281554762942988307)
+
+
+
 
 
 # Vue
@@ -28615,6 +28621,10 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 [注入JavaScript](https://m.tongfu.net/home/35/blog/513275.html)
 
 [等待元素出现](https://github.com/jackfrued/Python-100-Days/blob/master/Day61-65/64.%E4%BD%BF%E7%94%A8Selenium%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9.md)
+
+[js断点调试](https://juejin.cn/s/selenium%20js%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95)
+
+[Chrome ReRes js替换插件](https://bbs.kanxue.com/thread-272800.htm)
 
 see echodict\pandora\chat_with_chatgpt.py
 
