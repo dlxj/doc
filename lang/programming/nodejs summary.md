@@ -3547,9 +3547,14 @@ npm install http-server -g
 # 调 ninja 前端
 if ("[DONE]" === Y.data)
 	# 这里能断下，且是输出最后一个字符后
+	# 不知道为什么, ninja override 后就断不下来了
+	# see .77 E:\usr\Python311\chat_with_pandoraNext.py
+	# 换 selenium 爬前端方案
 
 e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 	# 这里可能是关键
+	
+
 
 ```
 
