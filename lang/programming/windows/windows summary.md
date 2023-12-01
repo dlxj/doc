@@ -1009,6 +1009,24 @@ taskkill -PID 进程号 -F
 
 
 
+# 端口转发
+
+```
+netsh interface portproxy add v4tov4  listenaddress=209.141.34.77 listenport=80 connectaddress=209.141.34.77 connectport=7999
+	# 80 转 7999
+
+netsh interface  portproxy show  v4tov4
+	# show
+
+netsh interface  portproxy delete v4tov4 listenaddress=209.141.34.77 listenport=80
+	# delete
+
+```
+
+
+
+
+
 # 遍历进程
 
 [遍历进程](https://github.com/dbshch/DOAXVV-script)

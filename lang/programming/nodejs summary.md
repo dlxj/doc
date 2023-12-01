@@ -3530,6 +3530,8 @@ xxx@gmail.com
 chrome -> f12 -> 顶部 Page 标签 后面找到 Overrides , 导入刚才保存的整个文件夹（注意结构要和page显示出来的一模一样, 选top 然后导入）
 
 在login 的 script 下断，成功断下
+	# 小技巧: 可以在 page 那里选中 login 右键 -> override content
+	# 解决里面有特殊字符，不知道本地文件名怎么起
 
 ```
 
@@ -3625,7 +3627,9 @@ huggingface-cli repo create pandora --type dataset
     	# RWKV-v4 暂时只看这个，调通先
     # huggingface-cli repo create chat_with_chatgpt --type dataset
     # huggingface-cli repo create pandoraNext --type dataset
-    # huggingface-cli repo create ninja_web --type dataset	
+    # huggingface-cli repo create ninja_web --type dataset
+    # huggingface-cli repo create pandoraNext_web --type dataset
+
 
 
 git config --global core.safecrlf true
@@ -3640,7 +3644,8 @@ git lfs install && \
 git add . && \
 git commit -m 'm' && \
 git lfs migrate import --everything && \
-git push
+git push && \
+git pull && git lfs pull
 	# 成功提交大文件
 	
 xcopy E:\usr\PandoraNext\* E:\huggingface\pandoraNext /k /e /d /Y
