@@ -2954,7 +2954,7 @@ http://127.0.0.1:7999/backend-api/
 
 ./target/debug/ninja run --arkose-chat4-har-file /mnt/huggingface/ninja/HAR/chat.openai.com.har
 
-.\ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR
+ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR --bind 0.0.0.0:80
 	# 新版改成这样了 （新版已闭源）
 
 run.ps1
@@ -3532,6 +3532,24 @@ chrome -> f12 -> 顶部 Page 标签 后面找到 Overrides , 导入刚才保存�
 在login 的 script 下断，成功断下
 	# 小技巧: 可以在 page 那里选中 login 右键 -> override content
 	# 解决里面有特殊字符，不知道本地文件名怎么起
+	# ? 的 urlencode是 %3F , 就是这样起
+
+https://segmentfault.com/q/1010000014959790
+	# VSCode前端文件（html文件）如何以服务器模式打开？
+
+安装Live Server 插件
+	# html 右键 -> open with live server
+	
+npm install http-server -g
+	# 在html项目目录执行 http-server
+
+
+# 调 ninja 前端
+if ("[DONE]" === Y.data)
+	# 这里能断下，且是输出最后一个字符后
+
+e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
+	# 这里可能是关键
 
 ```
 
