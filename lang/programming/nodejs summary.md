@@ -3519,6 +3519,24 @@ xxx@gmail.com
 
 
 
+##### 自制前端
+
+```
+# see vue3
+# see huggingface\pandoraNext_web\top\echodict.com\auth
+使用 Save all resources 插件 保存https://chdct.com/auth/login
+	# 存整个登录页
+
+chrome -> f12 -> 顶部 Page 标签 后面找到 Overrides , 导入刚才保存的整个文件夹（注意结构要和page显示出来的一模一样, 选top 然后导入）
+
+在login 的 script 下断，成功断下
+
+```
+
+
+
+
+
 
 
 ## 抱抱脸 
@@ -17358,6 +17376,8 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 [VS Code 调试 HTML 文件](https://zhuanlan.zhihu.com/p/415750996)
 
 [chrome动态替换js](https://blog.51cto.com/u_15274085/2918220)
+
+[Save all resources 保存整站](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb)
 
 ```
 npm create vue@latest
