@@ -3688,7 +3688,8 @@ git push && \
 git pull && git lfs pull
 	# 成功提交大文件
 	
-xcopy E:\usr\PandoraNext\* E:\huggingface\pandoraNext /k /e /d /Y
+# xcopy E:\usr\PandoraNext\* E:\huggingface\pandoraNext /k /e /d /Y
+xcopy E:\Github\echodict\pandora\*.xlsx E:\huggingface\pandoraNext /k /e /d /Y
 cd E:\huggingface\pandoraNext
 git lfs install
 git add .
