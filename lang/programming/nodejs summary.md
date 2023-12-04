@@ -2463,6 +2463,23 @@ server {
 
 
 
+### nginx for windows
+
+[nginx](https://nginx.org/en/download.html) [1](https://www.cnblogs.com/taiyonghai/p/9402734.html)
+
+```
+cmd.exe
+cd D:\usr\nginx-1.25.3
+start nginx
+tasklist /fi "imagename eq nginx.exe"
+nginx -t -c /nginx-1.15.2/conf/nginx.conf
+
+```
+
+
+
+
+
 ## 安装代理
 
 ```
