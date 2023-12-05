@@ -3488,7 +3488,7 @@ launch.json
 
 
 /echodict8181/v1/chat/completions
-	# 成功聊天
+	# 成功聊天 # gpt-3.5-turbo 或 gpt-4
 {
     "model": "gpt-4",
     "messages": [
