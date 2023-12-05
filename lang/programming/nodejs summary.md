@@ -3477,6 +3477,12 @@ launch.json
 
 ```
 
+通过proxy模拟api向/v1/chat/completions发请求，提问一次算4条的额度
+
+/echodict8181/api/arkose/token
+	type=gpt-4
+	# 成功获取 arkose_token
+
 wget https://github.com/pandora-next/deploy/releases/download/v0.2.0/PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 tar xvf PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 cd PandoraNext-v0.2.0-linux-amd64-f1585a2
