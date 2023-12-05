@@ -3707,6 +3707,7 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create pandoraNext --type dataset
     # huggingface-cli repo create ninja_web --type dataset
     # huggingface-cli repo create pandoraNext_web --type dataset
+    # huggingface-cli repo create RWKV-v4neo --type dataset
 
 
 
@@ -3742,7 +3743,14 @@ schtasks /Create /SC MINUTE /MO 10 /TN "MyTask" /TR "powershell.exe -ExecutionPo
 
 git pull && git LFS pull
 	# 本地是文件指针时，可以这样恢复成实际文件
-	
+
+
+# 不行就用这个
+git checkout -f && \
+git clean -df && \
+git pull
+	# 强制恢复成远程文件
+
 
 vi sync_huggingface.sh
 cd /mnt/huggingface/pandora && \
@@ -27653,7 +27661,7 @@ notepad $profile
 
 # katago
 
-[colab](https://colab.research.google.com/drive/1w69zA4bxRwzph5vG2dr4UeE4Xw2I0hE9)
+[colab](https://colab.research.google.com/drive/1w69zA4bxRwzph5vG2dr4UeE4Xw2I0hE9) [1](https://zhuanlan.zhihu.com/p/594795175)
 
 
 
@@ -29301,7 +29309,7 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 ### Luckysheet 在线文档
 
-[Luckysheet](https://github.com/dream-num/Luckysheet)
+[Luckysheet](https://github.com/dream-num/Luckysheet) [vercel.app](https://luckysheet.vercel.app/)
 
 
 
@@ -29648,7 +29656,7 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### winUI3
 
-[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot)
+[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895)
 
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
 
