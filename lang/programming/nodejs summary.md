@@ -3483,6 +3483,38 @@ launch.json
 	type=gpt-4
 	# 成功获取 arkose_token
 
+/echodict8181/api/token/register
+	# 先生成 Share Token
+
+
+/echodict8181/v1/chat/completions
+	# 成功聊天
+{
+    "model": "gpt-4",
+    "messages": [
+        {"role": "system","content": "You are a helpful assistant."},
+        {"role": "user", "content": "请记住我的名字叫小芳"},
+        {"role": "assistant","content": "好的，我会记住你叫小芳。有什么我可以帮助你的吗？"},
+        {"role": "user", "content": "我的名字叫什么"}
+    ],
+    "temperature": 0.7
+}
+
+
+`/api/token/register` 接口是用于注册或更新 Share Token 的。这个接口的详细参数如下：
+
+1. **HTTP方法**：`POST`
+2. **请求类型**：`application/x-www-form-urlencoded`
+3. **请求字段**：
+   - `unique_name`：一个唯一的名字。请注意，相同 `unique_name` 和 `access_token` 会始终生成相同的 Share Token。
+   - `access_token`：ChatGPT 账号的 Access Token。
+   - `site_limit`：限制 Share Token 使用的站点，格式为 `https://xxx.yyy.com`。可以留空不作限制。
+   - `expires_in`：Share Token 的有效期，单位为秒。设置为 `0` 表示与 Access Token 同效，设置为 `-1` 时会吊销 Share Token。
+   - `show_conversations`：是否进行会话隔离，可选 `true` 或 `false`，默认为 `false`。
+   - `show_userinfo`：是否隐藏邮箱等账号信息，可选 `true` 或 `false`，默认为 `false`。
+
+这些参数允许你灵活地控制 Share Token 的行为，包括其有效期、使用限制、会话隔离和用户信息的显示。
+
 wget https://github.com/pandora-next/deploy/releases/download/v0.2.0/PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 tar xvf PandoraNext-v0.2.0-linux-amd64-f1585a2.tar.gz && \
 cd PandoraNext-v0.2.0-linux-amd64-f1585a2
