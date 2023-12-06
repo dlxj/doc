@@ -29640,6 +29640,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### WPF
 
+[WPFDevelopers 各种控件](https://github.com/WPFDevelopersOrg/WPFDevelopers)
+
 [VPet 虚拟桌宠 必看](https://github.com/LorisYounger/VPet)
 
 [WPF 实现裁剪图像](https://v2ex.com/t/950084#)
@@ -29656,7 +29658,7 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### winUI3
 
-[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895)
+[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf)
 
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
 
