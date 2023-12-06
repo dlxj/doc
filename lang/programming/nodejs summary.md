@@ -26367,7 +26367,7 @@ cd chatglm-tiny
 
 - [RWKV-infctx-trainer 任意长度](https://github.com/RWKV/RWKV-infctx-trainer)
 
-- [干货训练多轮对话系统](https://github.com/BlinkDL/ChatRWKV/issues/118) [细](https://zhuanlan.zhihu.com/p/639629050)
+- [干货训练多轮对话系统](https://github.com/BlinkDL/ChatRWKV/issues/118) [细](https://zhuanlan.zhihu.com/p/639629050) [源码解读](https://zhuanlan.zhihu.com/p/620469303)
 
 - [on windows](https://github.com/BlinkDL/RWKV-LM/issues/158)
 
@@ -29653,6 +29653,39 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [Flyleaf wpf player 必看](https://github.com/SuRGeoNix/Flyleaf)
 
 [netch 代理 18.0版不内退](https://github.com/netchx/netch)
+
+
+
+```
+`[STAThread]` 是 .NET 中的一个属性，它被设计用来表示.NET程序的主线程应该使用单线程单元 (STA) 模型。在 Windows Presentation Foundation (WPF) 应用程序中，通常会在 `Main()` 方法上看到这个属性。
+
+STA模型是 COM（组件对象模型）线程模型的一种。在这种模型中，每个线程看似独立运行，但实际上是由统一的消息队列管理和协调的。这意味着在任何给定时间，只有一个线程访问该线程的内存。
+
+在 WPF 中，某些对象，例如 `Clipboard` 和 `Drag-and-Drop` 只能在 STA 中使用。如果没有 `[STAThread]` 属性，你可能会遇到异常。
+
+以下是如何在代码中使用 `[STAThread]` 属性的示例：
+
+​```csharp
+[STAThread]
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+    Application.Run(new Form1());
+}
+​```
+```
+
+
+
+```
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 定义了默认的名称空间，表示所有不带前缀的元素都属于这个名称空间。这包括了所有的 UI 元素，如 <Window>、<Button> 等等。
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名称空间，主要是包含一些非 UI 类型的功能（像 x:Class、x:Name 等）。
+```
+
+
+
+
 
 
 
