@@ -25413,7 +25413,20 @@ pip3 install -r requirements.txt
 
 ### 从零起步的 Transformer 与代码拆解
 
+[annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
+
 [解剖Transformer 第一部分](https://zhuanlan.zhihu.com/p/552543893)
+
+- ```
+  注意力机制是一种从一系列输入中选择性地提取信息的结构。
+  
+  序列转换有两个输入序列，一个叫做源序列，一个叫做目标序列；两个序列不一定有相同的长度。每个序列中每个元素都由一个一定维度的特征向量表示，源序列和目标序列的特征向量维度也不一定相同。序列转换操作的输出是对目标序列中的每个元素输出一个新的特征向量，叫做输出序列。
+  
+  最常见的方式是Transformer所使用的注意力机制，称作“点积注意力”
+  
+  ```
+
+  
 
 [从零起步的 Transformer 与代码拆解](https://leonis.cc/sui-sui-nian/2023-04-21-transformer-from-scratch.html)
 
