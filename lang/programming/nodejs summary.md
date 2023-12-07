@@ -23650,6 +23650,8 @@ sudo -l -U i
 
 ## [baby-llama2-chinese](https://github.com/DLLXW/baby-llama2-chinese)
 
+[seamless-m4t](https://huggingface.co/facebook/seamless-m4t-v2-large)
+
 
 
 ## WSL2 GPU
@@ -25294,6 +25296,22 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 
 
+### numpy-transformer
+
+[numpy-transformer](https://github.com/AkiRusProd/numpy-transformer)
+
+```
+git clone https://github.com/AkiRusProd/numpy-transformer.git && \
+cd numpy-transformer
+
+
+
+```
+
+
+
+
+
 ### minGPT 两位数加法
 
 [minGPT 两位数加法 必看](https://github.com/karpathy/minGPT/blob/master/projects/adder/adder.py)
@@ -25311,7 +25329,12 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
       --model_size "124M" \
       --models_dir "models"
   
+  
+  pip install tensorflow-cpu
+  	# 最新版的就行
+  
   tensorflow==2.11.0
+  
   
   ```
 
