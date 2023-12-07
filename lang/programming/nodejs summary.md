@@ -25430,6 +25430,10 @@ pip3 install -r requirements.txt
   data_train = Multi30k(split='train')
   data_val = Multi30k(split='valid')
   data_test = Multi30k(split='test')
+  
+  
+  train, val, test = datasets.Multi30k(language_pair=("de", "en"))
+  
   ```
 
   
