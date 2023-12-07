@@ -25415,6 +25415,25 @@ pip3 install -r requirements.txt
 
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
 
+- ```
+  # 数据集已挂 换源 https://github.com/pytorch/text/issues/1756
+  from torchtext.datasets import multi30k, Multi30k
+  
+  # Update URLs to point to data stored by user
+  multi30k.URL["train"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/training.tar.gz"
+  multi30k.URL["valid"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/validation.tar.gz"
+  multi30k.URL["test"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/mmt16_task1_test.tar.gz"
+  
+  # Update hash since there is a discrepancy between user hosted test split and that of the test split in the original dataset 
+  multi30k.MD5["test"] = "6d1ca1dba99e2c5dd54cae1226ff11c2551e6ce63527ebb072a1f70f72a5cd36"
+  
+  data_train = Multi30k(split='train')
+  data_val = Multi30k(split='valid')
+  data_test = Multi30k(split='test')
+  ```
+
+  
+
 [解剖Transformer 第一部分](https://zhuanlan.zhihu.com/p/552543893)
 
 - ```
