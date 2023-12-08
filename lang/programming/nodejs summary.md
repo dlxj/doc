@@ -3735,6 +3735,9 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create pandoraNext_web --type dataset
     # huggingface-cli repo create RWKV-v4neo --type dataset
 	# huggingface-cli repo create numpy-transformer --type dataset
+	# huggingface-cli repo create annotated-transformer --type dataset
+	
+	
 
 
 git config --global core.safecrlf true
