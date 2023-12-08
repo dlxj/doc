@@ -1907,6 +1907,24 @@ int main() {
 
 
 
+## vscode + jupyter 
+
+[1](https://zhuanlan.zhihu.com/p/500571676)
+
+```
+pip install --upgrade ipykernel
+pip install jupyterlab
+
+jupyter lab
+	# 先运行，后下断点
+	# 成功单步调试
+	
+```
+
+
+
+
+
 ## vscode+colab
 
 [vscode+colab](https://github.com/amitness/colab-connect)
@@ -29724,7 +29742,11 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### Winform
 
-[record-webcam-winforms-aforge-ffmpeg 抽帧](https://github.com/drweb86/record-webcam-winforms-aforge-ffmpeg) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
+[ff-utils-improved 抽帧](https://github.com/miifanboy/ff-utils-improved) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
+
+[Flyleaf](https://github.com/SuRGeoNix/Flyleaf)
+
+[FlyleafDemo](https://github.com/maoleigepu/FlyleafDemo)
 
 
 
