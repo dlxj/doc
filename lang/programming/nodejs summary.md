@@ -25484,7 +25484,7 @@ pip3 install -r requirements.txt
   
 
   pip install --upgrade ipykernel
-  pip install jupyterlab
+  pip install jupyterlab ipywidgets
   
   jupyter lab
   	# 先运行，后下断点
