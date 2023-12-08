@@ -25463,6 +25463,7 @@ pip3 install -r requirements.txt
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
 
 - ```
+  # huggingface\annotated-transformer 主仓
   # 数据集已挂 换源 https://github.com/pytorch/text/issues/1756
   from torchtext.datasets import multi30k, Multi30k
   multi30k.URL = {
@@ -25481,8 +25482,8 @@ pip3 install -r requirements.txt
   # train, val, test = datasets.Multi30k(language_pair=("de", "en"))
   
   
-  pip install --upgrade ipykernel
-pip install jupyterlab
+pip install --upgrade ipykernel
+  pip install jupyterlab
   
   jupyter lab
   	# 先运行，后下断点
