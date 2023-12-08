@@ -25301,10 +25301,28 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 [numpy-transformer](https://github.com/AkiRusProd/numpy-transformer)
 
 ```
+see huggingface/numpy-transformer
+	# 已调通 cuda11.3 4090 也可以用
 git clone https://github.com/AkiRusProd/numpy-transformer.git && \
 cd numpy-transformer
-
 	# 它的收敛不太好
+
+# 它的数据集挂了 see 从零起频的
+from torchtext.datasets import multi30k, Multi30k
+multi30k.URL = {
+    "train": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/training.tar.gz",
+    "valid": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/validation.tar.gz",
+    "test": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/mmt16_task1_test.tar.gz",
+}
+multi30k.MD5 = {
+    "train": "20140d013d05dd9a72dfde46478663ba05737ce983f478f960c1123c6671be5e",
+    "valid": "a7aa20e9ebd5ba5adce7909498b94410996040857154dab029851af3a866da8c",
+    "test": "6d1ca1dba99e2c5dd54cae1226ff11c2551e6ce63527ebb072a1f70f72a5cd36",
+}
+data_train = Multi30k(split='train')
+data_val = Multi30k(split='valid')
+data_test = Multi30k(split='test')
+# train, val, test = datasets.Multi30k(language_pair=("de", "en"))
 
 
 
@@ -25418,25 +25436,24 @@ pip3 install -r requirements.txt
 - ```
   # 数据集已挂 换源 https://github.com/pytorch/text/issues/1756
   from torchtext.datasets import multi30k, Multi30k
-  
-  # Update URLs to point to data stored by user
-  multi30k.URL["train"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/training.tar.gz"
-  multi30k.URL["valid"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/validation.tar.gz"
-  multi30k.URL["test"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/mmt16_task1_test.tar.gz"
-  
-  # Update hash since there is a discrepancy between user hosted test split and that of the test split in the original dataset 
-  multi30k.MD5["test"] = "6d1ca1dba99e2c5dd54cae1226ff11c2551e6ce63527ebb072a1f70f72a5cd36"
-  
+  multi30k.URL = {
+      "train": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/training.tar.gz",
+      "valid": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/validation.tar.gz",
+      "test": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/mmt16_task1_test.tar.gz",
+  }
+  multi30k.MD5 = {
+      "train": "20140d013d05dd9a72dfde46478663ba05737ce983f478f960c1123c6671be5e",
+      "valid": "a7aa20e9ebd5ba5adce7909498b94410996040857154dab029851af3a866da8c",
+      "test": "6d1ca1dba99e2c5dd54cae1226ff11c2551e6ce63527ebb072a1f70f72a5cd36",
+  }
   data_train = Multi30k(split='train')
   data_val = Multi30k(split='valid')
   data_test = Multi30k(split='test')
-  
-  
-  train, val, test = datasets.Multi30k(language_pair=("de", "en"))
+  # train, val, test = datasets.Multi30k(language_pair=("de", "en"))
   
   ```
-
   
+
 
 [解剖Transformer 第一部分](https://zhuanlan.zhihu.com/p/552543893)
 
@@ -25480,6 +25497,8 @@ pip3 install -r requirements.txt
 
 
 ### JAX 
+
+[Jax:一个比numpy、pytorch、cupy还要理想的工具](https://zhuanlan.zhihu.com/p/536377657)
 
 [jax_transformer](https://github.com/vpj/jax_transformer)
 
@@ -29700,6 +29719,14 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 ## F\# Monads
 
 [category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
+
+
+
+### Winform
+
+[record-webcam-winforms-aforge-ffmpeg 抽帧](https://github.com/drweb86/record-webcam-winforms-aforge-ffmpeg) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
+
+
 
 ### WPF
 

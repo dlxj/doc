@@ -2307,6 +2307,12 @@ __version__ = '.'.join(map(str,__version_info__))
 ```
 for sentence, target in zip(sentences, targets):
 	sentence = cut_token(sentence)
+	
+	
+for _, (url, filename) in enumerate(zip(urls, filenames)):
+	# 前面是 index
+	# urls, filenames 都是数组
+
 ```
 
 

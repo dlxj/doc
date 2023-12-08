@@ -309,6 +309,10 @@ git reset --hard  451880c
 > git checkout -f && \
 > git clean -df && \
 > git pull
+> 
+> git checkout -b master 2e0ed59cb56c45decdb1756cc520510f58e05149
+> 	# 拉指定某次提交
+> 
 > ```
 >
 > 
