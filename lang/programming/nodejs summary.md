@@ -1919,6 +1919,14 @@ jupyter lab
 	# 先运行，后下断点
 	# 成功单步调试
 	
+Developer Command Prompt for vS 2019
+	# pip install spacy==3.2
+		# 没有少头文件，但是少链接库
+		#  linalg.obj : error LNK2001: 无法解析的外部符号 __imp__PyBaseObject_Type
+		
+		D:\usr\Python311\python.exe -m pip install -U pip setuptools wheel
+		pip install -U spacy
+	
 ```
 
 
@@ -25469,9 +25477,26 @@ pip3 install -r requirements.txt
   data_test = Multi30k(split='test')
   # train, val, test = datasets.Multi30k(language_pair=("de", "en"))
   
+  
+  pip install --upgrade ipykernel
+pip install jupyterlab
+  
+  jupyter lab
+  	# 先运行，后下断点
+  	# 成功单步调试
+  	
+  Developer Command Prompt for vS 2019
+  	# pip install spacy==3.2
+  		# 没有少头文件，但是少链接库
+  		#  linalg.obj : error LNK2001: 无法解析的外部符号 __imp__PyBaseObject_Type
+  		
+  		D:\usr\Python311\python.exe -m pip install -U pip setuptools wheel
+  		pip install -U spacy
+  
+  
   ```
   
-
+  
 
 [解剖Transformer 第一部分](https://zhuanlan.zhihu.com/p/552543893)
 
