@@ -3755,10 +3755,16 @@ git lfs migrate import --everything && \
 git push && \
 git pull && git lfs pull
 	# 成功提交大文件
-	
-# xcopy E:\usr\PandoraNext\* E:\huggingface\pandoraNext /k /e /d /Y
-xcopy E:\Github\echodict\pandora\*.xlsx E:\huggingface\pandoraNext /k /e /d /Y
+
+# 每次都新建分支，删除原分支 main, 重命名分支（避免 .git 超大）
 cd E:\huggingface\pandoraNext
+git checkout --orphan  new_branch
+git add -A
+git commit -am "m"
+git branch -D main
+git branch -m main
+git push -f origin main
+xcopy E:\Github\echodict\pandora\*.xlsx E:\huggingface\pandoraNext /k /e /d /Y
 git lfs install
 git add .
 git commit -m 'm'
@@ -3768,6 +3774,9 @@ git push
 	
 schtasks /Create /SC MINUTE /MO 10 /TN "MyTask" /TR "powershell.exe -ExecutionPolicy Bypass -File E:\huggingface\push.ps1"
 	# 每隔十分钟执行一次脚本
+
+schtasks /Delete /TN "MyTask" /F
+	# 删除任务
 
 
 git pull && git LFS pull
