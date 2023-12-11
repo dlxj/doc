@@ -3770,6 +3770,9 @@ git add .
 git commit -m 'm'
 git lfs migrate import --everything
 git push
+git pull
+git LFS pull
+git lfs prune
 	# 成功
 	
 schtasks /Create /SC MINUTE /MO 10 /TN "MyTask" /TR "powershell.exe -ExecutionPolicy Bypass -File E:\huggingface\push.ps1"
