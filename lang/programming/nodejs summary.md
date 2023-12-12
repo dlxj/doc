@@ -3775,6 +3775,12 @@ git LFS pull
 git lfs prune
 	# 成功
 	
+Rename-Item -Path "E:\huggingface\pandoraNext" -NewName "E:\huggingface\pandoraNext__"
+git clone https://huggingface.co/datasets/dlxjj/pandoraNext
+pause
+	# 每次都必须重新拉
+	
+	
 schtasks /Create /SC MINUTE /MO 10 /TN "MyTask" /TR "powershell.exe -ExecutionPolicy Bypass -File E:\huggingface\push.ps1"
 	# 每隔十分钟执行一次脚本
 
@@ -29846,10 +29852,17 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 ### winUI3
 
 [Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf)
+[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html)
 
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
 
 ```
+
+Bili.Copilot\src\ViewModels\Components\FFmpegPlayerViewModel\FFmpegPlayerViewModel.cs
+	# 看这里
+see Bili.Copilot\src\ViewModels\IPlayerViewModel.cs
+
+
 webrtc-stream 组件，https://github.com/mpromonet/webrtc-streamer 直接 RTSP 拉流,这个是直接 RTP 流到 webrtc 转换的，所以低延迟，消耗最少；如果你借助 ffmpeg 将 rtsp 转到 flv 或者 hls 流畅度上来说 HLS 要好点，但是 flv 会出现限制，也就是缓冲加载，所以建议 webrtc ；不想用 webrtc-stream ，那就剩下的 GB28181 推流到 ZLM 或者 SRS ，然后 webrtc 再从服务端拉流，目的还是低延迟但是中间还是 监控将流通过 RTP 的方式推流到 ZLM 或者 SRS 了，你提到的 GB+wvp 就是这个原理，通过 GB 协商 监控推流到 RTP 服务器，而 RTP 服务器就是 ZLM ； zlm 和 SRS 内部再将原始流转成 WebRTC 、RTMP 、RTSP 、HLS 、Flv 等格式
 ```
 
@@ -31764,5 +31777,56 @@ docx.getObjectPart("word/document.xml").text();
 
 
 
+## 铁锈电池
 
+```
+如何用生活中容易获得的材料自制铁锈电池： 一组铁锈电池的体积跟一台洗衣机加烘衣机差不多，它的原理是，电池放电时吸氧，让浸泡其中的薄铁板生锈，释放电子；充电时，电流则让铁锈还原，吐出氧气。
+
+在生活中自制铁锈电池可以采用以下步骤：
+
+# 准备材料
+
+- 铁板
+- 盐水
+- 导线
+- LED灯或其他小型电子设备
+- 容器（例如空的塑料瓶或罐）
+
+准备工具：
+
+- 剪刀
+- 绝缘带
+
+# 制作方法
+
+## 1. 铁板处理
+
+取一块铁板，如果铁板上有油漆或者其它涂层，需要彻底清除。这样才能确保铁板表面与盐水接触。
+
+​```markdown
+**注意**: 需要穿戴安全手套来防止割伤。
+​```
+
+## 2. 配制盐水
+
+把食用盐充分溶解在清水中，得到盐水。
+
+​```markdown
+**提示**: 盐水的浓度越高，产生的电流就越大。但是也不能太高，否则会加速铁板的腐蚀。
+​```
+
+## 3. 浸泡铁板
+
+把处理过的铁板完全浸入盐水中，然后将容器封闭。
+
+## 4. 连接导线
+
+接上导线，然后通过导线连接到LE灯或其他小型电子设备。
+
+## 5. 等待反应
+
+铁板在盐水中慢慢生锈，这个过程会释放电子，产生电流。这个电流可以通过导线传输，为小型电子设备供电。
+
+以上就是在生活中自制铁锈电池的步骤。你可能需要试验多次才能达到理想的效果，所以不必急于求成。
+```
 
