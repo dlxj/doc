@@ -29897,6 +29897,9 @@ Bili.Copilot\src\Models\Models.Constants\Models.Constants.csproj
 Bili.Copilot\src\App\Package.appxmanifest
 	# 默认语言填 zh-CN
 
+Bili.Copilot\src\Models\Models.Constants\App\SettingNames.cs
+	# 定义枚举 SettingNames
+
 	
 Bili.Copilot\src\App\Extensions\LocaleExtension.cs
 namespace Bili.Copilot.App.Extensions;
