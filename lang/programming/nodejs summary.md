@@ -29867,6 +29867,51 @@ webrtc-stream 组件，https://github.com/mpromonet/webrtc-streamer 直接 RTSP 
 
 
 
+#### 全局常量
+
+```
+Bili.Copilot\src\Models\Models.App\Constants\AppConstants.cs
+namespace Bili.Copilot.Models.App.Constants;
+public static class AppConstants
+{
+#pragma warning disable SA1600
+    public const string ThemeDefault = "System";
+    
+Bili.Copilot\src\Models\Models.App\GlobalUsing.cs
+global using System.Text.Json.Serialization;
+global using Bili.Copilot.Models.Constants.App;
+	# 全局引用，再也不用写 using xxx
+
+Bili.Copilot\src\App\Resources\zh-Hans\Resources.resw
+  <data name="AppName" xml:space="preserve">
+    <value>哔哩助理</value>
+  </data>
+	# 字符常量
+	
+Bili.Copilot\src\App\Extensions\LocaleExtension.cs
+namespace Bili.Copilot.App.Extensions;
+[MarkupExtensionReturnType(ReturnType = typeof(string))]
+public sealed class LocaleExtension : MarkupExtension
+{
+    public StringNames Name { get; set; }
+    protected override object ProvideValue()
+        => ResourceToolkit.GetLocalizedString(Name);
+}
+	# 多语言扩展
+
+Bili.Copilot\src\App\Forms\MainWindow.xaml
+	xmlns:ext="using:Bili.Copilot.App.Extensions"
+        <controls:AppTitleBar
+            x:Name="CustomTitleBar"
+            Title="{ext:Locale Name=AppName}"
+        	# 引用常量
+	
+```
+
+
+
+
+
 Visual Studio 2022
 
 
