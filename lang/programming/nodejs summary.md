@@ -29888,6 +29888,16 @@ Bili.Copilot\src\App\Resources\zh-Hans\Resources.resw
   </data>
 	# 字符常量
 	
+Bili.Copilot\src\Models\Models.Constants\Models.Constants.csproj
+    <ItemGroup>
+        <AdditionalFiles Include="$(SolutionDir)\src\App\Resources\zh-Hans\Resources.resw" />
+    </ItemGroup>
+    	# 引入资源文件
+
+Bili.Copilot\src\App\Package.appxmanifest
+	# 默认语言填 zh-CN
+
+	
 Bili.Copilot\src\App\Extensions\LocaleExtension.cs
 namespace Bili.Copilot.App.Extensions;
 [MarkupExtensionReturnType(ReturnType = typeof(string))]
@@ -29905,7 +29915,7 @@ Bili.Copilot\src\App\Forms\MainWindow.xaml
             x:Name="CustomTitleBar"
             Title="{ext:Locale Name=AppName}"
         	# 引用常量
-	
+
 ```
 
 
