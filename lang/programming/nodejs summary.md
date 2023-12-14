@@ -29857,6 +29857,10 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 ```
 
+Debug -> Any CPU
+	# 生成解决方案 -> 部署解决方案
+	# 成功运行
+
 Bili.Copilot\src\ViewModels\Components\FFmpegPlayerViewModel\FFmpegPlayerViewModel.cs
 	# 看这里
 see Bili.Copilot\src\ViewModels\IPlayerViewModel.cs
@@ -29899,8 +29903,13 @@ Bili.Copilot\src\App\Package.appxmanifest
 
 Bili.Copilot\src\Libs\Libs.ResourceGenerator\ResourceGenerator.cs
 	context.AddSource("StringNames.g.cs", SourceText.From(sb.ToString(), Encoding.UTF8));
-	# 编译期间自动生成 枚举类 StringNames
-
+	# 编译期间获取资源文件并生成对应的枚举类型 StringNames
+	# 它是 .net 2.0 的独立 project ，奇奇怪怪
+	    StyleCop.Analyzers  Version="1.1.118"
+	    Microsoft.CodeAnalysis.CSharp.CodeStyle
+	    Version="4.4.0"
+	    	# Nuget 包
+	
 	
 Bili.Copilot\src\App\Extensions\LocaleExtension.cs
 namespace Bili.Copilot.App.Extensions;
@@ -29919,6 +29928,17 @@ Bili.Copilot\src\App\Forms\MainWindow.xaml
             x:Name="CustomTitleBar"
             Title="{ext:Locale Name=AppName}"
         	# 引用常量
+
+```
+
+
+
+#### 导航
+
+```
+Bili.Copilot\src\ViewModels\Components\AppViewModel\AppViewModel.cs
+Navigate(PageType.SignIn);
+	# 跳登录页
 
 ```
 
