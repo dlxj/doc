@@ -29940,6 +29940,11 @@ Bili.Copilot\src\ViewModels\Components\AppViewModel\AppViewModel.cs
 Navigate(PageType.SignIn);
 	# 跳登录页
 
+Bili.Copilot\src\App\Forms\MainWindow.xaml.cs
+MainFrame.Navigate(pageType, e.Parameter);
+	# 实际干活的是这个
+
+
 ```
 
 
