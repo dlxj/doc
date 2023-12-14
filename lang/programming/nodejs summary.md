@@ -29897,6 +29897,10 @@ Bili.Copilot\src\Models\Models.Constants\Models.Constants.csproj
 Bili.Copilot\src\App\Package.appxmanifest
 	# 默认语言填 zh-CN
 
+Bili.Copilot\src\Libs\Libs.ResourceGenerator\ResourceGenerator.cs
+	context.AddSource("StringNames.g.cs", SourceText.From(sb.ToString(), Encoding.UTF8));
+	# 编译期间自动生成 枚举类 StringNames
+
 	
 Bili.Copilot\src\App\Extensions\LocaleExtension.cs
 namespace Bili.Copilot.App.Extensions;
