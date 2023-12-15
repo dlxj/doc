@@ -29951,6 +29951,21 @@ MainFrame.Navigate(pageType, e.Parameter);
 	# 实际干活的是这个
 
 
+
+MainFrame 变量是在 xaml 定义，然后自动生成的
+        <Frame
+            x:Name="MainFrame"
+            Grid.Row="1"
+            Grid.Column="1"
+            Padding="0,12,0,0"
+            Background="{ThemeResource LayerFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource NavigationViewContentGridBorderBrush}"
+            BorderThickness="0,0,0,1" />
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler", " 3.0.0.2310")]
+private global::Microsoft.UI.Xaml.Controls.Frame MainFrame;
+MainFrame = global::WinRT.CastExtensions.As<global::Microsoft.UI.Xaml.Controls.Frame>(obj);
+	# 把 page 存在 MainFrame ?
+
 ```
 
 
