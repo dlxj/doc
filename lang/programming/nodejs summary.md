@@ -3503,6 +3503,10 @@ launch.json
 
 ```
 
+https://ai.fakeopen.com/auth1
+	# 获取 access_token
+	
+
 通过proxy模拟api向/v1/chat/completions发请求，提问一次算4条的额度
 
 /echodict8181/api/arkose/token
