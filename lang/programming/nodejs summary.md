@@ -29855,7 +29855,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 ### winUI3
 
-[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html) [appList](https://github.com/DesignLipsx/WinUI-3-Apps-List)
+[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html) [appList](https://github.com/DesignLipsx/WinUI-3-Apps-List) [book](https://github.com/PacktPublishing/Learn-WinUI-3-Second-Edition)
 
 [Rise-Media-Player](https://github.com/Rise-Software/Rise-Media-Player)
 
