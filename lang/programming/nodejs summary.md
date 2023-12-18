@@ -3740,7 +3740,7 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create RWKV-v4neo --type dataset
 	# huggingface-cli repo create numpy-transformer --type dataset
 	# huggingface-cli repo create annotated-transformer --type dataset
-	
+	# huggingface-cli repo create win10_dev --type dataset
 	
 
 
@@ -29905,6 +29905,18 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
     _window.Activate();
 
 
+安装 Microsoft.Windows.CsWin32 0.3.49-beta  # Nuget 里选包含预览版
+新建 NativeMethods.txt 和 App.xaml.cs 放在同一目录，内容如下
+GetDpiForWindow
+SetForegroundWindow
+SetWindowsHookEx
+UnhookWindowsHookEx
+CallNextHookEx
+GetModuleHandle
+
+var scaleFactor = Windows.Win32.PInvoke.GetDpiForWindow(new Windows.Win32.Foundation.HWND(windowHandle)) / 96d;
+	# 然后这个就可以用了
+	
 
 
 Debug -> Any CPU
