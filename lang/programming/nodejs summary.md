@@ -3741,7 +3741,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create numpy-transformer --type dataset
 	# huggingface-cli repo create annotated-transformer --type dataset
 	# huggingface-cli repo create win10_dev --type dataset
-	
+	# huggingface-cli repo create ChatGPT-to-API --type dataset
 
 
 git config --global core.safecrlf true
@@ -29730,10 +29730,10 @@ go build && \
 export SERVER_HOST="0.0.0.0"
 	# 改监听地址
 
-{"echoplayorgg@gmail.com":{"token":"xxx","puid":"user-xxx"}}
+{"echodictcom@gmail.com":{"token":"xxx","puid":"user-xxx"}}
 	# har + access_tokens.json 整好
 	# 正常启动后会生成 access_tokens.json
-	
+	# 其它账号给 pandoraNext 用，因为它用 4 个账号工作量不饱和
 
 curl 127.0.0.1:8080/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -29895,8 +29895,18 @@ iBL\App\Forms\MainWindow.xaml
 <local:WindowBase
     x:Class="App.Forms.MainWindow"
     xmlns:local="using:App.Forms"
+    
+    <Grid x:Name="RootGrid">
+        <Frame
+            x:Name="MainFrame"
+            Grid.Row="1"
+            Grid.Column="1"
+            Padding="0,12,0,0"
+            Background="{ThemeResource LayerFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource NavigationViewContentGridBorderBrush}"
+            BorderThickness="0,0,0,1" />
+    </Grid>
 </local:WindowBase>
-
 
 iBL\App\App.xaml.cs
 private WindowBase _window;
@@ -29917,6 +29927,65 @@ GetModuleHandle
 var scaleFactor = Windows.Win32.PInvoke.GetDpiForWindow(new Windows.Win32.Foundation.HWND(windowHandle)) / 96d;
 	# 然后这个就可以用了
 	
+
+iBL\App\App.xaml.cs
+        protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+        {
+            _window = new MainWindow();
+            _window.Activate();
+            MoveAndResize();
+        }
+
+        private static RectInt32 GetRenderRect(DisplayArea displayArea, IntPtr windowHandle)
+        {
+            var workArea = displayArea.WorkArea;
+            var scaleFactor = Windows.Win32.PInvoke.GetDpiForWindow(new Windows.Win32.Foundation.HWND(windowHandle)) / 96d;
+            var previousWidth = 500d; // SettingsToolkit.ReadLocalSetting(SettingNames.WindowWidth, 500d);
+            var previousHeight = 800d; // SettingsToolkit.ReadLocalSetting(SettingNames.WindowHeight, 800d);
+            var width = Convert.ToInt32(previousWidth * scaleFactor);
+            var height = Convert.ToInt32(previousHeight * scaleFactor);
+
+            // Ensure the window is not larger than the work area.
+            if (height > workArea.Height - 20)
+            {
+                height = workArea.Height - 20;
+            }
+
+            var lastPoint = new PointInt32(0, 0);  // GetSavedWindowPosition();
+            var isZeroPoint = lastPoint.X == 0 && lastPoint.Y == 0;
+            var isValidPosition = lastPoint.X >= workArea.X && lastPoint.Y >= workArea.Y;
+            var left = isZeroPoint || !isValidPosition
+                ? (workArea.Width - width) / 2d
+                : lastPoint.X - workArea.X;
+            var top = isZeroPoint || !isValidPosition
+                ? (workArea.Height - height) / 2d
+                : lastPoint.Y - workArea.Y;
+            return new RectInt32(Convert.ToInt32(left), Convert.ToInt32(top), width, height);
+        }
+
+        private void MoveAndResize()
+        {
+            var hwnd = WindowNative.GetWindowHandle(_window);
+            var windowId = Win32Interop.GetWindowIdFromWindow(hwnd);
+            var lastPoint = new PointInt32(0, 0); // GetSavedWindowPosition();
+            var displayArea = lastPoint.X == 0 && lastPoint.Y == 0
+                ? DisplayArea.GetFromWindowId(windowId, DisplayAreaFallback.Nearest)
+                : DisplayArea.GetFromPoint(lastPoint, DisplayAreaFallback.Nearest);
+            if (displayArea != null)
+            {
+                var rect = GetRenderRect(displayArea, hwnd);
+                var scaleFactor = Windows.Win32.PInvoke.GetDpiForWindow(new Windows.Win32.Foundation.HWND(hwnd)) / 96d;
+                _window.MinWidth = 500;
+                _window.MinHeight = 400;
+
+                var maxHeight = (displayArea.WorkArea.Height / scaleFactor) + 16;
+                _window.MaxHeight = maxHeight < 400 ? 400 : maxHeight;
+                _window.AppWindow.MoveAndResize(rect);
+            }
+        }
+
+	# 这样就可以调整窗口大小了
+
 
 
 Debug -> Any CPU

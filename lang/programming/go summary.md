@@ -9,6 +9,8 @@
 ```
 dnf install -y golang
 
+https://go.dev/dl/go1.21.5.windows-amd64.msi
+
 ctrl + X, 装 go 插件
 
 ctrl + shift + p ->go install tools ->Go: Install/Update Tools
