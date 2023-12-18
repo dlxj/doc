@@ -29862,6 +29862,50 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
 
 ```
+ 1.ctrl + k +f：非强制的，自己写的代码中自己调整的空格不能格式化. 2.ctrl + K +d：强制的
+
+namespace App;
+	# .net 7.0 可以这样写
+
+装 WinUIEx 2.3.1
+加入 iBL\App\Forms\WindowBase.cs
+using Microsoft.UI;
+using WinUIEx;
+namespace App.Forms;
+public class WindowBase : WindowEx
+{
+    public WindowBase()
+    {
+        AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+        AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
+        AppWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+        AppWindow.TitleBar.IconShowOptions = Microsoft.UI.Windowing.IconShowOptions.HideIconAndSystemMenu;
+        SystemBackdrop = new Microsoft.UI.Xaml.Media.MicaBackdrop();
+        Title = "iBL";
+    }
+}
+
+iBL\App\Forms\MainWindow.xaml.cs
+namespace App.Forms;
+public sealed partial class MainWindow : WindowBase
+    public MainWindow()
+        InitializeComponent();
+
+iBL\App\Forms\MainWindow.xaml
+<local:WindowBase
+    x:Class="App.Forms.MainWindow"
+    xmlns:local="using:App.Forms"
+</local:WindowBase>
+
+
+iBL\App\App.xaml.cs
+private WindowBase _window;
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+	_window = new MainWindow();
+    _window.Activate();
+
+
+
 
 Debug -> Any CPU
 	# 生成解决方案 -> 部署解决方案
