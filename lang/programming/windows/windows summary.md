@@ -416,6 +416,19 @@ slmgr /ato
 
 
 
+# 关闭病毒防护
+
+```
+Remove-WindowsFeature Windows-Defender
+
+```
+
+
+
+
+
+
+
 # 禁止自动更新
 
 ```
