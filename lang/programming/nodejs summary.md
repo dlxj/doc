@@ -29731,7 +29731,7 @@ export SERVER_HOST="0.0.0.0"
 	# 改监听地址
 
 {"echodictcom@gmail.com":{"token":"xxx","puid":"user-xxx"}}
-	# har + access_tokens.json 整好
+	# har + cookies.json 整好
 	# 正常启动后会生成 access_tokens.json
 	# 其它账号给 pandoraNext 用，因为它用 4 个账号工作量不饱和
 
@@ -29744,6 +29744,32 @@ curl 127.0.0.1:7070/v1/chat/completions \
      "temperature": 0.7
    }'
 	# 成功请求
+
+
+https://chat.openai.com/backend-api/conversation
+	# 官方网页版聊天接口
+	# ChatGPT-to-API 不支持, ninja 和 pandoraNext 都支持
+	# 但是，ChatGPT-to-API 可以拿到 ArkoseToken ? 这样，可以拿它调那两个的接口
+
+
+main.go
+import 加这一行
+	arkose "github.com/xqdoo00o/funcaptcha"
+
+
+main 函数加
+	router.GET("/getArkoseToken", func(c *gin.Context) {
+		_, puid := getSecret()
+		ArkoseToken, err := arkose.GetOpenAIToken(4, puid, "")
+		c.JSON(200, gin.H{
+			"err":         err,
+			"ArkoseToken": ArkoseToken,
+		})
+	})
+
+
+curl --location 'http://xxx.77:7070/getArkoseToken?=null'
+	# 自已加的接口，成功获取 ArkoseToken ，然后给 ninja 用，因为它没有次数限制
 
 
 
