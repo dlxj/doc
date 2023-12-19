@@ -16,7 +16,7 @@ ctrl + X, 装 go 插件
 ctrl + shift + p ->go install tools ->Go: Install/Update Tools
 	->勾选全部 ->ok
 
-ctrl + , ->go.lang ->勾选 Use Language Server 
+ctrl + , ->go lang ->勾选 Use Language Server 
 
 ```
 
