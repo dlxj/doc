@@ -2997,7 +2997,9 @@ http://127.0.0.1:7999/backend-api/
 
 ./target/debug/ninja run --arkose-chat4-har-file /mnt/huggingface/ninja/HAR/chat.openai.com.har
 
-ninja.exe run --arkose-gpt4-har-dir E:\usr\Ninja\HAR --bind 0.0.0.0:80
+./ninja.exe run --arkose-gpt4-har-dir E:/huggingface/ChatGPT-to-API/harPool --bind 0.0.0.0:80
+	# see .77 E:\huggingface\ChatGPT-to-API  
+	# 让它配合 ChatGPT-to-API 使用
 	# 新版改成这样了 （新版已闭源）
 
 run.ps1
