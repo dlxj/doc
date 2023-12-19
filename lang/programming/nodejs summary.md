@@ -29696,7 +29696,7 @@ dnf install -y golang
 
 
 
-- access_tokens.json 必须
+- cookies.json 必须
 
   ```
   {
@@ -29735,7 +29735,7 @@ export SERVER_HOST="0.0.0.0"
 	# 正常启动后会生成 access_tokens.json
 	# 其它账号给 pandoraNext 用，因为它用 4 个账号工作量不饱和
 
-curl 127.0.0.1:8080/v1/chat/completions \
+curl 127.0.0.1:7070/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer NONEED" \
   -d '{
