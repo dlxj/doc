@@ -30023,14 +30023,20 @@ Bili.Copilot\src\App\App.xaml.cs
 LaunchWindow(IActivatedEventArgs args = default)
         _window = new MainWindow(args);
         _window.Closed += OnMainWindowClosedAsync;
-	# 最小化到托盘
+	# 接管关闭事件
 
 private void OnMainWindowClosedAsync(object sender, WindowEventArgs args)
             _window?.Close();
             Environment.Exit(0);
             	# 直接退出
+            
+            args.Handled = true; // 关闭事件已处理, 不要再往下传了
             _window.Hide();
             	# 隐藏窗口
+
+
+安装包 H.NotifyIcon.WinUI
+	# 托盘图标
 
 
 Debug -> Any CPU
