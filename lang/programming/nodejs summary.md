@@ -30078,6 +30078,41 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
 	# 成功显示托盘图标
 
 
+
+处理托盘的右键退出
+iBL\App\Styles\TrayResources.xaml
+    xmlns:tb="using:H.NotifyIcon">
+    <XamlUICommand x:Key="QuitCommand" Label="exit" />
+    <tb:TaskbarIcon
+        x:Key="TrayIcon"
+        ContextMenuMode="PopupMenu"
+        IconSource="\Assets\logo.ico"
+        NoLeftClickDelay="True"
+        ToolTipText="what's this"
+        Visibility="Visible">
+
+        <tb:TaskbarIcon.ContextFlyout>
+            <MenuFlyout>
+                <MenuFlyoutItem Command="{StaticResource QuitCommand}" />
+            </MenuFlyout>
+        </tb:TaskbarIcon.ContextFlyout>
+    </tb:TaskbarIcon>
+
+
+iBL\App\App.xaml.cs
+        private void OnQuitCommandExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+        {
+            _window?.Close();
+            Environment.Exit(0);
+        }
+
+        protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs 
+            var exitApplicationCommand = (XamlUICommand)Resources["QuitCommand"];
+            exitApplicationCommand.ExecuteRequested += OnQuitCommandExecuteRequested;
+				# 成功右键退出
+	
+	
+
 Debug -> Any CPU
 	# 生成解决方案 -> 部署解决方案
 	# 成功运行
