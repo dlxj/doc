@@ -3002,6 +3002,9 @@ http://127.0.0.1:7999/backend-api/
 	# 让它配合 ChatGPT-to-API 使用
 	# 新版改成这样了 （新版已闭源）
 
+
+
+
 run.ps1
 # 修改工作目录
 Set-Location "E:\usr\Ninja"
@@ -30014,6 +30017,20 @@ iBL\App\App.xaml.cs
 
 	# 这样就可以调整窗口大小了
 
+
+
+Bili.Copilot\src\App\App.xaml.cs
+LaunchWindow(IActivatedEventArgs args = default)
+        _window = new MainWindow(args);
+        _window.Closed += OnMainWindowClosedAsync;
+	# 最小化到托盘
+
+private void OnMainWindowClosedAsync(object sender, WindowEventArgs args)
+            _window?.Close();
+            Environment.Exit(0);
+            	# 直接退出
+            _window.Hide();
+            	# 隐藏窗口
 
 
 Debug -> Any CPU
