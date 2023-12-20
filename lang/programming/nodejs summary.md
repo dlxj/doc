@@ -30035,8 +30035,47 @@ private void OnMainWindowClosedAsync(object sender, WindowEventArgs args)
             	# 隐藏窗口
 
 
-安装包 H.NotifyIcon.WinUI
+public class WindowBase : WindowEx
+	this.SetIcon("Assets/logo.ico");
+	# 设置任务栏上显示的图标 
+	
+
+安装包 H.NotifyIcon.WinUI  2.0.118
 	# 托盘图标
+	
+
+iBL\App\Styles\TrayResources.xaml
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:tb="using:H.NotifyIcon">
+    <tb:TaskbarIcon
+        x:Key="TrayIcon"
+        ContextMenuMode="PopupMenu"
+        IconSource="\Assets\logo.ico"
+        NoLeftClickDelay="True"
+        ToolTipText="what's this"
+        Visibility="Visible">
+    </tb:TaskbarIcon>
+</ResourceDictionary>
+
+
+iBL\App\App.xaml
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/TrayResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+
+iBL\App\App.xaml.cs
+private TaskbarIcon TrayIcon { get; set; }
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+	        TrayIcon = (TaskbarIcon)Resources["TrayIcon"];
+            TrayIcon.ForceCreate();
+	# 成功显示托盘图标
 
 
 Debug -> Any CPU
