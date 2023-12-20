@@ -1,3 +1,7 @@
+[环回免除列表 loopback](https://v2ex.com/t/744981)
+
+
+
 # vscdoe + MSVC
 
 [VS Code for Microsoft C++](https://code.visualstudio.com/docs/cpp/config-msvc)
