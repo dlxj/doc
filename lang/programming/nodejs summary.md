@@ -30157,6 +30157,11 @@ Bili.Copilot\src\App\Pages\SignInPage.xaml
                 </Grid>
 
 
+安装包 QRCoder 1.4.3
+安装包 Google.Protobuf 3.24.4
+	  Grpc.Net.Client 2.57.0
+	  Grpc.Tools      2.58.0
+
 
 Debug -> Any CPU
 	# 生成解决方案 -> 部署解决方案
