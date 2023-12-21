@@ -30111,7 +30111,37 @@ iBL\App\App.xaml.cs
             exitApplicationCommand.ExecuteRequested += OnQuitCommandExecuteRequested;
 				# 成功右键退出
 	
+
+
+处理托盘的左键恢复窗口
+iBL\App\Styles\TrayResources.xaml
+    <XamlUICommand x:Key="ShowHideWindowCommand">
+        <XamlUICommand.IconSource>
+            <SymbolIconSource Symbol="OpenPane" />
+        </XamlUICommand.IconSource>
+        <XamlUICommand.KeyboardAccelerators>
+            <KeyboardAccelerator Key="S" Modifiers="Control" />
+        </XamlUICommand.KeyboardAccelerators>
+    </XamlUICommand>
+    <tb:TaskbarIcon
+        x:Key="TrayIcon"
+        ContextMenuMode="PopupMenu"
+        IconSource="\Assets\logo.ico"
+        LeftClickCommand="{StaticResource ShowHideWindowCommand}"
+        NoLeftClickDelay="True"
 	
+iBL\App\App.xaml.cs
+        private void OnShowHideWindowCommandExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+        {
+            _window.Activate();
+            Windows.Win32.PInvoke.SetForegroundWindow(new Windows.Win32.Foundation.HWND(WindowNative.GetWindowHandle(_window)));
+        }
+
+OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+            var showHideWindowCommand = (XamlUICommand)Resources["ShowHideWindowCommand"];
+            showHideWindowCommand.ExecuteRequested += OnShowHideWindowCommandExecuteRequested;
+	# 成功左键恢复窗口
+
 
 Debug -> Any CPU
 	# 生成解决方案 -> 部署解决方案
