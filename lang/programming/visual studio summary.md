@@ -238,6 +238,17 @@ int main() {
 
 
 
+### VS2022 utf8
+
+[VS2022设置编码方式为utf-8的三种方式](https://blog.csdn.net/hfy1237/article/details/129858976)
+
+```
+vs2022 -> 扩展 -> 管理扩展 -> 搜 utf8 -> 装 utf8 no bom 插件 -> 重启 vs
+	# 这样以后源文件都以 utf8 保存
+```
+
+
+
 
 
 ## 调试Makefile工程

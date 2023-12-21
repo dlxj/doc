@@ -29893,7 +29893,10 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
 
 ```
- 1.ctrl + k +f：非强制的，自己写的代码中自己调整的空格不能格式化. 2.ctrl + K +d：强制的
+vs2022 -> 扩展 -> 管理扩展 -> 搜 utf8 -> 装 utf8 no bom 插件 -> 重启 vs
+	# 这样以后源文件都以 utf8 保存
+
+1.ctrl + k +f：非强制的，自己写的代码中自己调整的空格不能格式化. 2.ctrl + K +d：强制的
 
 namespace App;
 	# .net 7.0 可以这样写
@@ -30141,6 +30144,18 @@ OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
             var showHideWindowCommand = (XamlUICommand)Resources["ShowHideWindowCommand"];
             showHideWindowCommand.ExecuteRequested += OnShowHideWindowCommandExecuteRequested;
 	# 成功左键恢复窗口
+
+
+登录页的 QR 码
+Bili.Copilot\src\App\Pages\SignInPage.xaml
+                <Grid Width="240" CornerRadius="{StaticResource ControlCornerRadius}">
+                    <Image
+                        x:Name="QRCodeImage"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Stretch="Uniform" />
+                </Grid>
+
 
 
 Debug -> Any CPU
