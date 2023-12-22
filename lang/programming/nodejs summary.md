@@ -29902,6 +29902,9 @@ namespace App;
 	# .net 7.0 可以这样写
 
 装 WinUIEx 2.3.1
+   Microsoft.WindowsAppSDK 1.4.231008000
+   Microsoft.Windows.SDK.BuildTools 10.0.22621.756
+
 加入 iBL\App\Forms\WindowBase.cs
 using Microsoft.UI;
 using WinUIEx;
