@@ -29905,6 +29905,15 @@ namespace App;
    Microsoft.WindowsAppSDK 1.4.231008000
    Microsoft.Windows.SDK.BuildTools 10.0.22621.756
 
+	<PackageReference Include="CommunityToolkit.Labs.WinUI.SegmentedControl" Version="0.1.230830" />
+	<PackageReference Include="CommunityToolkit.Labs.WinUI.SettingsControls" Version="0.0.18" />
+	<PackageReference Include="CommunityToolkit.Labs.WinUI.Shimmer" Version="0.1.230830" />
+	<PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
+	<PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Primitives" Version="7.1.2" />
+	
+	# 这几个包搜不到，要手动贴
+	
+
 加入 iBL\App\Forms\WindowBase.cs
 using Microsoft.UI;
 using WinUIEx;
