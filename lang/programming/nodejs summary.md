@@ -29904,6 +29904,9 @@ namespace App;
 装 WinUIEx 2.3.1
    Microsoft.WindowsAppSDK 1.4.231008000
    Microsoft.Windows.SDK.BuildTools 10.0.22621.756
+   Microsoft.AppCenter.Analytics 5.0.3
+   Microsoft.AppCenter.Crashes 5.0.3
+   Vortice.WinUI 3.3.3-beta
 
 	<PackageReference Include="CommunityToolkit.Labs.WinUI.SegmentedControl" Version="0.1.230830" />
 	<PackageReference Include="CommunityToolkit.Labs.WinUI.SettingsControls" Version="0.0.18" />

@@ -380,6 +380,8 @@ method=auto
 
 nmcli n off && nmcli n on #重启网络
 
+nmcli con reload
+
 ip addr #用修改后的ip登录系统，查看ip地址
 
 相关网络命令
@@ -432,6 +434,13 @@ vi /etc/hosts #编辑配置文件
 ```
 
 
+
+```
+# dhcp 这样就可以，但是要记得重启电脑
+
+[ipv4]
+method=auto
+```
 
 
 
