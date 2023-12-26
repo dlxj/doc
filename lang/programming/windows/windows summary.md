@@ -411,6 +411,23 @@ bind_port = 13389
 
 
 
+## win11
+
+[下载](https://blog.csdn.net/no1xium/article/details/134283927)
+
+
+
+```
+Get-FileHash xxx.iso
+
+Chinese Simplified 64-bit	953F9ECD3307A92FB5DAF12E3FE05603FE63181F6ABC0B08B42E632E09510E39
+
+```
+
+
+
+
+
 # 激活
 
 ```

@@ -29902,6 +29902,9 @@ vs2022 -> 扩展 -> 管理扩展 -> 搜 utf8 -> 装 utf8 no bom 插件 -> 重启
 
 1.ctrl + k +f：非强制的，自己写的代码中自己调整的空格不能格式化. 2.ctrl + K +d：强制的
 
+先添加包源
+https://pkgs.dev.azure.com/dotnet/CommunityToolkit/_packaging/CommunityToolkit-Labs/nuget/v3/index.json
+
 namespace App;
 	# .net 7.0 可以这样写
 
