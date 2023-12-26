@@ -3747,7 +3747,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create annotated-transformer --type dataset
 	# huggingface-cli repo create win10_dev --type dataset
 	# huggingface-cli repo create ChatGPT-to-API --type dataset
-
+	# huggingface-cli repo create wpf --type dataset
 
 git config --global core.safecrlf true
 	# 拒绝提交包含混合换行符的文件
