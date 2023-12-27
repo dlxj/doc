@@ -352,6 +352,10 @@ answers = torch.tensor(answers).float() # convert to tensor
 ```python
 .from_numpy(x)
 .numpy()
+
+generated_tokens.cpu().numpy()
+	# gpu tensor to cpu
+
 ```
 
 
@@ -514,6 +518,8 @@ plt.show()
 ## Variable
 
 - https://blog.csdn.net/weixin_42782150/article/details/106854349
+
+- [pytorch中的Autograd 自动微分](https://blog.csdn.net/weixin_38664232/article/details/104430535)
 
   
 
