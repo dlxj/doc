@@ -3690,6 +3690,19 @@ print(u'输出路径：%s.npy' % data_extract_npy)
 
 
 
+#### 彩色输出
+
+```
+pip3 install rich
+
+    generated_text = Text(generated_text, style="green")
+    print(Panel(generated_text, width=120, title="Reply"))
+```
+
+
+
+
+
 ### moment
 
 
