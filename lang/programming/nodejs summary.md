@@ -25489,6 +25489,8 @@ pip3 install -r requirements.txt
 
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
 
+[李宏毅 Transformer](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
+
 - ```
   # huggingface\annotated-transformer 主仓
   # see numpy-transformer just upper
