@@ -418,11 +418,20 @@ bind_port = 13389
 
 
 ```
-Get-FileHash xxx.iso
+Get-FileHash C:\Users\Administrator\Downloads\Win11_23H2_Chinese_Simplified_x64v2.iso
 
 Chinese Simplified 64-bit	953F9ECD3307A92FB5DAF12E3FE05603FE63181F6ABC0B08B42E632E09510E39
 
+
 ```
+
+
+
+## 启动U盘
+
+[ventoy](https://www.ventoy.net/cn/index.html)
+
+[Rufus](https://github.com/pbatard/rufus/releases)
 
 
 
