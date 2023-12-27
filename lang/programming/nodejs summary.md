@@ -25487,7 +25487,11 @@ pip3 install -r requirements.txt
 
 ### 从零起步的 Transformer 与代码拆解
 
+see echodict\transformer\picoGPT_chinese\chat.py
+
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
+
+[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)
 
 [李宏毅 Transformer](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 
