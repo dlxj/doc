@@ -20628,6 +20628,14 @@ input_field.grab_focus()
 
 [EIRTeam.FFmpeg ](https://github.com/EIRTeam/EIRTeam.FFmpeg)  search godot gdextension video
 
+- ```
+  var ffmpeg_stream = FFmpegVideoStream.new()
+  	ffmpeg_stream.file = "/Users/chris/media/seeyou.mp4"	
+  	$VideoStreamPlayer.stream = ffmpeg_stream
+  	$VideoStreamPlayer.play()
+  	$VideoStreamPlayer.stream_position = 2.0
+  ```
+
 - Turn Videos into Games 商店搜
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
