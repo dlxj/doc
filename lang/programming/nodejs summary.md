@@ -20629,6 +20629,7 @@ input_field.grab_focus()
 [EIRTeam.FFmpeg ](https://github.com/EIRTeam/EIRTeam.FFmpeg)  search godot gdextension video
 
 - ```
+  var ff_stream: FFmpegVideoStream = null
   var ffmpeg_stream = FFmpegVideoStream.new()
   	ffmpeg_stream.file = "/Users/chris/media/seeyou.mp4"	
   	$VideoStreamPlayer.stream = ffmpeg_stream
