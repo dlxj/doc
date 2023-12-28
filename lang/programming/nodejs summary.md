@@ -20630,6 +20630,8 @@ input_field.grab_focus()
 
 [VideoStreamPlayer](https://docs.godotengine.org/en/stable/classes/class_videostreamplayer.html)
 
+[godot-video-reference  demo](https://github.com/kidrigger/godot-video-reference)
+
 
 
 ### Post
