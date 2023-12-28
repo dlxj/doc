@@ -20628,6 +20628,10 @@ input_field.grab_focus()
 
 [EIRTeam.FFmpeg ](https://github.com/EIRTeam/EIRTeam.FFmpeg)  search godot gdextension video
 
+- Turn Videos into Games 商店搜
+
+[opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
+
 [creating_movies](https://docs.godotengine.org/en/latest/tutorials/animation/creating_movies.html) 录制视频
 
 [VideoStreamPlayer](https://docs.godotengine.org/en/stable/classes/class_videostreamplayer.html)
@@ -20657,6 +20661,84 @@ func _process(delta: float) -> void:
 		set_goal_color()
 	reset_when_done()
 	update_score_text()
+```
+
+
+
+```
+It results in about 45fps now, because of the stupid conversions, that go like:
+
+Video Frame -> Raw OpenCV -> OpenCV mat -> bmp bytes -> godot image -> godot texture -> Sprite2D.
+
+If one were to shave a few steps from the list, it would yield an acceptable performance for sure.
+
+Also, one should decouple video frame processing from the rendering thread (for obvious reasons). So, the real code would be more like:
+
+using Godot;
+using OpenCvSharp; // Install https://www.nuget.org/packages/OpenCvSharp4.Windows
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+public partial class VideoSprite : Sprite2D
+{
+    [Export]
+    public string VideoPath { get; set; }
+    private VideoCapture _capture;
+    private ImageTexture _texture;
+    private Task _playVideoTask;
+    private Image _image;
+
+    public override void _Ready()
+    {
+        // Pefrorm the 1st draw and init textures
+        _capture = new VideoCapture(this.VideoPath);
+        if (!_capture.IsOpened())
+            throw new Exception($"Failed to open {this.VideoPath}");
+        _image = new Image();
+        var frame = new Mat();
+        _capture.Read(frame);
+        _image.LoadBmpFromBuffer(frame.ToBytes(ext: ".bmp"));
+        _texture = ImageTexture.CreateFromImage(_image);
+        this.Texture = _texture;
+
+        // Start processing task
+        _playVideoTask = new Task(() => PlayVideo());
+        _playVideoTask.Start();
+    }
+
+    private void PlayVideo()
+    {
+        var startTime = DateTime.UtcNow;
+        while (true)
+        {
+            double playbackPosition = (DateTime.UtcNow - startTime).TotalSeconds;
+            var currentFrame = (int)(playbackPosition * _capture.Fps);
+            if (_capture.PosFrames >= currentFrame)
+            {
+                // It's already displaying the correct frame. Wait for half a frame time and try again
+                Thread.Sleep((int)(1000 / (_capture.Fps/2)));
+                continue;
+            }
+
+            var frame = new Mat();
+            _capture.Read(frame);
+            if (frame.Empty())
+                return; // Video is over, exit
+
+            // Convert frame data to godot boilerplate
+            var bmpBytes = frame.ToBytes(ext: ".bmp");
+            var boilerplate = new Image();
+            boilerplate.LoadBmpFromBuffer(bmpBytes);
+            Interlocked.Exchange(ref _image, boilerplate);
+        }
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        _texture.Update(_image);
+    }
+}
 ```
 
 
