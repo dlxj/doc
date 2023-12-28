@@ -413,7 +413,7 @@ bind_port = 13389
 
 ## win11
 
-[下载](https://blog.csdn.net/no1xium/article/details/134283927)
+[下载](https://www.microsoft.com/en-us/software-download/windows11)
 
 
 
