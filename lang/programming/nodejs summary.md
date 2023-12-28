@@ -20626,11 +20626,40 @@ input_field.grab_focus()
 
 ### videoStreamPlayer
 
+[EIRTeam.FFmpeg ](https://github.com/EIRTeam/EIRTeam.FFmpeg)  search godot gdextension video
+
 [creating_movies](https://docs.godotengine.org/en/latest/tutorials/animation/creating_movies.html) 录制视频
 
 [VideoStreamPlayer](https://docs.godotengine.org/en/stable/classes/class_videostreamplayer.html)
 
 [godot-video-reference  demo](https://github.com/kidrigger/godot-video-reference)
+
+
+
+```
+# see Turn Videos into Games  in 
+func find_current_stream():
+	current_stream = null
+	for node in get_children():
+		if node is VideoStreamPlayer and node.is_visible():
+			current_stream = node
+			print("found ", node.name)
+			break
+
+
+func reset_when_done():
+	if not current_stream.is_playing():
+		get_tree().reload_current_scene()
+
+func _process(delta: float) -> void:
+	clicking_position()
+	if Input.is_action_just_pressed("choose_new_color"):
+		set_goal_color()
+	reset_when_done()
+	update_score_text()
+```
+
+
 
 
 
