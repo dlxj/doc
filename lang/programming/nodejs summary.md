@@ -30060,7 +30060,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
 
-[Luo-Painter-UWP](https://github.com/ysdy44/Luo-Painter-UWP) 漫画
+[Luo-Painter-UWP](https://github.com/ysdy44/Luo-Painter-UWP)  painting
 
 
 
