@@ -20626,6 +20626,19 @@ input_field.grab_focus()
 
 ### videoStreamPlayer
 
+[godot-video-reference](https://github.com/kidrigger/godot-video-reference)
+
+- ```
+  # 太难了，搞不了
+  git clone --recursive   https://github.com/kidrigger/godot-video-reference.git && \
+  pip install scons
+  scons target=editor generate_bindings=yes
+  
+  
+  ```
+
+  
+
 [EIRTeam.FFmpeg ](https://github.com/EIRTeam/EIRTeam.FFmpeg)  search godot gdextension video
 
 - ```
