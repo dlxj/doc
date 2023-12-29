@@ -30053,9 +30053,16 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 - ```
   C:\Users\Administrator\.nuget\packages
   	# 出错先删除
+  
+  换 x64 编译成功
+  
   ```
 
 - [webrtc-stream](https://github.com/mpromonet/webrtc-streamer)
+
+[Luo-Painter-UWP](https://github.com/ysdy44/Luo-Painter-UWP) 漫画
+
+
 
 ```
 vs2022 -> 扩展 -> 管理扩展 -> 搜 utf8 -> 装 utf8 no bom 插件 -> 重启 vs
