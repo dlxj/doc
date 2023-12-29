@@ -30029,6 +30029,20 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 [Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html) [appList](https://github.com/DesignLipsx/WinUI-3-Apps-List) [book](https://github.com/PacktPublishing/Learn-WinUI-3-Second-Edition)
 
+- ```
+  vs2022 install  
+  	.net 5.0 6.0 7.0 8.0
+  	Windows 10 SDK (10.0.19041.0)
+  	.NET Multi-platform App UI开发  
+  	.NET桌面开发
+  	使用C++的桌面开发
+  	通用Windows平台开发
+  
+  
+  ```
+
+  
+
 [biliuwp-lite 上面不活跃了](https://github.com/ywmoyue/biliuwp-lite) 
 
 [bili api 大本营](https://github.com/SocialSisterYi/bilibili-API-collect/issues/665)
