@@ -29978,6 +29978,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [3D 穿梭效果](https://www.cnblogs.com/dino623/p/uwp_galaxy_shuttle.html)
 
+[使用离散式关键帧播放动画 ](https://www.cnblogs.com/dino623/p/using_DiscreteDoubleKeyFrame_to_play_animation.html)
+
 
 
 ### WPF
