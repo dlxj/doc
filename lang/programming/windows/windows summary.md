@@ -451,6 +451,20 @@ slmgr /ato
 
 
 
+## 卸载
+
+[uninstall](https://kerrynotes.com/battle-net-stuck-in-updating/)
+
+```
+（1）首先把Agent.exe这个进程关掉；
+
+（2）然后去注册表上删除计算机\HKEY_CURRENT_USER\SOFTWARE\Blizzard Entertainment\Launcher即可（把计算机上搜索出来的Blizzard文件夹删除也行）。
+```
+
+
+
+
+
 # 关闭病毒防护
 
 ```
