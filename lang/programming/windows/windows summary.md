@@ -440,8 +440,13 @@ Chinese Simplified 64-bit	953F9ECD3307A92FB5DAF12E3FE05603FE63181F6ABC0B08B42E63
 # 激活
 
 ```
+irm https://massgrave.dev/get | iex
+  # win11 成功
+
 slmgr /skms kms.03k.org
 slmgr /ato
+  # 好像失效了
+
 ```
 
 
