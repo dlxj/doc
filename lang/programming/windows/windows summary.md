@@ -1258,3 +1258,11 @@ vi ~/.xsession
 
 - https://lofter.me/2018/10/22/Kali-Linux-%E9%AB%98%E6%95%88%E7%A0%B4%E8%A7%A3Wifi%E5%AF%86%E7%A0%81/
 
+
+
+# 红米 AX6 刷机
+
+[红米 AX6 安装 ShellClash 体验分享](https://www.v2ex.com/t/927935)
+
+
+
