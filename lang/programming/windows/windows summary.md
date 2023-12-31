@@ -459,6 +459,8 @@ slmgr /ato
 （1）首先把Agent.exe这个进程关掉；
 
 （2）然后去注册表上删除计算机\HKEY_CURRENT_USER\SOFTWARE\Blizzard Entertainment\Launcher即可（把计算机上搜索出来的Blizzard文件夹删除也行）。
+
+进入 C:\ProgramData\Battle.net\Agent 目录，把修改时间最新的那个文件夹删除Agent.8022，在启动战网，瞬间启动成功了
 ```
 
 
