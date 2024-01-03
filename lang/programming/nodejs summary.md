@@ -30052,6 +30052,18 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 [biliuwp-lite 上面不活跃了](https://github.com/ywmoyue/biliuwp-lite) 
 
+- ```
+  vscode 搜 17763 改成
+  10.0.19041.0
+  把之前的证书全删掉
+  双击 Package.appxmanifest -> 打包 ->创建证书
+  
+  编译成功
+  
+  ```
+
+  
+
 [bili api 大本营](https://github.com/SocialSisterYi/bilibili-API-collect/issues/665)
 
 [Rise-Media-Player](https://github.com/Rise-Software/Rise-Media-Player)
