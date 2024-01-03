@@ -30058,7 +30058,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
   把之前的证书全删掉
   双击 Package.appxmanifest -> 打包 ->创建证书
   
-  编译成功
+  BiliLite.Packages 设为启动项可以成功运行
   
   ```
 
