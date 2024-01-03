@@ -3748,6 +3748,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create win10_dev --type dataset
 	# huggingface-cli repo create ChatGPT-to-API --type dataset
 	# huggingface-cli repo create wpf --type dataset
+	# huggingface-cli repo create ffmediaelement --type dataset
+	
 
 git config --global core.safecrlf true
 	# 拒绝提交包含混合换行符的文件
@@ -29984,6 +29986,71 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### WPF
 
+[ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
+
+- ```
+  
+  https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
+  	# 下载
+  
+  Unosquare.FFME.Windows.Sample
+  	# 设为启动项, 改成 x64 编译
+  
+  
+  ffmediaelement\Unosquare.FFME.Windows.Sample\App.xaml.cs
+  	Library.FFmpegDirectory = @"D:/usr/ffmpeg-6.1.1-full_build-shared/bin";
+  
+  ffmediaelement\Unosquare.FFME\FFmpeg\FFLibrary.cs
+  	# 改版本也解决不了
+  
+  
+  https://github.com/unosquare/ffmediaelement/issues/642
+  	# 修复方法
+  	
+  	
+  I've updated it to 6.0.0.0
+  	package: https://www.nuget.org/packages/zgabi.FFME.Windows
+  	source: https://github.com/zgabi/ffmediaelement
+  	compatible ffmpeg for example: https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
+  	# 成功运行
+  	
+  
+  ffmediaelement\Unosquare.FFME.Windows.Sample\Controls\PlaylistPanelControl.xaml
+  <TextBox x:Name="OpenFileTextBox" Text="{Binding Playlist.OpenMediaSource}" Grid.Column="0" Background="Transparent" BorderThickness="0" 
+                                   Foreground="#484848" FontSize="16" Padding="2"  FontWeight="Bold" Grid.ColumnSpan="2" />
+  
+  
+  ffmediaelement\Unosquare.FFME.Windows.Sample\Controls\PlaylistPanelControl.xaml.cs
+              OpenFileTextBox.KeyDown += async (s, e) =>
+              {
+                  if (e.Key != Key.Enter) return;
+                  await App.ViewModel.Commands.OpenCommand.ExecuteAsync(OpenFileTextBox.Text);
+                  e.Handled = true;
+              };
+  	# 回车就播放
+  
+  
+  
+              // Bind the Enter key to the command
+              OpenFileTextBox.KeyDown += async (s, e) =>
+              {
+                  if (e.Key != Key.Enter) return;
+  
+                  // await App.ViewModel.Commands.OpenCommand.ExecuteAsync(OpenFileTextBox.Text);
+                  var m = App.ViewModel.MediaElement;
+                  var target = new Uri(@"E:\videos\netflix\anime\japanese\Touch\Episode 1\Touch_S01E01_Episode 1.mp4");
+                  await m.Open(target);
+  
+                  // await App.ViewModel.Commands.OpenCommand.ExecuteAsync(OpenFileTextBox.Text);
+                  e.Handled = true;
+              };
+              
+              # 成功播放
+  
+  
+  
+  ```
+
 [WPFDevelopers 各种控件](https://github.com/WPFDevelopersOrg/WPFDevelopers)
 
 [VPet 虚拟桌宠 必看](https://github.com/LorisYounger/VPet)
@@ -30051,6 +30118,18 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
   
 
 [biliuwp-lite 上面不活跃了](https://github.com/ywmoyue/biliuwp-lite) 
+
+- ```
+  vscode 搜 17763 改成
+  10.0.19041.0
+  把之前的证书全删掉
+  双击 Package.appxmanifest -> 打包 ->创建证书
+  
+  BiliLite.Packages 设为启动项可以成功运行
+  
+  ```
+
+  
 
 [bili api 大本营](https://github.com/SocialSisterYi/bilibili-API-collect/issues/665)
 
