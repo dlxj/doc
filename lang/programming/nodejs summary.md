@@ -29984,7 +29984,37 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### WPF
 
-[ffmediaelement 成品播放器](https://github.com/unosquare/ffmediaelement)
+[ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
+
+- ```
+  
+  https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
+  	# 下载
+  
+  Unosquare.FFME.Windows.Sample
+  	# 设为启动项, 改成 x64 编译
+  
+  
+  ffmediaelement\Unosquare.FFME.Windows.Sample\App.xaml.cs
+  	Library.FFmpegDirectory = @"D:/usr/ffmpeg-6.1.1-full_build-shared/bin";
+  
+  ffmediaelement\Unosquare.FFME\FFmpeg\FFLibrary.cs
+  	# 改版本也解决不了
+  
+  
+  https://github.com/unosquare/ffmediaelement/issues/642
+  	# 修复方法
+  	
+  	
+  I've updated it to 6.0.0.0
+  	package: https://www.nuget.org/packages/zgabi.FFME.Windows
+  	source: https://github.com/zgabi/ffmediaelement
+  	compatible ffmpeg for example: https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
+  	# 成功运行
+  	
+  
+  
+  ```
 
 [WPFDevelopers 各种控件](https://github.com/WPFDevelopersOrg/WPFDevelopers)
 
