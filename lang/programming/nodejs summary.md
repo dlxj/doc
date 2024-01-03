@@ -3750,7 +3750,6 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create wpf --type dataset
 	# huggingface-cli repo create ffmediaelement --type dataset
 	
-	
 
 git config --global core.safecrlf true
 	# 拒绝提交包含混合换行符的文件
@@ -30015,6 +30014,39 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
   	compatible ffmpeg for example: https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
   	# 成功运行
   	
+  
+  ffmediaelement\Unosquare.FFME.Windows.Sample\Controls\PlaylistPanelControl.xaml
+  <TextBox x:Name="OpenFileTextBox" Text="{Binding Playlist.OpenMediaSource}" Grid.Column="0" Background="Transparent" BorderThickness="0" 
+                                   Foreground="#484848" FontSize="16" Padding="2"  FontWeight="Bold" Grid.ColumnSpan="2" />
+  
+  
+  ffmediaelement\Unosquare.FFME.Windows.Sample\Controls\PlaylistPanelControl.xaml.cs
+              OpenFileTextBox.KeyDown += async (s, e) =>
+              {
+                  if (e.Key != Key.Enter) return;
+                  await App.ViewModel.Commands.OpenCommand.ExecuteAsync(OpenFileTextBox.Text);
+                  e.Handled = true;
+              };
+  	# 回车就播放
+  
+  
+  
+              // Bind the Enter key to the command
+              OpenFileTextBox.KeyDown += async (s, e) =>
+              {
+                  if (e.Key != Key.Enter) return;
+  
+                  // await App.ViewModel.Commands.OpenCommand.ExecuteAsync(OpenFileTextBox.Text);
+                  var m = App.ViewModel.MediaElement;
+                  var target = new Uri(@"E:\videos\netflix\anime\japanese\Touch\Episode 1\Touch_S01E01_Episode 1.mp4");
+                  await m.Open(target);
+  
+                  // await App.ViewModel.Commands.OpenCommand.ExecuteAsync(OpenFileTextBox.Text);
+                  e.Handled = true;
+              };
+              
+              # 成功播放
+  
   
   
   ```
