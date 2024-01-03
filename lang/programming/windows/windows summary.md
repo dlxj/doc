@@ -1262,7 +1262,11 @@ vi ~/.xsession
 
 # 红米 AX6 刷机
 
+[使用虚拟机解锁红米ax6-ssh并刷入qsdk固件](https://www.bilibili.com/video/BV1fQ4y1R7LY)
+
+[Redmi红米AX6 解锁SSH 刷机 ](https://www.youtube.com/watch?v=Pv1VstarERg)
+
 [红米 AX6 安装 ShellClash 体验分享](https://www.v2ex.com/t/927935)
 
-
+[红米AX6 第三方不死 U-Boot 刷入教程](https://www.youtube.com/watch?v=K-MZLD62KRg)
 
