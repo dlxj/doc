@@ -29984,6 +29984,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### WPF
 
+[ffmediaelement 成品播放器](https://github.com/unosquare/ffmediaelement)
+
 [WPFDevelopers 各种控件](https://github.com/WPFDevelopersOrg/WPFDevelopers)
 
 [VPet 虚拟桌宠 必看](https://github.com/LorisYounger/VPet)
