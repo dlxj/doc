@@ -20696,7 +20696,12 @@ Godot_v4.2.1-stable_mono 新建项目，会自动生成 visual studio 解决方�
 	# https://www.bilibili.com/read/cv23585404/
 
 https://gamedevacademy.org/sprite2d-in-godot-complete-guide/
-	# good 
+	# good
+https://blog.csdn.net/qq_46273065/article/details/128120402
+	# python实现视频音频同步
+	
+https://github.com/opencv/opencv/blob/4.x/samples/cpp/videocapture_audio_combination.cpp
+	# 同时处理音视频
 	
 
 GD.Print("whatever");
