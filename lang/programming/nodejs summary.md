@@ -20628,6 +20628,9 @@ input_field.grab_focus()
 
 ### videoStreamPlayer
 
+- https://godotforums.org/d/38003-how-to-stream-videos-from-urls/7
+- [ai pet 功能丰富 含 url video play](https://github.com/aiaimimi0920/mimi)
+
 [godot-video-reference](https://github.com/kidrigger/godot-video-reference)
 
 - ```
@@ -20659,6 +20662,8 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   ```
   
 - Turn Videos into Games 商店搜
+
+[elly_videoplayer  better than eir?](https://github.com/Elly2018/elly_videoplayer)
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
