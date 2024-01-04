@@ -20690,6 +20690,12 @@ func _process(delta: float) -> void:
 
 
 ```
+
+Godot_v4.2.1-stable_mono 新建项目，会自动生成 visual studio 解决方案, 打开
+添加 OpenCvSharp4.Windows和 OpenCvSharp4.Extensions(来自NuGet) 
+	# https://www.bilibili.com/read/cv23585404/
+
+
 It results in about 45fps now, because of the stupid conversions, that go like:
 
 Video Frame -> Raw OpenCV -> OpenCV mat -> bmp bytes -> godot image -> godot texture -> Sprite2D.
