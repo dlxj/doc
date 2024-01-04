@@ -20634,7 +20634,7 @@ input_field.grab_focus()
   # 太难了，搞不了
   git clone --recursive   https://github.com/kidrigger/godot-video-reference.git && \
   pip install scons
-  scons target=editor generate_bindings=yes
+  scons target=editor generate_bindings=yes vsproj=yes
   
   
   ```
@@ -20644,14 +20644,20 @@ input_field.grab_focus()
 [EIRTeam.FFmpeg ](https://github.com/EIRTeam/EIRTeam.FFmpeg)  search godot gdextension video
 
 - ```
+  
+  git clone --recursive https://github.com/EIRTeam/EIRTeam.FFmpeg.git && \
+  cd EIRTeam.FFmpeg/gdextension_build && \
+  scons platform=windows verbose=true vsproj=yes
+  	# 成功编译
+  
   var ff_stream: FFmpegVideoStream = null
-  var ffmpeg_stream = FFmpegVideoStream.new()
+var ffmpeg_stream = FFmpegVideoStream.new()
   	ffmpeg_stream.file = "/Users/chris/media/seeyou.mp4"	
   	$VideoStreamPlayer.stream = ffmpeg_stream
   	$VideoStreamPlayer.play()
   	$VideoStreamPlayer.stream_position = 2.0
   ```
-
+  
 - Turn Videos into Games 商店搜
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
@@ -20705,6 +20711,9 @@ https://github.com/opencv/opencv/blob/4.x/samples/cpp/videocapture_audio_combina
 	
 https://github.com/Nolkaloid/godot-yt-dlp
 	# 必看
+	
+GitHub\gdscript\sprite2d
+	# 成品
 
 
 GD.Print("whatever");
