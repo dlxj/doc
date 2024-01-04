@@ -30048,6 +30048,26 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
               # 成功播放
   
   
+          public string WindowTitle
+          {
+              get => m_WindowTitle;
+              private set => SetProperty(ref m_WindowTitle, value);
+          }
+          	# 属性的赋值 
+  
+  在 app 上定义根视图模型
+  ffmediaelement\Unosquare.FFME.Windows.Sample\App.xaml
+  xmlns:vm="clr-namespace:Unosquare.FFME.Windows.Sample.ViewModels">
+              <ResourceDictionary.MergedDictionaries>
+                  <ResourceDictionary>
+                      <vm:RootViewModel x:Key="ViewModel" />
+                  </ResourceDictionary>
+  			
+  ffmediaelement\Unosquare.FFME.Windows.Sample\App.xaml.cs
+  public static RootViewModel ViewModel => Current.Resources[nameof(ViewModel)] as RootViewModel;
+  	# 定义它的静态引用
+  
+  
   
   ```
 
