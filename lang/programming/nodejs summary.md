@@ -20703,6 +20703,9 @@ https://blog.csdn.net/qq_46273065/article/details/128120402
 https://github.com/opencv/opencv/blob/4.x/samples/cpp/videocapture_audio_combination.cpp
 	# 同时处理音视频
 	
+https://github.com/Nolkaloid/godot-yt-dlp
+	# 必看
+
 
 GD.Print("whatever");
 	# C# script 这样输出
