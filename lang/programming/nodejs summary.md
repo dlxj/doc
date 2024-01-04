@@ -28865,12 +28865,14 @@ You also can just use Makefiles but it’s not simple for beginner, and you will
 
 - https://github.com/phoboslab/jsmpeg
 
-- https://blog.csdn.net/a843334549/article/details/120697574  海康推流
+- https://blog.csdn.net/a843334549/article/details/120697574  海康推流 [github](https://github.com/vCloudSail/jsmpeg-player)
 
 - https://blog.csdn.net/qq_41619796/article/details/121161232
 
-- https://gitee.com/zhairuihao/jsmpeg-ws-web
+- https://gitee.com/zhairuihao/jsmpeg-ws-web [github](https://github.com/zhairuihao/jsmpeg-ws-web)
 
+  > new account: 173xxxx5535
+  >
   > cegbdfa
   >
   > cegfdb link to github
