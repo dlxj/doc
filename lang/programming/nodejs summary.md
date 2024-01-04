@@ -20695,6 +20695,13 @@ Godot_v4.2.1-stable_mono 新建项目，会自动生成 visual studio 解决方�
 添加 OpenCvSharp4.Windows和 OpenCvSharp4.Extensions(来自NuGet) 
 	# https://www.bilibili.com/read/cv23585404/
 
+https://gamedevacademy.org/sprite2d-in-godot-complete-guide/
+	# good 
+	
+
+GD.Print("whatever");
+	# C# script 这样输出
+
 
 It results in about 45fps now, because of the stupid conversions, that go like:
 
