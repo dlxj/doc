@@ -20673,10 +20673,11 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   [connection signal="ToLoad" from="PlayUI" to="Plane" method="load_trigger"]
   	# 在场景文件里定义连接（ui 上能显示连接，但是没有地方给你手动点连接）
   	# 不放 .gd 里连接可能这样更清晰 ?
+  	# 位于下层的控件事件往上冒泡，先到同级的上一层，再到父控件。这样安排比较好？
   	
   ```
 
-- 
+  
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
@@ -20731,7 +20732,10 @@ https://github.com/Nolkaloid/godot-yt-dlp
 	# 必看
 	
 GitHub\gdscript\sprite2d
-	# 成品
+	# 成品 用 opencv 逐帧取图，按帧率算好时间画图
+
+https://forum.godotengine.org/t/decode-an-image-sent-over-udp-from-python-opencv-to-godot-for-texture-data-use/3531
+	# UDP opencv 通信传图，godot 显示
 
 
 GD.Print("whatever");
