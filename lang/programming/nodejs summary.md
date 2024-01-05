@@ -29142,6 +29142,12 @@ DjVuToy的一个德国用户向我介绍过一个校对DjVu中隐藏文本的方
 
 
 
+## gpt4-mobile
+
+[infiniteGPT4](https://github.com/linkedlist771/infiniteGPT4)
+
+
+
 ## ChatGPT-AutoChat
 
 [注入JavaScript](https://m.tongfu.net/home/35/blog/513275.html)
