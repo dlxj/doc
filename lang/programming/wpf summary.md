@@ -2,7 +2,11 @@
 
 # XAML
 
-##　d:DesignHeight
+see huggingface\ffmediaelement
+
+see GitHub\gdscript\godot-subtitles-4.1_clone
+
+## d:DesignHeight
 
 ```
 mc:Ignorable="d" d:DesignHeight="700"
