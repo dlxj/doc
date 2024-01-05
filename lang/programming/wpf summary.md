@@ -1,12 +1,38 @@
 
 
-[DMSkin](https://github.com/944095635/DMSkin)
+# XAML
 
-### WPF
+##　d:DesignHeight
+
+```
+mc:Ignorable="d" d:DesignHeight="700"
+```
+
+这段代码是XAML (eXtensible Application Markup Language) 属性的一部分，用来定义设计时的属性。让我为你解释每个部分的作用：
+
+- `mc:Ignorable="d"`：这里的 `mc` 是XML命名空间的前缀，通常在XAML文件的顶部被定义，如 `xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"`。`Ignorable` 指示XAML处理器在运行时忽略特定前缀的所有属性。在这个例子中，"d" 前缀下的所有属性在运行时都将被忽略，只有在设计时才会被设计器工具（比如 Visual Studio 或 Blend）使用。
+
+- `d:DesignHeight="700"`：再次见到 "d" 前缀，这表示 `DesignHeight` 是一个设计时属性，用于指示设计器在渲染控件时使用的假设高度。在本例中，设计时的高度被设置为700单位。这对于开发者在不运行应用程序的情况下，仅通过XAML编辑器查看和设计用户界面非常有用。
+
+这些属性对实际运行的应用程序没有任何影响，因为它们在编译时会被忽略。它们只为提升设计时的体验而存在。
+
+
+
+
+
+
+
+[DMSkin](https://github.com/944095635/DMSkin)
 
 [WPF 实现裁剪图像](https://v2ex.com/t/950084#)
 
 [WPF UI](https://github.com/lepoco/wpfui)
 
 [HandyControl](https://github.com/HandyOrg/HandyControl)
+
+
+
+
+
+
 
