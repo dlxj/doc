@@ -115,6 +115,8 @@ I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set
 
 ## install nodejs
 
+
+
 ```
 wget https://nodejs.org/download/release/v14.21.1/node-v14.21.1-linux-x64.tar.gz && \
 tar xvf node-v14.21.1-linux-x64.tar.gz && \
@@ -3749,7 +3751,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create ChatGPT-to-API --type dataset
 	# huggingface-cli repo create wpf --type dataset
 	# huggingface-cli repo create ffmediaelement --type dataset
-	# huggingface-cli repo create elly_videoplayer_demo --type dataset
+	# huggingface-cli repo create elly_videoplayer --type dataset
 	
 
 git config --global core.safecrlf true
@@ -20051,7 +20053,7 @@ func create_input_field_dialog(mode, board, list = null):
 	var overlay = ColorRect.new()
 	overlay.color = Color(0, 0, 0, 0.5)
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_KEEP_SIZE)
-	get_parent().add_child(overlay)
+	get_parent().(overlay)
 
 	var dialog = InputFieldDialog.instantiate()
 	#dialog.popup_window = true
@@ -20674,6 +20676,10 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   	# 在场景文件里定义连接（ui 上能显示连接，但是没有地方给你手动点连接）
   	# 不放 .gd 里连接可能这样更清晰 ?
   	# 位于下层的控件事件往上冒泡，先到同级的上一层，再到父控件。这样安排比较好？
+  
+  自已编译才能正常播放
+  	see huggingface/elly_videoplayer
+  	
   	
   ```
 
