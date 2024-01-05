@@ -3749,6 +3749,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create ChatGPT-to-API --type dataset
 	# huggingface-cli repo create wpf --type dataset
 	# huggingface-cli repo create ffmediaelement --type dataset
+	# huggingface-cli repo create elly_videoplayer_demo --type dataset
 	
 
 git config --global core.safecrlf true
@@ -20628,6 +20629,8 @@ input_field.grab_focus()
 
 ### videoStreamPlayer
 
+**search winUI3 in outline**
+
 - https://godotforums.org/d/38003-how-to-stream-videos-from-urls/7
 - [ai pet 功能丰富 含 url video play](https://github.com/aiaimimi0920/mimi)
 
@@ -20663,7 +20666,17 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   
 - Turn Videos into Games 商店搜
 
-[elly_videoplayer  better than eir?](https://github.com/Elly2018/elly_videoplayer)
+[elly_videoplayer](https://github.com/Elly2018/elly_videoplayer)  **better than eir?**
+
+- ```
+  DemoScene.tscn
+  [connection signal="ToLoad" from="PlayUI" to="Plane" method="load_trigger"]
+  	# 在场景文件里定义连接（ui 上能显示连接，但是没有地方给你手动点连接）
+  	# 不放 .gd 里连接可能这样更清晰 ?
+  	
+  ```
+
+- 
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
@@ -30158,6 +30171,8 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 
 ### winUI3
+
+**search videoStreamPlayer in outline**
 
 [Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html) [appList](https://github.com/DesignLipsx/WinUI-3-Apps-List) [book](https://github.com/PacktPublishing/Learn-WinUI-3-Second-Edition)
 
