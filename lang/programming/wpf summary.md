@@ -22,6 +22,20 @@ mc:Ignorable="d" d:DesignHeight="700"
 
 
 
+## Grid
+
+```
+        <Grid VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+```
+
+- `Grid`: 这是使用的网格布局控件。
+- `VerticalAlignment="Bottom"`: 这个属性设置了整个`Grid`垂直对齐方式，使得`Grid`会在其父容器内对齐到底部。
+
 
 
 

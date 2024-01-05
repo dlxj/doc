@@ -30048,6 +30048,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
 
+[高仿QQ登录](https://github.com/944095635/DMSkin-QQSignIN)
+
 - ```
   
   https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
