@@ -1270,3 +1270,9 @@ vi ~/.xsession
 
 [红米AX6 第三方不死 U-Boot 刷入教程](https://www.youtube.com/watch?v=K-MZLD62KRg)
 
+
+
+## Openwrt 旁路网关
+
+[旁路网关](https://sspai.com/post/68511)
+
