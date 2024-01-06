@@ -1272,6 +1272,21 @@ vi ~/.xsession
 
 
 
+```
+AX6 ssh 192.168.31.1 密码
+6e3ee24d
+
+红米 AX6 自用精简 Openwrt：
+默认系统后台：192.168.123.1
+账号：root
+密码：password
+集成插件：ssr plus、TTYD 终端
+```
+
+
+
+
+
 ## Openwrt 旁路网关
 
 [旁路网关](https://sspai.com/post/68511)
