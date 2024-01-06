@@ -1287,7 +1287,9 @@ AX6 ssh 192.168.31.1 密码
 
 ## Openwrt 旁路由
 
-[旁路由](https://zhuanlan.zhihu.com/p/112484256)
+[旁路由](https://blog.sinovale.com/4273.html)
+
+[旁路由 不好用](https://zhuanlan.zhihu.com/p/112484256)
 
 
 
