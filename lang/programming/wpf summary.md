@@ -81,6 +81,18 @@ mc:Ignorable="d" d:DesignHeight="700"
 
 
 
+### 列平分
+
+```
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+```
+
+
+
 
 
 
