@@ -20685,6 +20685,37 @@ var ffmpeg_stream = FFmpegVideoStream.new()
 
   
 
+[GoZen-ffmpeg 视频编译器的一部分 很新 必看](https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg)
+
+- ```
+  
+  git clone https://github.com/VoylinsGamedevJourney/GoZen.git && \
+  cd GoZen && \
+  git clone https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg.git && \
+  cd GoZen-ffmpeg && \
+  git reset --hard b0eb64e && \
+  git clone https://github.com/godotengine/godot-cpp.git && \
+  cd godot-cpp && \
+  git reset --hard f3143c7
+  
+  
+  
+  gh repo clone VoylinsGamedevJourney/GoZen-ffmpeg -- --recurse-submodules
+  
+  gh repo clone VoylinsGamedevJourney/GoZen -- --recurse-submodules
+  
+  
+  ssh-keyscan github.com >> ~/.ssh/known_hosts
+  
+  git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg.git
+  
+  git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen.git && \
+  cd GoZen
+  scons -j 2 destination=../src/editor/bin target=template_release platform=windows
+  ```
+
+- 
+
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
 [creating_movies](https://docs.godotengine.org/en/latest/tutorials/animation/creating_movies.html) 录制视频
