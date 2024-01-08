@@ -1,8 +1,91 @@
 
 
+# 添加资源
+
+```
+.Net 6.0 WPF
+
+修改项目文件 .csproj 
+  <ItemGroup>
+    <Page Update="App.Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="App.Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  
+  
+修改 App.xaml
+     <Application.Resources>
+        <ResourceDictionary>
+ 			<ResourceDictionary.MergedDictionaries>
+ 			    <ResourceDictionary Source="App.Icons.xaml" />
+                <ResourceDictionary Source="App.Styles.xaml" />
+ 			</ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
+    </Application.Resources>
+    
+
+添加用户控件, 既可看到效果
+<UserControl x:Class="WpfApp1.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d">
+    <Grid Name="Controls" Visibility="Visible" Height="250" Background="{x:Null}">
+
+        <Grid VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DockPanel Name="ProgressPanel" Grid.Row="1" LastChildFill="True" Margin="20,0">
+                <Grid Width="500">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </DockPanel>
+
+            <Grid Name="ControlsPanel" Grid.Row="2" Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <DockPanel Name="LeftControls" HorizontalAlignment="Left" Grid.Column="0">
+                    <ToggleButton Style="{DynamicResource ModernToggleButtonStyle}" >
+                        <Path Stretch="Uniform" Data="{Binding Source={StaticResource VerticalSyncIcon}, Path=Data}" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type ToggleButton}}}" ></Path>
+                    </ToggleButton>
+                </DockPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
+
+    
+```
+
+
+
+
+
+
+
 # XAML
 
 see huggingface\ffmediaelement
+
+see GitHub\echodict\WPF\WpfApp1 仿制品
 
 see GitHub\gdscript\godot-subtitles-4.1_clone
 
