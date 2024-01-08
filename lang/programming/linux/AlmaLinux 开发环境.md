@@ -533,7 +533,8 @@ systemctl enable xrdp && \
 systemctl status xrdp && \
 systemctl disable firewalld
 
-reboot
+# reboot
+	# 不重启也可以连
 
 systemctl stop firewalld
 	# 关掉防火墙以后成功用 windows 远程桌面登录
@@ -620,6 +621,12 @@ google-chrome &
 		# 密码设置成和 root 一样
 
 ```
+
+
+
+# Install vscode
+
+[how-to-install-visual-studio-code-on-almalinux](https://www.linuxcapable.com/how-to-install-visual-studio-code-on-almalinux/)
 
 
 
