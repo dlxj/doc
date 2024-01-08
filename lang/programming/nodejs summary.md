@@ -20698,16 +20698,20 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   cd godot-cpp && \
   git reset --hard f3143c7
   
+  复制 elly_videoplayer\src\ffmpeg 到 GoZen\gozen-ffmpeg\ffmpeg
+  修改 gozen-ffmpeg/SConstruct 
+  	env.Append(CPPPATH=["src/", "ffmpeg/include/"])
+  	env.Append(LIBPATH=["ffmpeg/lib/"])
+  		# 可能只有 linux 能编译成功
   
   cd GoZe/GoZen-ffmpeg && \
-  scons -Q -j2 target=template_release platform=windows
+  scons -Q -j2 destination=../src/editor/bin target=template_release platform=windows
   
   E:\t\GoZen\gozen-ffmpeg\src\ffmpeg_includes.hpp(4): fatal error C1083: 无法打开包括文件: “libavcodec/avcodec.h”: No such file or directory
   	# 他只官方编译了 linux 版
   
   
-  复制 elly_videoplayer\src\ffmpeg 到 GoZen\gozen-ffmpeg\ffmpeg
-  	# 可能只有 linux 能编译成功
+  
   
   
   gh repo clone VoylinsGamedevJourney/GoZen-ffmpeg -- --recurse-submodules
@@ -20716,11 +20720,11 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   
   
   ssh-keyscan github.com >> ~/.ssh/known_hosts
-  
+
   git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg.git
   
   git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen.git && \
-cd GoZen
+  cd GoZen
   scons -j 2 destination=../src/editor/bin target=template_release platform=windows
   ```
   
