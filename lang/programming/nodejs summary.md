@@ -20728,7 +20728,8 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   scons -j 2 destination=../src/editor/bin target=template_release platform=windows
   ```
   
-- 
+  
+  
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
