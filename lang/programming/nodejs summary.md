@@ -30101,6 +30101,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [自适应高DPI](https://github.com/densen2014/WinformHighDPICompatibleProgram)
 
+[仿QQ](https://github.com/yashuangyi/Simulation-QQ)
+
 
 
 ### UWP
