@@ -20699,6 +20699,13 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   git reset --hard f3143c7
   
   
+  cd GoZe/GoZen-ffmpeg && \
+  scons -Q -j2 target=template_release platform=windows
+  
+  E:\t\GoZen\gozen-ffmpeg\src\ffmpeg_includes.hpp(4): fatal error C1083: 无法打开包括文件: “libavcodec/avcodec.h”: No such file or directory
+  	# 他只官方编译了 linux 版
+  
+  
   
   gh repo clone VoylinsGamedevJourney/GoZen-ffmpeg -- --recurse-submodules
   
