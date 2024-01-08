@@ -20713,14 +20713,18 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   scons -Q -j2 destination=../src/editor/bin target=template_release platform=linux
   
   
+  cp /root/GoZen/gozen-ffmpeg/bin/libgozen.linux.template_release.x86_64.so /root/GoZen/src/editor/bin
+  
+  
+  
   https://download.visualstudio.microsoft.com/download/pr/1cac4d08-3025-4c00-972d-5c7ea446d1d7/a83bc5cbedf8b90495802ccfedaeb2e6/dotnet-sdk-6.0.417-linux-x64.tar.gz
   
   mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.417-linux-x64.tar.gz  -C $HOME/dotnet
-  export DOTNET_ROOT=$HOME/dotnet && \
+export DOTNET_ROOT=$HOME/dotnet && \
   export PATH=$PATH:$HOME/dotnet
   
   
-E:\t\GoZen\gozen-ffmpeg\src\ffmpeg_includes.hpp(4): fatal error C1083: 无法打开包括文件: “libavcodec/avcodec.h”: No such file or directory
+  E:\t\GoZen\gozen-ffmpeg\src\ffmpeg_includes.hpp(4): fatal error C1083: 无法打开包括文件: “libavcodec/avcodec.h”: No such file or directory
   	# 他只官方编译了 linux 版
   
   
