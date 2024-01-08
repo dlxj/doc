@@ -20741,8 +20741,8 @@ E:\t\GoZen\gozen-ffmpeg\src\ffmpeg_includes.hpp(4): fatal error C1083: 无法打
   scons -j 2 destination=../src/editor/bin target=template_release platform=windows
   ```
   
-  
-  
+
+[mimi 功能挺多待观察](https://github.com/aiaimimi0920/mimi.git)
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
