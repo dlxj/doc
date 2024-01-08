@@ -30099,6 +30099,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [FlyleafDemo](https://github.com/maoleigepu/FlyleafDemo)
 
+[自适应高DPI](https://github.com/densen2014/WinformHighDPICompatibleProgram)
+
 
 
 ### UWP
