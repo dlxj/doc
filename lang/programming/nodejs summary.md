@@ -20629,7 +20629,7 @@ input_field.grab_focus()
 
 
 
-### videoStreamPlayer
+# videoStreamPlayer
 
 **search winUI3 in outline**
 
@@ -20706,6 +20706,9 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   	# 他只官方编译了 linux 版
   
   
+  复制 elly_videoplayer\src\ffmpeg 到 GoZen\gozen-ffmpeg\ffmpeg
+  	# 可能只有 linux 能编译成功
+  
   
   gh repo clone VoylinsGamedevJourney/GoZen-ffmpeg -- --recurse-submodules
   
@@ -20717,10 +20720,10 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg.git
   
   git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen.git && \
-  cd GoZen
+cd GoZen
   scons -j 2 destination=../src/editor/bin target=template_release platform=windows
   ```
-
+  
 - 
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
