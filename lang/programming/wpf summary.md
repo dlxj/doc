@@ -30,11 +30,57 @@ mc:Ignorable="d" d:DesignHeight="700"
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="70"></RowDefinition>
-            </Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        
+        
+                <Grid Width="500">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                   		# 列定义, 两边各100，中间平分
+        
 ```
 
 - `Grid`: 这是使用的网格布局控件。
 - `VerticalAlignment="Bottom"`: 这个属性设置了整个`Grid`垂直对齐方式，使得`Grid`会在其父容器内对齐到底部。
+
+
+
+### 基础模板
+
+```
+# 新建用户控件 UserControl
+
+	<Grid Name="Controls" Visibility="Visible" Height="250" Background="{x:Null}">
+
+        <Grid VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <DockPanel Name="ProgressPanel" Grid.Row="1" LastChildFill="True" Margin="20,0">
+            <Grid Width="500">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </DockPanel>
+
+    </Grid>
+```
+
+
+
+
 
 
 
