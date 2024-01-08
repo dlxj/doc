@@ -630,6 +630,26 @@ google-chrome &
 
 
 
+# Install .Net SDK
+
+
+
+```
+https://download.visualstudio.microsoft.com/download/pr/1cac4d08-3025-4c00-972d-5c7ea446d1d7/a83bc5cbedf8b90495802ccfedaeb2e6/dotnet-sdk-6.0.417-linux-x64.tar.gz
+
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.417-linux-x64.tar.gz  -C $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet && \
+export PATH=$PATH:$HOME/dotnet
+
+
+```
+
+
+
+
+
+
+
 # mecab
 
 [MeCab+NEologd](https://qiita.com/heimaru1231/items/1f4f03088bc0f6bdefc6)
