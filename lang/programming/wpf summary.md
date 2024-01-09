@@ -178,6 +178,18 @@ mc:Ignorable="d" d:DesignHeight="700"
 
 
 
+## Window
+
+```
+WindowStartupLocation="Manual" MinHeight="720" Height="0" MinWidth="1280" Width="0"
+Background="Black"
+Title="MainWindow"
+```
+
+
+
+
+
 
 
 

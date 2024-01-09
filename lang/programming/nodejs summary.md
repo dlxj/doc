@@ -30123,6 +30123,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [高仿QQ登录](https://github.com/944095635/DMSkin-QQSignIN)
 
+[高仿LOL](https://github.com/jamesnet214/leagueoflegends)
+
 - ```
   
   https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z
