@@ -132,6 +132,17 @@ mc:Ignorable="d" d:DesignHeight="700"
 
 
 
+### 一定要加 Canvas
+
+```
+Grid 下面一定要加 Canvas, 否则会变小透明
+<Canvas IsHitTestVisible="False" Background="{DynamicResource ShadedBackgroundBrush}" />
+```
+
+
+
+
+
 ### 基础模板
 
 ```
