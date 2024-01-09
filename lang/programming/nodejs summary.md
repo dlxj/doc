@@ -3752,6 +3752,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create wpf --type dataset
 	# huggingface-cli repo create ffmediaelement --type dataset
 	# huggingface-cli repo create elly_videoplayer --type dataset
+	# huggingface-cli repo create CleanReader.Desktop --type dataset
+	
 	
 
 git config --global core.safecrlf true
@@ -30288,7 +30290,12 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
   
   ```
 
-  
+
+
+
+[CleanReader.Desktop 阅读器](https://github.com/Clean-Reader/CleanReader.Desktop)
+
+
 
 [bili api 大本营](https://github.com/SocialSisterYi/bilibili-API-collect/issues/665)
 
