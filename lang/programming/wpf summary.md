@@ -218,6 +218,26 @@ Title="MainWindow"
 
 
 
+#### 遍历窗口
+
+```
+using System.Linq;
+using System.Windows;
+
+public static Window GetFirstNonMainWindow()
+{
+    var mainWin = Application.Current.MainWindow;
+    return Application.Current.Windows
+        .OfType<Window>()
+        .FirstOrDefault(win => win != mainWin);
+}
+
+```
+
+
+
+
+
 
 
 
@@ -232,7 +252,7 @@ Title="MainWindow"
 
 
 
-# 异频锁
+# 异步锁
 
 [AsyncEx](https://github.com/StephenCleary/AsyncEx)
 
