@@ -258,6 +258,20 @@ public static Window GetFirstNonMainWindow()
 
 
 
+```
+        private void Play_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Action play = async () =>
+            {
+                var target = new Uri(@"E:\videos\netflix\anime\japanese\Touch\Episode 1\Touch_S01E01_Episode 1.mp4");
+                await main.Media.Open(target);
+            };
+            play();
+        }
+```
+
+
+
 
 
 
