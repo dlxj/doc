@@ -199,6 +199,47 @@ Title="MainWindow"
 
 
 
+### 获取主窗口实例
+
+```
+# see echodict\WPF\WpfApp1\WpfApp1\UserControl1.xaml.cs
+		private void Play_Button_Click(object sender, RoutedEventArgs e)
+        {
+            paly();
+        }
+
+        async void paly()
+        {
+            MainWindow main = (MainWindow)Application.Current.MainWindow;
+            var target = new Uri(@"E:\videos\netflix\anime\japanese\Touch\Episode 1\Touch_S01E01_Episode 1.mp4");
+            await main.Media.Open(target);
+        }
+```
+
+
+
+
+
+
+
+## 全屏问题
+
+[全屏问题](https://www.cnblogs.com/Naylor/p/17118993.html)
+
+
+
+
+
+
+
+# 异频锁
+
+[AsyncEx](https://github.com/StephenCleary/AsyncEx)
+
+
+
+
+
 
 
 
