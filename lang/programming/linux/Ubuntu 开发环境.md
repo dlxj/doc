@@ -317,6 +317,19 @@ win10 上执行：
 
 ```
 
+# ubuntu 20.04  autodl 是这个版本
+cp /etc/apt/sources.list /etc/apt/sources.list__
+
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+apt update
+	# 有点小错误，不影响
+
+
+
 cp -r /etc/yum.repos.d/ /etc/yum.repos.d_bak
 
 sed -e 's|^mirrorlist=|#mirrorlist=|g' \
