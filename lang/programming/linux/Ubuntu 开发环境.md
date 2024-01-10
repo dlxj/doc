@@ -21,13 +21,17 @@ nvidia-smi
 
 ```
 
-
+# ubuntu 20.04 成功
 ufw disable && \
 apt install openssh-server -y && \
 systemctl enable --now ssh && \
 systemctl status ssh
 
 vi /etc/ssh/sshd_config
+
+PermitRootLogin yes
+PasswordAuthentication yes
+	# 改这两个重启 ssh 成功登录
 
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
