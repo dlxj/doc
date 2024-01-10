@@ -26880,6 +26880,10 @@ ln -sfT /etc/alternatives/cuda /usr/local/cuda
 	# cuda 多版本切换
 
 
+wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+sudo sh cuda_11.7.1_515.65.01_linux.run
+
+
 
 https://blog.csdn.net/sinat_40245632/article/details/109330182
 	# 
