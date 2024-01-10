@@ -5083,6 +5083,567 @@ Another question that might come up when trying to generalize this approach is t
 
 
 
+
+
+## 异步回调
+
+```
+using Fleck;
+using OpenCvSharp;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Runtime.Remoting.Messaging;
+
+
+namespace ocrClient
+{
+
+    public delegate void drawingLineDelegate();
+
+    public partial class imgRotateForm : Form
+    {
+        // key : path  value: image bytes
+        public static Dictionary<string, Image> g_dic_images = new Dictionary<string, Image>();
+
+        public static string g_state = "ready";
+        public static int g_total = 0;
+        public static int g_curr = 0;
+
+        public static List<string> g_img_paths = new List<string>();
+
+        SynchronizationContext _syncContext = null;
+
+
+        string imagePath = "";
+
+        Mat img;
+
+        float angle = 1.0f;
+
+        bool rotated = false; 
+
+        //水平线
+        int lineY = 0;
+
+        line line1 = new line();
+
+        //websocket对象
+        ws w;
+        //websocket连接
+        IWebSocketConnection conn;
+
+
+        //声明委托
+        private delegate Mat calcHandler(string img_path);
+
+        //代理方法
+        public Mat calc(string img_path)
+        {
+
+            var img_src = new Mat(img_path);
+
+            try
+            {
+                var newImg = Sample.matRotate(img_src, angle);
+                img_src.Dispose();
+                img_src = newImg;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("已到最大旋转角度");
+            }
+
+            return img_src;
+
+        }
+
+        //异步调用
+        public async void calc_all(List<string> img_paths)
+        {
+
+            if (img_paths.Count <= 0)
+            {
+                return;
+            }
+
+            calcHandler handler = new calcHandler(calc);
+
+            imgBoardForm.g_total = img_paths.Count;
+            imgBoardForm.g_curr = 0;
+
+            string path = img_paths[imgBoardForm.g_curr];
+            IAsyncResult result = handler.BeginInvoke(path, new AsyncCallback(CallBack), "one task done.");
+
+        }
+
+        //异步回调方法
+        public void CallBack(IAsyncResult result)
+        {
+            //AsyncResult 是IAsyncResult接口的一个实现类，空间：System.Runtime.Remoting.Messaging
+            //AsyncDelegate 属性可以强制转换为用户定义的委托的实际类。
+            calcHandler handler = (calcHandler)((AsyncResult)result).AsyncDelegate;
+
+            var img_paths = imgBoardForm.g_img_paths;
+
+            string path = img_paths[imgBoardForm.g_curr];
+
+            string basename = Path.GetFileName(path);
+
+            string msg = $"处理进度：{imgBoardForm.g_curr + 1} /{imgBoardForm.g_img_paths.Count}";
+
+            _syncContext.Post(SetButtonText, msg);//子线程中通过UI线程上下文更新UI
+
+            //等待函数执行完毕
+            var image = handler.EndInvoke(result);
+
+            var state = result.AsyncState;
+
+            if (imgBoardForm.g_dic_images.ContainsKey(basename))
+            {
+
+                //var img = imgBoardForm.g_dic_images[basename];
+                //img.Dispose();
+
+            }
+            //imgBoardForm.g_dic_images[basename] = image;
+
+
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(path)}";
+
+            //保存到临时目录
+            image.SaveImage(dist);
+
+            image.Dispose();
+
+            Thread.Sleep(100);
+            File.Delete(path);
+            Thread.Sleep(100);
+            File.Move(dist, path);
+
+            Thread.Sleep(100);
+            File.Delete(dist);
+            Thread.Sleep(100);
+
+            // 一个图片处理异步任务完成
+            imgBoardForm.g_curr += 1;
+
+
+
+            if (imgBoardForm.g_curr < imgBoardForm.g_img_paths.Count)
+            {
+                // 开始下一个任务
+                path = img_paths[imgBoardForm.g_curr];
+
+                IAsyncResult result2 = handler.BeginInvoke(path, new AsyncCallback(CallBack), "one task done.");
+
+            }
+            else
+            {
+                _syncContext.Post(SetButtonText, "一键处理全部图片");//子线程中通过UI线程上下文更新UI
+                MessageBox.Show("全部图片处理完成.");
+            }
+
+        }
+
+        public imgRotateForm(string _imagePath, ws _w, IWebSocketConnection _conn)
+        {
+
+            InitializeComponent();
+
+            line1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            line1.BackColor = Color.Red;
+            line1.Width = pictureBox1.Width;
+            line1.Height = 2;
+            line1.Cursor = Cursors.SizeNS;
+            line1.MouseDown += new MouseEventHandler(this.pictureBox1_MouseDown);
+            line1.MouseMove += new MouseEventHandler(this.pictureBox1_MouseMove);
+            line1.MouseUp += new MouseEventHandler(this.pictureBox1_MouseUp);
+
+            this.pictureBox1.Controls.Add(line1);
+            w = _w;
+            conn = _conn;
+            loadImage(_imagePath);
+
+            //获取UI线程同步上下文   
+            _syncContext = SynchronizationContext.Current;
+        }
+
+        private void SetButtonText(object text)
+        {
+            this.button4.Text = text.ToString();
+            if (text.ToString() == "一键处理全部图片")
+            {
+                this.button4.Enabled = true;
+
+            }
+        }
+
+
+        public void loadImage(string _imagePath)
+        {
+            if (_imagePath == "")
+            {
+                return;
+            }
+            this.imagePath = _imagePath;
+            if (this.img != null)
+            {
+                this.img.Dispose();
+            }
+            this.img = new Mat(this.imagePath);
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.Dispose();
+            }
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
+            File.Copy(_imagePath, dist);
+            this.pictureBox1.Image = Image.FromFile(dist);
+        }
+
+
+        void showImage()
+        {
+            using (var memoryStream = img.ToMemoryStream())
+            {
+
+                var image = Image.FromStream(memoryStream);
+                this.pictureBox1.Image = image;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showImage();
+        }
+
+        //左转
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rotate(angle);
+
+            rotated = true;
+        }
+
+        //右转
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rotate(angle * -1);
+
+            rotated = true;
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!float.TryParse(textBox1.Text, out angle))
+            {
+                MessageBox.Show("请输入正确角度数值");
+            }
+        }
+
+        private void imgRotateForm_Load(object sender, EventArgs e)
+        {
+            if (imagePath != "")
+            {
+                loadImage(imagePath);
+            }
+            this.lineY = this.pictureBox1.Height / 2;
+            this.line1.Top = lineY + 10;
+        }
+
+        /// <summary>
+        /// 旋转图片
+        /// </summary>
+        /// <param name="angle">角度</param>
+        void rotate(float angle)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            try
+            {
+                var newImg = Sample.matRotate(this.img, angle);
+                this.img.Dispose();
+                this.img = newImg;
+                this.showImage();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("已到最大旋转角度");
+                this.img = new Mat(imagePath);
+                this.showImage();
+            }
+
+            button1.Enabled = true;
+            button2.Enabled = true;
+        }
+
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void imgRotateForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Filter = "图像文件(*.jpg;*.gif;*.png;*.bmp)|*.jpg;*.gif;*.png;*.bmp;*.jpeg";
+            ofd.Multiselect = true;
+            var r = ofd.ShowDialog();
+            if (r != DialogResult.OK)
+            {
+                return;
+            }
+
+            string[] arr = ofd.FileNames;
+
+            listView1.Items.Clear();
+            listView1.BeginUpdate();
+            foreach (string path in arr)
+            {
+                string name = Path.GetFileName(path);
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = name;
+                lvi.Tag = path;
+                listView1.Items.Add(lvi);
+            }
+            listView1.EndUpdate();
+            textBox2.Text = string.Join(";", arr);
+        }
+
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            loadImage(listView1.SelectedItems[0].Tag.ToString());
+        }
+
+
+        int startY = 0;
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (e.Y >= lineY - 5 && e.Y <= lineY + 5)
+            {
+                pictureBox1.Cursor = Cursors.SizeNS;
+            }
+            else
+            {
+                pictureBox1.Cursor = Cursors.Default;
+            }
+            if (startY != 0)
+            {
+                if (e.Y - startY != 0)
+                {
+
+                }
+                lineY = startY + (e.Y - startY);
+                line1.Top = lineY;
+                if (this.Top < 10)
+                {
+                    this.Top = 10;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            startY = e.Y;
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            startY = 0;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (this.img == null)
+            {
+                return;
+            }
+
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
+            //保存到临时目录
+            this.img.SaveImage(dist);
+
+            this.img.Dispose();
+            this.pictureBox1.Image.Dispose();
+            Thread.Sleep(100);
+            File.Delete(this.imagePath);
+            Thread.Sleep(100);
+            File.Move(dist, this.imagePath);
+
+            string md5 = util.getFileMd5(this.imagePath);
+
+            if (w != null && conn != null)
+            {
+                w.send(conn, new
+                {
+                    retType = "imgRotate",
+                    data = new
+                    {
+                        path = this.imagePath,
+                        md5 = md5
+                    }
+                });
+                this.Close();
+                return;
+            }
+            MessageBox.Show("保存成功");
+            loadImage(imagePath);
+        }
+
+        private void imgRotateForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            //ctrl+alt+上下调整水平线
+            if (e.Shift && e.Alt && (e.KeyValue == 38 || e.KeyValue == 40))
+            {
+                lineY = e.KeyValue == 38 ? lineY - 2 : lineY + 2;
+                this.line1.Top = lineY + 10;
+            }
+            //ctrl+s保存
+            else if (e.Control && e.KeyCode == Keys.S)
+            {
+                this.button3_Click_1(null, null);
+            }
+            //ctrl+左右切换上下页
+            else if (e.Control && (e.KeyValue == 37 || e.KeyValue == 39))
+            {
+                int idx = listView1.SelectedItems[0].Index;
+                //左键
+                if (e.KeyValue == 37 && idx - 1 > 0)
+                {
+                    idx--;
+                }
+                else if (e.KeyValue == 39 && idx + 1 < listView1.Items.Count)
+                {
+                    idx++;
+                }
+                else
+                {
+                    return;
+                }
+                listView1.SelectedItems.Clear();
+                listView1.Items[idx].Selected = true;
+                listView1.Items[idx].Focused = true;
+                listView1.Items[idx].EnsureVisible();
+                e.Handled = true;
+            }
+            //alt+上下调整角度大小
+            else if (e.Alt && (e.KeyValue == 38 || e.KeyValue == 40))
+            {
+                angle = e.KeyValue == 38 ? angle + 0.1f : angle - 0.1f;
+                textBox1.Text = angle.ToString();
+            }
+            //alt+左右键旋转
+            else if (e.Alt && (e.KeyValue == 37 || e.KeyValue == 39))
+            {
+                if (e.KeyValue == 37)
+                {
+                    this.button1_Click(sender, e);
+                }
+                else
+                {
+                    this.button2_Click(sender, e);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!this.rotated)
+            {
+                MessageBox.Show("请先旋转一张图片，之后其他所有图片都按同样的角度调整并保存");
+                return;
+            }
+
+            if (listView1.Items.Count == 0)
+            {
+                return;
+            }
+
+            List<string> img_paths = new List<string>();
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                string path = listView1.Items[i].Tag.ToString();
+                img_paths.Add(path);
+            }
+
+            imgBoardForm.g_img_paths = img_paths;
+
+            this.button4.Enabled = false;
+
+            calc_all(img_paths);   // 异步方法
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.img == null)
+            {
+                return;
+            }
+
+            string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
+            //保存到临时目录
+            this.img.SaveImage(dist);
+
+            this.img.Dispose();
+            this.pictureBox1.Image.Dispose();
+            Thread.Sleep(100);
+            File.Delete(this.imagePath);
+            Thread.Sleep(100);
+            File.Move(dist, this.imagePath);
+
+            string md5 = util.getFileMd5(this.imagePath);
+
+            if (w != null && conn != null)
+            {
+                w.send(conn, new
+                {
+                    retType = "imgRotate",
+                    data = new
+                    {
+                        path = this.imagePath,
+                        md5 = md5
+                    }
+                });
+                this.Close();
+                return;
+            }
+            MessageBox.Show("保存成功");
+            loadImage(imagePath);
+        }
+    }
+}
+
+```
+
+
+
+
+
 ## run exe as service
 
 - https://www.codeproject.com/Articles/35773/Subverting-Vista-UAC-in-Both-32-and-64-bit-Archite

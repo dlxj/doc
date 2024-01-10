@@ -1,8 +1,91 @@
 
 
+# 添加资源
+
+```
+.Net 6.0 WPF
+
+修改项目文件 .csproj 
+  <ItemGroup>
+    <Page Update="App.Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="App.Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  
+  
+修改 App.xaml
+     <Application.Resources>
+        <ResourceDictionary>
+ 			<ResourceDictionary.MergedDictionaries>
+ 			    <ResourceDictionary Source="App.Icons.xaml" />
+                <ResourceDictionary Source="App.Styles.xaml" />
+ 			</ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
+    </Application.Resources>
+    
+
+添加用户控件, 既可看到效果
+<UserControl x:Class="WpfApp1.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d">
+    <Grid Name="Controls" Visibility="Visible" Height="250" Background="{x:Null}">
+
+        <Grid VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DockPanel Name="ProgressPanel" Grid.Row="1" LastChildFill="True" Margin="20,0">
+                <Grid Width="500">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </DockPanel>
+
+            <Grid Name="ControlsPanel" Grid.Row="2" Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <DockPanel Name="LeftControls" HorizontalAlignment="Left" Grid.Column="0">
+                    <ToggleButton Style="{DynamicResource ModernToggleButtonStyle}" >
+                        <Path Stretch="Uniform" Data="{Binding Source={StaticResource VerticalSyncIcon}, Path=Data}" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type ToggleButton}}}" ></Path>
+                    </ToggleButton>
+                </DockPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
+
+    
+```
+
+
+
+
+
+
+
 # XAML
 
 see huggingface\ffmediaelement
+
+see GitHub\echodict\WPF\WpfApp1 仿制品
 
 see GitHub\gdscript\godot-subtitles-4.1_clone
 
@@ -30,11 +113,168 @@ mc:Ignorable="d" d:DesignHeight="700"
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="70"></RowDefinition>
-            </Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        
+        
+                <Grid Width="500">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                   		# 列定义, 两边各100，中间平分
+        
 ```
 
 - `Grid`: 这是使用的网格布局控件。
 - `VerticalAlignment="Bottom"`: 这个属性设置了整个`Grid`垂直对齐方式，使得`Grid`会在其父容器内对齐到底部。
+
+
+
+### 一定要加 Canvas
+
+```
+Grid 下面一定要加 Canvas, 否则会变小透明
+<Canvas IsHitTestVisible="False" Background="{DynamicResource ShadedBackgroundBrush}" />
+```
+
+
+
+
+
+### 基础模板
+
+```
+# 新建用户控件 UserControl
+
+    <Grid Name="Controls" Visibility="Visible" Height="250" Background="{x:Null}">
+
+        <Grid VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DockPanel Name="ProgressPanel" Grid.Row="1" LastChildFill="True" Margin="20,0">
+                <Grid Width="500">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </DockPanel>
+
+        </Grid>
+
+    </Grid>
+```
+
+
+
+### 列平分
+
+```
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+```
+
+
+
+
+
+## Window
+
+```
+WindowStartupLocation="Manual" MinHeight="720" Height="0" MinWidth="1280" Width="0"
+Background="Black"
+Title="MainWindow"
+```
+
+
+
+### 获取主窗口实例
+
+```
+# see echodict\WPF\WpfApp1\WpfApp1\UserControl1.xaml.cs
+		private void Play_Button_Click(object sender, RoutedEventArgs e)
+        {
+            paly();
+        }
+
+        async void paly()
+        {
+            MainWindow main = (MainWindow)Application.Current.MainWindow;
+            var target = new Uri(@"E:\videos\netflix\anime\japanese\Touch\Episode 1\Touch_S01E01_Episode 1.mp4");
+            await main.Media.Open(target);
+        }
+```
+
+
+
+#### 遍历窗口
+
+```
+using System.Linq;
+using System.Windows;
+
+public static Window GetFirstNonMainWindow()
+{
+    var mainWin = Application.Current.MainWindow;
+    return Application.Current.Windows
+        .OfType<Window>()
+        .FirstOrDefault(win => win != mainWin);
+}
+
+```
+
+
+
+
+
+
+
+
+
+## 全屏问题
+
+[全屏问题](https://www.cnblogs.com/Naylor/p/17118993.html)
+
+
+
+
+
+
+
+# 异步锁
+
+[AsyncEx](https://github.com/StephenCleary/AsyncEx)
+
+
+
+```
+        private void Play_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Action play = async () =>
+            {
+                var target = new Uri(@"E:\videos\netflix\anime\japanese\Touch\Episode 1\Touch_S01E01_Episode 1.mp4");
+                await main.Media.Open(target);
+            };
+            play();
+        }
+```
+
+
+
+
+
+
 
 
 

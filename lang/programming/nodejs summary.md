@@ -3752,6 +3752,10 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create wpf --type dataset
 	# huggingface-cli repo create ffmediaelement --type dataset
 	# huggingface-cli repo create elly_videoplayer --type dataset
+	# huggingface-cli repo create CleanReader.Desktop --type dataset
+	# huggingface-cli repo create RWKV-v5 --type dataset
+	
+	
 	
 
 git config --global core.safecrlf true
@@ -20629,7 +20633,7 @@ input_field.grab_focus()
 
 
 
-### videoStreamPlayer
+# videoStreamPlayer
 
 **search winUI3 in outline**
 
@@ -20659,7 +20663,7 @@ input_field.grab_focus()
   	# 成功编译
   
   var ff_stream: FFmpegVideoStream = null
-var ffmpeg_stream = FFmpegVideoStream.new()
+  var ffmpeg_stream = FFmpegVideoStream.new()
   	ffmpeg_stream.file = "/Users/chris/media/seeyou.mp4"	
   	$VideoStreamPlayer.stream = ffmpeg_stream
   	$VideoStreamPlayer.play()
@@ -20684,6 +20688,69 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   ```
 
   
+
+[GoZen-ffmpeg 视频编译器的一部分 很新 必看](https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg)
+
+- ```
+  
+  git clone https://github.com/VoylinsGamedevJourney/GoZen.git && \
+  cd GoZen && \
+  git clone https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg.git && \
+  cd GoZen-ffmpeg && \
+  git reset --hard b0eb64e && \
+  git clone https://github.com/godotengine/godot-cpp.git && \
+  cd godot-cpp && \
+  git reset --hard f3143c7
+  
+  
+  cd GoZen\gozen-ffmpeg && \
+  curl --output ffmpeg.zip -L -O https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl-shared.tar.xz
+  	# 下载 ffmpeg
+  
+  复制 elly_videoplayer\src\ffmpeg 到 GoZen\gozen-ffmpeg\ffmpeg
+  修改 gozen-ffmpeg/SConstruct 
+  	env.Append(CPPPATH=["src/", "ffmpeg/include/"])
+  	env.Append(LIBPATH=["ffmpeg/lib/"])
+  		# 可能只有 linux 能编译成功
+  
+  cd GoZe/GoZen-ffmpeg && \
+  scons -Q -j2 destination=../src/editor/bin target=template_release platform=linux
+  
+  
+  cp /root/GoZen/gozen-ffmpeg/bin/libgozen.linux.template_release.x86_64.so /root/GoZen/src/editor/bin
+  
+  
+  
+  https://download.visualstudio.microsoft.com/download/pr/1cac4d08-3025-4c00-972d-5c7ea446d1d7/a83bc5cbedf8b90495802ccfedaeb2e6/dotnet-sdk-6.0.417-linux-x64.tar.gz
+  
+  mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.417-linux-x64.tar.gz  -C $HOME/dotnet
+  export DOTNET_ROOT=$HOME/dotnet && \
+  export PATH=$PATH:$HOME/dotnet
+  
+  
+  E:\t\GoZen\gozen-ffmpeg\src\ffmpeg_includes.hpp(4): fatal error C1083: 无法打开包括文件: “libavcodec/avcodec.h”: No such file or directory
+  	# 他只官方编译了 linux 版
+  
+  
+  
+  
+  
+  gh repo clone VoylinsGamedevJourney/GoZen-ffmpeg -- --recurse-submodules
+  
+  gh repo clone VoylinsGamedevJourney/GoZen -- --recurse-submodules
+  
+  
+  ssh-keyscan github.com >> ~/.ssh/known_hosts
+  
+  git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen-ffmpeg.git
+  
+  git clone --recursive https://github.com/VoylinsGamedevJourney/GoZen.git && \
+  cd GoZen
+  scons -j 2 destination=../src/editor/bin target=template_release platform=windows
+  ```
+  
+
+[mimi 功能挺多待观察](https://github.com/aiaimimi0920/mimi.git)
 
 [opencv VideoSprite](https://github.com/godotengine/godot-proposals/issues/3286)
 
@@ -25710,7 +25777,7 @@ see echodict\transformer\picoGPT_chinese\chat.py
   data_test = Multi30k(split='test')
   # train, val, test = datasets.Multi30k(language_pair=("de", "en"))
   
-
+  
   pip install --upgrade ipykernel
   pip install jupyterlab ipywidgets
   
@@ -26778,6 +26845,203 @@ apt-get install ninja-build
 
 
 #### RWKV5
+
+
+
+```
+conda create -n KV5 pip python=3.10 && \
+conda activate KV5
+pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
+cd RWKV-v5/
+./demo-training-prepare.sh
+./demo-training-run.sh
+
+
+这里下载：rwkv_vocab_v20230424.txt
+use https://github.com/Abel2076/json2binidx_tool and rwkv_vocab_v20230424.txt to turn your JSONL into binidx format
+set vocab_size to 65536
+
+
+/usr/local/cuda/bin/nvcc --version
+
+ldconfig -p | grep cuda
+
+必须要 cuda 11.7 ，先删除 autodl 原 cuda
+
+
+update-alternatives --remove cuda /usr/local/cuda-11.1
+update-alternatives --remove cuda-11 /usr/local/cuda-11.1
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.1 111
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.0 110
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.2 102
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.1 101
+
+ln -sfT /usr/local/cuda-11.1 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+	# cuda 多版本切换
+
+
+wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+sudo sh cuda_11.7.1_515.65.01_linux.run
+
+Toolkit:  Installed in /usr/local/cuda-11.7/
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-11.7/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.7/lib64, or, add /usr/local/cuda-11.7/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.7/bin
+
+install the CUDA Driver:
+    sudo <CudaInstaller>.run --silent --driver
+
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+https://blog.csdn.net/sinat_40245632/article/details/109330182
+	# 
+
+
+# 错误 'FieldInfo' object has no attribute 'field_info'
+pip install --force-reinstall -v "fastapi==0.99.1"
+	# 或着 downgrade pydantic==1.10.13 ? 这个是上游？
+
+
+# 改好参数成功训练
+RWKV-v5/train.py
+    parser = ArgumentParser()
+
+    parser.add_argument("--load_model", default="", type=str)  # full path, with .pth
+    parser.add_argument("--wandb", default="", type=str)  # wandb project name. if "" then don't use wandb
+    parser.add_argument("--proj_dir", default="out", type=str)
+    parser.add_argument("--random_seed", default="-1", type=int)
+
+    parser.add_argument("--data_file", default="demo", type=str)
+    parser.add_argument("--data_type", default="binidx", type=str)
+    parser.add_argument("--vocab_size", default=65536, type=int)  # vocab_size = 0 means auto (for char-level LM and .txt data)
+
+    parser.add_argument("--ctx_len", default=1024, type=int)
+    parser.add_argument("--epoch_steps", default=1000, type=int)  # a mini "epoch" has [epoch_steps] steps
+    parser.add_argument("--epoch_count", default=500, type=int)  # train for this many "epochs". will continue afterwards with lr = lr_final
+    parser.add_argument("--epoch_begin", default=0, type=int)  # if you load a model trained for x "epochs", set epoch_begin = x
+    parser.add_argument("--epoch_save", default=5, type=int)  # save the model every [epoch_save] "epochs"
+
+    parser.add_argument("--micro_bsz", default=12, type=int)  # micro batch size (batch size per GPU)
+    parser.add_argument("--n_layer", default=12, type=int)
+    parser.add_argument("--n_embd", default=768, type=int)
+    parser.add_argument("--dim_att", default=0, type=int)
+    parser.add_argument("--dim_ffn", default=0, type=int)
+    parser.add_argument("--pre_ffn", default=0, type=int)  # replace first att layer by ffn (sometimes better)
+    parser.add_argument("--head_qk", default=0, type=int)  # my headQK trick
+    parser.add_argument("--tiny_att_dim", default=0, type=int)  # tiny attention dim
+    parser.add_argument("--tiny_att_layer", default=-999, type=int)  # tiny attention @ which layer
+
+    parser.add_argument("--lr_init", default=6e-4, type=float)  # 6e-4 for L12-D768, 4e-4 for L24-D1024, 3e-4 for L24-D2048
+    parser.add_argument("--lr_final", default=1e-5, type=float)
+    parser.add_argument("--warmup_steps", default=-1, type=int)  # try 50 if you load a model
+    parser.add_argument("--beta1", default=0.9, type=float)
+    parser.add_argument("--beta2", default=0.99, type=float)  # use 0.999 when your model is close to convergence
+    parser.add_argument("--adam_eps", default=1e-8, type=float)
+    parser.add_argument("--grad_cp", default=0, type=int)  # gradient checkpt: saves VRAM, but slower
+    parser.add_argument("--dropout", default=0, type=float) # try 0.01 / 0.02 / 0.05 / 0.1
+    parser.add_argument("--weight_decay", default=0, type=float) # try 0.1 / 0.01 / 0.001
+    parser.add_argument("--weight_decay_final", default=-1, type=float)
+
+    parser.add_argument("--my_pile_version", default=1, type=int)  # my special pile version
+    parser.add_argument("--my_pile_stage", default=0, type=int)  # my special pile mode
+    parser.add_argument("--my_pile_shift", default=-1, type=int)  # my special pile mode - text shift
+    parser.add_argument("--my_pile_edecay", default=0, type=int)
+    parser.add_argument("--layerwise_lr", default=1, type=int)  # layerwise lr for faster convergence (but slower it/s)
+    parser.add_argument("--ds_bucket_mb", default=200, type=int)  # deepspeed bucket size in MB. 200 seems enough
+    # parser.add_argument("--cuda_cleanup", default=0, type=int)  # extra cuda cleanup (sometimes helpful)
+
+    parser.add_argument("--my_sample_len", default=0, type=int)
+    parser.add_argument("--my_ffn_shift", default=1, type=int)
+    parser.add_argument("--my_att_shift", default=1, type=int)
+    parser.add_argument("--head_size_a", default=64, type=int) # can try larger values for larger models
+    parser.add_argument("--head_size_divisor", default=8, type=int)
+    parser.add_argument("--my_pos_emb", default=0, type=int)
+    parser.add_argument("--load_partial", default=0, type=int)
+    parser.add_argument("--magic_prime", default=0, type=int)
+    parser.add_argument("--my_qa_mask", default=0, type=int)
+    parser.add_argument("--my_random_steps", default=0, type=int)
+    parser.add_argument("--my_testing", default='', type=str)
+    parser.add_argument("--my_exit", default=99999999, type=int)
+    parser.add_argument("--my_exit_tokens", default=0, type=int)
+
+
+    if pl.__version__[0]=='2':
+        parser.add_argument("--accelerator", default="gpu", type=str)
+        parser.add_argument("--strategy", default="deepspeed_stage_2", type=str)
+        parser.add_argument("--devices", default=1, type=int)
+        parser.add_argument("--num_nodes", default=1, type=int)
+        parser.add_argument("--precision", default="fp16", type=str)
+        parser.add_argument("--accumulate_grad_batches", default=1, type=int)
+    else:
+        parser = Trainer.add_argparse_args(parser)
+    args = parser.parse_args()
+    args.accelerator = "gpu"
+    args.strategy = "deepspeed_stage_2"
+    args.devices = 1
+    args.num_nodes = 1
+    args.precision = "bf16"
+    args.accumulate_grad_batches=1
+	
+
+
+https://github.com/shengxia/RWKV_Role_Playing
+	# rwkv5 角色扮演 
+	
+
+
+# 训练完后成功运行
+run_rwkv5.py
+
+# pip install rwkv
+
+import os
+os.environ['RWKV_JIT_ON'] = '1'
+
+from rwkv.model import RWKV
+from rwkv.utils import PIPELINE, PIPELINE_ARGS
+
+model = RWKV(model='rwkv-5', strategy='cpu fp32')
+pipeline = PIPELINE(model, "rwkv_vocab_v20230424")
+
+ctx = "\nIn a shocking finding, scientist discovered a herd of dragons living in a remote, previously unexplored valley, in Tibet. Even more surprising to the researchers was the fact that the dragons spoke perfect Chinese."
+print(ctx, end='')
+
+def my_print(s):
+    print(s, end='', flush=True)
+
+args = PIPELINE_ARGS(temperature = 1.0, top_p = 0.7, top_k = 100, # top_k = 0 then ignore
+                     alpha_frequency = 0.25,
+                     alpha_presence = 0.25,
+                     alpha_decay = 0.996, # gradually decay the penalty
+                     token_ban = [0], # ban the generation of some tokens
+                     token_stop = [], # stop generation whenever you see any token here
+                     chunk_len = 256) # split input into chunks to save VRAM (shorter -> slower)
+
+pipeline.generate(ctx, token_count=200, args=args, callback=my_print)
+print('\n')
+
+out, state = model.forward([187, 510, 1563, 310, 247], None)
+print(out.detach().cpu().numpy())                   # get logits
+out, state = model.forward([187, 510], None)
+out, state = model.forward([1563], state)           # RNN has state (use deepcopy to clone states)
+out, state = model.forward([310, 247], state)
+print(out.detach().cpu().numpy())                   # same result as above
+print('\n')
+
+
+```
+
+
 
 
 
@@ -30040,6 +30304,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [FlyleafDemo](https://github.com/maoleigepu/FlyleafDemo)
 
+[自适应高DPI](https://github.com/densen2014/WinformHighDPICompatibleProgram)
+
+[仿QQ](https://github.com/yashuangyi/Simulation-QQ)
+
 
 
 ### UWP
@@ -30055,6 +30323,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
 
 [高仿QQ登录](https://github.com/944095635/DMSkin-QQSignIN)
+
+[高仿LOL](https://github.com/jamesnet214/leagueoflegends)
 
 - ```
   
@@ -30219,7 +30489,12 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
   
   ```
 
-  
+
+
+
+[CleanReader.Desktop 阅读器](https://github.com/Clean-Reader/CleanReader.Desktop)
+
+
 
 [bili api 大本营](https://github.com/SocialSisterYi/bilibili-API-collect/issues/665)
 
