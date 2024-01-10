@@ -26883,11 +26883,31 @@ ln -sfT /etc/alternatives/cuda /usr/local/cuda
 wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
 sudo sh cuda_11.7.1_515.65.01_linux.run
 
+Toolkit:  Installed in /usr/local/cuda-11.7/
 
+Please make sure that
+ -   PATH includes /usr/local/cuda-11.7/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.7/lib64, or, add /usr/local/cuda-11.7/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.7/bin
+
+install the CUDA Driver:
+    sudo <CudaInstaller>.run --silent --driver
+
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
 
 https://blog.csdn.net/sinat_40245632/article/details/109330182
 	# 
 
+
+# 错误 'FieldInfo' object has no attribute 'field_info'
+pip install --force-reinstall -v "fastapi==0.99.1"
+
+
+	
 
 ```
 
