@@ -3753,6 +3753,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create ffmediaelement --type dataset
 	# huggingface-cli repo create elly_videoplayer --type dataset
 	# huggingface-cli repo create CleanReader.Desktop --type dataset
+	# huggingface-cli repo create RWKV-v5 --type dataset
+	
 	
 	
 
@@ -26989,6 +26991,52 @@ RWKV-v5/train.py
     args.precision = "bf16"
     args.accumulate_grad_batches=1
 	
+
+
+https://github.com/shengxia/RWKV_Role_Playing
+	# rwkv5 角色扮演 
+	
+
+
+# 训练完后成功运行
+run_rwkv5.py
+
+# pip install rwkv
+
+import os
+os.environ['RWKV_JIT_ON'] = '1'
+
+from rwkv.model import RWKV
+from rwkv.utils import PIPELINE, PIPELINE_ARGS
+
+model = RWKV(model='rwkv-5', strategy='cpu fp32')
+pipeline = PIPELINE(model, "rwkv_vocab_v20230424")
+
+ctx = "\nIn a shocking finding, scientist discovered a herd of dragons living in a remote, previously unexplored valley, in Tibet. Even more surprising to the researchers was the fact that the dragons spoke perfect Chinese."
+print(ctx, end='')
+
+def my_print(s):
+    print(s, end='', flush=True)
+
+args = PIPELINE_ARGS(temperature = 1.0, top_p = 0.7, top_k = 100, # top_k = 0 then ignore
+                     alpha_frequency = 0.25,
+                     alpha_presence = 0.25,
+                     alpha_decay = 0.996, # gradually decay the penalty
+                     token_ban = [0], # ban the generation of some tokens
+                     token_stop = [], # stop generation whenever you see any token here
+                     chunk_len = 256) # split input into chunks to save VRAM (shorter -> slower)
+
+pipeline.generate(ctx, token_count=200, args=args, callback=my_print)
+print('\n')
+
+out, state = model.forward([187, 510, 1563, 310, 247], None)
+print(out.detach().cpu().numpy())                   # get logits
+out, state = model.forward([187, 510], None)
+out, state = model.forward([1563], state)           # RNN has state (use deepcopy to clone states)
+out, state = model.forward([310, 247], state)
+print(out.detach().cpu().numpy())                   # same result as above
+print('\n')
+
 
 ```
 
