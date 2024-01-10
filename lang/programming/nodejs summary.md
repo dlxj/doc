@@ -20663,7 +20663,7 @@ input_field.grab_focus()
   	# 成功编译
   
   var ff_stream: FFmpegVideoStream = null
-var ffmpeg_stream = FFmpegVideoStream.new()
+  var ffmpeg_stream = FFmpegVideoStream.new()
   	ffmpeg_stream.file = "/Users/chris/media/seeyou.mp4"	
   	$VideoStreamPlayer.stream = ffmpeg_stream
   	$VideoStreamPlayer.play()
@@ -20724,7 +20724,7 @@ var ffmpeg_stream = FFmpegVideoStream.new()
   https://download.visualstudio.microsoft.com/download/pr/1cac4d08-3025-4c00-972d-5c7ea446d1d7/a83bc5cbedf8b90495802ccfedaeb2e6/dotnet-sdk-6.0.417-linux-x64.tar.gz
   
   mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.417-linux-x64.tar.gz  -C $HOME/dotnet
-export DOTNET_ROOT=$HOME/dotnet && \
+  export DOTNET_ROOT=$HOME/dotnet && \
   export PATH=$PATH:$HOME/dotnet
   
   
@@ -25777,7 +25777,7 @@ see echodict\transformer\picoGPT_chinese\chat.py
   data_test = Multi30k(split='test')
   # train, val, test = datasets.Multi30k(language_pair=("de", "en"))
   
-
+  
   pip install --upgrade ipykernel
   pip install jupyterlab ipywidgets
   
@@ -26849,7 +26849,8 @@ apt-get install ninja-build
 
 
 ```
-conda create -n KV5 pip python=3.10
+conda create -n KV5 pip python=3.10 && \
+conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
 cd RWKV-v5/
