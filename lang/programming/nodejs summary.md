@@ -26855,6 +26855,7 @@ cd RWKV-v5/
 ./demo-training-run.sh
 
 
+这里下载：rwkv_vocab_v20230424.txt
 use https://github.com/Abel2076/json2binidx_tool and rwkv_vocab_v20230424.txt to turn your JSONL into binidx format
 set vocab_size to 65536
 
@@ -26905,6 +26906,7 @@ https://blog.csdn.net/sinat_40245632/article/details/109330182
 
 # 错误 'FieldInfo' object has no attribute 'field_info'
 pip install --force-reinstall -v "fastapi==0.99.1"
+	# 或着 downgrade pydantic==1.10.13 ? 这个是上游？
 
 
 # 改好参数成功训练
