@@ -26847,6 +26847,51 @@ apt-get install ninja-build
 
 
 ```
+conda create -n KV5 pip python=3.10
+pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
+cd RWKV-v5/
+./demo-training-prepare.sh
+./demo-training-run.sh
+
+
+use https://github.com/Abel2076/json2binidx_tool and rwkv_vocab_v20230424.txt to turn your JSONL into binidx format
+set vocab_size to 65536
+
+
+/usr/local/cuda/bin/nvcc --version
+
+ldconfig -p | grep cuda
+
+必须要 cuda 11.7 ，先删除 autodl 原 cuda
+
+
+update-alternatives --remove cuda /usr/local/cuda-11.1
+update-alternatives --remove cuda-11 /usr/local/cuda-11.1
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.1 111
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.0 110
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.2 102
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.1 101
+
+ln -sfT /usr/local/cuda-11.1 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+	# cuda 多版本切换
+
+
+
+https://blog.csdn.net/sinat_40245632/article/details/109330182
+	# 
+
+
+```
+
+
+
+
+
+```
     import sys
     sys.argv.append( '--data_file' )
     sys.argv.append( '/root/RWKV-LM/RWKV-v4neo/hongloumeng.txt' )
