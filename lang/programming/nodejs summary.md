@@ -25765,6 +25765,27 @@ see echodict\transformer\picoGPT_chinese\chat.py
 
 [torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)
 
+- ```
+  the attention mechanism describes a weighted average of (sequence) elements with the weights dynamically computed based on an input query and elements’ keys. 
+  
+  注意力机制描述了基于输入查询和元素键动态计算的权重，对（序列）元素进行加权平均。
+  
+  目标是对多个元素的特征取平均值。然而，我们并不想给每个元素相同的权重，而是根据它们实际的值来赋予权重。换句话说，我们想要动态地决定哪些输入我们希望“更多关注”。特别是，一个注意力机制通常有我们需要指定的四个部分：
+  
+  查询（Query）：查询是一个特征向量，描述了我们在序列中寻找什么，即我们可能想要关注的内容。
+  
+  键（Keys）：对于每个输入元素，我们都有一个键，这同样是一个特征向量。这个特征向量大致描述了该元素“提供”的内容，或者它何时可能重要。键应该被设计成能够基于查询识别出我们想要关注的元素。
+  
+  值（Values）：对于每个输入元素，我们还有一个值向量。这个特征向量就是我们想要取平均值的向量。
+  
+  评分函数（Score function）：为了评估我们想要关注哪些元素，我们需要指定一个评分函数。评分函数将查询和一个键作为输入，并输出查询-键对的得分/注意力权重。它通常由简单的相似度度量来实现，如点积或一个小的多层感知器（MLP）。
+  
+  
+  
+  ```
+
+  
+
 [李宏毅 Transformer](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 
 - ```
