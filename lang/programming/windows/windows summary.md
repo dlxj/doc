@@ -196,6 +196,12 @@ wsl --shutdown
 
 
 
+## WSL2 网络终极方案　
+
+[WSL2 网络的最终解决方案](https://zhuanlan.zhihu.com/p/593263088)
+
+
+
 # 定时任务
 
 ```
