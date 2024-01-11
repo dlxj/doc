@@ -25795,9 +25795,182 @@ see echodict\transformer\picoGPT_chinese\chat.py
   print(new_x)
   
   
+  # pytorch
+  def scaled_dot_product(q, k, v, mask=None):
+      d_k = q.size()[-1]
+      attn_logits = torch.matmul(q, k.transpose(-2, -1))
+      attn_logits = attn_logits / math.sqrt(d_k)
+      if mask is not None:
+          attn_logits = attn_logits.masked_fill(mask == 0, -9e15)
+      attention = F.softmax(attn_logits, dim=-1)
+      values = torch.matmul(attention, v)
+      return values, attention
+      
+  seq_len, d_k = 3, 2
+  pl.seed_everything(42)
+  q = torch.randn(seq_len, d_k)
+  k = torch.randn(seq_len, d_k)
+  v = torch.randn(seq_len, d_k)
+  values, attention = scaled_dot_product(q, k, v)
+  print("Q\n", q)
+  print("K\n", k)
+  print("V\n", v)
+  print("Values\n", values)
+  print("Attention\n", attention)
+  
+  # jax
+  def scaled_dot_product(q, k, v, mask=None):
+      d_k = q.shape[-1]
+      attn_logits = jnp.matmul(q, jnp.swapaxes(k, -2, -1))
+      attn_logits = attn_logits / math.sqrt(d_k)
+      if mask is not None:
+          attn_logits = jnp.where(mask == 0, -9e15, attn_logits)
+      attention = nn.softmax(attn_logits, axis=-1)
+      values = jnp.matmul(attention, v)
+      return values, attention
+  
+  seq_len, d_k = 3, 2
+  main_rng, rand1 = random.split(main_rng)
+  qkv = random.normal(rand1, (3, seq_len, d_k))
+  q, k, v = qkv[0], qkv[1], qkv[2]
+  values, attention = scaled_dot_product(q, k, v)
+  
+  
+  k.transpose(-2, -1)
+  	# -2 表示倒数第二个维度
+  	# -1 表示倒数第一个维度
+  	# 函数把指定的两个维度互换
+  	
+  
+  缩放点积注意力机制允许网络对序列进行关注。然而，通常一个序列元素想要关注多个不同的方面，单一加权平均并不是一个好的选择。这就是为什么我们将注意力机制扩展到多头上，即在相同特征上应用多组不同的查询-键-值三元组。具体来说，给定查询矩阵、键矩阵和值矩阵，我们将它们转换为子查询、子键和子值，并将它们分别通过缩放点积注意力处理。之后，我们将各个头连接起来，并用最终的权重矩阵结合它们。
+  
+  
+  # pytorch
+  def expand_mask(mask):
+      assert mask.ndim >= 2, "Mask must be at least 2-dimensional with seq_length x seq_length"
+      if mask.ndim == 3:
+          mask = mask.unsqueeze(1)
+      while mask.ndim < 4:
+          mask = mask.unsqueeze(0)
+      return mask
+  
+  class MultiheadAttention(nn.Module):
+  
+      def __init__(self, input_dim, embed_dim, num_heads):
+          super().__init__()
+          assert embed_dim % num_heads == 0, "Embedding dimension must be 0 modulo number of heads."
+  
+          self.embed_dim = embed_dim
+          self.num_heads = num_heads
+          self.head_dim = embed_dim // num_heads
+  
+          # Stack all weight matrices 1...h together for efficiency
+          # Note that in many implementations you see "bias=False" which is optional
+          self.qkv_proj = nn.Linear(input_dim, 3*embed_dim)
+          self.o_proj = nn.Linear(embed_dim, embed_dim)
+  
+          self._reset_parameters()
+  
+      def _reset_parameters(self):
+          # Original Transformer initialization, see PyTorch documentation
+          nn.init.xavier_uniform_(self.qkv_proj.weight)
+          self.qkv_proj.bias.data.fill_(0)
+          nn.init.xavier_uniform_(self.o_proj.weight)
+          self.o_proj.bias.data.fill_(0)
+  
+      def forward(self, x, mask=None, return_attention=False):
+          batch_size, seq_length, _ = x.size()
+          if mask is not None:
+              mask = expand_mask(mask)
+          qkv = self.qkv_proj(x)
+  
+          # Separate Q, K, V from linear output
+          qkv = qkv.reshape(batch_size, seq_length, self.num_heads, 3*self.head_dim)
+          qkv = qkv.permute(0, 2, 1, 3) # [Batch, Head, SeqLen, Dims]
+          q, k, v = qkv.chunk(3, dim=-1)
+  
+          # Determine value outputs
+          values, attention = scaled_dot_product(q, k, v, mask=mask)
+          values = values.permute(0, 2, 1, 3) # [Batch, SeqLen, Head, Dims]
+          values = values.reshape(batch_size, seq_length, self.embed_dim)
+          o = self.o_proj(values)
+  
+          if return_attention:
+              return o, attention
+          else:
+              return o
+  
+  
+  # jax
+  class MultiheadAttention(nn.Module):
+      embed_dim : int  # Output dimension
+      num_heads : int  # Number of parallel heads (h)
+  
+      def setup(self):
+          # Stack all weight matrices 1...h and W^Q, W^K, W^V together for efficiency
+          # Note that in many implementations you see "bias=False" which is optional
+          self.qkv_proj = nn.Dense(3*self.embed_dim,
+                                   kernel_init=nn.initializers.xavier_uniform(),  # Weights with Xavier uniform init
+                                   bias_init=nn.initializers.zeros  # Bias init with zeros
+                                  )
+          self.o_proj = nn.Dense(self.embed_dim,
+                                 kernel_init=nn.initializers.xavier_uniform(),
+                                 bias_init=nn.initializers.zeros)
+  
+      def __call__(self, x, mask=None):
+          batch_size, seq_length, embed_dim = x.shape
+          if mask is not None:
+              mask = expand_mask(mask)
+          qkv = self.qkv_proj(x)
+  
+          # Separate Q, K, V from linear output
+          qkv = qkv.reshape(batch_size, seq_length, self.num_heads, -1)
+          qkv = qkv.transpose(0, 2, 1, 3) # [Batch, Head, SeqLen, Dims]
+          q, k, v = jnp.array_split(qkv, 3, axis=-1)
+  
+          # Determine value outputs
+          values, attention = scaled_dot_product(q, k, v, mask=mask)
+          values = values.transpose(0, 2, 1, 3) # [Batch, SeqLen, Head, Dims]
+          values = values.reshape(batch_size, seq_length, embed_dim)
+          o = self.o_proj(values)
+  
+          return o, attention
+  
+  
+  ## Test MultiheadAttention implementation
+  # Example features as input
+  main_rng, x_rng = random.split(main_rng)
+  x = random.normal(x_rng, (3, 16, 128))
+  # Create attention
+  mh_attn = MultiheadAttention(embed_dim=128, num_heads=4)
+  # Initialize parameters of attention with random key and inputs
+  main_rng, init_rng = random.split(main_rng)
+  params = mh_attn.init(init_rng, x)['params']
+  # Apply attention with parameters on the inputs
+  out, attn = mh_attn.apply({'params': params}, x)
+  print('Out', out.shape, 'Attention', attn.shape)
+  
+  del mh_attn, params
+  
+  
+  
+  qkv.permute(0, 2, 1, 3)
+  	# 重排列向量维度
+  	# 正常的排列是 0, 1, 2, 3
+  	# 函数把原来的 1 和 2 维互换了位置
+  
+  
+  
+  
+  
+  
   ```
 
-  
+
+
+
+
+
 
 [李宏毅 Transformer](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 
