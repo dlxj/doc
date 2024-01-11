@@ -3727,6 +3727,8 @@ huggingface-cli login
 	# Your token has been saved to 
 		/root/.cache/huggingface/token
 
+apt-get install git-lfs
+
 huggingface-cli repo create pandora --type dataset
 	# --type {model, dataset, space}
 	# 创建创库 完了以后在官网把它设为 私有
@@ -27080,6 +27082,7 @@ conda create -n KV5 pip python=3.10 && \
 conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
+pip install --force-reinstall -v "fastapi==0.99.1"
 cd RWKV-v5/
 ./demo-training-prepare.sh
 ./demo-training-run.sh

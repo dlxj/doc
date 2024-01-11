@@ -212,10 +212,22 @@ wsl --shutdown
 
 右击左下角"win" 按钮 -> 任务管理器 -> 可以看到 Vmmem 进程的内存点用
 	# 这就是 wsl2 的当前内存占用，它不是一下就占满的，会自动增长
-
+ 
 
 ```
 
+
+
+## vscode 连 wsl2
+
+```
+Remote - SSH
+	# 装插件
+
+ssh root@localhost
+	# 这样就可以了
+
+```
 
 
 ## WSL2 网络终极方案　
