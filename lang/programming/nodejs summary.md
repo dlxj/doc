@@ -26921,6 +26921,13 @@ https://blog.csdn.net/sinat_40245632/article/details/109330182
 pip install --force-reinstall -v "fastapi==0.99.1"
 	# 或着 downgrade pydantic==1.10.13 ? 这个是上游？
 
+# 改 deepspeed_stage_3_offload 以后格式变了，要执行一次转换
+/root/RWKV-v5/out/rwkv-5.pth/zero_to_fp32.py
+    parser.add_argument("-d", "--debug", action='store_true', help="enable debug")
+    args = parser.parse_args()
+    args.checkpoint_dir="/root/RWKV-v5/out/rwkv-5.pth"
+    args.output_file="5.pth"
+
 
 # 改好参数成功训练
 RWKV-v5/train.py
