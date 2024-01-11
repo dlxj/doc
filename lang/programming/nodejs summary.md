@@ -26827,6 +26827,8 @@ apt-get install ninja-build
 
 #### RWKV-v4neo
 
+
+
 ```
 	import sys
     sys.argv.append( '--data_file' )
@@ -27165,6 +27167,77 @@ data:
   test_split_shuffle: false
 
 ```
+
+
+
+##### MyDataset char模式
+
+```
+import linecache
+
+class MyDataset(Dataset):
+    def __init__(self, args):
+        self.args = args
+        self.data_file = args.data_file
+        # 计算文件中的数据行数，该步骤需要时间，因为要遍历整个文件
+        self.num_entries = sum(1 for line in open(self.data_file))
+		...
+		else:
+                self.data = open(args.data_file, "r", encoding=args.data_type).read()
+            rank_zero_info("Building token list...")
+            unique = sorted(list(set(self.data)))
+            self.vocab_size = len(unique)
+            # rank_zero_info()
+            # for u in unique:
+            #     print(u, end=' ')
+            # rank_zero_info('\n\n')
+            xx = 0
+            xxObj = {}
+            for u in unique:
+                xxObj[xx] = u
+                xx += 1
+            with open(f"{args.proj_dir}/vocab.json", "w", encoding="utf-8") as vocab_file:
+                vocab_file.write(json.dumps(xxObj, ensure_ascii=False))
+            self.data_size = len(self.data)
+            rank_zero_info(f"Data has {self.data_size} tokens, {self.vocab_size} vocab size.")
+            self.stoi = {ch: i for i, ch in enumerate(unique)}
+            self.itos = {i: ch for i, ch in enumerate(unique)}
+
+
+    def __len__(self):
+        return self.args.epoch_steps * self.args.micro_bsz
+
+    def __getitem__(self, idx):
+
+        idx = np.random.randint(0, self.num_entries)
+
+
+        ctx_len = self.args.ctx_len
+        req_len = ctx_len + 1
+
+        line = linecache.getline(self.data_file, idx+1)
+        js = json.loads(line)
+        dlg = js['dlg']
+        gpt = js['gpt']
+        dlg_gpt = '\ndlg:' + dlg + '\ngpt:' + gpt + '<eNd>'
+        dlg_gpt_repeat = dlg_gpt * ctx_len
+
+        # cheat: pick a random spot in dataset
+        i = np.random.randint(0, len(dlg_gpt_repeat) - req_len)
+
+        dix = [self.stoi[s] for s in dlg_gpt_repeat[i : i + req_len]]
+
+        x = torch.tensor(dix[:-1], dtype=torch.long)
+        y = torch.tensor(dix[1:], dtype=torch.long)
+
+        return x, y
+
+
+
+
+```
+
+
 
 
 
