@@ -27087,7 +27087,18 @@ cd RWKV-v5/
 ./demo-training-prepare.sh
 ./demo-training-run.sh
 
- git clone https://huggingface.co/datasets/dlxjj/RWKV-v5
+conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+	# 4090 只支持 11.8+
+	# conda env remove -n KV5
+	wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+sudo sh cuda_11.8.0_520.61.05_linux.run
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8/ 118
+ln -sfT /usr/local/cuda-11.8/ /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
+git clone https://huggingface.co/datasets/dlxjj/RWKV-v5
 
 这里下载：rwkv_vocab_v20230424.txt
 use https://github.com/Abel2076/json2binidx_tool and rwkv_vocab_v20230424.txt to turn your JSONL into binidx format
