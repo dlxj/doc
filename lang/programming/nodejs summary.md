@@ -25763,7 +25763,7 @@ see echodict\transformer\picoGPT_chinese\chat.py
 
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
 
-[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)
+[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)  [flax good](https://zhuanlan.zhihu.com/p/541782955)
 
 - ```
   the attention mechanism describes a weighted average of (sequence) elements with the weights dynamically computed based on an input query and elements’ keys. 
@@ -25780,6 +25780,19 @@ see echodict\transformer\picoGPT_chinese\chat.py
   
   评分函数（Score function）：为了评估我们想要关注哪些元素，我们需要指定一个评分函数。评分函数将查询和一个键作为输入，并输出查询-键对的得分/注意力权重。它通常由简单的相似度度量来实现，如点积或一个小的多层感知器（MLP）。
   
+  平均值的权重是通过对所有评分函数输出进行softmax计算得到的。因此，我们给予那些其对应键与查询最为相似的值向量更高的权重。
+  
+  对于每个单词，我们有一个键向量（key vector）和一个值向量（value vector）。查询与所有键通过得分函数（在这种情况下为点积）进行比较以确定权重。为了简化，softmax没有被可视化。最后，使用注意力权重对所有单词的值向量进行平均。
+  
+  大多数注意力机制在它们使用的查询、如何定义键向量和值向量以及使用的得分函数方面有所不同。转换器架构内部应用的注意力称为自注意力（self-attention）。在自注意力中，每个序列元素提供一个键、一个值和一个查询。对于每个元素，我们执行一个注意力层，在这个层中，根据其查询，我们检查所有序列元素键的相似性，并为每个元素返回一个不同的、经过平均的值向量。我们现在将通过首先查看Transformer案例中的注意力机制的具体实现——缩放点积注意力——来更详细地介绍。
+  
+  
+  import torch
+  x = torch.Tensor([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+  mask = torch.Tensor([[1, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0]])
+  # 将 mask 为 0 的位置替换成 -1
+  new_x = x.masked_fill(mask == 0, -1)
+  print(new_x)
   
   
   ```
