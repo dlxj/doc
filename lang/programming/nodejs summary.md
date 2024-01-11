@@ -25960,6 +25960,10 @@ see echodict\transformer\picoGPT_chinese\chat.py
   	# 函数把原来的 1 和 2 维互换了位置
   
   
+  mask = mask.unsqueeze(1) # [SeqLen, SeqLen] -> [SeqLen, 1, SeqLen]
+  mask = mask.unsqueeze(0) # [SeqLen, SeqLen] -> [1, SeqLen, SeqLen]
+  	# 在指定位置添加一个新维度，它的后面维度依次往后挪
+  	
   
   
   
