@@ -3878,6 +3878,16 @@ git config --global --unset http.https://github.com.proxy
 
 
 
+
+
+### huggingface 镜像
+
+[hf-mirror 镜像](https://hf-mirror.com/)
+
+
+
+
+
 ### 自制GIT LFS服务
 
 [自行构建GIT LFS服务](https://zhuanlan.zhihu.com/p/511750788)
