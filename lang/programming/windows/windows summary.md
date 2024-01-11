@@ -163,6 +163,28 @@ netsh winsock reset
 
 
 
+```
+dd if=/dev/zero of=/mnt/swapfile bs=1M count=20480
+	# 20G 空文件
+
+mkswap /mnt/swapfile
+	# 格式化交换文件
+
+swapon /mnt/swapfile
+	# 挂载交换文件
+
+vi /etc/fstab
+/mnt/swapfile swap swap defaults 0 0
+	# 加在后面，开机自动加载
+	
+free -h
+	# 查看内存大小
+```
+
+
+
+
+
 # WSL
 
 ```
