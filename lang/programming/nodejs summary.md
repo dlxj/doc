@@ -27087,6 +27087,7 @@ cd RWKV-v5/
 ./demo-training-prepare.sh
 ./demo-training-run.sh
 
+ git clone https://huggingface.co/datasets/dlxjj/RWKV-v5
 
 这里下载：rwkv_vocab_v20230424.txt
 use https://github.com/Abel2076/json2binidx_tool and rwkv_vocab_v20230424.txt to turn your JSONL into binidx format
