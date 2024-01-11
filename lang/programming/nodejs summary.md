@@ -3878,6 +3878,16 @@ git config --global --unset http.https://github.com.proxy
 
 
 
+
+
+### huggingface 镜像
+
+[hf-mirror 镜像](https://hf-mirror.com/)
+
+
+
+
+
 ### 自制GIT LFS服务
 
 [自行构建GIT LFS服务](https://zhuanlan.zhihu.com/p/511750788)
@@ -25753,7 +25763,218 @@ see echodict\transformer\picoGPT_chinese\chat.py
 
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
 
-[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)
+[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)  [flax good](https://zhuanlan.zhihu.com/p/541782955)
+
+- ```
+  the attention mechanism describes a weighted average of (sequence) elements with the weights dynamically computed based on an input query and elements’ keys. 
+  
+  注意力机制描述了基于输入查询和元素键动态计算的权重，对（序列）元素进行加权平均。
+  
+  目标是对多个元素的特征取平均值。然而，我们并不想给每个元素相同的权重，而是根据它们实际的值来赋予权重。换句话说，我们想要动态地决定哪些输入我们希望“更多关注”。特别是，一个注意力机制通常有我们需要指定的四个部分：
+  
+  查询（Query）：查询是一个特征向量，描述了我们在序列中寻找什么，即我们可能想要关注的内容。
+  
+  键（Keys）：对于每个输入元素，我们都有一个键，这同样是一个特征向量。这个特征向量大致描述了该元素“提供”的内容，或者它何时可能重要。键应该被设计成能够基于查询识别出我们想要关注的元素。
+  
+  值（Values）：对于每个输入元素，我们还有一个值向量。这个特征向量就是我们想要取平均值的向量。
+  
+  评分函数（Score function）：为了评估我们想要关注哪些元素，我们需要指定一个评分函数。评分函数将查询和一个键作为输入，并输出查询-键对的得分/注意力权重。它通常由简单的相似度度量来实现，如点积或一个小的多层感知器（MLP）。
+  
+  平均值的权重是通过对所有评分函数输出进行softmax计算得到的。因此，我们给予那些其对应键与查询最为相似的值向量更高的权重。
+  
+  对于每个单词，我们有一个键向量（key vector）和一个值向量（value vector）。查询与所有键通过得分函数（在这种情况下为点积）进行比较以确定权重。为了简化，softmax没有被可视化。最后，使用注意力权重对所有单词的值向量进行平均。
+  
+  大多数注意力机制在它们使用的查询、如何定义键向量和值向量以及使用的得分函数方面有所不同。转换器架构内部应用的注意力称为自注意力（self-attention）。在自注意力中，每个序列元素提供一个键、一个值和一个查询。对于每个元素，我们执行一个注意力层，在这个层中，根据其查询，我们检查所有序列元素键的相似性，并为每个元素返回一个不同的、经过平均的值向量。我们现在将通过首先查看Transformer案例中的注意力机制的具体实现——缩放点积注意力——来更详细地介绍。
+  
+  
+  import torch
+  x = torch.Tensor([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+  mask = torch.Tensor([[1, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0]])
+  # 将 mask 为 0 的位置替换成 -1
+  new_x = x.masked_fill(mask == 0, -1)
+  print(new_x)
+  
+  
+  # pytorch
+  def scaled_dot_product(q, k, v, mask=None):
+      d_k = q.size()[-1]
+      attn_logits = torch.matmul(q, k.transpose(-2, -1))
+      attn_logits = attn_logits / math.sqrt(d_k)
+      if mask is not None:
+          attn_logits = attn_logits.masked_fill(mask == 0, -9e15)
+      attention = F.softmax(attn_logits, dim=-1)
+      values = torch.matmul(attention, v)
+      return values, attention
+      
+  seq_len, d_k = 3, 2
+  pl.seed_everything(42)
+  q = torch.randn(seq_len, d_k)
+  k = torch.randn(seq_len, d_k)
+  v = torch.randn(seq_len, d_k)
+  values, attention = scaled_dot_product(q, k, v)
+  print("Q\n", q)
+  print("K\n", k)
+  print("V\n", v)
+  print("Values\n", values)
+  print("Attention\n", attention)
+  
+  # jax
+  def scaled_dot_product(q, k, v, mask=None):
+      d_k = q.shape[-1]
+      attn_logits = jnp.matmul(q, jnp.swapaxes(k, -2, -1))
+      attn_logits = attn_logits / math.sqrt(d_k)
+      if mask is not None:
+          attn_logits = jnp.where(mask == 0, -9e15, attn_logits)
+      attention = nn.softmax(attn_logits, axis=-1)
+      values = jnp.matmul(attention, v)
+      return values, attention
+  
+  seq_len, d_k = 3, 2
+  main_rng, rand1 = random.split(main_rng)
+  qkv = random.normal(rand1, (3, seq_len, d_k))
+  q, k, v = qkv[0], qkv[1], qkv[2]
+  values, attention = scaled_dot_product(q, k, v)
+  
+  
+  k.transpose(-2, -1)
+  	# -2 表示倒数第二个维度
+  	# -1 表示倒数第一个维度
+  	# 函数把指定的两个维度互换
+  	
+  
+  缩放点积注意力机制允许网络对序列进行关注。然而，通常一个序列元素想要关注多个不同的方面，单一加权平均并不是一个好的选择。这就是为什么我们将注意力机制扩展到多头上，即在相同特征上应用多组不同的查询-键-值三元组。具体来说，给定查询矩阵、键矩阵和值矩阵，我们将它们转换为子查询、子键和子值，并将它们分别通过缩放点积注意力处理。之后，我们将各个头连接起来，并用最终的权重矩阵结合它们。
+  
+  
+  # pytorch
+  def expand_mask(mask):
+      assert mask.ndim >= 2, "Mask must be at least 2-dimensional with seq_length x seq_length"
+      if mask.ndim == 3:
+          mask = mask.unsqueeze(1)
+      while mask.ndim < 4:
+          mask = mask.unsqueeze(0)
+      return mask
+  
+  class MultiheadAttention(nn.Module):
+  
+      def __init__(self, input_dim, embed_dim, num_heads):
+          super().__init__()
+          assert embed_dim % num_heads == 0, "Embedding dimension must be 0 modulo number of heads."
+  
+          self.embed_dim = embed_dim
+          self.num_heads = num_heads
+          self.head_dim = embed_dim // num_heads
+  
+          # Stack all weight matrices 1...h together for efficiency
+          # Note that in many implementations you see "bias=False" which is optional
+          self.qkv_proj = nn.Linear(input_dim, 3*embed_dim)
+          self.o_proj = nn.Linear(embed_dim, embed_dim)
+  
+          self._reset_parameters()
+  
+      def _reset_parameters(self):
+          # Original Transformer initialization, see PyTorch documentation
+          nn.init.xavier_uniform_(self.qkv_proj.weight)
+          self.qkv_proj.bias.data.fill_(0)
+          nn.init.xavier_uniform_(self.o_proj.weight)
+          self.o_proj.bias.data.fill_(0)
+  
+      def forward(self, x, mask=None, return_attention=False):
+          batch_size, seq_length, _ = x.size()
+          if mask is not None:
+              mask = expand_mask(mask)
+          qkv = self.qkv_proj(x)
+  
+          # Separate Q, K, V from linear output
+          qkv = qkv.reshape(batch_size, seq_length, self.num_heads, 3*self.head_dim)
+          qkv = qkv.permute(0, 2, 1, 3) # [Batch, Head, SeqLen, Dims]
+          q, k, v = qkv.chunk(3, dim=-1)
+  
+          # Determine value outputs
+          values, attention = scaled_dot_product(q, k, v, mask=mask)
+          values = values.permute(0, 2, 1, 3) # [Batch, SeqLen, Head, Dims]
+          values = values.reshape(batch_size, seq_length, self.embed_dim)
+          o = self.o_proj(values)
+  
+          if return_attention:
+              return o, attention
+          else:
+              return o
+  
+  
+  # jax
+  class MultiheadAttention(nn.Module):
+      embed_dim : int  # Output dimension
+      num_heads : int  # Number of parallel heads (h)
+  
+      def setup(self):
+          # Stack all weight matrices 1...h and W^Q, W^K, W^V together for efficiency
+          # Note that in many implementations you see "bias=False" which is optional
+          self.qkv_proj = nn.Dense(3*self.embed_dim,
+                                   kernel_init=nn.initializers.xavier_uniform(),  # Weights with Xavier uniform init
+                                   bias_init=nn.initializers.zeros  # Bias init with zeros
+                                  )
+          self.o_proj = nn.Dense(self.embed_dim,
+                                 kernel_init=nn.initializers.xavier_uniform(),
+                                 bias_init=nn.initializers.zeros)
+  
+      def __call__(self, x, mask=None):
+          batch_size, seq_length, embed_dim = x.shape
+          if mask is not None:
+              mask = expand_mask(mask)
+          qkv = self.qkv_proj(x)
+  
+          # Separate Q, K, V from linear output
+          qkv = qkv.reshape(batch_size, seq_length, self.num_heads, -1)
+          qkv = qkv.transpose(0, 2, 1, 3) # [Batch, Head, SeqLen, Dims]
+          q, k, v = jnp.array_split(qkv, 3, axis=-1)
+  
+          # Determine value outputs
+          values, attention = scaled_dot_product(q, k, v, mask=mask)
+          values = values.transpose(0, 2, 1, 3) # [Batch, SeqLen, Head, Dims]
+          values = values.reshape(batch_size, seq_length, embed_dim)
+          o = self.o_proj(values)
+  
+          return o, attention
+  
+  
+  ## Test MultiheadAttention implementation
+  # Example features as input
+  main_rng, x_rng = random.split(main_rng)
+  x = random.normal(x_rng, (3, 16, 128))
+  # Create attention
+  mh_attn = MultiheadAttention(embed_dim=128, num_heads=4)
+  # Initialize parameters of attention with random key and inputs
+  main_rng, init_rng = random.split(main_rng)
+  params = mh_attn.init(init_rng, x)['params']
+  # Apply attention with parameters on the inputs
+  out, attn = mh_attn.apply({'params': params}, x)
+  print('Out', out.shape, 'Attention', attn.shape)
+  
+  del mh_attn, params
+  
+  
+  
+  qkv.permute(0, 2, 1, 3)
+  	# 重排列向量维度
+  	# 正常的排列是 0, 1, 2, 3
+  	# 函数把原来的 1 和 2 维互换了位置
+  
+  
+  mask = mask.unsqueeze(1) # [SeqLen, SeqLen] -> [SeqLen, 1, SeqLen]
+  mask = mask.unsqueeze(0) # [SeqLen, SeqLen] -> [1, SeqLen, SeqLen]
+  	# 在指定位置添加一个新维度，它的后面维度依次往后挪
+  	
+  
+  
+  
+  
+  ```
+
+
+
+
+
+
 
 [李宏毅 Transformer](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 
@@ -26817,6 +27038,12 @@ apt-get install ninja-build
 
 #### RWKV-v4neo
 
+
+
+v4neo 可以用v4 代码推理，**v5 用 v4 推理出错** 
+
+
+
 ```
 	import sys
     sys.argv.append( '--data_file' )
@@ -26910,6 +27137,13 @@ https://blog.csdn.net/sinat_40245632/article/details/109330182
 # 错误 'FieldInfo' object has no attribute 'field_info'
 pip install --force-reinstall -v "fastapi==0.99.1"
 	# 或着 downgrade pydantic==1.10.13 ? 这个是上游？
+
+# 改 deepspeed_stage_3_offload 以后格式变了，要执行一次转换
+/root/RWKV-v5/out/rwkv-5.pth/zero_to_fp32.py
+    parser.add_argument("-d", "--debug", action='store_true', help="enable debug")
+    args = parser.parse_args()
+    args.checkpoint_dir="/root/RWKV-v5/out/rwkv-5.pth"
+    args.output_file="5.pth"
 
 
 # 改好参数成功训练
@@ -27148,6 +27382,77 @@ data:
   test_split_shuffle: false
 
 ```
+
+
+
+##### MyDataset char模式
+
+```
+import linecache
+
+class MyDataset(Dataset):
+    def __init__(self, args):
+        self.args = args
+        self.data_file = args.data_file
+        # 计算文件中的数据行数，该步骤需要时间，因为要遍历整个文件
+        self.num_entries = sum(1 for line in open(self.data_file))
+		...
+		else:
+                self.data = open(args.data_file, "r", encoding=args.data_type).read()
+            rank_zero_info("Building token list...")
+            unique = sorted(list(set(self.data)))
+            self.vocab_size = len(unique)
+            # rank_zero_info()
+            # for u in unique:
+            #     print(u, end=' ')
+            # rank_zero_info('\n\n')
+            xx = 0
+            xxObj = {}
+            for u in unique:
+                xxObj[xx] = u
+                xx += 1
+            with open(f"{args.proj_dir}/vocab.json", "w", encoding="utf-8") as vocab_file:
+                vocab_file.write(json.dumps(xxObj, ensure_ascii=False))
+            self.data_size = len(self.data)
+            rank_zero_info(f"Data has {self.data_size} tokens, {self.vocab_size} vocab size.")
+            self.stoi = {ch: i for i, ch in enumerate(unique)}
+            self.itos = {i: ch for i, ch in enumerate(unique)}
+
+
+    def __len__(self):
+        return self.args.epoch_steps * self.args.micro_bsz
+
+    def __getitem__(self, idx):
+
+        idx = np.random.randint(0, self.num_entries)
+
+
+        ctx_len = self.args.ctx_len
+        req_len = ctx_len + 1
+
+        line = linecache.getline(self.data_file, idx+1)
+        js = json.loads(line)
+        dlg = js['dlg']
+        gpt = js['gpt']
+        dlg_gpt = '\ndlg:' + dlg + '\ngpt:' + gpt + '<eNd>'
+        dlg_gpt_repeat = dlg_gpt * ctx_len
+
+        # cheat: pick a random spot in dataset
+        i = np.random.randint(0, len(dlg_gpt_repeat) - req_len)
+
+        dix = [self.stoi[s] for s in dlg_gpt_repeat[i : i + req_len]]
+
+        x = torch.tensor(dix[:-1], dtype=torch.long)
+        y = torch.tensor(dix[1:], dtype=torch.long)
+
+        return x, y
+
+
+
+
+```
+
+
 
 
 
