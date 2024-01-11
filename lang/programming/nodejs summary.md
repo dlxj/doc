@@ -26829,6 +26829,10 @@ apt-get install ninja-build
 
 
 
+v4neo 可以用v4 代码推理，**v5 用 v4 推理出错** 
+
+
+
 ```
 	import sys
     sys.argv.append( '--data_file' )
