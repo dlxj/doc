@@ -27092,6 +27092,10 @@ conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
 	# conda env remove -n KV5
 	wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
 sudo sh cuda_11.8.0_520.61.05_linux.run
+	# 不能行
+
+conda install pytorch pytorch-cuda=12.1 -c pytorch -c nvidia
+	
 
 update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8/ 118
 ln -sfT /usr/local/cuda-11.8/ /etc/alternatives/cuda
