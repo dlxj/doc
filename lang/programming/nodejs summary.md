@@ -25765,7 +25765,7 @@ see echodict\transformer\picoGPT_chinese\chat.py
 
 [annotated transformer 必看有代码](https://github.com/harvardnlp/annotated-transformer/) [1](https://blog.csdn.net/v_JULY_v/article/details/130090649)
 
-[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)  [flax good](https://zhuanlan.zhihu.com/p/541782955)
+[torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)  [flax good](https://zhuanlan.zhihu.com/p/541782955) [注意力机制 动手深度学习](https://zh.d2l.ai/chapter_attention-mechanisms/index.html)
 
 - ```
   the attention mechanism describes a weighted average of (sequence) elements with the weights dynamically computed based on an input query and elements’ keys. 
@@ -25973,6 +25973,65 @@ see echodict\transformer\picoGPT_chinese\chat.py
   ```
 
 
+
+### Transformer 中的注意力机制
+
+Transformer是一种深度学习模型，常用于处理序列数据如自然语言处理任务。该模型的核心部分是**注意力机制**（Attention Mechanism），它使得模型能够在处理信息时，对重要的部分给予更多的关注。
+
+#### 基本概念
+
+- **注意力权重**：这些权重决定了模型在查看输入序列时，应该“注意”哪些部分更多。
+- **查询（Query）**、**键（Key）**和**值（Value）**：这三个部分构成了注意力计算的基础。每个元素都会根据自身生成一个查询向量，同时也会产生一个键向量和一个值向量。
+
+#### 工作原理
+
+1. **打分**：模型通过计算每个查询与其他所有键之间的匹配程度来打分，通常使用点积来进行度量。
+2. **归一化**：接着，利用softmax函数对这些分数进行归一化，以便分数的总和为1，这意味着把分数转换为概率。
+3. **加权求和**：最后，将值（Value）向量与这些归一化的权重相乘，并对所有位置上的结果进行求和，得到最终的输出。
+
+#### 举例说明
+
+假设我们有一个句子："The cat sat on the mat." 要翻译成另一种语言。在处理"sat"这个词时，模型可能会赋予"The cat"比"the mat"更多的注意力，因为它们与"sat"在语法和意义上更相关。
+
+#### 多头注意力
+
+Transformer模型使用了所谓的**多头注意力**（Multi-Head Attention），可以想象成是多组不同的“查询-键-值”集合，每个集合关注不同的信息方面，增强了模型的能力去并行地处理多种类型的信息。
+
+#### 优势
+
+- **并行处理**：注意力机制允许模型同时处理整个序列，而非像循环神经网络（RNN）那样逐个元素处理。
+- **捕获长距离依赖**：它可以轻松地捕获序列中相隔很远的元素间的相关性，这对于像语言这样有复杂结构的数据特别重要。
+- **灵活性**：注意力机制在处理各种长度的序列时表现出极大的灵活性，因此可以被用于各种大小的输入数据。
+
+总结来说，注意力机制是Transformer架构的主要创新之一，它提供了一种有效的方式来指导模型在处理一系列输入时，该聚焦在什么地方以及如何结合不同部分的信息，从而增强了模型解决复杂任务的能力。
+
+
+
+在Transformer模型中，Q（Query），K（Key），V（Value）是通过输入数据的线性变换生成的。这些变换通常使用可训练的权重矩阵来完成。下面详细说明这个过程。
+
+### 生成 Q, K, V 的步骤
+
+1. **输入嵌入**：初始的输入数据首先转换成嵌入表示。如果我们处理的是文本数据，那么每个单词或者标记会被转换成一个稠密的向量表示。
+
+2. **线性变换**：每个嵌入向量接着通过三个不同的、可训练的线性层（即权重矩阵）进行变换，产生对应的Q、K和V。具体地说，对于输入序列中的每个元素，模型学习了三组权重矩阵W_Q、W_K和W_V，用于将元素的嵌入表示映射到Q、K和V。
+
+```plaintext
+Q = W_Q * X
+K = W_K * X
+V = W_V * X
+```
+
+其中X是输入嵌入，W_Q、W_K、W_V是权重矩阵，Q、K、V分别是查询、键和值的向量。
+
+3. **多头注意力**：在多头注意力机制中，这一过程会复制和并行化执行多次，每一组头使用不同的权重矩阵W_Q^i、W_K^i和W_V^i，从而能够捕获输入数据的不同方面。
+
+### 训练过程中的更新
+
+- **梯度下降**：在训练过程中，Transformer模型使用反向传播算法和梯度下降来持续更新这些权重矩阵。根据损失函数相对于每个权重的梯度，优化器调整权重以最小化损失。
+
+- **参数更新**：随着训练的进行，W_Q、W_K、W_V这些权重矩阵会根据损失函数和梯度不断进行更新，使得模型能够更好地学习如何为Q、K、V生成有效的表示。
+
+综上所述，Q、K、V是通过将输入数据的嵌入表示与学习到的权重矩阵相乘得到的，并且这些权重矩阵在模型训练过程中会不断更新，以便模型可以更好地理解数据、捕获序列间的依赖关系，并提高任务相关性能。
 
 
 
