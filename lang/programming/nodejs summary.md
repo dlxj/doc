@@ -26035,6 +26035,62 @@ V = W_V * X
 
 
 
+接下来，我们将探讨如何在Transformer架构内应用多头注意力模块。最初，Transformer模型是为了机器翻译而设计的。因此，它具有一个编码器-解码器结构，其中编码器输入原始语言中的句子，并生成基于注意力的表示。另一方面，解码器关注编码信息，并以自回归的方式生成翻译后的句子，就像标准RNN那样。虽然这种结构对于需要自回归解码的序列到序列任务非常有用，但我们这里会重点关注编码器部分。在自然语言处理（NLP）中已经通过纯编码器基础的Transformer模型取得了很多进展（如果感兴趣，这些模型包括BERT家族、视觉Transformer等），在我们的教程中，我们也主要关注编码器部分。如果你已经理解了编码器架构，那么实现解码器也只是一个很小的步骤。
+
+
+
+多头注意力（Multi-Head Attention）是 Transformer 模型的一个关键部分，它能帮助模型在处理序列数据时同时考虑到不同位置的信息。
+
+在 PyTorch 中实现多头注意力的一段代码如下：
+
+```python
+self.qkv_proj = nn.Linear(input_dim, 3*embed_dim)
+```
+
+这行代码中使用了PyTorch的`nn.Linear`模块。下面是对代码的逐句解释：
+
+- `self.qkv_proj`: 这是定义在一个类里的一个属性，代表了一个全连接层（或称作线性层），用于将输入的特征投影到一个新的空间。这里 `qkv` 表示查询（Query）、键（Key）和值（Value），这三者是注意力机制的核心概念。
+  
+- `nn.Linear`: 这是构造一个线性映射的层，其中`input_dim`是输入特征的维数，而`3*embed_dim`是输出特征的维数。
+
+- `input_dim`: 输入特征向量的维度。
+  
+- `embed_dim`: 嵌入层的维度。在多头注意力中，`embed_dim`通常会被分割成几个“头”，每个头处理一部分的嵌入维度，以并行地捕获不同的特征子空间。
+
+- `3*embed_dim`: 输出维度是3倍的`embed_dim`因为它包含了查询、键和值三部分的投影，每一部分都有`embed_dim`维度。所以总共是`3*embed_dim`。
+
+在多头注意力中，输入会先通过这个全连接层获取查询(query)、键(key)和值(value)的表示，然后再进行后续的注意力计算。这种方式提高了运算效率，因为它可以一次完成所有头的线性变换，而非逐个处理。
+
+
+
+
+
+`nn.Dense` 是一种在神经网络中常用的全连接层（Fully-Connected Layer），在 Flax 框架中，`nn.Dense` 用于建立一个普通的密集连接层。这个函数创建了一个层，它的每个输入节点都与输出节点全连接，通常用于实现线性变换加上一个非线性激活函数。
+
+以下是 `nn.Dense` 的基本参数解释：
+
+- `features`: 输出空间的维度。
+- `use_bias`: 是否添加偏置项 (默认为 `True`)。
+- `kernel_init`: 权重初始化函数。
+- `bias_init`: 偏置初始化函数。
+
+用法示例
+
+```python
+from flax import linen as nn
+
+class MyModel(nn.Module):
+  @nn.compact
+  def __call__(self, x):
+    x = nn.Dense(features=256)(x)  # 添加一个有256个输出单元的全连接层
+    x = nn.relu(x)                  # 应用ReLU激活函数
+    return x
+```
+
+在这个例子中，我们首先定义了一个名为`MyModel`的模型，它包含一个`Dense`层，这个层将输入转换成一个256维的输出向量。然后接一个 ReLU 激活函数来增加非线性特征，使模型可以学习更复杂的模式。
+
+
+
 
 
 [李宏毅 Transformer](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
