@@ -3759,6 +3759,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create elly_videoplayer --type dataset
 	# huggingface-cli repo create CleanReader.Desktop --type dataset
 	# huggingface-cli repo create RWKV-v5 --type dataset
+	# huggingface-cli repo create dict --type dataset
 	
 	
 	
@@ -28385,6 +28386,8 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 # whisperX
 
 [whisperX](https://github.com/m-bain/whisperX)
+
+[VITS Fast Fine-tuning](https://github.com/Plachtaa/VITS-fast-fine-tuning)
 
 [FunASR 阿里的](https://github.com/alibaba-damo-academy/FunASR/blob/main/docs/model_zoo/modelscope_models.md)
 
