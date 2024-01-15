@@ -3963,6 +3963,20 @@ pip3 freeze > requirements.txt
 
 
 
+
+# nodejs 调用
+# npm i -D @gradio/client
+import { client } from "@gradio/client";
+
+const app = await client("https://dlxjj-rwkv5-jp-explain.hf.space/--replicas/rxopk/");
+const result = await app.predict("/predict", [		
+				"Hello!!", // string  in 'name' Textbox component
+	]);
+
+console.log(result.data);
+
+
+
 You can add a requirements.txt file at the root of the repository to specify Python dependencies
 
 If needed, you can also add a packages.txt file at the root of the repository to specify Debian dependencies.
