@@ -28387,9 +28387,9 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 [whisperX](https://github.com/m-bain/whisperX)
 
-[VITS Fast Fine-tuning](https://github.com/Plachtaa/VITS-fast-fine-tuning)
+[VITS Fast Fine-tuning](https://github.com/Plachtaa/VITS-fast-fine-tuning) [训练方法](https://blog.csdn.net/cf2xh123/article/details/129398162)
 
-[VITS-Umamusume-voice-synthesizer](https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer)  同时说中英日三语
+[VITS-Umamusume-voice-synthesizer](https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer)  [1](https://ngabbs.com/read.php?tid=34936044&rand=2) 同时说中英日三语
 
 [FunASR 阿里的](https://github.com/alibaba-damo-academy/FunASR/blob/main/docs/model_zoo/modelscope_models.md)
 
