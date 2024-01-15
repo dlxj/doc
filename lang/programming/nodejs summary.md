@@ -3946,6 +3946,10 @@ gradio_interface = gradio.Interface(
 gradio_interface.launch()
 
 
+# README.md
+python_version: 3.10.13
+
+
 # 本地执行
 conda create -n space pip python=3.10 -y
 conda activate space

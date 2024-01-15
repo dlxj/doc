@@ -187,12 +187,32 @@ free -h
 
 # WSL
 
+
+
 ```
 \\wsl$   win10 在 地址栏输入这个，直接定位到 wsl ubuntu 根目录
 
 see nodejs summary.md -> InternLM
 
 ```
+
+
+
+## Install wsl2
+
+```
+wsl --list --online
+	-> Debian
+	-> Ubuntu-20.04    Ubuntu 20.04 LTS
+
+wsl --install -d Ubuntu-20.04
+
+sudo passwd
+	# 这就是改 root 密码
+
+```
+
+
 
 
 
