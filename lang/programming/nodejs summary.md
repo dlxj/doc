@@ -3684,6 +3684,9 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 ```
 
+git config --global user.name "dlxjj" && \
+git config --global user.email "12345@qq.com"
+
 git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datasets/dlxjj/transformer
 	# 能行
 	
@@ -3924,6 +3927,8 @@ git lfs pull
 ### sapce 推理
 
 [REST API with Gradio and Hugging Face Spaces](https://www.tomsoderlund.com/ai/building-ai-powered-rest-api) [1](https://www.gradio.app/docs/interface)
+
+[godot-python godot集成](https://github.com/touilleMan/godot-python/tree/godot4-meson)
 
 
 
