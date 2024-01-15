@@ -3929,8 +3929,11 @@ git lfs pull
 
 ```
 
+
+
 # gradio
-git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
+git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain && \
+cd rwkv5-jp-explain
 
 # app.py
 import gradio
@@ -3950,10 +3953,12 @@ gradio_interface.launch()
 python_version: 3.10.13
 
 
-# 本地执行
-conda create -n space pip python=3.10 -y
-conda activate space
-pip3 install gradio
+# wsl 执行
+conda create -n spaceKV5 pip python=3.10.13 -y && \
+conda activate spaceKV5 && \
+pip3 install gradio && \
+git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain && \
+cd rwkv5-jp-explain && \
 pip3 freeze > requirements.txt
 
 

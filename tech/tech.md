@@ -37,7 +37,7 @@
 
 Termux + Github
 
-git config --global user.name “dlxj”    
+git config --global user.name "dlxj"    
 
 git config --global user.email  "12345@qq.com"  
 
