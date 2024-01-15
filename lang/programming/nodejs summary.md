@@ -28389,6 +28389,8 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 [VITS Fast Fine-tuning](https://github.com/Plachtaa/VITS-fast-fine-tuning)
 
+[VITS-Umamusume-voice-synthesizer](https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer)  同时说中英日三语
+
 [FunASR 阿里的](https://github.com/alibaba-damo-academy/FunASR/blob/main/docs/model_zoo/modelscope_models.md)
 
 - [可检测长语音片段中有效语音的起止时间点](https://modelscope.cn/models/damo/speech_UniASR_asr_2pass-ja-16k-common-vocab93-tensorflow1-online/summary)
