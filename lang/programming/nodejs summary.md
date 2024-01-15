@@ -3923,7 +3923,45 @@ git lfs pull
 
 ### sapce 推理
 
-[REST API with Gradio and Hugging Face Spaces](https://www.tomsoderlund.com/ai/building-ai-powered-rest-api)
+[REST API with Gradio and Hugging Face Spaces](https://www.tomsoderlund.com/ai/building-ai-powered-rest-api) [1](https://www.gradio.app/docs/interface)
+
+
+
+```
+
+# gradio
+git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
+
+# app.py
+import gradio
+
+def my_inference_function(name):
+  return "Hello " + name + "!"
+
+gradio_interface = gradio.Interface(
+  fn = my_inference_function,
+  inputs = "text",
+  outputs = "text"
+)
+gradio_interface.launch()
+
+
+# 本地执行
+conda create -n space pip python=3.10 -y
+conda activate space
+pip3 install gradio
+pip3 freeze > requirements.txt
+
+
+
+You can add a requirements.txt file at the root of the repository to specify Python dependencies
+
+If needed, you can also add a packages.txt file at the root of the repository to specify Debian dependencies.
+
+The gradio package is pre-installed and its version is set in the sdk_version field in the README.md file.
+```
+
+
 
 
 
