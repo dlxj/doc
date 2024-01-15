@@ -3921,6 +3921,33 @@ git lfs pull
 
 
 
+### sapce 推理
+
+[REST API with Gradio and Hugging Face Spaces](https://www.tomsoderlund.com/ai/building-ai-powered-rest-api)
+
+
+
+```
+选 streamlit
+
+app.py
+import streamlit as st
+x = st.slider('Select a value')
+st.write(x, 'squared is', x * x)
+	# 提交, 要是一直 building 就重启
+
+
+$ curl -X POST https://yourspace.hf.space/run/predict -H 'Content-Type: application/json' -H 'Authorization: Bearer put_your_bearer_token_here' -d '{"data": ["Paul"]}'
+
+
+```
+
+
+
+
+
+
+
 
 
 ## 阿里云上传
@@ -28376,6 +28403,25 @@ BMInf 便是为这样的需求而生。通过高效的显存/内存换入换出
 
 # if __name__ == "__main__":
 #     chatgpt()
+
+```
+
+
+
+# VITS Fast Fine-tuning
+
+[VITS Fast Fine-tuning](https://github.com/Plachtaa/VITS-fast-fine-tuning) [训练方法](https://blog.csdn.net/cf2xh123/article/details/129398162)
+
+[VITS-Umamusume-voice-synthesizer](https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer)  [1](https://ngabbs.com/read.php?tid=34936044&rand=2) 同时说中英日三语
+
+
+
+```
+conda create -n vits python=3.10 && \
+conda activate vits
+	# 它是 11.7 可以和 KV5 共用环境
+
+
 
 ```
 
