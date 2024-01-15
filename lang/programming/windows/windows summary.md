@@ -207,6 +207,8 @@ wsl --list --online
 
 wsl --install -d Ubuntu-20.04
 
+wsl --set-default-version 2
+
 sudo passwd
 	# 这就是改 root 密码
 
