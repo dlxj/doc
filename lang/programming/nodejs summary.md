@@ -3658,6 +3658,8 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 ## 抱抱脸 
 
+[如何上传大文件](https://zhuanlan.zhihu.com/p/473651876)
+
 [Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
 
 [cli doc](https://huggingface.co/docs/huggingface_hub/main/guides/cli) 
