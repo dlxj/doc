@@ -3775,6 +3775,14 @@ git config --global core.autocrlf input
 git config --global core.autocrlf false
 	# 提交签出均不转换
 
+
+git lfs track "*.psd"
+git add path/to/file.psd
+git commit -m "add file.psd"
+git push
+	# 温柔提交
+
+
 git lfs install && \
 git add . && \
 git commit -m 'm' && \
