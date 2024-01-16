@@ -3778,11 +3778,12 @@ git config --global core.autocrlf false
 	# 提交签出均不转换
 
 
-git lfs track "*.psd"
-git add path/to/file.psd
-git commit -m "add file.psd"
+huggingface-cli.exe lfs-enable-largefiles 这里填.git所在路径
+git lfs track "*.pth"
+git add .
+git commit -m "add 50.pth"
 git push
-	# 温柔提交
+	# 配置完就可以正常提交，不要再用暴力提交了
 
 
 git lfs install && \
