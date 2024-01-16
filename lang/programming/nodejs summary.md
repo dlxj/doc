@@ -3945,17 +3945,22 @@ git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain && \
 cd rwkv5-jp-explain
 
 # app.py
-import gradio
+import gradio, time
 
 def my_inference_function(name):
-  return "Hello " + name + "!"
+    tmp = ""
+    for i in range(10):
+      time.sleep(0.3)
+      tmp += str(i) + name
+      yield tmp
 
 gradio_interface = gradio.Interface(
   fn = my_inference_function,
   inputs = "text",
   outputs = "text"
 )
-gradio_interface.launch()
+gradio_interface.launch(server_name="0.0.0.0")
+	# 流式输出
 
 
 # README.md
