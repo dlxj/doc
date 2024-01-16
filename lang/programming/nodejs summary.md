@@ -3938,7 +3938,9 @@ git lfs pull
 
 ```
 
-
+# README.md
+python_version: 3.10.13
+	# 加上这个指定 python 版本，保证它和本地环境一致
 
 # gradio
 git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain && \
@@ -3963,8 +3965,7 @@ gradio_interface.launch(server_name="0.0.0.0")
 	# 流式输出
 
 
-# README.md
-python_version: 3.10.13
+
 
 
 # wsl 执行
