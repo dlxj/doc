@@ -3930,6 +3930,10 @@ git lfs pull
 
 [godot-python godot集成](https://github.com/touilleMan/godot-python/tree/godot4-meson)
 
+[流式输出](https://juejin.cn/post/7237386183612760125)
+
+[chatgpt](https://huggingface.co/spaces/simpx/chatdemo)
+
 
 
 ```
