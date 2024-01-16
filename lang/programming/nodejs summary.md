@@ -4299,6 +4299,9 @@ pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 
 ```
 
+https://mega.io/zh-hans/cmd
+	# 下载
+
 https://help.mega.io/zh-hans/installs-apps/desktop-syncing/download-install
 
 wget https://mega.nz/linux/repo/CentOS_7/x86_64/megacmd-CentOS_7.x86_64.rpm && \
