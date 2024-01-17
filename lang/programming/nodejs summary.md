@@ -3945,6 +3945,8 @@ git lfs pull
 
 [chatgpt](https://huggingface.co/spaces/simpx/chatdemo)
 
+[RWKV 官方 Gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2)
+
 
 
 ```
