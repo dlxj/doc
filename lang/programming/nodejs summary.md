@@ -28674,6 +28674,8 @@ conda activate vits
 
 [VITS-Umamusume-voice-synthesizer](https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer)  [1](https://ngabbs.com/read.php?tid=34936044&rand=2) 同时说中英日三语
 
+[rwkv tts 必看](https://github.com/theodorblackbird/lina-speech)
+
 [FunASR 阿里的](https://github.com/alibaba-damo-academy/FunASR/blob/main/docs/model_zoo/modelscope_models.md)
 
 - [可检测长语音片段中有效语音的起止时间点](https://modelscope.cn/models/damo/speech_UniASR_asr_2pass-ja-16k-common-vocab93-tensorflow1-online/summary)
