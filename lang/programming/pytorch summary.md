@@ -957,6 +957,7 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 
 
 ```python
+# see echodict\transformer\transformer_jax.py
 import torch.utils.data as data
 class ReverseDataset(data.Dataset):
     """
