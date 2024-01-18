@@ -988,6 +988,22 @@ class ReverseDataset(data.Dataset):
         """
         labels = np.flip(inp_data, axis=0)
         return inp_data, labels
+    
+    
+from functools import partial
+dataset = partial(ReverseDataset, 10, 16) # 相比原函数前两参数已固定，只需传后面的参数就可以了
+rev_train_loader = data.DataLoader(dataset(50000, np_rng=np.random.default_rng(42)),
+                                   batch_size=128,
+                                   shuffle=True,
+                                   drop_last=True,
+                                   collate_fn=numpy_collate)
+rev_val_loader   = data.DataLoader(dataset(1000, np_rng=np.random.default_rng(43)),
+                                   batch_size=128,
+                                   collate_fn=numpy_collate)
+rev_test_loader  = data.DataLoader(dataset(10000, np_rng=np.random.default_rng(44)),
+                                   batch_size=128,
+                                   collate_fn=numpy_collate)
+
 ```
 
 
