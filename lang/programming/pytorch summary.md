@@ -988,6 +988,15 @@ class ReverseDataset(data.Dataset):
         """
         labels = np.flip(inp_data, axis=0)
         return inp_data, labels
+
+def numpy_collate(batch):
+    if isinstance(batch[0], np.ndarray):
+        return np.stack(batch)
+    elif isinstance(batch[0], (tuple,list)):
+        transposed = zip(*batch)
+        return [numpy_collate(samples) for samples in transposed]
+    else:
+        return np.array(batch)
     
     
 from functools import partial
@@ -997,6 +1006,7 @@ rev_train_loader = data.DataLoader(dataset(50000, np_rng=np.random.default_rng(4
                                    shuffle=True,
                                    drop_last=True,
                                    collate_fn=numpy_collate)
+										# 将batch_size个样本合成一个向量 np.stack(batch)
 rev_val_loader   = data.DataLoader(dataset(1000, np_rng=np.random.default_rng(43)),
                                    batch_size=128,
                                    collate_fn=numpy_collate)
