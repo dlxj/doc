@@ -394,6 +394,27 @@ Y = torch.from_numpy(Y)
 
 
 
+### flip 逆序重排
+
+```
+# see echodict\transformer\transformer_jax.py
+		"""
+        np.flip(inp_data, axis=0) # 沿第一个维度(行)逆序重排
+        [ [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+        ->
+        [ [7, 8, 9],
+          [4, 5, 6],
+          [1, 2, 3]]
+        """
+        labels = np.flip(inp_data, axis=0)
+```
+
+
+
+
+
 ### 按行求和
 
 ```python
