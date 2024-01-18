@@ -950,9 +950,49 @@ Torch张量和numpy数组将共享潜在的内存，改变其中一个也将改�
 
 
 
-## Data load
+## Dataload
 
 > 比如你有1000组数据（假设每组数据为三通道256px×256px的图像），batchsize为4，那么每次训练则提取(4,3,256,256)维度的张量来训练，刚好250个epoch解决(250×4=1000)。但是如果你有999组数据，你继续使用batchsize为4的话，这样999和4并不能整除，你在训练前249组时的张量维度都为(4,3,256,256)但是最后一个批次的维度为(3,3,256,256)，Pytorch检查到(4,3,256,256) != (3,3,256,256)，维度不匹配，自然就会报错了，这可以称为一个小bug
+
+
+
+```python
+import torch.utils.data as data
+class ReverseDataset(data.Dataset):
+    """
+    最简单的数据集: 输入是一行整数, 输出是输入的逆序
+    """
+    def __init__(self, num_categories, seq_len, size, np_rng):
+        super().__init__()
+        self.num_categories = num_categories
+        self.seq_len = seq_len
+        self.size = size
+        self.np_rng = np_rng
+
+        self.data = self.np_rng.integers(self.num_categories, size=(self.size, self.seq_len))
+
+    def __len__(self):
+        return self.size
+
+    def __getitem__(self, idx):
+        inp_data = self.data[idx]
+        """
+        np.flip(inp_data, axis=0) # 沿第一个维度(行)逆序重排
+        [ [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+        ->
+        [ [7, 8, 9],
+          [4, 5, 6],
+          [1, 2, 3]]
+        """
+        labels = np.flip(inp_data, axis=0)
+        return inp_data, labels
+```
+
+
+
+
 
 
 
