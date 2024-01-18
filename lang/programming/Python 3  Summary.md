@@ -1064,6 +1064,32 @@ lines.append({**line, 'points': poly}) # poly 是新的 points ，意思是更�
 
 
 
+```
+# see echodict\transformer\transformer_jax.py
+def train_reverse(max_epochs=10, **model_args):
+    num_train_iters = len(rev_train_loader) * max_epochs
+    # Create a trainer module with specified hyperparameters
+    trainer = ReverseTrainer(model_name='ReverseTask',
+                             exmp_batch=next(iter(rev_train_loader)),
+                             max_iters=num_train_iters,
+                             **model_args)
+                             
+reverse_trainer, reverse_result = train_reverse(model_dim=32,
+                                                num_heads=1,
+                                                num_classes=rev_train_loader.dataset.num_categories,
+                                                num_layers=1,
+                                                dropout_prob=0.0,
+                                                lr=5e-4,
+                                                warmup=50)
+                   
+**model_args 任意参数一层层往下传
+
+```
+
+
+
+
+
 
 
 ### isinstance 多个
