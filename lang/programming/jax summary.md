@@ -1,5 +1,27 @@
 
 
+# cuda 多版本切换
+
+```
+/usr/local/cuda/bin/nvcc --version
+
+ldconfig -p | grep cuda
+
+wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+sudo sh cuda_11.7.1_515.65.01_linux.run
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+```
+
+
+
+
+
+
+
 ```
 jax.device_get(logits) # 得到普通 array
 ```

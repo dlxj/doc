@@ -1,6 +1,21 @@
 
 
-## Install
+## cuda 多版本切换
+
+```
+/usr/local/cuda/bin/nvcc --version
+
+ldconfig -p | grep cuda
+
+wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+sudo sh cuda_11.7.1_515.65.01_linux.run
+
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+```
+
 
 ```
 pip3 install torch torchvision torchaudio  # for cpu AND CUDA 10.2
