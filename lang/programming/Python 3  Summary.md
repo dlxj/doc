@@ -12146,3 +12146,27 @@ if __name__=="__main__":
     
 ```
 
+
+
+
+
+# Gradio
+
+see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
+
+
+
+
+
+# Stramlit
+
+Streamlit 定义了 image、audio 和 video 用于展示图片、音频和视频。
+
+可以展示本地多媒体，也通过 url 展示网络多媒体。
+
+
+
+see https://gist.github.com/sz1262011/a204b61647604d7ac9606561dd4ac56a
+
+
+
