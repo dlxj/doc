@@ -12166,6 +12166,8 @@ Streamlit 定义了 image、audio 和 video 用于展示图片、音频和视频
 
 
 
+see https://docs.streamlit.io/library/api-reference/media/st.video
+
 see https://gist.github.com/sz1262011/a204b61647604d7ac9606561dd4ac56a
 
 
