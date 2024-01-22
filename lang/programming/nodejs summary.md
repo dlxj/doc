@@ -25938,7 +25938,7 @@ data_test = Multi30k(split='test')
 
 ### picoGPT Numpy 实现
 
-[picoGPT Numpy 实现 必看](https://github.com/jaymody/picoGPT)
+[picoGPT Numpy 实现 必看](https://github.com/jaymody/picoGPT)  [simpleGPT 同作者 torch 实现](https://github.com/jaymody/simpleGPT)
 
 - ```
   python gpt2.py \
