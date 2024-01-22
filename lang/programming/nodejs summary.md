@@ -3765,6 +3765,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create CleanReader.Desktop --type dataset
 	# huggingface-cli repo create RWKV-v5 --type dataset
 	# huggingface-cli repo create dict --type dataset
+	# huggingface-cli repo create simpleGPT --type dataset
 	
 	
 	
@@ -25952,6 +25953,19 @@ data_test = Multi30k(split='test')
   	# 最新版的就行
   
   tensorflow==2.11.0
+  
+  
+  
+  
+  # simpleGPT
+  conda env remove -n SP
+  conda create -n SP python=3.10 -y
+  conda activate SP
+  pip install torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
+  	# ok，但是太慢
+  	
+  pip install torch==2.0.1 pytorch-cuda=11.8
+  	# 换这个
   
   
   ```
