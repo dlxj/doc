@@ -12154,7 +12154,7 @@ if __name__=="__main__":
 
 see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
-
+https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 
 
