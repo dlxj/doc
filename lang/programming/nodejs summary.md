@@ -25243,6 +25243,8 @@ python tools/alpaca_tokenizer.py traindata_alpaca_nlpp.json traindata_alpaca_nlp
 
 [issues nanoChatGPT](https://github.com/karpathy/nanoGPT/issues/92)
 
+[极简中英翻译](https://github.com/algernonx/Transformer-Translate-Demo) [1](https://zhuanlan.zhihu.com/p/360343417)
+
 
 
 ### nanoChatGPT
@@ -25964,8 +25966,10 @@ data_test = Multi30k(split='test')
   pip install torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
   	# ok，但是太慢
   	
-  pip install torch==2.0.1 pytorch-cuda=11.8
+  pip install torch==2.0.1 pytorch-cuda=11.7
   	# 换这个
+  	# pytorch-cuda=11.8 也可以
+  	# conda install -y pytorch-cuda==11.7 -c pytorch -c nvidia
   
   
   ```
