@@ -27500,6 +27500,19 @@ sudo sh cuda_11.8.0_520.61.05_linux.run
 	# 不能行
 
 
+Data has 200499 tokens
+therefore set my_exit_tokens to 200499, and note:
+magic_prime = the largest 3n+2 prime smaller than datalen/ctxlen-1 (= 200499 /512-1 = 390.599609375 in this case)
+use https://www.dcode.fr/prime-numbers-search
+therefore set magic_prime = 389
+	# 魔数的设置
+
+temperature = 1.0, top_p = 0.3, top_k = 0, alpha_frequency = 1, alpha_presence = 0, alpha_decay = 0.996
+	# 推理参数，这样生成内容不会重复？
+	
+	
+	
+
 wget https://developer.download.nvidia.com/compute/cuda/12.1.0/local_installers/cuda_12.1.0_530.30.02_linux.run
 sudo sh cuda_12.1.0_530.30.02_linux.run
 
