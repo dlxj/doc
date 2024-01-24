@@ -27484,6 +27484,8 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 conda create -n KV5 pip python=3.10 && \
 conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
+pip3 install torch --index-url https://download.pytorch.org/whl/cu118
+	# 试试行不行, 实测 4090 可以训练, deepspeed 要装最新版
 pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
 pip install --force-reinstall -v "fastapi==0.99.1"
 cd RWKV-v5/
