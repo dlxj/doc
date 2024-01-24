@@ -27505,7 +27505,7 @@ therefore set my_exit_tokens to 200499, and note:
 magic_prime = the largest 3n+2 prime smaller than datalen/ctxlen-1 (= 200499 /512-1 = 390.599609375 in this case)
 use https://www.dcode.fr/prime-numbers-search
 therefore set magic_prime = 389
-	# 魔数的设置
+	# 魔数的设置，那网站列出前 500 个素数，选最接近 390 的小素数
 
 temperature = 1.0, top_p = 0.3, top_k = 0, alpha_frequency = 1, alpha_presence = 0, alpha_decay = 0.996
 	# 推理参数，这样生成内容不会重复？
