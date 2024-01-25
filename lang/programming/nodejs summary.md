@@ -27967,8 +27967,12 @@ decode = lambda l: enc.decode(l)
             x0 = list( X[0].cpu().numpy() )
             x0_str = decode(x0)
 
-            probs = F.softmax(torch.tensor(logits), dim=-1)
-            
+            y0 = list( Y[0].cpu().numpy() )
+            y0_str = decode(y0)
+
+            probs = logits.cpu().detach().numpy()
+            out_tokens = np.argmax(probs[0], axis=1)
+            out_str = decode(out_tokens)
 
 ```
 
