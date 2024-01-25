@@ -26057,6 +26057,9 @@ https://github.com/google/jax/issues?q=autograd
 [torch+jax 双版本](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)  [flax good](https://zhuanlan.zhihu.com/p/541782955) [注意力机制 动手深度学习](https://zh.d2l.ai/chapter_attention-mechanisms/index.html)
 
 - ```
+  
+  # see echodict\transformer\t3.py
+  
   the attention mechanism describes a weighted average of (sequence) elements with the weights dynamically computed based on an input query and elements’ keys. 
   
   注意力机制描述了基于输入查询和元素键动态计算的权重，对（序列）元素进行加权平均。
