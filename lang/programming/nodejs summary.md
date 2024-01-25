@@ -3766,6 +3766,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create RWKV-v5 --type dataset
 	# huggingface-cli repo create dict --type dataset
 	# huggingface-cli repo create simpleGPT --type dataset
+	# huggingface-cli repo create nanoRWKV --type dataset
 	
 	
 	
@@ -27941,6 +27942,37 @@ class RWKV(pl.LightningModule):
 
 
 ```
+
+
+
+
+
+#####  nanoRWKV
+
+```
+# nanoRWKV/train.py
+# 加入
+import torch.nn.functional as F
+import tiktoken
+# encode with tiktoken gpt2 bpe
+enc = tiktoken.get_encoding("gpt2")
+encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
+decode = lambda l: enc.decode(l)
+
+
+        with ctx:
+            logits, loss = model(X, Y)
+            loss = loss / gradient_accumulation_steps # scale the loss to account for gradient accumulation
+
+            x0 = list( X[0].cpu().numpy() )
+            x0_str = decode(x0)
+
+            probs = F.softmax(torch.tensor(logits), dim=-1)
+            
+
+```
+
+
 
 
 

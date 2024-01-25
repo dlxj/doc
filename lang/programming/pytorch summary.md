@@ -159,9 +159,33 @@ for data in data_loader:
 ## 概率输出
 
 ```
+# see nanoRWKV/train.py
+import torch.nn.functional as F
+import tiktoken
+# encode with tiktoken gpt2 bpe
+enc = tiktoken.get_encoding("gpt2")
+encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
+decode = lambda l: enc.decode(l)
+
+        with ctx:
+            logits, loss = model(X, Y)
+            loss = loss / gradient_accumulation_steps # scale the loss to account for gradient accumulation
+
+            x0 = list( X[0].cpu().numpy() )
+            x0_str = decode(x0)
+
+            y0 = list( Y[0].cpu().numpy() )
+            y0_str = decode(y0)
+
+            probs = logits.cpu().detach().numpy()
+            out_tokens = np.argmax(probs[0], axis=1)
+            out_str = decode(out_tokens)
+            
+
 # see huggingface\RWKV-LM\RWKV-v4\src\utils.py
 probs = F.softmax(torch.tensor(out), dim=-1)
 sorted_probs, s_index = torch.sort(probs, descending=True)
+
 
 ```
 
