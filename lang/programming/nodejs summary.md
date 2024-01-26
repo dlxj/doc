@@ -27981,7 +27981,9 @@ decode = lambda l: enc.decode(l)
 
 
 
+##### mamba-gpt
 
+[mamba-gpt](https://gist.github.com/thistleknot/0d2bbced6264cd2ac508145797989638)
 
 
 
