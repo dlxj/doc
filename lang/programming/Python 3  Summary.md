@@ -12174,6 +12174,8 @@ see https://image-coordinates.streamlit.app/dynamic_update 图片上画点
 
 see https://github.com/Franky1/Streamlit-ffmpeg-Test/blob/main/streamlit_app.py  ffmpeg 转格式
 
+see https://github.com/streamlit/streamlit/issues/1662  subtitle [1](https://github.com/snehankekre/streamlit-video-subtitles-poc/blob/main/del.py)
+
 see https://github.com/whitphx/streamlit-webrtc
 
 - https://github.com/codespaces/  在线开发

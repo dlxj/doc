@@ -3782,6 +3782,7 @@ git config --global core.autocrlf false
 
 huggingface-cli.exe lfs-enable-largefiles 这里填.git所在路径
 git lfs track "*.pth"
+git lfs track "*.webm"
 git add .
 git commit -m "add 50.pth"
 git push
