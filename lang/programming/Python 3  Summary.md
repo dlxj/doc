@@ -12166,6 +12166,8 @@ Streamlit 定义了 image、audio 和 video 用于展示图片、音频和视频
 
 
 
+see https://github.com/thistleknot/chatgpt-4/blob/master/streamlit_app.py  gpt chat
+
 see https://github.com/whitphx/streamlit-webrtc
 
 - https://github.com/codespaces/  在线开发
