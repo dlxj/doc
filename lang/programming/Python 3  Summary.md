@@ -12390,6 +12390,8 @@ see https://github.com/Franky1/Streamlit-ffmpeg-Test/blob/main/streamlit_app.py 
 
 see https://github.com/streamlit/streamlit/issues/1662  subtitle [1](https://github.com/snehankekre/streamlit-video-subtitles-poc/blob/main/del.py) [2新特性还没有实现 必须用分支](https://github.com/streamlit/streamlit/issues/1662)
 
+see https://github.com/tonykipkemboi/streamlit-bg-video-demo  embed a video as a background
+
 see https://github.com/drogbadvc/extract-sub-video-streamlit  硬字幕提取
 
 see https://github.com/whitphx/streamlit-webrtc
