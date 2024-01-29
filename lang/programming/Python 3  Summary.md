@@ -12154,7 +12154,11 @@ if __name__=="__main__":
 
 see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
+see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
+
 https://github.com/R3gm/SoniTranslate 视频语音翻译
+
+
 
 
 
@@ -12393,6 +12397,8 @@ see https://github.com/streamlit/streamlit/issues/1662  subtitle [1](https://git
 see https://github.com/tonykipkemboi/streamlit-bg-video-demo  embed a video as a background
 
 see https://github.com/drogbadvc/extract-sub-video-streamlit  硬字幕提取
+
+
 
 see https://github.com/whitphx/streamlit-webrtc
 
