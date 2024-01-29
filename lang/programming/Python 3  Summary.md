@@ -12396,6 +12396,8 @@ see https://github.com/streamlit/streamlit/issues/1662  subtitle [1](https://git
 
 see https://github.com/tonykipkemboi/streamlit-bg-video-demo  embed a video as a background
 
+see https://github.com/okld/streamlit-elements  加强库 支持视频控制
+
 see https://github.com/drogbadvc/extract-sub-video-streamlit  硬字幕提取
 
 
