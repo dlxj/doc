@@ -12162,7 +12162,7 @@ https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 ```
 
-成功显示 voide 字幕
+成功显示 voide 字幕, 本地 vscode 成功断点调试
 
 # pre-requirements.txt
 https://github.com/snehankekre/streamlit-video-subtitles-poc/raw/main/streamlit-1.28.0-py2.py3-none-any.whl
@@ -12180,6 +12180,27 @@ app_file: main.py
 pinned: false
 license: mit
 ---
+
+# launch.json
+{
+    // streamlit run main.py
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "/root/miniforge3/envs/sapce/bin/streamlit",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "run",
+                "/root/streamlit-video-subtitles-poc/main.py"
+            ]
+        }
+    ]
+}
+
 
 
 # main.py
