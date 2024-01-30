@@ -12205,6 +12205,25 @@ license: mit
     ]
 }
 
+{
+    // streamlit run main.py
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "C:/ProgramData/miniconda3/envs/space/Scripts/streamlit.exe",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "run",
+                "E:/t/streamlit-bg-video-demo/streamlit_app.py"
+            ]
+        }
+    ]
+}
+
 
 
 # main.py
@@ -12448,7 +12467,9 @@ see https://github.com/okld/streamlit-elements  加强库 支持视频控制
 
 see https://github.com/drogbadvc/extract-sub-video-streamlit  硬字幕提取
 
+see https://github.com/streamlit/example-app-interactive-table  table 选中一行
 
+see https://discuss.streamlit.io/t/copy-dataframe-to-clipboard/2633/22  dataframe  [1](https://discuss.streamlit.io/t/streamlit-elements-build-draggable-and-resizable-dashboards-with-material-ui-nivo-charts-and-more/24616/21) 
 
 see https://github.com/whitphx/streamlit-webrtc
 
