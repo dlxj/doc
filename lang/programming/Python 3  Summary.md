@@ -12374,6 +12374,49 @@ with tab10:
 
 
 
+## streamlit-rwkv5-jp-explain
+
+```
+import streamlit as st
+
+def evaluate(prompt, token_count, temperature, top_p):
+    return f"Generated text based on: {prompt}, {token_count}, {temperature}, {top_p}"
+
+def clear_output():
+    st.session_state.output = ""
+
+st.set_page_config(page_title="RWKV-5 training 50 epoch for anime and game text")
+
+st.markdown(f"<div style=\"text-align: center;\">\n<h1>RWKV-5 training 50 epoch for anime and game text - {'rwkv5-jp-explain'}</h1>\n</div>", unsafe_allow_html=True)
+
+tab1, tab2 = st.tabs(["Raw Generation", "Tab 2"])
+
+with tab1:
+    col1, col2 = st.columns(2)
+
+    with col1:
+        prompt = st.text_area("Prompt", "<User:>ここまでやるとはな<User$>\n\n", height=150)
+        token_count = st.slider("Max Tokens", 10, 1024, 1024, 10)
+        temperature = st.slider("Temperature", 0.2, 2.0, 1.0, 0.1)
+        top_p = st.slider("Top P", 0.0, 1.0, 0.7, 0.05)
+
+    with col2:
+        submit_button = st.button("Submit")
+        clear_button = st.button("Clear")
+
+    if 'output' not in st.session_state:
+        a = st.session_state.get("output", "")
+        b = 1
+    st.write(st.session_state.output)
+    oput = st.text_area(label="Output", value=st.session_state["output"], height=200)
+
+    if submit_button:
+        st.session_state.output = evaluate(prompt, token_count, temperature, top_p)
+    
+    if clear_button:
+        clear_output()
+```
+
 
 
 
