@@ -12377,7 +12377,10 @@ with tab10:
 ## streamlit-rwkv5-jp-explain
 
 ```
+# st.session_state 必须得 streamit run xx.py 它才不错
+
 import streamlit as st
+
 
 def evaluate(prompt, token_count, temperature, top_p):
     return f"Generated text based on: {prompt}, {token_count}, {temperature}, {top_p}"
@@ -12392,6 +12395,7 @@ st.markdown(f"<div style=\"text-align: center;\">\n<h1>RWKV-5 training 50 epoch 
 tab1, tab2 = st.tabs(["Raw Generation", "Tab 2"])
 
 with tab1:
+    
     col1, col2 = st.columns(2)
 
     with col1:
@@ -12404,17 +12408,18 @@ with tab1:
         submit_button = st.button("Submit")
         clear_button = st.button("Clear")
 
-    if 'output' not in st.session_state:
-        a = st.session_state.get("output", "")
-        b = 1
-    st.write(st.session_state.output)
-    oput = st.text_area(label="Output", value=st.session_state["output"], height=200)
-
-    if submit_button:
-        st.session_state.output = evaluate(prompt, token_count, temperature, top_p)
+        if 'output' not in st.session_state:
+            st.session_state.output = ""
     
-    if clear_button:
-        clear_output()
+        Output = st.text_area(label="Output", value=st.session_state["output"], height=200)
+
+        if submit_button:
+            st.session_state.output = evaluate(prompt, token_count, temperature, top_p)
+    
+        if clear_button:
+            clear_output()
+
+
 ```
 
 
