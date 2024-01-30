@@ -12496,6 +12496,8 @@ Streamlit 定义了 image、audio 和 video 用于展示图片、音频和视频
 
 
 
+see https://github.com/tmgthb/Stream-responses gpt 流式输出
+
 see https://github.com/thistleknot/chatgpt-4/blob/master/streamlit_app.py  gpt chat
 
 see https://image-coordinates.streamlit.app/  取图片坐标
