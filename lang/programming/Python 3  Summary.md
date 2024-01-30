@@ -12469,6 +12469,8 @@ see https://github.com/drogbadvc/extract-sub-video-streamlit  硬字幕提取
 
 see https://github.com/streamlit/example-app-interactive-table  table 选中一行
 
+see https://github.com/jwsy/streamlit-two-way-binding/blob/main/three_half_miles.py  双向绑定
+
 see https://discuss.streamlit.io/t/copy-dataframe-to-clipboard/2633/22  dataframe  [1](https://discuss.streamlit.io/t/streamlit-elements-build-draggable-and-resizable-dashboards-with-material-ui-nivo-charts-and-more/24616/21) 
 
 see https://github.com/whitphx/streamlit-webrtc
