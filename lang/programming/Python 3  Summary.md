@@ -4039,6 +4039,10 @@ list(str)
 
 ```python
 line.strip().split('\t')
+
+lstrip()
+	# 只删左边空白
+
 ```
 
 
@@ -12614,6 +12618,8 @@ see https://github.com/okld/streamlit-elements  加强库 支持视频控制
 see https://github.com/drogbadvc/extract-sub-video-streamlit  硬字幕提取
 
 see https://github.com/streamlit/example-app-interactive-table  table 选中一行
+
+see https://github.com/streamlit/streamlit/issues/2446  自动播放 mp3
 
 see https://github.com/jwsy/streamlit-two-way-binding/blob/main/three_half_miles.py  双向绑定
 
