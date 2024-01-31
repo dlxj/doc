@@ -12257,6 +12257,8 @@ if __name__=="__main__":
 
 see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
+see https://github.com/gradio-app/gradio/issues/1349 auto play
+
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
 
 https://github.com/R3gm/SoniTranslate 视频语音翻译
@@ -12603,7 +12605,7 @@ see https://github.com/tmgthb/Stream-responses gpt 流式输出
 
 see https://github.com/thistleknot/chatgpt-4/blob/master/streamlit_app.py  gpt chat
 
-see https://image-coordinates.streamlit.app/  取图片坐标
+see https://image-coordinates.streamlit.app 取图片坐标
 
 see https://image-coordinates.streamlit.app/dynamic_update 图片上画点
 
