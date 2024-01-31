@@ -12259,6 +12259,8 @@ see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
 see https://github.com/gradio-app/gradio/issues/1349 auto play
 
+see https://github.com/gradio-app/gradio/issues/6971 文字转图片
+
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
 
 https://github.com/R3gm/SoniTranslate 视频语音翻译
