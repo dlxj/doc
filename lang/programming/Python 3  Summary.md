@@ -2221,6 +2221,55 @@ raise RuntimeError('some err')
 
 ## yield
 
+
+
+```python
+# see huggingface\rwkv5-jp-explain\gptchat.py
+import openai
+import json
+import time
+import streamlit as st
+
+with open("config.json", "r", encoding='UTF-8') as f:
+    api_key = json.load(f)["api_key"]
+
+def chat_gpt4(api_key, q):
+    import openai
+    openai.api_key = api_key
+    stream = openai.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": f"{q}"}],
+        stream=True,
+        timeout=30
+    )
+    for chunk in stream:
+        text = chunk.choices[0].delta.content or ""
+        yield text
+
+
+st.title('Stream LLM responses')
+
+
+prompt = st.text_input(label="Prompt: ", value="")
+
+submit_button_exist = st.button('Submit', use_container_width=True)
+
+answer=''
+if submit_button_exist and prompt:
+    c = st.empty()
+    it = iter(chat_gpt4(api_key, prompt))
+    for text in it:
+        answer += text
+        c.write(answer)
+else: 
+   st.write("")
+
+```
+
+
+
+
+
 ```python
 def infinite_iter(data_loader):
   it = iter(data_loader)
