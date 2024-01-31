@@ -12269,9 +12269,15 @@ see https://github.com/gradio-app/gradio/issues/6971 文字转图片
 
 see https://github.com/gradio-app/gradio/issues/6763  使用 ImageDraw 画图
 
+see https://github.com/gradio-app/gradio/pull/7192 网络图片
+
+see https://github.com/gradio-app/gradio/issues/6851 Gallery
+
+see https://github.com/lazarusking/gradio-ffmpeg 视频转换
+
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
 
-https://github.com/R3gm/SoniTranslate 视频语音翻译
+see https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 
 
