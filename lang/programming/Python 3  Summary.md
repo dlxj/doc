@@ -12253,6 +12253,12 @@ if __name__=="__main__":
 
 
 
+# uvicorn
+
+see https://huggingface.co/spaces/ronvolutional/ai-pokemon-card 宝可梦卡片生成
+
+
+
 # Gradio
 
 see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
@@ -12260,6 +12266,8 @@ see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 see https://github.com/gradio-app/gradio/issues/1349 auto play
 
 see https://github.com/gradio-app/gradio/issues/6971 文字转图片
+
+see https://github.com/gradio-app/gradio/issues/6763  使用 ImageDraw 画图
 
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
 
