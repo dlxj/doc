@@ -2235,6 +2235,56 @@ def infinite_iter(data_loader):
 
 
 ```python
+def custom_range(start, end):
+    current = start
+    while current < end:
+        yield current
+        current += 1
+
+# 使用iter来获取迭代器
+my_iterator = iter(custom_range(0, 5))
+
+# 迭代迭代器中的元素
+for number in my_iterator:
+    print(number)
+
+```
+
+
+
+
+
+```python
+class Repeater:
+    def __init__(self, value, limit):
+        self.value = value
+        self.limit = limit
+        self.count = 0
+
+    def __iter__(self):
+        # 每次迭代时都会调用这个方法
+        return self
+
+    def __next__(self):
+        if self.count >= self.limit:
+            raise StopIteration
+        self.count += 1
+        return self.value
+
+# 创建Repeater类的实例
+repeater = Repeater('Hello', 3)
+
+# 不直接使用yield，但通过iter和类的迭代器协议提供类似的行为
+for item in repeater:
+    print(item)
+
+```
+
+
+
+
+
+```python
 # 子生成器
 def average_gen():
     total = 0
