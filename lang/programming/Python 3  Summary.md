@@ -12272,7 +12272,7 @@ see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
 see https://github.com/gradio-app/gradio/issues/1349 auto play
 
-see https://github.com/gradio-app/gradio/issues/2945 subtitle
+see https://github.com/gradio-app/gradio/issues/2945 **subtitle** [1](https://github.com/tomchang25/gradio/tree/main/demo/video_subtitle)
 
 see https://github.com/gradio-app/gradio/issues/6971 文字转图片
 
