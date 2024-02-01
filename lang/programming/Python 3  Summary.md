@@ -12280,6 +12280,12 @@ see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
 - https://www.gradio.app/changelog   **最新 api**
 
+see https://github.com/gradio-app/gradio/issues/6802 **custom Gradio components** 必看
+
+- ```
+  gr.HTML() 只用于显示，不能够交互
+  ```
+
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
 
 see https://github.com/R3gm/SoniTranslate 视频语音翻译
