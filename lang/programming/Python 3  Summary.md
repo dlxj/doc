@@ -12288,6 +12288,9 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
   conda create -n space pip python=3.10 -y && \
   conda activate space
   
+  pip install gradio==4.16.0
+  	# 当前稳定使用的是 4.14.0
+  
   iwr https://get.pnpm.io/install.ps1 -useb | iex
   	# powershell 执行
   
