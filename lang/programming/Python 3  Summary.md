@@ -12272,6 +12272,8 @@ see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
 see https://github.com/gradio-app/gradio/issues/1349 auto play
 
+see https://github.com/gradio-app/gradio/issues/2945 subtitle
+
 see https://github.com/gradio-app/gradio/issues/6971 文字转图片
 
 see https://github.com/gradio-app/gradio/issues/6763  使用 ImageDraw 画图
