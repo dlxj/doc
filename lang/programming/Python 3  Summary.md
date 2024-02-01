@@ -12280,7 +12280,7 @@ see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
 - https://www.gradio.app/changelog   **最新 api**
 
-see https://github.com/gradio-app/gradio/issues/6802 **custom Gradio components** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component)
+see https://github.com/gradio-app/gradio/issues/6802 **custom Gradio components** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component) [svelte2](https://www.v2ex.com/t/760112)
 
 - ```
   gr.HTML() 只用于显示，不能够交互
