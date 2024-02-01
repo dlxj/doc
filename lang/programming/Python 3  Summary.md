@@ -12292,6 +12292,42 @@ see https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 
 
+## change
+
+```
+import gradio as gr
+from gradio_rich_textbox import RichTextbox
+
+
+examples = [ 
+    ['[b]Hello!![/b]']
+] 
+
+with gr.Blocks(title="richBox") as demo:
+    with gr.Row():
+        with gr.Column():
+            box1 = RichTextbox(label="in", interactive=True)
+        with gr.Column():
+            box2 = RichTextbox(label="out", interactive=False)
+
+    data = gr.Dataset(components=[box1], samples=examples, label="Example bbcode", headers=["bbcode"])
+    data.click(lambda x: x[0], [data], [box1])
+
+    box1.change(lambda x:x, box1, box2) # 同步更新
+
+# demo = gr.Interface(
+#     lambda x:x,
+#     RichTextbox(),  # interactive version of your component
+#     RichTextbox(),  # static version of your component
+#     examples=[[example]],  # uncomment this line to view the "example version" of your component
+# )
+
+if __name__ == "__main__":
+    demo.launch()
+```
+
+
+
 
 
 # Stramlit
