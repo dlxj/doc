@@ -12303,10 +12303,14 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
   cd richtextbox
   
   gradio cc dev
+  	# 4.16.0 + linux 成功运行
   
   gradio cc build
   
+  
   ```
+
+see https://huggingface.co/spaces/freddyaboulton/gradio_pdf 显示 pdf 的组件
 
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
 
