@@ -12292,6 +12292,9 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
   gradio cc create RichTextbox --template SimpleTextbox --install
   	# 新组件必须是在基础组件上改的
   
+  cd richtextbox
+  
+  gradio cc dev
   
   gradio cc build
   
