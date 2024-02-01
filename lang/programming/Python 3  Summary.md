@@ -1578,6 +1578,10 @@ file1.close()
 #### 追加写
 
 ```
+
+with open('log.txt', 'a', encoding='utf-8') as f:
+    f.write(f'hi,,')
+
 # see InternLM\tools\tokenizer.py
 with open(text_input_path, "r") as text_file, open(bin_output_path, "ab") as bin_file:
             for line in text_file:

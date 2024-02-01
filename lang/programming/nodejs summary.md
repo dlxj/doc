@@ -9508,6 +9508,9 @@ function handleStream() {
 ## appendFileSync
 
 ```
+
+require('fs').appendFileSync('log.txt', `${new Date().toUTCString()}  ${s}\n`, 'utf-8')
+
 const fileName = 'file-sync.txt'
 fs.appendFileSync(fileName, 'First line added!', 'utf-8')
 ```
