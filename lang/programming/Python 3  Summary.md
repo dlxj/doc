@@ -12284,6 +12284,17 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
 
 - ```
   gr.HTML() 只用于显示，不能够交互
+  
+  
+  iwr https://get.pnpm.io/install.ps1 -useb | iex
+  	# powershell 执行
+  
+  gradio cc create RichTextbox --template SimpleTextbox --install
+  	# 新组件必须是在基础组件上改的
+  
+  
+  gradio cc build
+  
   ```
 
 see https://huggingface.co/spaces/fffiloni/MAGNet 音乐生成
