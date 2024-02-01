@@ -12285,9 +12285,14 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
 - ```
   gr.HTML() 只用于显示，不能够交互
   
+  conda create -n space pip python=3.10 -y && \
+  conda activate space
   
   iwr https://get.pnpm.io/install.ps1 -useb | iex
   	# powershell 执行
+  
+  curl -fsSL https://get.pnpm.io/install.sh | sh -
+  	# linux
   
   gradio cc create RichTextbox --template SimpleTextbox --install
   	# 新组件必须是在基础组件上改的
