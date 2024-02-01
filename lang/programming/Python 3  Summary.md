@@ -12358,6 +12358,43 @@ if __name__ == "__main__":
 
 
 
+## video
+
+```python
+import gradio as gr
+import cv2
+import numpy as np
+
+# 读取视频并将其转为字节流
+cap = cv2.VideoCapture('my_video.mp4')
+success, image = cap.read()
+if not success:
+    print("无法读取视频文件！")
+    exit()
+ret, frame = cv2.imencode('.jpg', image)
+bytestr = frame.tobytes()
+
+# 创建视频组件，并将其显示在浏览器中
+video = gr.inputs.Video(content_type='mp4', label="My Video", source="webcam")
+iface = gr.Interface(fn=lambda video: None, inputs=video)
+iface.launch()
+
+# 在10秒后更新视频组件
+import time
+time.sleep(10)
+success, image = cap.read()
+if success:
+    # 将新图像转换为字节流
+    ret, frame = cv2.imencode('.jpg', image)
+    bytestr = frame.tobytes()
+    # 更新视频组件
+    iface.inputs[0].update(value=bytestr)
+```
+
+
+
+
+
 
 
 # Stramlit
