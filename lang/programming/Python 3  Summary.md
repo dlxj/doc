@@ -12397,6 +12397,41 @@ if success:
 
 
 
+## fastapi+gradio
+
+```
+import gradio as gr
+from fastapi import FastAPI
+
+def greet(name):
+    return "Hello " + name + "!"
+
+with gr.Blocks() as demo:
+    name = gr.Textbox(label="Name")
+    output = gr.Textbox(label="Output Box")
+    greet_btn = gr.Button("Greet")
+    greet_btn.click(fn=greet, inputs=name, outputs=output, api_name="greet")
+
+# monkeypatch in url for api docs
+def my_setup(self):
+    self.docs_url = "/docs"
+    self.redoc_url = "/redoc"
+    self.orig_setup()
+
+FastAPI.orig_setup = FastAPI.setup
+setattr(FastAPI, "setup", my_setup)
+
+# swagger docs should be at http://127.0.0.1:7860/docs
+demo.launch()
+
+# reverse monkey patch
+FastAPI.setup = FastAPI.orig_setup
+```
+
+
+
+
+
 
 
 # Stramlit
