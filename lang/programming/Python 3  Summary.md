@@ -12294,6 +12294,8 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
 
 see https://www.gradio.app/guides/custom-CSS-and-JS  修改 css 和 javascript
 
+see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环境安装
+
 - ```
   gr.HTML() 只用于显示，不能够交互
   
@@ -12313,6 +12315,8 @@ see https://www.gradio.app/guides/custom-CSS-and-JS  修改 css 和 javascript
   
   gradio cc create RichTextbox --template SimpleTextbox --install
   	# 新组件必须是在基础组件上改的
+  	
+  @gradio/video
   
   cd richtextbox
   
