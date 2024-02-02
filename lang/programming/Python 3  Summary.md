@@ -12284,6 +12284,8 @@ see https://github.com/gradio-app/gradio/issues/6851 Gallery
 
 see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
+see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
+
 - https://www.gradio.app/changelog   **最新 api**
 
 see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802) **自定义组件** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component) [svelte2](https://www.v2ex.com/t/760112) [svelte3](https://juejin.cn/post/7121759118070644772) [组件库分享](https://www.gradio.app/custom-components/gallery)
