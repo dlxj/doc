@@ -25243,6 +25243,8 @@ python tools/alpaca_tokenizer.py traindata_alpaca_nlpp.json traindata_alpaca_nlp
 
 [nanoGPT](https://github.com/karpathy/nanoGPT)
 
+[nanoChatGPT](https://github.com/sanjeevanahilan/nanoChatGPT) 训练奖励模型
+
 [在线使用](https://llava.hliu.cc/)
 
 [nanoGPT源码阅读](https://zhuanlan.zhihu.com/p/601044938)
