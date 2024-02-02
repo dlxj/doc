@@ -12286,13 +12286,15 @@ see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
 - https://www.gradio.app/changelog   **最新 api**
 
-see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802) **自定义组件** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component) [svelte2](https://www.v2ex.com/t/760112) [svelte3](https://juejin.cn/post/7121759118070644772)
+see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802) **自定义组件** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component) [svelte2](https://www.v2ex.com/t/760112) [svelte3](https://juejin.cn/post/7121759118070644772) [组件库分享](https://www.gradio.app/custom-components/gallery)
 
 - ```
   gr.HTML() 只用于显示，不能够交互
   
   conda create -n space pip python=3.10 -y && \
   conda activate space
+  
+  conda env remove -n space2
   
   pip install gradio==4.16.0
   	# 当前稳定使用的是 4.14.0
@@ -12399,7 +12401,27 @@ if success:
 
 ## fastapi+gradio
 
+
+
+```python
+import fastapi
+import gradio as gr
+app = gr.Blocks.launch() # this is basically fastapi instance
+app.include_router(fastapi.APIRouter())
+app.add_api_route("/api/v1/progress", api_progress, methods=["GET"], response_model=ProgressResponse)
+
+class ProgressResponse(BaseModel): # inherits from base Pydantic response:
+    progress: float = Field(title="Progress", description="The progress with a range of 0 to 1")
+
+def api_progress():
+    return {"progress": 0}
 ```
+
+
+
+
+
+```python
 import gradio as gr
 from fastapi import FastAPI
 
@@ -12427,6 +12449,44 @@ demo.launch()
 # reverse monkey patch
 FastAPI.setup = FastAPI.orig_setup
 ```
+
+
+
+## svelte
+
+svelte 选择JSDoc 的原因，只是为了调试方便。
+
+```
+<script>
+  let count = 0;
+</script>
+
+<button on:click={() => count += 1}>
+  Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
+
+```
+
+
+
+```
+class Gradio<T extends Record<string, any> = Record<string, any>> {
+```
+
+- **class Gradio {...}**: 定义了一个名为 `Gradio` 的类。
+- ** = Record>**: 这是泛型声明。它表示 `Gradio` 类可以接受一个类型参数 `T`，并带有一些约束条件。
+  - **T**: 是一个类型变量，使用时可以被替换成任何类型。
+  - **extends Record**: 表示 `T` 必须是一个索引签名的对象类型。具体来说：
+    - **Record**: 是TypeScript的一个工具类型，表示一个对象，具备字符串类型的键（key）和任意类型的值（value）。等价于 `{ [key: string]: any }`。
+  - **= Record>**: 这部分指定了默认类型。如果在实例化或扩展 `Gradio` 类时没有提供具体类型，那么 `T` 默认会是 `Record`。即，默认情况下，`Gradio` 类可以接受含有任意字符串键的对象，并且这些键对应任意类型的值。
+
+
+
+### excel
+
+[excel](https://github.com/ticruz38/svelte-sheets)
+
+
 
 
 

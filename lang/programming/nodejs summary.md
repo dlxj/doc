@@ -3767,6 +3767,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create dict --type dataset
 	# huggingface-cli repo create simpleGPT --type dataset
 	# huggingface-cli repo create nanoRWKV --type dataset
+	# huggingface-cli repo create gradio --type dataset
 	
 	
 	
