@@ -12282,6 +12282,8 @@ see https://github.com/gradio-app/gradio/pull/7192 网络图片
 
 see https://github.com/gradio-app/gradio/issues/6851 Gallery
 
+see https://www.gradio.app/docs/video  视频组件文档
+
 see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
 see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
