@@ -12482,6 +12482,21 @@ class Gradio<T extends Record<string, any> = Record<string, any>> {
 
 
 
+```
+dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {  
+```
+
+- **dispatch**: 这是方法的名称。
+- : 方法使用了一个泛型 `E`，它必须是类型 `T` 所有键（key）的类型集合中的一个成员。换句话说，`E` 必须是 `T` 的某个属性的键名。这里的 `T` 对应外部类 `Gradio` 定义中的泛型。
+- **(event_name: E, data?: T[E])**: 方法接受两个参数：
+  - **event_name**: 第一个参数是 `event_name`，其类型是泛型 `E`，表示该参数的值必须是类型 `T` 中属性的键。
+  - **data?**: 第二个参数是 `data`，并且是可选的（这由后面的问号 `?` 表示）。如果提供此参数，它的类型必须是与 `event_name` 相对应的属性的值的类型，即类型 `T` 中键为 `E` 的属性的值类型。这是通过索引类型 `T[E]` 实现的。
+- **: void**: 方法的返回类型是 `void`，表示这个 `dispatch` 方法不返回任何值。
+
+
+
+
+
 ### excel
 
 [excel](https://github.com/ticruz38/svelte-sheets)
