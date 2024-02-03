@@ -201,6 +201,13 @@ see nodejs summary.md -> InternLM
 ## Install wsl2
 
 ```
+
+wsl --list
+	# 已安装
+
+wsl --unregister Ubuntu-20.04
+	# 这新重装后它才不错
+
 wsl --list --online
 	-> Debian
 	-> Ubuntu-20.04    Ubuntu 20.04 LTS
