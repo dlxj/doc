@@ -12297,6 +12297,12 @@ see https://www.gradio.app/guides/custom-CSS-and-JS  修改 css 和 javascript
 see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环境安装
 
 - ```
+  apt install pollen
+  ```
+
+  
+
+- ```
   gr.HTML() 只用于显示，不能够交互
   
   conda create -n space pip python=3.10 -y && \
