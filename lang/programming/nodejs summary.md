@@ -31772,6 +31772,13 @@ Visual Studio 2022
   
   -> 点上面的 "导出HAR" 按钮 -> 得到 chat.openai.com.har
   
+  .77
+  ./ninja.exe run --arkose-gpt4-har-dir C:/Users/Administrator/Desktop/ChatGPT-to-API/harPool --bind 0.0.0.0:80
+  
+  ./ninja.exe run --arkose-gpt4-har-dir E:/huggingface/ChatGPT-to-API/harPool --bind 0.0.0.0:80
+  
+  
+  
   使用这个参数启动 ninja
   ninja run --arkose-chat4-har-file 
   /mnt/huggingface/ninja/HAR/chat.openai.com.har
@@ -31838,7 +31845,7 @@ Visual Studio 2022
   
   
   ```
-
+  
   
 
 ```
