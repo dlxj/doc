@@ -12328,6 +12328,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   gradio cc dev
   	# 4.16.0 + linux 成功运行
+  	
+  vscode + wsl2
+  	# http://127.0.0.1:7860 成功运行 demo, 127.0.0.1 自动转到 wsl 的 ip 
   
   gradio cc build
   
