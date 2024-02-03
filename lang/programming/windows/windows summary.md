@@ -218,7 +218,14 @@ wsl --set-default-version 2
 
 wsl --update
 
-ubuntu config --default-user root
+cat /etc/passwd
+--> root:x:0:0:root:/root:/bin/bash
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{6f84f58e-2c93-4199-b374-eb7ccb8a61d1}
+DefaultUid 改成 十进制的 0
+	# 成功更改默认用户
+
+wsl --distribution Ubuntu-20.04 -u root
 	# 更改默认用户
 	# 试看在 .wslconfig 配置里加 ？
 
