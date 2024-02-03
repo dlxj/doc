@@ -12282,17 +12282,33 @@ see https://github.com/gradio-app/gradio/pull/7192 网络图片
 
 see https://github.com/gradio-app/gradio/issues/6851 Gallery
 
+see https://www.gradio.app/docs/video  视频组件文档
+
 see https://github.com/lazarusking/gradio-ffmpeg 视频转换
+
+see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
 
 - https://www.gradio.app/changelog   **最新 api**
 
-see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802) **自定义组件** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component) [svelte2](https://www.v2ex.com/t/760112) [svelte3](https://juejin.cn/post/7121759118070644772)
+see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802) **自定义组件** 必看 [1](https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component) [svelte](https://learn.svelte.dev/tutorial/your-first-component) [svelte2](https://www.v2ex.com/t/760112) [svelte3](https://juejin.cn/post/7121759118070644772) [组件库分享](https://www.gradio.app/custom-components/gallery)
+
+see https://www.gradio.app/guides/custom-CSS-and-JS  修改 css 和 javascript
+
+see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环境安装
+
+- ```
+  apt install pollen
+  ```
+
+  
 
 - ```
   gr.HTML() 只用于显示，不能够交互
   
   conda create -n space pip python=3.10 -y && \
   conda activate space
+  
+  conda env remove -n space2
   
   pip install gradio==4.16.0
   	# 当前稳定使用的是 4.14.0
@@ -12305,11 +12321,19 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
   
   gradio cc create RichTextbox --template SimpleTextbox --install
   	# 新组件必须是在基础组件上改的
+  	
+  @gradio/video
   
   cd richtextbox
   
   gradio cc dev
   	# 4.16.0 + linux 成功运行
+  	
+  vscode + wsl2
+  	# http://127.0.0.1:7860 成功运行 demo, 127.0.0.1 自动转到 wsl 的 ip
+      
+  /root/gradio/gradio/components/video.py
+  	# 在这里下断点, 运行 /demo/video_component/run.py 成功断下
   
   gradio cc build
   
@@ -12392,6 +12416,114 @@ if success:
     # 更新视频组件
     iface.inputs[0].update(value=bytestr)
 ```
+
+
+
+
+
+## fastapi+gradio
+
+
+
+```python
+import fastapi
+import gradio as gr
+app = gr.Blocks.launch() # this is basically fastapi instance
+app.include_router(fastapi.APIRouter())
+app.add_api_route("/api/v1/progress", api_progress, methods=["GET"], response_model=ProgressResponse)
+
+class ProgressResponse(BaseModel): # inherits from base Pydantic response:
+    progress: float = Field(title="Progress", description="The progress with a range of 0 to 1")
+
+def api_progress():
+    return {"progress": 0}
+```
+
+
+
+
+
+```python
+import gradio as gr
+from fastapi import FastAPI
+
+def greet(name):
+    return "Hello " + name + "!"
+
+with gr.Blocks() as demo:
+    name = gr.Textbox(label="Name")
+    output = gr.Textbox(label="Output Box")
+    greet_btn = gr.Button("Greet")
+    greet_btn.click(fn=greet, inputs=name, outputs=output, api_name="greet")
+
+# monkeypatch in url for api docs
+def my_setup(self):
+    self.docs_url = "/docs"
+    self.redoc_url = "/redoc"
+    self.orig_setup()
+
+FastAPI.orig_setup = FastAPI.setup
+setattr(FastAPI, "setup", my_setup)
+
+# swagger docs should be at http://127.0.0.1:7860/docs
+demo.launch()
+
+# reverse monkey patch
+FastAPI.setup = FastAPI.orig_setup
+```
+
+
+
+## svelte
+
+svelte 选择JSDoc 的原因，只是为了调试方便。
+
+```
+<script>
+  let count = 0;
+</script>
+
+<button on:click={() => count += 1}>
+  Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
+
+```
+
+
+
+```
+class Gradio<T extends Record<string, any> = Record<string, any>> {
+```
+
+- **class Gradio {...}**: 定义了一个名为 `Gradio` 的类。
+- ** = Record>**: 这是泛型声明。它表示 `Gradio` 类可以接受一个类型参数 `T`，并带有一些约束条件。
+  - **T**: 是一个类型变量，使用时可以被替换成任何类型。
+  - **extends Record**: 表示 `T` 必须是一个索引签名的对象类型。具体来说：
+    - **Record**: 是TypeScript的一个工具类型，表示一个对象，具备字符串类型的键（key）和任意类型的值（value）。等价于 `{ [key: string]: any }`。
+  - **= Record>**: 这部分指定了默认类型。如果在实例化或扩展 `Gradio` 类时没有提供具体类型，那么 `T` 默认会是 `Record`。即，默认情况下，`Gradio` 类可以接受含有任意字符串键的对象，并且这些键对应任意类型的值。
+
+
+
+```
+dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {  
+```
+
+- **dispatch**: 这是方法的名称。
+- : 方法使用了一个泛型 `E`，它必须是类型 `T` 所有键（key）的类型集合中的一个成员。换句话说，`E` 必须是 `T` 的某个属性的键名。这里的 `T` 对应外部类 `Gradio` 定义中的泛型。
+- **(event_name: E, data?: T[E])**: 方法接受两个参数：
+  - **event_name**: 第一个参数是 `event_name`，其类型是泛型 `E`，表示该参数的值必须是类型 `T` 中属性的键。
+  - **data?**: 第二个参数是 `data`，并且是可选的（这由后面的问号 `?` 表示）。如果提供此参数，它的类型必须是与 `event_name` 相对应的属性的值的类型，即类型 `T` 中键为 `E` 的属性的值类型。这是通过索引类型 `T[E]` 实现的。
+- **: void**: 方法的返回类型是 `void`，表示这个 `dispatch` 方法不返回任何值。
+
+
+
+
+
+### excel
+
+[excel](https://github.com/ticruz38/svelte-sheets)
+
+
 
 
 

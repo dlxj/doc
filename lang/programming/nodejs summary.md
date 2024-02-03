@@ -3767,7 +3767,9 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create dict --type dataset
 	# huggingface-cli repo create simpleGPT --type dataset
 	# huggingface-cli repo create nanoRWKV --type dataset
-	
+	# huggingface-cli repo create gradio --type dataset
+
+
 	
 	
 
@@ -25241,6 +25243,8 @@ python tools/alpaca_tokenizer.py traindata_alpaca_nlpp.json traindata_alpaca_nlp
 ## nanoGPT
 
 [nanoGPT](https://github.com/karpathy/nanoGPT)
+
+[nanoChatGPT](https://github.com/sanjeevanahilan/nanoChatGPT) 训练奖励模型
 
 [在线使用](https://llava.hliu.cc/)
 
