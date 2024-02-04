@@ -596,6 +596,8 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v Fli
 
 
 
+https://www.zhihu.com/tardis/sogou/art/534272780
+
 
 
 # 禁止火绒自启
