@@ -2987,6 +2987,8 @@ done
 
 [gngpp/ninja](https://github.com/gngpp/ninja) 试试这个登录能不能用
 
+- [chatgpt-web-share wss 可用](https://github.com/chatpire/chatgpt-web-share)
+
 [/to/v1/chat/completions](https://github.com/gngpp/ninja/issues/171) [1](https://github.com/openai/openai-node)
 
 - ```
