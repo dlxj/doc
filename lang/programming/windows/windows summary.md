@@ -586,6 +586,16 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v Fli
 
 
 
+# 开启自动更新
+
+```
+按Windows+R输入services.msc打开之后找到Windows Update是否开启了呢？
+
+按Windows+R输入gpedit.msc打开组策略，在左侧选用户配置—管理模板—Windows组件—Windows Update—在右侧选“删除使用所有Windows Update功能的访问”双击它，在打开的对话框中选择“已启用”然后按应用确定，重启电脑即可。
+```
+
+
+
 
 
 # 禁止火绒自启
