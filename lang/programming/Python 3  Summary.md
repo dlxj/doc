@@ -12338,6 +12338,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   gradio cc build
   
   
+  demo.queue().launch(server_name='0.0.0.0', server_port=7890, share=True, inbrowser=True) 
+  	# vscode ssh 隧道连接了本机和远程的地址, 本地 127.0.0.1:7890 可以访问远程
+  
   ```
 
 see https://huggingface.co/spaces/freddyaboulton/gradio_pdf 显示 pdf 的组件
