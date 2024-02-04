@@ -12294,6 +12294,8 @@ see [custom Gradio components](https://github.com/gradio-app/gradio/issues/6802)
 
 see https://www.gradio.app/guides/custom-CSS-and-JS  修改 css 和 javascript
 
+see https://github.com/gradio-app/gradio/issues/6101  hotkey
+
 see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环境安装
 
 - ```
