@@ -76,6 +76,10 @@ find img_origin/ -name "*.txt" | xargs -i cp {} img
 
 xargs命令是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。-i会将xargs的内容赋值给{}。
 
+
+find /yingedu/www/ocr_server/data/img -name "*.txt" | xargs -i cp {} /yingedu/204_shared/yingedu/www/ocr_server/data/img__origin_20230529
+
+
 ```
 
 
