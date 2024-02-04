@@ -165,8 +165,8 @@ apt install -y wget build-essential libreadline-dev libncursesw5-dev libssl-dev 
 apt update && apt upgrade -y && \
 apt install software-properties-common -y && \
 add-apt-repository ppa:deadsnakes/ppa && \
-apt install python3.10 && \
-apt install python3.10-distutils && \
+apt install python3.10 -y && \
+apt install python3.10-distutils -y && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 python3.10 get-pip.py
 
@@ -12303,6 +12303,8 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
 
 - ```
+  git clone https://huggingface.co/datasets/dlxjj/gradio
+  
   gr.HTML() 只用于显示，不能够交互
   
   conda create -n space pip python=3.10 -y && \

@@ -76,7 +76,7 @@ nvidia-smi
 
 apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential && \
-apt-get install p7zip-full vim curl lsof git wget net-tools git git-lfs pollen
+(sleep 1; echo "Y";) | apt-get install p7zip-full vim curl lsof git wget net-tools git git-lfs pollen
 
 
 

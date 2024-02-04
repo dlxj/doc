@@ -139,6 +139,7 @@ ln -s /usr/local/node-v14.21.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local
 
 ```
 version=v18.9.1 && \
+version=v20.11.0 && \
 wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && \
 tar xvf node-$version-linux-x64.tar.gz && \
 cd node-$version-linux-x64/bin && \

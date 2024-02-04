@@ -231,6 +231,21 @@ wsl --distribution Ubuntu-20.04 -u root
 
 sudo passwd
 	# 这就是改 root 密码
+	
+	
+vi /etc/ssh/sshd_config
+
+PermitRootLogin yes
+PasswordAuthentication yes
+	# 改这两个重启 ssh 成功登录
+
+ufw disable
+
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+systemctl restart ssh
+
+ufw allow ssh
 
 ```
 
