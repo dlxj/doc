@@ -12374,6 +12374,11 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   ip
   
   
+  git config --global user.name "dlxjj" && \
+  git config --global user.email "12345@qq.com"
+  git config --global http.proxy  socks5h://172.16.6.185:1080 && \
+  git config --global https.proxy socks5h://172.16.6.185:1080
+  
   .gitconfig
   [credential]
           helper = store
@@ -12382,12 +12387,13 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
           email = 12345@qq.com
   
   [http]
-          proxy = socks5h://127.0.0.1:1080
+          proxy = socks5://127.0.0.1:1080
   [https]
-          proxy = socks5h://127.0.0.1:1080
+          proxy = socks5://127.0.0.1:1080
   
   # 不知道为什么，必须换 socks5h 才能正常　clone github
   # 但是！git lfs pull 不能行
+  	# 把 socks5h 改成 socks5 就正常了
   
   
   pip install huggingface_hub && \
