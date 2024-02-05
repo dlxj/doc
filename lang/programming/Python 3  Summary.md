@@ -12364,7 +12364,7 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   
   vi ~/.bashrc
-  alias setproxy="export ALL_PROXY=socks5://172.16.6.185:1080"
+  alias setproxy="export ALL_PROXY=socks5h://172.16.6.185:1080"
   alias unsetproxy="unset ALL_PROXY"
   alias ip="curl http://ip-api.com/json/?lang=zh-CN"
   	# curl 正常, git 连 huggingface 不能行
