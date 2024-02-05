@@ -12310,9 +12310,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   git-lfs.x86_64 3.4.0-1.el9 @github_git-lfs        
   	# 这个片本正常
   	
-  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-amd64-v3.4.0.tar.gz
+  	# 这样装才行
   
-  apt-get install git-lfs=3.4.0
   	
   
   http_proxy or https_proxy
