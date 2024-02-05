@@ -3713,6 +3713,19 @@ wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-a
         proxy = socks5h://127.0.0.1:1080	
 	
 
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=socks5h://172.16.6.185:1080"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+	# curl 正常
+
+source ~/.bashrc
+	
+unsetproxy && \
+pip install pysocks && \
+setproxy && \
+ip
+
 
 git config --global user.name "dlxjj" && \
 git config --global user.email "12345@qq.com"

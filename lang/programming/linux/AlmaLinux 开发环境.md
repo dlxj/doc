@@ -33,6 +33,20 @@ wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-a
 	# 这样装才行
 	# ok 这样设置 .gitconfig 后就正常了
 
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=socks5h://172.16.6.185:1080"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+	# curl 正常
+
+source ~/.bashrc
+
+unsetproxy && \
+pip install pysocks && \
+setproxy && \
+ip
+
+
 
 cat /etc/os-release
 
