@@ -33,6 +33,20 @@ PermitRootLogin yes
 PasswordAuthentication yes
 	# 改这两个重启 ssh 成功登录
 
+mkdir -p /var/run/sshd
+/usr/sbin/sshd -D &
+	# docker 可以这样启动
+
+
+docker run -tid --name gradio_server_6116 -p 222:22  -p 6116:6116 --privileged=true ubuntu:20.04 /bin/bash
+
+docker exec -it gradio_server_6116 bash
+
+docker cp proxychains-ng-master.zip gradio_server_6116:/root
+
+
+
+
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 systemctl restart ssh
