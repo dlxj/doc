@@ -90,9 +90,17 @@ nvidia-smi
 
 apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential && \
-(sleep 1; echo "Y";) | apt-get install p7zip-full vim curl lsof git iputils-ping ufw wget net-tools git git-lfs pollen libsodium-dev
+(sleep 1; echo "Y";) | apt-get install p7zip-full vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev
 
 
+git lfs clone https://huggingface.co/datasets/dlxjj/gradio
+
+git-lfs 3.4.0         
+	# 这个片本正常
+	
+wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-amd64-v3.4.0.tar.gz
+	# 这样装才行
+	# ok 这样设置 .gitconfig 后就正常了
 
 
 https://blog.csdn.net/qq_20466211/article/details/128731196

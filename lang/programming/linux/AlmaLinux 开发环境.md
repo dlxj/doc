@@ -22,6 +22,18 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 
 ```
 
+hostnamectl
+
+git lfs clone https://huggingface.co/datasets/dlxjj/gradio
+
+git-lfs 3.4.0         
+	# 这个片本正常
+	
+wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-amd64-v3.4.0.tar.gz
+	# 这样装才行
+	# ok 这样设置 .gitconfig 后就正常了
+
+
 cat /etc/os-release
 
 dnf install langpacks-en glibc-all-langpacks -y && \
