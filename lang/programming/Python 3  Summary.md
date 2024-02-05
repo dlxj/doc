@@ -12351,6 +12351,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   docker exec -it gradio_server_6116 bash
   
+  docker cp proxychains-ng-master.zip gradio_server_6116:/root
+  
+  
   
   ```
 
