@@ -12314,10 +12314,16 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   	# 这样装才行
   	# ok 这样设置 .gitconfig 后就正常了
   	
+  see python 3 summary.md -> Gradio
   
-  http_proxy or https_proxy
-  	# git-lfs 需要的是这两个环境变量 ？
-  	
+  apt install pollen 
+  
+  bash scripts/install_gradio.sh && \
+  bash scripts/build_frontend.sh && \
+  bash scripts/install_test_requirements.sh
+  	# 可以在 bash 后加 proxychain4 , 成功安装
+  	# .bashrc 里的代理，开了也不得行
+  
   
   gr.HTML() 只用于显示，不能够交互
   
