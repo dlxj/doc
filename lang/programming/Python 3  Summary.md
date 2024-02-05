@@ -12349,6 +12349,7 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   docker run -tid --name gradio_server_6116 -p 222:22  -p 6116:6116 --privileged=true ubuntu:20.04 /bin/bash
   
+  docker start gradio_server_6116
   docker exec -it gradio_server_6116 bash
   
   docker cp proxychains-ng-master.zip gradio_server_6116:/root
@@ -12387,13 +12388,13 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
           email = 12345@qq.com
   
   [http]
-          proxy = socks5://127.0.0.1:1080
+          proxy = socks5h://127.0.0.1:1080
   [https]
-          proxy = socks5://127.0.0.1:1080
+          proxy = socks5h://127.0.0.1:1080
   
   # 不知道为什么，必须换 socks5h 才能正常　clone github
   # 但是！git lfs pull 不能行
-  	# 把 socks5h 改成 socks5 就正常了
+  	# 把 socks5h 改成 socks5 就正常了 ?
   
   
   pip install huggingface_hub && \
