@@ -2538,6 +2538,7 @@ vi ~/.bashrc
 alias setproxy="export ALL_PROXY=socks5://192.168.1.3:57882"
 alias setproxy="export ALL_PROXY=socks5://192.168.1.6:2801"
 alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+alias setproxy="export ALL_PROXY=socks5://172.16.6.185:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
