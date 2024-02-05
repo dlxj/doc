@@ -12305,7 +12305,7 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
 
 - ```
-  git clone https://huggingface.co/datasets/dlxjj/gradio
+  git lfs clone https://huggingface.co/datasets/dlxjj/gradio
   
   gr.HTML() 只用于显示，不能够交互
   
@@ -12382,9 +12382,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
           email = 12345@qq.com
   
   [http]
-          proxy = socks5h://172.16.6.185:1080
+          proxy = socks5h://127.0.0.1:1080
   [https]
-          proxy = socks5h://172.16.6.185:1080
+          proxy = socks5h://127.0.0.1:1080
   
   # 不知道为什么，必须换 socks5h 才能正常　clone github
   # 但是！git lfs pull 不能行
