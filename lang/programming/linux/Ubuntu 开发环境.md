@@ -90,14 +90,15 @@ nvidia-smi
 
 apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential && \
-(sleep 1; echo "Y";) | apt-get install p7zip-full vim curl lsof git iputils-ping ufw wget net-tools git git-lfs pollen
+(sleep 1; echo "Y";) | apt-get install p7zip-full vim curl lsof git iputils-ping ufw wget net-tools git git-lfs pollen libsodium-dev
 
 
 
 
 https://blog.csdn.net/qq_20466211/article/details/128731196
 apt-get install dialog apt-utils && \
-apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev
+
 
 apt update && apt upgrade -y && \
 apt install software-properties-common -y && \
