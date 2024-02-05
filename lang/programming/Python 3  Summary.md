@@ -12378,6 +12378,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   git config --global credential.helper store && \
   huggingface-cli login
   
+  huggingface-cli whoami
+  	# ssl 错误是由那个系统代理引起的，unsetproxy 就不错了
+  
   
   ```
 
