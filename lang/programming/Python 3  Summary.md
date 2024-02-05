@@ -12387,6 +12387,7 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
           proxy = socks5h://172.16.6.185:1080
   
   # 不知道为什么，必须换 socks5h 才能正常　clone github
+  # 但是！git lfs pull 不能行
   
   
   pip install huggingface_hub && \
