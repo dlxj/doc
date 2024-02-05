@@ -173,6 +173,25 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 
 
 
+# 安装指定版本
+
+```
+yum list installed | grep git-lfs
+	# 已安装版本
+
+yum list git-lfs
+	# 可用版本
+	
+
+
+```
+
+
+
+
+
+
+
 # 替换成国内源
 
 ```

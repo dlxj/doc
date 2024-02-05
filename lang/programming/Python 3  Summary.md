@@ -12307,6 +12307,18 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
 - ```
   git lfs clone https://huggingface.co/datasets/dlxjj/gradio
   
+  git-lfs.x86_64 3.4.0-1.el9 @github_git-lfs        
+  	# 这个片本正常
+  	
+  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  
+  apt-get install git-lfs=3.4.0
+  	
+  
+  http_proxy or https_proxy
+  	# git-lfs 需要的是这两个环境变量 ？
+  	
+  
   gr.HTML() 只用于显示，不能够交互
   
   conda create -n space pip python=3.10 -y && \
