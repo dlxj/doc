@@ -12475,6 +12475,10 @@ pnpm vitest dev --config .config/vitest.config.ts
 	# pnpm 单独运行
 
 
+pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
+	# 单独测试一个文件
+
+
 ```
 
 
