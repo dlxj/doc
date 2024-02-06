@@ -12589,6 +12589,8 @@ FastAPI.setup = FastAPI.orig_setup
 
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
+see https://github.com/PacktPublishing/Svelte-3-Up-and-Running/tree/master/ch2
+
 ```
 # vscode 设置 -> 搜:
 allowBreakpointsEverywhere
