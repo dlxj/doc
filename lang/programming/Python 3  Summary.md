@@ -12587,6 +12587,10 @@ FastAPI.setup = FastAPI.orig_setup
 
 ## svelte
 
+[Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
+
+
+
 svelte 选择JSDoc 的原因，只是为了调试方便。
 
 ```
