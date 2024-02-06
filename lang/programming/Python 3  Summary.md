@@ -12589,6 +12589,18 @@ FastAPI.setup = FastAPI.orig_setup
 
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
+```
+# vscode 设置 -> 搜:
+allowBreakpointsEverywhere
+
+```
+
+
+
+
+
+
+
 
 
 svelte 选择JSDoc 的原因，只是为了调试方便。
