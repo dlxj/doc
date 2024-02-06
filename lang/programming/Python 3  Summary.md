@@ -12459,6 +12459,28 @@ see https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 
 
+## compile
+
+```
+# gradio/package.json
+"scripts": {
+	"test": "pnpm --filter @gradio/client build && vitest dev --config .config/vitest.config.ts",
+	
+	
+npm run test
+	# 正常是这样运行
+
+pnpm --filter @gradio/client build
+pnpm vitest dev --config .config/vitest.config.ts
+	# pnpm 单独运行
+
+
+```
+
+
+
+
+
 ## change
 
 ```
@@ -12590,6 +12612,8 @@ FastAPI.setup = FastAPI.orig_setup
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
 see https://github.com/PacktPublishing/Svelte-3-Up-and-Running/tree/master/ch2
+
+see https://juejin.cn/post/7204635326559322170 todo list
 
 ```
 # vscode 设置 -> 搜:
