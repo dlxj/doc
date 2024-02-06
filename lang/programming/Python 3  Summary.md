@@ -12266,6 +12266,32 @@ see https://huggingface.co/spaces/ronvolutional/ai-pokemon-card 宝可梦卡片�
 
 
 
+```
+uvicorn.subprocess.spawn 要加上 freeze_support
+```
+
+
+
+```
+# app.py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
+
+
+uvicorn app:app --reload
+# app:app 指的是 文件名:FastAPI实例变量名，--reload 参数使得服务器在代码改变时自动重载。
+
+```
+
+
+
+
+
 # Gradio
 
 see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
