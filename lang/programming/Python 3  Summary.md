@@ -12401,6 +12401,12 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   docker cp proxychains-ng-master.zip gradio_server_6116:/root
   
   
+  # 移除容器
+  docker ps -a
+  docker stop 17b3d18c1428
+  docker rm 17b3d18c1428
+  
+  
   ufw disable && \
   apt install openssh-server -y && \
   mkdir -p /var/run/sshd && \
