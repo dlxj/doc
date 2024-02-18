@@ -33,7 +33,7 @@ PermitRootLogin yes
 PasswordAuthentication yes
 	# 改这两个重启 ssh 成功登录
 
-mkdir -p /var/run/sshd
+mkdir -p /var/run/sshd && \
 /usr/sbin/sshd -D &
 	# docker 可以这样启动
 

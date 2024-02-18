@@ -12401,6 +12401,8 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   docker cp proxychains-ng-master.zip gradio_server_6116:/root
   
+  sudo passwd
+  	# 改密码
   
   # 移除容器
   docker ps -a
@@ -12496,7 +12498,7 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 
 ## change
 
-```
+```python
 import gradio as gr
 from gradio_rich_textbox import RichTextbox
 
@@ -12527,6 +12529,49 @@ with gr.Blocks(title="richBox") as demo:
 if __name__ == "__main__":
     demo.launch()
 ```
+
+
+
+## hotkey
+
+```python
+import gradio as gr
+
+def main() -> None:
+    shortcut_js = """
+<script>
+function shortcuts(e) {
+    var event = document.all ? window.event : e;
+    switch (e.target.tagName.toLowerCase()) {
+        case "input":
+        case "textarea":
+        case "select":
+        case "button":
+        break;
+        default:
+        if (e.code == "KeyS" && e.shiftKey) {
+            document.getElementById("my_btn").click();
+        }
+}
+}
+document.addEventListener('keyup', shortcuts, false);
+</script>
+"""
+
+    with gr.Blocks(head=shortcut_js) as demo:
+        input = gr.Textbox(lines=2, label="in", value="hi")
+        output = gr.Textbox(lines=2, label="Prompt", value="<User:>ここまでやるとはな<User$>\n\n")
+        sync_btn = gr.Button(value="Sync", elem_id="my_btn")
+        sync_btn.click(lambda x:x, input, output)
+
+    demo.queue(max_size=10)
+    demo.launch(share=False)
+
+if __name__ == "__main__":
+    main()
+```
+
+
 
 
 
