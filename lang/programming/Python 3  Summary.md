@@ -12393,7 +12393,8 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   
   
-  docker run -tid --name gradio_server_6116 -p 222:22  -p 6116:6116 --privileged=true ubuntu:20.04 /bin/bash
+  
+  docker run -tid --name gradio_server_6116 -p 222:22 -p 3389:3389  -p 6116:6116 --privileged=true ubuntu:20.04 /bin/bash
   
   docker start gradio_server_6116
   docker exec -it gradio_server_6116 bash
