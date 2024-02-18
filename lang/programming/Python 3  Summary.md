@@ -12573,6 +12573,42 @@ if __name__ == "__main__":
 
 
 
+## audio
+
+```python
+import gradio as gr
+from gtts import gTTS
+from io import BytesIO
+import base64
+
+
+def text_to_speech(text):
+    tts = gTTS(text)
+    tts.save('hello_world.mp3')
+
+    audio_bytes = BytesIO()
+    tts.write_to_fp(audio_bytes)
+    audio_bytes.seek(0)
+
+    audio = base64.b64encode(audio_bytes.read()).decode("utf-8")
+    audio_player = f'<audio src="data:audio/mpeg;base64,{audio}" controls autoplay></audio>'
+
+    return audio_player
+
+
+with gr.Blocks() as demo:
+    html = gr.HTML()
+    # html.visible = False
+
+    text = gr.Text()
+    btn = gr.Button("OK")
+    btn.click(text_to_speech, inputs=[text], outputs=[html])
+
+demo.launch()
+```
+
+
+
 
 
 ## video
