@@ -12300,6 +12300,8 @@ see https://github.com/gradio-app/gradio/issues/1349 auto play
 
 see https://github.com/gradio-app/gradio/issues/2945 **subtitle** [1](https://github.com/tomchang25/gradio/tree/main/demo/video_subtitle)
 
+see https://github.com/gradio-app/gradio/issues/7383 高亮文本
+
 see https://github.com/gradio-app/gradio/issues/6971 文字转图片
 
 see https://github.com/gradio-app/gradio/issues/6763  使用 ImageDraw 画图

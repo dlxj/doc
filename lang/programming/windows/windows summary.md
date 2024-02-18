@@ -218,6 +218,11 @@ wsl --set-default-version 2
 
 wsl --update
 
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LxssManager
+	# On the right pane, locate Start and set the Value Data to 2.
+	# 出错的话，这样就好了
+
 cat /etc/passwd
 --> root:x:0:0:root:/root:/bin/bash
 
