@@ -12665,6 +12665,15 @@ demo.launch()
 
 ## video
 
+
+
+```python
+gradio cc create ivideo --template Video
+	# 成功自定义组件
+```
+
+
+
 ```python
 import gradio as gr
 import cv2
@@ -12694,6 +12703,12 @@ if success:
     bytestr = frame.tobytes()
     # 更新视频组件
     iface.inputs[0].update(value=bytestr)
+```
+
+
+
+```javascript
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IVJkOHTBPn0?si=bs-sBv43X-RVA8ly" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 
