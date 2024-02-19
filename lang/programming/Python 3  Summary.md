@@ -12784,6 +12784,21 @@ allowBreakpointsEverywhere
 
 
 
+### vite
+
+[Vite + Svelte + Tailwindcss](https://juejin.cn/post/7096482075590524936)
+
+```
+npm create vite@latest vite-svelte -- --template svelte
+pnpm create vite vite-svelte -- --template svelte
+
+
+cd vite-svelte
+yarn 
+yarn dev
+open http://localhost:30000
+```
+
 
 
 
