@@ -12789,14 +12789,24 @@ allowBreakpointsEverywhere
 [Vite + Svelte + Tailwindcss](https://juejin.cn/post/7096482075590524936)
 
 ```
-npm create vite@latest vite-svelte -- --template svelte
+
 pnpm create vite vite-svelte -- --template svelte
+cd vite-svelte
+pnpm install
+pnpm run dev
+	# 能正常在　.svelte 单步断下
 
 
+gradio cc create ivideo --template Video
+	# 自定义gradio 的 video 组件
+	#　把　node_modules shared　这两个库复到到 vite-svelte 里去，能正常引用，并运行
+	
+
+npm create vite@latest vite-svelte -- --template svelte
 cd vite-svelte
 yarn 
 yarn dev
-open http://localhost:30000
+
 ```
 
 
