@@ -12573,6 +12573,58 @@ if __name__ == "__main__":
 
 
 
+
+
+## image
+
+```python
+import gradio as gr
+from PIL import Image, ImageDraw, ImageFont
+import os
+import tempfile
+
+temp = tempfile.gettempdir()
+
+width, height = 200, 200
+pics = []
+
+def make_images(num):
+    global pics
+    font_size = min(width, height) // 2
+    for i in range(0, num - 1):
+        img = Image.new('RGB', (width, height), color = (255, 255, 255))
+        d = ImageDraw.Draw(img)
+        text = str(i)
+        bbox = d.textbbox((0,0), text)
+        textwidth, textheight = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        position = ((width-textwidth)/2,(height-textheight)/2)
+        d.text(position, text, fill=(0,0,0))
+        image_path = os.path.join(temp, f'gallerytest_{i:02}.jpg')
+        img.save(image_path)
+        pics.append(image_path)
+
+make_images(40)
+
+def sel(evt: gr.SelectData):
+    index = evt.index
+    print(index)
+    return index
+    
+with gr.Blocks() as demo:
+    with gr.Row():
+        gallery_sel = gr.Textbox(label="Selected Index", interactive=False)
+    with gr.Row():
+        gallery = gr.Gallery(pics, show_label=False, columns=8, selected_index=0)
+        gallery.select(fn=sel, inputs=[], outputs=[gallery_sel], trigger_mode="multiple")
+
+demo.launch()
+
+```
+
+
+
+
+
 ## audio
 
 ```python
