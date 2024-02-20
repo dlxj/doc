@@ -3773,7 +3773,7 @@ huggingface-cli login
 	# Your token has been saved to 
 		/root/.cache/huggingface/token
 
-git lfs fetch --all --resume
+git lfs fetch --all
 	# 失败以后断点续传
 
 apt-get install git-lfs
