@@ -3777,6 +3777,7 @@ git lfs fetch --all && \
 git checkout . && \
 git pull
 	# 失败以后断点续传
+	# 虽然可以，好像它是把所有 lfs 文件都重新下载一遍 ？
 
 apt-get install git-lfs
 
