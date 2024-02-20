@@ -2996,32 +2996,7 @@ done
   npm install --save openai
   ```
 
-
-
-
-```
-docker-compose.yml
-
-version: "3"
-
-services:
-  ninja:
-    image: ghcr.io/gngpp/ninja:latest
-    container_name: ninja
-    restart: unless-stopped
-    command: run --arkose-har-dir /root/.ninja
-    ports:
-      - "7999:7999"
-    environment:
-      - TZ=Asia/Shanghai
-    volumes:
-      - "./har:/root/.ninja"
-    
-```
-
-
-
-
+  
 
 ```
 http://127.0.0.1:7999/backend-api/
@@ -3755,12 +3730,6 @@ ip
 git config --global user.name "dlxjj" && \
 git config --global user.email "12345@qq.com"
 
-git config --global --unset credential.helper
-	# 清除密码
-
-rm -rf ~/.git-credentials
-	# 删除永久存储的账号和密码
-
 git clone -c http.proxy="socks5h://127.0.0.1:1080"  https://huggingface.co/datasets/dlxjj/transformer
 	# 能行
 	
@@ -3804,7 +3773,9 @@ huggingface-cli login
 	# Your token has been saved to 
 		/root/.cache/huggingface/token
 
-git lfs fetch --all
+git lfs fetch --all && \
+git checkout . && \
+git pull
 	# 失败以后断点续传
 
 apt-get install git-lfs
@@ -31839,10 +31810,6 @@ Visual Studio 2022
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
 [rust-script](https://github.com/fornwall/rust-script)
-
-
-
-
 
 
 
