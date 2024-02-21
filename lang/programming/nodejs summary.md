@@ -3754,6 +3754,17 @@ ip
 
 git config --global user.name "dlxjj" && \
 git config --global user.email "12345@qq.com"
+git config --global push.default matching  
+
+
+git config --system --list
+	# 查看系统config
+　　
+git config --global  --list
+	# 查看当前用户（global）配置
+
+git config --local  --list
+	# 查看当前仓库配置信息
 
 git config --global --unset credential.helper
 	# 清除密码
