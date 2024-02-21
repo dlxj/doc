@@ -12532,6 +12532,25 @@ if __name__ == "__main__":
 
 
 
+
+
+## enven
+
+[event-listeners](https://www.gradio.app/guides/blocks-and-event-listeners#gathering-event-data)
+
+```
+    @gr.on(inputs=[num1, num2, num3], outputs=output)
+    def sum(a, b, c):
+        return a + b + c
+   
+    # 三个输入控件任意一个触发 change 就会调用工厂 sum 加工产品，并输出到 output 控件
+    
+```
+
+
+
+
+
 ## hotkey
 
 ```python
