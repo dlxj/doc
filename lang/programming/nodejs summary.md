@@ -3729,8 +3729,8 @@ ip
 
 git config --global user.name "dlxjj" && \
 git config --global user.email "12345@qq.com"
-git config --global push.default matching  
 
+git config --global push.default matching  
 
 git config --system --list
 	# 查看系统config
@@ -31197,6 +31197,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [仿QQ](https://github.com/yashuangyi/Simulation-QQ)
 
 [lossless-cut typescript视频剪辑](https://github.com/mifi/lossless-cut)
+
+[downkyicore bili下载 avalonia](https://github.com/yaobiao131/downkyicore/releases)
 
 
 

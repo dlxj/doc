@@ -12538,7 +12538,7 @@ if __name__ == "__main__":
 
 [event-listeners](https://www.gradio.app/guides/blocks-and-event-listeners#gathering-event-data)
 
-```
+```python
     @gr.on(inputs=[num1, num2, num3], outputs=output)
     def sum(a, b, c):
         return a + b + c
@@ -12548,6 +12548,21 @@ if __name__ == "__main__":
 ```
 
 
+
+## timer
+
+```python
+def get_current_temp():
+    .... .....
+
+with gr.Blocks() as demo:
+    temperature = gr.Number()
+    demo.run_forever(get_current_temp,
+                     inputs=None,
+                     outputs=temperature,
+                     every=1 # units in seconds)
+demo.queue().launch()
+```
 
 
 
@@ -12588,6 +12603,42 @@ document.addEventListener('keyup', shortcuts, false);
 
 if __name__ == "__main__":
     main()
+```
+
+
+
+## backup db
+
+[running-background-tasks](https://www.gradio.app/guides/running-background-tasks)
+
+```python
+TOKEN = os.environ.get('HUB_TOKEN')
+repo = huggingface_hub.Repository(
+    local_dir="data",
+    repo_type="dataset",
+    clone_from="<name-of-your-dataset>",
+    use_auth_token=TOKEN
+)
+repo.git_pull()
+
+shutil.copyfile("./data/reviews.db", DB_FILE)
+
+
+from apscheduler.schedulers.background import BackgroundScheduler
+
+def backup_db():
+    shutil.copyfile(DB_FILE, "./data/reviews.db")
+    db = sqlite3.connect(DB_FILE)
+    reviews = db.execute("SELECT * FROM reviews").fetchall()
+    pd.DataFrame(reviews).to_csv("./data/reviews.csv", index=False)
+    print("updating db")
+    repo.push_to_hub(blocking=False, commit_message=f"Updating data at {datetime.datetime.now()}")
+
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=backup_db, trigger="interval", seconds=60)
+scheduler.start()
+
 ```
 
 
