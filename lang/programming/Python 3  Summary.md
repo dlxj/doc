@@ -12607,6 +12607,26 @@ if __name__ == "__main__":
 
 
 
+## Accordion
+
+```python
+import gradio as gr
+with gr.Blocks() as demo:
+  with gr.Accordion('Answers:', open=True):
+    answerhtml = gr.HTML(value='''<a href='https://hf.co//'>huggingface</a>''', label="Answer HTML")
+    answer = gr.Markdown(value='[gradio](https://gradio.app/)', label="Answer Markdown")
+
+  gr.Examples([
+        ['[StackOverflow](https://stackoverflow.com/)', '''<a href='https://stackoverflow.com/'>stackoverflow</a>'''],
+        ['[google](https://google.com/)', '''<a href='https://google.com/'>google</a>''']
+    ], [answer, answerhtml])
+demo.launch(share=True)
+```
+
+
+
+
+
 ## backup db
 
 [running-background-tasks](https://www.gradio.app/guides/running-background-tasks)
