@@ -3729,8 +3729,8 @@ ip
 
 git config --global user.name "dlxjj" && \
 git config --global user.email "12345@qq.com"
-git config --global push.default matching  
 
+git config --global push.default matching  
 
 git config --system --list
 	# 查看系统config
@@ -3784,11 +3784,14 @@ huggingface-cli login
 	# Your token has been saved to 
 		/root/.cache/huggingface/token
 
+
+git fetch --all && \
 git lfs fetch --all && \
-git checkout . && \
-git pull
-	# 失败以后断点续传
-	# 虽然可以，好像它是把所有 lfs 文件都重新下载一遍 ？
+git reset --hard origin/main && \
+git pull && \
+git lfs pull
+	# 强制恢复远程
+
 
 apt-get install git-lfs
 
@@ -31194,6 +31197,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [仿QQ](https://github.com/yashuangyi/Simulation-QQ)
 
 [lossless-cut typescript视频剪辑](https://github.com/mifi/lossless-cut)
+
+[downkyicore bili下载 avalonia](https://github.com/yaobiao131/downkyicore/releases)
 
 
 
