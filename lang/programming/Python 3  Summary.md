@@ -12862,6 +12862,8 @@ FastAPI.setup = FastAPI.orig_setup
 
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
+see https://github.com/fikryfahrezy/svelte-player  正常播放的 **纯 svelte 播放器**
+
 see https://github.com/PacktPublishing/Svelte-3-Up-and-Running/tree/master/ch2
 
 see https://juejin.cn/post/7204635326559322170 todo list
