@@ -12874,6 +12874,10 @@ see https://juejin.cn/post/7204635326559322170 todo list
 # vscode 设置 -> 搜:
 allowBreakpointsEverywhere
 
+vscdoe 插件
+	JavaScript Debugger
+	Svelte for VS Code
+
 ```
 
 
