@@ -12864,6 +12864,8 @@ FastAPI.setup = FastAPI.orig_setup
 
 see https://github.com/fikryfahrezy/svelte-player  正常播放的 **纯 svelte 播放器**
 
+see https://github.com/dandiws/svelte-audio-player  **音频播放器**
+
 see https://github.com/PacktPublishing/Svelte-3-Up-and-Running/tree/master/ch2
 
 see https://juejin.cn/post/7204635326559322170 todo list
