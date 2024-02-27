@@ -12900,6 +12900,12 @@ gradio cc create ivideo --template Video
 	#　把　node_modules shared　这两个库复到到 vite-svelte 里去，能正常引用，并运行
 	
 
+App.svelte
+<script>
+  import Counter from './lib/Counter.svelte'
+  import Player from '../shared/Player.svelte';
+	# 这样引用组件
+
 npm create vite@latest vite-svelte -- --template svelte
 cd vite-svelte
 yarn 
