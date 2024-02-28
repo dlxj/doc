@@ -12862,6 +12862,10 @@ FastAPI.setup = FastAPI.orig_setup
 
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
+see https://github.com/fikryfahrezy/svelte-player  正常播放的 **纯 svelte 播放器**
+
+see https://github.com/dandiws/svelte-audio-player  **音频播放器**
+
 see https://github.com/PacktPublishing/Svelte-3-Up-and-Running/tree/master/ch2
 
 see https://juejin.cn/post/7204635326559322170 todo list
@@ -12869,6 +12873,10 @@ see https://juejin.cn/post/7204635326559322170 todo list
 ```
 # vscode 设置 -> 搜:
 allowBreakpointsEverywhere
+
+vscdoe 插件
+	JavaScript Debugger
+	Svelte for VS Code
 
 ```
 
@@ -12891,6 +12899,12 @@ gradio cc create ivideo --template Video
 	# 自定义gradio 的 video 组件
 	#　把　node_modules shared　这两个库复到到 vite-svelte 里去，能正常引用，并运行
 	
+
+App.svelte
+<script>
+  import Counter from './lib/Counter.svelte'
+  import Player from '../shared/Player.svelte';
+	# 这样引用组件
 
 npm create vite@latest vite-svelte -- --template svelte
 cd vite-svelte

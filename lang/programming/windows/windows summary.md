@@ -537,6 +537,19 @@ Chinese Simplified 64-bit	953F9ECD3307A92FB5DAF12E3FE05603FE63181F6ABC0B08B42E63
 
 
 
+# 开启大小写敏感
+
+```
+fsutil file setCaseSensitiveInfo 路径 enable
+	# 只针对这个路径开启
+
+git config --global core.ignorecase false
+
+
+```
+
+
+
 
 
 # 激活

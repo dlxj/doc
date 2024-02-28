@@ -140,6 +140,7 @@ ln -s /usr/local/node-v14.21.1-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local
 ```
 version=v20.11.0 && \
 version=v18.9.1 && \
+version=v20.11.1 && \
 wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && \
 tar xvf node-$version-linux-x64.tar.gz && \
 cd node-$version-linux-x64/bin && \
@@ -3826,8 +3827,9 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create simpleGPT --type dataset
 	# huggingface-cli repo create nanoRWKV --type dataset
 	# huggingface-cli repo create gradio --type dataset
-
-
+	# huggingface-cli repo create vite_gradio_video --type dataset
+	# huggingface-cli repo create gradio_video --type dataset
+	
 	
 	
 
@@ -30743,6 +30745,20 @@ dependent type
 函子（Functor）是范畴间的态射，也叫为自然变换。
 
 > 若我们将范畴看成是更高层的范畴的对象，则两个范畴之间的态射就是函子
+
+
+
+范畴论是数学的一个分支，它抽象地研究数学结构和这些结构之间的关系。在范畴论中，最基本的概念是对象（Object）和态射（Morphism）。
+
+- **对象（Object）**：范畴中的基本单位，可以理解为某种数学结构。例如，在集合范畴中，每个对象是一个集合。
+
+- **态射（Morphism）**：连接两个对象的箭头，表示这两个对象之间的一种结构性关系或函数。态射可以理解为从一个对象到另一个对象的映射，它描述了这两个对象是如何相关的。
+
+当我们说“态射是两个对象间的箭头”，我们是在说态射代表了一种从一个对象到另一个对象的转换或关系。这个“箭头”的概念是非常抽象的，它可以被实例化为不同数学领域中的具体关系。例如，在集合范畴中，一个对象是一个集合，态射就是集合之间的函数。
+
+- **集合的箭头是函数**：这句话的意思是，在讨论集合作为对象的范畴（通常称为“集合范畴”）时，连接这些集合的态射（即“箭头”）具体而言就是函数。函数定义了一个集合中的元素如何映射到另一个集合中的元素。因此，当我们在集合范畴中谈论态射时，我们实际上是在讨论集合之间的函数。
+
+总的来说，范畴论通过对象和态射的概念，提供了一个统一的框架来研究和表达不同数学结构之间的关系。在这个框架中，“态射是两个对象间的箭头，集合的箭头是函数”这句话揭示了范畴论如何将集合论中的函数概念抽象化为更广泛的数学结构间的关系。
 
 
 
