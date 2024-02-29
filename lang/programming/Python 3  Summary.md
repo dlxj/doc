@@ -12334,6 +12334,30 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
 
 - ```
+  
+  # vscode 设置 -> 搜:
+  allowBreakpointsEverywhere
+  
+  vscdoe 插件
+  	JavaScript Debugger
+  	Svelte for VS Code
+  
+  .vscode/launch.json  
+  {
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "type": "chrome",
+              "request": "launch",
+              "name": "Launch Chrome against localhost",
+              "url": "http://localhost:5174",
+              "webRoot": "${workspaceFolder}"
+          }
+      ]
+  }
+  	# 正常进断点需要这个
+  	
+  
   git lfs clone https://huggingface.co/datasets/dlxjj/gradio
   
   git-lfs 3.4.0         
@@ -12409,28 +12433,6 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   pnpm i
   
-  
-  # vscode 设置 -> 搜:
-  allowBreakpointsEverywhere
-  
-  vscdoe 插件
-  	JavaScript Debugger
-  	Svelte for VS Code
-  
-  .vscode/launch.json  
-  {
-      "version": "0.2.0",
-      "configurations": [
-          {
-              "type": "chrome",
-              "request": "launch",
-              "name": "Launch Chrome against localhost",
-              "url": "http://localhost:5174",
-              "webRoot": "${workspaceFolder}"
-          }
-      ]
-  }
-  	# 正常进断点需要这个
   
   pnpm create vite vite-svelte -- --template svelte
   cd vite-svelte
